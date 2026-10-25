@@ -9,7 +9,7 @@ console.log('mines',await ev("JSON.stringify(Object.entries(nodes.filter(n=>n.mi
 // mine without pick
 await ev("const n=nodes.filter(n=>n.mine&&n.name==='Bakır cevheri')[0];window._m=n;player.x=n.x;player.y=n.y+12;interact({kind:'node',n})");
 console.log('no pick gathering?',await ev('!!gathering'));
-await ev("giveTool('Taş kazma');renderInv();setHand(hotList().indexOf('Taş kazma'));interact({kind:'node',n:_m})");await p.waitForTimeout(400);
+await ev("giveTool('Taş kazma');renderInv();holdTool('Taş kazma');interact({kind:'node',n:_m})");await p.waitForTimeout(400);
 console.log('gathering',await ev("gathering&&gathering.name"),'left',await ev('_m.left'));
 await p.waitForTimeout(5500);console.log('after',await ev("_m.left+' drops '+JSON.stringify(drops.map(d=>d.n))"));
 await p.screenshot({path:'shots/m1.png',clip:{x:490,y:240,width:300,height:240}});

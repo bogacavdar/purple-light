@@ -20,12 +20,12 @@ await ev("cookAll(camps[0],['Tavşan eti']);bye()");ok('meat cooked at the fire'
 await p.screenshot({path:S+'/v46_camp.png'});
 // fishing
 const sp=JSON.parse(await ev("JSON.stringify((()=>{for(let r=20;r<600;r+=8)for(let a=0;a<6.28;a+=.3){const x=spawn.x+Math.cos(a)*r,y=spawn.y+Math.sin(a)*r;if(reachAt(x,y)&&!blocked(x,y)&&!isWater(tileAt(x,y))&&isWater(tileAt(x,y+16)))return{x,y}}})())"));
-await ev(`dayT=600;giveTool('Olta');renderInv();setHand(hotList().indexOf('Olta'));player.x=${sp.x};player.y=${sp.y};player.face={x:0,y:1}`);await p.waitForTimeout(300);
+await ev(`dayT=600;giveTool('Olta');renderInv();holdTool('Olta');player.x=${sp.x};player.y=${sp.y};player.face={x:0,y:1}`);await p.waitForTimeout(300);
 await p.keyboard.press('e');await p.waitForTimeout(200);await ev("fish.need=.1");await p.waitForTimeout(400);await p.keyboard.press('e');await p.waitForTimeout(100);
 for(let i=0;i<300;i++){if(await ev("fish&&fish.pos>fish.z0+.02&&fish.pos<fish.z1-.02")){await p.keyboard.press('e');break}await p.waitForTimeout(10)}
 ok('a fish was caught',await ev("toolDur['Olta']")===24);
 // traps
-await ev("giveTool('Tuzak');renderInv();setHand(hotList().indexOf('Tuzak'));player.x=spawn.x+120;player.y=spawn.y-150");await p.waitForTimeout(300);await p.keyboard.press('e');await p.waitForTimeout(200);
+await ev("giveTool('Tuzak');renderInv();holdTool('Tuzak');player.x=spawn.x+120;player.y=spawn.y-150");await p.waitForTimeout(300);await p.keyboard.press('e');await p.waitForTimeout(200);
 await ev("traps[0].t=.05");await p.waitForTimeout(500);ok('trap caught something',await ev("!!(traps[0]&&traps[0].got)"));
 // night finds
 await ev("dayT=1300;player.x=spawn.x+400;player.y=spawn.y-500");await p.waitForTimeout(7000);ok('night finds and fireflies',await ev("nodes.some(n=>n.night)&&flies.length>0"));

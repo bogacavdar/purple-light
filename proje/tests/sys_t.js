@@ -11,7 +11,7 @@ await p.evaluate(()=>window.__ham.tp('usta'));await p.waitForTimeout(300);await 
 await ev("openUsta()");await p.waitForTimeout(200);await p.screenshot({path:'shots/k2.png'});await ev("closeCraft()");
 console.log('bed',await ev("inv['Hasır yatak']+' hot '+hotList().join(',')"));
 // select bed in hotbar -> placement
-const idx=await ev("hotList().indexOf('Hasır yatak')");await p.keyboard.press('Digit'+((idx+1)%10));await p.waitForTimeout(200);
+const idx=await ev("beltAuto('Hasır yatak'),hotK='',renderHot(),hotList().indexOf('Hasır yatak')");/* v48: gifts go to the inventory; put the bed on the belt first */await p.keyboard.press('Digit'+((idx+1)%10));await p.waitForTimeout(200);
 await p.keyboard.press('KeyQ');await p.waitForTimeout(100);let sp=await spot('Hasır yatak');console.log('spot',sp);await p.mouse.move(sp.x,sp.y);await p.waitForTimeout(200);await p.screenshot({path:'shots/k3.png'});await p.mouse.click(sp.x,sp.y);await p.waitForTimeout(300);
 console.log('placed',await ev("JSON.stringify(placed)+' placing '+!!placing"));
 await p.screenshot({path:'shots/k4.png'});
@@ -21,7 +21,7 @@ await ev(`player.x=(${o.tx}+2)*T+8;player.y=(${o.ty})*T+8;dayT=1300`);await ev("
 console.log('after sleep',await ev("day+' '+hhmm()"));await p.screenshot({path:'shots/k5.png'});
 // workshop
 await ev("coins=1000;bought.add('Atölye');gain('Atölye',1);gain('Lif',40);gain('Taş',20);renderInv();hotK=''");
-const i2=await ev("hotList().indexOf('Atölye')");await p.keyboard.press('Digit'+((i2+1)%10));await p.waitForTimeout(100);sp=await spot('Atölye');await p.mouse.move(sp.x,sp.y);await p.waitForTimeout(150);await p.mouse.click(sp.x,sp.y);await p.waitForTimeout(300);
+const i2=await ev("beltAuto('Atölye'),hotK='',renderHot(),hotList().indexOf('Atölye')");await p.keyboard.press('Digit'+((i2+1)%10));await p.waitForTimeout(100);sp=await spot('Atölye');await p.mouse.move(sp.x,sp.y);await p.waitForTimeout(150);await p.mouse.click(sp.x,sp.y);await p.waitForTimeout(300);
 console.log('placed2',await ev("placed.length"));
 await ev("openWorkshop(placed[placed.length-1])");await p.waitForTimeout(200);
 await p.click('[data-wsr="İp"]').catch(e=>console.log('no ip',e.message));await p.waitForTimeout(150);await p.click('#wsall');await p.waitForTimeout(200);await p.screenshot({path:'shots/k6.png'});

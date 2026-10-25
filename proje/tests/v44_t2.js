@@ -7,9 +7,9 @@ await p.waitForTimeout(2500);console.log('audio bufs',await ev("1"));
 await ev("startNew('normal');endCine()");await p.waitForTimeout(300);await ev("wakeDone();wakeDone2()");await p.waitForTimeout(800);
 await ev("walked=true;tapMoved=true;mapSeen=2;ytut=3;tut=11;met=true;witchShown=true;qState='talk';ftut=3;ctut=4;htut=2;torchTut=3;renderTut()");
 // tree tier
-await ev("giveTool('Taş balta');setHand(hotList().indexOf('Taş balta'));const t=trees.find(t=>t.type.n==='Meşe');player.x=t.x;player.y=t.y+14");await p.waitForTimeout(300);console.log('oak:',await ev("$('prompt').innerText"));
+await ev("giveTool('Taş balta');holdTool('Taş balta');const t=trees.find(t=>t.type.n==='Meşe');player.x=t.x;player.y=t.y+14");await p.waitForTimeout(300);console.log('oak:',await ev("$('prompt').innerText"));
 // ore tier
-await ev("giveTool('Taş kazma');setHand(hotList().indexOf('Taş kazma'));const n=nodes.find(n=>n.name==='Kuvars'&&n.alive);player.x=n.x;player.y=n.y+12");await p.waitForTimeout(300);console.log('quartz:',await ev("$('prompt').innerText"));
+await ev("giveTool('Taş kazma');holdTool('Taş kazma');const n=nodes.find(n=>n.name==='Kuvars'&&n.alive);player.x=n.x;player.y=n.y+12");await p.waitForTimeout(300);console.log('quartz:',await ev("$('prompt').innerText"));
 await ev("const n=nodes.find(n=>n.name==='Bakır cevheri'&&n.alive);player.x=n.x;player.y=n.y+12");await p.waitForTimeout(300);console.log('copper:',await ev("$('prompt').innerText"));
 // bridge quest → run lesson
 await ev("tut=13;qState='ready';bridge.fixed=true;coins=0;turnIn();bye()");await p.waitForTimeout(900);console.log('run',await ev("runTut+' coins '+coins+' K1 lock? '+(SKILLS.find(x=>x.id==='K1').need)"));

@@ -10,7 +10,7 @@ await ev("talk()");await p.waitForTimeout(200);console.log('dlg',await ev("$('dt
 for(let i=0;i<4;i++){if(!(await ev('dlgOpen')))break;await p.click('#dch button');await p.waitForTimeout(150)}
 console.log('state',await ev("qState+' '+tut+' bought '+bought.has('Taş balta')"),await ev("$('tuttext').innerText.slice(0,160)"));
 // tree tier
-await ev("giveTool('Taş balta');renderInv();setHand(hotList().indexOf('Taş balta'));const t=trees.find(t=>t.type.n==='Meşe'&&!ZONE[Math.floor(t.y/T)*W+Math.floor(t.x/T)]);player.x=t.x;player.y=t.y+14;window._mt=t");
+await ev("giveTool('Taş balta');renderInv();holdTool('Taş balta');const t=trees.find(t=>t.type.n==='Meşe'&&!ZONE[Math.floor(t.y/T)*W+Math.floor(t.x/T)]);player.x=t.x;player.y=t.y+14;window._mt=t");
 await p.waitForTimeout(200);console.log('oak prompt',await ev("$('prompt').innerText"));
 await ev("interact({kind:'tree',t:_mt})");console.log('gathering oak?',await ev('!!gathering'));
 await ev("const t=trees.find(t=>t.type.n==='Çam'&&!ZONE[Math.floor(t.y/T)*W+Math.floor(t.x/T)]);player.x=t.x;player.y=t.y+14;interact({kind:'tree',t})");console.log('gathering pine?',await ev('!!gathering'));
@@ -31,7 +31,7 @@ await p.click('[data-hb="Yaprak barınağı"]');await p.waitForTimeout(100);awai
 console.log('houses',await ev("(inv['Yaprak barınağı']||0)+' '+(inv['Ahşap ev']||0)+' placed '+JSON.stringify(placed)+' coins '+coins"));
 await ev("closeCraft()");
 // place shelter and sleep
-await ev("player.x=carp.x-60;player.y=carp.y+60;setHand(hotList().indexOf('Yaprak barınağı'))");await p.waitForTimeout(100);
+await ev("player.x=carp.x-60;player.y=carp.y+60;holdTool('Yaprak barınağı')");await p.waitForTimeout(100);
 await ev("for(let dy=-3;dy<=3;dy++)for(let dx=-3;dx<=3;dx++){if(placing&&placeOK(placing.n,0,Math.floor(player.x/T)+dx,Math.floor(player.y/T)+dy,null)){doPlace(Math.floor(player.x/T)+dx,Math.floor(player.y/T)+dy);break}}");
 console.log('placed shelter',await ev("placed.map(o=>o.n).join(',')"));
 await ev("dayT=1250;const o=placed.find(o=>o.n==='Yaprak barınağı');useplaced(o)");await p.waitForTimeout(4500);console.log('slept',await ev("shelterSlept+' '+placed.map(o=>o.n).join(',')+' day '+day"));

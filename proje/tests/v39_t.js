@@ -43,7 +43,7 @@ await p.waitForTimeout(4200);console.log('after',await ev("day+' '+hhmm()+' hp '
 await p.screenshot({path:'shots/v7.png'});
 await p.click('#dch button').catch(()=>{});
 // torch at night
-await ev("player.x+=300;dayT=1300;clockK='';setHand(hotList().indexOf('Kaba meşale'))");await p.waitForTimeout(1500);console.log('torch night darkT',await ev('darkT'),await ev('held()'));await p.screenshot({path:'shots/v8.png'});
+await ev("player.x+=300;dayT=1300;clockK='';holdTool('Kaba meşale')");await p.waitForTimeout(1500);console.log('torch night darkT',await ev('darkT'),await ev('held()'));await p.screenshot({path:'shots/v8.png'});
 // packs
 await ev("dayT=600;animals.length=0;tut=11;day=3;lvl=6;for(let i=0;i<6;i++)spawnAnimals()");
 console.log('packs',await ev("JSON.stringify(Object.entries(animals.reduce((m,a)=>{if(a.pk){const k=a.k+'#'+a.pk;m[k]=(m[k]||0)+1}return m},{})))"));
