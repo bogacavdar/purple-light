@@ -1,12 +1,18 @@
 # Hammadde — Yeni sohbet için devam notu
 
+## 🔁 KURAL: Her güncellemede GitHub da güncellenir
+- Depo: https://github.com/bogacavdar/purple-light (dal `main`, ilk gönderim 25 Ekim 2026'da yapıldı; Claude'un yazma izni var).
+- Her sürümde, artifact yayınlandıktan sonra **aynı turda** depo da güncellenir: kökteki `index.html` = `Hammadde_prototip.html` + `<link rel="manifest">` ve `apple-touch-icon` satırları (11. satırdan sonra; `github_pages/index.html` ile aynı), `proje/` klasörü = güncel prototip, `recipes3.json`, `DEVAM_NOTU.md`, `Hammadde_tarifler.md`, `Hammadde_tasarim_belgesi.md`, `tests/`.
+- Yol: yeni oturumda `add_repo` (bogacavdar/purple-light, push) → `git clone --depth 1` → dosyaları kopyala → commit (Türkçe mesaj, sürüm numarasıyla) → `git push`. Kullanıcıya oyunun adresini hatırlat: https://bogacavdar.github.io/purple-light/
+- GitHub Pages ayarını (Settings → Pages → main, /root) oturum açamıyor (API proxy'de kapalı); Boğaç bir kez kendisi açar.
+
 ## ⭐ BURADAN BAŞLA (25 Ekim 2026, v46)
 - **v46 (artifact Version 52, aynı link):** Claude oyunu baştan oynadı, bulduğu hataları düzeltti ve Boğaç'ın onayladığı 9 fikri ekledi: kamp ateşi, balık tutma, tuzaklar/balık kapanı, gece buluntuları (ay çiçeği, mor kıymık, ateş böcekleri), Mavi'nin 5 anısı, Zümrüt'ün bilmeceleri, harita işaretleri, gün sonu özeti ve oynanabilir **Sisli Ada** (final öncesi bölüm). Ayrıntı en altta "v46" bölümünde.
 - Boğaç'ın kararı: fiyatların kesirli görünmesi (7,1 sikke) **hata değil**; seviye ve yetenek ağacı fiyatı artırdığı için normal.
 
 ## Önceki başlangıç notu (v45)
 - **v45 (artifact Version 51):** yeni eğitim akışı, kazan yalnızca tarif öğretir, meyve ağaçları, daha vahşi canavarlar, fareyle ad, harita ikonları/yakınlaştırma/kaydırma, hile: zamanı sar (basılı tut) + Ayarlar'da Gece ışığı.
-- **GitHub:** depo https://github.com/bogacavdar/purple-light açıldı (boş). Oturum klonlayabiliyor ama gönderemiyor (403: Claude GitHub App bu depoya kurulu değil). Kurulunca `github_pages/` içeriği + README + .nojekyll gönderilecek, sonra Settings → Pages (main, /root). Oyun adresi: https://bogacavdar.github.io/purple-light/
+- **GitHub:** v46 ile depoya gönderildi (bkz. en üstteki KURAL). Oyun adresi: https://bogacavdar.github.io/purple-light/
 - **Oyunun adı artık Purple Light** (Türkçe alt başlık: Mor Işık). Ada adı oyun içinde hâlâ Hammadde Adası; dosya adları ve kayıt anahtarları (`hammadde.saves.v1`) eski kayıtlar bozulmasın diye değişmedi. Ana menüde her 7 saniyede bir logonun üstüne mor bir ışık düşer (`.logo.pl`, `plbeam`). Yayındaki sürüm: artifact Version 50.
 - **Prototip (link değişmeyecek, hep aynı artifact güncellenir):** https://claude.ai/artifact/ApSQG1LVugQT7M7jbEfoJV — yayındaki sürüm: artifact Version 49 (oyun içi v44). `downloads` yeteneği açık (kayıt dosyası indirme için).
 - **Tasarım belgesi (Claude Docs):** https://claude.ai/artifact/RSf9VtWHAewVx6TtRSUtkS — doc id `c5f06e43-7820-4d7c-a944-878ada63128b`; ana sekme gövdesi `6272b036-9d99`, "Fikir otoparkı" sekmesi `7a37f882-4d94`. Son eklenen bölüm: "İkinci perde: metal, bölgeler ve gerçek (v44)".
