@@ -1,0 +1,258 @@
+# Hammadde — Yeni sohbet için devam notu
+
+## ⭐ BURADAN BAŞLA (25 Ekim 2026, v46)
+- **v46 (artifact Version 52, aynı link):** Claude oyunu baştan oynadı, bulduğu hataları düzeltti ve Boğaç'ın onayladığı 9 fikri ekledi: kamp ateşi, balık tutma, tuzaklar/balık kapanı, gece buluntuları (ay çiçeği, mor kıymık, ateş böcekleri), Mavi'nin 5 anısı, Zümrüt'ün bilmeceleri, harita işaretleri, gün sonu özeti ve oynanabilir **Sisli Ada** (final öncesi bölüm). Ayrıntı en altta "v46" bölümünde.
+- Boğaç'ın kararı: fiyatların kesirli görünmesi (7,1 sikke) **hata değil**; seviye ve yetenek ağacı fiyatı artırdığı için normal.
+
+## Önceki başlangıç notu (v45)
+- **v45 (artifact Version 51):** yeni eğitim akışı, kazan yalnızca tarif öğretir, meyve ağaçları, daha vahşi canavarlar, fareyle ad, harita ikonları/yakınlaştırma/kaydırma, hile: zamanı sar (basılı tut) + Ayarlar'da Gece ışığı.
+- **GitHub:** depo https://github.com/bogacavdar/purple-light açıldı (boş). Oturum klonlayabiliyor ama gönderemiyor (403: Claude GitHub App bu depoya kurulu değil). Kurulunca `github_pages/` içeriği + README + .nojekyll gönderilecek, sonra Settings → Pages (main, /root). Oyun adresi: https://bogacavdar.github.io/purple-light/
+- **Oyunun adı artık Purple Light** (Türkçe alt başlık: Mor Işık). Ada adı oyun içinde hâlâ Hammadde Adası; dosya adları ve kayıt anahtarları (`hammadde.saves.v1`) eski kayıtlar bozulmasın diye değişmedi. Ana menüde her 7 saniyede bir logonun üstüne mor bir ışık düşer (`.logo.pl`, `plbeam`). Yayındaki sürüm: artifact Version 50.
+- **Prototip (link değişmeyecek, hep aynı artifact güncellenir):** https://claude.ai/artifact/ApSQG1LVugQT7M7jbEfoJV — yayındaki sürüm: artifact Version 49 (oyun içi v44). `downloads` yeteneği açık (kayıt dosyası indirme için).
+- **Tasarım belgesi (Claude Docs):** https://claude.ai/artifact/RSf9VtWHAewVx6TtRSUtkS — doc id `c5f06e43-7820-4d7c-a944-878ada63128b`; ana sekme gövdesi `6272b036-9d99`, "Fikir otoparkı" sekmesi `7a37f882-4d94`. Son eklenen bölüm: "İkinci perde: metal, bölgeler ve gerçek (v44)".
+- **GitHub:** Boğaç'ın hesabı https://github.com/bogacavdar — GitHub Pages + "Ana Ekrana Ekle" yayını için GitHub bağlandı; oturum yeni depo açamıyor. Boğaç `purple-light` adında boş, herkese açık bir depo açınca dosyalar (github_pages/) gönderilecek, sonra Settings → Pages açılacak.
+- **Kurallar:** `?.` ve `??` yok (yerine `nn(a,b)`), kod ES2018 ile ayrıştırılarak kontrol edilir (`tests/chk.js`, acorn: `NODE_PATH=/opt/node-tools/node_modules`). Fiyat formülü: malzeme toplamı × (1,15 + 0,05 × min(adım,6)) + aletin %10'u (`build_data.py` mantığı). Zor modda her tarifin malzeme türü seti benzersiz. `?debug` → `window.__ham` (ev(kod) ile her şey çağrılabilir).
+- **Çalışma şekli:** Boğaç istekleri madde madde yazar ve "yap" der; Claude yapar, test eder, aynı artifact'a yayınlar, belgeyi ve bu notu günceller, zip verir.
+- **Dosyalar:** `Hammadde_prototip.html` (oyun), `recipes3.json` (tarif verisi, 638 tarif; `f` alanı = örste dövülen ama alet olmayan zırhlar), `Hammadde_tarifler.md` (v44 bölümü sonda), `Hammadde_tasarim_belgesi.md/.docx` (eski dışa aktarım; güncel olan Claude Docs), `tests/` (Playwright; `v44_t1..t4.js` yeni: `node tests/v44_t1.js <ekran klasörü> Hammadde_prototip.html`).
+
+### Oyunun şu anki hali (özet)
+- Açılış: ana menü (Yeni oyun, Devam, Kayıttan yükle, Ayarlar, **Kayıtları dışa/içe aktar**, Çıkış) → karakter yaratma → zorluk → giriş sahnesi → kumsalda uyanış.
+- 18 görev (Ekin): Taş balta → 5 odun → köprü (100 sikke = Koşu'nun fiyatı; koşu dersi burada başlar) → yaprak barınağı → 100 sikke → Sv5 → Tüccar → Usta Kemal → 10 tarif → Sv8 → 25 tarif → **tunç külçesi → tunç alet → Avcı Toygar → demir külçesi → savunma 40 → lav kertenkelesi → 6 iz**. Sonra Sv10: Kaptan Poyraz gelir, **Balıkçı Rüstem**'e yollar (haritanın doğuş yerine en uzak köşesi, Kül Diyarı'nda). Rüstem: 1 Kara pul, 3 Tunç külçesi, 4 Demir levha, 6 Halat, 1 Ejder kemiği + bütün izler → tekneyle **Sisli Ada** = oyun sonu.
+- Hikâye: eş kaçırıldı; köpek ve lamba satan yıldızsız uzaylılar gemiye saldırdı, mor ışık onların gemisi. Final uzayda olacak.
+- Alet/maden kademeleri (Taş → Granit/Çakmaktaşı → Kuvars/Tunç → Bazalt/Demir → Obsidyen), dayanıklılık yeşilden kırmızıya, 5 alet yuvası (+Alet kemeri dalı 6/7/8/10), yuva doluysa alet yerde kalır, yerdeki eşya 180 sn'de kaybolur.
+- Bölge malzemeleri, bataklık çamuru/sisi/sesleri, kül diyarı sesleri, hava durumu, yemek seçim penceresi ve yemek etkileri, keşif defteri (kategori %25/%50/%100), Yıldızsız Işıkçı (5 meşale bitince + 1000 sikke → kafa lambası).
+
+### Açık konular / sıradaki fikirler
+- GitHub Pages yayını (Boğaç'ın hesabında depo + erişim) ve PWA manifest; iPhone'da gerçek tam ekran.
+- Boğaç v44'ü oynayıp geri bildirim verecek; denge (bölge hasarları, metal fiyatları, kademe süreleri) buna göre ayarlanacak.
+- Balık tutma hâlâ yok (balık tarifleri ölü); Sisli Ada ve uzay finali (Fikir otoparkı).
+- Yetenek metinlerinde Türkçe karakter hatası için örnek ekran görüntüsü bekleniyor.
+
+---
+## Eski notlar (ayrıntı, sürüm sürüm)
+
+Bu notu ve aşağıdaki dosyaları yeni sohbete ekleyip "Hammadde projesine buradan devam ediyoruz" demen yeterli.
+
+## Yön (24 Ekim 2026 kararı)
+Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken tarifleri keşfetmek. Örnekler: Dave the Diver, Graveyard Keeper. Belgede bu yön için "Tasarım sütunları", "Hayatta kalma baskıları" ve "Fikir otoparkı" sekmesi var. Yeni fikirler önce otoparka yazılır.
+
+## Proje
+- **Oyun:** "Hammadde" (çalışma adı). Tek oyunculu, 2D piksel art, idle / üretim / keşif oyunu. Adada ham madde topla, kazanda çok bileşenli tariflerle birleştir, sat, aletleri ve yetenekleri geliştir. Ölçek sınırsız: taştan galaksiye. Hedef platformlar: Steam, PS, Android, iOS.
+- **Dil:** Bütün konuşmalar ve oyun içi metinler Türkçe.
+- **Çalışma düzeni:** önce konuş ve planla → tasarım belgesini güncelle → tarayıcı prototipini (tek HTML dosyası) güncelle → Boğaç test edip geri bildirim verir. Hemen kod yazılmaz; büyük değişikliklerden önce fikir konuşulur.
+- **Tasarım tercihleri:** büyük ve okunaklı yazılar, ikonlu menüler, ses ve müzik, her şeyin adım adım ve sırayla açılması.
+
+## Dosyalar
+- `Hammadde_tasarim_belgesi.md`: tasarım belgesinin son hali (Claude Docs'taki "Hammadde: Oyun Tasarım Belgesi").
+- `Hammadde_tarifler.md`: güncel tarif veritabanı (585 tarif, zincir çarpanlı fiyatlar, her tarifin "Adım" sayısı). Belgedeki eski "Taş Çağı tarifleri" sekmesi eski ikili sistemi gösteriyor; bu dosya geçerli olan.
+- `recipes3.json`: prototipin kullandığı tarif verisi: `R` (tarifler: r ürün, i malzemeler, t aletler, c kategori), `c` (Herhangi grupları), `p` (fiyatlar), `t` (alet listesi), `seeds`, `crops`.
+- `Hammadde_prototip.html`: oynanabilir prototip (tek dosya, tarayıcıda açılır). Yayındaki sürüm: v38.
+
+## Prototipin teknik yapısı
+- Tek HTML dosyası. Canvas 2D ile piksel çizim, arayüz DOM ile. Tarif verisi `<script type="application/json" id="db">` içinde.
+- Kayıtlar tarayıcının localStorage'ında: 3 elle kayıt yuvası ve otomatik kayıt.
+- Ses: OfflineAudioContext ile üretilen lo-fi müzik ve efektler. AudioContext oyuncunun ilk tıklamasında açılır.
+- Test için adresin sonuna `?debug` eklenince `window.__ham` açılır: `give(n)`, `add(isim,adet)`, `inv()`, `tut()`, `sk(id)`, `fs()`, `ws()`, `tp('npc'|'witch'|'farmer'|'field')`, `plots()`, `pot()`, `skip()` (eğitimi atla, Meltem'i getir), `judge([malzemeler])` (kazanın deneme cevabı), `learned()`, `open()` (açık tarif sayısı), `price(isim)`, `q(i)` (i. göreve atla), `qs()`, `won()`, `tp('dock')`.
+- İndirilip tek başına açılabilmesi için CSS'te `[hidden]{display:none!important}` kuralı olmalı.
+- **Eski iPhone uyumu (önemli kural):** Kodda `?.` ve `??` KULLANILMAZ; iOS 13.4'ten eski Safari bunları görünce bütün betiği çalıştırmaz (ekran görünür ama hiçbir düğme çalışmaz). Yerine `nn(a,b)` (a boşsa b), `cl(el)` (varsa tıkla), `cst(el,seçici)` (güvenli closest) yardımcıları var. Kod ES2018 sınırında tutulur; değişiklikten sonra betikleri ES2018/2019 ile ayrıştırarak kontrol et. `flat`, `flatMap`, `Object.fromEntries`, `queueMicrotask` için yedekler başlıkta. Pointer Events yoksa yön tuşları ve E dokunma olaylarıyla çalışır.
+- **Dokunmatik kontrol:** `body.joymode` (dokunmatik + Pointer Events) yön tuşlarını ve E'yi gizler. Kanvasta sürükle = joystick (`joy`), dokun/tıkla = `startGoal` → `pickAt` hedefi bulur → `stepGoal` yürütür → `arrive` `interact(hedef)` çağırır. Fare tıklaması da yürür/toplar. Su kenarında mavi damla ipucu (`drawWaterHint`). Joystick halkası çizilmez (görünmez). Telefon eğitimi: 1/5 sürükleyerek yürü (ekranda kayan parmak izi) → dokunarak yürü (`tapMoved`, parmak + halka işareti) → harita → dala dokun (dal ekranda görünmüyorsa karakterin yanına getirilir, üstünde dokunma halkaları).
+- **Telefon yatay oynanır:** dikey tutulan telefonda (dokunmatik, genişlik ≤600 px) "Telefonunu yan çevir" ekranı çıkar; "Yine de dikey oyna" o oturum için kapatır, Android'de "Tam ekran ve yatay" düğmesi yönü kilitler. Yatay telefonda (yükseklik ≤520 px) sıkı düzen: solda sikke + görev + 3×2 menü, sağ üstte ayar ve karakter, altta yön tuşları / XP çubuğu / E, üstte geniş ve kısa öğretici kartı; menü açıkken kart iki satıra iner (`body.menuopen`).
+- **iPhone/iPad:** iOS'ta dosya önizlemesi (Dosyalar, Mesajlar, Mail, uygulama içi dosya) JavaScript çalıştırmaz; oyun Safari'de bağlantıdan açılmalı (Paylaş → Ana Ekrana Ekle ile tam ekran olur). JS çalışmazsa başlık ekranında kırmızı bir uyarı kalır. Açılışta yakalanan her hata ekranın altında kırmızı kutuda yazılır. Ses Safari için ön ekli `webkitOfflineAudioContext`, 44,1 kHz yedeği ve olay tabanlı render ile üretilir. Sıkıştırarak yakınlaştırma ve sayfa esnemesi kapalı.
+
+## Oyunda şu an olanlar
+- **v38 yenilikleri:**
+  - **Eğitime iki ders eklendi:**
+    - Savaşçı Alp (`alp`, `ftut`, `talkAlp`, `drawAlp`): Ekin'in kampının yanında; yumrukla Kerevit avlatır (`spawnTutCrab`, `ANIM.Kerevit` hareketsiz). `tut===4` bitince başlar, sonra `startWitchLesson()` çalışır.
+    - Hızlı yapım dersi (`ctut`): ilk keskin taştan sonra Sopa ve `+` öğretilir.
+  - **`+` kuralı:** Yalnızca ✓ (`foundSet`) olan tariflerde çalışır.
+  - **Meşale ve gece:**
+    - Meşale dersi (`torchTut`): 1. gün 17:30'da başlar. Kaba meşale (yeni tarif, elle yapılır: `handCraft`). GT türü `torch`, `TORCHL` ışık yarıçapı.
+    - Zifiri gece (`darkness`, `drawDarkness` maske).
+    - İlk gece meşale yoksa korku ve bayılma (`nightScare`, `knockedOut`): aletler dışında her yığının %30'u kaybolur.
+  - **Ekin'in kampı:** `wakeSpot` yanına taşındı.
+  - **Bildirim kuyruğu:** `annQ`, `lvlFirst`; seviye bildirimi önce gelir.
+  - **Can:**
+    - Can çubuğu büyüdü.
+    - Hasar alınınca kırmızı ekran efekti (`#hurtfx`) ve hasara göre büyüyen -X yazısı (`floats.size`).
+    - Yenilenme 5 kat yavaşladı (`hpRe`).
+    - Yemek 15 sn boyunca can doldurur (`mealHeal`).
+  - **Bilgelik dalı:** Yalnızca Zor modda görünür.
+  - **NPC hareketleri:** `idle` nefes alma; Ekin ateşi karıştırır, Zümrüt elinden ateş çıkarır, Hasan tarla kenarında yürür (`tickNPCs`).
+  - **Hile paneli:** Hayvan düşürmeleri eklendi; 5×4 görünür, kaydırılır.
+  - Toplam 592 tarif.
+- **v37 yenilikleri:**
+  - **Hayvan mizaçları** (`ANIM[k].temper`):
+    - Zararsız (tavşan, sincap, keklik, ördek): kaçar.
+    - Nötr (geyik, karaca, Sv4'ten sonra yaban öküzü): vurulursa karşılık verir, uzaklaşınca sakinleşir.
+    - Saldırgan (yaban domuzu, kurt).
+  - **Rastgele düşürmeler:** `drops: [ad, en az, en çok, ihtimal, tür]`; tür yemek, zırh, silah ya da zanaat olur. Öldürünce kaç tarifin açıldığı yazılır.
+  - **Ekipman:** 5 yuva (`equip`: bas, govde, el, ayak, silah), `EQUIP` (savunma ve renk), `wear`, `unwear`. Zırh hayvan hasarını `25/(25+savunma)` katına indirir (`hurt(n, neden, phys)`). Silah yuvası el boşken kullanılır.
+  - **Figür:** Özellikler penceresinde figür ve yuvalar (`dollHTML`, `drawDoll`). Giyilenler dünyada da görünür (`eqLook`, `eqOpts`; `drawChibi` miğfer, eldiven ve çarık çizer).
+  - **Yeni tarifler:** Kemik miğfer ve Kemik zırh (toplam 591).
+- **Sırada (Boğaç onayladı):**
+  - v38: aynı adada tehlike seviyeli biyom bölgeleri (kayalık dağ, bataklık, karanlık orman).
+  - v39: mor ışık gizemi, gece seviyeye göre yabancı yaratıklar.
+- **v36 yenilikleri:**
+  - **Açlık:** `food` 100'den 12 dakikada 0'a iner; sıfırda can dakikada 10 azalır. Uyumak 20 tokluk yer; 70'in üstünde can 1,5 kat hızlı dolar. Cadının dersinden sonra başlar (`hungerOn`).
+  - **Yemek:** `foodVal` ve `RAWFOOD`; Yiyecek tariflerinde değer fiyattan gelir (10–65). Şifa tarifleri can verir (`healVal`). Çiğ et %35 ihtimalle mideye dokunur. F ya da turuncu çubuk en uygun yemeği yer (`eatBest`); envanterde "Ye" düğmeleri var.
+  - **Hayvanlar** (`ANIM`, `animals`, `tickAnimals`, `drawAnimal`):
+    - Tavşan ve geyik kaçar.
+    - Yaban domuzu ormanda saldırır (9 hasar).
+    - Kurt geceleri avlanır (11 hasar, parlayan gözler).
+    - Ekin'in kampının 22 kare çevresi güvenli (`SAFE_R`). Hayvanlar oyuncunun çevresinde doğar, uzaklaşınca kaybolur.
+  - **Savaş:** Boşluk, tıklama, dokunma ya da E ile saldırılır (`attack`, `weapon`, `WDMG`).
+    - Yeni Taş kılıç (örste, 12 hasar; GT türü `sword`, Dursun satar ve biler). İlk saldırıda tarifi kitaba yazılır.
+    - Mızraklar 10–28 hasar, balta ve kazma 7, yumruk 3. Hasar seviye başına %3 artar.
+    - Av et, deri, diş, kemik ve sinir verir. Toplam 589 tarif.
+  - Yeni sesler: `swing`, `hit`, `growl`.
+- **v35 yenilikleri:**
+  - **Ada alanı 20 kat büyüdü:** `W=322, H=232`, `MAPV=2`. Değer gürültüsüyle (`vnoise`, `fbm`) kıyı, 2 nehir ve 3 göl üretilir. Zemin karo önbelleğinden yalnızca görünen kısım çizilir (`TILEC`, `tvar`, `drawGround`). Ağaçlar ızgarada tutulur (`TGRID`, `treesNear`, `rebuildTG`). Küçük harita oyuncuyu ortalayan bir pencere gösterir.
+  - **Yerleşim:** Başlangıç güney kıyısında; Nazlı doğuda, Dursun batıda, Zümrüt batı ormanında, Usta Kemal kuzeybatıda (`usta`, `bench`, `lumber`), Hasan ve tarla kuzeydoğuda uzakta.
+  - **Eski kayıtlar:** `mv` farklıysa ilerleme korunur; konum başlangıca, keşif sıfırlanır, yerleştirilenler silinir. `qv` yoksa ve `tut>=15` ise tut +2 kaydırılır (iki yeni görev).
+  - **Görevler:** 2. görev Sv 5; 5. görev tüccarın ilk siparişi (`trader.called`, `trader.firstDone`, sabit 5 dal + 5 taş + 3 lif); 6. görev Usta Kemal'i bulmak; 8. görev Sv 8. Toplam 11 görev. Gemi `nextAt=Infinity` ile başlar, görevle çağrılır.
+  - **Alet çubuğu:** `hotList`, `hand`, `held`, `useTool(kind)`, `toolHint`, `needTool`. 1–0 tuşları, fare tekerleği, kutuya dokunma; aynı kutu ikinci kez seçilince el boşalır. Alet elde olmadan balta, kürek, kova ve tarla işleri yapılmaz; el doluyken toplanmaz. Eldeki alet `drawHeld` ile çizilir. Hile tuşları Z (+100 sikke) ve X (+100 XP).
+  - **Gün döngüsü:** `dayT` dakika cinsinden, 06:00–20:00 8 dk, gece 4 dk. `tickClock`, `skyNow`, `drawSky` (çarpma boyası ve gece ışıkları), `#clock`, `dayBanner`. Yatak (`sleepBed`) yalnızca gece; uyanınca 06:00, can ve enerji dolu.
+  - **Usta Kemal:** `talkUsta`, `openUsta`, `renderUsta`, `ustaPrice`. İlk karşılaşmada hediye Hasır yatak verir. Bilinen tarifleri sikkeyle yapar; yapılar (`PLACEABLE`: Yapılar kategorisi ve yataklar) yalnızca onda yapılır, kazanda kaynatılmaz.
+  - **Yerleştirme:** `placing`, `startPlace`, `placeOK`, `doPlace`, `rotatePlace` (Q), `cancelPlace` (Esc), `pickUp` (uzun basış), `placed[]` kayıtta `pl`. Kaplanan alan `FOOT`; çarpışma `placedBlock`.
+  - **Atölye:** Otomatik üretim binası (`o.ws`, `tickWorkshops`, `renderWorkshop`, `WS_DUR=25`). Yeni tarifler: Hasır yatak, Atölye (toplam 588).
+  - **Kazan:** `+` yaptığı şeyi kazana/örse koyar; örste de çalışır. Tarifler kategoriye göre gruplanır (`CATS`, `potCat`); arama ada ya da içindekine göre (`potBy`). Yeni açılan tarif grubunun en altına gelir (`openSeq`, kayıtta `os`).
+- **v34 yenilikleri:**
+  - Cadının adı **Zümrüt** oldu (eski adı Meltem; ekler: Zümrüt'ün, Zümrüt'e).
+  - Saç renkleri: kahraman kahverengi saçlı, kız kızıl saçlı ve açık mavi elbiseli (`LOOK`).
+  - **Can** (`hp`, `maxHP`, `hpRegen`): her zaman görünür. Böğürtlen 3, çakmaktaşı 2 can yakar (`HURT`). Can sıfırlanırsa `faint()`: Ekin'in ateşinde can yarıyla uyanırsın, kayıp yok.
+  - **Enerji** (`st`, `maxSt`, `stRegen`) ve **koşu**: Shift, telefonda çift dokunuş (`joy.run`, `goal.run`). `wantsRun`, `tickVitals`, `renderVitals` ve `#vitals` çubukları; enerji biterse `tired`. Değerler seviyeyle büyür (`STAT.hp/hpRe/st/stRe`).
+  - Yeni dallar: **Dayanıklılık** (K1 Koşu lv10/100 sikke, K2–K6) ve **Sağlık** (C1–C5). Yetenekler `lv` alanıyla kendi seviye şartını taşır (`lvOf`).
+  - Seviye 10'da Ekin'in koşu dersi (`runTut` 1 → 2 → 3, `checkRunLesson`): Koşu'yu al, enerji yarının altına inene kadar koş, Anladım.
+  - Kazanda bileşen kısayolu: alt tarifi olan bileşenin yanında **+** (`subRecipe`, `canQuick`, `quickBrew`). Eksikse kırmızı ipucu (`missingFor`). Tarif listesinde elde kaç tane olduğu görünür.
+  - Hasan 4. alet olarak **Taş kazma** ister (2 kabak + 2 ayçiçeği tohumu, 60 sikke).
+  - Su için kap gerekir: **Yaprak kova** (4 Yaprak + 3 Lif, yeni tarif, 586 tarif) ya da Huş kabuğu kabı. GT türü `water`, aşınmaz, Dursun satmaz (`wearTool`, `needBucket`).
+  - Hile panelinde 13 temel malzeme simgesi var, her tık +10 (`CHEAT_RES`).
+  - Grafikler: elle çizilmiş piksel haritaları (`PIXI` simgeler, `PIXW` ada nesneleri). Bütün simgelere ışık ve kontur eklenir (`lightCanvas`, `outlineCanvas`). Ağaçlar `treeSprite` ile yaprak kümelerinden üretilir, tür başına 3 çeşit; rüzgârda satır satır salınır. Çimen detayı ayrı bir rastgele kaynakla eklenir, ada yerleşimi değişmez.
+- **Giriş sahnesi (v33):** yeni oyunda `startCine()` ayrı bir tuvalde (`#cine`, 240×135 sahne, tam sayı ölçek) 30 sn oynar: gemide akşam yemeği → mor ışık → çarpma → alabora ("Tut elimi!") → su altı (kız uzaklaşıp kaybolur, dipte açılıp kapanan mor göz) → karanlık + hafıza cümleleri. Geç / Esc / Enter / boşluk atlar. Yalnızca yeni oyunda, tekrar izleme yok. Sesler ses motorunda üretilir: `hum, crash, creak, splash, blub, gasp, deep, surf`; `audio.play(ad,{loop,vol,fade})` ve `audio.musicTo(v,sn)`.
+- **Uyanış (`wake`):** kahraman deniz kıyısındaki kumda (`wakeSpot`, iskeleden uzak) gözleri kapalı yatar, kırpıştırıp kalkar; Ekin kumsaldan (`ekinWalkIn`) yürüyüp gelir. `wakeTalk()` → kahraman adını hatırlamaz, oyuncu ona ad verir (`heroName`), sonra kıza ad verir (`loveName`); ikisi de kayda yazılır (`hn`, `ln`). Sonra `met=true`, eğitim Ekin'in ağzından başlar, Ekin kamp ateşine döner. Sahne ve uyanış sırasında otomatik kayıt yapılmaz, HUD gizlidir (`body.cine`).
+- **Karakterler:** `drawChibi(g,x,y,LOOK.hero|LOOK.love,{fx,fy,step,sit,arm,closed,mouth})` ile çizilen tatlı insansı chibi'ler (21 px). Kahraman sarı saç/gömlek, kız uzun pembe saç + fiyonk + elbise. Amaç: kızı bulmak (adı görev 8–9 ve kazanma ekranında geçer).
+- Başlık ekranı, zorluk seçimi (Normal / Zor; Zor modda kırmızı uyarı ekranı), yeni oyunda siyah ekran + hikâye cümlesi + yumuşak açılış, Esc ile duraklatma menüsü, kayıt/yükleme, ayarlar (müzik ve efekt sesi ayrı).
+- **Zor mod keşfi:** kazanda "Tarifle kaynat" / "Deneyerek bul" sekmeleri. En fazla 6 malzeme türü atılır, adet önemsiz, hiçbir şey harcanmaz. Kazan sıcak-soğuk cevap verir (tarif açıldı / N malzeme eksik / alet eksik / sonuç yok) ve deneme günlüğü tutar. Her tarifin malzeme türü kümesi benzersiz.
+- **Görsel:** canlı palet, deniz dalgaları ve pırıltı, nehir akıntısı, kıyı köpüğü, rüzgârda salınan ağaç/çalı/çimen, kelebek, düşen yaprak, bulut gölgesi, sıcak ışık + kenar karartma.
+- **Eğitim 5 adım + Cadının dersi:** yürü (WASD, ilerleme çubuğu) → haritayı M ile aç/kapat → dal topla → sat → yetenek ağacı → Meltem belirir, 2 taşla keskin taş kaynat ve sat → Ekin belirir. Keskin taş = 2 taş (4 bileşen kuralının tek istisnası).
+- **Harita:** sağ alt köşede her zaman küçük harita (masaüstünde 264×191, XP çubuğu ona yer açar; yatay telefonda E'nin üstünde 132×96), keşfedilmemiş yerler gri duman + ara sıra beliren siyah ?. M büyük harita. Keşif `exp` alanında saklanır. Tab = Demirci. H6 yeteneği artık "Kâşif gözü" (açılan çember 7 → 12 kare).
+- **Yerleşim ve NPC'ler:** Ekin başlangıçta; Meltem batı ormanı (spotAt(330,430)); Hasan+tarla doğu (tx 52, ty 28); **Pazarcı Nazlı** güneydoğu (spotAt(700,650)); **Demirci Dursun** güneybatı (spotAt(420,630)); iskele güney. Kazan (B) yalnızca Meltem'in, Pazar (P) yalnızca Nazlı'nın, Demirci (Tab) yalnızca Dursun'un yanında açılır; uzaktayken düğmede konum iğnesi (`.far`). Nazlı bilinen toplanabilir malzemeleri satış fiyatının 3 katına satar (Pazar → Satın al). 49 alet (DB.t) yalnızca örste (`station='forge'`) dövülür, kazan listesinde yok; eski Malzemeci = Dursun'un "Al ve bile" sekmesi. Zor modda yanlış yerde deneme `wrong:` sonucu verir.
+- **Yol gösterme:** `guideKey()` hedefi seçer (eğitim satış adımları, kazan adımı, Ekin konuşma/ödül, görevlerin `go` alanı, Hasan'ın aletleri, kapalı menüye basınca `guideTo`). Karakterin çevresinde pusula oku + ad + metre, hedef ekrandaysa üstünde zıplayan ok, haritalarda sarı halka.
+- **Tarif satın alma** yalnızca Zor modda (kitap 50, tüccar 25). **Sikke sayacı** büyük ve vurgulu, XP çubuğunun üstünde; para kazanınca altın saçılır + altın sesi (`goldBurst`). **Eğitim/görev kartı** sağ üstte, ayarların solunda; adım bitince açık menü kapanır (`tutClose`).
+- **Kapalı tarif adları:** bilinmeyen harfler titreyen kutucuk (`.gx`), bilinmeyen malzeme kırmızı ?. **Hile modu:** ayarlarda; 5 = +100 sikke, 6 = +100 XP.
+- **Son:** Ekin'in 8. görevi Yelkenli sal (sal, 3 hasır, 2 halat, 2 uzun sopa, kürek, hasat sepeti; taş balta), 9. görev salı tüccar kumsalındaki iskeleden denize indirmek → kararan ekran → kazanma ekranı (süre, seviye, tarif, sikke, mod) → adaya dönüp devam edilebilir.
+- **Fiyat:** temel fiyat = malzeme toplamı × zincir çarpanı (1 adım ×1,20 … 6+ adım ×1,45) + aletin %10'u.
+- Toplama (yeşil süre çubuğu), kıyıdaki malzemelerin yeniden doğması, pazar, envanter, tarif kitabı (kapalı tarifler maskeli: "??şe k?lası").
+- XP ve seviye sistemi (gereken XP = 20·1,35^(seviye−1)), karakter özellikleri, 27 yetenekli ağaç, Demirci Dursun'un "Al ve bile" sekmesi (alet satışı, dayanıklılık, bileme).
+- **NPC sırası:** NPC'siz 3 adımlık eğitim → Yaşlı Ekin (7 görev) → ilk görev teslim edilince Cadı Meltem ve kazanı (3 adımlık "Cadının dersi") → tam 500 sikkede Yıldızsız Gezgin (başka gezegenden "hediye" robot köpeği 500 sikkeye satar, ilk köpeğin malzemesi seçilince toz bulutu olup kaybolur, karakter "Ne garip bir adam…" der; sonraki köpekler R menüsünden, her biri 1,6 kat). Köpekler temel değerlerin %50'siyle çalışır (DOG_SPEED 36, DOG_WORK 2), çağrılıp sevilebilir. Tüccar Nuri gemiyle gelir (ilk gemi 150. saniyede, 10 dakika kalır).
+- **Çiftçi Hasan:** baştan beri adada. Sırayla Tırmık → Sulama kabı → Tırpan ister ve her birine tohum + sikke + XP verir. Tarla 4×3: tırmıkla → ek → sula → bekle → tırpanla biç. Ürünler: buğday, havuç, patates, soğan, kabak, ayçiçeği.
+
+## Açık konular ve sonraki adım fikirleri
+- Belgedeki eski "Taş Çağı tarifleri" sekmesi, `Hammadde_tarifler.md` ile değiştirilmeli.
+- İmkânsız mod (tarif satın alma ve ipucu yok) henüz oyunda değil; belgede planlandı.
+- Bir sonraki biyom (çayır ya da kayalık) ve ona giden alet/taşıt: adadaki kaynaklarla 584 tarifin yalnızca ~85'i yapılabiliyor.
+- Kızın akıbeti ve mor ışığın ne olduğu (giriş sahnesi ipucu bıraktı; sonraki biyom hikâyesine bağlanabilir).
+- Belgenin "Açık sorular" bölümü: nihai ad, para kazanma modeli, motor (Godot mu Unity mi), ekip.
+
+## v39 — Karanlık, el yapımı, sürüler, açlık
+- Karanlık: elde meşale yoksa oyuncunun ışığı yok (darkness .985). Işık kaynakları tek yerde: `lightSources()`, `litAt(x,y)`.
+- NPC ateşleri: `FIRES` (Nazlı, Hasan, Kemal, Alp) + Ekin kamp ateşi, Dursun ocağı, Zümrüt kazanı. `nearCamp` artık hepsini kapsıyor (120 px).
+- Gece kuralı (her gece): `darkness()>=.7`, ışıksız, ateş ışığı dışında → `darkT` 8 sn → `nightAttack()` (mor hüzme `beam`, can 0) → `nightDeath()` (%30 kayıp, ertesi sabah 06:00 Ekin'in yanında, Ekin alay eder; ilk sefer farklı metin). `torchHint` meşaleyi çıkar uyarısı bir kere.
+- Meşale dayanıklılığı: `TORCHB` (Kaba 600 sn, Meşale 900 sn), yalnızca elde tutulurken `tickTorch` ile yanar; `torchBurn` kayıtta (`tb`). Alet kutusunda turuncu çubuk.
+- El yapımı (Tab, `mode='hand'`, `renderHand`): ✓ bilinen, alet istemeyen, derinlik ≤2, ≤3 çeşit tarifler; meşaleler tarif öğrenilince. Demirci kısayolu T. Yeni buton `b-hand`.
+- Sürüler: `PACK`, `packId`, `madPack(a)`; vurunca ya da saldırgan sürüye yaklaşınca hepsi saldırır; sürü merkezine toplanır. Lv<4 saldırgan sürü en çok 3.
+- Açlık baştan açık (`hungerOn=met&&!wake`), yeni oyunda tokluk 8 → Ekin'in yemeği 50. Tokluk 0'da can −1,6/sn. Domuz/kurt `wild` (tut>=11 ya da gün>1).
+- Dersler: `ytut` (1 böğürtlen topla → 2 ye → 3), `htut` (ctut bitince: Tab ile keskin taş). `wakeDone` → yemek diyaloğu → `wakeDone2`.
+- Testler: v39_t.js (yeni), testlerde `wakeDone();wakeDone2()` kullan.
+
+## v40 — Toplama hissi
+- Hedef çerçevesi kaldırıldı; `drawGlints` toplanabilir düğümlerde ara sıra parıltı.
+- Yere düşen malzeme: `drops`, `dropItem(n,x,y,q)`, `tickDrops`, `drawDrops`. Node/ağaç/kil toplama → yere düşer (oyuncudan uzağa, 12–21 px); üstüne yürüyünce (6 px, 10 px'de hafif çekim) `add()`. Kayıtta `dr`, `dh`.
+- `drawTree`: oyuncu ağacın arkasındaysa ağaç %42 opak.
+- `unstick`: 1 sn ilerleyemezsen yana `slide` (önü açık en yakın yan nokta, 30 px'e kadar).
+- Yetenek metinlerinde Türkçe hata bulunamadı (masaüstü ve telefonda bakıldı); kullanıcıdan örnek istendi.
+
+## v41 — Hasar hissi, diyalog kapatma
+- Hasar sesi `ouch` (renderOuch: gövde darbesi + çatırtı + kısa inleme); `hurt()` hasara göre ses düzeyi, ekran sarsıntısı (`shake`, `shakeP`), telefonda titreşim.
+- Diyalog: sağ üstte × (`#dclose`), dünyaya tıklamak/dokunmak da kapatır; `canLeaveDlg()` uyanış sahnesi ve mor hüzme sırasında kapatmayı engeller (Esc de).
+- Dokunarak/tıklayarak yürürken engele takılınca `trySlide` ile yandan dolaşır (en çok 5 deneme), hemen "gidilemiyor" demez.
+
+## v42 — Madenler, ganimet, HUD
+- Madenler: `MINES` (11 tür, ~170 yatak, spawn'dan 26 karo uzakta), node `mine:true,left`; kazma şart (`useTool('pick')`, süre ×1.5), 3–5 vuruş, tükenince 300 sn sonra başka yerde. Çizim `case 'ore'`, ikonlar drawIcon'da (cevheri / külçesi). 6 yeni Metal tarifi (598 tarif), fiyatlar formülle.
+- Av ganimeti `dropItem` ile yere. Su/engel içine düşen drop `shoreSpot` ile seker (`d.hop`).
+- `underAttack()` (kovalayan hayvan 170 px ya da son 3 sn ısırık): toplama başlamaz/kesilir, dokunma düz yürüyüş olur.
+- El yapımı: Yap / ×5 / Hepsi (`data-q`), `handCraft(r,quiet)`.
+- Hile: `cheatTime()`, +2 saat, Geceye sar (21:00).
+- Minimap/büyük harita gece kararır; işaretler yalnızca ışıkta (`lit`).
+- HUD: `#vit` (can/tokluk/enerji) saatin altında; `layoutHUD()` masaüstünde ikon boyutunu (`--ibs`, `--lw`) sikke kutusuna kadar ayarlar; telefon yatayda sabit küçük düzen. `.ib kbd` gizli; telefonda tuş geçen metinler TOUCH'a göre.
+
+## v43 — İki yaka, karakter yaratma, oyun sonu
+- Harita W=456,H=328, MAPV=3. Büyük nehir `DIV0→DIV1` (RIV[DIVA..DIVB]) adayı ikiye böler. `ZONE` (0 Yurt, 1 Bataklık, 2 Kül Diyarı), `zoneAt`, `RIVX`. Karo paletleri 6–11 (bataklık/kül). Ağaç türleri: Söğüt (bataklık), Ardıç (kül).
+- Kırık köprü `bridge` {x0,x1,y,fixed}; `BRIDGE_CELLS` reach'e dahil, `onBridge` yalnızca fixed iken blocked'ı aşar. `fixBridge()` 40 odun (Herhangi odun), `drawBridge`.
+- Ağaç kademesi: `TREE_TIER` (Çam 1, Meşe/Söğüt 2, Huş/Ardıç 3), `AXE_TIER`. Taş balta tarifi: Sopa, 2 Keskin taş, 2 İp, 2 Taş (fiyat 39).
+- Görev sırası değişti (qv:3 göçü restore'da): Taş balta, 5 odun, köprü, yaprak barınağı, 100 sikke, Lv5, Tüccar, Kemal, 10 tarif, Lv8, 25 tarif. Sal görevleri kalktı (launch hedefi kapalı).
+- Savaş: ANIM can ×1.3; bölge canavarları (`z`), `ranged`, `fx`, `reach`, `wind`. Yakın saldırı: wind (kırmızı !, hedef çizgisi) → lunge → `biteHit`. Menzilli: `fireShot`, `shots`, `tickShots`. Durumlar `pfx` (zehir, kanama, yanık), `addFx`, `#fxbar`. Atılma `doDodge` (Q / #dodgebtn), dokunulmazlık. Bölge afişi `tickZone`, atmosfer `drawZoneAir`.
+- Ölüm: `deathDrop()` %20 malzeme+sikke kaybı, kalanı `graves`'e; doğuş `wakeSpot`; `claimGrave` (üstüne yürü / E); haritada kafatası. `deathTalk`.
+- Marangoz Rıza (`carp`, spawn+22T,-22T): `HOUSES` listesi, `renderCarp`, `useHouse` (yatak koyma `o.bed`), yaprak barınağı bir gecelik (`shelterSlept`). Taş ev Ekin'in yanındaki `ekinPlotSpot()` arsasına sabit (`fixed`). `houseSprite`.
+- Kaptan Poyraz (`kaptan`, dock'a ~14 karo): tüm görevler + Lv10 → gelir (`tickKaptan`); `KAPTAN_WANT` 1 Kara pul + 3 Tunç külçesi → `launchBoat` → `endingScreen` (tekne metni).
+- Kova uyarısı: `waterSpot` sabit kalır, `waterWarned` bir kez gösterir.
+- Ana menü: `#tbg` canvas sahnesi (`titleLoop`), Çıkış `quitApp()` (#quit), oyunda `#b-exit` → `exitToMenu()`.
+- Karakter yaratma `#creator`: `CC`, `cLook`, `buildLook`, `applyLook`; drawChibi yeni alanlar `hs` (short/long/tail), `dress`, `gl`, `hat`, `hatC`, `flower`, `gender`. Kadın kahramanda eş `LOVE_M`. Kayıt `lk`, `ll`.
+- Testler: map_t, cb_t, p3_t, ui_t, mig.js, perf.js (≈54 fps, yükleme ≈1.4 sn).
+
+## v44 — İkinci perde (teknik)
+- Veri: `build_data.py` (scratchpad'te üretildi, mantığı yukarıda) 40 yeni tarif ekler; `DB.f` = örste dövülen zırhlar, `FORGED` = DB.t ∪ DB.f (istasyon seçimi artık TOOLS yerine FORGED). Granit balta/kazma yeni.
+- Kademeler: `TREE_TIER`, `AXE_TIER`, `PICK_TIER`, `ORE_TIER`, `AXE_FOR`, `PICK_FOR`. Metal GT ladder'ları (axe/pick/hunt/sword). `WDMG`, `EQUIP` (res: etki direnci, mud: çamur geçirmez, lamp). `resOf`, `mudProof`, `durCol`.
+- Bölge bitkileri: `ZPLANT` (zone, kural, adet, görünüm, yeniden doğma), `ZR` (findSpot bölge kısıtı; Böğürtlen yalnızca Yurt), çizim `drawPlant`, `PLANTC`. Yeni madenler MINES'ta; `MINE_Z` (demir bataklık+).
+- Çamur: `MUD`, `mudAt`, karo paleti 12; hız ×0,6.
+- NPC: `toygar` + `hut` (zoneSpot), `lampman` (checkLampman, talkLamp, `torchesUsed`), `balikci` (en uzak kumsal, BALIK_WANT, talkBalikci, drawFishBoat; `launchBoat(from)` genelleşti, sailing.from). `LATE` bayrağı: blocked() sondaki nesnelere başlatmadan önce dokunmasın.
+- İzler: `CLUES` (6), `clues` Set, `findClue`, `clueText`, `drawClues`, GUIDE 'clue'.
+- Etkiler: `BUFFS`, `buffOf`, `pbuff`, `addBuff`, `tickBuffs`, `buffOn`; #fxbar'da kesikli çerçeve.
+- Keşif defteri: `codex`, `CODEX_PERK`, `perk(cat)`, `checkCodex` (yeni tarif bulununca), `bookTab` (rec/codex/clue), `renderCodex`, `renderClues`.
+- Hava: `weather`, `nextWeather`, `tickWeather`, `drawWeatherTint`, `drawWeather` (yağmur/kül, sis düşük çözünürlüklü katmanda `FOGL`, şimşek), `WEATHER`. Ses: `renderSwamp/Ash/Rain/Wind/Thunder`, `tickAmb` (AMB döngüleri, müzik seviyesi).
+- Yemek: `openEat`, mod 'eat', `renderEat`; F ve tokluk çubuğu açar.
+- Kemer: `hotN`, `hotThing`, `hotCount`, `hotFree`, `beltFull`, `dropTool`, `beltFront`; gain() yuva doluysa yere bırakır; `DROP_LIFE` 180.
+- Kayıt aktarma: `exportCode`/`parseCode` ("HAMMADDE1:" + base64 JSON), #xfer modalı; dosya indirme önce `claude.use('downloads')`, yoksa blob linki.
+- Kayıt alanı `v44:{tg,tt,cl,kl,bf,cx,wx,tu,lm,bk,mh}`.
+- Ölçüm: masaüstü headless 60 fps, bataklıkta yağmur/sis ≈52 fps; yükleme ≈1,4 sn.
+
+## v45 — Yeni ilk saat ve kazan kuralı (teknik)
+- **Kazan yalnızca tarif öğretir:** `brew()` pot istasyonunda malzemeleri tüketir, `foundSet`'e ekler, ürün vermez; ikinci kez "zaten öğrendin". Öğrenilenler yeşil (`.rb.learned`, kitapta `li.learned`). Pot listesi örste dövülenler dahil bütün tarifleri gösterir (`stOK`). Pot içindeki `+` kısayolu kaldırıldı (yalnızca örste).
+- **Yapmak:** Tab (`handSimple` = FORGED ve yapı olmayan her şey, `handKnown` = foundSet). Örs yalnızca öğrenilmiş FORGED tarifleri döver; `forged` Set (ilk dövülen aletler; Dursun yalnızca onları satar). Kayıtta `v45.fg`, eski kayıtta found∩TOOLS.
+- **Eğitim `tz` (1–13):** 1 böğürtlen topla (5) → 2 ye (5, `tzEat`) → 3 Zümrüt'e git → 4 Kaba meşale öğren → 5 aynı malzemelerle Tab'la yap → 6 4 taş → 7 Keskin taş öğren → 8 Tab'la yap → 9 Nazlı → 10 keskin taşı sat → 11 Alp (yumruk, kerevit) → 12 Alp Taş balta+Sopa+İp tarifini verir, parçaları Tab'la yap → 13 Dursun döver → `tzFinish` (tut=12, Ekin'in "5 odun" görevi). Malzemeler `tzPlace` ile görüş alanına konur; ok `tzGuideKey`/`tzmat`. Eski eğitim (tut 0–10, ftut/ctut/htut/ytut) tz açıkken kapalı. "Eğitimi geç" → `tzSkip`.
+- **NPC sırası:** Ekin (122,321) → Zümrüt (-2,-29 karo) → Nazlı (+30,-51) → Alp (+62,-36) → Dursun (+70,-71); Rıza (-34,-22) batıya taşındı. Uyanış: tokluk 25, çorba yok.
+- **Gece yardımı:** ilk kez meşalesiz karanlığa yakalanınca bir kez Kaba meşale gelir (`helpTorch`).
+- **Canavarlar:** saldırganların aggro ×1,5; domuz şarj (reach 46), kurtlar güçlendi, gece 2 sürü; yeni **Engerek** (Yurt, Sv2+, zehir tüküren) ve **Kül cini** (3'lü ateş); kurbağa ve lav 3'lü atış; kara ejder 5'li ateş yağmuru. `#hovertip`: fare hayvanın üstünde → ad, mizaç, can, menzil, etki.
+- **Meyve ağaçları:** TREE_TYPES 5–10 (Elma, Armut, Erik, Ceviz, Kestane, Mürver) + Ardıç meyvesi; `vnH` ile yerleşir (rnd sırası bozulmaz). Boş elle E = silkele (`FRUIT_RE` 150 sn); noCut olanlar kesilmez. Yeni ZPLANT: yabani havuç, yaban mersini, alıç, kanlıca, yaban sarımsağı, kuzukulağı, kızılcık.
+- **Harita:** `MAPIC` 9×9 piksel ikonlar (`mki`), büyük harita `mapZ` (1–10) + `mapC` merkez; tekerlek, sürükleme, +/−/◎ düğmeleri.
+- **Hile/ayar:** `#c-night` basılı tut = `timeHold` (saat 45× hızlı). Ayarlar → Gece ışığı (`settings.nightLight`; `lampOn()` bunu da sayar).
+
+
+## v46 — Oynayarak bulunan hatalar, dövüş dengesi, 9 yeni özellik (teknik)
+**Hatalar**
+- D1 eğitim kilidi: `helpTorch` gece meşalesi verirken tz 1–4 arasında tarifi `foundSet`'e eklemez; `brew()` tz 4/7'de tarif zaten biliniyorsa `tzLearned` çağırır (eski kayıtlar da kurtulur).
+- D2 menüler dünyayı durdurur: `frame` içinde `hold=(v46Hold()||((craftOpen||dlgOpen)&&!sailing))&&!wake&&!beam` → saat, açlık, hayvanlar, oklar, etkiler, hava, can/enerji durur.
+- D3 açlık: `hungerEarly()` (eğitimde ya da gün ≤2: ×0,5; gün ≤4: ×0,75). Böğürtlen ve benzeri yemişler +6.
+- D4 mezar: `graveSpot()` açık, yürünür, NPC/ateş/kazandan 26 px uzak yer seçer; eski kayıtlarda da taşınır. Alma yarıçapı 14, `target()` mezarı en önce görür, tıklayınca üstüne yürür.
+- D5 meşale elindeyken toplanır (`isTorch` "elin dolu" kontrolünden muaf).
+- D6 diyalog sayı tuşu boş arama kutusuna yazılmaz; `closeCraft` girişin odağını bırakır; gün afişi açıkken duyurular bekler (`lvlUntil`); eğitimin ilk adımında "Karnın guruldadı" çıkmaz.
+- Ek: `frame` dt negatif olamaz (yeniden yüklemede `arc` negatif yarıçap hatası veriyordu).
+
+**Dövüş dengesi (Yurt öğrenme bölgesi; bataklık ve Kül Diyarı aynı sert)**
+- Can ×1,3 ve saldırganlık menzili ×1,5 yalnızca bölge canavarlarına (`z`); Yurt'ta menzil ×1,15.
+- Domuz hasar 9, hız 50, hazırlık 0,72 sn; kurt 10/66/0,6; engerek 6 hasar, zehir 1,5/4 sn, atış 2,6 sn; kirpi kanaması 1/4 sn.
+- Sürüler sırayla saldırır (`packBusy`: Sv<6 aynı anda 1, sonra 2); Sv<4 saldırgan sürü en çok 2, Sv<7 en çok 3; uzak kovalamayı bırakırlar (aggro ×2).
+- Isırık sonrası dokunulmazlık 0,7 sn; yumruk 4, balta/kazma 8 hasar.
+
+**Yeni (hepsi dosyanın sonundaki v46 bloğunda; kancalar: target/pickAt/interact/updatePrompt/frame/drawDarkness/lightSources/nearCamp/foodVal/buffOf/dayBanner/snapshot/applyState/start/talkWitch/tickSailing/endingScreen/drawMap/renderMapPanel/bookTabs)**
+- Kamp ateşi: yeni tarif (5 Dal, 3 Taş, 2 Kuru ot, 1 Çakmaktaşı · Ateş · 14 sikke; recipes3.json'a da eklendi). Tab ile yapılır, **V** ya da el menüsündeki **Yak** ile kurulur (`camps`, 330 sn, odun +95 sn, en çok 720). Işık + güvenli bölge (100 px), yanında can hızlı dolar; E: odun at, çiğ et/balık közle (`KOZ`: "Közlenmiş …" ürünleri, fiyatları DB.p'de, doyuruculuk `V46FOOD`).
+- Balık tutma: olta/ağ/kemik zıpkın elde, suya dön, E → bekle → "Vurdu!" (1 sn içinde bas) → ibre yeşilde bas. Bölge/deniz-nehre göre balık tablosu (`FISHT`), zorluk `FISH_HARD`, alet genişliği `FISH_W`, gece %5 mor kıymık. Dayanıklılık 1 düşer.
+- Tuzaklar: Tuzak elde çayırda E (en çok 6, `traps`); 110–230 sn sonra tavşan/keklik/sincap (bataklıkta ördek) ganimeti; E ile al ya da topla. Balık kapanı suya bırakılır, balık yakalar. Haritada kahverengi kare, avlıysa sarı.
+- Gece: `Ay çiçeği` (yenir, Gece gözü 2 dk) ve `Mor kıymık` (30 sikke) oyuncunun 150–450 px çevresinde doğar, sabah kaybolur; ateş böcekleri; karanlıkta küçük ışık delikleri (`v46Glows`, güvenlik saymaz).
+- Anılar: `MEMS` 5 sahne (10/25/50/100/175 tarif), kendi tuvalinde piksel sahne + satırlar; Zümrüt 2 mor kıymığı eritirse sıradaki anı erken gelir. Kitap › **Anılar** sekmesinden yeniden izlenir. Eski kayıtlarda yalnızca en son eşik oynar.
+- Zümrüt'ün bilmeceleri: "Bir bilmecen var mı?" → görülmüş malzemelerden açılabilir bir tarif (`pickRiddle`, ipuçları `RHINT`); kazanda öğrenince 30 + fiyat×2 sikke, 20 XP.
+- Harita işaretleri: **N** bulunduğun yere, büyük haritada 📍 kipiyle dokunduğun yere; ad + 5 renk, düzenle/sil (`marks`, en çok 40).
+- Gün sonu özeti: yeni günde (`dayBanner`→`v46NewDay`) tarif, XP, kese, av, balık, közleme, tuzak, keşif farkı + bir ipucu.
+- Sisli Ada: Rüstem'in teknesi artık doğrudan bitişe değil, ayrı bir sahneye götürür (`sis`, kendi tuvali 320×180, sis, pusula). 3 iz (kurdele, fener, tasma) → taş halka → mor gemi iner, camın ardında Mavi → "Mor pusula" eşyası → bitiş ekranı (yeni metin). "Sahneyi geç" var.
+- Kayıt alanı `v46:{cp,tr,mk,me,rd,rn,ds,dx,sd,h,ft}`.
+- Test: `node tests/v46_t.js <ekran klasörü> Hammadde_prototip.html` (14 kontrol). v44_t1–t4 de geçiyor (t2'de "won false" beklenen: artık önce Sisli Ada açılıyor).
