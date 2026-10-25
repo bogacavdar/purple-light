@@ -7,7 +7,7 @@ Tek oyunculu, piksel sanatlı bir keşif ve hayatta kalma oyunu. Mor bir ışık
 iPhone'da Safari ile aç → Paylaş → **Ana Ekrana Ekle**: simgeden açınca tam ekran olur.
 
 ## Kontroller (masaüstü)
-WASD yürü · E topla / konuş · Boşluk vur · Q atıl · Tab elle yap · F ye · M harita · V kamp ateşi kur · N haritaya işaret koy · Esc menü
+WASD yürü · E topla / konuş · H boş el (topla) · Boşluk vur · Q atıl · Shift koş · Tab elle yap · F ye · M harita · V kamp ateşi kur · N haritaya işaret koy · Esc menü
 
 ## Dosyalar
 - `index.html` — oyunun kendisi (tek dosya, GitHub Pages bunu açar)

@@ -21,11 +21,11 @@ await ev("selectRecipe('Tunç zırh')");console.log('armour recipe at forge',awa
 await ev("gain('Tunç levha',4);gain('Sinir kirişi',2);selectRecipe('Tunç zırh');fillAll();brew()");console.log('armour',await ev("(inv['Tunç zırh']||0)+' '+$('cmsg').textContent"));
 await ev("closeCraft();wear('Tunç zırh');wear('Tunç kılıç')");console.log('def',await ev("armorDef()+' w '+weapon().n+' '+weapon().dmg"));
 // quest list 12-18 progression texts
-for(let i=11;i<18;i++){await ev(`tut=11+${i};qState='talk';renderTut()`);const t=await ev("QUESTS[tut-11].t+' | '+(QUESTS[tut-11].p())");console.log('Q',i+1,t)}
+for(let i=10;i<17;i++){await ev(`tut=11+${i};qState='talk';renderTut()`);const t=await ev("QUESTS[tut-11].t+' | '+(QUESTS[tut-11].p())");console.log('Q',i+1,t)}
 // end: kaptan -> balikci
 await ev("tut=11+QUESTS.length;lvl=10;tickKaptan()");console.log('kaptan',await ev("kaptan.state"));await ev("talkKaptan()");console.log('k:',await ev("$('dtext').innerText.slice(0,60)+' balik '+balikci.shown"));await ev("bye()");
 await ev("player.x=balikci.x;player.y=balikci.y+24;dayT=700");await p.waitForTimeout(800);await p.screenshot({path:S+'/balik.png'});
 await ev("talkBalikci()");console.log('b1',await ev("$('dtext').innerText.slice(0,50)"));await ev("bye()");
 await ev("BALIK_WANT.forEach(([n,q])=>gain(n,q));CLUES.forEach(c=>clues.add(c.id));renderInv();talkBalikci()");console.log('b2',await ev("$('dch').innerText"));
-await p.click('#dch button');await p.waitForTimeout(2500);await p.screenshot({path:S+'/sail.png'});await p.waitForTimeout(6000);await p.screenshot({path:S+'/end.png'});console.log('won',await ev("won"));
+await p.evaluate(()=>window.__ham.ev('finishType()'));await p.click('#dch button');await p.waitForTimeout(2500);await p.screenshot({path:S+'/sail.png'});await p.waitForTimeout(6000);await p.screenshot({path:S+'/end.png'});console.log('won',await ev("won"));
 console.log('errs',errs);await b.close();})();

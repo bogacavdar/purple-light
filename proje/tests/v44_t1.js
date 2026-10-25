@@ -25,7 +25,7 @@ await ev("['Taş balta','Taş kazma','Mızrak','Taş kılıç','Kaba meşale'].f
 await ev("gain('Tırmık')");console.log('after 6th',await ev("(inv['Tırmık']||0)+' drops '+drops.filter(d=>d.n==='Tırmık').length"));
 await p.waitForTimeout(500);await p.screenshot({path:S+'/belt.png'});
 // lampman
-await ev("torchesUsed=5;coins=1500;renderInv();checkLampman()");await p.waitForTimeout(300);console.log('lamp',await ev("lampman.shown"));await ev("talkLamp()");await p.waitForTimeout(100);await p.click('#dch button');await p.waitForTimeout(200);await p.click('#dch button');await p.waitForTimeout(1200);
+await ev("torchesUsed=5;coins=1500;renderInv();checkLampman()");await p.waitForTimeout(300);console.log('lamp',await ev("lampman.shown"));await ev("talkLamp()");await p.waitForTimeout(100);await p.evaluate(()=>window.__ham.ev('finishType()'));await p.click('#dch button');await p.waitForTimeout(200);await p.evaluate(()=>window.__ham.ev('finishType()'));await p.click('#dch button');await p.waitForTimeout(1200);
 console.log('lamp eq',await ev("equip.bas+' coins '+coins"));await ev("dayT=1320");await p.waitForTimeout(800);await p.screenshot({path:S+'/lamp_night.png'});
 // export/import
 await ev("openXfer('ex')");const code=await ev("$('x-code').value");console.log('code len',code.length,code.slice(0,14));const parsed=await ev("Object.keys(parseCode($('x-code').value)||{}).join(',')");console.log('parsed',parsed);await ev("closeXfer()");

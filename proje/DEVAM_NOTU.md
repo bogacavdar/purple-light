@@ -6,7 +6,10 @@
 - Yol: yeni oturumda `add_repo` (bogacavdar/purple-light, push) → `git clone --depth 1` → dosyaları kopyala → commit (Türkçe mesaj, sürüm numarasıyla) → `git push`. Kullanıcıya oyunun adresini hatırlat: https://bogacavdar.github.io/purple-light/
 - GitHub Pages ayarını (Settings → Pages → main, /root) oturum açamıyor (API proxy'de kapalı); Boğaç bir kez kendisi açar.
 
-## ⭐ BURADAN BAŞLA (25 Ekim 2026, v46)
+## ⭐ BURADAN BAŞLA (25 Ekim 2026, v47)
+- **v47 (artifact Version 53, GitHub'a gönderildi):** konuşmalar harf harf yazılıyor ve her NPC'nin kendi mırıltı sesi var; karakter ekranında cinsiyete göre saç stilleri, sakal, ince gözlükler, birbirinden farklı şapkalar; NPC'ler oyuncuyla aynı detaylı çizimde (göz kırpma, nefes, sana dönme, küçük efektler); Taş balta adım adım; ilk görev ("Taş balta yap") kalktı; Alp atılmayı öğretiyor ama Atılma artık yetenek (Savaş dalı, 100 sikke), Koşu ondan sonra; enerji barı mavi ve canın altında; 8 dal × 8 yetenek; altın sikke ikonu ve satışa göre büyüyen sikke sesleri; açlıkta mide guruldaması + kırmızı bar; zehirli yiyecekler (yeşil surat, bir kez yiyince öğrenilir); boşta kalan malzemelere 7 yeni tarif; pazarda kazan uyarısı + "Kazanda işe yaramayanları sat"; hotbar'ın solunda el (toplama) düğmesi; haritada büyük NPC ikonları ve oyuncunun kafası; adanın altında deniz payı (HUD karaya binmez).
+
+## Önceki başlangıç (v46)
 - **v46 (artifact Version 52, aynı link):** Claude oyunu baştan oynadı, bulduğu hataları düzeltti ve Boğaç'ın onayladığı 9 fikri ekledi: kamp ateşi, balık tutma, tuzaklar/balık kapanı, gece buluntuları (ay çiçeği, mor kıymık, ateş böcekleri), Mavi'nin 5 anısı, Zümrüt'ün bilmeceleri, harita işaretleri, gün sonu özeti ve oynanabilir **Sisli Ada** (final öncesi bölüm). Ayrıntı en altta "v46" bölümünde.
 - Boğaç'ın kararı: fiyatların kesirli görünmesi (7,1 sikke) **hata değil**; seviye ve yetenek ağacı fiyatı artırdığı için normal.
 
@@ -262,3 +265,21 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Sisli Ada: Rüstem'in teknesi artık doğrudan bitişe değil, ayrı bir sahneye götürür (`sis`, kendi tuvali 320×180, sis, pusula). 3 iz (kurdele, fener, tasma) → taş halka → mor gemi iner, camın ardında Mavi → "Mor pusula" eşyası → bitiş ekranı (yeni metin). "Sahneyi geç" var.
 - Kayıt alanı `v46:{cp,tr,mk,me,rd,rn,ds,dx,sd,h,ft}`.
 - Test: `node tests/v46_t.js <ekran klasörü> Hammadde_prototip.html` (14 kontrol). v44_t1–t4 de geçiyor (t2'de "won false" beklenen: artık önce Sisli Ada açılıyor).
+
+
+## v47 — Ses, karakter, NPC, eğitim, yetenek ağacı (teknik)
+- **Konuşma:** `say()` sonunda `typeDlg(who)`: #dtext metin düğümleri boşaltılıp ~42 harf/sn geri yazılır, noktalamada kısa durak. Yazarken tuş/dokunuş önce metni tamamlar (`finishType`), seçenekler soluk (`.dch.typing`). Ses: `audio.synth(f)` (gerçek zamanlı WebAudio), `VOICES[npc adı]` = taban frekans, dalga, filtre, sapma, hız; `babble()` her iki harfte bir blip. Kamp/tuzak gibi nesnelerde ses yok.
+- **Karakter:** `drawChibi` saç bölümü yeniden yazıldı: erkek `HS_E` (short, messy, side, spiky, buzz, long, tail), kadın `HS_K` (long, tail, braid, bun, bob, pixie, twin); `L.beard` (biyik, keci, sakal); gözlük `round` ince altın çerçeve, `kare` ince çerçeve, `sun` koyu cam; şapkalar `HATS_E/HATS_K`: kasket, ponponlu bere, hasır, kovboy, silindir, fes, korsan, bandana, çiçek tacı. `o.sick` yüzü yeşile çevirir.
+- **NPC'ler:** `NPCL` görünümleri + `npcDraw()` (drawChibi, nefes `bob`, göz kırpma `closed`, 80 px içinde oyuncuya döner). Ekin şapka/pipo dumanı/asa, Zümrüt sivri şapka/iksir, Nazlı küpe/el sallama, Dursun önlük/çekiç kıvılcımı, Alp kalkan/kılıç, Hasan tulum/dirgen, Kemal/Rıza önlük, Toygar kukuleta/yay. Eşyalar (tezgâh, örs, kulübe) aynı.
+- **Eğitim:** `tzAlpDone` iki diyalog: atılma bir yetenek (Savaş, 100 sikke), pazar satışı; sonra balta. `axeStep` 0–3 (`AXE_STEPS`: 2 keskin taş → sopa → 2 keskin taş → 2 ip) → tz 13; kart `axeCard()`. İlk 100 sikkede (`coinWatch`) Atılma duyurusu.
+- **Görevler:** "Taş balta yap" QUESTS'ten çıktı (17 görev). `tzFinish` → tut 11 + `axeInfo`: Ekin'in ilk konuşması "Ooo, baltanı yapmışsın!" + ağaç kademeleri. Kayıt `qv:4`; qv 3 kayıtlarda tut ≥12 ise tut−1. `checkRunLesson` tut ≥13.
+- **Yetenek ağacı:** 8 dal × 8 (Bilgelik artık normal modda da görünür). Yeni: T7 T8, Z5–Z8, H7 H8, B4–B8, S1 Atılma, S2 Çevik atılma (Dayanıklılık dalı = Savaş; K1 Koşu artık S1'den sonra), A5–A8, C6–C8. 5000 sikkelik olanlar Sv12. Eski kayıtlarda (v47 alanı yoksa) Sv>1 ya da görevler başladıysa S1 hediye. Etkiler: tradePct, sell lucky, sellMult, forge keep + `v47Craft` (elle yaparken malzeme kalması / çift ürün), gainXP çarpanı, ipucu süresi, bilmece ödülü, wearsNow, hotN, hpRegen, maxHP, speedMult, karanlıkta 38 px görüş, Z8 +10 XP.
+- **Enerji:** `#stbar` canın altına taşındı, mavi; atılma 14 (S2: 9) enerji. Bar S1 ya da K1 varken görünür.
+- **Sikke:** coinbox ikonu CSS ile yuvarlak altın; `goldBurst` → `coinSound(n)` (1–9, 10–99, 100–999, 1000+ jackpot).
+- **Açlık:** `tickStomach`: tokluk <25 → mide guruldaması (`stomachGrowl`) + baloncuk ("Açım…"), bar kırmızı yanıp söner.
+- **Zehir:** `POISON` (Mürver, Meşe palamudu, Sinek mantarı [artık yenir], Kurt eti, Kuzukulağı); yenince 0,6 sn sonra `addFx('zehir')`, `sickT`, `poisonKnown` (yeme listesinde "zehirli!"). C7 Demir mide %60 azaltır.
+- **Yeni tarifler (boşta kalan malzemeler):** Ay çayı, Ay ışığı iksiri, Kıymık kolye, Diken iğnesi, Timsah dişi kolye, Kül dişi muska, Ateş iksiri (DB + recipes3.json; iksir etkileri V46BUFF'ta).
+- **Pazar:** `potUses(n)` (öğrenilmemiş, açık tarif) → "Kazanda şimdi N tarifte işe yarar"; `potLater` → "İleride N tarifte lazım olabilir"; `#sellsafe` yalnızca şimdi işe yaramayanları satar.
+- **El düğmesi:** hotbar'ın başında `#handbtn` (H): eli boşaltır, yakında toplanacak bir şey varsa hemen toplar.
+- **Harita:** NPC ikonları büyük (`mki` ölçeği 2,4/3,3/4), oyuncu `headIcon()` (kendi kafası). Kamera alttan `SEA_PAD()` kadar denize taşar, `drawSeaPad` dalgalı deniz çizer.
+- Testler: v46_t geçiyor; v44_t1/t2 diyalog yazma ve 17 görev için güncellendi.

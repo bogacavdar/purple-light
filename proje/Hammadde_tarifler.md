@@ -983,3 +983,16 @@ Alet kademeleri: çam (taş balta) → meşe (granit ya da çakmaktaşı balta) 
 | Kamp ateşi | 5× Dal, 3× Taş, 2× Kuru ot, 1× Çakmaktaşı | Kazan (öğren) · Tab (yap) · V (kur) | 1 | 14 |
 
 Kamp ateşinde közlenen yiyecekler tarif değildir: her çiğ et ve balık 1'e 1 "Közlenmiş …" olur (ör. Közlenmiş sazan, Közlenmiş geyik eti). Fiyat: çiğ fiyatı × 1,8 + 2.
+
+
+## v47 eklemesi: boşta kalan malzemeler için tarifler
+
+| Tarif | Malzemeler | Grup | Fiyat |
+|---|---|---|---|
+| Ay çayı | 2× Ay çiçeği, 2× Su, 1× Nane | Şifa (Gece gözü 1,5 dk) | 26 |
+| Ay ışığı iksiri | 3× Ay çiçeği, 1× Mor kıymık, 2× Su | Şifa (Gece gözü 5 dk) | 71 |
+| Kıymık kolye | 2× Mor kıymık, 2× İp | Süs | 88 |
+| Diken iğnesi | 3× Kirpi dikeni, 1× Kemik | Zanaat | 17 |
+| Timsah dişi kolye | 2× Timsah dişi, 2× İp, 1× Kemik | Süs | 78 |
+| Kül dişi muska | 2× Kül dişi, 1× Halat, 1× Kehribar | Süs | 277 |
+| Ateş iksiri | 1× Ateş bezesi, 3× Su, 2× Ateş çiçeği | Şifa (Ateş kalkanı 4 dk) | 131 |
