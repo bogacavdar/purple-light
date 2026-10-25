@@ -11,6 +11,7 @@
 <meta name="theme-color" content="#1d2a1a">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
+<script>if('serviceWorker' in navigator&&location.protocol==='https:')addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})</script>
 <script>
 // Shows any startup error on screen (so a phone user can read it), instead of a silent frozen page.
 window.__hamErr=function(msg){try{var b=document.getElementById('errbox');if(!b){b=document.createElement('div');b.id='errbox';b.style.cssText='position:fixed;left:8px;right:8px;bottom:8px;z-index:99;background:#4a0e12;color:#fff;border:2px solid #ff6a5a;font:14px/1.4 system-ui,sans-serif;padding:10px 12px;white-space:pre-wrap';(document.body||document.documentElement).appendChild(b)}b.textContent='Oyun bir hatayla karşılaştı. Bu yazının ekran görüntüsünü gönderirsen düzeltebilirim:\n'+msg+'\n'+navigator.userAgent}catch(e){}};
