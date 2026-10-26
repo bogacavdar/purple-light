@@ -2564,7 +2564,7 @@ function tickGather(dt,moving){
 function renderInv(){
   document.getElementById('coinval').textContent=coins.toLocaleString('tr-TR');
   if(!wiz.shown&&!wiz.gone&&!wiz.met&&day>=WIZ_DAY1&&met&&!wake&&!onTitle&&!fading)summonWizard();
-  else if(!wiz.shown&&wiz.gone&&!wiz.sig&&!wiz.v2&&day>=WIZ_DAY2&&met&&!wake&&!onTitle&&!fading){wiz.v2=true;wiz.gone=false;summonWizard()}
+  else if(!wiz.shown&&wiz.gone&&!wiz.sig&&!wiz.v2&&day>=Math.max(WIZ_DAY2,(wiz.goneDay||0)+1)&&met&&!wake&&!onTitle&&!fading){wiz.v2=true;wiz.gone=false;summonWizard()}
   if(coins>lastCoins&&!onTitle&&!fading){goldBurst(coins-lastCoins)}
   lastCoins=coins;
   document.getElementById('b-dog').hidden=!dogs.length;
@@ -3932,7 +3932,7 @@ function drawDogBeam(b){const e=(performance.now()-b.t0)/1000;if(e>3.2){const i=
 function wizVanish(){
   if(!wiz.shown)return;
   for(let i=0;i<46;i++){const an=Math.random()*Math.PI*2,sp=10+Math.random()*46;parts.push({x:wiz.x+(Math.random()-.5)*8,y:wiz.y-6+(Math.random()-.5)*8,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp*.6-12,life:1.1+Math.random()*.6,c:['#b8b0a0','#8a8478','#d8d0c0','#a070e0'][i%4]})}
-  sfx('magic');wiz.shown=false;wiz.gone=true;
+  sfx('magic');wiz.shown=false;wiz.gone=true;if(!wiz.v2)wiz.goneDay=day;   // v69.2: the day-20 visit comes at the earliest the day after he left
   setTimeout(()=>{bubble={text:'Ne garip bir adam…',t:3.6};sfx('pick')},900);
 }
 function wizChoices(){return [{t:'Hoşça kal',pri:1,f:bye}]}
