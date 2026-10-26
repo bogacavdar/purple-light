@@ -1869,7 +1869,8 @@ function gatherTarget(trees){const h=held(),free=!h||PLACEABLE.has(h)||isTorch(h
 function target(){
   {const x=v46Target(true);if(x)return x}
   {const pd=dogs.find(d=>d.state==='play'&&Math.hypot(d.x-player.x,d.y-player.y)<20);if(pd)return{kind:'dog',d:pd}}
-  {const g=gatherTarget(false);if(g)return g}   // something to gather right here comes before talking to the person next to it&&Math.hypot(npc.x-player.x,npc.y-player.y)<30)return{kind:'npc'};
+  {const g=gatherTarget(false);if(g)return g}   // something to gather right here comes before talking to the person next to it
+  if(ekinOn()&&Math.hypot(npc.x-player.x,npc.y-player.y)<30)return{kind:'npc'};
   if(witchShown&&Math.hypot(cauldron.x-player.x,cauldron.y-player.y)<26)return{kind:'pot'};
   if(witchShown&&Math.hypot(witch.x-player.x,witch.y-player.y)<28)return{kind:'witch'};
   {const f=plotAt();if(f&&Math.hypot(f.x-player.x,f.y-player.y)<12)return{kind:'farm',f}}
