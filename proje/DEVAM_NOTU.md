@@ -617,3 +617,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 
 ## v87 (27 Ekim 2026)
 - Hakkında: “Boğaçhan Çavdar” kalın ve altın sarısı. Menüde "Versiyon 87".
+
+## v88 (27 Ekim 2026)
+- Ayarlar: **Tam ekran** anahtarı (bilgisayar ve Android; iPhone'da gizli). Tercih localStorage `hammadde.fs`; açıksa oyun yeniden açılınca ilk tıklama/tuşta tam ekrana geçer. Tam ekranda Keyboard Lock ile Esc oyuna gider (Chrome/Edge; çıkmak için Esc basılı tutulur). Eski `s-full` düğmesi gizlendi.
+- Ayarlar: **Çözünürlük** (Otomatik/Yüksek/Orta/Düşük) → `hammadde.res`. PERF.cap bir getter oldu: Otomatik iken izleyicinin değeri, diğerlerinde devicePixelRatio × 1/0.75/0.5 (en az 0.5). Hemen uygulanır.
+- Menüde "Versiyon 88".
