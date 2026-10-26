@@ -10985,6 +10985,9 @@ let buf='';
 addEventListener('keydown',e=>{const t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;if(e.ctrlKey||e.metaKey||e.altKey)return;
   const m=/^Key([A-Z])$/.exec(e.code||'');if(!m){buf='';return}buf=(buf+m[1].toLowerCase()).slice(-5);
   if(buf==='cheat'){buf='';setOk(!ok);sfx(ok?'level':'bad');toast(ok?'Hile ayarları açıldı: Ayarlar\'da':'Hile ayarları gizlendi ve kapatıldı')}},true);
+// v71.3: on a phone, tap the "Ayarlar" heading three times quickly
+{const hd=document.querySelector('#settings h2');if(hd){let n=0,last=0;hd.style.userSelect='none';hd.style.webkitUserSelect='none';
+  hd.addEventListener('click',()=>{const now=performance.now();n=now-last<700?n+1:1;last=now;if(n>=3){n=0;setOk(!ok);sfx(ok?'level':'bad');toast(ok?'Hile ayarları açıldı':'Hile ayarları gizlendi ve kapatıldı')}})}}
 // every cutscene from the Keşif defteri
 const cb=$('b5scn');
 function syncScn(){if(cb)cb.checked=!!settings.b5scn;try{if(craftOpen&&mode==='book'&&bookTab==='codex')renderCraft()}catch(e){}}

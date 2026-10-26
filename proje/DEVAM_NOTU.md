@@ -498,3 +498,6 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 
 ## v71.2 (26 Ekim 2026)
 - Evlilik teklifi anısında (MEMS[2]) hep erkek teklif eder: kadın kahramanda soldaki uzanan kişi eş (erkek), konuşmalar yer değiştirir (MEM2K/MEM2M, openMem başında memFix()).
+
+## v71.3 (26 Ekim 2026)
+- Telefonda hile açma: Ayarlar penceresindeki "Ayarlar" başlığına hızlıca (0,7 sn arayla) 3 kez dokun → hile ayarları açılır/gizlenir (klavyedeki "cheat" ile aynı, v69c).
