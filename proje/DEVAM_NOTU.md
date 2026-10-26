@@ -399,3 +399,6 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Bölge hissi: ilk girişte büyük başlık (`V65.seen`, kayıtta), her bölgenin hava rengi/parçacıkları, haritada bölge renkleri + açıklama; büyük haritada keşfedilmiş yerin üstüne gelince bölge adı (`#v65mt`). Müzik ayarı "Bölgeye göre" (varsayılan): Ada, Orman, Sis, Dağ, Derinlik, Kristal; yurtta gece Gece.
 - Yan profil: burun, kaş, dudak, çene; gözlük yandan cam kenarı + sap; kel karakterde saç tokası yok (yaratmada satır da gizli).
 - Hız: `findSpot` artık düğüm ızgarası (`nodeNear`) kullanır.
+
+## v66 — Yan profil (Boğaç'ın seçimi)
+- `profR` (v63 bloğu) yeniden: Boğaç 10 seçenekten "2"yi (tek piksel burun ucu) seçti, yanak ön profildeki gibi belirgin pembe (#ff9a9a, 2 piksel), kahkül öne taranmış ("S2"), kafanın arkası basamak basamak yuvarlak ("Y2"), gövde 4 piksel genişliğinde (ince). Bütün saç stilleri, şapkalar, sakal/bıyık ve gözlükler buna göre uyarlandı. Önizleme `scratchpad/prof` altında üretilmişti (repo dışında).

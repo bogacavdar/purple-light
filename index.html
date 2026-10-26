@@ -10147,7 +10147,7 @@ const V63={pl:false,punch:null,pside:1,hand:1,lastSw:null,cang:0};window.__v63=V
 // ---------------------------------------------------------------- 1 · side profiles (right; left is the mirror)
 const OLDB={sakal:['kalin','kisa'],biyik:['kalin','yok'],keci:['ince','keci']};
 function profR(g,x,y,L,o){
-  // v64: a slimmer, rounder head (9 px wide like a chibi seen from the side), one big eye, no nose bump
+  // v66: Boğaç's pick (2 + S2 + Y2): round head with a rounded back, a one-pixel nose tip, a clear pink cheek, the fringe combed forward, a slim body
   const p=(a,b,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round(a),Math.round(b),w,h)};
   if(!o.noShadow)p(x-5,y+1,10,3,'rgba(0,0,0,.28)');
   y+=o.bob||0;
@@ -10155,71 +10155,70 @@ function profR(g,x,y,L,o){
   const HS=L.hs||(L.long?'long':'short'),kel=HS==='kel',HC=L.hair||'#5a3d22',HD=L.hairD||shade(HC,.7),HLc=L.hairL||shade(HC,1.25);
   const HAT=!o.helm&&L.hat&&L.hat!=='none',DR=L.dress!=null?L.dress:L.long,sl=L.shirtD||shade(L.shirt,.75),hy=y-16,sw=st>0?1:st<0?-1:0;
   // behind everything: long hair, the far twin tail
-  if(!kel){if(HS==='long'){p(x-5,hy+5,3,9,HC);p(x-5,hy+13,3,1,HD)}if(HS==='twin'){p(x-7,hy+2,2,8,HD);p(x-7,hy+2,2,1,'#e85a8a')}}
+  if(!kel){if(HS==='long'){p(x-6,hy+3,2,10,HC);p(x-6,hy+12,2,1,HD)}if(HS==='twin'){p(x-8,hy+2,2,8,HD);p(x-8,hy+2,2,1,'#e85a8a')}}
   if(!o.sit&&(arm==='down'||o.punch!=null))p(x-1+sw,y-6,1,3,shade(sl,.8));
   if(!o.sit){const bo=o.boot||'#4a3020',PD=shade(L.pants,.78),bl=x-1-sw,fl=x-1+sw;
     p(bl,y-1,2,2,PD);p(bl,y+1,3,1,shade(bo,.8));p(fl,y-1,2,2,L.pants);p(fl,y+1,3,1,bo);if(o.boot)p(fl,y,2,1,bo)}
-  if(DR){p(x-3,y-6,6,4,L.shirt);p(x-4,y-3,8,2,L.shirt);p(x-4,y-2,8,1,sl);p(x+1,y-6,2,1,'#ffffff')}
-  else{p(x-3,y-6,6,5,L.shirt);p(x-3,y-2,6,1,sl);p(x+1,y-6,1,1,sl)}
+  // a slim body seen from the side
+  if(DR){p(x-2,y-6,4,4,L.shirt);p(x-3,y-3,6,2,L.shirt);p(x-3,y-2,6,1,sl);p(x,y-6,1,1,'#ffffff')}
+  else{p(x-2,y-6,4,5,L.shirt);p(x-2,y-2,4,1,sl);p(x+1,y-6,1,1,sl)}
   if(o.punch!=null){const k=o.punch,len=1+Math.round(5*k),fy=y-7+(o.pside<0?1:0);p(x,y-6+(o.pside<0?1:0),len+1,1,sl);
     p(x+len,fy-1,4,4,'rgba(17,23,15,.55)');p(x+1+len,fy,2,2,HAND);p(x+1+len,fy,2,1,shade(HAND,1.18))}
-  else if(arm==='reach'){p(x+1,y-6,4,1,sl);p(x+5,y-6,1,1,HAND)}
+  else if(arm==='reach'){p(x,y-6,4,1,sl);p(x+4,y-6,1,1,HAND)}
   else if(arm==='up'){p(x,y-11,1,5,sl);p(x,y-12,1,1,HAND)}
   else if(arm==='fork'){const h=y-5-Math.round((o.ph||0)*4);p(x+1,h,1,(y-4)-h,sl);p(x+1,h,2,1,sl);p(x+3,h,1,1,HAND);p(x+3,h-2,1,2,'#c8c8d0')}
   else{const ax=x-sw;p(ax,y-6,1,3,sl);p(ax,y-3,1,1,HAND)}
-  // head: x-4 … x+4, round
-  // v65: a face in profile: brow, a small nose that sticks out, lips and a chin; the ear sits at the back
-  p(x-3,hy,7,10,SK);p(x-4,hy+1,9,8,SK);p(x+4,hy+2,1,6,SK);p(x+5,hy+4,1,3,SK);p(x+5,hy+6,1,1,SD);p(x+4,hy+7,1,1,SD);p(x+3,hy+9,2,1,SK);p(x+3,hy+10,1,1,SD);p(x-4,hy+8,1,1,SD);p(x-1,hy+10,3,1,SD);
-  p(x-2,hy+4,1,3,SD);p(x-1,hy+5,1,1,SD);                                  // ear
-  if(o.closed)p(x+1,hy+6,2,1,EYE);else{p(x+1,hy+4,2,3,EYE);p(x+2,hy+4,1,1,'#ffffff');p(x+3,hy+5,1,1,'#ffffff')}
-  p(x+1,hy+3,3,1,shade(SK,.82));                                          // brow
+  // head: round, a flat face with a one-pixel nose tip
+  p(x-3,hy,7,10,SK);p(x-4,hy+1,9,8,SK);p(x+4,hy+2,1,6,SK);p(x+5,hy+5,1,1,SK);p(x+3,hy+8,1,1,SD);p(x-4,hy+8,1,1,SD);
+  p(x-2,hy+4,1,2,SD);p(x-1,hy+5,1,1,SD);                                  // ear
+  if(o.closed)p(x+1,hy+6,2,1,EYE);else{p(x+2,hy+4,1,3,EYE);p(x+1,hy+4,1,2,EYE);p(x+2,hy+4,1,1,'#ffffff')}
   if(o.sick)p(x-4,hy+1,9,8,'rgba(110,190,70,.45)');
-  p(x+1,hy+7,1,1,o.sick?'#7ab040':'#ff9a9a');
+  p(x,hy+7,2,1,o.sick?'#7ab040':'#ff9a9a');                               // the cheek, as pink as from the front
   let bi=null,sb=null;if(L.beard==='v48'){bi=L.bi;sb=L.sk}else if(OLDB[L.beard]){bi=OLDB[L.beard][0];sb=OLDB[L.beard][1]}
   if(sb==='kirli'){g.save();g.globalAlpha=.5;for(let yy=hy+6;yy<=hy+9;yy++)for(let xx=x-1;xx<=x+3;xx++){if((xx+yy)&1)continue;p(xx,yy,1,1,HC)}g.restore()}
   else if(sb==='kisa'){p(x-2,hy+7,1,2,HC);p(x-1,hy+8,4,2,HC);p(x,hy+10,3,1,HD)}
   else if(sb==='uzun'){p(x-2,hy+7,1,3,HC);p(x-1,hy+8,4,3,HC);p(x,hy+11,3,2,HC);p(x+1,hy+13,1,1,HD)}
   else if(sb==='keci'){p(x+2,hy+9,2,2,HC);p(x+2,hy+11,1,1,HD)}
-  if(bi==='ince')p(x+2,hy+8,2,1,HC);
-  else if(bi==='kalin'){p(x+1,hy+8,3,1,HC);p(x+1,hy+9,1,1,HC)}
-  else if(bi==='pala'){p(x+1,hy+8,3,1,HC);p(x,hy+7,1,1,HC)}
-  else if(bi==='sarkik'){p(x+2,hy+8,2,1,HC);p(x+2,hy+9,1,2,HC)}
-  if(o.mouth)p(x+3,hy+8,2,1,'#8a3a2a');else if(!o.closed&&!bi&&sb!=='kisa'&&sb!=='uzun')p(x+3,hy+8,2,1,'#c0604a');
-  // hair, from the side: the crown, the back of the head, a little fringe that stops before the face
+  if(bi==='ince')p(x+2,hy+7,2,1,HC);
+  else if(bi==='kalin'){p(x+1,hy+7,3,1,HC);p(x+3,hy+8,1,1,HC)}
+  else if(bi==='pala'){p(x+1,hy+7,3,1,HC);p(x+1,hy+6,1,1,HC)}
+  else if(bi==='sarkik'){p(x+2,hy+7,2,1,HC);p(x+3,hy+8,1,2,HC)}
+  if(o.mouth)p(x+3,hy+8,1,2,'#8a3a2a');else if(!o.closed&&!bi&&sb!=='kisa'&&sb!=='uzun')p(x+3,hy+8,1,1,'#c0604a');
+  // hair: a rounded crown and back, the fringe combed forward
   if(kel){if(!HAT&&!o.helm)p(x-1,hy,2,1,shade(SK,1.25))}
-  else if(HS==='buzz'){p(x-3,hy-1,7,1,HD);p(x-4,hy,8,1,HD);p(x-4,hy+1,2,4,HD);p(x-1,hy-1,2,1,HC)}
+  else if(HS==='buzz'){p(x-2,hy-1,6,1,HD);p(x-3,hy,7,1,HD);p(x-4,hy+1,2,4,HD);p(x-1,hy-1,2,1,HC)}
   else{
-    p(x-3,hy-2,7,1,HC);p(x-4,hy-1,9,2,HC);p(x-2,hy-2,3,1,HLc);
-    p(x-4,hy+1,2,6,HC);p(x-2,hy+1,1,3,HC);p(x-4,hy+7,1,1,HD);
-    if(HS==='side'){p(x+1,hy+1,3,2,HC);p(x+3,hy+3,1,1,HC)}
-    else if(HS==='bob'||HS==='pixie'){p(x+1,hy+1,3,2,HC);if(HS==='bob'){p(x-5,hy+3,2,6,HC);p(x-5,hy+8,2,1,HD)}}
-    else p(x+1,hy+1,2,1,HC);
-    if(HS==='messy'){p(x-5,hy,1,2,HC);p(x-3,hy-3,2,1,HC);p(x+1,hy-3,1,1,HC);p(x+3,hy+1,1,1,HC)}
+    p(x-1,hy-3,4,1,HC);p(x-3,hy-2,7,1,HC);p(x-4,hy-1,9,2,HC);p(x,hy-3,2,1,HLc);   // Y2: the crown and the back curve down step by step
+    p(x-5,hy,2,1,HC);p(x-5,hy+1,3,5,HC);p(x-4,hy+6,2,1,HC);p(x-3,hy+7,1,1,HD);p(x-2,hy+1,1,3,HC);
+    if(HS==='bob'||HS==='pixie'){p(x,hy+1,4,1,HC);p(x+2,hy+2,2,1,HC);if(HS==='bob'){p(x-6,hy+3,2,6,HC);p(x-5,hy+6,3,3,HC);p(x-6,hy+8,3,1,HD)}else p(x+3,hy+3,1,1,HC)}
+    else if(HS==='side'){p(x,hy+1,5,1,HC);p(x+3,hy+2,2,1,HC);p(x+4,hy+3,1,1,HC);p(x+1,hy-1,2,1,HLc)}
+    else{p(x,hy+1,4,1,HC);p(x+2,hy+2,2,1,HC);p(x+4,hy,1,2,HC)}
+    if(HS==='messy'){p(x-6,hy+1,1,2,HC);p(x-6,hy+4,1,2,HC);p(x-3,hy-3,1,1,HC);p(x+2,hy-3,1,1,HC)}
     if(HS==='spiky'&&!HAT){for(let k=0;k<3;k++){p(x-4+k*3,hy-4,2,2,HC);p(x-5+k*3,hy-5,1,1,HC)}p(x-1,hy-4,1,1,HLc)}
-    if(HS==='long'){p(x-5,hy+2,1,9,HC)}
-    if(HS==='tail'){p(x-6,hy,2,7,HC);p(x-6,hy+6,2,1,HD);p(x-5,hy,1,1,'#c84a5a')}
-    if(HS==='braid'){for(let k=0;k<7;k++)p(x-5+(k%2),hy+5+k,2,1,k%2?HD:HC);p(x-5,hy+12,2,1,'#c84a5a')}
-    if(HS==='bun'&&!HAT){p(x-5,hy-4,3,3,HC);p(x-4,hy-5,1,1,HC);p(x-5,hy-4,1,1,HLc)}
-    if(HS==='twin'){p(x-3,hy+3,2,8,HC);p(x-3,hy+10,2,1,HD);p(x-3,hy+3,2,1,'#e85a8a')}
-    if((HS==='short'||HS==='side'||HS==='pixie')&&!HAT&&!o.helm){p(x,hy-4,1,2,HC);p(x+1,hy-5,1,1,HC)}
+    if(HS==='long'){p(x-5,hy+6,2,4,HC)}
+    if(HS==='tail'){p(x-7,hy+1,2,7,HC);p(x-7,hy+7,2,1,HD);p(x-6,hy+1,1,1,'#c84a5a')}
+    if(HS==='braid'){for(let k=0;k<7;k++)p(x-6+(k%2),hy+6+k,2,1,k%2?HD:HC);p(x-6,hy+13,2,1,'#c84a5a')}
+    if(HS==='bun'&&!HAT){p(x-6,hy-3,3,3,HC);p(x-5,hy-4,1,1,HC);p(x-6,hy-3,1,1,HLc)}
+    if(HS==='twin'){p(x-3,hy+3,2,9,HC);p(x-3,hy+11,2,1,HD);p(x-3,hy+3,2,1,'#e85a8a')}
+    if((HS==='short'||HS==='side'||HS==='pixie')&&!HAT&&!o.helm){p(x,hy-5,1,2,HC);p(x+1,hy-6,1,1,HC)}
   }
+  // glasses from the side: the lens edge in front of the eye, the arm back to the ear (above the eye)
   if(L.gl&&L.gl!=='none'){
-    // v65: seen from the side a lens is only its edge in front of the eye, and the arm runs back to the ear
-    if(L.gl==='sun'){const c='#15151c';p(x+3,hy+4,1,3,c);p(x+2,hy+4,1,2,'rgba(21,21,28,.75)');p(x-1,hy+4,3,1,c)}
-    else if(L.gl==='kare'){const c='#2a2a34';p(x+3,hy+4,1,3,c);p(x-1,hy+4,3,1,c)}
-    else{const c='#b88a3a';p(x+3,hy+4,1,3,c);p(x+3,hy+5,1,1,'rgba(230,245,255,.7)');p(x-1,hy+4,3,1,c)}}
-  if(o.helm){p(x-4,hy-3,9,4,o.helm);p(x-3,hy-4,7,1,o.helm);p(x-2,hy-4,3,1,shade(o.helm,1.2));p(x-4,hy+1,3,5,o.helm);p(x-4,hy+1,9,1,shade(o.helm,.7))}
+    if(L.gl==='sun'){const c='#15151c';p(x+3,hy+3,1,4,c);p(x+2,hy+4,1,2,'rgba(21,21,28,.6)');p(x-1,hy+3,4,1,c)}
+    else if(L.gl==='kare'){const c='#2a2a34';p(x+3,hy+3,1,4,c);p(x-1,hy+3,4,1,c)}
+    else{const c='#b88a3a';p(x+3,hy+3,1,4,c);p(x+3,hy+5,1,1,'rgba(230,245,255,.7)');p(x-1,hy+3,4,1,c)}}
+  if(o.helm){p(x-5,hy-3,10,4,o.helm);p(x-4,hy-4,8,1,o.helm);p(x-2,hy-4,3,1,shade(o.helm,1.2));p(x-5,hy+1,3,5,o.helm);p(x-5,hy+1,10,1,shade(o.helm,.7))}
   else if(HAT){const hc=L.hatC||'#c84a3a',hd=shade(hc,.7),hl=shade(hc,1.25),H=L.hat;
-    if(H==='hasir'){p(x-9,hy-1,18,2,'#e8c870');p(x-9,hy,18,1,'#b8903a');p(x-4,hy-6,8,5,'#e0bc60');p(x-3,hy-7,6,1,'#e8c870');p(x-4,hy-3,8,1,'#8a3a2a')}
-    else if(H==='bere'){p(x-4,hy-4,9,5,hc);p(x-3,hy-6,7,2,hc);p(x-2,hy-7,5,1,hc);p(x-4,hy,9,2,hd);for(let k=-4;k<5;k+=2)p(x+k,hy,1,2,hl);p(x-1,hy-10,3,3,'#f4f0e8')}
-    else if(H==='kasket'){p(x-4,hy-4,9,4,hc);p(x-3,hy-5,7,1,hc);p(x,hy-6,1,1,hl);p(x-4,hy-1,9,1,hd);p(x+3,hy,5,2,hd);p(x+3,hy,5,1,hl)}
-    else if(H==='bandana'){p(x-4,hy-3,9,3,hc);p(x-3,hy-4,7,1,hc);for(let k=-3;k<5;k+=3)p(x+k,hy-2,1,1,'#f4f0e8');p(x-6,hy-1,2,2,hc);p(x-7,hy+1,2,3,hd)}
-    else if(H==='kovboy'){p(x-10,hy-1,20,2,'#8a5a2e');p(x-11,hy-2,2,1,'#8a5a2e');p(x+9,hy-2,2,1,'#8a5a2e');p(x-4,hy-7,9,6,'#a06a38');p(x-3,hy-8,7,1,'#a06a38');p(x-4,hy-3,9,1,'#3a2414')}
-    else if(H==='silindir'){p(x-7,hy-1,15,2,'#1c1c24');p(x-4,hy-11,9,10,'#24242e');p(x-4,hy-11,9,1,'#3a3a48');p(x-4,hy-4,9,2,hc);p(x+2,hy-10,1,6,'#3a3a48')}
-    else if(H==='fes'){p(x-3,hy-7,7,7,'#b82a2a');p(x-3,hy-7,7,1,'#d84a3a');p(x-4,hy-1,9,1,'#8a1a1a');p(x,hy-8,1,1,'#2a1a10');p(x-4,hy-7,1,5,'#2a1a10');p(x-5,hy-3,3,1,'#2a1a10')}
-    else if(H==='korsan'){p(x-6,hy-2,12,3,'#1c1c22');p(x-4,hy-6,9,4,'#24242c');p(x-2,hy-8,5,2,'#24242c');p(x-6,hy-2,12,1,'#c8a848');p(x,hy-5,2,2,'#f4f0e8')}
-    else if(H==='tac'){const cs=['#ff6a9a','#ffd27a','#ffffff','#9ad0ff','#ff6a9a'];p(x-4,hy-2,9,1,'#4a8a3a');for(let k=0;k<5;k++){const cx=x-4+k*2;p(cx,hy-4,2,2,cs[k]);p(cx,hy-4,1,1,'#ffffff')}}}
-  if((L.flower!=null?L.flower:L.long)&&!HAT&&!o.helm&&!kel){p(x-3,hy-3,3,2,'#ffffff');p(x-2,hy-2,1,1,'#ff5a8a')}
+    if(H==='hasir'){p(x-10,hy-1,19,2,'#e8c870');p(x-10,hy,19,1,'#b8903a');p(x-5,hy-6,9,5,'#e0bc60');p(x-4,hy-7,7,1,'#e8c870');p(x-5,hy-3,9,1,'#8a3a2a')}
+    else if(H==='bere'){p(x-5,hy-4,10,5,hc);p(x-4,hy-6,8,2,hc);p(x-3,hy-7,6,1,hc);p(x-5,hy,10,2,hd);for(let k=-5;k<5;k+=2)p(x+k,hy,1,2,hl);p(x-2,hy-10,3,3,'#f4f0e8')}
+    else if(H==='kasket'){p(x-5,hy-4,10,4,hc);p(x-4,hy-5,8,1,hc);p(x,hy-6,1,1,hl);p(x-5,hy-1,10,1,hd);p(x+3,hy,5,2,hd);p(x+3,hy,5,1,hl)}
+    else if(H==='bandana'){p(x-5,hy-3,10,3,hc);p(x-4,hy-4,8,1,hc);for(let k=-3;k<5;k+=3)p(x+k,hy-2,1,1,'#f4f0e8');p(x-7,hy-1,2,2,hc);p(x-8,hy+1,2,3,hd)}
+    else if(H==='kovboy'){p(x-11,hy-1,21,2,'#8a5a2e');p(x-12,hy-2,2,1,'#8a5a2e');p(x+9,hy-2,2,1,'#8a5a2e');p(x-5,hy-7,10,6,'#a06a38');p(x-4,hy-8,8,1,'#a06a38');p(x-5,hy-3,10,1,'#3a2414')}
+    else if(H==='silindir'){p(x-8,hy-1,16,2,'#1c1c24');p(x-5,hy-11,9,10,'#24242e');p(x-5,hy-11,9,1,'#3a3a48');p(x-5,hy-4,9,2,hc);p(x+2,hy-10,1,6,'#3a3a48')}
+    else if(H==='fes'){p(x-4,hy-7,7,7,'#b82a2a');p(x-4,hy-7,7,1,'#d84a3a');p(x-5,hy-1,9,1,'#8a1a1a');p(x-1,hy-8,1,1,'#2a1a10');p(x-5,hy-7,1,5,'#2a1a10');p(x-6,hy-3,3,1,'#2a1a10')}
+    else if(H==='korsan'){p(x-7,hy-2,13,3,'#1c1c22');p(x-5,hy-6,10,4,'#24242c');p(x-3,hy-8,6,2,'#24242c');p(x-7,hy-2,13,1,'#c8a848');p(x,hy-5,2,2,'#f4f0e8')}
+    else if(H==='tac'){const cs=['#ff6a9a','#ffd27a','#ffffff','#9ad0ff','#ff6a9a'];p(x-5,hy-2,10,1,'#4a8a3a');for(let k=0;k<5;k++){const cx=x-5+k*2;p(cx,hy-4,2,2,cs[k]);p(cx,hy-4,1,1,'#ffffff')}}}
+  if((L.flower!=null?L.flower:L.long)&&!HAT&&!o.helm&&!kel){p(x-4,hy-3,3,2,'#ffffff');p(x-3,hy-2,1,1,'#ff5a8a')}
 }
 // a fist thrown toward the camera (front) or up past the head (back)
 function fistFB(g,x,y,L,o){const p=(a,b,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round(a),Math.round(b),w,h)};
