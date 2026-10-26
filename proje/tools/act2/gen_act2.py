@@ -29,7 +29,7 @@ for bi,L in PLANTS.items():
 for bi,L in ORES.items():
   for t in L:raw(t[0],t[5])
 for n,v in DROPP.items():raw(n,v)
-for m in ['Bulut koyunu eti','Rüzgâr kuşu eti','Kertenkele eti','Buz tavşanı eti']:
+for m in ['Bulut koyunu eti','Rüzgâr kuşu eti','Kertenkele eti','Buz tavşanı eti','Kor kertenkelesi eti']:
   base=low(m);rec('Pişmiş '+base,[[m,1],['Ateş',1],['Su',3],['Yaprak',3]],'Yiyecek');grp('Herhangi çiğ et',m);grp('Herhangi pişmiş et','Pişmiş '+base)
 REC_EXTRA=True
 rec('Mana iksiri',[['Büyü otu',2],['Su',2],['Herhangi çömlek',1]],'Şifa')
@@ -48,6 +48,10 @@ rec('Enerji hücresi',[['Enerji taşı',2],['Bakır tel',2],['Pil',1]],'Zanaat')
 rec('Meka zırh',[['Titanyum külçesi',4],['Kobalt külçesi',3],['Enerji hücresi',2],['Motor',1],['Golem çekirdeği',1]],'Zırh',pr=5200)
 rec('Buz asası',[['Kristal çam kalası',1],['Buz kristali',3],['Enerji taşı',1],['Büyü otu',2]],'Büyü',pr=1600)
 rec('Kristal armut kompostosu',[['Kristal armut',3],['Su',2],['Ateş',1]],'Yiyecek')
+rec('Plazma hücresi',[['Plazma taşı',2],['Enerji hücresi',1],['Ejder kristali',1]],'Zanaat')
+rec('Işın kılıcı',[['Titanyum külçesi',2],['Plazma hücresi',2],['Ejder dişi',2],['Kristal lifi',3]],'Silah',pr=6400)
+rec('Yıldırım asası',[['Kömür ağacı kalası',1],['Plazma taşı',3],['Ejder kristali',2],['Büyü otu',3]],'Büyü',pr=3200)
+rec('Ejder meyvesi şerbeti',[['Ejder meyvesi',3],['Su',2],['Herhangi çömlek',1]],'Yiyecek')
 rec('Hurma ezmesi',[['Hurma',3],['Herhangi çömlek',1]],'Yiyecek')
 rec('Spor ekmeği',[['Spor tozu',3],['Su',2],['Ateş',1]],'Yiyecek')
 rec('Goblin eriği reçeli',[['Goblin eriği',3],['Herhangi çömlek',1]],'Yiyecek')

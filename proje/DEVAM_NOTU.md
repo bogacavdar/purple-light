@@ -575,3 +575,12 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Mühendis Selin**: mk1 3 Enerji taşı + 4 Kristal cevheri (külçe/hücre tarifleri), mk2 3 Kristal golemcik, mk3 2 Titanyum plaka + 4 Golem parçası (Meka zırh tarifi). Zırhı o yapar (600 sikke). Hikâyesi (ST_.selin): gemi kaçırdıklarını sayıyor; sayı dolunca durmayı bekleyen bir şey.
 - Pervin'e pv4 (Selin ile tanışınca): 4 Buz kristali + 2 Kristal kanat → Buz asası tarifi; Pervin yapar (200 sikke).
 - Menüde "Versiyon 79". Test yapılmadı.
+
+## v80 (27 Ekim 2026) — ACT 2: Ejder Volkanı, Işın kılıcı, Yıldırım asası, Ejder Avcısı Alara
+- Ejder Volkanı (biyom 4): Kömür ağacı, Lav palmiyesi, Obsidyen dikeni, Ejder meyvesi · Lav çiçeği, Kükürt tozu, Ejder otu, Kor mantarı, Plazma taşı, Volkan külü, Obsidyen kırığı, Magma camı · Ejder kristali, Magma cevheri, Volkan demiri · Lav salyangozu, Kor kertenkelesi, Yavru ejder (ateş atar), Lav golemi, Kızıl ejder (patron gibi, 4200 can).
+- Tarifler: Plazma hücresi, Işın kılıcı (Silah), Yıldırım asası (Büyü), Ejder meyvesi şerbeti, Pişmiş kor kertenkelesi eti.
+- v77 mermi sistemi: `S.chain` (vurduğu yaratıktan 110 px içindeki bir sonrakine %80 hasarla sıçrar; `hs` kümesiyle aynı hedef iki kez vurulmaz).
+- `<script id="v80">`: Işın kılıcı = GT 'sword', weapon() sarmalayıcı (120 hasar, 32 erim, 0,3 sn) + mavi plazma savuruşu ve vınlama. Yıldırım asası (22 mana, 72 hasar, 3 sıçrama). Ejderlerin çizimleri.
+- **Ejder Avcısı Alara** (Ejder Volkanı): ej1 5 Lav çiçeği + 3 Magma cevheri (Plazma hücresi), ej2 3 Yavru ejder, ej3 3 Ejder dişi + 3 Plazma taşı (Işın kılıcı tarifi), ej4 Kızıl ejder (Ejder kalbi düşer; ACT 2 sonunda işe yarayacak). Kılıcı o yapar (800 sikke). Hikâyesi (ST_.alara): gemi motorunu soğutmak için plazmasını volkana boşaltıyor; ejderler bununla büyüdü.
+- Pervin'e pv5 (Alara ile tanışınca): 3 Ejder kristali + 1 Magma çekirdeği → Yıldırım asası (Pervin yapar, 300 sikke).
+- Menüde "Versiyon 80". Test yapılmadı.

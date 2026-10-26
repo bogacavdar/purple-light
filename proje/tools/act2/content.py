@@ -85,3 +85,24 @@ ICONK.update({'Taş kabuk':'shell','Buz tavşanı eti':'meat','Buz kürkü':'hid
 ICONC.update({'Taş kabuk':['#7a7a8a','#a8a8b8'],'Buz tavşanı eti':['#d88a8a','#f0b8b8'],'Buz kürkü':['#d8e8f8','#ffffff'],'Golem parçası':['#8aa8d0','#d8e8ff'],'Kristal kanat':['#a8c8f0','#ffffff'],
   'Titanyum plaka':['#b8bcc8','#e8ecf4'],'Kristal armut':['#c8f0ff','#5e90b0'],'Kobalt külçesi':['#3a5ad8','#7a9af0'],'Titanyum külçesi':['#c8ccd8','#f0f2f8'],'Enerji hücresi':['#2a4a8a','#5ad0ff'],
   'Meka zırh':['#5a6a8a','#5ad0ff'],'Buz asası':['#8aa8c8','#a8f0ff']})
+# ---------------- v80: Ejder Volkanı (biome 4)
+TREES[4]=[('Kömür ağacı',['#2a2222','#3a2e2e','#5a4440'],'#1a1414',12,{}),('Lav palmiyesi',['#5a3a1a','#7a4a22','#a8682a'],'#3a2418',12,{}),
+          ('Obsidyen dikeni',['#1e1a2a','#2a2440','#4a3e66'],'#141020',11,{'pine':1}),('Ejder meyvesi',['#4a2a2a','#5e3434','#84504a'],'#2a1a1a',11,{'fruit':'Ejder meyvesi','fc':'#ff3a5a'})]
+WOODP.update({'Kömür ağacı':34,'Lav palmiyesi':34,'Obsidyen dikeni':38,'Ejder meyvesi':32})
+WOODC.update({'Kömür ağacı':'#3a302c','Lav palmiyesi':'#8a4a2a','Obsidyen dikeni':'#3a3450','Ejder meyvesi':'#6a3a3a'})
+PLANTS[4]=[('Lav çiçeği','herb',['#5a2a1a','#ff6a2a'],'land',70,30,'herb'),('Kükürt tozu','moss',['#c8b83a','#f0e870'],'land',55,18,'dust'),
+           ('Ejder otu','herb',['#3a5a2a','#e84a2a'],'land',70,28,'herb'),('Kor mantarı','mush',['#8a2a1a','#ffb060'],'forest',70,26,'mush'),
+           ('Plazma taşı','gem',['#d84aff','#ffd0ff'],'land',120,60,'gem'),('Volkan külü','moss',['#3a3434','#8a8a8a'],'land',45,10,'dust'),
+           ('Obsidyen kırığı','gem',['#1a1a24','#6a6a8a'],'land',80,30,'gem'),('Magma camı','gem',['#8a2a1a','#ffa060'],'land',100,44,'gem')]
+ORES[4]=[('Ejder kristali','Ejder kristali yatağı','#e84a8a',12,3,70),('Magma cevheri','Magma madeni','#d85a2a',14,3,56),('Volkan demiri','Volkan demiri madeni','#5a4a4a',14,2,40)]
+ANIMALS[4]=[('Lav salyangozu',dict(temper='zararsız',hp=80,spd=16,r=6,xp=24,land='land',drops=[('Magma kabuğu',1,1,.9,'zırh')]),2,None,None),
+            ('Kor kertenkelesi',dict(temper='zararsız',hp=60,spd=60,r=5,xp=20,land='land',drops=[('Kor kertenkelesi eti',1,1,1,'yemek'),('Kor pulu',1,2,.8,'zırh')]),2,None,None),
+            ('Yavru ejder',dict(z=1,temper='saldırgan',hp=520,spd=80,aggro=240,r=8,xp=260,dmg=90,reach=36,wind=.5,fx=['yanık',10,5],ranged=dict(range=210,spd=200,c='#ff6a2a',n=3,cd=2.4),land='land',drops=[('Ejder dişi',1,2,.7,'silah'),('Yavru ejder pulu',1,3,.9,'zırh')]),2,None,None),
+            ('Lav golemi',dict(z=1,temper='saldırgan',hp=900,spd=36,aggro=190,r=10,xp=320,dmg=150,reach=44,wind=.7,fx=['yanık',12,5],land='land',drops=[('Magma çekirdeği',1,1,.7,'zanaat'),('Magma cevheri',1,3,.9,'zanaat')]),1,None,None),
+            ('Kızıl ejder',dict(z=1,temper='saldırgan',hp=4200,spd=60,aggro=280,r=14,xp=1400,dmg=240,reach=56,wind=.7,fx=['yanık',18,6],ranged=dict(range=260,spd=220,c='#ff4a1a',n=5,cd=2.2),land='land',drops=[('Ejder kalbi',1,1,1,'zanaat'),('Kızıl ejder pulu',2,4,1,'zırh')]),1,'lvl',None)]
+DROPP.update({'Magma kabuğu':50,'Kor kertenkelesi eti':14,'Kor pulu':40,'Ejder dişi':120,'Yavru ejder pulu':90,'Magma çekirdeği':160,'Ejder kalbi':900,'Kızıl ejder pulu':300,'Ejder meyvesi':18})
+ICONK.update({'Magma kabuğu':'shell','Kor kertenkelesi eti':'meat','Kor pulu':'scale','Ejder dişi':'tooth','Yavru ejder pulu':'scale','Magma çekirdeği':'chip','Ejder kalbi':'heart','Kızıl ejder pulu':'scale','Ejder meyvesi':'fruit',
+  'Plazma hücresi':'battery','Işın kılıcı':'saber','Yıldırım asası':'staff'})
+ICONC.update({'Magma kabuğu':['#5a2a1a','#d85a2a'],'Kor kertenkelesi eti':['#d86a4a','#f0a080'],'Kor pulu':['#c84a2a','#ff8a4a'],'Ejder dişi':['#f0e8d0','#ffffff'],'Yavru ejder pulu':['#8a2a3a','#d84a5a'],
+  'Magma çekirdeği':['#8a2a1a','#ffb040'],'Ejder kalbi':['#c81a3a','#ff6a8a'],'Kızıl ejder pulu':['#a81a1a','#ff5a3a'],'Ejder meyvesi':['#ff3a5a','#4a2a2a'],
+  'Plazma hücresi':['#5a1a7a','#e88aff'],'Işın kılıcı':['#3a3a44','#7af0ff'],'Yıldırım asası':['#5a5a8a','#fff070']})
