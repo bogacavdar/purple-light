@@ -339,3 +339,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Su: hazır renk dizileri, kıyı köpüğü parça listelerinde (`SB`).
 - Düğümler: `PERF.vis` (kamera 32 px kayınca ya da 0,4 sn'de bir yeniden), çizim, parıltı, toplama hedefi, gece ışıkları, ağaç tepesi saydamlığı bunu kullanır. Yeniden doğma ve ağaç sayaçları saniyede 5 kez. Otlar (`TUFTS`) kameraya göre süzülür.
 - Karanlık maskesi yarım (düşük kalitede ¼) çözünürlükte, gökyüzü ışık havuzları ¼ katmanda, vinyet önbellekte. Harita sisi düşük kalitede saniyede 1. Ev içindeyken ada hiç çizilmez.
+
+## v59 — Ada halkının hikâyeleri (`<script id="v59-story">`)
+- Görev veren herkesin (Ekin dahil) mor ışıkla bağlantılı bir geliş hikâyesi ve kaybettiği biri var (`ST_`): Ekin → eşi Saliha (ana zincirde 2/4/6/8/10/12. görevden sonra), Zümrüt → büyükannesi Ayşen Nine, Nazlı → kardeşi Cem, Börü → ağabeyi Kaan, Dursun ve Durmuş → babaları Demirhan Usta (iki ayrı bakış), Hasan → kızı Gül, Kemal → annesi Hatice Ana, Rıza → nişanlısı Defne, Toygar → oğlu Ayaz, Nuri → yeğeni Deniz.
+- Her biten görev bir parça açar (`unlocked`); NPC menüsünde "📖 Sen bu adaya nasıl geldin? / devamını anlat", görev teslim edilince de hemen sunulur. Bütün parçalar duyulunca "📖 O geceyi anlat" → kısa sahne (`playScene`, `#npcsc`, 240×135, mor ışık sütunu ile götürülme; Durmuş'unki kumsaldaki çekiç). Sahne bitince +40 XP ve anılar için görev kancası.
+- Kitap › **Ada halkı** sekmesi: duyulan parçalar, sahneyi yeniden izle. Kayıt `v59:{h,s}`.
+- Final (herkesin kurtarılması / kötü son) henüz yok; hikâyeler buna göre açık uçlu.

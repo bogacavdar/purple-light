@@ -2809,6 +2809,7 @@ function renderCraft(){
   if(mode==='book'&&bookTab==='codex'){cbody.innerHTML=renderCodex();return}
   if(mode==='book'&&bookTab==='clue'){cbody.innerHTML=renderClues();return}
   if(mode==='book'&&bookTab==='mem'){cbody.innerHTML=renderMem();return}
+  if(mode==='book'&&bookTab==='ppl'){cbody.innerHTML=renderPpl();return}
   if(mode==='inv'){renderInvPanel(list,cnt);
   }else if(mode==='craft'){
     renderPot(list);
@@ -3562,7 +3563,7 @@ $('tutskip').addEventListener('click',e=>{const b=$('tutskip');if(TOUCH&&tz&&!b.
 $('tutskip').addEventListener('click',()=>{delete $('tutskip').dataset.arm;if(qPeek&&!tz){qPeek=false;renderTut();return}if(tz){tzSkip();return}{const ax=tut===11&&woodCut<5?Object.keys(GT).find(n=>GT[n].kind==='axe'&&inv[n]>0):null;if(ax&&beltIndex(ax)<0){beltFront(ax);renderTut();return}}if(htut===1){htut=2;renderTut();return}if(ytut===1||ytut===2){ytut=3;renderTut();return}if((runTut===1||runTut===2)&&tut>=11){runTut=3;renderTut();return}if(torchTut===1||torchTut===2){torchTut=3;renderTut();return}ftut=3;ctut=4;walked=true;mapSeen=2;tapMoved=true;if(tut>=11)questsHidden=true;else{witchShown=true;tut=11;qState='talk'}renderInv();renderTut()});
 function appearFx(x,y,c){for(let i=0;i<28;i++){const an=Math.random()*Math.PI*2,sp=20+Math.random()*50;parts.push({x,y:y-6,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp,life:1.3,c:i%2?c:'#ffffff'})}sfx('magic')}
 function toggleQuests(){if(lessonCard||qPeek||tz){qPeek=!qPeek;questsHidden=false;renderTut();return}openMenu('qlog')}
-let renderQlog=()=>{},v55Ents=null,roomSafe=()=>false,roomBusy=()=>false;
+let renderPpl=()=>'',renderQlog=()=>{},v55Ents=null,roomSafe=()=>false,roomBusy=()=>false;
 // v48c: lessons that last long (running, the torch at night) sit as a small line under the quest instead of hiding it
 function isNightT(){return dayT>=1200||dayT<360}
 function nightTxt(){return isNightT()?', gece başladı: meşalen elinde olsun.':', gece 20:00\'de başlar.'}
@@ -9802,5 +9803,225 @@ function setLvl(l){l=Math.max(0,Math.min(3,l));if(l===PERF.lvl)return;PERF.lvl=l
 window.__v58={chunks,PERF,setLvl};
 }).toString()+')()')}catch(e){try{window.__hamErr('v58: '+(e&&e.message||e))}catch(_){}}})();
 </script>
+<script id="v59-story">
+// =====================================================================================================
+// v59: the islanders' stories. Everyone who gives quests came to the island because of the purple light,
+// and the light took someone of theirs. Each finished quest opens one more piece of their story ("📖" in
+// their talk, also right after handing in); when all their quests are done and the whole story is heard,
+// a short scene shows the night they lost that person. Kitap › Ada halkı keeps what you heard and replays
+// the scenes. Runs inside the game's scope through window.__plEval.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const LK=o=>npcLook(o);
+const LOOKS={
+ ayşen:LK({skin:'#e0b090',skinD:'#c09070',hair:'#d8d8d8',hairD:'#a8a8a8',hairL:'#f4f4f4',hs:'long',dress:true,shirt:'#3a5a3a',shirtD:'#2a4a2a'}),
+ cem:LK({hs:'messy',hair:'#3a2418',hairD:'#24160c',hairL:'#5a3a28',shirt:'#e8c050',shirtD:'#c8a030',skin:'#d8a070',skinD:'#b8804e'}),
+ kaan:LK({hs:'buzz',hair:'#3a2418',hairD:'#24160c',hairL:'#5a3a28',beard:'biyik',shirt:'#5a6a3a',shirtD:'#44522c',skin:'#d8a070',skinD:'#b8804e'}),
+ demirhan:LK({hs:'buzz',hair:'#9a9a9a',hairD:'#6a6a6a',hairL:'#c0c0c0',beard:'sakal',shirt:'#7a4a2a',shirtD:'#5a3418',skin:'#c08060',skinD:'#9a6040'}),
+ gül:LK({hs:'tail',hair:'#e8c050',hairD:'#c8a030',hairL:'#f8e080',dress:true,shirt:'#f2c84b',shirtD:'#c8a030',flower:true}),
+ hatice:LK({hs:'long',hair:'#b8b8b8',hairD:'#8a8a8a',hairL:'#d8d8d8',dress:true,shirt:'#8a3a3a',shirtD:'#6a2a2a',skin:'#d8a070',skinD:'#b8804e'}),
+ defne:LK({hs:'long',hair:'#2a1a10',hairD:'#1a0e08',hairL:'#4a2e1e',dress:true,shirt:'#4a8ab0',shirtD:'#356a8a',flower:true}),
+ ayaz:LK({hs:'messy',hair:'#2a1f18',hairD:'#1a120c',hairL:'#3a2a20',shirt:'#6a7a3a',shirtD:'#4a5a2a',skin:'#c8906a',skinD:'#a8704a'}),
+ deniz:LK({hs:'short',hair:'#c88a58',hairD:'#a86a3a',hairL:'#e0a878',shirt:'#3a6ab0',shirtD:'#2a4e88'}),
+ saliha:LK({hs:'long',hair:'#7a4a2a',hairD:'#5a3418',hairL:'#9a6a3a',dress:true,shirt:'#c86a8a',shirtD:'#a04a6a'}),
+ nuri:LK({hs:'short',hair:'#3a2a1a',hairD:'#24160c',hairL:'#5a3a28',beard:'sakal',shirt:'#2a4a7a',shirtD:'#1e3658',skin:'#c8906a',skinD:'#a8704a'}),
+ ekinY:Object.assign({},NPCL.ekin,{hair:'#5a3d22',hairD:'#3a2414',hairL:'#7a5a3a'}),
+ zümrütY:NPCL.witch};
+// each story: who was taken, the pieces you hear (one per finished quest), and the scene
+const ST_={
+ npc:{lost:'Eşi Saliha',ids:null,at:[2,4,6,8,10,12],F:[
+   "Ateşimi neden hiç söndürmem, hiç sordun mu evlat? Biri dönerken yolunu bulsun diye.",
+   "Sana gemide aşçı olduğumu söylemiştim. Söylemediğim şu: o gemide yalnız değildim. <b>Saliha</b>, karım, yelkenleri diken kadındı.",
+   "O gece gökte yıldızlar tek tek söndü. Saliha güldü: “Birileri mumları üflüyor” dedi. Ben de güldüm. Gülmemeliydik.",
+   "Sonra denizin altından mor ışık yükseldi. Gemi ikiye ayrıldı. Ben Saliha'nın elini tutuyordum; ışık sıcaktı ama eli buz gibi oldu.",
+   "Kıyıya tek başıma vurdum. Elimde yalnızca onun bileziği kalmıştı. O günden beri bu kumsala kim düşerse ona yol gösterdim. Seni de öyle buldum.",
+   "Kırk yıl bekledim, ışığın peşine düşecek birini. Sen o kişisin evlat. Saliha'yı bulursan… ona ateşin hâlâ yandığını söyle."],
+   sc:{n:'Ekin · Yıldızların söndüğü gece',bg:'deck',cast:[{L:'ekinY',x:104,fx:1},{L:'saliha',x:128,fx:-1,v:1}],bl:2,L:[
+     "Kırk yıl önce. Bir tüccar gemisinin güvertesi, gökte sayısız yıldız.",
+     "<b>Saliha</b>: “Bak Ekin, yıldızlar sönüyor. Birileri mumları üflüyor sanki.”",
+     "Denizin altından mor bir ışık yükseldi. Ekin elini sıktı. Işık daha sıkı tuttu.",
+     "Sabah kumsalda bir adam, elinde bir bilezik ve sönmeyen bir ateş vardı."]}},
+ witch:{lost:'Büyükannesi Ayşen Nine',ids:['w1','w2','w3','w4','w5'],F:[
+   "Bu adaya on iki yaşımda geldim evlat. Yalnız değil, büyükannemle: <b>Ayşen Nine</b>. Otları benden iyi bilirdi, inan.",
+   "Nine derdi ki yıldızsız adalarda <b>ay otu</b> yetişir; ölüye bile can verir. Onu bulmak için küçük bir tekneyle yola çıktık.",
+   "Geldiğimiz ilk gece gökte ay yoktu. Yalnızca mor bir halka. Nine “Bak, otlar bu ışığı seviyor” dedi ve kayalıklara yürüdü.",
+   "Ben teknede uyuyakalmışım. Uyandığımda bu kazan kumsalda kaynıyordu; altında ateş yoktu. Nine de yoktu.",
+   "Mor kıymıklarda onun sesini duyuyorum. “Zümrüt'üm, kazanı söndürme” diyor. Kırk yıldır söndürmedim, söndürmeyeceğim de."],
+   sc:{n:'Zümrüt · Ay otları',bg:'rocks',cast:[{L:'zümrütY',x:52,fx:1,sleep:1},{L:'ayşen',x:168,fx:-1,v:1}],bl:2,L:[
+     "Yıldızsız bir gece. Kayalıklarda yaşlı bir kadın ay otu topluyor; teknede küçük bir kız uyuyor.",
+     "<b>Ayşen Nine</b>: “Işık otları seviyor Zümrüt'üm… yoksa otlar mı ışığı?”",
+     "Mor ışık kayalara indi. Kadın gülümsedi, tanıdık birini görmüş gibi.",
+     "Sabah kumsalda, altında ateş olmadan kaynayan bir kazan vardı."]}},
+ market:{lost:'Kardeşi Cem',ids:['m1','m2','m3','m4','m5'],F:[
+   "Ben aslında tüccar değilim, tüccar kızıyım. Babamın gemisinde, baharat çuvallarının arasında büyüdüm.",
+   "Bir de kardeşim vardı: <b>Cem</b>. Yedi yaşındaydı; tezgâhın altına saklanıp müşterileri korkuturdu. Yaramaz şey.",
+   "Bir fırtına gecesi pusulamız çıldırdı, iğnesi hep bu adayı gösterdi. Babam “Pusula yalan söylemez” dedi ve dümeni kırdı.",
+   "Gemi kayalara oturdu. Cem güverteye çıkmıştı; gökte mor bir ışık vardı ve Cem ona el sallıyordu. Ben bağırdım…",
+   "Herkes “boğuldu” dedi. Ama ben gördüm: ışık onu yukarı aldı. Tezgâhımı bu yüzden kıyıya kurdum. Bir gün dönerse ilk beni görsün."],
+   sc:{n:'Nazlı · Fırtına',bg:'storm',cast:[{L:'market',x:76,fx:1},{L:'cem',x:150,fx:-1,v:1}],bl:2,L:[
+     "Bir baharat gemisi, fırtınanın ortasında. Pusulanın iğnesi deli gibi dönüyor.",
+     "<b>Cem</b>: “Abla! Bak, gökyüzü bana el sallıyor!”",
+     "Mor ışık güverteye indi. Nazlı koştu, ama yağmur onu geri itti.",
+     "Gemi battı. Kıyıya bir kız ve bir çuval tarçın vurdu."]}},
+ alp:{lost:'Ağabeyi Kaan',ids:['a1','a2','a3','a4','a5'],F:[
+   "Ben doğuştan savaşçı değilim. Ağabeyim <b>Kaan</b> askerdi; ben de onun peşinden koşan bir veletim.",
+   "Kaan bana yumruk atmayı öğretti. “Kılıcın düşerse elin kalır” derdi. Kerevitlere yumrukla dalıyorsam onun yüzünden.",
+   "Bir gece kalemizin üstünde mor bir ışık durdu. Kaan nöbetteydi. Herkes kaçtı; o kılıcını çekti.",
+   "Işığa kılıç işlemez. Kaan yukarı çekilirken bana bağırdı: “Börü, kaçma!” Ben… kaçtım.",
+   "Bu adaya o ışığın peşinden geldim. Bir daha kaçmayacağım. Sen de kaçma, olur mu? Yan yana dururuz."],
+   sc:{n:'Börü · Nöbet',bg:'fort',cast:[{L:'alp',x:70,fx:1},{L:'kaan',x:150,fx:-1,v:1,arm:'up'}],bl:2,L:[
+     "Bir sınır kalesi, gece nöbeti. Surların üstünde iki kardeş.",
+     "<b>Kaan</b>: “Börü, arkama geç! Bu ışık… bu ışık bizim için gelmiş.”",
+     "Kılıç ışığa değdi ve eridi. Kaan yukarı çekilirken bağırdı: “Kaçma!”",
+     "Börü kaçtı. Ve o günden beri hiç durmadı."]}},
+ smith:{lost:'Babası Demirhan Usta',ids:['s1','s2','smith_bronze','s4'],F:[
+   "Bu örs benim değil, babamın. <b>Demirhan Usta</b>. Elinden kılıç değil, şiir çıkardı.",
+   "Babam “Demir gökten düşer oğlum” derdi. Biz Durmuş'la gülerdik. Meğer doğruymuş.",
+   "Bir gece köyün dışına gökten mor bir taş düştü. Babam onu dövmek istedi; üç gün üç gece örsün başından kalkmadı.",
+   "Dördüncü gece taş parlamaya başladı. Işık geldi… taşını almaya. Babamı da aldı. Bu adaya o ışığın gittiği yönde kürek çekerek geldik."],
+   sc:{n:'Dursun · Gökten düşen taş',bg:'forge',cast:[{L:'smith',x:60,fx:1},{L:'demirhan',x:132,fx:1,v:1,arm:'up'}],bl:2,L:[
+     "Bir köy demirhanesi. Örsün üstünde mor parlayan bir taş; üç gündür soğumuyor.",
+     "<b>Demirhan Usta</b>: “Bu taşı dövebilirsem oğlum, yıldızları dövmüş olurum.”",
+     "Taş göğe seslendi. Gök cevap verdi.",
+     "Örsün başında bir çekiç sesi eksildi. O günden beri Dursun iki kişilik vurur."]}},
+ durmus:{lost:'Babası Demirhan Usta',ids:['d1','d2','d3','d4'],F:[
+   "Abim sana babamızı anlattı mı? Anlatmamıştır. Ağlar diye korkar, koca adam.",
+   "Babam götürülünce köy bizi lanetli saydı. Abimle bir sala bindik, ışığın gittiği yöne kürek çektik.",
+   "Üç hafta sonra bu kumsala vurduk. Kumda yarı gömülü bir çekiç vardı. Babamın çekici. Sapında mor bir yanık izi.",
+   "Ben zırh dövüyorum çünkü kimsenin bir daha götürülmesini istemiyorum. Ama ışığa karşı zırh yok. Henüz yok."],
+   sc:{n:'Durmuş · Kumsaldaki çekiç',bg:'raft',cast:[{L:'smith',x:96,fx:1},{L:'durmus',x:120,fx:1}],bl:null,L:[
+     "Üç hafta denizde. İki kardeş, bir sal ve tek bir yön: ışığın gittiği yer.",
+     "Kıyıya vurdukları sabah kumda bir şey parladı.",
+     "<b>Durmuş</b>: “Abi… bu babamın çekici.”",
+     "Sapında mor bir yanık izi vardı. Kardeşler örslerini o kumsala kurdu."]}},
+ farmer:{lost:'Kızı Gül',ids:['f1','f2','f3'],F:[
+   "Benim bir kızım var: <b>Gül</b>. Var diyorum, çünkü ölmedi. Biliyorum.",
+   "Ayçiçeğini çok severdi. “Baba, onlar da güneşi arıyor, benim gibi” derdi. Bu tarlayı onun için ekiyorum; gelince görsün.",
+   "Bir hasat gecesi tarlada ateş böcekleri gibi mor ışıklar uçuştu. Gül peşlerinden koştu. Ben “dur” diyene kadar… Ben de peşinden bu adaya geldim."],
+   sc:{n:'Hasan · Hasat gecesi',bg:'field',cast:[{L:'farmer',x:60,fx:1,arm:'reach'},{L:'gül',x:150,fx:1,v:1}],bl:2,L:[
+     "Bir hasat gecesi. Ayçiçekleri geceleyin bile başlarını göğe çevirmiş.",
+     "<b>Gül</b>: “Baba, bak! Ateş böcekleri mor olmuş!”",
+     "Işıklar bir araya toplandı, bir sütun oldu. Gül'ün ayakları yerden kesildi.",
+     "Hasan o gece tarlanın ortasında sabahladı. Ayçiçekleri hâlâ göğe bakıyordu."]}},
+ usta:{lost:'Annesi Hatice Ana',ids:['u1','u2','u3'],F:[
+   "Bu ellerin ustası annemdi evlat: <b>Hatice Ana</b>. Tezgâhında kilim dokur, tezgâhının yanında kalas rendelerdi.",
+   "Ada ada dolaşıp ev yapardık. Bir gün bu adaya bir atölye kurmaya geldik; biri sipariş vermişti. Kim olduğunu hâlâ bilmiyorum.",
+   "Atölyeyi bitirdiğimiz gece kapıyı mor bir ışık çaldı. Annem açtı. “Siparişi teslim almaya gelmişler” dedi. Kapı kapandı. Ben kaldım."],
+   sc:{n:'Kemal · Sipariş',bg:'workshop',cast:[{L:'usta',x:70,fx:1},{L:'hatice',x:168,fx:1,v:1}],bl:2,L:[
+     "Yeni bitmiş bir atölye, talaş kokusu, bir gece yarısı.",
+     "Kapı üç kez çalındı. <b>Hatice Ana</b>: “Siparişi teslim almaya gelmişler oğlum. Ben bakarım.”",
+     "Kapının aralığından mor bir ışık doldu. Ana döndü, oğluna gülümsedi ve dışarı çıktı.",
+     "Kemal o atölyede kaldı. Kapıyı bir daha hiç kilitlemedi."]}},
+ carp:{lost:'Nişanlısı Defne',ids:['carp1','c2','c3'],F:[
+   "Evleri neden bu kadar sağlam yaparım biliyor musun? Birine ev sözü verdim de ondan.",
+   "<b>Defne</b>. Nişanlım. “Bana deniz gören bir ev yap, pencerelerine perde asarız” dedi. Bu adaya o evi yapmaya geldik.",
+   "Çatıyı kapattığım gün gökten mor ışık indi. Çatı vardı, Defne yoktu. O günden beri yaptığım her evin bir penceresi denize bakar."],
+   sc:{n:'Rıza · Deniz gören ev',bg:'cliff',cast:[{L:'carp',x:60,fx:1},{L:'defne',x:150,fx:-1,v:1}],bl:2,L:[
+     "Bir yamaçta yeni bir ev. Çatının son kalası çakılıyor.",
+     "<b>Defne</b>: “Bitti mi? Perdeleri ben asarım, söz!”",
+     "Mor ışık açık pencereden içeri doldu. Defne perdeyi tuttu… perde boşlukta sallandı.",
+     "Rıza o evi hiç yıkmadı. Pencerede hâlâ bir perde asılı."]}},
+ toygar:{lost:'Oğlu Ayaz',ids:['t1','t2','t3','t4'],F:[
+   "Bataklıkta yirmi yıl… Kimse çamuru sevmez evlat. Ben de sevmem.",
+   "Oğlum <b>Ayaz</b>'la buraya avlanmaya gelmiştik. On dört yaşındaydı; okunu benden iyi atardı.",
+   "Bir timsahın peşindeydik. Su durdu, kurbağalar sustu. Sonra gök mor oldu.",
+   "Ayaz yukarı bakıp gülümsedi: “Baba, yıldızlar iniyor.” Ben yıldız görmedim, yalnızca ışık gördüm. O günden beri buradayım; ışık hep buraya iner."],
+   sc:{n:'Toygar · Yıldızlar iniyor',bg:'swamp',cast:[{L:'toygar',x:70,fx:1},{L:'ayaz',x:146,fx:-1,v:1}],bl:1,L:[
+     "Yirmi yıl önce, bataklığın ortasında bir baba ve oğul. Su birden durgunlaşıyor.",
+     "<b>Ayaz</b>: “Baba, bak… yıldızlar iniyor!”",
+     "Toygar okunu gerdi. Neye nişan alacağını bilemedi.",
+     "O günden beri bataklıkta bir avcı yaşar. Hep yukarı bakar."]}},
+ trader:{lost:'Yeğeni Deniz',ids:['nuri1'],F:[
+   "Bu adaya her bahar neden uğrarım sanıyorsun? Ticaret mi? Ha ha… <i>(susar)</i> Yeğenim <b>Deniz</b> burada kayboldu. İskelede fenerini tutuyordu. Her gelişimde iskeleye bir fener bırakırım."],
+   sc:{n:'Nuri · İskeledeki fener',bg:'pier',cast:[{L:'nuri',x:56,fx:1},{L:'deniz',x:150,fx:-1,v:1}],bl:1,L:[
+     "Bir bahar gecesi, iskelede bir tüccar gemisi. Miço Deniz elinde fenerle bekliyor.",
+     "<b>Deniz</b>: “Dayı! Gökte bir fener daha var, benimkinden büyük!”",
+     "Mor ışık iskeleye indi. Fener tahtaların üstüne düştü, yanmaya devam etti.",
+     "Nuri o fenerin ışığını hiç söndürmedi."]}}};
+const GOBJ={npc:()=>npc,witch:()=>witch,market:()=>market,alp:()=>alp,smith:()=>smith,durmus:()=>durmus,farmer:()=>farmer,usta:()=>usta,carp:()=>carp,toygar:()=>toygar,trader:()=>trader};
+const ST={h:{},s:{}};window.__v59=ST;
+const gidOf=who=>{if(!who)return 'npc';for(const k in GOBJ)if(GOBJ[k]()===who)return k;return null};
+const QD=()=>(window.__v55&&window.__v55.d)||[];
+function unlocked(g){const S=ST_[g];if(g==='npc'){const done=Math.max(0,Math.min(QUESTS.length,tut-11));return S.at.filter(a=>done>=a).length}return S.ids.filter(id=>QD().indexOf(id)>=0).length}
+const heard=g=>ST.h[g]||0;
+const allDone=g=>heard(g)>=ST_[g].F.length;
+function storyChoice(g,who){const u=unlocked(g),h=heard(g);if(h<u)return{q59:1,fresh:1,pri:1,k:'q59'+g+h,t:h?'📖 Hikâyenin devamını anlat':'📖 Sen bu adaya nasıl geldin?',f:()=>tell(g,who)};
+  if(allDone(g)&&!ST.s[g])return{q59:1,fresh:1,k:'q59s'+g,t:'📖 O geceyi anlat',f:()=>playScene(g)};return null}
+function tell(g,who){const S=ST_[g],i=heard(g);ST.h[g]=i+1;sfx('pick');
+  const more=heard(g)<unlocked(g),end=allDone(g)&&!ST.s[g];
+  say(S.F[i]+`<br><small style="color:#c9a0ff">Hikâye ${heard(g)}/${S.F.length}${end?' · tamamlandı':''}</small>`,
+    more?[{t:'Devam et',pri:1,fresh:1,f:()=>tell(g,who)},{t:'Sonra',f:bye}]:end?[{t:'…',pri:1,fresh:1,f:()=>{bye();setTimeout(()=>playScene(g),300)}}]:[{t:'Anladım',pri:1,f:bye}],who)}
+// talking: the story piece comes as a choice in the person's own menu, and right after a quest is handed in
+const BYE=/^(Hoşça kal|Sonra|Sonra konuşuruz|Sonra gelirim|Teşekkürler|Tamam|Ne demek)$/;
+{const _s=say;say=function(text,ch,who){try{const g=gidOf(who);
+  if(g&&ST_[g]&&Array.isArray(ch)&&!tz&&met&&!wake&&(g!=='npc'||tut>=11)&&!ch.some(c=>c.q59)&&ch.some(c=>BYE.test(c.t))&&!(g==='npc'&&who&&who!==npc)){const c=storyChoice(g,who);if(c){ch=ch.slice();
+      if(ch.length===1&&ch[0].t==='Ne demek'){const f0=ch[0].f;ch=[Object.assign({},c,{f:()=>{try{f0()}catch(e){}setTimeout(()=>{const c2=storyChoice(g,who);if(c2)c2.f()},250)}}),{t:'Ne demek',f:f0}]}
+      else ch.splice(Math.max(0,ch.length-1),0,c)}}}catch(e){}
+  return _s.call(this,text,ch,who)}}
+// ---------------------------------------------------------------- the scene player
+const ov=document.createElement('div');ov.id='npcsc';ov.hidden=true;ov.innerHTML='<h3>Ada halkı</h3><h2 id="nsc-n"></h2><canvas id="nsc-c" width="240" height="135"></canvas><p id="nsc-t"></p><button type="button" id="nsc-go">Devam</button>';document.body.appendChild(ov);
+const sg=$('nsc-c').getContext('2d');let cur=null,lastT=0;
+function playScene(g,again){const S=ST_[g];if(!S)return;cur={g,line:0,t:0,lt:0,again};ov.hidden=false;$('nsc-n').textContent=S.sc.n;line();sfx('magic');try{audio.play('hum',{vol:.45})}catch(e){}requestAnimationFrame(loop);setTimeout(()=>{try{$('nsc-go').focus()}catch(e){}},50)}
+function line(){const S=ST_[cur.g].sc;$('nsc-t').innerHTML=S.L[cur.line];$('nsc-go').textContent=cur.line<S.L.length-1?'Devam':'Kapat';cur.lt=0}
+function next(){if(!cur)return;const S=ST_[cur.g].sc;if(cur.line<S.L.length-1){cur.line++;line();if(S.bl!=null&&cur.line===S.bl)try{audio.play('hum',{vol:.6})}catch(e){}return}
+  const g=cur.g,again=cur.again;cur=null;ov.hidden=true;if(!again){ST.s[g]=true;gainXP(40);toast(`${ST_[g].lost}: hikâye tamamlandı (Kitap › Ada halkı)`);try{if(window.__v57&&window.__v57.quest)window.__v57.quest({})}catch(e){}}}
+$('nsc-go').addEventListener('click',next);
+addEventListener('keydown',e=>{if(!cur)return;if(e.code==='Enter'||e.code==='Space'||e.code==='KeyE'){if(!e.repeat)next();e.preventDefault();e.stopImmediatePropagation()}},true);
+function loop(now){if(!cur)return;requestAnimationFrame(loop);const dt=Math.min(.05,Math.max(0,(now-(lastT||now))/1000));lastT=now;cur.t+=dt;cur.lt+=dt;draw(sg,cur.g,cur.t,cur.line,cur.lt)}
+const BG={
+ sky:(p,g,t,top,c1,c2)=>{const gr=g.createLinearGradient(0,0,0,top);gr.addColorStop(0,c1);gr.addColorStop(1,c2);g.fillStyle=gr;g.fillRect(0,0,240,top)},
+ stars:(p,t,n,top,fade)=>{for(let q=0;q<n;q++){if(fade&&q<fade)continue;const sx=(q*97)%240,sy=(q*53)%top;if(Math.sin(t*2+q)>-.3)p(sx,sy,1,1,q%5?'#cfd8ff':'#ffffff')}}};
+function drawBg(g,p,k,t,line){
+  if(k==='deck'){BG.sky(p,g,t,96,'#0a0c22','#2a2050');BG.stars(p,t,70,90,line>=1?Math.min(70,Math.floor((t%40)*4)):0);p(0,96,240,39,'#1a2a4a');for(let q=0;q<12;q++)p((q*31+t*6)%240,100+(q*7)%30,12,1,'rgba(160,190,255,.3)');p(20,100,200,10,'#6a4426');p(20,100,200,2,'#8a5a30');p(120,30,3,70,'#4a3018');for(let q=0;q<26;q++)p(123,34+q,Math.floor(q*.9),1,'#d8cfb0')}
+  else if(k==='rocks'){p(0,0,240,135,'#0a0c1c');BG.stars(p,t,30,60);const r=12+Math.sin(t*2)*1.5;g.strokeStyle='#a050e0';g.lineWidth=2;g.beginPath();g.arc(180,26,r,0,6.28);g.stroke();p(0,88,240,47,'#1a2a4a');for(let q=0;q<10;q++)p((q*29+t*5)%240,92+(q*5)%30,10,1,'rgba(160,190,255,.3)');
+    g.fillStyle='#3a3a44';g.beginPath();g.moveTo(130,135);g.lineTo(150,96);g.lineTo(190,90);g.lineTo(225,100);g.lineTo(240,135);g.fill();p(150,104,8,3,'#6ab04a');p(200,98,6,3,'#6ab04a');p(30,104,44,8,'#5a3a22');p(26,102,52,3,'#7a5432')}
+  else if(k==='storm'){p(0,0,240,135,'#141826');if(Math.sin(t*1.7)>.95)p(0,0,240,135,'rgba(220,220,255,.35)');p(0,98,240,37,'#1a2236');for(let q=0;q<90;q++){const rx=(q*53+t*40)%260-10,ry=(q*37+t*190)%140;p(rx,ry,1,5,'rgba(170,200,255,.5)')}
+    p(10,100,220,10,'#5a3a22');p(10,100,220,2,'#7a5432');p(110,20,3,80,'#3a2414');for(let q=0;q<5;q++)p(40+q*30,94,10,6,'#8a6a3a')}
+  else if(k==='fort'){p(0,0,240,135,'#0c1020');BG.stars(p,t,50,70);p(0,92,240,43,'#4a4a52');for(let x=0;x<240;x+=16)p(x,84,10,8,'#5a5a62');p(0,92,240,2,'#6a6a72');for(let y=96;y<135;y+=6)for(let x=(y/6%2)*8;x<240;x+=16)p(x,y,14,1,'#3a3a42');const f=Math.sin(t*9)>0;p(30,74,2,12,'#5a3a1e');p(29,68,4,6,f?'#ffd27a':'#f2902a')}
+  else if(k==='forge'){p(0,0,240,135,'#120c10');BG.stars(p,t,30,50);p(0,96,240,39,'#2a1e18');p(150,60,70,40,'#3a3036');p(146,56,78,6,'#4a2a20');const f=Math.sin(t*9)*.5+.5;p(176,82,18,14,'#2a1408');p(178,86,14,9,f>.5?'#f2902a':'#e86a2a');
+    p(96,92,22,6,'#3a3e44');p(100,98,14,6,'#2e3136');const gl=.6+.4*Math.sin(t*5);g.globalAlpha=gl;p(102,86,10,6,'#c070ff');g.globalAlpha=1}
+  else if(k==='raft'){BG.sky(p,g,t,80,'#e88a6a','#f6d090');p(0,74,240,30,'#3a6ab0');for(let q=0;q<10;q++)p((q*29+t*6)%240,80+(q*5)%20,12,1,'rgba(255,255,255,.4)');p(0,100,240,35,'#e0c890');p(10,90,60,8,'#8a5a30');for(let q=0;q<6;q++)p(12+q*10,90,1,8,'#5a3418');p(38,70,2,20,'#5a3418');p(40,72,14,12,'#d8cfb0');
+    const h=Math.sin(t*3)>0;p(156,108,14,4,'#6a6e74');p(168,106,3,8,'#6a4424');if(h)p(162,104,2,2,'#c070ff')}
+  else if(k==='field'){p(0,0,240,135,'#0c1222');BG.stars(p,t,40,60);p(0,90,240,45,'#2a3a1e');for(let q=0;q<14;q++){const x=q*17+4;p(x+3,64,2,30,'#3a6a2a');p(x,58,8,8,'#e8b830');p(x+2,60,4,4,'#6a4a1a')}
+    for(let q=0;q<14;q++){const a=t*1.5+q,x=120+Math.sin(a)*60+Math.cos(a*.7)*20,y=60+Math.sin(a*1.3)*20;p(x,y,2,2,'#c080ff')}}
+  else if(k==='workshop'){p(0,0,240,135,'#4a3420');for(let x=0;x<240;x+=12)p(x,0,1,100,'#3a2614');p(0,100,240,35,'#6a4a2a');for(let x=0;x<240;x+=20)p(x,100,1,35,'#5a3a20');p(20,80,60,8,'#8a5a30');p(24,88,3,12,'#5a3418');p(72,88,3,12,'#5a3418');p(30,74,12,6,'#c8a868');
+    const o=line>=1?.5+.5*Math.sin(t*6):0;p(186,48,28,52,'#2a1a10');p(188,50,24,50,line>=1?`rgba(170,90,255,${(.4+.4*o).toFixed(2)})`:'#5a3418')}
+  else if(k==='cliff'){BG.sky(p,g,t,90,'#3a2a5a','#d8806a');p(0,80,240,55,'#2a4a7a');for(let q=0;q<10;q++)p((q*31+t*5)%240,86+(q*7)%30,10,1,'rgba(255,200,160,.35)');g.fillStyle='#4a6a3a';g.beginPath();g.moveTo(0,135);g.lineTo(0,100);g.lineTo(200,104);g.lineTo(220,135);g.fill();
+    p(110,64,80,40,'#b07a42');p(104,58,92,8,'#8a3a2a');for(let x=112;x<190;x+=6)p(x,66,1,38,'#8a5a30');p(132,74,14,12,'#5a3418');p(133,75,12,10,line>=2?'#c080ff':'#bfe0ff')}
+  else if(k==='swamp'){p(0,0,240,135,'#0a140e');BG.stars(p,t,40,50);p(0,86,240,49,'#1e3a2a');for(let q=0;q<12;q++)p((q*23)%240,88+(q*9)%40,14,2,'#2e5a3e');for(let q=0;q<16;q++){const x=q*15+3;p(x,70+(q%3)*4,1,20,'#4a6a2a');p(x-1,68+(q%3)*4,3,4,'#6a4a2a')}}
+  else{p(0,0,240,135,'#0c1428');BG.stars(p,t,50,70);p(0,90,240,45,'#1a2a4a');p(60,92,180,8,'#6a4426');for(let x=64;x<240;x+=10)p(x,100,2,20,'#4a3018');p(10,60,40,30,'#5a3a22');p(28,30,2,34,'#4a3018');p(30,32,16,20,'#d8cfb0');
+    const f=.6+.4*Math.sin(t*7);g.globalAlpha=f;p(150,72,6,8,'#ffd27a');g.globalAlpha=1}}
+function draw(g,gid,t,line,lt){const p=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round(x),Math.round(y),w,h)};g.setTransform(1,0,0,1,0,0);g.imageSmoothingEnabled=false;
+  const S=ST_[gid].sc;drawBg(g,p,S.bg,t,line);const base=104,up=S.bl!=null&&line>=S.bl;
+  for(const a of S.cast){const L=LOOKS[a.L]||NPCL[a.L];if(!L)continue;let y=base,alpha=1;
+    if(a.v&&up){const k=line>S.bl?99:lt;y=base-Math.min(46,k*16);alpha=line>S.bl+1?0:Math.max(.15,1-Math.max(0,k-1.5)*.4)}
+    if(alpha<=0)continue;g.save();g.globalAlpha=alpha;drawChibi(g,a.x,Math.round(y),L,{fx:a.fx>0?1:0,closed:a.sleep?1:0,arm:a.arm||(a.v&&up?'up':undefined)});g.restore()}
+  if(up&&line<=S.bl+1){const v=S.cast.find(a=>a.v);if(v){const a=Math.min(1,(line>S.bl?2:lt)*.8),w=14+Math.sin(t*12)*2;g.save();g.globalAlpha=.45*a;g.fillStyle='#b070ff';g.fillRect(v.x-w/2,0,w,base+4);g.globalAlpha=.85*a;g.fillStyle='#ead8ff';g.fillRect(v.x-2,0,4,base+4);g.globalAlpha=.3*a;g.fillStyle='#c9a0ff';g.beginPath();g.ellipse(v.x,base+2,22,6,0,0,6.28);g.fill();g.restore();
+    for(let q=0;q<3;q++)p(v.x+Math.sin(t*5+q*2)*10,base-((t*40+q*30)%90),2,2,'#e8d0ff')}}
+  const vg=g.createRadialGradient(120,68,40,120,68,150);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(20,6,40,.55)');g.fillStyle=vg;g.fillRect(0,0,240,135)}
+// ---------------------------------------------------------------- Kitap › Ada halkı
+{const _bt=bookTabs;bookTabs=function(){const h=_bt.apply(this,arguments);const n=Object.keys(ST_).filter(g=>heard(g)>0).length;
+  return h.replace(/<\/div>\s*$/,`<button type="button" role="tab" data-bt="ppl" aria-selected="${bookTab==='ppl'}">${glyph('Hasır yatak')}<span>Ada halkı ${n}/${Object.keys(ST_).length}</span></button></div>`)}}
+renderPpl=function(){const L=Object.keys(ST_).map(g=>{const S=ST_[g],o=GOBJ[g](),h=heard(g),nm=o&&o.name?o.name:g;
+    if(!h)return `<li style="opacity:.55"><b>${esc(nm)}</b><br><small>Görevlerini yaptıkça sana bu adaya nasıl geldiğini anlatır (${S.F.length} parça).</small></li>`;
+    return `<li><b>${esc(nm)}</b> <small style="color:#c9a0ff">· ${esc(S.lost)} · ${h}/${S.F.length}</small><div class="pplf">${S.F.slice(0,h).map(f=>`<p>${f}</p>`).join('')}</div>${ST.s[g]?`<button type="button" class="mk ghost" data-psc="${g}">Sahneyi izle: ${esc(S.sc.n)}</button>`:(h>=S.F.length?'<small>Sahneyi görmek için onunla konuş.</small>':'')}</li>`}).join('');
+  return bookTabs()+`<p class="note">Adadaki herkes buraya mor ışık yüzünden geldi ve ışık her birinden birini aldı. Görevlerini yaptıkça hikâyelerini anlatırlar; hepsini bitirince o geceyi görürsün.</p><ul class="book ppl">${L}</ul>`};
+cbody.addEventListener('click',e=>{if(mode!=='book'||bookTab!=='ppl')return;const b=e.target.closest('[data-psc]');if(b){closeCraft();playScene(b.dataset.psc,true)}});
+window.__v59x={draw:(g,l,t,lt)=>draw(sg,g,t,l,lt)};
+const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);s.v59={h:Object.assign({},ST.h),s:Object.assign({},ST.s)};return s};
+const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);ST.h={};ST.s={};const v=d&&d.v59;if(v){for(const k in v.h||{})if(ST_[k])ST.h[k]=Math.max(0,Math.min(ST_[k].F.length,+v.h[k]||0));for(const k in v.s||{})if(ST_[k])ST.s[k]=!!v.s[k]}if(cur){cur=null;ov.hidden=true}return r};
+}).toString()+')()')}catch(e){try{window.__hamErr('v59: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<style id="v59-css">
+#npcsc{position:fixed;inset:0;z-index:58;background:#07060c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:12px}
+#npcsc canvas{width:min(92vw,calc((100vh - 190px)*16/9));height:auto;image-rendering:pixelated;border:3px solid #a070e0;box-shadow:0 0 0 3px #11170f,0 0 50px rgba(160,112,224,.35)}
+#npcsc h3{margin:0;color:#d8b0ff;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+#npcsc h2{margin:0;font-size:22px;color:var(--ink)}
+#npcsc p{margin:0;max-width:min(92vw,760px);min-height:3em;text-align:center;font-size:17px;line-height:1.45;color:var(--ink)}
+#npcsc p b{color:#ffb0c8}
+#npcsc button{font:inherit;font-weight:700;background:var(--accent);color:#1d1606;border:0;padding:8px 22px;cursor:pointer;box-shadow:0 0 0 2px #11170f}
+#cbody .ppl li{display:block;padding:8px 10px}#cbody .pplf p{margin:6px 0;font-size:14px;line-height:1.45;color:var(--ink)}#cbody .ppl button{margin-top:4px}
+</style>
 </body>
 </html>
