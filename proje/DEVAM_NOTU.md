@@ -345,3 +345,12 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Her biten görev bir parça açar (`unlocked`); NPC menüsünde "📖 Sen bu adaya nasıl geldin? / devamını anlat", görev teslim edilince de hemen sunulur. Bütün parçalar duyulunca "📖 O geceyi anlat" → kısa sahne (`playScene`, `#npcsc`, 240×135, mor ışık sütunu ile götürülme; Durmuş'unki kumsaldaki çekiç). Sahne bitince +40 XP ve anılar için görev kancası.
 - Kitap › **Ada halkı** sekmesi: duyulan parçalar, sahneyi yeniden izle. Kayıt `v59:{h,s}`.
 - Final (herkesin kurtarılması / kötü son) henüz yok; hikâyeler buna göre açık uçlu.
+
+## v60 — En üst seviye 50, telefonda hile modu ve bataklık performansı
+- `MAXLV=50` (eski kayıtlarda 50'nin üstü 50'ye iner). XP eğrisi 16'ya kadar aynı, sonra `3606×(1+0,06×(L−16))` → 1'den 50'ye ≈245 bin XP (eskiden 100'e ≈9 milyon). İçerikteki en yüksek seviye şartı 12, değişmedi.
+- Özellikler `effL(L)` ile: 16'dan sonra her seviye iki sayılır (Sv50 ≈ eski Sv84 gücü); hız/toplama/şans tavanları aynı kaldı (21/33/23).
+- Ağaçlar: tepe salınımı satır satır çiziliyordu (ağaç başına ≈30 drawImage); artık her sprite yarım adımlık hazır salınım kopyaları tutar (`c.__sw`), ağaç tek drawImage. Bataklıkta en büyük kazanç.
+- Kalite kademesi: 2+ bölge tonu yok, yağmur damlası ×0,75; 3 bataklık sisi yok (sis havası hariç), yağmur ×0,5.
+- İzleyici: bir kademe yükseldikten sonra 30 sn içinde yine düşerse o cihaz o kademeye bir daha çıkmaz (`floorL`) → ileri geri sallanma yok.
+- Boşta (requestIdleCallback): çevredeki zemin parçaları önceden pişirilir, tarif ikonları önceden çizilir (kitabın ilk açılışı hafifler). Seviye atlama yazısı ayrı katmanda (`will-change`).
+- Ölçüm (844×390, CPU ×4): hile + Sv50 + harita açık: yürüyüş/çatışma 30–60 fps, bataklık 100 ms → 17–33 ms, gece/yağmur ≈30 fps, Kül Diyarı ≈60 fps; 90 sn oturumda bellek sabit (≈20 MB).
