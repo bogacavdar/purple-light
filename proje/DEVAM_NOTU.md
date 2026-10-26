@@ -453,3 +453,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Kazan/örs malzeme satırı "+": alt tarif henüz ✓ (öğrenilmiş) olmasa da açıksa (isOpen) ve malzeme yetiyorsa yapılır, öğrenilir ve kazana atılır (canQuick artık foundSet istemiyor). Örn. Keskin taş eksikken envanterde 2 Taş varsa + çalışır.
 - v69.3'teki tarif listesi "+" kaldırıldı (Boğaç: "+" yalnız seçilen bilinmeyen tarifin malzeme satırlarında olsun).
 - Ekin'in akşam "meşaleni al / meşale yap" uyarısı (duskCheck) yalnız ilk 3 günde çıkar; 27. günde çıkması saçmaydı.
+
+## v69.8 (26 Ekim 2026)
+- Görevler sekmesi: her görev kartında "📌 Sağ üstte göster" düğmesi (Ekin'in ana görevi dahil). Seçilen yan görev sağ üstteki görev kartında yazar (`QS.pin`, v55-q içinde; kayda `v55.pin` olarak girer; görev bitince/yoksa Ekin'in ana görevine döner). Aynı düğmeye tekrar basınca ana göreve döner. Ders/eğitim kartları (tz, qPeek, lessonCard, tut<11) önceliklidir.
+- "Takip et / Takibi bırak" düğmeleri yuvarlak hap düğmeler oldu (.qbtns .qb); takipteyken mavi "✓ Takip ediliyor", sağ üstteyken sarı "📌 Sağ üstte".

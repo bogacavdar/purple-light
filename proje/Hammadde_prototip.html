@@ -9667,7 +9667,7 @@ setInterval(tick,300);sync();tick();
 // =====================================================================================================
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
-const QS={a:{},d:[],tr:[]};window.__v55=QS;
+const QS={a:{},d:[],tr:[],pin:null};window.__v55=QS;
 const anyOf=L=>()=>L.some(n=>forged.has(n)||(inv[n]||0)>0);
 const NQ=[
  // Zümrüt: herbs, night things, the cauldron
@@ -9790,17 +9790,17 @@ v55Ents=function(ents,time){
   if(!n)return;const lab='Görev: '+(QG.why[k]||'');
   ents.push({y:9991,d:()=>{ctx.save();ctx.font='bold 6px Rubik, system-ui, sans-serif';ctx.textAlign='center';ctx.lineWidth=2;ctx.strokeStyle='rgba(8,16,32,.9)';ctx.strokeText(lab,Math.round(x),Math.round(y));ctx.fillStyle='#8fd0ff';ctx.fillText(lab,Math.round(x),Math.round(y));ctx.restore()}})};
 // ---------------------------------------------------------------- the Görevler panel
-renderQlog=function(){const q=tut>=11&&tut<11+QUESTS.length?QUESTS[tut-11]:null;
-  const ek=q?`<div class="qcard main"><div class="qh"><b>${esc(npc.name)}</b> · Ana görev ${tut-10}/${QUESTS.length}</div><div class="qt">${esc(q.t)}</div><small>${qState==='talk'?`${esc(npc.name)} seninle konuşmak istiyor.`:qState==='ready'?'Tamamlandı! Ödül için Ekin\'e dön.':`${q.h} (${q.p()})`}</small></div>`:(tut>=11+QUESTS.length?'<p class="note">Ekin\'in görevlerinin hepsi bitti.</p>':'');
+renderQlog=function(){const pinB=id=>{const on=id?QS.pin===id:!pinOk();return `<button type="button" class="qb pin${on?' on':''}" data-qpin="${id}" aria-pressed="${on}" title="Sağ üstteki görev kartında bu görev yazsın">${on?'📌 Sağ üstte':'📌 Sağ üstte göster'}</button>`};const q=tut>=11&&tut<11+QUESTS.length?QUESTS[tut-11]:null;
+  const ek=q?`<div class="qcard main"><div class="qh"><b>${esc(npc.name)}</b> · Ana görev ${tut-10}/${QUESTS.length}</div><div class="qt">${esc(q.t)}</div><small>${qState==='talk'?`${esc(npc.name)} seninle konuşmak istiyor.`:qState==='ready'?'Tamamlandı! Ödül için Ekin\'e dön.':`${q.h} (${q.p()})`}</small><div class="qbtns">${pinB('')}</div></div>`:(tut>=11+QUESTS.length?'<p class="note">Ekin\'in görevlerinin hepsi bitti.</p>':'');
   const act=NQ.filter(x=>QS.a[x.id]);
-  const card=x=>{const on=QS.tr.indexOf(x.id)>=0,ok=complete(x);return `<div class="qcard${on?' trk':''}${ok?' ok':''}"><div class="qh"><b>${esc(nameOf(x.g))}</b>${ok?' · <em>hazır, teslim et</em>':''}</div><div class="qt">${esc(x.t)}</div><small>${progText(x)}${x.c||x.x?` · Ödül: ${rewardTxt(x)}`:''}</small>${x.auto?'':`<button type="button" class="mk ghost" data-qtr="${x.id}">${on?'Takibi bırak':'Takip et'}</button>`}</div>`};
+  const card=x=>{const on=QS.tr.indexOf(x.id)>=0,ok=complete(x);return `<div class="qcard${on?' trk':''}${ok?' ok':''}"><div class="qh"><b>${esc(nameOf(x.g))}</b>${ok?' · <em>hazır, teslim et</em>':''}</div><div class="qt">${esc(x.t)}</div><small>${progText(x)}${x.c||x.x?` · Ödül: ${rewardTxt(x)}`:''}</small><div class="qbtns">${pinB(x.id)}${x.auto?'':`<button type="button" class="qb trk${on?' on':''}" data-qtr="${x.id}" aria-pressed="${on}" title="${on?'Takibi bırakmak için dokun':'İstediği şeyler dünyada mavi parlasın'}">${on?'✓ Takip ediliyor':'Takip et'}</button>`}</div></div>`};
   const av=Object.keys(GIVER).map(g=>{if(!metG[g]())return '';const a=available(g);if(!a)return '';return `<li>${esc(nameOf(g))}: ${a.req&&!a.req()?`<small>yeni iş (${esc(a.rt||'sonra')})</small>`:'<b style="color:#7fc8ff">sana bir işi var</b>'}</li>`}).join('');
   const tot=NQ.filter(x=>!x.auto).length,dn=QS.d.filter(id=>NQI[id]&&!NQI[id].auto).length;
   cbody.innerHTML=`<p class="note">Adadaki herkesin sana verebileceği işler var; aynı anda birden çok görev alabilirsin. <b>Takip et</b> dediğin görevin istediği şeyler dünyada <b style="color:#7fc8ff">mavi</b> parlar. Yol göstermez; dolaşırken denk gelirsin. Başında mavi <b style="color:#7fc8ff">!</b> olan kişinin işi, sarı <b style="color:#ffe07a">?</b> olanın teslim edilecek görevi var.</p>`
     +ek+(act.length?act.map(card).join(''):'<p class="note">Şu an açık bir yan görevin yok.</p>')
     +(av?`<h3 class="ush">İş verebilecekler</h3><ul class="qav">${av}</ul>`:'')
     +`<p class="note">Tamamlanan yan görevler: <b>${dn} / ${tot}</b></p><button type="button" class="mk ghost" id="qcardtog">${questsHidden?'Görev kartını göster':'Görev kartını gizle'}</button>`};
-cbody.addEventListener('click',e=>{if(mode!=='qlog')return;const b=e.target.closest('[data-qtr]');if(b){trackQ(b.dataset.qtr);return}if(e.target.id==='qcardtog'){questsHidden=!questsHidden;renderTut();renderCraft()}});
+cbody.addEventListener('click',e=>{if(mode!=='qlog')return;const b=e.target.closest('[data-qtr]');if(b){trackQ(b.dataset.qtr);return}const pb=e.target.closest('[data-qpin]');if(pb){const id=pb.dataset.qpin;QS.pin=id&&QS.pin!==id?id:null;questsHidden=false;sfx('pick');renderTut();renderCraft();return}if(e.target.id==='qcardtog'){questsHidden=!questsHidden;renderTut();renderCraft()}});
 // Nuri now comes on his own (after the bridge, or from day 3); his first order is taken automatically
 setInterval(()=>{try{if(onTitle||!met||tz)return;if(!trader.called&&(bridge.fixed||day>=3)){trader.called=true;trader.nextAt=Math.min(trader.nextAt,playTime+30)}
   if(trader.state==='here'&&!trader.firstDone&&!QS.a.nuri1&&!isDone('nuri1')){QS.a.nuri1={b:{}};toast('Yeni görev: Nuri\'nin ilk siparişi · iskelede')}
@@ -9814,6 +9814,16 @@ const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);
     for(const k in M){if(done.indexOf(k)>=0)QS.d.push(M[k]);else if(cur===k&&d.qState&&d.qState!=='talk'){accept(NQI[M[k]],true)}}
     if(trader.firstDone&&QS.d.indexOf('nuri1')<0){delete QS.a.nuri1;QS.d.push('nuri1')}}
   refreshQG();return r};
+// v69.8: choose which quest the top-right card shows
+function pinOk(){if(QS.pin&&!QS.a[QS.pin])QS.pin=null;return !!QS.pin}
+const _snap2=snapshot;snapshot=function(){const s=_snap2.apply(this,arguments);if(s.v55)s.v55.pin=QS.pin;return s};
+const _rest2=restore;restore=function(d){const r=_rest2.apply(this,arguments);QS.pin=d&&d.v55&&d.v55.pin&&QS.a[d.v55.pin]?d.v55.pin:null;try{renderTut()}catch(e){}return r};
+const _rtp=renderTut;renderTut=function(){const r=_rtp.apply(this,arguments);
+  try{if(!pinOk()||tz||qPeek||questsHidden||tut<11||!met||lessonCard)return r;const x=NQI[QS.pin],ok=complete(x),who=nameOf(x.g);
+    tutEl.hidden=false;craftEl.classList.add('tutpad');$('tutstep').textContent=`${who} · Yan görev`;
+    $('tuttext').innerHTML=(ok?`<b>${esc(x.t)}</b> Tamamlandı! Teslim etmek için <b>${esc(who)}</b> ile konuş.`:`<b>${esc(x.t)}</b> ${progText(x)}${x.c||x.x?` · Ödül: ${rewardTxt(x)}`:''}`)+lessonLines();
+    tutPor.k='';$('tutpor').innerHTML='';$('tutok').hidden=true;$('tutskip').hidden=false;$('tutskip').textContent='Görevleri gizle'}catch(e){}
+  return r};
 }).toString()+')()')}catch(e){try{window.__hamErr('v55: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <style id="v55-css">
@@ -9822,6 +9832,8 @@ const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);
 #cbody .qcard.main{border-color:#c8a868}#cbody .qcard.trk{border-color:#4a8acc;box-shadow:0 0 0 1px #4a8acc inset}#cbody .qcard.ok{border-color:#8fd46b}
 #cbody .qcard .qh{font-size:13px;color:var(--ink-dim)}#cbody .qcard .qh em{color:#8fd46b;font-style:normal}#cbody .qcard .qt{font-weight:700;font-size:16px;margin:2px 0}
 #cbody .qcard button{margin-top:6px}#cbody .qav{margin:4px 0 8px 18px}
+#cbody .qbtns{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}#cbody .qbtns .qb{margin:0;font:inherit;font-size:13px;font-weight:600;line-height:1.2;padding:6px 12px;min-height:32px;border:2px solid var(--panel-edge);border-radius:999px;background:rgba(0,0,0,.28);color:var(--ink);cursor:pointer}
+#cbody .qbtns .qb:hover{filter:brightness(1.2)}#cbody .qbtns .qb.trk.on{background:#1d4a78;border-color:#4a8acc;color:#e6f3ff}#cbody .qbtns .qb.pin.on{background:#5e4a1c;border-color:#c8a868;color:#fff3d0}
 </style>
 <script id="v56-room">
 // =====================================================================================================
