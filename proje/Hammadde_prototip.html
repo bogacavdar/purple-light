@@ -1148,6 +1148,22 @@ body.b5edit #prompt{display:block!important}
 @keyframes p4no{0%,100%{transform:none}20%{transform:translateX(-4px)}40%{transform:translateX(4px)}60%{transform:translateX(-3px)}80%{transform:translateX(2px)}}
 @media (max-height:520px) and (pointer:coarse){.p4card b{font-size:16px}.p4card small,.p4n small,.p4g small{font-size:11px}.p4grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}}
 </style>
+<style id="v49-p3-css">
+/* v49 p3: a bigger tracking bar */
+.b3row{gap:6px;padding:4px 7px}
+.b3lab{font-size:14px}.b3lab img{width:24px;height:24px}
+.b3c{font-size:15px;gap:5px;padding:2px 7px 2px 3px}.b3c img{width:32px;height:32px}.b3c b{font-size:16px}.b3c .b3nm{max-width:120px}
+@media (max-height:520px){.b3row{gap:3px;padding:2px 4px}.b3lab{font-size:12px}.b3c{font-size:13px;padding:1px 4px 1px 2px}.b3c img{width:24px;height:24px}.b3c b{font-size:14px}}
+/* Tab / hand icon and the bag: loud pulse + an arrow; the key caps in the card bounce */
+.ib.p3tab{border-color:#7fd0ff!important;animation:p3tab .9s ease-in-out infinite;z-index:3}
+@keyframes p3tab{0%,100%{box-shadow:0 0 0 2px #11170f,0 0 0 4px rgba(127,208,255,.9);transform:scale(1)}50%{box-shadow:0 0 0 2px #11170f,0 0 18px 8px rgba(127,208,255,.75);transform:scale(1.12)}}
+#p3ptr{position:fixed;z-index:9;width:0;height:0;border-top:16px solid transparent;border-bottom:16px solid transparent;border-right:24px solid #7fd0ff;filter:drop-shadow(0 0 2px #11170f) drop-shadow(0 0 1px #11170f);pointer-events:none;animation:b3nudge .7s ease-in-out infinite}
+#p3ptr[hidden]{display:none!important}
+#tut .kc.p3k{border-color:#7fd0ff;color:#cfeeff;animation:p3key .8s ease-in-out infinite}
+@keyframes p3key{0%,100%{transform:translateY(0);border-bottom-width:4px}50%{transform:translateY(2px);border-bottom-width:2px;box-shadow:0 0 8px rgba(127,208,255,.8)}}
+.ping li.p3put{cursor:pointer}.ping li.p3put:hover{border-color:var(--accent)}
+@media (prefers-reduced-motion:reduce){.ib.p3tab,#p3ptr,#tut .kc.p3k{animation:none}}
+</style>
 </head>
 <body>
 <canvas id="game" aria-label="Orman kenarı ve nehir: karakteri WASD ile yürüt, E ile malzeme topla"></canvas>
@@ -2885,7 +2901,7 @@ cbody.addEventListener('click',e=>{
   queueMicrotask(()=>renderTut());
   const ea=e.target.closest('[data-eat]');if(ea){const n=ea.dataset.eat;if(eat(n)){toast(`${n} yedin`);if(mode==='eat'&&!eatList().length)closeCraft()}return}
   if(mode==='inv'){invClick(e);return}
-  const sbb=e.target.closest('[data-sub]');if(sbb){if(sbb.classList.contains('no')){const li=sbb.closest('li');if(li)li.classList.toggle('tipon');sfx('bad');return}quickBrew(sbb.dataset.sub);return}
+  const sbb=e.target.closest('[data-sub]');if(sbb){{const sn=sbb.dataset.sub;if(pot.r&&(inv[sn]||0)>0&&REC.get(pot.r).i.some(([m],k)=>expand(m).includes(sn)&&needLeft(k)>0)){deposit(sn);return}}if(sbb.classList.contains('no')){const li=sbb.closest('li');if(li)li.classList.toggle('tipon');sfx('bad');return}quickBrew(sbb.dataset.sub);return}
   const bb=e.target.closest('[data-buy]');if(bb){const n=bb.dataset.buy,g=GT[n];if((plInf()||coins>=toolPrice(n))&&!(inv[n]>0)){if(!plInf())coins-=toolPrice(n);giveTool(n);shopBuy(n);toast(`${n} satın alındı · envanterinde`);if(beltIndex(n)<0)setTimeout(()=>beltTip(n),700);renderInv();renderCraft()}return}
   const sh=e.target.closest('[data-sharp]');if(sh){const n=sh.dataset.sharp,g=GT[n];if(plInf()||coins>=g.sharp){if(!plInf())coins-=g.sharp;toolDur[n]=g.dur;toast(`${n} bilendi`);renderInv();renderCraft()}return}
   const skb=e.target.closest('[data-sk]');if(skb){buySkill(skb.dataset.sk);return}
@@ -3105,10 +3121,10 @@ function renderPot(list){
   const x=pot.r?REC.get(pot.r):null;
   const rows=x?x.i.map(([n,q],i)=>{const h=putSum(i),have=expand(n).reduce((t,m)=>t+(inv[m]||0),0);
     // a part that is itself a recipe gets a + button: make one right here (or see what is missing)
-    const sub=FG?subRecipe(n):null;let sb='';
+    const sub=FG&&have<q-h?subRecipe(n):null;let sb='';
     if(sub){const can=canQuick(sub),miss=can?'':!foundSet.has(sub)?'önce bir kez kendin kaynat (✓ olunca + ile hızlı yapılır)':missingFor(REC.get(sub));
-      sb=`<button type="button" class="sb${can?'':' no'}" data-sub="${esc(sub)}" aria-label="${esc(sub)} yap${can?'':': eksik '+esc(miss)}">+</button>${can?`<span class="stip ok">1 ${esc(sub)} yap</span>`:`<span class="stip">${foundSet.has(sub)?'Eksik: ':''}${esc(miss)}</span>`}`}
-    return `<li class="${h>=q?'ok':''}"><img src="${icon(expand(n)[0])}" alt=""><span>${esc(n)}</span><b>${h} / ${q}</b>${sb}<small>sende ${have}</small></li>`}).join('')+x.t.map(t=>`<li class="${inv[t]>0?'ok':'miss'}"><img src="${icon(t)}" alt=""><span>Alet: ${esc(t)}</span><b>${inv[t]>0?'var':'yok'}</b><small>harcanmaz</small></li>`).join(''):'';
+      sb=`<button type="button" class="sb${can?'':' no'}" data-sub="${esc(sub)}" aria-label="${esc(sub)} yap${can?'':': eksik '+esc(miss)}">+</button>${can?`<span class="stip ok">Yeni 1 ${esc(sub)} yap</span>`:`<span class="stip">${foundSet.has(sub)?'Eksik: ':''}${esc(miss)}</span>`}`}
+    return `<li class="${h>=q?'ok':''}${have>0&&h<q?' p3put':''}" data-pn="${esc(n)}"><img src="${icon(expand(n)[0])}" alt=""><span>${esc(n)}</span><b>${h} / ${q}</b>${sb}<small>sende ${have}</small></li>`}).join('')+x.t.map(t=>`<li class="${inv[t]>0?'ok':'miss'}"><img src="${icon(t)}" alt=""><span>Alet: ${esc(t)}</span><b>${inv[t]>0?'var':'yok'}</b><small>harcanmaz</small></li>`).join(''):'';
   const need=x?new Set(x.i.flatMap(([n])=>expand(n))):null;
   const tiles=list.filter(n=>!need||need.has(n)||!sk('B2'));
   const wantOf=n=>{if(!x||potMode==='dene'||(!FG&&foundSet.has(x.r)))return 0;let w=0;x.i.forEach(([m],i)=>{if(expand(m).includes(n))w+=Math.max(0,needLeft(i))});return w};
@@ -7126,8 +7142,11 @@ function rowFor(r,q,label,own){const x=REC.get(r);if(!x)return null;q=q||1;
   for(const t of x.t)items.push({n:t,need:1,have:(inv[t]||0)>0?1:0,tool:true});
   return{t:label||r,r,own:!!own,items}}
 function tutRow(){
+  if(!tz&&torchTut===2&&ownsKind('torch'))return{t:'Ekin · Meşaleyi eline al',r:'Kaba meşale',items:[{n:'Kaba meşale',need:1,have:torchHeld()?1:0,ng:1}]};
   if(!tz){if(torchTut===1&&!ownsKind('torch')&&met&&!wake)return rowFor('Kaba meşale',1,'Ekin · Gece için meşale');return null}
   const h=n=>inv[n]||0;
+  if(tz===2)return{t:'Ekin · Ye',r:'Böğürtlen',items:[{n:'Böğürtlen',need:5,have:Math.min(5,tzEat),ng:1}]};   // v49-p3
+  if(tz===6&&window.__p3&&window.__p3.hold)return{t:'Zümrüt · Meşaleyi eline al',r:'Kaba meşale',items:[{n:'Kaba meşale',need:1,have:torchHeld()?1:0,ng:1}]};
   if(tz===1)return{t:'Ekin · Böğürtlen',r:'Böğürtlen',items:[{n:'Böğürtlen',need:5,have:Math.min(5,h('Böğürtlen')+tzEat)}]};
   if(tz===4&&!foundSet.has('Kaba meşale'))return rowFor('Kaba meşale',1,'Zümrüt · İlk tarif');
   if(tz===5)return rowFor('Kaba meşale',1,'Zümrüt · Elinle yap');
@@ -7137,6 +7156,7 @@ function tutRow(){
   if(tz===12){const S=AXE_STEPS[axeStep];if(!S)return null;const x=REC.get(S[0]),have=h(S[0]),miss=Math.max(0,S[1]-have);
     const items=[{n:S[0],need:S[1],have}];if(x&&miss)x.i.forEach(([n,k])=>items.push({n,need:k*miss,have:haveOf(n)}));
     return{t:`Börü · Taş balta ${axeStep+1}/${AXE_STEPS.length}`,r:'Taş balta',items}}
+  if(tz===9||tz===10)return{t:'Nazlı · Keskin taşı sat',r:'Keskin taş',items:[{n:'Keskin taş',need:1,have:Math.min(1,h('Keskin taş')),ng:1}]};
   if(tz===13)return rowFor('Taş balta',1,'Dursun · Örse götür');
   return null}
 function rows(){const L=[];const t=tutRow();if(t)L.push(t);for(const r of B3.trk){const x=rowFor(r,1,r,true);if(x)L.push(x)}return L}
@@ -7150,7 +7170,7 @@ function markSources(n,need,depth,G){const have=haveOf(n);if(have>=need)return;c
     for(const k in ANIM){const A=ANIM[k];if(A.drops&&A.drops.some(d=>d[0]===m))G.a.add(k)}
     const y=REC.get(m);if(y&&depth<3&&!TOOLS.has(m))for(const [p,q] of y.i)markSources(p,q*miss,depth+1,G)}}
 function refreshGlow(R){refreshNodeNames();const G={n:new Set(),t:new Set(),a:new Set(),d:new Set()};
-  for(const r of R)for(const it of r.items)if(!it.tool&&it.have<it.need)markSources(it.n,it.need-(it.have-haveOf(it.n)),0,G);
+  for(const r of R)for(const it of r.items)if(!it.tool&&!it.ng&&it.have<it.need)markSources(it.n,it.need-(it.have-haveOf(it.n)),0,G);
   B3.glow=G.n;B3.glowTree=G.t;B3.glowAnim=G.a;B3.dropN=G.d}
 
 // ---------------------------------------------------------------- the bar at the top of the screen
@@ -7171,8 +7191,8 @@ function placeBar(){if(bar.hidden)return;
 function renderBar(force){
   let R=rows();const phone=PHONE();
   const hide=onTitle||!!wake||document.body.classList.contains('cine')||!R.length||(craftOpen&&phone)||fading;
-  if(craftOpen)R=R.slice(0,2);else if(phone)R=R.slice(0,2);
-  refreshGlow(R);
+  if(craftOpen)R=R.slice(0,2);else if(phone)R=R.slice(0,tz?1:2);
+  refreshGlow(tz&&R.length&&!R[0].own?[R[0]]:R);
   const k=hide?'':JSON.stringify(R.map(r=>[r.t,r.items.map(it=>[it.n,it.have,it.need])]));
   document.body.classList.toggle('b3trkpad',!hide&&craftOpen&&!craftEl.classList.contains('tutpad'));
   if(hide){bar.hidden=true;tip.hidden=true;B3.key='';return}
@@ -7216,9 +7236,11 @@ function halo(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();
   const g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,`rgba(110,190,255,${(.55+.25*p).toFixed(3)})`);g.addColorStop(.55,`rgba(70,150,255,${(.32+.18*p).toFixed(3)})`);g.addColorStop(1,'rgba(60,140,255,0)');
   ctx.fillStyle=g;ctx.beginPath();ctx.ellipse(x,y,r,r*.72,0,0,Math.PI*2);ctx.fill();ctx.restore()}
 function ring(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.strokeStyle=`rgba(170,225,255,${(.6+.4*p).toFixed(3)})`;ctx.lineWidth=1.5;ctx.beginPath();ctx.ellipse(x,y,r+p*1.5,(r+p*1.5)*.62,0,0,Math.PI*2);ctx.stroke();ctx.restore()}
-const _drawNode=drawNode;drawNode=function(n,t){const on=B3.glow.size&&B3.glow.has(n.name);if(on)halo(n.x,n.y,n.mine?19:15,n.v*6);_drawNode.apply(this,arguments);if(on)ring(n.x,n.y+2,n.mine?11:8,n.v*6)};
-const _drawDrops=drawDrops;drawDrops=function(t,inView){if(B3.dropN&&B3.dropN.size){for(const d of drops){if(d.t<1||!inView(d.x,d.y,12))continue;if(B3.dropN.has(d.n))halo(d.x,d.y,9,d.ph)}}_drawDrops.apply(this,arguments)};
-const _drawAnimal=drawAnimal;drawAnimal=function(a,t){const on=B3.glowAnim.size&&B3.glowAnim.has(a.k);if(on)halo(a.x,a.y-3,15,a.x*.1);_drawAnimal.apply(this,arguments);if(on)ring(a.x,a.y+1,10,a.x*.1)};
+// v49-p3: the glow is the object's own silhouette (canvas shadow around every drawn pixel), pulsing
+function gl(on,k,f){if(!on)return f();const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;ctx.shadowColor=`rgba(90,190,255,${(.8+.2*p).toFixed(3)})`;ctx.shadowBlur=(2.2+2.2*p)*S*dpr;f();ctx.shadowColor=`rgba(190,235,255,${(.45+.4*p).toFixed(3)})`;ctx.shadowBlur=1.2*S*dpr;f();ctx.restore()}
+const _drawNode=drawNode;drawNode=function(n,t){const on=B3.glow.size&&B3.glow.has(n.name),a=arguments,me=this;gl(on,n.v*6,()=>_drawNode.apply(me,a))};
+const _drawDrops=drawDrops;drawDrops=function(t,inView){_drawDrops.apply(this,arguments);if(B3.dropN&&B3.dropN.size){for(const d of drops){if(d.t<1||!inView(d.x,d.y,12)||!B3.dropN.has(d.n))continue;const c=ICONC[d.n];if(!c)continue;const h=1+Math.sin(time*3+d.ph);gl(true,d.ph,()=>ctx.drawImage(c,Math.round(d.x-4.5),Math.round(d.y-7-h),9,9))}}};
+const _drawAnimal=drawAnimal;drawAnimal=function(a,t){const on=B3.glowAnim.size&&B3.glowAnim.has(a.k),ar=arguments,me=this;gl(on,a.x*.1,()=>_drawAnimal.apply(me,ar))};
 // trees: glow when they give what you track; their crown fades when something you can pick up (or an animal) is behind it
 function occList(){if(B3.occT===time)return B3.occ;B3.occT=time;const L=[];const vw2=vw/S,vh2=vh/S,cx=cam.cx,cy=cam.cy,inV=(x,y)=>x>cx-20&&x<cx+vw2+20&&y>cy-20&&y<cy+vh2+60;
   for(const n of nodes)if(n.alive&&inV(n.x,n.y))L.push([n.x,n.y]);for(const d of drops)if(inV(d.x,d.y))L.push([d.x,d.y]);for(const a of animals)if(inV(a.x,a.y))L.push([a.x,a.y]);
@@ -7227,9 +7249,8 @@ const _drawTree=drawTree;drawTree=function(tr,t){
   const c=treeSprite(tr.type,tr.seed%3),w=c.width,x=Math.round(tr.x),y=Math.round(tr.y),dx=x-Math.floor(w/2),dy=y+6-c.bot;
   let hid=false;for(const [ox,oy] of occList()){if(oy<tr.y+3&&ox+4>dx+3&&ox-4<dx+w-3&&oy>dy+2){hid=true;break}}
   const on=B3.glowTree.size&&B3.glowTree.has(tr.type.n);
-  if(on)halo(tr.x,tr.y+2,22,tr.seed);
-  if(hid){ctx.save();ctx.globalAlpha=.55;_drawTree.apply(this,arguments);ctx.restore()}else _drawTree.apply(this,arguments);
-  if(on){ring(tr.x,tr.y+3,14,tr.seed);const p=(time*.9+tr.seed*.37)%1;ctx.save();ctx.globalAlpha=.75*(1-p);px(tr.x-6+(tr.seed%12),dy+8+p*-10+((tr.seed>>3)%14),1,1,'#bfe6ff');px(tr.x+4-((tr.seed>>2)%9),dy+14-p*12,1,1,'#bfe6ff');ctx.restore()}};
+  {const ar=arguments,me=this;if(hid){ctx.save();ctx.globalAlpha=.55;gl(on,tr.seed,()=>_drawTree.apply(me,ar));ctx.restore()}else gl(on,tr.seed,()=>_drawTree.apply(me,ar))}
+  if(on){const p=(time*.9+tr.seed*.37)%1;ctx.save();ctx.globalAlpha=.75*(1-p);px(tr.x-6+(tr.seed%12),dy+8+p*-10+((tr.seed>>3)%14),1,1,'#bfe6ff');px(tr.x+4-((tr.seed>>2)%9),dy+14-p*12,1,1,'#bfe6ff');ctx.restore()}};
 
 // ---------------------------------------------------------------- NPC calls: all the lesson's materials are in
 const CALLS=[
@@ -8393,7 +8414,8 @@ for(const n in ORW)P1W['__ore_'+n]=[20,15,ORW[n]];
 const _p1drawNode=drawNode;
 drawNode=function(n,time){if(!(n.mine&&ORW[n.name])||RES[n.name].draw!=='ore')return _p1drawNode(n,time);
   const x=Math.round(n.x),y=Math.round(n.y);ctx.fillStyle='rgba(0,0,0,.22)';ctx.beginPath();ctx.ellipse(x,y+3,10,2.6,0,0,Math.PI*2);ctx.fill();
-  drawSprite(p1spr('__ore_'+n.name,n.v>.5),x,y+4);
+  {const B=window.__b3,on=!!(B&&B.glow&&B.glow.size&&B.glow.has(n.name)),ds=()=>drawSprite(p1spr('__ore_'+n.name,n.v>.5),x,y+4);   // v49: tracked ores glow on their own outline too
+   if(on){const p=.5+.5*Math.sin(time*4.2+n.v*6);ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;ctx.shadowColor=`rgba(90,190,255,${(.8+.2*p).toFixed(3)})`;ctx.shadowBlur=(2.2+2.2*p)*S*dpr;ds();ctx.shadowColor=`rgba(190,235,255,${(.45+.4*p).toFixed(3)})`;ctx.shadowBlur=1.2*S*dpr;ds();ctx.restore()}else ds()}
   if((n.name==='Altın cevheri'||n.name==='Gümüş cevheri'||n.name==='Kuvars'||n.name==='Kristal'||n.name==='Pirit')&&Math.sin(time*3+n.v*30)>.93){px(x+2,y-13,1,3,'#ffffff');px(x+1,y-12,3,1,'#ffffff')}};
 // ---------------------------------------------------------------- refresh what is already on screen
 try{renderInv()}catch(e){}try{renderHot()}catch(e){}
@@ -8675,11 +8697,11 @@ function ring2(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.stroke
 drawAnimal=function(a,time){const M=ART[a.k];if(!M)return prevDraw(a,time);
   const s=Math.max(.25,+nn(a.scale,1)||1),x=Math.round(a.x),y=Math.round(a.y),f=a.face<0?-1:1,F=pal(a,M,time),glow=glowOn(a.k);
   const fly=a.k==='Kül cini'?Math.round(Math.sin(time*3+a.x*.05)*1.5)-2:0;
-  if(glow)halo2(a.x,a.y-M.top*s*.4,Math.max(15,M.sh*.75*s),a.x*.1);
   ctx.fillStyle='rgba(0,0,0,.22)';ctx.beginPath();ctx.ellipse(x,y+1.5,M.sh*.5*s,Math.max(1.5,M.sh*.12*s),0,0,Math.PI*2);ctx.fill();
   const spr=sprite(a.k,F,a.tint||null);
-  ctx.save();ctx.translate(x,y+fly);if(f<0)ctx.scale(-1,1);if(s!==1)ctx.scale(s,s);ctx.drawImage(spr,-M.OX,-M.OY);ctx.restore();
-  if(glow)ring2(a.x,a.y+1,Math.max(10,M.sh*.5*s),a.x*.1);
+  const drawSpr=()=>{ctx.save();ctx.translate(x,y+fly);if(f<0)ctx.scale(-1,1);if(s!==1)ctx.scale(s,s);ctx.drawImage(spr,-M.OX,-M.OY);ctx.restore()};
+  if(glow){const p=.5+.5*Math.sin(time*4.2+a.x*.1);ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;ctx.shadowColor=`rgba(90,190,255,${(.8+.2*p).toFixed(3)})`;ctx.shadowBlur=(2.2+2.2*p)*S*dpr;drawSpr();ctx.shadowColor=`rgba(190,235,255,${(.45+.4*p).toFixed(3)})`;ctx.shadowBlur=1.2*S*dpr;drawSpr();ctx.restore()}   // v49: glow hugs the sprite's own outline
+  else drawSpr();
   if(a.k==='Kül cini'&&Math.random()<.25)parts.push({x:a.x+(Math.random()-.5)*8,y:a.y-6+fly,vx:0,vy:-14,life:.5,c:'#ff9a3a'});
   if(a.k==='Kül kurdu'&&Math.random()<.1)parts.push({x:a.x,y:a.y-8,vx:0,vy:-10,life:.4,c:'#ff7a2a'});
   if(a.k==='Kara ejder'&&F.wind&&Math.random()<.4)parts.push({x:a.x+f*20*s,y:a.y-24*s,vx:f*20,vy:-6,life:.4,c:Math.random()<.5?'#ff7a2a':'#ffd060'});
@@ -8964,6 +8986,63 @@ P4.lc=coins;
 P4.spawnBoss=spawnBoss;P4.bossNeed=bossNeed;P4.bossName=bossName;
 window.__p4=P4;
 }).toString()+')()')}catch(e){try{window.__hamErr('v49-p4: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v49-p3">
+// =====================================================================================================
+// v49 p3: tutorial + tracking fixes — the arrow only points at what the step needs, Tab is impossible to
+// miss, a lesson for taking the torch from the bag into the hand, and ingredient rows that take what you own.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const P3={hold:false};window.__p3=P3;
+const hv=n=>expand(n).reduce((t,m)=>t+(inv[m]||0),0);
+// ---- the arrow: what the CURRENT step needs (axe: only the current part), nearest reachable one
+const _tzNeed=tzNeed;tzNeed=function(){
+  if(P3.hold&&tz===6)return[];
+  if(tz===12){const S=AXE_STEPS[axeStep];if(!S)return[];const miss=Math.max(0,S[1]-(inv[S[0]]||0));if(!miss)return[];const x=REC.get(S[0]),L=[];
+    if(x)for(const [n,k] of x.i){if(REC.get(n))continue;if(hv(n)<k*miss)L.push(n)}return L}
+  return _tzNeed.apply(this,arguments)};
+tzMat=function(){const need=tzNeed();let b=null,bd=1e9;for(const n of nodes)if(n.alive&&need.indexOf(n.name)>=0&&reachAt(n.x,n.y)){const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;b=n}}return b?{x:b.x,y:b.y,n:b.name}:{x:player.x,y:player.y,n:''}};
+GUIDE.tzmat=tzMat;
+const _gk=guideKey;guideKey=function(){const k=_gk.apply(this,arguments);if(k==='tzmat'&&!tzMat().n)return null;if(k==='berry'&&!GUIDE.berry().n)return null;return k};
+// ---- ingredient row cards (cauldron + anvil): tap = put one of yours in, hold = all that is needed
+let rowHold=null,rowHeld=false;
+const rowItem=n=>{for(const m of expand(n))if((inv[m]||0)>0)return m;return null};
+cbody.addEventListener('pointerdown',e=>{if(mode!=='craft'||potMode==='dene'||e.button>0)return;const li=e.target.closest('.ping li[data-pn]');if(!li||e.target.closest('.sb'))return;rowHeld=false;clearTimeout(rowHold);
+  rowHold=setTimeout(()=>{rowHeld=true;let k=0;const n=li.dataset.pn;for(let g=0;g<20;g++){const m=rowItem(n);if(!m)break;const a=deposit(m);if(!a)break;k+=a}if(k>1)msg(`${k} ${n} birden kondu`,'ok');renderTut()},350)});
+const rowUp=()=>{clearTimeout(rowHold);setTimeout(()=>{rowHeld=false},60)};addEventListener('pointerup',rowUp);addEventListener('pointercancel',rowUp);
+cbody.addEventListener('click',e=>{if(mode!=='craft'||potMode==='dene')return;const li=e.target.closest('.ping li[data-pn]');if(!li||e.target.closest('.sb'))return;if(rowHeld)return;
+  const n=li.dataset.pn,m=rowItem(n);if(!m){msg(`Sende ${n} yok.`,'bad');sfx('bad');return}deposit(m,1);renderTut()});
+// ---- Tab / hand icon: impossible to miss when a step needs hand-crafting
+const ptr=document.createElement('div');ptr.id='p3ptr';ptr.hidden=true;ptr.setAttribute('aria-hidden','true');document.body.appendChild(ptr);
+function wantHand(){if(onTitle||wake||dlgOpen)return false;if(craftOpen&&mode==='hand')return false;
+  if(tz===5)return !tzNeed().length;if(tz===8)return true;
+  if(tz===12){const S=AXE_STEPS[axeStep];return !!S&&canBrew(REC.get(S[0]))}
+  if(!tz&&(torchTut===1&&canBrew(REC.get('Kaba meşale'))||htut===1))return true;return false}
+function wantInv(){return P3.hold&&tz===6&&!onTitle&&!wake&&!dlgOpen&&!craftOpen&&beltIndex('Kaba meşale')<0}
+function placePtr(){const hb=$('b-hand'),ib=$('b-inv'),wh=wantHand(),wi=wantInv();if(hb)hb.classList.toggle('p3tab',wh);if(ib)ib.classList.toggle('p3tab',wi);
+  const el=wh?hb:wi?ib:null;if(!el||craftOpen){ptr.hidden=true;return}const r=el.getBoundingClientRect();if(!r.width){ptr.hidden=true;return}
+  ptr.hidden=false;ptr.style.left=Math.round(r.right+6)+'px';ptr.style.top=Math.round(r.top+r.height/2-16)+'px'}
+function keyCaps(){const tt=$('tuttext');if(!tt)return;const on=wantHand()||(craftOpen&&mode==='hand'&&tz);tt.querySelectorAll('.kc').forEach(k=>{if(/^(Tab|I|[0-9])$/.test(k.textContent.trim())||on)k.classList.add('p3k')})}
+// ---- torch: from the bag into the hand (between the torch and the stones)
+const _tzMade=tzMade;tzMade=function(r){const was=tz;const o=_tzMade.apply(this,arguments);if(was===5&&tz===6&&r==='Kaba meşale'&&!torchHeld()){P3.hold=true;renderTut()}return o};
+const _tzCard=tzCard;tzCard=function(){if(P3.hold&&tz===6){const n='Kaba meşale',i=beltIndex(n),inInv=craftOpen&&mode==='inv';
+  if(i<0)return['witch','Zümrüt · Meşaleyi eline al',inInv?(TOUCH?`<b>${n}</b> simgesine dokun, sonra alttaki yanıp sönen <b>yuvaya</b> dokun.`:`<b>${n}</b> simgesini alttaki yanıp sönen <b>yuvaya</b> sürükle (ya da tıkla, sonra yuvaya tıkla).`)
+    :`Meşalen <b>envanterinde</b>; elinde değil. Önce ${TOUCH?'soldaki <b>çanta ikonuna</b> dokun':'<span class="kc">I</span> tuşuna bas (ya da soldaki çanta ikonuna tıkla)'}, meşaleyi alttaki bir <b>alet yuvasına</b> koy.`];
+  return['witch','Zümrüt · Meşaleyi eline al',inInv?`Meşale ${slotKey(i)}. yuvada. Envanteri kapat (${TOUCH?'Kapat':'<span class="kc">Esc</span>'}) ve ${TOUCH?'alttaki yanıp sönen kutuya dokun':'<span class="kc">'+slotKey(i)+'</span> tuşuna bas'}: meşale eline gelir.`
+    :`Meşale ${slotKey(i)}. yuvada! Şimdi ${TOUCH?'alttaki yanıp sönen <b>'+slotKey(i)+'. kutuya</b> dokun':'<span class="kc">'+slotKey(i)+'</span> tuşuna bas'}: meşale eline gelir. Gece onu elinde tutarsın.`]}
+  return _tzCard.apply(this,arguments)};
+function holdMarks(){if(!(P3.hold&&tz===6))return;const n='Kaba meşale',i=beltIndex(n);
+  if(craftOpen&&mode==='inv'){const t=cbody.querySelector(`.itile[data-n="${n}"]`);if(i<0){if(t&&invSel!==n)t.classList.add('pulse');if(invSel===n){const b=cbody.querySelector('.bs.empty')||cbody.querySelector('.bs');if(b)b.classList.add('pulse')}}}
+  else if(i>=0&&!craftOpen){const b=document.querySelector(`#hotbar [data-hs="${i}"]`);if(b&&!b.classList.contains('pulse'))b.classList.add('pulse')}}
+function holdTick(){if(P3.hold&&(tz!==6||torchHeld())){const ok=tz===6;P3.hold=false;if(ok){sfx('found');toast('Meşale elinde! Şimdi kazanın yanındaki 4 taşı topla.')}renderTut()}}
+const _rip=renderInvPanel;renderInvPanel=function(){const r=_rip.apply(this,arguments);try{holdMarks()}catch(e){}return r};
+const _rt=renderTut;renderTut=function(){const r=_rt.apply(this,arguments);try{holdMarks();keyCaps();placePtr()}catch(e){}return r};
+setInterval(()=>{try{if(onTitle){ptr.hidden=true;return}holdTick();placePtr();holdMarks()}catch(e){}},300);
+addEventListener('resize',placePtr);
+const _rs=resetState;resetState=function(){P3.hold=false;return _rs.apply(this,arguments)};
+renderTut();
+}).toString()+')()')}catch(e){try{window.__hamErr('v49-p3: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
