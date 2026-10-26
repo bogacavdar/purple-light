@@ -1047,8 +1047,11 @@ body.b3trkpad #craft{padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
 #title{padding:0;background:#05061a}
 #b5tbg{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;image-rendering:crisp-edges;z-index:0}
 #title .tcard,#title .tcard.diffm,#title .tcard.danger{position:absolute;inset:0;width:auto;max-width:none;max-height:none;background:none;border:0;box-shadow:none;padding:0;overflow:hidden;text-align:left;animation:none}
-#title .logo.pl{position:absolute;z-index:1;left:50%;top:calc(env(safe-area-inset-top,0px) + max(14px,5vh));transform:translateX(-50%);width:min(80vw,1040px);display:block;pointer-events:none;filter:drop-shadow(0 0 10px rgba(150,90,255,.35))}
+#title .logo.pl{position:absolute;z-index:1;left:50%;top:calc(env(safe-area-inset-top,0px) + max(14px,5vh));transform:translateX(-50%);width:min(88vw,1150px);display:block;pointer-events:none;filter:drop-shadow(0 0 10px rgba(150,90,255,.35));transition:filter .5s}
 #title.b5night .logo.pl{filter:drop-shadow(0 0 16px rgba(170,110,255,.7)) drop-shadow(0 0 2px rgba(240,220,255,.6))}
+#title.b5night.b5hit .logo.pl{filter:drop-shadow(0 0 22px rgba(190,130,255,.95)) drop-shadow(0 0 3px rgba(250,235,255,.85));transition:filter .12s}
+/* the bigger logo would reach the gear/door icons: below ~1450px it starts under them */
+@media (max-width:1450px){#title .logo.pl{top:calc(env(safe-area-inset-top,0px) + max(76px,5vh))}}
 #b5logo{display:block;width:100%;height:auto;image-rendering:pixelated;image-rendering:crisp-edges}
 #title .logo.pl .lbeam{top:-60px;height:calc(100% + 120px);width:22%}
 #title:not(.b5night) .logo.pl .lbeam{display:none}
@@ -1071,7 +1074,7 @@ body.b3trkpad #craft{padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
 #title #tdiff,#title #thard{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(600px,calc(100vw - 32px));max-height:calc(100% - 24px);overflow:auto;box-sizing:border-box;padding:18px 20px;background:rgba(18,12,34,.95);border:3px solid rgba(190,150,255,.55);box-shadow:0 0 0 3px #07050f,0 20px 60px rgba(0,0,0,.6);text-align:center}
 #title #tdiff[hidden],#title #thard[hidden]{display:none}
 #title .tcard.danger #thard{border-color:#c8202a;background:radial-gradient(ellipse at 50% 0,#4a0e12,#1a0a0c 70%);box-shadow:0 0 0 3px #11170f,0 0 60px rgba(200,32,42,.55)}
-@media (max-width:900px){#title .logo.pl{width:min(70vw,calc(100vw - 170px));left:calc(50% - 40px)}}
+@media (max-width:900px){#title .logo.pl{width:min(82vw,calc(100vw - 40px));left:50%;top:calc(env(safe-area-inset-top,0px) + 58px)}}
 @media (max-height:520px){
   #title #tmain{gap:9px;width:min(260px,38vw);bottom:calc(env(safe-area-inset-bottom,0px) + 16px)}
   #title #tmain .mb{min-height:50px;font-size:19px;padding:9px 18px;border-radius:13px}
@@ -7552,8 +7555,10 @@ function drawLogo(){const c=$('b5logo');if(!c)return;const txt='PURPLE LIGHT';le
   g.fillStyle='rgba(255,255,255,.75)';for(const [cx,cy] of cells)if(cy===0)g.fillRect((cx+1)*S,(cy+1)*S,S,1)}
 
 // ------------------------------------------------------------------ the title scene
-const T5={on:false,last:0,p:.40,Wc:0,Hc:180,isl:null,tint:null,tintK:'',fog:null,stars:[],ff:[],motes:[],clouds:[],shoot:null,amb:{wind:null,drone:null,tryAt:0},lastDraw:0};
+const T5={on:false,last:0,p:.40,Wc:0,Hc:180,isl:null,tint:null,tintK:'',fog:null,stars:[],ff:[],motes:[],clouds:[],shoot:null,amb:{wind:null,drone:null,tryAt:0},lastDraw:0,
+  strikes:[],eyes:[],nextStrike:0,nextEye:0,surf:[],wreck:null};
 B5.setPhase=p=>{T5.p=((p%1)+1)%1};B5.phase=()=>T5.p;
+B5.fx=()=>({strikes:T5.strikes.map(s=>({x:s.x,y:s.y,a:+s.a.toFixed(2)})),eyes:T5.eyes.map(e=>({x:e.x,y:e.y,k:e.k}))});
 const CYC=80;   // seconds for day → dusk → night → dawn
 // keyframes: p, sky top, sky bottom, sea, island tint, night amount
 const SKYK=[[0,'#3f8fd8','#bfe4ff','#2a6ab8','#ffffff',0],[.36,'#3f8fd8','#c8e8ff','#2a6ab8','#ffffff',0],[.44,'#3a3a7c','#f08a5a','#3a4a8a','#ffb898',.2],
@@ -7569,7 +7574,7 @@ function buildIsland(Wc,Hc){rs5=7;const c=document.createElement('canvas');c.wid
   const P=(x,y,col)=>{g.fillStyle=col;g.fillRect(x,y,1,1)};const {cx,R,wl,h}=S;
   // distant islets on the horizon
   g.fillStyle='#3a5a6a';for(const [x0,w,hh] of [[Wc*.05,22,4],[Wc*.12,10,2],[Wc*.94,16,3]]){for(let i=0;i<w;i++){const k=Math.sin(i/w*Math.PI);g.fillRect(Math.round(x0+i),Math.round(97-hh*k),1,Math.ceil(hh*k)+1)}}
-  const surf=[];
+  const surf=[];T5.surf=surf;
   for(let x=cx-R-2;x<=cx+R;x++){const u=(x-cx)/R,hh=h(u);if(hh<=0)continue;const top=Math.round(wl-hh);surf[x]=top;
     const sl=Math.abs(h(u+1/R)-h(u-1/R))/2,cliff=u>.66;
     for(let y=top;y<=wl;y++){const d=y-top,base=wl-y;let col;
@@ -7588,7 +7593,7 @@ function buildIsland(Wc,Hc){rs5=7;const c=document.createElement('canvas');c.wid
     if(pine){for(let k=0;k<th;k++){const w=Math.floor(k*.42);for(let dx=-w;dx<=w;dx++)P(x+dx,y0-th+k,k%3===2?'#1e5a30':(dx<0?'#2e7a40':'#256a38'))}P(x,y0,'#5a3a22');P(x,y0-th-1,'#3a8a4e')}
     else{for(let dy=0;dy<th;dy++)for(let dx=-3;dx<=3;dx++){if(Math.abs(dx)+Math.abs(dy-th/2)>th/2+1.5)continue;P(x+dx,y0-2-dy,dy<2?'#62b048':dx>1?'#3a8a34':'#4e9e3e')}P(x,y0-1,'#6a4426');P(x,y0,'#6a4426')}}
   // the wrecked ship on the left beach
-  {const bx=Math.round(cx-R*.70),by=wl-1;const hull=[[0,0,20],[1,1,18],[2,2,16],[3,3,13]];
+  {const bx=Math.round(cx-R*.70),by=wl-1;T5.wreck={x:bx,y:by};const hull=[[0,0,20],[1,1,18],[2,2,16],[3,3,13]];
     for(const [dy,dx,w] of hull)for(let i=0;i<w;i++)P(bx+dx+i,by-3+dy-Math.round(i*.18),(i+dy)%5===0?'#3a2414':'#5a3a20');
     for(let k=0;k<12;k++)P(bx+9+Math.round(k*.35),by-4-k,'#4a2e18');for(let k=0;k<6;k++)P(bx+13+k,by-13+Math.round(k*.5),'#4a2e18');
     for(let k=0;k<5;k++)for(let j=0;j<3+k;j++)P(bx+11+j,by-12+k,(j+k)%2?'#c8c0a8':'#b0a890');
@@ -7608,7 +7613,23 @@ function tintIsland(tc){const k=tc.map(v=>Math.round(v/6)).join(',');if(k===T5.t
 function setupScene(Wc,Hc){T5.Wc=Wc;T5.Hc=Hc;T5.isl=buildIsland(Wc,Hc);T5.tintK='';T5.fog=buildFog(Wc);rs5=99;
   T5.stars=Array.from({length:110},()=>({x:R5()*Wc,y:R5()*92,b:.3+R5()*.7,ph:R5()*6,big:R5()<.08}));
   const S=T5.S;T5.ff=Array.from({length:22},()=>({x:S.cx+(R5()*2-1)*S.R*.8,y:S.wl-4-R5()*30,ph:R5()*6,sp:.3+R5()*.5}));
-  T5.clouds=Array.from({length:6},(_,i)=>({x:R5()*Wc,y:8+R5()*44,w:18+Math.floor(R5()*26),v:.6+R5()*1.2}));T5.motes=[]}
+  T5.clouds=Array.from({length:6},(_,i)=>({x:R5()*Wc,y:8+R5()*44,w:18+Math.floor(R5()*26),v:.6+R5()*1.2}));T5.motes=[];T5.strikes=[];T5.eyes=[]}
+// a strike of the purple light: a random tilt (up to ~35° either way) onto a random spot of the island
+function newStrike(t){const S=T5.S,sf=T5.surf;let x=S.peakX,y=S.peakY;
+  if(Math.random()>.18){for(let k=0;k<14;k++){const xx=Math.round(S.cx+(Math.random()*1.78-.95)*S.R);if(sf[xx]!=null&&T5.strikes.every(s=>Math.abs(s.x-xx)>24)){x=xx;y=sf[xx];break}}}
+  let a=(Math.random()*2-1)*.62;if(Math.abs(a)<.08)a=a<0?-.12:.12;
+  T5.strikes.push({x,y,a,ta:Math.tan(a),t0:t,hd:.28+Math.random()*.32,hold:1.4+Math.random()*3.4,out:.9+Math.random()*1.4,sd:Math.random()*9,hit:false})}
+// eyes in the dark: under the trees, on the beach, in the wreck
+function eyeSpot(){const S=T5.S,sf=T5.surf,r=Math.random(),far=(x,y)=>T5.eyes.every(e=>Math.abs(e.x-x)+Math.abs(e.y-y)>10)&&!(T5.fire&&Math.abs(x-T5.fire.x)<12);
+  for(let k=0;k<10;k++){let x,y,kd;
+    if(r<.5){x=Math.round(S.cx+(Math.random()*1.25-.45)*S.R);const top=sf[x];if(top==null||S.wl-top<9)continue;y=top+3+Math.floor(Math.random()*4);kd='f'}
+    else if(r<.75&&T5.wreck){const w=T5.wreck,i=2+Math.floor(Math.random()*10);x=w.x+i;y=w.y-2-Math.round(i*.18);kd='w'}
+    else{x=Math.round(S.cx-S.R*(.97-Math.random()*.42));const top=sf[x];if(top==null)continue;y=Math.min(S.wl-2,top+1);kd='s'}
+    if(far(x,y))return{x,y,k:kd}}
+  return null}
+function newEyes(t,sp){const pur=Math.random()<.35;
+  T5.eyes.push({x:sp.x,y:sp.y,k:sp.k,t0:t,fi:1.3+Math.random()*1.6,st:3+Math.random()*6,fo:1.1+Math.random()*1.3,gap:Math.random()<.3?3:2,big:Math.random()<.14,
+    pur,pt:pur?1+Math.random()*3:99,nb:t+1+Math.random()*2,bt:-9,dx:0,kill:0})}
 function drawTitle(t,dt){const c=$('b5tbg');if(!c)return;const vw=innerWidth||1280,vh=innerHeight||720,Hc=180,Wc=clamp(Math.round(Hc*vw/vh),240,420);
   if(c.width!==Wc||c.height!==Hc||!T5.isl||T5.Wc!==Wc){c.width=Wc;c.height=Hc;setupScene(Wc,Hc)}
   const g=c.getContext('2d');g.imageSmoothingEnabled=false;const S=T5.S,K=skyAt(T5.p),n=K.n,HZ=96;
@@ -7645,31 +7666,59 @@ function drawTitle(t,dt){const c=$('b5tbg');if(!c)return;const vw=innerWidth||12
   // camp fire: brighter as it gets dark
   if(T5.fire){const fl=Math.random(),X=T5.fire.x,Y=T5.fire.y-1;const a=.35+n*.65;g.fillStyle=`rgba(255,${120+Math.round(fl*60)},40,${a.toFixed(3)})`;g.fillRect(X,Y-1,2,2);g.fillStyle=`rgba(255,230,140,${a.toFixed(3)})`;g.fillRect(X+(fl>.5?1:0),Y-2,1,1);
     if(n>.2){const gg=g.createRadialGradient(X+1,Y,1,X+1,Y,14);gg.addColorStop(0,`rgba(255,150,60,${(.35*n).toFixed(3)})`);gg.addColorStop(1,'rgba(255,150,60,0)');g.fillStyle=gg;g.fillRect(X-14,Y-14,30,30)}}
-  // the purple light: only at night
-  const bn=smooth(clamp((n-.55)/.4,0,1));T5.beam=bn;
-  if(bn>0){const surge=Math.pow(Math.max(0,Math.sin(t*.7)),24),fl=(.82+.12*Math.sin(t*3.1)+.06*Math.sin(t*11.3)+surge*.35)*bn,X=S.peakX,Y=S.peakY;
-    g.save();g.globalCompositeOperation='lighter';
-    const bw=14+surge*8;const bg=g.createLinearGradient(X-bw,0,X+bw,0);bg.addColorStop(0,'rgba(150,60,255,0)');bg.addColorStop(.5,`rgba(170,100,255,${(.55*fl).toFixed(3)})`);bg.addColorStop(1,'rgba(150,60,255,0)');g.fillStyle=bg;g.fillRect(X-bw,0,bw*2,Y+2);
-    g.fillStyle=`rgba(200,150,255,${(.8*fl).toFixed(3)})`;g.fillRect(X-2,0,5,Y+1);g.fillStyle=`rgba(255,245,255,${(.9*fl).toFixed(3)})`;g.fillRect(X-1,0,2,Y+1);
-    const ig=g.createRadialGradient(X,Y,1,X,Y,30+surge*10);ig.addColorStop(0,`rgba(220,170,255,${(.75*fl).toFixed(3)})`);ig.addColorStop(.4,`rgba(150,80,255,${(.3*fl).toFixed(3)})`);ig.addColorStop(1,'rgba(120,60,255,0)');g.fillStyle=ig;g.fillRect(X-44,Y-44,88,88);
-    // its reflection on the sea
-    for(let y=S.wl+2;y<Hc;y+=2){const k=(y-S.wl)/(Hc-S.wl),w=1+Math.round(k*3),wob=Math.round(Math.sin(y*.9+t*2.4)*(1+k*3));g.fillStyle=`rgba(190,120,255,${(.45*fl*(1-k*.7)).toFixed(3)})`;g.fillRect(X-w+wob,y,w*2,1)}
-    g.restore();
-    // motes falling down the beam, sparks rising from where it lands
-    if(T5.motes.length<40&&Math.random()<dt*28*bn)T5.motes.push(Math.random()<.6?{x:X+(Math.random()-.5)*8,y:Math.random()*Y,vy:6+Math.random()*10,vx:0,l:2+Math.random()*2,a:0}:{x:X+(Math.random()-.5)*14,y:Y,vy:-4-Math.random()*6,vx:(Math.random()-.5)*4,l:2+Math.random()*3,a:0});
-  }
-  for(let i=T5.motes.length-1;i>=0;i--){const m=T5.motes[i];m.a+=dt;m.x+=m.vx*dt;m.y+=m.vy*dt;if(m.a>m.l||m.y>S.peakY+2){T5.motes.splice(i,1);continue}const a=Math.sin(Math.PI*m.a/m.l)*bn;g.fillStyle=`rgba(${m.vy<0?'255,220,255':'230,200,255'},${a.toFixed(3)})`;g.fillRect(Math.round(m.x),Math.round(m.y),1,1)}
+  // the purple light: only at night, strikes from random angles onto random spots, at irregular intervals
+  const bn=smooth(clamp((n-.55)/.4,0,1));T5.beam=bn;let hit=0;
+  if(bn<.2)T5.nextStrike=Math.max(T5.nextStrike,t+.5+Math.random()*1.2);
+  else if(t>T5.nextStrike&&T5.strikes.length<2){newStrike(t);T5.nextStrike=t+2.2+Math.random()*6.5}
+  if(T5.strikes.length){g.save();g.globalCompositeOperation='lighter';
+   for(let i=T5.strikes.length-1;i>=0;i--){const s=T5.strikes[i],age=t-s.t0;if(age>s.hd+s.hold+s.out){T5.strikes.splice(i,1);continue}
+    const hp=smooth(clamp(age/s.hd,0,1)),life=age<s.hd?.6+.4*hp:age<s.hd+s.hold?1:1-smooth((age-s.hd-s.hold)/s.out);
+    const fl=age<s.hd?(Math.random()<.3?.4:1):(.86+.09*Math.sin(t*3.3+s.sd)+.05*Math.sin(t*12.7+s.sd*2)),A=life*fl*bn;
+    const im=age<s.hd?0:Math.max(0,1-(age-s.hd)/.6);hit=Math.max(hit,im*bn);
+    if(!s.hit&&age>=s.hd){s.hit=true;for(const e of T5.eyes)if(!e.kill&&Math.abs(e.x-s.x)<34)e.kill=t}   // the eyes nearby shut
+    const top=-14,yh=mix(top,s.y,hp),ca=Math.cos(s.a),L=(s.y-top)/ca,vis=(yh-top)/ca;   // the head comes down from the sky
+    // soft glow (rotated), then a crisp pixel core
+    g.save();g.translate(s.x,s.y);g.rotate(s.a);const bw=8+im*7+Math.sin(t*1.7+s.sd)*1.5;
+    const bg=g.createLinearGradient(-bw,0,bw,0);bg.addColorStop(0,'rgba(140,60,255,0)');bg.addColorStop(.5,`rgba(165,95,255,${(.42*A).toFixed(3)})`);bg.addColorStop(1,'rgba(140,60,255,0)');g.fillStyle=bg;g.fillRect(-bw,-L,bw*2,vis);g.restore();
+    for(let y=Math.max(0,Math.round(top));y<=yh&&y<=s.y;y++){const X=Math.round(s.x+(s.y-y)*s.ta),sh=.8+.2*Math.sin(y*.21-t*7+s.sd);
+     g.fillStyle=`rgba(190,135,255,${(.7*A*sh).toFixed(3)})`;g.fillRect(X-1,y,3,1);g.fillStyle=`rgba(255,240,255,${(.8*A*sh).toFixed(3)})`;g.fillRect(X,y,1,1)}
+    if(age<s.hd){const X=Math.round(s.x+(s.y-yh)*s.ta),Y=Math.round(yh);g.fillStyle=`rgba(255,235,255,${(.9*bn).toFixed(3)})`;g.fillRect(X-1,Y-1,3,3)}   // the falling head
+    else{const X=s.x,Y=s.y,r=24+im*16;const ig=g.createRadialGradient(X,Y,1,X,Y,r);ig.addColorStop(0,`rgba(225,180,255,${(.7*A).toFixed(3)})`);ig.addColorStop(.35,`rgba(150,80,255,${(.28*A).toFixed(3)})`);ig.addColorStop(1,'rgba(120,60,255,0)');g.fillStyle=ig;g.fillRect(X-r,Y-r,r*2,r*2);
+     // the light runs along the ground from where it lands
+     if(im>0){const d=Math.round((1-im)*28);for(const sd of [-1,1]){const gx=X+sd*d,gy=T5.surf[gx];if(gy==null)continue;g.fillStyle=`rgba(230,190,255,${(.85*im*bn).toFixed(3)})`;g.fillRect(gx-1,gy-1,3,2)}}
+     // its reflection: the mirrored beam on the water, wobbling
+     for(let y=S.wl+2;y<Hc;y+=2){const k=(y-S.wl)/(Hc-S.wl),w=1+Math.round(k*3),wob=Math.round(Math.sin(y*.9+t*2.4+s.sd)*(1+k*3)),rx=Math.round(s.x+(s.y-2*S.wl+y)*s.ta);
+      g.fillStyle=`rgba(190,120,255,${(.38*A*(1-k*.75)).toFixed(3)})`;g.fillRect(rx-w+wob,y,w*2,1)}}
+    // motes sliding down the beam, sparks rising from where it lands
+    if(T5.motes.length<60&&Math.random()<dt*20*A){const D=L-vis+Math.random()*vis;
+     T5.motes.push(Math.random()<.55||age<s.hd?{x:s.x+D*Math.sin(s.a)+(Math.random()-.5)*5,y:s.y-D*ca,vx:-Math.sin(s.a)*12,vy:ca*12,l:1.5+Math.random()*2,a:0,ym:s.y}
+       :{x:s.x+(Math.random()-.5)*10,y:s.y,vx:(Math.random()-.5)*6,vy:-4-Math.random()*7-im*8,l:1.5+Math.random()*2.5,a:0,ym:s.y+3})}}
+   // a faint purple wash over everything for a moment when one lands
+   if(hit>.05){g.fillStyle=`rgba(120,70,230,${(.09*hit*hit).toFixed(3)})`;g.fillRect(0,0,Wc,Hc)}
+   g.restore()}
+  for(let i=T5.motes.length-1;i>=0;i--){const m=T5.motes[i];m.a+=dt;m.x+=m.vx*dt;m.y+=m.vy*dt;if(m.a>m.l||m.y>m.ym){T5.motes.splice(i,1);continue}const a=Math.sin(Math.PI*m.a/m.l)*bn;g.fillStyle=`rgba(${m.vy<0?'255,220,255':'230,200,255'},${a.toFixed(3)})`;g.fillRect(Math.round(m.x),Math.round(m.y),1,1)}
   // fog: two slow bands, thicker at night
   {const fa=.32+.38*n;g.save();g.globalAlpha=fa;const o1=(t*2.2)%(Wc*2),o2=(t*1.3+Wc*.7)%(Wc*2);
    g.drawImage(T5.fog,-o1,S.wl-20);g.drawImage(T5.fog,Wc*2-o1,S.wl-20);g.globalAlpha=fa*.6;g.drawImage(T5.fog,-o2,S.wl-8,Wc*2,18);g.drawImage(T5.fog,Wc*2-o2,S.wl-8,Wc*2,18);
    g.globalAlpha=fa*.35;g.drawImage(T5.fog,-o2*.5,HZ-10,Wc*2,14);g.restore();
    if(n>.2){g.fillStyle=`rgba(10,6,30,${(.18*n).toFixed(3)})`;g.fillRect(0,0,Wc,Hc)}}
+  // eyes in the dark: a few pairs open slowly, blink, glance, sometimes glow purple, and fade away
+  {const en=clamp((n-.75)/.2,0,1);
+   if(en>.6&&t>T5.nextEye&&T5.eyes.length<3){const sp=eyeSpot();if(sp)newEyes(t,sp);T5.nextEye=t+1.4+Math.random()*4.2}
+   for(let i=T5.eyes.length-1;i>=0;i--){const e=T5.eyes[i],age=t-e.t0;
+    let a=age<e.fi?smooth(age/e.fi):age<e.fi+e.st?1:1-smooth((age-e.fi-e.st)/e.fo);if(e.kill)a*=1-clamp((t-e.kill)/.35,0,1);
+    if(a<=0&&age>.1){T5.eyes.splice(i,1);continue}a*=en;
+    if(t>e.nb){e.bt=t;e.nb=t+1.4+Math.random()*3.6;if(Math.random()<.35)e.dx=e.dx?0:(Math.random()<.5?-1:1)}
+    if(t-e.bt<.14||a<.02)continue;
+    const pk=smooth(clamp((age-e.fi-e.pt)/1.6,0,1)),col=mixc([236,232,168],[214,160,255],pk),X=e.x+e.dx,Y=e.y,w=e.big?2:1;
+    if(pk>0){const hg=g.createRadialGradient(X+e.gap/2+.5,Y+.5,0,X+e.gap/2+.5,Y+.5,6);hg.addColorStop(0,`rgba(170,100,255,${(.4*a*pk).toFixed(3)})`);hg.addColorStop(1,'rgba(170,100,255,0)');g.fillStyle=hg;g.fillRect(X-6,Y-6,e.gap+w+12,13)}
+    g.fillStyle=rgb(col,.85*a);g.fillRect(X,Y,w,1);g.fillRect(X+e.gap+w-1,Y,w,1)}}
   // fireflies
   if(n>.3){for(const f of T5.ff){const x=f.x+Math.sin(t*f.sp+f.ph)*7,y=f.y+Math.cos(t*f.sp*1.3+f.ph)*3,b=Math.max(0,Math.sin(t*2*f.sp+f.ph*3))*(n-.3)/.7;if(b<.05)continue;
     g.fillStyle=`rgba(200,255,120,${(b*.25).toFixed(3)})`;g.fillRect(Math.round(x)-1,Math.round(y)-1,3,3);g.fillStyle=`rgba(240,255,170,${b.toFixed(3)})`;g.fillRect(Math.round(x),Math.round(y),1,1)}}
   // vignette
   {const vg=g.createRadialGradient(Wc/2,Hc*.55,Hc*.3,Wc/2,Hc*.55,Wc*.75);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,`rgba(4,2,12,${(.35+.25*n).toFixed(3)})`);g.fillStyle=vg;g.fillRect(0,0,Wc,Hc)}
-  const tl=$('title');if(tl)tl.classList.toggle('b5night',bn>.4)}
+  const tl=$('title');if(tl){tl.classList.toggle('b5night',bn>.4);tl.classList.toggle('b5hit',hit>.3)}}
 // ambience on the title: wind always, a low hum when the light is down (both follow the effects volume)
 function titleAmb(t){const A=T5.amb,on=onTitle&&$('quit').hidden;
   if(!on){if(A.wind){A.wind.stop(2);A.wind=null}if(A.drone){A.drone.stop(2);A.drone=null}return}
