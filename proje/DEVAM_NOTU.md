@@ -7,7 +7,7 @@
 - GitHub Pages ayarını (Settings → Pages → main, /root) oturum açamıyor (API proxy'de kapalı); Boğaç bir kez kendisi açar.
 
 ## ⭐ BURADAN BAŞLA (26 Ekim 2026 akşamı, v62)
-- Yayındaki sürüm **v63** (v63 notu en altta). Önceki: **v62** (GitHub `main`, https://bogacavdar.github.io/purple-light/). Bu turda v51–v62 yapıldı; ayrıntılar dosyanın sonundaki v51…v62 bölümlerinde.
+- Yayındaki sürüm **v64** (v63–v64 notları en altta). Önceki: **v62** (GitHub `main`, https://bogacavdar.github.io/purple-light/). Bu turda v51–v62 yapıldı; ayrıntılar dosyanın sonundaki v51…v62 bölümlerinde.
 - Özet: yalnızca Nazlı satar (doğal malzeme), ustalar malzeme + işçilikle yapar, ağırlıklı ganimet · Zırhçı Durmuş · gece 2,5 dk, meşale bir gece, reçine (L) · Işıkçı 15. gün akşamı sabit yerde (takas), köpekçi 5. gün hediye / 20. gün mor sinyal (en çok 5) · NPC görev zincirleri + Görevler paneli (G) + mavi takip · ev içleri ve döşeme (13 Ev eşyası tarifi, 660 tarif) · 7 rastgele anı · telefon performansı (parça parça zemin, otomatik kalite) · ada halkının hikâyeleri ve ara sahneler · en üst seviye 50 · ad girişinde Enter · balta dersi düzeltmeleri.
 - Yeni kod blokları `</body>` öncesinde: `v55-q` (görevler), `v56-room` (ev içi), `v57-mem` (anılar), `v58-perf` (performans), `v59-story` (hikâyeler), `v62-axe` (balta dersi). Hepsi `window.__plEval` ile oyunun kapsamında çalışır.
 - Çalışma düzeni (Boğaç): test yok, yalnızca `chk.js`; Boğaç kendi test eder. Ajan yok, token önemli. Her adım ayrı sürüm olarak `main`'e gönderilir.
@@ -379,3 +379,11 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Mıknatıs: yerdeki küçük eşyalar 30 px (≈2 m) içinden karaktere süzülür (oyuncunun bıraktığı aletler `keep` hariç).
 - Mavi parıltı (`gl`) kalın ve daha parlak: geniş aura + mavi kenar + açık çekirdek.
 - Otomatik yeme kalktı: tabak düğmesi ve F yiyecek listesini açar; her satırda **Ye** düğmesi. Eğitimde (tz 2) önce tabak düğmesi, sonra böğürtlenin Ye düğmesi yanıp söner.
+
+## v64 — Boğaç'ın ikinci notları (`<script id="v64">` + `<style id="v64-css">`, profR yeniden)
+- Açılışta yanıp sönen "Bu bir önizleme…" (`#nojs`) uyarısı tamamen kaldırıldı.
+- Yan profil (`profR`) yeniden çizildi: kafa 9 px genişlik, yuvarlak, burun çıkıntısı yok, tek büyük göz; saçın arkası ve şapkalar daraldı.
+- Kaybedilen kişi hep aynı: erkek kahraman → uzun kızıl saçlı kadın, kadın kahraman → kısa kahverengi saçlı adam (`setLove`, `applyLook` ve `restore` sonrası; eski kayıttan kalan `hs` vb. temizlenir). Ad girişi, yaratma notu, Toygar'ın anlattığı ve Sisli Ada'daki yüz cinsiyete göre.
+- Toplarken hasar yok (`HURT` boş: böğürtlen dikeni, çakmaktaşı). C4 "Kalın deri" artık zehir, yanık ve çiğ eti azaltır (zaten `hurt` fiziksel olmayan hasarı azaltıyordu); eğitim metinlerinden diken uyarısı çıktı.
+- Diyaloglar hikâyelere göre: Ekin "onu bulacağız" demiyor (ışığın aldığını kendisi de bilir, söz veremez); Zümrüt'ün eski "kazan her şeyi yapar" sözleri "kazan tarif öğretir" oldu, büyükannesine gönderme; Hasan tarlayı "biri için" ekiyor; Dursun "silah demircisi".
+- Konuşma portreleri: Ekin, Zümrüt, Nazlı, Dursun, Durmuş, Hasan, Kemal, Rıza, Toygar, Börü için dünyadaki görünüşlerinden (NPCL + şapka/pipo/önlük) çizilir (`#dlg.v64 img.v64p`); eğitim kartındaki küçük resim de öyle. Nuri, Rüstem, Kaptan, Büyücü ve Işıkçı eski SVG'lerini kullanır.
