@@ -546,3 +546,15 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Hile:** Ayarlar › hile bloğunda "ACT 2'ye geç" (gemi, Levent görevleri, sahne tamam sayılır, adaya iner). Ara sahne listesine "ACT 2: Deniz yolculuğu" (tekrar izleme, geçiş yapmaz); Ülker'in sahnesi Ada halkı listesinden otomatik gelir. Hile malzeme paneline ACT 2 malzemeleri, eklendikçe CHEAT_RES'e eklenecek.
 - Yeni oyun ISLE 2'deyken başlatılırsa sayfa ada 1'e yeniden açılır ve "Yeni oyun" kendiliğinden basılır.
 - Menüde "Versiyon 76". Test yapılmadı (yalnız chk.js).
+
+## v77 (27 Ekim 2026) — ACT 2: Yüzen Kayalar + Dev Mantar Ormanı, mor mana, Ateş asası, Büyücü Pervin
+- İçerik üretimi: `scratchpad/act2/content.py` mantığı → `<script id="v77-data">` (window.__I2C: trees/plants/ores/anim/woodc/iconk/iconc; window.__I2TPL: 16×16 ikon şablonları). DB'ye fiyatlar, kalas/pişmiş et tarifleri, Mana iksiri (Şifa), Ateş asası (Büyü), Bulut yünü ip, Gök demiri külçesi, Spor ekmeği, Goblin eriği reçeli eklendi (gen77.py).
+- v65 bloğu ISLE 2'de `I2C` ile biyom 0–1'in BTREE/BPLANT/BORE/BANIM satırlarını değiştirir (ağaç türleri, RES/RULE/PLANTC, MINES/ORE_TIER, ANIM/PACK). Biyom 2–5 şimdilik ilk adanın içeriği.
+  - Yüzen Kayalar: Bulut çamı, Gök söğüdü, Rüzgâr meşesi, Bulut elması · Gök otu, Bulut pamuğu, Rüzgâr çiçeği, Tüy yosunu, Gök mantarı, Yüzer taş, Gök kumu, Rüzgâr kristali · Gök demiri, Bulut kuvarsı, Hafif taş · Bulut koyunu, Rüzgâr kuşu, Kaya kertenkelesi, Gök tazısı (gece), Fırtına kartalı.
+  - Dev Mantar Ormanı: Dev mantar, Mavi mantar, Spor ağacı, Kök ağacı (Goblin eriği) · Spor tozu, Işıldak mantarı, Büyü otu, Goblin otu, Mantar şapkası, Sümük yosunu, Dev spor, Kök yumrusu · Spor kristali, Goblin bakırı, Kök taşı · Mantar böceği, Spor salyangozu, Goblin (sürü), Goblin okçusu (ok atar), Goblin şamanı (zehir atar).
+- `<script id="v77">`: yeni eşyaların ikonları (PIXI), WOODC, RAWFOOD, hile malzeme listesine bütün ACT 2 malzemeleri (iki adada da), yaratık çizimleri.
+- **Mor mana:** yeni çubuk (#mnbar, mor), en çok 100+3·(seviye−1), saniyede 1,5 dolar (Canlılık ile 2,25); Mana iksiri +60. ACT 2'de ya da Pervin'le tanışınca görünür. Kayıt `v77.mn/mo/pm`.
+- **Ateş asası** (GT kind 'staff'): alet yuvasına konur; saldırı ateş topu atar (12 mana, 0,55 sn, 42·seviye çarpanı hasar, 270 px, en yakın hedefe ya da dokunulan yaratığa nişan). Mermiler `shots` (kendi rAF döngüsü), çizim v55Ents ile.
+- **Büyücü Pervin** (Dev Mantar Ormanı'nın inişe en yakın yeri): görevler pv1 5 Büyü otu + 3 Işıldak mantarı (Mana iksiri tarifini açar), pv2 4 Goblin, pv3 3 Spor kristali + 3 Goblin kulağı (Ateş asası tarifini açar). Asayı ve iksiri o yapar (tarif öğrenilmiş + malzeme + emek). Hikâyesi (ST_.pervin): büyü yok, gemi artığı kıymık enerjisi.
+- **Ülker'in kazanı:** ISLE 2'de kazan Ülker'in yanına taşındı (ACT 2 tarifleri burada öğrenilir).
+- Menüde "Versiyon 77". Test yapılmadı (yalnız chk.js).
