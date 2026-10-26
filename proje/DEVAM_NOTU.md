@@ -302,3 +302,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v52 — Demirci kardeşler
 - Yeni NPC **Zırhçı Durmuş** (`durmus`, `anvil2`), Dursun'un yanındaki ikinci örs (yer: Dursun'un çevresinde açık ilk nokta). `smithOf(r)`: `DB.f` (örste dövülen zırhlar) → Durmuş, gerisi Dursun. `forgeWho` örsü kimin açtığını tutar (konuşmadan ya da en yakın demirci, `nearestSmith`); örs listesi yalnızca o demircinin işlerini gösterir; Durmuş'ta Bile sekmesi yok. Kayıtta `dm`.
 - Kancalar: blocked, target, interact, prompt, pickAt, çizim (`drawDurmus`), harita ikonu (`MAPIC.durmus`), GUIDE, VOICES, TALK.
+
+## v53 — Gece ve meşale
+- Gece 4 → 2,5 dk (`NIGHT_S=150`, `tickClock`). Meşale elde yanar: `TORCHB` Kaba 110 sn, Meşale 170 sn (bir gece). `torchRate`: yağmur ×2, fırtına ×2,7, sis ×1,15, ateş yanında ×1 (Ateş kodeksi ×0,75). Eski kayıtlarda fazla kalan süre kırpılır.
+- `feedTorch()` (L tuşu, El yapımı menüsündeki "Reçine sür"): 1 Herhangi reçine → Meşale +%65, Kaba +%50. `torchWarn`: %35'te "kalacak bir yer bulsam iyi olur" balonu, %12'de ikinci uyarı, yağmurda bir kez uyarı.
+- Hile: "Günü bitir" (`#c-day`) sabah 06:00'ya atlar.
