@@ -427,3 +427,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Bilinen farklar: `ctx.filter` (Reis'lerin mor gölgesi) yok sayılır; `source-atop` gibi desteklenmeyen karışımlar normal çizilir; parıltı gerçek bulanıklık değil, çevrede kopyalar.
 - v68.1: GL varsayılan KAPALI (Boğaç'ta ilerlemiş kayıtla 'Devam et' siyah ekran). Yalnızca Ayarlar anahtarı ('hammadde.gl'='2') açar.
 - v68.2: siyah ekranın sebebi: `drawLight` vinyet degradesini `ctx.createRadialGradient` ile alıp sıradan bir 2D tuvale boyuyordu; GL2D kendi Grad nesnesini verdiği için o tuval siyah doluyor ve bütün ekranı örtüyordu. Artık GL2D gerçek bir CanvasGradient verir (`__g` içinde kendi kopyası). Headless Chromium (swiftshader) ile kayıttan devam, gündüz ve gece görüntüsü kontrol edildi. GL yeniden varsayılan açık; ayar anahtarı `hammadde.gl2` (herkes açık başlar).
+
+## v69 — köpek hatası, kazan simgesi (`<script id="v69">`)
+- Hata: Yıldızsız Gezgin'le her konuşmada "Hediye seni bekliyor" → yeni köpek (sınır da aşılıyordu). Artık hediye bir kez (`wiz.plan` sonrası yalnızca veda / sinyal hatırlatması), `wizSell` ikinci kez çalışmaz, `spawnDog` `DOG_MAX`'ı asla aşmaz. Köpeği verince 0,7 sn sonra toz bulutuyla kaybolur (`wizVanish`).
+- Zorunlu düzeltme: işaretsiz (`v69d` yok) her kayıt yüklenince köpek sayısı 1'e iner ve oyuncuya söylenir; işaret yalnızca düzeltme çalıştıktan ya da yeni oyundan sonra kayda yazılır. Headless Chromium'la eski kayıt taklidiyle denendi (3 → 1).
+- Kazan düğmesinin simgesi artık cadı kazanı (kara kazan, yeşil kaynayan iksir, altında ateş).
+- Gezgin'e hikâye yazılmayacak (Boğaç): onun kaybettiği kimse yok, eşini kaçıranlarla bağlantılı.
