@@ -558,3 +558,12 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Büyücü Pervin** (Dev Mantar Ormanı'nın inişe en yakın yeri): görevler pv1 5 Büyü otu + 3 Işıldak mantarı (Mana iksiri tarifini açar), pv2 4 Goblin, pv3 3 Spor kristali + 3 Goblin kulağı (Ateş asası tarifini açar). Asayı ve iksiri o yapar (tarif öğrenilmiş + malzeme + emek). Hikâyesi (ST_.pervin): büyü yok, gemi artığı kıymık enerjisi.
 - **Ülker'in kazanı:** ISLE 2'de kazan Ülker'in yanına taşındı (ACT 2 tarifleri burada öğrenilir).
 - Menüde "Versiyon 77". Test yapılmadı (yalnız chk.js).
+
+## v78 (27 Ekim 2026) — ACT 2: Hurda Çölü, ateşli silahlar, Silahçı Tamer
+- İçerik üreteci depoya taşındı: `proje/tools/act2/` (content.py = biyom tabloları, icons.py = 16×16 ikon şablonları, gen_act2.py = DB fiyat/tarifleri + v77-data bloğu; `python3 proje/tools/act2/gen_act2.py`, tekrar çalıştırılabilir).
+- Hurda Çölü (biyom 2): Hurda palmiyesi, Pas ağacı, Kuru çınar, Hurma · Hurda parçası, Pas tozu, Bakır tel, Çöl otu, Kaktüs meyvesi, Vida, Eski devre, Yağ birikintisi · Hurda yığını, Pirinç cevheri, Barut kayası · Pas böceği, Hurda faresi, Devriye robotu, Lazer dronu (ışın atar), Hurda devi.
+- Yeni tarifler: Pirinç külçesi, Barut, Tabanca mermisi (bir yapışta 10), Pompalı fişeği (bir yapışta 6), Tabanca, Pompalı, Hurma ezmesi.
+- v77'ye `window.__plFire(S,dm,hedef,açı)` ve `__plAim` eklendi (çizgi mermi, iz yoğunluğu).
+- `<script id="v78">`: GT kind 'gun'; Tabanca (58 hasar, 0,42 sn, 340 px), Pompalı (5 saçma × 30, 1,05 sn, 210 px, ±0,26 rad). Mermi envanterden düşer, yoksa "mermi yok". Ateş sesi (gürültü patlaması), sarsıntı, kovan. handCraft sarmalayıcı: mermi tarifi bir kutu verir.
+- **Silahçı Tamer** (Hurda Çölü'nün inişe en yakın yeri): sl1 8 Hurda parçası + 4 Bakır tel (Pirinç külçesi, Barut), sl2 3 Devriye robotu, sl3 2 Robot çekirdeği + 4 Barut (Tabanca + mermisi), sl4 Motor + 2 Ağır plaka (Pompalı + fişeği). Silahları o yapar (tarif Ülker'in kazanında öğrenilir). Hikâyesi (ST_.tamer, sahne "Eriyen gülleler", bg fort): gemiye karşı savaşan ordu; robotlar geminin bıraktığı bekçiler.
+- Menüde "Versiyon 78". Test yapılmadı.
