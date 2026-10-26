@@ -425,3 +425,4 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Kare sonunda mikro görevde `flush`. `preserveDrawingBuffer:true`. `ctx.__fwd(g)` çizimleri geçici olarak gerçek bir 2D bağlama yönlendirir (`capAnim` canavar portreleri bunu kullanır).
 - Güvenlik: WebGL yoksa ya da kurulamazsa klasik 2D. Karede GL2D kaynaklı hata ya da bağlam kaybı olursa `localStorage['hammadde.gl']='0'` + kayıt + yeniden yükleme. Ayarlar › "Ekran kartıyla çiz" (değişince oyun yeniden açılır).
 - Bilinen farklar: `ctx.filter` (Reis'lerin mor gölgesi) yok sayılır; `source-atop` gibi desteklenmeyen karışımlar normal çizilir; parıltı gerçek bulanıklık değil, çevrede kopyalar.
+- v68.1: GL varsayılan KAPALI (Boğaç'ta ilerlemiş kayıtla 'Devam et' siyah ekran). Yalnızca Ayarlar anahtarı ('hammadde.gl'='2') açar.

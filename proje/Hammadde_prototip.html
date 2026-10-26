@@ -1430,7 +1430,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
 // every 2D canvas remembers when it was last drawn on, so a texture made from it knows when to refresh
 try{const P=CanvasRenderingContext2D.prototype;for(const m of ['fillRect','clearRect','strokeRect','drawImage','putImageData','fill','stroke','fillText','strokeText']){const f=P[m];if(!f)continue;
   P[m]=function(){const r=f.apply(this,arguments);const c=this.canvas;if(c)c.__v=(c.__v|0)+1;return r}}}catch(e){}
-let want=true;try{want=localStorage.getItem('hammadde.gl')!=='0'}catch(e){}
+let want=false;try{want=localStorage.getItem('hammadde.gl')==='2'}catch(e){}   // v68.1: off by default (a black screen on continue); only the switch in Ayarlar turns it on
 window.__plGLWanted=want;
 window.addEventListener('error',function(ev){try{const st=String(ev.error&&ev.error.stack||'');if(window.__plGLOn&&/GL2D|earcut/.test(st)){localStorage.setItem('hammadde.gl','0');location.reload()}}catch(_){}});
 window.__mkGL2D=function(cv){if(!want)return null;try{const g=new GL2D(cv);window.__plGLOn=true;return g}catch(e){try{console.warn('[Purple Light] WebGL kapalı:',e)}catch(_){}window.__plGLFail=String(e&&e.message||e);return null}};
@@ -10902,7 +10902,7 @@ const _db=drawBridge;drawBridge=function(time,inView){_db.apply(this,arguments);
 'use strict';
 const cb=$('glon');if(!cb)return;const on=!!ctx.__gl;cb.checked=window.__plGLWanted!==false;
 const sm=cb.parentNode&&cb.parentNode.querySelector('small');if(sm){if(window.__plGLFail)sm.insertAdjacentHTML('beforeend',' <b style="color:#ff9a7a">Bu cihazda açılamadı, klasik çizim kullanılıyor.</b>');else sm.insertAdjacentHTML('beforeend',on?' <b style="color:#8fd46b">Şu an açık.</b>':' <b>Şu an kapalı.</b>')}
-cb.addEventListener('change',()=>{try{localStorage.setItem('hammadde.gl',cb.checked?'1':'0')}catch(e){}try{if(!onTitle)saveTo('auto')}catch(e){}toast('Oyun yeniden açılıyor…');setTimeout(()=>location.reload(),500)});
+cb.addEventListener('change',()=>{try{localStorage.setItem('hammadde.gl',cb.checked?'2':'0')}catch(e){}try{if(!onTitle)saveTo('auto')}catch(e){}toast('Oyun yeniden açılıyor…');setTimeout(()=>location.reload(),500)});
 }).toString()+')()')}catch(e){try{window.__hamErr('v68: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
