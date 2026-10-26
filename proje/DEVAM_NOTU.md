@@ -614,3 +614,6 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 
 ## v86 (27 Ekim 2026)
 - Hakkında: Purple Light tırnaksız; altında Bir “Boğaçhan Çavdar” oyunu. Menüde "Versiyon 86".
+
+## v87 (27 Ekim 2026)
+- Hakkında: “Boğaçhan Çavdar” kalın ve altın sarısı. Menüde "Versiyon 87".
