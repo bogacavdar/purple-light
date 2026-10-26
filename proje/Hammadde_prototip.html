@@ -4055,6 +4055,10 @@ function drawChibi(g,x,y,L,o){
   else if(HS==='short'||HS==='side'||HS==='pixie'){p(x+fx,hy-5,1,2,HC);p(x+1+fx,hy-6,1,1,HC)}
   if((L.flower!=null?L.flower:L.long)&&!HAT&&!o.helm){const bx=fx<0?x-6:x+3;p(bx,hy-4,3,2,'#ffffff');p(bx+1,hy-3,1,1,'#ff5a8a')}
 }
+// v66.4: how tall a chibi is above its feet (hats and buns stick up), so previews can centre it in their frame
+function chibiTop(L,o){o=o||{};if(o.helm)return -21;const H=L.hat&&L.hat!=='none'?L.hat:null;
+  if(H==='bere'||H==='silindir')return -28;if(H==='kovboy'||H==='fes')return -25;if(H)return -24;if(L.hs==='bun')return -25;return -23}
+function chibiFeet(L,o,units){const h=2-chibiTop(L,o);return Math.round((units+h)/2-2)}
 function drawPlayer(){
   const x=Math.round(player.x),y=Math.round(player.y);
   if(!walked&&tut===0&&!onTitle&&!wake){ctx.strokeStyle=`rgba(143,212,107,${(.5+.4*Math.sin(time*5)).toFixed(2)})`;ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(x,y+3,11+Math.sin(time*5),5,0,0,Math.PI*2);ctx.stroke()}
@@ -5490,8 +5494,8 @@ function dollHTML(){
     <p class="note" style="margin:6px 0 4px">Savunma <b style="color:var(--accent)">${def}</b> · hayvan ve canavar hasarı <b style="color:var(--accent)">%${cut}</b> azalır. Silah yuvasındaki silah, elin boşken vuruşlarda kullanılır.</p>${pick}`;
 }
 function drawDoll(){const c=$('dollc');if(!c)return;const g=c.getContext('2d');g.imageSmoothingEnabled=false;g.clearRect(0,0,96,120);
-  g.fillStyle='#1c2419';g.fillRect(0,0,96,120);g.fillStyle='rgba(0,0,0,.25)';g.beginPath();g.ellipse(48,108,26,6,0,0,Math.PI*2);g.fill();
-  g.save();g.scale(4,4);const o=eqOpts();o.noShadow=1;if(equip.silah){const ic=ICONC[equip.silah]||(icon(equip.silah),ICONC[equip.silah]);if(ic){g.save();g.translate(17,10);g.rotate(.5);g.drawImage(ic,-5,-9,10,10);g.restore()}}drawChibi(g,12,26,eqLook(),o);g.restore()}
+  g.fillStyle='#1c2419';g.fillRect(0,0,96,120);g.fillStyle='rgba(0,0,0,.25)';g.beginPath();g.ellipse(48,chibiFeet(eqLook(),eqOpts(),30)*4+5,26,6,0,0,Math.PI*2);g.fill();
+  g.save();g.scale(4,4);const o=eqOpts();o.noShadow=1;const LK=eqLook(),fy=chibiFeet(LK,o,30);if(equip.silah){const ic=ICONC[equip.silah]||(icon(equip.silah),ICONC[equip.silah]);if(ic){g.save();g.translate(17,fy-16);g.rotate(.5);g.drawImage(ic,-5,-9,10,10);g.restore()}}drawChibi(g,12,fy,LK,o);g.restore()}
 function eqLook(){const b=equip.govde&&EQUIP[equip.govde];if(!b)return LOOK.hero;return Object.assign({},LOOK.hero,{shirt:b.c,shirtD:shade(b.c,.72)})}
 function eqOpts(){const o={};if((pfx&&pfx.zehir)||sickT>0)o.sick=1;if(EQUIP[equip.bas])o.helm=EQUIP[equip.bas].c;if(EQUIP[equip.el])o.glove=EQUIP[equip.el].c;if(EQUIP[equip.ayak])o.boot=EQUIP[equip.ayak].c;return o}
 cbody.addEventListener('click',e=>{if(mode!=='char')return;
@@ -10246,7 +10250,7 @@ const cc=document.querySelector('#creator .ccard'),cp=$('cprev');
 const VIEWS=[{fx:0,fy:1},{fx:1,fy:1,q34:1},{fx:1,fy:0},{fx:1,fy:-1,q34:1,back:1},{fx:0,fy:-1},{fx:-1,fy:-1,q34:1,back:1},{fx:-1,fy:0},{fx:-1,fy:1,q34:1}];
 cDraw=function(){const g=cp.getContext('2d');g.clearRect(0,0,64,64);const L=buildLook();
   const a=((cRot*90+V63.cang)%360+360)%360;let V=VIEWS[Math.round(a/45)%8];if(V.back)V={fx:0,fy:-1};
-  g.save();g.translate(32,40);g.scale(2,2);drawChibi(g,0,0,L,Object.assign({noShadow:0},V));g.restore()};
+  g.save();g.translate(32,chibiFeet(L,{},32)*2);g.scale(2,2);drawChibi(g,0,0,L,Object.assign({noShadow:0},V));g.restore()};
 {let dr=null;
   cp.addEventListener('pointerdown',e=>{dr={id:e.pointerId,x:e.clientX};try{cp.setPointerCapture(e.pointerId)}catch(_){}e.preventDefault()});
   cp.addEventListener('pointermove',e=>{if(!dr||e.pointerId!==dr.id)return;const dx=e.clientX-dr.x;if(!dx)return;dr.x=e.clientX;V63.cang+=dx*1.6;cDraw();e.preventDefault()});
