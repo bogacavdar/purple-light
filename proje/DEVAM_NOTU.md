@@ -418,3 +418,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - v67.1: ağaçlar dinlenmez; 3 kesişte devrilip yok olur (`treeChopped`), 200–300 sn sonra aynı bölgede, ekranda görünmeyen uygun bir yerde aynı türden yenisi çıkar (`regrow`, kayda yazılmaz).
 - v67.2: kesilen ağaç hasarlı görünür: 1. kesişte gövdede çentik + talaş, 2. kesişte iki yanlı derin kesik, dökülen yapraklar, hafif yatma.
 - v67.3: köprü ve doğu geçidi görevleri sürerken üst ortadaki takip çubuğunda gerekenler yazar (`crossRow`: odun x/20; kaya patlatıcı x/2 + kuvars kazma).
+
+## v68 — Ekran kartıyla çizim (`<script id="v68-gl">` db JSON'dan hemen önce, `<script id="v68">` ayar anahtarı)
+- `GL2D`: Canvas 2D API'nin oyunun kullandığı kısmını (fillRect, drawImage, yol/elips/yay/çizgi, fillText/strokeText, radyal/doğrusal degrade, globalAlpha, dönüşümler, source-over/lighter/multiply/destination-out, shadowBlur için ucuz parıltı taklidi, setLineDash) WebGL üçgenlerine çevirip toplu çizer. Ana tuval: `ctx=(window.__mkGL2D&&window.__mkGL2D(cv))||cv.getContext('2d')`.
+- Küçük kaynaklar (≤192 px) 2048'lik atlas sayfalarında (en çok 6, dolunca sıfırlanır), büyükler kendi dokusunda (600 kare kullanılmazsa silinir). Her 2D tuvalin değiştiği `CanvasRenderingContext2D.prototype` yamasıyla izlenir (`canvas.__v`), doku yalnız değişince yeniden yüklenir. Yazılar ölçeğinde küçük tuvallere çizilip önbelleklenir.
+- Kare sonunda mikro görevde `flush`. `preserveDrawingBuffer:true`. `ctx.__fwd(g)` çizimleri geçici olarak gerçek bir 2D bağlama yönlendirir (`capAnim` canavar portreleri bunu kullanır).
+- Güvenlik: WebGL yoksa ya da kurulamazsa klasik 2D. Karede GL2D kaynaklı hata ya da bağlam kaybı olursa `localStorage['hammadde.gl']='0'` + kayıt + yeniden yükleme. Ayarlar › "Ekran kartıyla çiz" (değişince oyun yeniden açılır).
+- Bilinen farklar: `ctx.filter` (Reis'lerin mor gölgesi) yok sayılır; `source-atop` gibi desteklenmeyen karışımlar normal çizilir; parıltı gerçek bulanıklık değil, çevrede kopyalar.
