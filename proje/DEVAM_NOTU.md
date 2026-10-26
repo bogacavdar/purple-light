@@ -439,3 +439,6 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v69.3 (26 Ekim 2026)
 - Kazan tarif listesinde, öğrenilmiş ve elde yapılabilen bir tarifin malzemesi yetiyorsa satırda "+" düğmesi çıkar; basınca hemen elde yapılır (handCraft → renderCraft). Kod `<script id="v69">` içinde.
 - Yunus yeniden çizildi (Boğaç'ın seçimi "S"): kavisli gövde, kısa gaga, geriye kıvrık sırt yüzgeci, yatay çatallı kuyruk, gri renk. 43x20 piksel ızgara `<script id="v67">` içinde DROWS/DPAL; bir kez offscreen canvas'a çizilip yay boyunca döndürülerek basılır. Zıplama len 56, yükseklik 24, süre 1.4 sn.
+
+## v69.4 (26 Ekim 2026)
+- Kazandaki "+" artık kazana konmuş malzemeleri de sayar (`potMiss`: pot.put geçici olarak inv'e eklenip missingFor bakılır). Envanter yetmiyor ama kazanla yetiyorsa "+" önce kazanı boşaltır (returnAll), sonra handCraft yapar; eşya envantere girer.
