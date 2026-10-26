@@ -1433,9 +1433,9 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
 // every 2D canvas remembers when it was last drawn on, so a texture made from it knows when to refresh
 try{const P=CanvasRenderingContext2D.prototype;for(const m of ['fillRect','clearRect','strokeRect','drawImage','putImageData','fill','stroke','fillText','strokeText']){const f=P[m];if(!f)continue;
   P[m]=function(){const r=f.apply(this,arguments);const c=this.canvas;if(c)c.__v=(c.__v|0)+1;return r}}}catch(e){}
-let want=false;try{want=localStorage.getItem('hammadde.gl')==='2'}catch(e){}   // v68.1: off by default (a black screen on continue); only the switch in Ayarlar turns it on
+let want=true;try{want=localStorage.getItem('hammadde.gl2')!=='0'}catch(e){}   // v68.2: on again (the black screen was the light vignette painted with a gradient a plain 2D canvas could not read); a fresh key so everyone starts with it on
 window.__plGLWanted=want;
-window.addEventListener('error',function(ev){try{const st=String(ev.error&&ev.error.stack||'');if(window.__plGLOn&&/GL2D|earcut/.test(st)){localStorage.setItem('hammadde.gl','0');location.reload()}}catch(_){}});
+window.addEventListener('error',function(ev){try{const st=String(ev.error&&ev.error.stack||'');if(window.__plGLOn&&/GL2D|earcut/.test(st)){localStorage.setItem('hammadde.gl2','0');location.reload()}}catch(_){}});
 window.__mkGL2D=function(cv){if(!want)return null;try{const g=new GL2D(cv);window.__plGLOn=true;return g}catch(e){try{console.warn('[Purple Light] WebGL kapalı:',e)}catch(_){}window.__plGLFail=String(e&&e.message||e);return null}};
 
 // ---------------------------------------------------------------- colours
@@ -1476,7 +1476,7 @@ class GL2D{
     this.pages=[];this.atl=new Map();this.own=new Map();this.txt=new Map();this.frameN=0;this.sched=false;this._fwd=null;
     this.st={a:1,b:0,c:0,d:1,e:0,f:0,alpha:1,fill:'#000',stroke:'#000',lw:1,font:'10px sans-serif',align:'start',base:'alphabetic',comp:'source-over',sb:0,sc:'rgba(0,0,0,0)',sx:0,sy:0,smooth:true,dash:[],cap:'butt',filter:'none'};
     this.stack=[];this.path=[];this.cur=null;this.mtx=document.createElement('canvas').getContext('2d');
-    cv.addEventListener('webglcontextlost',e=>{e.preventDefault();try{localStorage.setItem('hammadde.gl','0')}catch(_){}try{window.__hamErr&&window.__hamErr('Ekran kartı çizimi durdu; oyun klasik çizimle yeniden açılıyor.',true)}catch(_){}setTimeout(()=>location.reload(),1200)});
+    cv.addEventListener('webglcontextlost',e=>{e.preventDefault();try{localStorage.setItem('hammadde.gl2','0')}catch(_){}try{window.__hamErr&&window.__hamErr('Ekran kartı çizimi durdu; oyun klasik çizimle yeniden açılıyor.',true)}catch(_){}setTimeout(()=>location.reload(),1200)});
   }
   // -------- forwarding (a draw meant for a real 2D canvas, e.g. a portrait snapshot)
   __fwd(g){this.flush();this._fwd=g}
@@ -1508,8 +1508,10 @@ class GL2D{
   scale(x,y){if(this._fwd){this._fwd.scale(x,y);return}const s=this.st;s.a*=x;s.b*=x;s.c*=y;s.d*=y}
   rotate(r){if(this._fwd){this._fwd.rotate(r);return}const c=Math.cos(r),n=Math.sin(r);this.transform(c,n,-n,c,0,0)}
   getTransform(){const s=this.st;return{a:s.a,b:s.b,c:s.c,d:s.d,e:s.e,f:s.f}}
-  createRadialGradient(x0,y0,r0,x1,y1,r1){if(this._fwd)return this._fwd.createRadialGradient(x0,y0,r0,x1,y1,r1);return new Grad('r',[x0,y0,r0,x1,y1,r1])}
-  createLinearGradient(x0,y0,x1,y1){if(this._fwd)return this._fwd.createLinearGradient(x0,y0,x1,y1);return new Grad('l',[x0,y0,x1,y1])}
+  // a real CanvasGradient (ordinary 2D canvases are sometimes painted with it, e.g. the light vignette) that also carries our copy of the stops
+  realGrad(rg,G){const add=rg.addColorStop.bind(rg);rg.addColorStop=function(o,c){add(o,c);G.addColorStop(o,c)};rg.__g=G;return rg}
+  createRadialGradient(x0,y0,r0,x1,y1,r1){if(this._fwd)return this._fwd.createRadialGradient(x0,y0,r0,x1,y1,r1);return this.realGrad(this.mtx.createRadialGradient(x0,y0,r0,x1,y1,r1),new Grad('r',[x0,y0,r0,x1,y1,r1]))}
+  createLinearGradient(x0,y0,x1,y1){if(this._fwd)return this._fwd.createLinearGradient(x0,y0,x1,y1);return this.realGrad(this.mtx.createLinearGradient(x0,y0,x1,y1),new Grad('l',[x0,y0,x1,y1]))}
   createPattern(){return '#808080'}
   measureText(t){const g=this._fwd||this.mtx;g.font=this.st.font;return g.measureText(t)}
   // -------- batching
@@ -1531,7 +1533,7 @@ class GL2D{
     const ax=this.X(x0,y0),ay=this.Y(x0,y0),bx=this.X(x1,y0),by=this.Y(x1,y0),cx=this.X(x1,y1),cy=this.Y(x1,y1),dx=this.X(x0,y1),dy=this.Y(x0,y1);
     this.v(ax,ay,0,0,0,r,g,b,a);this.v(bx,by,0,0,0,r,g,b,a);this.v(cx,cy,0,0,0,r,g,b,a);this.v(ax,ay,0,0,0,r,g,b,a);this.v(cx,cy,0,0,0,r,g,b,a);this.v(dx,dy,0,0,0,r,g,b,a)}
   useBlendNow(){this.setBlend(this.st.comp);this.tick()}
-  fillRect(x,y,w,h){if(this._fwd){this._fwd.fillRect(x,y,w,h);return}if(!(w&&h))return;if(w<0){x+=w;w=-w}if(h<0){y+=h;h=-h}const F=this.st.fill;
+  fillRect(x,y,w,h){if(this._fwd){this._fwd.fillRect(x,y,w,h);return}if(!(w&&h))return;if(w<0){x+=w;w=-w}if(h<0){y+=h;h=-h}const F0=this.st.fill,F=F0&&F0.__g?F0.__g:F0;
     if(this.st.sb>0)this.glow(()=>this.fillRect(x,y,w,h));
     if(F instanceof Grad){const N=F.k==='r'?8:16,al=this.st.alpha;this.useBlendNow();this.room(N*N*6);for(let j=0;j<N;j++)for(let i=0;i<N;i++){const xa=x+w*i/N,xb=x+w*(i+1)/N,ya=y+h*j/N,yb=y+h*(j+1)/N;
         const P=[[xa,ya],[xb,ya],[xb,yb],[xa,ya],[xb,yb],[xa,yb]];for(const [px,py] of P){const c=F.at(px,py);this.v(this.X(px,py),this.Y(px,py),0,0,0,c[0],c[1],c[2],c[3]*al)}}return}
@@ -1556,7 +1558,7 @@ class GL2D{
     for(let i=1;i<=N;i++){const p=pt(a0+sweep*i/N);this.lineTo(p[0],p[1])}if(full)this.cur.closed=true}
   arc(x,y,r,a0,a1,ccw){if(this._fwd){this._fwd.arc(x,y,r,a0,a1,ccw);return}this.ellipse(x,y,r,r,0,a0,a1,ccw)}
   fill(){if(this._fwd){this._fwd.fill.apply(this._fwd,arguments);return}if(this.st.sb>0){const P=this.path;this.glow(()=>{this.path=P;this.fillPath()});this.path=P}this.fillPath()}
-  fillPath(){const F=this.st.fill,al=this.st.alpha,isG=F instanceof Grad,col=isG?null:parseColor(F);if(!isG&&col[3]*al<=0)return;this.useBlendNow();
+  fillPath(){const F0=this.st.fill,F=F0&&F0.__g?F0.__g:F0,al=this.st.alpha,isG=F instanceof Grad,col=isG?null:parseColor(F);if(!isG&&col[3]*al<=0)return;this.useBlendNow();
     for(const sp of this.path){const P=sp.pts;if(P.length<3)continue;
       if(sp.convex||isG){// a fan from the centre (gradients get rings so a radial fall-off looks right)
         let cx=0,cy=0;if(sp.center){cx=sp.center[0];cy=sp.center[1]}else{for(const p of P){cx+=p[0];cy+=p[1]}cx/=P.length;cy/=P.length}
@@ -1565,7 +1567,7 @@ class GL2D{
           for(let i=0;i<P.length;i++){const p=P[i],q=P[(i+1)%P.length];const a=L(p,k0),b=L(q,k0),c=L(q,k1),d=L(p,k1);
             const tri=ring===0?[a,c,d]:[a,b,c,a,c,d];for(const t of tri){const cc=isG?F.at(t[0],t[1]):col;this.v(this.X(t[0],t[1]),this.Y(t[0],t[1]),0,0,0,cc[0],cc[1],cc[2],cc[3]*al)}}}}
       else{const T=earcut(P);this.room(T.length);for(const i of T){const p=P[i];this.v(p[2],p[3],0,0,0,col[0],col[1],col[2],col[3]*al)}}}}
-  stroke(){if(this._fwd){this._fwd.stroke.apply(this._fwd,arguments);return}const S=this.st.stroke,col=S instanceof Grad?(S.s[0]?S.s[0][1]:[0,0,0,1]):parseColor(S),al=this.st.alpha;if(col[3]*al<=0)return;this.useBlendNow();
+  stroke(){if(this._fwd){this._fwd.stroke.apply(this._fwd,arguments);return}const S0=this.st.stroke,S=S0&&S0.__g?S0.__g:S0,col=S instanceof Grad?(S.s[0]?S.s[0][1]:[0,0,0,1]):parseColor(S),al=this.st.alpha;if(col[3]*al<=0)return;this.useBlendNow();
     const w=Math.max(.6,this.st.lw*this.scaleNow())/2,dash=this.st.dash,sc=this.scaleNow();
     for(const sp of this.path){const P=sp.pts.slice();if(sp.closed&&P.length>1)P.push(P[0]);if(P.length<2)continue;let dpos=0,di=0,on=true,left=dash.length?dash[0]*sc:1e9;
       for(let i=1;i<P.length;i++){let ax=P[i-1][2],ay=P[i-1][3];const bx=P[i][2],by=P[i][3];let L=Math.hypot(bx-ax,by-ay);if(!L)continue;const ux=(bx-ax)/L,uy=(by-ay)/L;
@@ -5812,7 +5814,7 @@ addEventListener('resize',()=>{hudK='';layoutHUD()});setInterval(layoutHUD,1000)
 // one bad frame must not freeze the game: schedule the next frame first, show the first error once
 let frameErrs=0;
 function frame(now){requestAnimationFrame(frame);
-  try{frameBody(now)}catch(e){if(ctx.__gl&&/GL2D|earcut/.test(String(e&&e.stack||''))){try{localStorage.setItem('hammadde.gl','0');saveTo('auto')}catch(_){}location.reload();return}   // v68: a drawing fault in the graphics-card path falls back to the classic 2D canvas
+  try{frameBody(now)}catch(e){if(ctx.__gl&&/GL2D|earcut/.test(String(e&&e.stack||''))){try{localStorage.setItem('hammadde.gl2','0');saveTo('auto')}catch(_){}location.reload();return}   // v68: a drawing fault in the graphics-card path falls back to the classic 2D canvas
     if(!frameErrs++){try{console.error(e)}catch(_){}try{window.__hamErr((e&&e.message||'hata')+' (kare)',true)}catch(_){}}}}
 function frameBody(now){
   const dt=Math.max(0,Math.min(.05,(now-last)/1000));last=now;time+=dt;
@@ -10905,7 +10907,7 @@ const _db=drawBridge;drawBridge=function(time,inView){_db.apply(this,arguments);
 'use strict';
 const cb=$('glon');if(!cb)return;const on=!!ctx.__gl;cb.checked=window.__plGLWanted!==false;
 const sm=cb.parentNode&&cb.parentNode.querySelector('small');if(sm){if(window.__plGLFail)sm.insertAdjacentHTML('beforeend',' <b style="color:#ff9a7a">Bu cihazda açılamadı, klasik çizim kullanılıyor.</b>');else sm.insertAdjacentHTML('beforeend',on?' <b style="color:#8fd46b">Şu an açık.</b>':' <b>Şu an kapalı.</b>')}
-cb.addEventListener('change',()=>{try{localStorage.setItem('hammadde.gl',cb.checked?'2':'0')}catch(e){}try{if(!onTitle)saveTo('auto')}catch(e){}toast('Oyun yeniden açılıyor…');setTimeout(()=>location.reload(),500)});
+cb.addEventListener('change',()=>{try{localStorage.setItem('hammadde.gl2',cb.checked?'1':'0')}catch(e){}try{if(!onTitle)saveTo('auto')}catch(e){}toast('Oyun yeniden açılıyor…');setTimeout(()=>location.reload(),500)});
 }).toString()+')()')}catch(e){try{window.__hamErr('v68: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
