@@ -20,6 +20,7 @@ window.addEventListener('error',function(e){window.__hamErr((e.message||'hata')+
 window.addEventListener('unhandledrejection',function(e){var r=e.reason;window.__hamErr('Promise: '+(r&&(r.message||r.name)||r))});
 </script>
 <title>Purple Light</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAADW0lEQVR4nLVWXUgUURQ+586ddWZdR3f9Sc2fMqPayjAziqJ/CsSwsKiwBPGt5+qxqLegerO3iCDowYcKhYpK2wiCoiJDg8rU2qzW8mfV2dVx5/Yw7nXavxn7OXwM33fmnPvdc+88DIqOQkgZCESirkwpL89V9rTrKgBsrGgKTHwcCwfCMxMM9Jj66akvjrSFXFKC1GDh8IAklSY0IEgNGBkuCdJ4A0kq5ZUApmanvMTcmRAxBj5fu2ULIYRyXLx02iBqqNec54hualbu3HEgYZkZFFHg45w6ed6QGS4vzyMQRMHAbCYqEQUATH2F1HxeRoyNd2VmVPzxHVgY3L1/za2sNSf/2oD8ZlCzpzkmg0CS3QEh858gPv7xEf17A7RhgEgNzGaiEpGCjTsQUryezHvnCiwnRDAwO0FUEiIwy8+UWk1AkVIU/UrnSnmzqAAA5KYXTk4N9TrvZA2ttD4iSwMHSctLL1iQL9QWNxjbrV3V8Oi95Fc7KUmLMO1nTlf2j4pk7UREauDj9zbOf+Z0GU8ACGS/2Na0+rX/CVT2dF4Jdl4JQmWPty5jWA0IgCJSAOCN8UBvQX28rd/9vGik2n1QffOg+0h989tXn2RUZFBkzASAEBsLQTDEgisqSwJT/oft94pGqpNNgGsKD8Vn+7KeLt5WNN6vy6jIqHwa7knYXOLxhlgwxIIZiwjcKk5sULWwISY1U9c33K8CwNTodLJ9xURalsOzyElvL45/RUXTZxra+wEAhvtV+0uvS988OhqAIfgM/Z66PgCQ28p/myCnqAYArp/ONyeJIBEiESIJgkyIxCURJADQI2FdD+t62CCRSIhLAMZXOXruGwBQxiJC6efHz9S55RFF0WnAITpFR5SITlF0AoCmqZqmTmuqpqnadJRoqqapjM0ZkJJAZKAYPQW77BzFiV03Ob/wYL/NAwQAdOdvt1l6fMtVzi8/brLZRcoqdzMW4UghW3yNd8dvtPgaW3yNlsVcYmbuJpt7Obj2DOetL8/a7EIlZ4PN0j8LwpjOmF5eVWuQFHJL+TEDzYdbLYs50OWp+q8TUKZH7NR5C7Zy3vPVZ9+ALF2/z3z1yWT3YEf3YIdW7O4e7LAsNkuUFe+8Rs51zf0gD00MWNaj5Fo2L4P5xi/fLOnGzaww3AAAAABJRU5ErkJggg==">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap">
 <style>
@@ -1032,6 +1033,80 @@ body.b3trkpad #craft{padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
 @keyframes b3unl{0%{box-shadow:0 0 0 0 rgba(143,212,107,.9);transform:scale(1.15)}40%{box-shadow:0 0 0 10px rgba(143,212,107,.35)}100%{box-shadow:0 0 0 0 rgba(143,212,107,0);transform:scale(1)}}
 @media (prefers-reduced-motion:reduce){#b3ptr,.ib.b3unl{animation:none}}
 </style>
+<style id="v48-b5-css">
+/* v48 batch 5: title scene, music choice, controls (rebinding + touch layout), cheats */
+#title{padding:0;background:#05061a}
+#b5tbg{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;image-rendering:crisp-edges;z-index:0}
+#title .tcard,#title .tcard.diffm,#title .tcard.danger{position:absolute;inset:0;width:auto;max-width:none;max-height:none;background:none;border:0;box-shadow:none;padding:0;overflow:hidden;text-align:left;animation:none}
+#title .logo.pl{position:absolute;z-index:1;left:50%;top:calc(env(safe-area-inset-top,0px) + max(14px,5vh));transform:translateX(-50%);width:min(80vw,1040px);display:block;pointer-events:none;filter:drop-shadow(0 0 10px rgba(150,90,255,.35))}
+#title.b5night .logo.pl{filter:drop-shadow(0 0 16px rgba(170,110,255,.7)) drop-shadow(0 0 2px rgba(240,220,255,.6))}
+#b5logo{display:block;width:100%;height:auto;image-rendering:pixelated;image-rendering:crisp-edges}
+#title .logo.pl .lbeam{top:-60px;height:calc(100% + 120px);width:22%}
+#title:not(.b5night) .logo.pl .lbeam{display:none}
+#title .tcard.diffm .logo{display:none}
+#title #tmain{position:absolute;z-index:2;left:calc(env(safe-area-inset-left,0px) + max(24px,4vw));top:auto;bottom:max(18%,calc(env(safe-area-inset-bottom,0px) + 22px));display:flex;flex-direction:column;gap:10px;width:min(260px,30vw);grid-template-columns:none}
+#title #tmain[hidden]{display:none}
+#title #tmain .mb{min-height:48px;text-align:left;font-size:19px;letter-spacing:.02em;padding:10px 18px;background:rgba(16,10,34,.62);color:#efe6ff;border:2px solid rgba(190,150,255,.38);box-shadow:0 0 0 2px rgba(5,4,14,.55);transition:background .2s,border-color .2s,transform .15s}
+#title #tmain .mb::before{content:'';display:inline-block;width:0;height:10px;margin-right:0;background:#d8b0ff;vertical-align:middle;transition:width .15s,margin .15s;box-shadow:0 0 8px #b07aff}
+#title #tmain .mb:hover::before,#title #tmain .mb:focus-visible::before{width:6px;margin-right:10px}
+#title #tmain .mb:hover,#title #tmain .mb:focus-visible{background:rgba(60,30,110,.78);border-color:#c9a0ff;filter:none}
+#title #tmain #t-cont{background:rgba(110,60,200,.72);border-color:#d8b0ff}
+#title #tmain .mb:disabled{opacity:.45;background:rgba(16,10,34,.5)}
+#ttop{position:absolute;z-index:3;top:calc(env(safe-area-inset-top,0px) + 14px);right:calc(env(safe-area-inset-right,0px) + 14px);display:flex;gap:10px}
+.tib{width:52px;height:52px;padding:8px;display:flex;align-items:center;justify-content:center;background:rgba(16,10,34,.62);border:2px solid rgba(190,150,255,.38);box-shadow:0 0 0 2px rgba(5,4,14,.55);cursor:pointer}
+.tib svg{width:32px;height:32px}
+.tib:hover,.tib:focus-visible{background:rgba(60,30,110,.78);border-color:#c9a0ff;outline:none}
+#title .tcard.diffm #ttop,#title .tcard.danger #ttop{display:none}
+#title #tslots{position:absolute;z-index:2;left:calc(env(safe-area-inset-left,0px) + max(24px,4vw));bottom:max(8%,calc(env(safe-area-inset-bottom,0px) + 14px));width:min(380px,48vw);max-height:62%;overflow:auto;padding:12px;background:rgba(14,10,30,.88);border:2px solid rgba(190,150,255,.45)}
+#title #tslots[hidden]{display:none}
+#title #tdiff,#title #thard{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(600px,calc(100vw - 32px));max-height:calc(100% - 24px);overflow:auto;box-sizing:border-box;padding:18px 20px;background:rgba(18,12,34,.95);border:3px solid rgba(190,150,255,.55);box-shadow:0 0 0 3px #07050f,0 20px 60px rgba(0,0,0,.6);text-align:center}
+#title #tdiff[hidden],#title #thard[hidden]{display:none}
+#title .tcard.danger #thard{border-color:#c8202a;background:radial-gradient(ellipse at 50% 0,#4a0e12,#1a0a0c 70%);box-shadow:0 0 0 3px #11170f,0 0 60px rgba(200,32,42,.55)}
+@media (max-width:900px){#title .logo.pl{width:min(70vw,calc(100vw - 170px));left:calc(50% - 40px)}}
+@media (max-height:520px){
+  #title #tmain{gap:7px;width:min(220px,34vw);bottom:calc(env(safe-area-inset-bottom,0px) + 16px)}
+  #title #tmain .mb{min-height:44px;font-size:16px;padding:7px 14px}
+  .tib{width:46px;height:46px;padding:6px}.tib svg{width:28px;height:28px}
+  #ttop{top:calc(env(safe-area-inset-top,0px) + 10px);right:calc(env(safe-area-inset-right,0px) + 10px)}
+  #title #tslots{max-height:72%;width:min(340px,56vw)}
+  #title #tdiff,#title #thard{padding:10px 12px}
+}
+/* settings: music, buttons, cheats */
+#settings .keys{display:none}
+.b5mrow{display:grid;grid-template-columns:110px minmax(0,1fr);gap:4px 10px;align-items:center;text-align:left;margin:10px 0;font-size:15px}
+.b5mrow small{grid-column:2;margin:0}
+.b5seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.b5seg button{min-width:0;min-height:44px;font-family:inherit;font-size:14px;font-weight:700;background:#1c2419;color:var(--ink);border:2px solid var(--panel-edge);cursor:pointer;padding:4px 6px}
+.b5seg button.on{background:#4a2f80;border-color:#c9a0ff;color:#fff}
+.b5btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px;margin:8px 0}
+.b5btns .mb{font-size:14px;padding:8px 10px;min-height:44px}
+#b5cheat{border-left:3px solid #c8202a;padding-left:10px;margin:-4px 0 8px}
+#xfer{z-index:23}
+#b5infic{margin-left:2px;font-size:1.25em;line-height:1;color:#d8b0ff;text-shadow:0 0 8px rgba(190,130,255,.9)}
+/* controls menu */
+#b5keys{z-index:26}
+#b5keys .tcard{width:min(620px,100%);text-align:left}
+#b5keys h2{text-align:center}
+#b5kd{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:4px 14px}
+.b5k{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;font-size:14px;padding:2px 0;border-bottom:1px solid #2e3a28}
+.b5k button{min-width:74px;min-height:36px;font-family:inherit;font-size:14px;font-weight:700;background:#1c2419;color:var(--accent);border:2px solid var(--panel-edge);border-bottom-width:4px;cursor:pointer;padding:2px 8px}
+.b5k button.wait{color:#fff;border-color:#c9a0ff;background:#3a2468;animation:b5blink .8s steps(2) infinite}
+.b5k.fx{color:var(--ink-dim)}.b5k.fx b{min-width:74px;text-align:center;font-size:13px}
+@keyframes b5blink{50%{border-color:#6a4aa0}}
+#b5kmsg{min-height:1.4em;margin:8px 0 0;color:#d8b0ff;font-size:13px}
+#b5kt{margin-top:6px}
+#b5keys .tmenu.row{flex-wrap:wrap}
+/* touch layout editor */
+#b5lay{position:fixed;inset:0;z-index:80;background:rgba(12,6,26,.28);touch-action:none}
+#b5lay .b5bar{position:absolute;left:50%;top:calc(env(safe-area-inset-top,0px) + 6px);transform:translateX(-50%);display:flex;flex-wrap:nowrap;white-space:nowrap;justify-content:center;align-items:center;gap:6px;max-width:calc(100vw - 24px);background:rgba(18,12,34,.94);border:2px solid #c9a0ff;padding:6px 10px;color:#efe6ff;font-size:14px}
+#b5lay .b5bar .mb{font-size:13px;padding:4px 10px;min-height:44px}#b5lay .b5bar>span{font-size:13px}
+#b5lay .b5h{position:absolute;box-sizing:border-box;border:2px dashed #d8b0ff;background:rgba(160,100,255,.16);touch-action:none;cursor:move;min-width:44px;min-height:44px}
+#b5lay .b5h span{position:absolute;left:50%;top:-20px;transform:translateX(-50%);white-space:nowrap;font-size:12px;font-weight:700;color:#fff;background:#4a2f80;padding:1px 6px}
+#b5lay .b5h.drag{border-style:solid;background:rgba(190,140,255,.3)}
+body.b5edit #dodgebtn{display:block!important}
+body.b5edit #mini,body.b5edit #hotbar{visibility:visible!important}
+body.b5edit #prompt{display:block!important}
+</style>
 </head>
 <body>
 <canvas id="game" aria-label="Orman kenarı ve nehir: karakteri WASD ile yürüt, E ile malzeme topla"></canvas>
@@ -1086,19 +1161,15 @@ body.b3trkpad #craft{padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
   <div class="copts" id="copts"></div></div>
   <div class="tmenu row"><button class="mb ghost" id="c-back" type="button">Geri</button><button class="mb" id="c-go" type="button">Devam</button></div>
 </div></div>
-<div id="title" class="ov"><canvas id="tbg" width="320" height="180" aria-hidden="true"></canvas>
+<div id="title" class="ov"><canvas id="b5tbg" width="320" height="180" aria-hidden="true"></canvas>
   <div class="tcard">
-    <div class="logo pl" aria-label="Purple Light"><i class="lbeam" aria-hidden="true"></i><div class="lrow"><span>P</span><span>U</span><span>R</span><span>P</span><span>L</span><span>E</span></div><div class="lrow l2"><span>L</span><span>I</span><span>G</span><span>H</span><span>T</span></div><small class="lsub">Mor Işık</small></div>
-    <p class="tag">Mor ışık onu götürdü. Bir taştan başla, onu bul.</p>
+    <div class="logo pl" aria-label="Purple Light"><i class="lbeam" aria-hidden="true"></i><canvas id="b5logo" width="1" height="1" aria-hidden="true"></canvas></div>
     <div class="tmenu" id="tmain">
-      <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-cont" type="button">Devam et</button>
-      <button class="mb" id="t-load" type="button">Kayıttan yükle</button>
-      <button class="mb ghost" id="t-set" type="button">Ayarlar</button>
-      <button class="mb ghost" id="t-xfer" type="button">Kayıtları dışa aktar</button>
-      <button class="mb ghost" id="t-imp" type="button">Kayıtları içe aktar</button>
-      <button class="mb ghost" id="t-exit" type="button">Çıkış</button>
+      <button class="mb" id="t-new" type="button">Yeni oyun</button>
+      <button class="mb" id="t-load" type="button">Yükle</button>
     </div>
+    <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
     <div id="tdiff" hidden>
       <h2 class="dh">Zorluk seç</h2>
@@ -1113,7 +1184,6 @@ body.b3trkpad #craft{padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
       <p>Hatalarını affetmeyen, uzun ve yorucu bir oyundur. <b>Sadece aşırı rekabetçi oyunculara tavsiye edilir.</b></p>
       <div class="tmenu"><button class="mb danger" id="h-go" type="button">Yine de başla</button><button class="mb ghost" id="h-back" type="button">Normal'e dön</button></div>
     </div>
-    <p class="foot" id="tfoot">Prototip · Taş Çağı · WASD yürü · E topla</p>
     <p id="nojs"><b>Bu bir önizleme, oyun burada açılmaz.</b> iPhone ve iPad gönderilen HTML dosyalarını yalnızca resim gibi gösterir; düğmeler çalışmaz. Oyunu sana gönderen kişiden oyunun <b>bağlantısını (linkini)</b> iste ve Safari'de aç. Bilgisayardaysan bu dosyayı Chrome, Edge ya da Safari ile aç.</p>
   </div>
 </div>
@@ -1127,6 +1197,7 @@ body.b3trkpad #craft{padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
       <button class="mb" id="p-load" type="button">Kayıttan yükle</button>
       <button class="mb ghost" id="p-xfer" type="button">Kayıtları dışa aktar</button>
       <button class="mb ghost" id="p-set" type="button">Ayarlar</button>
+      <button class="mb ghost" id="p-keys" type="button">Kontroller</button>
       <button class="mb ghost" id="p-quit" type="button">Ana menüye dön</button>
     </div>
     <div class="tmenu" id="pslots" hidden></div>
@@ -1137,11 +1208,12 @@ body.b3trkpad #craft{padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
     <h2>Ayarlar</h2>
     <label class="row" for="vol-music"><span>Müzik sesi</span><input id="vol-music" type="range" min="0" max="100" step="1"><b id="vol-music-v"></b></label>
     <label class="row" for="vol-sfx"><span>Efekt sesi</span><input id="vol-sfx" type="range" min="0" max="100" step="1"><b id="vol-sfx-v"></b></label>
-    <p class="note">Müzik oyunla birlikte başlar; sessize almak için sesi sıfıra çek.</p>
-    <label class="row chk" for="cheat"><input id="cheat" type="checkbox"><span>Hile modu (test için)<small>Açıkken <b>Z</b> tuşu +100 sikke, <b>X</b> tuşu +100 XP verir; sağdaki kırmızı paneldeki küçük simgelere tıklayınca o malzemeden +10 alırsın.</small></span></label>
+    <div class="b5mrow"><span>Müzik</span><div id="b5mus" class="b5seg" role="radiogroup" aria-label="Müzik seç"></div><small id="b5musd" class="note"></small></div>
+    <div class="b5btns"><button class="mb ghost" id="s-keys" type="button">Kontroller</button><button class="mb ghost" id="t-xfer" type="button">Kayıtları dışa aktar</button><button class="mb ghost" id="t-imp" type="button">Kayıtları içe aktar</button></div>
     <label class="row chk" for="nightlight"><input id="nightlight" type="checkbox"><span>Gece ışığı<small>Açıkken gece etrafın meşale ya da kafa lambası varmış gibi aydınlanır; karanlıkta mor ışık sana dokunmaz. İstediğin zaman kapat.</small></span></label>
-    <div class="row" style="grid-template-columns:auto minmax(0,1fr)"><button class="mb ghost" id="s-test" type="button" style="font-size:14px;padding:6px 12px">Ses testi</button><span id="s-status" class="note" style="margin:0"></span></div>
-    <p class="keys"><b>WASD</b> yürü · <b>Shift</b> koş (Koşu yeteneğiyle) · <b>E</b> topla / konuş · <b>Boşluk</b> vur · <b>Q</b> atıl (yerleştirirken döndür) · <b>F</b> ye · <b>1–0</b> alet · <b>H</b> eli boşalt · <b>R</b> köpekler · <b>I</b> envanter · <b>B</b> kazan · <b>Tab</b> el yapımı · <b>T</b> demirci · <b>K</b> tarif kitabı · <b>P</b> pazar · <b>C</b> karakter · <b>Y</b> yetenekler · <b>G</b> görevler · <b>M</b> harita · <b>V</b> kamp ateşi kur · <b>N</b> haritaya işaret · <b>O</b> ayarlar · <b>Esc</b> duraklat</p>
+    <label class="row chk" for="cheat"><input id="cheat" type="checkbox"><span>Hile modu (test için)<small>Açıkken <b>Z</b> tuşu +100 sikke, <b>X</b> tuşu +100 XP verir; sağdaki kırmızı paneldeki küçük simgelere tıklayınca o malzemeden +10 alırsın.</small></span></label>
+    <div id="b5cheat" hidden><label class="row chk" for="b5inf"><input id="b5inf" type="checkbox"><span>Sınırsız sikke<small>Açıkken sikke sayacının yanında <b>∞</b> görünür; satın almak sikkeni azaltmaz, her şeyi alabilirsin.</small></span></label><div class="b5btns"><button class="mb ghost" id="b5max" type="button">Seviyeyi en üste çıkar</button><button class="mb ghost" id="b5map" type="button">Haritayı tamamen aç</button></div></div>
+    <div class="row" hidden style="grid-template-columns:auto minmax(0,1fr)"><button class="mb ghost" id="s-test" type="button" style="font-size:14px;padding:6px 12px">Ses testi</button><span id="s-status" class="note" style="margin:0"></span></div>
     <div class="note" id="s-ios" hidden><b>Tam ekran (iPhone)</b><div class="iosg"><p class="ig0">iPhone'da Safari oyunlara tam ekran izni vermiyor. Ama Safari'nin çubuklarını gizleyip ekranı büyütebilirsin:</p><ol><li><b>Telefonu yan çevir.</b></li><li>İçinde <b>claude.ai</b> yazan adres çubuğunun <b>solundaki</b> küçük simgeye dokun (sarı ile gösterilen).<svg viewBox="0 0 220 34" aria-hidden="true"><rect x="1" y="1" width="218" height="32" rx="16" fill="#e9e9ee" stroke="#c8c8d0"/><circle cx="22" cy="17" r="13" fill="#f2b84b"/><rect x="15" y="10" width="13" height="7" rx="2" fill="none" stroke="#1a1a22" stroke-width="2"/><rect x="15" y="20" width="13" height="2" rx="1" fill="#1a1a22"/><rect x="15" y="24" width="9" height="2" rx="1" fill="#1a1a22"/><text x="120" y="22" font-size="13" font-weight="700" text-anchor="middle" fill="#2a2a33" font-family="system-ui,sans-serif">claude.ai</text><text x="203" y="22" font-size="14" text-anchor="middle" fill="#3a3a48" font-family="system-ui,sans-serif">⟳</text></svg></li><li>Küçük bir pencere açılır. Sağ üst köşesindeki <b>•••</b> düğmesine dokun.<svg viewBox="0 0 220 96" aria-hidden="true"><rect x="1" y="1" width="218" height="94" rx="14" fill="#f4f4f8" stroke="#c8c8d0"/><circle cx="20" cy="20" r="12" fill="#e2e2e8"/><rect x="38" y="9" width="128" height="22" rx="11" fill="#e2e2e8"/><text x="72" y="25" font-size="11" font-weight="700" text-anchor="middle" fill="#2a2a33" font-family="system-ui,sans-serif">A</text><text x="132" y="26" font-size="15" font-weight="700" text-anchor="middle" fill="#2a2a33" font-family="system-ui,sans-serif">A</text><circle cx="196" cy="20" r="13" fill="#f2b84b"/><text x="196" y="24" font-size="14" font-weight="700" text-anchor="middle" fill="#1a1a22" font-family="system-ui,sans-serif">•••</text><rect x="8" y="40" width="204" height="22" rx="11" fill="#e8e8ee"/><text x="20" y="55" font-size="10" fill="#4a4a56" font-family="system-ui,sans-serif">Dikkat Dağıtıcı Öğeleri Gizle</text><rect x="8" y="67" width="204" height="22" rx="11" fill="#e8e8ee"/><text x="20" y="82" font-size="10" fill="#4a4a56" font-family="system-ui,sans-serif">Genişletmeleri Yönet</text></svg></li><li>Açılan listede <b>Araç Çubuğunu Gizle</b>'yi seç.<svg viewBox="0 0 220 40" aria-hidden="true"><rect x="1" y="1" width="218" height="38" rx="12" fill="#f4f4f8" stroke="#c8c8d0"/><rect x="6" y="6" width="208" height="28" rx="8" fill="#f2b84b"/><text x="16" y="25" font-size="13.5" font-weight="700" fill="#1a1a22" font-family="system-ui,sans-serif">Araç Çubuğunu Gizle</text></svg></li></ol><p class="ig1"><b>Listede yoksa:</b> Safari'nin <b>Paylaş</b> düğmesine (yukarı ok çıkan kutu) dokun, <b>Ana Ekrana Ekle</b>'yi seç. Oyunu bundan sonra ana ekrandaki <b>Purple Light</b> simgesinden aç; Safari çubukları olmadan açılır.</p><p class="ig1">Not: En üstte claude.ai'nin ince başlığı (oyunun adı, Paylaş, Oturum aç) kalır; o sayfa claude.ai'ye ait, oyunun içinden kaldırılamaz.</p></div></div>
     <button class="mb ghost" id="s-full" type="button" hidden>Tam ekran</button>
     <div class="tmenu"><button class="mb" id="s-close" type="button">Tamam</button></div>
@@ -1733,7 +1805,7 @@ function talkFarmer(){
 function seedShop(){
   const list=Object.keys(SEED2CROP);
   say(`Tohumlarım taze. Hangisinden istersin? <small>(sende ${coins} sikke)</small>`,[
-    ...list.map(sn=>{const pr=buyFloor(sn,PRICE_[sn]*2);return{fresh:1,t:`${sn} · ${pr} sikke (${SEED2CROP[sn]}: ${CROP[SEED2CROP[sn]].grow} sn)`,f:()=>{if(coins<pr){toast(`${pr-coins} sikke daha gerekli`,true);sfx('bad');return seedShop()}coins-=pr;gain(sn);shopBuy(sn);selSeed=sn;sfx('coin');renderInv();seedShop()}}}),
+    ...list.map(sn=>{const pr=buyFloor(sn,PRICE_[sn]*2);return{fresh:1,t:`${sn} · ${pr} sikke (${SEED2CROP[sn]}: ${CROP[SEED2CROP[sn]].grow} sn)`,f:()=>{if(!plInf()&&coins<pr){toast(`${pr-coins} sikke daha gerekli`,true);sfx('bad');return seedShop()}if(!plInf())coins-=pr;gain(sn);shopBuy(sn);selSeed=sn;sfx('coin');renderInv();seedShop()}}}),
     {t:'Tamam',f:talkFarmer},
   ],farmer);
 }
@@ -1783,7 +1855,7 @@ if(TOUCH){const S=id=>SKILLS.find(x=>x.id===id);S('H4').e='%50 daha uzaktan topl
 const tapDone=()=>tapMoved||!document.body.classList.contains('joymode');
 const raftQuest=()=>!won&&(has('Yelkenli sal')||(tut-11===QUESTS.length-1));
 let questsHidden=false;     // failed pair keys
-let coins=0;
+let coins=0;const plInf=()=>!!window.__plInf;   // v48-b5: cheat "Sınırsız sikke"
 let tut=0;                 // tutorial step, 12 = done
 const seen=new Set();      // every item ever obtained
 const PRICE=DB.p;
@@ -2552,7 +2624,7 @@ function renderCraft(){
     {const sa=$('sellall');if(sa)sa.hidden=true;const s2=$('sellsafe');if(s2)s2.hidden=true}
     const f=filter.toLocaleLowerCase('tr-TR');
     const L=rawList().filter(n=>!f||n.toLocaleLowerCase('tr-TR').includes(f));
-    cbody.innerHTML=mktTabs()+`<p class="note">Nazlı, adada bulduğun <b>toplanabilir</b> malzemeleri satar; ama senin ona sattığının <b>3 katına</b>. Zamanın sikkeden değerliyse al.</p>`+(L.length?`<ul class="mkt">${L.map(n=>{const pr=rawPrice(n);return `<li><span class="nm">${esc(n)}${inv[n]?` <small style="color:var(--ink-dim)">· sende ${inv[n]}</small>`:''}</span><span class="pr">${pr.toLocaleString('tr-TR')} sikke</span><button data-bq="1" data-n="${esc(n)}" type="button"${coins<pr?' disabled':''}>1 al</button><button class="all" data-bq="10" data-n="${esc(n)}" type="button"${coins<pr*10?' disabled':''}>10 al · ${(pr*10).toLocaleString('tr-TR')}</button></li>`}).join('')}</ul>`:`<p class="note">${filter?'Aramana uyan malzeme yok.':'Henüz bildiğin toplanabilir bir malzeme yok.'}</p>`);
+    cbody.innerHTML=mktTabs()+`<p class="note">Nazlı, adada bulduğun <b>toplanabilir</b> malzemeleri satar; ama senin ona sattığının <b>3 katına</b>. Zamanın sikkeden değerliyse al.</p>`+(L.length?`<ul class="mkt">${L.map(n=>{const pr=rawPrice(n);return `<li><span class="nm">${esc(n)}${inv[n]?` <small style="color:var(--ink-dim)">· sende ${inv[n]}</small>`:''}</span><span class="pr">${pr.toLocaleString('tr-TR')} sikke</span><button data-bq="1" data-n="${esc(n)}" type="button"${!plInf()&&coins<pr?' disabled':''}>1 al</button><button class="all" data-bq="10" data-n="${esc(n)}" type="button"${!plInf()&&coins<pr*10?' disabled':''}>10 al · ${(pr*10).toLocaleString('tr-TR')}</button></li>`}).join('')}</ul>`:`<p class="note">${filter?'Aramana uyan malzeme yok.':'Henüz bildiğin toplanabilir bir malzeme yok.'}</p>`);
   }else if(mode==='sell'){
     {const sa=$('sellall');if(sa)sa.hidden=false}
     const total=Math.round(order.filter(n=>inv[n]>0&&bulkSellable(n)).reduce((t,n)=>t+unitPrice(n,true)*inv[n],0));
@@ -2561,7 +2633,7 @@ function renderCraft(){
       :`<p class="note">${filter?'Aramana uyan malzeme yok.':'Satacak bir şeyin yok. Malzeme topla ya da birleştirerek değerli eşyalar yap.'}</p>`);
   }else if(mode==='dogs'){
     cbody.innerHTML=`<p class="note">Köpekler senin seçtiğin malzemeyi kendi başına toplar ve envanterine getirir. Senin ilk günkü hızının yarısıyla çalışırlar; yeteneklerinden ve seviyenden etkilenmezler. Bir köpeği yanına çağırıp sevebilirsin.</p><div class="dogs">${dogs.map((d,i)=>`<div class="dog"><div class="dh"><b>${esc(d.name)}</b><span>${d.state==='wait'?'<b style="color:#f2b84b">ne toplayacağını seç</b>':d.state==='called'?'sana koşuyor':d.state==='play'?'yanında oynuyor':d.state==='gather'?`${esc(d.mat)} topluyor`:d.state==='walk'?`${esc(d.mat)} arıyor`:'bekliyor'} · topladığı: ${d.n||0}</span></div><div class="dact">${d.state==='called'||d.state==='play'?`<button type="button" data-work="${i}">İşine gönder</button>${d.state==='play'?`<button type="button" class="pet" data-pet="${i}">♥ Sev</button>`:''}`:`<button type="button" data-call="${i}">Yanıma çağır</button>`}</div><div class="dm">${DOG_MATS.map(m=>`<button type="button" class="${d.mat===m?'on':''}" data-dog="${i}" data-mat="${esc(m)}"><img src="${icon(m)}" alt="">${esc(m)}</button>`).join('')}</div></div>`).join('')||'<p class="note">Henüz robot köpeğin yok.</p>'}</div>
-      ${wiz.plan?`<div class="hintbox" style="margin-top:12px"><span><b>Yeni robot köpek</b> · Her köpek bir öncekinden pahalı.</span><button id="buydog" type="button"${coins<dogPrice()?' disabled':''}>${dogPrice().toLocaleString('tr-TR')} sikke</button></div>`:''}`;
+      ${wiz.plan?`<div class="hintbox" style="margin-top:12px"><span><b>Yeni robot köpek</b> · Her köpek bir öncekinden pahalı.</span><button id="buydog" type="button"${!plInf()&&coins<dogPrice()?' disabled':''}>${dogPrice().toLocaleString('tr-TR')} sikke</button></div>`:''}`;
   }else if(mode==='char'){
     const row=(nm,f,fmt)=>`<tr><td>${nm}</td><td class="v">${fmt(f(lvl))}</td><td class="n">${fmt(f(lvl+1))}</td></tr>`;
     const x=v=>v.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2}), pc=v=>'+%'+(v*100).toLocaleString('tr-TR',{maximumFractionDigits:1});
@@ -2578,8 +2650,8 @@ function renderCraft(){
     const unk=all.filter(n=>!forged.has(n)).map(n=>`<div class="tool unk"><img class="gl" alt="" src="${unkIcon()}"><div class="ti"><b>???</b><span>${GT[n].use.replace(/ \(.*\)/,'')} · tarifini birleştirerek bul</span></div><button type="button" disabled>Kilitli</button></div>`).join('');
     cbody.innerHTML=smithTabs()+`<p class="note">Bir toplama aletini bir kez dövdün mü, yenisini Dursun'dan satın alırsın. Aletler kullandıkça körelir; körelince burada bileyebilirsin.${known.length?'':' Henüz hiç alet dövmedin: önce <b>Alet dök</b> sekmesinde taş balta yapmayı dene.'}</p><div class="shop">${known.map(n=>{
       const g=GT[n],own=(inv[n]||0)>0,d=nn(toolDur[n],g.dur),dull=own&&d<=0,pct=own?Math.max(0,d/g.dur*100):100;
-      const act=!own?`<button data-buy="${esc(n)}" type="button"${coins<toolPrice(n)?' disabled':''}>Satın al · ${toolPrice(n).toLocaleString('tr-TR')}</button>`
-        :`<button data-sharp="${esc(n)}" type="button"${d>=g.dur||coins<g.sharp?' disabled':''}>${d>=g.dur?'Keskin':'Bile · '+g.sharp.toLocaleString('tr-TR')}</button>`;
+      const act=!own?`<button data-buy="${esc(n)}" type="button"${!plInf()&&coins<toolPrice(n)?' disabled':''}>Satın al · ${toolPrice(n).toLocaleString('tr-TR')}</button>`
+        :`<button data-sharp="${esc(n)}" type="button"${d>=g.dur||(!plInf()&&coins<g.sharp)?' disabled':''}>${d>=g.dur?'Keskin':'Bile · '+g.sharp.toLocaleString('tr-TR')}</button>`;
       return `<div class="tool${dull?' dull':''}">${glyph(n)}<div class="ti"><b>${esc(n)}</b><span>${g.use} · ${String(g.time).replace('.',',')} sn · ${g.dur} kullanım</span>${own?`<div class="dbar" title="Keskinlik"><i style="width:${pct}%"></i></div><small>${dull?'Körelmiş':'Keskinlik '+d+'/'+g.dur}</small>`:''}</div>${act}</div>`}).join('')}${unk}</div>${false?`<p class="note" style="margin-top:10px">${hidden} alet daha var. Tariflerini birleştirerek keşfet.</p>`:''}`;
   }else if(mode==='map'){
     renderMapPanel();
@@ -2587,7 +2659,7 @@ function renderCraft(){
     if(cnt)cnt.textContent=`${coins.toLocaleString('tr-TR')} sikken var · ${skills.size}/${SKILLS.filter(x=>true).length} yetenek`;
     const SKL=SKILLS.filter(x=>true),brs=[...new Set(SKL.map(x=>x.br))];
     cbody.innerHTML=`<div class="tree">${brs.map(b=>`<section class="br"><h3 style="background:${BRCOL[b]}">${b}</h3><ul>${SKILLS.filter(x=>x.br===b).map(x=>{
-      const own=sk(x.id),open=!x.r||sk(x.r),rich=coins>=x.c;
+      const own=sk(x.id),open=!x.r||sk(x.r),rich=plInf()||coins>=x.c;
       const lv=lvOf(x), lvOk=lvl>=lv, ndOk=x.need!=='bridge'||bridge.fixed;
       const st=own?'own':!open?'lock':!ndOk?'lock lvl':!lvOk?'lock lvl':rich?'buy':'poor';
       const tag=own?'Alındı':!open?`Önce: ${SKILLS.find(y=>y.id===x.r).n}`:!ndOk?`Kırık köprü onarılınca · ${x.c} sikke`:!lvOk?`Seviye ${lv} gerekli · ${x.c.toLocaleString('tr-TR')} sikke`:rich?`Al · ${x.c.toLocaleString('tr-TR')} sikke`:`${x.c.toLocaleString('tr-TR')} sikke gerekli${lv>1?' · Sv. '+lv:''}`;
@@ -2624,7 +2696,7 @@ cbody.addEventListener('click',e=>{if(mode!=='book'||bookTab!=='rec')return;cons
 const RAW_BASE=['Dal','Taş','Lif','Yaprak','Böğürtlen','Çakmaktaşı','Nehir çakılı','Kum','Su','Nehir kili'];
 function rawList(){return order.filter(n=>seen.has(n)&&PRICE_[n]!=null&&(RAW_BASE.includes(n)||/ odunu$/.test(n))).concat(RAW_BASE.filter(n=>seen.has(n)&&PRICE_[n]!=null&&!order.includes(n)))}
 const rawPrice=n=>Math.max(1,Math.ceil(unitPrice(n)*3));
-function buyRaw(n,q){const c=rawPrice(n)*q;if(coins<c){toast(`${(c-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);sfx('bad');return}coins-=c;gain(n,q);shopBuy(n,q);sfx('pick');toast(`${q} ${n} satın alındı · ${c.toLocaleString('tr-TR')} sikke`);renderInv();renderCraft()}
+function buyRaw(n,q){const c=rawPrice(n)*q;if(!plInf()&&coins<c){toast(`${(c-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);sfx('bad');return}if(!plInf())coins-=c;gain(n,q);shopBuy(n,q);sfx('pick');toast(`${q} ${n} satın alındı · ${c.toLocaleString('tr-TR')} sikke`);renderInv();renderCraft()}
 function mktTabs(){return `<div class="pmode stabs" role="tablist"><button type="button" role="tab" data-mt="sell" aria-selected="${mktTab==='sell'}">${glyph('Dal')}<span>Sat</span></button><button type="button" role="tab" data-mt="buy" aria-selected="${mktTab==='buy'}">${glyph('Böğürtlen')}<span>Satın al</span></button></div>`}
 function smithTabs(){return `<div class="pmode stabs" role="tablist"><button type="button" role="tab" data-go="forge" aria-selected="${mode==='craft'}">${glyph('Taş balta')}<span>Alet dök</span></button><button type="button" role="tab" data-go="shop" aria-selected="${mode==='shop'}">${glyph('Bileği taşı')}<span>Al ve bile</span></button></div>`}
 cbody.addEventListener('click',e=>{
@@ -2642,14 +2714,14 @@ function recipeCandidates(){
   return out.length?out:soft;
 }
 function learnRecipe(r,price,who){
-  if(coins<price){toast(`${(price-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);sfx('bad');return false}
-  coins-=price;bought.add(r);sfx('found');
+  if(!plInf()&&coins<price){toast(`${(price-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);sfx('bad');return false}
+  if(!plInf())coins-=price;bought.add(r);sfx('found');
   toast(`Tarif açıldı: ${r} = ${recText(REC.get(r))}`);
   renderInv();return true;
 }
 function buyBox(){
   const n=recipeCandidates().length;
-  return `<div class="hintbox"><span><b>Tarif satın al</b> · Rastgele, henüz bulmadığın bir tarif öğren${n?'':' (öğrenilecek tarif kalmadı)'}.</span><button id="buyrec" type="button"${!n||coins<RECIPE_PRICE?' disabled':''}>${RECIPE_PRICE} sikke</button></div>`;
+  return `<div class="hintbox"><span><b>Tarif satın al</b> · Rastgele, henüz bulmadığın bir tarif öğren${n?'':' (öğrenilecek tarif kalmadı)'}.</span><button id="buyrec" type="button"${!n||(!plInf()&&coins<RECIPE_PRICE)?' disabled':''}>${RECIPE_PRICE} sikke</button></div>`;
 }
 function hintBox(){
   const wait=Math.max(0,Math.ceil((hintAt-performance.now())/1000));
@@ -2749,9 +2821,9 @@ function buySkill(id){
   if(x.r&&!sk(x.r)){toast(`Önce ${SKILLS.find(y=>y.id===x.r).n} gerekli`,true);return}
   if(x.need==='bridge'&&!bridge.fixed){toast('Koşu, kırık köprü onarılınca açılır',true);return}
   if(lvl<lvOf(x)){toast(`Bu yetenek için seviye ${lvOf(x)} gerekli`,true);return}
-  if(coins<x.c){toast(`${(x.c-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);return}
+  if(!plInf()&&coins<x.c){toast(`${(x.c-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);return}
   const before=skillNow(id);
-  coins-=x.c;skills.add(id);toast(`Yetenek açıldı: ${x.n}`);
+  if(!plInf())coins-=x.c;skills.add(id);toast(`Yetenek açıldı: ${x.n}`);
   setTimeout(()=>explainSkill(x,before,skillNow(id)),150);
   if(id==='H6')$('mini').hidden=false;
   if(/^A/.test(id)){hotK='';renderHot()}
@@ -2764,8 +2836,8 @@ cbody.addEventListener('click',e=>{
   const ea=e.target.closest('[data-eat]');if(ea){const n=ea.dataset.eat;if(eat(n)){toast(`${n} yedin`);if(mode==='eat'&&!eatList().length)closeCraft()}return}
   if(mode==='inv'){invClick(e);return}
   const sbb=e.target.closest('[data-sub]');if(sbb){if(sbb.classList.contains('no')){const li=sbb.closest('li');if(li)li.classList.toggle('tipon');sfx('bad');return}quickBrew(sbb.dataset.sub);return}
-  const bb=e.target.closest('[data-buy]');if(bb){const n=bb.dataset.buy,g=GT[n];if(coins>=toolPrice(n)&&!(inv[n]>0)){coins-=toolPrice(n);giveTool(n);shopBuy(n);toast(`${n} satın alındı · envanterinde`);if(beltIndex(n)<0)setTimeout(()=>beltTip(n),700);renderInv();renderCraft()}return}
-  const sh=e.target.closest('[data-sharp]');if(sh){const n=sh.dataset.sharp,g=GT[n];if(coins>=g.sharp){coins-=g.sharp;toolDur[n]=g.dur;toast(`${n} bilendi`);renderInv();renderCraft()}return}
+  const bb=e.target.closest('[data-buy]');if(bb){const n=bb.dataset.buy,g=GT[n];if((plInf()||coins>=toolPrice(n))&&!(inv[n]>0)){if(!plInf())coins-=toolPrice(n);giveTool(n);shopBuy(n);toast(`${n} satın alındı · envanterinde`);if(beltIndex(n)<0)setTimeout(()=>beltTip(n),700);renderInv();renderCraft()}return}
+  const sh=e.target.closest('[data-sharp]');if(sh){const n=sh.dataset.sharp,g=GT[n];if(plInf()||coins>=g.sharp){if(!plInf())coins-=g.sharp;toolDur[n]=g.dur;toast(`${n} bilendi`);renderInv();renderCraft()}return}
   const skb=e.target.closest('[data-sk]');if(skb){buySkill(skb.dataset.sk);return}
   if(e.target.id==='hintbtn'){giveHint();return}
   const pk=e.target.closest('[data-pick]');if(pk&&PLACEABLE.has(pk.dataset.pick)){guideTo('usta');toast(`${pk.dataset.pick} bir yapı: Usta Kemal'e yaptır. Ok yolu gösteriyor.`);return}
@@ -3380,8 +3452,8 @@ function wizOffer(){
 }
 function wizSell(){
   const price=dogPrice();
-  if(coins<price){sfx('bad');return say(`Gezegenime dönmem için <b>${price} sikke</b> lazım. Biraz daha biriktir.`,[{t:'Tamam',pri:1,f:bye}],wiz)}
-  coins-=price;renderInv();sfx('coin');wiz.plan=true;
+  if(!plInf()&&coins<price){sfx('bad');return say(`Gezegenime dönmem için <b>${price} sikke</b> lazım. Biraz daha biriktir.`,[{t:'Tamam',pri:1,f:bye}],wiz)}
+  if(!plInf())coins-=price;renderInv();sfx('coin');wiz.plan=true;
   say('Hmm… <i>(sikkeleri evirip çevirir)</i> Bu bir <b>dünyalı sikkesi</b>. Bununla benim gezegenimde hiçbir şey alınmaz. Neyse… zaten çok hırçın bir köpekti. Al bakalım.',[
     {fresh:1,t:'Köpeği al',pri:1,f:()=>{bye();spawnDog();openMenu('dogs');toast('Önce köpeğine ne toplayacağını seç.')}}],wiz);
 }
@@ -3401,8 +3473,8 @@ function spawnDog(){
 }
 function buyDog(){
   const price=dogPrice();
-  if(coins<price){toast(`${(price-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);sfx('bad');renderCraft();return}
-  coins-=price;spawnDog();if(craftOpen&&mode==='dogs')renderCraft();else openMenu('dogs');toast('Yeni köpeğine ne toplayacağını seç.');
+  if(!plInf()&&coins<price){toast(`${(price-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);sfx('bad');renderCraft();return}
+  if(!plInf())coins-=price;spawnDog();if(craftOpen&&mode==='dogs')renderCraft();else openMenu('dogs');toast('Yeni köpeğine ne toplayacağını seç.');
 }
 function setDogMat(d,m){if(d.target)d.target.claim=null;d.mat=m;d.state='idle';d.target=null;sfx('woof');
   if(wiz.shown&&wiz.plan){setTimeout(()=>{if(craftOpen&&mode==='dogs')closeCraft();setTimeout(wizVanish,350)},700)}}
@@ -4700,13 +4772,13 @@ function openUsta(){bye();mode='usta';filter='';craftOpen=true;document.body.cla
 function renderUsta(){
   const f=filter.toLocaleLowerCase('tr-TR'),m=x=>!f||x.r.toLocaleLowerCase('tr-TR').includes(f);
   const pl=DB.R.filter(x=>PLACEABLE.has(x.r)&&!HOUSESET.has(x.r)&&m(x)).sort((a,b)=>isOpen(b.r)-isOpen(a.r)),other=DB.R.filter(x=>!PLACEABLE.has(x.r)&&!FORGED.has(x.r)&&isOpen(x.r)&&m(x)).slice(0,60);
-  const row=x=>{const ok=isOpen(x.r),pr=ustaPrice(x.r);return `<li${ok?'':' style="opacity:.5"'}><span class="bn"><img src="${ok?icon(x.r):unkIcon()}" alt=""><span><b>${ok?esc(x.r):maskName(x.r,.5)}</b>${inv[x.r]>0?` <small style="color:var(--accent)">· sende ${inv[x.r]}</small>`:''}<br><small>${ok?(PLACEABLE.has(x.r)?`yere konur · ${FOOT(x.r).join('×')} kare`:esc(recText(x))):'tarifini önce kazanda bul'}</small></span></span><span class="rr"><button class="mk us" data-us="${esc(x.r)}" type="button"${ok&&coins>=pr?'':' disabled'}>Yaptır · ${pr}</button></span></li>`};
+  const row=x=>{const ok=isOpen(x.r),pr=ustaPrice(x.r);return `<li${ok?'':' style="opacity:.5"'}><span class="bn"><img src="${ok?icon(x.r):unkIcon()}" alt=""><span><b>${ok?esc(x.r):maskName(x.r,.5)}</b>${inv[x.r]>0?` <small style="color:var(--accent)">· sende ${inv[x.r]}</small>`:''}<br><small>${ok?(PLACEABLE.has(x.r)?`yere konur · ${FOOT(x.r).join('×')} kare`:esc(recText(x))):'tarifini önce kazanda bul'}</small></span></span><span class="rr"><button class="mk us" data-us="${esc(x.r)}" type="button"${ok&&(plInf()||coins>=pr)?'':' disabled'}>Yaptır · ${pr}</button></span></li>`};
   cbody.innerHTML=`<p class="note">Kemal tarifini bildiğin eşyaları sikke karşılığı yapar; malzeme istemez. Yataklar, atölye, çit gibi <b>yapılar</b> onda yapılır; evleri ve barınakları <b>Marangoz Rıza</b> yapar; aldığını envanterden bir alet yuvasına koyup seçer, yere kurarsın.</p>
     <h3 class="ush">Yapılar ve eşyalar</h3><ul class="book">${pl.map(row).join('')||'<li class="note">Aramana uyan yapı yok.</li>'}</ul>
     <h3 class="ush">Bildiğin diğer tarifler</h3><ul class="book">${other.map(row).join('')||'<li class="note">Aramana uyan tarif yok.</li>'}</ul>`;
 }
 cbody.addEventListener('click',e=>{if(mode!=='usta')return;const b=e.target.closest('[data-us]');if(!b)return;const r=b.dataset.us,pr=ustaPrice(r);
-  if(!isOpen(r)||coins<pr){sfx('bad');return}coins-=pr;gain(r);shopBuy(r);sfx('coin');toast(PLACEABLE.has(r)?`${r} hazır: envanterinde · bir yuvaya koyup seç, yere kur`:`${r} hazır`);renderInv();renderCraft()});
+  if(!isOpen(r)||(!plInf()&&coins<pr)){sfx('bad');return}if(!plInf())coins-=pr;gain(r);shopBuy(r);sfx('coin');toast(PLACEABLE.has(r)?`${r} hazır: envanterinde · bir yuvaya koyup seç, yere kur`:`${r} hazır`);renderInv();renderCraft()});
 // ---------- houses: Rıza builds shelters, tents and houses; every bed-less house needs a bed inside ----------
 const HOUSES=[
  {n:'Yaprak barınağı',lv:1,c:5,mat:[['Dal',8],['Yaprak',12],['Lif',4]],d:'Yatak gerekmez. Bir gecelik: uyanınca dağılır.'},
@@ -4758,14 +4830,14 @@ function talkCarp(){
     {t:'Ev ve barınak siparişi',pri:1,fresh:1,f:openCarp},{t:'Hoşça kal',f:bye}],carp)}
 function openCarp(){bye();mode='carp';filter='';craftOpen=true;document.body.classList.add('menuopen');for(const k in keys)keys[k]=false;craftEl.hidden=false;msg('');$('crafttitle').textContent=TITLES.carp;renderTools();renderCraft();$('closecraft').focus()}
 const houseCost=H=>buyFloor(H.n,H.c);
-function carpOK(H){if(lvl<H.lv)return `Seviye ${H.lv} gerekli`;if(H.fixed&&ownsHouse(H.n))return 'Zaten senin';if(coins<houseCost(H))return `${houseCost(H)-coins} sikke eksik`;
+function carpOK(H){if(lvl<H.lv)return `Seviye ${H.lv} gerekli`;if(H.fixed&&ownsHouse(H.n))return 'Zaten senin';if(!plInf()&&coins<houseCost(H))return `${houseCost(H)-coins} sikke eksik`;
   if(H.mat){const miss=H.mat.filter(([n,q])=>(inv[n]||0)<q).map(([n,q])=>`${q-(inv[n]||0)} ${n}`);if(miss.length)return 'Eksik: '+miss.join(', ')}
   if(H.fixed&&!ekinPlotSpot())return 'Arsa dolu';return ''}
 function renderCarp(){
   cbody.innerHTML=`<p class="note">Rıza, istediğin evi sikke karşılığı yapar; aldığını envanterden bir alet yuvasına koyup seçer, istediğin yere kurarsın. <b>Yaprak barınağı</b> dışındaki evlerde uyumak için içine bir <b>yatak</b> koymalısın (yatağı Usta Kemal yapar). <b>Taş ev</b> ise Ekin'in kampının yanındaki arsaya kurulur.</p><ul class="book">`+
     HOUSES.map(H=>{const why=carpOK(H),own=H.fixed?ownsHouse(H.n):(inv[H.n]||0);return `<li${lvl<H.lv?' style="opacity:.55"':''}><span class="bn"><img src="${icon(H.n)}" alt=""><span><b>${esc(H.n)}</b>${own&&!H.fixed?` <small style="color:var(--accent)">· sende ${own}</small>`:''}<br><small>${esc(H.d)}${H.mat?` · ${H.mat.map(([n,q])=>`<span style="color:${(inv[n]||0)>=q?'#8fd46b':'#ff8a6a'}">${q} ${esc(n)} (${inv[n]||0})</span>`).join(', ')}`:''}${lvl<H.lv?` · <b style="color:#ff8a6a">Seviye ${H.lv}</b>`:''}</small></span></span><span class="rr"><button class="mk" data-hb="${esc(H.n)}" type="button"${why?' disabled title="'+esc(why)+'"':''}>${H.fixed&&ownsHouse(H.n)?'Senin':`Yaptır · ${houseCost(H)}`}</button></span></li>`}).join('')+'</ul>'}
 cbody.addEventListener('click',e=>{if(mode!=='carp')return;const b=e.target.closest('[data-hb]');if(!b||b.disabled)return;const H=HOUSES.find(x=>x.n===b.dataset.hb);if(!H||carpOK(H))return;
-  coins-=houseCost(H);if(H.mat)for(const [n,q] of H.mat)inv[n]-=q;sfx('coin');
+  if(!plInf())coins-=houseCost(H);if(H.mat)for(const [n,q] of H.mat)inv[n]-=q;sfx('coin');
   if(H.fixed){const pl=ekinPlotSpot();placed.push({n:H.n,tx:pl.tx,ty:pl.ty,rot:0,fixed:true});ekinPlot=null;toast(`${H.n} Ekin'in kampının yanında yükseldi! İçine bir yatak koy.`);guideTo('ekin',10)}
   else{gain(H.n);shopBuy(H.n);toast(`${H.n} hazır: envanterinde · bir yuvaya koyup seç, yere kur`)}
   renderInv();renderCraft();renderTut()});
@@ -5655,7 +5727,7 @@ const CHEAT_RES=['Dal','Taş','Lif','Yaprak','Böğürtlen','Çakmaktaşı','Neh
 function applyCheat(){$('cheat').checked=!!settings.cheat;$('cheatpad').hidden=!(settings.cheat&&!onTitle);
   const c=$('cres');if(!c.childElementCount)c.innerHTML=CHEAT_RES.map(n=>`<button type="button" data-cr="${esc(n)}" title="+10 ${esc(n)}" aria-label="Hile: +10 ${esc(n)}"><img src="${icon(n)}" alt=""><span>+10</span></button>`).join('')}
 $('cres').addEventListener('click',e=>{const b=e.target.closest('[data-cr]');if(!b)return;const n=b.dataset.cr;gain(n,10);sfx('pick');toast(`Hile: +10 ${n}`);renderInv();if(craftOpen)renderCraft();renderTut()});
-$('cheat').addEventListener('change',e=>{settings.cheat=e.target.checked;store.set(SETKEY,settings);applyCheat();toast(settings.cheat?'Hile modu açık: 5 = +100 sikke, 6 = +100 XP':'Hile modu kapalı')});
+$('cheat').addEventListener('change',e=>{settings.cheat=e.target.checked;store.set(SETKEY,settings);applyCheat();toast(settings.cheat?'Hile modu açık: Z = +100 sikke, X = +100 XP':'Hile modu kapalı')});
 $('c-coin').addEventListener('click',()=>{if(!onTitle)cheatCoins()});
 $('c-xp').addEventListener('click',()=>{if(!onTitle)cheatXP()});
 function openSettings(){applyCheat();$('nightlight').checked=!!settings.nightLight;$('settings').hidden=false;$('s-status').textContent=audio.status();$('vol-music').value=settings.music;$('vol-sfx').value=settings.sfx;showVol();$('vol-music').focus()}
@@ -5845,6 +5917,7 @@ const audio=(()=>{
     synth(f){if(!ctx||ctx.state!=='running'||!sfxGain)return;try{f(ctx,sfxGain)}catch(e){}},
     sfx(kind){if(!ctx||!sfxBuf[kind]||ctx.state!=='running')return;const s2=ctx.createBufferSource();s2.buffer=sfxBuf[kind];s2.connect(sfxGain);s2.start()},
     status(){if(failed)return failed;if(!ctx)return 'Ses henüz başlamadı: ekrana bir kez dokun';if(ctx.state!=='running')return 'Tarayıcı sesi bekletiyor ('+ctx.state+'); ekrana dokun';if(!musicBuf)return 'Müzik hazırlanıyor…';return settings.music>0?'Müzik çalıyor':'Müzik sesi sıfırda'},
+    b5:{mk:mkOC,rendered:rendered,get:()=>musicBuf,set(b){if(!b||b===musicBuf)return;musicBuf=b;if(musicSrc){try{musicSrc.stop()}catch(e){}musicSrc=null}if(wanted)startMusic()},add(k,b){sfxBuf[k]=b}},   // v48-b5: music choice + title ambience
   };
 })();
 const music={start:()=>audio.start(),volume:()=>audio.volume()};
@@ -6073,8 +6146,8 @@ function drawLampman(time){const x=Math.round(lampman.x),y=Math.round(lampman.y)
   if(!lampman.met){const b=Math.round(Math.sin(time*5)*2);px(x-3,y-32+b,6,9,'#232d1f');px(x-1,y-31+b,2,5,'#7fe0ff');px(x-1,y-25+b,2,1,'#7fe0ff')}}
 function talkLamp(){lampman.met=true;
   say(`Ssst… dünyalı. Beş meşale yaktın, beşi de söndü. Gecenin seni ne kadar yorduğunu gördüm. Bak: bir <b>kafa lambası</b>. Başına tak, ellerin boş kalsın. Üstündeki paneller gündüz güneşten şarj olur; ışığı <b>hiç bitmez</b>. Fiyatı… <b>1000 sikke</b>. Benim gezegenimde bunu çocuklar takar.`,[
-    {fresh:1,pri:1,t:'Lambayı al · 1.000 sikke',f:()=>{if(coins<1000){sfx('bad');return say('Bin sikke dedim. Gece uzundur, ben beklerim.',[{t:'Tamam',pri:1,f:bye}],lampman)}
-      coins-=1000;gain('Kafa lambası');shopBuy('Kafa lambası');sfx('coin');renderInv();
+    {fresh:1,pri:1,t:'Lambayı al · 1.000 sikke',f:()=>{if(!plInf()&&coins<1000){sfx('bad');return say('Bin sikke dedim. Gece uzundur, ben beklerim.',[{t:'Tamam',pri:1,f:bye}],lampman)}
+      if(!plInf())coins-=1000;gain('Kafa lambası');shopBuy('Kafa lambası');sfx('coin');renderInv();
       say('Güzel. <i>(lambanın arkasındaki mor göz işaretini parmağıyla örter)</i> Bunu kimseye gösterme, olur mu? Özellikler penceresinde <b>baş</b> yuvasına tak. İyi geceler, dünyalı… ya da iyi günler. Siz hangisini diyordunuz?',[{t:'Teşekkürler',pri:1,fresh:1,f:()=>{bye();if(!equip.bas){wear('Kafa lambası');toast('Kafa lambası başında: geceleri kendiliğinden yanar')}setTimeout(lampVanish,700)}}],lampman)}},
     {t:'Neden yardım ediyorsun?',f:()=>say('Yardım mı? Ticaret, dünyalı. Biz yıldızsızlar alır, satar, toplarız. Bazen eşya… bazen başka şeyler.',[{t:'Hmm',pri:1,f:talkLamp}],lampman)},
     {t:'Sonra',f:bye}],lampman)}
@@ -7365,6 +7438,357 @@ V46FOOD['Yılan balığı']=5;V46FOOD['Tatlısu midyesi']=3;
 REACH_=null;for(const k in CAT_N)delete CAT_N[k];
 window.__b4=B4;
 }).toString()+')()')}catch(e){try{window.__hamErr('v48-b4: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v48-b5">
+// =====================================================================================================
+// v48 batch 5: the title scene (island, day/night, purple light, fog, fireflies, ambience), music choice,
+// the Controls menu (key rebinding + touch button layout), cheats (∞ coins, max level, whole map).
+// Runs inside the game's scope through window.__plEval (see start()).
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const B5={};try{if(/[?&]debug/.test(location.search))window.__b5=B5}catch(e){}
+const clamp=(v,a,b)=>v<a?a:v>b?b:v,mix=(a,b,k)=>a+(b-a)*k,hx=h=>[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];
+const rgb=(c,a)=>a==null?`rgb(${c[0]|0},${c[1]|0},${c[2]|0})`:`rgba(${c[0]|0},${c[1]|0},${c[2]|0},${a.toFixed(3)})`;
+const mixc=(a,b,k)=>[mix(a[0],b[0],k),mix(a[1],b[1],k),mix(a[2],b[2],k)];
+const smooth=k=>k*k*(3-2*k);
+
+// ------------------------------------------------------------------ the logo: big pixel letters
+const GLYPH={P:['1111','1001','1001','1111','1000','1000','1000'],U:['1001','1001','1001','1001','1001','1001','1111'],R:['1111','1001','1001','1111','1010','1001','1001'],
+  L:['1000','1000','1000','1000','1000','1000','1111'],E:['1111','1000','1000','1110','1000','1000','1111'],I:['111','010','010','010','010','010','111'],
+  G:['1111','1000','1000','1011','1001','1001','1111'],H:['1001','1001','1001','1111','1001','1001','1001'],T:['11111','00100','00100','00100','00100','00100','00100']};
+function drawLogo(){const c=$('b5logo');if(!c)return;const txt='PURPLE LIGHT';let w=1;for(const ch of txt)w+=ch===' '?3:GLYPH[ch][0].length+1;
+  const S=2,W2=(w+2)*S,H2=(7+4)*S;c.width=W2;c.height=H2;const g=c.getContext('2d');g.imageSmoothingEnabled=false;
+  const cells=[];let x=1;for(const ch of txt){if(ch===' '){x+=3;continue}const G=GLYPH[ch];for(let r=0;r<7;r++)for(let k=0;k<G[r].length;k++)if(G[r][k]==='1')cells.push([x+k,r]);x+=G[0].length+1}
+  const put=(dx,dy,col)=>{g.fillStyle=col;for(const [cx,cy] of cells)g.fillRect((cx+1+dx)*S,(cy+1+dy)*S,S,S)};
+  // outline, deep shadow, body (vertical gradient), top highlight
+  for(const [dx,dy] of [[-.5,0],[.5,0],[0,-.5],[0,.5],[.5,1.5],[0,1.5],[1,1.5],[1,1]])put(dx,dy,'#0a0618');
+  put(.5,1,'#3a1a6a');
+  for(const [cx,cy] of cells){g.fillStyle=['#f4e8ff','#e4ccff','#d4b0ff','#c597ff','#b47dff','#9a62f0','#7c48d8'][cy];g.fillRect((cx+1)*S,(cy+1)*S,S,S)}
+  g.fillStyle='rgba(255,255,255,.75)';for(const [cx,cy] of cells)if(cy===0)g.fillRect((cx+1)*S,(cy+1)*S,S,1)}
+
+// ------------------------------------------------------------------ the title scene
+const T5={on:false,last:0,p:.40,Wc:0,Hc:180,isl:null,tint:null,tintK:'',fog:null,stars:[],ff:[],motes:[],clouds:[],shoot:null,amb:{wind:null,drone:null,tryAt:0},lastDraw:0};
+B5.setPhase=p=>{T5.p=((p%1)+1)%1};B5.phase=()=>T5.p;
+const CYC=80;   // seconds for day → dusk → night → dawn
+// keyframes: p, sky top, sky bottom, sea, island tint, night amount
+const SKYK=[[0,'#3f8fd8','#bfe4ff','#2a6ab8','#ffffff',0],[.36,'#3f8fd8','#c8e8ff','#2a6ab8','#ffffff',0],[.44,'#3a3a7c','#f08a5a','#3a4a8a','#ffb898',.2],
+  [.52,'#05061a','#2a1846','#0c1438','#4a4c94',1],[.86,'#05061a','#2a1846','#0c1438','#4a4c94',1],[.93,'#4a5aa0','#f0b0a0','#3a5a9a','#e8c0c8',.3],[1,'#3f8fd8','#bfe4ff','#2a6ab8','#ffffff',0]];
+function skyAt(p){for(let i=1;i<SKYK.length;i++){const a=SKYK[i-1],b=SKYK[i];if(p<=b[0]){const k=smooth((p-a[0])/(b[0]-a[0]||1));
+  return{top:mixc(hx(a[1]),hx(b[1]),k),bot:mixc(hx(a[2]),hx(b[2]),k),sea:mixc(hx(a[3]),hx(b[3]),k),tint:mixc(hx(a[4]),hx(b[4]),k),n:mix(a[5],b[5],k)}}}return skyAt(0)}
+let rs5=1;const R5=()=>{rs5=(rs5*16807)%2147483647;return rs5/2147483647};
+function islandShape(Wc){const cx=Math.round(Wc*.62),R=Math.round(Math.min(Wc*.35,150)),wl=130;
+  const h=u=>{if(u<-1||u>.9)return 0;let v=24*Math.pow(Math.max(0,1-u*u),.8)+30*Math.exp(-Math.pow((u+.14)/.2,2))+9*Math.exp(-Math.pow((u-.42)/.13,2));
+    if(u>.66){v=Math.max(v,mix(22,19,(u-.66)/.22))}if(u>.88)v=0;return v};
+  return{cx,R,wl,h,peakX:Math.round(cx-.14*R),peakY:Math.round(wl-h(-.14))}}
+function buildIsland(Wc,Hc){rs5=7;const c=document.createElement('canvas');c.width=Wc;c.height=Hc;const g=c.getContext('2d');const S=islandShape(Wc);T5.S=S;
+  const P=(x,y,col)=>{g.fillStyle=col;g.fillRect(x,y,1,1)};const {cx,R,wl,h}=S;
+  // distant islets on the horizon
+  g.fillStyle='#3a5a6a';for(const [x0,w,hh] of [[Wc*.05,22,4],[Wc*.12,10,2],[Wc*.94,16,3]]){for(let i=0;i<w;i++){const k=Math.sin(i/w*Math.PI);g.fillRect(Math.round(x0+i),Math.round(97-hh*k),1,Math.ceil(hh*k)+1)}}
+  const surf=[];
+  for(let x=cx-R-2;x<=cx+R;x++){const u=(x-cx)/R,hh=h(u);if(hh<=0)continue;const top=Math.round(wl-hh);surf[x]=top;
+    const sl=Math.abs(h(u+1/R)-h(u-1/R))/2,cliff=u>.66;
+    for(let y=top;y<=wl;y++){const d=y-top,base=wl-y;let col;
+      if(cliff&&u>.84){col=(y%3===0)?'#5a5466':'#6e6878'}
+      else if(base<=2&&!cliff){col=base===0?'#c8a868':'#e8d090'}
+      else if(base<=1&&cliff){col='#4a4456'}
+      else if(hh>44&&d<10){col=(x+y)%4===0?'#6a6474':'#7c7686';if(d===0)col='#9a94a6'}
+      else if(sl>1.3&&d>1){col=(x*3+y)%5===0?'#5a6a4a':'#6a7464'}
+      else{col=d===0?'#7ac04e':d<3?'#5aa040':base<6&&!cliff?'#4a8a36':((x*7+y*3)%11===0?'#3e7a30':'#468a38')}
+      P(x,y,col)}
+    if(cliff&&u>.80&&u<=.88){for(let y=top+3;y<wl;y++)P(x,y,(y%4===0)?'#4a4456':'#5e5868')}}
+  // trees: small pines and round trees along the slopes
+  for(let x=cx-R+8;x<cx+R*.8;x+=3+Math.floor(R5()*5)){const top=surf[x];if(top==null)continue;const u=(x-cx)/R;if(wl-top<6||(wl-top>44))continue;if(R5()<.18)continue;
+    if(u>-.9&&u<-.52)continue;   // the beach and the wreck stay open
+    const pine=R5()<.55,th=pine?7+Math.floor(R5()*5):5+Math.floor(R5()*3),y0=top+1;
+    if(pine){for(let k=0;k<th;k++){const w=Math.floor(k*.42);for(let dx=-w;dx<=w;dx++)P(x+dx,y0-th+k,k%3===2?'#1e5a30':(dx<0?'#2e7a40':'#256a38'))}P(x,y0,'#5a3a22');P(x,y0-th-1,'#3a8a4e')}
+    else{for(let dy=0;dy<th;dy++)for(let dx=-3;dx<=3;dx++){if(Math.abs(dx)+Math.abs(dy-th/2)>th/2+1.5)continue;P(x+dx,y0-2-dy,dy<2?'#62b048':dx>1?'#3a8a34':'#4e9e3e')}P(x,y0-1,'#6a4426');P(x,y0,'#6a4426')}}
+  // the wrecked ship on the left beach
+  {const bx=Math.round(cx-R*.70),by=wl-1;const hull=[[0,0,20],[1,1,18],[2,2,16],[3,3,13]];
+    for(const [dy,dx,w] of hull)for(let i=0;i<w;i++)P(bx+dx+i,by-3+dy-Math.round(i*.18),(i+dy)%5===0?'#3a2414':'#5a3a20');
+    for(let k=0;k<12;k++)P(bx+9+Math.round(k*.35),by-4-k,'#4a2e18');for(let k=0;k<6;k++)P(bx+13+k,by-13+Math.round(k*.5),'#4a2e18');
+    for(let k=0;k<5;k++)for(let j=0;j<3+k;j++)P(bx+11+j,by-12+k,(j+k)%2?'#c8c0a8':'#b0a890');
+    P(bx+3,by-5,'#2a1a10');P(bx+7,by-6,'#2a1a10')}
+  // Ekin's camp: a tiny lean-to (the fire itself flickers in the frame)
+  {const fx=Math.round(cx-R*.47),top=surf[fx];if(top!=null){T5.fire={x:fx,y:top};for(let i=0;i<6;i++)P(fx-7+i,top-1-Math.floor(i/2),'#8a6a3a');P(fx-8,top,'#6a4a26')}}
+  // rocks in the sea by the cliff
+  for(const [rx,rw,rh] of [[cx+R*.93,4,3],[cx+R*1.0,2,2],[cx+R*.97,3,1]])for(let i=0;i<rw;i++)for(let j=0;j<rh;j++)P(Math.round(rx+i),wl+2-j,j===rh-1?'#7a7486':'#4a4456');
+  return c}
+function buildFog(Wc){const w=Wc*2,hh=26,c=document.createElement('canvas');c.width=w;c.height=hh;const g=c.getContext('2d');const im=g.createImageData(w,hh),d=im.data;
+  for(let y=0;y<hh;y++)for(let x=0;x<w;x++){const a=.5+.5*Math.sin(x*.045+Math.sin(x*.013)*3)*Math.cos(y*.3+x*.02),v=Math.sin(Math.PI*y/hh);const o=(y*w+x)*4;d[o]=d[o+1]=226;d[o+2]=240;d[o+3]=Math.round(255*v*v*clamp(a,0,1)*.55)}
+  // make it wrap: fade the seam
+  g.putImageData(im,0,0);return c}
+function tintIsland(tc){const k=tc.map(v=>Math.round(v/6)).join(',');if(k===T5.tintK&&T5.tint)return;T5.tintK=k;const W2=T5.isl.width,H2=T5.isl.height;
+  if(!T5.tint){T5.tint=document.createElement('canvas')}const c=T5.tint;c.width=W2;c.height=H2;const g=c.getContext('2d');g.drawImage(T5.isl,0,0);
+  g.globalCompositeOperation='multiply';g.fillStyle=rgb(tc);g.fillRect(0,0,W2,H2);g.globalCompositeOperation='destination-in';g.drawImage(T5.isl,0,0);g.globalCompositeOperation='source-over'}
+function setupScene(Wc,Hc){T5.Wc=Wc;T5.Hc=Hc;T5.isl=buildIsland(Wc,Hc);T5.tintK='';T5.fog=buildFog(Wc);rs5=99;
+  T5.stars=Array.from({length:110},()=>({x:R5()*Wc,y:R5()*92,b:.3+R5()*.7,ph:R5()*6,big:R5()<.08}));
+  const S=T5.S;T5.ff=Array.from({length:22},()=>({x:S.cx+(R5()*2-1)*S.R*.8,y:S.wl-4-R5()*30,ph:R5()*6,sp:.3+R5()*.5}));
+  T5.clouds=Array.from({length:6},(_,i)=>({x:R5()*Wc,y:8+R5()*44,w:18+Math.floor(R5()*26),v:.6+R5()*1.2}));T5.motes=[]}
+function drawTitle(t,dt){const c=$('b5tbg');if(!c)return;const vw=innerWidth||1280,vh=innerHeight||720,Hc=180,Wc=clamp(Math.round(Hc*vw/vh),240,420);
+  if(c.width!==Wc||c.height!==Hc||!T5.isl||T5.Wc!==Wc){c.width=Wc;c.height=Hc;setupScene(Wc,Hc)}
+  const g=c.getContext('2d');g.imageSmoothingEnabled=false;const S=T5.S,K=skyAt(T5.p),n=K.n,HZ=96;
+  // sky
+  const sg=g.createLinearGradient(0,0,0,HZ);sg.addColorStop(0,rgb(K.top));sg.addColorStop(1,rgb(K.bot));g.fillStyle=sg;g.fillRect(0,0,Wc,HZ+1);
+  if(n>.3){const pg=g.createRadialGradient(S.peakX,HZ,4,S.peakX,HZ,Wc*.5);pg.addColorStop(0,`rgba(120,60,200,${(.22*n).toFixed(3)})`);pg.addColorStop(1,'rgba(120,60,200,0)');g.fillStyle=pg;g.fillRect(0,0,Wc,HZ+1)}
+  // stars and a rare shooting star
+  if(n>.05){for(const s of T5.stars){const a=n*s.b*(.55+.45*Math.sin(t*1.7+s.ph));if(a<.04)continue;g.fillStyle=`rgba(255,250,235,${a.toFixed(3)})`;g.fillRect(Math.round(s.x),Math.round(s.y),1,1);if(s.big&&a>.5){g.fillStyle=`rgba(220,200,255,${(a*.4).toFixed(3)})`;g.fillRect(Math.round(s.x)-1,Math.round(s.y),3,1);g.fillRect(Math.round(s.x),Math.round(s.y)-1,1,3)}}
+    if(!T5.shoot&&n>.8&&Math.random()<dt*.06)T5.shoot={x:Wc*(.1+Math.random()*.5),y:6+Math.random()*30,t:0};
+    if(T5.shoot){const s=T5.shoot;s.t+=dt;for(let k=0;k<7;k++){g.fillStyle=`rgba(255,255,255,${((1-k/7)*(1-s.t/.9)).toFixed(3)})`;g.fillRect(Math.round(s.x+s.t*70-k*2),Math.round(s.y+s.t*28-k*.8),1,1)}if(s.t>.9)T5.shoot=null}}
+  // sun and moon
+  {const sp=(T5.p+.06)/.52;if(sp>0&&sp<1){const x=mix(Wc*.92,Wc*.08,sp),y=HZ-6-Math.sin(sp*Math.PI)*70,dusk=1-Math.sin(sp*Math.PI);const col=mixc([255,244,200],[255,150,80],dusk);
+      const gg=g.createRadialGradient(x,y,2,x,y,26);gg.addColorStop(0,rgb(col,.45));gg.addColorStop(1,rgb(col,0));g.fillStyle=gg;g.fillRect(x-26,y-26,52,52);g.fillStyle=rgb(col);g.fillRect(Math.round(x)-4,Math.round(y)-5,9,11);g.fillRect(Math.round(x)-5,Math.round(y)-4,11,9)}
+   const mp=(T5.p-.47)/.47;if(mp>0&&mp<1){const x=mix(Wc*.86,Wc*.16,mp),y=HZ-8-Math.sin(mp*Math.PI)*64,a=Math.min(1,Math.sin(mp*Math.PI)*3);const X=Math.round(x),Y=Math.round(y);
+      const gg=g.createRadialGradient(x,y,2,x,y,22);gg.addColorStop(0,`rgba(230,225,255,${(.25*a).toFixed(3)})`);gg.addColorStop(1,'rgba(230,225,255,0)');g.fillStyle=gg;g.fillRect(x-22,y-22,44,44);
+      g.fillStyle=`rgba(240,236,220,${a.toFixed(3)})`;g.fillRect(X-3,Y-4,7,9);g.fillRect(X-4,Y-3,9,7);g.fillStyle=`rgba(200,196,186,${a.toFixed(3)})`;g.fillRect(X-1,Y-2,2,2);g.fillRect(X+1,Y+1,2,2)}}
+  // clouds
+  for(const cl of T5.clouds){cl.x+=cl.v*dt*.8;if(cl.x>Wc+cl.w)cl.x=-cl.w;const col=mixc(mixc([255,255,255],[255,190,170],K.tint[2]<200?.6:0),[40,32,70],n);const a=.75-n*.45;
+    const X=Math.round(cl.x),Y=Math.round(cl.y);g.fillStyle=rgb(col,a);g.fillRect(X,Y,cl.w,3);g.fillRect(X+3,Y-2,cl.w-8,2);g.fillRect(X+6,Y-4,Math.max(4,cl.w-16),2);g.fillStyle=rgb(mixc(col,[0,0,0],.15),a);g.fillRect(X+2,Y+3,cl.w-4,1)}
+  // birds by day
+  if(n<.4){for(let i=0;i<3;i++){const x=((t*(6+i*2)+i*97)%(Wc+40))-20,y=26+i*9+Math.sin(t*.8+i)*3,w=Math.sin(t*6+i*2)>0?1:0;g.fillStyle=`rgba(30,30,40,${(.7*(1-n*2.5)).toFixed(3)})`;g.fillRect(Math.round(x)-2,Math.round(y)-w,2,1);g.fillRect(Math.round(x)+1,Math.round(y)-w,2,1);g.fillRect(Math.round(x),Math.round(y),1,1)}}
+  // sea
+  const seaG=g.createLinearGradient(0,HZ,0,Hc);seaG.addColorStop(0,rgb(mixc(K.sea,K.bot,.35)));seaG.addColorStop(.25,rgb(K.sea));seaG.addColorStop(1,rgb(mixc(K.sea,[0,0,10],.45)));g.fillStyle=seaG;g.fillRect(0,HZ,Wc,Hc-HZ);
+  g.fillStyle=rgb(mixc(K.bot,[255,255,255],.3),.5);g.fillRect(0,HZ,Wc,1);
+  for(let y=HZ+3,j=0;y<Hc;y+=3+Math.floor(j/2),j++){const sp=(j%2?1:-1)*(4+j*.6),gap=14+j*3;for(let x=((t*sp+j*37)%gap)-gap;x<Wc;x+=gap){g.fillStyle=rgb(mixc(K.sea,[255,255,255],.25+(1-n)*.1),.55);g.fillRect(Math.round(x),y,2+Math.floor(j/3),1)}}
+  // reflections of the island (squashed, faint)
+  tintIsland(K.tint);
+  g.save();g.globalAlpha=.22;g.translate(0,S.wl*2+1);g.scale(1,-1);g.drawImage(T5.tint,0,S.wl-24,Wc,24,0,S.wl-24,Wc,24);g.restore();
+  // the island
+  g.drawImage(T5.tint,0,0);
+  // shore foam
+  {const f=.5+.5*Math.sin(t*1.3);g.fillStyle=`rgba(240,248,255,${(.35+.35*f).toFixed(3)})`;for(let x=S.cx-S.R-2;x<S.cx+S.R*.84;x++){if((x+Math.floor(t*3))%7<4)g.fillRect(x,S.wl+1+(x%9===0?1:0),1,1)}
+   for(const rx of [S.cx+S.R*.93,S.cx+S.R*1.0])g.fillRect(Math.round(rx)-1+Math.round(f*2),S.wl+3,4,1)}
+  // camp fire: brighter as it gets dark
+  if(T5.fire){const fl=Math.random(),X=T5.fire.x,Y=T5.fire.y-1;const a=.35+n*.65;g.fillStyle=`rgba(255,${120+Math.round(fl*60)},40,${a.toFixed(3)})`;g.fillRect(X,Y-1,2,2);g.fillStyle=`rgba(255,230,140,${a.toFixed(3)})`;g.fillRect(X+(fl>.5?1:0),Y-2,1,1);
+    if(n>.2){const gg=g.createRadialGradient(X+1,Y,1,X+1,Y,14);gg.addColorStop(0,`rgba(255,150,60,${(.35*n).toFixed(3)})`);gg.addColorStop(1,'rgba(255,150,60,0)');g.fillStyle=gg;g.fillRect(X-14,Y-14,30,30)}}
+  // the purple light: only at night
+  const bn=smooth(clamp((n-.55)/.4,0,1));T5.beam=bn;
+  if(bn>0){const surge=Math.pow(Math.max(0,Math.sin(t*.7)),24),fl=(.82+.12*Math.sin(t*3.1)+.06*Math.sin(t*11.3)+surge*.35)*bn,X=S.peakX,Y=S.peakY;
+    g.save();g.globalCompositeOperation='lighter';
+    const bw=14+surge*8;const bg=g.createLinearGradient(X-bw,0,X+bw,0);bg.addColorStop(0,'rgba(150,60,255,0)');bg.addColorStop(.5,`rgba(170,100,255,${(.55*fl).toFixed(3)})`);bg.addColorStop(1,'rgba(150,60,255,0)');g.fillStyle=bg;g.fillRect(X-bw,0,bw*2,Y+2);
+    g.fillStyle=`rgba(200,150,255,${(.8*fl).toFixed(3)})`;g.fillRect(X-2,0,5,Y+1);g.fillStyle=`rgba(255,245,255,${(.9*fl).toFixed(3)})`;g.fillRect(X-1,0,2,Y+1);
+    const ig=g.createRadialGradient(X,Y,1,X,Y,30+surge*10);ig.addColorStop(0,`rgba(220,170,255,${(.75*fl).toFixed(3)})`);ig.addColorStop(.4,`rgba(150,80,255,${(.3*fl).toFixed(3)})`);ig.addColorStop(1,'rgba(120,60,255,0)');g.fillStyle=ig;g.fillRect(X-44,Y-44,88,88);
+    // its reflection on the sea
+    for(let y=S.wl+2;y<Hc;y+=2){const k=(y-S.wl)/(Hc-S.wl),w=1+Math.round(k*3),wob=Math.round(Math.sin(y*.9+t*2.4)*(1+k*3));g.fillStyle=`rgba(190,120,255,${(.45*fl*(1-k*.7)).toFixed(3)})`;g.fillRect(X-w+wob,y,w*2,1)}
+    g.restore();
+    // motes falling down the beam, sparks rising from where it lands
+    if(T5.motes.length<40&&Math.random()<dt*28*bn)T5.motes.push(Math.random()<.6?{x:X+(Math.random()-.5)*8,y:Math.random()*Y,vy:6+Math.random()*10,vx:0,l:2+Math.random()*2,a:0}:{x:X+(Math.random()-.5)*14,y:Y,vy:-4-Math.random()*6,vx:(Math.random()-.5)*4,l:2+Math.random()*3,a:0});
+  }
+  for(let i=T5.motes.length-1;i>=0;i--){const m=T5.motes[i];m.a+=dt;m.x+=m.vx*dt;m.y+=m.vy*dt;if(m.a>m.l||m.y>S.peakY+2){T5.motes.splice(i,1);continue}const a=Math.sin(Math.PI*m.a/m.l)*bn;g.fillStyle=`rgba(${m.vy<0?'255,220,255':'230,200,255'},${a.toFixed(3)})`;g.fillRect(Math.round(m.x),Math.round(m.y),1,1)}
+  // fog: two slow bands, thicker at night
+  {const fa=.32+.38*n;g.save();g.globalAlpha=fa;const o1=(t*2.2)%(Wc*2),o2=(t*1.3+Wc*.7)%(Wc*2);
+   g.drawImage(T5.fog,-o1,S.wl-20);g.drawImage(T5.fog,Wc*2-o1,S.wl-20);g.globalAlpha=fa*.6;g.drawImage(T5.fog,-o2,S.wl-8,Wc*2,18);g.drawImage(T5.fog,Wc*2-o2,S.wl-8,Wc*2,18);
+   g.globalAlpha=fa*.35;g.drawImage(T5.fog,-o2*.5,HZ-10,Wc*2,14);g.restore();
+   if(n>.2){g.fillStyle=`rgba(10,6,30,${(.18*n).toFixed(3)})`;g.fillRect(0,0,Wc,Hc)}}
+  // fireflies
+  if(n>.3){for(const f of T5.ff){const x=f.x+Math.sin(t*f.sp+f.ph)*7,y=f.y+Math.cos(t*f.sp*1.3+f.ph)*3,b=Math.max(0,Math.sin(t*2*f.sp+f.ph*3))*(n-.3)/.7;if(b<.05)continue;
+    g.fillStyle=`rgba(200,255,120,${(b*.25).toFixed(3)})`;g.fillRect(Math.round(x)-1,Math.round(y)-1,3,3);g.fillStyle=`rgba(240,255,170,${b.toFixed(3)})`;g.fillRect(Math.round(x),Math.round(y),1,1)}}
+  // vignette
+  {const vg=g.createRadialGradient(Wc/2,Hc*.55,Hc*.3,Wc/2,Hc*.55,Wc*.75);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,`rgba(4,2,12,${(.35+.25*n).toFixed(3)})`);g.fillStyle=vg;g.fillRect(0,0,Wc,Hc)}
+  const tl=$('title');if(tl)tl.classList.toggle('b5night',bn>.4)}
+// ambience on the title: wind always, a low hum when the light is down (both follow the effects volume)
+function titleAmb(t){const A=T5.amb,on=onTitle&&$('quit').hidden;
+  if(!on){if(A.wind){A.wind.stop(2);A.wind=null}if(A.drone){A.drone.stop(2);A.drone=null}return}
+  if(!A.wind&&t>A.tryAt){A.tryAt=t+1;A.wind=audio.play('wind',{loop:true,vol:.16,fade:3})}
+  const want=T5.beam>.3;if(want&&!A.drone&&t>A.tryAt-.5){A.drone=audio.play('b5drone',{loop:true,vol:.5,fade:4})}else if(!want&&A.drone){A.drone.stop(4);A.drone=null}}
+titleLoop=function(){if(T5.on)return;T5.on=true;T5.last=performance.now();const step=now=>{
+    if(!onTitle&&$('creator').hidden){T5.on=false;titleAmb(0);return}requestAnimationFrame(step);
+    const dt=Math.min(.1,Math.max(0,(now-T5.last)/1000));T5.last=now;T5.p=(T5.p+dt/CYC)%1;const t=now/1000;
+    try{titleAmb(t)}catch(e){}
+    if(now-T5.lastDraw<30||$('title').hidden)return;T5.lastDraw=now;try{drawTitle(t,dt)}catch(e){T5.on=false;throw e}};requestAnimationFrame(step)};
+drawLogo();
+// remove the touch-only footer text hook target leftovers (the footer line is gone)
+{const old=showTitle;showTitle=function(){T5.p=.40;const r=old.apply(this,arguments);return r}}
+
+// ------------------------------------------------------------------ music: four moods from the same engine
+const MUS=[['ada','Ada','Sıcak bir gün, kıyıda'],['sis','Sis','Yavaş, puslu, düşünceli'],['gece','Gece','Müzik kutusu, ateş böcekleri'],['derinlik','Derinlik','Karanlık, derin, gergin']];
+const MB={};let musWant=settings.b5mus||'ada';if(!MUS.some(m=>m[0]===musWant))musWant='ada';
+const mtof=m=>440*Math.pow(2,(m-69)/12);
+function kit(oc,len){const out=oc.createGain();out.gain.value=.9;const lp=oc.createBiquadFilter();lp.type='lowpass';lp.frequency.value=2600;const comp=oc.createDynamicsCompressor();comp.threshold.value=-18;comp.ratio.value=3;lp.connect(comp);comp.connect(out);out.connect(oc.destination);
+  const echo=oc.createDelay(2);const fb=oc.createGain();fb.gain.value=.38;const wet=oc.createGain();wet.gain.value=.3;echo.connect(fb);fb.connect(echo);echo.connect(wet);wet.connect(lp);
+  const tone=(f,t,dur,type,vol,o)=>{o=o||{};if(t+dur>len-.4)dur=Math.max(.1,len-.4-t);const os=oc.createOscillator(),g=oc.createGain();os.type=type;os.frequency.value=f;if(o.det)os.detune.value=o.det;
+    const a=o.a||.01;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+a);if(o.sus){g.gain.setValueAtTime(vol,Math.max(t+a,t+dur-o.rel));g.gain.linearRampToValueAtTime(0,t+dur)}else g.gain.exponentialRampToValueAtTime(.0004,t+dur);
+    if(o.glide)os.frequency.linearRampToValueAtTime(o.glide,t+dur);os.connect(g);g.connect(lp);if(o.echo)g.connect(echo);os.start(t);os.stop(t+dur+.05)};
+  let r=5;const rnd=()=>{r=(r*16807)%2147483647;return r/2147483647};
+  const noise=oc.createBuffer(1,oc.sampleRate*2,oc.sampleRate);{const d=noise.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=rnd()*2-1}
+  const bed=(type,f,q,vol)=>{const s=oc.createBufferSource();s.buffer=noise;s.loop=true;const b=oc.createBiquadFilter();b.type=type;b.frequency.value=f;b.Q.value=q;const g=oc.createGain();g.gain.value=vol;s.connect(b);b.connect(g);g.connect(out);s.start(0);s.stop(len)};
+  return{tone,rnd,bed,lp,echo}}
+function renderTrack(id){const A=audio.b5;if(!A)return Promise.reject(new Error('ses yok'));
+  if(id==='sis'){const B=3.6,len=B*8;const oc=A.mk(len),K=kit(oc,len);K.echo.delayTime.value=.9;K.lp.frequency.value=1500;
+    const CH=[[50,57,60,65],[46,53,57,62],[41,48,57,60],[48,55,60,62],[50,57,62,65],[43,50,58,62],[45,52,57,61],[45,52,55,60]];
+    CH.forEach((ch,i)=>{const t0=i*B;ch.forEach((m,j)=>{K.tone(mtof(m),t0+j*.05,B+.9,'triangle',.05,{a:1.1,sus:1,rel:1.1,det:j%2?6:-6});K.tone(mtof(m+12),t0+.4,B,'sine',.018,{a:1.4,sus:1,rel:1})});K.tone(mtof(ch[0]-12),t0,B+.4,'sine',.14,{a:.6,sus:1,rel:.8});
+      if(i%2===0){const m=ch[1+Math.floor(K.rnd()*3)]+24;K.tone(mtof(m),t0+B*.5,2.6,'sine',.05,{a:.02,echo:1})}});
+    K.bed('bandpass',700,.6,.02);return A.rendered(oc)}
+  if(id==='gece'){const B=.82,bars=12,len=bars*4*B;const oc=A.mk(len),K=kit(oc,len);K.echo.delayTime.value=B*.75;K.lp.frequency.value=4200;
+    const PR=[[57,60,64,69],[53,57,60,65],[48,52,55,60],[52,56,59,64]];
+    for(let bar=0;bar<bars;bar++){const ch=PR[Math.floor(bar/2)%4],t0=bar*4*B;K.tone(mtof(ch[0]-24),t0,4*B,'sine',.16,{a:.3,sus:1,rel:.6});
+      const pat=[0,1,2,3,2,1,2,3];for(let e=0;e<8;e++){if(bar<1&&e%2)continue;K.tone(mtof(ch[pat[e]]+12),t0+e*B/2,1.2,'triangle',.06,{a:.004,echo:e%4===0});K.tone(mtof(ch[pat[e]]+24),t0+e*B/2,.5,'sine',.02,{a:.003})}
+      if(bar>=2&&bar%2===0)K.tone(mtof(ch[3]+24+(bar%4?2:0)),t0+3*B,2.2,'sine',.045,{a:.02,echo:1})}
+    K.bed('highpass',5200,.4,.006);return A.rendered(oc)}
+  if(id==='derinlik'){const len=26;const oc=A.mk(len),K=kit(oc,len);K.echo.delayTime.value=1.3;K.lp.frequency.value=1100;
+    K.tone(41.2,0,len-.5,'sine',.32,{a:2,sus:1,rel:2});K.tone(41.9,0,len-.5,'sine',.22,{a:2,sus:1,rel:2});K.tone(61.7,0,len-.5,'triangle',.05,{a:3,sus:1,rel:2});
+    for(let t=1.2;t<len-1;t+=2.6){K.tone(58,t,.4,'sine',.4,{glide:36});K.tone(58,t+.32,.35,'sine',.22,{glide:36})}
+    for(const [t,f,g2] of [[3,98,73],[11,87,116],[18.5,104,69]])K.tone(f,t,5,'sawtooth',.03,{a:1.2,sus:1,rel:1.8,glide:g2});
+    for(const [t,m] of [[5.1,81],[9.7,87],[14.2,80],[20.6,86],[23.3,75]])K.tone(mtof(m),t,2.4,'sine',.04,{a:.005,echo:1});
+    K.bed('lowpass',160,.5,.05);return A.rendered(oc)}
+  return Promise.resolve(null)}
+// title ambience loop: a soft, low, beating hum (starts and ends on the same level so it loops cleanly)
+function renderDrone(){const A=audio.b5;if(!A)return;const L=8,oc=A.mk(L);const out=oc.createGain();out.gain.value=.5;out.connect(oc.destination);
+  for(const [f,v] of [[55,.4],[55.5,.3],[82.4,.12],[164.8,.03],[659,.012]]){const o=oc.createOscillator(),g=oc.createGain();o.type='sine';o.frequency.value=f;g.gain.value=v;o.connect(g);g.connect(out);o.start(0);o.stop(L)}
+  const lfo=oc.createOscillator(),lg=oc.createGain();lfo.frequency.value=.25;lg.gain.value=.12;lfo.connect(lg);lg.connect(out.gain);lfo.start(0);lfo.stop(L);
+  A.rendered(oc).then(b=>A.add('b5drone',b)).catch(()=>{})}
+setTimeout(renderDrone,1500);
+let musBusy=0;
+function applyMusic(){const A=audio.b5;if(!A)return;const want=musWant,my=++musBusy;
+  const go=()=>{if(my!==musBusy)return;if(!MB.ada){const b=A.get();if(!b)return setTimeout(go,400);MB.ada=b}
+    if(MB[want]){A.set(MB[want]);return}renderTrack(want).then(b=>{if(b){MB[want]=b;if(my===musBusy)A.set(b)}}).catch(()=>{})};go()}
+function renderMusSeg(){const el=$('b5mus');if(!el)return;el.innerHTML=MUS.map(([id,nm])=>`<button type="button" role="radio" aria-checked="${id===musWant}" data-mus="${id}" class="${id===musWant?'on':''}">${nm}</button>`).join('');
+  const d=MUS.find(m=>m[0]===musWant);$('b5musd').textContent=d?d[2]:''}
+$('b5mus').addEventListener('click',e=>{const b=e.target.closest('[data-mus]');if(!b)return;musWant=b.dataset.mus;settings.b5mus=musWant;store.set(SETKEY,settings);renderMusSeg();audio.start();applyMusic();sfx('pick')});
+if(musWant!=='ada')applyMusic();
+B5.music=()=>musWant;B5.trackReady=id=>!!MB[id];
+
+// ------------------------------------------------------------------ key bindings
+const KB=[['up','Yukarı yürü','KeyW','W'],['left','Sola yürü','KeyA','A'],['down','Aşağı yürü','KeyS','S'],['right','Sağa yürü','KeyD','D'],['run','Koş (basılı tut)','ShiftLeft','Shift'],
+  ['interact','Topla / konuş','KeyE','E'],['attack','Vur','Space','Boşluk'],['dodge','Atıl (yerleştirirken döndür)','KeyQ','Q'],['eat','Ye','KeyF','F'],['hand','Eli boşalt','KeyH','H'],
+  ['inv','Envanter','KeyI','I'],['craft','Kazan','KeyB','B'],['handcraft','El yapımı','Tab','Tab'],['smith','Demirci','KeyT','T'],['book','Tarif kitabı','KeyK','K'],['sell','Pazar','KeyP','P'],
+  ['char','Karakter','KeyC','C'],['skills','Yetenekler','KeyY','Y'],['quests','Görevler','KeyG','G'],['map','Harita','KeyM','M'],['camp','Kamp ateşi kur','KeyV','V'],['mark','Haritaya işaret','KeyN','N'],
+  ['dogs','Robot köpekler','KeyR','R'],['settings','Ayarlar','KeyO','O'],['cheatCoin','Hile: +100 sikke','KeyZ','Z'],['cheatXP','Hile: +100 XP','KeyX','X']];
+const KDEF={},KLAB={};for(const [id,,code,lab] of KB){KDEF[id]=code;KLAB[id]=lab}
+const KEYSTORE='hammadde.b5.keys.v1';
+let BIND={};   // action → {c:code,l:label}; only actions that differ from the default
+{const o=store.get(KEYSTORE);if(o&&typeof o==='object')for(const id in o){const v=o[id];if(KDEF[id]&&v&&typeof v.c==='string'&&v.c!==KDEF[id])BIND[id]={c:v.c,l:String(v.l||v.c).slice(0,10)}}}
+const codeOf=id=>BIND[id]?BIND[id].c:KDEF[id],labOf=id=>BIND[id]?BIND[id].l:KLAB[id];
+const kOn=()=>Object.keys(BIND).length>0;
+let C2A={},DEFA={};   // pressed code → action; default code → action
+function rebuildMaps(){C2A={};DEFA={};for(const [id] of KB){C2A[codeOf(id)]=id;DEFA[KDEF[id]]=id}if(!BIND.run)C2A.ShiftRight='run'}
+rebuildMaps();
+const FIXED=/^(Escape|Enter|NumpadEnter|Digit[0-9]|Arrow(Up|Down|Left|Right)|F5|F11|F12|MetaLeft|MetaRight)$/;
+function codeLabel(e){const c=e.code;if(/^Key[A-Z]$/.test(c))return (e.key&&e.key.length===1?e.key.toLocaleUpperCase('tr-TR'):c.slice(3));if(c==='Space')return 'Boşluk';if(c==='Tab')return 'Tab';
+  if(c==='ShiftLeft')return 'Shift';if(c==='ShiftRight')return 'Sağ Shift';if(c==='ControlLeft'||c==='ControlRight')return 'Ctrl';if(c==='AltLeft')return 'Alt';if(c==='AltRight')return 'AltGr';if(c==='CapsLock')return 'Caps';if(c==='Backspace')return 'Sil';
+  if(/^Numpad\d$/.test(c))return 'Num'+c.slice(6);return e.key&&e.key.length===1?e.key.toLocaleUpperCase('tr-TR'):c.replace(/(Left|Right)$/,'').slice(0,8)}
+// a pressed key is turned into the key the game listens to (the game code keeps its default letters)
+let synth=false,waitKey=null;
+function translate(e){if(synth)return;
+  if(!$('b5keys').hidden){keysMenuKey(e);return}
+  if(!kOn())return;const tg=e.target,typing=tg&&(tg.tagName==='INPUT'||tg.tagName==='TEXTAREA'||tg.isContentEditable);if(typing)return;
+  const c=e.code;if(FIXED.test(c))return;const act=C2A[c];let to=null;
+  if(act)to=KDEF[act];else if(DEFA[c]||(c==='ShiftRight'&&BIND.run))to='';   // a default key whose action moved elsewhere: do nothing
+  if(to==null||to===c)return;e.stopImmediatePropagation();if(!to){e.preventDefault();return}
+  let ev2;try{ev2=new KeyboardEvent(e.type,{code:to,key:e.key,repeat:e.repeat,bubbles:true,cancelable:true,shiftKey:e.shiftKey,ctrlKey:e.ctrlKey,altKey:e.altKey})}catch(x){return}
+  synth=true;try{(tg&&tg.dispatchEvent?tg:window).dispatchEvent(ev2)}finally{synth=false}if(ev2.defaultPrevented)e.preventDefault()}
+addEventListener('keydown',translate,true);addEventListener('keyup',translate,true);
+// texts that name a key show the bound key
+const LBL2ID={};for(const [id] of KB)LBL2ID[KLAB[id]]=id;
+const KRE=/(<span class="kc">|<kbd>)([^<]{1,8})(<\/span>|<\/kbd>)|(^|[^A-Za-zÇĞİÖŞÜçğıöşü0-9_])(WASD|Tab|Shift|Boşluk|[A-Z])(?=( ile| tuşu| tuşuna| ya da| \(| \/|\)| bas| basılı|'[a-zçğıöşü]{1,4}\b|\.|,|$))/g;
+function kTxt(s){if(!kOn()||typeof s!=='string'||!s)return s;return s.replace(KRE,(m,o,lab,cl,pre,lab2)=>{
+  if(o){const id=LBL2ID[lab];if(!id||!BIND[id])return m;return o.replace('>',' data-k="1">')+esc(labOf(id))+cl}
+  if(lab2==='WASD'){return ['up','left','down','right'].some(i=>BIND[i])?pre+['up','left','down','right'].map(labOf).join(''):m}
+  const id=LBL2ID[lab2];if(!id||!BIND[id])return m;return pre+labOf(id)})}
+B5.kTxt=kTxt;
+function kEl(el){if(!el||!kOn())return;const h=el.innerHTML;if(h===el.__b5)return;const o=kTxt(h);if(o!==h){el.innerHTML=o}el.__b5=el.innerHTML}
+{const _t=toast;toast=function(m,w){return _t.call(this,kTxt(m),w)}}
+{const _s=say;say=function(text,ch,who){return _s.call(this,kTxt(text),ch,who)}}
+{const _r=renderTut;renderTut=function(){const r=_r.apply(this,arguments);try{kEl($('tuttext'))}catch(e){}return r}}
+{const _u=updatePrompt;updatePrompt=function(){const r=_u.apply(this,arguments);try{if(kOn()&&lastPrompt!==B5.lp){B5.lp=lastPrompt;if(lastPrompt&&lastPrompt!=='#')prompt.innerHTML=kTxt(lastPrompt)}}catch(e){}return r}}
+{const _f=renderFish;renderFish=function(){const r=_f.apply(this,arguments);try{kEl($('fu-t'))}catch(e){}return r}}
+{const _h=renderHot;renderHot=function(){const r=_h.apply(this,arguments);try{const k=document.querySelector('#handbtn kbd');if(k)k.textContent=labOf('hand')}catch(e){}return r}}
+{const _k=tzKey;tzKey=function(k){const s=_k.apply(this,arguments);return typeof s==='string'?s.replace(/<span class="kc">([^<]{1,8})<\/span>/g,(m,l)=>{const id=LBL2ID[l];return id?`<span class="kc" data-k="1">${esc(labOf(id))}</span>`:m}):s}}
+const HUDK={'b-inv':'inv','b-craft':'craft','b-hand':'handcraft','b-book':'book','b-sell':'sell','b-skill':'skills','b-dog':'dogs','b-shop':'smith','b-set':'settings','b-char':'char','b-quest':'quests'};
+function applyKeyTexts(){for(const id in HUDK){const b=$(id);if(!b)continue;const a=HUDK[id],k=b.querySelector('kbd');if(k)k.textContent=labOf(a);
+    for(const at of ['title','aria-label']){const v=b.getAttribute(at);if(!v)continue;if(b.dataset['b5'+at.charAt(0)]==null)b.dataset['b5'+at.charAt(0)]=v;b.setAttribute(at,b.dataset['b5'+at.charAt(0)].replace('('+KLAB[a]+')','('+labOf(a)+')'))}}
+  {const k=document.querySelector('#pui-rot kbd');if(k)k.textContent=labOf('dodge')}
+  {const k=document.querySelector('#handbtn kbd');if(k)k.textContent=labOf('hand')}
+  for(const x of SKILLS){if(x._b5e==null)x._b5e=x.e;x.e=kTxt(x._b5e)}
+  {const c=$('cheat');const sm=c&&c.parentNode.querySelector('small');if(sm){if(sm.__b5o==null)sm.__b5o=sm.innerHTML;sm.innerHTML=sm.__b5o.replace('<b>Z</b>','<b>'+esc(labOf('cheatCoin'))+'</b>').replace('<b>X</b>','<b>'+esc(labOf('cheatXP'))+'</b>')}}
+  lastPrompt='#';B5.lp=null;try{renderTut()}catch(e){}try{if(craftOpen)renderCraft()}catch(e){}}
+B5.bind=(id,code,lab)=>{BIND[id]={c:code,l:lab||code};store.set(KEYSTORE,BIND);rebuildMaps();applyKeyTexts()};B5.binds=()=>JSON.parse(JSON.stringify(BIND));
+
+// ------------------------------------------------------------------ the Controls menu
+{const d=document.createElement('div');d.id='b5keys';d.className='ov';d.hidden=true;d.setAttribute('role','dialog');d.setAttribute('aria-labelledby','b5kh');
+  d.innerHTML=`<div class="tcard small"><h2 id="b5kh">Kontroller</h2>
+  <div id="b5kdesk"><p class="note">Bir eylemin tuşuna tıkla, sonra yeni tuşa bas. Başka bir eylemin tuşunu seçersen ikisi yer değiştirir. Vazgeçmek için <b>Esc</b>.</p><div id="b5kd"></div><p id="b5kmsg" aria-live="polite"></p></div>
+  <div id="b5kt" hidden><p class="note">Ekrandaki düğmelerin (Atıl, eylem düğmesi, alet kutuları, harita…) yerini parmağınla sürükleyerek değiştirebilirsin.</p><div class="b5btns"><button class="mb" id="b5lay-go" type="button">Düğmelerin yerini ayarla</button><button class="mb ghost" id="b5lay-reset" type="button">Düğmeleri varsayılana dön</button></div></div>
+  <div class="tmenu row"><button class="mb ghost" id="b5k-def" type="button">Varsayılana dön</button><button class="mb" id="b5k-close" type="button">Tamam</button></div></div>`;document.body.appendChild(d)}
+function renderKeys(){const el=$('b5kd');
+  el.innerHTML=KB.filter(([id])=>id.indexOf('cheat')!==0||settings.cheat).map(([id,nm])=>`<div class="b5k"><span>${nm}</span><button type="button" data-kb="${id}" class="${waitKey===id?'wait':''}" aria-label="${nm}: ${esc(labOf(id))} (değiştirmek için tıkla)">${waitKey===id?'…':esc(labOf(id))}</button></div>`).join('')
+   +[['Duraklat / kapat','Esc'],['Alet kutuları','1–0'],['Yürü (her zaman)','Ok tuşları'],['Alet seç','Fare tekerleği']].map(([a,b])=>`<div class="b5k fx"><span>${a}</span><b>${b}</b></div>`).join('')}
+function openKeys(){waitKey=null;$('b5kmsg').textContent='';$('b5kdesk').hidden=!!TOUCH;$('b5kt').hidden=!TOUCH;$('b5k-def').hidden=!!TOUCH;renderKeys();$('b5keys').hidden=false;try{($('b5kd').querySelector('button')||$('b5k-close')).focus()}catch(e){}}
+function closeKeys(){waitKey=null;$('b5keys').hidden=true}
+function keysMenuKey(e){e.stopImmediatePropagation();if(e.type!=='keydown')return;
+  if(!waitKey){if(e.code==='Escape'){e.preventDefault();closeKeys()}else if(e.code==='Tab'){/* let focus move */}return}
+  e.preventDefault();const id=waitKey;
+  if(e.code==='Escape'){waitKey=null;$('b5kmsg').textContent='Vazgeçildi.';renderKeys();return}
+  if(FIXED.test(e.code)){$('b5kmsg').textContent='Bu tuş oyunda sabit (Esc, Enter, 1–0, ok tuşları); başka bir tuş seç.';sfx('bad');return}
+  const lab=codeLabel(e),other=C2A[e.code];
+  if(other&&other!==id){const mine={c:codeOf(id),l:labOf(id)};BIND[other]=mine;if(mine.c===KDEF[other])delete BIND[other];
+    $('b5kmsg').textContent=`${lab} tuşu "${KB.find(k=>k[0]===other)[1]}" eylemindeydi: ikisi yer değiştirdi (o artık ${mine.l}).`}else $('b5kmsg').textContent=`${KB.find(k=>k[0]===id)[1]}: ${lab}`;
+  if(e.code===KDEF[id])delete BIND[id];else BIND[id]={c:e.code,l:lab};
+  store.set(KEYSTORE,BIND);rebuildMaps();applyKeyTexts();waitKey=null;sfx('pick');renderKeys();try{const b=$('b5kd').querySelector(`[data-kb="${id}"]`);if(b)b.focus()}catch(x){}}
+$('b5kd').addEventListener('click',e=>{const b=e.target.closest('[data-kb]');if(!b)return;waitKey=b.dataset.kb;$('b5kmsg').textContent='Yeni tuşa bas…';renderKeys()});
+$('b5k-def').addEventListener('click',()=>{BIND={};store.set(KEYSTORE,BIND);rebuildMaps();applyKeyTexts();waitKey=null;$('b5kmsg').textContent='Bütün tuşlar varsayılana döndü.';renderKeys();sfx('pick')});
+$('b5k-close').addEventListener('click',closeKeys);
+$('s-keys').addEventListener('click',openKeys);$('p-keys').addEventListener('click',openKeys);
+B5.openKeys=openKeys;B5.closeKeys=closeKeys;
+
+// ------------------------------------------------------------------ touch: move the on-screen buttons
+const LAYSTORE='hammadde.b5.layout.v1';
+const LAYEL=[['dodgebtn','Atıl'],['prompt','Eylem düğmesi'],['hotbar','El ve alet kutuları'],['mini','Harita'],['coinbox','Sikke'],['b-eat','Yemek'],['ebtn','E düğmesi'],['pad','Yön tuşları']];
+let LAY=(()=>{const o=store.get(LAYSTORE);return o&&typeof o==='object'?o:{}})();
+const LP=['left','top','right','bottom','transform','margin','position'];
+function placeEl(el,p){if(!el)return;const vw=innerWidth,vh=innerHeight;if(!p){for(const k of LP)el.style.removeProperty(k);return}
+  const r=el.getBoundingClientRect(),w=r.width||40,h=r.height||40;const x=clamp(p.x*vw,Math.min(vw/2,w/2+2),Math.max(vw/2,vw-w/2-2)),y=clamp(p.y*vh,Math.min(vh/2,h/2+2),Math.max(vh/2,vh-h/2-2));
+  if(getComputedStyle(el).position!=='fixed')el.style.setProperty('position','fixed','important');
+  el.style.setProperty('left',x+'px','important');el.style.setProperty('top',y+'px','important');el.style.setProperty('right','auto','important');el.style.setProperty('bottom','auto','important');
+  el.style.setProperty('transform','translate(-50%,-50%)','important');el.style.setProperty('margin','0','important')}
+function applyLayout(){if(!TOUCH)return;for(const [id] of LAYEL){const el=$(id);if(!el)continue;placeEl(el,null);if(LAY[id])placeEl(el,LAY[id])}}
+addEventListener('resize',()=>{clearTimeout(B5.rz);B5.rz=setTimeout(applyLayout,120)});addEventListener('orientationchange',()=>setTimeout(applyLayout,300));
+setTimeout(applyLayout,0);
+let EDIT=null;
+function startLayout(){closeKeys();const back={settings:!$('settings').hidden,pause:!$('pause').hidden,title:!$('title').hidden,ontitle:document.body.classList.contains('ontitle')};
+  $('settings').hidden=true;$('pause').hidden=true;$('title').hidden=true;document.body.classList.remove('ontitle');document.body.classList.add('b5edit');
+  const pr=prompt;const ph={hidden:pr.hidden,html:pr.innerHTML,cls:pr.className};pr.hidden=false;pr.className='hud act';pr.innerHTML='<i class="pa" aria-hidden="true">☝</i>Eylem düğmesi';
+  const work=JSON.parse(JSON.stringify(LAY));const ov=document.createElement('div');ov.id='b5lay';
+  ov.innerHTML=`<div class="b5bar"><span>Düğmeleri sürükle</span><button class="mb" id="b5l-save" type="button">Kaydet</button><button class="mb ghost" id="b5l-def" type="button">Varsayılana dön</button><button class="mb ghost" id="b5l-x" type="button">İptal</button></div>`;
+  document.body.appendChild(ov);EDIT={ov,back,ph,work,hs:[]};
+  const mk=()=>{for(const h of EDIT.hs)h.remove();EDIT.hs=[];for(const [id,nm] of LAYEL){const el=$(id);if(!el)continue;const r=el.getBoundingClientRect();if(!r.width||!r.height||getComputedStyle(el).display==='none'||getComputedStyle(el).visibility==='hidden')continue;
+    const h=document.createElement('div');h.className='b5h';h.dataset.id=id;h.innerHTML=`<span>${nm}</span>`;const sync=()=>{const q=el.getBoundingClientRect();h.style.left=q.left+'px';h.style.top=q.top+'px';h.style.width=Math.max(44,q.width)+'px';h.style.height=Math.max(44,q.height)+'px'};sync();h.__sync=sync;
+    h.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();try{h.setPointerCapture(e.pointerId)}catch(x){}const q=el.getBoundingClientRect();h.__d={dx:e.clientX-(q.left+q.width/2),dy:e.clientY-(q.top+q.height/2)};h.classList.add('drag')});
+    h.addEventListener('pointermove',e=>{if(!h.__d)return;e.preventDefault();const p={x:(e.clientX-h.__d.dx)/innerWidth,y:(e.clientY-h.__d.dy)/innerHeight};EDIT.work[id]=p;placeEl(el,p);sync()});
+    const up=()=>{if(!h.__d)return;h.__d=null;h.classList.remove('drag');const q=el.getBoundingClientRect();EDIT.work[id]={x:(q.left+q.width/2)/innerWidth,y:(q.top+q.height/2)/innerHeight};sync()};
+    h.addEventListener('pointerup',up);h.addEventListener('pointercancel',up);ov.appendChild(h);EDIT.hs.push(h)}};
+  setTimeout(mk,60);EDIT.mk=mk;
+  $('b5l-save').addEventListener('click',()=>{LAY=EDIT.work;store.set(LAYSTORE,LAY);endLayout();toast('Düğme yerleri kaydedildi')});
+  $('b5l-def').addEventListener('click',()=>{EDIT.work={};for(const [id] of LAYEL)placeEl($(id),null);setTimeout(mk,30)});
+  $('b5l-x').addEventListener('click',()=>endLayout())}
+function endLayout(){if(!EDIT)return;const E=EDIT;EDIT=null;E.ov.remove();document.body.classList.remove('b5edit');prompt.hidden=E.ph.hidden;prompt.className=E.ph.cls;prompt.innerHTML=E.ph.html;lastPrompt='#';B5.lp=null;
+  applyLayout();if(E.back.ontitle)document.body.classList.add('ontitle');if(E.back.title)$('title').hidden=false;if(E.back.pause)$('pause').hidden=false;if(E.back.settings)$('settings').hidden=false;openKeys()}
+$('b5lay-go').addEventListener('click',startLayout);
+$('b5lay-reset').addEventListener('click',()=>{LAY={};store.set(LAYSTORE,LAY);applyLayout();toast('Düğmeler varsayılan yerlerinde');sfx('pick')});
+B5.startLayout=startLayout;B5.endLayout=endLayout;B5.layout=()=>LAY;B5.applyLayout=applyLayout;
+
+// ------------------------------------------------------------------ cheats: ∞ coins, max level, the whole map
+{const cv=$('coinval');if(cv&&!$('b5infic')){const b=document.createElement('b');b.id='b5infic';b.hidden=true;b.textContent='∞';b.setAttribute('aria-label','sınırsız');cv.parentNode.insertBefore(b,cv.nextSibling)}}
+function syncInf(){window.__plInf=!!(settings.cheat&&settings.b5inf);const ic=$('b5infic');if(ic)ic.hidden=!window.__plInf;const cc=$('ccoinv');if(cc){let s=cc.nextElementSibling;if(!(s&&s.className==='b5ic')){s=document.createElement('b');s.className='b5ic';s.style.cssText='margin-left:3px;color:#d8b0ff';s.textContent='∞';cc.parentNode.insertBefore(s,cc.nextSibling)}s.hidden=!window.__plInf}
+  const p=$('b5cheat');if(p)p.hidden=!settings.cheat;const ci=$('b5inf');if(ci)ci.checked=!!settings.b5inf}
+$('b5inf').addEventListener('change',e=>{settings.b5inf=e.target.checked;store.set(SETKEY,settings);syncInf();toast(settings.b5inf?'Hile: sınırsız sikke açık':'Hile: sınırsız sikke kapalı');try{renderInv();if(craftOpen)renderCraft()}catch(x){}});
+$('cheat').addEventListener('change',()=>{syncInf();try{renderInv();if(craftOpen)renderCraft()}catch(x){}});
+const maxLv=()=>(typeof MAXLV!=='undefined'?MAXLV:100);
+function cheatMaxLevel(){if(onTitle){toast('Önce oyuna gir',true);return}const L=maxLv();if(lvl>=L){toast(`Zaten en üst seviyedesin (${L})`);return}
+  const h0=maxHP(),s0=maxSt();lvl=L;xp=0;hp=Math.min(maxHP(),hp+maxHP()-h0);st=Math.min(maxSt(),st+maxSt()-s0);vitK='';renderVitals();renderXP();
+  sfx('level');try{lvlFirst()}catch(e){}const el=$('lvlup');$('lvlupn').textContent=`Seviye ${lvl}`;el.hidden=true;void el.offsetWidth;el.hidden=false;setTimeout(()=>el.hidden=true,3000);
+  try{checkRunLesson()}catch(e){}renderInv();renderTut();if(craftOpen)renderCraft();toast(`Hile: seviye ${L}`)}
+function cheatRevealMap(){if(onTitle){toast('Önce oyuna gir',true);return}explored.fill(1);exploredCount=explored.length;lastRevealTile=-1;fogLastT=-9;fogLastN=-1;
+  for(const q of QM)q.x=-1;try{saveTo('auto')}catch(e){}sfx('magic');toast('Hile: bütün harita açıldı');try{renderTut();if(craftOpen)renderCraft()}catch(e){}}
+$('b5max').addEventListener('click',cheatMaxLevel);$('b5map').addEventListener('click',cheatRevealMap);
+B5.maxLevel=cheatMaxLevel;B5.revealMap=cheatRevealMap;
+
+// ------------------------------------------------------------------ settings opens with the new parts in sync
+{const _o=openSettings;openSettings=function(){const r=_o.apply(this,arguments);try{renderMusSeg();syncInf()}catch(e){}return r}}
+{const _a=applyCheat;applyCheat=function(){const r=_a.apply(this,arguments);try{syncInf()}catch(e){}return r}}
+// Esc closes the controls menu before anything else (the capture listener above handles keys while it is open)
+syncInf();renderMusSeg();if(kOn())applyKeyTexts();
+}).toString()+')()')}catch(e){try{window.__hamErr('v48-b5: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
