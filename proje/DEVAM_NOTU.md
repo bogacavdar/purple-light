@@ -320,3 +320,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Panel: G / görev düğmesi → `openMenu('qlog')` (`renderQlog`); ders kartı açıkken eski davranış. Kartı gizle/göster panelde.
 - Takip: `QS.tr` (en çok 4) → `QG` kümeleri (node/ağaç/hayvan/yerdeki eşya) b3 parıltısına eklendi (aynı mavi). Fare üstüne gelince `#qtip` mavi yazı; yanında durunca dünyada mavi "Görev: …" yazısı. Ok/yol gösterme yok.
 - Kayıt: `v55:{a,d,tr,qc}`. Görev bitince `window.__v57.quest(q)` çağrılır (anılar için).
+
+## v56 — Ev içleri (`<script id="v56-room">`)
+- Yaprak barınağı dışındaki evlerde E = içeri gir (`useHouse`→`enterRoom`). Oda boyutu `RSZ` (Deri çadır 5×4 … Konak 12×8), stil `RSTY`. Oda ayrı tuval `#roomcv` (z-index 1, HUD üstte), üstte `#roomui` çubuğu (Döşe / Dışarı çık). Ada donar (oyuncu hareketi `roomBusy`, `tickAnimals`/`tickShots` durur); saat, açlık, hava sürer.
+- Eşyalar `DEC` (w,h,L: floor/rug/wall, k: bed/lamp, çizim). Döşe kipinde envanterdeki eşya seçilir, ızgaraya konur (R/Döndür), yerleşik eşyaya tıklayınca geri alınır. Kapı hücresi boş kalır. Kayıt: ev nesnesinde `o.room.it[{n,x,y,r}]` (placed ile kaydedilir); eski `o.bed` ilk girişte yatağa dönüşür.
+- Yatak: E ile gece uyunur (`sleepBed(o)`, `o.bed`). Lamba (Taş/Kil lamba, Asma fener) odadayken `roomSafe()` → gece kuralı (`exposed`) işlemez; lambasız odada gece karanlık sayılır, mor ışık gelir (oda kapanır).
+- 13 yeni tarif, kategori **Ev eşyası** (660 tarif): Tabure, Sandalye, Masa, Sandık, Dolap, Raf, Halı, Kilim, Perde, Duvar halısı, Saksı, Ahşap karyola, Asma fener. Elle yapılmaz; kazanda öğrenilir, Usta Kemal malzeme + işçilikle yapar. Simgeleri oda çiziminden üretilir. recipes3.json da güncel.
