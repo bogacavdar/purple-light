@@ -532,3 +532,17 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Deniz yolculuğu sineması (#voyov, 240×135 tuval, ~14 sn: gemi, küçülen ada, gün batımından geceye, ufukta mor parıltı, 3 altyazı, dalga + romantik müzik, Geç düğmesi/Esc) → "ACT 2 · Açık deniz" kartı → adaya dönülür (ACT 2 içeriği henüz yok), D.act2=true.
 - Başarımlar: kötü/iyi son yerine "Kazazede" (dz4) ve "Açık deniz" (ACT 2).
 - Menüde "Versiyon 75". Test yapılmadı (CLAUDE.md: yalnız chk.js).
+
+## v76 (27 Ekim 2026) — ACT 2'nin ilk sürümü: ikinci ada, Ülker, portallar
+- Plan ve kararlar: `proje/ACT2_TASARIM.md`.
+- **Tek ada bellekte:** `const ISLE` (sessionStorage 'hammadde.isle', 1/2) T/W/H'den önce. Ada değişince kayıt yapılır, veri sessionStorage 'hammadde.pending'e konur, sayfa yükleme ekranıyla (#ldscr, body'nin başında, satır içi betikle hemen görünür) yeniden açılır ve otomatik yüklenir (v76 boot, 'load' sonrası).
+- **İkinci ada üretimi:** fbm tohumu ISLE 2'de +400 (aynı boru hattı, başka kıyılar, ormanlar, sırt, nehirler). BNAME/BCOL: Yüzen Kayalar, Dev Mantar Ormanı, Hurda Çölü, Kristal Golem Ocağı, Ejder Volkanı, Gök Rıhtımı. Zemin renkleri `pal` üzerine yazılır. Köprü ve geçit ISLE 2'de açık. Bitki, maden ve hayvanlar **şimdilik ilk adanınkiler** (v77'den itibaren biyom biyom değişecek).
+- **İlk adanın insanları ISLE 2'de yok:** konumları -1e5'e taşınır (npc, witch, cauldron, market, stall, smith, anvil, furnace, durmus, anvil2, farmer, usta, bench, lumber, alp, carp, toygar, hut, kaptan, balikci, lampman, dock, field, plots, FIRES, CLUES).
+- **Kayıt biçimi:** üst düzey = ada 1 dünyası; `d.i2` = ada 2'nin x, y, exp, pl, gv, cp, tr; `d.isle` = bulunulan ada; `d.i2.arrive` ('land' | 'portal') ve `d.arrive1` (portal sahibi) varış yeri. applyState sarmalayıcısı başka adanın kaydını görünce o adaya yeniden yükler. ISLE 2'de snapshot ada 1 değerlerini saklanan I1'den geri yazar.
+- **XTRA:** ana betikte genel etkileşim listesi (target, pickAt, istem, interact). Portallar ve Ülker bununla.
+- **Gökbilimci Ülker** (Yüzen Kayalar, inişe ~24 karo): görevler gk1 4 kalas + 2 halat, gk2 bir gece bekle, gk3 2 kristal + 2 demir levha + 2 mor kıymık → portallar açılır (`v76.pk`). Hikâyesi (v59 ST_.gok, sahne "Ülker · Teleskoptaki göz"): uzay bilgisi, kaçırılan yakını yok.
+- **Portallar:** ada 1'de Ekin, Zümrüt, Nazlı, Dursun, Hasan, Kemal, Börü, Rıza, Toygar'ın yanında; ada 2'de Ülker'in ve Levent'in yanında. Ücretsiz; ada 2'ye geçişte Ülker'in portalına, ada 1'e dönüşte Ekin'in portalına varılır.
+- **Levent** ISLE 2'de iniş kıyısında, gemisiyle bekler. Deniz yolculuğu sonunda ACT 2 kartı → ikinci adaya iniş (travel 2,'land').
+- **Hile:** Ayarlar › hile bloğunda "ACT 2'ye geç" (gemi, Levent görevleri, sahne tamam sayılır, adaya iner). Ara sahne listesine "ACT 2: Deniz yolculuğu" (tekrar izleme, geçiş yapmaz); Ülker'in sahnesi Ada halkı listesinden otomatik gelir. Hile malzeme paneline ACT 2 malzemeleri, eklendikçe CHEAT_RES'e eklenecek.
+- Yeni oyun ISLE 2'deyken başlatılırsa sayfa ada 1'e yeniden açılır ve "Yeni oyun" kendiliğinden basılır.
+- Menüde "Versiyon 76". Test yapılmadı (yalnız chk.js).

@@ -1269,6 +1269,8 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
 </style>
 </head>
 <body>
+<div id="ldscr" style="position:fixed;inset:0;z-index:200;background:#07060e;color:#e8dcff;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;font:600 18px system-ui,sans-serif;letter-spacing:.08em"><div style="width:46px;height:46px;border-radius:50%;border:4px solid #3a2a5a;border-top-color:#c080ff;animation:ldspin 1s linear infinite"></div><span id="ldtxt">Yükleniyor…</span><style>@keyframes ldspin{to{transform:rotate(360deg)}}</style></div>
+<script>try{var __p=sessionStorage.getItem("hammadde.pending");if(__p){var __l=document.getElementById("ldscr");__l.style.display="flex";var __t=sessionStorage.getItem("hammadde.ldtxt");if(__t)document.getElementById("ldtxt").textContent=__t;setTimeout(function(){__l.style.display="none"},20000)}}catch(e){}</script>
 <canvas id="game" aria-label="Orman kenarı ve nehir: karakteri WASD ile yürüt, E ile malzeme topla"></canvas>
 <div id="left">
 <div id="clock" class="hud"><i id="clockic" aria-hidden="true">☀️</i><span id="clockv">1. gün · 06:00</span></div>
@@ -1328,7 +1330,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-cont" type="button">Devam et</button>
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 75</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 76</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -1375,7 +1377,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
     <label class="row chk" for="vibon" style="display:none"><input id="vibon" type="checkbox"><span>Titreşim<small>Açıkken hasar aldığında telefon titrer.</small></span></label>
     <label class="row chk" for="glon"><input id="glon" type="checkbox"><span>Ekran kartıyla çiz<small>Açıkken oyun ekran kartıyla (WebGL) çizilir, telefonda çok daha akıcıdır. Bir sorun görürsen kapat; değişiklik oyunu yeniden açar (kayıt korunur).</small></span></label>
 <label class="row chk" for="cheat"><input id="cheat" type="checkbox"><span>Hile modu (test için)<small>Açıkken <b>Z</b> tuşu +100 sikke, <b>X</b> tuşu +100 XP verir; sağdaki kırmızı paneldeki küçük simgelere tıklayınca o malzemeden +10 alırsın.</small></span></label>
-    <div id="b5cheat" hidden><label class="row chk" for="b5inf"><input id="b5inf" type="checkbox"><span>Sınırsız sikke<small>Açıkken sikke sayacının yanında <b>∞</b> görünür; satın almak sikkeni azaltmaz, her şeyi alabilirsin.</small></span></label><label class="row chk" for="b5scn"><input id="b5scn" type="checkbox"><span>Bütün ara sahneler açık<small>Açıkken Kitap › <b>Keşif defteri</b>'nin başında bütün ara sahneler listelenir; istediğini izlersin.</small></span></label><div class="b5btns"><button class="mb ghost" id="b5max" type="button">Seviyeyi en üste çıkar</button><button class="mb ghost" id="b5map" type="button">Haritayı tamamen aç</button></div></div>
+    <div id="b5cheat" hidden><label class="row chk" for="b5inf"><input id="b5inf" type="checkbox"><span>Sınırsız sikke<small>Açıkken sikke sayacının yanında <b>∞</b> görünür; satın almak sikkeni azaltmaz, her şeyi alabilirsin.</small></span></label><div class="b5btns"><button class="mb ghost" id="b5act2" type="button">ACT 2'ye geç</button></div><label class="row chk" for="b5scn"><input id="b5scn" type="checkbox"><span>Bütün ara sahneler açık<small>Açıkken Kitap › <b>Keşif defteri</b>'nin başında bütün ara sahneler listelenir; istediğini izlersin.</small></span></label><div class="b5btns"><button class="mb ghost" id="b5max" type="button">Seviyeyi en üste çıkar</button><button class="mb ghost" id="b5map" type="button">Haritayı tamamen aç</button></div></div>
     <div class="row" hidden style="grid-template-columns:auto minmax(0,1fr)"><button class="mb ghost" id="s-test" type="button" style="font-size:14px;padding:6px 12px">Ses testi</button><span id="s-status" class="note" style="margin:0"></span></div>
     <div class="note" id="s-ios" hidden><b>Tam ekran (iPhone)</b><div class="iosg"><p class="ig0">iPhone'da Safari oyunlara tam ekran izni vermiyor. Ama Safari'nin çubuklarını gizleyip ekranı büyütebilirsin:</p><ol><li><b>Telefonu yan çevir.</b></li><li>İçinde <b>claude.ai</b> yazan adres çubuğunun <b>solundaki</b> küçük simgeye dokun (sarı ile gösterilen).<svg viewBox="0 0 220 34" aria-hidden="true"><rect x="1" y="1" width="218" height="32" rx="16" fill="#e9e9ee" stroke="#c8c8d0"/><circle cx="22" cy="17" r="13" fill="#f2b84b"/><rect x="15" y="10" width="13" height="7" rx="2" fill="none" stroke="#1a1a22" stroke-width="2"/><rect x="15" y="20" width="13" height="2" rx="1" fill="#1a1a22"/><rect x="15" y="24" width="9" height="2" rx="1" fill="#1a1a22"/><text x="120" y="22" font-size="13" font-weight="700" text-anchor="middle" fill="#2a2a33" font-family="system-ui,sans-serif">claude.ai</text><text x="203" y="22" font-size="14" text-anchor="middle" fill="#3a3a48" font-family="system-ui,sans-serif">⟳</text></svg></li><li>Küçük bir pencere açılır. Sağ üst köşesindeki <b>•••</b> düğmesine dokun.<svg viewBox="0 0 220 96" aria-hidden="true"><rect x="1" y="1" width="218" height="94" rx="14" fill="#f4f4f8" stroke="#c8c8d0"/><circle cx="20" cy="20" r="12" fill="#e2e2e8"/><rect x="38" y="9" width="128" height="22" rx="11" fill="#e2e2e8"/><text x="72" y="25" font-size="11" font-weight="700" text-anchor="middle" fill="#2a2a33" font-family="system-ui,sans-serif">A</text><text x="132" y="26" font-size="15" font-weight="700" text-anchor="middle" fill="#2a2a33" font-family="system-ui,sans-serif">A</text><circle cx="196" cy="20" r="13" fill="#f2b84b"/><text x="196" y="24" font-size="14" font-weight="700" text-anchor="middle" fill="#1a1a22" font-family="system-ui,sans-serif">•••</text><rect x="8" y="40" width="204" height="22" rx="11" fill="#e8e8ee"/><text x="20" y="55" font-size="10" fill="#4a4a56" font-family="system-ui,sans-serif">Dikkat Dağıtıcı Öğeleri Gizle</text><rect x="8" y="67" width="204" height="22" rx="11" fill="#e8e8ee"/><text x="20" y="82" font-size="10" fill="#4a4a56" font-family="system-ui,sans-serif">Genişletmeleri Yönet</text></svg></li><li>Açılan listede <b>Araç Çubuğunu Gizle</b>'yi seç.<svg viewBox="0 0 220 40" aria-hidden="true"><rect x="1" y="1" width="218" height="38" rx="12" fill="#f4f4f8" stroke="#c8c8d0"/><rect x="6" y="6" width="208" height="28" rx="8" fill="#f2b84b"/><text x="16" y="25" font-size="13.5" font-weight="700" fill="#1a1a22" font-family="system-ui,sans-serif">Araç Çubuğunu Gizle</text></svg></li></ol><p class="ig1"><b>Listede yoksa:</b> Safari'nin <b>Paylaş</b> düğmesine (yukarı ok çıkan kutu) dokun, <b>Ana Ekrana Ekle</b>'yi seç. Oyunu bundan sonra ana ekrandaki <b>Purple Light</b> simgesinden aç; Safari çubukları olmadan açılır.</p><p class="ig1">Not: En üstte claude.ai'nin ince başlığı (oyunun adı, Paylaş, Oturum aç) kalır; o sayfa claude.ai'ye ait, oyunun içinden kaldırılamaz.</p></div></div>
     <button class="mb ghost" id="s-full" type="button" hidden>Tam ekran</button>
@@ -1799,6 +1801,7 @@ for(const x of DB.R)for(const [n] of x.i)for(const m of expand(n)){if(!USES.has(
 let diff='normal';
 const ekinOn=()=>met||tut>=11||!!wake;
 const isOpen=r=>{if(foundSet.has(r)||bought.has(r)||learned.has(r))return true;if(diff==='hard')return false;const x=REC.get(r);return x.i.every(([n])=>expand(n).some(m=>seen.has(m)))&&x.t.every(t=>seen.has(t))};
+const ISLE=(()=>{try{return sessionStorage.getItem('hammadde.isle')==='2'?2:1}catch(e){return 1}})();   // v76: 1 = Yıldızsız Ada, 2 = the ACT 2 island (one island in memory at a time)
 const T=16, W=645, H=464;   // tile px, world size in tiles (twice v42's area: a safe west and a dangerous east)
 const MAPV=4;              // map version: saves from another map keep progress but restart position           // tile px, world size in tiles
 const cv=document.getElementById('game'), ctx=(window.__mkGL2D&&window.__mkGL2D(cv))||cv.getContext('2d');   // v68: drawn by the graphics card when it can
@@ -1814,7 +1817,7 @@ const tiles=new Uint8Array(W*H); // 0 grass,1 forest floor,2 sand,3 river/fresh 
 // value noise with octaves (deterministic, no libraries)
 const vnH=(x,y,sd)=>{let h=(Math.imul(x,374761393)+Math.imul(y,668265263)+Math.imul(sd,982451653))|0;h=Math.imul(h^(h>>>13),1274126177);h^=h>>>16;return (h>>>0)/4294967295};
 const vnoise=(x,y,sd)=>{const xi=Math.floor(x),yi=Math.floor(y),xf=x-xi,yf=y-yi,u=xf*xf*(3-2*xf),v=yf*yf*(3-2*yf);const a=vnH(xi,yi,sd),b=vnH(xi+1,yi,sd),c=vnH(xi,yi+1,sd),d=vnH(xi+1,yi+1,sd);const top=a+(b-a)*u,bot=c+(d-c)*u;return top+(bot-top)*v};
-const fbm=(x,y,sd)=>vnoise(x,y,sd)*.55+vnoise(x*2.1,y*2.1,sd+7)*.28+vnoise(x*4.3,y*4.3,sd+13)*.17;
+const fbm=(x,y,sd)=>(sd+=ISLE===2?400:0,vnoise(x,y,sd)*.55+vnoise(x*2.1,y*2.1,sd+7)*.28+vnoise(x*4.3,y*4.3,sd+13)*.17);
 // rivers start at inland springs so they never cut the island in two
 const SPRING={x:Math.round(W*.17),y:Math.round(H*.28)}, MOUTH={x:-3,y:Math.round(H*.6)};
 const SPRING2={x:Math.round(W*.6),y:Math.round(H*.4)}, MOUTH2={x:Math.round(W*.67),y:-3};   // v65: the second river runs north inside the middle lands (the ridge must stay whole)
@@ -1864,8 +1867,8 @@ const BRIDGE_CELLS=new Set();for(let y=bridge.y-1;y<=bridge.y+1;y++)for(let x=br
 const onBridge=(px,py)=>bridge.fixed&&px>=bridge.x0*T-2&&px<(bridge.x1+1)*T+2&&py>=(bridge.y-1)*T+3&&py<(bridge.y+2)*T-3;
 // v65: six lands. 0 Çayır, 1 Orman (west of the great river) · 2 Bataklık, 3 Kayalık Dağ (the middle) · 4 Kül Diyarı, 5 Mor Kristal Vadisi (beyond the ridge)
 const BIO=new Uint8Array(W*H);
-const BNAME=['Çayır','Orman','Bataklık','Kayalık Dağ','Kül Diyarı','Mor Kristal Vadisi'],BDANGER=['Güvenli','Güvenli','Tehlikeli','Tehlikeli','Ölümcül','Çok ölümcül'];
-const BCOL=['#8fd46b','#4fae5a','#9ab04a','#b8b0a0','#ff7a4a','#c070ff'];
+const BNAME=ISLE===2?['Yüzen Kayalar','Dev Mantar Ormanı','Hurda Çölü','Kristal Golem Ocağı','Ejder Volkanı','Gök Rıhtımı']:['Çayır','Orman','Bataklık','Kayalık Dağ','Kül Diyarı','Mor Kristal Vadisi'],BDANGER=['Güvenli','Güvenli','Tehlikeli','Tehlikeli','Ölümcül','Çok ölümcül'];
+const BCOL=ISLE===2?['#7fd8c8','#b070c8','#d89a5a','#8aa8e0','#e04a3a','#e8f0ff']:['#8fd46b','#4fae5a','#9ab04a','#b8b0a0','#ff7a4a','#c070ff'];
 {const DAGY=bridge.y-24;
  for(let y=0;y<H;y++)for(let x=0;x<W;x++){const i=y*W+x,z=ZONE[i],n=(fbm(x/18,y/18,83)-.5)*30;let b;
    if(z===0)b=y+n<H*.45?1:0;else if(z===1)b=y+n<DAGY?3:2;else b=x+n*.6>W*.87?5:4;BIO[i]=b}}
@@ -1888,6 +1891,11 @@ const TILEC=[];
 {const pal={0:['#6cb043','#72b847','#66a93f'],1:['#46923a','#4b9a3d','#418a36'],2:['#f0d996','#e9d08a','#f5e2a6'],3:['#3aa0e0','#3ea7e6','#3597d6'],4:['#2a72c0','#2d78c6','#276cb8'],5:['#3fb0d8','#44b7de','#3aa8d0'],
    6:['#5d7a3a','#617f3c','#577236'],7:['#3f5a2c','#43602f','#3a5429'],8:['#6e6a68','#74706d','#686462'],9:['#55504f','#5a5554','#4f4a49'],10:['#3e6a58','#42705c','#3a6454'],11:['#9a8a78','#a29080','#92826f'],12:['#5e4c30','#624f32','#58472d'],
    13:['#6a625a','#726a62','#5e5650'],14:['#8a9a72','#90a078','#84946c'],15:['#5a6e52','#5f7456','#55684e'],16:['#7a6aa8','#8070ae','#7464a0'],17:['#4e3e7a','#534280','#4a3a74'],18:['#55a03c','#5aa640','#509838'],19:['#c8b8e0','#d0c0e8','#c0b0d8'],20:['#b0a894','#b8b09c','#a8a08c']};
+ if(ISLE===2)Object.assign(pal,{0:['#5fb89a','#64be9f','#59b094'],1:['#3f8a78','#43907c','#3b8272'],2:['#e8e0c8','#e2d8bc','#efe6d0'],18:['#7a5a8a','#80608f','#745584'],
+   6:['#b8875a','#be8d5f','#b08054'],7:['#9a6e48','#a0734c','#926844'],12:['#7a5236','#7f5639','#744e33'],10:['#3a7a8a','#3e808f','#367483'],
+   14:['#7a8ab0','#8090b6','#7484aa'],15:['#5a6a92','#5e6e98','#56668c'],20:['#a8b4d0','#aebad6','#a2aecb'],13:['#5a5a70','#606076','#54546a'],
+   8:['#4a2a26','#502e29','#462723'],9:['#3a2220','#3f2522','#361f1d'],11:['#6a3a30','#704034','#64362c'],
+   16:['#c8d4e8','#ced9ec','#c2cee2'],17:['#9aa8c8','#a0aecd','#94a2c2'],19:['#e8eef8','#eef3fb','#e2e9f4']});
  let h=24681;const r2=()=>(h=(h*1103515245+12345)&0x7fffffff)/0x7fffffff;
  for(let k=0;k<21;k++)for(let v=0;v<8;v++){const c=document.createElement('canvas');c.width=T;c.height=T;const g=c.getContext('2d');
   g.fillStyle=pal[k][v%3];g.fillRect(0,0,T,T);const t=[0,1,2,3,4,4,0,1,0,1,3,2,1,0,0,1,0,1,0,2,2][k],ash=k===8||k===9||k===11,sw=k===6||k===7||k===10;
@@ -2413,6 +2421,7 @@ function gatherTarget(trees){const h=held(),free=!h||PLACEABLE.has(h)||isTorch(h
   let best=null,bd=REACH*(sk('H4')?1.5:1);
   for(const n of PERF.vis){if(!n.alive)continue;if(n.mine?!pick:!free)continue;const d=Math.hypot(n.x-player.x,n.y-player.y)-(n.mine?13:0);if(d<bd){bd=d;best={kind:'node',n}}}
   return best}
+let XTRA=[];   // v76: {on(),x,y,r,label(),act()}
 function target(){
   {const x=v46Target(true);if(x)return x}
   {const pd=dogs.find(d=>d.state==='play'&&Math.hypot(d.x-player.x,d.y-player.y)<20);if(pd)return{kind:'dog',d:pd}}
@@ -2436,6 +2445,7 @@ function target(){
   if(!rockfall.cleared&&Math.hypot(rockfall.x0*T-10-player.x,rockfall.cy-player.y)<38)return{kind:'rockfall'};
   if(kaptan.state==='here'&&Math.hypot(kaptan.x-player.x,kaptan.y-player.y)<28)return{kind:'kaptan'};
   if(denizci.state!=='away'&&Math.hypot(denizci.x-player.x,denizci.y-player.y)<28)return{kind:'denizci'};
+  for(const o of XTRA)if(o.on()&&Math.hypot(o.x-player.x,o.y-player.y)<(o.r||26))return{kind:'xtra',o};
   if(Math.hypot(carp.x-player.x,carp.y-player.y)<28)return{kind:'carp'};
   if(Math.hypot(toygar.x-player.x,toygar.y-player.y)<28)return{kind:'toygar'};
   if(lampman.shown&&Math.hypot(lampman.x-player.x,lampman.y-player.y)<30)return{kind:'lamp'};
@@ -2509,6 +2519,7 @@ function interact(over){
   if(tg.kind==='rockfall'){rockUse();return}
   if(tg.kind==='kaptan'){talkKaptan();return}
   if(tg.kind==='denizci'){if(window.__talkDz)window.__talkDz();return}
+  if(tg.kind==='xtra'){tg.o.act();return}
   if(tg.kind==='carp'){talkCarp();return}
   if(tg.kind==='toygar'){talkToygar();return}
   if(tg.kind==='lamp'){talkLamp();return}
@@ -2621,6 +2632,7 @@ function updatePrompt(){
   else if(tg.kind==='dog')html=`<kbd>E</kbd>${tg.d.name} sev`;
   else if(tg.kind==='trader')html=`<kbd>E</kbd>${trader.name} ile konuş`;
   else if(tg.kind==='denizci')html=`<kbd>E</kbd>${denizci.name} ile konuş`;
+  else if(tg.kind==='xtra')html=`<kbd>E</kbd>${tg.o.label()}`;
   else if(tg.kind==='usta')html=`<kbd>E</kbd>${usta.name} · Sipariş`;
   else if(tg.kind==='alp')html=`<kbd>E</kbd>${alp.name} ile konuş`;
   else if(tg.kind==='rockfall'){const r=rockPrompt();html=r[0];warn=r[1]}
@@ -4416,6 +4428,7 @@ function pickAt(wx,wy){
   for(const g of graves)if(near(g.x,g.y-3,12))return{tg:null,x:g.x,y:g.y,reach:2};
   if(kaptan.state==='here'&&near(kaptan.x,kaptan.y-8,16))return{tg:{kind:'kaptan'},x:kaptan.x,y:kaptan.y,reach:24};
   if(denizci.state!=='away'&&near(denizci.x,denizci.y-8,16))return{tg:{kind:'denizci'},x:denizci.x,y:denizci.y,reach:24};
+  for(const o of XTRA)if(o.on()&&near(o.x,o.y-8,18))return{tg:{kind:'xtra',o},x:o.x,y:o.y,reach:24};
   if(near(carp.x,carp.y-8,15))return{tg:{kind:'carp'},x:carp.x,y:carp.y+4,reach:24};
   if(ekinOn()&&near(npc.x,npc.y-8,16))return{tg:{kind:'npc'},x:npc.x,y:npc.y,reach:24};
   if(witchShown&&near(cauldron.x,cauldron.y-4,14))return{tg:{kind:'pot'},x:cauldron.x,y:cauldron.y,reach:22};
@@ -9754,6 +9767,10 @@ const NQ=[
  {id:'t2',g:'toygar',t:'Kurbağa zehri',kill:['Zehirli kurbağa',3],c:120,x:50,say:'Zehirli kurbağalar çoğaldı, ördekleri bile kovaladılar. <b>Üç kurbağa</b> avla.',thx:'Kurbağa sesleri azaldı. İyi iş!'},
  {id:'t3',g:'toygar',t:'Bataklık kurdu',kill:['Bataklık kurdu',2],c:180,x:70,say:'Bataklık kurtları geceleri kulübemin etrafında dolanıyor. <b>İki tanesini</b> avla.',thx:'Rahat bir gece borçluyum sana.'},
  {id:'t4',g:'toygar',t:'Timsah',kill:['Timsah',1],c:260,x:100,say:'Yirmi yıldır avlayamadığım bir <b>timsah</b> var. Sen dene. Önden değil, yandan vur.',thx:'<i>(uzun süre susar)</i> Yirmi yıl… Sağ ol evlat.'},
+ // v76 Gökbilimci Ülker (ACT 2, Yüzen Kayalar): her last job gives you the portals
+ {id:'gk1',g:'gok',t:'Teleskobun ayağı',bring:[['Herhangi kalas',4],['Halat',2]],c:300,x:120,say:'Dün geceki rüzgâr teleskobumun ayağını kırdı; kırk yıllık gözüm kör kaldı. Bana dört <b>kalas</b> ve iki <b>halat</b> getir, yeniden kuralım.',thx:'<i>(teleskobu göğe çevirir)</i> İşte! Gökyüzü yine benimle konuşuyor.'},
+ {id:'gk2',g:'gok',t:'Bir gece gözlem',base:()=>day,done:b=>day>b,p:b=>day>b?'gece bitti':'bir gece bekle',c:250,x:140,say:'Bu gece gökyüzüne birlikte bakalım. Mor ışık her gece aynı saatte geçer; gördüğünde bana hak vereceksin. <b>Bir gece</b> geçsin, sabah yanıma gel.',thx:'Gördün mü? O bir yıldız değil. Yıldızlar titrer; o ise bakar. Bir göz gibi.'},
+ {id:'gk3',g:'gok',t:'Portal çekirdeği',bring:[['Kristal',2],['Demir levha',2],['Mor kıymık',2]],c:500,x:260,say:'Kırk yıl önce bir kapı tasarladım: iki yeri tek adımda birleştiren bir <b>portal</b>. Çekirdeği hiç bitiremedim. İki <b>kristal</b>, iki <b>demir levha</b> ve gökten düşen iki <b>mor kıymık</b> getir; kıymıklar ışığın dilini bilir.',thx:'<i>(çerçevenin içinde mor bir girdap döner)</i> Çalışıyor! Senin adandaki herkesin yanına birer kapı açtım. Artık iki ada arasında bir adım var.'},
  // v75 Denizci Levent: the ship that takes you off the island
  {id:'dz1',g:'denizci',t:'Kazazedenin yarası',bring:[['Kardelen merhemi',1],['Ay otu',2]],c:400,x:150,say:'Bacağım kayalara çarptı, basamıyorum. Bir <b>kardelen merhemi</b> ve iki <b>ay otu</b> getirir misin? Ayağa kalkarsam gerisini konuşuruz.',thx:'<i>(merhemi sürer, yüzünü buruşturur)</i> Ah… Sızısı geçti. Altı yıldır ilk kez biri bana yardım ediyor.'},
  {id:'dz2',g:'denizci',t:'Enkazın bekçileri',kill:['Gölge kurdu',2],c:600,x:250,say:'Geceleri enkazın çevresinde <b>gölge kurtları</b> dolaşıyor; kalasları kemiriyorlar. <b>İki tanesini</b> avla, yoksa gemiden geriye bir şey kalmayacak.',thx:'Bu gece ilk kez uyuyabileceğim. Sağ ol.'},
@@ -9763,8 +9780,8 @@ const NQ=[
  {id:'nuri1',g:'trader',t:'Nuri\'nin ilk siparişi',auto:1,done:()=>trader.firstDone,p:()=>trader.firstDone?'teslim edildi':trader.state==='here'?'gemi iskelede':'gemi yolda',c:0,x:15,say:'',thx:''},
 ];
 const NQI={};NQ.forEach(q=>NQI[q.id]=q);
-const GIVER={denizci:()=>denizci,witch:()=>witch,market:()=>market,alp:()=>alp,smith:()=>smith,durmus:()=>durmus,farmer:()=>farmer,usta:()=>usta,carp:()=>carp,toygar:()=>toygar,trader:()=>trader};
-const metG={denizci:()=>denizci.state!=='away'&&!!denizci.met,witch:()=>witchMet,market:()=>!!market.met,alp:()=>!!alp.met,smith:()=>!!smith.met,durmus:()=>!!durmus.met,farmer:()=>farmStep>0,usta:()=>!!usta.met,carp:()=>!!carp.met,toygar:()=>!!toygar.met,trader:()=>trader.state==='here'};
+const GIVER={gok:()=>window.__gok,denizci:()=>denizci,witch:()=>witch,market:()=>market,alp:()=>alp,smith:()=>smith,durmus:()=>durmus,farmer:()=>farmer,usta:()=>usta,carp:()=>carp,toygar:()=>toygar,trader:()=>trader};
+const metG={gok:()=>!!(window.__gok&&window.__gok.met&&ISLE===2),denizci:()=>denizci.state!=='away'&&!!denizci.met,witch:()=>witchMet,market:()=>!!market.met,alp:()=>!!alp.met,smith:()=>!!smith.met,durmus:()=>!!durmus.met,farmer:()=>farmStep>0,usta:()=>!!usta.met,carp:()=>!!carp.met,toygar:()=>!!toygar.met,trader:()=>trader.state==='here'};
 const gidOf=who=>{for(const k in GIVER)if(GIVER[k]()===who)return k;return null};
 const nameOf=g=>{const o=GIVER[g]();return o&&o.name?o.name:g};
 const short=g=>nameOf(g).split(' ').pop();
@@ -10327,6 +10344,15 @@ const ST_={
      "<b>Ayaz</b>: “Baba, bak… yıldızlar iniyor!”",
      "Toygar okunu gerdi. Neye nişan alacağını bilemedi.",
      "O günden beri bataklıkta bir avcı yaşar. Hep yukarı bakar."]}},
+ gok:{lost:'Gökteki göz',ids:['gk1','gk2','gk3'],F:[
+   "Kırk yıldır bu kayalarda gökyüzünü izliyorum. Yıldızların yerini annemden iyi bilirim; o yüzden yeni bir yıldız belirince hemen fark ettim.",
+   "O yıldız hareket ediyordu. Yedi yılda bir adaların üstüne alçalıyor, mor ışığını yere tutuyor, sonra yine göğe çıkıyordu. Işığın altında kalan ne varsa onunla gidiyordu.",
+   "Hesapladım evlat: ışık rastgele seçmiyor. Hep bir şeyi en çok sevenlerin yanına iniyor. Sanki sevginin kendisini topluyorlar. Nedenini bulmak için bu portalı yaptım; ama tek başıma o kadar uzağa gidemedim."],
+   sc:{n:'Ülker · Teleskoptaki göz',bg:'rocks',cast:[{L:'gok',x:84,fx:1}],bl:null,L:[
+     "Kırk yıl önce, Yüzen Kayalar'ın tepesinde genç bir kadın, elinde ilk teleskobu.",
+     "<b>Ülker</b>: “Bu yıldız… dün burada değildi. Ve… bana bakıyor.”",
+     "Mor halka bir göz gibi açıldı, kapandı. Ülker o gece defterine tek bir cümle yazdı: <i>Yalnız değiliz.</i>",
+     "O günden beri her gece gökyüzüne bakar. Göz de ona."]}},
  denizci:{lost:'Kızı Meltem',ids:['dz1','dz2','dz3','dz4'],F:[
    "Bir zamanlar ticaret gemisi kaptanıydım. Kızım <b>Meltem</b> güvertede büyüdü; on yaşında düğüm atmayı benden iyi bilirdi.",
    "Altı yıl önce, açık denizde bir gece. Meltem pruvada fenerini tutuyordu; “Baba, deniz yanıyor” dedi. Su mordu.",
@@ -10344,7 +10370,7 @@ const ST_={
      "<b>Deniz</b>: “Dayı! Gökte bir fener daha var, benimkinden büyük!”",
      "Mor ışık iskeleye indi. Fener tahtaların üstüne düştü, yanmaya devam etti.",
      "Nuri o fenerin ışığını hiç söndürmedi."]}}};
-const GOBJ={denizci:()=>denizci,npc:()=>npc,witch:()=>witch,market:()=>market,alp:()=>alp,smith:()=>smith,durmus:()=>durmus,farmer:()=>farmer,usta:()=>usta,carp:()=>carp,toygar:()=>toygar,trader:()=>trader};
+const GOBJ={gok:()=>window.__gok,denizci:()=>denizci,npc:()=>npc,witch:()=>witch,market:()=>market,alp:()=>alp,smith:()=>smith,durmus:()=>durmus,farmer:()=>farmer,usta:()=>usta,carp:()=>carp,toygar:()=>toygar,trader:()=>trader};
 const ST={h:{},s:{}};window.__v59=ST;
 const gidOf=who=>{if(!who)return 'npc';for(const k in GOBJ)if(GOBJ[k]()===who)return k;return null};
 const QD=()=>(window.__v55&&window.__v55.d)||[];
@@ -11025,7 +11051,7 @@ const cb=$('b5scn');
 function syncScn(){if(cb)cb.checked=!!settings.b5scn;try{if(craftOpen&&mode==='book'&&bookTab==='codex')renderCraft()}catch(e){}}
 if(cb)cb.addEventListener('change',()=>{settings.b5scn=cb.checked;store.set(SETKEY,settings);toast(cb.checked?'Bütün ara sahneler Keşif defterinde':'Ara sahne listesi kapandı');syncScn()});
 const scnOn=()=>ok&&settings.cheat&&settings.b5scn;
-function list(){const L=[['open','Açılış: Denizde bir akşam']];MEMS.forEach((m,i)=>L.push(['mem:'+i,'Anı: '+m.n]));
+function list(){const L=[['open','Açılış: Denizde bir akşam'],['voyage','ACT 2: Deniz yolculuğu']];MEMS.forEach((m,i)=>L.push(['mem:'+i,'Anı: '+m.n]));
   try{window.__plStory.list().forEach(([g,nm,sc])=>L.push(['ppl:'+g,nm+': '+sc]))}catch(e){}return L}
 const _rc=renderCodex;renderCodex=function(){const h=_rc.apply(this,arguments);if(!scnOn())return h;
   const box=`<div class="scnl"><h3>Ara sahneler (hile)</h3><div class="scb">${list().map(([k,n])=>`<button type="button" data-scn="${esc(k)}">▶ ${esc(n)}</button>`).join('')}</div></div>`;
@@ -11035,6 +11061,7 @@ const _ec=endCine;endCine=function(){if(!replay)return _ec.apply(this,arguments)
   cine.on=false;cineCv.hidden=true;$('cineskip').hidden=true;$('cinecap').innerHTML='';$('cinetop').className='';cineStopSounds(false);
   if(keepSurf)cine.snd.surf=keepSurf;keepSurf=null;audio.musicTo(0,.3);document.body.classList.remove('cine')};
 function play(k){if(!scnOn())return;closeCraft();
+  if(k==='voyage'){try{window.__plDz.voyage(true)}catch(e){}return}
   if(k==='open'){keepSurf=cine.snd.surf||null;delete cine.snd.surf;replay=true;startCine(diff==='hard');return}
   if(/^mem:/.test(k)){const i=+k.slice(4);if(MEMS[i])openMem(i,true);return}
   if(/^ppl:/.test(k)){try{window.__plStory.play(k.slice(4))}catch(e){}}}
@@ -11320,21 +11347,149 @@ function vdraw(t){const g=vg,p=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round
   for(let q=0;q<3;q++){const x=(t*22+q*70)%300-30,y=30+q*9+Math.sin(t*4+q)*3;if(t<9){p(x,y,3,1,'#f0f0f0');p(x+3,y-1,3,1,'#f0f0f0')}}
   if(t<1)p(0,0,240,135,`rgba(0,0,0,${(1-t).toFixed(2)})`);if(t>12.4)p(0,0,240,135,`rgba(0,0,0,${Math.min(1,(t-12.4)/1.2).toFixed(2)})`)}
 let snd=[];
-function voyage(){if(V)return;stopGather();for(const kk in keys)keys[kk]=false;if(craftOpen)closeCraft();fading=true;ov.hidden=false;V={t:0,last:performance.now(),ci:-1};cap.className='';cap.textContent='';
+function voyage(replay){if(V)return;stopGather();for(const kk in keys)keys[kk]=false;if(craftOpen)closeCraft();fading=true;ov.hidden=false;V={t:0,last:performance.now(),ci:-1,rp:!!replay};cap.className='';cap.textContent='';
   try{snd.push(audio.play('surf',{loop:true,vol:.8,fade:1}));snd.push(audio.play('mz_rom',{loop:true,vol:.7,fade:2}));audio.musicTo(.1,1)}catch(e){}
   requestAnimationFrame(vloop)}
 function vloop(now){if(!V)return;const dt=Math.min(.05,(now-V.last)/1000);V.last=now;V.t+=dt;vdraw(V.t);
   let ci=-1;for(let i=0;i<CAPS.length;i++)if(V.t>=CAPS[i][0])ci=i;if(ci!==V.ci){V.ci=ci;cap.classList.remove('on');setTimeout(()=>{if(!V)return;cap.textContent=ci>=0?CAPS[ci][1]:'';if(ci>=0)cap.classList.add('on')},350)}
   if(V.t>=12.2&&cap.classList.contains('on'))cap.classList.remove('on');
   if(V.t>=13.8){vend();return}requestAnimationFrame(vloop)}
-function vend(){if(!V)return;V=null;cap.classList.remove('on');for(const h of snd)try{h&&h.stop(1.5)}catch(e){}snd=[];
-  D.act2=true;try{window.__plAct(2,'Açık deniz',3400)}catch(e){}
-  setTimeout(()=>{ov.hidden=true;fading=false;try{audio.musicTo(1,2)}catch(e){}renderTut();saveTo('auto');
-    setTimeout(()=>toast('ACT 2 yazılıyor: şimdilik adadasın. Levent ve gemisi kıyıda seni bekliyor.'),900)},3200)}
+function vend(){if(!V)return;const rp=V.rp;V=null;cap.classList.remove('on');for(const h of snd)try{h&&h.stop(1.5)}catch(e){}snd=[];
+  if(!rp)D.act2=true;try{window.__plAct(2,'Açık deniz',3400)}catch(e){}
+  setTimeout(()=>{if(!rp&&window.__plTravel&&ISLE===1){window.__plTravel(2,'land');return}ov.hidden=true;fading=false;try{audio.musicTo(1,2)}catch(e){}renderTut()},3200)}
 ov.querySelector('button').addEventListener('click',()=>{if(V)V.t=Math.max(V.t,13.6)});
 addEventListener('keydown',e=>{if(V&&(e.key==='Escape'||e.key==='Enter'||e.key===' ')){V.t=Math.max(V.t,13.6);e.preventDefault();e.stopPropagation()}},true);
 window.__plDz={D,voyage};
 }).toString()+')()')}catch(e){try{window.__hamErr('v75: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v76">
+// =====================================================================================================
+// v76: ACT 2's island. Only one island lives in the page: switching islands saves, reloads the page behind
+// a loading screen and generates the other island (ISLE, set before the reload). A save holds island 1's
+// world at the top level and island 2's own things (position, map fog, placed things, graves, camps) in
+// d.i2; d.isle says where you are. Gökbilimci Ülker (Yüzen Kayalar) gives the portals: one beside every
+// islander of Yıldızsız Ada and two on the new island.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const I2=ISLE===2,D=denizci;
+const QD=()=>(window.__v55&&window.__v55.d)||[];
+const gok={name:'Gökbilimci Ülker',x:-1e5,y:-1e5,met:false};window.__gok=gok;
+NPCL.gok=npcLook({skin:'#e0b090',skinD:'#c09070',hair:'#e8e8f0',hairD:'#b8b8c8',hairL:'#ffffff',hs:'long',shirt:'#2a2a5a',shirtD:'#1c1c40',dress:true,pants:'#1c1c2a'});
+let portalKnown=false;
+// ---------------------------------------------------------------- where things are on each island
+const free=(x,y)=>reachAt(x,y)&&!blocked(x,y);
+function nearFree(x,y){for(let r=0;r<70;r+=6)for(let a=0;a<12;a++){const px=x+Math.cos(a/12*6.283)*r,py=y+Math.sin(a/12*6.283)*r;if(free(px,py))return{x:px,y:py}}return{x,y}}
+const P1=[],P2=[];   // portals: {x,y,who}
+if(!I2){
+  for(const [o,who] of [[npc.home||npc,'Ekin'],[witch,'Zümrüt'],[market,'Nazlı'],[smith,'Dursun'],[farmer,'Hasan'],[usta,'Kemal'],[alp,'Börü'],[carp,'Rıza'],[toygar,'Toygar']]){
+    if(!o||o.x==null)continue;const p=nearFree(o.x+26,o.y+10);P1.push({x:p.x,y:p.y,who})}
+}else{
+  // the people of Yıldızsız Ada are not here
+  const away=o=>{if(o&&typeof o==='object'){o.x=-1e5;o.y=-1e5;if('bx' in o){o.bx=-1e5;o.by=-1e5}}};
+  for(const f of [()=>npc,()=>npc.home,()=>witch,()=>cauldron,()=>market,()=>stall,()=>smith,()=>anvil,()=>furnace,()=>durmus,()=>anvil2,()=>farmer,()=>usta,()=>bench,()=>lumber,()=>alp,()=>carp,()=>toygar,()=>hut,()=>kaptan,()=>balikci,()=>lampman,()=>dock])try{away(f())}catch(e){}
+  try{field.tx=-9000;field.ty=-9000}catch(e){}try{for(const p of plots){p.x=-1e5;p.y=-1e5}}catch(e){}
+  try{for(const f of FIRES){f.x=-1e5;f.y=-1e5}}catch(e){}try{for(const c of CLUES){c.x=-1e5;c.y=-1e5}}catch(e){}
+  bridge.fixed=true;rockfall.cleared=true;for(const j of ROCK_CELLS)reach[j]=1;for(const j of BRIDGE_CELLS)reach[j]=1;
+  // Levent waits where he landed you: the coast nearest the landing
+  {let best=null,bd=1e9;const sx=Math.floor(spawn.x/T),sy=Math.floor(spawn.y/T);
+    for(let y=sy-14;y<=sy+14;y++)for(let x=sx-14;x<=sx+14;x++){if(x<2||y<2||x>=W-2||y>=H-2)continue;const i=y*W+x;if(!reach[i]||tiles[i]>2)continue;
+      for(const [dx,dy] of [[0,1],[1,0],[-1,0],[0,-1]])if(tiles[(y+dy)*W+x+dx]===4&&tiles[(y+dy*3)*W+x+dx*3]===4){const d=Math.hypot(x-sx-4,y-sy);if(d<bd){bd=d;best=[x,y,dx,dy]}}}
+    if(best){D.x=best[0]*T+8-best[2]*4;D.y=best[1]*T+8-best[3]*4;D.bx=(best[0]+best[2]*3)*T+8;D.by=(best[1]+best[3]*3)*T+8;D.dx=best[2];D.dy=best[3]}else{D.x=spawn.x+30;D.y=spawn.y;D.bx=spawn.x+30;D.by=spawn.y+60}
+    D.state='here'}
+  // Ülker on a high rock of Yüzen Kayalar, some way from the landing
+  {let best=null,bd=1e9;const sx=Math.floor(spawn.x/T),sy=Math.floor(spawn.y/T);
+    for(let y=sy-40;y<=sy+10;y++)for(let x=sx-30;x<=sx+40;x++){if(x<3||y<3||x>=W-3||y>=H-3)continue;const i=y*W+x;if(!reach[i]||tiles[i]>1||BIO[i]!==0)continue;
+      const d=Math.hypot(x-sx,y-sy);if(d<16)continue;const sc=Math.abs(d-24)+(y>sy?8:0);if(sc<bd){bd=sc;best=[x,y]}}
+    const p=best?{x:best[0]*T+8,y:best[1]*T+8}:{x:spawn.x+20*T,y:spawn.y-14*T};gok.x=p.x;gok.y=p.y;
+    for(let i=trees.length-1;i>=0;i--)if(Math.hypot(trees[i].x-gok.x,trees[i].y-gok.y)<46)trees.splice(i,1);rebuildTG()}
+  {const a=nearFree(gok.x-30,gok.y+14);P2.push({x:a.x,y:a.y,who:'Ülker'});const b=nearFree(D.x+30,D.y-20);P2.push({x:b.x,y:b.y,who:'Levent'})}
+}
+// ---------------------------------------------------------------- switching islands (save → reload → load)
+const ldShow=t=>{const l=$('ldscr');if(l){$('ldtxt').textContent=t||'Yükleniyor…';l.style.display='flex'}};
+const ldHide=()=>{const l=$('ldscr');if(l)l.style.display='none'};
+function goReload(data,to,txt){try{sessionStorage.setItem('hammadde.isle',String(to));sessionStorage.setItem('hammadde.pending',JSON.stringify(data));sessionStorage.setItem('hammadde.ldtxt',txt||'')}catch(e){toast('Geçiş yapılamadı: tarayıcı depolamaya izin vermiyor',true);return}
+  ldShow(txt);setTimeout(()=>location.reload(),250)}
+function travel(to,how){if(to===ISLE)return;try{saveTo('auto',true)}catch(e){}const all=saves(),v=all.auto;if(!v||!v.data){toast('Kayıt yapılamadı, geçiş iptal',true);return}
+  const data=v.data;data.isle=to;if(to===2){data.i2=data.i2||{};data.i2.arrive=how||'portal'}else data.arrive1=how||'Ekin';
+  all.auto=v;store.set(SAVEKEY,all);sfx('magic');goReload(data,to,to===2?'Yüzen Kayalar · yükleniyor…':'Yıldızsız Ada · yükleniyor…')}
+window.__plTravel=travel;
+// a save from the other island: reload into that island first
+let I1={},I2S=null;
+const _as=applyState;applyState=function(d){
+  if(d&&typeof d==='object'&&(d.isle||1)!==ISLE){goReload(d,d.isle||1,(d.isle||1)===2?'Yüzen Kayalar · yükleniyor…':'Yıldızsız Ada · yükleniyor…');return}
+  if(!d)return _as.apply(this,arguments);
+  if(!I2){I2S=d.i2||null;const arr=d.arrive1;const r=_as.call(this,d);
+    if(arr){const p=P1.find(q=>q.who===arr)||P1[0];if(p){player.x=p.x;player.y=p.y+14}}try{for(const g of dogs){g.x=player.x;g.y=player.y}}catch(e){}return r}
+  const i2=d.i2||{},v46=d.v46&&typeof d.v46==='object'?d.v46:{};
+  I1={x:d.x,y:d.y,exp:d.exp,pl:d.pl,gv:d.gv,cp:v46.cp,tr:v46.tr,bf:d.bf,rf:d.v65&&d.v65.rf};
+  const d2=Object.assign({},d,{x:i2.x==null?spawn.x:i2.x,y:i2.y==null?spawn.y:i2.y,exp:i2.exp||'',pl:i2.pl||[],gv:i2.gv||[],bf:true,v46:Object.assign({},v46,{cp:i2.cp||[],tr:i2.tr||[]}),v65:Object.assign({},d.v65||{},{rf:true})});
+  const r=_as.call(this,d2);bridge.fixed=true;rockfall.cleared=true;for(const j of ROCK_CELLS)reach[j]=1;
+  if(i2.arrive==='land'){player.x=spawn.x;player.y=spawn.y}else if(i2.arrive){const p=P2[0];player.x=p.x;player.y=p.y+14}
+  try{for(const g of dogs){g.x=player.x;g.y=player.y}}catch(e){}return r};
+const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);s.v76={pk:portalKnown,gm:gok.met};
+  if(!I2){s.isle=1;if(I2S)s.i2=I2S;return s}
+  const v46=s.v46&&typeof s.v46==='object'?s.v46:{};
+  s.i2={x:s.x,y:s.y,exp:s.exp,pl:s.pl,gv:s.gv,cp:v46.cp,tr:v46.tr};
+  s.x=I1.x;s.y=I1.y;s.exp=I1.exp;s.pl=I1.pl||[];s.gv=I1.gv||[];s.bf=!!I1.bf;s.v46=Object.assign({},v46,{cp:I1.cp||[],tr:I1.tr||[]});s.v65=Object.assign({},s.v65||{},{rf:!!I1.rf});s.isle=2;return s};
+const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);const v=d&&d.v76;portalKnown=!!(v&&v.pk);gok.met=!!(v&&v.gm);if(I2){D.state='here'}return r};
+// a new game always starts on Yıldızsız Ada
+$('t-new').addEventListener('click',e=>{if(!I2)return;e.stopImmediatePropagation();e.preventDefault();try{sessionStorage.setItem('hammadde.isle','1');sessionStorage.setItem('hammadde.clicknew','1')}catch(x){}ldShow('Yükleniyor…');setTimeout(()=>location.reload(),200)},true);
+// ---------------------------------------------------------------- after the reload: load at once
+const boot=()=>setTimeout(()=>{try{
+  if(sessionStorage.getItem('hammadde.clicknew')){sessionStorage.removeItem('hammadde.clicknew');ldHide();$('t-new').click();return}
+  const p=sessionStorage.getItem('hammadde.pending');if(!p){ldHide();return}sessionStorage.removeItem('hammadde.pending');sessionStorage.removeItem('hammadde.ldtxt');
+  const d=JSON.parse(p);try{music.start()}catch(e){}applyState(d);closeTitle();fadeIn();setTimeout(ldHide,350);
+  setTimeout(()=>{if(I2)announce(BNAME[bioAt(player.x,player.y)]||'Yüzen Kayalar','ACT 2');else announce('Yıldızsız Ada','Portal')},900);
+  try{saveTo('auto',true)}catch(e){}
+}catch(e){ldHide();try{window.__hamErr('v76 yükleme: '+(e&&e.message||e))}catch(_){}}},80);
+if(document.readyState==='complete')boot();else addEventListener('load',boot);
+// ---------------------------------------------------------------- portals
+function drawPortal(x,y,time){x=Math.round(x);y=Math.round(y);
+  ctx.fillStyle='rgba(20,10,40,.35)';ctx.beginPath();ctx.ellipse(x,y+2,13,4,0,0,6.283);ctx.fill();
+  px(x-12,y-30,4,32,'#4a4a5a');px(x+8,y-30,4,32,'#4a4a5a');px(x-13,y-34,26,5,'#5a5a6c');px(x-12,y-34,24,1,'#7a7a90');px(x-2,y-37,4,3,'#c080ff');
+  const k=.6+.4*Math.sin(time*3);ctx.fillStyle=`rgba(120,50,200,${(.55+.25*k).toFixed(2)})`;ctx.beginPath();ctx.ellipse(x,y-14,8,14,0,0,6.283);ctx.fill();
+  ctx.fillStyle=`rgba(230,200,255,${(.35+.3*k).toFixed(2)})`;ctx.beginPath();ctx.ellipse(x,y-14,4,9,0,0,6.283);ctx.fill();
+  for(let i=0;i<4;i++){const a=time*2.4+i*1.57;px(x+Math.cos(a)*6,y-14+Math.sin(a)*11,1,1,'#ffffff')}
+  if(Math.random()<.08)parts.push({x:x+(Math.random()-.5)*10,y:y-14,vx:0,vy:-12,life:.8,c:'#c9a0ff'})}
+const pOn=()=>portalKnown||(I2&&QD().indexOf('gk3')>=0);
+for(const p of (I2?P2:P1))XTRA.push({x:p.x,y:p.y,r:24,on:pOn,label:()=>I2?'Portal · Yıldızsız Ada\'ya dön':'Portal · Yüzen Kayalar\'a geç',act:()=>travel(I2?1:2,I2?'Ekin':'portal')});
+// ---------------------------------------------------------------- Ülker
+function drawScope(x,y,time){x=Math.round(x);y=Math.round(y);px(x-1,y-14,2,14,'#4a3a2a');px(x-6,y-1,3,2,'#4a3a2a');px(x+4,y-1,3,2,'#4a3a2a');ctx.save();ctx.translate(x,y-15);ctx.rotate(-.6);px(-3,-14,6,16,'#8a7a5a');px(-4,-16,8,3,'#c8a868');px(-2,-16,4,1,'#bfe8ff');ctx.restore()}
+if(I2)XTRA.push({x:gok.x,y:gok.y,r:28,on:()=>true,label:()=>`${gok.name} ile konuş`,act:()=>talkGok()});
+function talkGok(){if(!gok.met){gok.met=true;sfx('found');renderTut();
+    return say(`<i>(teleskobunun başında, gözünü ayırmadan)</i> Bir gemi daha… ve içinden çıkan bir yolcu. Hoş geldin evlat, ben <b>Ülker</b>. Kırk yıldır gökyüzünü izlerim. Seni buraya getiren denizci değil, o mor ışık; bunu gözlerinden okuyorum. Otur biraz. Anlatacak çok şeyim var, ama önce yardımına ihtiyacım var.`,[{t:'Mor ışık nedir?',f:()=>say('Bir yıldız değil, onu söyleyeyim. Yıldızlar titrer; o bakar. Gerisini, sen bana yardım ettikçe anlatırım.',[{t:'Hoşça kal',f:bye},{t:'Tamam',pri:1,f:bye}],gok)},{t:'Hoşça kal',f:bye}],gok)}
+  if(QD().indexOf('gk3')>=0)return say('Portallar çalışıyor. Yıldızsız Ada\'daki her dostunun yanında bir kapı var; buradaki iki kapı da seni oraya götürür. Gökyüzü sabırsızlanıyor evlat.',[{t:'Hoşça kal',f:bye},{t:'Tamam',pri:1,f:bye}],gok);
+  say(['Gökyüzü bu gece berrak. İyi işaret.','Teleskop hiç yalan söylemez; gözler söyler.','Bu kayalar havada durur, biliyor musun? Ben de nedenini kırk yıldır bilmiyorum.'][Math.floor(Math.random()*3)],[{t:'Hoşça kal',f:bye},{t:'Tamam',pri:1,f:bye}],gok)}
+window.__talkGok=talkGok;
+// the portals open the moment her last job is done
+setInterval(()=>{try{if(!portalKnown&&QD().indexOf('gk3')>=0){portalKnown=true;sfx('found');setTimeout(()=>announce('Portallar açıldı','Yıldızsız Ada\'daki herkesin yanında bir kapı var'),700)}}catch(e){}},1000);
+// ---------------------------------------------------------------- drawing
+const inV=(x,y,m)=>Math.abs(x-player.x)<320+m&&Math.abs(y-player.y)<230+m;
+const _ve=v55Ents;v55Ents=function(ents,time){if(_ve)_ve.apply(this,arguments);
+  if(pOn())for(const p of (I2?P2:P1))if(inV(p.x,p.y,40))ents.push({y:p.y,d:()=>drawPortal(p.x,p.y,time)});
+  if(I2&&inV(gok.x,gok.y,40)){ents.push({y:gok.y-2,d:()=>drawScope(gok.x+16,gok.y,time)});ents.push({y:gok.y,d:()=>{const P=npcDraw(gok,NPCL.gok,time,8.1,{});if(!gok.met)npcMark(P.x,P.y,time,'#c9a0ff')}})}};
+// ---------------------------------------------------------------- on the new island
+if(I2){
+  // Levent at the landing
+  const _tdz=window.__talkDz;window.__talkDz=function(){say(`Ben burada, gemimin başında beklerim. Yukarıdaki kayalarda, teleskobu olan yaşlı bir kadın var: <b>Ülker</b>. Mor ışığı benden de iyi bilir. Bir de… kızımı unutmadım; bu adada da soracağım.`,[{t:'Hoşça kal',f:bye},{t:'Tamam',pri:1,f:bye}],D)};
+  // the arrow only knows the people of this island
+  const GUIDE2=GUIDE;GUIDE2.gok=()=>({x:gok.x,y:gok.y,n:gok.name});
+  const _gk=guideKey;guideKey=function(){if(onTitle||sailing||fading)return null;if(gping&&performance.now()<gping.until&&GUIDE[gping.w]){const o=GUIDE[gping.w]();if(o&&o.x>-9e4)return gping.w}
+    return gok.met?null:'gok'};
+  // ACT 1's last card points at things that are not here
+  const _rt=renderTut;renderTut=function(){const r=_rt.apply(this,arguments);try{const te=tutEl;
+      if(!questsHidden&&!tz&&!onTitle&&!(window.__v55&&window.__v55.pin)){te.hidden=false;craftEl.classList.add('tutpad');$('tutstep').textContent='ACT 2 · Yüzen Kayalar';
+        $('tuttext').innerHTML=!gok.met?'Levent seni Yüzen Kayalar\'a bıraktı. Yukarıdaki kayalarda teleskobu olan <b>Gökbilimci Ülker</b>\'i bul.':QD().indexOf('gk3')<0?'<b>Ülker</b>\'in işlerine yardım et; son işi bir <b>portal</b>.':'Portallar açık: Yıldızsız Ada\'ya dönüp gelebilirsin. ACT 2\'nin devamı yakında.';
+        $('tutok').hidden=true;$('tutskip').hidden=false;$('tutskip').textContent='Görevleri gizle';tutPor.k='';$('tutpor').innerHTML=''}}catch(e){}return r};
+}
+$('b5act2').addEventListener('click',()=>{if(I2){toast('Zaten ACT 2\'desin');return}try{
+    if(!foundSet.has('Gemi')){found.push('Gemi');foundSet.add('Gemi')}bought.add('Gemi');D.state='here';D.met=true;D.act2=true;
+    const Q=window.__v55;if(Q){for(const id of ['dz1','dz2','dz3','dz4']){delete Q.a[id];if(Q.d.indexOf(id)<0)Q.d.push(id)}}
+    const S=window.__v59;if(S){S.h.denizci=4;S.s.denizci=true}
+    if(typeof closeSettings==='function')closeSettings();toast('Hile: gemi hazır, ACT 2\'ye geçiliyor');setTimeout(()=>travel(2,'land'),400)}catch(e){toast('ACT 2 hilesi: '+e.message,true)}});
+window.__plIsle={travel,P1,P2,gok,known:()=>portalKnown,setKnown:v=>{portalKnown=!!v}};
+}).toString()+')()')}catch(e){try{window.__hamErr('v76: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v68">
 // v68: the graphics-card switch in Ayarlar (the choice is read once at start, so changing it reopens the game; the save is kept)
