@@ -521,3 +521,14 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
   - Yeni durumlar: Dayanıklılık, Ağırlık (hareket −%20), Halsizlik (enerji yarı hızda), Bulantı (can dolmaz), Güçsüzlük (vuruş −%20). STAT.hp/hpRe/stRe/move sarmalandı.
 - ACT kartları (`<script id="v74b">`): açılış sinemasından sonra siyah ekranda "ACT 1 · Yıldızsız Ada"; adadan ayrılınca (Rüstem'le Sisli Ada'ya ya da gemiyle) "ACT 2 · Sisin ötesi". Sinema tekrarında çıkmaz.
 - Menüde "Versiyon 74".
+
+## v75 (27 Ekim 2026) — ACT 2'ye geçiş: Denizci Levent
+- Eski son kaldırıldı: Kaptan Poyraz artık gelmez (tickKaptan kapalı), Rüstem ve Sisli Ada açılmaz (yüklemede kaptan.state='away', balikci.shown=false). Kod duruyor ama ulaşılmaz. Boğaç: "ACT 2 bir son değil, yeni bir başlangıç; sonu ayrı konuşacağız."
+- Yeni tarif **Gemi** (Taşıtlar, alet Taş balta): 8 Herhangi kalas, 4 Halat, 3 Demir levha, 6 Hasır, 2 Kristal ipek. Ekin'in son görevi bitince `bought.add('Gemi')`; Ekin'in son teşekkürü gemiyi işaret eder.
+- `const denizci` (ana betik, kaptan'ın altında): Mor Kristal Vadisi'nin (BIO 5) denize bakan kıyısının ortası; bx/by enkaz/gemi yeri. Gemi tarifi öğrenilince (foundSet) state='here', duyuru, ok 40 sn.
+- Görevler (v55: giver 'denizci'): dz1 Kardelen merhemi + 2 Ay otu; dz2 2 Gölge kurdu; dz3 2 Ay taşı + 4 Kristal; dz4 gemi malzemeleri (= Gemi tarifi).
+- Hikâye (v59 ST_.denizci): kızı Meltem, 6 yıl önce, 10 yaşında; sahne "Levent · Yanan deniz" (bg storm). dz4 teslim edilince Levent'le konuşunca hikâye tam açılır ve sahne oynar (`__plStory.first`); sahne kapanınca Levent "seni başka bir adaya götürebilirim" der.
+- `<script id="v75">`: çizim (enkaz → dz4 sonrası drawBoat), konuşma (`window.__talkDz`), hedef/dokunma/istem/ok (ana betikte denizci satırları), son görev kartı (Gemi → Levent → Açık deniz), kayıt `v75{s,m,a}`.
+- Deniz yolculuğu sineması (#voyov, 240×135 tuval, ~14 sn: gemi, küçülen ada, gün batımından geceye, ufukta mor parıltı, 3 altyazı, dalga + romantik müzik, Geç düğmesi/Esc) → "ACT 2 · Açık deniz" kartı → adaya dönülür (ACT 2 içeriği henüz yok), D.act2=true.
+- Başarımlar: kötü/iyi son yerine "Kazazede" (dz4) ve "Açık deniz" (ACT 2).
+- Menüde "Versiyon 75". Test yapılmadı (CLAUDE.md: yalnız chk.js).
