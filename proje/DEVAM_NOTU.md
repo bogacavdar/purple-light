@@ -408,3 +408,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - v66.5: Buff artık çene/boyun buff'ı (şapka listesinden çıktı). Erkeklerde Sakal satırından sonra 'Buff' (Yok, Düz, Kuru kafa, Alev, Çizgili, Kamuflaj, Kurt dişi) ve 'Buff rengi'. LOOK.hero.buff (renk) + buffS (desen); ön/arka buffFB, yan profR, desenler buffPat.
 - v66.6: İnce çerçeve gözlük açık gri (#6a6a78) ve gerçekten ince (yalnızca üst çizgi + kısa yanlar); yan profilde güneş gözlüğü gözü örten küçük koyu cam + kulağa sap.
 - v66.7: sinematiklerde (giriş #cine, anılar #mem-c, ada halkı sahneleri #npcsc… oyun tuvali dışındaki her tuval; karakter yaratma #cprev hariç) fx'li çizimler otomatik ¾ (o.q34): tam yan profil yok.
+
+## v67 — küçük düzeltmeler (`<script id="v67">` yunuslar)
+- Sınırsız sikke hilesi açıkken sayaçta yalnızca ∞ görünür (sayı gizli), "+N sikke" yazıları çıkmaz.
+- Köprü 20 odunla onarılır (`BRIDGE_WOOD`).
+- NPC'ler yürümüyorlarken yan profil değil, sana hafif dönük önden (`npcDraw` → `q34`); yürüyen Ekin yan profilde.
+- Açık denizde ara sıra (18–48 sn) yunus zıplar (bazen iki tane), görüş alanında ve kıyıdan en az 2 karo uzakta; sıçrama efektli.
+- Sırada (v68): çizimi WebGL'e taşımak (performans).

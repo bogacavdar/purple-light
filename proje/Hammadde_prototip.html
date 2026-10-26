@@ -2396,7 +2396,7 @@ function updatePrompt(){
   else if(tg.kind==='usta')html=`<kbd>E</kbd>${usta.name} · Sipariş`;
   else if(tg.kind==='alp')html=`<kbd>E</kbd>${alp.name} ile konuş`;
   else if(tg.kind==='rockfall'){const r=rockPrompt();html=r[0];warn=r[1]}
-  else if(tg.kind==='bridge'){const w=woodCount();html=w>=40?`<kbd>E</kbd>Kırık köprüyü onar · 40 odun`:`Kırık köprü · onarmak için 40 odun (sende ${w})`;warn=w<40}
+  else if(tg.kind==='bridge'){const w=woodCount();html=w>=BRIDGE_WOOD?`<kbd>E</kbd>Kırık köprüyü onar · ${BRIDGE_WOOD} odun`:`Kırık köprü · onarmak için ${BRIDGE_WOOD} odun (sende ${w})`;warn=w<BRIDGE_WOOD}
   else if(tg.kind==='kaptan')html=`<kbd>E</kbd>${kaptan.name} ile konuş`;
   else if(tg.kind==='carp')html=`<kbd>E</kbd>${carp.name} · Evler ve barınaklar`;
   else if(tg.kind==='toygar')html=`<kbd>E</kbd>${toygar.name} ile konuş`;
@@ -3422,8 +3422,8 @@ const Q4KEYS=['wood','bridge','shelter','coin','lv5','trader','kemal','t10','lv8
 const QUESTS=[
   {t:'5 odun kes.',get h(){const ax=Object.keys(GT).find(n=>GT[n].kind==='axe'&&inv[n]>0);return (ax&&beltIndex(ax)<0?`Baltan envanterinde: önce ${beltHow(ax)}. `:'')+(TOUCH?'Baltayı alttaki kutudan eline al ve bir çam ağacına dokun.':'Baltayı eline al (alttaki kutu ya da sayı tuşu) ve bir çam ağacının yanında <span class="kc">E</span>\'ye bas.')+' Meşe ve huş için daha iyi balta gerek. Körelirse Demirci Dursun\'da bile.'},go:()=>ownsKind('axe')&&!axe()?'smith':null,p:()=>`${Math.min(woodCut,5)}/5`,done:()=>woodCut>=5,c:40,
    say:'Ateşimin odunu azaldı. Bana beş odun keser misin? Çamlardan başla; taş baltan onlara yeter.',thx:'Bu ateş bu gece de yanacak. Sağ ol.'},
-  {t:'Kırık köprüyü onar.',h:'Büyük nehrin ortasındaki kırık köprüye 40 odun götür ve onar. Ok yolu gösterir.',go:()=>bridge.fixed?null:'bridge',p:()=>bridge.fixed?'onarıldı':`Odun ${Math.min(woodCount(),40)}/40`,done:()=>bridge.fixed,c:100,x:40,run:1,
-   say:'Adayı ikiye bölen büyük nehrin ortasında eski bir köprü vardı; fırtına onu kırdı. Karşı yaka <b>bataklık</b>, onun ötesi <b>Kül Diyarı</b>: adanın en değerli madenleri de en tehlikeli canavarları da orada. <b>40 odunla</b> köprüyü onarabilirsin. Ama hazır olmadan geçme evlat.',
+  {t:'Kırık köprüyü onar.',h:'Büyük nehrin ortasındaki kırık köprüye 20 odun götür ve onar. Ok yolu gösterir.',go:()=>bridge.fixed?null:'bridge',p:()=>bridge.fixed?'onarıldı':`Odun ${Math.min(woodCount(),BRIDGE_WOOD)}/${BRIDGE_WOOD}`,done:()=>bridge.fixed,c:100,x:40,run:1,
+   say:'Adayı ikiye bölen büyük nehrin ortasında eski bir köprü vardı; fırtına onu kırdı. Karşı yaka <b>bataklık</b>, onun ötesi <b>Kül Diyarı</b>: adanın en değerli madenleri de en tehlikeli canavarları da orada. <b>20 odunla</b> köprüyü onarabilirsin. Ama hazır olmadan geçme evlat.',
    thx:'Köprü yeniden ayakta! Karşı yaka bizim yurt gibi değil; canavarlar sert vurur, çamur ayağını tutar. Al şu <b>yüz sikkeyi</b>; biraz daha biriktir: yetenek ağacının <b>Savaş</b> dalında önce <b>Atılma</b>, sonra <b>Koşu</b> var, ikisi de yüzer sikke. Zor durumda kalırsan koş! Bataklığın ortasında <b>Avcı Toygar</b> yaşar; yolun düşerse selamımı söyle.'},
   {t:'100 sikke biriktir ve ilk yeteneğini al.',h:TOUCH?'Topla, birleştir, sat; sonra ağaç ikonuyla yetenek ağacını aç.':'Topla, birleştir, sat; sonra Y ile yetenek ağacını aç.',p:()=>`Sikke ${Math.min(coins,100)}/100 · ${skills.size?'yetenek alındı':'yetenek yok'}`,done:()=>skills.size>0,c:30,
    say:'Adada yaşamak bir şey, iyi yaşamak başka. Kendine 100 sikke biriktir ve ilk ustalığını öğren. Sonra bana gel.<br><br>Bu arada: yatağın yok. Kuzeybatıda <b>Usta Kemal</b> oturur, ona uğra. Batıda <b>Marangoz Rıza</b> barınak yapar. Adadaki herkesin senden isteyeceği bir iş vardır; <b>Görevler</b> defterine yazılır.',thx:'İşte bu! Ellerin artık senin dilinden konuşuyor.'},
@@ -4102,8 +4102,9 @@ function drawWater(time,x0,y0,x1,y1){
 const PIER_LEN=30;
 function pierEnd(k){return{x:dock.x+dock.dx*k,y:dock.y+dock.dy*k}}
 const woodCount=()=>DB.c['Herhangi odun'].reduce((t,n)=>t+(inv[n]||0),0);
-function fixBridge(){if(bridge.fixed)return;const w=woodCount();if(w<40){toast(`Köprüyü onarmak için 40 odun gerekli (sende ${w}). ${ownsKind('axe')?'Çam ağaçlarını kes.':'Önce bir taş balta yap.'}`,true);sfx('bad');return}
-  let need=40;for(const n of DB.c['Herhangi odun']){const k=Math.min(need,inv[n]||0);inv[n]=(inv[n]||0)-k;need-=k;if(!need)break}
+const BRIDGE_WOOD=20;   // v67: was 40
+function fixBridge(){if(bridge.fixed)return;const w=woodCount();if(w<BRIDGE_WOOD){toast(`Köprüyü onarmak için ${BRIDGE_WOOD} odun gerekli (sende ${w}). ${ownsKind('axe')?'Çam ağaçlarını kes.':'Önce bir taş balta yap.'}`,true);sfx('bad');return}
+  let need=BRIDGE_WOOD;for(const n of DB.c['Herhangi odun']){const k=Math.min(need,inv[n]||0);inv[n]=(inv[n]||0)-k;need-=k;if(!need)break}
   bridge.fixed=true;sfx('craft');setTimeout(()=>sfx('found'),300);gainXP(40);for(let k=0;k<30;k++)parts.push({x:bridge.cx+(Math.random()-.5)*80,y:bridge.cy,vx:(Math.random()-.5)*40,vy:-30-Math.random()*40,life:.8,c:k%2?'#c89458':'#ffe29b'});
   announce('Köprü onarıldı','Karşı yaka: Bataklık · Tehlikeli');renderInv();renderTut()}
 function drawBridge(time,inView){const b=bridge;if(!inView(b.cx,b.cy,(b.x1-b.x0+2)*T))return;
@@ -6662,7 +6663,7 @@ const NPCL={
 // where the person looks: at you when you come close, otherwise ahead
 function npcFace(o){const dx=player.x-o.x,dy=player.y-o.y,d=Math.hypot(dx,dy);if(d<80&&!wake){if(Math.abs(dx)>Math.abs(dy)*1.2)return{fx:Math.sign(dx),fy:0};return{fx:0,fy:dy<0?-1:1}}return{fx:0,fy:1}}
 function npcDraw(o,L,time,seed,opt){const f=npcFace(o),x=Math.round(o.x),y=Math.round(o.y),br=Math.sin(time*2.3+seed)>.55?-1:0,blink=((time+seed*1.7)%4.2)<.13;
-  drawChibi(ctx,x,y,L,Object.assign({fx:f.fx,fy:f.fy===-1?1:f.fy,bob:br,closed:blink},opt||{}));return{x,y,hy:y-16+br,f}}
+  drawChibi(ctx,x,y,L,Object.assign({fx:f.fx,fy:f.fy===-1?1:f.fy,bob:br,closed:blink},opt||{},{q34:!(opt&&opt.step)}));return{x,y,hy:y-16+br,f}}   // v67: islanders stand turned towards you (never in full profile) unless they walk
 function npcMark(x,y,time,c){const b=Math.round(Math.sin(time*5)*2);px(x-3,y-34+b,6,9,'#232d1f');px(x-1,y-33+b,2,5,c||'#f2b84b');px(x-1,y-27+b,2,1,c||'#f2b84b')}
 
 function drawNPC(time){
@@ -8260,8 +8261,10 @@ B5.startLayout=startLayout;B5.endLayout=endLayout;B5.layout=()=>LAY;B5.applyLayo
 
 // ------------------------------------------------------------------ cheats: ∞ coins, max level, the whole map
 {const cv=$('coinval');if(cv&&!$('b5infic')){const b=document.createElement('b');b.id='b5infic';b.hidden=true;b.textContent='∞';b.setAttribute('aria-label','sınırsız');cv.parentNode.insertBefore(b,cv.nextSibling)}}
-function syncInf(){window.__plInf=!!(settings.cheat&&settings.b5inf);const ic=$('b5infic');if(ic)ic.hidden=!window.__plInf;const cc=$('ccoinv');if(cc){let s=cc.nextElementSibling;if(!(s&&s.className==='b5ic')){s=document.createElement('b');s.className='b5ic';s.style.cssText='margin-left:3px;color:#d8b0ff';s.textContent='∞';cc.parentNode.insertBefore(s,cc.nextSibling)}s.hidden=!window.__plInf}
+function syncInf(){window.__plInf=!!(settings.cheat&&settings.b5inf);const ic=$('b5infic');if(ic)ic.hidden=!window.__plInf;{const cv=$('coinval');if(cv)cv.style.display=window.__plInf?'none':'';const cc=$('ccoinv');if(cc)cc.style.display=window.__plInf?'none':''}   // v67: with ∞ coins only ∞ shows, never a number
+  const cc=$('ccoinv');if(cc){let s=cc.nextElementSibling;if(!(s&&s.className==='b5ic')){s=document.createElement('b');s.className='b5ic';s.style.cssText='margin-left:3px;color:#d8b0ff';s.textContent='∞';cc.parentNode.insertBefore(s,cc.nextSibling)}s.hidden=!window.__plInf}
   const p=$('b5cheat');if(p)p.hidden=!settings.cheat;const ci=$('b5inf');if(ci)ci.checked=!!settings.b5inf}
+{const _ft=floatText;floatText=function(t){if(window.__plInf&&/sikke/i.test(String(t)))return;return _ft.apply(this,arguments)}}   // v67: no '+N sikke' with ∞ coins
 $('b5inf').addEventListener('change',e=>{settings.b5inf=e.target.checked;store.set(SETKEY,settings);syncInf();toast(settings.b5inf?'Hile: sınırsız sikke açık':'Hile: sınırsız sikke kapalı');try{renderInv();if(craftOpen)renderCraft()}catch(x){}});
 $('cheat').addEventListener('change',()=>{syncInf();try{renderInv();if(craftOpen)renderCraft()}catch(x){}});
 const maxLv=()=>(typeof MAXLV!=='undefined'?MAXLV:50);
@@ -10600,7 +10603,7 @@ const _db=drawBridge;drawBridge=function(time,inView){_db.apply(this,arguments);
    say:'Sıradağı gördün mü evlat? Adanın doğusunu bir duvar gibi kapatır. Bir tek geçit vardı; yıllar önce bir gece dağ inledi, kayalar yolu kapattı. Ötesi <b>Kül Diyarı</b>, onun da ötesinde <b>mor ışığın en sık indiği yer</b>: Mor Kristal Vadisi. Geçidi açmak için iki <b>kaya patlatıcı</b> lazım: madenlerin dibindeki <b>yarasa gübresi</b>, kömür, tuz, bir çömlek. Tarifini kitabına yazdım. Bir de sağlam bir kazma: <b>kuvars</b> ya da daha iyisi.',
    thx:'O gürültüyü buradan duydum! Geçit açık. Ama dinle: ötesi ölümcül. Zırhsız gidersen ilk gece dönemezsin.'};
  if(iL>=0&&!QUESTS.some(q=>q.t===Q.t))QUESTS.splice(iL,0,Q)}
-for(const q of QUESTS){if(/Kırık köprüyü/.test(q.t)&&typeof q.say==='string')q.say='Adayı ikiye bölen büyük nehrin ortasında eski bir köprü vardı; fırtına onu kırdı. Karşı yaka <b>bataklık</b> ve kuzeyinde <b>kayalık dağlar</b>; onların ötesinde bir sıradağ, sıradağın ardında da <b>Kül Diyarı</b>. Adanın en değerli madenleri de en tehlikeli canavarları da doğuda. <b>40 odunla</b> köprüyü onarabilirsin. Ama hazır olmadan geçme evlat.';
+for(const q of QUESTS){if(/Kırık köprüyü/.test(q.t)&&typeof q.say==='string')q.say='Adayı ikiye bölen büyük nehrin ortasında eski bir köprü vardı; fırtına onu kırdı. Karşı yaka <b>bataklık</b> ve kuzeyinde <b>kayalık dağlar</b>; onların ötesinde bir sıradağ, sıradağın ardında da <b>Kül Diyarı</b>. Adanın en değerli madenleri de en tehlikeli canavarları da doğuda. <b>20 odunla</b> köprüyü onarabilirsin. Ama hazır olmadan geçme evlat.';
   if(/lav kertenkelesi/.test(q.t))q.h='Doğu geçidinden geç, Kül Diyarı\'na git. Lav kertenkelesi ateş tükürür: atıl (Q) ve yandan vur. Ateş çiçeği merhemi yanığı azaltır.';
   if(/bütün izleri/.test(q.t))q.h='Mor parıltıları ara: ikisi yurtta, ikisi köprünün ötesinde, ikisi sıradağın ardında. Bulduklarını tarif kitabının İzler sekmesinde okursun.'}
 
@@ -10632,5 +10635,26 @@ if(window.__v65wiped){setTimeout(()=>{try{toast('Ada iki kat büyüdü ve altı 
 #v65mt[hidden]{display:none}
 .b5seg{flex-wrap:wrap}
 </style>
+<script id="v67">
+// v67: now and then a dolphin leaps out of the open sea (only where you can see it, never near the shore)
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const D={list:[],next:8+Math.random()*12,last:performance.now()};
+const deep=(tx,ty)=>{for(let dy=-2;dy<=2;dy++)for(let dx=-2;dx<=2;dx++){const x=tx+dx,y=ty+dy;if(x<0||y<0||x>=W||y>=H)continue;if(tiles[y*W+x]!==4)return false}return true};
+function tryJump(){const vw2=vw/S,vh2=vh/S;for(let k=0;k<30;k++){const x=cam.cx+16+Math.random()*(vw2-32),y=cam.cy+24+Math.random()*(vh2-40),tx=Math.floor(x/T),ty=Math.floor(y/T);
+  if(!deep(tx,ty))continue;const dir=Math.random()<.5?-1:1,n=Math.random()<.3?2:1;for(let i=0;i<n;i++)D.list.push({x:x+i*-dir*14,y:y+i*3,dir,t:-i*.25,dur:1.25,len:34});return true}return false}
+function splash(x,y){for(let k=0;k<10;k++)parts.push({x,y,vx:(Math.random()-.5)*30,vy:-15-Math.random()*25,life:.45,c:k%2?'#ffffff':'#bfe6ff'})}
+function drawDolphin(d){const k=Math.max(0,Math.min(1,d.t/d.dur)),px_=d.x+d.dir*(k-.5)*d.len,h=Math.sin(k*Math.PI)*18,py=d.y-h,ang=Math.atan2(-Math.cos(k*Math.PI)*18*Math.PI/d.dur,d.dir*d.len/d.dur);
+  if(k<=0||k>=1)return;ctx.save();ctx.translate(Math.round(px_),Math.round(py));ctx.rotate(d.dir>0?ang:Math.PI+ang);if(d.dir<0)ctx.scale(1,-1);
+  const p=(a,b,w,h2,c)=>{ctx.fillStyle=c;ctx.fillRect(a,b,w,h2)};
+  p(-7,-2,13,4,'#5a7a98');p(-6,-3,10,1,'#6e90b0');p(-5,1,9,1,'#c8d8e4');p(6,-1,3,2,'#5a7a98');p(8,0,1,1,'#4a6a88');p(-1,-5,2,2,'#4a6a88');p(0,-4,2,1,'#4a6a88');
+  p(-10,-3,2,2,'#4a6a88');p(-10,1,2,2,'#4a6a88');p(-8,-1,2,2,'#5a7a98');p(4,-1,1,1,'#11170f');ctx.restore();
+  ctx.fillStyle='rgba(20,50,90,.25)';ctx.beginPath();ctx.ellipse(px_,d.y+2,6*(1-h/30),1.5,0,0,Math.PI*2);ctx.fill()}
+const _db=drawBridge;drawBridge=function(time,inView){_db.apply(this,arguments);
+  const now=performance.now(),dt=Math.min(.1,(now-D.last)/1000);D.last=now;if(onTitle||paused)return;
+  D.next-=dt;if(D.next<=0){D.next=18+Math.random()*30;tryJump()}
+  for(let i=D.list.length-1;i>=0;i--){const d=D.list[i];const was=d.t;d.t+=dt;if(was<0&&d.t>=0)splash(d.x-d.dir*d.len/2,d.y);if(d.t>=d.dur&&was<d.dur)splash(d.x+d.dir*d.len/2,d.y);if(d.t>d.dur+.3){D.list.splice(i,1);continue}drawDolphin(d)}};
+}).toString()+')()')}catch(e){try{window.__hamErr('v67: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 </body>
 </html>
