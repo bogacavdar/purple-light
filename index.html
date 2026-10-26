@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-cont" type="button">Devam et</button>
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 73</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 74</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -5616,7 +5616,7 @@ function attack(focus){
   {const h=held();if(dullTool(h)&&!w.n&&!attack.dullT){attack.dullT=1;setTimeout(()=>attack.dullT=0,4000);toast(`${h} kör: yumruk kadar vurur. Demirci Dursun'da bilet.`,true)}}
   if(focus){const dx=focus.x-player.x,dy=focus.y-player.y;player.face={x:Math.abs(dx)>=Math.abs(dy)?Math.sign(dx):0,y:Math.abs(dy)>Math.abs(dx)?Math.sign(dy):0}}
   const fx=player.face.x,fy=player.face.y;swing={t:0,fx,fy,w:w.reach};sfx('swing');
-  const dm=Math.round(w.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1));let hitAny=false;
+  const dm=Math.round(w.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*(buffOn('zayıf')?.8:1));let hitAny=false;
   for(const a of animals.slice()){const dx=a.x-player.x,dy=a.y-6-player.y+6,d=Math.hypot(dx,dy);if(d>w.reach+ANIM[a.k].r)continue;
     if(d>10&&(dx*fx+dy*fy)/d<.15)continue;
     hitAny=true;a.hp-=dm;a.flash=.15;madPack(a);a.kb={vx:dx/(d||1)*140,vy:dy/(d||1)*140,t:.12};
@@ -11137,6 +11137,89 @@ cb.addEventListener('change',()=>{settings.vib=cb.checked;store.set(SETKEY,setti
 const _os=openSettings;openSettings=function(){const r=_os.apply(this,arguments);cb.checked=!!settings.vib;return r};
 const _h=hurt;hurt=function(n){const before=hp;const r=_h.apply(this,arguments);try{if(can&&settings.vib&&hp<before){const d=before-hp;navigator.vibrate(hp<=0?[120,60,220]:Math.round(Math.min(160,35+d*4)))}}catch(e){}return r};
 }).toString()+')()')}catch(e){try{window.__hamErr('v73: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v74">
+// =====================================================================================================
+// v74: what food does to you. Until you have eaten something once the food list says "Bilgim yok".
+// Good food: instant health, faster healing, a higher health limit for a while or energy. Odd wild things
+// (raw meat and fish, raw mushrooms, raw legumes, some berries) may also slow you down, tire you, turn your
+// stomach or poison you. Rarer (pricier) food: longer effects both ways, but a smaller chance of the bad ones.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+Object.assign(BUFFS,{'dayanık':{n:'Dayanıklılık',c:'#ff9ab0',i:'♥',e:'Can sınırı +%20'},'yavaş':{n:'Ağırlık',c:'#9aa0b8',i:'▼',e:'Hareket −%20'},
+  'halsiz':{n:'Halsizlik',c:'#b8a880',i:'☁',e:'Enerji yarı hızda dolar'},'bulantı':{n:'Bulantı',c:'#c0c860',i:'≈',e:'Can kendiliğinden dolmaz'},'zayıf':{n:'Güçsüzlük',c:'#a88a78',i:'↓',e:'Vuruşlar −%20'}});
+const BAD=new Set(['yavaş','halsiz','bulantı','zayıf']);
+{const h=STAT.hp,hr=STAT.hpRe,sr=STAT.stRe,mv=STAT.move;
+  STAT.hp=L=>h(L)*(buffOn('dayanık')?1.2:1);STAT.hpRe=L=>buffOn('bulantı')?0:hr(L);STAT.stRe=L=>sr(L)*(buffOn('halsiz')?.5:1);STAT.move=L=>mv(L)*(buffOn('yavaş')?.8:1)}
+// new poisons among the wild things
+Object.assign(POISON,{'Kuzugöbeği':{d:2.6,t:7},'Mağara mantarı':{d:3,t:7},'Ardıç meyvesi':{d:1.3,t:5}});
+// rarity 0..1 from the price: how hard a thing is to come by
+const rar=n=>Math.max(0,Math.min(1,Math.log((PRICE_[n]||unitPrice(n)||4)+1)/Math.log(400)));
+const RAWFISH=new Set(V46RAW);
+// odd things to put in your mouth: the bad effects they may bring
+const ODD={'Kurbağa':['bulantı'],'Sinek mantarı':['yavaş'],'Kuzugöbeği':['bulantı'],'Mağara mantarı':['halsiz','zayıf'],'Kayın mantarı':['bulantı'],'Tavuk mantarı':['bulantı'],
+  'Işık mantarı':['yavaş'],'Gece sefası':['halsiz'],'Meşe palamudu':['bulantı'],'Mürver':['bulantı'],'Kuzukulağı':['halsiz'],'Ardıç meyvesi':['halsiz'],'Su kestanesi':['bulantı'],
+  'Yabani mercimek':['bulantı'],'Yabani nohut':['bulantı'],'Ur kekliği yumurtası':['bulantı'],'Ateş biberi':['bulantı']};
+const oddOf=n=>ODD[n]||(isRawMeat(n)?['bulantı','zayıf']:RAWFISH.has(n)?['bulantı']:null);
+// the good side of plain raw food (cooked food keeps the game's own pick, buffOf)
+const RAWGOOD={'Böğürtlen':'enerji','Ahududu':'enerji','Yaban çileği':'enerji','Yaban mersini':'göz','Kızılcık':'ılık','Kuşburnu':'ılık','Alıç':'ılık','Yabani elma':'enerji','Yabani armut':'enerji',
+  'Yabani erik':'enerji','Ceviz':'dayanık','Fındık':'dayanık','Kestane':'dayanık','Havuç':'göz','Yabani havuç':'göz','Kabak':'doygun','Patates':'doygun','Soğan':'ılık','Ayçiçeği':'enerji',
+  'Yabani bal':'hız','Akçaağaç özsuyu':'enerji','Ateş narı':'ateşsiz','Yıldız eriği':'hız','Ay elması':'dayanık','Işık mantarı':'göz','Gece sefası':'göz','Ateş biberi':'güç','Su kestanesi':'enerji'};
+const DRINK=/çayı|suyu$|şerbeti|şurubu|likörü|özsuyu/;
+function prof(n){const r=rar(n),x=REC.get(n),cooked=!!x;const P={r,good:[],bad:null,pBad:0,heal:healVal(n),en:0,dG:Math.round(45+r*300),dB:Math.round(25+r*110)};
+  const b=buffOf(n);if(b)P.good.push(b[0]);const rg=RAWGOOD[n];if(rg&&P.good.indexOf(rg)<0)P.good.push(rg);
+  if(cooked&&x.c==='Yiyecek'){P.heal+=Math.round(4+r*30);if(r>.62){const extra=P.good.indexOf('dayanık')<0?'dayanık':'ılık';if(P.good.indexOf(extra)<0)P.good.push(extra)}}
+  if(n==='Yabani bal'||n==='Ay elması')P.heal+=Math.round(6+r*20);
+  if(P.good.indexOf('enerji')>=0||DRINK.test(n))P.en=Math.round(10+r*45);
+  const o=oddOf(n);if(o){P.bad=o;P.pBad=POISON[n]?1:Math.max(.2,Math.min(.9,.95-r*.9))}
+  return P}
+const fmtT=t=>t>=60?`${String(Math.round(t/6)/10).replace('.',',')} dk`:`${t} sn`;
+// what you know: only what you have eaten
+const KN=new Set();
+const _eat=eat;eat=function(n){const P=prof(n);const ok=_eat.apply(this,arguments);if(!ok)return ok;
+  try{const fresh=!KN.has(n);KN.add(n);
+    for(const k of P.good)addBuff(k,P.dG);
+    const extraHeal=P.heal-healVal(n);if(extraHeal>0){hp=Math.min(maxHP(),hp+extraHeal);floatText(`+${extraHeal} can`,'#8fd46b')}
+    if(P.en){st=Math.min(maxSt(),st+P.en);floatText(`+${P.en} enerji`,'#b8e070')}
+    if(P.bad&&Math.random()<P.pBad)setTimeout(()=>{for(const k of P.bad)addBuff(k,P.dB);sfx('bad');bubble={text:P.bad.indexOf('bulantı')>=0?'Midem kalktı…':'Başım dönüyor…',t:2.4}},700);
+    if(fresh)setTimeout(()=>toast(`${n}: artık ne yaptığını biliyorsun (Yemek listesi)`),1400);
+    vitK='';renderVitals();if(craftOpen&&mode==='eat')renderCraft()}catch(e){}
+  return ok};
+renderEat=function(){const L=eatList();
+  cbody.innerHTML=`<p class="note">Tokluk <b>${Math.ceil(food)}</b> / 100 · Can <b>${Math.ceil(hp)}</b> / ${maxHP()}. Bir şeyi ilk kez yiyene kadar ne yapacağını bilemezsin; yedikten sonra burada yazar. Değerli yemeklerin etkisi uzun sürer.</p>`+
+  (L.length?`<div class="v63eat">${L.map(n=>{const kn=KN.has(n);let info='<span style="opacity:.75">Bilgim yok</span>';
+    if(kn){const P=prof(n),f=foodVal(n),a=[];if(f)a.push(`+${f} tokluk`);if(P.heal)a.push(`+${P.heal} can`);if(P.en)a.push(`+${P.en} enerji`);
+      for(const k of P.good)a.push(`<span style="color:${BUFFS[k].c}">${BUFFS[k].n} ${fmtT(P.dG)}</span>`);
+      if(POISON[n])a.push('<span style="color:#9ad84a">zehirli!</span>');
+      if(P.bad)a.push(`<span style="color:#ff8a6a">${P.bad.map(k=>BUFFS[k].n).join(', ')} ${fmtT(P.dB)}${P.pBad<1?' (olabilir)':''}</span>`);
+      info=a.join(' · ')||'Bir etkisi yok'}
+    return `<div class="v63er"><img src="${icon(n)}" alt=""><span class="v63en"><b>${esc(n)}</b> <small>×${inv[n]}</small><br><small>${info}</small></span><button type="button" class="v63ye" data-eat="${esc(n)}" aria-label="${esc(n)} ye">Ye</button></div>`}).join('')}</div>`:'<p class="note">Yiyecek bir şeyin kalmadı.</p>');
+  if(tz===2){const b=cbody.querySelector('[data-eat="Böğürtlen"]');if(b)b.classList.add('pulse')}};
+const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);s.v74={k:[...KN]};return s};
+const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);KN.clear();const v=d&&d.v74;if(v&&Array.isArray(v.k))v.k.forEach(n=>{if(typeof n==='string')KN.add(n)});
+  if(d&&!v)for(const n of poisonKnown)KN.add(n);return r};
+window.__plFood={prof,KN};
+}).toString()+')()')}catch(e){try{window.__hamErr('v74: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v74b">
+// v74b: act cards. A black screen with "ACT 1" after the opening cutscene, "ACT 2" when you leave the island.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const st=document.createElement('style');st.textContent='#actcard{position:fixed;inset:0;z-index:95;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;opacity:0;transition:opacity .6s;pointer-events:none}'
+ +'#actcard.on{opacity:1;pointer-events:auto}#actcard b{font-size:clamp(40px,9vw,88px);letter-spacing:.22em;color:#f3ecd8;font-weight:800;text-shadow:0 0 18px rgba(176,112,255,.55)}#actcard small{font-size:clamp(14px,2.4vw,20px);letter-spacing:.3em;color:#c9a0ff;text-transform:uppercase}'
+ +'#actcard i{width:min(240px,50vw);height:2px;background:linear-gradient(90deg,transparent,#a050e0,transparent)}';
+document.head.appendChild(st);
+const el=document.createElement('div');el.id='actcard';el.setAttribute('role','status');el.setAttribute('aria-live','polite');el.hidden=true;document.body.appendChild(el);
+let T=[];
+function showAct(n,sub,hold){T.forEach(clearTimeout);T=[];el.innerHTML=`<b>ACT ${n}</b><i></i><small>${sub}</small>`;el.hidden=false;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('on')));try{audio.play('hum',{vol:.55})}catch(e){}
+  T.push(setTimeout(()=>el.classList.remove('on'),hold||2800));T.push(setTimeout(()=>{el.hidden=true},(hold||2800)+700))}
+const _ec=endCine;endCine=function(){const r=_ec.apply(this,arguments);if(wake)showAct(1,'Yıldızsız Ada',3000);return r};
+const _ss=sisStart;sisStart=function(){showAct(2,'Sisin ötesi',3000);return _ss.apply(this,arguments)};
+const _es=endingScreen;endingScreen=function(){if(!sisDone)showAct(2,'Sisin ötesi',3000);return _es.apply(this,arguments)};
+window.__plAct=showAct;
+}).toString()+')()')}catch(e){try{window.__hamErr('v74b: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v68">
 // v68: the graphics-card switch in Ayarlar (the choice is read once at start, so changing it reopens the game; the save is kept)

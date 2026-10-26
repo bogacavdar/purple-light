@@ -512,3 +512,12 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Titreşim (`<script id="v73">`): Ayarlar'da yalnız telefonda görünen "Titreşim" (settings.vib, varsayılan açık). hurt() sarmalandı: can düşünce navigator.vibrate (hasara göre 35–160 ms, bayılınca çift). Süren etki tikleri titretmez. iPhone Safari navigator.vibrate desteklemez → ayarı açınca uyarı.
 - Telefonda Ayarlar başlığına 3 dokunuşta titreşim (açılınca çift, kapanınca tek).
 - Menüde "Versiyon 73".
+
+## v74 (26 Ekim 2026)
+- Yemek etkileri (`<script id="v74">`): bir yiyecek ilk kez yenene kadar Yemek listesinde "Bilgim yok"; yenince tokluk, can, enerji ve etkiler yazar (bilinenler kayıtta `v74.k`; eski kayıtta zehirli bilinenler bilinir).
+  - Nadirlik r = log(fiyat+1)/log(400) (0–1). İyi etki süresi 45+r·300 sn, kötü etki süresi 25+r·110 sn.
+  - İyi: pişmiş yemek anında can (4+r·30); değerli (r>.62) yemeğe ek Dayanıklılık (can sınırı +%20) ya da Şifa; meyve/içecek enerji (+10+r·45 anında ve Canlılık); çiğ meyve, kuruyemiş, sebze için RAWGOOD tablosu (Ceviz/Fındık/Kestane: Dayanıklılık, Havuç: Gece gözü, Kuşburnu: Şifa …).
+  - Kötü (yalnız tuhaf şeylerde, ODD): çiğ et (Bulantı + Güçsüzlük), çiğ balık, çiğ mantarlar, çiğ baklagiller, çiğ yumurta, Meşe palamudu, Mürver, Gece sefası, Işık mantarı, Ateş biberi… Olasılık .95−r·.9 (en az .2, en çok .9; zehirlilerde her zaman). Yeni zehirler: Kuzugöbeği, Mağara mantarı, Ardıç meyvesi.
+  - Yeni durumlar: Dayanıklılık, Ağırlık (hareket −%20), Halsizlik (enerji yarı hızda), Bulantı (can dolmaz), Güçsüzlük (vuruş −%20). STAT.hp/hpRe/stRe/move sarmalandı.
+- ACT kartları (`<script id="v74b">`): açılış sinemasından sonra siyah ekranda "ACT 1 · Yıldızsız Ada"; adadan ayrılınca (Rüstem'le Sisli Ada'ya ya da gemiyle) "ACT 2 · Sisin ötesi". Sinema tekrarında çıkmaz.
+- Menüde "Versiyon 74".
