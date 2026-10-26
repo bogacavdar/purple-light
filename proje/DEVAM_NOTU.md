@@ -354,3 +354,6 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - İzleyici: bir kademe yükseldikten sonra 30 sn içinde yine düşerse o cihaz o kademeye bir daha çıkmaz (`floorL`) → ileri geri sallanma yok.
 - Boşta (requestIdleCallback): çevredeki zemin parçaları önceden pişirilir, tarif ikonları önceden çizilir (kitabın ilk açılışı hafifler). Seviye atlama yazısı ayrı katmanda (`will-change`).
 - Ölçüm (844×390, CPU ×4): hile + Sv50 + harita açık: yürüyüş/çatışma 30–60 fps, bataklık 100 ms → 17–33 ms, gece/yağmur ≈30 fps, Kül Diyarı ≈60 fps; 90 sn oturumda bellek sabit (≈20 MB).
+
+## v61 — Ad girişinde Enter
+- `askName`: telefon klavyesinin Enter / Bitti tuşu adı onaylar (keydown + keypress, keyCode 13 da sayılır), giriş kutusunda `enterkeyhint="done"`.

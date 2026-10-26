@@ -1409,7 +1409,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
 <div id="cinetop" aria-live="polite"></div>
 <div id="cinecap" aria-live="polite"></div>
 <button id="cineskip" type="button" hidden>Geç ›</button>
-<div id="names" class="ov" hidden role="dialog" aria-labelledby="nmt"><div class="tcard small"><h2 id="nmt"></h2><p id="nmp" class="nmp"></p><div class="nmrow"><input id="nmin" type="text" maxlength="14" autocomplete="off" autocapitalize="words" spellcheck="false" aria-label="Ad"><button id="nmdice" class="mb ghost" type="button">Rastgele</button></div><div class="tmenu"><button class="mb" id="nmok" type="button">Tamam</button></div></div></div>
+<div id="names" class="ov" hidden role="dialog" aria-labelledby="nmt"><div class="tcard small"><h2 id="nmt"></h2><p id="nmp" class="nmp"></p><div class="nmrow"><input id="nmin" type="text" maxlength="14" enterkeyhint="done" autocomplete="off" autocapitalize="words" spellcheck="false" aria-label="Ad"><button id="nmdice" class="mb ghost" type="button">Rastgele</button></div><div class="tmenu"><button class="mb" id="nmok" type="button">Tamam</button></div></div></div>
 <button id="dodgebtn" type="button" aria-label="Atıl (kaçın)">Atıl</button>
 <div id="pad">
   <div class="dpad">
@@ -4803,6 +4803,9 @@ function askName(kind,cb){
   $('nmdice').onclick=()=>{let n;do{n=pool[Math.floor(Math.random()*pool.length)]}while(n===inp.value&&pool.length>1);inp.value=n;sfx('pick')};
   $('nmok').onclick=()=>{let n=(inp.value||'').replace(/\s+/g,' ').trim().slice(0,14);if(!n)n=inp.placeholder;n=n.charAt(0).toLocaleUpperCase('tr-TR')+n.slice(1);
     try{inp.blur()}catch(e){}el.hidden=true;sfx(love?'magic':'found');cb(n)};
+  // v61: the phone keyboard's Enter / "Bitti" key confirms the name (Android often sends keyCode 13 without a key name)
+  const go=e=>{if(el.hidden)return;if(e.key==='Enter'||e.keyCode===13||e.which===13){e.preventDefault();e.stopPropagation();$('nmok').click()}};
+  inp.onkeydown=go;inp.onkeyup=null;inp.onkeypress=go;
 }
 function wakeTalk(){
   say('Ah, gözlerini açtın sonunda! Dalgalar seni bu sabah kıyıya attı. Ben <b>Ekin</b>; bu adada yıllardır yaşıyorum.',[
