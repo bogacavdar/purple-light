@@ -6935,7 +6935,7 @@ function openMem(i,again){memCur={i,line:0,t:0,again};memOv.hidden=false;$('mem-
 function memLine(){const m=MEMS[memCur.i],l=m.L[memCur.line];$('mem-t').innerHTML=memText(l[1]);$('mem-go').textContent=memCur.line<m.L.length-1?'Devam':'Anıyı sakla'}
 function memNext(){if(!memCur)return;const m=MEMS[memCur.i];if(memCur.line<m.L.length-1){memCur.line++;memLine();return}
   const i=memCur.i,again=memCur.again;memCur=null;memOv.hidden=true;
-  if(!again){gainXP(25+i*15);toast(`Anı defterine yazıldı: "${MEMS[i].n}" (Kitap › Anılar)`);if(i===MEMS.length-1)setTimeout(()=>toast('Bütün anılar geri geldi. Sisli Ada seni bekliyor.'),1500)}}
+  if(!again){gainXP(25+i*15);toast(`Anı defterine yazıldı: "${MEMS[i].n}" (Kitap › Anılar)`);if(mems.size>=MEMS.length)setTimeout(()=>toast('Bütün anılar geri geldi. Sisli Ada seni bekliyor.'),1500)}}
 $('mem-go').addEventListener('click',memNext);
 let memLast=0;
 function memLoop(now){if(!memCur)return;const dt=Math.min(.05,Math.max(0,(now-(memLast||now))/1000));memLast=now;memCur.t+=dt;memScene(memC,memCur.i,memCur.t,memCur.line);requestAnimationFrame(memLoop)}
@@ -9663,5 +9663,76 @@ body.inroom #mini,body.inroom #prompt,body.inroom #b3trk{display:none!important}
 #roomui .rlist img{width:24px;height:24px;image-rendering:pixelated}
 #roomui .rlist em{font-style:normal;font-size:11px;color:#8fd0ff}
 </style>
+<script id="v57-mem">
+// =====================================================================================================
+// v57: more memories of the lost one. The five recipe memories stay as they were; seven new ones come back
+// by chance — as a dream when you sleep, as a flash when you faint, or when you finish a quest — and some
+// only after a certain day. Each one comes once, wherever it first came; all are in Kitap › Anılar.
+// Runs inside the game's scope through window.__plEval.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const B0=MEMS.length;
+const NEWM=[
+ {n:'Kumsalda ilk dans',ev:['sleep','quest'],min:1,L:[['','Bir yaz gecesi, kumsalda bir şenlik ateşi. Biri gitar çalıyor, kıvılcımlar yıldızlara karışıyor.'],['love','<b>{L}</b>: "Dans etmeyi bilmiyorum, ama ayağına basarsam sayılmaz, tamam mı?"'],['','Ateşin çıtırtısı… Ekin\'in ateşi de tam böyle çıtırdıyor.']]},
+ {n:'Kırık pusula',ev:['faint','quest'],min:4,L:[['','Küçük bir atölye, tezgâhın üstünde dağınık dişliler. Elinde eski, camı çatlak bir pusula.'],['love','<b>{L}</b>: "Yönünü kaybedersen kuzeyi değil, beni düşün. İğne hep bana döner."'],['','O pusula hiçbir zaman kuzeyi göstermedi. Hep onu gösterdi.']]},
+ {n:'Hastane koridoru',ev:['faint'],min:6,L:[['','Beyaz bir koridor, titreyen bir floresan. Biri elini sımsıkı tutuyor.'],['love','<b>{L}</b>: "Korkma. Gözünü açtığında ilk göreceğin yüz benim olacak. Söz."'],['','Şimdi her uyandığında, ilk önce o yüzü arıyorsun.']]},
+ {n:'Yıldız haritası',ev:['sleep'],min:8,L:[['','Bir çatı katı, yere serilmiş kocaman bir yıldız haritası. Mumlar, çay, kalemler.'],['love','<b>{L}</b>: "Şuraya bak: yıldızların arasında boşluk var. Sanki biri onları söndürmüş. Annem bunlara <i>yıldızsızlar</i> derdi."'],['','Yıldızsızlar. O kelimeyi ilk kez ondan duymuştun.']]},
+ {n:'Mektup',ev:['quest'],min:12,L:[['','Mutfak masasında katlanmış bir kâğıt, üstünde onun eğri büğrü yazısı.'],['love','<b>{L}</b>: "Bu mektubu okuyorsan yine geç kaldın demektir. Çorba ocakta. Ben limandayım; gökte bir şey var, görmen lazım."'],['','Limanda, mor ışığın ilk kez yere indiği o gece…']]},
+ {n:'Mor fısıltı',ev:['sleep','faint'],min:20,L:[['','Karanlık. Su sesi. Uzakta, yıldızsız bir gökte mor bir göz açılıp kapanıyor.'],['love','<b>{L}</b>: "{H}… beni duyuyor musun? Burası soğuk. Hiç yıldız yok… ama senin ateşini görüyorum."'],['','Bu bir anı değildi. Bu… şimdiydi.']]},
+ {n:'Bırakılan el',ev:['faint','sleep'],min:25,L:[['','Dalgaların altı. Mor bir ışık suyu yarıyor, köpükler yukarı kaçışıyor.'],['love','<b>{L}</b>: "Tut elimi!"'],['hero','<b>{H}</b>: "Bırakmayacağım!"'],['','Ama parmakların kaydı. Ya da biri onları çekti. Son gördüğün, pelerinli bir gölgeydi… ve tasmasında mor bir göz.']]}];
+for(const m of NEWM)MEMS.push(m);
+const KIND={sleep:'Bir rüya gördün',faint:'Bayılırken bir anı',quest:'Bir anı geri geldi'};
+const CH={sleep:.4,faint:.6,quest:.3};
+const memKind={};window.__v57={quest:()=>memEvent('quest'),kind:memKind};
+function memEvent(ev){if(onTitle||!met||tz)return false;if(Math.random()>CH[ev])return false;
+  const L=[];for(let i=B0;i<MEMS.length;i++){const m=MEMS[i];if(!mems.has(i)&&m.ev.indexOf(ev)>=0&&day>=m.min)L.push(i)}
+  if(!L.length)return false;const i=L[Math.floor(Math.random()*L.length)];memKind[i]=ev;memUnlock(i);return true}
+// the title of the card says how it came back
+{const _o=openMem;openMem=function(i,again){const r=_o.apply(this,arguments);try{const h=memOv.querySelector('h3');if(h)h.textContent=again?'Bir anı':KIND[memKind[i]]||'Bir anı geri geldi'}catch(e){}return r}}
+// the hooks: sleep, faint (any blackout), finishing a quest (Ekin's or anyone's)
+{const _s=sleepBed;sleepBed=function(o){const night=isNight();const r=_s.apply(this,arguments);if(night)setTimeout(()=>memEvent('sleep'),3600);return r}}
+{const _f=faint;faint=function(){const r=_f.apply(this,arguments);setTimeout(()=>memEvent('faint'),2500);return r}}
+{const _n=nightDeath;nightDeath=function(){const r=_n.apply(this,arguments);setTimeout(()=>memEvent('faint'),2500);return r}}
+{const _t=turnIn;turnIn=function(){const r=_t.apply(this,arguments);setTimeout(()=>memEvent('quest'),1200);return r}}
+// scenes for the new memories
+const _sc=memScene;
+memScene=function(g,i,t,line){if(i<B0)return _sc.apply(this,arguments);
+  const p=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round(x),Math.round(y),w,h)};g.setTransform(1,0,0,1,0,0);g.imageSmoothingEnabled=false;
+  const H=LOOK.hero,Lv=LOOK.love,k=i-B0,star=(n,top)=>{for(let q=0;q<n;q++){const sx=(q*97)%240,sy=(q*53)%top;if(Math.sin(t*2+q)>-.3)p(sx,sy,1,1,q%5?'#cfd8ff':'#ffffff')}};
+  if(k===0){p(0,0,240,135,'#141a3a');star(70,70);p(0,78,240,57,'#d8c08a');p(0,72,240,8,'#2a4a7a');for(let q=0;q<10;q++)p((q*31+t*10)%240,74,12,1,'rgba(255,255,255,.4)');
+    const fx=170,fy=104;for(let q=0;q<5;q++)p(fx-8+q*4,fy,3,4,'#6a4426');const f=Math.sin(t*12);p(fx-5,fy-8,10,8,'#f2902a');p(fx-3,fy-12-f,6,6,'#ffd27a');
+    for(let q=0;q<6;q++){const a=(t*.8+q/6)%1;p(fx+Math.sin(q*3+t)*6,fy-12-a*40,1,1,`rgba(255,200,100,${(1-a).toFixed(2)})`)}
+    const sw=Math.sin(t*3)*4;drawChibi(g,100+sw,108,H,{fx:1,step:Math.sin(t*6)>0?1:0});drawChibi(g,118+sw,108,Lv,{fx:-1,step:Math.sin(t*6)>0?0:1,arm:'reach'});if(line>=1)cH(g,110+sw,80-((t*14)%20),1-((t*14)%20)/20)}
+  else if(k===1){p(0,0,240,135,'#3a2a1e');p(0,90,240,45,'#5a3e28');p(20,70,200,8,'#8a5a30');p(20,70,200,2,'#a8713f');for(let q=0;q<8;q++){const gx=40+q*20;g.strokeStyle='#c8a050';g.lineWidth=1;g.beginPath();g.arc(gx,64,3+q%3,0,6.28);g.stroke()}
+    p(0,0,240,30,'#2a1e14');p(150,8,30,20,'#9ad0ff');const a=Math.sin(t*1.5)*.6;g.save();g.translate(120,52);p(-10,-10,20,20,'#b8a070');g.fillStyle='#f0e8d0';g.beginPath();g.arc(0,0,8,0,6.28);g.fill();g.rotate(a);p(-1,-7,2,7,'#c84a3a');p(-1,0,2,6,'#3a3a3a');g.restore();p(112,46,16,1,'rgba(255,255,255,.6)');
+    drawChibi(g,90,108,H,{fx:1});drawChibi(g,150,108,Lv,{fx:-1,arm:'reach'})}
+  else if(k===2){p(0,0,240,135,'#c8d0d4');p(0,96,240,39,'#9aa4a8');for(let q=0;q<8;q++)p(q*32,0,2,96,'#b0b8bc');const fl=Math.sin(t*20)>.7?.5:1;g.globalAlpha=fl;p(60,4,40,4,'#f8fcff');p(160,4,40,4,'#f8fcff');g.globalAlpha=1;
+    p(70,80,100,14,'#e8ecee');p(70,80,100,3,'#ffffff');p(74,94,3,14,'#6a7478');p(163,94,3,14,'#6a7478');drawChibi(g,100,84,H,{closed:1,fx:1});drawChibi(g,150,106,Lv,{fx:-1,arm:'reach'});
+    if(line>=1)cH(g,126,70-((t*12)%18),1-((t*12)%18)/18);const vg=g.createRadialGradient(120,68,30,120,68,140);vg.addColorStop(0,'rgba(255,255,255,0)');vg.addColorStop(1,'rgba(200,220,230,.5)');g.fillStyle=vg;g.fillRect(0,0,240,135)}
+  else if(k===3){p(0,0,240,135,'#1a1430');p(0,0,240,40,'#0a0c1c');star(50,38);p(20,60,200,60,'#d8c8a0');for(let q=0;q<40;q++){const sx=26+(q*47)%186,sy=64+(q*29)%52;if((q*7)%9>1)p(sx,sy,2,2,'#2a2440')}
+    p(120,84,24,14,'#d8c8a0');g.strokeStyle='#8a4aff';g.lineWidth=1;g.strokeRect(118,82,28,18);
+    for(let q=0;q<3;q++){const mx=40+q*70;p(mx,104,3,8,'#efe6d0');p(mx,100+Math.sin(t*10+q),3,4,'#ffd27a')}drawChibi(g,70,112,H,{fx:1,sit:1});drawChibi(g,180,112,Lv,{fx:-1,sit:1,arm:'reach'})}
+  else if(k===4){p(0,0,240,135,'#5a3a22');p(0,0,240,60,'#6a4a2e');p(160,10,50,34,'#e8a060');p(184,10,2,34,'#5a3418');p(160,26,50,2,'#5a3418');
+    p(30,80,180,10,'#8a5a30');p(30,80,180,2,'#a8713f');p(40,90,4,30,'#5a3418');p(196,90,4,30,'#5a3418');p(90,72,40,10,'#f6eedc');for(let q=0;q<5;q++)p(94,74+q*2,30-q*4,1,'#5a5a6a');
+    p(150,66,16,14,'#b0603a');for(let q=0;q<3;q++){const a=(t*.9+q*.33)%1;p(156+Math.sin(t*2+q)*3,64-a*22,2,2,`rgba(220,220,220,${(1-a).toFixed(2)})`)}drawChibi(g,60,112,H,{fx:1});
+    if(line>=2){g.fillStyle='rgba(160,80,224,.25)';g.fillRect(160,10,50,34)}}
+  else if(k===5){p(0,0,240,135,'#04030a');const r=10+Math.sin(t*1.3)*4,o=.5+.5*Math.sin(t*1.3);g.fillStyle=`rgba(160,80,224,${(.25+.3*o).toFixed(2)})`;g.beginPath();g.ellipse(120,40,40,r,0,0,6.28);g.fill();g.fillStyle='#05030c';g.beginPath();g.ellipse(120,40,26,r*.6,0,0,6.28);g.fill();g.fillStyle='#c080ff';g.beginPath();g.arc(120,40,4*o+1,0,6.28);g.fill();
+    for(let q=0;q<20;q++)p((q*41+t*6)%240,90+(q*11)%40,14,1,'rgba(120,80,200,.35)');const a=.4+.3*Math.sin(t*2);g.globalAlpha=a;drawChibi(g,120,112,Lv,{fx:-1,closed:Math.sin(t)>0?1:0});g.globalAlpha=1;
+    if(line>=1){const f=Math.sin(t*9)>0;p(30,110,4,6,'#6a4426');p(29,104-(f?1:0),6,6,'#f2902a');p(30,102,4,3,'#ffd27a')}}
+  else{p(0,0,240,135,'#0a2a4a');for(let q=0;q<60;q++){const bx=(q*53)%240,by=135-((t*30+q*17)%150);p(bx,by,2,2,'rgba(180,220,255,.5)')}
+    g.fillStyle='rgba(200,150,255,.35)';g.beginPath();g.moveTo(110,0);g.lineTo(130,0);g.lineTo(170,135);g.lineTo(70,135);g.fill();
+    const d=line>=3?Math.min(30,(t%8)*6):0;drawChibi(g,100-d*.3,90,H,{fx:1,arm:'reach'});drawChibi(g,136+d,80-d,Lv,{fx:-1,arm:'reach'});
+    if(line>=3){p(170,20,14,20,'#140a26');p(173,14,8,8,'#140a26');p(176,17,2,1,'#c080ff')}}
+  const vg=g.createRadialGradient(120,68,40,120,68,150);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(20,6,40,.55)');g.fillStyle=vg;g.fillRect(0,0,240,135)};
+// the book: recipe memories say how many recipes; the new ones say how they may come
+renderMem=function(){const rd=riddle?`<div class="memrd"><b>Zümrüt'ün bilmecesi:</b> ${riddleText(riddle)}<br><small>Bu tarifi kazanda öğrenince Zümrüt seni ödüllendirir.</small></div>`:'';
+  const how=m=>m.ev.map(e=>({sleep:'rüyada',faint:'bayılınca',quest:'bir görevi bitirince'})[e]).join(' ya da ')+(m.min>1?` · ${m.min}. günden sonra`:'');
+  return bookTabs()+rd+`<p class="note">${loveName?`<b>${esc(loveName)}</b>`:'Eşin'} ile ilgili anılar geri geliyor: bazıları yeni tarifler öğrendikçe, bazıları rastgele: <b>uykuda rüya</b> olarak, <b>bayılınca</b> ya da <b>bir görevi bitirince</b>. Her anı bir kez gelir; buradan yeniden izlersin. Mor kıymıkları Zümrüt'e götürürsen sıradaki anı erken döner.</p><ul class="book mem">${MEMS.map((m,i)=>{const ok=mems.has(i);
+    return `<li${ok?'':' style="opacity:.55"'}><span class="bn"><img src="${ok?clueIcon():unkIcon()}" alt=""><span><b>${ok?esc(m.n):'???'}</b>${ok&&memKind[i]?` <small style="color:#c9a0ff">· ${({sleep:'rüya',faint:'bayılma',quest:'görev'})[memKind[i]]}</small>`:''}<br><small>${ok?esc(memText(m.L[0][1]).replace(/<[^>]+>/g,'')):m.at?`${m.at} tarif öğrenince (şimdi ${found.length})`:how(m)}</small></span></span>${ok?`<span class="rr"><button class="mk ghost" type="button" data-mem="${i}">İzle</button></span>`:''}</li>`}).join('')}</ul>`};
+const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);s.v57={k:Object.assign({},memKind)};return s};
+const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);for(const k in memKind)delete memKind[k];if(d&&d.v57&&d.v57.k)for(const i in d.v57.k)if(MEMS[+i])memKind[+i]=d.v57.k[i];return r};
+}).toString()+')()')}catch(e){try{window.__hamErr('v57: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 </body>
 </html>

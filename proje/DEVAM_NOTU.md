@@ -326,3 +326,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Eşyalar `DEC` (w,h,L: floor/rug/wall, k: bed/lamp, çizim). Döşe kipinde envanterdeki eşya seçilir, ızgaraya konur (R/Döndür), yerleşik eşyaya tıklayınca geri alınır. Kapı hücresi boş kalır. Kayıt: ev nesnesinde `o.room.it[{n,x,y,r}]` (placed ile kaydedilir); eski `o.bed` ilk girişte yatağa dönüşür.
 - Yatak: E ile gece uyunur (`sleepBed(o)`, `o.bed`). Lamba (Taş/Kil lamba, Asma fener) odadayken `roomSafe()` → gece kuralı (`exposed`) işlemez; lambasız odada gece karanlık sayılır, mor ışık gelir (oda kapanır).
 - 13 yeni tarif, kategori **Ev eşyası** (660 tarif): Tabure, Sandalye, Masa, Sandık, Dolap, Raf, Halı, Kilim, Perde, Duvar halısı, Saksı, Ahşap karyola, Asma fener. Elle yapılmaz; kazanda öğrenilir, Usta Kemal malzeme + işçilikle yapar. Simgeleri oda çiziminden üretilir. recipes3.json da güncel.
+
+## v57 — Anılar (`<script id="v57-mem">`)
+- 5 tarif anısı aynı. 7 yeni anı `MEMS`'e eklendi (indeks 5–11): `ev` (sleep/faint/quest) ve `min` (en erken gün). `memEvent(ev)`: olasılık `CH` (uyku %40, bayılma %60, görev %30), uygun ve görülmemiş anılardan rastgele biri `memUnlock` ile sıraya girer; `memTick` uygun anda açar. Her anı bir kez (mems).
+- Kancalar: `sleepBed` (gece uyuyunca), `faint` ve `nightDeath` (bayılma), Ekin'in `turnIn`'i ve NPC görevleri (`window.__v57.quest`).
+- Kart başlığı türe göre ("Bir rüya gördün" / "Bayılırken bir anı"), `memKind` kayıtta `v57.k`. Yeni sahneler `memScene` sarmalayıcısında (i ≥ 5). Kitap › Anılar her anının nasıl gelebileceğini yazar. "Mor fısıltı" 20. günden, "Bırakılan el" 25. günden önce görünmez.
