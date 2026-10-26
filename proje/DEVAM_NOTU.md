@@ -461,3 +461,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v69.9 (26 Ekim 2026)
 - Hep tek bir şey takip edilir: bir görev ya da bir tarif. Görev takip edilince tarif takibi düşer, tarif takip edilince görev takibi düşer (trackQ ↔ trackRecipe, `clrRec`, `window.__qglow`). Eski kayıtlarda yalnız sonuncusu kalır (QS.tr ve b3_trk slice(-1)).
 - Takip edilen görevin istedikleri ekranın üstündeki çubukta (#b3trk) x/y çipleri olarak çıkar (`window.__qrow` v55-q'da; B3 rows() onu tarif yerine koyar; × ile takip bırakılır, `Q:<id>`). Görev kabul edilirken takip açılırsa da aynı kural.
+
+## v70 (26 Ekim 2026)
+- Hileler gizli: Ayarlar'daki "Hile modu", altındaki hile bloğu (#b5cheat) ve kırmızı hile paneli yalnız klavyede art arda c-h-e-a-t yazılınca görünür (ses + toast). Tekrar yazınca gizlenir ve bütün hileler kapanır. Kilit `localStorage['hammadde.cheatok']`; kilitliyken settings.cheat/b5inf/b5scn zorla kapatılır (Z/X da çalışmaz). Kod `<script id="v69c">`, CSS `body:not(.cheatok) ...{display:none}`.
+- Yeni hile: "Bütün ara sahneler açık" (settings.b5scn). Açıkken Kitap › Keşif defteri'nin başında 24 sahne: açılış sineması (replay modu: bitince startWake çağrılmaz, oyundaki dalga sesi korunur), bütün anılar (openMem), Ada halkının sahneleri (`window.__plStory`, v59-story). Final ekranı listede yok (oyun durumunu değiştirir).

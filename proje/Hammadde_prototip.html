@@ -1370,7 +1370,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
     <label class="row chk" for="nightlight"><input id="nightlight" type="checkbox"><span>Gece ışığı<small>Açıkken gece etrafın meşale ya da kafa lambası varmış gibi aydınlanır; karanlıkta mor ışık sana dokunmaz. İstediğin zaman kapat.</small></span></label>
     <label class="row chk" for="glon"><input id="glon" type="checkbox"><span>Ekran kartıyla çiz<small>Açıkken oyun ekran kartıyla (WebGL) çizilir, telefonda çok daha akıcıdır. Bir sorun görürsen kapat; değişiklik oyunu yeniden açar (kayıt korunur).</small></span></label>
 <label class="row chk" for="cheat"><input id="cheat" type="checkbox"><span>Hile modu (test için)<small>Açıkken <b>Z</b> tuşu +100 sikke, <b>X</b> tuşu +100 XP verir; sağdaki kırmızı paneldeki küçük simgelere tıklayınca o malzemeden +10 alırsın.</small></span></label>
-    <div id="b5cheat" hidden><label class="row chk" for="b5inf"><input id="b5inf" type="checkbox"><span>Sınırsız sikke<small>Açıkken sikke sayacının yanında <b>∞</b> görünür; satın almak sikkeni azaltmaz, her şeyi alabilirsin.</small></span></label><div class="b5btns"><button class="mb ghost" id="b5max" type="button">Seviyeyi en üste çıkar</button><button class="mb ghost" id="b5map" type="button">Haritayı tamamen aç</button></div></div>
+    <div id="b5cheat" hidden><label class="row chk" for="b5inf"><input id="b5inf" type="checkbox"><span>Sınırsız sikke<small>Açıkken sikke sayacının yanında <b>∞</b> görünür; satın almak sikkeni azaltmaz, her şeyi alabilirsin.</small></span></label><label class="row chk" for="b5scn"><input id="b5scn" type="checkbox"><span>Bütün ara sahneler açık<small>Açıkken Kitap › <b>Keşif defteri</b>'nin başında bütün ara sahneler listelenir; istediğini izlersin.</small></span></label><div class="b5btns"><button class="mb ghost" id="b5max" type="button">Seviyeyi en üste çıkar</button><button class="mb ghost" id="b5map" type="button">Haritayı tamamen aç</button></div></div>
     <div class="row" hidden style="grid-template-columns:auto minmax(0,1fr)"><button class="mb ghost" id="s-test" type="button" style="font-size:14px;padding:6px 12px">Ses testi</button><span id="s-status" class="note" style="margin:0"></span></div>
     <div class="note" id="s-ios" hidden><b>Tam ekran (iPhone)</b><div class="iosg"><p class="ig0">iPhone'da Safari oyunlara tam ekran izni vermiyor. Ama Safari'nin çubuklarını gizleyip ekranı büyütebilirsin:</p><ol><li><b>Telefonu yan çevir.</b></li><li>İçinde <b>claude.ai</b> yazan adres çubuğunun <b>solundaki</b> küçük simgeye dokun (sarı ile gösterilen).<svg viewBox="0 0 220 34" aria-hidden="true"><rect x="1" y="1" width="218" height="32" rx="16" fill="#e9e9ee" stroke="#c8c8d0"/><circle cx="22" cy="17" r="13" fill="#f2b84b"/><rect x="15" y="10" width="13" height="7" rx="2" fill="none" stroke="#1a1a22" stroke-width="2"/><rect x="15" y="20" width="13" height="2" rx="1" fill="#1a1a22"/><rect x="15" y="24" width="9" height="2" rx="1" fill="#1a1a22"/><text x="120" y="22" font-size="13" font-weight="700" text-anchor="middle" fill="#2a2a33" font-family="system-ui,sans-serif">claude.ai</text><text x="203" y="22" font-size="14" text-anchor="middle" fill="#3a3a48" font-family="system-ui,sans-serif">⟳</text></svg></li><li>Küçük bir pencere açılır. Sağ üst köşesindeki <b>•••</b> düğmesine dokun.<svg viewBox="0 0 220 96" aria-hidden="true"><rect x="1" y="1" width="218" height="94" rx="14" fill="#f4f4f8" stroke="#c8c8d0"/><circle cx="20" cy="20" r="12" fill="#e2e2e8"/><rect x="38" y="9" width="128" height="22" rx="11" fill="#e2e2e8"/><text x="72" y="25" font-size="11" font-weight="700" text-anchor="middle" fill="#2a2a33" font-family="system-ui,sans-serif">A</text><text x="132" y="26" font-size="15" font-weight="700" text-anchor="middle" fill="#2a2a33" font-family="system-ui,sans-serif">A</text><circle cx="196" cy="20" r="13" fill="#f2b84b"/><text x="196" y="24" font-size="14" font-weight="700" text-anchor="middle" fill="#1a1a22" font-family="system-ui,sans-serif">•••</text><rect x="8" y="40" width="204" height="22" rx="11" fill="#e8e8ee"/><text x="20" y="55" font-size="10" fill="#4a4a56" font-family="system-ui,sans-serif">Dikkat Dağıtıcı Öğeleri Gizle</text><rect x="8" y="67" width="204" height="22" rx="11" fill="#e8e8ee"/><text x="20" y="82" font-size="10" fill="#4a4a56" font-family="system-ui,sans-serif">Genişletmeleri Yönet</text></svg></li><li>Açılan listede <b>Araç Çubuğunu Gizle</b>'yi seç.<svg viewBox="0 0 220 40" aria-hidden="true"><rect x="1" y="1" width="218" height="38" rx="12" fill="#f4f4f8" stroke="#c8c8d0"/><rect x="6" y="6" width="208" height="28" rx="8" fill="#f2b84b"/><text x="16" y="25" font-size="13.5" font-weight="700" fill="#1a1a22" font-family="system-ui,sans-serif">Araç Çubuğunu Gizle</text></svg></li></ol><p class="ig1"><b>Listede yoksa:</b> Safari'nin <b>Paylaş</b> düğmesine (yukarı ok çıkan kutu) dokun, <b>Ana Ekrana Ekle</b>'yi seç. Oyunu bundan sonra ana ekrandaki <b>Purple Light</b> simgesinden aç; Safari çubukları olmadan açılır.</p><p class="ig1">Not: En üstte claude.ai'nin ince başlığı (oyunun adı, Paylaş, Oturum aç) kalır; o sayfa claude.ai'ye ait, oyunun içinden kaldırılamaz.</p></div></div>
     <button class="mb ghost" id="s-full" type="button" hidden>Tam ekran</button>
@@ -10357,6 +10357,7 @@ renderPpl=function(){const L=Object.keys(ST_).map(g=>{const S=ST_[g],o=GOBJ[g]()
     if(!h)return `<li style="opacity:.55"><b>${esc(nm)}</b><br><small>Görevlerini yaptıkça sana bu adaya nasıl geldiğini anlatır (${S.F.length} parça).</small></li>`;
     return `<li><b>${esc(nm)}</b> <small style="color:#c9a0ff">· ${esc(S.lost)} · ${h}/${S.F.length}</small><div class="pplf">${S.F.slice(0,h).map(f=>`<p>${f}</p>`).join('')}</div>${ST.s[g]?`<button type="button" class="mk ghost" data-psc="${g}">Sahneyi izle: ${esc(S.sc.n)}</button>`:(h>=S.F.length?'<small>Sahneyi görmek için onunla konuş.</small>':'')}</li>`}).join('');
   return bookTabs()+`<p class="note">Adadaki herkes buraya mor ışık yüzünden geldi ve ışık her birinden birini aldı. Görevlerini yaptıkça hikâyelerini anlatırlar; hepsini bitirince o geceyi görürsün.</p><ul class="book ppl">${L}</ul>`};
+window.__plStory={list:()=>Object.keys(ST_).map(g=>{let nm=g;try{const o=GOBJ[g]();if(o&&o.name)nm=o.name}catch(e){}return [g,nm,ST_[g].sc.n]}),play:g=>playScene(g,true)};
 cbody.addEventListener('click',e=>{if(mode!=='book'||bookTab!=='ppl')return;const b=e.target.closest('[data-psc]');if(b){closeCraft();playScene(b.dataset.psc,true)}});
 window.__v59x={draw:(g,l,t,lt)=>draw(sg,g,t,l,lt)};
 const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);s.v59={h:Object.assign({},ST.h),s:Object.assign({},ST.s)};return s};
@@ -10941,6 +10942,47 @@ const fix=d=>{try{if(d&&d.inv&&!d.v69e){const n=dogs.length;dogs.length=0;try{do
  const st=document.createElement('style');st.textContent='.rb .rbplus{flex:none;display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;margin-left:auto;margin-right:4px;background:var(--accent);color:#1d1606;font-weight:800;font-size:16px;line-height:1;border:2px solid #11170f;border-radius:4px;cursor:pointer}.rb .rbplus:hover{filter:brightness(1.12)}@media (pointer:coarse){.rb .rbplus{width:28px;height:28px;font-size:19px}}';document.head.appendChild(st)}
 const _a=applyState;applyState=function(d){const raw=d;const r=_a.apply(this,arguments);fix(raw);ok=true;return r};
 }).toString()+')()')}catch(e){try{window.__hamErr('v69: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v69c">
+// =====================================================================================================
+// v69c: cheats are hidden until "cheat" is typed on a keyboard (a sound, then they show in Ayarlar; typing
+// it again hides them and turns them off). A cheat switch opens every cutscene in Kitap › Keşif defteri.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const OKK='hammadde.cheatok';let ok=false;try{ok=localStorage.getItem(OKK)==='1'}catch(e){}
+function setOk(v){ok=v;try{localStorage.setItem(OKK,v?'1':'0')}catch(e){}document.body.classList.toggle('cheatok',v);
+  let off=false;if(!v&&(settings.cheat||settings.b5inf||settings.b5scn)){off=true;settings.cheat=false;settings.b5inf=false;settings.b5scn=false;store.set(SETKEY,settings)}
+  try{applyCheat()}catch(e){}if(off)try{const c=$('cheat');if(c)c.dispatchEvent(new Event('change'))}catch(e){}syncScn()}
+const st=document.createElement('style');st.textContent='body:not(.cheatok) label[for=cheat],body:not(.cheatok) #b5cheat,body:not(.cheatok) #cheatpad{display:none!important}'
+  +'#cbody .scnl{margin:6px 0 12px;padding:8px 10px;border:2px solid #c8202a;background:rgba(60,8,12,.25)}#cbody .scnl h3{margin:0 0 6px;font-size:15px;color:#ffb0a0}#cbody .scnl .scb{display:flex;flex-wrap:wrap;gap:6px}#cbody .scnl button{font:inherit;font-size:13px;padding:6px 10px;border:2px solid #8a3a30;background:#1c1416;color:#ffe0d8;border-radius:6px;cursor:pointer}#cbody .scnl button:hover{background:#3a1416}';
+document.head.appendChild(st);
+// typing c-h-e-a-t (not in a text box)
+let buf='';
+addEventListener('keydown',e=>{const t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;if(e.ctrlKey||e.metaKey||e.altKey)return;
+  const m=/^Key([A-Z])$/.exec(e.code||'');if(!m){buf='';return}buf=(buf+m[1].toLowerCase()).slice(-5);
+  if(buf==='cheat'){buf='';setOk(!ok);sfx(ok?'level':'bad');toast(ok?'Hile ayarları açıldı: Ayarlar\'da':'Hile ayarları gizlendi ve kapatıldı')}},true);
+// every cutscene from the Keşif defteri
+const cb=$('b5scn');
+function syncScn(){if(cb)cb.checked=!!settings.b5scn;try{if(craftOpen&&mode==='book'&&bookTab==='codex')renderCraft()}catch(e){}}
+if(cb)cb.addEventListener('change',()=>{settings.b5scn=cb.checked;store.set(SETKEY,settings);toast(cb.checked?'Bütün ara sahneler Keşif defterinde':'Ara sahne listesi kapandı');syncScn()});
+const scnOn=()=>ok&&settings.cheat&&settings.b5scn;
+function list(){const L=[['open','Açılış: Denizde bir akşam']];MEMS.forEach((m,i)=>L.push(['mem:'+i,'Anı: '+m.n]));
+  try{window.__plStory.list().forEach(([g,nm,sc])=>L.push(['ppl:'+g,nm+': '+sc]))}catch(e){}return L}
+const _rc=renderCodex;renderCodex=function(){const h=_rc.apply(this,arguments);if(!scnOn())return h;
+  const box=`<div class="scnl"><h3>Ara sahneler (hile)</h3><div class="scb">${list().map(([k,n])=>`<button type="button" data-scn="${esc(k)}">▶ ${esc(n)}</button>`).join('')}</div></div>`;
+  const i=h.indexOf('<p class="note">');return i>=0?h.slice(0,i)+box+h.slice(i):h+box};
+let replay=false,keepSurf=null;
+const _ec=endCine;endCine=function(){if(!replay)return _ec.apply(this,arguments);replay=false;
+  cine.on=false;cineCv.hidden=true;$('cineskip').hidden=true;$('cinecap').innerHTML='';$('cinetop').className='';cineStopSounds(false);
+  if(keepSurf)cine.snd.surf=keepSurf;keepSurf=null;audio.musicTo(0,.3);document.body.classList.remove('cine')};
+function play(k){if(!scnOn())return;closeCraft();
+  if(k==='open'){keepSurf=cine.snd.surf||null;delete cine.snd.surf;replay=true;startCine(diff==='hard');return}
+  if(/^mem:/.test(k)){const i=+k.slice(4);if(MEMS[i])openMem(i,true);return}
+  if(/^ppl:/.test(k)){try{window.__plStory.play(k.slice(4))}catch(e){}}}
+cbody.addEventListener('click',e=>{if(mode!=='book'||bookTab!=='codex')return;const b=e.target.closest('[data-scn]');if(b)play(b.dataset.scn)});
+setOk(ok);
+}).toString()+')()')}catch(e){try{window.__hamErr('v69c: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v68">
 // v68: the graphics-card switch in Ayarlar (the choice is read once at start, so changing it reopens the game; the save is kept)
