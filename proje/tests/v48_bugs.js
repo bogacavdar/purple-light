@@ -82,7 +82,9 @@ await p.evaluate(()=>window.__ham.q(0));
 {const k=await ev("hand=-1;const n=nodes.find(n=>n.alive&&!n.mine);n.x=npc.x+10;n.y=npc.y+6;player.x=npc.x+12;player.y=npc.y+10;target().kind");ok('E gathers before talking',k==='node',k)}
 
 // D3: codex counts only reachable recipes; willows give withies
-ok('codex thresholds use reachable recipes',await ev("catN('Ağaç')<DB.R.filter(x=>x.c==='Ağaç').length&&reachable().has('Balık kapanı')"));
+ok('codex thresholds use reachable recipes',await ev("catN('Ağaç')===Math.max(1,DB.R.filter(x=>x.c==='Ağaç'&&reachable().has(x.r)).length)&&reachable().has('Balık kapanı')"));
+// v48 b4: every recipe has a source now
+ok('all recipes reachable (b4)',await ev("DB.R.every(x=>reachable().has(x.r))"));
 
 ok('no page errors',!errs.length,errs.slice(0,3).join(' | '));
 await b.close();console.log(fails?`${fails} FAIL`:'ALL OK');process.exit(fails?1:0)})();
