@@ -7,7 +7,7 @@
 - GitHub Pages ayarını (Settings → Pages → main, /root) oturum açamıyor (API proxy'de kapalı); Boğaç bir kez kendisi açar.
 
 ## ⭐ BURADAN BAŞLA (26 Ekim 2026 akşamı, v62)
-- Yayındaki sürüm **v64** (v63–v64 notları en altta). Önceki: **v62** (GitHub `main`, https://bogacavdar.github.io/purple-light/). Bu turda v51–v62 yapıldı; ayrıntılar dosyanın sonundaki v51…v62 bölümlerinde.
+- Yayındaki sürüm **v65** (v63–v65 notları en altta). v65 harita değişikliğiyle eski kayıtlar bir kez silindi (MAPV 4). Önceki: **v62** (GitHub `main`, https://bogacavdar.github.io/purple-light/). Bu turda v51–v62 yapıldı; ayrıntılar dosyanın sonundaki v51…v62 bölümlerinde.
 - Özet: yalnızca Nazlı satar (doğal malzeme), ustalar malzeme + işçilikle yapar, ağırlıklı ganimet · Zırhçı Durmuş · gece 2,5 dk, meşale bir gece, reçine (L) · Işıkçı 15. gün akşamı sabit yerde (takas), köpekçi 5. gün hediye / 20. gün mor sinyal (en çok 5) · NPC görev zincirleri + Görevler paneli (G) + mavi takip · ev içleri ve döşeme (13 Ev eşyası tarifi, 660 tarif) · 7 rastgele anı · telefon performansı (parça parça zemin, otomatik kalite) · ada halkının hikâyeleri ve ara sahneler · en üst seviye 50 · ad girişinde Enter · balta dersi düzeltmeleri.
 - Yeni kod blokları `</body>` öncesinde: `v55-q` (görevler), `v56-room` (ev içi), `v57-mem` (anılar), `v58-perf` (performans), `v59-story` (hikâyeler), `v62-axe` (balta dersi). Hepsi `window.__plEval` ile oyunun kapsamında çalışır.
 - Çalışma düzeni (Boğaç): test yok, yalnızca `chk.js`; Boğaç kendi test eder. Ajan yok, token önemli. Her adım ayrı sürüm olarak `main`'e gönderilir.
@@ -387,3 +387,15 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Toplarken hasar yok (`HURT` boş: böğürtlen dikeni, çakmaktaşı). C4 "Kalın deri" artık zehir, yanık ve çiğ eti azaltır (zaten `hurt` fiziksel olmayan hasarı azaltıyordu); eğitim metinlerinden diken uyarısı çıktı.
 - Diyaloglar hikâyelere göre: Ekin "onu bulacağız" demiyor (ışığın aldığını kendisi de bilir, söz veremez); Zümrüt'ün eski "kazan her şeyi yapar" sözleri "kazan tarif öğretir" oldu, büyükannesine gönderme; Hasan tarlayı "biri için" ekiyor; Dursun "silah demircisi".
 - Konuşma portreleri: Ekin, Zümrüt, Nazlı, Dursun, Durmuş, Hasan, Kemal, Rıza, Toygar, Börü için dünyadaki görünüşlerinden (NPCL + şapka/pipo/önlük) çizilir (`#dlg.v64 img.v64p`); eğitim kartındaki küçük resim de öyle. Nuri, Rüstem, Kaptan, Büyücü ve Işıkçı eski SVG'lerini kullanır.
+
+## v65 — İki kat ada, altı bölge (`<script id="v65">`, ana kodda dünya üretimi, `v48-b5` müzik)
+- Harita 645×464 karo (alan ≈2×). `MAPV=4`: eski kayıtlar açılışta bir kez silinir (`window.__v65wiped`, başlıkta uyarı), `cleanSave` başka harita kaydını açmaz.
+- Bölgeler: `ZONE` artık tehlike kademesi (0 batı/yurt, 1 büyük nehirle sıradağ arası, 2 sıradağın doğusu); `BIO` (0 Çayır, 1 Orman, 2 Bataklık, 3 Kayalık Dağ, 4 Kül Diyarı, 5 Mor Kristal Vadisi), `bioAt`, `BNAME/BDANGER/BCOL`. Orman yurdun kuzeyi, Dağ orta bölgenin kuzeyi (köprünün 24 karo kuzeyinden), Kristal en doğu.
+- Sıradağ: karo 5 (`RIDGEX`), suyla aynı engel (`isWater` 5'i de sayar; su alma/balık için `isWet`). Tek geçit `PASS`, kapalıyken `rockfall` (blocked + reach 0). Ekin'in yeni ana görevi "Doğu geçidini aç": 2 Kaya patlatıcı (yarasa gübresi, kömür, tuz, çömlek) + kuvars kazma ya da üstü. Kayıtta `v65.rf`.
+- İkinci nehir artık orta bölgeden kuzey kıyıya akar (doğuyu ikiye bölmesin diye); bataklık gölleri güney-ortada.
+- Her bölgede 5 ağaç türü, 7 canlı, 14 bitki/buluntu, 3 maden (`BTREE`, `BANIM`, `BPLANT`, `BORE` v65 bloğunda). Yeni: 11 ağaç (odun/kalas/sap/kömür zinciri), 13 canlı (Ur kekliği, Kartal, Vaşak, Kül böceği, Kor yarasası, Ateş akrebi, Mor güve, Işık tilkisi, Kristal geyik, Gölge kurdu, Kristal örümcek, Işık engereği, Kristal golem), 26 bitki/buluntu, Ametist madeni; hepsi en az bir tarifte (DB'ye ≈100 tarif eklendi, toplam 759). Bölgesel bitkiler ve madenler v65'te silinip bölge bölge yeniden dizilir; ağaçlar bölgeye göre türlenir, %18 seyreltildi.
+- Meyve ağaçları: boş elle silkelenir, balta eldeyken kesilir: odun + 1–2 meyve kesin, %35 tohum (`ty.seed`, "Herhangi meyve tohumu": Meyve fidanı, Tohum yağı).
+- Madenler 2×2 büyük çizilir (4 kat alan), üstünden geçilmez (`mineAt` ızgarası), toplama menzili 13 px daha geniş.
+- Bölge hissi: ilk girişte büyük başlık (`V65.seen`, kayıtta), her bölgenin hava rengi/parçacıkları, haritada bölge renkleri + açıklama; büyük haritada keşfedilmiş yerin üstüne gelince bölge adı (`#v65mt`). Müzik ayarı "Bölgeye göre" (varsayılan): Ada, Orman, Sis, Dağ, Derinlik, Kristal; yurtta gece Gece.
+- Yan profil: burun, kaş, dudak, çene; gözlük yandan cam kenarı + sap; kel karakterde saç tokası yok (yaratmada satır da gizli).
+- Hız: `findSpot` artık düğüm ızgarası (`nodeNear`) kullanır.
