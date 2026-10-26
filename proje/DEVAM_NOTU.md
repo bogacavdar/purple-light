@@ -448,3 +448,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 
 ## v69.6 (26 Ekim 2026) — acil düzeltme
 - v69.5'te kazan açılmıyordu: satır içine eklenen `// v69.5` yorumu aynı satırdaki `let sb='';` bildirimini yoruma çevirdi → renderCraft "sb is not defined". Yorum silindi. Ders: tek satırlık kod satırlarının ortasına `//` yorum koyma.
+
+## v69.7 (26 Ekim 2026)
+- Kazan/örs malzeme satırı "+": alt tarif henüz ✓ (öğrenilmiş) olmasa da açıksa (isOpen) ve malzeme yetiyorsa yapılır, öğrenilir ve kazana atılır (canQuick artık foundSet istemiyor). Örn. Keskin taş eksikken envanterde 2 Taş varsa + çalışır.
+- v69.3'teki tarif listesi "+" kaldırıldı (Boğaç: "+" yalnız seçilen bilinmeyen tarifin malzeme satırlarında olsun).
+- Ekin'in akşam "meşaleni al / meşale yap" uyarısı (duskCheck) yalnız ilk 3 günde çıkar; 27. günde çıkması saçmaydı.

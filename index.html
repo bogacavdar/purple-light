@@ -3481,11 +3481,11 @@ let potBy='name', potCat='Tümü';
 const CATS=[...new Set(DB.R.map(x=>x.c))];
 const openSeq=new Map();let openN=0;
 function syncSeq(){const L=DB.R.filter(x=>!openSeq.has(x.r)&&isOpen(x.r)).map(x=>x.r);if(!L.length)return;if(!openN)L.sort((a,b)=>a.localeCompare(b,'tr'));for(const r of L)openSeq.set(r,++openN)}
-const canQuick=r=>{const y=REC.get(r);return foundSet.has(r)&&canBrew(y)&&y.t.every(t=>(inv[t]||0)>0)};
+const canQuick=r=>{const y=REC.get(r);return !!y&&isOpen(r)&&canBrew(y)&&y.t.every(t=>(inv[t]||0)>0)};
 function potMiss(y){const add=[];for(const o of pot.put)for(const n of Object.keys(o))if(o[n]>0){inv[n]=(inv[n]||0)+o[n];add.push([n,o[n]])}try{return missingFor(y)}finally{for(const [n,q] of add)inv[n]-=q}}   // v69.4: what the cauldron holds counts too
 function missingFor(y){const own={...inv},out=[];for(const [n,q] of y.i){let need=q;for(const m of expand(n)){const k=Math.min(need,own[m]||0);own[m]=(own[m]||0)-k;need-=k}if(need>0)out.push(`${need}× ${n}`)}for(const t of y.t)if(!(inv[t]>0))out.push(`alet: ${t}`);return out.join(', ')}
 function quickBrew(r){
-  const y=REC.get(r);if(!canQuick(r)){msg(foundSet.has(r)?`${r} için eksik: ${missingFor(y)}`:`${r} henüz ✓ değil: önce bir kez kendin kaynat`,'bad');sfx('bad');renderCraft();return}
+  const y=REC.get(r);if(!canQuick(r)){msg(`${r} için eksik: ${missingFor(y)}`,'bad');sfx('bad');renderCraft();return}
   for(const [n,q] of y.i){let need=q;for(const m of expand(n)){const k=Math.min(need,inv[m]||0);inv[m]=(inv[m]||0)-k;need-=k}}
   const isNew=!foundSet.has(r);gain(r);if(isNew){found.push(r);foundSet.add(r);checkCodex()}
   sfx(isNew?'found':'craft');potFx=performance.now()+600;
@@ -3514,14 +3514,14 @@ function renderPot(list){
   const rows=x?x.i.map(([n,q],i)=>{const h=putSum(i),have=expand(n).reduce((t,m)=>t+(inv[m]||0),0);
     // a part that is itself a recipe gets a + button: make one right here (or see what is missing)
     const sub=(FG||!foundSet.has(x.r))&&have<q-h?subRecipe(n):null;let sb='';
-    if(sub){const can=canQuick(sub),miss=can?'':!foundSet.has(sub)?'önce bir kez kendin kaynat (✓ olunca + ile hızlı yapılır)':missingFor(REC.get(sub));
-      sb=`<button type="button" class="sb${can?'':' no'}" data-sub="${esc(sub)}" aria-label="${esc(sub)} yap${can?'':': eksik '+esc(miss)}">+</button>${can?`<span class="stip ok">Yeni 1 ${esc(sub)} yap</span>`:`<span class="stip">${foundSet.has(sub)?'Eksik: ':''}${esc(miss)}</span>`}`}
+    if(sub){const can=canQuick(sub),miss=can?'':missingFor(REC.get(sub));
+      sb=`<button type="button" class="sb${can?'':' no'}" data-sub="${esc(sub)}" aria-label="${esc(sub)} yap${can?'':': eksik '+esc(miss)}">+</button>${can?`<span class="stip ok">Yeni 1 ${esc(sub)} yap</span>`:`<span class="stip">Eksik: ${esc(miss)}</span>`}`}
     return `<li class="${h>=q?'ok':''}${have>0&&h<q?' p3put':''}" data-pn="${esc(n)}"><img src="${icon(expand(n)[0])}" alt=""><span>${esc(n)}</span><b>${h} / ${q}</b>${sb}<small>sende ${have}</small></li>`}).join('')+x.t.map(t=>`<li class="${inv[t]>0?'ok':'miss'}"><img src="${icon(t)}" alt=""><span>Alet: ${esc(t)}</span><b>${inv[t]>0?'var':'yok'}</b><small>harcanmaz</small></li>`).join(''):'';
   const need=x?new Set(x.i.flatMap(([n])=>expand(n))):null;
   const tiles=list.filter(n=>!need||need.has(n)||!sk('B2'));
   const wantOf=n=>{if(!x||potMode==='dene'||(!FG&&foundSet.has(x.r)))return 0;let w=0;x.i.forEach(([m],i)=>{if(expand(m).includes(n))w+=Math.max(0,needLeft(i))});return w};
   cbody.innerHTML=(FG?smithTabs():'')+potSwitch()+`<div class="cauldron">
-    <div class="rlist" role="list">${open.length?groups.map(([c,L])=>(c?`<div class="rgrp"><span>${esc(c)}</span><span>${L.length}</span></div>`:'')+L.map(y=>`<button type="button" class="rb${pot.r===y.r?' on':''}${canBrew(y)?' can':''}${!FG&&foundSet.has(y.r)?' learned':''}" data-rec="${esc(y.r)}"><img src="${icon(y.r)}" alt=""><span>${esc(y.r)}${foundSet.has(y.r)?(FG?' <small>✓</small>':' <small>öğrenildi</small>'):''}${openSeq.get(y.r)>newest&&!foundSet.has(y.r)?' <small style="color:#ffd27a">yeni</small>':''}</span>${!FG&&handSimple(y)&&handKnown(y.r)&&!potMiss(y)?`<span class="rbplus" data-hplus="${esc(y.r)}" role="button" tabindex="0" aria-label="${esc(y.r)} yap" title="Malzemen yetiyor: hemen yap">+</span>`:''}<em class="${inv[y.r]>0?'own':''}" title="Sende kaç tane var">${inv[y.r]>0?'×'+inv[y.r]:'0'}</em></button>`).join('')).join(''):(f?'<p class="note">Aramana uyan tarif yok.</p>':'')+FG?'<p class="note">Henüz açık bir alet tarifi yok. Alet tarifleri parçalarını (sopa, ip, keskin taş…) elde edince açılır; parçaları Zümrüt\'ün kazanında yaparsın.</p>':'<p class="note">Açık tarif yok. Malzeme topladıkça tarifler açılır.</p>'}</div>
+    <div class="rlist" role="list">${open.length?groups.map(([c,L])=>(c?`<div class="rgrp"><span>${esc(c)}</span><span>${L.length}</span></div>`:'')+L.map(y=>`<button type="button" class="rb${pot.r===y.r?' on':''}${canBrew(y)?' can':''}${!FG&&foundSet.has(y.r)?' learned':''}" data-rec="${esc(y.r)}"><img src="${icon(y.r)}" alt=""><span>${esc(y.r)}${foundSet.has(y.r)?(FG?' <small>✓</small>':' <small>öğrenildi</small>'):''}${openSeq.get(y.r)>newest&&!foundSet.has(y.r)?' <small style="color:#ffd27a">yeni</small>':''}</span><em class="${inv[y.r]>0?'own':''}" title="Sende kaç tane var">${inv[y.r]>0?'×'+inv[y.r]:'0'}</em></button>`).join('')).join(''):(f?'<p class="note">Aramana uyan tarif yok.</p>':'')+FG?'<p class="note">Henüz açık bir alet tarifi yok. Alet tarifleri parçalarını (sopa, ip, keskin taş…) elde edince açılır; parçaları Zümrüt\'ün kazanında yaparsın.</p>':'<p class="note">Açık tarif yok. Malzeme topladıkça tarifler açılır.</p>'}</div>
     <div class="pside">
       ${x?`<div class="psel"><img src="${icon(x.r)}" alt=""><div><b>${esc(x.r)}</b><small>sende ${inv[x.r]||0} · satış ${Math.round(unitPrice(x.r))} sikke</small></div></div><ul class="ping">${rows}</ul>`:FG?'<p class="note">Listeden bir alet seç. Parçaları örse sürükle ya da dokun, sonra <b>Döv</b>. Kılıç dövmek mi? Dursun hâlâ umutlu.</p>':'<p class="note">Kazan eşya yapmaz, <b>tarif öğretir</b>. Listeden bir tarif seç, malzemeleri koy, <b>Tarifi öğren</b>\'e bas: malzemeler tarifi açmaya gider. Öğrendiklerin <b style="color:#8fd46b">yeşil</b> olur; onları sonra '+(TOUCH?'el ikonuyla':'Tab ile')+' her yerde yaparsın, aletleri Demirci Dursun döver.</p>'}
       <div id="pot" class="potz${potReady()?' ready':''}${performance.now()<potFx?' fx':''}" aria-label="${FG?'Örs':'Kazan'}"><div class="liq"></div><span>${x?(!FG&&foundSet.has(x.r)?'Bu tarifi zaten öğrendin':potReady()?(FG?'Hazır! Döv':'Hazır! Tarifi öğren'):(FG?'Parçaları örse sürükle':'Malzemeleri buraya sürükle')):(FG?'Örs boş':'Kazan boş')}</span></div>
@@ -4951,7 +4951,7 @@ let duskDay=0;   // the evening (17:30) warning was given on this day
 const torchKeyText=()=>{const i=hotList().findIndex(isTorch);if(i>=0)return TOUCH?`alttaki ${slotKey(i)}. kutuya dokun`:`${slotKey(i)} tuşuna bas`;const t=Object.keys(TORCHL).find(n=>inv[n]>0);return t?`önce ${beltHowTxt(t)}, sonra ${TOUCH?'o kutuya dokun':'o yuvanın sayı tuşuna bas'}`:(TOUCH?'alttaki alet kutusundan seç':'alet çubuğundan seç')};
 function duskCheck(){if(day>1&&(torchTut===1||torchTut===2)&&dayT>=360&&dayT<1050)torchTut=3;   // morning: last evening's reminder is over
   if(duskDay===day||!met||dayT<1050||dayT>=1140||sailing||sis.on)return;duskDay=day;
-  if(lampOn())return;
+  if(lampOn()||day>3)return;
   const has=ownsKind('torch'),inHand=!!torchHeld();
   if(day===1||!inHand){sfx('bad');announce('Hava kararıyor',has?(inHand?'Ekin: "Meşalen elinde, aferin!"':'Ekin: "Meşaleni eline al evlat!"'):'Ekin: "Hemen bir meşale yap evlat!"')}
   if(!has){if(torchTut===0||torchTut>=3)torchTut=1;bought.add('Kaba meşale');setTimeout(()=>toast(`Saat 17:30. Gece 20:00'de zifiri karanlık olur. 2 dal + 2 lif + 2 yaprakla bir Kaba meşale yap (${TOUCH?'el ikonu':'Tab'}).`,true),900)}
