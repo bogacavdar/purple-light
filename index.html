@@ -1443,6 +1443,9 @@ ladder(['Taş balta','Çakmaktaşı balta','Granit balta','Kuvars balta','Bazalt
 ladder(['Taş kazma','Çakmaktaşı kazma','Granit kazma','Kuvars kazma','Bazalt kazma','Obsidyen kazma','Tunç kazma','Demir kazma'],'pick',[3,2,2.4,2,1.6,1.2,1.8,1.3],[25,35,40,50,70,100,90,140],[150,300,300,600,1200,3000,1000,2000],'maden kazar');
 ladder(['Kürek','Boynuz kazma'],'shovel',[3,2],[25,40],[100,250],'kil kazar');
 const toolPrice=n=>buyFloor(n,GT[n].price);   // Dursun's price (D1)
+// v51: nobody but Nazlı sells; masters make what you have learnt from your materials and take a labour fee
+const laborFee=r=>Math.max(2,Math.round((PRICE_[r]||10)*.15));
+function smithOf(r){return smith}
 ladder(['Mızrak','Çakmaktaşı mızrak','Kuvars mızrak','Bazalt mızrak','Obsidyen mızrak','Tunç mızrak','Demir mızrak'],'hunt',[3,2.5,2,1.6,1.2,2,1.6],[20,30,45,60,90,80,120],[120,250,500,1000,2500,1000,2000],'av ve savaş: uzaktan vurur');
 ladder(['Ağ','Olta','Kemik zıpkın','Balık kapanı'],'fish',[3,3,2.5,4],[25,25,30,40],[150,150,200,250],'balık tutar (eline al, suya dön, '+(TOUCH0?'çıkan düğmeye dokun':'E')+')');
 ladder(['Tırmık'],'rake',[1.4],[30],[80],'toprağı hazırlar');
@@ -1540,7 +1543,13 @@ const shopQ={};const shopBuy=(n,q)=>{shopQ[n]=(shopQ[n]||0)+(q||1)};
 function shopTake(n,q){const s=Math.min(q,shopQ[n]||0);if(s>0){shopQ[n]-=s;if(!shopQ[n])delete shopQ[n]}return s}
 const unitPrice=(n,bulk)=>PRICE_[n]*sellMult(n,bulk);
 let PRICE_=DB.p;
-PRICE_['Yaprak barınağı']=1;   // v48c: a one-night shelter is worth next to nothing when sold, so Rıza can ask 5 sikke for it (the price floor stays low)
+PRICE_['Yaprak barınağı']=1;
+// v51: trophies of harder beasts are worth more (rare parts most of all); recipes that use them follow by the change × 1,3
+(function(){const NEWP={'Geyik boynuzu':9,'Kurt derisi':9,'Kurt dişi':10,'Yaban domuzu derisi':9,'Yaban domuzu dişi':11,'Yaban öküzü derisi':14,'Öküz boynuzu':16,'Timsah dişi':35,'Zehir bezesi':16,'Ayı pençesi':22,'Mağara ayısı derisi':24,'İri diken':12,'Yaban atı derisi':10};
+  const delta={};for(const k in NEWP)if(PRICE_[k]!=null){delta[k]=NEWP[k]-PRICE_[k];PRICE_[k]=NEWP[k]}
+  const byR={};for(const x of DB.R)byR[x.r]=x;const memo={},busy={};
+  const rd=r=>{if(r in memo)return memo[r];if(busy[r])return 0;busy[r]=1;let t=0;for(const [n,q] of byR[r].i)t+=q*(byR[n]?rd(n):(delta[n]||0));busy[r]=0;return memo[r]=Math.round(t*1.3)};
+  for(const x of DB.R){const d=rd(x.r);if(d&&PRICE_[x.r]!=null)PRICE_[x.r]=Math.max(1,PRICE_[x.r]+d)}})();   // v48c: a one-night shelter is worth next to nothing when sold, so Rıza can ask 5 sikke for it (the price floor stays low)
 const STONEISH=new Set(['Taş','Çakmaktaşı','Nehir çakılı','Kum','Nehir kili']);
 function gatherMult(name){let m=(1-(sk('G3')?.45:sk('G2')?.30:sk('G1')?.15:0))/STAT.gather(lvl);
   if((sk('G5')&&/ odunu$/.test(name))||(sk('G6')&&STONEISH.has(name))||(sk('G7')&&name==='Su'))m*=.5;return m}
@@ -1854,7 +1863,7 @@ const FARM_TOOLS=['Tırmık','Sulama kabı','Tırpan','Taş kazma'];
 function farmPrompt(f){
   const c=f.crop&&CROP[f.crop];
   if(f.st==='soil'||f.st==='tilled')return useTool('rake')?['E','Toprağı tırmıkla hazırla']:[null,toolHint('rake')?toolHint('rake'):'Toprağı hazırlamak için tırmık gerekli · Çiftçi Hasan\'a sor'];
-  if(f.st==='raked'){const s=curSeed();return s?['E',`${s} ek`]:[null,'Tohum gerekli · Çiftçi Hasan satar']}
+  if(f.st==='raked'){const s=curSeed();return s?['E',`${s} ek`]:[null,'Tohum gerekli · Pazarcı Nazlı satar']}
   if(f.st==='planted'&&!f.wet)return useTool('can')?['E',`${f.crop} tohumunu sula`]:[null,toolHint('can')?toolHint('can'):'Sulamak için sulama kabı gerekli'];
   if(f.st==='planted'&&f.t<c.grow)return[null,`${f.crop} büyüyor · %${Math.floor(f.t/c.grow*100)}`];
   return useTool('scythe')?['E',`${f.crop} tırpanla biç`]:[null,toolHint('scythe')?toolHint('scythe'):`${f.crop} hazır · biçmek için tırpan gerekli`];
@@ -1925,7 +1934,7 @@ function talkMarket(){
   if(tz&&tz<9){return say('Önce Zümrüt\'ün işini bitir evlat; sonra gel, alışveriş ederiz.',[{t:'Tamam',pri:1,f:bye}],market)}
   if(market.met||tut<11){market.met=true;return openMenu('sell')}
   market.met=true;
-  say('Hoş geldin, kazazede! Ben <b>Nazlı</b>. Adada ne toplarsan getir, hepsini alırım. Toplamaya üşenirsen bildiğin malzemeleri ben de satarım; ama <b>üç katına</b>. Ne de olsa sırtımda taşıdım!',[
+  say('Hoş geldin, kazazede! Ben <b>Nazlı</b>. Adada ne toplarsan getir, hepsini alırım. Adada bir tek ben satarım: toplamaya üşenirsen bir kez gördüğün <b>doğal malzemeleri</b> bulur getiririm; tohum, ot, odun, maden, post, diş… Ama uzak ve tehlikeli yerlerden gelen <b>pahalıdır</b>, ne de olsa sırtımda taşıdım!',[
     {t:'Satmak istiyorum',pri:1,fresh:1,f:()=>{bye();mktTab='sell';openMenu('sell')}},
     {t:'Malzeme almak istiyorum',f:()=>{bye();mktTab='buy';openMenu('sell')}},
     {t:'Hoşça kal',f:bye}],market);
@@ -1933,7 +1942,7 @@ function talkMarket(){
 function talkSmith(){
   if(tz===13){smith.met=true;return say(`Hah! Börü'nün selamı mı? O deli oğlan hâlâ kerevitlerle mi dövüşüyor? Ben <b>Dursun</b>, adanın demircisi. Getirdiğin parçalar güzel. Hadi, örse koy, <b>Taş balta</b>nı birlikte dövelim!`,[{t:'Örse koyalım',pri:1,fresh:1,f:()=>{bye();openMenu('forge');selectRecipe('Taş balta');renderCraft();renderTut()}}],smith)}
   if(tz&&tz<13)return say('Örs sıcak ama sen daha hazır değilsin. Önce adanın insanlarıyla tanış; zamanı gelince Börü seni bana yollar.',[{t:'Tamam',pri:1,f:bye}],smith);
-  const opts=[{t:'Alet dök',pri:1,fresh:1,f:()=>{bye();openMenu('forge')}},{t:'Alet al ya da bile',fresh:1,f:()=>{bye();openMenu('shop')}},{t:'Hoşça kal',f:bye}];
+  const opts=[{t:'Alet dök',pri:1,fresh:1,f:()=>{bye();openMenu('forge')}},{t:'Aletimi bile',fresh:1,f:()=>{bye();openMenu('shop')}},{t:'Hoşça kal',f:bye}];
   if(!smith.met){smith.met=true;return say('Hah! Kazazede sen misin? Ben <b>Dursun</b>, adanın tek demircisi. Kılıç dövmeye bayılırım; ormanda yaban domuzları, gece kurtlar dolaşıyor, bir <b>taş kılıç</b> iyi gelir. <b>Balta, kazma, bıçak, tırmık</b> da döverim. Zümrüt\'ün kazanı ip, sopa, çömlek işine iyidir; <b>alet ise örste dövülür</b>. Parçaları getir, birlikte döveriz. Körelen aletini de bilerim.',opts,smith)}
   const L=['Örs sıcak, çekiç hazır. Ne dövüyoruz?','Gel bakalım! Kılıç mı dövelim? Şaka şaka… balta de.','Aletin körelirse getir, ilk günkü gibi keskinleştiririm.','Zümrüt yine çorba mı kaynatıyor? Burada iş var, iş!'];
   say(L[Math.floor(Math.random()*L.length)],opts,smith);
@@ -1955,7 +1964,7 @@ function talkFarmer(){
     return say(`${R2.txt}${R2.next?`<br><br>Tarif kitabına yazdım: <b>${R2.next}</b> = ${esc(recText(REC.get(R2.next)))}`:''}<br><br><b>+${R2.c} sikke · +10 XP</b>`,[{fresh:1,t:'Teşekkürler',pri:1,f:bye}],farmer);
   }
   say(want?`Hâlâ bir <b>${want}</b> lazım. Tarifi kitabında: ${esc(recText(REC.get(want)))}`:'Tarla seni bekliyor. Ne lazım?',[
-    ...(farmStep>=2?[{fresh:1,t:'Tohum satın al',pri:!want,f:seedShop}]:[]),
+    ...(farmStep>=2?[{fresh:1,t:'Tohum nereden bulurum?',f:()=>say('Ben tohumu ancak ekerim, satmam evlat. Tohum lazımsa <b>Pazarcı Nazlı</b>\'ya git; bir kez elinden geçen her tohumu o bulur getirir.',[{t:'Anladım',pri:1,f:talkFarmer}],farmer)}]:[]),
     ...(seedList().length>1?[{fresh:1,t:`Ekeceğim tohumu seç (şu an: ${curSeed()})`,f:seedPick}]:[]),
     {t:'Tarla nasıl sürülür?',f:()=>say('Tırmıkla toprağı hazırla, tohum ek, sulama kabıyla sula, bekle, olgunlaşınca tırpanla biç. Kuru toprakta tohum büyümez; üstünde mavi damla görürsen sulamayı unutmuşsun demektir.',[{t:'Anladım',pri:1,f:talkFarmer}],farmer)},
     {t:'Hoşça kal',pri:!!want,f:bye},
@@ -2791,7 +2800,7 @@ function renderCraft(){
     {const sa=$('sellall');if(sa)sa.hidden=true;const s2=$('sellsafe');if(s2)s2.hidden=true}
     const f=filter.toLocaleLowerCase('tr-TR');
     const L=rawList().filter(n=>!f||n.toLocaleLowerCase('tr-TR').includes(f));
-    cbody.innerHTML=mktTabs()+`<p class="note">Nazlı, adada bulduğun <b>toplanabilir</b> malzemeleri satar; ama senin ona sattığının <b>3 katına</b>. Zamanın sikkeden değerliyse al.</p>`+(L.length?`<ul class="mkt">${L.map(n=>{const pr=rawPrice(n);return `<li><span class="nm">${esc(n)}${inv[n]?` <small style="color:var(--ink-dim)">· sende ${inv[n]}</small>`:''}</span><span class="pr">${pr.toLocaleString('tr-TR')} sikke</span><button data-bq="1" data-n="${esc(n)}" type="button"${!plInf()&&coins<pr?' disabled':''}>1 al</button><button class="all" data-bq="10" data-n="${esc(n)}" type="button"${!plInf()&&coins<pr*10?' disabled':''}>10 al · ${(pr*10).toLocaleString('tr-TR')}</button></li>`}).join('')}</ul>`:`<p class="note">${filter?'Aramana uyan malzeme yok.':'Henüz bildiğin toplanabilir bir malzeme yok.'}</p>`);
+    cbody.innerHTML=mktTabs()+`<p class="note">Nazlı yalnızca <b>doğanın verdiğini</b> satar: toplanan, kazılan, avlanan ya da tutulan, en az bir kez elinden geçmiş malzemeler. Yapılmış eşya satmaz. Ulaşması zor olan daha pahalıdır.</p>`+(L.length?`<ul class="mkt">${L.map(n=>{const pr=rawPrice(n);return `<li><span class="nm">${esc(n)}${inv[n]?` <small style="color:var(--ink-dim)">· sende ${inv[n]}</small>`:''}</span><span class="pr">${pr.toLocaleString('tr-TR')} sikke</span><button data-bq="1" data-n="${esc(n)}" type="button"${!plInf()&&coins<pr?' disabled':''}>1 al</button><button class="all" data-bq="10" data-n="${esc(n)}" type="button"${!plInf()&&coins<pr*10?' disabled':''}>10 al · ${(pr*10).toLocaleString('tr-TR')}</button></li>`}).join('')}</ul>`:`<p class="note">${filter?'Aramana uyan malzeme yok.':'Henüz bildiğin toplanabilir bir malzeme yok.'}</p>`);
   }else if(mode==='sell'){
     {const sa=$('sellall');if(sa)sa.hidden=false}
     const total=Math.round(order.filter(n=>inv[n]>0&&bulkSellable(n)).reduce((t,n)=>t+unitPrice(n,true)*inv[n],0));
@@ -2812,14 +2821,12 @@ function renderCraft(){
       <p class="note" style="margin-top:10px">Can ve enerji seviyeyle birlikte büyür; Sağlık ve Savaş yetenekleri bunları ayrıca artırır. ${sk('K1')?`Koşu hızın ${String(runMult()).replace('.',',')} kat.`:'Koşmayı kırık köprüyü onarınca öğrenirsin.'} Her seviye bir öncekinden %35 daha fazla XP ister. Bazı yetenekler sikkenin yanında seviye de ister.</p>`;
     drawDoll();
   }else if(mode==='shop'){
-    const all=Object.keys(GT).filter(n=>GT[n].kind!=='water'&&GT[n].kind!=='torch'), known=all.filter(n=>forged.has(n)), hidden=all.length-known.length;
-    if(cnt)cnt.textContent=`Bulunan alet tarifleri: ${known.length} / ${all.length}`;
-    const unk=all.filter(n=>!forged.has(n)).map(n=>`<div class="tool unk"><img class="gl" alt="" src="${unkIcon()}"><div class="ti"><b>???</b><span>${GT[n].use.replace(/ \(.*\)/,'')} · tarifini birleştirerek bul</span></div><button type="button" disabled>Kilitli</button></div>`).join('');
-    cbody.innerHTML=smithTabs()+`<p class="note">Bir toplama aletini bir kez dövdün mü, yenisini Dursun'dan satın alırsın. Aletler kullandıkça körelir; körelince burada bileyebilirsin.${known.length?'':' Henüz hiç alet dövmedin: önce <b>Alet dök</b> sekmesinde taş balta yapmayı dene.'}</p><div class="shop">${known.map(n=>{
-      const g=GT[n],own=(inv[n]||0)>0,d=nn(toolDur[n],g.dur),dull=own&&d<=0,pct=own?Math.max(0,d/g.dur*100):100;
-      const act=!own?`<button data-buy="${esc(n)}" type="button"${!plInf()&&coins<toolPrice(n)?' disabled':''}>Satın al · ${toolPrice(n).toLocaleString('tr-TR')}</button>`
-        :`<button data-sharp="${esc(n)}" type="button"${d>=g.dur||(!plInf()&&coins<g.sharp)?' disabled':''}>${d>=g.dur?'Keskin':'Bile · '+g.sharp.toLocaleString('tr-TR')}</button>`;
-      return `<div class="tool${dull?' dull':''}">${glyph(n)}<div class="ti"><b>${esc(n)}</b><span>${g.use} · ${String(g.time).replace('.',',')} sn · ${g.dur} kullanım</span>${own?`<div class="dbar" title="Keskinlik"><i style="width:${pct}%"></i></div><small>${dull?'Körelmiş':'Keskinlik '+d+'/'+g.dur}</small>`:''}</div>${act}</div>`}).join('')}${unk}</div>${false?`<p class="note" style="margin-top:10px">${hidden} alet daha var. Tariflerini birleştirerek keşfet.</p>`:''}`;
+    const all=Object.keys(GT).filter(n=>GT[n].kind!=='water'&&GT[n].kind!=='torch'&&smithOf(n)===smith), known=all.filter(n=>(inv[n]||0)>0);
+    if(cnt)cnt.textContent=`Elindeki aletler: ${known.length}`;
+    cbody.innerHTML=smithTabs()+`<p class="note">Dursun alet satmaz; parçalarını getirirsen <b>Alet dök</b> sekmesinde döver, işçiliğini alır. Aletler kullandıkça körelir; körelince burada bileyebilirsin.${known.length?'':' Şu an elinde bilenecek bir alet yok.'}</p><div class="shop">${known.map(n=>{
+      const g=GT[n],d=nn(toolDur[n],g.dur),dull=d<=0,pct=Math.max(0,d/g.dur*100);
+      const act=`<button data-sharp="${esc(n)}" type="button"${d>=g.dur||(!plInf()&&coins<g.sharp)?' disabled':''}>${d>=g.dur?'Keskin':'Bile · '+g.sharp.toLocaleString('tr-TR')}</button>`;
+      return `<div class="tool${dull?' dull':''}">${glyph(n)}<div class="ti"><b>${esc(n)}</b><span>${g.use} · ${String(g.time).replace('.',',')} sn · ${g.dur} kullanım</span><div class="dbar" title="Keskinlik"><i style="width:${pct}%"></i></div><small>${dull?'Körelmiş':'Keskinlik '+d+'/'+g.dur}</small></div>${act}</div>`}).join('')}</div>`;
   }else if(mode==='map'){
     renderMapPanel();
   }else if(mode==='skills'){
@@ -2861,11 +2868,21 @@ function bookShow(r){if(bookSel===r&&$('bkinfo').dataset.r===r)return;bookSel=r;
 cbody.addEventListener('pointerover',e=>{if(mode!=='book'||bookTab!=='rec'||e.pointerType!=='mouse')return;const b=e.target.closest('[data-bk]');if(b)bookShow(b.dataset.bk)});
 cbody.addEventListener('click',e=>{if(mode!=='book'||bookTab!=='rec')return;const b=e.target.closest('[data-bk]');if(b){bookShow(b.dataset.bk);const el=$('bkinfo');if(el&&TOUCH)el.scrollIntoView({block:'nearest'})}});
 const RAW_BASE=['Dal','Taş','Lif','Yaprak','Böğürtlen','Çakmaktaşı','Nehir çakılı','Kum','Su','Nehir kili'];
-function rawList(){return order.filter(n=>seen.has(n)&&PRICE_[n]!=null&&(RAW_BASE.includes(n)||/ odunu$/.test(n))).concat(RAW_BASE.filter(n=>seen.has(n)&&PRICE_[n]!=null&&!order.includes(n)))}
-const rawPrice=n=>Math.max(1,Math.ceil(unitPrice(n)*3));
+// v51: Nazlı sells only what nature gives: things you pick, dig, fish or hunt (never anything made), and only once you have seen it.
+// The harder it is to reach (price tier + the zone it lives in), the steeper her mark-up.
+const RAW_NO=new Set(['Kafa lambası','Mor pusula','Kara pul','Ejder kemiği','Yaprak barınağı','Ahşap ev','Taş ev','Konak']);
+const isRaw=n=>PRICE_[n]!=null&&!REC.has(n)&&!RAW_NO.has(n)&&!GT[n]&&!EQUIP[n]&&!/^Közlenmiş /.test(n)&&!(typeof HOUSESET!=='undefined'&&HOUSESET.has(n));
+function rawList(){const L=[];for(const n of seen)if(isRaw(n))L.push(n);for(const n of RAW_BASE)if(seen.has(n)&&L.indexOf(n)<0&&PRICE_[n]!=null)L.push(n);return L.sort((a,b)=>rawPrice(a)-rawPrice(b)||a.localeCompare(b,'tr'))}
+const RAW_Z={};
+function rawZone(n){if(n in RAW_Z)return RAW_Z[n];let z=0;
+  if(typeof ZPLANT!=='undefined'&&ZPLANT[n])z=ZPLANT[n][0];else if(typeof MINE_Z!=='undefined'&&MINE_Z[n])z=MINE_Z[n];
+  else if(typeof ANIM!=='undefined'){let best=9;for(const k in ANIM){const A=ANIM[k];if(A.drops&&A.drops.some(d=>d[0]===n))best=Math.min(best,A.z||0)}if(best<9)z=best}
+  if(n==='Mor kıymık'||n==='Gece sefası')z=Math.max(z,1);return RAW_Z[n]=z}
+const rawTier=n=>{const p=PRICE_[n]||1;return (p<=2?0:p<=5?1:p<=12?2:p<=40?3:p<=150?4:5)+rawZone(n)};
+function rawPrice(n){return Math.max(buyFloor(n,1),Math.ceil(PRICE_[n]*(2.6+.6*rawTier(n))*Math.max(1,sellMult(n)/1.6)))}
 function buyRaw(n,q){const c=rawPrice(n)*q;if(!plInf()&&coins<c){toast(`${(c-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);sfx('bad');return}if(!plInf())coins-=c;gain(n,q);shopBuy(n,q);sfx('pick');toast(`${q} ${n} satın alındı · ${c.toLocaleString('tr-TR')} sikke`);renderInv();renderCraft()}
 function mktTabs(){return `<div class="pmode stabs" role="tablist"><button type="button" role="tab" data-mt="sell" aria-selected="${mktTab==='sell'}">${glyph('Dal')}<span>Sat</span></button><button type="button" role="tab" data-mt="buy" aria-selected="${mktTab==='buy'}">${glyph('Böğürtlen')}<span>Satın al</span></button></div>`}
-function smithTabs(){return `<div class="pmode stabs" role="tablist"><button type="button" role="tab" data-go="forge" aria-selected="${mode==='craft'}">${glyph('Taş balta')}<span>Alet dök</span></button><button type="button" role="tab" data-go="shop" aria-selected="${mode==='shop'}">${glyph('Bileği taşı')}<span>Al ve bile</span></button></div>`}
+function smithTabs(){return `<div class="pmode stabs" role="tablist"><button type="button" role="tab" data-go="forge" aria-selected="${mode==='craft'}">${glyph('Taş balta')}<span>Alet dök</span></button><button type="button" role="tab" data-go="shop" aria-selected="${mode==='shop'}">${glyph('Bileği taşı')}<span>Bile</span></button></div>`}
 cbody.addEventListener('click',e=>{
   const g=e.target.closest('[data-go]');if(g){if(g.getAttribute('aria-selected')!=='true')openMenu(g.dataset.go);return}
   const mt=e.target.closest('[data-mt]');if(mt){mktTab=mt.dataset.mt;filter='';renderTools();renderCraft();return}
@@ -3155,33 +3172,34 @@ function emptyPot(){const k=returnAll();if(k)toast(`${k} malzeme envanterine dö
 function brew(){
   if(!pot.r)return;const x=REC.get(pot.r);
   const FG=station==='forge';
-  if(PLACEABLE.has(x.r)){msg(`${x.r} bir yapı: onu Usta Kemal kurar.`,'bad');sfx('bad');return}
+  if(PLACEABLE.has(x.r)&&FG){msg(`${x.r} bir yapı: onu Usta Kemal kurar.`,'bad');sfx('bad');return}
   // the cauldron only teaches: the ingredients open the recipe and are gone, nothing comes out
   if(!FG){
     if(foundSet.has(x.r)&&((tz===4&&x.r==='Kaba meşale')||(tz===7&&x.r==='Keskin taş'))){tzLearned(x.r);renderInv();renderTut();return}
-    if(foundSet.has(x.r)){msg(`${x.r} tarifini zaten öğrendin. ${FORGED.has(x.r)?'Demirci Dursun örsünde döver.':(TOUCH?'El ikonuyla':'Tab ile')+' kendin yaparsın.'}`,'bad');sfx('bad');return}
+    if(foundSet.has(x.r)){msg(`${x.r} tarifini zaten öğrendin. ${PLACEABLE.has(x.r)?'Malzemelerini Usta Kemal\'e götür, o kurar.':FORGED.has(x.r)?smithOf(x.r).name+' örsünde döver.':(TOUCH?'El ikonuyla':'Tab ile')+' kendin yaparsın.'}`,'bad');sfx('bad');return}
     if(!potReady()){const miss=x.t.filter(t=>!(inv[t]>0));msg(miss.length?`Bu tarif için şu alet yanında olmalı: ${miss.join(', ')}`:'Kazan henüz dolmadı.','bad');sfx('bad');return}
     pot.put=x.i.map(()=>({}));found.push(x.r);foundSet.add(x.r);checkCodex();
     sfx('found');potFx=performance.now()+900;
-    msg(`Bu tarifi öğrendin: ${x.r}! ${FORGED.has(x.r)?'Malzemelerini topla, Demirci Dursun örsünde döver.':`Malzemelerin olduğunda ${TOUCH?'el ikonuna dokunarak':'Tab\'a basarak'} yaparsın.`} +12 XP`,'ok');
+    msg(`Bu tarifi öğrendin: ${x.r}! ${PLACEABLE.has(x.r)?'Malzemelerini topla, Usta Kemal kurar.':FORGED.has(x.r)?'Malzemelerini topla, '+smithOf(x.r).name+' örsünde döver.':`Malzemelerin olduğunda ${TOUCH?'el ikonuna dokunarak':'Tab\'a basarak'} yaparsın.`} +12 XP`,'ok');
     gainXP(12+(sk('Z8')?10:0));announce(x.r,'Yeni tarif öğrendin');tzLearned(x.r);
     renderInv();if(craftOpen)renderCraft();renderTut();return}
   if(!foundSet.has(x.r)){msg(`Önce ${x.r} tarifini Zümrüt'ün kazanında öğren.`,'bad');sfx('bad');return}
   if(!potReady()){const miss=x.t.filter(t=>!(inv[t]>0));msg(miss.length?`Bu tarif için şu alet gerekli: ${miss.join(', ')}`:'Örse henüz bütün parçalar konmadı.','bad');sfx('bad');return}
-  if(wearTool(x.r)&&forged.has(x.r)&&inv[x.r]>0){msg(`${x.r} zaten sende. Yenisini "Al ve bile" sekmesinden alabilirsin.`,'bad');return}
-  if(wearTool(x.r)&&forged.has(x.r)){msg(`${x.r} aletini bir kez dövdün; yenisini "Al ve bile" sekmesinden al.`,'bad');return}
-  const isNew=!forged.has(x.r);let note='';
+  if(wearTool(x.r)&&inv[x.r]>0){msg(`${x.r} zaten sende. Körelince Dursun'a bilet.`,'bad');return}
+  const fee=tz?0:laborFee(x.r);
+  if(fee&&!plInf()&&coins<fee){msg(`${smithOf(x.r).name} işçilik olarak ${fee} sikke ister; ${fee-coins} sikke eksik.`,'bad');sfx('bad');return}
+  if(fee&&!plInf()){coins-=fee}
+  const isNew=!forged.has(x.r);let note=fee?` · işçilik ${fee} sikke`:'';
   const keep=(sk('Z5')?.3:sk('Z2')?.2:sk('Z1')?.1:0);
   const used=pot.put.flatMap(o=>Object.keys(o));
   pot.put=x.i.map(()=>({}));
   if(keep&&rnd()<keep+luck()&&used.length){const back=used[Math.floor(rnd()*used.length)];gain(back);note+=` · Tutumlu usta: 1 ${back} geri geldi`}
   gain(x.r);if(wearTool(x.r))giveTool(x.r);
   forged.add(x.r);
-  if(wearTool(x.r)&&isNew)note+=' · Dursun bu aleti artık satar';
   sfx(isNew?'found':'craft');sfx('clank');potFx=performance.now()+900;
   msg(`${isNew?(EQUIP[x.r]?'Yeni zırh':'Yeni alet')+' dövüldü':'Dövüldü'}: ${x.r}! +${isNew?8:2} XP`+note,'ok');
   gainXP(isNew?8:2);
-  if(tz===13&&x.r==='Taş balta'){setTimeout(()=>{closeCraft();say(`İşte baltan! Taş balta yalnızca <b>çamları</b> keser; her vuruşta biraz körelir, çubuğu kırmızıya dönünce bana getir, bilerim. Bir kez dövdüğün aleti bundan sonra benden satın da alabilirsin. Balta şimdi <b>envanterinde</b>: ${beltHow('Taş balta')}; sonra ${TOUCH?'o kutuya dokununca':'yuvanın sayı tuşuna basınca'} eline gelir. Şimdi <b>Ekin</b>'e dön; seni bekleyen işler var.`,[{t:'Ekin\'e gidiyorum',pri:1,fresh:1,f:()=>{bye();tzFinish();guideTo('ekin',10)}}],smith)},600)}
+  if(tz===13&&x.r==='Taş balta'){setTimeout(()=>{closeCraft();say(`İşte baltan! Taş balta yalnızca <b>çamları</b> keser; her vuruşta biraz körelir, çubuğu kırmızıya dönünce bana getir, bilerim. Kırılırsa ya da kaybolursa parçalarını getir, yenisini döveriz; işçiliğini ödersin. Balta şimdi <b>envanterinde</b>: ${beltHow('Taş balta')}; sonra ${TOUCH?'o kutuya dokununca':'yuvanın sayı tuşuna basınca'} eline gelir. Şimdi <b>Ekin</b>'e dön; seni bekleyen işler var.`,[{t:'Ekin\'e gidiyorum',pri:1,fresh:1,f:()=>{bye();tzFinish();guideTo('ekin',10)}}],smith)},600)}
   renderInv();renderCraft();renderTut();
 }
 let potFx=0;
@@ -3581,7 +3599,6 @@ function talkTrader(){
   const left=Math.max(0,Math.ceil((trader.leaveAt-playTime)/60));
   say(`Selam ada sakini! Ben <b>Nuri</b>, denizlerin tüccarı. ${left} dakika sonra demir alırım; işimizi çabuk görelim.`,[
     {fresh:1,t:trader.done?'Siparişi teslim ettim':'Ne istiyorsun?',pri:1,f:traderOrder},
-    ...(diff==='hard'?[{t:'Tarif satıyor musun?',f:traderRecipes}]:[]),
     {t:'Nerelerden geliyorsun?',f:()=>say('Doğuda tuz adalarından, güneyde baharat limanlarından… Bu ada haritalarda yok ama ben rüzgârın kokusundan bulurum. Burada iyi malzeme var, iyi de para.',[{t:'Anladım',pri:1,f:talkTrader}],trader)},
     {t:'Hoşça kal',f:bye},
   ],trader);
@@ -4212,7 +4229,7 @@ cv.addEventListener('pointercancel',e=>joyEnd(e,false));
 // mouse over an animal or monster: its name, temper and health at the cursor
 cv.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const tip=$('hovertip');if(onTitle||craftOpen||dlgOpen){tip.hidden=true;return}
   const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S;let a=null,bd=20;for(const o of animals){const d=Math.hypot(o.x-wx,o.y-6-wy);if(d<bd){bd=d;a=o}}
-  if(!a){tip.hidden=true;return}const D=ANIM[a.k];tip.innerHTML=`<b>${esc(a.k)}</b> <span style="color:${TEMPC[D.temper]}">${D.temper}</span><br><small>Can ${Math.max(0,Math.ceil(a.hp))}/${D.hp}${D.ranged?' · uzaktan saldırır':''}${D.fx?' · '+FXD[D.fx[0]].n:''}</small>`;
+  if(!a){tip.hidden=true;return}const D=ANIM[a.k];tip.innerHTML=`<b>${esc(a.k)}</b> <span style="color:${TEMPC[D.temper]}">${D.temper}</span><br><small>Can ${Math.max(0,Math.ceil(a.hp))}/${D.hp}${D.ranged?' · uzaktan saldırır':''}${D.fx?' · '+FXD[D.fx[0]].n:''}${kills[a.k]?'<br>Düşebilir: '+D.drops.filter(d=>d[3]>=1).map(d=>esc(d[0])).concat(dropOdds(D).map(([n,p])=>`${esc(n)} %${Math.round(p*100)}`)).join(' · ')+(dropRolls(D)>1?` (${dropRolls(D)} çekiliş)`:''):''}</small>`;
   tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+12)+'px';tip.hidden=false});
 cv.addEventListener('pointerleave',()=>{$('hovertip').hidden=true});
 cv.addEventListener('contextmenu',e=>e.preventDefault());
@@ -4963,27 +4980,31 @@ cbody.addEventListener('click',e=>{
 });
 
 // ---------- Usta Kemal: makes what you know for coins, and builds (only he builds huts, beds and workshops) ----------
-const ustaPrice=r=>buyFloor(r,Math.max(15,Math.round((PRICE_[r]||10)*2.5)));   // never below what it sells for (D2)
+const ustaPrice=r=>Math.max(3,Math.round((PRICE_[r]||10)*.2));   // v51: Kemal's labour; the materials are yours
 function talkUsta(){
   if(!usta.met){usta.met=true;gain('Hasır yatak',1);renderInv();renderTut();sfx('found');
-    return say('Hoş geldin evlat! Ben <b>Kemal</b>, zanaatkârım. Ekin seni gönderdi demek… Al, bu <b>hasır yatak</b> benden hediye. Envanterine koydum: '+beltHow('Hasır yatak')+', sonra o yuvayı seçip istediğin yere koy; gece olunca üstünde uyursun.<br><br>Kitabında tarifini bildiğin her şeyi ben senin yerine yaparım: malzeme getirmen gerekmez, emeğimi ödersin. Kulübe, çit, ocak gibi <b>yapıları</b> ise yalnızca ben kurarım. Bir de <b>Atölye</b> kurarım: içine malzeme koyarsın, bir tarifi kendi kendine üretir.',[
+    return say('Hoş geldin evlat! Ben <b>Kemal</b>, zanaatkârım. Ekin seni gönderdi demek… Al, bu <b>hasır yatak</b> benden hediye. Envanterine koydum: '+beltHow('Hasır yatak')+', sonra o yuvayı seçip istediğin yere koy; gece olunca üstünde uyursun.<br><br>Ben ahşap ve taş işinin, <b>yapıların</b> ustasıyım: kulübe, çit, ocak, yatak… Tarifini Zümrüt'ün kazanında öğrendiğin bir yapının malzemelerini getirirsen kurarım; emeğimi ödersin. Bir de <b>Atölye</b> kurarım: içine malzeme koyarsın, bir tarifi kendi kendine üretir.',[
       {t:'Sipariş vermek istiyorum',pri:1,fresh:1,f:openUsta},{t:'Teşekkürler',f:bye}],usta)}
   say(['Testere hazır, tahta kuru. Ne yapıyoruz?','Gel bakalım! Yatağın rahat mı?','Atölye kurmak mı? Tarifi bildin mi önce, ona bak.'][Math.floor(Math.random()*3)],[
     {t:'Sipariş ver',pri:1,fresh:1,f:openUsta},
-    {t:'Atölye nasıl çalışır?',f:()=>say(`Atölye tarifini bir kez öğren, sonra ben <b>${ustaPrice('Atölye')} sikkeye</b> kurarım. Yere koyarsın, bir tarif seçersin, bileşenleri içine atarsın; her ${WS_DUR} saniyede bir ürün çıkar. Sen uzaktayken bile çalışır.`,[{t:'Anladım',pri:1,f:talkUsta}],usta)},
+    {t:'Atölye nasıl çalışır?',f:()=>say(`Atölye tarifini kazanda bir kez öğren, malzemesini getir; ben <b>${ustaPrice('Atölye')} sikke</b> işçilikle kurarım. Yere koyarsın, bir tarif seçersin, bileşenleri içine atarsın; her ${WS_DUR} saniyede bir ürün çıkar. Sen uzaktayken bile çalışır.`,[{t:'Anladım',pri:1,f:talkUsta}],usta)},
     {t:'Hoşça kal',f:bye}],usta);
 }
 function openUsta(){bye();mode='usta';filter='';craftOpen=true;document.body.classList.add('menuopen');for(const k in keys)keys[k]=false;craftEl.hidden=false;msg('');$('crafttitle').textContent='Usta Kemal · Sipariş';renderTools();renderCraft();$('closecraft').focus()}
 function renderUsta(){
   const f=filter.toLocaleLowerCase('tr-TR'),m=x=>!f||x.r.toLocaleLowerCase('tr-TR').includes(f);
-  const pl=DB.R.filter(x=>PLACEABLE.has(x.r)&&!HOUSESET.has(x.r)&&m(x)).sort((a,b)=>isOpen(b.r)-isOpen(a.r)),other=DB.R.filter(x=>!PLACEABLE.has(x.r)&&!FORGED.has(x.r)&&isOpen(x.r)&&m(x)).slice(0,60);
-  const row=x=>{const ok=isOpen(x.r),pr=ustaPrice(x.r);return `<li${ok?'':' style="opacity:.5"'}><span class="bn"><img src="${ok?icon(x.r):unkIcon()}" alt=""><span><b>${ok?esc(x.r):maskName(x.r,.5)}</b>${inv[x.r]>0?` <small style="color:var(--accent)">· sende ${inv[x.r]}</small>`:''}<br><small>${ok?(PLACEABLE.has(x.r)?`yere konur · ${FOOT(x.r).join('×')} kare`:esc(recText(x))):'tarifini önce kazanda bul'}</small></span></span><span class="rr"><button class="mk us" data-us="${esc(x.r)}" type="button"${ok&&(plInf()||coins>=pr)?'':' disabled'}>Yaptır · ${pr}</button></span></li>`};
-  cbody.innerHTML=`<p class="note">Kemal tarifini bildiğin eşyaları sikke karşılığı yapar; malzeme istemez. Yataklar, atölye, çit gibi <b>yapılar</b> onda yapılır; evleri ve barınakları <b>Marangoz Rıza</b> yapar; aldığını envanterden bir alet yuvasına koyup seçer, yere kurarsın.</p>
-    <h3 class="ush">Yapılar ve eşyalar</h3><ul class="book">${pl.map(row).join('')||'<li class="note">Aramana uyan yapı yok.</li>'}</ul>
-    <h3 class="ush">Bildiğin diğer tarifler</h3><ul class="book">${other.map(row).join('')||'<li class="note">Aramana uyan tarif yok.</li>'}</ul>`;
+  const pl=DB.R.filter(x=>PLACEABLE.has(x.r)&&!HOUSESET.has(x.r)&&ustaMakes(x)&&m(x)).sort((a,b)=>foundSet.has(b.r)-foundSet.has(a.r)||isOpen(b.r)-isOpen(a.r));
+  const row=x=>{const ok=foundSet.has(x.r),op=isOpen(x.r),pr=ustaPrice(x.r),miss=ok?missingFor({i:x.i,t:[]}):'';
+    const ing=ok?x.i.map(([n,q])=>{const h=expand(n).reduce((t,k)=>t+(inv[k]||0),0);return `<span style="color:${h>=q?'#8fd46b':'#ff8a6a'}">${q} ${esc(n)} (${h})</span>`}).join(', '):'';
+    return `<li${ok?'':' style="opacity:.5"'}><span class="bn"><img src="${op?icon(x.r):unkIcon()}" alt=""><span><b>${op?esc(x.r):maskName(x.r,.5)}</b>${inv[x.r]>0?` <small style="color:var(--accent)">· sende ${inv[x.r]}</small>`:''}<br><small>${ok?ing+` · yere konur · ${FOOT(x.r).join('×')} kare`:op?'tarifini önce Zümrüt\'ün kazanında öğren':'tarifini henüz bulmadın'}</small></span></span><span class="rr"><button class="mk us" data-us="${esc(x.r)}" type="button"${ok&&!miss&&(plInf()||coins>=pr)?'':' disabled'}>Yaptır · işçilik ${pr}</button></span></li>`};
+  cbody.innerHTML=`<p class="note">Kemal hiçbir şey satmaz. Tarifini <b>kazanda öğrendiğin</b> bir yapının malzemelerini getirirsen kurar, yalnızca işçiliğini alır. Evleri ve barınakları <b>Marangoz Rıza</b> yapar; aldığını envanterden bir alet yuvasına koyup seçer, yere kurarsın.</p>
+    <h3 class="ush">Yapılar ve eşyalar</h3><ul class="book">${pl.map(row).join('')||'<li class="note">Aramana uyan yapı yok.</li>'}</ul>`;
 }
-cbody.addEventListener('click',e=>{if(mode!=='usta')return;const b=e.target.closest('[data-us]');if(!b)return;const r=b.dataset.us,pr=ustaPrice(r);
-  if(!isOpen(r)||(!plInf()&&coins<pr)){sfx('bad');return}if(!plInf())coins-=pr;gain(r);shopBuy(r);sfx('coin');toast(PLACEABLE.has(r)?`${r} hazır: envanterinde · bir yuvaya koyup seç, yere kur`:`${r} hazır`);renderInv();renderCraft()});
+function ustaMakes(x){return true}
+cbody.addEventListener('click',e=>{if(mode!=='usta')return;const b=e.target.closest('[data-us]');if(!b)return;const r=b.dataset.us,pr=ustaPrice(r),y=REC.get(r);
+  if(!y||!foundSet.has(r)||missingFor({i:y.i,t:[]})||(!plInf()&&coins<pr)){sfx('bad');return}
+  for(const [n,q] of y.i){let need=q;for(const m of expand(n)){const k=Math.min(need,inv[m]||0);inv[m]-=k;need-=k}}
+  if(!plInf())coins-=pr;gain(r);sfx('coin');sfx('craft');gainXP(2);toast(`${r} hazır: envanterinde · bir yuvaya koyup seç, yere kur`);renderInv();renderCraft()});
 // ---------- houses: Rıza builds shelters, tents and houses; every bed-less house needs a bed inside ----------
 const HOUSES=[
  {n:'Yaprak barınağı',lv:1,c:5,mat:[['Dal',8],['Yaprak',12],['Lif',4]],d:'Yatak gerekmez. Bir gecelik: uyanınca dağılır.'},
@@ -5283,10 +5304,22 @@ function attack(focus){
 }
 function killAnimal(a){const D=ANIM[a.k],i=animals.indexOf(a);if(i>=0)animals.splice(i,1);kills[a.k]=(kills[a.k]||0)+1;
   if(a.tut&&ftut===2)setTimeout(fightLessonDone,700);
-  const got=[];let fy=0;for(const [n,mn,mx,p,kind] of D.drops)if((a.k==='Kara ejder'&&n==='Ejder kemiği'&&kills[a.k]===1)||Math.random()<p+luck()+(perk('Av ve hayvan')?.1:0)){   // the first dragon always leaves a bone (D7)
-    const q=mn+Math.floor(Math.random()*(mx-mn+1));dropItem(n,a.x,a.y,q);got.push(`${q} ${n}`);fy+=0;continue;floats.push({x:a.x,y:a.y-14-fy,t:-fy/30,text:`+${q} ${n}`,color:kind==='yemek'?'#ffd08a':kind==='zırh'?'#b8e0ff':kind==='silah'?'#ffb0a0':'#e8e0c8'});fy+=8}
+  const got=[];for(const [n,q] of dropRoll(D,a.k==='Kara ejder'&&kills[a.k]===1?'Ejder kemiği':null)){dropItem(n,a.x,a.y,q);got.push(`${q} ${n}`)}
   for(let k=0;k<14;k++)parts.push({x:a.x,y:a.y-4,vx:(Math.random()-.5)*60,vy:-20-Math.random()*40,life:.6,c:k%2?'#c84a3a':'#e8e0c8'});
   gainXP(D.xp);sfx('found');toast(got.length?`${a.k} avlandı; yere düştü: ${got.join(', ')}`:`${a.k} avlandı; hiçbir şey düşmedi`);renderInv()}
+// v51: what a beast leaves is a draw, not a list: its meat (and anything sure) always, then 1–3 weighted picks from the rest
+// (more picks for tougher beasts). A part that drops rarely is worth more; luck and the hunting codex tilt the odds towards rare parts.
+function dropOdds(D){const pool=D.drops.filter(d=>d[3]<1),w=pool.map(d=>d[3]),t=w.reduce((a,b)=>a+b,0)||1;return pool.map((d,i)=>[d[0],w[i]/t])}
+function dropRolls(D){return D.hp>=150?3:D.hp>=55?2:1}
+function dropRoll(D,must){const out=[],q=d=>d[1]+Math.floor(Math.random()*(d[2]-d[1]+1));
+  if(D.drops.every(d=>d[3]>=1)){for(const d of D.drops)out.push([d[0],q(d)]);return out}
+  for(const d of D.drops)if(d[3]>=1)out.push([d[0],q(d)]);
+  let pool=D.drops.filter(d=>d[3]<1);const tilt=luck()+(perk('Av ve hayvan')?.1:0);
+  let n=dropRolls(D)+(Math.random()<tilt?1:0);
+  if(must){const m=pool.find(d=>d[0]===must);if(m){out.push([m[0],q(m)]);pool=pool.filter(d=>d!==m);n--}}
+  for(;n>0&&pool.length;n--){const w=pool.map(d=>d[3]<.5?d[3]+tilt*.5:d[3]),t=w.reduce((a,b)=>a+b,0);let r=Math.random()*t,k=0;for(;k<pool.length-1;k++){r-=w[k];if(r<=0)break}
+    const d=pool[k];out.push([d[0],q(d)]);pool=pool.filter(x=>x!==d)}
+  return out}
 function animalAt(wx,wy){let best=null,bd=16;for(const a of animals){const d=Math.hypot(a.x-wx,a.y-4-wy);if(d<bd){bd=d;best=a}}return best}
 function drawSwing(){if(!swing)return;swing.t+=1/60;if(swing.t>.16){swing=null;return}const k=swing.t/.16,ang=Math.atan2(swing.fy,swing.fx||(swing.fy?0:1)),r=swing.w*.8;
   ctx.strokeStyle=`rgba(255,255,255,${(1-k).toFixed(2)})`;ctx.lineWidth=2;ctx.beginPath();ctx.arc(player.x,player.y-6,r,ang-1.1+k*1.4,ang-.3+k*1.4);ctx.stroke()}
@@ -6772,7 +6805,7 @@ function tickTraps(dt){for(const t of traps){if(t.got)continue;t.t-=dt;if(t.t<=0
 function trapCatch(t){const z=zoneAt(t.x,t.y);
   if(t.k==='Balık kapanı'){const T_=FISHT[z]||FISHT[0],L=T_.any||T_.river;const a=L[Math.floor(Math.random()*L.length)][0],b=L[Math.floor(Math.random()*L.length)][0];return a===b?[[a,2]]:[[a,1],[b,1]]}
   const pool=z===1?['Ördek','Keklik','Tavşan']:z===2?['Tavşan']:['Tavşan','Tavşan','Keklik','Sincap'];const k=pool[Math.floor(Math.random()*pool.length)],D=ANIM[k];const got=[];
-  for(const [n,mn,mx,p] of D.drops)if(Math.random()<p)got.push([n,mn+Math.floor(Math.random()*(mx-mn+1))]);if(!got.length)got.push([D.drops[0][0],1]);got.k=k;return got}
+  for(const x of dropRoll(D))got.push(x);if(!got.length)got.push([D.drops[0][0],1]);got.k=k;return got}
 function useTrap(t){
   if(t.got){let s=[];for(const [n,q] of t.got){gain(n,q);s.push(`${q} ${n}`)}t.got=null;t.dur--;dstat.trap++;gainXP(4);sfx('found');renderInv();
     if(t.dur<=0){const i=traps.indexOf(t);traps.splice(i,1);gain(t.k);toolDur[t.k]=0;hotK='';renderInv();toast(`Aldın: ${s.join(', ')}. ${t.k} yıprandı; geri aldın, Dursun'da yenile.`,true);return}

@@ -290,3 +290,11 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **El düğmesi:** hotbar'ın başında `#handbtn` (H): eli boşaltır, yakında toplanacak bir şey varsa hemen toplar.
 - **Harita:** NPC ikonları büyük (`mki` ölçeği 2,4/3,3/4), oyuncu `headIcon()` (kendi kafası). Kamera alttan `SEA_PAD()` kadar denize taşar, `drawSeaPad` dalgalı deniz çizer.
 - Testler: v46_t geçiyor; v44_t1/t2 diyalog yazma ve 17 görev için güncellendi.
+
+## v51 — Ekonomi (27 Ekim 2026 planı, Boğaç'ın kararları)
+- Pazarcı Nazlı dışında kimse para karşılığı satmaz. Dursun'un "Al ve bile" sekmesi yalnızca **Bile** (satın alma yok); alet kaybolursa/kırılırsa örste yeniden dövülür (`laborFee(r)` = fiyatın %15'i, eğitimde ücretsiz). `smithOf(r)` hangi demircinin döveceğini söyler.
+- Usta Kemal yalnızca yapılar: tarif **kazanda öğrenilmiş** olmalı (`foundSet`), malzemeler oyuncudan, `ustaPrice` = işçilik (%20). Yapı tarifleri artık kazanda öğrenilebilir (brew'da PLACEABLE engeli yalnızca örste). `ustaMakes(x)` uzmanlık süzgeci.
+- Hasan tohum satmaz (Nazlı satar); Nuri tarif satmaz.
+- Nazlı: `isRaw`, `rawList` (görülmüş, tarifi olmayan doğal malzemeler; `RAW_NO` hariç), `rawTier` (fiyat kademesi + bölge `rawZone`), `rawPrice` = fiyat × (2,6 + 0,6 × kademe).
+- Ganimet: `dropRoll(D,must)` — p≥1 olanlar hep düşer, kalanlardan ağırlıklı 1–3 çekiliş (`dropRolls`: can ≥55 → 2, ≥150 → 3; şans +1). Reis (hepsi p=1) hepsini düşürür. Tuzaklar da aynı. Fare ipucunda (avlanmış tür) olasılıklar yazar (`dropOdds`).
+- Fiyatlar: zor canavarların parçaları yükseldi (boynuz, diş, ayı pençesi, timsah dişi…); onları kullanan tarifler fark × 1,3 ile güncellenir (PRICE_ tanımının hemen altında).
