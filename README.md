@@ -1,6 +1,6 @@
 # Purple Light · Mor Işık
 
-Tek oyunculu, piksel sanatlı bir keşif ve hayatta kalma oyunu. Mor bir ışık eşini götürdü; Hammadde Adası'nda bir taştan başlayıp onu arıyorsun.
+Tek oyunculu, piksel sanatlı bir keşif ve hayatta kalma oyunu. Mor bir ışık eşini götürdü; Yıldızsız Ada'da bir taştan başlayıp onu arıyorsun.
 
 **Oyna:** https://bogacavdar.github.io/purple-light/
 
