@@ -4980,7 +4980,7 @@ cbody.addEventListener('click',e=>{
 const ustaPrice=r=>Math.max(3,Math.round((PRICE_[r]||10)*.2));   // v51: Kemal's labour; the materials are yours
 function talkUsta(){
   if(!usta.met){usta.met=true;gain('Hasır yatak',1);renderInv();renderTut();sfx('found');
-    return say('Hoş geldin evlat! Ben <b>Kemal</b>, zanaatkârım. Ekin seni gönderdi demek… Al, bu <b>hasır yatak</b> benden hediye. Envanterine koydum: '+beltHow('Hasır yatak')+', sonra o yuvayı seçip istediğin yere koy; gece olunca üstünde uyursun.<br><br>Ben ahşap ve taş işinin, <b>yapıların</b> ustasıyım: kulübe, çit, ocak, yatak… Tarifini Zümrüt'ün kazanında öğrendiğin bir yapının malzemelerini getirirsen kurarım; emeğimi ödersin. Bir de <b>Atölye</b> kurarım: içine malzeme koyarsın, bir tarifi kendi kendine üretir.',[
+    return say('Hoş geldin evlat! Ben <b>Kemal</b>, zanaatkârım. Ekin seni gönderdi demek… Al, bu <b>hasır yatak</b> benden hediye. Envanterine koydum: '+beltHow('Hasır yatak')+', sonra o yuvayı seçip istediğin yere koy; gece olunca üstünde uyursun.<br><br>Ben ahşap ve taş işinin, <b>yapıların</b> ustasıyım: kulübe, çit, ocak, yatak… Tarifini Zümrüt\'ün kazanında öğrendiğin bir yapının malzemelerini getirirsen kurarım; emeğimi ödersin. Bir de <b>Atölye</b> kurarım: içine malzeme koyarsın, bir tarifi kendi kendine üretir.',[
       {t:'Sipariş vermek istiyorum',pri:1,fresh:1,f:openUsta},{t:'Teşekkürler',f:bye}],usta)}
   say(['Testere hazır, tahta kuru. Ne yapıyoruz?','Gel bakalım! Yatağın rahat mı?','Atölye kurmak mı? Tarifi bildin mi önce, ona bak.'][Math.floor(Math.random()*3)],[
     {t:'Sipariş ver',pri:1,fresh:1,f:openUsta},
