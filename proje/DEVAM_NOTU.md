@@ -592,3 +592,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Rampa çizimi (roket bitince üstünde roket). as5'ten sonra Tuna ile konuşunca **fırlatma sineması** (#rkov, ~15,6 sn: geri sayım, kalkış, adalar küçülür, gökyüzü kararır, mor gemi belirir, 4 altyazı) → "ACT 3 · Mor gemi" kartı → Gök Rıhtımı'na dönülür (ACT 3 yok). `tuna.launched` kayıtta (v81).
 - Başarım "Gökyüzüne" (roket fırlatıldı). Hile ara sahne listesine "ACT 2 sonu: Roket" (tekrar izleme, sayılmaz).
 - Menüde "Versiyon 81". Test yapılmadı.
+
+## v82 (27 Ekim 2026) — ACT 2: eşin yeni anıları
+- `<script id="v82">`: MEMS'e 5 ACT 2 anısı (act2:1, ev:[] → uyku/bayılma olaylarıyla gelmez): Sahildeki ışık (gk3), Yıldızsız yolcular (pv3), Şapka (sl4), Mor gemi (mk3), Son söz (ej4). Görev bitince `memUnlock` ile kuyruğa girer, sakin bir anda oynar.
+- Konu (ACT2_TASARIM.md): eş ilk adanın kıyısında, biz baygınken mor ışıklı gemiye alındı; ışıkta pelerinli "yıldızsız yolcular" ve metal köpek vardı; biri bize şapkayı taktı ("onu sakin tutar"); gemide sayısız uyuyan yüz; son söz "Yıldızların ötesinde bile". Köpeğin kamerası ve şapkanın beyin kontrolü ACT 3'e saklı.
+- memScene sarmalayıcısıyla 5 yeni sahne (gece kumsalı, ışık sütunu, pelerinliler, metal köpek, şapka, mor gemi, yükselen gemi). v72 müziğinde gizemli listede. Kitap › Anılar'da kilitliyken "ACT 2'de, ikinci adanın ustalarına yardım ettikçe".
+- Menüde "Versiyon 82". Test yapılmadı.

@@ -1330,7 +1330,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-cont" type="button">Devam et</button>
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 81</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 82</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -10164,7 +10164,7 @@ memScene=function(g,i,t,line){if(i<B0)return _sc.apply(this,arguments);
   const vg=g.createRadialGradient(120,68,40,120,68,150);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(20,6,40,.55)');g.fillStyle=vg;g.fillRect(0,0,240,135)};
 // the book: recipe memories say how many recipes; the new ones say how they may come
 renderMem=function(){const rd=riddle?`<div class="memrd"><b>Zümrüt'ün bilmecesi:</b> ${riddleText(riddle)}<br><small>Bu tarifi kazanda öğrenince Zümrüt seni ödüllendirir.</small></div>`:'';
-  const how=m=>m.ev.map(e=>({sleep:'rüyada',faint:'bayılınca',quest:'bir görevi bitirince'})[e]).join(' ya da ')+(m.min>1?` · ${m.min}. günden sonra`:'');
+  const how=m=>m.act2?'ACT 2\'de, ikinci adanın ustalarına yardım ettikçe':m.ev.map(e=>({sleep:'rüyada',faint:'bayılınca',quest:'bir görevi bitirince'})[e]).join(' ya da ')+(m.min>1?` · ${m.min}. günden sonra`:'');
   return bookTabs()+rd+`<p class="note">${loveName?`<b>${esc(loveName)}</b>`:'Eşin'} ile ilgili anılar geri geliyor: bazıları yeni tarifler öğrendikçe, bazıları rastgele: <b>uykuda rüya</b> olarak, <b>bayılınca</b> ya da <b>bir görevi bitirince</b>. Her anı bir kez gelir; buradan yeniden izlersin. Mor kıymıkları Zümrüt'e götürürsen sıradaki anı erken döner.</p><ul class="book mem">${MEMS.map((m,i)=>{const ok=mems.has(i);
     return `<li${ok?'':' style="opacity:.55"'}><span class="bn"><img src="${ok?clueIcon():unkIcon()}" alt=""><span><b>${ok?esc(m.n):'???'}</b>${ok&&memKind[i]?` <small style="color:#c9a0ff">· ${({sleep:'rüya',faint:'bayılma',quest:'görev'})[memKind[i]]}</small>`:''}<br><small>${ok?esc(memText(m.L[0][1]).replace(/<[^>]+>/g,'')):m.at?`${m.at} tarif öğrenince (şimdi ${found.length})`:how(m)}</small></span></span>${ok?`<span class="rr"><button class="mk ghost" type="button" data-mem="${i}">İzle</button></span>`:''}</li>`}).join('')}</ul>`};
 const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);s.v57={k:Object.assign({},memKind)};return s};
@@ -11266,7 +11266,7 @@ function mysterious(){const len=19.2;const {oc,tone,lp}=base(len);
 let ready=false;
 setTimeout(()=>{Promise.all([romantic(),mysterious()]).then(([r,m])=>{A.add('mz_rom',r);A.add('mz_giz',m);ready=true;if(want)start(want)}).catch(()=>{})},2500);
 // what plays: memories by mood, people's scenes always mysterious
-const DARK=/^(Mor bir delik|Son akşam|Mor fısıltı|Bırakılan el)$/;
+const DARK=/^(Mor bir delik|Son akşam|Mor fısıltı|Bırakılan el|Sahildeki ışık|Yıldızsız yolcular|Şapka|Mor gemi|Son söz)$/;
 let cur=null,curK='',want='';
 function start(k){want=k;if(!ready||curK===k)return;stop(true);curK=k;cur=audio.play(k,{loop:true,vol:.85,fade:1.6});try{audio.musicTo(.12,1.2)}catch(e){}}
 function stop(keepMusic){want='';if(cur){try{cur.stop(1.2)}catch(e){}cur=null}curK='';if(!keepMusic)try{audio.musicTo(1,2)}catch(e){}}
@@ -11992,6 +11992,45 @@ if(I2){const _rt=renderTut;renderTut=function(){const r=_rt.apply(this,arguments
 const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);s.v81={tm:tuna.met,tl:tuna.launched};return s};
 const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);const v=d&&d.v81;tuna.met=!!(v&&v.tm);tuna.launched=!!(v&&v.tl);return r};
 }).toString()+')()')}catch(e){try{window.__hamErr('v81: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v82">
+// =====================================================================================================
+// v82: ACT 2 memories of the one you lost. They come back one by one as the masters of the second island
+// finish their work: the night on the beach, the starless travellers with the metal dog, the hat, the
+// purple ship, the last words. (The dog's camera and the hat's purpose are for ACT 3.)
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const QD=()=>(window.__v55&&window.__v55.d)||[];
+const A2=[
+ {q:'gk3',n:'Sahildeki ışık',L:[['','Bir gece, kumsal. Dalgalar. Sen kumların üstünde baygın yatıyorsun; geminin enkazı arkanda yanıyor.'],['love','<b>{L}</b>: "Uyan! Lütfen uyan… Gökyüzü… gökyüzü yanıyor!"'],['','Mor bir ışık sütunu indi ve onu ayaklarının altından kaldırdı. Sen gözlerini açamadın.']]},
+ {q:'pv3',n:'Yıldızsız yolcular',L:[['','Işığın içinde iki uzun gölge belirdi. Pelerinli, yıldızsız, yüzsüz.'],['','Birinin yanında küçük, metal bir köpek vardı. Gözleri kırmızı yanıp sönüyordu.'],['love','<b>{L}</b>: "Siz kimsiniz? Ona dokunmayın!"']]},
+ {q:'sl4',n:'Şapka',L:[['','Gölgelerden biri sana doğru eğildi. Başına bir şapka koydu; garip, sıcak bir şapka.'],['','"Bu onu sakin tutar," dedi. Sesi bir makine gibi tıkırdıyordu.'],['','Adada sana köpek ve şapka satan o yolcular… onlardı. Hep onlardı.']]},
+ {q:'mk3',n:'Mor gemi',L:[['','Gökte dev, sessiz bir gemi. Altından mor bir ışık akıyor.'],['','Camların ardında yüzler: uyuyan, sayısız yüz. Sayılan, saklanan.'],['love','<b>{L}</b>: "Beni bırakma… beni bul!"']]},
+ {q:'ej4',n:'Son söz',L:[['','Gemi yükselirken ışık bir an titredi. {L} elini cama dayadı.'],['love','<b>{L}</b>: "Yıldızların ötesinde bile…"'],['hero','<b>{H}</b>: "…seni bulacağım."'],['','Şimdi hatırlıyorsun. Ve artık nereye gideceğini biliyorsun: yukarı.']]}];
+const I0=MEMS.length;for(const m of A2)MEMS.push({n:m.n,ev:[],min:1,act2:1,L:m.L});
+setInterval(()=>{try{if(onTitle||wake)return;const d=QD();A2.forEach((m,k)=>{const i=I0+k;if(d.indexOf(m.q)>=0&&!mems.has(i))memUnlock(i)})}catch(e){}},1500);
+// ---------------------------------------------------------------- the pictures
+const cloak=(p,x,y,t,s)=>{const b=Math.round(Math.sin(t*2+x)*1);p(x-5,y-22+b,10,4,'#141020');p(x-6,y-18+b,12,18,'#1a1428');p(x-6,y-18+b,12,1,'#3a2a5a');p(x-3,y-20+b,2,1,s||'#c070ff');p(x+1,y-20+b,2,1,s||'#c070ff');p(x-7,y-1,14,1,'#0e0a18')};
+const dog=(p,x,y,t)=>{p(x-6,y-6,10,4,'#9aa7b4');p(x+3,y-9,4,4,'#9aa7b4');p(x+5,y-8,1,1,Math.sin(t*6)>0?'#ff2a2a':'#5a1a1a');p(x-5,y-2,2,2,'#6a7480');p(x+1,y-2,2,2,'#6a7480');p(x-8,y-7,2,1,'#6a7480');p(x+4,y-11,1,2,'#6a7480')};
+function lying(g,x,y,L,o){g.save();g.translate(x,y);g.rotate(-Math.PI/2);drawChibi(g,0,0,L,Object.assign({fx:0,fy:1,closed:true},o||{}));g.restore()}
+function beach(p,g,t,stars){p(0,0,240,135,'#0a0c22');for(let q=0;q<(stars||60);q++){const sx=(q*97)%240,sy=(q*53)%70;if(Math.sin(t*2+q)>-.3)p(sx,sy,1,1,q%5?'#cfd8ff':'#ffffff')}
+  p(0,70,240,30,'#1a2a4a');for(let k=0;k<14;k++)p((k*29+t*8)%240,74+(k*5)%22,12,1,'rgba(200,220,255,.3)');p(0,98,240,37,'#3a3448');p(0,98,240,2,'#5a5468');
+  p(184,86,40,12,'#3a2414');p(196,74,3,14,'#2a1a10');const f=Math.sin(t*9);p(188,82+f,6,5,'#e8642a');p(206,80-f,5,6,'#ffb040')}
+const _sc=memScene;memScene=function(g,i,t,line){const m=MEMS[i];if(!m||!m.act2)return _sc.apply(this,arguments);
+  const p=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round(x),Math.round(y),w,h)};g.setTransform(1,0,0,1,0,0);g.imageSmoothingEnabled=false;
+  const H=LOOK.hero,Lv=LOOK.love,k=i-I0;beach(p,g,t,k===3?20:60);
+  const beam=(x,a)=>{const w=16+Math.sin(t*10)*2;g.save();g.globalAlpha=.35*a;g.fillStyle='#b070ff';g.fillRect(x-w/2,0,w,108);g.globalAlpha=.8*a;g.fillStyle='#ead8ff';g.fillRect(x-2,0,4,108);g.restore();for(let q=0;q<3;q++)p(x+Math.sin(t*5+q*2)*9,100-((t*40+q*30)%90),2,2,'#e8d0ff')};
+  if(k===0){lying(g,70,112,H);beam(140,1);drawChibi(g,140,Math.round(108-Math.min(1,line*.5+t*.05)*18),Lv,{fx:-1,arm:'reach'})}
+  else if(k===1){lying(g,70,112,H);beam(150,.7);cloak(p,112,108,t);cloak(p,128,108,t+1);dog(p,100,108,t);drawChibi(g,152,96,Lv,{fx:-1,arm:'reach'})}
+  else if(k===2){lying(g,96,112,H,{hat:'kasket',hatC:'#5a2a7a'});cloak(p,112,108,t);const bob=Math.sin(t*3);p(96,98+bob,10,3,'#5a2a7a');p(98,95+bob,6,3,'#5a2a7a');if(line>=1)p(99,96+bob,1,1,Math.sin(t*8)>0?'#ff2a2a':'#5a1a1a');dog(p,80,108,t)}
+  else if(k===3){const y0=36+Math.sin(t)*2;g.fillStyle='#1a1028';g.beginPath();g.ellipse(120,y0,90,20,0,0,6.283);g.fill();p(40,y0,160,3,'#c070ff');for(let q=0;q<9;q++){p(52+q*16,y0-8,8,5,'#2a1a3a');p(53+q*16,y0-7,6,3,Math.sin(t*2+q)>0?'#e8b0ff':'#7a3ad8')}
+    beam(120,.8);if(line>=2)drawChibi(g,120,92,Lv,{fx:0,fy:1,arm:'reach'})}
+  else{const lift=Math.min(40,t*4);g.fillStyle='#1a1028';g.beginPath();g.ellipse(120,30-lift,70,16,0,0,6.283);g.fill();p(64,30-lift,112,2,'#c070ff');p(112,22-lift,16,8,'#3a2a5a');p(114,23-lift,12,6,'#e8b0ff');
+    drawChibi(g,120,34-lift,Lv,{fx:0,fy:1,arm:'up',noShadow:1});if(line>=2){drawChibi(g,120,110,H,{fx:0,fy:-1,arm:'up'})}}
+  const vg=g.createRadialGradient(120,68,40,120,68,150);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(20,6,40,.55)');g.fillStyle=vg;g.fillRect(0,0,240,135)};
+// ACT 2 memories are mysterious (v72 music)
+}).toString()+')()')}catch(e){try{window.__hamErr('v82: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v68">
 // v68: the graphics-card switch in Ayarlar (the choice is read once at start, so changing it reopens the game; the save is kept)

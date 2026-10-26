@@ -38,4 +38,5 @@ Boğaç ile 27 Ekim 2026'da konuşulanlar. Kararlar değiştikçe bu dosya günc
 ## İlerleme
 - v76: ikinci ada, geçiş, Ülker, portallar, ACT 2 hilesi.
 - v77: Yüzen Kayalar + Dev Mantar Ormanı içeriği, mor mana, Ateş asası, Büyücü Pervin, Ülker'in kazanı.
-- Sırada: v78 Hurda Çölü (robotlar, silahçı, tabanca + mermi, pompalı + fişek), v79 Kristal Golem Ocağı (golemler, mühendis, meka zırh, buz asası), v80 Ejder Volkanı (ejderhalar, ışın kılıcı, güçlü büyüler), v81 Gök Rıhtımı (astronot, roket, ACT 2 sonu) + ACT 2 anıları (eş, uzay gemisi, köpek/şapka verenler).
+- v78 Hurda Çölü (Tamer, tabanca/pompalı + mermiler), v79 Kristal Golem Ocağı (Selin, meka zırh; Pervin buz asası), v80 Ejder Volkanı (Alara, ışın kılıcı; Pervin yıldırım asası), v81 Gök Rıhtımı (Tuna, roket, fırlatma → ACT 3 kartı), v82 eşin ACT 2 anıları.
+- (eski plan) Sırada: v78 Hurda Çölü (robotlar, silahçı, tabanca + mermi, pompalı + fişek), v79 Kristal Golem Ocağı (golemler, mühendis, meka zırh, buz asası), v80 Ejder Volkanı (ejderhalar, ışın kılıcı, güçlü büyüler), v81 Gök Rıhtımı (astronot, roket, ACT 2 sonu) + ACT 2 anıları (eş, uzay gemisi, köpek/şapka verenler).
