@@ -10250,6 +10250,8 @@ function fistFB(g,x,y,L,o){const p=(a,b,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.r
 const _dc=drawChibi;
 drawChibi=function(g,x,y,L,o){o=o||{};if(L&&L.hs==='kel'&&L.flower)L=Object.assign({},L,{flower:false});
   if(V63.pl&&V63.punch!=null)o=Object.assign({},o,{punch:V63.punch,pside:V63.pside});
+  // v66.7: in cinematics (scenes drawn on their own canvas) people stand facing us or turned slightly, never in full profile
+  if(o.fx&&!o.q34&&g!==ctx&&!(g.canvas&&g.canvas.id==='cprev'))o=Object.assign({},o,{q34:1});
   const fx=o.fx||0;
   if(fx&&!o.q34){x=Math.round(x);y=Math.round(y);
     if(fx>0)profR(g,x,y,L,o);else{g.save();g.translate(2*x,0);g.scale(-1,1);profR(g,x,y,L,o);g.restore()}return}
