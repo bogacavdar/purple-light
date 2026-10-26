@@ -433,3 +433,4 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Zorunlu düzeltme: işaretsiz (`v69d` yok) her kayıt yüklenince köpek sayısı 1'e iner ve oyuncuya söylenir; işaret yalnızca düzeltme çalıştıktan ya da yeni oyundan sonra kayda yazılır. Headless Chromium'la eski kayıt taklidiyle denendi (3 → 1).
 - Kazan düğmesinin simgesi artık cadı kazanı (kara kazan, yeşil kaynayan iksir, altında ateş).
 - Gezgin'e hikâye yazılmayacak (Boğaç): onun kaybettiği kimse yok, eşini kaçıranlarla bağlantılı.
+- v69.1 (Boğaç): eski kayıtlar (`v69e` işareti yok) yüklenince köpekler tamamen silinir (0), mor sinyal kuyruğu ve mesajlar temizlenir, Gezgin sıfırlanır; 5. gün geçmişse hemen gelir, konuşunca 1 köpek verir ve toz bulutuyla gider (20. günde mor sinyal için yine gelir). Headless Chromium'la uçtan uca denendi.

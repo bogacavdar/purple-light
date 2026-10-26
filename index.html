@@ -10905,13 +10905,16 @@ const _db=drawBridge;drawBridge=function(time,inView){_db.apply(this,arguments);
 }).toString()+')()')}catch(e){try{window.__hamErr('v67: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v69">
-// v69: the stranger's gift could be taken again and again (and past the limit). Every save is set to one dog, once.
+// v69: the stranger's gift could be taken again and again (and past the limit). v69.1 (Boğaç): every old save
+// loses all its dogs and the stranger is reset; from day 5 he comes again, gives one dog and leaves in a puff of dust.
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
 let ok=false;   // the mark goes into a save only once this session has really fixed (or freshly started) the game
 $('t-new').addEventListener('click',()=>{ok=true},true);
-const _s=snapshot;snapshot=function(){const o=_s.apply(this,arguments);if(ok)o.v69d=1;return o};
-const fix=d=>{try{if(d&&d.inv&&!d.v69d){if(dogs.length>1){const n=dogs.length;dogs.length=1;setTimeout(()=>{try{toast(`Köpek hatası düzeltildi: fazladan gelen ${n-1} köpek geri gitti, ${dogs[0].name} seninle kalıyor.`,true)}catch(e){}},1500)}if(dogs.length)wiz.plan=true}}catch(e){}};
+const _s=snapshot;snapshot=function(){const o=_s.apply(this,arguments);if(ok)o.v69e=1;return o};
+const fix=d=>{try{if(d&&d.inv&&!d.v69e){const n=dogs.length;dogs.length=0;try{dogBeams.length=0}catch(e){}try{dogMsgs.length=0}catch(e){}
+    Object.assign(wiz,{shown:false,met:false,plan:false,gone:false,v2:false,sig:false});
+    setTimeout(()=>{try{toast(n?`Köpek hatası düzeltildi: köpekler geri gitti. ${day>=WIZ_DAY1?'Yıldızsız Gezgin yeniden geliyor; onunla konuş, köpeğini o verecek.':WIZ_DAY1+'. günde Yıldızsız Gezgin gelip köpeğini verecek.'}`:'Kayıt güncellendi.',true);renderInv()}catch(e){}},1200)}}catch(e){}};
 const _a=applyState;applyState=function(d){const raw=d;const r=_a.apply(this,arguments);fix(raw);ok=true;return r};
 }).toString()+')()')}catch(e){try{window.__hamErr('v69: '+(e&&e.message||e))}catch(_){}}})();
 </script>
