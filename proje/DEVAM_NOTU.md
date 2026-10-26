@@ -307,3 +307,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Gece 4 → 2,5 dk (`NIGHT_S=150`, `tickClock`). Meşale elde yanar: `TORCHB` Kaba 110 sn, Meşale 170 sn (bir gece). `torchRate`: yağmur ×2, fırtına ×2,7, sis ×1,15, ateş yanında ×1 (Ateş kodeksi ×0,75). Eski kayıtlarda fazla kalan süre kırpılır.
 - `feedTorch()` (L tuşu, El yapımı menüsündeki "Reçine sür"): 1 Herhangi reçine → Meşale +%65, Kaba +%50. `torchWarn`: %35'te "kalacak bir yer bulsam iyi olur" balonu, %12'de ikinci uyarı, yağmurda bir kez uyarı.
 - Hile: "Günü bitir" (`#c-day`) sabah 06:00'ya atlar.
+
+## v54 — Yıldızsızlar
+- Işıkçı (`lampman`): `LAMP_DAY=15`, her akşam 18:00–05:30 (`lampEve`) sabit `lampSpot`'ta (Yurt'ta, Ekin'in kuzeybatısı) belirir, haritada mavi ikon; sabah söner, ertesi akşam yine gelir; takas yapılınca (`LAMP_WANT`: 5 Mor kıymık, 3 Gece sefası, 1 Tunç külçesi) kaybolur (`gone`). Sikke yok.
+- Gezgin (`wiz`): `WIZ_DAY1=5` gün oyuncunun yanında belirir, ilk köpeği **hediye** eder (`wiz.plan` = ilk köpek verildi). `WIZ_DAY2=20` ikinci gelişte (`wiz.v2`) **Mor sinyal** verir (`wiz.sig`). Köpekler menüsünde mesajlaşma kutusu (`dogMsgs`, `.sigbox`), `orderDog()` → mor ışık sütunu (`dogBeams`, `drawDogBeam`) → `spawnDog(x,y)`. `DOG_MAX=5`. Eski satın alma (`buyDog`) kullanılmıyor.
+- `DOG_MATS` genişledi (ot, keten, kenevir, şifalı otlar, kil, kamış…); menüde yalnızca görülmüş olanlar.

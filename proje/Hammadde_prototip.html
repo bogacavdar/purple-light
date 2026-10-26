@@ -1008,6 +1008,8 @@ body.ontitle #dodgebtn,body.cine #dodgebtn{display:none!important}
 </style>
 
 <style id="v48-b3-css">
+#cbody .sigbox{margin-top:12px;border:2px solid #7a4ab0;background:rgba(40,20,70,.55);padding:8px}#cbody .sigh{color:#d8c0ff;margin-bottom:6px}#cbody .sigm p{margin:4px 0;padding:4px 8px;max-width:80%;font-size:14px}#cbody .sigm p.him{background:#3a2060;color:#e8d8ff}#cbody .sigm p.me{background:#2a4a2a;color:#d8ffd0;margin-left:auto;text-align:right}
+
 /* ---------- v48 batch 3: tracking bar, eat button, locked person icons ---------- */
 #b3trk{position:fixed;z-index:9;top:8px;left:50%;display:flex;flex-direction:column;gap:4px;pointer-events:auto;max-width:calc(100vw - 16px);box-sizing:border-box}
 #b3trk[hidden]{display:none!important}
@@ -1992,10 +1994,11 @@ const kaptan=(()=>{let best=null,bd=1e9;for(let y=1;y<H-1;y++)for(let x=1;x<W-1;
 let playTime=0;
 
 // ---------- the stranger (wizard) and robot dogs ----------
-const wiz={shown:false,met:false,plan:false,gone:false,x:0,y:0,name:'Yıldızsız Gezgin'};
+const wiz={shown:false,met:false,plan:false,gone:false,x:0,y:0,name:'Yıldızsız Gezgin',v2:false,sig:false};
 let bubble=null;   // a short thought shown above the player ({text,t})
 const dogs=[];
-const DOG_MATS=['Dal','Taş','Lif','Yaprak','Kum','Nehir çakılı','Çakmaktaşı','Böğürtlen'];
+const DOG_MATS=['Dal','Taş','Lif','Yaprak','Kum','Nehir çakılı','Çakmaktaşı','Böğürtlen','Kuru ot','Keten','Kenevir','Kekik','Papatya','Nane','Isırgan','Ahududu','Yaban çileği','Çayır mantarı','Yabani buğday','Adaçayı','Eğrelti','Göl kili','Kamış','Saz','Yosun'];
+const DOG_MAX=5,WIZ_DAY1=5,WIZ_DAY2=20;   // v54: the first dog is a gift on day 5; from day 20 more come by the purple signal
 const DOG_NAMES=['Bobo','Cıvata','Pırpır','Zımba','Tik','Fıstık','Bulut','Mıknatıs'];
 const dogPrice=()=>Math.round(500*Math.pow(1.6,dogs.length)/10)*10;
 const DOG_SPEED=36;                  // half of the player's base speed; never changed by skills or levels
@@ -2303,7 +2306,8 @@ function tickGather(dt,moving){
 }
 function renderInv(){
   document.getElementById('coinval').textContent=coins.toLocaleString('tr-TR');
-  if(!wiz.shown&&!wiz.gone&&!wiz.met&&coins>=500&&!onTitle)summonWizard();
+  if(!wiz.shown&&!wiz.gone&&!wiz.met&&day>=WIZ_DAY1&&met&&!wake&&!onTitle&&!fading)summonWizard();
+  else if(!wiz.shown&&wiz.gone&&!wiz.sig&&!wiz.v2&&day>=WIZ_DAY2&&met&&!wake&&!onTitle&&!fading){wiz.v2=true;wiz.gone=false;summonWizard()}
   if(coins>lastCoins&&!onTitle&&!fading){goldBurst(coins-lastCoins)}
   lastCoins=coins;
   document.getElementById('b-dog').hidden=!dogs.length;
@@ -2816,8 +2820,8 @@ function renderCraft(){
     cbody.innerHTML=mktTabs()+(list.length?`<p class="note">Fiyatlar sabit; çok satmak fiyatı düşürmez.${tradePct()||sk('Z4')?' Yetenek bonusların fiyatlara dahil.':''}</p><ul class="mkt">${list.map(n=>`<li><span class="nm">${esc(n)} ×${inv[n]}${TOOLS.has(n)?' <span class="tl">alet</span>':''}${(()=>{const u=potUses(n);if(u)return `<span class="kz warn">Kazanda şimdi ${u} tarifte işe yarar</span>`;const l=potLater(n);return l?`<span class="kz">İleride ${l} tarifte lazım olabilir</span>`:''})()}</span><span class="pr">${(Math.round(unitPrice(n)*10)/10).toLocaleString('tr-TR')} sikke</span><button data-sell="1" data-n="${esc(n)}" type="button">1 sat</button><button class="all" data-sell="all" data-n="${esc(n)}" type="button">Hepsi · ${Math.round(unitPrice(n)*inv[n]).toLocaleString('tr-TR')}</button></li>`).join('')}</ul>`
       :`<p class="note">${filter?'Aramana uyan malzeme yok.':'Satacak bir şeyin yok. Malzeme topla ya da birleştirerek değerli eşyalar yap.'}</p>`);
   }else if(mode==='dogs'){
-    cbody.innerHTML=`<p class="note">Köpekler senin seçtiğin malzemeyi kendi başına toplar ve envanterine getirir. Senin ilk günkü hızının yarısıyla çalışırlar; yeteneklerinden ve seviyenden etkilenmezler. Bir köpeği yanına çağırıp sevebilirsin.</p><div class="dogs">${dogs.map((d,i)=>`<div class="dog"><div class="dh"><b>${esc(d.name)}</b><span>${d.state==='wait'?'<b style="color:#f2b84b">ne toplayacağını seç</b>':d.state==='called'?'sana koşuyor':d.state==='play'?'yanında oynuyor':d.state==='gather'?`${esc(d.mat)} topluyor`:d.state==='walk'?`${esc(d.mat)} arıyor`:'bekliyor'} · topladığı: ${d.n||0}</span></div><div class="dact">${d.state==='called'||d.state==='play'?`<button type="button" data-work="${i}">İşine gönder</button>${d.state==='play'?`<button type="button" class="pet" data-pet="${i}">♥ Sev</button>`:''}`:`<button type="button" data-call="${i}">Yanıma çağır</button>`}</div><div class="dm">${DOG_MATS.map(m=>`<button type="button" class="${d.mat===m?'on':''}" data-dog="${i}" data-mat="${esc(m)}"><img src="${icon(m)}" alt="">${esc(m)}</button>`).join('')}</div></div>`).join('')||'<p class="note">Henüz robot köpeğin yok.</p>'}</div>
-      ${wiz.plan?`<div class="hintbox" style="margin-top:12px"><span><b>Yeni robot köpek</b> · Her köpek bir öncekinden pahalı.</span><button id="buydog" type="button"${!plInf()&&coins<dogPrice()?' disabled':''}>${dogPrice().toLocaleString('tr-TR')} sikke</button></div>`:''}`;
+    cbody.innerHTML=`<p class="note">Köpekler senin seçtiğin malzemeyi kendi başına toplar ve envanterine getirir. Senin ilk günkü hızının yarısıyla çalışırlar; yeteneklerinden ve seviyenden etkilenmezler. Bir köpeği yanına çağırıp sevebilirsin.</p><div class="dogs">${dogs.map((d,i)=>`<div class="dog"><div class="dh"><b>${esc(d.name)}</b><span>${d.state==='wait'?'<b style="color:#f2b84b">ne toplayacağını seç</b>':d.state==='called'?'sana koşuyor':d.state==='play'?'yanında oynuyor':d.state==='gather'?`${esc(d.mat)} topluyor`:d.state==='walk'?`${esc(d.mat)} arıyor`:'bekliyor'} · topladığı: ${d.n||0}</span></div><div class="dact">${d.state==='called'||d.state==='play'?`<button type="button" data-work="${i}">İşine gönder</button>${d.state==='play'?`<button type="button" class="pet" data-pet="${i}">♥ Sev</button>`:''}`:`<button type="button" data-call="${i}">Yanıma çağır</button>`}</div><div class="dm">${DOG_MATS.filter(m=>seen.has(m)||d.mat===m||m==='Dal').map(m=>`<button type="button" class="${d.mat===m?'on':''}" data-dog="${i}" data-mat="${esc(m)}"><img src="${icon(m)}" alt="">${esc(m)}</button>`).join('')}</div></div>`).join('')||'<p class="note">Henüz robot köpeğin yok.</p>'}</div>
+      ${wiz.sig?`<div class="sigbox"><div class="sigh">📡 <b>Mor sinyal</b> · Yıldızsız Gezgin</div><div class="sigm">${dogMsgs.slice(-6).map(([w,t])=>`<p class="${w==='sen'?'me':'him'}">${esc(t)}</p>`).join('')||'<p class="him">Bir köpek daha istersen yaz, dünyalı.</p>'}</div><div class="hintbox"><span>${dogs.length>=DOG_MAX?`En çok ${DOG_MAX} köpek: gemi daha fazlasını taşımaz.`:`Bir köpek daha iste · ${dogs.length}/${DOG_MAX}`}</span><button id="buydog" type="button"${dogs.length>=DOG_MAX||dogBeams.some(b=>!b.done)||(!plInf()&&coins<dogPrice())?' disabled':''}>Mesaj gönder · ${dogPrice().toLocaleString('tr-TR')} sikke</button></div></div>`:`<p class="note" style="margin-top:12px">Başka köpek almanın yolu yok… şimdilik.</p>`}`;
   }else if(mode==='char'){
     const row=(nm,f,fmt)=>`<tr><td>${nm}</td><td class="v">${fmt(f(lvl))}</td><td class="n">${fmt(f(lvl+1))}</td></tr>`;
     const x=v=>v.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2}), pc=v=>'+%'+(v*100).toLocaleString('tr-TR',{maximumFractionDigits:1});
@@ -3040,7 +3044,7 @@ cbody.addEventListener('click',e=>{
   const dc=e.target.closest('[data-call]');if(dc){callDog(dogs[+dc.dataset.call]);closeCraft();return}
   const dw=e.target.closest('[data-work]');if(dw){sendDog(dogs[+dw.dataset.work]);renderCraft();return}
   const dp=e.target.closest('[data-pet]');if(dp){petDog(dogs[+dp.dataset.pet]);renderCraft();return}
-  if(e.target.id==='buydog'){buyDog();return}
+  if(e.target.id==='buydog'){orderDog();return}
   if(e.target.id==='buyrec'){const c=recipeCandidates();if(c.length&&learnRecipe(c[Math.floor(Math.random()*c.length)],RECIPE_PRICE))renderCraft();return}
   const b=e.target.closest('.tile');if(b&&mode==='craft'&&potMode!=='dene'){if(suppressClick||potHeld)return;deposit(b.dataset.n,1);renderTut();return}
   const sb=e.target.closest('[data-sell]');if(sb){sell(sb.dataset.n,sb.dataset.sell==='all'?inv[sb.dataset.n]:1);return}
@@ -3640,6 +3644,8 @@ function summonWizard(){
   setTimeout(()=>toast(TOUCH?'Yakınında mor ışıklı biri belirdi. Ona dokun.':'Yakınında mor ışıklı biri belirdi. Yanına git ve E ile konuş.'),1600);
 }
 function talkWizard(){
+  if(wiz.v2&&!wiz.sig)return say('Yine ben, dünyalı. <i>(köpeğine bakıp başını eğer)</i> Hâlâ çalışıyor demek. İyi. Bizim orada makineler yorulmaz ama… yalnız kalınca bozulur.',[
+    {t:'Bir köpek daha alabilir miyim?',pri:1,fresh:1,f:wizSignal},{t:'Neden geri geldin?',f:()=>say('Gemimiz her gece adanın üstünden geçer. Bazen inerim. Bazen de… bir şey almaya.',[{t:'Ne almaya?',pri:1,f:()=>say('Merak etme. Senin olanı değil. <i>(gözlerini kaçırır)</i> Artık değil.',[{t:'Bekle…',pri:1,f:wizSignal}],wiz)}],wiz)}],wiz);
   if(!wiz.met){
     return say('…Selam, dünyalı. <i>(gözleri bir an bileğine kayar)</i> Kıyıya vuran son kazazede sen misin? Hm. Yıldızların öbür yüzündeki bir gezegenden geliyorum; yolum bu adaya düştü. Sana gezegenimden bir <b>hediye</b> getirdim.',[
       {t:'Ne hediyesi?',pri:1,f:wizOffer},
@@ -3650,18 +3656,32 @@ function talkWizard(){
 }
 function wizOffer(){
   wiz.met=true;
-  say(`Bir <b>robot köpek</b>. Senin yerine dal, taş, lif toplar; yorulmaz, şikâyet etmez. Hediye dedim ama… yolculuk pahalıydı. <b>${dogPrice()} sikke</b> yeter.`,[
-    {fresh:1,t:`Köpeği al · ${dogPrice().toLocaleString('tr-TR')} sikke`,pri:1,f:wizSell},
-    {t:'Sonra',f:bye},
-  ],wiz);
+  say('Bir <b>robot köpek</b>. Senin yerine dal, taş, lif, ot toplar; yorulmaz, şikâyet etmez. Hediye. Karşılığında bir şey istemem… şimdilik.',[
+    {fresh:1,t:'Köpeği al',pri:1,f:wizSell},{t:'Sonra',f:bye}],wiz);
 }
 function wizSell(){
-  const price=dogPrice();
-  if(!plInf()&&coins<price){sfx('bad');return say(`Gezegenime dönmem için <b>${price} sikke</b> lazım. Biraz daha biriktir.`,[{t:'Tamam',pri:1,f:bye}],wiz)}
-  if(!plInf())coins-=price;renderInv();sfx('coin');wiz.plan=true;
-  say('Hmm… <i>(sikkeleri evirip çevirir)</i> Bu bir <b>dünyalı sikkesi</b>. Bununla benim gezegenimde hiçbir şey alınmaz. Neyse… zaten çok hırçın bir köpekti. Al bakalım.',[
-    {fresh:1,t:'Köpeği al',pri:1,f:()=>{bye();spawnDog();openMenu('dogs');toast('Önce köpeğine ne toplayacağını seç.')}}],wiz);
+  wiz.plan=true;sfx('found');
+  say('Al bakalım. <i>(köpeğin tasmasındaki mor göze dokunur, göz bir an yanar)</i> Biraz hırçındır ama sana alışır. Ona ne toplayacağını söyle.',[
+    {fresh:1,t:'Teşekkürler',pri:1,f:()=>{bye();spawnDog();openMenu('dogs');toast('Önce köpeğine ne toplayacağını seç.')}}],wiz);
 }
+function wizSignal(){
+  say(`Bir tane daha mı? Hm. Burada kalamam ama sana bunu bırakayım: <b>Mor sinyal</b>. Köpekler menüsünden bana mesaj gönder; gemi geçerken köpeği <b>mor ışıkla</b> indiririm. Ücreti… dünyalı sikkesi. Evet, onlar artık bizde bir işe yarıyor. En çok <b>${DOG_MAX}</b> köpek; fazlası gemiyi ağırlaştırır.`,[
+    {fresh:1,t:'Sinyali al',pri:1,f:()=>{wiz.sig=true;sfx('found');announce('Mor sinyal','Köpek siparişi açıldı · köpekler menüsü');bye();setTimeout(wizVanish,600)}}],wiz)}
+// v54: ordering a dog by the purple signal; it comes down in a column of purple light next to you
+const dogBeams=[];let dogMsgs=[];
+function orderDog(){const price=dogPrice();if(dogs.length+dogBeams.filter(b=>!b.done).length>=DOG_MAX){toast(`En çok ${DOG_MAX} köpek olabilir.`,true);sfx('bad');return}
+  if(!plInf()&&coins<price){toast(`${(price-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);sfx('bad');renderCraft();return}
+  if(!plInf())coins-=price;renderInv();sfx('magic');dogMsgs.push(['sen','Bir köpek daha. '+price.toLocaleString('tr-TR')+' sikke gönderdim.']);
+  setTimeout(()=>{dogMsgs.push(['o',['Alındı. Gökyüzüne bak, dünyalı.','Sikkeler geldi. Işığa yaklaşma.','Tamam. Bu da hırçın, uyarayım.'][Math.floor(Math.random()*3)]]);if(craftOpen&&mode==='dogs')renderCraft();
+    setTimeout(()=>{if(craftOpen&&mode==='dogs')closeCraft();let x=player.x+30,y=player.y+10;for(let k=0;k<16;k++){const a=k*.9,r=26+k*3,xx=player.x+Math.cos(a)*r,yy=player.y+Math.sin(a)*r;if(reachAt(xx,yy)&&!blocked(xx,yy)&&!isWater(tileAt(xx,yy))){x=xx;y=yy;break}}
+      dogBeams.push({x,y,t0:performance.now(),done:false});sfx('hum');announce('Mor ışık','Köpeğin iniyor')},1400)},900);
+  if(craftOpen&&mode==='dogs')renderCraft()}
+function drawDogBeam(b){const e=(performance.now()-b.t0)/1000;if(e>3.2){const i=dogBeams.indexOf(b);if(i>=0)dogBeams.splice(i,1);return}
+  if(e>1.6&&!b.done){b.done=true;spawnDog(b.x,b.y);if(craftOpen)closeCraft();openMenu('dogs');toast('Yeni köpeğine ne toplayacağını seç.')}
+  const a=e<.4?e/.4:e>2.4?Math.max(0,(3.2-e)/.8):1,w=10+Math.sin(e*14)*2;
+  ctx.save();ctx.globalAlpha=.55*a;ctx.fillStyle='#b070ff';ctx.fillRect(Math.round(b.x-w/2),Math.round(b.y-400),Math.round(w),400);ctx.globalAlpha=.9*a;ctx.fillStyle='#e8d0ff';ctx.fillRect(Math.round(b.x-2),Math.round(b.y-400),4,400);
+  ctx.globalAlpha=.4*a;ctx.fillStyle='#c9a0ff';ctx.beginPath();ctx.ellipse(b.x,b.y,16,5,0,0,Math.PI*2);ctx.fill();ctx.restore();
+  if(Math.random()<.5)parts.push({x:b.x+(Math.random()-.5)*12,y:b.y-Math.random()*40,vx:(Math.random()-.5)*10,vy:-30,life:.7,c:Math.random()<.5?'#c9a0ff':'#7fe0ff'})}
 // the stranger leaves the way he came: a puff of dust
 function wizVanish(){
   if(!wiz.shown)return;
@@ -3670,8 +3690,8 @@ function wizVanish(){
   setTimeout(()=>{bubble={text:'Ne garip bir adam…',t:3.6};sfx('pick')},900);
 }
 function wizChoices(){return [{t:'Hoşça kal',pri:1,f:bye}]}
-function spawnDog(){
-  const d={mat:null,x:player.x+10,y:player.y+6,state:'wait',t:0,dur:0,target:null,name:DOG_NAMES[dogs.length%DOG_NAMES.length]+(dogs.length>=DOG_NAMES.length?' '+(1+Math.floor(dogs.length/DOG_NAMES.length)):''),n:0,face:1,ph:Math.random()*6,happy:0};
+function spawnDog(sx,sy){
+  const d={mat:null,x:sx!=null?sx:player.x+10,y:sy!=null?sy:player.y+6,state:'wait',t:0,dur:0,target:null,name:DOG_NAMES[dogs.length%DOG_NAMES.length]+(dogs.length>=DOG_NAMES.length?' '+(1+Math.floor(dogs.length/DOG_NAMES.length)):''),n:0,face:1,ph:Math.random()*6,happy:0};
   dogs.push(d);sfx('woof');setTimeout(()=>sfx('magic'),200);announce(d.name,'Robot köpeğin canlandı');
   for(let i=0;i<20;i++){const an=Math.random()*Math.PI*2,sp=20+Math.random()*40;parts.push({x:d.x,y:d.y,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp,life:1,c:i%2?'#7fe0ff':'#c9a0ff'})}
   renderInv();return d;
@@ -3682,7 +3702,7 @@ function buyDog(){
   if(!plInf())coins-=price;spawnDog();if(craftOpen&&mode==='dogs')renderCraft();else openMenu('dogs');toast('Yeni köpeğine ne toplayacağını seç.');
 }
 function setDogMat(d,m){if(d.target)d.target.claim=null;d.mat=m;d.state='idle';d.target=null;sfx('woof');
-  if(wiz.shown&&wiz.plan){setTimeout(()=>{if(craftOpen&&mode==='dogs')closeCraft();setTimeout(wizVanish,350)},700)}}
+  if(wiz.shown&&wiz.plan&&!wiz.v2){setTimeout(()=>{if(craftOpen&&mode==='dogs')closeCraft();setTimeout(wizVanish,350)},700)}}
 function callDog(d){if(d.target)d.target.claim=null;d.target=null;d.state='called';sfx('woof');toast(`${d.name} koşarak geliyor!`)}
 function sendDog(d){d.state=d.mat?'idle':'wait';d.target=null;sfx('woof')}
 function petDog(d){d.happy=2.2;sfx('woof');for(let i=0;i<8;i++)parts.push({x:d.x+(Math.random()-.5)*10,y:d.y-10,vx:(Math.random()-.5)*20,vy:-20-Math.random()*25,life:1.1,c:i%2?'#ff7aa8':'#ffb0c8'});floats.push({x:d.x,y:d.y-16,t:0,text:'♥',color:'#ff7aa8'})}
@@ -5647,6 +5667,7 @@ function frameBody(now){
   if(trader.state!=='away'&&inView(dock.sx,dock.sy,80))ents.push({y:dock.sy-40,d:()=>drawShip(time)});
   if(trader.state==='here'&&inView(trader.x,trader.y,40))ents.push({y:trader.y,d:idle(()=>drawTrader(time),.7)});
   if(wiz.shown&&inView(wiz.x,wiz.y,60))ents.push({y:wiz.y,d:()=>drawWizard(time)});
+  for(const b of dogBeams)ents.push({y:b.y+1,d:()=>drawDogBeam(b)});
   for(const d of dogs)if(inView(d.x,d.y,30))ents.push({y:d.y,d:()=>{const h=d.state==='play'||d.happy>0?Math.round(Math.abs(Math.sin(time*(d.happy>0?11:7)+(d.ph||0)))*3):0;ctx.save();ctx.translate(0,-h);drawDog(d,time);ctx.restore()}});
   if(bubble){bubble.t-=dt;if(bubble.t<=0)bubble=null;else ents.push({y:9998,d:()=>drawBubble(bubble)})}
   if(trader.state==='here'){const vx=trader.x-cx,vy=trader.y-cy;if(vx<0||vy<0||vx>viewW||vy>viewH){const ex=Math.max(cx+10,Math.min(cx+viewW-10,trader.x)),ey=Math.max(cy+10,Math.min(cy+viewH-90/S,trader.y));px(ex-5,ey-5,10,10,'#11170f');px(ex-4,ey-4,8,8,'#6fbf4a');px(ex-1,ey-3,2,6,'#11170f')}}
@@ -6414,12 +6435,19 @@ const lampman={shown:false,met:false,gone:false,x:0,y:0,name:'Yıldızsız Işı
 PRICE_['Kafa lambası']=PRICE_['Kafa lambası']||300;
 const lampOn=()=>equip.bas==='Kafa lambası'||!!settings.nightLight;
 const LAMPL=125;
-function checkLampman(){if(lampman.shown||lampman.gone||onTitle||wake||fading||!met)return;if(torchesUsed>=5&&coins>=1000){
-  lampman.shown=true;let best=null;for(let k=0;k<40;k++){const a=k*.7+1,r=50+k*2,x=player.x+Math.cos(a)*r,y=player.y+Math.sin(a)*r;if(reachAt(x,y)&&!blocked(x,y)&&!isWater(tileAt(x,y))){best={x,y};break}}
-  if(!best)best={x:player.x+40,y:player.y};lampman.x=best.x;lampman.y=best.y;
-  const a=$('aura');a.hidden=true;void a.offsetWidth;a.hidden=false;setTimeout(()=>a.hidden=true,5000);sfx('magic');
-  for(let i=0;i<30;i++){const an=Math.random()*Math.PI*2,sp=20+Math.random()*50;parts.push({x:lampman.x,y:lampman.y-6,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp,life:1.4,c:i%2?'#9fe8ff':'#5a2aa0'})}
-  setTimeout(()=>announce('Biri seni izliyor','Mavi ışıklı bir yabancı belirdi'),900)}}
+// v54: the lamp seller no longer waits for burnt torches and coins: from the 15th evening he stands at one fixed place on the island
+// (shown on the map) from dusk to dawn. Miss him and he is back the next evening. He trades the lamp for night things, not coins.
+const LAMP_DAY=15,LAMP_WANT=[['Mor kıymık',5],['Gece sefası',3],['Tunç külçesi',1]];
+const lampSpot=(()=>{const E=npc.home;for(const [dx,dy] of [[-58,-62],[-70,-40],[-34,-84],[44,-92],[20,-60]]){const p=spotAt(E.x+dx*T,E.y+dy*T,30);if(p&&zoneAt(p.x,p.y)===0&&reachAt(p.x,p.y)&&Math.hypot(p.x-witch.x,p.y-witch.y)>120&&Math.hypot(p.x-carp.x,p.y-carp.y)>120)return p}return spotAt(E.x-40*T,E.y-40*T,40)})();
+for(let i=trees.length-1;i>=0;i--)if(Math.hypot(trees[i].x-lampSpot.x,trees[i].y-lampSpot.y)<34)trees.splice(i,1);for(let i=nodes.length-1;i>=0;i--)if(Math.hypot(nodes[i].x-lampSpot.x,nodes[i].y-lampSpot.y)<24)nodes.splice(i,1);rebuildTG();
+const lampEve=()=>day>=LAMP_DAY&&(dayT>=1080||dayT<330);
+const lampHave=()=>LAMP_WANT.every(([n,q])=>(inv[n]||0)>=q);
+function checkLampman(){if(lampman.gone||onTitle||wake||fading||!met)return;
+  if(lampEve()&&!lampman.shown){lampman.shown=true;lampman.x=lampSpot.x;lampman.y=lampSpot.y;lampman.nights=(lampman.nights||0)+1;
+    for(let i=0;i<30;i++){const an=Math.random()*Math.PI*2,sp=20+Math.random()*50;parts.push({x:lampman.x,y:lampman.y-6,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp,life:1.4,c:i%2?'#9fe8ff':'#5a2aa0'})}
+    sfx('magic');setTimeout(()=>announce(lampman.met?'Mavi ışık yine yandı':'Uzakta mavi bir ışık',lampman.met?'Yıldızsız Işıkçı seni bekliyor · haritaya bak':'Haritada mavi bir nokta belirdi · gün doğmadan yetiş'),700);
+    setTimeout(()=>toast(lampman.met?'Yıldızsız Işıkçı yine aynı yerde. Haritada mavi işaret.':'Haritada mavi bir ışık belirdi. Gece bitmeden yanına git; yetişemezsen yarın akşam yine yanar.'),1800)}
+  if(!lampEve()&&lampman.shown){lampman.shown=false;if(dlgOpen&&$('dname').textContent===lampman.name)bye();setTimeout(()=>toast(lampman.met?'Mavi ışık gün doğarken söndü. Akşam yine orada olacak.':'Mavi ışık söndü; yetişemedin. Bu akşam yine yanabilir.',true),600)}}
 function drawLampman(time){const x=Math.round(lampman.x),y=Math.round(lampman.y),fl=Math.sin(time*4);
   px(x-7,y+4,14,3,'rgba(0,0,0,.28)');px(x-6,y-4,12,9,'#2a1a4a');px(x-7,y+2,14,3,'#1e1238');px(x-1,y-4,2,9,'#7fe0ff');
   px(x-4,y-12,8,8,'#140a26');px(x-3,y-9,2,1,'#9fe8ff');px(x+1,y-9,2,1,'#9fe8ff');
@@ -6427,13 +6455,14 @@ function drawLampman(time){const x=Math.round(lampman.x),y=Math.round(lampman.y)
   px(x+6,y-6,2,8,'#4a4a5a');px(x+5,y-9,4,3,'#7fe0ff');
   ctx.save();ctx.globalAlpha=.25+.15*fl;ctx.fillStyle='#9fe8ff';ctx.beginPath();ctx.moveTo(x,y-14);ctx.lineTo(x-14,y+16);ctx.lineTo(x+14,y+16);ctx.closePath();ctx.fill();ctx.restore();
   if(!lampman.met){const b=Math.round(Math.sin(time*5)*2);px(x-3,y-32+b,6,9,'#232d1f');px(x-1,y-31+b,2,5,'#7fe0ff');px(x-1,y-25+b,2,1,'#7fe0ff')}}
-function talkLamp(){lampman.met=true;
-  say(`Ssst… dünyalı. Beş meşale yaktın, beşi de söndü. Gecenin seni ne kadar yorduğunu gördüm. Bak: bir <b>kafa lambası</b>. Başına tak, ellerin boş kalsın. Üstündeki paneller gündüz güneşten şarj olur; ışığı <b>hiç bitmez</b>. Fiyatı… <b>1000 sikke</b>. Benim gezegenimde bunu çocuklar takar.`,[
-    {fresh:1,pri:1,t:'Lambayı al · 1.000 sikke',f:()=>{if(!plInf()&&coins<1000){sfx('bad');return say('Bin sikke dedim. Gece uzundur, ben beklerim.',[{t:'Tamam',pri:1,f:bye}],lampman)}
-      if(!plInf())coins-=1000;gain('Kafa lambası');shopBuy('Kafa lambası');sfx('coin');renderInv();
-      say('Güzel. <i>(lambanın arkasındaki mor göz işaretini parmağıyla örter)</i> Bunu kimseye gösterme, olur mu? Özellikler penceresinde <b>baş</b> yuvasına tak. İyi geceler, dünyalı… ya da iyi günler. Siz hangisini diyordunuz?',[{t:'Teşekkürler',pri:1,fresh:1,f:()=>{bye();if(!equip.bas){wear('Kafa lambası');toast('Kafa lambası başında: geceleri kendiliğinden yanar')}setTimeout(lampVanish,700)}}],lampman)}},
-    {t:'Neden yardım ediyorsun?',f:()=>say('Yardım mı? Ticaret, dünyalı. Biz yıldızsızlar alır, satar, toplarız. Bazen eşya… bazen başka şeyler.',[{t:'Hmm',pri:1,f:talkLamp}],lampman)},
-    {t:'Sonra',f:bye}],lampman)}
+function talkLamp(){const first=!lampman.met;lampman.met=true;
+  const want=LAMP_WANT.map(([n,q])=>`<b>${q} ${n}</b> <small style="color:${(inv[n]||0)>=q?'#8fd46b':'#ff8a6a'}">(sende ${inv[n]||0})</small>`).join(' · ');
+  const opts=[lampHave()?{fresh:1,pri:1,t:'Takas et',f:()=>{for(const [n,q] of LAMP_WANT)inv[n]-=q;gain('Kafa lambası');sfx('found');renderInv();
+      say('Güzel. <i>(kıymıkları avucunda tartar, gözleri bir an mor yanar)</i> Bunlar bizim orada yakıttır, bilir misin? Lambayı <b>baş</b> yuvasına tak; geceleri kendiliğinden yanar, hiç bitmez. <i>(lambanın arkasındaki mor göz işaretini parmağıyla örter)</i> Bunu kimseye gösterme, olur mu?',[{t:'Teşekkürler',pri:1,fresh:1,f:()=>{bye();if(!equip.bas){wear('Kafa lambası');toast('Kafa lambası başında: geceleri kendiliğinden yanar')}setTimeout(lampVanish,700)}}],lampman)}}
+    :{t:'Bunları bulacağım',pri:1,f:()=>say('Gece çiçeklerini ve mor kıymıkları ancak karanlıkta bulursun; meşaleni tazelemeyi unutma. Ben her akşam buradayım, gün doğana dek.',[{t:'Tamam',pri:1,f:bye}],lampman)},
+    {t:'Neden yardım ediyorsun?',f:()=>say('Yardım mı? Ticaret, dünyalı. Biz yıldızsızlar alır, satar, toplarız. Bazen eşya… bazen başka şeyler. <i>(bir an duraklar)</i> Bazen de insanları.',[{t:'Ne demek istiyorsun?',pri:1,f:()=>say('Hiç. Hiçbir şey. Lambaya bak sen.',[{t:'Hmm',pri:1,f:talkLamp}],lampman)}],lampman)},
+    {t:'Sonra',f:bye}];
+  say((first?`Ssst… dünyalı. Sonunda geldin. Gecenin seni ne kadar yorduğunu gördüm; meşaleler, yağmur, korku… Bak: bir <b>kafa lambası</b>. Başına tak, ellerin boş kalsın; ışığı <b>hiç bitmez</b>. Sikke istemem, sizin sikkeniz bizde bir işe yaramaz. Bana gecenin verdiklerini getir:<br>`:`Yine sen. Getirdin mi?<br>`)+want,opts,lampman)}
 function lampVanish(){if(!lampman.shown)return;for(let i=0;i<46;i++){const an=Math.random()*Math.PI*2,sp=10+Math.random()*46;parts.push({x:lampman.x+(Math.random()-.5)*8,y:lampman.y-6,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp*.6-12,life:1.2,c:['#9fe8ff','#5a2aa0','#d8d0c0','#a070e0'][i%4]})}
   sfx('magic');lampman.shown=false;lampman.gone=true;setTimeout(()=>{bubble={text:'Bu da ötekine benziyordu…',t:3.6};sfx('pick')},900)}
 // ---------- Balıkçı Rüstem: at the far corner of the island, the only one who knows the way through the mist ----------
