@@ -4037,7 +4037,7 @@ function drawChibi(g,x,y,L,o){
     // glasses: thin round rims / dark lenses / a slim rectangular frame, with a bridge and the arms
     if(L.gl&&L.gl!=='none'){const lx=ex-4,rx=ex;
       if(L.gl==='sun'){const c='#15151c';p(lx,hy+4,4,2,c);p(lx+1,hy+6,2,1,c);p(rx,hy+4,4,2,c);p(rx+1,hy+6,2,1,c);p(ex-1,hy+4,1,1,c);p(lx,hy+4,1,1,'#5a6a8a');p(rx,hy+4,1,1,'#5a6a8a');if(!fx){p(x-6,hy+4,2,1,c);p(x+4,hy+4,2,1,c)}}
-      else if(L.gl==='kare'){const c='#2a2a34';p(lx,hy+3,4,1,c);p(rx,hy+3,4,1,c);p(lx,hy+3,1,4,c);p(lx+3,hy+3,1,4,c);p(rx,hy+3,1,4,c);p(rx+3,hy+3,1,4,c);p(lx,hy+7,4,1,'rgba(42,42,52,.55)');p(rx,hy+7,4,1,'rgba(42,42,52,.55)');p(ex-1,hy+4,1,1,c);if(!fx){p(x-6,hy+4,2,1,c);p(x+4,hy+4,2,1,c)}}
+      else if(L.gl==='kare'){const c='#6a6a78';p(lx,hy+3,4,1,c);p(rx,hy+3,4,1,c);p(lx,hy+4,1,2,c);p(lx+3,hy+4,1,2,c);p(rx,hy+4,1,2,c);p(rx+3,hy+4,1,2,c);p(lx+1,hy+7,2,1,'rgba(106,106,120,.45)');p(rx+1,hy+7,2,1,'rgba(106,106,120,.45)');p(ex-1,hy+4,1,1,c);if(!fx){p(x-6,hy+4,2,1,c);p(x+4,hy+4,2,1,c)}}   // v66.6: thin and light (it read as a black block)
       else{const c='#b88a3a';for(const bx of [lx,rx]){p(bx+1,hy+3,2,1,c);p(bx+1,hy+7,2,1,c);p(bx,hy+4,1,3,c);p(bx+3,hy+4,1,3,c);p(bx+1,hy+4,1,1,'rgba(230,245,255,.55)')}p(ex-1,hy+4,1,1,c);if(!fx){p(x-6,hy+4,2,1,c);p(x+4,hy+4,2,1,c)}}}
   }
   if(o.helm){const hd=shade(o.helm,.7);p(x-6,hy-3,12,4,o.helm);p(x-5,hy-4,10,1,o.helm);p(x-4,hy-4,4,1,shade(o.helm,1.2));p(x-6,hy+1,12,1,hd);if(!back){p(x-6,hy+2,2,3,o.helm);p(x+4,hy+2,2,3,o.helm)}else p(x-6,hy+1,12,5,o.helm)}
@@ -10210,8 +10210,8 @@ function profR(g,x,y,L,o){
   }
   // glasses from the side: the lens edge in front of the eye, the arm back to the ear (above the eye)
   if(L.gl&&L.gl!=='none'){
-    if(L.gl==='sun'){const c='#15151c';p(x+3,hy+3,1,4,c);p(x+2,hy+4,1,2,'rgba(21,21,28,.6)');p(x-1,hy+3,4,1,c)}
-    else if(L.gl==='kare'){const c='#2a2a34';p(x+3,hy+3,1,4,c);p(x-1,hy+3,4,1,c)}
+    if(L.gl==='sun'){const c='#22222c';p(x+1,hy+4,3,2,c);p(x+3,hy+4,1,1,'#5a6a8a');p(x-2,hy+4,3,1,c)}   // the dark lens covers the eye, the arm goes back to the ear
+    else if(L.gl==='kare'){const c='#6a6a78';p(x+3,hy+3,1,3,c);p(x-1,hy+3,4,1,c)}
     else{const c='#b88a3a';p(x+3,hy+3,1,4,c);p(x+3,hy+5,1,1,'rgba(230,245,255,.7)');p(x-1,hy+3,4,1,c)}}
   if(o.helm){p(x-5,hy-3,10,4,o.helm);p(x-4,hy-4,8,1,o.helm);p(x-2,hy-4,3,1,shade(o.helm,1.2));p(x-5,hy+1,3,5,o.helm);p(x-5,hy+1,10,1,shade(o.helm,.7))}
   else if(HAT){const hc=L.hatC||'#c84a3a',hd=shade(hc,.7),hl=shade(hc,1.25),H=L.hat;
