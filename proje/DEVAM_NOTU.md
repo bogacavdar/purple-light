@@ -605,3 +605,6 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Ekin artık başta spoiler vermiyor: "ışık yukarı götürür" sözü kalktı ("Deniz bazen insandan en sevdiğini alır; ama umudu alamaz"); isim sonrası "Kaybettiğini soran çok olur…"; kendi hikâyesinde "mor ışık yükseldi" yerine "gökyüzü tuhaf bir renge boyandı". Gerçek, görevlerle yavaş yavaş açılır.
 - Rastgele isimler: erkek (kahraman + erkek eş) Boğaç, Selçuk, Tolga, Alp, Anıl, Rıdvan, Cumhur, Enes, Engin, Mehmet, Mertcan, Derman, Eren, Halil, Doğukan, Cengiz; kadın (kahraman + kadın eş) Aysel, Su, Cemre, Tuğçe, Nilgün, Hilal, Büşra, Gül, Gülnihal, Ilgın, Selen, Dünya (olmayanlar eklendi).
 - Menüde "Versiyon 83". Test yapılmadı.
+
+## v84 (27 Ekim 2026)
+- Hakkında: "Bir Boğaçhan Çavdar oyunu." Menüde "Versiyon 84".
