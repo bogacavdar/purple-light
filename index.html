@@ -9895,7 +9895,7 @@ for(const n of Object.keys(DEC)){if(!REC.has(n)||REC.get(n).c!=='Ev eşyası')co
   try{outlineCanvas(c,[26,20,12,235])}catch(e){}ICONC[n]=c;ICON[n]=c.toDataURL()}
 const R={on:false,o:null,w:0,h:0,x:0,y:0,face:1,step:0,goal:null,edit:false,sel:null,rot:0,gx:-1,gy:-1,keys:{},last:0,dark:0,msg:'',msgT:0};window.__v56=R;
 roomBusy=()=>R.on;
-roomSafe=()=>R.on&&!!R.o&&roomItems().some(it=>DEC[it.n]&&DEC[it.n].k==='lamp');
+roomSafe=()=>!!R.on;   // v70.1: inside a house the purple light never hurts
 const roomItems=()=>R.o&&R.o.room?R.o.room.it:[];
 const fp=it=>{const D=DEC[it.n]||{w:1,h:1};return it.r?[D.h,D.w]:[D.w,D.h]};
 const WALL=32;   // two cells of wall at the top

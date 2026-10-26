@@ -465,3 +465,6 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v70 (26 Ekim 2026)
 - Hileler gizli: Ayarlar'daki "Hile modu", altındaki hile bloğu (#b5cheat) ve kırmızı hile paneli yalnız klavyede art arda c-h-e-a-t yazılınca görünür (ses + toast). Tekrar yazınca gizlenir ve bütün hileler kapanır. Kilit `localStorage['hammadde.cheatok']`; kilitliyken settings.cheat/b5inf/b5scn zorla kapatılır (Z/X da çalışmaz). Kod `<script id="v69c">`, CSS `body:not(.cheatok) ...{display:none}`.
 - Yeni hile: "Bütün ara sahneler açık" (settings.b5scn). Açıkken Kitap › Keşif defteri'nin başında 24 sahne: açılış sineması (replay modu: bitince startWake çağrılmaz, oyundaki dalga sesi korunur), bütün anılar (openMem), Ada halkının sahneleri (`window.__plStory`, v59-story). Final ekranı listede yok (oyun durumunu değiştirir).
+
+## v70.1 (26 Ekim 2026)
+- Ev içinde mor ışık hiç zarar vermez: `roomSafe=()=>!!R.on` (eskiden yalnız lamba varsa güvenliydi). Lambasız odadaki mor pencere parıltısı yalnız görsel kaldı; uyarı mesajı artık çıkmaz.
