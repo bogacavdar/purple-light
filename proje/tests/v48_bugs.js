@@ -73,8 +73,9 @@ await p.evaluate(()=>window.__ham.q(0));
  ok('lucky customer does not pay double on shop goods',net<0,net);await ev("lvl=1;skills.delete('T3');skills.delete('T8');coins=0")}
 
 // B2: dusk warning on day 1 and no item loss on the first night
-{await ev("gain('Kaba meşale');gain('Taş balta');holdTool('Taş balta');gain('Taş',10);coins=50;player.x+=400;dayT=1049");await p.waitForTimeout(1200);
- ok('dusk (17:30) torch reminder',await ev("torchTut===2&&duskDay===1"));
+{await ev("gain('Kaba meşale');gain('Taş balta');holdTool('Taş balta');gain('Taş',10);coins=50;player.x+=400;if(dlgOpen)bye();if(craftOpen)closeCraft();dayT=1050.5");
+ let dusk=false;for(let i=0;i<30&&!dusk;i++){await p.waitForTimeout(100);dusk=await ev("torchTut===2&&duskDay===1")}   // poll: frame timing differs between machines
+ ok('dusk (17:30) torch reminder',dusk,await ev("[torchTut,duskDay,Math.round(dayT),paused,onTitle].join(',')"));
  await ev("dayT=1290;darkT=0");let died=false;for(let i=0;i<70&&!died;i++){await p.waitForTimeout(500);died=await ev("!!beam||fading")}
  await p.waitForTimeout(4500);ok('night 1: nothing lost',await ev("inv['Taş']===10&&coins===50&&graves.length===0"));await ev("if(dlgOpen)bye()")}
 
@@ -86,5 +87,39 @@ ok('codex thresholds use reachable recipes',await ev("catN('Ağaç')===Math.max(
 // v48 b4: every recipe has a source now
 ok('all recipes reachable (b4)',await ev("DB.R.every(x=>reachable().has(x.r))"));
 
+// ---- v48c regression checks (QA_V48B) ----
+// K1: a quill that knocks you out in the middle of the shot loop (faint() empties shots) must not crash the frame
+{await ev("if(dlgOpen)bye();if(craftOpen)closeCraft();fading=false;hp=1;pInv=0;dodge=null;for(let i=0;i<6;i++)shots.push({x:player.x,y:player.y-8,vx:0,vy:0,life:1,c:'#fff',dmg:50,k:'Oklu kirpi'})");
+ const e0=errs.length;let crashed=null;try{await ev("tickShots(.016)")}catch(e){crashed=e.message}
+ ok('shots: fainting inside the shot loop does not crash',!crashed&&errs.length===e0,crashed||'');
+ await p.waitForTimeout(4200);await ev("if(dlgOpen)bye();hp=maxHP();shots.length=0")}
+// Y3: early spawns — no Oklu kirpi before Sv8+day5 (or Sv10); only one thrower at a time below Sv10; boars gentler on early days
+{const r=await ev(`(()=>{const L0=lvl,D0=day,P={x:player.x,y:player.y};const res={};
+   const run=(L,D,n)=>{lvl=L;day=D;let ok=0,two=0;for(let i=0;i<n;i++){animals.length=0;spawnAnimals();if(animals.some(a=>a.k==='Oklu kirpi'))ok++;if(animals.filter(a=>ANIM[a.k].ranged&&ANIM[a.k].temper==='saldırgan'&&!ANIM[a.k].z).length>1)two++}return [ok,two]};
+   const spots=nodes.filter(n=>zoneAt(n.x,n.y)===0).slice(0,40);
+   let early=[0,0],late=[0,0];for(const s of spots.slice(0,15)){player.x=s.x;player.y=s.y;const a=run(9,4,4),b=run(10,6,4);early[0]+=a[0];early[1]+=a[1];late[0]+=b[0];late[1]+=b[1]}
+   animals.length=0;lvl=L0;day=D0;player.x=P.x;player.y=P.y;return {early,late}})()`);
+ ok('spawn: no Oklu kirpi at Sv9 / day 4',r.early[0]===0,JSON.stringify(r));
+ ok('spawn: never two hostile throwers at once below Sv10',r.early[1]===0,JSON.stringify(r));
+ ok('spawn: boar bites softer on day 2',await ev("(()=>{const d0=day,l0=lvl;day=2;lvl=3;const a={k:'Yaban domuzu'};const s=boarSoft(a);day=5;lvl=6;const t=boarSoft(a);day=d0;lvl=l0;return s&&!t})()"))}
+// Y4: the leaf shelter costs what quest 3 says (5 sikke) and still cannot be sold at a profit
+ok('shelter costs 5 sikke',await ev("houseCost(HOUSES.find(h=>h.n==='Yaprak barınağı'))===5"));
+// O10: durability never goes below zero, and a blunt tool hits like a bare fist
+{const r=await ev(`(()=>{gain('Taş balta');giveTool('Taş balta');toolDur['Taş balta']=0;beltSet(0,'Taş balta');setHand(0);const w=weapon();
+   const s=JSON.parse(JSON.stringify(snapshot()));s.toolDur={'Taş balta':-7};applyState(s);const d=toolDur['Taş balta'];setHand(-1);return [w.n,w.dmg,d]})()`);
+ ok('durability: a blunt axe is not a weapon, and −7 loads as 0',r[0]===null&&r[1]===4&&r[2]===0,JSON.stringify(r))}
+// Y2: touch — press and hold a carryable, drag it onto slot 2 (synthetic touch pointer events)
+{await ev("if(craftOpen)closeCraft();gain('Taş kazma');giveTool('Taş kazma');beltRemove('Taş kazma');invTab='all';openMenu('inv')");await p.waitForTimeout(300);
+ const r=await p.evaluate(async()=>{const q=s=>document.querySelector(s);const t=q('.itile[data-n="Taş kazma"]'),sl=q('[data-bs="1"]');if(!t||!sl)return 'no element';
+   const A=t.getBoundingClientRect(),B=sl.getBoundingClientRect();const ax=A.left+A.width/2,ay=A.top+A.height/2,bx=B.left+B.width/2,by=B.top+B.height/2;
+   const pe=(el,type,x,y)=>el.dispatchEvent(new PointerEvent(type,{bubbles:true,cancelable:true,pointerId:7,pointerType:'touch',isPrimary:true,clientX:x,clientY:y,button:0}));
+   pe(t,'pointerdown',ax,ay);await new Promise(r=>setTimeout(r,400));for(let k=1;k<=8;k++)pe(window,'pointermove',ax+(bx-ax)*k/8,ay+(by-ay)*k/8);pe(window,'pointerup',bx,by);return 'ok'});
+ ok('touch: hold + drag a tool onto slot 2',await ev("hotList()[1]==='Taş kazma'"),r);
+ const r2=await p.evaluate(async()=>{const t=document.querySelector('.itile[data-n="Taş kazma"]');if(!t)return 'no';const A=t.getBoundingClientRect();const x=A.left+A.width/2,y=A.top+A.height/2;
+   const pe=(el,type,x,y)=>el.dispatchEvent(new PointerEvent(type,{bubbles:true,cancelable:true,pointerId:8,pointerType:'touch',isPrimary:true,clientX:x,clientY:y,button:0}));
+   pe(t,'pointerdown',x,y);pe(window,'pointermove',x+30,y+40);pe(window,'pointerup',x+30,y+40);return 'ok'});
+ ok('touch: a quick swipe does not start a drag',await ev("!document.getElementById('ghost')&&hotList()[1]==='Taş kazma'"),r2);await ev("closeCraft()")}
+// O5: the cauldron card keeps counting what is already in the cauldron
+ok('tz4: ingredients in the cauldron still count',await ev(`(()=>{const t0=tz;tz=4;foundSet.delete('Kaba meşale');for(const n of ['Dal','Lif','Yaprak'])inv[n]=0;pot.r='Kaba meşale';pot.put=[{'Dal':2},{'Lif':2},{'Yaprak':2}];const L=tzNeed();pot.r=null;pot.put=[];tz=t0;return L.length===0})()`));
 ok('no page errors',!errs.length,errs.slice(0,3).join(' | '));
 await b.close();console.log(fails?`${fails} FAIL`:'ALL OK');process.exit(fails?1:0)})();

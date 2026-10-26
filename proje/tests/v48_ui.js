@@ -7,7 +7,9 @@ async function boot(b,ctxOpt){const c=await b.newContext(ctxOpt);const p=await c
   await p.goto('file://'+FILE+'?debug');await p.waitForFunction(()=>!!window.__ham,null,{timeout:60000});const ev=x=>p.evaluate(x=>window.__ham.ev(x),x);
   await ev("startNew('normal');endCine()");await p.waitForTimeout(300);await ev("wakeDone();wakeDone2()");await p.waitForTimeout(400);
   await ev("if(dlgOpen)bye();tzSkip();tzFinish();if(dlgOpen)bye();renderTut()");await p.waitForTimeout(300);await ev("if(dlgOpen)bye()");return {c,p,ev,errs}}
-async function mdrag(p,a,b){const A=await (await p.$(a)).boundingBox(),B=await (await p.$(b)).boundingBox();
+// the inventory panel may re-render right after it opens (a stale handle has no box): look the element up again
+async function boxOf(p,sel){for(let i=0;i<20;i++){const h=await p.$(sel);const r=h&&await h.boundingBox();if(r)return r;await p.waitForTimeout(100)}throw new Error('no box: '+sel)}
+async function mdrag(p,a,b){const A=await boxOf(p,a),B=await boxOf(p,b);
   await p.mouse.move(A.x+A.width/2,A.y+A.height/2);await p.mouse.down();await p.mouse.move(A.x+A.width/2+10,A.y+A.height/2+10,{steps:3});
   await p.mouse.move(B.x+B.width/2,B.y+B.height/2,{steps:8});await p.mouse.up();await p.waitForTimeout(150)}
 (async()=>{const b=await chromium.launch();

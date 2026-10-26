@@ -11,7 +11,12 @@
 <meta name="theme-color" content="#1d2a1a">
 <script>
 // Shows any startup error on screen (so a phone user can read it), instead of a silent frozen page.
-window.__hamErr=function(msg){try{var b=document.getElementById('errbox');if(!b){b=document.createElement('div');b.id='errbox';b.style.cssText='position:fixed;left:8px;right:8px;bottom:8px;z-index:99;background:#4a0e12;color:#fff;border:2px solid #ff6a5a;font:14px/1.4 system-ui,sans-serif;padding:10px 12px;white-space:pre-wrap';(document.body||document.documentElement).appendChild(b)}b.textContent='Oyun bir hatayla karşılaştı. Bu yazının ekran görüntüsünü gönderirsen düzeltebilirim:\n'+msg+'\n'+navigator.userAgent}catch(e){}};
+window.__hamErr=function(msg,soft){try{if(soft||window.__plReady){window.__hamSoft(msg);return}var b=document.getElementById('errbox');if(!b){b=document.createElement('div');b.id='errbox';b.style.cssText='position:fixed;left:8px;right:8px;bottom:8px;z-index:99;background:#4a0e12;color:#fff;border:2px solid #ff6a5a;font:14px/1.4 system-ui,sans-serif;padding:10px 12px;white-space:pre-wrap';(document.body||document.documentElement).appendChild(b)}b.textContent='Oyun bir hatayla karşılaştı. Bu yazının ekran görüntüsünü gönderirsen düzeltebilirim:\n'+msg+'\n'+navigator.userAgent}catch(e){}};
+// v48c: once the game runs, an error is a small notice that can be closed and fades away by itself (the full text goes to the console and, once, to the box)
+window.__hamSoft=function(msg){try{try{console.error('[Purple Light] '+msg)}catch(_){}var n=window.__hamSoftN=(window.__hamSoftN||0)+1;var b=document.getElementById('errsoft');
+  if(!b){b=document.createElement('div');b.id='errsoft';b.setAttribute('role','status');b.style.cssText='position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 8px);z-index:99;max-width:min(460px,calc(100vw - 24px));box-sizing:border-box;background:rgba(74,14,18,.94);color:#fff;border:2px solid #ff6a5a;font:13px/1.35 system-ui,sans-serif;padding:6px 40px 6px 10px;white-space:pre-wrap;word-break:break-word;pointer-events:auto';
+    var x=document.createElement('button');x.type='button';x.textContent='×';x.setAttribute('aria-label','Kapat');x.style.cssText='position:absolute;right:2px;top:2px;width:34px;height:34px;font:20px/1 system-ui,sans-serif;background:none;border:none;color:#fff;cursor:pointer';x.onclick=function(){b.hidden=true};b.appendChild(x);var t=document.createElement('span');b.appendChild(t);(document.body||document.documentElement).appendChild(b)}
+  b.lastChild.textContent=n===1?('Küçük bir hata oldu, oyun sürüyor. Ekran görüntüsünü gönderirsen düzeltirim:\n'+msg):('Bir hata daha ('+n+'): '+msg);b.hidden=false;clearTimeout(b._t);b._t=setTimeout(function(){b.hidden=true},n===1?9000:5000)}catch(e){}};
 if(!Array.prototype.flat)Array.prototype.flat=function(){return this.reduce(function(a,b){return a.concat(b)},[])};
 if(!Array.prototype.flatMap)Array.prototype.flatMap=function(f,t){return this.map(f,t).reduce(function(a,b){return a.concat(b)},[])};
 if(!Object.fromEntries)Object.fromEntries=function(it){var o={};Array.from(it).forEach(function(p){o[p[0]]=p[1]});return o};
@@ -838,12 +843,15 @@ body.ontitle #dodgebtn,body.cine #dodgebtn{display:none!important}
 .cch button.sw{width:28px;height:28px;padding:0;border-width:3px}
 .cch button.on{border-color:var(--accent);box-shadow:0 0 0 2px #11170f inset}
 .cch button.sw.on{box-shadow:0 0 0 2px #11170f inset,0 0 0 2px var(--accent)}
-.tmenu.row{display:flex;justify-content:center;gap:10px;margin-top:14px;position:sticky;bottom:-18px;padding:8px 0;background:rgba(27,35,24,.96)}
+.tmenu.row{display:flex;justify-content:center;gap:10px;margin-top:14px;position:sticky;bottom:-18px;padding:8px 0;background:rgba(27,35,24,.96)}.ccard{scroll-padding-bottom:72px}
 @media (max-width:640px){.cwrap{grid-template-columns:1fr}#cprev{width:150px;height:150px}.crow{grid-template-columns:80px minmax(0,1fr)}}
 @media (pointer:coarse) and (orientation:landscape) and (max-height:520px){
   #b-exit{width:48px;height:36px;padding:4px}#b-exit .xl{display:none}#b-exit svg{width:24px;height:24px}
   .ccard{padding:10px 12px}.ccard h2{font-size:17px;margin-bottom:6px}.cwrap{grid-template-columns:150px minmax(0,1fr);gap:10px}#cprev{width:120px;height:120px}
-  .crow{grid-template-columns:76px minmax(0,1fr);gap:5px}.cch button{font-size:11.5px;padding:3px 6px}.cch button.sw{width:22px;height:22px}.copts{gap:5px}.tmenu.row{margin-top:8px}}
+  .crow{grid-template-columns:76px minmax(0,1fr);gap:5px}.cch button{font-size:11.5px;padding:3px 6px}.cch button.sw{width:22px;height:22px}.copts{gap:5px}.tmenu.row{margin-top:8px}
+  /* v48c: on a short phone the Geri/Devam bar sits under the preview (left column) and never covers an option row */
+  #creator .tmenu.row{width:150px;justify-content:flex-start;gap:6px;margin:-52px 0 0;padding:6px 0 0;background:none;bottom:-4px;pointer-events:none}#creator .tmenu.row .mb{pointer-events:auto;font-size:14px;padding:8px 12px;min-height:44px}
+  #creator .copts{padding-bottom:8px}}
 /* v42 HUD: vitals under the clock, a big coin box, menu icons that grow down to it, no key labels */
 #vit{display:flex;flex-direction:column;gap:5px;pointer-events:auto;width:100%}
 #vit .vb{flex:none;width:100%;box-sizing:border-box;height:24px;border-width:3px;margin:0}
@@ -878,7 +886,7 @@ body.ontitle #dodgebtn,body.cine #dodgebtn{display:none!important}
 .iact .ib2 button{font-family:inherit;font-size:14px;font-weight:700;min-height:40px;padding:6px 12px;background:#1c2419;color:var(--ink);border:2px solid var(--panel-edge);cursor:pointer}
 .iact .ib2 button.go{background:var(--accent);border-color:var(--accent);color:#2a1f08}.iact .ib2 button.off{color:#ff9a7a;border-color:#7a3a30}
 .itile .bslot{position:absolute;left:4px;top:3px;min-width:15px;height:15px;font-size:11px;font-weight:700;line-height:15px;text-align:center;background:var(--accent);color:#2a1f08}
-.itile.carry{border-color:#8a7a45}.itile.carry .hn{left:22px}
+.itile.carry{border-color:#8a7a45}.ibs .bs{touch-action:none}.itile.carry,.ibs .bs{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}.itile.carry .hn{left:22px}
 .ibelt{position:sticky;bottom:-12px;margin:12px -14px -12px;padding:8px 14px 10px;background:#1a2217;border-top:2px solid var(--panel-edge);z-index:2}
 .ibh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px;font-size:13px}.ibh b{color:var(--accent);font-size:14px}.ibh span{color:var(--ink-dim)}
 .ibs{display:flex;flex-wrap:wrap;gap:6px}
@@ -895,7 +903,7 @@ body.ontitle #dodgebtn,body.cine #dodgebtn{display:none!important}
 .bkinfo b{font-size:15px}.bkinfo small{color:var(--ink-dim)}.bkinfo .chips2{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}.bkinfo .chips2 span{display:inline-flex;align-items:center;gap:4px;background:#1c2419;border:1px solid #3a4630;padding:1px 6px;font-size:13px}
 .bkinfo .chips2 span img{width:16px;height:16px;image-rendering:pixelated}.bkinfo .chips2 span.ok{border-color:#5aa84a}.bkinfo .chips2 span.no{border-color:#7a3a30}.bkinfo .chips2 .q{color:var(--ink-dim)}
 .bkinfo .bkw{display:block;margin-top:4px}
-.bkg{margin-bottom:8px}.bkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:5px}
+.bkg{margin-bottom:8px;content-visibility:auto;contain-intrinsic-size:auto 160px}.bkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:5px}
 .bk{position:relative;aspect-ratio:1/1;min-height:44px;padding:0;background:#1c2419;border:2px solid var(--panel-edge);cursor:pointer;display:flex;align-items:center;justify-content:center}
 .bk img{width:30px;height:30px;image-rendering:pixelated;pointer-events:none}.bk i{font-style:normal;font-size:20px;font-weight:700;color:#6d6a58;pointer-events:none}
 .bk.lk{background:#151b13;border-style:dashed}.bk.learned{border-color:#5aa84a;background:#203a24}.bk em{position:absolute;right:2px;top:0;font-style:normal;font-size:11px;color:#8fd46b}
@@ -941,7 +949,7 @@ body.ontitle #dodgebtn,body.cine #dodgebtn{display:none!important}
 @media (pointer:coarse){
   #closecraft .esc,#closecraft kbd{display:none}
   #closecraft{min-width:72px;min-height:42px;font-size:15px!important;font-weight:700}
-  #tut button{min-height:40px;padding:6px 12px!important;font-size:14px!important}
+  #tut button{min-height:44px;padding:6px 12px!important;font-size:14px!important}
   .dch button{min-height:42px}
   .mkt button{min-height:40px;padding:6px 10px;font-size:14px}
   .book .mk,.rr.hq .mk{min-height:40px;min-width:44px;font-size:16px}
@@ -958,10 +966,11 @@ body.ontitle #dodgebtn,body.cine #dodgebtn{display:none!important}
   #tut{top:calc(env(safe-area-inset-top,0px) + 6px);right:calc(env(safe-area-inset-right,0px) + 66px);left:calc(env(safe-area-inset-left,0px) + 146px);width:auto;max-width:420px;margin-left:auto;padding:5px 9px;font-size:14px;line-height:1.3}
   #tut .th{margin-bottom:1px;cursor:pointer}#tut .th b{font-size:12px}#tut .th::after{content:'▾';margin-left:auto;color:var(--ink-dim);font-size:12px}
   body:not(.tutx) #tut p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  body:not(.tutx) #tut .tb{position:absolute;right:6px;bottom:-22px;margin:0}
+  body:not(.tutx) #tut .tb{position:absolute;right:6px;bottom:-38px;margin:0}
   body.tutx #tut .th::after{content:'▴'}
+  @media (max-height:340px){body:not(.tutx) #tut p{-webkit-line-clamp:1}#tut{max-width:360px}}
   #tut .tpor{width:22px;height:22px}#tut .tpor svg{width:18px;height:18px}
-  #tut button{min-height:32px;padding:3px 10px!important;font-size:13px!important;background:#232d1f}
+  #tut button{min-height:44px;padding:3px 12px!important;font-size:13px!important;background:#232d1f}
   body.menuopen #tut{left:auto;width:min(340px,calc(100vw - 260px))}
   #toasts{top:calc(env(safe-area-inset-top,0px) + 98px)}
   .toast{font-size:14px}
@@ -1382,6 +1391,7 @@ const shopQ={};const shopBuy=(n,q)=>{shopQ[n]=(shopQ[n]||0)+(q||1)};
 function shopTake(n,q){const s=Math.min(q,shopQ[n]||0);if(s>0){shopQ[n]-=s;if(!shopQ[n])delete shopQ[n]}return s}
 const unitPrice=(n,bulk)=>PRICE_[n]*sellMult(n,bulk);
 let PRICE_=DB.p;
+PRICE_['Yaprak barınağı']=1;   // v48c: a one-night shelter is worth next to nothing when sold, so Rıza can ask 5 sikke for it (the price floor stays low)
 const STONEISH=new Set(['Taş','Çakmaktaşı','Nehir çakılı','Kum','Nehir kili']);
 function gatherMult(name){let m=(1-(sk('G3')?.45:sk('G2')?.30:sk('G1')?.15:0))/STAT.gather(lvl);
   if((sk('G5')&&/ odunu$/.test(name))||(sk('G6')&&STONEISH.has(name))||(sk('G7')&&name==='Su'))m*=.5;return m}
@@ -1906,7 +1916,7 @@ addEventListener('keydown',e=>{
     return}
   if(wake)return;
   if(e.code==='Space'&&!e.repeat){attack();e.preventDefault();return}
-  if(e.code==='KeyF'&&!e.repeat){openEat();e.preventDefault();return}
+  if(e.code==='KeyF'){e.preventDefault();if(!e.repeat&&!fHold){fHold=setTimeout(()=>{fHold=-1;openEat()},450)}return}   // v48c: a press eats the best food, holding F opens the list
   if(/^Digit[0-9]$/.test(e.code)&&!e.repeat){const d=+e.code.slice(5),ix=d===0?9:d-1;if(ix<hotN())selectHot(ix);e.preventDefault();return}
   if(placing&&e.code==='KeyQ'&&!e.repeat){rotatePlace();e.preventDefault();return}
   if(!placing&&e.code==='KeyQ'&&!e.repeat){doDodge();e.preventDefault();return}
@@ -1918,7 +1928,8 @@ addEventListener('keydown',e=>{
   if(KEYMAP[e.code]){keys[KEYMAP[e.code]]=true;e.preventDefault()}
   if(e.code==='KeyE'&&!e.repeat){interact();e.preventDefault()}
 });
-addEventListener('keyup',e=>{if(KEYMAP[e.code])keys[KEYMAP[e.code]]=false;if(e.code==='ShiftLeft'||e.code==='ShiftRight')keys.shift=false});
+let fHold=0;
+addEventListener('keyup',e=>{if(e.code==='KeyF'&&fHold){const h=fHold;fHold=0;if(h!==-1){clearTimeout(h);if(!onTitle&&!paused&&!wake&&!dlgOpen){eatBest();renderTut()}}}if(KEYMAP[e.code])keys[KEYMAP[e.code]]=false;if(e.code==='ShiftLeft'||e.code==='ShiftRight')keys.shift=false});
 addEventListener('blur',()=>{for(const k in keys)keys[k]=false});
 document.querySelectorAll('.btn[data-k]').forEach(b=>{
   const k=b.dataset.k;
@@ -2115,17 +2126,17 @@ function tickGather(dt,moving){
   if(g.tg.kind!=='farm'&&underAttack()){stopGather();return}
   if(g.t<g.dur)return;
   stopGather();
-  if(g.cb){if(g.tool&&wearsNow()){toolDur[g.tool]=(nn(toolDur[g.tool],GT[g.tool].dur))-1;if(toolDur[g.tool]<=0)setTimeout(()=>toast(`${g.tool} köreldi! Demirci Dursun'da yenile.`,true),200)}g.cb();return}
+  if(g.cb){if(g.tool&&wearsNow()){toolDur[g.tool]=Math.max(0,(nn(toolDur[g.tool],GT[g.tool].dur))-1);if(toolDur[g.tool]<=0)setTimeout(()=>toast(`${g.tool} köreldi! Demirci Dursun'da yenile.`,true),200)}g.cb();return}
   let dx0=player.x,dy0=player.y;
   if(tg.kind==='node'&&tg.n.mine){dx0=tg.n.x;dy0=tg.n.y;tg.n.left=(tg.n.left||1)-1;if(tg.n.left<=0){tg.n.alive=false;tg.n.t=RES[tg.n.name].respawn*(sk('G8')?.6:1);toast(`${MINES[tg.n.name].l} tükendi; başka bir yerde yenisi çıkar.`)}
     dropItem(g.name,dx0,dy0);sfx('clank');burst(tg.n.x,tg.n.y-4);for(let k=0;k<6;k++)parts.push({x:tg.n.x,y:tg.n.y-6,vx:(Math.random()-.5)*50,vy:-20-Math.random()*30,life:.5,c:MINES[tg.n.name].c})}
-  else if(tg.kind==='node'){tg.n.alive=false;tg.n.t=RES[tg.n.name].respawn*(sk('G8')?.6:1);dx0=tg.n.x;dy0=tg.n.y;dropItem(g.name,dx0,dy0);sfx('pick');burst(tg.n.x,tg.n.y);const h=HURT[g.name];if(h)setTimeout(()=>hurt(h[0],h[1]),0)}
+  else if(tg.kind==='node'){tg.n.alive=false;tg.n.t=RES[tg.n.name].respawn*(sk('G8')?.6:1);dx0=tg.n.x;dy0=tg.n.y;dropItem(g.name,dx0,dy0);sfx('pick');burst(tg.n.x,tg.n.y);const h=HURT[g.name];if(h&&thornHits(g.name))setTimeout(()=>hurt(h[0],h[1]),0)}
   else if(tg.kind==='tree'){tg.t.cd=12;woodCut++;dx0=tg.t.x+(player.x<tg.t.x?-6:6);dy0=tg.t.y;dropItem(g.name,dx0,dy0);if(/^Obsidyen/.test(g.tool||'')&&Math.random()<.35)dropItem(g.name,dx0,dy0);for(const [k,q] of (TREE_EXTRA[tg.t.type.n]||[]))dropItem(k,dx0,dy0,q);sfx('pick');burst(tg.t.x,tg.t.y-8)}
   else if(tg.kind==='clay'){dropItem(g.name,player.x+player.face.x*10,player.y+player.face.y*8);sfx('pick')}
   else add(g.name);
   gainXP(1);
   if(sk('G4')&&rnd()<.1+luck()){if(tg.kind==='node'||tg.kind==='tree'||tg.kind==='clay')dropItem(g.name,dx0,dy0);else{gain(g.name);renderInv()}toast(`Bereket! +1 ${g.name}`)}
-  if(g.tool&&wearsNow()){toolDur[g.tool]=(nn(toolDur[g.tool],GT[g.tool].dur))-1;if(toolDur[g.tool]<=0)setTimeout(()=>toast(`${g.tool} köreldi! Demirci Dursun'da bile.`,true),200)}
+  if(g.tool&&wearsNow()){toolDur[g.tool]=Math.max(0,(nn(toolDur[g.tool],GT[g.tool].dur))-1);if(toolDur[g.tool]<=0)setTimeout(()=>toast(`${g.tool} köreldi! Demirci Dursun'da bile.`,true),200)}
 }
 function renderInv(){
   document.getElementById('coinval').textContent=coins.toLocaleString('tr-TR');
@@ -2589,20 +2600,27 @@ function invClick(e){if(suppressClick)return;
     if(invSel&&hotThing(invSel)&&beltIndex(invSel)!==i){const n=invSel;invSel=null;beltSet(i,n);toast(`${n} ${slotKey(i)}. yuvada`);renderCraft();return}
     const n=hotList()[i]||belt[i];if(n){invSel=invSel===n?null:n;renderCraft()}else toast(TOUCH?'Boş yuva: önce yukarıdan bir taşınabilir eşyaya dokun.':'Boş yuva: bir taşınabilir eşyayı buraya sürükle.');return}
   const it=e.target.closest('[data-isel]');if(it){const n=it.dataset.isel;invSel=invSel===n?null:n;sfx('pick');renderCraft();return}}
-// mouse: drag a carryable onto a slot, drag slots to reorder, drag a slot off the belt to empty it
+// drag a carryable onto a slot, drag slots to reorder, drag a slot off the belt to empty it
+// mouse: drag at once; touch: hold the finger still ~0.25 s, then drag (a quick swipe still scrolls the list; tap → tap still works)
 let idrag=null;
-cbody.addEventListener('pointerdown',e=>{if(mode!=='inv'||e.button>0||e.pointerType!=='mouse')return;
-  const s=e.target.closest('[data-bs]'),t=e.target.closest('.itile.carry');
-  if(s){const i=+s.dataset.bs,n=belt[i];if(n)idrag={src:'slot',i,n,x:e.clientX,y:e.clientY,on:false,id:e.pointerId}}
-  else if(t)idrag={src:'inv',n:t.dataset.n,x:e.clientX,y:e.clientY,on:false,id:e.pointerId}});
-addEventListener('pointermove',e=>{const d=idrag;if(!d||e.pointerId!==d.id)return;
-  if(!d.on&&Math.hypot(e.clientX-d.x,e.clientY-d.y)>6){d.on=true;const g=document.createElement('img');g.id='ghost';g.src=icon(d.n);g.alt='';document.body.appendChild(g);d.g=g;cbody.classList.add('idrag')}
+function idragStart(d,x,y){d.on=true;const g=document.createElement('img');g.id='ghost';g.src=icon(d.n);g.alt='';g.style.left=x+'px';g.style.top=y+'px';document.body.appendChild(g);d.g=g;cbody.classList.add('idrag');if(d.touch){try{if(navigator.vibrate)navigator.vibrate(15)}catch(e){}}}
+cbody.addEventListener('pointerdown',e=>{if(mode!=='inv'||e.button>0)return;
+  const s=e.target.closest('[data-bs]'),t=e.target.closest('.itile.carry');let d=null;
+  if(s){const i=+s.dataset.bs,n=belt[i];if(n)d={src:'slot',i,n}}
+  else if(t)d={src:'inv',n:t.dataset.n};
+  if(!d)return;Object.assign(d,{el:e.target,x:e.clientX,y:e.clientY,lx:e.clientX,ly:e.clientY,on:false,id:e.pointerId,touch:e.pointerType!=='mouse'});idrag=d;
+  if(d.touch)d.tm=setTimeout(()=>{if(idrag===d&&!d.on)idragStart(d,d.lx,d.ly)},250)});
+cbody.addEventListener('touchmove',e=>{if(idrag&&idrag.on)e.preventDefault()},{passive:false});
+addEventListener('pointermove',e=>{const d=idrag;if(!d||e.pointerId!==d.id)return;d.lx=e.clientX;d.ly=e.clientY;
+  if(!d.on&&Math.hypot(e.clientX-d.x,e.clientY-d.y)>(d.touch?10:6)){if(d.touch){clearTimeout(d.tm);idrag=null;return}idragStart(d,e.clientX,e.clientY)}
   if(d.on){e.preventDefault();d.g.style.left=e.clientX+'px';d.g.style.top=e.clientY+'px';cbody.querySelectorAll('.bs.over').forEach(x=>x.classList.remove('over'));const o=cst(document.elementFromPoint(e.clientX,e.clientY),'[data-bs]');if(o)o.classList.add('over')}},{passive:false});
-addEventListener('pointerup',e=>{const d=idrag;if(!d||e.pointerId!==d.id)return;idrag=null;cbody.classList.remove('idrag');if(!d.on)return;d.g.remove();suppressClick=true;setTimeout(()=>suppressClick=false,50);
+addEventListener('pointerup',e=>{const d=idrag;if(!d||e.pointerId!==d.id)return;idrag=null;clearTimeout(d.tm);cbody.classList.remove('idrag');if(!d.on)return;d.g.remove();
+  if(d.touch&&Math.hypot(e.clientX-d.x,e.clientY-d.y)<10){invClick({target:d.el});suppressClick=true;setTimeout(()=>suppressClick=false,350);return}   // a long press that did not move = a tap
+  suppressClick=true;setTimeout(()=>suppressClick=false,50);
   const o=cst(document.elementFromPoint(e.clientX,e.clientY),'[data-bs]');
   if(o){const i=+o.dataset.bs;if(d.src==='slot'&&i===d.i){renderCraft();return}beltSet(i,d.n);toast(`${d.n} ${slotKey(i)}. yuvada`)}
   else if(d.src==='slot'){beltClear(d.i);toast(`${d.n} yuvadan çıktı; envanterinde duruyor`)}else renderCraft()});
-addEventListener('pointercancel',()=>{if(idrag){if(idrag.g)idrag.g.remove();idrag=null;cbody.classList.remove('idrag')}});
+addEventListener('pointercancel',()=>{if(idrag){clearTimeout(idrag.tm);if(idrag.g)idrag.g.remove();idrag=null;cbody.classList.remove('idrag')}});
 function renderCraft(){
   $('cpanel').classList.toggle('nobench',true);
   $('cpanel').classList.toggle('potmode',mode==='craft');$('cpanel').classList.toggle('invm',mode==='inv');
@@ -2680,7 +2698,7 @@ function renderBook(){
   const open=DB.R.filter(x=>isOpen(x.r)),locked=DB.R.length-open.length,cnt=$('cnt');
   if(cnt)cnt.textContent=`${open.length} açık tarif · ${found.length} öğrenildi`;
   const f=filter.toLocaleLowerCase('tr-TR'),lc=v=>v.toLocaleLowerCase('tr-TR');
-  const vis=DB.R.filter(x=>{const op=isOpen(x.r),fr=bookFrac(x);if(!op&&diff!=='hard'&&fr<=0)return false;return !f||lc(op?x.r:maskName(x.r,fr)).includes(f)});
+  const vis=DB.R.filter(x=>{const op=isOpen(x.r),fr=bookFrac(x);if(f&&!op&&fr<=0)return false;return !f||lc(op?x.r:maskName(x.r,fr)).includes(f)});
   const hb=(diff==='hard'?buyBox():'')+(sk('B3')?hintBox():'');
   const groups=CATS.map(c=>[c,vis.filter(x=>x.c===c).sort((a,b)=>isOpen(b.r)-isOpen(a.r)||(isOpen(a.r)?a.r.localeCompare(b.r,'tr'):bookFrac(b)-bookFrac(a)))]).filter(g=>g[1].length);
   const cell=x=>{const op=isOpen(x.r);return `<button type="button" class="bk${op?' open':' lk'}${foundSet.has(x.r)?' learned':''}${bookSel===x.r?' sel':''}" data-bk="${esc(x.r)}" aria-label="${op?esc(x.r):'Kapalı tarif'}">${op?`<img src="${icon(x.r)}" alt="">`:'<i>?</i>'}${foundSet.has(x.r)?'<em>✓</em>':''}</button>`};
@@ -2688,7 +2706,7 @@ function renderBook(){
   cbody.innerHTML=bookTabs()+hb+`<p class="note">${diff==='hard'?`<b style="color:#ff6a5a">Zor mod:</b> ${locked} tarif kapalı. Kazanda <b>Deneyerek bul</b> kipinde malzemeleri birlikte atarak keşfet.`:`${locked} tarif henüz kapalı: içindeki malzemelerin hepsini bir kez elde edince açılır.`} Bulduğun tarifler resmiyle, bulmadıkların <b>?</b> ile görünür; ${TOUCH?'bir kareye dokun':'üstüne gel'}, içindekileri gör.</p>`
     +`<div id="bkinfo">${bookInfo(bookSel)}</div>`
     +(groups.length?groups.map(([c,L])=>`<div class="bkg"><div class="rgrp"><span>${esc(c)}</span><span>${L.filter(x=>isOpen(x.r)).length} / ${DB.R.filter(x=>x.c===c).length}</span></div><div class="bkgrid">${L.map(cell).join('')}</div></div>`).join(''):`<p class="note">${filter?'Aramana uyan tarif yok.':'Henüz açık tarif yok.'}</p>`)
-    +(hidden>0&&!f?`<p class="note">ve ${hidden} tarif daha${diff==='hard'?'':': hiçbir malzemesini bilmediğin tarifler gizli'}.</p>`:'');
+    +'';void hidden;
 }
 function bookShow(r){if(bookSel===r&&$('bkinfo').dataset.r===r)return;bookSel=r;const el=$('bkinfo');if(!el)return;el.dataset.r=r;el.innerHTML=bookInfo(r);cbody.querySelectorAll('.bk.sel').forEach(b=>b.classList.remove('sel'));const b=cbody.querySelector(`[data-bk="${CSS&&CSS.escape?CSS.escape(r):r}"]`);if(b)b.classList.add('sel')}
 cbody.addEventListener('pointerover',e=>{if(mode!=='book'||bookTab!=='rec'||e.pointerType!=='mouse')return;const b=e.target.closest('[data-bk]');if(b)bookShow(b.dataset.bk)});
@@ -2974,7 +2992,7 @@ function selectRecipe(r){
   pot.r=r;pot.put=REC.get(r).i.map(()=>({}));msg('');
 }
 function deposit(n,max=Infinity){
-  if(!pot.r){msg('Önce soldan bir tarif seç.','bad');sfx('bad');return 0}
+  if(!pot.r){msg(TOUCH?'Önce listeden bir tarif seç.':'Önce soldan bir tarif seç.','bad');sfx('bad');return 0}
   if(station!=='forge'&&foundSet.has(pot.r)){msg(`${pot.r} tarifini zaten öğrendin; kazana bir şey koymana gerek yok.`,'bad');sfx('bad');renderCraft();return 0}
   const x=REC.get(pot.r);
   const i=x.i.findIndex(([m],k)=>expand(m).includes(n)&&needLeft(k)>0);
@@ -3183,7 +3201,7 @@ const QUESTS=[
    say:'Ateşimin odunu azaldı. Bana beş odun keser misin? Çamlardan başla; taş baltan onlara yeter.',thx:'Bu ateş bu gece de yanacak. Sağ ol.'},
   {t:'Kırık köprüyü onar.',h:'Büyük nehrin ortasındaki kırık köprüye 40 odun götür ve onar. Ok yolu gösterir.',go:()=>bridge.fixed?null:'bridge',p:()=>bridge.fixed?'onarıldı':`Odun ${Math.min(woodCount(),40)}/40`,done:()=>bridge.fixed,c:100,x:40,run:1,
    say:'Adayı ikiye bölen büyük nehrin ortasında eski bir köprü vardı; fırtına onu kırdı. Karşı yaka <b>bataklık</b>, onun ötesi <b>Kül Diyarı</b>: adanın en değerli madenleri de en tehlikeli canavarları da orada. <b>40 odunla</b> köprüyü onarabilirsin. Ama hazır olmadan geçme evlat.',
-   thx:'Köprü yeniden ayakta! Karşı yaka bizim yurt gibi değil; canavarlar sert vurur, çamur ayağını tutar. Al şu <b>yüz sikkeyi</b>: yetenek ağacından <b>Koşu</b>\'yu öğren. Zor durumda kalırsan koş!'},
+   thx:'Köprü yeniden ayakta! Karşı yaka bizim yurt gibi değil; canavarlar sert vurur, çamur ayağını tutar. Al şu <b>yüz sikkeyi</b>; biraz daha biriktir: yetenek ağacının <b>Savaş</b> dalında önce <b>Atılma</b>, sonra <b>Koşu</b> var, ikisi de yüzer sikke. Zor durumda kalırsan koş!'},
   {t:"Marangoz Rıza'ya bir yaprak barınağı yaptır ve içinde uyu.",h:'Rıza\'ya 8 dal, 12 yaprak, 4 lif ve 5 sikke götür; barınağı istediğin yere koy, gece içinde uyu.',go:()=>{if(shelterSlept)return null;if(has('Yaprak barınağı')||placed.some(o=>o.n==='Yaprak barınağı'))return null;return 'carp'},
    p:()=>shelterSlept?'yapıldı':(has('Yaprak barınağı')||placed.some(o=>o.n==='Yaprak barınağı'))?'barınak hazır · gece içinde uyu':'Marangoz Rıza',done:()=>shelterSlept,c:40,x:20,
    say:'Her gece benim ateşimin başında uyuyamazsın. Pazarın yolunda <b>Marangoz Rıza</b> oturur. Ona dal ve yaprak götür, sana bir <b>yaprak barınağı</b> yapsın: yatak gerekmez ama bir gecelik. Sonra çadır, kulübe, ev… Rıza hepsini yapar, para biriktir.',
@@ -3236,6 +3254,7 @@ let met=false, qState='talk';
 function tutSold(names){tzSold(names);const a=tut;if(tut===2&&names.includes('Dal'))tut=3;if(tut===9&&names.includes('Keskin taş'))tut=10;if(tut!==a)tutClose('sell')}
 // a finished tutorial step should not leave its menu open on screen
 function tutClose(m){setTimeout(()=>{if(craftOpen&&mode===m)closeCraft()},750)}
+let lessonCard=false,qPeek=false;   // v48c: a lesson owns the card / the player peeks at the quest under it
 function renderTut(){
   const stones=inv['Taş']||0, dal=inv['Dal']||0, ks=inv['Keskin taş']||0;
   const inSell=craftOpen&&mode==='sell', inCraft=craftOpen&&mode==='craft', inSkills=craftOpen&&mode==='skills';
@@ -3270,14 +3289,15 @@ function renderTut(){
   qb.hidden=allDone;qb.classList.toggle('on',!questsHidden&&!allDone);
   qb.querySelector('span').textContent=questsHidden?'Görevler':'Gizle';
   qb.setAttribute('aria-label',questsHidden?'Görevleri göster (G)':'Görevleri gizle (G)');qb.title=qb.getAttribute('aria-label');
-  if(tz&&renderTz())return;
+  if(tz){lessonCard=false;if(renderTz())return}
   // lesson cards that take the tutorial card over
   const lesson=(who,title,html,ok)=>{tutEl.hidden=false;craftEl.classList.add('tutpad');$('tutstep').textContent=title;$('tuttext').innerHTML=html;
-    if(tutPor.k!==who){tutPor.k=who;$('tutpor').innerHTML=who&&tutPor[who]?tutPor[who]():''}$('tutok').hidden=!ok;$('tutskip').hidden=!!ok;$('tutskip').textContent='Dersi geç'};
-  if((torchTut===1||torchTut===2)&&!wake){
-    lesson('ekin','Ekin · Gece geliyor',torchTut===1?`Hava kararıyor evlat! Gece bu adada <b>zifiri karanlık</b> olur; ışığın yoksa kendi elini bile göremezsin ve karanlıkta bir şey dolaşır. Ya bir ateşin yanında kal ya da bir <b>Kaba meşale</b> yap: 2 dal, 2 lif, 2 yaprak. Kazana gerek yok: <b>el yapımı</b> ekranını aç (${TOUCH?'el ikonu':'<span class="kc">Tab</span>'}) ve orada yap. Meşale elinde yandıkça tükenir; iki geceden biraz fazla dayanır. <button id="tqmake" type="button" class="tqb">El yapımını aç</button><small class="tqm">(Sende: ${inv['Dal']||0} dal, ${inv['Lif']||0} lif, ${inv['Yaprak']||0} yaprak)</small>`
-      :(()=>{const i=hotList().findIndex(isTorch);if(i<0){const t=Object.keys(TORCHL).find(n=>inv[n]>0)||'Kaba meşale';return `Meşalen hazır ama <b>envanterinde</b>. Önce onu bir alet yuvasına koy: ${beltHow(t)}. Sonra ${TOUCH?'alttaki o kutuya dokun':'o yuvanın sayı tuşuna bas'}, meşale eline gelir. Saat: <b>${hhmm()}</b>, gece 20:00'de başlar.`}
-        return `Meşalen yuvada! Şimdi onu <b>eline al</b>: ${TOUCH?'alttaki '+slotKey(i)+'. kutuya dokun':'<span class="kc">'+slotKey(i)+'</span> tuşuna bas'}. Gece onu elinde tut; ışığı etrafını aydınlatır. Saat: <b>${hhmm()}</b>, gece 20:00'de başlar.`})());
+    if(tutPor.k!==who){tutPor.k=who;$('tutpor').innerHTML=who&&tutPor[who]?tutPor[who]():''}$('tutok').hidden=!ok;$('tutskip').hidden=!!ok;$('tutskip').textContent='Dersi geç';if(lessonCard&&tut>=11){const qs=$('b-quest').querySelector('span');qs.textContent='Görevler'}};
+  lessonCard=false;
+  if((torchTut===1||torchTut===2)&&!wake&&!(qPeek&&tut>=11)){lessonCard=true;
+    lesson('ekin',isNightT()?'Ekin · Gece oldu':'Ekin · Gece geliyor',torchTut===1?`Hava kararıyor evlat! Gece bu adada <b>zifiri karanlık</b> olur; ışığın yoksa kendi elini bile göremezsin ve karanlıkta bir şey dolaşır. Ya bir ateşin yanında kal ya da bir <b>Kaba meşale</b> yap: 2 dal, 2 lif, 2 yaprak. Kazana gerek yok: <b>el yapımı</b> ekranını aç (${TOUCH?'el ikonu':'<span class="kc">Tab</span>'}) ve orada yap. Meşale elinde yandıkça tükenir; iki geceden biraz fazla dayanır. <button id="tqmake" type="button" class="tqb">El yapımını aç</button><small class="tqm">(Sende: ${inv['Dal']||0} dal, ${inv['Lif']||0} lif, ${inv['Yaprak']||0} yaprak)</small>`
+      :(()=>{const i=hotList().findIndex(isTorch);if(i<0){const t=Object.keys(TORCHL).find(n=>inv[n]>0)||'Kaba meşale';return `Meşalen hazır ama <b>envanterinde</b>. Önce onu bir alet yuvasına koy: ${beltHow(t)}. Sonra ${TOUCH?'alttaki o kutuya dokun':'o yuvanın sayı tuşuna bas'}, meşale eline gelir. Saat: <b>${hhmm()}</b>${nightTxt()}`}
+        return `Meşalen yuvada! Şimdi onu <b>eline al</b>: ${TOUCH?'alttaki '+slotKey(i)+'. kutuya dokun':'<span class="kc">'+slotKey(i)+'</span> tuşuna bas'}. Gece onu elinde tut; ışığı etrafını aydınlatır. Saat: <b>${hhmm()}</b>${nightTxt()}`})());
     if(torchTut===1&&!(craftOpen&&mode==='hand'))$('b-hand').classList.add('pulse');
     if(torchTut===2){const i=hotList().findIndex(n=>GT[n]&&GT[n].kind==='torch');if(i>=0)pulseHot(i);else if(!(craftOpen&&mode==='inv'))$('b-inv').classList.add('pulse')}
     return}
@@ -3297,14 +3317,14 @@ function renderTut(){
     if(!(craftOpen&&mode==='hand'))$('b-hand').classList.add('pulse');
     return}
   if(ctut>=1&&ctut<=3){
-    lesson('witch','Cadının dersi · Hızlı yapım',ctut===1?`İlk keskin taşın oldu! Kazanda bir kez yaptığın tariflerin yanında <b style="color:#8fd46b">✓</b> belirir. ✓ olan şeyleri artık başka bir tarifin içinde <b>+</b> ile tek dokunuşta yapabilirsin. Zümrüt sana 3 dal ve 4 taş verdi: soldan <b>Sopa</b> tarifini seç.${craftOpen&&mode==='craft'?'':' (Kazana git ve aç.)'}`
+    lesson('witch','Cadının dersi · Hızlı yapım',ctut===1?`İlk keskin taşın oldu! Kazanda bir kez yaptığın tariflerin yanında <b style="color:#8fd46b">✓</b> belirir. ✓ olan şeyleri artık başka bir tarifin içinde <b>+</b> ile tek dokunuşta yapabilirsin. Zümrüt sana 3 dal ve 4 taş verdi: ${TOUCH?'listeden':'soldan'} <b>Sopa</b> tarifini seç.${craftOpen&&mode==='craft'?'':' (Kazana git ve aç.)'}`
       :ctut===2?`Sopa için 2 <b>Keskin taş</b> gerekiyor. Keskin taş satırındaki yanıp sönen <b>+</b> düğmesine bas: taşlardan hemen bir keskin taş yapılır ve <b>kendiliğinden kazana düşer</b>. İkinci kez bas, sonra <b>Hepsini koy</b> ile dalları at.`
       :`Kazan hazır. <b>Kaynat</b>'a bas ve ilk sopanı yap!`);
     if(craftOpen&&mode==='craft'){const q=ctut===1?cbody.querySelector('[data-rec="Sopa"]'):ctut===2?(cbody.querySelector('.ping .sb[data-sub="Keskin taş"]')||$('pfill')):$('brew');if(q)q.classList.add('pulse')}
     return}
   // Ekin's running lesson (level 10) takes the card over until it is done
-  if((runTut===1||runTut===2)&&tut>=11&&!wake){
-    if(runTut===1&&sk('K1')){runTut=2;runDist=0;runLow=false}
+  if(runTut===1&&sk('K1')){runTut=2;runDist=0;runLow=false}
+  if(runTut===2&&tut>=11&&!wake&&!qPeek){lessonCard=true;
     tutEl.hidden=false;craftEl.classList.add('tutpad');
     const ready=runTut===2&&runDist>=RUN_NEED&&runLow;
     $('tutstep').textContent='Ekin · Yeni ders: Koşmak';
@@ -3313,7 +3333,7 @@ function renderTut(){
       :(ready?`İşte böyle! Koştukça <b>enerji</b> azalır, dinlenince dolar. Seviye atladıkça ve Savaş dalındaki yeteneklerle hem enerjin hem koşu hızın artar. Kırmızı çubuk da <b>canın</b>: dikenler, keskin taşlar can yakar; can biterse bayılırsın.`
         :`${TOUCH?'Ekrana <b>iki kez hızlıca dokun</b>: ikinci dokunuşta parmağını sürüklersen o yöne, bıraktığın yere çift dokunursan oraya koşarsın.':'<span class="kc">Shift</span> basılı tutarak yürü: koşarsın.'} Canının altındaki <b>mavi çubuk</b> enerjin: koşarken azalır, bitince koşamazsın; durunca ya da yürürken yeniden dolar. Enerjin yarının altına inene kadar koş.<span class="tbar"><i style="width:${Math.min(100,(Math.min(1,runDist/RUN_NEED)*.6+(runLow?.4:0))*100)}%"></i></span>`);
     {const who='ekin';if(tutPor.k!==who){tutPor.k=who;$('tutpor').innerHTML=tutPor[who]()}}
-    $('tutok').hidden=!ready;$('tutskip').hidden=ready;$('tutskip').textContent='Dersi geç';
+    $('tutok').hidden=!ready;$('tutskip').hidden=ready;$('tutskip').textContent='Dersi geç';$('b-quest').querySelector('span').textContent='Görevler';
     if(runTut===1){$('b-skill').classList.add('pulse');if(craftOpen&&mode==='skills'){const b=cbody.querySelector('[data-sk="K1"]');if(b)b.classList.add('pulse')}}
     if(runTut===2)$('stbar').classList.add('pulse');
     return;
@@ -3322,9 +3342,10 @@ function renderTut(){
     if(kaptan.state!=='here'){$('tutstep').textContent='Son · Ufuktaki yelken';$('tuttext').innerHTML=`Ekin'in bütün görevlerini bitirdin. <b>Seviye 10</b>'a ulaş (şimdi ${lvl}); ufukta bir yelken beliriyor…`}
     else if(!balikci.shown){$('tutstep').textContent='Son · Kaptan Poyraz';$('tuttext').innerHTML=`Kıyıya bir tekne yanaştı. <b>Kaptan Poyraz</b> ile konuş; mor ışığın gittiği yeri biliyor.`}
     else{$('tutstep').textContent='Son · Balıkçı Rüstem';$('tuttext').innerHTML=`Adanın en uzak köşesindeki <b>Balıkçı Rüstem</b> seni Sisli Ada'ya götürecek. Getir: ${BALIK_WANT.map(([n,q])=>`<b>${n}</b> ${Math.min(inv[n]||0,q)}/${q}`).join(' · ')} · İzler ${clues.size}/${CLUES.length}`}
+    $('tuttext').insertAdjacentHTML('beforeend',lessonLines());
     {const who='ekin';if(tutPor.k!==who){tutPor.k=who;$('tutpor').innerHTML=tutPor[who]()}}$('tutok').hidden=true;$('tutskip').hidden=true;return}
   if(allDone||questsHidden){tutEl.hidden=true;craftEl.classList.remove('tutpad');return}
-  tutEl.hidden=false;
+  tutEl.hidden=false;if(!lessonCard&&!(torchTut===1||torchTut===2)&&runTut!==2)qPeek=false;
   let T_;
   if(tut>=11&&!met)T_=['Biri seni çağırıyor',`Kampın yanındaki ateşin başında yaşlı bir adam belirdi: <b>${npc.name}</b>. ${TOUCH?'Ona dokun':'Ona tıkla ya da yanına gidip <b>E</b> ile konuş'}.`];
   else if(false)T_=['Başlangıç',`Kıyıya vurmuşsun… Yakındaki ateşin başında biri var. Yanına git ve <b>E</b> ile <b>${npc.name}</b> ile konuş.`];
@@ -3340,7 +3361,7 @@ function renderTut(){
     4:['Ekin · Eğitim 5 / 5',`Bu senin <b>yetenek ağacın</b>: daha değerli satış, daha hızlı toplama, birleştirmede şans, hızlı yürüme. Biriktir evlat; ${loveName?`<b>${esc(loveName)}</b> için`:'onu aramak için'} bir gün denize açılman gerekecek. Şimdi adanın asıl sırrı: <b>birleştirmek</b>. Onu benden iyi Zümrüt bilir.`],
     5:['Cadının dersi · 1 / 3',`<b>Cadı Zümrüt</b> batıdaki ormanın kıyısında belirdi! Kazanında malzemeleri birleştirip daha değerli şeyler yaparsın. Önce ok ile işaretlenen <b>taşları</b> topla. (Taş: ${Math.min(stones+potTas,KS)}/${KS})`],
     6:['Cadının dersi · 2 / 3',`Taşların hazır. Karakterinin yanındaki ok <b>Cadı Zümrüt'ün kazanını</b> gösteriyor; oraya yürü ve kazana ${TOUCH?'dokun':'tıkla ya da yanında <b>E</b>\'ye bas'}.`],
-    7:['Cadının dersi · 2 / 3',`Soldan <b>Keskin taş</b> tarifini seç, taşları kazana sürükle ya da taşa dokun, sonra <b>Kaynat</b>'a bas.`],
+    7:['Cadının dersi · 2 / 3',`${TOUCH?'Listeden':'Soldan'} <b>Keskin taş</b> tarifini seç, taşları kazana sürükle ya da taşa dokun, sonra <b>Kaynat</b>'a bas.`],
     8:['Cadının dersi · 3 / 3',`Bir <b>Keskin taş</b> kaynattın! Bütün açık tarifleri ${TOUCH?'<b>kitap ikonundaki</b>':'<b>K</b> ile'} tarif kitabında görürsün. Şimdi onu sat: ok seni yine <b>${market.name}</b>'ya götürür.`],
     9:['Cadının dersi · 3 / 3',`Keskin taşın fiyatına bak: ${KS} taş tek tek ${KS} sikke eder, keskin taş ${Math.round(unitPrice('Keskin taş'))} sikke! Yanıp sönen <b>1 sat</b> düğmesine bas.`],
     10:['Cadının dersi · 3 / 3',`Gördün mü? Malzemeleri ayrı satmak yerine kazanda birleştirip satınca daha çok kazanırsın. Kaynattıkça eşyalar değerlenir. Aletleri (balta, kazma, tırmık…) ise güneybatıdaki <b>${smith.name}</b> örsünde döver. Şimdi <b>Ekin</b>'in yanına dön; sana işleri var.${diff==='hard'?' <b>Zor mod:</b> diğer tarifleri kazandaki <b>Deneyerek bul</b> kipinde kendin keşfedeceksin.':''}`],
@@ -3348,10 +3369,10 @@ function renderTut(){
   else if(qState==='talk')T_=[`Görev · ${qi+1} / ${QUESTS.length}`,`<b>${npc.name}</b> seninle konuşmak istiyor. Başında <b>!</b> olan yaşlı adama ${TOUCH?'dokun':'tıkla ya da yanına gidip <b>E</b>\'ye bas'}.`];
   else if(qState==='ready')T_=[`Görev · ${qi+1} / ${QUESTS.length}`,`<b>${q.t}</b> Tamamlandı! Ödülün için <b>${npc.name}</b>'e dön: ${q.c} sikke${q.x?`, ${q.x} XP`:''}.`];
   else T_=[`Görev · ${qi+1} / ${QUESTS.length}`,`<b>${q.t}</b> ${q.h} (${q.p()})${q.c?` · Ödül: ${q.c} sikke${q.x?`, ${q.x} XP`:''}`:''}`];
-  $('tutstep').textContent=T_[0];$('tuttext').innerHTML=T_[1];
+  $('tutstep').textContent=T_[0];$('tuttext').innerHTML=T_[1]+(tut>=11?lessonLines():'');
   {const who=met&&(tut<5||tut>=11)?'ekin':tut>=5&&tut<=10?'witch':'';if(tutPor.k!==who){tutPor.k=who;$('tutpor').innerHTML=who?tutPor[who]():''}}
   const okStep=tut===4||tut===10;$('tutok').hidden=!okStep;$('tutskip').hidden=okStep;
-  $('tutskip').textContent=tut>=11?'Görevleri gizle':'Eğitimi geç';
+  $('tutskip').textContent=qPeek?'Derse dön':tut>=11?'Görevleri gizle':'Eğitimi geç';
   if(tut===0&&walked&&tapDone()&&mapSeen===0)$('mini').classList.add('pulse');
   if(tut===0&&mapSeen>=2&&ytut===1&&!berryBrought){berryBrought=true;bringBerry()}
   if(tut===0&&mapSeen>=2&&ytut===2)$('fdbar').classList.add('pulse');
@@ -3372,9 +3393,19 @@ $('tutok').addEventListener('click',()=>{if(runTut===2&&tut>=11){runTut=3;sfx('f
 function bringBerry(){let b=null,bd=1e9;for(const n of nodes)if(n.alive&&n.name==='Böğürtlen'){const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;b=n}}if(!b||bd<170)return;
   for(let k=0;k<60;k++){const an=Math.random()*6.28,d=60+Math.random()*50,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;if(!reachAt(x,y)||blocked(x,y)||tileAt(x,y)>1||treesNear(x,y,t=>Math.hypot(t.x-x,t.y-y)<14))continue;b.x=x;b.y=y;b.pop=.35;return}}
 $('tutskip').addEventListener('click',e=>{const b=$('tutskip');if(TOUCH&&tz&&!b.dataset.arm){e.stopImmediatePropagation();b.dataset.arm='1';b.textContent='Emin misin? Geç';clearTimeout(b._t);b._t=setTimeout(()=>{delete b.dataset.arm;renderTut()},3500)}},true);
-$('tutskip').addEventListener('click',()=>{delete $('tutskip').dataset.arm;if(tz){tzSkip();return}{const ax=tut===11&&woodCut<5?Object.keys(GT).find(n=>GT[n].kind==='axe'&&inv[n]>0):null;if(ax&&beltIndex(ax)<0){beltFront(ax);renderTut();return}}if(htut===1){htut=2;renderTut();return}if(ytut===1||ytut===2){ytut=3;renderTut();return}if((runTut===1||runTut===2)&&tut>=11){runTut=3;renderTut();return}if(torchTut===1||torchTut===2){torchTut=3;renderTut();return}ftut=3;ctut=4;walked=true;mapSeen=2;tapMoved=true;if(tut>=11)questsHidden=true;else{witchShown=true;tut=11;qState='talk'}renderInv();renderTut()});
+$('tutskip').addEventListener('click',()=>{delete $('tutskip').dataset.arm;if(qPeek&&!tz){qPeek=false;renderTut();return}if(tz){tzSkip();return}{const ax=tut===11&&woodCut<5?Object.keys(GT).find(n=>GT[n].kind==='axe'&&inv[n]>0):null;if(ax&&beltIndex(ax)<0){beltFront(ax);renderTut();return}}if(htut===1){htut=2;renderTut();return}if(ytut===1||ytut===2){ytut=3;renderTut();return}if((runTut===1||runTut===2)&&tut>=11){runTut=3;renderTut();return}if(torchTut===1||torchTut===2){torchTut=3;renderTut();return}ftut=3;ctut=4;walked=true;mapSeen=2;tapMoved=true;if(tut>=11)questsHidden=true;else{witchShown=true;tut=11;qState='talk'}renderInv();renderTut()});
 function appearFx(x,y,c){for(let i=0;i<28;i++){const an=Math.random()*Math.PI*2,sp=20+Math.random()*50;parts.push({x,y:y-6,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp,life:1.3,c:i%2?c:'#ffffff'})}sfx('magic')}
-function toggleQuests(){questsHidden=!questsHidden;renderTut()}
+function toggleQuests(){if(lessonCard||qPeek){qPeek=!qPeek;questsHidden=false;renderTut();return}questsHidden=!questsHidden;renderTut()}
+// v48c: lessons that last long (running, the torch at night) sit as a small line under the quest instead of hiding it
+function isNightT(){return dayT>=1200||dayT<360}
+function nightTxt(){return isNightT()?', gece başladı: meşalen elinde olsun.':', gece 20:00\'de başlar.'}
+function lessonLines(){const L=[];
+  if(runTut===1&&!wake){const need=sk('S1')?100:200;L.push(`<b>Ders · Koşmak:</b> yetenek ağacında (${TOUCH?'ağaç ikonu':'<span class="kc">Y</span>'}) <b>Savaş</b> dalında ${sk('S1')?'':'önce <b>Atılma</b> (100), sonra '}<b>Koşu</b> (100). Sikke: ${Math.min(coins,need)}/${need}`);if(coins>=need){$('b-skill').classList.add('pulse');if(craftOpen&&mode==='skills'){const b=cbody.querySelector(`[data-sk="${sk('S1')?'K1':'S1'}"]`);if(b)b.classList.add('pulse')}}}
+  if(qPeek&&(torchTut===1||torchTut===2))L.push(`<b>Ders · Meşale:</b> ${torchTut===1?'2 dal, 2 lif, 2 yaprakla bir Kaba meşale yap.':'meşaleni eline al.'}`);
+  if(qPeek&&runTut===2)L.push('<b>Ders · Koşmak:</b> enerjin yarının altına inene kadar koş.');
+  if(qPeek)$('b-quest').querySelector('span').textContent='Ders';
+  return L.length?`<small class="tqm lessonl">${L.join('<br>')}</small>`:''}
+
 $('b-quest').addEventListener('click',toggleQuests);
 
 // ---------- trader logic ----------
@@ -3566,6 +3597,8 @@ function intro2(){
 const qSay=q=>(typeof q.say==='function'?q.say():q.say)+(q.love&&loveName?q.love():'');
 function offer(){
   const q=QUESTS[tut-11];
+  // v48c: a level quest you have already reached is done on the spot
+  if(/^Seviye \d+/.test(q.t)&&q.done()){return say(`${qSay(q)}<br><br><b>${q.t}</b> Ama sen zaten <b>Seviye ${lvl}</b> olmuşsun! Bu iş bitti sayılır.`,[{fresh:1,t:'Ödülü al',pri:1,f:()=>{qState='ready';questsHidden=false;if(q.acc)q.acc();turnIn()}}])}
   say(`${qSay(q)}<br><br><b>${q.t}</b>${q.c?` · Ödül: ${q.c} sikke${q.x?`, ${q.x} XP`:''}`:''}`,[
     {fresh:1,t:'Kabul ediyorum',pri:1,f:()=>{qState='active';questsHidden=false;if(q.acc)q.acc();sfx('craft');bye();toast(`Görev alındı: ${q.t}`);renderInv()}},
     {t:'Sonra',f:bye},
@@ -3969,14 +4002,32 @@ function trySlide(mx,my){
     if(!ok)continue;slide={x,y,t:0};return true}
   return false
 }
+// v48c: a small grid search (8 px cells, a box around you and the target) for the way round a cauldron, a stall or a lake
+function findPath(tx,ty,reach){const C=8,pad=140,x0=Math.max(8,Math.min(player.x,tx)-pad),y0=Math.max(8,Math.min(player.y,ty)-pad),x1=Math.min(W*T-8,Math.max(player.x,tx)+pad),y1=Math.min(H*T-8,Math.max(player.y,ty)+pad);
+  const cw=Math.ceil((x1-x0)/C)+1,ch=Math.ceil((y1-y0)/C)+1;if(cw*ch>25000)return null;
+  const cx=x=>x0+x*C,cy=y=>y0+y*C,ix=Math.round((player.x-x0)/C),iy=Math.round((player.y-y0)/C);
+  const prev=new Int32Array(cw*ch).fill(-2),bl=new Int8Array(cw*ch);const B=i=>{if(!bl[i])bl[i]=blocked(cx(i%cw),cy((i/cw)|0))?1:2;return bl[i]===1};
+  const st=iy*cw+ix;if(ix<0||iy<0||ix>=cw||iy>=ch)return null;prev[st]=-1;const q=[st];let end=-1,r=Math.max(7,reach);   // a cell centre is at most ~5.7 px from any point
+  const D=[[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]];
+  for(let h=0;h<q.length&&h<15000;h++){const i=q[h],x=i%cw,y=(i/cw)|0;if(Math.hypot(cx(x)-tx,cy(y)-ty)<=r){end=i;break}
+    for(const [ddx,ddy] of D){const nx=x+ddx,ny=y+ddy;if(nx<0||ny<0||nx>=cw||ny>=ch)continue;const j=ny*cw+nx;if(prev[j]!==-2||B(j))continue;
+      if(ddx&&ddy&&(B(y*cw+nx)||B(ny*cw+x)))continue;prev[j]=i;q.push(j)}}
+  if(end<0)return null;const P=[];for(let i=end;i!==st&&i>=0;i=prev[i])P.push({x:cx(i%cw),y:cy((i/cw)|0)});P.reverse();
+  const out=[];for(let k=0;k<P.length;k++)if(k===P.length-1||k%3===2)out.push(P[k]);return out}
 function stepGoal(dt){
   const g=goal,dx=g.x-player.x,dy=g.y-player.y,d=Math.hypot(dx,dy);
   if(g.tg&&g.tg.kind==='node'&&!g.tg.n.alive){goal=null;return null}
   if(g.tg&&g.tg.kind==='animal'){if(animals.indexOf(g.tg.a)<0){goal=null;return null}g.x=g.tg.a.x;g.y=g.tg.a.y;g.best=Math.min(g.best,Math.hypot(g.x-player.x,g.y-player.y)+3)}
   if(g.water){const ux=d?dx/d:0,uy=d?dy/d:0;if(isWater(tileAt(player.x+ux*12,player.y+uy*12))||d<10){arrive();return null}}
   else if(d<=g.reach){arrive();return null}
+  // following a found way round: walk from point to point
+  if(g.path&&g.path.length){const w=g.path[0],wx=w.x-player.x,wy=w.y-player.y,wd=Math.hypot(wx,wy);if(wd<4){g.path.shift();return g.path.length?stepGoal(dt):[dx/d,dy/d]}
+    g.chk+=dt;if(g.chk>.5){g.chk=0;if(Math.hypot(player.x-(g.lx||0),player.y-(g.ly||0))<2){g.path=null;g.best=Math.hypot(g.x-player.x,g.y-player.y)}g.lx=player.x;g.ly=player.y}
+    if(g.path)return[wx/wd,wy/wd]}
   // stuck check: no real progress for half a second
-  g.t+=dt;g.chk+=dt;if(g.chk>.5){g.chk=0;if(d>g.best-2){if(g.tg&&d<g.reach+16){arrive();return null}if((g.sl||0)<5&&trySlide(dx/d,dy/d)){g.sl=(g.sl||0)+1;g.best=d+30;return[dx/d,dy/d]}goal=null;if(!g.tg)return null;toast('Oraya buradan gidilemiyor',true);return null}g.best=d}
+  g.t+=dt;g.chk+=dt;if(g.chk>.5){g.chk=0;if(d>g.best-2){if(g.tg&&g.tg.kind!=='animal'&&d<g.reach+16){arrive();return null}if((g.pf||0)<2){g.pf=(g.pf||0)+1;const P=findPath(g.x,g.y,g.water?10:g.tg?g.reach:3);if(P&&P.length){g.path=P;g.best=1e9;g.lx=player.x;g.ly=player.y;return stepGoal(dt)}}
+      if((g.sl||0)<2&&trySlide(dx/d,dy/d)){g.sl=(g.sl||0)+1;g.best=d+30;return[dx/d,dy/d]}
+      goal=null;if(!g.tg)return null;toast(g.tg.kind==='animal'?'Oraya ulaşamıyorsun':'Oraya buradan gidilemiyor',true);return null}g.best=d}
   return[dx/d,dy/d];
 }
 cv.addEventListener('pointerdown',e=>{
@@ -4626,7 +4677,9 @@ const hhmm=()=>{const m=Math.floor(dayT);return String(Math.floor(m/60)).padStar
 let clockK='';
 function renderClock(){const k=day+hhmm()+weather.k+(ashStorm()?'a':'');if(k===clockK)return;clockK=k;const h=dayT/60,ic=ashStorm()?'🌋':weather.k!=='açık'&&WEATHER[weather.k].i?WEATHER[weather.k].i:h>=20||h<5?'🌙':h<7?'🌅':h<17?'☀️':'🌇';
   $('clockv').textContent=`${day}. gün · ${hhmm()}${weather.k!=='açık'||ashStorm()?' · '+wxName():''}`;$('clockic').textContent=ic;$('clock').classList.toggle('night',isNight())}
-function dayBanner(){v46NewDay();const el=$('daybanner');lvlUntil=Math.max(lvlUntil,performance.now()+3400);$('daybn').textContent=`${day}. Gün`;el.hidden=true;void el.offsetWidth;el.hidden=false;sfx('level');clearTimeout(dayBanner.t);dayBanner.t=setTimeout(()=>el.hidden=true,3600)}
+function dayBanner(){v46NewDay();dayBannerShow()}
+// v48c: the "N. Gün" banner waits while a panel or a talk is open
+function dayBannerShow(){if(craftOpen||dlgOpen||!$('pause').hidden||!$('settings').hidden){clearTimeout(dayBannerShow.w);dayBannerShow.w=setTimeout(dayBannerShow,400);return}const el=$('daybanner');lvlUntil=Math.max(lvlUntil,performance.now()+3400);$('daybn').textContent=`${day}. Gün`;el.hidden=true;void el.offsetWidth;el.hidden=false;sfx('level');clearTimeout(dayBanner.t);dayBanner.t=setTimeout(()=>el.hidden=true,3600)}
 // sky colour by minute of day (multiplied over the world)
 const SKY=[[0,[70,80,140]],[300,[72,82,142]],[335,[205,165,185]],[370,[255,238,228]],[410,[255,255,255]],[1020,[255,255,255]],[1095,[255,205,155]],[1160,[215,140,150]],[1230,[88,92,150]],[1440,[70,80,140]]];
 function skyNow(){for(let i=1;i<SKY.length;i++){const [t1,c1]=SKY[i],[t0,c0]=SKY[i-1];if(dayT<=t1){const k=(dayT-t0)/(t1-t0);return c0.map((v,j)=>Math.round(v+(c1[j]-v)*k))}}return SKY[0][1]}
@@ -4688,6 +4741,8 @@ let puiK='';
 function renderPlaceUI(){const k=placing?placing.n+(placing.moving?'m':''):'';if(k===puiK)return;puiK=k;const el=$('placeui');el.hidden=!placing;
   if(placing)$('pui-t').innerHTML=`<b>${esc(placing.n)}</b> ${placing.moving?'taşınıyor':'yerleştiriliyor'} · ${TOUCH?'yeşil yere dokun':'yeşil yere tıkla'}`}
 $('pui-rot').addEventListener('click',rotatePlace);
+// v48c: on a small phone the card is small by default: an expanded card folds again when the step changes
+{let lastStep='';new MutationObserver(()=>{const t=$('tutstep').textContent;if(t!==lastStep){lastStep=t;document.body.classList.remove('tutx')}}).observe($('tutstep'),{childList:true,characterData:true,subtree:true})}
 $('tut').addEventListener('click',e=>{if(e.target.id==='tqmake'){if(!(craftOpen&&mode==='hand'))openMenu('hand');return}if(e.target.closest('.th'))document.body.classList.toggle('tutx')});
 $('fdbar').addEventListener('click',()=>{if(!onTitle&&!paused)openEat()});$('pui-x').addEventListener('click',cancelPlace);
 // pixel sprites for a bed and a workshop; other things use their icon, big
@@ -4956,11 +5011,16 @@ const nearCamp=(x,y)=>camps.some(c=>c.t>0&&Math.hypot(x-c.x,y-c.y)<100)||Math.hy
 const PACK={'Geyik':[2,5],'Karaca':[2,4],'Yaban öküzü':[2,3],'Yaban domuzu':[2,5],'Kurt':[2,5],'Bataklık kurdu':[2,4],'Kül kurdu':[2,4]};
 let packId=0;
 function madPack(a){a.mad=true;if(a.pk)for(const b of animals)if(b.pk===a.pk&&!b.mad){b.mad=true;b.t=0}}
+// v48c: early on (below level 10) only one hostile animal that throws things roams the home woods at a time
+function earlyWild(){return lvl<10}
+function rangedNear(except){return animals.some(a=>a.k!==except&&ANIM[a.k]&&ANIM[a.k].ranged&&ANIM[a.k].temper==='saldırgan'&&!ANIM[a.k].z)}   // hostile throwers (the neutral hedgehog only fires back)
+// v48c: the boar is gentler for the first days (it killed new players on day 2)
+function boarSoft(a){return a&&a.k==='Yaban domuzu'&&day<=3&&lvl<6}
 function spawnAnimals(){
   const pz=zoneAt(player.x,player.y);let want;
   if(pz===1)want={'Ördek':2,'Zehirli kurbağa':3,'Bataklık kurdu':1,'Timsah':2};
   else if(pz===2)want={'Kül kurdu':1,'Lav kertenkelesi':3,'Kül cini':2,'Kara ejder':1};
-  else{want={'Kerevit':1,'Tavşan':3,'Sincap':2,'Keklik':2,'Ördek':2,'Geyik':1,'Karaca':1,'Dikenli kirpi':1};if(lvl>=4)want['Yaban öküzü']=1;const wild=met&&!wake&&(tut>=11||day>1);if(wild&&!isNight())want['Yaban domuzu']=1;if(wild&&isNight())want['Kurt']=2;if(wild&&(lvl>=6||day>=3))want['Engerek']=1}   // vipers wait until you have found your feet
+  else{want={'Kerevit':1,'Tavşan':3,'Sincap':2,'Keklik':2,'Ördek':2,'Geyik':1,'Karaca':1,'Dikenli kirpi':1};if(lvl>=4)want['Yaban öküzü']=1;const wild=met&&!wake&&(tut>=11||day>1);if(wild&&!isNight())want['Yaban domuzu']=1;if(wild&&isNight())want['Kurt']=2;if(wild&&(lvl>=6||day>=3)&&!(earlyWild()&&rangedNear('Engerek')))want['Engerek']=1}   // vipers wait until you have found your feet
   for(const k in want){const P=PACK[k],of=animals.filter(a=>a.k===k),have=P?new Set(of.map(a=>a.pk)).size:of.length;if(have>=want[k])continue;
     for(let tries=0;tries<12;tries++){const an=Math.random()*Math.PI*2,d=330+Math.random()*140,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;
       if(x<16||y<16||x>W*T-16||y>H*T-16||!reachAt(x,y)||!ANIM[k].land(tileAt(x,y))||blocked(x,y)||zoneAt(x,y)!==(ANIM[k].z||0))continue;
@@ -4980,12 +5040,12 @@ function tickAnimals(dt){
   pInv-=dt;
   const PC={};for(const a of animals)if(a.pk){const c=PC[a.pk]||(PC[a.pk]={x:0,y:0,n:0});c.x+=a.x;c.y+=a.y;c.n++}
   for(const a of animals){const D=ANIM[a.k],dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;
-    if(D.temper==='saldırgan'&&!a.mad&&d<D.aggro*(weather.k==='sis'?.6:1)&&!nearCamp(a.x,a.y)&&!nearCamp(player.x,player.y)&&!fading&&!sailing)madPack(a);
+    if(D.temper==='saldırgan'&&!a.mad&&d<D.aggro*(weather.k==='sis'?.6:1)*(boarSoft(a)?.6:1)&&!nearCamp(a.x,a.y)&&!nearCamp(player.x,player.y)&&!fading&&!sailing)madPack(a);
     a.flash-=dt;a.atk-=dt;a.step+=dt;
     if(a.kb){a.kb.t-=dt;moveA(a,a.kb.vx,a.kb.vy,dt);if(a.kb.t<=0)a.kb=null;continue}
     if(D.temper==='nötr'&&a.mad&&d>220)a.mad=false;
     if(D.temper==='saldırgan'&&a.mad&&d>D.aggro*2&&!a.lunge&&!(a.wind>0))a.mad=false;   // they give up a long chase
-    const angry=(D.temper==='saldırgan'&&(a.mad||d<D.aggro)||D.temper==='nötr'&&a.mad)&&!beam&&!nearCamp(a.x,a.y)&&!nearCamp(player.x,player.y)&&!fading&&!sailing;
+    const angry=(D.temper==='saldırgan'&&(a.mad||d<D.aggro*(boarSoft(a)?.6:1))||D.temper==='nötr'&&a.mad)&&!beam&&!nearCamp(a.x,a.y)&&!nearCamp(player.x,player.y)&&!fading&&!sailing;
     if(D.temper==='zararsız'&&!D.still&&(d<70||a.mad)){a.st='flee';moveA(a,-dx/d*D.spd,-dy/d*D.spd,dt);if(d>200)a.mad=false}
     else if(angry){a.st='chase';
       if(D.ranged){const Rg=D.ranged;
@@ -5008,13 +5068,13 @@ function tickAnimals(dt){
 // a bite or a claw that landed: armour softens it; dodging makes you untouchable
 // a pack takes turns: the rest circle and growl while one or two attack
 function packBusy(a){if(!a.pk)return 0;let n=0;for(const b of animals)if(b!==a&&b.pk===a.pk&&(b.wind>0||b.lunge))n++;return n}
-function biteHit(a,D,dx,dy,d){if(dodge||pInv>0)return;pInv=.7;lastBitten=performance.now();stopGather();hurt(D.dmg,`${a.k} saldırdı`,true);if(D.fx)addFx(D.fx[0],D.fx[1],D.fx[2]);
+function biteHit(a,D,dx,dy,d){if(dodge||pInv>0)return;pInv=.7;lastBitten=performance.now();stopGather();hurt(boarSoft(a)?Math.round(D.dmg*.6):D.dmg,`${a.k} saldırdı`,true);if(D.fx)addFx(D.fx[0],D.fx[1],D.fx[2]);
   const kx=player.x+dx/d*10,ky=player.y+dy/d*10;if(!blocked(kx,player.y))player.x=kx;if(!blocked(player.x,ky))player.y=ky;
   if(!fightSeen){fightSeen=true;bought.add('Taş kılıç');setTimeout(()=>toast(`Saldırılar önce kırmızı <b>!</b> ile belli olur: ${TOUCH?'yana kaç ya da atılma düğmesine dokun':'yana kaç ya da Q ile atıl'}. Vurmak için ${TOUCH?'hayvana dokun':'Boşluk'}. Kılıç en iyisi: Taş kılıç tarifi kitabında.`),600)}}
 // ---------- shots: quills, spit and fire that fly to where you stood ----------
 const shots=[];
 function fireShot(a){const D=ANIM[a.k],Rg=D.ranged,n=Rg.n||1;for(let i=0;i<n;i++){const ang=Math.atan2(a.ty-(a.y-6),a.tx-a.x)+(i-(n-1)/2)*.22;shots.push({x:a.x,y:a.y-6,vx:Math.cos(ang)*Rg.spd,vy:Math.sin(ang)*Rg.spd,life:Rg.range/Rg.spd+.35,c:Rg.c,dmg:D.dmg,fx:D.fx,k:a.k})}sfx(a.k==='Lav kertenkelesi'?'hit':'swing')}
-function tickShots(dt){for(let i=shots.length-1;i>=0;i--){const s2=shots[i];s2.life-=dt;s2.x+=s2.vx*dt;s2.y+=s2.vy*dt;
+function tickShots(dt){for(let i=shots.length-1;i>=0;i--){if(i>=shots.length)continue;const s2=shots[i];if(!s2)continue;s2.life-=dt;s2.x+=s2.vx*dt;s2.y+=s2.vy*dt;
   if(Math.random()<dt*20)parts.push({x:s2.x,y:s2.y,vx:0,vy:-6,life:.25,c:s2.c});
   if(!dodge&&pInv<=0&&Math.hypot(player.x-s2.x,player.y-8-s2.y)<7){shots.splice(i,1);pInv=.35;lastBitten=performance.now();stopGather();hurt(s2.dmg,`${s2.k} vurdu`,true);if(s2.fx)addFx(s2.fx[0],s2.fx[1],s2.fx[2]);continue}
   if(s2.life<=0)shots.splice(i,1)}}
@@ -5048,7 +5108,8 @@ function drawZoneAir(time,cx,cy,vW,vH){const z=zoneAt(player.x,player.y);if(!z)r
 const frozenNow=()=>craftOpen||paused||dlgOpen||fading||!!sailing||!!wake||!!beam||onTitle;
 // ---------- fighting: Space / tap / click; damage comes from what is in your hand ----------
 const WDMG={'Taş kılıç':12,'Mızrak':10,'Çakmaktaşı mızrak':14,'Kuvars mızrak':18,'Bazalt mızrak':22,'Obsidyen mızrak':28,'Tunç kılıç':22,'Demir kılıç':34,'Ejder kılıcı':52,'Tunç mızrak':20,'Demir mızrak':30};
-function weapon(){let h=held();if(!h||!GT[h]||GT[h].kind==='torch')h=equip.silah||null;const k=h&&GT[h]?GT[h].kind:null;
+const dullTool=n=>!!n&&wearTool(n)&&nn(toolDur[n],GT[n].dur)<=0;   // v48c: a blunt tool hits like a bare fist until Dursun sharpens it
+function weapon(){let h=held();if(!h||!GT[h]||GT[h].kind==='torch')h=equip.silah||null;if(dullTool(h))h=equip.silah&&equip.silah!==h&&!dullTool(equip.silah)?equip.silah:null;const k=h&&GT[h]?GT[h].kind:null;
   if(k==='sword')return{n:h,dmg:WDMG[h]||12,reach:22,cd:.42};
   if(k==='hunt')return{n:h,dmg:WDMG[h]||10,reach:30,cd:.6};
   if(k==='axe'||k==='pick')return{n:h,dmg:8,reach:20,cd:.5};
@@ -5059,6 +5120,7 @@ function underAttack(){if(performance.now()-lastBitten<3000)return true;for(cons
 function attack(focus){
   if(atkCd>0||gathering||craftOpen||dlgOpen||paused||fading||wake||placing)return;
   const w=weapon();atkCd=w.cd;
+  {const h=held();if(dullTool(h)&&!w.n&&!attack.dullT){attack.dullT=1;setTimeout(()=>attack.dullT=0,4000);toast(`${h} kör: yumruk kadar vurur. Demirci Dursun'da bilet.`,true)}}
   if(focus){const dx=focus.x-player.x,dy=focus.y-player.y;player.face={x:Math.abs(dx)>=Math.abs(dy)?Math.sign(dx):0,y:Math.abs(dy)>Math.abs(dx)?Math.sign(dy):0}}
   const fx=player.face.x,fy=player.face.y;swing={t:0,fx,fy,w:w.reach};sfx('swing');
   const dm=Math.round(w.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1));let hitAny=false;
@@ -5067,7 +5129,7 @@ function attack(focus){
     hitAny=true;a.hp-=dm;a.flash=.15;madPack(a);a.kb={vx:dx/(d||1)*140,vy:dy/(d||1)*140,t:.12};
     floats.push({x:a.x,y:a.y-12,t:0,text:`-${dm}`,color:'#ffffff'});sfx('hit');
     if(a.hp<=0)killAnimal(a);if(w.n!==null||w.dmg>3)break}
-  if(hitAny&&w.n&&wearTool(w.n)&&wearsNow()){toolDur[w.n]=nn(toolDur[w.n],GT[w.n].dur)-1;if(toolDur[w.n]<=0)toast(`${w.n} köreldi! Demirci Dursun'da bile.`,true)}
+  if(hitAny&&w.n&&wearTool(w.n)&&wearsNow()){toolDur[w.n]=Math.max(0,nn(toolDur[w.n],GT[w.n].dur)-1);if(toolDur[w.n]<=0)toast(`${w.n} köreldi! Demirci Dursun'da bile.`,true)}
 }
 function killAnimal(a){const D=ANIM[a.k],i=animals.indexOf(a);if(i>=0)animals.splice(i,1);kills[a.k]=(kills[a.k]||0)+1;
   if(a.tut&&ftut===2)setTimeout(fightLessonDone,700);
@@ -5188,6 +5250,9 @@ function renderVitals(){
   const sb=$('stbar');sb.hidden=!on;if(on){$('stfill').style.width=Math.max(0,st/mS*100)+'%';$('stval').textContent=tired?'Yoruldun…':`Enerji ${Math.ceil(st)} / ${mS}`;sb.classList.toggle('tired',tired)}
 }
 // thorns and sharp edges hurt a little; at zero you faint and wake by Ekin's fire
+// v48c: berry thorns sting the first few times, then only now and then (1 in 5); gloves keep your hands safe
+let thornN=0;
+function thornHits(n){if(n!=='Böğürtlen')return true;if(equip.el)return false;thornN++;return thornN<=3||Math.random()<.2}
 const HURT={'Böğürtlen':[3,'Böğürtlen dikenleri battı'],'Çakmaktaşı':[2,'Çakmaktaşının kenarı kesti']};
 let lastHurt='';   // what hurt you last: told on the faint screen
 function hurt(n,why,phys){lastHurt=why||'';
@@ -5251,7 +5316,7 @@ addEventListener('resize',()=>{hudK='';layoutHUD()});setInterval(layoutHUD,1000)
 // one bad frame must not freeze the game: schedule the next frame first, show the first error once
 let frameErrs=0;
 function frame(now){requestAnimationFrame(frame);
-  try{frameBody(now)}catch(e){if(!frameErrs++){try{console.error(e)}catch(_){}try{window.__hamErr((e&&e.message||'hata')+' (kare)')}catch(_){}}}}
+  try{frameBody(now)}catch(e){if(!frameErrs++){try{console.error(e)}catch(_){}try{window.__hamErr((e&&e.message||'hata')+' (kare)',true)}catch(_){}}}}
 function frameBody(now){
   const dt=Math.max(0,Math.min(.05,(now-last)/1000));last=now;time+=dt;
   if(cine.on){cineFrame(dt);return}
@@ -5471,7 +5536,7 @@ function drawMap(c,w,h,big){
   if(ekinOn())mki(npc.x,npc.y,'ekin','Yaşlı Ekin');
   if(trader.state==='here')mki(trader.x,trader.y,'trader','Tüccar Nuri');
   mki(usta.x,usta.y,'usta','Usta Kemal');
-  mki(alp.x,alp.y,'alp','Savaşçı Alp');
+  mki(alp.x,alp.y,'alp','Savaşçı Börü');
   mki(carp.x,carp.y,'carp','Marangoz Rıza');
   if(kaptan.state==='here')mki(kaptan.x,kaptan.y,'kaptan','Kaptan Poyraz');
   mki(toygar.x,toygar.y,'toygar','Avcı Toygar');
@@ -5546,7 +5611,7 @@ function cleanSave(d){if(!d||typeof d!=='object'||!d.inv||typeof d.inv!=='object
   if('tut' in d)o.tut=Math.floor(num(d.tut,0,0,99));if('qv' in d)o.qv=num(d.qv,0);if('dy' in d)o.dy=Math.floor(num(d.dy,1,1));if('dt' in d)o.dt=num(d.dt,360,0,1439);
   if('hp' in d)o.hp=num(d.hp,100);if('stm' in d)o.stm=num(d.stm,100);if('fd' in d)o.fd=num(d.fd,100,0,100);if('hd' in d)o.hd=Math.floor(num(d.hd,-1));
   o.x=num(d.x,spawn.x);o.y=num(d.y,spawn.y);o.hn=typeof d.hn==='string'?d.hn.replace(/[<>"&]/g,'').slice(0,24):'';o.ln=typeof d.ln==='string'?d.ln.replace(/[<>"&]/g,'').slice(0,24):'';o.diff=d.diff==='hard'?'hard':'normal';
-  if(d.toolDur&&typeof d.toolDur==='object'){o.toolDur={};for(const k in d.toolDur){const v=+d.toolDur[k];if(isFinite(v))o.toolDur[k]=v}}else o.toolDur={};
+  if(d.toolDur&&typeof d.toolDur==='object'){o.toolDur={};for(const k in d.toolDur){const v=+d.toolDur[k];if(isFinite(v))o.toolDur[k]=Math.max(0,v)}}else o.toolDur={};
   for(const k of ['tlog','plots','dogs','dr','gv','pl'])if(k in d&&!Array.isArray(d[k]))delete o[k];
   if(Array.isArray(d.bt))o.bt=d.bt.slice(0,12).map(x=>typeof x==='string'&&x.length<80&&!bad.test(x)?x:null);else delete o.bt;
   if(o.eq&&typeof o.eq!=='object')delete o.eq;if(o.exp&&typeof o.exp!=='string')o.exp=null;
@@ -6093,11 +6158,14 @@ function drawWeather(dt){const Wc=cv.width,Hc=cv.height,z=zoneAt(player.x,player
   if(flash>0){ctx.fillStyle=`rgba(235,240,255,${(Math.min(1,flash/.35)*(dk>.5?.55:.35)).toFixed(3)})`;ctx.fillRect(0,0,Wc,Hc)}
   ctx.restore()}
 // ---------- region and weather ambience: loops that fade in and out ----------
-const AMB={swamp:null,ash:null,rain:null,wind:null};let ambT=0,musicLv=1;
+const AMB={swamp:null,ash:null,rain:null,wind:null,surf:null};let ambT=0,musicLv=1;
+// v48c: near the sea a very quiet surf plays
+const sisOn=()=>{try{return !!sis.on}catch(e){return false}};
+function nearSea(){const tx=Math.floor(player.x/T),ty=Math.floor(player.y/T);for(let dy=-6;dy<=6;dy+=2)for(let dx=-6;dx<=6;dx+=2){const x=tx+dx,y=ty+dy;if(x<0||y<0||x>=W||y>=H)return true;if(tiles[y*W+x]>=4)return true}return false}
 function tickAmb(dt){ambT-=dt;if(ambT>0)return;ambT=.5;
   const on=!onTitle&&!cine.on&&!wake&&!paused,z=zoneAt(player.x,player.y);
-  const want={swamp:on&&z===1,ash:on&&z===2,rain:on&&raining()&&z!==2,wind:on&&(weather.k==='fırtına'||ashStorm())};
-  const vol={swamp:.55,ash:.6,rain:weather.k==='fırtına'?.7:.5,wind:.45};
+  const want={swamp:on&&z===1,ash:on&&z===2,rain:on&&raining()&&z!==2,wind:on&&(weather.k==='fırtına'||ashStorm()),surf:on&&!sisOn()&&nearSea()};
+  const vol={swamp:.55,ash:.6,rain:weather.k==='fırtına'?.7:.5,wind:.45,surf:.12};
   for(const k in AMB){if(want[k]&&!AMB[k]){AMB[k]=audio.play(k,{loop:true,vol:vol[k],fade:2})}else if(!want[k]&&AMB[k]){AMB[k].stop(2);AMB[k]=null}}
   const ml=!on?musicLv:z===2?.45:z===1?.7:1;if(on&&ml!==musicLv){musicLv=ml;audio.musicTo(ml,3)}}
 // ---------- moving saves between devices: a code you can copy, or a file ----------
@@ -6210,7 +6278,9 @@ function tzPlace(name,n,cx,cy){let k=0;for(let t=0;t<400&&k<n;t++){const a=Math.
 // what the current step still needs from the ground
 function tzNeed(){const h=n=>inv[n]||0;
   if(tz===1)return h('Böğürtlen')+tzEat<5?['Böğürtlen']:[];
-  if(tz===4||tz===5){if(tz===4&&potLearnedOk('Kaba meşale'))return[];const L=[];if(h('Dal')<2)L.push('Dal');if(h('Lif')<2)L.push('Lif');if(h('Yaprak')<2)L.push('Yaprak');return L}
+  if(tz===4||tz===5){if(tz===4&&potLearnedOk('Kaba meşale'))return[];const L=[];
+    if(tz===4&&pot.r==='Kaba meşale'){const x=REC.get('Kaba meşale'),h0=h;const inP=n=>{let t=0;x.i.forEach(([m],i)=>{if(m===n)t+=putSum(i)});return t};const h2=n=>h0(n)+inP(n);if(h2('Dal')<2)L.push('Dal');if(h2('Lif')<2)L.push('Lif');if(h2('Yaprak')<2)L.push('Yaprak');return L}   // what already went into the cauldron counts too
+    if(h('Dal')<2)L.push('Dal');if(h('Lif')<2)L.push('Lif');if(h('Yaprak')<2)L.push('Yaprak');return L}
   if(tz===6)return h('Taş')<4?['Taş']:[];
   if(tz===12){const L=[];const ks=h('Keskin taş'),ip=h('İp'),so=h('Sopa');const needKs=2+(so?0:2),needTas=2+Math.max(0,needKs-ks)*2;
     if(!so&&h('Dal')<3)L.push('Dal');if(ip<2&&h('Lif')<(2-ip)*4)L.push('Lif');if(h('Taş')<needTas)L.push('Taş');return L}
@@ -6230,7 +6300,7 @@ function tzCard(){const h=n=>inv[n]||0,c=(n,q)=>`${n} ${Math.min(h(n),q)}/${q}`;
    1:['ekin','Ekin · Önce karnını doyur',`Bu adada en önemli şey <b>yemek</b>. Tokluk çubuğun (turuncu; azalınca <b>kırmızı yanıp söner</b>) sıfıra inerse canın hızla tükenir. Şu çalılardan <b>5 böğürtlen</b> topla: ${TOUCH?'çalıya dokun':'tıkla ya da yanında <span class="kc">E</span>'}; düşen meyvenin üstünden yürü. <b>Dikkat et, böğürtlenin dikenleri canını yakabilir!</b> (Böğürtlen ${Math.min(5,h('Böğürtlen')+tzEat)}/5)`],
    2:['ekin','Ekin · Ye',`Şimdi ye: ${tzKey('eat')} ve listeden <b>böğürtleni</b> seç. Beşini de ye. (Yenen ${Math.min(5,tzEat)}/5)`],
    3:['ekin','Ekin · Cadı Zümrüt',`Karnın doydu. Şimdi kuzeydeki ormanın kıyısında yaşayan <b>Cadı Zümrüt</b>'e git; ok yolu gösteriyor. Bu adada bir şey yapmayı ondan öğrenirsin.`],
-   4:['witch','Zümrüt · İlk tarif: Kaba meşale',`Kazan bir şey <b>yapmaz</b>, sana <b>tarif öğretir</b>. Yanımdaki dal, lif ve yaprakları topla: ${c('Dal',2)} · ${c('Lif',2)} · ${c('Yaprak',2)}. Sonra kazanı aç, soldan <b>Kaba meşale</b>'yi seç, malzemeleri koy ve <b>Tarifi öğren</b>'e bas.`],
+   4:['witch','Zümrüt · İlk tarif: Kaba meşale',`Kazan bir şey <b>yapmaz</b>, sana <b>tarif öğretir</b>. Yanımdaki dal, lif ve yaprakları topla: ${c('Dal',2)} · ${c('Lif',2)} · ${c('Yaprak',2)}. Sonra kazanı aç, ${TOUCH?'listeden':'soldan'} <b>Kaba meşale</b>'yi seç, malzemeleri koy ve <b>Tarifi öğren</b>'e bas.`],
    5:['witch','Zümrüt · Elinle yap',`Tarif artık senin, ama o malzemeler tarifi açmaya gitti. <b>Aynılarını</b> yeniden topla (${c('Dal',2)} · ${c('Lif',2)} · ${c('Yaprak',2)}) ve el yapımı ekranında meşaleyi yap: ${tzKey('tab')}.`],
    6:['witch','Zümrüt · Taşlar',`Şimdi kazanın yanındaki <b>4 taşı</b> topla. (${c('Taş',4)})`],
    7:['witch','Zümrüt · Keskin taş tarifi',`Kazanı aç, <b>Keskin taş</b>'ı seç, 2 taşı koy ve <b>Tarifi öğren</b>. Öğrendiğin tarifler listede <b style="color:#8fd46b">yeşil</b> olur; bir tarifi iki kez öğrenemezsin.`],
@@ -6531,7 +6601,7 @@ function fishPress(){if(!fish)return;
     fish.st='reel';fish.t=0;fish.z0=z0;fish.z1=z0+w;fish.pos=Math.random()<.5?0:1;fish.dir=fish.pos?-1:1;fish.spd=.85*(FISH_HARD[fish.catch]||1);sfx('swing');renderFish();return}
   if(fish.st==='reel'){const ok=fish.pos>=fish.z0-.015&&fish.pos<=fish.z1+.015,n=fish.catch,tool=fish.tool,x=fish.x,y=fish.y;fish=null;fishUI.hidden=true;document.body.classList.remove('fishing');
     if(!ok){sfx('bad');toast('Kaçırdın! Balık suya geri daldı.',true);return}
-    if(wearsNow()){toolDur[tool]=nn(toolDur[tool],GT[tool].dur)-1;if(toolDur[tool]<=0)setTimeout(()=>toast(`${tool} köreldi! Demirci Dursun'da yenile.`,true),300)}
+    if(wearsNow()){toolDur[tool]=Math.max(0,nn(toolDur[tool],GT[tool].dur)-1);if(toolDur[tool]<=0)setTimeout(()=>toast(`${tool} köreldi! Demirci Dursun'da yenile.`,true),300)}
     gain(n);renderInv();try{audio.play('splash',{vol:.8})}catch(e){}sfx('found');
     for(let k=0;k<12;k++)parts.push({x,y,vx:(Math.random()-.5)*40,vy:-30-Math.random()*30,life:.6,c:k%2?'#cfe8ff':'#ffffff'});
     const fishy=V46RAW.indexOf(n)>=0;if(fishy){dstat.fish++;fishTotal++}gainXP(fishy?3+Math.round((PRICE_[n]||4)/2):2);floatText(fishy?`${n}!`:`${n} takıldı`,'#9fd0f0');
@@ -7142,11 +7212,25 @@ function npcCall(c){const who=c.who(),txt=c.txt();B3.call={who,txt,t:7};sfx('fou
 function checkCalls(){if(onTitle||wake||fading)return;for(const c of CALLS){let on=false;try{on=!!c.when()}catch(e){}if(on&&!B3.fired.has(c.k)){B3.fired.add(c.k);npcCall(c)}else if(!on)B3.fired.delete(c.k)}}
 function wrapText(s,n){const W2=s.split(' '),L=[];let cur='';for(const w of W2){if((cur+' '+w).trim().length>n&&cur){L.push(cur);cur=w}else cur=(cur+' '+w).trim()}if(cur)L.push(cur);return L}
 let lastT=0;
+let callHudT=0,callHudR=[];
+function callHud(cr){const now=performance.now();if(now-callHudT<250)return callHudR;callHudT=now;const L=[];
+  for(const id of ['tut','discover','daybanner','lvlup','prompt','hotbar','mini','left','right','vit','toasts','coinbox','shipchip','clock','gather','xpdock','dodgebtn','pad','ebtn','b-quest','tutskip','b3ptr','fishui']){const e=$(id);if(!e||e.hidden)continue;const r=e.getBoundingClientRect();if(r.width<2||r.height<2||getComputedStyle(e).visibility==='hidden')continue;L.push({left:r.left-cr.left,right:r.right-cr.left,top:r.top-cr.top,bottom:r.bottom-cr.top,width:r.width,height:r.height})}
+  if(bar&&!bar.hidden){const r=bar.getBoundingClientRect();if(r.width>1)L.push({left:r.left-cr.left,right:r.right-cr.left,top:r.top-cr.top,bottom:r.bottom-cr.top,width:r.width,height:r.height})}
+  return callHudR=L}
 function drawCall(){const c=B3.call;const dt=Math.max(0,Math.min(.1,time-lastT));lastT=time;if(!c)return;c.t-=dt;if(c.t<=0){B3.call=null;return}
   const scale=S*dpr;ctx.save();ctx.setTransform(scale,0,0,scale,-Math.round(cam.cx*scale),-Math.round(cam.cy*scale));
   const a=Math.max(0,Math.min(1,(7-c.t)/.3,c.t/.5));ctx.globalAlpha=a;ctx.font='bold 6px Rubik, system-ui, sans-serif';
   const L=wrapText(c.txt,38),w=Math.ceil(Math.max.apply(null,L.map(l=>ctx.measureText(l).width)))+8,h=L.length*8+3;
-  const vw2=vw/S,vh2=vh/S;let bx=c.who.x,by=c.who.y-38-h;bx=Math.max(cam.cx+w/2+4,Math.min(cam.cx+vw2-w/2-4,bx));const top0=bar.hidden?4:(bar.getBoundingClientRect().bottom+4)/S;by=Math.max(cam.cy+top0,Math.min(cam.cy+vh2-60,by));
+  const vw2=vw/S,vh2=vh/S;let bx,by;
+  // v48c: the bubble keeps clear of every HUD box (tutorial card, tracking bar, banners, prompt, hotbar, map, menus)
+  {const cr=cv.getBoundingClientRect(),hud=callHud(cr);const fits=(x0,y0)=>x0-w/2>=cam.cx+2&&x0+w/2<=cam.cx+vw2-2&&y0>=cam.cy+2&&y0+h<=cam.cy+vh2-2;
+   const hits=(x0,y0)=>{let n=0;const L0=(x0-w/2-cam.cx)*S,T0=(y0-cam.cy)*S,R0=L0+w*S,B0=T0+h*S;for(const r of hud)if(L0<r.right+3&&R0>r.left-3&&T0<r.bottom+3&&B0>r.top-3)n+=(r.width*r.height>1)?1:0;
+     {const pl=(player.x-8-cam.cx)*S,pr=(player.x+8-cam.cx)*S,pt=(player.y-26-cam.cy)*S,pb=(player.y+2-cam.cy)*S;if(L0<pr&&R0>pl&&T0<pb&&B0>pt)n+=.3}return n};   // the player counts as a soft obstacle
+   const wx=c.who.x,wy=c.who.y,cand=[[wx,wy-38-h],[wx,wy+8],[wx-w/2-14,wy-24-h/2],[wx+w/2+14,wy-24-h/2],[wx,wy-60-h],[wx,wy+30]];
+   let best=null,bs=1e9;for(const [x0,y0] of cand){const cx0=Math.max(cam.cx+w/2+4,Math.min(cam.cx+vw2-w/2-4,x0)),cy0=Math.max(cam.cy+4,Math.min(cam.cy+vh2-h-4,y0));const sc=hits(cx0,cy0)*1000+Math.hypot(cx0-x0,cy0-y0)+(fits(x0,y0)?0:50);if(sc<bs){bs=sc;best=[cx0,cy0]}if(sc<1)break}
+   if(bs>=1000){const want=[Math.max(cam.cx+w/2+4,Math.min(cam.cx+vw2-w/2-4,wx)),Math.max(cam.cy+4,Math.min(cam.cy+vh2-h-4,wy-38-h))];   // every spot near the speaker is covered: the nearest free spot on screen
+     for(let gy=cam.cy+4;gy<=cam.cy+vh2-h-4;gy+=Math.max(6,h/2))for(let gx=cam.cx+w/2+4;gx<=cam.cx+vw2-w/2-4;gx+=Math.max(8,w/4)){const sc=hits(gx,gy)*1000+Math.hypot(gx-want[0],gy-want[1]);if(sc<bs){bs=sc;best=[gx,gy]}}}
+   bx=best[0];by=best[1]}
   const x=Math.round(bx-w/2),y=Math.round(by);
   px(x-1,y-1,w+2,h+2,'#11170f');px(x,y,w,h,'#eaf6ff');px(x,y,w,1,'#9fd0ff');
   if(Math.abs(bx-c.who.x)<w/2&&by<c.who.y){px(Math.round(c.who.x)-2,y+h,4,2,'#eaf6ff');px(Math.round(c.who.x)-1,y+h+2,2,1,'#eaf6ff')}
@@ -7158,8 +7242,8 @@ const _tzKey=tzKey;
 const TZK_EXTRA={eat:()=>TOUCH?'sol menüdeki <b>yemek düğmesine</b> (ekmek simgesi) dokun':'sol menüdeki <b>yemek düğmesine</b> (ekmek simgesi) tıkla ya da <span class="kc">F</span>\'ye bas'};
 tzKey=function(k){return TZK_EXTRA[k]?TZK_EXTRA[k]():_tzKey.apply(this,arguments)};
 const _tzCard=tzCard;tzCard=function(){const C=_tzCard.apply(this,arguments);if(!C)return C;const h=n=>inv[n]||0;
-  if(tz===2)return['ekin','Ekin · Ye',`Şimdi karnını doyur: ${tzKey('eat')}. Her basışta en uygun yiyeceğini yersin; şimdilik o da böğürtlen. <b>Beşini de ye.</b>${TOUCH?' (Düğmeye basılı tutarsan ne yiyeceğini kendin seçersin.)':' (Sağ tık ya da F, ne yiyeceğini seçtiğin listeyi açar.)'} (Yenen ${Math.min(5,tzEat)}/5)`];
-  if(tz===4&&!tzNeed().length&&!foundSet.has('Kaba meşale'))return['witch','Zümrüt · Gel, tarifi öğrenelim',craftOpen&&mode==='craft'?`Soldan <b>Kaba meşale</b>'yi seç, malzemelere ${TOUCH?'dokun':'tıkla'} (basılı tutarsan hepsi birden gider) ve <b>Tarifi öğren</b>'e bas.`:`Tamam, hepsini topladın! Şimdi <b>kazanın başına</b> gel (ok yolu gösteriyor) ve kazana ${TOUCH?'dokun':'tıkla ya da yanında <span class="kc">E</span>\'ye bas'}. Sonra soldan <b>Kaba meşale</b>'yi seç, malzemeleri koy ve <b>Tarifi öğren</b>'e bas.`];
+  if(tz===2)return['ekin','Ekin · Ye',`Şimdi karnını doyur: ${tzKey('eat')}. Her basışta en uygun yiyeceğini yersin; şimdilik o da böğürtlen. <b>Beşini de ye.</b>${TOUCH?' (Düğmeye basılı tutarsan ne yiyeceğini listeden kendin seçersin.)':' (Ne yiyeceğini seçmek istersen <span class="kc">F</span>\'yi basılı tut ya da düğmeye sağ tıkla: liste açılır.)'} (Yenen ${Math.min(5,tzEat)}/5)`];
+  if(tz===4&&!tzNeed().length&&!foundSet.has('Kaba meşale'))return['witch','Zümrüt · Gel, tarifi öğrenelim',craftOpen&&mode==='craft'?`${TOUCH?'Listeden':'Soldan'} <b>Kaba meşale</b>'yi seç, malzemelere ${TOUCH?'dokun':'tıkla'} (basılı tutarsan hepsi birden gider) ve <b>Tarifi öğren</b>'e bas.`:`Tamam, hepsini topladın! Şimdi <b>kazanın başına</b> gel (ok yolu gösteriyor) ve kazana ${TOUCH?'dokun':'tıkla ya da yanında <span class="kc">E</span>\'ye bas'}. Sonra ${TOUCH?'listeden':'soldan'} <b>Kaba meşale</b>'yi seç, malzemeleri koy ve <b>Tarifi öğren</b>'e bas.`];
   if(tz===5&&!tzNeed().length)return['witch','Zümrüt · Meşaleni yap',craftOpen&&mode==='hand'?`Listede <b>Kaba meşale</b>'nin yanındaki yanıp sönen <b>Yap</b> düğmesine bas. Meşale envanterine gider; sonra onu bir alet yuvasına koyarsın.`:`Malzemeler tamam! Kazana gerek yok: ${TOUCH?'soldaki <b>el ikonuna</b> dokun':'<span class="kc">Tab</span> tuşuna bas (ya da soldaki el ikonuna tıkla)'} ve <b>Kaba meşale</b>'nin yanındaki <b>Yap</b>'a bas. Meşale <b>envanterine</b> gider: sonra ${beltHow('Kaba meşale')}.`];
   if(tz===7&&!(craftOpen&&mode==='craft'))return['witch','Zümrüt · Keskin taş tarifi',`Taşlar tamam! <b>Kazanın başına</b> gel (ok yolu gösteriyor), kazanı aç, <b>Keskin taş</b>'ı seç, 2 taşı koy ve <b>Tarifi öğren</b>'e bas.`];
   if(tz===13)return['','Demirci Dursun',`Parçalar hazır! Kuzeydeki <b>Demirci Dursun</b>'a git (ok yolu gösteriyor) ve ${TOUCH?'ona dokun':'yanında <span class="kc">E</span>\'ye bas'}. Örste <b>Taş balta</b> seçili gelir: parçaları koy ve <b>Döv</b>'e bas.`];
@@ -7167,7 +7251,7 @@ const _tzCard=tzCard;tzCard=function(){const C=_tzCard.apply(this,arguments);if(
 
 // ---------------------------------------------------------------- the eat button (left menu)
 const eb=document.createElement('button');eb.className='ib';eb.id='b-eat';eb.type='button';eb.hidden=true;
-eb.setAttribute('aria-label','Ye (F) · en uygun yiyeceği yer; basılı tut ya da sağ tıkla: ne yiyeceğini seç');eb.title='Ye (F) · basılı tut ya da sağ tıkla: yemek seç';
+eb.setAttribute('aria-label','Ye (F) · en uygun yiyeceği yer; basılı tut ya da sağ tıkla: ne yiyeceğini seç');eb.title='Ye (F) · basılı tut (F\'yi de) ya da sağ tıkla: yemek seç';
 eb.innerHTML='<svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="12" width="14" height="2" fill="#d8d0c0"/><rect x="2" y="14" width="12" height="1" fill="#9a9284"/><rect x="5" y="4" width="6" height="1" fill="#e0a050"/><rect x="4" y="5" width="8" height="1" fill="#d08a40"/><rect x="3" y="6" width="10" height="5" fill="#c47c34"/><rect x="4" y="6" width="8" height="1" fill="#eab468"/><rect x="5" y="7" width="1" height="2" fill="#7a4818"/><rect x="8" y="7" width="1" height="2" fill="#7a4818"/><rect x="11" y="7" width="1" height="2" fill="#7a4818"/><rect x="3" y="11" width="10" height="1" fill="#8a5424"/></svg><kbd>F</kbd>';
 $('bar').appendChild(eb);
 let ebHold=null,ebLong=false;
@@ -7210,8 +7294,8 @@ function b3Tick(){if(onTitle)return;try{
 setInterval(b3Tick,300);addEventListener('resize',()=>{placeBar();placePtr()});
 
 // ---------------------------------------------------------------- save / load (b3_trk, b3_ouch)
-function b3Load(d){B3.trk=(d&&Array.isArray(d.b3_trk)?d.b3_trk:[]).filter(r=>typeof r==='string'&&REC.has(r)).filter((r,i,a)=>a.indexOf(r)===i).slice(0,3);B3.ouch=!!(d&&d.b3_ouch);B3.fired.clear();B3.call=null;B3.key='';for(const k in B3.lock)delete B3.lock[k]}
-const _snapshot=snapshot;snapshot=function(){const s=_snapshot.apply(this,arguments);s.b3_trk=B3.trk.slice();s.b3_ouch=B3.ouch;return s};
+function b3Load(d){B3.trk=(d&&Array.isArray(d.b3_trk)?d.b3_trk:[]).filter(r=>typeof r==='string'&&REC.has(r)).filter((r,i,a)=>a.indexOf(r)===i).slice(0,3);B3.ouch=!!(d&&d.b3_ouch);thornN=d&&+d.b3_thn>0?+d.b3_thn:(B3.ouch?3:0);B3.fired.clear();B3.call=null;B3.key='';for(const k in B3.lock)delete B3.lock[k]}
+const _snapshot=snapshot;snapshot=function(){const s=_snapshot.apply(this,arguments);s.b3_trk=B3.trk.slice();s.b3_ouch=B3.ouch;s.b3_thn=thornN;return s};
 try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}
 const _restore=restore;restore=function(d){const r=_restore.apply(this,arguments);b3Load(d);return r};
 const _resetState=resetState;resetState=function(){const r=_resetState.apply(this,arguments);b3Load(null);return r};
@@ -7343,7 +7427,7 @@ function b4Spawn(k,want,zone){const D=ANIM[k],P=PACK[k],of=animals.filter(a=>a.k
     return}}
 const _spawnAnimals=spawnAnimals;
 spawnAnimals=function(){_spawnAnimals();if(!met||wake)return;const z=zoneAt(player.x,player.y);
-  if(z===0){b4Spawn('Bıldırcın',2,0);b4Spawn('Kunduz',1,0);b4Spawn('Yaban kazı',1,0);b4Spawn('Yaban atı',1,0);if(lvl>=3)b4Spawn('Dağ keçisi',1,0);if(lvl>=4)b4Spawn('Muflon',1,0);if(lvl>=6||day>=3)b4Spawn('Oklu kirpi',1,0)}
+  if(z===0){b4Spawn('Bıldırcın',2,0);b4Spawn('Kunduz',1,0);b4Spawn('Yaban kazı',1,0);b4Spawn('Yaban atı',1,0);if(lvl>=3)b4Spawn('Dağ keçisi',1,0);if(lvl>=4)b4Spawn('Muflon',1,0);if((lvl>=10||lvl>=8&&day>=5)&&!(earlyWild()&&rangedNear('Oklu kirpi')))b4Spawn('Oklu kirpi',1,0)}
   else if(z===1){b4Spawn('Su samuru',1,1);b4Spawn('Turna kuşu',2,1);b4Spawn('Yaban kazı',1,1);b4Spawn('Mağara ayısı',1,1)}};
 const _drawAnimal=drawAnimal;
 drawAnimal=function(a,time){if(!B4ANIM.has(a.k))return _drawAnimal(a,time);
@@ -7690,7 +7774,7 @@ function kEl(el){if(!el||!kOn())return;const h=el.innerHTML;if(h===el.__b5)retur
 {const _t=toast;toast=function(m,w){return _t.call(this,kTxt(m),w)}}
 {const _s=say;say=function(text,ch,who){return _s.call(this,kTxt(text),ch,who)}}
 {const _r=renderTut;renderTut=function(){const r=_r.apply(this,arguments);try{kEl($('tuttext'))}catch(e){}return r}}
-{const _u=updatePrompt;updatePrompt=function(){const r=_u.apply(this,arguments);try{if(kOn()&&lastPrompt!==B5.lp){B5.lp=lastPrompt;if(lastPrompt&&lastPrompt!=='#')prompt.innerHTML=kTxt(lastPrompt)}}catch(e){}return r}}
+{const _u=updatePrompt;updatePrompt=function(){const r=_u.apply(this,arguments);try{if(kOn()&&lastPrompt&&lastPrompt!=='#'&&(lastPrompt!==B5.lp||prompt.innerHTML!==B5.lph)){B5.lp=lastPrompt;prompt.innerHTML=kTxt(lastPrompt);B5.lph=prompt.innerHTML}}catch(e){}return r}}   // v48c: also when the game wrote the same raw text again
 {const _f=renderFish;renderFish=function(){const r=_f.apply(this,arguments);try{kEl($('fu-t'))}catch(e){}return r}}
 {const _h=renderHot;renderHot=function(){const r=_h.apply(this,arguments);try{const k=document.querySelector('#handbtn kbd');if(k)k.textContent=labOf('hand')}catch(e){}return r}}
 {const _k=tzKey;tzKey=function(k){const s=_k.apply(this,arguments);return typeof s==='string'?s.replace(/<span class="kc">([^<]{1,8})<\/span>/g,(m,l)=>{const id=LBL2ID[l];return id?`<span class="kc" data-k="1">${esc(labOf(id))}</span>`:m}):s}}
@@ -7788,6 +7872,7 @@ B5.maxLevel=cheatMaxLevel;B5.revealMap=cheatRevealMap;
 {const _a=applyCheat;applyCheat=function(){const r=_a.apply(this,arguments);try{syncInf()}catch(e){}return r}}
 // Esc closes the controls menu before anything else (the capture listener above handles keys while it is open)
 syncInf();renderMusSeg();if(kOn())applyKeyTexts();
+window.__plReady=1;   // from here on errors show as a small notice (v48c)
 }).toString()+')()')}catch(e){try{window.__hamErr('v48-b5: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
