@@ -472,3 +472,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v70.2 (26 Ekim 2026)
 - Yunus ters atlıyordu: sola giden yunusta açı zaten ~π iken bir de π ekleniyordu (burun arkada). Artık `rotate(ang)` + sola giderken `scale(1,-1)`: burun hep gidilen yöne bakar.
 - Yunus %65 boyuta indi; zıplama len 42, yükseklik 20, süre 1.3 sn; gölge küçüldü.
+
+## v70.3 (26 Ekim 2026)
+- Gece ışığı da hile kilidinde: `label[for=nightlight]` yalnız cheat yazılınca görünür; kilitlenince settings.nightLight kapanır.
+- Ekran kartıyla çiz: kutu işaretlenince hemen değil, Ayarlar Tamam ile kapanınca uygulanır (v68 script: `apply()` s-close tıklaması + closeSettings sarmalayıcı); "Ekran kartıyla çizim açık/kapalı · oyun yeniden açılıyor" uyarısı.
+- Büyük harita: kişi simgeleri yakınlaştıkça büyür (sc=min(9,3+(mapZ-1)*.75)); simgeye dokununca ok oraya yön gösterir (MAPHITS, mapTap, GUIDE.__map, 60 sn).
+- Sol menü simgeleri dünyadaki objelerden: Kazan (yeşil iksirli kara kazan, altında ateş), Pazar (kırmızı-beyaz tenteli tezgâh, mallar), Demirci (örs, kızgın demir, çekiç). Yemek düğmesi: but (et ve kemik).
+- "İskelede söz" anısı → "Çay kıyısında söz": yeşil çayır, ağaçların altında, önden akan çay, piknik örtüsü, şarap şişesi ve kadehler.
