@@ -403,3 +403,4 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v66 — Yan profil (Boğaç'ın seçimi)
 - `profR` (v63 bloğu) yeniden: Boğaç 10 seçenekten "2"yi (tek piksel burun ucu) seçti, yanak ön profildeki gibi belirgin pembe (#ff9a9a, 2 piksel), kahkül öne taranmış ("S2"), kafanın arkası büyük ve yuvarlak, saç enseye kadar sarıyor ("Y3"), gövde 4 piksel genişliğinde (ince). Bütün saç stilleri, şapkalar, sakal/bıyık ve gözlükler buna göre uyarlandı. Önizleme `scratchpad/prof` altında üretilmişti (repo dışında).
 - v66.2: karakter yaratmada erkek saçlarından 'Kazınmış' kaldırıldı (Kel var). 'buzz' çizimi Kel ve bazı NPC'ler (Ekin, Dursun, Kaan, Demirhan) için kodda duruyor.
+- v66.3: erkek karakter elbise ve çiçekli toka seçemez (satırlar gizli, buildLook da zorlar); erkek şapkalarına 'Buff' (renkli bant, arkada düğüm) eklendi, ön/arka/yan çizimi var.

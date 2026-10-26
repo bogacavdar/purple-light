@@ -4053,6 +4053,7 @@ function drawChibi(g,x,y,L,o){
     else if(H==='silindir'){p(x-8,hy-1,16,2,'#1c1c24');p(x-5,hy-11,10,10,'#24242e');p(x-5,hy-11,10,1,'#3a3a48');p(x-5,hy-4,10,2,hc);p(x-4,hy-10,1,6,'#3a3a48')}
     else if(H==='fes'){p(x-4,hy-7,8,7,'#b82a2a');p(x-4,hy-7,8,1,'#d84a3a');p(x-5,hy-1,10,1,'#8a1a1a');p(x,hy-8,1,1,'#2a1a10');const tx=fx>0?x-5:x+4;p(tx,hy-7,1,5,'#2a1a10');p(tx-1,hy-3,3,1,'#2a1a10')}
     else if(H==='korsan'){p(x-9,hy-2,18,3,'#1c1c22');p(x-10,hy-4,3,2,'#1c1c22');p(x+7,hy-4,3,2,'#1c1c22');p(x-6,hy-6,12,4,'#24242c');p(x-4,hy-7,8,1,'#24242c');p(x-9,hy-2,18,1,'#c8a848');if(!back){p(x-1,hy-5,3,2,'#f4f0e8');p(x-1,hy-5,1,1,'#1c1c22');p(x+1,hy-5,1,1,'#1c1c22')}}
+    else if(H==='buff'){p(x-6,hy-1,12,3,hc);p(x-6,hy-1,12,1,hl);for(let k=-5;k<6;k+=3)p(x+k,hy,1,1,hd);p(x-5,hy-3,10,2,HC);p(x-4,hy-4,8,1,HC);if(back){p(x-1,hy-1,2,3,hd);p(x-2,hy+2,1,3,hd);p(x+1,hy+2,1,3,hd)}}
     else if(H==='tac'){const cs=['#ff6a9a','#ffd27a','#ffffff','#9ad0ff','#ff6a9a','#ffd27a'];p(x-6,hy-2,12,1,'#4a8a3a');for(let k=0;k<6;k++){const cx=x-6+k*2+(k>2?1:0);p(cx,hy-4,2,2,cs[k]);p(cx,hy-4,1,1,'#ffffff')}}}
   else if(HS==='short'||HS==='side'||HS==='pixie'){p(x+fx,hy-5,1,2,HC);p(x+1+fx,hy-6,1,1,HC)}
   if((L.flower!=null?L.flower:L.long)&&!HAT&&!o.helm){const bx=fx<0?x-6:x+3;p(bx,hy-4,3,2,'#ffffff');p(bx+1,hy-3,1,1,'#ff5a8a')}
@@ -5957,14 +5958,14 @@ let cGender='e',cRot=0;
 const cLook={};
 const HS_E=[['short','Kısa'],['messy','Dağınık'],['side','Yana taranmış'],['spiky','Dikleştirilmiş'],['long','Uzun'],['tail','At kuyruğu']];   // v66.2: 'Kazınmış' removed (Kel is there)
 const HS_K=[['long','Uzun'],['tail','At kuyruğu'],['braid','Örgü'],['bun','Topuz'],['bob','Küt'],['pixie','Kısa'],['twin','İki kuyruk']];
-const HATS_E=[['none','Yok'],['kasket','Kasket'],['bere','Ponponlu bere'],['hasir','Hasır'],['kovboy','Kovboy'],['silindir','Silindir'],['fes','Fes'],['korsan','Korsan'],['bandana','Bandana']];
+const HATS_E=[['none','Yok'],['buff','Buff'],['kasket','Kasket'],['bere','Ponponlu bere'],['hasir','Hasır'],['kovboy','Kovboy'],['silindir','Silindir'],['fes','Fes'],['korsan','Korsan'],['bandana','Bandana']];
 const HATS_K=[['none','Yok'],['tac','Çiçek tacı'],['hasir','Hasır'],['bere','Ponponlu bere'],['kasket','Kasket'],['kovboy','Kovboy'],['silindir','Silindir'],['fes','Fes'],['bandana','Bandana']];
 const GLS=[['none','Yok'],['round','Yuvarlak'],['kare','İnce çerçeve'],['sun','Güneş']];
 const BEARDS=[['none','Yok'],['biyik','Bıyık'],['keci','Keçi sakal'],['sakal','Sakal']];
-const HAT_COL=new Set(['bere','kasket','bandana','silindir']);
+const HAT_COL=new Set(['bere','kasket','bandana','silindir','buff']);
 function cDefaults(g){cGender=g;Object.assign(cLook,g==='e'?{skin:0,hair:0,hs:'short',shirt:0,pants:0,dress:false,gl:'none',hat:'none',hatC:0,flower:false,beard:'none'}:{skin:0,hair:2,hs:'long',shirt:2,pants:5,dress:true,gl:'none',hat:'none',hatC:0,flower:true,beard:'none'})}
 function buildLook(){const sk=CC.skin[cLook.skin],hr=CC.hair[cLook.hair],sh=CC.shirt[cLook.shirt];
-  return{skin:sk[0],skinD:sk[1],hair:hr[0],hairD:hr[1],hairL:hr[2],shirt:sh,shirtD:shade(sh,.75),pants:cLook.dress?sk[0]:CC.pants[cLook.pants],eye:'#2a1f08',hs:cLook.hs,dress:cLook.dress,gl:cLook.gl,hat:cLook.hat,hatC:CC.hatC[cLook.hatC],flower:cLook.flower&&cLook.hs!=='kel',beard:cGender==='e'?cLook.beard:'none',tuft:cLook.hs==='short',long:false,gender:cGender}}
+  return{skin:sk[0],skinD:sk[1],hair:hr[0],hairD:hr[1],hairL:hr[2],shirt:sh,shirtD:shade(sh,.75),pants:cLook.dress&&cGender==='k'?sk[0]:CC.pants[cLook.pants],eye:'#2a1f08',hs:cLook.hs,dress:cLook.dress&&cGender==='k',gl:cLook.gl,hat:cLook.hat,hatC:CC.hatC[cLook.hatC],flower:cLook.flower&&cLook.hs!=='kel'&&cGender==='k',beard:cGender==='e'?cLook.beard:'none',tuft:cLook.hs==='short',long:false,gender:cGender}}
 function cRender(){
   const row=(label,html)=>`<div class="crow"><b>${label}</b><div class="cch">${html}</div></div>`;
   const opt=(k,v,t)=>`<button type="button" data-ck="${k}" data-cv="${v}" class="${cLook[k]===v||(k==='g'&&cGender===v)?'on':''}">${t}</button>`;
@@ -5975,13 +5976,13 @@ function cRender(){
     row('Saç',(cGender==='e'?HS_E:HS_K).map(([v,t])=>opt('hs',v,t)).join(''))+
     (cGender==='e'?row('Sakal',BEARDS.map(([v,t])=>opt('beard',v,t)).join('')):'')+
     row('Saç rengi',CC.hair.map((c,i)=>sw('hair',i,c[0])).join(''))+
-    row('Kıyafet',opt('dress',false,'Tişört')+opt('dress',true,'Elbise'))+
+    (cGender==='k'?row('Kıyafet',opt('dress',false,'Tişört')+opt('dress',true,'Elbise')):'')+
     row(cLook.dress?'Elbise rengi':'Tişört rengi',CC.shirt.map((c,i)=>sw('shirt',i,c)).join(''))+
     (cLook.dress?'':row('Pantolon',CC.pants.map((c,i)=>sw('pants',i,c)).join('')))+
     row('Gözlük',GLS.map(([v,t])=>opt('gl',v,t)).join(''))+
     row('Şapka',(cGender==='e'?HATS_E:HATS_K).map(([v,t])=>opt('hat',v,t)).join(''))+
     (HAT_COL.has(cLook.hat)?row(cLook.hat==='silindir'?'Kurdele rengi':'Şapka rengi',CC.hatC.map((c,i)=>sw('hatC',i,c)).join('')):'')+
-    (cLook.hat==='none'&&cLook.hs!=='kel'?row('Saç tokası',opt('flower',false,'Yok')+opt('flower',true,'Çiçek')):'');
+    (cLook.hat==='none'&&cLook.hs!=='kel'&&cGender==='k'?row('Saç tokası',opt('flower',false,'Yok')+opt('flower',true,'Çiçek')):'');
   $('cnote').innerHTML=cGender==='e'?'Giriş sahnesinde yanındaki kızıl saçlı kadını kaybedeceksin.':'Giriş sahnesinde yanındaki kısa kahverengi saçlı adamı kaybedeceksin.';
   cDraw()}
 function cDraw(){const c=$('cprev'),g=c.getContext('2d');g.clearRect(0,0,64,64);const L=buildLook(),dirs=[{fx:0,fy:1},{fx:1,fy:0},{fx:0,fy:-1},{fx:-1,fy:0}],d=dirs[cRot%4];
@@ -10217,6 +10218,7 @@ function profR(g,x,y,L,o){
     else if(H==='silindir'){p(x-8,hy-1,16,2,'#1c1c24');p(x-5,hy-11,9,10,'#24242e');p(x-5,hy-11,9,1,'#3a3a48');p(x-5,hy-4,9,2,hc);p(x+2,hy-10,1,6,'#3a3a48')}
     else if(H==='fes'){p(x-4,hy-7,7,7,'#b82a2a');p(x-4,hy-7,7,1,'#d84a3a');p(x-5,hy-1,9,1,'#8a1a1a');p(x-1,hy-8,1,1,'#2a1a10');p(x-5,hy-7,1,5,'#2a1a10');p(x-6,hy-3,3,1,'#2a1a10')}
     else if(H==='korsan'){p(x-7,hy-2,13,3,'#1c1c22');p(x-5,hy-6,10,4,'#24242c');p(x-3,hy-8,6,2,'#24242c');p(x-7,hy-2,13,1,'#c8a848');p(x,hy-5,2,2,'#f4f0e8')}
+    else if(H==='buff'){p(x-5,hy-1,10,3,hc);p(x-5,hy-1,10,1,hl);for(let k=-4;k<5;k+=3)p(x+k,hy,1,1,hd);p(x-7,hy,2,2,hd);p(x-8,hy+2,2,2,hd)}
     else if(H==='tac'){const cs=['#ff6a9a','#ffd27a','#ffffff','#9ad0ff','#ff6a9a'];p(x-5,hy-2,10,1,'#4a8a3a');for(let k=0;k<5;k++){const cx=x-5+k*2;p(cx,hy-4,2,2,cs[k]);p(cx,hy-4,1,1,'#ffffff')}}}
   if((L.flower!=null?L.flower:L.long)&&!HAT&&!o.helm&&!kel){p(x-4,hy-3,3,2,'#ffffff');p(x-3,hy-2,1,1,'#ff5a8a')}
 }
