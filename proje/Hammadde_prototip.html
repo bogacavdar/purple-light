@@ -1167,6 +1167,100 @@ body.b5edit #prompt{display:block!important}
 .ping li.p3put{cursor:pointer}.ping li.p3put:hover{border-color:var(--accent)}
 @media (prefers-reduced-motion:reduce){.ib.p3tab,#p3ptr,#tut .kc.p3k{animation:none}}
 </style>
+<style id="v50-mob-css">
+/* ---------- v50: minimal phone HUD (landscape phones; body.v50m is set from PHONE_MQ) ---------- */
+#v50row{display:none}
+body.v50m{--v50bg:rgba(20,13,38,.78);--v50ed:rgba(190,150,255,.38)}
+/* top-left: one slim column of stats, then the menu row; the rest of the menus sit in a drawer */
+body.v50m #left{top:calc(env(safe-area-inset-top,0px) + 6px)!important;left:calc(env(safe-area-inset-left,0px) + 8px)!important;width:116px!important;gap:3px!important}
+body.v50m #clock{order:1;align-self:flex-start;font-size:11px;padding:1px 7px;gap:4px;border-width:1px;border-radius:9px;line-height:16px}
+body.v50m #clock:not(.night){background:var(--v50bg);border-color:var(--v50ed)}
+body.v50m #clock i{font-size:11px}
+body.v50m #vit{order:2;gap:2px!important}
+body.v50m #vit .vb{height:10px!important;border-width:1px!important;box-shadow:0 0 0 1px rgba(5,4,14,.7)!important;border-radius:5px;overflow:hidden}
+body.v50m #vit .vb span{font-size:8px!important;letter-spacing:.02em}
+body.v50m #vit .vb.st{height:6px!important}body.v50m #vit .vb.st span{display:none}
+body.v50m #fxbar{font-size:10px}
+body.v50m #left #xpdock{order:3;position:static!important;left:auto!important;right:auto!important;bottom:auto!important;padding:0!important;background:none!important;display:flex;align-items:center;gap:4px!important;width:100%;box-sizing:border-box}
+body.v50m #xpdock .lvbadge{width:auto!important;height:14px!important;padding:0 5px;flex-direction:row;gap:2px;border:1px solid #7fb8e0!important;border-radius:7px;box-shadow:none!important;background:var(--v50bg)}
+body.v50m #xpdock .lvbadge small{display:none}
+body.v50m #xpdock .lvbadge::before{content:'Sv';font-size:8.5px;color:#a9cbe6;font-weight:700}
+body.v50m #xpdock .lvbadge b{font-size:10px!important}
+body.v50m #xpdock .xpwrap{flex:1}
+body.v50m #xpdock .xpbar.big{height:4px!important;border-width:0!important;border-radius:2px;box-shadow:0 0 0 1px rgba(5,4,14,.7)!important;overflow:hidden;background:rgba(17,23,15,.8)}
+body.v50m #xpdock .xpbar.big span{display:none}
+body.v50m #left #coinbox{order:4;position:static!important;align-self:flex-start;max-width:none!important;font-size:12px!important;padding:1px 8px 1px 5px!important;gap:4px!important;border-width:1px!important;border-color:rgba(242,184,75,.55)!important;border-radius:9px;box-shadow:none!important;background:var(--v50bg)!important;line-height:16px}
+body.v50m #left #coinbox i{width:10px!important;height:10px!important;box-shadow:inset -2px -2px 0 #b9852a,inset 2px 2px 0 #ffe29b!important}
+body.v50m #shipchip{order:5}
+body.v50m #v50row{order:6;display:flex;gap:4px;pointer-events:auto;margin-top:2px}
+body.v50m #left .ib,body.v50m #right #b-exit{width:38px!important;height:38px!important;padding:6px!important;border-radius:11px;background:var(--v50bg);border:1px solid var(--v50ed);box-shadow:0 1px 4px rgba(0,0,0,.35);pointer-events:auto}
+body.v50m #left .ib svg,body.v50m #right #b-exit svg{width:24px!important;height:24px!important}
+body.v50m #left .ib kbd,body.v50m #left .ib.wide span,body.v50m #left .ib.big span,body.v50m #right #b-exit span{display:none}
+body.v50m #left .ib.on{border-color:var(--accent);background:rgba(70,45,20,.85)}
+body.v50m #left .ib .badge{top:-4px;right:-4px;min-width:14px;height:14px;line-height:14px;font-size:10px;border-radius:7px}
+body.v50m #v50tog{display:flex;flex-direction:column;gap:3px;align-items:center;justify-content:center}
+body.v50m #v50tog svg{transition:transform .15s}
+body.v50m.v50open #v50tog{border-color:#d8b0ff;background:rgba(74,47,128,.9)}
+body.v50m.v50open #v50tog svg{transform:rotate(45deg)}
+#v50tog.v50hint{border-color:#7fd0ff!important;animation:p3tab .9s ease-in-out infinite}
+body.v50m #left #bar{order:7;display:none!important}
+body.v50m.v50open #left #bar{display:grid!important;grid-template-columns:repeat(4,38px)!important;grid-auto-rows:38px!important;gap:4px!important;width:max-content;padding:5px;background:rgba(18,12,34,.86);border:1px solid rgba(190,150,255,.45);border-radius:13px;box-shadow:0 4px 16px rgba(0,0,0,.45);animation:v50in .14s ease-out;transform-origin:0 0}
+@keyframes v50in{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}
+/* top-right: only the door (pause menu: save, settings, controls) */
+body.v50m #right{top:calc(env(safe-area-inset-top,0px) + 6px)!important;right:calc(env(safe-area-inset-right,0px) + 8px)!important}
+/* the quest / lesson card: a pill in the top-right corner; tap it to read all */
+body.v50m #tut{left:auto!important;right:calc(env(safe-area-inset-right,0px) + 52px)!important;top:calc(env(safe-area-inset-top,0px) + 6px)!important;width:max-content!important;max-width:min(31vw,250px)!important;min-width:140px;margin:0!important;transform:none!important;padding:4px 9px 5px!important;font-size:12px!important;line-height:1.28!important;border:1px solid rgba(201,160,255,.55)!important;border-radius:12px;background:rgba(20,13,38,.86)!important;box-shadow:0 2px 12px rgba(0,0,0,.45)!important;box-sizing:border-box}
+body.v50m.tutx #tut{max-width:min(46vw,380px)!important}
+body.v50m #tut .th{margin-bottom:1px!important;gap:5px;min-width:0}
+body.v50m #tut .th b{font-size:9.5px!important;letter-spacing:.07em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+body.v50m #tut .th::after{font-size:10px!important}
+body.v50m #tut .tpor{width:16px!important;height:16px!important;border-width:1px}
+body.v50m #tut .tpor svg{width:13px!important;height:13px!important}
+body.v50m:not(.tutx) #tut p{display:-webkit-box!important;-webkit-line-clamp:1!important;-webkit-box-orient:vertical;overflow:hidden}
+body.v50m #tuttext{pointer-events:auto}
+body.v50m #tut .tb{position:static!important;margin:4px 0 0!important;justify-content:flex-end}
+body.v50m:not(.tutx) #tutskip{display:none!important}
+body.v50m:not(.tutx):not(.v50ok) #tut .tb{display:none!important}
+body.v50m #tut button{min-height:34px!important;padding:2px 10px!important;font-size:12px!important;border-radius:8px}
+body.v50m #tut .tbar{height:4px!important;margin-top:3px!important}
+body.v50m #tut .kc{font-size:10.5px;min-width:15px}
+body.v50m.menuopen #tut{max-width:min(40vw,300px)!important}
+/* tracking chips: small, right under the card */
+body.v50m #b3trk{left:auto!important;right:calc(env(safe-area-inset-right,0px) + 52px)!important;top:var(--v50tb,48px)!important;max-width:min(42vw,340px)!important;align-items:flex-end}
+body.v50m .b3row{padding:1px 4px!important;gap:3px!important;border-width:1px!important;border-radius:9px;background:rgba(18,12,34,.8)!important;box-shadow:0 0 8px rgba(80,160,255,.22)!important}
+body.v50m .b3lab{font-size:10px!important}body.v50m .b3lab img{display:none!important}
+body.v50m .b3c{font-size:10.5px!important;padding:0 4px 0 1px!important;gap:2px!important;border-width:1px!important;border-radius:6px}
+body.v50m .b3c img{width:18px!important;height:18px!important}
+body.v50m .b3c b{font-size:11px!important}body.v50m .b3c .b3nm{display:none}
+body.v50m .b3x{width:20px;height:20px;font-size:13px;border-width:1px}
+/* the action button: a small round icon above the minimap; the target in the world already glows */
+body.v50m #prompt.act{left:auto!important;right:calc(env(safe-area-inset-right,0px) + 16px)!important;bottom:calc(env(safe-area-inset-bottom,0px) + 92px)!important;transform:none!important;width:54px;height:54px;min-height:0!important;padding:0!important;border-radius:50%;justify-content:center;gap:0;font-size:0!important;white-space:nowrap;background:rgba(20,13,38,.84)!important;border:2px solid #f2b84b!important;box-shadow:0 0 0 2px rgba(5,4,14,.6),0 0 14px rgba(242,184,75,.35)!important}
+body.v50m #prompt.act .pa{width:auto;height:auto;background:none;color:#fff;font-size:22px;line-height:1}
+body.v50m #prompt.act .pa img{width:32px;height:32px;image-rendering:pixelated;display:block}
+body.v50m #prompt.act .pa svg{width:28px;height:28px;display:block}
+body.v50m #prompt.act::after{content:attr(data-l);position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:1px;font-size:10px;font-weight:700;color:#f6ecff;text-shadow:0 1px 2px #000,0 0 3px #000;white-space:nowrap;pointer-events:none}
+body.v50m #prompt.act.down{transform:scale(.92)!important;background:rgba(70,45,20,.9)!important}
+body.v50m #prompt.act.warn{border-color:var(--bad)!important}
+body.v50m #prompt:not(.act){left:50%!important;right:auto!important;transform:translateX(-50%)!important;bottom:calc(env(safe-area-inset-bottom,0px) + 52px)!important;font-size:11.5px!important;padding:3px 9px!important;max-width:44vw;white-space:normal;text-align:center;border-width:1px;border-radius:10px;background:rgba(20,13,38,.82)}
+body.v50m #dodgebtn{right:calc(env(safe-area-inset-right,0px) + 78px);bottom:calc(env(safe-area-inset-bottom,0px) + 96px);width:44px;height:44px;font-size:11px;border-width:2px;background:rgba(20,13,38,.8)}
+/* hotbar: small slots, centred at the bottom, fades when idle */
+body.v50m #hotbar{left:50%;right:auto;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 6px);gap:3px!important;padding:3px!important;border-radius:12px;background:rgba(18,12,34,.55)!important;border:1px solid rgba(190,150,255,.28)!important;max-width:calc(100vw - 250px)!important;transition:opacity .5s}
+body.v50m #hotbar .hs,body.v50m #hotbar #handbtn{width:36px!important;height:36px!important;border-radius:8px;border-width:1px!important}
+body.v50m #hotbar .hs img,body.v50m #hotbar #handbtn img{width:24px!important;height:24px!important}
+body.v50m #hotbar .hs b{font-size:10px}
+body.v50m.v50hbidle #hotbar{opacity:.5}
+body.v50m #gather{bottom:calc(env(safe-area-inset-bottom,0px) + 52px)!important;font-size:12px!important;padding:3px 10px 5px!important;min-width:140px!important;border-radius:10px}
+/* minimap: small in the corner, tap opens the big map */
+body.v50m #right #mini{width:88px!important;height:64px!important;right:calc(env(safe-area-inset-right,0px) + 8px);bottom:calc(env(safe-area-inset-bottom,0px) + 8px);border-radius:10px;border-width:1px!important;opacity:.88}
+/* small floating messages */
+body.v50m #toasts{top:calc(env(safe-area-inset-top,0px) + 40px)!important}
+body.v50m .toast{font-size:12px!important;padding:2px 9px;border-width:1px;border-radius:8px}
+body.v50m #discover{padding:4px 14px!important;border-width:2px}body.v50m #discover strong{font-size:15px!important}body.v50m #discover small{font-size:10.5px!important}
+body.v50m #coinhint{bottom:auto!important;transform:translateY(-50%);font-size:12px!important;padding:4px 8px!important;border-radius:8px}
+body.v50m #coinhint::after{left:auto;right:100%;top:50%;margin-top:-7px;border:7px solid transparent;border-right-color:#f2b84b}
+body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important;top:auto!important;right:calc(env(safe-area-inset-right,0px) + 104px)!important}
+@media (prefers-reduced-motion:reduce){body.v50m.v50open #left #bar{animation:none}#v50tog.v50hint{animation:none}}
+</style>
 </head>
 <body>
 <canvas id="game" aria-label="Orman kenarı ve nehir: karakteri WASD ile yürüt, E ile malzeme topla"></canvas>
@@ -7919,7 +8013,7 @@ B5.openKeys=openKeys;B5.closeKeys=closeKeys;
 
 // ------------------------------------------------------------------ touch: move the on-screen buttons
 const LAYSTORE='hammadde.b5.layout.v1';
-const LAYEL=[['dodgebtn','Atıl'],['prompt','Eylem düğmesi'],['hotbar','El ve alet kutuları'],['mini','Harita'],['coinbox','Sikke'],['b-eat','Yemek'],['ebtn','E düğmesi'],['pad','Yön tuşları']];
+const LAYEL=[['v50tog','Menü'],['dodgebtn','Atıl'],['prompt','Eylem düğmesi'],['hotbar','El ve alet kutuları'],['mini','Harita'],['coinbox','Sikke'],['b-eat','Yemek'],['ebtn','E düğmesi'],['pad','Yön tuşları']];
 let LAY=(()=>{const o=store.get(LAYSTORE);return o&&typeof o==='object'?o:{}})();
 const LP=['left','top','right','bottom','transform','margin','position'];
 function placeEl(el,p){if(!el)return;const vw=innerWidth,vh=innerHeight;if(!p){for(const k of LP)el.style.removeProperty(k);return}
@@ -9046,6 +9140,81 @@ addEventListener('resize',placePtr);
 const _rs=resetState;resetState=function(){P3.hold=false;return _rs.apply(this,arguments)};
 renderTut();
 }).toString()+')()')}catch(e){try{window.__hamErr('v49-p3: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v50-mob">
+// =====================================================================================================
+// v50: a minimal phone HUD (landscape phones only, body.v50m). Stats are a slim column top-left, the menu
+// icons fold into one drawer (☰) with the bag and the eat button left outside, the action button is a small
+// round icon, the quest card is a corner pill that opens on tap, the hotbar is small and fades when idle.
+// Desktop is untouched: every DOM move is undone when the phone media query stops matching.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const V50={on:false,open:false,hlK:'',tx:0,hbT:0,hand:-2};window.__v50=V50;
+const B=document.body,left=$('left'),bar=$('bar'),right=$('right');
+const row=document.createElement('div');row.id='v50row';
+const tog=document.createElement('button');tog.className='ib';tog.id='v50tog';tog.type='button';tog.setAttribute('aria-label','Menüler');tog.title='Menüler';tog.setAttribute('aria-expanded','false');
+tog.innerHTML='<svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="3" width="12" height="2" fill="#e6d8ff"/><rect x="2" y="7" width="12" height="2" fill="#e6d8ff"/><rect x="2" y="11" width="12" height="2" fill="#e6d8ff"/></svg>';
+row.appendChild(tog);
+// where every moved element came from, so desktop gets its layout back
+const HOME=[];
+function moveTo(el,parent,before){if(!el||!parent)return;const mk=document.createComment('v50:'+el.id);el.parentNode.insertBefore(mk,el);HOME.push([el,mk]);parent.insertBefore(el,before||null)}
+function goPhone(){if(V50.on)return;V50.on=true;B.classList.add('v50m');
+  left.insertBefore(row,left.firstChild);
+  moveTo($('xpdock'),left);
+  moveTo($('b-inv'),row);moveTo($('b-eat'),row);
+  moveTo($('b-quest'),bar);moveTo($('b-char'),bar);moveTo($('b-set'),bar);
+  try{lastPrompt='#'}catch(e){}placeAll()}
+function goDesk(){if(!V50.on)return;V50.on=false;setOpen(false);B.classList.remove('v50m','tutx','v50hbidle','v50ok');
+  for(let i=HOME.length-1;i>=0;i--){const [el,mk]=HOME[i];if(mk.parentNode){mk.parentNode.insertBefore(el,mk);mk.remove()}}HOME.length=0;
+  if(row.parentNode)row.remove();try{lastPrompt='#';hudK='';layoutHUD()}catch(e){}}
+function sync(){const want=!!TOUCH&&PHONE_MQ.matches;if(want)goPhone();else goDesk()}
+// ---- the drawer
+function setOpen(o){V50.open=!!o;B.classList.toggle('v50open',V50.open);tog.setAttribute('aria-expanded',V50.open?'true':'false');try{placeAll()}catch(e){}}
+tog.addEventListener('click',e=>{e.stopPropagation();setOpen(!V50.open);sfx('pick')});
+bar.addEventListener('click',e=>{if(!V50.on)return;const b=e.target.closest('.ib');if(!b||b.classList.contains('locked'))return;setTimeout(()=>setOpen(false),60)});
+$('game').addEventListener('pointerdown',()=>{if(V50.on&&V50.open)setOpen(false)});
+// a lesson that points at an icon inside the closed drawer: open it once and make the toggle glow
+function hlCheck(){const hl=[...bar.querySelectorAll('.ib.p3tab,.ib.pulse,.ib.b3unl')].filter(b=>!b.hidden);const k=hl.map(b=>b.id).join(',');
+  if(k&&k!==V50.hlK&&!craftOpen&&!dlgOpen&&!onTitle)setOpen(true);V50.hlK=k;tog.classList.toggle('v50hint',!!k&&!V50.open)}
+// ---- the quest card: one line; tap to read all; it folds back by itself
+$('tut').addEventListener('click',e=>{if(!V50.on)return;if(e.target.closest('p')&&!e.target.closest('button,#tqmake'))B.classList.toggle('tutx')});
+// ---- the action button: an icon of what it will do + a one-word label
+const IC=n=>{if(!n)return'✋';try{return '<img src="'+icon(n)+'" alt="">'}catch(e){return'✋'}};
+const TALK={npc:1,witch:1,farmer:1,wiz:1,trader:1,alp:1,kaptan:1,toygar:1,lamp:1,balik:1};
+function actOf(tg){if(!tg)return['✋',''];const k=tg.kind;
+  if(TALK[k])return['💬','Konuş'];
+  if(k==='node'){if(tg.n.mine)return[IC(useTool('pick')),'Kaz'];return[IC(tg.n.name),'Topla']}
+  if(k==='tree'){const t=tg.t.type;if(t.fruit&&(t.noCut||!useTool('axe')))return[IC(t.fruit),'Silkele'];return[IC(useTool('axe')),'Kes']}
+  if(k==='water')return[IC(useTool('water')),'Su al'];
+  if(k==='clay')return[IC(useTool('shovel')),'Kaz'];
+  if(k==='animal'){const w=weapon();return[w&&w.n?IC(w.n):'👊','Vur']}
+  if(k==='v46'){const s=tg.sub;if(s==='fish'||s==='kapan')return[IC(held())||'🎣','Balık'];if(s==='camp')return['🔥','Ateş'];if(s==='settrap')return[IC('Tuzak'),'Kur'];if(s==='trap')return[IC('Tuzak'),'Tuzak'];return['✋','']}
+  if(k==='pot')return['⚗️','Kazan'];if(k==='market')return['🛒','Pazar'];if(k==='smith')return['🔨','Demirci'];if(k==='usta')return['📜','Sipariş'];if(k==='carp')return['🏠','Rıza'];
+  if(k==='dog')return['❤️','Sev'];if(k==='bridge')return['🔨','Onar'];if(k==='launch')return['⛵','İndir'];if(k==='clue')return['✨','Bak'];if(k==='grave')return['🎒','Al'];if(k==='farm')return['🌱','Tarla'];
+  if(k==='placed'){const n=tg.o&&tg.o.n||'';if(/yatak/i.test(n))return['🛏️','Uyu'];if(n==='Atölye')return['🔨','Atölye'];return[IC(n),'']}
+  return['✋','']}
+function v50Prompt(tg){if(!V50.on||!prompt.classList.contains('act'))return;const pa=prompt.querySelector('.pa');if(!pa||pa.dataset.v50)return;
+  const a=actOf(tg);pa.dataset.v50='1';pa.innerHTML=a[0];prompt.dataset.l=a[1]}
+{const _u=updatePrompt;updatePrompt=function(){const tg=_u.apply(this,arguments);try{v50Prompt(tg)}catch(e){}return tg}}
+// ---- the hotbar fades when you have not used it for a while
+$('hotbar').addEventListener('pointerdown',()=>{V50.hbT=performance.now();B.classList.remove('v50hbidle')});
+// ---- positions that depend on other boxes
+function placeAll(){if(!V50.on)return;
+  const t=$('tut');let tb=6;if(!t.hidden&&!B.classList.contains('ontitle')){const r=t.getBoundingClientRect();if(r.height)tb=Math.round(r.bottom+4)}
+  B.style.setProperty('--v50tb',tb+'px');
+  const ch=$('coinhint');if(ch&&!ch.hidden){const c=$('coinbox').getBoundingClientRect();if(c.width){ch.style.left=Math.round(c.right+10)+'px';ch.style.top=Math.round(c.top+c.height/2)+'px'}}}
+function tick(){try{sync();if(!V50.on)return;
+  if(onTitle||craftOpen||dlgOpen||paused){if(V50.open)setOpen(false)}
+  B.classList.toggle('v50ok',!$('tutok').hidden);
+  if(B.classList.contains('tutx')){if(!V50.tx)V50.tx=performance.now();else if(performance.now()-V50.tx>8000){B.classList.remove('tutx');V50.tx=0}}else V50.tx=0;
+  const now=performance.now();if(hand!==V50.hand){V50.hand=hand;V50.hbT=now}
+  const hb=$('hotbar');B.classList.toggle('v50hbidle',now-V50.hbT>5000&&!hb.querySelector('.pulse')&&!craftOpen);
+  hlCheck();placeAll()}catch(e){}}
+try{PHONE_MQ.addEventListener('change',sync)}catch(e){try{PHONE_MQ.addListener(sync)}catch(_){}}
+addEventListener('resize',()=>setTimeout(tick,60));
+setInterval(tick,300);sync();tick();
+}).toString()+')()')}catch(e){try{window.__hamErr('v50-mob: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
