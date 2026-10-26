@@ -636,3 +636,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Gece ışığı anahtarı kırmızı hile bölümünün (`#b5cheat`) içine taşındı; etkisi de yalnızca hile açıkken (`lampOn`: `settings.nightLight&&settings.cheat`).
 - Ana menüdeki hile bölümünde not: ACT 2'ye geç / seviye / harita düğmeleri oyun içindeki Ayarlar'da.
 - Menüde "Versiyon 90".
+
+## v91 (27 Ekim 2026)
+- Ana menüdeki Ayarlar'da hileden yalnızca "Hile modu" anahtarı var (`body.settitle #b5cheat` gizli). Oyun içinde hile anahtarı gizli, `#b5cheat`'in hepsi (sınırsız sikke, ara sahneler, gece ışığı, ACT 2, seviye, harita) hile açıkken görünür. b5tnote kaldırıldı.
+- Tam ekran: tarayıcı sekmesinde tıklamasız tam ekran mümkün değil (kullanıcı hareketi şart). Yüklü uygulama (manifest `display: fullscreen`) Android'de doğrudan tam ekran açılır.
+- Menüde "Versiyon 91".
