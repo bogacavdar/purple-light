@@ -1,7 +1,6 @@
-import json,sys
-sys.path.insert(0,'.')
+import json,sys,os
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from content import *
-import os
 P=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..','Hammadde_prototip.html')
 s=open(P,encoding='utf8').read()
 TAG='<script type="application/json" id="db">';a=s.index(TAG)+len(TAG);b=s.index('</script>',a);d=json.loads(s[a:b])
@@ -30,7 +29,7 @@ for bi,L in PLANTS.items():
 for bi,L in ORES.items():
   for t in L:raw(t[0],t[5])
 for n,v in DROPP.items():raw(n,v)
-for m in ['Bulut koyunu eti','Rüzgâr kuşu eti','Kertenkele eti']:
+for m in ['Bulut koyunu eti','Rüzgâr kuşu eti','Kertenkele eti','Buz tavşanı eti']:
   base=low(m);rec('Pişmiş '+base,[[m,1],['Ateş',1],['Su',3],['Yaprak',3]],'Yiyecek');grp('Herhangi çiğ et',m);grp('Herhangi pişmiş et','Pişmiş '+base)
 REC_EXTRA=True
 rec('Mana iksiri',[['Büyü otu',2],['Su',2],['Herhangi çömlek',1]],'Şifa')
@@ -43,6 +42,12 @@ rec('Tabanca mermisi',[['Pirinç külçesi',1],['Barut',1]],'Silah',pr=60)
 rec('Pompalı fişeği',[['Pirinç külçesi',1],['Barut',2]],'Silah',pr=90)
 rec('Tabanca',[['Gök demiri külçesi',2],['Dişli',3],['Herhangi sap',1],['Vida',4]],'Silah',pr=1400)
 rec('Pompalı',[['Ağır plaka',1],['Dişli',4],['Herhangi kalas',2],['Vida',6],['Motor',1]],'Silah',pr=2600)
+rec('Kobalt külçesi',[['Kobalt cevheri',3],['Herhangi kömür',2]],'Maden')
+rec('Titanyum külçesi',[['Titanyum cevheri',3],['Herhangi kömür',2],['Enerji taşı',1]],'Maden')
+rec('Enerji hücresi',[['Enerji taşı',2],['Bakır tel',2],['Pil',1]],'Zanaat')
+rec('Meka zırh',[['Titanyum külçesi',4],['Kobalt külçesi',3],['Enerji hücresi',2],['Motor',1],['Golem çekirdeği',1]],'Zırh',pr=5200)
+rec('Buz asası',[['Kristal çam kalası',1],['Buz kristali',3],['Enerji taşı',1],['Büyü otu',2]],'Büyü',pr=1600)
+rec('Kristal armut kompostosu',[['Kristal armut',3],['Su',2],['Ateş',1]],'Yiyecek')
 rec('Hurma ezmesi',[['Hurma',3],['Herhangi çömlek',1]],'Yiyecek')
 rec('Spor ekmeği',[['Spor tozu',3],['Su',2],['Ateş',1]],'Yiyecek')
 rec('Goblin eriği reçeli',[['Goblin eriği',3],['Herhangi çömlek',1]],'Yiyecek')

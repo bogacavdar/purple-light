@@ -64,3 +64,24 @@ ICONK.update({'Dişli':'gear','Robot çekirdeği':'chip','Lens':'gem','Pil':'bat
   'Tabanca':'gun','Pompalı':'shotgun','Tabanca mermisi':'bullet','Pompalı fişeği':'shell2','Barut':'dust','Pirinç külçesi':'ingot'})
 ICONC.update({'Dişli':['#8a8a90','#c8c8d0'],'Robot çekirdeği':['#2a4a8a','#5ad0ff'],'Lens':['#6ab0e0','#e8f8ff'],'Pil':['#3a3a40','#e8c040'],'Motor':['#5a5a60','#c84a2a'],'Ağır plaka':['#6a6a72','#a8a8b0'],'Hurma':['#a8682a','#5a7a2a'],
   'Tabanca':['#3a3a40','#8a6a4a'],'Pompalı':['#3a3a40','#8a5a3a'],'Tabanca mermisi':['#d8b84a','#8a6a2a'],'Pompalı fişeği':['#c84a2a','#d8b84a'],'Barut':['#3a3a3a','#8a8a8a'],'Pirinç külçesi':['#d8b84a','#f0d878']})
+# ---------------- v79: Kristal Golem Ocağı (biome 3)
+TREES[3]=[('Kristal çam',['#6a8ab0','#8aa8d0','#b8d0f0'],'#8a8aa0',11,{'pine':1}),('Taş ağacı',['#7a7a8a','#9090a0','#b0b0c0'],'#5a5a6a',12,{}),
+          ('Mavi sedir',['#3a5a8a','#4a70a4','#6a90c8'],'#4a3a3a',12,{}),('Kristal armut',['#4a7a9a','#5e90b0','#80b0d0'],'#5a4a4a',11,{'fruit':'Kristal armut','fc':'#c8f0ff'})]
+WOODP.update({'Kristal çam':30,'Taş ağacı':30,'Mavi sedir':32,'Kristal armut':28})
+WOODC.update({'Kristal çam':'#b8c8e0','Taş ağacı':'#9a9aa8','Mavi sedir':'#6a7aa0','Kristal armut':'#a8a0b0'})
+PLANTS[3]=[('Buz kristali','gem',['#a8d8f0','#ffffff'],'land',90,36,'gem'),('Golem tozu','moss',['#8a8aa0','#d0d0e0'],'land',50,14,'dust'),
+           ('Mavi yosun','moss',['#3a6a9a','#8ac0f0'],'land',50,14,'moss'),('Kaya çiçeği','herb',['#6a7a8a','#c8a0f0'],'land',60,20,'herb'),
+           ('Kristal mantarı','mush',['#8ab0e0','#e8f8ff'],'forest',70,24,'mush'),('Enerji taşı','gem',['#3a8ad8','#a8f0ff'],'land',100,44,'gem'),
+           ('Gümüş kum','clay',['#c8c8d0','#ffffff'],'wet',60,14,'clay'),('Kristal lifi','vine',['#a8c8f0','#ffffff'],'land',60,18,'wire')]
+ORES[3]=[('Kristal cevheri','Kristal cevheri yatağı','#a8c8f0',14,2,34),('Kobalt cevheri','Kobalt madeni','#3a5ad8',12,3,44),('Titanyum cevheri','Titanyum madeni','#c8ccd8',12,3,52)]
+ANIMALS[3]=[('Taş kaplumbağası',dict(temper='zararsız',hp=120,spd=16,r=7,xp=24,land='land',drops=[('Taş kabuk',1,1,.9,'zırh')]),2,None,None),
+            ('Buz tavşanı',dict(temper='zararsız',hp=30,spd=66,r=4,xp=14,land='land',drops=[('Buz tavşanı eti',1,1,1,'yemek'),('Buz kürkü',1,1,.8,'zırh')]),2,None,None),
+            ('Kristal golemcik',dict(z=1,temper='saldırgan',hp=420,spd=46,aggro=200,r=8,xp=170,dmg=70,reach=34,wind=.6,land='land',drops=[('Golem parçası',1,3,.9,'zanaat'),('Enerji taşı',1,1,.4,'zanaat')]),2,None,[1,2]),
+            ('Kristal yarasası',dict(z=1,temper='saldırgan',hp=200,spd=120,aggro=230,r=6,xp=150,dmg=55,reach=30,wind=.4,fly=1,fx=['kanama',6,4],land='land',drops=[('Kristal kanat',1,2,.8,'zanaat')]),2,None,None),
+            ('Büyük golem',dict(z=1,temper='saldırgan',hp=2400,spd=28,aggro=170,r=13,xp=700,dmg=180,reach=52,wind=.8,land='land',drops=[('Golem çekirdeği',1,1,.7,'zanaat'),('Titanyum plaka',1,2,.9,'zırh')]),1,'lvl',None)]
+DROPP.update({'Taş kabuk':40,'Buz tavşanı eti':12,'Buz kürkü':40,'Golem parçası':36,'Kristal kanat':50,'Titanyum plaka':120,'Kristal armut':14})
+ICONK.update({'Taş kabuk':'shell','Buz tavşanı eti':'meat','Buz kürkü':'hide','Golem parçası':'ore','Kristal kanat':'feather','Titanyum plaka':'plate','Kristal armut':'fruit',
+  'Kobalt külçesi':'ingot','Titanyum külçesi':'ingot','Enerji hücresi':'battery','Meka zırh':'mech','Buz asası':'staff'})
+ICONC.update({'Taş kabuk':['#7a7a8a','#a8a8b8'],'Buz tavşanı eti':['#d88a8a','#f0b8b8'],'Buz kürkü':['#d8e8f8','#ffffff'],'Golem parçası':['#8aa8d0','#d8e8ff'],'Kristal kanat':['#a8c8f0','#ffffff'],
+  'Titanyum plaka':['#b8bcc8','#e8ecf4'],'Kristal armut':['#c8f0ff','#5e90b0'],'Kobalt külçesi':['#3a5ad8','#7a9af0'],'Titanyum külçesi':['#c8ccd8','#f0f2f8'],'Enerji hücresi':['#2a4a8a','#5ad0ff'],
+  'Meka zırh':['#5a6a8a','#5ad0ff'],'Buz asası':['#8aa8c8','#a8f0ff']})

@@ -567,3 +567,11 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - `<script id="v78">`: GT kind 'gun'; Tabanca (58 hasar, 0,42 sn, 340 px), Pompalı (5 saçma × 30, 1,05 sn, 210 px, ±0,26 rad). Mermi envanterden düşer, yoksa "mermi yok". Ateş sesi (gürültü patlaması), sarsıntı, kovan. handCraft sarmalayıcı: mermi tarifi bir kutu verir.
 - **Silahçı Tamer** (Hurda Çölü'nün inişe en yakın yeri): sl1 8 Hurda parçası + 4 Bakır tel (Pirinç külçesi, Barut), sl2 3 Devriye robotu, sl3 2 Robot çekirdeği + 4 Barut (Tabanca + mermisi), sl4 Motor + 2 Ağır plaka (Pompalı + fişeği). Silahları o yapar (tarif Ülker'in kazanında öğrenilir). Hikâyesi (ST_.tamer, sahne "Eriyen gülleler", bg fort): gemiye karşı savaşan ordu; robotlar geminin bıraktığı bekçiler.
 - Menüde "Versiyon 78". Test yapılmadı.
+
+## v79 (27 Ekim 2026) — ACT 2: Kristal Golem Ocağı, Meka zırh, Buz asası, Mühendis Selin
+- Kristal Golem Ocağı (biyom 3): Kristal çam, Taş ağacı, Mavi sedir, Kristal armut · Buz kristali, Golem tozu, Mavi yosun, Kaya çiçeği, Kristal mantarı, Enerji taşı, Gümüş kum, Kristal lifi · Kristal cevheri, Kobalt, Titanyum · Taş kaplumbağası, Buz tavşanı, Kristal golemcik (sürü), Kristal yarasası, Büyük golem.
+- Tarifler: Kobalt/Titanyum külçesi, Enerji hücresi, Meka zırh (Zırh), Buz asası (Büyü), Kristal armut kompostosu, Pişmiş buz tavşanı eti.
+- `<script id="v79">`: EQUIP['Meka zırh'] (gövde, savunma 90, zehir/yanık/kanama %50 direnç) + giyilince can sınırı ×1,25 ve hız ×1,12 (STAT sarmalayıcı). Buz asası (16 mana, 34 hasar, 3 sn dondurur): v77 STAFF'a eklenir (`window.__plStaff`), mermi `S.freeze` → `a.frz`; tickAnimals sarmalayıcısı donmuş yaratığı yerinde tutar, saldırtmaz; buzlu görünüm.
+- **Mühendis Selin**: mk1 3 Enerji taşı + 4 Kristal cevheri (külçe/hücre tarifleri), mk2 3 Kristal golemcik, mk3 2 Titanyum plaka + 4 Golem parçası (Meka zırh tarifi). Zırhı o yapar (600 sikke). Hikâyesi (ST_.selin): gemi kaçırdıklarını sayıyor; sayı dolunca durmayı bekleyen bir şey.
+- Pervin'e pv4 (Selin ile tanışınca): 4 Buz kristali + 2 Kristal kanat → Buz asası tarifi; Pervin yapar (200 sikke).
+- Menüde "Versiyon 79". Test yapılmadı.
