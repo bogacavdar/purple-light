@@ -445,3 +445,6 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 
 ## v69.5 (26 Ekim 2026)
 - Kazanda öğrenilecek tarifin malzeme satırlarında, o malzeme kendisi bir tarifse ve eksikse "+" çıkar (önceden yalnız örste vardı: `const sub=FG&&...` → `(FG||!foundSet.has(x.r))&&...`). Basınca quickBrew: malzemesi varsa 1 tane yapılır ve doğrudan kazana atılır; eksikse satırda ne eksik olduğu yazar. Tarif listesindeki v69.3 "+" (envantere yapar) yerinde kaldı.
+
+## v69.6 (26 Ekim 2026) — acil düzeltme
+- v69.5'te kazan açılmıyordu: satır içine eklenen `// v69.5` yorumu aynı satırdaki `let sb='';` bildirimini yoruma çevirdi → renderCraft "sb is not defined". Yorum silindi. Ders: tek satırlık kod satırlarının ortasına `//` yorum koyma.
