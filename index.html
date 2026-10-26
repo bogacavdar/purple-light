@@ -1118,6 +1118,7 @@ body.b3trkpad #craft{padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
 #b5lay .b5h{position:absolute;box-sizing:border-box;border:2px dashed #d8b0ff;background:rgba(160,100,255,.16);touch-action:none;cursor:move;min-width:44px;min-height:44px}
 #b5lay .b5h span{position:absolute;left:50%;top:-20px;transform:translateX(-50%);white-space:nowrap;font-size:12px;font-weight:700;color:#fff;background:#4a2f80;padding:1px 6px}
 #b5lay .b5h.drag{border-style:solid;background:rgba(190,140,255,.3)}
+body.nododge:not(.b5edit) #dodgebtn{display:none!important}
 body.b5edit #dodgebtn{display:block!important}
 body.b5edit #mini,body.b5edit #hotbar{visibility:visible!important}
 body.b5edit #prompt{display:block!important}
@@ -3715,6 +3716,7 @@ function say(text,choices,who){
 function bye(){finishType();dlgOpen=false;$('dlg').hidden=true;renderTut()}
 const canLeaveDlg=()=>dlgOpen&&!wake&&!beam;
 $('dodgebtn').addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();doDodge()});
+setInterval(()=>{try{document.body.classList.toggle('nododge',!sk('S1'))}catch(e){}},400);   // v50: the Atıl button appears only once Atılma is learned
 $('dclose').addEventListener('click',()=>{if(canLeaveDlg()){bye();sfx('pick')}});
 function talk(){
   if(!met)return intro();
