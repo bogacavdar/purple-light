@@ -18,6 +18,13 @@ Boğaç ile 27 Ekim 2026'da konuşulanlar. Kararlar değiştikçe bu dosya günc
 8. İkinci adanın halkı çoğunlukla **kaçırılmış değil**; uzay hakkında bilgisi olan insanlar. İnsanların neden kaçırıldığını yavaş yavaş onlardan öğreniriz. Her NPC'nin hikâyesi olur.
 9. Grafikler: ilk adanın tarzına benzer, gerçeğe benzer çizilir; beğenilmeyenler sonra değiştirilir.
 
+## Karakterler ve kontroller (27 Ekim, ikinci tur)
+- Portalı öğreten ilk NPC: **yaşlı gökbilimci** (Yüzen Kayalar). Teleskobu var, yıllardır yıldızları ve mor ışığı izliyor; portal onun icadı. Uzay bilgisini ilk o verir.
+- **Levent'in ACT 3 ile bağlantısı yok.** (ACT 2'deki yeri sonra netleşecek; şimdilik bizi bırakıp iniş yerinde kalır.)
+- Uzaya (ACT 3) başka bir NPC ile çıkılacak: daha önce uzaylılarla savaşırken yaralanmış sevdiğini kurtarmaya çalışan bir **astronot**.
+- Büyüler: büyüyü yapan **asa** alet kutusuna konur (büyünün kendisi değil); asayı seçip kullanırsın.
+- Mor mana: kendiliğinden **yavaşça** dolar; **mana iksiri** (ve bazı yiyecekler) hızlı doldurur.
+
 ## Eşimiz (anılar)
 - Eş ikinci adaya hiç uğramadı; **ilk ada yakınında** kaçırıldı. Biz baygındık ve hafızamızı kaybettik.
 - ACT 2'de yeni anılar: tamamlandıkça eşin **mor ışık yayan bir uzay gemisi** tarafından kaçırıldığını ve ilk adada bize **köpeği ve şapkayı veren** insanların (Yıldızsız Gezgin / uzaylı) da orada olduğunu hatırlarız.
