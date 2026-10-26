@@ -1331,7 +1331,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 88</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 89</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -1377,7 +1377,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
     <label class="row chk" for="nightlight"><input id="nightlight" type="checkbox"><span>Gece ışığı<small>Açıkken gece etrafın meşale ya da kafa lambası varmış gibi aydınlanır; karanlıkta mor ışık sana dokunmaz. İstediğin zaman kapat.</small></span></label>
     <label class="row chk" for="vibon" style="display:none"><input id="vibon" type="checkbox"><span>Titreşim<small>Açıkken hasar aldığında telefon titrer.</small></span></label>
     <label class="row chk" for="glon"><input id="glon" type="checkbox"><span>Ekran kartıyla çiz<small>Açıkken oyun ekran kartıyla (WebGL) çizilir, telefonda çok daha akıcıdır. Bir sorun görürsen kapat; değişiklik oyunu yeniden açar (kayıt korunur).</small></span></label>
-<label class="row chk" for="fson" id="fsrow" hidden><input id="fson" type="checkbox"><span>Tam ekran<small>Açıkken oyun bütün ekranı kaplar. Bilgisayarda <b>Esc</b> oyunun içinde çalışmaya devam eder; tam ekrandan çıkmak için Esc'yi basılı tut ya da buradan kapat. Tercih hatırlanır, oyunu yeniden açınca ilk tıklamada tam ekrana geçer.</small></span></label>
+<label class="row chk" for="fson" id="fsrow" hidden><input id="fson" type="checkbox"><span>Tam ekran<small>Açıkken oyun bütün ekranı kaplar. Bilgisayarda <b>Esc</b> oyunun içinde çalışmaya devam eder; tam ekrandan çıkmak için Esc'yi basılı tut ya da buradan kapat. Oyun açılınca ilk tıklamada kendiliğinden tam ekrana geçer; kapatırsan bu tercih hatırlanır.</small></span></label>
     <div class="b5mrow"><span>Çözünürlük</span><div id="resseg" class="b5seg" role="radiogroup" aria-label="Çözünürlük seç"></div><small id="resd" class="note"></small></div>
 <label class="row chk" for="cheat"><input id="cheat" type="checkbox"><span>Hile modu (test için)<small>Açıkken <b>Z</b> tuşu +100 sikke, <b>X</b> tuşu +100 XP verir; sağdaki kırmızı paneldeki küçük simgelere tıklayınca o malzemeden +10 alırsın.</small></span></label>
     <div id="b5cheat" hidden><label class="row chk" for="b5inf"><input id="b5inf" type="checkbox"><span>Sınırsız sikke<small>Açıkken sikke sayacının yanında <b>∞</b> görünür; satın almak sikkeni azaltmaz, her şeyi alabilirsin.</small></span></label><div class="b5btns"><button class="mb ghost" id="b5act2" type="button">ACT 2'ye geç</button></div><label class="row chk" for="b5scn"><input id="b5scn" type="checkbox"><span>Bütün ara sahneler açık<small>Açıkken Kitap › <b>Keşif defteri</b>'nin başında bütün ara sahneler listelenir; istediğini izlersin.</small></span></label><div class="b5btns"><button class="mb ghost" id="b5max" type="button">Seviyeyi en üste çıkar</button><button class="mb ghost" id="b5map" type="button">Haritayı tamamen aç</button></div></div>
@@ -7800,12 +7800,13 @@ function halo(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();
 function ring(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.strokeStyle=`rgba(170,225,255,${(.6+.4*p).toFixed(3)})`;ctx.lineWidth=1.5;ctx.beginPath();ctx.ellipse(x,y,r+p*1.5,(r+p*1.5)*.62,0,0,Math.PI*2);ctx.stroke();ctx.restore()}
 // v49-p3: the glow is the object's own silhouette (canvas shadow around every drawn pixel), pulsing
 function gl(on,k,f){if(!on)return f();const p=.5+.5*Math.sin(time*4.2+k);
-  if(PERF.lvl>=2){ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;ctx.shadowColor=`rgba(70,170,255,${(.9+.1*p).toFixed(3)})`;ctx.shadowBlur=(3+2*p)*S*dpr;f();ctx.restore();ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.25+.25*p;f();ctx.restore();return}
-  ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;   // v63: a wide blue aura, a strong blue rim and a bright white-blue edge
+  if(PERF.lvl>=2){ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;ctx.shadowColor=`rgba(70,170,255,${(.9+.1*p).toFixed(3)})`;ctx.shadowBlur=(3+2*p)*S*dpr;f();ctx.restore();f();return}
+  ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;
   ctx.shadowColor=`rgba(40,150,255,${(.85+.15*p).toFixed(3)})`;ctx.shadowBlur=(5+4*p)*S*dpr;f();f();
   ctx.shadowColor=`rgba(110,200,255,1)`;ctx.shadowBlur=(2+1.2*p)*S*dpr;f();
   ctx.shadowColor=`rgba(225,245,255,${(.75+.25*p).toFixed(3)})`;ctx.shadowBlur=1*S*dpr;f();ctx.restore();
-  ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.08+.14*p;f();ctx.restore()}
+  f()}
+// v89: the glow is only around the object; a clean copy is drawn last so no shadow lines cross the object
 const _drawNode=drawNode;drawNode=function(n,t){const on=(B3.glow.size&&B3.glow.has(n.name))||QG.n.has(n.name),a=arguments,me=this;gl(on,n.v*6,()=>_drawNode.apply(me,a))};
 const _drawDrops=drawDrops;drawDrops=function(t,inView){_drawDrops.apply(this,arguments);if((B3.dropN&&B3.dropN.size)||QG.d.size){for(const d of drops){if(d.t<1||!inView(d.x,d.y,12)||!((B3.dropN&&B3.dropN.has(d.n))||QG.d.has(d.n)))continue;const c=ICONC[d.n];if(!c)continue;const h=1+Math.sin(time*3+d.ph);gl(true,d.ph,()=>ctx.drawImage(c,Math.round(d.x-4.5),Math.round(d.y-7-h),9,9))}}};
 const _drawAnimal=drawAnimal;drawAnimal=function(a,t){const on=(B3.glowAnim.size&&B3.glowAnim.has(a.k))||QG.a.has(a.k),ar=arguments,me=this;gl(on,a.x*.1,()=>_drawAnimal.apply(me,ar))};
@@ -10382,7 +10383,7 @@ const ST_={
    "Nehir'le aynı uçuş okulunda tanıştık. O hep benden yükseğe uçardı.",
    "İki yıl önce mor gemi Gök Rıhtımı'na alçaldı. Biz de kurduğumuz küçük orduyla karşı çıktık. Gölge muhafızlar indi.",
    "Nehir beni korumak için önüme geçti. Yaralandı. Işık onu yerden kaldırdı; elimi uzattım, yetişemedim.",
-   "Ülker der ki gemi topladıklarını öldürmez; saklar. Ben de inanıyorum. O yüzden bu rampayı kurdum.",
+   "Ülker der ki gemi topladıklarını öldürmez; saklar. Ben de inanıyorum. O yüzden bu rampayı kurdum. Keşke her şey oyunlardaki gibi olsa; Nehir'i o adamların elinden kolayca kurtarabilsem. Çocukken bir oyunda ana menüde <b>“cheat”</b> yazmıştım, her şey çok daha kolay olmuştu.",
    "Bu roketle o gemiye çıkacağız. Nehir'i, senin sevdiğini, herkesi geri getireceğiz."],
    sc:{n:'Tuna · Uzanan el',bg:'rocks',cast:[{L:'tuna',x:70,fx:1},{L:'nehir',x:150,fx:-1,v:1}],bl:2,L:[
      "İki yıl önce, Gök Rıhtımı. Mor gemi alçalırken gölgeler yere iniyor.",
@@ -11141,10 +11142,14 @@ document.head.appendChild(st);
 let buf='';
 addEventListener('keydown',e=>{const t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;if(e.ctrlKey||e.metaKey||e.altKey)return;
   const m=/^Key([A-Z])$/.exec(e.code||'');if(!m){buf='';return}buf=(buf+m[1].toLowerCase()).slice(-5);
-  if(buf==='cheat'){buf='';setOk(!ok);sfx(ok?'level':'bad');toast(ok?'Hile ayarları açıldı: Ayarlar\'da':'Hile ayarları gizlendi ve kapatıldı')}},true);
+  if(buf==='cheat'){buf='';if(!onTitle)return;setOk(!ok);if(ok)grantAch();sfx(ok?'level':'bad');toast(ok?'Hile ayarları açıldı: Ayarlar\'da':'Hile ayarları gizlendi ve kapatıldı')}},true);
 // v71.3: on a phone, tap the "Ayarlar" heading three times quickly
 {const hd=document.querySelector('#settings h2');if(hd){let n=0,last=0;hd.style.userSelect='none';hd.style.webkitUserSelect='none';hd.style.cursor='pointer';hd.style.touchAction='manipulation';hd.style.webkitTapHighlightColor='transparent';
-  hd.addEventListener('pointerdown',e=>{if(e.button>0)return;const now=performance.now();n=now-last<800?n+1:1;last=now;if(n>=3){n=0;try{audio.start()}catch(x){}setOk(!ok);sfx(ok?'level':'bad');try{if(navigator.vibrate)navigator.vibrate(ok?[70,50,140]:90)}catch(x){}toast(ok?'Hile ayarları açıldı':'Hile ayarları gizlendi ve kapatıldı')}})}}   // v72: pointerdown (iPhone gives no click on a heading)
+  hd.addEventListener('pointerdown',e=>{if(e.button>0)return;const now=performance.now();n=now-last<800?n+1:1;last=now;if(n>=3){n=0;if(!onTitle)return;try{audio.start()}catch(x){}setOk(!ok);if(ok)grantAch();sfx(ok?'level':'bad');try{if(navigator.vibrate)navigator.vibrate(ok?[70,50,140]:90)}catch(x){}toast(ok?'Hile ayarları açıldı':'Hile ayarları gizlendi ve kapatıldı')}})}}   // v72: pointerdown (iPhone gives no click on a heading)
+function grantAch(){try{localStorage.setItem('hammadde.cheatach','1')}catch(e){}try{window.__plAch.grant('hile')}catch(e){}}
+// v89: the cheat switches are only in Ayarlar opened from the main menu; in a game only the cheat actions show
+{const s2=document.createElement('style');s2.textContent='body.setgame label[for=cheat],body.setgame label[for=b5inf],body.setgame label[for=b5scn],body.setgame label[for=nightlight]{display:none!important}body.settitle #b5cheat .b5btns{display:none!important}';document.head.appendChild(s2);
+ const _os=openSettings;openSettings=function(){document.body.classList.toggle('settitle',!!onTitle);document.body.classList.toggle('setgame',!onTitle);return _os.apply(this,arguments)}}
 // every cutscene from the Keşif defteri
 const cb=$('b5scn');
 function syncScn(){if(cb)cb.checked=!!settings.b5scn;try{if(craftOpen&&mode==='book'&&bookTab==='codex')renderCraft()}catch(e){}}
@@ -11201,7 +11206,8 @@ const ACH=[
  ['tarif250','Yaşayan ansiklopedi','250 tarif bul.','Kristal',()=>found.length>=250],
  ['levent','Kazazede','Denizci Levent\'in yeni gemisini kur.','Halat',()=>!!(window.__v55&&window.__v55.d.indexOf('dz4')>=0)],
  ['roket','Gökyüzüne','Tuna ile roketi fırlat.','Roket',()=>!!(window.__tuna&&window.__tuna.launched)],
- ['act2','Açık deniz','Levent\'in gemisiyle adadan ayrıl: ACT 2.','Kristal ipek',()=>!!(window.__plDz&&window.__plDz.D.act2)]];
+ ['act2','Açık deniz','Levent\'in gemisiyle adadan ayrıl: ACT 2.','Kristal ipek',()=>!!(window.__plDz&&window.__plDz.D.act2)],
+ ['hile','Oyunlardaki gibi','Ana menüde “cheat” yazdın: hile modu açıldı.','Mor pusula',()=>{try{return localStorage.getItem('hammadde.cheatach')==='1'||localStorage.getItem('hammadde.cheatok')==='1'}catch(e){return false}}]];
 const ic=n=>{try{return icon(n)}catch(e){return ''}};
 const st=document.createElement('style');st.textContent=
  '#achcard{position:fixed;z-index:60;right:calc(env(safe-area-inset-right,0px) + 12px);bottom:calc(env(safe-area-inset-bottom,0px) + 12px);width:132px;height:132px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:8px;text-align:center;background:#2a2008;border:3px solid #f2c84b;box-shadow:0 0 0 2px #11170f,0 6px 18px rgba(0,0,0,.5);color:#fff3d0;transform:translateY(160%);transition:transform .35s;pointer-events:none}'
@@ -11231,7 +11237,8 @@ ov.addEventListener('click',e=>{if(e.target===ov||e.target.closest('.x'))close_(
 addEventListener('keydown',e=>{if(!ov.hidden&&e.key==='Escape'){close_();e.preventDefault();e.stopPropagation()}},true);
 const MEDAL='<svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="0" width="3" height="6" fill="#c84a3a"/><rect x="10" y="0" width="3" height="6" fill="#3a6ab0"/><rect x="6" y="0" width="4" height="5" fill="#e8e0d0"/><rect x="5" y="6" width="6" height="1" fill="#a87a1a"/><rect x="4" y="7" width="8" height="7" fill="#f2c84b"/><rect x="5" y="14" width="6" height="1" fill="#a87a1a"/><rect x="3" y="8" width="1" height="5" fill="#a87a1a"/><rect x="12" y="8" width="1" height="5" fill="#a87a1a"/><rect x="6" y="9" width="4" height="3" fill="#ffe7a0"/><rect x="7" y="8" width="2" height="5" fill="#ffe7a0"/><rect x="5" y="7" width="2" height="1" fill="#fff3c8"/></svg>';
 const sb=$('b-set');if(sb){const b=document.createElement('button');b.className='ib';b.id='b-ach';b.type='button';b.setAttribute('aria-label','Başarımlar');b.title='Başarımlar';b.innerHTML=MEDAL;sb.parentNode.insertBefore(b,sb);b.addEventListener('click',open_)}
-window.__plAch={list:ACH,got:()=>got,open:open_};
+function grant(id){if(got[id])return;const a=ACH.filter(x=>x[0]===id)[0];if(!a)return;got[id]=Date.now();try{localStorage.setItem(KEY,JSON.stringify(got))}catch(e){}q.push(a);show();if(!ov.hidden)render()}
+window.__plAch={list:ACH,got:()=>got,open:open_,grant:grant};
 }).toString()+')()')}catch(e){try{window.__hamErr('v71: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v72">
@@ -12083,7 +12090,7 @@ if(cb&&row&&canFS){row.hidden=false;const sf=$('s-full');if(sf){sf.hidden=true;s
   cb.addEventListener('change',function(){mine=true;setPref('hammadde.fs',cb.checked?'1':'0');if(cb.checked)enter();else leave();setTimeout(function(){mine=false},800)});
   function sync(){const f=isFS();cb.checked=f;if(f)lockEsc();else if(!mine)setPref('hammadde.fs','0')}
   document.addEventListener('fullscreenchange',sync);document.addEventListener('webkitfullscreenchange',sync);
-  if(getPref('hammadde.fs')==='1'){const once=function(){removeEventListener('pointerdown',once,true);removeEventListener('keydown',once,true);if(!isFS()&&getPref('hammadde.fs')==='1'){mine=true;enter();setTimeout(function(){mine=false},800)}};
+  if(getPref('hammadde.fs')!=='0'){const once=function(){removeEventListener('pointerdown',once,true);removeEventListener('keydown',once,true);if(!isFS()&&getPref('hammadde.fs')!=='0'){mine=true;enter();setTimeout(function(){mine=false},800)}};
     addEventListener('pointerdown',once,true);addEventListener('keydown',once,true)}}
 const seg=$('resseg'),rd=$('resd');
 const OPT=[['auto','Otomatik','Oyun akıcılığa göre keskinliği kendisi ayarlar.'],['hi','Yüksek','Ekranın tam çözünürlüğü; en keskin görüntü, en çok güç.'],['mid','Orta','Biraz daha az piksel; zayıf cihazlarda daha akıcı.'],['lo','Düşük','En az piksel; en akıcı, görüntü biraz iri.']];

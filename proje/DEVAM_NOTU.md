@@ -622,3 +622,11 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Ayarlar: **Tam ekran** anahtarı (bilgisayar ve Android; iPhone'da gizli). Tercih localStorage `hammadde.fs`; açıksa oyun yeniden açılınca ilk tıklama/tuşta tam ekrana geçer. Tam ekranda Keyboard Lock ile Esc oyuna gider (Chrome/Edge; çıkmak için Esc basılı tutulur). Eski `s-full` düğmesi gizlendi.
 - Ayarlar: **Çözünürlük** (Otomatik/Yüksek/Orta/Düşük) → `hammadde.res`. PERF.cap bir getter oldu: Otomatik iken izleyicinin değeri, diğerlerinde devicePixelRatio × 1/0.75/0.5 (en az 0.5). Hemen uygulanır.
 - Menüde "Versiyon 88".
+
+## v89 (27 Ekim 2026)
+- Mavi parıltı (`gl`): parıltı geçişlerinden sonra nesnenin temiz bir kopyası en üste çiziliyor; `lighter` geçişi kalktı (nesnenin üstünde çizgi/şerit olmuyor).
+- Hile: "cheat" yazma ve telefonda Ayarlar başlığına 3 dokunuş yalnızca ana menüde (`onTitle`) çalışır. Oyun içinde Ayarlar'da hile anahtarları (cheat, b5inf, b5scn, gece ışığı) gizli (`body.setgame`); hile açıksa yalnızca eylem düğmeleri (ACT 2, seviye, harita) görünür. Ana menüde eylem düğmeleri gizli (`body.settitle`). `openSettings` sarmalandı.
+- Gizli başarım `hile` "Oyunlardaki gibi" (simge Mor pusula): hile ana menüde açılınca anında verilir (`__plAch.grant`), localStorage `hammadde.cheatach`; daha önce `cheatok` olanlara da verilir. Başarımlar cihaz genelinde, her kayıtta görünür.
+- Tuna hikâyesi 4. parça: "Keşke her şey oyunlardaki gibi olsa… ana menüde “cheat” yazmıştım…" ipucu.
+- Tam ekran varsayılan: `hammadde.fs` yoksa da ilk tıklama/tuşta tam ekran; yalnızca kullanıcı kapatırsa (`0`) açılmaz.
+- Menüde "Versiyon 89".
