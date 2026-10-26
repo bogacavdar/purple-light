@@ -7665,7 +7665,7 @@ function crossRow(){if(!(tut>=11&&qState==='active'))return null;const q=QUESTS[
   if(/Doğu geçidini/.test(q.t)&&typeof rockfall!=='undefined'&&!rockfall.cleared){let pt=0;for(const n in PICK_TIER)if((inv[n]||0)>0)pt=Math.max(pt,PICK_TIER[n]);
     return{t:'Ekin · Doğu geçidi',r:'Kaya patlatıcı',items:[{n:'Kaya patlatıcı',need:2,have:Math.min(2,inv['Kaya patlatıcı']||0)},{n:'Kuvars kazma',need:1,have:pt>=3?1:0,tool:true}]}}
   return null}
-function rows(){const L=[];const t=tutRow();if(t)L.push(t);{const c=crossRow();if(c)L.push(c)}for(const r of B3.trk){const x=rowFor(r,1,r,true);if(x)L.push(x)}return L}
+function rows(){const L=[];const t=tutRow();if(t)L.push(t);{const c=crossRow();if(c)L.push(c)}{const qr=window.__qrow&&window.__qrow();if(qr)L.push(qr);else for(const r of B3.trk.slice(-1)){const x=rowFor(r,1,r,true);if(x)L.push(x)}}return L}   // v69.9: only one tracked thing
 
 // the world things that give a still-missing ingredient (crafted parts are followed down to their raw materials)
 function refreshNodeNames(){if(B3.nnAt&&performance.now()-B3.nnAt<4000)return;B3.nnAt=performance.now();const s=new Set();for(const n of nodes)s.add(n.name);B3.nodeNames=s}
@@ -7685,7 +7685,7 @@ const tip=document.createElement('div');tip.id='b3tip';tip.hidden=true;document.
 function chipHTML(it){const ok=it.have>=it.need,src=icon(expand(it.n)[0]);
   return `<span class="b3c${ok?' ok':''}${it.tool?' tool':''}" data-n="${esc(it.n)}" tabindex="0"><img src="${src}" alt=""><span class="b3nm">${esc(it.n)}</span><b>${Math.min(it.have,it.need)}/${it.need}</b>${ok?'<i aria-hidden="true">✓</i>':''}</span>`}
 function rowHTML(r){const done=r.items.every(it=>it.have>=it.need);
-  return `<div class="b3row${r.own?' own':''}${done?' done':''}"><span class="b3lab"><img src="${icon(r.r)}" alt="">${esc(r.t)}${done?' <em>hazır</em>':''}</span>${r.items.map(chipHTML).join('')}${r.own?`<button type="button" class="b3x" data-untrack="${esc(r.r)}" aria-label="${esc(r.r)} takibini bırak" title="Takibi bırak">×</button>`:''}</div>`}
+  return `<div class="b3row${r.own?' own':''}${done?' done':''}"><span class="b3lab"><img src="${icon(r.ic||r.r)}" alt="">${esc(r.t)}${done?' <em>hazır</em>':''}</span>${r.items.map(chipHTML).join('')}${r.own?`<button type="button" class="b3x" data-untrack="${esc(r.r)}" aria-label="${esc(r.r)} takibini bırak" title="Takibi bırak">×</button>`:''}</div>`}
 const PHONE=()=>PHONE_MQ.matches||innerHeight<=520;
 function placeBar(){if(bar.hidden)return;
   const L=$('left').getBoundingClientRect(),Rt=$('right').getBoundingClientRect(),tutOn=!tutEl.hidden&&!document.body.classList.contains('ontitle'),T=tutEl.getBoundingClientRect();
@@ -7716,14 +7716,14 @@ function showTip(el){const n=el.dataset.n;if(!n)return;tip.innerHTML=tipText(n);
   const w=tip.offsetWidth;tip.style.left=Math.round(Math.max(6,Math.min(innerWidth-w-6,r.left+r.width/2-w/2)))+'px';tip.style.top=Math.round(r.bottom+6)+'px'}
 bar.addEventListener('pointerover',e=>{if(e.pointerType!=='mouse')return;const c=e.target.closest('.b3c');if(c)showTip(c)});
 bar.addEventListener('pointerout',e=>{if(e.pointerType!=='mouse')return;const c=e.target.closest('.b3c');if(c&&!c.contains(e.relatedTarget))tip.hidden=true});
-bar.addEventListener('click',e=>{const x=e.target.closest('[data-untrack]');if(x){trackRecipe(x.dataset.untrack);return}
+bar.addEventListener('click',e=>{const x=e.target.closest('[data-untrack]');if(x){const u=x.dataset.untrack;if(/^Q:/.test(u)){if(window.__qtrack)window.__qtrack(u.slice(2))}else trackRecipe(u);return}
   const c=e.target.closest('.b3c');if(c){if(!tip.hidden&&tip.dataset.n===c.dataset.n){tip.hidden=true;return}showTip(c);tip.dataset.n=c.dataset.n;clearTimeout(B3.tipT);B3.tipT=setTimeout(()=>{tip.hidden=true},3500)}});
 bar.addEventListener('focusin',e=>{const c=e.target.closest('.b3c');if(c)showTip(c)});bar.addEventListener('focusout',()=>{tip.hidden=true});
 
 // "Takip et" / "Takibi bırak" (up to three recipes)
 trackRecipe=function(name){if(!REC.get(name))return;const i=B3.trk.indexOf(name);
   if(i>=0){B3.trk.splice(i,1);toast(`${name} takibi bırakıldı`)}
-  else{B3.trk.push(name);if(B3.trk.length>3){const o=B3.trk.shift();toast(`En fazla 3 tarif: ${o} takibi bırakıldı`)}toast(`${name} takip ediliyor: malzemeleri ekranın üstünde`);sfx('pick')}
+  else{B3.trk.length=0;B3.trk.push(name);if(window.__v55&&window.__v55.tr.length){window.__v55.tr.length=0;try{window.__qglow()}catch(e){}}toast(`${name} takip ediliyor: malzemeleri ekranın üstünde`);sfx('pick')}
   renderBar(true);if(craftOpen&&(mode==='hand'||mode==='craft'))renderCraft()};
 const trkBtn=r=>{const on=B3.trk.indexOf(r)>=0;return `<button class="mk ghost b3t${on?' on':''}" data-track="${esc(r)}" type="button" aria-pressed="${on}">${on?'Takibi bırak':'Takip et'}</button>`};
 const _renderHand=renderHand;renderHand=function(){_renderHand.apply(this,arguments);
@@ -7859,13 +7859,13 @@ function b3Tick(){if(onTitle)return;try{
 setInterval(b3Tick,300);addEventListener('resize',()=>{placeBar();placePtr()});
 
 // ---------------------------------------------------------------- save / load (b3_trk, b3_ouch)
-function b3Load(d){B3.trk=(d&&Array.isArray(d.b3_trk)?d.b3_trk:[]).filter(r=>typeof r==='string'&&REC.has(r)).filter((r,i,a)=>a.indexOf(r)===i).slice(0,3);B3.ouch=!!(d&&d.b3_ouch);thornN=d&&+d.b3_thn>0?+d.b3_thn:(B3.ouch?3:0);B3.fired.clear();B3.call=null;B3.key='';for(const k in B3.lock)delete B3.lock[k]}
+function b3Load(d){B3.trk=(d&&Array.isArray(d.b3_trk)?d.b3_trk:[]).filter(r=>typeof r==='string'&&REC.has(r)).filter((r,i,a)=>a.indexOf(r)===i).slice(-1);B3.ouch=!!(d&&d.b3_ouch);thornN=d&&+d.b3_thn>0?+d.b3_thn:(B3.ouch?3:0);B3.fired.clear();B3.call=null;B3.key='';for(const k in B3.lock)delete B3.lock[k]}
 const _snapshot=snapshot;snapshot=function(){const s=_snapshot.apply(this,arguments);s.b3_trk=B3.trk.slice();s.b3_ouch=B3.ouch;s.b3_thn=thornN;return s};
 try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}
 const _restore=restore;restore=function(d){const r=_restore.apply(this,arguments);b3Load(d);return r};
 const _resetState=resetState;resetState=function(){const r=_resetState.apply(this,arguments);b3Load(null);return r};
 try{if(hot&&hot.data&&hot.data.inv)b3Load(hot.data)}catch(e){}
-window.__b3=B3;
+window.__b3=B3;window.__b3bar=renderBar;
 renderTut();
 }).toString()+')()')}catch(e){try{window.__hamErr('v48-b3: '+(e&&e.message||e))}catch(_){}}})();
 </script>
@@ -9741,7 +9741,7 @@ const ready=g=>NQ.find(q=>q.g===g&&QS.a[q.id]&&complete(q));
 const activeOf=g=>NQ.find(q=>q.g===g&&QS.a[q.id]);
 function rewardTxt(q){const r=[];if(q.c)r.push(`${q.c} sikke`);if(q.x)r.push(`${q.x} XP`);return r.join(', ')}
 function accept(q,track){const b={};if(q.kill)b.kill=kills[q.kill[0]]||0;if(q.cnt)b.cnt=QC[q.cnt[0]]||0;if(q.base)b.base=q.base();QS.a[q.id]={b};
-  if(q.rec)q.rec.forEach(r=>{if(REC.has(r))bought.add(r)});if(track&&QS.tr.indexOf(q.id)<0)QS.tr.push(q.id);
+  if(q.rec)q.rec.forEach(r=>{if(REC.has(r))bought.add(r)});if(track){QS.tr.length=0;QS.tr.push(q.id);clrRec()}
   sfx('found');toast(`Yeni görev: ${q.t}${track?' · takip ediliyor':''}`);refreshQG();renderTut()}
 function turnIn(q,who){if(!complete(q))return;if(q.bring)for(const [n,k] of q.bring){let need=k;for(const m of expand(n)){const t=Math.min(need,inv[m]||0);inv[m]-=t;need-=t}}
   delete QS.a[q.id];QS.d.push(q.id);const i=QS.tr.indexOf(q.id);if(i>=0)QS.tr.splice(i,1);
@@ -9761,7 +9761,8 @@ const BYE=/^(Hoşça kal|Sonra|Sonra konuşuruz|Sonra gelirim|Teşekkürler|Tama
 {const _m=talkMarket;talkMarket=function(){if(market.met&&!tz&&tut>=11&&(available('market')&&(!available('market').req||available('market').req())||ready('market'))){
     return say('Hoş geldin! Tezgâh açık, ama önce bir şey soracağım…',[{t:'Pazarı aç',f:()=>{bye();mktTab='sell';openMenu('sell')}},{t:'Hoşça kal',f:bye}],market)}
   return _m.apply(this,arguments)}}
-function trackQ(id){const i=QS.tr.indexOf(id);if(i>=0){QS.tr.splice(i,1);toast('Görev takibi bırakıldı')}else{QS.tr.push(id);if(QS.tr.length>4)QS.tr.shift();toast('Görev takip ediliyor: istediği şeyler mavi parlar');sfx('pick')}refreshQG();if(craftOpen&&mode==='qlog')renderCraft()}
+function clrRec(){const B=window.__b3;if(B&&B.trk.length){B.trk.length=0;try{window.__b3bar(true)}catch(e){}}}
+function trackQ(id){const i=QS.tr.indexOf(id);if(i>=0){QS.tr.splice(i,1);toast('Görev takibi bırakıldı')}else{QS.tr.length=0;QS.tr.push(id);clrRec();toast('Görev takip ediliyor: istenenler ekranın üstünde');sfx('pick')}refreshQG();try{window.__b3bar(true)}catch(e){}if(craftOpen&&mode==='qlog')renderCraft()}
 // ---------------------------------------------------------------- the blue glow of what tracked quests need
 function refreshQG(){const G={n:new Set(),t:new Set(),a:new Set(),d:new Set()},why={};const nn_=new Set();for(const n of nodes)nn_.add(n.name);
   const mark=(m,lab)=>{G.d.add(m);if(!why[m])why[m]=lab;if(nn_.has(m))G.n.add(m);for(const ty of TREE_TYPES){if(ty.fruit===m||(m===ty.n+' odunu'&&!ty.noCut)){G.t.add(ty.n);if(!why['T:'+ty.n])why['T:'+ty.n]=lab}}
@@ -9812,11 +9813,17 @@ setInterval(()=>{try{if(onTitle||!met||tz)return;if(!trader.called&&(bridge.fixe
 const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);s.v55={a:QS.a,d:QS.d.slice(),tr:QS.tr.slice(),qc:Object.assign({},QC)};return s};
 const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);
   QS.a={};QS.d.length=0;QS.tr.length=0;for(const k in QC)delete QC[k];
-  const v=d&&d.v55;if(v){if(v.a&&typeof v.a==='object')for(const id in v.a)if(NQI[id])QS.a[id]=v.a[id];(v.d||[]).forEach(id=>{if(NQI[id]&&QS.d.indexOf(id)<0)QS.d.push(id)});(v.tr||[]).forEach(id=>{if(QS.a[id])QS.tr.push(id)});if(v.qc)for(const k in v.qc)QC[k]=+v.qc[k]||0}
+  const v=d&&d.v55;if(v){if(v.a&&typeof v.a==='object')for(const id in v.a)if(NQI[id])QS.a[id]=v.a[id];(v.d||[]).forEach(id=>{if(NQI[id]&&QS.d.indexOf(id)<0)QS.d.push(id)});(v.tr||[]).forEach(id=>{if(QS.a[id])QS.tr.push(id)});if(QS.tr.length>1)QS.tr.splice(0,QS.tr.length-1);if(v.qc)for(const k in v.qc)QC[k]=+v.qc[k]||0}
   else if(d&&d.inv&&(d.qv||0)>=4&&(d.tut||0)>=11){const done=Q4KEYS.slice(0,d.tut-11),cur=Q4KEYS[d.tut-11],M={shelter:'carp1',trader:'nuri1',dursun:'smith_bronze'};
     for(const k in M){if(done.indexOf(k)>=0)QS.d.push(M[k]);else if(cur===k&&d.qState&&d.qState!=='talk'){accept(NQI[M[k]],true)}}
     if(trader.firstDone&&QS.d.indexOf('nuri1')<0){delete QS.a.nuri1;QS.d.push('nuri1')}}
   refreshQG();return r};
+// v69.9: the tracked quest's wants in the bar at the top
+window.__qtrack=id=>trackQ(id);window.__qglow=()=>refreshQG();
+window.__qrow=()=>{const id=QS.tr[QS.tr.length-1];const q=id&&QS.a[id]&&NQI[id];if(!q)return null;
+  const items=qParts(q).map(x=>({n:x.kill?x.n+' avı':x.n,need:x.need,have:x.have,ng:true}));
+  if(q.p){const b=QS.a[id].b||{};items.push({n:String(q.p(b.base)),need:1,have:q.done&&q.done(b.base)?1:0,ng:true})}
+  if(!items.length)return null;return{t:`${short(q.g)} · ${q.t}`,r:'Q:'+id,ic:q.bring&&q.bring.length?q.bring[0][0]:'Parşömen',own:true,items}};
 // v69.8: choose which quest the top-right card shows
 function pinOk(){if(QS.pin&&!QS.a[QS.pin])QS.pin=null;return !!QS.pin}
 const _snap2=snapshot;snapshot=function(){const s=_snap2.apply(this,arguments);if(s.v55)s.v55.pin=QS.pin;return s};

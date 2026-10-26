@@ -457,3 +457,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v69.8 (26 Ekim 2026)
 - Görevler sekmesi: her görev kartında "📌 Sağ üstte göster" düğmesi (Ekin'in ana görevi dahil). Seçilen yan görev sağ üstteki görev kartında yazar (`QS.pin`, v55-q içinde; kayda `v55.pin` olarak girer; görev bitince/yoksa Ekin'in ana görevine döner). Aynı düğmeye tekrar basınca ana göreve döner. Ders/eğitim kartları (tz, qPeek, lessonCard, tut<11) önceliklidir.
 - "Takip et / Takibi bırak" düğmeleri yuvarlak hap düğmeler oldu (.qbtns .qb); takipteyken mavi "✓ Takip ediliyor", sağ üstteyken sarı "📌 Sağ üstte".
+
+## v69.9 (26 Ekim 2026)
+- Hep tek bir şey takip edilir: bir görev ya da bir tarif. Görev takip edilince tarif takibi düşer, tarif takip edilince görev takibi düşer (trackQ ↔ trackRecipe, `clrRec`, `window.__qglow`). Eski kayıtlarda yalnız sonuncusu kalır (QS.tr ve b3_trk slice(-1)).
+- Takip edilen görevin istedikleri ekranın üstündeki çubukta (#b3trk) x/y çipleri olarak çıkar (`window.__qrow` v55-q'da; B3 rows() onu tarif yerine koyar; × ile takip bırakılır, `Q:<id>`). Görev kabul edilirken takip açılırsa da aynı kural.
