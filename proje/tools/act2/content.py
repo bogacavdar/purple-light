@@ -106,3 +106,24 @@ ICONK.update({'Magma kabuğu':'shell','Kor kertenkelesi eti':'meat','Kor pulu':'
 ICONC.update({'Magma kabuğu':['#5a2a1a','#d85a2a'],'Kor kertenkelesi eti':['#d86a4a','#f0a080'],'Kor pulu':['#c84a2a','#ff8a4a'],'Ejder dişi':['#f0e8d0','#ffffff'],'Yavru ejder pulu':['#8a2a3a','#d84a5a'],
   'Magma çekirdeği':['#8a2a1a','#ffb040'],'Ejder kalbi':['#c81a3a','#ff6a8a'],'Kızıl ejder pulu':['#a81a1a','#ff5a3a'],'Ejder meyvesi':['#ff3a5a','#4a2a2a'],
   'Plazma hücresi':['#5a1a7a','#e88aff'],'Işın kılıcı':['#3a3a44','#7af0ff'],'Yıldırım asası':['#5a5a8a','#fff070']})
+# ---------------- v81: Gök Rıhtımı (biome 5)
+TREES[5]=[('Gök kamışı',['#a8b8d8','#c8d4f0','#e8eeff'],'#8a8aa8',10,{'pine':1}),('Bulut kavağı',['#c8d8e8','#dce8f4','#f4f8ff'],'#a8a8b8',12,{}),
+          ('Yıldız akasyası',['#5a5a9a','#7070b8','#9a9ad8'],'#4a4a6a',12,{}),('Gök üzümü',['#6a7ab0','#7e8ec8','#a0b0e0'],'#5a5a7a',11,{'fruit':'Gök üzümü','fc':'#8a5ad8'})]
+WOODP.update({'Gök kamışı':40,'Bulut kavağı':40,'Yıldız akasyası':44,'Gök üzümü':38})
+WOODC.update({'Gök kamışı':'#d8dce8','Bulut kavağı':'#e8ecf4','Yıldız akasyası':'#8a8ab8','Gök üzümü':'#9aa0c8'})
+PLANTS[5]=[('Göktaşı tozu','moss',['#8a8aa0','#fff0a0'],'land',60,24,'dust'),('Ay çiçeği','herb',['#6a7aa0','#f0f0ff'],'land',70,28,'herb'),
+           ('Gök ipeği','vine',['#c8d0f0','#ffffff'],'land',70,30,'wire'),('Meteor parçası','gem',['#4a3a3a','#d88a5a'],'land',110,50,'ore'),
+           ('Füzyon taşı','gem',['#5ad0ff','#ffffff'],'land',140,80,'gem'),('Bulut özü','clay',['#e8f0ff','#ffffff'],'wet',70,26,'slime'),
+           ('Yıldız mantarı','mush',['#4a4a8a','#fff070'],'forest',80,30,'mush'),('Gök camı parçası','gem',['#c8f0ff','#ffffff'],'land',90,36,'gem')]
+ORES[5]=[('Meteor demiri','Meteor krateri','#6a4a4a',12,3,70),('Yıldız cevheri','Yıldız cevheri yatağı','#fff0a0',10,4,110),('Gök camı','Gök camı yatağı','#c8f0ff',12,3,60)]
+ANIMALS[5]=[('Gök medüzü',dict(temper='zararsız',hp=60,spd=24,r=6,xp=24,fly=1,land='land',drops=[('Medüz jölesi',1,2,.9,'zanaat')]),2,None,None),
+            ('Yıldız tilkisi',dict(temper='zararsız',hp=70,spd=84,r=5,xp=26,land='land',drops=[('Yıldız tilkisi postu',1,1,.8,'zırh'),('Yıldız tilkisi eti',1,1,1,'yemek')]),2,None,None),
+            ('Uzaylı dronu',dict(z=1,temper='saldırgan',hp=480,spd=96,aggro=260,r=7,xp=300,dmg=110,fly=1,ranged=dict(range=240,spd=280,c='#c070ff',n=1,cd=1.4),land='land',drops=[('Uzaylı devresi',1,1,.7,'zanaat'),('Mor çekirdek',1,1,.4,'zanaat')]),2,None,None),
+            ('Gölge muhafız',dict(z=1,temper='saldırgan',hp=900,spd=74,aggro=240,r=8,xp=420,dmg=200,reach=40,wind=.45,fx=['kanama',14,5],land='land',drops=[('Muhafız zırhı parçası',1,2,.8,'zırh'),('Mor çekirdek',1,1,.5,'zanaat')]),1,None,[1,2]),
+            ('Gök bekçisi',dict(z=1,temper='saldırgan',hp=6000,spd=40,aggro=260,r=15,xp=2200,dmg=300,reach=60,wind=.8,ranged=dict(range=280,spd=240,c='#c070ff',n=5,cd=2),land='land',drops=[('Yakıt hücresi',1,1,1,'zanaat'),('Uzaylı devresi',2,4,1,'zanaat')]),1,'lvl',None)]
+DROPP.update({'Medüz jölesi':40,'Yıldız tilkisi postu':80,'Yıldız tilkisi eti':16,'Uzaylı devresi':200,'Mor çekirdek':360,'Muhafız zırhı parçası':220,'Yakıt hücresi':1500,'Gök üzümü':20})
+ICONK.update({'Medüz jölesi':'slime','Yıldız tilkisi postu':'hide','Yıldız tilkisi eti':'meat','Uzaylı devresi':'chip','Mor çekirdek':'heart','Muhafız zırhı parçası':'plate','Yakıt hücresi':'battery','Gök üzümü':'fruit',
+  'Meteor demiri külçesi':'ingot','Yıldız külçesi':'ingot','Roket gövdesi':'plate','Roket motoru':'motor','Roket':'rocket'})
+ICONC.update({'Medüz jölesi':['#c8a8ff','#ffffff'],'Yıldız tilkisi postu':['#4a4a8a','#fff070'],'Yıldız tilkisi eti':['#d88a8a','#f0b8b8'],'Uzaylı devresi':['#3a1a5a','#c070ff'],'Mor çekirdek':['#7a2ad8','#e8b0ff'],
+  'Muhafız zırhı parçası':['#2a2a3a','#7a5ac8'],'Yakıt hücresi':['#2a5a3a','#7aff8a'],'Gök üzümü':['#8a5ad8','#5a5a7a'],'Meteor demiri külçesi':['#6a4a4a','#a87a6a'],'Yıldız külçesi':['#e8d870','#fff8c0'],
+  'Roket gövdesi':['#d8dce8','#ffffff'],'Roket motoru':['#5a5a60','#ff8a3a'],'Roket':['#e8ecf4','#c84a2a']})

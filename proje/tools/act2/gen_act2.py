@@ -29,7 +29,7 @@ for bi,L in PLANTS.items():
 for bi,L in ORES.items():
   for t in L:raw(t[0],t[5])
 for n,v in DROPP.items():raw(n,v)
-for m in ['Bulut koyunu eti','Rüzgâr kuşu eti','Kertenkele eti','Buz tavşanı eti','Kor kertenkelesi eti']:
+for m in ['Bulut koyunu eti','Rüzgâr kuşu eti','Kertenkele eti','Buz tavşanı eti','Kor kertenkelesi eti','Yıldız tilkisi eti']:
   base=low(m);rec('Pişmiş '+base,[[m,1],['Ateş',1],['Su',3],['Yaprak',3]],'Yiyecek');grp('Herhangi çiğ et',m);grp('Herhangi pişmiş et','Pişmiş '+base)
 REC_EXTRA=True
 rec('Mana iksiri',[['Büyü otu',2],['Su',2],['Herhangi çömlek',1]],'Şifa')
@@ -52,6 +52,12 @@ rec('Plazma hücresi',[['Plazma taşı',2],['Enerji hücresi',1],['Ejder kristal
 rec('Işın kılıcı',[['Titanyum külçesi',2],['Plazma hücresi',2],['Ejder dişi',2],['Kristal lifi',3]],'Silah',pr=6400)
 rec('Yıldırım asası',[['Kömür ağacı kalası',1],['Plazma taşı',3],['Ejder kristali',2],['Büyü otu',3]],'Büyü',pr=3200)
 rec('Ejder meyvesi şerbeti',[['Ejder meyvesi',3],['Su',2],['Herhangi çömlek',1]],'Yiyecek')
+rec('Meteor demiri külçesi',[['Meteor demiri',3],['Herhangi kömür',2],['Füzyon taşı',1]],'Maden')
+rec('Yıldız külçesi',[['Yıldız cevheri',3],['Plazma hücresi',1]],'Maden')
+rec('Roket gövdesi',[['Meteor demiri külçesi',4],['Titanyum külçesi',4],['Gök camı',3]],'Taşıtlar',pr=9000)
+rec('Roket motoru',[['Yıldız külçesi',2],['Plazma hücresi',3],['Ejder kalbi',1],['Yakıt hücresi',1]],'Taşıtlar',pr=14000)
+rec('Roket',[['Roket gövdesi',1],['Roket motoru',1],['Uzaylı devresi',4],['Gök ipeği',6]],'Taşıtlar',pr=30000)
+rec('Gök üzümü suyu',[['Gök üzümü',3],['Su',2]],'Yiyecek')
 rec('Hurma ezmesi',[['Hurma',3],['Herhangi çömlek',1]],'Yiyecek')
 rec('Spor ekmeği',[['Spor tozu',3],['Su',2],['Ateş',1]],'Yiyecek')
 rec('Goblin eriği reçeli',[['Goblin eriği',3],['Herhangi çömlek',1]],'Yiyecek')

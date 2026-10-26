@@ -584,3 +584,11 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Ejder Avcısı Alara** (Ejder Volkanı): ej1 5 Lav çiçeği + 3 Magma cevheri (Plazma hücresi), ej2 3 Yavru ejder, ej3 3 Ejder dişi + 3 Plazma taşı (Işın kılıcı tarifi), ej4 Kızıl ejder (Ejder kalbi düşer; ACT 2 sonunda işe yarayacak). Kılıcı o yapar (800 sikke). Hikâyesi (ST_.alara): gemi motorunu soğutmak için plazmasını volkana boşaltıyor; ejderler bununla büyüdü.
 - Pervin'e pv5 (Alara ile tanışınca): 3 Ejder kristali + 1 Magma çekirdeği → Yıldırım asası (Pervin yapar, 300 sikke).
 - Menüde "Versiyon 80". Test yapılmadı.
+
+## v81 (27 Ekim 2026) — ACT 2: Gök Rıhtımı, Astronot Tuna, roket, ACT 2'nin sonu
+- Gök Rıhtımı (biyom 5): Gök kamışı, Bulut kavağı, Yıldız akasyası, Gök üzümü · Göktaşı tozu, Ay çiçeği, Gök ipeği, Meteor parçası, Füzyon taşı, Bulut özü, Yıldız mantarı, Gök camı parçası · Meteor demiri, Yıldız cevheri, Gök camı · Gök medüzü, Yıldız tilkisi, Uzaylı dronu (mor ışın), Gölge muhafız (kaçıranların askerleri, sürü), Gök bekçisi (6000 can, Yakıt hücresi düşürür).
+- Tarifler: Meteor demiri külçesi, Yıldız külçesi, Roket gövdesi, Roket motoru (Ejder kalbi + Yakıt hücresi ister), Roket, Gök üzümü suyu, Pişmiş yıldız tilkisi eti.
+- **Astronot Tuna** (Gök Rıhtımı, rampanın yanında): as1 4 Meteor parçası + 3 Gök camı (külçe tarifleri), as2 4 Uzaylı dronu, as3 3 Gölge muhafız, as4 Gök bekçisi (roket tarifleri), as5 Roket getir. Gövdeyi, motoru ve roketi o birleştirir. Hikâyesi (ST_.tuna): sevgilisi Nehir iki yıl önce gölge muhafızlarla savaşta yaralandı, ışık onu gemiye aldı; gemi topladıklarını saklıyor.
+- Rampa çizimi (roket bitince üstünde roket). as5'ten sonra Tuna ile konuşunca **fırlatma sineması** (#rkov, ~15,6 sn: geri sayım, kalkış, adalar küçülür, gökyüzü kararır, mor gemi belirir, 4 altyazı) → "ACT 3 · Mor gemi" kartı → Gök Rıhtımı'na dönülür (ACT 3 yok). `tuna.launched` kayıtta (v81).
+- Başarım "Gökyüzüne" (roket fırlatıldı). Hile ara sahne listesine "ACT 2 sonu: Roket" (tekrar izleme, sayılmaz).
+- Menüde "Versiyon 81". Test yapılmadı.
