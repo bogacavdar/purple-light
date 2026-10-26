@@ -11004,6 +11004,68 @@ cbody.addEventListener('click',e=>{if(mode!=='book'||bookTab!=='codex')return;co
 setOk(ok);
 }).toString()+')()')}catch(e){try{window.__hamErr('v69c: '+(e&&e.message||e))}catch(_){}}})();
 </script>
+<script id="v71">
+// =====================================================================================================
+// v71: başarımlar. Kazanılınca sağ altta altın bir kart çıkar; sağdaki madalya düğmesi listeyi açar.
+// Başarımlar cihaza kaydedilir (bütün kayıtlar için ortak): localStorage 'hammadde.ach'.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const KEY='hammadde.ach';let got={};try{got=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){got={}}
+const k_=n=>kills[n]||0,anyKill=()=>Object.keys(kills).some(k=>kills[k]>0);
+const ACH=[
+ ['tarif1','İlk tarif','Kazanda ilk tarifini öğren.','Keskin taş',()=>found.length>=1],
+ ['gece1','İlk gece','İlk geceyi hayatta atlat.','Meşale',()=>day>=2],
+ ['tarif25','Meraklı çırak','25 tarif bul.','Kaba meşale',()=>found.length>=25],
+ ['av1','İlk av','Bir hayvan avla.','Yaban domuzu dişi',anyKill],
+ ['kopru','Köprücü','Kırık köprüyü onar.','Meşe kalası',()=>!!bridge.fixed],
+ ['hafta','Bir hafta','7. güne ulaş.','Hasır yatak',()=>day>=7],
+ ['kopek','Sadık dost','Bir robot köpeğin olsun.','Kemik',()=>dogs.length>0],
+ ['balik','Balıkçı','10 balık tut.','Alabalık',()=>fishTotal>=10],
+ ['lvl10','Tecrübeli','Seviye 10 ol.','Ametist',()=>lvl>=10],
+ ['gorev10','Yardımsever','10 yan görev bitir.','İp',()=>!!(window.__v55&&window.__v55.d.length>=10)],
+ ['zengin','Kesesi dolu','Aynı anda 1000 sikken olsun.','Gümüş külçesi',()=>coins>=1000&&!window.__plInf],
+ ['tarif100','Kazan ustası','100 tarif bul.','Ay otu',()=>found.length>=100],
+ ['kurt','Kurt avcısı','10 kurt avla.','Kurt dişi',()=>k_('Kurt')>=10],
+ ['kesif','Kâşif','Adanın yarısını keşfet.','Buğday',()=>exploredCount>=W*H*.5],
+ ['iz','İz sürücü','Eşinden kalan bütün izleri bul.','Mor kıymık',()=>clues.size>=CLUES.length],
+ ['ani','Hatırladım','Bütün anılarını geri getir.','Mor sarmaşık',()=>mems.size>=MEMS.length],
+ ['ay','Adada bir ay','30. güne ulaş.','Ay taşı',()=>day>=30],
+ ['ejder','Ejder avcısı','Kül Diyarı\'nın kara ejderini yen.','Ejder kemiği',()=>k_('Kara ejder')>0],
+ ['lvl25','Ada efsanesi','Seviye 25 ol.','Altın külçesi',()=>lvl>=25],
+ ['tarif250','Yaşayan ansiklopedi','250 tarif bul.','Kristal',()=>found.length>=250],
+ ['kotu','Yarım kalan yolculuk','Kötü son: Sisli Ada\'yı bulmadan adadan ayrıl.','Sal',()=>won&&!sisDone],
+ ['iyi','Yıldızların ötesine','İyi son: Sisli Ada\'da eşini yeniden gör.','Işık pulu',()=>won&&sisDone]];
+const ic=n=>{try{return icon(n)}catch(e){return ''}};
+const st=document.createElement('style');st.textContent=
+ '#achcard{position:fixed;z-index:60;right:calc(env(safe-area-inset-right,0px) + 12px);bottom:calc(env(safe-area-inset-bottom,0px) + 12px);display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;background:#2a2008;border:3px solid #f2c84b;box-shadow:0 0 0 2px #11170f,0 6px 18px rgba(0,0,0,.5);color:#fff3d0;transform:translateY(140%);transition:transform .35s;pointer-events:none;max-width:min(360px,80vw)}'
+ +'#achcard.on{transform:none}#achcard img{width:40px;height:40px;image-rendering:pixelated;background:#4a3a10;border:2px solid #f2c84b;padding:2px}#achcard small{display:block;font-size:12px;color:#f2c84b;letter-spacing:.04em}#achcard b{font-size:16px}'
+ +'#achov{position:fixed;inset:0;z-index:58;background:rgba(6,8,6,.72);display:flex;align-items:center;justify-content:center;padding:16px}#achov[hidden]{display:none}'
+ +'#achov .ab{background:var(--panel,#1a2216);border:3px solid #f2c84b;max-width:560px;width:100%;max-height:86vh;overflow:auto;padding:14px 16px;color:var(--ink,#f3ecd8)}#achov h2{margin:0 0 4px;color:#f2c84b;font-size:20px}#achov .x{float:right;font:inherit;font-size:20px;background:none;border:0;color:inherit;cursor:pointer}'
+ +'#achov ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}#achov li{display:flex;align-items:center;gap:10px;padding:6px 8px;border:2px solid #3a4a32;background:rgba(0,0,0,.2)}#achov li img{width:32px;height:32px;image-rendering:pixelated;flex:none;filter:grayscale(1) brightness(.55)}'
+ +'#achov li.on{border-color:#f2c84b;background:rgba(242,200,75,.12)}#achov li.on img{filter:none}#achov li.on b{color:#f2c84b}#achov li small{display:block;color:var(--ink-dim,#c9bfa3);font-size:13px}#achov li.on small{color:#e8d8a0}#achov li i{margin-left:auto;font-style:normal;color:#f2c84b;font-size:18px}'
+ +'#b-ach svg{image-rendering:pixelated}';
+document.head.appendChild(st);
+const card=document.createElement('div');card.id='achcard';card.setAttribute('role','status');card.setAttribute('aria-live','polite');document.body.appendChild(card);
+const ov=document.createElement('div');ov.id='achov';ov.hidden=true;ov.setAttribute('role','dialog');ov.setAttribute('aria-label','Başarımlar');document.body.appendChild(ov);
+let q=[],busy=false;
+function show(){if(busy||!q.length)return;busy=true;const a=q.shift();card.innerHTML=`<img src="${ic(a[3])}" alt=""><span><small>BAŞARIM KAZANILDI</small><b>${esc(a[1])}</b></span>`;
+  requestAnimationFrame(()=>card.classList.add('on'));sfx('found');setTimeout(()=>{card.classList.remove('on');setTimeout(()=>{busy=false;show()},450)},3600)}
+function check(){if(onTitle||wake)return;let n=0;for(const a of ACH){if(got[a[0]])continue;let ok=false;try{ok=!!a[4]()}catch(e){}if(ok){got[a[0]]=Date.now();q.push(a);n++}}
+  if(n){try{localStorage.setItem(KEY,JSON.stringify(got))}catch(e){}show();if(!ov.hidden)render()}}
+setInterval(check,1500);
+function render(){const c=ACH.filter(a=>got[a[0]]).length;
+  ov.innerHTML=`<div class="ab"><button class="x" type="button" aria-label="Kapat">×</button><h2>Başarımlar</h2><p class="note" style="margin:0">${c} / ${ACH.length} kazanıldı. Kazandıkların altın renginde.</p><ul>${ACH.map(a=>{const on=!!got[a[0]];
+    return `<li class="${on?'on':''}"><img src="${ic(a[3])}" alt=""><span><b>${esc(a[1])}</b><small>${esc(a[2])}</small></span>${on?'<i aria-label="kazanıldı">★</i>':''}</li>`}).join('')}</ul></div>`}
+function open_(){render();ov.hidden=false;sfx('pick');const x=ov.querySelector('.x');if(x)x.focus()}
+function close_(){ov.hidden=true}
+ov.addEventListener('click',e=>{if(e.target===ov||e.target.closest('.x'))close_()});
+addEventListener('keydown',e=>{if(!ov.hidden&&e.key==='Escape'){close_();e.preventDefault();e.stopPropagation()}},true);
+const MEDAL='<svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="3" y="0" width="3" height="6" fill="#c84a3a"/><rect x="10" y="0" width="3" height="6" fill="#3a6ab0"/><rect x="6" y="0" width="4" height="5" fill="#e8e0d0"/><rect x="5" y="6" width="6" height="1" fill="#a87a1a"/><rect x="4" y="7" width="8" height="7" fill="#f2c84b"/><rect x="5" y="14" width="6" height="1" fill="#a87a1a"/><rect x="3" y="8" width="1" height="5" fill="#a87a1a"/><rect x="12" y="8" width="1" height="5" fill="#a87a1a"/><rect x="6" y="9" width="4" height="3" fill="#ffe7a0"/><rect x="7" y="8" width="2" height="5" fill="#ffe7a0"/><rect x="5" y="7" width="2" height="1" fill="#fff3c8"/></svg>';
+const sb=$('b-set');if(sb){const b=document.createElement('button');b.className='ib';b.id='b-ach';b.type='button';b.setAttribute('aria-label','Başarımlar');b.title='Başarımlar';b.innerHTML=MEDAL;sb.parentNode.insertBefore(b,sb);b.addEventListener('click',open_)}
+window.__plAch={list:ACH,got:()=>got,open:open_};
+}).toString()+')()')}catch(e){try{window.__hamErr('v71: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 <script id="v68">
 // v68: the graphics-card switch in Ayarlar (the choice is read once at start, so changing it reopens the game; the save is kept)
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
