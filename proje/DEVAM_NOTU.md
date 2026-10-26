@@ -7,7 +7,7 @@
 - GitHub Pages ayarını (Settings → Pages → main, /root) oturum açamıyor (API proxy'de kapalı); Boğaç bir kez kendisi açar.
 
 ## ⭐ BURADAN BAŞLA (26 Ekim 2026 akşamı, v62)
-- Yayındaki sürüm **v62** (GitHub `main`, https://bogacavdar.github.io/purple-light/). Bu turda v51–v62 yapıldı; ayrıntılar dosyanın sonundaki v51…v62 bölümlerinde.
+- Yayındaki sürüm **v63** (v63 notu en altta). Önceki: **v62** (GitHub `main`, https://bogacavdar.github.io/purple-light/). Bu turda v51–v62 yapıldı; ayrıntılar dosyanın sonundaki v51…v62 bölümlerinde.
 - Özet: yalnızca Nazlı satar (doğal malzeme), ustalar malzeme + işçilikle yapar, ağırlıklı ganimet · Zırhçı Durmuş · gece 2,5 dk, meşale bir gece, reçine (L) · Işıkçı 15. gün akşamı sabit yerde (takas), köpekçi 5. gün hediye / 20. gün mor sinyal (en çok 5) · NPC görev zincirleri + Görevler paneli (G) + mavi takip · ev içleri ve döşeme (13 Ev eşyası tarifi, 660 tarif) · 7 rastgele anı · telefon performansı (parça parça zemin, otomatik kalite) · ada halkının hikâyeleri ve ara sahneler · en üst seviye 50 · ad girişinde Enter · balta dersi düzeltmeleri.
 - Yeni kod blokları `</body>` öncesinde: `v55-q` (görevler), `v56-room` (ev içi), `v57-mem` (anılar), `v58-perf` (performans), `v59-story` (hikâyeler), `v62-axe` (balta dersi). Hepsi `window.__plEval` ile oyunun kapsamında çalışır.
 - Çalışma düzeni (Boğaç): test yok, yalnızca `chk.js`; Boğaç kendi test eder. Ajan yok, token önemli. Her adım ayrı sürüm olarak `main`'e gönderilir.
@@ -369,3 +369,13 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Siyah kareler: kalite kademesi değişince tuval boyutu izleyicinin karesinde değişiyordu (temizlenen tuval bir kare boş kalıyordu). Artık `PERF.pend` ile boyut, oyun karesinin içinde çizimden hemen önce uygulanır. İzleyici oyuna girdikten sonraki ilk 6 sn'yi ölçmez (açılıştaki hazırlık yüzünden gereksiz düşüş olmasın).
 - Balta dersi (tz 12): adım artık eldekilerden hesaplanır (`axeNeedStep`, örsteki parçalar da sayılır), geri de gider. Yeni 5. adım: **2 taş** (Taş balta tarifinde vardı, adımlarda yoktu: taşı keskin taşa çeviren oyuncu "parçalar tamam" görüyordu). tz 13'teyken bir parça eksilirse tz 12'ye döner. Toplama adımında ok o malzemeyi gösterir.
 - Dövdükten sonra "Baltayı elime alayım" → `window.__axeHold` dersi (`<script id="v62-axe">`): yuvaya koy → eline al (yuva yanıp söner) → `tzFinish`, Ekin'e ok.
+
+## v63 — Boğaç'ın telefon notları (`<script id="v63">` + `<style id="v63-css">`)
+- Karakter yaratma: önizleme (`.cprev`) kayan kartın içinde yapışkan (dar ekranda üstte şerit), ekran her açılışta en üstten açılır (`showCreator` sarmalı; `c-go` odağı kaydırıyordu). Önizlemeyi fareyle/parmakla sürükleyince 360° döner (`V63.cang`, 8 görünüş: ön, ¾, profil, arka…; Döndür düğmesi 90°).
+- Gerçek profiller: `drawChibi` fx≠0 iken `profR` ile yandan çizer (tek göz, burun, kulak, saçın arkası; her saç stili, sakal/bıyık, gözlük, şapka ve miğfer için yan görünüş), sol profil aynalanır. Eski ¾ görünüş `o.q34` ile hâlâ çağrılabilir. Yön: baskın eksen (sağ→sağ profil, yukarı→arka, aşağı→ön); çaprazda yatay kazanır. Ev içinde sola dönüş düzeltildi. Kafa artık eldiven rengini almıyor.
+- Yumruk: elde silah yokken savuruşta yumruk görünür, sağ-sol sırayla (`__p4.sw.k==='fist'` → `o.punch`).
+- Telefon: baygınken (uyanma sahnesi, ara sahne) kaydırma işareti yok; yön yuvarlağı parmağın altında değil, sol altta sabit (girdi yine her yerden).
+- Oklar: malzeme okları (`tzmat`, `berry`) tarifin **her** eksik malzemesi için ayrı ok çizer; yerde duran (düşmüş, toplanmamış) eşyalar önce gösterilir, düğümler en çok 25 m (400 px) uzaktan.
+- Mıknatıs: yerdeki küçük eşyalar 30 px (≈2 m) içinden karaktere süzülür (oyuncunun bıraktığı aletler `keep` hariç).
+- Mavi parıltı (`gl`) kalın ve daha parlak: geniş aura + mavi kenar + açık çekirdek.
+- Otomatik yeme kalktı: tabak düğmesi ve F yiyecek listesini açar; her satırda **Ye** düğmesi. Eğitimde (tz 2) önce tabak düğmesi, sonra böğürtlenin Ye düğmesi yanıp söner.

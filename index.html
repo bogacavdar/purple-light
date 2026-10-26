@@ -3957,7 +3957,7 @@ function drawChibi(g,x,y,L,o){
   armSide(-front,arm==='up'?'up':'down');armSide(front,arm);
   // head
   const hy=y-16;
-  p(x-4,hy,8,10,(o.glove||L.skin));p(x-5,hy+1,10,8,(o.glove||L.skin));p(x-5,hy+8,1,1,L.skinD);p(x+4,hy+8,1,1,L.skinD);
+  p(x-4,hy,8,10,L.skin);p(x-5,hy+1,10,8,L.skin);p(x-5,hy+8,1,1,L.skinD);p(x+4,hy+8,1,1,L.skinD);
   // v47: many hair styles, beards, thin glasses and hats with their own silhouettes
   const HS=L.hs||(L.long?'long':L.tuft?'short':'short'),HC=L.hair,HD=L.hairD,HLc=L.hairL;
   if(back){
@@ -5568,7 +5568,7 @@ function frameBody(now){
   else if(mx||my){goal=null}
   else if(goal){const st=stepGoal(dt);if(st){mx=st[0];my=st[1]}}
   player.run=false;
-  if(mx||my){const l=Math.hypot(mx,my);mx/=l;my/=l;player.face={x:Math.sign(Math.round(mx)),y:Math.sign(Math.round(my))};
+  if(mx||my){const l=Math.hypot(mx,my);mx/=l;my/=l;player.face=Math.abs(mx)>=Math.abs(my)*.92?{x:Math.sign(mx),y:0}:{x:0,y:Math.sign(my)};
     if(!player.face.x&&!player.face.y)player.face={x:Math.sign(mx),y:0};
     const run=wantsRun();player.run=run;const inMud=mudAt(player.x,player.y)&&!mudProof();const sp=72*dt*speedMult()*spdK*(run?runMult():1)*(inMud?.6:1)*(weather.k==='fırtına'&&!ashStorm()?.93:1);
     if(inMud&&Math.random()<dt*8)parts.push({x:player.x+(Math.random()-.5)*6,y:player.y+1,vx:(Math.random()-.5)*10,vy:-8,life:.3,c:'#4a3a22'});
@@ -7089,7 +7089,7 @@ function sisLoop(now){if(!sis.on)return;const dt=Math.min(.05,Math.max(0,(now-(s
 function sisTick(dt){if(sis.stage>=2){sis.end+=dt;if(sis.end>14&&sis.stage===2){sis.stage=3;sisFinish()}return}
   let mx=(sis.keys.d?1:0)-(sis.keys.a?1:0),my=(sis.keys.s?1:0)-(sis.keys.w?1:0);
   if(!mx&&!my&&sis.goal){const dx=sis.goal.x-sis.x,dy=sis.goal.y-sis.y,d=Math.hypot(dx,dy);if(d<3){const g=sis.goal;sis.goal=null;if(g.act)sisAct()}else{mx=dx/d;my=dy/d}}
-  if(mx||my){const l=Math.hypot(mx,my);mx/=l;my/=l;sis.face={x:Math.abs(mx)>.4?Math.sign(mx):0,y:Math.abs(my)>.4?Math.sign(my):0};const sp=58*dt,nx=sis.x+mx*sp,ny=sis.y+my*sp;let moved=false;
+  if(mx||my){const l=Math.hypot(mx,my);mx/=l;my/=l;sis.face=Math.abs(mx)>=Math.abs(my)*.92?{x:Math.sign(mx),y:0}:{x:0,y:Math.sign(my)};const sp=58*dt,nx=sis.x+mx*sp,ny=sis.y+my*sp;let moved=false;
     if(sisFree(nx,sis.y)){sis.x=nx;moved=true}if(sisFree(sis.x,ny)){sis.y=ny;moved=true}if(!moved)sis.goal=null;sis.step+=dt}
   const it=sisNear();if(sis.stage===0&&it&&!sis.found.has(it.id)&&!sis.capFor)sisCap(`${TOUCH?'Dokun':'<b>E</b>'}: ${esc(it.n)}`);
   if(sis.stage===1&&Math.hypot(sis.x-360,sis.y-226)<16){sis.stage=2;sis.end=0;sfx('magic');try{audio.play('deep',{vol:.9})}catch(e){}}
@@ -7472,7 +7472,13 @@ function halo(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();
   ctx.fillStyle=g;ctx.beginPath();ctx.ellipse(x,y,r,r*.72,0,0,Math.PI*2);ctx.fill();ctx.restore()}
 function ring(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.strokeStyle=`rgba(170,225,255,${(.6+.4*p).toFixed(3)})`;ctx.lineWidth=1.5;ctx.beginPath();ctx.ellipse(x,y,r+p*1.5,(r+p*1.5)*.62,0,0,Math.PI*2);ctx.stroke();ctx.restore()}
 // v49-p3: the glow is the object's own silhouette (canvas shadow around every drawn pixel), pulsing
-function gl(on,k,f){if(!on)return f();if(PERF.lvl>=2){f();const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.18+.22*p;f();ctx.restore();return}const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;ctx.shadowColor=`rgba(90,190,255,${(.8+.2*p).toFixed(3)})`;ctx.shadowBlur=(2.2+2.2*p)*S*dpr;f();ctx.shadowColor=`rgba(190,235,255,${(.45+.4*p).toFixed(3)})`;ctx.shadowBlur=1.2*S*dpr;f();ctx.restore()}
+function gl(on,k,f){if(!on)return f();const p=.5+.5*Math.sin(time*4.2+k);
+  if(PERF.lvl>=2){ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;ctx.shadowColor=`rgba(70,170,255,${(.9+.1*p).toFixed(3)})`;ctx.shadowBlur=(3+2*p)*S*dpr;f();ctx.restore();ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.25+.25*p;f();ctx.restore();return}
+  ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;   // v63: a wide blue aura, a strong blue rim and a bright white-blue edge
+  ctx.shadowColor=`rgba(40,150,255,${(.85+.15*p).toFixed(3)})`;ctx.shadowBlur=(5+4*p)*S*dpr;f();f();
+  ctx.shadowColor=`rgba(110,200,255,1)`;ctx.shadowBlur=(2+1.2*p)*S*dpr;f();
+  ctx.shadowColor=`rgba(225,245,255,${(.75+.25*p).toFixed(3)})`;ctx.shadowBlur=1*S*dpr;f();ctx.restore();
+  ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.08+.14*p;f();ctx.restore()}
 const _drawNode=drawNode;drawNode=function(n,t){const on=(B3.glow.size&&B3.glow.has(n.name))||QG.n.has(n.name),a=arguments,me=this;gl(on,n.v*6,()=>_drawNode.apply(me,a))};
 const _drawDrops=drawDrops;drawDrops=function(t,inView){_drawDrops.apply(this,arguments);if((B3.dropN&&B3.dropN.size)||QG.d.size){for(const d of drops){if(d.t<1||!inView(d.x,d.y,12)||!((B3.dropN&&B3.dropN.has(d.n))||QG.d.has(d.n)))continue;const c=ICONC[d.n];if(!c)continue;const h=1+Math.sin(time*3+d.ph);gl(true,d.ph,()=>ctx.drawImage(c,Math.round(d.x-4.5),Math.round(d.y-7-h),9,9))}}};
 const _drawAnimal=drawAnimal;drawAnimal=function(a,t){const on=(B3.glowAnim.size&&B3.glowAnim.has(a.k))||QG.a.has(a.k),ar=arguments,me=this;gl(on,a.x*.1,()=>_drawAnimal.apply(me,ar))};
@@ -9621,7 +9627,7 @@ function draw(t){const vw_=innerWidth,vh_=innerHeight,dp=dpr||1;if(cv2.width!==M
   for(const it of its){const D=DEC[it.n];if(!D)continue;const [w,h]=fp(it);if(D.L==='wall')D.d(g,it.x*16,8,t);}
   for(const it of its){const D=DEC[it.n];if(!D||D.L!=='rug')continue;D.d(g,it.x*16,WALL+it.y*16,t)}
   for(const it of its){const D=DEC[it.n];if(!D||D.L!=='floor')continue;const [w,h]=fp(it);vis.push({y:WALL+(it.y+h)*16,f:()=>D.d(g,it.x*16,WALL+it.y*16,t)})}
-  vis.push({y:R.y+1,f:()=>drawChibi(g,Math.round(R.x),Math.round(R.y),LOOK.hero,{fx:R.face<0?1:0,step:R.goal||R.keys.w||R.keys.a||R.keys.s||R.keys.d?R.step:0})});
+  vis.push({y:R.y+1,f:()=>drawChibi(g,Math.round(R.x),Math.round(R.y),LOOK.hero,{fx:R.face<0?-1:1,step:R.goal||R.keys.w||R.keys.a||R.keys.s||R.keys.d?R.step:0})});
   vis.sort((a,b)=>a.y-b.y);for(const v of vis)v.f();
   // light: windows by day, lamps (or the dark) by night
   if(dusk>.05){const lamps=its.filter(it=>DEC[it.n]&&DEC[it.n].k==='lamp');g.save();g.globalAlpha=Math.min(.86,dusk*(lamps.length?.55:.95));g.fillStyle='#08060e';g.fillRect(-4,-4,W_+8,WALL+H_+14);g.restore();
@@ -10066,5 +10072,217 @@ let pul=0;setInterval(()=>{try{if(tz!==13||!window.__axeHold||onTitle)return;con
 const _r=restore;restore=function(d){const r=_r.apply(this,arguments);window.__axeHold=tz===13&&(inv['Taş balta']||0)>0?1:0;return r};
 }).toString()+')()')}catch(e){try{window.__hamErr('v62: '+(e&&e.message||e))}catch(_){}}})();
 </script>
+<script id="v63">
+// =====================================================================================================
+// v63 (Boğaç'ın telefon notları): karakter yaratma ekranı (önizleme hep görünür, en üstten açılır, sürükleyerek
+// 360° çevirme), baygınken kaydırma dersi yok, yön yuvarlağı sol altta sabit, malzeme okları (yerdekiler dahil,
+// 25 m sınırı, tarifin bütün malzemeleri), mıknatıs toplama, otomatik yeme yok (tabak düğmesi listeyi açar),
+// yumruk animasyonu ve dört yönlü gerçek profiller (sağ/sol profil, arka, ön).
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const V63={pl:false,punch:null,pside:1,hand:1,lastSw:null,cang:0};window.__v63=V63;
+
+// ---------------------------------------------------------------- 1 · side profiles (right; left is the mirror)
+const OLDB={sakal:['kalin','kisa'],biyik:['kalin','yok'],keci:['ince','keci']};
+function profR(g,x,y,L,o){
+  const p=(a,b,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round(a),Math.round(b),w,h)};
+  if(!o.noShadow)p(x-5,y+1,10,3,'rgba(0,0,0,.28)');
+  y+=o.bob||0;
+  const st=o.step||0,arm=o.arm||'down',SK=L.skin,SD=L.skinD||shade(SK,.85),HAND=o.glove||SK,EYE=L.eye||'#2a1f08';
+  const HS=L.hs||(L.long?'long':'short'),kel=HS==='kel',HC=L.hair||'#5a3d22',HD=L.hairD||shade(HC,.7),HLc=L.hairL||shade(HC,1.25);
+  const HAT=!o.helm&&L.hat&&L.hat!=='none',DR=L.dress!=null?L.dress:L.long,sl=L.shirtD||shade(L.shirt,.75),hy=y-16,sw=st>0?1:st<0?-1:0;
+  // behind everything: long hair, the far twin tail
+  if(!kel){if(HS==='long'){p(x-6,hy+5,4,9,HC);p(x-6,hy+13,4,1,HD)}if(HS==='twin'){p(x-8,hy+2,2,9,HD);p(x-8,hy+2,2,1,'#e85a8a')}}
+  // the far arm swings the other way, behind the body
+  if(!o.sit&&(arm==='down'||o.punch!=null))p(x-1+sw,y-6,1,3,shade(sl,.8));
+  // legs: one in front of the other, a stride while walking
+  if(!o.sit){const bo=o.boot||'#4a3020',PD=shade(L.pants,.78),bl=x-1-sw,fl=x-1+sw;
+    p(bl,y-1,2,2,PD);p(bl,y+1,3,1,shade(bo,.8));p(fl,y-1,2,2,L.pants);p(fl,y+1,3,1,bo);if(o.boot)p(fl,y,2,1,bo)}
+  // body, seen from the side (narrower)
+  if(DR){p(x-3,y-6,6,4,L.shirt);p(x-4,y-3,8,2,L.shirt);p(x-4,y-2,8,1,sl);p(x+1,y-6,2,1,'#ffffff')}
+  else{p(x-3,y-6,6,5,L.shirt);p(x-3,y-2,6,1,sl);p(x+1,y-6,1,1,sl)}
+  // the near arm
+  if(o.punch!=null){const k=o.punch,len=1+Math.round(5*k),fy=y-7+(o.pside<0?1:0);p(x,y-6+(o.pside<0?1:0),len+1,1,sl);
+    p(x+1+len-1,fy-1,4,4,'rgba(17,23,15,.55)');p(x+1+len,fy,2,2,HAND);p(x+1+len,fy,2,1,shade(HAND,1.18))}
+  else if(arm==='reach'){p(x+1,y-6,4,1,sl);p(x+5,y-6,1,1,HAND)}
+  else if(arm==='up'){p(x,y-11,1,5,sl);p(x,y-12,1,1,HAND)}
+  else if(arm==='fork'){const h=y-5-Math.round((o.ph||0)*4);p(x+1,h,1,(y-4)-h,sl);p(x+1,h,2,1,sl);p(x+3,h,1,1,HAND);p(x+3,h-2,1,2,'#c8c8d0')}
+  else{const ax=x-sw;p(ax,y-6,1,3,sl);p(ax,y-3,1,1,HAND)}
+  // head: the face looks right; a nose, one eye, the ear at the back
+  p(x-4,hy,8,10,SK);p(x-5,hy+1,10,8,SK);p(x+5,hy+5,1,1,SK);p(x+3,hy+8,1,1,SD);p(x-5,hy+8,1,1,SD);
+  p(x-2,hy+4,2,2,SD);p(x-1,hy+5,1,1,SK);
+  if(o.closed)p(x+1,hy+6,2,1,EYE);else{p(x+1,hy+4,2,3,EYE);p(x+2,hy+4,1,1,'#ffffff')}
+  if(o.sick)p(x-5,hy+1,10,8,'rgba(110,190,70,.45)');
+  p(x,hy+7,1,1,o.sick?'#7ab040':'#ff9a9a');
+  // beard + moustache (the v48 kinds, and the older v47 ones)
+  let bi=null,sb=null;if(L.beard==='v48'){bi=L.bi;sb=L.sk}else if(OLDB[L.beard]){bi=OLDB[L.beard][0];sb=OLDB[L.beard][1]}
+  if(sb==='kirli'){g.save();g.globalAlpha=.5;for(let yy=hy+6;yy<=hy+9;yy++)for(let xx=x-2;xx<=x+3;xx++){if((xx+yy)&1)continue;p(xx,yy,1,1,HC)}g.restore()}
+  else if(sb==='kisa'){p(x-2,hy+6,1,3,HC);p(x-1,hy+8,5,2,HC);p(x,hy+10,3,1,HD)}
+  else if(sb==='uzun'){p(x-2,hy+6,1,4,HC);p(x-1,hy+8,5,3,HC);p(x,hy+11,4,2,HC);p(x+1,hy+13,2,1,HD);p(x+1,hy+10,1,2,HD)}
+  else if(sb==='keci'){p(x+2,hy+9,2,3,HC);p(x+2,hy+11,2,1,HD)}
+  if(bi==='ince')p(x+2,hy+7,3,1,HC);
+  else if(bi==='kalin'){p(x+1,hy+7,4,1,HC);p(x+1,hy+8,1,1,HC)}
+  else if(bi==='pala'){p(x+1,hy+7,4,1,HC);p(x+1,hy+6,1,1,HC);p(x+5,hy+6,1,1,HC)}
+  else if(bi==='sarkik'){p(x+2,hy+7,3,1,HC);p(x+2,hy+8,1,2,HC);p(x+4,hy+8,1,2,HC)}
+  if(o.mouth)p(x+3,hy+8,2,1,'#8a3a2a');else if(!o.closed&&sb!=='kisa'&&sb!=='uzun')p(x+3,hy+8,1,1,'#c0604a');
+  // hair, per style, from the side
+  if(kel){if(!HAT&&!o.helm)p(x-2,hy,3,1,shade(SK,1.25))}
+  else if(HS==='buzz'){p(x-5,hy-1,9,2,HD);p(x-4,hy-2,7,1,HD);p(x-5,hy+1,3,4,HD);p(x-2,hy-1,3,1,HC)}
+  else{
+    p(x-5,hy-3,9,2,HC);p(x-6,hy-1,11,2,HC);p(x-3,hy-3,4,1,HLc);
+    p(x-6,hy+1,4,6,HC);p(x-2,hy+1,1,2,HC);p(x-6,hy+7,2,1,HD);
+    if(HS==='side'){p(x,hy+1,5,2,HC);p(x+4,hy+3,1,1,HC);p(x+1,hy-1,1,1,HLc)}
+    else if(HS==='bob'||HS==='pixie'){p(x+1,hy+1,4,2,HC);if(HS==='pixie'){p(x+3,hy+3,1,1,HC);p(x-6,hy+1,2,1,HLc)}else{p(x-6,hy+5,5,4,HC);p(x-6,hy+8,5,1,HD)}}
+    else{p(x+1,hy+1,4,1,HC);p(x+4,hy+2,1,1,HC)}
+    if(HS==='messy'){p(x-7,hy,1,2,HC);p(x-5,hy-4,2,1,HC);p(x+1,hy-4,2,1,HC);p(x+4,hy+1,1,2,HC);p(x-7,hy+4,1,2,HC)}
+    if(HS==='spiky'&&!HAT){for(let k=0;k<4;k++){p(x-6+k*3,hy-5,2,2,HC);p(x-7+k*3,hy-6,1,1,HC)}p(x-2,hy-5,1,1,HLc)}
+    if(HS==='long'){p(x-6,hy+5,3,7,HC)}
+    if(HS==='tail'){p(x-8,hy+1,2,8,HC);p(x-8,hy+8,2,1,HD);p(x-7,hy+1,2,1,'#c84a5a')}
+    if(HS==='braid'){for(let k=0;k<8;k++)p(x-7+(k%2),hy+5+k,2,1,k%2?HD:HC);p(x-7,hy+13,2,1,'#c84a5a')}
+    if(HS==='bun'&&!HAT){p(x-7,hy-5,4,4,HC);p(x-6,hy-6,2,1,HC);p(x-6,hy-5,2,1,HLc);p(x-7,hy-2,4,1,HD)}
+    if(HS==='twin'){p(x-4,hy+3,2,9,HC);p(x-4,hy+11,2,1,HD);p(x-4,hy+3,2,1,'#e85a8a')}
+    if((HS==='short'||HS==='side'||HS==='pixie')&&!HAT&&!o.helm){p(x,hy-5,1,2,HC);p(x+1,hy-6,1,1,HC)}
+  }
+  // glasses: the near lens and the arm to the ear
+  if(L.gl&&L.gl!=='none'){
+    if(L.gl==='sun'){const c='#15151c';p(x+1,hy+4,3,2,c);p(x+2,hy+6,1,1,c);p(x-2,hy+4,3,1,c);p(x+1,hy+4,1,1,'#5a6a8a')}
+    else if(L.gl==='kare'){const c='#2a2a34';p(x+1,hy+3,3,1,c);p(x+1,hy+7,3,1,'rgba(42,42,52,.55)');p(x+3,hy+3,1,4,c);p(x-2,hy+4,3,1,c)}
+    else{const c='#b88a3a';p(x+1,hy+3,2,1,c);p(x+1,hy+7,2,1,c);p(x,hy+4,1,3,c);p(x+3,hy+4,1,3,c);p(x+2,hy+5,1,1,'rgba(230,245,255,.55)');p(x-2,hy+4,2,1,c)}}
+  // helmet / hats from the side
+  if(o.helm){p(x-6,hy-3,11,4,o.helm);p(x-5,hy-4,9,1,o.helm);p(x-3,hy-4,4,1,shade(o.helm,1.2));p(x-6,hy+1,4,5,o.helm);p(x-6,hy+1,11,1,shade(o.helm,.7))}
+  else if(HAT){const hc=L.hatC||'#c84a3a',hd=shade(hc,.7),hl=shade(hc,1.25),H=L.hat;
+    if(H==='hasir'){p(x-10,hy-1,20,2,'#e8c870');p(x-10,hy,20,1,'#b8903a');p(x-5,hy-6,9,5,'#e0bc60');p(x-4,hy-7,7,1,'#e8c870');p(x-5,hy-3,9,1,'#8a3a2a')}
+    else if(H==='bere'){p(x-6,hy-4,11,5,hc);p(x-5,hy-6,9,2,hc);p(x-3,hy-7,5,1,hc);p(x-6,hy,11,2,hd);for(let k=-5;k<5;k+=2)p(x+k,hy,1,2,hl);p(x-3,hy-10,4,3,'#f4f0e8');p(x-2,hy-11,2,1,'#f4f0e8')}
+    else if(H==='kasket'){p(x-6,hy-4,11,4,hc);p(x-5,hy-5,9,1,hc);p(x-1,hy-6,2,1,hl);p(x-6,hy-1,11,1,hd);p(x+3,hy,6,2,hd);p(x+3,hy,6,1,hl)}
+    else if(H==='bandana'){p(x-6,hy-3,11,3,hc);p(x-5,hy-4,9,1,hc);for(let k=-4;k<5;k+=3)p(x+k,hy-2,1,1,'#f4f0e8');p(x-8,hy-1,2,2,hc);p(x-9,hy+1,2,3,hd)}
+    else if(H==='kovboy'){p(x-11,hy-1,22,2,'#8a5a2e');p(x-12,hy-2,2,1,'#8a5a2e');p(x+10,hy-2,2,1,'#8a5a2e');p(x-5,hy-7,10,6,'#a06a38');p(x-4,hy-8,8,1,'#a06a38');p(x-5,hy-3,10,1,'#3a2414')}
+    else if(H==='silindir'){p(x-8,hy-1,16,2,'#1c1c24');p(x-5,hy-11,9,10,'#24242e');p(x-5,hy-11,9,1,'#3a3a48');p(x-5,hy-4,9,2,hc);p(x+2,hy-10,1,6,'#3a3a48')}
+    else if(H==='fes'){p(x-4,hy-7,7,7,'#b82a2a');p(x-4,hy-7,7,1,'#d84a3a');p(x-5,hy-1,9,1,'#8a1a1a');p(x,hy-8,1,1,'#2a1a10');p(x-5,hy-7,1,5,'#2a1a10');p(x-6,hy-3,3,1,'#2a1a10')}
+    else if(H==='korsan'){p(x-7,hy-2,13,3,'#1c1c22');p(x-5,hy-6,10,4,'#24242c');p(x-3,hy-8,6,2,'#24242c');p(x-7,hy-2,13,1,'#c8a848');p(x-1,hy-5,2,2,'#f4f0e8')}
+    else if(H==='tac'){const cs=['#ff6a9a','#ffd27a','#ffffff','#9ad0ff','#ff6a9a'];p(x-6,hy-2,11,1,'#4a8a3a');for(let k=0;k<5;k++){const cx=x-6+k*2+(k>2?1:0);p(cx,hy-4,2,2,cs[k]);p(cx,hy-4,1,1,'#ffffff')}}}
+  if((L.flower!=null?L.flower:L.long)&&!HAT&&!o.helm){p(x-4,hy-4,3,2,'#ffffff');p(x-3,hy-3,1,1,'#ff5a8a')}
+}
+// a fist thrown toward the camera (front) or up past the head (back)
+function fistFB(g,x,y,L,o){const p=(a,b,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round(a),Math.round(b),w,h)};
+  const k=o.punch,s=o.pside||1,HAND=o.glove||L.skin,sl=L.shirtD||shade(L.shirt,.75),fy=o.fy==null?1:o.fy;y=Math.round(y+(o.bob||0));x=Math.round(x);
+  if(fy<0){const len=1+Math.round(4*k),ax=s<0?x-5:x+4;p(ax,y-6-len,1,len+1,sl);p(ax-(s<0?1:0),y-8-len,2,2,HAND)}
+  else{const sz=2+Math.round(k*2),cx=(s<0?x-3:x+3)+Math.round(s*k),cy=y-6+Math.round(k*2);p(s<0?x-5:x+4,y-6,1,2,sl);
+    p(cx-Math.floor(sz/2)-1,cy-1,sz+2,sz+2,'rgba(17,23,15,.55)');p(cx-Math.floor(sz/2),cy,sz,sz,HAND);p(cx-Math.floor(sz/2),cy,sz,1,shade(HAND,1.18))}}
+const _dc=drawChibi;
+drawChibi=function(g,x,y,L,o){o=o||{};
+  if(V63.pl&&V63.punch!=null)o=Object.assign({},o,{punch:V63.punch,pside:V63.pside});
+  const fx=o.fx||0;
+  if(fx&&!o.q34){x=Math.round(x);y=Math.round(y);
+    if(fx>0)profR(g,x,y,L,o);else{g.save();g.translate(2*x,0);g.scale(-1,1);profR(g,x,y,L,o);g.restore()}return}
+  const o2=o.punch!=null?Object.assign({},o,{arm:'down'}):o;
+  _dc.call(this,g,x,y,L,o2);
+  if(o.punch!=null&&!fx)fistFB(g,x,y,L,o)};
+// bare-handed swings: the fists come out (left, right, left…)
+const _dp=drawPlayer;drawPlayer=function(){const P=window.__p4,S=P&&P.sw;V63.punch=null;
+  if(S&&S.k==='fist'){if(S!==V63.lastSw){V63.lastSw=S;V63.hand=-V63.hand}const a=S.ant,b=a+S.str,t=S.t;let k;
+    if(t<a)k=0;else if(t<b)k=(t-a)/Math.max(.001,S.str);else k=Math.max(0,1-(t-b)/Math.max(.001,S.fol));V63.punch=Math.max(0,Math.min(1,k));V63.pside=V63.hand}
+  V63.pl=true;try{return _dp.apply(this,arguments)}finally{V63.pl=false}};
+
+// ---------------------------------------------------------------- 2 · the character creator
+const cc=document.querySelector('#creator .ccard'),cp=$('cprev');
+{const h=document.createElement('p');h.className='v63rh';h.textContent=TOUCH?'Parmağınla sürükle: karakteri çevir':'Fareyle sürükle: karakteri çevir';const cr=document.querySelector('#creator .crot');if(cr)cr.after(h)}
+const VIEWS=[{fx:0,fy:1},{fx:1,fy:1,q34:1},{fx:1,fy:0},{fx:1,fy:-1,q34:1,back:1},{fx:0,fy:-1},{fx:-1,fy:-1,q34:1,back:1},{fx:-1,fy:0},{fx:-1,fy:1,q34:1}];
+cDraw=function(){const g=cp.getContext('2d');g.clearRect(0,0,64,64);const L=buildLook();
+  const a=((cRot*90+V63.cang)%360+360)%360;let V=VIEWS[Math.round(a/45)%8];if(V.back)V={fx:0,fy:-1};
+  g.save();g.translate(32,40);g.scale(2,2);drawChibi(g,0,0,L,Object.assign({noShadow:0},V));g.restore()};
+{let dr=null;
+  cp.addEventListener('pointerdown',e=>{dr={id:e.pointerId,x:e.clientX};try{cp.setPointerCapture(e.pointerId)}catch(_){}e.preventDefault()});
+  cp.addEventListener('pointermove',e=>{if(!dr||e.pointerId!==dr.id)return;const dx=e.clientX-dr.x;if(!dx)return;dr.x=e.clientX;V63.cang+=dx*1.6;cDraw();e.preventDefault()});
+  const up=e=>{if(dr&&e.pointerId===dr.id)dr=null};cp.addEventListener('pointerup',up);cp.addEventListener('pointercancel',up)}
+const _sc=showCreator;showCreator=function(){V63.cang=0;const r=_sc.apply(this,arguments);const top=()=>{try{if(cc)cc.scrollTop=0}catch(e){}};top();setTimeout(top,0);setTimeout(top,30);setTimeout(top,150);return r};
+
+// ---------------------------------------------------------------- 3 · touch: no swipe lesson while you lie fainted; the stick is drawn fixed bottom-left
+drawJoy=function(){
+  if(!JOYMODE()||onTitle||craftOpen||dlgOpen||paused||fading)return;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  if(joy.on&&joy.touch){let sal=0,sab=0;try{const cs=getComputedStyle(document.documentElement);sal=parseFloat(cs.getPropertyValue('--sal'))||0;sab=parseFloat(cs.getPropertyValue('--sab'))||0}catch(e){}
+    const R=Math.min(JOY_R,44),bx=sal+22+R,by=innerHeight-sab-22-R,k=Math.min(1,joy.mag),kx=bx+joy.vx*k*R,ky=by+joy.vy*k*R;
+    ctx.globalAlpha=.22;ctx.fillStyle='#11170f';ctx.beginPath();ctx.arc(bx,by,R,0,Math.PI*2);ctx.fill();ctx.globalAlpha=.4;ctx.strokeStyle='#f3ecd8';ctx.lineWidth=2;ctx.stroke();
+    ctx.globalAlpha=.5;ctx.fillStyle='#f3ecd8';ctx.beginPath();ctx.arc(kx,ky,17,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1}
+  if(wake||cine.on)return;
+  if(tut!==0&&!(tz===1&&(!walked||!tapMoved)))return;
+  const psx=(player.x-cam.cx)*S,psy=(player.y-cam.cy)*S;
+  if(!walked&&!joy.on){const c=(time%2.2)/2.2,x0=psx-60,y0=psy+70;
+    if(c<.15)fingertip(x0,y0,c/.15,false);
+    else if(c<.75){const k=(c-.15)/.6,e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;ctx.strokeStyle='rgba(255,255,255,.35)';ctx.lineWidth=6;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x0+120*e,y0);ctx.stroke();fingertip(x0+120*e,y0,1,true)}
+    else fingertip(x0+120,y0,1-(c-.75)/.25,false)}
+  else if(walked&&!tapMoved){const x=psx+90,y=psy+40;tapRings(x,y,time);fingertip(x,y,.5+.5*Math.abs(Math.sin(time*3)),Math.sin(time*3)>0)}};
+
+// ---------------------------------------------------------------- 4 · arrows for materials: things on the ground count, nothing farther than 25 m, every ingredient gets one
+const LIM=25*16;
+function matTarget(name){let b=null,bd=1e9;
+  for(const d of drops){if(d.n!==name)continue;const x=d.t<1?d.tx:d.x,y=d.t<1?d.ty:d.y,dd=Math.hypot(x-player.x,y-player.y);if(dd<bd){bd=dd;b={x,y,n:name,d:dd,drop:1}}}
+  if(b)return b;
+  for(const n of nodes){if(!n.alive||n.name!==name)continue;const dd=Math.hypot(n.x-player.x,n.y-player.y);if(dd<=LIM&&dd<bd&&reachAt(n.x,n.y)){bd=dd;b={x:n.x,y:n.y,n:name,d:dd}}}
+  return b}
+function matNames(k){if(k==='tzmat')return tzNeed();if(k==='berry')return['Böğürtlen'];return null}
+function matTargets(k){const N=matNames(k)||[],L=[];for(const n of N){if(L.some(t=>t.n===n))continue;const t=matTarget(n);if(t)L.push(t)}return L.sort((a,b)=>a.d-b.d)}
+tzMat=function(){const L=matTargets('tzmat');return L.length?{x:L[0].x,y:L[0].y,n:L[0].n}:{x:player.x,y:player.y,n:''}};
+GUIDE.tzmat=tzMat;
+GUIDE.berry=function(){const t=matTarget('Böğürtlen');return t?{x:t.x,y:t.y,n:'Böğürtlen'}:{x:player.x,y:player.y,n:''}};
+function arrowAt(g,i,time,cx,cy,vW,vH,lab){
+  const onScr=g.x>cx+6&&g.x<cx+vW-6&&g.y>cy+16&&g.y<cy+vH-6,b=Math.round(Math.sin(time*6+i)*2);
+  if(onScr&&g.d>=14){const x=Math.round(g.x),y=Math.round(g.y)-(g.drop?16:26)+b;
+    px(x-2,y-8,5,7,'#11170f');px(x-5,y-2,11,2,'#11170f');px(x-4,y,9,2,'#11170f');px(x-2,y+2,5,2,'#11170f');
+    px(x-1,y-7,3,6,'#f2b84b');px(x-4,y-1,9,1,'#f2b84b');px(x-3,y,7,1,'#f2b84b');px(x-2,y+1,5,1,'#f2b84b');px(x-1,y+2,3,1,'#f2b84b');px(x,y+3,1,1,'#f2b84b')}
+  if(g.d<30||(onScr&&g.d<110))return;
+  const a=Math.atan2(g.y-(player.y-6),g.x-player.x),r=26+Math.sin(time*5+i)*1.5,ox=player.x+Math.cos(a)*r,oy=player.y-6+Math.sin(a)*r;
+  const tip=[ox+Math.cos(a)*7,oy+Math.sin(a)*7],l=[ox+Math.cos(a+2.4)*6,oy+Math.sin(a+2.4)*6],rr=[ox+Math.cos(a-2.4)*6,oy+Math.sin(a-2.4)*6];
+  ctx.beginPath();ctx.moveTo(tip[0],tip[1]);ctx.lineTo(l[0],l[1]);ctx.lineTo(ox,oy);ctx.lineTo(rr[0],rr[1]);ctx.closePath();
+  ctx.lineWidth=2;ctx.strokeStyle='#11170f';ctx.stroke();ctx.fillStyle='#f2b84b';ctx.fill();
+  const m=Math.max(1,Math.round(g.d/16)),R=44+lab*13,tx=player.x+Math.cos(a)*R,ty=player.y-6+Math.sin(a)*(R-4)+2;
+  ctx.font='bold 6px Rubik, system-ui, sans-serif';ctx.textAlign='center';ctx.lineWidth=2;ctx.strokeStyle='rgba(17,23,15,.9)';
+  const t1=g.n,t2=m+' m';ctx.strokeText(t1,tx,ty);ctx.fillStyle='#ffe2a0';ctx.fillText(t1,tx,ty);ctx.strokeText(t2,tx,ty+7);ctx.fillStyle='#f2b84b';ctx.fillText(t2,tx,ty+7)}
+const _dg=drawGuide;
+drawGuide=function(time,cx,cy,vW,vH,scale){
+  const k=guideKey();if(!k||!matNames(k))return _dg.apply(this,arguments);
+  const L=matTargets(k);if(!L.length)return;
+  ctx.setTransform(scale,0,0,scale,-Math.round(cx*scale),-Math.round(cy*scale));
+  const ang=[];L.forEach((g,i)=>{const a=Math.atan2(g.y-(player.y-6),g.x-player.x);let lab=0;for(const b of ang)if(Math.abs(Math.atan2(Math.sin(a-b),Math.cos(a-b)))<.6)lab++;ang.push(a);arrowAt(g,i,time,cx,cy,vW,vH,lab)})};
+
+// ---------------------------------------------------------------- 5 · a gentle magnet: small things on the ground drift to you when you pass close by
+const MAG=30;
+const _td=tickDrops;tickDrops=function(dt){
+  if(!sailing&&!wake){for(const d of drops){if(d.t<1||d.age<.5||d.keep)continue;const dx=player.x-d.x,dy=player.y-2-d.y,dd=Math.hypot(dx,dy);
+    if(dd<MAG&&dd>.5){const sp=(45+(MAG-dd)*8)*dt,k=Math.min(1,sp/dd);d.x+=dx*k;d.y+=dy*k}}}
+  return _td.apply(this,arguments)};
+
+// ---------------------------------------------------------------- 6 · no auto-eating: the plate button (and F) opens the food list; you pick and press Ye
+eatBest=function(){if(onTitle||paused||wake)return;if(craftOpen&&mode==='eat'){closeCraft();return}openEat()};
+{const eb=$('b-eat');if(eb){eb.setAttribute('aria-label','Yemek (F) · yiyeceklerini aç, ne yiyeceğini seç');eb.title='Yemek (F) · yiyecek listesini aç'}}
+renderEat=function(){const L=eatList();
+  cbody.innerHTML=`<p class="note">Tokluk <b>${Math.ceil(food)}</b> / 100 · Can <b>${Math.ceil(hp)}</b> / ${maxHP()}. Neyi yiyeceğini sen seç ve yanındaki <b>Ye</b> düğmesine bas: pişmiş yemekler daha doyurur, bazıları bir süre ek güç verir.</p>`+
+  (L.length?`<div class="v63eat">${L.map(n=>{const f=foodVal(n),h=healVal(n),b=buffOf(n);
+    return `<div class="v63er"><img src="${icon(n)}" alt=""><span class="v63en"><b>${esc(n)}</b> <small>×${inv[n]}</small><br><small>${f?'+'+f+' tokluk':''}${h?' +'+h+' can':''}${b?` · <span style="color:${BUFFS[b[0]].c}">${BUFFS[b[0]].n} ${String(Math.round(b[1]/60*10)/10).replace('.',',')} dk</span>`:''}${isRawMeat(n)?' · <span style="color:#ff8a6a">çiğ: mideye dokunabilir</span>':''}${poisonKnown.has(n)?' · <span style="color:#9ad84a">zehirli!</span>':''}</small></span><button type="button" class="v63ye" data-eat="${esc(n)}" aria-label="${esc(n)} ye">Ye</button></div>`}).join('')}</div>`:'<p class="note">Yiyecek bir şeyin kalmadı.</p>');
+  if(tz===2){const b=cbody.querySelector('[data-eat="Böğürtlen"]');if(b)b.classList.add('pulse')}};
+const _tk=tzKey;tzKey=function(k){if(k==='eat')return TOUCH?'soldaki <b>tabak düğmesine</b> dokun':'<span class="kc">F</span> tuşuna bas ya da soldaki <b>tabak düğmesine</b> tıkla';return _tk.apply(this,arguments)};
+const _tc=tzCard;tzCard=function(){if(tz===2){const n=Math.min(5,tzEat);
+    return['ekin','Ekin · Ye',craftOpen&&mode==='eat'?`Şimdi <b>böğürtlenin yanındaki Ye</b> düğmesine bas (yanıp sönüyor). Her basışta bir tane yersin; beşini de ye. (Yenen ${n}/5)`
+      :`Şimdi ye: ${tzKey('eat')}. Yiyeceklerin açılır; <b>böğürtlenin yanındaki Ye</b> düğmesine bas. Beşini de ye. (Yenen ${n}/5)`]}
+  return _tc.apply(this,arguments)};
+const _rt=renderTut;renderTut=function(){const r=_rt.apply(this,arguments);try{const eb=$('b-eat'),fb=$('fdbar');
+  if(tz===2){if(fb)fb.classList.remove('pulse');if(eb)eb.classList.toggle('pulse',!(craftOpen&&mode==='eat'))}else if(eb&&eb.classList.contains('pulse')&&!(!tz&&ytut===2))eb.classList.remove('pulse')}catch(e){}return r};
+renderTut();
+}).toString()+')()')}catch(e){try{window.__hamErr('v63: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<style id="v63-css">
+#cprev{touch-action:none;cursor:grab}#cprev:active{cursor:grabbing}
+.v63rh{margin:0;font-size:11px;color:#b9c8a8;text-align:center}
+#creator .cprev{position:sticky;top:-18px;z-index:3;align-self:start;background:rgba(27,35,24,.97);padding-top:4px}
+@media (max-width:640px){#creator .cprev{margin:0 -20px;padding:6px 20px 8px;border-bottom:2px solid var(--panel-edge);box-shadow:0 6px 10px rgba(0,0,0,.35)}#cprev{width:120px!important;height:120px!important}#creator .cnote{font-size:11px;margin:0}}
+@media (pointer:coarse) and (orientation:landscape) and (max-height:520px){#creator .cprev{top:-10px;padding-top:2px}#creator .cnote{font-size:10.5px;margin:0}}
+.v63eat{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px;margin:0 0 12px}
+.v63er{display:flex;align-items:center;gap:8px;background:#1c2419;border:2px solid #d8862a;padding:4px 6px}
+.v63er img{width:28px;height:28px;image-rendering:pixelated;flex:none}
+.v63en{flex:1;min-width:0;line-height:1.25;font-size:13px}
+.v63ye{flex:none;min-width:56px;min-height:38px;font-family:inherit;font-weight:700;font-size:15px;background:var(--accent);color:#2a1f08;border:2px solid #11170f;cursor:pointer}
+.v63ye:active{transform:translateY(1px)}
+</style>
 </body>
 </html>
