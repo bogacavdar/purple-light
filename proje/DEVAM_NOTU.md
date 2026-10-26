@@ -435,3 +435,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Gezgin'e hikâye yazılmayacak (Boğaç): onun kaybettiği kimse yok, eşini kaçıranlarla bağlantılı.
 - v69.1 (Boğaç): eski kayıtlar (`v69e` işareti yok) yüklenince köpekler tamamen silinir (0), mor sinyal kuyruğu ve mesajlar temizlenir, Gezgin sıfırlanır; 5. gün geçmişse hemen gelir, konuşunca 1 köpek verir ve toz bulutuyla gider (20. günde mor sinyal için yine gelir). Headless Chromium'la uçtan uca denendi.
 - v69.2: 20. gün dönüşü kalıyor (Boğaç); Gezgin ilk hediyeden sonra en erken ertesi gün döner (`wiz.goneDay`), 20. günü geçmiş kayıtta kaybolur kaybolmaz yeniden belirmez.
+
+## v69.3 (26 Ekim 2026)
+- Kazan tarif listesinde, öğrenilmiş ve elde yapılabilen bir tarifin malzemesi yetiyorsa satırda "+" düğmesi çıkar; basınca hemen elde yapılır (handCraft → renderCraft). Kod `<script id="v69">` içinde.
+- Yunus yeniden çizildi (Boğaç'ın seçimi "S"): kavisli gövde, kısa gaga, geriye kıvrık sırt yüzgeci, yatay çatallı kuyruk, gri renk. 43x20 piksel ızgara `<script id="v67">` içinde DROWS/DPAL; bir kez offscreen canvas'a çizilip yay boyunca döndürülerek basılır. Zıplama len 56, yükseklik 24, süre 1.4 sn.
