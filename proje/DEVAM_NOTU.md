@@ -405,3 +405,4 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - v66.2: karakter yaratmada erkek saçlarından 'Kazınmış' kaldırıldı (Kel var). 'buzz' çizimi Kel ve bazı NPC'ler (Ekin, Dursun, Kaan, Demirhan) için kodda duruyor.
 - v66.3: erkek karakter elbise ve çiçekli toka seçemez (satırlar gizli, buildLook da zorlar); erkek şapkalarına 'Buff' (renkli bant, arkada düğüm) eklendi, ön/arka/yan çizimi var.
 - v66.4: karakter yaratma önizlemesi ve Karakter penceresindeki figür, şapkanın yüksekliğine göre dikeyde ortalanır (chibiTop/chibiFeet); ponponlu bere ve silindir artık kesilmez.
+- v66.5: Buff artık çene/boyun buff'ı (şapka listesinden çıktı). Erkeklerde Sakal satırından sonra 'Buff' (Yok, Düz, Kuru kafa, Alev, Çizgili, Kamuflaj, Kurt dişi) ve 'Buff rengi'. LOOK.hero.buff (renk) + buffS (desen); ön/arka buffFB, yan profR, desenler buffPat.

@@ -5959,7 +5959,7 @@ let cGender='e',cRot=0;
 const cLook={};
 const HS_E=[['short','Kısa'],['messy','Dağınık'],['side','Yana taranmış'],['spiky','Dikleştirilmiş'],['long','Uzun'],['tail','At kuyruğu']];   // v66.2: 'Kazınmış' removed (Kel is there)
 const HS_K=[['long','Uzun'],['tail','At kuyruğu'],['braid','Örgü'],['bun','Topuz'],['bob','Küt'],['pixie','Kısa'],['twin','İki kuyruk']];
-const HATS_E=[['none','Yok'],['buff','Buff'],['kasket','Kasket'],['bere','Ponponlu bere'],['hasir','Hasır'],['kovboy','Kovboy'],['silindir','Silindir'],['fes','Fes'],['korsan','Korsan'],['bandana','Bandana']];
+const HATS_E=[['none','Yok'],['kasket','Kasket'],['bere','Ponponlu bere'],['hasir','Hasır'],['kovboy','Kovboy'],['silindir','Silindir'],['fes','Fes'],['korsan','Korsan'],['bandana','Bandana']];
 const HATS_K=[['none','Yok'],['tac','Çiçek tacı'],['hasir','Hasır'],['bere','Ponponlu bere'],['kasket','Kasket'],['kovboy','Kovboy'],['silindir','Silindir'],['fes','Fes'],['bandana','Bandana']];
 const GLS=[['none','Yok'],['round','Yuvarlak'],['kare','İnce çerçeve'],['sun','Güneş']];
 const BEARDS=[['none','Yok'],['biyik','Bıyık'],['keci','Keçi sakal'],['sakal','Sakal']];
@@ -7675,10 +7675,10 @@ drawChibi=function(g,x,y,L,o){o=o||{};
   else if(bi==='pala'){p(ex-3,hy+7,6,1,HC);p(ex-4,hy+6,1,1,HC);p(ex+3,hy+6,1,1,HC)}
   else if(bi==='sarkik'){p(ex-2,hy+7,4,1,HC);p(ex-3,hy+7,1,3,HC);p(ex+2,hy+7,1,3,HC)}
   if((sb==='kisa'||sb==='uzun')&&o.mouth)p(ex-1,hy+8,2,1,'#8a3a2a')};
-const _cDefaults=cDefaults;cDefaults=function(g){_cDefaults(g);Object.assign(cLook,{eye:0,bi:'yok',sk:'yok'})};
+const _cDefaults=cDefaults;cDefaults=function(g){_cDefaults(g);Object.assign(cLook,{eye:0,bi:'yok',sk:'yok',buff:'yok',buffC:4})};
 Object.assign(cLook,{eye:0,bi:'yok',sk:'yok'});
 const _buildLook=buildLook;
-buildLook=function(){const L=_buildLook();L.eye=B4EYES[cLook.eye|0][0];
+buildLook=function(){const L=_buildLook();L.eye=B4EYES[cLook.eye|0][0];L.buff=cGender==='e'&&cLook.buff&&cLook.buff!=='yok'?CC.hatC[cLook.buffC|0]:null;L.buffS=L.buff?cLook.buff:null;
   if(cLook.hs==='kel'){L.hs='kel';L.tuft=false}
   if(cGender==='e'){L.beard='v48';L.bi=cLook.bi||'yok';L.sk=cLook.sk||'yok'}else{L.beard='none';delete L.bi;delete L.sk}
   return L};
@@ -7689,7 +7689,11 @@ cRender=function(){_cRender();const box=$('copts');if(!box)return;
   const opt=(k,v,t)=>`<button type="button" data-ck="${k}" data-cv="${v}" class="${cLook[k]===v?'on':''}">${t}</button>`;
   const ten=byName('Ten');if(ten)ten.after(mk('Göz rengi',B4EYES.map(([c,t],i)=>`<button type="button" class="sw${(cLook.eye|0)===i?' on':''}" data-ck="eye" data-cv="${i}" style="background:${c}" aria-label="Göz rengi: ${t}" title="${t}"></button>`).join('')));
   const sac=byName('Saç');if(sac){const c=sac.querySelector('.cch');if(c)c.insertAdjacentHTML('beforeend',opt('hs','kel','Kel'))}
-  const old=byName('Sakal');if(old){const a=mk('Bıyık',B4BI.map(([v,t])=>opt('bi',v,t)).join('')),b=mk('Sakal',B4SK.map(([v,t])=>opt('sk',v,t)).join(''));old.replaceWith(a);a.after(b)}
+  const old=byName('Sakal');if(old){const a=mk('Bıyık',B4BI.map(([v,t])=>opt('bi',v,t)).join('')),b=mk('Sakal',B4SK.map(([v,t])=>opt('sk',v,t)).join(''));old.replaceWith(a);a.after(b);
+    // v66.5: a neck buff over the chin, in a few patterns, with a colour
+    const BF=[['yok','Yok'],['duz','Düz'],['kafa','Kuru kafa'],['alev','Alev'],['cizgi','Çizgili'],['kamuflaj','Kamuflaj'],['kurt','Kurt dişi']];
+    const r1=mk('Buff',BF.map(([v,t])=>opt('buff',v,t)).join(''));b.after(r1);
+    if(cLook.buff&&cLook.buff!=='yok')r1.after(mk('Buff rengi',CC.hatC.map((c,i)=>`<button type="button" class="sw${(cLook.buffC|0)===i?' on':''}" data-ck="buffC" data-cv="${i}" style="background:${c}" aria-label="Buff rengi ${i+1}"></button>`).join('')))}
   cDraw()};
 $('c-rand').addEventListener('click',()=>{const r=n=>Math.floor(Math.random()*n);cLook.eye=r(B4EYES.length);if(Math.random()<.12)cLook.hs='kel';
   if(cGender==='e'){cLook.bi=Math.random()<.45?B4BI[1+r(B4BI.length-1)][0]:'yok';cLook.sk=Math.random()<.45?B4SK[1+r(B4SK.length-1)][0]:'yok'}cRender()});
@@ -10222,7 +10226,18 @@ function profR(g,x,y,L,o){
     else if(H==='buff'){p(x-5,hy-1,10,3,hc);p(x-5,hy-1,10,1,hl);for(let k=-4;k<5;k+=3)p(x+k,hy,1,1,hd);p(x-7,hy,2,2,hd);p(x-8,hy+2,2,2,hd)}
     else if(H==='tac'){const cs=['#ff6a9a','#ffd27a','#ffffff','#9ad0ff','#ff6a9a'];p(x-5,hy-2,10,1,'#4a8a3a');for(let k=0;k<5;k++){const cx=x-5+k*2;p(cx,hy-4,2,2,cs[k]);p(cx,hy-4,1,1,'#ffffff')}}}
   if((L.flower!=null?L.flower:L.long)&&!HAT&&!o.helm&&!kel){p(x-4,hy-3,3,2,'#ffffff');p(x-3,hy-2,1,1,'#ff5a8a')}
+  if(L.buff){const c=L.buff;p(x-3,hy+7,8,3,c);p(x-2,hy+10,5,1,shade(c,.72));p(x-3,hy+7,8,1,shade(c,1.22));p(x+5,hy+7,1,2,c);if(L.buffS&&L.buffS!=='duz'){const q=(a,b,w,h,cc)=>{const x0=Math.max(a,x-3),x1=Math.min(a+w,x+6);if(x1>x0)p(x0,b,x1-x0,h,cc)};buffPat(q,x+2,hy,c,L.buffS)}}
 }
+// v66.5: a neck buff pulled up over the chin (men can pick it in the creator): plain, skull, flames, stripes, camo, wolf fangs
+function buffPat(p,cx,hy,c,S){const W='#f4f0e8';
+  if(S==='kafa'){p(cx-3,hy+7,6,1,W);for(const k of [-3,-1,1])p(cx+k,hy+8,1,1,W);p(cx+2,hy+8,1,1,W);p(cx-3,hy+9,6,1,W);p(cx-2,hy+9,1,1,shade(W,.8));p(cx+1,hy+9,1,1,shade(W,.8))}
+  else if(S==='alev'){p(cx-4,hy+9,8,2,'#e8502a');for(const [k,h] of [[-4,1],[-2,2],[0,1],[2,2],[3,1]])p(cx+k,hy+9-h,1,h,'#f2902a');p(cx-2,hy+7,1,1,'#ffe29b');p(cx+2,hy+7,1,1,'#ffe29b')}
+  else if(S==='cizgi'){p(cx-4,hy+8,8,1,shade(c,1.6));p(cx-4,hy+10,8,1,shade(c,1.6))}
+  else if(S==='kamuflaj'){const a=shade(c,.6),b=shade(c,1.35);p(cx-4,hy+7,2,1,a);p(cx-1,hy+8,3,1,b);p(cx+2,hy+7,2,2,a);p(cx-3,hy+9,2,1,b);p(cx+1,hy+10,2,1,a)}
+  else if(S==='kurt'){p(cx-3,hy+8,6,1,'#2a1010');p(cx-3,hy+7,1,2,W);p(cx+2,hy+7,1,2,W);p(cx-1,hy+9,1,1,W);p(cx+1,hy+9,1,1,W);p(cx-3,hy+7,1,1,shade(W,.85))}}
+function buffFB(g,x,y,L,o){const p=(a,b,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round(a),Math.round(b),w,h)};const c=L.buff,d=shade(c,.72),l=shade(c,1.22);x=Math.round(x);const hy=Math.round(y)+(o.bob||0)-16,fy=o.fy==null?1:o.fy;
+  if(fy<0&&!o.fx){p(x-5,hy+7,10,4,c);p(x-5,hy+7,10,1,l);p(x-4,hy+11,8,1,d);return}
+  p(x-5,hy+7,10,3,c);p(x-4,hy+10,8,1,c);p(x-5,hy+7,10,1,l);if(!L.buffS||L.buffS==='duz'){p(x-3,hy+9,2,1,d);p(x+1,hy+8,2,1,d)}p(x-4,hy+10,8,1,d);buffPat(p,x,hy,c,L.buffS)}
 // a fist thrown toward the camera (front) or up past the head (back)
 function fistFB(g,x,y,L,o){const p=(a,b,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round(a),Math.round(b),w,h)};
   const k=o.punch,s=o.pside||1,HAND=o.glove||L.skin,sl=L.shirtD||shade(L.shirt,.75),fy=o.fy==null?1:o.fy;y=Math.round(y+(o.bob||0));x=Math.round(x);
@@ -10236,7 +10251,7 @@ drawChibi=function(g,x,y,L,o){o=o||{};if(L&&L.hs==='kel'&&L.flower)L=Object.assi
   if(fx&&!o.q34){x=Math.round(x);y=Math.round(y);
     if(fx>0)profR(g,x,y,L,o);else{g.save();g.translate(2*x,0);g.scale(-1,1);profR(g,x,y,L,o);g.restore()}return}
   const o2=o.punch!=null?Object.assign({},o,{arm:'down'}):o;
-  _dc.call(this,g,x,y,L,o2);
+  _dc.call(this,g,x,y,L,o2);if(L.buff)buffFB(g,x,y,L,o);
   if(o.punch!=null&&!fx)fistFB(g,x,y,L,o)};
 // bare-handed swings: the fists come out (left, right, left…)
 const _dp=drawPlayer;drawPlayer=function(){const P=window.__p4,S=P&&P.sw;V63.punch=null;
