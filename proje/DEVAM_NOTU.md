@@ -357,3 +357,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 
 ## v61 — Ad girişinde Enter
 - `askName`: telefon klavyesinin Enter / Bitti tuşu adı onaylar (keydown + keypress, keyCode 13 da sayılır), giriş kutusunda `enterkeyhint="done"`.
+
+## v62 — Telefon açılışındaki siyah kareler, balta dersi
+- Siyah kareler: kalite kademesi değişince tuval boyutu izleyicinin karesinde değişiyordu (temizlenen tuval bir kare boş kalıyordu). Artık `PERF.pend` ile boyut, oyun karesinin içinde çizimden hemen önce uygulanır. İzleyici oyuna girdikten sonraki ilk 6 sn'yi ölçmez (açılıştaki hazırlık yüzünden gereksiz düşüş olmasın).
+- Balta dersi (tz 12): adım artık eldekilerden hesaplanır (`axeNeedStep`, örsteki parçalar da sayılır), geri de gider. Yeni 5. adım: **2 taş** (Taş balta tarifinde vardı, adımlarda yoktu: taşı keskin taşa çeviren oyuncu "parçalar tamam" görüyordu). tz 13'teyken bir parça eksilirse tz 12'ye döner. Toplama adımında ok o malzemeyi gösterir.
+- Dövdükten sonra "Baltayı elime alayım" → `window.__axeHold` dersi (`<script id="v62-axe">`): yuvaya koy → eline al (yuva yanıp söner) → `tzFinish`, Ekin'e ok.

@@ -3217,7 +3217,7 @@ function brew(){
   sfx(isNew?'found':'craft');sfx('clank');potFx=performance.now()+900;
   msg(`${isNew?(EQUIP[x.r]?'Yeni zırh':'Yeni alet')+' dövüldü':'Dövüldü'}: ${x.r}! +${isNew?8:2} XP`+note,'ok');
   gainXP(isNew?8:2);
-  if(tz===13&&x.r==='Taş balta'){setTimeout(()=>{closeCraft();say(`İşte baltan! Taş balta yalnızca <b>çamları</b> keser; her vuruşta biraz körelir, çubuğu kırmızıya dönünce bana getir, bilerim. Kırılırsa ya da kaybolursa parçalarını getir, yenisini döveriz; işçiliğini ödersin. Balta şimdi <b>envanterinde</b>: ${beltHow('Taş balta')}; sonra ${TOUCH?'o kutuya dokununca':'yuvanın sayı tuşuna basınca'} eline gelir. Şimdi <b>Ekin</b>'e dön; seni bekleyen işler var.`,[{t:'Ekin\'e gidiyorum',pri:1,fresh:1,f:()=>{bye();tzFinish();guideTo('ekin',10)}}],smith)},600)}
+  if(tz===13&&x.r==='Taş balta'){setTimeout(()=>{closeCraft();say(`İşte baltan! Taş balta yalnızca <b>çamları</b> keser; her vuruşta biraz körelir, çubuğu kırmızıya dönünce bana getir, bilerim. Kırılırsa ya da kaybolursa parçalarını getir, yenisini döveriz; işçiliğini ödersin. Balta şimdi <b>envanterinde</b>: ${beltHow('Taş balta')}; sonra ${TOUCH?'o kutuya dokununca':'yuvanın sayı tuşuna basınca'} eline gelir. Hadi, önce baltayı eline al; sonra <b>Ekin</b>'e dön.`,[{t:'Baltayı elime alayım',pri:1,fresh:1,f:()=>{bye();window.__axeHold=1;renderTut()}}],smith)},600)}
   renderInv();renderCraft();renderTut();
 }
 let potFx=0;
@@ -5598,6 +5598,7 @@ function frameBody(now){
   const tg=gathering?gathering.tg:updatePrompt();
 
   if(roomBusy())return;   // v58: inside a house the island is not drawn at all
+  if(PERF.pend){PERF.pend=false;resize()}   // v62: a new canvas size is applied just before drawing, so no empty (black) frame shows
   // camera
   const scale=S*dpr, viewW=vw/S, viewH=vh/S;
   let cx=player.x-viewW/2, cy=player.y-viewH/2;
@@ -7289,12 +7290,19 @@ const AXE_STEPS=[
  ['Keskin taş',2,'Börü · Önce keskin taşlar',`Sopa için önce <b>2 keskin taş</b> yap: ${'{TAB}'} → Keskin taş (her biri 2 taş).`],
  ['Sopa',1,'Börü · Şimdi sopa',`Keskin taşlar hazır! Şimdi <b>sopa</b>: 3 dal + 2 keskin taş. ${'{TAB}'} → Sopa.`],
  ['Keskin taş',2,'Börü · Baltanın ağzı',`Sopa tamam. Baltanın ağzı için <b>2 keskin taş daha</b> yap.`],
- ['İp',2,'Börü · Son parça: ip',`Son parça <b>ip</b>: her biri 4 lif. <b>2 ip</b> yap; lifleri Börü yanına bıraktı.`]];
-const AXE_DONE=['Keskin taşlar hazır. Şimdi sopayı yap!','Sopa tamam! Şimdi baltanın ağzı için 2 keskin taş daha.','Ağız hazır. Son olarak 2 ip.','Bütün parçalar hazır! Demirci Dursun\'a götür.'];
+ ['İp',2,'Börü · Şimdi ip',`Şimdi <b>ip</b>: her biri 4 lif. <b>2 ip</b> yap; lifleri Börü yanına bıraktı.`],
+ ['Taş',2,'Börü · Son parça: iki taş',`Son olarak baltanın gövdesi için <b>2 taş</b> topla ve öyle kalsın: bunları keskin taşa <b>çevirme</b>!`]];
+const AXE_DONE=['Keskin taşlar hazır. Şimdi sopayı yap!','Sopa tamam! Şimdi baltanın ağzı için 2 keskin taş daha.','Ağız hazır. Şimdi 2 ip.','İpler tamam. Son olarak 2 taş topla.','Bütün parçalar hazır! Demirci Dursun\'a götür.'];
+// v62: the step is worked out from what you hold (and what already lies on the anvil), so using a part elsewhere sends you back to it
+const axeHave=n=>(inv[n]||0)+(pot.r==='Taş balta'&&station==='forge'?pot.put.reduce((t,o)=>t+((o&&o[n])||0),0):0);
+function axeNeedStep(){const h=axeHave;if(h('Sopa')<1)return h('Keskin taş')<2?0:1;if(h('Keskin taş')<2)return 2;if(h('İp')<2)return 3;if(h('Taş')<2)return 4;return 5}
 function axeCard(){const S=AXE_STEPS[axeStep];if(!S)return null;const h=inv[S[0]]||0;return['',S[2],S[3].replace('{TAB}',TOUCH?'el ikonu':'<span class="kc">Tab</span>')+` (${S[0]} ${Math.min(h,S[1])}/${S[1]})`]}
-function axeTick(){if(tz!==12)return;const S=AXE_STEPS[axeStep];if(!S)return;if((inv[S[0]]||0)>=S[1]){const msg=AXE_DONE[axeStep];axeStep++;sfx('found');
-  if(axeStep>=AXE_STEPS.length){tz=13;announce('Parçalar hazır','Demirci Dursun\'a git');renderTut();return}
-  announce(AXE_STEPS[axeStep][2].replace('Börü · ',''),'Börü: "'+msg+'"');renderTut()}}
+function axeTick(){
+  if(tz===13&&!window.__axeHold&&!(inv['Taş balta']>0)&&axeNeedStep()<5){tz=12;axeStep=axeNeedStep();sfx('bad');toast('Baltanın parçalarından biri eksildi. Börü\'nün listesine bak: eksik olanı tamamla.',true);renderTut();return}
+  if(tz!==12)return;const k=axeNeedStep();if(k===axeStep)return;const prev=axeStep;axeStep=k;
+  if(k>=AXE_STEPS.length){tz=13;sfx('found');announce('Parçalar hazır','Demirci Dursun\'a git');renderTut();return}
+  if(k>prev){sfx('found');announce(AXE_STEPS[k][2].replace('Börü · ',''),'Börü: "'+AXE_DONE[k-1]+'"')}else{sfx('bad');announce(AXE_STEPS[k][2].replace('Börü · ',''),'Bir parça eksildi, ona dön')}
+  renderTut()}
 
 // ---------------------------------------------------------------- the dodge lesson and the first 100 coins
 let dodgeTold=false,coin100=false;
@@ -9224,7 +9232,7 @@ const hv=n=>expand(n).reduce((t,m)=>t+(inv[m]||0),0);
 const _tzNeed=tzNeed;tzNeed=function(){
   if(P3.hold&&tz===6)return[];
   if(tz===12){const S=AXE_STEPS[axeStep];if(!S)return[];const miss=Math.max(0,S[1]-(inv[S[0]]||0));if(!miss)return[];const x=REC.get(S[0]),L=[];
-    if(x)for(const [n,k] of x.i){if(REC.get(n))continue;if(hv(n)<k*miss)L.push(n)}return L}
+    if(x){for(const [n,k] of x.i){if(REC.get(n))continue;if(hv(n)<k*miss)L.push(n)}}else L.push(S[0]);return L}
   return _tzNeed.apply(this,arguments)};
 tzMat=function(){const need=tzNeed();let b=null,bd=1e9;for(const n of nodes)if(n.alive&&need.indexOf(n.name)>=0&&reachAt(n.x,n.y)){const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;b=n}}return b?{x:b.x,y:b.y,n:b.name}:{x:player.x,y:player.y,n:''}};
 GUIDE.tzmat=tzMat;
@@ -9798,9 +9806,11 @@ drawWater=function(time,x0,y0,x1,y1){const low=PERF.lvl>=3;
 // the frame-time watcher: slow for 2 s → one step down; smooth for a long while → one step up (never more often than every 20 s)
 const LV=[{cap:TOUCH?2:3},{cap:1.5},{cap:1.25},{cap:1}];
 let acc=0,n=0,bad=0,good=0,lastUp=0,lastT=0,floorL=0;   // v60: floorL = the best level this device has shown it cannot hold
-function setLvl(l){l=Math.max(0,Math.min(3,l));if(l===PERF.lvl)return;PERF.lvl=l;const cap=Math.min(LV[0].cap,LV[l].cap);if(cap!==PERF.cap){PERF.cap=cap;resize()}}
+function setLvl(l){l=Math.max(0,Math.min(3,l));if(l===PERF.lvl)return;PERF.lvl=l;const cap=Math.min(LV[0].cap,LV[l].cap);if(cap!==PERF.cap){PERF.cap=cap;PERF.pend=true}}
+let playSince=0;
 (function watch(now){requestAnimationFrame(watch);const d=now-(lastT||now);lastT=now;
-  if(d<=0||d>250||document.hidden||onTitle||paused||fading)return;acc+=d;n++;
+  if(onTitle||wake||cine.on){playSince=0;return}if(!playSince)playSince=now;if(now-playSince<6000)return;   // v62: let the island settle first
+  if(d<=0||d>250||document.hidden||paused||fading)return;acc+=d;n++;
   if(acc<1000)return;const avg=acc/n;acc=0;n=0;
   if(avg>24){bad++;good=0;if(bad>=2){bad=0;if(lastUp&&now-lastUp<30000)floorL=Math.max(floorL,PERF.lvl+1);setLvl(PERF.lvl+1)}}
   else if(avg<15){good++;bad=0;if(good>=10&&PERF.lvl>floorL&&now-lastUp>20000){good=0;lastUp=now;setLvl(PERF.lvl-1)}}
@@ -10038,5 +10048,20 @@ const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);ST.h
 #npcsc button{font:inherit;font-weight:700;background:var(--accent);color:#1d1606;border:0;padding:8px 22px;cursor:pointer;box-shadow:0 0 0 2px #11170f}
 #cbody .ppl li{display:block;padding:8px 10px}#cbody .pplf p{margin:6px 0;font-size:14px;line-height:1.45;color:var(--ink)}#cbody .ppl button{margin-top:4px}
 </style>
+<script id="v62-axe">
+// v62: after Dursun forges the first axe, a short lesson: put it in a slot and take it into your hand; then Ekin.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+window.__axeHold=0;
+const _c=tzCard;tzCard=function(){if(tz===13&&window.__axeHold){const n='Taş balta',i=hotList().indexOf(n);
+    const html=held()===n?'Balta elinde!':i<0?`Baltan envanterinde. Önce onu bir alet yuvasına koy: ${beltHow(n)}.`:`Şimdi baltayı eline al: ${TOUCH?`alttaki <b>${slotKey(i)}.</b> kutuya dokun`:`<span class="kc">${slotKey(i)}</span> tuşuna bas ya da alttaki kutuya tıkla`}.`;
+    return['','Dursun · Baltayı eline al',html]}return _c.apply(this,arguments)};
+const _g=guideKey;guideKey=function(){if(tz===13&&window.__axeHold)return null;return _g.apply(this,arguments)};
+let pul=0;setInterval(()=>{try{if(tz!==13||!window.__axeHold||onTitle)return;const n='Taş balta';
+  if(held()===n){window.__axeHold=0;sfx('found');announce('Balta elinde','Şimdi Ekin\'e dön');tzFinish();guideTo('ekin',10);return}
+  if(++pul%4===0){const i=hotList().indexOf(n);if(i>=0)pulseHot(i)}renderTut()}catch(e){}},500);
+const _r=restore;restore=function(d){const r=_r.apply(this,arguments);window.__axeHold=tz===13&&(inv['Taş balta']||0)>0?1:0;return r};
+}).toString()+')()')}catch(e){try{window.__hamErr('v62: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 </body>
 </html>
