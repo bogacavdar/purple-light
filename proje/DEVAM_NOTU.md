@@ -641,3 +641,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Ana menüdeki Ayarlar'da hileden yalnızca "Hile modu" anahtarı var (`body.settitle #b5cheat` gizli). Oyun içinde hile anahtarı gizli, `#b5cheat`'in hepsi (sınırsız sikke, ara sahneler, gece ışığı, ACT 2, seviye, harita) hile açıkken görünür. b5tnote kaldırıldı.
 - Tam ekran: tarayıcı sekmesinde tıklamasız tam ekran mümkün değil (kullanıcı hareketi şart). Yüklü uygulama (manifest `display: fullscreen`) Android'de doğrudan tam ekran açılır.
 - Menüde "Versiyon 91".
+
+## v92 (27 Ekim 2026)
+- `<script id="v92">`: Başarımlar düğmesi (`#b-ach`) masaüstünde `#b-char`'ın hemen soluna sabitlenir (0,4 sn'de bir ve resize'da `placeAch`); telefonda (`v50m`) DOM'da b-char'ın arkasına taşınır. Sağ sütun artık Çıkış → Ayarlar.
+- Envanterde ekipman şeridi (`.ieq`): küçük karakter figürü (`#ieqc`, eqLook/eqOpts ile, silah dahil) + 5 yuva (Baş, Gövde, Eller, Ayaklar, Silah). Seçili eşyanın yuvası sarı parlar; dokununca giyilir. Dolu yuvaya dokununca çıkarılır. Boş yuvaya uyan tek eşya varsa doğrudan giyilir. `renderInvPanel` sarmalandı.
+- Kask/şapka altında saç: `spiky` ve `bun` saçlar miğfer ya da şapka varken çizilmez (önden, arkadan, yandan). Miğfer zaten şapka/bandana/çiçeğin yerine çiziliyordu.
+- Menüde "Versiyon 92".

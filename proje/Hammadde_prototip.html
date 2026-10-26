@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 91</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 92</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -4247,9 +4247,9 @@ function drawChibi(g,x,y,L,o){
     if(HS==='bob'){p(x-6,hy+6,12,3,HC);p(x-6,hy+8,12,1,HD)}
     if(HS==='tail'){p(x-1,hy+7,3,6,HC);p(x-1,hy+12,3,1,HD);p(x-1,hy+7,3,1,'#c84a5a')}
     if(HS==='braid'){for(let k=0;k<7;k++)p(x-1+(k%2),hy+7+k,2,1,k%2?HD:HC);p(x-1,hy+14,3,1,'#c84a5a')}
-    if(HS==='bun'){p(x-2,hy-6,5,4,HC);p(x-1,hy-7,3,1,HC);p(x-2,hy-3,5,1,HD)}
+    if(HS==='bun'&&!HAT&&!o.helm){p(x-2,hy-6,5,4,HC);p(x-1,hy-7,3,1,HC);p(x-2,hy-3,5,1,HD)}
     if(HS==='twin'){p(x-8,hy+3,2,8,HC);p(x+6,hy+3,2,8,HC);p(x-8,hy+3,2,1,'#e85a8a');p(x+6,hy+3,2,1,'#e85a8a')}
-    if(HS==='spiky')for(let k=0;k<4;k++){p(x-5+k*3,hy-4,2,2,HC);p(x-4+k*3,hy-5,1,1,HC)}
+    if(HS==='spiky'&&!HAT&&!o.helm)for(let k=0;k<4;k++){p(x-5+k*3,hy-4,2,2,HC);p(x-4+k*3,hy-5,1,1,HC)}
   }else{
     // eyes (big, with a light), cheeks, mouth
     const ex=x+fx;
@@ -4271,13 +4271,13 @@ function drawChibi(g,x,y,L,o){
       else if(HS==='side'){p(x-5,hy+1,6,1,HC);p(x-5,hy+2,4,1,HC);p(x-5,hy+3,2,1,HC);p(x+2,hy+1,2,1,HC);p(x-3,hy-1,1,1,HLc)}
       else{p(x-4,hy+1,3,1,HC);p(x+1,hy+1,3,1,HC);p(x-4,hy+2,1,1,HC);p(x+3,hy+2,1,1,HC)}
       if(HS==='messy'){p(x-6,hy-3,2,1,HC);p(x+4,hy-4,2,2,HC);p(x-2,hy-4,2,1,HC);p(x,hy+2,1,1,HC);p(x-7,hy+1,1,2,HC)}
-      if(HS==='spiky'&&!HAT){for(let k=0;k<4;k++){p(x-5+k*3,hy-5,2,2,HC);p(x-4+k*3,hy-6,1,1,HC)}p(x-3,hy-5,1,1,HLc)}
+      if(HS==='spiky'&&!HAT&&!o.helm){for(let k=0;k<4;k++){p(x-5+k*3,hy-5,2,2,HC);p(x-4+k*3,hy-6,1,1,HC)}p(x-3,hy-5,1,1,HLc)}
       if(fx>0)p(x-6,hy+1,3,6,HC);if(fx<0)p(x+3,hy+1,3,6,HC);
       if(HS==='long'){p(x-6,hy+5,2,7,HC);p(x+4,hy+5,2,7,HC);p(x-6,hy+11,2,1,HD);p(x+4,hy+11,2,1,HD)}
       if(HS==='bob'){p(x-6,hy+5,2,4,HC);p(x+4,hy+5,2,4,HC);p(x-6,hy+8,2,1,HD);p(x+4,hy+8,2,1,HD)}
       if(HS==='tail'){if(fx>0){p(x-8,hy+2,2,7,HC);p(x-8,hy+8,2,1,HD)}else if(fx<0){p(x+6,hy+2,2,7,HC);p(x+6,hy+8,2,1,HD)}else{p(x-1,hy-5,3,2,HC);p(x-2,hy-6,5,1,HC)}}
       if(HS==='braid'){const s=fx<0?1:-1,bx=s<0?x-6:x+4;for(let k=0;k<8;k++)p(bx+(k%2),hy+5+k,2,1,k%2?HD:HC);p(bx,hy+13,2,1,'#c84a5a')}
-      if(HS==='bun'&&!HAT){p(x-2,hy-7,5,4,HC);p(x-1,hy-8,3,1,HC);p(x-1,hy-7,2,1,HLc);p(x-2,hy-4,5,1,HD)}
+      if(HS==='bun'&&!HAT&&!o.helm){p(x-2,hy-7,5,4,HC);p(x-1,hy-8,3,1,HC);p(x-1,hy-7,2,1,HLc);p(x-2,hy-4,5,1,HD)}
       if(HS==='twin'){p(x-8,hy+1,2,9,HC);p(x+6,hy+1,2,9,HC);p(x-8,hy+9,2,1,HD);p(x+6,hy+9,2,1,HD);p(x-8,hy+1,2,1,'#e85a8a');p(x+6,hy+1,2,1,'#e85a8a')}
     }
     // glasses: thin round rims / dark lenses / a slim rectangular frame, with a bridge and the arms
@@ -10611,11 +10611,11 @@ function profR(g,x,y,L,o){
     else if(HS==='side'){p(x,hy+1,5,1,HC);p(x+3,hy+2,2,1,HC);p(x+4,hy+3,1,1,HC);p(x+1,hy-1,2,1,HLc)}
     else{p(x,hy+1,4,1,HC);p(x+2,hy+2,2,1,HC);p(x+4,hy,1,2,HC)}
     if(HS==='messy'){p(x-7,hy+1,1,2,HC);p(x-7,hy+4,1,2,HC);p(x-3,hy-3,1,1,HC);p(x+2,hy-3,1,1,HC)}
-    if(HS==='spiky'&&!HAT){for(let k=0;k<3;k++){p(x-4+k*3,hy-4,2,2,HC);p(x-5+k*3,hy-5,1,1,HC)}p(x-1,hy-4,1,1,HLc)}
+    if(HS==='spiky'&&!HAT&&!o.helm){for(let k=0;k<3;k++){p(x-4+k*3,hy-4,2,2,HC);p(x-5+k*3,hy-5,1,1,HC)}p(x-1,hy-4,1,1,HLc)}
     if(HS==='long'){p(x-5,hy+6,2,4,HC)}
     if(HS==='tail'){p(x-8,hy+1,2,7,HC);p(x-8,hy+7,2,1,HD);p(x-7,hy+1,1,1,'#c84a5a')}
     if(HS==='braid'){for(let k=0;k<7;k++)p(x-6+(k%2),hy+7+k,2,1,k%2?HD:HC);p(x-6,hy+14,2,1,'#c84a5a')}
-    if(HS==='bun'&&!HAT){p(x-7,hy-3,3,3,HC);p(x-6,hy-4,1,1,HC);p(x-7,hy-3,1,1,HLc)}
+    if(HS==='bun'&&!HAT&&!o.helm){p(x-7,hy-3,3,3,HC);p(x-6,hy-4,1,1,HC);p(x-7,hy-3,1,1,HLc)}
     if(HS==='twin'){p(x-3,hy+3,2,9,HC);p(x-3,hy+11,2,1,HD);p(x-3,hy+3,2,1,'#e85a8a')}
     if((HS==='short'||HS==='side'||HS==='pixie')&&!HAT&&!o.helm){p(x,hy-5,1,2,HC);p(x+1,hy-6,1,1,HC)}
   }
@@ -12100,6 +12100,50 @@ function paint(){if(!seg)return;seg.innerHTML='';for(const o of OPT){const b=doc
   for(const o of OPT)if(o[0]===mode&&rd)rd.textContent=o[2]}
 paint();if(mode!=='auto'){PERF.pend=true}
 }).toString()+')()')}catch(e){try{window.__hamErr('v88: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v92">
+// v92: the achievements button sits next to the character button (Ayarlar stays under Çıkış);
+// the inventory gets the five equipment slots with a small figure, so things are worn from there too
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+// ---- achievements next to the character button
+function placeAch(){const a=$('b-ach'),c=$('b-char');if(!a||!c)return;
+  if(document.body.classList.contains('v50m')){if(a.previousElementSibling!==c)c.parentNode.insertBefore(a,c.nextSibling);a.style.cssText='';return}
+  const R=$('right');if(R&&a.parentNode!==R)R.appendChild(a);
+  const r=c.getBoundingClientRect();if(!r.width||!r.height){a.style.visibility='hidden';return}
+  const h=Math.round(r.height),w=Math.round(Math.min(r.height,r.width));
+  a.style.cssText='position:fixed;z-index:3;margin:0;pointer-events:auto;top:'+Math.round(r.top)+'px;left:'+Math.round(r.left-w-8)+'px;right:auto;bottom:auto;width:'+w+'px;height:'+h+'px;padding:'+Math.round(h*.16)+'px'}
+const stA=document.createElement('style');stA.textContent='#b-ach svg{width:100%;height:100%}'
+ +'.ieq{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:center;margin:8px 0 10px;padding:8px;border:2px solid var(--panel-edge);background:rgba(0,0,0,.18)}'
+ +'.ieq canvas{width:72px;height:90px;image-rendering:pixelated;background:#1c2419;border:2px solid var(--panel-edge)}'
+ +'.ieqs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}'
+ +'.ieqb{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0;font-family:inherit;background:#1c2419;color:var(--ink);border:2px dashed var(--panel-edge);padding:5px 3px;cursor:pointer}'
+ +'.ieqb .eqi{width:34px;height:34px;background:#11170f;display:flex;align-items:center;justify-content:center}.ieqb .eqi img{width:28px;height:28px;image-rendering:pixelated}'
+ +'.ieqb small{font-size:11px;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.05em}.ieqb b{font-size:11px;line-height:1.15;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}'
+ +'.ieqb.full{border-style:solid}.ieqb.fit{border:2px solid #f2c84b;box-shadow:0 0 0 2px rgba(242,200,75,.35);animation:ieqp 1s infinite alternate}@keyframes ieqp{to{box-shadow:0 0 0 4px rgba(242,200,75,.15)}}'
+ +'.ieq .note{grid-column:1/-1;margin:0;font-size:12px}'
+ +'@media (max-width:520px){.ieq{grid-template-columns:1fr}.ieq canvas{justify-self:center}.ieqb b{display:none}}';
+document.head.appendChild(stA);
+addEventListener('resize',()=>setTimeout(placeAch,80));setInterval(placeAch,400);setTimeout(placeAch,50);
+// ---- equipment strip in the inventory
+function stripHTML(){const sel=invSel&&inv[invSel]>0?invSel:null,ss=sel?slotOf(sel):null;
+  const b=([k,l])=>{const n=equip[k];return `<button type="button" class="ieqb${n?' full':''}${ss===k?' fit':''}" data-ieq="${k}" title="${n?esc(n)+' · çıkarmak için dokun':l+' · boş'}"><span class="eqi">${n?`<img src="${icon(n)}" alt="">`:''}</span><small>${l}</small><b>${n?esc(n):'boş'}</b></button>`};
+  const hint=ss?`<b>${esc(sel)}</b> parlayan yuvaya dokun: giyilir.`:sel?'Seçtiğin eşya giyilmez.':'Bir giysi ya da silah seç, sonra parlayan yuvaya dokun. Dolu yuvaya dokununca çıkarılır.';
+  return `<div class="ieq"><canvas id="ieqc" width="48" height="60" aria-label="Karakterin"></canvas><div class="ieqs">${SLOTS_EQ.map(b).join('')}</div><p class="note">${hint} Savunma <b style="color:var(--accent)">${armorDef()}</b>.</p></div>`}
+function drawMini(){const c=$('ieqc');if(!c)return;const g=c.getContext('2d');g.imageSmoothingEnabled=false;g.clearRect(0,0,48,60);g.fillStyle='#1c2419';g.fillRect(0,0,48,60);
+  g.save();g.scale(2,2);const o=eqOpts();o.noShadow=1;const LK=eqLook(),fy=chibiFeet(LK,o,30);
+  if(equip.silah){const ic=ICONC[equip.silah]||(icon(equip.silah),ICONC[equip.silah]);if(ic){g.save();g.translate(17,fy-16);g.rotate(.5);g.drawImage(ic,-5,-9,10,10);g.restore()}}
+  drawChibi(g,12,fy,LK,o);g.restore()}
+const _rip=renderInvPanel;renderInvPanel=function(){const r=_rip.apply(this,arguments);
+  try{const t=cbody.querySelector('.itabs');const h=stripHTML();if(t)t.insertAdjacentHTML('afterend',h);else cbody.insertAdjacentHTML('afterbegin',h);drawMini()}catch(e){}return r};
+cbody.addEventListener('click',e=>{if(mode!=='inv')return;const b=e.target.closest('[data-ieq]');if(!b)return;e.stopPropagation();const k=b.dataset.ieq,l=(SLOTS_EQ.find(x=>x[0]===k)||[0,''])[1];
+  const sel=invSel&&inv[invSel]>0?invSel:null;
+  if(sel&&slotOf(sel)===k){invSel=null;wear(sel);renderCraft();return}
+  if(equip[k]){unwear(k);renderCraft();return}
+  const L=order.filter(n=>inv[n]>0&&slotOf(n)===k);
+  if(L.length===1){wear(L[0]);renderCraft();return}
+  toast(L.length?`${l} için envanterden birini seç: ${L.slice(0,3).join(', ')}${L.length>3?'…':''}`:`${l} yuvasına uyan bir şeyin yok`);sfx(L.length?'pick':'bad')},true);
+}).toString()+')()')}catch(e){try{window.__hamErr('v92: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v68">
 // v68: the graphics-card switch in Ayarlar (the choice is read once at start, so changing it reopens the game; the save is kept)
