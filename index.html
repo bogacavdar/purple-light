@@ -2154,7 +2154,7 @@ const shovel=()=>bestTool('shovel');
 function gatherTarget(trees){const h=held(),free=!h||PLACEABLE.has(h)||isTorch(h),pick=heldKind('pick'),axe=heldKind('axe');
   if(trees&&axe){let tr=null,bd=22;treesNear(player.x,player.y,t=>{if(t.type.noCut)return false;const d=Math.hypot(t.x-player.x,t.y-player.y);if(d<bd){bd=d;tr=t}return false});if(tr)return{kind:'tree',t:tr}}
   let best=null,bd=REACH*(sk('H4')?1.5:1);
-  for(const n of nodes){if(!n.alive)continue;if(n.mine?!pick:!free)continue;const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;best={kind:'node',n}}}
+  for(const n of PERF.vis){if(!n.alive)continue;if(n.mine?!pick:!free)continue;const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;best={kind:'node',n}}}
   return best}
 function target(){
   {const x=v46Target(true);if(x)return x}
@@ -2188,7 +2188,7 @@ function target(){
   {const x=v46Target(false);if(x)return x}
   {const g=gatherTarget(true);if(g)return g}   // an axe in hand cuts the tree instead of tripping over a twig next to it
   let best=null,bd=REACH*(sk('H4')?1.5:1);
-  for(const n of nodes){if(!n.alive)continue;const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;best={kind:'node',n}}}
+  for(const n of PERF.vis){if(!n.alive)continue;const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;best={kind:'node',n}}}
   if(best)return best;
   // water ahead or adjacent
   for(const r of [10,16,22]){const wx=player.x+player.face.x*r,wy=player.y+player.face.y*r;if(isWater(tileAt(wx,wy))&&wx>=0&&wy>=0&&wx<W*T&&wy<H*T)return{kind:'water'}}
@@ -3835,7 +3835,7 @@ function drawNode(n,time){
   }
 }
 // a small four-pointed glint now and then tells you something can be picked up
-function drawGlints(time,inView){for(const n of nodes){if(!n.alive||!inView(n.x,n.y,12))continue;const ph=(time*.45+n.v*17.3)%4.2;if(ph>.5)continue;
+function drawGlints(time,inView){for(const n of PERF.vis){if(!n.alive||!inView(n.x,n.y,12))continue;const ph=(time*.45+n.v*17.3)%4.2;if(ph>.5)continue;
   const k=Math.sin(ph/.5*Math.PI),x=Math.round(n.x-4+n.v*8),y=Math.round(n.y-7+((n.v*7)%1)*4),L=Math.round(1+k*2.6);
   ctx.globalAlpha=Math.min(1,k*1.2);px(x,y-L,1,L*2+1,'#fffbe8');px(x-L,y,L*2+1,1,'#fffbe8');ctx.globalAlpha=k*.5;px(x-1,y-1,3,3,'#ffffff');ctx.globalAlpha=1}}
 // ---------- loot on the ground: gathered things fall and are picked up by walking over them ----------
@@ -4310,7 +4310,8 @@ const TUFTS=[];{let h=1234567;const r=()=>(h=(h*1103515245+12345)&0x7fffffff)/0x
     if(x>(field.tx-1)*T&&x<(field.tx+5)*T&&y>(field.ty-1)*T&&y<(field.ty+4)*T)continue;
     TUFTS.push({x:Math.round(x),y:Math.round(y),p:r()*6.28,f:t===1,n:2+Math.floor(r()*2)})}}
 function drawTufts(time,inView){
-  for(const g of TUFTS){if(!inView(g.x,g.y,8))continue;
+  {const k=Math.floor(cam.cx/48)+','+Math.floor(cam.cy/48);if(k!==PERF.tuftK){PERF.tuftK=k;PERF.tufts=TUFTS.filter(g=>inView(g.x,g.y,100))}}
+  for(const g of PERF.tufts){if(!inView(g.x,g.y,8))continue;
     const w=Math.sin(time*2.2+g.p+g.x*.02)*(.3+wind*1.3),c=g.f?'#64ae4a':'#98d866',c2=g.f?'#3f8a36':'#6cb043';
     for(let i=0;i<g.n;i++){const bx=g.x+i*2-g.n,hgt=3+((i+g.n)%2);px(bx,g.y-1,1,1,c2);px(bx+Math.round(w*(i%2?.6:1)),g.y-hgt,1,hgt-1,c)}}
 }
@@ -4334,12 +4335,16 @@ function drawAmbient(time){
 }
 // warm light in the middle, soft vignette at the edges (screen space, cached per size)
 let lightG=null,lightK='';
-function drawLight(){const k=cv.width+'x'+cv.height;if(k!==lightK){lightK=k;lightG=ctx.createRadialGradient(cv.width/2,cv.height*.45,Math.min(cv.width,cv.height)*.15,cv.width/2,cv.height/2,Math.hypot(cv.width,cv.height)*.62);lightG.addColorStop(0,'rgba(255,236,180,.07)');lightG.addColorStop(.55,'rgba(255,236,180,0)');lightG.addColorStop(1,'rgba(8,20,30,.32)')}
-  ctx.setTransform(1,0,0,1,0,0);ctx.fillStyle=lightG;ctx.fillRect(0,0,cv.width,cv.height)}
+let lightC=null;
+function drawLight(){if(PERF.lvl>=2)return;const k=cv.width+'x'+cv.height;if(k!==lightK){lightC=null;lightK=k;lightG=ctx.createRadialGradient(cv.width/2,cv.height*.45,Math.min(cv.width,cv.height)*.15,cv.width/2,cv.height/2,Math.hypot(cv.width,cv.height)*.62);lightG.addColorStop(0,'rgba(255,236,180,.07)');lightG.addColorStop(.55,'rgba(255,236,180,0)');lightG.addColorStop(1,'rgba(8,20,30,.32)')}
+  if(!lightC){lightC=document.createElement('canvas');lightC.width=Math.ceil(cv.width/4);lightC.height=Math.ceil(cv.height/4);const lg=lightC.getContext('2d');lg.scale(.25,.25);lg.fillStyle=lightG;lg.fillRect(0,0,cv.width,cv.height)}
+  ctx.setTransform(1,0,0,1,0,0);ctx.imageSmoothingEnabled=true;ctx.drawImage(lightC,0,0,cv.width,cv.height);ctx.imageSmoothingEnabled=false}
 
 // ---------- loop ----------
+// v58: the world canvas is pixel art, so it need not be drawn at the phone's full 3× density; PERF.cap is moved by the frame-time watcher
+const PERF={cap:TOUCH?2:3,lvl:0,acc:0,vis:[],visK:'',visT:0,tufts:[],tuftK:''};
 function resize(){
-  dpr=Math.min(devicePixelRatio||1,3);vw=innerWidth;vh=innerHeight;
+  dpr=Math.min(devicePixelRatio||1,PERF.cap);vw=innerWidth;vh=innerHeight;
   cv.width=Math.round(vw*dpr);cv.height=Math.round(vh*dpr);
   S=Math.max(2,Math.round(Math.min(vw,vh)/260));
 }
@@ -4737,15 +4742,15 @@ let darkC=null;
 function darkness(){const m=dayT,D=.985;if(m>=1140&&m<1260)return (m-1140)/120*D;if(m>=1260||m<270)return D;if(m<360)return (360-m)/90*D;return 0}
 function drawDarkness(cx,cy,scale){
   const dk=darkness();if(dk<=0)return;
-  if(!darkC||darkC.width!==cv.width||darkC.height!==cv.height){darkC=document.createElement('canvas');darkC.width=cv.width;darkC.height=cv.height}
-  const g=darkC.getContext('2d');g.globalCompositeOperation='source-over';g.clearRect(0,0,darkC.width,darkC.height);g.fillStyle=`rgba(3,5,14,${dk.toFixed(3)})`;g.fillRect(0,0,darkC.width,darkC.height);
+  const ds=PERF.lvl>=2?.25:.5,dw=Math.ceil(cv.width*ds),dh=Math.ceil(cv.height*ds);if(!darkC||darkC.width!==dw||darkC.height!==dh){darkC=document.createElement('canvas');darkC.width=dw;darkC.height=dh}
+  const g=darkC.getContext('2d');g.setTransform(1,0,0,1,0,0);g.globalCompositeOperation='source-over';g.clearRect(0,0,dw,dh);g.fillStyle=`rgba(3,5,14,${dk.toFixed(3)})`;g.fillRect(0,0,dw,dh);g.setTransform(ds,0,0,ds,0,0);
   g.globalCompositeOperation='destination-out';
   const tr=torchHeld(),fl=1+Math.sin(time*9)*.03+Math.sin(time*23)*.02;
   // no torch in hand: no light of your own (you cannot even see yourself)
   const L=lightSources().map(l=>[l[0],l[1],l[2]*fl]).concat(v46Glows());if(tr)L.push([player.x,player.y-6,TORCHL[tr]*fl]);if(lampOn())L.push([player.x+player.face.x*18,player.y-6+player.face.y*14,LAMPL],[player.x,player.y-6,70]);else if(!tr&&buffOn('göz'))L.push([player.x,player.y-6,58]);else if(!tr&&sk('H8'))L.push([player.x,player.y-6,38]);
   for(const [wx,wy,r] of L){const X=(wx-cx)*scale,Y=(wy-cy)*scale,R=r*scale;if(X<-R||Y<-R||X>cv.width+R||Y>cv.height+R)continue;
     const gr=g.createRadialGradient(X,Y,R*.15,X,Y,R);gr.addColorStop(0,'rgba(0,0,0,1)');gr.addColorStop(.6,'rgba(0,0,0,.85)');gr.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=gr;g.fillRect(X-R,Y-R,R*2,R*2)}
-  ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.drawImage(darkC,0,0);
+  ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.imageSmoothingEnabled=true;ctx.drawImage(darkC,0,0,cv.width,cv.height);ctx.imageSmoothingEnabled=false;
   // fear: a red pulse at the screen edge grows while something closes in
   if(darkT>0){const k=Math.min(1,darkT/8),a=(.18+.4*k)*(.75+.25*Math.sin(time*(6+k*8)));const W2=cv.width/2,H2=cv.height/2,R0=Math.hypot(W2,H2);const gr=ctx.createRadialGradient(W2,H2,R0*(.55-.25*k),W2,H2,R0);gr.addColorStop(0,'rgba(120,0,0,0)');gr.addColorStop(1,`rgba(150,10,20,${a.toFixed(3)})`);ctx.fillStyle=gr;ctx.fillRect(0,0,cv.width,cv.height)}
   ctx.restore();
@@ -4889,13 +4894,18 @@ function dayBannerShow(){if(craftOpen||dlgOpen||!$('pause').hidden||!$('settings
 // sky colour by minute of day (multiplied over the world)
 const SKY=[[0,[70,80,140]],[300,[72,82,142]],[335,[205,165,185]],[370,[255,238,228]],[410,[255,255,255]],[1020,[255,255,255]],[1095,[255,205,155]],[1160,[215,140,150]],[1230,[88,92,150]],[1440,[70,80,140]]];
 function skyNow(){for(let i=1;i<SKY.length;i++){const [t1,c1]=SKY[i],[t0,c0]=SKY[i-1];if(dayT<=t1){const k=(dayT-t0)/(t1-t0);return c0.map((v,j)=>Math.round(v+(c1[j]-v)*k))}}return SKY[0][1]}
+let skyL=null;
 function drawSky(cx,cy,scale){
   const c=skyNow();if(c[0]>252&&c[1]>252&&c[2]>252)return;const dark=1-(c[0]+c[1]+c[2])/765;
   ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.globalCompositeOperation='multiply';ctx.fillStyle=`rgb(${c[0]},${c[1]},${c[2]})`;ctx.fillRect(0,0,cv.width,cv.height);
-  if(dark>.12){ctx.globalCompositeOperation='lighter';const a=Math.min(1,(dark-.12)*2.2);
+  if(dark>.12){const a=Math.min(1,(dark-.12)*2.2);
+    // v58: the warm pools of light are soft, so they are drawn on a quarter-size layer and stretched
+    const q=.25,lw=Math.ceil(cv.width*q),lh=Math.ceil(cv.height*q);if(!skyL||skyL.width!==lw||skyL.height!==lh){skyL=document.createElement('canvas');skyL.width=lw;skyL.height=lh}
+    const g=skyL.getContext('2d');g.setTransform(1,0,0,1,0,0);g.clearRect(0,0,lw,lh);g.setTransform(q,0,0,q,0,0);let any=false;
     const L=lightSources().map(l=>[l[0],l[1],l[2]*.9]);{const tr=torchHeld();if(tr)L.push([player.x,player.y-6,TORCHL[tr]*.7]);else if(lampOn())L.push([player.x+player.face.x*18,player.y-6+player.face.y*14,LAMPL*.6])}
-    for(const [wx,wy,r] of L){const X=(wx-cx)*scale,Y=(wy-cy)*scale,R=r*scale;if(X<-R||Y<-R||X>cv.width+R||Y>cv.height+R)continue;
-      const g=ctx.createRadialGradient(X,Y,0,X,Y,R);g.addColorStop(0,`rgba(255,180,90,${(.42*a).toFixed(3)})`);g.addColorStop(.5,`rgba(255,140,60,${(.16*a).toFixed(3)})`);g.addColorStop(1,'rgba(255,120,40,0)');ctx.fillStyle=g;ctx.fillRect(X-R,Y-R,R*2,R*2)}}
+    for(const [wx,wy,r] of L){const X=(wx-cx)*scale,Y=(wy-cy)*scale,R=r*scale;if(X<-R||Y<-R||X>cv.width+R||Y>cv.height+R)continue;any=true;
+      const gr=g.createRadialGradient(X,Y,0,X,Y,R);gr.addColorStop(0,`rgba(255,180,90,${(.42*a).toFixed(3)})`);gr.addColorStop(.5,`rgba(255,140,60,${(.16*a).toFixed(3)})`);gr.addColorStop(1,'rgba(255,120,40,0)');g.fillStyle=gr;g.fillRect(X-R,Y-R,R*2,R*2)}
+    if(any){ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=true;ctx.drawImage(skyL,0,0,cv.width,cv.height);ctx.imageSmoothingEnabled=false}}
   ctx.restore();
 }
 function sleepBed(o){
@@ -5568,20 +5578,21 @@ function frameBody(now){
   if(!paused&&!hold&&!onTitle&&!wake&&!fading&&!beam)tickVitals(dt);
   tickWake(dt);tickNpc(dt);tickNPCs();
   // respawn
-  for(const t of trees){if(t.cd>0)t.cd-=dt;if(t.fr>0)t.fr-=dt}
+  PERF.acc+=dt;const slowT=PERF.acc>=.2?PERF.acc:0;if(slowT){PERF.acc=0;for(const t of trees){if(t.cd>0)t.cd-=slowT;if(t.fr>0)t.fr-=slowT}}
   if(!paused&&!onTitle&&!wake&&!hold){playTime+=dt;tickTrader();tickDogs(dt);tickFarm(dt);tickWorkshops(dt);if(!fading){if(!beam){tickClock(dt);if(timeHold)tickClock(dt*45);tickHunger(dt);tickAnimals(dt);tickV46(dt);tickV47(dt)}tickNightLessons(dt)}}
   atkCd-=dt;
   if(!paused&&!hold&&!onTitle&&!wake&&!fading&&!beam){tickShots(dt);tickFx(dt);tickDodge(dt);tickZone(dt);tickBuffs(dt);tickWeather(dt);checkLampman()}
   tickAmb(dt);
   renderHot();
   tickSailing(dt);
-  for(const n of nodes)if(!n.alive){n.t-=dt;if(n.t<=0){const sp=findSpot(n.name,player,n);if(sp){n.x=sp.x;n.y=sp.y;n.v=rnd();n.alive=true;n.pop=.35;if(n.mine)n.left=mineLeft()}else n.t=3}}
-  for(const n of nodes)if(n.pop>0)n.pop-=dt;
+  if(slowT){for(const n of nodes){if(!n.alive){n.t-=slowT;if(n.t<=0){const sp=findSpot(n.name,player,n);if(sp){n.x=sp.x;n.y=sp.y;n.v=rnd();n.alive=true;n.pop=.35;if(n.mine)n.left=mineLeft();PERF.visT=0}else n.t=3}}else if(n.pop>0&&!n._v)n.pop=0}}
+  for(const n of PERF.vis)if(n.pop>0)n.pop-=dt;
   for(let i=parts.length-1;i>=0;i--){const p=parts[i];p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=80*dt;if(p.life<=0)parts.splice(i,1)}
   tickGather(dt,!!(mx||my));
   if(!paused&&!onTitle){tickDrops(dt);tickGraves();tickKaptan()}
   const tg=gathering?gathering.tg:updatePrompt();
 
+  if(roomBusy())return;   // v58: inside a house the island is not drawn at all
   // camera
   const scale=S*dpr, viewW=vw/S, viewH=vh/S;
   let cx=player.x-viewW/2, cy=player.y-viewH/2;
@@ -5603,8 +5614,9 @@ function frameBody(now){
   drawPier(time);
   drawBridge(time,inView);
   drawTufts(time,inView);
-  for(const n of nodes)if(n.alive&&inView(n.x,n.y,16)){if(n.pop>0){ctx.save();const k=1-n.pop/.35;ctx.globalAlpha=k;ctx.translate(n.x,n.y);ctx.scale(.6+.4*k,.6+.4*k);ctx.translate(-n.x,-n.y);drawNode(n,time);ctx.restore()}else drawNode(n,time)}
-  if(sk('H5'))for(const n of nodes)if(n.alive&&(n.name==='Çakmaktaşı'||n.name==='Böğürtlen')&&inView(n.x,n.y,16)){ctx.fillStyle=`rgba(255,240,170,${.25+.2*Math.sin(time*4+n.v*6)})`;ctx.beginPath();ctx.arc(n.x,n.y,9,0,Math.PI*2);ctx.fill()}
+  {const k=Math.floor(cx/32)+','+Math.floor(cy/32);PERF.visT-=dt;if(k!==PERF.visK||PERF.visT<=0){PERF.visK=k;PERF.visT=.4;for(const n of PERF.vis)n._v=false;PERF.vis=nodes.filter(n=>n.alive&&inView(n.x,n.y,72));for(const n of PERF.vis)n._v=true}}
+  for(const n of PERF.vis)if(n.alive&&inView(n.x,n.y,16)){if(n.pop>0){ctx.save();const k=1-n.pop/.35;ctx.globalAlpha=k;ctx.translate(n.x,n.y);ctx.scale(.6+.4*k,.6+.4*k);ctx.translate(-n.x,-n.y);drawNode(n,time);ctx.restore()}else drawNode(n,time)}
+  if(sk('H5'))for(const n of PERF.vis)if(n.alive&&(n.name==='Çakmaktaşı'||n.name==='Böğürtlen')&&inView(n.x,n.y,16)){ctx.fillStyle=`rgba(255,240,170,${.25+.2*Math.sin(time*4+n.v*6)})`;ctx.beginPath();ctx.arc(n.x,n.y,9,0,Math.PI*2);ctx.fill()}
   drawGoal(time);
   drawPlacing(time);
   drawGlints(time,inView);
@@ -5704,7 +5716,7 @@ function unpackExplored(str){explored.fill(0);exploredCount=0;lastRevealTile=-1;
 // grey smoke over unknown land: two slow drifting waves, thinner right at the edge of what you know
 // the waves are separable, so three small sine tables replace two trig calls per cell; the slow drift only needs ~4 updates a second
 const fogSX=new Float32Array(W),fogCY=new Float32Array(H),fogD=new Float32Array(W+H);let fogLastT=-9,fogLastN=-1;
-function updateFog(t){if(t-fogLastT<.25&&t>=fogLastT&&exploredCount===fogLastN)return;fogLastT=t;fogLastN=exploredCount;
+function updateFog(t){if(t-fogLastT<(PERF.lvl?1:.25)&&t>=fogLastT&&exploredCount===fogLastN)return;fogLastT=t;fogLastN=exploredCount;
   const d=fogImg.data;for(let x=0;x<W;x++)fogSX[x]=Math.sin(x*.45+t*.6);for(let y=0;y<H;y++)fogCY[y]=Math.cos(y*.5-t*.45);for(let k=0;k<W+H;k++)fogD[k]=Math.sin(k*.23+t*.3)*.8;
   for(let y=0;y<H;y++){const cy=fogCY[y];for(let x=0;x<W;x++){const i=y*W+x,o=i*4;if(explored[i]){d[o+3]=0;continue}
   const n=fogSX[x]*cy+fogD[x+y];const v=(116+n*15+.5)|0;
@@ -6916,7 +6928,7 @@ function drawNightNode(n,time){const x=Math.round(n.x),y=Math.round(n.y),p=.5+.5
   else{px(x-2,y-2,5,3,'#3a1a5a');px(x-1,y-9,3,8,'#a050e0');px(x,y-11,2,3,'#c080ff');px(x,y-8,1,5,'#e0b8ff');if(Math.random()<.05)parts.push({x:x+(Math.random()-.5)*6,y:y-10,vx:0,vy:-10,life:.7,c:'#d8a0ff'})}}
 // light holes the glowing things punch into the dark (they do not keep the night away)
 function v46Glows(){const L=[];if(!nightOn()&&!sis.on)return L;
-  for(const n of nodes)if(n.night&&n.alive&&Math.abs(n.x-player.x)<500&&Math.abs(n.y-player.y)<360)L.push([n.x,n.y-6,n.name==='Mor kıymık'?26:18]);
+  for(const n of PERF.vis)if(n.night&&n.alive&&Math.abs(n.x-player.x)<500&&Math.abs(n.y-player.y)<360)L.push([n.x,n.y-6,n.name==='Mor kıymık'?26:18]);
   for(const f of flies)L.push([f.x,f.y,6+2*Math.sin(f.ph*3)]);
   if(fish)L.push([fish.x,fish.y,10]);return L}
 
@@ -7138,7 +7150,7 @@ function drawV46World(time){if(!fish)return;const hx=player.x+(player.face.x||1)
   px(bx-1,by-3,3,2,'#e84a3a');px(bx-1,by-1,3,1,'#ffffff');if(fish.st!=='bite')px(bx-3,by+1,7,1,'rgba(220,240,255,.5)')}
 function drawV46Over(cx,cy,scale,time){if(!nightOn())return;
   for(const f of flies){const a=.55+.45*Math.sin(f.ph*3);ctx.globalAlpha=a;px(f.x,f.y,1,1,'#f4ff8a');ctx.globalAlpha=a*.35;px(f.x-1,f.y-1,3,3,'#d8ff60');ctx.globalAlpha=1}
-  for(const n of nodes)if(n.night&&n.alive&&Math.abs(n.x-player.x)<400&&Math.abs(n.y-player.y)<300){const x=Math.round(n.x),y=Math.round(n.y);ctx.globalAlpha=.55+.25*Math.sin(time*2.4+n.v*9);
+  for(const n of PERF.vis)if(n.night&&n.alive&&Math.abs(n.x-player.x)<400&&Math.abs(n.y-player.y)<300){const x=Math.round(n.x),y=Math.round(n.y);ctx.globalAlpha=.55+.25*Math.sin(time*2.4+n.v*9);
     if(n.name==='Gece sefası'){px(x-2,y-10,5,3,'#eaf6ff');px(x-1,y-11,3,5,'#eaf6ff');px(x,y-9,1,1,'#fff7c0')}else{px(x-1,y-9,3,8,'#c080ff');px(x,y-11,2,3,'#e0b8ff')}
     ctx.globalAlpha=1;if(Math.sin(time*3+n.v*7)>.55){ctx.globalAlpha=.8;px(n.x,n.y-12,1,1,'#ffffff');ctx.globalAlpha=1}}}
 let v46Sec=0;
@@ -7444,13 +7456,13 @@ function halo(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();
   ctx.fillStyle=g;ctx.beginPath();ctx.ellipse(x,y,r,r*.72,0,0,Math.PI*2);ctx.fill();ctx.restore()}
 function ring(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.strokeStyle=`rgba(170,225,255,${(.6+.4*p).toFixed(3)})`;ctx.lineWidth=1.5;ctx.beginPath();ctx.ellipse(x,y,r+p*1.5,(r+p*1.5)*.62,0,0,Math.PI*2);ctx.stroke();ctx.restore()}
 // v49-p3: the glow is the object's own silhouette (canvas shadow around every drawn pixel), pulsing
-function gl(on,k,f){if(!on)return f();const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;ctx.shadowColor=`rgba(90,190,255,${(.8+.2*p).toFixed(3)})`;ctx.shadowBlur=(2.2+2.2*p)*S*dpr;f();ctx.shadowColor=`rgba(190,235,255,${(.45+.4*p).toFixed(3)})`;ctx.shadowBlur=1.2*S*dpr;f();ctx.restore()}
+function gl(on,k,f){if(!on)return f();if(PERF.lvl>=2){f();const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.18+.22*p;f();ctx.restore();return}const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;ctx.shadowColor=`rgba(90,190,255,${(.8+.2*p).toFixed(3)})`;ctx.shadowBlur=(2.2+2.2*p)*S*dpr;f();ctx.shadowColor=`rgba(190,235,255,${(.45+.4*p).toFixed(3)})`;ctx.shadowBlur=1.2*S*dpr;f();ctx.restore()}
 const _drawNode=drawNode;drawNode=function(n,t){const on=(B3.glow.size&&B3.glow.has(n.name))||QG.n.has(n.name),a=arguments,me=this;gl(on,n.v*6,()=>_drawNode.apply(me,a))};
 const _drawDrops=drawDrops;drawDrops=function(t,inView){_drawDrops.apply(this,arguments);if((B3.dropN&&B3.dropN.size)||QG.d.size){for(const d of drops){if(d.t<1||!inView(d.x,d.y,12)||!((B3.dropN&&B3.dropN.has(d.n))||QG.d.has(d.n)))continue;const c=ICONC[d.n];if(!c)continue;const h=1+Math.sin(time*3+d.ph);gl(true,d.ph,()=>ctx.drawImage(c,Math.round(d.x-4.5),Math.round(d.y-7-h),9,9))}}};
 const _drawAnimal=drawAnimal;drawAnimal=function(a,t){const on=(B3.glowAnim.size&&B3.glowAnim.has(a.k))||QG.a.has(a.k),ar=arguments,me=this;gl(on,a.x*.1,()=>_drawAnimal.apply(me,ar))};
 // trees: glow when they give what you track; their crown fades when something you can pick up (or an animal) is behind it
 function occList(){if(B3.occT===time)return B3.occ;B3.occT=time;const L=[];const vw2=vw/S,vh2=vh/S,cx=cam.cx,cy=cam.cy,inV=(x,y)=>x>cx-20&&x<cx+vw2+20&&y>cy-20&&y<cy+vh2+60;
-  for(const n of nodes)if(n.alive&&inV(n.x,n.y))L.push([n.x,n.y]);for(const d of drops)if(inV(d.x,d.y))L.push([d.x,d.y]);for(const a of animals)if(inV(a.x,a.y))L.push([a.x,a.y]);
+  for(const n of PERF.vis)if(n.alive&&inV(n.x,n.y))L.push([n.x,n.y]);for(const d of drops)if(inV(d.x,d.y))L.push([d.x,d.y]);for(const a of animals)if(inV(a.x,a.y))L.push([a.x,a.y]);
   for(const d of dogs)if(inV(d.x,d.y))L.push([d.x,d.y]);B3.occ=L;return L}
 const _drawTree=drawTree;drawTree=function(tr,t){
   const c=treeSprite(tr.type,tr.seed%3),w=c.width,x=Math.round(tr.x),y=Math.round(tr.y),dx=x-Math.floor(w/2),dy=y+6-c.bot;
@@ -9733,6 +9745,65 @@ renderMem=function(){const rd=riddle?`<div class="memrd"><b>Zümrüt'ün bilmece
 const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);s.v57={k:Object.assign({},memKind)};return s};
 const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);for(const k in memKind)delete memKind[k];if(d&&d.v57&&d.v57.k)for(const i in d.v57.k)if(MEMS[+i])memKind[+i]=d.v57.k[i];return r};
 }).toString()+')()')}catch(e){try{window.__hamErr('v57: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v58-perf">
+// =====================================================================================================
+// v58: phone performance, without the player noticing.
+// · The ground is baked into 256 px chunks the first time they come near (the island "loads" as you walk);
+//   a missing chunk is drawn tile by tile for that frame and baked a little later, at most one per frame.
+// · Water crests and shore foam use cached colours and per-chunk shore lists.
+// · A frame-time watcher moves the canvas density (PERF.cap) and the quality level (PERF.lvl) up and down:
+//   lvl 1 = density 1.5, lvl 2 = density 1.25 + no vignette + cheap glows, lvl 3 = density 1.
+// Runs inside the game's scope through window.__plEval.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const CH=16,CP=CH*T,CW=Math.ceil(W/CH),CHH=Math.ceil(H/CH);
+const chunks=new Map();let bakeQ=[];const MAXC=TOUCH?36:64;
+function bake(cx,cy){const c=document.createElement('canvas');c.width=CP;c.height=CP;const g=c.getContext('2d');g.imageSmoothingEnabled=false;
+  const x0=cx*CH,y0=cy*CH,x1=Math.min(W,x0+CH),y1=Math.min(H,y0+CH);
+  for(let y=y0;y<y1;y++)for(let x=x0;x<x1;x++){const i=y*W+x;g.drawImage(TILEC[tvar[i]],(x-x0)*T,(y-y0)*T);const m=shoreM[i];
+    if(m){g.fillStyle=tiles[i]===4?'rgba(240,248,255,.55)':'rgba(40,70,100,.45)';const bx=(x-x0)*T,by=(y-y0)*T;if(m&1)g.fillRect(bx+T-2,by,2,T);if(m&2)g.fillRect(bx,by,2,T);if(m&4)g.fillRect(bx,by+T-2,T,2);if(m&8)g.fillRect(bx,by,T,2)}}
+  const k=cy*CW+cx;chunks.set(k,{c,t:performance.now()});
+  if(chunks.size>MAXC){let old=null,ot=1e18;for(const [kk,v] of chunks)if(v.t<ot){ot=v.t;old=kk}if(old!=null)chunks.delete(old)}}
+function rawTiles(x0,y0,x1,y1){for(let y=y0;y<y1;y++)for(let x=x0;x<x1;x++){const i=y*W+x;ctx.drawImage(TILEC[tvar[i]],x*T,y*T);const m=shoreM[i];
+  if(m){ctx.fillStyle=tiles[i]===4?'rgba(240,248,255,.55)':'rgba(40,70,100,.45)';const bx=x*T,by=y*T;if(m&1)ctx.fillRect(bx+T-2,by,2,T);if(m&2)ctx.fillRect(bx,by,2,T);if(m&4)ctx.fillRect(bx,by+T-2,T,2);if(m&8)ctx.fillRect(bx,by,T,2)}}}
+let baked=0;
+drawGround=function(x0,y0,x1,y1){const now=performance.now();baked=0;
+  const c0=Math.floor(x0/CH),c1=Math.floor((x1-1)/CH),r0=Math.floor(y0/CH),r1=Math.floor((y1-1)/CH);
+  for(let cy=r0;cy<=r1;cy++)for(let cx=c0;cx<=c1;cx++){if(cx<0||cy<0||cx>=CW||cy>=CHH)continue;const k=cy*CW+cx;let e=chunks.get(k);
+    if(!e&&baked<1){bake(cx,cy);baked++;e=chunks.get(k)}
+    if(e){e.t=now;ctx.drawImage(e.c,cx*CP,cy*CP)}else rawTiles(Math.max(x0,cx*CH),Math.max(y0,cy*CH),Math.min(x1,(cx+1)*CH),Math.min(y1,(cy+1)*CH))}
+  // bake the ring around the view ahead of time, one chunk per frame when nothing else was baked
+  if(!baked){for(let cy=r0-1;cy<=r1+1&&!baked;cy++)for(let cx=c0-1;cx<=c1+1&&!baked;cx++){if(cx<0||cy<0||cx>=CW||cy>=CHH||chunks.has(cy*CW+cx))continue;bake(cx,cy);baked++}}};
+// water: the same waves, with the colours prepared once and the shore foam looked up by chunk
+const WA=[];for(let i=0;i<=20;i++)WA.push(`rgba(255,255,255,${(i/20*.3).toFixed(3)})`);
+const FOAM=[];for(let i=0;i<=40;i++)FOAM.push(`rgba(255,255,255,${(i/40*.7).toFixed(3)})`);
+const SB=new Map();for(const e of SHORE){const k=Math.floor(e.y/CH)*CW+Math.floor(e.x/CH);let L=SB.get(k);if(!L)SB.set(k,L=[]);L.push(e)}
+drawWater=function(time,x0,y0,x1,y1){const low=PERF.lvl>=3;
+  for(let y=y0;y<y1;y++)for(let x=x0;x<x1;x++){const t=tiles[y*W+x];if(t<3)continue;const bx=x*T,by=y*T;
+    if(t===4){for(let k=0;k<(low?1:2);k++){const w=Math.sin(time*1.4+x*.5+y*.45+k*2.6);if(w>.35){ctx.fillStyle=WA[Math.min(20,Math.round((w-.35)*.45/.3*20))];const ox=Math.floor((time*5+x*7+k*6)%14);ctx.fillRect(bx+ox,by+3+k*7+((x+y)&1),4,1);ctx.fillRect(bx+ox+1,by+2+k*7+((x+y)&1),2,1)}}}
+    else{ctx.fillStyle='rgba(225,248,255,.32)';for(let k=0;k<(low?1:2);k++){const o=(time*11+x*5+y*9+k*8)%18;ctx.fillRect(bx+Math.floor(o)-2,by+3+k*6+((x*3+y)%3),3,1)}}
+    if(!low){const sp=Math.sin(time*2.7+x*12.9+y*7.3);if(sp>.96){ctx.fillStyle='rgba(255,255,255,.9)';ctx.fillRect(bx+((x*11)%13),by+((y*5)%13),1,1);ctx.fillStyle='rgba(255,255,255,.4)';ctx.fillRect(bx+((x*11)%13)-1,by+((y*5)%13),3,1)}}}
+  const c0=Math.floor(x0/CH),c1=Math.floor((x1-1)/CH),r0=Math.floor(y0/CH),r1=Math.floor((y1-1)/CH);
+  for(let cy=r0;cy<=r1;cy++)for(let cx=c0;cx<=c1;cx++){const L=SB.get(cy*CW+cx);if(!L)continue;
+    for(const e of L){if(e.x<x0||e.x>=x1||e.y<y0||e.y>=y1)continue;const w=Math.sin(time*(e.o?1.8:2.4)+e.ph),a=(e.o?.42:.25)+.22*w,off=Math.round((w+1)*(e.o?1.5:1));
+      ctx.fillStyle=FOAM[Math.max(0,Math.min(40,Math.round(a/.7*40)))];const bx=e.x*T,by=e.y*T;
+      if(e.dx===1)ctx.fillRect(bx+T-2-off,by,2,T);else if(e.dx===-1)ctx.fillRect(bx+off,by,2,T);else if(e.dy===1)ctx.fillRect(bx,by+T-2-off,T,2);else ctx.fillRect(bx,by+off,T,2)}}};
+// the frame-time watcher: slow for 2 s → one step down; smooth for a long while → one step up (never more often than every 20 s)
+const LV=[{cap:TOUCH?2:3},{cap:1.5},{cap:1.25},{cap:1}];
+let acc=0,n=0,bad=0,good=0,lastUp=0,lastT=0;
+function setLvl(l){l=Math.max(0,Math.min(3,l));if(l===PERF.lvl)return;PERF.lvl=l;const cap=Math.min(LV[0].cap,LV[l].cap);if(cap!==PERF.cap){PERF.cap=cap;resize()}}
+(function watch(now){requestAnimationFrame(watch);const d=now-(lastT||now);lastT=now;
+  if(d<=0||d>250||document.hidden||onTitle||paused||fading)return;acc+=d;n++;
+  if(acc<1000)return;const avg=acc/n;acc=0;n=0;
+  if(avg>24){bad++;good=0;if(bad>=2){bad=0;setLvl(PERF.lvl+1)}}
+  else if(avg<15){good++;bad=0;if(good>=10&&PERF.lvl>0&&now-lastUp>20000){good=0;lastUp=now;setLvl(PERF.lvl-1)}}
+  else{bad=0;good=Math.max(0,good-1)}})(performance.now());
+// fewer weather and dust particles on the lowest level
+{setInterval(()=>{try{if(PERF.lvl>=3&&parts.length>140)parts.splice(0,parts.length-140)}catch(e){}},500)}
+window.__v58={chunks,PERF,setLvl};
+}).toString()+')()')}catch(e){try{window.__hamErr('v58: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

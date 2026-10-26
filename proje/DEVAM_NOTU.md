@@ -331,3 +331,11 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - 5 tarif anısı aynı. 7 yeni anı `MEMS`'e eklendi (indeks 5–11): `ev` (sleep/faint/quest) ve `min` (en erken gün). `memEvent(ev)`: olasılık `CH` (uyku %40, bayılma %60, görev %30), uygun ve görülmemiş anılardan rastgele biri `memUnlock` ile sıraya girer; `memTick` uygun anda açar. Her anı bir kez (mems).
 - Kancalar: `sleepBed` (gece uyuyunca), `faint` ve `nightDeath` (bayılma), Ekin'in `turnIn`'i ve NPC görevleri (`window.__v57.quest`).
 - Kart başlığı türe göre ("Bir rüya gördün" / "Bayılırken bir anı"), `memKind` kayıtta `v57.k`. Yeni sahneler `memScene` sarmalayıcısında (i ≥ 5). Kitap › Anılar her anının nasıl gelebileceğini yazar. "Mor fısıltı" 20. günden, "Bırakılan el" 25. günden önce görünmez.
+
+## v58 — Telefon performansı (`<script id="v58-perf">` + ana kodda küçük değişiklikler)
+- Ölçüm (844×390, dpr 3, CPU ×4 yavaş): önce ≈6 fps; sonra gündüz ≈60 fps, gece ≈30–60 fps (kaliteye göre).
+- Çözünürlük: dünya tuvali artık telefonda en çok 2× yoğunlukta (`PERF.cap`, `resize`). Kare süresi izleyicisi (`watch`): 2 sn üst üste ort. >24 ms → bir kademe aşağı; uzun süre <15 ms → 20 sn'de bir, bir kademe yukarı. `PERF.lvl` 1: 1,5×, 2: 1,25× + vinyet yok + ucuz parıltı (`gl`) + karanlık maskesi ¼, 3: 1× + daha az su köpüğü/parçacık. Hile/test: `__v58.setLvl(n)`.
+- Zemin 16×16 karoluk parçalar halinde (256 px) ilk yaklaşıldığında pişirilir (`bake`, kare başına en çok 1, görüş çevresi önceden), LRU sınırı telefonda 36. Eksik parça o kare karo karo çizilir.
+- Su: hazır renk dizileri, kıyı köpüğü parça listelerinde (`SB`).
+- Düğümler: `PERF.vis` (kamera 32 px kayınca ya da 0,4 sn'de bir yeniden), çizim, parıltı, toplama hedefi, gece ışıkları, ağaç tepesi saydamlığı bunu kullanır. Yeniden doğma ve ağaç sayaçları saniyede 5 kez. Otlar (`TUFTS`) kameraya göre süzülür.
+- Karanlık maskesi yarım (düşük kalitede ¼) çözünürlükte, gökyüzü ışık havuzları ¼ katmanda, vinyet önbellekte. Harita sisi düşük kalitede saniyede 1. Ev içindeyken ada hiç çizilmez.
