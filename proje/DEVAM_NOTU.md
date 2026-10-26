@@ -298,3 +298,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Nazlı: `isRaw`, `rawList` (görülmüş, tarifi olmayan doğal malzemeler; `RAW_NO` hariç), `rawTier` (fiyat kademesi + bölge `rawZone`), `rawPrice` = fiyat × (2,6 + 0,6 × kademe).
 - Ganimet: `dropRoll(D,must)` — p≥1 olanlar hep düşer, kalanlardan ağırlıklı 1–3 çekiliş (`dropRolls`: can ≥55 → 2, ≥150 → 3; şans +1). Reis (hepsi p=1) hepsini düşürür. Tuzaklar da aynı. Fare ipucunda (avlanmış tür) olasılıklar yazar (`dropOdds`).
 - Fiyatlar: zor canavarların parçaları yükseldi (boynuz, diş, ayı pençesi, timsah dişi…); onları kullanan tarifler fark × 1,3 ile güncellenir (PRICE_ tanımının hemen altında).
+
+## v52 — Demirci kardeşler
+- Yeni NPC **Zırhçı Durmuş** (`durmus`, `anvil2`), Dursun'un yanındaki ikinci örs (yer: Dursun'un çevresinde açık ilk nokta). `smithOf(r)`: `DB.f` (örste dövülen zırhlar) → Durmuş, gerisi Dursun. `forgeWho` örsü kimin açtığını tutar (konuşmadan ya da en yakın demirci, `nearestSmith`); örs listesi yalnızca o demircinin işlerini gösterir; Durmuş'ta Bile sekmesi yok. Kayıtta `dm`.
+- Kancalar: blocked, target, interact, prompt, pickAt, çizim (`drawDurmus`), harita ikonu (`MAPIC.durmus`), GUIDE, VOICES, TALK.
