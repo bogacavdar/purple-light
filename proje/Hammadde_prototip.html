@@ -1443,6 +1443,8 @@ ladder(['Taş kazma','Çakmaktaşı kazma','Granit kazma','Kuvars kazma','Bazalt
 ladder(['Kürek','Boynuz kazma'],'shovel',[3,2],[25,40],[100,250],'kil kazar');
 const toolPrice=n=>buyFloor(n,GT[n].price);   // Dursun's price (D1)
 // v51: nobody but Nazlı sells; masters make what you have learnt from your materials and take a labour fee
+const QC={};const QG={n:new Set(),t:new Set(),a:new Set(),d:new Set(),why:{}};   // v55: what tracked quests want, glowing blue in the world
+const qc=(k,n)=>{QC[k]=(QC[k]||0)+(n==null?1:n)};   // v55: counters the NPC quests read (kills live in kills{})
 const laborFee=r=>Math.max(2,Math.round((PRICE_[r]||10)*.15));
 const ARMORSET=new Set(DB.f||[]);
 function smithOf(r){return ARMORSET.has(r)?durmus:smith}
@@ -2032,7 +2034,7 @@ let tut=0;                 // tutorial step, 12 = done
 const seen=new Set();      // every item ever obtained
 const PRICE=DB.p;
 let hot=window.claude&&window.claude.hot;
-function snapshot(){return{v47:v47Save(),v46:v46Save(),v45:{tz,te:tzEat,ht:helpTorch,fg:[...forged]},v44:{tg:toygar.met,tt:toygar.talks,cl:[...clues],kl:Object.assign({},kills),bf:JSON.parse(JSON.stringify(pbuff)),cx:Object.assign({},codex),wx:{k:weather.k,t:Math.round(weather.t)},tu:torchesUsed,lm:{met:lampman.met,gone:lampman.gone},bk:{shown:balikci.shown,met:balikci.met},mh:mudHint},lk:Object.assign({},LOOK.hero),ll:Object.assign({},LOOK.love),qv:4,dm:durmus.met,gv:graves.slice(),bf:bridge.fixed,ss:shelterSlept,km:kaptan.met,ks:kaptan.state,rm:carp.met,dr:drops.filter(d=>d.t>=1||d.keep).map(d=>d.keep?[d.n,Math.round(d.t>=1?d.x:d.tx),Math.round(d.t>=1?d.y:d.ty),1]:[d.n,Math.round(d.x),Math.round(d.y)]),dh:dropHint,ht:htut,yt:ytut,th:torchHint,dn:deaths,tb:Object.assign({},torchBurn),ft:ftut,ct:ctut,tt:torchTut,ns:nightScare===1?0:nightScare,am:alp.met,eq:Object.assign({},equip),fd:Math.round(food),hg:hungerSeen,fs2:fightSeen,os:[...openSeq.keys()],pl:JSON.parse(JSON.stringify(placed.concat(placing&&placing.moving?[placing.moving]:[]))),dt:Math.round(dayT),dy:day,ho:hotList().filter(Boolean),bt:belt.slice(0,12).map(n=>n||null),hd:hand,mv:MAPV,tc:trader.called,tf:trader.firstDone,um:usta.met,hp:Math.round(hp),stm:Math.round(st),rt:runTut,hs:hurtSeen,hn:heroName,ln:loveName,diff,x:player.x,y:player.y,inv:{...inv},order:[...order],found:[...found],tried:[...tried],coins,seen:[...seen],tut,skills:[...skills],toolDur:{...toolDur},xp,lvl,woodCut,questsHidden,met,qState,dlgSeen:[...dlgSeen],bought:[...bought],won,walked,mapSeen,tapMoved,exp:packExplored(),playTime,learned:[...learned],tlog:[...tlog],pot:{r:pot.r,put:pot.put},witchMet,farmerMet,farmStep,witchShown,selSeed,plots:plots.map(f=>({st:f.st,crop:f.crop,t:f.t,wet:f.wet})),wiz:{...wiz},mm:market.met,sm:smith.met,dogs:dogs.map(d=>({mat:d.mat,name:d.name,n:d.n||0})),playing:!onTitle}}
+function snapshot(){return{v47:v47Save(),v46:v46Save(),v45:{tz,te:tzEat,ht:helpTorch,fg:[...forged]},v44:{tg:toygar.met,tt:toygar.talks,cl:[...clues],kl:Object.assign({},kills),bf:JSON.parse(JSON.stringify(pbuff)),cx:Object.assign({},codex),wx:{k:weather.k,t:Math.round(weather.t)},tu:torchesUsed,lm:{met:lampman.met,gone:lampman.gone},bk:{shown:balikci.shown,met:balikci.met},mh:mudHint},lk:Object.assign({},LOOK.hero),ll:Object.assign({},LOOK.love),qv:5,dm:durmus.met,gv:graves.slice(),bf:bridge.fixed,ss:shelterSlept,km:kaptan.met,ks:kaptan.state,rm:carp.met,dr:drops.filter(d=>d.t>=1||d.keep).map(d=>d.keep?[d.n,Math.round(d.t>=1?d.x:d.tx),Math.round(d.t>=1?d.y:d.ty),1]:[d.n,Math.round(d.x),Math.round(d.y)]),dh:dropHint,ht:htut,yt:ytut,th:torchHint,dn:deaths,tb:Object.assign({},torchBurn),ft:ftut,ct:ctut,tt:torchTut,ns:nightScare===1?0:nightScare,am:alp.met,eq:Object.assign({},equip),fd:Math.round(food),hg:hungerSeen,fs2:fightSeen,os:[...openSeq.keys()],pl:JSON.parse(JSON.stringify(placed.concat(placing&&placing.moving?[placing.moving]:[]))),dt:Math.round(dayT),dy:day,ho:hotList().filter(Boolean),bt:belt.slice(0,12).map(n=>n||null),hd:hand,mv:MAPV,tc:trader.called,tf:trader.firstDone,um:usta.met,hp:Math.round(hp),stm:Math.round(st),rt:runTut,hs:hurtSeen,hn:heroName,ln:loveName,diff,x:player.x,y:player.y,inv:{...inv},order:[...order],found:[...found],tried:[...tried],coins,seen:[...seen],tut,skills:[...skills],toolDur:{...toolDur},xp,lvl,woodCut,questsHidden,met,qState,dlgSeen:[...dlgSeen],bought:[...bought],won,walked,mapSeen,tapMoved,exp:packExplored(),playTime,learned:[...learned],tlog:[...tlog],pot:{r:pot.r,put:pot.put},witchMet,farmerMet,farmStep,witchShown,selSeed,plots:plots.map(f=>({st:f.st,crop:f.crop,t:f.t,wet:f.wet})),wiz:{...wiz},mm:market.met,sm:smith.met,dogs:dogs.map(d=>({mat:d.mat,name:d.name,n:d.n||0})),playing:!onTitle}}
 function restore(d){if(!d||!d.inv)return;
   if(d.v47&&(d.qv||0)<4)d=Object.assign({},d,{qv:4});   // v47 wrote qv twice (the 2 won), its quest index is already in v47 numbering
   {const v5=d.v45||{};tz=v5.tz||0;tzEat=v5.te||0;helpTorch=!!v5.ht;forged.clear();(v5.fg||(d.found||[]).filter(n=>TOOLS.has(n))).forEach(n=>forged.add(n));}
@@ -2049,6 +2051,7 @@ function restore(d){if(!d||!d.inv)return;
   placed.length=0;(d.pl||[]).forEach(o=>placed.push(o));openSeq.clear();openN=0;(d.os||[]).forEach(r=>{if(REC.has(r))openSeq.set(r,++openN)});dayT=nn(d.dt,360);day=d.dy||1;hotOrder=d.ho||[];hand=nn(d.hd,-1);
   if(!d.qv&&(d.tut||0)>=15)d=Object.assign({},d,{tut:d.tut+2,tc:true,tf:true,um:true});   // two quests were added after "5 odun kes"
   if((d.qv||0)<4&&(d.qv||0)>=3&&(d.tut||0)>=12)d=Object.assign({},d,{tut:d.tut-1});   // v47: the axe quest is gone (made in the tutorial)
+  if((d.qv||0)<5&&(d.tut||0)>=12){const OLD=Q4KEYS,NEW=Q5KEYS,cur=OLD[d.tut-11];const done=new Set(OLD.slice(0,d.tut-11));let ni=NEW.findIndex(k=>!done.has(k));if(ni<0)ni=NEW.length;d=Object.assign({},d,{tut:11+ni,qState:NEW[ni]===cur?d.qState:'talk'})}   // v55: the quests about other people moved to those people
   if((d.qv||0)<3&&(d.tut||0)>=11){const OLD=['coin','lv5','axe','wood','trader','kemal','t10','lv8','t25','raft','launch'],NEW=['axe','wood','bridge','shelter','coin','lv5','trader','kemal','t10','lv8','t25'];
     const done=new Set(OLD.slice(0,d.tut-11));let ni=NEW.findIndex(k=>!done.has(k));if(ni<0)ni=NEW.length;d=Object.assign({},d,{tut:11+ni,qState:'talk'})}
   trader.called=nn(d.tc,(d.tut||0)>=15);trader.firstDone=nn(d.tf,(d.tut||0)>=16);usta.met=!!d.um;hp=Math.max(1,+nn(d.hp,1e9)||1);st=nn(d.stm,1e9);runTut=d.rt||0;hurtSeen=!!d.hs;heroName=d.hn||'';loveName=d.ln||'';diff=d.diff||'normal';player.x=d.x;player.y=d.y;Object.assign(inv,d.inv);order.push(...d.order);(d.found||[]).forEach(f=>{found.push(f);foundSet.add(f)});(d.tried||[]).forEach(t=>tried.add(t));coins=d.coins||0;(d.seen||order).forEach(x=>seen.add(x));tut=nn(d.tut,tut);(d.skills||[]).forEach(x=>skills.add(x));Object.assign(toolDur,d.toolDur||{});xp=d.xp||0;lvl=d.lvl||1;woodCut=d.woodCut||0;questsHidden=!!d.questsHidden;met=nn(d.met,d.tut>0);qState=d.qState||'talk';(d.dlgSeen||[]).forEach(x=>dlgSeen.add(x));(d.bought||[]).forEach(x=>bought.add(x));(d.learned||[]).forEach(x=>learned.add(x));won=!!d.won;walked=nn(d.walked,true);mapSeen=nn(d.mapSeen,2);tapMoved=nn(d.tapMoved,true);unpackExplored(d.exp);if((d.tut||0)>=11&&met)witchShown=true;playTime=d.playTime||0;trader.nextAt=trader.called?playTime+150:Infinity;(d.tlog||[]).forEach(([k,v])=>tlog.set(k,v));if(d.wiz)Object.assign(wiz,d.wiz);market.met=!!d.mm;smith.met=!!d.sm;if(dogs.length||wiz.plan){if(dogs.length&&wiz.shown){wiz.shown=false;wiz.gone=true}}if(d.pot&&d.pot.r&&REC.has(d.pot.r)){pot.r=d.pot.r;pot.put=d.pot.put}witchMet=!!d.witchMet;farmerMet=!!d.farmerMet;farmStep=nn(d.farmStep,d.farmerMet?1:0);witchShown=nn(d.witchShown,!!d.witchMet||(d.tut||0)>=12);selSeed=d.selSeed||null;(d.plots||[]).forEach((o,i)=>{if(plots[i])Object.assign(plots[i],o)});(d.dogs||[]).forEach(o=>dogs.push({...o,x:player.x+8,y:player.y+8,state:o.mat?'idle':'wait',t:0,dur:0,target:null,face:1,ph:Math.random()*6,happy:0}));beltLoad(d);lastCoins=coins;renderInv()}
@@ -2300,7 +2303,7 @@ function tickGather(dt,moving){
   else if(tg.kind==='tree'){tg.t.cd=12;woodCut++;dx0=tg.t.x+(player.x<tg.t.x?-6:6);dy0=tg.t.y;dropItem(g.name,dx0,dy0);if(/^Obsidyen/.test(g.tool||'')&&Math.random()<.35)dropItem(g.name,dx0,dy0);for(const [k,q] of (TREE_EXTRA[tg.t.type.n]||[]))dropItem(k,dx0,dy0,q);sfx('pick');burst(tg.t.x,tg.t.y-8)}
   else if(tg.kind==='clay'){dropItem(g.name,player.x+player.face.x*10,player.y+player.face.y*8);sfx('pick')}
   else add(g.name);
-  gainXP(1);
+  gainXP(1);qc('gather:'+g.name);
   if(sk('G4')&&rnd()<.1+luck()){if(tg.kind==='node'||tg.kind==='tree'||tg.kind==='clay')dropItem(g.name,dx0,dy0);else{gain(g.name);renderInv()}toast(`Bereket! +1 ${g.name}`)}
   if(g.tool&&wearsNow()){toolDur[g.tool]=Math.max(0,(nn(toolDur[g.tool],GT[g.tool].dur))-1);if(toolDur[g.tool]<=0)setTimeout(()=>toast(`${g.tool} köreldi! Demirci Dursun'da bile.`,true),200)}
 }
@@ -2388,7 +2391,7 @@ let craftOpen=false, slots=[null,null], mode='craft', filter='';
 const $=id=>document.getElementById(id);
 const craftEl=$('craft'), cbody=$('cbody'), cmsg=$('cmsg'), docraft=$('docraft'), ctools=$('ctools');
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const TITLES={eat:'Ne yiyeceksin?',carp:'Marangoz Rıza · Evler ve barınaklar',hand:'El yapımı · Bildiğin basit tarifler',usta:'Usta Kemal · Sipariş',atl:'Atölye',map:'Ada haritası',craft:'Cadının kazanı',forge:'Demirci Dursun · Örs',dogs:'Robot köpekler',char:'Karakter',inv:'Envanter',book:'Tarif kitabı',sell:'Pazarcı Nazlı · Pazar',skills:'Yetenek ağacı',shop:'Demirci Dursun · Al ve bile'};
+const TITLES={qlog:'Görevler',eat:'Ne yiyeceksin?',carp:'Marangoz Rıza · Evler ve barınaklar',hand:'El yapımı · Bildiğin basit tarifler',usta:'Usta Kemal · Sipariş',atl:'Atölye',map:'Ada haritası',craft:'Cadının kazanı',forge:'Demirci Dursun · Örs',dogs:'Robot köpekler',char:'Karakter',inv:'Envanter',book:'Tarif kitabı',sell:'Pazarcı Nazlı · Pazar',skills:'Yetenek ağacı',shop:'Demirci Dursun · Al ve bile'};
 const BTN={map:'mini',dogs:'b-dog',char:'b-char',inv:'b-inv',hand:'b-hand',craft:'b-craft',book:'b-book',sell:'b-sell',skills:'b-skill',shop:'b-shop'};
 let station='pot', mktTab='sell';
 const atSmithMenu=()=>craftOpen&&(mode==='shop'||(mode==='craft'&&station==='forge'));
@@ -2708,7 +2711,7 @@ function renderTools(){
   if(mode==='eat'){ctools.innerHTML='';return}
   if(mode==='book'){ctools.innerHTML=`<input id="flt" type="search" placeholder="Tariflerde ara" aria-label="Tariflerde ara"><span class="cnt" id="cnt"></span>`}
   else if(mode==='sell'){ctools.innerHTML=`<input id="flt" type="search" placeholder="Malzeme ara" aria-label="Malzeme ara"><button id="sellall" type="button" style="background:var(--accent);color:#2a1f08;border:none;font-family:inherit;font-weight:700;font-size:14px;padding:6px 10px;cursor:pointer"></button>`}
-  else if(mode==='char'||mode==='dogs'||mode==='map'||mode==='carp'){ctools.innerHTML='';return}
+  else if(mode==='char'||mode==='dogs'||mode==='map'||mode==='carp'||mode==='qlog'){ctools.innerHTML='';return}
   else if(mode==='shop'){ctools.innerHTML=`<span class="cnt" id="cnt" style="font-size:15px;color:var(--ink)"></span>`;return}
   else if(mode==='skills'){ctools.innerHTML=`<span class="cnt" id="cnt" style="font-size:15px;color:var(--accent)"></span>`;return}
   else if(mode==='craft')ctools.innerHTML=`<input id="flt" type="search" placeholder="${potBy==='ing'?'Malzeme adı (ör. taş)':'Tarif adı'}" aria-label="Tarif ara"><button type="button" id="potby" class="mb ghost" style="font-size:13px;padding:5px 9px">${potBy==='ing'?'İçindekine göre':'Ada göre'}</button><select id="potcat" aria-label="Grup" style="font-family:inherit;font-size:13px;background:#1c2419;color:var(--ink);border:2px solid var(--panel-edge);padding:5px">${['Tümü',...CATS].map(c=>`<option${c===potCat?' selected':''}>${c}</option>`).join('')}</select><span class="cnt" id="cnt"></span>`;
@@ -2792,6 +2795,7 @@ addEventListener('pointerup',e=>{const d=idrag;if(!d||e.pointerId!==d.id)return;
   else if(d.src==='slot'){beltClear(d.i);toast(`${d.n} yuvadan çıktı; envanterinde duruyor`)}else renderCraft()});
 addEventListener('pointercancel',()=>{if(idrag){clearTimeout(idrag.tm);if(idrag.g)idrag.g.remove();idrag=null;cbody.classList.remove('idrag')}});
 function renderCraft(){
+  if(mode==='qlog'){renderQlog();return}
   $('cpanel').classList.toggle('nobench',true);
   $('cpanel').classList.toggle('potmode',mode==='craft');$('cpanel').classList.toggle('invm',mode==='inv');
   $('cpanel').classList.toggle('forge',mode==='craft'&&station==='forge');
@@ -3054,7 +3058,7 @@ ctools.addEventListener('click',e=>{
 });
 function sell(n,q){
   if(!(inv[n]>0)||q<1)return;
-  q=Math.min(q,inv[n]);inv[n]-=q;if(GT[n]&&!inv[n])delete toolDur[n];if(!inv[n]&&beltIndex(n)>=0){const j=beltIndex(n);if(hand===j)hand=-1;belt[j]=null;hotK=''}const fromShop=shopTake(n,q);let got=Math.round(unitPrice(n)*q);const lucky=fromShop<q&&sk('T3')&&rnd()<.05+(sk('T8')?.07:0)+luck();if(lucky)got+=Math.round(unitPrice(n)*(q-fromShop));coins+=got;tutSold([n]);
+  q=Math.min(q,inv[n]);qc('sold',Math.round(unitPrice(n)*q));inv[n]-=q;if(GT[n]&&!inv[n])delete toolDur[n];if(!inv[n]&&beltIndex(n)>=0){const j=beltIndex(n);if(hand===j)hand=-1;belt[j]=null;hotK=''}const fromShop=shopTake(n,q);let got=Math.round(unitPrice(n)*q);const lucky=fromShop<q&&sk('T3')&&rnd()<.05+(sk('T8')?.07:0)+luck();if(lucky)got+=Math.round(unitPrice(n)*(q-fromShop));coins+=got;tutSold([n]);
   if(slots[0]===n&&!avail(n,0))slots[0]=null;if(slots[1]===n&&!avail(n,1))slots[1]=null;
   toast(`${lucky?'Şanslı müşteri! ':''}${q} ${n} satıldı · +${got.toLocaleString('tr-TR')} sikke`);renderInv();renderCraft();
 }
@@ -3206,7 +3210,7 @@ function brew(){
   const used=pot.put.flatMap(o=>Object.keys(o));
   pot.put=x.i.map(()=>({}));
   if(keep&&rnd()<keep+luck()&&used.length){const back=used[Math.floor(rnd()*used.length)];gain(back);note+=` · Tutumlu usta: 1 ${back} geri geldi`}
-  gain(x.r);if(wearTool(x.r))giveTool(x.r);
+  gain(x.r);qc('craft:'+x.r);if(wearTool(x.r))giveTool(x.r);
   forged.add(x.r);
   sfx(isNew?'found':'craft');sfx('clank');potFx=performance.now()+900;
   msg(`${isNew?(EQUIP[x.r]?'Yeni zırh':'Yeni alet')+' dövüldü':'Dövüldü'}: ${x.r}! +${isNew?8:2} XP`+note,'ok');
@@ -3375,25 +3379,17 @@ function clampQty(){}
 // ---------- tutorial ----------
 const tutEl=$('tut');
 const tutPor={k:null,ekin:()=>{const v=$('dlg').querySelector('.dport svg:not([class])');return v?v.outerHTML:''},witch:()=>{const v=$('dlg').querySelector('.dport svg.cd');return v?v.outerHTML.replace('class="cd"',''):''}};
+const Q4KEYS=['wood','bridge','shelter','coin','lv5','trader','kemal','t10','lv8','t25','bronze','dursun','toygar','iron','def','lava','clues'],Q5KEYS=['wood','bridge','coin','lv5','t10','lv8','t25','bronze','iron','def','lava','clues'];
 const QUESTS=[
   {t:'5 odun kes.',get h(){const ax=Object.keys(GT).find(n=>GT[n].kind==='axe'&&inv[n]>0);return (ax&&beltIndex(ax)<0?`Baltan envanterinde: önce ${beltHow(ax)}. `:'')+(TOUCH?'Baltayı alttaki kutudan eline al ve bir çam ağacına dokun.':'Baltayı eline al (alttaki kutu ya da sayı tuşu) ve bir çam ağacının yanında <span class="kc">E</span>\'ye bas.')+' Meşe ve huş için daha iyi balta gerek. Körelirse Demirci Dursun\'da bile.'},go:()=>ownsKind('axe')&&!axe()?'smith':null,p:()=>`${Math.min(woodCut,5)}/5`,done:()=>woodCut>=5,c:40,
    say:'Ateşimin odunu azaldı. Bana beş odun keser misin? Çamlardan başla; taş baltan onlara yeter.',thx:'Bu ateş bu gece de yanacak. Sağ ol.'},
   {t:'Kırık köprüyü onar.',h:'Büyük nehrin ortasındaki kırık köprüye 40 odun götür ve onar. Ok yolu gösterir.',go:()=>bridge.fixed?null:'bridge',p:()=>bridge.fixed?'onarıldı':`Odun ${Math.min(woodCount(),40)}/40`,done:()=>bridge.fixed,c:100,x:40,run:1,
    say:'Adayı ikiye bölen büyük nehrin ortasında eski bir köprü vardı; fırtına onu kırdı. Karşı yaka <b>bataklık</b>, onun ötesi <b>Kül Diyarı</b>: adanın en değerli madenleri de en tehlikeli canavarları da orada. <b>40 odunla</b> köprüyü onarabilirsin. Ama hazır olmadan geçme evlat.',
-   thx:'Köprü yeniden ayakta! Karşı yaka bizim yurt gibi değil; canavarlar sert vurur, çamur ayağını tutar. Al şu <b>yüz sikkeyi</b>; biraz daha biriktir: yetenek ağacının <b>Savaş</b> dalında önce <b>Atılma</b>, sonra <b>Koşu</b> var, ikisi de yüzer sikke. Zor durumda kalırsan koş!'},
-  {t:"Marangoz Rıza'ya bir yaprak barınağı yaptır ve içinde uyu.",h:'Rıza\'ya 8 dal, 12 yaprak, 4 lif ve 5 sikke götür; barınağı istediğin yere koy, gece içinde uyu.',go:()=>{if(shelterSlept)return null;if(has('Yaprak barınağı')||placed.some(o=>o.n==='Yaprak barınağı'))return null;return 'carp'},
-   p:()=>shelterSlept?'yapıldı':(has('Yaprak barınağı')||placed.some(o=>o.n==='Yaprak barınağı'))?'barınak hazır · gece içinde uyu':'Marangoz Rıza',done:()=>shelterSlept,c:40,x:20,
-   say:'Her gece benim ateşimin başında uyuyamazsın. Pazarın yolunda <b>Marangoz Rıza</b> oturur. Ona dal ve yaprak götür, sana bir <b>yaprak barınağı</b> yapsın: yatak gerekmez ama bir gecelik. Sonra çadır, kulübe, ev… Rıza hepsini yapar, para biriktir.',
-   thx:'Kendi çatın olunca uyku da tatlı olur. Rıza\'nın evleri pahalı ama sağlam; içine bir yatak koymayı unutma.'},
+   thx:'Köprü yeniden ayakta! Karşı yaka bizim yurt gibi değil; canavarlar sert vurur, çamur ayağını tutar. Al şu <b>yüz sikkeyi</b>; biraz daha biriktir: yetenek ağacının <b>Savaş</b> dalında önce <b>Atılma</b>, sonra <b>Koşu</b> var, ikisi de yüzer sikke. Zor durumda kalırsan koş! Bataklığın ortasında <b>Avcı Toygar</b> yaşar; yolun düşerse selamımı söyle.'},
   {t:'100 sikke biriktir ve ilk yeteneğini al.',h:TOUCH?'Topla, birleştir, sat; sonra ağaç ikonuyla yetenek ağacını aç.':'Topla, birleştir, sat; sonra Y ile yetenek ağacını aç.',p:()=>`Sikke ${Math.min(coins,100)}/100 · ${skills.size?'yetenek alındı':'yetenek yok'}`,done:()=>skills.size>0,c:30,
-   say:'Adada yaşamak bir şey, iyi yaşamak başka. Kendine 100 sikke biriktir ve ilk ustalığını öğren. Sonra bana gel.',thx:'İşte bu! Ellerin artık senin dilinden konuşuyor.'},
+   say:'Adada yaşamak bir şey, iyi yaşamak başka. Kendine 100 sikke biriktir ve ilk ustalığını öğren. Sonra bana gel.<br><br>Bu arada: yatağın yok. Kuzeybatıda <b>Usta Kemal</b> oturur, ona uğra. Batıda <b>Marangoz Rıza</b> barınak yapar. Adadaki herkesin senden isteyeceği bir iş vardır; <b>Görevler</b> defterine yazılır.',thx:'İşte bu! Ellerin artık senin dilinden konuşuyor.'},
   {t:"Seviye 5'e ulaş.",h:'Topla, birleştir ve yeni tarifler bul; hepsi XP verir.',p:()=>`Seviye ${Math.min(lvl,5)}/5`,done:()=>lvl>=5,c:60,
    say:'Tecrübe, adanın en değerli madenidir. Biraz daha çalış, beşinci seviyeye ulaş.',thx:'Gözlerin değişmiş. Artık bir acemi değilsin.'},
-  {t:'Tüccar Nuri\'nin ilk siparişini karşıla.',h:'İskeleye git; gemi yanaşınca Nuri\'yle konuş ve istediklerini teslim et.',go:()=>trader.state==='here'?'trader':'dock',p:()=>trader.firstDone?'teslim edildi':trader.state==='here'?'gemi iskelede':'gemi yolda',done:()=>trader.firstDone,c:30,x:20,
-   acc:()=>{if(!trader.called){trader.called=true;trader.nextAt=Math.min(trader.nextAt,playTime+20)}},
-   say:'Ufukta bir yelken gördüm evlat. Gezgin Tüccar Nuri olmalı; her bahar uğrar ama bu adaya işaret ateşi yakan olmazsa yanaşmaz. Ben ateşi yaktım. Sen <b>iskeleye</b> git, gemiyi karşıla. İlk seferinde fazla bir şey istemez; yardım edersen güzel sikke verir.',thx:'Nuri memnun kalmış! Artık arada bir kendiliğinden uğrar; gemisi görününce iskeleye koş.'},
-  {t:'Usta Kemal\'i bul.',h:'Kuzeybatıdaki zanaat atölyesine git ve Usta Kemal\'le konuş. Ok yolu gösterir.',go:()=>'usta',p:()=>usta.met?'tanıştın':'kuzeybatıda',done:()=>usta.met,c:40,x:25,
-   say:'Kuzeybatıda, ormanın ardında <b>Usta Kemal</b> oturur; eli her işe yatkın bir zanaatkâr. Tarifini bildiğin eşyaları sikke karşılığı yapar, isteyene atölye bile kurar. Git, benden selam söyle. Yatağın da yok; ondan iste.',thx:'Kemal\'le tanıştın demek. O yatağı iyi bir yere koy evlat; gece uyumadan sabah olmaz.'},
   {t:'10 farklı tarif öğren.',h:'Yeni malzemeler topladıkça kitapta yeni tarifler açılır; Zümrüt\'ün kazanında öğren.',p:()=>`${Math.min(found.length,10)}/10`,done:()=>found.length>=10,c:60,x:30,
    say:'Bu adada her şey iki şeyin buluşmasıyla başlar. On farklı tarif bul, merakını bileyelim.',thx:'On tarif! Kitabın kalınlaşıyor, ben de gençleşiyorum sanki.'},
   {t:"Seviye 8'e ulaş ve 250 sikkelik bir yetenek al.",h:'Bereket, Oduncu ya da Uzun kol gibi.',p:()=>`Seviye ${Math.min(lvl,8)}/8 · ${SKILLS.some(x=>x.c===250&&sk(x.id))?'yetenek alındı':'yetenek yok'}`,done:()=>lvl>=8&&SKILLS.some(x=>x.c===250&&sk(x.id)),c:120,
@@ -3406,15 +3402,6 @@ const QUESTS=[
    acc:()=>{['Bakır külçesi','Kalay külçesi','Tunç külçesi'].forEach(n=>bought.add(n))},
    say:'Taşla, kemikle buraya kadar geldin. Ama karşı yaka taş bıçakla geçilmez. Dursun yıllardır bir <b>tunç</b> çekici sallamak için can atıyor. Bakırı ve kalayı madenden çıkar, kazanda erit, ikisini birleştir: <b>tunç</b> olur. Tarifleri kitabına yazdım.',
    thx:'Tunç! Kızıl altın gibi parlıyor. Dursun bunu görünce sevinçten çekicini düşürecek.'},
-  {t:"Dursun'a tunç bir alet ya da silah dövdür.",h:'Tunç balta, tunç kazma, tunç kılıç ya da tunç mızrak: biri yeter. Tunç kazma gümüş, altın ve bazaltı da kırar.',
-   go:()=>{const L=['Tunç kazma','Tunç kılıç','Tunç balta','Tunç mızrak'];if(!L.some(n=>foundSet.has(n)))return 'pot';return L.some(n=>foundSet.has(n)&&canBrew(REC.get(n)))?'smith':null},
-   p:()=>['Tunç balta','Tunç kazma','Tunç kılıç','Tunç mızrak'].filter(n=>forged.has(n)).join(', ')||'henüz yok',done:()=>['Tunç balta','Tunç kazma','Tunç kılıç','Tunç mızrak'].some(n=>forged.has(n)),c:150,x:60,
-   acc:()=>{['Tunç kazma','Tunç kılıç','Tunç balta'].forEach(n=>bought.add(n))},
-   say:'Külçe tek başına bir şey değil; örste şekil alır. Önce Zümrüt\'ün kazanında tarifini öğren, sonra Dursun\'a git, bir <b>tunç kılıç</b> ya da <b>tunç kazma</b> dövdür. Sap için bir ağaç sapı, sargı için ip ya da deri gerekir.',
-   thx:'İşte gerçek bir alet! Bununla bataklığın karşısına geçmeye hazırsın. Ama orada yalnız değilsin…'},
-  {t:"Bataklıktaki Avcı Toygar'ı bul.",h:'Köprüden geç, bataklığın içindeki kamış kulübeye git. Ok yolu gösterir. Çamur yavaşlatır, kurbağalar zehir tükürür.',go:()=>'toygar',p:()=>toygar.met?'tanıştın':'bataklıkta',done:()=>toygar.met,c:100,x:40,
-   say:'Köprünün ötesinde, bataklığın tam ortasında kamıştan bir kulübe var. Orada <b>Avcı Toygar</b> yaşar; yirmi yıldır o çamurda avlanır. Bataklığı ondan iyi bilen yok. Git, benden selam söyle. Hem… o bir şeyler gördü, bana hiç anlatmadı.',
-   thx:'Toygar mı söyledi bunları? Mor ışık… bir kadın… evlat, otur biraz. Bu işin peşini bırakmayacağını biliyorum.'},
   {t:'Bataklık demirinden bir demir külçesi yap.',h:'Demir madeni yalnızca bataklıkta ve ötesinde çıkar (kırmızımsı kayalar). Çakmaktaşı, granit ya da daha iyi bir kazma ister. 3 cevher, 2 kömür (ya da turba), 1 taş. Tarifi kazanda öğren, sonra el yapımı ekranında ('+(TOUCH?'el ikonu':'Tab')+') erit.',
    p:()=>(inv['Demir külçesi']||0)>0?'yapıldı':`Demir cevheri ${Math.min(inv['Demir cevheri']||0,3)}/3`,done:()=>(inv['Demir külçesi']||0)>0||[...forged].some(n=>/^Demir/.test(n)),c:200,x:80,acc:()=>{bought.add('Demir külçesi');bought.add('Demir levha')},
    say:'Toygar\'ın dediği gibi, asıl sert maden bataklıkta: <b>demir</b>. Tunçtan da sert, Kül Diyarı\'nda seni ancak o korur. İlk demir külçeni dök.',thx:'Demir… Kırk yıl önce gemimizin çapası demirdendi. Şimdi senin zırhın olacak.'},
@@ -3574,7 +3561,8 @@ function bringBerry(){let b=null,bd=1e9;for(const n of nodes)if(n.alive&&n.name=
 $('tutskip').addEventListener('click',e=>{const b=$('tutskip');if(TOUCH&&tz&&!b.dataset.arm){e.stopImmediatePropagation();b.dataset.arm='1';b.textContent='Emin misin? Geç';clearTimeout(b._t);b._t=setTimeout(()=>{delete b.dataset.arm;renderTut()},3500)}},true);
 $('tutskip').addEventListener('click',()=>{delete $('tutskip').dataset.arm;if(qPeek&&!tz){qPeek=false;renderTut();return}if(tz){tzSkip();return}{const ax=tut===11&&woodCut<5?Object.keys(GT).find(n=>GT[n].kind==='axe'&&inv[n]>0):null;if(ax&&beltIndex(ax)<0){beltFront(ax);renderTut();return}}if(htut===1){htut=2;renderTut();return}if(ytut===1||ytut===2){ytut=3;renderTut();return}if((runTut===1||runTut===2)&&tut>=11){runTut=3;renderTut();return}if(torchTut===1||torchTut===2){torchTut=3;renderTut();return}ftut=3;ctut=4;walked=true;mapSeen=2;tapMoved=true;if(tut>=11)questsHidden=true;else{witchShown=true;tut=11;qState='talk'}renderInv();renderTut()});
 function appearFx(x,y,c){for(let i=0;i<28;i++){const an=Math.random()*Math.PI*2,sp=20+Math.random()*50;parts.push({x,y:y-6,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp,life:1.3,c:i%2?c:'#ffffff'})}sfx('magic')}
-function toggleQuests(){if(lessonCard||qPeek){qPeek=!qPeek;questsHidden=false;renderTut();return}questsHidden=!questsHidden;renderTut()}
+function toggleQuests(){if(lessonCard||qPeek||tz){qPeek=!qPeek;questsHidden=false;renderTut();return}openMenu('qlog')}
+let renderQlog=()=>{},v55Ents=null;
 // v48c: lessons that last long (running, the torch at night) sit as a small line under the quest instead of hiding it
 function isNightT(){return dayT>=1200||dayT<360}
 function nightTxt(){return isNightT()?', gece başladı: meşalen elinde olsun.':', gece 20:00\'de başlar.'}
@@ -4635,7 +4623,7 @@ function startWitchLesson(){tut=5;if(craftOpen)closeCraft();witchShown=true;rend
 // a hand-made torch, for the first night (no cauldron needed)
 function handCraft(r,quiet){const y=REC.get(r);const miss=missingFor(y);if(miss){if(!quiet){toast(`${r} için eksik: ${miss}`,true);sfx('bad')}return false}
   for(const [n,q] of y.i){let need=q;for(const m of expand(n)){const k=Math.min(need,inv[m]||0);inv[m]-=k;need-=k}}
-  const isNew=!foundSet.has(r);gain(r);v47Craft(r,y,quiet);if(isNew){found.push(r);foundSet.add(r);checkCodex()}gainXP(isNew?12:2);if(!quiet){sfx('craft');toast(`${r} yaptın`)}tzMade(r);
+  const isNew=!foundSet.has(r);gain(r);qc('craft:'+r);v47Craft(r,y,quiet);if(isNew){found.push(r);foundSet.add(r);checkCodex()}gainXP(isNew?12:2);if(!quiet){sfx('craft');toast(`${r} yaptın`)}tzMade(r);
   if(htut===1){htut=2;sfx('found');setTimeout(()=>toast(`Aferin! Basit şeyleri artık her yerde ${TOUCH?'el ikonuyla':'Tab ile'} yaparsın.`),500)}
   hotK='';renderInv();renderTut();return true}
 const TORCHL={'Kaba meşale':80,'Meşale':115};
@@ -5052,7 +5040,7 @@ function ustaMakes(x){return true}
 cbody.addEventListener('click',e=>{if(mode!=='usta')return;const b=e.target.closest('[data-us]');if(!b)return;const r=b.dataset.us,pr=ustaPrice(r),y=REC.get(r);
   if(!y||!foundSet.has(r)||missingFor({i:y.i,t:[]})||(!plInf()&&coins<pr)){sfx('bad');return}
   for(const [n,q] of y.i){let need=q;for(const m of expand(n)){const k=Math.min(need,inv[m]||0);inv[m]-=k;need-=k}}
-  if(!plInf())coins-=pr;gain(r);sfx('coin');sfx('craft');gainXP(2);toast(`${r} hazır: envanterinde · bir yuvaya koyup seç, yere kur`);renderInv();renderCraft()});
+  if(!plInf())coins-=pr;gain(r);qc('craft:'+r);sfx('coin');sfx('craft');gainXP(2);toast(`${r} hazır: envanterinde · bir yuvaya koyup seç, yere kur`);renderInv();renderCraft()});
 // ---------- houses: Rıza builds shelters, tents and houses; every bed-less house needs a bed inside ----------
 const HOUSES=[
  {n:'Yaprak barınağı',lv:1,c:5,mat:[['Dal',8],['Yaprak',12],['Lif',4]],d:'Yatak gerekmez. Bir gecelik: uyanınca dağılır.'},
@@ -5668,6 +5656,7 @@ function frameBody(now){
   if(trader.state==='here'&&inView(trader.x,trader.y,40))ents.push({y:trader.y,d:idle(()=>drawTrader(time),.7)});
   if(wiz.shown&&inView(wiz.x,wiz.y,60))ents.push({y:wiz.y,d:()=>drawWizard(time)});
   for(const b of dogBeams)ents.push({y:b.y+1,d:()=>drawDogBeam(b)});
+  if(v55Ents)v55Ents(ents,time);
   for(const d of dogs)if(inView(d.x,d.y,30))ents.push({y:d.y,d:()=>{const h=d.state==='play'||d.happy>0?Math.round(Math.abs(Math.sin(time*(d.happy>0?11:7)+(d.ph||0)))*3):0;ctx.save();ctx.translate(0,-h);drawDog(d,time);ctx.restore()}});
   if(bubble){bubble.t-=dt;if(bubble.t<=0)bubble=null;else ents.push({y:9998,d:()=>drawBubble(bubble)})}
   if(trader.state==='here'){const vx=trader.x-cx,vy=trader.y-cy;if(vx<0||vy<0||vx>viewW||vy>viewH){const ex=Math.max(cx+10,Math.min(cx+viewW-10,trader.x)),ey=Math.max(cy+10,Math.min(cy+viewH-90/S,trader.y));px(ex-5,ey-5,10,10,'#11170f');px(ex-4,ey-4,8,8,'#6fbf4a');px(ex-1,ey-3,2,6,'#11170f')}}
@@ -6866,7 +6855,7 @@ function fishPress(){if(!fish)return;
     if(wearsNow()){toolDur[tool]=Math.max(0,nn(toolDur[tool],GT[tool].dur)-1);if(toolDur[tool]<=0)setTimeout(()=>toast(`${tool} köreldi! Demirci Dursun'da yenile.`,true),300)}
     gain(n);renderInv();try{audio.play('splash',{vol:.8})}catch(e){}sfx('found');
     for(let k=0;k<12;k++)parts.push({x,y,vx:(Math.random()-.5)*40,vy:-30-Math.random()*30,life:.6,c:k%2?'#cfe8ff':'#ffffff'});
-    const fishy=V46RAW.indexOf(n)>=0;if(fishy){dstat.fish++;fishTotal++}gainXP(fishy?3+Math.round((PRICE_[n]||4)/2):2);floatText(fishy?`${n}!`:`${n} takıldı`,'#9fd0f0');
+    const fishy=V46RAW.indexOf(n)>=0;qc('fish:'+n);if(fishy){dstat.fish++;fishTotal++}gainXP(fishy?3+Math.round((PRICE_[n]||4)/2):2);floatText(fishy?`${n}!`:`${n} takıldı`,'#9fd0f0');
     v46Hint('fishCook',()=>setTimeout(()=>toast('Çiğ balık az doyurur. Kamp ateşinde közle ya da kazanda balık tarifleri öğren.'),900))}}
 
 // ---------------------------------------------------------------- 6 · traps on land, fish traps in the water
@@ -6886,7 +6875,7 @@ function trapCatch(t){const z=zoneAt(t.x,t.y);
   const pool=z===1?['Ördek','Keklik','Tavşan']:z===2?['Tavşan']:['Tavşan','Tavşan','Keklik','Sincap'];const k=pool[Math.floor(Math.random()*pool.length)],D=ANIM[k];const got=[];
   for(const x of dropRoll(D))got.push(x);if(!got.length)got.push([D.drops[0][0],1]);got.k=k;return got}
 function useTrap(t){
-  if(t.got){let s=[];for(const [n,q] of t.got){gain(n,q);s.push(`${q} ${n}`)}t.got=null;t.dur--;dstat.trap++;gainXP(4);sfx('found');renderInv();
+  if(t.got){let s=[];for(const [n,q] of t.got){gain(n,q);qc('trap:'+n,q);s.push(`${q} ${n}`)}t.got=null;t.dur--;dstat.trap++;gainXP(4);sfx('found');renderInv();
     if(t.dur<=0){const i=traps.indexOf(t);traps.splice(i,1);gain(t.k);toolDur[t.k]=0;hotK='';renderInv();toast(`Aldın: ${s.join(', ')}. ${t.k} yıprandı; geri aldın, Dursun'da yenile.`,true);return}
     t.t=trapTime(t.k);toast(`Tuzaktan aldın: ${s.join(', ')}. Tuzak yeniden kuruldu.`);return}
   sayV(t.k==='Tuzak'?'Tuzak kurulu, henüz bir şey düşmedi. Sabırlı ol; hayvanlar sessiz yerleri sever.':'Kapan suyun içinde sallanıyor; şimdilik boş.',[{t:'Bekle',pri:1,f:bye},{t:'Tuzağı topla',f:()=>{bye();const i=traps.indexOf(t);if(i<0)return;traps.splice(i,1);toolDur[t.k]=t.dur;gain(t.k);toolDur[t.k]=t.dur;hotK='';renderInv();toast(`${t.k} geri alındı.`)}}],t.k,t.k,'#c8a868')}
@@ -7453,9 +7442,9 @@ function halo(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();
 function ring(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.strokeStyle=`rgba(170,225,255,${(.6+.4*p).toFixed(3)})`;ctx.lineWidth=1.5;ctx.beginPath();ctx.ellipse(x,y,r+p*1.5,(r+p*1.5)*.62,0,0,Math.PI*2);ctx.stroke();ctx.restore()}
 // v49-p3: the glow is the object's own silhouette (canvas shadow around every drawn pixel), pulsing
 function gl(on,k,f){if(!on)return f();const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;ctx.shadowColor=`rgba(90,190,255,${(.8+.2*p).toFixed(3)})`;ctx.shadowBlur=(2.2+2.2*p)*S*dpr;f();ctx.shadowColor=`rgba(190,235,255,${(.45+.4*p).toFixed(3)})`;ctx.shadowBlur=1.2*S*dpr;f();ctx.restore()}
-const _drawNode=drawNode;drawNode=function(n,t){const on=B3.glow.size&&B3.glow.has(n.name),a=arguments,me=this;gl(on,n.v*6,()=>_drawNode.apply(me,a))};
-const _drawDrops=drawDrops;drawDrops=function(t,inView){_drawDrops.apply(this,arguments);if(B3.dropN&&B3.dropN.size){for(const d of drops){if(d.t<1||!inView(d.x,d.y,12)||!B3.dropN.has(d.n))continue;const c=ICONC[d.n];if(!c)continue;const h=1+Math.sin(time*3+d.ph);gl(true,d.ph,()=>ctx.drawImage(c,Math.round(d.x-4.5),Math.round(d.y-7-h),9,9))}}};
-const _drawAnimal=drawAnimal;drawAnimal=function(a,t){const on=B3.glowAnim.size&&B3.glowAnim.has(a.k),ar=arguments,me=this;gl(on,a.x*.1,()=>_drawAnimal.apply(me,ar))};
+const _drawNode=drawNode;drawNode=function(n,t){const on=(B3.glow.size&&B3.glow.has(n.name))||QG.n.has(n.name),a=arguments,me=this;gl(on,n.v*6,()=>_drawNode.apply(me,a))};
+const _drawDrops=drawDrops;drawDrops=function(t,inView){_drawDrops.apply(this,arguments);if((B3.dropN&&B3.dropN.size)||QG.d.size){for(const d of drops){if(d.t<1||!inView(d.x,d.y,12)||!((B3.dropN&&B3.dropN.has(d.n))||QG.d.has(d.n)))continue;const c=ICONC[d.n];if(!c)continue;const h=1+Math.sin(time*3+d.ph);gl(true,d.ph,()=>ctx.drawImage(c,Math.round(d.x-4.5),Math.round(d.y-7-h),9,9))}}};
+const _drawAnimal=drawAnimal;drawAnimal=function(a,t){const on=(B3.glowAnim.size&&B3.glowAnim.has(a.k))||QG.a.has(a.k),ar=arguments,me=this;gl(on,a.x*.1,()=>_drawAnimal.apply(me,ar))};
 // trees: glow when they give what you track; their crown fades when something you can pick up (or an animal) is behind it
 function occList(){if(B3.occT===time)return B3.occ;B3.occT=time;const L=[];const vw2=vw/S,vh2=vh/S,cx=cam.cx,cy=cam.cy,inV=(x,y)=>x>cx-20&&x<cx+vw2+20&&y>cy-20&&y<cy+vh2+60;
   for(const n of nodes)if(n.alive&&inV(n.x,n.y))L.push([n.x,n.y]);for(const d of drops)if(inV(d.x,d.y))L.push([d.x,d.y]);for(const a of animals)if(inV(a.x,a.y))L.push([a.x,a.y]);
@@ -7463,7 +7452,7 @@ function occList(){if(B3.occT===time)return B3.occ;B3.occT=time;const L=[];const
 const _drawTree=drawTree;drawTree=function(tr,t){
   const c=treeSprite(tr.type,tr.seed%3),w=c.width,x=Math.round(tr.x),y=Math.round(tr.y),dx=x-Math.floor(w/2),dy=y+6-c.bot;
   let hid=false;for(const [ox,oy] of occList()){if(oy<tr.y+3&&ox+4>dx+3&&ox-4<dx+w-3&&oy>dy+2){hid=true;break}}
-  const on=B3.glowTree.size&&B3.glowTree.has(tr.type.n);
+  const on=(B3.glowTree.size&&B3.glowTree.has(tr.type.n))||QG.t.has(tr.type.n);
   {const ar=arguments,me=this;if(hid){ctx.save();ctx.globalAlpha=.55;gl(on,tr.seed,()=>_drawTree.apply(me,ar));ctx.restore()}else gl(on,tr.seed,()=>_drawTree.apply(me,ar))}
   if(on){const p=(time*.9+tr.seed*.37)%1;ctx.save();ctx.globalAlpha=.75*(1-p);px(tr.x-6+(tr.seed%12),dy+8+p*-10+((tr.seed>>3)%14),1,1,'#bfe6ff');px(tr.x+4-((tr.seed>>2)%9),dy+14-p*12,1,1,'#bfe6ff');ctx.restore()}};
 
@@ -8629,7 +8618,7 @@ for(const n in ORW)P1W['__ore_'+n]=[20,15,ORW[n]];
 const _p1drawNode=drawNode;
 drawNode=function(n,time){if(!(n.mine&&ORW[n.name])||RES[n.name].draw!=='ore')return _p1drawNode(n,time);
   const x=Math.round(n.x),y=Math.round(n.y);ctx.fillStyle='rgba(0,0,0,.22)';ctx.beginPath();ctx.ellipse(x,y+3,10,2.6,0,0,Math.PI*2);ctx.fill();
-  {const B=window.__b3,on=!!(B&&B.glow&&B.glow.size&&B.glow.has(n.name)),ds=()=>drawSprite(p1spr('__ore_'+n.name,n.v>.5),x,y+4);   // v49: tracked ores glow on their own outline too
+  {const B=window.__b3,on=!!(B&&B.glow&&B.glow.size&&B.glow.has(n.name))||QG.n.has(n.name),ds=()=>drawSprite(p1spr('__ore_'+n.name,n.v>.5),x,y+4);   // v49: tracked ores glow on their own outline too
    if(on){const p=.5+.5*Math.sin(time*4.2+n.v*6);ctx.save();ctx.shadowOffsetX=0;ctx.shadowOffsetY=0;ctx.shadowColor=`rgba(90,190,255,${(.8+.2*p).toFixed(3)})`;ctx.shadowBlur=(2.2+2.2*p)*S*dpr;ds();ctx.shadowColor=`rgba(190,235,255,${(.45+.4*p).toFixed(3)})`;ctx.shadowBlur=1.2*S*dpr;ds();ctx.restore()}else ds()}
   if((n.name==='Altın cevheri'||n.name==='Gümüş cevheri'||n.name==='Kuvars'||n.name==='Kristal'||n.name==='Pirit')&&Math.sin(time*3+n.v*30)>.93){px(x+2,y-13,1,3,'#ffffff');px(x+1,y-12,3,1,'#ffffff')}};
 // ---------------------------------------------------------------- refresh what is already on screen
@@ -8904,7 +8893,7 @@ function pal(a,M,time){const mv=a.st!=='wander'||a.dx||a.dy,run=a.st==='chase'||
   const seed=(a.pk||0)*.37+(Math.round(a.x*7)%13)*.21;
   return{w:w<0?-1:(w+4)%4,i:mv?0:(Math.floor(time*1.3+seed)%3===0?1:0),wind:a.wind>0,flash:a.flash>0,red,run:run&&mv&&!!M.big,tf:M.tf?Math.floor(time*(a.k==='Kara ejder'?5:7)+seed)%M.tf:0}}
 const prevDraw=drawAnimal;
-function glowOn(k){const B=window.__b3;return !!(B&&B.glowAnim&&B.glowAnim.size&&B.glowAnim.has(k))}
+function glowOn(k){const B=window.__b3;return !!(B&&B.glowAnim&&B.glowAnim.size&&B.glowAnim.has(k))||QG.a.has(k)}
 function halo2(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();const g=ctx.createRadialGradient(x,y,0,x,y,r);
   g.addColorStop(0,`rgba(110,190,255,${(.55+.25*p).toFixed(3)})`);g.addColorStop(.55,`rgba(70,150,255,${(.32+.18*p).toFixed(3)})`);g.addColorStop(1,'rgba(60,140,255,0)');
   ctx.fillStyle=g;ctx.beginPath();ctx.ellipse(x,y,r,r*.72,0,0,Math.PI*2);ctx.fill();ctx.restore()}
@@ -9334,5 +9323,171 @@ addEventListener('resize',()=>setTimeout(tick,60));
 setInterval(tick,300);sync();tick();
 }).toString()+')()')}catch(e){try{window.__hamErr('v50-mob: '+(e&&e.message||e))}catch(_){}}})();
 </script>
+<script id="v55-q">
+// =====================================================================================================
+// v55: NPC quests. Everyone on the island has a short fixed chain of jobs that fit their trade; several can
+// be open at once. The Görevler panel (G / quest button) lists them; a tracked quest makes what it needs
+// glow blue in the world (no arrows) and says so in blue when you hover or stand next to it.
+// Ekin keeps the main story chain; his quests about other people moved to those people (save migration
+// in restore(): Q4KEYS → Q5KEYS). Runs inside the game's scope through window.__plEval.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const QS={a:{},d:[],tr:[]};window.__v55=QS;
+const anyOf=L=>()=>L.some(n=>forged.has(n)||(inv[n]||0)>0);
+const NQ=[
+ // Zümrüt: herbs, night things, the cauldron
+ {id:'w1',g:'witch',t:'Şifalı otlar',bring:[['Papatya',3],['Nane',3]],c:40,x:20,say:'Kazanın yanında demliğim de kaynar. Bana üç <b>papatya</b>, üç <b>nane</b> getir; yorgunluğuna iyi gelecek bir çay demleyeyim.',thx:'Ooo, mis gibi! Al bakalım; bu senin emeğin.'},
+ {id:'w2',g:'witch',t:'Kazanın dili',base:()=>found.length,done:b=>found.length-b>=3,p:b=>`${Math.min(3,found.length-b)}/3 yeni tarif`,c:60,x:30,say:'Kazan konuşur ama dinleyene. Şu andan sonra <b>üç yeni tarif</b> öğren; kazanın dilini çözdüğünü göreyim.',thx:'Kazan seni sevdi, fokurtusundan belli.'},
+ {id:'w3',g:'witch',t:'Gece çiçeği',req:()=>day>=3,rt:'3. günden sonra',bring:[['Gece sefası',2]],c:80,x:40,say:'Gece açan bir çiçek var: <b>gece sefası</b>. Ay ışığında toplanır. İki tane getir; meşaleni de unutma, karanlık şakaya gelmez.',thx:'Ay kokuyor bunlar… Teşekkürler evlat.'},
+ {id:'w4',g:'witch',t:'Zehir bezesi',req:()=>lvl>=6,rt:'Seviye 6',bring:[['Zehir bezesi',2]],c:160,x:60,say:'Panzehir yapmak için zehirin kendisi gerekir. Kurbağaların ya da engereklerin <b>zehir bezesinden</b> iki tane getir. Dikkat et, tükürürler.',thx:'Hah! Şimdi bataklıkta kimse zehirden ölmez.'},
+ {id:'w5',g:'witch',t:'Mor kıymıklar',req:()=>day>=8,rt:'8. günden sonra',bring:[['Mor kıymık',3]],c:220,x:80,say:'Geceleri yere düşen o mor parçalar… <b>Mor kıymık</b>. Üç tane getir; içlerinde ne olduğunu kazanıma sorayım.',thx:'<i>(kıymıkları kazana bırakır, buhar mora döner)</i> Bunlar bu dünyadan değil evlat. İçlerinde bir ses var… bir kadın sesi.'},
+ // Nazlı: the market
+ {id:'m1',g:'market',t:'Tezgâh için otlar',bring:[['Kekik',4],['Kuşburnu',4]],c:40,x:20,say:'Tezgâhım boş kaldı! Bana dört <b>kekik</b>, dört <b>kuşburnu</b> getirir misin? Çayır yerlerinde bolca olur.',thx:'Tezgâhım yine renklendi. Al bakalım, hakkın.'},
+ {id:'m2',g:'market',t:'Bereketli satış',cnt:['sold',250,'sikkelik satış'],c:60,x:30,say:'Pazar dediğin hareketli olur. Bana <b>250 sikkelik</b> mal sat; adaya ticaret geldiğini herkes görsün.',thx:'İşte tüccar dediğin böyle olur!'},
+ {id:'m3',g:'market',t:'Kürk siparişi',bring:[['Tavşan derisi',3]],c:70,x:30,say:'Bir müşterim kış için kürk istiyor. Üç <b>tavşan derisi</b> bulabilir misin?',thx:'Yumuşacık! Müşterim bayılacak.'},
+ {id:'m4',g:'market',t:'Yabani bal',bring:[['Yabani bal',2]],c:90,x:40,say:'Ormanda arı kovanları var, ağaç kovuklarında. İki <b>yabani bal</b> getir; arıları kızdırma ama.',thx:'Mmm… Bunu satmaya kıyamam, kendime ayırıyorum.'},
+ {id:'m5',g:'market',t:'Kehribar',req:()=>bridge.fixed,rt:'köprü onarılınca',bring:[['Kehribar',1]],c:150,x:60,say:'Bataklığın ötesinde bazen <b>kehribar</b> parlar, içinde böcek uyur. Bir tane getir, sana iyi para veririm.',thx:'Işığa tut bak… içinde bir sinek! Nefis.'},
+ // Börü: hunting and fighting
+ {id:'a1',g:'alp',t:'Kerevit avı',kill:['Kerevit',2],c:25,x:15,say:'Yumruğun ısındı mı? Nehir kıyısında <b>iki kerevit</b> avla. Kıskaçlarına dikkat!',thx:'Fena değil! Kerevitler artık senden korkuyor.'},
+ {id:'a2',g:'alp',t:'Kapan ustası',req:()=>bridge.fixed,rt:'köprü onarılınca',cnt:['trap:Kerevit',1,'kapanla kerevit'],rec:['Balık kapanı'],c:60,x:30,say:'Her avı yumrukla yapamazsın. Bir <b>balık kapanı</b> yap, bataklıktaki suya bırak ve onunla <b>bir kerevit</b> yakala. Tarifini kitabına yazdım.',thx:'Sabır da bir silahtır. Aferin.'},
+ {id:'a3',g:'alp',t:'Domuz avı',kill:['Yaban domuzu',2],c:80,x:40,say:'Ormandaki <b>yaban domuzları</b> Hasan\'ın tarlasına dadandı. İki tanesini avla. Hücum ederken yana atıl!',thx:'Hasan sana bir çuval buğday borçlu artık.'},
+ {id:'a4',g:'alp',t:'Kurt sürüsü',req:()=>lvl>=5,rt:'Seviye 5',kill:['Kurt',3],c:120,x:60,say:'Geceleri kurtlar uluyor. Sürüden <b>üç kurt</b> avla; ama tek tek çek, hepsiyle birden dövüşme.',thx:'Bu gece rahat uyuruz. Sen gerçek bir savaşçı oluyorsun.'},
+ {id:'a5',g:'alp',t:'Oklu kirpi',req:()=>lvl>=8,rt:'Seviye 8',kill:['Oklu kirpi',1],c:200,x:80,say:'Dikenlerini ok gibi fırlatan bir kirpi var. Ona yaklaşmadan önce atılmayı iyi öğren. <b>Bir oklu kirpi</b> avla.',thx:'Tek diken yemeden mi? Benden iyisin!'},
+ // Dursun: weapons and tools
+ {id:'s1',g:'smith',t:'İlk kılıç',done:()=>forged.has('Taş kılıç')||(inv['Taş kılıç']||0)>0,p:()=>forged.has('Taş kılıç')?'dövüldü':'henüz yok',rec:['Taş kılıç'],c:40,x:20,say:'Baltayla dövüşülmez evlat. Bir <b>taş kılıç</b> dövelim. Tarifini kitabına yazdım; kazanda öğren, parçalarını getir.',thx:'İşte sana bir kılıç! Kurt da domuz da artık iki kere düşünür.'},
+ {id:'s2',g:'smith',t:'Kömür',req:()=>lvl>=4,rt:'Seviye 4',bring:[['Taş kömürü',5]],c:70,x:30,say:'Ocağım odunla iyi yanmıyor. Madenlerde kara kayalar var, <b>taş kömürü</b>. Beş tane getir.',thx:'Ocak şimdi gürül gürül. Sağ ol!'},
+ {id:'smith_bronze',g:'smith',t:'Tunç işçiliği',req:()=>foundSet.has('Tunç külçesi')||(inv['Tunç külçesi']||0)>0,rt:'ilk tunç külçesi',done:anyOf(['Tunç balta','Tunç kazma','Tunç kılıç','Tunç mızrak']),p:()=>['Tunç balta','Tunç kazma','Tunç kılıç','Tunç mızrak'].filter(n=>forged.has(n)).join(', ')||'henüz yok',rec:['Tunç kazma','Tunç kılıç','Tunç balta'],c:150,x:60,say:'Külçe tek başına bir şey değil; örste şekil alır. Tarifini kazanda öğren, bana bir <b>tunç kılıç</b>, <b>tunç kazma</b>, balta ya da mızrak dövdür.',thx:'İşte gerçek bir alet! Bataklığın karşısına geçmeye hazırsın.'},
+ {id:'s4',g:'smith',t:'Demir zamanı',req:()=>foundSet.has('Demir külçesi')||(inv['Demir külçesi']||0)>0,rt:'ilk demir külçesi',done:anyOf(['Demir balta','Demir kazma','Demir kılıç','Demir mızrak']),p:()=>['Demir balta','Demir kazma','Demir kılıç','Demir mızrak'].filter(n=>forged.has(n)).join(', ')||'henüz yok',c:250,x:90,say:'Demir! Babamdan beri bu örste demir dövülmedi. Bir <b>demir</b> balta, kazma, kılıç ya da mızrak dövdür bana.',thx:'<i>(gözleri dolar)</i> Babam görseydi… Al, hak ettin.'},
+ // Durmuş: armour
+ {id:'d1',g:'durmus',t:'Başını koru',done:()=>!!equip.bas,p:()=>equip.bas?'giyildi':'başın açık',c:30,x:20,say:'Kafası açık dolaşan savaşçı uzun yaşamaz. Bir <b>miğfer</b> ya da başlık giy; kemikten bile olur.',thx:'Hah, şimdi oldu! Kafan sağlam, aklın da sağlam.'},
+ {id:'d2',g:'durmus',t:'Kemik yığını',bring:[['Kemik',6]],c:40,x:20,say:'Zırhın iç bağlarını kemikten yaparım. Bana <b>altı kemik</b> getir.',thx:'Bunlar iyi kemik. Teşekkürler.'},
+ {id:'d3',g:'durmus',t:'Tunç zırh',req:()=>foundSet.has('Tunç külçesi')||(inv['Tunç külçesi']||0)>0,rt:'ilk tunç külçesi',done:()=>forged.has('Tunç zırh')||(inv['Tunç zırh']||0)>0||equip.govde==='Tunç zırh',p:()=>forged.has('Tunç zırh')?'dövüldü':'henüz yok',rec:['Tunç zırh'],c:160,x:60,say:'Tunç geldi demek! Gel, sana bir <b>tunç zırh</b> dövelim. Tarifini kitabına yazdım.',thx:'Parlıyor! Güneşte kör edersin düşmanı.'},
+ {id:'d4',g:'durmus',t:'Timsah derisi',req:()=>bridge.fixed,rt:'köprü onarılınca',bring:[['Timsah derisi',1]],c:180,x:70,say:'Timsah derisi tunçtan hafif, deriden sağlamdır. Bana bir <b>timsah derisi</b> getir; bakalım neler yaparız.',thx:'Ne deri ama! Toygar bile kıskanır.'},
+ // Hasan: the field
+ {id:'f1',g:'farmer',t:'İlk hasat',req:()=>farmStep>=5,rt:'dört alet tamamlanınca',bring:[['Buğday',5]],c:60,x:30,say:'Tarla hazır, aletler tamam. Şimdi bana <b>beş buğday</b> yetiştir; kış için ambar dolsun.',thx:'Altın gibi başaklar! Sen doğuştan çiftçisin.'},
+ {id:'f2',g:'farmer',t:'Sebze sepeti',req:()=>farmStep>=5,rt:'dört alet tamamlanınca',bring:[['Havuç',3],['Soğan',3]],c:80,x:40,say:'Ekin\'e çorba sözü verdim. Üç <b>havuç</b>, üç <b>soğan</b> getir.',thx:'Çorbanın kokusu şimdiden burnumda.'},
+ {id:'f3',g:'farmer',t:'Ayçiçeği tarlası',req:()=>farmStep>=5,rt:'dört alet tamamlanınca',bring:[['Ayçiçeği',2]],c:100,x:40,say:'Güneşi seven bir çiçek isterim tarlamda. İki <b>ayçiçeği</b> yetiştir.',thx:'Bak, ikisi de güneşe dönüyor. Ne güzel.'},
+ // Kemal: structures
+ {id:'u1',g:'usta',t:'Atölye kur',done:()=>placed.some(o=>o.n==='Atölye'),p:()=>placed.some(o=>o.n==='Atölye')?'kuruldu':'henüz yok',rec:['Atölye'],c:80,x:40,say:'Bir <b>atölye</b> kur; sen uyurken bile çalışır. Tarifini kazanda öğren, malzemesini getir, ben kurayım, sen yere koy.',thx:'Testere sesi gibisi yok. Atölyen hayırlı olsun.'},
+ {id:'u2',g:'usta',t:'Kalas',bring:[['Herhangi kalas',6]],c:70,x:30,say:'Kalasım bitti. Bana <b>altı kalas</b> getir, hangi ağaçtan olursa.',thx:'Düz, temiz kalaslar. Elinize sağlık.'},
+ {id:'u3',g:'usta',t:'Çit',done:()=>placed.some(o=>o.n==='Çit'),p:()=>placed.some(o=>o.n==='Çit')?'kuruldu':'henüz yok',rec:['Çit'],c:40,x:20,say:'Evinin çevresine bir <b>çit</b> çek. Çit, komşuluğun başlangıcıdır.',thx:'Ne güzel çit! Artık adada bir ev sahibi var.'},
+ // Rıza: houses (the shelter quest moved here from Ekin)
+ {id:'carp1',g:'carp',t:'Yaprak barınağı',done:()=>shelterSlept,p:()=>shelterSlept?'yapıldı':(has('Yaprak barınağı')||placed.some(o=>o.n==='Yaprak barınağı'))?'barınak hazır · gece içinde uyu':'barınak yok',want:['Dal','Yaprak','Lif'],c:40,x:20,say:'Her gece Ekin\'in ateşinin başında uyuyamazsın. Bana 8 dal, 12 yaprak, 4 lif getir, sana bir <b>yaprak barınağı</b> yapayım. İstediğin yere kur, gece <b>içinde uyu</b>.',thx:'Kendi çatın olunca uyku da tatlı olur. Kalıcı bir ev istersen, ben buradayım.'},
+ {id:'c2',g:'carp',t:'Odun stoku',bring:[['Herhangi odun',20]],c:80,x:30,say:'Kışa odun lazım. Bana <b>yirmi odun</b> getir; hangi ağaçtan olursa.',thx:'Odunluk doldu! Kış gelsin bakalım.'},
+ {id:'c3',g:'carp',t:'Kalıcı bir ev',done:()=>placed.some(o=>HOUSESET.has(o.n)&&o.n!=='Yaprak barınağı'),p:()=>placed.some(o=>HOUSESET.has(o.n)&&o.n!=='Yaprak barınağı')?'kuruldu':'henüz yok',c:120,x:50,say:'Barınak dediğin bir gecelik. Benden kalıcı bir <b>ev</b> al (çadır da sayılır), bir yere kur. İçine girip döşeyebilirsin artık.',thx:'Ev sahibi oldun! Hayırlı olsun komşu.'},
+ // Toygar: the swamp
+ {id:'t1',g:'toygar',t:'Çamur yürüyüşü',done:()=>(inv['Kamış çizme']||0)>0||equip.ayak==='Kamış çizme',p:()=>(inv['Kamış çizme']||0)>0||equip.ayak==='Kamış çizme'?'hazır':'henüz yok',want:['Kamış','Saz'],c:50,x:20,say:'Çamurda çıplak ayak gezilmez. Kamıştan bir <b>kamış çizme</b> ör; tarifini zaten verdim.',thx:'Şimdi bataklık senin evin gibi.'},
+ {id:'t2',g:'toygar',t:'Kurbağa zehri',kill:['Zehirli kurbağa',3],c:120,x:50,say:'Zehirli kurbağalar çoğaldı, ördekleri bile kovaladılar. <b>Üç kurbağa</b> avla.',thx:'Kurbağa sesleri azaldı. İyi iş!'},
+ {id:'t3',g:'toygar',t:'Bataklık kurdu',kill:['Bataklık kurdu',2],c:180,x:70,say:'Bataklık kurtları geceleri kulübemin etrafında dolanıyor. <b>İki tanesini</b> avla.',thx:'Rahat bir gece borçluyum sana.'},
+ {id:'t4',g:'toygar',t:'Timsah',kill:['Timsah',1],c:260,x:100,say:'Yirmi yıldır avlayamadığım bir <b>timsah</b> var. Sen dene. Önden değil, yandan vur.',thx:'<i>(uzun süre susar)</i> Yirmi yıl… Sağ ol evlat.'},
+ // Nuri: his first order (moved from Ekin); taken automatically when his ship docks
+ {id:'nuri1',g:'trader',t:'Nuri\'nin ilk siparişi',auto:1,done:()=>trader.firstDone,p:()=>trader.firstDone?'teslim edildi':trader.state==='here'?'gemi iskelede':'gemi yolda',c:0,x:15,say:'',thx:''},
+];
+const NQI={};NQ.forEach(q=>NQI[q.id]=q);
+const GIVER={witch:()=>witch,market:()=>market,alp:()=>alp,smith:()=>smith,durmus:()=>durmus,farmer:()=>farmer,usta:()=>usta,carp:()=>carp,toygar:()=>toygar,trader:()=>trader};
+const metG={witch:()=>witchMet,market:()=>!!market.met,alp:()=>!!alp.met,smith:()=>!!smith.met,durmus:()=>!!durmus.met,farmer:()=>farmStep>0,usta:()=>!!usta.met,carp:()=>!!carp.met,toygar:()=>!!toygar.met,trader:()=>trader.state==='here'};
+const gidOf=who=>{for(const k in GIVER)if(GIVER[k]()===who)return k;return null};
+const nameOf=g=>{const o=GIVER[g]();return o&&o.name?o.name:g};
+const short=g=>nameOf(g).split(' ').pop();
+const isDone=id=>QS.d.indexOf(id)>=0;
+const haveN=n=>expand(n).reduce((t,m)=>t+(inv[m]||0),0);
+function qParts(q){const b=(QS.a[q.id]||{}).b||{},L=[];
+  if(q.bring)for(const [n,k] of q.bring)L.push({n,need:k,have:Math.min(k,haveN(n)),item:1});
+  if(q.kill){const [k,need]=q.kill;L.push({n:k,need,have:Math.min(need,(kills[k]||0)-(b.kill||0)),kill:1})}
+  if(q.cnt){const [key,need,lab]=q.cnt;L.push({n:lab,need,have:Math.min(need,Math.max(0,(QC[key]||0)-(b.cnt||0))),key})}
+  return L}
+function complete(q){if(!QS.a[q.id])return false;const b=QS.a[q.id].b||{};if(q.done&&!q.done(b.base))return false;return qParts(q).every(x=>x.have>=x.need)}
+function progText(q){if(!QS.a[q.id])return '';const b=QS.a[q.id].b||{};const L=qParts(q).map(x=>`${x.have}/${x.need} ${x.kill?x.n+' avı':x.n}`);if(q.p)L.push(q.p(b.base));return L.join(' · ')}
+const available=g=>NQ.find(q=>q.g===g&&!q.auto&&!isDone(q.id)&&!QS.a[q.id]&&NQ.filter(x=>x.g===g&&NQ.indexOf(x)<NQ.indexOf(q)).every(x=>isDone(x.id)));
+const ready=g=>NQ.find(q=>q.g===g&&QS.a[q.id]&&complete(q));
+const activeOf=g=>NQ.find(q=>q.g===g&&QS.a[q.id]);
+function rewardTxt(q){const r=[];if(q.c)r.push(`${q.c} sikke`);if(q.x)r.push(`${q.x} XP`);return r.join(', ')}
+function accept(q,track){const b={};if(q.kill)b.kill=kills[q.kill[0]]||0;if(q.cnt)b.cnt=QC[q.cnt[0]]||0;if(q.base)b.base=q.base();QS.a[q.id]={b};
+  if(q.rec)q.rec.forEach(r=>{if(REC.has(r))bought.add(r)});if(track&&QS.tr.indexOf(q.id)<0)QS.tr.push(q.id);
+  sfx('found');toast(`Yeni görev: ${q.t}${track?' · takip ediliyor':''}`);refreshQG();renderTut()}
+function turnIn(q,who){if(!complete(q))return;if(q.bring)for(const [n,k] of q.bring){let need=k;for(const m of expand(n)){const t=Math.min(need,inv[m]||0);inv[m]-=t;need-=t}}
+  delete QS.a[q.id];QS.d.push(q.id);const i=QS.tr.indexOf(q.id);if(i>=0)QS.tr.splice(i,1);
+  if(q.c)coins+=q.c;if(q.x)gainXP(q.x);sfx('coin');renderInv();refreshQG();announce(q.t,'Görev tamamlandı');
+  if(who)say((q.thx||'Sağ ol!')+(q.c?`<br><small>+${q.c} sikke${q.x?`, +${q.x} XP`:''}</small>`:''),[{t:'Ne demek',pri:1,f:()=>{bye();qDoneHook(q)}}],who);else qDoneHook(q)}
+function qDoneHook(q){try{if(window.__v57&&window.__v57.quest)window.__v57.quest(q)}catch(e){}}
+function offer(q,who){say(q.say+`<br><small>Ödül: ${rewardTxt(q)}</small>`,[{t:'Kabul et ve takip et',pri:1,fresh:1,f:()=>{accept(q,true);bye()}},{t:'Kabul et',f:()=>{accept(q,false);bye()}},{t:'Şimdi değil',f:bye}],who)}
+function choiceFor(g,who){const r=ready(g);if(r)return{q55:1,fresh:1,pri:1,k:'q55r'+r.id,t:`✔ Görevi teslim et: ${r.t}`,f:()=>turnIn(r,who)};
+  const a=available(g);if(a){if(a.req&&!a.req())return null;return{q55:1,fresh:1,k:'q55a'+a.id,t:`❗ Senin için bir işim var: ${a.t}`,f:()=>offer(a,who)}}
+  const c=activeOf(g);if(c&&!c.auto)return{q55:1,k:'q55c'+c.id,t:`Görev: ${c.t} (${progText(c)})`,f:()=>say(c.say+`<br><small>Durum: ${progText(c)}</small>`,[{t:QS.tr.indexOf(c.id)<0?'Takip et':'Takibi bırak',f:()=>{trackQ(c.id);bye()}},{t:'Tamam',pri:1,f:bye}],who)};
+  return null}
+const BYE=/^(Hoşça kal|Sonra|Sonra konuşuruz|Sonra gelirim|Teşekkürler|Tamam)$/;
+{const _s=say;say=function(text,ch,who){try{const g=who&&gidOf(who);
+  if(g&&Array.isArray(ch)&&!tz&&met&&!ch.some(c=>c.q55)&&ch.some(c=>BYE.test(c.t)&&ch.length>1)){const c=choiceFor(g,who);if(c){ch=ch.slice();ch.splice(ch.length-1,0,c)}}}catch(e){}
+  return _s.call(this,text,ch,who)}}
+// Nazlı opens her stall straight away once you know her: when she has a job, she says so first
+{const _m=talkMarket;talkMarket=function(){if(market.met&&!tz&&tut>=11&&(available('market')&&(!available('market').req||available('market').req())||ready('market'))){
+    return say('Hoş geldin! Tezgâh açık, ama önce bir şey soracağım…',[{t:'Pazarı aç',f:()=>{bye();mktTab='sell';openMenu('sell')}},{t:'Hoşça kal',f:bye}],market)}
+  return _m.apply(this,arguments)}}
+function trackQ(id){const i=QS.tr.indexOf(id);if(i>=0){QS.tr.splice(i,1);toast('Görev takibi bırakıldı')}else{QS.tr.push(id);if(QS.tr.length>4)QS.tr.shift();toast('Görev takip ediliyor: istediği şeyler mavi parlar');sfx('pick')}refreshQG();if(craftOpen&&mode==='qlog')renderCraft()}
+// ---------------------------------------------------------------- the blue glow of what tracked quests need
+function refreshQG(){const G={n:new Set(),t:new Set(),a:new Set(),d:new Set()},why={};const nn_=new Set();for(const n of nodes)nn_.add(n.name);
+  const mark=(m,lab)=>{G.d.add(m);if(!why[m])why[m]=lab;if(nn_.has(m))G.n.add(m);for(const ty of TREE_TYPES){if(ty.fruit===m||(m===ty.n+' odunu'&&!ty.noCut)){G.t.add(ty.n);if(!why['T:'+ty.n])why['T:'+ty.n]=lab}}
+    for(const k in ANIM){const A=ANIM[k];if(A.drops&&A.drops.some(d=>d[0]===m)){G.a.add(k);if(!why['A:'+k])why['A:'+k]=lab}}};
+  for(const id of QS.tr){const q=NQI[id];if(!q||!QS.a[id])continue;const lab=`${short(q.g)} · ${q.t}`;
+    for(const x of qParts(q)){if(x.have>=x.need)continue;if(x.item)for(const m of expand(x.n))mark(m,lab);if(x.kill){G.a.add(x.n);why['A:'+x.n]=lab}if(x.key&&/^gather:/.test(x.key))mark(x.key.slice(7),lab)}
+    if(q.want&&!complete(q))for(const m of q.want)mark(m,lab)}
+  QG.n=G.n;QG.t=G.t;QG.a=G.a;QG.d=G.d;QG.why=why}
+setInterval(()=>{try{if(!onTitle)refreshQG()}catch(e){}},700);
+// hovering a wanted thing with the mouse: a blue line saying which quest wants it
+const qtip=document.createElement('div');qtip.id='qtip';qtip.hidden=true;document.body.appendChild(qtip);
+cv.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;if(onTitle||craftOpen||dlgOpen||!QS.tr.length){qtip.hidden=true;return}
+  const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S;let lab=null;
+  for(const n of nodes){if(n.alive&&QG.n.has(n.name)&&Math.abs(n.x-wx)<9&&Math.abs(n.y-4-wy)<9){lab=[n.name,QG.why[n.name]];break}}
+  if(!lab)for(const d of drops){if(QG.d.has(d.n)&&Math.abs(d.x-wx)<7&&Math.abs(d.y-4-wy)<7){lab=[d.n,QG.why[d.n]];break}}
+  if(!lab)for(const a of animals){if(QG.a.has(a.k)&&Math.hypot(a.x-wx,a.y-6-wy)<16){lab=[a.k,QG.why['A:'+a.k]];break}}
+  if(!lab&&QG.t.size)treesNear(wx,wy+14,tr=>{if(!lab&&QG.t.has(tr.type.n)&&Math.abs(tr.x-wx)<12&&wy<tr.y+4&&wy>tr.y-30)lab=[tr.type.n,QG.why['T:'+tr.type.n]]});
+  if(!lab){qtip.hidden=true;return}
+  qtip.innerHTML=`📜 Görev isteği · <b>${esc(lab[1]||'')}</b> bunu istiyor (${esc(lab[0])})`;qtip.style.left=(e.clientX+14)+'px';qtip.style.top=(e.clientY+(document.getElementById('hovertip').hidden?12:52))+'px';qtip.hidden=false});
+cv.addEventListener('pointerleave',()=>{qtip.hidden=true});
+// in the world: quest marks over people, and a blue line over the wanted thing you stand next to
+function qMarkOf(g){if(!metG[g]())return null;if(ready(g))return '?';const a=available(g);if(a&&(!a.req||a.req())&&!tz&&met&&tut>=11)return '!';return null}
+v55Ents=function(ents,time){
+  for(const g in GIVER){const o=GIVER[g]();if(!o||o.x==null)continue;if(Math.abs(o.x-player.x)>260||Math.abs(o.y-player.y)>200)continue;const m=qMarkOf(g);if(!m)continue;
+    ents.push({y:9990,d:()=>{const b=Math.round(Math.sin(time*4+o.x)*2),x=Math.round(o.x),y=Math.round(o.y)-44+b;ctx.save();ctx.fillStyle='rgba(10,20,40,.85)';ctx.fillRect(x-4,y-1,9,12);ctx.fillStyle=m==='?'?'#ffe07a':'#7fc8ff';
+      if(m==='!'){ctx.fillRect(x-1,y+1,3,6);ctx.fillRect(x-1,y+8,3,2)}else{ctx.font='bold 10px Rubik, system-ui, sans-serif';ctx.textAlign='center';ctx.fillText('?',x+.5,y+9)}ctx.restore()}})}
+  if(!QS.tr.length)return;const tg=target();let n=null,k=null,x=0,y=0;
+  if(tg&&tg.kind==='node'&&QG.n.has(tg.n.name)){n=tg.n.name;k=n;x=tg.n.x;y=tg.n.y-14}else if(tg&&tg.kind==='tree'&&QG.t.has(tg.t.type.n)){n=tg.t.type.n;k='T:'+n;x=tg.t.x;y=tg.t.y-34}
+  if(!n)return;const lab='Görev: '+(QG.why[k]||'');
+  ents.push({y:9991,d:()=>{ctx.save();ctx.font='bold 6px Rubik, system-ui, sans-serif';ctx.textAlign='center';ctx.lineWidth=2;ctx.strokeStyle='rgba(8,16,32,.9)';ctx.strokeText(lab,Math.round(x),Math.round(y));ctx.fillStyle='#8fd0ff';ctx.fillText(lab,Math.round(x),Math.round(y));ctx.restore()}})};
+// ---------------------------------------------------------------- the Görevler panel
+renderQlog=function(){const q=tut>=11&&tut<11+QUESTS.length?QUESTS[tut-11]:null;
+  const ek=q?`<div class="qcard main"><div class="qh"><b>${esc(npc.name)}</b> · Ana görev ${tut-10}/${QUESTS.length}</div><div class="qt">${esc(q.t)}</div><small>${qState==='talk'?`${esc(npc.name)} seninle konuşmak istiyor.`:qState==='ready'?'Tamamlandı! Ödül için Ekin\'e dön.':`${q.h} (${q.p()})`}</small></div>`:(tut>=11+QUESTS.length?'<p class="note">Ekin\'in görevlerinin hepsi bitti.</p>':'');
+  const act=NQ.filter(x=>QS.a[x.id]);
+  const card=x=>{const on=QS.tr.indexOf(x.id)>=0,ok=complete(x);return `<div class="qcard${on?' trk':''}${ok?' ok':''}"><div class="qh"><b>${esc(nameOf(x.g))}</b>${ok?' · <em>hazır, teslim et</em>':''}</div><div class="qt">${esc(x.t)}</div><small>${progText(x)}${x.c||x.x?` · Ödül: ${rewardTxt(x)}`:''}</small>${x.auto?'':`<button type="button" class="mk ghost" data-qtr="${x.id}">${on?'Takibi bırak':'Takip et'}</button>`}</div>`};
+  const av=Object.keys(GIVER).map(g=>{if(!metG[g]())return '';const a=available(g);if(!a)return '';return `<li>${esc(nameOf(g))}: ${a.req&&!a.req()?`<small>yeni iş (${esc(a.rt||'sonra')})</small>`:'<b style="color:#7fc8ff">sana bir işi var</b>'}</li>`}).join('');
+  const tot=NQ.filter(x=>!x.auto).length,dn=QS.d.filter(id=>NQI[id]&&!NQI[id].auto).length;
+  cbody.innerHTML=`<p class="note">Adadaki herkesin sana verebileceği işler var; aynı anda birden çok görev alabilirsin. <b>Takip et</b> dediğin görevin istediği şeyler dünyada <b style="color:#7fc8ff">mavi</b> parlar. Yol göstermez; dolaşırken denk gelirsin. Başında mavi <b style="color:#7fc8ff">!</b> olan kişinin işi, sarı <b style="color:#ffe07a">?</b> olanın teslim edilecek görevi var.</p>`
+    +ek+(act.length?act.map(card).join(''):'<p class="note">Şu an açık bir yan görevin yok.</p>')
+    +(av?`<h3 class="ush">İş verebilecekler</h3><ul class="qav">${av}</ul>`:'')
+    +`<p class="note">Tamamlanan yan görevler: <b>${dn} / ${tot}</b></p><button type="button" class="mk ghost" id="qcardtog">${questsHidden?'Görev kartını göster':'Görev kartını gizle'}</button>`};
+cbody.addEventListener('click',e=>{if(mode!=='qlog')return;const b=e.target.closest('[data-qtr]');if(b){trackQ(b.dataset.qtr);return}if(e.target.id==='qcardtog'){questsHidden=!questsHidden;renderTut();renderCraft()}});
+// Nuri now comes on his own (after the bridge, or from day 3); his first order is taken automatically
+setInterval(()=>{try{if(onTitle||!met||tz)return;if(!trader.called&&(bridge.fixed||day>=3)){trader.called=true;trader.nextAt=Math.min(trader.nextAt,playTime+30)}
+  if(trader.state==='here'&&!trader.firstDone&&!QS.a.nuri1&&!isDone('nuri1')){QS.a.nuri1={b:{}};toast('Yeni görev: Nuri\'nin ilk siparişi · iskelede')}
+  if(QS.a.nuri1&&trader.firstDone){delete QS.a.nuri1;QS.d.push('nuri1');gainXP(15);announce('Nuri\'nin ilk siparişi','Görev tamamlandı');qDoneHook(NQI.nuri1)}}catch(e){}},1000);
+// ---------------------------------------------------------------- save / load (+ credit for quests that moved away from Ekin)
+const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);s.v55={a:QS.a,d:QS.d.slice(),tr:QS.tr.slice(),qc:Object.assign({},QC)};return s};
+const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);
+  QS.a={};QS.d.length=0;QS.tr.length=0;for(const k in QC)delete QC[k];
+  const v=d&&d.v55;if(v){if(v.a&&typeof v.a==='object')for(const id in v.a)if(NQI[id])QS.a[id]=v.a[id];(v.d||[]).forEach(id=>{if(NQI[id]&&QS.d.indexOf(id)<0)QS.d.push(id)});(v.tr||[]).forEach(id=>{if(QS.a[id])QS.tr.push(id)});if(v.qc)for(const k in v.qc)QC[k]=+v.qc[k]||0}
+  else if(d&&d.inv&&(d.qv||0)>=4&&(d.tut||0)>=11){const done=Q4KEYS.slice(0,d.tut-11),cur=Q4KEYS[d.tut-11],M={shelter:'carp1',trader:'nuri1',dursun:'smith_bronze'};
+    for(const k in M){if(done.indexOf(k)>=0)QS.d.push(M[k]);else if(cur===k&&d.qState&&d.qState!=='talk'){accept(NQI[M[k]],true)}}
+    if(trader.firstDone&&QS.d.indexOf('nuri1')<0){delete QS.a.nuri1;QS.d.push('nuri1')}}
+  refreshQG();return r};
+}).toString()+')()')}catch(e){try{window.__hamErr('v55: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<style id="v55-css">
+#qtip{position:fixed;z-index:41;pointer-events:none;background:rgba(10,24,48,.94);border:2px solid #4a8acc;color:#bfe2ff;font-size:14px;padding:4px 8px;max-width:340px}
+#cbody .qcard{border:2px solid var(--panel-edge);background:rgba(0,0,0,.18);padding:8px 10px;margin:8px 0;position:relative}
+#cbody .qcard.main{border-color:#c8a868}#cbody .qcard.trk{border-color:#4a8acc;box-shadow:0 0 0 1px #4a8acc inset}#cbody .qcard.ok{border-color:#8fd46b}
+#cbody .qcard .qh{font-size:13px;color:var(--ink-dim)}#cbody .qcard .qh em{color:#8fd46b;font-style:normal}#cbody .qcard .qt{font-weight:700;font-size:16px;margin:2px 0}
+#cbody .qcard button{margin-top:6px}#cbody .qav{margin:4px 0 8px 18px}
+</style>
 </body>
 </html>
