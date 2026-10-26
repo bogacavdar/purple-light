@@ -7221,10 +7221,12 @@ const MEMS=[
  {n:'Mor bir delik',at:100,L:[['','Bir çatı, yıldızlı bir gece. Gökte, yıldızların arasında mor bir halka.'],['love','<b>{L}</b>: "Bak! Gökyüzünde bir delik var sanki. Hep merak ederim: oraya ne düşer?"'],['','O gece mor ışığı ikiniz gördünüz. Başka kimse görmedi.']]},
  {n:'Son akşam',at:175,L:[['','Geminin güvertesi, mum ışığında bir akşam yemeği. Deniz cam gibi.'],['love','<b>{L}</b>: "Bir gün beni kaybedersen… beni bulur musun?"'],['hero','<b>{H}</b>: "Yıldızların ötesinde bile."'],['','Sonra mor ışık. Sonra hiçbir şey. Ama artık hatırlıyorsun: ona söz verdin.']]}];
 const mems=new Set();let memQ=[],memCur=null;
+const MEM2M=MEMS[2].L,MEM2K=[['','Yeşil bir çayır, ağaçların gölgesi, önünüzden şırıl şırıl bir çay akıyor. Kadehlerde şarap; onun elinde küçük bir yüzük var, eli titriyor.'],['love','<b>{L}</b>: "Benimle dünyanın öbür ucuna gelir misin?"'],['hero','<b>{H}</b>: "Öbür ucuna mı? Daha da ötesine!"']];
+const memFix=()=>{MEMS[2].L=LOOK.hero.gender==='k'?MEM2K:MEM2M};
 const memOv=v46Div('memov','<h3>Bir anı geri geldi</h3><h2 id="mem-n"></h2><canvas id="mem-c" width="240" height="135"></canvas><p id="mem-t"></p><button type="button" id="mem-go">Devam</button>');
 const memC=$('mem-c').getContext('2d');
 function memText(s){return s.replace('{L}',esc(loveName||'Mavi')).replace('{H}',esc(heroName||'Sen'))}
-function openMem(i,again){memCur={i,line:0,t:0,again};memOv.hidden=false;$('mem-n').textContent=MEMS[i].n;memLine();sfx('magic');try{audio.play('hum',{vol:.5})}catch(e){}requestAnimationFrame(memLoop);setTimeout(()=>{try{$('mem-go').focus()}catch(e){}},50)}
+function openMem(i,again){memFix();memCur={i,line:0,t:0,again};memOv.hidden=false;$('mem-n').textContent=MEMS[i].n;memLine();sfx('magic');try{audio.play('hum',{vol:.5})}catch(e){}requestAnimationFrame(memLoop);setTimeout(()=>{try{$('mem-go').focus()}catch(e){}},50)}
 function memLine(){const m=MEMS[memCur.i],l=m.L[memCur.line];$('mem-t').innerHTML=memText(l[1]);$('mem-go').textContent=memCur.line<m.L.length-1?'Devam':'Anıyı sakla'}
 function memNext(){if(!memCur)return;const m=MEMS[memCur.i];if(memCur.line<m.L.length-1){memCur.line++;memLine();return}
   const i=memCur.i,again=memCur.again;memCur=null;memOv.hidden=true;
@@ -7263,7 +7265,8 @@ function memScene(g,i,t,line){const p=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(Mat
     for(let yy=0;yy<8;yy+=4)for(let xx=0;xx<52;xx+=4)p(94+xx,100+yy,4,4,((xx+yy)/4)%2?'#efe6d0':'#c84a3a');
     p(118,90,4,10,'#24502a');p(119,86,2,4,'#24502a');p(119,85,2,1,'#c84a3a');p(118,93,4,3,'#e8dcc0');
     const glass=(x,y)=>{p(x,y,3,3,'#a01e38');p(x,y,3,1,'#e8e8f0');p(x+1,y+3,1,3,'#e8e8f0');p(x,y+6,3,1,'#e8e8f0')};glass(108,94);glass(140,84+Math.round(Math.sin(t*2)));
-    drawChibi(g,104,106,H,{fx:1,arm:'reach',bob:2});drawChibi(g,134,106,Lv,{fx:-1});
+    {const fem=LOOK.hero.gender==='k';drawChibi(g,104,106,fem?Lv:H,{fx:1,arm:'reach',bob:2});drawChibi(g,134,106,fem?H:Lv,{fx:-1})}   // v71.2: the man always proposes
+   
     if(line>=1&&Math.sin(t*6)>0){p(117,88,2,2,'#ffffff');p(116,89,4,1,'#ffe080')}if(line>=2){for(let k=0;k<4;k++)cH(g,106+k*8,70-((t*16+k*6)%24),1-((t*16+k*6)%24)/24)}}
   else if(i===3){p(0,0,240,135,'#0a0c1c');star(120,95);const r=12+Math.sin(t*2)*1.5;g.strokeStyle='#a050e0';g.lineWidth=3;g.beginPath();g.arc(172,32,r,0,6.28);g.stroke();
     g.fillStyle='rgba(160,80,224,.18)';g.beginPath();g.arc(172,32,r+10,0,6.28);g.fill();g.fillStyle='#05030c';g.beginPath();g.arc(172,32,r-2,0,6.28);g.fill();

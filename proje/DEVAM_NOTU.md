@@ -495,3 +495,6 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 
 ## v71.1 (26 Ekim 2026)
 - Başarımlar kare: liste kare kutu ızgarası (ikon + ad), kazanılan altın + ★; kazanılmayan gri ikon ve "???" adıyla. Üstüne gelince/dokununca kısa açıklama balonu (data-tip, ::after); gizlilerde "???". Kazanma kartı da kare (132×132).
+
+## v71.2 (26 Ekim 2026)
+- Evlilik teklifi anısında (MEMS[2]) hep erkek teklif eder: kadın kahramanda soldaki uzanan kişi eş (erkek), konuşmalar yer değiştirir (MEM2K/MEM2M, openMem başında memFix()).
