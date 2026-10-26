@@ -10182,12 +10182,12 @@ window.__v58={chunks,PERF,setLvl};
 'use strict';
 const LK=o=>npcLook(o);
 const LOOKS={
- ayşen:LK({skin:'#e0b090',skinD:'#c09070',hair:'#d8d8d8',hairD:'#a8a8a8',hairL:'#f4f4f4',hs:'long',dress:true,shirt:'#3a5a3a',shirtD:'#2a4a2a'}),
+ ayşen:LK({hs:'tail',hair:'#2a1a10',hairD:'#1a0e08',hairL:'#4a2e1e',dress:true,shirt:'#5a9a4a',shirtD:'#3a7a3a',flower:true}),
  cem:LK({hs:'messy',hair:'#3a2418',hairD:'#24160c',hairL:'#5a3a28',shirt:'#e8c050',shirtD:'#c8a030',skin:'#d8a070',skinD:'#b8804e'}),
  kaan:LK({hs:'buzz',hair:'#3a2418',hairD:'#24160c',hairL:'#5a3a28',beard:'biyik',shirt:'#5a6a3a',shirtD:'#44522c',skin:'#d8a070',skinD:'#b8804e'}),
  demirhan:LK({hs:'buzz',hair:'#9a9a9a',hairD:'#6a6a6a',hairL:'#c0c0c0',beard:'sakal',shirt:'#7a4a2a',shirtD:'#5a3418',skin:'#c08060',skinD:'#9a6040'}),
  gül:LK({hs:'tail',hair:'#e8c050',hairD:'#c8a030',hairL:'#f8e080',dress:true,shirt:'#f2c84b',shirtD:'#c8a030',flower:true}),
- hatice:LK({hs:'long',hair:'#b8b8b8',hairD:'#8a8a8a',hairL:'#d8d8d8',dress:true,shirt:'#8a3a3a',shirtD:'#6a2a2a',skin:'#d8a070',skinD:'#b8804e'}),
+ hatice:LK({hs:'long',hair:'#6a3a1e',hairD:'#4a2412',hairL:'#8a5a32',dress:true,shirt:'#8a3a3a',shirtD:'#6a2a2a',skin:'#d8a070',skinD:'#b8804e'}),
  defne:LK({hs:'long',hair:'#2a1a10',hairD:'#1a0e08',hairL:'#4a2e1e',dress:true,shirt:'#4a8ab0',shirtD:'#356a8a',flower:true}),
  ayaz:LK({hs:'messy',hair:'#2a1f18',hairD:'#1a120c',hairL:'#3a2a20',shirt:'#6a7a3a',shirtD:'#4a5a2a',skin:'#c8906a',skinD:'#a8704a'}),
  deniz:LK({hs:'short',hair:'#c88a58',hairD:'#a86a3a',hairL:'#e0a878',shirt:'#3a6ab0',shirtD:'#2a4e88'}),
@@ -10199,7 +10199,7 @@ const LOOKS={
 const ST_={
  npc:{lost:'Eşi Saliha',ids:null,at:[2,4,6,8,10,12],F:[
    "Ateşimi neden hiç söndürmem, hiç sordun mu evlat? Biri dönerken yolunu bulsun diye.",
-   "Sana gemide aşçı olduğumu söylemiştim. Söylemediğim şu: o gemide yalnız değildim. <b>Saliha</b>, karım, yelkenleri diken kadındı.",
+   "Sana gemide aşçı olduğumu söylemiştim. Söylemediğim şu: o gemide yalnız değildim. <b>Saliha</b>, karım, yelkenleri diken kadındı. Yeni evliydik; o benden on yaş gençti.",
    "O gece gökte yıldızlar tek tek söndü. Saliha güldü: “Birileri mumları üflüyor” dedi. Ben de güldüm. Gülmemeliydik.",
    "Sonra denizin altından mor ışık yükseldi. Gemi ikiye ayrıldı. Ben Saliha'nın elini tutuyordum; ışık sıcaktı ama eli buz gibi oldu.",
    "Kıyıya tek başıma vurdum. Elimde yalnızca onun bileziği kalmıştı. O günden beri bu kumsala kim düşerse ona yol gösterdim. Seni de öyle buldum.",
@@ -10209,16 +10209,16 @@ const ST_={
      "<b>Saliha</b>: “Bak Ekin, yıldızlar sönüyor. Birileri mumları üflüyor sanki.”",
      "Denizin altından mor bir ışık yükseldi. Ekin elini sıktı. Işık daha sıkı tuttu.",
      "Sabah kumsalda bir adam, elinde bir bilezik ve sönmeyen bir ateş vardı."]}},
- witch:{lost:'Büyükannesi Ayşen Nine',ids:['w1','w2','w3','w4','w5'],F:[
-   "Bu adaya on iki yaşımda geldim evlat. Yalnız değil, büyükannemle: <b>Ayşen Nine</b>. Otları benden iyi bilirdi, inan.",
-   "Nine derdi ki yıldızsız adalarda <b>ay otu</b> yetişir; ölüye bile can verir. Onu bulmak için küçük bir tekneyle yola çıktık.",
-   "Geldiğimiz ilk gece gökte ay yoktu. Yalnızca mor bir halka. Nine “Bak, otlar bu ışığı seviyor” dedi ve kayalıklara yürüdü.",
-   "Ben teknede uyuyakalmışım. Uyandığımda bu kazan kumsalda kaynıyordu; altında ateş yoktu. Nine de yoktu.",
-   "Mor kıymıklarda onun sesini duyuyorum. “Zümrüt'üm, kazanı söndürme” diyor. Kırk yıldır söndürmedim, söndürmeyeceğim de."],
+ witch:{lost:'Kız kardeşi Ayşen',ids:['w1','w2','w3','w4','w5'],F:[
+   "Bu adaya on iki yaşımda geldim evlat. Yalnız değil, küçük kız kardeşimle: <b>Ayşen</b>. Altı yaşındaydı ama otları benden iyi bilirdi, inan.",
+   "Büyükannem derdi ki yıldızsız adalarda <b>ay otu</b> yetişir; ölüye bile can verir. Annemiz hastaydı; onu bulmak için küçük bir tekneyle yola çıktık.",
+   "Geldiğimiz ilk gece gökte ay yoktu. Yalnızca mor bir halka. Ayşen “Bak abla, otlar bu ışığı seviyor” dedi ve kayalıklara yürüdü.",
+   "Ben teknede uyuyakalmışım. Uyandığımda bu kazan kumsalda kaynıyordu; altında ateş yoktu. Ayşen de yoktu.",
+   "Mor kıymıklarda onun sesini duyuyorum. “Ablacığım, kazanı söndürme” diyor. Kırk yıldır söndürmedim, söndürmeyeceğim de."],
    sc:{n:'Zümrüt · Ay otları',bg:'rocks',cast:[{L:'zümrütY',x:52,fx:1,sleep:1},{L:'ayşen',x:168,fx:-1,v:1}],bl:2,L:[
-     "Yıldızsız bir gece. Kayalıklarda yaşlı bir kadın ay otu topluyor; teknede küçük bir kız uyuyor.",
-     "<b>Ayşen Nine</b>: “Işık otları seviyor Zümrüt'üm… yoksa otlar mı ışığı?”",
-     "Mor ışık kayalara indi. Kadın gülümsedi, tanıdık birini görmüş gibi.",
+     "Kırk yıl önce, yıldızsız bir gece. Kayalıklarda küçük bir kız ay otu topluyor; teknede ablası uyuyor.",
+     "<b>Ayşen</b>: “Işık otları seviyor abla… yoksa otlar mı ışığı?”",
+     "Mor ışık kayalara indi. Küçük kız gülümsedi, tanıdık birini görmüş gibi.",
      "Sabah kumsalda, altında ateş olmadan kaynayan bir kazan vardı."]}},
  market:{lost:'Kardeşi Cem',ids:['m1','m2','m3','m4','m5'],F:[
    "Ben aslında tüccar değilim, tüccar kızıyım. Babamın gemisinde, baharat çuvallarının arasında büyüdüm.",
@@ -10238,7 +10238,7 @@ const ST_={
    "Işığa kılıç işlemez. Kaan yukarı çekilirken bana bağırdı: “Börü, kaçma!” Ben… kaçtım.",
    "Bu adaya o ışığın peşinden geldim. Bir daha kaçmayacağım. Sen de kaçma, olur mu? Yan yana dururuz."],
    sc:{n:'Börü · Nöbet',bg:'fort',cast:[{L:'alp',x:70,fx:1},{L:'kaan',x:150,fx:-1,v:1,arm:'up'}],bl:2,L:[
-     "Bir sınır kalesi, gece nöbeti. Surların üstünde iki kardeş.",
+     "İki yıl önce, bir sınır kalesi, gece nöbeti. Surların üstünde iki kardeş.",
      "<b>Kaan</b>: “Börü, arkama geç! Bu ışık… bu ışık bizim için gelmiş.”",
      "Kılıç ışığa değdi ve eridi. Kaan yukarı çekilirken bağırdı: “Kaçma!”",
      "Börü kaçtı. Ve o günden beri hiç durmadı."]}},
@@ -10248,7 +10248,7 @@ const ST_={
    "Bir gece köyün dışına gökten mor bir taş düştü. Babam onu dövmek istedi; üç gün üç gece örsün başından kalkmadı.",
    "Dördüncü gece taş parlamaya başladı. Işık geldi… taşını almaya. Babamı da aldı. Bu adaya o ışığın gittiği yönde kürek çekerek geldik."],
    sc:{n:'Dursun · Gökten düşen taş',bg:'forge',cast:[{L:'smith',x:60,fx:1},{L:'demirhan',x:132,fx:1,v:1,arm:'up'}],bl:2,L:[
-     "Bir köy demirhanesi. Örsün üstünde mor parlayan bir taş; üç gündür soğumuyor.",
+     "Beş yıl önce, bir köy demirhanesi. Örsün üstünde mor parlayan bir taş; üç gündür soğumuyor.",
      "<b>Demirhan Usta</b>: “Bu taşı dövebilirsem oğlum, yıldızları dövmüş olurum.”",
      "Taş göğe seslendi. Gök cevap verdi.",
      "Örsün başında bir çekiç sesi eksildi. O günden beri Dursun iki kişilik vurur."]}},
@@ -10271,14 +10271,14 @@ const ST_={
      "<b>Gül</b>: “Baba, bak! Ateş böcekleri mor olmuş!”",
      "Işıklar bir araya toplandı, bir sütun oldu. Gül'ün ayakları yerden kesildi.",
      "Hasan o gece tarlanın ortasında sabahladı. Ayçiçekleri hâlâ göğe bakıyordu."]}},
- usta:{lost:'Annesi Hatice Ana',ids:['u1','u2','u3'],F:[
-   "Bu ellerin ustası annemdi evlat: <b>Hatice Ana</b>. Tezgâhında kilim dokur, tezgâhının yanında kalas rendelerdi.",
+ usta:{lost:'Kızı Hatice',ids:['u1','u2','u3'],F:[
+   "Bu ellerin en iyi çırağı kızımdı evlat: <b>Hatice</b>. Tezgâhında kilim dokur, yanında kalas rendelerdi; benden iyi rendelerdi hem.",
    "Ada ada dolaşıp ev yapardık. Bir gün bu adaya bir atölye kurmaya geldik; biri sipariş vermişti. Kim olduğunu hâlâ bilmiyorum.",
-   "Atölyeyi bitirdiğimiz gece kapıyı mor bir ışık çaldı. Annem açtı. “Siparişi teslim almaya gelmişler” dedi. Kapı kapandı. Ben kaldım."],
+   "Atölyeyi bitirdiğimiz gece kapıyı mor bir ışık çaldı. Kızım açtı. “Siparişi teslim almaya gelmişler baba” dedi. Kapı kapandı. Ben kaldım."],
    sc:{n:'Kemal · Sipariş',bg:'workshop',cast:[{L:'usta',x:70,fx:1},{L:'hatice',x:168,fx:1,v:1}],bl:2,L:[
      "Yeni bitmiş bir atölye, talaş kokusu, bir gece yarısı.",
-     "Kapı üç kez çalındı. <b>Hatice Ana</b>: “Siparişi teslim almaya gelmişler oğlum. Ben bakarım.”",
-     "Kapının aralığından mor bir ışık doldu. Ana döndü, oğluna gülümsedi ve dışarı çıktı.",
+     "Kapı üç kez çalındı. <b>Hatice</b>: “Siparişi teslim almaya gelmişler baba. Ben bakarım.”",
+     "Kapının aralığından mor bir ışık doldu. Hatice döndü, babasına gülümsedi ve dışarı çıktı.",
      "Kemal o atölyede kaldı. Kapıyı bir daha hiç kilitlemedi."]}},
  carp:{lost:'Nişanlısı Defne',ids:['carp1','c2','c3'],F:[
    "Evleri neden bu kadar sağlam yaparım biliyor musun? Birine ev sözü verdim de ondan.",

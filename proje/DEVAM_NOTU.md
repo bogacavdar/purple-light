@@ -479,3 +479,11 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Büyük harita: kişi simgeleri yakınlaştıkça büyür (sc=min(9,3+(mapZ-1)*.75)); simgeye dokununca ok oraya yön gösterir (MAPHITS, mapTap, GUIDE.__map, 60 sn).
 - Sol menü simgeleri dünyadaki objelerden: Kazan (yeşil iksirli kara kazan, altında ateş), Pazar (kırmızı-beyaz tenteli tezgâh, mallar), Demirci (örs, kızgın demir, çekiç). Yemek düğmesi: but (et ve kemik).
 - "İskelede söz" anısı → "Çay kıyısında söz": yeşil çayır, ağaçların altında, önden akan çay, piknik örtüsü, şarap şişesi ve kadehler.
+
+## v70.4 (26 Ekim 2026)
+- Kural (Boğaç): uzun zaman önce kaçırılan biri, kaçırılan kişinin yakınından büyük olamaz (iyi sonda hepsi kurtarılacak; çok yaşlıların ömrü yetmez).
+  - Zümrüt (40 yıl önce, 12 yaşında): büyükannesi Ayşen Nine → altı yaşındaki kız kardeşi Ayşen. Hikâye, sahne ve görünüş (çocuk, siyah at kuyruğu, yeşil elbise) güncellendi; ay otunu hasta anneleri için aramaya gelmişler.
+  - Kemal: annesi Hatice Ana → kızı Hatice (çırağı); hikâye, sahne, görünüş (kahverengi saç).
+  - Ekin (40 yıl): eşi Saliha kalır, "benden on yaş gençti" eklendi.
+  - Demirhan Usta (babası) "beş yıl önce", Kaan (ağabey) "iki yıl önce" olarak sahnelere yazıldı.
+  - Diğerleri zaten küçük/akran: Cem, Gül, Defne, Ayaz, Deniz.
