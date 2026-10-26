@@ -1328,6 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-cont" type="button">Devam et</button>
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 72</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -10986,8 +10987,8 @@ addEventListener('keydown',e=>{const t=e.target;if(t&&(t.tagName==='INPUT'||t.ta
   const m=/^Key([A-Z])$/.exec(e.code||'');if(!m){buf='';return}buf=(buf+m[1].toLowerCase()).slice(-5);
   if(buf==='cheat'){buf='';setOk(!ok);sfx(ok?'level':'bad');toast(ok?'Hile ayarları açıldı: Ayarlar\'da':'Hile ayarları gizlendi ve kapatıldı')}},true);
 // v71.3: on a phone, tap the "Ayarlar" heading three times quickly
-{const hd=document.querySelector('#settings h2');if(hd){let n=0,last=0;hd.style.userSelect='none';hd.style.webkitUserSelect='none';
-  hd.addEventListener('click',()=>{const now=performance.now();n=now-last<700?n+1:1;last=now;if(n>=3){n=0;setOk(!ok);sfx(ok?'level':'bad');toast(ok?'Hile ayarları açıldı':'Hile ayarları gizlendi ve kapatıldı')}})}}
+{const hd=document.querySelector('#settings h2');if(hd){let n=0,last=0;hd.style.userSelect='none';hd.style.webkitUserSelect='none';hd.style.cursor='pointer';hd.style.touchAction='manipulation';hd.style.webkitTapHighlightColor='transparent';
+  hd.addEventListener('pointerdown',e=>{if(e.button>0)return;const now=performance.now();n=now-last<800?n+1:1;last=now;if(n>=3){n=0;try{audio.start()}catch(x){}setOk(!ok);sfx(ok?'level':'bad');toast(ok?'Hile ayarları açıldı':'Hile ayarları gizlendi ve kapatıldı')}})}}   // v72: pointerdown (iPhone gives no click on a heading)
 // every cutscene from the Keşif defteri
 const cb=$('b5scn');
 function syncScn(){if(cb)cb.checked=!!settings.b5scn;try{if(craftOpen&&mode==='book'&&bookTab==='codex')renderCraft()}catch(e){}}
@@ -11073,6 +11074,54 @@ const MEDAL='<svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="
 const sb=$('b-set');if(sb){const b=document.createElement('button');b.className='ib';b.id='b-ach';b.type='button';b.setAttribute('aria-label','Başarımlar');b.title='Başarımlar';b.innerHTML=MEDAL;sb.parentNode.insertBefore(b,sb);b.addEventListener('click',open_)}
 window.__plAch={list:ACH,got:()=>got,open:open_};
 }).toString()+')()')}catch(e){try{window.__hamErr('v71: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v72">
+// =====================================================================================================
+// v72: cutscene music. Memories get a soft romantic music box (or a mysterious drone for the purple ones),
+// the island people's "that night" scenes a mysterious drone. Rendered once, looped while the scene is open.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const A=audio.b5;if(!A||!A.mk)return;
+const mtof=m=>440*Math.pow(2,(m-69)/12);
+let rs=7;const rnd=()=>{rs=(rs*16807)%2147483647;return rs/2147483647};
+function base(len){const oc=A.mk(len);const out=oc.createGain();out.gain.value=.9;out.connect(oc.destination);
+  const lp=oc.createBiquadFilter();lp.type='lowpass';lp.frequency.value=3000;lp.connect(out);
+  const echo=oc.createDelay(2);const fb=oc.createGain();fb.gain.value=.42;const wet=oc.createGain();wet.gain.value=.35;echo.connect(fb);fb.connect(echo);echo.connect(wet);wet.connect(lp);
+  const tone=(f,t,dur,type,vol,o)=>{o=o||{};if(t+dur>len-.3)dur=Math.max(.1,len-.3-t);const os=oc.createOscillator(),g=oc.createGain();os.type=type;os.frequency.value=f;if(o.det)os.detune.value=o.det;
+    const a=o.a||.01;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+a);if(o.sus){g.gain.setValueAtTime(vol,Math.max(t+a,t+dur-(o.rel||1)));g.gain.linearRampToValueAtTime(0,t+dur)}else g.gain.exponentialRampToValueAtTime(.0004,t+dur);
+    if(o.glide)os.frequency.linearRampToValueAtTime(o.glide,t+dur);os.connect(g);g.connect(lp);if(o.echo)g.connect(echo);os.start(t);os.stop(t+dur+.05)};
+  return {oc,tone,lp,out}}
+// romantic: I–vi–IV–V in C, a music box over a warm pad, 68 bpm
+function romantic(){const B=60/68,bars=8,len=bars*4*B;const {oc,tone}=base(len);
+  const CH=[[48,52,55,60],[45,48,52,57],[41,45,48,53],[43,47,50,55]];const MEL=[[76,74,72,74],[72,71,69,67],[69,72,76,77],[74,72,71,74],[76,79,77,76],[74,72,69,72],[72,74,76,72],[71,74,79,77]];
+  for(let bar=0;bar<bars;bar++){const t0=bar*4*B,ch=CH[bar%4];
+    ch.forEach((m,i)=>{tone(mtof(m),t0+.02*i,4*B+.6,'sine',.05,{a:1.2,sus:1,rel:1.4,det:i%2?6:-6});tone(mtof(m+12),t0+.02*i,4*B,'sine',.018,{a:1.5,sus:1,rel:1.2})});
+    tone(mtof(ch[0]-12),t0,4*B,'sine',.14,{a:.6,sus:1,rel:1});
+    for(let e=0;e<8;e++){const m=ch[(e%4)]+12+(e>=4?12:0);tone(mtof(m),t0+e*B/2,B*1.4,'triangle',.035,{a:.005})}
+    MEL[bar].forEach((m,k)=>{tone(mtof(m),t0+k*B,B*2.2,'sine',.075,{a:.004,echo:1});tone(mtof(m+12),t0+k*B,B*.9,'sine',.02,{a:.003})})}
+  const sp=oc.createGain();return A.rendered(oc)}
+// mysterious: a low A drone, slow minor swells, glassy bells far away, a breath of wind
+function mysterious(){const len=19.2;const {oc,tone,lp}=base(len);
+  tone(mtof(33),0,len,'sine',.22,{a:2,sus:1,rel:2});tone(mtof(40),0,len,'sine',.1,{a:3,sus:1,rel:2,det:5});tone(mtof(45),.5,len-.5,'triangle',.03,{a:4,sus:1,rel:3});
+  const PAD=[[57,60,64,71],[55,58,62,69],[53,57,60,67],[56,59,62,68]];
+  PAD.forEach((ch,k)=>{const t=k*4.8;ch.forEach((m,i)=>tone(mtof(m),t+i*.15,5.6,'sine',.032,{a:2.2,sus:1,rel:2,det:i%2?9:-9}))});
+  const PEN=[81,84,86,88,91,93,96];for(let k=0;k<11;k++){const t=.8+k*1.6+rnd()*.6;tone(mtof(PEN[Math.floor(rnd()*PEN.length)]),t,2.6,'sine',.03,{a:.004,echo:1});if(rnd()<.4)tone(mtof(PEN[Math.floor(rnd()*PEN.length)]-12),t+.3,2,'triangle',.018,{a:.01,echo:1})}
+  for(let k=0;k<3;k++){const t=1+k*6.2;tone(mtof(69+(k%2?3:0)),t,3.4,'sine',.02,{a:1.2,sus:1,rel:1.4,glide:mtof(68+(k%2?3:0))})}
+  {const nb=oc.createBuffer(1,Math.ceil(len*oc.sampleRate),oc.sampleRate),d=nb.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=rnd()*2-1;const s2=oc.createBufferSource();s2.buffer=nb;const bp=oc.createBiquadFilter();bp.type='bandpass';bp.frequency.value=600;bp.Q.value=.7;const g=oc.createGain();
+    g.gain.setValueAtTime(0,0);for(let t=0;t<len;t+=4.8){g.gain.linearRampToValueAtTime(.05,t+2.4);g.gain.linearRampToValueAtTime(.008,t+4.8)}s2.connect(bp);bp.connect(g);g.connect(lp);s2.start(0)}
+  return A.rendered(oc)}
+let ready=false;
+setTimeout(()=>{Promise.all([romantic(),mysterious()]).then(([r,m])=>{A.add('mz_rom',r);A.add('mz_giz',m);ready=true;if(want)start(want)}).catch(()=>{})},2500);
+// what plays: memories by mood, people's scenes always mysterious
+const DARK=/^(Mor bir delik|Son akşam|Mor fısıltı|Bırakılan el)$/;
+let cur=null,curK='',want='';
+function start(k){want=k;if(!ready||curK===k)return;stop(true);curK=k;cur=audio.play(k,{loop:true,vol:.85,fade:1.6});try{audio.musicTo(.12,1.2)}catch(e){}}
+function stop(keepMusic){want='';if(cur){try{cur.stop(1.2)}catch(e){}cur=null}curK='';if(!keepMusic)try{audio.musicTo(1,2)}catch(e){}}
+const watch=(id,pick)=>{const el=$(id);if(!el)return;new MutationObserver(()=>{if(!el.hidden)start(pick());else if(!($('memov')&&!$('memov').hidden)&&!($('npcsc')&&!$('npcsc').hidden))stop()}).observe(el,{attributes:true,attributeFilter:['hidden']})};
+watch('memov',()=>DARK.test(($('mem-n')||{}).textContent||'')?'mz_giz':'mz_rom');
+watch('npcsc',()=>'mz_giz');
+}).toString()+')()')}catch(e){try{window.__hamErr('v72: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v68">
 // v68: the graphics-card switch in Ayarlar (the choice is read once at start, so changing it reopens the game; the save is kept)
