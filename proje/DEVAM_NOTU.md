@@ -468,3 +468,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 
 ## v70.1 (26 Ekim 2026)
 - Ev içinde mor ışık hiç zarar vermez: `roomSafe=()=>!!R.on` (eskiden yalnız lamba varsa güvenliydi). Lambasız odadaki mor pencere parıltısı yalnız görsel kaldı; uyarı mesajı artık çıkmaz.
+
+## v70.2 (26 Ekim 2026)
+- Yunus ters atlıyordu: sola giden yunusta açı zaten ~π iken bir de π ekleniyordu (burun arkada). Artık `rotate(ang)` + sola giderken `scale(1,-1)`: burun hep gidilen yöne bakar.
+- Yunus %65 boyuta indi; zıplama len 42, yükseklik 20, süre 1.3 sn; gölge küçüldü.

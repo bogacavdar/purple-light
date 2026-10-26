@@ -10908,16 +10908,16 @@ if(window.__v65wiped){setTimeout(()=>{try{toast('Ada iki kat büyüdü ve altı 
 const D={list:[],next:8+Math.random()*12,last:performance.now()};
 const deep=(tx,ty)=>{for(let dy=-2;dy<=2;dy++)for(let dx=-2;dx<=2;dx++){const x=tx+dx,y=ty+dy;if(x<0||y<0||x>=W||y>=H)continue;if(tiles[y*W+x]!==4)return false}return true};
 function tryJump(){const vw2=vw/S,vh2=vh/S;for(let k=0;k<30;k++){const x=cam.cx+16+Math.random()*(vw2-32),y=cam.cy+24+Math.random()*(vh2-40),tx=Math.floor(x/T),ty=Math.floor(y/T);
-  if(!deep(tx,ty))continue;const dir=Math.random()<.5?-1:1,n=Math.random()<.3?2:1;for(let i=0;i<n;i++)D.list.push({x:x+i*-dir*24,y:y+i*4,dir,t:-i*.25,dur:1.4,len:56});return true}return false}
+  if(!deep(tx,ty))continue;const dir=Math.random()<.5?-1:1,n=Math.random()<.3?2:1;for(let i=0;i<n;i++)D.list.push({x:x+i*-dir*18,y:y+i*3,dir,t:-i*.25,dur:1.3,len:42});return true}return false}
 function splash(x,y){for(let k=0;k<10;k++)parts.push({x,y,vx:(Math.random()-.5)*30,vy:-15-Math.random()*25,life:.45,c:k%2?'#ffffff':'#bfe6ff'})}
 const DPAL=["#20262c","#5b6774","#7d8a97","#b9c1c9","#eef1f3","#000000","#2a3038"],DROWS=["....................aaaa...................","...................abbbba..................","...................abbbbbaa................","....................abbbbbba...............","...................aabbbbbbbaaaa...........",".................aabbbbbbbbbbbbbaa.........","...............aabbbbbbbbbbbbbbbbbaa.......","..............abbbbcccccccccccbbbbbba......","............aabbcccccccccccccccccbbbba.....","...........abbcccccdddddddcccccccccbbba....",".........aabcccddeeeeeeeeeeeeddcccccbba....","........abccddeeeeeeeeeeeeeeeeeeddcfcbca...",".......abcdeeeaaaaaeeeeeeeeeeeeeeeddccca...","....aaacdeeaaa.....aaaaaaeeeeeeeeeeedggca..","..aabbcdaaa..............aaccaaaaeeeeegca..",".abbbbda..................aca....aaaaaagca.","abbbbbba.................aca...........aaca",".aaabba...................a..............a.","....aba....................................",".....a....................................."];
 let DSPR=null;
 function dSpr(){if(DSPR)return DSPR;const c=document.createElement('canvas');c.width=DROWS[0].length;c.height=DROWS.length;const g=c.getContext('2d');
   DROWS.forEach((r,y)=>{for(let x=0;x<r.length;x++){const i='abcdefg'.indexOf(r[x]);if(i>=0){g.fillStyle=DPAL[i];g.fillRect(x,y,1,1)}}});return DSPR=c}
-function drawDolphin(d){const k=Math.max(0,Math.min(1,d.t/d.dur)),px_=d.x+d.dir*(k-.5)*d.len,h=Math.sin(k*Math.PI)*24,py=d.y-h,ang=Math.atan2(-Math.cos(k*Math.PI)*24*Math.PI/d.dur,d.dir*d.len/d.dur);
-  if(k<=0||k>=1)return;const sp=dSpr();ctx.save();ctx.translate(Math.round(px_),Math.round(py));ctx.rotate(d.dir>0?ang:Math.PI+ang);if(d.dir<0)ctx.scale(1,-1);
+function drawDolphin(d){const k=Math.max(0,Math.min(1,d.t/d.dur)),px_=d.x+d.dir*(k-.5)*d.len,h=Math.sin(k*Math.PI)*20,py=d.y-h,ang=Math.atan2(-Math.cos(k*Math.PI)*20*Math.PI/d.dur,d.dir*d.len/d.dur);
+  if(k<=0||k>=1)return;const sp=dSpr();ctx.save();ctx.translate(Math.round(px_),Math.round(py));ctx.rotate(ang);if(d.dir<0)ctx.scale(1,-1);ctx.scale(.65,.65);   // v70.2: nose always leads; smaller
   ctx.imageSmoothingEnabled=false;ctx.drawImage(sp,-Math.round(sp.width/2),-12);ctx.restore();
-  ctx.fillStyle='rgba(20,50,90,.25)';ctx.beginPath();ctx.ellipse(px_,d.y+2,12*(1-h/40),2,0,0,Math.PI*2);ctx.fill()}
+  ctx.fillStyle='rgba(20,50,90,.25)';ctx.beginPath();ctx.ellipse(px_,d.y+2,8*(1-h/34),1.5,0,0,Math.PI*2);ctx.fill()}
 const _db=drawBridge;drawBridge=function(time,inView){_db.apply(this,arguments);
   const now=performance.now(),dt=Math.min(.1,(now-D.last)/1000);D.last=now;if(onTitle||paused)return;
   D.next-=dt;if(D.next<=0){D.next=18+Math.random()*30;tryJump()}
