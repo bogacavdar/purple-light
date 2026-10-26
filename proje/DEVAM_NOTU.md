@@ -630,3 +630,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Tuna hikâyesi 4. parça: "Keşke her şey oyunlardaki gibi olsa… ana menüde “cheat” yazmıştım…" ipucu.
 - Tam ekran varsayılan: `hammadde.fs` yoksa da ilk tıklama/tuşta tam ekran; yalnızca kullanıcı kapatırsa (`0`) açılmaz.
 - Menüde "Versiyon 89".
+
+## v90 (27 Ekim 2026)
+- v89 hatası: `b-set`/`p-set` eski `openSettings`'i doğrudan tuttuğu için sarmalayıcı çalışmıyordu; ana menüden açılan `settitle` sınıfı oyunda kalıyor, ACT 2/seviye/harita düğmeleri gizleniyordu. Artık sınıflar `#settings` görünürlüğü (MutationObserver) ve 0,5 sn'lik kontrolle `onTitle`'a göre konuyor.
+- Gece ışığı anahtarı kırmızı hile bölümünün (`#b5cheat`) içine taşındı; etkisi de yalnızca hile açıkken (`lampOn`: `settings.nightLight&&settings.cheat`).
+- Ana menüdeki hile bölümünde not: ACT 2'ye geç / seviye / harita düğmeleri oyun içindeki Ayarlar'da.
+- Menüde "Versiyon 90".
