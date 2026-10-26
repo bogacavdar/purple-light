@@ -7441,7 +7441,13 @@ function tutRow(){
   if(tz===9||tz===10)return{t:'Nazlı · Keskin taşı sat',r:'Keskin taş',items:[{n:'Keskin taş',need:1,have:Math.min(1,h('Keskin taş')),ng:1}]};
   if(tz===13)return rowFor('Taş balta',1,'Dursun · Örse götür');
   return null}
-function rows(){const L=[];const t=tutRow();if(t)L.push(t);for(const r of B3.trk){const x=rowFor(r,1,r,true);if(x)L.push(x)}return L}
+// v67.3: the land-crossing quests (broken bridge, the rock fall in the pass) show what they still need, top centre
+function crossRow(){if(!(tut>=11&&qState==='active'))return null;const q=QUESTS[tut-11];if(!q)return null;
+  if(/Kırık köprüyü/.test(q.t)&&!bridge.fixed)return{t:'Ekin · Kırık köprü',r:'Kırık köprü',items:[{n:'Herhangi odun',need:BRIDGE_WOOD,have:Math.min(woodCount(),BRIDGE_WOOD)}]};
+  if(/Doğu geçidini/.test(q.t)&&typeof rockfall!=='undefined'&&!rockfall.cleared){let pt=0;for(const n in PICK_TIER)if((inv[n]||0)>0)pt=Math.max(pt,PICK_TIER[n]);
+    return{t:'Ekin · Doğu geçidi',r:'Kaya patlatıcı',items:[{n:'Kaya patlatıcı',need:2,have:Math.min(2,inv['Kaya patlatıcı']||0)},{n:'Kuvars kazma',need:1,have:pt>=3?1:0,tool:true}]}}
+  return null}
+function rows(){const L=[];const t=tutRow();if(t)L.push(t);{const c=crossRow();if(c)L.push(c)}for(const r of B3.trk){const x=rowFor(r,1,r,true);if(x)L.push(x)}return L}
 
 // the world things that give a still-missing ingredient (crafted parts are followed down to their raw materials)
 function refreshNodeNames(){if(B3.nnAt&&performance.now()-B3.nnAt<4000)return;B3.nnAt=performance.now();const s=new Set();for(const n of nodes)s.add(n.name);B3.nodeNames=s}

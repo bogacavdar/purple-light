@@ -417,3 +417,4 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Sırada (v68): çizimi WebGL'e taşımak (performans).
 - v67.1: ağaçlar dinlenmez; 3 kesişte devrilip yok olur (`treeChopped`), 200–300 sn sonra aynı bölgede, ekranda görünmeyen uygun bir yerde aynı türden yenisi çıkar (`regrow`, kayda yazılmaz).
 - v67.2: kesilen ağaç hasarlı görünür: 1. kesişte gövdede çentik + talaş, 2. kesişte iki yanlı derin kesik, dökülen yapraklar, hafif yatma.
+- v67.3: köprü ve doğu geçidi görevleri sürerken üst ortadaki takip çubuğunda gerekenler yazar (`crossRow`: odun x/20; kaya patlatıcı x/2 + kuvars kazma).
