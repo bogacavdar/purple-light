@@ -492,3 +492,6 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Başarımlar (`<script id="v71">`): 22 başarım (ilk tarif, ilk gece, 25/100/250 tarif, ilk av, köprü, 7./30. gün, köpek, 10 balık, seviye 10/25, 10 yan görev, 1000 sikke (sınırsız sikke açıkken sayılmaz), 10 kurt, adanın yarısı, bütün izler, bütün anılar, kara ejder, kötü son = Sisli Ada'yı bulmadan ayrılmak (won&&!sisDone), iyi son = Sisli Ada'da eşini görmek (won&&sisDone)). Her birinin ikonu bir eşya ikonu (icon()).
 - 1,5 sn'de bir kontrol; kazanılınca sağ altta altın kart (#achcard, 3,6 sn, sıra ile) + ses. Sağdaki ayarlar düğmesinin yanında madalya düğmesi (#b-ach) → liste (#achov), kazanılanlar altın + ★, kazanılmayanlar gri ikon.
 - Kayıt cihaz başına ortak: localStorage 'hammadde.ach'. Eski kayıtta şartı zaten sağlananlar ilk açılışta kazanılır. `window.__plAch`.
+
+## v71.1 (26 Ekim 2026)
+- Başarımlar kare: liste kare kutu ızgarası (ikon + ad), kazanılan altın + ★; kazanılmayan gri ikon ve "???" adıyla. Üstüne gelince/dokununca kısa açıklama balonu (data-tip, ::after); gizlilerde "???". Kazanma kartı da kare (132×132).
