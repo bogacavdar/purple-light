@@ -598,3 +598,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Konu (ACT2_TASARIM.md): eş ilk adanın kıyısında, biz baygınken mor ışıklı gemiye alındı; ışıkta pelerinli "yıldızsız yolcular" ve metal köpek vardı; biri bize şapkayı taktı ("onu sakin tutar"); gemide sayısız uyuyan yüz; son söz "Yıldızların ötesinde bile". Köpeğin kamerası ve şapkanın beyin kontrolü ACT 3'e saklı.
 - memScene sarmalayıcısıyla 5 yeni sahne (gece kumsalı, ışık sütunu, pelerinliler, metal köpek, şapka, mor gemi, yükselen gemi). v72 müziğinde gizemli listede. Kitap › Anılar'da kilitliyken "ACT 2'de, ikinci adanın ustalarına yardım ettikçe".
 - Menüde "Versiyon 82". Test yapılmadı.
+
+## v83 (27 Ekim 2026)
+- ACT 3 henüz yok: roket sinemasından ve "ACT 3 · Mor gemi" kartından sonra kısa bir son sahne (v81 içinde `hug`): mor geminin içi, kapsüller, eş kapsülden çıkıp koşar, sarılırlar, kalpler, 4 altyazı ("Buldun beni." / "Söz vermiştim. Yıldızların ötesinde bile."), romantik müzik. Ardından son kartı (#endov): mor "Purple Light", "Yeniden birliktesiniz.", "Hikâye ACT 3 ile devam edecek." + Oyuna devam et / Ana menü.
+- Ana menüye "Hakkında" (#about, `<script id="v83">`): mor "Purple Light", altında "Bir Boğaç Çavdar oyunu." (şirket, ekip, test eden isimleri sonra). Piksel portre denendi, Boğaç beğenmedi; eklenmedi.
+- Ekin artık başta spoiler vermiyor: "ışık yukarı götürür" sözü kalktı ("Deniz bazen insandan en sevdiğini alır; ama umudu alamaz"); isim sonrası "Kaybettiğini soran çok olur…"; kendi hikâyesinde "mor ışık yükseldi" yerine "gökyüzü tuhaf bir renge boyandı". Gerçek, görevlerle yavaş yavaş açılır.
+- Rastgele isimler: erkek (kahraman + erkek eş) Boğaç, Selçuk, Tolga, Alp, Anıl, Rıdvan, Cumhur, Enes, Engin, Mehmet, Mertcan, Derman, Eren, Halil, Doğukan, Cengiz; kadın (kahraman + kadın eş) Aysel, Su, Cemre, Tuğçe, Nilgün, Hilal, Büşra, Gül, Gülnihal, Ilgın, Selen, Dünya (olmayanlar eklendi).
+- Menüde "Versiyon 83". Test yapılmadı.
