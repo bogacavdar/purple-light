@@ -415,3 +415,4 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - NPC'ler yürümüyorlarken yan profil değil, sana hafif dönük önden (`npcDraw` → `q34`); yürüyen Ekin yan profilde.
 - Açık denizde ara sıra (18–48 sn) yunus zıplar (bazen iki tane), görüş alanında ve kıyıdan en az 2 karo uzakta; sıçrama efektli.
 - Sırada (v68): çizimi WebGL'e taşımak (performans).
+- v67.1: ağaçlar dinlenmez; 3 kesişte devrilip yok olur (`treeChopped`), 200–300 sn sonra aynı bölgede, ekranda görünmeyen uygun bir yerde aynı türden yenisi çıkar (`regrow`, kayda yazılmaz).

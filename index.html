@@ -1727,6 +1727,7 @@ const TREE_TYPES=[{n:'Meşe',c:['#2f8030','#3d9a38','#5cba48'],trunk:'#6a4426',r
   {n:'Elma',c:['#3a8a34','#4ea044','#72c058'],trunk:'#6a4a2a',r:12,fruit:'Yabani elma',fc:'#e0402a',noCut:1},{n:'Armut',c:['#4a8a30','#5ea040','#84c060'],trunk:'#5a4a30',r:12,fruit:'Yabani armut',fc:'#d8d050',noCut:1},
   {n:'Erik',c:['#3a7a3a','#4a904a','#6ab060'],trunk:'#5a3a2a',r:11,fruit:'Yabani erik',fc:'#8a3a9a',noCut:1},{n:'Ceviz',c:['#2f6a2a','#3e7e34','#5a9a48'],trunk:'#5a3a22',r:13,fruit:'Ceviz',fc:'#a8784a'},
   {n:'Kestane',c:['#357a30','#46903c','#62a84e'],trunk:'#4a3020',r:13,fruit:'Kestane',fc:'#7a4a2a'},{n:'Mürver',c:['#2e5a2a','#3e6c34','#5a8a48'],trunk:'#4a3a2a',r:11,fruit:'Mürver',fc:'#2a1a3a',noCut:1}];
+let treeChopped=t=>{t.cd=12};   // v67.1: replaced in the v65 block (3 chops and the tree is gone, a new one grows elsewhere later)
 const FRUIT_RE=150;   // seconds until a shaken tree bears fruit again
 // which axe a tree needs: pines fall to a stone axe; oaks, willows, birches and junipers need better ones
 const TREE_TIER={'Çam':1,'Meşe':2,'Huş':3,'Söğüt':3,'Ardıç':4,'Ceviz':2,'Kestane':2}, AXE_TIER={'Taş balta':1,'Çakmaktaşı balta':2,'Granit balta':2,'Kuvars balta':3,'Tunç balta':3,'Bazalt balta':4,'Demir balta':4,'Obsidyen balta':5};
@@ -2340,7 +2341,7 @@ function tickGather(dt,moving){
   if(tg.kind==='node'&&tg.n.mine){dx0=tg.n.x;dy0=tg.n.y;tg.n.left=(tg.n.left||1)-1;if(tg.n.left<=0){tg.n.alive=false;tg.n.t=RES[tg.n.name].respawn*(sk('G8')?.6:1);toast(`${MINES[tg.n.name].l} tükendi; başka bir yerde yenisi çıkar.`)}
     dropItem(g.name,dx0,dy0);sfx('clank');burst(tg.n.x,tg.n.y-4);for(let k=0;k<6;k++)parts.push({x:tg.n.x,y:tg.n.y-6,vx:(Math.random()-.5)*50,vy:-20-Math.random()*30,life:.5,c:MINES[tg.n.name].c})}
   else if(tg.kind==='node'){tg.n.alive=false;tg.n.t=RES[tg.n.name].respawn*(sk('G8')?.6:1);dx0=tg.n.x;dy0=tg.n.y;dropItem(g.name,dx0,dy0);sfx('pick');burst(tg.n.x,tg.n.y);const h=HURT[g.name];if(h&&thornHits(g.name))setTimeout(()=>hurt(h[0],h[1]),0)}
-  else if(tg.kind==='tree'){tg.t.cd=12;woodCut++;dx0=tg.t.x+(player.x<tg.t.x?-6:6);dy0=tg.t.y;dropItem(g.name,dx0,dy0);if(/^Obsidyen/.test(g.tool||'')&&Math.random()<.35)dropItem(g.name,dx0,dy0);for(const [k,q] of (TREE_EXTRA[tg.t.type.n]||[]))dropItem(k,dx0,dy0,q);{const ty=tg.t.type;if(ty.fruit){dropItem(ty.fruit,dx0,dy0,1+(Math.random()<.5?1:0));if(ty.seed&&Math.random()<.35+luck())dropItem(ty.seed,dx0,dy0)}}sfx('pick');burst(tg.t.x,tg.t.y-8)}
+  else if(tg.kind==='tree'){treeChopped(tg.t);woodCut++;dx0=tg.t.x+(player.x<tg.t.x?-6:6);dy0=tg.t.y;dropItem(g.name,dx0,dy0);if(/^Obsidyen/.test(g.tool||'')&&Math.random()<.35)dropItem(g.name,dx0,dy0);for(const [k,q] of (TREE_EXTRA[tg.t.type.n]||[]))dropItem(k,dx0,dy0,q);{const ty=tg.t.type;if(ty.fruit){dropItem(ty.fruit,dx0,dy0,1+(Math.random()<.5?1:0));if(ty.seed&&Math.random()<.35+luck())dropItem(ty.seed,dx0,dy0)}}sfx('pick');burst(tg.t.x,tg.t.y-8)}
   else if(tg.kind==='clay'){dropItem(g.name,player.x+player.face.x*10,player.y+player.face.y*8);sfx('pick')}
   else add(g.name);
   gainXP(1);qc('gather:'+g.name);
@@ -10497,6 +10498,18 @@ function putIn(b,name,n,extra){const L=LAND[b],ok=RULE[name]?RULE[name][0]:T_.la
  for(const k of MINEPL){let c=0;for(let g=0;g<4000&&c<44;g++){const m=mines[Math.floor(rnd()*mines.length)];if(!m)break;const a=rnd()*6.283,d=22+rnd()*18,x=m.x+Math.cos(a)*d,y=m.y+Math.sin(a)*d;if(!T_.land(tileAt(x,y))||!freeAt(x,y,12))continue;nodes.push({name:k,x,y,alive:true,t:0,v:rnd()});c++}}}
 try{REACH_=null;for(const k in CAT_N)delete CAT_N[k]}catch(e){}
 
+// ---------------------------------------------------------------- 2b · v67.1 trees: no resting; after 3 chops a tree falls for good, and 200–300 s later a new one of the same kind grows somewhere else in the same land
+const TREG={q:[]};window.__treeQ=TREG;
+treeChopped=function(t){t.cd=0;t.ch=(t.ch||0)+1;if(t.ch<3)return;
+  const i=trees.indexOf(t);if(i>=0){trees.splice(i,1);rebuildTG()}for(let k=0;k<14;k++)parts.push({x:t.x+(Math.random()-.5)*20,y:t.y-10-Math.random()*20,vx:(Math.random()-.5)*40,vy:-20-Math.random()*30,life:.7,c:k%2?'#6a4426':'#4a8a3a'});
+  try{sfx('craft')}catch(e){}TREG.q.push({at:performance.now()+(200+Math.random()*100)*1000,b:BIO[Math.floor(t.y/T)*W+Math.floor(t.x/T)],type:t.type})};
+function regrow(){const now=performance.now();for(let k=TREG.q.length-1;k>=0;k--){const r=TREG.q[k];if(now<r.at)continue;
+  const L=LAND[r.b];let done=false;for(let g=0;g<200&&!done;g++){const i=L[Math.floor(Math.random()*L.length)];if(i==null||tiles[i]>1)continue;const x=(i%W)*T+8+(Math.random()-.5)*6,y=Math.floor(i/W)*T+8+(Math.random()-.5)*6;
+    if(Math.abs(x-player.x)<420&&Math.abs(y-player.y)<300)continue;   // never pops up on screen
+    if(treesNear(x,y,o=>Math.hypot(o.x-x,o.y-y)<26)||nodeNear(x,y,14)||blocked(x,y)||Math.hypot(x-spawn.x,y-spawn.y)<6*T)continue;let bad=false;for(const o of AV)if(Math.abs(o.x-x)<50&&Math.abs(o.y-y)<50){bad=true;break}if(bad)continue;
+    trees.push({x,y,type:r.type,seed:Math.floor(Math.random()*1e6),fr:0});rebuildTG();done=true}
+  if(done||now>r.at+60000)TREG.q.splice(k,1);else r.at=now+5000}}
+setInterval(()=>{try{if(!onTitle)regrow()}catch(e){}},2000);
 // ---------------------------------------------------------------- 3 · mines: four times the size (twice as wide and tall); they block the way
 const MGC=48,MG=new Map();
 function mgRebuild(){MG.clear();for(const n of nodes){if(!n.mine)continue;const k=Math.floor(n.x/MGC)*8192+Math.floor(n.y/MGC);let L=MG.get(k);if(!L)MG.set(k,L=[]);L.push(n)}}
