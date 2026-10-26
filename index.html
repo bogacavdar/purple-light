@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-cont" type="button">Devam et</button>
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 72</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 73</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -1372,6 +1372,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
     <div class="b5mrow"><span>Müzik</span><div id="b5mus" class="b5seg" role="radiogroup" aria-label="Müzik seç"></div><small id="b5musd" class="note"></small></div>
     <div class="b5btns"><button class="mb ghost" id="s-keys" type="button">Kontroller</button><button class="mb ghost" id="t-xfer" type="button">Kayıtları dışa aktar</button><button class="mb ghost" id="t-imp" type="button">Kayıtları içe aktar</button></div>
     <label class="row chk" for="nightlight"><input id="nightlight" type="checkbox"><span>Gece ışığı<small>Açıkken gece etrafın meşale ya da kafa lambası varmış gibi aydınlanır; karanlıkta mor ışık sana dokunmaz. İstediğin zaman kapat.</small></span></label>
+    <label class="row chk" for="vibon" style="display:none"><input id="vibon" type="checkbox"><span>Titreşim<small>Açıkken hasar aldığında telefon titrer.</small></span></label>
     <label class="row chk" for="glon"><input id="glon" type="checkbox"><span>Ekran kartıyla çiz<small>Açıkken oyun ekran kartıyla (WebGL) çizilir, telefonda çok daha akıcıdır. Bir sorun görürsen kapat; değişiklik oyunu yeniden açar (kayıt korunur).</small></span></label>
 <label class="row chk" for="cheat"><input id="cheat" type="checkbox"><span>Hile modu (test için)<small>Açıkken <b>Z</b> tuşu +100 sikke, <b>X</b> tuşu +100 XP verir; sağdaki kırmızı paneldeki küçük simgelere tıklayınca o malzemeden +10 alırsın.</small></span></label>
     <div id="b5cheat" hidden><label class="row chk" for="b5inf"><input id="b5inf" type="checkbox"><span>Sınırsız sikke<small>Açıkken sikke sayacının yanında <b>∞</b> görünür; satın almak sikkeni azaltmaz, her şeyi alabilirsin.</small></span></label><label class="row chk" for="b5scn"><input id="b5scn" type="checkbox"><span>Bütün ara sahneler açık<small>Açıkken Kitap › <b>Keşif defteri</b>'nin başında bütün ara sahneler listelenir; istediğini izlersin.</small></span></label><div class="b5btns"><button class="mb ghost" id="b5max" type="button">Seviyeyi en üste çıkar</button><button class="mb ghost" id="b5map" type="button">Haritayı tamamen aç</button></div></div>
@@ -5574,7 +5575,8 @@ function drawShots(){for(const s2 of shots){ctx.fillStyle='rgba(0,0,0,.2)';ctx.f
 // ---------- effects: poison, bleeding and burns hurt for a while, then pass ----------
 const FXD={zehir:{n:'Zehir',c:'#9ad84a',i:'☠'},kanama:{n:'Kanama',c:'#ff5a4a',i:'✚'},'yanık':{n:'Yanık',c:'#ffa040',i:'✹'}};
 let pfx={},fxSeen={};
-function addFx(k,dps,dur){dps*=(1-resOf(k))*(k==='zehir'&&buffOn('panzehir')?0:1)*(k==='yanık'&&buffOn('ateşsiz')?.3:1)*(k==='kanama'&&buffOn('pıhtı')?.4:1);if(dps<=.05)return;const f=pfx[k];if(f){f.t=Math.max(f.t,dur);f.dps=Math.max(f.dps,dps)}else pfx[k]={t:dur,dps,acc:0};
+function addFx(k,dps,dur){dps*=1.3;dur*=1.6;   // v73: poison, burns and bleeding last longer and hurt more
+  dps*=(1-resOf(k))*(k==='zehir'&&buffOn('panzehir')?0:1)*(k==='yanık'&&buffOn('ateşsiz')?.3:1)*(k==='kanama'&&buffOn('pıhtı')?.4:1);if(dps<=.05)return;const f=pfx[k];if(f){f.t=Math.max(f.t,dur);f.dps=Math.max(f.dps,dps)}else pfx[k]={t:dur,dps,acc:0};
   if(!fxSeen[k]){fxSeen[k]=true;setTimeout(()=>toast(k==='zehir'?'Zehirlendin! Bir süre can yakar, sonra geçer. Yemek yiyip canını doldur; kırmızı "!" gördüğünde yana atıl ya da uzaklaş.':`${FXD[k].n}! Bir süre can yakar, sonra geçer.`,true),300)}renderFx()}
 function tickFx(dt){let ch=false;for(const k in pfx){const f=pfx[k];const dmg=f.dps*dt;hp-=dmg;lastHurt=FXD[k].n.toLocaleLowerCase('tr-TR');f.acc+=dmg;f.t-=dt;
     if(f.acc>=2){floats.push({x:player.x+(Math.random()-.5)*8,y:player.y-20,t:0,text:`-${Math.floor(f.acc)}`,color:FXD[k].c,size:8});f.acc-=Math.floor(f.acc)}
@@ -10988,7 +10990,7 @@ addEventListener('keydown',e=>{const t=e.target;if(t&&(t.tagName==='INPUT'||t.ta
   if(buf==='cheat'){buf='';setOk(!ok);sfx(ok?'level':'bad');toast(ok?'Hile ayarları açıldı: Ayarlar\'da':'Hile ayarları gizlendi ve kapatıldı')}},true);
 // v71.3: on a phone, tap the "Ayarlar" heading three times quickly
 {const hd=document.querySelector('#settings h2');if(hd){let n=0,last=0;hd.style.userSelect='none';hd.style.webkitUserSelect='none';hd.style.cursor='pointer';hd.style.touchAction='manipulation';hd.style.webkitTapHighlightColor='transparent';
-  hd.addEventListener('pointerdown',e=>{if(e.button>0)return;const now=performance.now();n=now-last<800?n+1:1;last=now;if(n>=3){n=0;try{audio.start()}catch(x){}setOk(!ok);sfx(ok?'level':'bad');toast(ok?'Hile ayarları açıldı':'Hile ayarları gizlendi ve kapatıldı')}})}}   // v72: pointerdown (iPhone gives no click on a heading)
+  hd.addEventListener('pointerdown',e=>{if(e.button>0)return;const now=performance.now();n=now-last<800?n+1:1;last=now;if(n>=3){n=0;try{audio.start()}catch(x){}setOk(!ok);sfx(ok?'level':'bad');try{if(navigator.vibrate)navigator.vibrate(ok?[70,50,140]:90)}catch(x){}toast(ok?'Hile ayarları açıldı':'Hile ayarları gizlendi ve kapatıldı')}})}}   // v72: pointerdown (iPhone gives no click on a heading)
 // every cutscene from the Keşif defteri
 const cb=$('b5scn');
 function syncScn(){if(cb)cb.checked=!!settings.b5scn;try{if(craftOpen&&mode==='book'&&bookTab==='codex')renderCraft()}catch(e){}}
@@ -11122,6 +11124,19 @@ const watch=(id,pick)=>{const el=$(id);if(!el)return;new MutationObserver(()=>{i
 watch('memov',()=>DARK.test(($('mem-n')||{}).textContent||'')?'mz_giz':'mz_rom');
 watch('npcsc',()=>'mz_giz');
 }).toString()+')()')}catch(e){try{window.__hamErr('v72: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v73">
+// v73: phone vibration on damage (Ayarlar › Titreşim, phones only)
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const can=TOUCH&&typeof navigator.vibrate==='function';const cb=$('vibon');if(!cb)return;const row=cb.closest('label');
+if(settings.vib==null){settings.vib=true;try{store.set(SETKEY,settings)}catch(e){}}
+if(row)row.style.display=TOUCH?'':'none';cb.checked=!!settings.vib;
+cb.addEventListener('change',()=>{settings.vib=cb.checked;store.set(SETKEY,settings);toast(settings.vib?'Titreşim açık':'Titreşim kapalı');if(settings.vib&&can)try{navigator.vibrate(60)}catch(e){}
+  if(settings.vib&&!can)setTimeout(()=>toast('Bu tarayıcı titreşimi desteklemiyor (iPhone Safari gibi)',true),900)});
+const _os=openSettings;openSettings=function(){const r=_os.apply(this,arguments);cb.checked=!!settings.vib;return r};
+const _h=hurt;hurt=function(n){const before=hp;const r=_h.apply(this,arguments);try{if(can&&settings.vib&&hp<before){const d=before-hp;navigator.vibrate(hp<=0?[120,60,220]:Math.round(Math.min(160,35+d*4)))}}catch(e){}return r};
+}).toString()+')()')}catch(e){try{window.__hamErr('v73: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v68">
 // v68: the graphics-card switch in Ayarlar (the choice is read once at start, so changing it reopens the game; the save is kept)

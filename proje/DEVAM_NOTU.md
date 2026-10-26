@@ -506,3 +506,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Ara sahne müziği (`<script id="v72">`): iki döngü OfflineAudioContext ile bir kez üretilir (audio.b5.mk/rendered/add): `mz_rom` (Do majör I–vi–IV–V, müzik kutusu + sıcak pad, 68 bpm) ve `mz_giz` (alçak La pedalı, minör kabarmalar, uzak cam çanlar, rüzgâr). Anılar romantik; "Mor bir delik", "Son akşam", "Mor fısıltı", "Bırakılan el" gizemli; Ada halkı sahneleri gizemli. #memov / #npcsc görünürlüğü MutationObserver ile izlenir; açıkken oyun müziği .12'ye iner, kapanınca 1'e döner. Açılış sineması kendi sesleriyle kalır.
 - Telefonda 3 dokunuş düzeltildi: iPhone başlığa (h2) click göndermiyordu → pointerdown, 0,8 sn aralık, cursor:pointer, touch-action:manipulation.
 - Ana menünün altında küçük "Versiyon 72" (#verlab). CLAUDE.md'ye her sürümde güncelleme kuralı eklendi.
+
+## v73 (26 Ekim 2026)
+- Süren etkiler (zehir, yanık, kanama) güçlendi: addFx'te dps ×1.3, süre ×1.6 (toplam hasar ~2 kat). Direnç/panzehir/ateşsiz/pıhtı yine uygulanır.
+- Titreşim (`<script id="v73">`): Ayarlar'da yalnız telefonda görünen "Titreşim" (settings.vib, varsayılan açık). hurt() sarmalandı: can düşünce navigator.vibrate (hasara göre 35–160 ms, bayılınca çift). Süren etki tikleri titretmez. iPhone Safari navigator.vibrate desteklemez → ayarı açınca uyarı.
+- Telefonda Ayarlar başlığına 3 dokunuşta titreşim (açılınca çift, kapanınca tek).
+- Menüde "Versiyon 73".
