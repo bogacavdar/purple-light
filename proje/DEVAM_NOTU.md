@@ -442,3 +442,6 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 
 ## v69.4 (26 Ekim 2026)
 - Kazandaki "+" artık kazana konmuş malzemeleri de sayar (`potMiss`: pot.put geçici olarak inv'e eklenip missingFor bakılır). Envanter yetmiyor ama kazanla yetiyorsa "+" önce kazanı boşaltır (returnAll), sonra handCraft yapar; eşya envantere girer.
+
+## v69.5 (26 Ekim 2026)
+- Kazanda öğrenilecek tarifin malzeme satırlarında, o malzeme kendisi bir tarifse ve eksikse "+" çıkar (önceden yalnız örste vardı: `const sub=FG&&...` → `(FG||!foundSet.has(x.r))&&...`). Basınca quickBrew: malzemesi varsa 1 tane yapılır ve doğrudan kazana atılır; eksikse satırda ne eksik olduğu yazar. Tarif listesindeki v69.3 "+" (envantere yapar) yerinde kaldı.

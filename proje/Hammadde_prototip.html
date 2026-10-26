@@ -3510,7 +3510,7 @@ function renderPot(list){
   const x=pot.r?REC.get(pot.r):null;
   const rows=x?x.i.map(([n,q],i)=>{const h=putSum(i),have=expand(n).reduce((t,m)=>t+(inv[m]||0),0);
     // a part that is itself a recipe gets a + button: make one right here (or see what is missing)
-    const sub=FG&&have<q-h?subRecipe(n):null;let sb='';
+    const sub=(FG||!foundSet.has(x.r))&&have<q-h?subRecipe(n):null;   // v69.5: the cauldron toolet sb='';
     if(sub){const can=canQuick(sub),miss=can?'':!foundSet.has(sub)?'önce bir kez kendin kaynat (✓ olunca + ile hızlı yapılır)':missingFor(REC.get(sub));
       sb=`<button type="button" class="sb${can?'':' no'}" data-sub="${esc(sub)}" aria-label="${esc(sub)} yap${can?'':': eksik '+esc(miss)}">+</button>${can?`<span class="stip ok">Yeni 1 ${esc(sub)} yap</span>`:`<span class="stip">${foundSet.has(sub)?'Eksik: ':''}${esc(miss)}</span>`}`}
     return `<li class="${h>=q?'ok':''}${have>0&&h<q?' p3put':''}" data-pn="${esc(n)}"><img src="${icon(expand(n)[0])}" alt=""><span>${esc(n)}</span><b>${h} / ${q}</b>${sb}<small>sende ${have}</small></li>`}).join('')+x.t.map(t=>`<li class="${inv[t]>0?'ok':'miss'}"><img src="${icon(t)}" alt=""><span>Alet: ${esc(t)}</span><b>${inv[t]>0?'var':'yok'}</b><small>harcanmaz</small></li>`).join(''):'';
