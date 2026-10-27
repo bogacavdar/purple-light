@@ -1051,3 +1051,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Hile paneli:** sağdaki kırmızı panelin üstünde arama kutusu (bütün eşyalar: hile malzemeleri, fiyat listesi ve tarif sonuçları; en fazla 40 sonuç) ve miktar seçimi 1 / 10 / 50 / 100 (varsayılan 10). Kutuda yazarken oyun tuşları çalışmaz; Esc aramayı temizler.
 - **Bölgeye git dersleri** (Börü'nün dövüş dersleri "Bataklık'a git" vb., `V.b`): haritada bir bölgenin en az 60 kara karesi açıldıysa oraya gidilmiş sayılır (3 sn'de bir hesaplanır). Bataklık ve Kayalık Dağ'da nehirden 14 kareden yakın yerler sayılmaz; karşı kıyıdan görmek yetmez.
 - Menüde "Versiyon 1.54". chk.js 0 hata; oyun hatasız açılıyor; hile panelinde "tunç" araması 10 sonuç veriyor, 50 seçilince 50 ekleniyor.
+
+## v1.55 (27 Ekim 2026)
+- Yeni hile **Tek vuruşta öldür** (`b5one`, `window.__plOne`, `<script id="v155">`): her karede, bir önceki kareden beri canı azalmış her yaratık (reisler dahil) hemen ölür (`killAnimal`); hangi saldırı yolundan gelirse gelsin (kılıç, mızrak, ok, ulti…). Diğer hileler gibi her açılışta kapalı.
+- Menüde "Versiyon 1.55". chk.js 0 hata; oyunda 5 hasar alan bir yaban öküzü (860 can) tek seferde öldü.
