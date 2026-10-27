@@ -1115,3 +1115,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Alıştırma canavarı ölmez:** dersin "bitir" (`kill:`) dışında bitmemiş adımı varken Börü'nün canavarı ölmez; öldürecek vuruş isabet sayılır, canavar canı yenilenmiş olarak kalır ("Dayanıyor!"). Yalnızca "bitir" adımları kaldığında ölebilir.
 - Saldırmama kuralı (v1.60) sıralı olmayan derslerde: kalan adımların hepsi vuruş adımıysa canavar saldırmaz.
 - Menüde "Versiyon 1.67". chk.js 0 hata; oyun hatasız açılıyor.
+
+## v1.68 (27 Ekim 2026)
+- **Ders alanından çıkış sorulur:** Börü'den 280 px'ten uzağa çıkınca oyun durur ve Börü sorar: "Derse dön" (karakter alana, Börü'ye ~230 px'e geri konur) ya da "Evet, dersi bırak" (ders tamamen kapanır, alıştırma canavarı kaybolur, ücret geri verilir; yeniden almak için Börü'den dersi baştan almak gerekir). Diyalog seçimsiz kapanırsa "Derse dön" sayılır. v1.65–1.66'daki geri sayım kaldırıldı.
+- **Görev bitince yeni görev hemen:** bir yan görev teslim edilince, o kişinin sıradaki işi açıksa teşekkür diyaloğunda "Başka iş var mı?" çıkar ve yeni görev aynı konuşmada teklif edilir (eskiden diyaloğu kapatıp yeniden konuşmak gerekiyordu). Börü'nün dersi bitince "Aferin" diyaloğunda alınabilecek ders varsa "Yeni ders" düğmesi ders listesini açar.
+- Menüde "Versiyon 1.68". chk.js 0 hata; oyun hatasız açılıyor.
