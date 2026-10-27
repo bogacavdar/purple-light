@@ -931,3 +931,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Yaprak: yerde nadir (açılışta uzaktaki yaprakların ~%72'si kalkar, yeniden çıkma 90 sn), her balta vuruşunda ağaçtan 1–2 yaprak düşer (`<script id="v133">`). Yerdeki yaprak çizimi için Boğaç'a 6 seçenek gönderildi; seçilince ayrı sürüm.
 - Kontrol: chk.js 0 hata; oyun açılıyor; sis ve gece haritası tek tek bakıldı.
 - Menüde "Versiyon 1.33".
+
+## v1.34 (27 Ekim 2026)
+- Mızrak simgeleri: "Mızrak" büyük M ile başladığı için `/mızrak$/` kuralına uymuyor, düz bir kare çıkıyordu. `<script id="v134">` yedi mızrağa (Mızrak, Çakmaktaşı, Kuvars, Bazalt, Obsidyen, Tunç, Demir) PIXI simgesi veriyor: çapraz ahşap sap, lif bağ, malzemenin renginde sivri uç.
+- Yerde duran (henüz toplanmamış) yaprak artık çalı değil, çimenin üstünde tek bir yaprak (Boğaç'ın seçimi "B · Tek yaprak"; v49-p1 içindeki `P1W['Yaprak']`). Envanter simgesi değişmedi.
+- Kontrol: chk.js 0 hata; oyun açılıyor; yerdeki yaprak ve envanterdeki mızraklara bakıldı.
+- Menüde "Versiyon 1.34".
