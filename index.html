@@ -1335,7 +1335,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.76</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.77</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -3898,6 +3898,7 @@ function makeWants(){
 }
 function traderPay(){return Math.round(trader.wants.reduce((t,w)=>t+PRICE_[w.n]*w.q,0)*3)+25}
 function tickTrader(){
+  if(ISLE===2){if(trader.state==='here'){trader.state='away';trader.nextAt=playTime+60}else if(trader.nextAt<playTime+60)trader.nextAt=playTime+60;return}   // v1.76: Nuri's ship sails only to Yıldızsız Ada (it docked at Yıldızsız Ada's beach coordinates on the second island)
   if(trader.state==='away'&&playTime>=trader.nextAt){
     trader.state='here';trader.leaveAt=playTime+TRADER_STAY;trader.wants=trader.firstDone?makeWants():[{n:'Dal',q:5},{n:'Taş',q:5},{n:'Lif',q:3}];trader.done=false;
     const c=recipeCandidates();trader.recipes=[];while(trader.recipes.length<Math.min(3,c.length)){const r=c[Math.floor(Math.random()*c.length)];if(!trader.recipes.includes(r))trader.recipes.push(r)}
@@ -6089,6 +6090,13 @@ const MAPIC={
  trader:{p:{a:'#6a4426',b:'#efe6d0',c:'#6fbf4a'},m:['....c....','...bbb...','..bbbbb..','....b....','aaaaaaaaa','.aaaaaaa.','..aaaaa..','.........','.........']},
  dock:{p:{a:'#b07a44',b:'#5a3d22'},m:['.........','.........','aaaaaaaaa','b.b.b.b.b','aaaaaaaaa','b...b...b','b...b...b','.........','.........']},
  star:{p:{a:'#a070e0',b:'#e0c8ff',c:'#140a26'},m:['...aaa...','.aabbbaa.','abbbcbbba','abbcccbba','abbbcbbba','.aabbbaa.','...aaa...','.........','.........']},
+ gok:{p:{a:'#c8ccd8',b:'#5a6a8a',c:'#fff070'},m:['......c..','.....aa..','....aab..','...aab...','..aab....','..b.b....','.b...b...','b.....b..','.........']},
+ pervin:{p:{a:'#6a4426',b:'#c070ff',c:'#ffd060'},m:['....bcb..','....bbb..','.....a...','.....a...','....a....','....a....','...a.....','...a.....','.........']},
+ tamer:{p:{a:'#3a3a40',b:'#8a6a4a',c:'#d8b84a'},m:['.........','.aaaaaaac','.aaaaaa..','.aab.....','..bb.....','..bb.....','.........','.........','.........']},
+ selin:{p:{a:'#5a6a8a',b:'#5ad0ff',c:'#a8b8d0'},m:['...ccc...','..caaac..','.caabaac.','.caabaac.','..caaac..','..ca.ac..','..ca.ac..','..cc.cc..','.........']},
+ alara:{p:{a:'#3a3a44',b:'#7af0ff',c:'#ff6a2a'},m:['......b..','.....b...','....b....','...b.....','..c......','.ac......','a........','.........','.........']},
+ tuna:{p:{a:'#e8ecf4',b:'#c84a2a',c:'#5ad0ff'},m:['....b....','...aaa...','...aca...','...aaa...','...aaa...','..baaab..','..b.a.b..','....c....','.........']},
+ denizci:{p:{a:'#6a4426',b:'#efe6d0',c:'#3a6ab0'},m:['....b....','....bb...','....bbb..','....bbbb.','....b....','aaaaaaaaa','.aaaaaaa.','ccccccccc','.........']},
  lamp:{p:{a:'#7fe0ff',b:'#e8fbff',c:'#2a1a4a'},m:['...ccc...','..cbbbc..','..cbbbc..','..ccccc..','...aaa...','..aaaaa..','.aaaaaaa.','.........','.........']}};
 const MAPICC={};function mapIcon(k){if(MAPICC[k])return MAPICC[k];const d=MAPIC[k];const c0=pixCanvas(d),c=document.createElement('canvas');c.width=c0.width+2;c.height=c0.height+2;c.getContext('2d').drawImage(c0,1,1);outlineCanvas(c,[17,23,15,255]);return MAPICC[k]=c}
 // the big map: zoomed around you, wheel or +/- to zoom, drag to look around
@@ -6110,7 +6118,7 @@ function drawMap(c,w,h,big){
   const mk=(wx,wy,col,label,r)=>{if(!seenAt(wx,wy))return;r=r||(big?5:2.5);const X=(wx/T-ox)*sx,Y=(wy/T-oy)*sy;if(X<-4||Y<-4||X>w+4||Y>h+4)return;c.fillStyle='#11170f';c.fillRect(Math.round(X-r-1),Math.round(Y-r-1),Math.round(2*r+2),Math.round(2*r+2));c.fillStyle=col;c.fillRect(Math.round(X-r),Math.round(Y-r),Math.round(2*r),Math.round(2*r));
     if(big&&label){c.font='bold 13px Rubik, system-ui, sans-serif';c.lineWidth=3;c.strokeStyle='rgba(17,23,15,.85)';c.strokeText(label,X,Y-r-10);c.fillStyle='#f3ecd8';c.fillText(label,X,Y-r-10)}};
   const lateI=[],seenE=(wx,wy)=>{const tx=Math.floor(wx/T),ty=Math.floor(wy/T);return tx>=0&&ty>=0&&tx<W&&ty<H&&explored[ty*W+tx]};   // v1.33: people and places stay on the map at night
-  const mki=(wx,wy,k,label,late)=>{if(!late&&dk>.05){lateI.push([wx,wy,k,label]);return}if(!(late?seenE(wx,wy):seenAt(wx,wy)))return;const X=(wx/T-ox)*sx,Y=(wy/T-oy)*sy;if(X<-12||Y<-12||X>w+12||Y>h+12)return;const ic=mapIcon(k),sc=big?Math.min(9,3+(mapZ-1)*.75):2.4,W2=ic.width*sc,H2=ic.height*sc;c.imageSmoothingEnabled=false;c.drawImage(ic,Math.round(X-W2/2),Math.round(Y-H2/2),Math.round(W2),Math.round(H2));if(big)MAPHITS.push({X,Y,r:Math.max(W2,H2)/2+8,k,label});
+  const mki=(wx,wy,k,label,late,all)=>{if(!late&&dk>.05){lateI.push([wx,wy,k,label,all]);return}if(!all&&!(late?seenE(wx,wy):seenAt(wx,wy)))return;const X=(wx/T-ox)*sx,Y=(wy/T-oy)*sy;if(X<-12||Y<-12||X>w+12||Y>h+12)return;const ic=mapIcon(k),sc=big?Math.min(9,3+(mapZ-1)*.75):2.4,W2=ic.width*sc,H2=ic.height*sc;c.imageSmoothingEnabled=false;c.drawImage(ic,Math.round(X-W2/2),Math.round(Y-H2/2),Math.round(W2),Math.round(H2));if(big)MAPHITS.push({X,Y,r:Math.max(W2,H2)/2+8,k,label});
     {const qm=k==='ekin'?(!met||(tut>=11&&qState==='talk')?'!':(tut>=11&&qState==='ready')?'?':null):(window.__plQMarkAt?window.__plQMarkAt(wx,wy):null),u=big?2:1,bh=qm?8*u+3*u:0;   // v1.33: the quest mark over a person shows on the map too
      if(big&&label){c.font='bold 13px Rubik, system-ui, sans-serif';c.lineWidth=3;c.strokeStyle='rgba(17,23,15,.85)';c.strokeText(label,X,Y-H2/2-9-bh);c.fillStyle='#f3ecd8';c.fillText(label,X,Y-H2/2-9-bh)}
      if(qm){const bw=5*u,bx=Math.round(X-bw/2),by=Math.round(Y-H2/2-8*u-2*u)+Math.round(Math.sin(time*4)*u);c.fillStyle='rgba(10,20,40,.9)';c.fillRect(bx-u,by-u,bw+2*u,8*u+2*u);c.fillStyle=k==='ekin'?(qm==='!'?'#f2b84b':'#8fd46b'):(qm==='?'?'#ffe07a':'#7fc8ff');
@@ -6138,12 +6146,13 @@ function drawMap(c,w,h,big){
       if(ic){c.imageSmoothingEnabled=false;c.drawImage(ic,Math.round(X-z/2),Math.round(Y-z/2),z,z)}if(big)MAPHITS.push({X,Y,r:z/2+6,k:'placed',label:o.n});continue}
     mk((o.tx+.5)*T,(o.ty+.5)*T,o.n==='Atölye'?'#c8903a':'#b8a0e0',big?(o.n==='Atölye'?'Atölye':''):'',big?3:1.2)}
   if(wiz.shown)mki(wiz.x,wiz.y,'star','Yıldızsız Gezgin');
+  try{if(ISLE===2){for(const [o,k] of [[window.__gok,'gok'],[window.__pervin,'pervin'],[window.__tamer,'tamer'],[window.__selin,'selin'],[window.__alara,'alara'],[window.__tuna,'tuna'],[denizci,'denizci']])if(o&&o.x>-9e4)mki(o.x,o.y,k,o.name,0,1)}else if(denizci.state==='here'&&denizci.x>-9e4)mki(denizci.x,denizci.y,'denizci','Denizci Levent')}catch(e){}   // v1.76: the second island's people (and Levent) are on the map; they show even where you have not been yet
   for(const d of dogs)mk(d.x,d.y,'#7fe0ff','',big?3:1.5);
   drawV46Map(c,ox,oy,sx,sy,w,h,big);
   // night: the map goes dark too, apart from fires and your own torch
   if(dk>0){c.save();c.fillStyle=`rgba(3,5,14,${(dk*.92).toFixed(3)})`;c.fillRect(0,0,w,h);c.globalCompositeOperation='lighter';
     const Ls=lightSources().concat(pl_?[[player.x,player.y-6,pl_]]:[]);for(const l of Ls){const X=(l[0]/T-ox)*sx,Y=(l[1]/T-oy)*sy,r=Math.max(2,l[2]/T*sx);if(X<-r||Y<-r||X>w+r||Y>h+r)continue;const g2=c.createRadialGradient(X,Y,0,X,Y,r);g2.addColorStop(0,`rgba(255,190,110,${(dk*.35).toFixed(3)})`);g2.addColorStop(1,'rgba(255,150,60,0)');c.fillStyle=g2;c.fillRect(X-r,Y-r,2*r,2*r)}c.restore()}
-  for(const a of lateI)mki(a[0],a[1],a[2],a[3],1);
+  for(const a of lateI)mki(a[0],a[1],a[2],a[3],1,a[4]);
   {const gg=guide();if(gg&&lit(gg.x,gg.y)){const X=Math.max(6,Math.min(w-6,(gg.x/T-ox)*sx)),Y=Math.max(6,Math.min(h-6,(gg.y/T-oy)*sy)),q=(time*1.4)%1,r0=big?7:3.5;
     c.strokeStyle=`rgba(242,184,75,${(1-q).toFixed(2)})`;c.lineWidth=big?3:1.5;c.beginPath();c.arc(X,Y,r0+q*(big?20:9),0,Math.PI*2);c.stroke();
     c.fillStyle='#11170f';c.fillRect(Math.round(X-r0-1),Math.round(Y-r0-1),Math.round(2*r0+2),Math.round(2*r0+2));c.fillStyle='#f2b84b';c.fillRect(Math.round(X-r0),Math.round(Y-r0),Math.round(2*r0),Math.round(2*r0));
@@ -6163,7 +6172,7 @@ function drawMap(c,w,h,big){
 }
 // v70.3: people on the big map grow as you zoom in, and a tap on one points the arrow there
 const MAPHITS=[];
-const mapObj=k=>({farmer,market,smith,durmus,witch,ekin:npc,trader,usta,alp,carp,kaptan,toygar,balik:balikci,lamp:lampman,star:wiz,dock})[k];
+const mapObj=k=>({farmer,market,smith,durmus,witch,ekin:npc,trader,usta,alp,carp,kaptan,toygar,balik:balikci,lamp:lampman,star:wiz,dock,denizci,gok:window.__gok,pervin:window.__pervin,tamer:window.__tamer,selin:window.__selin,alara:window.__alara,tuna:window.__tuna})[k];   // v1.76: ACT 2 people can be targeted from the map too
 function mapTap(bc,e){const r=bc.getBoundingClientRect(),X=(e.clientX-r.left)*bc.width/r.width,Y=(e.clientY-r.top)*bc.height/r.height;let b=null,bd=1e9;
   for(const h of MAPHITS){const d=Math.hypot(h.X-X,h.Y-Y);if(d<h.r&&d<bd){bd=d;b=h}}if(!b)return false;const o=mapObj(b.k);if(!o)return false;
   if(gping&&gping.w==='__map'&&window.__plPinK===b.k&&performance.now()<gping.until){gping=null;window.__plPinK=null;sfx('pick');toast('Hedef kaldırıldı');drawMap(bc.getContext('2d'),bc.width,bc.height,true);return true}   // v1.56: tap the same person again to drop the pin
@@ -6835,7 +6844,8 @@ const lampSpot=(()=>{const E=npc.home;for(const [dx,dy] of [[-58,-62],[-70,-40],
 for(let i=trees.length-1;i>=0;i--)if(Math.hypot(trees[i].x-lampSpot.x,trees[i].y-lampSpot.y)<34)trees.splice(i,1);for(let i=nodes.length-1;i>=0;i--)if(Math.hypot(nodes[i].x-lampSpot.x,nodes[i].y-lampSpot.y)<24)nodes.splice(i,1);rebuildTG();
 const lampEve=()=>day>=LAMP_DAY&&(dayT>=1080||dayT<330);
 const lampHave=()=>LAMP_WANT.every(([n,q])=>(inv[n]||0)>=q);
-function checkLampman(){if(lampman.gone||onTitle||wake||fading||!met)return;
+function checkLampman(){if(lampman.gone||onTitle||wake||fading||!met)return;if(ISLE===2){lampman.shown=false;return}   // v1.76: the lamp trader only comes to Yıldızsız Ada
+ 
   if(lampEve()&&!lampman.shown){lampman.shown=true;lampman.x=lampSpot.x;lampman.y=lampSpot.y;lampman.nights=(lampman.nights||0)+1;
     for(let i=0;i<30;i++){const an=Math.random()*Math.PI*2,sp=20+Math.random()*50;parts.push({x:lampman.x,y:lampman.y-6,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp,life:1.4,c:i%2?'#9fe8ff':'#5a2aa0'})}
     sfx('magic');setTimeout(()=>announce(lampman.met?'Mavi ışık yine yandı':'Uzakta mavi bir ışık',lampman.met?'Yıldızsız Işıkçı seni bekliyor · haritaya bak':'Haritada mavi bir nokta belirdi · gün doğmadan yetiş'),700);
@@ -11749,7 +11759,7 @@ function drawPortal(x,y,time){x=Math.round(x);y=Math.round(y);
 const pOn=()=>portalKnown||(I2&&QD().indexOf('gk3')>=0);
 const pOk=p=>pOn()||((p.who==='Levent'||p.who==='Ekin')&&!!D.act2);
 for(const p of (I2?P2:P1))XTRA.push({x:p.x,y:p.y,r:24,portal:1,on:()=>pOk(p),label:()=>I2?'Portal · Yıldızsız Ada\'ya dön':'Portal · Yüzen Kayalar\'a geç',act:()=>travel(I2?1:2,I2?'Ekin':'portal')});   // v1.76: once you have reached ACT 2, Levent's portal there and Ekin's here are always open (Ülker's portal job needs ACT 1 things, so there was no way back)
-{const _tg=target;target=function(){try{for(const o of XTRA)if(o.portal&&o.on()&&Math.hypot(o.x-player.x,o.y-player.y)<16)return{kind:'xtra',o}}catch(e){}return _tg.apply(this,arguments)}}   // v1.76: standing on a portal, E uses the portal (a stone or branch beside it no longer wins)
+{const _tg=target;target=function(){try{for(const o of XTRA)if(o.portal&&o.on()&&Math.hypot(o.x-player.x,o.y-player.y)<16)return{kind:'xtra',o}}catch(e){}const r=_tg.apply(this,arguments);try{const t=r&&(r.n||r.t);if(t&&t.x!=null){const dg=Math.hypot(t.x-player.x,t.y-player.y);let bo=null,bd=1e9;for(const o of XTRA){if(o.portal||!o.on())continue;const d=Math.hypot(o.x-player.x,o.y-player.y);if(d<(o.r||26)&&d<dg+10&&d<bd){bd=d;bo=o}}if(bo)return{kind:'xtra',o:bo}}}catch(e){}return r}}   // v1.76: standing on a portal, E uses the portal; an ACT 2 person nearer than the stone/plant/tree beside them is talked to (E picked the plant and Pervin/Tuna could not be talked to)
 // ---------------------------------------------------------------- Ülker
 function drawScope(x,y,time){x=Math.round(x);y=Math.round(y);px(x-1,y-14,2,14,'#4a3a2a');px(x-6,y-1,3,2,'#4a3a2a');px(x+4,y-1,3,2,'#4a3a2a');ctx.save();ctx.translate(x,y-15);ctx.rotate(-.6);px(-3,-14,6,16,'#8a7a5a');px(-4,-16,8,3,'#c8a868');px(-2,-16,4,1,'#bfe8ff');ctx.restore()}
 if(I2)XTRA.push({x:gok.x,y:gok.y,r:28,on:()=>true,label:()=>`${gok.name} ile konuş`,act:()=>talkGok()});
