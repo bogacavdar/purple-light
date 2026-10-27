@@ -948,3 +948,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Meşale + ikinci silah: meşale eldeyken karakterin "Silah" yuvasındaki silah vurur (hasar, menzil ve savurma görseli o silahın; `p4Kind`, `kindOf`, `swingP4` güncellendi; fareyle hayvana tıklayınca da vurur). Yuvada silah yoksa meşalenin kendisi vurur (7 hasar, 19 menzil; yumruk 4). Meşale ilk kez ele alındığında yuva boşsa ve çantada silah varsa bir kez ipucu çıkar.
 - Sis daha ağır ve tek yönde akar: iki katman da aynı yöne (sağa, hafif aşağı), hızlar 9/15 → 2.2/3.1, rüzgârın etkisi 0.4'e indi.
 - Menüde "Versiyon 1.36". chk.js 0 hata.
+
+## v1.37 (27 Ekim 2026)
+- Zümrüt'ün "Kazanın dili" görevi artık "3 yeni tarif" değil, **toplam 10 tarif** ister (`found.length>=10`). Eski hâli, bütün tarifleri öğrenmiş oyuncuda yeni tarif kalmadığı için görevi bitirilemez bırakıyordu. 10 tarifi zaten bilen oyuncu görevi alır almaz tamamlar.
+- Menüde "Versiyon 1.37". chk.js 0 hata.
