@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 122</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 123</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -12418,7 +12418,7 @@ body.arena #tut,body.arena #p-save,body.arena #p-load,body.arena #p-xfer,body.ar
 // =====================================================================================================
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
-const AR={on:false,open:false,sel:null,boss:false,n:1,keys:/^(Key[WASDQE]|Arrow(Up|Down|Left|Right)|Shift(Left|Right)|Space|Escape)$/,slot:'silah',lv:25,isle:1,held:null,dealt:0,last:0,recv:0,lastR:0,hits:[],center:null,R:9*16,pc:{},pq:[],nodesOff:[]};
+const AR={on:false,open:false,sel:null,boss:false,n:1,keys:/^(Key[WASDQER]|Arrow(Up|Down|Left|Right)|Shift(Left|Right)|Space|Escape)$/,slot:'silah',lv:25,isle:1,held:null,dealt:0,last:0,recv:0,lastR:0,hits:[],center:null,R:9*16,pc:{},pq:[],nodesOff:[]};
 window.__plArena=false;window.__arena=AR;
 const R1=['Çayır','Orman','Bataklık','Kayalık Dağ','Kül Diyarı','Mor Kristal Vadisi'],R2=['Yüzen Kayalar','Dev Mantar Ormanı','Hurda Çölü','Kristal Golem Ocağı','Ejder Volkanı','Gök Rıhtımı'];
 const KINDS=[['sword','Kılıçlar'],['hunt','Mızraklar'],['staff','Asalar'],['gun','Ateşli silahlar'],['axe','Baltalar'],['pick','Kazmalar'],['torch','Meşaleler']];
@@ -12641,10 +12641,10 @@ function mkArena(){const R=AR.R,RO=R+78;AW.RO=RO;
 let hudK='';
 function buildHud(){if($('arhud'))return;const h=document.createElement('div');h.id='arhud';h.hidden=true;
   h.innerHTML='<span class="art">⚔ ARENA</span><span class="arf" id="arfoe">Rakip seç</span><span class="ars">Verdiğin: <b id="ard1">0</b> · son <b id="ard2">–</b> · <b id="ard3">0</b>/sn</span><span class="ars rv">Aldığın: <b id="arr1">0</b> · son <b id="arr2">–</b></span>'
-    +'<button type="button" data-ah="sel">Seçim</button><button type="button" data-ah="re">↻ Yeniden</button><button type="button" data-ah="mad" title="Nötr canlılar da saldırsın">Kızdır</button><button type="button" class="x" data-ah="out">Çık</button>';
+    +'<button type="button" data-ah="ult" title="Ulti çubuğunu doldur">Ulti doldur</button><button type="button" data-ah="sel">Seçim</button><button type="button" data-ah="re">↻ Yeniden</button><button type="button" data-ah="mad" title="Nötr canlılar da saldırsın">Kızdır</button><button type="button" class="x" data-ah="out">Çık</button>';
   document.body.appendChild(h);
   h.addEventListener('click',e=>{const b=e.target.closest('[data-ah]');if(!b)return;e.stopPropagation();const a=b.dataset.ah;
-    if(a==='sel')openOv();else if(a==='re')spawnSel();else if(a==='mad'){for(const x of animals)if(x.ar){x.mad=true;x.t=0}sfx('growl')}else if(a==='out')leave()})}
+    if(a==='ult'){try{window.__plUlt.fill()}catch(x){}}else if(a==='sel')openOv();else if(a==='re')spawnSel();else if(a==='mad'){for(const x of animals)if(x.ar){x.mad=true;x.t=0}sfx('growl')}else if(a==='out')leave()})}
 function renderHud(){const h=$('arhud');if(!h)return;h.hidden=!AR.on||AR.open;if(h.hidden)return;
   const now=performance.now();let s5=0;for(const x of AR.hits)if(now-x[0]<5000)s5+=x[1];
   const foe=AR.sel?((AR.boss&&canBoss(AR.sel)?bossOf(AR.sel)||AR.sel:AR.sel)):'Rakip seç';
@@ -12707,7 +12707,7 @@ function doParry(){if(frozenNow()||!met||PR.cd>0||placing||(window.__plPS&&windo
   st-=COST;stRest=0;vitK='';PR.t=WIN;PR.cd=CD;stopGather();goal=null;
   try{audio.synth((ac,out)=>{const t=ac.currentTime+.005,o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(900,t);o.frequency.exponentialRampToValueAtTime(600,t+.08);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.12,t+.01);g.gain.exponentialRampToValueAtTime(.0005,t+.1);o.connect(g);g.connect(out);o.start(t);o.stop(t+.12)})}catch(e){try{sfx('swing')}catch(_){}}}
 function clang(){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005;for(const [f,v] of [[2400,.22],[3600,.12],[1200,.18]]){const o=ac.createOscillator(),g=ac.createGain();o.type='square';o.frequency.setValueAtTime(f,t);o.frequency.exponentialRampToValueAtTime(f*.7,t+.25);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.004);g.gain.exponentialRampToValueAtTime(.0005,t+.3);o.connect(g);g.connect(out);o.start(t);o.stop(t+.32)}})}catch(e){try{sfx('hit')}catch(_){}}}
-function parried(a){PR.n++;PR.hit=true;PR.flash=.25;PR.cd=Math.min(PR.cd,.15);st=Math.min(maxSt(),st+6);vitK='';pInv=Math.max(pInv,.3);lastBitten=performance.now();clang();
+function parried(a){PR.n++;PR.hit=true;try{if(window.__plUlt)window.__plUlt.gain(7)}catch(e){}PR.flash=.25;PR.cd=Math.min(PR.cd,.15);st=Math.min(maxSt(),st+6);vitK='';pInv=Math.max(pInv,.3);lastBitten=performance.now();clang();
   if(a){const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy)||1;a.stun=a.boss?STUN*.7:STUN;a.wind=0;a.lunge=null;a.p4slam=null;a.atkT=null;a.flash=.15;a.mad=true;
     a.kb={vx:dx/d*(a.boss?90:170),vy:dy/d*(a.boss?90:170),t:.16};
     const ix=player.x+dx/d*10,iy=player.y-6+dy/d*8;for(let i=0;i<22;i++){const t=Math.random()*6.283,s=40+Math.random()*90;parts.push({x:ix,y:iy,vx:Math.cos(t)*s,vy:Math.sin(t)*s-20,life:.25+Math.random()*.3,c:i%3?'#fff2b0':'#9ad8ff'})}}
@@ -13110,7 +13110,7 @@ function tgt(a){return{x:player.x+Math.cos(a)*120,y:player.y-10+Math.sin(a)*120}
 function cast3(L,m){const S=staffS();if(!S)return;for(const d of L)window.__plFire(S,sdm(m),tgt(aim()),d);try{sfx('magic')}catch(e){}}
 const GUN={'Tabanca':{dm:58,n:1,sp:0,ammo:'Tabanca mermisi'},'Pompalı':{dm:30,n:5,sp:.26,ammo:'Pompalı fişeği'}};
 const GS={c1:'#fff4b0',c2:'#ffb030',spd:640,range:340,line:1,trail:.08};
-function gshot(a,m,da,o){const h=held(),G=GUN[h];if(!G)return;if(!window.__plArena){const n=inv[G.ammo]||0;if(n<=0){floatText(`${G.ammo} yok`,'#ffb060');return}inv[G.ammo]=n-1}
+function gshot(a,m,da,o){const h=held(),G=GUN[h];if(!G)return;if(!window.__plArena&&!(o&&o.free)){const n=inv[G.ammo]||0;if(n<=0){floatText(`${G.ammo} yok`,'#ffb060');return}inv[G.ammo]=n-1}
   const S=Object.assign({},GS,o||{}),dm=Math.round(G.dm*m*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1));for(let i=0;i<G.n;i++)window.__plFire(S,dm,tgt(a),(da||0)+(G.n>1?(i/(G.n-1)-.5)*2*G.sp:0));
   shake=Math.max(shake,G.n>1?.18:.1);try{audio.synth((ac,out)=>{const t0=ac.currentTime,len=.2,b=ac.createBuffer(1,Math.ceil(ac.sampleRate*len),ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,3);const s=ac.createBufferSource();s.buffer=b;const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=2400;const g=ac.createGain();g.gain.value=.4;s.connect(f);f.connect(g);g.connect(out);s.start(t0)})}catch(e){}
   try{renderInv()}catch(e){}}
@@ -13120,8 +13120,8 @@ function tapDur(){const k=kindOf();if(k==='staff'){const S=staffS();return S?S.c
   const sw=P4().sw;if(sw&&sw.ant!=null)return (sw.ant+sw.str+sw.fol)*(sw.slow||1);return .3}
 function chime(i){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005;for(const f of [660*(1+i*.25),990*(1+i*.25)]){const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(f,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.09,t+.01);g.gain.exponentialRampToValueAtTime(.0005,t+.25);o.connect(g);g.connect(out);o.start(t);o.stop(t+.27)}})}catch(e){}}
 function rhythm(ty){const k=kindOf(),M=CB[k]&&CB[k][ty];if(!M||!canPay(k,M))return 0;const a=aim();faceTo(a);let rec=.4;try{rec=M.f(a)||.4}catch(e){}
-  C.cd=rec*.9;atkCd=Math.max(atkCd,rec*.9);chime(ty==='c2'?1:2);name(M.n,ty==='c3'?'#ffb040':'#ffe7a0');return rec}
-function doMove(type){const k=kindOf(),M=CB[k]&&CB[k][type];if(!M)return false;C.rh=null;if(!canPay(k,M))return true;const a=aim();faceTo(a);let rec=.4;try{rec=M.f(a)||.4}catch(e){}
+  C.cd=rec*.9;atkCd=Math.max(atkCd,rec*.9);chime(ty==='c2'?1:2);try{if(window.__plUlt)window.__plUlt.gain(ty==='c2'?5:10)}catch(e){}name(M.n,ty==='c3'?'#ffb040':'#ffe7a0');return rec}
+function doMove(type){const k=kindOf(),M=CB[k]&&CB[k][type];if(!M)return false;C.rh=null;if(!canPay(k,M))return true;try{if(window.__plUlt)window.__plUlt.gain(4)}catch(e){}const a=aim();faceTo(a);let rec=.4;try{rec=M.f(a)||.4}catch(e){}
   C.cd=rec;atkCd=Math.max(atkCd,rec*.8);name(M.n,type==='cdc'?'#ffd040':type==='charged'?'#ffb0ff':'#ffe7a0');return true}
 
 // ------------------------------------------------------------------ input
@@ -13176,7 +13176,80 @@ let lastN=0;
     else if(f.k==='line'){const c=Math.cos(f.a),s=Math.sin(f.a);ctx.strokeStyle=`rgba(${f.c},${al})`;ctx.lineWidth=f.w*(1-k)+1;ctx.beginPath();ctx.moveTo(x+c*4,y+s*4);ctx.lineTo(x+c*f.len,y+s*f.len);ctx.stroke()}
     else if(f.k==='x'){ctx.strokeStyle=`rgba(${f.c},${al})`;ctx.lineWidth=3*(1-k)+1;for(const d of [-.6,.6]){const a=f.a+d,c=Math.cos(f.a),s=Math.sin(f.a),cx=x+c*f.r*.7,cy=y+s*f.r*.7;ctx.beginPath();ctx.moveTo(cx-Math.cos(a+Math.PI/2)*f.r*.6,cy-Math.sin(a+Math.PI/2)*f.r*.6);ctx.lineTo(cx+Math.cos(a+Math.PI/2)*f.r*.6,cy+Math.sin(a+Math.PI/2)*f.r*.6);ctx.stroke()}}}
   for(const s of SPR){const ic=ICONC[s.n]||(s.n&&(icon(s.n),ICONC[s.n]));if(ic){ctx.save();ctx.translate(s.x,s.y);ctx.rotate(s.a+Math.PI/4);ctx.drawImage(ic,-6,-6,12,12);ctx.restore()}else px(s.x-3,s.y-1,7,2,'#e8dcb8')}}catch(e){}return r}}
+// v123: the ulti block uses these
+window.__plCB={hitIn,arc,circ,line,fx,push,swingP4,later,base,reach,aim,faceTo,kindOf,whoosh,name,staffS,sdm,tgt,gshot,thump};
 }).toString()+')()')}catch(e){try{window.__hamErr('v118-combo: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<style id="v123-ulti-css">
+#vit .vb.ulti{height:13px;border-width:2px}#vit .vb.ulti i{background:linear-gradient(#ffe890,#c88a1a)}#vit .vb.ulti span{font-size:10px;font-weight:800;letter-spacing:.05em}
+#vit .vb.ulti.full{animation:ulglow .7s ease-in-out infinite alternate;border-color:#ffe070}
+#vit .vb.ulti.full i{background:linear-gradient(#fff6c0,#ffc830)}
+@keyframes ulglow{from{box-shadow:0 0 2px #ffd040,0 0 0 1px #11170f}to{box-shadow:0 0 10px #ffe070,0 0 18px rgba(255,208,64,.6)}}
+#ulflash{position:fixed;inset:0;z-index:6;pointer-events:none;background:radial-gradient(ellipse at center,rgba(255,230,140,.0),rgba(255,200,60,.35));opacity:0;transition:opacity .5s}
+#ulflash.on{opacity:1;transition:opacity .05s}
+</style>
+<script id="v123-ulti">
+// =====================================================================================================
+// v123: ULTI. A gold bar under health/energy/mana fills as you fight: every blow that lands +2,5; a combo
+// move +4, the rhythm's 2nd move +5 and 3rd +10, a parry +7. Full (100): the bar and the weapon in your
+// hand glow gold; R lets it go (R does its old job while the bar is not full). Each kind of weapon has its own
+// ulti (ULT below); while it plays you take no damage. Arena: "Ulti doldur" on the top strip fills it.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const U={v:0,on:0};window.__plUlt=U;
+const FULL=100,PER_HIT=2.5;
+U.gain=n=>{if(U.on>0)return;const was=U.v>=FULL;U.v=Math.min(FULL,U.v+n);if(!was&&U.v>=FULL)ready()};
+U.fill=()=>{U.gain(FULL)};
+const CB=()=>window.__plCB;
+// the bar
+{const vit=$('vit');if(vit){const b=document.createElement('div');b.className='vb ulti';b.id='ulbar';b.title='Ulti (R)';b.innerHTML='<i id="ulfill"></i><span id="ulval">Ulti</span>';vit.appendChild(b)}
+ const f=document.createElement('div');f.id='ulflash';document.body.appendChild(f)}
+let uK='';function renderU(){const b=$('ulbar');if(!b)return;const on=!onTitle&&met;b.hidden=!on;if(!on)return;const k=Math.floor(U.v)+'|'+(U.on>0);if(k===uK)return;uK=k;
+  $('ulfill').style.width=Math.min(100,U.v)+'%';$('ulval').textContent=U.on>0?'ULTİ!':U.v>=FULL?'ULTİ HAZIR · R':'Ulti '+Math.floor(U.v)+'%';b.classList.toggle('full',U.v>=FULL||U.on>0)}
+function ready(){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005;[523,659,784,1047].forEach((f,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(f,t+i*.07);g.gain.setValueAtTime(.0001,t+i*.07);g.gain.exponentialRampToValueAtTime(.1,t+i*.07+.01);g.gain.exponentialRampToValueAtTime(.0005,t+i*.07+.3);o.connect(g);g.connect(out);o.start(t+i*.07);o.stop(t+i*.07+.32)})})}catch(e){}uK=''}
+// every blow of yours that lands (its number pops up) fills the bar a little
+function scan(){for(const f of floats){if(f._ul||f.t>.15)continue;f._ul=1;if(typeof f.text!=='string'||!/^-\d+$/.test(f.text)||['#ffffff','#ffd040','#ffb060'].indexOf(f.color)<0)continue;
+  let near=false;for(const a of animals)if(Math.hypot(f.x-a.x,f.y-(a.y-12))<30){near=true;break}if(near)U.gain(PER_HIT)}}
+// ------------------------------------------------------------------ the ultis
+function flash(){const f=$('ulflash');if(!f)return;f.classList.add('on');setTimeout(()=>f.classList.remove('on'),120)}
+function boom(){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005,o=ac.createOscillator(),g=ac.createGain();o.type='sawtooth';o.frequency.setValueAtTime(220,t);o.frequency.exponentialRampToValueAtTime(40,t+.6);const lp=ac.createBiquadFilter();lp.type='lowpass';lp.frequency.value=900;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.45,t+.02);g.gain.exponentialRampToValueAtTime(.0005,t+.7);o.connect(lp);lp.connect(g);g.connect(out);o.start(t);o.stop(t+.72)})}catch(e){}}
+const at=(px_,py_,r)=>(dx,dy,d,R)=>Math.hypot(player.x+dx-px_,player.y+dy-py_)<=r+R;
+const DROPS=[];
+function mouseP(max){const K=window.__plCombo,mx=K&&(K.mx||K.my)?K.mx:player.x+player.face.x*60,my=K&&(K.mx||K.my)?K.my:player.y+player.face.y*60;const dx=mx-player.x,dy=my-player.y,d=Math.hypot(dx,dy)||1,k=Math.min(1,max/d);return{x:player.x+dx*k,y:player.y+dy*k}}
+function dust(x,y,n,c){for(let i=0;i<n;i++){const t=i/n*6.283;parts.push({x:x+Math.cos(t)*6,y,vx:Math.cos(t)*(70+Math.random()*50),vy:Math.sin(t)*30-14,life:.5,c:c||(i%2?'#c8b898':'#8a7a60')})}}
+const ULT={
+ sword:{n:'Kılıç dansı',T:1.3,f(K,a){const r=K.reach()+14;for(let i=0;i<8;i++)K.later(i*110,()=>{const b=a+i*Math.PI/4;K.swingP4('sword',b,i%2?1:-1,r);K.whoosh();K.hitIn(K.circ(r),1.2,{kb:110});K.fx({k:'spin',r,T:.16,c:'255,236,150'})});
+   K.later(980,()=>{K.hitIn(K.circ(r+16),3,{kb:320,stun:1,col:['#ffd040','#ffffff','#fff2b0']});K.fx({k:'ring',r:r+20,T:.45,c:'255,220,100'});boom();shake=Math.max(shake,.4);flash()})}},
+ spear:{n:'Mızrak yağmuru',T:1.3,f(K,a){const P=mouseP(160);for(let i=0;i<12;i++)K.later(i*80,()=>{const an=Math.random()*6.283,rr=Math.random()*52,x=P.x+Math.cos(an)*rr,y=P.y+Math.sin(an)*rr*.7;DROPS.push({x,y,t:0,T:.14,n:held()||'Mızrak'});
+     setTimeout(()=>{try{K.hitIn(at(x,y,16),1.5,{kb:80,stun:.3,col:['#ffd040','#ffffff']});dust(x,y,8);K.whoosh()}catch(e){}},140)});K.fx({k:'ring',r:58,T:1.1,c:'255,220,120',x:P.x,y:P.y})}},
+ axe:{n:'Deprem',T:1.1,f(K,a){[40,62,86].forEach((r,i)=>K.later(i*330,()=>{K.hitIn(K.circ(r),2.4,{kb:220,stun:1,col:['#ffd040','#ff8a3a','#ffffff']});K.fx({k:'ring',r:r+4,T:.45,c:'255,210,140'});dust(player.x,player.y,22);boom();shake=Math.max(shake,.35+i*.08);shakeP=Math.max(shakeP,4.5)}))}},
+ fist:{n:'Öfke',T:1.0,f(K,a){for(let i=0;i<10;i++)K.later(i*60,()=>{K.swingP4('fist',a+(Math.random()-.5)*.6,1,22);K.whoosh();K.hitIn(K.arc(a,.95,28),1,{kb:50})});
+   K.later(700,()=>{K.swingP4('fist',a,1,26);K.hitIn(K.arc(a,.9,32),4,{kb:420,stun:1,col:['#ffd040','#ffffff']});K.fx({k:'ring',r:24,T:.35,c:'255,230,140',x:player.x+Math.cos(a)*18,y:player.y-6+Math.sin(a)*18});boom();shake=Math.max(shake,.35);flash()})}},
+ torch:{n:'Ateş fırtınası',T:1.1,f(K,a){[50,76,100].forEach((r,i)=>K.later(i*280,()=>{K.hitIn(K.circ(r),2,{kb:180,col:['#ffd040','#ff7a2a']});K.fx({k:'ring',r,T:.45,c:'255,140,40'});for(let j=0;j<40;j++){const t=j/40*6.283;parts.push({x:player.x+Math.cos(t)*r*.8,y:player.y-4+Math.sin(t)*r*.45,vx:Math.cos(t)*30,vy:-26,life:.55,c:j%2?'#ffd060':'#ff6a2a'})}boom()}))}},
+ staff:{n:'Meteor',T:1.0,f(K,a){const P=mouseP(180);K.fx({k:'ring',r:60,T:.7,c:'255,90,40',x:P.x,y:P.y});DROPS.push({x:P.x,y:P.y,t:0,T:.65,meteor:1});
+   setTimeout(()=>{try{K.hitIn(at(P.x,P.y,60),5,{kb:300,stun:1.2,col:['#ffd040','#ff7a2a','#ffffff']});K.fx({k:'ring',r:70,T:.5,c:'255,200,90',x:P.x,y:P.y});for(let j=0;j<60;j++){const t=Math.random()*6.283,s=40+Math.random()*140;parts.push({x:P.x,y:P.y,vx:Math.cos(t)*s,vy:Math.sin(t)*s*.6-20,life:.6,c:j%3?'#ff7a2a':'#ffe080'})}boom();shake=Math.max(shake,.5);shakeP=Math.max(shakeP,5);flash()}catch(e){}},680)}},
+ gun:{n:'Kurşun yağmuru',T:1.2,f(K,a){const n=held()==='Pompalı'?10:20;for(let i=0;i<n;i++)K.later(i*(1100/n),()=>K.gshot(K.aim()+(Math.random()-.5)*.28,1.2,0,{free:1}))}}};
+function fire_(){const K=CB();if(!K||U.v<FULL||U.on>0)return false;if(frozenNow()||placing||(window.__plPS&&window.__plPS()))return false;const k=K.kindOf(),M=ULT[k];if(!M)return false;
+  U.v=0;U.on=M.T;pInv=Math.max(pInv,M.T+.2);const a=K.aim();K.faceTo(a);flash();boom();uK='';
+  announce(M.n,'Ulti');try{M.f(K,a)}catch(e){}return true}
+// R: the ulti when it is full (R keeps its old job while it is not; in the arena R is only the ulti)
+addEventListener('keydown',e=>{if(e.code!=='KeyR'||e.repeat)return;const t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'))return;if(onTitle||placing)return;
+  if(U.v>=FULL&&fire_()){e.stopImmediatePropagation();e.preventDefault();return}if(window.__plArena){e.stopImmediatePropagation();e.preventDefault()}},true);
+// the loop
+let lastN=0;
+{const _fb=frameBody;frameBody=function(){const t=performance.now(),dt=lastN?Math.min(.05,(t-lastN)/1000):0;lastN=t;const r=_fb.apply(this,arguments);
+  try{if(!frozenNow()){scan();if(U.on>0){U.on=Math.max(0,U.on-dt);if(!U.on)uK=''}}for(let i=DROPS.length-1;i>=0;i--){DROPS[i].t+=dt;if(DROPS[i].t>=DROPS[i].T+.05)DROPS.splice(i,1)}renderU()}catch(e){}return r}}
+{const _rs=resetState;resetState=function(){const r=_rs.apply(this,arguments);U.v=0;U.on=0;uK='';return r}}
+// gold on the weapon when it is full, and round you while it plays
+{const _dh=drawHeld;drawHeld=function(x,y){const r=_dh.apply(this,arguments);try{if(U.v>=FULL||U.on>0){const t=performance.now()/1000,p=.5+.5*Math.sin(t*8),hx=x+(player.face.x||0)*5,hy=y-7;
+    const g=ctx.createRadialGradient(hx,hy,0,hx,hy,10);g.addColorStop(0,`rgba(255,230,120,${(.45+.3*p).toFixed(2)})`);g.addColorStop(1,'rgba(255,200,60,0)');ctx.fillStyle=g;ctx.fillRect(hx-10,hy-10,20,20);
+    if(Math.random()<.4)parts.push({x:hx+(Math.random()-.5)*10,y:hy+(Math.random()-.5)*10,vx:0,vy:-14,life:.4,c:Math.random()<.5?'#ffe070':'#fff6c0'})}}catch(e){}return r}}
+{const _ds=drawShots;drawShots=function(){const r=_ds.apply(this,arguments);try{const t=performance.now()/1000;
+  if(U.on>0){ctx.strokeStyle=`rgba(255,220,100,${(.4+.3*Math.sin(t*20)).toFixed(2)})`;ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(player.x,player.y-6,15,12,0,0,Math.PI*2);ctx.stroke()}
+  for(const d of DROPS){const k=Math.min(1,d.t/d.T);if(d.meteor){const y=d.y-160*(1-k),x=d.x-60*(1-k);px(x-5,y-5,10,10,'#ff7a2a');px(x-3,y-3,6,6,'#ffe080');for(let i=0;i<3;i++)parts.push({x:x+20*(1-k)*.1+(Math.random()-.5)*6,y:y-6,vx:20,vy:-40,life:.3,c:'#ff9a3a'})}
+    else{const y=d.y-90*(1-k),ic=ICONC[d.n]||(icon(d.n),ICONC[d.n]);if(ic){ctx.save();ctx.translate(d.x,y);ctx.rotate(Math.PI*.75);ctx.drawImage(ic,-6,-6,12,12);ctx.restore()}else px(d.x-1,y-6,2,12,'#e8dcb8')}}}catch(e){}return r}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v123-ulti: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

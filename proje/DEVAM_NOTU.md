@@ -840,3 +840,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Çift tık artık 0,18 sn içindeki iki tık (`DBL`; eskiden 0,3) — ritim penceresiyle karışmasın diye.
 - Hamleler: Kılıç: Ters kesik (×1,5) → Ağır kesik (×2,6, sersemletir). Mızrak: Derin dürtme → Delip geçme (çok uzun, ×2,6). Balta: Yan savuruş → Kafa kıran (×3, sersemletir). Yumruk: Kroşe → Aparkat (×2,6). Meşale: Kor savuruşu → Alev kesiği (çevre). Asa: İkiz atış → Güç topu (×2,8). Ateşli silah: Seri atış → Delici mermi (×3,2, uzun menzil). Enerji 5–11 (arenada bedava), asa mana, silah mermi.
 - Menüde "Versiyon 122". chk.js 0 hata.
+
+## v123 (27 Ekim 2026) — Ulti
+- `<script id="v123-ulti">` + `<style id="v123-ulti-css">`. Can/enerji/mana altında altın **Ulti** çubuğu (`#ulbar`, `window.__plUlt`: v, gain, fill). Dolma: isabet eden her vuruş +2,5 (vuruş sayısı çıkan her yaratık isabeti; "Etkisiz" sayılmaz), kombo hamlesi +4 (v118 `doMove`), ritim 2. hamle +5, 3. hamle +10 (v118 `rhythm`), başarılı savuşturma +7 (v110 `parried`). Ulti sürerken dolmaz. Kayda yazılmaz.
+- Dolunca (100) çubuk parlar, eldeki silahın çevresinde altın ışık ve kıvılcım (`drawHeld` sarmalandı), dörtlü çınlama. **R** ultiyi açar (tam değilse R eski işini yapar; arenada R yalnızca ulti). Ulti boyunca hasar yok (`pInv`), altın halka, ekran parlaması, adı duyurulur.
+- Ultiler (`ULT`, v118'in `window.__plCB` araçlarıyla): Kılıç **Kılıç dansı** (8 yönlü dönüş + ×3 patlama, sersemletir) · Mızrak **Mızrak yağmuru** (fare yönündeki alana 12 mızrak düşer) · Balta **Deprem** (büyüyen 3 halka, ×2,4, sersemletir) · Yumruk **Öfke** (10 yumruk + ×4 son) · Meşale **Ateş fırtınası** (3 ateş halkası) · Asa **Meteor** (0,65 sn sonra fare yönüne düşen meteor, ×5) · Ateşli silah **Kurşun yağmuru** (20 atış, pompalıda 10; mermi harcamaz).
+- Arena şeridinde **Ulti doldur** düğmesi; arena tuşlarına R eklendi.
+- Menüde "Versiyon 123". chk.js 0 hata.
