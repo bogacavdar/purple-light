@@ -1120,3 +1120,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Ders alanından çıkış sorulur:** Börü'den 280 px'ten uzağa çıkınca oyun durur ve Börü sorar: "Derse dön" (karakter alana, Börü'ye ~230 px'e geri konur) ya da "Evet, dersi bırak" (ders tamamen kapanır, alıştırma canavarı kaybolur, ücret geri verilir; yeniden almak için Börü'den dersi baştan almak gerekir). Diyalog seçimsiz kapanırsa "Derse dön" sayılır. v1.65–1.66'daki geri sayım kaldırıldı.
 - **Görev bitince yeni görev hemen:** bir yan görev teslim edilince, o kişinin sıradaki işi açıksa teşekkür diyaloğunda "Başka iş var mı?" çıkar ve yeni görev aynı konuşmada teklif edilir (eskiden diyaloğu kapatıp yeniden konuşmak gerekiyordu). Börü'nün dersi bitince "Aferin" diyaloğunda alınabilecek ders varsa "Yeni ders" düğmesi ders listesini açar.
 - Menüde "Versiyon 1.68". chk.js 0 hata; oyun hatasız açılıyor.
+
+## v1.69 (27 Ekim 2026)
+- "İki canavarı çift vuruşla bitir" ikinci öldürmeyi saymıyordu: öldürme yalnızca hamle başladıktan 0,9 sn içinde ve o hamlenin vuruşuyla gelirse sayılıyordu; çift vuruştan sonra son darbe çoğu zaman düz bir tıklamaydı ya da süre geçmişti. Artık dersin canavarı son özel hamleden (`LM`) sonraki 2 sn içinde ölürse o hamleyle "bitirilmiş" sayılır.
+- Menüde "Versiyon 1.69". chk.js 0 hata; oyun hatasız açılıyor.

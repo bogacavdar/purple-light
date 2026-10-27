@@ -1335,7 +1335,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.68</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.69</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -13582,11 +13582,12 @@ function bump(kind){const c=L.cur;if(!c||window.__plArena)return;const l=LK[c.k]
   const cur=l.seq?l.st.findIndex((s,i)=>c.p[i]<s[1]):-1;   // v1.59b/v1.66: steps one after another only where the lesson asks for it (seq); elsewhere any step counts
   l.st.forEach((s,i)=>{if((l.seq&&i!==cur)||s[0]!==kind||c.p[i]>=s[1])return;c.p[i]++;any=true;floatText(`${l.n}: ${c.p[i]}/${s[1]}`,'#ffe7a0');try{sfx(c.p[i]>=s[1]?'found':'pick')}catch(e){}});
   if(!any)return;lk='';if(l.st.every((s,i)=>c.p[i]>=s[1]))finish(l)}
-window.__plMoveEv=ty=>{if(!L.cur||window.__plArena)return;let stun=false;for(const a of animals)if(a.stun>0&&Math.hypot(a.x-player.x,a.y-player.y)<90){stun=true;break}M={k:ty,t:now(),stun,hit:false,kill:false,W:.9}};
+let LM=null;   // v1.69: the last special move, remembered a little longer for 'finish it with…' steps
+window.__plMoveEv=ty=>{if(!L.cur||window.__plArena)return;LM={k:ty,t:now()};let stun=false;for(const a of animals)if(a.stun>0&&Math.hypot(a.x-player.x,a.y-player.y)<90){stun=true;break}M={k:ty,t:now(),stun,hit:false,kill:false,W:.9}};
 window.__plEvade=a=>{if(!L.cur||!a||a.tut)return;const t=now(),p=evT.get(a)||0;if(t-p<.8)return;evT.set(a,t);bump('evade')};
 {const _bh=biteHit;biteHit=function(a){try{if(dodge&&a&&!a.tut)window.__plEvade(a)}catch(e){}return _bh.apply(this,arguments)}}
 function onHit(){if(!M||M.hit)return;M.hit=true;bump('hit:'+M.k);if(M.stun)bump('stun:'+M.k);if(M.k==='ult')bump('ult')}
-{const _ka=killAnimal;killAnimal=function(a){const live=M&&!M.kill&&now()-M.t<=M.W;const r=_ka.apply(this,arguments);try{if(live&&L.cur&&a&&!a.tut){onHit();M.kill=true;bump('kill:'+M.k)}}catch(e){}return r}}
+{const _ka=killAnimal;killAnimal=function(a){const live=M&&!M.kill&&now()-M.t<=M.W,late=!live&&LM&&now()-LM.t<=2;const r=_ka.apply(this,arguments);try{if(live&&L.cur&&a&&!a.tut){onHit();M.kill=true;bump('kill:'+M.k)}else if(late&&L.cur&&a&&a.ders){bump('kill:'+LM.k);LM=null}}catch(e){}return r}}   // v1.69: a foe finished within 2 s of the move still counts (the last blow of a double is often a plain one)
 {const _ka2=killAnimal;killAnimal=function(a){try{const c=L.cur,l=c&&LK[c.k];if(a&&a.ders&&l){const left=l.st.filter((s,j)=>c.p[j]<s[1]);if(left.length&&!left.every(s=>s[0].indexOf('kill:')===0)){   // v1.67: Börü's practice foe does not die until only 'finish it' steps are left
    const live=M&&!M.kill&&now()-M.t<=M.W;if(live)onHit();const D=ANIM[a.k];a.hp=D?Math.round(D.hp*2):50;a._l9=a.hp;a.flash=.3;floatText('Dayanıyor!','#ffe7a0');return}}}catch(e){}return _ka2.apply(this,arguments)}}
 let pN=-1,uOn=0;
