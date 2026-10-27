@@ -1067,3 +1067,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Büyük haritada **sağ tık**: bir işaretin (📍) ya da okun hedefinin üstünde kaldırır; üstüne gelince etikette "Sağ tık: kaldır" yazar (`<script id="v157">`). Boş yere sağ tıklayınca nasıl kullanılacağını söyler.
 - Rıza'nın ev/barınak listesinde fiyat düğmeleri hepsi aynı boyda (128 px), tek satır, binlik ayraçlı ("Yaptır · 2.500").
 - Menüde "Versiyon 1.57". chk.js 0 hata.
+
+## v1.58 (27 Ekim 2026)
+- Haritada kurduğun evler, barınaklar ve yataklar kendi resimleriyle (sarı çerçeveli küçük simge) görünür; büyük haritada üstüne gelince adı yazar (`MAPHITS` k:'placed').
+- Kuşak (1–0): bir eşya bitince ya da yere kurulunca (kapan, tuzak, ev…) yuvası boşalır; eskiden silik "kalmadı" hayaleti kalıyordu.
+- Menüde "Versiyon 1.58". chk.js 0 hata; haritada barınak ve yatak simgesi çıktı, biten tuzağın yuvası boşaldı.
