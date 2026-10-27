@@ -686,3 +686,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Liste: `SECRET` kümesi (iz, ani, ejder, levent, roket, act2, iyison, kotuson, hile, kaya, kopru) kazanılana kadar ???; diğerleri adıyla ve açıklamasıyla gri görünür. `PROG` olanlarda çubuk + "x / y". En iyi ilerleme localStorage `hammadde.achp`'de (ana menüde de görünür); `track()` her `check()`te.
 - Ada 1 listeleri ada 2 üzerine yazmadan önce `window.__I1T`, `__I1O`, `__I1A` olarak saklanıyor. Bütün reisler artık `allAnim()` − Kara ejder − `ANIM[k].boss`.
 - Menüde "Versiyon 100".
+
+## v101 (27 Ekim 2026)
+- "Yeni" başarımlar: localStorage `hammadde.achseen` (görülenler; ilk açılışta o ana kadar kazanılanların hepsi görülmüş sayılır). Kazanılmış ama görülmemiş kart `li.new`: köşede sarı "YENİ" etiketi ve parlama; fareyle üstüne gelince, odaklanınca ya da dokununca görülür olur.
+- Sayaçlar artık yalnızca yeni olanları sayar: ana menüdeki madalya (`#t-achn`) ve oyun içindeki başarımlar düğmesi (`#b-achn`, yeni).
+- Menüde "Versiyon 101".

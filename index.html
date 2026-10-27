@@ -1331,7 +1331,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 100</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 101</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -11262,6 +11262,12 @@ const PROG={tarif1:()=>[fl(),1],tarif25:()=>[fl(),25],tarif100:()=>[fl(),100],ta
  agactum:()=>{const L=allTree();return [cnt(L,n=>TS.has(n)),L.length]},canlitum:()=>{const L=allAnim();return [cnt(L,n=>KS.has(n)),L.length]},
  dusentum:()=>{const L=allDrop();return [cnt(L,n=>IS.has(n)),L.length]},platin:()=>[ACH.filter(a=>a[0]!=='platin'&&got[a[0]]).length,ACH.length-1]};
 // the best progress ever seen is kept on the device, so the list shows it on the main menu too
+// v101: won but not looked at yet = "Yeni". Seen when hovered, focused or tapped. First run: everything already won counts as seen.
+const SK='hammadde.achseen';let SEEN=null;try{const r=localStorage.getItem(SK);if(r)SEEN=new Set(JSON.parse(r))}catch(e){}
+if(!SEEN){SEEN=new Set(Object.keys(got));try{localStorage.setItem(SK,JSON.stringify(Array.from(SEEN)))}catch(e){}}
+const isNew=id=>!!got[id]&&!SEEN.has(id),newN=()=>ACH.filter(a=>isNew(a[0])).length;
+function badges(){const n=newN();for(const id of ['t-achn','b-achn']){const e=$(id);if(e)e.textContent=n?String(n):''}}
+function seeIt(id){if(!isNew(id))return;SEEN.add(id);try{localStorage.setItem(SK,JSON.stringify(Array.from(SEEN)))}catch(e){}badges()}
 const PK='hammadde.achp';let PB={};try{PB=JSON.parse(localStorage.getItem(PK)||'{}')||{}}catch(e){PB={}}
 function progOf(id,live){const f=PROG[id];if(!f)return null;let v=null;if(live||id==='platin'||/tum$|hep$/.test(id)){try{v=f()}catch(e){v=null}}
   const b=PB[id];if(v&&b&&b[0]>v[0])v=[b[0],v[1]];if(!v&&b)v=b;if(!v)return null;return [Math.max(0,Math.min(v[0],v[1])),v[1]]}
@@ -11295,7 +11301,7 @@ function render(){const c=ACH.filter(a=>got[a[0]]).length,live=!onTitle&&!wake,p
   const tile=a=>{const on=!!got[a[0]],sec=!on&&SECRET.has(a[0]),pr=on?null:progOf(a[0],live),plat=a[0]==='platin';
     const tip=sec?'Gizli başarım':a[2]+(pr?` (${pr[0]} / ${pr[1]})`:'');
     const bar=pr&&!sec?`<span class="pb"><i style="width:${pr[1]?Math.round(pr[0]/pr[1]*100):0}%"></i></span><small class="pn">${pr[0]} / ${pr[1]}</small>`:'';
-    return `<li class="${on?'on':''}${sec?' sec':''}${plat?' plat':''}" tabindex="0" data-tip="${esc(tip)}" aria-label="${sec?'Gizli başarım':esc(a[1]+': '+tip)}"><img src="${ic(a[3])}" alt=""><b>${sec?'???':esc(a[1])}</b>${bar}${on?'<i aria-hidden="true">★</i>':''}</li>`};
+    return `<li class="${on?'on':''}${sec?' sec':''}${plat?' plat':''}${isNew(a[0])?' new':''}" data-aid="${a[0]}" tabindex="0" data-tip="${esc(tip)}" aria-label="${sec?'Gizli başarım':esc(a[1]+': '+tip)}"><img src="${ic(a[3])}" alt=""><b>${sec?'???':esc(a[1])}</b>${bar}${on?'<i aria-hidden="true">★</i>':''}</li>`};
   const head=pl?`<div class="platb"><img src="${PLAT}" alt=""><span><small>PLATİN</small><b>Bütün başarımları kazandın</b></span></div>`:'';
   ov.innerHTML=`<div class="ab${pl?' pl':''}"><button class="x" type="button" aria-label="Kapat">×</button><h2>Başarımlar</h2><p class="note" style="margin:0">${c} / ${ACH.length} kazanıldı. Kazandıkların altın renginde; gizli olanlar ??? olarak durur. Ayrıntı için üstüne gel ya da dokun.</p>${head}<ul>${ACH.map(tile).join('')}</ul></div>`}
 {const s4=document.createElement('style');s4.textContent=
@@ -11314,8 +11320,14 @@ function grant(id){if(got[id])return;const a=ACH.filter(x=>x[0]===id)[0];if(!a)r
 // v97: the same medal on the main menu, beside Ayarlar: every achievement won in any game on this device
 {const ts=$('t-set');if(ts){const b=document.createElement('button');b.className='tib';b.id='t-ach';b.type='button';b.setAttribute('aria-label','Başarımlar');b.title='Başarımlar';b.innerHTML=MEDAL+'<span id="t-achn"></span>';ts.parentNode.insertBefore(b,ts);
   const s3=document.createElement('style');s3.textContent='#t-ach{position:relative}#t-ach svg{image-rendering:pixelated}#t-achn{position:absolute;right:-6px;bottom:-6px;min-width:20px;padding:1px 5px;border-radius:9px;background:#f2c84b;color:#2a2008;font-size:11px;font-weight:800;line-height:16px;text-align:center;box-shadow:0 0 0 2px rgba(5,4,14,.7)}#t-achn:empty{display:none}';document.head.appendChild(s3);
-  const cnt=()=>{const n=ACH.filter(a=>got[a[0]]).length;const e=$('t-achn');if(e)e.textContent=n?String(n):''};cnt();setInterval(cnt,2000);
+  badges();setInterval(badges,1500);
   b.addEventListener('click',()=>{try{music.start()}catch(e){}open_()})}}
+{const b=$('b-ach');if(b&&!$('b-achn')){b.style.position=b.style.position||'relative';b.insertAdjacentHTML('beforeend','<span id="b-achn"></span>')}
+ const s5=document.createElement('style');s5.textContent='#b-ach{overflow:visible}#b-achn{position:absolute;right:-5px;top:-5px;min-width:18px;padding:0 4px;border-radius:9px;background:#f2c84b;color:#2a2008;font-size:11px;font-weight:800;line-height:16px;text-align:center;box-shadow:0 0 0 2px rgba(5,4,14,.7);pointer-events:none}#b-achn:empty{display:none}'
+  +'#achov li.new{border-color:#fff3a0;animation:achnew 1.1s ease-in-out infinite alternate}#achov li.new::before{content:"YENİ";position:absolute;top:3px;left:4px;padding:1px 5px;background:#f2c84b;color:#2a2008;font-size:10px;font-weight:800;letter-spacing:.06em;z-index:1}'
+  +'@keyframes achnew{from{box-shadow:inset 0 0 0 1px #a87a1a,0 0 4px rgba(255,230,120,.35)}to{box-shadow:inset 0 0 0 1px #ffe7a0,0 0 16px rgba(255,230,120,.85)}}';document.head.appendChild(s5);
+ const mark=e=>{const li=e.target&&e.target.closest&&e.target.closest('li.new');if(!li)return;li.classList.remove('new');seeIt(li.dataset.aid)};
+ ov.addEventListener('mouseover',mark);ov.addEventListener('focusin',mark);ov.addEventListener('pointerdown',mark);badges()}
 window.__plAch={list:ACH,got:()=>got,open:open_,grant:grant};
 }).toString()+')()')}catch(e){try{window.__hamErr('v71: '+(e&&e.message||e))}catch(_){}}})();
 </script>
