@@ -851,3 +851,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v124 (27 Ekim 2026) — Kalkan görseli yerine savunma duruşu
 - Boğaç: kalkan resmi kötü; yalnızca duruş değişsin. `drawShield` artık çağrılmıyor. Sağ tık basılıyken (`PR.hold`, atılma dışında) `drawPlayer` sarmalanır: karakter fareye doğru hafif eğilir (±0,1 rad), %12 çömelir ve %6 genişler, darbe alınca geri sarsılır; elindeki silah göğsün önünde yatay tutulur (`drawHeld` sarmalandı; elde bir şey yoksa çizilmez). Engelleme kıvılcımı ve sesi aynı.
 - Menüde "Versiyon 124". chk.js 0 hata.
+
+## v125 (27 Ekim 2026) — Bağışıklık görüntüsü canavarın üstünde
+- Boğaç: bağışıklık halkaları beğenilmedi, canavarın üstüne otursun. Geniş mavi zemin parıltısı ve kalkan halkaları kalktı. Bağışıkken canavar mavi bir gölge parıltısıyla (`shadowBlur`, gövde kenarını izler, nabız gibi) ve mavi renk tonuyla (`a.tint`, p2 çizimli canlılarda) çizilir; kıvılcımlar yalnızca gövdenin üstünden yükselir.
+- Menüde "Versiyon 125". chk.js 0 hata.
