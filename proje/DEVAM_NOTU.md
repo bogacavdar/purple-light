@@ -680,3 +680,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v99 (27 Ekim 2026)
 - Toplayıcı başarımı artık yerden toplama anını sayıyor: düğüm/maden (`tg.n.name`) ve kil/kum (`g.name`) toplandığında `window.__plGot(ad)` → localStorage `hammadde.gath` (cihaz geneli küme). Eskiden yalnızca envantere giren eşya adına (`__p4.s.g`) bakıyordu; o da hâlâ sayılıyor.
 - Menüde "Versiyon 99".
+
+## v100 (27 Ekim 2026)
+- Başarımlar 36 → 41. Yeni: Maden kâşifi (iki adanın her madeni, `__I1O` + I2C ores, `gotOf`), Oduncu (her ağaç türü, `treeChopped` sarmalandı → localStorage `hammadde.tree`; `__I1T` + I2C trees), Avcıların avcısı (her canlı türü, `__I1A` = ada 1 BANIM + I2C anim; öldürülenler `hammadde.kill`), Ganimet avcısı (canlılardan düşebilecek her eşya, ANIM/I2C drops; envanterde görülenler `hammadde.items`), **Platin** (bütün başarımlar; listede üstte platin şerit, kendi gümüş-beyaz kupa simgesi `PLAT`).
+- Liste: `SECRET` kümesi (iz, ani, ejder, levent, roket, act2, iyison, kotuson, hile, kaya, kopru) kazanılana kadar ???; diğerleri adıyla ve açıklamasıyla gri görünür. `PROG` olanlarda çubuk + "x / y". En iyi ilerleme localStorage `hammadde.achp`'de (ana menüde de görünür); `track()` her `check()`te.
+- Ada 1 listeleri ada 2 üzerine yazmadan önce `window.__I1T`, `__I1O`, `__I1A` olarak saklanıyor. Bütün reisler artık `allAnim()` − Kara ejder − `ANIM[k].boss`.
+- Menüde "Versiyon 100".

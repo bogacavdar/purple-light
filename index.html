@@ -1331,7 +1331,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 99</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 100</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -10866,6 +10866,7 @@ Object.assign(RAWFOOD,{'Ateş narı':7,'Yıldız eriği':8,'Ay elması':9,'Işı
 const BTREE=[['Çam','Kavak','Elma','Armut','Erik'],['Meşe','Ladin','Kayın','Ihlamur','Ceviz'],['Söğüt','Kızılağaç','Dişbudak','Mürver','Bataklık servisi'],
   ['Huş','Akçaağaç','Porsuk','Ardıç','Kestane'],['Kara çam','Kül ağacı','Dikenli akasya','Kızıl sedir','Ateş narı'],['Mor söğüt','Gece ağacı','Işık ağacı','Yıldız eriği','Ay elması']];
 // v77: on the ACT 2 island its own lands get their own trees, plants, ores and creatures (window.__I2C, v77-data)
+window.__I1T=[].concat.apply([],BTREE);   // v100: island 1 tree kinds, for an achievement
 const I2C=ISLE===2&&window.__I2C||null;window.__I2A=window.__I2A||new Set();
 if(I2C)for(const b in I2C.trees){for(const t of I2C.trees[b]){const o=Object.assign({},t);if(o.fruit)o.seed=null;if(!TREE_TYPES.some(x=>x.n===o.n))TREE_TYPES.push(o);TREE_TIER[o.n]=+b<1?1:2;WOODC[o.n]=I2C.woodc[o.n]}BTREE[+b]=I2C.trees[b].map(t=>t.n)}
 {const BY={};for(const t of TREE_TYPES)BY[t.n]=t;
@@ -10895,7 +10896,7 @@ const BPLANT=[
  ['Kül','Ateş çiçeği','Kehribar','Kırmızı okr','Sarı okr','Kor otu','Duman çiçeği','Ateş biberi','Yanık kök','Lav camı','Cüruf','Kızıl kum','Sünger taşı','Kara tuz'],
  ['Ay otu','Işık mantarı','Mor yosun','Yıldız çiçeği','Gece zambağı','Mor kök','Gölge otu','Kristal kum','Ay taşı','Yankı taşı','Işık tozu','Yıldız tozu','Mor sarmaşık','Kristal çiçeği']];
 const BORE=[['Bakır cevheri','Kalay cevheri','Kireçtaşı'],['Taş kömürü','Kumtaşı','Granit'],['Demir cevheri','Tuz kayası','Arduvaz'],['Kuvars','Gümüş cevheri','Altın cevheri'],['Bazalt','Kükürt','Pirit'],['Obsidyen','Kristal','Ametist']];
-window.__I1G=[].concat.apply([],BPLANT).concat([].concat.apply([],BORE),['Ametist']);   // v98: island 1 gatherables, for an achievement
+window.__I1G=[].concat.apply([],BPLANT).concat([].concat.apply([],BORE),['Ametist']);window.__I1O=[].concat.apply([],BORE).concat(['Ametist']);   // v98: island 1 gatherables, for an achievement
 if(I2C){for(const b in I2C.plants)BPLANT[+b]=I2C.plants[b].map(q=>{RES[q.n]={draw:'plant',look:q.look,respawn:q.re};RULE[q.n]=[T_[q.rule],q.rule==='forest'];PLANTC[q.n]=q.col;return q.n});
   for(const b in I2C.ores)BORE[+b]=I2C.ores[b].map(o=>{MINES[o.n]={l:o.l,c:o.c,n:o.cnt};RES[o.n]={draw:'ore',respawn:300};RULE[o.n]=[T_.land,false];ORE_TIER[o.n]=o.tier;return o.n})}
 MINES['Ametist']={l:'Ametist yatağı',c:'#9a5ad8',n:12};RES['Ametist']={draw:'ore',respawn:300};RULE['Ametist']=[T_.land,false];ORE_TIER['Ametist']=4;if(CHEAT_RES.indexOf('Ametist')<0)CHEAT_RES.push('Ametist');
@@ -10976,6 +10977,7 @@ const BANIM=[
  [['Dağ keçisi',2],['Muflon',1],['Yaban öküzü',1],['Ur kekliği',1],['Kartal',2],['Vaşak',1],['Mağara ayısı',1]],
  [['Kül böceği',2],['Kül kurdu',1],['Lav kertenkelesi',3],['Kül cini',2],['Kor yarasası',2],['Ateş akrebi',2],['Kara ejder',1]],
  [['Mor güve',2],['Işık tilkisi',2],['Kristal geyik',1],['Gölge kurdu',1],['Kristal örümcek',2],['Işık engereği',2],['Kristal golem',1]]];
+window.__I1A=[];BANIM.forEach(L=>L.forEach(x=>{if(window.__I1A.indexOf(x[0])<0)window.__I1A.push(x[0])}));   // v100: island 1 creatures
 if(I2C){const LD={land:t=>t<=1,any:t=>t<=2};for(const b in I2C.anim)BANIM[+b]=I2C.anim[b].map(a=>{const D=Object.assign({},a.d);D.land=LD[D.land]||LD.land;D.drops=D.drops.map(x=>x.slice());ANIM[a.n]=D;window.__I2A.add(a.n);if(a.pack)PACK[a.n]=a.pack;
     const cond=a.cond==='night'?(w=>w&&isNight()):a.cond==='lvl'?(w=>w&&lvl>=6):null;return cond?[a.n,a.want,cond]:[a.n,a.want]})}
 function spawnIn(k,want,b){const D=ANIM[k];if(!D)return;const P=PACK[k],of=animals.filter(a=>a.k===k),have=P?new Set(of.map(a=>a.pk)).size:of.length;if(have>=want)return;
@@ -11189,7 +11191,18 @@ const k_=n=>kills[n]||0,anyKill=()=>Object.keys(kills).some(k=>kills[k]>0);
 const bossD=()=>(window.__p4&&window.__p4.s&&window.__p4.s.bd)||{};
 const bossKinds=()=>{const d=bossD();return Object.keys(d).filter(k=>d[k]>0).length};
 const I2N=t=>{const C=window.__I2C;const L=[];if(C&&C[t])for(const b in C[t])for(const a of C[t][b])L.push(a.n);return L};
-const allBoss=()=>{const S=new Set(Object.keys(window.__p4AB||{}));for(const n of I2N('anim'))S.add(n);S.delete('Kara ejder');return Array.from(S)};
+const allAnim=()=>{const S=new Set(window.__I1A||[]);for(const n of I2N('anim'))S.add(n);return Array.from(S)};
+const allBoss=()=>allAnim().filter(k=>k!=='Kara ejder'&&!(ANIM[k]&&ANIM[k].boss));
+const allOre=()=>{const S=new Set(window.__I1O||[]);for(const n of I2N('ores'))S.add(n);return Array.from(S)};
+const allTree=()=>{const S=new Set(window.__I1T||[]);for(const n of I2N('trees'))S.add(n);return Array.from(S)};
+const allDrop=()=>{const S=new Set();for(const k of (window.__I1A||[]))if(ANIM[k]&&ANIM[k].drops)for(const d of ANIM[k].drops)S.add(d[0]);
+  const C=window.__I2C;if(C&&C.anim)for(const b in C.anim)for(const a of C.anim[b])if(a.d&&a.d.drops)for(const d of a.d.drops)S.add(d[0]);return Array.from(S)};
+// v100: kept on the device for every game: creatures killed, items held, tree kinds felled
+function gset(k){let S=new Set();try{S=new Set(JSON.parse(localStorage.getItem(k)||'[]'))}catch(e){}return S}
+const KS=gset('hammadde.kill'),IS=gset('hammadde.items'),TS=gset('hammadde.tree');
+function gput(S,k,n){if(!n||S.has(n))return false;S.add(n);try{localStorage.setItem(k,JSON.stringify(Array.from(S)))}catch(e){}return true}
+{const _tc=treeChopped;treeChopped=function(t){try{if(t&&t.type)gput(TS,'hammadde.tree',t.type.n)}catch(e){}return _tc.apply(this,arguments)}}
+const cnt=(L,f)=>{let n=0;for(const x of L)if(f(x))n++;return n};
 const allGather=()=>{const S=new Set(window.__I1G||[]);for(const n of I2N('plants'))S.add(n);for(const n of I2N('ores'))S.add(n);return Array.from(S)};
 // v99: every kind gathered from the ground with E (node or clay), kept on the device for all games: localStorage 'hammadde.gath'
 const GK='hammadde.gath';let GS=new Set();try{GS=new Set(JSON.parse(localStorage.getItem(GK)||'[]'))}catch(e){}
@@ -11231,8 +11244,29 @@ const ACH=[
  ['toplatum','Toplayıcı','İki adada yerden toplanabilen her çeşitten en az birini topla.','Böğürtlen',()=>{const L=allGather();return L.length>0&&L.every(n=>gotOf(n))}],
  ['iyison','Yeniden birlikte','Oyunu iyi sonla bitir.','Yıldız çiçeği',()=>false],
  ['kotuson','Yalnız dönüş','Oyunu kötü sonla bitir.','Gece zambağı',()=>!!window.__plBadEnd],
- ['hile','Oyunlardaki gibi',(TOUCH?'Ana menüde ekrana art arda 3 kez dokundun: hile modu açıldı.':'Ana menüde “cheat” yazdın: hile modu açıldı.'),'Mor pusula',()=>{try{return localStorage.getItem('hammadde.cheatach')==='1'||localStorage.getItem('hammadde.cheatok')==='1'}catch(e){return false}}]];
-const ic=n=>{try{return icon(n)}catch(e){return ''}};
+ ['madentum','Maden kâşifi','İki adadaki her madenden en az birini kaz.','Bakır cevheri',()=>{const L=allOre();return L.length>0&&L.every(n=>gotOf(n))}],
+ ['agactum','Oduncu','İki adadaki her ağaç türünden en az birini kes.','Taş balta',()=>{const L=allTree();return L.length>0&&L.every(n=>TS.has(n))}],
+ ['canlitum','Avcıların avcısı','İki adadaki her canlı türünden en az birini öldür.','Kurt postu giysi',()=>{const L=allAnim();return L.length>0&&L.every(n=>KS.has(n))}],
+ ['dusentum','Ganimet avcısı','Canlılardan düşebilecek her eşyayı en az bir kez elde et.','Tavşan derisi',()=>{const L=allDrop();return L.length>0&&L.every(n=>IS.has(n))}],
+ ['hile','Oyunlardaki gibi',(TOUCH?'Ana menüde ekrana art arda 3 kez dokundun: hile modu açıldı.':'Ana menüde “cheat” yazdın: hile modu açıldı.'),'Mor pusula',()=>{try{return localStorage.getItem('hammadde.cheatach')==='1'||localStorage.getItem('hammadde.cheatok')==='1'}catch(e){return false}}],
+ ['platin','Platin','Bütün başarımları kazan.','*platin',()=>ACH.every(a=>a[0]==='platin'||got[a[0]])]];
+// v100: secret ones show ??? until won; the rest show their name and what to do, greyed. PROG: [now, goal] for a bar
+const SECRET=new Set(['iz','ani','ejder','levent','roket','act2','iyison','kotuson','hile','kaya','kopru']);
+const fl=()=>found.length,dd=()=>day,bk=()=>bossKinds();
+const PROG={tarif1:()=>[fl(),1],tarif25:()=>[fl(),25],tarif100:()=>[fl(),100],tarif250:()=>[fl(),250],tariftum:()=>[cnt(DB.R,x=>foundSet.has(x.r)),DB.R.length],
+ hafta:()=>[dd(),7],ay:()=>[dd(),30],gece1:()=>[dd()-1,1],lvl10:()=>[lvl,10],lvl25:()=>[lvl,25],balik:()=>[fishTotal,10],kurt:()=>[k_('Kurt'),10],
+ gorev10:()=>[window.__v55?window.__v55.d.length:0,10],zengin:()=>[window.__plInf?0:coins,1000],kesif:()=>[exploredCount,Math.ceil(W*H*.5)],
+ iz:()=>[clues.size,CLUES.length],ani:()=>[mems.size,MEMS.length],olum1:()=>[deaths,1],olum5:()=>[deaths,5],
+ reis1:()=>[bk(),1],reis5:()=>[bk(),5],reis10:()=>[bk(),10],reis20:()=>[bk(),20],reishep:()=>{const A=allBoss();return [cnt(A,k=>(bossD()[k]||0)>0),A.length]},
+ toplatum:()=>{const L=allGather();return [cnt(L,gotOf),L.length]},madentum:()=>{const L=allOre();return [cnt(L,gotOf),L.length]},
+ agactum:()=>{const L=allTree();return [cnt(L,n=>TS.has(n)),L.length]},canlitum:()=>{const L=allAnim();return [cnt(L,n=>KS.has(n)),L.length]},
+ dusentum:()=>{const L=allDrop();return [cnt(L,n=>IS.has(n)),L.length]},platin:()=>[ACH.filter(a=>a[0]!=='platin'&&got[a[0]]).length,ACH.length-1]};
+// the best progress ever seen is kept on the device, so the list shows it on the main menu too
+const PK='hammadde.achp';let PB={};try{PB=JSON.parse(localStorage.getItem(PK)||'{}')||{}}catch(e){PB={}}
+function progOf(id,live){const f=PROG[id];if(!f)return null;let v=null;if(live||id==='platin'||/tum$|hep$/.test(id)){try{v=f()}catch(e){v=null}}
+  const b=PB[id];if(v&&b&&b[0]>v[0])v=[b[0],v[1]];if(!v&&b)v=b;if(!v)return null;return [Math.max(0,Math.min(v[0],v[1])),v[1]]}
+const PLAT='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges"><rect x="3" y="0" width="3" height="5" fill="#8a96b8"/><rect x="10" y="0" width="3" height="5" fill="#8a96b8"/><rect x="6" y="0" width="4" height="4" fill="#e8eef8"/><rect x="4" y="5" width="8" height="1" fill="#9aa6c0"/><rect x="3" y="6" width="10" height="9" fill="#dfe6f2"/><rect x="2" y="7" width="1" height="7" fill="#9aa6c0"/><rect x="13" y="7" width="1" height="7" fill="#9aa6c0"/><rect x="3" y="15" width="10" height="1" fill="#9aa6c0"/><rect x="5" y="8" width="6" height="5" fill="#ffffff"/><rect x="7" y="7" width="2" height="7" fill="#b8f0ff"/><rect x="6" y="9" width="4" height="3" fill="#b8f0ff"/><rect x="4" y="7" width="2" height="1" fill="#ffffff"/></svg>');
+const ic=n=>{if(n==='*platin')return PLAT;try{return icon(n)}catch(e){return ''}};
 const st=document.createElement('style');st.textContent=
  '#achcard{position:fixed;z-index:60;right:calc(env(safe-area-inset-right,0px) + 12px);bottom:calc(env(safe-area-inset-bottom,0px) + 12px);width:132px;height:132px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:8px;text-align:center;background:#2a2008;border:3px solid #f2c84b;box-shadow:0 0 0 2px #11170f,0 6px 18px rgba(0,0,0,.5);color:#fff3d0;transform:translateY(160%);transition:transform .35s;pointer-events:none}'
  +'#achcard.on{transform:none}#achcard img{width:48px;height:48px;image-rendering:pixelated;background:#4a3a10;border:2px solid #f2c84b;padding:3px}#achcard small{display:block;font-size:10px;color:#f2c84b;letter-spacing:.06em;font-weight:700}#achcard b{font-size:14px;line-height:1.15;color:#ffe7a0}'
@@ -11249,12 +11283,27 @@ const ov=document.createElement('div');ov.id='achov';ov.hidden=true;ov.setAttrib
 let q=[],busy=false;
 function show(){if(busy||!q.length)return;busy=true;const a=q.shift();card.innerHTML=`<img src="${ic(a[3])}" alt=""><span><small>BAŞARIM KAZANILDI</small><b>${esc(a[1])}</b></span>`;
   requestAnimationFrame(()=>card.classList.add('on'));sfx('found');setTimeout(()=>{card.classList.remove('on');setTimeout(()=>{busy=false;show()},450)},3600)}
-function check(){if(onTitle||wake)return;let n=0;for(const a of ACH){if(got[a[0]])continue;let ok=false;try{ok=!!a[4]()}catch(e){}if(ok){got[a[0]]=Date.now();q.push(a);n++}}
+function track(){try{for(const k in kills)if(kills[k]>0)gput(KS,'hammadde.kill',k.replace(/ Reisi$/,''));
+  for(const n of allDrop())if((inv[n]||0)>0)gput(IS,'hammadde.items',n);
+  let ch=false;for(const id in PROG){if(id==='platin')continue;let v=null;try{v=PROG[id]()}catch(e){}if(!v)continue;const b=PB[id];if(!b||v[0]>b[0]||v[1]!==b[1]){PB[id]=[Math.max(v[0],b&&b[1]===v[1]?b[0]:0),v[1]];ch=true}}
+  if(ch)localStorage.setItem(PK,JSON.stringify(PB))}catch(e){}}
+function check(){if(onTitle||wake)return;track();let n=0;for(const a of ACH){if(got[a[0]])continue;let ok=false;try{ok=!!a[4]()}catch(e){}if(ok){got[a[0]]=Date.now();q.push(a);n++}}
+  if(!got.platin&&ACH.every(a=>a[0]==='platin'||got[a[0]])){const p=ACH.filter(a=>a[0]==='platin')[0];got.platin=Date.now();q.push(p);n++}
   if(n){try{localStorage.setItem(KEY,JSON.stringify(got))}catch(e){}show();if(!ov.hidden)render()}}
 setInterval(check,1500);
-function render(){const c=ACH.filter(a=>got[a[0]]).length;
-  ov.innerHTML=`<div class="ab"><button class="x" type="button" aria-label="Kapat">×</button><h2>Başarımlar</h2><p class="note" style="margin:0">${c} / ${ACH.length} kazanıldı. Kazandıkların altın renginde; ayrıntı için üstüne gel ya da dokun.</p><ul>${ACH.map(a=>{const on=!!got[a[0]];
-    return `<li class="${on?'on':''}" tabindex="0" data-tip="${on?esc(a[2]):'???'}" aria-label="${on?esc(a[1]+': '+a[2]):'Gizli başarım'}"><img src="${ic(a[3])}" alt=""><b>${on?esc(a[1]):'???'}</b>${on?'<i aria-hidden="true">★</i>':''}</li>`}).join('')}</ul></div>`}
+function render(){const c=ACH.filter(a=>got[a[0]]).length,live=!onTitle&&!wake,pl=!!got.platin;
+  const tile=a=>{const on=!!got[a[0]],sec=!on&&SECRET.has(a[0]),pr=on?null:progOf(a[0],live),plat=a[0]==='platin';
+    const tip=sec?'Gizli başarım':a[2]+(pr?` (${pr[0]} / ${pr[1]})`:'');
+    const bar=pr&&!sec?`<span class="pb"><i style="width:${pr[1]?Math.round(pr[0]/pr[1]*100):0}%"></i></span><small class="pn">${pr[0]} / ${pr[1]}</small>`:'';
+    return `<li class="${on?'on':''}${sec?' sec':''}${plat?' plat':''}" tabindex="0" data-tip="${esc(tip)}" aria-label="${sec?'Gizli başarım':esc(a[1]+': '+tip)}"><img src="${ic(a[3])}" alt=""><b>${sec?'???':esc(a[1])}</b>${bar}${on?'<i aria-hidden="true">★</i>':''}</li>`};
+  const head=pl?`<div class="platb"><img src="${PLAT}" alt=""><span><small>PLATİN</small><b>Bütün başarımları kazandın</b></span></div>`:'';
+  ov.innerHTML=`<div class="ab${pl?' pl':''}"><button class="x" type="button" aria-label="Kapat">×</button><h2>Başarımlar</h2><p class="note" style="margin:0">${c} / ${ACH.length} kazanıldı. Kazandıkların altın renginde; gizli olanlar ??? olarak durur. Ayrıntı için üstüne gel ya da dokun.</p>${head}<ul>${ACH.map(tile).join('')}</ul></div>`}
+{const s4=document.createElement('style');s4.textContent=
+ '#achov li .pb{display:block;width:84%;height:5px;background:#11170f;border:1px solid #3a4a32;margin-top:2px}#achov li .pb i{display:block;height:100%;background:linear-gradient(90deg,#a87a1a,#f2c84b);position:static;font-style:normal}'
+ +'#achov li .pn{font-size:10px;color:#b8b090;line-height:1}#achov li b{color:#c8c8b0}#achov li.sec b{color:#7a7a6a}#achov li.sec img{filter:grayscale(1) brightness(.5) opacity(.45)}'
+ +'#achov li.plat{border-color:#9aa6c0;background:linear-gradient(#2a3040,#1a1e2a)}#achov li.plat.on{border-color:#e8eef8;background:linear-gradient(135deg,#3a4458,#6a7890 45%,#3a4458);box-shadow:inset 0 0 0 1px #b8f0ff,0 0 14px rgba(184,240,255,.35)}#achov li.plat.on b{color:#ffffff}#achov li.plat.on i{color:#b8f0ff}'
+ +'#achov .platb{display:flex;align-items:center;gap:12px;margin:12px 0 0;padding:10px 12px;border:3px solid #e8eef8;background:linear-gradient(135deg,#3a4458,#8a98b0 50%,#3a4458);box-shadow:0 0 18px rgba(184,240,255,.4);color:#fff}#achov .platb img{width:48px;height:48px;image-rendering:pixelated}#achov .platb small{display:block;font-size:11px;letter-spacing:.14em;color:#b8f0ff;font-weight:800}#achov .platb b{font-size:16px}'
+ +'#achov .ab.pl{border-color:#e8eef8}#achov .ab.pl h2{color:#e8eef8}';document.head.appendChild(s4)}
 function open_(){render();ov.hidden=false;sfx('pick');const x=ov.querySelector('.x');if(x)x.focus()}
 function close_(){ov.hidden=true}
 ov.addEventListener('click',e=>{if(e.target===ov||e.target.closest('.x'))close_()});
