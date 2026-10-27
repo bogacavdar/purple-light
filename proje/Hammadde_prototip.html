@@ -1331,7 +1331,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.64</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.65</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -13604,11 +13604,13 @@ function spawnFoe(force){const c=L.cur;if(!c)return null;const l=LK[c.k];if(!l||
   return null}
 function curStep(){const c=L.cur;if(!c)return null;const l=LK[c.k];if(!l)return null;const i=l.st.findIndex((s,j)=>c.p[j]<s[1]);return i<0?null:l.st[i][0]}
 {const _ta=tickAnimals;tickAnimals=function(){const r=_ta.apply(this,arguments);try{const st=curStep();if(st&&st.indexOf('hit:')===0)for(const a of animals)if(a.ders){a.mad=false;a.wind=0;a.lunge=null;a.mv=null;if(a.st==='chase')a.st='wander'}}catch(e){}return r}}   // v1.59b: while you practise a combo the practice foe does not strike back
-let farWarn=false;
-function tickFoes(){const c=L.cur;if(!c){if(foes().length)clearFoes();return}const t=now(),F=foes();
-  if(alp&&!onTitle&&!wake&&!window.__plArena){const d=Math.hypot(alp.x-player.x,alp.y-player.y),l=LK[c.k];   // v1.63: walk away from Börü and the lesson is called off (the fee comes back)
-    if(d>360){L.cur=null;M=null;lk='';farWarn=false;clearFoes();if(l&&!plInf()){coins+=l.c;renderInv()}try{sfx('bad')}catch(e){}toast(`Börü'den uzaklaştın: ${l?l.n:'ders'} iptal edildi${l&&!plInf()?`, ${l.c.toLocaleString('tr-TR')} sikken geri verildi`:''}.`,true);return}
-    if(d>260&&!farWarn){farWarn=true;toast('Börü\'den uzaklaşıyorsun: biraz daha gidersen ders iptal olur',true)}else if(d<200)farWarn=false}
+let farT=0,farS=-1;
+function tickFoes(){const c=L.cur;if(!c){if(foes().length)clearFoes();farT=0;return}const t=now(),F=foes();
+  if(alp&&!onTitle&&!wake&&!window.__plArena&&!frozenNow()){const d=Math.hypot(alp.x-player.x,alp.y-player.y),l=LK[c.k];   // v1.65: walking away from Börü gives a 10 s countdown before the lesson is called off (the fee comes back)
+    if(d>280){if(!farT){farT=t+10;farS=-1}const left=Math.ceil(farT-t);
+      if(left!==farS){farS=left;if(left>0){floatText(`Derse dön: ${left}`,'#ffb060');if(left===10)toast(`Börü'den uzaklaştın. 10 saniye içinde geri dönmezsen ${l?l.n:'ders'} iptal olur.`,true)}}
+      if(t>=farT){farT=0;L.cur=null;M=null;lk='';clearFoes();if(l&&!plInf()){coins+=l.c;renderInv()}try{sfx('bad')}catch(e){}toast(`${l?l.n:'Ders'} iptal edildi${l&&!plInf()?`, ${l.c.toLocaleString('tr-TR')} sikken geri verildi`:''}. Börü'ye dönüp yeniden başlayabilirsin.`,true);return}}
+    else if(farT&&d<240){farT=0;toast('Derse döndün, devam')}}
   const calm=(curStep()||'').indexOf('hit:')===0;for(const a of F){a.mvCd=Math.max(a.mvCd||0,5);a.mad=!calm;if(Math.hypot(a.x-player.x,a.y-player.y)>420){const i=animals.indexOf(a);if(i>=0)animals.splice(i,1)}}
   if(F.length)return;const nearB=alp&&Math.hypot(alp.x-player.x,alp.y-player.y)<240;if(!nearB)return;if(!FOE.t)FOE.t=t+2.5;if(t>=FOE.t){FOE.t=0;spawnFoe(false)}}
 // its bite is blunt: a twentieth of your health

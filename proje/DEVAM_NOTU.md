@@ -1101,3 +1101,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Yeni oyun temiz başlar:** "Yeni oyun" (`startNew` → `applyState(null)` → `resetState`) yan görevleri (v55 `QS`: açık, biten, takip edilen, sabitlenen; `QC` sayaçları), Doğu geçidinin açıklığını (`rockfall.cleared`, `ROCK_CELLS` erişimi) ve görülen bölgeleri (`V65.seen`) önceki oyundan taşıyordu. `<script id="v164">` bunları `resetState`'te sıfırlar; kayıt yüklemede kayıttaki değerler yine geri gelir (denendi).
 - Ritimli 3. vuruş dersinde 2. vuruş (ritimli 2.) dersi alınmamış olsa da yapılabilir (`__plMoveOK`): hile ile seviye atlayıp doğrudan 3. vuruş dersine girince kombo hiç başlamıyor, halka da çıkmıyordu.
 - Menüde "Versiyon 1.64". chk.js 0 hata; yeni oyunda yan görevler/geçit/bölgeler sıfır, kayıt yükleyince görevler yerinde.
+
+## v1.65 (27 Ekim 2026)
+- Dersten uzaklaşınca artık hemen kapanmaz: Börü'den 280 px'ten uzağa gidince 10 saniyelik geri sayım başlar (uyarı notu ve her saniye karakterin üstünde "Derse dön: N"); 240 px'e dönersen sayım durur ("Derse döndün, devam"). Süre dolarsa ders iptal olur, ücret geri verilir. Diyalog/menü açıkken sayım ilerlemez.
+- Menüde "Versiyon 1.65". chk.js 0 hata; oyun hatasız açılıyor.
