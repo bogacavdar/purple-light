@@ -651,3 +651,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v93 (27 Ekim 2026) — kritik düzeltme
 - Ekin'in 13 görevi bitince (Gemi tarifi henüz öğrenilmemişken) `renderTut` her çağrıda `haveOf is not defined` hatası veriyordu: `haveOf` v48-b3 bloğunun eval kapsamında, ana kodda görünmüyor. Sonuç: diyaloglar kapanmıyor (`bye` → renderTut hata), "Görevi bitirdim" döngüye giriyor, ACT 2'ye geçilemiyordu. "Son · Bir gemi" kartındaki sayaç artık `expand(n)` ile envanterden sayıyor.
 - Menüde "Versiyon 93". Yalnız chk.js (0 hata).
+
+## v94 (27 Ekim 2026)
+- Ses: `audio.hold(on)` (AudioContext suspend/resume). `<script id="v94">`: sayfa gizlenince (ekran kilidi, uygulama değişimi: visibilitychange, pagehide, telefonda blur) ses durur, geri gelince devam eder. Neden: iOS'ta `audioSession.type='playback'` sesi kilit ekranında da çalıyordu.
+- Tam ekran telefonda yok: v88 anahtarı ve otomatik tam ekran yalnızca dokunmatik olmayan cihazlarda; `r-full` ve `s-full` dokunmatikte gizli.
+- Ayarlar: köşede × düğmesi (sticky) ve karanlık arka plana dokununca kapanma (ikisi de `s-close`'u tıklar). Ana menüde Ayarlar'dan çıkılamıyor raporu için; olası neden telefonda ilk dokunuşta açılan tam ekranın tıklamayı yutmasıydı.
+- Hile (telefon): ana menüde boş bir yere (logo dahil, düğmeler hariç) 0,8 sn arayla 3 dokunuş da hile anahtarını açar/kapar (Ayarlar başlığındaki 3 dokunuşu tetikler).
+- Menüde "Versiyon 94".
