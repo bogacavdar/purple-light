@@ -747,3 +747,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - İki resim bir kez piksel piksel çizilir (`mkArena`, `AW.floor` / `AW.outer`): tırmıklanmış kum taban, kenarda iki sıra taş döşeme, ortada mor mühür ve çapraz kılıçlar, mor iç çember; taş duvar (harçlı bloklar), dışında kat kat tribün ve renkli seyirciler, sonra karanlık. Duvarın üstünde 8 mangal. Duvar/tribün resmi dünyadaki her şeyin (ağaç, kişi) üstüne çizildiği için halkanın dışı görünmez.
 - Halka çizimi (`drawRing`, `drawGraves`/`v55Ents` kancaları) kalktı. Sınır aynı (`blocked`, `AR.R-6`).
 - Menüde "Versiyon 108". chk.js 0 hata.
+
+## v109 (27 Ekim 2026) — Elde silahla E ve sol tık saldırır (oyun geneli)
+- `weaponHeld()`: elde kılıç, mızrak, asa ya da ateşli silah (`GT` türü sword/hunt/staff/gun) var mı. Balta, kazma, meşale ve boş el eskisi gibi.
+- E: elde silah varken `attack()` (Boşluk gibi). Hedef bir kişi/istasyon/özel şeyse (`E_TALK`: npc, pot, witch, farmer, market, smith, durmus, trader, wiz, usta, alp, carp, denizci, kaptan, toygar, xtra, lamp, balik, dog, placed, grave, clue, bridge, rockfall, v46) E yine konuşur/kullanır; böylece silah elde dururken de konuşulabilir, çanta ve mor izler alınabilir.
+- Sol tık (fare): elde silah varken tıklanan yöne hemen vurur (`attack({x,y})`; bir canlıya tıklanırsa ona döner, asa/silah oraya nişan alır), yürümez. Tıklanan yer `E_TALK` türündeyse eskisi gibi oraya yürünür. Dokunmatik değişmedi.
+- Arena: E de geçen tuşlara eklendi (`AR.keys`).
+- Menüde "Versiyon 109". chk.js 0 hata.

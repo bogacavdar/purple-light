@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 108</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 109</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -2358,8 +2358,12 @@ addEventListener('keydown',e=>{
   if(e.code==='KeyG'&&!e.repeat){toggleQuests();e.preventDefault();return}
   if(MK[e.code]&&!e.repeat){if(MK[e.code]==='shop'&&$('b-shop').classList.contains('locked')){toast($('b-shop').dataset.tip||'Malzemeci kilitli: bir toplama aletinin tarifini bul',true);return}openMenu(MK[e.code]);e.preventDefault();return}
   if(KEYMAP[e.code]){keys[KEYMAP[e.code]]=true;e.preventDefault()}
-  if(e.code==='KeyE'&&!e.repeat){interact();e.preventDefault()}
+  if(e.code==='KeyE'&&!e.repeat){if(eAttacks())attack();else interact();e.preventDefault()}
 });
+// v109: with a weapon in hand (sword, spear, staff, gun) E strikes like Space; people, stations, the bag and the purple traces still answer E
+const E_TALK=new Set(['npc','pot','witch','farmer','market','smith','durmus','trader','wiz','usta','alp','carp','denizci','kaptan','toygar','xtra','lamp','balik','dog','placed','grave','clue','bridge','rockfall','v46']);
+const weaponHeld=()=>{const h=held();return !!(h&&GT[h]&&['sword','hunt','staff','gun'].indexOf(GT[h].kind)>=0)};
+function eAttacks(){if(!weaponHeld())return false;let tg=null;try{tg=target()}catch(x){tg=null}return !(tg&&E_TALK.has(tg.kind))}
 let fHold=0;
 addEventListener('keyup',e=>{if(e.code==='KeyF'&&fHold){const h=fHold;fHold=0;if(h!==-1){clearTimeout(h);if(!onTitle&&!paused&&!wake&&!dlgOpen){eatBest();renderTut()}}}if(KEYMAP[e.code])keys[KEYMAP[e.code]]=false;if(e.code==='ShiftLeft'||e.code==='ShiftRight')keys.shift=false});
 addEventListener('blur',()=>{for(const k in keys)keys[k]=false});
@@ -4517,6 +4521,9 @@ function stepGoal(dt){
 cv.addEventListener('pointerdown',e=>{
   if(canLeaveDlg()&&(e.pointerType!=='mouse'||e.button===0)){bye();e.preventDefault();return}
   if(!canTap()||joy.id!==null||(e.pointerType==='mouse'&&e.button!==0))return;
+  // v109: a left click with a weapon in hand strikes towards the pointer (a person, a station, the bag or a trace is still walked to)
+  if(e.pointerType==='mouse'&&!placing&&weaponHeld()){const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S;let tg=null;try{tg=pickAt(wx,wy).tg}catch(x){tg=null}
+    if(!(tg&&E_TALK.has(tg.kind))){goal=null;const a=tg&&tg.kind==='animal'?tg.a:null;attack(a?{x:a.x,y:a.y}:{x:wx,y:wy});e.preventDefault();return}}
   joy.id=e.pointerId;joy.touch=e.pointerType!=='mouse';joy.sx=joy.x=e.clientX;joy.sy=joy.y=e.clientY;joy.on=false;joy.mag=0;
   // a second touch right after a tap = run (drag to steer, or let go to run to that spot)
   joy.run=joy.touch&&performance.now()-joy.lastTap<330&&Math.hypot(e.clientX-joy.ltx,e.clientY-joy.lty)<60;
@@ -12410,7 +12417,7 @@ body.arena #tut,body.arena #p-save,body.arena #p-load,body.arena #p-xfer,body.ar
 // =====================================================================================================
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
-const AR={on:false,open:false,sel:null,boss:false,n:1,keys:/^(Key[WASDQ]|Arrow(Up|Down|Left|Right)|Shift(Left|Right)|Space|Escape)$/,slot:'silah',lv:25,isle:1,held:null,dealt:0,last:0,recv:0,lastR:0,hits:[],center:null,R:9*16,pc:{},pq:[],nodesOff:[]};
+const AR={on:false,open:false,sel:null,boss:false,n:1,keys:/^(Key[WASDQE]|Arrow(Up|Down|Left|Right)|Shift(Left|Right)|Space|Escape)$/,slot:'silah',lv:25,isle:1,held:null,dealt:0,last:0,recv:0,lastR:0,hits:[],center:null,R:9*16,pc:{},pq:[],nodesOff:[]};
 window.__plArena=false;window.__arena=AR;
 const R1=['Çayır','Orman','Bataklık','Kayalık Dağ','Kül Diyarı','Mor Kristal Vadisi'],R2=['Yüzen Kayalar','Dev Mantar Ormanı','Hurda Çölü','Kristal Golem Ocağı','Ejder Volkanı','Gök Rıhtımı'];
 const KINDS=[['sword','Kılıçlar'],['hunt','Mızraklar'],['staff','Asalar'],['gun','Ateşli silahlar'],['axe','Baltalar'],['pick','Kazmalar'],['torch','Meşaleler']];
