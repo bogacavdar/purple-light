@@ -798,6 +798,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - `ROLL=false` hepsini eski haline getirir.
 - Menüde "Versiyon 115". chk.js 0 hata.
 
-## v116 (27 Ekim 2026) — Yan taklalar daha kısa
-- Boğaç: yukarı/aşağı takla mesafesi iyi, sağa/sola çok uzun. `v113-roll` `doDodge` sarmalayıcısında hız yatay paya göre azalır: mesafe = 34 × (1 − 0,35 × |yatay|) → sağa/sola ~22 px, çapraz ~26 px, yukarı/aşağı 34 px. Süre aynı (0,38 sn).
-- Menüde "Versiyon 116". chk.js 0 hata.
+## v116 (27 Ekim 2026) — HATALI: sözdizimi hatası (bkz. v117)
+- Yan taklaları kısaltma denemesi; eklenen satır sonu `//` notu satırın kalanını yoruma çevirdi, `v113-roll` bloğu hiç çalışmadı (takla yerine eski kayma). v117 düzeltir.
+
+## v117 (27 Ekim 2026) — Takla: her yönde aynı mesafe, belirgin görüntü
+- Asıl neden: atılma sırasında normal yürüme/koşma da sürüyordu (tuş basılıyken takla mesafesine yürüme, koşarken koşma eklenirdi). Ana hareket kodunda `if(dodge&&dodge.T){mx=0;my=0}`: takla sırasında yürünmez. Mesafe her yönde `RD=50` px (yürürken atılmadaki eski düz taklaya yakın), 0,38 sn, yavaşlayarak.
+- Görüntü: eski atılma karakteri %55 saydam çiziyordu (`drawPlayer` içinde `if(dodge)globalAlpha=.55`); takla çiziminde `dodge` geçici olarak boşaltılır, karakter tam opak. Arkada iki iz (%55 ve %28), daha çok toz.
+- Menüde "Versiyon 117". chk.js 0 hata (bu kez sonuç kontrol edilerek gönderildi).

@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 116</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 117</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -5873,6 +5873,7 @@ function frameBody(now){
   else if(joy.on&&joy.mag>.12){mx=joy.vx;my=joy.vy;spdK=Math.min(1,.35+joy.mag*.75);goal=null}
   else if(mx||my){goal=null}
   else if(goal){const st=stepGoal(dt);if(st){mx=st[0];my=st[1]}}
+  if(dodge&&dodge.T){mx=0;my=0}   // v116: no walking or running on top of a roll: it always goes the same distance
   player.run=false;
   if(mx||my){const l=Math.hypot(mx,my);mx/=l;my/=l;player.face=Math.abs(mx)>=Math.abs(my)*.92?{x:Math.sign(mx),y:0}:{x:0,y:Math.sign(my)};
     if(!player.face.x&&!player.face.y)player.face={x:Math.sign(mx),y:0};
@@ -12907,17 +12908,20 @@ function tele(a,time){const m=a.mv,C=COLC[m.col],k=m.ph==='w'?Math.min(1,m.t/m.T
 // =====================================================================================================
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
-const ROLL=true,STEPS=4,RT=.38,RD=34;   // v115: a slower, shorter roll: 0,38 s, about 34 px (was 0,24 s, 48 px)
+const ROLL=true,STEPS=4,RT=.38,RD=50;   /* v116: 50 px in every direction, walking and running add nothing */   // v115: a slower, shorter roll: 0,38 s, about 34 px (was 0,24 s, 48 px)
 // the roll starts quick and slows down to a stop (speed × 1,7 → × 0,3, the same distance on average)
-{const _d=doDodge;doDodge=function(){const was=dodge;const r=_d.apply(this,arguments);if(ROLL&&dodge&&dodge!==was){const l=Math.hypot(dodge.vx,dodge.vy)||1,hz=Math.abs(dodge.vx)/l,v=RD*(1-.35*hz)/RT;   // v116: sideways rolls go less far (~22 px), up/down stay ~34 pxdodge.vx=dodge.vx/l*v;dodge.vy=dodge.vy/l*v;dodge.t=RT;dodge.T=RT;dodgeCd=Math.max(dodgeCd,RT+.3)}return r}}
+{const _d=doDodge;doDodge=function(){const was=dodge;const r=_d.apply(this,arguments);if(ROLL&&dodge&&dodge!==was){const l=Math.hypot(dodge.vx,dodge.vy)||1,v=RD/RT;dodge.vx=dodge.vx/l*v;dodge.vy=dodge.vy/l*v;dodge.t=RT;dodge.T=RT;dodgeCd=Math.max(dodgeCd,RT+.3)}return r}}
 {const _t=tickDodge;tickDodge=function(dt){if(!ROLL||!dodge||!dodge.T)return _t.apply(this,arguments);const k=Math.max(0,Math.min(1,1-dodge.t/dodge.T)),e=1.7-1.4*k,vx=dodge.vx,vy=dodge.vy,D=dodge;D.vx=vx*e;D.vy=vy*e;try{return _t.apply(this,arguments)}finally{D.vx=vx;D.vy=vy}}}
 function pose(i,dir){const a=dir*i*(Math.PI*2/STEPS),side=i%2===1;return{a,sx:side?1.12:1,sy:side?.78:(i===2?.86:1)}}
 {const _dp=drawPlayer;drawPlayer=function(){if(!ROLL||!dodge)return _dp.apply(this,arguments);
   const k=Math.max(0,Math.min(.999,1-dodge.t/(dodge.T||.24))),dir=Math.abs(dodge.vx)>=Math.abs(dodge.vy)*.35?(dodge.vx<0?-1:1):(dodge.vy<0?-1:1),i=Math.floor(k*STEPS);
   const hop=Math.round(Math.sin(k*Math.PI)*3),px0=player.x,py0=player.y,cx=px0,cy=py0-7;
-  const one=(P,dx,dy,al)=>{ctx.save();if(al<1)ctx.globalAlpha=al;ctx.translate(Math.round(cx+dx),Math.round(cy-hop+dy));ctx.rotate(P.a);ctx.scale(P.sx,P.sy);ctx.translate(-cx,-cy);try{_dp.apply(this,arguments)}finally{ctx.restore()}};
-  try{if(i>0)one(pose(i-1,dir),-dodge.vx*.035,-dodge.vy*.035,.35);one(pose(i,dir),0,0,1)}catch(e){return _dp.apply(this,arguments)}
-  if(Math.random()<.5)parts.push({x:player.x+(Math.random()-.5)*6,y:player.y,vx:-dodge.vx*.08+(Math.random()-.5)*10,vy:-6-Math.random()*6,life:.3,c:Math.random()<.5?'#c8b898':'#a89878'})}}
+  const D=dodge,args=arguments;
+  // v117: drawn solid (the old dash drew the hero at 55 % alpha); two after-images behind
+  const one=(P,dx,dy,al)=>{ctx.save();ctx.translate(Math.round(cx+dx),Math.round(cy-hop+dy));ctx.rotate(P.a);ctx.scale(P.sx,P.sy);ctx.translate(-cx,-cy);dodge=null;
+    try{if(al<1){const ga=ctx.globalAlpha;ctx.globalAlpha=al;try{_dp.apply(this,args)}finally{ctx.globalAlpha=ga}}else _dp.apply(this,args)}finally{dodge=D;ctx.restore()}};
+  try{if(i>1)one(pose(i-2,dir),-D.vx*.07,-D.vy*.07,.28);if(i>0)one(pose(i-1,dir),-D.vx*.035,-D.vy*.035,.55);one(pose(i,dir),0,0,1)}catch(e){dodge=D;return _dp.apply(this,arguments)}
+  for(let q=0;q<2;q++)if(Math.random()<.8)parts.push({x:player.x+(Math.random()-.5)*6,y:player.y,vx:-dodge.vx*.08+(Math.random()-.5)*10,vy:-6-Math.random()*6,life:.3,c:Math.random()<.5?'#c8b898':'#a89878'})}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v113-roll: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
