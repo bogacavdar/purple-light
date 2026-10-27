@@ -1055,3 +1055,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.55 (27 Ekim 2026)
 - Yeni hile **Tek vuruşta öldür** (`b5one`, `window.__plOne`, `<script id="v155">`): her karede, bir önceki kareden beri canı azalmış her yaratık (reisler dahil) hemen ölür (`killAnimal`); hangi saldırı yolundan gelirse gelsin (kılıç, mızrak, ok, ulti…). Diğer hileler gibi her açılışta kapalı.
 - Menüde "Versiyon 1.55". chk.js 0 hata; oyunda 5 hasar alan bir yaban öküzü (860 can) tek seferde öldü.
+
+## v1.56 (27 Ekim 2026)
+- **Balık kapanı:** elde kapan varken yanındaki herhangi bir su (yalnızca baktığın yön değil) "Balık kapanını suya bırak" olur, "Su topla" değil; fareyle 48 px içindeki suya tıklayınca da bırakılır (`<script id="v156">`). Suya bırakılmış kapan 34 px'ten alınır ve sudan önce gelir (E önce kapanı toplar).
+- Hile panelindeki arama kutusu dışarı tıklanınca bırakılır (odak kalkar).
+- **Harita hedefi:** bir kişinin simgesine dokununca konan hedef artık 60 sn değil, varana ya da kaldırılana kadar durur; aynı kişiye yine dokununca, haritadaki ✕ düğmesiyle ya da hedefe varınca (26 px) kalkar. Kendi işaretlerinde "Yol göster" düğmesi: işareti kaydedip ok ile oraya yönlendirir; işaret silinince hedef de kalkar.
+- Menüde "Versiyon 1.56". chk.js 0 hata; oyunda kapan nehir kıyısında yana bakarken suya bırakıldı ve hemen ardından E hedefi kapan oldu.

@@ -1330,7 +1330,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.55</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.56</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -6156,7 +6156,8 @@ const MAPHITS=[];
 const mapObj=k=>({farmer,market,smith,durmus,witch,ekin:npc,trader,usta,alp,carp,kaptan,toygar,balik:balikci,lamp:lampman,star:wiz,dock})[k];
 function mapTap(bc,e){const r=bc.getBoundingClientRect(),X=(e.clientX-r.left)*bc.width/r.width,Y=(e.clientY-r.top)*bc.height/r.height;let b=null,bd=1e9;
   for(const h of MAPHITS){const d=Math.hypot(h.X-X,h.Y-Y);if(d<h.r&&d<bd){bd=d;b=h}}if(!b)return false;const o=mapObj(b.k);if(!o)return false;
-  GUIDE.__map=()=>({x:o.x,y:o.y,n:b.label});guideTo('__map',60);sfx('pick');toast(`Hedef: ${b.label} · ok yolu gösteriyor`);drawMap(bc.getContext('2d'),bc.width,bc.height,true);return true}
+  if(gping&&gping.w==='__map'&&window.__plPinK===b.k&&performance.now()<gping.until){gping=null;window.__plPinK=null;sfx('pick');toast('Hedef kaldırıldı');drawMap(bc.getContext('2d'),bc.width,bc.height,true);return true}   // v1.56: tap the same person again to drop the pin
+  window.__plPinK=b.k;GUIDE.__map=()=>({x:o.x,y:o.y,n:b.label});guideTo('__map',3600);sfx('pick');toast(`Hedef: ${b.label} · ok yolu gösteriyor (yine dokunursan kalkar)`);drawMap(bc.getContext('2d'),bc.width,bc.height,true);return true}
 function renderMapPanel(){
   const pct=Math.round(exploredCount/(W*H)*100);
   const leg=BNAME.map((n,i)=>`<span><i style="background:${BCOL[i]}"></i>${n}</span>`).join('')+'<span><i style="background:#5a524a"></i>Sıradağ</span>'+'<span><i class="fogsw"></i>Keşfedilmemiş</span>';
@@ -7405,7 +7406,7 @@ function v46WitchChoices(){const L=[];
 const marks=[];          // {x,y,t,c}
 const MKC=['#f2b84b','#ff6a5a','#7fe0ff','#8fd46b','#c080ff'];
 let markOpen=false,markMode=false,markAt=null,markEdit=null,markCol=MKC[0];
-const markUI=v46Div('markui',`<div class="tcard"><h3 id="mk-h">Haritaya işaret koy</h3><input id="mk-in" maxlength="24" placeholder="Örn. Demir madeni" autocomplete="off"><div class="mkc">${MKC.map(c=>`<button type="button" data-mc="${c}" style="background:${c}" aria-label="Renk"></button>`).join('')}</div><div class="row"><button type="button" id="mk-del">Sil</button><button type="button" id="mk-no">Vazgeç</button><button type="button" id="mk-ok" class="pri">Kaydet</button></div></div>`);
+const markUI=v46Div('markui',`<div class="tcard"><h3 id="mk-h">Haritaya işaret koy</h3><input id="mk-in" maxlength="24" placeholder="Örn. Demir madeni" autocomplete="off"><div class="mkc">${MKC.map(c=>`<button type="button" data-mc="${c}" style="background:${c}" aria-label="Renk"></button>`).join('')}</div><div class="row"><button type="button" id="mk-del">Sil</button><button type="button" id="mk-no">Vazgeç</button><button type="button" id="mk-go">Yol göster</button><button type="button" id="mk-ok" class="pri">Kaydet</button></div></div>`);
 function markGuess(x,y){let b=null,bd=90;for(const n of nodes)if(n.alive&&n.mine){const d=Math.hypot(n.x-x,n.y-y);if(d<bd){bd=d;b=n}}if(b)return MINES[b.name].l;
   for(const n of nodes)if(n.alive&&RES[n.name]&&RES[n.name].draw==='plant'&&Math.hypot(n.x-x,n.y-y)<40)return n.name;return BNAME[bioAt(x,y)]||''}
 function openMark(x,y,edit){markOpen=true;markAt={x,y};markEdit=edit||null;for(const k in keys)keys[k]=false;markCol=edit?edit.c:markCol;
@@ -7414,7 +7415,8 @@ function openMark(x,y,edit){markOpen=true;markAt={x,y};markEdit=edit||null;for(c
 function closeMark(){markOpen=false;markUI.hidden=true;try{$('mk-in').blur()}catch(e){}}
 function saveMark(){const t=$('mk-in').value.trim().slice(0,24)||'İşaret';if(markEdit){markEdit.t=t;markEdit.c=markCol}else{if(marks.length>=40)marks.shift();marks.push({x:Math.round(markAt.x),y:Math.round(markAt.y),t,c:markCol})}closeMark();sfx('pick');toast(markEdit?'İşaret güncellendi':`Haritaya işaret kondu: ${t}`);v46RedrawMap()}
 markUI.addEventListener('click',e=>{const c=e.target.closest('[data-mc]');if(c){markCol=c.dataset.mc;markUI.querySelectorAll('[data-mc]').forEach(b=>b.classList.toggle('on',b===c));return}
-  if(e.target.id==='mk-ok')saveMark();else if(e.target.id==='mk-no')closeMark();else if(e.target.id==='mk-del'){const i=marks.indexOf(markEdit);if(i>=0)marks.splice(i,1);closeMark();toast('İşaret silindi');v46RedrawMap()}else if(e.target===markUI)closeMark()});
+  if(e.target.id==='mk-go'){const ed=markEdit;saveMark();const m=ed||marks[marks.length-1];if(m){window.__plPinK='mark:'+m.x+','+m.y;GUIDE.__map=()=>({x:m.x,y:m.y,n:m.t});guideTo('__map',3600);toast(`Hedef: ${m.t} · ok yolu gösteriyor`)}return}   // v1.56: a mark of your own can be the arrow's target
+  if(e.target.id==='mk-ok')saveMark();else if(e.target.id==='mk-no')closeMark();else if(e.target.id==='mk-del'){const i=marks.indexOf(markEdit);if(i>=0)marks.splice(i,1);if(markEdit&&window.__plPinK==='mark:'+markEdit.x+','+markEdit.y){gping=null;window.__plPinK=null}closeMark();toast('İşaret silindi');v46RedrawMap()}else if(e.target===markUI)closeMark()});
 function v46RedrawMap(){if(craftOpen&&mode==='map'){const bc=$('bigmap');if(bc)drawMap(bc.getContext('2d'),bc.width,bc.height,true)}}
 function drawV46Map(c,ox,oy,sx,sy,w,h,big){
   const sq=(wx,wy,col,r)=>{const X=(wx/T-ox)*sx,Y=(wy/T-oy)*sy;if(X<-r||Y<-r||X>w+r||Y>h+r)return null;c.fillStyle='#11170f';c.fillRect(Math.round(X-r-1),Math.round(Y-r-1),Math.round(2*r+2),Math.round(2*r+2));c.fillStyle=col;c.fillRect(Math.round(X-r),Math.round(Y-r),Math.round(2*r),Math.round(2*r));return[X,Y]};
@@ -7517,8 +7519,8 @@ $('sis-c').addEventListener('pointerdown',e=>{if(!sis.on)return;e.preventDefault
 const v46Hold=()=>!!(memCur||markOpen||sis.on);
 const v46FishTool=()=>{const h=heldKind('fish');return h&&h!=='Balık kapanı'?h:null};
 function v46Target(top){
-  if(top){const g=graveNear(16);if(g)return{kind:'grave',g};const c=campAt(player.x,player.y,24);if(c)return{kind:'v46',sub:'camp',c};const t=trapNear(18);if(t)return{kind:'v46',sub:'trap',t};return null}
-  const ft=heldKind('fish');if(ft){const w=waterAhead();if(w)return ft==='Balık kapanı'?{kind:'v46',sub:'kapan',w}:{kind:'v46',sub:'fish',w}}
+  if(top){const g=graveNear(16);if(g)return{kind:'grave',g};const c=campAt(player.x,player.y,24);if(c)return{kind:'v46',sub:'camp',c};let t=null,bd=1e9;for(const q of traps){const d=Math.hypot(q.x-player.x,q.y-player.y);if(d<(q.k==='Balık kapanı'?34:18)&&d<bd){bd=d;t=q}}if(t)return{kind:'v46',sub:'trap',t};return null}   // v1.56: a fish trap out in the water is reached from the bank
+  const ft=heldKind('fish');if(ft){let w=waterAhead();if(!w&&ft==='Balık kapanı'){for(const r of [14,20])for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]){const x=player.x+dx*r,y=player.y+dy*r;if(!w&&isWet(tileAt(x,y)))w={x,y}}}if(w)return ft==='Balık kapanı'?{kind:'v46',sub:'kapan',w}:{kind:'v46',sub:'fish',w}}   // v1.56: with the fish trap, any water beside you takes it (not 'Su topla')
   if(heldKind('trap')==='Tuzak'&&tileAt(player.x,player.y)<=1&&reachAt(player.x,player.y)&&!traps.some(t=>Math.hypot(t.x-player.x,t.y-player.y)<34))return{kind:'v46',sub:'settrap'};
   return null}
 function v46Prompt(tg){const s=tg.sub;
@@ -13852,6 +13854,20 @@ if(ISLE!==2)try{
    if(window.__plOne&&!onTitle){for(const a of animals.slice()){const p=PH.get(a);if(p!=null&&a.hp<p&&a.hp>0){a.hp=0;try{killAnimal(a)}catch(e){}continue}PH.set(a,a.hp)}}
    else for(const a of animals)PH.set(a,a.hp)}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v155: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v156">
+// v1.56: click the water to drop a fish trap · the cheat search box lets go when you click elsewhere · a map pin can be dropped, and it goes when you arrive
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+cv.addEventListener('pointerdown',e=>{try{if(e.pointerType!=='mouse'||e.button!==0||onTitle||dlgOpen||craftOpen||placing)return;if(heldKind('fish')!=='Balık kapanı')return;
+  const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S;if(!isWet(tileAt(wx,wy))||Math.hypot(wx-player.x,wy-player.y)>48)return;
+  e.preventDefault();e.stopImmediatePropagation();setTrap('Balık kapanı',{x:wx,y:wy})}catch(x){}},true);
+document.addEventListener('pointerdown',e=>{const i=$('csrch');if(i&&document.activeElement===i&&!(e.target.closest&&e.target.closest('#cheatpad .cbox')))i.blur()},true);
+{const mb=()=>{const p=cbody&&cbody.querySelector('.mapbtn');if(!p)return;let b=p.querySelector('[data-unpin]');const on=!!(gping&&gping.w==='__map'&&performance.now()<gping.until);
+   if(!b){b=document.createElement('button');b.type='button';b.dataset.unpin='1';b.textContent='✕';b.title='Hedefi kaldır';b.setAttribute('aria-label','Hedefi kaldır');
+     b.addEventListener('click',ev=>{ev.stopPropagation();gping=null;window.__plPinK=null;sfx('pick');toast('Hedef kaldırıldı');const bc=$('bigmap');if(bc)drawMap(bc.getContext('2d'),bc.width,bc.height,true);b.hidden=true});p.appendChild(b)}
+   b.hidden=!on};
+ setInterval(()=>{try{if(craftOpen&&mode==='map')mb();if(gping&&gping.w==='__map'&&GUIDE.__map&&!onTitle){const o=GUIDE.__map();if(o&&Math.hypot(o.x-player.x,o.y-player.y)<26){gping=null;window.__plPinK=null;toast(`Hedefe vardın: ${o.n}`)}}}catch(e){}},400)}
+}).toString()+')()')}catch(e){try{window.__hamErr('v156: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
