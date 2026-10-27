@@ -1,5 +1,8 @@
 # Hammadde — Yeni sohbet için devam notu
 
+## 🔢 KURAL: Sürüm adı biçimi (27 Ekim 2026, Boğaç)
+- v127'den itibaren ilk rakamdan sonra nokta: 127. sürüm **Versiyon 1.27**, 134. sürüm **Versiyon 1.34**, 200. sürüm **Versiyon 2.00**. Menüdeki `#verlab`, commit mesajı (`v1.27: …`) ve bu dosyadaki başlıklar (`## v1.27 …`) aynı biçimde. Bir sonraki sürüm = son + 0.01. Eski başlıklar (v126 ve öncesi) değişmez.
+
 ## 🔁 KURAL: Her güncellemede GitHub da güncellenir
 - Depo: https://github.com/bogacavdar/purple-light (dal `main`, ilk gönderim 25 Ekim 2026'da yapıldı; Claude'un yazma izni var).
 - Her sürümde, artifact yayınlandıktan sonra **aynı turda** depo da güncellenir: kökteki `index.html` = `Hammadde_prototip.html` + `<link rel="manifest">` ve `apple-touch-icon` satırları (11. satırdan sonra; `github_pages/index.html` ile aynı), `proje/` klasörü = güncel prototip, `recipes3.json`, `DEVAM_NOTU.md`, `Hammadde_tarifler.md`, `Hammadde_tasarim_belgesi.md`, `tests/`.
@@ -861,3 +864,6 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Arena **Gerçek dövüş** (`AR.real`, seçim ekranının başlığında anahtar): açıkken oyuncunun ve rakibin canı gerçekten gider; enerji ve mana da gerçek (`window.__plArenaFree` kapanır: kombo, kalkan ve silah bedelleri işler). Rakip ölünce (`foeDown`) "Kazandın!", oyuncu düşünce (`defeat`) "Yenildin" duyurulur (verilen/alınan hasarla), 1,6 sn sonra seçim ekranı açılır. Her yeni rakipte can, enerji ve mana dolar. Şeritte rakip adının yanında "GERÇEK". Yine kayıt ya da başarım yok.
 - Arenada **Tab** seçim ekranını açar/kapatır (ekran açıkken oyun duraklatılmış: saldırılar, mermiler, hamleler durur).
 - Menüde "Versiyon 126". chk.js 0 hata.
+
+## v1.27 (27 Ekim 2026) — Sürüm adı biçimi
+- Boğaç'ın kuralı: sürümler artık "Versiyon 1.27" biçiminde (ilk rakamdan sonra nokta). Menü etiketi "Versiyon 1.27"; kural `CLAUDE.md`'ye ve bu dosyanın başına yazıldı. Oyunda başka değişiklik yok. chk.js 0 hata.
