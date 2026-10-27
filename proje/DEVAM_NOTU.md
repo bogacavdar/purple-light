@@ -1096,3 +1096,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.63 (27 Ekim 2026)
 - Ders sırasında Börü'den uzaklaşınca ders iptal edilir: 260 px'te bir kez uyarı, 360 px'i geçince ders kapanır, alıştırma canavarı kaybolur, ders ücreti geri verilir (`tickFoes`). Ders ortası bir kayıt Börü'den uzakta açılırsa da ders iptal olur ve ücret döner.
 - Menüde "Versiyon 1.63". chk.js 0 hata; oyun hatasız açılıyor.
+
+## v1.64 (27 Ekim 2026)
+- **Yeni oyun temiz başlar:** "Yeni oyun" (`startNew` → `applyState(null)` → `resetState`) yan görevleri (v55 `QS`: açık, biten, takip edilen, sabitlenen; `QC` sayaçları), Doğu geçidinin açıklığını (`rockfall.cleared`, `ROCK_CELLS` erişimi) ve görülen bölgeleri (`V65.seen`) önceki oyundan taşıyordu. `<script id="v164">` bunları `resetState`'te sıfırlar; kayıt yüklemede kayıttaki değerler yine geri gelir (denendi).
+- Ritimli 3. vuruş dersinde 2. vuruş (ritimli 2.) dersi alınmamış olsa da yapılabilir (`__plMoveOK`): hile ile seviye atlayıp doğrudan 3. vuruş dersine girince kombo hiç başlamıyor, halka da çıkmıyordu.
+- Menüde "Versiyon 1.64". chk.js 0 hata; yeni oyunda yan görevler/geçit/bölgeler sıfır, kayıt yükleyince görevler yerinde.
