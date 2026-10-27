@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.37</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.38</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -2367,7 +2367,7 @@ function eTarget(){const sv=animals.slice();animals.length=0;let tg=null;try{tg=
 function ePick(){let any=false;const L=[];for(const d of drops){if(d.t<1||d.age<.3)continue;const dd=Math.hypot(d.x-player.x,d.y-player.y+2);if(dd<28)L.push([dd,d])}   // v1.36: E sweeps up what lies at your feet
   L.sort((a,b)=>a[0]-b[0]);for(const [,d] of L){const i=drops.indexOf(d);if(i<0)continue;drops.splice(i,1);add(d.n);any=true;for(let k=0;k<5;k++)parts.push({x:d.x,y:d.y-3,vx:(Math.random()-.5)*30,vy:-20-Math.random()*20,life:.35,c:'#fff2b0'})}
   if(any)try{sfx('pick')}catch(x){}return any}
-function eFirst(tg){if(sailing||wake)return false;const hard=!tg||tg.kind==='tree'||(tg.kind==='node'&&tg.n&&tg.n.mine);if(!hard)return false;if(ePick())return true;if(!tg)return false;   // v1.36: with an axe or a pick, E first takes the loose things and the bushes, then the tree or the rock
+function eFirst(tg){if(sailing||wake)return false;if(tg&&E_TALK.has(tg.kind))return false;if(ePick())return true;const hard=tg&&(tg.kind==='tree'||(tg.kind==='node'&&tg.n&&tg.n.mine));if(!hard)return false;   // v1.36: with an axe or a pick, E first takes the loose things and the bushes, then the tree or the rock
   let best=null,bd=REACH*(sk('H4')?1.5:1);for(const n of PERF.vis){if(!n.alive||n.mine)continue;const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;best=n}}
   if(best){interact({kind:'node',n:best});return true}return false}
 function eAttacks(){if(!weaponHeld())return false;let tg=null;try{tg=target()}catch(x){tg=null}return !(tg&&E_TALK.has(tg.kind))}
@@ -2427,7 +2427,7 @@ const has=n=>(inv[n]||0)>0;
 const axe=()=>bestTool('axe');
 const shovel=()=>bestTool('shovel');
 // what E would gather right now with what is in your hand (null if the hand is busy with another tool)
-function gatherTarget(trees){const h=held(),free=!h||PLACEABLE.has(h)||isTorch(h),pick=heldKind('pick'),axe=heldKind('axe');
+function gatherTarget(trees){const h=held(),free=true,pick=heldKind('pick'),axe=heldKind('axe');
   if(trees&&axe){let tr=null,bd=22;treesNear(player.x,player.y,t=>{if(t.type.noCut)return false;const d=Math.hypot(t.x-player.x,t.y-player.y);if(d<bd){bd=d;tr=t}return false});if(tr)return{kind:'tree',t:tr}}
   let best=null,bd=REACH*(sk('H4')?1.5:1);
   for(const n of PERF.vis){if(!n.alive)continue;if(n.mine?!pick:!free)continue;const d=Math.hypot(n.x-player.x,n.y-player.y)-(n.mine?13:0);if(d<bd){bd=d;best={kind:'node',n}}}

@@ -952,3 +952,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.37 (27 Ekim 2026)
 - Zümrüt'ün "Kazanın dili" görevi artık "3 yeni tarif" değil, **toplam 10 tarif** ister (`found.length>=10`). Eski hâli, bütün tarifleri öğrenmiş oyuncuda yeni tarif kalmadığı için görevi bitirilemez bırakıyordu. 10 tarifi zaten bilen oyuncu görevi alır almaz tamamlar.
 - Menüde "Versiyon 1.37". chk.js 0 hata.
+
+## v1.38 (27 Ekim 2026)
+- Elde ne olursa olsun (kılıç, mızrak, tüfek, asa…) E yerdeki kaynakları toplar: `gatherTarget` içindeki "eli boş mu" şartı kalktı (`free=true`); kazma gerektiren madenler eskisi gibi kazma ister.
+- E, konuşma hedefi (kişi, istasyon…) yoksa her durumda önce yakındaki düşmüş eşyaları toplar (`eFirst` yalnızca ağaç/maden için değil).
+- Menüde "Versiyon 1.38". chk.js 0 hata.
