@@ -1335,7 +1335,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.58</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.59</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -13262,6 +13262,8 @@ let lastN=0;
   return r}}
 // the vault: the hero is lifted for a moment
 {const _dp=drawPlayer;drawPlayer=function(){if(!(C.hop>0))return _dp.apply(this,arguments);const k=1-C.hop/.26,h=Math.sin(k*Math.PI)*14;ctx.save();ctx.translate(0,-Math.round(h));try{return _dp.apply(this,arguments)}finally{ctx.restore()}}}
+{const _dp=drawPlayer;drawPlayer=function(){const r=_dp.apply(this,arguments);try{const R=C.rh,t=now();if(R&&!onTitle&&t>=R.open-.04&&t<=R.open+RW){const ty=R.stage===1?'c2':'c3';if(!window.__plMoveOK||window.__plMoveOK(ty)){const k=Math.max(0,Math.min(1,(t-(R.open-.04))/(RW+.04))),x=Math.round(player.x),y=Math.round(player.y)-7,rr=9+k*5;   // v1.59: the rhythm's moment glows yellow round you: click now
+   ctx.save();ctx.globalAlpha=.85*(1-k*.6);ctx.strokeStyle=R.stage===1?'#ffe066':'#ffb020';ctx.lineWidth=2;ctx.beginPath();ctx.arc(x,y,rr,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=.25*(1-k);ctx.fillStyle='#fff2a0';ctx.beginPath();ctx.arc(x,y,rr,0,Math.PI*2);ctx.fill();ctx.restore()}}}catch(e){}return r}}
 
 // ------------------------------------------------------------------ drawing: focus ring, move shapes, the spear in flight
 {const _ds=drawShots;drawShots=function(){const r=_ds.apply(this,arguments);try{const t=now();
@@ -13529,6 +13531,7 @@ const now=()=>performance.now()/1000;
        if(I2&&ANIM[x.n]&&ANIM[x.n]!==d&&!done.has(ANIM[x.n])){done.add(ANIM[x.n]);ANIM[x.n].xp=d.xp}}}}}catch(e){}}
 
 // ---------------------------------------------------------------- 2 · the lessons
+const PK=(typeof TOUCH!=='undefined'&&TOUCH)?' (sağdaki <b>Savuş</b> düğmesi; takla değil)':' (farenin <b>sağ tuşu</b>; takla değil)';   // v1.59: say how a parry is done
 const LES=[
  {k:'dash',foe:'Kurt',on:'şu kurdun',n:'Takla vuruşu',lv:3,b:0,c:150,x:40,s1:1,how:'Taklanın içinde ya da hemen sonunda tıkla',
   say:'Takla atmayı biliyorsun; şimdi taklanın içinden vurmayı öğren. Saldırı gelirken yana atıl, ayağın yere değer değmez tıkla: kılıç da seninle birlikte atılır.',
@@ -13536,15 +13539,15 @@ const LES=[
  {k:'double',foe:'Yaban domuzu',on:'şu yaban domuzunun',n:'Çift vuruş',lv:6,b:1,c:300,x:60,how:'Hızlıca iki kez tıkla',
   say:'Bir vuruş bir hayvanı durdurur, iki vuruş onu yere serer. Farenin tuşuna <b>hızlıca iki kez</b> bas; ikinci vuruş birincinin arkasından gelir.',
   st:[['hit:double',5,'Hızlıca iki kez tıkla: <b>çift vuruşla</b> 5 kez isabet ettir'],['kill:double',2,'İki canavarı <b>çift vuruşla</b> bitir']]},
- {k:'c2',foe:'Bataklık kurdu',on:'şu bataklık kurdunun',n:'Ritimli 2. vuruş',lv:10,b:2,c:600,x:100,how:'Vuruş biter bitmez yine tıkla',
-  say:'Bataklıkta acele eden batar. Vur, kılıcın geri gelsin, <b>tam o an</b> yine tıkla. Erken basarsan ritim bozulur; ritmi kendin bulacaksın.',
+ {k:'c2',foe:'Bataklık kurdu',on:'şu bataklık kurdunun',n:'Ritimli 2. vuruş',lv:10,b:2,c:600,x:100,how:'Vuruş biter bitmez, sarı halka parlarken yine tıkla',
+  say:'Bataklıkta acele eden batar. Vur, kılıcın geri gelsin, <b>tam o an</b> yine tıkla. Erken basarsan ritim bozulur. O an gelince çevrende <b>sarı bir halka</b> parlar: halka parlarken tıkla.',
   st:[['hit:c2',5,'Vuruşun hemen ardından tıkla: <b>ritimli 2. vuruşla</b> 5 kez isabet ettir']]},
- {k:'c3',foe:'Muflon',on:'şu muflonun',n:'Ritimli 3. vuruş',lv:15,b:3,c:1000,x:160,how:'2. vuruşun hemen ardından yine tıkla',
-  say:'Dağın hayvanları sabırlı. Önce saldırısını <b>savuştur</b>, sonra ritmi üçe çıkar: ikinci vuruşun bittiği an bir kez daha tıkla. Üçüncü vuruş ağırdır, sersemletir.',
-  st:[['parry',3,'Bir saldırıyı tam vuracağı an <b>savuştur</b> (3 kez)'],['hit:c3',3,'<b>Ritimli 3. vuruşu</b> 3 kez isabet ettir']]},
+ {k:'c3',foe:'Muflon',on:'şu muflonun',n:'Ritimli 3. vuruş',lv:15,b:3,c:1000,x:160,how:'2. vuruşun hemen ardından, turuncu halka parlarken yine tıkla',
+  say:'Dağın hayvanları sabırlı. Önce saldırısını <b>savuştur</b>'+PK+': hayvan vurmak üzereyken, darbe sana değmeden hemen önce bas. Beyaz ve sarı darbeler savuşturulur, kırmızı savuşturulamaz. Sonra ritmi üçe çıkar: ikinci vuruşun bittiği an, <b>turuncu halka</b> parlarken bir kez daha tıkla. Üçüncü vuruş ağırdır, sersemletir.',
+  st:[['parry',3,'Bir saldırıyı tam vuracağı an <b>savuştur</b>'+PK+' (3 kez)'],['hit:c3',3,'<b>Ritimli 3. vuruşu</b> 3 kez isabet ettir']]},
  {k:'charged',foe:'Yaban öküzü',on:'şu yaban öküzünün',n:'Güçlü vuruş',lv:17,b:3,c:1200,x:180,how:'Basılı tut, halka dolunca bırak',
-  say:'Sersemlemiş hayvan sana zaman verir. Savuştur, sonra tuşu <b>basılı tut</b>; etrafındaki halka dolunca bırak. Halka dolmadan bırakırsan sıradan bir vuruş olur.',
-  st:[['parry',3,'<b>Savuşturarak</b> 3 canavarı sersemlet'],['stun:charged',3,'Sersemlemiş bir canavara <b>güçlü vuruş</b> (basılı tut, bırak): 3 kez']]},
+  say:'Sersemlemiş hayvan sana zaman verir. Savuştur'+PK+', sonra tuşu <b>basılı tut</b>; etrafındaki halka dolunca bırak. Halka dolmadan bırakırsan sıradan bir vuruş olur.',
+  st:[['parry',3,'<b>Savuşturarak</b>'+PK+' 3 canavarı sersemlet'],['stun:charged',3,'Sersemlemiş bir canavara <b>güçlü vuruş</b> (basılı tut, bırak): 3 kez']]},
  {k:'cdc',foe:'Kül kurdu',on:'şu kül kurdunun',n:'Bitirici',lv:21,b:4,c:2000,x:300,s1:1,how:'Tıkla, takla at, yine tıkla',
   say:'Kül Diyarı affetmez; vur, kaç, bitir. Önce bir kez vur, hemen <b>takla at</b>, taklanın sonunda yine tıkla: bitirici hamle çıkar.',
   st:[['evade',3,'Saldırıdan <b>takla atarak</b> kurtul (3 kez)'],['hit:cdc',3,'Tıkla → takla → tıkla: <b>bitiriciyi</b> 3 kez isabet ettir']]},

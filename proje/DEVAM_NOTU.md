@@ -1072,3 +1072,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Haritada kurduğun evler, barınaklar ve yataklar kendi resimleriyle (sarı çerçeveli küçük simge) görünür; büyük haritada üstüne gelince adı yazar (`MAPHITS` k:'placed').
 - Kuşak (1–0): bir eşya bitince ya da yere kurulunca (kapan, tuzak, ev…) yuvası boşalır; eskiden silik "kalmadı" hayaleti kalıyordu.
 - Menüde "Versiyon 1.58". chk.js 0 hata; haritada barınak ve yatak simgesi çıktı, biten tuzağın yuvası boşaldı.
+
+## v1.59 (27 Ekim 2026)
+- **Ritimli vuruşlar:** süre değişmedi; ritim penceresi açılınca (40 ms önceden başlayıp pencere boyunca) oyuncunun çevresinde bir halka parlar: 2. vuruş için **sarı**, 3. vuruş için **turuncu**. Yalnızca o hareket açıldıysa görünür. Dersler (Ritimli 2. ve 3. vuruş) halkayı anlatır.
+- **Savuşturma:** derslerde nasıl yapıldığı yazar: bilgisayarda farenin **sağ tuşu**, dokunmatikte sağdaki **Savuş** düğmesi ("takla değil"); darbe değmeden hemen önce basılır, beyaz ve sarı darbeler savuşturulur, kırmızı savuşturulamaz.
+- Menüde "Versiyon 1.59". chk.js 0 hata; oyun hatasız açılıyor, halka çizimi hatasız.
