@@ -1158,3 +1158,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Portallar:** kişinin önüne değil yanına (sağ yan, ~44 px) konur; kazan, örs, fırın, tezgâh ve kişilerden uzak tutulur (`pClear`). Zümrüt'ün portalı kazanın önüne çıkıp kazana erişimi kapatıyordu.
 - Test sonucu (2D çizim, tanrı modu, otomatik oyuncu): Takla vuruşu, Çift vuruş, Ritimli 2. vuruş, Ritimli 3. vuruş, Güçlü vuruş ve Bitirici derslerinin hepsi baştan sona bitti. Ulti dersi test edilmedi.
 - Menüde "Versiyon 1.75". chk.js 0 hata.
+
+## v1.76 (28 Ekim 2026) — ACT 2'den dönüş kilidi (ana oturum, test turunda bulundu)
+- ACT 2'den ACT 1'e dönmenin tek yolu portaldı; portallar Ülker'in gk3 "Portal çekirdeği" görevi bitince açılıyordu ve o görev yalnızca ACT 1'de bulunan malzemeler istiyor (2 Kristal, 2 Demir levha). Fazladan getirmeyen oyuncu ikinci adada kalıyordu. Artık ACT 2'ye bir kez varınca (`denizci.act2`) **Levent'in yanındaki portal (ACT 2)** ve **Ekin'in yanındaki portal (ACT 1)** her zaman açık (`pOk`, v76). Diğer portallar yine gk3 ile açılır.
+- Portalın 16 px yakınında E her zaman portalı kullanır (`target` sarmalayıcısı); Ekin'in portalının dibindeki taş ve dal önce toplanıyordu, portal seçilemiyordu.
+- Menüde "Versiyon 1.76". chk.js 0 hata; denendi: hileyle ACT 2'ye geçip Levent portalından ACT 1'e, Ekin portalından ACT 2'ye geçildi.
