@@ -847,3 +847,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Ultiler (`ULT`, v118'in `window.__plCB` araçlarıyla): Kılıç **Kılıç dansı** (8 yönlü dönüş + ×3 patlama, sersemletir) · Mızrak **Mızrak yağmuru** (fare yönündeki alana 12 mızrak düşer) · Balta **Deprem** (büyüyen 3 halka, ×2,4, sersemletir) · Yumruk **Öfke** (10 yumruk + ×4 son) · Meşale **Ateş fırtınası** (3 ateş halkası) · Asa **Meteor** (0,65 sn sonra fare yönüne düşen meteor, ×5) · Ateşli silah **Kurşun yağmuru** (20 atış, pompalıda 10; mermi harcamaz).
 - Arena şeridinde **Ulti doldur** düğmesi; arena tuşlarına R eklendi.
 - Menüde "Versiyon 123". chk.js 0 hata.
+
+## v124 (27 Ekim 2026) — Kalkan görseli yerine savunma duruşu
+- Boğaç: kalkan resmi kötü; yalnızca duruş değişsin. `drawShield` artık çağrılmıyor. Sağ tık basılıyken (`PR.hold`, atılma dışında) `drawPlayer` sarmalanır: karakter fareye doğru hafif eğilir (±0,1 rad), %12 çömelir ve %6 genişler, darbe alınca geri sarsılır; elindeki silah göğsün önünde yatay tutulur (`drawHeld` sarmalandı; elde bir şey yoksa çizilmez). Engelleme kıvılcımı ve sesi aynı.
+- Menüde "Versiyon 124". chk.js 0 hata.

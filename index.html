@@ -1332,7 +1332,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 123</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 124</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -12774,7 +12774,12 @@ function drawShield(){const t=performance.now()/1000,up=Math.min(1,(t-PR.h0)/.08
   if(PR.bf>0){ctx.globalAlpha=PR.bf/.15;px(-w-2,-h/2-2,w*2+4,h+4,'rgba(255,255,255,.55)')}ctx.restore()}
 {const _ds=drawShots;drawShots=function(){const r=_ds.apply(this,arguments);try{if(PR.flash>0){const k=PR.flash/.25,rr=14+(1-k)*10;
     ctx.strokeStyle=`rgba(255,240,170,${(.35+.6*k).toFixed(2)})`;ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(player.x,player.y-6,rr,rr*.8,0,0,Math.PI*2);ctx.stroke()}
-  if(PR.hold)drawShield()}catch(e){}return r}}
+}catch(e){}return r}}
+// v124: no shield picture: guarding is a stance. The hero crouches, widens and leans into the blows, the weapon held across the chest
+{const _dp=drawPlayer;drawPlayer=function(){if(!PR.hold||dodge)return _dp.apply(this,arguments);const t=performance.now()/1000,up=Math.min(1,(t-PR.h0)/.08),a=aimA(),c=Math.cos(a),fl=PR.bf>0?PR.bf/.15:0;
+  const cx=player.x-c*(1.5*up+fl*2),cy=player.y;ctx.save();ctx.translate(cx,cy);ctx.rotate(c*.1*up);ctx.scale(1+.06*up,1-.12*up);ctx.translate(-player.x,-player.y);try{return _dp.apply(this,arguments)}finally{ctx.restore()}}}
+{const _dh=drawHeld;drawHeld=function(x,y){if(!PR.hold||dodge)return _dh.apply(this,arguments);const n=held();if(!n)return;const ic=ICONC[n]||(icon(n),ICONC[n]);if(!ic)return _dh.apply(this,arguments);
+  const a=aimA(),f=Math.cos(a)<0?-1:1;ctx.save();ctx.translate(x+Math.cos(a)*4,y-8+Math.sin(a)*2);ctx.rotate(f>0?Math.PI/4:Math.PI*1.25);ctx.drawImage(ic,-6,-6,12,12);ctx.restore()}}
 
 // ------------------------------------------------------------------ input: right mouse button; a button on touch screens
 function raise(){if(PR.brk>0||frozenNow()||!met)return;PR.hold=true;PR.h0=performance.now()/1000}
