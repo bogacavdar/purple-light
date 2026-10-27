@@ -805,3 +805,17 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Asıl neden: atılma sırasında normal yürüme/koşma da sürüyordu (tuş basılıyken takla mesafesine yürüme, koşarken koşma eklenirdi). Ana hareket kodunda `if(dodge&&dodge.T){mx=0;my=0}`: takla sırasında yürünmez. Mesafe her yönde `RD=50` px (yürürken atılmadaki eski düz taklaya yakın), 0,38 sn, yavaşlayarak.
 - Görüntü: eski atılma karakteri %55 saydam çiziyordu (`drawPlayer` içinde `if(dodge)globalAlpha=.55`); takla çiziminde `dodge` geçici olarak boşaltılır, karakter tam opak. Arkada iki iz (%55 ve %28), daha çok toz.
 - Menüde "Versiyon 117". chk.js 0 hata (bu kez sonuç kontrol edilerek gönderildi).
+
+## v118 (27 Ekim 2026) — Kombolar (sol tık)
+- `<script id="v118-combo">` (en sonda). Sol tık (fare) girişleri: **tek tık** = her zamanki vuruş (`attack`); **çift tık** (0,3 sn içinde) = `double`; **basılı tut** = 0,22 sn sonra odak halkası dolmaya başlar (0,55 sn'de dolar, ses + parıltı; dolarken %45 hızla yürürsün), dolunca bırakınca `charged`; **takla sırasında / bittikten 0,3 sn içinde tık** = `dash`; **tık → takla (0,9 sn içinde) → tık** = `cdc` (bitirici). Hamle bitince kısa toparlanma (`C.cd`).
+- Silah türleri ve hamleler (`CB`): 
+  - Kılıç: Çift kesik · Dönen kesik (360°, ×2,2) · Hamle (ileri atılıp delen kesik, ×1,6) · Kılıç fırtınası (3 hızlı kesik + çapraz X, ×2,1, sersemletir).
+  - Mızrak: Çifte dürtme (ikincisi daha uzun) · Mızrak fırlatma (delip geçen, ×2,4, eşya kaybolmaz) · Koşarak saplama (×1,8, uzağa iter) · Sırıkla sıçrama (havalanıp iner, çevreye ×2,2, sersemletir).
+  - Balta/kazma: Geri savuruş (geniş, ×1,25) · Yere vurma (çevre ×2,6, sersemletir) · Dönerek biçme (×1,5) · Ezici darbe (dar, ×3,2, çok iter).
+  - Yumruk: Çifte yumruk · Güçlü yumruk (×3, sersemletir) · Omuz atma · Tekme kombosu (4 vuruş + son tekme).
+  - Meşale: Alev savuruşu · Ateş çemberi · Ateşli hamle · Alev patlaması.
+  - Asa (mana × maliyet): Üçlü atış · Büyük büyü (×3, büyük) · Kaçarken atış (2 yayılımlı) · Büyü halkası (8 yöne).
+  - Ateşli silah (mermi): Çift atış · Nişanlı atış (×3, uzun menzil) · Kayarak atış (3 yayılımlı) · Şarjör boşaltma (5 hızlı).
+- Hamleler enerji yer (8–22; arenada bedava), asa mana, silah mermi. Yapılan hamlenin adı karakterin üstünde kısa bir yazıyla çıkar (geri bildirim; ne zaman yapılacağı söylenmez).
+- Hangi tıklar kombo: elde silah (v109 gibi) → her sol tık; balta/kazma/meşale → yalnızca bir canlıya tıklanınca (ağaç/taş için eski davranış); boş el → yalnızca arenada. Kişi/istasyon/çanta/iz tıklaması eskisi gibi (`E_TALK`). E ve Boşluk yalnızca tek vuruş.
+- Menüde "Versiyon 118". chk.js 0 hata.
