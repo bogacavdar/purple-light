@@ -792,3 +792,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Boğaç: tam tur dönme değil, farklı açılarla takla atıyormuş gibi görünsün. `v113-roll` değişti: atılma `STEPS=4` duruşa bölünür (0,06 sn'de bir), her duruş bir çeyrek tur daha dönmüş ve aralarında geçiş yok (elle çizilmiş kareler gibi). Yan duruşlarda %22 büzülme ve genişleme, ters duruşta hafif basılma; bir önceki duruş arkada %35 saydam iz olarak kalır; 3 px sekme ve toz aynı.
 - `STEPS` artırılırsa daha çok açı, `ROLL=false` eski kayma.
 - Menüde "Versiyon 114". chk.js 0 hata.
+
+## v115 (27 Ekim 2026) — Daha yavaş, daha kısa takla
+- `v113-roll`: `doDodge` ve `tickDodge` sarmalandı. Takla 0,38 sn (eskiden 0,24), yaklaşık 34 px (eskiden 48); hızlı başlar ve yavaşlayarak durur (hız ×1,7'den ×0,3'e). Her duruş ~0,095 sn görünür. Bekleme en az 0,68 sn. Atılma boyunca dokunulmazlık da 0,38 sn oldu.
+- `ROLL=false` hepsini eski haline getirir.
+- Menüde "Versiyon 115". chk.js 0 hata.
