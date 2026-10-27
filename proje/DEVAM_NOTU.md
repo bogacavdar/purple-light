@@ -1124,3 +1124,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.69 (27 Ekim 2026)
 - "İki canavarı çift vuruşla bitir" ikinci öldürmeyi saymıyordu: öldürme yalnızca hamle başladıktan 0,9 sn içinde ve o hamlenin vuruşuyla gelirse sayılıyordu; çift vuruştan sonra son darbe çoğu zaman düz bir tıklamaydı ya da süre geçmişti. Artık dersin canavarı son özel hamleden (`LM`) sonraki 2 sn içinde ölürse o hamleyle "bitirilmiş" sayılır.
 - Menüde "Versiyon 1.69". chk.js 0 hata; oyun hatasız açılıyor.
+
+## v1.70 (27 Ekim 2026)
+- **Alıştırma canavarı alanda kalır:** Börü'den 230 px'ten uzağa gidemez, sınırda geri döner.
+- **Alıştırma canavarı sessiz ölür:** ganimet ve XP vermez, `kills` sayacına eklenmez; böylece Reis (boss) çıkışlarını ve av görevlerini tetiklemez (dersle domuz öldürmek Reis çağırıyordu). Ders sayaçları ("bitir" adımları) yine sayılır.
+- Ders iptalinde (alandan çıkıp "Evet, dersi bırak") ücret geri verilir (v1.63'ten beri; sınırsız sikke hilesi açıkken gerek yok).
+- Menüde "Versiyon 1.70". chk.js 0 hata; oyun hatasız açılıyor.
