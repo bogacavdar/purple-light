@@ -1035,3 +1035,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Sepet** artık alet değil (DB `t` listesinden çıktı): kazanda öğrenilince Tab'dan (el yapımı) yapılır, Dursun'a gerek yok; tariflerde girdi olarak harcanır.
 - **Balık kapanı** = 2 Sepet + 3 İp + 1 Dal (eskiden 2 Söğüt sepeti: bataklıktaki söğüdü kuvars/tunç baltayla kesmek gerekiyordu). Balık kapanı hâlâ alet, Dursun döver.
 - Menüde "Versiyon 1.52". chk.js 0 hata; oyun hatasız açılıyor.
+
+## v1.53 (27 Ekim 2026)
+- Balık kapanı tarif kitabında açılmıyordu: bir tarifin açılması için girdilerinin hepsinin "görülmüş" olması gerekiyor; v1.52'de girdisi Sepet olunca, eline hiç Sepet geçmemiş oyuncuda kapan kapalı kalıyordu. `isOpen`: tarifini öğrendiğin bir eşya da görülmüş sayılır. Böylece Sepet'i öğrenen (İp ve Dal'ı da görmüş) oyuncunun kitabında Balık kapanı açılır. Akış: kitapta açılır → Zümrüt'ün kazanında öğren → Dursun örsünde döver.
+- Menüde "Versiyon 1.53". chk.js 0 hata; oyunda isOpen('Balık kapanı') Sepet öğrenilince true oluyor.
