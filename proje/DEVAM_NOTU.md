@@ -868,6 +868,13 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.27 (27 Ekim 2026) — Sürüm adı biçimi
 - Boğaç'ın kuralı: sürümler artık "Versiyon 1.27" biçiminde (ilk rakamdan sonra nokta). Menü etiketi "Versiyon 1.27"; kural `CLAUDE.md`'ye ve bu dosyanın başına yazıldı. Oyunda başka değişiklik yok. chk.js 0 hata.
 
+## v1.30 (27 Ekim 2026) — Börü'nün dersinde antrenman canavarı ve "aferin"
+- Boğaç'ın istediği akış: Börü önce diyalogla anlatır → "Hazırım" → derse uygun bir canavarı oyuncunun yanına çıkarır ("Sana şu kurdun getirdim, üzerinde dene") → görevler 3–5 kez yapılır → Börü "Aferin evlat! … artık senin" der, sonra "Yeni hamle" duyurusu.
+- Ders canavarları (`LES[].foe`): Takla vuruşu Kurt · Çift vuruş Yaban domuzu · Ritim 2 Bataklık kurdu · Ritim 3 Muflon · Güçlü vuruş Yaban öküzü · Bitirici Kül kurdu · Ulti Mağara ayısı. `a.ders=true`, hep saldırgan (`mad`), v111 özel hamleleri kapalı (`mvCd`), ısırığı canın %5'i (`biteHit` sarmalı, etki yok), XP vermez. Bitirme görevi kalan derste normal can, yoksa ×3 can.
+- Ölürse ya da uzaklaşırsa (420 px) oyuncu Börü'nün 240 px yakınındayken 2,5 s sonra yenisi çıkar (ders başına en çok 16). Ders bitince ya da kayıt yüklenince ders canavarları kaybolur. Kayıttan sürdürülen derste canavar Börü'ye gelince çıkar.
+- Düzeltme: v1.29'un isabet sayacı `a._lh` kullanıyordu; v128'in Reis karşı saldırısı da aynı alanı kullanıyordu. Sayaç artık `a._l9`.
+- Kontrol: chk.js 0 hata, oyun açılıyor.
+
 ## v1.29 (27 Ekim 2026) — Börü'nün dövüş dersleri + XP planı
 - **Hamleler artık Börü'den sikkeyle öğreniliyor** (`<script id="v129-ders">`, son blok). Börü'nün genel konuşmasına "Dövüş dersleri" seçeneği eklenir (`say` sarmalı, yalnızca `talkAlp`'in genel dalında ve `ftut>=3` iken). Ders = sikke öde → hamle denemelik açılır → sol ortadaki panelde (`#lesson`) görevler; hepsi bitince hamle kalıcı (`L.own`), duyuru + küçük XP.
 - Ders tablosu (`LES`): Takla vuruşu Sv3·Çayır·150 (Atılma gerekli: 3 saldırıdan takla ile kaç + 4 takla vuruşu isabeti) · Çift vuruş Sv6·Orman·300 (5 isabet + çift vuruşla 2 canavar bitir) · Ritimli 2. vuruş Sv10·Bataklık·600 (5 isabet) · Ritimli 3. vuruş Sv15·Kayalık·1000 (3 savuşturma + 3 isabet) · Güçlü vuruş Sv17·Kayalık·1200 (3 savuşturma + sersemlemiş canavara 3 güçlü vuruş) · Bitirici Sv21·Kül·2000 (Atılma gerekli: 3 takla ile kaçış + 3 isabet) · Ulti: Kara ejder ya da Kristal golem Reisi yenilince, 2500 (3 ulti isabeti; derste çubuk ×3 hızlı dolar). Biyom şartı v128'in `V.b`'si (gidilen en uzak biyom).

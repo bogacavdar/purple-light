@@ -1332,7 +1332,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.29</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.30</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -13424,7 +13424,7 @@ function teach(){if(onTitle||!met||wake||window.__plArena)return;const L=[];for(
 </style>
 <script id="v129-ders">
 // =====================================================================================================
-// v1.29: BÖRÜ'S LESSONS. Every combo move (and the ulti) is learnt from Savaşçı Börü for coins: once the
+// v1.29 (v1.30: practice foe + Börü's praise): BÖRÜ'S LESSONS. Every combo move (and the ulti) is learnt from Savaşçı Börü for coins: once the
 // level and the land are reached he offers the lesson; paid, the move opens for practice and a small panel
 // shows the tasks (e.g. "dodge 3 attacks with a roll", "land 4 dash strikes"). Done 3–5 times, the move is
 // learnt for good. The ulti lesson opens after Kara ejder or the Kristal golem Reisi. Island 2 (and the
@@ -13452,25 +13452,25 @@ const now=()=>performance.now()/1000;
 
 // ---------------------------------------------------------------- 2 · the lessons
 const LES=[
- {k:'dash',n:'Takla vuruşu',lv:3,b:0,c:150,x:40,s1:1,how:'Taklanın içinde ya da hemen sonunda tıkla',
+ {k:'dash',foe:'Kurt',on:'şu kurdun',n:'Takla vuruşu',lv:3,b:0,c:150,x:40,s1:1,how:'Taklanın içinde ya da hemen sonunda tıkla',
   say:'Takla atmayı biliyorsun; şimdi taklanın içinden vurmayı öğren. Saldırı gelirken yana atıl, ayağın yere değer değmez tıkla: kılıç da seninle birlikte atılır.',
   st:[['evade',3,'Bir canavar saldırırken (kırmızı <b>!</b>) <b>Q</b> ile takla at, saldırıdan kurtul'],['hit:dash',4,'Taklanın içinde ya da hemen sonunda tıkla: <b>takla vuruşuyla</b> 4 kez isabet ettir']]},
- {k:'double',n:'Çift vuruş',lv:6,b:1,c:300,x:60,how:'Hızlıca iki kez tıkla',
+ {k:'double',foe:'Yaban domuzu',on:'şu yaban domuzunun',n:'Çift vuruş',lv:6,b:1,c:300,x:60,how:'Hızlıca iki kez tıkla',
   say:'Bir vuruş bir hayvanı durdurur, iki vuruş onu yere serer. Farenin tuşuna <b>hızlıca iki kez</b> bas; ikinci vuruş birincinin arkasından gelir.',
   st:[['hit:double',5,'Hızlıca iki kez tıkla: <b>çift vuruşla</b> 5 kez isabet ettir'],['kill:double',2,'İki canavarı <b>çift vuruşla</b> bitir']]},
- {k:'c2',n:'Ritimli 2. vuruş',lv:10,b:2,c:600,x:100,how:'Vuruş biter bitmez yine tıkla',
+ {k:'c2',foe:'Bataklık kurdu',on:'şu bataklık kurdunun',n:'Ritimli 2. vuruş',lv:10,b:2,c:600,x:100,how:'Vuruş biter bitmez yine tıkla',
   say:'Bataklıkta acele eden batar. Vur, kılıcın geri gelsin, <b>tam o an</b> yine tıkla. Erken basarsan ritim bozulur; ritmi kendin bulacaksın.',
   st:[['hit:c2',5,'Vuruşun hemen ardından tıkla: <b>ritimli 2. vuruşla</b> 5 kez isabet ettir']]},
- {k:'c3',n:'Ritimli 3. vuruş',lv:15,b:3,c:1000,x:160,how:'2. vuruşun hemen ardından yine tıkla',
+ {k:'c3',foe:'Muflon',on:'şu muflonun',n:'Ritimli 3. vuruş',lv:15,b:3,c:1000,x:160,how:'2. vuruşun hemen ardından yine tıkla',
   say:'Dağın hayvanları sabırlı. Önce saldırısını <b>savuştur</b>, sonra ritmi üçe çıkar: ikinci vuruşun bittiği an bir kez daha tıkla. Üçüncü vuruş ağırdır, sersemletir.',
   st:[['parry',3,'Bir saldırıyı tam vuracağı an <b>savuştur</b> (3 kez)'],['hit:c3',3,'<b>Ritimli 3. vuruşu</b> 3 kez isabet ettir']]},
- {k:'charged',n:'Güçlü vuruş',lv:17,b:3,c:1200,x:180,how:'Basılı tut, halka dolunca bırak',
+ {k:'charged',foe:'Yaban öküzü',on:'şu yaban öküzünün',n:'Güçlü vuruş',lv:17,b:3,c:1200,x:180,how:'Basılı tut, halka dolunca bırak',
   say:'Sersemlemiş hayvan sana zaman verir. Savuştur, sonra tuşu <b>basılı tut</b>; etrafındaki halka dolunca bırak. Halka dolmadan bırakırsan sıradan bir vuruş olur.',
   st:[['parry',3,'<b>Savuşturarak</b> 3 canavarı sersemlet'],['stun:charged',3,'Sersemlemiş bir canavara <b>güçlü vuruş</b> (basılı tut, bırak): 3 kez']]},
- {k:'cdc',n:'Bitirici',lv:21,b:4,c:2000,x:300,s1:1,how:'Tıkla, takla at, yine tıkla',
+ {k:'cdc',foe:'Kül kurdu',on:'şu kül kurdunun',n:'Bitirici',lv:21,b:4,c:2000,x:300,s1:1,how:'Tıkla, takla at, yine tıkla',
   say:'Kül Diyarı affetmez; vur, kaç, bitir. Önce bir kez vur, hemen <b>takla at</b>, taklanın sonunda yine tıkla: bitirici hamle çıkar.',
   st:[['evade',3,'Saldırıdan <b>takla atarak</b> kurtul (3 kez)'],['hit:cdc',3,'Tıkla → takla → tıkla: <b>bitiriciyi</b> 3 kez isabet ettir']]},
- {k:'ult',n:'Ulti',lv:0,b:-1,c:2500,x:500,boss:1,how:'Dövüşürken altın çubuk dolar; dolunca R',
+ {k:'ult',foe:'Mağara ayısı',on:'şu mağara ayısının',n:'Ulti',lv:0,b:-1,c:2500,x:500,boss:1,how:'Dövüşürken altın çubuk dolar; dolunca R',
   say:'Ejderi devirdin; artık öfkeni biriktirmeyi öğrenmelisin. Her isabet, her savuşturma altın çubuğu doldurur. Dolunca <b>R</b>: bütün öfken bir anda çıkar. Bu derste çubuk üç kat hızlı dolar.',
   st:[['ult',3,'Çubuk dolunca <b>R</b>: <b>ulti</b> ile 3 kez bir canavarı vur']]}];
 const LK={};for(const l of LES)LK[l.k]=l;
@@ -13496,21 +13496,43 @@ function onHit(){if(!M||M.hit)return;M.hit=true;bump('hit:'+M.k);if(M.stun)bump(
 {const _ka=killAnimal;killAnimal=function(a){const live=M&&!M.kill&&now()-M.t<=M.W;const r=_ka.apply(this,arguments);try{if(live&&L.cur&&a&&!a.tut){onHit();M.kill=true;bump('kill:'+M.k)}}catch(e){}return r}}
 let pN=-1,uOn=0;
 function watch(){const t=now();if(M&&t-M.t>M.W)M=null;
-  if(M&&!M.hit)for(const a of animals){if(a._lh!=null&&a.hp<a._lh&&!a.tut){onHit();break}}
-  for(const a of animals)a._lh=a.hp;
+  if(M&&!M.hit)for(const a of animals){if(a._l9!=null&&a.hp<a._l9&&!a.tut){onHit();break}}
+  for(const a of animals)a._l9=a.hp;
   const P=window.__plParry;if(P){if(pN>=0&&P.n>pN&&L.cur)bump('parry');pN=P.n}
   const U=window.__plUlt;if(U){if(U.on>0&&!(uOn>0)&&L.cur)M={k:'ult',t,stun:false,hit:false,kill:false,W:1.8};uOn=U.on}}
 // the ulti lesson fills the bar three times faster
 {const U=window.__plUlt;if(U&&U.gain){const g=U.gain;U.gain=n=>g(L.cur&&L.cur.k==='ult'&&!window.__plArena?n*3:n)}}
 
+// ---------------------------------------------------------------- 3b · Börü's practice foe: blunt teeth, no XP, comes back while the lesson lasts
+const FOE={n:0,t:0};
+function foes(){return animals.filter(a=>a.ders)}
+function clearFoes(){for(let i=animals.length-1;i>=0;i--){const a=animals[i];if(!a.ders)continue;for(let k=0;k<14;k++)parts.push({x:a.x,y:a.y-6,vx:(Math.random()-.5)*70,vy:-20-Math.random()*40,life:.5,c:k%2?'#e8e0c8':'#9a9a9a'});animals.splice(i,1)}}
+function spawnFoe(force){const c=L.cur;if(!c)return null;const l=LK[c.k];if(!l||!ANIM[l.foe])return null;if(!force&&FOE.n>=16)return null;
+  const killLeft=l.st.some((s,i)=>s[0].indexOf('kill:')===0&&c.p[i]<s[1]);const D=ANIM[l.foe];
+  for(let k=0;k<80;k++){const an=Math.PI*(1.1+Math.random()*.8),d=48+Math.random()*30,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;
+    if(!reachAt(x,y)||blocked(x,y)||isWater(tileAt(x,y)))continue;
+    const a={k:l.foe,x,y,hp:Math.round(D.hp*(killLeft?1:3)),st:'chase',t:0,dx:0,dy:0,face:x<player.x?1:-1,atk:1,flash:0,kb:null,step:0,mad:true,ders:true,mvCd:99};
+    animals.push(a);FOE.n++;try{appearFx(x,y,'#ffe7a0')}catch(e){}try{sfx('growl')}catch(e){}return a}
+  return null}
+function tickFoes(){const c=L.cur;if(!c){if(foes().length)clearFoes();return}const t=now(),F=foes();
+  for(const a of F){a.mvCd=Math.max(a.mvCd||0,5);a.mad=true;if(Math.hypot(a.x-player.x,a.y-player.y)>420){const i=animals.indexOf(a);if(i>=0)animals.splice(i,1)}}
+  if(F.length)return;const nearB=alp&&Math.hypot(alp.x-player.x,alp.y-player.y)<240;if(!nearB)return;if(!FOE.t)FOE.t=t+2.5;if(t>=FOE.t){FOE.t=0;spawnFoe(false)}}
+// its bite is blunt: a twentieth of your health
+{const _bh=biteHit;biteHit=function(a,D){if(a&&a.ders&&D){const D2=Object.assign({},D,{dmg:Math.max(2,Math.round(maxHP()*.05))});delete D2.fx;const args=Array.prototype.slice.call(arguments);args[1]=D2;return _bh.apply(this,args)}return _bh.apply(this,arguments)}}
+// no XP for the practice foe
+let noXP=false;{const _g=gainXP;gainXP=function(n){if(noXP)return;return _g.apply(this,arguments)}}
+{const _ka=killAnimal;killAnimal=function(a){if(a&&a.ders){noXP=true;try{return _ka.apply(this,arguments)}finally{noXP=false}}return _ka.apply(this,arguments)}}
+
 // ---------------------------------------------------------------- 4 · Börü
-function finish(l){L.own[l.k]=1;L.cur=null;M=null;lk='';try{sfx('level')}catch(e){}if(l.x)gainXP(l.x);
-  setTimeout(()=>announce((l.k==='ult'?'Ulti öğrendin':'Yeni hamle: '+l.n),l.how),300);try{renderHUD()}catch(e){}}
+function finish(l){L.own[l.k]=1;L.cur=null;M=null;lk='';try{sfx('level')}catch(e){}if(l.x)setTimeout(()=>{try{gainXP(l.x)}catch(e){}},50);clearFoes();
+  setTimeout(()=>{try{say(`Aferin evlat! İşte böyle. <b>${l.n}</b> artık senin: ${l.how.charAt(0).toLowerCase()+l.how.slice(1)}. Her dövüşte kullanabilirsin.`,[{t:'Sağ ol Börü',pri:1,fresh:1,f:()=>{bye();announce((l.k==='ult'?'Ulti öğrendin':'Yeni hamle: '+l.n),l.how)}}],alp)}catch(e){announce('Yeni hamle: '+l.n,l.how)}},700);try{renderHUD()}catch(e){}}
 function start(l){if(L.cur){toast('Önce şu anki dersi bitir: '+LK[L.cur.k].n,true);return}
   if(!plInf()&&coins<l.c){toast(`${(l.c-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);sfx('bad');return}
   if(l.s1&&!s1()){say('Önce <b>atılmayı</b> öğren evlat: yetenek ağacının Savaş dalında, Atılma. Takla atamayan taklanın içinden vuramaz.',[{t:'Anladım',pri:1,f:lessons}],alp);return}
   if(!plInf())coins-=l.c;renderInv();sfx('coin');L.cur={k:l.k,p:l.st.map(()=>0)};lk='';
-  say(`<b>${l.n}</b> · ${l.say}<br><br>Ders:<br>${l.st.map(s=>'• '+s[2]).join('<br>')}<br><br>Hamle şimdilik denemelik açık; görevleri bitirince senin olur.`,[{t:'Başlayalım',pri:1,fresh:1,f:bye}],alp)}
+  FOE.n=0;FOE.t=0;
+  say(`<b>${l.n}</b> · ${l.say}<br><br>Ders:<br>${l.st.map(s=>'• '+s[2]).join('<br>')}`,[{t:'Hazırım',pri:1,fresh:1,f:()=>{const a=spawnFoe(true);
+    say(a?`Sana ${l.on} getirdim, işte orada. Üzerinde dene. Dişlerini körelttim, canını fazla yakmaz; ama kaçmaz da. Ölürse bir başkasını salarım.`:'Burada yer yok; biraz açıklığa çık, sonra yanıma gel.',[{t:'Başlayalım',pri:1,fresh:1,f:bye}],alp)}}],alp)}
 function quit(){const c=L.cur;if(!c)return;say(`<b>${LK[c.k].n}</b> dersini bırakırsan sikkeni geri veremem; ama istediğin zaman kaldığın yerden sürdürürsün.`,[{t:'Sürdürürüm',pri:1,f:bye},{t:'Geri',f:lessons}],alp)}
 function lessons(){const rows=[],ch=[];let next=null;
   for(const l of LES){if(have(l.k)){rows.push(`✓ <b>${l.n}</b>`);continue}
@@ -13536,11 +13558,11 @@ let lk='';
 function renderHUD(){const c=L.cur,on=!!c&&!onTitle&&met&&!window.__plArena;if(!on){if(!box.hidden)box.hidden=true;return}const l=LK[c.k];const k=c.k+'|'+c.p.join(',');if(k===lk&&!box.hidden)return;lk=k;
   box.innerHTML=`<b class="lt">BÖRÜ'NÜN DERSİ</b><div class="ln">${l.n}</div>`+l.st.map((s,i)=>`<div class="ls${c.p[i]>=s[1]?' ok':''}"><i>${Math.min(c.p[i],s[1])}/${s[1]}</i><span>${s[2]}</span></div>`).join('');box.hidden=false}
 
-{let tk=0;const _fb=frameBody;frameBody=function(){hush();const r=_fb.apply(this,arguments);try{if(!frozenNow()&&!window.__plArena)watch();if(++tk%15===0){renderHUD();if(tk%60===0)tellNew()}}catch(e){}return r}}
+{let tk=0;const _fb=frameBody;frameBody=function(){hush();const r=_fb.apply(this,arguments);try{if(!frozenNow()&&!window.__plArena){watch();if(tk%10===0)tickFoes()}if(++tk%15===0){renderHUD();if(tk%60===0)tellNew()}}catch(e){}return r}}
 
 // ---------------------------------------------------------------- 6 · the save
 {const _s=snapshot;snapshot=function(){const o=_s.apply(this,arguments);if(o&&!window.__plArena)o.v129={o:Object.keys(L.own),c:L.cur?{k:L.cur.k,p:L.cur.p.slice()}:null,n:Object.keys(L.ann)};return o};try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}}
-{const _r=restore;restore=function(d){const r=_r.apply(this,arguments);try{const v=d&&d.v129;L.own={};L.cur=null;L.ann={};M=null;lk='';
+{const _r=restore;restore=function(d){const r=_r.apply(this,arguments);try{const v=d&&d.v129;L.own={};L.cur=null;L.ann={};M=null;lk='';FOE.n=0;FOE.t=0;try{clearFoes()}catch(e){}
   if(v){for(const k of (v.o||[]))if(LK[k])L.own[k]=1;if(v.c&&LK[v.c.k]&&!L.own[v.c.k]){const l=LK[v.c.k];L.cur={k:v.c.k,p:l.st.map((s,i)=>Math.min(s[1],+((v.c.p||[])[i])||0))}}for(const k of (v.n||[]))L.ann[k]=1}
   else{// older saves: what v1.28 had opened stays open, nobody loses a move
     const t=d&&d.v128&&d.v128.t;if(t)for(const k of t){if(LK[k])L.own[k]=1}else{const NEED={dash:0,double:1,c2:2,c3:3,charged:3,cdc:4};for(const k in NEED)if(stage()>=NEED[k])L.own[k]=1}
