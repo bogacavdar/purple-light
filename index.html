@@ -389,6 +389,7 @@ body #xpdock{padding-right:calc(env(safe-area-inset-right,0px) + 290px)}
 #hotbar .hs{position:relative;width:46px;height:46px;padding:0;background:#1c2419;border:2px solid #3d4a33;cursor:pointer;display:flex;align-items:center;justify-content:center}
 #hotbar .hs img{width:32px;height:32px;image-rendering:pixelated}
 #hotbar .hs.empty{opacity:.55}
+#hotbar .hs.off{border-color:#f2902a;border-style:dashed;background:#3a2e22}   /* v1.39: the weapon carried beside the torch */
 #hotbar .hs.on{border-color:var(--accent);background:#3d4d2c;box-shadow:0 0 0 2px #11170f,0 0 12px rgba(242,184,75,.55);transform:translateY(-3px)}
 #hotbar .hs kbd{position:absolute;left:2px;top:0;font-family:inherit;font-size:10px;color:var(--ink-dim)}
 #hotbar .hs b{position:absolute;right:2px;bottom:0;font-size:11px;color:var(--accent)}
@@ -1332,7 +1333,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.38</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.39</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -5185,14 +5186,20 @@ function toolHint(k){const h=heldKind(k);if(h)return `${h} körelmiş · Demirci
   const o=bestTool(k)||Object.keys(GT).find(n=>GT[n].kind===k&&(inv[n]||0)>0);if(o)return `${o} kemerinde değil: ${beltHowTxt(o)}`;return null}
 function needTool(k){const m=toolHint(k);if(m){toast(m,true);const L=hotList(),i=L.findIndex(n=>GT[n]&&GT[n].kind===k);if(i>=0)pulseHot(i);else $('b-inv').classList.add('pulse');sfx('bad');return true}return false}
 function pulseHot(i){const b=document.querySelector(`#hotbar [data-hs="${i}"]`);if(b){b.classList.remove('pulse');void b.offsetWidth;b.classList.add('pulse');setTimeout(()=>b.classList.remove('pulse'),2400)}}
-function setHand(i){const L=hotList();hand=i>=0&&i<hotN()?i:-1;const h=held();
-  try{if(h&&isTorch(h)&&!equip.silah&&!window.__plTH&&met&&Object.keys(inv).some(n=>inv[n]>0&&slotOf(n)==='silah')){window.__plTH=1;setTimeout(()=>toast('İpucu: çantadan bir silaha dokunup "Silah olarak tak" de; meşale elindeyken o silah vurur.'),200)}}catch(x){}   // v1.36: torch in one hand, weapon on the back
+function setHand(i){const L=hotList();hand=i>=0&&i<hotN()?i:-1;const h=held();if(!h||!isTorch(h))offW=null;
   if(h&&PLACEABLE.has(h))startPlace(h);else if(placing&&!placing.moving)placing=null;
   stopGather();hotK='';renderHot();renderPlaceUI()}
-function selectHot(i){setHand(i===hand?-1:i);sfx('pick')}
+let offW=null;   // v1.39: a sword or spear carried in the other hand while the torch is held
+const isWpn=n=>!!(n&&GT[n]&&(GT[n].kind==='sword'||GT[n].kind==='hunt'));
+function offOK(){const h=held();if(!offW||!h||!isTorch(h)||!(inv[offW]>0)){offW=null;return null}return offW}
+function selectHot(i){const L=hotList(),n=L[i],h=held();
+  if(h&&isTorch(h)&&isWpn(n)){offW=offW===n?null:n;sfx('pick');toast(offW?`${n} meşalenin yanında: vuruşu o yapar (Q).`:`${n} çantaya kondu; meşale vurur.`);hotK='';renderHot();return}
+  const was=isWpn(h)?h:null;setHand(i===hand?-1:i);sfx('pick');const h2=held();
+  if(h2&&isTorch(h2)&&was){offW=was;toast(`Bir elinde meşale, ötekinde ${was}.`);hotK='';renderHot()}
+  else if(h2&&isTorch(h2)&&!offW&&!equip.silah&&!window.__plTH&&met){const w=L.find(isWpn);if(w){window.__plTH=1;setTimeout(()=>toast(`İpucu: meşale eldeyken ${w} yuvasına bas; ikisini birlikte taşırsın.`),200)}}}
 function renderHot(){const L=hotList();if(hand>=L.length)hand=-1;
-  const k=belt.join('|')+'#'+L.join('|')+'#'+hand+'#'+L.map(n=>(wearTool(n)?nn(toolDur[n],GT[n].dur):inv[n])+(isTorch(n)?':'+Math.ceil(torchPct(n)):'')).join(',');if(k===hotK)return;hotK=k;
-  $('hotbar').innerHTML=`<button type="button" id="handbtn" class="${hand<0?'on':''}" aria-label="Boş el: topla (H)" title="Boş el: topla (H)"><img src="${icon('__hand')}" alt=""><kbd>H</kbd></button>`+Array.from({length:hotN()},(_,i)=>{const n=L[i],gh=!n&&belt[i]?belt[i]:null;return `<button type="button" class="hs${i===hand?' on':''}${n?'':' empty'}${gh?' ghost':''}" data-hs="${i}" aria-label="${n?esc(n):gh?esc(gh)+' (kalmadı)':'Boş kutu'} (${slotKey(i)})" title="${n?esc(n):gh?esc(gh)+' · kalmadı':'Boş'}">${n?`<img src="${icon(n)}" alt="">`:gh?`<img src="${icon(gh)}" alt="">`:''}<kbd>${slotKey(i)}</kbd>${n?(wearTool(n)?`<i class="dur" style="width:${Math.max(0,Math.min(100,nn(toolDur[n],GT[n].dur)/GT[n].dur*100))}%;background:${durCol(n)}"></i>`:(isTorch(n)?`<i class="dur" style="width:${torchPct(n)}%;background:#f2902a"></i>`:'')+(inv[n]>1?`<b>${inv[n]}</b>`:'')):''}</button>`}).join('')}
+  const ow=offOK(),k=belt.join('|')+'#'+L.join('|')+'#'+hand+'#'+ow+'#'+L.map(n=>(wearTool(n)?nn(toolDur[n],GT[n].dur):inv[n])+(isTorch(n)?':'+Math.ceil(torchPct(n)):'')).join(',');if(k===hotK)return;hotK=k;
+  $('hotbar').innerHTML=`<button type="button" id="handbtn" class="${hand<0?'on':''}" aria-label="Boş el: topla (H)" title="Boş el: topla (H)"><img src="${icon('__hand')}" alt=""><kbd>H</kbd></button>`+Array.from({length:hotN()},(_,i)=>{const n=L[i],gh=!n&&belt[i]?belt[i]:null;return `<button type="button" class="hs${i===hand?' on':''}${n&&n===ow?' off':''}${n?'':' empty'}${gh?' ghost':''}" data-hs="${i}" aria-label="${n?esc(n):gh?esc(gh)+' (kalmadı)':'Boş kutu'} (${slotKey(i)})" title="${n?esc(n):gh?esc(gh)+' · kalmadı':'Boş'}">${n?`<img src="${icon(n)}" alt="">`:gh?`<img src="${icon(gh)}" alt="">`:''}<kbd>${slotKey(i)}</kbd>${n?(wearTool(n)?`<i class="dur" style="width:${Math.max(0,Math.min(100,nn(toolDur[n],GT[n].dur)/GT[n].dur*100))}%;background:${durCol(n)}"></i>`:(isTorch(n)?`<i class="dur" style="width:${torchPct(n)}%;background:#f2902a"></i>`:'')+(inv[n]>1?`<b>${inv[n]}</b>`:'')):''}</button>`}).join('')}
 $('hotbar').addEventListener('click',e=>{if(e.target.closest('#handbtn')){handTap();return}const b=e.target.closest('[data-hs]');if(b){selectHot(+b.dataset.hs);if(hand<0)toast('Elin boş: toplama kipindesin')}});
 cv.addEventListener('wheel',e=>{if(!canTap())return;e.preventDefault();let i=hand+(e.deltaY>0?1:-1);if(i>hotN()-1)i=-1;if(i<-1)i=hotN()-1;setHand(i);sfx('pick')},{passive:false});
 // the tool in the hero's hand (swings while working)
@@ -5654,7 +5661,7 @@ const frozenNow=()=>craftOpen||paused||dlgOpen||fading||!!sailing||!!wake||!!bea
 // ---------- fighting: Space / tap / click; damage comes from what is in your hand ----------
 const WDMG={'Taş kılıç':12,'Mızrak':10,'Çakmaktaşı mızrak':14,'Kuvars mızrak':18,'Bazalt mızrak':22,'Obsidyen mızrak':28,'Tunç kılıç':22,'Demir kılıç':34,'Ejder kılıcı':52,'Tunç mızrak':20,'Demir mızrak':30};
 const dullTool=n=>!!n&&wearTool(n)&&nn(toolDur[n],GT[n].dur)<=0;   // v48c: a blunt tool hits like a bare fist until Dursun sharpens it
-function weapon(){let h=held();if(!h||!GT[h]||GT[h].kind==='torch')h=equip.silah||null;if(dullTool(h))h=equip.silah&&equip.silah!==h&&!dullTool(equip.silah)?equip.silah:null;const k=h&&GT[h]?GT[h].kind:null;
+function weapon(){let h=held();if(!h||!GT[h]||GT[h].kind==='torch')h=(h&&offOK())||equip.silah||null;if(dullTool(h))h=equip.silah&&equip.silah!==h&&!dullTool(equip.silah)?equip.silah:null;const k=h&&GT[h]?GT[h].kind:null;
   if(k==='sword')return{n:h,dmg:WDMG[h]||12,reach:22,cd:.42};
   if(k==='hunt')return{n:h,dmg:WDMG[h]||10,reach:30,cd:.6};
   if(k==='axe'||k==='pick')return{n:h,dmg:8,reach:20,cd:.5};
@@ -9539,6 +9546,7 @@ drawHeld=function(x,y){const S=P4.sw;if(!S||S.k==='fist')return _drawHeld.apply(
   ctx.save();ctx.translate(x+Math.cos(A)*off,y-6+Math.sin(A)*off);ctx.rotate(A+Math.PI/4);ctx.drawImage(c,-2,-11,12,12);ctx.restore()};
 // the stowed weapon on the back hides while it is in the hand
 const _drawPlayer=drawPlayer;drawPlayer=function(){const S=P4.sw;if(S&&S.n&&equip.silah===S.n&&held()!==S.n){const e=equip.silah;equip.silah=null;try{return _drawPlayer.apply(this,arguments)}finally{equip.silah=e}}return _drawPlayer.apply(this,arguments)};
+{const _dp2=drawPlayer;drawPlayer=function(){const o=offOK();if(o&&!equip.silah){equip.silah=o;try{return _dp2.apply(this,arguments)}finally{equip.silah=null}}return _dp2.apply(this,arguments)}}   // v1.39: the second weapon shows beside the torch
 drawSwing=function(){try{p4DrawSwing(P4.gdt)}catch(e){P4.sw=null}};
 
 // creatures: wind-up is easy to read (they pull back and shake, a ring fills where they will land); bosses get size, aura, crown and a named bar

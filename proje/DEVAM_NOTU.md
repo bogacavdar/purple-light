@@ -957,3 +957,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Elde ne olursa olsun (kılıç, mızrak, tüfek, asa…) E yerdeki kaynakları toplar: `gatherTarget` içindeki "eli boş mu" şartı kalktı (`free=true`); kazma gerektiren madenler eskisi gibi kazma ister.
 - E, konuşma hedefi (kişi, istasyon…) yoksa her durumda önce yakındaki düşmüş eşyaları toplar (`eFirst` yalnızca ağaç/maden için değil).
 - Menüde "Versiyon 1.38". chk.js 0 hata.
+
+## v1.39 (27 Ekim 2026)
+- Meşale + kılıç/mızrak artık doğrudan kuşaktan: meşale eldeyken bir kılıç ya da mızrak yuvasına basınca el meşalede kalır, o silah öteki ele geçer (`offW`); aynı yuvaya yine basınca bırakılır. Elde kılıç varken meşaleye geçince kılıç da öteki elde kalır. Öteki eldeki silahın yuvası turuncu kesik çizgiyle işaretli, karakterin yanında görünür ve vuruşu o yapar (`weapon()` önce `offOK()`, sonra "Silah" yuvasına bakar). Meşale elden çıkınca `offW` silinir. Eski "Silah olarak tak" yolu da çalışır.
+- Menüde "Versiyon 1.39". chk.js 0 hata.
