@@ -1130,3 +1130,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Alıştırma canavarı sessiz ölür:** ganimet ve XP vermez, `kills` sayacına eklenmez; böylece Reis (boss) çıkışlarını ve av görevlerini tetiklemez (dersle domuz öldürmek Reis çağırıyordu). Ders sayaçları ("bitir" adımları) yine sayılır.
 - Ders iptalinde (alandan çıkıp "Evet, dersi bırak") ücret geri verilir (v1.63'ten beri; sınırsız sikke hilesi açıkken gerek yok).
 - Menüde "Versiyon 1.70". chk.js 0 hata; oyun hatasız açılıyor.
+
+## v1.71 (27 Ekim 2026)
+- **Düzenli saldırı ritmi** (`<script id="v171">`): bir canavar son saldırısından 1 sn geçmeden yeni saldırı başlatamaz (yeni başlayan pençe/hamle/atılış iptal, `atk` beklemesi uzar; reisler hariç); öfkeli, kovalayan, sersem olmayan ve menzilindeki bir canavar 2,5 sn saldırmadıysa saldırı beklemesi sıfırlanır. Zararsızlar ve öğreticideki kerevit hariç; arenada kapalı.
+- **Ders paneli tek adım:** soldaki "Börü'nün dersi" kutusu yalnızca şimdiki adımı ve "adım N/M" gösterir; bitince sıradakine geçer.
+- **Dersleri ücretsiz tekrar:** Börü'nün ders listesinde öğrenilmiş her ders için "tekrar çalış (ücretsiz)"; tekrarda ücret alınmaz, bitince XP verilmez, iptalde geri verilecek ücret yoktur. Tekrar sırasında kayıt alınırsa tekrar kaydedilmez.
+- (Kullanıcının isteği zaten var: "bitir" adımı dışında alıştırma canavarı ölmez (v1.67), ölünce Reis'e/av sayacına sayılmaz (v1.70).)
+- Menüde "Versiyon 1.71". chk.js 0 hata; oyun hatasız açılıyor.

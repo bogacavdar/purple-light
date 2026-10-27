@@ -1335,7 +1335,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.70</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.71</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -13618,7 +13618,7 @@ function curStep(){const c=L.cur;if(!c)return null;const l=LK[c.k];if(!l)return 
   try{const st=curStep();if(st&&st.indexOf('hit:')===0)for(const a of animals)if(a.ders){a.mad=false;a.wind=0;a.lunge=null;a.mv=null;if(a.st==='chase')a.st='wander'}}catch(e){}return r}}   // v1.59b: while you practise a combo the practice foe does not strike back
 let farAsk=false;
 function pushBack(){const dx=player.x-alp.x,dy=player.y-alp.y,L_=Math.hypot(dx,dy)||1;for(const r of [230,200,170,140,110,80]){const x=alp.x+dx/L_*r,y=alp.y+dy/L_*r;if(reachAt(x,y)&&!blocked(x,y)&&!isWater(tileAt(x,y))){player.x=x;player.y=y;break}}goal=null;for(const k in keys)keys[k]=false}
-function quitLesson(l){L.cur=null;M=null;lk='';clearFoes();if(l&&!plInf()){coins+=l.c;renderInv()}try{sfx('bad')}catch(e){}toast(`${l?l.n:'Ders'} bırakıldı${l&&!plInf()?`, ${l.c.toLocaleString('tr-TR')} sikken geri verildi`:''}. Yeniden almak için Börü'ye gel.`,true);try{renderHUD()}catch(e){}}
+function quitLesson(l){const fr=!!(L.cur&&L.cur.free);L.cur=null;M=null;lk='';clearFoes();if(l&&!plInf()&&!fr){coins+=l.c;renderInv()}try{sfx('bad')}catch(e){}toast(`${l?l.n:'Ders'} bırakıldı${l&&!plInf()&&!fr?`, ${l.c.toLocaleString('tr-TR')} sikken geri verildi`:''}. Yeniden almak için Börü'ye gel.`,true);try{renderHUD()}catch(e){}}
 function tickFoes(){const c=L.cur;if(!c){if(foes().length)clearFoes();farAsk=false;return}const t=now(),F=foes();
   if(alp&&!onTitle&&!wake&&!window.__plArena){const d=Math.hypot(alp.x-player.x,alp.y-player.y),l=LK[c.k];   // v1.68: leaving the lesson's ground asks first: stay (you are put back) or quit (the lesson ends, take it again from Börü)
     if(farAsk&&!dlgOpen){farAsk=false;if(d>260)pushBack()}
@@ -13633,12 +13633,14 @@ let noXP=false;{const _g=gainXP;gainXP=function(n){if(noXP)return;return _g.appl
 {const _ka=killAnimal;killAnimal=function(a){if(a&&a.ders){noXP=true;try{return _ka.apply(this,arguments)}finally{noXP=false}}return _ka.apply(this,arguments)}}
 
 // ---------------------------------------------------------------- 4 · Börü
-function finish(l){L.own[l.k]=1;L.cur=null;M=null;lk='';try{sfx('level')}catch(e){}if(l.x)setTimeout(()=>{try{gainXP(l.x)}catch(e){}},50);clearFoes();
+function finish(l){const fr=!!(L.cur&&L.cur.free);L.own[l.k]=1;L.cur=null;M=null;lk='';try{sfx('level')}catch(e){}clearFoes();try{renderHUD()}catch(e){}
+  if(fr){setTimeout(()=>{try{say(`Güzel bir tekrar oldu. <b>${l.n}</b> elinde iyice oturdu.`,[{t:'Sağ ol Börü',pri:1,fresh:1,f:bye},{t:'Başka ders',f:lessons}],alp)}catch(e){}},700);return}   // v1.71: a free practice gives no XP
+  if(l.x)setTimeout(()=>{try{gainXP(l.x)}catch(e){}},50);
   setTimeout(()=>{try{say(`Aferin evlat! İşte böyle. <b>${l.n}</b> artık senin: ${l.how.charAt(0).toLowerCase()+l.how.slice(1)}. Her dövüşte kullanabilirsin.`,[{t:'Sağ ol Börü',pri:1,fresh:1,f:()=>{bye();announce((l.k==='ult'?'Ulti öğrendin':'Yeni hamle: '+l.n),l.how)}}].concat(LES.some(x=>!have(x.k)&&reqOK(x))?[{t:'Yeni ders',f:()=>{announce((l.k==='ult'?'Ulti öğrendin':'Yeni hamle: '+l.n),l.how);lessons()}}]:[]),alp)}catch(e){announce('Yeni hamle: '+l.n,l.how)}},700);try{renderHUD()}catch(e){}}
-function start(l){if(L.cur){toast('Önce şu anki dersi bitir: '+LK[L.cur.k].n,true);return}
-  if(!plInf()&&coins<l.c){toast(`${(l.c-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);sfx('bad');return}
-  if(l.s1&&!s1()){say('Önce <b>atılmayı</b> öğren evlat: yetenek ağacının Savaş dalında, Atılma. Takla atamayan taklanın içinden vuramaz.',[{t:'Anladım',pri:1,f:lessons}],alp);return}
-  if(!plInf())coins-=l.c;renderInv();sfx('coin');L.cur={k:l.k,p:l.st.map(()=>0)};lk='';
+function start(l,free){if(L.cur){toast('Önce şu anki dersi bitir: '+LK[L.cur.k].n,true);return}
+  if(!free&&!plInf()&&coins<l.c){toast(`${(l.c-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);sfx('bad');return}
+  if(!free&&l.s1&&!s1()){say('Önce <b>atılmayı</b> öğren evlat: yetenek ağacının Savaş dalında, Atılma. Takla atamayan taklanın içinden vuramaz.',[{t:'Anladım',pri:1,f:lessons}],alp);return}
+  if(!free&&!plInf())coins-=l.c;renderInv();sfx('coin');L.cur={k:l.k,p:l.st.map(()=>0)};if(free)L.cur.free=1;lk='';
   FOE.n=0;FOE.t=0;
   say(`<b>${l.n}</b> · ${l.say}<br><br>Ders:<br>${l.st.map(s=>'• '+s[2]).join('<br>')}`,[{t:'Hazırım',pri:1,fresh:1,f:()=>{const a=spawnFoe(true);
     say(a?`Sana ${l.on} getirdim, işte orada. Üzerinde dene. Dişlerini körelttim, canını fazla yakmaz; ama kaçmaz da. Ölürse bir başkasını salarım.`:'Burada yer yok; biraz açıklığa çık, sonra yanıma gel.',[{t:'Başlayalım',pri:1,fresh:1,f:bye}],alp)}}],alp)}
@@ -13646,7 +13648,7 @@ function recap(){const c=L.cur;if(!c)return;const l=LK[c.k];const cur=l.st.findI
   say(`<b>${l.n}</b> · ${l.say}<br><br>Ders (sırayla):<br>${l.st.map((s,i)=>(i<cur||cur<0?'✓ ':i===cur?'▶ ':'• ')+s[2]+` <small>(${c.p[i]}/${s[1]})</small>`).join('<br>')}`,[{t:'Anladım, sürdürüyorum',pri:1,fresh:1,f:()=>{if(!foes().length){const a=spawnFoe(true);if(!a)toast('Biraz açıklığa çık; Börü yeni bir canavar salar',true)}bye()}},{t:'Dersi baştan başlat',f:()=>{c.p=l.st.map(()=>0);lk='';toast(`${l.n}: ders baştan başladı`);recap()}},{t:'Geri',f:lessons}],alp)}
 function quit(){recap()}
 function lessons(){const rows=[],ch=[];let next=null;
-  for(const l of LES){if(have(l.k)){rows.push(`✓ <b>${l.n}</b>`);continue}
+  for(const l of LES){if(have(l.k)){rows.push(`✓ <b>${l.n}</b>`);if(!L.cur&&ANIM[l.foe])ch.push({t:`${l.n} · tekrar çalış (ücretsiz)`,f:()=>start(l,true)});continue}   // v1.71: lessons you have learnt can be practised again for free
     if(L.cur&&L.cur.k===l.k){rows.push(`▶ <b>${l.n}</b> · derste (${L.cur.p.map((v,i)=>v+'/'+l.st[i][1]).join(', ')})`);continue}
     if(reqOK(l)){rows.push(`• <b>${l.n}</b> · ${l.c.toLocaleString('tr-TR')} sikke${l.s1&&!s1()?' · önce Atılma':''}`);if(!L.cur)ch.push({t:`${l.n} öğret (${l.c.toLocaleString('tr-TR')} sikke)`,pri:!ch.length,fresh:1,f:()=>start(l)})}
     else{if(!next)next=l;rows.push(`<span style="opacity:.6">🔒 ${l.n} · ${reqTxt(l)}</span>`)}}
@@ -13667,7 +13669,8 @@ function tellNew(){if(I2||V.a||ftut<3||onTitle||!met||wake||window.__plArena)ret
 const box=document.createElement('div');box.id='lesson';box.hidden=true;box.setAttribute('role','status');document.body.appendChild(box);
 let lk='';
 function renderHUD(){const c=L.cur,on=!!c&&!onTitle&&met&&!window.__plArena;if(!on){if(!box.hidden)box.hidden=true;return}const l=LK[c.k];const k=c.k+'|'+c.p.join(',');if(k===lk&&!box.hidden)return;lk=k;
-  box.innerHTML=`<b class="lt">BÖRÜ'NÜN DERSİ</b><div class="ln">${l.n}</div>`+l.st.map((s,i)=>`<div class="ls${c.p[i]>=s[1]?' ok':''}"><i>${Math.min(c.p[i],s[1])}/${s[1]}</i><span>${s[2]}</span></div>`).join('');box.hidden=false}
+  const ci=l.st.findIndex((s,i)=>c.p[i]<s[1]),si=ci<0?l.st.length-1:ci,st_=l.st[si];   // v1.71: one step at a time on the left (the next shows when this one is done)
+  box.innerHTML=`<b class="lt">BÖRÜ'NÜN DERSİ${c.free?' · TEKRAR':''}</b><div class="ln">${l.n}${l.st.length>1?` <small style="opacity:.7">· adım ${si+1}/${l.st.length}</small>`:''}</div><div class="ls${c.p[si]>=st_[1]?' ok':''}"><i>${Math.min(c.p[si],st_[1])}/${st_[1]}</i><span>${st_[2]}</span></div>`;box.hidden=false}
 
 {let tk=0;const _fb=frameBody;frameBody=function(){hush();const r=_fb.apply(this,arguments);try{if(!frozenNow()&&!window.__plArena){watch();if(tk%10===0)tickFoes()}if(++tk%15===0){renderHUD();if(tk%60===0)tellNew()}}catch(e){}return r}}
 
@@ -13934,6 +13937,19 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
 {const _rs=resetState;resetState=function(){const r=_rs.apply(this,arguments);try{const Q=window.__v55;if(Q){Q.a={};Q.d.length=0;Q.tr.length=0;Q.pin=null}for(const k in QC)delete QC[k];
    rockfall.cleared=false;for(const j of ROCK_CELLS)reach[j]=0;const V=window.__v65;if(V){V.seen=new Set();V.lastB=-1}}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v164: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v171">
+// v1.71: an even fighting rhythm: a creature never starts a new attack less than 1 s after its last one, and one that stands
+// in reach of you, angry and free, attacks again within about 2.5 s (no long freezes, no blow-after-blow strings)
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{const T=()=>performance.now()/1000,ST=new WeakMap();
+ const _ta=tickAnimals;tickAnimals=function(){const pre=new Map();for(const a of animals)pre.set(a,{w:a.wind||0,mv:a.mv,lu:a.lunge});const r=_ta.apply(this,arguments);
+  try{if(window.__plArena)return r;const t=T();for(const a of animals){const D=ANIM[a.k];if(!D||a.tut||D.temper==='zararsız')continue;let s=ST.get(a);if(!s){s={last:t-1.5};ST.set(a,s)}const p=pre.get(a)||{};
+    const started=(a.wind>0&&!(p.w>0))||(a.mv&&!p.mv)||(a.lunge&&!p.lu);
+    if(started){if(t-s.last<1.0&&!a.boss){a.wind=0;if(a.mv&&!p.mv)a.mv=null;if(a.lunge&&!p.lu)a.lunge=null;a.atk=Math.max(a.atk||0,1.0-(t-s.last))}else s.last=t;continue}
+    const d=Math.hypot(a.x-player.x,a.y-player.y),reach=(D.reach||26)+4;
+    if(a.mad&&a.st==='chase'&&!(a.stun>0)&&!a.mv&&!(a.wind>0)&&!a.lunge&&d<reach&&t-s.last>2.5&&(a.atk||0)>0)a.atk=0}}catch(e){}return r}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v171: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
