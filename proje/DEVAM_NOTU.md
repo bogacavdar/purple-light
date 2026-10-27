@@ -965,3 +965,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.40 (27 Ekim 2026)
 - Meşale + silah taşınırken kuşakta iki yuva birden yanar (ikisi de `.on`; v1.39'daki turuncu kesik çizgi kalktı). İkisine de tıklanır: meşale eldeyken silah yuvası silahı öteki ele alır/bırakır, meşale yuvası meşaleyi bırakır.
 - Menüde "Versiyon 1.40". chk.js 0 hata.
+
+## v1.41 (27 Ekim 2026)
+- İki el modeli (Boğaç): meşale her zaman **sol ele** geçer ve sol ele geçebilen tek eşya odur (`leftT`); geri kalan her şey sağ elde (`hand`). İkisi birbirinden bağımsız: meşale yuvasına basmak yalnızca meşaleyi takar/çıkarır, öteki yuvalar yalnızca sağ eli değiştirir. Kuşakta ikisi birden yanar. H (eli boşalt) yalnızca sağ eli boşaltır. Fare tekeri meşale yuvalarını atlar.
+- `torchHeld()` önce `leftT`'ye bakar; ışık, yanma süresi, sis, öğretici adımları hepsi bunu kullandığı için değişmeden çalışır. Eski kayıtta sağ elde duran meşale ilk karede sol ele taşınır (`tickTorch`). `leftT` kayda `lt` olarak yazılır.
+- Vuruş: sağ eldeki silah (yoksa "Silah" yuvası) vurur; ikisi de yoksa ve sol elde meşale varsa meşale vurur (7 hasar), o da yoksa yumruk. Meşale karakterin öbür elinde çizilir (`drawLeftT`).
+- v1.39–1.40'taki `offW` (meşalenin yanına silah alma) kaldırıldı; bu model onun yerini tutuyor.
+- Menüde "Versiyon 1.41". chk.js 0 hata.
