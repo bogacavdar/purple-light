@@ -981,3 +981,13 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.43 (27 Ekim 2026)
 - Yaşlı Ekin'in "10 farklı tarif öğren" görevi (`t10` yuvası, sıra ve kayıt anahtarı aynı) yerine **"Üç balık tut."**: Ağ ya da Olta yap, sudan 3 balık çıkar (`fishTotal>=3`; ödül aynı, 60 sikke + 30 XP). Zümrüt'ün "Kazanın dili" (toplam 10 tarif) göreviyle aynı şeyi istemesin diye (Boğaç).
 - Menüde "Versiyon 1.43". chk.js 0 hata.
+
+## v1.44 (27 Ekim 2026)
+- Yaşlı Ekin'in "10 tarif" (v1.43'te "Üç balık tut") yuvası dört göreve dönüştü, sırayla (Boğaç hepsini seçti); hepsi 60 sikke + 30 XP:
+  1. **Adayı tanı:** haritanın %30'unu keşfet (`exploredCount>=W*H*.3`).
+  2. **Geceleri uluyan kurdu avla:** görev alınınca kurt sayısı not edilir (`EKQ.wb`), sonra 1 kurt.
+  3. **Dışarıda kamp kur, bir gece ateşinin başında bekle:** gece, yanan bir kamp ateşinin 48px yakınında toplam 60 sn (`EKQ.cs`, `tickCamps` içinde sayılır).
+  4. **Bir tuzak kur ve içine düşeni al:** tuzaktan ilk av (`EKQ.tr`, tuzaktan av alınınca artar).
+- `EKQ` kayda `ekq` olarak yazılır; kayıt sürümü `qv:6`. Göç: `qv<6` kayıtta "10 tarif" yuvasını geçmiş oyuncunun `tut` değeri +3 kayar; tam o yuvadaysa ilk yeni görevden "konuş" durumunda başlar.
+- Not (Boğaç sordu): "Seviye 8'e ulaş" görevi ayrıca 250 sikkelik bir yetenek ister; ödül ikisi birden olunca verilir.
+- Menüde "Versiyon 1.44". chk.js 0 hata.
