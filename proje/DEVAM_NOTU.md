@@ -834,3 +834,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v121 (27 Ekim 2026) — Bağışıklık
 - `IMM` türleri (kristal canlılar, golemler, gölge muhafız, gök bekçisi, ışık engereği, dronlar, robotlar, goblin şamanı, kül cini, ejderler, lav golemi, hurda devi) ve reisler kovalarken ara sıra 2,5 sn bağışık olur (`a.imm`, bekleme 9–16 sn, ilki 4–9 sn): mavi parıltı, titreşen kalkan halkası, mavi kıvılcımlar, çınlama. Bu sürede hiçbir vuruş/büyü/mermi/kombo can götürmez (`imHp`'ye geri alınır, `killAnimal` işlemez, geri savrulmaz); vuruş sayıları mavi "Etkisiz" olur. Kendisi saldırmaya devam eder. Arena kartlarında "Bağışıklık" etiketi.
 - Menüde "Versiyon 121". chk.js 0 hata.
+
+## v122 (27 Ekim 2026) — Ritimli 2'li / 3'lü kombo
+- `v118-combo`'ya eklendi. Tek tıkla vuruştan sonra, vuruşun hareketi **bittiği an** (`tapDur`: p4 savuruşunun ant+str+fol süresi; asada `S.cd`, tabancada 0,42, pompalıda 1,05 sn) açılan **0,14 sn**'lik pencereye (`RW`) tıklanırsa 2. hamle (`c2`); o hamle bitince (kendi süresi) açılan pencereye tıklanırsa 3. hamle (`c3`, en güçlüsü). Pencereden önce tıklamak (hareket sürerken) zinciri kırar ve o tık boşa gider; hareket sürerken tekrar tekrar basmak da kırar. Pencereyi kaçırmak zinciri baştan başlatır. Pencere gösterilmez; tutunca hamlenin adı ve yükselen bir çınlama.
+- Çift tık artık 0,18 sn içindeki iki tık (`DBL`; eskiden 0,3) — ritim penceresiyle karışmasın diye.
+- Hamleler: Kılıç: Ters kesik (×1,5) → Ağır kesik (×2,6, sersemletir). Mızrak: Derin dürtme → Delip geçme (çok uzun, ×2,6). Balta: Yan savuruş → Kafa kıran (×3, sersemletir). Yumruk: Kroşe → Aparkat (×2,6). Meşale: Kor savuruşu → Alev kesiği (çevre). Asa: İkiz atış → Güç topu (×2,8). Ateşli silah: Seri atış → Delici mermi (×3,2, uzun menzil). Enerji 5–11 (arenada bedava), asa mana, silah mermi.
+- Menüde "Versiyon 122". chk.js 0 hata.
