@@ -730,3 +730,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Oyuna da yarayan düzeltme (v49-p4): v65 ve ACT 2 canlılarının reisleri gri kurt gibi çiziliyordu (reis çizimi p4'ün iç çizicisini çağırıyordu). Artık `window.__p2ART`'ta olmayan türlerin reisi bütün çizim zincirinden geçer ve elle büyütülür.
 - `window.__I1B` (v65, ada 1 bölge listeleri), `window.__p2ART` (v49-p2), `__p4.makeBoss`/`__p4.BIG` dışa açıldı.
 - Menüde "Versiyon 105". Kontrol: chk.js 0 hata (Boğaç'ın kuralı gereği başka test yapılmadı).
+
+## v106 (27 Ekim 2026) — Arena sınırı
+- Arena halkası duvar oldu: `blocked` sarmalandı; arenadayken halkanın merkezinden `AR.R-6` (138 px) uzağı dolu sayılır. Oyuncu yürüyerek, koşarak, atılarak ya da savrularak çıkamaz; canlılar (`moveA`, geri tepme, hamle) da çıkamaz. Asa mermileri kenarda söner (onlar da `blocked`'a bakıyor); canlıların attıkları kenardan geçebilir.
+- Menüde "Versiyon 106". chk.js 0 hata.

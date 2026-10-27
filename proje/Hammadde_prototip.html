@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 105</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 106</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -12476,6 +12476,8 @@ function drawRing(time){const c=AR.center,R=AR.R;if(!c)return;
 function brazier(x,y,time,i){x=Math.round(x);y=Math.round(y);px(x-3,y-1,7,2,'rgba(0,0,0,.25)');px(x-1,y-10,3,10,'#4a3a2a');px(x-4,y-13,9,3,'#6a5a48');px(x-4,y-13,9,1,'#8a7a62');
   const f=Math.sin(time*9+i*1.7);px(x-2,y-17-Math.round(f),5,4,'#ff8a2a');px(x-1,y-19-Math.round(f*1.5),3,3,'#ffd060');px(x,y-20-Math.round(f*2),1,1,'#fff4c0');
   if(Math.random()<.08)parts.push({x:x+(Math.random()-.5)*4,y:y-18,vx:(Math.random()-.5)*6,vy:-16,life:.5,c:'#ffb040'})}
+// v105.1: the ring is a wall: nobody walks, dashes or is knocked out of it (everything that moves asks blocked())
+{const _bl=blocked;blocked=function(px_,py_){if(AR.on&&AR.center&&Math.hypot(px_-AR.center.x,py_-AR.center.y)>AR.R-6)return true;return _bl.apply(this,arguments)}}
 {const _dg=drawGraves;drawGraves=function(){if(AR.on)try{drawRing(performance.now()/1000)}catch(e){}return _dg.apply(this,arguments)}}
 {const _ve=v55Ents;v55Ents=function(ents,time){if(_ve)_ve.apply(this,arguments);if(!AR.on||!AR.center)return;const c=AR.center,R=AR.R+10;
   for(let i=0;i<8;i++){const a=i/8*Math.PI*2+Math.PI/8,x=c.x+Math.cos(a)*R,y=c.y+Math.sin(a)*R;ents.push({y,d:()=>brazier(x,y,time,i)})}}}
