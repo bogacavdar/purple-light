@@ -1332,7 +1332,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.35</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.36</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -2362,12 +2362,18 @@ addEventListener('keydown',e=>{
   if(e.code==='KeyG'&&!e.repeat){toggleQuests();e.preventDefault();return}
   if(MK[e.code]&&!e.repeat){if(MK[e.code]==='shop'&&$('b-shop').classList.contains('locked')){toast($('b-shop').dataset.tip||'Malzemeci kilitli: bir toplama aletinin tarifini bul',true);return}openMenu(MK[e.code]);e.preventDefault();return}
   if(KEYMAP[e.code]){keys[KEYMAP[e.code]]=true;e.preventDefault()}
-  if(e.code==='KeyE'&&!e.repeat){if(window.__plArena&&eAttacks())attack();else{const tg=eTarget();if(tg)interact(tg)}e.preventDefault()}   // v1.35: E gathers and talks, it never strikes (Q and the mouse do)
+  if(e.code==='KeyE'&&!e.repeat){const tg=eTarget();if(!eFirst(tg)&&tg)interact(tg);e.preventDefault()}   // v1.35: E gathers and talks, it never strikes (Q and the mouse do) · v1.36: not in the arena either, and loose things come before a tree or a rock
 });
 // v109: with a weapon in hand (sword, spear, staff, gun) E strikes like Space; people, stations, the bag and the purple traces still answer E
 const E_TALK=new Set(['npc','pot','witch','farmer','market','smith','durmus','trader','wiz','usta','alp','carp','denizci','kaptan','toygar','xtra','lamp','balik','dog','placed','grave','clue','bridge','rockfall','v46']);
 const weaponHeld=()=>{const h=held();return !!(h&&GT[h]&&['sword','hunt','staff','gun'].indexOf(GT[h].kind)>=0)};
 function eTarget(){const sv=animals.slice();animals.length=0;let tg=null;try{tg=target()}catch(x){tg=null}finally{for(const a of sv)animals.push(a)}return tg}   // v1.35: what E reaches when creatures are left out
+function ePick(){let any=false;const L=[];for(const d of drops){if(d.t<1||d.age<.3)continue;const dd=Math.hypot(d.x-player.x,d.y-player.y+2);if(dd<28)L.push([dd,d])}   // v1.36: E sweeps up what lies at your feet
+  L.sort((a,b)=>a[0]-b[0]);for(const [,d] of L){const i=drops.indexOf(d);if(i<0)continue;drops.splice(i,1);add(d.n);any=true;for(let k=0;k<5;k++)parts.push({x:d.x,y:d.y-3,vx:(Math.random()-.5)*30,vy:-20-Math.random()*20,life:.35,c:'#fff2b0'})}
+  if(any)try{sfx('pick')}catch(x){}return any}
+function eFirst(tg){if(sailing||wake)return false;const hard=!tg||tg.kind==='tree'||(tg.kind==='node'&&tg.n&&tg.n.mine);if(!hard)return false;if(ePick())return true;if(!tg)return false;   // v1.36: with an axe or a pick, E first takes the loose things and the bushes, then the tree or the rock
+  let best=null,bd=REACH*(sk('H4')?1.5:1);for(const n of PERF.vis){if(!n.alive||n.mine)continue;const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;best=n}}
+  if(best){interact({kind:'node',n:best});return true}return false}
 function eAttacks(){if(!weaponHeld())return false;let tg=null;try{tg=target()}catch(x){tg=null}return !(tg&&E_TALK.has(tg.kind))}
 let fHold=0;
 addEventListener('keyup',e=>{if(e.code==='KeyF'&&fHold){const h=fHold;fHold=0;if(h!==-1){clearTimeout(h);if(!onTitle&&!paused&&!wake&&!dlgOpen){eatBest();renderTut()}}}if(KEYMAP[e.code])keys[KEYMAP[e.code]]=false;if(e.code==='ShiftLeft'||e.code==='ShiftRight')keys.shift=false});
@@ -5180,6 +5186,7 @@ function toolHint(k){const h=heldKind(k);if(h)return `${h} körelmiş · Demirci
 function needTool(k){const m=toolHint(k);if(m){toast(m,true);const L=hotList(),i=L.findIndex(n=>GT[n]&&GT[n].kind===k);if(i>=0)pulseHot(i);else $('b-inv').classList.add('pulse');sfx('bad');return true}return false}
 function pulseHot(i){const b=document.querySelector(`#hotbar [data-hs="${i}"]`);if(b){b.classList.remove('pulse');void b.offsetWidth;b.classList.add('pulse');setTimeout(()=>b.classList.remove('pulse'),2400)}}
 function setHand(i){const L=hotList();hand=i>=0&&i<hotN()?i:-1;const h=held();
+  try{if(h&&isTorch(h)&&!equip.silah&&!window.__plTH&&met&&Object.keys(inv).some(n=>inv[n]>0&&slotOf(n)==='silah')){window.__plTH=1;setTimeout(()=>toast('İpucu: çantadan bir silaha dokunup "Silah olarak tak" de; meşale elindeyken o silah vurur.'),200)}}catch(x){}   // v1.36: torch in one hand, weapon on the back
   if(h&&PLACEABLE.has(h))startPlace(h);else if(placing&&!placing.moving)placing=null;
   stopGather();hotK='';renderHot();renderPlaceUI()}
 function selectHot(i){setHand(i===hand?-1:i);sfx('pick')}
@@ -5651,7 +5658,7 @@ function weapon(){let h=held();if(!h||!GT[h]||GT[h].kind==='torch')h=equip.silah
   if(k==='sword')return{n:h,dmg:WDMG[h]||12,reach:22,cd:.42};
   if(k==='hunt')return{n:h,dmg:WDMG[h]||10,reach:30,cd:.6};
   if(k==='axe'||k==='pick')return{n:h,dmg:8,reach:20,cd:.5};
-  return{n:null,dmg:4,reach:16,cd:.45}}
+  return torchHeld()?{n:null,dmg:7,reach:19,cd:.48,torch:1}:{n:null,dmg:4,reach:16,cd:.45}}   // v1.36: no second weapon on your back → the torch itself strikes
 let atkCd=0,swing=null,lastBitten=-1e9;
 // running from an attack: no gathering until you are clear (so a mis-tap does not stop you at a stone)
 function underAttack(){if(performance.now()-lastBitten<3000)return true;for(const a of animals)if(a.st==='chase'&&Math.hypot(a.x-player.x,a.y-player.y)<170)return true;return false}
@@ -6730,7 +6737,7 @@ function fogNoise(){if(FOGN)return FOGN;const N=128,c=document.createElement('ca
 function drawFog(dt,Wc,Hc,thick,dk){const fw=Math.max(16,Math.ceil(Wc/6)),fh=Math.max(16,Math.ceil(Hc/6));if(!FOGL||FOGL.width!==fw||FOGL.height!==fh){FOGL=document.createElement('canvas');FOGL.width=fw;FOGL.height=fh}
   const g=FOGL.getContext('2d'),k=fw/Wc*S*dpr,tm=performance.now()/1000,nz=fogNoise(),col=dk>.5?'62,70,94':'226,232,228',nk=1-Math.min(1,dk)*.35;
   g.setTransform(1,0,0,1,0,0);g.globalCompositeOperation='source-over';g.globalAlpha=1;g.clearRect(0,0,fw,fh);g.imageSmoothingEnabled=true;
-  for(const [tile,par,vx,vy,al] of [[620,1,9,2,.85],[380,.82,15,-3,.6]]){const ts=tile*k,ox=-((((cam.cx*par+tm*vx*(1+wind))*k)%ts)+ts)%ts,oy=-((((cam.cy*par+tm*vy)*k)%ts)+ts)%ts;g.globalAlpha=Math.min(1,thick*al*1.6*nk);
+  for(const [tile,par,vx,vy,al] of [[620,1,2.2,.45,.85],[380,.82,3.1,.65,.6]]){const ts=tile*k,ox=-((((cam.cx*par+tm*vx*(1+wind*.4))*k)%ts)+ts)%ts,oy=-((((cam.cy*par+tm*vy)*k)%ts)+ts)%ts;g.globalAlpha=Math.min(1,thick*al*1.6*nk);
     for(let y=oy;y<fh;y+=ts)for(let x=ox;x<fw;x+=ts){const X0=Math.floor(x),Y0=Math.floor(y);g.drawImage(nz,X0,Y0,Math.floor(x+ts)-X0,Math.floor(y+ts)-Y0)}}
   g.globalAlpha=1;g.globalCompositeOperation='source-atop';g.fillStyle=`rgb(${col})`;g.fillRect(0,0,fw,fh);
   g.globalCompositeOperation='destination-over';g.fillStyle=`rgba(${col},${(thick*.35).toFixed(3)})`;g.fillRect(0,0,fw,fh);
@@ -9446,7 +9453,7 @@ const _killAnimal=killAnimal;killAnimal=function(a){const boss=!!a.boss,base=a.b
 
 // ================================================================ 3 · combat feel
 // what is in the hand decides how the swing looks, costs and recovers
-function p4Kind(){const h=held();if(h&&GT[h]&&GT[h].kind==='torch')return{k:'torch',n:h};const w=weapon();if(!w.n)return{k:'fist',n:null};const g=GT[w.n]?GT[w.n].kind:'';return{k:g==='sword'?'sword':g==='hunt'?'spear':'axe',n:w.n}}
+function p4Kind(){const h=held(),w=weapon();if(h&&GT[h]&&GT[h].kind==='torch'&&!w.n)return{k:'torch',n:h};if(!w.n)return{k:'fist',n:null};const g=GT[w.n]?GT[w.n].kind:'';return{k:g==='sword'?'sword':g==='hunt'?'spear':'axe',n:w.n}}
 const P4K={fist:{cost:4,ant:.05,str:.06,fol:.12,col:'#ffffff'},sword:{cost:8,ant:.06,str:.07,fol:.16,col:'#e8f4ff'},spear:{cost:9,ant:.08,str:.07,fol:.16,col:'#f0e8d0'},
   axe:{cost:10,ant:.09,str:.08,fol:.18,col:'#ffd8a0'},torch:{cost:5,ant:.06,str:.08,fol:.18,col:'#ffb040'}};
 const stLow=()=>{const m=maxSt();return m>0?st/m:1};
@@ -13072,7 +13079,7 @@ const PHN=(()=>{try{return !matchMedia('(hover:hover) and (pointer:fine)').match
 const FX=[],SPR=[],PUSH={vx:0,vy:0,t:0};window.__plSPR=SPR;
 const now=()=>performance.now()/1000;
 const P4=()=>window.__p4||{};
-function kindOf(){const h=held();if(h&&GT[h]){const g=GT[h].kind;if(g==='staff')return 'staff';if(g==='gun')return 'gun';if(g==='torch')return 'torch'}
+function kindOf(){const h=held();if(h&&GT[h]){const g=GT[h].kind;if(g==='staff')return 'staff';if(g==='gun')return 'gun';if(g==='torch'&&!weapon().n)return 'torch'}
   const w=weapon();if(!w.n)return 'fist';const g=GT[w.n]?GT[w.n].kind:'';return g==='sword'?'sword':g==='hunt'?'spear':g==='axe'||g==='pick'?'axe':'fist'}
 function aim(){return Math.atan2(C.my-(player.y-6),C.mx-player.x)}
 function faceTo(a){const c=Math.cos(a),s=Math.sin(a);player.face=Math.abs(c)>=Math.abs(s)?{x:Math.sign(c)||1,y:0}:{x:0,y:Math.sign(s)||1}}
@@ -13098,7 +13105,7 @@ const line=(ang,len,w)=>(dx,dy,d,R)=>{const c=Math.cos(ang),s=Math.sin(ang),al=d
 function reach(){return base().w.reach}
 // pictures
 function fx(o){o.t=0;FX.push(o)}
-function swingP4(k,ang,dir,r){try{const p=P4();p.sw={t:0,k:k==='spear'?'spear':k==='axe'?'axe':k==='fist'?'fist':k==='torch'?'torch':'sword',n:held()||weapon().n,ang,dir,r:Math.max(14,r),ant:.02,str:.07,fol:.13,col:'#ffffff',trail:[],hit:false,slow:1}}catch(e){}}
+function swingP4(k,ang,dir,r){try{const p=P4();p.sw={t:0,k:k==='spear'?'spear':k==='axe'?'axe':k==='fist'?'fist':k==='torch'?'torch':'sword',n:(torchHeld()&&weapon().n)||held()||weapon().n,ang,dir,r:Math.max(14,r),ant:.02,str:.07,fol:.13,col:'#ffffff',trail:[],hit:false,slow:1}}catch(e){}}
 function push(ang,dist,t){PUSH.vx=Math.cos(ang)*dist/t;PUSH.vy=Math.sin(ang)*dist/t;PUSH.t=t;pInv=Math.max(pInv,t*.8)}
 const later=(ms,f)=>setTimeout(()=>{try{if(!frozenNow())f()}catch(e){}},ms);
 
@@ -13181,7 +13188,7 @@ function doMove(type){const k=kindOf(),M=CB[k]&&CB[k][type];if(!M)return false;i
 // ------------------------------------------------------------------ input
 function comboOK(e){if(e.pointerType!=='mouse'||e.button!==0||e.target!==cv)return false;if(!canTap()||placing||frozenNow())return false;try{if(canLeaveDlg())return false}catch(x){}
   const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S;let tg=null;try{tg=pickAt(wx,wy).tg}catch(x){tg=null}if(tg&&E_TALK.has(tg.kind))return false;
-  if(weaponHeld())return true;const k=kindOf();if(window.__plArena)return true;if((k==='axe'||k==='torch')&&tg&&tg.kind==='animal')return true;return false}
+  if(weaponHeld())return true;const k=kindOf();if(window.__plArena)return true;if((k==='axe'||k==='torch'||torchHeld())&&tg&&tg.kind==='animal')return true;return false}
 cv.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;C.mx=cam.cx+e.clientX/S;C.my=cam.cy+e.clientY/S});
 addEventListener('pointerdown',e=>{if(!comboOK(e))return;e.stopPropagation();e.preventDefault();C.mx=cam.cx+e.clientX/S;C.my=cam.cy+e.clientY/S;goal=null;
   const t=now(),sinceDash=t-C.dashEnd,inDash=!!dodge;
@@ -13653,7 +13660,7 @@ function fake(type,P){const x=(P.x-cam.cx)*S,y=(P.y-cam.cy)*S;let ev;
 let down=null;
 function press(e){e.preventDefault();e.stopPropagation();if(document.body.classList.contains('b5edit'))return;if(!canTap()||placing)return;
   const P=aimPoint(),k=kind();if(P.a){const dx=P.a.x-player.x,dy=P.a.y-player.y;player.face=Math.abs(dx)>=Math.abs(dy)?{x:Math.sign(dx)||1,y:0}:{x:0,y:Math.sign(dy)||1}}
-  const viaMouse=weaponHeld()||window.__plArena||((k==='axe'||k==='torch')&&P.a);
+  const viaMouse=weaponHeld()||window.__plArena||((k==='axe'||k==='torch'||torchHeld())&&P.a);
   atk.classList.add('dn');
   if(!viaMouse){attack({x:P.x,y:P.y+6});down={plain:true};return}
   down={P};try{atk.setPointerCapture(e.pointerId)}catch(x){}fake('pointerdown',P)}

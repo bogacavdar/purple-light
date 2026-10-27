@@ -941,3 +941,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.35 (27 Ekim 2026)
 - E artık hiç saldırmaz: yalnızca toplar ve konuşur/kullanır. Yakındaki yaratıklar E'nin hedefinden çıkarılır (`eTarget`), bu yüzden bir hayvanın yanında bile E arkasındaki malzemeyi, kişiyi ya da istasyonu bulur. Vuruş Q ve fareyle. Hayvan ipucu "Q · vur" gösterir. Arenada E eskisi gibi vurur.
 - Menüde "Versiyon 1.35". chk.js 0 hata.
+
+## v1.36 (27 Ekim 2026)
+- Arenada da E vurmaz; vuruş her yerde Q ve fareyle (E işleyicisindeki arena dalı kaldırıldı).
+- E önceliği toplamada: hedef ağaç ya da maden (veya hiç hedef yok) ise E önce 28px içindeki yere düşmüş eşyaların hepsini anında toplar (`ePick`), yoksa REACH içindeki maden olmayan bir kaynağı (çalı, taş, yaprak…) toplar; ancak ikisi de yoksa ağaca/madene vurur (`eFirst`). Ağaç kesip E'ye basınca düşenlerin ağaçla çakışması böylece çözüldü.
+- Meşale + ikinci silah: meşale eldeyken karakterin "Silah" yuvasındaki silah vurur (hasar, menzil ve savurma görseli o silahın; `p4Kind`, `kindOf`, `swingP4` güncellendi; fareyle hayvana tıklayınca da vurur). Yuvada silah yoksa meşalenin kendisi vurur (7 hasar, 19 menzil; yumruk 4). Meşale ilk kez ele alındığında yuva boşsa ve çantada silah varsa bir kez ipucu çıkar.
+- Sis daha ağır ve tek yönde akar: iki katman da aynı yöne (sağa, hafif aşağı), hızlar 9/15 → 2.2/3.1, rüzgârın etkisi 0.4'e indi.
+- Menüde "Versiyon 1.36". chk.js 0 hata.
