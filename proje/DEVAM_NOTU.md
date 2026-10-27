@@ -937,3 +937,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Yerde duran (henüz toplanmamış) yaprak artık çalı değil, çimenin üstünde tek bir yaprak (Boğaç'ın seçimi "B · Tek yaprak"; v49-p1 içindeki `P1W['Yaprak']`). Envanter simgesi değişmedi.
 - Kontrol: chk.js 0 hata; oyun açılıyor; yerdeki yaprak ve envanterdeki mızraklara bakıldı.
 - Menüde "Versiyon 1.34".
+
+## v1.35 (27 Ekim 2026)
+- E artık hiç saldırmaz: yalnızca toplar ve konuşur/kullanır. Yakındaki yaratıklar E'nin hedefinden çıkarılır (`eTarget`), bu yüzden bir hayvanın yanında bile E arkasındaki malzemeyi, kişiyi ya da istasyonu bulur. Vuruş Q ve fareyle. Hayvan ipucu "Q · vur" gösterir. Arenada E eskisi gibi vurur.
+- Menüde "Versiyon 1.35". chk.js 0 hata.

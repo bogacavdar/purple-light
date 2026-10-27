@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.34</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.35</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -2358,11 +2358,12 @@ addEventListener('keydown',e=>{
   if(e.code==='KeyG'&&!e.repeat){toggleQuests();e.preventDefault();return}
   if(MK[e.code]&&!e.repeat){if(MK[e.code]==='shop'&&$('b-shop').classList.contains('locked')){toast($('b-shop').dataset.tip||'Malzemeci kilitli: bir toplama aletinin tarifini bul',true);return}openMenu(MK[e.code]);e.preventDefault();return}
   if(KEYMAP[e.code]){keys[KEYMAP[e.code]]=true;e.preventDefault()}
-  if(e.code==='KeyE'&&!e.repeat){if(eAttacks())attack();else interact();e.preventDefault()}
+  if(e.code==='KeyE'&&!e.repeat){if(window.__plArena&&eAttacks())attack();else{const tg=eTarget();if(tg)interact(tg)}e.preventDefault()}   // v1.35: E gathers and talks, it never strikes (Q and the mouse do)
 });
 // v109: with a weapon in hand (sword, spear, staff, gun) E strikes like Space; people, stations, the bag and the purple traces still answer E
 const E_TALK=new Set(['npc','pot','witch','farmer','market','smith','durmus','trader','wiz','usta','alp','carp','denizci','kaptan','toygar','xtra','lamp','balik','dog','placed','grave','clue','bridge','rockfall','v46']);
 const weaponHeld=()=>{const h=held();return !!(h&&GT[h]&&['sword','hunt','staff','gun'].indexOf(GT[h].kind)>=0)};
+function eTarget(){const sv=animals.slice();animals.length=0;let tg=null;try{tg=target()}catch(x){tg=null}finally{for(const a of sv)animals.push(a)}return tg}   // v1.35: what E reaches when creatures are left out
 function eAttacks(){if(!weaponHeld())return false;let tg=null;try{tg=target()}catch(x){tg=null}return !(tg&&E_TALK.has(tg.kind))}
 let fHold=0;
 addEventListener('keyup',e=>{if(e.code==='KeyF'&&fHold){const h=fHold;fHold=0;if(h!==-1){clearTimeout(h);if(!onTitle&&!paused&&!wake&&!dlgOpen){eatBest();renderTut()}}}if(KEYMAP[e.code])keys[KEYMAP[e.code]]=false;if(e.code==='ShiftLeft'||e.code==='ShiftRight')keys.shift=false});
@@ -2649,7 +2650,7 @@ function updatePrompt(){
   else if(tg.kind==='clue')html=`<kbd>E</kbd>Mor parıltıya bak`;
   else if(tg.kind==='grave')html=`<kbd>E</kbd>Eşyalarını geri al`;
   else if(tg.kind==='plot')html=`Satılık arsa · Taş ev: Marangoz Rıza'dan (Seviye 8, 2500 sikke)`;
-  else if(tg.kind==='animal'){const w=weapon();html=`<kbd>E</kbd>${tg.a.k} <span style="color:${TEMPC[(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)]}">(${(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)})</span>: ${(()=>{const h=held(),k=h&&GT[h]&&GT[h].kind;return k==='staff'||k==='gun'?'ateş et · '+h:'vur · '+(w.n||'yumruk')+' '+Math.round(w.dmg*(1+.03*(lvl-1)))+' hasar'})()}`;warn=(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)==='saldırgan'}
+  else if(tg.kind==='animal'){const w=weapon();html=`<kbd>Q</kbd>${tg.a.k} <span style="color:${TEMPC[(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)]}">(${(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)})</span>: ${(()=>{const h=held(),k=h&&GT[h]&&GT[h].kind;return k==='staff'||k==='gun'?'ateş et · '+h:'vur · '+(w.n||'yumruk')+' '+Math.round(w.dmg*(1+.03*(lvl-1)))+' hasar'})()}`;warn=(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)==='saldırgan'}
   else if(tg.kind==='placed'&&HOUSESET.has(tg.o.n)){html=houseHint(tg.o)}
   else if(tg.kind==='placed'){const o=tg.o;html=/yatak/i.test(o.n)?(isNight()?`<kbd>E</kbd>Yatakta uyu`:`Yatak · gece uyunur (şimdi ${hhmm()})`):o.n==='Atölye'?`<kbd>E</kbd>Atölyeyi aç${o.ws&&o.ws.out?` · ${o.ws.out} ürün hazır`:''}`:`${o.n} · taşımak için üstüne basılı tut`}
   else if(tg.kind==='node'&&tg.n.mine){const M=MINES[tg.n.name],pk=useTool('pick'),need=ORE_TIER[tg.n.name]||1;if(pk&&(PICK_TIER[pk]||1)<need){html=`${M.l} · ${PICK_FOR(need)} ya da daha iyisi gerekli`;warn=true}else if(pk)html=`<kbd>E</kbd>${M.l} · kaz (${tg.n.left} vuruş kaldı) · ${pk} ${nn(toolDur[pk],GT[pk].dur)}/${GT[pk].dur}`;else{html=(ownsKind('pick')?toolHint('pick'):'')||`${M.l} · kazma gerekli`;warn=true}}
