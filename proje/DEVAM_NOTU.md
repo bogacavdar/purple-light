@@ -1003,3 +1003,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.47 (27 Ekim 2026)
 - Yaratık can çubuğu: eskiden yalnızca dolu kısım parlak çiziliyordu, boş kısım neredeyse siyahtı (`#11170f`); bu yüzden yarı canlı bir öküz "canı çok az" gibi görünüyordu (Boğaç). Yeni `hpBar(x,y,w,k)`: koyu çerçeve, görünür koyu kırmızı boş kısım, renk yeşil (>%50) → sarı (>%25) → kırmızı. Dört çizim yolunun hepsi kullanıyor; büyük hayvanlarda çubuk sprite genişliğine göre (M.W·0,7, 14–32 px). Yaban öküzünün canı kodda 860 (değişmedi).
 - Menüde "Versiyon 1.47". chk.js 0 hata.
+
+## v1.48 (27 Ekim 2026)
+- Büyük nehir kuzeyde ve güneyde denize kadar akar: eskiden kıyı kumu (`edge<13`) nehri ezip iki ucta yürünebilir bir şerit bırakıyordu; artık büyük nehrin kendi ıslaklık haritası (`wetD`, RIV[DIVA..DIVB]) kumdan önce gelir. Doğuya tek geçiş köprü. (Harita her açılışta aynı üretilir; o şeritte kaydedilmiş bir oyuncu suya düşebilir, çok küçük ihtimal.)
+- Haritada ölünen yerler (`graves`) büyük piksel kuru kafa (7×7, küçük haritada 14 px, büyükte 21 px), arkasında yanıp sönen mor hale.
+- Hileler tek tek (Boğaç): ana menüdeki "Hile modu" yalnızca seçenekleri gösterir, kendiliğinden hiçbir hile açılmaz. Oyun içindeki Ayarlar'da ayrı anahtarlar: **Tanrı modu** (`b5god`), **Hile paneli** (`b5pad`, sağdaki kırmızı panel), **Hile kısayolları** (`b5keys`, Z/X), Gece ışığı, Sınırsız sikke, Bütün ara sahneler; düğmeler: ACT 2, seviye, harita. Sayfa her açıldığında bu anahtarların hepsi kapalı başlar (`settings` yüklenince sıfırlanır).
+- Tanrı modu: `window.__plGod`; her karenin başında ve sonunda can, açlık (100), enerji ve mana doldurulur, `tired` kalkar; `hurt` ve `faint` Tanrı modunda hiçbir şey yapmaz.
+- Menüde "Versiyon 1.48". chk.js 0 hata.
