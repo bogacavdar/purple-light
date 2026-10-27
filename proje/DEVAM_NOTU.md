@@ -1039,3 +1039,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.53 (27 Ekim 2026)
 - Balık kapanı tarif kitabında açılmıyordu: bir tarifin açılması için girdilerinin hepsinin "görülmüş" olması gerekiyor; v1.52'de girdisi Sepet olunca, eline hiç Sepet geçmemiş oyuncuda kapan kapalı kalıyordu. `isOpen`: tarifini öğrendiğin bir eşya da görülmüş sayılır. Böylece Sepet'i öğrenen (İp ve Dal'ı da görmüş) oyuncunun kitabında Balık kapanı açılır. Akış: kitapta açılır → Zümrüt'ün kazanında öğren → Dursun örsünde döver.
 - Menüde "Versiyon 1.53". chk.js 0 hata; oyunda isOpen('Balık kapanı') Sepet öğrenilince true oluyor.
+
+## v1.54 (27 Ekim 2026)
+- **Yaprak barınağı:** "Yaprak barınağı" görevi açıkken malzemeler (8 Dal, 12 Yaprak, 4 Lif) çantadaysa ve barınağın yoksa, Rıza ile konuşmak doğrudan siparişler listesini açar (`talkCarp` sarmalayıcısı, `<script id="v154">`); listeden Yaprak barınağı seçilip bitirilir.
+- **Hile paneli:** sağdaki kırmızı panelin üstünde arama kutusu (bütün eşyalar: hile malzemeleri, fiyat listesi ve tarif sonuçları; en fazla 40 sonuç) ve miktar seçimi 1 / 10 / 50 / 100 (varsayılan 10). Kutuda yazarken oyun tuşları çalışmaz; Esc aramayı temizler.
+- **Bölgeye git dersleri** (Börü'nün dövüş dersleri "Bataklık'a git" vb., `V.b`): haritada bir bölgenin en az 60 kara karesi açıldıysa oraya gidilmiş sayılır (3 sn'de bir hesaplanır). Bataklık ve Kayalık Dağ'da nehirden 14 kareden yakın yerler sayılmaz; karşı kıyıdan görmek yetmez.
+- Menüde "Versiyon 1.54". chk.js 0 hata; oyun hatasız açılıyor; hile panelinde "tunç" araması 10 sonuç veriyor, 50 seçilince 50 ekleniyor.

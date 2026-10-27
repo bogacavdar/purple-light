@@ -1330,7 +1330,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.53</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.54</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -13814,6 +13814,36 @@ if(ISLE!==2)try{
  setInterval(()=>{try{if(onTitle)return;const k=key();if(k0&&k!==k0)saveTo('auto');k0=k}catch(e){}},1000);
  const bye_=()=>{try{if(!onTitle)saveTo('auto')}catch(e){}};addEventListener('pagehide',bye_);addEventListener('beforeunload',bye_)}
 }).toString()+')()')}catch(e){try{window.__hamErr('v150: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v154">
+// v1.54: Rıza opens his shop at once when you bring the shelter's things · the cheat panel searches every item and adds 1/10/50/100 · lands you have explored count as reached
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+// 1 · the leaf shelter: with the materials in the bag, talking to Rıza goes straight to his list
+{const _tc=talkCarp;talkCarp=function(){try{const H=HOUSES.find(h=>h.n==='Yaprak barınağı');const Q=window.__v55;
+   const want=carp.met&&H&&!carpOK(H)&&!has('Yaprak barınağı')&&!placed.some(o=>o.n==='Yaprak barınağı')&&Q&&Q.a&&Q.a.carp1;
+   if(want){openCarp();toast('Malzemeler hazır: Yaprak barınağı\'nı seç, Rıza yapsın');return}}catch(e){}return _tc.apply(this,arguments)}}
+// 2 · cheat panel: search and amount
+{const pad=$('cheatpad'),cres=$('cres');if(pad&&cres&&!$('csrch')){
+  const box=document.createElement('div');box.className='cbox';
+  box.innerHTML='<input id="csrch" type="search" placeholder="Eşya ara…" aria-label="Hile: eşya ara" autocomplete="off"><div class="camt" role="radiogroup" aria-label="Miktar">'+[1,10,50,100].map(n=>`<button type="button" data-camt="${n}"${n===10?' class="on"':''}>${n}</button>`).join('')+'</div>';
+  pad.insertBefore(box,cres);let AMT=10;const inp=$('csrch');
+  const st=document.createElement('style');st.textContent='#cheatpad .cbox{display:flex;flex-direction:column;gap:4px;padding:6px;background:rgba(40,8,10,.85);border:2px solid #ff6a5a;width:204px;box-sizing:border-box}#cheatpad .cbox input{font:inherit;font-size:13px;padding:4px 6px;background:#1c1416;border:1px solid #8a3a30;color:#ffe0d8;width:100%;box-sizing:border-box}#cheatpad .camt{display:flex;gap:3px}#cheatpad .camt button{flex:1;padding:3px 0;font-size:12px}#cheatpad .cres .cnm{display:none}';document.head.appendChild(st);
+  const ALL=()=>{const S=new Set(CHEAT_RES);for(const k in PRICE)S.add(k);for(const x of DB.R)S.add(x.r);return [...S].filter(n=>n&&!/^__/.test(n))};
+  const norm=t=>String(t).toLocaleLowerCase('tr-TR');
+  let base='';
+  function draw(){const q=norm(inp.value.trim());if(!base)base=cres.innerHTML;if(!q){cres.innerHTML=base;cres.querySelectorAll('[data-cr] span').forEach(x=>x.textContent='+'+AMT);return}
+    const L=ALL().filter(n=>norm(n).includes(q)).sort((a,b)=>(norm(a).indexOf(q)-norm(b).indexOf(q))||a.localeCompare(b,'tr')).slice(0,40);
+    cres.innerHTML=L.length?L.map(n=>`<button type="button" data-cr="${esc(n)}" title="+${AMT} ${esc(n)}" aria-label="Hile: +${AMT} ${esc(n)}"><img src="${icon(n)}" alt=""><span>+${AMT}</span></button>`).join(''):'<small style="grid-column:1/-1;color:#ffd0c8">Bulunamadı</small>'}
+  inp.addEventListener('input',draw);
+  for(const ev of ['keydown','keyup','keypress'])inp.addEventListener(ev,e=>{if(e.key==='Escape'){inp.value='';draw();inp.blur()}e.stopPropagation()});
+  pad.addEventListener('click',e=>{const a=e.target.closest('[data-camt]');if(a){AMT=+a.dataset.camt;pad.querySelectorAll('[data-camt]').forEach(b=>b.classList.toggle('on',b===a));
+      cres.querySelectorAll('[data-cr] span').forEach(s=>s.textContent='+'+AMT);e.stopPropagation();return}
+    const b=e.target.closest('[data-cr]');if(!b)return;e.stopPropagation();e.preventDefault();const n=b.dataset.cr;if(!n||onTitle)return;gain(n,AMT);sfx('pick');toast(`Hile: +${AMT} ${n}`);renderInv();if(craftOpen)renderCraft();renderTut()},true)}}
+// 3 · a land counts as reached when you have explored it on the map (the far bank seen from across the river does not count)
+{const V=window.__v128;let tk=0;setInterval(()=>{try{if(onTitle||!V||ISLE===2)return;if(++tk%3)return;const cnt=[0,0,0,0,0,0];
+   for(let y=0;y<H;y++){const rx=RIVX[y];for(let x=0;x<W;x++){const i=y*W+x;if(!explored[i]||tiles[i]>2)continue;const b=BIO[i];if((b===2||b===3)&&x-rx<14)continue;cnt[b]++}}
+   let m=V.b||0;for(let b=5;b>m;b--)if(cnt[b]>=60){m=b;break}if(m>(V.b||0))V.b=m}catch(e){}},1000)}
+}).toString()+')()')}catch(e){try{window.__hamErr('v154: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
