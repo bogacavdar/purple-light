@@ -695,3 +695,22 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v102 (27 Ekim 2026)
 - Önceden kazanılan başarımlar da ilk açılışta "YENİ" görünür: görülenler kümesi yeni anahtarda (`hammadde.achseen2`) boş başlar (v101'in `hammadde.achseen` anahtarı artık kullanılmıyor). Sayaç oyuncu kartlara baktıkça azalır.
 - Menüde "Versiyon 102".
+
+## v103 (27 Ekim 2026) — Claude'un oyun turunda bulduğu hataların düzeltmesi
+- Bitiş kartı (#endov) açıkken dünya durur (`fading`); kartın arkasında yaratık vurmaz.
+- Mor izler (CLUES) tıklayınca/dokununca da alınır (`pickAt`'te iz hedefi). İmlecin tam altındaki malzeme, arkasındaki kişiden önce seçilir.
+- Ekin'in demir görevi Toygar'la tanışmadan "Toygar'ın dediği gibi" demez. Ekin'in "Sen buraya nasıl geldin?" seçeneği "Gemin nasıl battı?" oldu (📖 hikâye seçeneğiyle aynı soruyordu).
+- İkinci adada bayılınca konuşan Ülker (Ekin değil). Eşya kaybı yoksa düğme "Anladım".
+- ACT 2'ye geçince görev kartı "Son · Açık deniz"de takılı kalmaz (ACT 2 / portal yazısı).
+- "Şapka" anısı oyuncunun seçtiği şapkayla çelişmiyor: yolcular başına bir şey dokunduruyor; "köpek ve fener satan" yolcular.
+- Zümrüt meşale dersi: önce meşaleyi eline al, sonra 4 taş; gündüz meşale tutma uyarısı. Yeme dersi bitince Yemek penceresi kapanır.
+- Koşu dersi uyarısı Ekin'in görevleri bitince / ACT 2'de görünmez. Ad kutusuna diyalogdan kalan rakam yazılmaz.
+- Örsten sonra takip çubuğu "Baltayı eline al" gösterir. Elde asa/silah varken ipucu "ateş et · <silah>" der.
+- Zaten tamamlanmış her Ekin görevi kabul edilirken hemen biter (eskiden yalnız seviye görevleri).
+- Kayıtta sıfır adetli envanter girdileri yazılmaz. Deniz yolculuğunda tekne sallanırken bulanıklaşmaz.
+- Alet karelerinde ad "T a.." diye kesilmiyordu: Dursun'un `.tool` satır stili `.tile.tool`'a da uyuyordu (`.tool:not(.tile)`).
+- Yol bulma: `findPath` 4 px ızgara (sığarsa) ve yolu seyreltmez; ağaç gövdesinin köşesinde "Oraya buradan gidilemiyor" kalmaz. Oyuncu katı bir şeyin içinde kalırsa en yakın boş yere çıkar.
+- Ana menü adası: sağdaki burun düz bir blok yerine denize iner; sis şeridi dikişsiz döner (dikey kesik kayboldu).
+- `<script id="v103">`: "Yeni malzeme" afişi açık pencerelerin üstüne değil altına; masaüstünde kazan/örs paneli tarif seçince zıplamaz; yerdeki malzeme bir kişinin üstünde kalırsa yanına taşınır; bayılınca görev eşyaları (Kaya patlatıcı, Ejder kalbi, Yakıt hücresi, roket parçaları, açık yan görevlerin istedikleri, Ekin'in tunç/demir görevindeki külçe) çantada kalır; aynı anda en çok 4 yaratık kovalar; Demir kılıç, Tunç kılıç ve Gemi'nin kendi ikonu var.
+- Kontrol: chk.js 0 hata; Boğaç'ın bu sohbette istediği test turu kapsamında headless Chromium ile tek tek denendi (yol bulma, iz tıklama, alet karesi, ikinci adada bayılma, ACT 2 kartı, ana menü adası).
+- Menüde "Versiyon 103".
