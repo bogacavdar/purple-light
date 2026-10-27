@@ -1330,7 +1330,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.45</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.46</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -13729,6 +13729,31 @@ const _tc133=treeChopped;treeChopped=function(t){const r=_tc133.apply(this,argum
 {const M=["..............Aa", ".............Aad", "...........AAad.", "..........AAad..", "..........Aadd..", "..........add...", "........bbb.....", "........bb......", ".......Ww.......", "......Ww........", ".....Ww.........", "....Ww..........", "...Ww...........", "..Ww............", ".Ww.............", "Ww.............."],B={"W": "#b88048", "w": "#7a4e28", "b": "#e0d098"},H={"Mızrak": ["#e0e4e8", "#9aa0a8", "#5e646c"], "Çakmaktaşı mızrak": ["#b0a090", "#74645a", "#463a32"], "Kuvars mızrak": ["#fdf8fd", "#dccbe2", "#a090ac"], "Bazalt mızrak": ["#868a94", "#52565e", "#2c2e36"], "Obsidyen mızrak": ["#9a72c0", "#3a2850", "#160e1e"], "Tunç mızrak": ["#f8d48c", "#c8903e", "#84561e"], "Demir mızrak": ["#f2f6fa", "#a4b0bc", "#56606c"]};
   for(const n in H){const h=H[n];PIXI[n]={p:Object.assign({},B,{A:h[0],a:h[1],d:h[2]}),m:M};delete ICON[n];try{delete ICONC[n]}catch(e){}}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v134: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v146">
+// v1.46: the mouse over a tree, a mine, something to gather or a thing on the ground shows what it is
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{const tip=document.createElement('div');tip.id='hovtip';tip.hidden=true;
+ tip.style.cssText='position:fixed;z-index:30;pointer-events:none;background:var(--panel);border:2px solid var(--panel-edge);color:var(--ink);font-family:var(--font);font-size:15px;padding:3px 8px;white-space:nowrap;transform:translate(14px,-120%);line-height:1.25';
+ document.body.appendChild(tip);
+ let mx=-1,my=-1,on=false,lk='';
+ cv.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;mx=e.clientX;my=e.clientY;on=true;upd()});
+ cv.addEventListener('pointerleave',()=>{on=false;hide()});
+ function hide(){if(!tip.hidden){tip.hidden=true;lk=''}}
+ function what(wx,wy){
+   let bd=7,bn=null;for(const d of drops){if(d.t<1)continue;const q=Math.hypot(d.x-wx,d.y-wy);if(q<bd){bd=q;bn=d}}
+   if(bn)return[bn.n,'yerde · üstünden yürü ya da E'];
+   let P=null;try{P=pickAt(wx,wy)}catch(x){P=null}const tg=P&&P.tg;if(!tg)return null;
+   if(tg.kind==='node'){const n=tg.n;if(n.mine){const M=MINES[n.name]||{};let need='kazma gerekli';try{need=`${PICK_FOR(ORE_TIER[n.name]||1)} ya da daha iyisi`}catch(x){}return[M.l||n.name,need]}return[n.name,'E ile topla']}
+   if(tg.kind==='tree'){const ty=tg.t.type,nm=/ağacı$/.test(ty.n)?ty.n:`${ty.n} ağacı`;return[nm,ty.noCut?'silkelenir (meyvesi düşer)':ty.fruit?'silkelenir · baltayla kesilir':'baltayla kesilir']}
+   return null}
+ function upd(){if(!on||mx<0||onTitle||wake||dlgOpen||craftOpen||(typeof paused!=='undefined'&&paused)){hide();return}
+   const wx=cam.cx+mx/S,wy=cam.cy+my/S,w=what(wx,wy);if(!w){hide();return}
+   const k=w[0]+'|'+w[1];if(k!==lk){lk=k;tip.innerHTML=`<b>${esc(w[0])}</b><br><small style="opacity:.75">${esc(w[1])}</small>`}
+   tip.style.left=mx+'px';tip.style.top=my+'px';if(tip.hidden)tip.hidden=false}
+ setInterval(()=>{try{upd()}catch(x){}},200);   // the camera moves under a still mouse
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v146: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

@@ -995,3 +995,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.45 (27 Ekim 2026)
 - Ekin'in dört yeni görevi kolaydan zora sıralandı: Tuzak → Kamp gecesi → Kurt → Adayı tanı (%30 keşif). Yuvalar ve kayıt göçü aynı (v1.44'ten birkaç dakikalık kayıtlarda o dört yuvadaki görev yer değiştirmiş olabilir).
 - Menüde "Versiyon 1.45". chk.js 0 hata.
+
+## v1.46 (27 Ekim 2026)
+- Fareyle bir ağacın, madenin, toplanabilir kaynağın ya da yere düşmüş bir eşyanın üstüne gelince küçük bir etiket çıkar: adı ve ne gerektiği (ağaç: "baltayla kesilir" / "silkelenir"; maden: gereken kazma; kaynak: "E ile topla"; yerdeki eşya: "üstünden yürü ya da E"). `<script id="v146">`, `#hovtip` DOM etiketi; hedef `pickAt` ile bulunur, kamera kayınca 200 ms'de bir yenilenir. Diyalog, panel, başlık ekranında gizli; yalnızca fare (dokunmatikte yok).
+- Menüde "Versiyon 1.46". chk.js 0 hata.
