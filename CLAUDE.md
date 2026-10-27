@@ -8,5 +8,6 @@
 - **Sürüm etiketi:** ana menüdeki `<small id="verlab">…</small>` her sürümde commit numarasıyla aynı yapılır (Boğaç deploy'un geldiğini buradan anlar).
 - **Sürüm adı biçimi (27 Ekim 2026, Boğaç):** v127'den itibaren sürüm numarasında ilk rakamdan sonra nokta konur: 127. sürüm **Versiyon 1.27**, 134. sürüm **Versiyon 1.34**, 200. sürüm **Versiyon 2.00**. Menü etiketi, commit mesajı (`v1.27: …`) ve `proje/DEVAM_NOTU.md` başlıkları (`## v1.27 …`) hep bu biçimde. Eski sürümler (v126 ve öncesi) olduğu gibi kalır. Bir sonraki sürüm = son sürüm + 0.01 (1.27 → 1.28 … 1.99 → 2.00).
 - Ayrıntılı geçmiş ve teknik notlar: `proje/DEVAM_NOTU.md` (her sürümde güncellenir).
+- **Tasarım belgesi (28 Ekim 2026, v1.77 ile yeniden yazıldı):** `proje/Hammadde_tasarim_belgesi.md` (kaynak) ve `proje/Purple_Light_belgeler.html` (aranabilir sayfa; artifact: https://claude.ai/artifact/KAJf8nuvZLFCFfbqx6XBA9). Oyun mekaniği değişince ilgili bölüm de güncellenir.
 - Kod kuralları: `?.` ve `??` yok (`nn(a,b)` kullan), ES2018 kontrolü `proje/tests/chk.js`.
 - Oyun adresi: https://bogacavdar.github.io/purple-light/
