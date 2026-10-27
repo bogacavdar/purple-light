@@ -961,3 +961,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.39 (27 Ekim 2026)
 - Meşale + kılıç/mızrak artık doğrudan kuşaktan: meşale eldeyken bir kılıç ya da mızrak yuvasına basınca el meşalede kalır, o silah öteki ele geçer (`offW`); aynı yuvaya yine basınca bırakılır. Elde kılıç varken meşaleye geçince kılıç da öteki elde kalır. Öteki eldeki silahın yuvası turuncu kesik çizgiyle işaretli, karakterin yanında görünür ve vuruşu o yapar (`weapon()` önce `offOK()`, sonra "Silah" yuvasına bakar). Meşale elden çıkınca `offW` silinir. Eski "Silah olarak tak" yolu da çalışır.
 - Menüde "Versiyon 1.39". chk.js 0 hata.
+
+## v1.40 (27 Ekim 2026)
+- Meşale + silah taşınırken kuşakta iki yuva birden yanar (ikisi de `.on`; v1.39'daki turuncu kesik çizgi kalktı). İkisine de tıklanır: meşale eldeyken silah yuvası silahı öteki ele alır/bırakır, meşale yuvası meşaleyi bırakır.
+- Menüde "Versiyon 1.40". chk.js 0 hata.
