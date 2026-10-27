@@ -741,3 +741,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Halkanın dışı karanlık (`drawAmbient` sarmalandı: kalın koyu çember + yumuşak kenar); ada görünmez.
 - Her seçimde arenada **tek** canlı belirir (öncekinin yerini alır; "Kaç tane" kalktı). Rakip hasar almaz: vuruş sayısı, parlama, savrulma görünür ama can her karede dolar ve `drawAnimal` arena canlısını hep tam canla çizer (çubuk inmez). Verilen hasar şeritte sayılır.
 - Menüde "Versiyon 107". chk.js 0 hata.
+
+## v108 (27 Ekim 2026) — Arena adadan bağımsız bir yer
+- Arenadayken adanın hiçbir şeyi çizilmez: `drawGround` yerine koyu bir zemin ve arena tabanı; `drawSeaPad`, `drawField`, `drawWater`, `drawPier`, `drawBridge`, `drawTufts`, `drawGlints`, `drawDrops`, `drawGraves`, `drawClues`, `drawWaterHint`, `drawV46World` arenada boş; `drawAmbient` yerine duvar + tribün resmi.
+- İki resim bir kez piksel piksel çizilir (`mkArena`, `AW.floor` / `AW.outer`): tırmıklanmış kum taban, kenarda iki sıra taş döşeme, ortada mor mühür ve çapraz kılıçlar, mor iç çember; taş duvar (harçlı bloklar), dışında kat kat tribün ve renkli seyirciler, sonra karanlık. Duvarın üstünde 8 mangal. Duvar/tribün resmi dünyadaki her şeyin (ağaç, kişi) üstüne çizildiği için halkanın dışı görünmez.
+- Halka çizimi (`drawRing`, `drawGraves`/`v55Ents` kancaları) kalktı. Sınır aynı (`blocked`, `AR.R-6`).
+- Menüde "Versiyon 108". chk.js 0 hata.
