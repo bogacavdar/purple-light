@@ -1030,3 +1030,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Kayıt yuvasına basınca artık her zaman ne olduğu yazar: "Kayıt 1: oyun kaydedildi"; dolu yuvada ilk basış "üzerine yazmak için bir kez daha bas" der (eskiden sessizce yalnızca "Üzerine yaz?" oluyordu, oyuncu kaydettiğini sanıyordu); bir sahnenin ortasında kayıt reddedilirse bunu söyler.
 - Kontrol (Boğaç'ın "kaydettiğim halde görevleri yeniden alıyorum" sorusu için): yan görev alınıp Kayıt 1'e kaydedildi, sayfa yenilendi, "Devam et" ile girildi; görevler ve ana görev durumu yerinde. Tekrar hissinin asıl sebebi v1.44'te Ekin'e eklenen ve Börü'nün görevleriyle aynı olan iki görevdi (v1.50'de silindi).
 - Menüde "Versiyon 1.51". chk.js 0 hata.
+
+## v1.52 (27 Ekim 2026)
+- **Sepet** artık alet değil (DB `t` listesinden çıktı): kazanda öğrenilince Tab'dan (el yapımı) yapılır, Dursun'a gerek yok; tariflerde girdi olarak harcanır.
+- **Balık kapanı** = 2 Sepet + 3 İp + 1 Dal (eskiden 2 Söğüt sepeti: bataklıktaki söğüdü kuvars/tunç baltayla kesmek gerekiyordu). Balık kapanı hâlâ alet, Dursun döver.
+- Menüde "Versiyon 1.52". chk.js 0 hata; oyun hatasız açılıyor.
