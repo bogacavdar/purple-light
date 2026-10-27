@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.27</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.28</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -9354,11 +9354,11 @@ const bossName=k=>tcase(k)+' Reisi';
 function bossNeed(k){let n=P4FIX[k];if(!n){const a=P4AB[k]||1.5;n=Math.round(5+2.2*a);if(ANIM[k]&&ANIM[k].hp>=150)n-=2;n=Math.max(5,Math.min(15,n))}
   const done=P4.s.bd[k]||0;return Math.round(n*(1+.5*done))}
 const P4B={};   // boss name → base species
-function makeBoss(k){const D=ANIM[k];if(!D||D.boss)return null;const nm=bossName(k);if(ANIM[nm])return nm;const z=D.z||0,hpM=z?5:6,dmM=z?1.6:2;
+function makeBoss(k){const D=ANIM[k];if(!D||D.boss)return null;const nm=bossName(k);if(ANIM[nm])return nm;const z=D.z||0,hpM=4,dmM=z||(window.__I1B&&window.__I1B[0]&&window.__I1B[0].indexOf(k)>=0)?1.5:1.7;
   const B=Object.assign({},D,{temper:'saldırgan',still:false,boss:1,base:k,hp:Math.round(D.hp*hpM),spd:Math.round(z?Math.max(D.spd,34):Math.min(64,Math.max(D.spd,34)*1.08)),aggro:Math.max(D.aggro||0,170),
-    dmg:Math.round(Math.max(D.dmg||0,3+D.hp*.12)*dmM),r:Math.round(D.r*1.6),reach:Math.round((D.reach||26)*1.35),wind:Math.max(.3,(D.wind||.42)*.85),xp:Math.round(D.xp*6+20),night:false,minLv:0,
+    dmg:Math.round(Math.max(5,(D.dmg||3)*dmM)),r:Math.round(D.r*1.6),reach:Math.round((D.reach||26)*1.35),wind:Math.max(.3,(D.wind||.42)*.85),xp:Math.round(D.xp*6+20),night:false,minLv:0,
     drops:D.drops.map(d=>[d[0],Math.max(1,d[1]*2),d[2]*2+1,1,d[4]])});
-  if(D.ranged)B.ranged=Object.assign({},D.ranged,{n:(D.ranged.n||1)+2,cd:D.ranged.cd*.8});
+  if(D.ranged)B.ranged=Object.assign({},D.ranged,{n:(D.ranged.n||1)+1,cd:D.ranged.cd*.8});
   if(D.fx)B.fx=[D.fx[0],D.fx[1]*1.5,D.fx[2]];
   ANIM[nm]=B;P4B[nm]=k;return nm}
 const bossOk=k=>!!ANIM[k]&&!ANIM[k].boss&&!P4NO.has(k);
@@ -11773,7 +11773,7 @@ function tickShots(){const now=performance.now(),dt=Math.min(.05,(now-lastT)/100
   for(let i=shots.length-1;i>=0;i--){const s=shots[i],mx=s.vx*dt,my=s.vy*dt;s.x+=mx;s.y+=my;s.left-=Math.hypot(mx,my);
     if(Math.random()<(s.S.trail==null?.7:s.S.trail))parts.push({x:s.x,y:s.y,vx:(Math.random()-.5)*20,vy:(Math.random()-.5)*20,life:.25,c:Math.random()<.5?s.S.c1:s.S.c2});
     let hit=null;for(const a of animals){if(s.hs&&s.hs.has(a))continue;if(Math.hypot(a.x-s.x,a.y-6-s.y)<ANIM[a.k].r+7){hit=a;break}}
-    if(hit){hit.hp-=s.dm;hit.flash=.15;if(s.S.freeze)hit.frz=Math.max(hit.frz||0,s.S.freeze);try{madPack(hit)}catch(e){}const d=Math.hypot(s.vx,s.vy)||1;hit.kb={vx:s.vx/d*120,vy:s.vy/d*120,t:.1};floats.push({x:hit.x,y:hit.y-12,t:0,text:`-${s.dm}`,color:'#ffb060'});sfx('hit');
+    if(hit){hit.hp-=s.dm;hit.flash=.15;if(s.S.freeze){const nw=performance.now()/1000;if(!(hit._fImm>nw)){const fz=hit.boss?s.S.freeze*.5:s.S.freeze;hit.frz=Math.max(hit.frz||0,fz);hit._fImm=nw+fz+3}}try{madPack(hit)}catch(e){}const d=Math.hypot(s.vx,s.vy)||1;hit.kb={vx:s.vx/d*120,vy:s.vy/d*120,t:.1};floats.push({x:hit.x,y:hit.y-12,t:0,text:`-${s.dm}`,color:'#ffb060'});sfx('hit');
       for(let k=0;k<10;k++)parts.push({x:s.x,y:s.y,vx:(Math.random()-.5)*80,vy:(Math.random()-.5)*80,life:.35,c:k%2?s.S.c1:s.S.c2});if(s.S.chain>0){const hs=s.hs||new Set();hs.add(hit);let nx=null,nd=110;for(const b of animals){if(hs.has(b)||b===hit)continue;const dd=Math.hypot(b.x-hit.x,b.y-hit.y);if(dd<nd){nd=dd;nx=b}}
         if(nx){const ang=Math.atan2(nx.y-6-(hit.y-6),nx.x-hit.x),sp=s.S.spd;shots.push({x:hit.x,y:hit.y-6,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp,left:140,S:Object.assign({},s.S,{chain:s.S.chain-1}),dm:Math.round(s.dm*.8),hs})}}
       if(hit.hp<=0)killAnimal(hit);shots.splice(i,1);continue}
@@ -11833,8 +11833,8 @@ window.__plMana={get:()=>mana,set:v=>{mana=v;renderMana()},on:()=>{if(!manaOn){m
 'use strict';
 const I2=ISLE===2,QD=()=>(window.__v55&&window.__v55.d)||[];
 // ---------------------------------------------------------------- guns
-const GUNS={'Tabanca':{ammo:'Tabanca mermisi',cd:.42,dmg:58,n:1,spread:0,S:{c1:'#fff4b0',c2:'#ffb030',spd:640,range:340,line:1,trail:.08}},
-  'Pompalı':{ammo:'Pompalı fişeği',cd:1.05,dmg:30,n:5,spread:.26,S:{c1:'#fff0c0',c2:'#ff9a30',spd:560,range:210,line:1,trail:.05}}};
+const GUNS={'Tabanca':{ammo:'Tabanca mermisi',cd:.42,dmg:44,n:1,spread:0,S:{c1:'#fff4b0',c2:'#ffb030',spd:640,range:340,line:1,trail:.08}},
+  'Pompalı':{ammo:'Pompalı fişeği',cd:1.05,dmg:24,n:5,spread:.26,S:{c1:'#fff0c0',c2:'#ff9a30',spd:560,range:210,line:1,trail:.05}}};
 for(const n in GUNS)GT[n]={kind:'gun',time:1,dur:999,price:n==='Tabanca'?1400:2600,sharp:0,use:'ateş eder ('+GUNS[n].ammo+')'};
 const AMMO={'Tabanca mermisi':10,'Pompalı fişeği':6};
 let gcd=0,gl=performance.now();setInterval(()=>{const now=performance.now();gcd=Math.max(0,gcd-(now-gl)/1000);gl=now},50);
@@ -12516,7 +12516,7 @@ function hold(n){if(AR.held&&AR.held!==n){delete inv[AR.held];const i=order.inde
 function wearA(s,n){equip[s]=n||null;hotK='';renderInv()}
 function weaponList(){const by={};for(const n of Object.keys(GT)){const k=GT[n]&&GT[n].kind;if(!KINDS.some(x=>x[0]===k))continue;(by[k]||(by[k]=[])).push(n)}
   for(const k in by)by[k].sort((a,b)=>(WDMG[a]||0)-(WDMG[b]||0)||(GT[a].price||0)-(GT[b].price||0));return by}
-function wStat(n){const g=GT[n];if(!g)return '';if(g.kind==='sword')return `${WDMG[n]||12} hasar`;if(g.kind==='hunt')return `${WDMG[n]||10} hasar · uzun`;if(g.kind==='axe'||g.kind==='pick')return '8 hasar';if(g.kind==='torch')return 'yumruk · ışık';return esc(g.use||'')}
+function wStat(n){const g=GT[n];if(!g)return '';if(g.kind==='sword')return `${WDMG[n]||12} hasar`;if(g.kind==='hunt')return `${WDMG[n]||10} hasar · uzun`;if(g.kind==='axe'||g.kind==='pick')return `${window.__plAxeDmg?window.__plAxeDmg(n):8} hasar`;if(g.kind==='torch')return 'yumruk · ışık';return esc(g.use||'')}
 function aStat(n){const e=EQUIP[n];if(!e)return '';let t=`+${e.def} savunma`;if(e.res)t+=' · '+Object.keys(e.res).map(k=>`${FXN[k]||k} %${Math.round(e.res[k]*100)}`).join(', ');if(e.mud)t+=' · çamur';if(e.lamp)t+=' · ışık';return t}
 function slotBtn(k,l){const n=k==='silah'?AR.held:equip[k];return `<button type="button" class="dslot${AR.slot===k?' on':''}" data-as="${k}"><i>${n?`<img src="${icon(n)}" alt="">`:''}</i><span><small>${l}</small><b>${n?esc(n):(k==='silah'?'Yumruk':'boş')}</b></span></button>`}
 function pickerHTML(){const k=AR.slot;let h='';
@@ -12715,7 +12715,7 @@ function doParry(){if(frozenNow()||!met||PR.cd>0||placing||(window.__plPS&&windo
   st-=COST;stRest=0;vitK='';PR.t=WIN;PR.cd=CD;stopGather();goal=null;
   try{audio.synth((ac,out)=>{const t=ac.currentTime+.005,o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(900,t);o.frequency.exponentialRampToValueAtTime(600,t+.08);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.12,t+.01);g.gain.exponentialRampToValueAtTime(.0005,t+.1);o.connect(g);g.connect(out);o.start(t);o.stop(t+.12)})}catch(e){try{sfx('swing')}catch(_){}}}
 function clang(){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005;for(const [f,v] of [[2400,.22],[3600,.12],[1200,.18]]){const o=ac.createOscillator(),g=ac.createGain();o.type='square';o.frequency.setValueAtTime(f,t);o.frequency.exponentialRampToValueAtTime(f*.7,t+.25);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+.004);g.gain.exponentialRampToValueAtTime(.0005,t+.3);o.connect(g);g.connect(out);o.start(t);o.stop(t+.32)}})}catch(e){try{sfx('hit')}catch(_){}}}
-function parried(a){PR.n++;PR.hit=true;try{if(window.__plUlt)window.__plUlt.gain(7)}catch(e){}PR.flash=.25;PR.cd=Math.min(PR.cd,.15);st=Math.min(maxSt(),st+6);vitK='';pInv=Math.max(pInv,.3);lastBitten=performance.now();clang();
+function parried(a){PR.n++;PR.hit=true;try{if(window.__plUlt)window.__plUlt.gain(10)}catch(e){}PR.flash=.25;PR.cd=Math.min(PR.cd,.15);st=Math.min(maxSt(),st+6);vitK='';pInv=Math.max(pInv,.3);lastBitten=performance.now();clang();
   if(a){const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy)||1;a.stun=a.boss?STUN*.7:STUN;a.wind=0;a.lunge=null;a.p4slam=null;a.atkT=null;a.flash=.15;a.mad=true;
     a.kb={vx:dx/d*(a.boss?90:170),vy:dy/d*(a.boss?90:170),t:.16};
     const ix=player.x+dx/d*10,iy=player.y-6+dy/d*8;for(let i=0;i<22;i++){const t=Math.random()*6.283,s=40+Math.random()*90;parts.push({x:ix,y:iy,vx:Math.cos(t)*s,vy:Math.sin(t)*s-20,life:.25+Math.random()*.3,c:i%3?'#fff2b0':'#9ad8ff'})}}
@@ -12919,7 +12919,7 @@ function tickMS(dt){for(let i=MS.length-1;i>=0;i--){const s=MS[i];
   try{const L2=(window.__plPShots||[]).concat(window.__plSPR||[]);if(L2.length)for(const a of animals){if(!(DODGE.has(a.base||a.k)||a.boss))continue;if(a.mv||a.stun>0||a.frz>0||a.kb||a.wind>0||a.lunge)continue;a.dgCd=(a.dgCd||0)-dt;if(a.dgCd>0)continue;
     for(const s of L2){const sp=Math.hypot(s.vx,s.vy);if(sp<1)continue;const rx=a.x-s.x,ry=a.y-6-s.y,al=(rx*s.vx+ry*s.vy)/sp;if(al<0||al/sp>.38)continue;const pe=(rx*s.vy-ry*s.vx)/sp;if(Math.abs(pe)>rad(a)+10)continue;
       if(!s._dg)s._dg=new Set();if(s._dg.has(a))continue;s._dg.add(a);
-      const TT=tierOf(a);if(Math.random()<.2+.5*TT+(a.boss?.1:0)){const sd=pe>=0?1:-1;a.kb={vx:s.vy/sp*sd*190,vy:-s.vx/sp*sd*190,t:.17};a.dgCd=(2.2-1.2*TT)+Math.random()*(1.2-.6*TT);dust(a.x,a.y,6);break}}}}catch(e){}
+      const TT=tierOf(a);if(Math.random()<Math.min(.45,.2+.5*TT+(a.boss?.1:0))){const sd=pe>=0?1:-1;a.kb={vx:s.vy/sp*sd*190,vy:-s.vx/sp*sd*190,t:.17};a.dgCd=(2.2-1.2*TT)+Math.random()*(1.2-.6*TT);dust(a.x,a.y,6);break}}}}catch(e){}
   try{tickMS(dt)}catch(e){}
   return r}}
 
@@ -13073,7 +13073,7 @@ const CB={
   double:{n:'Çift kesik',st:10,f(a){const r=reach()+6;swingP4('sword',a,-1,r);whoosh();hitIn(arc(a,1.25,r),.85);fx({k:'arc',a,r,dir:-1,T:.18,c:'235,245,255'});
     later(110,()=>{swingP4('sword',a,1,r);whoosh();hitIn(arc(a,1.25,r),.95);fx({k:'arc',a,r,dir:1,T:.18,c:'235,245,255'})});return .42}},
   charged:{n:'Dönen kesik',st:18,f(a){const r=reach()+12;whoosh();hitIn(circ(r),2.2,{kb:230});fx({k:'spin',r,T:.3,c:'255,240,180'});return .55}},
-  dash:{n:'Hamle',st:12,f(a){push(a,26,.14);whoosh();const S=new Set();hitIn(line(a,reach()+28,8),1.6,{once:S,kb:200});later(70,()=>hitIn(line(a,reach()+28,8),1.6,{once:S,kb:200}));fx({k:'line',a,len:reach()+30,w:4,T:.2,c:'235,245,255'});return .4}},
+  dash:{n:'Hamle',st:12,f(a){push(a,26,.14);whoosh();const S=new Set();const dk=1.6*(window.__plDashK?window.__plDashK():1);hitIn(line(a,reach()+28,8),dk,{once:S,kb:200});later(70,()=>hitIn(line(a,reach()+28,8),dk,{once:S,kb:200}));fx({k:'line',a,len:reach()+30,w:4,T:.2,c:'235,245,255'});return .4}},
   cdc:{n:'Kılıç fırtınası',st:22,f(a){const r=reach()+8;for(let i=0;i<3;i++)later(i*80,()=>{swingP4('sword',a+(i-1)*.3,i%2?1:-1,r);whoosh();hitIn(arc(a,1.1,r),.9,{kb:90});fx({k:'arc',a:a+(i-1)*.3,r,dir:i%2?1:-1,T:.14,c:'235,245,255'})});
     later(300,()=>{whoosh();hitIn(arc(a,1,r+6),2.1,{kb:260,stun:.8,col:['#ffd040','#ffffff','#c890ff']});fx({k:'x',a,r:r+6,T:.3,c:'255,220,120'})});return .75}}},
  spear:{
@@ -13125,7 +13125,7 @@ function staffS(){const h=held(),S=window.__plStaff&&window.__plStaff[h];return 
 function sdm(m){const S=staffS();return Math.round((S?S.dmg:20)*m*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*(buffOn('zayıf')?.8:1))}
 function tgt(a){return{x:player.x+Math.cos(a)*120,y:player.y-10+Math.sin(a)*120}}
 function cast3(L,m){const S=staffS();if(!S)return;for(const d of L)window.__plFire(S,sdm(m),tgt(aim()),d);try{sfx('magic')}catch(e){}}
-const GUN={'Tabanca':{dm:58,n:1,sp:0,ammo:'Tabanca mermisi'},'Pompalı':{dm:30,n:5,sp:.26,ammo:'Pompalı fişeği'}};
+const GUN={'Tabanca':{dm:44,n:1,sp:0,ammo:'Tabanca mermisi'},'Pompalı':{dm:24,n:5,sp:.26,ammo:'Pompalı fişeği'}};
 const GS={c1:'#fff4b0',c2:'#ffb030',spd:640,range:340,line:1,trail:.08};
 function gshot(a,m,da,o){const h=held(),G=GUN[h];if(!G)return;if(!window.__plArenaFree&&!(o&&o.free)){const n=inv[G.ammo]||0;if(n<=0){floatText(`${G.ammo} yok`,'#ffb060');return}inv[G.ammo]=n-1}
   const S=Object.assign({},GS,o||{}),dm=Math.round(G.dm*m*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1));for(let i=0;i<G.n;i++)window.__plFire(S,dm,tgt(a),(da||0)+(G.n>1?(i/(G.n-1)-.5)*2*G.sp:0));
@@ -13136,9 +13136,9 @@ function canPay(k,M){if(window.__plArenaFree)return true;if(M.mana){const S=staf
 function tapDur(){const k=kindOf();if(k==='staff'){const S=staffS();return S?S.cd:.55}if(k==='gun')return held()==='Pompalı'?1.05:.42;
   const sw=P4().sw;if(sw&&sw.ant!=null)return (sw.ant+sw.str+sw.fol)*(sw.slow||1);return .3}
 function chime(i){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005;for(const f of [660*(1+i*.25),990*(1+i*.25)]){const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(f,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.09,t+.01);g.gain.exponentialRampToValueAtTime(.0005,t+.25);o.connect(g);g.connect(out);o.start(t);o.stop(t+.27)}})}catch(e){}}
-function rhythm(ty){const k=kindOf(),M=CB[k]&&CB[k][ty];if(!M||!canPay(k,M))return 0;const a=aim();faceTo(a);let rec=.4;try{rec=M.f(a)||.4}catch(e){}
+function rhythm(ty){const k=kindOf(),M=CB[k]&&CB[k][ty];if(!M||(window.__plMoveOK&&!window.__plMoveOK(ty))||!canPay(k,M))return 0;const a=aim();faceTo(a);let rec=.4;try{rec=M.f(a)||.4}catch(e){}
   C.cd=rec*.9;atkCd=Math.max(atkCd,rec*.9);chime(ty==='c2'?1:2);try{if(window.__plUlt)window.__plUlt.gain(ty==='c2'?5:10)}catch(e){}name(M.n,ty==='c3'?'#ffb040':'#ffe7a0');return rec}
-function doMove(type){const k=kindOf(),M=CB[k]&&CB[k][type];if(!M)return false;C.rh=null;if(!canPay(k,M))return true;try{if(window.__plUlt)window.__plUlt.gain(4)}catch(e){}const a=aim();faceTo(a);let rec=.4;try{rec=M.f(a)||.4}catch(e){}
+function doMove(type){const k=kindOf(),M=CB[k]&&CB[k][type];if(!M)return false;if(window.__plMoveOK&&!window.__plMoveOK(type)){if(type!=='charged'){C.rh=null;attack({x:C.mx,y:C.my+6})}return true}C.rh=null;if(!canPay(k,M))return true;try{if(window.__plUlt)window.__plUlt.gain(4)}catch(e){}const a=aim();faceTo(a);let rec=.4;try{rec=M.f(a)||.4}catch(e){}
   C.cd=rec;atkCd=Math.max(atkCd,rec*.8);name(M.n,type==='cdc'?'#ffd040':type==='charged'?'#ffb0ff':'#ffe7a0');return true}
 
 // ------------------------------------------------------------------ input
@@ -13170,7 +13170,7 @@ addEventListener('blur',()=>{C.hold=null});
 let lastN=0;
 {const _fb=frameBody;frameBody=function(){const t=performance.now(),dt=lastN?Math.min(.05,(t-lastN)/1000):0;lastN=t;const r=_fb.apply(this,arguments);
   if(frozenNow())return r;C.cd=Math.max(0,C.cd-dt);if(C.hop>0)C.hop=Math.max(0,C.hop-dt);
-  const H=C.hold;if(H){const el=now()-H.t0;if(el>=HOLD0){if(!H.on){H.on=true}const P=window.__plPSt;if(P)P.slow=Math.max(P.slow,.06);
+  const H=C.hold;if(H){const el=now()-H.t0;if(el>=HOLD0&&(!window.__plMoveOK||window.__plMoveOK('charged'))){if(!H.on){H.on=true}const P=window.__plPSt;if(P)P.slow=Math.max(P.slow,.06);
       if(!H.full&&el>=HOLD0+FULL){H.full=true;try{audio.synth((ac,out)=>{const t0=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(660,t0);o.frequency.exponentialRampToValueAtTime(1320,t0+.12);g.gain.setValueAtTime(.0001,t0);g.gain.exponentialRampToValueAtTime(.16,t0+.02);g.gain.exponentialRampToValueAtTime(.0005,t0+.2);o.connect(g);g.connect(out);o.start(t0);o.stop(t0+.22)})}catch(e){}
         for(let i=0;i<14;i++){const a=i/14*6.283;parts.push({x:player.x+Math.cos(a)*12,y:player.y-6+Math.sin(a)*9,vx:Math.cos(a)*20,vy:Math.sin(a)*14,life:.35,c:'#ffe7a0'})}}}}
   if(PUSH.t>0){const k=Math.min(dt,PUSH.t);PUSH.t-=k;const nx=player.x+PUSH.vx*k,ny=player.y+PUSH.vy*k;if(!blocked(nx,player.y))player.x=nx;if(!blocked(player.x,ny))player.y=ny}
@@ -13215,14 +13215,14 @@ window.__plCB={hitIn,arc,circ,line,fx,push,swingP4,later,base,reach,aim,faceTo,k
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
 const U={v:0,on:0};window.__plUlt=U;
-const FULL=100,PER_HIT=2.5;
-U.gain=n=>{if(U.on>0)return;const was=U.v>=FULL;U.v=Math.min(FULL,U.v+n);if(!was&&U.v>=FULL)ready()};
+const FULL=100,PER_HIT=1.5;
+U.gain=n=>{if(U.on>0||(window.__plMoveOK&&!window.__plMoveOK('ult')))return;const was=U.v>=FULL;U.v=Math.min(FULL,U.v+n);if(!was&&U.v>=FULL)ready()};
 U.fill=()=>{U.gain(FULL)};
 const CB=()=>window.__plCB;
 // the bar
 {const vit=$('vit');if(vit){const b=document.createElement('div');b.className='vb ulti';b.id='ulbar';b.title='Ulti (R)';b.innerHTML='<i id="ulfill"></i><span id="ulval">Ulti</span>';vit.appendChild(b)}
  const f=document.createElement('div');f.id='ulflash';document.body.appendChild(f)}
-let uK='';function renderU(){const b=$('ulbar');if(!b)return;const on=!onTitle&&met;b.hidden=!on;if(!on)return;const k=Math.floor(U.v)+'|'+(U.on>0);if(k===uK)return;uK=k;
+let uK='';function renderU(){const b=$('ulbar');if(!b)return;const on=!onTitle&&met&&(!window.__plMoveOK||window.__plMoveOK('ult'));b.hidden=!on;if(!on)return;const k=Math.floor(U.v)+'|'+(U.on>0);if(k===uK)return;uK=k;
   $('ulfill').style.width=Math.min(100,U.v)+'%';$('ulval').textContent=U.on>0?'ULTİ!':U.v>=FULL?'ULTİ HAZIR · R':'Ulti '+Math.floor(U.v)+'%';b.classList.toggle('full',U.v>=FULL||U.on>0)}
 function ready(){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005;[523,659,784,1047].forEach((f,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(f,t+i*.07);g.gain.setValueAtTime(.0001,t+i*.07);g.gain.exponentialRampToValueAtTime(.1,t+i*.07+.01);g.gain.exponentialRampToValueAtTime(.0005,t+i*.07+.3);o.connect(g);g.connect(out);o.start(t+i*.07);o.stop(t+i*.07+.32)})})}catch(e){}uK=''}
 // every blow of yours that lands (its number pops up) fills the bar a little
@@ -13247,7 +13247,7 @@ const ULT={
  staff:{n:'Meteor',T:1.0,f(K,a){const P=mouseP(180);K.fx({k:'ring',r:60,T:.7,c:'255,90,40',x:P.x,y:P.y});DROPS.push({x:P.x,y:P.y,t:0,T:.65,meteor:1});
    setTimeout(()=>{try{K.hitIn(at(P.x,P.y,60),5,{kb:300,stun:1.2,col:['#ffd040','#ff7a2a','#ffffff']});K.fx({k:'ring',r:70,T:.5,c:'255,200,90',x:P.x,y:P.y});for(let j=0;j<60;j++){const t=Math.random()*6.283,s=40+Math.random()*140;parts.push({x:P.x,y:P.y,vx:Math.cos(t)*s,vy:Math.sin(t)*s*.6-20,life:.6,c:j%3?'#ff7a2a':'#ffe080'})}boom();shake=Math.max(shake,.5);shakeP=Math.max(shakeP,5);flash()}catch(e){}},680)}},
  gun:{n:'Kurşun yağmuru',T:1.2,f(K,a){const n=held()==='Pompalı'?10:20;for(let i=0;i<n;i++)K.later(i*(1100/n),()=>K.gshot(K.aim()+(Math.random()-.5)*.28,1.2,0,{free:1}))}}};
-function fire_(){const K=CB();if(!K||U.v<FULL||U.on>0)return false;if(frozenNow()||placing||(window.__plPS&&window.__plPS()))return false;const k=K.kindOf(),M=ULT[k];if(!M)return false;
+function fire_(){const K=CB();if(!K||U.v<FULL||U.on>0||(window.__plMoveOK&&!window.__plMoveOK('ult')))return false;if(frozenNow()||placing||(window.__plPS&&window.__plPS()))return false;const k=K.kindOf(),M=ULT[k];if(!M)return false;
   U.v=0;U.on=M.T;pInv=Math.max(pInv,M.T+.2);const a=K.aim();K.faceTo(a);flash();boom();uK='';
   announce(M.n,'Ulti');try{M.f(K,a)}catch(e){}return true}
 // R: the ulti when it is full (R keeps its old job while it is not; in the arena R is only the ulti)
@@ -13267,6 +13267,147 @@ let lastN=0;
   for(const d of DROPS){const k=Math.min(1,d.t/d.T);if(d.meteor){const y=d.y-160*(1-k),x=d.x-60*(1-k);px(x-5,y-5,10,10,'#ff7a2a');px(x-3,y-3,6,6,'#ffe080');for(let i=0;i<3;i++)parts.push({x:x+20*(1-k)*.1+(Math.random()-.5)*6,y:y-6,vx:20,vy:-40,life:.3,c:'#ff9a3a'})}
     else{const y=d.y-90*(1-k),ic=ICONC[d.n]||(icon(d.n),ICONC[d.n]);if(ic){ctx.save();ctx.translate(d.x,y);ctx.rotate(Math.PI*.75);ctx.drawImage(ic,-6,-6,12,12);ctx.restore()}else px(d.x-1,y-6,2,12,'#e8dcb8')}}}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v123-ulti: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v128-denge">
+// =====================================================================================================
+// v1.28: FIGHT BALANCE (from the arena balance report). Creature numbers per land, the Reis rule, poise
+// (big ones and every Reis are not stopped by each blow), status effects softened by armour, weapon fixes
+// (axes per tier, Işın kılıcı, staffs' mana), new neutral creatures, new enemy behaviour (sidestep,
+// counter, rage, call for help, feint, back swipe), island-2 armour pieces, and moves learnt land by land
+// (dash → double → rhythm 2 → rhythm 3 + hold → finisher; the ulti at the end of island 1).
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const V={b:0,u:false,a:false,told:{}};window.__v128=V;
+const I2=ISLE===2;
+// ---------------------------------------------------------------- 1 · creature numbers
+const SET={"Geyik":{"hp":55,"dmg":10},"Yaban atı":{"hp":80,"dmg":11},"Kerevit":{"hp":40,"dmg":7,"temper":"nötr"},"Kurt":{"hp":70,"dmg":12},"Karaca":{"hp":70,"dmg":14},"Kunduz":{"hp":55,"dmg":12,"temper":"nötr"},"Yaban domuzu":{"hp":130,"dmg":21},"Dikenli kirpi":{"hp":60,"dmg":12},"Engerek":{"hp":75,"dmg":14},"Oklu kirpi":{"hp":205,"dmg":19,"ranged":{"n":3},"fx":["kanama",0.8,4]},"Yaban kazı":{"hp":150,"dmg":20},"Su samuru":{"hp":240,"dmg":23,"temper":"nötr"},"Zehirli kurbağa":{"hp":350,"dmg":36},"Bataklık kurdu":{"hp":600,"dmg":57},"Timsah":{"hp":1080,"dmg":78},"Dağ keçisi":{"hp":365,"dmg":42},"Muflon":{"hp":430,"dmg":43},"Yaban öküzü":{"hp":860,"dmg":65},"Kartal":{"hp":970,"dmg":112},"Vaşak":{"hp":1400,"dmg":121},"Mağara ayısı":{"hp":2520,"dmg":137},"Kül böceği":{"hp":640,"dmg":83,"temper":"nötr"},"Kül kurdu":{"hp":1075,"dmg":140},"Lav kertenkelesi":{"hp":940,"dmg":123},"Kül cini":{"hp":810,"dmg":99},"Kor yarasası":{"hp":830,"dmg":115},"Ateş akrebi":{"hp":1140,"dmg":148},"Kara ejder":{"hp":2880,"dmg":164},"Işık tilkisi":{"hp":1000,"dmg":114,"temper":"nötr"},"Kristal geyik":{"hp":1630,"dmg":133},"Gölge kurdu":{"hp":1475,"dmg":181},"Kristal örümcek":{"hp":1320,"dmg":157},"Işık engereği":{"hp":1085,"dmg":169},"Kristal golem":{"hp":4500,"dmg":242},"Bulut koyunu":{"hp":1200,"dmg":216,"temper":"nötr"},"Kaya kertenkelesi":{"hp":1200,"dmg":216,"temper":"nötr"},"Gök tazısı":{"hp":2940,"dmg":427},"Fırtına kartalı":{"hp":2570,"dmg":477},"Spor salyangozu":{"hp":1280,"dmg":232,"temper":"nötr"},"Goblin":{"hp":2580,"dmg":343},"Goblin okçusu":{"hp":2005,"dmg":286},"Goblin şamanı":{"hp":3725,"dmg":477},"Hurda faresi":{"hp":1320,"dmg":311,"temper":"nötr"},"Devriye robotu":{"hp":2080,"dmg":445},"Lazer dronu":{"hp":1300,"dmg":355},"Hurda devi":{"hp":5940,"dmg":1038},"Taş kaplumbağası":{"hp":1680,"dmg":630,"temper":"nötr"},"Kristal golemcik":{"hp":2520,"dmg":983},"Kristal yarasası":{"hp":1470,"dmg":771},"Büyük golem":{"hp":7560,"dmg":2524},"Kor kertenkelesi":{"hp":2080,"dmg":538,"temper":"nötr"},"Yavru ejder":{"hp":1820,"dmg":588},"Lav golemi":{"hp":3130,"dmg":848},"Kızıl ejder":{"hp":9360,"dmg":1355},"Yıldız tilkisi":{"hp":2160,"dmg":707,"temper":"nötr"},"Uzaylı dronu":{"hp":1890,"dmg":774},"Gölge muhafız":{"hp":2965,"dmg":1173},"Gök bekçisi":{"hp":9720,"dmg":1756},"Turna kuşu":{"hp":200,"dmg":20,"temper":"nötr"}};
+const NEWN={
+  'Porsuk':{isle:1,b:0,art:'Kunduz',tint:'#9a9a9a',hp:50,dmg:9,want:1},
+  'Mantar geyiği':{isle:2,b:1,art:'Geyik',tint:'#c8643a',hp:1800,dmg:330,want:1},
+  'Pas kirpisi':{isle:2,b:2,art:'Dikenli kirpi',tint:'#b8642a',hp:1300,dmg:260,want:1,ranged:{range:140,spd:170,c:'#c8783a',n:3,cd:2.2}},
+  'Buz karacası':{isle:2,b:3,art:'Karaca',tint:'#9ad8ff',hp:2600,dmg:760,want:1},
+  'Kor domuzu':{isle:2,b:4,art:'Yaban domuzu',tint:'#e0482a',hp:3000,dmg:640,want:1},
+  'Yıldız geyiği':{isle:2,b:5,art:'Geyik',tint:'#b07aff',hp:3000,dmg:850,want:1}};
+const ART={};for(const k in NEWN)ART[k]=NEWN[k];
+function apply(D,s,k){if(!D||!s)return;const h0=D.hp;if(s.hp){D.hp=s.hp;D.xp=Math.round((D.xp||5)*Math.max(1,Math.sqrt(s.hp/Math.max(1,h0))))}if(s.dmg!=null)D.dmg=s.dmg;if(s.temper)D.temper=s.temper;if(s.fx)D.fx=s.fx.slice();if(s.ranged&&D.ranged)Object.assign(D.ranged,s.ranged);
+  if(D.temper!=='zararsız'){if(!D.reach)D.reach=26;if(!D.wind)D.wind=.45}}
+for(const k in SET)if(ANIM[k]&&!ANIM[k].boss)apply(ANIM[k],SET[k],k);
+// the lesson's crayfish stays harmless (Alp's first fight)
+{const _ta=tickAnimals;tickAnimals=function(){const r=_ta.apply(this,arguments);for(const a of animals)if(a.tut){a.mad=false;a.wind=0;a.lunge=null;a.mv=null;if(a.st==='chase')a.st='wander'}return r}}
+// island-2 data (the arena and the island read it)
+const C2=window.__I2C;
+if(C2&&C2.anim){for(const b in C2.anim)for(const x of C2.anim[b]){const s=SET[x.n];if(s){const d=x.d;const h0=d.hp;if(s.hp){d.hp=s.hp;d.xp=Math.round((d.xp||5)*Math.max(1,Math.sqrt(s.hp/Math.max(1,h0))))}if(s.dmg!=null)d.dmg=s.dmg;if(s.temper)d.temper=s.temper;if(d.temper!=='zararsız'){if(!d.reach)d.reach=26;if(!d.wind)d.wind=.45}}}}
+// new neutral creatures (drawn as a kin of theirs, in their own colour)
+function newDef(k,o){const B=ANIM[o.art];const d={temper:'nötr',hp:o.hp,dmg:o.dmg,spd:B?B.spd:50,r:B?B.r:6,xp:Math.round(Math.sqrt(o.hp)*3),reach:26,wind:.45,z:o.isle===2||o.b>=2?1:0,
+  land:t=>t<=1,drops:B&&B.drops?B.drops.map(x=>x.slice()):[]};if(o.ranged)d.ranged=Object.assign({},o.ranged);return d}
+for(const k in NEWN){const o=NEWN[k];if((o.isle===1)!==!I2)continue;if(!ANIM[k])ANIM[k]=newDef(k,o)}
+function regLists(){try{const L=window.__I1B;if(L&&L[0]&&L[0].indexOf('Porsuk')<0)L[0].push('Porsuk')}catch(e){}
+  try{if(C2&&C2.anim)for(const k in NEWN){const o=NEWN[k];if(o.isle!==2)continue;const A=C2.anim[o.b];if(A&&!A.some(x=>x.n===k)){const B=A.find(x=>x.n===o.art)||null;
+    const d={temper:'nötr',hp:o.hp,dmg:o.dmg,spd:ANIM[o.art]?ANIM[o.art].spd:50,r:ANIM[o.art]?ANIM[o.art].r:6,xp:Math.round(Math.sqrt(o.hp)*3),reach:26,wind:.45,z:1,land:'land',drops:ANIM[o.art]&&ANIM[o.art].drops?ANIM[o.art].drops.map(x=>x.slice()):[]};
+    if(o.ranged)d.ranged=Object.assign({},o.ranged);A.push({n:k,d,want:o.want})}}}catch(e){}}
+regLists();
+{const _da=drawAnimal;drawAnimal=function(a){const o=a&&ART[a.k];if(!o||!ANIM[o.art])return _da.apply(this,arguments);
+  const k=a.k,t=a.tint,h=a.hp,D=ANIM[k],B=ANIM[o.art];a.k=o.art;if(!a.boss)a.tint=o.tint;a.hp=D&&B?h*B.hp/Math.max(1,D.hp):h;try{return _da.apply(this,arguments)}finally{a.k=k;a.tint=t;a.hp=h}}}
+// they live where they belong
+{const _sa=spawnAnimals;spawnAnimals=function(){const r=_sa.apply(this,arguments);try{if(!met||wake||window.__plArena)return r;const b=bioAt(player.x,player.y);
+  for(const k in NEWN){const o=NEWN[k];if(o.b!==b||(o.isle===1)!==!I2||!ANIM[k])continue;if(animals.filter(a=>a.k===k).length>=o.want)continue;
+    for(let n=0;n<10;n++){const an=Math.random()*Math.PI*2,d=330+Math.random()*140,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;
+      if(x<16||y<16||x>W*T-16||y>H*T-16||!reachAt(x,y)||blocked(x,y)||bioAt(x,y)!==b||isWater(tileAt(x,y)))continue;
+      animals.push({k,x,y,hp:ANIM[k].hp,st:'wander',t:0,dx:0,dy:0,face:1,atk:0,flash:0,kb:null,step:Math.random()*6,mad:false,pk:0});break}}}catch(e){}return r}}
+// ---------------------------------------------------------------- 2 · the Reis rule (same as makeBoss now): health ×4, hit ×1,5 (×1,7 in Orman, ×1,5 in Çayır)
+const CAYIR=new Set(((window.__I1B||[])[0])||[]);
+function fixBoss(nm){const B=ANIM[nm];if(!B||!B.boss)return;const D=ANIM[B.base];if(!D)return;const z=D.z||0;
+  B.hp=Math.round(D.hp*4);B.dmg=Math.round(Math.max(5,(D.dmg||3)*(z||CAYIR.has(B.base)?1.5:1.7)));B.xp=Math.round(D.xp*6+20);
+  if(D.ranged)B.ranged=Object.assign({},D.ranged,{n:(D.ranged.n||1)+1,cd:D.ranged.cd*.8});if(D.fx)B.fx=[D.fx[0],D.fx[1]*1.5,D.fx[2]]}
+for(const k in ANIM)if(ANIM[k].boss)fixBoss(k);
+try{const P=window.__p4,mb=P.makeBoss;P.makeBoss=function(k){const had=!!ANIM[P.bossName?P.bossName(k):''];const nm=mb.apply(this,arguments);if(nm&&!had)fixBoss(nm);return nm}}catch(e){}
+// ---------------------------------------------------------------- 3 · poise: a Reis and the big ones are not stopped by each blow; the rest flinch 3 times in 2 s at most
+const BIG=new Set(['Timsah','Yaban öküzü','Kara ejder','Mağara ayısı','Hurda devi','Büyük golem','Lav golemi','Kızıl ejder','Gölge muhafız','Gök bekçisi','Kristal golem','Kristal golemcik','Devriye robotu','Yavru ejder','Kristal geyik']);
+{const _ta=tickAnimals;tickAnimals=function(dt){const t=performance.now()/1000;
+  for(const a of animals){if(!a.kb||a.stun>0||a._sd)continue;
+    if(a.boss||BIG.has(a.base||a.k)){a.kb=null;continue}
+    if(a.kb!==a._kbL){a._kbL=a.kb;a._kbT=(a._kbT||[]).filter(x=>t-x<2);a._kbT.push(t);if(a._kbT.length>=3){a._kbA=t+1.2;a._kbT=[]}}
+    if(a._kbA&&t<a._kbA)a.kb=null}
+  return _ta.apply(this,arguments)}}
+// ---------------------------------------------------------------- 4 · poison, bleeding and burns: armour softens half of them
+{const _af=addFx;addFx=function(k,dps,dur){return _af.call(this,k,dps*(.5+.5*armorMul()),dur)}}
+// ---------------------------------------------------------------- 5 · weapons
+const AXE={'Taş balta':9,'Taş kazma':8,'Çakmaktaşı balta':12,'Granit balta':12,'Çakmaktaşı kazma':11,'Granit kazma':11,'Kuvars balta':16,'Kuvars kazma':14,'Tunç balta':20,'Tunç kazma':18,'Bazalt balta':24,'Bazalt kazma':21,'Demir balta':30,'Demir kazma':26,'Obsidyen balta':36,'Obsidyen kazma':32};
+window.__plAxeDmg=n=>AXE[n]||8;
+WDMG['Işın kılıcı']=60;
+{const _w=weapon;weapon=function(){const w=_w.apply(this,arguments);if(!w||!w.n)return w;if(w.n==='Işın kılıcı')return Object.assign({},w,{dmg:60});
+  if(AXE[w.n]!=null&&GT[w.n]&&(GT[w.n].kind==='axe'||GT[w.n].kind==='pick'))return Object.assign({},w,{dmg:AXE[w.n]});return w}}
+try{const S=window.__plStaff;if(S['Ateş asası'])S['Ateş asası'].cost=8;if(S['Buz asası']){S['Buz asası'].cost=10;S['Buz asası'].dmg=46}if(S['Yıldırım asası'])S['Yıldırım asası'].cost=15}catch(e){}
+// a staff in hand draws mana in fast (8 a second)
+{let lt=0;const _fb=frameBody;frameBody=function(){const t=performance.now()/1000,dt=lt?Math.min(.05,t-lt):0;lt=t;
+  try{if(!paused&&!onTitle){const h=held(),M=window.__plMana;if(h&&GT[h]&&GT[h].kind==='staff'&&M&&M.get&&M.max)M.set(Math.min(M.max(),M.get()+8*dt))}}catch(e){}return _fb.apply(this,arguments)}}
+// ---------------------------------------------------------------- 6 · new enemy behaviour
+const QUICK=new Set(['Kurt','Bataklık kurdu','Kül kurdu','Gölge kurdu','Gök tazısı','Vaşak','Goblin','Goblin okçusu','Kartal','Fırtına kartalı','Kor yarasası','Kristal yarasası','Işık tilkisi','Yıldız tilkisi','Engerek','Işık engereği','Kristal örümcek','Lazer dronu','Uzaylı dronu','Gölge muhafız','Yavru ejder','Karaca','Geyik','Dağ keçisi','Mantar geyiği','Yıldız geyiği','Buz karacası']);
+const PACKB=new Set(['Kurt','Bataklık kurdu','Kül kurdu','Gölge kurdu','Gök tazısı','Goblin','Goblin şamanı','Devriye robotu','Lazer dronu','Uzaylı dronu']);
+const I2SET=new Set();try{if(C2&&C2.anim)for(const b in C2.anim)for(const x of C2.anim[b])I2SET.add(x.n)}catch(e){}
+let TIER=null;function tierOf(a){if(!TIER){TIER={};(window.__I1B||[]).forEach((L,i)=>L.forEach(k=>{if(TIER[k]==null)TIER[k]=i}));if(C2&&C2.anim)for(const b in C2.anim)for(const x of C2.anim[b])if(TIER[x.n]==null)TIER[x.n]=6+(+b)}
+  const i=TIER[a.base||a.k];return i==null?.3:i/11}
+let lastPend=null;
+function bark(){try{sfx('growl')}catch(e){}}
+{const _ta=tickAnimals;tickAnimals=function(dt){if(frozenNow())return _ta.apply(this,arguments);const t=performance.now()/1000,P=window.__p4||{};
+  const swing=!!P.pend&&P.pend!==lastPend;lastPend=P.pend;const pre=new Map();
+  for(const a of animals.slice()){const D=ANIM[a.k];if(!D||D.temper==='zararsız'||a.tut)continue;const base=a.base||a.k,TT=tierOf(a),d=Math.hypot(a.x-player.x,a.y-player.y),R=(D.r||6)*(a.scale||1),
+      busy=!!(a.mv||a.stun>0||a.wind>0||a.lunge||a.p4slam||a.frz>0||a.kb);
+    // Y1 · sidestep: quick kinds read your swing and hop back or aside
+    if(swing&&(a.mad||a.st==='chase')&&QUICK.has(base)&&!busy&&d<R+40&&(a._sdC||0)<t&&Math.random()<.12+.25*TT+(a.boss?.08:0)){
+      const ux=(a.x-player.x)/(d||1),uy=(a.y-player.y)/(d||1),s=Math.random()<.5?1:-1;a.kb={vx:(ux*.8-uy*s*.6)*230,vy:(uy*.8+ux*s*.6)*230,t:.16};a._sd=1;a._sdC=t+1.6-.6*TT;
+      for(let i=0;i<6;i++)parts.push({x:a.x,y:a.y,vx:(Math.random()-.5)*40,vy:-10,life:.3,c:'#e8e0c8'})}
+    // Y6 · back swipe: the big ones turn on you when you stand behind them
+    if(BIG.has(base)&&a.st==='chase'&&!busy&&d<R+22&&(a._bsC||0)<t){const behind=(player.x-a.x)*(a.face||1)<-2;if(behind){a._bsC=t+4;a.wind=.35;a.atk=.9;a.tx=player.x;a.ty=player.y;a.face=player.x>a.x?1:-1;bark()}}
+    if(a.boss){
+      // Y2 · counter: hit 4 times within 1,5 s, a Reis snaps back with a quick white blow
+      a._h=(a._h||[]).filter(x=>t-x<1.5);if(a._lh!=null&&a.hp<a._lh-.5)a._h.push(t);a._lh=a.hp;
+      if(a._h.length>=4&&!busy&&(a._ctC||0)<t&&d<(D.reach||26)+30){a._h=[];a._ctC=t+3.5;a.wind=.3;a.atk=.9;a.tx=player.x;a.ty=player.y;a.face=player.x>a.x?1:-1;bark()}
+      // Y5 · feint (island-2 Reis): a wind-up stops half way and starts again
+      if(a.wind>0&&!a._wPrev&&I2SET.has(base)&&Math.random()<.25)a._ft={at:a.wind*.5,done:false};
+      if(a._ft&&!a._ft.done&&a.wind>0&&a.wind<a._ft.at){a._ft.done=true;a.wind+=a._ft.at+.12;try{sfx('swing')}catch(e){}}
+      if(!(a.wind>0))a._ft=null;a._wPrev=a.wind>0;
+      // Y3 · rage under 40 % health: red, faster, quicker to its moves
+      if(!a._enr&&a.hp<D.hp*.4){a._enr=1;a.tint='#ff4a4a';bark();try{sfx('bad')}catch(e){}shake=Math.max(shake,.3);floats.push({x:a.x,y:a.y-26,t:0,text:'Öfkelendi!',color:'#ff6a4a',size:9})}
+      if(a._enr){if(a.mvCd>0)a.mvCd-=dt*.6;pre.set(a,[a.x,a.y])}
+      // Y4 · a pack's Reis calls two of its kind once, at half health
+      if(!a._sum&&PACKB.has(base)&&a.hp<D.hp*.5&&ANIM[base]){a._sum=1;bark();for(let i=0;i<2;i++){const an=Math.random()*6.283;let x=a.x+Math.cos(an)*30,y=a.y+Math.sin(an)*30;if(blocked(x,y)){x=a.x;y=a.y}
+        animals.push({k:base,x,y,hp:ANIM[base].hp,st:'chase',t:0,dx:0,dy:0,face:1,atk:1,flash:0,kb:null,step:0,mad:true,pk:0,ar:0});for(let j=0;j<10;j++)parts.push({x,y:y-4,vx:(Math.random()-.5)*50,vy:-20,life:.4,c:'#c8b898'})}}}}
+  const r=_ta.apply(this,arguments);
+  for(const [a,p] of pre){if(animals.indexOf(a)<0||a.stun>0||a.mv)continue;const nx=a.x+(a.x-p[0])*.25,ny=a.y+(a.y-p[1])*.25;if(!blocked(nx,ny)&&reachAt(nx,ny)){a.x=nx;a.y=ny}}
+  for(const a of animals)a._sd=0;return r}}
+// ---------------------------------------------------------------- 7 · island-2 armour (Zırhçı Durmuş forges them; each land's piece goes into the book when you first walk in)
+const AP=[
+ ['Fırtına tüyü başlık',{s:'bas',def:22,c:'#8ab8d8'},[['Fırtına tüyü',4],['Gök tazısı postu',2],['Demir miğfer',1]],0],
+ ['Mantar lifi eldiven',{s:'el',def:14,c:'#b86a4a',res:{zehir:.4}},[['Böcek kabuğu',4],['Spor tozu',4],['Goblin kulağı',2],['Demir eldiven',1]],1],
+ ['Hurda çizme',{s:'ayak',def:15,c:'#7a6a58',metal:1,mud:1},[['Ağır plaka',2],['Vida',6],['Dişli',4],['Demir çizme',1]],2],
+ ['Kristal miğfer',{s:'bas',def:26,c:'#8ac8f0',metal:1,res:{kanama:.3}},[['Kristal kanat',3],['Golem parçası',4],['Kobalt külçesi',2],['Fırtına tüyü başlık',1]],3],
+ ['Ejder pulu eldiven',{s:'el',def:16,c:'#8a2a3a',res:{'yanık':.4}},[['Yavru ejder pulu',4],['Ejder dişi',2],['Mantar lifi eldiven',1]],4],
+ ['Meka çizme',{s:'ayak',def:18,c:'#5a6a8a',metal:1,mud:1,res:{kanama:.2}},[['Titanyum külçesi',3],['Uzaylı devresi',2],['Muhafız zırhı parçası',1],['Hurda çizme',1]],5]];
+for(const [n,e,ing] of AP){EQUIP[n]=e;if(!REC.has(n)){const r={r:n,i:ing.map(x=>x.slice()),t:[],c:'Zırh'};DB.R.push(r);REC.set(n,r)}
+  if(DB.f&&DB.f.indexOf(n)<0)DB.f.push(n);try{ARMORSET.add(n);FORGED.add(n)}catch(e){}
+  if(PRICE[n]==null){let s=0;for(const [m,q] of ing)s+=(PRICE[m]||40)*q;PRICE[n]=Math.round(s*1.4)}}
+{let tk=0;const _fb=frameBody;frameBody=function(){const r=_fb.apply(this,arguments);if(++tk%30)return r;try{if(!I2||onTitle||!met||wake||window.__plArena)return r;const b=bioAt(player.x,player.y);
+  for(const [n,,,bb] of AP)if(bb<=b&&!bought.has(n)){bought.add(n);sfx('found');const nm=n;setTimeout(()=>announce(nm,'Tarifi kitabında: kazanda öğren, Zırhçı Durmuş döver'),900);break}}catch(e){}return r}}
+// ---------------------------------------------------------------- 8 · moves learnt land by land; the ulti at the end of island 1
+const NEED={dash:0,double:1,c2:2,c3:3,charged:3,cdc:4};
+const MVN={dash:['Takla vuruşu','Taklanın içinde ya da hemen sonunda tıkla'],double:['Çift vuruş','Hızlıca iki kez tıkla'],c2:['Ritimli 2. vuruş','Vuruşun hemen ardından tıkla'],
+  c3:['Ritimli 3. vuruş','2. vuruşun hemen ardından yine tıkla'],charged:['Güçlü vuruş','Basılı tut, halka dolunca bırak'],cdc:['Bitirici','Tıkla, takla at, yine tıkla']};
+function stage(){return V.a||I2?6:V.b}
+window.__plMoveOK=type=>{if(window.__plArena)return true;if(type==='ult')return V.u||V.a||I2;const n=NEED[type];return n==null||stage()>=n};
+window.__plDashK=()=>window.__plArena||stage()>=1?1.35/1.6:1;
+function teach(){if(onTitle||!met||wake||window.__plArena)return;const L=[];for(const k in NEED)if(stage()>=NEED[k]&&!V.told[k]&&((k!=='dash'&&k!=='cdc')||sk('S1'))){V.told[k]=1;L.push(k)}
+  if(L.length){const k=L[L.length-1];sfx('level');setTimeout(()=>announce('Yeni hamle: '+MVN[k][0],MVN[k][1]),300)}}
+{let tk=0;const _fb=frameBody;frameBody=function(){const r=_fb.apply(this,arguments);if(++tk%20)return r;try{if(onTitle||!met||wake||window.__plArena)return r;
+  if(I2){if(!V.a){V.a=true;if(!V.u){V.u=true;setTimeout(()=>{try{announce('Ulti öğrendin','Dövüşürken altın çubuk dolar; dolunca R')}catch(e){}},4500)}}}else{const b=bioAt(player.x,player.y);if(b>V.b)V.b=b}teach()}catch(e){}return r}}
+{const _ka=killAnimal;killAnimal=function(a){const r=_ka.apply(this,arguments);try{if(!window.__plArena&&!V.u){const D=ANIM[a.k]||{};if(a.k==='Kara ejder'||(D.boss&&D.base==='Kristal golem')){V.u=true;sfx('level');setTimeout(()=>announce('Ulti öğrendin','Dövüşürken altın çubuk dolar; dolunca R'),800)}}}catch(e){}return r}}
+{const _s=snapshot;snapshot=function(){const o=_s.apply(this,arguments);if(o&&!window.__plArena)o.v128={b:V.b,u:V.u,a:V.a,t:Object.keys(V.told)};return o};try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}}
+{const _r=restore;restore=function(d){const r=_r.apply(this,arguments);try{const v=d&&d.v128;V.told={};
+  if(v){V.b=+v.b||0;V.u=!!v.u;V.a=!!v.a;for(const k of (v.t||[]))V.told[k]=1}
+  else{let m=0;try{if(!I2&&window.__v65)for(const b of window.__v65.seen)m=Math.max(m,+b||0)}catch(e){}V.b=m;V.a=I2||!!(d&&d.v75&&d.v75.a)||!!(d&&d.i2);V.u=V.a;for(const k in NEED)if(stage()>=NEED[k])V.told[k]=1}}catch(e){}return r}}
+{const _as=applyState;applyState=function(d){if(!d){V.b=0;V.u=false;V.a=false;V.told={}}return _as.apply(this,arguments)}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v128-denge: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
