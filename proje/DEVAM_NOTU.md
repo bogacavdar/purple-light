@@ -972,3 +972,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Vuruş: sağ eldeki silah (yoksa "Silah" yuvası) vurur; ikisi de yoksa ve sol elde meşale varsa meşale vurur (7 hasar), o da yoksa yumruk. Meşale karakterin öbür elinde çizilir (`drawLeftT`).
 - v1.39–1.40'taki `offW` (meşalenin yanına silah alma) kaldırıldı; bu model onun yerini tutuyor.
 - Menüde "Versiyon 1.41". chk.js 0 hata.
+
+## v1.42 (27 Ekim 2026)
+- Envanterde taşınabilir eşyayı yuvaya sürükleme bazen hiç başlamıyor ya da yarıda kalıyordu: döşemenin içindeki `<img>` tarayıcının kendi resim sürüklemesini başlatıyor, bu da `pointercancel` ile bizim sürüklemeyi iptal ediyordu (`draggable="false"` yalnızca düğmedeydi). Düzeltme: `#cbody img, #hotbar img` için `-webkit-user-drag:none`, envanterde `dragstart` engelleniyor, farede `pointerdown` varsayılanı (metin seçimi) engelleniyor.
+- Eşya artık ekranın altındaki kuşağa (`#hotbar [data-hs]`) da bırakılabilir, yalnızca çantadaki kuşağa değil (`bsAt`). Üstüne gelinen yuva iki kuşakta da vurgulanır; iptal olunca vurgu temizlenir.
+- Menüde "Versiyon 1.42". chk.js 0 hata.

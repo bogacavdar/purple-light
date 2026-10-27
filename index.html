@@ -334,6 +334,7 @@ body.ontitle #tut,body.ontitle #prompt,body.ontitle #help{display:none!important
 .crow{flex-wrap:wrap}
 #cmsg{flex:1 1 200px}
 .slot.over{border-color:var(--accent);border-style:solid;background:#3d4d2c}
+#cbody img,#hotbar img{-webkit-user-drag:none;user-select:none}   /* v1.42: a picture must not start the browser's own drag */
 #ghost{position:fixed;z-index:40;pointer-events:none;width:44px;height:44px;margin:-22px 0 0 -22px;image-rendering:pixelated;filter:drop-shadow(0 4px 6px rgba(0,0,0,.5))}
 .tile{touch-action:none}
 #help{display:none!important}
@@ -389,6 +390,7 @@ body #xpdock{padding-right:calc(env(safe-area-inset-right,0px) + 290px)}
 #hotbar .hs{position:relative;width:46px;height:46px;padding:0;background:#1c2419;border:2px solid #3d4a33;cursor:pointer;display:flex;align-items:center;justify-content:center}
 #hotbar .hs img{width:32px;height:32px;image-rendering:pixelated}
 #hotbar .hs.empty{opacity:.55}
+#hotbar .hs.over{border-color:#fff;background:#3d4d2c}
 #hotbar .hs.on{border-color:var(--accent);background:#3d4d2c;box-shadow:0 0 0 2px #11170f,0 0 12px rgba(242,184,75,.55);transform:translateY(-3px)}
 #hotbar .hs kbd{position:absolute;left:2px;top:0;font-family:inherit;font-size:10px;color:var(--ink-dim)}
 #hotbar .hs b{position:absolute;right:2px;bottom:0;font-size:11px;color:var(--accent)}
@@ -1332,7 +1334,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.41</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.42</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -3071,23 +3073,25 @@ function invClick(e){if(suppressClick)return;
 // mouse: drag at once; touch: hold the finger still ~0.25 s, then drag (a quick swipe still scrolls the list; tap → tap still works)
 let idrag=null;
 function idragStart(d,x,y){d.on=true;const g=document.createElement('img');g.id='ghost';g.src=icon(d.n);g.alt='';g.style.left=x+'px';g.style.top=y+'px';document.body.appendChild(g);d.g=g;cbody.classList.add('idrag');if(d.touch){try{if(navigator.vibrate)navigator.vibrate(15)}catch(e){}}}
+cbody.addEventListener('dragstart',e=>{if(mode==='inv')e.preventDefault()});   // v1.42: the browser's image drag used to cancel ours
+function bsAt(x,y){const o=cst(document.elementFromPoint(x,y),'[data-bs],#hotbar [data-hs]');return o?{o,i:+(o.dataset.bs!=null?o.dataset.bs:o.dataset.hs)}:null}   // v1.42: the belt in the bag and the one at the bottom both take a drop
 cbody.addEventListener('pointerdown',e=>{if(mode!=='inv'||e.button>0)return;
   const s=e.target.closest('[data-bs]'),t=e.target.closest('.itile.carry');let d=null;
   if(s){const i=+s.dataset.bs,n=belt[i];if(n)d={src:'slot',i,n}}
   else if(t)d={src:'inv',n:t.dataset.n};
-  if(!d)return;Object.assign(d,{el:e.target,x:e.clientX,y:e.clientY,lx:e.clientX,ly:e.clientY,on:false,id:e.pointerId,touch:e.pointerType!=='mouse'});idrag=d;
+  if(!d)return;if(e.pointerType==='mouse')e.preventDefault();Object.assign(d,{el:e.target,x:e.clientX,y:e.clientY,lx:e.clientX,ly:e.clientY,on:false,id:e.pointerId,touch:e.pointerType!=='mouse'});idrag=d;
   if(d.touch)d.tm=setTimeout(()=>{if(idrag===d&&!d.on)idragStart(d,d.lx,d.ly)},250)});
 cbody.addEventListener('touchmove',e=>{if(idrag&&idrag.on)e.preventDefault()},{passive:false});
 addEventListener('pointermove',e=>{const d=idrag;if(!d||e.pointerId!==d.id)return;d.lx=e.clientX;d.ly=e.clientY;
   if(!d.on&&Math.hypot(e.clientX-d.x,e.clientY-d.y)>(d.touch?10:6)){if(d.touch){clearTimeout(d.tm);idrag=null;return}idragStart(d,e.clientX,e.clientY)}
-  if(d.on){e.preventDefault();d.g.style.left=e.clientX+'px';d.g.style.top=e.clientY+'px';cbody.querySelectorAll('.bs.over').forEach(x=>x.classList.remove('over'));const o=cst(document.elementFromPoint(e.clientX,e.clientY),'[data-bs]');if(o)o.classList.add('over')}},{passive:false});
+  if(d.on){e.preventDefault();d.g.style.left=e.clientX+'px';d.g.style.top=e.clientY+'px';document.querySelectorAll('.bs.over,#hotbar .hs.over').forEach(x=>x.classList.remove('over'));const o=bsAt(e.clientX,e.clientY);if(o)o.o.classList.add('over')}},{passive:false});
 addEventListener('pointerup',e=>{const d=idrag;if(!d||e.pointerId!==d.id)return;idrag=null;clearTimeout(d.tm);cbody.classList.remove('idrag');if(!d.on)return;d.g.remove();
   if(d.touch&&Math.hypot(e.clientX-d.x,e.clientY-d.y)<10){invClick({target:d.el});suppressClick=true;setTimeout(()=>suppressClick=false,350);return}   // a long press that did not move = a tap
   suppressClick=true;setTimeout(()=>suppressClick=false,50);
-  const o=cst(document.elementFromPoint(e.clientX,e.clientY),'[data-bs]');
-  if(o){const i=+o.dataset.bs;if(d.src==='slot'&&i===d.i){renderCraft();return}beltSet(i,d.n);toast(`${d.n} ${slotKey(i)}. yuvada`)}
+  const o=bsAt(e.clientX,e.clientY);document.querySelectorAll('.bs.over,#hotbar .hs.over').forEach(x=>x.classList.remove('over'));
+  if(o&&o.i>=0&&o.i<hotN()){const i=o.i;if(d.src==='slot'&&i===d.i){renderCraft();return}beltSet(i,d.n);hotK='';renderHot();toast(`${d.n} ${slotKey(i)}. yuvada`)}
   else if(d.src==='slot'){beltClear(d.i);toast(`${d.n} yuvadan çıktı; envanterinde duruyor`)}else renderCraft()});
-addEventListener('pointercancel',()=>{if(idrag){clearTimeout(idrag.tm);if(idrag.g)idrag.g.remove();idrag=null;cbody.classList.remove('idrag')}});
+addEventListener('pointercancel',()=>{if(idrag){clearTimeout(idrag.tm);if(idrag.g)idrag.g.remove();idrag=null;cbody.classList.remove('idrag');document.querySelectorAll('.bs.over,#hotbar .hs.over').forEach(x=>x.classList.remove('over'))}});
 function renderCraft(){
   if(mode==='qlog'){renderQlog();return}
   $('cpanel').classList.toggle('nobench',true);
