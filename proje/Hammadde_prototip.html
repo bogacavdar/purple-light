@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 106</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 107</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -12330,7 +12330,7 @@ setInterval(()=>{try{if(onTitle||wake||fading||paused||sailing||(cine&&cine.on)|
 #tmain .mb.arena.locked .arl{display:block}
 #tmain .mb.arena.shake{animation:arshake .35s}
 @keyframes arshake{20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
-body.arena #tut,body.arena #p-save,body.arena #p-load,body.arena #p-xfer{display:none!important}
+body.arena #tut,body.arena #p-save,body.arena #p-load,body.arena #p-xfer,body.arena #clock,body.arena #fdbar,body.arena #coinbox,body.arena #shipchip,body.arena #b-quest,body.arena #bar,body.arena #right,body.arena #b-ach,body.arena #b-eat,body.arena #xpdock,body.arena #lvlup,body.arena #gather,body.arena #discover,body.arena #hotbar,body.arena #coinhint,body.arena #daybanner,body.arena #placeui,body.arena #savedot,body.arena #cheatpad,body.arena #v50tog,body.arena #v50row,body.arena #bigmap,body.arena #b3trk,body.arena #b3ptr,body.arena #b3tip,body.arena #p3ptr,body.arena #qtip,body.arena #actcard,body.arena #v65mt,body.arena #npcsc,body.arena #roomui,body.arena #ebtn,body.arena #prompt:not(.act){display:none!important}
 #arhud{position:fixed;z-index:30;left:50%;top:calc(env(safe-area-inset-top,0px) + 6px);transform:translateX(-50%);display:flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:6px 10px;max-width:calc(100vw - 24px);box-sizing:border-box;padding:6px 10px;background:rgba(22,14,34,.88);border:2px solid #9a5ae0;box-shadow:0 0 0 2px #11170f;color:#f0e4ff;font-size:13px;line-height:1.2}
 #arhud[hidden]{display:none}
 #arhud .art{color:#d8b0ff;font-weight:800;letter-spacing:.06em}
@@ -12410,7 +12410,7 @@ body.arena #tut,body.arena #p-save,body.arena #p-load,body.arena #p-xfer{display
 // =====================================================================================================
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
-const AR={on:false,open:false,sel:null,boss:false,n:1,slot:'silah',lv:25,isle:1,held:null,dealt:0,last:0,recv:0,lastR:0,hits:[],center:null,R:9*16,pc:{},pq:[],nodesOff:[]};
+const AR={on:false,open:false,sel:null,boss:false,n:1,keys:/^(Key[WASDQ]|Arrow(Up|Down|Left|Right)|Shift(Left|Right)|Space|Escape)$/,slot:'silah',lv:25,isle:1,held:null,dealt:0,last:0,recv:0,lastR:0,hits:[],center:null,R:9*16,pc:{},pq:[],nodesOff:[]};
 window.__plArena=false;window.__arena=AR;
 const R1=['Çayır','Orman','Bataklık','Kayalık Dağ','Kül Diyarı','Mor Kristal Vadisi'],R2=['Yüzen Kayalar','Dev Mantar Ormanı','Hurda Çölü','Kristal Golem Ocağı','Ejder Volkanı','Gök Rıhtımı'];
 const KINDS=[['sword','Kılıçlar'],['hunt','Mızraklar'],['staff','Asalar'],['gun','Ateşli silahlar'],['axe','Baltalar'],['pick','Kazmalar'],['torch','Meşaleler']];
@@ -12532,12 +12532,12 @@ function foeCard(k){const D=ANIM[k],tp=TEMP[D.temper]||[D.temper,''],bn=canBoss(
   return `<div class="cc${AR.sel===k?' cur':''}"><div class="pp">${pimg(k)}</div><div class="nm">${esc(k)}</div><div class="mt">Can ${fmt(D.hp)}${D.dmg?` · hasar ${fmt(D.dmg)}`:''} · hız ${fmt(D.spd)}${B?`<br>♛ Reis: can ${fmt(B.hp)} · hasar ${fmt(B.dmg)}`:''}</div><div class="tg">${tg.join('')}</div>
     <div class="bt"><button type="button" class="f" data-af="${esc(k)}">Dövüş</button><button type="button" class="b" data-ab="${esc(k)}"${B?'':' disabled title="Bu canlının reisi yok"'}>♛ Reis</button></div></div>`}
 function rightHTML(){const G=groups().filter(g=>g.isle===AR.isle);
-  let h=`<div class="tabs"><button type="button" class="chip${AR.isle===1?' on':''}" data-ai="1">Yıldızsız Ada</button><button type="button" class="chip${AR.isle===2?' on':''}" data-ai="2">İkinci ada</button><span class="lbl">Kaç tane:</span>${[1,2,3,5].map(n=>`<button type="button" class="chip${AR.n===n?' on':''}" data-an="${n}">${n}</button>`).join('')}</div>`;
+  let h=`<div class="tabs"><button type="button" class="chip${AR.isle===1?' on':''}" data-ai="1">Yıldızsız Ada</button><button type="button" class="chip${AR.isle===2?' on':''}" data-ai="2">İkinci ada</button></div>`;
   for(const g of G)h+=`<div class="rgn">${esc(g.name)}</div><div class="cgrid">${g.ks.map(foeCard).join('')}</div>`;
   if(!G.length)h+='<p class="note2">Bu adanın canlıları bulunamadı.</p>';return h}
 function renderOv(){const ov=$('arov');if(!ov)return;
   ov.innerHTML=`<div class="arb" role="dialog" aria-modal="true" aria-label="Arena"><div class="arh"><h2>⚔ Arena</h2><span class="lv">Seviye ${[1,10,25,50].map(n=>`<button type="button" class="chip${lvl===n?' on':''}" data-al="${n}">${n}</button>`).join('')}</span><span class="sp"></span>${AR.sel?'<button type="button" class="abtn gh" data-ax="back">Arenaya dön</button>':''}<button type="button" class="abtn x" data-ax="out">Arenadan çık</button></div>
-    <div class="arg"><div class="arc1">${leftHTML()}</div><div class="arc2"><h3>Rakipler</h3><p class="note2" style="margin:0 0 8px">Canlıya ya da reisine dokun: arenaya gelir. Kimsenin canı azalmaz; hasar sayıları ve vuruşlar görünür.</p>${rightHTML()}</div></div></div>`;
+    <div class="arg"><div class="arc1">${leftHTML()}</div><div class="arc2"><h3>Rakipler</h3><p class="note2" style="margin:0 0 8px">Bir canlıya ya da reisine dokun: arenada tek başına belirir (öncekinin yerini alır). Kimse hasar almaz, kimse ölmez; vuruşlar ve hasar sayıları görünür.</p>${rightHTML()}</div></div></div>`;
   drawDoll2();setTimeout(pump,0)}
 function refreshLeft(){const c=document.querySelector('#arov .arc1');if(!c)return;const st_=c.scrollTop;c.innerHTML=leftHTML();c.scrollTop=st_;drawDoll2()}
 function openOv(){let ov=$('arov');if(!ov){ov=document.createElement('div');ov.id='arov';document.body.appendChild(ov);ov.addEventListener('click',ovClick)}
@@ -12561,15 +12561,23 @@ addEventListener('keydown',e=>{if(!AR.on||!AR.open)return;if(e.key==='Escape'&&A
 function spot(c,i,n){const span=Math.min(120,28*(n-1)),x0=c.x-span/2+(n>1?span*i/(n-1):0),y0=c.y-36;
   for(let r=0;r<40;r+=4)for(let k=0;k<8;k++){const a=k/8*Math.PI*2,x=x0+Math.cos(a)*r,y=y0+Math.sin(a)*r;if(reachAt(x,y)&&!blocked(x,y))return{x,y}}return{x:x0,y:y0}}
 function clearFoes(){animals.length=0;shots.length=0}
-function spawnSel(){if(!AR.sel||!ANIM[AR.sel])return;clearFoes();pfx={};renderFx();const k=AR.sel,boss=AR.boss&&canBoss(k);let nm=boss?bossOf(k):k;if(!nm)nm=k;const D=ANIM[nm],n=AR.n,pk=n>1?++packId:0,c=AR.center||{x:player.x,y:player.y-60};
+function spawnSel(){if(!AR.sel||!ANIM[AR.sel])return;clearFoes();pfx={};renderFx();const k=AR.sel,boss=AR.boss&&canBoss(k);let nm=boss?bossOf(k):k;if(!nm)nm=k;const D=ANIM[nm],n=1,pk=0,c=AR.center||{x:player.x,y:player.y-60};
   player.x=c.x;player.y=c.y+60;player.face={x:0,y:-1};goal=null;dodge=null;
   for(let i=0;i<n;i++){const p=spot(c,i,n);const a={k:nm,x:p.x,y:p.y,hp:D.hp,st:'wander',t:0,dx:0,dy:0,face:p.x<player.x?1:-1,atk:1,flash:0,kb:null,step:Math.random()*6,mad:false,pk,ar:1,_hp:D.hp,_lt:0};
     if(nm!==k){const BIG=(window.__p4&&window.__p4.BIG)||{};Object.assign(a,{mad:true,boss:1,base:k,scale:BIG[k]?1.5:2,tint:'#b44aff',p4s:2.5})}
     animals.push(a);for(let j=0;j<16;j++){const t=j/16*6.283;parts.push({x:a.x+Math.cos(t)*5,y:a.y-3,vx:Math.cos(t)*45,vy:Math.sin(t)*20-18,life:.55,c:j%3?'rgba(200,150,255,.9)':'#ffffff'})}}
   AR.dealt=0;AR.last=0;AR.recv=0;AR.lastR=0;AR.hits.length=0;hudK='';
   try{sfx(nm!==k?'growl':'found')}catch(e){}if(nm!==k){shake=Math.max(shake,.25);shakeP=Math.max(shakeP,3)}
-  announce(n>1?`${nm} ×${n}`:nm,nm!==k?'Reis arenada! Kırmızı halkadan kaç.':'Arenada')}
+  announce(nm,nm!==k?'Reis arenada! Kırmızı halkadan kaç.':'Arenada')}
 
+// ------------------------------------------------------------------ v107: only the fight. No other keys, no world outside the ring, no wounds on the foe
+addEventListener('keydown',e=>{if(!AR.on||AR.open)return;const t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'))return;if(!AR.keys.test(e.code||'')){e.stopImmediatePropagation();e.preventDefault()}},true);
+addEventListener('keyup',e=>{if(!AR.on)return;if(!AR.keys.test(e.code||''))e.stopImmediatePropagation()},true);
+addEventListener('wheel',e=>{if(AR.on&&!AR.open)e.stopImmediatePropagation()},{capture:true,passive:true});
+{const _am=drawAmbient;drawAmbient=function(){const r=_am.apply(this,arguments);if(AR.on&&AR.center)try{const c=AR.center,R=AR.R+12,L=2600;
+  ctx.strokeStyle='#0b0812';ctx.lineWidth=L;ctx.beginPath();ctx.arc(c.x,c.y,R+L/2,0,Math.PI*2);ctx.stroke();
+  for(let i=0;i<4;i++){ctx.strokeStyle=`rgba(11,8,18,${(.18+i*.18).toFixed(2)})`;ctx.lineWidth=4;ctx.beginPath();ctx.arc(c.x,c.y,R-12+i*4,0,Math.PI*2);ctx.stroke()}}catch(e){}return r}}
+{const _da=drawAnimal;drawAnimal=function(a){if(!AR.on||!a||!a.ar)return _da.apply(this,arguments);const D=ANIM[a.k],h=a.hp;if(D)a.hp=D.hp;try{return _da.apply(this,arguments)}finally{a.hp=h}}}
 // ------------------------------------------------------------------ the HUD on top during a fight
 let hudK='';
 function buildHud(){if($('arhud'))return;const h=document.createElement('div');h.id='arhud';h.hidden=true;
@@ -12580,7 +12588,7 @@ function buildHud(){if($('arhud'))return;const h=document.createElement('div');h
     if(a==='sel')openOv();else if(a==='re')spawnSel();else if(a==='mad'){for(const x of animals)if(x.ar){x.mad=true;x.t=0}sfx('growl')}else if(a==='out')leave()})}
 function renderHud(){const h=$('arhud');if(!h)return;h.hidden=!AR.on||AR.open;if(h.hidden)return;
   const now=performance.now();let s5=0;for(const x of AR.hits)if(now-x[0]<5000)s5+=x[1];
-  const foe=AR.sel?((AR.boss&&canBoss(AR.sel)?bossOf(AR.sel)||AR.sel:AR.sel)+(AR.n>1?' ×'+AR.n:'')):'Rakip seç';
+  const foe=AR.sel?((AR.boss&&canBoss(AR.sel)?bossOf(AR.sel)||AR.sel:AR.sel)):'Rakip seç';
   const k=foe+'|'+Math.round(AR.dealt)+'|'+Math.round(AR.last)+'|'+Math.round(s5/5)+'|'+Math.round(AR.recv)+'|'+Math.round(AR.lastR);if(k===hudK)return;hudK=k;
   $('arfoe').textContent=foe;$('ard1').textContent=fmt(AR.dealt);$('ard2').textContent=AR.last?fmt(AR.last):'–';$('ard3').textContent=fmt(s5/5);$('arr1').textContent=fmt(AR.recv);$('arr2').textContent=AR.lastR?fmt(AR.lastR):'–'}
 
@@ -12605,7 +12613,7 @@ function pre(){const now=performance.now();
   const c=AR.center;
   for(const a of animals){if(!a.ar)continue;const D=ANIM[a.k];if(!D)continue;if(a._hp==null)a._hp=D.hp;
     if(a.hp<a._hp-.01){const d=a._hp-a.hp;AR.dealt+=d;AR.last=d;AR.hits.push([now,d]);a._lt=now;a._hp=a.hp;hudK=''}
-    if(a.hp<=0||(a.hp<D.hp&&now-(a._lt||0)>1400)){a.hp=D.hp;a._hp=D.hp}
+    if(a.hp<D.hp){a.hp=D.hp;a._hp=D.hp}
     if(a.frz>30)a.frz=3;
     if(c&&Math.hypot(a.x-c.x,a.y-c.y)>AR.R+150){const an=Math.random()*6.283;a.x=c.x+Math.cos(an)*AR.R*.5;a.y=c.y+Math.sin(an)*AR.R*.5;a.kb=null;a.lunge=null}}
   while(AR.hits.length&&now-AR.hits[0][0]>6000)AR.hits.shift();

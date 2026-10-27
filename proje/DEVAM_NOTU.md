@@ -734,3 +734,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v106 (27 Ekim 2026) — Arena sınırı
 - Arena halkası duvar oldu: `blocked` sarmalandı; arenadayken halkanın merkezinden `AR.R-6` (138 px) uzağı dolu sayılır. Oyuncu yürüyerek, koşarak, atılarak ya da savrularak çıkamaz; canlılar (`moveA`, geri tepme, hamle) da çıkamaz. Asa mermileri kenarda söner (onlar da `blocked`'a bakıyor); canlıların attıkları kenardan geçebilir.
 - Menüde "Versiyon 106". chk.js 0 hata.
+
+## v107 (27 Ekim 2026) — Arena yalnızca dövüş
+- Arenada (`body.arena`) dövüş dışı her şey gizli: saat, tokluk, sikke, görev, menü çubuğu, sağ sütun (çıkış, ayarlar, karakter, harita), başarım ve yemek düğmeleri, seviye/XP, alet kutuları, toplama çubuğu, takip çubuğu ve okları, E düğmesi, yazılı ipuçları (`#prompt:not(.act)`). Kalanlar: can/enerji/mana, etki çubuğu, dokunmatikte joystick, Atıl ve hedefteki eylem düğmesi, Arena şeridi.
+- Tuşlar: arenada yalnızca WASD, oklar, Shift (koş), Boşluk (vur), Q (atıl) ve Esc geçer (`AR.keys`, window capture; tuş ataması çevrilmiş olayı da süzer). Fare tekerleği kapalı. Silah/zırh yalnızca Seçim ekranından.
+- Halkanın dışı karanlık (`drawAmbient` sarmalandı: kalın koyu çember + yumuşak kenar); ada görünmez.
+- Her seçimde arenada **tek** canlı belirir (öncekinin yerini alır; "Kaç tane" kalktı). Rakip hasar almaz: vuruş sayısı, parlama, savrulma görünür ama can her karede dolar ve `drawAnimal` arena canlısını hep tam canla çizer (çubuk inmez). Verilen hasar şeritte sayılır.
+- Menüde "Versiyon 107". chk.js 0 hata.
