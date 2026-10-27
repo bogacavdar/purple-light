@@ -691,3 +691,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - "Yeni" başarımlar: localStorage `hammadde.achseen` (görülenler; ilk açılışta o ana kadar kazanılanların hepsi görülmüş sayılır). Kazanılmış ama görülmemiş kart `li.new`: köşede sarı "YENİ" etiketi ve parlama; fareyle üstüne gelince, odaklanınca ya da dokununca görülür olur.
 - Sayaçlar artık yalnızca yeni olanları sayar: ana menüdeki madalya (`#t-achn`) ve oyun içindeki başarımlar düğmesi (`#b-achn`, yeni).
 - Menüde "Versiyon 101".
+
+## v102 (27 Ekim 2026)
+- Önceden kazanılan başarımlar da ilk açılışta "YENİ" görünür: görülenler kümesi yeni anahtarda (`hammadde.achseen2`) boş başlar (v101'in `hammadde.achseen` anahtarı artık kullanılmıyor). Sayaç oyuncu kartlara baktıkça azalır.
+- Menüde "Versiyon 102".
