@@ -1332,7 +1332,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 112</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 113</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -12902,6 +12902,22 @@ function tele(a,time){const m=a.mv,C=COLC[m.col],k=m.ph==='w'?Math.min(1,m.t/m.T
   if(PS.stun>0){for(let i=0;i<3;i++){const a=t*6+i*2.094;px(x+Math.cos(a)*7-1,y-27+Math.sin(a)*2.5,3,3,i%2?'#ffe070':'#fff8c8')}}
   if(PS.slow>0){ctx.strokeStyle='rgba(235,235,225,.7)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x-7,y-14);ctx.lineTo(x+7,y-2);ctx.moveTo(x+7,y-14);ctx.lineTo(x-7,y-2);ctx.moveTo(x-8,y-8);ctx.lineTo(x+8,y-8);ctx.stroke()}}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v111-moves: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v113-roll">
+// =====================================================================================================
+// v113: the dash is a roll. While dodging the character tucks in, hops a little and turns once round in
+// the direction of the dash (a forward roll when dashing up or down). ROLL=false brings the old slide back.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const ROLL=true,DUR=.24;
+{const _dp=drawPlayer;drawPlayer=function(){if(!ROLL||!dodge)return _dp.apply(this,arguments);
+  const k=Math.max(0,Math.min(1,1-dodge.t/DUR)),dir=Math.abs(dodge.vx)>=Math.abs(dodge.vy)*.35?(dodge.vx<0?-1:1):(dodge.vy<0?-1:1);
+  const ang=dir*k*Math.PI*2,hop=Math.sin(k*Math.PI)*3,sq=1-.18*Math.sin(k*Math.PI),cx=player.x,cy=player.y-7-hop;
+  ctx.save();ctx.translate(cx,cy);ctx.rotate(ang);ctx.scale(1+(1-sq)*.6,sq);ctx.translate(-cx,-cy-hop);
+  try{return _dp.apply(this,arguments)}finally{ctx.restore();
+    if(Math.random()<.5)parts.push({x:player.x+(Math.random()-.5)*6,y:player.y,vx:-dodge.vx*.08+(Math.random()-.5)*10,vy:-6-Math.random()*6,life:.3,c:Math.random()<.5?'#c8b898':'#a89878'})}}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v113-roll: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

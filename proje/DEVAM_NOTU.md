@@ -782,3 +782,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Yedek: https://github.com/bogacavdar/purple-light-phone deposunda da aynı v104 var (https://bogacavdar.github.io/purple-light-phone/, Pages açılırsa).
 - Prototip türetme: `index.html` satırları [:11] + [15:].
 - Menüde "Versiyon 112". chk.js 0 hata (kök ve telefon/).
+
+## v113 (27 Ekim 2026) — Atılma takla oldu (deneme)
+- `<script id="v113-roll">`: `drawPlayer` sarmalandı; `dodge` sürerken (0,24 sn) karakter gövde ortası (ayaktan 7 px yukarı) çevresinde atılma yönüne doğru bir tam tur döner (yukarı/aşağı atılınca öne takla), ortada %18 büzülür ve 3 px seker; yerde toz çıkar. Hareket, süre ve dokunulmazlık aynı.
+- Boğaç deneyecek; beğenmezse `ROLL=false` yapmak eski kaymayı geri getirir.
+- Menüde "Versiyon 113". chk.js 0 hata.
