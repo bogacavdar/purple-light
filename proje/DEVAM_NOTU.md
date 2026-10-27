@@ -754,3 +754,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Sol tık (fare): elde silah varken tıklanan yöne hemen vurur (`attack({x,y})`; bir canlıya tıklanırsa ona döner, asa/silah oraya nişan alır), yürümez. Tıklanan yer `E_TALK` türündeyse eskisi gibi oraya yürünür. Dokunmatik değişmedi.
 - Arena: E de geçen tuşlara eklendi (`AR.keys`).
 - Menüde "Versiyon 109". chk.js 0 hata.
+
+## v110 (27 Ekim 2026) — Savuşturma (parry) ve renkli saldırılar
+- `<script id="v110-parry">` (en sonda). **Sağ tık** savuşturma penceresini açar: `WIN=0,2 sn` içinde inen vuruş savuşturulur. Bekleme `CD=0,6 sn` (başarılı olunca 0,15 sn), 5 enerji. Dokunmatikte Atıl'ın solunda **Savuş** düğmesi (`#parrybtn`, Atıl'ın yerine göre konumlanır).
+- Her hamle hazırlığının (`a.wind`) bir rengi var (`a.atkT`, hazırlık başlarken `roll`): beyaz = normal, sarı = ağır (hasar ×1,4, hazırlık +0,18 sn), kırmızı = savuşturulamaz (hasar ×1,7, hazırlık +0,3 sn). Reisler: %30 kırmızı, %35 sarı; ağır türler (`HEAVY` ya da can ≥300): %20 kırmızı, %30 sarı; hasarı ≥8 ve canı ≥35 olanlar: %30 sarı; menzilliler hep beyaz. Renk, başın üstündeki "!" (kırmızıda çift "!!" ve titreyen halka) ve yere düşen hedef halkasıyla görünür; eski kırmızı hazırlık çizimi bu renkli çizimle değişti (`drawAnimal` sarmalandı).
+- Savuşturma: hasar yok, canavar geri savrulur ve sersemler (`a.stun` 1,6 sn, reis 1,1 sn; başının üstünde dönen yıldızlar; yerinden kımıldamaz, hazırlık/hamle/yere vurma iptal), kısa duraklama, çınlama sesi, kıvılcım, +6 enerji, "Savuşturuldu!". Fırlatılanlar (diken, tükürük, ateş) da pencerede savuşturulur. Kırmızı vuruş ve reisin yere vurması savuşturulamaz.
+- Boğaç'ın isteği: oyuncu ne zaman savuşturacağını, atılacağını, vuracağını kendisi bulur; açıklayıcı ipucu ya da "Erken" yazısı yok.
+- Menüde "Versiyon 110". chk.js 0 hata.
