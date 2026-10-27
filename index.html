@@ -12,7 +12,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <script>if('serviceWorker' in navigator&&location.protocol==='https:')addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})</script>
-<script>/* v112: phones and tablets play the frozen v104 in telefon/ for now (?pc keeps this page) */(function(){try{if(location.protocol==='file:'||/[?&]pc\b/.test(location.search))return;var fine=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches;if(fine)return;var t=+sessionStorage.getItem('pl.redir')||0;if(Date.now()-t<4000)return;sessionStorage.setItem('pl.redir',String(Date.now()));location.replace('telefon/'+location.hash)}catch(e){}})()</script>
+<script>/* v1.32: telefonlar ve tabletler de bu sürümü oynar (telefon/ içindeki v104 yalnızca yedek) */</script>
 <script>
 // Shows any startup error on screen (so a phone user can read it), instead of a silent frozen page.
 window.__hamErr=function(msg,soft){try{if(soft||window.__plReady){window.__hamSoft(msg);return}var b=document.getElementById('errbox');if(!b){b=document.createElement('div');b.id='errbox';b.style.cssText='position:fixed;left:8px;right:8px;bottom:8px;z-index:99;background:#4a0e12;color:#fff;border:2px solid #ff6a5a;font:14px/1.4 system-ui,sans-serif;padding:10px 12px;white-space:pre-wrap';(document.body||document.documentElement).appendChild(b)}b.textContent='Oyun bir hatayla karşılaştı. Bu yazının ekran görüntüsünü gönderirsen düzeltebilirim:\n'+msg+'\n'+navigator.userAgent}catch(e){}};
@@ -1120,7 +1120,7 @@ body.b3trkpad #craft{padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
 #b5lay .b5bar .mb{font-size:13px;padding:4px 10px;min-height:44px}#b5lay .b5bar>span{font-size:13px}
 #b5lay .b5h{position:absolute;box-sizing:border-box;border:2px dashed #d8b0ff;background:rgba(160,100,255,.16);touch-action:none;cursor:move;min-width:44px;min-height:44px}
 #b5lay .b5h span{position:absolute;left:50%;top:-20px;transform:translateX(-50%);white-space:nowrap;font-size:12px;font-weight:700;color:#fff;background:#4a2f80;padding:1px 6px}
-#b5lay .b5h.drag{border-style:solid;background:rgba(190,140,255,.3)}
+#b5lay .b5h.sel{border-style:solid;border-color:#ffe7a0}#b5lay .b5h.drag{border-style:solid;background:rgba(190,140,255,.3)}
 body.nododge:not(.b5edit) #dodgebtn{display:none!important}
 body.b5edit #dodgebtn{display:block!important}
 body.b5edit #mini,body.b5edit #hotbar{visibility:visible!important}
@@ -1332,7 +1332,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.31</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.32</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -8500,7 +8500,7 @@ B5.bind=(id,code,lab)=>{BIND[id]={c:code,l:lab||code};store.set(KEYSTORE,BIND);r
 {const d=document.createElement('div');d.id='b5keys';d.className='ov';d.hidden=true;d.setAttribute('role','dialog');d.setAttribute('aria-labelledby','b5kh');
   d.innerHTML=`<div class="tcard small"><h2 id="b5kh">Kontroller</h2>
   <div id="b5kdesk"><p class="note">Bir eylemin tuşuna tıkla, sonra yeni tuşa bas. Başka bir eylemin tuşunu seçersen ikisi yer değiştirir. Vazgeçmek için <b>Esc</b>.</p><div id="b5kd"></div><p id="b5kmsg" aria-live="polite"></p></div>
-  <div id="b5kt" hidden><p class="note">Ekrandaki düğmelerin (Atıl, eylem düğmesi, alet kutuları, harita…) yerini parmağınla sürükleyerek değiştirebilirsin.</p><div class="b5btns"><button class="mb" id="b5lay-go" type="button">Düğmelerin yerini ayarla</button><button class="mb ghost" id="b5lay-reset" type="button">Düğmeleri varsayılana dön</button></div></div>
+  <div id="b5kt" hidden><p class="note">Ekrandaki düğmelerin (Atıl, eylem düğmesi, alet kutuları, harita…) yerini parmağınla sürükleyerek değiştirebilirsin.</p><div class="b5btns"><button class="mb" id="b5lay-go" type="button">Düğmelerin yerini ve boyutunu ayarla</button><button class="mb ghost" id="b5lay-reset" type="button">Düğmeleri varsayılana dön</button></div></div>
   <div class="tmenu row"><button class="mb ghost" id="b5k-def" type="button">Varsayılana dön</button><button class="mb" id="b5k-close" type="button">Tamam</button></div></div>`;document.body.appendChild(d)}
 function renderKeys(){const el=$('b5kd');
   el.innerHTML=KB.filter(([id])=>id.indexOf('cheat')!==0||settings.cheat).map(([id,nm])=>`<div class="b5k"><span>${nm}</span><button type="button" data-kb="${id}" class="${waitKey===id?'wait':''}" aria-label="${nm}: ${esc(labOf(id))} (değiştirmek için tıkla)">${waitKey===id?'…':esc(labOf(id))}</button></div>`).join('')
@@ -8525,14 +8525,14 @@ B5.openKeys=openKeys;B5.closeKeys=closeKeys;
 
 // ------------------------------------------------------------------ touch: move the on-screen buttons
 const LAYSTORE='hammadde.b5.layout.v1';
-const LAYEL=[['v50tog','Menü'],['dodgebtn','Atıl'],['prompt','Eylem düğmesi'],['hotbar','El ve alet kutuları'],['mini','Harita'],['coinbox','Sikke'],['b-eat','Yemek'],['ebtn','E düğmesi'],['pad','Yön tuşları']];
+const LAYEL=[['v50tog','Menü'],['dodgebtn','Atıl'],['prompt','Eylem düğmesi'],['hotbar','El ve alet kutuları'],['mini','Harita'],['coinbox','Sikke'],['b-eat','Yemek'],['ebtn','E düğmesi'],['pad','Yön tuşları'],['atkbtn','Vur'],['parrybtn','Savuştur'],['ultbtn','Ulti']];
 let LAY=(()=>{const o=store.get(LAYSTORE);return o&&typeof o==='object'?o:{}})();
 const LP=['left','top','right','bottom','transform','margin','position'];
 function placeEl(el,p){if(!el)return;const vw=innerWidth,vh=innerHeight;if(!p){for(const k of LP)el.style.removeProperty(k);return}
   const r=el.getBoundingClientRect(),w=r.width||40,h=r.height||40;const x=clamp(p.x*vw,Math.min(vw/2,w/2+2),Math.max(vw/2,vw-w/2-2)),y=clamp(p.y*vh,Math.min(vh/2,h/2+2),Math.max(vh/2,vh-h/2-2));
   if(getComputedStyle(el).position!=='fixed')el.style.setProperty('position','fixed','important');
   el.style.setProperty('left',x+'px','important');el.style.setProperty('top',y+'px','important');el.style.setProperty('right','auto','important');el.style.setProperty('bottom','auto','important');
-  el.style.setProperty('transform','translate(-50%,-50%)','important');el.style.setProperty('margin','0','important')}
+  el.style.setProperty('transform','translate(-50%,-50%)'+(p.s&&p.s!==1?' scale('+p.s+')':''),'important');el.style.setProperty('margin','0','important')}
 function applyLayout(){if(!TOUCH)return;for(const [id] of LAYEL){const el=$(id);if(!el)continue;placeEl(el,null);if(LAY[id])placeEl(el,LAY[id])}}
 addEventListener('resize',()=>{clearTimeout(B5.rz);B5.rz=setTimeout(applyLayout,120)});addEventListener('orientationchange',()=>setTimeout(applyLayout,300));
 setTimeout(applyLayout,0);
@@ -8541,15 +8541,18 @@ function startLayout(){closeKeys();const back={settings:!$('settings').hidden,pa
   $('settings').hidden=true;$('pause').hidden=true;$('title').hidden=true;document.body.classList.remove('ontitle');document.body.classList.add('b5edit');
   const pr=prompt;const ph={hidden:pr.hidden,html:pr.innerHTML,cls:pr.className};pr.hidden=false;pr.className='hud act';pr.innerHTML='<i class="pa" aria-hidden="true">☝</i>Eylem düğmesi';
   const work=JSON.parse(JSON.stringify(LAY));const ov=document.createElement('div');ov.id='b5lay';
-  ov.innerHTML=`<div class="b5bar"><span>Düğmeleri sürükle</span><button class="mb" id="b5l-save" type="button">Kaydet</button><button class="mb ghost" id="b5l-def" type="button">Varsayılana dön</button><button class="mb ghost" id="b5l-x" type="button">İptal</button></div>`;
+  ov.innerHTML=`<div class="b5bar"><span>Düğmeleri sürükle</span><span id="b5l-sz" hidden><button class="mb ghost" id="b5l-m" type="button" aria-label="Küçült">−</button> <b id="b5l-v">100%</b> <button class="mb ghost" id="b5l-p" type="button" aria-label="Büyüt">+</button></span><button class="mb" id="b5l-save" type="button">Kaydet</button><button class="mb ghost" id="b5l-def" type="button">Varsayılana dön</button><button class="mb ghost" id="b5l-x" type="button">İptal</button></div>`;
   document.body.appendChild(ov);EDIT={ov,back,ph,work,hs:[]};
   const mk=()=>{for(const h of EDIT.hs)h.remove();EDIT.hs=[];for(const [id,nm] of LAYEL){const el=$(id);if(!el)continue;const r=el.getBoundingClientRect();if(!r.width||!r.height||getComputedStyle(el).display==='none'||getComputedStyle(el).visibility==='hidden')continue;
     const h=document.createElement('div');h.className='b5h';h.dataset.id=id;h.innerHTML=`<span>${nm}</span>`;const sync=()=>{const q=el.getBoundingClientRect();h.style.left=q.left+'px';h.style.top=q.top+'px';h.style.width=Math.max(44,q.width)+'px';h.style.height=Math.max(44,q.height)+'px'};sync();h.__sync=sync;
-    h.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();try{h.setPointerCapture(e.pointerId)}catch(x){}const q=el.getBoundingClientRect();h.__d={dx:e.clientX-(q.left+q.width/2),dy:e.clientY-(q.top+q.height/2)};h.classList.add('drag')});
-    h.addEventListener('pointermove',e=>{if(!h.__d)return;e.preventDefault();const p={x:(e.clientX-h.__d.dx)/innerWidth,y:(e.clientY-h.__d.dy)/innerHeight};EDIT.work[id]=p;placeEl(el,p);sync()});
-    const up=()=>{if(!h.__d)return;h.__d=null;h.classList.remove('drag');const q=el.getBoundingClientRect();EDIT.work[id]={x:(q.left+q.width/2)/innerWidth,y:(q.top+q.height/2)/innerHeight};sync()};
+    h.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();try{h.setPointerCapture(e.pointerId)}catch(x){}const q=el.getBoundingClientRect();h.__d={dx:e.clientX-(q.left+q.width/2),dy:e.clientY-(q.top+q.height/2)};h.classList.add('drag');EDIT.sel=id;for(const o of EDIT.hs)o.classList.toggle('sel',o===h);const sz=$('b5l-sz');if(sz){sz.hidden=false;const w=EDIT.work[id];$('b5l-v').textContent=Math.round(((w&&w.s)||1)*100)+'%'}});
+    h.addEventListener('pointermove',e=>{if(!h.__d)return;e.preventDefault();const p={x:(e.clientX-h.__d.dx)/innerWidth,y:(e.clientY-h.__d.dy)/innerHeight};if(EDIT.work[id]&&EDIT.work[id].s)p.s=EDIT.work[id].s;EDIT.work[id]=p;placeEl(el,p);sync()});
+    const up=()=>{if(!h.__d)return;h.__d=null;h.classList.remove('drag');const q=el.getBoundingClientRect();const s0=EDIT.work[id]&&EDIT.work[id].s;EDIT.work[id]={x:(q.left+q.width/2)/innerWidth,y:(q.top+q.height/2)/innerHeight};if(s0)EDIT.work[id].s=s0;sync()};
     h.addEventListener('pointerup',up);h.addEventListener('pointercancel',up);ov.appendChild(h);EDIT.hs.push(h)}};
   setTimeout(mk,60);EDIT.mk=mk;
+  const size=d=>{const id=EDIT&&EDIT.sel,el=id&&$(id);if(!el)return;const q=el.getBoundingClientRect();const w=EDIT.work[id]||{x:(q.left+q.width/2)/innerWidth,y:(q.top+q.height/2)/innerHeight};
+    w.s=Math.round(clamp((w.s||1)+d,.6,2)*10)/10;EDIT.work[id]=w;placeEl(el,w);$('b5l-v').textContent=Math.round(w.s*100)+'%';for(const o of EDIT.hs)if(o.__sync)o.__sync()};
+  $('b5l-m').addEventListener('click',()=>size(-.1));$('b5l-p').addEventListener('click',()=>size(.1));
   $('b5l-save').addEventListener('click',()=>{LAY=EDIT.work;store.set(LAYSTORE,LAY);endLayout();toast('Düğme yerleri kaydedildi')});
   $('b5l-def').addEventListener('click',()=>{EDIT.work={};for(const [id] of LAYEL)placeEl($(id),null);setTimeout(mk,30)});
   $('b5l-x').addEventListener('click',()=>endLayout())}
@@ -8557,7 +8560,8 @@ function endLayout(){if(!EDIT)return;const E=EDIT;EDIT=null;E.ov.remove();docume
   applyLayout();if(E.back.ontitle)document.body.classList.add('ontitle');if(E.back.title)$('title').hidden=false;if(E.back.pause)$('pause').hidden=false;if(E.back.settings)$('settings').hidden=false;openKeys()}
 $('b5lay-go').addEventListener('click',startLayout);
 $('b5lay-reset').addEventListener('click',()=>{LAY={};store.set(LAYSTORE,LAY);applyLayout();toast('Düğmeler varsayılan yerlerinde');sfx('pick')});
-B5.startLayout=startLayout;B5.endLayout=endLayout;B5.layout=()=>LAY;B5.applyLayout=applyLayout;
+B5.startLayout=startLayout;B5.endLayout=endLayout;B5.layout=()=>LAY;B5.applyLayout=applyLayout;window.__plB5=B5;
+window.__plLayHas=id=>{const p=(EDIT?EDIT.work:LAY)[id];return !!(p&&p.x!=null)};window.__plLayS=id=>{const p=(EDIT?EDIT.work:LAY)[id];return p&&p.s?p.s:1};
 
 // ------------------------------------------------------------------ cheats: ∞ coins, max level, the whole map
 {const cv=$('coinval');if(cv&&!$('b5infic')){const b=document.createElement('b');b.id='b5infic';b.hidden=true;b.textContent='∞';b.setAttribute('aria-label','sınırsız');cv.parentNode.insertBefore(b,cv.nextSibling)}}
@@ -12437,7 +12441,7 @@ const tb=document.createElement('button');tb.className='mb arena';tb.id='t-arena
 tb.innerHTML='<span>⚔ Arena</span><small class="arl">Kilitli · oyunu bitir ya da hile modunu aç</small>';
 // v111: the arena is for computers for now (mouse: left strike, right parry); phones and tablets do not get the button
 const DESK=(()=>{try{return matchMedia('(hover:hover) and (pointer:fine)').matches}catch(e){return !TOUCH}})();
-if(DESK){const tl=$('t-load');if(tl&&tl.parentNode)tl.parentNode.insertBefore(tb,tl.nextSibling)}
+if(true){const tl=$('t-load');if(tl&&tl.parentNode)tl.parentNode.insertBefore(tb,tl.nextSibling)}
 function syncBtn(){const u=unlocked();tb.classList.toggle('locked',!u);tb.setAttribute('aria-disabled',u?'false':'true');tb.title=u?'Dövüş mekaniklerini dene':'Kilitli: oyunu bitir ya da hile modunu aç'}
 syncBtn();setInterval(()=>{try{if(onTitle)syncBtn()}catch(e){}},800);
 tb.addEventListener('click',()=>{if(!unlocked()){sfx('bad');toast('Arena kilitli: oyunu bitirince ya da hile modu açıkken açılır.',true);tb.classList.remove('shake');void tb.offsetWidth;tb.classList.add('shake');return}
@@ -12703,7 +12707,7 @@ function pre(){const now=performance.now();window.__plArenaFree=!AR.real;
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
 const PR={t:0,cd:0,flash:0,told:false,n:0};window.__plParry=PR;
-const WIN=.2,CD=.6,STUN=1.6,COST=5;   // the window opens on the click: the blow must land within 0,2 s
+const WIN=(()=>{try{return !matchMedia('(hover:hover) and (pointer:fine)').matches}catch(e){return false}})()?.25:.2,CD=.6,STUN=1.6,COST=5;   // the window opens on the click: the blow must land within 0,2 s
 const COL={n:'255,255,255',y:'255,206,40',r:'255,48,30'};
 const HEAVY=new Set(['Timsah','Yaban öküzü','Kara ejder','Mağara ayısı','Hurda devi','Büyük golem','Lav golemi','Kızıl ejder','Gölge muhafız','Gök bekçisi','Kristal golem','Kristal golemcik','Devriye robotu','Yavru ejder','Bataklık kurdu','Kül kurdu','Gölge kurdu','Kristal geyik']);
 function roll(a){const D=ANIM[a.k]||{};if(D.ranged)return 'n';const base=a.base||a.k,r=Math.random();
@@ -12798,7 +12802,7 @@ addEventListener('pointerup',e=>{if(e.pointerType==='mouse'&&e.button===2)lower(
   const st_=document.createElement('style');st_.textContent='#parrybtn{display:none;position:fixed;z-index:4;border-radius:50%;font:inherit;font-weight:800;color:#e8f6ff;background:rgba(20,30,48,.8);border:3px solid #9ad8ff;touch-action:manipulation;-webkit-tap-highlight-color:transparent}#parrybtn.on{display:block}#parrybtn:active{transform:scale(.92)}body.ontitle #parrybtn,body.cine #parrybtn{display:none!important}';document.head.appendChild(st_);
   b.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();doParry();raise()});b.addEventListener('pointerup',lower);b.addEventListener('pointercancel',lower);b.addEventListener('pointerleave',lower);
   const place=()=>{try{const d=$('dodgebtn');const cs=d&&getComputedStyle(d);if(!d||cs.display==='none'||onTitle){b.classList.remove('on');return}const r=d.getBoundingClientRect();if(!r.width){b.classList.remove('on');return}
-    b.classList.add('on');b.style.width=r.width+'px';b.style.height=r.height+'px';b.style.fontSize=Math.max(10,Math.round(r.width*.22))+'px';b.style.left=Math.round(r.left-r.width-10)+'px';b.style.top=Math.round(r.top)+'px'}catch(e){}};
+    b.classList.add('on');if(window.__plLayHas&&window.__plLayHas('parrybtn'))return;const k=window.__plLayS?window.__plLayS('parrybtn'):1;b.style.width=r.width+'px';b.style.height=r.height+'px';b.style.fontSize=Math.max(10,Math.round(r.width*.22))+'px';b.style.left=Math.round(r.left-r.width-10)+'px';b.style.top=Math.round(r.top)+'px';b.style.transform=k!==1?'scale('+k+')':''}catch(e){}};
   setInterval(place,500);addEventListener('resize',place)}
 }).toString()+')()')}catch(e){try{window.__hamErr('v110-parry: '+(e&&e.message||e))}catch(_){}}})();
 </script>
@@ -13035,7 +13039,7 @@ function pose(i,dir){const a=dir*i*(Math.PI*2/STEPS),side=i%2===1;return{a,sx:si
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
 const C={lastDown:0,lastTap:0,tapBeforeDash:0,dashStart:0,dashEnd:-1e9,hold:null,cd:0,mx:0,my:0,busyT:0};window.__plCombo=C;
-const DBL=.18,HOLD0=.22,FULL=.55,AFTER=.3,BEFORE=.9,RW=.14;   // v122: double tap is a quick pair (0,18 s); RW = the rhythm window right after a blow ends
+const PHN=(()=>{try{return !matchMedia('(hover:hover) and (pointer:fine)').matches}catch(e){return false}})();const DBL=PHN?.25:.18,HOLD0=.22,FULL=.55,AFTER=PHN?.36:.3,BEFORE=.9,RW=PHN?.2:.14;   // v1.32: phones get a little more time   // v122: double tap is a quick pair (0,18 s); RW = the rhythm window right after a blow ends
 const FX=[],SPR=[],PUSH={vx:0,vy:0,t:0};window.__plSPR=SPR;
 const now=()=>performance.now()/1000;
 const P4=()=>window.__p4||{};
@@ -13473,7 +13477,7 @@ const LES=[
  {k:'ult',foe:'Mağara ayısı',on:'şu mağara ayısının',n:'Ulti',lv:0,b:-1,c:2500,x:500,boss:1,how:'Dövüşürken altın çubuk dolar; dolunca R',
   say:'Ejderi devirdin; artık öfkeni biriktirmeyi öğrenmelisin. Her isabet, her savuşturma altın çubuğu doldurur. Dolunca <b>R</b>: bütün öfken bir anda çıkar. Bu derste çubuk üç kat hızlı dolar.',
   st:[['ult',3,'Çubuk dolunca <b>R</b>: <b>ulti</b> ile 3 kez bir canavarı vur']]}];
-const LK={};for(const l of LES)LK[l.k]=l;
+const LK={};for(const l of LES)LK[l.k]=l;window.__plLES=LES;
 const s1=()=>sk('S1');
 function have(k){return !!L.own[k]}
 function stage(){return V.a||I2?6:V.b}
@@ -13570,6 +13574,89 @@ function renderHUD(){const c=L.cur,on=!!c&&!onTitle&&met&&!window.__plArena;if(!
   hush()}catch(e){}return r}}
 {const _as=applyState;applyState=function(d){if(!d){L.own={};L.cur=null;L.ann={};M=null;lk=''}return _as.apply(this,arguments)}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v129-ders: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<style id="v132-dokun-css">
+#atkbtn,#ultbtn{display:none;position:fixed;z-index:4;border-radius:50%;font-family:inherit;font-weight:800;touch-action:none;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+#atkbtn{width:84px;height:84px;font-size:18px;background:rgba(48,26,22,.86);border:3px solid #f0997b;color:#ffe2d6;right:calc(env(safe-area-inset-right,0px) + 14px);bottom:calc(env(safe-area-inset-bottom,0px) + 150px)}
+#ultbtn{width:58px;height:58px;font-size:13px;background:rgba(60,44,10,.9);border:3px solid #ffd040;color:#fff2b0;box-shadow:0 0 12px rgba(255,208,64,.7)}
+#atkbtn.dn,#ultbtn:active{transform:scale(.92)}
+#atkbtn .ring{position:absolute;inset:-7px;border-radius:50%;border:3px solid rgba(255,231,160,.9);clip-path:inset(0 0 0 0);opacity:0;pointer-events:none}
+#atkbtn.hold .ring{opacity:1}
+#atkbtn.full .ring{border-color:#fff6c0;box-shadow:0 0 10px rgba(255,231,160,.9)}
+#parrybtn{min-width:44px;min-height:44px}
+body.ph #atkbtn{display:block}
+body.ph #ultbtn.on{display:block}
+body.ontitle #atkbtn,body.cine #atkbtn,body.ontitle #ultbtn,body.cine #ultbtn{display:none!important}
+body.b5edit.ph #atkbtn,body.b5edit.ph #ultbtn,body.b5edit.ph #parrybtn{display:block!important}
+body.ph #lesson{top:34%;width:210px;font-size:11px;padding:5px 8px;opacity:.92}
+body.ph #lesson .ls{margin-top:1px}
+</style>
+<script id="v132-dokun">
+// =====================================================================================================
+// v1.32: PHONES PLAY THE SAME GAME. Touch buttons for the fight: Vur (tap = strike, quick double tap = double,
+// tap right after a blow = rhythm, hold = heavy move), Atıl (the roll; Atıl → Vur = dash strike, Vur → Atıl →
+// Vur = finisher), Savuştur (parry, hold = shield) and Ulti (shows when the bar is full). Vur turns to the
+// nearest creature in front of you (soft lock). The moves run through the very same code as the mouse
+// (v118), so Börü's lessons count them the same way. Ayarlar → Tuşlar → "Düğmeleri taşı": every button can
+// be moved and sized. Nothing changes on a computer (fine pointer + hover).
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const PH=(()=>{try{return !matchMedia('(hover:hover) and (pointer:fine)').matches}catch(e){return false}})();
+window.__plPhone=PH;
+if(!PH)return;
+document.body.classList.add('ph');
+// ---------------------------------------------------------------- the buttons
+const atk=document.createElement('button');atk.id='atkbtn';atk.type='button';atk.setAttribute('aria-label','Vur');atk.innerHTML='Vur<i class="ring" aria-hidden="true"></i>';document.body.appendChild(atk);
+const ult=document.createElement('button');ult.id='ultbtn';ult.type='button';ult.setAttribute('aria-label','Ulti');ult.textContent='Ulti';document.body.appendChild(ult);
+// ---------------------------------------------------------------- soft lock: the nearest creature in front of you
+function target(range){let best=null,bs=1e9;const f=player.face||{x:0,y:1},fa=Math.atan2(f.y,f.x||(f.y?0:1));
+  for(const a of animals){const D=ANIM[a.k];if(!D||a.hp<=0)continue;const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy);if(d>range)continue;
+    let df=Math.abs(Math.atan2(dy,dx)-fa);if(df>Math.PI)df=2*Math.PI-df;const sc=d+df*22+(D.temper==='zararsız'?40:0)+(a.tut?20:0);if(sc<bs){bs=sc;best=a}}
+  return best}
+function kind(){try{return window.__plCB?window.__plCB.kindOf():'fist'}catch(e){return 'fist'}}
+function aimPoint(){const k=kind(),a=target(k==='staff'||k==='gun'?240:110);const f=player.face||{x:0,y:1};
+  if(a)return{a,x:a.x,y:a.y-6};return{a:null,x:player.x+(f.x||0)*40,y:player.y-6+(f.y||0)*40}}
+// the same mouse events v118 listens to, at the aimed point
+function fake(type,P){const x=(P.x-cam.cx)*S,y=(P.y-cam.cy)*S;let ev;
+  try{ev=new PointerEvent(type,{pointerType:'mouse',pointerId:77,isPrimary:true,button:0,buttons:type==='pointerdown'?1:0,clientX:x,clientY:y,bubbles:true,cancelable:true})}catch(e){return false}
+  cv.dispatchEvent(ev);return true}
+let down=null;
+function press(e){e.preventDefault();e.stopPropagation();if(document.body.classList.contains('b5edit'))return;if(!canTap()||placing)return;
+  const P=aimPoint(),k=kind();if(P.a){const dx=P.a.x-player.x,dy=P.a.y-player.y;player.face=Math.abs(dx)>=Math.abs(dy)?{x:Math.sign(dx)||1,y:0}:{x:0,y:Math.sign(dy)||1}}
+  const viaMouse=weaponHeld()||window.__plArena||((k==='axe'||k==='torch')&&P.a);
+  atk.classList.add('dn');
+  if(!viaMouse){attack({x:P.x,y:P.y+6});down={plain:true};return}
+  down={P};try{atk.setPointerCapture(e.pointerId)}catch(x){}fake('pointerdown',P)}
+function release(e){if(e)e.preventDefault();atk.classList.remove('dn');const d=down;down=null;if(!d||d.plain)return;fake('pointerup',d.P)}
+atk.addEventListener('pointerdown',press);atk.addEventListener('pointerup',release);atk.addEventListener('pointercancel',release);
+atk.addEventListener('contextmenu',e=>e.preventDefault());
+// the hold ring on the button too
+setInterval(()=>{try{const C=window.__plCombo,H=C&&C.hold;atk.classList.toggle('hold',!!(H&&H.on));atk.classList.toggle('full',!!(H&&H.full))}catch(e){}},60);
+// ulti: shows when the bar is full
+ult.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();if(document.body.classList.contains('b5edit'))return;
+  try{window.dispatchEvent(new KeyboardEvent('keydown',{code:'KeyR',key:'r',bubbles:true,cancelable:true}))}catch(x){}});
+// default places: Vur above Atıl, Ulti beside Vur (unless the player moved them)
+function auto(){try{const U=window.__plUlt,ok=!onTitle&&met&&U&&U.v>=100&&(!window.__plMoveOK||window.__plMoveOK('ult'));ult.classList.toggle('on',!!ok);
+  const d=$('dodgebtn'),has=window.__plLayHas||(()=>false),sc=window.__plLayS||(()=>1);if(!d)return;const r=d.getBoundingClientRect();if(!r.width)return;
+  if(!has('atkbtn')){const w=Math.round(r.width*1.45);atk.style.width=w+'px';atk.style.height=w+'px';atk.style.fontSize=Math.max(13,Math.round(w*.22))+'px';
+    atk.style.right='auto';atk.style.bottom='auto';atk.style.left=Math.round(r.left+r.width/2-w/2)+'px';atk.style.top=Math.max(4,Math.round(r.top-w-12))+'px';const k=sc('atkbtn');atk.style.transform=k!==1?'scale('+k+')':''}
+  if(!has('ultbtn')){const a=atk.getBoundingClientRect(),w=Math.round(r.width*.95);ult.style.width=w+'px';ult.style.height=w+'px';ult.style.left=Math.max(4,Math.round(a.left-w-12))+'px';ult.style.top=Math.round(a.top+(a.height-w)/2)+'px';const k=sc('ultbtn');ult.style.transform=k!==1?'scale('+k+')':''}}catch(e){}}
+setInterval(auto,400);addEventListener('resize',()=>setTimeout(auto,150));setTimeout(auto,50);
+try{if(window.__plB5&&window.__plB5.applyLayout)setTimeout(()=>window.__plB5.applyLayout(),80)}catch(e){}
+// ---------------------------------------------------------------- Börü's words for the buttons
+try{const LS=window.__plLES;if(LS){const tx=s=>String(s)
+    .replace(/Farenin tuşuna <b>hızlıca iki kez<\/b> bas/g,"<b>Vur</b>'a <b>hızlıca iki kez</b> dokun")
+    .replace(/tuşu <b>basılı tut<\/b>/g,"<b>Vur</b>'u <b>basılı tut</b>")
+    .replace(/Basılı tut, halka/g,"Vur'u basılı tut, halka")
+    .replace(/\(basılı tut, bırak\)/g,"(Vur'u basılı tut, bırak)")
+    .replace(/<b>Boşluk<\/b> ile takla/g,'<b>Atıl</b> ile takla')
+    .replace(/<b>takla at<\/b>/g,'<b>Atıl</b>')
+    .replace(/Çubuk dolunca <b>R<\/b>/g,'Çubuk dolunca <b>Ulti</b> düğmesi').replace(/Dolunca <b>R<\/b>/g,'Dolunca <b>Ulti</b> düğmesi').replace(/dolunca R\b/g,'dolunca Ulti düğmesi')
+    .replace(/(^|[^A-Za-zçğıöşü])[Tt]ıkla(?!r)/g,"$1Vur'a dokun")
+    .replace(/ Q ile/g,' Atıl ile');
+  for(const l of LS){l.say=tx(l.say);l.how=tx(l.how);for(const s of l.st)s[2]=tx(s[2])}}}catch(e){}
+}).toString()+')()')}catch(e){try{window.__hamErr('v132-dokun: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

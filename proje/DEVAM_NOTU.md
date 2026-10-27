@@ -868,6 +868,18 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.27 (27 Ekim 2026) — Sürüm adı biçimi
 - Boğaç'ın kuralı: sürümler artık "Versiyon 1.27" biçiminde (ilk rakamdan sonra nokta). Menü etiketi "Versiyon 1.27"; kural `CLAUDE.md`'ye ve bu dosyanın başına yazıldı. Oyunda başka değişiklik yok. chk.js 0 hata.
 
+## v1.32 (27 Ekim 2026) — Telefon da aynı sürüm, dokunmatik dövüş düğmeleri
+- Boğaç: telefonlar artık v104'te kalmasın, bilgisayarla aynı sürümü oynasın. Kök `index.html`'in 15. satırındaki yönlendirme bir not satırıyla değiştirildi; `telefon/` yedek.
+- `<script id="v132-dokun">` (yalnız `(hover:hover) and (pointer:fine)` olmayan cihazlarda; bilgisayarda hiçbir şey yapmaz, `body.ph`):
+  - **Vur** (`#atkbtn`): v118'in fare olaylarını nişan noktasında taklit eder (`PointerEvent` `pointerType:'mouse'`, cv'ye). Böylece çift dokunuş, ritim, basılı tutma, takla vuruşu ve bitirici aynı koddan çalışır; Börü'nün dersleri de aynı şekilde sayar. Silah yoksa (yumruk, alet) düz `attack()`. Yumuşak kilit: önündeki en yakın canavar (menzil 110, asa ve tüfekte 240; zararsızlar geride sayılır).
+  - **Atıl**: eski `#dodgebtn`. **Savuştur**: v110'un `#parrybtn`'ı. **Ulti** (`#ultbtn`): çubuk dolunca görünür, R tuşu olayı yollar.
+  - Varsayılan yerler: Vur, Atıl'ın üstünde (1,45 kat büyük); Ulti, Vur'un solunda; Savuştur, Atıl'ın solunda (v110).
+  - Börü'nün ders metinleri telefonda düğme adlarıyla yazılır ("Vur'a dokun", "Atıl ile takla at", "Ulti düğmesi"). Ders paneli telefonda daha küçük.
+- Düğme düzenleyici (B5 bloğu): `LAYEL`'e Vur, Savuştur ve Ulti eklendi; bir düğmeye dokununca üst şeritte **− / + boyut** çıkar (%60–%200, `LAY[id].s`, `placeEl` `scale()` ile). Ayarlar → Kontroller → "Düğmelerin yerini ve boyutunu ayarla". v110 parry `place()` özel yer varsa dokunmaz (`window.__plLayHas`, `__plLayS`).
+- Telefonda zamanlama biraz daha geniş (bilgisayar aynı): çift dokunuş 0,25 s (0,18), ritim penceresi 0,20 s (0,14), takla sonrası 0,36 s (0,30), savuşturma 0,25 s (0,20).
+- Arena düğmesi telefonda da ana menüde.
+- Kontrol: chk.js 0 hata, oyun bilgisayarda ve telefon profilinde açılıyor.
+
 ## v1.31 (27 Ekim 2026) — Takla Boşluk'ta
 - Boğaç: "Boşluk ile takla atılmalı." Ana tuş işleyicisinde **Boşluk = atılma/takla** (yerleştirirken döndürür), **Q = vuruş** (sol tık da vurur, kombolar sol tıkta). Tuş ayarları listesi (`KB`) de buna göre: `dodge` varsayılanı `Space`, `attack` varsayılanı `KeyQ`. Balık tutma ve R mini oyunu Boşluk'u kendi yakalama dinleyicilerinde alır, değişmedi.
 - Metinler: Atılma yeteneği, Börü'nün "atılırsan" konuşması, Reis uyarısı, lav kertenkelesi ipucu (2 yer), yerleştirme ("Boşluk ile döndür", Döndür düğmesi), kerevit dersi ("yanına gidip ona tıkla"), ilk ısırık ipucu ("Vurmak için hayvana tıkla"), v129 takla dersi.
