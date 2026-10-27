@@ -1010,3 +1010,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Hileler tek tek (Boğaç): ana menüdeki "Hile modu" yalnızca seçenekleri gösterir, kendiliğinden hiçbir hile açılmaz. Oyun içindeki Ayarlar'da ayrı anahtarlar: **Tanrı modu** (`b5god`), **Hile paneli** (`b5pad`, sağdaki kırmızı panel), **Hile kısayolları** (`b5keys`, Z/X), Gece ışığı, Sınırsız sikke, Bütün ara sahneler; düğmeler: ACT 2, seviye, harita. Sayfa her açıldığında bu anahtarların hepsi kapalı başlar (`settings` yüklenince sıfırlanır).
 - Tanrı modu: `window.__plGod`; her karenin başında ve sonunda can, açlık (100), enerji ve mana doldurulur, `tired` kalkar; `hurt` ve `faint` Tanrı modunda hiçbir şey yapmaz.
 - Menüde "Versiyon 1.48". chk.js 0 hata.
+
+## v1.49 (27 Ekim 2026) — kritik düzeltme
+- v1.48'de WASD/ok tuşları çalışmıyordu (Esc'ye basınca düzeliyordu). Sebep: yeni "Hile kısayolları" kutusuna `id="b5keys"` verilmişti; bu kimlik zaten tuş atama penceresinindi (`#b5keys`). Tuş çevirici (`translate`, v8529) `$('b5keys').hidden` false görünce her tuşu tuş atama menüsüne yolluyordu. Kutunun kimliği ve ayar adı `b5hk` oldu.
+- Güvenlik: oyuncu bir su karosunun üstündeyse (köprü ve tekne dışında) 0,5 sn'de bir en yakın kıyıya çıkarılır (`<script id="v149">`). v1.48'de kapanan nehir ağzı şeridinde kaydedilmiş oyunlar için.
+- Kontrol: chk.js 0 hata; oyun açılıp "Devam et" ile girilince A tuşuyla yürünüyor; suya konan oyuncu kıyıya çıkıyor (Boğaç'ın bildirdiği hata için hızlı bakıldı).
+- Menüde "Versiyon 1.49".
