@@ -666,3 +666,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v96 (27 Ekim 2026) — kritik düzeltme (ACT 2)
 - ACT 2 ustaları (Pervin, Tamer, Selin, Alara, Tuna) hiç görev teklif etmiyordu: v55 `say` sarmalayıcısı görev seçeneğini yalnız birden fazla seçenekli konuşmalara ekliyordu (`ch.length>1`); bu ustaların konuşmalarında tek seçenek ("Hoşça kal") var. Koşul `ch.length>1||c.t==='Hoşça kal'` oldu. ACT 2 Ülker'den sonra ilerlemiyordu, roket ve ACT 2 sonu ulaşılamazdı.
 - Menüde "Versiyon 96". Yalnız chk.js (0 hata) + Claude'un kayıttan yükleyip Pervin'le denemesi (görev teklifi geliyor).
+
+## v97 (27 Ekim 2026)
+- Ana menüde Ayarlar'ın solunda madalya düğmesi (`#t-ach`, `.tib`): başarımlar listesini açar (cihazdaki bütün oyunlarda kazanılanlar, `hammadde.ach`). Köşede kazanılan sayısı (`#t-achn`).
+- Menüde "Versiyon 97".
