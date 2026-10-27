@@ -670,3 +670,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v97 (27 Ekim 2026)
 - Ana menüde Ayarlar'ın solunda madalya düğmesi (`#t-ach`, `.tib`): başarımlar listesini açar (cihazdaki bütün oyunlarda kazanılanlar, `hammadde.ach`). Köşede kazanılan sayısı (`#t-achn`).
 - Menüde "Versiyon 97".
+
+## v98 (27 Ekim 2026)
+- Başarımlar 23 → 36, hepsinin simgesi farklı (eşya ikonları). Yeni: İlk düşüş / İnatçı (`deaths` ≥1 / ≥5), İlk reis / Reis avcısı / Reislerin korkusu / Reis yiyen (farklı reis türü ≥1/5/10/20, `__p4.s.bd`), Bütün reisler (`__p4AB` ada 1 türleri + `__I2C.anim`, Kara ejder hariç: 58 tür), Yol açıcı (`rockfall.cleared`), Her şeyi bilen (bütün `DB.R`), Toplayıcı (`__I1G` ada 1 bitki+maden + `__I2C` plants/ores; `__p4.s.g`'de en az 1), Yeniden birlikte (iyi son: sarılma sahnesi bitince `grant('iyison')`, tekrar izlemede verilmez), Yalnız dönüş (kötü son: `window.__plBadEnd`, kötü son henüz yok → şimdilik kazanılamaz).
+- "İlk gece" → "İlk gün" (İlk günü ve geceyi hayatta atlat). Köprücü ve Açık deniz (ACT 2) zaten vardı.
+- `window.__p4AB` (v49-p4) ve `window.__I1G` (v65) dışa açıldı.
+- Menüde "Versiyon 98".

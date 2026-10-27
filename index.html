@@ -1331,7 +1331,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 97</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 98</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -9335,7 +9335,7 @@ const tcase=s=>s.split(' ').map(w=>w.charAt(0).toLocaleUpperCase('tr-TR')+w.slic
 const P4AB={'Tavşan':3,'Sincap':2,'Keklik':2,'Ördek':3,'Kerevit':1,'Geyik':3.5,'Karaca':3,'Yaban öküzü':2.5,'Yaban domuzu':3,'Kurt':7,
   'Dikenli kirpi':1,'Engerek':1,'Zehirli kurbağa':3,'Bataklık kurdu':3,'Timsah':2,'Kül kurdu':3,'Lav kertenkelesi':3,'Kül cini':2,
   'Bıldırcın':2,'Kunduz':1,'Yaban kazı':2,'Yaban atı':3,'Dağ keçisi':3,'Muflon':2.5,'Oklu kirpi':1,'Su samuru':1,'Turna kuşu':2,'Mağara ayısı':1};
-const P4FIX={'Kerevit':10,'Geyik':15};            // Boğaç's own examples
+window.__p4AB=P4AB;const P4FIX={'Kerevit':10,'Geyik':15};            // Boğaç's own examples
 const P4NO=new Set(['Kara ejder']);                 // already a boss
 const P4BIG={'Mağara ayısı':1,'Timsah':1,'Yaban öküzü':1,'Yaban atı':1};
 const P4H={'Geyik':19,'Yaban atı':19,'Turna kuşu':24,'Mağara ayısı':17,'Yaban öküzü':14,'Dağ keçisi':16,'Muflon':14,'Karaca':13,'Timsah':6,'Engerek':5,'Kerevit':7,'Kül cini':15};
@@ -10895,6 +10895,7 @@ const BPLANT=[
  ['Kül','Ateş çiçeği','Kehribar','Kırmızı okr','Sarı okr','Kor otu','Duman çiçeği','Ateş biberi','Yanık kök','Lav camı','Cüruf','Kızıl kum','Sünger taşı','Kara tuz'],
  ['Ay otu','Işık mantarı','Mor yosun','Yıldız çiçeği','Gece zambağı','Mor kök','Gölge otu','Kristal kum','Ay taşı','Yankı taşı','Işık tozu','Yıldız tozu','Mor sarmaşık','Kristal çiçeği']];
 const BORE=[['Bakır cevheri','Kalay cevheri','Kireçtaşı'],['Taş kömürü','Kumtaşı','Granit'],['Demir cevheri','Tuz kayası','Arduvaz'],['Kuvars','Gümüş cevheri','Altın cevheri'],['Bazalt','Kükürt','Pirit'],['Obsidyen','Kristal','Ametist']];
+window.__I1G=[].concat.apply([],BPLANT).concat([].concat.apply([],BORE),['Ametist']);   // v98: island 1 gatherables, for an achievement
 if(I2C){for(const b in I2C.plants)BPLANT[+b]=I2C.plants[b].map(q=>{RES[q.n]={draw:'plant',look:q.look,respawn:q.re};RULE[q.n]=[T_[q.rule],q.rule==='forest'];PLANTC[q.n]=q.col;return q.n});
   for(const b in I2C.ores)BORE[+b]=I2C.ores[b].map(o=>{MINES[o.n]={l:o.l,c:o.c,n:o.cnt};RES[o.n]={draw:'ore',respawn:300};RULE[o.n]=[T_.land,false];ORE_TIER[o.n]=o.tier;return o.n})}
 MINES['Ametist']={l:'Ametist yatağı',c:'#9a5ad8',n:12};RES['Ametist']={draw:'ore',respawn:300};RULE['Ametist']=[T_.land,false];ORE_TIER['Ametist']=4;if(CHEAT_RES.indexOf('Ametist')<0)CHEAT_RES.push('Ametist');
@@ -11184,9 +11185,16 @@ setOk(ok);
 'use strict';
 const KEY='hammadde.ach';let got={};try{got=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){got={}}
 const k_=n=>kills[n]||0,anyKill=()=>Object.keys(kills).some(k=>kills[k]>0);
+// v98: bosses beaten (by kind), every boss in both islands, every gatherable in both islands
+const bossD=()=>(window.__p4&&window.__p4.s&&window.__p4.s.bd)||{};
+const bossKinds=()=>{const d=bossD();return Object.keys(d).filter(k=>d[k]>0).length};
+const I2N=t=>{const C=window.__I2C;const L=[];if(C&&C[t])for(const b in C[t])for(const a of C[t][b])L.push(a.n);return L};
+const allBoss=()=>{const S=new Set(Object.keys(window.__p4AB||{}));for(const n of I2N('anim'))S.add(n);S.delete('Kara ejder');return Array.from(S)};
+const allGather=()=>{const S=new Set(window.__I1G||[]);for(const n of I2N('plants'))S.add(n);for(const n of I2N('ores'))S.add(n);return Array.from(S)};
+const gotOf=n=>{const g=window.__p4&&window.__p4.s&&window.__p4.s.g||{};return (g[n]||0)>0};
 const ACH=[
  ['tarif1','İlk tarif','Kazanda ilk tarifini öğren.','Keskin taş',()=>found.length>=1],
- ['gece1','İlk gece','İlk geceyi hayatta atlat.','Meşale',()=>day>=2],
+ ['gece1','İlk gün','İlk günü ve geceyi hayatta atlat.','Meşale',()=>day>=2],
  ['tarif25','Meraklı çırak','25 tarif bul.','Kaba meşale',()=>found.length>=25],
  ['av1','İlk av','Bir hayvan avla.','Yaban domuzu dişi',anyKill],
  ['kopru','Köprücü','Kırık köprüyü onar.','Meşe kalası',()=>!!bridge.fixed],
@@ -11208,6 +11216,18 @@ const ACH=[
  ['levent','Kazazede','Denizci Levent\'in yeni gemisini kur.','Halat',()=>!!(window.__v55&&window.__v55.d.indexOf('dz4')>=0)],
  ['roket','Gökyüzüne','Tuna ile roketi fırlat.','Roket',()=>!!(window.__tuna&&window.__tuna.launched)],
  ['act2','Açık deniz','Levent\'in gemisiyle adadan ayrıl: ACT 2.','Kristal ipek',()=>!!(window.__plDz&&window.__plDz.D.act2)],
+ ['olum1','İlk düşüş','Bir kez öl ya da bayıl.','Kül',()=>deaths>=1],
+ ['olum5','İnatçı','5 kez öl ya da bayıl, yine de devam et.','Gölge otu',()=>deaths>=5],
+ ['reis1','İlk reis','Bir reis öldür.','Kemik miğfer',()=>bossKinds()>=1],
+ ['reis5','Reis avcısı','5 farklı reis öldür.','Tunç miğfer',()=>bossKinds()>=5],
+ ['reis10','Reislerin korkusu','10 farklı reis öldür.','Demir miğfer',()=>bossKinds()>=10],
+ ['reis20','Reis yiyen','20 farklı reis öldür.','Demir zırh',()=>bossKinds()>=20],
+ ['reishep','Bütün reisler','Oyunda öldürülebilecek bütün reisleri öldür.','Ejder pulu zırh',()=>{const A=allBoss();return A.length>0&&A.every(k=>(bossD()[k]||0)>0)}],
+ ['kaya','Yol açıcı','Doğu geçidindeki kayaları patlat.','Kaya patlatıcı',()=>typeof rockfall!=='undefined'&&!!rockfall.cleared],
+ ['tariftum','Her şeyi bilen','Bütün tarifleri bul.','Kristal çiçeği',()=>DB.R.length>0&&DB.R.every(x=>foundSet.has(x.r))],
+ ['toplatum','Toplayıcı','İki adada toplanabilecek her şeyi en az bir kez topla.','Böğürtlen',()=>{const L=allGather();return L.length>0&&L.every(n=>gotOf(n))}],
+ ['iyison','Yeniden birlikte','Oyunu iyi sonla bitir.','Yıldız çiçeği',()=>false],
+ ['kotuson','Yalnız dönüş','Oyunu kötü sonla bitir.','Gece zambağı',()=>!!window.__plBadEnd],
  ['hile','Oyunlardaki gibi',(TOUCH?'Ana menüde ekrana art arda 3 kez dokundun: hile modu açıldı.':'Ana menüde “cheat” yazdın: hile modu açıldı.'),'Mor pusula',()=>{try{return localStorage.getItem('hammadde.cheatach')==='1'||localStorage.getItem('hammadde.cheatok')==='1'}catch(e){return false}}]];
 const ic=n=>{try{return icon(n)}catch(e){return ''}};
 const st=document.createElement('style');st.textContent=
@@ -12018,7 +12038,7 @@ function hug(rp){ov.hidden=false;HG={t:0,last:performance.now(),ci:-1,rp};cap.cl
 function hloop(now){if(!HG)return;const dt=Math.min(.05,(now-HG.last)/1000);HG.last=now;HG.t+=dt;hdraw(HG.t);
   let ci=-1;for(let i=0;i<HC.length;i++)if(HG.t>=HC[i][0])ci=i;if(ci!==HG.ci){HG.ci=ci;cap.classList.remove('on');setTimeout(()=>{if(!HG)return;const nm=(loveName||'O'),hn=(heroName||'Sen');cap.textContent=ci>=0?HC[ci][1].replace('{L}',nm).replace('{H}',hn):'';if(ci>=0)cap.classList.add('on')},350)}
   if(HG.t>=13&&cap.classList.contains('on'))cap.classList.remove('on');if(HG.t>=14.6){hend();return}requestAnimationFrame(hloop)}
-function hend(){if(!HG)return;const rp=HG.rp;HG=null;for(const h of snd)try{h&&h.stop(2)}catch(e){}snd=[];ov.hidden=true;fading=false;try{audio.musicTo(1,2)}catch(e){}renderTut();if(!rp)try{saveTo('auto')}catch(e){}endCard()}
+function hend(){if(!HG)return;const rp=HG.rp;HG=null;for(const h of snd)try{h&&h.stop(2)}catch(e){}snd=[];ov.hidden=true;fading=false;try{audio.musicTo(1,2)}catch(e){}renderTut();if(!rp){try{saveTo('auto')}catch(e){}try{window.__plAch.grant('iyison')}catch(e){}}endCard()}
 const ec=document.createElement('div');ec.id='endov';ec.hidden=true;ec.innerHTML='<div class="ecard"><b>Purple Light</b><i></i><p>Yeniden birliktesiniz.</p><small>Hikâye ACT 3 ile devam edecek.</small><div class="ebtn"><button type="button" id="e-stay">Oyuna devam et</button><button type="button" id="e-menu">Ana menü</button></div></div>';document.body.appendChild(ec);
 {const st2=document.createElement('style');st2.textContent='#endov{position:fixed;inset:0;z-index:92;background:rgba(6,4,14,.92);display:flex;align-items:center;justify-content:center;padding:16px}#endov[hidden]{display:none}#endov .ecard{text-align:center;color:#f3ecd8;max-width:480px}#endov b{display:block;font-size:clamp(34px,7vw,60px);letter-spacing:.06em;color:#c070ff;text-shadow:0 0 18px rgba(192,112,255,.6)}#endov i{display:block;width:200px;height:2px;margin:12px auto;background:linear-gradient(90deg,transparent,#a050e0,transparent)}#endov p{font-size:20px;margin:6px 0}#endov small{color:#c9a0ff;font-size:15px}#endov .ebtn{display:flex;gap:10px;justify-content:center;margin-top:20px}#endov button{font:inherit;font-size:16px;padding:9px 16px;background:#2a1a44;color:#f3ecd8;border:2px solid #7a5ac8;cursor:pointer}';document.head.appendChild(st2)}
 function endCard(){ec.hidden=false;sfx('level');try{$('e-stay').focus()}catch(e){}}
