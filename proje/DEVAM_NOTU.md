@@ -1088,3 +1088,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Ritim işareti belirgin:** vuruştan sonra sarı (3. vuruş için turuncu) bir halka karakterin üstüne doğru daralır; pencere açılınca dolu parlak halka ve üstünde **ŞİMDİ!** (3. vuruşta **YİNE!**) yazar. Yalnızca o hareket açıksa (ya da dersi sürüyorsa).
 - **Öğreticide neden görünmüyordu:** ritim yalnızca "dövüş tıklaması" sayılan fare tıklamalarında başlıyordu; elde silah yoksa (balta, meşale…) yalnızca tam hayvanın üstüne tıklamak sayılıyordu, Q tuşuyla ise ritim hiç başlamıyordu (arenada her tıklama dövüş tıklaması olduğu için orada görünüyordu). Artık Börü'nün dersi sürerken her sol tık dövüş tıklamasıdır ve **Q** ile de ritim yapılır.
 - Menüde "Versiyon 1.61". chk.js 0 hata; Q'dan sonra halka ve ŞİMDİ! ekranda görüldü (2D çizimde).
+
+## v1.62 (27 Ekim 2026)
+- Ders ortasında alınmış bir kayıtla girince dersin yeni anlatımı (savuşturmanın nasıl yapıldığı, halka, sıralı adımlar) hiç görünmüyordu; anlatım yalnızca ders başlarken çıkıyor. Börü'de "Dersin nasıldı?" yerine **"Dersi yeniden anlat"**: dersin metnini ve adımları sırayla (✓ bitti, ▶ şimdiki, • sıradaki, sayılarla) gösterir; "Anladım, sürdürüyorum" alıştırma canavarı yoksa yenisini salar; **"Dersi baştan başlat"** sayaçları sıfırlar (ücretsiz). Ders ortasındaki bir kayıt açılınca 2,5 sn sonra bunu hatırlatan bir not çıkar.
+- Menüde "Versiyon 1.62". chk.js 0 hata; oyun hatasız açılıyor.

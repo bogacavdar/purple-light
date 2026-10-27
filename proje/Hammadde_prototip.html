@@ -1331,7 +1331,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.61</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.62</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -13623,13 +13623,15 @@ function start(l){if(L.cur){toast('Önce şu anki dersi bitir: '+LK[L.cur.k].n,t
   FOE.n=0;FOE.t=0;
   say(`<b>${l.n}</b> · ${l.say}<br><br>Ders:<br>${l.st.map(s=>'• '+s[2]).join('<br>')}`,[{t:'Hazırım',pri:1,fresh:1,f:()=>{const a=spawnFoe(true);
     say(a?`Sana ${l.on} getirdim, işte orada. Üzerinde dene. Dişlerini körelttim, canını fazla yakmaz; ama kaçmaz da. Ölürse bir başkasını salarım.`:'Burada yer yok; biraz açıklığa çık, sonra yanıma gel.',[{t:'Başlayalım',pri:1,fresh:1,f:bye}],alp)}}],alp)}
-function quit(){const c=L.cur;if(!c)return;say(`<b>${LK[c.k].n}</b> dersini bırakırsan sikkeni geri veremem; ama istediğin zaman kaldığın yerden sürdürürsün.`,[{t:'Sürdürürüm',pri:1,f:bye},{t:'Geri',f:lessons}],alp)}
+function recap(){const c=L.cur;if(!c)return;const l=LK[c.k];const cur=l.st.findIndex((s,i)=>c.p[i]<s[1]);   // v1.62: Börü tells the lesson again (a save made mid-lesson never showed the new words)
+  say(`<b>${l.n}</b> · ${l.say}<br><br>Ders (sırayla):<br>${l.st.map((s,i)=>(i<cur||cur<0?'✓ ':i===cur?'▶ ':'• ')+s[2]+` <small>(${c.p[i]}/${s[1]})</small>`).join('<br>')}`,[{t:'Anladım, sürdürüyorum',pri:1,fresh:1,f:()=>{if(!foes().length){const a=spawnFoe(true);if(!a)toast('Biraz açıklığa çık; Börü yeni bir canavar salar',true)}bye()}},{t:'Dersi baştan başlat',f:()=>{c.p=l.st.map(()=>0);lk='';toast(`${l.n}: ders baştan başladı`);recap()}},{t:'Geri',f:lessons}],alp)}
+function quit(){recap()}
 function lessons(){const rows=[],ch=[];let next=null;
   for(const l of LES){if(have(l.k)){rows.push(`✓ <b>${l.n}</b>`);continue}
     if(L.cur&&L.cur.k===l.k){rows.push(`▶ <b>${l.n}</b> · derste (${L.cur.p.map((v,i)=>v+'/'+l.st[i][1]).join(', ')})`);continue}
     if(reqOK(l)){rows.push(`• <b>${l.n}</b> · ${l.c.toLocaleString('tr-TR')} sikke${l.s1&&!s1()?' · önce Atılma':''}`);if(!L.cur)ch.push({t:`${l.n} öğret (${l.c.toLocaleString('tr-TR')} sikke)`,pri:!ch.length,fresh:1,f:()=>start(l)})}
     else{if(!next)next=l;rows.push(`<span style="opacity:.6">🔒 ${l.n} · ${reqTxt(l)}</span>`)}}
-  if(L.cur)ch.push({t:'Dersin nasıldı?',f:quit});
+  if(L.cur)ch.push({t:'Dersi yeniden anlat',pri:1,f:quit});
   ch.push({t:'Geri',f:talkAlp});
   const avail=ch.some(c=>c.pri),all=LES.every(l=>have(l.k));
   const head=L.cur?'Bir dersi bitirmeden yenisine geçmeyiz.':all?'Sana öğreteceklerimin hepsini öğrendin. Artık bana sen ders verirsin.':avail?'Hangisini öğrenmek istersin? Her ders bir hamle; parası peşin, öğrenmesi senden.':'Şimdilik sana öğreteceğim yeni bir şey yok. Güçlen, yeni yerler gör; sonra gel.';
@@ -13653,7 +13655,7 @@ function renderHUD(){const c=L.cur,on=!!c&&!onTitle&&met&&!window.__plArena;if(!
 // ---------------------------------------------------------------- 6 · the save
 {const _s=snapshot;snapshot=function(){const o=_s.apply(this,arguments);if(o&&!window.__plArena)o.v129={o:Object.keys(L.own),c:L.cur?{k:L.cur.k,p:L.cur.p.slice()}:null,n:Object.keys(L.ann)};return o};try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}}
 {const _r=restore;restore=function(d){const r=_r.apply(this,arguments);try{const v=d&&d.v129;L.own={};L.cur=null;L.ann={};M=null;lk='';FOE.n=0;FOE.t=0;try{clearFoes()}catch(e){}
-  if(v){for(const k of (v.o||[]))if(LK[k])L.own[k]=1;if(v.c&&LK[v.c.k]&&!L.own[v.c.k]){const l=LK[v.c.k];L.cur={k:v.c.k,p:l.st.map((s,i)=>Math.min(s[1],+((v.c.p||[])[i])||0))}}for(const k of (v.n||[]))L.ann[k]=1}
+  if(v){for(const k of (v.o||[]))if(LK[k])L.own[k]=1;if(v.c&&LK[v.c.k]&&!L.own[v.c.k]){const l=LK[v.c.k];L.cur={k:v.c.k,p:l.st.map((s,i)=>Math.min(s[1],+((v.c.p||[])[i])||0))};setTimeout(()=>{try{if(L.cur&&!onTitle)toast(`Derstesin: ${l.n}. Börü'ye git, "Dersi yeniden anlat" de.`)}catch(e){}},2500)}for(const k of (v.n||[]))L.ann[k]=1}
   else{// older saves: what v1.28 had opened stays open, nobody loses a move
     const t=d&&d.v128&&d.v128.t;if(t)for(const k of t){if(LK[k])L.own[k]=1}else{const NEED={dash:0,double:1,c2:2,c3:3,charged:3,cdc:4};for(const k in NEED)if(stage()>=NEED[k])L.own[k]=1}
     if(V.u)L.own.ult=1;for(const l of LES)if(L.own[l.k])L.ann[l.k]=1}
