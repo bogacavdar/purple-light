@@ -647,3 +647,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Envanterde ekipman şeridi (`.ieq`): küçük karakter figürü (`#ieqc`, eqLook/eqOpts ile, silah dahil) + 5 yuva (Baş, Gövde, Eller, Ayaklar, Silah). Seçili eşyanın yuvası sarı parlar; dokununca giyilir. Dolu yuvaya dokununca çıkarılır. Boş yuvaya uyan tek eşya varsa doğrudan giyilir. `renderInvPanel` sarmalandı.
 - Kask/şapka altında saç: `spiky` ve `bun` saçlar miğfer ya da şapka varken çizilmez (önden, arkadan, yandan). Miğfer zaten şapka/bandana/çiçeğin yerine çiziliyordu.
 - Menüde "Versiyon 92".
+
+## v93 (27 Ekim 2026) — kritik düzeltme
+- Ekin'in 13 görevi bitince (Gemi tarifi henüz öğrenilmemişken) `renderTut` her çağrıda `haveOf is not defined` hatası veriyordu: `haveOf` v48-b3 bloğunun eval kapsamında, ana kodda görünmüyor. Sonuç: diyaloglar kapanmıyor (`bye` → renderTut hata), "Görevi bitirdim" döngüye giriyor, ACT 2'ye geçilemiyordu. "Son · Bir gemi" kartındaki sayaç artık `expand(n)` ile envanterden sayıyor.
+- Menüde "Versiyon 93". Yalnız chk.js (0 hata).

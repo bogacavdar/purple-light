@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 92</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 93</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -3786,7 +3786,7 @@ function renderTut(){
     return;
   }
   if(allDone&&!won&&!questsHidden){tutEl.hidden=false;craftEl.classList.add('tutpad');
-    {const dz=!!(window.__v55&&window.__v55.d.indexOf('dz4')>=0),gw=(n,q)=>`<b>${n}</b> ${Math.min(haveOf(n),q)}/${q}`;   // v75
+    {const dz=!!(window.__v55&&window.__v55.d.indexOf('dz4')>=0),gw=(n,q)=>`<b>${n}</b> ${Math.min(expand(n).reduce((t,m)=>t+(inv[m]||0),0),q)}/${q}`;   // v75 (v93: haveOf bu kapsamda yok)
     if(denizci.state==='away'){$('tutstep').textContent='Son · Bir gemi';$('tuttext').innerHTML=`Bu adadan çıkmanın tek yolu sağlam bir gemi. Kazanda <b>Gemi</b> tarifini öğren: ${gw('Herhangi kalas',8)} · ${gw('Halat',4)} · ${gw('Demir levha',3)} · ${gw('Hasır',6)} · ${gw('Kristal ipek',2)}`}
     else if(!dz){$('tutstep').textContent='Son · Denizci Levent';$('tuttext').innerHTML=`Mor Kristal Vadisi'nin kıyısına bir gemi çarptı. <b>Denizci Levent</b>'in işlerine yardım et; son işi ona yeni bir gemi kurmak.`}
     else{$('tutstep').textContent='Son · Açık deniz';$('tuttext').innerHTML=`Levent'in yeni gemisi hazır. Onunla konuş; seni başka bir adaya götürebilir.`}}
