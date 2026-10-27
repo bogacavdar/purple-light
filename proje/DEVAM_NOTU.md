@@ -919,3 +919,15 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Buz asası:** dondurulan canlı, donması bittikten sonra 3 sn yeniden donmaz; Reis yarı süre donar (bot testi Buz asası + bol manayla sürekli dondurma kilidi buldu).
 - Son ayar (bot testinden sonra): 2. ada biyom 2–5 canavar hasarı ×1,25 / ×1,4 / ×1,25 / ×1,3; yeni 2. ada nötrlerinin hasarı ve canı yükseltildi. 2. adaya ilk geçişte "Ulti öğrendin" duyurusu.
 - **v1.28 bot sonucu** (516 + 104 dövüş, gerçek oyun dosyası): normal canavar 5–17 sn; Reis usta %14–64, orta %8–47 canla, 18–65 sn; 620 dövüşte 5 ölüm (bot her uyarıyı görüyor, gerçek oyuncu daha çok ölür). Kilit/kayıt kontrolü: Bataklık'a girince dash+çift+ritim 2 açıldı, kayıt gidip geldi, eski kayıt `V65.seen`'den açtı, Kara ejder ultiyi açtı, 2. adada biyomlara girdikçe zırh tarifleri kitaba geldi.
+
+## v1.33 (27 Ekim 2026) — Boğaç'ın notları
+- Envanter: alet yuvasına konan eşyalar üstteki listede (Taşınabilir eşyalar / Hepsi) görünmez; yalnızca alttaki yuvalarda durur (`renderInvPanel` listesi süzülür).
+- Kerevitler yavaşça yürür (`still` kerevitte yok sayılır). Börü'nün dersindeki kerevit Börü'nün yanında dolaşır (26 px tasma), hiç karşılık vermez, ipucu "zararsız" der. Börü'nün iki giriş cümlesi: "Kıyıda ağır ağır yürür ama ne kaçar ne ısırır…" (saldırı uyarısı ileride saldıran hayvanlar için).
+- Sis yeniden yazıldı (`drawFog`, `fogNoise`): dünyaya bağlı iki katman yumuşak gürültü, rüzgârla kayar, gece koyu; ateşler, kamp ateşleri, eldeki meşale ve kafa lambası sisi açar (destination-out). Bataklıkta hafif, sis havasında yoğun.
+- Zırhçı Durmuş'un kendi ateşi var (`addFire(durmus,…)`).
+- Mavi parıltı (çeper) yalnız öğreticide (`tz>0`): tarif takibi ve görevler artık nesneleri mavi çevrelemez (`refreshGlow`, `refreshQG`).
+- Elde ne olursa olsun toplanabilir şeyler toplanır ("Elin dolu" kalktı); alet çubuğundaki el (H) kutusu gizlendi.
+- Haritada gece de kişiler ve yerler görünür (simgeler karanlık katmanın üstüne ikinci kez çizilir). Başında ! ya da ? olan kişilerin harita simgesinin üstünde de küçük ! / ? var (Ekin altın/yeşil, yan görevler mavi/sarı; `window.__plQMarkAt`).
+- Yaprak: yerde nadir (açılışta uzaktaki yaprakların ~%72'si kalkar, yeniden çıkma 90 sn), her balta vuruşunda ağaçtan 1–2 yaprak düşer (`<script id="v133">`). Yerdeki yaprak çizimi için Boğaç'a 6 seçenek gönderildi; seçilince ayrı sürüm.
+- Kontrol: chk.js 0 hata; oyun açılıyor; sis ve gece haritası tek tek bakıldı.
+- Menüde "Versiyon 1.33".

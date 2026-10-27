@@ -1332,7 +1332,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.32</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.33</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -2545,7 +2545,7 @@ function interact(over){
     const pk=useTool('pick');if(!pk){needTool('pick');return}
     {const need=ORE_TIER[tg.n.name]||1;if((PICK_TIER[pk]||1)<need){toast(`${M.l}: ${pk} yetmez, ${PICK_FOR(need)} ya da daha iyisi gerekli.`,true);sfx('bad');return}}
     name=tg.n.name;dur=GT[pk].time*1.5;tool=pk}
-  else if(tg.kind==='node'){const h=held();if(h&&!PLACEABLE.has(h)&&!isTorch(h)){toast(`Elin dolu (${h}). Toplamak için ${TOUCH?'aynı kutuya tekrar dokun':slotKey(hand)+' tuşuna tekrar bas'}.`,true);pulseHot(hand);sfx('bad');return}name=tg.n.name;dur=GTIME[name]||1}
+  else if(tg.kind==='node'){name=tg.n.name;dur=GTIME[name]||1}
   else if(tg.kind==='water'){const wt=useTool('water');if(!wt){if(!needTool('water'))needBucket();return}name='Su';dur=GT[wt].time;tool=wt}
   else if(tg.kind==='clay'){const sh=useTool('shovel');if(!sh){if(!needTool('shovel'))toast('Kil kazmak için kürek gerekli',true);return}name='Nehir kili';dur=GT[sh].time;tool=sh}
   else if(tg.kind==='tree'&&tg.t.type.fruit&&(tg.t.type.noCut||!heldKind('axe'))){const ty=tg.t.type;
@@ -2653,11 +2653,11 @@ function updatePrompt(){
   else if(tg.kind==='clue')html=`<kbd>E</kbd>Mor parıltıya bak`;
   else if(tg.kind==='grave')html=`<kbd>E</kbd>Eşyalarını geri al`;
   else if(tg.kind==='plot')html=`Satılık arsa · Taş ev: Marangoz Rıza'dan (Seviye 8, 2500 sikke)`;
-  else if(tg.kind==='animal'){const w=weapon();html=`<kbd>E</kbd>${tg.a.k} <span style="color:${TEMPC[ANIM[tg.a.k].temper]}">(${ANIM[tg.a.k].temper})</span>: ${(()=>{const h=held(),k=h&&GT[h]&&GT[h].kind;return k==='staff'||k==='gun'?'ateş et · '+h:'vur · '+(w.n||'yumruk')+' '+Math.round(w.dmg*(1+.03*(lvl-1)))+' hasar'})()}`;warn=ANIM[tg.a.k].temper==='saldırgan'}
+  else if(tg.kind==='animal'){const w=weapon();html=`<kbd>E</kbd>${tg.a.k} <span style="color:${TEMPC[(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)]}">(${(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)})</span>: ${(()=>{const h=held(),k=h&&GT[h]&&GT[h].kind;return k==='staff'||k==='gun'?'ateş et · '+h:'vur · '+(w.n||'yumruk')+' '+Math.round(w.dmg*(1+.03*(lvl-1)))+' hasar'})()}`;warn=(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)==='saldırgan'}
   else if(tg.kind==='placed'&&HOUSESET.has(tg.o.n)){html=houseHint(tg.o)}
   else if(tg.kind==='placed'){const o=tg.o;html=/yatak/i.test(o.n)?(isNight()?`<kbd>E</kbd>Yatakta uyu`:`Yatak · gece uyunur (şimdi ${hhmm()})`):o.n==='Atölye'?`<kbd>E</kbd>Atölyeyi aç${o.ws&&o.ws.out?` · ${o.ws.out} ürün hazır`:''}`:`${o.n} · taşımak için üstüne basılı tut`}
   else if(tg.kind==='node'&&tg.n.mine){const M=MINES[tg.n.name],pk=useTool('pick'),need=ORE_TIER[tg.n.name]||1;if(pk&&(PICK_TIER[pk]||1)<need){html=`${M.l} · ${PICK_FOR(need)} ya da daha iyisi gerekli`;warn=true}else if(pk)html=`<kbd>E</kbd>${M.l} · kaz (${tg.n.left} vuruş kaldı) · ${pk} ${nn(toolDur[pk],GT[pk].dur)}/${GT[pk].dur}`;else{html=(ownsKind('pick')?toolHint('pick'):'')||`${M.l} · kazma gerekli`;warn=true}}
-  else if(tg.kind==='node'){const h=held();if(h&&!PLACEABLE.has(h)&&!isTorch(h)){html=`Elin dolu · toplamak için ${TOUCH?'aynı kutuya dokun':slotKey(hand)+' tuşuna tekrar bas'}`;warn=true}else html=`<kbd>E</kbd>${tg.n.name} topla`}
+  else if(tg.kind==='node'){html=`<kbd>E</kbd>${tg.n.name} topla`}
   else if(tg.kind==='water'&&!useTool('water')&&waterWarned&&!toolHint('water')){html=''}
   else if(tg.kind==='water'){const w=useTool('water');html=w?`<kbd>E</kbd>Su al: ${w} (mavi damlaya ${TOUCH?'dokun':'ya da E'})`:(toolHint('water')||'Su için kap gerekli · Yaprak kova yap');warn=!w}
   else if(tg.kind==='clay'){const sh=useTool('shovel');if(sh)html=`<kbd>E</kbd>Nehir kili kaz · ${sh} ${nn(toolDur[sh],GT[sh].dur)}/${GT[sh].dur}`;else{html=toolHint('shovel')||'Kil için kürek gerekli';warn=true}}
@@ -3031,6 +3031,7 @@ function invBelt(){const L=hotList(),N=hotN();
     return `<button type="button" class="bs${n?'':' empty'}${gh?' ghost':''}${i===hand?' on':''}${invSel&&hotThing(invSel)&&beltIndex(invSel)<0?' want':''}" data-bs="${i}" title="${n?esc(n):gh?esc(gh)+' · kalmadı':'Boş yuva'}" aria-label="${slotKey(i)}. yuva: ${n?esc(n):'boş'}">${n||gh?`<img src="${icon(n||gh)}" alt="">`:''}<kbd>${slotKey(i)}</kbd>${n&&inv[n]>1?`<em>${inv[n]}</em>`:''}</button>`}).join('')}</div></div>`}
 function renderInvPanel(list,cnt){
   if(cnt)cnt.textContent=`${order.filter(n=>inv[n]>0).length} çeşit`;if(invSel&&!(inv[invSel]>0))invSel=null;
+  list=list.filter(n=>!(hotThing(n)&&beltIndex(n)>=0));   // v1.33: what is on the belt shows only in the slots below
   const by={};for(const n of list){const k=invKind(n);(by[k]=by[k]||[]).push(n)}
   const tabs=`<div class="pmode stabs itabs" role="tablist">${INV_TABS.map(([k,t])=>{const c=k==='all'?list.length:(by[k]||[]).length;return `<button type="button" role="tab" data-it="${k}" aria-selected="${invTab===k}"${k!=='all'&&!c?' class="none"':''}><span>${t}</span><b>${c}</b></button>`}).join('')}</div>`;
   const sec=k=>{const L=by[k]||[];if(!L.length)return '';const t=INV_TABS.find(x=>x[0]===k)[1];return `${invTab==='all'?`<h3 class="ish">${t} <small>${L.length}</small></h3>`:''}<div class="tiles">${L.map(invTile).join('')}</div>`};
@@ -4906,7 +4907,7 @@ let ftut=0, ctut=0, torchTut=0, nightScare=0, htut=0, ytut=3, torchHint=false, d
 // every NPC keeps a fire burning; at night their light is safe ground
 const FIRES=[];
 function addFire(o,cands){for(const [ax,ay] of cands){const x=Math.round(o.x+ax),y=Math.round(o.y+ay);if(reachAt(x,y)&&!isWater(tileAt(x,y))&&!blocked(x,y)&&!blocked(x+6,y)&&!blocked(x-6,y)){FIRES.push({x,y});return}}const c=cands[0];FIRES.push({x:Math.round(o.x+c[0]),y:Math.round(o.y+c[1])})}
-addFire(market,[[-6,24],[16,22],[-30,18],[20,-20]]);addFire(farmer,[[-20,8],[-20,-12],[-24,20],[16,24]]);addFire(usta,[[-22,10],[-22,-8],[20,22],[0,24]]);addFire(alp,[[-22,12],[-24,-6],[4,24],[30,10]]);addFire(carp,[[-22,10],[-24,-8],[0,26],[46,18]]);addFire(toygar,[[-22,10],[-24,-8],[0,26],[20,24]]);
+addFire(market,[[-6,24],[16,22],[-30,18],[20,-20]]);addFire(farmer,[[-20,8],[-20,-12],[-24,20],[16,24]]);addFire(usta,[[-22,10],[-22,-8],[20,22],[0,24]]);addFire(alp,[[-22,12],[-24,-6],[4,24],[30,10]]);addFire(carp,[[-22,10],[-24,-8],[0,26],[46,18]]);addFire(toygar,[[-22,10],[-24,-8],[0,26],[20,24]]);addFire(durmus,[[22,12],[24,-8],[0,24],[-16,22]]);   // v1.33: Durmuş has his own fire
 for(const f of FIRES){for(let i=trees.length-1;i>=0;i--)if(Math.hypot(trees[i].x-f.x,trees[i].y-f.y)<18)trees.splice(i,1);for(let i=nodes.length-1;i>=0;i--)if(Math.hypot(nodes[i].x-f.x,nodes[i].y-f.y)<14)nodes.splice(i,1)}
 rebuildTG();
 function drawFireAt(fx,fy,time,ph){px(fx-6,fy+1,12,3,'#5a3d22');px(fx-5,fy,3,2,'#7a5430');px(fx+2,fy,3,2,'#7a5430');
@@ -4923,10 +4924,10 @@ function spawnTutCrab(){for(let i=animals.length-1;i>=0;i--)if(animals[i].tut)an
     if(!reachAt(x,y)||blocked(x,y)||isWater(tileAt(x,y)))continue;animals.push({k:'Kerevit',x,y,hp:ANIM['Kerevit'].hp,st:'wander',t:0,dx:0,dy:0,face:1,atk:0,flash:0,kb:null,step:0,mad:false,tut:true});return}}
 function talkAlp(){
   if(tz===11&&ftut!==2){alp.met=true;ftut=2;spawnTutCrab();renderTut();sfx('found');
-    return say('Nazlı mı yolladı? İyi etmiş. Ben <b>Börü</b>. Gece bu adada domuzlar, kurtlar dolaşır; önce <b>yumruğunla</b> savaşmayı öğren. Şuradaki <b>kereviti</b> görüyor musun? Elin boşken ona vur; kaçmaz, ısırmaz. Saldırılar önce kırmızı <b>!</b> ile belli olur: o zaman yana kaç ya da atıl.',[{t:'Hadi bakalım',pri:1,fresh:1,f:bye}],alp)}
+    return say('Nazlı mı yolladı? İyi etmiş. Ben <b>Börü</b>. Gece bu adada domuzlar, kurtlar dolaşır; önce <b>yumruğunla</b> savaşmayı öğren. Şuradaki <b>kereviti</b> görüyor musun? Kıyıda ağır ağır yürür ama ne kaçar ne ısırır; elin boşken ona vur. İleride saldıran hayvanların üstünde önce kırmızı bir <b>!</b> belirir: o an yana atıl.',[{t:'Hadi bakalım',pri:1,fresh:1,f:bye}],alp)}
   if(tz&&tz<11)return say('Hah, yeni gelen! Önce Ekin\'in, Zümrüt\'ün dediklerini yap; sonra gel, sana dövüşmeyi öğreteyim.',[{t:'Tamam',pri:1,f:bye}],alp);
   if(ftut===1){alp.met=true;ftut=2;spawnTutCrab();renderTut();sfx('found');
-    return say('Hah! Ekin\'in kazazedesi. Ben <b>Börü</b>. Bu adada her şey sana dost değil: ormanda yaban domuzları, gece kurtlar dolaşır. Önce yumruğunla başlayalım. Şuradaki <b>kereviti</b> görüyor musun? Elin boşken ona vur; kaçmaz, ısırmaz.',[{t:'Hadi bakalım',pri:1,fresh:1,f:bye}],alp)}
+    return say('Hah! Ekin\'in kazazedesi. Ben <b>Börü</b>. Bu adada her şey sana dost değil: ormanda yaban domuzları, gece kurtlar dolaşır. Önce yumruğunla başlayalım. Şuradaki <b>kereviti</b> görüyor musun? Kıyıda ağır ağır yürür ama ne kaçar ne ısırır; elin boşken ona vur.',[{t:'Hadi bakalım',pri:1,fresh:1,f:bye}],alp)}
   if(ftut===2){spawnTutCrab();return say('Kerevit seni bekliyor. Elin boş olsun ve vur!',[{t:'Tamam',pri:1,f:bye}],alp)}
   alp.met=true;
   say(['Kılıcın keskin, nefesin derin olsun.','Nötr hayvana bulaşırsan karşılık verir; zararsız olan kaçar, saldırgan olan seni arar.','Zırhın varsa yaralar daha az acıtır. Postlardan giysi diktir.'][Math.floor(Math.random()*3)],[
@@ -5593,7 +5594,7 @@ function tickAnimals(dt){
       else if(a.wind>0){a.wind-=dt;if(a.wind<=0){const ex=a.tx-a.x,ey=a.ty-a.y,el=Math.hypot(ex,ey)||1,sp=Math.min(300,(el+12)/.2);a.lunge={vx:ex/el*sp,vy:ey/el*sp,t:.2,hit:false};sfx('swing')}}
       else{if(d>14)moveA(a,dx/d*D.spd,dy/d*D.spd,dt);
         if(d<(D.reach||26)&&a.atk<=0&&packBusy(a)<(lvl<6?1:2)){a.wind=D.wind||.42;a.atk=(D.wind||.42)+.9;a.tx=player.x;a.ty=player.y;a.face=dx>0?1:-1;sfx('growl')}}}
-    else if(a.tut||D.still){a.st='wander'}   // the lesson's crayfish waits for you
+    else if((a.tut||D.still)&&a.k!=='Kerevit'){a.st='wander'}   // v1.33: crayfish walk slowly (the lesson's one stays near Börü, see v133 block)
     else{a.st='wander';a.t-=dt;if(a.t<=0){a.t=1.5+Math.random()*2.5;const an=Math.random()*Math.PI*2,go=Math.random()<.6;a.dx=go?Math.cos(an):0;a.dy=go?Math.sin(an):0}
       const c=a.pk&&PC[a.pk];if(c&&c.n>1){const gx=c.x/c.n-a.x,gy=c.y/c.n-a.y,gd=Math.hypot(gx,gy);if(gd>34){a.dx=gx/gd;a.dy=gy/gd}}   // the herd keeps together
       if(a.dx||a.dy)moveA(a,a.dx*D.spd*.3,a.dy*D.spd*.3,dt)}
@@ -6083,8 +6084,12 @@ function drawMap(c,w,h,big){
   const seenAt=(wx,wy)=>{const tx=Math.floor(wx/T),ty=Math.floor(wy/T);return tx>=0&&ty>=0&&tx<W&&ty<H&&explored[ty*W+tx]&&lit(wx,wy)};
   const mk=(wx,wy,col,label,r)=>{if(!seenAt(wx,wy))return;r=r||(big?5:2.5);const X=(wx/T-ox)*sx,Y=(wy/T-oy)*sy;if(X<-4||Y<-4||X>w+4||Y>h+4)return;c.fillStyle='#11170f';c.fillRect(Math.round(X-r-1),Math.round(Y-r-1),Math.round(2*r+2),Math.round(2*r+2));c.fillStyle=col;c.fillRect(Math.round(X-r),Math.round(Y-r),Math.round(2*r),Math.round(2*r));
     if(big&&label){c.font='bold 13px Rubik, system-ui, sans-serif';c.lineWidth=3;c.strokeStyle='rgba(17,23,15,.85)';c.strokeText(label,X,Y-r-10);c.fillStyle='#f3ecd8';c.fillText(label,X,Y-r-10)}};
-  const mki=(wx,wy,k,label)=>{if(!seenAt(wx,wy))return;const X=(wx/T-ox)*sx,Y=(wy/T-oy)*sy;if(X<-12||Y<-12||X>w+12||Y>h+12)return;const ic=mapIcon(k),sc=big?Math.min(9,3+(mapZ-1)*.75):2.4,W2=ic.width*sc,H2=ic.height*sc;c.imageSmoothingEnabled=false;c.drawImage(ic,Math.round(X-W2/2),Math.round(Y-H2/2),Math.round(W2),Math.round(H2));if(big)MAPHITS.push({X,Y,r:Math.max(W2,H2)/2+8,k,label});
-    if(big&&label){c.font='bold 13px Rubik, system-ui, sans-serif';c.lineWidth=3;c.strokeStyle='rgba(17,23,15,.85)';c.strokeText(label,X,Y-H2/2-9);c.fillStyle='#f3ecd8';c.fillText(label,X,Y-H2/2-9)}};
+  const lateI=[],seenE=(wx,wy)=>{const tx=Math.floor(wx/T),ty=Math.floor(wy/T);return tx>=0&&ty>=0&&tx<W&&ty<H&&explored[ty*W+tx]};   // v1.33: people and places stay on the map at night
+  const mki=(wx,wy,k,label,late)=>{if(!late&&dk>.05){lateI.push([wx,wy,k,label]);return}if(!(late?seenE(wx,wy):seenAt(wx,wy)))return;const X=(wx/T-ox)*sx,Y=(wy/T-oy)*sy;if(X<-12||Y<-12||X>w+12||Y>h+12)return;const ic=mapIcon(k),sc=big?Math.min(9,3+(mapZ-1)*.75):2.4,W2=ic.width*sc,H2=ic.height*sc;c.imageSmoothingEnabled=false;c.drawImage(ic,Math.round(X-W2/2),Math.round(Y-H2/2),Math.round(W2),Math.round(H2));if(big)MAPHITS.push({X,Y,r:Math.max(W2,H2)/2+8,k,label});
+    {const qm=k==='ekin'?(!met||(tut>=11&&qState==='talk')?'!':(tut>=11&&qState==='ready')?'?':null):(window.__plQMarkAt?window.__plQMarkAt(wx,wy):null),u=big?2:1,bh=qm?8*u+3*u:0;   // v1.33: the quest mark over a person shows on the map too
+     if(big&&label){c.font='bold 13px Rubik, system-ui, sans-serif';c.lineWidth=3;c.strokeStyle='rgba(17,23,15,.85)';c.strokeText(label,X,Y-H2/2-9-bh);c.fillStyle='#f3ecd8';c.fillText(label,X,Y-H2/2-9-bh)}
+     if(qm){const bw=5*u,bx=Math.round(X-bw/2),by=Math.round(Y-H2/2-8*u-2*u)+Math.round(Math.sin(time*4)*u);c.fillStyle='rgba(10,20,40,.9)';c.fillRect(bx-u,by-u,bw+2*u,8*u+2*u);c.fillStyle=k==='ekin'?(qm==='!'?'#f2b84b':'#8fd46b'):(qm==='?'?'#ffe07a':'#7fc8ff');
+       if(qm==='!'){c.fillRect(bx+2*u,by,u,5*u);c.fillRect(bx+2*u,by+6*u,u,u)}else{c.fillRect(bx+u,by,3*u,u);c.fillRect(bx+3*u,by+u,u,2*u);c.fillRect(bx+2*u,by+3*u,u,2*u);c.fillRect(bx+2*u,by+6*u,u,u)}}}};
   mki(dock.x,dock.y,'dock','İskele');
   mk((field.tx+2)*T,(field.ty+1.5)*T,'#8a5a2e',big?'Tarla':'',big?4:2);
   mki(farmer.x,farmer.y,'farmer','Çiftçi Hasan');
@@ -6109,6 +6114,7 @@ function drawMap(c,w,h,big){
   // night: the map goes dark too, apart from fires and your own torch
   if(dk>0){c.save();c.fillStyle=`rgba(3,5,14,${(dk*.92).toFixed(3)})`;c.fillRect(0,0,w,h);c.globalCompositeOperation='lighter';
     const Ls=lightSources().concat(pl_?[[player.x,player.y-6,pl_]]:[]);for(const l of Ls){const X=(l[0]/T-ox)*sx,Y=(l[1]/T-oy)*sy,r=Math.max(2,l[2]/T*sx);if(X<-r||Y<-r||X>w+r||Y>h+r)continue;const g2=c.createRadialGradient(X,Y,0,X,Y,r);g2.addColorStop(0,`rgba(255,190,110,${(dk*.35).toFixed(3)})`);g2.addColorStop(1,'rgba(255,150,60,0)');c.fillStyle=g2;c.fillRect(X-r,Y-r,2*r,2*r)}c.restore()}
+  for(const a of lateI)mki(a[0],a[1],a[2],a[3],1);
   {const gg=guide();if(gg&&lit(gg.x,gg.y)){const X=Math.max(6,Math.min(w-6,(gg.x/T-ox)*sx)),Y=Math.max(6,Math.min(h-6,(gg.y/T-oy)*sy)),q=(time*1.4)%1,r0=big?7:3.5;
     c.strokeStyle=`rgba(242,184,75,${(1-q).toFixed(2)})`;c.lineWidth=big?3:1.5;c.beginPath();c.arc(X,Y,r0+q*(big?20:9),0,Math.PI*2);c.stroke();
     c.fillStyle='#11170f';c.fillRect(Math.round(X-r0-1),Math.round(Y-r0-1),Math.round(2*r0+2),Math.round(2*r0+2));c.fillStyle='#f2b84b';c.fillRect(Math.round(X-r0),Math.round(Y-r0),Math.round(2*r0),Math.round(2*r0));
@@ -6712,12 +6718,31 @@ const FLYS=[];for(let i=0;i<26;i++)FLYS.push({x:Math.random(),y:Math.random(),ph
 // world-space tint (under the night), then screen-space rain, fog, ash and lightning (over it)
 let FOGL=null;const FOGS={};function fogSprite(night){const k=night?'n':'d';if(FOGS[k])return FOGS[k];const c=document.createElement('canvas');c.width=c.height=96;const g=c.getContext('2d'),col=night?'150,160,190':'225,232,225',gr=g.createRadialGradient(48,48,0,48,48,48);gr.addColorStop(0,`rgba(${col},1)`);gr.addColorStop(.55,`rgba(${col},.45)`);gr.addColorStop(1,`rgba(${col},0)`);g.fillStyle=gr;g.fillRect(0,0,96,96);return FOGS[k]=c}
 function drawWeatherTint(){const a=weather.k==='bulut'?.08:raining()?.16:0;if(!a&&!ashStorm())return;ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.fillStyle=ashStorm()?'rgba(60,30,20,.22)':`rgba(30,45,70,${a})`;ctx.fillRect(0,0,cv.width,cv.height);ctx.restore()}
+// v1.33: fog in two world-anchored layers of soft noise drifting with the wind; every light (fires, a torch, the lamp) clears a hole in it
+let FOGN=null;
+function fogNoise(){if(FOGN)return FOGN;const N=128,c=document.createElement('canvas');c.width=c.height=N;const g=c.getContext('2d'),im=g.createImageData(N,N),d=im.data;
+  const oct=[[8,.55],[16,.3],[32,.15]],tabs=oct.map(([q])=>{const a=new Float32Array(q*q);for(let i=0;i<a.length;i++)a[i]=Math.random();return a}),sm=t=>t*t*(3-2*t);
+  for(let y=0;y<N;y++)for(let x=0;x<N;x++){let v=0;for(let k=0;k<oct.length;k++){const q=oct[k][0],A=tabs[k],fx=x/N*q,fy=y/N*q,ix=Math.floor(fx),iy=Math.floor(fy),tx=sm(fx-ix),ty=sm(fy-iy),i0=ix%q,i1=(ix+1)%q,j0=iy%q,j1=(iy+1)%q;
+      v+=oct[k][1]*((A[j0*q+i0]*(1-tx)+A[j0*q+i1]*tx)*(1-ty)+(A[j1*q+i0]*(1-tx)+A[j1*q+i1]*tx)*ty)}
+    const al=Math.max(0,Math.min(1,(v-.3)*1.9)),o=(y*N+x)*4;d[o]=d[o+1]=d[o+2]=255;d[o+3]=Math.round(255*al*al*(3-2*al))}
+  g.putImageData(im,0,0);return FOGN=c}
+function drawFog(dt,Wc,Hc,thick,dk){const fw=Math.max(16,Math.ceil(Wc/6)),fh=Math.max(16,Math.ceil(Hc/6));if(!FOGL||FOGL.width!==fw||FOGL.height!==fh){FOGL=document.createElement('canvas');FOGL.width=fw;FOGL.height=fh}
+  const g=FOGL.getContext('2d'),k=fw/Wc*S*dpr,tm=performance.now()/1000,nz=fogNoise(),col=dk>.5?'62,70,94':'226,232,228',nk=1-Math.min(1,dk)*.35;
+  g.setTransform(1,0,0,1,0,0);g.globalCompositeOperation='source-over';g.globalAlpha=1;g.clearRect(0,0,fw,fh);g.imageSmoothingEnabled=true;
+  for(const [tile,par,vx,vy,al] of [[620,1,9,2,.85],[380,.82,15,-3,.6]]){const ts=tile*k,ox=-((((cam.cx*par+tm*vx*(1+wind))*k)%ts)+ts)%ts,oy=-((((cam.cy*par+tm*vy)*k)%ts)+ts)%ts;g.globalAlpha=Math.min(1,thick*al*1.6*nk);
+    for(let y=oy;y<fh;y+=ts)for(let x=ox;x<fw;x+=ts){const X0=Math.floor(x),Y0=Math.floor(y);g.drawImage(nz,X0,Y0,Math.floor(x+ts)-X0,Math.floor(y+ts)-Y0)}}
+  g.globalAlpha=1;g.globalCompositeOperation='source-atop';g.fillStyle=`rgb(${col})`;g.fillRect(0,0,fw,fh);
+  g.globalCompositeOperation='destination-over';g.fillStyle=`rgba(${col},${(thick*.35).toFixed(3)})`;g.fillRect(0,0,fw,fh);
+  g.globalCompositeOperation='destination-out';
+  const L=lightSources().slice(),th=torchHeld();if(th)L.push([player.x,player.y-6,(TORCHL[th]||90)*1.1]);else if(lampOn())L.push([player.x,player.y-6,LAMPL]);
+  for(const l of L){const X=(l[0]-cam.cx)*k,Y=(l[1]-cam.cy)*k,r=l[2]*1.25*k*(.94+.06*Math.sin(tm*7+l[0]));if(X<-r||Y<-r||X>fw+r||Y>fh+r)continue;
+    const gr=g.createRadialGradient(X,Y,0,X,Y,r);gr.addColorStop(0,'rgba(0,0,0,.95)');gr.addColorStop(.55,'rgba(0,0,0,.6)');gr.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=gr;g.fillRect(X-r,Y-r,2*r,2*r)}
+  g.globalCompositeOperation='source-over';
+  ctx.imageSmoothingEnabled=true;ctx.drawImage(FOGL,0,0,Wc,Hc);ctx.imageSmoothingEnabled=false;
+  if(weather.k==='sis'){const X=Wc/2,Y=Hc/2,R=Math.hypot(Wc,Hc)*.55,gg=ctx.createRadialGradient(X,Y,Math.min(Wc,Hc)*.2,X,Y,R);gg.addColorStop(0,`rgba(${col},0)`);gg.addColorStop(1,`rgba(${col},${(thick*.7).toFixed(2)})`);ctx.fillStyle=gg;ctx.fillRect(0,0,Wc,Hc)}}
 function drawWeather(dt){const Wc=cv.width,Hc=cv.height,z=zoneAt(player.x,player.y),dk=darkness();ctx.save();ctx.setTransform(1,0,0,1,0,0);
   // swamp: drifting mist all the time, fireflies at night
-  if((z===1&&PERF.lvl<3)||weather.k==='sis'){const thick=weather.k==='sis'?(z===1?.55:.42):.16;const fs=fogSprite(dk>.5),fw=Math.max(8,Math.round(Wc/10)),fh=Math.max(8,Math.round(Hc/10));if(!FOGL||FOGL.width!==fw||FOGL.height!==fh){FOGL=document.createElement('canvas');FOGL.width=fw;FOGL.height=fh}
-    {const g=FOGL.getContext('2d');g.clearRect(0,0,fw,fh);g.globalAlpha=Math.min(1,thick*.55);for(const b of FOGB){b.x+=b.v*dt*(1+wind);if(b.x-b.r>1.2)b.x=-b.r;const X=b.x*fw,Y=b.y*fh,R=b.r*Math.max(fw,fh);g.drawImage(fs,X-R,Y-R,R*2,R*2)}}
-    ctx.imageSmoothingEnabled=true;ctx.drawImage(FOGL,0,0,Wc,Hc);ctx.imageSmoothingEnabled=false;
-    if(weather.k==='sis'){const X=Wc/2,Y=Hc/2,R=Math.hypot(Wc,Hc)*.55,g=ctx.createRadialGradient(X,Y,Math.min(Wc,Hc)*.16,X,Y,R);g.addColorStop(0,'rgba(220,226,222,0)');g.addColorStop(1,`rgba(${dk>.5?'90,96,110':'220,226,222'},${thick.toFixed(2)})`);ctx.fillStyle=g;ctx.fillRect(0,0,Wc,Hc)}}
+  if((z===1&&PERF.lvl<3)||weather.k==='sis'){const thick=weather.k==='sis'?(z===1?.62:.5):.22;drawFog(dt,Wc,Hc,thick,dk)}   // v1.33
   if(z===1&&dk>.4){ctx.globalCompositeOperation='lighter';for(const f of FLYS){f.ph+=dt;const X=((f.x+Math.sin(f.ph*.4)*.03)%1)*Wc,Y=((f.y+Math.cos(f.ph*.3)*.03)%1)*Hc,k=.5+.5*Math.sin(f.ph*3);ctx.fillStyle=`rgba(200,255,120,${(.5*k*dk).toFixed(3)})`;ctx.fillRect(X-S,Y-S,S*2,S*2);ctx.fillStyle=`rgba(200,255,120,${(.12*k*dk).toFixed(3)})`;ctx.fillRect(X-S*4,Y-S*4,S*8,S*8)}ctx.globalCompositeOperation='source-over'}
   // rain (or ash in the ash lands)
   if(raining()){const ash=ashStorm(),n=Math.round((ash?110:weather.k==='fırtına'?140:100)*(PERF.lvl>=3?.5:PERF.lvl>=2?.75:1)),ang=ash?.5:.18+wind*.25;
@@ -7745,7 +7770,8 @@ function markSources(n,need,depth,G){const have=haveOf(n);if(have>=need)return;c
     for(const ty of TREE_TYPES){if(ty.fruit===m)G.t.add(ty.n);if(m===ty.n+' odunu'&&!ty.noCut)G.t.add(ty.n)}
     for(const k in ANIM){const A=ANIM[k];if(A.drops&&A.drops.some(d=>d[0]===m))G.a.add(k)}
     const y=REC.get(m);if(y&&depth<3&&!TOOLS.has(m))for(const [p,q] of y.i)markSources(p,q*miss,depth+1,G)}}
-function refreshGlow(R){refreshNodeNames();const G={n:new Set(),t:new Set(),a:new Set(),d:new Set()};
+function refreshGlow(R){if(!tz)R=[];refreshNodeNames();   // v1.33: the blue outline is a tutorial aid only
+const G={n:new Set(),t:new Set(),a:new Set(),d:new Set()};
   for(const r of R)for(const it of r.items)if(!it.tool&&!it.ng&&it.have<it.need)markSources(it.n,it.need-(it.have-haveOf(it.n)),0,G);
   B3.glow=G.n;B3.glowTree=G.t;B3.glowAnim=G.a;B3.dropN=G.d}
 
@@ -9883,6 +9909,7 @@ function refreshQG(){const G={n:new Set(),t:new Set(),a:new Set(),d:new Set()},w
   for(const id of QS.tr){const q=NQI[id];if(!q||!QS.a[id])continue;const lab=`${short(q.g)} · ${q.t}`;
     for(const x of qParts(q)){if(x.have>=x.need)continue;if(x.item)for(const m of expand(x.n))mark(m,lab);if(x.kill){G.a.add(x.n);why['A:'+x.n]=lab}if(x.key&&/^gather:/.test(x.key))mark(x.key.slice(7),lab)}
     if(q.want&&!complete(q))for(const m of q.want)mark(m,lab)}
+  if(!tz){G.n=new Set();G.t=new Set();G.a=new Set();G.d=new Set()}   // v1.33: no blue outline for quests
   QG.n=G.n;QG.t=G.t;QG.a=G.a;QG.d=G.d;QG.why=why}
 setInterval(()=>{try{if(!onTitle)refreshQG()}catch(e){}},700);
 // hovering a wanted thing with the mouse: a blue line saying which quest wants it
@@ -9898,6 +9925,7 @@ cv.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;if(onTit
 cv.addEventListener('pointerleave',()=>{qtip.hidden=true});
 // in the world: quest marks over people, and a blue line over the wanted thing you stand next to
 function qMarkOf(g){if(!metG[g]())return null;if(ready(g))return '?';const a=available(g);if(a&&(!a.req||a.req())&&!tz&&met&&tut>=11)return '!';return null}
+window.__plQMarkAt=(x,y)=>{for(const g in GIVER){let o=null;try{o=GIVER[g]()}catch(e){}if(o&&Math.abs(o.x-x)<2&&Math.abs(o.y-y)<2){const m=qMarkOf(g);if(m)return m}}return null};   // v1.33: for the map
 v55Ents=function(ents,time){
   for(const g in GIVER){const o=GIVER[g]();if(!o||o.x==null)continue;if(Math.abs(o.x-player.x)>260||Math.abs(o.y-player.y)>200)continue;const m=qMarkOf(g);if(!m)continue;
     ents.push({y:9990,d:()=>{const b=Math.round(Math.sin(time*4+o.x)*2),x=Math.round(o.x),y=Math.round(o.y)-44+b;ctx.save();ctx.fillStyle='rgba(10,20,40,.85)';ctx.fillRect(x-4,y-1,9,12);ctx.fillStyle=m==='?'?'#ffe07a':'#7fc8ff';
@@ -13657,6 +13685,21 @@ try{const LS=window.__plLES;if(LS){const tx=s=>String(s)
     .replace(/ Q ile/g,' Atıl ile');
   for(const l of LS){l.say=tx(l.say);l.how=tx(l.how);for(const s of l.st)s[2]=tx(s[2])}}}catch(e){}
 }).toString()+')()')}catch(e){try{window.__hamErr('v132-dokun: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v133">
+// =====================================================================================================
+// v1.33: the hand button is gone (you gather with anything in hand); the lesson's crayfish walks near Börü
+// and never fights back; leaves are rare on the ground and every chop drops some.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{const st=document.createElement('style');st.textContent='#handbtn,body #hotbar #handbtn,body.v50m #hotbar #handbtn{display:none!important}';document.head.appendChild(st)}
+const _ta133=tickAnimals;tickAnimals=function(dt){const r=_ta133.apply(this,arguments);try{for(const a of animals){if(!a.tut)continue;if(a.hx==null){a.hx=a.x;a.hy=a.y}
+  a.mad=false;a.wind=0;a.lunge=null;if(a.st==='chase')a.st='wander';const dx=a.hx-a.x,dy=a.hy-a.y,d=Math.hypot(dx,dy);if(d>26){a.dx=dx/d;a.dy=dy/d;a.t=1}}}catch(e){}return r};
+// leaves: rare on the ground, slow to come back, and every chop shakes some down
+try{RES['Yaprak'].respawn=90}catch(e){}
+{const sp=typeof spawn!=='undefined'?spawn:{x:player.x,y:player.y};for(let i=nodes.length-1;i>=0;i--){const n=nodes[i];if(n.name!=='Yaprak'||n.pop)continue;if(Math.hypot(n.x-sp.x,n.y-sp.y)<300)continue;if(Math.random()<.72)nodes.splice(i,1)}}
+const _tc133=treeChopped;treeChopped=function(t){const r=_tc133.apply(this,arguments);try{if(t&&t.type)dropItem('Yaprak',t.x+(player.x<t.x?-6:6),t.y,Math.random()<.4?2:1)}catch(e){}return r};
+}).toString()+')()')}catch(e){try{window.__hamErr('v133: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
