@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.28</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.29</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -3683,21 +3683,21 @@ const QUESTS=[
    say:'Kuzeydeki kayalıkların ötesinde eski bir maden var derler. Oraya gitmeden önce yirmi beş tarifi avucunun içi gibi bil.',thx:'Yirmi beş… Kazanın dilini çözdün. Artık sıra madende, örste ve karşı yakada.'},
   // v44: the second act, across the bridge, towards the truth
   {t:'İlk tunç külçeni dök.',h:'Kazmayla bakır ve kalay madenlerini kaz (turuncu ve gümüşi kayalar). Zümrüt\'ün kazanında bakır, kalay ve tunç külçesinin tariflerini öğren, sonra el yapımı ekranında ('+(TOUCH?'el ikonu':'Tab')+') erit (kömür ya da turba gerekir): 3 bakır + 1 kalay külçesi = tunç.',
-   p:()=>(inv['Tunç külçesi']||0)>0?'yapıldı':`Bakır külçesi ${Math.min(inv['Bakır külçesi']||0,3)}/3 · Kalay külçesi ${Math.min(inv['Kalay külçesi']||0,1)}/1`,done:()=>(inv['Tunç külçesi']||0)>0||[...forged].some(n=>/^Tunç/.test(n)),c:150,x:60,
+   p:()=>(inv['Tunç külçesi']||0)>0?'yapıldı':`Bakır külçesi ${Math.min(inv['Bakır külçesi']||0,3)}/3 · Kalay külçesi ${Math.min(inv['Kalay külçesi']||0,1)}/1`,done:()=>(inv['Tunç külçesi']||0)>0||[...forged].some(n=>/^Tunç/.test(n)),c:150,x:240,
    acc:()=>{['Bakır külçesi','Kalay külçesi','Tunç külçesi'].forEach(n=>bought.add(n))},
    say:'Taşla, kemikle buraya kadar geldin. Ama karşı yaka taş bıçakla geçilmez. Dursun yıllardır bir <b>tunç</b> çekici sallamak için can atıyor. Bakırı ve kalayı madenden çıkar, kazanda erit, ikisini birleştir: <b>tunç</b> olur. Tarifleri kitabına yazdım.',
    thx:'Tunç! Kızıl altın gibi parlıyor. Dursun bunu görünce sevinçten çekicini düşürecek.'},
   {t:'Bataklık demirinden bir demir külçesi yap.',h:'Demir madeni yalnızca bataklıkta ve ötesinde çıkar (kırmızımsı kayalar). Çakmaktaşı, granit ya da daha iyi bir kazma ister. 3 cevher, 2 kömür (ya da turba), 1 taş. Tarifi kazanda öğren, sonra el yapımı ekranında ('+(TOUCH?'el ikonu':'Tab')+') erit.',
-   p:()=>(inv['Demir külçesi']||0)>0?'yapıldı':`Demir cevheri ${Math.min(inv['Demir cevheri']||0,3)}/3`,done:()=>(inv['Demir külçesi']||0)>0||[...forged].some(n=>/^Demir/.test(n)),c:200,x:80,acc:()=>{bought.add('Demir külçesi');bought.add('Demir levha')},
+   p:()=>(inv['Demir külçesi']||0)>0?'yapıldı':`Demir cevheri ${Math.min(inv['Demir cevheri']||0,3)}/3`,done:()=>(inv['Demir külçesi']||0)>0||[...forged].some(n=>/^Demir/.test(n)),c:200,x:320,acc:()=>{bought.add('Demir külçesi');bought.add('Demir levha')},
    say:()=>(toygar.met?'Toygar\'ın dediği gibi, asıl':'Bataklıktaki Avcı Toygar da söyler: asıl')+' sert maden bataklıkta: <b>demir</b>.'+' Tunçtan da sert, Kül Diyarı\'nda seni ancak o korur. İlk demir külçeni dök.',thx:'Demir… Kırk yıl önce gemimizin çapası demirdendi. Şimdi senin zırhın olacak.'},
-  {t:"Savunmanı 40'a çıkar.",h:'Tunç zırh takımı (miğfer, zırh, eldiven, çizme) Dursun\'un kardeşi Zırhçı Durmuş\'un örsünde dövülür; timsah derisi zırh kazanda yapılır. Özellikler penceresinden giy.',
-   p:()=>`Savunma ${Math.min(armorDef(),40)}/40`,done:()=>armorDef()>=40,c:200,x:60,acc:()=>{['Tunç levha','Tunç miğfer','Tunç zırh','Timsah derisi zırh'].forEach(n=>bought.add(n))},
-   say:'Kül Diyarı\'na giden geri dönemez derler. Ben de demem ki gitme; ama zırhsız gidersen ben seni kıyıda bulamam bile. <b>Savunmanı 40\'a</b> çıkar.',thx:'Artık bir savaşçı gibi görünüyorsun. Börü bile kıskanır.'},
+  {t:"Savunmanı 60'a çıkar.",h:'Tunç takım (miğfer, zırh, eldiven, çizme) 50 savunma eder; bir demir parça daha (örneğin Demir zırh) 60\'ı geçirir. Zırhlar Dursun\'un kardeşi Zırhçı Durmuş\'un örsünde dövülür; timsah derisi zırh kazanda yapılır. Özellikler penceresinden giy.',
+   p:()=>`Savunma ${Math.min(armorDef(),60)}/60`,done:()=>armorDef()>=60,c:200,x:240,acc:()=>{['Tunç levha','Tunç miğfer','Tunç zırh','Timsah derisi zırh','Demir zırh'].forEach(n=>bought.add(n))},
+   say:'Kül Diyarı\'na giden geri dönemez derler. Ben de demem ki gitme; ama zırhsız gidersen ben seni kıyıda bulamam bile. <b>Savunmanı 60\'a</b> çıkar.',thx:'Artık bir savaşçı gibi görünüyorsun. Börü bile kıskanır.'},
   {t:"Kül Diyarı'nda bir lav kertenkelesi avla.",h:'En doğuya git. Lav kertenkelesi ateş tükürür: atıl (Q) ve yandan vur. Ateş çiçeği merhemi yanığı azaltır.',go:()=>null,
-   p:()=>(kills['Lav kertenkelesi']||0)>0?'avlandı':'Kül Diyarı',done:()=>(kills['Lav kertenkelesi']||0)>0,c:300,x:120,acc:()=>bought.add('Ateş çiçeği merhemi'),
+   p:()=>(kills['Lav kertenkelesi']||0)>0?'avlandı':'Kül Diyarı',done:()=>(kills['Lav kertenkelesi']||0)>0,c:300,x:480,acc:()=>bought.add('Ateş çiçeği merhemi'),
    say:'Doğuda gök kızıl, yer kül. Orada <b>lav kertenkeleleri</b> dolaşır; pulları ateşe dayanır. Birini avla ve ateşin dilini öğren. Ateş çiçeği merhemi tarifini de kitabına yazdım.',thx:'Kül kokuyorsun ama hayattasın! Kül Diyarı artık sana da yol verir.'},
   {t:'Eşinden kalan bütün izleri bul.',h:'Mor parıltıları ara: ikisi yurtta, ikisi bataklıkta, ikisi Kül Diyarı\'nda. Bulduklarını tarif kitabının İzler sekmesinde okursun.',go:()=>'clue',
-   p:()=>`İz ${clues.size}/${CLUES.length}`,done:()=>clues.size>=CLUES.length,c:300,x:150,
+   p:()=>`İz ${clues.size}/${CLUES.length}`,done:()=>clues.size>=CLUES.length,c:300,x:600,
    say:()=>clues.size?`Bulduğun izleri bana da anlattın. ${clues.size} iz… Hepsini bul evlat; adanın sırrı onlarda.`:'Kıyıda, ormanda, bataklıkta… Ara sıra mor bir parıltı görürüm. Eşinden kalan izler olabilir. Hepsini bul.',
    thx:'Demek öyle… Kırk yıl önce benim gemimi batıran da o mor ışıktı. Fırtına sandım, kaza sandım. Meğer o yıldızsız adamlar adalara köpek, fener satıp gezerken gemileri gözlüyormuş. <b>Seni bekliyor evlat.</b> Bu adadan çıkmanın tek yolu sağlam bir gemi. Kazanda bir <b>gemi</b> tarifini çöz; deniz gerisini halleder.'},
 ];
@@ -9766,10 +9766,10 @@ const NQ=[
  {id:'smith_bronze',g:'smith',t:'Tunç işçiliği',req:()=>foundSet.has('Tunç külçesi')||(inv['Tunç külçesi']||0)>0,rt:'ilk tunç külçesi',done:anyOf(['Tunç balta','Tunç kazma','Tunç kılıç','Tunç mızrak']),p:()=>['Tunç balta','Tunç kazma','Tunç kılıç','Tunç mızrak'].filter(n=>forged.has(n)).join(', ')||'henüz yok',rec:['Tunç kazma','Tunç kılıç','Tunç balta'],c:150,x:60,say:'Külçe tek başına bir şey değil; örste şekil alır. Tarifini kazanda öğren, bana bir <b>tunç kılıç</b>, <b>tunç kazma</b>, balta ya da mızrak dövdür.',thx:'İşte gerçek bir alet! Bataklığın karşısına geçmeye hazırsın.'},
  {id:'s4',g:'smith',t:'Demir zamanı',req:()=>foundSet.has('Demir külçesi')||(inv['Demir külçesi']||0)>0,rt:'ilk demir külçesi',done:anyOf(['Demir balta','Demir kazma','Demir kılıç','Demir mızrak']),p:()=>['Demir balta','Demir kazma','Demir kılıç','Demir mızrak'].filter(n=>forged.has(n)).join(', ')||'henüz yok',c:250,x:90,say:'Demir! Babamdan beri bu örste demir dövülmedi. Bir <b>demir</b> balta, kazma, kılıç ya da mızrak dövdür bana.',thx:'<i>(gözleri dolar)</i> Babam görseydi… Al, hak ettin.'},
  // Durmuş: armour
- {id:'d1',g:'durmus',t:'Başını koru',done:()=>!!equip.bas,p:()=>equip.bas?'giyildi':'başın açık',c:30,x:20,say:'Kafası açık dolaşan savaşçı uzun yaşamaz. Bir <b>miğfer</b> ya da başlık giy; kemikten bile olur.',thx:'Hah, şimdi oldu! Kafan sağlam, aklın da sağlam.'},
- {id:'d2',g:'durmus',t:'Kemik yığını',bring:[['Kemik',6]],c:40,x:20,say:'Zırhın iç bağlarını kemikten yaparım. Bana <b>altı kemik</b> getir.',thx:'Bunlar iyi kemik. Teşekkürler.'},
- {id:'d3',g:'durmus',t:'Tunç zırh',req:()=>foundSet.has('Tunç külçesi')||(inv['Tunç külçesi']||0)>0,rt:'ilk tunç külçesi',done:()=>forged.has('Tunç zırh')||(inv['Tunç zırh']||0)>0||equip.govde==='Tunç zırh',p:()=>forged.has('Tunç zırh')?'dövüldü':'henüz yok',rec:['Tunç zırh'],c:160,x:60,say:'Tunç geldi demek! Gel, sana bir <b>tunç zırh</b> dövelim. Tarifini kitabına yazdım.',thx:'Parlıyor! Güneşte kör edersin düşmanı.'},
- {id:'d4',g:'durmus',t:'Timsah derisi',req:()=>bridge.fixed,rt:'köprü onarılınca',bring:[['Timsah derisi',1]],c:180,x:70,say:'Timsah derisi tunçtan hafif, deriden sağlamdır. Bana bir <b>timsah derisi</b> getir; bakalım neler yaparız.',thx:'Ne deri ama! Toygar bile kıskanır.'},
+ {id:'d1',g:'durmus',t:'Başını koru',done:()=>!!equip.bas,p:()=>equip.bas?'giyildi':'başın açık',c:30,x:80,say:'Kafası açık dolaşan savaşçı uzun yaşamaz. Bir <b>miğfer</b> ya da başlık giy; kemikten bile olur.',thx:'Hah, şimdi oldu! Kafan sağlam, aklın da sağlam.'},
+ {id:'d2',g:'durmus',t:'Kemik yığını',bring:[['Kemik',6]],c:40,x:80,say:'Zırhın iç bağlarını kemikten yaparım. Bana <b>altı kemik</b> getir.',thx:'Bunlar iyi kemik. Teşekkürler.'},
+ {id:'d3',g:'durmus',t:'Tunç zırh',req:()=>foundSet.has('Tunç külçesi')||(inv['Tunç külçesi']||0)>0,rt:'ilk tunç külçesi',done:()=>forged.has('Tunç zırh')||(inv['Tunç zırh']||0)>0||equip.govde==='Tunç zırh',p:()=>forged.has('Tunç zırh')?'dövüldü':'henüz yok',rec:['Tunç zırh'],c:160,x:240,say:'Tunç geldi demek! Gel, sana bir <b>tunç zırh</b> dövelim. Tarifini kitabına yazdım.',thx:'Parlıyor! Güneşte kör edersin düşmanı.'},
+ {id:'d4',g:'durmus',t:'Timsah derisi',req:()=>bridge.fixed,rt:'köprü onarılınca',bring:[['Timsah derisi',1]],c:180,x:280,say:'Timsah derisi tunçtan hafif, deriden sağlamdır. Bana bir <b>timsah derisi</b> getir; bakalım neler yaparız.',thx:'Ne deri ama! Toygar bile kıskanır.'},
  // Hasan: the field
  {id:'f1',g:'farmer',t:'İlk hasat',req:()=>farmStep>=5,rt:'dört alet tamamlanınca',bring:[['Buğday',5]],c:60,x:30,say:'Tarla hazır, aletler tamam. Şimdi bana <b>beş buğday</b> yetiştir; kış için ambar dolsun.',thx:'Altın gibi başaklar! Sen doğuştan çiftçisin.'},
  {id:'f2',g:'farmer',t:'Sebze sepeti',req:()=>farmStep>=5,rt:'dört alet tamamlanınca',bring:[['Havuç',3],['Soğan',3]],c:80,x:40,say:'Ekin\'e çorba sözü verdim. Üç <b>havuç</b>, üç <b>soğan</b> getir.',thx:'Çorbanın kokusu şimdiden burnumda.'},
@@ -9783,45 +9783,45 @@ const NQ=[
  {id:'c2',g:'carp',t:'Odun stoku',bring:[['Herhangi odun',20]],c:80,x:30,say:'Kışa odun lazım. Bana <b>yirmi odun</b> getir; hangi ağaçtan olursa.',thx:'Odunluk doldu! Kış gelsin bakalım.'},
  {id:'c3',g:'carp',t:'Kalıcı bir ev',done:()=>placed.some(o=>HOUSESET.has(o.n)&&o.n!=='Yaprak barınağı'),p:()=>placed.some(o=>HOUSESET.has(o.n)&&o.n!=='Yaprak barınağı')?'kuruldu':'henüz yok',c:120,x:50,say:'Barınak dediğin bir gecelik. Benden kalıcı bir <b>ev</b> al (çadır da sayılır), bir yere kur. İçine girip döşeyebilirsin artık.',thx:'Ev sahibi oldun! Hayırlı olsun komşu.'},
  // Toygar: the swamp
- {id:'t1',g:'toygar',t:'Çamur yürüyüşü',done:()=>(inv['Kamış çizme']||0)>0||equip.ayak==='Kamış çizme',p:()=>(inv['Kamış çizme']||0)>0||equip.ayak==='Kamış çizme'?'hazır':'henüz yok',want:['Kamış','Saz'],c:50,x:20,say:'Çamurda çıplak ayak gezilmez. Kamıştan bir <b>kamış çizme</b> ör; tarifini zaten verdim.',thx:'Şimdi bataklık senin evin gibi.'},
- {id:'t2',g:'toygar',t:'Kurbağa zehri',kill:['Zehirli kurbağa',3],c:120,x:50,say:'Zehirli kurbağalar çoğaldı, ördekleri bile kovaladılar. <b>Üç kurbağa</b> avla.',thx:'Kurbağa sesleri azaldı. İyi iş!'},
- {id:'t3',g:'toygar',t:'Bataklık kurdu',kill:['Bataklık kurdu',2],c:180,x:70,say:'Bataklık kurtları geceleri kulübemin etrafında dolanıyor. <b>İki tanesini</b> avla.',thx:'Rahat bir gece borçluyum sana.'},
- {id:'t4',g:'toygar',t:'Timsah',kill:['Timsah',1],c:260,x:100,say:'Yirmi yıldır avlayamadığım bir <b>timsah</b> var. Sen dene. Önden değil, yandan vur.',thx:'<i>(uzun süre susar)</i> Yirmi yıl… Sağ ol evlat.'},
+ {id:'t1',g:'toygar',t:'Çamur yürüyüşü',done:()=>(inv['Kamış çizme']||0)>0||equip.ayak==='Kamış çizme',p:()=>(inv['Kamış çizme']||0)>0||equip.ayak==='Kamış çizme'?'hazır':'henüz yok',want:['Kamış','Saz'],c:50,x:80,say:'Çamurda çıplak ayak gezilmez. Kamıştan bir <b>kamış çizme</b> ör; tarifini zaten verdim.',thx:'Şimdi bataklık senin evin gibi.'},
+ {id:'t2',g:'toygar',t:'Kurbağa zehri',kill:['Zehirli kurbağa',3],c:120,x:200,say:'Zehirli kurbağalar çoğaldı, ördekleri bile kovaladılar. <b>Üç kurbağa</b> avla.',thx:'Kurbağa sesleri azaldı. İyi iş!'},
+ {id:'t3',g:'toygar',t:'Bataklık kurdu',kill:['Bataklık kurdu',2],c:180,x:280,say:'Bataklık kurtları geceleri kulübemin etrafında dolanıyor. <b>İki tanesini</b> avla.',thx:'Rahat bir gece borçluyum sana.'},
+ {id:'t4',g:'toygar',t:'Timsah',kill:['Timsah',1],c:260,x:400,say:'Yirmi yıldır avlayamadığım bir <b>timsah</b> var. Sen dene. Önden değil, yandan vur.',thx:'<i>(uzun süre susar)</i> Yirmi yıl… Sağ ol evlat.'},
  // v81 Astronot Tuna (ACT 2, Gök Rıhtımı): the rocket
- {id:'as1',g:'tuna',t:'Göktaşları',bring:[['Meteor parçası',4],['Gök camı',3]],c:1000,x:500,say:'Roketin gövdesi için gökten düşmüş demir lazım. Dört <b>meteor parçası</b> ve üç <b>gök camı</b> getir.',thx:'<b>Meteor demiri</b> ve <b>yıldız külçesi</b> tariflerini kitabına yazdım.'},
- {id:'as2',g:'tuna',t:'Dronlar',kill:['Uzaylı dronu',4],c:1200,x:600,say:'Uzaylı dronları rampayı gözlüyor. <b>Dört tanesini</b> düşür; devrelerini sakla.',thx:'Gözleri kör oldu. Şimdilik.'},
- {id:'as3',g:'tuna',t:'Muhafızlar',kill:['Gölge muhafız',3],c:1500,x:700,say:'Gölge muhafızlar kaçıranların askerleri. Nehir\'i onlar düşürdü. <b>Üç tanesini</b> yere ser.',thx:'<i>(sessizce kask camını siler)</i> Bu Nehir için.'},
- {id:'as4',g:'tuna',t:'Gök bekçisi',kill:['Gök bekçisi',1],c:2500,x:1200,say:'Rampanın ötesinde dev bir <b>gök bekçisi</b> nöbet tutuyor; göğsünde bir <b>yakıt hücresi</b> taşıyor. Roketin kalbi o olacak.',thx:'Yakıt hücresi! <b>Roket gövdesi</b>, <b>roket motoru</b> ve <b>roket</b> tariflerini yazdım. Ülker\'in kazanında öğren, ben birleştiririm.'},
- {id:'as5',g:'tuna',t:'Roket',bring:[['Roket',1]],c:0,x:2000,say:'Son adım: <b>roketi</b> rampaya getir. Gövde, motor, uzaylı devreleri ve gök ipeği. Hepsini ben birleştiririm; sen sadece malzemeleri getir.',thx:'<i>(roketi rampaya diker)</i> Hazır. Yedi yıl beklemeyeceğiz. Bu gece gidiyoruz.'},
+ {id:'as1',g:'tuna',t:'Göktaşları',bring:[['Meteor parçası',4],['Gök camı',3]],c:1000,x:1250,say:'Roketin gövdesi için gökten düşmüş demir lazım. Dört <b>meteor parçası</b> ve üç <b>gök camı</b> getir.',thx:'<b>Meteor demiri</b> ve <b>yıldız külçesi</b> tariflerini kitabına yazdım.'},
+ {id:'as2',g:'tuna',t:'Dronlar',kill:['Uzaylı dronu',4],c:1200,x:1500,say:'Uzaylı dronları rampayı gözlüyor. <b>Dört tanesini</b> düşür; devrelerini sakla.',thx:'Gözleri kör oldu. Şimdilik.'},
+ {id:'as3',g:'tuna',t:'Muhafızlar',kill:['Gölge muhafız',3],c:1500,x:1750,say:'Gölge muhafızlar kaçıranların askerleri. Nehir\'i onlar düşürdü. <b>Üç tanesini</b> yere ser.',thx:'<i>(sessizce kask camını siler)</i> Bu Nehir için.'},
+ {id:'as4',g:'tuna',t:'Gök bekçisi',kill:['Gök bekçisi',1],c:2500,x:3000,say:'Rampanın ötesinde dev bir <b>gök bekçisi</b> nöbet tutuyor; göğsünde bir <b>yakıt hücresi</b> taşıyor. Roketin kalbi o olacak.',thx:'Yakıt hücresi! <b>Roket gövdesi</b>, <b>roket motoru</b> ve <b>roket</b> tariflerini yazdım. Ülker\'in kazanında öğren, ben birleştiririm.'},
+ {id:'as5',g:'tuna',t:'Roket',bring:[['Roket',1]],c:0,x:5000,say:'Son adım: <b>roketi</b> rampaya getir. Gövde, motor, uzaylı devreleri ve gök ipeği. Hepsini ben birleştiririm; sen sadece malzemeleri getir.',thx:'<i>(roketi rampaya diker)</i> Hazır. Yedi yıl beklemeyeceğiz. Bu gece gidiyoruz.'},
  // v80 Ejder Avcısı Alara (ACT 2, Ejder Volkanı): the plasma blade
- {id:'ej1',g:'alara',t:'Lav çiçekleri',bring:[['Lav çiçeği',5],['Magma cevheri',3]],c:800,x:360,say:'Plazmayı tutacak bir hücre lazım. Beş <b>lav çiçeği</b> ve üç <b>magma cevheri</b> getir.',thx:'<b>Plazma hücresi</b> tarifini kitabına yazdım. Selin\'in enerji hücresinin ateşli kuzeni.'},
- {id:'ej2',g:'alara',t:'Yavrular',kill:['Yavru ejder',3],c:1000,x:440,say:'Yavru ejderler köyün yolunu kesti. <b>Üç tanesini</b> avla. Ateşlerini görünce yana kaç.',thx:'İyi avladın. Dişlerini sakla; kılıç onlardan olur.'},
- {id:'ej3',g:'alara',t:'Kılıcın kenarı',bring:[['Ejder dişi',3],['Plazma taşı',3]],c:1200,x:520,say:'Üç <b>ejder dişi</b> ve üç <b>plazma taşı</b> getir. Diş kılıcın kenarı olur, taş ışığı.',thx:'<b>Işın kılıcı</b> tarifi kitabında. Ülker\'in kazanında öğren, ben yaparım.'},
- {id:'ej4',g:'alara',t:'Kızıl ejder',kill:['Kızıl ejder',1],c:2000,x:900,say:'Volkanın tepesinde <b>Kızıl ejder</b> yaşar; plazmayı en çok içen o. Onu düşür. Tek başına gitme demeyeceğim; zaten tek başınasın.',thx:'<i>(uzun süre volkana bakar)</i> Yirmi yıldır bekliyordum. Kalbini sakla evlat; gökte işine yarayacak.'},
+ {id:'ej1',g:'alara',t:'Lav çiçekleri',bring:[['Lav çiçeği',5],['Magma cevheri',3]],c:800,x:900,say:'Plazmayı tutacak bir hücre lazım. Beş <b>lav çiçeği</b> ve üç <b>magma cevheri</b> getir.',thx:'<b>Plazma hücresi</b> tarifini kitabına yazdım. Selin\'in enerji hücresinin ateşli kuzeni.'},
+ {id:'ej2',g:'alara',t:'Yavrular',kill:['Yavru ejder',3],c:1000,x:1100,say:'Yavru ejderler köyün yolunu kesti. <b>Üç tanesini</b> avla. Ateşlerini görünce yana kaç.',thx:'İyi avladın. Dişlerini sakla; kılıç onlardan olur.'},
+ {id:'ej3',g:'alara',t:'Kılıcın kenarı',bring:[['Ejder dişi',3],['Plazma taşı',3]],c:1200,x:1300,say:'Üç <b>ejder dişi</b> ve üç <b>plazma taşı</b> getir. Diş kılıcın kenarı olur, taş ışığı.',thx:'<b>Işın kılıcı</b> tarifi kitabında. Ülker\'in kazanında öğren, ben yaparım.'},
+ {id:'ej4',g:'alara',t:'Kızıl ejder',kill:['Kızıl ejder',1],c:2000,x:2250,say:'Volkanın tepesinde <b>Kızıl ejder</b> yaşar; plazmayı en çok içen o. Onu düşür. Tek başına gitme demeyeceğim; zaten tek başınasın.',thx:'<i>(uzun süre volkana bakar)</i> Yirmi yıldır bekliyordum. Kalbini sakla evlat; gökte işine yarayacak.'},
  // v79 Mühendis Selin (ACT 2, Kristal Golem Ocağı): the mech armour
- {id:'mk1',g:'selin',t:'Enerji taşları',bring:[['Enerji taşı',3],['Kristal cevheri',4]],c:600,x:260,say:'Golemlerin kalbini çözmek için üç <b>enerji taşı</b> ve dört <b>kristal cevheri</b> lazım. Taşlar mavi parlar, cevher kayaların içindedir.',thx:'Harika! <b>Kobalt</b> ve <b>titanyum külçesi</b>, bir de <b>enerji hücresi</b> tariflerini kitabına yazdım.'},
- {id:'mk2',g:'selin',t:'Golemcikler',kill:['Kristal golemcik',3],c:800,x:340,say:'Golemcikler atölyemin kapısını yokluyor. <b>Üç tanesini</b> durdur; parçalarını da sakla, işe yarar.',thx:'Gürültü bitti. Bir kahve içelim mi? …Kahvem yok, unut.'},
- {id:'mk3',g:'selin',t:'Zırhın iskeleti',bring:[['Titanyum plaka',2],['Golem parçası',4]],c:1000,x:440,say:'Büyük golemlerin sırtında <b>titanyum plakalar</b> var. İki plaka ve dört <b>golem parçası</b> getir; zırhın iskeletini kurayım.',thx:'<i>(plakaları birbirine kaynatır)</i> İskelet hazır! <b>Meka zırh</b> tarifini kitabına yazdım. Ülker\'in kazanında öğren, malzemeleri getir, ben birleştiririm.'},
+ {id:'mk1',g:'selin',t:'Enerji taşları',bring:[['Enerji taşı',3],['Kristal cevheri',4]],c:600,x:650,say:'Golemlerin kalbini çözmek için üç <b>enerji taşı</b> ve dört <b>kristal cevheri</b> lazım. Taşlar mavi parlar, cevher kayaların içindedir.',thx:'Harika! <b>Kobalt</b> ve <b>titanyum külçesi</b>, bir de <b>enerji hücresi</b> tariflerini kitabına yazdım.'},
+ {id:'mk2',g:'selin',t:'Golemcikler',kill:['Kristal golemcik',3],c:800,x:850,say:'Golemcikler atölyemin kapısını yokluyor. <b>Üç tanesini</b> durdur; parçalarını da sakla, işe yarar.',thx:'Gürültü bitti. Bir kahve içelim mi? …Kahvem yok, unut.'},
+ {id:'mk3',g:'selin',t:'Zırhın iskeleti',bring:[['Titanyum plaka',2],['Golem parçası',4]],c:1000,x:1100,say:'Büyük golemlerin sırtında <b>titanyum plakalar</b> var. İki plaka ve dört <b>golem parçası</b> getir; zırhın iskeletini kurayım.',thx:'<i>(plakaları birbirine kaynatır)</i> İskelet hazır! <b>Meka zırh</b> tarifini kitabına yazdım. Ülker\'in kazanında öğren, malzemeleri getir, ben birleştiririm.'},
  // v78 Silahçı Tamer (ACT 2, Hurda Çölü): firearms
- {id:'sl1',g:'tamer',t:'Hurda toplama',bring:[['Hurda parçası',8],['Bakır tel',4]],c:400,x:180,say:'Tezgâhımı yeniden kurmam lazım. Sekiz <b>hurda parçası</b>, dört <b>bakır tel</b> getir. Kumun içinde parlayanlara bak.',thx:'İyi iş. <b>Pirinç külçesi</b> ve <b>barut</b> tariflerini kitabına yazdım; mermi bunlardan olur.'},
- {id:'sl2',g:'tamer',t:'Devriye',kill:['Devriye robotu',3],c:600,x:260,say:'Devriye robotları tezgâhıma kadar geliyor. <b>Üç tanesini</b> sustur. Göğüslerindeki sarı ışığa vur.',thx:'Sesleri kesildi. Ne güzel bir sessizlik.'},
- {id:'sl3',g:'tamer',t:'Robotun kalbi',bring:[['Robot çekirdeği',2],['Barut',4]],c:700,x:300,say:'Devriyelerin göğsünde bir <b>çekirdek</b> var; içindeki yay tetiğe can verir. İki çekirdek ve dört <b>barut</b> getir.',thx:'<b>Tabanca</b> ve <b>tabanca mermisi</b> tariflerini yazdım. Ülker\'in kazanında tabancayı öğren, ben yaparım. Mermiyi kendin yap; bir seferde on tane çıkar.'},
- {id:'sl4',g:'tamer',t:'Devin motoru',bring:[['Motor',1],['Ağır plaka',2]],c:900,x:380,say:'Çölün derinlerinde bir <b>hurda devi</b> dolaşır. Göğsünde bir <b>motor</b> taşır. Onu ve iki <b>ağır plaka</b> getir; sana bir pompalı yapayım.',thx:'<i>(motoru dinler, gülümser)</i> <b>Pompalı</b> ve <b>pompalı fişeği</b> tarifleri kitabında. Bir atışta beş saçma: kalabalık için.'},
+ {id:'sl1',g:'tamer',t:'Hurda toplama',bring:[['Hurda parçası',8],['Bakır tel',4]],c:400,x:450,say:'Tezgâhımı yeniden kurmam lazım. Sekiz <b>hurda parçası</b>, dört <b>bakır tel</b> getir. Kumun içinde parlayanlara bak.',thx:'İyi iş. <b>Pirinç külçesi</b> ve <b>barut</b> tariflerini kitabına yazdım; mermi bunlardan olur.'},
+ {id:'sl2',g:'tamer',t:'Devriye',kill:['Devriye robotu',3],c:600,x:650,say:'Devriye robotları tezgâhıma kadar geliyor. <b>Üç tanesini</b> sustur. Göğüslerindeki sarı ışığa vur.',thx:'Sesleri kesildi. Ne güzel bir sessizlik.'},
+ {id:'sl3',g:'tamer',t:'Robotun kalbi',bring:[['Robot çekirdeği',2],['Barut',4]],c:700,x:750,say:'Devriyelerin göğsünde bir <b>çekirdek</b> var; içindeki yay tetiğe can verir. İki çekirdek ve dört <b>barut</b> getir.',thx:'<b>Tabanca</b> ve <b>tabanca mermisi</b> tariflerini yazdım. Ülker\'in kazanında tabancayı öğren, ben yaparım. Mermiyi kendin yap; bir seferde on tane çıkar.'},
+ {id:'sl4',g:'tamer',t:'Devin motoru',bring:[['Motor',1],['Ağır plaka',2]],c:900,x:950,say:'Çölün derinlerinde bir <b>hurda devi</b> dolaşır. Göğsünde bir <b>motor</b> taşır. Onu ve iki <b>ağır plaka</b> getir; sana bir pompalı yapayım.',thx:'<i>(motoru dinler, gülümser)</i> <b>Pompalı</b> ve <b>pompalı fişeği</b> tarifleri kitabında. Bir atışta beş saçma: kalabalık için.'},
  // v77 Büyücü Pervin (ACT 2, Dev Mantar Ormanı): mor mana and the fire staff
- {id:'pv1',g:'pervin',t:'Büyü otları',bring:[['Büyü otu',5],['Işıldak mantarı',3]],c:350,x:150,say:'Mana iksiri kaynatacağım ama otum bitti. Beş <b>büyü otu</b> ve üç <b>ışıldak mantarı</b> getir. Büyü otu morumsu yapraklıdır; ışıldak mantarı karanlıkta yeşil parlar.',thx:'Mis gibi! İksir tarifini de kitabına yazdım: <b>Mana iksiri</b>.'},
- {id:'pv2',g:'pervin',t:'Goblin baskını',kill:['Goblin',4],c:500,x:220,say:'Goblinler kulübemin çevresindeki kıymıkları topluyor; ne işe yaradığını bilmeden. <b>Dört goblin</b>i kovala. Grup halinde gezerler, dikkat.',thx:'Hah! Kaçtılar. Sen savaşmayı biliyorsun; şimdi de ateşi öğren.'},
- {id:'pv3',g:'pervin',t:'Asanın kalbi',bring:[['Spor kristali',3],['Goblin kulağı',3]],c:600,x:300,say:'Bir asa, kalbi olmadan dal parçasıdır. Üç <b>spor kristali</b> getir; bir de goblinlerin kulaklarından üç tane. Kulakları mana sızıntısını duyar, asanın yönünü onlarla ayarlarım.',thx:'<i>(kristalleri avucunda ısıtır)</i> İşte. <b>Ateş asası</b> tarifini kitabına yazdım. Ülker\'in kazanında öğren, malzemeleri bana getir; senin için yaparım.'},
- {id:'pv4',g:'pervin',t:'Buzun dili',req:()=>!!(window.__selin&&window.__selin.met),rt:'Mühendis Selin ile tanış',bring:[['Buz kristali',4],['Kristal kanat',2]],c:700,x:320,say:'Selin\'in golemleri soğuktan hoşlanmaz. Dört <b>buz kristali</b> ve kristal yarasalarından iki <b>kanat</b> getir; sana buzu konuşturan bir asa yapayım.',thx:'<b>Buz asası</b> tarifini kitabına yazdım. Buz oku vurduğu şeyi birkaç saniye dondurur. Ülker\'in kazanında öğren, ben yaparım.'},
- {id:'pv5',g:'pervin',t:'Gökten yıldırım',req:()=>!!(window.__alara&&window.__alara.met),rt:'Ejder Avcısı Alara ile tanış',bring:[['Ejder kristali',3],['Magma çekirdeği',1]],c:900,x:420,say:'Son asam, en tehlikelisi. Üç <b>ejder kristali</b> ve lav golemlerinin göğsünden bir <b>magma çekirdeği</b> getir. Yıldırım bir hedefte durmaz; birinden ötekine atlar.',thx:'<b>Yıldırım asası</b> tarifi kitabında. Ülker\'in kazanında öğren, ben yaparım. Bu asa ile o gemiye bir gün göz kırpabilirsin.'},
+ {id:'pv1',g:'pervin',t:'Büyü otları',bring:[['Büyü otu',5],['Işıldak mantarı',3]],c:350,x:375,say:'Mana iksiri kaynatacağım ama otum bitti. Beş <b>büyü otu</b> ve üç <b>ışıldak mantarı</b> getir. Büyü otu morumsu yapraklıdır; ışıldak mantarı karanlıkta yeşil parlar.',thx:'Mis gibi! İksir tarifini de kitabına yazdım: <b>Mana iksiri</b>.'},
+ {id:'pv2',g:'pervin',t:'Goblin baskını',kill:['Goblin',4],c:500,x:550,say:'Goblinler kulübemin çevresindeki kıymıkları topluyor; ne işe yaradığını bilmeden. <b>Dört goblin</b>i kovala. Grup halinde gezerler, dikkat.',thx:'Hah! Kaçtılar. Sen savaşmayı biliyorsun; şimdi de ateşi öğren.'},
+ {id:'pv3',g:'pervin',t:'Asanın kalbi',bring:[['Spor kristali',3],['Goblin kulağı',3]],c:600,x:750,say:'Bir asa, kalbi olmadan dal parçasıdır. Üç <b>spor kristali</b> getir; bir de goblinlerin kulaklarından üç tane. Kulakları mana sızıntısını duyar, asanın yönünü onlarla ayarlarım.',thx:'<i>(kristalleri avucunda ısıtır)</i> İşte. <b>Ateş asası</b> tarifini kitabına yazdım. Ülker\'in kazanında öğren, malzemeleri bana getir; senin için yaparım.'},
+ {id:'pv4',g:'pervin',t:'Buzun dili',req:()=>!!(window.__selin&&window.__selin.met),rt:'Mühendis Selin ile tanış',bring:[['Buz kristali',4],['Kristal kanat',2]],c:700,x:800,say:'Selin\'in golemleri soğuktan hoşlanmaz. Dört <b>buz kristali</b> ve kristal yarasalarından iki <b>kanat</b> getir; sana buzu konuşturan bir asa yapayım.',thx:'<b>Buz asası</b> tarifini kitabına yazdım. Buz oku vurduğu şeyi birkaç saniye dondurur. Ülker\'in kazanında öğren, ben yaparım.'},
+ {id:'pv5',g:'pervin',t:'Gökten yıldırım',req:()=>!!(window.__alara&&window.__alara.met),rt:'Ejder Avcısı Alara ile tanış',bring:[['Ejder kristali',3],['Magma çekirdeği',1]],c:900,x:1050,say:'Son asam, en tehlikelisi. Üç <b>ejder kristali</b> ve lav golemlerinin göğsünden bir <b>magma çekirdeği</b> getir. Yıldırım bir hedefte durmaz; birinden ötekine atlar.',thx:'<b>Yıldırım asası</b> tarifi kitabında. Ülker\'in kazanında öğren, ben yaparım. Bu asa ile o gemiye bir gün göz kırpabilirsin.'},
  // v76 Gökbilimci Ülker (ACT 2, Yüzen Kayalar): her last job gives you the portals
- {id:'gk1',g:'gok',t:'Teleskobun ayağı',bring:[['Herhangi kalas',4],['Halat',2]],c:300,x:120,say:'Dün geceki rüzgâr teleskobumun ayağını kırdı; kırk yıllık gözüm kör kaldı. Bana dört <b>kalas</b> ve iki <b>halat</b> getir, yeniden kuralım.',thx:'<i>(teleskobu göğe çevirir)</i> İşte! Gökyüzü yine benimle konuşuyor.'},
- {id:'gk2',g:'gok',t:'Bir gece gözlem',base:()=>day,done:b=>day>b,p:b=>day>b?'gece bitti':'bir gece bekle',c:250,x:140,say:'Bu gece gökyüzüne birlikte bakalım. Mor ışık her gece aynı saatte geçer; gördüğünde bana hak vereceksin. <b>Bir gece</b> geçsin, sabah yanıma gel.',thx:'Gördün mü? O bir yıldız değil. Yıldızlar titrer; o ise bakar. Bir göz gibi.'},
- {id:'gk3',g:'gok',t:'Portal çekirdeği',bring:[['Kristal',2],['Demir levha',2],['Mor kıymık',2]],c:500,x:260,say:'Kırk yıl önce bir kapı tasarladım: iki yeri tek adımda birleştiren bir <b>portal</b>. Çekirdeği hiç bitiremedim. İki <b>kristal</b>, iki <b>demir levha</b> ve gökten düşen iki <b>mor kıymık</b> getir; kıymıklar ışığın dilini bilir.',thx:'<i>(çerçevenin içinde mor bir girdap döner)</i> Çalışıyor! Senin adandaki herkesin yanına birer kapı açtım. Artık iki ada arasında bir adım var.'},
+ {id:'gk1',g:'gok',t:'Teleskobun ayağı',bring:[['Herhangi kalas',4],['Halat',2]],c:300,x:300,say:'Dün geceki rüzgâr teleskobumun ayağını kırdı; kırk yıllık gözüm kör kaldı. Bana dört <b>kalas</b> ve iki <b>halat</b> getir, yeniden kuralım.',thx:'<i>(teleskobu göğe çevirir)</i> İşte! Gökyüzü yine benimle konuşuyor.'},
+ {id:'gk2',g:'gok',t:'Bir gece gözlem',base:()=>day,done:b=>day>b,p:b=>day>b?'gece bitti':'bir gece bekle',c:250,x:350,say:'Bu gece gökyüzüne birlikte bakalım. Mor ışık her gece aynı saatte geçer; gördüğünde bana hak vereceksin. <b>Bir gece</b> geçsin, sabah yanıma gel.',thx:'Gördün mü? O bir yıldız değil. Yıldızlar titrer; o ise bakar. Bir göz gibi.'},
+ {id:'gk3',g:'gok',t:'Portal çekirdeği',bring:[['Kristal',2],['Demir levha',2],['Mor kıymık',2]],c:500,x:650,say:'Kırk yıl önce bir kapı tasarladım: iki yeri tek adımda birleştiren bir <b>portal</b>. Çekirdeği hiç bitiremedim. İki <b>kristal</b>, iki <b>demir levha</b> ve gökten düşen iki <b>mor kıymık</b> getir; kıymıklar ışığın dilini bilir.',thx:'<i>(çerçevenin içinde mor bir girdap döner)</i> Çalışıyor! Senin adandaki herkesin yanına birer kapı açtım. Artık iki ada arasında bir adım var.'},
  // v75 Denizci Levent: the ship that takes you off the island
- {id:'dz1',g:'denizci',t:'Kazazedenin yarası',bring:[['Kardelen merhemi',1],['Ay otu',2]],c:400,x:150,say:'Bacağım kayalara çarptı, basamıyorum. Bir <b>kardelen merhemi</b> ve iki <b>ay otu</b> getirir misin? Ayağa kalkarsam gerisini konuşuruz.',thx:'<i>(merhemi sürer, yüzünü buruşturur)</i> Ah… Sızısı geçti. Altı yıldır ilk kez biri bana yardım ediyor.'},
- {id:'dz2',g:'denizci',t:'Enkazın bekçileri',kill:['Gölge kurdu',2],c:600,x:250,say:'Geceleri enkazın çevresinde <b>gölge kurtları</b> dolaşıyor; kalasları kemiriyorlar. <b>İki tanesini</b> avla, yoksa gemiden geriye bir şey kalmayacak.',thx:'Bu gece ilk kez uyuyabileceğim. Sağ ol.'},
- {id:'dz3',g:'denizci',t:'Yıldızlarla yön',bring:[['Ay taşı',2],['Kristal',4]],c:500,x:200,say:'Pusulam mor ışıkta deliye döndü; iğnesi hep göğü gösteriyor. Yenisini yapmak için iki <b>ay taşı</b> ve dört <b>kristal</b> lazım. Denizde yön yıldızla bulunur, ama yıldız da bazen söner.',thx:'<i>(taşları pusula kabına dizer)</i> İğne durdu. Bak, kuzeyi gösteriyor. Artık bir gemimiz eksik.'},
- {id:'dz4',g:'denizci',t:'Yeni bir gemi',bring:[['Herhangi kalas',8],['Halat',4],['Demir levha',3],['Hasır',6],['Kristal ipek',2]],c:0,x:500,say:'Gemi tarifini sen çözdün, ben de elli yıllık denizciyim. Malzemeleri getir: <b>8 kalas, 4 halat, 3 demir levha, 6 hasır</b> yelken için ve omurgayı bağlamak için <b>2 kristal ipek</b>. Birlikte yeni bir gemi kuralım.',thx:'<i>(günlerce çekiç sesi, halatlar gerilir, yelken rüzgârı tutar)</i> İşte! Yeni bir gemi. Adını <b>Meltem</b> koydum… Dur, sana bir şey anlatmam lazım.'},
+ {id:'dz1',g:'denizci',t:'Kazazedenin yarası',bring:[['Kardelen merhemi',1],['Ay otu',2]],c:400,x:600,say:'Bacağım kayalara çarptı, basamıyorum. Bir <b>kardelen merhemi</b> ve iki <b>ay otu</b> getirir misin? Ayağa kalkarsam gerisini konuşuruz.',thx:'<i>(merhemi sürer, yüzünü buruşturur)</i> Ah… Sızısı geçti. Altı yıldır ilk kez biri bana yardım ediyor.'},
+ {id:'dz2',g:'denizci',t:'Enkazın bekçileri',kill:['Gölge kurdu',2],c:600,x:1000,say:'Geceleri enkazın çevresinde <b>gölge kurtları</b> dolaşıyor; kalasları kemiriyorlar. <b>İki tanesini</b> avla, yoksa gemiden geriye bir şey kalmayacak.',thx:'Bu gece ilk kez uyuyabileceğim. Sağ ol.'},
+ {id:'dz3',g:'denizci',t:'Yıldızlarla yön',bring:[['Ay taşı',2],['Kristal',4]],c:500,x:800,say:'Pusulam mor ışıkta deliye döndü; iğnesi hep göğü gösteriyor. Yenisini yapmak için iki <b>ay taşı</b> ve dört <b>kristal</b> lazım. Denizde yön yıldızla bulunur, ama yıldız da bazen söner.',thx:'<i>(taşları pusula kabına dizer)</i> İğne durdu. Bak, kuzeyi gösteriyor. Artık bir gemimiz eksik.'},
+ {id:'dz4',g:'denizci',t:'Yeni bir gemi',bring:[['Herhangi kalas',8],['Halat',4],['Demir levha',3],['Hasır',6],['Kristal ipek',2]],c:0,x:2000,say:'Gemi tarifini sen çözdün, ben de elli yıllık denizciyim. Malzemeleri getir: <b>8 kalas, 4 halat, 3 demir levha, 6 hasır</b> yelken için ve omurgayı bağlamak için <b>2 kristal ipek</b>. Birlikte yeni bir gemi kuralım.',thx:'<i>(günlerce çekiç sesi, halatlar gerilir, yelken rüzgârı tutar)</i> İşte! Yeni bir gemi. Adını <b>Meltem</b> koydum… Dur, sana bir şey anlatmam lazım.'},
  // Nuri: his first order (moved from Ekin); taken automatically when his ship docks
  {id:'nuri1',g:'trader',t:'Nuri\'nin ilk siparişi',auto:1,done:()=>trader.firstDone,p:()=>trader.firstDone?'teslim edildi':trader.state==='here'?'gemi iskelede':'gemi yolda',c:0,x:15,say:'',thx:''},
 ];
@@ -11049,7 +11049,7 @@ rockUse=function(){if(rockfall.cleared)return;const k=inv['Kaya patlatıcı']||0
   if(pt<3||k<2){toast(`Geçidi kapatan kaya yığını. Açmak için ${pt<3?'bir <b>kuvars kazma</b> (ya da daha iyisi) ve ':''}<b>2 kaya patlatıcı</b> gerekli (sende ${k}). Patlatıcıyı Ekin anlatır: yarasa gübresi, kömür, tuz ve bir çömlek.`.replace(/<[^>]+>/g,''),true);sfx('bad');return}
   inv['Kaya patlatıcı']-=2;renderInv();sfx('bad');shake=Math.max(shake,.5);shakeP=6;
   for(let i=0;i<70;i++){const a=Math.random()*6.283,s=40+Math.random()*120;parts.push({x:rockfall.cx+(Math.random()-.5)*60,y:rockfall.cy,vx:Math.cos(a)*s,vy:Math.sin(a)*s-60,life:.6+Math.random()*.8,c:i%3?'#8a8278':i%2?'#ffb040':'#ffffff'})}
-  setTimeout(()=>{rockfall.cleared=true;for(const j of ROCK_CELLS)reach[j]=1;sfx('found');gainXP(80);announce('Doğu geçidi açıldı','Ötesi: Kül Diyarı · Ölümcül');renderTut()},350)};
+  setTimeout(()=>{rockfall.cleared=true;for(const j of ROCK_CELLS)reach[j]=1;sfx('found');gainXP(320);announce('Doğu geçidi açıldı','Ötesi: Kül Diyarı · Ölümcül');renderTut()},350)};
 GUIDE.rockfall=()=>({x:rockfall.x0*T-10,y:rockfall.cy,n:'Kaya yığını'});
 const _db=drawBridge;drawBridge=function(time,inView){_db.apply(this,arguments);if(!inView(rockfall.cx,rockfall.cy,(rockfall.x1-rockfall.x0+4)*T))return;
   if(!rockfall.cleared){for(const r of ROCKS){const x=Math.round(r.x),y=Math.round(r.y),s=r.s,c=r.c<.5?'#7a7268':'#8a8278';ctx.fillStyle='rgba(0,0,0,.25)';ctx.beginPath();ctx.ellipse(x,y+s*.4,s,s*.35,0,0,Math.PI*2);ctx.fill();
@@ -12842,7 +12842,7 @@ function rad(a){const D=ANIM[a.k]||{r:6};return (D.r||6)*(a.scale||1)}
 function headY(a){const D=ANIM[a.base||a.k]||ANIM[a.k]||{r:6};return a.y-((D.r||6)*2+12)*(a.scale||1)-(D.fly?12:0)}
 
 // a blow from a move lands on you: dash and grace pass through, a parry turns aside what is not red
-function impact(a,m,dmg,why,kb){if(dodge||pInv>0)return false;if(PRt()>0&&m.col!=='r'){parryHit(a);if(a&&a.mv)a.mv=null;return false}
+function impact(a,m,dmg,why,kb){if(dodge||pInv>0){if(dodge)try{if(window.__plEvade)window.__plEvade(a)}catch(e){}return false}if(PRt()>0&&m.col!=='r'){parryHit(a);if(a&&a.mv)a.mv=null;return false}
   pInv=.5;lastBitten=performance.now();stopGather();window.__plHitCol=m.col;hurt(Math.max(1,Math.round(dmg)),why,true);
   if(kb&&a){const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;for(let s=0;s<6;s++){const nx=player.x+dx/d*kb/6,ny=player.y+dy/d*kb/6;if(!blocked(nx,player.y))player.x=nx;if(!blocked(player.x,ny))player.y=ny}}return true}
 function dust(x,y,n,c){for(let i=0;i<n;i++){const t=i/n*6.283;parts.push({x:x+Math.cos(t)*4,y:y,vx:Math.cos(t)*(50+Math.random()*40),vy:Math.sin(t)*20-10,life:.45,c:c||(i%2?'#c8b898':'#8a7a60')})}}
@@ -13137,9 +13137,9 @@ function tapDur(){const k=kindOf();if(k==='staff'){const S=staffS();return S?S.c
   const sw=P4().sw;if(sw&&sw.ant!=null)return (sw.ant+sw.str+sw.fol)*(sw.slow||1);return .3}
 function chime(i){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005;for(const f of [660*(1+i*.25),990*(1+i*.25)]){const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(f,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.09,t+.01);g.gain.exponentialRampToValueAtTime(.0005,t+.25);o.connect(g);g.connect(out);o.start(t);o.stop(t+.27)}})}catch(e){}}
 function rhythm(ty){const k=kindOf(),M=CB[k]&&CB[k][ty];if(!M||(window.__plMoveOK&&!window.__plMoveOK(ty))||!canPay(k,M))return 0;const a=aim();faceTo(a);let rec=.4;try{rec=M.f(a)||.4}catch(e){}
-  C.cd=rec*.9;atkCd=Math.max(atkCd,rec*.9);chime(ty==='c2'?1:2);try{if(window.__plUlt)window.__plUlt.gain(ty==='c2'?5:10)}catch(e){}name(M.n,ty==='c3'?'#ffb040':'#ffe7a0');return rec}
+  try{if(window.__plMoveEv)window.__plMoveEv(ty)}catch(e){}C.cd=rec*.9;atkCd=Math.max(atkCd,rec*.9);chime(ty==='c2'?1:2);try{if(window.__plUlt)window.__plUlt.gain(ty==='c2'?5:10)}catch(e){}name(M.n,ty==='c3'?'#ffb040':'#ffe7a0');return rec}
 function doMove(type){const k=kindOf(),M=CB[k]&&CB[k][type];if(!M)return false;if(window.__plMoveOK&&!window.__plMoveOK(type)){if(type!=='charged'){C.rh=null;attack({x:C.mx,y:C.my+6})}return true}C.rh=null;if(!canPay(k,M))return true;try{if(window.__plUlt)window.__plUlt.gain(4)}catch(e){}const a=aim();faceTo(a);let rec=.4;try{rec=M.f(a)||.4}catch(e){}
-  C.cd=rec;atkCd=Math.max(atkCd,rec*.8);name(M.n,type==='cdc'?'#ffd040':type==='charged'?'#ffb0ff':'#ffe7a0');return true}
+  try{if(window.__plMoveEv)window.__plMoveEv(type)}catch(e){}C.cd=rec;atkCd=Math.max(atkCd,rec*.8);name(M.n,type==='cdc'?'#ffd040':type==='charged'?'#ffb0ff':'#ffe7a0');return true}
 
 // ------------------------------------------------------------------ input
 function comboOK(e){if(e.pointerType!=='mouse'||e.button!==0||e.target!==cv)return false;if(!canTap()||placing||frozenNow())return false;try{if(canLeaveDlg())return false}catch(x){}
@@ -13401,13 +13401,149 @@ function teach(){if(onTitle||!met||wake||window.__plArena)return;const L=[];for(
   if(L.length){const k=L[L.length-1];sfx('level');setTimeout(()=>announce('Yeni hamle: '+MVN[k][0],MVN[k][1]),300)}}
 {let tk=0;const _fb=frameBody;frameBody=function(){const r=_fb.apply(this,arguments);if(++tk%20)return r;try{if(onTitle||!met||wake||window.__plArena)return r;
   if(I2){if(!V.a){V.a=true;if(!V.u){V.u=true;setTimeout(()=>{try{announce('Ulti öğrendin','Dövüşürken altın çubuk dolar; dolunca R')}catch(e){}},4500)}}}else{const b=bioAt(player.x,player.y);if(b>V.b)V.b=b}teach()}catch(e){}return r}}
-{const _ka=killAnimal;killAnimal=function(a){const r=_ka.apply(this,arguments);try{if(!window.__plArena&&!V.u){const D=ANIM[a.k]||{};if(a.k==='Kara ejder'||(D.boss&&D.base==='Kristal golem')){V.u=true;sfx('level');setTimeout(()=>announce('Ulti öğrendin','Dövüşürken altın çubuk dolar; dolunca R'),800)}}}catch(e){}return r}}
+{const _ka=killAnimal;killAnimal=function(a){const r=_ka.apply(this,arguments);try{if(!window.__plArena&&!V.u){const D=ANIM[a.k]||{};if(a.k==='Kara ejder'||(D.boss&&D.base==='Kristal golem')){V.u=true;sfx('level');setTimeout(()=>announce('Ulti dersi açıldı','Börü sana ultiyi öğretebilir'),800)}}}catch(e){}return r}}
 {const _s=snapshot;snapshot=function(){const o=_s.apply(this,arguments);if(o&&!window.__plArena)o.v128={b:V.b,u:V.u,a:V.a,t:Object.keys(V.told)};return o};try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}}
 {const _r=restore;restore=function(d){const r=_r.apply(this,arguments);try{const v=d&&d.v128;V.told={};
   if(v){V.b=+v.b||0;V.u=!!v.u;V.a=!!v.a;for(const k of (v.t||[]))V.told[k]=1}
   else{let m=0;try{if(!I2&&window.__v65)for(const b of window.__v65.seen)m=Math.max(m,+b||0)}catch(e){}V.b=m;V.a=I2||!!(d&&d.v75&&d.v75.a)||!!(d&&d.i2);V.u=V.a;for(const k in NEED)if(stage()>=NEED[k])V.told[k]=1}}catch(e){}return r}}
 {const _as=applyState;applyState=function(d){if(!d){V.b=0;V.u=false;V.a=false;V.told={}}return _as.apply(this,arguments)}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v128-denge: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<style id="v129-ders-css">
+#lesson{position:fixed;z-index:7;left:calc(env(safe-area-inset-left,0px) + 12px);top:38%;width:250px;box-sizing:border-box;background:#232d1f;border:3px solid var(--accent);box-shadow:0 0 0 3px #11170f;padding:8px 10px;font-size:13px;line-height:1.35;pointer-events:none}
+#lesson b.lt{display:block;font-size:12px;color:var(--ink-dim);letter-spacing:.04em;margin-bottom:2px}
+#lesson .ln{font-weight:800;color:#ffe7a0;margin-bottom:4px}
+#lesson .ls{display:flex;gap:6px;align-items:baseline;margin-top:3px}
+#lesson .ls i{font-style:normal;font-weight:800;min-width:34px;color:#ffe7a0}
+#lesson .ls.ok i{color:#8fd46b}
+#lesson .ls.ok span{opacity:.6}
+</style>
+<script id="v129-ders">
+// =====================================================================================================
+// v1.29: BÖRÜ'S LESSONS. Every combo move (and the ulti) is learnt from Savaşçı Börü for coins: once the
+// level and the land are reached he offers the lesson; paid, the move opens for practice and a small panel
+// shows the tasks (e.g. "dodge 3 attacks with a roll", "land 4 dash strikes"). Done 3–5 times, the move is
+// learnt for good. The ulti lesson opens after Kara ejder or the Kristal golem Reisi. Island 2 (and the
+// arena) keep every move open. Also: the XP plan (creature XP by land, the new neutrals' XP).
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const I2=ISLE===2;
+const V=window.__v128||{b:0,u:false,a:false,told:{}};
+const L={own:{},cur:null,ann:{}};window.__v129=L;
+const now=()=>performance.now()/1000;
+
+// ---------------------------------------------------------------- 1 · creature XP by land (the XP plan)
+{const MUL1={3:2,4:1.5,5:1.5},done=new Set();
+ const avgN=(list,skip)=>{let s=0,n=0;for(const x of list){if(x.n===skip||!x.d||x.d.boss||x.d.temper!=='nötr')continue;s+=x.d.xp||0;n++}return n?Math.round(s/n):0};
+ try{const B=window.__I1B;if(B&&!I2){
+   // the new neutral (Porsuk) gets the XP of the other neutrals of its land
+   const l0=(B[0]||[]).map(n=>({n,d:ANIM[n]}));if(ANIM['Porsuk']){const v=avgN(l0,'Porsuk');if(v)ANIM['Porsuk'].xp=Math.max(ANIM['Porsuk'].xp||0,v)}
+   for(const b in MUL1){for(const n of (B[b]||[])){const D=ANIM[n];if(!D||D.boss||done.has(D))continue;done.add(D);D.xp=Math.round((D.xp||5)*MUL1[b])}}}}catch(e){}
+ try{const C2=window.__I2C;if(C2&&C2.anim){const NEW=['Mantar geyiği','Pas kirpisi','Buz karacası','Kor domuzu','Yıldız geyiği'];
+   for(const b in C2.anim){const A=C2.anim[b],m=+b===0?1.5:1.2;
+     for(const x of A)if(NEW.indexOf(x.n)>=0&&x.d){const v=avgN(A,x.n);if(v)x.d.xp=Math.max(x.d.xp||0,v)}
+     for(const x of A){const d=x.d;if(!d||d.boss||done.has(d))continue;done.add(d);d.xp=Math.round((d.xp||5)*m);
+       if(I2&&ANIM[x.n]&&ANIM[x.n]!==d&&!done.has(ANIM[x.n])){done.add(ANIM[x.n]);ANIM[x.n].xp=d.xp}}}}}catch(e){}}
+
+// ---------------------------------------------------------------- 2 · the lessons
+const LES=[
+ {k:'dash',n:'Takla vuruşu',lv:3,b:0,c:150,x:40,s1:1,how:'Taklanın içinde ya da hemen sonunda tıkla',
+  say:'Takla atmayı biliyorsun; şimdi taklanın içinden vurmayı öğren. Saldırı gelirken yana atıl, ayağın yere değer değmez tıkla: kılıç da seninle birlikte atılır.',
+  st:[['evade',3,'Bir canavar saldırırken (kırmızı <b>!</b>) <b>Q</b> ile takla at, saldırıdan kurtul'],['hit:dash',4,'Taklanın içinde ya da hemen sonunda tıkla: <b>takla vuruşuyla</b> 4 kez isabet ettir']]},
+ {k:'double',n:'Çift vuruş',lv:6,b:1,c:300,x:60,how:'Hızlıca iki kez tıkla',
+  say:'Bir vuruş bir hayvanı durdurur, iki vuruş onu yere serer. Farenin tuşuna <b>hızlıca iki kez</b> bas; ikinci vuruş birincinin arkasından gelir.',
+  st:[['hit:double',5,'Hızlıca iki kez tıkla: <b>çift vuruşla</b> 5 kez isabet ettir'],['kill:double',2,'İki canavarı <b>çift vuruşla</b> bitir']]},
+ {k:'c2',n:'Ritimli 2. vuruş',lv:10,b:2,c:600,x:100,how:'Vuruş biter bitmez yine tıkla',
+  say:'Bataklıkta acele eden batar. Vur, kılıcın geri gelsin, <b>tam o an</b> yine tıkla. Erken basarsan ritim bozulur; ritmi kendin bulacaksın.',
+  st:[['hit:c2',5,'Vuruşun hemen ardından tıkla: <b>ritimli 2. vuruşla</b> 5 kez isabet ettir']]},
+ {k:'c3',n:'Ritimli 3. vuruş',lv:15,b:3,c:1000,x:160,how:'2. vuruşun hemen ardından yine tıkla',
+  say:'Dağın hayvanları sabırlı. Önce saldırısını <b>savuştur</b>, sonra ritmi üçe çıkar: ikinci vuruşun bittiği an bir kez daha tıkla. Üçüncü vuruş ağırdır, sersemletir.',
+  st:[['parry',3,'Bir saldırıyı tam vuracağı an <b>savuştur</b> (3 kez)'],['hit:c3',3,'<b>Ritimli 3. vuruşu</b> 3 kez isabet ettir']]},
+ {k:'charged',n:'Güçlü vuruş',lv:17,b:3,c:1200,x:180,how:'Basılı tut, halka dolunca bırak',
+  say:'Sersemlemiş hayvan sana zaman verir. Savuştur, sonra tuşu <b>basılı tut</b>; etrafındaki halka dolunca bırak. Halka dolmadan bırakırsan sıradan bir vuruş olur.',
+  st:[['parry',3,'<b>Savuşturarak</b> 3 canavarı sersemlet'],['stun:charged',3,'Sersemlemiş bir canavara <b>güçlü vuruş</b> (basılı tut, bırak): 3 kez']]},
+ {k:'cdc',n:'Bitirici',lv:21,b:4,c:2000,x:300,s1:1,how:'Tıkla, takla at, yine tıkla',
+  say:'Kül Diyarı affetmez; vur, kaç, bitir. Önce bir kez vur, hemen <b>takla at</b>, taklanın sonunda yine tıkla: bitirici hamle çıkar.',
+  st:[['evade',3,'Saldırıdan <b>takla atarak</b> kurtul (3 kez)'],['hit:cdc',3,'Tıkla → takla → tıkla: <b>bitiriciyi</b> 3 kez isabet ettir']]},
+ {k:'ult',n:'Ulti',lv:0,b:-1,c:2500,x:500,boss:1,how:'Dövüşürken altın çubuk dolar; dolunca R',
+  say:'Ejderi devirdin; artık öfkeni biriktirmeyi öğrenmelisin. Her isabet, her savuşturma altın çubuğu doldurur. Dolunca <b>R</b>: bütün öfken bir anda çıkar. Bu derste çubuk üç kat hızlı dolar.',
+  st:[['ult',3,'Çubuk dolunca <b>R</b>: <b>ulti</b> ile 3 kez bir canavarı vur']]}];
+const LK={};for(const l of LES)LK[l.k]=l;
+const s1=()=>sk('S1');
+function have(k){return !!L.own[k]}
+function stage(){return V.a||I2?6:V.b}
+function reqOK(l){if(l.boss)return !!V.u;return lvl>=l.lv&&V.b>=l.b}
+function reqTxt(l){if(l.boss)return 'Kara ejderi ya da Kristal golem Reisini yen';const p=[];if(lvl<l.lv)p.push('seviye '+l.lv);if(V.b<l.b)p.push(['Çayır','Orman','Bataklık','Kayalık Dağ','Kül Diyarı','Mor Kristal Vadisi'][l.b]+'\'a git');return p.join(' · ')}
+window.__plMoveOK=type=>{if(window.__plArena||I2||V.a)return true;const l=LK[type];if(!l)return true;return have(type)||!!(L.cur&&L.cur.k===type)};
+// v1.28's land-by-land announcements are replaced by the lessons
+function hush(){try{V.told=V.told||{};for(const k of ['dash','double','c2','c3','charged','cdc'])V.told[k]=1}catch(e){}}
+hush();
+
+// ---------------------------------------------------------------- 3 · what the player does (counted only during a lesson)
+let M=null;const evT=new WeakMap();
+function bump(kind){const c=L.cur;if(!c||window.__plArena)return;const l=LK[c.k];if(!l)return;let any=false;
+  l.st.forEach((s,i)=>{if(s[0]!==kind||c.p[i]>=s[1])return;c.p[i]++;any=true;floatText(`${l.n}: ${c.p[i]}/${s[1]}`,'#ffe7a0');try{sfx(c.p[i]>=s[1]?'found':'pick')}catch(e){}});
+  if(!any)return;lk='';if(l.st.every((s,i)=>c.p[i]>=s[1]))finish(l)}
+window.__plMoveEv=ty=>{if(!L.cur||window.__plArena)return;let stun=false;for(const a of animals)if(a.stun>0&&Math.hypot(a.x-player.x,a.y-player.y)<90){stun=true;break}M={k:ty,t:now(),stun,hit:false,kill:false,W:.9}};
+window.__plEvade=a=>{if(!L.cur||!a||a.tut)return;const t=now(),p=evT.get(a)||0;if(t-p<.8)return;evT.set(a,t);bump('evade')};
+{const _bh=biteHit;biteHit=function(a){try{if(dodge&&a&&!a.tut)window.__plEvade(a)}catch(e){}return _bh.apply(this,arguments)}}
+function onHit(){if(!M||M.hit)return;M.hit=true;bump('hit:'+M.k);if(M.stun)bump('stun:'+M.k);if(M.k==='ult')bump('ult')}
+{const _ka=killAnimal;killAnimal=function(a){const live=M&&!M.kill&&now()-M.t<=M.W;const r=_ka.apply(this,arguments);try{if(live&&L.cur&&a&&!a.tut){onHit();M.kill=true;bump('kill:'+M.k)}}catch(e){}return r}}
+let pN=-1,uOn=0;
+function watch(){const t=now();if(M&&t-M.t>M.W)M=null;
+  if(M&&!M.hit)for(const a of animals){if(a._lh!=null&&a.hp<a._lh&&!a.tut){onHit();break}}
+  for(const a of animals)a._lh=a.hp;
+  const P=window.__plParry;if(P){if(pN>=0&&P.n>pN&&L.cur)bump('parry');pN=P.n}
+  const U=window.__plUlt;if(U){if(U.on>0&&!(uOn>0)&&L.cur)M={k:'ult',t,stun:false,hit:false,kill:false,W:1.8};uOn=U.on}}
+// the ulti lesson fills the bar three times faster
+{const U=window.__plUlt;if(U&&U.gain){const g=U.gain;U.gain=n=>g(L.cur&&L.cur.k==='ult'&&!window.__plArena?n*3:n)}}
+
+// ---------------------------------------------------------------- 4 · Börü
+function finish(l){L.own[l.k]=1;L.cur=null;M=null;lk='';try{sfx('level')}catch(e){}if(l.x)gainXP(l.x);
+  setTimeout(()=>announce((l.k==='ult'?'Ulti öğrendin':'Yeni hamle: '+l.n),l.how),300);try{renderHUD()}catch(e){}}
+function start(l){if(L.cur){toast('Önce şu anki dersi bitir: '+LK[L.cur.k].n,true);return}
+  if(!plInf()&&coins<l.c){toast(`${(l.c-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);sfx('bad');return}
+  if(l.s1&&!s1()){say('Önce <b>atılmayı</b> öğren evlat: yetenek ağacının Savaş dalında, Atılma. Takla atamayan taklanın içinden vuramaz.',[{t:'Anladım',pri:1,f:lessons}],alp);return}
+  if(!plInf())coins-=l.c;renderInv();sfx('coin');L.cur={k:l.k,p:l.st.map(()=>0)};lk='';
+  say(`<b>${l.n}</b> · ${l.say}<br><br>Ders:<br>${l.st.map(s=>'• '+s[2]).join('<br>')}<br><br>Hamle şimdilik denemelik açık; görevleri bitirince senin olur.`,[{t:'Başlayalım',pri:1,fresh:1,f:bye}],alp)}
+function quit(){const c=L.cur;if(!c)return;say(`<b>${LK[c.k].n}</b> dersini bırakırsan sikkeni geri veremem; ama istediğin zaman kaldığın yerden sürdürürsün.`,[{t:'Sürdürürüm',pri:1,f:bye},{t:'Geri',f:lessons}],alp)}
+function lessons(){const rows=[],ch=[];let next=null;
+  for(const l of LES){if(have(l.k)){rows.push(`✓ <b>${l.n}</b>`);continue}
+    if(L.cur&&L.cur.k===l.k){rows.push(`▶ <b>${l.n}</b> · derste (${L.cur.p.map((v,i)=>v+'/'+l.st[i][1]).join(', ')})`);continue}
+    if(reqOK(l)){rows.push(`• <b>${l.n}</b> · ${l.c.toLocaleString('tr-TR')} sikke${l.s1&&!s1()?' · önce Atılma':''}`);if(!L.cur)ch.push({t:`${l.n} öğret (${l.c.toLocaleString('tr-TR')} sikke)`,pri:!ch.length,fresh:1,f:()=>start(l)})}
+    else{if(!next)next=l;rows.push(`<span style="opacity:.6">🔒 ${l.n} · ${reqTxt(l)}</span>`)}}
+  if(L.cur)ch.push({t:'Dersin nasıldı?',f:quit});
+  ch.push({t:'Geri',f:talkAlp});
+  const avail=ch.some(c=>c.pri),all=LES.every(l=>have(l.k));
+  const head=L.cur?'Bir dersi bitirmeden yenisine geçmeyiz.':all?'Sana öğreteceklerimin hepsini öğrendin. Artık bana sen ders verirsin.':avail?'Hangisini öğrenmek istersin? Her ders bir hamle; parası peşin, öğrenmesi senden.':'Şimdilik sana öğreteceğim yeni bir şey yok. Güçlen, yeni yerler gör; sonra gel.';
+  say(`${head}<br><br>${rows.join('<br>')}`,ch,alp)}
+let INJ=false;
+{const _say=say;say=function(text,ch,who){if(INJ&&who===alp&&Array.isArray(ch)){INJ=false;ch=ch.slice();const any=LES.some(l=>!have(l.k)&&reqOK(l));ch.splice(Math.max(0,ch.length-1),0,{t:L.cur?'Dövüş dersi (sürüyor)':any?'Dövüş dersleri <b>!</b>':'Dövüş dersleri',k:'v129ders',pri:any&&!L.cur,fresh:any,f:lessons})}return _say.call(this,text,ch,who)}}
+{const _ta=talkAlp;talkAlp=function(){INJ=!I2&&!window.__plArena&&ftut>=3&&!(tz&&tz<=11)&&!window.__plMoveAllOpen();try{return _ta.apply(this,arguments)}finally{INJ=false}}}
+window.__plMoveAllOpen=()=>V.a||I2;
+// a lesson that has become possible: Börü sends word once
+function tellNew(){if(I2||V.a||ftut<3||onTitle||!met||wake||window.__plArena)return;for(const l of LES){if(l.boss||have(l.k)||L.ann[l.k]||!reqOK(l))continue;L.ann[l.k]=1;try{sfx('found')}catch(e){}
+  setTimeout(()=>announce('Börü\'nün yeni dersi: '+l.n,'Kampa dön, Börü ile konuş'),1200);break}}
+
+// ---------------------------------------------------------------- 5 · the lesson panel
+const box=document.createElement('div');box.id='lesson';box.hidden=true;box.setAttribute('role','status');document.body.appendChild(box);
+let lk='';
+function renderHUD(){const c=L.cur,on=!!c&&!onTitle&&met&&!window.__plArena;if(!on){if(!box.hidden)box.hidden=true;return}const l=LK[c.k];const k=c.k+'|'+c.p.join(',');if(k===lk&&!box.hidden)return;lk=k;
+  box.innerHTML=`<b class="lt">BÖRÜ'NÜN DERSİ</b><div class="ln">${l.n}</div>`+l.st.map((s,i)=>`<div class="ls${c.p[i]>=s[1]?' ok':''}"><i>${Math.min(c.p[i],s[1])}/${s[1]}</i><span>${s[2]}</span></div>`).join('');box.hidden=false}
+
+{let tk=0;const _fb=frameBody;frameBody=function(){hush();const r=_fb.apply(this,arguments);try{if(!frozenNow()&&!window.__plArena)watch();if(++tk%15===0){renderHUD();if(tk%60===0)tellNew()}}catch(e){}return r}}
+
+// ---------------------------------------------------------------- 6 · the save
+{const _s=snapshot;snapshot=function(){const o=_s.apply(this,arguments);if(o&&!window.__plArena)o.v129={o:Object.keys(L.own),c:L.cur?{k:L.cur.k,p:L.cur.p.slice()}:null,n:Object.keys(L.ann)};return o};try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}}
+{const _r=restore;restore=function(d){const r=_r.apply(this,arguments);try{const v=d&&d.v129;L.own={};L.cur=null;L.ann={};M=null;lk='';
+  if(v){for(const k of (v.o||[]))if(LK[k])L.own[k]=1;if(v.c&&LK[v.c.k]&&!L.own[v.c.k]){const l=LK[v.c.k];L.cur={k:v.c.k,p:l.st.map((s,i)=>Math.min(s[1],+((v.c.p||[])[i])||0))}}for(const k of (v.n||[]))L.ann[k]=1}
+  else{// older saves: what v1.28 had opened stays open, nobody loses a move
+    const t=d&&d.v128&&d.v128.t;if(t)for(const k of t){if(LK[k])L.own[k]=1}else{const NEED={dash:0,double:1,c2:2,c3:3,charged:3,cdc:4};for(const k in NEED)if(stage()>=NEED[k])L.own[k]=1}
+    if(V.u)L.own.ult=1;for(const l of LES)if(L.own[l.k])L.ann[l.k]=1}
+  hush()}catch(e){}return r}}
+{const _as=applyState;applyState=function(d){if(!d){L.own={};L.cur=null;L.ann={};M=null;lk=''}return _as.apply(this,arguments)}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v129-ders: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
