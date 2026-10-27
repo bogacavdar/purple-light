@@ -1150,3 +1150,11 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - "Bitir" adımında 2. domuz gelmiyordu: Börü'nün yanında kamp ateşi varken `nearCamp` saldırgan hayvanları sakinleştirip kaçırıyordu; ders sürerken Börü'nün 340 px çevresinde kamp ateşi/güvenli alan sayılmaz (`window.__plLessonAt`).
 - Yeni alıştırma canavarı daha çabuk gelir (1,5 sn) ve Börü'den 300 px'e kadar her yerde; oyuncunun yanında yer bulunamazsa Börü'nün çevresinde doğar.
 - Menüde "Versiyon 1.73". chk.js 0 hata; oyun hatasız açılıyor.
+
+## v1.74–v1.75 (28 Ekim 2026) — Boğaç'ın isteğiyle bütün Börü dersleri tarayıcıda oynanarak test edildi
+- **Kritik (v1.71'den beri):** saldırı düzenleyici, hamlenin hazırlığından (`wind`) sonra gelen atılışı (`lunge`) yeni bir saldırı sanıp iptal ediyordu; canavarların darbeleri hiç inmiyordu (savuşturma/takla adımları sayılmıyordu, "saldırmıyor" hissi). Artık saldırı yalnızca boştayken başlarsa "yeni" sayılır.
+- **Güçlü vuruş dersi:** savuşturulan canavar geri itilip ağır vuruşun menzilinden çıkıyordu; derste sersemleyen alıştırma canavarı oyuncunun 20 px yakınında tutulur.
+- Ders sayaçları "1. adım: 2/3" biçiminde (iki adım aynı adı taşıyıp karışıyordu); alıştırma canavarının üstünde hasar sayıları gösterilmez.
+- **Portallar:** kişinin önüne değil yanına (sağ yan, ~44 px) konur; kazan, örs, fırın, tezgâh ve kişilerden uzak tutulur (`pClear`). Zümrüt'ün portalı kazanın önüne çıkıp kazana erişimi kapatıyordu.
+- Test sonucu (2D çizim, tanrı modu, otomatik oyuncu): Takla vuruşu, Çift vuruş, Ritimli 2. vuruş, Ritimli 3. vuruş, Güçlü vuruş ve Bitirici derslerinin hepsi baştan sona bitti. Ulti dersi test edilmedi.
+- Menüde "Versiyon 1.75". chk.js 0 hata.
