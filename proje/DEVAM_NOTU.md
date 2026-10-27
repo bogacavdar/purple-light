@@ -787,3 +787,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - `<script id="v113-roll">`: `drawPlayer` sarmalandı; `dodge` sürerken (0,24 sn) karakter gövde ortası (ayaktan 7 px yukarı) çevresinde atılma yönüne doğru bir tam tur döner (yukarı/aşağı atılınca öne takla), ortada %18 büzülür ve 3 px seker; yerde toz çıkar. Hareket, süre ve dokunulmazlık aynı.
 - Boğaç deneyecek; beğenmezse `ROLL=false` yapmak eski kaymayı geri getirir.
 - Menüde "Versiyon 113". chk.js 0 hata.
+
+## v114 (27 Ekim 2026) — Takla: dönmek yerine açılı duruşlar
+- Boğaç: tam tur dönme değil, farklı açılarla takla atıyormuş gibi görünsün. `v113-roll` değişti: atılma `STEPS=4` duruşa bölünür (0,06 sn'de bir), her duruş bir çeyrek tur daha dönmüş ve aralarında geçiş yok (elle çizilmiş kareler gibi). Yan duruşlarda %22 büzülme ve genişleme, ters duruşta hafif basılma; bir önceki duruş arkada %35 saydam iz olarak kalır; 3 px sekme ve toz aynı.
+- `STEPS` artırılırsa daha çok açı, `ROLL=false` eski kayma.
+- Menüde "Versiyon 114". chk.js 0 hata.
