@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 103</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 104</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -12136,6 +12136,12 @@ const A2=[
  {q:'mk3',n:'Mor gemi',L:[['','Gökte dev, sessiz bir gemi. Altından mor bir ışık akıyor.'],['','Camların ardında yüzler: uyuyan, sayısız yüz. Sayılan, saklanan.'],['love','<b>{L}</b>: "Beni bırakma… beni bul!"']]},
  {q:'ej4',n:'Son söz',L:[['','Gemi yükselirken ışık bir an titredi. {L} elini cama dayadı.'],['love','<b>{L}</b>: "Yıldızların ötesinde bile…"'],['hero','<b>{H}</b>: "…seni bulacağım."'],['','Şimdi hatırlıyorsun. Ve artık nereye gideceğini biliyorsun: yukarı.']]}];
 const I0=MEMS.length;for(const m of A2)MEMS.push({n:m.n,ev:[],min:1,act2:1,L:m.L});
+// v104: the hat. Whatever you wear, they put something inside it; without one, they give you one. It reads you: that is where your memories went.
+{const k=A2.findIndex(m=>m.q==='sl4');if(k>=0)Object.defineProperty(MEMS[I0+k],'L',{configurable:true,get(){const own=LOOK.hero.hat&&LOOK.hero.hat!=='none';return[
+  ['',own?'Gölgelerden biri sana doğru eğildi. Başındaki şapkayı aldı, içine soğuk, metal bir şey yerleştirdi ve geri taktı.':'Gölgelerden biri sana doğru eğildi. Başına bir şapka geçirdi; garip, sıcak bir şapka.'],
+  ['','"Bu onu sakin tutar," dedi. Sesi bir makine gibi tıkırdıyordu.'],
+  ['','Şapka ısındı. O günden beri anıların hep yarım… sanki biri onları tek tek okuyup götürüyor.'],
+  ['','Adaya köpek ve fener satan o yolcular… onlardı. Hep onlardı.']]}})}
 setInterval(()=>{try{if(onTitle||wake)return;const d=QD();A2.forEach((m,k)=>{const i=I0+k;if(d.indexOf(m.q)>=0&&!mems.has(i))memUnlock(i)})}catch(e){}},1500);
 // ---------------------------------------------------------------- the pictures
 const cloak=(p,x,y,t,s)=>{const b=Math.round(Math.sin(t*2+x)*1);p(x-5,y-22+b,10,4,'#141020');p(x-6,y-18+b,12,18,'#1a1428');p(x-6,y-18+b,12,1,'#3a2a5a');p(x-3,y-20+b,2,1,s||'#c070ff');p(x+1,y-20+b,2,1,s||'#c070ff');p(x-7,y-1,14,1,'#0e0a18')};

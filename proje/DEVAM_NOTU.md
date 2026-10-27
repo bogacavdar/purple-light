@@ -714,3 +714,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - `<script id="v103">`: "Yeni malzeme" afişi açık pencerelerin üstüne değil altına; masaüstünde kazan/örs paneli tarif seçince zıplamaz; yerdeki malzeme bir kişinin üstünde kalırsa yanına taşınır; bayılınca görev eşyaları (Kaya patlatıcı, Ejder kalbi, Yakıt hücresi, roket parçaları, açık yan görevlerin istedikleri, Ekin'in tunç/demir görevindeki külçe) çantada kalır; aynı anda en çok 4 yaratık kovalar; Demir kılıç, Tunç kılıç ve Gemi'nin kendi ikonu var.
 - Kontrol: chk.js 0 hata; Boğaç'ın bu sohbette istediği test turu kapsamında headless Chromium ile tek tek denendi (yol bulma, iz tıklama, alet karesi, ikinci adada bayılma, ACT 2 kartı, ana menü adası).
 - Menüde "Versiyon 103".
+
+## v104 (27 Ekim 2026) — "Şapka" anısı, Boğaç'ın kurgusuna göre
+- Şapka, yıldızsızların bedenimizden bilgi ve anı çalmak için kullandığı şey (köpekler izlemek için). v82 "Şapka" anısının satırları artık açılırken kuruluyor (MEMS getter): karakterde şapka varsa yolcular şapkanın içine soğuk, metal bir şey yerleştiriyor; yoksa başına bir şapka geçiriyorlar. Yeni satır: "O günden beri anıların hep yarım… sanki biri onları tek tek okuyup götürüyor." ACT2_TASARIM.md'deki ACT 3 notu da güncellendi.
+- Menüde "Versiyon 104". chk.js 0 hata.

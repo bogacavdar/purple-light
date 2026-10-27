@@ -32,7 +32,7 @@ Boğaç ile 27 Ekim 2026'da konuşulanlar. Kararlar değiştikçe bu dosya günc
 
 ## ACT 3 için notlar (şimdilik oyuna eklenmeyecek)
 - Verilen robot köpeklerin gözlerindeki kameralarla bizi baştan beri izliyorlarmış.
-- Verilen şapka aslında beyin kontrolü için kullanılabiliyormuş.
+- Şapka (27 Ekim, Boğaç): yıldızsızlar onu bedenimizden bilgi ve anı çalmak için kullanıyor; hafıza kaybımız buradan. Köpekler ise bizi izlemek için gönderilmiş. Oyuncu karakter yaratırken şapka seçtiyse yolcular onun içine metal bir şey yerleştiriyor; seçmediyse başına bir şapka geçiriyorlar (v104, "Şapka" anısı).
 - Final: büyük uzaylı boss savaşı.
 
 ## İlerleme
