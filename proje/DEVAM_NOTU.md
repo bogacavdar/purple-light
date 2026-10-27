@@ -977,3 +977,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Envanterde taşınabilir eşyayı yuvaya sürükleme bazen hiç başlamıyor ya da yarıda kalıyordu: döşemenin içindeki `<img>` tarayıcının kendi resim sürüklemesini başlatıyor, bu da `pointercancel` ile bizim sürüklemeyi iptal ediyordu (`draggable="false"` yalnızca düğmedeydi). Düzeltme: `#cbody img, #hotbar img` için `-webkit-user-drag:none`, envanterde `dragstart` engelleniyor, farede `pointerdown` varsayılanı (metin seçimi) engelleniyor.
 - Eşya artık ekranın altındaki kuşağa (`#hotbar [data-hs]`) da bırakılabilir, yalnızca çantadaki kuşağa değil (`bsAt`). Üstüne gelinen yuva iki kuşakta da vurgulanır; iptal olunca vurgu temizlenir.
 - Menüde "Versiyon 1.42". chk.js 0 hata.
+
+## v1.43 (27 Ekim 2026)
+- Yaşlı Ekin'in "10 farklı tarif öğren" görevi (`t10` yuvası, sıra ve kayıt anahtarı aynı) yerine **"Üç balık tut."**: Ağ ya da Olta yap, sudan 3 balık çıkar (`fishTotal>=3`; ödül aynı, 60 sikke + 30 XP). Zümrüt'ün "Kazanın dili" (toplam 10 tarif) göreviyle aynı şeyi istemesin diye (Boğaç).
+- Menüde "Versiyon 1.43". chk.js 0 hata.
