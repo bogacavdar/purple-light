@@ -991,3 +991,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - `EKQ` kayda `ekq` olarak yazılır; kayıt sürümü `qv:6`. Göç: `qv<6` kayıtta "10 tarif" yuvasını geçmiş oyuncunun `tut` değeri +3 kayar; tam o yuvadaysa ilk yeni görevden "konuş" durumunda başlar.
 - Not (Boğaç sordu): "Seviye 8'e ulaş" görevi ayrıca 250 sikkelik bir yetenek ister; ödül ikisi birden olunca verilir.
 - Menüde "Versiyon 1.44". chk.js 0 hata.
+
+## v1.45 (27 Ekim 2026)
+- Ekin'in dört yeni görevi kolaydan zora sıralandı: Tuzak → Kamp gecesi → Kurt → Adayı tanı (%30 keşif). Yuvalar ve kayıt göçü aynı (v1.44'ten birkaç dakikalık kayıtlarda o dört yuvadaki görev yer değiştirmiş olabilir).
+- Menüde "Versiyon 1.45". chk.js 0 hata.
