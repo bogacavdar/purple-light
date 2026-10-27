@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 94</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 95</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -10380,7 +10380,7 @@ const ST_={
    "Nehir'le aynı uçuş okulunda tanıştık. O hep benden yükseğe uçardı.",
    "İki yıl önce mor gemi Gök Rıhtımı'na alçaldı. Biz de kurduğumuz küçük orduyla karşı çıktık. Gölge muhafızlar indi.",
    "Nehir beni korumak için önüme geçti. Yaralandı. Işık onu yerden kaldırdı; elimi uzattım, yetişemedim.",
-   "Ülker der ki gemi topladıklarını öldürmez; saklar. Ben de inanıyorum. O yüzden bu rampayı kurdum. Keşke her şey oyunlardaki gibi olsa; Nehir'i o adamların elinden kolayca kurtarabilsem. Çocukken bir oyunda ana menüde <b>“cheat”</b> yazmıştım, her şey çok daha kolay olmuştu.",
+   "Ülker der ki gemi topladıklarını öldürmez; saklar. Ben de inanıyorum. O yüzden bu rampayı kurdum. Keşke her şey oyunlardaki gibi olsa; Nehir'i o adamların elinden kolayca kurtarabilsem. "+(TOUCH?"Çocukken telefonda oynadığım bir oyunda ana menüde ekrana <b>art arda 3 kez dokunmuştum</b>, her şey çok daha kolay olmuştu.":"Çocukken bir oyunda ana menüde <b>“cheat”</b> yazmıştım, her şey çok daha kolay olmuştu."),
    "Bu roketle o gemiye çıkacağız. Nehir'i, senin sevdiğini, herkesi geri getireceğiz."],
    sc:{n:'Tuna · Uzanan el',bg:'rocks',cast:[{L:'tuna',x:70,fx:1},{L:'nehir',x:150,fx:-1,v:1}],bl:2,L:[
      "İki yıl önce, Gök Rıhtımı. Mor gemi alçalırken gölgeler yere iniyor.",
@@ -11205,7 +11205,7 @@ const ACH=[
  ['levent','Kazazede','Denizci Levent\'in yeni gemisini kur.','Halat',()=>!!(window.__v55&&window.__v55.d.indexOf('dz4')>=0)],
  ['roket','Gökyüzüne','Tuna ile roketi fırlat.','Roket',()=>!!(window.__tuna&&window.__tuna.launched)],
  ['act2','Açık deniz','Levent\'in gemisiyle adadan ayrıl: ACT 2.','Kristal ipek',()=>!!(window.__plDz&&window.__plDz.D.act2)],
- ['hile','Oyunlardaki gibi','Ana menüde “cheat” yazdın: hile modu açıldı.','Mor pusula',()=>{try{return localStorage.getItem('hammadde.cheatach')==='1'||localStorage.getItem('hammadde.cheatok')==='1'}catch(e){return false}}]];
+ ['hile','Oyunlardaki gibi',(TOUCH?'Ana menüde ekrana art arda 3 kez dokundun: hile modu açıldı.':'Ana menüde “cheat” yazdın: hile modu açıldı.'),'Mor pusula',()=>{try{return localStorage.getItem('hammadde.cheatach')==='1'||localStorage.getItem('hammadde.cheatok')==='1'}catch(e){return false}}]];
 const ic=n=>{try{return icon(n)}catch(e){return ''}};
 const st=document.createElement('style');st.textContent=
  '#achcard{position:fixed;z-index:60;right:calc(env(safe-area-inset-right,0px) + 12px);bottom:calc(env(safe-area-inset-bottom,0px) + 12px);width:132px;height:132px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:8px;text-align:center;background:#2a2008;border:3px solid #f2c84b;box-shadow:0 0 0 2px #11170f,0 6px 18px rgba(0,0,0,.5);color:#fff3d0;transform:translateY(160%);transition:transform .35s;pointer-events:none}'

@@ -658,3 +658,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Ayarlar: köşede × düğmesi (sticky) ve karanlık arka plana dokununca kapanma (ikisi de `s-close`'u tıklar). Ana menüde Ayarlar'dan çıkılamıyor raporu için; olası neden telefonda ilk dokunuşta açılan tam ekranın tıklamayı yutmasıydı.
 - Hile (telefon): ana menüde boş bir yere (logo dahil, düğmeler hariç) 0,8 sn arayla 3 dokunuş da hile anahtarını açar/kapar (Ayarlar başlığındaki 3 dokunuşu tetikler).
 - Menüde "Versiyon 94".
+
+## v95 (27 Ekim 2026)
+- Tuna'nın hile ipucu ve "Oyunlardaki gibi" başarımının açıklaması cihaza göre: dokunmatikte "ana menüde ekrana art arda 3 kez dokunmuştum", klavyede "“cheat” yazmıştım" (`TOUCH`).
+- Menüde "Versiyon 95".
