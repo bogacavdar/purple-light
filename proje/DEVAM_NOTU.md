@@ -676,3 +676,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - "İlk gece" → "İlk gün" (İlk günü ve geceyi hayatta atlat). Köprücü ve Açık deniz (ACT 2) zaten vardı.
 - `window.__p4AB` (v49-p4) ve `window.__I1G` (v65) dışa açıldı.
 - Menüde "Versiyon 98".
+
+## v99 (27 Ekim 2026)
+- Toplayıcı başarımı artık yerden toplama anını sayıyor: düğüm/maden (`tg.n.name`) ve kil/kum (`g.name`) toplandığında `window.__plGot(ad)` → localStorage `hammadde.gath` (cihaz geneli küme). Eskiden yalnızca envantere giren eşya adına (`__p4.s.g`) bakıyordu; o da hâlâ sayılıyor.
+- Menüde "Versiyon 99".

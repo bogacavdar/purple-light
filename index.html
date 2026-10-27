@@ -1331,7 +1331,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 98</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 99</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -2576,10 +2576,10 @@ function tickGather(dt,moving){
   if(g.cb){if(g.tool&&wearsNow()){toolDur[g.tool]=Math.max(0,(nn(toolDur[g.tool],GT[g.tool].dur))-1);if(toolDur[g.tool]<=0)setTimeout(()=>toast(`${g.tool} köreldi! Demirci Dursun'da yenile.`,true),200)}g.cb();return}
   let dx0=player.x,dy0=player.y;
   if(tg.kind==='node'&&tg.n.mine){dx0=tg.n.x;dy0=tg.n.y;tg.n.left=(tg.n.left||1)-1;if(tg.n.left<=0){tg.n.alive=false;tg.n.t=RES[tg.n.name].respawn*(sk('G8')?.6:1);toast(`${MINES[tg.n.name].l} tükendi; başka bir yerde yenisi çıkar.`)}
-    dropItem(g.name,dx0,dy0);sfx('clank');burst(tg.n.x,tg.n.y-4);for(let k=0;k<6;k++)parts.push({x:tg.n.x,y:tg.n.y-6,vx:(Math.random()-.5)*50,vy:-20-Math.random()*30,life:.5,c:MINES[tg.n.name].c})}
-  else if(tg.kind==='node'){tg.n.alive=false;tg.n.t=RES[tg.n.name].respawn*(sk('G8')?.6:1);dx0=tg.n.x;dy0=tg.n.y;dropItem(g.name,dx0,dy0);sfx('pick');burst(tg.n.x,tg.n.y);const h=HURT[g.name];if(h&&thornHits(g.name))setTimeout(()=>hurt(h[0],h[1]),0)}
+    try{if(window.__plGot)window.__plGot(tg.n.name)}catch(e){}dropItem(g.name,dx0,dy0);sfx('clank');burst(tg.n.x,tg.n.y-4);for(let k=0;k<6;k++)parts.push({x:tg.n.x,y:tg.n.y-6,vx:(Math.random()-.5)*50,vy:-20-Math.random()*30,life:.5,c:MINES[tg.n.name].c})}
+  else if(tg.kind==='node'){try{if(window.__plGot)window.__plGot(tg.n.name)}catch(e){}tg.n.alive=false;tg.n.t=RES[tg.n.name].respawn*(sk('G8')?.6:1);dx0=tg.n.x;dy0=tg.n.y;dropItem(g.name,dx0,dy0);sfx('pick');burst(tg.n.x,tg.n.y);const h=HURT[g.name];if(h&&thornHits(g.name))setTimeout(()=>hurt(h[0],h[1]),0)}
   else if(tg.kind==='tree'){treeChopped(tg.t);woodCut++;dx0=tg.t.x+(player.x<tg.t.x?-6:6);dy0=tg.t.y;dropItem(g.name,dx0,dy0);if(/^Obsidyen/.test(g.tool||'')&&Math.random()<.35)dropItem(g.name,dx0,dy0);for(const [k,q] of (TREE_EXTRA[tg.t.type.n]||[]))dropItem(k,dx0,dy0,q);{const ty=tg.t.type;if(ty.fruit){dropItem(ty.fruit,dx0,dy0,1+(Math.random()<.5?1:0));if(ty.seed&&Math.random()<.35+luck())dropItem(ty.seed,dx0,dy0)}}sfx('pick');burst(tg.t.x,tg.t.y-8)}
-  else if(tg.kind==='clay'){dropItem(g.name,player.x+player.face.x*10,player.y+player.face.y*8);sfx('pick')}
+  else if(tg.kind==='clay'){try{if(window.__plGot)window.__plGot(g.name)}catch(e){}dropItem(g.name,player.x+player.face.x*10,player.y+player.face.y*8);sfx('pick')}
   else add(g.name);
   gainXP(1);qc('gather:'+g.name);
   if(sk('G4')&&rnd()<.1+luck()){if(tg.kind==='node'||tg.kind==='tree'||tg.kind==='clay')dropItem(g.name,dx0,dy0);else{gain(g.name);renderInv()}toast(`Bereket! +1 ${g.name}`)}
@@ -11191,7 +11191,10 @@ const bossKinds=()=>{const d=bossD();return Object.keys(d).filter(k=>d[k]>0).len
 const I2N=t=>{const C=window.__I2C;const L=[];if(C&&C[t])for(const b in C[t])for(const a of C[t][b])L.push(a.n);return L};
 const allBoss=()=>{const S=new Set(Object.keys(window.__p4AB||{}));for(const n of I2N('anim'))S.add(n);S.delete('Kara ejder');return Array.from(S)};
 const allGather=()=>{const S=new Set(window.__I1G||[]);for(const n of I2N('plants'))S.add(n);for(const n of I2N('ores'))S.add(n);return Array.from(S)};
-const gotOf=n=>{const g=window.__p4&&window.__p4.s&&window.__p4.s.g||{};return (g[n]||0)>0};
+// v99: every kind gathered from the ground with E (node or clay), kept on the device for all games: localStorage 'hammadde.gath'
+const GK='hammadde.gath';let GS=new Set();try{GS=new Set(JSON.parse(localStorage.getItem(GK)||'[]'))}catch(e){}
+window.__plGot=function(n){if(!n||GS.has(n))return;GS.add(n);try{localStorage.setItem(GK,JSON.stringify(Array.from(GS)))}catch(e){}};
+const gotOf=n=>{if(GS.has(n))return true;const g=window.__p4&&window.__p4.s&&window.__p4.s.g||{};return (g[n]||0)>0};
 const ACH=[
  ['tarif1','İlk tarif','Kazanda ilk tarifini öğren.','Keskin taş',()=>found.length>=1],
  ['gece1','İlk gün','İlk günü ve geceyi hayatta atlat.','Meşale',()=>day>=2],
@@ -11225,7 +11228,7 @@ const ACH=[
  ['reishep','Bütün reisler','Oyunda öldürülebilecek bütün reisleri öldür.','Ejder pulu zırh',()=>{const A=allBoss();return A.length>0&&A.every(k=>(bossD()[k]||0)>0)}],
  ['kaya','Yol açıcı','Doğu geçidindeki kayaları patlat.','Kaya patlatıcı',()=>typeof rockfall!=='undefined'&&!!rockfall.cleared],
  ['tariftum','Her şeyi bilen','Bütün tarifleri bul.','Kristal çiçeği',()=>DB.R.length>0&&DB.R.every(x=>foundSet.has(x.r))],
- ['toplatum','Toplayıcı','İki adada toplanabilecek her şeyi en az bir kez topla.','Böğürtlen',()=>{const L=allGather();return L.length>0&&L.every(n=>gotOf(n))}],
+ ['toplatum','Toplayıcı','İki adada yerden toplanabilen her çeşitten en az birini topla.','Böğürtlen',()=>{const L=allGather();return L.length>0&&L.every(n=>gotOf(n))}],
  ['iyison','Yeniden birlikte','Oyunu iyi sonla bitir.','Yıldız çiçeği',()=>false],
  ['kotuson','Yalnız dönüş','Oyunu kötü sonla bitir.','Gece zambağı',()=>!!window.__plBadEnd],
  ['hile','Oyunlardaki gibi',(TOUCH?'Ana menüde ekrana art arda 3 kez dokundun: hile modu açıldı.':'Ana menüde “cheat” yazdın: hile modu açıldı.'),'Mor pusula',()=>{try{return localStorage.getItem('hammadde.cheatach')==='1'||localStorage.getItem('hammadde.cheatok')==='1'}catch(e){return false}}]];
