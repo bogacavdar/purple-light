@@ -1082,3 +1082,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Börü'nün derslerinde adımlar **sırayla** sayılır (`bump`: yalnızca ilk bitmemiş adım ilerler): örneğin Ritimli 3. vuruşta önce 3 savuşturma, sonra 3 ritimli 3. vuruş.
 - Dersin o anki adımı bir vuruş adımıysa (`hit:…`, ör. ritimli 2./3. vuruş, çift vuruş) alıştırma canavarı saldırmaz (öfkesi, hamlesi, atılışı kapanır; kovalamayı bırakır). Savuşturma ve sersemletme adımlarında saldırır (savuşturmak için gerekli).
 - Menüde "Versiyon 1.60". chk.js 0 hata; oyun hatasız açılıyor.
+
+## v1.61 (27 Ekim 2026)
+- **Ritim kolaylaştı:** pencere bilgisayarda 0,14 → 0,26 sn, dokunmatikte 0,2 → 0,32 sn; pencere açılmadan 0,08 sn önceki tıklama da sayılır (`RE`).
+- **Ritim işareti belirgin:** vuruştan sonra sarı (3. vuruş için turuncu) bir halka karakterin üstüne doğru daralır; pencere açılınca dolu parlak halka ve üstünde **ŞİMDİ!** (3. vuruşta **YİNE!**) yazar. Yalnızca o hareket açıksa (ya da dersi sürüyorsa).
+- **Öğreticide neden görünmüyordu:** ritim yalnızca "dövüş tıklaması" sayılan fare tıklamalarında başlıyordu; elde silah yoksa (balta, meşale…) yalnızca tam hayvanın üstüne tıklamak sayılıyordu, Q tuşuyla ise ritim hiç başlamıyordu (arenada her tıklama dövüş tıklaması olduğu için orada görünüyordu). Artık Börü'nün dersi sürerken her sol tık dövüş tıklamasıdır ve **Q** ile de ritim yapılır.
+- Menüde "Versiyon 1.61". chk.js 0 hata; Q'dan sonra halka ve ŞİMDİ! ekranda görüldü (2D çizimde).

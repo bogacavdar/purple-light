@@ -1331,7 +1331,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.60</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.61</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -13109,7 +13109,8 @@ function pose(i,dir){const a=dir*i*(Math.PI*2/STEPS),side=i%2===1;return{a,sx:si
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
 const C={lastDown:0,lastTap:0,tapBeforeDash:0,dashStart:0,dashEnd:-1e9,hold:null,cd:0,mx:0,my:0,busyT:0};window.__plCombo=C;
-const PHN=(()=>{try{return !matchMedia('(hover:hover) and (pointer:fine)').matches}catch(e){return false}})();const DBL=PHN?.25:.18,HOLD0=.22,FULL=.55,AFTER=PHN?.36:.3,BEFORE=.9,RW=PHN?.2:.14;   // v1.32: phones get a little more time   // v122: double tap is a quick pair (0,18 s); RW = the rhythm window right after a blow ends
+const PHN=(()=>{try{return !matchMedia('(hover:hover) and (pointer:fine)').matches}catch(e){return false}})();const DBL=PHN?.25:.18,HOLD0=.22,FULL=.55,AFTER=PHN?.36:.3,BEFORE=.9,RW=PHN?.32:.26,RE=.08;   // v1.61: the rhythm window is wider (was .2/.14) and a click a hair early still counts
+   // v1.32: phones get a little more time   // v122: double tap is a quick pair (0,18 s); RW = the rhythm window right after a blow ends
 const FX=[],SPR=[],PUSH={vx:0,vy:0,t:0};window.__plSPR=SPR;
 const now=()=>performance.now()/1000;
 const P4=()=>window.__p4||{};
@@ -13222,7 +13223,8 @@ function doMove(type){const k=kindOf(),M=CB[k]&&CB[k][type];if(!M)return false;i
 // ------------------------------------------------------------------ input
 function comboOK(e){if(e.pointerType!=='mouse'||e.button!==0||e.target!==cv)return false;if(!canTap()||placing||frozenNow())return false;try{if(canLeaveDlg())return false}catch(x){}
   const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S;let tg=null;try{tg=pickAt(wx,wy).tg}catch(x){tg=null}if(tg&&E_TALK.has(tg.kind))return false;
-  if(weaponHeld())return true;const k=kindOf();if(window.__plArena)return true;if((k==='axe'||k==='torch'||torchHeld())&&tg&&tg.kind==='animal')return true;return false}
+  if(weaponHeld())return true;const k=kindOf();if(window.__plArena)return true;if(window.__plLesson&&window.__plLesson())return true;   // v1.61: in Börü's lessons every click is a fighting click (the rhythm needs it)
+  if((k==='axe'||k==='torch'||torchHeld())&&tg&&tg.kind==='animal')return true;return false}
 cv.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;C.mx=cam.cx+e.clientX/S;C.my=cam.cy+e.clientY/S});
 addEventListener('pointerdown',e=>{if(!comboOK(e))return;e.stopPropagation();e.preventDefault();C.mx=cam.cx+e.clientX/S;C.my=cam.cy+e.clientY/S;goal=null;
   const t=now(),sinceDash=t-C.dashEnd,inDash=!!dodge;
@@ -13230,14 +13232,17 @@ addEventListener('pointerdown',e=>{if(!comboOK(e))return;e.stopPropagation();e.p
   C.hold={t0:t,id:e.pointerId,full:false,on:false};
   if(C.cd>0&&t-C.lastDown>.05){C.lastDown=t;C.rh=null;return}   // pressing again while a move plays breaks the rhythm
   // v122: the rhythm: a click inside the short window right after a blow (or the 2nd move) ends goes on to the next stage
-  if(C.rh&&!inDash&&sinceDash>=AFTER){const R=C.rh;C.rh=null;if(t>=R.open&&t<=R.open+RW){const ty=R.stage===1?'c2':'c3',rec=rhythm(ty);if(rec){C.lastDown=t;C.lastTap=t;C.lastTapType=ty;if(ty==='c2')C.rh={stage:2,open:t+rec};return}}
-    else if(t<R.open&&t-C.lastTap>=DBL){C.lastDown=t;return}}   // too early: nothing, and the chain is gone
+  if(C.rh&&!inDash&&sinceDash>=AFTER){const R=C.rh;C.rh=null;if(t>=R.open-RE&&t<=R.open+RW){const ty=R.stage===1?'c2':'c3',rec=rhythm(ty);if(rec){C.lastDown=t;C.lastTap=t;C.lastTapType=ty;if(ty==='c2')C.rh={stage:2,open:t+rec};return}}
+    else if(t<R.open-RE&&t-C.lastTap>=DBL){C.lastDown=t;return}}   // too early: nothing, and the chain is gone
   let type='tap';
   if(inDash||sinceDash<AFTER)type=(C.tapBeforeDash&&C.dashStart-C.tapBeforeDash<BEFORE)?'cdc':'dash';
   else if(t-C.lastTap<DBL&&C.lastTapType==='tap')type='double';
   C.lastDown=t;
   if(type==='tap'){attack({x:C.mx,y:C.my+6});C.lastTap=t;C.lastTapType='tap';C.rh={stage:1,open:t+tapDur()}}
   else{if(type==='cdc')C.tapBeforeDash=0;doMove(type);C.lastTap=t;C.lastTapType=type}},true);
+addEventListener('keydown',e=>{if(e.code!=='KeyQ'||e.repeat)return;const tg=e.target;if(tg&&(tg.tagName==='INPUT'||tg.tagName==='TEXTAREA'))return;if(onTitle||dlgOpen||craftOpen||paused||placing||wake||window.__plArena)return;   // v1.60b: the rhythm works with Q too, not only the mouse
+  const t=now(),R=C.rh;if(R&&!dodge&&t-C.dashEnd>=AFTER&&t>=R.open-RE&&t<=R.open+RW){C.rh=null;const ty=R.stage===1?'c2':'c3',rec=rhythm(ty);if(rec){C.lastDown=t;C.lastTap=t;C.lastTapType=ty;if(ty==='c2')C.rh={stage:2,open:t+rec};e.preventDefault();e.stopImmediatePropagation();return}}
+  if(R&&t<R.open-RE){C.rh=null;return}if(C.cd>0)return;setTimeout(()=>{try{const t2=now();C.lastTap=t2;C.lastTapType='tap';C.rh={stage:1,open:t2+tapDur()}}catch(x){}},0)},true);
 addEventListener('pointerup',e=>{if(!C.hold||e.pointerType!=='mouse')return;const H=C.hold;C.hold=null;if(H.full&&!frozenNow()&&!(window.__plPS&&window.__plPS()))doMove('charged')},true);
 addEventListener('blur',()=>{C.hold=null});
 // remember when a dash starts and ends (and whether a tap came just before it)
@@ -13258,8 +13263,12 @@ let lastN=0;
   return r}}
 // the vault: the hero is lifted for a moment
 {const _dp=drawPlayer;drawPlayer=function(){if(!(C.hop>0))return _dp.apply(this,arguments);const k=1-C.hop/.26,h=Math.sin(k*Math.PI)*14;ctx.save();ctx.translate(0,-Math.round(h));try{return _dp.apply(this,arguments)}finally{ctx.restore()}}}
-{const _dp=drawPlayer;drawPlayer=function(){const r=_dp.apply(this,arguments);try{const R=C.rh,t=now();if(R&&!onTitle&&t>=R.open-.04&&t<=R.open+RW){const ty=R.stage===1?'c2':'c3';if(!window.__plMoveOK||window.__plMoveOK(ty)){const k=Math.max(0,Math.min(1,(t-(R.open-.04))/(RW+.04))),x=Math.round(player.x),y=Math.round(player.y)-7,rr=9+k*5;   // v1.59: the rhythm's moment glows yellow round you: click now
-   ctx.save();ctx.globalAlpha=.85*(1-k*.6);ctx.strokeStyle=R.stage===1?'#ffe066':'#ffb020';ctx.lineWidth=2;ctx.beginPath();ctx.arc(x,y,rr,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=.25*(1-k);ctx.fillStyle='#fff2a0';ctx.beginPath();ctx.arc(x,y,rr,0,Math.PI*2);ctx.fill();ctx.restore()}}}catch(e){}return r}}
+{const _dp=drawPlayer;drawPlayer=function(){const r=_dp.apply(this,arguments);try{const R=C.rh;if(R&&!onTitle&&!wake){const ty=R.stage===1?'c2':'c3';if(!window.__plMoveOK||window.__plMoveOK(ty)){   // v1.61: the rhythm cue: a ring closes in on you and flashes 'ŞİMDİ!' while the click counts
+   const t=now();if(R._t0==null)R._t0=t;if(t<=R.open+RW){const X=Math.round(player.x),Y=Math.round(player.y)-7,col=R.stage===1?'255,224,90':'255,160,40',r0=12;ctx.save();
+     if(t<R.open-RE){const q=Math.max(0,Math.min(1,(R.open-RE-t)/Math.max(.05,R.open-RE-R._t0)));const rr=r0+q*20;ctx.globalAlpha=.9;ctx.strokeStyle=`rgb(${col})`;ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(X,Y,rr,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=.45;ctx.lineWidth=1;ctx.beginPath();ctx.arc(X,Y,r0,0,Math.PI*2);ctx.stroke()}
+     else{ctx.globalAlpha=.4;ctx.fillStyle=`rgb(${col})`;ctx.beginPath();ctx.arc(X,Y,r0+3,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;ctx.strokeStyle='#ffffff';ctx.lineWidth=2;ctx.beginPath();ctx.arc(X,Y,r0,0,Math.PI*2);ctx.stroke();
+       const txt=R.stage===1?'ŞİMDİ!':'YİNE!';ctx.font='bold 9px Rubik, system-ui, sans-serif';ctx.textAlign='center';ctx.lineWidth=3;ctx.strokeStyle='rgba(17,23,15,.9)';ctx.strokeText(txt,X,Y-r0-5);ctx.fillStyle=`rgb(${col})`;ctx.fillText(txt,X,Y-r0-5)}
+     ctx.restore()}}}}catch(e){}return r}}
 
 // ------------------------------------------------------------------ drawing: focus ring, move shapes, the spear in flight
 {const _ds=drawShots;drawShots=function(){const r=_ds.apply(this,arguments);try{const t=now();
@@ -13536,10 +13545,10 @@ const LES=[
   say:'Bir vuruş bir hayvanı durdurur, iki vuruş onu yere serer. Farenin tuşuna <b>hızlıca iki kez</b> bas; ikinci vuruş birincinin arkasından gelir.',
   st:[['hit:double',5,'Hızlıca iki kez tıkla: <b>çift vuruşla</b> 5 kez isabet ettir'],['kill:double',2,'İki canavarı <b>çift vuruşla</b> bitir']]},
  {k:'c2',foe:'Bataklık kurdu',on:'şu bataklık kurdunun',n:'Ritimli 2. vuruş',lv:10,b:2,c:600,x:100,how:'Vuruş biter bitmez, sarı halka parlarken yine tıkla',
-  say:'Bataklıkta acele eden batar. Vur, kılıcın geri gelsin, <b>tam o an</b> yine tıkla. Erken basarsan ritim bozulur. O an gelince çevrende <b>sarı bir halka</b> parlar: halka parlarken tıkla.',
+  say:'Bataklıkta acele eden batar. Vur, kılıcın geri gelsin, <b>tam o an</b> yine vur (tıkla ya da Q). Erken basarsan ritim bozulur. Vurunca çevrende <b>sarı bir halka</b> daralır; halka sana değip <b>ŞİMDİ!</b> yazınca vur.',
   st:[['hit:c2',5,'Vuruşun hemen ardından tıkla: <b>ritimli 2. vuruşla</b> 5 kez isabet ettir']]},
  {k:'c3',foe:'Muflon',on:'şu muflonun',n:'Ritimli 3. vuruş',lv:15,b:3,c:1000,x:160,how:'2. vuruşun hemen ardından, turuncu halka parlarken yine tıkla',
-  say:'Dağın hayvanları sabırlı. Önce saldırısını <b>savuştur</b>'+PK+': hayvan vurmak üzereyken, darbe sana değmeden hemen önce bas. Beyaz ve sarı darbeler savuşturulur, kırmızı savuşturulamaz. Sonra ritmi üçe çıkar: ikinci vuruşun bittiği an, <b>turuncu halka</b> parlarken bir kez daha tıkla. Üçüncü vuruş ağırdır, sersemletir.',
+  say:'Dağın hayvanları sabırlı. Önce saldırısını <b>savuştur</b>'+PK+': hayvan vurmak üzereyken, darbe sana değmeden hemen önce bas. Beyaz ve sarı darbeler savuşturulur, kırmızı savuşturulamaz. Sonra ritmi üçe çıkar: ikinci vuruşun bittiği an, <b>turuncu halka</b> daralıp <b>YİNE!</b> yazınca bir kez daha vur. Üçüncü vuruş ağırdır, sersemletir.',
   st:[['parry',3,'Bir saldırıyı tam vuracağı an <b>savuştur</b>'+PK+' (3 kez)'],['hit:c3',3,'<b>Ritimli 3. vuruşu</b> 3 kez isabet ettir']]},
  {k:'charged',foe:'Yaban öküzü',on:'şu yaban öküzünün',n:'Güçlü vuruş',lv:17,b:3,c:1200,x:180,how:'Basılı tut, halka dolunca bırak',
   say:'Sersemlemiş hayvan sana zaman verir. Savuştur'+PK+', sonra tuşu <b>basılı tut</b>; etrafındaki halka dolunca bırak. Halka dolmadan bırakırsan sıradan bir vuruş olur.',
@@ -13556,6 +13565,7 @@ function have(k){return !!L.own[k]}
 function stage(){return V.a||I2?6:V.b}
 function reqOK(l){if(l.boss)return !!V.u;return lvl>=l.lv&&V.b>=l.b}
 function reqTxt(l){if(l.boss)return 'Kara ejderi ya da Kristal golem Reisini yen';const p=[];if(lvl<l.lv)p.push('seviye '+l.lv);if(V.b<l.b)p.push(['Çayır','Orman','Bataklık','Kayalık Dağ','Kül Diyarı','Mor Kristal Vadisi'][l.b]+'\'a git');return p.join(' · ')}
+window.__plLesson=()=>!!L.cur;
 window.__plMoveOK=type=>{if(window.__plArena||I2||V.a)return true;const l=LK[type];if(!l)return true;return have(type)||!!(L.cur&&L.cur.k===type)};
 // v1.28's land-by-land announcements are replaced by the lessons
 function hush(){try{V.told=V.told||{};for(const k of ['dash','double','c2','c3','charged','cdc'])V.told[k]=1}catch(e){}}
