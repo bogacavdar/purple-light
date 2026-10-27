@@ -1109,3 +1109,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.66 (27 Ekim 2026)
 - Uyarıya rağmen uzaklaşmaya devam edersen (Börü'den 440 px) ders geri sayımı beklemeden iptal olur; 280–440 px arasında 10 sn geri sayım sürer. Uyarı metni bunu söyler.
 - Menüde "Versiyon 1.66". chk.js 0 hata.
+
+## v1.67 (27 Ekim 2026)
+- **Çift vuruş dersi:** v1.60'ta bütün derslerin adımları sıralı yapılmıştı; çift vuruşta "5 isabet" bitmeden "2 canavarı çift vuruşla bitir" sayılmıyordu, domuz da çift vuruşla ölüp boşa gidiyordu. Sıralı adım artık yalnızca `seq:1` olan derste (Ritimli 3. vuruş: önce savuşturma); diğerlerinde her adım aynı anda sayılır.
+- **Alıştırma canavarı ölmez:** dersin "bitir" (`kill:`) dışında bitmemiş adımı varken Börü'nün canavarı ölmez; öldürecek vuruş isabet sayılır, canavar canı yenilenmiş olarak kalır ("Dayanıyor!"). Yalnızca "bitir" adımları kaldığında ölebilir.
+- Saldırmama kuralı (v1.60) sıralı olmayan derslerde: kalan adımların hepsi vuruş adımıysa canavar saldırmaz.
+- Menüde "Versiyon 1.67". chk.js 0 hata; oyun hatasız açılıyor.
