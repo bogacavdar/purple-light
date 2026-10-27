@@ -1077,3 +1077,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Ritimli vuruşlar:** süre değişmedi; ritim penceresi açılınca (40 ms önceden başlayıp pencere boyunca) oyuncunun çevresinde bir halka parlar: 2. vuruş için **sarı**, 3. vuruş için **turuncu**. Yalnızca o hareket açıldıysa görünür. Dersler (Ritimli 2. ve 3. vuruş) halkayı anlatır.
 - **Savuşturma:** derslerde nasıl yapıldığı yazar: bilgisayarda farenin **sağ tuşu**, dokunmatikte sağdaki **Savuş** düğmesi ("takla değil"); darbe değmeden hemen önce basılır, beyaz ve sarı darbeler savuşturulur, kırmızı savuşturulamaz.
 - Menüde "Versiyon 1.59". chk.js 0 hata; oyun hatasız açılıyor, halka çizimi hatasız.
+
+## v1.60 (27 Ekim 2026)
+- Börü'nün derslerinde adımlar **sırayla** sayılır (`bump`: yalnızca ilk bitmemiş adım ilerler): örneğin Ritimli 3. vuruşta önce 3 savuşturma, sonra 3 ritimli 3. vuruş.
+- Dersin o anki adımı bir vuruş adımıysa (`hit:…`, ör. ritimli 2./3. vuruş, çift vuruş) alıştırma canavarı saldırmaz (öfkesi, hamlesi, atılışı kapanır; kovalamayı bırakır). Savuşturma ve sersemletme adımlarında saldırır (savuşturmak için gerekli).
+- Menüde "Versiyon 1.60". chk.js 0 hata; oyun hatasız açılıyor.
