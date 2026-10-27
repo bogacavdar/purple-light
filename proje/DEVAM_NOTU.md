@@ -1092,3 +1092,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.62 (27 Ekim 2026)
 - Ders ortasında alınmış bir kayıtla girince dersin yeni anlatımı (savuşturmanın nasıl yapıldığı, halka, sıralı adımlar) hiç görünmüyordu; anlatım yalnızca ders başlarken çıkıyor. Börü'de "Dersin nasıldı?" yerine **"Dersi yeniden anlat"**: dersin metnini ve adımları sırayla (✓ bitti, ▶ şimdiki, • sıradaki, sayılarla) gösterir; "Anladım, sürdürüyorum" alıştırma canavarı yoksa yenisini salar; **"Dersi baştan başlat"** sayaçları sıfırlar (ücretsiz). Ders ortasındaki bir kayıt açılınca 2,5 sn sonra bunu hatırlatan bir not çıkar.
 - Menüde "Versiyon 1.62". chk.js 0 hata; oyun hatasız açılıyor.
+
+## v1.63 (27 Ekim 2026)
+- Ders sırasında Börü'den uzaklaşınca ders iptal edilir: 260 px'te bir kez uyarı, 360 px'i geçince ders kapanır, alıştırma canavarı kaybolur, ders ücreti geri verilir (`tickFoes`). Ders ortası bir kayıt Börü'den uzakta açılırsa da ders iptal olur ve ücret döner.
+- Menüde "Versiyon 1.63". chk.js 0 hata; oyun hatasız açılıyor.
