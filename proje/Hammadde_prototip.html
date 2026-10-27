@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 110</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 111</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -12430,7 +12430,9 @@ function unlocked(){try{if(localStorage.getItem('hammadde.cheatok')==='1')return
   try{const g=window.__plAch&&window.__plAch.got();if(g&&(g.iyison||g.kotuson))return true}catch(e){}return false}
 const tb=document.createElement('button');tb.className='mb arena';tb.id='t-arena';tb.type='button';
 tb.innerHTML='<span>⚔ Arena</span><small class="arl">Kilitli · oyunu bitir ya da hile modunu aç</small>';
-{const tl=$('t-load');if(tl&&tl.parentNode)tl.parentNode.insertBefore(tb,tl.nextSibling)}
+// v111: the arena is for computers for now (mouse: left strike, right parry); phones and tablets do not get the button
+const DESK=(()=>{try{return matchMedia('(hover:hover) and (pointer:fine)').matches}catch(e){return !TOUCH}})();
+if(DESK){const tl=$('t-load');if(tl&&tl.parentNode)tl.parentNode.insertBefore(tb,tl.nextSibling)}
 function syncBtn(){const u=unlocked();tb.classList.toggle('locked',!u);tb.setAttribute('aria-disabled',u?'false':'true');tb.title=u?'Dövüş mekaniklerini dene':'Kilitli: oyunu bitir ya da hile modunu aç'}
 syncBtn();setInterval(()=>{try{if(onTitle)syncBtn()}catch(e){}},800);
 tb.addEventListener('click',()=>{if(!unlocked()){sfx('bad');toast('Arena kilitli: oyunu bitirince ya da hile modu açıkken açılır.',true);tb.classList.remove('shake');void tb.offsetWidth;tb.classList.add('shake');return}
@@ -12532,7 +12534,7 @@ function drawDoll2(){const c=$('ardoll');if(!c)return;const g=c.getContext('2d')
 
 // ------------------------------------------------------------------ the opponents
 function foeCard(k){const D=ANIM[k],tp=TEMP[D.temper]||[D.temper,''],bn=canBoss(k)?bossOf(k):null,B=bn&&ANIM[bn];
-  const tg=[`<span class="${tp[1]}">${tp[0]}</span>`];if(D.ranged)tg.push(`<span>Menzilli${D.ranged.n>1?' ×'+D.ranged.n:''}</span>`);if(D.fx)tg.push(`<span>${FXN[D.fx[0]]||D.fx[0]}</span>`);if(D.fly)tg.push('<span>Uçar</span>');if(PACK[k])tg.push('<span>Sürü</span>');if(D.night)tg.push('<span>Gece</span>');
+  const tg=[`<span class="${tp[1]}">${tp[0]}</span>`];if(D.ranged)tg.push(`<span>Menzilli${D.ranged.n>1?' ×'+D.ranged.n:''}</span>`);if(D.fx)tg.push(`<span>${FXN[D.fx[0]]||D.fx[0]}</span>`);try{for(const mv of (window.__plMovesOf?window.__plMovesOf(k):[]))tg.push(`<span>${esc(mv)}</span>`)}catch(e){}if(D.fly)tg.push('<span>Uçar</span>');if(PACK[k])tg.push('<span>Sürü</span>');if(D.night)tg.push('<span>Gece</span>');
   return `<div class="cc${AR.sel===k?' cur':''}"><div class="pp">${pimg(k)}</div><div class="nm">${esc(k)}</div><div class="mt">Can ${fmt(D.hp)}${D.dmg?` · hasar ${fmt(D.dmg)}`:''} · hız ${fmt(D.spd)}${B?`<br>♛ Reis: can ${fmt(B.hp)} · hasar ${fmt(B.dmg)}`:''}</div><div class="tg">${tg.join('')}</div>
     <div class="bt"><button type="button" class="f" data-af="${esc(k)}">Dövüş</button><button type="button" class="b" data-ab="${esc(k)}"${B?'':' disabled title="Bu canlının reisi yok"'}>♛ Reis</button></div></div>`}
 function rightHTML(){const G=groups().filter(g=>g.isle===AR.isle);
@@ -12699,7 +12701,7 @@ function roll(a){const D=ANIM[a.k]||{};if(D.ranged)return 'n';const base=a.base|
 const MUL={n:1,y:1.4,r:1.7},ADD={n:0,y:.18,r:.3};
 
 // ------------------------------------------------------------------ the parry itself
-function doParry(){if(frozenNow()||!met||PR.cd>0||placing)return;
+function doParry(){if(frozenNow()||!met||PR.cd>0||placing||(window.__plPS&&window.__plPS()))return;
   if(tired||st<COST){floatText('Nefesin kesildi!','#9ad8ff');PR.cd=.3;return}
   st-=COST;stRest=0;vitK='';PR.t=WIN;PR.cd=CD;stopGather();goal=null;
   try{audio.synth((ac,out)=>{const t=ac.currentTime+.005,o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(900,t);o.frequency.exponentialRampToValueAtTime(600,t+.08);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.12,t+.01);g.gain.exponentialRampToValueAtTime(.0005,t+.1);o.connect(g);g.connect(out);o.start(t);o.stop(t+.12)})}catch(e){try{sfx('swing')}catch(_){}}}
@@ -12711,6 +12713,7 @@ function parried(a){PR.n++;PR.hit=true;PR.flash=.25;PR.cd=Math.min(PR.cd,.15);st
   try{if(window.__p4)window.__p4.stop=Math.max(window.__p4.stop||0,.09)}catch(e){}shake=Math.max(shake,.18);shakeP=Math.max(shakeP,2.5);
   floats.push({x:player.x,y:player.y-28,t:0,text:'Savuşturuldu!',color:'#9ad8ff',size:9});
 }
+window.__plParryHit=parried;
 // melee: the moment the bite lands
 {const _bh=biteHit;biteHit=function(a,D,dx,dy,d){const ty=a&&a.atkT||'n';
   if(PR.t>0&&!dodge&&pInv<=0){if(ty!=='r'){parried(a);return}}
@@ -12759,6 +12762,142 @@ cv.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button===2){
     b.classList.add('on');b.style.width=r.width+'px';b.style.height=r.height+'px';b.style.fontSize=Math.max(10,Math.round(r.width*.22))+'px';b.style.left=Math.round(r.left-r.width-10)+'px';b.style.top=Math.round(r.top)+'px'}catch(e){}};
   setInterval(place,500);addEventListener('resize',place)}
 }).toString()+')()')}catch(e){try{window.__hamErr('v110-parry: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v111-moves">
+// =====================================================================================================
+// v111: creatures fight with their own moves. Each kind has a few special moves (MOVES / SP below); while
+// chasing, now and then it starts one instead of a plain bite. Every move is shown first (a mark on the
+// ground and the coloured "!" of v110: white/yellow can be parried, red cannot):
+//  leap (sıçrama) · charge (hücum) · roar (sersemleten kükreme: you are stunned) · breath (alev: burns) ·
+//  shards (buz: you freeze) · web (ağ: you slow down) · bolt (şok: you are stunned) · puddle (zehir gölü).
+// Player states: PS.stun / PS.frz (cannot move, strike, dash or parry) and PS.slow (moves at 45 %).
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const MOVES={leap:{n:'Sıçrama',r:[45,170]},charge:{n:'Hücum',r:[60,210]},roar:{n:'Sersemleten kükreme',r:[0,62]},breath:{n:'Alev püskürtme',r:[18,105]},
+  shards:{n:'Buz parçaları',r:[40,210]},web:{n:'Ağ',r:[40,190]},bolt:{n:'Şok',r:[40,230]},puddle:{n:'Zehir gölü',r:[40,190]}};
+const SP={'Kurt':['leap'],'Bataklık kurdu':['leap'],'Kül kurdu':['leap'],'Gölge kurdu':['leap'],'Gök tazısı':['leap'],'Vaşak':['leap'],'Goblin':['leap'],'Ateş akrebi':['leap'],'Kartal':['leap'],
+  'Zehirli kurbağa':['leap','puddle'],'Yaban domuzu':['charge'],'Yaban öküzü':['charge','roar'],'Geyik':['charge'],'Muflon':['charge'],'Dağ keçisi':['charge'],'Yaban atı':['charge'],
+  'Kristal geyik':['charge','shards'],'Devriye robotu':['charge','bolt'],'Mağara ayısı':['roar','leap'],'Timsah':['charge','roar'],'Kristal golem':['roar','shards'],'Büyük golem':['roar','shards'],
+  'Lav golemi':['roar','breath'],'Hurda devi':['charge','roar'],'Gölge muhafız':['leap','roar'],'Gök bekçisi':['roar','bolt','shards'],'Kara ejder':['breath','roar'],'Kızıl ejder':['breath','leap','roar'],
+  'Yavru ejder':['breath','leap'],'Lav kertenkelesi':['breath'],'Kül cini':['breath'],'Kor yarasası':['breath'],'Kristal golemcik':['shards'],'Kristal yarasası':['shards'],'Kristal örümcek':['web','leap'],
+  'Engerek':['puddle'],'Işık engereği':['puddle','web'],'Goblin şamanı':['puddle'],'Lazer dronu':['bolt'],'Uzaylı dronu':['bolt'],'Fırtına kartalı':['bolt','leap']};
+const BIGK=new Set(['Mağara ayısı','Timsah','Yaban öküzü','Kara ejder','Kızıl ejder','Büyük golem','Lav golemi','Hurda devi','Gök bekçisi','Kristal golem','Gölge muhafız']);
+function movesOf(a){const b=a.base||a.k,L=(SP[b]||[]).slice();if(a.boss){if(L.indexOf('roar')<0)L.push('roar');if(!L.length)L.push('charge')}return L}
+window.__plMovesOf=k=>(SP[k]||[]).map(m=>MOVES[m].n);
+const COLC={n:'255,255,255',y:'255,206,40',r:'255,48,30'};
+function colOf(a,k){if(k==='roar'||k==='breath')return 'r';if(k==='leap'||k==='charge')return a.boss||BIGK.has(a.base||a.k)?'r':'y';return 'n'}
+const WIND={leap:.6,charge:.65,roar:.85,breath:.7,shards:.5,web:.5,bolt:.55,puddle:.6};
+const PS={stun:0,frz:0,slow:0};window.__plPS=()=>PS.stun>0||PS.frz>0;window.__plPSt=PS;
+const MS=[],POOLS=[];
+const PRt=()=>{const P=window.__plParry;return P?P.t:0};
+const parryHit=a=>{try{if(window.__plParryHit)window.__plParryHit(a)}catch(e){}};
+function rad(a){const D=ANIM[a.k]||{r:6};return (D.r||6)*(a.scale||1)}
+function headY(a){const D=ANIM[a.base||a.k]||ANIM[a.k]||{r:6};return a.y-((D.r||6)*2+12)*(a.scale||1)-(D.fly?12:0)}
+
+// a blow from a move lands on you: dash and grace pass through, a parry turns aside what is not red
+function impact(a,m,dmg,why,kb){if(dodge||pInv>0)return false;if(PRt()>0&&m.col!=='r'){parryHit(a);if(a&&a.mv)a.mv=null;return false}
+  pInv=.5;lastBitten=performance.now();stopGather();hurt(Math.max(1,Math.round(dmg)),why,true);
+  if(kb&&a){const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;for(let s=0;s<6;s++){const nx=player.x+dx/d*kb/6,ny=player.y+dy/d*kb/6;if(!blocked(nx,player.y))player.x=nx;if(!blocked(player.x,ny))player.y=ny}}return true}
+function dust(x,y,n,c){for(let i=0;i<n;i++){const t=i/n*6.283;parts.push({x:x+Math.cos(t)*4,y:y,vx:Math.cos(t)*(50+Math.random()*40),vy:Math.sin(t)*20-10,life:.45,c:c||(i%2?'#c8b898':'#8a7a60')})}}
+function end(a){a.mv=null;a.mvCd=(a.boss?2.6:3.6)+Math.random()*2.6;a.atk=Math.max(a.atk||0,.5)}
+function start(a,k){const m={k,t:0,ph:'w',col:colOf(a,k),T:WIND[k]+(colOf(a,k)==='r'?.15:0),tx:player.x,ty:player.y,sx:a.x,sy:a.y,h:0};
+  const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;m.ux=dx/d;m.uy=dy/d;m.R=k==='roar'?60+rad(a)*1.6:0;
+  a.mv=m;a.face=dx>0?1:-1;a.wind=0;a.lunge=null;try{sfx('growl')}catch(e){}}
+function landSpot(m){const L=Math.hypot(m.tx-m.sx,m.ty-m.sy);if(L>170){m.tx=m.sx+(m.tx-m.sx)/L*170;m.ty=m.sy+(m.ty-m.sy)/L*170}
+  for(let i=0;i<12&&(blocked(m.tx,m.ty)||!reachAt(m.tx,m.ty));i++){m.tx+=(m.sx-m.tx)*.2;m.ty+=(m.sy-m.ty)*.2}}
+function inCone(a,m,len,half){const dx=player.x-a.x,dy=player.y-6-(a.y-6),d=Math.hypot(dx,dy);if(d>len||d<1)return d<rad(a)+4;const c=(dx*m.ux+dy*m.uy)/d;return c>Math.cos(half)}
+function shoot(a,k,m){const D=ANIM[a.k],dmg=(D.dmg||10),n=k==='shards'?3:1,sp=k==='bolt'?240:k==='web'?170:200;
+  for(let i=0;i<n;i++){const ang=Math.atan2(player.y-8-(a.y-8),player.x-a.x)+(n>1?(i-1)*.22:0);MS.push({k,x:a.x,y:a.y-8,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp,life:1.6,dmg:dmg*(k==='shards'?.45:k==='bolt'?.55:.25),src:a,col:m.col})}
+  try{sfx(k==='bolt'?'magic':'swing')}catch(e){}}
+function step(a,dt){const m=a.mv,D=ANIM[a.k]||{},R=rad(a),nm=MOVES[m.k].n,why=`${a.k}: ${nm}`;m.t+=dt;
+  if(m.k==='leap'){if(m.ph==='w'){m.tx=player.x;m.ty=player.y;if(m.t>=m.T){m.ph='air';m.t=0;m.sx=a.x;m.sy=a.y;landSpot(m);try{sfx('swing')}catch(e){}}}
+    else{const k=Math.min(1,m.t/.42);a.x=m.sx+(m.tx-m.sx)*k;a.y=m.sy+(m.ty-m.sy)*k;m.h=Math.sin(Math.PI*k)*(24+R);a.face=m.tx>m.sx?1:-1;
+      if(k>=1){m.h=0;shake=Math.max(shake,.16+R/80);shakeP=Math.max(shakeP,2.5);dust(a.x,a.y,18);if(Math.hypot(player.x-a.x,player.y-a.y)<16+R)impact(a,m,(D.dmg||8)*1.3,why,18);end(a)}}}
+  else if(m.k==='charge'){if(m.ph==='w'){if(m.t<m.T*.6){const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;m.ux=dx/d;m.uy=dy/d;a.face=dx>0?1:-1}if(m.t>=m.T){m.ph='run';m.t=0;try{sfx('growl')}catch(e){}}}
+    else if(m.ph==='run'){const sp=a.boss?230:270,nx=a.x+m.ux*sp*dt,ny=a.y+m.uy*sp*dt;if(blocked(nx,ny)||!reachAt(nx,ny)){m.ph='rest';m.t=0;shake=Math.max(shake,.14);dust(a.x,a.y,10)}else{a.x=nx;a.y=ny}
+      if(Math.random()<.6)parts.push({x:a.x-m.ux*R,y:a.y,vx:-m.ux*30,vy:-8,life:.35,c:'#c8b898'});
+      if(!m.hit&&Math.hypot(player.x-a.x,player.y-a.y)<R+10){m.hit=true;if(impact(a,m,(D.dmg||8)*1.2,why,26))shake=Math.max(shake,.2)}
+      if(a.mv&&m.t>.6){m.ph='rest';m.t=0}}
+    else if(m.t>.55)end(a)}
+  else if(m.k==='roar'){if(m.ph==='w'){if(m.t>=m.T){m.ph='boom';m.t=0;shake=Math.max(shake,.3);shakeP=Math.max(shakeP,3.5);try{sfx('growl');sfx('bad')}catch(e){}
+      for(let i=0;i<28;i++){const t=i/28*6.283;parts.push({x:a.x+Math.cos(t)*8,y:a.y-4+Math.sin(t)*4,vx:Math.cos(t)*m.R*2.2,vy:Math.sin(t)*m.R*1.1,life:.4,c:i%2?'rgba(255,240,200,.9)':'rgba(255,120,80,.8)'})}
+      if(Math.hypot(player.x-a.x,player.y-a.y)<m.R&&impact(a,m,(D.dmg||8)*.5,why,0))PS.stun=Math.max(PS.stun,1.1)}}
+    else if(m.t>.35)end(a)}
+  else if(m.k==='breath'){if(m.ph==='w'){if(m.t<m.T*.7){const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;m.ux=dx/d;m.uy=dy/d;a.face=dx>0?1:-1}if(m.t>=m.T){m.ph='fire';m.t=0;m.tick=0}}
+    else{m.tick-=dt;const L=110*(a.scale>1?1.25:1);for(let i=0;i<4;i++){const s=.3+Math.random()*.7,an=Math.atan2(m.uy,m.ux)+(Math.random()-.5)*.9;parts.push({x:a.x+m.ux*R,y:a.y-8,vx:Math.cos(an)*L*2*s,vy:Math.sin(an)*L*2*s,life:.35,c:Math.random()<.4?'#ffd060':'#ff6a2a'})}
+      if(m.tick<=0){m.tick=.14;if(inCone(a,m,L,.5)&&!dodge){const ok=pInv<=0;if(ok){pInv=.12;lastBitten=performance.now();hurt(Math.max(1,Math.round((D.dmg||10)*.2)),why,true)}try{addFx('yanık',Math.max(2,(D.dmg||10)*.05),3)}catch(e){}}}
+      if(m.t>.75)end(a)}}
+  else if(m.k==='shards'||m.k==='web'||m.k==='bolt'){if(m.t>=m.T){shoot(a,m.k,m);end(a)}}
+  else if(m.k==='puddle'){if(m.ph==='w'){m.tx=player.x;m.ty=player.y;if(m.t>=m.T){MS.push({k:'lob',x0:a.x,y0:a.y-8,x1:m.tx,y1:m.ty,t:0,T:.7,src:a,dmg:(D.dmg||8)});try{sfx('swing')}catch(e){}end(a)}}}}
+
+// projectiles and pools
+function tickMS(dt){for(let i=MS.length-1;i>=0;i--){const s=MS[i];
+    if(s.k==='lob'){s.t+=dt;const k=Math.min(1,s.t/s.T);s.x=s.x0+(s.x1-s.x0)*k;s.y=s.y0+(s.y1-s.y0)*k-Math.sin(Math.PI*k)*30;if(k>=1){POOLS.push({x:s.x1,y:s.y1,r:24,t:5,tick:0,src:s.src,dmg:s.dmg});dust(s.x1,s.y1,12,'#9ad84a');MS.splice(i,1)}continue}
+    s.life-=dt;s.x+=s.vx*dt;s.y+=s.vy*dt;if(Math.random()<.5)parts.push({x:s.x,y:s.y,vx:0,vy:0,life:.2,c:s.k==='shards'?'#c8f0ff':s.k==='bolt'?'#fff27a':'#e8e8e0'});
+    if(s.life<=0||blocked(s.x,s.y+8)){MS.splice(i,1);continue}
+    if(Math.hypot(player.x-s.x,player.y-8-s.y)<8&&!dodge&&pInv<=0){MS.splice(i,1);if(PRt()>0){parryHit(null);continue}
+      pInv=.3;lastBitten=performance.now();stopGather();const why=`${s.src?s.src.k:'Canavar'}: ${MOVES[s.k].n}`;hurt(Math.max(1,Math.round(s.dmg)),why,true);
+      if(s.k==='shards')PS.frz=Math.max(PS.frz,1.3);else if(s.k==='web')PS.slow=Math.max(PS.slow,3);else if(s.k==='bolt')PS.stun=Math.max(PS.stun,.8)}}
+  for(let i=POOLS.length-1;i>=0;i--){const p=POOLS[i];p.t-=dt;if(p.t<=0||(p.src&&animals.indexOf(p.src)<0)){POOLS.splice(i,1);continue}
+    if(Math.random()<.3)parts.push({x:p.x+(Math.random()-.5)*p.r*1.6,y:p.y+(Math.random()-.5)*p.r*.7,vx:0,vy:-8,life:.5,c:'rgba(160,230,90,.8)'});
+    p.tick-=dt;if(p.tick<=0&&Math.hypot((player.x-p.x)/p.r,(player.y-p.y)/(p.r*.6))<1){p.tick=.5;if(!dodge){hurt(Math.max(1,Math.round(p.dmg*.12)),'Zehir gölü',true);try{addFx('zehir',Math.max(1.5,p.dmg*.04),3)}catch(e){}}}}
+  for(let i=MS.length-1;i>=0;i--)if(MS[i].src&&animals.indexOf(MS[i].src)<0&&MS[i].k!=='lob')MS.splice(i,1)}
+
+// the creatures' turn: a creature in a move does only its move
+{const _ta=tickAnimals;tickAnimals=function(dt){const keep=new Map();for(const a of animals)if(a.mv)keep.set(a,[a.x,a.y]);const r=_ta.apply(this,arguments);
+  if(frozenNow())return r;
+  for(const a of animals){const D=ANIM[a.k];if(!D)continue;
+    if(a.stun>0||a.frz>0){if(a.mv){a.mv=null;a.mvCd=2}continue}
+    if(a.mv){const p=keep.get(a);if(p&&!a.kb){a.x=p[0];a.y=p[1]}a.wind=0;a.lunge=null;a.p4slam=null;a.atkT=null;a._wOn=false;a.atk=Math.max(a.atk||0,.3);try{step(a,dt)}catch(e){a.mv=null}continue}
+    const L=movesOf(a);if(!L.length||D.temper==='zararsız')continue;
+    if(a.mvCd==null)a.mvCd=1.2+Math.random()*2;a.mvCd-=dt;
+    if(a.mvCd>0||a.st!=='chase'||a.wind>0||a.lunge||a.p4slam||a.kb)continue;
+    const d=Math.hypot(player.x-a.x,player.y-a.y),ok=L.filter(k=>d>=MOVES[k].r[0]&&d<=MOVES[k].r[1]);
+    if(ok.length&&Math.random()<dt*1.4)start(a,ok[Math.floor(Math.random()*ok.length)])}
+  try{tickMS(dt)}catch(e){}
+  return r}}
+
+// you, stunned, frozen or slowed
+let lastN=0;
+{const _fb=frameBody;frameBody=function(){const t=performance.now(),dt=lastN?Math.min(.05,(t-lastN)/1000):0;lastN=t;const bx=player.x,by=player.y;const r=_fb.apply(this,arguments);
+  if(!frozenNow()){if(PS.stun>0||PS.frz>0){player.x=bx;player.y=by;goal=null}else if(PS.slow>0){player.x=bx+(player.x-bx)*.45;player.y=by+(player.y-by)*.45}
+    PS.stun=Math.max(0,PS.stun-dt);PS.frz=Math.max(0,PS.frz-dt);PS.slow=Math.max(0,PS.slow-dt)}return r}}
+{const _at=attack;attack=function(){if(PS.stun>0||PS.frz>0)return;return _at.apply(this,arguments)}}
+{const _dd=doDodge;doDodge=function(){if(PS.stun>0||PS.frz>0)return;return _dd.apply(this,arguments)}}
+{const _rs=resetState;resetState=function(){const r=_rs.apply(this,arguments);PS.stun=PS.frz=PS.slow=0;MS.length=0;POOLS.length=0;return r}}
+
+// drawing: the marks on the ground, the creature in its move, projectiles, pools and your states
+function ell(x,y,rx,ry,fill,stroke,lw){ctx.beginPath();ctx.ellipse(x,y,Math.max(.1,rx),Math.max(.1,ry),0,0,Math.PI*2);if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=lw||1;ctx.stroke()}}
+function tele(a,time){const m=a.mv,C=COLC[m.col],k=m.ph==='w'?Math.min(1,m.t/m.T):1,R=rad(a),pul=(.55+.4*Math.sin(time*30)).toFixed(2);
+  if(m.k==='leap'){const rr=16+R;ell(m.tx,m.ty+2,rr*k,rr*.5*k,`rgba(${C},${(.12+.25*k).toFixed(2)})`);ell(m.tx,m.ty+2,rr,rr*.5,null,`rgba(${C},${pul})`,m.col==='r'?1.6:1)}
+  else if(m.k==='charge'&&m.ph==='w'){const L=150,w=R+5,px_=-m.uy*w,py_=m.ux*w,x0=a.x,y0=a.y,x1=a.x+m.ux*L*k,y1=a.y+m.uy*L*k;
+    ctx.fillStyle=`rgba(${C},${(.12+.22*k).toFixed(2)})`;ctx.beginPath();ctx.moveTo(x0+px_,y0+py_);ctx.lineTo(x1+px_,y1+py_);ctx.lineTo(x1-px_,y1-py_);ctx.lineTo(x0-px_,y0-py_);ctx.closePath();ctx.fill();
+    ctx.strokeStyle=`rgba(${C},${pul})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(a.x+px_,a.y+py_);ctx.lineTo(a.x+m.ux*L+px_,a.y+m.uy*L+py_);ctx.moveTo(a.x-px_,a.y-py_);ctx.lineTo(a.x+m.ux*L-px_,a.y+m.uy*L-py_);ctx.stroke()}
+  else if(m.k==='roar'){if(m.ph==='w'){ell(a.x,a.y,m.R*k,m.R*.55*k,`rgba(${C},${(.1+.22*k).toFixed(2)})`);ell(a.x,a.y,m.R,m.R*.55,null,`rgba(${C},${pul})`,1.6)}
+    else{const q=Math.min(1,m.t/.3);ell(a.x,a.y,m.R*q,m.R*.55*q,null,`rgba(255,240,210,${(1-q).toFixed(2)})`,3)}}
+  else if(m.k==='breath'){const L=110*(a.scale>1?1.25:1),an=Math.atan2(m.uy,m.ux);ctx.beginPath();ctx.moveTo(a.x,a.y-4);ctx.arc(a.x,a.y-4,m.ph==='w'?L*k:L,an-.5,an+.5);ctx.closePath();
+    ctx.fillStyle=m.ph==='w'?`rgba(${C},${(.1+.2*k).toFixed(2)})`:`rgba(255,${120+Math.floor(Math.random()*80)},40,.35)`;ctx.fill();if(m.ph==='w'){ctx.strokeStyle=`rgba(${C},${pul})`;ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(a.x,a.y-4);ctx.arc(a.x,a.y-4,L,an-.5,an+.5);ctx.closePath();ctx.stroke()}}
+  else if(m.k==='puddle'){ell(m.tx,m.ty,24*k,13*k,'rgba(150,220,80,.18)','rgba(170,240,90,.8)',1)}
+  else{ctx.strokeStyle=`rgba(${m.k==='shards'?'180,230,255':m.k==='bolt'?'255,240,120':'235,235,225'},${pul})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(a.x,a.y-8);ctx.lineTo(player.x,player.y-8);ctx.stroke();
+    ell(a.x+(a.face||1)*R*.6,a.y-8,3+3*k,3+3*k,m.k==='shards'?'rgba(200,240,255,.8)':m.k==='bolt'?'rgba(255,240,120,.85)':'rgba(240,240,230,.8)')}}
+{const _da=drawAnimal;drawAnimal=function(a,time){if(!a||!a.mv)return _da.apply(this,arguments);const m=a.mv;try{tele(a,time)}catch(e){}
+  let ox=0,oy=0;if(m.ph==='w'){ox=(Math.random()-.5)*(m.col==='r'?1.6:1);oy=m.k==='leap'?1:0}if(m.k==='leap'&&m.ph==='air'){oy=-m.h;ell(a.x,a.y+1,rad(a)+3,2.6,'rgba(0,0,0,.28)')}
+  if(m.k==='charge'&&m.ph==='rest'&&Math.random()<.2)parts.push({x:a.x,y:headY(a)+6,vx:0,vy:-10,life:.4,c:'rgba(255,255,255,.7)'});
+  const m0=a.mad;a.mad=false;ctx.save();ctx.translate(Math.round(ox),Math.round(oy));let r;try{r=_da.apply(this,arguments)}finally{ctx.restore();a.mad=m0}
+  if(m.ph==='w')try{const x=Math.round(a.x),y=Math.round(headY(a)+oy),c=m.col==='r'?'#ff3a2a':m.col==='y'?'#ffd028':'#ffffff',n=m.col==='r'?2:1;for(let i=0;i<n;i++){const o=n>1?(i?3:-3):0;px(x-2+o,y-1,5,11,'#11170f');px(x-1+o,y,3,6,c);px(x-1+o,y+7,3,2,c)}}catch(e){}
+  return r}}
+{const _dg=drawGraves;drawGraves=function(){try{for(const p of POOLS){const a=Math.min(1,p.t);ell(p.x,p.y,p.r,p.r*.55,`rgba(110,190,50,${(.38*a).toFixed(2)})`,`rgba(170,240,90,${(.7*a).toFixed(2)})`,1);ell(p.x-5,p.y-2,5,2,`rgba(200,255,140,${(.4*a).toFixed(2)})`)}}catch(e){}return _dg.apply(this,arguments)}}
+{const _ds=drawShots;drawShots=function(){const r=_ds.apply(this,arguments);try{const t=performance.now()/1000;
+  for(const s of MS){if(s.k==='lob'){ell(s.x1,s.y1,3,1.5,'rgba(0,0,0,.25)');px(s.x-3,s.y-3,6,6,'#6aa82a');px(s.x-2,s.y-2,3,3,'#b8f070');continue}
+    if(s.k==='shards'){ctx.save();ctx.translate(s.x,s.y);ctx.rotate(Math.atan2(s.vy,s.vx));px(-4,-1,8,3,'#a8e0ff');px(-1,-1,5,1,'#ffffff');ctx.restore()}
+    else if(s.k==='bolt'){px(s.x-3,s.y-3,6,6,'#fff27a');px(s.x-1,s.y-1,2,2,'#ffffff');if(Math.random()<.5)px(s.x+(Math.random()-.5)*10,s.y+(Math.random()-.5)*10,2,2,'#ffe040')}
+    else{px(s.x-3,s.y-3,6,6,'rgba(240,240,230,.85)');px(s.x-4,s.y,8,1,'#ffffff');px(s.x,s.y-4,1,8,'#ffffff')}}
+  const x=Math.round(player.x),y=Math.round(player.y);
+  if(PS.frz>0){ctx.save();ctx.globalAlpha=.5;ctx.fillStyle='#a8e0ff';ctx.fillRect(x-8,y-22,16,24);ctx.globalAlpha=.9;ctx.fillStyle='#ffffff';ctx.fillRect(x-6,y-20,2,5);ctx.fillRect(x+3,y-10,2,3);ctx.restore()}
+  if(PS.stun>0){for(let i=0;i<3;i++){const a=t*6+i*2.094;px(x+Math.cos(a)*7-1,y-27+Math.sin(a)*2.5,3,3,i%2?'#ffe070':'#fff8c8')}}
+  if(PS.slow>0){ctx.strokeStyle='rgba(235,235,225,.7)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x-7,y-14);ctx.lineTo(x+7,y-2);ctx.moveTo(x+7,y-14);ctx.lineTo(x-7,y-2);ctx.moveTo(x-8,y-8);ctx.lineTo(x+8,y-8);ctx.stroke()}}catch(e){}return r}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v111-moves: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

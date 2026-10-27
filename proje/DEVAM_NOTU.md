@@ -761,3 +761,17 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Savuşturma: hasar yok, canavar geri savrulur ve sersemler (`a.stun` 1,6 sn, reis 1,1 sn; başının üstünde dönen yıldızlar; yerinden kımıldamaz, hazırlık/hamle/yere vurma iptal), kısa duraklama, çınlama sesi, kıvılcım, +6 enerji, "Savuşturuldu!". Fırlatılanlar (diken, tükürük, ateş) da pencerede savuşturulur. Kırmızı vuruş ve reisin yere vurması savuşturulamaz.
 - Boğaç'ın isteği: oyuncu ne zaman savuşturacağını, atılacağını, vuracağını kendisi bulur; açıklayıcı ipucu ya da "Erken" yazısı yok.
 - Menüde "Versiyon 110". chk.js 0 hata.
+
+## v111 (27 Ekim 2026) — Canavarların özel hamleleri; Arena yalnız bilgisayarda
+- `<script id="v111-moves">` (en sonda). Türlere göre özel hamleler (`SP`), kovalarken arada bir sıradan ısırık yerine biri başlar (`mvCd` 3,6–6,2 sn, reiste 2,6–5,2; ilk 1,2–3,2 sn). Her hamle önce yerde işaretlenir ve başında v110 renkli "!" çıkar:
+  - **Sıçrama** (sarı; iri türlerde/reiste kırmızı): çömelir (işaret seni izler), sonra kilitlenen yere 0,42 sn'de atlar (gölge yerde kalır), inişte çevresine vurur (×1,3) ve iter.
+  - **Hücum** (sarı/kırmızı): yönünü bir şeritle gösterir, sonra o hatta koşar (çarpınca ×1,2 ve uzağa iter), duvara ya da engele çarpınca durur; ardından 0,55 sn yorgun bekler.
+  - **Sersemleten kükreme** (kırmızı): çevresinde büyüyen halka; patlayınca içindeysen hasar (×0,5) ve 1,1 sn sersemlersin.
+  - **Alev püskürtme** (kırmızı): koni; 0,75 sn yanar, içindeysen 0,14 sn'de bir hasar ve yanık.
+  - **Buz parçaları** (beyaz, 3 parça): değerse 1,3 sn donarsın. **Ağ** (beyaz): 3 sn yavaşlarsın (%45 hız). **Şok** (beyaz): 0,8 sn sersemlersin.
+  - **Zehir gölü**: üstüne fırlatılan zehir düştüğü yerde 5 sn kalan bir gölcük olur; içinde zehir ve hasar.
+  - Reislerin hepsinde kükreme de var. Atılma ve dokunulmazlık hepsinden korur; savuşturma beyaz ve sarıyı çevirir (fırlatılanlar dahil), kırmızıyı çeviremez. Savuşturulan canavar sersemler ve hamlesi biter.
+- Oyuncu durumları (`PS`, `window.__plPS`): sersem ve donmuş iken yürüyemez, vuramaz, atılamaz, savuşturamaz (yıldızlar / buz kalıbı); yavaşken ağ çizgileri. `resetState` sıfırlar.
+- v110'dan `window.__plParryHit` dışa açıldı; arena kartlarında canlının hamleleri etiket olarak görünür (`window.__plMovesOf`).
+- Arena düğmesi yalnızca fare + üzerine gelme olan cihazlarda (`(hover:hover) and (pointer:fine)`). Telefonlar şimdilik ayrı depodaki v104'ü oynar: https://github.com/bogacavdar/purple-light-phone (aynı köken: bogacavdar.github.io, kayıtlar ortak).
+- Menüde "Versiyon 111". chk.js 0 hata.
