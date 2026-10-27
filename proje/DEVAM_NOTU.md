@@ -1105,3 +1105,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.65 (27 Ekim 2026)
 - Dersten uzaklaşınca artık hemen kapanmaz: Börü'den 280 px'ten uzağa gidince 10 saniyelik geri sayım başlar (uyarı notu ve her saniye karakterin üstünde "Derse dön: N"); 240 px'e dönersen sayım durur ("Derse döndün, devam"). Süre dolarsa ders iptal olur, ücret geri verilir. Diyalog/menü açıkken sayım ilerlemez.
 - Menüde "Versiyon 1.65". chk.js 0 hata; oyun hatasız açılıyor.
+
+## v1.66 (27 Ekim 2026)
+- Uyarıya rağmen uzaklaşmaya devam edersen (Börü'den 440 px) ders geri sayımı beklemeden iptal olur; 280–440 px arasında 10 sn geri sayım sürer. Uyarı metni bunu söyler.
+- Menüde "Versiyon 1.66". chk.js 0 hata.
