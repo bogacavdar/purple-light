@@ -390,6 +390,7 @@ body #xpdock{padding-right:calc(env(safe-area-inset-right,0px) + 290px)}
 #hotbar .hs{position:relative;width:46px;height:46px;padding:0;background:#1c2419;border:2px solid #3d4a33;cursor:pointer;display:flex;align-items:center;justify-content:center}
 #hotbar .hs img{width:32px;height:32px;image-rendering:pixelated}
 #hotbar .hs.empty{opacity:.55}
+#cbody .rr:has([data-hb]){flex:0 0 auto}#cbody [data-hb]{width:128px;min-width:128px;white-space:nowrap;font-size:14px;line-height:1.2;padding:8px 6px;text-align:center;overflow:hidden;text-overflow:ellipsis}   /* v1.57: Rıza's price buttons all the same size, one line */
 #hotbar .hs.over{border-color:#fff;background:#3d4d2c}
 #hotbar .hs.on{border-color:var(--accent);background:#3d4d2c;box-shadow:0 0 0 2px #11170f,0 0 12px rgba(242,184,75,.55);transform:translateY(-3px)}
 #hotbar .hs kbd{position:absolute;left:2px;top:0;font-family:inherit;font-size:10px;color:var(--ink-dim)}
@@ -1334,7 +1335,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.56</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.57</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -5448,7 +5449,7 @@ function carpOK(H){if(lvl<H.lv)return `Seviye ${H.lv} gerekli`;if(H.fixed&&ownsH
   if(H.fixed&&!ekinPlotSpot())return 'Arsa dolu';return ''}
 function renderCarp(){
   cbody.innerHTML=`<p class="note">Rıza, istediğin evi sikke karşılığı yapar; aldığını envanterden bir alet yuvasına koyup seçer, istediğin yere kurarsın. <b>Yaprak barınağı</b> dışındaki evlerde uyumak için içine bir <b>yatak</b> koymalısın (yatağı Usta Kemal yapar). <b>Taş ev</b> ise Ekin'in kampının yanındaki arsaya kurulur.</p><ul class="book">`+
-    HOUSES.map(H=>{const why=carpOK(H),own=H.fixed?ownsHouse(H.n):(inv[H.n]||0);return `<li${lvl<H.lv?' style="opacity:.55"':''}><span class="bn"><img src="${icon(H.n)}" alt=""><span><b>${esc(H.n)}</b>${own&&!H.fixed?` <small style="color:var(--accent)">· sende ${own}</small>`:''}<br><small>${esc(H.d)}${H.mat?` · ${H.mat.map(([n,q])=>`<span style="color:${(inv[n]||0)>=q?'#8fd46b':'#ff8a6a'}">${q} ${esc(n)} (${inv[n]||0})</span>`).join(', ')}`:''}${lvl<H.lv?` · <b style="color:#ff8a6a">Seviye ${H.lv}</b>`:''}</small></span></span><span class="rr"><button class="mk" data-hb="${esc(H.n)}" type="button"${why?' disabled title="'+esc(why)+'"':''}>${H.fixed&&ownsHouse(H.n)?'Senin':`Yaptır · ${houseCost(H)}`}</button></span></li>`}).join('')+'</ul>'}
+    HOUSES.map(H=>{const why=carpOK(H),own=H.fixed?ownsHouse(H.n):(inv[H.n]||0);return `<li${lvl<H.lv?' style="opacity:.55"':''}><span class="bn"><img src="${icon(H.n)}" alt=""><span><b>${esc(H.n)}</b>${own&&!H.fixed?` <small style="color:var(--accent)">· sende ${own}</small>`:''}<br><small>${esc(H.d)}${H.mat?` · ${H.mat.map(([n,q])=>`<span style="color:${(inv[n]||0)>=q?'#8fd46b':'#ff8a6a'}">${q} ${esc(n)} (${inv[n]||0})</span>`).join(', ')}`:''}${lvl<H.lv?` · <b style="color:#ff8a6a">Seviye ${H.lv}</b>`:''}</small></span></span><span class="rr"><button class="mk" data-hb="${esc(H.n)}" type="button"${why?' disabled title="'+esc(why)+'"':''}>${H.fixed&&ownsHouse(H.n)?'Senin':`Yaptır · ${houseCost(H).toLocaleString('tr-TR')}`}</button></span></li>`}).join('')+'</ul>'}
 cbody.addEventListener('click',e=>{if(mode!=='carp')return;const b=e.target.closest('[data-hb]');if(!b||b.disabled)return;const H=HOUSES.find(x=>x.n===b.dataset.hb);if(!H||carpOK(H))return;
   if(!plInf())coins-=houseCost(H);if(H.mat)for(const [n,q] of H.mat)inv[n]-=q;sfx('coin');
   if(H.fixed){const pl=ekinPlotSpot();placed.push({n:H.n,tx:pl.tx,ty:pl.ty,rot:0,fixed:true});ekinPlot=null;toast(`${H.n} Ekin'in kampının yanında yükseldi! İçine bir yatak koy.`);guideTo('ekin',10)}
@@ -7263,7 +7264,8 @@ const TRAP_MAX=6;
 function trapNear(r){let b=null,bd=r;for(const t of traps){const d=Math.hypot(t.x-player.x,t.y-player.y);if(d<bd){bd=d;b=t}}return b}
 function setTrap(k,at){if(traps.length>=TRAP_MAX){toast(`En fazla ${TRAP_MAX} tuzak kurabilirsin. Birini topla.`,true);sfx('bad');return}
   if(!(inv[k]>0))return;const d=nn(toolDur[k],GT[k].dur);if(d<=0){toast(`${k} köreldi; önce Dursun'da yenile.`,true);sfx('bad');return}
-  const x=at?at.x:player.x+player.face.x*10,y=at?at.y:player.y+player.face.y*8+4;
+  let x=at?at.x:player.x+player.face.x*10,y=at?at.y:player.y+player.face.y*8+4;
+  if(k==='Balık kapanı'){const fa=Math.atan2(y-player.y,x-player.x);let bp=null;for(let r=4;r<=34&&!bp;r+=1)for(let j=0;j<24;j++){const an=fa+(j%2?1:-1)*Math.ceil(j/2)*Math.PI/12,qx=player.x+Math.cos(an)*r,qy=player.y+Math.sin(an)*r;if(isWet(tileAt(qx,qy))){bp={x:qx+Math.cos(an)*3,y:qy+Math.sin(an)*3};break}}if(bp){x=bp.x;y=bp.y}}   // v1.57: the fish trap goes in right at the water's edge, easy to reach
   traps.push({x:Math.round(x),y:Math.round(y),k,t:trapTime(k),got:null,dur:d});inv[k]--;if(!(inv[k]>0)){delete toolDur[k];hand=-1}hotK='';renderInv();sfx('craft');
   toast(k==='Tuzak'?'Tuzak kuruldu. Bir süre sonra gel bak; tavşan, keklik ya da sincap düşebilir.':'Balık kapanı suya bırakıldı. Arada bir gelip içine bak.');
   v46Hint('trapMap',()=>setTimeout(()=>toast('Kurduğun tuzaklar haritada küçük kahverengi karelerle görünür.'),1600))}
@@ -13872,6 +13874,21 @@ document.addEventListener('pointerdown',e=>{const i=$('csrch');if(i&&document.ac
    b.hidden=!on};
  setInterval(()=>{try{if(craftOpen&&mode==='map')mb();if(gping&&gping.w==='__map'&&GUIDE.__map&&!onTitle){const o=GUIDE.__map();if(o&&Math.hypot(o.x-player.x,o.y-player.y)<26){gping=null;window.__plPinK=null;toast(`Hedefe vardın: ${o.n}`)}}}catch(e){}},400)}
 }).toString()+')()')}catch(e){try{window.__hamErr('v156: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v157">
+// v1.57: on the big map, right-click a mark or the arrow's target to remove it; the hover label says so
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+function hitAt(bc,e){const r=bc.getBoundingClientRect(),v=mapView(bc.width,bc.height),X=(e.clientX-r.left)*bc.width/r.width,Y=(e.clientY-r.top)*bc.height/r.height,sx=bc.width/v.vwT,sy=bc.height/v.vhT,R=Math.max(14,bc.width/r.width*14);
+  let best=null,bd=R;for(const m of marks){const mx=(m.x/T-v.ox)*sx,my=(m.y/T-v.oy)*sy,d=Math.hypot(mx-X,my-Y);if(d<bd){bd=d;best={k:'mark',m}}}
+  try{if(gping&&gping.w==='__map'&&GUIDE.__map&&performance.now()<gping.until){const o=GUIDE.__map(),gx=(o.x/T-v.ox)*sx,gy=(o.y/T-v.oy)*sy,d=Math.hypot(gx-X,gy-Y);if(d<bd){bd=d;best={k:'pin',o}}}}catch(x){}
+  return best}
+const redraw=bc=>{try{drawMap(bc.getContext('2d'),bc.width,bc.height,true)}catch(x){}};
+document.addEventListener('contextmenu',e=>{const bc=e.target&&e.target.id==='bigmap'?e.target:null;if(!bc)return;e.preventDefault();const h=hitAt(bc,e);if(!h){toast('Sağ tık: bir işaretin ya da hedefin üstünde kaldırır');return}
+  if(h.k==='mark'){const i=marks.indexOf(h.m);if(i>=0)marks.splice(i,1);if(window.__plPinK==='mark:'+h.m.x+','+h.m.y){gping=null;window.__plPinK=null}toast(`İşaret kaldırıldı: ${h.m.t}`)}
+  else{gping=null;window.__plPinK=null;toast('Hedef kaldırıldı')}sfx('pick');redraw(bc);const mt=$('v65mt');if(mt)mt.hidden=true});
+document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bigmap'?e.target:null;if(!bc||e.pointerType!=='mouse')return;const mt=$('v65mt');if(!mt)return;const h=hitAt(bc,e);if(!h)return;
+  mt.innerHTML=h.k==='mark'?`📍 <b>${esc(h.m.t)}</b><br><small>Sağ tık: kaldır</small>`:`Hedef: <b>${esc(h.o.n||'')}</b><br><small>Sağ tık: kaldır</small>`;mt.style.left=(e.clientX+12)+'px';mt.style.top=(e.clientY+12)+'px';mt.style.borderColor='#ffd27a';mt.hidden=false});
+}).toString()+')()')}catch(e){try{window.__hamErr('v157: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

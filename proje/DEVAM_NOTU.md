@@ -1061,3 +1061,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Hile panelindeki arama kutusu dışarı tıklanınca bırakılır (odak kalkar).
 - **Harita hedefi:** bir kişinin simgesine dokununca konan hedef artık 60 sn değil, varana ya da kaldırılana kadar durur; aynı kişiye yine dokununca, haritadaki ✕ düğmesiyle ya da hedefe varınca (26 px) kalkar. Kendi işaretlerinde "Yol göster" düğmesi: işareti kaydedip ok ile oraya yönlendirir; işaret silinince hedef de kalkar.
 - Menüde "Versiyon 1.56". chk.js 0 hata; oyunda kapan nehir kıyısında yana bakarken suya bırakıldı ve hemen ardından E hedefi kapan oldu.
+
+## v1.57 (27 Ekim 2026)
+- Balık kapanı suyun en yakın kenarına konur: oyuncunun çevresinde (önce bakılan/tıklanan yön) 34 px içindeki ilk su noktası bulunur, 3 px içeri bırakılır (eskiden 26 px ötedeki su noktasına gidiyordu). Denemede kıyıdan 10 px.
+- Büyük haritada **sağ tık**: bir işaretin (📍) ya da okun hedefinin üstünde kaldırır; üstüne gelince etikette "Sağ tık: kaldır" yazar (`<script id="v157">`). Boş yere sağ tıklayınca nasıl kullanılacağını söyler.
+- Rıza'nın ev/barınak listesinde fiyat düğmeleri hepsi aynı boyda (128 px), tek satır, binlik ayraçlı ("Yaptır · 2.500").
+- Menüde "Versiyon 1.57". chk.js 0 hata.
