@@ -1332,7 +1332,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 118</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 119</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -12722,15 +12722,27 @@ window.__plParryHit=parried;
 // melee: the moment the bite lands
 {const _bh=biteHit;biteHit=function(a,D,dx,dy,d){const ty=a&&a.atkT||'n';
   if(PR.t>0&&!dodge&&pInv<=0){if(ty!=='r'){parried(a);return}}
+  window.__plHitCol=ty;
   if(ty!=='n'&&D){const D2=Object.assign({},D,{dmg:Math.round((D.dmg||0)*MUL[ty])});return _bh.call(this,a,D2,dx,dy,d)}
   return _bh.apply(this,arguments)}}
+// v119: the shield (right button held): blows are softened, not turned aside. White ×0,35, yellow ×0,45, red ×0,7 of the damage.
+// Every blocked blow costs breath (6 + 40 % of what is left of it); out of breath the shield drops and you reel for a moment.
+const BLK={n:.35,y:.45,r:.7};
+function blockFx(){PR.bf=.15;try{audio.synth((ac,out)=>{const t=ac.currentTime+.005,o=ac.createOscillator(),g=ac.createGain();o.type='square';o.frequency.setValueAtTime(520,t);o.frequency.exponentialRampToValueAtTime(260,t+.12);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.12,t+.004);g.gain.exponentialRampToValueAtTime(.0005,t+.15);o.connect(g);g.connect(out);o.start(t);o.stop(t+.17)})}catch(e){}
+  const a=aimA(),x=player.x+Math.cos(a)*9,y=player.y-7+Math.sin(a)*6;for(let i=0;i<8;i++){const t=a+(Math.random()-.5)*1.6,s=30+Math.random()*50;parts.push({x,y,vx:Math.cos(t)*s,vy:Math.sin(t)*s-10,life:.22,c:i%2?'#e8e8f0':'#fff2b0'})}}
+{const _h=hurt;hurt=function(n,why,phys){const col=window.__plHitCol||'n';window.__plHitCol=null;
+  if(PR.hold&&phys&&!(PR.brk>0)){n=n*(BLK[col]||BLK.n);blockFx();
+    if(!window.__plArena){st-=6+n*.4;stRest=0;vitK='';if(st<=0){st=0;PR.hold=false;PR.brk=1;try{const P=window.__plPSt;if(P)P.stun=Math.max(P.stun,.5)}catch(e){}floatText('Kalkan düştü!','#ff9a6a');try{sfx('bad')}catch(e){}}}}
+  return _h.call(this,n,why,phys)}}
+{const _at=attack;attack=function(){if(PR.hold)return;return _at.apply(this,arguments)}}
 // thrown things: turned aside inside the window
 {const _ts=tickShots;tickShots=function(dt){if(PR.t>0&&!dodge&&pInv<=0){for(let i=shots.length-1;i>=0;i--){const s=shots[i];if(s&&Math.hypot(player.x-s.x,player.y-8-s.y)<13){shots.splice(i,1);parried(null)}}}return _ts.apply(this,arguments)}}
 
 // ------------------------------------------------------------------ colours of the wind-up, stun
 {const _ta=tickAnimals;tickAnimals=function(dt){const keep=new Map();for(const a of animals)if(a.stun>0)keep.set(a,[a.x,a.y]);const r=_ta.apply(this,arguments);
   {const was=PR.t>0;PR.t=Math.max(0,PR.t-dt);if(PR.t<=0)PR.hit=false}
-  PR.cd=Math.max(0,PR.cd-dt);PR.flash=Math.max(0,PR.flash-dt);
+  PR.cd=Math.max(0,PR.cd-dt);PR.flash=Math.max(0,PR.flash-dt);PR.bf=Math.max(0,(PR.bf||0)-dt);PR.brk=Math.max(0,(PR.brk||0)-dt);
+  if(PR.hold){try{const P=window.__plPSt;if(P)P.slow=Math.max(P.slow,.06)}catch(e){}}
   for(const a of animals){
     if(a.stun>0){a.stun-=dt;const p=keep.get(a);if(p&&!a.kb){a.x=p[0];a.y=p[1]}a.wind=0;a.lunge=null;a.p4slam=null;a.atkT=null;a._wOn=false;a.atk=Math.max(a.atk,.4);
       if(a.stun<=0)a.stun=0;continue}
@@ -12754,15 +12766,24 @@ function headY(a){const D=ANIM[a.base||a.k]||ANIM[a.k]||{r:6};return a.y-((D.r||
   return r}}
 
 // ------------------------------------------------------------------ the guard: a ring of light around you while the window is open
-{const _ds=drawShots;drawShots=function(){const r=_ds.apply(this,arguments);try{if(PR.t>0||PR.flash>0){const k=PR.flash>0?PR.flash/.25:PR.t/WIN,rr=PR.flash>0?14+(1-k)*10:11;
-    ctx.strokeStyle=`rgba(${PR.flash>0?'255,240,170':'154,216,255'},${(.35+.6*k).toFixed(2)})`;ctx.lineWidth=PR.flash>0?2:1.5;ctx.beginPath();ctx.ellipse(player.x,player.y-6,rr,rr*.8,0,0,Math.PI*2);ctx.stroke();
-    if(PR.t>0){const f=player.face||{x:0,y:1},ang=Math.atan2(f.y,f.x||(f.y?0:1));ctx.strokeStyle='rgba(230,245,255,.9)';ctx.lineWidth=2;ctx.beginPath();ctx.arc(player.x,player.y-6,rr+1,ang-.9,ang+.9);ctx.stroke()}}}catch(e){}return r}}
+// v119: the parry window is not drawn any more (you find the timing yourself); a parry that worked flashes; the held shield is drawn
+function aimA(){const C=window.__plCombo;if(C&&(C.mx||C.my)&&!TOUCH)return Math.atan2(C.my-(player.y-6),C.mx-player.x);const f=player.face||{x:0,y:1};return Math.atan2(f.y,f.x||(f.y?0:1))}
+function drawShield(){const t=performance.now()/1000,up=Math.min(1,(t-PR.h0)/.08),a=aimA(),d=6+3*up,x=Math.round(player.x+Math.cos(a)*d),y=Math.round(player.y-7+Math.sin(a)*d*.7),back=Math.sin(a)<-.5;
+  ctx.save();if(back)ctx.globalAlpha=.75;ctx.translate(x,y);const w=Math.round(4+3*Math.abs(Math.sin(a))),h=10;
+  px(-w-1,-h/2-1,w*2+2,h+2,'#2a1a10');px(-w,-h/2,w*2,h,'#8a5a2e');px(-w,-h/2,w*2,1,'#b07a42');px(-w,-h/2,1,h,'#c8c8d0');px(w-1,-h/2,1,h,'#c8c8d0');px(-w,h/2-1,w*2,1,'#6a6a72');px(-1,-1,2,2,'#e8e8f0');
+  if(PR.bf>0){ctx.globalAlpha=PR.bf/.15;px(-w-2,-h/2-2,w*2+4,h+4,'rgba(255,255,255,.55)')}ctx.restore()}
+{const _ds=drawShots;drawShots=function(){const r=_ds.apply(this,arguments);try{if(PR.flash>0){const k=PR.flash/.25,rr=14+(1-k)*10;
+    ctx.strokeStyle=`rgba(255,240,170,${(.35+.6*k).toFixed(2)})`;ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(player.x,player.y-6,rr,rr*.8,0,0,Math.PI*2);ctx.stroke()}
+  if(PR.hold)drawShield()}catch(e){}return r}}
 
 // ------------------------------------------------------------------ input: right mouse button; a button on touch screens
-cv.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button===2){e.preventDefault();doParry()}});
+function raise(){if(PR.brk>0||frozenNow()||!met)return;PR.hold=true;PR.h0=performance.now()/1000}
+function lower(){PR.hold=false}
+cv.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button===2){e.preventDefault();doParry();raise()}});
+addEventListener('pointerup',e=>{if(e.pointerType==='mouse'&&e.button===2)lower()},true);addEventListener('blur',lower);
 {const b=document.createElement('button');b.id='parrybtn';b.type='button';b.setAttribute('aria-label','Savuştur');b.textContent='Savuş';document.body.appendChild(b);
   const st_=document.createElement('style');st_.textContent='#parrybtn{display:none;position:fixed;z-index:4;border-radius:50%;font:inherit;font-weight:800;color:#e8f6ff;background:rgba(20,30,48,.8);border:3px solid #9ad8ff;touch-action:manipulation;-webkit-tap-highlight-color:transparent}#parrybtn.on{display:block}#parrybtn:active{transform:scale(.92)}body.ontitle #parrybtn,body.cine #parrybtn{display:none!important}';document.head.appendChild(st_);
-  b.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();doParry()});
+  b.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();doParry();raise()});b.addEventListener('pointerup',lower);b.addEventListener('pointercancel',lower);b.addEventListener('pointerleave',lower);
   const place=()=>{try{const d=$('dodgebtn');const cs=d&&getComputedStyle(d);if(!d||cs.display==='none'||onTitle){b.classList.remove('on');return}const r=d.getBoundingClientRect();if(!r.width){b.classList.remove('on');return}
     b.classList.add('on');b.style.width=r.width+'px';b.style.height=r.height+'px';b.style.fontSize=Math.max(10,Math.round(r.width*.22))+'px';b.style.left=Math.round(r.left-r.width-10)+'px';b.style.top=Math.round(r.top)+'px'}catch(e){}};
   setInterval(place,500);addEventListener('resize',place)}
@@ -12802,7 +12823,7 @@ function headY(a){const D=ANIM[a.base||a.k]||ANIM[a.k]||{r:6};return a.y-((D.r||
 
 // a blow from a move lands on you: dash and grace pass through, a parry turns aside what is not red
 function impact(a,m,dmg,why,kb){if(dodge||pInv>0)return false;if(PRt()>0&&m.col!=='r'){parryHit(a);if(a&&a.mv)a.mv=null;return false}
-  pInv=.5;lastBitten=performance.now();stopGather();hurt(Math.max(1,Math.round(dmg)),why,true);
+  pInv=.5;lastBitten=performance.now();stopGather();window.__plHitCol=m.col;hurt(Math.max(1,Math.round(dmg)),why,true);
   if(kb&&a){const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;for(let s=0;s<6;s++){const nx=player.x+dx/d*kb/6,ny=player.y+dy/d*kb/6;if(!blocked(nx,player.y))player.x=nx;if(!blocked(player.x,ny))player.y=ny}}return true}
 function dust(x,y,n,c){for(let i=0;i<n;i++){const t=i/n*6.283;parts.push({x:x+Math.cos(t)*4,y:y,vx:Math.cos(t)*(50+Math.random()*40),vy:Math.sin(t)*20-10,life:.45,c:c||(i%2?'#c8b898':'#8a7a60')})}}
 function end(a){a.mv=null;a.mvCd=(a.boss?2.6:3.6)+Math.random()*2.6;a.atk=Math.max(a.atk||0,.5)}
@@ -13037,7 +13058,7 @@ function comboOK(e){if(e.pointerType!=='mouse'||e.button!==0||e.target!==cv)retu
 cv.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;C.mx=cam.cx+e.clientX/S;C.my=cam.cy+e.clientY/S});
 addEventListener('pointerdown',e=>{if(!comboOK(e))return;e.stopPropagation();e.preventDefault();C.mx=cam.cx+e.clientX/S;C.my=cam.cy+e.clientY/S;goal=null;
   const t=now(),sinceDash=t-C.dashEnd,inDash=!!dodge;
-  if(window.__plPS&&window.__plPS())return;
+  if((window.__plPS&&window.__plPS())||(window.__plParry&&window.__plParry.hold))return;
   C.hold={t0:t,id:e.pointerId,full:false,on:false};
   if(C.cd>0&&t-C.lastDown>.05){C.lastDown=t;return}
   let type='tap';

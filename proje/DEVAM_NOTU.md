@@ -819,3 +819,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Hamleler enerji yer (8–22; arenada bedava), asa mana, silah mermi. Yapılan hamlenin adı karakterin üstünde kısa bir yazıyla çıkar (geri bildirim; ne zaman yapılacağı söylenmez).
 - Hangi tıklar kombo: elde silah (v109 gibi) → her sol tık; balta/kazma/meşale → yalnızca bir canlıya tıklanınca (ağaç/taş için eski davranış); boş el → yalnızca arenada. Kişi/istasyon/çanta/iz tıklaması eskisi gibi (`E_TALK`). E ve Boşluk yalnızca tek vuruş.
 - Menüde "Versiyon 118". chk.js 0 hata.
+
+## v119 (27 Ekim 2026) — Kalkan (sağ tık basılı) ve görünmez savuşturma penceresi
+- Sağ tık **basma anı** hâlâ savuşturma penceresini açar (0,2 sn, bekleme 0,6 sn) ama pencere artık çizilmez (eski mavi halka ve yay kalktı); yalnızca başarılı savuşturmanın parlaması görünür. Zamanlamayı oyuncu kendisi bulur.
+- Sağ tık **basılı tutulunca** kalkan (`PR.hold`; dokunmatikte Savuş düğmesi basılı): karakterin önünde (fareye dönük) tahta-metal kalkan çizilir; %45 hızla yürür (`PS.slow`); vuramaz, kombo yapamaz (atılabilir). Kalkan savuşturma değildir: gelen fiziksel hasarı azaltır — beyaz ×0,35, sarı ×0,45, kırmızı ×0,7 (rengi `window.__plHitCol`: v110 ısırık ve v111 hamle darbesi bildirir; fırlatılanlar beyaz sayılır). Her engellenen vuruş enerji yer (6 + kalan hasarın %40'ı); enerji biterse kalkan düşer, 1 sn kaldırılamaz, 0,5 sn sersem ("Kalkan düştü!"). Engellenince kısa çınlama ve kıvılcım. Arenada enerji sınırsız.
+- Böylece doğru anda basan savuşturur (hasar yok, rakip sersem), kalkanla dolaşan yalnızca daha az hasar alır.
+- Menüde "Versiyon 119". chk.js 0 hata.
