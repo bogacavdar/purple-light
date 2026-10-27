@@ -1025,3 +1025,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - Büyük nehirde kalan oyuncu her zaman **batı (yurt) kıyısına** çıkarılır; köprüsüz biri doğuda mahsur kalmasın.
 - Büyük haritada bir kişinin simgesinin üstüne gelince biyom yerine kişinin adı yazar (`MAPHITS`). Dünyada fareyle bir kişinin, kazanın, bir hayvanın ya da köpeğin üstüne gelince adı yazar (v146 etiketi). Küçük haritanın sol altında bulunduğun biyomun adı (kendi renginde).
 - Menüde "Versiyon 1.50". chk.js 0 hata; oyun hatasız açılıyor (yan görevlerin "Nerede" satırları ve tunç ipucu kontrol edildi).
+
+## v1.51 (27 Ekim 2026)
+- Kayıt yuvasına basınca artık her zaman ne olduğu yazar: "Kayıt 1: oyun kaydedildi"; dolu yuvada ilk basış "üzerine yazmak için bir kez daha bas" der (eskiden sessizce yalnızca "Üzerine yaz?" oluyordu, oyuncu kaydettiğini sanıyordu); bir sahnenin ortasında kayıt reddedilirse bunu söyler.
+- Kontrol (Boğaç'ın "kaydettiğim halde görevleri yeniden alıyorum" sorusu için): yan görev alınıp Kayıt 1'e kaydedildi, sayfa yenilendi, "Devam et" ile girildi; görevler ve ana görev durumu yerinde. Tekrar hissinin asıl sebebi v1.44'te Ekin'e eklenen ve Börü'nün görevleriyle aynı olan iki görevdi (v1.50'de silindi).
+- Menüde "Versiyon 1.51". chk.js 0 hata.
