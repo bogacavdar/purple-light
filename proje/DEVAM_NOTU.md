@@ -1137,3 +1137,11 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Dersleri ücretsiz tekrar:** Börü'nün ders listesinde öğrenilmiş her ders için "tekrar çalış (ücretsiz)"; tekrarda ücret alınmaz, bitince XP verilmez, iptalde geri verilecek ücret yoktur. Tekrar sırasında kayıt alınırsa tekrar kaydedilmez.
 - (Kullanıcının isteği zaten var: "bitir" adımı dışında alıştırma canavarı ölmez (v1.67), ölünce Reis'e/av sayacına sayılmaz (v1.70).)
 - Menüde "Versiyon 1.71". chk.js 0 hata; oyun hatasız açılıyor.
+
+## v1.72 (28 Ekim 2026)
+- **Alıştırma canavarı soldaki adıma göre davranır** (`curStep` artık her derste ilk bitmemiş adım):
+  - Savuşturma / takla ile kaçma / sersemletme adımı: saldırır, ama düzenli aralıkla (iki saldırı arası en az 2,2 sn, en çok ~3,2 sn) ki savuşturmaya vakit kalsın.
+  - Vuruş/kombo adımı (`hit:`): saldırmaz ve canı hiç gitmez (her karede dolu tutulur; isabetler yine sayılır).
+  - "Bitir" adımı (`kill:`): saldırmaz; canı silahının ~2,4 vuruşluk hasarına iner, kolayca bitirilir. Ganimet/XP/Reis/av sayacı yok (v1.70).
+- **ŞİMDİ!/YİNE! halkası yalnızca Ritimli 2. ve 3. vuruş derslerinde** görünür; arenada, normal oyunda ve diğer derslerde (ör. takla vuruşu, bitirici) görünmez. Ritim pencereleri aynı.
+- Menüde "Versiyon 1.72". chk.js 0 hata; oyun hatasız açılıyor.
