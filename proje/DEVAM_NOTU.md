@@ -999,3 +999,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.46 (27 Ekim 2026)
 - Fareyle bir ağacın, madenin, toplanabilir kaynağın ya da yere düşmüş bir eşyanın üstüne gelince küçük bir etiket çıkar: adı ve ne gerektiği (ağaç: "baltayla kesilir" / "silkelenir"; maden: gereken kazma; kaynak: "E ile topla"; yerdeki eşya: "üstünden yürü ya da E"). `<script id="v146">`, `#hovtip` DOM etiketi; hedef `pickAt` ile bulunur, kamera kayınca 200 ms'de bir yenilenir. Diyalog, panel, başlık ekranında gizli; yalnızca fare (dokunmatikte yok).
 - Menüde "Versiyon 1.46". chk.js 0 hata.
+
+## v1.47 (27 Ekim 2026)
+- Yaratık can çubuğu: eskiden yalnızca dolu kısım parlak çiziliyordu, boş kısım neredeyse siyahtı (`#11170f`); bu yüzden yarı canlı bir öküz "canı çok az" gibi görünüyordu (Boğaç). Yeni `hpBar(x,y,w,k)`: koyu çerçeve, görünür koyu kırmızı boş kısım, renk yeşil (>%50) → sarı (>%25) → kırmızı. Dört çizim yolunun hepsi kullanıyor; büyük hayvanlarda çubuk sprite genişliğine göre (M.W·0,7, 14–32 px). Yaban öküzünün canı kodda 860 (değişmedi).
+- Menüde "Versiyon 1.47". chk.js 0 hata.
