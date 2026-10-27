@@ -797,3 +797,7 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - `v113-roll`: `doDodge` ve `tickDodge` sarmalandı. Takla 0,38 sn (eskiden 0,24), yaklaşık 34 px (eskiden 48); hızlı başlar ve yavaşlayarak durur (hız ×1,7'den ×0,3'e). Her duruş ~0,095 sn görünür. Bekleme en az 0,68 sn. Atılma boyunca dokunulmazlık da 0,38 sn oldu.
 - `ROLL=false` hepsini eski haline getirir.
 - Menüde "Versiyon 115". chk.js 0 hata.
+
+## v116 (27 Ekim 2026) — Yan taklalar daha kısa
+- Boğaç: yukarı/aşağı takla mesafesi iyi, sağa/sola çok uzun. `v113-roll` `doDodge` sarmalayıcısında hız yatay paya göre azalır: mesafe = 34 × (1 − 0,35 × |yatay|) → sağa/sola ~22 px, çapraz ~26 px, yukarı/aşağı 34 px. Süre aynı (0,38 sn).
+- Menüde "Versiyon 116". chk.js 0 hata.
