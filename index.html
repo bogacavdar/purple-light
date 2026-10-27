@@ -1332,7 +1332,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.30</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.31</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -1412,7 +1412,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
 <div id="coinhint" hidden>Sikkelerin burada! Sattıkça artar ↓</div>
 <div id="hotbar" aria-label="Alet kutuları (1–0 ya da fare tekerleği)"></div>
 <div id="daybanner" hidden><small>Yeni bir gün</small><b id="daybn">1. Gün</b></div>
-<div id="placeui" hidden><span id="pui-t"></span><button id="pui-rot" type="button">Döndür <kbd>Q</kbd></button><button id="pui-x" type="button">İptal <kbd>Esc</kbd></button></div>
+<div id="placeui" hidden><span id="pui-t"></span><button id="pui-rot" type="button">Döndür <kbd>Boşluk</kbd></button><button id="pui-x" type="button">İptal <kbd>Esc</kbd></button></div>
 <div id="fade" hidden><p id="fadep"></p><small id="fades"></small></div>
 <canvas id="cine" hidden aria-label="Giriş sahnesi"></canvas>
 <div id="cinetop" aria-live="polite"></div>
@@ -1730,7 +1730,7 @@ const SKILLS=[
  {id:'B5',br:'Bilgelik',n:'Hızlı öğrenen II',e:'Bütün XP toplam +%20',c:1000,r:'B4'},
  {id:'B7',br:'Bilgelik',n:'İpucu ustası II',e:'İpucu dakikada bir',c:2500,r:'B3',sub:1},
  {id:'B6',br:'Bilgelik',n:'Hızlı öğrenen III',e:'Bütün XP toplam +%35',c:2500,r:'B5'},
- {id:'S1',br:'Savaş',n:'Atılma',e:'Q ile (telefonda Atıl düğmesi) saldırıdan yana kaç; enerji harcar',c:100},
+ {id:'S1',br:'Savaş',n:'Atılma',e:'Boşluk ile (telefonda Atıl düğmesi) saldırıdan yana kaç; enerji harcar',c:100},
  {id:'K1',br:'Savaş',n:'Koşu',e:'Shift ile (telefonda çift dokunarak) koş; enerji harcar',c:100,r:'S1',need:'bridge'},
  {id:'S2',br:'Savaş',n:'Çevik atılma',e:'Atılma %35 daha az enerji, daha kısa bekleme',c:250,r:'S1',sub:1},
  {id:'K2',br:'Savaş',n:'Derin nefes I',e:'En yüksek enerji +%25',c:250,r:'K1',sub:1,lv:5},
@@ -2351,11 +2351,11 @@ addEventListener('keydown',e=>{
     if(e.code==='Enter'&&mode==='craft'&&!typing){brew();e.preventDefault()}
     return}
   if(wake)return;
-  if(e.code==='Space'&&!e.repeat){attack();e.preventDefault();return}
+  if(e.code==='Space'&&!e.repeat){if(placing)rotatePlace();else doDodge();e.preventDefault();return}   // v1.31: Boşluk = atılma (takla); Q = vuruş
   if(e.code==='KeyF'){e.preventDefault();if(!e.repeat&&!fHold){fHold=setTimeout(()=>{fHold=-1;openEat()},450)}return}   // v48c: a press eats the best food, holding F opens the list
   if(/^Digit[0-9]$/.test(e.code)&&!e.repeat){const d=+e.code.slice(5),ix=d===0?9:d-1;if(ix<hotN())selectHot(ix);e.preventDefault();return}
   if(placing&&e.code==='KeyQ'&&!e.repeat){rotatePlace();e.preventDefault();return}
-  if(!placing&&e.code==='KeyQ'&&!e.repeat){doDodge();e.preventDefault();return}
+  if(!placing&&e.code==='KeyQ'&&!e.repeat){attack();e.preventDefault();return}
   if(placing&&e.code==='Escape'){cancelPlace();e.preventDefault();return}
   if(e.code==='Escape'){openPause();e.preventDefault();return}
   if(e.code==='KeyO'&&!e.repeat){openSettings();e.preventDefault();return}
@@ -3697,7 +3697,7 @@ const QUESTS=[
   {t:"Savunmanı 60'a çıkar.",h:'Tunç takım (miğfer, zırh, eldiven, çizme) 50 savunma eder; bir demir parça daha (örneğin Demir zırh) 60\'ı geçirir. Zırhlar Dursun\'un kardeşi Zırhçı Durmuş\'un örsünde dövülür; timsah derisi zırh kazanda yapılır. Özellikler penceresinden giy.',
    p:()=>`Savunma ${Math.min(armorDef(),60)}/60`,done:()=>armorDef()>=60,c:200,x:240,acc:()=>{['Tunç levha','Tunç miğfer','Tunç zırh','Timsah derisi zırh','Demir zırh'].forEach(n=>bought.add(n))},
    say:'Kül Diyarı\'na giden geri dönemez derler. Ben de demem ki gitme; ama zırhsız gidersen ben seni kıyıda bulamam bile. <b>Savunmanı 60\'a</b> çıkar.',thx:'Artık bir savaşçı gibi görünüyorsun. Börü bile kıskanır.'},
-  {t:"Kül Diyarı'nda bir lav kertenkelesi avla.",h:'En doğuya git. Lav kertenkelesi ateş tükürür: atıl (Q) ve yandan vur. Ateş çiçeği merhemi yanığı azaltır.',go:()=>null,
+  {t:"Kül Diyarı'nda bir lav kertenkelesi avla.",h:'En doğuya git. Lav kertenkelesi ateş tükürür: atıl (Boşluk) ve yandan vur. Ateş çiçeği merhemi yanığı azaltır.',go:()=>null,
    p:()=>(kills['Lav kertenkelesi']||0)>0?'avlandı':'Kül Diyarı',done:()=>(kills['Lav kertenkelesi']||0)>0,c:300,x:480,acc:()=>bought.add('Ateş çiçeği merhemi'),
    say:'Doğuda gök kızıl, yer kül. Orada <b>lav kertenkeleleri</b> dolaşır; pulları ateşe dayanır. Birini avla ve ateşin dilini öğren. Ateş çiçeği merhemi tarifini de kitabına yazdım.',thx:'Kül kokuyorsun ama hayattasın! Kül Diyarı artık sana da yol verir.'},
   {t:'Eşinden kalan bütün izleri bul.',h:'Mor parıltıları ara: ikisi yurtta, ikisi bataklıkta, ikisi Kül Diyarı\'nda. Bulduklarını tarif kitabının İzler sekmesinde okursun.',go:()=>'clue',
@@ -3765,7 +3765,7 @@ function renderTut(){
     return}}
   if(tut===4&&(ftut===1||ftut===2)){
     lesson('alp','Savaşçı Börü · Savaş dersi',ftut===1?`Kampın yakınında <b>Savaşçı Börü</b> seni bekliyor. Ok onu gösteriyor: yanına git ve ${TOUCH?'ona dokun':'E ile konuş'}.`
-      :`Elin boş olsun (alttaki kutularda seçili bir şey olmasın) ve <b>kereviti</b> yumrukla: ${TOUCH?'ona dokun':'yanına gidip <span class="kc">Boşluk</span> tuşuna bas ya da ona tıkla'}. Her yumruk 3 hasar verir; canı bitene kadar vur. Avlanan hayvanlar malzeme düşürür.`);
+      :`Elin boş olsun (alttaki kutularda seçili bir şey olmasın) ve <b>kereviti</b> yumrukla: ${TOUCH?'ona dokun':'yanına gidip ona tıkla'}. Her yumruk 3 hasar verir; canı bitene kadar vur. Avlanan hayvanlar malzeme düşürür.`);
     return}
   if(htut===1&&!(ctut>=1&&ctut<=3)){
     lesson('witch','Cadının dersi · Elinle yap',`Bir şey daha: <b>keskin taş, ip, sopa, meşale</b> gibi ✓ olan basit tarifler için kazana gelmen gerekmez; <b>elinle her yerde</b> yaparsın. ${TOUCH?'Soldaki <b>el</b> ikonuna dokun':'<span class="kc">Tab</span> tuşuna bas'} ve sana verdiğim taşlarla bir <b>Keskin taş</b> yap.${craftOpen&&mode==='hand'?'':''}`);
@@ -5265,7 +5265,7 @@ function rotatePlace(){if(!placing)return;placing.rot=(placing.rot+1)%4;if(!ghos
 function placedAt(wx,wy){const tx=Math.floor(wx/T),ty=Math.floor(wy/T);for(let i=placed.length-1;i>=0;i--){const o=placed[i],f=footOf(o.n,o.rot);if(tx>=o.tx&&tx<o.tx+f[0]&&ty>=o.ty&&ty<o.ty+f[1])return o}return null}
 function placedBlock(px,py){for(let i=0;i<placed.length;i++){const o=placed[i],f=footOf(o.n,o.rot);if(px>o.tx*T-HALF+1&&px<(o.tx+f[0])*T+HALF-1&&py>o.ty*T-HALF+3&&py<(o.ty+f[1])*T+HALF-2)return true}return false}
 function placedNear(){let best=null,bd=14;for(const o of placed){const f=footOf(o.n,o.rot),x0=o.tx*T,y0=o.ty*T,x1=x0+f[0]*T,y1=y0+f[1]*T;const dx=Math.max(x0-player.x,0,player.x-x1),dy=Math.max(y0-player.y,0,player.y-y1),d=Math.hypot(dx,dy);if(d<bd){bd=d;best=o}}return best}
-function pickUp(o){if(o.fixed){toast(`${o.n} yerinden oynamaz`,true);return}const i=placed.indexOf(o);if(i<0)return;placed.splice(i,1);startPlace(o.n,o);if(navigator.vibrate)try{navigator.vibrate(30)}catch(e){}toast(`${o.n} taşınıyor: yeni yerine ${TOUCH?'dokun':'tıkla'} · ${TOUCH?'Döndür düğmesi':'Q'} ile döndür`)}
+function pickUp(o){if(o.fixed){toast(`${o.n} yerinden oynamaz`,true);return}const i=placed.indexOf(o);if(i<0)return;placed.splice(i,1);startPlace(o.n,o);if(navigator.vibrate)try{navigator.vibrate(30)}catch(e){}toast(`${o.n} taşınıyor: yeni yerine ${TOUCH?'dokun':'tıkla'} · ${TOUCH?'Döndür düğmesi':'Boşluk'} ile döndür`)}
 function useplaced(o){if(HOUSESET.has(o.n))return useHouse(o);if(/yatak/i.test(o.n))return sleepBed(o);if(o.n==='Atölye')return openWorkshop(o);toast(`${o.n} · taşımak için üstüne basılı tut`)}
 let puiK='';
 function renderPlaceUI(){const k=placing?placing.n+(placing.moving?'m':''):'';if(k===puiK)return;puiK=k;const el=$('placeui');el.hidden=!placing;
@@ -5605,7 +5605,7 @@ function tickAnimals(dt){
 function packBusy(a){if(!a.pk)return 0;let n=0;for(const b of animals)if(b!==a&&b.pk===a.pk&&(b.wind>0||b.lunge))n++;return n}
 function biteHit(a,D,dx,dy,d){if(dodge||pInv>0)return;pInv=.7;lastBitten=performance.now();stopGather();hurt(boarSoft(a)?Math.round(D.dmg*.6):D.dmg,`${a.k} saldırdı`,true);if(D.fx)addFx(D.fx[0],D.fx[1],D.fx[2]);
   const kx=player.x+dx/d*10,ky=player.y+dy/d*10;if(!blocked(kx,player.y))player.x=kx;if(!blocked(player.x,ky))player.y=ky;
-  if(!fightSeen){fightSeen=true;bought.add('Taş kılıç');setTimeout(()=>toast(`Saldırılar önce kırmızı <b>!</b> ile belli olur: ${TOUCH?'yana kaç ya da atılma düğmesine dokun':'yana kaç ya da Q ile atıl'}. Vurmak için ${TOUCH?'hayvana dokun':'Boşluk'}. Kılıç en iyisi: Taş kılıç tarifi kitabında.`),600)}}
+  if(!fightSeen){fightSeen=true;bought.add('Taş kılıç');setTimeout(()=>toast(`Saldırılar önce kırmızı <b>!</b> ile belli olur: ${TOUCH?'yana kaç ya da atılma düğmesine dokun':'yana kaç ya da Boşluk ile atıl'}. Vurmak için ${TOUCH?'hayvana dokun':'hayvana tıkla'}. Kılıç en iyisi: Taş kılıç tarifi kitabında.`),600)}}
 // ---------- shots: quills, spit and fire that fly to where you stood ----------
 const shots=[];
 function fireShot(a){const D=ANIM[a.k],Rg=D.ranged,n=Rg.n||1;for(let i=0;i<n;i++){const ang=Math.atan2(a.ty-(a.y-6),a.tx-a.x)+(i-(n-1)/2)*.22;shots.push({x:a.x,y:a.y-6,vx:Math.cos(ang)*Rg.spd,vy:Math.sin(ang)*Rg.spd,life:Rg.range/Rg.spd+.35,c:Rg.c,dmg:D.dmg,fx:D.fx,k:a.k})}sfx(a.k==='Lav kertenkelesi'?'hit':'swing')}
@@ -6885,7 +6885,7 @@ function tzCard(){const h=n=>inv[n]||0,c=(n,q)=>`${n} ${Math.min(h(n),q)}/${q}`;
    8:['witch','Zümrüt · Keskin taş yap',`Kalan 2 taşla bir <b>keskin taş</b> yap: ${tzKey('tab')}. Kazandan bir tarif öğrendin mi, gerisi hep elinde.`],
    9:['witch','Pazarcı Nazlı',`Keskin taşı al ve kuzeydoğudaki <b>Pazarcı Nazlı</b>'ya git; ok yolu gösteriyor. Birleştirdiğin şeyleri o alır.`],
    10:['','Nazlı · Sat',`Satış listesinde <b>Keskin taş</b>'ın yanındaki <b>1 sat</b> düğmesine bas.`],
-   11:ftut===2?['','Börü · Kereviti yumrukla',`Elin boş olsun (alttaki kutularda seçili bir şey olmasın) ve <b>kereviti</b> yumrukla: ${TOUCH?'ona dokun':'yanına gidip <span class="kc">Boşluk</span> tuşuna bas ya da ona tıkla'}. Her yumruk 3 hasar verir; canı bitene kadar vur.`]:['','Savaşçı Börü',`Nazlı seni doğudaki <b>Savaşçı Börü</b>'ye yolladı. Ok yolu gösteriyor; yanına git ve ${TOUCH?'ona dokun':'<span class="kc">E</span> ile konuş'}.`],
+   11:ftut===2?['','Börü · Kereviti yumrukla',`Elin boş olsun (alttaki kutularda seçili bir şey olmasın) ve <b>kereviti</b> yumrukla: ${TOUCH?'ona dokun':'yanına gidip ona tıkla'}. Her yumruk 3 hasar verir; canı bitene kadar vur.`]:['','Savaşçı Börü',`Nazlı seni doğudaki <b>Savaşçı Börü</b>'ye yolladı. Ok yolu gösteriyor; yanına git ve ${TOUCH?'ona dokun':'<span class="kc">E</span> ile konuş'}.`],
    12:axeCard()||['','Börü · Balta parçaları',`<b>Taş balta</b> = 1 Sopa + 2 Keskin taş + 2 İp + 2 Taş. Sopa, ip ve keskin taşı ${tzKey('tab')} ile yap (sopa için 3 dal ve 2 keskin taş, ip için 4 lif). Börü yakınına malzeme bıraktı. (${c('Sopa',1)} · ${c('Keskin taş',2)} · ${c('İp',2)} · ${c('Taş',2)})`],
    13:['','Demirci Dursun',`Parçalar hazır! Kuzeydeki <b>Demirci Dursun</b>'a git, Börü'nün selamını söyle; baltayı o döver. Ok yolu gösteriyor.`]}[tz]}
 function renderTz(){const C=tzCard();if(!C)return false;const [who,title,html]=C;tutEl.hidden=false;craftEl.classList.add('tutpad');$('tutstep').textContent=title;$('tuttext').innerHTML=html;
@@ -6920,7 +6920,7 @@ function tzAlpDone(){tz=12;ftut=3;fightSeen=true;sfx('level');
   for(const r of ['Taş balta','Sopa','İp'])if(!foundSet.has(r)){found.push(r);foundSet.add(r)}gain('Taş',6);
   tzPlace('Dal',3,alp.x,alp.y);tzPlace('Lif',8,alp.x,alp.y);tzPlace('Taş',4,alp.x,alp.y);checkCodex();renderInv();
   axeStep=0;
-  say(`İşte böyle! Bir şey daha: saldırıdan önce düşmanın üstünde kırmızı bir <b>!</b> belirir. O an yana <b>atılırsan</b> (${TOUCH?'Atıl düğmesi':'<b>Q</b>'}) hiçbir şey olmaz. Ama atılmak bir <b>yetenek</b>: yetenek ağacının <b>Savaş</b> dalında, <b>100 sikke</b>. Topladığın ya da yaptığın şeyleri <b>Nazlı'nın pazarında</b> satarak para biriktir; 100 sikkeyi bulunca ağaçtan al. Atılmadan sonra <b>koşmayı</b> da öğrenebilirsin; ikisi de enerji yer.`,[{t:'Anladım',pri:1,fresh:1,f:()=>say(`Şimdi bir <b>Taş balta</b> yapacağız; tarifini sana veriyorum. Parçaları <b>teker teker</b> yapalım: önce sopa için 2 keskin taş, sonra sopa, sonra baltanın ağzı için 2 keskin taş daha, en son 2 ip. Yanına dal, lif ve taş bıraktım; al, şu altı taş da benden. Hepsi bitince <b>Demirci Dursun</b> döver.`,[{t:'Başlayalım',pri:1,fresh:1,f:bye}],alp)}],alp)}
+  say(`İşte böyle! Bir şey daha: saldırıdan önce düşmanın üstünde kırmızı bir <b>!</b> belirir. O an yana <b>atılırsan</b> (${TOUCH?'Atıl düğmesi':'<b>Boşluk</b>'}) hiçbir şey olmaz. Ama atılmak bir <b>yetenek</b>: yetenek ağacının <b>Savaş</b> dalında, <b>100 sikke</b>. Topladığın ya da yaptığın şeyleri <b>Nazlı'nın pazarında</b> satarak para biriktir; 100 sikkeyi bulunca ağaçtan al. Atılmadan sonra <b>koşmayı</b> da öğrenebilirsin; ikisi de enerji yer.`,[{t:'Anladım',pri:1,fresh:1,f:()=>say(`Şimdi bir <b>Taş balta</b> yapacağız; tarifini sana veriyorum. Parçaları <b>teker teker</b> yapalım: önce sopa için 2 keskin taş, sonra sopa, sonra baltanın ağzı için 2 keskin taş daha, en son 2 ip. Yanına dal, lif ve taş bıraktım; al, şu altı taş da benden. Hepsi bitince <b>Demirci Dursun</b> döver.`,[{t:'Başlayalım',pri:1,fresh:1,f:bye}],alp)}],alp)}
 const AXE_INFO='Ama bil ki taş balta yalnızca <b>çamları</b> keser. Ağaçlar kolaydan zora sıralanır: <b>çam</b> taş baltayla, <b>meşe</b> granit ya da çakmaktaşı baltayla, <b>huş ve söğüt</b> kuvars ya da tunç baltayla, <b>ardıç</b> bazalt ya da demir baltayla kesilir. Her yeni balta, bir önceki kazmanın kazdığı taştan yapılır. Balta her vuruşta biraz körelir; çubuğu kırmızıya dönünce Dursun\'a götür.';
 let axeInfo=false;
 function tzFinish(){axeInfo=true;tz=0;witchShown=true;witchMet=true;met=true;tut=11;qState='talk';questsHidden=false;bought.add('Taş balta');renderInv();renderTut()}
@@ -8442,7 +8442,7 @@ B5.music=()=>musWant;B5.trackReady=id=>!!MB[id];
 
 // ------------------------------------------------------------------ key bindings
 const KB=[['up','Yukarı yürü','KeyW','W'],['left','Sola yürü','KeyA','A'],['down','Aşağı yürü','KeyS','S'],['right','Sağa yürü','KeyD','D'],['run','Koş (basılı tut)','ShiftLeft','Shift'],
-  ['interact','Topla / konuş','KeyE','E'],['attack','Vur','Space','Boşluk'],['dodge','Atıl (yerleştirirken döndür)','KeyQ','Q'],['eat','Ye','KeyF','F'],['hand','Eli boşalt','KeyH','H'],
+  ['interact','Topla / konuş','KeyE','E'],['attack','Vur (tıklamak da vurur)','KeyQ','Q'],['dodge','Atıl / takla (yerleştirirken döndür)','Space','Boşluk'],['eat','Ye','KeyF','F'],['hand','Eli boşalt','KeyH','H'],
   ['inv','Envanter','KeyI','I'],['craft','Kazan','KeyB','B'],['handcraft','El yapımı','Tab','Tab'],['smith','Demirci','KeyT','T'],['book','Tarif kitabı','KeyK','K'],['sell','Pazar','KeyP','P'],
   ['char','Karakter','KeyC','C'],['skills','Yetenekler','KeyY','Y'],['quests','Görevler','KeyG','G'],['map','Harita','KeyM','M'],['camp','Kamp ateşi kur','KeyV','V'],['torch','Meşaleye reçine sür','KeyL','L'],['mark','Haritaya işaret','KeyN','N'],
   ['dogs','Robot köpekler','KeyR','R'],['settings','Ayarlar','KeyO','O'],['cheatCoin','Hile: +100 sikke','KeyZ','Z'],['cheatXP','Hile: +100 XP','KeyX','X']];
@@ -9376,7 +9376,7 @@ function spawnBoss(k){const nm=makeBoss(k);if(!nm||bossAlive(k))return false;con
   for(let i=0;i<22;i++){const t=i/22*6.283;parts.push({x:a.x+Math.cos(t)*6,y:a.y-2,vx:Math.cos(t)*55,vy:Math.sin(t)*25-20,life:.7,c:i%3?'rgba(200,150,255,.9)':'#ffffff'})}
   p4Rumble();try{sfx('growl')}catch(e){}return true}
 function bossWarn(k){const nm=bossName(k);sfx('bad');p4Rumble();announce(nm,'Bir reis geliyor!');
-  toast(`${P4.s.bc[k]||0} ${k} avladın: sürünün reisi öfkeyle geliyor! Kırmızı halkaya dikkat et, ${TOUCH?'Atıl düğmesiyle':'Q ile'} kaç.`,true)}
+  toast(`${P4.s.bc[k]||0} ${k} avladın: sürünün reisi öfkeyle geliyor! Kırmızı halkaya dikkat et, ${TOUCH?'Atıl düğmesiyle':'Boşluk ile'} kaç.`,true)}
 function bossCheck(){if(!met||wake||fading||sailing||onTitle||tz||P4.bossWait>0)return;if(nearCamp(player.x,player.y))return;
   for(const k in P4.s.bc){if(!bossOk(k)||bossAlive(k)||(P4.s.bc[k]||0)<bossNeed(k))continue;
     const q=P4.bossQ.find(o=>o.k===k);if(!q){P4.bossQ.push({k,t:2.6});bossWarn(k)}}}
@@ -11071,7 +11071,7 @@ const _db=drawBridge;drawBridge=function(time,inView){_db.apply(this,arguments);
    thx:'O gürültüyü buradan duydum! Geçit açık. Ama dinle: ötesi ölümcül. Zırhsız gidersen ilk gece dönemezsin.'};
  if(iL>=0&&!QUESTS.some(q=>q.t===Q.t))QUESTS.splice(iL,0,Q)}
 for(const q of QUESTS){if(/Kırık köprüyü/.test(q.t)&&typeof q.say==='string')q.say='Adayı ikiye bölen büyük nehrin ortasında eski bir köprü vardı; fırtına onu kırdı. Karşı yaka <b>bataklık</b> ve kuzeyinde <b>kayalık dağlar</b>; onların ötesinde bir sıradağ, sıradağın ardında da <b>Kül Diyarı</b>. Adanın en değerli madenleri de en tehlikeli canavarları da doğuda. <b>20 odunla</b> köprüyü onarabilirsin. Ama hazır olmadan geçme evlat.';
-  if(/lav kertenkelesi/.test(q.t))q.h='Doğu geçidinden geç, Kül Diyarı\'na git. Lav kertenkelesi ateş tükürür: atıl (Q) ve yandan vur. Ateş çiçeği merhemi yanığı azaltır.';
+  if(/lav kertenkelesi/.test(q.t))q.h='Doğu geçidinden geç, Kül Diyarı\'na git. Lav kertenkelesi ateş tükürür: atıl (Boşluk) ve yandan vur. Ateş çiçeği merhemi yanığı azaltır.';
   if(/bütün izleri/.test(q.t))q.h='Mor parıltıları ara: ikisi yurtta, ikisi köprünün ötesinde, ikisi sıradağın ardında. Bulduklarını tarif kitabının İzler sekmesinde okursun.'}
 
 // ---------------------------------------------------------------- 6 · you feel the land change: a banner the first time, its own air, its own music (b5)
@@ -13454,7 +13454,7 @@ const now=()=>performance.now()/1000;
 const LES=[
  {k:'dash',foe:'Kurt',on:'şu kurdun',n:'Takla vuruşu',lv:3,b:0,c:150,x:40,s1:1,how:'Taklanın içinde ya da hemen sonunda tıkla',
   say:'Takla atmayı biliyorsun; şimdi taklanın içinden vurmayı öğren. Saldırı gelirken yana atıl, ayağın yere değer değmez tıkla: kılıç da seninle birlikte atılır.',
-  st:[['evade',3,'Bir canavar saldırırken (kırmızı <b>!</b>) <b>Q</b> ile takla at, saldırıdan kurtul'],['hit:dash',4,'Taklanın içinde ya da hemen sonunda tıkla: <b>takla vuruşuyla</b> 4 kez isabet ettir']]},
+  st:[['evade',3,'Bir canavar saldırırken (kırmızı <b>!</b>) <b>Boşluk</b> ile takla at, saldırıdan kurtul'],['hit:dash',4,'Taklanın içinde ya da hemen sonunda tıkla: <b>takla vuruşuyla</b> 4 kez isabet ettir']]},
  {k:'double',foe:'Yaban domuzu',on:'şu yaban domuzunun',n:'Çift vuruş',lv:6,b:1,c:300,x:60,how:'Hızlıca iki kez tıkla',
   say:'Bir vuruş bir hayvanı durdurur, iki vuruş onu yere serer. Farenin tuşuna <b>hızlıca iki kez</b> bas; ikinci vuruş birincinin arkasından gelir.',
   st:[['hit:double',5,'Hızlıca iki kez tıkla: <b>çift vuruşla</b> 5 kez isabet ettir'],['kill:double',2,'İki canavarı <b>çift vuruşla</b> bitir']]},

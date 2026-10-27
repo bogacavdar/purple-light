@@ -868,6 +868,11 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v1.27 (27 Ekim 2026) — Sürüm adı biçimi
 - Boğaç'ın kuralı: sürümler artık "Versiyon 1.27" biçiminde (ilk rakamdan sonra nokta). Menü etiketi "Versiyon 1.27"; kural `CLAUDE.md`'ye ve bu dosyanın başına yazıldı. Oyunda başka değişiklik yok. chk.js 0 hata.
 
+## v1.31 (27 Ekim 2026) — Takla Boşluk'ta
+- Boğaç: "Boşluk ile takla atılmalı." Ana tuş işleyicisinde **Boşluk = atılma/takla** (yerleştirirken döndürür), **Q = vuruş** (sol tık da vurur, kombolar sol tıkta). Tuş ayarları listesi (`KB`) de buna göre: `dodge` varsayılanı `Space`, `attack` varsayılanı `KeyQ`. Balık tutma ve R mini oyunu Boşluk'u kendi yakalama dinleyicilerinde alır, değişmedi.
+- Metinler: Atılma yeteneği, Börü'nün "atılırsan" konuşması, Reis uyarısı, lav kertenkelesi ipucu (2 yer), yerleştirme ("Boşluk ile döndür", Döndür düğmesi), kerevit dersi ("yanına gidip ona tıkla"), ilk ısırık ipucu ("Vurmak için hayvana tıkla"), v129 takla dersi.
+- Kontrol: chk.js 0 hata, oyun açılıyor.
+
 ## v1.30 (27 Ekim 2026) — Börü'nün dersinde antrenman canavarı ve "aferin"
 - Boğaç'ın istediği akış: Börü önce diyalogla anlatır → "Hazırım" → derse uygun bir canavarı oyuncunun yanına çıkarır ("Sana şu kurdun getirdim, üzerinde dene") → görevler 3–5 kez yapılır → Börü "Aferin evlat! … artık senin" der, sonra "Yeni hamle" duyurusu.
 - Ders canavarları (`LES[].foe`): Takla vuruşu Kurt · Çift vuruş Yaban domuzu · Ritim 2 Bataklık kurdu · Ritim 3 Muflon · Güçlü vuruş Yaban öküzü · Bitirici Kül kurdu · Ulti Mağara ayısı. `a.ders=true`, hep saldırgan (`mad`), v111 özel hamleleri kapalı (`mvCd`), ısırığı canın %5'i (`biteHit` sarmalı, etki yok), XP vermez. Bitirme görevi kalan derste normal can, yoksa ×3 can.
