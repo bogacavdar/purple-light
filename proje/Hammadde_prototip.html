@@ -1328,7 +1328,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 125</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 126</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -12418,8 +12418,8 @@ body.arena #tut,body.arena #p-save,body.arena #p-load,body.arena #p-xfer,body.ar
 // =====================================================================================================
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
-const AR={on:false,open:false,sel:null,boss:false,n:1,keys:/^(Key[WASDQER]|Arrow(Up|Down|Left|Right)|Shift(Left|Right)|Space|Escape)$/,slot:'silah',lv:25,isle:1,held:null,dealt:0,last:0,recv:0,lastR:0,hits:[],center:null,R:9*16,pc:{},pq:[],nodesOff:[]};
-window.__plArena=false;window.__arena=AR;
+const AR={on:false,open:false,real:false,over:false,sel:null,boss:false,n:1,keys:/^(Key[WASDQER]|Arrow(Up|Down|Left|Right)|Shift(Left|Right)|Space|Escape)$/,slot:'silah',lv:25,isle:1,held:null,dealt:0,last:0,recv:0,lastR:0,hits:[],center:null,R:9*16,pc:{},pq:[],nodesOff:[]};
+window.__plArena=false;window.__plArenaFree=false;window.__arena=AR;
 const R1=['Çayır','Orman','Bataklık','Kayalık Dağ','Kül Diyarı','Mor Kristal Vadisi'],R2=['Yüzen Kayalar','Dev Mantar Ormanı','Hurda Çölü','Kristal Golem Ocağı','Ejder Volkanı','Gök Rıhtımı'];
 const KINDS=[['sword','Kılıçlar'],['hunt','Mızraklar'],['staff','Asalar'],['gun','Ateşli silahlar'],['axe','Baltalar'],['pick','Kazmalar'],['torch','Meşaleler']];
 const TEMP={'saldırgan':['Saldırgan','t-s'],'nötr':['Nötr','t-n'],'zararsız':['Zararsız','t-z']};
@@ -12494,7 +12494,7 @@ function setLv(L){lvl=Math.max(1,Math.min(MAXLV,L));xp=0;AR.lv=lvl;try{renderXP(
 function enter(){regI2();
   applyState(null);diff='normal';$('hardtag').hidden=true;
   try{const l=latest(),v=l&&saves()[l],lk=v&&v.data&&v.data.lk;if(lk&&typeof lk==='object')Object.assign(LOOK.hero,LOOK0.hero,lk)}catch(e){}
-  AR.on=true;window.__plArena=true;document.body.classList.add('arena');
+  AR.on=true;window.__plArena=true;window.__plArenaFree=!AR.real;document.body.classList.add('arena');
   met=true;tut=12;witchShown=false;qState='talk';questsHidden=true;hurtSeen=true;fightSeen=true;hungerSeen=true;fxSeen={zehir:true,kanama:true,'yanık':true};
   for(const s of SKILLS)skills.add(s.id);
   try{if(window.__p4){window.__p4.bossWait=1e9;window.__p4.bossQ.length=0}}catch(e){}
@@ -12543,7 +12543,7 @@ function rightHTML(){const G=groups().filter(g=>g.isle===AR.isle);
   for(const g of G)h+=`<div class="rgn">${esc(g.name)}</div><div class="cgrid">${g.ks.map(foeCard).join('')}</div>`;
   if(!G.length)h+='<p class="note2">Bu adanın canlıları bulunamadı.</p>';return h}
 function renderOv(){const ov=$('arov');if(!ov)return;
-  ov.innerHTML=`<div class="arb" role="dialog" aria-modal="true" aria-label="Arena"><div class="arh"><h2>⚔ Arena</h2><span class="lv">Seviye ${[1,10,25,50].map(n=>`<button type="button" class="chip${lvl===n?' on':''}" data-al="${n}">${n}</button>`).join('')}</span><span class="sp"></span>${AR.sel?'<button type="button" class="abtn gh" data-ax="back">Arenaya dön</button>':''}<button type="button" class="abtn x" data-ax="out">Arenadan çık</button></div>
+  ov.innerHTML=`<div class="arb" role="dialog" aria-modal="true" aria-label="Arena"><div class="arh"><h2>⚔ Arena</h2><span class="lv">Seviye ${[1,10,25,50].map(n=>`<button type="button" class="chip${lvl===n?' on':''}" data-al="${n}">${n}</button>`).join('')}</span><button type="button" class="chip${AR.real?' on':''}" data-ar2="real" title="Açıkken canlar gerçekten gider; rakip ölebilir, sen de yenilebilirsin. Enerji ve mana da gerçek.">Gerçek dövüş: ${AR.real?'Açık':'Kapalı'}</button><span class="sp"></span>${AR.sel?'<button type="button" class="abtn gh" data-ax="back">Arenaya dön (Tab)</button>':''}<button type="button" class="abtn x" data-ax="out">Arenadan çık</button></div>
     <div class="arg"><div class="arc1">${leftHTML()}</div><div class="arc2"><h3>Rakipler</h3><p class="note2" style="margin:0 0 8px">Bir canlıya ya da reisine dokun: arenada tek başına belirir (öncekinin yerini alır). Kimse hasar almaz, kimse ölmez; vuruşlar ve hasar sayıları görünür.</p>${rightHTML()}</div></div></div>`;
   drawDoll2();setTimeout(pump,0)}
 function refreshLeft(){const c=document.querySelector('#arov .arc1');if(!c)return;const st_=c.scrollTop;c.innerHTML=leftHTML();c.scrollTop=st_;drawDoll2()}
@@ -12552,6 +12552,7 @@ function openOv(){let ov=$('arov');if(!ov){ov=document.createElement('div');ov.i
 function closeOv(){AR.open=false;const ov=$('arov');if(ov)ov.hidden=true;paused=false;renderHud()}
 function ovClick(e){const t=e.target;let b;
   if((b=t.closest('[data-ax]'))){if(b.dataset.ax==='out')leave();else closeOv();return}
+  if((b=t.closest('[data-ar2]'))){AR.real=!AR.real;window.__plArenaFree=!AR.real;sfx(AR.real?'bad':'pick');renderOv();return}
   if((b=t.closest('[data-as]'))){AR.slot=b.dataset.as;sfx('pick');refreshLeft();return}
   if(t.id==='ardoll'){const r=t.getBoundingClientRect(),fx=(e.clientX-r.left)/r.width,fy=(e.clientY-r.top)/r.height;AR.slot=fy<.34?'bas':fy>.8?'ayak':Math.abs(fx-.5)>.2?(fx>.5?'silah':'el'):'govde';sfx('pick');refreshLeft();return}
   if((b=t.closest('[data-aw]'))){hold(b.dataset.aw||null);sfx('craft');refreshLeft();return}
@@ -12562,7 +12563,7 @@ function ovClick(e){const t=e.target;let b;
   if((b=t.closest('[data-af]'))){AR.sel=b.dataset.af;AR.boss=false;closeOv();spawnSel();return}
   if((b=t.closest('[data-ab]'))&&!b.disabled){AR.sel=b.dataset.ab;AR.boss=true;closeOv();spawnSel();return}
   if(t===$('arov')&&AR.sel)closeOv()}
-addEventListener('keydown',e=>{if(!AR.on||!AR.open)return;if(e.key==='Escape'&&AR.sel){e.preventDefault();closeOv()}e.stopPropagation()},true);
+addEventListener('keydown',e=>{if(!AR.on||!AR.open)return;if((e.key==='Escape'||e.code==='Tab')&&AR.sel){e.preventDefault();if(!e.repeat)closeOv()}else if(e.code==='Tab')e.preventDefault();e.stopPropagation()},true);
 
 // ------------------------------------------------------------------ spawning the opponent
 function spot(c,i,n){const span=Math.min(120,28*(n-1)),x0=c.x-span/2+(n>1?span*i/(n-1):0),y0=c.y-36;
@@ -12573,12 +12574,12 @@ function spawnSel(){if(!AR.sel||!ANIM[AR.sel])return;clearFoes();pfx={};renderFx
   for(let i=0;i<n;i++){const p=spot(c,i,n);const a={k:nm,x:p.x,y:p.y,hp:D.hp,st:'wander',t:0,dx:0,dy:0,face:p.x<player.x?1:-1,atk:1,flash:0,kb:null,step:Math.random()*6,mad:false,pk,ar:1,_hp:D.hp,_lt:0};
     if(nm!==k){const BIG=(window.__p4&&window.__p4.BIG)||{};Object.assign(a,{mad:true,boss:1,base:k,scale:BIG[k]?1.5:2,tint:'#b44aff',p4s:2.5})}
     animals.push(a);for(let j=0;j<16;j++){const t=j/16*6.283;parts.push({x:a.x+Math.cos(t)*5,y:a.y-3,vx:Math.cos(t)*45,vy:Math.sin(t)*20-18,life:.55,c:j%3?'rgba(200,150,255,.9)':'#ffffff'})}}
-  AR.dealt=0;AR.last=0;AR.recv=0;AR.lastR=0;AR.hits.length=0;hudK='';
+  AR.dealt=0;AR.last=0;AR.recv=0;AR.lastR=0;AR.hits.length=0;hudK='';AR.over=false;hp=maxHP();st=maxSt();tired=false;vitK='';renderVitals();try{const M=window.__plMana;if(M&&M.max)M.set(M.max())}catch(e){}
   try{sfx(nm!==k?'growl':'found')}catch(e){}if(nm!==k){shake=Math.max(shake,.25);shakeP=Math.max(shakeP,3)}
   announce(nm,nm!==k?'Reis arenada! Kırmızı halkadan kaç.':'Arenada')}
 
 // ------------------------------------------------------------------ v107: only the fight. No other keys, no world outside the ring, no wounds on the foe
-addEventListener('keydown',e=>{if(!AR.on||AR.open)return;const t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'))return;if(!AR.keys.test(e.code||'')){e.stopImmediatePropagation();e.preventDefault()}},true);
+addEventListener('keydown',e=>{if(!AR.on||AR.open)return;const t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'))return;if(e.code==='Tab'){e.preventDefault();e.stopImmediatePropagation();if(!e.repeat&&!AR.over)openOv();return}if(!AR.keys.test(e.code||'')){e.stopImmediatePropagation();e.preventDefault()}},true);
 addEventListener('keyup',e=>{if(!AR.on)return;if(!AR.keys.test(e.code||''))e.stopImmediatePropagation()},true);
 addEventListener('wheel',e=>{if(AR.on&&!AR.open)e.stopImmediatePropagation()},{capture:true,passive:true});
 // v108: the arena is a place of its own: none of the island is drawn. A sand floor with a purple sigil, a stone wall,
@@ -12636,7 +12637,7 @@ function mkArena(){const R=AR.R,RO=R+78;AW.RO=RO;
 {const _am=drawAmbient;drawAmbient=function(time){if(!AR.on||!AR.center)return _am.apply(this,arguments);try{if(!AW.outer)mkArena();const c=AR.center,L=2600,RO=AW.RO;
   ctx.drawImage(AW.outer,c.x-RO,c.y-RO);ctx.strokeStyle='#0b0812';ctx.lineWidth=L;ctx.beginPath();ctx.arc(c.x,c.y,RO-1+L/2,0,Math.PI*2);ctx.stroke();
   const t=performance.now()/1000;for(let i=0;i<8;i++){const a=i/8*Math.PI*2+Math.PI/8;brazier(c.x+Math.cos(a)*(AR.R+9),c.y+Math.sin(a)*(AR.R+9),t,i)}}catch(e){}}}
-{const _da=drawAnimal;drawAnimal=function(a){if(!AR.on||!a||!a.ar)return _da.apply(this,arguments);const D=ANIM[a.k],h=a.hp;if(D)a.hp=D.hp;try{return _da.apply(this,arguments)}finally{a.hp=h}}}
+{const _da=drawAnimal;drawAnimal=function(a){if(!AR.on||!a||!a.ar||AR.real)return _da.apply(this,arguments);const D=ANIM[a.k],h=a.hp;if(D)a.hp=D.hp;try{return _da.apply(this,arguments)}finally{a.hp=h}}}
 // ------------------------------------------------------------------ the HUD on top during a fight
 let hudK='';
 function buildHud(){if($('arhud'))return;const h=document.createElement('div');h.id='arhud';h.hidden=true;
@@ -12647,32 +12648,39 @@ function buildHud(){if($('arhud'))return;const h=document.createElement('div');h
     if(a==='ult'){try{window.__plUlt.fill()}catch(x){}}else if(a==='sel')openOv();else if(a==='re')spawnSel();else if(a==='mad'){for(const x of animals)if(x.ar){x.mad=true;x.t=0}sfx('growl')}else if(a==='out')leave()})}
 function renderHud(){const h=$('arhud');if(!h)return;h.hidden=!AR.on||AR.open;if(h.hidden)return;
   const now=performance.now();let s5=0;for(const x of AR.hits)if(now-x[0]<5000)s5+=x[1];
-  const foe=AR.sel?((AR.boss&&canBoss(AR.sel)?bossOf(AR.sel)||AR.sel:AR.sel)):'Rakip seç';
+  const foe=AR.sel?((AR.boss&&canBoss(AR.sel)?bossOf(AR.sel)||AR.sel:AR.sel)+(AR.real?' · GERÇEK':'')):'Rakip seç';
   const k=foe+'|'+Math.round(AR.dealt)+'|'+Math.round(AR.last)+'|'+Math.round(s5/5)+'|'+Math.round(AR.recv)+'|'+Math.round(AR.lastR);if(k===hudK)return;hudK=k;
   $('arfoe').textContent=foe;$('ard1').textContent=fmt(AR.dealt);$('ard2').textContent=AR.last?fmt(AR.last):'–';$('ard3').textContent=fmt(s5/5);$('arr1').textContent=fmt(AR.recv);$('arr2').textContent=AR.lastR?fmt(AR.lastR):'–'}
 
 // ------------------------------------------------------------------ nobody loses health; breath and mana never run out
-{const _h=hurt;hurt=function(){if(!AR.on)return _h.apply(this,arguments);const H=1e6;hp=H;try{return _h.apply(this,arguments)}finally{const d=H-hp;hp=maxHP();vitK='';renderVitals();if(d>0){AR.recv+=d;AR.lastR=d;hudK=''}}}}
-{const _t=tickFx;tickFx=function(){if(!AR.on)return _t.apply(this,arguments);const H=1e6;hp=H;try{return _t.apply(this,arguments)}finally{const d=H-hp;hp=maxHP();if(d>0){AR.recv+=d;hudK=''}}}}
-{const _f=faint;faint=function(){if(AR.on){hp=maxHP();vitK='';return}return _f.apply(this,arguments)}}
-{const _k=knockedOut;knockedOut=function(){if(AR.on){hp=maxHP();return}return _k.apply(this,arguments)}}
-{const _ka=killAnimal;killAnimal=function(a){if(AR.on)return;return _ka.apply(this,arguments)}}
+{const _h=hurt;hurt=function(){if(!AR.on)return _h.apply(this,arguments);if(AR.real){const h0=hp;try{return _h.apply(this,arguments)}finally{const d=h0-hp;if(d>0){AR.recv+=d;AR.lastR=d;hudK=''}}}const H=1e6;hp=H;try{return _h.apply(this,arguments)}finally{const d=H-hp;hp=maxHP();vitK='';renderVitals();if(d>0){AR.recv+=d;AR.lastR=d;hudK=''}}}}
+{const _t=tickFx;tickFx=function(){if(!AR.on)return _t.apply(this,arguments);if(AR.real){const h0=hp;try{return _t.apply(this,arguments)}finally{const d=h0-hp;if(d>0){AR.recv+=d;hudK=''}}}const H=1e6;hp=H;try{return _t.apply(this,arguments)}finally{const d=H-hp;hp=maxHP();if(d>0){AR.recv+=d;hudK=''}}}}
+{const _f=faint;faint=function(){if(AR.on){if(AR.real&&!AR.over){hp=0;defeat();return}hp=maxHP();vitK='';return}return _f.apply(this,arguments)}}
+{const _k=knockedOut;knockedOut=function(){if(AR.on){if(AR.real&&!AR.over){hp=0;defeat();return}hp=maxHP();return}return _k.apply(this,arguments)}}
+{const _ka=killAnimal;killAnimal=function(a){if(AR.on){if(AR.real&&a&&a.ar&&!AR.over)foeDown(a);return}return _ka.apply(this,arguments)}}
+// v126: real fight (Gerçek dövüş): health, energy and mana are real; the foe can fall and so can you; then the choice screen opens
+function foeDown(a){const i=animals.indexOf(a);if(i<0)return;const D=ANIM[a.k]||{};if(a._hp!=null&&a.hp<a._hp){AR.dealt+=a._hp-a.hp;AR.last=a._hp-a.hp}animals.splice(i,1);
+  for(let k=0;k<26;k++)parts.push({x:a.x,y:a.y-6,vx:(Math.random()-.5)*110,vy:-30-Math.random()*70,life:.8,c:k%3===0?'#f2d070':k%3===1?'#c84a3a':'#e8e0c8'});
+  shake=Math.max(shake,.3);try{sfx('found')}catch(e){}if(!animals.some(b=>b.ar))victory(a.k)}
+function victory(nm){AR.over=true;try{sfx('level')}catch(e){}announce('Kazandın!',`${nm} yenildi · verdiğin ${fmt(AR.dealt)} · aldığın ${fmt(AR.recv)}`);setTimeout(()=>{if(AR.on&&AR.over)openOv()},1600)}
+function defeat(){AR.over=true;const nm=AR.sel||'';clearFoes();pfx={};try{renderFx()}catch(e){}try{sfx('bad')}catch(e){}shake=Math.max(shake,.35);
+  announce('Yenildin',`${nm?esc(nm)+' · ':''}verdiğin ${fmt(AR.dealt)} · aldığın ${fmt(AR.recv)}`);vitK='';renderVitals();setTimeout(()=>{if(AR.on&&AR.over){hp=maxHP();vitK='';renderVitals();openOv()}},1600)}
 {const _sa=spawnAnimals;spawnAnimals=function(){if(AR.on)return;return _sa.apply(this,arguments)}}
 {const _sn=spawnNight;spawnNight=function(){if(AR.on)return;return _sn.apply(this,arguments)}}
 {const _gk=guideKey;guideKey=function(){if(AR.on)return null;return _gk.apply(this,arguments)}}
 {const _sv=saveTo;saveTo=function(){if(AR.on)return false;return _sv.apply(this,arguments)}}
 {const _sn2=snapshot;snapshot=function(){if(AR.on)return{};return _sn2.apply(this,arguments)};try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}}
 {const _em=exitToMenu;exitToMenu=function(){if(AR.on){leave();return}return _em.apply(this,arguments)}}
-function pre(){const now=performance.now();
-  hp=maxHP();st=maxSt();tired=false;food=100;dayT=720;if(weather&&weather.k!=='açık')weather={k:'açık',t:1e9};
-  try{const M=window.__plMana;if(M){if(M.on)M.on();const m=M.max?M.max():100;if(M.get()<m)M.set(m)}}catch(e){}
+function pre(){const now=performance.now();window.__plArenaFree=!AR.real;
+  if(!AR.real){hp=maxHP();st=maxSt();tired=false}food=100;dayT=720;if(weather&&weather.k!=='açık')weather={k:'açık',t:1e9};
+  try{const M=window.__plMana;if(M){if(M.on)M.on();const m=M.max?M.max():100;if(!AR.real&&M.get()<m)M.set(m)}}catch(e){}
   if(AR.held){delete toolDur[AR.held];if(!(inv[AR.held]>0))inv[AR.held]=1}
   for(const g of ['Tabanca mermisi','Pompalı fişeği'])if((inv[g]||0)<50)inv[g]=99;
   for(const n of AR.nodesOff)n.alive=false;
   const c=AR.center;
   for(const a of animals){if(!a.ar)continue;const D=ANIM[a.k];if(!D)continue;if(a._hp==null)a._hp=D.hp;
     if(a.hp<a._hp-.01){const d=a._hp-a.hp;AR.dealt+=d;AR.last=d;AR.hits.push([now,d]);a._lt=now;a._hp=a.hp;hudK=''}
-    if(a.hp<D.hp){a.hp=D.hp;a._hp=D.hp}
+    if(!AR.real&&a.hp<D.hp){a.hp=D.hp;a._hp=D.hp}
     if(a.frz>30)a.frz=3;
     if(c&&Math.hypot(a.x-c.x,a.y-c.y)>AR.R+150){const an=Math.random()*6.283;a.x=c.x+Math.cos(an)*AR.R*.5;a.y=c.y+Math.sin(an)*AR.R*.5;a.kb=null;a.lunge=null}}
   while(AR.hits.length&&now-AR.hits[0][0]>6000)AR.hits.shift();
@@ -12728,7 +12736,7 @@ function blockFx(){PR.bf=.15;try{audio.synth((ac,out)=>{const t=ac.currentTime+.
   const a=aimA(),x=player.x+Math.cos(a)*9,y=player.y-7+Math.sin(a)*6;for(let i=0;i<8;i++){const t=a+(Math.random()-.5)*1.6,s=30+Math.random()*50;parts.push({x,y,vx:Math.cos(t)*s,vy:Math.sin(t)*s-10,life:.22,c:i%2?'#e8e8f0':'#fff2b0'})}}
 {const _h=hurt;hurt=function(n,why,phys){const col=window.__plHitCol||'n';window.__plHitCol=null;
   if(PR.hold&&phys&&!(PR.brk>0)){n=n*(BLK[col]||BLK.n);blockFx();
-    if(!window.__plArena){st-=6+n*.4;stRest=0;vitK='';if(st<=0){st=0;PR.hold=false;PR.brk=1;try{const P=window.__plPSt;if(P)P.stun=Math.max(P.stun,.5)}catch(e){}floatText('Kalkan düştü!','#ff9a6a');try{sfx('bad')}catch(e){}}}}
+    if(!window.__plArenaFree){st-=6+n*.4;stRest=0;vitK='';if(st<=0){st=0;PR.hold=false;PR.brk=1;try{const P=window.__plPSt;if(P)P.stun=Math.max(P.stun,.5)}catch(e){}floatText('Kalkan düştü!','#ff9a6a');try{sfx('bad')}catch(e){}}}}
   return _h.call(this,n,why,phys)}}
 {const _at=attack;attack=function(){if(PR.hold)return;return _at.apply(this,arguments)}}
 // thrown things: turned aside inside the window
@@ -12815,6 +12823,10 @@ for(const k of ['Kurt','Bataklık kurdu','Kül kurdu','Gölge kurdu','Gök tazı
 // v121: some turn immune now and then (a blue aura): no blow, spell or bullet works on them for a while
 const IMM=new Set(['Kristal golem','Kristal golemcik','Büyük golem','Gölge muhafız','Gök bekçisi','Kristal geyik','Kristal örümcek','Işık engereği','Uzaylı dronu','Devriye robotu','Goblin şamanı','Kül cini','Kara ejder','Kızıl ejder','Lav golemi','Hurda devi','Yavru ejder']);
 const IMT=2.5;
+// v126: how hard a creature is (0 = Çayır … 1 = Gök Rıhtımı, the 12 lands of both islands; a Reis +0,25): harder ones use their
+// moves, combos, grabs, dodges and immunity more often, and stay immune longer
+let TIER=null;function tierOf(a){if(!TIER){TIER={};(window.__I1B||[]).forEach((L,i)=>L.forEach(k=>{if(TIER[k]==null)TIER[k]=i}));const C=window.__I2C;if(C&&C.anim)for(const b in C.anim)for(const x of C.anim[b])if(TIER[x.n]==null)TIER[x.n]=6+(+b)}
+  const i=TIER[a.base||a.k];let t=i==null?.3:i/11;if(a.boss)t+=.25;return Math.min(1,Math.max(0,t))}
 const DODGE=new Set(['Kurt','Bataklık kurdu','Kül kurdu','Gölge kurdu','Gök tazısı','Vaşak','Goblin','Goblin okçusu','Goblin şamanı','Kartal','Fırtına kartalı','Lazer dronu','Uzaylı dronu','Kristal yarasası','Kor yarasası','Gölge muhafız','Kristal örümcek','Engerek','Işık engereği','Yavru ejder','Işık tilkisi']);
 const BIGK=new Set(['Mağara ayısı','Timsah','Yaban öküzü','Kara ejder','Kızıl ejder','Büyük golem','Lav golemi','Hurda devi','Gök bekçisi','Kristal golem','Gölge muhafız']);
 function movesOf(a){const b=a.base||a.k,L=(SP[b]||[]).slice();if(a.boss){if(L.indexOf('roar')<0)L.push('roar');if(L.indexOf('combo3')<0)L.push('combo3');if(!L.length)L.push('charge')}return L}
@@ -12834,7 +12846,7 @@ function impact(a,m,dmg,why,kb){if(dodge||pInv>0)return false;if(PRt()>0&&m.col!
   pInv=.5;lastBitten=performance.now();stopGather();window.__plHitCol=m.col;hurt(Math.max(1,Math.round(dmg)),why,true);
   if(kb&&a){const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;for(let s=0;s<6;s++){const nx=player.x+dx/d*kb/6,ny=player.y+dy/d*kb/6;if(!blocked(nx,player.y))player.x=nx;if(!blocked(player.x,ny))player.y=ny}}return true}
 function dust(x,y,n,c){for(let i=0;i<n;i++){const t=i/n*6.283;parts.push({x:x+Math.cos(t)*4,y:y,vx:Math.cos(t)*(50+Math.random()*40),vy:Math.sin(t)*20-10,life:.45,c:c||(i%2?'#c8b898':'#8a7a60')})}}
-function end(a){a.mv=null;a.mvCd=(a.boss?2.6:3.6)+Math.random()*2.6;a.atk=Math.max(a.atk||0,.5)}
+function end(a){a.mv=null;a.mvCd=((a.boss?2.6:3.6)+Math.random()*2.6)*(1-.5*tierOf(a));a.atk=Math.max(a.atk||0,.5)}
 function start(a,k){const m={k,t:0,ph:'w',col:colOf(a,k),T:WIND[k]+(colOf(a,k)==='r'?.15:0),tx:player.x,ty:player.y,sx:a.x,sy:a.y,h:0};
   const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;m.ux=dx/d;m.uy=dy/d;m.R=k==='roar'?60+rad(a)*1.6:0;
   if(k==='combo3'){const P=[['y','n','y'],['n','y','n'],['n','n','y'],['y','y','n']][Math.floor(Math.random()*4)].slice();if(a.boss&&Math.random()<.45)P[2]='r';m.cols=P;m.Ts=[.5,.32,.58];m.i=0;m.col=P[0];m.T=m.Ts[0];beep(0)}
@@ -12901,13 +12913,13 @@ function tickMS(dt){for(let i=MS.length-1;i>=0;i--){const s=MS[i];
     if(a.mvCd==null)a.mvCd=1.2+Math.random()*2;a.mvCd-=dt;
     if(a.mvCd>0||a.st!=='chase'||a.wind>0||a.lunge||a.p4slam||a.kb)continue;
     const d=Math.hypot(player.x-a.x,player.y-a.y),R0=rad(a),ok=L.filter(k=>k==='grab'?d<=R0+18:k==='combo3'?d<=R0+44:d>=MOVES[k].r[0]&&d<=MOVES[k].r[1]);
-    if(ok.indexOf('grab')>=0&&Math.random()<dt*3){start(a,'grab');continue}
-    if(ok.length&&Math.random()<dt*1.4)start(a,ok[Math.floor(Math.random()*ok.length)])}
+    const TT=tierOf(a);if(ok.indexOf('grab')>=0&&Math.random()<dt*(2+2*TT)){start(a,'grab');continue}
+    if(ok.length&&Math.random()<dt*1.4*(1+TT)){const w=ok.map(k=>k==='combo3'?1+2*TT:1),sum=w.reduce((x,y)=>x+y,0);let q=Math.random()*sum,j=0;for(;j<ok.length-1;j++){q-=w[j];if(q<=0)break}start(a,ok[j])}}
   // v120: quick creatures see your fire balls, bullets and thrown spears coming and jump aside
   try{const L2=(window.__plPShots||[]).concat(window.__plSPR||[]);if(L2.length)for(const a of animals){if(!(DODGE.has(a.base||a.k)||a.boss))continue;if(a.mv||a.stun>0||a.frz>0||a.kb||a.wind>0||a.lunge)continue;a.dgCd=(a.dgCd||0)-dt;if(a.dgCd>0)continue;
     for(const s of L2){const sp=Math.hypot(s.vx,s.vy);if(sp<1)continue;const rx=a.x-s.x,ry=a.y-6-s.y,al=(rx*s.vx+ry*s.vy)/sp;if(al<0||al/sp>.38)continue;const pe=(rx*s.vy-ry*s.vx)/sp;if(Math.abs(pe)>rad(a)+10)continue;
       if(!s._dg)s._dg=new Set();if(s._dg.has(a))continue;s._dg.add(a);
-      if(Math.random()<(a.boss?.35:.55)){const sd=pe>=0?1:-1;a.kb={vx:s.vy/sp*sd*190,vy:-s.vx/sp*sd*190,t:.17};a.dgCd=1.2+Math.random()*1.2;dust(a.x,a.y,6);break}}}}catch(e){}
+      const TT=tierOf(a);if(Math.random()<.2+.5*TT+(a.boss?.1:0)){const sd=pe>=0?1:-1;a.kb={vx:s.vy/sp*sd*190,vy:-s.vx/sp*sd*190,t:.17};a.dgCd=(2.2-1.2*TT)+Math.random()*(1.2-.6*TT);dust(a.x,a.y,6);break}}}}catch(e){}
   try{tickMS(dt)}catch(e){}
   return r}}
 
@@ -12966,8 +12978,8 @@ const isImm=a=>a&&a.imm>0;
 {const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);if(frozenNow())return r;
   for(const a of animals){if(!(IMM.has(a.base||a.k)||a.boss))continue;
     if(a.imm>0){a.imm-=dt;a.kb=null;if(a.imm<=0){a.imm=0;for(let i=0;i<10;i++){const t=i/10*6.283;parts.push({x:a.x+Math.cos(t)*rad(a),y:a.y-6+Math.sin(t)*rad(a)*.6,vx:Math.cos(t)*30,vy:Math.sin(t)*15,life:.35,c:'#bfe8ff'})}}continue}
-    if(a.imCd==null)a.imCd=4+Math.random()*5;a.imCd-=dt;
-    if(a.imCd<=0&&a.st==='chase'&&!a.stun&&Math.random()<dt*.6){a.imm=IMT;a.imHp=a.hp;a.imCd=9+Math.random()*7;shimmer()}}
+    const TT=tierOf(a);if(a.imCd==null)a.imCd=(6-3*TT)+Math.random()*4;a.imCd-=dt;
+    if(a.imCd<=0&&a.st==='chase'&&!a.stun&&Math.random()<dt*(.35+.7*TT)){a.imm=1.2+2.2*TT;a.imHp=a.hp;a.imCd=(15-8*TT)+Math.random()*(7-3*TT);shimmer()}}
   return r}}
 // damage that lands while immune is taken back, its number turns into "Etkisiz"
 function keepImm(){for(const a of animals)if(isImm(a)){if(a.hp<a.imHp)a.hp=a.imHp;a.kb=null}}
@@ -13028,7 +13040,7 @@ function kindOf(){const h=held();if(h&&GT[h]){const g=GT[h].kind;if(g==='staff')
 function aim(){return Math.atan2(C.my-(player.y-6),C.mx-player.x)}
 function faceTo(a){const c=Math.cos(a),s=Math.sin(a);player.face=Math.abs(c)>=Math.abs(s)?{x:Math.sign(c)||1,y:0}:{x:0,y:Math.sign(s)||1}}
 function base(){const w=weapon();return{w,dm:w.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*(buffOn('zayıf')?.8:1)}}
-function pay(n){if(window.__plArena)return true;if(tired||st<n){floatText('Nefesin kesildi!','#9ad8ff');try{sfx('bad')}catch(e){}return false}st-=n;stRest=0;vitK='';return true}
+function pay(n){if(window.__plArenaFree)return true;if(tired||st<n){floatText('Nefesin kesildi!','#9ad8ff');try{sfx('bad')}catch(e){}return false}st-=n;stRest=0;vitK='';return true}
 function name(t,c){floats.push({x:player.x,y:player.y-30,t:0,text:t,color:c||'#ffe7a0',size:8})}
 function thump(dm){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005,o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.setValueAtTime(170,t);o.frequency.exponentialRampToValueAtTime(40,t+.18);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(Math.min(1,.5+dm/60),t+.006);g.gain.exponentialRampToValueAtTime(.0005,t+.22);o.connect(g);g.connect(out);o.start(t);o.stop(t+.24)})}catch(e){try{sfx('hit')}catch(_){}}}
 function whoosh(){try{sfx('swing')}catch(e){}}
@@ -13115,11 +13127,11 @@ function tgt(a){return{x:player.x+Math.cos(a)*120,y:player.y-10+Math.sin(a)*120}
 function cast3(L,m){const S=staffS();if(!S)return;for(const d of L)window.__plFire(S,sdm(m),tgt(aim()),d);try{sfx('magic')}catch(e){}}
 const GUN={'Tabanca':{dm:58,n:1,sp:0,ammo:'Tabanca mermisi'},'Pompalı':{dm:30,n:5,sp:.26,ammo:'Pompalı fişeği'}};
 const GS={c1:'#fff4b0',c2:'#ffb030',spd:640,range:340,line:1,trail:.08};
-function gshot(a,m,da,o){const h=held(),G=GUN[h];if(!G)return;if(!window.__plArena&&!(o&&o.free)){const n=inv[G.ammo]||0;if(n<=0){floatText(`${G.ammo} yok`,'#ffb060');return}inv[G.ammo]=n-1}
+function gshot(a,m,da,o){const h=held(),G=GUN[h];if(!G)return;if(!window.__plArenaFree&&!(o&&o.free)){const n=inv[G.ammo]||0;if(n<=0){floatText(`${G.ammo} yok`,'#ffb060');return}inv[G.ammo]=n-1}
   const S=Object.assign({},GS,o||{}),dm=Math.round(G.dm*m*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1));for(let i=0;i<G.n;i++)window.__plFire(S,dm,tgt(a),(da||0)+(G.n>1?(i/(G.n-1)-.5)*2*G.sp:0));
   shake=Math.max(shake,G.n>1?.18:.1);try{audio.synth((ac,out)=>{const t0=ac.currentTime,len=.2,b=ac.createBuffer(1,Math.ceil(ac.sampleRate*len),ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,3);const s=ac.createBufferSource();s.buffer=b;const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=2400;const g=ac.createGain();g.gain.value=.4;s.connect(f);f.connect(g);g.connect(out);s.start(t0)})}catch(e){}
   try{renderInv()}catch(e){}}
-function canPay(k,M){if(window.__plArena)return true;if(M.mana){const S=staffS(),P=window.__plMana;if(!S||!P)return false;const c=S.cost*M.mana;if(P.get()<c){floatText('Mana yetmiyor','#c9a0ff');return false}P.set(P.get()-c);return true}
+function canPay(k,M){if(window.__plArenaFree)return true;if(M.mana){const S=staffS(),P=window.__plMana;if(!S||!P)return false;const c=S.cost*M.mana;if(P.get()<c){floatText('Mana yetmiyor','#c9a0ff');return false}P.set(P.get()-c);return true}
   if(M.ammo){const G=GUN[held()];if(!G||(inv[G.ammo]||0)<1){floatText(G?`${G.ammo} yok`:'','#ffb060');return false}return true}return pay(M.st||10)}
 function tapDur(){const k=kindOf();if(k==='staff'){const S=staffS();return S?S.cd:.55}if(k==='gun')return held()==='Pompalı'?1.05:.42;
   const sw=P4().sw;if(sw&&sw.ant!=null)return (sw.ant+sw.str+sw.fol)*(sw.slow||1);return .3}

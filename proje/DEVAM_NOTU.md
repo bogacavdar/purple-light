@@ -855,3 +855,9 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 ## v125 (27 Ekim 2026) — Bağışıklık görüntüsü canavarın üstünde
 - Boğaç: bağışıklık halkaları beğenilmedi, canavarın üstüne otursun. Geniş mavi zemin parıltısı ve kalkan halkaları kalktı. Bağışıkken canavar mavi bir gölge parıltısıyla (`shadowBlur`, gövde kenarını izler, nabız gibi) ve mavi renk tonuyla (`a.tint`, p2 çizimli canlılarda) çizilir; kıvılcımlar yalnızca gövdenin üstünden yükselir.
 - Menüde "Versiyon 125". chk.js 0 hata.
+
+## v126 (27 Ekim 2026) — Zorluğa göre düşman davranışı; arenada gerçek dövüş ve Tab
+- `v111-moves`: `tierOf(a)` = canlının yaşadığı bölgenin sırası / 11 (ada 1: Çayır 0 … Mor Kristal Vadisi 5; ada 2: Yüzen Kayalar 6 … Gök Rıhtımı 11), reiste +0,25. Bununla: özel hamle beklemesi ×(1−0,5T), hamle başlatma ihtimali ×(1+T), üçlü kombo ağırlığı 1+2T, yakalama ihtimali dt×(2+2T); mermiden kaçma %20+%50T (+%10 reis), bekleme (2,2−1,2T)+0–(1,2−0,6T) sn; bağışıklık süresi 1,2+2,2T sn, bekleme (15−8T)+0–(7−3T) sn, ilk (6−3T)+0–4 sn, başlama ihtimali dt×(0,35+0,7T).
+- Arena **Gerçek dövüş** (`AR.real`, seçim ekranının başlığında anahtar): açıkken oyuncunun ve rakibin canı gerçekten gider; enerji ve mana da gerçek (`window.__plArenaFree` kapanır: kombo, kalkan ve silah bedelleri işler). Rakip ölünce (`foeDown`) "Kazandın!", oyuncu düşünce (`defeat`) "Yenildin" duyurulur (verilen/alınan hasarla), 1,6 sn sonra seçim ekranı açılır. Her yeni rakipte can, enerji ve mana dolar. Şeritte rakip adının yanında "GERÇEK". Yine kayıt ya da başarım yok.
+- Arenada **Tab** seçim ekranını açar/kapatır (ekran açıkken oyun duraklatılmış: saldırılar, mermiler, hamleler durur).
+- Menüde "Versiyon 126". chk.js 0 hata.
