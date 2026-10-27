@@ -1145,3 +1145,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
   - "Bitir" adımı (`kill:`): saldırmaz; canı silahının ~2,4 vuruşluk hasarına iner, kolayca bitirilir. Ganimet/XP/Reis/av sayacı yok (v1.70).
 - **ŞİMDİ!/YİNE! halkası yalnızca Ritimli 2. ve 3. vuruş derslerinde** görünür; arenada, normal oyunda ve diğer derslerde (ör. takla vuruşu, bitirici) görünmez. Ritim pencereleri aynı.
 - Menüde "Versiyon 1.72". chk.js 0 hata; oyun hatasız açılıyor.
+
+## v1.73 (28 Ekim 2026)
+- "Bitir" adımında 2. domuz gelmiyordu: Börü'nün yanında kamp ateşi varken `nearCamp` saldırgan hayvanları sakinleştirip kaçırıyordu; ders sürerken Börü'nün 340 px çevresinde kamp ateşi/güvenli alan sayılmaz (`window.__plLessonAt`).
+- Yeni alıştırma canavarı daha çabuk gelir (1,5 sn) ve Börü'den 300 px'e kadar her yerde; oyuncunun yanında yer bulunamazsa Börü'nün çevresinde doğar.
+- Menüde "Versiyon 1.73". chk.js 0 hata; oyun hatasız açılıyor.

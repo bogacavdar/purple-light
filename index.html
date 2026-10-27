@@ -1335,7 +1335,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.72</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.73</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -5567,7 +5567,7 @@ for(const k in ANIM)ANIM[k].hp=Math.round(ANIM[k].hp*(ANIM[k].z?1.3:1));
 const TEMPC={'zararsız':'#8fd46b','nötr':'#f2d070','saldırgan':'#ff6a5a'};
 const animals=[];let animT=0,pInv=0,fightSeen=false;
 const SAFE_R=22*T;   // nothing dangerous near Ekin's fire
-const nearCamp=(x,y)=>camps.some(c=>c.t>0&&Math.hypot(x-c.x,y-c.y)<100)||Math.hypot(x-npc.home.x,y-npc.home.y)<SAFE_R||FIRES.some(f=>Math.hypot(x-f.x,y-f.y)<120)||Math.hypot(x-furnace.x,y-furnace.y)<120||(witchShown&&Math.hypot(x-cauldron.x,y-cauldron.y)<120);
+const nearCamp=(x,y)=>!(window.__plLessonAt&&window.__plLessonAt(x,y))&&(camps.some(c=>c.t>0&&Math.hypot(x-c.x,y-c.y)<100)||Math.hypot(x-npc.home.x,y-npc.home.y)<SAFE_R||FIRES.some(f=>Math.hypot(x-f.x,y-f.y)<120)||Math.hypot(x-furnace.x,y-furnace.y)<120||(witchShown&&Math.hypot(x-cauldron.x,y-cauldron.y)<120));   // v1.73: a campfire does not calm Börü's practice foe during a lesson
 // animals that can fight back roam in herds and packs: hit one (or get too close to a pack) and they all come
 const PACK={'Geyik':[2,5],'Karaca':[2,4],'Yaban öküzü':[2,3],'Yaban domuzu':[2,5],'Kurt':[2,5],'Bataklık kurdu':[2,4],'Kül kurdu':[2,4]};
 let packId=0;
@@ -13570,7 +13570,7 @@ function have(k){return !!L.own[k]}
 function stage(){return V.a||I2?6:V.b}
 function reqOK(l){if(l.boss)return !!V.u;return lvl>=l.lv&&V.b>=l.b}
 function reqTxt(l){if(l.boss)return 'Kara ejderi ya da Kristal golem Reisini yen';const p=[];if(lvl<l.lv)p.push('seviye '+l.lv);if(V.b<l.b)p.push(['Çayır','Orman','Bataklık','Kayalık Dağ','Kül Diyarı','Mor Kristal Vadisi'][l.b]+'\'a git');return p.join(' · ')}
-window.__plLesson=()=>!!L.cur;window.__plLessonK=()=>L.cur?L.cur.k:null;
+window.__plLesson=()=>!!L.cur;window.__plLessonAt=(x,y)=>!!L.cur&&!!alp&&Math.hypot(x-alp.x,y-alp.y)<340;window.__plLessonK=()=>L.cur?L.cur.k:null;
 window.__plMoveOK=type=>{if(window.__plArena||I2||V.a)return true;const l=LK[type];if(!l)return true;return have(type)||!!(L.cur&&(L.cur.k===type||(L.cur.k==='c3'&&type==='c2')))};   // v1.64: the 3-blow lesson always lets you do the 2nd blow on the way
 // v1.28's land-by-land announcements are replaced by the lessons
 function hush(){try{V.told=V.told||{};for(const k of ['dash','double','c2','c3','charged','cdc'])V.told[k]=1}catch(e){}}
@@ -13610,7 +13610,7 @@ function foes(){return animals.filter(a=>a.ders)}
 function clearFoes(){for(let i=animals.length-1;i>=0;i--){const a=animals[i];if(!a.ders)continue;for(let k=0;k<14;k++)parts.push({x:a.x,y:a.y-6,vx:(Math.random()-.5)*70,vy:-20-Math.random()*40,life:.5,c:k%2?'#e8e0c8':'#9a9a9a'});animals.splice(i,1)}}
 function spawnFoe(force){const c=L.cur;if(!c)return null;const l=LK[c.k];if(!l||!ANIM[l.foe])return null;if(!force&&FOE.n>=16)return null;
   const killLeft=l.st.some((s,i)=>s[0].indexOf('kill:')===0&&c.p[i]<s[1]);const D=ANIM[l.foe];
-  for(let k=0;k<80;k++){const an=Math.PI*(1.1+Math.random()*.8),d=48+Math.random()*30,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;
+  for(let k=0;k<160;k++){const an=k<80?Math.PI*(1.1+Math.random()*.8):Math.random()*Math.PI*2,d=k<80?48+Math.random()*30:40+Math.random()*80,ox=k<80?player.x:alp.x,oy=k<80?player.y:alp.y,x=ox+Math.cos(an)*d,y=oy+Math.sin(an)*d;
     if(!reachAt(x,y)||blocked(x,y)||isWater(tileAt(x,y)))continue;
     const a={k:l.foe,x,y,hp:Math.round(D.hp*(killLeft?1:3)),st:'chase',t:0,dx:0,dy:0,face:x<player.x?1:-1,atk:1,flash:0,kb:null,step:0,mad:true,ders:true,mvCd:99};
     animals.push(a);FOE.n++;try{appearFx(x,y,'#ffe7a0')}catch(e){}try{sfx('growl')}catch(e){}return a}
@@ -13629,7 +13629,7 @@ function tickFoes(){const c=L.cur;if(!c){if(foes().length)clearFoes();farAsk=fal
     else if(d>280&&!farAsk&&!dlgOpen&&!craftOpen&&!frozenNow()){farAsk=true;for(const k in keys)keys[k]=false;goal=null;
       say(`<b>${l?l.n:'Ders'}</b> alanından çıkıyorsun. Çıkarsan ders iptal olur; yeniden almak için Börü'ye gelip dersi baştan alman gerekir.`,[{t:'Derse dön',pri:1,fresh:1,f:()=>{farAsk=false;bye();pushBack()}},{t:'Evet, dersi bırak',f:()=>{farAsk=false;bye();quitLesson(l)}}],alp);return}}
   const calm=calmStep(curStep());for(const a of F){a.mvCd=Math.max(a.mvCd||0,5);a.mad=!calm;if(Math.hypot(a.x-player.x,a.y-player.y)>420){const i=animals.indexOf(a);if(i>=0)animals.splice(i,1)}}
-  if(F.length)return;const nearB=alp&&Math.hypot(alp.x-player.x,alp.y-player.y)<240;if(!nearB)return;if(!FOE.t)FOE.t=t+2.5;if(t>=FOE.t){FOE.t=0;spawnFoe(false)}}
+  if(F.length)return;const nearB=alp&&Math.hypot(alp.x-player.x,alp.y-player.y)<300;if(!nearB)return;if(!FOE.t)FOE.t=t+1.5;if(t>=FOE.t){FOE.t=0;spawnFoe(false)}}   // v1.73: the next foe comes quicker and anywhere on the lesson ground
 // its bite is blunt: a twentieth of your health
 {const _bh=biteHit;biteHit=function(a,D){if(a&&a.ders&&D){const D2=Object.assign({},D,{dmg:Math.max(2,Math.round(maxHP()*.05))});delete D2.fx;const args=Array.prototype.slice.call(arguments);args[1]=D2;return _bh.apply(this,args)}return _bh.apply(this,arguments)}}
 // no XP for the practice foe
