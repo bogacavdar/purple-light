@@ -775,3 +775,10 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - v110'dan `window.__plParryHit` dışa açıldı; arena kartlarında canlının hamleleri etiket olarak görünür (`window.__plMovesOf`).
 - Arena düğmesi yalnızca fare + üzerine gelme olan cihazlarda (`(hover:hover) and (pointer:fine)`). Telefonlar şimdilik ayrı depodaki v104'ü oynar: https://github.com/bogacavdar/purple-light-phone (aynı köken: bogacavdar.github.io, kayıtlar ortak).
 - Menüde "Versiyon 111". chk.js 0 hata.
+
+## v112 (27 Ekim 2026) — Telefonlar şimdilik v104'ü oynar
+- Boğaç'ın kararı: yeni dövüş özellikleri (Arena, savuşturma, hamleler) bilgisayarda oturana kadar telefon ve tabletler v104'ü oynar. Seçilen çözüm: v104'ün kopyası bu depoda `telefon/index.html` (manifest, ikon ve `sw.js` yolları `../`). Kök `index.html`'de 11. satırdan sonraki 4. satır (prototipte yok): fare + üzerine gelme yoksa (`(hover:hover) and (pointer:fine)` değil) `location.replace('telefon/')`; `?pc` atlar, 4 sn içinde ikinci yönlendirme yapılmaz (`sessionStorage pl.redir`).
+- Ana ekrana eklenmiş uygulama aynı kalır (start_url ve scope `/purple-light/`, `telefon/` onun içinde); kayıtlar ortak (aynı köken). `sw.js`'e `telefon/` ve `telefon/index.html` önbellek listesine eklendi (internetsiz açılışta yönlendirme döngüsü olmasın).
+- Yedek: https://github.com/bogacavdar/purple-light-phone deposunda da aynı v104 var (https://bogacavdar.github.io/purple-light-phone/, Pages açılırsa).
+- Prototip türetme: `index.html` satırları [:11] + [15:].
+- Menüde "Versiyon 112". chk.js 0 hata (kök ve telefon/).
