@@ -1177,3 +1177,16 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **Kural:** CLAUDE.md'nin ve bu dosyanın en üstüne yazıldı: tasarım belgesi güncellenmeden geliştirme yok; belge ile kod çelişirse belge doğru. Belge araçları `proje/tools/belge/` (README orada).
 - Tanrı modu (hile) açıkken gece ışıksız kalınca mor ışık yine öldürüyordu (sikkenin ve yığınların %20'si gidiyordu). Belgede "Tanrı modu: ölmezsin" yazdığı için kod belgeye uyduruldu: Tanrı modunda karanlık sayacı işlemez.
 - Menüde "Versiyon 1.78". chk.js 0 hata.
+
+## v1.79 (28 Ekim 2026) — QA turu: Börü dersleri, kerevit kapanı, kamp görevi, envanter
+Kaynak: tarayıcıda oynanarak yapılan QA turu (/home/claude/qa/AJAN_RAPORU.md). Önce tasarım belgesi güncellendi (Börü'nün dersleri, Reisler, Kapan ustası, portallar, görevler), sonra kod.
+- **Çift vuruş dersi kilitleniyordu:** ders başına 16 alıştırma canavarı sınırı dolunca (ör. "Tek vuruşta öldür" hilesiyle ya da düz vuruşla bitirilen domuzlar sayılmayınca) yeni canavar gelmiyordu, ders bitirilemiyordu. Sınır kalktı (`spawnFoe`, `FOE.n>=999`); "Tek vuruşta öldür" (v155) alıştırma canavarına (`a.ders`) işlemez. Denendi: hile açıkken Çift vuruş dersi bitti.
+- **Ders sırasında Reis gelmez:** `window.__plLessonOn` (v129); `bossCheck` ve `tickBossQ` ders sürerken bekler. Ders sırasında dolan Reis ders bitince/bırakılınca gelir (denendi: Kurt Reisi dersten çıkınca geldi).
+- **"Derse dön"** oyuncuyu Börü'den 140 px'e koyar (önce 230'du, 280'lik sınırın dibinde; bir takla yine soruyu açıyordu, canavar da 230 tasmasıyla oyuncuya ulaşamıyordu).
+- **Ders metinleri:** "Sana şu kurdun getirdim" → "Sana bir kurt getirdim" (`l.foe` küçük harf). Ücretsiz tekrar seçeneği listede olunca başlık "Şimdilik öğreteceğim yeni bir şey yok" diyordu; artık alınabilir ders varsa "Hangisini öğrenmek istersin?".
+- **Kapan ustası (Boğaç 5. madde):** "Nerede" satırı Çayır diyordu (kerevit hayvanının yaşadığı yerden hesaplanıyordu); kapana kerevit yalnızca Bataklık/Kayalık Dağ sularında girer. Satır artık Bataklık'ı gösterir (v150, `q.id==='a2'`). Denendi: Çayır nehrinde 15 avda 0, doğu kıyısında 15 avda 3 kerevit.
+- **Kamp gecesi görevi:** sayaç ilerliyor ama kart 0/60'da kalıyor, görev başka bir olay olana kadar tamamlanmıyordu; `tickCamps` her saniye `renderTut` çağırır.
+- **Envanterde çift kutu:** kayıt 0 adetli eşyaları `inv`'den atıp `order`'da bırakıyordu; `gain` yeniden ekleyince aynı eşya iki kez listeleniyordu. `gain` artık `order`'da varsa eklemez.
+- Tarla portalı: Hasan'ın portalı tarlanın içine düşüyordu (Boğaç 4. madde), pClear tarla parsellerini dışlıyor — ana oturum.
+- Belgenin HTML'i (`Purple_Light_belgeler.html`) bu sürümde yeniden üretilmedi; ana oturum üretecek.
+- Menüde "Versiyon 1.79". chk.js 0 hata; v48_bugs.js'deki FAIL'ler v1.78'de de aynı (eski testler).

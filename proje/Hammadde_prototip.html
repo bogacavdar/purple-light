@@ -1331,7 +1331,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.78</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.79</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -2508,7 +2508,7 @@ function annNext(){clearTimeout(discTimer);const el=document.getElementById('dis
   discTimer=setTimeout(()=>{el.hidden=true;annCur=null;discTimer=setTimeout(annNext,220)},2400)}
 function lvlFirst(){if(annCur){annQ.unshift(annCur);annCur=null;document.getElementById('discover').hidden=true}lvlUntil=performance.now()+3000;clearTimeout(discTimer);discTimer=setTimeout(annNext,3150)}
 function gain(name,q=1){
-  if(!(name in inv)){inv[name]=0;order.push(name)}inv[name]+=q;if(hotThing(name)&&!onTitle&&met&&!beltTold.has(name)&&beltIndex(name)<0){beltTold.add(name);setTimeout(()=>beltTip(name),900)}if(!seen.has(name)){seen.add(name);announce(name);if(sk('T6')){const r=PRICE_[name]*5;coins+=r;setTimeout(()=>toast(`İlk keşif ödülü: +${r} sikke`),300)}return true}return false}
+  if(!(name in inv)){inv[name]=0;if(order.indexOf(name)<0)order.push(name)} /* v1.79: a save drops empty items but keeps their order: no second tile */ inv[name]+=q;if(hotThing(name)&&!onTitle&&met&&!beltTold.has(name)&&beltIndex(name)<0){beltTold.add(name);setTimeout(()=>beltTip(name),900)}if(!seen.has(name)){seen.add(name);announce(name);if(sk('T6')){const r=PRICE_[name]*5;coins+=r;setTimeout(()=>toast(`İlk keşif ödülü: +${r} sikke`),300)}return true}return false}
 function add(name){const first=gain(name);renderInv();sfx(first?'found':'pick');if(!first)toast(`+1 ${name}`)}
 // gathering takes time: press E, a bar fills, moving cancels
 const GTIME={'Dal':1,'Taş':1.5,'Lif':1,'Yaprak':.8,'Böğürtlen':1.2,'Çakmaktaşı':2,'Nehir çakılı':1.2,'Kum':1.5,'Su':3,'Nehir kili':2.5,'odun':2.5};
@@ -7203,7 +7203,7 @@ function placeCamp(){
   dstat.camp++;
   v46Hint('campUse',()=>setTimeout(()=>toast(`Kamp ateşi yandı! Yanında gece güvendesin ve canın hızlı dolar. ${TOUCH?'Ateşe dokun':'E'}: odun at ya da çiğ et ve balığı közle.`),300));
   return true}
-function tickCamps(dt){if(isNight()&&camps.some(c=>c.t>0&&Math.hypot(player.x-c.x,player.y-c.y)<48))EKQ.cs+=dt;   // v1.44
+function tickCamps(dt){if(isNight()&&camps.some(c=>c.t>0&&Math.hypot(player.x-c.x,player.y-c.y)<48)){const c0=Math.floor(EKQ.cs);EKQ.cs+=dt;if(Math.floor(EKQ.cs)!==c0&&qState==='active')renderTut()} /* v1.79: the quest card counts up and completes by itself   // v1.44 */ 
 for(let i=camps.length-1;i>=0;i--){const c=camps[i];
   if(c.t>0){const b=c.t;c.t-=dt*(raining()&&!ashStorm()?1.6:1);if(b>40&&c.t<=40&&Math.hypot(player.x-c.x,player.y-c.y)<160)toast('Kamp ateşi sönmek üzere: odun at (2 dal)!',true);if(c.t<=0){c.t=0;c.ash=120}}
   else{c.ash-=dt;if(c.ash<=0)camps.splice(i,1)}}
@@ -9457,11 +9457,11 @@ function spawnBoss(k){const nm=makeBoss(k);if(!nm||bossAlive(k))return false;con
   p4Rumble();try{sfx('growl')}catch(e){}return true}
 function bossWarn(k){const nm=bossName(k);sfx('bad');p4Rumble();announce(nm,'Bir reis geliyor!');
   toast(`${P4.s.bc[k]||0} ${k} avladın: sürünün reisi öfkeyle geliyor! Kırmızı halkaya dikkat et, ${TOUCH?'Atıl düğmesiyle':'Boşluk ile'} kaç.`,true)}
-function bossCheck(){if(!met||wake||fading||sailing||onTitle||tz||P4.bossWait>0)return;if(nearCamp(player.x,player.y))return;
+function bossCheck(){if(!met||wake||fading||sailing||onTitle||tz||P4.bossWait>0)return;if(window.__plLessonOn&&window.__plLessonOn())return; /* v1.79: no Reis during Börü's lesson */ if(nearCamp(player.x,player.y))return;
   for(const k in P4.s.bc){if(!bossOk(k)||bossAlive(k)||(P4.s.bc[k]||0)<bossNeed(k))continue;
     const q=P4.bossQ.find(o=>o.k===k);if(!q){P4.bossQ.push({k,t:2.6});bossWarn(k)}}}
 function tickBossQ(dt){for(let i=P4.bossQ.length-1;i>=0;i--){const q=P4.bossQ[i];q.t-=dt;if(q.t>0)continue;
-  if(nearCamp(player.x,player.y)){q.t=2;continue}if(spawnBoss(q.k)||bossAlive(q.k))P4.bossQ.splice(i,1);else q.t=1.5}}
+  if(nearCamp(player.x,player.y)||(window.__plLessonOn&&window.__plLessonOn())){q.t=2;continue}if(spawnBoss(q.k)||bossAlive(q.k))P4.bossQ.splice(i,1);else q.t=1.5}}
 
 // the boss's own move: it rears up (red ring fills) and slams the ground; get out of the ring or dodge through it
 function tickBosses(dt,before){for(const a of animals){if(!a.boss)continue;const D=ANIM[a.k];
@@ -11678,7 +11678,7 @@ NPCL.gok=npcLook({skin:'#e0b090',skinD:'#c09070',hair:'#e8e8f0',hairD:'#b8b8c8',
 let portalKnown=false;
 // ---------------------------------------------------------------- where things are on each island
 const free=(x,y)=>reachAt(x,y)&&!blocked(x,y);
-const pClear=(px,py)=>{try{for(const o of [cauldron,anvil,anvil2,bench,furnace,stall,market,witch,npc,smith,durmus,farmer,usta,alp,carp]){if(o&&o.x!=null&&Math.hypot(o.x-px,o.y-py)<(o===cauldron||o===furnace||o===stall?46:30))return false}}catch(e){}return true};   // v1.75: a portal never stands in front of the cauldron, an anvil or a stall
+const pClear=(px,py)=>{try{for(const o of [cauldron,anvil,anvil2,bench,furnace,stall,market,witch,npc,smith,durmus,farmer,usta,alp,carp]){if(o&&o.x!=null&&Math.hypot(o.x-px,o.y-py)<(o===cauldron||o===furnace||o===stall?46:30))return false}}catch(e){}try{for(const f of plots)if(Math.hypot(f.x-px,f.y-py)<26)return false}catch(e){}return true};   // v1.75: a portal never stands in front of the cauldron, an anvil or a stall   // v1.79: never inside Hasan's field (his portal stood on the plots; Boğaç could not sow)
 function nearFree(x,y){for(let r=0;r<120;r+=6)for(let a=0;a<12;a++){const px=x+Math.cos(a/12*6.283)*r,py=y+Math.sin(a/12*6.283)*r;if(free(px,py)&&pClear(px,py))return{x:px,y:py}}for(let r=0;r<70;r+=6)for(let a=0;a<12;a++){const px=x+Math.cos(a/12*6.283)*r,py=y+Math.sin(a/12*6.283)*r;if(free(px,py))return{x:px,y:py}}return{x,y}}
 const P1=[],P2=[];   // portals: {x,y,who}
 if(!I2){
@@ -13617,8 +13617,9 @@ function watch(){const t=now();if(M&&t-M.t>M.W)M=null;
 // ---------------------------------------------------------------- 3b · Börü's practice foe: blunt teeth, no XP, comes back while the lesson lasts
 const FOE={n:0,t:0};
 function foes(){return animals.filter(a=>a.ders)}
+window.__plLessonOn=()=>!!L.cur; /* v1.79: Reis bosses wait while a lesson runs */ 
 function clearFoes(){for(let i=animals.length-1;i>=0;i--){const a=animals[i];if(!a.ders)continue;for(let k=0;k<14;k++)parts.push({x:a.x,y:a.y-6,vx:(Math.random()-.5)*70,vy:-20-Math.random()*40,life:.5,c:k%2?'#e8e0c8':'#9a9a9a'});animals.splice(i,1)}}
-function spawnFoe(force){const c=L.cur;if(!c)return null;const l=LK[c.k];if(!l||!ANIM[l.foe])return null;if(!force&&FOE.n>=16)return null;
+function spawnFoe(force){const c=L.cur;if(!c)return null;const l=LK[c.k];if(!l||!ANIM[l.foe])return null;if(!force&&FOE.n>=999)return null; /* v1.79: no cap: the lesson must always get a new foe */ 
   const killLeft=l.st.some((s,i)=>s[0].indexOf('kill:')===0&&c.p[i]<s[1]);const D=ANIM[l.foe];
   for(let k=0;k<160;k++){const an=k<80?Math.PI*(1.1+Math.random()*.8):Math.random()*Math.PI*2,d=k<80?48+Math.random()*30:40+Math.random()*80,ox=k<80?player.x:alp.x,oy=k<80?player.y:alp.y,x=ox+Math.cos(an)*d,y=oy+Math.sin(an)*d;
     if(!reachAt(x,y)||blocked(x,y)||isWater(tileAt(x,y)))continue;
@@ -13632,7 +13633,7 @@ window.__plFoeAgg=()=>{const st=curStep();return !!st&&!calmStep(st)};
 const dx=a.x-alp.x,dy=a.y-alp.y,d=Math.hypot(dx,dy);if(d>230){a.x=alp.x+dx/d*230;a.y=alp.y+dy/d*230;a.dx=-dx/d;a.dy=-dy/d;if(a.st!=='chase')a.st='wander'}}}catch(e){}   // v1.70: the practice foe cannot leave the lesson ground
   try{const st=curStep();if(calmStep(st))for(const a of animals)if(a.ders){a.mad=false;a.wind=0;a.lunge=null;a.mv=null;if(a.st==='chase')a.st='wander'}}catch(e){}return r}}   // v1.59b: while you practise a combo the practice foe does not strike back
 let farAsk=false;
-function pushBack(){const dx=player.x-alp.x,dy=player.y-alp.y,L_=Math.hypot(dx,dy)||1;for(const r of [230,200,170,140,110,80]){const x=alp.x+dx/L_*r,y=alp.y+dy/L_*r;if(reachAt(x,y)&&!blocked(x,y)&&!isWater(tileAt(x,y))){player.x=x;player.y=y;break}}goal=null;for(const k in keys)keys[k]=false}
+function pushBack(){const dx=player.x-alp.x,dy=player.y-alp.y,L_=Math.hypot(dx,dy)||1;for(const r of [140,110,170,80,200,230]){const x=alp.x+dx/L_*r,y=alp.y+dy/L_*r;if(reachAt(x,y)&&!blocked(x,y)&&!isWater(tileAt(x,y))){player.x=x;player.y=y;break}}goal=null;for(const k in keys)keys[k]=false}
 function quitLesson(l){const fr=!!(L.cur&&L.cur.free);L.cur=null;M=null;lk='';clearFoes();if(l&&!plInf()&&!fr){coins+=l.c;renderInv()}try{sfx('bad')}catch(e){}toast(`${l?l.n:'Ders'} bırakıldı${l&&!plInf()&&!fr?`, ${l.c.toLocaleString('tr-TR')} sikken geri verildi`:''}. Yeniden almak için Börü'ye gel.`,true);try{renderHUD()}catch(e){}}
 function tickFoes(){const c=L.cur;if(!c){if(foes().length)clearFoes();farAsk=false;return}const t=now(),F=foes();
   if(alp&&!onTitle&&!wake&&!window.__plArena){const d=Math.hypot(alp.x-player.x,alp.y-player.y),l=LK[c.k];   // v1.68: leaving the lesson's ground asks first: stay (you are put back) or quit (the lesson ends, take it again from Börü)
@@ -13658,7 +13659,7 @@ function start(l,free){if(L.cur){toast('Önce şu anki dersi bitir: '+LK[L.cur.k
   if(!free&&!plInf())coins-=l.c;renderInv();sfx('coin');L.cur={k:l.k,p:l.st.map(()=>0)};if(free)L.cur.free=1;lk='';
   FOE.n=0;FOE.t=0;
   say(`<b>${l.n}</b> · ${l.say}<br><br>Ders:<br>${l.st.map(s=>'• '+s[2]).join('<br>')}`,[{t:'Hazırım',pri:1,fresh:1,f:()=>{const a=spawnFoe(true);
-    say(a?`Sana ${l.on} getirdim, işte orada. Üzerinde dene. Dişlerini körelttim, canını fazla yakmaz; ama kaçmaz da. Ölürse bir başkasını salarım.`:'Burada yer yok; biraz açıklığa çık, sonra yanıma gel.',[{t:'Başlayalım',pri:1,fresh:1,f:bye}],alp)}}],alp)}
+    say(a?`Sana bir ${l.foe.toLocaleLowerCase('tr-TR')} getirdim, işte orada. Üzerinde dene. Dişlerini körelttim, canını fazla yakmaz; ama kaçmaz da. Ölürse bir başkasını salarım.`:'Burada yer yok; biraz açıklığa çık, sonra yanıma gel.',[{t:'Başlayalım',pri:1,fresh:1,f:bye}],alp)}}],alp)}
 function recap(){const c=L.cur;if(!c)return;const l=LK[c.k];const cur=l.st.findIndex((s,i)=>c.p[i]<s[1]);   // v1.62: Börü tells the lesson again (a save made mid-lesson never showed the new words)
   say(`<b>${l.n}</b> · ${l.say}<br><br>Ders (sırayla):<br>${l.st.map((s,i)=>(i<cur||cur<0?'✓ ':i===cur?'▶ ':'• ')+s[2]+` <small>(${c.p[i]}/${s[1]})</small>`).join('<br>')}`,[{t:'Anladım, sürdürüyorum',pri:1,fresh:1,f:()=>{if(!foes().length){const a=spawnFoe(true);if(!a)toast('Biraz açıklığa çık; Börü yeni bir canavar salar',true)}bye()}},{t:'Dersi baştan başlat',f:()=>{c.p=l.st.map(()=>0);lk='';toast(`${l.n}: ders baştan başladı`);recap()}},{t:'Geri',f:lessons}],alp)}
 function quit(){recap()}
@@ -13669,7 +13670,7 @@ function lessons(){const rows=[],ch=[];let next=null;
     else{if(!next)next=l;rows.push(`<span style="opacity:.6">🔒 ${l.n} · ${reqTxt(l)}</span>`)}}
   if(L.cur)ch.push({t:'Dersi yeniden anlat',pri:1,f:quit});
   ch.push({t:'Geri',f:talkAlp});
-  const avail=ch.some(c=>c.pri),all=LES.every(l=>have(l.k));
+  const avail=LES.some(l=>!have(l.k)&&reqOK(l)),all=LES.every(l=>have(l.k)); /* v1.79: new lessons count even after a free practice entry */ 
   const head=L.cur?'Bir dersi bitirmeden yenisine geçmeyiz.':all?'Sana öğreteceklerimin hepsini öğrendin. Artık bana sen ders verirsin.':avail?'Hangisini öğrenmek istersin? Her ders bir hamle; parası peşin, öğrenmesi senden.':'Şimdilik sana öğreteceğim yeni bir şey yok. Güçlen, yeni yerler gör; sonra gel.';
   say(`${head}<br><br>${rows.join('<br>')}`,ch,alp)}
 let INJ=false;
@@ -13867,7 +13868,7 @@ if(ISLE!==2)try{
  window.__plWhere=where;
  const NQ_=window.__plNQ||[];
  for(const q of NQ_){const L=[];if(q.bring)for(const x of q.bring)L.push(x[0]);if(q.kill)L.push(q.kill[0]);if(q.cnt&&typeof q.cnt[0]==='string'&&q.cnt[0].indexOf(':')>0)L.push(q.cnt[0].split(':')[1]);
-   if(!L.length)continue;try{const w=where(L);if(w){q.wh=w;if(typeof q.say==='string'&&q.say.indexOf('qwh')<0)q.say+='<br><small>'+w+'</small>'}}catch(e){}}
+   if(!L.length)continue;try{const w=q.id==='a2'?'<span class="qwh"><b>Nerede:</b> '+RT[2]+' · balık kapanını oradaki suya bırak</span>':where(L);if(w){q.wh=w;if(typeof q.say==='string'&&q.say.indexOf('qwh')<0)q.say+='<br><small>'+w+'</small>'}}catch(e){}}
  const MQ=[[/tunç külçe/i,['Bakır cevheri','Kalay cevheri']],[/demir külçesi/i,['Demir cevheri']],[/lav kertenkelesi/i,['Lav kertenkelesi']]];
  for(const q of QUESTS){const m=MQ.find(x=>x[0].test(q.t));if(!m)continue;const d=Object.getOwnPropertyDescriptor(q,'h');if(!d)continue;
    Object.defineProperty(q,'h',{configurable:true,enumerable:true,get(){const b=d.get?d.get.call(q):d.value;let w='';try{w=where(m[1])}catch(e){}return w?b+' '+w:b}})}
@@ -13913,7 +13914,7 @@ if(ISLE!==2)try{
 // v1.55: cheat · one hit kills: any creature that lost life since the last frame dies at once
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 {const PH=new WeakMap();const _fb=frameBody;frameBody=function(){const r=_fb.apply(this,arguments);try{
-   if(window.__plOne&&!onTitle){for(const a of animals.slice()){const p=PH.get(a);if(p!=null&&a.hp<p&&a.hp>0){a.hp=0;try{killAnimal(a)}catch(e){}continue}PH.set(a,a.hp)}}
+   if(window.__plOne&&!onTitle){for(const a of animals.slice()){const p=PH.get(a);if(p!=null&&a.hp<p&&a.hp>0&&!a.ders){a.hp=0;try{killAnimal(a)}catch(e){}continue}PH.set(a,a.hp)}}
    else for(const a of animals)PH.set(a,a.hp)}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v155: '+(e&&e.message||e))}catch(_){}}})();
 </script>

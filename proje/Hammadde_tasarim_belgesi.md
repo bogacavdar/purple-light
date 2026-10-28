@@ -394,7 +394,9 @@ Her silahın kendi hamleleri vardır (parantezde hasar çarpanı ve enerji):
 
 Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğretici bittikten sonra). Ücret peşin; ders bitince hamle kalıcı açılır ve XP verilir. Ders için o bölgeyi gezmiş olman gerekir (haritada en az 60 karesi açılmış olmalı).
 
-- Börü bir **alıştırma canavarı** salar: ısırığı zayıftır (canının %5'i), XP ve ganimet vermez, av ve Reis sayaçlarına sayılmaz, Börü'den 230 pikselden uzağa gitmez. Vuruş adımlarında saldırmaz ve canı gitmez; "bitir" adımında canı kolayca bitecek kadar azalır; savuşturma ve kaçma adımlarında 2,2–3,2 saniyede bir saldırır.
+- Börü bir **alıştırma canavarı** salar: ısırığı zayıftır (canının %5'i), XP ve ganimet vermez, av ve Reis sayaçlarına sayılmaz, Börü'den 230 pikselden uzağa gitmez. Ölürse ya da kaybolursa Börü'nün yanındaysan 1,5 sn sonra yenisi gelir; sayı sınırı yoktur (v1.79; önceden ders başına 16'da kesiliyor, ders bitirilemez kalıyordu). "Tek vuruşta öldür" hilesi alıştırma canavarına işlemez (v1.79).
+- **Ders sürerken Reis gelmez** (v1.79): ders sırasında vahşi hayvan avlayıp bir Reisin sayısını doldurursan Reis ders bitince (ya da bırakılınca) gelir.
+- Alandan çıkınca sorulan "Derse dön" seni Börü'nün yakınına (yaklaşık 140 piksel) geri koyar (v1.79; önceden 230 pikselde, sınırın dibinde bırakıyordu). Vuruş adımlarında saldırmaz ve canı gitmez; "bitir" adımında canı kolayca bitecek kadar azalır; savuşturma ve kaçma adımlarında 2,2–3,2 saniyede bir saldırır.
 - Soldaki ders kutusu yalnızca şimdiki adımı gösterir ("adım 1/2"). Börü'de "Dersi yeniden anlat" ve "Dersi baştan başlat" var. Öğrenilmiş dersler ücretsiz tekrar çalışılır (XP vermez).
 
 | Ders | Seviye | Bölge şartı | Ücret | XP | Alıştırma canavarı | Adımlar |
@@ -860,7 +862,7 @@ Adanın en doğu ucu, Kül Diyarı'nın ötesi. Mor ışığın en sık indiği 
 
 - Herkesin kendi mesleğine uygun, **sabit sırayla ilerleyen** bir yan görev zinciri vardır. Farklı kişilerin görevleri aynı anda açık olabilir.
 - Kişinin başında **mavi !** = yeni görev hazır; **sarı ?** = teslim edebileceğin görev var. Konuşma menüsünde "❗ Senin için bir işim var" ve "✔ Görevi teslim et" satırları çıkar. Görev bitince aynı konuşmada "Başka iş var mı?" ile sıradaki görev alınır.
-- Görev defteri **G** tuşuyla açılır; bir görevi takip etmek ekranda mavi bir yol oku açar. Getirme ve av görevlerinde "Nerede:" satırı malzemenin hangi biyomda olduğunu söyler.
+- Görev defteri **G** tuşuyla açılır; bir görevi takip etmek ekranda mavi bir yol oku açar. Getirme ve av görevlerinde "Nerede:" satırı malzemenin hangi biyomda olduğunu söyler. Av görevleri yalnızca görev kabul edildikten sonraki avları sayar (önceki avlar sayılmaz).
 - Bazı görevler kabul edildiği anda bir tarifi kitabına yazar (tabloda "Açılma şartı"ndan ayrı olarak kişinin açıklamasında yazılı).
 - **Hikâyeler:** Her yan görev, o kişinin bu adaya nasıl geldiğini anlatan hikâyesinden bir parça açar ("📖 Sen bu adaya nasıl geldin?"). Bütün parçalar dinlenince "📖 O geceyi anlat" bir sahne açar (+40 XP). Herkes mor ışık yüzünden birini kaybetmiştir.
 - **Ücretler:** Dursun ve Durmuş'un işçiliği eşya fiyatının %15'i (en az 2), Kemal'inki %20'si (en az 3); alet bileme aletin değerinin onda biri.
@@ -929,7 +931,7 @@ Toplam 2.020 sikke, 2.130 XP.
 **Yer:** Ekin'in yaklaşık 62 karo doğusu, 36 karo kuzeyi. **Tanışma:** öğreticinin 11. adımı (yumruk dersi, kerevit).
 
 - "Kılıç nasıl yapılır?" → **Taş kılıç** tarifini yazar (1 Sopa + 4 Keskin taş + 2 İp + 1 Çakmaktaşı; Dursun döver).
-- **Dövüş dersleri** (sikkeyle; ayrıntılar "Dövüş" bölümünde). Bir ders açılınca bir kez duyuru gelir. Öğrenilmiş dersler ücretsiz tekrar çalışılabilir. Ders sırasında Börü'den 280 pikselden uzağa gidersen oyun durur ve "Derse dön / Dersi bırak" diye sorar; bırakırsan ücret geri verilir.
+- **Dövüş dersleri** (sikkeyle; ayrıntılar "Dövüş" bölümünde). Bir ders açılınca bir kez duyuru gelir. Öğrenilmiş dersler ücretsiz tekrar çalışılabilir. Ders sırasında Börü'den 280 pikselden uzağa gidersen oyun durur ve "Derse dön / Dersi bırak" diye sorar; "Derse dön" seni Börü'nün ~140 piksel yakınına koyar, bırakırsan ücret geri verilir.
 - Hikâyesi: ağabeyi Kaan.
 
 | # | Görev | İstenen | Açılma şartı | Sikke | XP |
@@ -941,7 +943,7 @@ Toplam 2.020 sikke, 2.130 XP.
 | 5 | Oklu kirpi | Avla: 1 Oklu kirpi | Seviye 8 | 200 | 80 |
 
 
-> **Kerevit nerede?** "Kerevit avı" (1. görev) karada, Çayır'daki nehir kıyısında gezen kerevitleri ister: vurarak avlanır. "Kapan ustası" (2. görev) ise **balık kapanıyla** bir kerevit ister ve kapana kerevit **yalnızca Bataklık ve Kayalık Dağ sularında** girer (kapan her çekilişte 7 balıktan birini eşit ihtimalle seçer; bir boşaltmada yaklaşık %27 ihtimalle kerevit). Görevin "Nerede" satırı yanlışlıkla Çayır diyor; Çayır'ın nehrine kurulan kapandan kerevit gelmez.
+> **Kerevit nerede?** "Kerevit avı" (1. görev) karada, Çayır'daki nehir kıyısında gezen kerevitleri ister: vurarak avlanır. "Kapan ustası" (2. görev) ise **balık kapanıyla** bir kerevit ister ve kapana kerevit **yalnızca Bataklık ve Kayalık Dağ sularında** girer (kapan her çekilişte 7 balıktan birini eşit ihtimalle seçer; bir boşaltmada yaklaşık %27 ihtimalle kerevit). Görevin "Nerede" satırı **Bataklık**'ı gösterir (v1.79; önceden yanlışlıkla Çayır diyordu). Çayır'ın nehrine kurulan kapandan kerevit gelmez.
 
 ## Demirci Dursun
 
@@ -1074,7 +1076,7 @@ Son görev (Yeni bir gemi) bitince Levent'le konuş: hikâye sahnesi, ardından 
 
 - **İlk geçiş deniz yoluyla olur.** ACT 1'in sonunda Denizci Levent'in "Yeni bir gemi" görevi bitince gemiyle ikinci adaya açılırsın. Levent seni karaya çıkardığı kıyıda bekler.
 - **Gökbilimci Ülker** iniş yerinin biraz kuzeyinde, Yüzen Kayalar'da yüksek bir kayanın üstündedir. Teleskobu ve **ACT 2 kazanı** onun yanındadır: ikinci adanın bütün tarifleri burada öğrenilir (birinci adadaki Zümrüt'ün kazanıyla aynı çalışır).
-- **Portallar:** ikinci adaya ilk varışta **Levent'in yanındaki portal** ve birinci adada **Ekin'in yanındaki portal** açılır (v1.76). Ülker'in üç görevi bitince ("Portal çekirdeği" ile) bütün portallar açılır. Birinci adada **her kişinin yanında** bir portal belirir (Ekin, Zümrüt, Nazlı, Dursun, Hasan, Kemal, Börü, Rıza, Toygar; v1.75'ten beri kişinin sağ yanında, kazan/örs/tezgâhın önünde değil). İkinci adada iki portal vardır: **Ülker'in yanında** ve **Levent'in yanında**. Portaldan geçmek ücretsizdir; geçiş kaydeder, sayfayı yeniden yükler ve öbür adayı hazırlar.
+- **Portallar:** ikinci adaya ilk varışta **Levent'in yanındaki portal** ve birinci adada **Ekin'in yanındaki portal** açılır (v1.76). Ülker'in üç görevi bitince ("Portal çekirdeği" ile) bütün portallar açılır. Birinci adada **her kişinin yanında** bir portal belirir (Ekin, Zümrüt, Nazlı, Dursun, Hasan, Kemal, Börü, Rıza, Toygar; v1.75'ten beri kişinin sağ yanında, kazan/örs/tezgâhın önünde değil; v1.79'dan beri Hasan'ın tarlasının içinde de değil, tarla parsellerinden en az 26 piksel uzakta). İkinci adada iki portal vardır: **Ülker'in yanında** ve **Levent'in yanında**. Portaldan geçmek ücretsizdir; geçiş kaydeder, sayfayı yeniden yükler ve öbür adayı hazırlar.
 - **İkinci adada birinci adanın kişileri yoktur.** Satış (Nazlı), alet bileme ve örs (Dursun, Durmuş), ev işleri (Kemal, Rıza) ve tarla için portaldan birinci adaya dönülür. Envanter ve sikke ortak olduğu için bir sorun çıkmaz.
 - İkinci adada köprü ve Doğu geçidi gibi engeller yoktur; her yere yürünür. Ama canavarlar çok güçlüdür (ACT 2 canavarları ACT 1'in en güçlülerinden de güçlüdür, aşağıdaki tablolara bak).
 
@@ -1494,7 +1496,7 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 - **Güç:** canı türün 4 katı; hasarı 1,5 katı (Çayır türleri ve tehlikeli bölgeler) ya da 1,7 katı; XP = türün XP'si × 6 + 20.
 - **Davranış:** canı %40'ın altına inince **öfkelenir** (kırmızılaşır, daha sert saldırır). Sürü hayvanlarının Reisi canı yarıya inince yanına 2 sürü üyesi çağırır.
 - **Ödül:** türün düşürdükleri + 25 + (türün XP'si × 5) sikke. Reis öldürmek "İlk reis", "Reis avcısı" (5 farklı), "Reislerin korkusu" (10), "Reis yiyen" (20) ve "Bütün reisler" başarımlarını ilerletir.
-- Börü'nün derslerindeki alıştırma canavarı öldürülünce av sayılmaz; ders Reis çağırmaz (v1.70).
+- Börü'nün derslerindeki alıştırma canavarı öldürülünce av sayılmaz; ders Reis çağırmaz (v1.70). Ders sürerken hiçbir Reis gelmez; o sırada dolan Reis ders bitince gelir (v1.79).
 
 | Reis | Nerede | İlk çıkış için av | Can | Hasar | XP | Garanti ganimet |
 |---|---|---|---|---|---|---|
@@ -4123,7 +4125,7 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 
 | # | Konu | Ne oluyor | Öneri |
 |---|---|---|---|
-| 1 | Kerevit kapanı | Börü'nün "Kapan ustası" görevi "Nerede: Çayır" diyor; kapana kerevit yalnızca Bataklık/Kayalık Dağ sularında girer. | Nerede satırını Bataklık yap ya da Çayır suyuna da kerevit ekle. |
+| 1 | Kerevit kapanı | Börü'nün "Kapan ustası" görevi "Nerede: Çayır" diyordu; kapana kerevit yalnızca Bataklık/Kayalık Dağ sularında girer. | **Düzeltildi v1.79:** Nerede satırı Bataklık. |
 | 2 | Kötü son | "Yalnız dönüş" başarımı ve dolayısıyla "Platin" kazanılamaz; kötü son yok. | Kötü son yazılana kadar başarımı gizle ya da Platin'den çıkar. |
 | 3 | ACT 2'den dönüş | Birinci adaya dönmenin tek yolu portaldı; portal Ülker'in 3. görevi bitince açılıyordu ve o görev yalnızca birinci adada bulunan malzemeler istiyor. | **Düzeltildi v1.76:** Levent ve Ekin portalları ikinci adaya varınca hep açık. |
 | 4 | Meyve ağacı odunu | Elma, Armut, Erik ağaçları kesilebiliyor; verdikleri odunun fiyatı yok, hiçbir tarifte kullanılmıyor. | Fiyat ve "Herhangi odun" grubuna ekle ya da meyve ağaçlarını yine kesilmez yap. |
