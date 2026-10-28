@@ -1,0 +1,2 @@
+(()=>{const s=v=>JSON.stringify(v,(k,x)=>typeof x==='function'?'fn:'+String(x).slice(0,120):x).slice(0,900);
+const o={};o.RES=s(Object.entries(RES).slice(0,4));o.node=s(nodes.slice(0,2));o.tree=s(trees.slice(0,2));o.ANIM=s(Object.entries(ANIM).slice(0,2));o.EQUIP=s(Object.entries(EQUIP).slice(0,3));o.SKILLS=s(SKILLS.slice(0,3));o.QUESTS=s(QUESTS.slice(0,3));o.HOUSES=s(HOUSES.slice(0,2));o.GT=s(Object.entries(GT).slice(0,4));o.POISON=s(POISON);o.npc=s(npc);o.denizci=s(denizci);o.wiz=s(wiz);o.PACK=s(PACK);o.DBkeys=Object.keys(DB);o.animKeys=Object.keys(ANIM);return o})()

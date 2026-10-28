@@ -1,0 +1,1 @@
+(()=>{const out={};const P=window.__p4;for(const k of Object.keys(ANIM)){if(ANIM[k].boss||/Reisi$/.test(k))continue;let nm=null;try{nm=P.makeBoss(k)}catch(e){}if(nm&&ANIM[nm]){const D=ANIM[nm];out[nm]={b:k,hp:D.hp,dmg:D.dmg,spd:D.spd,xp:D.xp,need:(()=>{try{return P.bossNeed(k)}catch(e){return null}})(),drops:D.drops}}}return JSON.stringify(out)})()

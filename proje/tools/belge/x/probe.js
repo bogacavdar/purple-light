@@ -1,0 +1,12 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const p=await b.newPage({viewport:{width:1280,height:720}});
+const errs=[];p.on('pageerror',e=>errs.push(e.message));
+const isle=process.argv[3]||'1';
+await p.addInitScript(i=>{try{sessionStorage.setItem('hammadde.isle',i)}catch(e){}},isle);
+await p.goto('file:///home/claude/purple-light/proje/Hammadde_prototip.html?debug');await p.waitForFunction(()=>!!window.__ham,null,{timeout:60000});
+const ev=c=>p.evaluate(c=>window.__ham.ev(c),c);
+await ev("startNew('normal');endCine()");await p.waitForTimeout(300);await ev("try{wakeDone();wakeDone2()}catch(e){}");await p.waitForTimeout(400);
+const code=require('fs').readFileSync(process.argv[2],'utf8');
+const r=await ev(code);
+console.log(typeof r==='string'?r:JSON.stringify(r,null,1));
+if(errs.length)console.error('ERRS',errs.slice(0,5));await b.close()})();

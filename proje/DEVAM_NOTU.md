@@ -1,5 +1,8 @@
 # Hammadde — Yeni sohbet için devam notu
 
+## 📘 KURAL: Önce tasarım belgesi, sonra kod (28 Ekim 2026, Boğaç)
+- Tasarım belgesi (`proje/Hammadde_tasarim_belgesi.md` + `proje/Purple_Light_belgeler.html`) güncellenmeden **hiçbir geliştirme yapılmaz**. Sıra: (1) değişikliği önce belgeye yaz (ilgili bölüm, tablo, sayı), (2) sonra kodu belgeye göre değiştir, (3) commit'te belge ve kod birlikte gider. **Belge ile kod çelişirse belge doğru kabul edilir**: kod belgeye uydurulur (belge açıkça yanlışsa önce Boğaç'a sorulur, belge düzeltilir, sonra kod). Hata düzeltmesi bile oyunun davranışını değiştiriyorsa belgedeki ilgili satır aynı commit'te güncellenir. Belgenin aranabilir HTML'i `md`'den üretilir; üretim araçları yoksa `md`'yi güncellemek yeterli, HTML'in eskidiğini DEVAM_NOTU'na yaz.
+
 ## 🔢 KURAL: Sürüm adı biçimi (27 Ekim 2026, Boğaç)
 - v127'den itibaren ilk rakamdan sonra nokta: 127. sürüm **Versiyon 1.27**, 134. sürüm **Versiyon 1.34**, 200. sürüm **Versiyon 2.00**. Menüdeki `#verlab`, commit mesajı (`v1.27: …`) ve bu dosyadaki başlıklar (`## v1.27 …`) aynı biçimde. Bir sonraki sürüm = son + 0.01. Eski başlıklar (v126 ve öncesi) değişmez.
 
@@ -1169,3 +1172,8 @@ Oyun artık bir **keşif ve hayatta kalma** oyunu: hayatta kalmak için gereken 
 - **ACT 2 kişileriyle E ile konuşulamıyordu** (Boğaç: "bazı NPC'lere tıklayamadım"): yanlarında bir bitki/maden düğümü varsa E her zaman onu topluyordu ("toplanacak şey konuşmadan önce gelir" kuralı). Pervin'in yanında Lif, Tuna'nın dibinde Meteor parçası vardı; ikisiyle E ile hiç konuşulamıyordu. Artık ACT 2 kişisi düğümden en az 10 px uzak değilse kişi seçilir (`target` sarmalayıcısı, v76). Fareyle tıklamak zaten çalışıyordu.
 - **Tüccar Nuri ve Işıkçı ikinci adada da çıkıyordu**, birinci adanın koordinatlarında (Nuri'nin gemisi ACT 2 kumsalında, haritada "Tüccar Nuri"). İkisi artık yalnız Yıldızsız Ada'ya gelir.
 - Menüde "Versiyon 1.77". chk.js 0 hata; denendi: ACT 2 haritasında 7 simge, bütün ACT 2 kişilerine fareyle tıklanıyor ve 14–26 px'ten E ile konuşuluyor.
+
+## v1.78 (28 Ekim 2026) — "önce belge" kuralı, Tanrı modu ve mor ışık
+- **Kural:** CLAUDE.md'nin ve bu dosyanın en üstüne yazıldı: tasarım belgesi güncellenmeden geliştirme yok; belge ile kod çelişirse belge doğru. Belge araçları `proje/tools/belge/` (README orada).
+- Tanrı modu (hile) açıkken gece ışıksız kalınca mor ışık yine öldürüyordu (sikkenin ve yığınların %20'si gidiyordu). Belgede "Tanrı modu: ölmezsin" yazdığı için kod belgeye uyduruldu: Tanrı modunda karanlık sayacı işlemez.
+- Menüde "Versiyon 1.78". chk.js 0 hata.

@@ -1,0 +1,3 @@
+(()=>{const rep=(k,x)=>typeof x==='function'?'fn:'+String(x).slice(0,300):(x instanceof Set?[...x]:(x instanceof Map?[...x]:x));
+const s=v=>{try{return JSON.stringify(v,rep).slice(0,1500)}catch(e){return 'ERR '+e}};const O={};
+for(const k of ['__I1A','__I1G','__I1O','__I1T','__I2A','__I1B','__v55','__plAch','__plFood','__gok','__pervin','__tamer','__selin','__alara','__tuna','__plRocket','__v56','__v57','__v59','__plStory','__plNQ','__p4','__b3','__b4','__plMana','__plStaff','__v128','__v129','__plLES','__plUlt','__plIsle'])O[k]=Object.keys(window[k]||{}).join(',')+' || '+s(window[k]);return O})()

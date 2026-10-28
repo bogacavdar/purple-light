@@ -2,6 +2,8 @@
 
 Sürüm: **Versiyon 1.77** ile birebir (28 Ekim 2026; sayılar 1.75 üzerinde ölçüldü, 1.76–1.77 düzeltmeleri işlendi). Bu belgedeki bütün sayılar (can, hasar, fiyat, ihtimal, adet) oyunun çalışan halinden ölçülerek çıkarıldı; kodu açmadan bir şeyin oyunda nasıl yapıldığını buradan bulabilmelisin.
 
+> **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
+
 ## Bu belge nasıl okunur
 
 - **Bir şeyin nasıl yapıldığını mı arıyorsun?** En alttaki **Eşya dizini**ne git, adını ara. Her eşyanın yanında nereden geldiği (hangi biyomda toplandığı, hangi canlıdan düştüğü, hangi tarifle yapıldığı) ve hangi tariflerde kullanıldığı yazar.

@@ -1,0 +1,1 @@
+(()=>JSON.stringify({TT:TREE_TYPES.map(t=>({n:t.n,noCut:t.noCut,seed:t.seed,fruit:t.fruit})),TX:TREE_EXTRA,LAMP:(()=>{try{return LAMP_WANT}catch(e){return null}})(),SEEDSRC:(()=>{try{return String(treeSeedChance)}catch(e){return null}})()}))()
