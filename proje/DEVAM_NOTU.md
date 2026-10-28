@@ -3,6 +3,9 @@
 ## 🚀 KURAL: Her güncelleme aynı turda yayına gider (28 Ekim 2026, Boğaç)
 - Oyunda ya da belgede yapılan her değişiklik iş biter bitmez **aynı turda** commit + `git push` (main) ile yayına gönderilir; https://bogacavdar.github.io/purple-light/ ve belge linkleri (`belge.html`, `belge.pdf`, `belge.md`) **her zaman günceldir**. Yalnızca zip/dosya göndermek güncelleme sayılmaz (v1.84–v1.86 böyle yapıldı ve yayına gitmeden kaldı; tekrarlanmayacak). Oturumda depo yoksa ilk iş `add_repo` + `git clone --depth 1`, geliştirme klonda yapılır. Belge `parts/*.md`'den üretilir: `Hammadde_tasarim_belgesi.md` elle düzenlendiyse `parts` da güncellenmeli, yoksa `yayinla.sh` değişikliği ezer.
 
+## 🧰 Skill: purple-light-surum-yayinla (28 Ekim 2026, Boğaç)
+- Yayın adımları `.claude/skills/purple-light-surum-yayinla/SKILL.md` içinde. Her güncellemeden sonra tüm projenin zip'i (`git archive` ile, `origin/main`) istenmese de Boğaç'a gönderilir; belge değiştiyse belge.pdf/html/md de.
+
 ## v1.84–v1.86 (28 Ekim 2026) · kuzenler, yeni harita, görev sistemi v2
 - **v1.84:** Zümrüt, Dursun ve Durmuş'un 15 kuzeni (Orman → Mor Kristal Vadisi; cadı + silahçı + zırhçı, birebir benzer, kazan rengi taş adından); demircilerde kademe kuralı (`smithOf` → `forgeWho`/`lowestFor`; Dursun/Durmuş yalnız Çayır malzemesi); kuzenlere özel 15 silah/zırh; Elmas Nine ortak ara sahnesi. Kod: `<script id="v184">`.
 - **v1.85:** altı eşit biyom sırayla (Çayır SW, Orman NW, Bataklık N-orta, Kayalık Dağ S-orta, Kül Diyarı SE, Mor Kristal Vadisi NE); nehirde üç köprü (`BRIDGES`, kuzeydeki ana köprü, ikisi kısayol); patlama bütün sıradağı çökertir (`__plOpenRidge`); eski kayıt kumsalda başlar. Kod: core değişiklikleri + `<script id="v185">`.
