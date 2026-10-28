@@ -60,7 +60,7 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - 19:00'dan itibaren kararır; 21:00–04:30 tam karanlıktır.
 - **Zifiri karanlık kuralı:** gece elinde meşale yoksa, kafa lamban yoksa, bir ışığın (kamp ateşi vb.) içinde ya da bir evin içinde değilsen sayaç başlar: 3,5 sn "Kim var orada?!", 6,5 sn "Bir şey yaklaşıyor…", **8. saniyede mor ışık iner ve ölürsün**. İlk gece süre 20 sn'dir ve **ilk gece hiçbir şey kaybolmaz**; sonraki gecelerde bayılmadaki gibi %20 kayıp. Ertesi sabah 06:00'da kumsalda uyanırsın.
 - İlk kez meşalesiz karanlığa yakalanınca biri sana bir kez **bedava Kaba meşale** fırlatır. İlk 3 gün 17:30'da "Hava kararıyor" uyarısı gelir.
-- **Güvenli yerler** (saldırgan canavarlar uzaklaşır, mor ışık gelmez): Ekin'in kampı (352 px), kişilerin ateşleri, Dursun'un ocağı, Zümrüt'ün kazanı (120 px), kendi kamp ateşin (100 px), evin içi. Ateş böcekleri ve mor kıymıklar ışık sayılmaz.
+- **Güvenli yerler** (saldırgan canavarlar uzaklaşır, mor ışık gelmez): Ekin'in kampı (352 px), kişilerin ateşleri (kuzenlerin ateşleri dahil), Dursun'un ocağı, Zümrüt'ün kazanı (120 px), kendi kamp ateşin (100 px), evin içi. Ateş böcekleri ve mor kıymıklar ışık sayılmaz.
 
 ### Işık kaynakları
 
@@ -128,16 +128,16 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 ## Tarifler: kazan, el yapımı, örs, ustalar
 
-- **Kazan yalnızca öğretir:** malzemeleri koyup kaynatırsın, malzemeler gider, tarif öğrenilir (+12 XP); ürün çıkmaz. ACT 1'de Zümrüt'ün, ACT 2'de Ülker'in kazanı.
+- **Kazan yalnızca öğretir:** malzemeleri koyup kaynatırsın, malzemeler gider, tarif öğrenilir (+12 XP); ürün çıkmaz. ACT 1'de Zümrüt'ün ve beş kuzen cadının (Yakut, Safir, Firuze, Mercan, İnci) kazanları, ACT 2'de Ülker'in kazanı. Bütün ACT 1 kazanları aynı tarifleri öğretir.
 - **Tarif kitabı** (K): bir tarif öğrenilmiş, bir kişi tarafından kitaba yazılmış ya da (Normal modda) bütün malzemeleri ve aletleri en az bir kez görülmüşse **açık** görünür. Kapalı tariflerin adı titreşen harflerle, bilinmeyen malzemeler "?" ile görünür. Kitapta bir tarife **Takip et** dersen malzemeleri ve elindeki sayıları ekranın üstünde görürsün (aynı anda 1 tarif).
 - **El yapımı (Tab):** öğrenilmiş ve örste dövülmeyen, yapı ya da ev eşyası olmayan her tarif. Yap / ×5 / Hepsi.
-- **Örs:** aletler ve silahlar Demirci Dursun'da, örste dövülen zırhlar Zırhçı Durmuş'ta. Örs listesinde bir ara parçanın yanındaki **+** o parçayı elindeki malzemeden hemen yapıp örse koyar.
+- **Örs:** aletler ve silahlar Demirci Dursun'da ve silahçı kuzenlerinde, örste dövülen zırhlar Zırhçı Durmuş'ta ve zırhçı kuzenlerinde. **Kademe kuralı (v1.84):** her demirci yalnızca kendi biyomunun ve öncekilerin malzemesiyle yapılan eşyaları döver (Dursun/Durmuş: yalnız Çayır); ayrıntı "Zümrüt, Dursun ve Durmuş'un kuzenleri" bölümünde. Örs listesinde bir ara parçanın yanındaki **+** o parçayı elindeki malzemeden hemen yapıp örse koyar.
 - **Usta Kemal:** yapılar, yataklar, ev eşyaları. **Atölye** kurulursa seçtiğin tarifi 25 sn'de bir kendisi üretir (en çok 50).
 - **Zümrüt'ün bilmecesi:** bilinmeyen bir tarifi ipucuyla sorar; öğrenince 30 + 2 × fiyat sikke ve 20 XP.
 
 ## Aletler, dayanıklılık, kademe
 
-- Her toplama, isabet ya da balık aletin 1 kullanımını yer. Dayanıklılık rengi yeşilden kırmızıya döner; sıfırda alet çalışmaz, silah yumruk gibi vurur. **Bileme** (Dursun): aletin değerinin onda biri. Kova ve asalar/ateşli silahlar körelmez.
+- Her toplama, isabet ya da balık aletin 1 kullanımını yer. Dayanıklılık rengi yeşilden kırmızıya döner; sıfırda alet çalışmaz, silah yumruk gibi vurur. **Bileme** (Dursun ve silahçı kuzenleri): aletin değerinin onda biri. Kova ve asalar/ateşli silahlar körelmez.
 - **Alet yuvaları:** 5 (Alet kemeri dalıyla 6/7/8/10/12). Yuva doluysa yeni alet yere düşer; yerdeki eşya 180 sn sonra kaybolur.
 - **Balta kademesi:** Taş 1 · Çakmaktaşı, Granit 2 · Kuvars, Tunç 3 · Bazalt, Demir 4 · Obsidyen 5.
   - 1: Çam, Ladin, Kavak, Elma, Armut, Erik · 2: Meşe, Ceviz, Mürver, Kayın, Ihlamur, Kızılağaç · 3: Huş, Söğüt, Kestane, Akçaağaç, Dişbudak, Bataklık servisi · 4: Ardıç, Porsuk, Kara çam, Kül ağacı, Dikenli akasya, Kızıl sedir, Ateş narı · 5: Mor söğüt, Gece ağacı, Işık ağacı, Yıldız eriği, Ay elması · ACT 2: Yüzen Kayalar ağaçları 1, diğerleri 2.
@@ -148,8 +148,8 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - Beş yuva: baş, gövde, eller, ayaklar, silah. Giyilen eşyaların toplamı **savunma**dır; Keşif defterinin Giyim ve Zırh ustalıkları +5'er savunma verir.
 - **Zırh** (v1.81) karakterin temel özelliğidir: **seviye − 1** (Sv 1'de 0, Sv 50'de 49) + Dayanıklılık ağacındaki Zırh I–IV yetenekleri (+5 / toplam +12 / +20 / +30). Eşyaya bağlı değildir, hiç çıkmaz.
 - Alınan **fiziksel hasar × 25 / (25 + savunma + zırh)**. Zehir, yanık ve kanama da bu oranın yarısı kadar yumuşar. Karakter ekranında "Zırh", "Savunma" ve toplam hasar azalması ayrı ayrı yazar. (Ekin'in "Savunmanı 60'a çıkar" görevi yalnızca eşya savunmasını sayar.)
-- **Çamur:** Bataklık çamurunda yavaşlarsın (×0,6); Kamış çizme, Demir çizme, Hurda çizme ve Meka çizme bunu önler.
-- **Durum etkileri** canavarlardan, alev/zehir gölünden ve zehirli yemekten gelir: **zehir**, **kanama**, **yanık** belirli süre saniyede can yakar; zırh bunu da yarı oranda yumuşatır. Dirençler: Bataklık postu pelerin (zehir %30), Timsah derisi zırh (kanama %40), Kül postu pelerin (yanık %40), Lav pulu eldiven (yanık %30), Demir zırh (kanama %30), Ejder pulu zırh (yanık %60), Mantar lifi eldiven (zehir %40), Kristal miğfer (kanama %30), Ejder pulu eldiven (yanık %40), Meka çizme (kanama %20), Meka zırh (üçü de %50). Dayanıklılık ağacındaki Zehre/Ateşe/Kanamaya dayanıklı yetenekleri ilgili hasarı ayrıca %40 azaltır (çarpılarak birleşir); Çelik beden üçünün süresini yarıya indirir; Son nefes canın dörtte birinin altındayken fiziksel hasarı %25 azaltır.
+- **Çamur:** Bataklık çamurunda yavaşlarsın (×0,6); Kamış çizme, Demir çizme, Bataklık çizmesi, Hurda çizme ve Meka çizme bunu önler.
+- **Durum etkileri** canavarlardan, alev/zehir gölünden ve zehirli yemekten gelir: **zehir**, **kanama**, **yanık** belirli süre saniyede can yakar; zırh bunu da yarı oranda yumuşatır. Dirençler: Bataklık postu pelerin (zehir %30), Timsah derisi zırh (kanama %40), Kül postu pelerin (yanık %40), Lav pulu eldiven (yanık %30), Demir zırh (kanama %30), Ejder pulu zırh (yanık %60), Mantar lifi eldiven (zehir %40), Kristal miğfer (kanama %30), Ejder pulu eldiven (yanık %40), Meka çizme (kanama %20), Meka zırh (üçü de %50); kuzenlerin zırhları: Meşe kabuk zırh (kanama %15), Timsah pulu zırh (kanama %40), Bataklık çizmesi (zehir %25), Gümüş pullu zırh (kanama %35), Kül böceği zırh (yanık %50), Akrep kabuğu çizme (zehir %35), Kristal ipek zırh (üçü de %25), Işık pulu eldiven (zehir %35). Dayanıklılık ağacındaki Zehre/Ateşe/Kanamaya dayanıklı yetenekleri ilgili hasarı ayrıca %40 azaltır (çarpılarak birleşir); Çelik beden üçünün süresini yarıya indirir; Son nefes canın dörtte birinin altındayken fiziksel hasarı %25 azaltır.
 - **Yemek kalkanları:** Panzehir zehri tamamen keser, Ateş kalkanı yanığı %70, Pıhtı kanamayı %60 azaltır.
 
 ## Yemek
@@ -245,7 +245,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Hasan'ın ödüllerinden, hasatt
 |---|---|---|---|
 | Yumruk | 4 | 16 | 0,45 sn |
 | Meşale (başka silah yoksa) | 7 | 19 | 0,48 sn |
-| Kılıç | Taş 12 · Tunç 22 · Demir 34 · Ejder kılıcı 52 · Işın kılıcı 60 | 22 | 0,42 sn |
+| Kılıç | Taş 12 · Tunç 22 · Granit gürz 27 · Demir 34 · Timsah dişi kılıcı 38 · Gümüş kılıç 44 · Ejder kılıcı 52 · Lav camı kılıcı 55 · Ametist kılıcı 58 · Işın kılıcı 60 | 22 | 0,42 sn |
 | Mızrak | Mızrak 10 · Çakmaktaşı 14 · Kuvars 18 · Tunç 20 · Bazalt 22 · Obsidyen 28 · Demir 30 | 30 | 0,6 sn |
 | Balta | Taş 9 · Çakmaktaşı/Granit 12 · Kuvars 16 · Tunç 20 · Bazalt 24 · Demir 30 · Obsidyen 36 | 20 | 0,5 sn |
 | Kazma | Taş 8 · Çakmaktaşı/Granit 11 · Kuvars 14 · Tunç 18 · Bazalt 21 · Demir 26 · Obsidyen 32 | 20 | 0,5 sn |

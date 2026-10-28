@@ -48,20 +48,22 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 
 ### Öğreticiden sonraki kısa dersler
 
-Kartın altında kısa dersler çıkar: **koşma dersi** (köprü onarılınca; Koşu 100 sikke, Koşu zaten alındıysa çıkmaz), **meşale dersi** (2. ve 3. gün 17:30). İlk gece meşalesi olmayana biri bir Kaba meşale fırlatır (bir kez).
+Kartın altında kısa dersler çıkar: **koşma dersi** (Ekin'in köprü görevi bitince; Koşu 100 sikke, Koşu zaten alındıysa çıkmaz), **meşale dersi** (2. ve 3. gün 17:30). İlk gece meşalesi olmayana biri bir Kaba meşale fırlatır (bir kez).
 
 ## ACT 1 yol haritası
 
-Ekin'in ana görevleri oyunun omurgasıdır; aynı anda adadaki her kişinin kendi yan görev zinciri vardır (Görevler defteri: G).
+v1.86'dan beri ACT 1 tek görevlik bir zincirle ilerler (ayrıntı: **ACT 1 · Görevler**). Ekin'in yalnızca ana yolda 5 görevi vardır; gerisi adadaki 26 kişiye dağılmıştır ve birbirini açar.
 
-1. **Yurt (Çayır, Orman):** 5 odun kes → kırık köprüyü 20 odunla onar → ilk yetenek → Seviye 5 → bir gece kendi kamp ateşinin başında bekle → haritanın %30'u → Seviye 8 + 250 sikkelik yetenek → 25 tarif. Bu sırada Zümrüt, Nazlı, Börü, Dursun, Durmuş, Hasan, Kemal, Rıza ile tanışılır; 5. gün Yıldızsız Gezgin bir **robot köpek** hediye eder; köprü onarılınca ya da 3. günden sonra Tüccar Nuri'nin gemisi kumsala gelmeye başlar.
-2. **Metal çağı (köprünün karşısı):** Bakır + kalay → **tunç külçesi**; Bataklık'ta demir cevheri → **demir külçesi**; tunç/demir zırhlarla **savunma 60**. Bataklık'ta Avcı Toygar ile tanışılır (Kamış çizme ve Panzehir tarifleri).
-3. **Doğu geçidi:** Sıradağdaki kaya yığını Kül Diyarı yolunu kapatır. **2 Kaya patlatıcı** (3 Yarasa gübresi + 2 kömür + 1 tuz + 1 çömlek) ve kuvars ya da daha iyi bir kazmayla yığının başında açılır ("Yol açıcı" başarımı).
-4. **Kül Diyarı:** bir **lav kertenkelesi** avla (Ateş çiçeği merhemi tarifi gelir). Kara ejder burada.
-5. **İzler:** eşinden kalan 6 mor iz (2 yurtta, 2 Bataklık tarafında, 2 doğuda). Son iz Mor Kristal Vadisi'nde ve "Gerçek" sahnesini oynatır. Ekin kırk yıl önce kendi gemisini de mor ışığın batırdığını anlatır ve **Gemi** tarifini kitabına yazar.
-6. **Levent:** Gemi tarifini kazanda öğrenince Mor Kristal Vadisi kıyısına bir enkaz çarpar ve **Denizci Levent** belirir. 4 görevi: Kardelen merhemi + 2 Ay otu, 2 Gölge kurdu, 2 Ay taşı + 4 Kristal, son olarak **gemi malzemeleri** (8 kalas, 4 Halat, 3 Demir levha, 6 Hasır, 2 Kristal ipek). Gemi ("Meltem") yapılınca Levent kızının hikâyesini anlatır ve "Götür beni" ile deniz yolculuğu başlar → **ACT 2**.
+1. **Çayır:** Ekin'in ilk işi (6 dal, 2 kuru ot) → Dursun aletleri öğretir (taş balta, kazma, çakmaktaşı balta, bileme, tunç) → Rıza kalas ve barınak, Nazlı meyve, balık, satış ve tuzak, Börü kamp ateşi, dövüş ve taş kılıç, Durmuş kemik, kiriş, tunç levha, Zümrüt otlar ve kazan. Börü oyuncuyu **Orman**'a yollar (Hasan ile tanışma).
+2. **Orman:** Hasan'ın tarlası (dört alet), Kemal'in yapıları, kuzenler Yakut, Durdu, Duran. Hasan'ın ikinci işi bitince Ekin'in **köprü** görevi açılır (Seviye 6).
+3. **Köprünün ötesi:** Bataklık'ta Toygar ve kuzenler Safir, Ali (demir), Veli. Toygar'ın son işi oyuncuyu **Kayalık Dağ**'a götürür (Firuze, Kaya, Kayhan).
+4. **Doğu geçidi:** Kayalık Dağ'a varınca ve Seviye 10'da Ekin'in **patlatma** görevi: 2 kaya patlatıcı + tunç ya da kuvars kazma; patlayınca bütün sıradağ çöker ("Yol açıcı" başarımı).
+5. **Kül Diyarı:** Mercan, Turan, Tufan. Kül Diyarı'na varınca Ekin'in **izler** görevi: 6 mor iz; bitince **Gemi** tarifi kitaba yazılır, Levent'in enkazı Mor Kristal Vadisi kıyısına çarpar. Ekin'in son işi: Levent'i bul.
+6. **Mor Kristal Vadisi:** Levent'in 5 görevi (pusula için kristal, Kudret'in obsidyen kazmasını ister) ve son olarak **gemi malzemeleri** enkaza (8 kalas, 4 Halat, 3 Demir levha, 6 Hasır, 2 Kristal ipek). Gemi ("Meltem") yapılınca Levent kızının hikâyesini anlatır ve "Götür beni" ile deniz yolculuğu başlar → **ACT 2**. İnci, Kudret, Kuvvet de buradadır.
 
-> Gemi malzemeleri iki kez gerekir: bir kez tarifi kazanda öğrenirken, bir kez de Levent'in son görevinde. Ülker'in "Portal çekirdeği" görevi **2 Kristal ve 2 Demir levha** ister ve bunlar yalnızca birinci adada bulunur (2 Mor kıymık ikinci adanın gecelerinde de çıkar). v1.76'dan beri ikinci adaya bir kez varınca **Levent'in yanındaki portal** (ACT 2) ve **Ekin'in yanındaki portal** (ACT 1) hep açıktır; eksik malzemeyi almak için birinci adaya dönebilirsin.
+> **Kuzenler (v1.84):** Orman'dan Mor Kristal Vadisi'ne her biyomda Zümrüt, Dursun ve Durmuş'un birer kuzeni yaşar (cadı, silahçı, zırhçı). Her biri o biyomun malzemesiyle yapılan eşyaları döver ya da tarifleri öğretir ve 5'er görev verir. Zümrüt, Dursun, Durmuş ve 15 kuzenin bütün görevleri bitince ortak ara sahne oynar: mor ışık ninelerini, **Elmas Nine**'yi kaçırmıştır.
+
+> Ülker'in "Portal çekirdeği" görevi **2 Kristal ve 2 Demir levha** ister ve bunlar yalnızca birinci adada bulunur (2 Mor kıymık ikinci adanın gecelerinde de çıkar). v1.76'dan beri ikinci adaya bir kez varınca **Levent'in yanındaki portal** (ACT 2) ve **Ekin'in yanındaki portal** (ACT 1) hep açıktır; eksik malzemeyi almak için birinci adaya dönebilirsin.
 
 ## ACT 2 yol haritası
 

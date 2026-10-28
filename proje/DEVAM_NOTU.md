@@ -1,5 +1,14 @@
 # Hammadde — Yeni sohbet için devam notu
 
+## 🚀 KURAL: Her güncelleme aynı turda yayına gider (28 Ekim 2026, Boğaç)
+- Oyunda ya da belgede yapılan her değişiklik iş biter bitmez **aynı turda** commit + `git push` (main) ile yayına gönderilir; https://bogacavdar.github.io/purple-light/ ve belge linkleri (`belge.html`, `belge.pdf`, `belge.md`) **her zaman günceldir**. Yalnızca zip/dosya göndermek güncelleme sayılmaz (v1.84–v1.86 böyle yapıldı ve yayına gitmeden kaldı; tekrarlanmayacak). Oturumda depo yoksa ilk iş `add_repo` + `git clone --depth 1`, geliştirme klonda yapılır. Belge `parts/*.md`'den üretilir: `Hammadde_tasarim_belgesi.md` elle düzenlendiyse `parts` da güncellenmeli, yoksa `yayinla.sh` değişikliği ezer.
+
+## v1.84–v1.86 (28 Ekim 2026) · kuzenler, yeni harita, görev sistemi v2
+- **v1.84:** Zümrüt, Dursun ve Durmuş'un 15 kuzeni (Orman → Mor Kristal Vadisi; cadı + silahçı + zırhçı, birebir benzer, kazan rengi taş adından); demircilerde kademe kuralı (`smithOf` → `forgeWho`/`lowestFor`; Dursun/Durmuş yalnız Çayır malzemesi); kuzenlere özel 15 silah/zırh; Elmas Nine ortak ara sahnesi. Kod: `<script id="v184">`.
+- **v1.85:** altı eşit biyom sırayla (Çayır SW, Orman NW, Bataklık N-orta, Kayalık Dağ S-orta, Kül Diyarı SE, Mor Kristal Vadisi NE); nehirde üç köprü (`BRIDGES`, kuzeydeki ana köprü, ikisi kısayol); patlama bütün sıradağı çökertir (`__plOpenRidge`); eski kayıt kumsalda başlar. Kod: core değişiklikleri + `<script id="v185">`.
+- **v1.86:** ACT 1 görev sistemi v2 (`<script id="v186">`, veri `q186.json` gömülü): 139 görev, tek aktif görev, en çok 2 siyah "!", sarı çember + ok, ×/konuşarak iptal, kendiliğinden bitenler, Ekin'in ayak işleri, 18 ders kartı, köprü/kaya/enkaz onay pencereleri. Eski v55 ACT 1 görevleri, Ekin'in `QUESTS` zinciri (`qState='v2'`) ve kuzen görevleri devre dışı; ACT 2 ustaları v55'te. Haritadaki işaret/çember için `drawMap` içinde `__plQMk` / `__plMapQ` kancaları. Görev değişince otomatik kayıt; Rıza barınak kısayolu R2'ye bağlandı.
+- Belge: `parts/*.md` 1.86 belgesinden yeniden bölündü (`55_act2_biyomlar` ve gen içerikleri artık parts içinde açık metin).
+
 ## 📎 KURAL: Belge her zaman indirilebilir haliyle iletilir (28 Ekim 2026, Boğaç)
 - Boğaç'a tasarım belgesi iletilirken her zaman indirilebilir hali iletilir: https://bogacavdar.github.io/purple-light/belge.pdf · https://bogacavdar.github.io/purple-light/belge.html · https://bogacavdar.github.io/purple-light/belge.md (istenirse dosya olarak da gönderilir). Artifact ya da başka bir link belge yerine verilmez.
 
