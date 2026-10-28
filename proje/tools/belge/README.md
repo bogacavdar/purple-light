@@ -7,3 +7,6 @@
 - `build.py`: `parts` + `gen` → `TASARIM.md` ve `tasarim.html` (şablon: `template.html`). Sonra
   `TASARIM.md` → `proje/Hammadde_tasarim_belgesi.md`, `tasarim.html` (doctype ile sarılarak) → `proje/Purple_Light_belgeler.html` kopyalanır.
 - Oyunda veri (tarif, canavar, görev…) değişince: önce `parts`'taki ilgili metni ve/veya veriyi güncelle, `probe` → `gen.py` → `build.py`, sonra kodu değiştir (CLAUDE.md'deki "önce belge" kuralı).
+
+## Yayınlama (tek komut)
+Depo kökünden `bash proje/tools/belge/yayinla.sh`: belgeyi üretir, `proje/` kopyalarını ve kökteki indirilebilir `belge.html`, `belge.pdf`, `belge.md` dosyalarını yeniler. Sonra commit + push; adresler: https://bogacavdar.github.io/purple-light/belge.html · belge.pdf · belge.md

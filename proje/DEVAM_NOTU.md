@@ -1,5 +1,8 @@
 # Hammadde — Yeni sohbet için devam notu
 
+## 📥 KURAL: Tasarım belgesi her zaman indirilebilir (28 Ekim 2026, Boğaç)
+- belge her güncellendiğinde depo kökündeki indirilebilir kopyalar da aynı commit'te yenilenir: `belge.html` (telefonda ve PC'de açılır, internetsiz çalışır, tablolarda arama var), `belge.pdf` (yazdırmaya/paylaşmaya uygun) ve `belge.md`. Tek komut: depo kökünden `bash proje/tools/belge/yayinla.sh`. Yayındaki adresler (test eden arkadaşlara bunlar gönderilir): https://bogacavdar.github.io/purple-light/belge.html · https://bogacavdar.github.io/purple-light/belge.pdf · https://bogacavdar.github.io/purple-light/belge.md . claude.ai artifact'ı (https://claude.ai/artifact/KAJf8nuvZLFCFfbqx6XBA9) de güncellenir. Güncellemeden sonra Boğaç'a dosyaları ayrıca gönderme; linkler hep günceldir.
+
 ## 🟣 KARAR: Mor ışık tanrı modunda da öldürür (28 Ekim 2026, Boğaç)
 - Bilinçli tasarım, hata DEĞİL: oyunun adı Mor Işık; tanrı modu (hile) canavar/açlık/zehre karşı korur ama gece ışıksız kalınca mor ışık yine öldürür. Bunu "düzeltme". İleride gizli bir başarım olacak: tanrı modu açıkken mor ışığa ölmek (adı/simgesi henüz yok).
 
