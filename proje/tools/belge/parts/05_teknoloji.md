@@ -27,7 +27,7 @@ Bu bölüm oyunun ve projenin **neyle yapıldığını** anlatır: hangi program
 | Testler ve kontrol | **Node.js**, **Playwright** (Chromium), **acorn**, **acorn-walk** | Sözdizimi kontrolü, otomatik oyun testleri, belgenin PDF'e çevrilmesi |
 | Belge ve veri araçları | **Python 3** (+ Markdown kütüphanesi), **Bash** | Tasarım belgesini üretme, tarif/eşya verisi ve ACT 2 içeriği üreten betikler |
 | Belge biçimi | **Markdown**, HTML, PDF | Tasarım belgesi ve indirilebilir kopyaları |
-| Yapay zekâ | **Claude** (Anthropic), Claude Code | Kod, test ve belgeler Boğaç'ın yönlendirmesiyle yazılır; oyun ve belge claude.ai artifact'ı olarak da yayınlanır |
+| Yapay zekâ desteği | **Claude** (Anthropic), Claude Code | Kodlamada, tasarım belgesinin yazımında ve testlerde kullanılır: yapay zekâ oyunu gerçek bir tarayıcıda oynatan test turları koşar, hataları bulup raporlar ve düzeltir; oyun ve belge claude.ai artifact'ı olarak da yayınlanır |
 
 **Kullanılmayanlar:** Oyun motoru (Unity, Godot, Unreal, Phaser vb.) ve hazır JavaScript kütüphanesi (React, Three.js, PixiJS vb.) **yoktur**; her şey sıfırdan yazıldı. Sunucu tarafı kod (backend) ve veritabanı sunucusu **yoktur**; oyun tamamen oyuncunun cihazında çalışır. Dışarıdan resim ya da ses dosyası **yüklenmez**.
 
@@ -96,7 +96,7 @@ Bu bölüm oyunun ve projenin **neyle yapıldığını** anlatır: hangi program
 | `proje/tools/belge/pdf.js` | JavaScript (Playwright) | Belgenin PDF'ini üretir |
 | `proje/tools/act2/*.py`, `proje/tests/*.py` | Python | Tarif/eşya verisini ve ACT 2 içeriğini oyun dosyasına işler |
 | Git, GitHub, GitHub Pages | – | Sürüm takibi ve yayın |
-| Claude, Claude Code | – | Kodlama, belge yazımı, test |
+| Claude, Claude Code (yapay zekâ desteği) | – | Kodlama, belge yazımı; otomatik test turları, hata bulma ve düzeltme |
 
 ## Hedeflenen ortamlar
 
