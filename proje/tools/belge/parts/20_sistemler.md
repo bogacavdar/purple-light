@@ -6,7 +6,7 @@
 | Shift | Koş (Koşu yeteneği gerekir) | Çift dokunuş |
 | E | Topla, konuş, kapı, yatak, ağacı silkele | Nesneye dokun |
 | Q / sol tık | Vur (sol tıkla hayvana tıklamak da vurur) | **Vur** düğmesi (yakın canavara kilitlenir) |
-| Boşluk | Atıl / takla (Atılma yeteneği gerekir); yerleştirirken döndür | **Atıl** düğmesi |
+| Boşluk | Atıl / takla (Börü'nün atılma dersinden sonra); yerleştirirken döndür | **Atıl** düğmesi |
 | Sağ tık | Savuştur (bas) · savunma duruşu (basılı tut) | **Savuş** düğmesi |
 | R | Ulti (çubuk doluyken); değilse robot köpekler menüsü | **Ulti** düğmesi |
 | F | En uygun yemeği ye | Tabak simgesi |
@@ -32,11 +32,12 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 
 | Değer | Sv 1 | Sv 10 | Sv 16 | Sv 25 | Sv 50 | Not |
 |---|---|---|---|---|---|---|
-| En yüksek can | 100 | 145 | 175 | 265 | 515 | + Sağlık dalı yetenekleri |
-| Can yenilenmesi (/sn) | 0,10 | 0,19 | 0,25 | 0,43 | 0,93 | tokluk > 70 iken ×1,5; tokluk 0 iken yenilenmez |
+| En yüksek can | 100 | 145 | 175 | 265 | 515 | + Dayanıklılık ağacındaki can yetenekleri |
+| Zırh (temel) | 0 | 9 | 15 | 24 | 49 | **seviye − 1** (iki katına sayma kuralı burada yok) + Zırh I–IV yetenekleri (v1.81) |
+| Can yenilenmesi (/sn) | 0,10 | 0,19 | 0,25 | 0,43 | 0,93 | tokluk > 70 iken ×1,5; tokluk 0 iken yenilenmez; Hızlı iyileşme ×2/×3/×4 |
 | En yüksek enerji | 100 | 136 | 160 | 232 | 432 | + Derin nefes yetenekleri |
 | Enerji yenilenmesi (/sn) | 14 | 18,5 | 21,5 | 30,5 | 55,5 | harcamadan 0,6 sn sonra başlar; yürürken ×0,6 |
-| Vuruş hasarı çarpanı | 1,00 | 1,27 | 1,45 | 1,72 | 2,47 | her seviye +%3 |
+| Vuruş hasarı çarpanı | 1,00 | 1,27 | 1,45 | 1,72 | 2,47 | her seviye +%3; Güçlü kol ×1,10/×1,25/×1,40 |
 | Satış çarpanı (seviyeden) | 1,00 | 1,09 | 1,15 | 1,33 | 1,83 | – |
 
 - Toplama hızı her seviye +%3 (33. seviyede durur), yürüme hızı her seviye +%2 (21. seviyede, 1,5 katta durur), şans her seviye +%0,5 (23. seviyede durur).
@@ -88,7 +89,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 | Kaynak | XP |
 |---|---|
-| Kazanda yeni tarif öğrenmek | 12 (Kazan bilgesi ile 22) |
+| Kazanda yeni tarif öğrenmek | 12 |
 | Elle yeni ürün / tekrar | 12 / 2 |
 | Örste yeni alet ya da zırh / tekrar | 8 / 2 |
 | Zor modda "Dene" ile tarif bulmak | 5 |
@@ -105,8 +106,9 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 | Köprü onarımı / Doğu geçidi | 40 / 320 |
 | Görevler, Börü'nün dersleri | tablolarda |
 
-- **Yetenek ağacı** (Y): 8 dal × 8 = 64 yetenek, sikkeyle alınır. Fiyat seviye şartını belirler: 100 → Sv 1, 250 → Sv 2, 500 → Sv 3, 1.000 → Sv 5, 2.500 → Sv 8, 5.000 → Sv 12 (Savaş dalında bazılarının kendi şartı var). Bütün dallar Normal ve Zor modda görünür. Tam liste "Yetenek ağacı" bölümünde.
-- **Koşu** yeteneği için önce **Atılma** alınmalı ve köprü onarılmış olmalı.
+- **Yetenek ağacı** (Y; v1.81): üç renkli ağaç — **Savaş** (kırmızı), **Ekonomi** (altın) ve **Dayanıklılık** (yeşil); her biri aşağıdan yukarı büyüyen 6 sıralı bir piramit (1+2+…+6 = 21 yetenek, toplam 63). Başta her ağacın yalnızca ilk yeteneği görünür; bir yeteneği alınca hemen üstündeki komşuları açılır. Fiyat ve seviye şartı sıraya göre: 100 (–), 250 (Sv 2), 500 (Sv 3), 1.000 (Sv 5), 2.500 (Sv 8), 5.000 (Sv 12). Tam liste "Yetenek ağacı" bölümünde.
+- **Koşu** Savaş ağacının ilk yeteneğidir: yalnızca 100 sikke; seviye, köprü ya da Atılma şartı yok.
+- **Atılma** yetenek ağacında değildir: öğreticide Börü ücretsiz öğretir (bkz. "Oyunun akışı").
 
 ## Zorluk
 
@@ -143,9 +145,11 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 ## Zırh ve durum etkileri
 
-- Beş yuva: baş, gövde, eller, ayaklar, silah. Alınan **fiziksel hasar × 25 / (25 + savunma)**. Keşif defterinin Giyim ve Zırh ustalıkları +5'er savunma verir.
+- Beş yuva: baş, gövde, eller, ayaklar, silah. Giyilen eşyaların toplamı **savunma**dır; Keşif defterinin Giyim ve Zırh ustalıkları +5'er savunma verir.
+- **Zırh** (v1.81) karakterin temel özelliğidir: **seviye − 1** (Sv 1'de 0, Sv 50'de 49) + Dayanıklılık ağacındaki Zırh I–IV yetenekleri (+5 / toplam +12 / +20 / +30). Eşyaya bağlı değildir, hiç çıkmaz.
+- Alınan **fiziksel hasar × 25 / (25 + savunma + zırh)**. Zehir, yanık ve kanama da bu oranın yarısı kadar yumuşar. Karakter ekranında "Zırh", "Savunma" ve toplam hasar azalması ayrı ayrı yazar. (Ekin'in "Savunmanı 60'a çıkar" görevi yalnızca eşya savunmasını sayar.)
 - **Çamur:** Bataklık çamurunda yavaşlarsın (×0,6); Kamış çizme, Demir çizme, Hurda çizme ve Meka çizme bunu önler.
-- **Durum etkileri** canavarlardan, alev/zehir gölünden ve zehirli yemekten gelir: **zehir**, **kanama**, **yanık** belirli süre saniyede can yakar; zırh bunu da yarı oranda yumuşatır. Dirençler: Bataklık postu pelerin (zehir %30), Timsah derisi zırh (kanama %40), Kül postu pelerin (yanık %40), Lav pulu eldiven (yanık %30), Demir zırh (kanama %30), Ejder pulu zırh (yanık %60), Mantar lifi eldiven (zehir %40), Kristal miğfer (kanama %30), Ejder pulu eldiven (yanık %40), Meka çizme (kanama %20), Meka zırh (üçü de %50).
+- **Durum etkileri** canavarlardan, alev/zehir gölünden ve zehirli yemekten gelir: **zehir**, **kanama**, **yanık** belirli süre saniyede can yakar; zırh bunu da yarı oranda yumuşatır. Dirençler: Bataklık postu pelerin (zehir %30), Timsah derisi zırh (kanama %40), Kül postu pelerin (yanık %40), Lav pulu eldiven (yanık %30), Demir zırh (kanama %30), Ejder pulu zırh (yanık %60), Mantar lifi eldiven (zehir %40), Kristal miğfer (kanama %30), Ejder pulu eldiven (yanık %40), Meka çizme (kanama %20), Meka zırh (üçü de %50). Dayanıklılık ağacındaki Zehre/Ateşe/Kanamaya dayanıklı yetenekleri ilgili hasarı ayrıca %40 azaltır (çarpılarak birleşir); Çelik beden üçünün süresini yarıya indirir; Son nefes canın dörtte birinin altındayken fiziksel hasarı %25 azaltır.
 - **Yemek kalkanları:** Panzehir zehri tamamen keser, Ateş kalkanı yanığı %70, Pıhtı kanamayı %60 azaltır.
 
 ## Yemek
@@ -253,7 +257,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Hasan'ın ödüllerinden, hasatt
 
 ## Atılma, savuşturma, savunma
 
-- **Atılma / takla** (Boşluk; Atılma yeteneği): 0,38 sn, 50 piksel; boyunca **dokunulmazsın**. 14 enerji (Çevik atılma ile 9), bekleme 0,68 sn. Bir saldırının içinden taklayla geçersen "Sıyrıldın!" +6 enerji.
+- **Atılma / takla** (Boşluk; öğreticide Börü ücretsiz öğretir): 0,38 sn, 50 piksel; boyunca **dokunulmazsın**. 14 enerji (Çevik atılma ile 9), bekleme 0,68 sn. Bir saldırının içinden taklayla geçersen "Sıyrıldın!" +6 enerji.
 - **Savuşturma** (sağ tık, darbe değmeden hemen önce): 0,2 sn pencere (telefonda 0,25), 5 enerji. Başarılıysa hasar almazsın, canavar geri savrulur ve **1,6 sn sersemler**, +6 enerji, ulti +10. Fırlatılan diken, ateş ve büyüler de savuşturulur.
 - **Darbe renkleri** (canavarın başındaki "!"): **beyaz** = normal, savuşturulur · **sarı** = ağır (×1,4 hasar), savuşturulur · **kırmızı** "!!" = savuşturulamaz (×1,7 hasar), ancak takla ile kaçılır. Reisin yere vurması ve yakalama da savuşturulamaz.
 - **Savunma duruşu** (sağ tık basılı tut): %45 hızla yürürsün, vuramazsın; fiziksel hasar beyazda ×0,35, sarıda ×0,45, kırmızıda ×0,7. Her engel enerji yer; enerji biterse kalkan düşer.

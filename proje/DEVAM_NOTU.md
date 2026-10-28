@@ -1198,6 +1198,15 @@ Kaynak: tarayıcıda oynanarak yapılan QA turu (/home/claude/qa/AJAN_RAPORU.md)
 - Menüde "Versiyon 1.79". chk.js 0 hata; v48_bugs.js'deki FAIL'ler v1.78'de de aynı (eski testler).
 
 
+## v1.81 (28 Ekim 2026) — öğretici atlama uyarısı, Börü'nün atılma dersi, Zırh, üç renkli yetenek ağacı
+Önce belge (parts/00, 10, 20, 40, 92), sonra kod. Boğaç bakıp geri dönüş yapacak.
+- **Eğitimi geç:** `tzSkip` artık Ekin'in uyarısını açar ("Öğrenmek istiyorum" / "Zaten biliyorum, geç"). Geçen hiçbir şey almaz (tarif, balta, meşale, XP, sikke yok); yalnızca menüler açılır ve Ekin'in ilk görevi gelir. Telefondaki "Emin misin? Geç" ön onayı kapatıldı (`if(false&&…)`).
+- **Atılma dersi** (`v181` bloğu, `window.__plDL`): kerevit yumruklanınca `tzAlpDone` sarmalayıcısı Börü'nün ders konuşmasını açar → `S1` ücretsiz verilir (ağaçta yok, gizli bayrak) → `tut:true, dl:true` kerevit; bekle → kırmızı ! (0,8 sn) → atılma. İlk saldırıda `paused=true` ile oyun durur, ortada "Boşluk'a bas!" (telefonda "Atıl düğmesine dokun!"); basınca `release()` → `doDodge()`. Sonra 3 saldırı daha (atılma, ! görüldükten sonra ya da saldırı anında sayılır; ıskalama can yakmaz). 4 sıyrılma → Börü "İlk ders tamam" → "Yetenek ağacını aç" zorunlu (ortada yazı, ikon yanıp söner) → ağaçta Koşu yanıp söner + Börü notu → ağaç kapanınca asıl `tzAlpDone` (balta tarifleri) sürer. Öğreticiyi geçen ve S1'i olmayan biri Börü'yle konuşunca aynı dersi ücretsiz alır (`talkAlp` sarmalayıcısı). `coinWatch` artık Koşu'yu duyurur; Atılma/Koşu ders metinleri 100 sikke Koşu'ya göre.
+- **Zırh:** `zirhOf()=seviye−1 + Zırh I–IV (5/12/20/30)`; `armorMul=25/(25+armorDef()+zirhOf())`. `armorDef` yalnızca eşya (Ekin'in savunma 60 görevi değişmedi). Karakter/envanter ekranlarında Zırh ayrıca yazar.
+- **Yetenek ağacı:** `SKT` → `SKILLS` (row/col/r), 3 ağaç × 21. Görünürlük `skSeen` (alttaki iki komşudan biri alınmış), fiyat sıraya göre `SKROWC` (100…5000), seviye `LVREQ`. Sekmeler `skTab`. Yeni yetenekler: E1 (satış +%50), D1 (can +50), W1–3 (`skDmg`, bütün hasar formüllerinde), D2/D5/D7/D10 (zırh), D3/D4/D6 (direnç, `addFx` sarmalayıcısı), D8 (Son nefes, `hurt`), D9 (Çelik beden, süre ×0,5), C9 (yenilenme ×4). Can: C3 100 / C5 175 / C8 250. Kaldırılanlar `SKGONE`: kayıt açılınca eski fiyatları iade edilir (Bilgelik: Zor mod tasarlanırken yeniden düşünülecek).
+- Ekin'in 3. görevi ("ilk yeteneğini al") artık gizli S1'i saymaz.
+- Test yapılmadı (kural); yalnızca chk.js 0 hata.
+
 ## v1.80 (28 Ekim 2026) — v1.78'in tanrı modu değişikliği geri alındı
 - Boğaç: mor ışığın tanrı modunda da öldürmesi bilinçli (bkz. en üstteki KARAR). v1.78'de eklenen `!window.__plGod` koşulu kaldırıldı; belge (Temel sistemler → Bayılma ve ölüm, Hileler; ACT 3 notları → planlanan gizli başarım) buna göre güncellendi.
 - Menüde "Versiyon 1.80". chk.js 0 hata.

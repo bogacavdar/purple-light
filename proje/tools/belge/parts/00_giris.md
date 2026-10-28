@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 1.77** ile birebir (28 Ekim 2026; sayılar 1.75 üzerinde ölçüldü, 1.76–1.77 düzeltmeleri işlendi). Bu belgedeki bütün sayılar (can, hasar, fiyat, ihtimal, adet) oyunun çalışan halinden ölçülerek çıkarıldı; kodu açmadan bir şeyin oyunda nasıl yapıldığını buradan bulabilmelisin.
+Sürüm: **Versiyon 1.81** ile birebir (28 Ekim 2026; sayılar 1.75 üzerinde ölçüldü, sonraki sürümlerin değişiklikleri işlendi; 1.81: öğretici atlama uyarısı, Börü'nün atılma dersi, Zırh özelliği, üç renkli yetenek ağacı). Bu belgedeki bütün sayılar (can, hasar, fiyat, ihtimal, adet) oyunun çalışan halinden ölçülerek çıkarıldı; kodu açmadan bir şeyin oyunda nasıl yapıldığını buradan bulabilmelisin.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -11,7 +11,7 @@ Sürüm: **Versiyon 1.77** ile birebir (28 Ekim 2026; sayılar 1.75 üzerinde ö
 - **Bir bölgede ne var:** **ACT 1** ve **ACT 2** bölümlerinde her biyom ayrı başlık: ağaçlar, toplanabilirler, madenler, canlılar.
 - **Bir NPC ne istiyor:** **Kişiler ve görevler** bölümü. Her görevin istediği, açılma şartı ve ödülü tablo halinde.
 - **²** işareti: o eşya ya da tarif ACT 2 adasına ait (malzemesi yalnızca ikinci adada çıkar).
-- **Fiyat** her yerde *temel satış fiyatıdır*; oyunda seviye ve Ticaret yetenekleri bunu artırır.
+- **Fiyat** her yerde *temel satış fiyatıdır*; oyunda seviye ve Ekonomi ağacının yetenekleri bunu artırır.
 
 ## Oyun bir bakışta
 

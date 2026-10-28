@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 1.77** ile birebir (28 Ekim 2026; sayılar 1.75 üzerinde ölçüldü, 1.76–1.77 düzeltmeleri işlendi). Bu belgedeki bütün sayılar (can, hasar, fiyat, ihtimal, adet) oyunun çalışan halinden ölçülerek çıkarıldı; kodu açmadan bir şeyin oyunda nasıl yapıldığını buradan bulabilmelisin.
+Sürüm: **Versiyon 1.81** ile birebir (28 Ekim 2026; sayılar 1.75 üzerinde ölçüldü, sonraki sürümlerin değişiklikleri işlendi; 1.81: öğretici atlama uyarısı, Börü'nün atılma dersi, Zırh özelliği, üç renkli yetenek ağacı). Bu belgedeki bütün sayılar (can, hasar, fiyat, ihtimal, adet) oyunun çalışan halinden ölçülerek çıkarıldı; kodu açmadan bir şeyin oyunda nasıl yapıldığını buradan bulabilmelisin.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -11,7 +11,7 @@ Sürüm: **Versiyon 1.77** ile birebir (28 Ekim 2026; sayılar 1.75 üzerinde ö
 - **Bir bölgede ne var:** **ACT 1** ve **ACT 2** bölümlerinde her biyom ayrı başlık: ağaçlar, toplanabilirler, madenler, canlılar.
 - **Bir NPC ne istiyor:** **Kişiler ve görevler** bölümü. Her görevin istediği, açılma şartı ve ödülü tablo halinde.
 - **²** işareti: o eşya ya da tarif ACT 2 adasına ait (malzemesi yalnızca ikinci adada çıkar).
-- **Fiyat** her yerde *temel satış fiyatıdır*; oyunda seviye ve Ticaret yetenekleri bunu artırır.
+- **Fiyat** her yerde *temel satış fiyatıdır*; oyunda seviye ve Ekonomi ağacının yetenekleri bunu artırır.
 
 ## Oyun bir bakışta
 
@@ -37,14 +37,19 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 
 ## Açılış
 
-1. **Ana menü:** Yeni oyun, Devam et, Kayıttan yükle, Ayarlar, Kayıtları dışa/içe aktar, Arena (kilitli), Çıkış. Menünün altında sürüm etiketi ("Versiyon 1.75").
+1. **Ana menü:** Yeni oyun, Devam et, Kayıttan yükle, Ayarlar, Kayıtları dışa/içe aktar, Arena (kilitli), Çıkış. Menünün altında sürüm etiketi (ör. "Versiyon 1.81").
 2. **Karakter yaratma:** ad, cinsiyet, ten, saç (stil ve renk), göz rengi, sakal/bıyık, gözlük, şapka. Ardından eşinin adı sorulur (eşin görünüşü sabittir: erkek kahraman uzun kızıl saçlı bir kadını, kadın kahraman kısa saçlı bir erkeği kaybeder).
 3. **Zorluk:** Normal ya da Zor. Zor modda tarifler kapalıdır ve kazanda "Dene" ile deneyerek bulunur (ayrıntı: "Zorluk").
 4. **Giriş sahnesi** (gemi, fırtına, mor ışık) ve **kumsalda uyanış**: Yaşlı Ekin seni bulur, adını sorar.
 
 ## Öğretici (13 adım)
 
-Öğretici sürerken Kazan, Pazar ve Demirci menüleri kilitlidir; ilgili kişiyle tanışınca açılır. Kartın üstündeki "Eğitimi geç" öğreticiyi atlar (Kaba meşale, Keskin taş, Taş balta, Sopa ve İp tarifleri öğrenilmiş, elde Taş balta ve Kaba meşale ile başlarsın).
+Öğretici sürerken Kazan, Pazar ve Demirci menüleri kilitlidir; ilgili kişiyle tanışınca açılır.
+
+**Öğreticiyi geçmek (v1.81):** kartın üstündeki "Eğitimi geç" önce bir uyarı açar. Ekin şunu söyler: öğretici adayı ilk kez görenler için önemlidir, oyunun ana mekaniklerini (toplama, yeme, kazan, el yapımı, satış, dövüş, atılma) öğretir; geçilirse öğretici boyunca verilecek **ödüller, XP ve eşyalar alınmaz**. İki seçenek vardır:
+
+- **"Öğrenmek istiyorum"** → uyarı kapanır, öğretici kaldığı yerden sürer.
+- **"Zaten biliyorum, geç"** → öğretici biter, menüler açılır, Ekin'in ilk ana görevi gelir. **Hiçbir şey otomatik verilmez:** meşale, balta, taş, tarif, XP ya da sikke yok; oyuncu her şeyi kendisi bulur (Normal modda tarifler malzemeleri görünce zaten açılır). O ana kadar kazandıkların sende kalır. Atılmayı bilmiyorsan Börü'yle konuşunca atılma dersini ücretsiz verir (aşağıda).
 
 | Adım | Kim | Ne yaparsın | Sonuç |
 |---|---|---|---|
@@ -58,11 +63,25 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 | 8 | Zümrüt | Kalan 2 taşla elle Keskin taş yap | Zümrüt kuzeydoğudaki Nazlı'yı söyler |
 | 9 | Nazlı | Pazarcı Nazlı ile tanış | Pazar "Sat" sekmesiyle açılır |
 | 10 | Nazlı | Keskin taşı sat | Nazlı doğudaki Börü'yü söyler |
-| 11 | Börü | Börü ile konuş, çıkan **kereviti yumrukla** (yumruk 4 hasar) | Taş balta, Sopa ve İp tarifleri öğrenilmiş olur; +6 Taş; Börü'nün yanına 3 Dal, 8 Lif, 4 Taş konur |
+| 11 | Börü | Börü ile konuş, çıkan **kereviti yumrukla** (yumruk 4 hasar); ardından **atılma dersi** ve **yetenek ağacı** (aşağıda) | Atılma öğrenilir (ücretsiz); Taş balta, Sopa ve İp tarifleri öğrenilmiş olur; +6 Taş; Börü'nün yanına 3 Dal, 8 Lif, 4 Taş konur |
 | 12 | Börü | Balta parçalarını elle yap: 2 Keskin taş → 1 Sopa → 2 Keskin taş → 2 İp (2 Taş da yanında kalsın) | — |
 | 13 | Dursun | Kuzeydeki Demirci Dursun'da örste **Taş balta**yı döv (ücretsiz), sonra baltayı eline al | Öğretici biter; ok Ekin'i gösterir, Ekin ilk ana görevi verir |
 
-Öğreticiden sonra kartın altında kısa dersler çıkar: **koşma dersi** (köprü onarılınca; Atılma 100 + Koşu 100 sikke), **meşale dersi** (2. ve 3. gün 17:30). İlk gece meşalesi olmayana biri bir Kaba meşale fırlatır (bir kez).
+### Börü'nün atılma dersi (v1.81, 11. adımın içinde)
+
+1. Kerevit yumrukla yenilince Börü "Şimdi kaçmayı öğren" der ve yanına **yeni bir kerevit** çıkar. Bu kerevit can yakmaz, ölmez; yalnızca saldırır. Atılma bu derste **ücretsiz** öğrenilir (yetenek ağacında satılmaz).
+2. Kerevit bir an bekler, üstünde kırmızı **!** belirir, sonra sana atılır.
+3. **İlk saldırıda** kerevit tam vuracakken **oyun durur** ve ekranın ortasında büyük harflerle "**Boşluk'a bas!**" (telefonda "**Atıl düğmesine dokun!**") yazar. Basınca oyun devam eder, karakter takla atar ve kereviti savuşturur ("Sıyrıldın!").
+4. Sonra kerevit **3 kez daha** saldırır; oyun artık durmaz. Saldırı anında (kırmızı ! görününce ya da kerevit atıldığında) Boşluk'a basarsan sayılır; geç ya da erken kalırsan "Bir daha!" der, can gitmez. Ekranda "Sıyrılma: 1/4" sayacı vardır.
+5. 4 sıyrılma (1 + 3) olunca Börü esprili bir dille "**İlk ders tamam!**" der: her kavgaya girmek akıllıca değildir, bazen tabanları yağlamak gerekir; bunun için hızlı koşmayı bilmek gerekir.
+6. **Yetenek ağacı zorunlu:** Börü'nün tek seçeneği "Yetenek ağacını aç"tır. Ağaç ikonu (Y) yanıp söner ve ekranın ortasında "Yetenek ağacını aç" yazar; açılana kadar öğretici ilerlemez. Ağaç açılınca Savaş ağacındaki **Koşu** yanıp söner ve üstte Börü'nün notu çıkar: ağaçlar aşağıdan yukarı büyür; Koşu 100 sikke; Nazlı'ya bir şeyler satıp **100 sikke biriktirip** ilk iş bunu almak akıllıca olur.
+7. Ağaç kapatılınca öğretici kaldığı yerden sürer: Börü Taş balta tarifini verir (12. adım).
+
+Öğreticiyi geçen ve atılmayı bilmeyen biri sonradan Börü'yle konuşursa Börü aynı dersi ücretsiz teklif eder ("Öğret" / "Sonra").
+
+### Öğreticiden sonraki kısa dersler
+
+Kartın altında kısa dersler çıkar: **koşma dersi** (köprü onarılınca; Koşu 100 sikke, Koşu zaten alındıysa çıkmaz), **meşale dersi** (2. ve 3. gün 17:30). İlk gece meşalesi olmayana biri bir Kaba meşale fırlatır (bir kez).
 
 ## ACT 1 yol haritası
 
@@ -99,7 +118,7 @@ ACT 2 bölümündeki "ACT 2'nin akışı"na bak: Ülker (portallar) → Pervin (
 | Shift | Koş (Koşu yeteneği gerekir) | Çift dokunuş |
 | E | Topla, konuş, kapı, yatak, ağacı silkele | Nesneye dokun |
 | Q / sol tık | Vur (sol tıkla hayvana tıklamak da vurur) | **Vur** düğmesi (yakın canavara kilitlenir) |
-| Boşluk | Atıl / takla (Atılma yeteneği gerekir); yerleştirirken döndür | **Atıl** düğmesi |
+| Boşluk | Atıl / takla (Börü'nün atılma dersinden sonra); yerleştirirken döndür | **Atıl** düğmesi |
 | Sağ tık | Savuştur (bas) · savunma duruşu (basılı tut) | **Savuş** düğmesi |
 | R | Ulti (çubuk doluyken); değilse robot köpekler menüsü | **Ulti** düğmesi |
 | F | En uygun yemeği ye | Tabak simgesi |
@@ -125,11 +144,12 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 
 | Değer | Sv 1 | Sv 10 | Sv 16 | Sv 25 | Sv 50 | Not |
 |---|---|---|---|---|---|---|
-| En yüksek can | 100 | 145 | 175 | 265 | 515 | + Sağlık dalı yetenekleri |
-| Can yenilenmesi (/sn) | 0,10 | 0,19 | 0,25 | 0,43 | 0,93 | tokluk > 70 iken ×1,5; tokluk 0 iken yenilenmez |
+| En yüksek can | 100 | 145 | 175 | 265 | 515 | + Dayanıklılık ağacındaki can yetenekleri |
+| Zırh (temel) | 0 | 9 | 15 | 24 | 49 | **seviye − 1** (iki katına sayma kuralı burada yok) + Zırh I–IV yetenekleri (v1.81) |
+| Can yenilenmesi (/sn) | 0,10 | 0,19 | 0,25 | 0,43 | 0,93 | tokluk > 70 iken ×1,5; tokluk 0 iken yenilenmez; Hızlı iyileşme ×2/×3/×4 |
 | En yüksek enerji | 100 | 136 | 160 | 232 | 432 | + Derin nefes yetenekleri |
 | Enerji yenilenmesi (/sn) | 14 | 18,5 | 21,5 | 30,5 | 55,5 | harcamadan 0,6 sn sonra başlar; yürürken ×0,6 |
-| Vuruş hasarı çarpanı | 1,00 | 1,27 | 1,45 | 1,72 | 2,47 | her seviye +%3 |
+| Vuruş hasarı çarpanı | 1,00 | 1,27 | 1,45 | 1,72 | 2,47 | her seviye +%3; Güçlü kol ×1,10/×1,25/×1,40 |
 | Satış çarpanı (seviyeden) | 1,00 | 1,09 | 1,15 | 1,33 | 1,83 | – |
 
 - Toplama hızı her seviye +%3 (33. seviyede durur), yürüme hızı her seviye +%2 (21. seviyede, 1,5 katta durur), şans her seviye +%0,5 (23. seviyede durur).
@@ -181,7 +201,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 | Kaynak | XP |
 |---|---|
-| Kazanda yeni tarif öğrenmek | 12 (Kazan bilgesi ile 22) |
+| Kazanda yeni tarif öğrenmek | 12 |
 | Elle yeni ürün / tekrar | 12 / 2 |
 | Örste yeni alet ya da zırh / tekrar | 8 / 2 |
 | Zor modda "Dene" ile tarif bulmak | 5 |
@@ -198,8 +218,9 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 | Köprü onarımı / Doğu geçidi | 40 / 320 |
 | Görevler, Börü'nün dersleri | tablolarda |
 
-- **Yetenek ağacı** (Y): 8 dal × 8 = 64 yetenek, sikkeyle alınır. Fiyat seviye şartını belirler: 100 → Sv 1, 250 → Sv 2, 500 → Sv 3, 1.000 → Sv 5, 2.500 → Sv 8, 5.000 → Sv 12 (Savaş dalında bazılarının kendi şartı var). Bütün dallar Normal ve Zor modda görünür. Tam liste "Yetenek ağacı" bölümünde.
-- **Koşu** yeteneği için önce **Atılma** alınmalı ve köprü onarılmış olmalı.
+- **Yetenek ağacı** (Y; v1.81): üç renkli ağaç — **Savaş** (kırmızı), **Ekonomi** (altın) ve **Dayanıklılık** (yeşil); her biri aşağıdan yukarı büyüyen 6 sıralı bir piramit (1+2+…+6 = 21 yetenek, toplam 63). Başta her ağacın yalnızca ilk yeteneği görünür; bir yeteneği alınca hemen üstündeki komşuları açılır. Fiyat ve seviye şartı sıraya göre: 100 (–), 250 (Sv 2), 500 (Sv 3), 1.000 (Sv 5), 2.500 (Sv 8), 5.000 (Sv 12). Tam liste "Yetenek ağacı" bölümünde.
+- **Koşu** Savaş ağacının ilk yeteneğidir: yalnızca 100 sikke; seviye, köprü ya da Atılma şartı yok.
+- **Atılma** yetenek ağacında değildir: öğreticide Börü ücretsiz öğretir (bkz. "Oyunun akışı").
 
 ## Zorluk
 
@@ -236,9 +257,11 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 ## Zırh ve durum etkileri
 
-- Beş yuva: baş, gövde, eller, ayaklar, silah. Alınan **fiziksel hasar × 25 / (25 + savunma)**. Keşif defterinin Giyim ve Zırh ustalıkları +5'er savunma verir.
+- Beş yuva: baş, gövde, eller, ayaklar, silah. Giyilen eşyaların toplamı **savunma**dır; Keşif defterinin Giyim ve Zırh ustalıkları +5'er savunma verir.
+- **Zırh** (v1.81) karakterin temel özelliğidir: **seviye − 1** (Sv 1'de 0, Sv 50'de 49) + Dayanıklılık ağacındaki Zırh I–IV yetenekleri (+5 / toplam +12 / +20 / +30). Eşyaya bağlı değildir, hiç çıkmaz.
+- Alınan **fiziksel hasar × 25 / (25 + savunma + zırh)**. Zehir, yanık ve kanama da bu oranın yarısı kadar yumuşar. Karakter ekranında "Zırh", "Savunma" ve toplam hasar azalması ayrı ayrı yazar. (Ekin'in "Savunmanı 60'a çıkar" görevi yalnızca eşya savunmasını sayar.)
 - **Çamur:** Bataklık çamurunda yavaşlarsın (×0,6); Kamış çizme, Demir çizme, Hurda çizme ve Meka çizme bunu önler.
-- **Durum etkileri** canavarlardan, alev/zehir gölünden ve zehirli yemekten gelir: **zehir**, **kanama**, **yanık** belirli süre saniyede can yakar; zırh bunu da yarı oranda yumuşatır. Dirençler: Bataklık postu pelerin (zehir %30), Timsah derisi zırh (kanama %40), Kül postu pelerin (yanık %40), Lav pulu eldiven (yanık %30), Demir zırh (kanama %30), Ejder pulu zırh (yanık %60), Mantar lifi eldiven (zehir %40), Kristal miğfer (kanama %30), Ejder pulu eldiven (yanık %40), Meka çizme (kanama %20), Meka zırh (üçü de %50).
+- **Durum etkileri** canavarlardan, alev/zehir gölünden ve zehirli yemekten gelir: **zehir**, **kanama**, **yanık** belirli süre saniyede can yakar; zırh bunu da yarı oranda yumuşatır. Dirençler: Bataklık postu pelerin (zehir %30), Timsah derisi zırh (kanama %40), Kül postu pelerin (yanık %40), Lav pulu eldiven (yanık %30), Demir zırh (kanama %30), Ejder pulu zırh (yanık %60), Mantar lifi eldiven (zehir %40), Kristal miğfer (kanama %30), Ejder pulu eldiven (yanık %40), Meka çizme (kanama %20), Meka zırh (üçü de %50). Dayanıklılık ağacındaki Zehre/Ateşe/Kanamaya dayanıklı yetenekleri ilgili hasarı ayrıca %40 azaltır (çarpılarak birleşir); Çelik beden üçünün süresini yarıya indirir; Son nefes canın dörtte birinin altındayken fiziksel hasarı %25 azaltır.
 - **Yemek kalkanları:** Panzehir zehri tamamen keser, Ateş kalkanı yanığı %70, Pıhtı kanamayı %60 azaltır.
 
 ## Yemek
@@ -346,7 +369,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Hasan'ın ödüllerinden, hasatt
 
 ## Atılma, savuşturma, savunma
 
-- **Atılma / takla** (Boşluk; Atılma yeteneği): 0,38 sn, 50 piksel; boyunca **dokunulmazsın**. 14 enerji (Çevik atılma ile 9), bekleme 0,68 sn. Bir saldırının içinden taklayla geçersen "Sıyrıldın!" +6 enerji.
+- **Atılma / takla** (Boşluk; öğreticide Börü ücretsiz öğretir): 0,38 sn, 50 piksel; boyunca **dokunulmazsın**. 14 enerji (Çevik atılma ile 9), bekleme 0,68 sn. Bir saldırının içinden taklayla geçersen "Sıyrıldın!" +6 enerji.
 - **Savuşturma** (sağ tık, darbe değmeden hemen önce): 0,2 sn pencere (telefonda 0,25), 5 enerji. Başarılıysa hasar almazsın, canavar geri savrulur ve **1,6 sn sersemler**, +6 enerji, ulti +10. Fırlatılan diken, ateş ve büyüler de savuşturulur.
 - **Darbe renkleri** (canavarın başındaki "!"): **beyaz** = normal, savuşturulur · **sarı** = ağır (×1,4 hasar), savuşturulur · **kırmızı** "!!" = savuşturulamaz (×1,7 hasar), ancak takla ile kaçılır. Reisin yere vurması ve yakalama da savuşturulamaz.
 - **Savunma duruşu** (sağ tık basılı tut): %45 hızla yürürsün, vuramazsın; fiziksel hasar beyazda ×0,35, sarıda ×0,45, kırmızıda ×0,7. Her engel enerji yer; enerji biterse kalkan düşer.
@@ -928,7 +951,10 @@ Toplam 2.020 sikke, 2.130 XP.
 
 ## Savaşçı Börü
 
-**Yer:** Ekin'in yaklaşık 62 karo doğusu, 36 karo kuzeyi. **Tanışma:** öğreticinin 11. adımı (yumruk dersi, kerevit).
+**Yer:** Ekin'in yaklaşık 62 karo doğusu, 36 karo kuzeyi. **Tanışma:** öğreticinin 11. adımı (yumruk dersi, kerevit; ardından ücretsiz **atılma dersi** ve yetenek ağacında Koşu'yu gösterir — ayrıntı "Oyunun akışı → Börü'nün atılma dersi").
+
+- Atılmayı bilmeyen (öğreticiyi geçmiş) biri konuşunca atılma dersini ücretsiz teklif eder.
+- 100 sikkeyi ilk kez bulunca "Börü: Koşu'yu alma vakti" bildirimi gelir (Koşu henüz alınmadıysa).
 
 - "Kılıç nasıl yapılır?" → **Taş kılıç** tarifini yazar (1 Sopa + 4 Keskin taş + 2 İp + 1 Çakmaktaşı; Dursun döver).
 - **Dövüş dersleri** (sikkeyle; ayrıntılar "Dövüş" bölümünde). Bir ders açılınca bir kez duyuru gelir. Öğrenilmiş dersler ücretsiz tekrar çalışılabilir. Ders sırasında Börü'den 280 pikselden uzağa gidersen oyun durur ve "Derse dön / Dersi bırak" diye sorar; "Derse dön" seni Börü'nün ~140 piksel yakınına koyar, bırakırsan ücret geri verilir.
@@ -4000,73 +4026,114 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 
 # Yetenek ağacı
 
-| Kimlik | Dal | Yetenek | Etki | Fiyat | Ön koşul | Seviye |
-|---|---|---|---|---|---|---|
-| T1 | Ticaret | Pazarlıkçı I | Satış fiyatları +%10 | 100 | – | – |
-| T3 | Ticaret | Şanslı müşteri | Her satışta %5 ihtimalle çift ödeme | 250 | T1 | – |
-| T4 | Ticaret | Toptancı | "Hepsini sat" ile ek +%5 | 250 | T1 | – |
-| T2 | Ticaret | Pazarlıkçı II | Satış fiyatları toplam +%20 | 500 | T1 | – |
-| T8 | Ticaret | Şanslı müşteri II | Çift ödeme ihtimali toplam %12 | 1.000 | T3 | – |
-| T6 | Ticaret | İlk keşif ödülü | Yeni malzeme ilk bulunduğunda fiyatının 5 katı sikke | 1.000 | T3 | – |
-| T5 | Ticaret | Pazarlıkçı III | Satış fiyatları toplam +%35 | 2.500 | T2 | – |
-| T7 | Ticaret | Pazarlıkçı IV | Satış fiyatları toplam +%50 | 5.000 | T5 | – |
-| G1 | Toplayıcılık | Çevik eller I | Toplama süresi −%15 | 100 | – | – |
-| G4 | Toplayıcılık | Bereket | %10 ihtimalle iki malzeme | 250 | G1 | – |
-| G5 | Toplayıcılık | Oduncu | Odun %50 daha hızlı | 250 | G1 | – |
-| G6 | Toplayıcılık | Taşçı | Taş, çakmaktaşı, çakıl, kum, kil %50 daha hızlı | 250 | G1 | – |
-| G7 | Toplayıcılık | Su taşıyıcı | Su %50 daha hızlı | 250 | G1 | – |
-| G2 | Toplayıcılık | Çevik eller II | Toplama süresi toplam −%30 | 500 | G1 | – |
-| G8 | Toplayıcılık | Verimli toprak | Malzemeler %40 daha çabuk yeniden çıkar | 1.000 | G4 | – |
-| G3 | Toplayıcılık | Çevik eller III | Toplama süresi toplam −%45 | 2.500 | G2 | – |
-| Z1 | Zanaat | Tutumlu usta I | Yaparken %10 ihtimalle bir malzeme elde kalır | 100 | – | – |
-| Z8 | Zanaat | Kazan bilgesi | Kazanda tarif öğrenince +10 XP daha | 250 | Z1 | – |
-| Z2 | Zanaat | Tutumlu usta II | Bu ihtimal toplam %20 | 500 | Z1 | – |
-| Z4 | Zanaat | Değerli işçilik | Birleştirilerek yapılan eşyalar +%15 değerli | 500 | Z1 | – |
-| Z3 | Zanaat | Usta işi | Elle yaparken %5 ihtimalle iki ürün | 1.000 | Z1 | – |
-| Z6 | Zanaat | Değerli işçilik II | Yapılan eşyalar toplam +%30 değerli | 1.000 | Z4 | – |
-| Z5 | Zanaat | Tutumlu usta III | Malzeme kalma ihtimali toplam %30 | 2.500 | Z2 | – |
-| Z7 | Zanaat | Usta işi II | İki ürün ihtimali toplam %12 | 2.500 | Z3 | – |
-| H1 | Gezgin | Hızlı adımlar I | Hareket hızı +%10 | 100 | – | – |
-| H4 | Gezgin | Uzun kol | E ile %50 daha uzaktan toplama | 250 | H1 | – |
-| H2 | Gezgin | Hızlı adımlar II | Hareket hızı toplam +%20 | 500 | H1 | – |
-| H5 | Gezgin | Keskin göz | Çakmaktaşı ve böğürtlen haritada parlar | 500 | H4 | – |
-| H6 | Gezgin | Kâşif gözü | Haritada açılan alan neredeyse iki kat genişler | 1.000 | H1 | – |
-| H8 | Gezgin | Baykuş gözü | Karanlıkta yakın çevreni hep biraz görürsün | 1.000 | H6 | – |
-| H3 | Gezgin | Hızlı adımlar III | Hareket hızı toplam +%30 | 2.500 | H2 | – |
-| H7 | Gezgin | Hızlı adımlar IV | Hareket hızı toplam +%40 | 5.000 | H3 | – |
-| B1 | Bilgelik | Sezgi | Malzeme kutularında bulunmamış tarif sayısı | 100 | – | – |
-| B4 | Bilgelik | Hızlı öğrenen I | Kazandığın bütün XP +%10 | 250 | B1 | – |
-| B2 | Bilgelik | Akıl yürütme | Seçili malzemeyle tarifi olmayanlar soluk görünür | 500 | B1 | – |
-| B8 | Bilgelik | Bilmece ustası | Zümrüt'ün bilmece ödülleri iki katı | 500 | B1 | – |
-| B3 | Bilgelik | İpucu ustası | Tarif kitabında 2 dakikada bir ipucu | 1.000 | B1 | – |
-| B5 | Bilgelik | Hızlı öğrenen II | Bütün XP toplam +%20 | 1.000 | B4 | – |
-| B7 | Bilgelik | İpucu ustası II | İpucu dakikada bir | 2.500 | B3 | – |
-| B6 | Bilgelik | Hızlı öğrenen III | Bütün XP toplam +%35 | 2.500 | B5 | – |
-| S1 | Savaş | Atılma | Boşluk ile (telefonda Atıl düğmesi) saldırıdan yana kaç; enerji harcar | 100 | – | – |
-| K1 | Savaş | Koşu | Shift ile (telefonda çift dokunarak) koş; enerji harcar | 100 | S1 | – |
-| S2 | Savaş | Çevik atılma | Atılma %35 daha az enerji, daha kısa bekleme | 250 | S1 | – |
-| K2 | Savaş | Derin nefes I | En yüksek enerji +%25 | 250 | K1 | Sv 5 |
-| K3 | Savaş | Çabuk toparlanma | Enerji %50 daha hızlı dolar | 250 | K1 | Sv 5 |
-| K4 | Savaş | Rüzgâr gibi | Koşu hızı 1,6 kattan 1,85 kata çıkar | 500 | K1 | Sv 7 |
-| K6 | Savaş | Hafif adım | Koşarken %30 daha az enerji harcarsın | 1.000 | K4 | Sv 8 |
-| K5 | Savaş | Derin nefes II | En yüksek enerji toplam +%50 | 2.500 | K2 | Sv 10 |
-| A1 | Alet kemeri | Kemer I | Alet yuvası 5 → 6 | 250 | – | – |
-| A5 | Alet kemeri | Sağlam aletler I | Aletler %20 daha geç körelir | 250 | A1 | – |
-| A2 | Alet kemeri | Kemer II | Alet yuvası 7 | 500 | A1 | – |
-| A6 | Alet kemeri | Sağlam aletler II | Aletler toplam %40 daha geç körelir | 1.000 | A5 | – |
-| A3 | Alet kemeri | Kemer III | Alet yuvası 8 | 1.000 | A2 | – |
-| A7 | Alet kemeri | Sağlam aletler III | Aletler toplam %60 daha geç körelir | 2.500 | A6 | – |
-| A4 | Alet kemeri | Kemer IV | Alet yuvası 10 | 2.500 | A3 | – |
-| A8 | Alet kemeri | Kemer V | Alet yuvası 12 | 5.000 | A4 | – |
-| C1 | Sağlık | Sağlam yapı I | En yüksek can +20 | 100 | – | – |
-| C2 | Sağlık | Hızlı iyileşme | Can iki kat hızlı yenilenir | 250 | C1 | – |
-| C4 | Sağlık | Kalın deri | Zehir, yanık ve çiğ et %40 daha az can yakar | 500 | C1 | – |
-| C7 | Sağlık | Demir mide | Zehirli yiyecek ve çiğ et %60 daha az dokunur | 500 | C1 | – |
-| C3 | Sağlık | Sağlam yapı II | En yüksek can toplam +50 | 500 | C1 | – |
-| C6 | Sağlık | Hızlı iyileşme II | Can üç kat hızlı yenilenir | 1.000 | C2 | – |
-| C5 | Sağlık | Sağlam yapı III | En yüksek can toplam +100 | 2.500 | C3 | – |
-| C8 | Sağlık | Sağlam yapı IV | En yüksek can toplam +200 | 5.000 | C5 | – |
+**v1.81'den itibaren** yetenekler üç renkli ağaçtadır: **Savaş** (kırmızı), **Ekonomi** (altın sarısı) ve **Dayanıklılık** (yeşil). Yetenek ekranı (Y) üstteki üç sekmeden birini gösterir.
 
+- **Ağaçlar aşağıdan yukarı piramit gibi büyür:** 1. sırada 1, 2. sırada 2, … 6. sırada 6 yetenek; her ağaçta 21, toplam **63 yetenek**.
+- **Başta her ağacın yalnızca en alttaki ilk yeteneği görünür.** Bir yeteneği alınca hemen üstündeki iki yetenek (sol üst ve sağ üst komşusu) görünür olur. Görünmeyen yerler boş kalır, piramidin şekli bozulmaz.
+- Bazı yeteneklerin ayrıca **ön koşulu** vardır (tablodaki "Ön koşul"; ör. Hızlı adımlar III için önce II). Görünür ama ön koşulu eksik olan yetenekte "Önce: …" yazar.
+- **Yukarı çıktıkça pahalı ve güçlü:** fiyat ve seviye şartı sıraya göre sabittir.
+
+| Sıra | Fiyat | Seviye şartı |
+|---|---|---|
+| 1 (en alt) | 100 | – |
+| 2 | 250 | Sv 2 |
+| 3 | 500 | Sv 3 |
+| 4 | 1.000 | Sv 5 |
+| 5 | 2.500 | Sv 8 |
+| 6 (en üst) | 5.000 | Sv 12 |
+
+- **Koşu** artık Savaş ağacının ilk yeteneğidir: yalnızca **100 sikke**; seviye, köprü ya da Atılma şartı yoktur.
+- **Atılma ağaçta değildir:** öğreticide Savaşçı Börü ücretsiz öğretir (öğreticiyi geçen, Börü'yle konuşunca aynı dersi ücretsiz alır). Ayrıntı: "Oyunun akışı → Börü'nün atılma dersi".
+- **Bilgelik dalı kaldırıldı.** Sezgi, Akıl yürütme, İpucu ustası I-II ve Bilmece ustası Normal modda gereksizdi (tarifler Normal modda zaten açık). *Not: Zor mod tasarlanırken tarif ipucu yetenekleri yeniden düşünülecek.* Kazan bilgesi, Keskin göz, Toptancı, Pazarlıkçı I-IV, Sağlam yapı I, Hızlı öğrenen I ve III de çıkarıldı (Pazarlıkçı'nın yerine Ekonomi'nin ilk yeteneği "Usta tüccar" geldi).
+- **Eski kayıtlar:** kaldırılan bir yeteneğe sahip kayıt açılınca o yeteneğin eski parası sikke olarak iade edilir ve bir bildirim çıkar. Elde kalan yetenekler alınmış kalır.
+
+## Savaş (kırmızı)
+
+Koşu, enerji, hareket, atılma, hasar ve alet kemeri.
+
+| Sıra | Kimlik | Yetenek | Etki | Ön koşul |
+|---|---|---|---|---|
+| 1 | K1 | Koşu | Shift ile (telefonda çift dokunarak) koş; enerji harcar | – |
+| 2 | H1 | Hızlı adımlar I | Hareket hızı +%10 | – |
+| 2 | K2 | Derin nefes I | En yüksek enerji +%25 | – |
+| 3 | S2 | Çevik atılma | Atılma %35 daha az enerji, daha kısa bekleme | – |
+| 3 | K3 | Çabuk toparlanma | Enerji %50 daha hızlı dolar | – |
+| 3 | A1 | Kemer I | Alet yuvası 5 → 6 | – |
+| 4 | W1 | Güçlü kol I | Bütün saldırıların hasarı +%10 (yumruk, silah, asa, ateşli silah) | – |
+| 4 | H2 | Hızlı adımlar II | Hareket hızı toplam +%20 | H1 |
+| 4 | K4 | Rüzgâr gibi | Koşu hızı 1,6 kattan 1,85 kata çıkar | – |
+| 4 | A2 | Kemer II | Alet yuvası 7 | A1 |
+| 5 | W2 | Güçlü kol II | Hasar toplam +%25 | W1 |
+| 5 | H6 | Kâşif gözü | Haritada açılan alan neredeyse iki kat genişler | – |
+| 5 | K6 | Hafif adım | Koşarken %30 daha az enerji harcarsın | K4 |
+| 5 | H3 | Hızlı adımlar III | Hareket hızı toplam +%30 | H2 |
+| 5 | A3 | Kemer III | Alet yuvası 8 | A2 |
+| 6 | W3 | Güçlü kol III | Hasar toplam +%40 | W2 |
+| 6 | H8 | Baykuş gözü | Karanlıkta yakın çevreni hep biraz görürsün | H6 |
+| 6 | K5 | Derin nefes II | En yüksek enerji toplam +%50 | K2 |
+| 6 | H7 | Hızlı adımlar IV | Hareket hızı toplam +%40 | H3 |
+| 6 | A4 | Kemer IV | Alet yuvası 10 | A3 |
+| 6 | A8 | Kemer V | Alet yuvası 12 | A4 |
+
+## Ekonomi (altın sarısı)
+
+Ticaret, toplayıcılık ve zanaat.
+
+| Sıra | Kimlik | Yetenek | Etki | Ön koşul |
+|---|---|---|---|---|
+| 1 | E1 | Usta tüccar | Pazarda satış fiyatları +%50 | – |
+| 2 | G1 | Çevik eller I | Toplama süresi −%15 | – |
+| 2 | Z1 | Tutumlu usta I | Yaparken %10 ihtimalle bir malzeme elde kalır | – |
+| 3 | G5 | Oduncu | Odun %50 daha hızlı | – |
+| 3 | G6 | Taşçı | Taş, çakmaktaşı, çakıl, kum, kil %50 daha hızlı | – |
+| 3 | Z4 | Değerli işçilik | Birleştirilerek yapılan eşyalar +%15 değerli | – |
+| 4 | G7 | Su taşıyıcı | Su %50 daha hızlı | – |
+| 4 | G2 | Çevik eller II | Toplama süresi toplam −%30 | G1 |
+| 4 | G4 | Bereket | %10 ihtimalle iki malzeme | – |
+| 4 | Z2 | Tutumlu usta II | Malzeme kalma ihtimali toplam %20 | Z1 |
+| 5 | H4 | Uzun kol | E ile %50 daha uzaktan toplama | – |
+| 5 | G8 | Verimli toprak | Malzemeler %40 daha çabuk yeniden çıkar | G4 |
+| 5 | T3 | Şanslı müşteri | Her satışta %5 ihtimalle çift ödeme | – |
+| 5 | Z3 | Usta işi | Elle yaparken %5 ihtimalle iki ürün | – |
+| 5 | Z6 | Değerli işçilik II | Yapılan eşyalar toplam +%30 değerli | Z4 |
+| 6 | B5 | Hızlı öğrenen | Kazandığın bütün XP +%20 | – |
+| 6 | G3 | Çevik eller III | Toplama süresi toplam −%45 | G2 |
+| 6 | T6 | İlk keşif ödülü | Yeni malzeme ilk bulunduğunda fiyatının 5 katı sikke | – |
+| 6 | T8 | Şanslı müşteri II | Çift ödeme ihtimali toplam %12 | T3 |
+| 6 | Z5 | Tutumlu usta III | Malzeme kalma ihtimali toplam %30 | Z2 |
+| 6 | Z7 | Usta işi II | İki ürün ihtimali toplam %12 | Z3 |
+
+Satış fiyatı bütün yeteneklerle birlikte en çok temel fiyatın 2,3 katına çıkar (değişmedi).
+
+## Dayanıklılık (yeşil)
+
+Can, zırh, can yenilenmesi, zehir/yanık/kanama direnci ve alet sağlamlığı.
+
+| Sıra | Kimlik | Yetenek | Etki | Ön koşul |
+|---|---|---|---|---|
+| 1 | D1 | Güçlü beden | En yüksek can +50 | – |
+| 2 | C2 | Hızlı iyileşme I | Can iki kat hızlı yenilenir | – |
+| 2 | D2 | Zırh I | Zırh +5 | – |
+| 3 | C7 | Demir mide | Zehirli yiyecek ve çiğ et %60 daha az dokunur | – |
+| 3 | C3 | Sağlam yapı I | En yüksek can toplam +100 | – |
+| 3 | A5 | Sağlam aletler I | Aletler %20 daha geç körelir | – |
+| 4 | D3 | Zehre dayanıklı | Zehir hasarı −%40 | – |
+| 4 | C6 | Hızlı iyileşme II | Can üç kat hızlı yenilenir | C2 |
+| 4 | D5 | Zırh II | Zırh toplam +12 | D2 |
+| 4 | A6 | Sağlam aletler II | Aletler toplam %40 daha geç körelir | A5 |
+| 5 | D4 | Ateşe dayanıklı | Yanık hasarı −%40 | – |
+| 5 | C4 | Kalın deri | Zırhın tutmadığı anlık hasarlar (çiğ et, zehirli yemek, diken, göl) %40 daha az | – |
+| 5 | C5 | Sağlam yapı II | En yüksek can toplam +175 | C3 |
+| 5 | D6 | Kanamaya dayanıklı | Kanama hasarı −%40 | – |
+| 5 | D7 | Zırh III | Zırh toplam +20 | D5 |
+| 6 | D9 | Çelik beden | Zehir, yanık ve kanama yarı sürede geçer | – |
+| 6 | C9 | Hızlı iyileşme III | Can dört kat hızlı yenilenir | C6 |
+| 6 | C8 | Sağlam yapı III | En yüksek can toplam +250 | C5 |
+| 6 | D8 | Son nefes | Canın dörtte birinin altındayken aldığın fiziksel hasar −%25 | – |
+| 6 | D10 | Zırh IV | Zırh toplam +30 | D7 |
+| 6 | A7 | Sağlam aletler III | Aletler toplam %60 daha geç körelir | A6 |
+
+Direnç yetenekleri eşya dirençleriyle ve yemek kalkanlarıyla çarpılarak birleşir (ör. Bataklık postu pelerin %30 + Zehre dayanıklı %40 → zehir 0,7 × 0,6 = 0,42).
 
 
 # Başarımlar

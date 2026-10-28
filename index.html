@@ -192,6 +192,9 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);font-family
 .br ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .sk{box-sizing:border-box;width:100%;text-align:left;background:#1c2419;border:2px solid var(--panel-edge);color:var(--ink);font-family:inherit;padding:6px 8px;cursor:pointer;display:grid;gap:2px}
 .sk.sub{margin-left:12px;width:calc(100% - 12px)}
+.sktabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}.sktab{font:inherit;font-weight:700;padding:6px 12px;border:2px solid var(--tc);background:#1c2419;color:var(--tc);cursor:pointer}.sktab.on{background:var(--tc);color:#1c2419}.sktab small{opacity:.8;font-weight:600}
+.sktree{border:2px solid var(--tc);padding:10px 8px;overflow-x:auto;-webkit-overflow-scrolling:touch}.skpyr{display:inline-flex;flex-direction:column;align-items:center;min-width:100%;gap:6px}.skrow{display:flex;gap:6px}.skrow .sk{width:150px;flex:0 0 150px}.sk.hid{visibility:hidden}.sktree .sk.own{border-color:var(--tc)}.sknote{margin:6px 0 0;font-size:13px;opacity:.75}
+@media (max-width:820px){.skrow .sk{width:122px;flex-basis:122px;font-size:12px;padding:5px 6px}}
 .sk b{font-size:14px;font-weight:700}
 .sk span{font-size:12px;color:var(--ink-dim);line-height:1.25}
 .sk em{font-style:normal;font-size:12px;font-weight:700}
@@ -1335,7 +1338,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.80</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.81</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -1692,78 +1695,45 @@ const toolDur={};                 // remaining uses per owned gathering tool
 const bestTool=kind=>Object.keys(GT).filter(n=>GT[n].kind===kind&&(inv[n]||0)>0&&(nn(toolDur[n],GT[n].dur))>0).sort((a,b)=>GT[a].time-GT[b].time)[0];
 const ownsKind=kind=>Object.keys(GT).some(n=>GT[n].kind===kind&&(inv[n]||0)>0);
 function giveTool(n){if(!(n in inv)){inv[n]=0;order.push(n)}inv[n]=1;toolDur[n]=GT[n].dur}
-const SKILLS=[
- {id:'T1',br:'Ticaret',n:'Pazarlıkçı I',e:'Satış fiyatları +%10',c:100},
- {id:'T3',br:'Ticaret',n:'Şanslı müşteri',e:'Her satışta %5 ihtimalle çift ödeme',c:250,r:'T1',sub:1},
- {id:'T4',br:'Ticaret',n:'Toptancı',e:'"Hepsini sat" ile ek +%5',c:250,r:'T1',sub:1},
- {id:'T2',br:'Ticaret',n:'Pazarlıkçı II',e:'Satış fiyatları toplam +%20',c:500,r:'T1'},
- {id:'T8',br:'Ticaret',n:'Şanslı müşteri II',e:'Çift ödeme ihtimali toplam %12',c:1000,r:'T3',sub:1},
- {id:'T6',br:'Ticaret',n:'İlk keşif ödülü',e:'Yeni malzeme ilk bulunduğunda fiyatının 5 katı sikke',c:1000,r:'T3',sub:1},
- {id:'T5',br:'Ticaret',n:'Pazarlıkçı III',e:'Satış fiyatları toplam +%35',c:2500,r:'T2'},
- {id:'T7',br:'Ticaret',n:'Pazarlıkçı IV',e:'Satış fiyatları toplam +%50',c:5000,r:'T5'},
- {id:'G1',br:'Toplayıcılık',n:'Çevik eller I',e:'Toplama süresi −%15',c:100},
- {id:'G4',br:'Toplayıcılık',n:'Bereket',e:'%10 ihtimalle iki malzeme',c:250,r:'G1',sub:1},
- {id:'G5',br:'Toplayıcılık',n:'Oduncu',e:'Odun %50 daha hızlı',c:250,r:'G1',sub:1},
- {id:'G6',br:'Toplayıcılık',n:'Taşçı',e:'Taş, çakmaktaşı, çakıl, kum, kil %50 daha hızlı',c:250,r:'G1',sub:1},
- {id:'G7',br:'Toplayıcılık',n:'Su taşıyıcı',e:'Su %50 daha hızlı',c:250,r:'G1',sub:1},
- {id:'G2',br:'Toplayıcılık',n:'Çevik eller II',e:'Toplama süresi toplam −%30',c:500,r:'G1'},
- {id:'G8',br:'Toplayıcılık',n:'Verimli toprak',e:'Malzemeler %40 daha çabuk yeniden çıkar',c:1000,r:'G4',sub:1},
- {id:'G3',br:'Toplayıcılık',n:'Çevik eller III',e:'Toplama süresi toplam −%45',c:2500,r:'G2'},
- {id:'Z1',br:'Zanaat',n:'Tutumlu usta I',e:'Yaparken %10 ihtimalle bir malzeme elde kalır',c:100},
- {id:'Z8',br:'Zanaat',n:'Kazan bilgesi',e:'Kazanda tarif öğrenince +10 XP daha',c:250,r:'Z1',sub:1},
- {id:'Z2',br:'Zanaat',n:'Tutumlu usta II',e:'Bu ihtimal toplam %20',c:500,r:'Z1'},
- {id:'Z4',br:'Zanaat',n:'Değerli işçilik',e:'Birleştirilerek yapılan eşyalar +%15 değerli',c:500,r:'Z1',sub:1},
- {id:'Z3',br:'Zanaat',n:'Usta işi',e:'Elle yaparken %5 ihtimalle iki ürün',c:1000,r:'Z1',sub:1},
- {id:'Z6',br:'Zanaat',n:'Değerli işçilik II',e:'Yapılan eşyalar toplam +%30 değerli',c:1000,r:'Z4',sub:1},
- {id:'Z5',br:'Zanaat',n:'Tutumlu usta III',e:'Malzeme kalma ihtimali toplam %30',c:2500,r:'Z2'},
- {id:'Z7',br:'Zanaat',n:'Usta işi II',e:'İki ürün ihtimali toplam %12',c:2500,r:'Z3',sub:1},
- {id:'H1',br:'Gezgin',n:'Hızlı adımlar I',e:'Hareket hızı +%10',c:100},
- {id:'H4',br:'Gezgin',n:'Uzun kol',e:'E ile %50 daha uzaktan toplama',c:250,r:'H1',sub:1},
- {id:'H2',br:'Gezgin',n:'Hızlı adımlar II',e:'Hareket hızı toplam +%20',c:500,r:'H1'},
- {id:'H5',br:'Gezgin',n:'Keskin göz',e:'Çakmaktaşı ve böğürtlen haritada parlar',c:500,r:'H4',sub:1},
- {id:'H6',br:'Gezgin',n:'Kâşif gözü',e:'Haritada açılan alan neredeyse iki kat genişler',c:1000,r:'H1',sub:1},
- {id:'H8',br:'Gezgin',n:'Baykuş gözü',e:'Karanlıkta yakın çevreni hep biraz görürsün',c:1000,r:'H6',sub:1},
- {id:'H3',br:'Gezgin',n:'Hızlı adımlar III',e:'Hareket hızı toplam +%30',c:2500,r:'H2'},
- {id:'H7',br:'Gezgin',n:'Hızlı adımlar IV',e:'Hareket hızı toplam +%40',c:5000,r:'H3'},
- {id:'B1',br:'Bilgelik',n:'Sezgi',e:'Malzeme kutularında bulunmamış tarif sayısı',c:100},
- {id:'B4',br:'Bilgelik',n:'Hızlı öğrenen I',e:'Kazandığın bütün XP +%10',c:250,r:'B1'},
- {id:'B2',br:'Bilgelik',n:'Akıl yürütme',e:'Seçili malzemeyle tarifi olmayanlar soluk görünür',c:500,r:'B1',sub:1},
- {id:'B8',br:'Bilgelik',n:'Bilmece ustası',e:'Zümrüt\'ün bilmece ödülleri iki katı',c:500,r:'B1',sub:1},
- {id:'B3',br:'Bilgelik',n:'İpucu ustası',e:'Tarif kitabında 2 dakikada bir ipucu',c:1000,r:'B1',sub:1},
- {id:'B5',br:'Bilgelik',n:'Hızlı öğrenen II',e:'Bütün XP toplam +%20',c:1000,r:'B4'},
- {id:'B7',br:'Bilgelik',n:'İpucu ustası II',e:'İpucu dakikada bir',c:2500,r:'B3',sub:1},
- {id:'B6',br:'Bilgelik',n:'Hızlı öğrenen III',e:'Bütün XP toplam +%35',c:2500,r:'B5'},
- {id:'S1',br:'Savaş',n:'Atılma',e:'Boşluk ile (telefonda Atıl düğmesi) saldırıdan yana kaç; enerji harcar',c:100},
- {id:'K1',br:'Savaş',n:'Koşu',e:'Shift ile (telefonda çift dokunarak) koş; enerji harcar',c:100,r:'S1',need:'bridge'},
- {id:'S2',br:'Savaş',n:'Çevik atılma',e:'Atılma %35 daha az enerji, daha kısa bekleme',c:250,r:'S1',sub:1},
- {id:'K2',br:'Savaş',n:'Derin nefes I',e:'En yüksek enerji +%25',c:250,r:'K1',sub:1,lv:5},
- {id:'K3',br:'Savaş',n:'Çabuk toparlanma',e:'Enerji %50 daha hızlı dolar',c:250,r:'K1',sub:1,lv:5},
- {id:'K4',br:'Savaş',n:'Rüzgâr gibi',e:'Koşu hızı 1,6 kattan 1,85 kata çıkar',c:500,r:'K1',lv:7},
- {id:'K6',br:'Savaş',n:'Hafif adım',e:'Koşarken %30 daha az enerji harcarsın',c:1000,r:'K4',sub:1,lv:8},
- {id:'K5',br:'Savaş',n:'Derin nefes II',e:'En yüksek enerji toplam +%50',c:2500,r:'K2',lv:10},
- {id:'A1',br:'Alet kemeri',n:'Kemer I',e:'Alet yuvası 5 → 6',c:250},
- {id:'A5',br:'Alet kemeri',n:'Sağlam aletler I',e:'Aletler %20 daha geç körelir',c:250,r:'A1',sub:1},
- {id:'A2',br:'Alet kemeri',n:'Kemer II',e:'Alet yuvası 7',c:500,r:'A1'},
- {id:'A6',br:'Alet kemeri',n:'Sağlam aletler II',e:'Aletler toplam %40 daha geç körelir',c:1000,r:'A5',sub:1},
- {id:'A3',br:'Alet kemeri',n:'Kemer III',e:'Alet yuvası 8',c:1000,r:'A2'},
- {id:'A7',br:'Alet kemeri',n:'Sağlam aletler III',e:'Aletler toplam %60 daha geç körelir',c:2500,r:'A6',sub:1},
- {id:'A4',br:'Alet kemeri',n:'Kemer IV',e:'Alet yuvası 10',c:2500,r:'A3'},
- {id:'A8',br:'Alet kemeri',n:'Kemer V',e:'Alet yuvası 12',c:5000,r:'A4'},
- {id:'C1',br:'Sağlık',n:'Sağlam yapı I',e:'En yüksek can +20',c:100},
- {id:'C2',br:'Sağlık',n:'Hızlı iyileşme',e:'Can iki kat hızlı yenilenir',c:250,r:'C1',sub:1},
- {id:'C4',br:'Sağlık',n:'Kalın deri',e:'Zehir, yanık ve çiğ et %40 daha az can yakar',c:500,r:'C1',sub:1},
- {id:'C7',br:'Sağlık',n:'Demir mide',e:'Zehirli yiyecek ve çiğ et %60 daha az dokunur',c:500,r:'C1',sub:1},
- {id:'C3',br:'Sağlık',n:'Sağlam yapı II',e:'En yüksek can toplam +50',c:500,r:'C1'},
- {id:'C6',br:'Sağlık',n:'Hızlı iyileşme II',e:'Can üç kat hızlı yenilenir',c:1000,r:'C2',sub:1},
- {id:'C5',br:'Sağlık',n:'Sağlam yapı III',e:'En yüksek can toplam +100',c:2500,r:'C3'},
- {id:'C8',br:'Sağlık',n:'Sağlam yapı IV',e:'En yüksek can toplam +200',c:5000,r:'C5'},
-];
+// v1.81: three coloured trees (Savaş, Ekonomi, Dayanıklılık), each a 6-row pyramid that grows upwards (1+2+…+6 = 21).
+// A skill shows once one of the two skills right under it is owned (row 1 always). Price and level come from the row.
+const SKROWC=[0,100,250,500,1000,2500,5000];
+const SKT={
+ 'Savaş':[
+  [['K1','Koşu','Shift ile (telefonda çift dokunarak) koş; enerji harcar']],
+  [['H1','Hızlı adımlar I','Hareket hızı +%10'],['K2','Derin nefes I','En yüksek enerji +%25']],
+  [['S2','Çevik atılma','Atılma %35 daha az enerji, daha kısa bekleme'],['K3','Çabuk toparlanma','Enerji %50 daha hızlı dolar'],['A1','Kemer I','Alet yuvası 5 → 6']],
+  [['W1','Güçlü kol I','Bütün saldırıların hasarı +%10'],['H2','Hızlı adımlar II','Hareket hızı toplam +%20','H1'],['K4','Rüzgâr gibi','Koşu hızı 1,6 kattan 1,85 kata çıkar'],['A2','Kemer II','Alet yuvası 7','A1']],
+  [['W2','Güçlü kol II','Hasar toplam +%25','W1'],['H6','Kâşif gözü','Haritada açılan alan neredeyse iki kat genişler'],['K6','Hafif adım','Koşarken %30 daha az enerji harcarsın','K4'],['H3','Hızlı adımlar III','Hareket hızı toplam +%30','H2'],['A3','Kemer III','Alet yuvası 8','A2']],
+  [['W3','Güçlü kol III','Hasar toplam +%40','W2'],['H8','Baykuş gözü','Karanlıkta yakın çevreni hep biraz görürsün','H6'],['K5','Derin nefes II','En yüksek enerji toplam +%50','K2'],['H7','Hızlı adımlar IV','Hareket hızı toplam +%40','H3'],['A4','Kemer IV','Alet yuvası 10','A3'],['A8','Kemer V','Alet yuvası 12','A4']]],
+ 'Ekonomi':[
+  [['E1','Usta tüccar','Pazarda satış fiyatları +%50']],
+  [['G1','Çevik eller I','Toplama süresi −%15'],['Z1','Tutumlu usta I','Yaparken %10 ihtimalle bir malzeme elde kalır']],
+  [['G5','Oduncu','Odun %50 daha hızlı'],['G6','Taşçı','Taş, çakmaktaşı, çakıl, kum, kil %50 daha hızlı'],['Z4','Değerli işçilik','Birleştirilerek yapılan eşyalar +%15 değerli']],
+  [['G7','Su taşıyıcı','Su %50 daha hızlı'],['G2','Çevik eller II','Toplama süresi toplam −%30','G1'],['G4','Bereket','%10 ihtimalle iki malzeme'],['Z2','Tutumlu usta II','Malzeme kalma ihtimali toplam %20','Z1']],
+  [['H4','Uzun kol','E ile %50 daha uzaktan toplama'],['G8','Verimli toprak','Malzemeler %40 daha çabuk yeniden çıkar','G4'],['T3','Şanslı müşteri','Her satışta %5 ihtimalle çift ödeme'],['Z3','Usta işi','Elle yaparken %5 ihtimalle iki ürün'],['Z6','Değerli işçilik II','Yapılan eşyalar toplam +%30 değerli','Z4']],
+  [['B5','Hızlı öğrenen','Kazandığın bütün XP +%20'],['G3','Çevik eller III','Toplama süresi toplam −%45','G2'],['T6','İlk keşif ödülü','Yeni malzeme ilk bulunduğunda fiyatının 5 katı sikke'],['T8','Şanslı müşteri II','Çift ödeme ihtimali toplam %12','T3'],['Z5','Tutumlu usta III','Malzeme kalma ihtimali toplam %30','Z2'],['Z7','Usta işi II','İki ürün ihtimali toplam %12','Z3']]],
+ 'Dayanıklılık':[
+  [['D1','Güçlü beden','En yüksek can +50']],
+  [['C2','Hızlı iyileşme I','Can iki kat hızlı yenilenir'],['D2','Zırh I','Zırh +5']],
+  [['C7','Demir mide','Zehirli yiyecek ve çiğ et %60 daha az dokunur'],['C3','Sağlam yapı I','En yüksek can toplam +100'],['A5','Sağlam aletler I','Aletler %20 daha geç körelir']],
+  [['D3','Zehre dayanıklı','Zehir hasarı −%40'],['C6','Hızlı iyileşme II','Can üç kat hızlı yenilenir','C2'],['D5','Zırh II','Zırh toplam +12','D2'],['A6','Sağlam aletler II','Aletler toplam %40 daha geç körelir','A5']],
+  [['D4','Ateşe dayanıklı','Yanık hasarı −%40'],['C4','Kalın deri','Zırhın tutmadığı anlık hasarlar (çiğ et, zehirli yemek, diken, göl) %40 daha az'],['C5','Sağlam yapı II','En yüksek can toplam +175','C3'],['D6','Kanamaya dayanıklı','Kanama hasarı −%40'],['D7','Zırh III','Zırh toplam +20','D5']],
+  [['D9','Çelik beden','Zehir, yanık ve kanama yarı sürede geçer'],['C9','Hızlı iyileşme III','Can dört kat hızlı yenilenir','C6'],['C8','Sağlam yapı III','En yüksek can toplam +250','C5'],['D8','Son nefes','Canın dörtte birinin altındayken aldığın fiziksel hasar −%25'],['D10','Zırh IV','Zırh toplam +30','D7'],['A7','Sağlam aletler III','Aletler toplam %60 daha geç körelir','A6']]]};
+const SKILLS=[];for(const br in SKT)SKT[br].forEach((R,i)=>R.forEach((s,j)=>SKILLS.push({id:s[0],br,n:s[1],e:s[2],c:SKROWC[i+1],row:i+1,col:j,r:s[3]||null})));
+// v1.81: skills that left the tree; a save that had them gets their old price back (see the v181 block)
+const SKGONE={T1:100,T2:500,T4:250,T5:2500,T7:5000,Z8:250,H5:500,B1:100,B2:500,B3:1000,B4:250,B6:2500,B7:2500,B8:500,C1:100};
+const SKTREES=[['Savaş','#e0503c'],['Ekonomi','#e6b23a'],['Dayanıklılık','#5cbf5a']];
+const skSeen=x=>x.row===1||SKILLS.some(y=>y.br===x.br&&y.row===x.row-1&&(y.col===x.col-1||y.col===x.col)&&skills.has(y.id));
+let skTab='Savaş';
 const lvOf=x=>x.lv||LVREQ[x.c]||1;
 const LVREQ={100:1,250:2,500:3,1000:5,2500:8,5000:12};
-const BRCOL={'Ticaret':'#f2b84b','Toplayıcılık':'#8fd46b','Zanaat':'#d39a58','Gezgin':'#7fb8e0','Bilgelik':'#c99ae0','Dayanıklılık':'#b8e070','Savaş':'#ff9a5a','Sağlık':'#ff8a7a','Alet kemeri':'#e8a060'};
+const BRCOL={'Ekonomi':'#e6b23a','Ticaret':'#f2b84b','Toplayıcılık':'#8fd46b','Zanaat':'#d39a58','Gezgin':'#7fb8e0','Bilgelik':'#c99ae0','Dayanıklılık':'#5cbf5a','Savaş':'#e0503c','Sağlık':'#ff8a7a','Alet kemeri':'#e8a060'};
 const skills=new Set();
 const sk=id=>skills.has(id);
-const tradePct=()=>sk('T7')?.5:sk('T5')?.35:sk('T2')?.20:sk('T1')?.10:0;
+const skDmg=()=>sk('W3')?1.4:sk('W2')?1.25:sk('W1')?1.1:1;   // v1.81 Güçlü kol
+const zirhOf=()=>Math.max(0,lvl-1)+(sk('D10')?30:sk('D7')?20:sk('D5')?12:sk('D2')?5:0);   // v1.81 Zırh: seviye − 1 + Zırh I–IV
+const tradePct=()=>sk('E1')?.5:0;
 const SELL_CAP=2.3;   // all sell bonuses together never pay more than 2.3× the base price
 const sellMult=(n,bulk)=>Math.min(SELL_CAP,(1+tradePct()+(sk('Z6')&&RESULTS.has(n)?.3:sk('Z4')&&RESULTS.has(n)?.15:0)+(bulk&&sk('T4')?.05:0)+(REC.has(n)&&!CODEX_PERK[REC.get(n).c]&&perk(REC.get(n).c)?.15:0))*STAT.trade(lvl));
 // anything bought from a person costs at least a bit more than the most it could ever be sold for (also a lucky double sale)
@@ -1793,8 +1763,8 @@ const STAT={gather:L=>1+.03*(effL(L)-1), move:L=>1+.02*(effL(L)-1), trade:L=>1+.
   hp:L=>100+5*(effL(L)-1), hpRe:L=>.1+.01*(effL(L)-1), st:L=>100+4*(effL(L)-1), stRe:L=>14+.5*(effL(L)-1)};
 // ---- health and energy (stamina) ----
 let hp=100, st=100, tired=false, stRest=0, runTut=0, runDist=0, runLow=false, runHintAt=0, hurtSeen=false, tiredAt=0;
-const maxHP=L=>Math.round(STAT.hp(nn(L,lvl))+(sk('C8')?200:sk('C5')?100:sk('C3')?50:sk('C1')?20:0));
-const hpRegen=L=>STAT.hpRe(nn(L,lvl))*(sk('C6')?3:sk('C2')?2:1)*(food>70?1.5:food<=0?0:1)*(buffOn('ılık')?3:1)*(perk('Şifa')?1.5:1);
+const maxHP=L=>Math.round(STAT.hp(nn(L,lvl))+(sk('C8')?250:sk('C5')?175:sk('C3')?100:sk('D1')?50:0));
+const hpRegen=L=>STAT.hpRe(nn(L,lvl))*(sk('C9')?4:sk('C6')?3:sk('C2')?2:1)*(food>70?1.5:food<=0?0:1)*(buffOn('ılık')?3:1)*(perk('Şifa')?1.5:1);
 const maxSt=L=>Math.round(STAT.st(nn(L,lvl))*(1+(sk('K5')?.5:sk('K2')?.25:0)));
 const stRegen=L=>STAT.stRe(nn(L,lvl))*(sk('K3')?1.5:1)*(buffOn('enerji')?1.5:1);
 const runMult=()=>sk('K4')?1.85:1.6;
@@ -3149,14 +3119,17 @@ function renderCraft(){
   }else if(mode==='map'){
     renderMapPanel();
   }else if(mode==='skills'){
-    if(cnt)cnt.textContent=`${coins.toLocaleString('tr-TR')} sikken var · ${skills.size}/${SKILLS.filter(x=>true).length} yetenek`;
-    const SKL=SKILLS.filter(x=>true),brs=[...new Set(SKL.map(x=>x.br))];
-    cbody.innerHTML=`<div class="tree">${brs.map(b=>`<section class="br"><h3 style="background:${BRCOL[b]}">${b}</h3><ul>${SKILLS.filter(x=>x.br===b).map(x=>{
-      const own=sk(x.id),open=!x.r||sk(x.r),rich=plInf()||coins>=x.c;
-      const lv=lvOf(x), lvOk=lvl>=lv, ndOk=x.need!=='bridge'||bridge.fixed;
-      const st=own?'own':!open?'lock':!ndOk?'lock lvl':!lvOk?'lock lvl':rich?'buy':'poor';
-      const tag=own?'Alındı':!open?`Önce: ${SKILLS.find(y=>y.id===x.r).n}`:!ndOk?`Kırık köprü onarılınca · ${x.c} sikke`:!lvOk?`Seviye ${lv} gerekli · ${x.c.toLocaleString('tr-TR')} sikke`:rich?`Al · ${x.c.toLocaleString('tr-TR')} sikke`:`${x.c.toLocaleString('tr-TR')} sikke gerekli${lv>1?' · Sv. '+lv:''}`;
-      return `<li><button class="sk ${st}${x.sub?' sub':''}" data-sk="${x.id}" type="button"${own||!open?' aria-disabled="true"':''}><b>${esc(x.n)}</b><span>${esc(x.e)}</span><em>${tag}</em></button></li>`}).join('')}</ul></section>`).join('')}</div>`;
+    const skMine=SKILLS.filter(x=>sk(x.id)).length;
+    if(cnt)cnt.textContent=`${coins.toLocaleString('tr-TR')} sikken var · ${skMine}/${SKILLS.length} yetenek`;
+    const TR=SKTREES.find(t=>t[0]===skTab)||SKTREES[0],fm=v=>v.toLocaleString('tr-TR');
+    const tabs=`<div class="sktabs">${SKTREES.map(([b,c])=>`<button type="button" class="sktab${b===TR[0]?' on':''}" data-sktab="${b}" style="--tc:${c}">${b} <small>${SKILLS.filter(x=>x.br===b&&sk(x.id)).length}/${SKILLS.filter(x=>x.br===b).length}</small></button>`).join('')}</div>`;
+    let rows='';for(let r=6;r>=1;r--)rows+=`<div class="skrow">${SKILLS.filter(x=>x.br===TR[0]&&x.row===r).map(x=>{
+      const own=sk(x.id);if(!own&&!plInf()&&!skSeen(x))return '<div class="sk hid" aria-hidden="true"></div>';
+      const req=x.r&&!sk(x.r)?SKILLS.find(y=>y.id===x.r):null,lv=lvOf(x),lvOk=lvl>=lv,rich=plInf()||coins>=x.c;
+      const st=own?'own':req?'lock':!lvOk?'lock lvl':rich?'buy':'poor';
+      const tag=own?'Alındı':req?`Önce: ${req.n}`:!lvOk?`Seviye ${lv} gerekli · ${fm(x.c)} sikke`:rich?`Al · ${fm(x.c)} sikke`:`${fm(x.c)} sikke gerekli`;
+      return `<button class="sk ${st}" data-sk="${x.id}" type="button"${own||req?' aria-disabled="true"':''}><b>${esc(x.n)}</b><span>${esc(x.e)}</span><em>${tag}</em></button>`}).join('')}</div>`;
+    cbody.innerHTML=`${tabs}<div class="sktree" style="--tc:${TR[1]}"><div class="skpyr">${rows}</div></div><p class="sknote">Ağaç aşağıdan yukarı büyür: bir yeteneği alınca hemen üstündekiler açılır. Yukarı çıktıkça daha pahalı, daha güçlü.</p>`;
   }else renderBook();
 }
 // ---------- v48 recipe book: a grid of squares; found recipes show their picture, the rest a "?" ----------
@@ -3270,9 +3243,14 @@ function giveHint(){
 }
 setInterval(()=>{if(craftOpen&&mode==='book'&&sk('B3'))renderCraft();if(craftOpen&&mode==='atl')renderCraft()},1000);
 const SKHOW={
+  E1:'Pazar\'da sattığın her şey %50 daha pahalıya gider. Artışı satış listesinde görebilirsin.',D1:'Can çubuğun 50 uzadı.',C9:'Canın dört kat hızlı yenilenir.',B5:'Kazandığın bütün XP %20 artar.',
+  W1:'Bütün saldırıların (yumruk, silah, asa, ateşli silah) daha çok hasar verir.',W2:'Saldırıların daha da güçlü.',W3:'Saldırıların en güçlü hâlinde.',
+  D2:'Zırhın arttı: düşmanların vuruşları daha az acıtır. Karakter ekranında Zırh değerini görürsün.',D5:'Zırhın daha da arttı.',D7:'Zırhın daha da arttı.',D10:'Zırhın en yüksek seviyesinde.',
+  D3:'Zehir artık daha az can yakar.',D4:'Yanık artık daha az can yakar.',D6:'Kanama artık daha az can yakar.',D9:'Zehir, yanık ve kanama yarı sürede geçer.',D8:'Canın dörtte birin altına inince fiziksel vuruşlar %25 daha az acıtır.',
+  A5:'Aletlerin daha geç körelir.',A6:'Aletlerin daha da geç körelir.',A7:'Aletlerin en geç körelen hâlinde.',A8:'Alet yuvan 12: kemerin dolu dolu.',
   K1:(TOUCH?'Ekrana iki kez hızlıca dokun: ikinci dokunuşta sürüklersen o yöne, bir yere çift dokunursan oraya koşarsın.':'Shift basılı tutarak yürü.')+' Koşarken alttaki yeşil enerji çubuğu azalır; bitince durup soluklanırsın.',
   K2:'Enerji çubuğun uzadı; daha uzun koşabilirsin.',K3:'Durduğunda ya da yürürken enerjin daha çabuk dolar.',K4:'Koşu hızın yükseldi.',K6:'Koşmak artık daha az enerji harcar.',K5:'Enerjin en yüksek seviyesinde.',
-  C1:'Can çubuğun uzadı. Dikenler ve keskin taşlar seni daha zor bayıltır.',C2:'Canın iki kat hızlı yenilenir.',C4:'Zehir, yanık ve çiğ et artık daha az can yakar.',C3:'Can çubuğun daha da uzadı.',C5:'Canın en yüksek seviyesinde.',
+  C1:'Can çubuğun uzadı. Dikenler ve keskin taşlar seni daha zor bayıltır.',C2:'Canın iki kat hızlı yenilenir.',C4:'Zırhın tutmadığı anlık hasarlar (çiğ et, zehirli yemek, diken, göl) artık daha az can yakar.',C3:'Can çubuğun daha da uzadı.',C5:'Canın en yüksek seviyesinde.',
   T1:'Pazar\'da sattığın her şeyin fiyatı otomatik yükselir. Fiyatlardaki artışı satış listesinde görebilirsin.',
   T2:'Pazar\'daki bütün fiyatlar biraz daha yükseldi. Değerli eşyaları birleştirip satmak şimdi daha kârlı.',
   T5:'Fiyatlarının en yüksek seviyesi. Pahalı eşyaları toplu satmak için ideal zaman.',
@@ -3297,13 +3275,19 @@ const SKHOW={
 };
 function skillNow(id){
   const pct=v=>'%'+Math.round(v*100);
-  if(/^T[125]$/.test(id))return `Satış bonusu ${pct(tradePct())}`;
+  if(id==='E1')return `Satış bonusu ${pct(tradePct())}`;
+  if(/^(C[358]|D1)$/.test(id))return `En yüksek can ${maxHP()}`;
+  if(/^C[269]$/.test(id))return `Can yenilenmesi ${hpRegen().toFixed(2).replace('.',',')}/sn`;
+  if(/^D(2|5|7|10)$/.test(id))return `Zırh ${zirhOf()}`;
+  if(/^W[123]$/.test(id))return `Hasar ×${String(skDmg()).replace('.',',')}`;
+  if(/^D[346]$/.test(id))return `Hasar ${sk(id)?'%60':'%100'}`;
+  if(/^A[567]$/.test(id))return `Körelme ${pct(1-(sk('A7')?.6:sk('A6')?.4:sk('A5')?.2:0))}`;
   if(/^G[123]$/.test(id))return `Toplama süresi ${pct(1-(sk('G3')?.45:sk('G2')?.30:sk('G1')?.15:0))}`;
   if(/^H[123]$/.test(id))return `Hareket hızı ${pct(speedMult())}`;
   if(/^Z[12]$/.test(id))return `Malzeme kalma ihtimali ${pct((sk('Z2')?.2:sk('Z1')?.1:0)+luck())}`;
   if(id==='H4')return `Toplama menzili ${sk('H4')?'1,5 kat':'normal'}`;
   if(id==='K1')return sk('K1')?'Koşabilirsin':'Koşamazsın';
-  if(/^A/.test(id))return `Alet yuvası ${hotN()}`;
+  if(/^A[12348]$/.test(id))return `Alet yuvası ${hotN()}`;
   if(/^K[25]$/.test(id))return `En yüksek enerji ${maxSt()}`;
   if(id==='K3')return `Enerji yenilenmesi ${stRegen().toFixed(1).replace('.',',')}/sn`;
   if(id==='K4')return `Koşu hızı ${String(runMult()).replace('.',',')} kat`;
@@ -3314,15 +3298,15 @@ function skillNow(id){
   return sk(id)?'Açık':'Kapalı';
 }
 function explainSkill(x,before,after){
-  $('skt').textContent=x.n;$('sksub').textContent=`${x.br} dalı · ${x.e}`;
+  $('skt').textContent=x.n;$('sksub').textContent=`${x.br} ağacı · ${x.e}`;
   $('skch').innerHTML=`<span>${esc(before)}</span><span>→</span><b>${esc(after)}</b>`;
   $('skhow').textContent=SKHOW[x.id]||'';$('skinfo').hidden=false;$('skok').focus();
 }
 $('skok').addEventListener('click',()=>$('skinfo').hidden=true);
 function buySkill(id){
   const x=SKILLS.find(y=>y.id===id);if(!x||sk(id))return;
+  if(!plInf()&&!skSeen(x)){toast('Önce altındaki yeteneklerden birini al',true);return}
   if(x.r&&!sk(x.r)){toast(`Önce ${SKILLS.find(y=>y.id===x.r).n} gerekli`,true);return}
-  if(x.need==='bridge'&&!bridge.fixed){toast('Koşu, kırık köprü onarılınca açılır',true);return}
   if(lvl<lvOf(x)){toast(`Bu yetenek için seviye ${lvOf(x)} gerekli`,true);return}
   if(!plInf()&&coins<x.c){toast(`${(x.c-coins).toLocaleString('tr-TR')} sikke daha gerekli`,true);return}
   const before=skillNow(id);
@@ -3341,6 +3325,7 @@ cbody.addEventListener('click',e=>{
   const sbb=e.target.closest('[data-sub]');if(sbb){{const sn=sbb.dataset.sub;if(pot.r&&(inv[sn]||0)>0&&REC.get(pot.r).i.some(([m],k)=>expand(m).includes(sn)&&needLeft(k)>0)){deposit(sn);return}}if(sbb.classList.contains('no')){const li=sbb.closest('li');if(li)li.classList.toggle('tipon');sfx('bad');return}quickBrew(sbb.dataset.sub);return}
   const bb=e.target.closest('[data-buy]');if(bb){const n=bb.dataset.buy,g=GT[n];if((plInf()||coins>=toolPrice(n))&&!(inv[n]>0)){if(!plInf())coins-=toolPrice(n);giveTool(n);shopBuy(n);toast(`${n} satın alındı · envanterinde`);if(beltIndex(n)<0)setTimeout(()=>beltTip(n),700);renderInv();renderCraft()}return}
   const sh=e.target.closest('[data-sharp]');if(sh){const n=sh.dataset.sharp,g=GT[n];if(plInf()||coins>=g.sharp){if(!plInf())coins-=g.sharp;toolDur[n]=g.dur;toast(`${n} bilendi`);renderInv();renderCraft()}return}
+  const stb=e.target.closest('[data-sktab]');if(stb){skTab=stb.dataset.sktab;renderCraft();return}
   const skb=e.target.closest('[data-sk]');if(skb){buySkill(skb.dataset.sk);return}
   if(e.target.id==='hintbtn'){giveHint();return}
   const pk=e.target.closest('[data-pick]');if(pk&&PLACEABLE.has(pk.dataset.pick)){guideTo('usta');toast(`${pk.dataset.pick} bir yapı: Usta Kemal'e yaptır. Ok yolu gösteriyor.`);return}
@@ -3692,7 +3677,7 @@ const QUESTS=[
   {t:'Kırık köprüyü onar.',h:'Büyük nehrin ortasındaki kırık köprüye 20 odun götür ve onar. Ok yolu gösterir.',go:()=>bridge.fixed?null:'bridge',p:()=>bridge.fixed?'onarıldı':`Odun ${Math.min(woodCount(),BRIDGE_WOOD)}/${BRIDGE_WOOD}`,done:()=>bridge.fixed,c:100,x:40,run:1,
    say:'Adayı ikiye bölen büyük nehrin ortasında eski bir köprü vardı; fırtına onu kırdı. Karşı yaka <b>bataklık</b>, onun ötesi <b>Kül Diyarı</b>: adanın en değerli madenleri de en tehlikeli canavarları da orada. <b>20 odunla</b> köprüyü onarabilirsin. Ama hazır olmadan geçme evlat.',
    thx:'Köprü yeniden ayakta! Karşı yaka bizim yurt gibi değil; canavarlar sert vurur, çamur ayağını tutar. Al şu <b>yüz sikkeyi</b>; biraz daha biriktir: yetenek ağacının <b>Savaş</b> dalında önce <b>Atılma</b>, sonra <b>Koşu</b> var, ikisi de yüzer sikke. Zor durumda kalırsan koş! Bataklığın ortasında <b>Avcı Toygar</b> yaşar; yolun düşerse selamımı söyle.'},
-  {t:'100 sikke biriktir ve ilk yeteneğini al.',h:TOUCH?'Topla, birleştir, sat; sonra ağaç ikonuyla yetenek ağacını aç.':'Topla, birleştir, sat; sonra Y ile yetenek ağacını aç.',p:()=>`Sikke ${Math.min(coins,100)}/100 · ${skills.size?'yetenek alındı':'yetenek yok'}`,done:()=>skills.size>0,c:30,
+  {t:'100 sikke biriktir ve ilk yeteneğini al.',h:TOUCH?'Topla, birleştir, sat; sonra ağaç ikonuyla yetenek ağacını aç.':'Topla, birleştir, sat; sonra Y ile yetenek ağacını aç.',p:()=>`Sikke ${Math.min(coins,100)}/100 · ${SKILLS.some(x=>sk(x.id))?'yetenek alındı':'yetenek yok'}`,done:()=>SKILLS.some(x=>sk(x.id)),c:30,
    say:'Adada yaşamak bir şey, iyi yaşamak başka. Kendine 100 sikke biriktir ve ilk ustalığını öğren. Sonra bana gel.<br><br>Bu arada: yatağın yok. Kuzeybatıda <b>Usta Kemal</b> oturur, ona uğra. Batıda <b>Marangoz Rıza</b> barınak yapar. Adadaki herkesin senden isteyeceği bir iş vardır; <b>Görevler</b> defterine yazılır.',thx:'İşte bu! Ellerin artık senin dilinden konuşuyor.'},
   {t:"Seviye 5'e ulaş.",h:'Topla, birleştir ve yeni tarifler bul; hepsi XP verir.',p:()=>`Seviye ${Math.min(lvl,5)}/5`,done:()=>lvl>=5,c:60,
    say:'Tecrübe, adanın en değerli madenidir. Biraz daha çalış, beşinci seviyeye ulaş.',thx:'Gözlerin değişmiş. Artık bir acemi değilsin.'},
@@ -3804,7 +3789,7 @@ function renderTut(){
     const ready=runTut===2&&runDist>=RUN_NEED&&runLow;
     $('tutstep').textContent='Ekin · Yeni ders: Koşmak';
     $('tuttext').innerHTML=runTut===1
-      ?(()=>{const need=sk('S1')?100:200;return `Köprüyü onardın evlat; karşı yaka hızlı ayak ister! Yetenek ağacını aç (${TOUCH?'yanıp sönen ağaç ikonu':'<span class="kc">Y</span>'}): <b>Savaş</b> dalında ${sk('S1')?'':'önce <b>Atılma</b> (100 sikke), sonra '}<b>Koşu</b> (100 sikke). (Sikke: ${Math.min(coins,need)}/${need})`})()
+      ?(()=>{const need=100;return `Köprüyü onardın evlat; karşı yaka hızlı ayak ister! Yetenek ağacını aç (${TOUCH?'yanıp sönen ağaç ikonu':'<span class="kc">Y</span>'}): kırmızı <b>Savaş</b> ağacının en altındaki <b>Koşu</b> (100 sikke). (Sikke: ${Math.min(coins,need)}/${need})`})()
       :(ready?`İşte böyle! Koştukça <b>enerji</b> azalır, dinlenince dolar. Seviye atladıkça ve Savaş dalındaki yeteneklerle hem enerjin hem koşu hızın artar. Kırmızı çubuk da <b>canın</b>: dikenler, keskin taşlar can yakar; can biterse bayılırsın.`
         :`${TOUCH?'Ekrana <b>iki kez hızlıca dokun</b>: ikinci dokunuşta parmağını sürüklersen o yöne, bıraktığın yere çift dokunursan oraya koşarsın.':'<span class="kc">Shift</span> basılı tutarak yürü: koşarsın.'} Canının altındaki <b>mavi çubuk</b> enerjin: koşarken azalır, bitince koşamazsın; durunca ya da yürürken yeniden dolar. Enerjin yarının altına inene kadar koş.<span class="tbar"><i style="width:${Math.min(100,(Math.min(1,runDist/RUN_NEED)*.6+(runLow?.4:0))*100)}%"></i></span>`);
     {const who='ekin';if(tutPor.k!==who){tutPor.k=who;$('tutpor').innerHTML=tutPor[who]()}}
@@ -3869,7 +3854,7 @@ function renderTut(){
 $('tutok').addEventListener('click',()=>{if(runTut===2&&tut>=11){runTut=3;sfx('found');toast('Koşu dersi tamam');renderTut();return}if(tut===4){if(craftOpen)closeCraft();if(ftut<3){ftut=1;guideTo('alp',12);announce('Savaşçı Börü','Kampın yakınında biri seni bekliyor');renderTut();return}startWitchLesson()}else if(tut===10){if(craftOpen)closeCraft();if(met){tut=11;qState='talk';toast(`${npc.name} seninle konuşmak istiyor`)}else{tut=11;qState='talk';appearFx(npc.x,npc.y,'#f2b84b');announce(npc.name,'Biri seni çağırıyor')}}renderTut()});
 function bringBerry(){let b=null,bd=1e9;for(const n of nodes)if(n.alive&&n.name==='Böğürtlen'){const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;b=n}}if(!b||bd<170)return;
   for(let k=0;k<60;k++){const an=Math.random()*6.28,d=60+Math.random()*50,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;if(!reachAt(x,y)||blocked(x,y)||tileAt(x,y)>1||treesNear(x,y,t=>Math.hypot(t.x-x,t.y-y)<14))continue;b.x=x;b.y=y;b.pop=.35;return}}
-$('tutskip').addEventListener('click',e=>{const b=$('tutskip');if(TOUCH&&tz&&!b.dataset.arm){e.stopImmediatePropagation();b.dataset.arm='1';b.textContent='Emin misin? Geç';clearTimeout(b._t);b._t=setTimeout(()=>{delete b.dataset.arm;renderTut()},3500)}},true);
+$('tutskip').addEventListener('click',e=>{const b=$('tutskip');if(false&&TOUCH&&tz&&!b.dataset.arm){e.stopImmediatePropagation();b.dataset.arm='1';b.textContent='Emin misin? Geç';clearTimeout(b._t);b._t=setTimeout(()=>{delete b.dataset.arm;renderTut()},3500)}},true);
 $('tutskip').addEventListener('click',()=>{delete $('tutskip').dataset.arm;if(qPeek&&!tz){qPeek=false;renderTut();return}if(tz){tzSkip();return}{const ax=tut===11&&woodCut<5?Object.keys(GT).find(n=>GT[n].kind==='axe'&&inv[n]>0):null;if(ax&&beltIndex(ax)<0){beltFront(ax);renderTut();return}}if(htut===1){htut=2;renderTut();return}if(ytut===1||ytut===2){ytut=3;renderTut();return}if((runTut===1||runTut===2)&&tut>=11){runTut=3;renderTut();return}if(torchTut===1||torchTut===2){torchTut=3;renderTut();return}ftut=3;ctut=4;walked=true;mapSeen=2;tapMoved=true;if(tut>=11)questsHidden=true;else{witchShown=true;tut=11;qState='talk'}renderInv();renderTut()});
 function appearFx(x,y,c){for(let i=0;i<28;i++){const an=Math.random()*Math.PI*2,sp=20+Math.random()*50;parts.push({x,y:y-6,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp,life:1.3,c:i%2?c:'#ffffff'})}sfx('magic')}
 function toggleQuests(){if(lessonCard||qPeek||tz){qPeek=!qPeek;questsHidden=false;renderTut();return}openMenu('qlog')}
@@ -3878,7 +3863,7 @@ let renderPpl=()=>'',renderQlog=()=>{},v55Ents=null,roomSafe=()=>false,roomBusy=
 function isNightT(){return dayT>=1200||dayT<360}
 function nightTxt(){return isNightT()?', gece başladı: meşalen elinde olsun.':', gece 20:00\'de başlar.'}
 function lessonLines(){const L=[];
-  if(runTut===1&&!wake&&tut<11+QUESTS.length&&!(window.__plDz&&window.__plDz.D.act2)){const need=sk('S1')?100:200;L.push(`<b>Ders · Koşmak:</b> yetenek ağacında (${TOUCH?'ağaç ikonu':'<span class="kc">Y</span>'}) <b>Savaş</b> dalında ${sk('S1')?'':'önce <b>Atılma</b> (100), sonra '}<b>Koşu</b> (100). Sikke: ${Math.min(coins,need)}/${need}`);if(coins>=need){$('b-skill').classList.add('pulse');if(craftOpen&&mode==='skills'){const b=cbody.querySelector(`[data-sk="${sk('S1')?'K1':'S1'}"]`);if(b)b.classList.add('pulse')}}}
+  if(runTut===1&&!wake&&tut<11+QUESTS.length&&!(window.__plDz&&window.__plDz.D.act2)){const need=100;L.push(`<b>Ders · Koşmak:</b> yetenek ağacında (${TOUCH?'ağaç ikonu':'<span class="kc">Y</span>'}) kırmızı <b>Savaş</b> ağacının en altındaki <b>Koşu</b> (100). Sikke: ${Math.min(coins,need)}/${need}`);if(coins>=need){$('b-skill').classList.add('pulse');if(craftOpen&&mode==='skills'){const b=cbody.querySelector('[data-sk="K1"]');if(b)b.classList.add('pulse')}}}
   if(qPeek&&(torchTut===1||torchTut===2))L.push(`<b>Ders · Meşale:</b> ${torchTut===1?'2 dal, 2 lif, 2 yaprakla bir Kaba meşale yap.':'meşaleni eline al.'}`);
   if(qPeek&&runTut===2)L.push('<b>Ders · Koşmak:</b> enerjin yarının altına inene kadar koş.');
   if(qPeek)$('b-quest').querySelector('span').textContent='Ders';
@@ -5658,7 +5643,7 @@ let fxK=0,fxK0=-1;
 function renderFx(){const el=$('fxbar');if(!el)return;const ks=Object.keys(pfx),bs=Object.keys(pbuff);el.hidden=!ks.length&&!bs.length;el.innerHTML=ks.map(k=>`<span style="--c:${FXD[k].c}"><b>${FXD[k].i}</b>${FXD[k].n} ${Math.ceil(pfx[k].t)} sn</span>`).join('')+bs.map(k=>`<span class="fxbuff" style="--c:${BUFFS[k].c}" title="${BUFFS[k].e}"><b>${BUFFS[k].i}</b>${BUFFS[k].n} ${pbuff[k].t>=60?Math.ceil(pbuff[k].t/60)+' dk':Math.ceil(pbuff[k].t)+' sn'}</span>`).join('')}
 // ---------- dodge: a quick dash; nothing touches you while you are in it ----------
 let dodge=null,dodgeCd=0;
-function doDodge(){if(dodge||dodgeCd>0||frozenNow()||!met)return;if(!sk('S1')){if(performance.now()-runHintAt>4000){runHintAt=performance.now();toast('Atılmayı henüz bilmiyorsun: yetenek ağacının Savaş dalında Atılma (100 sikke).',true)}return}const dc=sk('S2')?9:14;if(st<dc){floatText('Yorgunsun','#e8c860');return}
+function doDodge(){if(dodge||dodgeCd>0||frozenNow()||!met)return;if(!sk('S1')){if(performance.now()-runHintAt>4000){runHintAt=performance.now();toast('Atılmayı henüz bilmiyorsun: Savaşçı Börü ücretsiz öğretir, onunla konuş.',true)}return}const dc=sk('S2')?9:14;if(st<dc){floatText('Yorgunsun','#e8c860');return}
   let vx=(keys.d?1:0)-(keys.a?1:0),vy=(keys.s?1:0)-(keys.w?1:0);if(joy.on&&joy.mag>.12){vx=joy.vx;vy=joy.vy}if(!vx&&!vy){vx=player.face.x;vy=player.face.y}if(!vx&&!vy)vy=1;
   const l=Math.hypot(vx,vy);dodge={t:.24,vx:vx/l*200,vy:vy/l*200};dodgeCd=sk('S2')?.45:.65;st-=dc;stRest=0;goal=null;stopGather();sfx('swing');vitK=''}
 function tickDodge(dt){dodgeCd-=dt;if(!dodge)return;dodge.t-=dt;const nx=player.x+dodge.vx*dt,ny=player.y+dodge.vy*dt;if(!blocked(nx,player.y))player.x=nx;if(!blocked(player.x,ny))player.y=ny;
@@ -5686,7 +5671,7 @@ function attack(focus){
   {const h=held();if(dullTool(h)&&!w.n&&!attack.dullT){attack.dullT=1;setTimeout(()=>attack.dullT=0,4000);toast(`${h} kör: yumruk kadar vurur. Demirci Dursun'da bilet.`,true)}}
   if(focus){const dx=focus.x-player.x,dy=focus.y-player.y;player.face={x:Math.abs(dx)>=Math.abs(dy)?Math.sign(dx):0,y:Math.abs(dy)>Math.abs(dx)?Math.sign(dy):0}}
   const fx=player.face.x,fy=player.face.y;swing={t:0,fx,fy,w:w.reach};sfx('swing');
-  const dm=Math.round(w.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*(buffOn('zayıf')?.8:1));let hitAny=false;
+  const dm=Math.round(w.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1));let hitAny=false;
   for(const a of animals.slice()){const dx=a.x-player.x,dy=a.y-6-player.y+6,d=Math.hypot(dx,dy);if(d>w.reach+ANIM[a.k].r)continue;
     if(d>10&&(dx*fx+dy*fy)/d<.15)continue;
     hitAny=true;a.hp-=dm;a.flash=.15;madPack(a);a.kb={vx:dx/(d||1)*140,vy:dy/(d||1)*140,t:.12};
@@ -5775,7 +5760,7 @@ const mudProof=()=>Object.keys(equip).some(s=>{const e=equip[s]&&EQUIP[equip[s]]
 const slotOf=n=>EQUIP[n]?EQUIP[n].s:(GT[n]&&(GT[n].kind==='sword'||GT[n].kind==='hunt'))?'silah':null;
 const equip={bas:null,govde:null,el:null,ayak:null,silah:null};
 const armorDef=()=>Object.keys(equip).reduce((t,k)=>t+(equip[k]&&EQUIP[equip[k]]?EQUIP[equip[k]].def:0),0)+(perk('Giyim')?5:0)+(perk('Zırh')?5:0);
-const armorMul=()=>{const d=armorDef();return 25/(25+d)};
+const armorMul=()=>{const d=armorDef()+zirhOf();return 25/(25+d)};
 function wear(n){const s=slotOf(n);if(!s||!(inv[n]>0))return;if(equip[s])unwear(s,true);inv[n]--;equip[s]=n;sfx('craft');toast(`${n} giyildi`);hotK='';renderInv();if(craftOpen)renderCraft()}
 function unwear(s,quiet){const n=equip[s];if(!n)return;equip[s]=null;gain(n);if(!quiet){sfx('pick');toast(`${n} çıkarıldı`)}hotK='';renderInv();if(craftOpen)renderCraft()}
 let eqPick=null;
@@ -5786,7 +5771,7 @@ function dollHTML(){
   if(eqPick){const L=order.filter(n=>inv[n]>0&&slotOf(n)===eqPick);
     pick=`<div class="eqpick"><b>${SLOTS_EQ.find(x=>x[0]===eqPick)[1]} için</b>${L.map(n=>`<button type="button" data-wear="${esc(n)}"><img src="${icon(n)}" alt="">${esc(n)} <em>${EQUIP[n]?'+'+EQUIP[n].def:(WDMG[n]||10)+' hasar'}</em></button>`).join('')||'<span class="note" style="margin:0">Bu yuvaya uyan bir şeyin yok. Giysiler kazanda, silahlar örste yapılır.</span>'}${equip[eqPick]?`<button type="button" class="off" data-unwear="${eqPick}">Çıkar</button>`:''}</div>`}
   return `<div class="doll"><canvas id="dollc" width="96" height="120" aria-label="Karakter figürü"></canvas><div class="eqcol">${SLOTS_EQ.map(slot).join('')}</div></div>
-    <p class="note" style="margin:6px 0 4px">Savunma <b style="color:var(--accent)">${def}</b> · hayvan ve canavar hasarı <b style="color:var(--accent)">%${cut}</b> azalır. Silah yuvasındaki silah, elin boşken vuruşlarda kullanılır.</p>${pick}`;
+    <p class="note" style="margin:6px 0 4px">Zırh <b style="color:var(--accent)">${zirhOf()}</b> (seviye + yetenek) · Savunma <b style="color:var(--accent)">${def}</b> (giydiklerin) · hayvan ve canavar hasarı <b style="color:var(--accent)">%${cut}</b> azalır. Silah yuvasındaki silah, elin boşken vuruşlarda kullanılır.</p>${pick}`;
 }
 function drawDoll(){const c=$('dollc');if(!c)return;const g=c.getContext('2d');g.imageSmoothingEnabled=false;g.clearRect(0,0,96,120);
   g.fillStyle='#1c2419';g.fillRect(0,0,96,120);g.fillStyle='rgba(0,0,0,.25)';g.beginPath();g.ellipse(48,chibiFeet(eqLook(),eqOpts(),30)*4+5,26,6,0,0,Math.PI*2);g.fill();
@@ -5802,7 +5787,7 @@ cbody.addEventListener('click',e=>{if(mode!=='char')return;
 const RUN_NEED=260;   // px of running the lesson asks for
 function wantsRun(){
   const want=keys.shift||joy.run||(goal&&goal.run);if(!want)return false;
-  if(!sk('K1')){if(performance.now()-runHintAt>9000){runHintAt=performance.now();toast(bridge.fixed?'Koşmak için yetenek ağacından Koşu\'yu al (Savaş dalı, Atılma\'dan sonra)':'Koşmayı kırık köprüyü onarınca Ekin\'den öğrenirsin',true)}return false}
+  if(!sk('K1')){if(performance.now()-runHintAt>9000){runHintAt=performance.now();toast('Koşmak için yetenek ağacından Koşu\'yu al (kırmızı Savaş ağacının ilk yeteneği, 100 sikke)',true)}return false}
   if(tired){if(performance.now()-tiredAt>2500){tiredAt=performance.now();floatText('Soluklanıyorsun…','#e8c860')}return false}
   return st>0;
 }
@@ -6989,7 +6974,7 @@ function tzAlpDone(){tz=12;ftut=3;fightSeen=true;sfx('level');
   for(const r of ['Taş balta','Sopa','İp'])if(!foundSet.has(r)){found.push(r);foundSet.add(r)}gain('Taş',6);
   tzPlace('Dal',3,alp.x,alp.y);tzPlace('Lif',8,alp.x,alp.y);tzPlace('Taş',4,alp.x,alp.y);checkCodex();renderInv();
   axeStep=0;
-  say(`İşte böyle! Bir şey daha: saldırıdan önce düşmanın üstünde kırmızı bir <b>!</b> belirir. O an yana <b>atılırsan</b> (${TOUCH?'Atıl düğmesi':'<b>Boşluk</b>'}) hiçbir şey olmaz. Ama atılmak bir <b>yetenek</b>: yetenek ağacının <b>Savaş</b> dalında, <b>100 sikke</b>. Topladığın ya da yaptığın şeyleri <b>Nazlı'nın pazarında</b> satarak para biriktir; 100 sikkeyi bulunca ağaçtan al. Atılmadan sonra <b>koşmayı</b> da öğrenebilirsin; ikisi de enerji yer.`,[{t:'Anladım',pri:1,fresh:1,f:()=>say(`Şimdi bir <b>Taş balta</b> yapacağız; tarifini sana veriyorum. Parçaları <b>teker teker</b> yapalım: önce sopa için 2 keskin taş, sonra sopa, sonra baltanın ağzı için 2 keskin taş daha, en son 2 ip. Yanına dal, lif ve taş bıraktım; al, şu altı taş da benden. Hepsi bitince <b>Demirci Dursun</b> döver.`,[{t:'Başlayalım',pri:1,fresh:1,f:bye}],alp)}],alp)}
+  say(`Aferin! Artık atılmayı biliyorsun, Koşu'nun yerini de gördün. Şimdi işe yarar bir şey yapalım.`,[{t:'Anladım',pri:1,fresh:1,f:()=>say(`Şimdi bir <b>Taş balta</b> yapacağız; tarifini sana veriyorum. Parçaları <b>teker teker</b> yapalım: önce sopa için 2 keskin taş, sonra sopa, sonra baltanın ağzı için 2 keskin taş daha, en son 2 ip. Yanına dal, lif ve taş bıraktım; al, şu altı taş da benden. Hepsi bitince <b>Demirci Dursun</b> döver.`,[{t:'Başlayalım',pri:1,fresh:1,f:bye}],alp)}],alp)}
 const AXE_INFO='Ama bil ki taş balta yalnızca <b>çamları</b> keser. Ağaçlar kolaydan zora sıralanır: <b>çam</b> taş baltayla, <b>meşe</b> granit ya da çakmaktaşı baltayla, <b>huş ve söğüt</b> kuvars ya da tunç baltayla, <b>ardıç</b> bazalt ya da demir baltayla kesilir. Her yeni balta, bir önceki kazmanın kazdığı taştan yapılır. Balta her vuruşta biraz körelir; çubuğu kırmızıya dönünce Dursun\'a götür.';
 let axeInfo=false;
 function tzFinish(){axeInfo=true;tz=0;witchShown=true;witchMet=true;met=true;tut=11;qState='talk';questsHidden=false;bought.add('Taş balta');renderInv();renderTut()}
@@ -7715,7 +7700,7 @@ function axeTick(){
 
 // ---------------------------------------------------------------- the dodge lesson and the first 100 coins
 let dodgeTold=false,coin100=false;
-function coinWatch(){if(!coin100&&met&&!tz&&coins>=100&&!sk('S1')){coin100=true;announce('100 sikke!','Börü: "Atılmayı öğrenme vakti"');setTimeout(()=>toast('Yetenek ağacının Savaş dalında Atılma 100 sikke: düşmanın saldırısından yana kaçarsın.'),600);$('b-skill').classList.add('pulse')}}
+function coinWatch(){if(!coin100&&met&&!tz&&coins>=100&&!sk('K1')){coin100=true;announce('100 sikke!','Börü: "Koşu\'yu alma vakti"');setTimeout(()=>toast('Yetenek ağacında kırmızı Savaş ağacının ilk yeteneği Koşu 100 sikke: tehlikeden hızla kaçarsın.'),600);$('b-skill').classList.add('pulse')}}
 
 // ---------------------------------------------------------------- the market tells you what the cauldron still wants
 function potLater(n){const U=USES.get(n);if(!U)return 0;let c=0;for(const r of U)if(!foundSet.has(r)&&!PLACEABLE.has(r))c++;return c}
@@ -11856,7 +11841,7 @@ function aimAt(focus){if(focus)return{x:focus.x,y:focus.y-6};let best=null,bd=1e
 function cast(h,focus){const S=STAFF[h];if(scd>0)return true;manaOn=true;if(mana<S.cost){floatText('Mana yetmiyor','#c9a0ff');sfx('bad');scd=.4;return true}
   mana-=S.cost;scd=S.cd;renderMana();const t=aimAt(focus),sx=player.x,sy=player.y-10,dx=t.x-sx,dy=t.y-sy,d=Math.hypot(dx,dy)||1;
   if(Math.abs(dx)>=Math.abs(dy))player.face={x:Math.sign(dx)||1,y:0};else player.face={x:0,y:Math.sign(dy)};
-  fire(S,Math.round(S.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*(buffOn('zayıf')?.8:1)),t,0);
+  fire(S,Math.round(S.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1)),t,0);
   try{audio.synth((ac,out)=>{const t0=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();o.type='sawtooth';o.frequency.setValueAtTime(320,t0);o.frequency.exponentialRampToValueAtTime(90,t0+.25);g.gain.setValueAtTime(.18,t0);g.gain.exponentialRampToValueAtTime(.001,t0+.3);o.connect(g);g.connect(out);o.start(t0);o.stop(t0+.32)})}catch(e){}
   return true}
 function fire(S,dm,t,da){const sx=player.x,sy=player.y-10,a=Math.atan2(t.y-sy,t.x-sx)+(da||0);
@@ -11937,7 +11922,7 @@ let gcd=0,gl=performance.now();setInterval(()=>{const now=performance.now();gcd=
 function bang(big){try{audio.synth((ac,out)=>{const t0=ac.currentTime,len=big?.32:.18,b=ac.createBuffer(1,Math.ceil(ac.sampleRate*len),ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,big?2:3);
   const s=ac.createBufferSource();s.buffer=b;const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=big?1400:2600;const g=ac.createGain();g.gain.value=big?.5:.38;s.connect(f);f.connect(g);g.connect(out);s.start(t0)})}catch(e){}}
 function shoot(h,focus){const G=GUNS[h];if(gcd>0)return;const n=inv[G.ammo]||0;if(n<=0){floatText(`${G.ammo} yok`,'#ffb060');sfx('bad');gcd=.5;return}
-  inv[G.ammo]=n-1;gcd=G.cd;const t=window.__plAim(focus),dm=Math.round(G.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*(buffOn('zayıf')?.8:1));
+  inv[G.ammo]=n-1;gcd=G.cd;const t=window.__plAim(focus),dm=Math.round(G.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1));
   for(let i=0;i<G.n;i++)window.__plFire(G.S,dm,t,G.n>1?(i/(G.n-1)-.5)*2*G.spread:0);
   bang(G.n>1);shake=Math.max(shake,G.n>1?.18:.08);for(let k=0;k<5;k++)parts.push({x:player.x+player.face.x*10,y:player.y-10+player.face.y*8,vx:(Math.random()-.5)*40,vy:-10-Math.random()*20,life:.25,c:'#d8d0c0'});
   renderInv()}
@@ -12336,7 +12321,7 @@ addEventListener('resize',()=>setTimeout(placeAch,80));setInterval(placeAch,400)
 function stripHTML(){const sel=invSel&&inv[invSel]>0?invSel:null,ss=sel?slotOf(sel):null;
   const b=([k,l])=>{const n=equip[k];return `<button type="button" class="ieqb${n?' full':''}${ss===k?' fit':''}" data-ieq="${k}" title="${n?esc(n)+' · çıkarmak için dokun':l+' · boş'}"><span class="eqi">${n?`<img src="${icon(n)}" alt="">`:''}</span><small>${l}</small><b>${n?esc(n):'boş'}</b></button>`};
   const hint=ss?`<b>${esc(sel)}</b> parlayan yuvaya dokun: giyilir.`:sel?'Seçtiğin eşya giyilmez.':'Bir giysi ya da silah seç, sonra parlayan yuvaya dokun. Dolu yuvaya dokununca çıkarılır.';
-  return `<div class="ieq"><canvas id="ieqc" width="48" height="60" aria-label="Karakterin"></canvas><div class="ieqs">${SLOTS_EQ.map(b).join('')}</div><p class="note">${hint} Savunma <b style="color:var(--accent)">${armorDef()}</b>.</p></div>`}
+  return `<div class="ieq"><canvas id="ieqc" width="48" height="60" aria-label="Karakterin"></canvas><div class="ieqs">${SLOTS_EQ.map(b).join('')}</div><p class="note">${hint} Savunma <b style="color:var(--accent)">${armorDef()}</b> · Zırh <b style="color:var(--accent)">${zirhOf()}</b>.</p></div>`}
 function drawMini(){const c=$('ieqc');if(!c)return;const g=c.getContext('2d');g.imageSmoothingEnabled=false;g.clearRect(0,0,48,60);g.fillStyle='#1c2419';g.fillRect(0,0,48,60);
   g.save();g.scale(2,2);const o=eqOpts();o.noShadow=1;const LK=eqLook(),fy=chibiFeet(LK,o,30);
   if(equip.silah){const ic=ICONC[equip.silah]||(icon(equip.silah),ICONC[equip.silah]);if(ic){g.save();g.translate(17,fy-16);g.rotate(.5);g.drawImage(ic,-5,-9,10,10);g.restore()}}
@@ -12592,7 +12577,7 @@ function enter(){regI2();
   try{const l=latest(),v=l&&saves()[l],lk=v&&v.data&&v.data.lk;if(lk&&typeof lk==='object')Object.assign(LOOK.hero,LOOK0.hero,lk)}catch(e){}
   AR.on=true;window.__plArena=true;window.__plArenaFree=!AR.real;document.body.classList.add('arena');
   met=true;tut=12;witchShown=false;qState='talk';questsHidden=true;hurtSeen=true;fightSeen=true;hungerSeen=true;fxSeen={zehir:true,kanama:true,'yanık':true};
-  for(const s of SKILLS)skills.add(s.id);
+  for(const s of SKILLS)skills.add(s.id);skills.add('S1');
   try{if(window.__p4){window.__p4.bossWait=1e9;window.__p4.bossQ.length=0}}catch(e){}
   dayT=720;weather={k:'açık',t:1e9};
   const c=findCenter();AR.center=c;clearSpot(c);
@@ -12624,7 +12609,7 @@ function pickerHTML(){const k=AR.slot;let h='';
   return h}
 function leftHTML(){const def=armorDef(),cut=Math.round((1-armorMul())*100);let mm=0;try{mm=window.__plMana.max()}catch(e){mm=100+3*(lvl-1)}
   return `<h3>Karakterin</h3><div class="doll2"><div class="dcol">${slotBtn('bas','Baş')}${slotBtn('govde','Gövde')}${slotBtn('ayak','Ayaklar')}</div><canvas class="dcv" id="ardoll" width="96" height="120" aria-label="Karakter figürü: bir parçaya dokun"></canvas><div class="dcol">${slotBtn('silah','Elde')}${slotBtn('el','Eller')}</div></div>
-    <p class="arstat">Seviye <b>${lvl}</b> · Can <b>${maxHP()}</b> · Enerji <b>${maxSt()}</b> · Mana <b>${mm}</b><br>Savunma <b>${def}</b> · aldığın hasar <b>%${cut}</b> azalır · bütün yetenekler açık</p>${pickerHTML()}`}
+    <p class="arstat">Seviye <b>${lvl}</b> · Can <b>${maxHP()}</b> · Enerji <b>${maxSt()}</b> · Mana <b>${mm}</b><br>Zırh <b>${zirhOf()}</b> · Savunma <b>${def}</b> · aldığın hasar <b>%${cut}</b> azalır · bütün yetenekler açık</p>${pickerHTML()}`}
 function drawDoll2(){const c=$('ardoll');if(!c)return;const g=c.getContext('2d');g.imageSmoothingEnabled=false;g.clearRect(0,0,96,120);g.fillStyle='#1c2419';g.fillRect(0,0,96,120);
   try{const LK=eqLook(),o=eqOpts();o.noShadow=1;const fy=chibiFeet(LK,o,30);g.fillStyle='rgba(0,0,0,.25)';g.beginPath();g.ellipse(48,fy*4+5,26,6,0,0,Math.PI*2);g.fill();
     g.save();g.scale(4,4);if(AR.held){const ic=ICONC[AR.held]||(icon(AR.held),ICONC[AR.held]);if(ic){g.save();g.translate(17,fy-16);g.rotate(.5);g.drawImage(ic,-5,-9,10,10);g.restore()}}drawChibi(g,12,fy,LK,o);g.restore()}catch(e){}}
@@ -13136,7 +13121,7 @@ function kindOf(){const h=held();if(h&&GT[h]){const g=GT[h].kind;if(g==='staff')
   const w=weapon();if(!w.n)return torchHeld()?'torch':'fist';const g=GT[w.n]?GT[w.n].kind:'';return g==='sword'?'sword':g==='hunt'?'spear':g==='axe'||g==='pick'?'axe':'fist'}
 function aim(){return Math.atan2(C.my-(player.y-6),C.mx-player.x)}
 function faceTo(a){const c=Math.cos(a),s=Math.sin(a);player.face=Math.abs(c)>=Math.abs(s)?{x:Math.sign(c)||1,y:0}:{x:0,y:Math.sign(s)||1}}
-function base(){const w=weapon();return{w,dm:w.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*(buffOn('zayıf')?.8:1)}}
+function base(){const w=weapon();return{w,dm:w.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1)}}
 function pay(n){if(window.__plArenaFree)return true;if(tired||st<n){floatText('Nefesin kesildi!','#9ad8ff');try{sfx('bad')}catch(e){}return false}st-=n;stRest=0;vitK='';return true}
 function name(t,c){floats.push({x:player.x,y:player.y-30,t:0,text:t,color:c||'#ffe7a0',size:8})}
 function thump(dm){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005,o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.setValueAtTime(170,t);o.frequency.exponentialRampToValueAtTime(40,t+.18);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(Math.min(1,.5+dm/60),t+.006);g.gain.exponentialRampToValueAtTime(.0005,t+.22);o.connect(g);g.connect(out);o.start(t);o.stop(t+.24)})}catch(e){try{sfx('hit')}catch(_){}}}
@@ -13219,13 +13204,13 @@ const CB={
 function fire(a,n){for(let i=0;i<n;i++){const t=a+(Math.random()-.5)*1.4,s=60+Math.random()*80;parts.push({x:player.x+Math.cos(a)*10,y:player.y-6+Math.sin(a)*10,vx:Math.cos(t)*s,vy:Math.sin(t)*s-10,life:.35,c:i%2?'#ffd060':'#ff6a2a'})}}
 // staff and gun helpers
 function staffS(){const h=held(),S=window.__plStaff&&window.__plStaff[h];return S||null}
-function sdm(m){const S=staffS();return Math.round((S?S.dmg:20)*m*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*(buffOn('zayıf')?.8:1))}
+function sdm(m){const S=staffS();return Math.round((S?S.dmg:20)*m*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1))}
 function tgt(a){return{x:player.x+Math.cos(a)*120,y:player.y-10+Math.sin(a)*120}}
 function cast3(L,m){const S=staffS();if(!S)return;for(const d of L)window.__plFire(S,sdm(m),tgt(aim()),d);try{sfx('magic')}catch(e){}}
 const GUN={'Tabanca':{dm:44,n:1,sp:0,ammo:'Tabanca mermisi'},'Pompalı':{dm:24,n:5,sp:.26,ammo:'Pompalı fişeği'}};
 const GS={c1:'#fff4b0',c2:'#ffb030',spd:640,range:340,line:1,trail:.08};
 function gshot(a,m,da,o){const h=held(),G=GUN[h];if(!G)return;if(!window.__plArenaFree&&!(o&&o.free)){const n=inv[G.ammo]||0;if(n<=0){floatText(`${G.ammo} yok`,'#ffb060');return}inv[G.ammo]=n-1}
-  const S=Object.assign({},GS,o||{}),dm=Math.round(G.dm*m*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1));for(let i=0;i<G.n;i++)window.__plFire(S,dm,tgt(a),(da||0)+(G.n>1?(i/(G.n-1)-.5)*2*G.sp:0));
+  const S=Object.assign({},GS,o||{}),dm=Math.round(G.dm*m*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg());for(let i=0;i<G.n;i++)window.__plFire(S,dm,tgt(a),(da||0)+(G.n>1?(i/(G.n-1)-.5)*2*G.sp:0));
   shake=Math.max(shake,G.n>1?.18:.1);try{audio.synth((ac,out)=>{const t0=ac.currentTime,len=.2,b=ac.createBuffer(1,Math.ceil(ac.sampleRate*len),ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,3);const s=ac.createBufferSource();s.buffer=b;const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=2400;const g=ac.createGain();g.gain.value=.4;s.connect(f);f.connect(g);g.connect(out);s.start(t0)})}catch(e){}
   try{renderInv()}catch(e){}}
 function canPay(k,M){if(window.__plArenaFree)return true;if(M.mana){const S=staffS(),P=window.__plMana;if(!S||!P)return false;const c=S.cost*M.mana;if(P.get()<c){floatText('Mana yetmiyor','#c9a0ff');return false}P.set(P.get()-c);return true}
@@ -13970,6 +13955,81 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
     const d=Math.hypot(a.x-player.x,a.y-player.y),reach=(D.reach||26)+4;
     if(a.mad&&a.st==='chase'&&!(a.stun>0)&&!a.mv&&!(a.wind>0)&&!a.lunge&&d<reach&&t-s.last>most&&(a.atk||0)>0)a.atk=0}}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v171: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v181">
+// v1.81: (1) skipping the tutorial asks first and gives nothing away; (2) Börü's free dodge lesson with a crab, then he shows
+// the Koşu skill in the tree; (3) skills that left the tree are refunded; (4) skill resistances, Çelik beden and Son nefes
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ // ---------------------------------------------------------------- (1) tutorial skip warning
+ const realSkip=()=>{ftut=3;tz=0;witchShown=true;witchMet=true;met=true;tut=11;qState='talk';try{syncLocks()}catch(e){}renderInv();renderTut()};
+ tzSkip=function(){if(!tz)return;
+  say('Dur bir dakika evlat! Bu ilk adımlar adayı <b>ilk kez</b> görenler için çok önemli: toplamayı, yemeyi, kazanı, el yapımını, satmayı, dövüşmeyi ve atılmayı burada öğrenirsin. Geçersen öğretici boyunca verilecek <b>ödülleri, XP\'yi ve eşyaları</b> (meşale, balta, taşlar, tarifler) <b>alamazsın</b>; hepsini kendin bulman gerekir. Yine de geçmek istiyor musun?',
+   [{t:'Öğrenmek istiyorum',pri:1,fresh:1,f:bye},{t:'Zaten biliyorum, geç',fresh:1,f:()=>{bye();realSkip();toast('Öğretici geçildi. Her şeyi kendin bulacaksın; atılmayı Börü ücretsiz öğretir.')}}])};
+
+ // ---------------------------------------------------------------- (2) Börü's dodge lesson
+ const DL={on:false,done:false,ph:'',t:0,n:0,crab:null,frz:false,tree:0,after:null,wStart:0,lastD:-1e9,el:null};window.__plDL=DL;
+ const NOW=()=>performance.now()/1000;
+ const hint=(html)=>{let el=DL.el;if(!el){el=document.createElement('div');el.id='dlhint';el.setAttribute('role','status');
+   el.style.cssText='position:fixed;left:50%;top:38%;transform:translate(-50%,-50%);z-index:60;pointer-events:none;text-align:center;font-weight:800;color:#fff;text-shadow:0 3px 0 #000,0 0 12px #000;font-size:clamp(26px,6vw,56px);letter-spacing:.03em;max-width:92vw';
+   document.body.appendChild(el);DL.el=el}
+   if(!html){el.hidden=true;return}el.innerHTML=html;el.hidden=false};
+ const small=(h)=>`<div style="font-size:clamp(14px,2.6vw,20px);font-weight:700;margin-top:6px">${h}</div>`;
+ const spot=()=>{for(let k=0;k<40;k++){const an=Math.random()*Math.PI*2,d=44+Math.random()*12,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;if(reachAt(x,y)&&!blocked(x,y)&&!isWater(tileAt(x,y)))return{x,y}}return{x:player.x+44,y:player.y}};
+ const spawn=()=>{if(DL.crab){const i=animals.indexOf(DL.crab);if(i>=0)animals.splice(i,1)}const p=spot();
+   DL.crab={k:'Kerevit',x:p.x,y:p.y,hp:ANIM['Kerevit'].hp,st:'wander',t:0,dx:0,dy:0,face:1,atk:0,flash:0,kb:null,step:0,mad:false,tut:true,dl:true};animals.push(DL.crab);DL.hx=p.x;DL.hy=p.y};
+ const count=()=>small(`Sıyrılma: ${DL.n}/4`);
+ function startLesson(after){if(DL.on)return;DL.on=true;DL.n=0;DL.ph='idle';DL.t=1.6;DL.after=after||null;skills.add('S1');st=maxSt();spawn();
+   try{document.body.classList.remove('nododge')}catch(e){}hint(count());sfx('found')}
+ window.__plDodgeLesson=startLesson;
+ const strikeDone=(ok)=>{const c=DL.crab;if(ok){DL.n++;floatText('Sıyrıldın!','#9fe07a');sfx('found')}else{floatText('Bir daha!','#e8c860');sfx('bad')}
+   if(c){c.x=DL.hx;c.y=DL.hy}
+   if(DL.n>=4){finishLesson();return}DL.ph='idle';DL.t=1.3+Math.random()*.8;st=maxSt();hint(count())};
+ function release(){if(!DL.frz)return;DL.frz=false;paused=false;hint(count());DL.lastD=NOW();doDodge();strikeDone(true)}
+ {const _dd=doDodge;doDodge=function(){const was=dodge;const r=_dd.apply(this,arguments);if(dodge&&dodge!==was)DL.lastD=NOW();return r}}
+ const tickDL=(dt)=>{const c=DL.crab;if(!DL.on||!c)return;
+   if(animals.indexOf(c)<0){spawn();return}
+   c.hp=ANIM['Kerevit'].hp;c.mad=false;c.mv=null;c.lunge=null;c.wind=0;
+   const dx=player.x-c.x,dy=player.y-c.y,d=Math.hypot(dx,dy)||1;c.face=dx<0?-1:1;
+   if(DL.ph==='idle'){c.x=DL.hx;c.y=DL.hy;
+     if(Math.hypot(player.x-DL.hx,player.y-DL.hy)>70||Math.hypot(player.x-DL.hx,player.y-DL.hy)<24){const p=spot();DL.hx=p.x;DL.hy=p.y}
+     DL.t-=dt;if(DL.t<=0){DL.ph='wind';DL.t=.8;DL.wStart=NOW();floats.push({x:c.x,y:c.y-22,t:0,text:'!',color:'#ff3b30',size:16});sfx('bad')}}
+   else if(DL.ph==='wind'){c.x=DL.hx+(Math.random()-.5)*3;c.y=DL.hy+(Math.random()-.5)*2;DL.t-=dt;
+     if(DL.t<=0){if(DL.n===0){DL.frz=true;paused=true;for(const k in keys)keys[k]=false;try{stopGather()}catch(e){}
+         hint(`${TOUCH?'Atıl düğmesine dokun!':'Boşluk\'a bas!'}${small('Kerevit saldırıyor: yana atıl!')}`);return}
+       DL.ph='lunge';DL.t=.2;DL.lx=c.x;DL.ly=c.y}}
+   else if(DL.ph==='lunge'){DL.t-=dt;const k=Math.min(1,1-DL.t/.2);c.x=DL.lx+(player.x-DL.lx)*k*.8;c.y=DL.ly+(player.y-DL.ly)*k*.8;
+     if(DL.t<=0){const ok=!!dodge||(DL.lastD>=DL.wStart-.15&&NOW()-DL.lastD<.75);strikeDone(ok)}}};
+ {const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);try{tickDL(dt)}catch(e){}return r}}
+ window.addEventListener('keydown',e=>{if(!DL.frz)return;e.preventDefault();e.stopImmediatePropagation();if(e.code==='Space')release()},true);
+ {const db=$('dodgebtn');if(db)db.addEventListener('pointerdown',e=>{if(!DL.frz)return;e.preventDefault();e.stopImmediatePropagation();release()},true)}
+ window.addEventListener('pointerdown',e=>{if(DL.frz&&TOUCH&&!(e.target&&e.target.closest&&e.target.closest('#dodgebtn'))){e.stopImmediatePropagation()}},true);
+ function finishLesson(){DL.on=false;DL.done=true;DL.ph='';hint('');const c=DL.crab;DL.crab=null;if(c){const i=animals.indexOf(c);if(i>=0)animals.splice(i,1);appearFx(c.x,c.y,'#e8e0c8')}sfx('level');
+   say('Hah! Dört kez sıyrıldın, kerevit hâlâ ne olduğunu anlamaya çalışıyor. <b>İlk ders tamam!</b> Ama kulağına küpe olsun: her kavgaya girmek akıllıca değildir evlat. Bazen en iyi hamle arkanı dönüp <b>tabanları yağlamaktır</b>. Kaçabilmek için de hızlı koşmayı bilmen gerek. Gel, sana yetenek ağacını göstereyim.',
+    [{t:'Yetenek ağacını aç',pri:1,fresh:1,f:()=>{bye();if(sk('K1')){done2();return}DL.tree=1;$('b-skill').classList.add('pulse');hint(`Yetenek ağacını aç${small(TOUCH?'yanıp sönen ağaç ikonuna dokun':'Y tuşuna bas ya da ağaç ikonuna tıkla')}`)}}],alp)}
+ function done2(){DL.tree=0;hint('');$('b-skill').classList.remove('pulse');const f=DL.after;DL.after=null;if(f)setTimeout(f,250)}
+ window.__plDLTree=()=>DL.tree;
+ {const _rc=renderCraft;renderCraft=function(){const r=_rc.apply(this,arguments);try{if(DL.tree&&craftOpen&&mode==='skills'){if(DL.tree===1){DL.tree=2;skTab='Savaş';hint('');$('b-skill').classList.remove('pulse');return renderCraft()}
+    const b=cbody.querySelector('[data-sk="K1"]');if(b)b.classList.add('pulse');
+    if(!cbody.querySelector('.dlnote')){const p=document.createElement('p');p.className='dlnote';p.style.cssText='margin:0 0 10px;padding:8px 10px;border:2px solid #e0503c;background:#2a1c1a;line-height:1.45';
+     p.innerHTML='<b>Börü:</b> “İşte en alttaki yanıp sönen <b>Koşu</b>. Ağaçlar aşağıdan yukarı büyür; bir yeteneği alınca üstündekiler açılır. Koşu <b>100 sikke</b>: Nazlı\'nın pazarında bir şeyler sat, <b>100 sikke biriktir</b> ve ilk işin bunu almak olsun. Kaçmayı bilen savaşçı uzun yaşar!” <i>(Kapatınca derse devam.)</i>';cbody.insertBefore(p,cbody.firstChild)}}}catch(e){}return r}}
+ {const _cc=closeCraft;closeCraft=function(){const was=craftOpen&&mode==='skills';const r=_cc.apply(this,arguments);try{if(DL.tree===2&&was)done2()}catch(e){}return r}}
+ {const _ad=tzAlpDone;tzAlpDone=function(){if(DL.on||DL.tree)return;if(!DL.done&&tz===11){const a=arguments,t=this;
+    say('Yumruk fena değil! Şimdi daha önemlisi: <b>kaçmayı</b> öğren. Şu yeni kereviti görüyor musun? Bu ısırmaz ama saldırır. Üstünde kırmızı bir <b>!</b> belirince yana <b>atıl</b>. Bu dersim benden, ücretsiz.',[{t:'Hazırım',pri:1,fresh:1,f:()=>{bye();startLesson(()=>_ad.apply(t,a))}}],alp);return}
+   return _ad.apply(this,arguments)}}
+ {const _ta2=talkAlp;talkAlp=function(){try{if(DL.on)return say('Kerevite odaklan evlat! Üstünde kırmızı <b>!</b> görünce yana <b>atıl</b>.',[{t:'Tamam',pri:1,f:bye}],alp);if(!tz&&met&&!sk('S1')&&!DL.on&&!DL.tree&&!window.__plArena&&ftut>=3)
+    return say('Hey evlat, sen hâlâ <b>atılmayı</b> bilmiyorsun! Saldırının içinden yana kaçamayan bu adada uzun yaşamaz. Gel, kısa bir ders; benden, ücretsiz.',[{t:'Öğret',pri:1,fresh:1,f:()=>{bye();startLesson(null)}},{t:'Sonra',f:bye}],alp)}catch(e){}
+   return _ta2.apply(this,arguments)}}
+
+ // ---------------------------------------------------------------- (3) refunds for skills that left the tree
+ {const _l=v47Load;v47Load=function(){const r=_l.apply(this,arguments);try{let got=0,n=0;for(const id in SKGONE)if(skills.has(id)){skills.delete(id);got+=SKGONE[id];n++}
+   if(n){coins+=got;setTimeout(()=>{announce('Yetenek ağacı yenilendi',`${n} yetenek ağaçtan çıktı: ${got.toLocaleString('tr-TR')} sikke iade edildi`);renderInv()},1500)}}catch(e){}return r}}
+
+ // ---------------------------------------------------------------- (4) resistances, Çelik beden, Son nefes
+ {const _af=addFx;addFx=function(k,dps,dur){const res=(k==='zehir'&&sk('D3'))||(k==='yanık'&&sk('D4'))||(k==='kanama'&&sk('D6'))?.6:1;return _af.call(this,k,dps*res,dur*(sk('D9')?.5:1))}}
+ {const _h=hurt;hurt=function(n,why,phys){const a=[].slice.call(arguments);try{if(phys&&sk('D8')&&hp<maxHP()*.25)a[0]=n*.75}catch(e){}return _h.apply(this,a)}}
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v181: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
