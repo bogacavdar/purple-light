@@ -4,7 +4,7 @@
 
 - Herkesin kendi mesleğine uygun, **sabit sırayla ilerleyen** bir yan görev zinciri vardır. Farklı kişilerin görevleri aynı anda açık olabilir.
 - Kişinin başında **mavi !** = yeni görev hazır; **sarı ?** = teslim edebileceğin görev var. Konuşma menüsünde "❗ Senin için bir işim var" ve "✔ Görevi teslim et" satırları çıkar. Görev bitince aynı konuşmada "Başka iş var mı?" ile sıradaki görev alınır.
-- Görev defteri **G** tuşuyla açılır; bir görevi takip etmek ekranda mavi bir yol oku açar. Getirme ve av görevlerinde "Nerede:" satırı malzemenin hangi biyomda olduğunu söyler.
+- Görev defteri **G** tuşuyla açılır; bir görevi takip etmek ekranda mavi bir yol oku açar. Getirme ve av görevlerinde "Nerede:" satırı malzemenin hangi biyomda olduğunu söyler. Av görevleri yalnızca görev kabul edildikten sonraki avları sayar (önceki avlar sayılmaz).
 - Bazı görevler kabul edildiği anda bir tarifi kitabına yazar (tabloda "Açılma şartı"ndan ayrı olarak kişinin açıklamasında yazılı).
 - **Hikâyeler:** Her yan görev, o kişinin bu adaya nasıl geldiğini anlatan hikâyesinden bir parça açar ("📖 Sen bu adaya nasıl geldin?"). Bütün parçalar dinlenince "📖 O geceyi anlat" bir sahne açar (+40 XP). Herkes mor ışık yüzünden birini kaybetmiştir.
 - **Ücretler:** Dursun ve Durmuş'un işçiliği eşya fiyatının %15'i (en az 2), Kemal'inki %20'si (en az 3); alet bileme aletin değerinin onda biri.
@@ -59,12 +59,12 @@ Toplam 2.020 sikke, 2.130 XP.
 **Yer:** Ekin'in yaklaşık 62 karo doğusu, 36 karo kuzeyi. **Tanışma:** öğreticinin 11. adımı (yumruk dersi, kerevit).
 
 - "Kılıç nasıl yapılır?" → **Taş kılıç** tarifini yazar (1 Sopa + 4 Keskin taş + 2 İp + 1 Çakmaktaşı; Dursun döver).
-- **Dövüş dersleri** (sikkeyle; ayrıntılar "Dövüş" bölümünde). Bir ders açılınca bir kez duyuru gelir. Öğrenilmiş dersler ücretsiz tekrar çalışılabilir. Ders sırasında Börü'den 280 pikselden uzağa gidersen oyun durur ve "Derse dön / Dersi bırak" diye sorar; bırakırsan ücret geri verilir.
+- **Dövüş dersleri** (sikkeyle; ayrıntılar "Dövüş" bölümünde). Bir ders açılınca bir kez duyuru gelir. Öğrenilmiş dersler ücretsiz tekrar çalışılabilir. Ders sırasında Börü'den 280 pikselden uzağa gidersen oyun durur ve "Derse dön / Dersi bırak" diye sorar; "Derse dön" seni Börü'nün ~140 piksel yakınına koyar, bırakırsan ücret geri verilir.
 - Hikâyesi: ağabeyi Kaan.
 
 {{inc:gen/gorev_alp.md}}
 
-> **Kerevit nerede?** "Kerevit avı" (1. görev) karada, Çayır'daki nehir kıyısında gezen kerevitleri ister: vurarak avlanır. "Kapan ustası" (2. görev) ise **balık kapanıyla** bir kerevit ister ve kapana kerevit **yalnızca Bataklık ve Kayalık Dağ sularında** girer (kapan her çekilişte 7 balıktan birini eşit ihtimalle seçer; bir boşaltmada yaklaşık %27 ihtimalle kerevit). Görevin "Nerede" satırı yanlışlıkla Çayır diyor; Çayır'ın nehrine kurulan kapandan kerevit gelmez.
+> **Kerevit nerede?** "Kerevit avı" (1. görev) karada, Çayır'daki nehir kıyısında gezen kerevitleri ister: vurarak avlanır. "Kapan ustası" (2. görev) ise **balık kapanıyla** bir kerevit ister ve kapana kerevit **yalnızca Bataklık ve Kayalık Dağ sularında** girer (kapan her çekilişte 7 balıktan birini eşit ihtimalle seçer; bir boşaltmada yaklaşık %27 ihtimalle kerevit). Görevin "Nerede" satırı **Bataklık**'ı gösterir (v1.79; önceden yanlışlıkla Çayır diyordu). Çayır'ın nehrine kurulan kapandan kerevit gelmez.
 
 ## Demirci Dursun
 

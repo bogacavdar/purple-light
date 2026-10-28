@@ -144,7 +144,7 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - **Can 0 olunca bayılırsın.** Taşıdığın her yığının (aletler ve kurulabilir yapılar hariç) **%20'si ve sikkelerin %20'si kaybolur**; kalan her şey düştüğün yerde bir **çantada** kalır (haritada kurukafa). Çantanın üstüne yürüyünce her şey geri gelir. Kumsaldaki uyanış yerinde can %50 ile uyanırsın.
 - Görev eşyaları kaybolmaz (Kaya patlatıcı, Ejder kalbi, Yakıt hücresi, roket parçaları; Ekin'in külçe görevi sırasında o külçe).
 - Bayıldıktan sonra 60 sn Reis çıkmaz. Bayılmak %60 ihtimalle bir anı açar.
-- **Tanrı modu** (hile) açıkken ölünmez.
+- **Tanrı modu** (hile) açıkken canavar, açlık ya da zehirle ölünmez. **Mor ışık ise tanrı modunda bile öldürür** (Boğaç'ın kararı, bilinçli: oyunun adı Mor Işık). Gece ışıksız kalırsan tanrı modu seni korumaz.
 
 ## Gün, gece ve mor ışık
 
@@ -444,7 +444,7 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 ## Hileler
 
 - **Açmak:** ana menüde klavyeyle `cheat` yaz (tekrar yazınca kapanır) ya da telefonda Ayarlar başlığına art arda 3 kez dokun. Sayfa her açıldığında bütün hile anahtarları kapalı başlar.
-- **Tanrı modu:** can, tokluk, enerji, mana hep dolu; ölmezsin. **Hile paneli:** +100 sikke, +100 XP, +2 saat, günü bitir, zamanı sar, eşya arama (miktar 1/10/50/100). **Tek vuruşta öldür**, **Sınırsız dayanıklılık**, **Sınırsız sikke**, **Gece ışığı**, **Hile kısayolları** (Z +100 sikke, X +100 XP), **ACT 2'ye geç**, **Bütün ara sahneler açık**, **Seviyeyi en üste çıkar**, **Haritayı tamamen aç**.
+- **Tanrı modu:** can, tokluk, enerji, mana hep dolu; canavarla ve açlıkla ölmezsin, ama **mor ışık seni yine öldürür** (bilinçli). **Hile paneli:** +100 sikke, +100 XP, +2 saat, günü bitir, zamanı sar, eşya arama (miktar 1/10/50/100). **Tek vuruşta öldür**, **Sınırsız dayanıklılık**, **Sınırsız sikke**, **Gece ışığı**, **Hile kısayolları** (Z +100 sikke, X +100 XP), **ACT 2'ye geç**, **Bütün ara sahneler açık**, **Seviyeyi en üste çıkar**, **Haritayı tamamen aç**.
 
 ## Kayıt
 
@@ -1076,7 +1076,7 @@ Son görev (Yeni bir gemi) bitince Levent'le konuş: hikâye sahnesi, ardından 
 
 - **İlk geçiş deniz yoluyla olur.** ACT 1'in sonunda Denizci Levent'in "Yeni bir gemi" görevi bitince gemiyle ikinci adaya açılırsın. Levent seni karaya çıkardığı kıyıda bekler.
 - **Gökbilimci Ülker** iniş yerinin biraz kuzeyinde, Yüzen Kayalar'da yüksek bir kayanın üstündedir. Teleskobu ve **ACT 2 kazanı** onun yanındadır: ikinci adanın bütün tarifleri burada öğrenilir (birinci adadaki Zümrüt'ün kazanıyla aynı çalışır).
-- **Portallar:** ikinci adaya ilk varışta **Levent'in yanındaki portal** ve birinci adada **Ekin'in yanındaki portal** açılır (v1.76). Ülker'in üç görevi bitince ("Portal çekirdeği" ile) bütün portallar açılır. Birinci adada **her kişinin yanında** bir portal belirir (Ekin, Zümrüt, Nazlı, Dursun, Hasan, Kemal, Börü, Rıza, Toygar; v1.75'ten beri kişinin sağ yanında, kazan/örs/tezgâhın önünde değil; v1.79'dan beri Hasan'ın tarlasının içinde de değil, tarla parsellerinden en az 26 piksel uzakta). İkinci adada iki portal vardır: **Ülker'in yanında** ve **Levent'in yanında**. Portaldan geçmek ücretsizdir; geçiş kaydeder, sayfayı yeniden yükler ve öbür adayı hazırlar.
+- **Portallar:** ikinci adaya ilk varışta **Levent'in yanındaki portal** ve birinci adada **Ekin'in yanındaki portal** açılır (v1.76). Ülker'in üç görevi bitince ("Portal çekirdeği" ile) bütün portallar açılır. Birinci adada **her kişinin yanında** bir portal belirir (Ekin, Zümrüt, Nazlı, Dursun, Hasan, Kemal, Börü, Rıza, Toygar): kişinin sağ yanında, ama hiçbir zaman kazanın, örsün, tezgâhın önünde ya da **Hasan'ın tarlasının içinde** değil (tarla parsellerine en az 26 piksel uzak; v1.79). İkinci adada iki portal vardır: **Ülker'in yanında** ve **Levent'in yanında**. Portaldan geçmek ücretsizdir; geçiş kaydeder, sayfayı yeniden yükler ve öbür adayı hazırlar.
 - **İkinci adada birinci adanın kişileri yoktur.** Satış (Nazlı), alet bileme ve örs (Dursun, Durmuş), ev işleri (Kemal, Rıza) ve tarla için portaldan birinci adaya dönülür. Envanter ve sikke ortak olduğu için bir sorun çıkmaz.
 - İkinci adada köprü ve Doğu geçidi gibi engeller yoktur; her yere yürünür. Ama canavarlar çok güçlüdür (ACT 2 canavarları ACT 1'in en güçlülerinden de güçlüdür, aşağıdaki tablolara bak).
 
@@ -4156,3 +4156,4 @@ Bunlar Boğaç'la konuşulmuş kararlar; oyuna eklenmedi.
 - **Şapka:** yıldızsızlar şapkayı bedeninden bilgi ve anı çalmak için kullanıyor; hafıza kaybının sebebi bu. Karakter yaratırken şapka seçtiysen içine metal bir şey yerleştiriyorlar, seçmediysen başına bir şapka geçiriyorlar ("Şapka" anısı).
 - **Eş:** ikinci adaya hiç uğramadı; ilk ada yakınında kaçırıldı.
 - **Kötü son:** "Yalnız dönüş" başarımı var ama kötü sonun kendisi henüz yazılmadı.
+- **Planlanan gizli başarım (Boğaç, 28 Ekim 2026):** tanrı modu açıkken mor ışığa yakalanıp ölmek gizli bir başarım olacak (adı ve simgesi henüz seçilmedi). Mor ışığın tanrı modunu da delmesi bilinçli bir tasarım kararıdır; "düzeltilmez".

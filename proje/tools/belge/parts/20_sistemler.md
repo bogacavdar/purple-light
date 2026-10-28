@@ -51,7 +51,7 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - **Can 0 olunca bayılırsın.** Taşıdığın her yığının (aletler ve kurulabilir yapılar hariç) **%20'si ve sikkelerin %20'si kaybolur**; kalan her şey düştüğün yerde bir **çantada** kalır (haritada kurukafa). Çantanın üstüne yürüyünce her şey geri gelir. Kumsaldaki uyanış yerinde can %50 ile uyanırsın.
 - Görev eşyaları kaybolmaz (Kaya patlatıcı, Ejder kalbi, Yakıt hücresi, roket parçaları; Ekin'in külçe görevi sırasında o külçe).
 - Bayıldıktan sonra 60 sn Reis çıkmaz. Bayılmak %60 ihtimalle bir anı açar.
-- **Tanrı modu** (hile) açıkken ölünmez.
+- **Tanrı modu** (hile) açıkken canavar, açlık ya da zehirle ölünmez. **Mor ışık ise tanrı modunda bile öldürür** (Boğaç'ın kararı, bilinçli: oyunun adı Mor Işık). Gece ışıksız kalırsan tanrı modu seni korumaz.
 
 ## Gün, gece ve mor ışık
 
@@ -301,7 +301,9 @@ Her silahın kendi hamleleri vardır (parantezde hasar çarpanı ve enerji):
 
 Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğretici bittikten sonra). Ücret peşin; ders bitince hamle kalıcı açılır ve XP verilir. Ders için o bölgeyi gezmiş olman gerekir (haritada en az 60 karesi açılmış olmalı).
 
-- Börü bir **alıştırma canavarı** salar: ısırığı zayıftır (canının %5'i), XP ve ganimet vermez, av ve Reis sayaçlarına sayılmaz, Börü'den 230 pikselden uzağa gitmez. Vuruş adımlarında saldırmaz ve canı gitmez; "bitir" adımında canı kolayca bitecek kadar azalır; savuşturma ve kaçma adımlarında 2,2–3,2 saniyede bir saldırır.
+- Börü bir **alıştırma canavarı** salar: ısırığı zayıftır (canının %5'i), XP ve ganimet vermez, av ve Reis sayaçlarına sayılmaz, Börü'den 230 pikselden uzağa gitmez. Ölürse ya da kaybolursa Börü'nün yanındaysan 1,5 sn sonra yenisi gelir; sayı sınırı yoktur (v1.79; önceden ders başına 16'da kesiliyor, ders bitirilemez kalıyordu). "Tek vuruşta öldür" hilesi alıştırma canavarına işlemez (v1.79).
+- **Ders sürerken Reis gelmez** (v1.79): ders sırasında vahşi hayvan avlayıp bir Reisin sayısını doldurursan Reis ders bitince (ya da bırakılınca) gelir.
+- Alandan çıkınca sorulan "Derse dön" seni Börü'nün yakınına (yaklaşık 140 piksel) geri koyar (v1.79; önceden 230 pikselde, sınırın dibinde bırakıyordu). Vuruş adımlarında saldırmaz ve canı gitmez; "bitir" adımında canı kolayca bitecek kadar azalır; savuşturma ve kaçma adımlarında 2,2–3,2 saniyede bir saldırır.
 - Soldaki ders kutusu yalnızca şimdiki adımı gösterir ("adım 1/2"). Börü'de "Dersi yeniden anlat" ve "Dersi baştan başlat" var. Öğrenilmiş dersler ücretsiz tekrar çalışılır (XP vermez).
 
 | Ders | Seviye | Bölge şartı | Ücret | XP | Alıştırma canavarı | Adımlar |
@@ -349,7 +351,7 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 ## Hileler
 
 - **Açmak:** ana menüde klavyeyle `cheat` yaz (tekrar yazınca kapanır) ya da telefonda Ayarlar başlığına art arda 3 kez dokun. Sayfa her açıldığında bütün hile anahtarları kapalı başlar.
-- **Tanrı modu:** can, tokluk, enerji, mana hep dolu; ölmezsin. **Hile paneli:** +100 sikke, +100 XP, +2 saat, günü bitir, zamanı sar, eşya arama (miktar 1/10/50/100). **Tek vuruşta öldür**, **Sınırsız dayanıklılık**, **Sınırsız sikke**, **Gece ışığı**, **Hile kısayolları** (Z +100 sikke, X +100 XP), **ACT 2'ye geç**, **Bütün ara sahneler açık**, **Seviyeyi en üste çıkar**, **Haritayı tamamen aç**.
+- **Tanrı modu:** can, tokluk, enerji, mana hep dolu; canavarla ve açlıkla ölmezsin, ama **mor ışık seni yine öldürür** (bilinçli). **Hile paneli:** +100 sikke, +100 XP, +2 saat, günü bitir, zamanı sar, eşya arama (miktar 1/10/50/100). **Tek vuruşta öldür**, **Sınırsız dayanıklılık**, **Sınırsız sikke**, **Gece ışığı**, **Hile kısayolları** (Z +100 sikke, X +100 XP), **ACT 2'ye geç**, **Bütün ara sahneler açık**, **Seviyeyi en üste çıkar**, **Haritayı tamamen aç**.
 
 ## Kayıt
 

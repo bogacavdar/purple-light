@@ -1,5 +1,8 @@
 # Hammadde — Yeni sohbet için devam notu
 
+## 🟣 KARAR: Mor ışık tanrı modunda da öldürür (28 Ekim 2026, Boğaç)
+- Bilinçli tasarım, hata DEĞİL: oyunun adı Mor Işık; tanrı modu (hile) canavar/açlık/zehre karşı korur ama gece ışıksız kalınca mor ışık yine öldürür. Bunu "düzeltme". İleride gizli bir başarım olacak: tanrı modu açıkken mor ışığa ölmek (adı/simgesi henüz yok).
+
 ## 📘 KURAL: Önce tasarım belgesi, sonra kod (28 Ekim 2026, Boğaç)
 - Tasarım belgesi (`proje/Hammadde_tasarim_belgesi.md` + `proje/Purple_Light_belgeler.html`) güncellenmeden **hiçbir geliştirme yapılmaz**. Sıra: (1) değişikliği önce belgeye yaz (ilgili bölüm, tablo, sayı), (2) sonra kodu belgeye göre değiştir, (3) commit'te belge ve kod birlikte gider. **Belge ile kod çelişirse belge doğru kabul edilir**: kod belgeye uydurulur (belge açıkça yanlışsa önce Boğaç'a sorulur, belge düzeltilir, sonra kod). Hata düzeltmesi bile oyunun davranışını değiştiriyorsa belgedeki ilgili satır aynı commit'te güncellenir. Belgenin aranabilir HTML'i `md`'den üretilir; üretim araçları yoksa `md`'yi güncellemek yeterli, HTML'in eskidiğini DEVAM_NOTU'na yaz.
 
@@ -1190,3 +1193,8 @@ Kaynak: tarayıcıda oynanarak yapılan QA turu (/home/claude/qa/AJAN_RAPORU.md)
 - Tarla portalı: Hasan'ın portalı tarlanın içine düşüyordu (Boğaç 4. madde), pClear tarla parsellerini dışlıyor — ana oturum.
 - Belgenin HTML'i (`Purple_Light_belgeler.html`) bu sürümde yeniden üretilmedi; ana oturum üretecek.
 - Menüde "Versiyon 1.79". chk.js 0 hata; v48_bugs.js'deki FAIL'ler v1.78'de de aynı (eski testler).
+
+
+## v1.80 (28 Ekim 2026) — v1.78'in tanrı modu değişikliği geri alındı
+- Boğaç: mor ışığın tanrı modunda da öldürmesi bilinçli (bkz. en üstteki KARAR). v1.78'de eklenen `!window.__plGod` koşulu kaldırıldı; belge (Temel sistemler → Bayılma ve ölüm, Hileler; ACT 3 notları → planlanan gizli başarım) buna göre güncellendi.
+- Menüde "Versiyon 1.80". chk.js 0 hata.

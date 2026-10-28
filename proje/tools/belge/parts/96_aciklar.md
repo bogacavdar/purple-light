@@ -4,7 +4,7 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 
 | # | Konu | Ne oluyor | Öneri |
 |---|---|---|---|
-| 1 | Kerevit kapanı | Börü'nün "Kapan ustası" görevi "Nerede: Çayır" diyor; kapana kerevit yalnızca Bataklık/Kayalık Dağ sularında girer. | Nerede satırını Bataklık yap ya da Çayır suyuna da kerevit ekle. |
+| 1 | Kerevit kapanı | Börü'nün "Kapan ustası" görevi "Nerede: Çayır" diyordu; kapana kerevit yalnızca Bataklık/Kayalık Dağ sularında girer. | **Düzeltildi v1.79:** Nerede satırı Bataklık. |
 | 2 | Kötü son | "Yalnız dönüş" başarımı ve dolayısıyla "Platin" kazanılamaz; kötü son yok. | Kötü son yazılana kadar başarımı gizle ya da Platin'den çıkar. |
 | 3 | ACT 2'den dönüş | Birinci adaya dönmenin tek yolu portaldı; portal Ülker'in 3. görevi bitince açılıyordu ve o görev yalnızca birinci adada bulunan malzemeler istiyor. | **Düzeltildi v1.76:** Levent ve Ekin portalları ikinci adaya varınca hep açık. |
 | 4 | Meyve ağacı odunu | Elma, Armut, Erik ağaçları kesilebiliyor; verdikleri odunun fiyatı yok, hiçbir tarifte kullanılmıyor. | Fiyat ve "Herhangi odun" grubuna ekle ya da meyve ağaçlarını yine kesilmez yap. |
