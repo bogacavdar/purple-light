@@ -4145,6 +4145,16 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 | 17 | Ev lambaları | Evin içi her zaman güvenli olduğu için lambaların işlevi yok, ama metinleri "mor ışık içeri giremez" diyor. | Lambaya başka bir işlev ver ya da metni değiştir. |
 | 18 | İşlevsiz aletler | Sapan, Bola, Porsuk yayı, Dişbudak yayı "tuzak" türünde ama kurulamıyor ve silah olarak da kullanılmıyor. | Bir işlev ver ya da tariflerden çıkar. |
 | 19 | Metinler | Zor modda "Dene" sonrası metin eski akışı anlatıyor; "Oyunlardaki gibi" başarımı telefonda yanlış hareketi tarif ediyor. | Metin düzeltmesi. |
+| 20 | Yol oku (ACT 1 sonu) | Levent'in görevleri sürerken görev kartı "Levent ile konuş" diyor ama yol oku hâlâ Yaşlı Ekin'i gösteriyor. | Ok Levent'i göstermeli. |
+| 21 | Arayüz | Oyun içi Ayarlar açıkken saat akıyor; Ayarlar düğme yazıları kesik ("Derinli", "Otoma"); ana menüde logo "Devam et"e biniyor; karakter yaratmada alt çubuk son satırları örtüyor; seviye 50'de "0 / Infinity XP · SV. 51". | Düzeltme. |
+| 22 | Hile paneli | Panel dünyanın üstünde ve görev kartının altında; savaşırken yanlışlıkla "Günü bitir"e tıklanabiliyor (testte 100 gün atlandı). | Paneli kenara al ya da onay iste. |
+| 23 | Diyaloglar | Teslimde hem "Başka iş var mı?" hem "❗ Senin için bir işim var" aynı anda çıkıyor; Kemal görev bitince de "Atölye kurmak mı?" diyor; Levent'te "Hoşça kal" ilk sırada; Börü'de süren dersi bırakma seçeneği yok. | Düzeltme. |
+| 24 | Eski metinler | Nazlı "otlar Çayır'da bolca olur" diyor, Nerede satırı Kayalık Dağ; Hasan "parçalarını Zümrüt'ün kazanında yaparsın" diyor (artık parçalar el yapımı). | Metin düzeltmesi. |
+| 25 | E önceliği (ACT 1) | ACT 1 kişilerinin yanında bir taş/dal varken E önce onu topluyor (ACT 2'de v1.77'de kişiler öne alındı). Kişiye tıklamak her zaman çalışıyor. | Karar: ACT 1'de de kişi öne alınsın mı? |
+| 26 | Ev içi gece | Gece lambasız oda neredeyse simsiyah; konan eşya görünmüyor ("sandalye koyamadım" hissi). Telefonda döşeme paneli odanın üst sırasını, masaüstünde görev kartı panelin bir kısmını örtüyor. | Gece odaya hafif bir ışık; panel yerleşimi. |
+| 27 | ACT 2 zorluğu | ACT 2'nin "Güvenli" biyomlarındaki canavarlar bile çok güçlü (Bulut koyunu 1.200 can, Goblin 2.580 can / 343 hasar); ACT 1 sonu ekipmanla bir goblin 1 dakikadan uzun sürüyor. | Denge kararı (Boğaç). |
+| 28 | ACT 2 küçükleri | Ülker'in kazanının başlığı "Cadının kazanı"; hileyle geçişte görev kartı Ekin'i gösteriyor ve köprü/geçit başarımları bedava geliyor; Tabanca yakın hedefte ıskalayabiliyor (belirsiz). | Düzeltme. |
+| 29 | Meşale (öğretici) | Sabah yakılan meşale gündüz de yanıp öğlen sönüyor. | Tasarım kararı. |
 
 
 # ACT 3 ve sonrası (henüz oyunda değil)
