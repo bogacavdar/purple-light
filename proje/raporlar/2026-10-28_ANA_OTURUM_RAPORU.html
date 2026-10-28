@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Purple Light Ana Oturum Raporu</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Rubik:wght@400;500;700&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* layout: a field manual — sticky contents rail on the left, one reading column with wide scrollable tables; section heads in the game's pixel type */
+:root{
+  --bg:#f6f3fa;--panel:#ffffff;--fg:#211b2c;--muted:#5e5470;--line:#ddd3ea;--accent:#7a3fd0;--accent-soft:#efe5fc;--zebra:#faf7fd;--mark:#ffe58a;
+  --display:"Pixelify Sans","Courier New",monospace;--body:"Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#120f19;--panel:#1b1724;--fg:#ece6f6;--muted:#a99dbd;--line:#302941;--accent:#b88cff;--accent-soft:#2a2140;--zebra:#17131f;--mark:#6a4fa8;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#120f19;--panel:#1b1724;--fg:#ece6f6;--muted:#a99dbd;--line:#302941;--accent:#b88cff;--accent-soft:#2a2140;--zebra:#17131f;--mark:#6a4fa8;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15.5px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;max-width:1280px;margin:0 auto}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;max-height:100vh;overflow:auto;padding-block:28px 28px;font-size:13.5px}
+nav.toc .brand{font-family:var(--display);font-size:22px;color:var(--accent);line-height:1.1;margin:0 0 4px}
+nav.toc .ver{color:var(--muted);font-size:12px;margin-bottom:16px}
+nav.toc ul{list-style:none;margin:0;padding:0}
+nav.toc li.h1{margin-top:10px}
+nav.toc li.h1>a{font-weight:500;color:var(--fg)}
+nav.toc li ul{border-left:2px solid var(--line);margin:4px 0 0 2px;padding-left:10px}
+nav.toc li ul a{color:var(--muted)}
+nav.toc a{text-decoration:none;display:block;padding:2px 0}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--accent)}
+main{min-width:0;padding-block:28px 0}
+.mtoc{display:none}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.25}
+h1{font-family:var(--display);font-weight:700;font-size:34px;color:var(--accent);margin:56px 0 12px;padding-top:12px;border-top:3px solid var(--line)}
+h1:first-of-type{border-top:none;margin-top:0;padding-top:0;font-size:42px}
+h2{font-family:var(--display);font-weight:500;font-size:24px;margin:36px 0 10px}
+h3{font-size:19px;margin:28px 0 8px;padding:6px 12px;background:var(--accent-soft);border-radius:6px}
+h4{font-size:16px;margin:22px 0 6px;color:var(--accent)}
+p,ul,ol{max-width:72ch}
+li{margin:2px 0}
+a{color:var(--accent)}
+strong{font-weight:700}
+code{font-family:var(--mono);font-size:.88em;background:var(--accent-soft);padding:1px 5px;border-radius:4px}
+.tw{overflow-x:auto;margin:10px 0 18px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+th{position:sticky;top:0;background:var(--panel);text-align:left;font-weight:500;color:var(--muted);font-size:12px;letter-spacing:.03em;border-bottom:2px solid var(--line);padding:8px 10px;white-space:nowrap}
+td{padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top;min-width:60px}
+td:first-child{font-weight:500;white-space:nowrap}
+tbody tr:nth-child(even){background:var(--zebra)}
+tr.hide{display:none}
+mark{background:var(--mark);color:inherit;border-radius:2px}
+.filt{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:14px 0 0}
+.filt label{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.filt input{flex:1 1 220px;max-width:420px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg)}
+.filt input:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.filt .cnt{font-size:12px;color:var(--muted)}
+blockquote{margin:12px 0;padding:8px 14px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 6px 6px 0;max-width:72ch}
+@media (max-width:900px){
+  .layout{grid-template-columns:minmax(0,1fr);gap:0}
+  nav.toc{display:none}
+  .mtoc{display:block;margin:0 0 8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:8px 12px}
+  .mtoc summary{cursor:pointer;font-family:var(--display);color:var(--accent)}
+  .mtoc ul{list-style:none;padding-left:0;font-size:14px}.mtoc li ul{padding-left:14px}
+  .mtoc a{text-decoration:none}
+  h1{font-size:28px}h1:first-of-type{font-size:32px}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+<div class="layout">
+<nav class="toc" aria-label="İçindekiler"><p class="brand">Purple Light</p><p class="ver">Ana Oturum Raporu · 28 Ekim 2026</p><ul><li class="h1"><a href="#ana-oturum-raporu-28-ekim-2026">Ana oturum raporu · 28 Ekim 2026</a><ul><li><a href="#ozet">Özet</a></li><li><a href="#1-tasarim-belgesi">1. Tasarım belgesi</a></li><li><a href="#2-bogac-in-maddeleri-bende-olanlar">2. Boğaç'ın maddeleri (bende olanlar)</a></li><li><a href="#3-act-2-testi">3. ACT 2 testi</a></li><li><a href="#4-gonderilen-surumler">4. Gönderilen sürümler</a></li><li><a href="#5-acik-kalan-onemli-konular-karar-bekleyenler">5. Açık kalan önemli konular (karar bekleyenler)</a></li></ul></li></ul></nav>
+<main>
+<details class="mtoc"><summary>İçindekiler</summary><ul><li class="h1"><a href="#ana-oturum-raporu-28-ekim-2026">Ana oturum raporu · 28 Ekim 2026</a><ul><li><a href="#ozet">Özet</a></li><li><a href="#1-tasarim-belgesi">1. Tasarım belgesi</a></li><li><a href="#2-bogac-in-maddeleri-bende-olanlar">2. Boğaç'ın maddeleri (bende olanlar)</a></li><li><a href="#3-act-2-testi">3. ACT 2 testi</a></li><li><a href="#4-gonderilen-surumler">4. Gönderilen sürümler</a></li><li><a href="#5-acik-kalan-onemli-konular-karar-bekleyenler">5. Açık kalan önemli konular (karar bekleyenler)</a></li></ul></li></ul></details>
+<h1 id="ana-oturum-raporu-28-ekim-2026">Ana oturum raporu · 28 Ekim 2026</h1>
+<p>Bu raporda ana oturumun (Claude) bu gece yaptığı işler var: tasarım belgesi, ACT 2 testi, Boğaç'ın maddelerinden alınanlar, gönderilen sürümler ve konulan kurallar. Test ajanının yaptıkları ayrı raporda: <strong>Test ajanı raporu</strong>.</p>
+<h2 id="ozet">Özet</h2>
+<ul>
+<li><strong>Tasarım belgesi baştan yazıldı.</strong> Sayıların hepsi çalışan oyundan ölçüldü, ayrı bir ajan 54 bilgiyi oyunla karşılaştırdı. Bulunan 19 düzeltme işlendi.</li>
+<li><strong>ACT 2'nin tamamı test edildi.</strong> Ülker, Pervin, Tamer, Selin, Alara ve Tuna'nın 23 görevi bitti; roket fırlatıldı, oyun sonu oynandı.</li>
+<li><strong>Boğaç'ın 6 maddesinden 4'ü bende:</strong> 1, 2, 3 ve 4. Dördü de sonuçlandı (aşağıda).</li>
+<li><strong>Gönderilen sürümler:</strong> v1.76, v1.77, v1.78, v1.80, ayrıca 3 belge commit'i. v1.79'u test ajanı gönderdi ve benim tarla portalı düzeltmem de içindeydi.</li>
+<li><strong>Konulan kurallar</strong> (CLAUDE.md ve DEVAM_NOTU'nun en üstünde):</li>
+<li>Önce belge, sonra kod. Belge ile kod çelişirse belge doğrudur.</li>
+<li>Belge her zaman indirilebilir olmalı.</li>
+<li>Mor ışık tanrı modunda da öldürür: bilinçli tasarım, düzeltilmez.</li>
+</ul>
+<h2 id="1-tasarim-belgesi">1. Tasarım belgesi</h2>
+<p><strong>Nerede:</strong>
+- Yayındaki sayfa: claude.ai artifact'ı.
+- İndirilebilir sürümler (her güncellemede yenilenir):
+  - https://bogacavdar.github.io/purple-light/belge.html
+  - https://bogacavdar.github.io/purple-light/belge.pdf
+  - https://bogacavdar.github.io/purple-light/belge.md
+- Depoda: <code>proje/Hammadde_tasarim_belgesi.md</code> ve <code>proje/Purple_Light_belgeler.html</code>.</p>
+<p><strong>İçerik:</strong>
+- Oyunun akışı: 13 adımlık öğretici, ACT 1 ve ACT 2 yol haritası, gezginlerin takvimi.
+- Kontroller.
+- Temel sistemler: can, açlık, enerji, gece ve mor ışık, ışık kaynakları, hava, uyku, XP, zorluk, ekonomi, tarif sistemi, alet kademeleri, zırh ve durum etkileri, yemek, balık, tuzak, tarım, ev ve döşeme, harita, izler ve anılar.
+- Dövüş: silahlar, savuşturma, kombolar, ulti, Börü'nün 7 dersi, canavarların özel hamleleri.
+- Biyomlar: 2 ada × 6 biyom. Her biyom için ağaçlar (gereken balta), toplanabilirler, madenler (gereken kazma) ve canlılar (can, hasar, hız, XP, düşürdükleri).
+- Kişiler ve görevler: 17 kişi, 65 yan görev, 14 Ekin görevi. Her biri için istenen, açılma şartı ve ödül.
+- ACT 2: portallar, mor mana, asalar, ateşli silahlar, meka zırh, roket, ustaların çalışma şekli.
+- Reisler: 75 Reis, kaç avdan sonra çıktıkları, can ve hasarları.
+- 825 tarif kategori kategori: malzemeler, alet, nerede yapıldığı, fiyat. Ayrıca "Herhangi" grupları.
+- Eşya dizini: 1.280 eşya, her biri için "nereden gelir" ve "hangi tariflerde kullanılır".
+- Aletler, zırhlar, evler, yetenek ağacı (64 yetenek), başarımlar (41).
+- Bilinen açıklar (29 madde), ACT 3 notları.</p>
+<p><strong>Nasıl yapıldı:</strong>
+- Oyunu Playwright ile açıp verileri doğrudan çalışan oyundan çıkardım (<code>proje/tools/belge/x/</code>).
+- Tabloları üreten araçlar depoda. Belge tek komutla yeniden üretilir: <code>bash proje/tools/belge/yayinla.sh</code>.
+- Kod okuma işinin bir kısmını (NPC hizmetleri, sistem formülleri) iki yardımcı ajana verdim.
+- Belgeyi oyunla karşılaştırma işini, belgeyi görmemiş ayrı bir ajana verdim. 54 bilgiden 35'i doğru, 6'sı yanlış, 13'ü kısmen doğru çıktı; hepsi düzeltildi. En önemlisi: 91 ACT 1 tarifi yanlışlıkla "ikinci adada öğrenilir" görünüyordu.</p>
+<h2 id="2-bogac-in-maddeleri-bende-olanlar">2. Boğaç'ın maddeleri (bende olanlar)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Madde</th>
+<th>Sonuç</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Gece evin içine sandalye koyamama</td>
+<td><strong>Güncel sürümde tekrarlanmadı.</strong> Kulübe kuruldu, gece 21:30'da içeri girildi; masaüstünde fareyle ve telefonda (844×390) dokunarak iki sandalye de konuldu. Ama gece lambasız oda neredeyse simsiyah, konan sandalye görünmüyor. Ayrıca telefonda döşeme paneli odanın üst sırasını, masaüstünde görev kartı panelin bir kısmını örtüyor. "Koyamadım" hissi büyük ihtimalle bundan geliyor. Belgede açık #26. Ne yapılacağı Boğaç'ın kararı.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ACT 2'de bazı NPC'lere tıklayamama</td>
+<td><strong>Düzeltildi (v1.77).</strong> Fareyle tıklama çalışıyordu, ama Pervin ve Tuna'nın dibinde bir bitki/maden vardı ve E her zaman onu topluyordu ("toplanacak şey konuşmadan önce gelir" kuralı). Artık ACT 2 kişisi o düğümden belirgin uzak değilse E kişiyi seçer.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ACT 2'de haritada NPC'leri görememe</td>
+<td><strong>Düzeltildi (v1.77).</strong> Harita yalnız ACT 1 kişilerini çiziyordu; ACT 2'de haritada tek simge vardı, o da yanlışlıkla gelen Tüccar Nuri. Artık Ülker, Pervin, Tamer, Selin, Alara, Tuna ve Levent kendi simgeleriyle haritada görünüyor, simgeye dokununca yol oku konuyor.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ACT 1'de tarlanın ortasında portal</td>
+<td><strong>Düzeltildi (v1.79).</strong> Hasan'ın portalı 12 parselli tarlanın tam ortasındaydı (ekran görüntüsüyle doğrulandı). Portal yerleştirme artık tarla parsellerinden uzak duruyor; portal tarlanın üstüne taşındı.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Kerevit</td>
+<td>Test ajanı düzeltti (v1.79). Sebebi belgeyi yazarken bulunmuştu: kapana kerevit yalnız Bataklık ve Kayalık Dağ sularında giriyor ama görev "Nerede: Çayır" diyordu.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Börü / öğreticide boss</td>
+<td>Test ajanı düzeltti (v1.79). Sebep: ders sırasında avlanan hayvanlar Reis sayacını dolduruyordu.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="3-act-2-testi">3. ACT 2 testi</h2>
+<p><strong>Nasıl:</strong> masaüstü 1280×720, Playwright. Konuşma, kazan, ustaya yaptırma, portal ve fırlatma gerçek tıklama ve tuşlarla yapıldı. Malzemeler hileyle verildi, av görevleri "Tek vuruşta öldür" hilesiyle geçildi.</p>
+<p><strong>Sonuç:</strong> 23 görevin hepsi bitti: Ülker 3, Pervin 5, Tamer 4, Selin 3, Alara 4, Tuna 5. Bunlar da doğrulandı:
+- Ödüller ve tarif açılımları geldi.
+- ACT 2 anıları geldi.
+- Ateş asası kazanda öğrenilip Pervin'e yaptırıldı ve büyü atıldı.
+- Tabanca yaptırıldı, mermi yapıldı, ateş edildi.
+- Roket parçaları yapıldı, roket fırlatıldı. Fırlatma sahnesi, mor gemi, kavuşma ve son kartı çalıştı; "Gökyüzüne" ve "Yeniden birlikte" başarımları geldi.
+- Başarım koşulları hileyle doldurularak denendi; "Her şeyi bilen" ve "Avcıların avcısı" gibi iki adalık başarımların koşulları tetikleniyor.</p>
+<p><strong>Bulunanlar:</strong></p>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Önem</th>
+<th>Ne</th>
+<th>Durum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Kritik</td>
+<td><strong>ACT 2'den dönüş kilidi:</strong> birinci adaya tek dönüş yolu portaldı. Portal Ülker'in son görevi bitince açılıyordu, o görev de yalnız birinci adada bulunan malzemeler istiyor (2 Kristal, 2 Demir levha). Fazladan getirmeyen oyuncu ikinci adada kalıyordu.</td>
+<td>Düzeltildi v1.76: Levent'in (ACT 2) ve Ekin'in (ACT 1) portalı ikinci adaya varınca hep açık</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Orta</td>
+<td>Ekin'in portalının dibindeki taş ve dal E'yi alıyordu, portal seçilemiyordu</td>
+<td>Düzeltildi v1.76</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Yüksek</td>
+<td>ACT 2 kişileri haritada yok (Boğaç #3)</td>
+<td>Düzeltildi v1.77</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Yüksek</td>
+<td>Pervin ve Tuna ile E ile konuşulamıyor (Boğaç #2)</td>
+<td>Düzeltildi v1.77</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Orta</td>
+<td>Tüccar Nuri'nin gemisi ve Işıkçı ikinci adada, birinci adanın koordinatlarında beliriyordu</td>
+<td>Düzeltildi v1.77</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Bilgi</td>
+<td>Tanrı modunda mor ışık öldürüyor</td>
+<td>Hata değil, Boğaç'ın kararı. v1.78'de yanlışlıkla "düzeltilmişti", v1.80'de geri alındı</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Denge</td>
+<td>ACT 2 canavarları ACT 1 sonu ekipmanla çok uzun sürüyor. Goblin 2.580 can / 343 hasar; Sv 10'da demir kılıçla 90 sn vurup tek goblin öldürülemedi. "Güvenli" biyomdaki Bulut koyunu bile 1.200 can.</td>
+<td>Açık, karar Boğaç'ın</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Düşük</td>
+<td>Ülker'in kazanının başlığı "Cadının kazanı". Hileyle geçişte görev kartı Ekin'i gösteriyor, köprü ve geçit başarımları bedava geliyor. Tabanca yakın hedefte ıskalayabiliyor (belirsiz).</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Bilgi</td>
+<td>Av görevleri yalnız görev kabul edildikten sonraki avları sayıyor. Roket motorunun malzemesi iki kez gerekiyor (kazanda öğrenme + yapım), yani Kızıl ejder ve Gök bekçisi ikişer kez öldürülmeli.</td>
+<td>Belgeye yazıldı</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Test edilmeyenler:</strong> telefonda ACT 2 haritası ve dövüşü, Meka zırh, Işın kılıcı, Buz ve Yıldırım asası (yalnız yapım görevleri yapıldı), ACT 2 Reisleri.</p>
+<h2 id="4-gonderilen-surumler">4. Gönderilen sürümler</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Sürüm</th>
+<th>İçerik</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1.76</td>
+<td>ACT 2'den dönüş kilidi: Levent ve Ekin portalları ACT 2'ye varınca hep açık. Portalın üstündeyken E portalı kullanıyor.</td>
+</tr>
+<tr>
+<td>v1.77</td>
+<td>ACT 2 kişileri haritada. ACT 2'de kişinin yanındaki düğüm artık E ile konuşmayı engellemiyor. Nuri ve Işıkçı ikinci adaya gelmiyor.</td>
+</tr>
+<tr>
+<td>Belge</td>
+<td>Tasarım belgesi baştan yazıldı; belge araçları depoya kondu.</td>
+</tr>
+<tr>
+<td>v1.78</td>
+<td>"Önce belge" kuralı eklendi. Ayrıca tanrı modu mor ışık değişikliği yapıldı; bu değişiklik v1.80'de geri alındı.</td>
+</tr>
+<tr>
+<td>v1.79</td>
+<td>(Test ajanı gönderdi) İçinde benim tarla portalı düzeltmem de vardı.</td>
+</tr>
+<tr>
+<td>v1.80</td>
+<td>Mor ışık tanrı modunda da öldürür (bilinçli). Belgeye ve DEVAM_NOTU'na KARAR olarak yazıldı; gizli başarım notu eklendi.</td>
+</tr>
+<tr>
+<td>Belge</td>
+<td>İndirilebilir sürümler (belge.html/.pdf/.md) ve <code>yayinla.sh</code>. Test turunda bulunan açık hatalar Bilinen açıklar'a eklendi (20–29).</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="5-acik-kalan-onemli-konular-karar-bekleyenler">5. Açık kalan önemli konular (karar bekleyenler)</h2>
+<ol>
+<li><strong>Kötü son yok:</strong> "Yalnız dönüş" ve "Platin" başarımları kazanılamıyor.</li>
+<li><strong>ACT 2 zorluğu:</strong> hilesiz oyuncu için ACT 2'nin ilk biyomları bile çok sert.</li>
+<li><strong>Gece ev içi karanlık:</strong> konan eşya görünmüyor.</li>
+<li><strong>ACT 1'de E önceliği:</strong> kişinin yanında taş ya da dal varken E önce onu topluyor (ACT 2'de değiştirildi).</li>
+<li><strong>"İlk düşüş" ve "İnatçı" başarımları</strong> yalnız gece ölümünü sayıyor, bayılmayı saymıyor.</li>
+<li><strong>Arayüz örtüşmeleri:</strong> hile paneli, görev kartı, Ayarlar yazıları.</li>
+</ol>
+<p>Ayrıntılı ve tam liste: belgenin "Bilinen açıklar" bölümü (29 madde).</p>
+</main>
+</div>
+<script>
+(function(){
+  var lc=function(s){return (s||'').toLocaleLowerCase('tr-TR')};
+  document.querySelectorAll('.filt input').forEach(function(inp){
+    var wrap=document.getElementById(inp.getAttribute('data-t'));if(!wrap)return;
+    var rows=Array.prototype.slice.call(wrap.querySelectorAll('tbody tr'));
+    var cnt=document.getElementById('c'+inp.id.slice(1));
+    var raw=rows.map(function(r){return r.innerHTML});
+    var txt=rows.map(function(r){return lc(r.textContent)});
+    var t=null;
+    inp.addEventListener('input',function(){clearTimeout(t);t=setTimeout(run,120)});
+    function run(){
+      var q=lc(inp.value.trim()),n=0;
+      rows.forEach(function(r,i){
+        var hit=!q||txt[i].indexOf(q)>=0;r.classList.toggle('hide',!hit);
+        if(hit){n++;r.innerHTML=raw[i]}
+      });
+      cnt.textContent=q?(n+' / '+rows.length+' satır'):(rows.length+' satır');
+    }
+  });
+})();
+</script>
+
+</html>

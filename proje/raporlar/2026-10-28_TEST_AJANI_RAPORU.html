@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Purple Light Test Ajanı Raporu</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Rubik:wght@400;500;700&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* layout: a field manual — sticky contents rail on the left, one reading column with wide scrollable tables; section heads in the game's pixel type */
+:root{
+  --bg:#f6f3fa;--panel:#ffffff;--fg:#211b2c;--muted:#5e5470;--line:#ddd3ea;--accent:#7a3fd0;--accent-soft:#efe5fc;--zebra:#faf7fd;--mark:#ffe58a;
+  --display:"Pixelify Sans","Courier New",monospace;--body:"Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#120f19;--panel:#1b1724;--fg:#ece6f6;--muted:#a99dbd;--line:#302941;--accent:#b88cff;--accent-soft:#2a2140;--zebra:#17131f;--mark:#6a4fa8;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#120f19;--panel:#1b1724;--fg:#ece6f6;--muted:#a99dbd;--line:#302941;--accent:#b88cff;--accent-soft:#2a2140;--zebra:#17131f;--mark:#6a4fa8;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15.5px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;max-width:1280px;margin:0 auto}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;max-height:100vh;overflow:auto;padding-block:28px 28px;font-size:13.5px}
+nav.toc .brand{font-family:var(--display);font-size:22px;color:var(--accent);line-height:1.1;margin:0 0 4px}
+nav.toc .ver{color:var(--muted);font-size:12px;margin-bottom:16px}
+nav.toc ul{list-style:none;margin:0;padding:0}
+nav.toc li.h1{margin-top:10px}
+nav.toc li.h1>a{font-weight:500;color:var(--fg)}
+nav.toc li ul{border-left:2px solid var(--line);margin:4px 0 0 2px;padding-left:10px}
+nav.toc li ul a{color:var(--muted)}
+nav.toc a{text-decoration:none;display:block;padding:2px 0}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--accent)}
+main{min-width:0;padding-block:28px 0}
+.mtoc{display:none}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.25}
+h1{font-family:var(--display);font-weight:700;font-size:34px;color:var(--accent);margin:56px 0 12px;padding-top:12px;border-top:3px solid var(--line)}
+h1:first-of-type{border-top:none;margin-top:0;padding-top:0;font-size:42px}
+h2{font-family:var(--display);font-weight:500;font-size:24px;margin:36px 0 10px}
+h3{font-size:19px;margin:28px 0 8px;padding:6px 12px;background:var(--accent-soft);border-radius:6px}
+h4{font-size:16px;margin:22px 0 6px;color:var(--accent)}
+p,ul,ol{max-width:72ch}
+li{margin:2px 0}
+a{color:var(--accent)}
+strong{font-weight:700}
+code{font-family:var(--mono);font-size:.88em;background:var(--accent-soft);padding:1px 5px;border-radius:4px}
+.tw{overflow-x:auto;margin:10px 0 18px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+th{position:sticky;top:0;background:var(--panel);text-align:left;font-weight:500;color:var(--muted);font-size:12px;letter-spacing:.03em;border-bottom:2px solid var(--line);padding:8px 10px;white-space:nowrap}
+td{padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top;min-width:60px}
+td:first-child{font-weight:500;white-space:nowrap}
+tbody tr:nth-child(even){background:var(--zebra)}
+tr.hide{display:none}
+mark{background:var(--mark);color:inherit;border-radius:2px}
+.filt{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:14px 0 0}
+.filt label{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.filt input{flex:1 1 220px;max-width:420px;font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg)}
+.filt input:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.filt .cnt{font-size:12px;color:var(--muted)}
+blockquote{margin:12px 0;padding:8px 14px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 6px 6px 0;max-width:72ch}
+@media (max-width:900px){
+  .layout{grid-template-columns:minmax(0,1fr);gap:0}
+  nav.toc{display:none}
+  .mtoc{display:block;margin:0 0 8px;border:1px solid var(--line);border-radius:8px;background:var(--panel);padding:8px 12px}
+  .mtoc summary{cursor:pointer;font-family:var(--display);color:var(--accent)}
+  .mtoc ul{list-style:none;padding-left:0;font-size:14px}.mtoc li ul{padding-left:14px}
+  .mtoc a{text-decoration:none}
+  h1{font-size:28px}h1:first-of-type{font-size:32px}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+<div class="layout">
+<nav class="toc" aria-label="İçindekiler"><p class="brand">Purple Light</p><p class="ver">Test Ajanı Raporu · 28 Ekim 2026</p><ul><li class="h1"><a href="#test-ajani-raporu-28-ekim-2026">Test ajanı raporu · 28 Ekim 2026</a><ul><li><a href="#1-ozet">1. Özet</a></li><li><a href="#2-bogac-in-6-maddesi">2. Boğaç'ın 6 maddesi</a></li><li><a href="#3-bulunan-hatalar">3. Bulunan hatalar</a></li><li><a href="#4-yapilamayanlar">4. Yapılamayanlar</a></li><li><a href="#5-basarimlar-act-1-oturumu-28-41">5. Başarımlar (ACT 1 oturumu, 28 / 41)</a></li><li><a href="#6-test-edilenler-ve-yolu">6. Test edilenler ve yolu</a></li><li><a href="#7-eklenen-hileler-degistirilen-dosyalar-commitler">7. Eklenen hileler, değiştirilen dosyalar, commitler</a></li><li><a href="#8-telefon-gorunumu">8. Telefon görünümü</a></li></ul></li></ul></nav>
+<main>
+<details class="mtoc"><summary>İçindekiler</summary><ul><li class="h1"><a href="#test-ajani-raporu-28-ekim-2026">Test ajanı raporu · 28 Ekim 2026</a><ul><li><a href="#1-ozet">1. Özet</a></li><li><a href="#2-bogac-in-6-maddesi">2. Boğaç'ın 6 maddesi</a></li><li><a href="#3-bulunan-hatalar">3. Bulunan hatalar</a></li><li><a href="#4-yapilamayanlar">4. Yapılamayanlar</a></li><li><a href="#5-basarimlar-act-1-oturumu-28-41">5. Başarımlar (ACT 1 oturumu, 28 / 41)</a></li><li><a href="#6-test-edilenler-ve-yolu">6. Test edilenler ve yolu</a></li><li><a href="#7-eklenen-hileler-degistirilen-dosyalar-commitler">7. Eklenen hileler, değiştirilen dosyalar, commitler</a></li><li><a href="#8-telefon-gorunumu">8. Telefon görünümü</a></li></ul></li></ul></details>
+<h1 id="test-ajani-raporu-28-ekim-2026">Test ajanı raporu · 28 Ekim 2026</h1>
+<p>Test ajanının (Claude alt ajanı) bu gece yaptığı test: ACT 1'in tamamı ve genel konular. ACT 2 testi ve Boğaç'ın 1–4. maddeleri <strong>Ana oturum raporu</strong>nda.</p>
+<blockquote>
+<p>Test: 28 Ekim 2026, gece. Başlangıç sürümü <strong>Versiyon 1.75</strong>, bitiş <strong>Versiyon 1.80</strong> (depo <code>main</code>).
+<strong>ACT 2 ve Boğaç'ın 1., 2., 3. maddeleri:</strong> ana oturum test etti → <strong>bkz. Ana oturum raporu</strong>.
+Kayıtlar (yüklemek için <code>?debug</code> ile aç, <code>__ham.ev('applyState('+json+')')</code>): <code>/home/claude/qa/saves/01_after_tutorial.json</code>, <code>02_main_done.json</code>, <code>03_paused_cift_vurus_dersi.json</code> (kilitli ders), <code>04_v179_after_fixes.json</code>, <code>05_before_act2.json</code> (ACT 1 tamam, Levent'in "Götür beni" teklifi önünde).</p>
+</blockquote>
+<h2 id="1-ozet">1. Özet</h2>
+<ul>
+<li><strong>Bu ajanın bulduğu: 24 hata/sorun</strong> — Yüksek 2, Orta 6, Düşük 16. Ayrıca ana oturumun bildirdiği 2 madde (kötü son yok; tarla portalı) doğrulandı.</li>
+<li><strong>Düzeltilen: 8</strong> (hepsi <strong>v1.79</strong>'da; 2 Yüksek + 4 Orta + 2 Düşük). Tarla portalı (Boğaç 4) ana oturumun düzeltmesi, v1.79 commit'imin içinde gitti.</li>
+<li><strong>Gönderilen sürüm (bu ajan): v1.79</strong> (<code>8138e77</code>). Ana oturum v1.76, v1.77, v1.78, v1.80'i gönderdi.</li>
+<li>Kritik (oyunu durduran) hata: ACT 1'de bulunmadı. En ağır olan, Börü'nün Çift vuruş dersinin bitirilemez hâle gelmesiydi (Yüksek, düzeltildi).</li>
+<li>Konsol: bütün oyun boyunca <strong>hiç <code>pageerror</code> yok</strong>; yalnızca çevrimdışı ortamda dış kaynak yüklenemedi hatası ve Canvas/WebGL performans uyarıları.</li>
+<li>ACT 1'in tamamı oynandı: öğretici, Ekin'in 14 ana görevi, <strong>41 yan görevin hepsi</strong>, Börü'nün <strong>7 dersinin hepsi (Ulti dahil)</strong>, Levent'in ACT 2 teklifine kadar.</li>
+</ul>
+<h2 id="2-bogac-in-6-maddesi">2. Boğaç'ın 6 maddesi</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Madde</th>
+<th>Durum</th>
+<th>Kanıt / sebep / düzeltme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Gece ev içine sandalye koyamama</td>
+<td>Ana oturum</td>
+<td>Bkz. Ana oturum raporu (v1.79'da masaüstü ve telefonda yeniden üretilemedi; gece oda simsiyah olduğu için eşya görünmüyor; telefonda döşeme paneli odanın üst sırasını örtüyor).</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ACT 2'de NPC'lere tıklayamama</td>
+<td>Ana oturum (v1.77'de düzeltildi)</td>
+<td>ACT 1 karşılığı: E, kişinin yanında toplanabilir bir şey varsa önce onu topluyor (Ekin'in yanında dal, Levent'in yanında çakıl). Kişiye <strong>tıklamak</strong> her zaman konuşmayı açıyor, düğüm bitince E de konuşuyor; ACT 1'de kalıcı bir kilit yok. Bu kural belgede (B4) bilinçli.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ACT 2'de haritada NPC'leri görememe</td>
+<td>Ana oturum (v1.77'de düzeltildi)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Tarlanın ortasındaki portal</td>
+<td><strong>Düzeldi (v1.79)</strong></td>
+<td>Ana oturum doğruladı: Hasan'ın portalı (1266,3284) tarla parsellerinin ortasındaydı. <code>pClear</code> (v76) tarla parsellerinden 26 px uzak tutuyor; portal artık (1266,3242). Ben gerçek tarlada tırmık→ek→sula→biç döngüsünü sorunsuz oynadım.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Kerevit kapanından kerevit gelmemesi</td>
+<td><strong>Düzeldi (v1.79)</strong></td>
+<td>Gerçek oyunda Çayır'daki nehre kurulan balık kapanından <strong>15 avda 0 kerevit</strong> (Alabalık, Levrek, Sazan, Kızılkanat, Midye, Yılan balığı, Çapak — "alakasız bir sürü şey"); büyük nehrin doğu yakasına (bölge 1) kurulan kapandan <strong>15 avda 3 kerevit</strong>. Sebep: Börü "bataklıktaki suya bırak" derken görevin <strong>"Nerede" satırı Çayır</strong> diyordu (satır kerevit <em>hayvanının</em> yaşadığı Çayır kumsalından hesaplanıyordu, kapan avından değil); <code>FISHT[0]</code> (nehrin batısı) listesinde kerevit yok. Belge "kerevit yalnız Bataklık/Kayalık Dağ suları" diyor; kod belgeye uyduruldu: <strong>"Nerede" satırı artık Bataklık</strong>'ı gösterir (v150, <code>q.id==='a2'</code>). Kapan av olasılığı belgedeki gibi (bir boşaltmada ~%27; bir av 130–250 sn → ortalama ~8–11 dk gerçek zaman). 6 tuzak sınırı belgede yazılı, bilinçli.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Börü'nün görevleri/dersleri, öğreticide Reis</td>
+<td><strong>Düzeldi (v1.79)</strong></td>
+<td>Börü'nün 5 yan görevi sorunsuz. Bulunanlar: (a) <strong>Çift vuruş dersi kilitleniyordu</strong>: ders başına 16 alıştırma canavarı sınırı (<code>spawnFoe</code>, <code>FOE.n&gt;=16</code>) dolunca yeni canavar gelmiyordu; "Tek vuruşta öldür" hilesi alıştırma canavarını ilk darbede öldürdüğü için "çift vuruşla bitir" sayılmıyor, sınır çabuk doluyordu → sınır kalktı, hile alıştırma canavarına işlemiyor. (b) <strong>Ders sırasında Reis gelebiliyordu</strong>: ders içinde vahşi kurt öldürmek Kurt sayacını 8→10 yaptı; <code>bossCheck</code> ders sırasında açıktı → artık ders sürerken Reis beklemede, ders bitince geliyor (denendi: Kurt Reisi dersten çıkınca geldi). Asıl öğreticide (<code>tz&gt;0</code>) Reis zaten kodla engelli; Boğaç'ın "öğretici sırasında Reis" dediği büyük ihtimalle Börü'nün dersi. (c) <strong>"Derse dön"</strong> oyuncuyu 280'lik sınırın dibine (230 px) koyuyordu; bir takla soruyu yeniden açıyor, 230 px tasmalı canavar 230–280 arasındaki oyuncuya ulaşamıyor, takla adımı hiç ilerlemiyordu → artık 140 px. (d) "Sana şu kurdun getirdim" dil hatası ve yanlış "öğreteceğim bir şey yok" başlığı düzeltildi. <strong>Düzeltmeden sonra 7 dersin 7'si de bitti, Ulti dahil</strong> (Ulti hiç test edilmemişti: Kara ejder öldürüldü, ders açıldı, R ile 3 ulti isabeti ~60 sn).</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="3-bulunan-hatalar">3. Bulunan hatalar</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>No</th>
+<th>Yer</th>
+<th>Önem</th>
+<th>Nasıl tekrarlanır</th>
+<th>Beklenen / olan</th>
+<th>Durum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H1</td>
+<td>ACT 1 · Börü · Çift vuruş dersi</td>
+<td>Yüksek</td>
+<td>Tek vuruş hilesi açık (ya da düz vuruşla) "2 canavarı çift vuruşla bitir" adımında domuzları öldür.</td>
+<td>16 canavardan sonra hiç canavar gelmiyor, ders bitirilemiyor (yalnız Börü → Dersi yeniden anlat → Anladım ile tek tek).</td>
+<td><strong>Düzeltildi v1.79</strong></td>
+</tr>
+<tr>
+<td>H2</td>
+<td>ACT 1 · Börü "Kapan ustası"</td>
+<td>Yüksek</td>
+<td>Görevi al, "Nerede: Çayır"a güvenip Çayır nehrine kapan kur.</td>
+<td>Hiç kerevit gelmez.</td>
+<td><strong>Düzeltildi v1.79</strong> (Nerede: Bataklık)</td>
+</tr>
+<tr>
+<td>H3</td>
+<td>Börü dersleri · Reis</td>
+<td>Orta</td>
+<td>Ders sürerken yakındaki vahşi hayvanları avla.</td>
+<td>Ders ortasında Reis çıkabiliyordu.</td>
+<td><strong>Düzeltildi v1.79</strong></td>
+</tr>
+<tr>
+<td>H4</td>
+<td>Börü dersleri · alan</td>
+<td>Orta</td>
+<td>Takla adımında kenara takla at, "Derse dön".</td>
+<td>Soru tekrar tekrar çıkıyor; kenarda duran oyuncuya canavar saldırmıyor.</td>
+<td><strong>Düzeltildi v1.79</strong> (140 px)</td>
+</tr>
+<tr>
+<td>H5</td>
+<td>Ekin "Kamp kur, bir gece bekle"</td>
+<td>Orta</td>
+<td>Gece kamp ateşinin başında 60 sn hiçbir şeye dokunmadan bekle.</td>
+<td>Sayaç 61'e çıktı ama kart 0/60'da kaldı, görev tamamlanmadı (bir dal toplayınca birden tamamlandı). <code>tickCamps</code> <code>renderTut</code> çağırmıyordu.</td>
+<td><strong>Düzeltildi v1.79</strong> (denendi: 58/60 → Tamamlandı kendiliğinden)</td>
+</tr>
+<tr>
+<td>H6</td>
+<td>Kayıt yükleme · envanter</td>
+<td>Orta</td>
+<td>Bir eşyayı sıfıra indir, ana menüye çık, Devam et, yine topla.</td>
+<td>Envanterde Dal, Lif, Yaprak, Taş… iki kez listeleniyordu (<code>cleanSave</code> 0'ları <code>inv</code>'den atıyor, <code>order</code>'da bırakıyor; <code>gain</code> yeniden ekliyor).</td>
+<td><strong>Düzeltildi v1.79</strong></td>
+</tr>
+<tr>
+<td>H7</td>
+<td>Börü ders metni</td>
+<td>Düşük</td>
+<td>Bir derse "Hazırım".</td>
+<td>"Sana şu kurdun / yaban domuzunun getirdim".</td>
+<td><strong>Düzeltildi v1.79</strong> ("Sana bir kurt getirdim")</td>
+</tr>
+<tr>
+<td>H8</td>
+<td>Börü ders listesi</td>
+<td>Düşük</td>
+<td>Bir dersi bitir, "Yeni ders".</td>
+<td>5 ders alınabilirken "Şimdilik sana öğreteceğim yeni bir şey yok".</td>
+<td><strong>Düzeltildi v1.79</strong></td>
+</tr>
+<tr>
+<td>H9</td>
+<td>Levent'in görevi (ACT 1 sonu)</td>
+<td>Orta</td>
+<td>Ekin'in 14. görevini bitir, Levent'in görevleri sürerken ya da gemi hazırken bak.</td>
+<td>Görev kartı "Levent ile konuş" diyor, yol oku hâlâ "Yaşlı Ekin 512 m"i gösteriyor (Levent yanımızdayken).</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>H10</td>
+<td>Bayılma · başarım</td>
+<td>Düşük</td>
+<td>Gündüz bir hayvana yenil, bayıl.</td>
+<td><code>deaths</code> artmıyor; "İlk düşüş" metni "öl ya da bayıl" diyor ama yalnızca gece mor ışıkla ölüm sayılıyor (belgede #12). Gece ölümüyle "İlk düşüş" ve "İnatçı" kazanıldı.</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>H11</td>
+<td>Yan görev teslimi</td>
+<td>Düşük</td>
+<td>Bir görevi teslim et.</td>
+<td>Teşekkür diyaloğunda hem "Başka iş var mı?" hem "❗ Senin için bir işim var: …" aynı anda.</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>H12</td>
+<td>Karakter penceresi</td>
+<td>Düşük</td>
+<td>Seviye 50'de C.</td>
+<td>"0 / Infinity XP · sonraki seviyeye Infinity XP", "SV. 51".</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>H13</td>
+<td>Ayarlar</td>
+<td>Düşük</td>
+<td>Oyun içinde Ayarlar'ı aç.</td>
+<td>Ayarlar açıkken saat akıyor (3 sn'de ~5 oyun dk). Müzik/çözünürlük düğmelerinde yazı kesik ("Bölgey", "Derinli", "Otoma", "Yüksel").</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>H14</td>
+<td>Ana menü / hile paneli</td>
+<td>Düşük</td>
+<td>Kayıtlı oyunla ana menü; oyunda hile paneli açık.</td>
+<td>Logo "Devam et" düğmesine biniyor. Hile paneli görev kartı ve başarım bildiriminin altında kalıyor; panel dünyanın üstünde durduğu için savaşırken yanlışlıkla "Günü bitir"e tıklanabiliyor (bende 100 gün atladı).</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>H15</td>
+<td>Öğretici · meşale</td>
+<td>Düşük</td>
+<td>Öğreticide meşaleyi sabah ele al.</td>
+<td>170 sn yanma gündüz de tükeniyor; öğlen sönüyor (akşam ayrıca hatırlatma var).</td>
+<td>Açık (tasarım)</td>
+</tr>
+<tr>
+<td>H16</td>
+<td>Ekin "Koşmak" mini dersi</td>
+<td>Düşük</td>
+<td>Tanrı modu açıkken koş.</td>
+<td>Enerji düşmediği için ders bitmez (hile etkileşimi).</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>H17</td>
+<td>Nazlı "Tezgâh için otlar"</td>
+<td>Düşük</td>
+<td>Görevi al.</td>
+<td>Nazlı "Çayır yerlerinde bolca olur" diyor; "Nerede" satırı Kayalık Dağ.</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>H18</td>
+<td>Hasan'ın tırmık sözü</td>
+<td>Düşük</td>
+<td>Hasan → "Nereden başlayayım?"</td>
+<td>"Parçalarını Zümrüt'ün kazanında yaparsın" (artık parçalar Tab ile elde yapılıyor).</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>H19</td>
+<td>Börü · süren ders</td>
+<td>Düşük</td>
+<td>Ders sürerken Börü → Dövüş dersi (sürüyor).</td>
+<td>Menüde "Dersi bırak" yok; yalnız alandan çıkıp soruya "Evet" denerek bırakılıyor. "Dersi yeniden anlat" metni sıralı olmayan derslerde de "Ders (sırayla)" diyor.</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>H20</td>
+<td>Kemal'in selamı</td>
+<td>Düşük</td>
+<td>Atölye görevi bittikten sonra Kemal'le konuş.</td>
+<td>"Atölye kurmak mı? Tarifi bildin mi önce, ona bak." her seferinde.</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>H21</td>
+<td>Levent menüsü</td>
+<td>Düşük</td>
+<td>Levent ile konuş.</td>
+<td>"Hoşça kal" ilk sırada, "Tamam" sonda.</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>H22</td>
+<td>Karakter yaratma</td>
+<td>Düşük</td>
+<td>Yeni oyun.</td>
+<td>Alt "Geri/Devam" çubuğu son satırları (Pantolon, Gözlük) yarı örtüyor.</td>
+<td>Açık</td>
+</tr>
+<tr>
+<td>H23</td>
+<td><code>gain</code> / hile</td>
+<td>Düşük</td>
+<td>Fiyatı olmayan bir adla <code>gain</code> + "İlk keşif ödülü" yeteneği.</td>
+<td>Sikke <code>NaN</code> oluyor. Oyundaki 825 tarifin ve bütün ganimetlerin fiyatı var (kontrol edildi); yalnız hile/elle ad yazınca olur.</td>
+<td>Açık (koruma önerilir)</td>
+</tr>
+<tr>
+<td>H24</td>
+<td>E önceliği (ACT 1)</td>
+<td>Düşük</td>
+<td>Ekin, Levent, Dursun'un yanında bir taş/dal varken E.</td>
+<td>E önce düğümü topluyor; kişiye tıklayınca konuşuluyor. Belgede bilinçli kural (v48 B4); ACT 2'de v1.77'de kişiler öne alındı, ACT 1'de değil.</td>
+<td>Açık (karar Boğaç'ın)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ana oturumdan gelip doğrulananlar: <strong>kötü son yok</strong> (aşağıda), <strong>tarla portalı</strong> (düzeldi). "Mor ışık tanrı modunda da öldürür" <strong>bilinçli karar</strong> (Boğaç), hata değil.</p>
+<h2 id="4-yapilamayanlar">4. Yapılamayanlar</h2>
+<ul>
+<li><strong>"Yalnız dönüş" (kotuson) ve dolayısıyla "Platin":</strong> <code>window.__plBadEnd</code>'i true yapan kod yok, kötü son yazılmamış (belgede de yazılı).</li>
+<li><strong>Bayılmayla "İlk düşüş":</strong> yapılamaz; yalnız gece mor ışık ölümü sayılıyor (H10). Başarım yine de gece ölümüyle kazanılabiliyor.</li>
+<li><strong>"Kesesi dolu" (zengin):</strong> "Sınırsız sikke" hilesi açıkken kazanılamaz (bilinçli). Ben hile kapalıyken geçerken kazandım.</li>
+<li><strong>İki adalık başarımlar</strong> (toplatum, madentum, agactum, canlitum, dusentum, reishep, tariftum, ani'nin ACT 2 parçası): ACT 1 tek başına yetmez; ACT 2 için bkz. Ana oturum raporu.</li>
+<li>v1.79'dan önce: Çift vuruş dersi hileyle bitirilemez hâle geliyordu; Kapan ustası Çayır'da yapılamıyordu (ikisi de düzeldi).</li>
+</ul>
+<h2 id="5-basarimlar-act-1-oturumu-28-41">5. Başarımlar (ACT 1 oturumu, 28 / 41)</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Başarım</th>
+<th>Kazanıldı</th>
+<th>Nasıl / neden</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hile (Oyunlardaki gibi)</td>
+<td>✓</td>
+<td>Ana menüde "cheat" yazarak (gerçek klavye)</td>
+</tr>
+<tr>
+<td>tarif1, tarif25, tarif100, tarif250</td>
+<td>✓</td>
+<td>İlk tarif kazanda gerçek; gerisi toplu öğretme (ev)</td>
+</tr>
+<tr>
+<td>gece1, hafta, ay</td>
+<td>✓</td>
+<td>Gün ilerledikçe (hile paneliyle zaman)</td>
+</tr>
+<tr>
+<td>av1, kurt</td>
+<td>✓</td>
+<td>Gerçek vuruşla</td>
+</tr>
+<tr>
+<td>kopru, kaya, iz</td>
+<td>✓</td>
+<td>Ekin'in ana görevleri</td>
+</tr>
+<tr>
+<td>lvl10, lvl25</td>
+<td>✓</td>
+<td>"Seviyeyi en üste çıkar" hilesi</td>
+</tr>
+<tr>
+<td>kesif</td>
+<td>✓</td>
+<td>"Haritayı aç" hilesi</td>
+</tr>
+<tr>
+<td>zengin</td>
+<td>✓</td>
+<td>Sınırsız sikke kapalıyken sikke &gt; 1000</td>
+</tr>
+<tr>
+<td>gorev10</td>
+<td>✓</td>
+<td>41 yan görev</td>
+</tr>
+<tr>
+<td>levent</td>
+<td>✓</td>
+<td>Levent'in gemisi</td>
+</tr>
+<tr>
+<td>ejder</td>
+<td>✓</td>
+<td>Kara ejder (tek vuruş hilesi)</td>
+</tr>
+<tr>
+<td>balik</td>
+<td>✓</td>
+<td>Gerçek olta mini oyunu, 10 balık</td>
+</tr>
+<tr>
+<td>kopek</td>
+<td>✓</td>
+<td>Yıldızsız Gezgin'den robot köpek (gerçek diyalog)</td>
+</tr>
+<tr>
+<td>olum1, olum5</td>
+<td>✓</td>
+<td>Gece ışıksız kalıp mor ışıkla 5 ölüm</td>
+</tr>
+<tr>
+<td>reis1, reis5, reis10, reis20</td>
+<td>✓</td>
+<td>ACT 1'in 34 türünün Reisi (oyunun <code>spawnBoss</code>'u + tek vuruş)</td>
+</tr>
+<tr>
+<td>ani</td>
+<td>✗</td>
+<td>11/17 anı; kalanları rastgele (uyku/bayılma/görev) ve ACT 2 görevleri</td>
+</tr>
+<tr>
+<td>tariftum</td>
+<td>✗</td>
+<td>ACT 2 tarifleri gerekir</td>
+</tr>
+<tr>
+<td>toplatum, madentum, agactum, canlitum, dusentum</td>
+<td>✗</td>
+<td>İki ada gerekir</td>
+</tr>
+<tr>
+<td>reishep</td>
+<td>✗</td>
+<td>ACT 2 Reisleri gerekir</td>
+</tr>
+<tr>
+<td>roket, act2, iyison</td>
+<td>✗</td>
+<td>ACT 2 (ana oturum)</td>
+</tr>
+<tr>
+<td>kotuson, platin</td>
+<td>✗</td>
+<td><strong>İmkânsız</strong> (kötü son yok)</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="6-test-edilenler-ve-yolu">6. Test edilenler ve yolu</h2>
+<div class="tw"><table>
+<thead>
+<tr>
+<th>Ne</th>
+<th>Yol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ana menü "cheat", yeni oyun, karakter, zorluk, giriş sahnesi, ad verme</td>
+<td>Gerçek tıklama/klavye</td>
+</tr>
+<tr>
+<td>Öğreticinin bütün adımları (böğürtlen, yeme, kazanda tarif, Tab el yapımı, envanterden kuşağa sürükleme, keskin taş, Nazlı'da satış, Börü kerevit, balta parçaları, Dursun örsü)</td>
+<td>Gerçek tıklama, E, Tab, I, sayı tuşları, fare sürükleme</td>
+</tr>
+<tr>
+<td>Ayarlar'dan hileler, hile paneli eşya arama</td>
+<td>Gerçek tıklama</td>
+</tr>
+<tr>
+<td>Ekin 1–14</td>
+<td>5 odun, köprü, yetenek ağacı, Koşmak, kamp ateşi kurma, kazma ile maden, Tab ile külçe, Durmuş'ta zırh dövme + giyme, Doğu geçidi, lav kertenkelesi, izler: gerçek etkileşim; malzemeler/tarifler kısmen hile/ev()</td>
+</tr>
+<tr>
+<td>41 yan görev</td>
+<td>Konuşma, kabul, teslim, "Başka iş var mı?" hep gerçek diyalog düğmeleri; getirme malzemeleri hileyle; av görevleri gerçek vuruş (hayvanlar ev() ile yakına çıkarıldı); Nazlı'ya gerçek satış; Dursun/Durmuş örsünde gerçek dövme; Kemal'e atölye/çit yaptırıp "Eline al" + tıklama ile yere koyma; Rıza'dan barınak ve Ahşap ev; barınakta gece E ile uyuma; Kamış çizme Tab'la; Nuri'ye teslim</td>
+</tr>
+<tr>
+<td>Hasan'ın tarlası</td>
+<td>4 alet Dursun'da gerçek dövme; tırmık→ek→sula→60 sn→tırpan E ile</td>
+</tr>
+<tr>
+<td>Kerevit kapanı</td>
+<td>Kapan Dursun'da dövüldü, E ile suya bırakıldı (iki bölgede); av süresi ev() ile kısaltıldı</td>
+</tr>
+<tr>
+<td>Börü'nün 7 dersi (Ulti dahil)</td>
+<td>Sayfa içinde çalışan bot, oyunun kendi klavye/fare olaylarıyla (Boşluk, Q, sol/sağ tık, basılı tutma, R)</td>
+</tr>
+<tr>
+<td>Balık tutma</td>
+<td>Olta, E, Boşluk mini oyunu (gerçek tuş olayları)</td>
+</tr>
+<tr>
+<td>Robot köpek</td>
+<td>Yıldızsız Gezgin ile gerçek diyalog</td>
+</tr>
+<tr>
+<td>Ölüm/bayılma</td>
+<td>Gece ışıksız bekleme; hp=1 + kurt saldırısı</td>
+</tr>
+<tr>
+<td>Reisler</td>
+<td>Oyunun <code>__p4.spawnBoss</code> + tek vuruş</td>
+</tr>
+<tr>
+<td>Kaydet → yükle</td>
+<td>Esc → Oyunu kaydet → Kayıt 2; sayfa yenilendi; ana menü → Yükle → Kayıt 2: görevler, dersler, gün, köpek, kurulu yapılar, zırh, başarımlar korundu</td>
+</tr>
+<tr>
+<td>v1.79 düzeltmeleri</td>
+<td>Kilitli ders kaydından (03) devam edilerek tarayıcıda tek tek doğrulandı; chk.js 0 hata; v48_bugs.js FAIL listesi v1.78 ile aynı (eski testler)</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="7-eklenen-hileler-degistirilen-dosyalar-commitler">7. Eklenen hileler, değiştirilen dosyalar, commitler</h2>
+<ul>
+<li>Hile eklenmedi (mevcut panel ve ev() yeterli oldu).</li>
+<li><strong>v1.79</strong> (<code>8138e77</code>): <code>index.html</code>, <code>proje/Hammadde_prototip.html</code> (aynı değişiklik), <code>proje/Hammadde_tasarim_belgesi.md</code> (önce belge: Börü dersleri, Reisler, Kapan ustası, portallar, görevler), <code>proje/DEVAM_NOTU.md</code>. Kod: <code>spawnFoe</code> sınırı, v155 tek vuruş <code>!a.ders</code>, <code>window.__plLessonOn</code> + <code>bossCheck</code>/<code>tickBossQ</code>, <code>pushBack</code> 140 px, ders metni ve başlığı, v150 a2 Nerede, <code>tickCamps</code> → <code>renderTut</code>, <code>gain</code> → <code>order</code> tekrarı yok. Ana oturumun <code>pClear</code> tarla düzeltmesi de bu commit'te.</li>
+<li>Test araçları (depoda değil): <code>/home/claude/qa/srv.js</code>, <code>helpers.js</code>, <code>bot.js</code>, <code>side.js</code>, <code>patch179.py</code>.</li>
+</ul>
+<h2 id="8-telefon-gorunumu">8. Telefon görünümü</h2>
+<ul>
+<li>Bu ajan denemedi; iş bölümüyle ana oturuma geçti (ev içi döşeme ve ACT 2 telefonda denendi) → bkz. Ana oturum raporu.</li>
+</ul>
+</main>
+</div>
+<script>
+(function(){
+  var lc=function(s){return (s||'').toLocaleLowerCase('tr-TR')};
+  document.querySelectorAll('.filt input').forEach(function(inp){
+    var wrap=document.getElementById(inp.getAttribute('data-t'));if(!wrap)return;
+    var rows=Array.prototype.slice.call(wrap.querySelectorAll('tbody tr'));
+    var cnt=document.getElementById('c'+inp.id.slice(1));
+    var raw=rows.map(function(r){return r.innerHTML});
+    var txt=rows.map(function(r){return lc(r.textContent)});
+    var t=null;
+    inp.addEventListener('input',function(){clearTimeout(t);t=setTimeout(run,120)});
+    function run(){
+      var q=lc(inp.value.trim()),n=0;
+      rows.forEach(function(r,i){
+        var hit=!q||txt[i].indexOf(q)>=0;r.classList.toggle('hide',!hit);
+        if(hit){n++;r.innerHTML=raw[i]}
+      });
+      cnt.textContent=q?(n+' / '+rows.length+' satır'):(rows.length+' satır');
+    }
+  });
+})();
+</script>
+
+</html>
