@@ -1,7 +1,7 @@
 # Hammadde — Yeni sohbet için devam notu
 
 ## 🚫 KURAL: claude.ai artifact'ları artık güncellenmez (28 Ekim 2026, Boğaç)
-- Proje GitHub'a geçti. Oyun ve belge artifact'ları (ApSQG1LVugQT7M7jbEfoJV, KAJf8nuvZLFCFfbqx6XBA9) bundan sonra **yayınlanmaz**; son halleri v1.83'te kaldı. Tek yayın: GitHub Pages (oyun + `belge.html/.pdf/.md`). Eski notlarda geçen "artifact'ı yayınla" adımları atlanır.
+- Proje GitHub'a geçti. Oyun ve belge artifact'ları (ApSQG1LVugQT7M7jbEfoJV — oyun, **silindi**; KAJf8nuvZLFCFfbqx6XBA9 — belge) bundan sonra **yayınlanmaz**, oyun artifact'ı yeniden oluşturulmaz; son halleri v1.83'te kaldı. Tek yayın: GitHub Pages (oyun + `belge.html/.pdf/.md`). Eski notlarda geçen "artifact'ı yayınla" adımları atlanır.
 
 ## 📥 KURAL: Tasarım belgesi her zaman indirilebilir (28 Ekim 2026, Boğaç)
 - belge her güncellendiğinde depo kökündeki indirilebilir kopyalar da aynı commit'te yenilenir: `belge.html` (telefonda ve PC'de açılır, internetsiz çalışır, tablolarda arama var), `belge.pdf` (yazdırmaya/paylaşmaya uygun) ve `belge.md`. Tek komut: depo kökünden `bash proje/tools/belge/yayinla.sh`. Yayındaki adresler (test eden arkadaşlara bunlar gönderilir): https://bogacavdar.github.io/purple-light/belge.html · https://bogacavdar.github.io/purple-light/belge.pdf · https://bogacavdar.github.io/purple-light/belge.md . claude.ai artifact'ı (https://claude.ai/artifact/KAJf8nuvZLFCFfbqx6XBA9) de güncellenir. Güncellemeden sonra Boğaç'a dosyaları ayrıca gönderme; linkler hep günceldir.
