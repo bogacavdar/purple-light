@@ -106,7 +106,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 | Köprü onarımı / Doğu geçidi | 40 / 320 |
 | Görevler, Börü'nün dersleri | tablolarda |
 
-- **Yetenek ağacı** (Y; v1.81): üç renkli ağaç — **Savaş** (kırmızı), **Ekonomi** (altın) ve **Dayanıklılık** (yeşil); her biri aşağıdan yukarı büyüyen 6 sıralı bir piramit (1+2+…+6 = 21 yetenek, toplam 63). Başta her ağacın yalnızca ilk yeteneği görünür; bir yeteneği alınca hemen üstündeki komşuları açılır. Fiyat ve seviye şartı sıraya göre: 100 (–), 250 (Sv 2), 500 (Sv 3), 1.000 (Sv 5), 2.500 (Sv 8), 5.000 (Sv 12). Tam liste "Yetenek ağacı" bölümünde.
+- **Yetenek ağacı** (Y; v1.82): üç renkli, gerçek ağaç biçiminde ağaç — **Savaş** (kırmızı), **Ekonomi** (altın) ve **Dayanıklılık** (yeşil); her birinde 21 yetenek (toplam 63), dallarla birbirine bağlı, alttan yukarı büyür. Başta yalnızca kök yetenek görünür; bir yetenek alınınca **yalnızca ona bağlı üstündekiler** açılır. Fiyat ve seviye şartı kata göre: 100 (–), 250 (Sv 2), 500 (Sv 3), 1.000 (Sv 5), 2.500 (Sv 8), 5.000 (Sv 12). Ekran boyutu sabit; üç eşit sekme. Tam liste "Yetenek ağacı" bölümünde.
 - **Koşu** Savaş ağacının ilk yeteneğidir: yalnızca 100 sikke; seviye, köprü ya da Atılma şartı yok.
 - **Atılma** yetenek ağacında değildir: öğreticide Börü ücretsiz öğretir (bkz. "Oyunun akışı").
 

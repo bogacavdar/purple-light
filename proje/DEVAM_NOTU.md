@@ -1198,6 +1198,14 @@ Kaynak: tarayıcıda oynanarak yapılan QA turu (/home/claude/qa/AJAN_RAPORU.md)
 - Menüde "Versiyon 1.79". chk.js 0 hata; v48_bugs.js'deki FAIL'ler v1.78'de de aynı (eski testler).
 
 
+## v1.82 (28 Ekim 2026) — yetenek ağaçları gerçek ağaç biçiminde, ikonlu
+Boğaç'ın çizimine göre (önce belge: parts/92, 20, 00).
+- Veri tek kaynaktan: `scratchpad/tree182.py` → `SKT` (her yetenek: id, p = bağlı olduğu tek yetenek, d = kat, c = fiyat, x/y = ağaçtaki sabit yer %, i = ikon eşyası). Belgedeki tablolar da aynı betikten.
+- Görünürlük `skVis`: kök + alınan yeteneklerin çocukları + alınanlar ve onlara giden yol. **Tanrı modu (sınırsız sikke) artık ağacın tamamını göstermez.** Satın alma `skSeen` = ebeveyni alınmış olmalı.
+- Ekran: üç eşit sekme (grid 3 sütun), sabit boy ağaç alanı (`.sktree` height min(470px,56vh); telefonda 420px/52vh), kategoriye göre arka plan/renk (`SKTREES[2]`). SVG dallar (kalınlık kata göre), gövde ve toprak. Düğümler yuvarlak ikon (`.skn`, `data-skn`), yazı yok; fare üstüne gelince `.sktip` (ad, etki, durum); tıklayınca alttaki `.skbar` şeridi (ad, etki, Al düğmesi `data-sk`).
+- Börü/koşma dersi yanıp sönmesi artık `[data-skn="K1"]`.
+- Test yapılmadı (kural); chk.js 0 hata.
+
 ## v1.81 (28 Ekim 2026) — öğretici atlama uyarısı, Börü'nün atılma dersi, Zırh, üç renkli yetenek ağacı
 Önce belge (parts/00, 10, 20, 40, 92), sonra kod. Boğaç bakıp geri dönüş yapacak.
 - **Eğitimi geç:** `tzSkip` artık Ekin'in uyarısını açar ("Öğrenmek istiyorum" / "Zaten biliyorum, geç"). Geçen hiçbir şey almaz (tarif, balta, meşale, XP, sikke yok); yalnızca menüler açılır ve Ekin'in ilk görevi gelir. Telefondaki "Emin misin? Geç" ön onayı kapatıldı (`if(false&&…)`).
