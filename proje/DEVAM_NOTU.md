@@ -3,6 +3,9 @@
 ## 🚀 KURAL: Her güncelleme aynı turda yayına gider (28 Ekim 2026, Boğaç)
 - Oyunda ya da belgede yapılan her değişiklik iş biter bitmez **aynı turda** commit + `git push` (main) ile yayına gönderilir; https://bogacavdar.github.io/purple-light/ ve belge linkleri (`belge.html`, `belge.pdf`, `belge.md`) **her zaman günceldir**. Yalnızca zip/dosya göndermek güncelleme sayılmaz (v1.84–v1.86 böyle yapıldı ve yayına gitmeden kaldı; tekrarlanmayacak). Oturumda depo yoksa ilk iş `add_repo` + `git clone --depth 1`, geliştirme klonda yapılır. Belge `parts/*.md`'den üretilir: `Hammadde_tasarim_belgesi.md` elle düzenlendiyse `parts` da güncellenmeli, yoksa `yayinla.sh` değişikliği ezer.
 
+## v1.87 (28 Ekim 2026) · telefonda Ulti düğmesi köpek menüsünü açıyordu
+- Ulti düğmesi (`v132-dokun`) R tuşunu `window`'a gönderiyordu; olay pencerenin kendisine gidince ana tuş dinleyicisi (R = Robot köpekler) ulti dinleyicisinden (`v123-ulti`, window capture) önce çalışıyordu. Artık olay `document.body`'ye gönderiliyor, ulti önce yakalanıyor. Arenada ve açık dünyada telefonda geçerli. Belge: Kontroller tablosu, R satırı.
+
 ## 🧰 Skill: purple-light-surum-yayinla (28 Ekim 2026, Boğaç)
 - Yayın adımları `.claude/skills/purple-light-surum-yayinla/SKILL.md` içinde. Her güncellemeden sonra tüm projenin zip'i (`git archive` ile, `origin/main`) istenmese de Boğaç'a gönderilir; belge değiştiyse belge.pdf/html/md de.
 

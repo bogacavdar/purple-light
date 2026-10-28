@@ -8,7 +8,7 @@
 | Q / sol tık | Vur (sol tıkla hayvana tıklamak da vurur) | **Vur** düğmesi (yakın canavara kilitlenir) |
 | Boşluk | Atıl / takla (Börü'nün atılma dersinden sonra); yerleştirirken döndür | **Atıl** düğmesi |
 | Sağ tık | Savuştur (bas) · savunma duruşu (basılı tut) | **Savuş** düğmesi |
-| R | Ulti (çubuk doluyken); değilse robot köpekler menüsü | **Ulti** düğmesi |
+| R | Ulti (çubuk doluyken); değilse robot köpekler menüsü (arenada R yalnızca ulti) | **Ulti** düğmesi (yalnızca ulti atar, köpek menüsünü açmaz; v1.87) |
 | F | En uygun yemeği ye | Tabak simgesi |
 | H | Eli boşalt (meyve silkelemek için) | El düğmesi |
 | 1–0 | Alet yuvasındaki aleti ele al | Alttaki kutuya dokun |
