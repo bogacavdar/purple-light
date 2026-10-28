@@ -1,5 +1,8 @@
 # Hammadde — Yeni sohbet için devam notu
 
+## 📎 KURAL: Belge her zaman indirilebilir haliyle iletilir (28 Ekim 2026, Boğaç)
+- Boğaç'a tasarım belgesi iletilirken her zaman indirilebilir hali iletilir: https://bogacavdar.github.io/purple-light/belge.pdf · https://bogacavdar.github.io/purple-light/belge.html · https://bogacavdar.github.io/purple-light/belge.md (istenirse dosya olarak da gönderilir). Artifact ya da başka bir link belge yerine verilmez.
+
 ## 🚫 KURAL: claude.ai artifact'ları artık güncellenmez (28 Ekim 2026, Boğaç)
 - Proje GitHub'a geçti. Oyun ve belge artifact'ları (ApSQG1LVugQT7M7jbEfoJV — oyun, **silindi**; KAJf8nuvZLFCFfbqx6XBA9 — belge) bundan sonra **yayınlanmaz**, oyun artifact'ı yeniden oluşturulmaz; son halleri v1.83'te kaldı. Tek yayın: GitHub Pages (oyun + `belge.html/.pdf/.md`). Eski notlarda geçen "artifact'ı yayınla" adımları atlanır.
 
