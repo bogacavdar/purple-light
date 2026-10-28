@@ -1198,6 +1198,15 @@ Kaynak: tarayıcıda oynanarak yapılan QA turu (/home/claude/qa/AJAN_RAPORU.md)
 - Menüde "Versiyon 1.79". chk.js 0 hata; v48_bugs.js'deki FAIL'ler v1.78'de de aynı (eski testler).
 
 
+## v1.83 (28 Ekim 2026) — ağaç başına 30 yetenek, ağaç silüeti, sade iki renkli ikonlar, tıklayınca satın alma
+Boğaç'ın ağaç fotoğrafı yalnızca şekil referansı (görsel olarak kullanılmadı). Önce belge (parts/92, 20, 00).
+- Veri kaynağı `scratchpad/tree183.py` (bu oturumda): ortak şablon `TPL` (30 yuva: 3'lük gövde n0-n2, üç ana dal A/B/C, yuvarlak taç; her yuvanın tek ebeveyni ve sabit x/y %'si) + her ağacın yuva→yetenek eşlemesi. Çıktı `SKT` (+ `SKICO`: 24×24 çizgi ikon yolları). Fiyat/seviye kata göre: 100/250/400/600/1000/1800/3000/5000, Sv 1/2/3/4/6/8/11/14 (`x.lv`).
+- Toprak/gövde çizimi kaldırıldı; dallar yalnızca yetenekler arasında. Kutu `.skbox` en-boy ≈1,15 (yükseklik `--th`), ağaç ortada.
+- İkonlar SVG çizgi (stroke=ağaç rengi, zemin koyu; alınanda ters). Aynı yeteneğin seviyeleri aynı ikon; seviye `.skp` noktaları. Çeper: alınabilir `#ffe27a` parlak, alınamaz gri+soluk, alınmış açık.
+- Satın alma ikona tıklayınca (`buySkill`); alttaki şerit kaldırıldı. Dokunmatikte ilk dokunuş bilgi kutusu (`skTip`), ikinci dokunuş satın alır (`skPT`, `skTipFor`).
+- Yeni etkiler: K7 (enerji +%75), K8 (enerji yenilenmesi ×2), K9 (koşu enerjisi ×0,5), S3/S4 (atılma 7/5 enerji, 0,38/0,30 sn), S5 (takla ×1,25 uzak, `v183` bloğu), W4 (×1,55), V1/V2 (savuşturma penceresi ×1,3/×1,6), V3 (sıyrılınca +14 enerji), E2 (satış +%60), G9 (bereket %20), G10 (yeniden çıkma ×0,4), C10 (+350 can), C11 (can ×5), C12/C13 (anlık hasar ×0,45/×0,3), C14 (demir mide II), D11 (kamp ateşi ×2), D12 (yemek iyileştirmesi ×1,5), D13 (tokluk ×0,75), D14 (üç durum etkisi ×0,4). Kemer: A1-A4 = 6/8/10/12 yuva; A8 kaldırıldı (5000 iade). T4, Z8, H5, B4, B6, B8 geri geldi.
+- Test yapılmadı (kural); chk.js 0 hata.
+
 ## v1.82 (28 Ekim 2026) — yetenek ağaçları gerçek ağaç biçiminde, ikonlu
 Boğaç'ın çizimine göre (önce belge: parts/92, 20, 00).
 - Veri tek kaynaktan: `scratchpad/tree182.py` → `SKT` (her yetenek: id, p = bağlı olduğu tek yetenek, d = kat, c = fiyat, x/y = ağaçtaki sabit yer %, i = ikon eşyası). Belgedeki tablolar da aynı betikten.
