@@ -14081,19 +14081,20 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
  const spot=()=>{for(let k=0;k<40;k++){const an=Math.random()*Math.PI*2,d=44+Math.random()*12,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;if(reachAt(x,y)&&!blocked(x,y)&&!isWater(tileAt(x,y)))return{x,y}}return{x:player.x+44,y:player.y}};
  const spawn=()=>{if(DL.crab){const i=animals.indexOf(DL.crab);if(i>=0)animals.splice(i,1)}const p=spot();
    DL.crab={k:'Kerevit',x:p.x,y:p.y,hp:ANIM['Kerevit'].hp,st:'wander',t:0,dx:0,dy:0,face:1,atk:0,flash:0,kb:null,step:0,mad:false,tut:true,dl:true};animals.push(DL.crab);DL.hx=p.x;DL.hy=p.y};
- const count=()=>small(`Sıyrılma: ${DL.n}/4`);
- function startLesson(after){if(DL.on)return;DL.on=true;DL.n=0;DL.ph='idle';DL.t=1.6;DL.after=after||null;skills.add('S1');st=maxSt();spawn();
+ const count=()=>small(`Sıyrılma: ${DL.n}/4`)+(DL.n===0&&!DL.frz?small('Kımıldama: kerevit saldıracak'):'');
+ function startLesson(after){if(DL.on)return;DL.on=true;DL.n=0;DL.px=null;DL.ph='idle';DL.t=1.6;DL.after=after||null;skills.add('S1');st=maxSt();spawn();
    try{document.body.classList.remove('nododge')}catch(e){}hint(count());sfx('found')}
  window.__plDodgeLesson=startLesson;
- const strikeDone=(ok)=>{const c=DL.crab;if(ok){DL.n++;floatText('Sıyrıldın!','#9fe07a');sfx('found')}else{floatText('Bir daha!','#e8c860');sfx('bad')}
+ const strikeDone=(ok,why)=>{const c=DL.crab;if(ok){DL.n++;floatText('Sıyrıldın!','#9fe07a');sfx('found')}else{floatText(why?why+' Bir daha!':'Bir daha!','#e8c860');sfx('bad')}
    if(DL.n>=4){finishLesson();return}DL.ph='idle';DL.t=1.3+Math.random()*.8;st=maxSt();hint(count())};
- function release(){if(!DL.frz)return;DL.frz=false;paused=false;hint(count());DL.lastD=NOW();doDodge();strikeDone(true)}
- {const _dd=doDodge;doDodge=function(){const was=dodge;const r=_dd.apply(this,arguments);if(dodge&&dodge!==was)DL.lastD=NOW();return r}}
+ function release(){if(!DL.frz)return;DL.frz=false;paused=false;hint(count());DL.lastD=NOW();DL.rel=true;try{doDodge()}finally{DL.rel=false}strikeDone(true)}
+ {const _dd=doDodge;doDodge=function(){if(DL.on&&DL.n===0&&!DL.rel)return;   /* v2.15: the first time only the prompted press rolls */const was=dodge;const r=_dd.apply(this,arguments);if(dodge&&dodge!==was)DL.lastD=NOW();return r}}
  // v1.89: the crab walks like a wild one: it comes to you, waits, lunges and stays where it landed; it never jumps elsewhere
  const walkTo=(c,tx,ty,sp,dt)=>{const dx=tx-DL.hx,dy=ty-DL.hy,d=Math.hypot(dx,dy);if(d<1){c.dx=0;c.dy=0;return true}const k=Math.min(d,sp*dt)/d,nx=DL.hx+dx*k,ny=DL.hy+dy*k;
    if(!blocked(nx,ny)&&!isWater(tileAt(nx,ny))){DL.hx=nx;DL.hy=ny}else if(!blocked(nx,DL.hy)&&!isWater(tileAt(nx,DL.hy)))DL.hx=nx;else if(!blocked(DL.hx,ny)&&!isWater(tileAt(DL.hx,ny)))DL.hy=ny;
    c.dx=dx/d;c.dy=dy/d;c.step=(c.step||0)+dt*8;return false};
  const tickDL=(dt)=>{const c=DL.crab;if(!DL.on||!c)return;
+   if(DL.n===0){if(DL.px==null){DL.px=player.x;DL.py=player.y}player.x=DL.px;player.y=DL.py;goal=null;for(const k in keys)keys[k]=false}   // v2.15: the first time you stand still and wait for it
    if(animals.indexOf(c)<0){spawn();return}
    c.hp=ANIM['Kerevit'].hp;c.mad=false;c.mv=null;c.lunge=null;c.wind=0;c.st='wander';c.t=1;
    const dx=player.x-c.x,dy=player.y-c.y,d=Math.hypot(dx,dy)||1;c.face=dx<0?-1:1;
@@ -14104,12 +14105,16 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
      c.x=DL.hx;c.y=DL.hy;
      if(DL.t<=0){DL.ph='wind';DL.t=.8;DL.wStart=NOW();floats.push({x:c.x,y:c.y-22,t:0,text:'!',color:'#ff3b30',size:16});sfx('bad')}}
    else if(DL.ph==='wind'){c.x=DL.hx+(Math.random()-.5)*3;c.y=DL.hy+(Math.random()-.5)*2;DL.t-=dt;
-     if(DL.t<=0){c.x=DL.hx;c.y=DL.hy;if(DL.n===0){DL.frz=true;paused=true;for(const k in keys)keys[k]=false;try{stopGather()}catch(e){}
-         hint(`${TOUCH?'Atıl düğmesine dokun!':'Boşluk\'a bas!'}${small('Kerevit saldırıyor: yana atıl!')}`);return}
-       DL.ph='lunge';DL.t=.2;DL.lx=c.x;DL.ly=c.y;DL.tx=player.x;DL.ty=player.y}}
-   else if(DL.ph==='lunge'){DL.t-=dt;const k=Math.min(1,1-DL.t/.2);let nx=DL.lx+(DL.tx-DL.lx)*k*.8,ny=DL.ly+(DL.ty-DL.ly)*k*.8;
+     if(DL.t<=0){c.x=DL.hx;c.y=DL.hy;
+       DL.ph='lunge';DL.t=.3;DL.ls=NOW();DL.hit=false;DL.lx=c.x;DL.ly=c.y;DL.tx=player.x;DL.ty=player.y}}
+   else if(DL.ph==='lunge'){DL.t-=dt;const k=Math.min(1,1-DL.t/.3);let nx=DL.lx+(DL.tx-DL.lx)*k,ny=DL.ly+(DL.ty-DL.ly)*k;
      if(blocked(nx,ny)||isWater(tileAt(nx,ny))){nx=c.x;ny=c.y}c.x=nx;c.y=ny;DL.hx=nx;DL.hy=ny;
-     if(DL.t<=0){const ok=!!dodge||(DL.lastD>=DL.wStart-.15&&NOW()-DL.lastD<.75);strikeDone(ok)}}};
+     // v2.15: judged the moment the claw reaches you: the roll must have begun while the crab was already coming (≤ 0.1 s before) and still be on
+     if(DL.n===0){if(Math.hypot(player.x-c.x,player.y-c.y)<=24){DL.frz=true;paused=true;for(const k in keys)keys[k]=false;try{stopGather()}catch(e){}   // v2.15: the first time the game stops just before the claw lands
+         hint(`${TOUCH?'Atıl düğmesine dokun!':'Boşluk\'a bas!'}${small('Kerevit saldırıyor: yana atıl!')}`)}else if(DL.t<=0){DL.ph='idle';DL.t=.6}return}   // you stepped away: it walks up and tries again
+     const rolledInTime=DL.lastD>=DL.ls-.1;
+     if(Math.hypot(player.x-c.x,player.y-c.y)<=13){const ok=!!dodge&&rolledInTime;strikeDone(ok,ok?'':(dodge||DL.lastD>=DL.wStart-.15?'Erken!':'Geç!'));return}
+     if(DL.t<=0){const ok=rolledInTime;strikeDone(ok,ok?'':(DL.lastD>=DL.wStart-.15?'Erken!':'Geç!'))}}};
  {const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);try{tickDL(dt)}catch(e){}return r}}
  window.addEventListener('keydown',e=>{if(!DL.frz)return;e.preventDefault();e.stopImmediatePropagation();if(e.code==='Space')release()},true);
  {const db=$('dodgebtn');if(db)db.addEventListener('pointerdown',e=>{if(!DL.frz)return;e.preventDefault();e.stopImmediatePropagation();release()},true)}
