@@ -9,6 +9,10 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.04 (29 Ekim 2026) · F topla, X ye, E gard; F yürüyüp toplar; sol tık tam açıya
+- Tuşlar: oyun içi kodlar aynı (E=etkileşim, F=ye, X=hile XP); yeni fabrika tuşları `DEFB` bağlama (BIND) olarak: interact KeyF, eat KeyX, parry KeyE (yeni KB eylemi, iç kodu `F13`), cheatXP KeyJ. İlk açılışta `hammadde.v204.keys` bayrağıyla bir kez BIND'e eklenir (kullanıcının çakışan bağlaması varsa o eylem atlanır). "Varsayılana dön" = `defB()`. Parry bloğuna F13 keydown/keyup (doParry+raise / lower). Yazılar kTxt ile otomatik yeni harfleri gösterir.
+- Yeni `<script id="v204">`: iç KeyE keydown'da menzilde hedef/yerde eşya yoksa 96 px içindeki en yakın node/ağaca `startGoal`. `attack(focus)` sarmalayıcı: yüz yönü vuruş inene kadar tam birim vektör (P4 gecikmesi için rAF ile bekler), çizimde 4 yön/8 yön pozu. Kayıtlara etkisi yok (tuş tercihi tarayıcıda).
+
 ## v2.03 (29 Ekim 2026) · sol tık her zaman vurur
 - Ana kanvas `pointerdown` (v109 satırı): fare sol tıkta `weaponHeld()` şartı kalktı; hedef yoksa ya da hayvansa `attack()` (yumruk dahil), başka bir hedefte (kişi, istasyon, node, placed, köprü…) eski yürü/etkileş yolu. Boş yere tıklamak artık yürütmez. Kayıtlara etkisi yok.
 

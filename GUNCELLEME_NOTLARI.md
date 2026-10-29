@@ -7,6 +7,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.04 · 29 Ekim 2026
+
+**Oynanış**
+- **Tuşlar değişti:** toplama/konuşma artık **F** (eskiden E), yemek **X** (eskiden F; basılı tutunca yemek listesi), **E** sağ tık gibi **savuşturur / basılı tutunca gard alır**. Diyaloglarda, anılarda ve balık tutarken ilerletmek de F. Hile tuşu "+100 XP" J oldu.
+- **F ile otomatik toplama:** menzilde bir şey yoksa F'ye basınca karakter en yakındaki toplanacak şeye (çalı, taş, maden, ağaç; en çok ~6 karo) kendisi yürüyüp topluyor.
+- **Sol tık tam tıklanan yöne vuruyor:** çaprazlar dahil her açıya; karakter de o yana (8 yönlü pozla) dönüyor. Önceden 4 yönden birine vuruyordu.
+
+**Arayüz**
+- Oyundaki bütün yazılar (öğretici, ipuçları, konuşmalar) yeni tuşları gösteriyor. Ayarlar → Kontroller'de yeni "Savuştur / gard" satırı var; "Varsayılana dön" yeni tuşlara döner. Daha önce kendi tuşlarını atadıysan seninkiler korunuyor.
+
+**Tasarım belgesi**
+- Kontroller tablosu yeni tuşlarla güncellendi; sürüm satırı 2.04.
+
+---
+
 ## Versiyon 2.03 · 29 Ekim 2026
 
 **Oynanış**

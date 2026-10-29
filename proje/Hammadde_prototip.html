@@ -1340,7 +1340,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.03</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.04</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -8510,11 +8510,14 @@ const KB=[['up','Yukarı yürü','KeyW','W'],['left','Sola yürü','KeyA','A'],[
   ['interact','Topla / konuş','KeyE','E'],['attack','Vur (tıklamak da vurur)','KeyQ','Q'],['dodge','Atıl / takla (yerleştirirken döndür)','Space','Boşluk'],['eat','Ye','KeyF','F'],['hand','Eli boşalt','KeyH','H'],
   ['inv','Envanter','KeyI','I'],['craft','Kazan','KeyB','B'],['handcraft','El yapımı','Tab','Tab'],['smith','Demirci','KeyT','T'],['book','Tarif kitabı','KeyK','K'],['sell','Pazar','KeyP','P'],
   ['char','Karakter','KeyC','C'],['skills','Yetenekler','KeyY','Y'],['quests','Görevler','KeyG','G'],['map','Harita','KeyM','M'],['camp','Kamp ateşi kur','KeyV','V'],['torch','Meşaleye reçine sür','KeyL','L'],['mark','Haritaya işaret','KeyN','N'],
-  ['dogs','Robot köpekler','KeyR','R'],['settings','Ayarlar','KeyO','O'],['cheatCoin','Hile: +100 sikke','KeyZ','Z'],['cheatXP','Hile: +100 XP','KeyX','X']];
+  ['dogs','Robot köpekler','KeyR','R'],['settings','Ayarlar','KeyO','O'],['cheatCoin','Hile: +100 sikke','KeyZ','Z'],['cheatXP','Hile: +100 XP','KeyX','X'],['parry','Savuştur / gard (basılı tut)','F13','—']];
 const KDEF={},KLAB={};for(const [id,,code,lab] of KB){KDEF[id]=code;KLAB[id]=lab}
 const KEYSTORE='hammadde.b5.keys.v1';
 let BIND={};   // action → {c:code,l:label}; only actions that differ from the default
-{const o=store.get(KEYSTORE);if(o&&typeof o==='object')for(const id in o){const v=o[id];if(KDEF[id]&&v&&typeof v.c==='string'&&v.c!==KDEF[id])BIND[id]={c:v.c,l:String(v.l||v.c).slice(0,10)}}}
+const DEFB={interact:{c:'KeyF',l:'F'},eat:{c:'KeyX',l:'X'},parry:{c:'KeyE',l:'E'},cheatXP:{c:'KeyJ',l:'J'}};   // v2.04: the new factory keys
+const defB=()=>JSON.parse(JSON.stringify(DEFB));
+{const o=store.get(KEYSTORE);if(o&&typeof o==='object')for(const id in o){const v=o[id];if(KDEF[id]&&v&&typeof v.c==='string'&&(v.c!==KDEF[id]||DEFB[id]))BIND[id]={c:v.c,l:String(v.l||v.c).slice(0,10)}}
+  if(!store.get('hammadde.v204.keys')){for(const id in DEFB)if(!BIND[id]){const taken=Object.keys(BIND).some(k=>BIND[k].c===DEFB[id].c);if(!taken)BIND[id]=Object.assign({},DEFB[id])}store.set(KEYSTORE,BIND);store.set('hammadde.v204.keys',1)}}
 const codeOf=id=>BIND[id]?BIND[id].c:KDEF[id],labOf=id=>BIND[id]?BIND[id].l:KLAB[id];
 const kOn=()=>Object.keys(BIND).length>0;
 let C2A={},DEFA={};   // pressed code → action; default code → action
@@ -8578,12 +8581,12 @@ function keysMenuKey(e){e.stopImmediatePropagation();if(e.type!=='keydown')retur
   if(e.code==='Escape'){waitKey=null;$('b5kmsg').textContent='Vazgeçildi.';renderKeys();return}
   if(FIXED.test(e.code)){$('b5kmsg').textContent='Bu tuş oyunda sabit (Esc, Enter, 1–0, ok tuşları); başka bir tuş seç.';sfx('bad');return}
   const lab=codeLabel(e),other=C2A[e.code];
-  if(other&&other!==id){const mine={c:codeOf(id),l:labOf(id)};BIND[other]=mine;if(mine.c===KDEF[other])delete BIND[other];
+  if(other&&other!==id){const mine={c:codeOf(id),l:labOf(id)};BIND[other]=mine;if(mine.c===KDEF[other]&&!DEFB[other])delete BIND[other];
     $('b5kmsg').textContent=`${lab} tuşu "${KB.find(k=>k[0]===other)[1]}" eylemindeydi: ikisi yer değiştirdi (o artık ${mine.l}).`}else $('b5kmsg').textContent=`${KB.find(k=>k[0]===id)[1]}: ${lab}`;
-  if(e.code===KDEF[id])delete BIND[id];else BIND[id]={c:e.code,l:lab};
+  if(e.code===KDEF[id]&&!DEFB[id])delete BIND[id];else BIND[id]={c:e.code,l:lab};
   store.set(KEYSTORE,BIND);rebuildMaps();applyKeyTexts();waitKey=null;sfx('pick');renderKeys();try{const b=$('b5kd').querySelector(`[data-kb="${id}"]`);if(b)b.focus()}catch(x){}}
 $('b5kd').addEventListener('click',e=>{const b=e.target.closest('[data-kb]');if(!b)return;waitKey=b.dataset.kb;$('b5kmsg').textContent='Yeni tuşa bas…';renderKeys()});
-$('b5k-def').addEventListener('click',()=>{BIND={};store.set(KEYSTORE,BIND);rebuildMaps();applyKeyTexts();waitKey=null;$('b5kmsg').textContent='Bütün tuşlar varsayılana döndü.';renderKeys();sfx('pick')});
+$('b5k-def').addEventListener('click',()=>{BIND=defB();store.set(KEYSTORE,BIND);rebuildMaps();applyKeyTexts();waitKey=null;$('b5kmsg').textContent='Bütün tuşlar varsayılana döndü.';renderKeys();sfx('pick')});
 $('b5k-close').addEventListener('click',closeKeys);
 $('s-keys').addEventListener('click',openKeys);$('p-keys').addEventListener('click',openKeys);
 B5.openKeys=openKeys;B5.closeKeys=closeKeys;
@@ -12879,6 +12882,8 @@ function drawShield(){const t=performance.now()/1000,up=Math.min(1,(t-PR.h0)/.08
 function raise(){if(PR.brk>0||frozenNow()||!met)return;PR.hold=true;PR.h0=performance.now()/1000}
 function lower(){PR.hold=false}
 cv.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button===2){e.preventDefault();doParry();raise()}});
+addEventListener('keydown',e=>{if(e.code!=='F13')return;e.preventDefault();if(e.repeat||onTitle||dlgOpen||craftOpen||paused||wake)return;doParry();raise()});   // v2.04: E guards like the right button
+addEventListener('keyup',e=>{if(e.code==='F13')lower()});
 addEventListener('pointerup',e=>{if(e.pointerType==='mouse'&&e.button===2)lower()},true);addEventListener('blur',lower);
 {const b=document.createElement('button');b.id='parrybtn';b.type='button';b.setAttribute('aria-label','Savuştur');b.textContent='Savuş';document.body.appendChild(b);
   const st_=document.createElement('style');st_.textContent='#parrybtn{display:none;position:fixed;z-index:4;border-radius:50%;font:inherit;font-weight:800;color:#e8f6ff;background:rgba(20,30,48,.8);border:3px solid #9ad8ff;touch-action:manipulation;-webkit-tap-highlight-color:transparent}#parrybtn.on{display:block}#parrybtn:active{transform:scale(.92)}body.ontitle #parrybtn,body.cine #parrybtn{display:none!important}';document.head.appendChild(st_);
@@ -14926,6 +14931,33 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
   try{return _dp.apply(this,arguments)}finally{drawChibi=dc}};
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v194: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v204">
+// v2.04: F (the gather key; the game still hears it as E) walks you to the nearest thing to gather when nothing is in reach;
+// a mouse strike goes exactly where you click (diagonals too), and the hero turns that way.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ const FAR=96;
+ addEventListener('keydown',e=>{try{if(e.code!=='KeyE'||e.repeat)return;if(onTitle||dlgOpen||craftOpen||paused||wake||fading||sailing||placing)return;
+   if(eTarget())return;for(const d of drops)if(d.t>=1&&Math.hypot(d.x-player.x,d.y-player.y+2)<28)return;   // something is in reach: the usual E
+   let b=null,bd=FAR;
+   for(const n of nodes){if(!n.alive)continue;const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;b=n}}
+   for(const t of trees){const d=Math.hypot(t.x-player.x,t.y-player.y);if(d<bd){bd=d;b=t}}
+   if(!b)return;startGoal(b.x,b.y);e.preventDefault();e.stopImmediatePropagation()}catch(x){}},true);
+ // the strike follows the pointer exactly: the facing is the exact direction until the blow lands (the wind-up waits a moment),
+ // while the drawing still uses the nearest of the four (or the diagonal pose)
+ let AIM=null;
+ const _at=attack;attack=function(focus){if(!focus)return _at.apply(this,arguments);
+   const dx=focus.x-player.x,dy=focus.y-player.y,l=Math.hypot(dx,dy);if(l<1)return _at.apply(this,arguments);
+   const ux=dx/l,uy=dy/l,f4={x:Math.abs(dx)>=Math.abs(dy)?Math.sign(dx):0,y:Math.abs(dy)>Math.abs(dx)?Math.sign(dy):0};
+   const fl={x:ux,y:uy};player.face=fl;let r;try{r=_at.call(this,null)}catch(x){player.face=f4;throw x}
+   AIM={fl,f4,t0:performance.now()};
+   try{const D8=window.__plD8;if(D8){if(Math.abs(ux)>.38&&Math.abs(uy)>.38){D8.on=true;D8.x=Math.sign(ux);D8.y=Math.sign(uy);D8.fx=f4.x;D8.fy=f4.y}else D8.on=false}}catch(x){}
+   const done=()=>{if(!AIM)return;const P=window.__p4;if(P&&P.pend&&performance.now()-AIM.t0<1200){requestAnimationFrame(done);return}if(player.face===AIM.fl)player.face=AIM.f4;AIM=null};
+   requestAnimationFrame(done);return r};
+ const _dp=drawPlayer;drawPlayer=function(){if(AIM&&player.face===AIM.fl){player.face=AIM.f4;try{return _dp.apply(this,arguments)}finally{player.face=AIM.fl}}return _dp.apply(this,arguments)};
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v204: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

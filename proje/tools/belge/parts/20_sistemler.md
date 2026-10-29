@@ -4,12 +4,12 @@
 |---|---|---|
 | WASD / oklar | Yürü | Kanvası sürükle (görünmez joystick) ya da gideceğin yere dokun |
 | Shift | Koş (Koşu yeteneği gerekir) | Çift dokunuş |
-| E | Topla, konuş, kapı, yatak, ağacı silkele | Nesneye dokun |
-| Q / sol tık | Vur. **Sol tık her zaman tıklanan yöne vurur** (el boşken yumruk, elde silah/alet varsa onunla; v2.03). Bir kişiye, kazana/örse/pazara, kurulmuş bir eşyaya ya da toplanacak bir şeye (çalı, maden, ağaç) tıklamak eskisi gibi oraya gidip konuşur/toplar. Boş yere tıklamak karakteri yürütmez; yürümek WASD/oklarla | **Vur** düğmesi (yakın canavara kilitlenir) |
+| F | Topla, konuş, kapı, yatak, ağacı silkele (v2.04'e kadar E idi). Menzilde bir şey yoksa karakter **en yakındaki toplanacak şeye** (çalı, taş, maden, ağaç; en çok ~6 karo / 96 px) kendisi yürür ve varınca toplar; o mesafede bir şey yoksa bir şey yapmaz | Nesneye dokun |
+| Q / sol tık | Vur. **Sol tık her zaman tıklanan yöne vurur**, tam tıklanan açıya (çaprazlar dahil; karakter 8 yönlü pozla o yana döner); el boşken yumruk, elde silah/alet varsa onunla (v2.03–2.04). Bir kişiye, kazana/örse/pazara, kurulmuş bir eşyaya ya da toplanacak bir şeye (çalı, maden, ağaç) tıklamak oraya gidip konuşur/toplar. Boş yere tıklamak karakteri yürütmez; yürümek WASD/oklarla |
 | Boşluk | Atıl / takla (Börü'nün atılma dersinden sonra); yerleştirirken döndür | **Atıl** düğmesi |
-| Sağ tık | Savuştur (bas) · savunma duruşu (basılı tut) | **Savuş** düğmesi |
+| Sağ tık / E | Savuştur (bas) · savunma duruşu, gard (basılı tut); E sağ tıkla aynıdır (v2.04) | **Savuş** düğmesi |
 | R | Ulti (çubuk doluyken); değilse robot köpekler menüsü (arenada R yalnızca ulti) | **Ulti** düğmesi (yalnızca ulti atar, köpek menüsünü açmaz; v1.87) |
-| F | En uygun yemeği ye | Tabak simgesi |
+| X | En uygun yemeği ye (basılı tut: yemek listesi; v2.04'e kadar F idi) | Tabak simgesi |
 | H | Eli boşalt (meyve silkelemek için) | El düğmesi |
 | 1–0 | Alet yuvasındaki aleti ele al | Alttaki kutuya dokun |
 | Tab | El yapımı | El simgesi |
@@ -21,7 +21,7 @@
 | O / Esc | Ayarlar / duraklat | Çark simgesi |
 
 - Bütün tuşlar **Ayarlar → Kontroller**'den yeniden atanabilir. Telefondaki dövüş düğmelerinin yeri ve boyutu (%60–200) aynı yerden ayarlanır.
-- E artık hiç vurmaz; yalnızca toplar ve konuşur.
+- F (toplama tuşu) hiç vurmaz; yalnızca toplar ve konuşur. Diyaloglarda, anılarda ve balık tutarken de F ilerletir (E artık gard tuşu). Hile tuşu "+100 XP" X'ten J'ye geçti. Tuşlar değişse de oyundaki bütün yazılar yeni tuşları gösterir. Ayarlar → Kontroller → "Varsayılana dön" bu yeni tuşlara döner.
 - **Karakterin 8 yönü (v1.94, çapraz pozlar v2.02):** karakter yürüdüğü yöne göre 8 pozdan birine döner: **ön** (aşağı), **arka** (yukarı), **sağ/sol profil** (yalnızca tam yana yürürken) ve dört **çapraz** poz; çaprazda karakter bütünüyle döner. **Ön-çapraz** (sağ-aşağı / sol-aşağı): yüz hafif yana dönük (karakter yaratma ekranındaki gibi); gövde gidilen yöne 1 piksel kayar, uzak yanı 2 sütun gölgededir, yaka o yana döner; yalnızca yakın kol görünür (uzak kol hiç çizilmez); bacaklar birbirine yakın, gidilen yandaki ayak bir adım yukarıda, ayak uçları gidilen yöne bakar. **Arka-çapraz** (sağ-yukarı / sol-yukarı): başın yalnızca arkası (saç) görünür, yanak/kulak/göz yok, baş **normal boyda**; sırt dönük çizilir: yakın yan gölgede, ortada sırt çizgisi; yalnızca yakın kol görünür; **ayaklar ön-çaprazdaki çizimle aynıdır** (gidilen yandaki ayak bir adım yukarıda, ayak uçları o yana). 2.01'deki aynalanmış ayaklar beğenilmedi, 2.02'de bu hale geri dönüldü (Boğaç, 29 Ekim 2026). Elde alet varsa kol gidilen yöne uzanır. Yön hareketin açısından seçilir: yatay ve dikey bileşenin ikisi de yeterince büyükse (yaklaşık 22°–68° arası) çapraz poz. Durunca son poz kalır; vururken, toplarken ya da biriyle konuşurken karakter o işe dönük 4 yönlü poza geçer. Karakter yaratma ekranında sürükleyerek çevirince aynı 8 poz görülür (Boğaç, 29 Ekim 2026).
 - Telefon yatay oynanır; dikey tutulunca "Telefonunu yan çevir" ekranı çıkar ("Yine de dikey oyna" ile geçilebilir).
 
