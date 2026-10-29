@@ -316,6 +316,9 @@ body,button,input{font-variant-numeric:tabular-nums lining-nums}
 .slot-btn.empty{opacity:.6}.slot-btn.warn{border-color:var(--bad)}.slot-btn.warn em{color:var(--bad)}
 .slot-btn:disabled{cursor:default}
 .slot-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.slot-row{display:flex;gap:6px;align-items:stretch}.slot-row .slot-btn{flex:1;min-width:0}
+.slot-del{flex:none;font-family:inherit;font-weight:700;font-size:13px;padding:0 12px;background:#2a1a18;border:2px solid #8a3a30;color:#ffb0a0;cursor:pointer}.slot-del:hover,.slot-del:focus-visible{background:#4a2420;outline:none;border-color:var(--bad)}
+.slot-ask{border:2px solid var(--panel-edge);background:#1c2419;padding:12px;text-align:center}.slot-ask p{margin:0 0 12px;line-height:1.45}.slot-ask-b{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .row{display:grid;grid-template-columns:110px minmax(0,1fr) 42px;gap:10px;align-items:center;text-align:left;margin:10px 0;font-size:15px}
 .row b{color:var(--accent);text-align:right;font-variant-numeric:tabular-nums}
 .row input{accent-color:#f2b84b;width:100%}
@@ -1344,7 +1347,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.14</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.15</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -6294,17 +6297,25 @@ function slotInfo(v){const d=(v&&v.data)||{},n=(x,def)=>{x=Math.floor(+x);return
 const latest=()=>{const a=saves();let best=null;for(const [id] of SLOTS)if(a[id]&&(!best||a[id].t>a[best].t))best=id;return best};
 let armed=null;
 function slotList(el,act,back){
-  const a=saves();
-  el.innerHTML=SLOTS.filter(([id])=>act==='load'||id!=='auto').map(([id,nm])=>{const v=a[id];
+  const a=saves(),nm=id=>(SLOTS.find(x=>x[0]===id)||[0,''])[1];armed=null;
+  // v2.15: overwriting and deleting both ask first, in the same panel (no browser pop-up)
+  const ask=(q,yes,no,go)=>{el.innerHTML=`<div class="slot-ask"><p>${q}</p><div class="slot-ask-b"><button class="mb" data-yes="1" type="button">${yes}</button><button class="mb ghost" data-no="1" type="button">${no}</button></div></div>`;
+    el.onclick=e=>{if(e.target.closest('[data-yes]')){go();return}if(e.target.closest('[data-no]'))slotList(el,act,back)};setTimeout(()=>{const b=el.querySelector('[data-no]');if(b)b.focus()},0)};
+  el.innerHTML=SLOTS.filter(([id])=>act==='load'||id!=='auto').map(([id,n])=>{const v=a[id];
     const info=v?slotInfo(v):'Boş';
-    const lbl=act==='load'?(v?'Yükle':''):(armed===id?'Üzerine yaz?':v?'Üzerine yaz':'Kaydet');
-    return `<button class="slot-btn${v?'':' empty'}${armed===id?' warn':''}" data-slot="${id}" type="button"${act==='load'&&!v?' disabled':''}><b>${nm}</b><span>${info}</span><em>${lbl}</em></button>`}).join('')
+    const lbl=act==='load'?(v?'Yükle':''):(v?'Üzerine yaz':'Kaydet');
+    return `<div class="slot-row"><button class="slot-btn${v?'':' empty'}" data-slot="${id}" type="button"${act==='load'&&!v?' disabled':''}><b>${n}</b><span>${info}</span><em>${lbl}</em></button>${v?`<button class="slot-del" data-del="${id}" type="button" aria-label="${n} kaydını sil" title="Kaydı sil">Sil</button>`:''}</div>`}).join('')
     +`<button class="mb ghost" data-back="1" type="button">Geri</button>`;
   el.onclick=e=>{
-    if(e.target.closest('[data-back]')){armed=null;back();return}
+    if(e.target.closest('[data-back]')){back();return}
+    const d=e.target.closest('[data-del]');
+    if(d){const id=d.dataset.del;if(!a[id])return;sfx('bad');
+      ask(`<b>${nm(id)}</b> silinecek (${esc(slotInfo(a[id]))}).<br>Emin misiniz? Bu geri alınamaz.`,'Eminim, sil','Vazgeç',()=>{const all=saves();delete all[id];const ok=store.set(SAVEKEY,all);toast(ok?`${nm(id)} silindi`:'Silinemedi: tarayıcı depolamaya izin vermiyor',!ok);slotList(el,act,back)});return}
     const b=e.target.closest('[data-slot]');if(!b||b.disabled)return;const id=b.dataset.slot;
-    if(act==='save'){if(a[id]&&armed!==id){armed=id;slotList(el,act,back);toast('Bu kayıt dolu: üzerine yazmak için bir kez daha bas');return}armed=null;const ok=saveTo(id);slotList(el,act,back);const nm=(SLOTS.find(x=>x[0]===id)||[0,''])[1];toast(ok?`${nm}: oyun kaydedildi`:'Şu an kaydedilemiyor (bir sahnenin ortasındasın); sahne bitince yeniden dene',!ok)}   // v1.51: saving always says whether it worked
-    else{claimSaves();applyState(a[id].data);closeTitle();resume();fadeIn();toast(`${SLOTS.find(x=>x[0]===id)[1]} yüklendi`)}
+    if(act==='save'){const doSave=()=>{const ok=saveTo(id);slotList(el,act,back);toast(ok?`${nm(id)}: oyun kaydedildi`:'Şu an kaydedilemiyor (bir sahnenin ortasındasın); sahne bitince yeniden dene',!ok)};   // v1.51: saving always says what happened
+      if(a[id]){ask(`<b>${nm(id)}</b> yuvasında bir kayıt var (${esc(slotInfo(a[id]))}).<br>Yeni kaydı üzerine yazayım mı?`,'Üzerine yaz','Vazgeç',doSave);return}
+      doSave()}
+    else{claimSaves();applyState(a[id].data);closeTitle();resume();fadeIn();toast(`${nm(id)} yüklendi`)}
   };
 }
 // ---------- character creator: gender, skin, hair, clothes, glasses and hats ----------
