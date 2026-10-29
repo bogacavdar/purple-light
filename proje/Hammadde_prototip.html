@@ -1340,7 +1340,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.11</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.12</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -7798,6 +7798,7 @@ function tutRow(){
   const h=n=>inv[n]||0;
   if(tz===2)return{t:'Ekin · Ye',r:'Böğürtlen',items:[{n:'Böğürtlen',need:5,have:Math.min(5,tzEat),ng:1}]};   // v49-p3
   if(tz===6&&window.__p3&&window.__p3.hold)return{t:'Zümrüt · Meşaleyi eline al',r:'Kaba meşale',items:[{n:'Kaba meşale',need:1,have:torchHeld()?1:0,ng:1}]};
+  if(tz===6&&window.__p3&&window.__p3.low)return{t:'Zümrüt · Meşaleyi elinden indir',r:'Kaba meşale',items:[{n:'Kaba meşale',need:1,have:torchHeld()?0:1,ng:1}]};   // v2.12: no stone row (and no blue stones) before the torch is put away
   if(tz===1)return{t:'Ekin · Böğürtlen',r:'Böğürtlen',items:[{n:'Böğürtlen',need:5,have:Math.min(5,h('Böğürtlen')+tzEat)}]};
   if(tz===4&&!foundSet.has('Kaba meşale'))return rowFor('Kaba meşale',1,'Zümrüt · İlk tarif');
   if(tz===5)return rowFor('Kaba meşale',1,'Zümrüt · Elinle yap');
@@ -7942,17 +7943,24 @@ function drawCall(){const c=B3.call;const dt=Math.max(0,Math.min(.1,time-lastT))
   const L=wrapText(c.txt,38),w=Math.ceil(Math.max.apply(null,L.map(l=>ctx.measureText(l).width)))+8,h=L.length*8+3;
   const vw2=vw/S,vh2=vh/S;let bx,by;
   // v48c: the bubble keeps clear of every HUD box (tutorial card, tracking bar, banners, prompt, hotbar, map, menus)
-  {const cr=cv.getBoundingClientRect(),hud=callHud(cr);const fits=(x0,y0)=>x0-w/2>=cam.cx+2&&x0+w/2<=cam.cx+vw2-2&&y0>=cam.cy+2&&y0+h<=cam.cy+vh2-2;
-   const hits=(x0,y0)=>{let n=0;const L0=(x0-w/2-cam.cx)*S,T0=(y0-cam.cy)*S,R0=L0+w*S,B0=T0+h*S;for(const r of hud)if(L0<r.right+3&&R0>r.left-3&&T0<r.bottom+3&&B0>r.top-3)n+=(r.width*r.height>1)?1:0;
-     {const pl=(player.x-8-cam.cx)*S,pr=(player.x+8-cam.cx)*S,pt=(player.y-26-cam.cy)*S,pb=(player.y+2-cam.cy)*S;if(L0<pr&&R0>pl&&T0<pb&&B0>pt)n+=.3}return n};   // the player counts as a soft obstacle
-   const wx=c.who.x,wy=c.who.y,cand=[[wx,wy-38-h],[wx,wy+8],[wx-w/2-14,wy-24-h/2],[wx+w/2+14,wy-24-h/2],[wx,wy-60-h],[wx,wy+30]];
-   let best=null,bs=1e9;for(const [x0,y0] of cand){const cx0=Math.max(cam.cx+w/2+4,Math.min(cam.cx+vw2-w/2-4,x0)),cy0=Math.max(cam.cy+4,Math.min(cam.cy+vh2-h-4,y0));const sc=hits(cx0,cy0)*1000+Math.hypot(cx0-x0,cy0-y0)+(fits(x0,y0)?0:50);if(sc<bs){bs=sc;best=[cx0,cy0]}if(sc<1)break}
-   if(bs>=1000){const want=[Math.max(cam.cx+w/2+4,Math.min(cam.cx+vw2-w/2-4,wx)),Math.max(cam.cy+4,Math.min(cam.cy+vh2-h-4,wy-38-h))];   // every spot near the speaker is covered: the nearest free spot on screen
-     for(let gy=cam.cy+4;gy<=cam.cy+vh2-h-4;gy+=Math.max(6,h/2))for(let gx=cam.cx+w/2+4;gx<=cam.cx+vw2-w/2-4;gx+=Math.max(8,w/4)){const sc=hits(gx,gy)*1000+Math.hypot(gx-want[0],gy-want[1]);if(sc<bs){bs=sc;best=[gx,gy]}}}
-   bx=best[0];by=best[1]}
+  // v2.12: the place is chosen once (relative to the speaker) and kept; it moves with the speaker, not with you. Only a HUD box covering it for
+  // half a second makes it choose again. The player is no obstacle. Off screen it waits at the edge with a small arrow towards the speaker.
+  {const cr=cv.getBoundingClientRect(),hud=callHud(cr);
+   const hits=(x0,y0)=>{let n=0;const L0=(x0-w/2-cam.cx)*S,T0=(y0-cam.cy)*S,R0=L0+w*S,B0=T0+h*S;for(const r of hud)if(L0<r.right+3&&R0>r.left-3&&T0<r.bottom+3&&B0>r.top-3)n+=(r.width*r.height>1)?1:0;return n};
+   const clampX=x0=>Math.max(cam.cx+w/2+4,Math.min(cam.cx+vw2-w/2-4,x0)),clampY=y0=>Math.max(cam.cy+4,Math.min(cam.cy+vh2-h-4,y0));
+   const wx=c.who.x,wy=c.who.y;
+   const pick=()=>{const cand=[[0,-38-h],[0,8],[-w/2-14,-24-h/2],[w/2+14,-24-h/2],[0,-60-h],[0,30]];let best=cand[0],bs=1e9;
+     for(const [dx,dy] of cand){const x0=wx+dx,y0=wy+dy,cx0=clampX(x0),cy0=clampY(y0);const sc=hits(cx0,cy0)*1000+Math.hypot(cx0-x0,cy0-y0);if(sc<bs){bs=sc;best=[dx,dy]}if(sc<1)break}
+     c.off=best;c.cov=0};
+   if(!c.off||c.w!==w||c.h!==h){c.w=w;c.h=h;pick()}
+   bx=clampX(wx+c.off[0]);by=clampY(wy+c.off[1]);
+   if(hits(bx,by)){c.cov=(c.cov||0)+dt;if(c.cov>.5){pick();bx=clampX(wx+c.off[0]);by=clampY(wy+c.off[1])}}else c.cov=0;
+   c.edge=Math.abs(bx-(wx+c.off[0]))>1||Math.abs(by-(wy+c.off[1]))>1}
   const x=Math.round(bx-w/2),y=Math.round(by);
   px(x-1,y-1,w+2,h+2,'#11170f');px(x,y,w,h,'#eaf6ff');px(x,y,w,1,'#9fd0ff');
-  if(Math.abs(bx-c.who.x)<w/2&&by<c.who.y){px(Math.round(c.who.x)-2,y+h,4,2,'#eaf6ff');px(Math.round(c.who.x)-1,y+h+2,2,1,'#eaf6ff')}
+  if(c.edge){const dx=c.who.x-bx,dy=c.who.y-(by+h/2),l=Math.hypot(dx,dy)||1,ux=dx/l,uy=dy/l;const ax=Math.max(x+2,Math.min(x+w-3,Math.round(bx+ux*(w/2+3)))),ay=Math.max(y+1,Math.min(y+h-2,Math.round(by+h/2+uy*(h/2+3))));   // v2.12: speaker off screen: a small arrow points the way
+    const ox=Math.round(ux*3),oy=Math.round(uy*3);px(ax+ox-1,ay+oy-1,3,3,'#11170f');px(ax+ox,ay+oy,1,1,'#ffd27a');px(ax+Math.round(ux*1.5),ay+Math.round(uy*1.5),2,2,'#ffd27a')}
+  else if(Math.abs(bx-c.who.x)<w/2&&by<c.who.y){px(Math.round(c.who.x)-2,y+h,4,2,'#eaf6ff');px(Math.round(c.who.x)-1,y+h+2,2,1,'#eaf6ff')}
   ctx.fillStyle='#14304a';ctx.textAlign='center';ctx.textBaseline='middle';L.forEach((l,i)=>ctx.fillText(l,bx,y+5.5+i*8));ctx.textBaseline='alphabetic';ctx.restore()}
 const _frameBody=frameBody;frameBody=function(now){_frameBody.apply(this,arguments);try{drawCall()}catch(e){}};
 
