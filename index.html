@@ -5689,8 +5689,15 @@ function attack(focus){
   if(focus){const dx=focus.x-player.x,dy=focus.y-player.y;player.face={x:Math.abs(dx)>=Math.abs(dy)?Math.sign(dx):0,y:Math.abs(dy)>Math.abs(dx)?Math.sign(dy):0}}
   const fx=player.face.x,fy=player.face.y;swing={t:0,fx,fy,w:w.reach};sfx('swing');
   const dm=Math.round(w.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1));let hitAny=false;
-  for(const a of animals.slice()){const ar=ANIM[a.k].r,dx=a.x-player.x,dy=(a.y-Math.min(8,ar))-(player.y-6),d=Math.hypot(dx,dy);if(d>w.reach+ar+3)continue;   // v2.08: from the chest (where the blow is drawn) to the body, with the body's size
-    {const fl=Math.hypot(fx,fy)||1;if(d>ar+6&&(dx*fx+dy*fy)/(d*fl)<-.1)continue}   // a wide cone: whatever the blow touches is hit, diagonals too
+  for(const a of animals.slice()){const ar=ANIM[a.k].r;let dx=a.x-player.x,dy=(a.y-Math.min(8,ar))-(player.y-6),d=Math.hypot(dx,dy);
+    const AR_=window.__plART,M=AR_&&AR_[a.k]&&AR_[a.k].W?AR_[a.k]:null;
+    if(M){   // v2.12: the whole drawing counts (claws, tail, horns): distance from the chest to the nearest point of the sprite's box
+      const s=Math.max(.25,+(a.scale||1)||1),f=a.face<0?-1:1,l0=a.x+(f>0?-M.OX:M.OX-M.W)*s+1,r0=l0+M.W*s-2,t0=a.y-M.OY*s+1,b0=t0+M.H*s-2,cx=player.x,cy=player.y-6;
+      const nx=Math.max(l0,Math.min(r0,cx)),ny=Math.max(t0,Math.min(b0,cy)),ex=nx-cx,ey=ny-cy,e=Math.hypot(ex,ey);if(e>w.reach+3)continue;
+      {const fl=Math.hypot(fx,fy)||1;if(e>6&&(ex*fx+ey*fy)/(e*fl)<-.1)continue}
+      if(d<1){dx=ex;dy=ey;d=e}}
+    else{if(d>w.reach+ar+3)continue;   // v2.08: from the chest (where the blow is drawn) to the body, with the body's size
+      {const fl=Math.hypot(fx,fy)||1;if(d>ar+6&&(dx*fx+dy*fy)/(d*fl)<-.1)continue}}   // a wide cone: whatever the blow touches is hit, diagonals too
     hitAny=true;a.hp-=dm;a.flash=.15;madPack(a);a.kb={vx:dx/(d||1)*140,vy:dy/(d||1)*140,t:.12};
     floats.push({x:a.x,y:a.y-12,t:0,text:`-${dm}`,color:'#ffffff'});sfx('hit');
     if(a.hp<=0)killAnimal(a);if(w.n!==null||w.dmg>3)break}
@@ -9414,6 +9421,7 @@ function halo2(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();const g=ct
   g.addColorStop(0,`rgba(110,190,255,${(.55+.25*p).toFixed(3)})`);g.addColorStop(.55,`rgba(70,150,255,${(.32+.18*p).toFixed(3)})`);g.addColorStop(1,'rgba(60,140,255,0)');
   ctx.fillStyle=g;ctx.beginPath();ctx.ellipse(x,y,r,r*.72,0,0,Math.PI*2);ctx.fill();ctx.restore()}
 function ring2(x,y,r,k){const p=.5+.5*Math.sin(time*4.2+k);ctx.save();ctx.strokeStyle=`rgba(170,225,255,${(.6+.4*p).toFixed(3)})`;ctx.lineWidth=1.5;ctx.beginPath();ctx.ellipse(x,y,r+p*1.5,(r+p*1.5)*.62,0,0,Math.PI*2);ctx.stroke();ctx.restore()}
+window.__plART=ART;   // v2.12: the base hit test reads the sprite boxes
 drawAnimal=function(a,time){const M=ART[a.k];if(!M)return prevDraw(a,time);
   const s=Math.max(.25,+nn(a.scale,1)||1),x=Math.round(a.x),y=Math.round(a.y),f=a.face<0?-1:1,F=pal(a,M,time),glow=glowOn(a.k);
   const fly=a.k==='Kül cini'?Math.round(Math.sin(time*3+a.x*.05)*1.5)-2:0;

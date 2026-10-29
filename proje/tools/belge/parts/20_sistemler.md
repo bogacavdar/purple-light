@@ -257,6 +257,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Hasan'ın ödüllerinden, hasatt
 | Asalar, ateşli silahlar | ACT 2 bölümündeki tablo | 210–340 | |
 
 - **Vuruş ne zaman değer (v2.08):** vuruşun çizildiği yer (karakterin göğsü) ile canlının **gövdesi** arasındaki uzaklık, silahın menzili + canlının boyu + 3 pikseli geçmiyorsa ve canlı vuruş yönünün en çok ~95° yanındaysa (çaprazlar dahil, geniş bir koni) vuruş değer ve hasar verir. Vuruş efekti canlının görseline değdiği an hasar sayılır; çok yakındaki (gövdesine yapışık) canlı yönden bağımsız vurulur. Yumruk ve tek elli silahlar ilk değdiği canlıya vurur.
+- **Canlının her yeri sayılır (v2.12):** uzaklık canlının gövde noktasına değil, **çiziminin kapladığı kutuya** (kıskaçlar, kuyruk, boynuz, kanat dahil; kenarlardan 1 piksel içeride) ölçülür: göğüsten kutunun en yakın noktasına uzaklık silahın menzili + 3 pikseli geçmiyorsa ve o nokta vuruş yönünün en çok ~95° yanındaysa vuruş değer. Böylece kerevitin kıskacına, geyiğin boynuzuna değen vuruş da hasar verir. Kutusu olmayan (kodla çizilen) canlılarda yukarıdaki kural geçerli.
 
 - Gerçek hasar = silah × (1 + 0,03 × (seviye − 1)) × Güç etkisi 1,2 × Güçsüzlük 0,8. Silah yuvasındaki silah, elde silah yokken kullanılır.
 - Vuruş üç evrelidir (hazırlık, darbe, takip); isabette kısa bir donma olur, ıskalarsan bir an açık kalırsın. Her isabet silahı 1 köreltir.
