@@ -7,6 +7,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.20 · 29 Ekim 2026
+
+**Düzeltmeler**
+- **Ciddi: telefonda kazan ekranı sığmıyordu.** Telefon yatay tutulunca kazan penceresi ekranın üstünde ~100 piksel boşluk bırakıp yalnızca alt yarıya sıkışıyordu (telefon, bilgisayar boyutu sayılıyordu); başlık ve arama satırı da bu alanın yarısını yiyordu, liste ve kazan kesik görünüyordu.
+
+**Arayüz**
+- **Telefona özel kazan ve örs ekranı:** pencere artık bütün ekranı kaplıyor (öğretici kartı varsa yalnızca onun kadar yer bırakıyor). Başlık satırı ve arama satırı ince; altta iki sütun var: solda tarif listesi, sağda seçtiğin tarif, malzemeler, kazan, düğmeler ve envanterin. İki sütun da kendi içinde kayıyor. Kazan alanı alçaldı, yazılar ve kareler telefona göre küçüldü. Örsler (Dursun, Durmuş ve kuzenleri) de aynı düzende. Bilgisayar ve tablette hiçbir şey değişmedi.
+
+**Tasarım belgesi**
+- "Tarifler: kazan, el yapımı, örs, ustalar" bölümüne "Telefonda kazan ve örs ekranı"; sürüm satırı 2.20.
+
 ## Versiyon 2.19 · 29 Ekim 2026
 
 **Arayüz**

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.19** ile birebir (29 Ekim 2026). Bu sürümde: bir canlıyı ilk kez öldürünce ekranın ortasında "Almanağa eklendi" yazısı çıkar; oyundaki ilk avda Almanak düğmesi mavi parlar ve ok onu gösterir.
+Sürüm: **Versiyon 2.20** ile birebir (29 Ekim 2026). Bu sürümde: telefonda kazan ve örs penceresi bütün ekranı kaplıyor, iki sütun halinde (tarifler | kazan) kendi içinde kayıyor; üstteki boşluk kalktı.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
