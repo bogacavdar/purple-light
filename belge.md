@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 1.88** ile birebir (29 Ekim 2026; sayılar 1.75 üzerinde ölçüldü, sonraki sürümlerin değişiklikleri işlendi; 1.81: öğretici atlama uyarısı, Börü'nün atılma dersi, Zırh özelliği, üç renkli yetenek ağacı; 1.82–1.83: yetenek ağaçları ağaç biçiminde, ikonlu, ağaç başına 30 yetenek; 1.84: Zümrüt, Dursun ve Durmuş'un 15 kuzeni, demircilerde kademe kuralı, kuzenlere özel 15 silah/zırh, 45 yeni görev ve Elmas Nine'nin ortak ara sahnesi; 1.85: adanın yeni yerleşimi: altı eşit biyom sırayla, üç ayrı onarılan köprü, patlayınca çöken sıradağ; 1.86: ACT 1'in görev sistemi baştan: tek görev, siyah !, sarı çember, 139 görev, Ekin'in ayak işleri, dersler, köprü/patlama/gemi onay pencereleri; 1.87: telefonda Ulti düğmesi yalnızca ulti atar; 1.88: tokken de yemek yenir). Bu belgedeki bütün sayılar (can, hasar, fiyat, ihtimal, adet) oyunun çalışan halinden ölçülerek çıkarıldı; kodu açmadan bir şeyin oyunda nasıl yapıldığını buradan bulabilmelisin.
+Sürüm: **Versiyon 1.89** ile birebir (29 Ekim 2026; sayılar 1.75 üzerinde ölçüldü, sonraki sürümlerin değişiklikleri işlendi; 1.81: öğretici atlama uyarısı, Börü'nün atılma dersi, Zırh özelliği, üç renkli yetenek ağacı; 1.82–1.83: yetenek ağaçları ağaç biçiminde, ikonlu, ağaç başına 30 yetenek; 1.84: Zümrüt, Dursun ve Durmuş'un 15 kuzeni, demircilerde kademe kuralı, kuzenlere özel 15 silah/zırh, 45 yeni görev ve Elmas Nine'nin ortak ara sahnesi; 1.85: adanın yeni yerleşimi: altı eşit biyom sırayla, üç ayrı onarılan köprü, patlayınca çöken sıradağ; 1.86: ACT 1'in görev sistemi baştan: tek görev, siyah !, sarı çember, 139 görev, Ekin'in ayak işleri, dersler, köprü/patlama/gemi onay pencereleri; 1.87: telefonda Ulti düğmesi yalnızca ulti atar; 1.88: tokken de yemek yenir; 1.89: mıknatıs menzili %30 kısa, öğreticide gösterilen her düğme mavi parlar ve okla gösterilir, Zümrüt meşaleyi anlatır, Börü'nün kereviti yürüyerek saldırır, dövüş WASD + sol tıkla öğretilir, demirciler yarı hızda döver, ağaç keserken "Kesiliyor" yazar). Bu belgedeki bütün sayılar (can, hasar, fiyat, ihtimal, adet) oyunun çalışan halinden ölçülerek çıkarıldı; kodu açmadan bir şeyin oyunda nasıl yapıldığını buradan bulabilmelisin.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -161,27 +161,29 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 | Adım | Kim | Ne yaparsın | Sonuç |
 |---|---|---|---|
 | 1 | Ekin | Kampın çevresine konan 5 böğürtleni topla (telefonda önce sürükleyerek ve dokunarak yürüme) | — |
-| 2 | Ekin | Yemek düğmesiyle (F) 5 böğürtlen ye | Cadı Zümrüt görünür; Ekin seni kuzeye, ormanın kıyısına yollar |
+| 2 | Ekin | Yemek düğmesiyle (F) 5 böğürtlen ye (soldaki yemek düğmesi mavi parlar ve ok onu gösterir; yemek listesi açılınca Böğürtlen'in **Ye** düğmesi parlar) | Cadı Zümrüt görünür; Ekin seni kuzeye, ormanın kıyısına yollar |
 | 3 | Zümrüt | Zümrüt'e git ve konuş | Kazanın yanına 2 Dal, 2 Lif, 2 Yaprak konur |
 | 4 | Zümrüt | Kazanda **Kaba meşale** tarifini öğren | Malzemeler yeniden konur |
-| 5 | Zümrüt | El yapımı ekranında (Tab) meşaleyi yap, bir yuvaya koyup eline al | Kazanın yanına 4 Taş konur |
+| 5 | Zümrüt | El yapımı ekranında (Tab) meşaleyi yap, bir yuvaya koyup eline al | Kazanın yanına 4 Taş konur. Meşale ele gelince Zümrüt **meşaleyi anlatır**: gündüz işe yaramaz, gece içindir; yalnızca eldeyken yanar ve Kaba meşale yaklaşık **110 saniye** yanınca biter (yağmurda daha çabuk); gündüz elinden indir, akşam karanlığında eline al, yedeğin olsun |
 | 6 | Zümrüt | 4 taşı topla | — |
 | 7 | Zümrüt | Kazanda **Keskin taş** tarifini öğren (2 Taş) | — |
 | 8 | Zümrüt | Kalan 2 taşla elle Keskin taş yap | Zümrüt kuzeydoğudaki Nazlı'yı söyler |
 | 9 | Nazlı | Pazarcı Nazlı ile tanış | Pazar "Sat" sekmesiyle açılır |
 | 10 | Nazlı | Keskin taşı sat | Nazlı doğudaki Börü'yü söyler |
-| 11 | Börü | Börü ile konuş, çıkan **kereviti yumrukla** (yumruk 4 hasar); ardından **atılma dersi** ve **yetenek ağacı** (aşağıda) | Atılma öğrenilir (ücretsiz); Taş balta, Sopa ve İp tarifleri öğrenilmiş olur; +6 Taş; Börü'nün yanına 3 Dal, 8 Lif, 4 Taş konur |
-| 12 | Börü | Balta parçalarını elle yap: 2 Keskin taş → 1 Sopa → 2 Keskin taş → 2 İp (2 Taş da yanında kalsın) | — |
-| 13 | Dursun | Kuzeydeki Demirci Dursun'da örste **Taş balta**yı döv (ücretsiz), sonra baltayı eline al | Öğretici biter; ok Ekin'i gösterir, Ekin ilk ana görevi verir |
+| 11 | Börü | Börü ile konuş, çıkan **kereviti yumrukla** (yumruk 4 hasar). Bilgisayarda dövüş şöyle öğretilir: **WASD ya da yön tuşlarıyla** yürüyüp kerevite yaklaş, **sol tıkla** vur (bu derste sol tık yürütmez, tıklanan yöne yumruk atar; telefonda kerevite dokunulur); ardından **atılma dersi** ve **yetenek ağacı** (aşağıda) | Atılma öğrenilir (ücretsiz); Taş balta, Sopa ve İp tarifleri öğrenilmiş olur; +6 Taş; Börü'nün yanına 3 Dal, 8 Lif, 4 Taş konur |
+| 12 | Börü | Balta parçalarını elle yap: 2 Keskin taş → 1 Sopa → 2 Keskin taş → 2 İp (2 Taş da yanında kalsın). Sıradaki parçanın malzemesi tamamsa el ikonu (Tab) parlar; el yapımı ekranında o parçanın (Keskin taş, Sopa ya da İp) **Yap** düğmesi mavi parlar, ok onu gösterir ve liste oraya kayar | — |
+| 13 | Dursun | Kuzeydeki Demirci Dursun'da örste **Taş balta**yı döv (ücretsiz): önce **Hepsini koy**, sonra **Döv** düğmesi sırayla parlar ve okla gösterilir. Sonra baltayı eline al: önce envanter (çanta, I) düğmesi, envanter açılınca **Taş balta**, seçilince boş bir **alet yuvası**, en son alttaki kutusu sırayla parlar ve okla gösterilir | Öğretici biter; ok Ekin'i gösterir, Ekin ilk ana görevi verir |
+
+**Gösterme kuralı (v1.89):** öğretici bir düğmeye basmanı istediğinde o düğme (sol menüdeki ikonlar, menülerin içindeki Ye/Yap/Hepsini koy/Döv düğmeleri, envanterdeki eşya, alet yuvası) **mavi parlar** ve yanında yanıp sönen bir **ok** olur. Sıra gerekiyorsa düğmeler sırayla parlar.
 
 ### Börü'nün atılma dersi (v1.81, 11. adımın içinde)
 
 1. Kerevit yumrukla yenilince Börü "Şimdi kaçmayı öğren" der ve yanına **yeni bir kerevit** çıkar. Bu kerevit can yakmaz, ölmez; yalnızca saldırır. Atılma bu derste **ücretsiz** öğrenilir (yetenek ağacında satılmaz).
-2. Kerevit bir an bekler, üstünde kırmızı **!** belirir, sonra sana atılır.
+2. Kerevit doğadaki gibi davranır: **yürüyerek** sana yaklaşır (sen uzaklaşırsan peşinden yürür), yakına gelince bir an bekler, üstünde kırmızı **!** belirir, sonra sana atılır. Saldırıdan sonra olduğu yerde kalır ve yeniden yürüyerek yaklaşır; hiçbir zaman başka bir yere ışınlanmaz.
 3. **İlk saldırıda** kerevit tam vuracakken **oyun durur** ve ekranın ortasında büyük harflerle "**Boşluk'a bas!**" (telefonda "**Atıl düğmesine dokun!**") yazar. Basınca oyun devam eder, karakter takla atar ve kereviti savuşturur ("Sıyrıldın!").
 4. Sonra kerevit **3 kez daha** saldırır; oyun artık durmaz. Saldırı anında (kırmızı ! görününce ya da kerevit atıldığında) Boşluk'a basarsan sayılır; geç ya da erken kalırsan "Bir daha!" der, can gitmez. Ekranda "Sıyrılma: 1/4" sayacı vardır.
 5. 4 sıyrılma (1 + 3) olunca Börü esprili bir dille "**İlk ders tamam!**" der: her kavgaya girmek akıllıca değildir, bazen tabanları yağlamak gerekir; bunun için hızlı koşmayı bilmek gerekir.
-6. **Yetenek ağacı zorunlu:** Börü'nün tek seçeneği "Yetenek ağacını aç"tır. Ağaç ikonu (Y) yanıp söner ve ekranın ortasında "Yetenek ağacını aç" yazar; açılana kadar öğretici ilerlemez. Ağaç açılınca Savaş ağacındaki **Koşu** yanıp söner ve üstte Börü'nün notu çıkar: ağaçlar aşağıdan yukarı büyür; Koşu 100 sikke; Nazlı'ya bir şeyler satıp **100 sikke biriktirip** ilk iş bunu almak akıllıca olur.
+6. **Yetenek ağacı zorunlu:** Börü'nün tek seçeneği "Yetenek ağacını aç"tır. Ders biter bitmez soldaki ağaç ikonu (Y) mavi parlar, ok onu gösterir ve ekranın ortasında "Yetenek ağacını aç" yazar; Börü'nün üstündeki ok kalkar. Konuşma penceresi kapansa da bu sürer; ağaç açılmadan Börü'yle konuşulursa Börü yalnızca "önce yetenek ağacını aç" der, dersi ya da kereviti **tekrar vermez**. Ağaç açılana kadar öğretici ilerlemez. Ağaç açılınca Savaş ağacındaki **Koşu** yanıp söner ve üstte Börü'nün notu çıkar: ağaçlar aşağıdan yukarı büyür; Koşu 100 sikke; Nazlı'ya bir şeyler satıp **100 sikke biriktirip** ilk iş bunu almak akıllıca olur.
 7. Ağaç kapatılınca öğretici kaldığı yerden sürer: Börü Taş balta tarifini verir (12. adım).
 
 Öğreticiyi geçen ve atılmayı bilmeyen biri sonradan Börü'yle konuşursa Börü aynı dersi ücretsiz teklif eder ("Öğret" / "Sonra").
@@ -360,6 +362,8 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 - Her toplama, isabet ya da balık aletin 1 kullanımını yer. Dayanıklılık rengi yeşilden kırmızıya döner; sıfırda alet çalışmaz, silah yumruk gibi vurur. **Bileme** (Dursun ve silahçı kuzenleri): aletin değerinin onda biri. Kova ve asalar/ateşli silahlar körelmez.
 - **Alet yuvaları:** 5 (Alet kemeri dalıyla 6/7/8/10/12). Yuva doluysa yeni alet yere düşer; yerdeki eşya 180 sn sonra kaybolur.
+- **Mıknatıs:** yere düşen küçük eşyalar (yeni düşenler yarım saniye bekler) **21 px** yakına gelince sana doğru süzülür (1.89'a kadar 30 px'ti; %30 kısaltıldı). 10 px içinde hızla çekilir, 6 px'te toplanır; E ile 28 px içindekiler alınır.
+- **İş çubuğunun yazısı:** balta ile ağaç keserken "**Kesiliyor: Çam ağacı**" (ağacın adı), kazma ile kazarken "**Kazılıyor: …**", öbür toplamalarda "Toplanıyor: …" yazar.
 - **Balta kademesi:** Taş 1 · Çakmaktaşı, Granit 2 · Kuvars, Tunç 3 · Bazalt, Demir 4 · Obsidyen 5.
   - 1: Çam, Ladin, Kavak, Elma, Armut, Erik · 2: Meşe, Ceviz, Mürver, Kayın, Ihlamur, Kızılağaç · 3: Huş, Söğüt, Kestane, Akçaağaç, Dişbudak, Bataklık servisi · 4: Ardıç, Porsuk, Kara çam, Kül ağacı, Dikenli akasya, Kızıl sedir, Ateş narı · 5: Mor söğüt, Gece ağacı, Işık ağacı, Yıldız eriği, Ay elması · ACT 2: Yüzen Kayalar ağaçları 1, diğerleri 2.
 - **Kazma kademesi** (aynı sıra): 1: Bakır, Kalay, Kireçtaşı, Taş kömürü, Kumtaşı, Granit, Tuz kayası · 2: Kuvars, Arduvaz, Demir cevheri · 3: Bazalt, Gümüş, Altın, Kükürt, Pirit · 4: Obsidyen, Ametist · 5: Kristal (yalnızca Obsidyen kazma). Bir maden damarı 3–5 vuruşta tükenir, 300 sn sonra yeniden dolar.
@@ -1477,6 +1481,8 @@ Toplam 2.020 sikke, 2.130 XP.
 ## Demirci Dursun
 
 **Yer:** Ekin'in yaklaşık 70 karo doğusu, 71 karo kuzeyi; ocak ve örs. **Tanışma:** öğreticinin 13. adımı (Börü'nün selamıyla).
+
+- **Çekiç:** örse yaklaşık **1,1 saniyede bir** vurur (0,9 vuruş/sn; 1.89'a kadar 1,8 vuruş/sn idi). Her vuruşta kıvılcım çıkar; 110 px yakınındaysan ve menü/konuşma açık değilse çınlama sesi gelir. Silahçı kuzenleri de aynı hızda döver.
 
 - **Alet dök:** yalnızca **Çayır malzemesiyle** yapılan aletleri ve silahları döver (kademe 0): taş, çakmaktaşı ve tunç baltalar/kazmalar/mızraklar/kılıçlar, bıçaklar, meşale, tırmık, tırpan, sulama kabı, balık kapanı, tuzak, sapan, olta, ağ… Granit, demir, kuvars, bazalt, obsidyen ve o biyomların malzemesiyle yapılanları **silahçı kuzenleri** döver (v1.84). Tarif kazanda öğrenilmiş, parçalar çantanda olmalı. İşçilik fiyatın %15'i. Elinde olan bir aleti ikinci kez dövmez.
 - **Aletimi bile:** körelen aleti değerinin onda birine yeniler.

@@ -1340,7 +1340,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.88</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.89</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -2147,7 +2147,7 @@ function drawCauldron(time){
   px(x-8,y-6,16,2,'#5ad06a');
   for(let i=0;i<3;i++){const t=(time*1.4+i*.7)%2,bx=x-5+i*5;if(t<1.2)px(bx,Math.round(y-8-t*6),2,2,'rgba(140,240,150,'+(1-t/1.2)+')')}
 }
-function smithBeat(time){const k=Math.floor(time*1.8+.45);if(k===smith.beat)return;smith.beat=k;
+function smithBeat(time){const k=Math.floor(time*.9+.45);if(k===smith.beat)return;smith.beat=k;
   for(let i=0;i<7;i++)parts.push({x:anvil.x-2,y:anvil.y-8,vx:(Math.random()-.5)*60,vy:-20-Math.random()*45,life:.35+Math.random()*.35,c:i%2?'#ffd27a':'#f2902a'});
   if(Math.hypot(smith.x-player.x,smith.y-player.y)<110&&!craftOpen&&!dlgOpen)sfx('clank')}
 // dialogues
@@ -2539,7 +2539,7 @@ function interact(over){
     tool=ax;name=`${tg.t.type.n} odunu`;dur=GT[tool].time}
   dur*=gatherMult(name);
   gathering={tg,name,dur,t:0,tool};
-  gLabel.textContent=`Toplanıyor: ${name}`;gFill.style.width='0%';gEl.hidden=false;prompt.hidden=true;lastPrompt='#';
+  gLabel.textContent=tg.kind==='tree'?`Kesiliyor: ${tg.t.type.n} ağacı`:tool&&GT[tool]&&GT[tool].kind==='pick'?`Kazılıyor: ${name}`:`Toplanıyor: ${name}`;gFill.style.width='0%';gEl.hidden=false;prompt.hidden=true;lastPrompt='#';   // v1.89: an axe cuts, a pick digs
 }
 function stopGather(){gathering=null;gEl.hidden=true}
 let bucketHintAt=0;
@@ -6944,7 +6944,7 @@ function tzCard(){const h=n=>inv[n]||0,c=(n,q)=>`${n} ${Math.min(h(n),q)}/${q}`;
    8:['witch','Zümrüt · Keskin taş yap',`Kalan 2 taşla bir <b>keskin taş</b> yap: ${tzKey('tab')}. Kazandan bir tarif öğrendin mi, gerisi hep elinde.`],
    9:['witch','Pazarcı Nazlı',`Keskin taşı al ve kuzeydoğudaki <b>Pazarcı Nazlı</b>'ya git; ok yolu gösteriyor. Birleştirdiğin şeyleri o alır.`],
    10:['','Nazlı · Sat',`Satış listesinde <b>Keskin taş</b>'ın yanındaki <b>1 sat</b> düğmesine bas.`],
-   11:ftut===2?['','Börü · Kereviti yumrukla',`Elin boş olsun (alttaki kutularda seçili bir şey olmasın) ve <b>kereviti</b> yumrukla: ${TOUCH?'ona dokun':'yanına gidip ona tıkla'}. Her yumruk 3 hasar verir; canı bitene kadar vur.`]:['','Savaşçı Börü',`Nazlı seni doğudaki <b>Savaşçı Börü</b>'ye yolladı. Ok yolu gösteriyor; yanına git ve ${TOUCH?'ona dokun':'<span class="kc">E</span> ile konuş'}.`],
+   11:ftut===2?['','Börü · Kereviti yumrukla',TOUCH?`Elin boş olsun (alttaki kutularda seçili bir şey olmasın) ve <b>kereviti</b> yumrukla: <b>ona dokun</b>. Canı bitene kadar vur.`:`Elin boş olsun (alttaki kutularda seçili bir şey olmasın). <b>Yürü:</b> <span class="kc">W</span><span class="kc">A</span><span class="kc">S</span><span class="kc">D</span> ya da <span class="kc">↑</span><span class="kc">←</span><span class="kc">↓</span><span class="kc">→</span> ile kerevite yaklaş. <b>Vur:</b> <span class="kc">Sol tık</span>: tıkladığın yöne yumruk atarsın. Canı bitene kadar vur.`]:['','Savaşçı Börü',`Nazlı seni doğudaki <b>Savaşçı Börü</b>'ye yolladı. Ok yolu gösteriyor; yanına git ve ${TOUCH?'ona dokun':'<span class="kc">E</span> ile konuş'}.`],
    12:axeCard()||['','Börü · Balta parçaları',`<b>Taş balta</b> = 1 Sopa + 2 Keskin taş + 2 İp + 2 Taş. Sopa, ip ve keskin taşı ${tzKey('tab')} ile yap (sopa için 3 dal ve 2 keskin taş, ip için 4 lif). Börü yakınına malzeme bıraktı. (${c('Sopa',1)} · ${c('Keskin taş',2)} · ${c('İp',2)} · ${c('Taş',2)})`],
    13:['','Demirci Dursun',`Parçalar hazır! Kuzeydeki <b>Demirci Dursun</b>'a git, Börü'nün selamını söyle; baltayı o döver. Ok yolu gösteriyor.`]}[tz]}
 function renderTz(){const C=tzCard();if(!C)return false;const [who,title,html]=C;tutEl.hidden=false;craftEl.classList.add('tutpad');$('tutstep').textContent=title;$('tuttext').innerHTML=html;
@@ -7069,7 +7069,7 @@ function drawSmith(time){
   if(Math.random()<.06)parts.push({x:fx+(Math.random()-.5)*4,y:fy-24,vx:(Math.random()-.5)*6,vy:-14,life:1.6,c:'rgba(150,150,150,.5)'});
   px(ax-8,ay+2,16,3,'rgba(0,0,0,.25)');
   px(ax-7,ay-5,14,3,'#3a3e44');px(ax-9,ay-5,2,2,'#3a3e44');px(ax-4,ay-2,8,2,'#2e3136');px(ax-6,ay,12,3,'#3a3e44');px(ax-7,ay-5,14,1,'#5a5e64');
-  const ph=(time*1.8)%1,down=ph>.55;
+  const ph=(time*.9)%1,down=ph>.55;   // v1.89: half the old pace
   const glow=down?'#ffd27a':'#e86a2a';px(ax-9,ay-7,15,1,glow);px(ax+6,ay-7,3,1,'#6a4424');px(ax+5,ay-8,1,3,'#a7abb0');
   if(down&&ph<.6)for(let i=0;i<6;i++)parts.push({x:ax-3+(Math.random()-.5)*6,y:ay-8,vx:(Math.random()-.5)*60,vy:-30-Math.random()*40,life:.35,c:Math.random()<.5?'#ffd27a':'#ff8a3a'});
   const P=npcDraw(smith,NPCL.smith,time,3.3,{arm:down?'reach':'up',fx:1});const {x,y}=P;
@@ -10835,7 +10835,7 @@ drawGuide=function(time,cx,cy,vW,vH,scale){
   const ang=[];L.forEach((g,i)=>{const a=Math.atan2(g.y-(player.y-6),g.x-player.x);let lab=0;for(const b of ang)if(Math.abs(Math.atan2(Math.sin(a-b),Math.cos(a-b)))<.6)lab++;ang.push(a);arrowAt(g,i,time,cx,cy,vW,vH,lab)})};
 
 // ---------------------------------------------------------------- 5 · a gentle magnet: small things on the ground drift to you when you pass close by
-const MAG=30;
+const MAG=21;   // v1.89: 30 → 21 (%30 kısa)
 const _td=tickDrops;tickDrops=function(dt){
   if(!sailing&&!wake){for(const d of drops){if(d.t<1||d.age<.5||d.keep)continue;const dx=player.x-d.x,dy=player.y-2-d.y,dd=Math.hypot(dx,dy);
     if(dd<MAG&&dd>.5){const sp=(45+(MAG-dd)*8)*dt,k=Math.min(1,sp/dd);d.x+=dx*k;d.y+=dy*k}}}
@@ -13990,32 +13990,42 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
    try{document.body.classList.remove('nododge')}catch(e){}hint(count());sfx('found')}
  window.__plDodgeLesson=startLesson;
  const strikeDone=(ok)=>{const c=DL.crab;if(ok){DL.n++;floatText('Sıyrıldın!','#9fe07a');sfx('found')}else{floatText('Bir daha!','#e8c860');sfx('bad')}
-   if(c){c.x=DL.hx;c.y=DL.hy}
    if(DL.n>=4){finishLesson();return}DL.ph='idle';DL.t=1.3+Math.random()*.8;st=maxSt();hint(count())};
  function release(){if(!DL.frz)return;DL.frz=false;paused=false;hint(count());DL.lastD=NOW();doDodge();strikeDone(true)}
  {const _dd=doDodge;doDodge=function(){const was=dodge;const r=_dd.apply(this,arguments);if(dodge&&dodge!==was)DL.lastD=NOW();return r}}
+ // v1.89: the crab walks like a wild one: it comes to you, waits, lunges and stays where it landed; it never jumps elsewhere
+ const walkTo=(c,tx,ty,sp,dt)=>{const dx=tx-DL.hx,dy=ty-DL.hy,d=Math.hypot(dx,dy);if(d<1){c.dx=0;c.dy=0;return true}const k=Math.min(d,sp*dt)/d,nx=DL.hx+dx*k,ny=DL.hy+dy*k;
+   if(!blocked(nx,ny)&&!isWater(tileAt(nx,ny))){DL.hx=nx;DL.hy=ny}else if(!blocked(nx,DL.hy)&&!isWater(tileAt(nx,DL.hy)))DL.hx=nx;else if(!blocked(DL.hx,ny)&&!isWater(tileAt(DL.hx,ny)))DL.hy=ny;
+   c.dx=dx/d;c.dy=dy/d;c.step=(c.step||0)+dt*8;return false};
  const tickDL=(dt)=>{const c=DL.crab;if(!DL.on||!c)return;
    if(animals.indexOf(c)<0){spawn();return}
-   c.hp=ANIM['Kerevit'].hp;c.mad=false;c.mv=null;c.lunge=null;c.wind=0;
+   c.hp=ANIM['Kerevit'].hp;c.mad=false;c.mv=null;c.lunge=null;c.wind=0;c.st='wander';c.t=1;
    const dx=player.x-c.x,dy=player.y-c.y,d=Math.hypot(dx,dy)||1;c.face=dx<0?-1:1;
-   if(DL.ph==='idle'){c.x=DL.hx;c.y=DL.hy;
-     if(Math.hypot(player.x-DL.hx,player.y-DL.hy)>70||Math.hypot(player.x-DL.hx,player.y-DL.hy)<24){const p=spot();DL.hx=p.x;DL.hy=p.y}
-     DL.t-=dt;if(DL.t<=0){DL.ph='wind';DL.t=.8;DL.wStart=NOW();floats.push({x:c.x,y:c.y-22,t:0,text:'!',color:'#ff3b30',size:16});sfx('bad')}}
+   if(DL.ph==='idle'){const pd=Math.hypot(player.x-DL.hx,player.y-DL.hy)||1;
+     if(pd>46){walkTo(c,player.x+(DL.hx-player.x)/pd*36,player.y+(DL.hy-player.y)/pd*36,pd>90?70:42,dt)}
+     else if(pd<22){walkTo(c,player.x+(DL.hx-player.x)/pd*30,player.y+(DL.hy-player.y)/pd*30,30,dt)}
+     else{c.dx=0;c.dy=0;DL.t-=dt}
+     c.x=DL.hx;c.y=DL.hy;
+     if(DL.t<=0){DL.ph='wind';DL.t=.8;DL.wStart=NOW();floats.push({x:c.x,y:c.y-22,t:0,text:'!',color:'#ff3b30',size:16});sfx('bad')}}
    else if(DL.ph==='wind'){c.x=DL.hx+(Math.random()-.5)*3;c.y=DL.hy+(Math.random()-.5)*2;DL.t-=dt;
-     if(DL.t<=0){if(DL.n===0){DL.frz=true;paused=true;for(const k in keys)keys[k]=false;try{stopGather()}catch(e){}
+     if(DL.t<=0){c.x=DL.hx;c.y=DL.hy;if(DL.n===0){DL.frz=true;paused=true;for(const k in keys)keys[k]=false;try{stopGather()}catch(e){}
          hint(`${TOUCH?'Atıl düğmesine dokun!':'Boşluk\'a bas!'}${small('Kerevit saldırıyor: yana atıl!')}`);return}
-       DL.ph='lunge';DL.t=.2;DL.lx=c.x;DL.ly=c.y}}
-   else if(DL.ph==='lunge'){DL.t-=dt;const k=Math.min(1,1-DL.t/.2);c.x=DL.lx+(player.x-DL.lx)*k*.8;c.y=DL.ly+(player.y-DL.ly)*k*.8;
+       DL.ph='lunge';DL.t=.2;DL.lx=c.x;DL.ly=c.y;DL.tx=player.x;DL.ty=player.y}}
+   else if(DL.ph==='lunge'){DL.t-=dt;const k=Math.min(1,1-DL.t/.2);let nx=DL.lx+(DL.tx-DL.lx)*k*.8,ny=DL.ly+(DL.ty-DL.ly)*k*.8;
+     if(blocked(nx,ny)||isWater(tileAt(nx,ny))){nx=c.x;ny=c.y}c.x=nx;c.y=ny;DL.hx=nx;DL.hy=ny;
      if(DL.t<=0){const ok=!!dodge||(DL.lastD>=DL.wStart-.15&&NOW()-DL.lastD<.75);strikeDone(ok)}}};
  {const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);try{tickDL(dt)}catch(e){}return r}}
  window.addEventListener('keydown',e=>{if(!DL.frz)return;e.preventDefault();e.stopImmediatePropagation();if(e.code==='Space')release()},true);
  {const db=$('dodgebtn');if(db)db.addEventListener('pointerdown',e=>{if(!DL.frz)return;e.preventDefault();e.stopImmediatePropagation();release()},true)}
  window.addEventListener('pointerdown',e=>{if(DL.frz&&TOUCH&&!(e.target&&e.target.closest&&e.target.closest('#dodgebtn'))){e.stopImmediatePropagation()}},true);
- function finishLesson(){DL.on=false;DL.done=true;DL.ph='';hint('');const c=DL.crab;DL.crab=null;if(c){const i=animals.indexOf(c);if(i>=0)animals.splice(i,1);appearFx(c.x,c.y,'#e8e0c8')}sfx('level');
+ function treeAsk(){if(sk('K1')){done2();return}DL.tree=1;$('b-skill').classList.add('pulse');hint(`Yetenek ağacını aç${small(TOUCH?'yanıp sönen ağaç ikonuna dokun':'Y tuşuna bas ya da ağaç ikonuna tıkla')}`)}
+ window.__plDLTreeAsk=treeAsk;
+ function finishLesson(){DL.on=false;DL.done=true;DL.ph='';hint('');const c=DL.crab;DL.crab=null;if(c){const i=animals.indexOf(c);if(i>=0)animals.splice(i,1);appearFx(c.x,c.y,'#e8e0c8')}sfx('level');if(!sk('K1'))DL.tree=1;
    say('Hah! Dört kez sıyrıldın, kerevit hâlâ ne olduğunu anlamaya çalışıyor. <b>İlk ders tamam!</b> Ama kulağına küpe olsun: her kavgaya girmek akıllıca değildir evlat. Bazen en iyi hamle arkanı dönüp <b>tabanları yağlamaktır</b>. Kaçabilmek için de hızlı koşmayı bilmen gerek. Gel, sana yetenek ağacını göstereyim.',
-    [{t:'Yetenek ağacını aç',pri:1,fresh:1,f:()=>{bye();if(sk('K1')){done2();return}DL.tree=1;$('b-skill').classList.add('pulse');hint(`Yetenek ağacını aç${small(TOUCH?'yanıp sönen ağaç ikonuna dokun':'Y tuşuna bas ya da ağaç ikonuna tıkla')}`)}}],alp)}
+    [{t:'Yetenek ağacını aç',pri:1,fresh:1,f:()=>{bye();treeAsk()}}],alp)}
  function done2(){DL.tree=0;hint('');$('b-skill').classList.remove('pulse');const f=DL.after;DL.after=null;if(f)setTimeout(f,250)}
  window.__plDLTree=()=>DL.tree;
+ {const _gk=guideKey;guideKey=function(){if(DL.tree||(DL.done&&DL.after))return null;return _gk.apply(this,arguments)}}
  {const _rc=renderCraft;renderCraft=function(){const r=_rc.apply(this,arguments);try{if(DL.tree&&craftOpen&&mode==='skills'){if(DL.tree===1){DL.tree=2;skTab='Savaş';skSel['Savaş']='K1';hint('');$('b-skill').classList.remove('pulse');return renderCraft()}
     const b=cbody.querySelector('[data-skn="K1"]');if(b)b.classList.add('pulse');
     if(!cbody.querySelector('.dlnote')){const p=document.createElement('p');p.className='dlnote';p.style.cssText='margin:0 0 10px;padding:8px 10px;border:2px solid #e0503c;background:#2a1c1a;line-height:1.45';
@@ -14024,7 +14034,8 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
  {const _ad=tzAlpDone;tzAlpDone=function(){if(DL.on||DL.tree)return;if(!DL.done&&tz===11){const a=arguments,t=this;
     say('Yumruk fena değil! Şimdi daha önemlisi: <b>kaçmayı</b> öğren. Şu yeni kereviti görüyor musun? Bu ısırmaz ama saldırır. Üstünde kırmızı bir <b>!</b> belirince yana <b>atıl</b>. Bu dersim benden, ücretsiz.',[{t:'Hazırım',pri:1,fresh:1,f:()=>{bye();startLesson(()=>_ad.apply(t,a))}}],alp);return}
    return _ad.apply(this,arguments)}}
- {const _ta2=talkAlp;talkAlp=function(){try{if(DL.on)return say('Kerevite odaklan evlat! Üstünde kırmızı <b>!</b> görünce yana <b>atıl</b>.',[{t:'Tamam',pri:1,f:bye}],alp);if(!tz&&met&&!sk('S1')&&!DL.on&&!DL.tree&&!window.__plArena&&ftut>=3)
+ {const _ta2=talkAlp;talkAlp=function(){try{if(DL.tree===1||(DL.done&&DL.after&&!DL.tree)){treeAsk();return say('Önce <b>yetenek ağacını</b> aç evlat! Soldaki yanıp sönen <b>ağaç ikonu</b>na '+(TOUCH?'dokun':'tıkla ya da <b>Y</b>\'ye bas')+'.',[{t:'Tamam',pri:1,f:bye}],alp)}
+   if(DL.on)return say('Kerevite odaklan evlat! Üstünde kırmızı <b>!</b> görünce yana <b>atıl</b>.',[{t:'Tamam',pri:1,f:bye}],alp);if(!tz&&met&&!sk('S1')&&!DL.on&&!DL.tree&&!window.__plArena&&ftut>=3)
     return say('Hey evlat, sen hâlâ <b>atılmayı</b> bilmiyorsun! Saldırının içinden yana kaçamayan bu adada uzun yaşamaz. Gel, kısa bir ders; benden, ücretsiz.',[{t:'Öğret',pri:1,fresh:1,f:()=>{bye();startLesson(null)}},{t:'Sonra',f:bye}],alp)}catch(e){}
    return _ta2.apply(this,arguments)}}
 
@@ -14309,9 +14320,9 @@ function drawStandA(o,time){const b=o.b,x=Math.round(o.stand.x),y=Math.round(o.s
   else if(b===4){const gl=Math.sin(time*3)>0?'#ff7a2a':'#e8502a';px(x-5,y-17,11,10,'#3a2a34');for(let j=-15;j<-8;j+=3)px(x-4,y+j,9,1,gl);px(x-3,y-23,7,5,'#3a2a34');px(x-2,y-21,1,1,gl);px(x+2,y-21,1,1,gl);px(x-3,y-7,3,6,'#2a1e24');px(x+1,y-7,3,6,'#2a1e24')}
   else{const sh=.6+.4*Math.sin(time*2.5);px(x-5,y-17,11,10,'#c8b8f0');px(x-3,y-23,7,5,'#c8b8f0');ctx.save();ctx.globalAlpha=sh;px(x-4,y-16,2,8,'#ffffff');px(x+2,y-12,2,3,'#bfe8f0');px(x-2,y-22,2,2,'#ffffff');ctx.restore();px(x-3,y-7,3,6,'#a090d8');px(x+1,y-7,3,6,'#a090d8');
     if(Math.random()<.05)parts.push({x:x+(Math.random()-.5)*10,y:y-14,vx:0,vy:-10,life:.8,c:'#e8d8ff'})}}
-function drawSmithC(o,time){const b=o.b,ph=((time+o.ph)*1.8)%1,down=ph>.55;
+function drawSmithC(o,time){const b=o.b,ph=((time+o.ph)*.9)%1,down=ph>.55;
   if(down&&ph<.6){const S=SPK[b];for(let i=0;i<6;i++)parts.push({x:o.anv.x-3+(Math.random()-.5)*6,y:o.anv.y-8,vx:(Math.random()-.5)*60,vy:-30-Math.random()*40,life:.35,c:Math.random()<.5?S[0]:S[1]});
-    const k=Math.floor((time+o.ph)*1.8);if(k!==o.beat){o.beat=k;if(Math.hypot(o.x-player.x,o.y-player.y)<110&&!craftOpen&&!dlgOpen)sfx('clank')}}
+    const k=Math.floor((time+o.ph)*.9);if(k!==o.beat){o.beat=k;if(Math.hypot(o.x-player.x,o.y-player.y)<110&&!craftOpen&&!dlgOpen)sfx('clank')}}
   const glow=down?'#ffd27a':'#e86a2a';px(o.anv.x-9,o.anv.y-8,15,1,b===5?(down?'#e8c8ff':'#a050e0'):glow);
   const P=npcDraw(o,NPCL.smith,time,3.3+o.ph,{arm:down?'reach':'up',fx:1});const {x,y}=P;
   px(x-4,y-5,8,6,'#7a4a2a');px(x-3,y-5,6,1,'#9a6a3a');px(x-4,y-1,8,1,'#5a3418');px(x-5,y-6,1,2,'#5a3418');px(x+4,y-6,1,2,'#5a3418');
@@ -14730,5 +14741,71 @@ window.__pl186={get pend(){return pend},S,Q,QI,PRI,refreshVis,hasMark,nextOf,off
 #q2x:hover{background:#7a2a1a}
 </style>
 
+<style id="v189-css">
+.p189{border-color:#7fd0ff!important;animation:p3tab .9s ease-in-out infinite!important;position:relative;z-index:3}
+#hotbar .hs.p189,.ibs .bs.p189{animation:p3tab .9s ease-in-out infinite!important}
+#p189ptr{position:fixed;z-index:70;width:0;height:0;border-top:16px solid transparent;border-bottom:16px solid transparent;border-right:24px solid #7fd0ff;filter:drop-shadow(0 0 2px #11170f) drop-shadow(0 0 1px #11170f);pointer-events:none;animation:b3nudge .7s ease-in-out infinite}
+#p189ptr.lf{border-right:none;border-left:24px solid #7fd0ff}
+#p189ptr.up{border-top:none;border-left:16px solid transparent;border-right:16px solid transparent;border-bottom:24px solid #7fd0ff}
+#p189ptr[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){.p189,#p189ptr{animation:none!important}}
+</style>
+<script id="v189">
+// v1.89: every button the tutorial asks for glows blue and gets an arrow (eat, skill tree, the Yap buttons for the axe parts,
+// Hepsini koy → Döv at Dursun's anvil, bag → axe → slot → hotbar); Zümrüt explains the torch; in Börü's fight lesson a left
+// click punches towards the pointer (walk with WASD / arrows).
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ const ptr=document.createElement('div');ptr.id='p189ptr';ptr.hidden=true;ptr.setAttribute('aria-hidden','true');document.body.appendChild(ptr);
+ const vis=el=>{if(!el||el.hidden)return false;const r=el.getBoundingClientRect();return r.width>0&&r.height>0};
+ const Q=sel=>cbody.querySelector(sel);
+ const forgeOpen=()=>craftOpen&&(mode==='forge'||station==='forge');
+ // what to light up now: [glow elements], the first one with arrow:true gets the arrow
+ function want(){if(onTitle||wake||fading)return null;const out=[];const add=(el,arrow)=>{if(el)out.push({el,arrow:!!arrow})};
+  try{
+  if(tz===2){if(craftOpen&&mode==='eat')add(Q('[data-eat="Böğürtlen"]'),1);else if(!craftOpen)add($('b-eat'),0)}   // the yellow b3 arrow already points at the eat button
+  const DT=window.__plDLTree?window.__plDLTree():0;
+  if(DT===1&&!dlgOpen&&!(craftOpen&&mode==='skills'))add($('b-skill'),1);
+  if(tz===12&&craftOpen&&mode==='hand'){const S=AXE_STEPS[axeStep];if(S){const b=Q(`[data-hand="${S[0]}"]`);if(b&&!b.disabled){add(b,1);
+     if(want.last!==S[0]+axeStep){want.last=S[0]+axeStep;try{b.scrollIntoView({block:'nearest'})}catch(e){}}}}}
+  if(tz===13&&!window.__axeHold&&forgeOpen()&&pot.r==='Taş balta'){if(!potReady())add($('pfill'),1);else add($('brew'),1)}
+  if(tz===13&&window.__axeHold&&!dlgOpen){const n='Taş balta',i=beltIndex(n);
+    if(held()!==n){if(i<0){if(!(craftOpen&&mode==='inv')){if(!craftOpen)add($('b-inv'),1)}
+        else if(invSel!==n)add(Q(`.itile[data-n="${n}"]`),1);
+        else add(Q('.bs.empty')||Q('.bs'),1)}
+      else if(!craftOpen)add(document.querySelector(`#hotbar [data-hs="${i}"]`),1)}}
+  }catch(e){}
+  return out}
+ let lit=[];
+ function place(){const W=want()||[];const els=W.map(o=>o.el).filter(vis);
+  for(const e of lit)if(els.indexOf(e)<0)e.classList.remove('p189');
+  for(const e of els)e.classList.add('p189');lit=els;
+  const A=W.find(o=>o.arrow&&vis(o.el));if(!A){ptr.hidden=true;return}
+  const r=A.el.getBoundingClientRect(),hot=!!A.el.closest('#hotbar');ptr.classList.toggle('up',hot);ptr.hidden=false;
+  if(hot){ptr.style.left=Math.round(r.left+r.width/2-16)+'px';ptr.style.top=Math.round(r.top-30)+'px'}
+  const lf=!hot&&r.right+34>innerWidth;ptr.classList.toggle('lf',lf);
+  if(hot){}else if(lf){ptr.style.left=Math.round(r.left-30)+'px';ptr.style.top=Math.round(r.top+r.height/2-16)+'px'}
+  else{ptr.style.left=Math.round(r.right+6)+'px';ptr.style.top=Math.round(r.top+r.height/2-16)+'px'}}
+ setInterval(()=>{try{place()}catch(e){}},200);addEventListener('resize',()=>{try{place()}catch(e){}});
+ {const _rt=renderTut;renderTut=function(){const r=_rt.apply(this,arguments);try{place()}catch(e){}return r}}
+ {const _rc=renderCraft;renderCraft=function(){const r=_rc.apply(this,arguments);try{lit=[];place()}catch(e){}return r}}
+
+ // ---- Zümrüt explains the torch the moment it is in your hand
+ let hold0=false,told=false;
+ setInterval(()=>{try{const P=window.__p3;const h=!!(P&&P.hold);
+   if(hold0&&!h&&tz===6&&torchHeld()&&!told&&!onTitle){told=true;const i=hotList().indexOf(torchHeld()),k=i>=0?slotKey(i):'';
+     setTimeout(()=>{if(dlgOpen)bye();say(`Aferin, meşale elinde! Şimdi iyi dinle, bu hayat kurtarır: <b>meşale gündüz işe yaramaz</b>; gün ışığında zaten görürsün. O <b>gece</b> içindir. Yalnızca <b>elindeyken yanar</b> ve yanmaya başladı mı biter: bir Kaba meşale yaklaşık <b>iki dakika</b> dayanır, yağmurda daha da çabuk. Gündüz elinde tutarsan gece geldiğinde elinde kül kalır, karanlıkta da o şey seni bulur.<br><br>O yüzden şimdi <b>elinden indir</b>: ${TOUCH?'aynı kutuya bir daha dokun':'<span class="kc">'+(k||'yuva')+'</span> tuşuna bir daha bas'}. Hava kararınca yeniden eline al. Akıllı olan bir de <b>yedek</b> yapar; malzemen oldukça ${TOUCH?'el ikonundan':'<b>Tab</b> ile'} bir tane daha yap.`,
+       [{t:'Anladım: meşale gece için',pri:1,fresh:1,f:()=>{bye();renderTut()}}],witch)},600)}
+   hold0=h}catch(e){}},250);
+
+ // ---- Börü's fist lesson: with a mouse a left click punches towards the pointer, walking is WASD / arrows
+ cv.addEventListener('pointerdown',e=>{try{if(e.pointerType!=='mouse'||e.button!==0||TOUCH)return;if(!(tz===11&&ftut===2))return;
+   if(onTitle||dlgOpen||craftOpen||placing||paused||!canTap())return;
+   const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S;let tg=null;try{tg=pickAt(wx,wy).tg}catch(x){tg=null}
+   if(tg&&E_TALK.has(tg.kind))return;
+   goal=null;const a=tg&&tg.kind==='animal'?tg.a:null;attack(a?{x:a.x,y:a.y}:{x:wx,y:wy});e.preventDefault();e.stopImmediatePropagation()}catch(x){}},true);
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v189: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 </body>
 </html>

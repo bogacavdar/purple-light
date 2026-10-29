@@ -7,6 +7,35 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 1.89 · 29 Ekim 2026
+
+**Oynanış**
+- Yere düşen eşyaları çeken mıknatısın menzili %30 kısaldı (30 → 21 piksel). Eşyalar artık ancak yanlarına gelince sana süzülür.
+- Börü'nün atılma dersindeki kerevit artık doğadaki gibi davranır: yürüyerek yaklaşır, uzaklaşırsan peşinden yürür, bekler, kırmızı **!** ile saldırır ve saldırıdan sonra olduğu yerde kalır. Başka bir yere ışınlanıp durmaz.
+- Börü'nün yumruk dersinde (bilgisayarda) dövüş doğru öğretilir: **WASD ya da yön tuşlarıyla** yürü, **sol tıkla** vur. Bu derste sol tık yürütmez, tıkladığın yöne yumruk atar.
+- Zümrüt meşaleyi eline aldırınca meşaleyi anlatır: gündüz işe yaramaz, gece içindir; yalnızca elindeyken yanar ve Kaba meşale yaklaşık iki dakikada biter (yağmurda daha çabuk). Gündüz elinden indirmeni, akşam yeniden almanı ve yedek yapmanı söyler.
+
+**Düzeltmeler**
+- Börü'nün atılma dersi bitince "Yetenek ağacını aç" adımı artık kaybolmuyor: konuşma penceresi kapansa bile ağaç ikonu parlamaya devam eder. Börü'nün üstündeki ok kalkar; Börü'ye tıklarsan dersi ya da kereviti ikinci kez vermez, yalnızca "önce yetenek ağacını aç" der.
+- Öğreticide el yapımı ekranındaki **Yap** düğmeleri (Sopa, Keskin taş, İp) artık gerçekten yanıp söner; İp listenin aşağısındaysa liste oraya kayar.
+- Ekin'in "Böğürtlen ye" adımında yemek düğmesi okun yanında parlamıyordu; artık parlar.
+
+**Görsel**
+- Demirci Dursun ve silahçı kuzenleri örse yarı hızda vurur (saniyede 1,8 vuruştan 0,9'a); kıvılcımlar da yarı sıklıkta çıkar.
+- Balta ile ağaç keserken iş çubuğunda "Toplanıyor: Çam odunu" yerine "**Kesiliyor: Çam ağacı**" yazar; kazma ile kazarken "**Kazılıyor: …**" yazar.
+
+**Ses**
+- Demircilerin çekiç çınlaması yarı sıklıkta çalar; sürekli çınlama bitti.
+
+**Arayüz**
+- Öğreticide basman gereken her düğme **mavi parlar** ve yanında yanıp sönen bir **ok** olur: yemek düğmesi ve Böğürtlen'in Ye düğmesi, yetenek ağacı ikonu, balta parçalarının Yap düğmeleri, Dursun'un örsünde önce **Hepsini koy** sonra **Döv**, balta dövülünce sırayla envanter düğmesi → Taş balta → boş alet yuvası → alttaki kutusu.
+
+**Tasarım belgesi**
+- Öğretici tablosu (2., 5., 11., 12. ve 13. adımlar), "gösterme kuralı" ve Börü'nün atılma dersi (kerevitin yürümesi, yetenek ağacı adımı) güncellendi.
+- Sistemler bölümüne mıknatıs menzili (21 px) ve iş çubuğu yazıları eklendi; Dursun'un bölümüne çekiç hızı eklendi; sürüm satırı 1.89.
+
+---
+
 ## Versiyon 1.88 · 29 Ekim 2026
 
 **Oynanış**

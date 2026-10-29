@@ -9,6 +9,14 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v1.89 (29 Ekim 2026) · mıknatıs, öğretici gösterimleri, kerevit, çekiç
+- Mıknatıs `MAG` 30 → 21 (v-? "gentle magnet" bloğu). Dursun `drawSmith`/`smithBeat` ve kuzen `drawSmithC` hızı `time*1.8` → `time*.9`.
+- İş çubuğu: `startGather` sonunda ağaçta "Kesiliyor: X ağacı", kazmada "Kazılıyor: X".
+- v181 düzenlendi: `tickDL` yeniden yazıldı (kerevit `DL.hx/hy` üstünden yürür, ışınlanmaz; `strikeDone` artık geri taşımaz). `treeAsk()` + `window.__plDLTreeAsk`; `finishLesson` `DL.tree=1`'i hemen kurar; `talkAlp` ağaç bekliyorsa yalnızca hatırlatır; `guideKey` ağaç beklerken null (Börü oku kalkar).
+- Öğretici 11. adım kartı (tzCard) bilgisayarda WASD/yön tuşları + sol tık anlatır.
+- Yeni `<style id="v189-css">` + `<script id="v189">`: `.p189` mavi parlama + `#p189ptr` ok, 200 ms'de bir `want()` hedefleri (tz2 yemek/Ye, ağaç ikonu, tz12 Yap + scrollIntoView, tz13 pfill→brew, balta: b-inv→itile→.bs→hotbar). `.pulse` renderTut'ta silindiği için ayrı sınıf. Zümrüt'ün meşale anlatımı `__p3.hold` true→false geçişinde (tz 6, meşale elde). tz11 ftut2'de sol tık cv capture'da `attack()`.
+- Kayıtlara etkisi yok.
+
 ## v1.88 (29 Ekim 2026) · tokken de yemek yenir
 - `eat()` içindeki "Tıka basa toksun" engeli kaldırıldı: tokluk 100'de kalır, can ve yan etkiler işler. Tanrı modunda öğreticinin böğürtlen adımı yapılamıyordu, düzeldi. Belge: Temel sistemler, yemek satırı.
 

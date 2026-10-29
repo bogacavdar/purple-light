@@ -97,6 +97,8 @@ Toplam 2.020 sikke, 2.130 XP.
 
 **Yer:** Ekin'in yaklaşık 70 karo doğusu, 71 karo kuzeyi; ocak ve örs. **Tanışma:** öğreticinin 13. adımı (Börü'nün selamıyla).
 
+- **Çekiç:** örse yaklaşık **1,1 saniyede bir** vurur (0,9 vuruş/sn; 1.89'a kadar 1,8 vuruş/sn idi). Her vuruşta kıvılcım çıkar; 110 px yakınındaysan ve menü/konuşma açık değilse çınlama sesi gelir. Silahçı kuzenleri de aynı hızda döver.
+
 - **Alet dök:** yalnızca **Çayır malzemesiyle** yapılan aletleri ve silahları döver (kademe 0): taş, çakmaktaşı ve tunç baltalar/kazmalar/mızraklar/kılıçlar, bıçaklar, meşale, tırmık, tırpan, sulama kabı, balık kapanı, tuzak, sapan, olta, ağ… Granit, demir, kuvars, bazalt, obsidyen ve o biyomların malzemesiyle yapılanları **silahçı kuzenleri** döver (v1.84). Tarif kazanda öğrenilmiş, parçalar çantanda olmalı. İşçilik fiyatın %15'i. Elinde olan bir aleti ikinci kez dövmez.
 - **Aletimi bile:** körelen aleti değerinin onda birine yeniler.
 - Alet satmaz. Zırh için kardeşi Durmuş'a yollar. "Kuzenlerin var mı?" diye sorulunca beş silahçı kuzenini (Durdu, Ali, Kaya, Turan, Kudret) ve hangisinin neyi dövdüğünü anlatır.
