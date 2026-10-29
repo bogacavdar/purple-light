@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.08** ile birebir (29 Ekim 2026). Bu sürümde: vuruş efekti canlıya değdiğinde hasar veriyor; öğreticide Börü seni Dursun'a yolluyor, Dursun'la önce tanışıyorsun. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.09** ile birebir (29 Ekim 2026). Bu sürümde: Börü'nün ağaç dersinde Koşu parlar; görevlerde kimse başkasına yönlendirmez, tanışılmamış görev sahipleri haritada sarı "?" ile görünür; yapma görevleri tarif öğrenilince açılır; gece görev balonları okunur. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -145,6 +145,7 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 ## Açılış
 
 1. **Ana menü:** Yeni oyun, Devam et, Kayıttan yükle, Ayarlar, Kayıtları dışa/içe aktar, Arena (kilitli), Çıkış. Menünün altında sürüm etiketi (ör. "Versiyon 1.81").
+   - **Hakkında** penceresinde "Bir Boğaçhan Çavdar oyunu" yazısının altında **"Tasarım belgesine buradan ulaşabilirsiniz"** bağlantısı vardır (v2.09). Tıklanınca bu tasarım belgesi oyunun içinde, tam ekran bir pencerede açılır (aranabilir hali, `belge.html`); sağ üstteki **Kapat** ya da Esc ile Hakkında'ya dönülür. Belge yeni sekmede de açılabilir ("Yeni sekmede aç"). Belge oyunla birlikte cihaza kaydedilir: oyun uygulama olarak yüklendiyse ya da bir kez internetle açıldıysa, **internetsiz de** o sürümün belgesi açılır (her açılışta internet varsa en son hali alınır).
 2. **Karakter yaratma:** ad, cinsiyet, ten, saç (stil ve renk), göz rengi, sakal/bıyık, gözlük, şapka. Ardından eşinin adı sorulur (eşin görünüşü sabittir: erkek kahraman uzun kızıl saçlı bir kadını, kadın kahraman kısa saçlı bir erkeği kaybeder).
 3. **Zorluk:** Normal ya da Zor. Zor modda tarifler kapalıdır ve kazanda "Dene" ile deneyerek bulunur (ayrıntı: "Zorluk").
 4. **Giriş sahnesi** (gemi, fırtına, mor ışık) ve **kumsalda uyanış**: Yaşlı Ekin seni bulur, adını sorar.
@@ -184,7 +185,8 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 4. Sonra kerevit **3 kez daha** saldırır; oyun artık durmaz. Saldırı anında (kırmızı ! görününce ya da kerevit atıldığında) Boşluk'a basarsan sayılır; geç ya da erken kalırsan "Bir daha!" der, can gitmez. Ekranda "Sıyrılma: 1/4" sayacı vardır.
 5. 4 sıyrılma (1 + 3) olunca Börü esprili bir dille "**İlk ders tamam!**" der: her kavgaya girmek akıllıca değildir, bazen tabanları yağlamak gerekir; bunun için hızlı koşmayı bilmek gerekir.
 6. **Yetenek ağacı zorunlu:** Börü'nün tek seçeneği "Yetenek ağacını aç"tır. Ders biter bitmez soldaki ağaç ikonu (Y) mavi parlar, ok onu gösterir ve ekranın ortasında "Yetenek ağacını aç" yazar; Börü'nün üstündeki ok kalkar. Konuşma penceresi kapansa da bu sürer; ağaç açılmadan Börü'yle konuşulursa Börü yalnızca "önce yetenek ağacını aç" der, dersi ya da kereviti **tekrar vermez**. Ağaç açılana kadar öğretici ilerlemez. Ağaç açılınca Savaş ağacındaki **Koşu** yanıp söner ve üstte Börü'nün notu çıkar: ağaçlar aşağıdan yukarı büyür; Koşu 100 sikke; Nazlı'ya bir şeyler satıp **100 sikke biriktirip** ilk iş bunu almak akıllıca olur.
-7. Ağaç kapatılınca öğretici kaldığı yerden sürer: Börü Taş balta tarifini verir (12. adım).
+   - Ağaç açılınca Savaş ağacındaki **Koşu** mavi parlar ve yanında yanıp sönen bir ok olur (v2.09).
+7. Ağaç kapatılınca Börü önce **bilgilendirir**: "Gördün mü, en alttaki parlayan **Koşu**. Onu almak **100 sikke** ister. Nazlı'ya bir şeyler sat, 100 sikke biriktir; ilk işin Koşu'yu almak olsun." ("Anladım" düğmesi). Sonra öğretici kaldığı yerden sürer: Börü Taş balta tarifini verir (12. adım).
 
 Öğreticiyi geçen ve atılmayı bilmeyen biri sonradan Börü'yle konuşursa Börü aynı dersi ücretsiz teklif eder ("Öğret" / "Sonra").
 
@@ -1008,9 +1010,12 @@ Adanın kuzeydoğusu, Kül Diyarı'nın kuzeyi (sıradağ çöktükten sonra Bat
 1. **Tek aktif görev.** Aynı anda yalnızca bir görev yapılır. Görev alınınca bütün kişilerin başındaki **!** ve haritadaki parlamaları kalkar (dünyada da, küçük ve büyük haritada da).
 2. **Görev almak.** Görevi olan kişinin başında **siyah bir !** vardır ve hem dünyada hem haritada **belirgin şekilde parlar**. Onunla konuştuğun anda "şunlara ihtiyacım var" der ve görev **doğrudan başlar** (Kabul et / Görev al düğmesi yok).
    - **Görev sahnesi (v1.93):** görev, kişinin adadaki kendi yerinde kısa bir sahneyle verilir. Ekranın üstüne ve altına siyah sinema şeritleri kayar, kontrol alınır, karakterin kişiye döner ve uzaktaysa yanına (yaklaşık 1,5 karo) yürür. Sonra ikisi **konuşma balonlarıyla** konuşur: (1) karakterin selamı ("Selam Dursun! Bir işin mi var?" gibi), (2) kişi **o göreve özel** metnini cümle cümle, en çok 4 balonda anlatır (görevin kendi konuşma metni; balon başına en çok ~120 harf), (3) ilk balondan sonra karakterin kısa bir tepkisi ("Anlat bakalım.", "Dinliyorum." gibi), (4) karakterin kabulü ("Tamam, hallederim!", "Bana bırak." gibi). Her balon okuma süresi kadar (1,8–5,2 sn) kalır; tık/dokunuş ya da bir tuş sonraki balona geçer, Esc sahnenin kalanını geçer. Balonlar bitince şeritler kalkar ve kısa bir pencere açılır: görevin adı, 📍 yeri ve ödülü; "Tamam"a basınca görev başlar ve "Görev başladı: …" yazısı çıkar. Kişi yakında değilse (yaklaşık 14 karodan uzak), arenadayken ya da denizdeyken sahne atlanır ve görev eskisi gibi tam metinli konuşma penceresiyle verilir.
+   - **Başka kişiye yönlendirme yok (v2.09):** görev metinlerinde ve teşekkürlerde hiçbir kişi seni başka birine göndermez ("şuna git, ona selam söyle" yok); "X ile tanış" görevi yoktur. Kimin görevi olduğunu **harita** gösterir.
+   - **Haritada tanışılmamış görev sahibi (v2.09):** görevi hazır olan ama **henüz tanışmadığın** bir kişi, haritanın kapalı (keşfedilmemiş) yerinde bile, kendi konumunda **parlak sarı, nabız gibi atan büyük bir "?"** ile gösterilir (kişinin simgesi ve adı görünmez). Oraya gidip kişiyle tanışınca "?" kalkar, kişinin simgesi haritada belirir ve görev her zamanki gibi alınır. Tanıştığın kişilerin görevleri v1.90'daki gibi simgenin arkasında sarı ışık ve halkalarla gösterilir.
+   - **Gece okunurluk (v2.09):** görev sahnesindeki konuşma balonları gece karanlığının **üstünde** çizilir; karanlıkta da okunur.
 3. **Görevdeyken başkası.** Görevi olan biriyle konuşursan "Şu an bir işin var; önce onu bitir" der. Kazan, örs, pazar, sipariş, bileme gibi bütün hizmetler görev sürerken de kullanılır.
 4. **İptal.** Görev iki yoldan iptal edilir: üstteki görev kartında **×** (onay sorar), ya da **görevi veren kişiyle** konuşunca menüdeki "📜 Görev" satırından "Bu işten vazgeçiyorum" (Ekin ve Nazlı'da durum penceresi doğrudan açılır). İptal edilince görevin bütün ilerlemesi silinir (av sayacı, çember vb.), görev hiç alınmamış sayılır; kişi yeniden parlar ve başında ! çıkar.
-5. **Açılma koşulu.** Her görevin en az bir açılma koşulu vardır (bir önceki görev, seviye, bir alet, bir yer…). Ayrıca bir görevin istediği **her malzeme oyunda en az bir kez bulunmuş** olmalıdır ("Yeni malzeme bulundu" denmiş ya da tarif kitabında açık). Bulunmamış malzeme isteyen görev açılmaz. **"X keşfedildi"** koşulu, o biyoma ilk kez adım atılınca sağlanır (her biyoma bir kişinin "Ulaş" görevi ya da ana yol götürür).
+5. **Açılma koşulu.** Her görevin en az bir açılma koşulu vardır (bir önceki görev, seviye, bir alet, bir yer…). Ayrıca bir görevin istediği **her malzeme oyunda en az bir kez bulunmuş** olmalıdır ("Yeni malzeme bulundu" denmiş ya da tarif kitabında açık). Bulunmamış malzeme isteyen görev açılmaz. **"X keşfedildi"** koşulu, o biyoma ilk kez adım atılınca sağlanır (her biyoma bir kişinin "Ulaş" görevi ya da ana yol götürür). **Tarif kuralı (v2.09):** bir şeyin **yapılmasını ya da dövülmesini** isteyen görev, o şeyin **tarifi öğrenilmeden açılmaz** (görev tarifi kendisi kitaba yazıyorsa hariç). Örneğin Dursun'un "Keskin işler" (Taş kazma) görevi Taş kazma tarifi öğrenilince açılır.
 6. **En çok 2 "!".** Haritada aynı anda en fazla **2 kişide** görev bekler. Bir görev daha açılırsa sıraya girer; bekleyen iki görevden biri tamamlanınca görünür. Sıra: önce erken biyom, sonra kişinin görev sırası. (Ekin'in ayak işleri bu sayıya girmez.)
 7. **Görevsiz kalınmaz.** Hiç görev yoksa (bütün zincirler kilitliyse) **Ekin'in başında ! çıkar** ve bir sonraki kilitli görevin eksik koşulunu tamamlatan bir iş verir ("Ekin'in ayak işleri", aşağıda). Oyuncu bunun bir eksiklikten doğduğunu anlamaz: Ekin'in gerçekten bir işi varmış gibi konuşur.
 8. **İstenenler biyomdan.** Her kişi kendi biyomunun malzemesini ister; yalnızca **son görevleri** bir sonraki biyomun **bol ve kolay** (zararsız ya da toplanabilir) bir şeyini isteyebilir. Akış kolaydan zora, Çayır'dan Mor Kristal Vadisi'ne gider.
@@ -1090,7 +1095,7 @@ Kumsalda seni bulan yaşlı denizci; sakin, kollayıcı, öğretici. Ekin'de yal
 | E2 | Bir köprüyü onar | Kuzey köprüsü (Orman ↔ Bataklık): 20 odun, onay penceresiyle | Orman keşfedildi · Seviye 6 · Hasan 2 | Toygar 1 ve Bataklık'taki görevler | Köprü onarımı | 150 · 120 XP |
 | E3 | Doğu geçidini aç | 2 Kaya patlatıcı + 3. kademe ya da daha iyi kazma (Tunç ya da Kuvars); kaya yığınına E, onay | Kayalık Dağ keşfedildi · Seviye 10 | Kül Diyarı'ndaki görevler | Kaya patlatıcı | 300 · 400 XP |
 | E4 | Eşinden kalan izler | Bul: 6 iz (önceden bulunanlar sayılır) | Kül Diyarı keşfedildi | E5, Gemi tarifi | – | 300 · 600 XP |
-| E5 | Kızını arayan kaptan | Ulaş: Mor Kristal Vadisi'ndeki enkaza git, Levent ile tanış | E4 | Levent 1 | – | 200 · 300 XP |
+| E5 | Kıyıdaki duman | Ulaş: Mor Kristal Vadisi'ne git (Ekin dumanı merak eder; kimseyi söylemez) | E4 | Levent 1 | – | 200 · 300 XP |
 
 Ekin'e gidiş sayısı: ACT 1 boyunca 5 görev + 5 teslim. Arada ayak işi ancak bütün zincirler kilitliyse çıkar (aşağıdaki zincirler birbirini açtığı için nadiren).
 
@@ -1112,8 +1117,8 @@ Kazanının başında, otları ve geceyi bilen sabırlı cadı.
 
 | # | Görev | İstenen | Açılma | Açar | Ders | Ödül |
 |---|---|---|---|---|---|---|
-| D1 | İlk baltan | Dövdür: Taş balta | E1 | D2, Rıza 1 | Örs ve demirci (öğreticiyi geçenlere) | 30 · 20 XP |
-| D2 | Keskin işler | Dövdür: Taş kazma | D1 | D3, Durmuş 1 | – | 30 · 20 XP |
+| D1 | Ocağa odun | Getir: 8 Çam odunu (Dursun: "Baltan var, değil mi? Örsün ateşi odun yer, 8 çam odunu kes getir"). v2.09'da "İlk baltan" (Taş balta dövdür) yerine geldi; balta öğreticide zaten dövülüyor. Çam odunu daha önce bulunmamış olsa da açılır | E1 · **örste bir balta dövülmüş olmalı** (öğreticiyi yapan zaten Taş baltayı dövmüştür; öğreticiyi atlayan, balta tarifini öğrenip ilk baltasını bir demirciye dövdürünce açılır) | D2, Rıza 1 | – | 30 · 20 XP |
+| D2 | Keskin işler | Dövdür: Taş kazma (Taş kazma tarifi öğrenilmeden açılmaz) | D1 · Taş kazma tarifi | D3, Durmuş 1 | – | 30 · 20 XP |
 | D3 | Çakmaktaşı balta | Dövdür: Çakmaktaşı balta | D2 | D4 | – | 50 · 35 XP |
 | D4 | Ağzı köreldi | Bir aleti biledir | D3 · körelmiş bir alet | D5 | Bileme | 40 · 30 XP |
 | D5 | Tunç zamanı | Yap: Tunç külçesi; dövdür: Tunç balta, Tunç kazma ya da Tunç mızrak | D4 · Seviye 4 | D6, Durmuş 3 | Maden ve eritme | 150 · 120 XP |
@@ -1154,7 +1159,7 @@ Sert ama sıcak; kaçmayı da öğreten savaşçı. Oyuncuyu kuzeye, Orman'a ilk
 | B2 | Kerevit avı | Avla: 2 Kerevit | B1 | B3 | Silah yuvası ve dövüş | 30 · 20 XP |
 | B3 | Taş kılıç | Yap: Taş kılıç, silah yuvasına koy | B2 | B4 | – | 40 · 30 XP |
 | B4 | Geyik sürüsü | Avla: 2 Geyik | B3 · N4 | B5 | – | 60 · 40 XP |
-| B5 | Kuzeye keşif | Ulaş: Orman'a git, Çiftçi Hasan ile tanış | B4 · Seviye 3 | B6, Hasan 1, Kemal 1 | – | 80 · 50 XP |
+| B5 | Kuzeye keşif | Ulaş: Orman'a git (kimseyle tanıştırmaz) | B4 · Seviye 3 | B6, Hasan 1, Kemal 1 | – | 80 · 50 XP |
 | B6 | Domuz avı | Avla: 2 Yaban domuzu (Orman) | B5 | Durdu 2 | – | 120 · 80 XP |
 
 ### Zırhçı Durmuş · Çayır
@@ -1246,7 +1251,7 @@ Yirmi yıldır bataklıkta oğlunu bekleyen avcı.
 | T3 | Kurbağa zehri | Avla: 3 Zehirli kurbağa | T2 | T4, Safir 3 | – | 160 · 180 XP |
 | T4 | Bataklık kurdu | Avla: 2 Bataklık kurdu | T3 | T5 | – | 200 · 260 XP |
 | T5 | Timsah | Avla: 1 Timsah | T4 | T6 | – | 260 · 380 XP |
-| T6 | Dağ yolu | Ulaş: Kayalık Dağ'a in, Cadı Firuze'yi bul | T5 | Kayalık Dağ'daki görevler | – | 220 · 300 XP |
+| T6 | Dağ yolu | Ulaş: Kayalık Dağ'a in (kimseyi söylemez) | T5 | Kayalık Dağ'daki görevler | – | 220 · 300 XP |
 
 ### Cadı Safir · Bataklık
 

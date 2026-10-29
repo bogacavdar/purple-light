@@ -7,6 +7,30 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.09 · 29 Ekim 2026
+
+**Oynanış**
+- Börü'nün dersinde yetenek ağacı açılınca **Koşu** mavi parlıyor ve okla gösteriliyor; ağacı kapatınca Börü Koşu'nun **100 sikke** olduğunu, Nazlı'ya satıp biriktirmeni ve ilk iş onu almanı anlatıyor.
+- Dursun'un ilk görevi değişti: **"Ocağa odun"**: "Baltan var, değil mi? Örsün ateşi odun yer, bana 8 çam odunu kes getir." (Eski "İlk baltan" görevi öğreticide zaten yapılıyordu.) Bu görev ancak örste bir balta dövülünce açılıyor; öğreticiyi atlayan, balta tarifini öğrenip ilk baltasını dövdürünce açılıyor.
+- Bir şeyi **yapmayı ya da dövmeyi** isteyen görevler o şeyin **tarifi öğrenilmeden açılmıyor** (görev tarifi kendisi veriyorsa hariç). Örneğin Dursun'un "Keskin işler" (Taş kazma) görevi Taş kazma tarifini öğrenince açılıyor.
+- Görevlerde artık **kimse seni başka birine yönlendirmiyor**. "X ile tanış" görevleri yerine yer görevleri geldi: Ekin'in "Kıyıdaki duman" (Mor Kristal Vadisi'ne git), Börü'nün "Kuzeye keşif" (Orman'a git), Toygar'ın "Dağ yolu" (Kayalık Dağ'a in). Teşekkürlerdeki "şuna uğra, ona selam söyle" cümleleri değişti.
+
+**Arayüz**
+- Görevi hazır olan ama **henüz tanışmadığın** kişiler haritada, keşfetmediğin yerde bile, kendi konumlarında **parlak sarı, nabız gibi atan büyük bir "?"** ile görünüyor. Gidip tanışınca "?" kalkıyor, kişinin simgesi beliriyor ve görevi alabiliyorsun.
+- Ana menüde **Hakkında** penceresine "Tasarım belgesine buradan ulaşabilirsiniz" bağlantısı geldi: belge oyunun içinde tam ekran açılıyor (Kapat / Esc, "Yeni sekmede aç"). Belge oyunla birlikte cihaza kaydediliyor; **internetsiz de** açılıyor.
+
+**Düzeltmeler**
+- Gece, görev sahnesindeki konuşma balonları karanlığın altında kalıp okunmuyordu; artık karanlığın üstünde çiziliyor.
+
+**Tasarım belgesi**
+- Görev kuralları (tarif kuralı, yönlendirme yok, haritada "?", gece okunurluk), görev tablosu (D1, D2, E5, B5, T6), Börü'nün atılma dersi ve Açılış bölümü (Hakkında'daki belge) güncellendi; sürüm satırı 2.09.
+
+**Proje**
+- Yeni çalışma kuralı: değişiklikler yapılır ama paket ancak Boğaç "paket çık" deyince çıkar; bekleyen işler `bekleyen-paket` dalında durur (CLAUDE.md ve yayın skill'i).
+- Uygulama önbelleği (`sw.js`) `purple-light-v2` oldu ve tasarım belgesini de saklıyor.
+
+---
+
 ## Versiyon 2.08 · 29 Ekim 2026
 
 **Düzeltmeler**

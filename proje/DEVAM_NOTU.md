@@ -9,6 +9,12 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.09 (29 Ekim 2026) · görev düzeltmeleri, haritada ?, belge oyunun içinde, paket kuralı
+- v181: Börü ağaç dersi `DL.tree` 3. durum (ağaç kapanınca 100 sikke bilgisi, sonra `done2`); v189 `want()` ağaçta K1 parlaması.
+- v186 görev bloğu: `matsOK` tarif kuralı (h/any parçaları `foundSet` ya da `q.rec`); `reqOK` yeni `forged` türü; D1 "Ocağa odun" (`nomat`, r: E1 + forged axe); E5/B5/T6 tanış yerine `reach`; 12 thx metni; `window.__plQUnmet` + `mki` sarı "?" (tanışılmamış görev sahibi); konuşma balonları `drawEyes` sonrasında (gece üstte).
+- Hakkında: `#ab-doc` → `#docov` iframe (`belge.html`, proje/ kopyasından `../belge.html`). `sw.js`: CACHE `purple-light-v2`, `belge.html` önbellekte.
+- Çalışma kuralı: paket yalnızca "paket çık" ile; bekleyenler `bekleyen-paket` dalında (fetch refspec eklendi). Kayıtlara etkisi yok.
+
 ## v2.08 (29 Ekim 2026) · vuruş isabeti, Börü → Dursun tanışma
 - Taban `attack()` döngüsü: mesafe göğüs (player.y-6) → gövde (a.y-min(8,r)), sınır `reach+r+3`; açı normalize, eşik -0.1 (yaklaşık 95°), gövdeye yapışıkken açısız. P4 vuruşları da bu tabanı çağırdığı için hepsine geçerli.
 - CALLS `d13`: artık Börü çağırır (Dursun'un haberi yok). `talkSmith` tz 13: `smith.met` değilse önce tanışma ("Börü yolladı, selamı var"), sonra örs. Kayıtlara etkisi yok.
