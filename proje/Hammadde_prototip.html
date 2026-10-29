@@ -5158,7 +5158,7 @@ function wakeTalk(){
                 {t:'Peki, başlayalım',pri:1,fresh:1,f:wakeDone}])})}])})}])}])}]);
 }
 function wakeDone(){
-  say(`Dur bakalım, yüzün kireç gibi; kim bilir kaç gündür ağzına lokma girmedi. Bu adada <b>ilk iş yemek bulmaktır</b>: aç kalırsan canın hızla tükenir. Şuradaki çalılarda <b>böğürtlen</b> var. Git, <b>beş tane</b> topla ve ye. Ada cömerttir evlat; yeter ki yemek aramayı unutma.`,[{t:'Böğürtlen toplayacağım',pri:1,fresh:1,f:wakeDone2}]);
+  say(`Dur bakalım, yüzün kireç gibi; kim bilir kaç gündür ağzına lokma girmedi. Bu adada <b>ilk iş yemek bulmaktır</b>: aç kalırsan canın hızla tükenir. Şuradaki çalılarda <b>böğürtlen</b> var. Git, <b>beş tane</b> topla ve ye.${TOUCH?'':' Çalının <b>yanına git</b> ve <span class="kc">E</span>\'ye bas; böğürtlen yere düşer, üstünden yürüyünce alırsın.'} Ada cömerttir evlat; yeter ki yemek aramayı unutma.`,[{t:'Böğürtlen toplayacağım',pri:1,fresh:1,f:wakeDone2}]);
   food=25;vitK='';renderVitals();
 }
 function wakeDone2(){
@@ -14155,7 +14155,7 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
     if(!cbody.querySelector('.dlnote')){const p=document.createElement('p');p.className='dlnote';p.style.cssText='margin:0 0 10px;padding:8px 10px;border:2px solid #e0503c;background:#2a1c1a;line-height:1.45';
      p.innerHTML='<b>Börü:</b> “İşte en alttaki yanıp sönen <b>Koşu</b>. Ağaçlar aşağıdan yukarı büyür; bir yeteneği alınca üstündekiler açılır. Koşu <b>100 sikke</b>: Nazlı\'nın pazarında bir şeyler sat, <b>100 sikke biriktir</b> ve ilk işin bunu almak olsun. Kaçmayı bilen savaşçı uzun yaşar!” <i>(Kapatınca derse devam.)</i>';cbody.insertBefore(p,cbody.firstChild)}}}catch(e){}return r}}
  {const _cc=closeCraft;closeCraft=function(){const was=craftOpen&&mode==='skills';const r=_cc.apply(this,arguments);try{if(DL.tree===2&&was){DL.tree=3;hint('');$('b-skill').classList.remove('pulse');   // v2.09: Börü tells what Koşu costs
-     setTimeout(()=>say('Gördün mü, en alttaki parlayan <b>Koşu</b>. Onu almak <b>100 sikke</b> ister. Nazlı\'ya bir şeyler sat, <b>100 sikke</b> biriktir; ilk işin Koşu\'yu almak olsun. Kaçmayı bilen savaşçı uzun yaşar!',[{t:'Anladım',pri:1,fresh:1,f:()=>{bye();done2()}}],alp),200)}}catch(e){}return r}}
+     setTimeout(()=>say(window.__plKosuMsg?window.__plKosuMsg():'Gördün mü, en alttaki parlayan <b>Koşu</b>. Onu almak <b>100 sikke</b> ister. Nazlı\'ya bir şeyler sat, <b>100 sikke</b> biriktir; ilk işin Koşu\'yu almak olsun. Kaçmayı bilen savaşçı uzun yaşar!',[{t:'Anladım',pri:1,fresh:1,f:()=>{bye();done2()}}],alp),200)}}catch(e){}return r}}
  {const _ad=tzAlpDone;tzAlpDone=function(){if(DL.on||DL.tree)return;if(!DL.done&&tz===11){const a=arguments,t=this;
     say('Yumruk fena değil! Şimdi daha önemlisi: <b>kaçmayı</b> öğren. Şu yeni kereviti görüyor musun? Bu ısırmaz ama saldırır. Üstünde kırmızı bir <b>!</b> belirince yana <b>atıl</b>. Bu dersim benden, ücretsiz.',[{t:'Hazırım',pri:1,fresh:1,f:()=>{bye();startLesson(()=>_ad.apply(t,a))}}],alp);return}
    return _ad.apply(this,arguments)}}
@@ -15253,6 +15253,26 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  addEventListener('pointerup',()=>setTimeout(clr,0));addEventListener('pointercancel',()=>setTimeout(clr,0));
  // v2.18: a creature that is attacking always looks at you (the hero used to see its back when it backed off to shoot or when
  // you circled it during a wind-up). Only while its body is flying fast (a leap, a lunge, a charge run) it looks where it goes.
+ // v2.18: the skill tree keeps a margin above and below (the bottom skill, Koşu, sat on the edge and was cut in half); while Koşu
+ // is the one to buy, the window scrolls so it sits a little above the lower edge (Börü's note on top pushed the tree down).
+ {const st=document.createElement('style');st.id='v218-sk';st.textContent='.skbox{height:calc(100% - var(--nd) - 24px);top:calc(var(--nd) / 2 + 12px)}';document.head.appendChild(st)}
+ const scroller=el=>{for(let p=el.parentElement;p&&p!==document.body;p=p.parentElement){const o=getComputedStyle(p).overflowY;if((o==='auto'||o==='scroll')&&p.scrollHeight>p.clientHeight+1)return p}return null};
+ const showK1=()=>{try{if(!(craftOpen&&mode==='skills'))return;const b=cbody.querySelector('[data-skn="K1"].pulse');if(!b)return;const sc=scroller(b);if(!sc)return;
+   const r=b.getBoundingClientRect(),c=sc.getBoundingClientRect(),pad=Math.max(24,r.height*.6);
+   if(r.bottom+pad>c.bottom)sc.scrollTop+=Math.ceil(r.bottom+pad-c.bottom);else if(r.top-pad<c.top&&r.bottom+pad-(r.top-pad)<c.height)sc.scrollTop-=Math.ceil(c.top-(r.top-pad))}catch(x){}};
+ const _rc=renderCraft;renderCraft=function(){const r=_rc.apply(this,arguments);if(craftOpen&&mode==='skills'){showK1();requestAnimationFrame(showK1);setTimeout(showK1,120)}return r};
+ // v2.18: Koşu pressed without enough coins: the tree closes and Börü says to gather coins first; with 100 coins, Y opens the tree
+ // and there you buy what you like. The same words when the tree is closed in Börü's lesson (window.__plKosuMsg).
+ const kosuC=()=>{const x=SKILLS.find(y=>y.id==='K1');return x?x.c:100};
+ window.__plKosuMsg=function(){const c=kosuC(),open=TOUCH?'yanıp sönen <b>ağaç ikonuna</b> dokun':'<b>Y</b>\'ye bas',k=coins.toLocaleString('tr-TR');
+   if(coins<c&&!plInf())return `Önce sikke topla evlat! Koşu <b>${c} sikke</b>; sende ${k} var, <b>${(c-coins).toLocaleString('tr-TR')} sikke</b> daha lazım. Nazlı'nın pazarında bir şeyler sat. <b>${c} sikken</b> olunca ${open}, yetenek ağacını aç: oradan istediğin geliştirmeleri alırsın. İlk işin <b>Koşu</b> olsun; kaçmayı bilen savaşçı uzun yaşar!`;
+   return `Gördün mü, en alttaki parlayan <b>Koşu</b>. Onu almak <b>${c} sikke</b> ister; sende ${k} var. ${open}, yetenek ağacını aç: oradan istediğin geliştirmeleri alırsın. İlk işin <b>Koşu</b> olsun; kaçmayı bilen savaşçı uzun yaşar!`};
+ const _bs=buySkill;buySkill=function(id){try{if(id==='K1'&&!sk('K1')&&!plInf()&&coins<kosuC()&&skSeen(SKILLS.find(y=>y.id==='K1'))){
+     try{sfx('bad')}catch(e){}
+     const inLesson=!!(window.__plDLTree&&window.__plDLTree()===2);closeCraft();   // in the lesson the close itself brings Börü's words
+     if(!inLesson)setTimeout(()=>{try{if(dlgOpen)bye();say(window.__plKosuMsg(),[{t:'Anladım',pri:1,fresh:1,f:()=>{bye()}}],alp)}catch(e){}},200);
+     return}}catch(e){}
+   return _bs.apply(this,arguments)};
  const _ta=tickAnimals;tickAnimals=function(){const r=_ta.apply(this,arguments);
    try{for(const a of animals){const m=a.mv,on=a.wind>0||(m&&m.ph!=='run'&&m.ph!=='air');if(!on||a.lunge)continue;
      const dx=player.x-a.x;if(Math.abs(dx)>=3)a.face=dx>0?1:-1}}catch(x){}
