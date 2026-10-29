@@ -7,6 +7,20 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.25 · 29 Ekim 2026
+
+**Oynanış**
+- **Ağaç kesince dal ve yaprak:** baltayla her kesişte odunun yanında **1 dal** ve **1 yaprak** düşüyor (önceden dal yoktu, yaprak 1–2'ydi).
+- **Haritada daha çok taş ve lif, daha az ağaç:** taş yaklaşık %35 (557 → ~740), lif yaklaşık %35 (683 → ~940) arttı; ağaçlar yaklaşık %25 azaldı (10.600 → ~8.000). Başlangıç kampının çevresi aynı. Kayıtlar etkilenmiyor; mevcut oyunlarda da geçerli.
+- **Zümrüt'ün "Kazanın dili" görevi:** artık "5 yeni tarif" değil, **toplam 8 tarif** öğrenmiş olmak. Önceden öğrendiklerin de sayılıyor; bütün tarifleri bilen biri artık takılmıyor.
+
+**Düzeltmeler**
+- **Zümrüt'ün meşale dersinde erken parlama:** malzemeler (2 dal, 2 lif, 2 yaprak) toplanmadan el yapımı düğmesi, meşale satırı ve Yap parlıyor, telefonda ☰ kutusu açılıyordu. Artık önce malzemeler toplanıyor, sonra parlıyor. Aynısı kazan derslerinde ve balta adımında da düzeldi.
+- **Kazan görevinde yanlış parlama:** "Kazanın dili" görevinde hedef Zümrüt'tü; küçük haritadaki büyük sarı ışık senin üstüne biniyordu. Artık hedef **kazan**; yanına gelince oyunda kazanın kendisi sarı parlıyor; hedefe 8 karodan yakınken haritadaki ışık çizilmiyor.
+
+**Tasarım belgesi**
+- Öğretici 5. adım, Zümrüt Z2, ağaç kesme, haritadaki miktarlar, yol gösterme (kazan hedefi); sürüm satırı 2.25.
+
 ## Versiyon 2.24 · 29 Ekim 2026
 
 **Düzeltmeler**

@@ -9,6 +9,12 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.25 (29 Ekim 2026) · ders parlamaları, Kazanın dili, ağaç/taş/lif miktarları, kazan hedefi
+- `renderTut` parlamaları (`b-hand`, el yapımı satırı, kazan `pfill/brew`) ve v189 `#pot` parlaması `!tzNeed().length` koşulunda.
+- Görev Z2: `["learn", 8]`; `partProg 'learn'` artık `found.length` (toplam); etiket "tarif (toplam)"; hedef `cauldron` + `kaz:1`; `window.__plQT=()=>TG`; v218'de `drawGuide` sarmalı kazanın etrafına sarı ışık; `__plMapQ` r:0 hedefe 128 px yakınken ışık çizmez.
+- Kesme: her kesişte `dropItem('Dal')`; v133 yaprak 1.
+- v2.11 seyreltme: `KEEP` Lif .68, Taş .75; ağaçlar aynı hash ile %25 azaltılıyor (spawn 20 karo hariç) + `rebuildTG()`. Ölçüm: ağaç 10595 → 7991, taş 557 → 742, lif 683 → 941. Kayıtlar harita durumunu tutmadığı için eski kayıtlar etkilenmez (`MAPV` değişmedi).
+
 ## v2.24 (29 Ekim 2026) · arena kaydı bozuyordu (önemli), arenada savuşturma, başlangıç malzemeleri
 - Arena bloğu: `enter()` `window.__plArenaUsed=true`; `saveTo` sarmalı `AR.on||__plArenaUsed` iken yazmaz; `leave()` artık `AR.on`/`__plArena`'yı sıfırlamadan `location.reload()` (önceden sıfırlayıp yeniden yüklüyordu → `pagehide`/`beforeunload` `saveTo('auto')` arena durumunu yazıyordu). Playwright ile doğrulandı (kayıt değişmiyor).
 - Arena `enter()`: `skills.add('P0')` (savuşturma).

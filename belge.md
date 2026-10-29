@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.24** ile birebir (29 Ekim 2026). Bu sürümde: arena artık kayda hiç dokunmuyor (arenadan çıkarken arena karakteri gerçek oyunun otomatik kaydının üstüne yazılıyordu); arenada savuşturma açık; oyun başında kampın yanına fazladan malzeme konmuyor.
+Sürüm: **Versiyon 2.25** ile birebir (29 Ekim 2026). Bu sürümde: Zümrüt'ün derslerinde malzemeler toplanmadan hiçbir şey parlamıyor; Kazanın dili toplam 8 tarif; ağaç kesince 1 dal + 1 yaprak; taş ve lif ~%35 fazla, ağaç ~%25 az; kazan görevinde hedef kazan ve kazan parlıyor.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -189,7 +189,7 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 | 2 | Ekin | Yemek düğmesiyle (F) 5 böğürtlen ye (soldaki yemek düğmesi mavi parlar ve ok onu gösterir; yemek listesi açılınca Böğürtlen'in **Ye** düğmesi parlar) | Cadı Zümrüt görünür; Ekin seni kuzeye, ormanın kıyısına yollar |
 | 3 | Zümrüt | Zümrüt'e git ve konuş | Kazanın yanına 2 Dal, 2 Lif, 2 Yaprak konur |
 | 4 | Zümrüt | Kazanda **Kaba meşale** tarifini öğren. Tarif seçilince, malzemeler konana kadar **kazan alanı da mavi parlar** (v2.22), malzemelerin nereye gideceği görünsün. | Malzemeler yeniden konur |
-| 5 | Zümrüt | El yapımı ekranında (Tab) meşaleyi yap, bir yuvaya koyup eline al | Meşale yapılınca Zümrüt yalnızca meşaleyi anlatır (taşlardan söz etmez). Meşale ele gelince Zümrüt **meşaleyi anlatır**: gündüz işe yaramaz, gece içindir; yalnızca eldeyken yanar ve Kaba meşale yaklaşık **110 saniye** yanınca biter (yağmurda daha çabuk); gündüz elinden indir, akşam karanlığında eline al, yedeğin olsun. Sonra kart **"Meşaleyi elinden indir"** der, meşalenin yuvası (hotbar kutusu) oku ile parlar; meşale inene kadar taş adımına geçilmez (v2.11: taşlar ve taş konuşması da meşale inince gelir; v2.12: üstteki takip satırı da o ana kadar taş istemez, haritadaki taşlar mavi parlamaz) |
+| 5 | Zümrüt | El yapımı ekranında (Tab) meşaleyi yap, bir yuvaya koyup eline al. **Malzemeler (2 dal, 2 lif, 2 yaprak) toplanmadan** el yapımı düğmesi, meşale satırı ve Yap düğmesi **parlamaz** (v2.25); önce malzemeler toplanır, sonra parlar. Aynı kural kazan adımlarında (4, 7) ve balta adımında (12) da geçerlidir. | Meşale yapılınca Zümrüt yalnızca meşaleyi anlatır (taşlardan söz etmez). Meşale ele gelince Zümrüt **meşaleyi anlatır**: gündüz işe yaramaz, gece içindir; yalnızca eldeyken yanar ve Kaba meşale yaklaşık **110 saniye** yanınca biter (yağmurda daha çabuk); gündüz elinden indir, akşam karanlığında eline al, yedeğin olsun. Sonra kart **"Meşaleyi elinden indir"** der, meşalenin yuvası (hotbar kutusu) oku ile parlar; meşale inene kadar taş adımına geçilmez (v2.11: taşlar ve taş konuşması da meşale inince gelir; v2.12: üstteki takip satırı da o ana kadar taş istemez, haritadaki taşlar mavi parlamaz) |
 | 6 | Zümrüt | 4 taşı topla | Meşale inince Zümrüt taşları anlatır ve kazanın yanına 4 Taş konur |
 | 7 | Zümrüt | Kazanda **Keskin taş** tarifini öğren (2 Taş). Malzemeler konana kadar kazan alanı mavi parlar (v2.22). | — |
 | 8 | Zümrüt | Kalan 2 taşla elle Keskin taş yap | Zümrüt kuzeydoğudaki Nazlı'yı söyler |
@@ -416,6 +416,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - Her toplama, isabet ya da balık aletin 1 kullanımını yer. Dayanıklılık rengi yeşilden kırmızıya döner; sıfırda alet çalışmaz, silah yumruk gibi vurur. **Bileme** (Dursun ve silahçı kuzenleri): aletin değerinin onda biri. Kova ve asalar/ateşli silahlar körelmez.
 - **Alet yuvaları:** 5 (Alet kemeri dalıyla 6/7/8/10/12). Yuva doluysa yeni alet yere düşer; yerdeki eşya 180 sn sonra kaybolur.
 - **Mıknatıs:** yere düşen küçük eşyalar (yeni düşenler yarım saniye bekler) **21 px** yakına gelince sana doğru süzülür (1.89'a kadar 30 px'ti; %30 kısaltıldı). 10 px içinde hızla çekilir, 6 px'te toplanır; E ile 28 px içindekiler alınır.
+- **Ağaç kesince dal ve yaprak düşer (v2.25):** baltayla her kesişte ağacın odununun yanında **1 Dal** ve **1 Yaprak** düşer (Söğüt'ün söğüt dalı ve meyve ağaçlarının meyvesi eskisi gibi ayrıca düşer).
 - **İş çubuğunun yazısı:** balta ile ağaç keserken "**Kesiliyor: Çam ağacı**" (ağacın adı), kazma ile kazarken "**Kazılıyor: …**", öbür toplamalarda "Toplanıyor: …" yazar.
 - **Balta kademesi:** Taş 1 · Çakmaktaşı, Granit 2 · Kuvars, Tunç 3 · Bazalt, Demir 4 · Obsidyen 5.
   - 1: Çam, Ladin, Kavak, Elma, Armut, Erik · 2: Meşe, Ceviz, Mürver, Kayın, Ihlamur, Kızılağaç · 3: Huş, Söğüt, Kestane, Akçaağaç, Dişbudak, Bataklık servisi · 4: Ardıç, Porsuk, Kara çam, Kül ağacı, Dikenli akasya, Kızıl sedir, Ateş narı · 5: Mor söğüt, Gece ağacı, Işık ağacı, Yıldız eriği, Ay elması · ACT 2: Yüzen Kayalar ağaçları 1, diğerleri 2.
@@ -681,7 +682,7 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 - **Sıradağ** orta sütunu doğudakinden ayırır, kıyıdan kıyıya uzanır. Tek geçidi Kayalık Dağ ile Kül Diyarı arasındadır (adanın yaklaşık %74 yüksekliğinde) ve bir **kaya yığını** kapatır. 2 Kaya patlatıcı ve kuvars ya da daha iyi bir kazmayla patlatılır. **Patlama bütün sıradağı çökertir:** o andan sonra sınır kalkar, sıradağın her yeri yürünebilir moloz olur; Bataklık'tan Mor Kristal Vadisi'ne de doğrudan geçilir. (Kayıtta yalnızca "patlatıldı" bilgisi tutulur; yüklenince sıradağ yeniden çöker.)
 - **1.84 ve öncesinin kayıtları:** her şey (envanter, görevler, köprü, patlama) korunur ama harita değiştiği için kumsalda uyanırsın ve harita yeniden keşfedilir; bir kez bildirim çıkar.
 - **Haritadaki miktarlar (v2.11'de seyreltildi, harita kalabalık geliyordu):** yeni oyunda ada kurulurken her tür sabit sayıda rastgele yere konur; yerler her oyunda farklı, sayılar aynıdır.
-  - **Temel malzemeler** bütün adaya serpilir (yaklaşık): Dal 800, Lif 700, Taş 550, Yaprak 450, Nehir çakılı 400, Kum 350, Çakmaktaşı 300 (v2.10'a kadar 1650 / 1410 / 990 / 840 / 720 / 600 / 450). Daha az oldukları için **%30 daha çabuk** yeniden çıkarlar (ör. Dal 25 → 18 sn).
+  - **Temel malzemeler** bütün adaya serpilir (yaklaşık): Dal 800, **Lif ~950, Taş ~735** (v2.25'te ikisi de ~%35 artırıldı; önce 700 ve 550), Yaprak 450, Nehir çakılı 400, Kum 350, Çakmaktaşı 300 (v2.10'a kadar 1650 / 1410 / 990 / 840 / 720 / 600 / 450). Daha az oldukları için **%30 daha çabuk** yeniden çıkarlar (ör. Dal 25 → 18 sn).
   - **Biyom bitkileri** her biyomun kendi 14 türü: tür başına kendi biyomunda yaklaşık **40** (önce 68); Kuru ot ~90 (150), Böğürtlen ~80 (110), yalnızca su kenarında biten türler ~30 (42).
   - **Madenler** (biyom başına 3 tür, ilk iki biyomda 22, diğerlerinde 20) ve **mağara buluntuları** (Sarkıt, Yarasa gübresi, Mağara mantarı: madenlerin çevresinde 44'er) değişmedi.
   - **Ağaçlar** sayıyla değil olasılıkla çıkar: orman zemininde her karede %20, çimende %4 (Kül Diyarı'nda bunların %45'i); sonra **%35'i** seyreltilir (v2.10'a kadar %18). Tür biyomun 5 ağacından seçilir; meyve ağaçlarının payı 0,45, diğerlerinin 1.
@@ -694,6 +695,8 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 
 Aşağıdaki her biyom başlığında dört tablo var:
 
+- **Ağaç sayısı (v2.25):** ada kurulurken ağaçlar yaklaşık **%25 azaltılır** (başlangıç kampının 20 karo çevresi hariç; orası öğretici için aynı kalır). Kayıtlar etkilenmez, harita her açılışta aynı kurulur.
+- **Her kesişte (v2.25):** ağacın odunu + **1 Dal** + **1 Yaprak** düşer (önceden yaprak 1–2'ydi, dal yoktu).
 - **Ağaçlar:** balta ile kesilir (E). "Gereken balta" kademesinin altındaki balta o ağacı kesemez. Meyve ağaçları eli boşken E ile **silkelenir** (2–3 meyve); baltayla kesilirlerse de odun, 1–2 meyve ve %35 ihtimalle tohum verirler. Bazı ağaçlar kesilince yan ürün de düşürür: Çam → 1 Çam kozalağı, Meşe → 1 Meşe palamudu, Akçaağaç → 1 Akçaağaç özsuyu, Ihlamur → 2 Ihlamur çiçeği, Söğüt → 2 Söğüt dalı.
 - **Toplanabilirler:** yerde durur, elde alet gerekmez. Toplanınca belirtilen süre sonra aynı yerde yeniden çıkar. "Adadaki sayısı" haritanın o bölgesindeki toplam yerdir (yeni oyunda ölçüldü; v2.11 seyreltmesinden sonra yeniden sayıldı).
 - **Madenler:** kazma elde E. Gereken kazma kademesi tabloda. Maden 300 sn sonra yeniden dolar.
@@ -1110,7 +1113,7 @@ Adanın kuzeydoğusu, Kül Diyarı'nın kuzeyi (sıradağ çöktükten sonra Bat
   - Hayvandan düşen şey ya da av: o canlının **yaşadığı bütün biyomlar** (eşya hem yerden hem avdan çıkıyorsa ikisinin biyomları birlikte).
   - Balık tutma ve nehir kili gibi suda yapılan işler: **nehirler ve sığ sular** (açık deniz değil).
   - Bir biyoma gitme: o biyomun tamamı.
-  - Bir kişiye, bir yapıya ya da bir yere gitme (demirci, kazan, köprü, enkaz…): o kişinin/yerin çevresinde büyük bir sarı ışık (yaklaşık 8 karo yarıçap) ve dışa açılan halkalar.
+  - Bir kişiye, bir yapıya ya da bir yere gitme (demirci, kazan, köprü, enkaz…): o kişinin/yerin çevresinde büyük bir sarı ışık (yaklaşık 8 karo yarıçap) ve dışa açılan halkalar. **v2.25:** oraya 8 karodan yakınken bu büyük ışık haritada çizilmez (küçük haritada senin üstüne biniyordu). Kazanda yapılan görevlerde (ör. Zümrüt'ün "Kazanın dili") hedef **Zümrüt değil kazandır**; kazanın yanına gelince oyunda **kazanın kendisi sarı parlar**.
   - Yapılacak bir eşya: ham maddeleri sırayla gösterilir (biri tamamlanınca sarı bölge sonrakine geçer); son adımda yapılacağı yer (kazan, örs, el yapımı) söylenir. Birden fazla şey isteyen görevde bölge sırayla her birini gösterir.
 - **Ok:** sarı bölgenin dışındaysan ok seni bölgenin **sana en yakın** yerine götürür. **Zaten o biyomdaysan** (ya da suda yapılacak işte nehrin 3 karo yakınındaysan, kişiye gidilecek işte 8 karo yakınındaysan) **ok çıkmaz**.
 - Görev kartı ve görev konuşmasındaki "📍" satırı biyomların adını söyler ("Orman, Bataklık · haritada sarı bölge").
@@ -1187,7 +1190,7 @@ Kazanının başında, otları ve geceyi bilen sabırlı cadı.
 | # | Görev | İstenen | Açılma | Açar | Ödül |
 |---|---|---|---|---|---|
 | Z1 | Papatya çayı | Getir: 4 Papatya, 3 Nane | E1 | Z2 | 30 · 20 XP |
-| Z2 | Kazanın dili | Kazanda 5 yeni tarif öğren | Z1 | Z3 | 40 · 30 XP |
+| Z2 | Kazanın dili | Kazanda **toplam 8 tarif** öğrenmiş ol (v2.25; önceden "5 yeni tarif"di: bütün tarifleri bilen biri bu görevde takılıyordu). Önceden öğrendiklerin de sayılır; 8'e zaten ulaşmışsan görev hemen tamamlanır. | Z1 | Z3 | 40 · 30 XP |
 | Z3 | Gelincik boyası | Yap: 2 Gelincik boyası | Z2 | Z4 | 50 · 35 XP |
 | Z4 | Ay ışığında | Getir: 2 Gece sefası (yalnızca gece açar) | Z3 · Kaba meşale ya da Meşale | Z5 | 70 · 45 XP |
 | Z5 | Ormanın yaprakları | Getir: 3 Yaban mersini, 3 Kuzukulağı (Orman) | Z4 · Orman keşfedildi | Yakut 1 | 90 · 60 XP |

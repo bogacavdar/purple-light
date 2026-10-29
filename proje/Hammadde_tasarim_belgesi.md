@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.24** ile birebir (29 Ekim 2026). Bu sürümde: arena artık kayda hiç dokunmuyor (arenadan çıkarken arena karakteri gerçek oyunun otomatik kaydının üstüne yazılıyordu); arenada savuşturma açık; oyun başında kampın yanına fazladan malzeme konmuyor.
+Sürüm: **Versiyon 2.25** ile birebir (29 Ekim 2026). Bu sürümde: Zümrüt'ün derslerinde malzemeler toplanmadan hiçbir şey parlamıyor; Kazanın dili toplam 8 tarif; ağaç kesince 1 dal + 1 yaprak; taş ve lif ~%35 fazla, ağaç ~%25 az; kazan görevinde hedef kazan ve kazan parlıyor.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
