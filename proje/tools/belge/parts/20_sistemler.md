@@ -5,7 +5,7 @@
 | WASD / oklar | Yürü | Kanvası sürükle (görünmez joystick) ya da gideceğin yere dokun |
 | Shift | Koş (Koşu yeteneği gerekir) | Çift dokunuş |
 | E | Topla, konuş, kapı, yatak, ağacı silkele | Nesneye dokun |
-| Q / sol tık | Vur (sol tıkla hayvana tıklamak da vurur) | **Vur** düğmesi (yakın canavara kilitlenir) |
+| Q / sol tık | Vur. **Sol tık her zaman tıklanan yöne vurur** (el boşken yumruk, elde silah/alet varsa onunla; v2.03). Bir kişiye, kazana/örse/pazara, kurulmuş bir eşyaya ya da toplanacak bir şeye (çalı, maden, ağaç) tıklamak eskisi gibi oraya gidip konuşur/toplar. Boş yere tıklamak karakteri yürütmez; yürümek WASD/oklarla | **Vur** düğmesi (yakın canavara kilitlenir) |
 | Boşluk | Atıl / takla (Börü'nün atılma dersinden sonra); yerleştirirken döndür | **Atıl** düğmesi |
 | Sağ tık | Savuştur (bas) · savunma duruşu (basılı tut) | **Savuş** düğmesi |
 | R | Ulti (çubuk doluyken); değilse robot köpekler menüsü (arenada R yalnızca ulti) | **Ulti** düğmesi (yalnızca ulti atar, köpek menüsünü açmaz; v1.87) |

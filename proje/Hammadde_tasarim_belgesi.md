@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.02** ile birebir (29 Ekim 2026). Bu sürümde: arka-çaprazdaki ayaklar 2.00'deki haline döndü. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.03** ile birebir (29 Ekim 2026). Bu sürümde: bilgisayarda sol tık her zaman vurur (el boşken de). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -228,7 +228,7 @@ ACT 2 bölümündeki "ACT 2'nin akışı"na bak: Ülker (portallar) → Pervin (
 | WASD / oklar | Yürü | Kanvası sürükle (görünmez joystick) ya da gideceğin yere dokun |
 | Shift | Koş (Koşu yeteneği gerekir) | Çift dokunuş |
 | E | Topla, konuş, kapı, yatak, ağacı silkele | Nesneye dokun |
-| Q / sol tık | Vur (sol tıkla hayvana tıklamak da vurur) | **Vur** düğmesi (yakın canavara kilitlenir) |
+| Q / sol tık | Vur. **Sol tık her zaman tıklanan yöne vurur** (el boşken yumruk, elde silah/alet varsa onunla; v2.03). Bir kişiye, kazana/örse/pazara, kurulmuş bir eşyaya ya da toplanacak bir şeye (çalı, maden, ağaç) tıklamak eskisi gibi oraya gidip konuşur/toplar. Boş yere tıklamak karakteri yürütmez; yürümek WASD/oklarla | **Vur** düğmesi (yakın canavara kilitlenir) |
 | Boşluk | Atıl / takla (Börü'nün atılma dersinden sonra); yerleştirirken döndür | **Atıl** düğmesi |
 | Sağ tık | Savuştur (bas) · savunma duruşu (basılı tut) | **Savuş** düğmesi |
 | R | Ulti (çubuk doluyken); değilse robot köpekler menüsü (arenada R yalnızca ulti) | **Ulti** düğmesi (yalnızca ulti atar, köpek menüsünü açmaz; v1.87) |

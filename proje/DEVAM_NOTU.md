@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.03 (29 Ekim 2026) · sol tık her zaman vurur
+- Ana kanvas `pointerdown` (v109 satırı): fare sol tıkta `weaponHeld()` şartı kalktı; hedef yoksa ya da hayvansa `attack()` (yumruk dahil), başka bir hedefte (kişi, istasyon, node, placed, köprü…) eski yürü/etkileş yolu. Boş yere tıklamak artık yürütmez. Kayıtlara etkisi yok.
+
 ## v2.02 (29 Ekim 2026) · arka-çapraz ayaklar 2.00'a döndü
 - v194 bloğu `D34MK` arka dalı: 2.01'deki `Q` (aynalama) kaldırıldı, bacaklar yine `P` ile ön-çaprazla aynı. Kayıtlara etkisi yok.
 

@@ -7,6 +7,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.03 · 29 Ekim 2026
+
+**Oynanış**
+- Bilgisayarda **sol tık her zaman vuruyor**: el boşken yumruk, elde silah ya da alet varsa onunla, tıkladığın yöne. Önceden yalnızca elde silah varken vuruyordu, yoksa Q gerekiyordu.
+- Bir kişiye, kazana/örse/pazara, kurulmuş bir eşyaya ya da toplanacak bir şeye (çalı, maden, ağaç) tıklamak eskisi gibi oraya gidip konuşuyor/topluyor.
+- Boş yere tıklamak artık karakteri yürütmüyor; yürümek WASD ya da ok tuşlarıyla. Telefonda bir şey değişmedi.
+
+**Tasarım belgesi**
+- Kontroller tablosunda "Q / sol tık" satırı güncellendi; sürüm satırı 2.03.
+
+---
+
 ## Versiyon 2.02 · 29 Ekim 2026
 
 **Görsel**
