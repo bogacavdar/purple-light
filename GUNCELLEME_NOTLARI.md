@@ -7,6 +7,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.17 · 29 Ekim 2026
+
+**Düzeltmeler**
+- **Ciddi: "NaN sikke".** Meyve ağaçlarının odunlarının (Elma, Armut, Erik, Mürver) fiyatı yoktu; birini Nazlı'ya satınca sikke "NaN" oluyor, pazar da bozuluyordu. Bu odunlar artık **3 sikke** ve tariflerde "herhangi odun" yerine kullanılabiliyor. Oyundaki bütün eşyaların (1.299 tane) fiyatı tek tek denendi; fiyatı olmayan başka eşya kalmadı. Bundan sonra fiyatı olmayan bir eşya olursa satılmıyor ("Bu eşyayı Nazlı almıyor"), "Hepsini sat" onu atlıyor.
+- **Bozuk sikke onarımı:** sikkesi NaN olmuş bir kayıt açılınca oyun sikkeyi kayıtlardaki **en son geçerli** miktara (otomatik ya da elle kayıtların en yenisi) döndürüyor ve "Sikkelerin onarıldı: … sikke" diyor; geçerli bir kayıt yoksa 0. Oyun sırasında NaN olursa son geçerli miktara dönüyor. Görev sayaçlarındaki (ör. "150 sikkelik satış") bozuk değerler 0'dan devam ediyor. Kaydın geri kalanı olduğu gibi kalıyor.
+- **Ciddi: ekran maviye dönüyordu.** Uzun oyunda, özellikle telefonda, ekran kartının belleği doluyor; zemin ve ağaç resimleri boş çizildiği için arkadaki mavi görünüyordu (kişiler, gölgeler ve küçük eşyalar duruyordu). Artık telefonda daha az ekran kartı belleği kullanılıyor, eski resimler daha çabuk bırakılıyor; ekran kartı "bellek doldu" derse resimler boşaltılıp yeniden yükleniyor, bir dakika içinde ikinci kez olursa oyun kaydedip klasik çizimle yeniden açılıyor.
+
+**Kayıtlar**
+- NaN sikkeli kayıtlar açılınca sikke onarılıyor (yukarıda); başka hiçbir şeye dokunulmuyor.
+
+**Tasarım belgesi**
+- Ekonomi (fiyatsız eşya, sikke onarımı), Teknoloji (ekran kartı belleği), Açıklar #4 düzeldi; sürüm satırı 2.17.
+
 ## Versiyon 2.16 · 29 Ekim 2026
 
 **Düzeltmeler**

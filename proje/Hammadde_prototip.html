@@ -1343,7 +1343,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.16</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.17</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -1453,7 +1453,8 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
 // every 2D canvas remembers when it was last drawn on, so a texture made from it knows when to refresh
 try{const P=CanvasRenderingContext2D.prototype;for(const m of ['fillRect','clearRect','strokeRect','drawImage','putImageData','fill','stroke','fillText','strokeText']){const f=P[m];if(!f)continue;
   P[m]=function(){const r=f.apply(this,arguments);const c=this.canvas;if(c)c.__v=(c.__v|0)+1;return r}}}catch(e){}
-let want=true;try{want=localStorage.getItem('hammadde.gl2')!=='0'}catch(e){}   // v68.2: on again (the black screen was the light vignette painted with a gradient a plain 2D canvas could not read); a fresh key so everyone starts with it on
+let want=true;try{want=localStorage.getItem('hammadde.gl2')!=='0'}catch(e){}
+const GLPHONE=(()=>{try{return matchMedia('(pointer:coarse)').matches}catch(e){return false}})(),GLMAXP=GLPHONE?3:6,GLMAXOWN=GLPHONE?40:120;   // v2.17: memory caps   // v68.2: on again (the black screen was the light vignette painted with a gradient a plain 2D canvas could not read); a fresh key so everyone starts with it on
 window.__plGLWanted=want;
 window.addEventListener('error',function(ev){try{const st=String(ev.error&&ev.error.stack||'');if(window.__plGLOn&&/GL2D|earcut/.test(st)){localStorage.setItem('hammadde.gl2','0');location.reload()}}catch(_){}});
 window.__mkGL2D=function(cv){if(!want)return null;try{const g=new GL2D(cv);window.__plGLOn=true;return g}catch(e){try{console.warn('[Purple Light] WebGL kapalı:',e)}catch(_){}window.__plGLFail=String(e&&e.message||e);return null}};
@@ -1602,8 +1603,15 @@ class GL2D{
   // -------- images: small ones live in shared atlas pages, big ones get their own texture
   mkTex(w,h){const gl=this.gl,t=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,t);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
     gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.NEAREST);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.NEAREST);return{t,w,h,lin:false}}
-  newPage(){const P=2048,gl=this.gl;if(this.pages.length>=6){this.flush();for(const p of this.pages)gl.deleteTexture(p.tex.t);this.pages=[];this.atl.clear()}
-    const tex=this.mkTex(P,P);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,P,P,0,gl.RGBA,gl.UNSIGNED_BYTE,null);const pg={tex,x:1,y:1,h:0,P};this.pages.push(pg);this.curTex=null;return pg}
+  // v2.17: when the card runs out of memory (a long game on a phone) big textures came out empty: no ground, no trees, a blue screen.
+  // Fewer pages and big textures on phones, a cap on big textures, and an out-of-memory check after each new upload: free everything and
+  // build again; a second time within a minute → save and reopen with the plain 2D canvas.
+  memChk(){const gl=this.gl,e=gl.getError();if(e!==gl.OUT_OF_MEMORY)return false;const now=performance.now();
+    if(this.oomT&&now-this.oomT<60000){try{localStorage.setItem('hammadde.gl2','0')}catch(_){}try{window.__hamErr&&window.__hamErr('Ekran kartının belleği doldu; oyun kaydedilip klasik çizimle yeniden açılıyor.',true)}catch(_){}setTimeout(()=>location.reload(),1200);this.oomT=now;return true}
+    this.oomT=now;this.freeAll();return true}
+  freeAll(){const gl=this.gl;try{this.flush()}catch(_){}for(const p of this.pages)gl.deleteTexture(p.tex.t);this.pages=[];this.atl.clear();for(const [,e] of this.own)gl.deleteTexture(e.tex.t);this.own.clear();this.curTex=null}
+  newPage(){const P=2048,gl=this.gl;if(this.pages.length>=GLMAXP){this.flush();for(const p of this.pages)gl.deleteTexture(p.tex.t);this.pages=[];this.atl.clear()}
+    const tex=this.mkTex(P,P);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,P,P,0,gl.RGBA,gl.UNSIGNED_BYTE,null);if(this.memChk()){gl.deleteTexture(tex.t);const t2=this.mkTex(P,P);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,P,P,0,gl.RGBA,gl.UNSIGNED_BYTE,null);const pg2={tex:t2,x:1,y:1,h:0,P};this.pages.push(pg2);this.curTex=null;return pg2}const pg={tex,x:1,y:1,h:0,P};this.pages.push(pg);this.curTex=null;return pg}
   place(w,h){let pg=this.pages[this.pages.length-1]||this.newPage();if(pg.x+w+1>pg.P){pg.x=1;pg.y+=pg.h+1;pg.h=0}if(pg.y+h+1>pg.P){pg=this.newPage()}const r={pg,x:pg.x,y:pg.y};pg.x+=w+1;pg.h=Math.max(pg.h,h);return r}
   srcEntry(src){const gl=this.gl;const isC=src instanceof HTMLCanvasElement||(typeof OffscreenCanvas!=='undefined'&&src instanceof OffscreenCanvas);
     const w=src.width||src.naturalWidth,h=src.height||src.naturalHeight;if(!w||!h)return null;if(!isC&&src.complete===false)return null;const ver=isC?(src.__v|0):1;
@@ -1612,10 +1620,10 @@ class GL2D{
       if(e.ver!==ver){this.flush();gl.bindTexture(gl.TEXTURE_2D,e.pg.tex.t);try{gl.texSubImage2D(gl.TEXTURE_2D,0,e.x,e.y,gl.RGBA,gl.UNSIGNED_BYTE,src)}catch(x){return null}e.ver=ver;this.curTex=null}
       e.used=this.frameN;return{tex:e.pg.tex,u0:e.x/e.pg.P,v0:e.y/e.pg.P,su:1/e.pg.P,sv:1/e.pg.P,w,h,atlas:true}}
     let e=this.own.get(src);if(e&&(e.tex.w!==w||e.tex.h!==h)){gl.deleteTexture(e.tex.t);this.own.delete(src);e=null}
-    if(!e){e={tex:this.mkTex(w,h),ver:-1,used:0};e.tex.fresh=true;this.own.set(src,e)}
-    if(e.ver!==ver){this.flush();gl.bindTexture(gl.TEXTURE_2D,e.tex.t);try{if(e.tex.fresh){gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,src);e.tex.fresh=false}else gl.texSubImage2D(gl.TEXTURE_2D,0,0,0,gl.RGBA,gl.UNSIGNED_BYTE,src)}catch(x){return null}e.ver=ver;this.curTex=null}
+    if(!e){if(this.own.size>=GLMAXOWN){let ok=null,ou=1e18;for(const [k2,v2] of this.own)if(v2.used<ou){ou=v2.used;ok=k2}if(ok){gl.deleteTexture(this.own.get(ok).tex.t);this.own.delete(ok)}}e={tex:this.mkTex(w,h),ver:-1,used:0};e.tex.fresh=true;this.own.set(src,e)}
+    if(e.ver!==ver){this.flush();gl.bindTexture(gl.TEXTURE_2D,e.tex.t);try{if(e.tex.fresh){gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,src);e.tex.fresh=false;if(this.memChk())return null}else gl.texSubImage2D(gl.TEXTURE_2D,0,0,0,gl.RGBA,gl.UNSIGNED_BYTE,src)}catch(x){return null}e.ver=ver;this.curTex=null}
     e.used=this.frameN;return{tex:e.tex,u0:0,v0:0,su:1/w,sv:1/h,w,h,atlas:false}}
-  prune(){const gl=this.gl,old=this.frameN-600;for(const [k,e] of this.own)if(e.used<old){gl.deleteTexture(e.tex.t);this.own.delete(k)}for(const [k,e] of this.txt)if(e.used<old)this.txt.delete(k)}
+  prune(){const gl=this.gl,old=this.frameN-300;for(const [k,e] of this.own)if(e.used<old){gl.deleteTexture(e.tex.t);this.own.delete(k)}for(const [k,e] of this.txt)if(e.used<old)this.txt.delete(k)}
   drawImage(src,a,b,c,d,e,f,g,h){if(this._fwd){this._fwd.drawImage.apply(this._fwd,arguments);return}
     let sx=0,sy=0,sw,sh,dx,dy,dw,dh;const n=arguments.length;
     if(src===this.canvas){this.flush();return}
@@ -1680,7 +1688,7 @@ ladder(['Kürek','Boynuz kazma'],'shovel',[3,2],[25,40],[100,250],'kil kazar');
 const toolPrice=n=>buyFloor(n,GT[n].price);   // Dursun's price (D1)
 // v51: nobody but Nazlı sells; masters make what you have learnt from your materials and take a labour fee
 const QC={};const QG={n:new Set(),t:new Set(),a:new Set(),d:new Set(),why:{}};   // v55: what tracked quests want, glowing blue in the world
-const qc=(k,n)=>{QC[k]=(QC[k]||0)+(n==null?1:n)};   // v55: counters the NPC quests read (kills live in kills{})
+const qc=(k,n)=>{const d=n==null?1:+n;if(!isFinite(d))return;QC[k]=(+QC[k]||0)+d};   // v55: counters the NPC quests read (kills live in kills{})
 const laborFee=r=>Math.max(2,Math.round((PRICE_[r]||10)*.15));
 const ARMORSET=new Set(DB.f||[]);
 function smithOf(r){return ARMORSET.has(r)?durmus:smith}
@@ -1735,8 +1743,10 @@ const buyFloor=(n,p)=>Math.max(p,Math.ceil((PRICE_[n]||0)*SELL_CAP*1.1)+1);
 // how many of each thing came from a shop: the lucky customer never doubles those, so buying to sell never pays
 const shopQ={};const shopBuy=(n,q)=>{shopQ[n]=(shopQ[n]||0)+(q||1)};
 function shopTake(n,q){const s=Math.min(q,shopQ[n]||0);if(s>0){shopQ[n]-=s;if(!shopQ[n])delete shopQ[n]}return s}
-const unitPrice=(n,bulk)=>PRICE_[n]*sellMult(n,bulk);
+// v2.17: the fruit-tree woods had no price (selling one turned the coins into NaN); a missing price now means "not sold", never NaN
+const unitPrice=(n,bulk)=>{const v=PRICE_[n]*sellMult(n,bulk);return isFinite(v)&&v>0?v:0};
 let PRICE_=DB.p;
+for(const [k,v] of [['Elma odunu',3],['Armut odunu',3],['Erik odunu',3],['Mürver odunu',3]]){if(!(PRICE_[k]>0))PRICE_[k]=v;try{const G=DB.c['Herhangi odun'];if(G&&G.indexOf(k)<0)G.push(k)}catch(e){}}
 PRICE_['Yaprak barınağı']=1;
 // v51: trophies of harder beasts are worth more (rare parts most of all); recipes that use them follow by the change × 1,3
 (function(){const NEWP={'Geyik boynuzu':9,'Kurt derisi':9,'Kurt dişi':10,'Yaban domuzu derisi':9,'Yaban domuzu dişi':11,'Yaban öküzü derisi':14,'Öküz boynuzu':16,'Timsah dişi':35,'Zehir bezesi':16,'Ayı pençesi':22,'Mağara ayısı derisi':24,'İri diken':12,'Yaban atı derisi':10};
@@ -3354,6 +3364,7 @@ ctools.addEventListener('click',e=>{
 });
 function sell(n,q){
   if(!(inv[n]>0)||q<1)return;
+  if(!(unitPrice(n)>0)){toast(`Bu eşyayı Nazlı almıyor: ${n}`,true);sfx('bad');return}   // v2.17
   q=Math.min(q,inv[n]);qc('sold',Math.round(unitPrice(n)*q));inv[n]-=q;if(GT[n]&&!inv[n])delete toolDur[n];if(!inv[n]&&beltIndex(n)>=0){const j=beltIndex(n);if(hand===j)hand=-1;belt[j]=null;hotK=''}const fromShop=shopTake(n,q);let got=Math.round(unitPrice(n)*q);const lucky=fromShop<q&&sk('T3')&&rnd()<.05+(sk('T8')?.07:0)+luck();if(lucky)got+=Math.round(unitPrice(n)*(q-fromShop));coins+=got;tutSold([n]);
   if(slots[0]===n&&!avail(n,0))slots[0]=null;if(slots[1]===n&&!avail(n,1))slots[1]=null;
   toast(`${lucky?'Şanslı müşteri! ':''}${q} ${n} satıldı · +${got.toLocaleString('tr-TR')} sikke`);renderInv();renderCraft();
@@ -7762,7 +7773,7 @@ function coinWatch(){if(!coin100&&met&&!tz&&coins>=100&&!sk('K1')){coin100=true;
 function potLater(n){const U=USES.get(n);if(!U)return 0;let c=0;for(const r of U)if(!foundSet.has(r)&&!PLACEABLE.has(r))c++;return c}
 function potUses(n){const U=USES.get(n);if(!U)return 0;let c=0;for(const r of U)if(!foundSet.has(r)&&!PLACEABLE.has(r)&&(diff==='hard'||isOpen(r)))c++;return c}
 // bulk selling never takes tools, armour, torches, beds, shelters, campfires or anything else that goes on the belt
-function bulkSellable(n){return !TOOLS.has(n)&&!EQUIP[n]&&!hotThing(n)&&!PLACEABLE.has(n)&&n!=='Kamp ateşi'}
+function bulkSellable(n){return unitPrice(n,true)>0&&!TOOLS.has(n)&&!EQUIP[n]&&!hotThing(n)&&!PLACEABLE.has(n)&&n!=='Kamp ateşi'}
 function sellSafe(){let got=0,names=[];for(const n of order){if(inv[n]>0&&bulkSellable(n)&&!potUses(n)){names.push(n);got+=unitPrice(n,true)*inv[n];shopTake(n,inv[n]);inv[n]=0}}
   got=Math.round(got);if(!got){toast('Kazanda işe yaramayan satılık bir şeyin yok.',true);return}coins+=got;tutSold(names);toast(`${names.length} çeşit satıldı · +${got.toLocaleString('tr-TR')} sikke (kazanda işe yarayanlar sende kaldı)`);renderInv();renderCraft()}
 document.addEventListener('click',e=>{if(e.target&&e.target.id==='sellsafe')sellSafe()});
@@ -15040,6 +15051,15 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
      try{sessionStorage.setItem('hammadde.isle',String(to));sessionStorage.setItem('hammadde.pending',JSON.stringify(d));sessionStorage.setItem('hammadde.quiet','1')}catch(x){return _as.apply(this,arguments)}   // no room in the session store: load in place as before
      show('Kayıt yükleniyor…');setTimeout(()=>location.reload(),150);return}
    return _as.apply(this,arguments)};
+ // v2.17: coins that are not a number (an unpriced sale used to make them NaN) are repaired: on load from the newest save that still has a good
+ // amount (auto or manual), while playing from the last good amount seen; quest counters that went bad start again from 0
+ {let good=null;const ok=v=>typeof v==='number'&&isFinite(v);
+  const fromSaves=()=>{try{const a=saves();let best=null,bt=-1;for(const id in a){const v=a[id],c=v&&v.data&&v.data.coins;if(ok(c)&&v.t>bt){bt=v.t;best=c}}return best}catch(e){return null}};
+  const fix=src=>{const c=src!=='load'&&ok(good)?good:nn(fromSaves(),0);coins=Math.max(0,Math.round(c));good=coins;try{renderInv()}catch(e){}setTimeout(()=>{try{toast(`Sikkelerin onarıldı: ${coins.toLocaleString('tr-TR')} sikke`)}catch(e){}},src==='load'?2500:0)};
+  const _rs2=restore;restore=function(d){good=null;const r=_rs2.apply(this,arguments);try{if(!ok(coins)||(d&&typeof d==='object'&&'coins' in d&&!ok(d.coins)))fix('load');else good=coins;/* a NaN in the save comes back as null */for(const k in QC)if(!ok(QC[k]))QC[k]=0}catch(e){}return r};
+  const _as2=applyState;applyState=function(d){const bad=!!(d&&typeof d==='object'&&'coins' in d&&!ok(d.coins)),here=!dirty;const r=_as2.apply(this,arguments);   // cleanSave turns a null into 0: look at the raw save
+    try{if(bad&&here)fix('load')}catch(e){}return r};
+  setInterval(()=>{try{if(onTitle)return;if(ok(coins))good=coins;else fix('play')}catch(e){}},1000)}
  // v2.15: saves from before the parry lesson: whoever could dodge could parry, keep it so
  {const _sn=snapshot;snapshot=function(){const o=_sn.apply(this,arguments);try{o.p0m=1}catch(e){}return o}}
  {const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{if(d&&!d.p0m&&skills.has('S1'))skills.add('P0')}catch(e){}return r}}

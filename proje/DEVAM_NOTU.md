@@ -9,6 +9,11 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.17 (29 Ekim 2026) · NaN sikke, mavi ekran (ekran kartı belleği)
+- `PRICE_`: Elma/Armut/Erik/Mürver odunu 3, `DB.c['Herhangi odun']`'a eklendi. `unitPrice` sonlu ve > 0 değilse 0; `sell` 0 fiyatı reddeder, `bulkSellable` fiyatsızı atlar; `qc` sonlu olmayanı eklemez. 1.299 eşya tarandı, hepsi sonlu.
+- v214 bloğu: sikke onarımı (`applyState` ham kayıtta `coins` geçersizse ve `restore` sonrası) → kayıtların en yeni geçerli `data.coins`'i (yoksa 0); oyun sırasında saniyede bir son geçerli değer. `QC` geçersizleri 0.
+- v68-gl: `GLMAXP` (telefon 3 / 6), `GLMAXOWN` (40 / 120, en eski kullanılan silinir), `prune` 300 kare; yeni yüklemeden sonra `gl.getError()==OUT_OF_MEMORY` → `freeAll()`; 60 sn içinde ikincisi → `hammadde.gl2=0` + yeniden aç (pagehide otomatik kaydeder).
+
 ## v2.16 (29 Ekim 2026) · vuruş tamponu (ciddi hata)
 - v204: en dış `attack` sarmalı: `atkCd>0` ya da `__p4.pend` iken basılan vuruş `BUF`'a (son odak) yazılır, rAF ile bekleme bitince (≤ 0,8 sn) `attack(f)` çağrılır. Böylece nişan sarmalı (yüzü çeviren) yalnızca vuruş gerçekten atılırken çalışır. Kayıtlara etkisi yok.
 

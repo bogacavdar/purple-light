@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.16** ile birebir (29 Ekim 2026). Bu sürümde: vuruş bitmeden basılan yeni vuruş kaybolmuyor, bekleme bitince son bastığın yöne atılıyor (önceden karakter yalnızca dönüyordu). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.17** ile birebir (29 Ekim 2026). Bu sürümde: fiyatsız meyve ağacı odunu satınca sikke NaN oluyordu (fiyat eklendi, fiyatsız eşya satılmaz, bozuk sikke kayıttan onarılır); uzun oyunda telefonda ekranın maviye dönmesi (ekran kartı belleği) düzeltildi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -82,6 +82,7 @@ Bu bölüm oyunun ve projenin **neyle yapıldığını** anlatır: hangi program
   - Işık, gölge ve gece efektleri için **karışım modları** (blend) ekran kartında uygulanır.
   - Köşe ve piksel gölgelendiricileri **GLSL** ile yazılmıştır.
 - WebGL yoksa ya da hata verirse oyun kendiliğinden **Canvas 2D**'ye döner. Ayarlar › Grafik › "Ekran kartıyla çiz" ile elle kapatılabilir.
+- **Ekran kartı belleği (v2.17):** uzun oyunda (özellikle telefonda) ekran kartının belleği dolunca zemin ve ağaç resimleri boş çiziliyor, ekran **mavi** görünüyordu (zemin yok, yalnızca gölgeler, kişiler ve küçük şeyler). Artık: telefonda ortak resim sayfaları en çok 3 (bilgisayarda 6), büyük resimler en çok 40 / 120 tane tutulur (en eski kullanılan silinir) ve 5 sn kullanılmayan büyük resim bırakılır. Ekran kartı "bellek doldu" derse bütün resimler boşaltılıp yeniden yüklenir; 1 dakika içinde ikinci kez olursa oyun otomatik kaydedip **klasik çizimle** (Canvas 2D) yeniden açılır.
 - **Piksel resimler kodla çizilir:** eşyalar, karakterler (seçilebilir ten, saç, göz, kıyafet), canavarlar, ağaçlar ve harita 16×16 piksellik metin şablonlarından ya da çizim kodundan üretilir. Dışarıdan resim dosyası yoktur.
 - Resim yumuşatma kapalıdır (`imageSmoothingEnabled = false`, `image-rendering: pixelated`), böylece pikseller keskin kalır.
 - **SVG:** menü simgeleri ve yetenek ağacı (ikonlar, dallar).
@@ -355,6 +356,8 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 ## Ekonomi
 
 - **Satış** yalnızca Pazarcı Nazlı'ya. Birim fiyat = temel fiyat × satış çarpanı. Satış çarpanı = (1 + Ticaret yüzdesi + Değerli işçilik (yapılmış eşyada) + Toptancı (Hepsini sat) + Keşif defteri ustalığı) × seviye çarpanı; **en çok 2,3**.
+- **Fiyatsız eşya satılmaz (v2.17):** her eşyanın bir fiyatı olmalı; fiyatı bulunmayan bir eşya pazarda **satılmaz** ("Bu eşyayı Nazlı almıyor"), "Hepsini sat" onu atlar. Meyve ağacı odunları (Elma, Armut, Erik, Mürver) **3 sikke** ve "Herhangi odun" grubundalar (v2.16'ya kadar fiyatları yoktu; satınca sikke **NaN** oluyordu).
+- **Bozuk sikke onarımı (v2.17):** kayıt açılırken ya da oyun sırasında sikke sayı değilse (NaN), oyun bunu düzeltir: kayıttaki en son geçerli sikke miktarına (otomatik ve elle kayıtların içinden en yenisi, yoksa 0) döner ve "Sikkelerin onarıldı" der. Görev sayaçlarındaki bozuk değerler de 0'dan sürer.
 - **Şanslı müşteri** satışta %5 (II ile toplam %12) + şans ihtimalle iki kat öder.
 - **Satın alma:** yalnızca Nazlı, yalnızca daha önce eline geçmiş **doğal** malzemeler (tohumlar dahil). Alış fiyatı temel fiyatın 2,6 ile 5,6 katı arası (pahalı ve tehlikeli bölge malzemesi daha pahalı).
 - Başka hiçbir kişi sikkeyle eşya satmaz; ustalar malzemeyi senden alıp **işçilik** ister (Dursun/Durmuş %15, Kemal %20, ACT 2 ustaları sabit ücret). Rıza evleri sikkeyle yapar.
@@ -5003,7 +5006,7 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 | 1 | Kerevit kapanı | Börü'nün "Kapan ustası" görevi "Nerede: Çayır" diyordu; kapana kerevit yalnızca Bataklık/Kayalık Dağ sularında girer. | **Düzeltildi v1.79:** Nerede satırı Bataklık. |
 | 2 | Kötü son | "Yalnız dönüş" başarımı ve dolayısıyla "Platin" kazanılamaz; kötü son yok. | Kötü son yazılana kadar başarımı gizle ya da Platin'den çıkar. |
 | 3 | ACT 2'den dönüş | Birinci adaya dönmenin tek yolu portaldı; portal Ülker'in 3. görevi bitince açılıyordu ve o görev yalnızca birinci adada bulunan malzemeler istiyor. | **Düzeltildi v1.76:** Levent ve Ekin portalları ikinci adaya varınca hep açık. |
-| 4 | Meyve ağacı odunu | Elma, Armut, Erik ağaçları kesilebiliyor; verdikleri odunun fiyatı yok, hiçbir tarifte kullanılmıyor. | Fiyat ve "Herhangi odun" grubuna ekle ya da meyve ağaçlarını yine kesilmez yap. |
+| 4 | Meyve ağacı odunu | Elma, Armut, Erik (ve Mürver) odunlarının fiyatı yoktu; satınca sikke NaN oluyordu. | **Düzeltildi v2.17:** 3 sikke, "Herhangi odun" grubunda; fiyatsız eşya artık satılmaz; bozuk sikke onarılır. |
 | 5 | Tüccar Nuri'nin tarifleri | Tarif satış kodu var ama menüden açılmıyor; Zümrüt "tüccardan tarif alabilirsin" diyor. | Menüye ekle ya da Zümrüt'ün sözünü değiştir. |
 | 6 | Hasan'ın tohumları | Tohum dükkânı açılmıyor; Hasan bir yerde "satarım" bir yerde "satmam" diyor. | Karar ver, metni düzelt. |
 | 7 | Ev fiyatları | Rıza alt fiyat kuralıyla satıyor: Taş ev 4.049 (arsanın ipucu metni 2.500 diyor), Deri çadır (Sv 3) 1.039 ile Kulübe'den (Sv 4, 510) pahalı. | Ev fiyatlarını alt fiyat kuralından muaf tut. |

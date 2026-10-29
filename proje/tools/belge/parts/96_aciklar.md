@@ -7,7 +7,7 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 | 1 | Kerevit kapanı | Börü'nün "Kapan ustası" görevi "Nerede: Çayır" diyordu; kapana kerevit yalnızca Bataklık/Kayalık Dağ sularında girer. | **Düzeltildi v1.79:** Nerede satırı Bataklık. |
 | 2 | Kötü son | "Yalnız dönüş" başarımı ve dolayısıyla "Platin" kazanılamaz; kötü son yok. | Kötü son yazılana kadar başarımı gizle ya da Platin'den çıkar. |
 | 3 | ACT 2'den dönüş | Birinci adaya dönmenin tek yolu portaldı; portal Ülker'in 3. görevi bitince açılıyordu ve o görev yalnızca birinci adada bulunan malzemeler istiyor. | **Düzeltildi v1.76:** Levent ve Ekin portalları ikinci adaya varınca hep açık. |
-| 4 | Meyve ağacı odunu | Elma, Armut, Erik ağaçları kesilebiliyor; verdikleri odunun fiyatı yok, hiçbir tarifte kullanılmıyor. | Fiyat ve "Herhangi odun" grubuna ekle ya da meyve ağaçlarını yine kesilmez yap. |
+| 4 | Meyve ağacı odunu | Elma, Armut, Erik (ve Mürver) odunlarının fiyatı yoktu; satınca sikke NaN oluyordu. | **Düzeltildi v2.17:** 3 sikke, "Herhangi odun" grubunda; fiyatsız eşya artık satılmaz; bozuk sikke onarılır. |
 | 5 | Tüccar Nuri'nin tarifleri | Tarif satış kodu var ama menüden açılmıyor; Zümrüt "tüccardan tarif alabilirsin" diyor. | Menüye ekle ya da Zümrüt'ün sözünü değiştir. |
 | 6 | Hasan'ın tohumları | Tohum dükkânı açılmıyor; Hasan bir yerde "satarım" bir yerde "satmam" diyor. | Karar ver, metni düzelt. |
 | 7 | Ev fiyatları | Rıza alt fiyat kuralıyla satıyor: Taş ev 4.049 (arsanın ipucu metni 2.500 diyor), Deri çadır (Sv 3) 1.039 ile Kulübe'den (Sv 4, 510) pahalı. | Ev fiyatlarını alt fiyat kuralından muaf tut. |

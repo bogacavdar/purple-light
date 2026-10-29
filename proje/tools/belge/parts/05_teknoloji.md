@@ -49,6 +49,7 @@ Bu bölüm oyunun ve projenin **neyle yapıldığını** anlatır: hangi program
   - Işık, gölge ve gece efektleri için **karışım modları** (blend) ekran kartında uygulanır.
   - Köşe ve piksel gölgelendiricileri **GLSL** ile yazılmıştır.
 - WebGL yoksa ya da hata verirse oyun kendiliğinden **Canvas 2D**'ye döner. Ayarlar › Grafik › "Ekran kartıyla çiz" ile elle kapatılabilir.
+- **Ekran kartı belleği (v2.17):** uzun oyunda (özellikle telefonda) ekran kartının belleği dolunca zemin ve ağaç resimleri boş çiziliyor, ekran **mavi** görünüyordu (zemin yok, yalnızca gölgeler, kişiler ve küçük şeyler). Artık: telefonda ortak resim sayfaları en çok 3 (bilgisayarda 6), büyük resimler en çok 40 / 120 tane tutulur (en eski kullanılan silinir) ve 5 sn kullanılmayan büyük resim bırakılır. Ekran kartı "bellek doldu" derse bütün resimler boşaltılıp yeniden yüklenir; 1 dakika içinde ikinci kez olursa oyun otomatik kaydedip **klasik çizimle** (Canvas 2D) yeniden açılır.
 - **Piksel resimler kodla çizilir:** eşyalar, karakterler (seçilebilir ten, saç, göz, kıyafet), canavarlar, ağaçlar ve harita 16×16 piksellik metin şablonlarından ya da çizim kodundan üretilir. Dışarıdan resim dosyası yoktur.
 - Resim yumuşatma kapalıdır (`imageSmoothingEnabled = false`, `image-rendering: pixelated`), böylece pikseller keskin kalır.
 - **SVG:** menü simgeleri ve yetenek ağacı (ikonlar, dallar).

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.16** ile birebir (29 Ekim 2026). Bu sürümde: vuruş bitmeden basılan yeni vuruş kaybolmuyor, bekleme bitince son bastığın yöne atılıyor (önceden karakter yalnızca dönüyordu). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.17** ile birebir (29 Ekim 2026). Bu sürümde: fiyatsız meyve ağacı odunu satınca sikke NaN oluyordu (fiyat eklendi, fiyatsız eşya satılmaz, bozuk sikke kayıttan onarılır); uzun oyunda telefonda ekranın maviye dönmesi (ekran kartı belleği) düzeltildi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
