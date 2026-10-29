@@ -1340,7 +1340,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.90</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.91</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -6136,12 +6136,13 @@ function drawMap(c,w,h,big){
     mk((o.tx+.5)*T,(o.ty+.5)*T,o.n==='Atölye'?'#c8903a':'#b8a0e0',big?(o.n==='Atölye'?'Atölye':''):'',big?3:1.2)}
   if(wiz.shown)mki(wiz.x,wiz.y,'star','Yıldızsız Gezgin');
   try{if(ISLE===2){for(const [o,k] of [[window.__gok,'gok'],[window.__pervin,'pervin'],[window.__tamer,'tamer'],[window.__selin,'selin'],[window.__alara,'alara'],[window.__tuna,'tuna'],[denizci,'denizci']])if(o&&o.x>-9e4)mki(o.x,o.y,k,o.name,0,1)}else if(denizci.state==='here'&&denizci.x>-9e4)mki(denizci.x,denizci.y,'denizci','Denizci Levent')}catch(e){}   // v1.76: the second island's people (and Levent) are on the map; they show even where you have not been yet
-  try{if(window.__plMapPeople)window.__plMapPeople(mki)}catch(e){}try{if(window.__plMapQ)window.__plMapQ(c,ox,oy,sx,sy,big,w,h)}catch(e){}   // v1.84: the cousins
+  try{if(window.__plMapPeople)window.__plMapPeople(mki)}catch(e){}try{if(window.__plMapQ&&!(dk>0))window.__plMapQ(c,ox,oy,sx,sy,big,w,h)}catch(e){}   // v1.84: the cousins
   for(const d of dogs)mk(d.x,d.y,'#7fe0ff','',big?3:1.5);
   drawV46Map(c,ox,oy,sx,sy,w,h,big);
   // night: the map goes dark too, apart from fires and your own torch
   if(dk>0){c.save();c.fillStyle=`rgba(3,5,14,${(dk*.92).toFixed(3)})`;c.fillRect(0,0,w,h);c.globalCompositeOperation='lighter';
     const Ls=lightSources().concat(pl_?[[player.x,player.y-6,pl_]]:[]);for(const l of Ls){const X=(l[0]/T-ox)*sx,Y=(l[1]/T-oy)*sy,r=Math.max(2,l[2]/T*sx);if(X<-r||Y<-r||X>w+r||Y>h+r)continue;const g2=c.createRadialGradient(X,Y,0,X,Y,r);g2.addColorStop(0,`rgba(255,190,110,${(dk*.35).toFixed(3)})`);g2.addColorStop(1,'rgba(255,150,60,0)');c.fillStyle=g2;c.fillRect(X-r,Y-r,2*r,2*r)}c.restore()}
+  try{if(window.__plMapQ&&dk>0)window.__plMapQ(c,ox,oy,sx,sy,big,w,h)}catch(e){}   // v1.91: the job's zone stays bright at night
   for(const a of lateI)mki(a[0],a[1],a[2],a[3],1,a[4]);
   {const gg=guide();if(gg&&lit(gg.x,gg.y)){const X=Math.max(6,Math.min(w-6,(gg.x/T-ox)*sx)),Y=Math.max(6,Math.min(h-6,(gg.y/T-oy)*sy)),q=(time*1.4)%1,r0=big?7:3.5;
     c.strokeStyle=`rgba(242,184,75,${(1-q).toFixed(2)})`;c.lineWidth=big?3:1.5;c.beginPath();c.arc(X,Y,r0+q*(big?20:9),0,Math.PI*2);c.stroke();
@@ -14444,7 +14445,7 @@ function nearestOf(L,f){let b=null,bd=1e18;for(const p of L){if(f&&!f(p))continu
 const R0=192;
 function landCircle(b,f){const p=nearestOf(INT[b],f);return p?{x:p[0],y:p[1],r:R0,b}:null}
 function animalCircle(k){const A=ANIM[k];if(!A||!ANB[k])return null;const b=Math.min.apply(null,ANB[k]);
-  const c=landCircle(b,p=>{try{return A.land(tileAt(p[0],p[1]))&&zoneAt(p[0],p[1])===(A.z||0)}catch(e){return true}})||landCircle(b);if(c){c.n=k;c.night=!!A.night}return c}
+  const c=landCircle(b,p=>{try{return A.land(tileAt(p[0],p[1]))&&zoneAt(p[0],p[1])===(A.z||0)}catch(e){return true}})||landCircle(b);if(c){c.n=k;c.night=!!A.night;c.bios=ANB[k].slice()}return c}
 function cluster(pts){if(!pts.length)return null;let L=pts;if(L.length>320)L=pts.map(p=>[p,dist(p[0],p[1])]).sort((a,b)=>a[1]-b[1]).slice(0,320).map(x=>x[0]);
   let best=null,bs=-1e18;for(const p of L){let c=0;for(const o of pts)if(Math.abs(o[0]-p[0])<R0&&Math.abs(o[1]-p[1])<R0&&Math.hypot(o[0]-p[0],o[1]-p[1])<R0)c++;const sc=c*Math.exp(-dist(p[0],p[1])/700);if(sc>bs){bs=sc;best=p}}
   let sx=0,sy=0,n=0;for(const o of pts)if(Math.hypot(o[0]-best[0],o[1]-best[1])<R0){sx+=o[0];sy+=o[1];n++}return{x:sx/n,y:sy/n,r:R0}}
@@ -14453,8 +14454,10 @@ function itemCircle(m){let pts=nodes.filter(n=>n.name===m).map(n=>[n.x,n.y]);
   if(m==='Islak nehir kili'){for(let ty=2;ty<H-2;ty+=3)for(let tx=2;tx<W-2;tx+=3){const i=ty*W+tx;if(tiles[i]===3&&BIO[i]===0&&!isWater(tiles[i+1]))pts.push([(tx+1)*T+8,ty*T+8])}}
   let pb=99;for(const p of pts)pb=Math.min(pb,bioAt(p[0],p[1]));
   const an=animDrops(m);let ab=99,ak=null,ap=0;for(const [k,b,p] of an)if(b<ab||(b===ab&&p>ap)){ab=b;ak=k;ap=p}
-  if(ak&&ab<pb){const c=animalCircle(ak);if(c){c.n=m;c.via=ak}return c}
-  if(pb>=99)return null;const c=cluster(pts.filter(p=>bioAt(p[0],p[1])===pb));if(c){c.n=m;c.b=pb}return c}
+  const bs=new Set();for(const p of pts)bs.add(bioAt(p[0],p[1]));for(const [k,b] of an)for(const x of (ANB[k]||[b]))bs.add(x);   // v1.91: the whole zone
+  const zone=c=>{if(!c)return c;if(m==='Islak nehir kili'){c.water=1;c.bios=[]}else c.bios=[...bs].sort((a,b)=>a-b);return c};
+  if(ak&&ab<pb){const c=animalCircle(ak);if(c){c.n=m;c.via=ak}return zone(c)}
+  if(pb>=99)return null;const c=cluster(pts.filter(p=>bioAt(p[0],p[1])===pb));if(c){c.n=m;c.b=pb}return zone(c)}
 // what is the next thing to go and get for "n of item"
 function needTarget(item,n,dep,vis){dep=dep||0;vis=vis||new Set();if(dep>6||vis.has(item))return null;vis.add(item);
   const have=haveN(item);if(have>=n)return null;
@@ -14534,7 +14537,7 @@ function partTarget(p,q){
    case 'b':return needTarget(p[1],p[2]);
    case 'h':case 'any':{const n=p[0]==='h'?p[1]:p[1][0];const t=needTarget(n,1);if(t)return t;if(p[3]==='döv'||p[2]==='döv'){const sm=/^(smith|durmus|k_durdu|k_duran|k_ali|k_veli|k_kaya|k_kayhan|k_turan|k_tufan|k_kudret|k_kuvvet)$/.test(q.g)?q.g:'smith';const o=gObj(sm);if(o)return{x:o.x,y:o.y,r:0,n:gName(sm)}}return null}
    case 'k':return animalCircle(p[1]);
-   case 'c':if(p[1]==='fish:'){let b=null,bd=1e18;for(let ty=2;ty<H-2;ty+=2)for(let tx=2;tx<W-2;tx+=2){const i=ty*W+tx;if(tiles[i]!==3||BIO[i]!==0)continue;const x=tx*T+8,y=ty*T+8,d=dist(x,y);if(d<bd){bd=d;b=[x,y]}}return b?{x:b[0],y:b[1],r:96,n:'Nehir',b:0}:null}
+   case 'c':if(p[1]==='fish:'){let b=null,bd=1e18;for(let ty=2;ty<H-2;ty+=2)for(let tx=2;tx<W-2;tx+=2){const i=ty*W+tx;if(tiles[i]!==3||BIO[i]!==0)continue;const x=tx*T+8,y=ty*T+8,d=dist(x,y);if(d<bd){bd=d;b=[x,y]}}return b?{x:b[0],y:b[1],r:96,n:'Nehir',b:0,water:1,bios:[]}:null}
      if(p[1]==='trap:')return own('Tuzak')||placed.some(o=>/Tuzak/.test(o.n))?animalCircle('Tavşan'):needTarget('Tuzak',1);
      if(p[1]==='sold')return {x:market.x,y:market.y,r:0,n:market.name};if(p[1]==='sharp'){const o=gObj(q.g);return o?{x:o.x,y:o.y,r:0,n:o.name}:null}return null;
    case 'learn':return witchShown?{x:witch.x,y:witch.y,r:0,n:'Zümrüt\'ün kazanı'}:null;
@@ -14545,7 +14548,7 @@ function partTarget(p,q){
    case 'bed':return {x:usta.x,y:usta.y,r:0,n:usta.name};
    case 'wear':return own(p[1])?null:needTarget(p[1],1)||(()=>{const o=gObj(/zırh|miğfer|çizme|eldiven/i.test(p[1])?'durmus':'smith');return o&&!/çizme/i.test(p[1])?{x:o.x,y:o.y,r:0,n:o.name}:null})();
    case 'farm':{const tn=FARM_TOOLS[farmStep-1];if(!tn)return null;return own(tn)?{x:farmer.x,y:farmer.y,r:0,n:farmer.name}:(needTarget(tn,1)||{x:smith.x,y:smith.y,r:0,n:smith.name})}
-   case 'reach':return landCircle(p[1]);
+   case 'reach':{const c=landCircle(p[1]);if(c)c.bios=[p[1]];return c}
    case 'meet':{const o=p[1]==='denizci'?{x:D.x,y:D.y,name:D.name}:gObj(p[1]);return o&&o.x>-9e4?{x:o.x,y:o.y,r:0,n:o.name}:null}
    case 'bridge':return woodCount()<BRIDGE_WOOD?(needTarget('Çam odunu',BRIDGE_WOOD-woodCount()+haveN('Çam odunu'))||null):{x:bridge.x0*T-10,y:bridge.cy,r:0,n:'Kırık köprü'};
    case 'rock':{if((inv['Kaya patlatıcı']||0)<2)return needTarget('Kaya patlatıcı',2);if(bestTool('pick')<3)return needTarget('Tunç kazma',1);return {x:rockfall.x0*T-10,y:rockfall.cy,r:0,n:'Kaya yığını'}}
@@ -14559,12 +14562,27 @@ function target2(force){const q=curQ();if(!q){TG=null;TGk='';return null}
   const k=q.id+'|'+q.p.map(p=>pdone(p)?1:0).join('')+'|'+(complete()?1:0)+'|'+farmStep+'|'+(woodCount()>=BRIDGE_WOOD?1:0)+'|'+clues.size;
   if(force||k!==TGk||(TG&&TG.r===0&&performance.now()-TGt>4000)){TGk=k;TGt=performance.now();try{TG=computeTarget()}catch(e){TG=null}}return TG}
 function whereTxt(){const q=curQ();if(!q)return '';{const p=q.p.find(x=>!pdone(x));if(p&&(p[0]==='b'||p[0]==='h')&&SPECW[p[1]])return SPECW[p[1]]}const t=target2(true);if(!t)return '';
-  if(t.r)return `${t.b!=null&&BNAME[t.b]?BNAME[t.b]:''}${t.via?` · ${t.via} avlarsan düşer`:''}${t.night?' · geceleri çıkar':''} · haritada <b style="color:#ffd23a">sarı çember</b>`;
+  if(t.r){const nm=t.water?'Nehirler ve sığ sular':t.bios&&t.bios.length?(t.bios.length>=6?'Bütün ada':t.bios.map(b=>BNAME[b]).filter(Boolean).join(', ')):(t.b!=null&&BNAME[t.b]?BNAME[t.b]:'');
+    return `${nm}${t.via?` · ${t.via} avlarsan düşer`:''}${t.night?' · geceleri çıkar':''} · haritada <b style="color:#ffd23a">sarı bölge</b>`}
   return `${esc(t.n||'')} · ok yolu gösteriyor`}
-// the arrow: our point while a job runs (none inside the circle)
-GUIDE.q2=()=>{const t=TG;return t?{x:t.x,y:t.y,n:t.n||''}:{x:player.x,y:player.y,n:''}};
+// v1.91: the zone where the job can be done: whole biomes (land), or rivers and shallow water
+const zKey=t=>t&&(t.water||(t.bios&&t.bios.length))?(t.water?'w':'')+(t.bios||[]).join(','):'';
+const ZM={k:'',m:null,c:null};
+function zoneMask(t){const k=zKey(t);if(!k)return null;if(ZM.k===k)return ZM;const m=new Uint8Array(W*H),bs=new Set(t.bios||[]);
+  for(let i=0;i<W*H;i++){const tl=tiles[i];if(t.water){if(tl===3)m[i]=1}else if(!isWater(tl)&&bs.has(BIO[i]))m[i]=1}
+  const c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d'),im=g.createImageData(W,H);
+  for(let i=0;i<W*H;i++)if(m[i]){im.data[i*4]=255;im.data[i*4+1]=210;im.data[i*4+2]=58;im.data[i*4+3]=255}g.putImageData(im,0,0);
+  ZM.k=k;ZM.m=m;ZM.c=c;ZM.nt=0;return ZM}
+function inZone(t){const Z=zoneMask(t);if(!Z)return null;const tx=Math.floor(player.x/T),ty=Math.floor(player.y/T),r=t.water?3:0;
+  for(let y=ty-r;y<=ty+r;y++)for(let x=tx-r;x<=tx+r;x++)if(x>=0&&y>=0&&x<W&&y<H&&Z.m[y*W+x])return true;return false}
+function zoneNear(t){const Z=zoneMask(t);if(!Z)return null;const now=performance.now();if(Z.np&&now-Z.nt<1000)return Z.np;
+  const px=player.x/T,py=player.y/T;let b=null,bd=1e18;for(let y=1;y<H;y+=2)for(let x=1;x<W;x+=2)if(Z.m[y*W+x]){const d=(x-px)*(x-px)+(y-py)*(y-py);if(d<bd){bd=d;b=[x,y]}}
+  Z.nt=now;Z.np=b?{x:b[0]*T+8,y:b[1]*T+8}:null;return Z.np}
+window.__plZone=()=>{const t=TG;return t&&zKey(t)?{t,mask:zoneMask(t)}:null};
+// the arrow: our point while a job runs (none inside the zone)
+GUIDE.q2=()=>{const t=TG;if(t&&zKey(t)){const p=zoneNear(t);if(p)return{x:p.x,y:p.y,n:t.n||''}}return t?{x:t.x,y:t.y,n:t.n||''}:{x:player.x,y:player.y,n:''}};
 {const _gk=guideKey;guideKey=function(){if(!I2&&S.a&&!tz&&!onTitle&&!sailing&&!fading){if(gping&&performance.now()<gping.until)return _gk.apply(this,arguments);
-    const t=target2();if(!t)return null;const d=dist(t.x,t.y);if(t.r?d<t.r:d<44)return null;return 'q2'}
+    const t=target2();if(!t)return null;if(zKey(t))return inZone(t)?null:'q2';const d=dist(t.x,t.y);if(t.r?d<t.r:d<128)return null;return 'q2'}
   return _gk.apply(this,arguments)}}
 // ---------------------------------------------------------------- lessons (a card, step by step, once each)
 const lesEl=document.createElement('div');lesEl.id='q2les';lesEl.hidden=true;document.body.appendChild(lesEl);
@@ -14675,7 +14693,7 @@ let WTk='',WT='';function whereTxtCached(){const k=TGk;if(k!==WTk||!WT){WTk=k;WT
 {const _rq=renderQlog;renderQlog=function(){if(I2)return _rq.apply(this,arguments);const q=curQ();
   const act=q?`<div class="qcard trk${complete()?' ok':''}"><div class="qh"><b>${esc(gName(q.g))}</b>${complete()?' · <em>tamamlandı</em>':''}</div><div class="qt">${esc(q.t)}</div><small>${esc(progText(q))} · Ödül: ${q.c||0} sikke${q.x?`, ${q.x} XP`:''}${complete()?'':`<br>📍 ${whereTxtCached()}`}</small><div class="qbtns"><button type="button" class="qb" data-q2c="1">Bu işi bırak</button></div></div>`:'<p class="note">Şu an bir görevin yok.</p>';
   const L=markGivers();const tot=Q.length,dn=S.d.length;
-  cbody.innerHTML=`<p class="note">Aynı anda <b>tek</b> görev yapılır. Başında siyah <b style="background:#ffd23a;color:#111;padding:0 4px">!</b> olan kişiyle konuşunca iş hemen başlar; istenen şeyin yeri haritada <b style="color:#ffd23a">sarı çember</b>le, yolu okla gösterilir. Bitince görevi verenin yanına git (gitmek ya da tanışmak isteyen işler kendiliğinden biter). Bırakmak için kartın köşesindeki <b>×</b> ya da görevi verenle konuş.</p>`
+  cbody.innerHTML=`<p class="note">Aynı anda <b>tek</b> görev yapılır. Başında siyah <b style="background:#ffd23a;color:#111;padding:0 4px">!</b> olan kişiyle konuşunca iş hemen başlar; görevin yapılabileceği her yer haritada <b style="color:#ffd23a">sarı</b> boyanır; o bölgenin dışındaysan ok yolu gösterir. Bitince görevi verenin yanına git (gitmek ya da tanışmak isteyen işler kendiliğinden biter). Bırakmak için kartın köşesindeki <b>×</b> ya da görevi verenle konuş.</p>`
     +act+(L.length&&!q?`<h3 class="ush">Seni bekleyenler</h3><ul class="qav">${L.map(g=>`<li><b>${esc(gName(g))}</b> · ${esc(BNAME[GB[g]]||'')}</li>`).join('')}</ul>`:'')
     +`<p class="note">Tamamlanan görevler: <b>${dn} / ${tot}</b></p><button type="button" class="mk ghost" id="qcardtog">${questsHidden?'Görev kartını göster':'Görev kartını gizle'}</button>`}}
 cbody.addEventListener('click',e=>{if(mode!=='qlog'||I2)return;if(e.target.closest('[data-q2c]'))askCancel()});
@@ -14688,10 +14706,15 @@ function drawRing(t,time){const R=t.r;ctx.save();ctx.strokeStyle=`rgba(255,214,6
   ctx.setLineDash([]);ctx.fillStyle='rgba(255,214,60,.05)';ctx.beginPath();ctx.arc(t.x,t.y,R,0,6.283);ctx.fill();ctx.restore()}
 {const _ve=v55Ents;v55Ents=function(ents,time){if(_ve)_ve.apply(this,arguments);if(I2)return;
   for(const g of markGivers()){const o=gObj(g);if(!o||o.x<-9e4||Math.abs(o.x-player.x)>320||Math.abs(o.y-player.y)>240)continue;ents.push({y:o.y-1,d:()=>drawMark(o,time)});ents.push({y:9990,d:()=>drawTag(o,time)})}
-  if(S.a){const t=target2();if(t&&t.r&&Math.abs(t.x-player.x)<t.r+340&&Math.abs(t.y-player.y)<t.r+260)ents.push({y:-1e9,d:()=>drawRing(t,time)})}
+  if(S.a){const t=target2();if(t&&t.r&&!zKey(t)&&Math.abs(t.x-player.x)<t.r+340&&Math.abs(t.y-player.y)<t.r+260)ents.push({y:-1e9,d:()=>drawRing(t,time)})}
   if(BUB)ents.push({y:9995,d:drawBubble})}}
 window.__plQMk=(k,wx,wy)=>{if(I2)return undefined;const g=k==='ekin'?'npc':k;if(g!=='npc'&&!(BYG[g]))return null;return hasMark(g)?'!':null};
-window.__plMapQ=(c,ox,oy,sx,sy,big,w,h)=>{if(I2||!S.a)return;const t=target2();if(!t||!t.r)return;const X=(t.x/T-ox)*sx,Y=(t.y/T-oy)*sy,R=Math.max(big?8:4,t.r/T*sx);if(X<-R||Y<-R||X>w+R||Y>h+R)return;
+window.__plMapQ=(c,ox,oy,sx,sy,big,w,h)=>{if(I2||!S.a)return;const t=target2();if(!t)return;const pl=.5+.5*Math.sin(performance.now()/1000*2.6);
+  if(zKey(t)){const Z=zoneMask(t);if(!Z)return;c.save();c.globalAlpha=.28+.22*pl;c.imageSmoothingEnabled=false;c.drawImage(Z.c,ox,oy,w/sx,h/sy,0,0,w,h);c.restore();return}   // v1.91: the whole zone in yellow
+  if(!t.r){const X=(t.x/T-ox)*sx,Y=(t.y/T-oy)*sy,R=Math.max(big?26:9,8*sx);if(X<-R||Y<-R||X>w+R||Y>h+R)return;c.save();c.globalCompositeOperation='lighter';
+    const g=c.createRadialGradient(X,Y,0,X,Y,R);g.addColorStop(0,`rgba(255,210,58,${(.55+.25*pl).toFixed(2)})`);g.addColorStop(1,'rgba(255,210,58,0)');c.fillStyle=g;c.beginPath();c.arc(X,Y,R,0,6.283);c.fill();c.restore();
+    const q=(performance.now()/1000*.9)%1;for(const k2 of [q,(q+.5)%1]){c.strokeStyle=`rgba(255,210,58,${(1-k2).toFixed(2)})`;c.lineWidth=big?3:1.5;c.beginPath();c.arc(X,Y,R*(.4+k2*.9),0,6.283);c.stroke()}return}
+  const X=(t.x/T-ox)*sx,Y=(t.y/T-oy)*sy,R=Math.max(big?8:4,t.r/T*sx);if(X<-R||Y<-R||X>w+R||Y>h+R)return;
   c.save();c.strokeStyle='#ffd23a';c.lineWidth=big?3:2;c.setLineDash(big?[6,4]:[3,2]);c.beginPath();c.arc(X,Y,R,0,6.283);c.stroke();c.setLineDash([]);c.fillStyle='rgba(255,210,58,.14)';c.fill();c.restore()};
 // ---------------------------------------------------------------- the clock: completing, the self-talk at the bridge/rocks/wreck, the lesson after loading
 let sig='';

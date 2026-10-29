@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 1.90** ile birebir (29 Ekim 2026; sayılar 1.75 üzerinde ölçüldü, sonraki sürümlerin değişiklikleri işlendi; 1.81: öğretici atlama uyarısı, Börü'nün atılma dersi, Zırh özelliği, üç renkli yetenek ağacı; 1.82–1.83: yetenek ağaçları ağaç biçiminde, ikonlu, ağaç başına 30 yetenek; 1.84: Zümrüt, Dursun ve Durmuş'un 15 kuzeni, demircilerde kademe kuralı, kuzenlere özel 15 silah/zırh, 45 yeni görev ve Elmas Nine'nin ortak ara sahnesi; 1.85: adanın yeni yerleşimi: altı eşit biyom sırayla, üç ayrı onarılan köprü, patlayınca çöken sıradağ; 1.86: ACT 1'in görev sistemi baştan: tek görev, siyah !, sarı çember, 139 görev, Ekin'in ayak işleri, dersler, köprü/patlama/gemi onay pencereleri; 1.87: telefonda Ulti düğmesi yalnızca ulti atar; 1.88: tokken de yemek yenir; 1.89: mıknatıs menzili %30 kısa, öğreticide gösterilen her düğme mavi parlar ve okla gösterilir, Zümrüt meşaleyi anlatır, Börü'nün kereviti yürüyerek saldırır, dövüş WASD + sol tıkla öğretilir, demirciler yarı hızda döver, ağaç keserken "Kesiliyor" yazar; 1.90: görevi olan kişiler büyük haritada parlar). Bu belgedeki bütün sayılar (can, hasar, fiyat, ihtimal, adet) oyunun çalışan halinden ölçülerek çıkarıldı; kodu açmadan bir şeyin oyunda nasıl yapıldığını buradan bulabilmelisin.
+Sürüm: **Versiyon 1.91** ile birebir (29 Ekim 2026; sayılar 1.75 üzerinde ölçüldü, sonraki sürümlerin değişiklikleri işlendi; 1.81: öğretici atlama uyarısı, Börü'nün atılma dersi, Zırh özelliği, üç renkli yetenek ağacı; 1.82–1.83: yetenek ağaçları ağaç biçiminde, ikonlu, ağaç başına 30 yetenek; 1.84: Zümrüt, Dursun ve Durmuş'un 15 kuzeni, demircilerde kademe kuralı, kuzenlere özel 15 silah/zırh, 45 yeni görev ve Elmas Nine'nin ortak ara sahnesi; 1.85: adanın yeni yerleşimi: altı eşit biyom sırayla, üç ayrı onarılan köprü, patlayınca çöken sıradağ; 1.86: ACT 1'in görev sistemi baştan: tek görev, siyah !, sarı çember, 139 görev, Ekin'in ayak işleri, dersler, köprü/patlama/gemi onay pencereleri; 1.87: telefonda Ulti düğmesi yalnızca ulti atar; 1.88: tokken de yemek yenir; 1.89: mıknatıs menzili %30 kısa, öğreticide gösterilen her düğme mavi parlar ve okla gösterilir, Zümrüt meşaleyi anlatır, Börü'nün kereviti yürüyerek saldırır, dövüş WASD + sol tıkla öğretilir, demirciler yarı hızda döver, ağaç keserken "Kesiliyor" yazar; 1.90: görevi olan kişiler büyük haritada parlar; 1.91: görevin yapılabileceği bütün biyomlar/sular haritada sarı boyanır, o bölgedeyken ok çıkmaz). Bu belgedeki bütün sayılar (can, hasar, fiyat, ihtimal, adet) oyunun çalışan halinden ölçülerek çıkarıldı; kodu açmadan bir şeyin oyunda nasıl yapıldığını buradan bulabilmelisin.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -1013,14 +1013,17 @@ Adanın kuzeydoğusu, Kül Diyarı'nın kuzeyi (sıradağ çöktükten sonra Bat
 9. **Kendiliğinden biten işler.** Bir yere gitmek, biriyle tanışmak, köprüyü onarmak, sıradağı patlatmak, izleri bulmak ve Levent'in gemisini kurmak: bunlar yapıldığı anda biter, ödül oracıkta gelir (geri dönüp teslim etmek gerekmez). Ekin'e bu yüzden yalnızca yeni iş almaya gidilir.
 10. **Ödül.** Sikke + XP; bazı görevler ayrıca tarif yazar. Kabaca biyoma göre: Çayır 20–120, Orman 40–180, Bataklık 120–300, Kayalık Dağ 200–420, Kül Diyarı 300–550, Mor Kristal Vadisi 450–800 sikke.
 
-## Yol gösterme: ok ve sarı çember
+## Yol gösterme: ok ve sarı bölge (v1.91)
 
-- Görev alınınca istenen şeyin bulunduğu yere haritada **sarı bir çember** çizilir ve ekranda bir **ok** çembere götürür. Çemberin içine girince **ok kaybolur**; çember, görevdeki **son parça** toplanana ya da görev iptal edilene kadar kalır.
-- **Çemberin yeri:** istenen şeyin bulunduğu biyomlardan **en zararsızında**, sana en yakın **yoğun kümenin** çevresi (yaklaşık 12 karo yarıçap).
-  - Toplanabilir / maden / ağaç: o şeyin en sık çıktığı küme.
-  - Av: o canlının doğduğu bölge.
-  - Yapılacak bir eşya: ham maddeleri sırayla gösterilir (biri tamamlanınca çember sonrakine geçer); son adımda yapılacağı yer (kazan, örs, el yapımı) söylenir.
-  - Birden fazla şey isteyen görevde çember sırayla her birini gösterir.
+- Görev alınınca görevin **yapılabileceği her yer** haritada (büyük ve küçük harita) **sarı boyanır** ve yavaşça nabız gibi parlar; görev sürdükçe kalır, görevdeki **son parça** toplanınca ya da görev iptal edilince kalkar. Küçük bir çember çizilmez.
+  - Toplanabilir / maden / ağaç: o şeyin **bulunduğu bütün biyomlar** baştan sona sarı (yalnızca kara; su boyanmaz). Örneğin her biyomda çıkan bir şey için bütün ada.
+  - Hayvandan düşen şey ya da av: o canlının **yaşadığı bütün biyomlar** (eşya hem yerden hem avdan çıkıyorsa ikisinin biyomları birlikte).
+  - Balık tutma ve nehir kili gibi suda yapılan işler: **nehirler ve sığ sular** (açık deniz değil).
+  - Bir biyoma gitme: o biyomun tamamı.
+  - Bir kişiye, bir yapıya ya da bir yere gitme (demirci, kazan, köprü, enkaz…): o kişinin/yerin çevresinde büyük bir sarı ışık (yaklaşık 8 karo yarıçap) ve dışa açılan halkalar.
+  - Yapılacak bir eşya: ham maddeleri sırayla gösterilir (biri tamamlanınca sarı bölge sonrakine geçer); son adımda yapılacağı yer (kazan, örs, el yapımı) söylenir. Birden fazla şey isteyen görevde bölge sırayla her birini gösterir.
+- **Ok:** sarı bölgenin dışındaysan ok seni bölgenin **sana en yakın** yerine götürür. **Zaten o biyomdaysan** (ya da suda yapılacak işte nehrin 3 karo yakınındaysan, kişiye gidilecek işte 8 karo yakınındaysan) **ok çıkmaz**.
+- Görev kartı ve görev konuşmasındaki "📍" satırı biyomların adını söyler ("Orman, Bataklık · haritada sarı bölge").
 - Görev bitince (kendiliğinden bitenler hariç) ok **görevi veren kişiyi** gösterir. Kişinin yanına (yaklaşık 2 karo) gelince "**Görev tamamlandı**" yazısı çıkar, kişi teşekkür eder, ödül verilir.
 
 ## Yeni mekanik dersleri

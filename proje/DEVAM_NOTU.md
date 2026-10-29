@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v1.91 (29 Ekim 2026) · görev yeri = sarı bölge
+- v186 görev bloğu: `itemCircle`/`animalCircle`/`partTarget` hedefe `bios` (biyom listesi) ya da `water:1` ekler. `zoneMask(t)` W×H maske + sarı tuval (anahtar `zKey`), `inZone` (suda 3 karo pay), `zoneNear` (1 sn'de bir en yakın karo; ok oraya). `guideKey`: bölgedeysen ok yok; kişi hedeflerinde 128 px. `__plMapQ` bölgeyi `drawImage` ile boyar (gece karanlık katmanından sonra ikinci çağrı), kişi hedefinde büyük ışık + halka. Dünyadaki `drawRing` bölge hedeflerinde çizilmez. Kayıtlara etkisi yok.
+
 ## v1.90 (29 Ekim 2026) · görevli kişiler haritada parlar
 - `drawMap` içindeki `mki`: büyük haritada simgeden önce `qm0` hesaplanır ('!' sarı, '?' yeşil); `lighter` ile radyal ışık + iki genişleyen halka. Kuzenler `__plMapPeople` → `mki` üstünden aynısını alır. Kayıtlara etkisi yok.
 

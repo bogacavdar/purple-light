@@ -7,6 +7,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 1.91 · 29 Ekim 2026
+
+**Arayüz**
+- Görev yeri artık küçük bir sarı çemberle değil, **görevin yapılabileceği her yerin sarıya boyanmasıyla** gösteriliyor (büyük ve küçük haritada, yavaşça parlayarak, gece de):
+  - Toplanacak/kazılacak/kesilecek şey: bulunduğu **bütün biyomlar** (her yerde çıkıyorsa bütün ada).
+  - Avlanacak hayvan ya da hayvandan düşen şey: hayvanın yaşadığı bütün biyomlar.
+  - Balık ve nehir kili: **nehirler ve sığ sular**.
+  - Bir biyoma gitme: o biyomun tamamı.
+  - Bir kişiye ya da yere gitme: o kişinin çevresinde büyük, nabız gibi atan sarı ışık ve halkalar.
+- **Ok:** sarı bölgenin içindeysen (o biyomdaysan) ok çıkmıyor; dışındaysan ok seni bölgenin en yakın yerine götürüyor.
+- Görev konuşmasındaki 📍 satırı biyomların adını yazıyor ("Orman, Bataklık · haritada sarı bölge").
+- Oyun içinde etrafına çizilen kesikli sarı çember kaldırıldı (bölge görevlerinde).
+
+**Tasarım belgesi**
+- "Yol gösterme: ok ve sarı bölge" bölümü yeniden yazıldı; sürüm satırı 1.91.
+
+---
+
 ## Versiyon 1.90 · 29 Ekim 2026
 
 **Arayüz**
