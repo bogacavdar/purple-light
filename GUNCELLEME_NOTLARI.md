@@ -7,6 +7,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.02 · 29 Ekim 2026
+
+**Görsel**
+- Arka-çaprazdaki ayaklar 2.00'deki haline geri döndü (2.01'deki aynalama geri alındı).
+
+**Tasarım belgesi**
+- "Karakterin 8 yönü" maddesinde arka-çapraz ayaklar 2.00'deki tarife döndü; sürüm satırı 2.02.
+
+---
+
 ## Versiyon 2.01 · 29 Ekim 2026
 
 **Düzeltmeler**
