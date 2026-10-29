@@ -10,7 +10,7 @@
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
 ## v2.19 (29 Ekim 2026) · almanak: yeni canlı yazısı, ilk avda parlama
-- `v218` bloğu: `window.__plAlmNew(k)` → `announce(k,'Almanağa eklendi · U ile bak')` + `sfx('found')`; almanakta başka açık (boss olmayan) tür yoksa `almGlow` → `#b-alm` (görünmüyorsa `#v50tog`) `.p218` + `#p218ptr` oku, 200 ms'de bir yerleşir, almanak açılınca (`__plAlm.open`) söner; `resetState` sıfırlar. Kalıcı değil (sayfa yenilenince parlama gitmez değil, hiç başlamaz).
+- `v218` bloğu: `window.__plAlmNew(k)` → `announce(k,'Almanağa eklendi · U ile bak')` + `sfx('found')`; almanakta başka açık (boss olmayan) tür yoksa `almGlow` → `#b-alm` (görünmüyorsa `#v50tog`) `.p218` + `#p218ptr` oku, 200 ms'de bir yerleşir, almanak açılınca (`__plAlm.open`) söner; `resetState` sıfırlar. Parlama kayda yazılmaz: almanak açılmadan sayfa yenilenirse parlama kaybolur.
 - `v213` bloğundaki ilk av bildirimi `toast` yerine `__plAlmNew` çağırıyor.
 - Eski kayıtlara etkisi yok.
 
