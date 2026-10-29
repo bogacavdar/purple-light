@@ -6,6 +6,9 @@
 ## 📝 KURAL: Güncelleme notları (29 Ekim 2026, Boğaç)
 - Her sürümde kökteki `GUNCELLEME_NOTLARI.md`'nin en üstüne o sürümün notu eklenir (bütün değişiklikler: Oynanış, Düzeltmeler, Görsel, Ses, Arayüz, Kayıtlar, Tasarım belgesi, Proje) ve dosya Boğaç'a her sürümde gönderilir.
 
+## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
+- `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
+
 ## v1.88 (29 Ekim 2026) · tokken de yemek yenir
 - `eat()` içindeki "Tıka basa toksun" engeli kaldırıldı: tokluk 100'de kalır, can ve yan etkiler işler. Tanrı modunda öğreticinin böğürtlen adımı yapılamıyordu, düzeldi. Belge: Temel sistemler, yemek satırı.
 

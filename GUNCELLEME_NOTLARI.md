@@ -20,6 +20,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 **Tasarım belgesi**
 - Temel sistemler → Can, tokluk, enerji: yemek satırı "tokken de yenir, tanrı modunda da" diye güncellendi.
+- Belgenin başındaki sürüm satırı 1.86'da kalmıştı; 1.88'e (1.87 ve 1.88 özetleriyle) güncellendi.
 
 **Proje**
 - `GUNCELLEME_NOTLARI.md` eklendi (bu dosya); her sürümde güncellenip Boğaç'a gönderilir.
