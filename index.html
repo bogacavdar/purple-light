@@ -13843,13 +13843,14 @@ document.body.classList.add('ph');
 const atk=document.createElement('button');atk.id='atkbtn';atk.type='button';atk.setAttribute('aria-label','Vur');atk.innerHTML='Vur<i class="ring" aria-hidden="true"></i>';document.body.appendChild(atk);
 const ult=document.createElement('button');ult.id='ultbtn';ult.type='button';ult.setAttribute('aria-label','Ulti');ult.textContent='Ulti';document.body.appendChild(ult);
 // ---------------------------------------------------------------- soft lock: the nearest creature in front of you
-function target(range){let best=null,bs=1e9;const f=player.face||{x:0,y:1},fa=Math.atan2(f.y,f.x||(f.y?0:1));
+const mvDir=()=>{try{if(joy.on&&joy.mag>.12){const l=Math.hypot(joy.vx,joy.vy);if(l>.01)return{x:joy.vx/l,y:joy.vy/l}}}catch(e){}return null};   // v2.22: walking with the stick: strike where you walk (diagonals too)
+function target(range){let best=null,bs=1e9;const f=mvDir()||player.face||{x:0,y:1},fa=Math.atan2(f.y,f.x||(f.y?0:1));
   for(const a of animals){const D=ANIM[a.k];if(!D||a.hp<=0)continue;const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy);if(d>range)continue;
     let df=Math.abs(Math.atan2(dy,dx)-fa);if(df>Math.PI)df=2*Math.PI-df;const sc=d+df*22+(D.temper==='zararsız'?40:0)+(a.tut?20:0);if(sc<bs){bs=sc;best=a}}
   return best}
 function kind(){try{return window.__plCB?window.__plCB.kindOf():'fist'}catch(e){return 'fist'}}
 function aimPoint(){const k=kind(),a=target(k==='staff'||k==='gun'?240:110);const f=player.face||{x:0,y:1};
-  if(a)return{a,x:a.x,y:a.y-6};return{a:null,x:player.x+(f.x||0)*40,y:player.y-6+(f.y||0)*40}}
+  if(a)return{a,x:a.x,y:a.y-6};const m=mvDir();if(m)return{a:null,x:player.x+m.x*40,y:player.y-6+m.y*40};return{a:null,x:player.x+(f.x||0)*40,y:player.y-6+(f.y||0)*40}}
 // the same mouse events v118 listens to, at the aimed point
 function fake(type,P){const x=(P.x-cam.cx)*S,y=(P.y-cam.cy)*S;let ev;
   try{ev=new PointerEvent(type,{pointerType:'mouse',pointerId:77,isPrimary:true,button:0,buttons:type==='pointerdown'?1:0,clientX:x,clientY:y,bubbles:true,cancelable:true})}catch(e){return false}
