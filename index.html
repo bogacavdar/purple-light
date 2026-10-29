@@ -14974,7 +14974,6 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const FAR=30;
  const fruitReady=t=>!!(t.type&&t.type.fruit&&!(t.fr>0));
  addEventListener('keydown',e=>{try{if(e.code!=='KeyE'||e.repeat)return;if(onTitle||dlgOpen||craftOpen||paused||wake||fading||sailing||placing)return;
-   if(inFight()){e.preventDefault();e.stopImmediatePropagation();return}   // v2.10: no gathering or talking with F while an animal is after you (keyboard only)
    const tg=eTarget();if(tg&&!/^(node|tree)$/.test(tg.kind))return;   // a person, a station, a field…: the usual
    for(const d of drops)if(d.t>=1&&Math.hypot(d.x-player.x,d.y-player.y+2)<28)return;   // loose things at your feet first
    const hAxe=!!heldKind('axe'),hPick=!!heldKind('pick'),axe=hAxe,pick=hPick;   // v2.07: the tool must be in your hand, not just in the bag
