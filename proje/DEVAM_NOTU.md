@@ -9,6 +9,13 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.27 (30 Ekim 2026) · 8 görev × 27 kişi, hikâyeli görev sahneleri
+- Görev verisi (tek satır JSON dizisi `[{"id": "E1"…`): 77 yeni görev (her kişi 8), her görevde `sc` (sahne adımları). Levent: `L6–L8` dizide L4 ile L5 arasında, `L5.r` = `["q","L8"]`. İçerik 5 yardımcıya yazdırıldı; şartname, doğrulayıcı ve birleştirici: scratchpad `q/SPEC.md`, `q/validate.py`, `q/merge.py` (depoda değil). Yeni görevlerin ödülleri bir önceki görevin ≥%106'sı (Ekin E6–E8 hariç).
+- Sahne motoru: görev bloğunda `qBeats` (q.sc → adımlar), `qBeat` (nar/emo/act/fx/cam/show/sfx/wait/tint), `qAct` (kişi/oyuncu konum ofseti, sonra geri), `qTarget` (partTarget/zoneNear), `drawQE` (duygu işareti). v218'de `window.__qscn` (üst şerit `#qnar`, `#qshow` eşya simgesi, `body.qtint-*`, `window.__camOv` kamera kayması, `parts` efektleri) ve sahne sırasında HUD gizleme. Kamera: kare döngüsündeki `cx/cy` artık `__camOv` ile karışıyor. Betiği olmayan görev (Ekin ayak işleri) eski `qLines` balonlarıyla.
+- `?debug` kancaları: `window.__plOfferQ(id)`, `window.__plQStats()`. Bütün 216 sahne hızlı oynatılarak denendi.
+- Tarif uyarı toast'u (v2.26) kaldırıldı. Eski 7 "X'e söyle" teşekkürü yeniden yazıldı.
+- Eski kayıtlar: yeni görevler eski zincirlerin sonuna geldiği için bitmiş zincirlerde 6.–8. görevler açılır; L5'i yapmamış biri önce L6–L8'i yapar.
+
 ## v2.26 (30 Ekim 2026) · tarif bilinmeden görev yok (acil), telefonda konuşma penceresi
 - Görev bloğu: `craftOnly(n)` (`expand` hepsi `REC` ve `!isNatural`), `needRec(q)` (b/h/wear/any parçaları, `foundSet`'te yoksa); `matsOK` artık `needRec(q).length` ise kapalı (v2.09'daki `q.rec` muafiyeti kalktı). 139 görevden 40'ı etkilendi (Playwright ile sayıldı; doğal olanlar — Gece sefası, odun, tarla ürünü — etkilenmedi).
 - Yeni parça türü `kn` (tarif bil): `prog`, `plab` ("X tarifini kazanda öğren"), `partTarget` (kazan, `kaz:1`).

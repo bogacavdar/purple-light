@@ -7,6 +7,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.27 · 30 Ekim 2026
+
+**Oynanış**
+- **Her kişinin 8 görevi var:** 27 kişiye toplam **77 yeni görev** eklendi; görev sayısı 139'dan **216**'ya çıktı. Yeni görevler zincirin sonuna geliyor (Levent'in yenileri gemiden önce) ve artan seviye istiyor, böylece erken bölgelerin ek görevleri ana yolu tıkamıyor. Hepsi o kişinin biyomundan toplanan, kesilen, kazılan ya da avlanan şeyler istiyor; her kişinin hikâyesini sürdürüyor (Rıza'nın Defne'ye söz verdiği ev, Toygar'ın oğlu için turna işareti, Dursun'un çanı, Zümrüt'ün kardeşinin çorbası…). Ödüller zincirde bir önceki görevin altına düşmüyor.
+- **Görevler artık gerçek bir sahneyle veriliyor:** 216 görevin her birinin kendi hikâyeli sahnesi var. Şeritler iniyor, menüler çekiliyor; üst şeritte anlatım yazısı çıkıyor, kişi bir şeyle uğraşıyor, bir sorun çıkıyor ya da bir anısı canlanıyor (anılar sepya, gizemli anlar karanlık tonda), başında duygu işaretleri beliriyor, zıplıyor, başını sallıyor, çömeliyor; kamera görevin yapılacağı yere kayıp dönüyor; istenen eşyanın simgesi kişinin yanında adıyla beliriyor; parçacıklar ve sesler eşlik ediyor. Sahne bitince görev penceresi açılıyor. Dokunuş/tık bir adım ileri, Esc sahneyi geçer.
+- **Tarif bekleyen kişi artık uyarı vermiyor:** görevi tarif yüzünden bekleyen kişi "önce şu tarifi öğren" demiyor; görevsiz kalırsan yolu Ekin'in ayak işi gösteriyor.
+
+**Düzeltmeler**
+- Bazı teşekkür sözlerindeki "X'e söyle" yönlendirmeleri (Dursun, Hasan, Yakut, Safir, Firuze, Mercan, Kuvvet) aynı şakayı koruyarak yeniden yazıldı; kimse seni başka birine göndermiyor.
+
+**Tasarım belgesi**
+- Görevlerin temel kuralları 2. madde: hikâyeli görev sahnesi; "Kişiler ve görevler": 8 görev kuralı ve 77 yeni görevin satırları; tarif uyarısı kaldırıldı. Sürüm satırı 2.27.
+
 ## Versiyon 2.26 · 30 Ekim 2026
 
 **Oynanış**

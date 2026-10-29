@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.26** ile birebir (30 Ekim 2026). Bu sürümde: tarifi bilinmeyen eşyayı isteyen görev verilmiyor (40 görev); Ekin'in "tarifi öğren" ayak işi; telefonda uzun konuşmalar ekrandan taşmıyor.
+Sürüm: **Versiyon 2.27** ile birebir (30 Ekim 2026). Bu sürümde: her kişinin 8 görevi var (216 görev, 77 yeni); bütün görevler hikâyeli bir sahneyle veriliyor (anlatım, duygu, hareket, kamera, eşya, efekt); tarif bekleyen kişi uyarı vermiyor.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
