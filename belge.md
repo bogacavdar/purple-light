@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.06** ile birebir (29 Ekim 2026). Bu sürümde: öğreticide Dursun'un balta adımı düzeltildi (balta iki kez dövdürülmez), fare ipuçları yeni tuşları gösterir. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.07** ile birebir (29 Ekim 2026). Bu sürümde: F ve sol tık, elde balta yokken ağaca, elde kazma yokken madene yönelmez. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -227,7 +227,7 @@ ACT 2 bölümündeki "ACT 2'nin akışı"na bak: Ülker (portallar) → Pervin (
 |---|---|---|
 | WASD / oklar | Yürü | Kanvası sürükle (görünmez joystick) ya da gideceğin yere dokun |
 | Shift | Koş (Koşu yeteneği gerekir) | Çift dokunuş |
-| F | Topla, konuş, kapı, yatak, ağacı silkele (v2.04'e kadar E idi). F yalnızca **hemen yanındaki** şeye yönelir: karakterin bir kare çevresi, çaprazlar dahil (en çok ~30 px; iki kare ötedekine gitmez, o zaman hiçbir şey yapmaz). Ağaca yalnızca **balta varsa**, madene/kayaya yalnızca **kazma varsa** gider. Elde balta varsa önce ağaç, elde kazma varsa önce maden seçilir; yoksa en yakın toplanacak şey (çalı, yerdeki taş/dal, meyvesi olgun ağaç). Ayağının dibindeki düşmüş eşyalar her zaman önce alınır (v2.05) | Nesneye dokun |
+| F | Topla, konuş, kapı, yatak, ağacı silkele (v2.04'e kadar E idi). F yalnızca **hemen yanındaki** şeye yönelir: karakterin bir kare çevresi, çaprazlar dahil (en çok ~30 px; iki kare ötedekine gitmez, o zaman hiçbir şey yapmaz). Ağaca yalnızca **elde balta varken**, madene/kayaya yalnızca **elde kazma varken** gider (çantada olması yetmez; v2.07). Sol tıkla elde baltasızken bir ağaca, elde kazmasızken bir madene tıklamak oraya yürütmez, yalnızca o yöne vurur. Elde balta varsa önce ağaç, elde kazma varsa önce maden seçilir; yoksa en yakın toplanacak şey (çalı, yerdeki taş/dal, meyvesi olgun ağaç). Ayağının dibindeki düşmüş eşyalar her zaman önce alınır (v2.05) | Nesneye dokun |
 | Q / sol tık | Vur. **Sol tık her zaman tıklanan yöne vurur**, tam tıklanan açıya (çaprazlar dahil; karakter 8 yönlü pozla o yana döner); el boşken yumruk, elde silah/alet varsa onunla (v2.03–2.04). Bir kişiye, kazana/örse/pazara, kurulmuş bir eşyaya ya da toplanacak bir şeye (çalı, maden, ağaç) tıklamak oraya gidip konuşur/toplar. Boş yere tıklamak karakteri yürütmez; yürümek WASD/oklarla |
 | Boşluk | Atıl / takla (Börü'nün atılma dersinden sonra); yerleştirirken döndür | **Atıl** düğmesi |
 | Sağ tık / E | Savuştur (bas) · savunma duruşu, gard (basılı tut); E sağ tıkla aynıdır (v2.04) | **Savuş** düğmesi |

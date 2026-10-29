@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.07 (29 Ekim 2026) · F ve sol tık: alet elde olmalı
+- v204 F seçimi: `axe/pick` artık `heldKind` (çanta değil). Kanvas sol tık: elde baltasız ağaç (meyvesi olgun değilse) ya da elde kazmasız maden hedefi boş yer sayılır → `attack`. Kayıtlara etkisi yok.
+
 ## v2.06 (29 Ekim 2026) · Dursun balta adımı, fare ipuçlarında tuş
 - v204 bloğu: tz 13'te `inv['Taş balta']>0` olunca `__axeHold=1` (300 ms'de bir); `talkSmith` sarmalayıcı tz 13 + balta varken yeniden dövdürmez. v189 örs parlaması baltayla birlikte durur. B5 bloğu `window.__plKey(id)` (bağlı tuş etiketi); v146 fare ipucu metinleri bunu kullanır. Kayıtlara etkisi yok.
 

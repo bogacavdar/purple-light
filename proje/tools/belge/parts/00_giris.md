@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.06** ile birebir (29 Ekim 2026). Bu sürümde: öğreticide Dursun'un balta adımı düzeltildi (balta iki kez dövdürülmez), fare ipuçları yeni tuşları gösterir. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.07** ile birebir (29 Ekim 2026). Bu sürümde: F ve sol tık, elde balta yokken ağaca, elde kazma yokken madene yönelmez. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

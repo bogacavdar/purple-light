@@ -7,6 +7,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.07 · 29 Ekim 2026
+
+**Düzeltmeler**
+- F, baltan çantada olunca elinde olmasa da en yakın ağaca yöneliyor, sonra "taş balta gerekli" uyarısı veriyordu. Artık ağaca yalnızca **elinde balta varken**, madene yalnızca **elinde kazma varken** yöneliyor.
+- Sol tıkla elinde balta yokken bir ağaca, kazma yokken bir madene tıklayınca karakter oraya yürüyüp uyarı alıyordu; artık yürümüyor, yalnızca o yöne vuruyor.
+
+**Tasarım belgesi**
+- Kontroller tablosundaki F satırı güncellendi; sürüm satırı 2.07.
+
+---
+
 ## Versiyon 2.06 · 29 Ekim 2026
 
 **Düzeltmeler**
