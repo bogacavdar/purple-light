@@ -14125,7 +14125,7 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
     [{t:'Yetenek ağacını aç',pri:1,fresh:1,f:()=>{bye();treeAsk()}}],alp)}
  function done2(){DL.tree=0;hint('');$('b-skill').classList.remove('pulse');const f=DL.after;DL.after=null;if(f)setTimeout(f,250)}
  window.__plDLTree=()=>DL.tree;
- {const _gk=guideKey;guideKey=function(){if(DL.tree||(DL.done&&DL.after))return null;return _gk.apply(this,arguments)}}
+ {const _gk=guideKey;guideKey=function(){if(DL.on||DL.tree||(DL.done&&DL.after))return null;return _gk.apply(this,arguments)}}   // v2.15: no arrow to Börü while the dodge lesson runs
  {const _rc=renderCraft;renderCraft=function(){const r=_rc.apply(this,arguments);try{if(DL.tree&&craftOpen&&mode==='skills'){if(DL.tree===1){DL.tree=2;skTab='Savaş';skSel['Savaş']='K1';hint('');$('b-skill').classList.remove('pulse');return renderCraft()}
     const b=cbody.querySelector('[data-skn="K1"]');if(b)b.classList.add('pulse');
     if(!cbody.querySelector('.dlnote')){const p=document.createElement('p');p.className='dlnote';p.style.cssText='margin:0 0 10px;padding:8px 10px;border:2px solid #e0503c;background:#2a1c1a;line-height:1.45';
@@ -15025,6 +15025,8 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
      try{sessionStorage.setItem('hammadde.isle',String(to));sessionStorage.setItem('hammadde.pending',JSON.stringify(d));sessionStorage.setItem('hammadde.quiet','1')}catch(x){return _as.apply(this,arguments)}   // no room in the session store: load in place as before
      show('Kayıt yükleniyor…');setTimeout(()=>location.reload(),150);return}
    return _as.apply(this,arguments)};
+ // v2.15: during Börü's dodge lesson nothing points anywhere (the outermost guide check, so no pinned or called target slips through)
+ {const _gk=guideKey;guideKey=function(){try{const D=window.__plDL;if(D&&D.on)return null}catch(e){}return _gk.apply(this,arguments)}}
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v214: '+(e&&e.message||e))}catch(_){}}})();
 </script>
