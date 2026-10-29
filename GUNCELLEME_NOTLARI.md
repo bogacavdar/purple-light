@@ -7,6 +7,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.21 · 29 Ekim 2026
+
+**Düzeltmeler**
+- **Acil: telefonda bütün pencereler sığmıyordu.** Kazanda olduğu gibi diğer pencereler de (El yapımı, Nazlı'nın pazarı, demirciler, Usta Kemal, envanter, yetenek ağacı, tarif kitabı, yemek, köpekler…) ekranın üstünde ~100 piksel boşluk bırakıp alt yarıya sıkışıyordu.
+
+**Arayüz**
+- **Telefona özel pencere düzeni:** telefon yatay tutulunca bütün pencereler ekranın tamamını kaplıyor (öğretici kartı varsa yalnızca onun kadar yer bırakıyor). Başlık satırı ve arama/araç satırı ince; içerik kendi içinde kayıyor. Kazan ve örslerdeki iki sütunlu düzen (2.20) aynen duruyor. Bilgisayar ve tablette hiçbir şey değişmedi.
+
+**Tasarım belgesi**
+- "Telefonda bütün pencereler" kuralı; sürüm satırı 2.21.
+
 ## Versiyon 2.20 · 29 Ekim 2026
 
 **Düzeltmeler**

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.20** ile birebir (29 Ekim 2026). Bu sürümde: telefonda kazan ve örs penceresi bütün ekranı kaplıyor, iki sütun halinde (tarifler | kazan) kendi içinde kayıyor; üstteki boşluk kalktı.
+Sürüm: **Versiyon 2.21** ile birebir (29 Ekim 2026). Bu sürümde: telefonda bütün pencereler (pazar, demirciler, el yapımı, envanter, yetenek ağacı, kitap, yemek…) bütün ekranı kaplıyor, başlık ve araç satırları ince; kazan ve örs iki sütunlu (v2.20).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

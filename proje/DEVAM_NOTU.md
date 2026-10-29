@@ -9,6 +9,10 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.21 (29 Ekim 2026) · telefonda bütün #craft pencereleri (acil)
+- `v218` bloğu: `style#v221-all` (`v220-pot`'tan önce eklenir, kazan kuralları üstte kalır), yalnızca `body.v50m #craft`: dolgu 4 px (tutpad 40 px; `body.menuopen #craft.tutpad` 104 px kuralını ezer), `.cpanel` %100 genişlik/yükseklik, ince `.chead`/`.ctools`, `.cbody` flex:1 + kendi içinde kayar.
+- Masaüstü/tablet değişmedi. Eski kayıtlara etkisi yok.
+
 ## v2.20 (29 Ekim 2026) · telefonda kazan/örs ekranı (ciddi)
 - Sebep: yatay telefon 721 pikselden geniş, `@media (min-width:721px){body.menuopen #craft.tutpad{padding-top:104px}}` telefonun 6 px kuralını eziyordu.
 - `v218` bloğu (v2.20 kısmı): `#craft.cpot` sınıfı (`craftOpen&&mode==='craft'`, kazan + örs; `renderCraft`/`closeCraft` sarmalı + 400 ms), `style#v220-pot` yalnızca `body.v50m` altında: dolgu 4 px (tutpad 40 px), `.cpanel` %100, ince `.chead`/`.ctools`, `.cbody` flex, `.cauldron` iki sütun `minmax(150px,38%) 1fr`, `.rlist`/`.pside` kendi içinde kayar, küçük `.rb`/`.ping`/`.potz`(44 px)/`.tile`(56 px).
