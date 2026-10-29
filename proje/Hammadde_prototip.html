@@ -5678,6 +5678,15 @@ let atkCd=0,swing=null,lastBitten=-1e9;
 // running from an attack: no gathering until you are clear (so a mis-tap does not stop you at a stone)
 function inFight(){const vw=innerWidth/S,vh=innerHeight/S;return performance.now()-lastBitten<3000||animals.some(a=>a.st==='chase'&&a.x>cam.cx-8&&a.x<cam.cx+vw+8&&a.y>cam.cy-8&&a.y<cam.cy+vh+16)}   // v2.10: an animal on screen chases you (or bit you in the last 3 s)
 function underAttack(){if(performance.now()-lastBitten<3000)return true;for(const a of animals)if(a.st==='chase'&&Math.hypot(a.x-player.x,a.y-player.y)<170)return true;return false}
+// v2.12: what a creature's drawing covers (measured once per kind by drawing it off screen; the shadow does not count)
+const VISB=new Map();
+function visBox(k){if(VISB.has(k))return VISB.get(k);let B=null;const c=document.createElement('canvas');c.width=c.height=160;const g=c.getContext('2d');
+  const A0={k,x:80,y:110,hp:(ANIM[k]&&ANIM[k].hp)||1,st:'wander',t:0,dx:0,dy:0,face:1,atk:0,flash:0,kb:null,step:0,mad:false,pk:0,vis:1};
+  if(ctx.__gl||('_fwd' in ctx)){const f0=ctx._fwd;try{ctx._fwd=g;g.setTransform(1,0,0,1,0,0);drawAnimal(A0,0)}catch(e){}finally{ctx._fwd=f0}}   // the GPU canvas forwards its calls to the scratch canvas
+  else{try{ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,160,160);drawAnimal(A0,0);g.drawImage(cv,0,0,160,160,0,0,160,160);ctx.restore()}catch(e){try{ctx.restore()}catch(_){}}}   // plain canvas: draw in a corner (redrawn next frame), copy it
+  try{const d=g.getImageData(0,0,160,160).data;let l=999,t=999,r=-1,b=-1;for(let y=0;y<160;y++)for(let x=0;x<160;x++)if(d[(y*160+x)*4+3]>90){if(x<l)l=x;if(x>r)r=x;if(y<t)t=y;if(y>b)b=y}
+    if(r>=0)B={l:l-80,r:r+1-80,t:t-110,b:b+1-110}}catch(e){}
+  VISB.set(k,B);return B}
 function attack(focus){
   if(atkCd>0||gathering||craftOpen||dlgOpen||paused||fading||wake||placing)return;
   const w=weapon();atkCd=w.cd;
@@ -5686,9 +5695,9 @@ function attack(focus){
   const fx=player.face.x,fy=player.face.y;swing={t:0,fx,fy,w:w.reach};sfx('swing');
   const dm=Math.round(w.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1));let hitAny=false;
   for(const a of animals.slice()){const ar=ANIM[a.k].r;let dx=a.x-player.x,dy=(a.y-Math.min(8,ar))-(player.y-6),d=Math.hypot(dx,dy);
-    const AR_=window.__plART,M=AR_&&AR_[a.k]&&AR_[a.k].W?AR_[a.k]:null;
-    if(M){   // v2.12: the whole drawing counts (claws, tail, horns): distance from the chest to the nearest point of the sprite's box
-      const s=Math.max(.25,+(a.scale||1)||1),f=a.face<0?-1:1,l0=a.x+(f>0?-M.OX:M.OX-M.W)*s+1,r0=l0+M.W*s-2,t0=a.y-M.OY*s+1,b0=t0+M.H*s-2,cx=player.x,cy=player.y-6;
+    const M=visBox(a.k);
+    if(M){   // v2.12: the whole drawing counts (claws, tail, horns, wings): distance from the chest to the nearest point of what is drawn
+      const s=Math.max(.25,+(a.scale||1)||1),f=a.face<0?-1:1,l0=f>0?a.x+M.l*s:a.x-M.r*s,r0=f>0?a.x+M.r*s:a.x-M.l*s,t0=a.y+M.t*s,b0=a.y+M.b*s,cx=player.x,cy=player.y-6;
       const nx=Math.max(l0,Math.min(r0,cx)),ny=Math.max(t0,Math.min(b0,cy)),ex=nx-cx,ey=ny-cy,e=Math.hypot(ex,ey);if(e>w.reach+3)continue;
       {const fl=Math.hypot(fx,fy)||1;if(e>6&&(ex*fx+ey*fy)/(e*fl)<-.1)continue}
       if(d<1){dx=ex;dy=ey;d=e}}
