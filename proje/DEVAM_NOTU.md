@@ -9,6 +9,15 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.18 (29 Ekim 2026) · sürüklerken yuva, canavar yüzü, Koşu görünürlüğü, Börü sikke uyarısı, Ekin F
+- Yeni `v218` bloğu (</body> öncesi): `idragStart` sarıldı → envanterden yuvası olmayan taşınabilir sürüklenince `.bs.empty` (yoksa ilk `.bs`) `pulse dpulse`; pointerup/cancel'da `.dpulse` temizlenir.
+- Aynı blok: `tickAnimals` en dış sarmal → `a.wind>0` ya da `a.mv` (ph `run`/`air` hariç) ve `!a.lunge` iken `a.face` oyuncuya (|dx|≥3).
+- Aynı blok: `.skbox{height:calc(100% - var(--nd) - 24px);top:calc(var(--nd)/2 + 12px)}`; `renderCraft` sarmalı yanıp sönen K1'i kaydırılabilir üst öğede alt kenarın üstüne getirir.
+- Aynı blok: `buySkill` sarmalı: K1, sikke < fiyat → `closeCraft()`; ders dışındaysa `say(window.__plKosuMsg(),…,alp)`. Börü dersinin closeCraft konuşması (dl bloğu) artık `window.__plKosuMsg()` kullanıyor.
+- `wakeDone` metni: masaüstünde `<span class="kc">E</span>'ye bas` (kTxt → F).
+- Eski kayıtlara etkisi yok.
+- Not: belgede 2. adım yemek tuşunu (F) yazıyor; 2.04'ten beri F toplama, yemek X. Boğaç'a soruldu, düzeltilmedi.
+
 ## v2.17 (29 Ekim 2026) · NaN sikke, mavi ekran (ekran kartı belleği)
 - `PRICE_`: Elma/Armut/Erik/Mürver odunu 3, `DB.c['Herhangi odun']`'a eklendi. `unitPrice` sonlu ve > 0 değilse 0; `sell` 0 fiyatı reddeder, `bulkSellable` fiyatsızı atlar; `qc` sonlu olmayanı eklemez. 1.299 eşya tarandı, hepsi sonlu.
 - v214 bloğu: sikke onarımı (`applyState` ham kayıtta `coins` geçersizse ve `restore` sonrası) → kayıtların en yeni geçerli `data.coins`'i (yoksa 0); oyun sırasında saniyede bir son geçerli değer. `QC` geçersizleri 0.

@@ -7,6 +7,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.18 · 29 Ekim 2026
+
+**Oynanış**
+- **Canavarlar saldırırken yüzünü hep sana döner.** Saldırı başladığı andan bitene kadar canavar sana bakıyor: kırmızı/sarı "!" işareti, ok/diken atanların hazırlığı, Reis hamlelerinin hazırlığı, kükreme, alev, kavrama, üçlü vuruş ve hamleden sonraki yorgunluk. Geri geri çekilen menzilliler de sana bakarak çekiliyor. Yalnızca gövdesiyle hızla yol aldığı anlarda (atılış, sıçramada havadayken, hücumda koşarken) gittiği yöne bakıyor. Tam üstünde ya da altındayken titremesin diye yön değiştirmiyor.
+
+**Düzeltmeler**
+- **Meşale dersi:** Cadı Zümrüt'ün dersinde meşaleye tıklayınca doğru yuva yanıp sönüyordu ama meşaleyi basılı tutup sürükleyince hiçbir yuva gösterilmiyordu. Artık sürüklerken de aynı yuva yanıp sönüyor, bırakınca sönüyor. Bu, envanterden sürüklenen bütün taşınabilir eşyalar için geçerli.
+- **Yetenek ağacında Koşu yarım görünüyordu:** Börü'nün dersinden sonra ağaç açılınca en alttaki Koşu alt kenardan kesiliyordu. Ağacın altında ve üstünde artık boşluk var; Koşu alt kenarın biraz üstünde tam görünüyor. Gerekirse pencere kendiliğinden kayıyor.
+
+**Arayüz**
+- **Sikke yetmezken Koşu'ya basınca** yetenek ağacı kendiliğinden kapanıyor ve Börü anlatıyor: ne kadar sikke eksik olduğunu, Nazlı'ya bir şeyler satıp sikke toplamanı, 100 sikken olunca **Y**'ye basıp (telefonda ağaç ikonuna dokunup) ağacı açmanı ve oradan istediğin geliştirmeleri alabileceğini söylüyor. Ders sırasında ağacı kapatınca çıkan Börü konuşması da aynı bilgiyi veriyor.
+- **Ekin'in böğürtlen konuşması:** bilgisayarda Ekin artık "Çalının yanına git ve **F**'ye bas; böğürtlen yere düşer, üstünden yürüyünce alırsın" diyor. Toplama tuşunu değiştirdiysen o tuşu söylüyor.
+
+**Tasarım belgesi**
+- Oyunun akışı: gösterme kuralına "sürüklerken de gösterilir"; Börü dersine Koşu'nun tam görünmesi ve sikke yetmezken Börü'nün konuşması; Ekin'in 1. adımına F ile toplama. Canavarlar nasıl savaşır: "saldırırken yüzü hep sana dönük". Sürüm satırı 2.18.
+
 ## Versiyon 2.17 · 29 Ekim 2026
 
 **Düzeltmeler**

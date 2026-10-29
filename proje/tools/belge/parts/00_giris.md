@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.17** ile birebir (29 Ekim 2026). Bu sürümde: fiyatsız meyve ağacı odunu satınca sikke NaN oluyordu (fiyat eklendi, fiyatsız eşya satılmaz, bozuk sikke kayıttan onarılır); uzun oyunda telefonda ekranın maviye dönmesi (ekran kartı belleği) düzeltildi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.18** ile birebir (29 Ekim 2026). Bu sürümde: envanterden sürüklerken de hedef yuva yanıp söner (meşale dersi); canavarlar saldırırken yüzünü hep sana döner; yetenek ağacında üst/alt pay ve Koşu'nun tam görünmesi; sikke yetmezken Koşu'ya basınca ağaç kapanır, Börü anlatır; Ekin böğürtlende bilgisayarda F'yi söyler.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
