@@ -1340,7 +1340,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.09</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.10</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -9693,11 +9693,11 @@ window.__p4=P4;
 // =====================================================================================================
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
-const P3={hold:false};window.__p3=P3;
+const P3={hold:false,low:false};window.__p3=P3;
 const hv=n=>expand(n).reduce((t,m)=>t+(inv[m]||0),0);
 // ---- the arrow: what the CURRENT step needs (axe: only the current part), nearest reachable one
 const _tzNeed=tzNeed;tzNeed=function(){
-  if(P3.hold&&tz===6)return[];
+  if((P3.hold||P3.low)&&tz===6)return[];
   if(tz===12){const S=AXE_STEPS[axeStep];if(!S)return[];const miss=Math.max(0,S[1]-(inv[S[0]]||0));if(!miss)return[];const x=REC.get(S[0]),L=[];
     if(x){for(const [n,k] of x.i){if(REC.get(n))continue;if(hv(n)<k*miss)L.push(n)}}else L.push(S[0]);return L}
   return _tzNeed.apply(this,arguments)};
@@ -9725,7 +9725,9 @@ function placePtr(){const hb=$('b-hand'),ib=$('b-inv'),wh=wantHand(),wi=wantInv(
 function keyCaps(){const tt=$('tuttext');if(!tt)return;const on=wantHand()||(craftOpen&&mode==='hand'&&tz);tt.querySelectorAll('.kc').forEach(k=>{if(/^(Tab|I|[0-9])$/.test(k.textContent.trim())||on)k.classList.add('p3k')})}
 // ---- torch: from the bag into the hand (between the torch and the stones)
 const _tzMade=tzMade;tzMade=function(r){const was=tz;const o=_tzMade.apply(this,arguments);if(was===5&&tz===6&&r==='Kaba meşale'&&!torchHeld()){P3.hold=true;renderTut()}return o};
-const _tzCard=tzCard;tzCard=function(){if(P3.hold&&tz===6){const n='Kaba meşale',i=beltIndex(n),inInv=craftOpen&&mode==='inv';
+const _tzCard=tzCard;tzCard=function(){if(P3.low&&tz===6){const i=beltIndex(torchHeld()||'Kaba meşale');   // v2.10
+    return['witch','Zümrüt · Meşaleyi elinden indir',`Gündüz meşale boşuna yanar. ${TOUCH?'Alttaki yanıp sönen <b>'+(i>=0?slotKey(i)+'. ':'')+'kutuya</b> bir daha dokun':'<span class="kc">'+(i>=0?slotKey(i):'yuva')+'</span> tuşuna bir daha bas'}: meşale eline girer, yanması durur.`]}
+  if(P3.hold&&tz===6){const n='Kaba meşale',i=beltIndex(n),inInv=craftOpen&&mode==='inv';
   if(i<0)return['witch','Zümrüt · Meşaleyi eline al',inInv?(TOUCH?`<b>${n}</b> simgesine dokun, sonra alttaki yanıp sönen <b>yuvaya</b> dokun.`:`<b>${n}</b> simgesini alttaki yanıp sönen <b>yuvaya</b> sürükle (ya da tıkla, sonra yuvaya tıkla).`)
     :`Meşalen <b>envanterinde</b>; elinde değil. Önce ${TOUCH?'soldaki <b>çanta ikonuna</b> dokun':'<span class="kc">I</span> tuşuna bas (ya da soldaki çanta ikonuna tıkla)'}, meşaleyi alttaki bir <b>alet yuvasına</b> koy.`];
   return['witch','Zümrüt · Meşaleyi eline al',inInv?`Meşale ${slotKey(i)}. yuvada. Envanteri kapat (${TOUCH?'Kapat':'<span class="kc">Esc</span>'}) ve ${TOUCH?'alttaki yanıp sönen kutuya dokun':'<span class="kc">'+slotKey(i)+'</span> tuşuna bas'}: meşale eline gelir.`
@@ -9734,12 +9736,13 @@ const _tzCard=tzCard;tzCard=function(){if(P3.hold&&tz===6){const n='Kaba meşale
 function holdMarks(){if(!(P3.hold&&tz===6))return;const n='Kaba meşale',i=beltIndex(n);
   if(craftOpen&&mode==='inv'){const t=cbody.querySelector(`.itile[data-n="${n}"]`);if(i<0){if(t&&invSel!==n)t.classList.add('pulse');if(invSel===n){const b=cbody.querySelector('.bs.empty')||cbody.querySelector('.bs');if(b)b.classList.add('pulse')}}}
   else if(i>=0&&!craftOpen){const b=document.querySelector(`#hotbar [data-hs="${i}"]`);if(b&&!b.classList.contains('pulse'))b.classList.add('pulse')}}
-function holdTick(){if(P3.hold&&(tz!==6||torchHeld())){const ok=tz===6;P3.hold=false;if(ok){sfx('found');toast('Meşale elinde! Şimdi kazanın yanındaki 4 taşı topla.')}renderTut()}}
+function holdTick(){if(P3.hold&&(tz!==6||torchHeld())){const ok=tz===6;P3.hold=false;if(ok){sfx('found');toast('Meşale elinde!');P3.low=true}renderTut()}
+  if(P3.low&&(tz!==6||!torchHeld())){const ok=tz===6;P3.low=false;if(ok){sfx('ok');toast('Meşale indi. Şimdi kazanın yanındaki 4 taşı topla.')}renderTut()}}   // v2.10: lower the torch before the stones
 const _rip=renderInvPanel;renderInvPanel=function(){const r=_rip.apply(this,arguments);try{holdMarks()}catch(e){}return r};
 const _rt=renderTut;renderTut=function(){const r=_rt.apply(this,arguments);try{holdMarks();keyCaps();placePtr()}catch(e){}return r};
 setInterval(()=>{try{if(onTitle){ptr.hidden=true;return}holdTick();placePtr();holdMarks()}catch(e){}},300);
 addEventListener('resize',placePtr);
-const _rs=resetState;resetState=function(){P3.hold=false;return _rs.apply(this,arguments)};
+const _rs=resetState;resetState=function(){P3.hold=false;P3.low=false;return _rs.apply(this,arguments)};
 renderTut();
 }).toString()+')()')}catch(e){try{window.__hamErr('v49-p3: '+(e&&e.message||e))}catch(_){}}})();
 </script>
@@ -14854,6 +14857,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
   const DT=window.__plDLTree?window.__plDLTree():0;
   if(DT===1&&!dlgOpen&&!(craftOpen&&mode==='skills'))add($('b-skill'),1);
   if(DT===2&&craftOpen&&mode==='skills')add(Q('[data-skn="K1"]'),1);   // v2.09: Koşu in the tree
+  if(tz===6&&window.__p3&&window.__p3.low&&!dlgOpen&&!craftOpen){const i=beltIndex(torchHeld()||'Kaba meşale');if(i>=0)add(document.querySelector(`#hotbar [data-hs="${i}"]`),1)}   // v2.10: lower the torch
   if(tz===12&&craftOpen&&mode==='hand'){const S=AXE_STEPS[axeStep];if(S){const b=Q(`[data-hand="${S[0]}"]`);if(b&&!b.disabled){add(b,1);
      if(want.last!==S[0]+axeStep){want.last=S[0]+axeStep;try{b.scrollIntoView({block:'nearest'})}catch(e){}}}}}
   if(tz===13&&!window.__axeHold&&!(inv['Taş balta']>0)&&forgeOpen()&&pot.r==='Taş balta'){if(!potReady())add($('pfill'),1);else add($('brew'),1)}
