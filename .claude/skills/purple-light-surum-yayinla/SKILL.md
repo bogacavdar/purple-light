@@ -5,7 +5,9 @@ description: "Purple Light oyununda bir değişikliği belgeye yazıp koda geçi
 
 # Purple Light · sürüm yayınlama
 
-Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır. Bir adım atlanırsa iş bitmiş sayılmaz. Asıl kural: **her güncelleme aynı turda yayına gider** ve Boğaç'a **her zaman indirilebilir hali** verilir. Zip tek başına güncelleme sayılmaz; yayının yerine geçmez, yayına ek olarak her zaman gönderilir.
+Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır.
+
+**Ne zaman (29 Ekim 2026, Boğaç):** 1–3. adımlar (belge, kod, kontrol) istek gelince yapılır; **4–8. adımlar (belgeyi yenile, notlar, commit/push, zip, dönüş) yalnızca Boğaç "paket çık" deyince**. Değişiklikler bitince yapılanlar anlatılıp "Paket çıkayım mı?" diye sorulur; araya gelen yeni istekler aynı bekleyen pakete eklenir. Paket çıkınca bekleyen bütün değişiklikler tek sürüm olarak notlara yazılır. Bir adım atlanırsa iş bitmiş sayılmaz. Asıl kural: **her güncelleme aynı turda yayına gider** ve Boğaç'a **her zaman indirilebilir hali** verilir. Zip tek başına güncelleme sayılmaz; yayının yerine geçmez, yayına ek olarak her zaman gönderilir.
 
 ## 0. Depo
 

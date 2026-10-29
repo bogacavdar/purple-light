@@ -44,7 +44,8 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 4. Sonra kerevit **3 kez daha** saldırır; oyun artık durmaz. Saldırı anında (kırmızı ! görününce ya da kerevit atıldığında) Boşluk'a basarsan sayılır; geç ya da erken kalırsan "Bir daha!" der, can gitmez. Ekranda "Sıyrılma: 1/4" sayacı vardır.
 5. 4 sıyrılma (1 + 3) olunca Börü esprili bir dille "**İlk ders tamam!**" der: her kavgaya girmek akıllıca değildir, bazen tabanları yağlamak gerekir; bunun için hızlı koşmayı bilmek gerekir.
 6. **Yetenek ağacı zorunlu:** Börü'nün tek seçeneği "Yetenek ağacını aç"tır. Ders biter bitmez soldaki ağaç ikonu (Y) mavi parlar, ok onu gösterir ve ekranın ortasında "Yetenek ağacını aç" yazar; Börü'nün üstündeki ok kalkar. Konuşma penceresi kapansa da bu sürer; ağaç açılmadan Börü'yle konuşulursa Börü yalnızca "önce yetenek ağacını aç" der, dersi ya da kereviti **tekrar vermez**. Ağaç açılana kadar öğretici ilerlemez. Ağaç açılınca Savaş ağacındaki **Koşu** yanıp söner ve üstte Börü'nün notu çıkar: ağaçlar aşağıdan yukarı büyür; Koşu 100 sikke; Nazlı'ya bir şeyler satıp **100 sikke biriktirip** ilk iş bunu almak akıllıca olur.
-7. Ağaç kapatılınca öğretici kaldığı yerden sürer: Börü Taş balta tarifini verir (12. adım).
+   - Ağaç açılınca Savaş ağacındaki **Koşu** mavi parlar ve yanında yanıp sönen bir ok olur (v2.09).
+7. Ağaç kapatılınca Börü önce **bilgilendirir**: "Gördün mü, en alttaki parlayan **Koşu**. Onu almak **100 sikke** ister. Nazlı'ya bir şeyler sat, 100 sikke biriktir; ilk işin Koşu'yu almak olsun." ("Anladım" düğmesi). Sonra öğretici kaldığı yerden sürer: Börü Taş balta tarifini verir (12. adım).
 
 Öğreticiyi geçen ve atılmayı bilmeyen biri sonradan Börü'yle konuşursa Börü aynı dersi ücretsiz teklif eder ("Öğret" / "Sonra").
 

@@ -1344,7 +1344,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.08</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.09</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -14044,11 +14044,13 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
     const b=cbody.querySelector('[data-skn="K1"]');if(b)b.classList.add('pulse');
     if(!cbody.querySelector('.dlnote')){const p=document.createElement('p');p.className='dlnote';p.style.cssText='margin:0 0 10px;padding:8px 10px;border:2px solid #e0503c;background:#2a1c1a;line-height:1.45';
      p.innerHTML='<b>Börü:</b> “İşte en alttaki yanıp sönen <b>Koşu</b>. Ağaçlar aşağıdan yukarı büyür; bir yeteneği alınca üstündekiler açılır. Koşu <b>100 sikke</b>: Nazlı\'nın pazarında bir şeyler sat, <b>100 sikke biriktir</b> ve ilk işin bunu almak olsun. Kaçmayı bilen savaşçı uzun yaşar!” <i>(Kapatınca derse devam.)</i>';cbody.insertBefore(p,cbody.firstChild)}}}catch(e){}return r}}
- {const _cc=closeCraft;closeCraft=function(){const was=craftOpen&&mode==='skills';const r=_cc.apply(this,arguments);try{if(DL.tree===2&&was)done2()}catch(e){}return r}}
+ {const _cc=closeCraft;closeCraft=function(){const was=craftOpen&&mode==='skills';const r=_cc.apply(this,arguments);try{if(DL.tree===2&&was){DL.tree=3;hint('');$('b-skill').classList.remove('pulse');   // v2.09: Börü tells what Koşu costs
+     setTimeout(()=>say('Gördün mü, en alttaki parlayan <b>Koşu</b>. Onu almak <b>100 sikke</b> ister. Nazlı\'ya bir şeyler sat, <b>100 sikke</b> biriktir; ilk işin Koşu\'yu almak olsun. Kaçmayı bilen savaşçı uzun yaşar!',[{t:'Anladım',pri:1,fresh:1,f:()=>{bye();done2()}}],alp),200)}}catch(e){}return r}}
  {const _ad=tzAlpDone;tzAlpDone=function(){if(DL.on||DL.tree)return;if(!DL.done&&tz===11){const a=arguments,t=this;
     say('Yumruk fena değil! Şimdi daha önemlisi: <b>kaçmayı</b> öğren. Şu yeni kereviti görüyor musun? Bu ısırmaz ama saldırır. Üstünde kırmızı bir <b>!</b> belirince yana <b>atıl</b>. Bu dersim benden, ücretsiz.',[{t:'Hazırım',pri:1,fresh:1,f:()=>{bye();startLesson(()=>_ad.apply(t,a))}}],alp);return}
    return _ad.apply(this,arguments)}}
- {const _ta2=talkAlp;talkAlp=function(){try{if(DL.tree===1||(DL.done&&DL.after&&!DL.tree)){treeAsk();return say('Önce <b>yetenek ağacını</b> aç evlat! Soldaki yanıp sönen <b>ağaç ikonu</b>na '+(TOUCH?'dokun':'tıkla ya da <b>Y</b>\'ye bas')+'.',[{t:'Tamam',pri:1,f:bye}],alp)}
+ {const _ta2=talkAlp;talkAlp=function(){try{if(DL.tree===3)return say('Koşu <b>100 sikke</b>: Nazlı\'ya bir şeyler sat, biriktir, ilk işin onu almak olsun.',[{t:'Anladım',pri:1,fresh:1,f:()=>{bye();done2()}}],alp);   // v2.09
+   if(DL.tree===1||(DL.done&&DL.after&&!DL.tree)){treeAsk();return say('Önce <b>yetenek ağacını</b> aç evlat! Soldaki yanıp sönen <b>ağaç ikonu</b>na '+(TOUCH?'dokun':'tıkla ya da <b>Y</b>\'ye bas')+'.',[{t:'Tamam',pri:1,f:bye}],alp)}
    if(DL.on)return say('Kerevite odaklan evlat! Üstünde kırmızı <b>!</b> görünce yana <b>atıl</b>.',[{t:'Tamam',pri:1,f:bye}],alp);if(!tz&&met&&!sk('S1')&&!DL.on&&!DL.tree&&!window.__plArena&&ftut>=3)
     return say('Hey evlat, sen hâlâ <b>atılmayı</b> bilmiyorsun! Saldırının içinden yana kaçamayan bu adada uzun yaşamaz. Gel, kısa bir ders; benden, ücretsiz.',[{t:'Öğret',pri:1,fresh:1,f:()=>{bye();startLesson(null)}},{t:'Sonra',f:bye}],alp)}catch(e){}
    return _ta2.apply(this,arguments)}}
@@ -14842,6 +14844,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
   if(tz===2){if(craftOpen&&mode==='eat')add(Q('[data-eat="Böğürtlen"]'),1);else if(!craftOpen)add($('b-eat'),0)}   // the yellow b3 arrow already points at the eat button
   const DT=window.__plDLTree?window.__plDLTree():0;
   if(DT===1&&!dlgOpen&&!(craftOpen&&mode==='skills'))add($('b-skill'),1);
+  if(DT===2&&craftOpen&&mode==='skills')add(Q('[data-skn="K1"]'),1);   // v2.09: Koşu in the tree
   if(tz===12&&craftOpen&&mode==='hand'){const S=AXE_STEPS[axeStep];if(S){const b=Q(`[data-hand="${S[0]}"]`);if(b&&!b.disabled){add(b,1);
      if(want.last!==S[0]+axeStep){want.last=S[0]+axeStep;try{b.scrollIntoView({block:'nearest'})}catch(e){}}}}}
   if(tz===13&&!window.__axeHold&&!(inv['Taş balta']>0)&&forgeOpen()&&pot.r==='Taş balta'){if(!potReady())add($('pfill'),1);else add($('brew'),1)}
