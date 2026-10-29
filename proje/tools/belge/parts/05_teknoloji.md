@@ -104,3 +104,10 @@ Bu bölüm oyunun ve projenin **neyle yapıldığını** anlatır: hangi program
 - Güncel **Chrome, Edge, Firefox, Safari** (bilgisayar; testler Chromium ile yapılır), **Android Chrome** ve **iOS Safari** (telefon/tablet).
 - WebGL'i olmayan eski cihazlarda Canvas 2D ile çalışır.
 - İnternet yalnızca ilk açılışta (ve güncellemeleri almak için) gerekir.
+
+## İleride: çok oyunculu (plan, henüz yok)
+
+Oyun şu an **tek oyunculu**dur ve öyle kalacaktır. İleride **4 kişiye kadar çevrimiçi ortak oyun** (aynı adada birlikte) eklenebilir; bu yalnızca bir olasılık olarak not edilir, karar ve tasarım daha sonra yapılacaktır (29 Ekim 2026, Boğaç).
+
+- Düşünülen yol: oyunculardan biri **ev sahibi** olur, diğerleri doğrudan onun tarayıcısına bağlanır (WebRTC). Oyun sunucusu kiralamak gerekmez; oyun GitHub Pages'te kalır. Yalnızca bağlantıyı başlatmak için küçük bir eşleştirme servisi (ya da elle paylaşılan bağlantı kodu), bazı mobil ağlarda da bir aracı (TURN) gerekebilir.
+- Başlamadan önce bu belgeye ayrı bir "Çok oyunculu mod" bölümü yazılır (öğretici, uyku, Reis ödülleri, durma, kayıt kuralları); kod ondan sonra gelir.
