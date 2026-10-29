@@ -11809,7 +11809,8 @@ const boot=()=>setTimeout(()=>{try{
   if(sessionStorage.getItem('hammadde.clicknew')){sessionStorage.removeItem('hammadde.clicknew');ldHide();$('t-new').click();return}
   const p=sessionStorage.getItem('hammadde.pending');if(!p){ldHide();return}sessionStorage.removeItem('hammadde.pending');sessionStorage.removeItem('hammadde.ldtxt');
   const d=JSON.parse(p);try{music.start()}catch(e){}try{claimSaves()}catch(e){}applyState(d);closeTitle();fadeIn();setTimeout(ldHide,350);
-  setTimeout(()=>{if(I2)announce(BNAME[bioAt(player.x,player.y)]||'Yüzen Kayalar','ACT 2');else announce('Yıldızsız Ada','Portal')},900);
+  {let q=false;try{q=!!sessionStorage.getItem('hammadde.quiet');sessionStorage.removeItem('hammadde.quiet')}catch(e){}   // v2.14: a load after a reload (clean world) says nothing about portals
+   if(!q)setTimeout(()=>{if(I2)announce(BNAME[bioAt(player.x,player.y)]||'Yüzen Kayalar','ACT 2');else announce('Yıldızsız Ada','Portal')},900)}
   try{saveTo('auto',true)}catch(e){}
 }catch(e){ldHide();try{window.__hamErr('v76 yükleme: '+(e&&e.message||e))}catch(_){}}},80);
 if(document.readyState==='complete')boot();else addEventListener('load',boot);
@@ -14997,6 +14998,24 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  {const _nd=nightDeath;nightDeath=function(){try{const P=window.__p4;if(P&&P.bossLost)P.bossLost()}catch(e){}return _nd.apply(this,arguments)}}
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v213: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v214">
+// v2.14: a clean world every time. The map is built once per page load, so after a game has been played in this tab a new game or a load
+// reloads the page first (new game: straight back into the creator; load: the save is carried over the reload), like the island switch does.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ let dirty=false;const W14={get dirty(){return dirty}};window.__plWorld=W14;
+ const _ct=closeTitle;closeTitle=function(){dirty=true;return _ct.apply(this,arguments)};
+ const show=t=>{try{const l=$('ldscr');if(l){$('ldtxt').textContent=t||'Yükleniyor…';l.style.display='flex'}}catch(e){}};
+ $('t-new').addEventListener('click',e=>{if(!dirty)return;e.stopImmediatePropagation();e.preventDefault();
+   try{sessionStorage.setItem('hammadde.isle','1');sessionStorage.setItem('hammadde.clicknew','1')}catch(x){return}show('Yeni oyun · yükleniyor…');setTimeout(()=>location.reload(),150)},true);
+ const _as=applyState;applyState=function(d){
+   if(dirty&&d&&typeof d==='object'){const to=d.isle===2?2:1;
+     try{sessionStorage.setItem('hammadde.isle',String(to));sessionStorage.setItem('hammadde.pending',JSON.stringify(d));sessionStorage.setItem('hammadde.quiet','1')}catch(x){return _as.apply(this,arguments)}   // no room in the session store: load in place as before
+     show('Kayıt yükleniyor…');setTimeout(()=>location.reload(),150);return}
+   return _as.apply(this,arguments)};
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v214: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v211">
 // v2.11: fewer basics on the map, so they come back ~30% sooner
