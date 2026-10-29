@@ -12895,7 +12895,8 @@ function roll(a){const D=ANIM[a.k]||{};if(D.ranged)return 'n';const base=a.base|
 const MUL={n:1,y:1.4,r:1.7},ADD={n:0,y:0,r:0}/* v2.15: no extra wind-up for heavy blows either: the coloured ! comes with the leap */;
 
 // ------------------------------------------------------------------ the parry itself
-function doParry(){if(frozenNow()||!met||PR.cd>0||placing||(window.__plPS&&window.__plPS()))return;
+function parryKnown(){if(sk('P0'))return true;const D=window.__plDL;return !!(D&&D.on&&D.mode==='parry'&&(D.n>0||D.rel))}   // v2.15: learned from Börü
+function doParry(){if(!parryKnown()){const D0=window.__plDL;if(D0&&D0.on)return;if(!PR.toldP0||performance.now()-PR.toldP0>4000){PR.toldP0=performance.now();toast('Savuşturmayı henüz bilmiyorsun: Savaşçı Börü öğretir, onunla konuş.',true)}return}if(frozenNow()||!met||PR.cd>0||placing||(window.__plPS&&window.__plPS()))return;
   if(tired||st<COST){floatText('Nefesin kesildi!','#9ad8ff');PR.cd=.3;return}
   st-=COST;stRest=0;vitK='';PR.t=WIN*(sk('V2')?1.6:sk('V1')?1.3:1);PR.cd=CD;stopGather();goal=null;
   try{audio.synth((ac,out)=>{const t=ac.currentTime+.005,o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(900,t);o.frequency.exponentialRampToValueAtTime(600,t+.08);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.12,t+.01);g.gain.exponentialRampToValueAtTime(.0005,t+.1);o.connect(g);g.connect(out);o.start(t);o.stop(t+.12)})}catch(e){try{sfx('swing')}catch(_){}}}
@@ -12907,7 +12908,7 @@ function parried(a){PR.n++;PR.hit=true;try{if(window.__plUlt)window.__plUlt.gain
   try{if(window.__p4)window.__p4.stop=Math.max(window.__p4.stop||0,.09)}catch(e){}shake=Math.max(shake,.18);shakeP=Math.max(shakeP,2.5);
   floats.push({x:player.x,y:player.y-28,t:0,text:'Savuşturuldu!',color:'#9ad8ff',size:9});
 }
-window.__plParryHit=parried;
+window.__plParryHit=parried;window.__plDoParry=()=>doParry();
 // melee: the moment the bite lands
 {const _bh=biteHit;biteHit=function(a,D,dx,dy,d){const ty=a&&a.atkT||'n';
   if(PR.t>0&&!dodge&&pInv<=0){if(ty!=='r'){parried(a);return}}
@@ -12971,7 +12972,7 @@ function drawShield(){const t=performance.now()/1000,up=Math.min(1,(t-PR.h0)/.08
   const a=aimA(),f=Math.cos(a)<0?-1:1;ctx.save();ctx.translate(x+Math.cos(a)*4,y-8+Math.sin(a)*2);ctx.rotate(f>0?Math.PI/4:Math.PI*1.25);ctx.drawImage(ic,-6,-6,12,12);ctx.restore()}}
 
 // ------------------------------------------------------------------ input: right mouse button; a button on touch screens
-function raise(){if(PR.brk>0||frozenNow()||!met)return;PR.hold=true;PR.h0=performance.now()/1000}
+function raise(){if(!parryKnown()||PR.brk>0||frozenNow()||!met)return;PR.hold=true;PR.h0=performance.now()/1000}
 function lower(){PR.hold=false}
 cv.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button===2){e.preventDefault();doParry();raise()}});
 addEventListener('keydown',e=>{if(e.code!=='F13')return;e.preventDefault();if(e.repeat||onTitle||dlgOpen||craftOpen||paused||wake)return;doParry();raise()});   // v2.04: E guards like the right button
@@ -12980,7 +12981,7 @@ addEventListener('pointerup',e=>{if(e.pointerType==='mouse'&&e.button===2)lower(
 {const b=document.createElement('button');b.id='parrybtn';b.type='button';b.setAttribute('aria-label','Savuştur');b.textContent='Savuş';document.body.appendChild(b);
   const st_=document.createElement('style');st_.textContent='#parrybtn{display:none;position:fixed;z-index:4;border-radius:50%;font:inherit;font-weight:800;color:#e8f6ff;background:rgba(20,30,48,.8);border:3px solid #9ad8ff;touch-action:manipulation;-webkit-tap-highlight-color:transparent}#parrybtn.on{display:block}#parrybtn:active{transform:scale(.92)}body.ontitle #parrybtn,body.cine #parrybtn{display:none!important}';document.head.appendChild(st_);
   b.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();doParry();raise()});b.addEventListener('pointerup',lower);b.addEventListener('pointercancel',lower);b.addEventListener('pointerleave',lower);
-  const place=()=>{try{const d=$('dodgebtn');const cs=d&&getComputedStyle(d);if(!d||cs.display==='none'||onTitle){b.classList.remove('on');return}const r=d.getBoundingClientRect();if(!r.width){b.classList.remove('on');return}
+  const place=()=>{try{const d=$('dodgebtn');const cs=d&&getComputedStyle(d);if(!d||cs.display==='none'||onTitle||!parryKnown()){b.classList.remove('on');return}const r=d.getBoundingClientRect();if(!r.width){b.classList.remove('on');return}
     b.classList.add('on');if(window.__plLayHas&&window.__plLayHas('parrybtn'))return;const k=window.__plLayS?window.__plLayS('parrybtn'):1;b.style.width=r.width+'px';b.style.height=r.height+'px';b.style.fontSize=Math.max(10,Math.round(r.width*.22))+'px';b.style.left=Math.round(r.left-r.width-10)+'px';b.style.top=Math.round(r.top)+'px';b.style.transform=k!==1?'scale('+k+')':''}catch(e){}};
   setInterval(place,500);addEventListener('resize',place)}
 }).toString()+')()')}catch(e){try{window.__hamErr('v110-parry: '+(e&&e.message||e))}catch(_){}}})();
@@ -14085,19 +14086,24 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
  const spot=()=>{for(let k=0;k<40;k++){const an=Math.random()*Math.PI*2,d=44+Math.random()*12,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;if(reachAt(x,y)&&!blocked(x,y)&&!isWater(tileAt(x,y)))return{x,y}}return{x:player.x+44,y:player.y}};
  const spawn=()=>{if(DL.crab){const i=animals.indexOf(DL.crab);if(i>=0)animals.splice(i,1)}const p=spot();
    DL.crab={k:'Kerevit',x:p.x,y:p.y,hp:ANIM['Kerevit'].hp,st:'wander',t:0,dx:0,dy:0,face:1,atk:0,flash:0,kb:null,step:0,mad:false,tut:true,dl:true};animals.push(DL.crab);DL.hx=p.x;DL.hy=p.y};
- const count=()=>small(`Sıyrılma: ${DL.n}/4`)+(DL.n===0&&!DL.frz?small('Kımıldama: kerevit saldıracak'):'');
- function startLesson(after){if(DL.on)return;DL.on=true;DL.n=0;DL.px=null;DL.ph='idle';DL.t=1.6;DL.after=after||null;skills.add('S1');st=maxSt();spawn();
+ const count=()=>small(`${DL.mode==='parry'?'Savuşturma':'Sıyrılma'}: ${DL.n}/4`)+(DL.n===0&&!DL.frz?small('Kımıldama: kerevit saldıracak'):'');
+ function startLesson(after,mode){if(DL.on)return;DL.on=true;DL.mode=mode==='parry'?'parry':'dodge';DL.n=0;DL.px=null;DL.ph='idle';DL.t=1.6;DL.after=after||null;if(DL.mode==='dodge')skills.add('S1');st=maxSt();spawn();
    try{document.body.classList.remove('nododge')}catch(e){}hint(count());sfx('found')}
  window.__plDodgeLesson=startLesson;
- const strikeDone=(ok,why)=>{const c=DL.crab;if(ok){DL.n++;floatText('Sıyrıldın!','#9fe07a');sfx('found')}else{floatText(why?why+' Bir daha!':'Bir daha!','#e8c860');sfx('bad')}
-   if(DL.n>=4){finishLesson();return}DL.ph='idle';DL.t=1.3+Math.random()*.8;st=maxSt();hint(count())};
- function release(){if(!DL.frz)return;DL.frz=false;paused=false;hint(count());DL.lastD=NOW();DL.rel=true;try{doDodge()}finally{DL.rel=false}strikeDone(true)}
+ const strikeDone=(ok,why)=>{const c=DL.crab;if(ok){DL.n++;if(DL.mode!=='parry')floatText('Sıyrıldın!','#9fe07a');sfx('found')}else{floatText(why?why+' Bir daha!':'Bir daha!','#e8c860');sfx('bad')}
+   if(DL.n>=4){if(DL.mode==='dodge'&&!sk('P0')){DL.mode='parry';DL.n=0;DL.px=null;DL.ph='talk';hint('');   // v2.15: straight on to the parry
+       setTimeout(()=>say(`Güzel kaçtın! Ama her saldırıdan kaçamazsın evlat. Şimdi <b>savuşturmayı</b> öğren: kerevit atıldığında, sana değmeden hemen önce ${TOUCH?'<b>Savuş</b> düğmesine dokun':'<b>sağ tık</b>a (ya da <b>E</b>\'ye) bas'}. Doğru anda yaparsan darbeyi geri çevirirsin, kerevit sersemler. Beyaz ve sarı <b>!</b> savuşturulur; kırmızı olanı ancak taklayla atlatırsın.`,
+         [{t:'Hazırım',pri:1,fresh:1,f:()=>{bye();DL.ph='idle';DL.t=1.4;st=maxSt();hint(count())}}],alp),500);return}
+       finishLesson();return}DL.ph='idle';DL.t=1.3+Math.random()*.8;st=maxSt();hint(count())};
+ function release(){if(!DL.frz)return;DL.frz=false;paused=false;hint(count());DL.rel=true;
+   if(DL.mode==='parry'){try{if(window.__plDoParry)window.__plDoParry();if(window.__plParryHit&&DL.crab)window.__plParryHit(DL.crab)}catch(e){}finally{DL.rel=false}strikeDone(true);return}
+   DL.lastD=NOW();try{doDodge()}finally{DL.rel=false}strikeDone(true)}
  {const _dd=doDodge;doDodge=function(){if(DL.on&&DL.n===0&&!DL.rel)return;   /* v2.15: the first time only the prompted press rolls */const was=dodge;const r=_dd.apply(this,arguments);try{if(DL.on&&dodge&&dodge!==was&&DL.crab&&!(keys.w||keys.a||keys.s||keys.d)&&!(joy.on&&joy.mag>.12)){const c=DL.crab,ex=player.x-c.x,ey=player.y-c.y,el=Math.hypot(ex,ey)||1,sp=Math.hypot(dodge.vx,dodge.vy),sd=(DL.side=-(DL.side||1));dodge.vx=-ey/el*sp*sd;dodge.vy=ex/el*sp*sd}}catch(e){}   /* v2.15: in the lesson a roll with no direction goes sideways, out of the crab's line */if(dodge&&dodge!==was)DL.lastD=NOW();return r}}
  // v1.89: the crab walks like a wild one: it comes to you, waits, lunges and stays where it landed; it never jumps elsewhere
  const walkTo=(c,tx,ty,sp,dt)=>{const dx=tx-DL.hx,dy=ty-DL.hy,d=Math.hypot(dx,dy);if(d<1){c.dx=0;c.dy=0;return true}const k=Math.min(d,sp*dt)/d,nx=DL.hx+dx*k,ny=DL.hy+dy*k;
    if(!blocked(nx,ny)&&!isWater(tileAt(nx,ny))){DL.hx=nx;DL.hy=ny}else if(!blocked(nx,DL.hy)&&!isWater(tileAt(nx,DL.hy)))DL.hx=nx;else if(!blocked(DL.hx,ny)&&!isWater(tileAt(DL.hx,ny)))DL.hy=ny;
    c.dx=dx/d;c.dy=dy/d;c.step=(c.step||0)+dt*8;return false};
- const tickDL=(dt)=>{const c=DL.crab;if(!DL.on||!c)return;
+ const tickDL=(dt)=>{const c=DL.crab;if(!DL.on||!c)return;if(DL.ph==='talk'){c.x=DL.hx;c.y=DL.hy;c.dx=0;c.dy=0;return}
    if(DL.n===0){if(DL.px==null){DL.px=player.x;DL.py=player.y}player.x=DL.px;player.y=DL.py;goal=null;for(const k in keys)keys[k]=false}   // v2.15: the first time you stand still and wait for it
    if(animals.indexOf(c)<0){spawn();return}
    c.hp=ANIM['Kerevit'].hp;c.mad=false;c.mv=null;c.lunge=null;c.wind=0;c.st='wander';c.t=1;
@@ -14116,17 +14122,23 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
      if(blocked(nx,ny)||isWater(tileAt(nx,ny))){nx=c.x;ny=c.y}c.x=nx;c.y=ny;DL.hx=nx;DL.hy=ny;
      const near=Math.hypot(player.x-c.x,player.y-c.y);
      if(DL.n===0){if(near<=24){DL.frz=true;paused=true;for(const k2 in keys)keys[k2]=false;try{stopGather()}catch(e){}   // the first time the game stops just before the claw lands
-         hint(`${TOUCH?'Atıl düğmesine dokun!':'Boşluk\'a bas!'}${small('Kerevit saldırıyor: yana atıl!')}`)}else if(DL.t<=0){DL.ph='idle';DL.t=.6}return}
+         hint(DL.mode==='parry'?`${TOUCH?'Savuş düğmesine dokun!':'Sağ tık\'a bas!'}${small(TOUCH?'Kerevit saldırıyor: savuştur!':'(ya da E) Kerevit saldırıyor: savuştur!')}`:`${TOUCH?'Atıl düğmesine dokun!':'Boşluk\'a bas!'}${small('Kerevit saldırıyor: yana atıl!')}`)}else if(DL.t<=0){DL.ph='idle';DL.t=.6}return}
+     if(DL.mode==='parry'){const P=window.__plParry;   // v2.15: the parry part: the window must be open when the claw reaches you
+       if(near<=12){if(P&&P.t>0){try{window.__plParryHit(c)}catch(e){}strikeDone(true);return}strikeDone(false,dodge?'Takla değil, savuştur!':(P&&P.cd>0?'Erken!':'Değdi!'));return}
+       if(DL.t<=0)strikeDone(false,'Kaçma, savuştur!');return}
      if(near<=12){if(dodge&&DL.lastD>=DL.ls-.15){strikeDone(true);return}strikeDone(false,DL.lastD>=DL.wStart-.25&&DL.lastD<DL.ls-.05?'Erken!':'Değdi!');return}   // it reached you: escaped only if you are mid-roll (a roll begun as it leapt)
      if(DL.t<=0){const ok=DL.lastD>=DL.ls-.15;strikeDone(ok,ok?'':'Kaçmadın!')}}};
  {const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);try{tickDL(dt)}catch(e){}return r}}
- window.addEventListener('keydown',e=>{if(!DL.frz)return;e.preventDefault();e.stopImmediatePropagation();if(e.code==='Space')release()},true);
- {const db=$('dodgebtn');if(db)db.addEventListener('pointerdown',e=>{if(!DL.frz)return;e.preventDefault();e.stopImmediatePropagation();release()},true)}
- window.addEventListener('pointerdown',e=>{if(DL.frz&&TOUCH&&!(e.target&&e.target.closest&&e.target.closest('#dodgebtn'))){e.stopImmediatePropagation()}},true);
+ window.addEventListener('keydown',e=>{if(!DL.frz)return;e.preventDefault();e.stopImmediatePropagation();if(DL.mode==='parry'?(e.code==='KeyE'||e.code==='F13'):e.code==='Space')release()},true);
+ window.addEventListener('pointerdown',e=>{if(DL.frz&&DL.mode==='parry'&&e.button===2){e.preventDefault();e.stopImmediatePropagation();release()}},true);
+ window.addEventListener('contextmenu',e=>{if(DL.on&&DL.mode==='parry')e.preventDefault()},true);
+ {const pb=()=>$('parrybtn');setTimeout(()=>{const b=pb();if(b)b.addEventListener('pointerdown',e=>{if(!DL.frz||DL.mode!=='parry')return;e.preventDefault();e.stopImmediatePropagation();release()},true)},0)}
+ {const db=$('dodgebtn');if(db)db.addEventListener('pointerdown',e=>{if(!DL.frz||DL.mode==='parry')return;e.preventDefault();e.stopImmediatePropagation();release()},true)}
+ window.addEventListener('pointerdown',e=>{if(DL.frz&&TOUCH&&!(e.target&&e.target.closest&&e.target.closest(DL.mode==='parry'?'#parrybtn':'#dodgebtn'))){e.stopImmediatePropagation()}},true);
  function treeAsk(){if(sk('K1')){done2();return}DL.tree=1;$('b-skill').classList.add('pulse');hint(`Yetenek ağacını aç${small(TOUCH?'yanıp sönen ağaç ikonuna dokun':'Y tuşuna bas ya da ağaç ikonuna tıkla')}`)}
  window.__plDLTreeAsk=treeAsk;
- function finishLesson(){DL.on=false;DL.done=true;DL.ph='';hint('');const c=DL.crab;DL.crab=null;if(c){const i=animals.indexOf(c);if(i>=0)animals.splice(i,1);appearFx(c.x,c.y,'#e8e0c8')}sfx('level');if(!sk('K1'))DL.tree=1;
-   say('Hah! Dört kez sıyrıldın, kerevit hâlâ ne olduğunu anlamaya çalışıyor. <b>İlk ders tamam!</b> Ama kulağına küpe olsun: her kavgaya girmek akıllıca değildir evlat. Bazen en iyi hamle arkanı dönüp <b>tabanları yağlamaktır</b>. Kaçabilmek için de hızlı koşmayı bilmen gerek. Gel, sana yetenek ağacını göstereyim.',
+ function finishLesson(){if(DL.mode==='parry')skills.add('P0');DL.on=false;DL.done=true;DL.ph='';hint('');const c=DL.crab;DL.crab=null;if(c){const i=animals.indexOf(c);if(i>=0)animals.splice(i,1);appearFx(c.x,c.y,'#e8e0c8')}sfx('level');if(!sk('K1'))DL.tree=1;
+   say((DL.mode==='parry'?'Hah! Dört kez sıyrıldın, dört kez de savuşturdun; kerevit hâlâ ne olduğunu anlamaya çalışıyor.':'Hah! Dört kez sıyrıldın, kerevit hâlâ ne olduğunu anlamaya çalışıyor.')+' <b>İlk ders tamam!</b> Ama kulağına küpe olsun: her kavgaya girmek akıllıca değildir evlat. Bazen en iyi hamle arkanı dönüp <b>tabanları yağlamaktır</b>. Kaçabilmek için de hızlı koşmayı bilmen gerek. Gel, sana yetenek ağacını göstereyim.',
     [{t:'Yetenek ağacını aç',pri:1,fresh:1,f:()=>{bye();treeAsk()}}],alp)}
  function done2(){DL.tree=0;hint('');$('b-skill').classList.remove('pulse');const f=DL.after;DL.after=null;if(f)setTimeout(f,250)}
  window.__plDLTree=()=>DL.tree;
@@ -14142,8 +14154,10 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
    return _ad.apply(this,arguments)}}
  {const _ta2=talkAlp;talkAlp=function(){try{if(DL.tree===3)return say('Koşu <b>100 sikke</b>: Nazlı\'ya bir şeyler sat, biriktir, ilk işin onu almak olsun.',[{t:'Anladım',pri:1,fresh:1,f:()=>{bye();done2()}}],alp);   // v2.09
    if(DL.tree===1||(DL.done&&DL.after&&!DL.tree)){treeAsk();return say('Önce <b>yetenek ağacını</b> aç evlat! Soldaki yanıp sönen <b>ağaç ikonu</b>na '+(TOUCH?'dokun':'tıkla ya da <b>Y</b>\'ye bas')+'.',[{t:'Tamam',pri:1,f:bye}],alp)}
-   if(DL.on)return say('Kerevite odaklan evlat! Üstünde kırmızı <b>!</b> görünce yana <b>atıl</b>.',[{t:'Tamam',pri:1,f:bye}],alp);if(!tz&&met&&!sk('S1')&&!DL.on&&!DL.tree&&!window.__plArena&&ftut>=3)
-    return say('Hey evlat, sen hâlâ <b>atılmayı</b> bilmiyorsun! Saldırının içinden yana kaçamayan bu adada uzun yaşamaz. Gel, kısa bir ders; benden, ücretsiz.',[{t:'Öğret',pri:1,fresh:1,f:()=>{bye();startLesson(null)}},{t:'Sonra',f:bye}],alp)}catch(e){}
+   if(DL.on)return say(DL.mode==='parry'?'Kerevite odaklan evlat! Atıldığında, değmeden hemen önce <b>savuştur</b>.':'Kerevite odaklan evlat! Üstünde kırmızı <b>!</b> görünce yana <b>atıl</b>.',[{t:'Tamam',pri:1,f:bye}],alp);if(!tz&&met&&!sk('S1')&&!DL.on&&!DL.tree&&!window.__plArena&&ftut>=3)
+    return say('Hey evlat, sen hâlâ <b>atılmayı</b> bilmiyorsun! Saldırının içinden yana kaçamayan bu adada uzun yaşamaz. Gel, kısa bir ders; benden, ücretsiz.',[{t:'Öğret',pri:1,fresh:1,f:()=>{bye();startLesson(null)}},{t:'Sonra',f:bye}],alp)
+   if(!tz&&met&&sk('S1')&&!sk('P0')&&!DL.on&&!DL.tree&&!window.__plArena)   // v2.15: dodging known, parrying not: the parry part alone
+    return say('Kaçmayı biliyorsun ama <b>savuşturmayı</b> bilmiyorsun evlat! Gel, kısa bir ders; benden, ücretsiz.',[{t:'Öğret',pri:1,fresh:1,f:()=>{bye();startLesson(null,'parry')}},{t:'Sonra',f:bye}],alp)}catch(e){}
    return _ta2.apply(this,arguments)}}
 
  // ---------------------------------------------------------------- (3) refunds for skills that left the tree
@@ -15030,6 +15044,9 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
      try{sessionStorage.setItem('hammadde.isle',String(to));sessionStorage.setItem('hammadde.pending',JSON.stringify(d));sessionStorage.setItem('hammadde.quiet','1')}catch(x){return _as.apply(this,arguments)}   // no room in the session store: load in place as before
      show('Kayıt yükleniyor…');setTimeout(()=>location.reload(),150);return}
    return _as.apply(this,arguments)};
+ // v2.15: saves from before the parry lesson: whoever could dodge could parry, keep it so
+ {const _sn=snapshot;snapshot=function(){const o=_sn.apply(this,arguments);try{o.p0m=1}catch(e){}return o}}
+ {const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{if(d&&!d.p0m&&skills.has('S1'))skills.add('P0')}catch(e){}return r}}
  // v2.15: during Börü's dodge lesson nothing points anywhere (the outermost guide check, so no pinned or called target slips through)
  {const _gk=guideKey;guideKey=function(){try{const D=window.__plDL;if(D&&D.on)return null}catch(e){}return _gk.apply(this,arguments)}}
 }
