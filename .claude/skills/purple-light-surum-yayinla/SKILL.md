@@ -19,6 +19,7 @@ Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır. Bir adım atl
 - `proje/Hammadde_tasarim_belgesi.md`'yi doğrudan düzenlediysen aynı değişikliği ilgili `parts/*.md` dosyasına da işle; yoksa `yayinla.sh` değişikliğini ezer.
 - Kodda yazacağın her davranış (sayı, metin, kural, koşul) belgede yazılı olmalı. Belgede olmayan hiçbir şeyin kodu olmaz. Belge ile kod çelişirse belge doğrudur.
 - Büyük değişiklikte belgeyi Boğaç'a gösterip onay al, sonra koda geç.
+- **Görünüş değişikliklerinde önce önizleme (29 Ekim 2026, Boğaç):** poz, karakter, sprite gibi çizimlerde oyuna eklemeden önce seçenekleri görsel olarak çiz (oyunun kendi çizim kodunu headless tarayıcıda çalıştırıp PNG; etiketli, yan yana) ve Boğaç'a gönder; Boğaç seçince belgeye yaz ve oyuna ekle. Boğaç "hemen yapma, konuşalım" derse dur, yarım değişikliği geri al, konuş.
 
 ## 2. Sonra kod
 
