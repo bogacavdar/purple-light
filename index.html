@@ -5977,7 +5977,8 @@ function frameBody(now){
   if(PERF.pend){PERF.pend=false;resize()}   // v62: a new canvas size is applied just before drawing, so no empty (black) frame shows
   // camera
   const scale=S*dpr, viewW=vw/S, viewH=vh/S;
-  let cx=player.x-viewW/2, cy=player.y-viewH/2;
+  let fx_=player.x,fy_=player.y;{const o=window.__camOv;if(o&&o.k>0){fx_+=(o.x-fx_)*o.k;fy_+=(o.y-fy_)*o.k}}   // v2.27: a quest scene can glide the camera
+  let cx=fx_-viewW/2, cy=fy_-viewH/2;
   cx=Math.max(0,Math.min(W*T-viewW,cx));cy=Math.max(0,Math.min(H*T-viewH+SEA_PAD(),cy));
   if(viewW>W*T)cx=(W*T-viewW)/2; if(viewH>H*T)cy=(H*T-viewH)/2;
   if(shake>0){shake-=dt;const a=shakeP*Math.max(0,shake)/.35;cx+=(Math.random()-.5)*2*a;cy+=(Math.random()-.5)*2*a}
@@ -14775,7 +14776,7 @@ function qLines(q){const nm=String(gName(q.g)||'').split(' ').pop(),S2=qPlain(q.
   const L=[{w:'p',t:pick(QHI).replace('{n}',nm)}];ch.forEach((t,i)=>{L.push({w:'n',t});if(i===0&&ch.length>1)L.push({w:'p',t:pick(QMID)})});L.push({w:'p',t:pick(QOK)});return L}
 function offerQ(q,who,fq){if(!q)return;const o=who||gObj(q.g);
   if(QSC.on||!o||!(o.x>-9e4)||dist(o.x,o.y)>220||window.__plArena||sailing||fading||cine.on||onTitle){offerQ0(q,who,fq);return}
-  QSC.on=true;QSC.t0=performance.now();QSC.ph='walk';QSC.o=o;QSC.q=q;QSC.args=[q,who,fq];QSC.L=qLines(q);QSC.i=-1;dlgOpen=true;for(const k in keys)keys[k]=false;try{stopGather()}catch(e){}goal=null;
+  QSC.on=true;QSC.t0=performance.now();QSC.ph='walk';QSC.o=o;QSC.q=q;QSC.args=[q,who,fq];QSC.L=q.sc&&q.sc.length?qBeats(q):qLines(q);QSC.i=-1;QSC.emo=null;QSC.base=null;dlgOpen=true;for(const k in keys)keys[k]=false;try{stopGather()}catch(e){}goal=null;
   document.body.classList.add('qscene');sfx('pick');
   const sx=player.x,sy=player.y,d=Math.hypot(o.x-sx,o.y-sy)||1,want=Math.max(0,d-24),tx=sx+(o.x-sx)/d*want,ty=sy+(o.y-sy)/d*want,
     ok=want>2&&!blocked(tx,ty)&&!isWater(tileAt(tx,ty)),dur=ok?Math.min(900,want*9):0,t0=performance.now();
@@ -14783,21 +14784,49 @@ function offerQ(q,who,fq){if(!q)return;const o=who||gObj(q.g);
   const walk=()=>{if(!QSC.on||QSC.ph!=='walk')return;const k=dur?Math.min(1,(performance.now()-t0)/dur):1;if(ok){player.x=sx+(tx-sx)*k;player.y=sy+(ty-sy)*k}face();
     if(k<1){requestAnimationFrame(walk);return}QSC.ph='talk0';qNext()};
   requestAnimationFrame(walk)}
-function qNext(){if(!QSC.on||QSC.ph==='talk')return;clearTimeout(QSC.tm);QSC.i++;const l=QSC.L[QSC.i];if(!l){qGo();return}sfx('pick');
-  QSC.until=performance.now()+1e9;QSC.tm=setTimeout(qNext,Math.max(1800,Math.min(5200,900+l.t.length*45)))}
-function qGo(){if(!QSC.on||QSC.ph==='talk')return;clearTimeout(QSC.tm);QSC.ph='talk';QSC.i=99;document.body.classList.remove('qscene');dlgOpen=false;const a=QSC.args;offerQ0(a[0],a[1],a[2],1)}
+// v2.27: a story scene: each step of q.sc is a caption, a line, an emotion, a movement, particles, the camera, the wanted item, a tint
+function qBeats(q){const L=[];for(const b of q.sc){if(!b||typeof b!=='object')continue;if(b.n!=null)L.push({w:'n',t:String(b.n)});else if(b.p!=null)L.push({w:'p',t:String(b.p)});else L.push(Object.assign({},b))}
+  if(!L.length||L[L.length-1].w!=='p')L.push({w:'p',t:pick(QOK)});return L}
+function qObj(w){return w==='p'?player:QSC.o}
+function qActEnd(){const B=QSC.base;if(!B)return;QSC.base=null;try{B.o.x=B.x;B.o.y=B.y;if(B.face)player.face=B.face}catch(e){}}
+function qAct(kind,w){qActEnd();const o=qObj(w);if(!o)return 0;const B={o,x:o.x,y:o.y,face:o===player?Object.assign({},player.face):null};QSC.base=B;const t0=performance.now(),D=kind==='pace'?1500:kind==='look'?1100:900;
+  let dx=0,dy=0;if(kind==='look'){try{const t=qTarget();if(t){const a=Math.atan2(t.y-o.y,t.x-o.x);dx=Math.cos(a);dy=Math.sin(a)}}catch(e){}if(o===player&&(dx||dy))player.face={x:Math.abs(dx)>=Math.abs(dy)?Math.sign(dx):0,y:Math.abs(dy)>Math.abs(dx)?Math.sign(dy):0}}
+  const step=()=>{if(QSC.base!==B)return;const k=Math.min(1,(performance.now()-t0)/D);let ox=0,oy=0;
+    if(kind==='pace'){ox=Math.sin(k*Math.PI*2)*12}else if(kind==='jump'){oy=-Math.abs(Math.sin(k*Math.PI*2))*7}else if(kind==='bow'||kind==='kneel'){oy=Math.sin(k*Math.PI)*(kind==='kneel'?4:2.5)}
+    else if(kind==='shake'){ox=Math.sin(k*Math.PI*10)*2*(1-k)}else if(kind==='turn'){ox=Math.sin(k*Math.PI)*3;if(o===player){const f=B.face||{x:0,y:1};player.face=k<.5?{x:-f.x,y:-f.y}:f}}else if(kind==='look'){const e=Math.sin(k*Math.PI);ox=dx*4*e;oy=dy*4*e}
+    o.x=B.x+ox;o.y=B.y+oy;if(k<1)requestAnimationFrame(step);else qActEnd()};requestAnimationFrame(step);return D+100}
+function qTarget(){const q=QSC.q;if(!q)return null;for(const p of q.p){let t=null;try{t=partTarget(p,q)}catch(e){t=null}if(!t)continue;if(zKey(t)){const z=zoneNear(t);if(z)return{x:z.x,y:z.y}}return{x:t.x,y:t.y}}return null}
+function qBeat(l){const SC=window.__qscn;
+  if(l.t!=null){sfx('pick');return Math.max(1800,Math.min(5200,900+l.t.length*45))}
+  if(l.nar!=null){if(SC)SC.nar(String(l.nar));return Math.max(2200,Math.min(6500,1200+String(l.nar).length*42))}
+  if(l.emo){QSC.emo={w:l.emo,e:String(l.e||'!'),t0:performance.now()};if(l.e==='💢'||l.e==='!')sfx('pick');return 1000}
+  if(l.act)return qAct(l.act,l.who||'n');
+  if(l.fx){const o=qObj(l.at||'n');if(o&&SC)SC.fx(l.fx,o.x,o.y);return 800}
+  if(l.cam){if(l.cam==='n'||!SC)return 200;const t=qTarget();if(!t)return 0;let x=t.x,y=t.y;const d=Math.hypot(x-player.x,y-player.y),M=560;if(d>M){x=player.x+(x-player.x)/d*M;y=player.y+(y-player.y)/d*M}SC.cam(x,y,1500);return 2900}
+  if(l.show){if(SC)SC.show(String(l.show),QSC.o);QSC.showI=QSC.i;sfx('found');return 1700}
+  if(l.sfx){sfx(String(l.sfx));return 400}
+  if(l.wait)return Math.max(200,Math.min(2500,+l.wait||600));
+  if(l.tint){if(SC)SC.tint(l.tint);return 500}
+  return 0}
+function qNext(){if(!QSC.on||QSC.ph==='talk')return;clearTimeout(QSC.tm);QSC.i++;const l=QSC.L[QSC.i];if(!l){qGo();return}
+  const SC=window.__qscn;if(SC){if(l.nar==null&&l.t!=null)SC.nar(null);if(QSC.showI!=null&&QSC.i-QSC.showI>2){SC.show(null);QSC.showI=null}}
+  QSC.until=performance.now()+1e9;const d=qBeat(l);if(!d){qNext();return}QSC.tm=setTimeout(qNext,d)}
+function qGo(){if(!QSC.on||QSC.ph==='talk')return;clearTimeout(QSC.tm);qActEnd();QSC.emo=null;try{if(window.__qscn)window.__qscn.clear()}catch(e){}QSC.ph='talk';QSC.i=99;document.body.classList.remove('qscene');dlgOpen=false;const a=QSC.args;offerQ0(a[0],a[1],a[2],1)}
 function qEnd(){if(!QSC.on)return;const q=QSC.q;QSC.on=false;QSC.ph='';document.body.classList.remove('qscene');if(q&&S.a&&S.a.id===q.id&&!complete()){toast(`Görev başladı: ${q.t}`);sfx('found')}}
 setInterval(()=>{try{if(QSC.on&&QSC.ph==='talk'&&!dlgOpen)qEnd()}catch(e){}},150);
 addEventListener('keydown',e=>{if(!QSC.on||QSC.ph==='talk')return;e.preventDefault();e.stopImmediatePropagation();if(e.repeat||performance.now()-QSC.t0<350)return;if(e.key==='Escape')qGo();else if(QSC.ph!=='walk')qNext()},true);
 addEventListener('pointerdown',e=>{if(!QSC.on||QSC.ph==='talk')return;e.preventDefault();e.stopImmediatePropagation();if(performance.now()-QSC.t0<350)return;if(QSC.ph!=='walk')qNext()},true);
 // a balloon that wraps, over you or over the person
-function drawQL(){const l=QSC.on&&QSC.L[QSC.i];if(!l)return;const o=l.w==='p'?player:QSC.o;if(!o)return;ctx.save();ctx.font='bold 7px Rubik, system-ui, sans-serif';
+function drawQE(){const E=QSC.on&&QSC.emo;if(!E)return;const k=(performance.now()-E.t0)/1000;if(k>1.6){QSC.emo=null;return}const o=E.w==='p'?player:QSC.o;if(!o)return;   // v2.27: an emotion over a head
+  ctx.save();ctx.font='bold 13px system-ui, sans-serif';ctx.textAlign='center';ctx.textBaseline='alphabetic';const y=Math.round(o.y)-34-Math.abs(Math.sin(Math.min(k,.6)*Math.PI/.6))*5;ctx.globalAlpha=k>1.3?Math.max(0,(1.6-k)/.3):1;
+  ctx.fillStyle='rgba(17,23,15,.85)';ctx.beginPath();ctx.arc(Math.round(o.x),y-5,8,0,6.283);ctx.fill();ctx.fillStyle=/[!?…]/.test(E.e)?'#ffd23a':'#ffffff';ctx.fillText(E.e,Math.round(o.x),y);ctx.restore()}
+function drawQL(){drawQE();const l=QSC.on&&QSC.L[QSC.i];if(!l||l.t==null)return;const o=l.w==='p'?player:QSC.o;if(!o)return;ctx.save();ctx.font='bold 7px Rubik, system-ui, sans-serif';
   const words=l.t.split(' '),lines=[];let cur='';for(const wd of words){const t=cur?cur+' '+wd:wd;if(ctx.measureText(t).width>150&&cur){lines.push(cur);cur=wd}else cur=t}if(cur)lines.push(cur);
   const w=Math.ceil(Math.max.apply(null,lines.map(x=>ctx.measureText(x).width)))+10,h=lines.length*9+4,x=Math.round(o.x),y=Math.round(o.y)-38;
   const npc=l.w==='n';ctx.fillStyle=npc?'rgba(255,246,214,.97)':'rgba(255,252,240,.96)';ctx.fillRect(x-w/2,y-h,w,h);ctx.fillRect(x-2,y,4,3);ctx.strokeStyle=npc?'#7a5a1a':'#3a2a1a';ctx.lineWidth=1;ctx.strokeRect(x-w/2+.5,y-h+.5,w-1,h-1);
   ctx.fillStyle='#2a1e14';ctx.textAlign='center';ctx.textBaseline='alphabetic';lines.forEach((t,i)=>ctx.fillText(t,x,y-h+9+i*9));
   if(npc||QSC.i<QSC.L.length-1){ctx.font='6px Rubik, system-ui, sans-serif';ctx.fillStyle='rgba(255,255,255,.75)';ctx.fillText(TOUCH?'dokun ▸':'tıkla ▸',x+w/2-12,y+8)}ctx.restore()}
-{const _de=drawEyes;drawEyes=function(){const r=_de.apply(this,arguments);try{if(BUB)drawBubble();if(QSC.on&&QSC.L[QSC.i])drawQL()}catch(e){}return r}}   // v2.09: the talk balloons above the night
+{const _de=drawEyes;drawEyes=function(){const r=_de.apply(this,arguments);try{if(BUB)drawBubble();if(QSC.on)drawQL()}catch(e){}return r}}   // v2.09: the talk balloons above the night
 function finishQ(near){const q=curQ();if(!q||!complete())return;
   for(const p of q.p)if(p[0]==='b'){let need=p[2];for(const m of expand(p[1])){const t=Math.min(need,inv[m]||0);inv[m]-=t;need-=t;if(!need)break}}
   const fill=!!S.a.fq;S.a=null;if(LS)endLesson();if(!fill&&!isDone(q.id))S.d.push(q.id);mirror();
@@ -14828,7 +14857,7 @@ const wouldOffer=g=>{const q=nextOf(g);return !!q&&unlocked(q)};
     else if(S.a&&g==='market'&&curQ().g===g&&!S.a.fq&&!complete()){const self=this,args=arguments;statusDlg(g,()=>_int.apply(self,args));return}
     else if(S.a&&curQ().g!==g&&wouldOffer(g))busy(g)}
   return _int.apply(this,arguments)}}
-window.__plNeedRec=id=>{const q=QI[id];return q?{need:needRec(q),open:unlocked(q)}:null};
+window.__plNeedRec=id=>{const q=QI[id];return q?{need:needRec(q),open:unlocked(q)}:null};if(/[?&]debug/.test(location.search))window.__plOfferQ=(id,sc)=>{const q=QI[id];if(!q)return false;if(sc)q.sc=sc;offerQ(q,gObj(q.g));return true};   // v2.27: test hook (debug only)
 // Ekin
 const EKL=['Ateş sıcak, çay demde. Otur biraz evlat.','Rüzgâr dönüyor; denizci bunu kokusundan bilir.','Bu adada her şey iki şeyin buluşmasıyla başlar.','Gece olunca ateşten uzaklaşma.'];
 {const _talk=talk;talk=function(){if(!onAct1()||wake)return _talk.apply(this,arguments);if(qState!=='v2')qState='v2';refreshVis();
@@ -15327,6 +15356,26 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  // the answer buttons stay at the bottom, and while the text types out the window follows its last line.
  {const st=document.createElement('style');st.id='v226-dlg';st.textContent='body.v50m #dlg{bottom:calc(env(safe-area-inset-bottom,0px) + 4px)!important;top:auto!important;max-height:calc(100dvh - 48px)!important;overflow:hidden!important;align-items:start}body.v50m #dlg .dbody{display:flex;flex-direction:column;min-height:0;max-height:calc(100dvh - 72px)}body.v50m #dlg #dtext{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;font-size:13.5px;line-height:1.38;margin:2px 0 6px;padding-right:4px}body.v50m #dlg #dname{flex:none}body.v50m #dlg .dch{flex:none;gap:5px}body.v50m #dlg .dch button{font-size:13px!important;padding:5px 10px!important;min-height:32px}';document.head.appendChild(st);
   const dt=$('dtext');if(dt&&window.MutationObserver){let last=0;new MutationObserver(()=>{try{if(!document.body.classList.contains('v50m'))return;const now=performance.now();if(dt.scrollHeight>dt.clientHeight+2&&(now-last<250||dt.scrollTop+dt.clientHeight>=dt.scrollHeight-40))dt.scrollTop=dt.scrollHeight;last=now}catch(e){}}).observe(dt,{childList:true,subtree:true,characterData:true})}}
+ // v2.27: the quest scene stage: a caption in the top bar, an item shown over the person, a colour tint, a gliding camera, particles
+ {const st=document.createElement('style');st.id='v227-scn';st.textContent='#qnar{position:fixed;left:0;right:0;top:0;height:11vh;z-index:60;display:flex;align-items:center;justify-content:center;padding:0 6vw;box-sizing:border-box;color:#f3ecd8;font-style:italic;font-size:clamp(12px,2.1vh + 4px,19px);line-height:1.3;text-align:center;text-shadow:0 1px 3px #000;pointer-events:none;opacity:0;transition:opacity .35s}#qnar.on{opacity:1}#qnar[hidden]{display:none}'+
+   '#qshow{position:fixed;z-index:57;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;gap:2px;pointer-events:none;animation:qshowin .35s ease-out}#qshow[hidden]{display:none}#qshow img{width:40px;height:40px;image-rendering:pixelated;background:rgba(17,23,15,.85);border:2px solid #f2b84b;border-radius:8px;padding:3px;box-shadow:0 0 14px rgba(242,184,75,.6)}#qshow b{font-size:12px;color:#ffe8a8;background:rgba(17,23,15,.85);padding:1px 6px;border-radius:4px;white-space:nowrap}'+
+   '@keyframes qshowin{from{opacity:0;transform:translate(-50%,-70%) scale(.6)}to{opacity:1;transform:translate(-50%,-100%) scale(1)}}'+
+   'body.qtint-sepia #game{filter:sepia(.8) saturate(.85) brightness(.95);transition:filter .5s}body.qtint-night #game{filter:brightness(.5) saturate(.6) hue-rotate(-15deg);transition:filter .5s}#game{transition:filter .5s}'+
+   'body.v50m #qshow img{width:30px;height:30px}body.v50m #qshow b{font-size:10.5px}'+
+   'body.qscene #left,body.qscene #right,body.qscene #hotbar,body.qscene #mini,body.qscene #tut,body.qscene #xpdock,body.qscene #b3trk,body.qscene #atkbtn,body.qscene #dodgebtn,body.qscene #parrybtn,body.qscene #ultbtn,body.qscene #prompt,body.qscene #b-ach,body.qscene #b-alm{opacity:0!important;pointer-events:none!important;transition:opacity .4s}';document.head.appendChild(st)}
+ const qnar=document.createElement('div');qnar.id='qnar';qnar.hidden=true;document.body.appendChild(qnar);
+ const qshow=document.createElement('div');qshow.id='qshow';qshow.hidden=true;qshow.innerHTML='<img alt=""><b></b>';document.body.appendChild(qshow);
+ let shO=null,shRaf=0,camA=null;
+ const placeShow=()=>{shRaf=0;if(!shO||qshow.hidden)return;try{const X=(shO.x-cam.cx)*S,Y=(shO.y-cam.cy)*S-38*S;qshow.style.left=Math.round(X)+'px';qshow.style.top=Math.round(Y)+'px'}catch(e){}shRaf=requestAnimationFrame(placeShow)};
+ const FXC={sparkle:['#fff6a0','#ffffff'],smoke:['rgba(110,110,110,.75)','rgba(150,150,150,.6)'],steam:['rgba(235,242,255,.8)','rgba(210,225,240,.7)'],leaves:['#6fbf4a','#9ad86a'],hearts:['#ff6a8a','#ff9ab0'],coins:['#f2c94c','#ffe08a'],dust:['#c8b898','#a89878'],glow:['#ffd23a','#fff2a0'],embers:['#ff7a2a','#ffd060'],bubbles:['#9ad8ff','#d0f0ff'],snow:['#ffffff','#e0f0ff']};
+ window.__qscn={
+   nar(t){if(!t){qnar.classList.remove('on');setTimeout(()=>{if(!qnar.classList.contains('on'))qnar.hidden=true},380);return}qnar.textContent=t;qnar.hidden=false;void qnar.offsetWidth;qnar.classList.add('on')},
+   show(n,o){if(!n){qshow.hidden=true;shO=null;return}shO=o;try{qshow.querySelector('img').src=icon(n)}catch(e){}qshow.querySelector('b').textContent=n;qshow.hidden=false;qshow.style.animation='none';void qshow.offsetWidth;qshow.style.animation='';if(!shRaf)placeShow()},
+   tint(m){document.body.classList.remove('qtint-sepia','qtint-night');if(m==='sepia'||m==='night')document.body.classList.add('qtint-'+m)},
+   cam(x,y,hold){camA={x,y,t0:performance.now(),hold:hold||1500};const step=()=>{if(!camA)return;const t=performance.now()-camA.t0,i=650,h=camA.hold,k=t<i?t/i:t<i+h?1:t<i+h+i?1-(t-i-h)/i:0;const e=k*k*(3-2*k);window.__camOv={x:camA.x,y:camA.y,k:e};if(t<i+h+i)requestAnimationFrame(step);else{window.__camOv=null;camA=null}};requestAnimationFrame(step)},
+   fx(kind,x,y){const C=FXC[kind]||FXC.sparkle;const n=kind==='coins'||kind==='hearts'?10:16;for(let i=0;i<n;i++){const a=Math.random()*6.283,sp=kind==='smoke'||kind==='steam'?12+Math.random()*14:24+Math.random()*40;
+     const vy=kind==='snow'?10+Math.random()*12:kind==='leaves'?-8+Math.random()*20:-(18+Math.random()*30);parts.push({x:x+(Math.random()-.5)*14,y:y-14+(Math.random()-.5)*10,vx:Math.cos(a)*sp*.6,vy:vy,life:.7+Math.random()*.6,c:C[i%C.length]})}},
+   clear(){this.nar(null);this.show(null);this.tint('off');camA=null;window.__camOv=null}};
  // v2.18: a new creature in the almanac: a big banner in the middle ("Kurt" · Almanağa eklendi · U ile bak). The very first kill
  // also lights the almanac button blue with an arrow (like the tutorial's buttons) until the almanac is opened.
  {const st=document.createElement('style');st.textContent='.p218{border-color:#7fd0ff!important;animation:p3tab .9s ease-in-out infinite!important;position:relative;z-index:3}'+
