@@ -1343,7 +1343,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.15</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.16</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -15207,6 +15207,15 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    try{const D8=window.__plD8;if(D8){if(Math.abs(ux)>.38&&Math.abs(uy)>.38){D8.on=true;D8.x=Math.sign(ux);D8.y=Math.sign(uy);D8.fx=f4.x;D8.fy=f4.y}else D8.on=false}}catch(x){}
    const done=()=>{if(!AIM)return;const P=window.__p4;if(P&&P.pend&&performance.now()-AIM.t0<1200){requestAnimationFrame(done);return}if(player.face===AIM.fl)player.face=AIM.f4;AIM=null};
    requestAnimationFrame(done);return r};
+ // v2.16: a blow pressed while the last one is still on cooldown is kept and thrown as soon as it can (≤ 0.8 s), at the last place you aimed;
+ // the hero only turns when the blow really goes (it used to turn and do nothing)
+ let BUF=null;
+ const busyNow=()=>{const P=window.__p4;return atkCd>0||!!(P&&P.pend)};
+ const flushBuf=()=>{if(!BUF)return;if(performance.now()-BUF.t>800||onTitle||dlgOpen||craftOpen||paused){BUF=null;return}if(busyNow()){requestAnimationFrame(flushBuf);return}const f=BUF.f;BUF=null;attack(f)};
+ const _at0=attack;attack=function(focus){   // outermost: before the aim turns the hero
+
+   if(busyNow()&&!gathering&&!craftOpen&&!dlgOpen&&!paused&&!fading&&!wake&&!placing){const had=!!BUF;BUF={f:focus?{x:focus.x,y:focus.y}:null,t:performance.now()};if(!had)requestAnimationFrame(flushBuf);return}
+   return _at0.apply(this,arguments)};
  const _dp=drawPlayer;drawPlayer=function(){if(AIM&&player.face===AIM.fl){player.face=AIM.f4;try{return _dp.apply(this,arguments)}finally{player.face=AIM.fl}}return _dp.apply(this,arguments)};
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v204: '+(e&&e.message||e))}catch(_){}}})();

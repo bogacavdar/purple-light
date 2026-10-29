@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.16 (29 Ekim 2026) · vuruş tamponu (ciddi hata)
+- v204: en dış `attack` sarmalı: `atkCd>0` ya da `__p4.pend` iken basılan vuruş `BUF`'a (son odak) yazılır, rAF ile bekleme bitince (≤ 0,8 sn) `attack(f)` çağrılır. Böylece nişan sarmalı (yüzü çeviren) yalnızca vuruş gerçekten atılırken çalışır. Kayıtlara etkisi yok.
+
 ## v2.15 (29 Ekim 2026) · atılış kuralları, savuşturma dersi, keskin takla dersi, kayıt sil/üzerine yaz
 - Taban canavar saldırısı: `a.wind=.1` (D.wind yalnızca bekleme süresinde), atılış hedefi rüzgâr sonunda `player`, `t:.3`, `sp=(el+12)/.3`; atılışta renkli `!` float. v110 `ADD` sıfır. Hamle `leap` WIND .12, kırmızıda ek yok.
 - v181 ders: `DL.mode` dodge/parry; ! ile atılış (wind .08), atılış .45 sn sabit çizgi; n=0'da oyuncu sabit, değmeden 24 px önce donar, yalnızca istenen tuş (`DL.rel`) takla/savuşturma yaptırır. Dodge: değme ≤12 px → taklada ise başarı; parry: `__plParry.t>0` ise başarı (`__plParryHit`). 4 sıyrılmadan sonra parry kısmı; bitince `skills P0`. Yönsüz takla derste yana.

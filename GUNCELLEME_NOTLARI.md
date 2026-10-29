@@ -7,6 +7,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.16 · 29 Ekim 2026
+
+**Düzeltmeler**
+- **Ciddi:** bir yöne vurduktan hemen sonra öbür yöne vurmaya çalışınca karakter yalnızca dönüyor, vuruş gerçekleşmiyordu (ilk vuruşun bekleme süresi bitmeden basılan vuruş yutuluyordu). Artık bekleme sırasında basılan vuruş saklanıyor ve bekleme biter bitmez (basıştan en çok 0,8 sn sonrasına kadar) **son bastığın yöne** atılıyor; karakter de ancak vuruş atılırken dönüyor. Sol tık ve Q için geçerli.
+
+**Tasarım belgesi**
+- Kontroller'e "Vuruş tamponu" kuralı; sürüm satırı 2.16.
+
 ## Versiyon 2.15 · 29 Ekim 2026
 
 **Oynanış**

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.15** ile birebir (29 Ekim 2026). Bu sürümde: canlılar ! ile birlikte sana doğru düz bir çizgide atılır (taklayla ya da savuşturarak kaçılır); savuşturma Börü'den ders olarak öğrenilir; takla dersi keskinleşti; kayıt silme ve üzerine yazma soruları. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.16** ile birebir (29 Ekim 2026). Bu sürümde: vuruş bitmeden basılan yeni vuruş kaybolmuyor, bekleme bitince son bastığın yöne atılıyor (önceden karakter yalnızca dönüyordu). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
