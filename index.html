@@ -4546,6 +4546,8 @@ cv.addEventListener('pointerdown',e=>{
   // v2.03: with a mouse a left click always strikes towards the pointer (fist or weapon); a person, a station, something to gather is still walked to
   if(e.pointerType==='mouse'&&!placing){const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S;let tg=null;try{tg=pickAt(wx,wy).tg}catch(x){tg=null}
     const noTool=tg&&((tg.kind==='tree'&&!heldKind('axe')&&!(tg.t&&tg.t.type&&tg.t.type.fruit&&!(tg.t.fr>0)))||(tg.kind==='node'&&tg.n&&tg.n.mine&&!heldKind('pick')));   // v2.07: a tree without an axe in hand, a rock without a pick: just a strike
+    {const vw=innerWidth/S,vh=innerHeight/S,fight=performance.now()-lastBitten<3000||animals.some(a=>a.st==='chase'&&a.x>cam.cx-8&&a.x<cam.cx+vw+8&&a.y>cam.cy-8&&a.y<cam.cy+vh+16);   // v2.10: an animal on screen is after you: a click only strikes
+      if(fight){goal=null;const a=tg&&tg.kind==='animal'?tg.a:null;attack(a?{x:a.x,y:a.y}:{x:wx,y:wy});e.preventDefault();return}}
     if(!tg||noTool){let dp=null,dd=10;for(const d of drops){if(d.t<1)continue;const q=Math.hypot(d.x-wx,d.y-3-wy);if(q<dd){dd=q;dp=d}}   // v2.10: a click on a dropped thing walks to it (picked up on arrival)
       if(dp){goal={tg:null,x:dp.x,y:dp.y,reach:2,t:0,chk:0,best:Math.hypot(dp.x-player.x,dp.y-player.y)};RIPPLES.push({x:dp.x,y:dp.y,t:0,c:'#f2b84b'});e.preventDefault();return}}
     if(!tg||tg.kind==='animal'||noTool){goal=null;const a=tg&&tg.kind==='animal'?tg.a:null;attack(a?{x:a.x,y:a.y}:{x:wx,y:wy});e.preventDefault();return}}
