@@ -15245,6 +15245,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
 }).toString()+')()')}catch(e){try{window.__hamErr('v204: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v218">
+// v2.18: monsters face you while they attack (see below).
 // v2.18: dragging a carryable out of the bag shows its slot too (it used to show only after a click, so the torch lesson's slot
 // did not light up while the torch was dragged). The same slot as a click: the first empty one, else the first. Stops on release.
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
@@ -15254,6 +15255,12 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    try{if(d&&d.src==='inv'&&hotThing(d.n)&&beltIndex(d.n)<0){const f=cbody.querySelector('.bs.empty')||cbody.querySelector('.bs');if(f&&!f.classList.contains('pulse'))f.classList.add('pulse','dpulse')}}catch(x){}
    return r};
  addEventListener('pointerup',()=>setTimeout(clr,0));addEventListener('pointercancel',()=>setTimeout(clr,0));
+ // v2.18: a creature that is attacking always looks at you (the hero used to see its back when it backed off to shoot or when
+ // you circled it during a wind-up). Only while its body is flying fast (a leap, a lunge, a charge run) it looks where it goes.
+ const _ta=tickAnimals;tickAnimals=function(){const r=_ta.apply(this,arguments);
+   try{for(const a of animals){const m=a.mv,on=a.wind>0||(m&&m.ph!=='run'&&m.ph!=='air');if(!on||a.lunge)continue;
+     const dx=player.x-a.x;if(Math.abs(dx)>=3)a.face=dx>0?1:-1}}catch(x){}
+   return r};
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v218: '+(e&&e.message||e))}catch(_){}}})();
 </script>
