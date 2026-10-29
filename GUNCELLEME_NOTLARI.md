@@ -7,6 +7,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 1.97 · 29 Ekim 2026
+
+**Görsel**
+- Arka-çapraz (sağ-yukarı / sol-yukarı) pozda baş yeniden 1.94'teki gibi: ince yanak şeridi ve burun ucu, büyük kulak yok. Gövde, kollar ve ayaklar 1.96'daki çapraz haliyle kalıyor.
+
+**Tasarım belgesi**
+- "Karakterin 8 yönü" maddesinde arka-çapraz baş tarifi güncellendi; sürüm satırı 1.97.
+
+---
+
 ## Versiyon 1.96 · 29 Ekim 2026
 
 **Görsel**
