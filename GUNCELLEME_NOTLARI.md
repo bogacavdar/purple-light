@@ -7,6 +7,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 1.93 · 29 Ekim 2026
+
+**Oynanış**
+- Görev sahneleri artık **göreve özel**: kişi kendi yerinde, konuşma balonlarıyla **o görevi kendi sözleriyle** cümle cümle anlatıyor (en çok 4 balon). Arada karakterin tepki veriyor ("Anlat bakalım.", "Dinliyorum."), en sonda işi üstleniyor ("Tamam, hallederim!", "Bana bırak.").
+- Her balon okuma süresi kadar kalıyor; tık/dokunuş ya da bir tuş sonraki balona geçiyor, **Esc** sahnenin kalanını geçiyor.
+- Sahneden sonra açılan pencere kısa: görevin adı, 📍 nerede yapılacağı ve ödül. Kişi uzaktaysa sahne yine atlanıyor, görev eskisi gibi tam metinle veriliyor.
+
+**Görsel**
+- Konuşma balonları birden çok satıra kırılıyor; kişinin balonu sarımsı, karakterinki beyaz; köşede "tıkla ▸ / dokun ▸" ipucu.
+
+**Tasarım belgesi**
+- "Görev sahnesi" maddesi göreve özel balonlu konuşmayla yeniden yazıldı; sürüm satırı 1.93.
+
+---
+
 ## Versiyon 1.92 · 29 Ekim 2026
 
 **Oynanış**

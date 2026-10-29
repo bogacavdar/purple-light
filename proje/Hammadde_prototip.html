@@ -1340,7 +1340,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.92</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.93</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -14612,33 +14612,45 @@ function startQ(q,fq){const b={};for(const p of q.p){if(p[0]==='k')b['k:'+p[1]]=
   for(const r of q.rec||[])if(REC.has(r))bought.add(r);
   if(q.id==='H1'&&farmStep===0){farmStep=1;bought.add('Tırmık')}
   TGk='';sfx('found');renderTut();try{if(craftOpen&&mode==='qlog')renderCraft()}catch(e){}}
-function offerQ0(q,who,fq){if(!q)return;startQ(q,fq);const done=complete();const wh=done?'':whereTxt();
-  say(`${q.say}${done?'<br><br><i>Ama bunlar sende zaten var! Bu iş bitti sayılır.</i>':''}${wh?`<br><small>📍 ${wh}</small>`:''}<br><small>Ödül: ${q.c?q.c+' sikke':''}${q.c&&q.x?', ':''}${q.x?q.x+' XP':''}</small>`,
+function offerQ0(q,who,fq,short){if(!q)return;startQ(q,fq);const done=complete();const wh=done?'':whereTxt();
+  say(`${short?`<b>Görev: ${esc(q.t)}</b>`:q.say}${done?'<br><br><i>Ama bunlar sende zaten var! Bu iş bitti sayılır.</i>':''}${wh?`<br><small>📍 ${wh}</small>`:''}<br><small>Ödül: ${q.c?q.c+' sikke':''}${q.c&&q.x?', ':''}${q.x?q.x+' XP':''}</small>`,
     [{q2:1,t:done?'Al bakalım':'Tamam',pri:1,fresh:1,f:()=>{bye();if(done)setTimeout(()=>finishQ(true),150);else if(S.a&&S.a.les)setTimeout(()=>showLesson(S.a.les,0),250)}}],q.g==='npc'?undefined:who)}
-// v1.92: a short scene before every job: bars, you turn to the person and walk up, a hello, an answer, then the talk
-const QSC={on:false,ph:'',o:null,nb:null};
-const QHI=['Selam {n}! Bir işin mi var?','{n}, yüzünden belli, bir derdin var.','Merhaba {n}! Yardım lazım mı?','{n}! Ne iş var bugün?'],QRE=['Hah, tam seni düşünüyordum!','Gel bakalım, bir işim var.','İyi ki geldin, dinle bak…','Ah, sen misin? Tam zamanında!'];
+// v1.92/1.93: a short scene before every job, right where the person stands: bars, you turn and walk up, and the two of you
+// talk in speech balloons: you say hello, the person tells this very job in their own words (sentence by sentence), you take it on
+const QSC={on:false,ph:'',o:null,L:[],i:0};
+const QHI=['Selam {n}! Bir işin mi var?','{n}, yüzünden belli, bir derdin var.','Merhaba {n}! Yardım lazım mı?','{n}! Ne iş var bugün?'],
+  QMID=['Anlat bakalım.','Dinliyorum.','Hıı, sonra?','Neye ihtiyacın var?'],QOK=['Tamam, hallederim!','Bana bırak.','Hemen bakıyorum.','Merak etme, getiririm.'];
 const pick=L=>L[Math.floor(Math.random()*L.length)];
+const qPlain=h=>String(h||'').replace(/<br\s*\/?>/gi,' ').replace(/<[^>]+>/g,'').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/\s+/g,' ').trim();
+function qLines(q){const nm=String(gName(q.g)||'').split(' ').pop(),S2=qPlain(q.say).split(/(?<=[.!?…])\s+/).filter(Boolean),ch=[];
+  for(const x of S2){const l=ch[ch.length-1];if(l&&l.length+x.length<120)ch[ch.length-1]=l+' '+x;else ch.push(x)}
+  while(ch.length>4){const x=ch.pop();ch[ch.length-1]+=' '+x}
+  const L=[{w:'p',t:pick(QHI).replace('{n}',nm)}];ch.forEach((t,i)=>{L.push({w:'n',t});if(i===0&&ch.length>1)L.push({w:'p',t:pick(QMID)})});L.push({w:'p',t:pick(QOK)});return L}
 function offerQ(q,who,fq){if(!q)return;const o=who||gObj(q.g);
   if(QSC.on||!o||!(o.x>-9e4)||dist(o.x,o.y)>220||window.__plArena||sailing||fading||cine.on||onTitle){offerQ0(q,who,fq);return}
-  QSC.on=true;QSC.t0=performance.now();QSC.ph='walk';QSC.o=o;QSC.q=q;QSC.args=[q,who,fq];QSC.nb=null;dlgOpen=true;for(const k in keys)keys[k]=false;try{stopGather()}catch(e){}goal=null;
+  QSC.on=true;QSC.t0=performance.now();QSC.ph='walk';QSC.o=o;QSC.q=q;QSC.args=[q,who,fq];QSC.L=qLines(q);QSC.i=-1;dlgOpen=true;for(const k in keys)keys[k]=false;try{stopGather()}catch(e){}goal=null;
   document.body.classList.add('qscene');sfx('pick');
   const sx=player.x,sy=player.y,d=Math.hypot(o.x-sx,o.y-sy)||1,want=Math.max(0,d-24),tx=sx+(o.x-sx)/d*want,ty=sy+(o.y-sy)/d*want,
     ok=want>2&&!blocked(tx,ty)&&!isWater(tileAt(tx,ty)),dur=ok?Math.min(900,want*9):0,t0=performance.now();
   const face=()=>{const dx=o.x-player.x,dy=o.y-player.y;player.face={x:Math.abs(dx)>=Math.abs(dy)?Math.sign(dx):0,y:Math.abs(dy)>Math.abs(dx)?Math.sign(dy):0}};face();
-  const nm=String(gName(q.g)||'').split(' ').pop();
   const walk=()=>{if(!QSC.on||QSC.ph!=='walk')return;const k=dur?Math.min(1,(performance.now()-t0)/dur):1;if(ok){player.x=sx+(tx-sx)*k;player.y=sy+(ty-sy)*k}face();
-    if(k<1){requestAnimationFrame(walk);return}QSC.ph='hi';bubble(pick(QHI).replace('{n}',nm),1.8);QSC.tm=setTimeout(()=>{if(!QSC.on)return;QSC.ph='re';QSC.nb={t:pick(QRE),until:performance.now()+1700};sfx('pick');QSC.tm=setTimeout(qGo,1500)},1500)};
+    if(k<1){requestAnimationFrame(walk);return}QSC.ph='talk0';qNext()};
   requestAnimationFrame(walk)}
-function qGo(){if(!QSC.on||QSC.ph==='talk')return;clearTimeout(QSC.tm);QSC.ph='talk';QSC.nb=null;BUB=null;document.body.classList.remove('qscene');dlgOpen=false;const a=QSC.args;offerQ0(a[0],a[1],a[2])}
-function qEnd(){if(!QSC.on)return;const q=QSC.q;QSC.on=false;QSC.ph='';QSC.nb=null;document.body.classList.remove('qscene');if(q&&S.a&&S.a.id===q.id&&!complete()){toast(`Görev başladı: ${q.t}`);sfx('found')}}
+function qNext(){if(!QSC.on||QSC.ph==='talk')return;clearTimeout(QSC.tm);QSC.i++;const l=QSC.L[QSC.i];if(!l){qGo();return}sfx('pick');
+  QSC.until=performance.now()+1e9;QSC.tm=setTimeout(qNext,Math.max(1800,Math.min(5200,900+l.t.length*45)))}
+function qGo(){if(!QSC.on||QSC.ph==='talk')return;clearTimeout(QSC.tm);QSC.ph='talk';QSC.i=99;document.body.classList.remove('qscene');dlgOpen=false;const a=QSC.args;offerQ0(a[0],a[1],a[2],1)}
+function qEnd(){if(!QSC.on)return;const q=QSC.q;QSC.on=false;QSC.ph='';document.body.classList.remove('qscene');if(q&&S.a&&S.a.id===q.id&&!complete()){toast(`Görev başladı: ${q.t}`);sfx('found')}}
 setInterval(()=>{try{if(QSC.on&&QSC.ph==='talk'&&!dlgOpen)qEnd()}catch(e){}},150);
-addEventListener('keydown',e=>{if(!QSC.on||QSC.ph==='talk')return;e.preventDefault();e.stopImmediatePropagation();if(!e.repeat&&performance.now()-QSC.t0>350)qGo()},true);
-addEventListener('pointerdown',e=>{if(!QSC.on||QSC.ph==='talk')return;e.preventDefault();e.stopImmediatePropagation();if(performance.now()-QSC.t0>350)qGo()},true);
-function drawNB(){const B=QSC.nb,o=QSC.o;if(!B||!o)return;if(performance.now()>B.until){QSC.nb=null;return}const x=Math.round(o.x),y=Math.round(o.y)-40;ctx.save();ctx.font='bold 7px Rubik, system-ui, sans-serif';
-  const w=Math.ceil(ctx.measureText(B.t).width)+10;ctx.fillStyle='rgba(255,246,214,.97)';ctx.fillRect(x-w/2,y-11,w,13);ctx.fillRect(x-2,y+2,4,3);ctx.strokeStyle='#7a5a1a';ctx.lineWidth=1;ctx.strokeRect(x-w/2+.5,y-10.5,w-1,12);
-  ctx.fillStyle='#2a1e14';ctx.textAlign='center';ctx.fillText(B.t,x,y-2);ctx.restore()}
-{const _ve=v55Ents;v55Ents=function(ents,time){if(_ve)_ve.apply(this,arguments);if(QSC.nb)ents.push({y:9996,d:drawNB})}}
+addEventListener('keydown',e=>{if(!QSC.on||QSC.ph==='talk')return;e.preventDefault();e.stopImmediatePropagation();if(e.repeat||performance.now()-QSC.t0<350)return;if(e.key==='Escape')qGo();else if(QSC.ph!=='walk')qNext()},true);
+addEventListener('pointerdown',e=>{if(!QSC.on||QSC.ph==='talk')return;e.preventDefault();e.stopImmediatePropagation();if(performance.now()-QSC.t0<350)return;if(QSC.ph!=='walk')qNext()},true);
+// a balloon that wraps, over you or over the person
+function drawQL(){const l=QSC.on&&QSC.L[QSC.i];if(!l)return;const o=l.w==='p'?player:QSC.o;if(!o)return;ctx.save();ctx.font='bold 7px Rubik, system-ui, sans-serif';
+  const words=l.t.split(' '),lines=[];let cur='';for(const wd of words){const t=cur?cur+' '+wd:wd;if(ctx.measureText(t).width>150&&cur){lines.push(cur);cur=wd}else cur=t}if(cur)lines.push(cur);
+  const w=Math.ceil(Math.max.apply(null,lines.map(x=>ctx.measureText(x).width)))+10,h=lines.length*9+4,x=Math.round(o.x),y=Math.round(o.y)-38;
+  const npc=l.w==='n';ctx.fillStyle=npc?'rgba(255,246,214,.97)':'rgba(255,252,240,.96)';ctx.fillRect(x-w/2,y-h,w,h);ctx.fillRect(x-2,y,4,3);ctx.strokeStyle=npc?'#7a5a1a':'#3a2a1a';ctx.lineWidth=1;ctx.strokeRect(x-w/2+.5,y-h+.5,w-1,h-1);
+  ctx.fillStyle='#2a1e14';ctx.textAlign='center';ctx.textBaseline='alphabetic';lines.forEach((t,i)=>ctx.fillText(t,x,y-h+9+i*9));
+  if(npc||QSC.i<QSC.L.length-1){ctx.font='6px Rubik, system-ui, sans-serif';ctx.fillStyle='rgba(255,255,255,.75)';ctx.fillText(TOUCH?'dokun ▸':'tıkla ▸',x+w/2-12,y+8)}ctx.restore()}
+{const _ve=v55Ents;v55Ents=function(ents,time){if(_ve)_ve.apply(this,arguments);if(QSC.on&&QSC.L[QSC.i])ents.push({y:9996,d:drawQL})}}
 function finishQ(near){const q=curQ();if(!q||!complete())return;
   for(const p of q.p)if(p[0]==='b'){let need=p[2];for(const m of expand(p[1])){const t=Math.min(need,inv[m]||0);inv[m]-=t;need-=t;if(!need)break}}
   const fill=!!S.a.fq;S.a=null;if(LS)endLesson();if(!fill&&!isDone(q.id))S.d.push(q.id);mirror();

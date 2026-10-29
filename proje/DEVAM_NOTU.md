@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v1.93 (29 Ekim 2026) · göreve özel balonlu sahne
+- v186 görev bloğu: `qLines(q)` görevin `say` metnini düz metne çevirip cümlelere böler (≤120 harf parçalar, en çok 4), selam (QHI) + tepki (QMID) + kabul (QOK) ekler. `qNext()` balonları sırayla gösterir (süre 1,8–5,2 sn, tık/tuş ilerletir, Esc `qGo`). `drawQL` satır kıran balon (150 px). `offerQ0(q,who,fq,short)`: sahneden sonra kısa pencere (ad + 📍 + ödül). Not: `plain` adı oyunda zaten var, `qPlain` kullanıldı. Kayıtlara etkisi yok.
+
 ## v1.92 (29 Ekim 2026) · görev sahnesi
 - v186 görev bloğu: eski `offerQ` → `offerQ0`; yeni `offerQ` sahneyi oynatır (`QSC`): `body.qscene` şeritleri (CSS v189-css'in sonunda), `dlgOpen=true` ile donma, rAF ile kişiye 24 px kalana kadar kayma (engel/su varsa yürümez), `bubble()` selam (QHI), `QSC.nb` kişi balonu (QRE, `drawNB`, v55Ents), sonra `qGo()` → `offerQ0`. Konuşma kapanınca `qEnd()` "Görev başladı". Tık/tuş (350 ms sonra, tekrar tuşları hariç) sahneyi geçer. 220 px'ten uzak, arena, deniz, cine, başlık ekranında atlanır. Kayıtlara etkisi yok.
 
