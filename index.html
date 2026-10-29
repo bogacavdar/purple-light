@@ -1347,7 +1347,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.21</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.22</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -9838,7 +9838,7 @@ function moveTo(el,parent,before){if(!el||!parent)return;const mk=document.creat
 function goPhone(){if(V50.on)return;V50.on=true;B.classList.add('v50m');
   left.insertBefore(row,left.firstChild);
   moveTo($('xpdock'),left);
-  moveTo($('b-inv'),row);moveTo($('b-eat'),row);
+  moveTo($('b-eat'),bar,bar.firstChild);moveTo($('b-inv'),bar,bar.firstChild);   // v2.22: the bag and the eat button live in the ☰ drawer too
   moveTo($('b-quest'),bar);moveTo($('b-char'),bar);moveTo($('b-set'),bar);
   try{lastPrompt='#'}catch(e){}placeAll()}
 function goDesk(){if(!V50.on)return;V50.on=false;setOpen(false);B.classList.remove('v50m','tutx','v50hbidle','v50ok');
@@ -9851,7 +9851,7 @@ tog.addEventListener('click',e=>{e.stopPropagation();setOpen(!V50.open);sfx('pic
 bar.addEventListener('click',e=>{if(!V50.on)return;const b=e.target.closest('.ib');if(!b||b.classList.contains('locked'))return;setTimeout(()=>setOpen(false),60)});
 $('game').addEventListener('pointerdown',()=>{if(V50.on&&V50.open)setOpen(false)});
 // a lesson that points at an icon inside the closed drawer: open it once and make the toggle glow
-function hlCheck(){const hl=[...bar.querySelectorAll('.ib.p3tab,.ib.pulse,.ib.b3unl')].filter(b=>!b.hidden);const k=hl.map(b=>b.id).join(',');
+function hlCheck(){const hl=[...bar.querySelectorAll('.ib.p3tab,.ib.pulse,.ib.b3unl,.ib.p189,.ib.p218')].filter(b=>!b.hidden);const k=hl.map(b=>b.id).join(',');
   if(k&&k!==V50.hlK&&!craftOpen&&!dlgOpen&&!onTitle)setOpen(true);V50.hlK=k;tog.classList.toggle('v50hint',!!k&&!V50.open)}
 // ---- the quest card: one line; tap to read all; it folds back by itself
 $('tut').addEventListener('click',e=>{if(!V50.on)return;if(e.target.closest('p')&&!e.target.closest('button,#tqmake'))B.classList.toggle('tutx')});
