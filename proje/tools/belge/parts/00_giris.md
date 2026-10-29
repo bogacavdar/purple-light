@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.11** ile birebir (29 Ekim 2026). Bu sürümde: harita sadeleşti (temel malzemeler yaklaşık yarıya, bitkiler ~%40, ağaçlar ~%20 azaldı; kampın çevresi aynı) ve öğreticide taş adımı meşale eline alınıp indirildikten sonra başlıyor. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.12** ile birebir (29 Ekim 2026). Bu sürümde: vuruş canlının çiziminin neresine değerse sayılır (kıskaç, boynuz, kuyruk); öğreticide meşale inene kadar taş istenmez; NPC seslenme balonu yerinde durur; Nazlı keskin taşın hesabını anlatır. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

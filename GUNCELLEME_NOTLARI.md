@@ -7,6 +7,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.12 · 29 Ekim 2026
+
+**Düzeltmeler**
+- Vuruşlar canlının kıskacına, boynuzuna, kuyruğuna değse bile hasar vermiyordu (yalnızca gövdenin ortası sayılıyordu). Artık canlının **çiziminin neresine değerse** vuruş sayılıyor. Bütün canlılarda, iki adada da, Reisler dahil.
+- Öğreticide meşale henüz indirilmeden üstteki takip satırı "4 Taş" istiyor ve haritadaki taşlar mavi parlıyordu (taşlar yeni çıkmış gibi görünüyordu). Artık meşale inene kadar takip satırı "Meşaleyi elinden indir" diyor; hiçbir taş parlamıyor.
+
+**Arayüz**
+- NPC'lerin seslendiği mavi balon ("Parçalar tamam! Dursun'a git" gibi) sen yürüdükçe sağa sola, yukarı aşağı zıplıyordu. Artık yeri bir kez seçiliyor ve konuşan kişiye göre sabit kalıyor; karakterin önüne gelse bile kaçmıyor. Yalnızca bir menü kutusunun altında yarım saniyeden uzun kalırsa bir kez yer değiştiriyor. Konuşan ekrandan çıkarsa balon kenarda duruyor, küçük sarı bir ok onun yönünü gösteriyor.
+
+**Oynanış**
+- Nazlı keskin taşı alınca hesabı anlatıyor: bir taş 1 sikke, iki taş 2 sikke; birleştirip yaptığın keskin taş 3 sikke, aradaki 1 sikke senin emeğin. Yaptığın şeyleri yeniden birleştirdikçe değerleri katlanır. (Eski metin "iki taşın ayrı ayrı bir sikke etmez" diyerek çelişiyordu.)
+
+**Tasarım belgesi**
+- Vuruş kuralı (canlının her yeri sayılır), seslenme balonu, öğretici tablosu (meşale ve Nazlı adımları); sürüm satırı 2.12.
+
+**Proje**
+- Çalışma kuralı: değişikliklerden sonra "Paket çıkayım mı?" diye sorulmuyor; paket Boğaç "paket çık" deyince çıkıyor.
+
 ## Versiyon 2.11 · 29 Ekim 2026
 
 **Oynanış**

@@ -9,6 +9,12 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.12 (29 Ekim 2026) · vuruş kutusu çizimden, meşale satırı, seslenme balonu sabit, Nazlı
+- Taban `attack()`: `visBox(k)` her tür için bir kez çizimi ölçer (GL'de `ctx._fwd` ile karalama tuvaline, düz tuvalde köşeye çizip kopyalar; alfa > 90, can dolu → can çubuğu yok, gölge yok); göğüsten kutunun en yakın noktasına uzaklık ≤ menzil + 3 ve ~95° koni. Ölçülemezse v2.08 kuralı. `window.__plART` (kullanılmıyor, zararsız).
+- Öğretici: tutRow tz 6 + `__p3.low` → "Meşaleyi elinden indir" satırı (Taş satırı ve mavi parlama yok).
+- `drawCall`: balon yeri (`c.off`, konuşana göre) bir kez seçilir; oyuncu engel değil; HUD altında > 0,5 sn kalırsa yeniden seçilir; kenara sıkışınca (`c.edge`) yön oku.
+- `tzSold` Nazlı metni (1 + 1 → 3 sikke). CLAUDE.md / skill: "Paket çıkayım mı?" sorulmaz.
+
 ## v2.11 (29 Ekim 2026) · harita seyreltme, meşale → taş sırası
 - Dünya kurulumu (bölge yerleşim bloğu, `putIn` sonrası): kampın 20 karo dışındaki toplanabilirler yerin hash'ine göre seyreltilir (rnd() kullanılmaz, dünyanın geri kalanı aynı); KEEP: Dal .48, Lif .5, Taş .56, Yaprak .54, Nehir çakılı .56, Kum .58, Çakmaktaşı .67, Kuru ot .6, Böğürtlen .73, kıyı bitkileri .71, diğer biyom bitkileri .59. Madenler, MINEPL ve gece düğümleri dokunulmaz. Ağaç seyreltme `h<.18` → `h<.35`.
 - Yeni `v211` bloğu: temel malzemelerin `RES[k].respawn` ×0.7.
