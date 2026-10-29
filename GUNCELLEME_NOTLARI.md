@@ -7,6 +7,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.05 · 29 Ekim 2026
+
+**Oynanış**
+- F artık yalnızca **hemen yanındaki** şeye yöneliyor: karakterin bir kare çevresi, çaprazlar dahil. İki kare ötedeki bir şeye gitmiyor; o zaman F hiçbir şey yapmıyor. Yaklaşınca F en yakındakini topluyor.
+- Baltan yoksa ağaca, kazman yoksa madene/kayaya gitmiyor.
+- Elinde balta varsa önce ağaca, kazma varsa önce madene yöneliyor; yoksa en yakın toplanacak şeye (çalı, yerdeki taş/dal, meyvesi olgun ağaç). Ayağının dibindeki düşmüş eşyalar her zaman önce alınıyor.
+
+**Tasarım belgesi**
+- Kontroller tablosundaki F satırı bu kurallarla güncellendi; sürüm satırı 2.05.
+
+---
+
 ## Versiyon 2.04 · 29 Ekim 2026
 
 **Oynanış**
