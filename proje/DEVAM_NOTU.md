@@ -9,6 +9,16 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.22 (29 Ekim 2026) · telefon ekranları, güvenli yerler, almanak hamleleri, telefon Vur yönü
+- `v50-mob` goPhone: `b-eat`/`b-inv` artık `#bar` (☰ kutusu) başına taşınıyor; `hlCheck` `.p189,.p218`'i de görüyor.
+- `v132-dokun`: `mvDir()` (joystick yönü) → `target()` açısı ve hedefsiz `aimPoint()` bu yönde.
+- `v218` bloğu: `moveA` sarmalı (kavga eden canlı `nearCamp` sınırını geçmez), `tickAnimals` sarmalı (içerdekini en yakın kenardan dışarı yürütür); `fighter()` = saldırgan/nötr/boss, `tut`/`ders`/arena hariç.
+- Hamle bloğu: `window.__plFoe(k)` (SP, IMM, DODGE, BIGK); `v213` kartı `window.__plAlmExtra(k)` ekler (v218'de; MVD açıklamaları belgedeki tabloyla aynı).
+- `v189` `want()`: tz 4/7, kazan seçili tarif ve `!potReady()` iken `#pot` parlar.
+- `v218` bloğu `style#v222-mob` (yalnız `body.v50m`): `#craft` artık `cm-<mode>` sınıfı alıyor; sekmeler (`.pmode`, `.sktabs`) 30 px, envanter şeridi (`.ieq`), tek satır pazar (`.mkt`), el yapımı/kitap ilk `p.note` gizli, ağaç `--nd:32px`, menü açıkken `#discover` altta küçük, `#settings .tcard` geniş, ana menü `.logo.pl` sağda (`left:66vw`).
+- Bu sürümde Boğaç'ın izniyle Playwright ile 844×390 dokunmatik ekran görüntüleri alındı (scratchpad; depoya girmedi).
+- Eski kayıtlara etkisi yok.
+
 ## v2.21 (29 Ekim 2026) · telefonda bütün #craft pencereleri (acil)
 - `v218` bloğu: `style#v221-all` (`v220-pot`'tan önce eklenir, kazan kuralları üstte kalır), yalnızca `body.v50m #craft`: dolgu 4 px (tutpad 40 px; `body.menuopen #craft.tutpad` 104 px kuralını ezer), `.cpanel` %100 genişlik/yükseklik, ince `.chead`/`.ctools`, `.cbody` flex:1 + kendi içinde kayar.
 - Masaüstü/tablet değişmedi. Eski kayıtlara etkisi yok.

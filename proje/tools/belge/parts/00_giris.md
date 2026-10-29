@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.21** ile birebir (29 Ekim 2026). Bu sürümde: telefonda bütün pencereler (pazar, demirciler, el yapımı, envanter, yetenek ağacı, kitap, yemek…) bütün ekranı kaplıyor, başlık ve araç satırları ince; kazan ve örs iki sütunlu (v2.20).
+Sürüm: **Versiyon 2.22** ile birebir (29 Ekim 2026). Bu sürümde: telefonda bütün ekranlar elden geçti (sıkı sekmeler, envanter şeridi, tek satır pazar, ana menü), envanter ve yemek ☰ kutusunda, Vur yürüdüğün yöne (çapraz dahil) vurur; kavga eden canlılar güvenli yerlere girmez; almanakta saldırılar, etkiler ve hamleler; Zümrüt'ün kazan derslerinde kazan parlar; ileride çok oyunculu notu.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

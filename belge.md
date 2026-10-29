@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.21** ile birebir (29 Ekim 2026). Bu sürümde: telefonda bütün pencereler (pazar, demirciler, el yapımı, envanter, yetenek ağacı, kitap, yemek…) bütün ekranı kaplıyor, başlık ve araç satırları ince; kazan ve örs iki sütunlu (v2.20).
+Sürüm: **Versiyon 2.22** ile birebir (29 Ekim 2026). Bu sürümde: telefonda bütün ekranlar elden geçti (sıkı sekmeler, envanter şeridi, tek satır pazar, ana menü), envanter ve yemek ☰ kutusunda, Vur yürüdüğün yöne (çapraz dahil) vurur; kavga eden canlılar güvenli yerlere girmez; almanakta saldırılar, etkiler ve hamleler; Zümrüt'ün kazan derslerinde kazan parlar; ileride çok oyunculu notu.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -138,6 +138,27 @@ Bu bölüm oyunun ve projenin **neyle yapıldığını** anlatır: hangi program
 - WebGL'i olmayan eski cihazlarda Canvas 2D ile çalışır.
 - İnternet yalnızca ilk açılışta (ve güncellemeleri almak için) gerekir.
 
+## İleride: çok oyunculu (plan, henüz yok)
+
+Oyun şu an **tek oyunculu**dur ve öyle kalacaktır. İleride **4 kişiye kadar çevrimiçi ortak oyun** (aynı adada birlikte) eklenebilir; bu yalnızca bir olasılık olarak not edilir, karar ve tasarım daha sonra yapılacaktır (29 Ekim 2026, Boğaç).
+
+- Düşünülen yol: oyunculardan biri **ev sahibi** olur, diğerleri doğrudan onun tarayıcısına bağlanır (WebRTC). Oyun sunucusu kiralamak gerekmez; oyun GitHub Pages'te kalır. Yalnızca bağlantıyı başlatmak için küçük bir eşleştirme servisi (ya da elle paylaşılan bağlantı kodu), bazı mobil ağlarda da bir aracı (TURN) gerekebilir.
+- Başlamadan önce bu belgeye ayrı bir "Çok oyunculu mod" bölümü yazılır (öğretici, uyku, Reis ödülleri, durma, kayıt kuralları); kod ondan sonra gelir.
+
+**Bulgular (29 Ekim 2026 incelemesi):** oyun baştan tek oyunculu kurulmuş; çok oyuncu için şunlar değişmeli:
+- **Tek oyuncu → oyuncu listesi:** kodda tek bir `player` var; her oyuncunun canı, tokluğu, envanteri, sikkesi, yetenekleri, elindeki alet ve kamerası ayrı olmalı.
+- **Ortak dünya:** ağaçlar, madenler, canavarlar, yerdeki eşyalar, gün/gece herkeste aynı olmalı; canavar yapay zekâsı yalnızca ev sahibinde döner, diğerlerine saniyede 10–20 kez dünyanın son hali gider.
+- **Durma kalkar:** şu an menü ya da konuşma açılınca oyun duruyor; çok oyunculuda dünya kimse için durmaz.
+- **Tasarım kararları gerekir:** öğretici ve görevler kişiye mi özel ortak mı; uyku (herkes yatağa mı girmeli); Reis kimin avıyla gelir, ödül kime; bayılma; kayıt (dünya ev sahibinde, karakter herkeste mi).
+- **Gecikme:** karakterler ağdan gelen konumlar arasında yumuşak kaymalı; saldırı ve "!" işaretleri herkeste aynı anda görünmeli.
+- En büyük iş **hazırlık**tır (oyuncu verisini dünyadan ayırmak); bu aşamada oyun dışarıdan değişmez, tek oyunculu oyun bozulmadan çalışmaya devam etmelidir.
+
+**Maliyet (tahmin):**
+- **Emek:** birkaç küçük sürüm değil, ayrı bir proje; kabaca **birkaç hafta**lık geliştirme (sıra: belge → hazırlık → 2 kişilik deneme → 4 kişi ve cilalama).
+- **Para, ev sahipli yol:** oyun sunucusu yok, GitHub Pages ücretsiz. Eşleştirme için PeerJS'in herkese açık ücretsiz sunucusu kullanılabilir (PeerJS kalıcı kullanım için kendi sunucunu önerir; garanti yok).
+- **Aracı (TURN), yalnızca doğrudan bağlanamayan oyuncular için:** 4 kişilik bu oyun için ev sahibinin gönderdiği veri tahminen oyuncu başına saatte birkaç yüz MB'tır. Hazır servislerin ücretsiz katmanları küçüktür (ör. Metered: ayda 0,5 GB ücretsiz, ilk ücretli paket ayda 99 $, Ekim 2026). Daha ucuz yol: küçük bir kiralık sunucuya kendi TURN'ümüzü kurmak (ör. Hetzner CPX22 ayda yaklaşık 6,5 €, 20 TB trafik, Şubat 2026 listesi). Fiyatlar başlamadan önce yeniden kontrol edilir.
+- **Kendi oyun sunucusu** (ev sahibi çıkınca oyun bitmesin, yabancılarla eşleşme, hileye kapalılık istenirse): aynı boyda bir kiralık sunucu (aylık birkaç €–10 €) ve oyun mantığının bir kısmını sunucuya taşıma emeği.
+
 
 # Oyunun akışı
 
@@ -165,10 +186,10 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 | 1 | Ekin | Kampın çevresine konan 5 böğürtleni topla (telefonda önce sürükleyerek ve dokunarak yürüme). **Bilgisayarda (v2.18)** Ekin böğürtleni nasıl toplayacağını da söyler: "Böğürtlen çalısının **yanına git** ve **F**'ye bas; böğürtlen yere düşer, üstünden yürüyünce alırsın." (Toplama tuşu değiştirildiyse o tuşu söyler.) | — |
 | 2 | Ekin | Yemek düğmesiyle (F) 5 böğürtlen ye (soldaki yemek düğmesi mavi parlar ve ok onu gösterir; yemek listesi açılınca Böğürtlen'in **Ye** düğmesi parlar) | Cadı Zümrüt görünür; Ekin seni kuzeye, ormanın kıyısına yollar |
 | 3 | Zümrüt | Zümrüt'e git ve konuş | Kazanın yanına 2 Dal, 2 Lif, 2 Yaprak konur |
-| 4 | Zümrüt | Kazanda **Kaba meşale** tarifini öğren | Malzemeler yeniden konur |
+| 4 | Zümrüt | Kazanda **Kaba meşale** tarifini öğren. Tarif seçilince, malzemeler konana kadar **kazan alanı da mavi parlar** (v2.22), malzemelerin nereye gideceği görünsün. | Malzemeler yeniden konur |
 | 5 | Zümrüt | El yapımı ekranında (Tab) meşaleyi yap, bir yuvaya koyup eline al | Meşale yapılınca Zümrüt yalnızca meşaleyi anlatır (taşlardan söz etmez). Meşale ele gelince Zümrüt **meşaleyi anlatır**: gündüz işe yaramaz, gece içindir; yalnızca eldeyken yanar ve Kaba meşale yaklaşık **110 saniye** yanınca biter (yağmurda daha çabuk); gündüz elinden indir, akşam karanlığında eline al, yedeğin olsun. Sonra kart **"Meşaleyi elinden indir"** der, meşalenin yuvası (hotbar kutusu) oku ile parlar; meşale inene kadar taş adımına geçilmez (v2.11: taşlar ve taş konuşması da meşale inince gelir; v2.12: üstteki takip satırı da o ana kadar taş istemez, haritadaki taşlar mavi parlamaz) |
 | 6 | Zümrüt | 4 taşı topla | Meşale inince Zümrüt taşları anlatır ve kazanın yanına 4 Taş konur |
-| 7 | Zümrüt | Kazanda **Keskin taş** tarifini öğren (2 Taş) | — |
+| 7 | Zümrüt | Kazanda **Keskin taş** tarifini öğren (2 Taş). Malzemeler konana kadar kazan alanı mavi parlar (v2.22). | — |
 | 8 | Zümrüt | Kalan 2 taşla elle Keskin taş yap | Zümrüt kuzeydoğudaki Nazlı'yı söyler |
 | 9 | Nazlı | Pazarcı Nazlı ile tanış | Pazar "Sat" sekmesiyle açılır |
 | 10 | Nazlı | Keskin taşı sat | Nazlı hesabı anlatır (v2.12): bir Taş 1 sikke, iki taş 2 sikke; birleştirip yapılan Keskin taş 3 sikke, aradaki 1 sikke emeğin; yapılan şeyler yeniden birleştirildikçe değerleri katlanır (taştan keskin taş, keskin taştan alet; her adımda daha çok para eder). Sonra doğudaki Börü'yü söyler |
@@ -258,6 +279,8 @@ ACT 2 bölümündeki "ACT 2'nin akışı"na bak: Ülker (portallar) → Pervin (
 - Bütün tuşlar **Ayarlar → Kontroller**'den yeniden atanabilir. Telefondaki dövüş düğmelerinin yeri ve boyutu (%60–200) aynı yerden ayarlanır.
 - F (toplama tuşu) hiç vurmaz; yalnızca toplar ve konuşur. Diyaloglarda, anılarda ve balık tutarken de F ilerletir (E artık gard tuşu). Hile tuşu "+100 XP" X'ten J'ye geçti. Tuşlar değişse de oyundaki bütün yazılar yeni tuşları gösterir; fareyle bir şeyin üstüne gelince çıkan ipucu da ("F ile topla", "F ile konuş", "sol tık ya da Q ile vur"; v2.06). Ayarlar → Kontroller → "Varsayılana dön" bu yeni tuşlara döner.
 - **Karakterin 8 yönü (v1.94, çapraz pozlar v2.02):** karakter yürüdüğü yöne göre 8 pozdan birine döner: **ön** (aşağı), **arka** (yukarı), **sağ/sol profil** (yalnızca tam yana yürürken) ve dört **çapraz** poz; çaprazda karakter bütünüyle döner. **Ön-çapraz** (sağ-aşağı / sol-aşağı): yüz hafif yana dönük (karakter yaratma ekranındaki gibi); gövde gidilen yöne 1 piksel kayar, uzak yanı 2 sütun gölgededir, yaka o yana döner; yalnızca yakın kol görünür (uzak kol hiç çizilmez); bacaklar birbirine yakın, gidilen yandaki ayak bir adım yukarıda, ayak uçları gidilen yöne bakar. **Arka-çapraz** (sağ-yukarı / sol-yukarı): başın yalnızca arkası (saç) görünür, yanak/kulak/göz yok, baş **normal boyda**; sırt dönük çizilir: yakın yan gölgede, ortada sırt çizgisi; yalnızca yakın kol görünür; **ayaklar ön-çaprazdaki çizimle aynıdır** (gidilen yandaki ayak bir adım yukarıda, ayak uçları o yana). 2.01'deki aynalanmış ayaklar beğenilmedi, 2.02'de bu hale geri dönüldü (Boğaç, 29 Ekim 2026). Elde alet varsa kol gidilen yöne uzanır. Yön hareketin açısından seçilir: yatay ve dikey bileşenin ikisi de yeterince büyükse (yaklaşık 22°–68° arası) çapraz poz. Durunca son poz kalır; vururken, toplarken ya da biriyle konuşurken karakter o işe dönük 4 yönlü poza geçer. Karakter yaratma ekranında sürükleyerek çevirince aynı 8 poz görülür (Boğaç, 29 Ekim 2026).
+- **Telefonda sol menü kutusu (v2.22):** sol üstteki ☰ düğmesi menü kutusunu açar; **Envanter (çanta)** ve **Yemek** düğmeleri de bu kutunun içindedir (önceden ☰'ün yanında dışarıda dururlardı). Öğretici bu düğmelerden birini gösterdiğinde (parladığında) kutu bir kez kendiliğinden açılır ve ☰ parlar.
+- **Telefonda Vur düğmesi yürüdüğün yöne vurur (v2.22):** sol taraftaki görünmez joystick'le yürürken **Vur**'a basınca karakter tam yürüdüğün yöne vurur; **çapraz** yürüyorsan çapraza vurur (karakter 8 yönlü pozla o yana döner). Yakında bir canlı varsa yine ona kilitlenir, ama önce yürüdüğün yöndekini seçer. Dururken basınca son baktığın yöne vurur (eskisi gibi).
 - Telefon yatay oynanır; dikey tutulunca "Telefonunu yan çevir" ekranı çıkar ("Yine de dikey oyna" ile geçilebilir).
 
 # Temel sistemler
@@ -298,6 +321,7 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - **Zifiri karanlık kuralı:** gece elinde meşale yoksa, kafa lamban yoksa, bir ışığın (kamp ateşi vb.) içinde ya da bir evin içinde değilsen sayaç başlar: 3,5 sn "Kim var orada?!", 6,5 sn "Bir şey yaklaşıyor…", **8. saniyede mor ışık iner ve bayılırsın**. İlk gece süre 20 sn'dir ve **ilk gece hiçbir şey kaybolmaz**; sonraki gecelerde bayılmadaki gibi %20 kayıp. Ertesi sabah 06:00'da kumsalda uyanırsın.
 - İlk kez meşalesiz karanlığa yakalanınca biri sana bir kez **bedava Kaba meşale** fırlatır. İlk 3 gün 17:30'da "Hava kararıyor" uyarısı gelir.
 - **Güvenli yerler** (saldırgan canavarlar uzaklaşır, mor ışık gelmez): Ekin'in kampı (352 px), kişilerin ateşleri (kuzenlerin ateşleri dahil), Dursun'un ocağı, Zümrüt'ün kazanı (120 px), kendi kamp ateşin (100 px), evin içi. Ateş böcekleri ve mor kıymıklar ışık sayılmaz.
+- **Güvenli yerlere canavar girmez (v2.22):** kavga edebilen canlılar (*saldırgan* ve *nötr*, Reisler dahil) aşağıdaki güvenli yerlerin sınırında durur, içeri **adım atmaz**; kişilerin yanına gelemez. Seni kovalarken sen güvenli yere girersen sınırda kalır, sonra vazgeçer. Bir şekilde içerde kalmış biri (ör. hücum ya da sıçrama ile) en yakın kenardan dışarı yürür. *Zararsız* canlılar (tavşan, geyik…) eskisi gibi dolaşır. Börü'nün ders canlıları ve arena bu kuraldan muaf.
 
 ### Işık kaynakları
 
@@ -372,6 +396,15 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - **El yapımı (Tab):** öğrenilmiş ve örste dövülmeyen, yapı ya da ev eşyası olmayan her tarif. Yap / ×5 / Hepsi.
 - **Örs:** aletler ve silahlar Demirci Dursun'da ve silahçı kuzenlerinde, örste dövülen zırhlar Zırhçı Durmuş'ta ve zırhçı kuzenlerinde. **Kademe kuralı (v1.84):** her demirci yalnızca kendi biyomunun ve öncekilerin malzemesiyle yapılan eşyaları döver (Dursun/Durmuş: yalnız Çayır); ayrıntı "Zümrüt, Dursun ve Durmuş'un kuzenleri" bölümünde. Örs listesinde bir ara parçanın yanındaki **+** o parçayı elindeki malzemeden hemen yapıp örse koyar.
 - **Telefonda bütün pencereler (v2.21):** telefon yatay tutulunca kişilerin ve menülerin bütün pencereleri (Nazlı'nın pazarı, demirciler, Usta Kemal, El yapımı, envanter, yetenek ağacı, tarif kitabı, yemek, köpekler…) **bütün ekranı** kaplar; üstte boşluk kalmaz (öğretici kartı varsa yalnızca ~40 piksel). Başlık satırı ve araç satırı incedir (başlık solda, Kapat sağda), içerik kendi içinde kayar.
+- **Telefona göre sıkı düzen (v2.22):** telefon yatay tutulunca bütün pencerelerde sekmeler (Hepsi/Yiyecekler…, Sat/Satın al, Savaş/Ekonomi…, Tarifler/Keşif defteri…) tek ve ince bir satırdır, sığmazsa yana kayar; düğmeler ve satırlar alçak, yazılar küçüktür; uzun açıklama yazıları gizlenir. Ekran ekran:
+  - **Envanter:** giysi yuvaları karakterin yanında **tek ince şerit** (her yuva küçük simge + ad); "bir giysi seç…" ve "Taşınabilir eşyaları alttaki yuvalara koy…" yazıları gizli (bir eşya seçilince eylem düğmeleri yine çıkar). Böylece eşyalar açılır açılmaz görünür.
+  - **Pazar:** her eşya **tek satır**: ad ×adet, yanında küçük ipucu ("Kazanda şimdi 5 tarifte işe yarar"), fiyat, **1 sat** ve **Hepsi** düğmeleri; ekrana çok daha fazla eşya sığar.
+  - **El yapımı:** üstteki uzun açıklama gizli; meşale durumu ince bir satır; tarif satırları alçak, yaptığın eşya hemen görünür.
+  - **Yetenek ağacı:** ağaç pencerenin geri kalanını doldurur, düğümler küçüktür.
+  - **Tarif kitabı:** üstteki açıklama gizli.
+  - **"Yeni malzeme bulundu"** yazısı bir pencere açıkken ekranın ortasına değil **altına, küçük** çıkar; menünün üstünü kapatmaz.
+  - **Ayarlar:** pencere ekranın genişliğine yayılır, müzik düğmelerinin yazısı kesilmez.
+  - **Ana menü:** "PURPLE LIGHT" yazısı küçülüp sağa kayar; soldaki düğmeler (Yeni oyun, Yükle…) yazının üstüne binmez.
 - **Telefonda kazan ve örs ekranı (v2.20):** telefon yatay tutulunca kazan (ve örs) penceresi **bütün ekranı** kaplar; ekranın üstünde boşluk bırakılmaz (yalnızca öğretici kartı varsa onun yüksekliği kadar, ~40 piksel). Başlık satırı ince (başlık solda, Kapat sağda), arama satırı tek ve ince satır. Altta iki sütun: solda **tarif listesi** (ekranın ~%38'i), sağda seçilen tarif, malzemeler, kazan, düğmeler ve envanter; ikisi de **kendi içinde kayar**. Kazan alanı alçalır, yazılar ve kareler küçülür. Bilgisayar ve tablet görünümü değişmez.
 - **Usta Kemal:** yapılar, yataklar, ev eşyaları. **Atölye** kurulursa seçtiğin tarifi 25 sn'de bir kendisi üretir (en çok 50).
 - **Zümrüt'ün bilmecesi:** bilinmeyen bir tarifi ipucuyla sorar; öğrenince 30 + 2 × fiyat sikke ve 20 XP.
@@ -480,6 +513,7 @@ Sağ altta, küçük haritanın hemen üstünde **Başarımlar**'ın solunda kü
 - **Sağ taraf: seçili biyomun bütün canlıları** (o biyomda karşılaşılabilecek her tür, gece çıkanlar ve seviyeyle gelenler dahil). Her canlı bir kart:
   - **İlk kez öldürülene kadar:** kapkara bir siluet ve **???**; hiçbir bilgi yok.
   - **İlk kez öldürülünce açılır:** resmi, adı, huyu (zararsız / nötr / saldırgan), can, hasar, hız, uzaktan saldırısı ve bıraktığı etki (zehir, yanık…), düşürdükleri, kaç tane avladığın.
+  - **Saldırılar ve etkiler (v2.22):** açılan kartta ayrıca şunlar yazar: **Saldırılar** (ısırık/vuruş hasarı; uzaktan saldırıyorsa kaç mermi attığı ve kaç saniyede bir), **Etki** (her isabette bıraktığı zehir/kanama/yanık: saniyede yaklaşık kaç can, kaç saniye), **Özel hamleler** (her biri kısa açıklamasıyla: Sıçrama · iniş çevresine hasar ve itme; Hücum · çarparsa uzağa iter; Sersemleten kükreme · 1,1 sn sersem; Alev püskürtme · yanık; Buz parçaları · 1,3 sn donma; Ağ · 3 sn yavaşlama; Şok · 0,8 sn sersem; Zehir gölü · yerde 5 sn zehir; Yakalayıp fırlatma · savuşturulamaz; Üçlü saldırı · üç vuruş), **Özellikler** (Bağışıklık · ara sıra kısa süre hasar almaz; Çevik · mermilerden ve vuruşlardan yana sıçrar; İri · sıçrama ve hücumu kırmızıdır, savuşturulamaz) ve Reisi olan türlerde **Reisin ek hamleleri** (Reis her zaman kükreme ve üçlü saldırı da yapar). Bilgiler canlının gerçek değerlerinden gelir.
   - **Reis sayacı:** kartın altında "Reis: 3 / 7" (o türden kaç avladın / Reis için kaç gerekir). Sayaç dolunca Reis gelir.
   - **Reis yenilince kart altın rengine döner** ("Reis yenildi"). Her türün Reisi **yalnızca bir kez** yenilir: kart altına boyandıktan sonra o türden ne kadar avlarsan avla Reis bir daha gelmez.
 - **Yeni canlı almanağa eklenince (v2.18):** bir türü **ilk kez** öldürdüğünde ekranın ortasında büyük bir yazı çıkar: canlının adı ve altında "**Almanağa eklendi** · U ile bak" (yeni malzeme bulunca çıkan yazıyla aynı yerde, sıraya girer). Her yeni tür için bir kez; Reisler ve ders canlıları sayılmaz.

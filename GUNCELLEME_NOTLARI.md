@@ -7,6 +7,28 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.22 · 29 Ekim 2026
+
+**Oynanış**
+- **Canavarlar kişilerin yanına giremiyor:** kavga edebilen canlılar (saldırgan, nötr ve Reisler) güvenli yerlerin (Ekin'in kampı, kişilerin ve kuzenlerin ateşleri, Dursun'un ocağı, Zümrüt'ün kazanı, kendi kamp ateşin) sınırında duruyor, içeri adım atmıyor. Güvenli yere kaçarsan seni kovalayan canavar kenarda kalıp vazgeçiyor. İçeri bir şekilde düşen (hücum, sıçrama) en yakın kenardan dışarı yürüyor. Zararsız canlılar (tavşan, geyik…) eskisi gibi dolaşıyor.
+- **Telefonda Vur yürüdüğün yöne vuruyor:** joystick'le yürürken Vur'a basınca karakter tam yürüdüğün yöne, çapraz yürüyorsan çapraza vuruyor. Yakında canlı varsa önce yürüdüğün yöndekine kilitleniyor. Dururken eskisi gibi baktığın yöne vuruyor.
+
+**Arayüz**
+- **Telefonda bütün ekranlar elden geçti** (yalnızca yatay telefon; bilgisayar ve tablet aynı):
+  - Sekmeler tek ince satır (sığmazsa yana kayar), düğmeler ve satırlar alçak, uzun açıklamalar gizli.
+  - **Envanter:** giysi yuvaları tek ince şerit; eşyalar açılır açılmaz görünüyor.
+  - **Pazar:** her eşya tek satır; ekrana iki kat eşya sığıyor.
+  - **El yapımı:** açıklama gizli, satırlar sıkı; yaptığın meşale listenin başında hemen görünüyor.
+  - **Yetenek ağacı** pencereyi dolduruyor; **tarif kitabı**nda açıklama gizli.
+  - **"Yeni malzeme bulundu"** yazısı bir pencere açıkken alta, küçük çıkıyor.
+  - **Ayarlar** genişledi, müzik düğmelerinin yazıları kesilmiyor; **ana menü**de "PURPLE LIGHT" yazısı sağa kaydı, düğmeler üstüne binmiyor.
+- **Telefonda envanter ve yemek düğmeleri ☰ kutusunun içinde.** Öğretici bunlardan birini gösterdiğinde kutu bir kez kendiliğinden açılıyor ve ☰ parlıyor.
+- **Almanakta saldırılar ve etkiler:** açılan kartlarda artık saldırılar (ısırık hasarı, uzaktan kaç mermi ve kaç saniyede bir), her isabette bıraktığı etki (saniyede kaç can, kaç saniye), özel hamleler (her biri kısa açıklamasıyla), özellikler (bağışıklık, çevik, iri) ve Reisin ek hamleleri yazıyor.
+- **Zümrüt'ün kazan derslerinde kazan parlıyor:** meşale (ve keskin taş) dersinde tarif seçildikten sonra malzemeler konana kadar kazan alanı mavi parlıyor.
+
+**Tasarım belgesi**
+- Kontroller (telefonda sol menü kutusu, Vur yönü, telefona göre sıkı düzen), güvenli yerlere canavar girmemesi, almanak kart bilgileri, Zümrüt'ün 4. ve 7. adımı; Teknoloji bölümüne "İleride: çok oyunculu (plan, henüz yok)" notu (bulgular ve maliyet tahminiyle). Sürüm satırı 2.22.
+
 ## Versiyon 2.21 · 29 Ekim 2026
 
 **Düzeltmeler**
