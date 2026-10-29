@@ -12691,7 +12691,7 @@ function enter(){regI2();
   try{const l=latest(),v=l&&saves()[l],lk=v&&v.data&&v.data.lk;if(lk&&typeof lk==='object')Object.assign(LOOK.hero,LOOK0.hero,lk)}catch(e){}
   AR.on=true;window.__plArena=true;window.__plArenaFree=!AR.real;document.body.classList.add('arena');
   met=true;tut=12;witchShown=false;qState='talk';questsHidden=true;hurtSeen=true;fightSeen=true;hungerSeen=true;fxSeen={zehir:true,kanama:true,'yanık':true};
-  for(const s of SKILLS)skills.add(s.id);skills.add('S1');
+  for(const s of SKILLS)skills.add(s.id);skills.add('S1');skills.add('P0');   // v2.24: parrying too (the Savuş button on phones)
   try{if(window.__p4){window.__p4.bossWait=1e9;window.__p4.bossQ.length=0}}catch(e){}
   dayT=720;weather={k:'açık',t:1e9};
   const c=findCenter();AR.center=c;clearSpot(c);
