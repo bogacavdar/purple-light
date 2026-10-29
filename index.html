@@ -12689,7 +12689,7 @@ function setLv(L){lvl=Math.max(1,Math.min(MAXLV,L));xp=0;AR.lv=lvl;try{renderXP(
 function enter(){regI2();
   applyState(null);diff='normal';$('hardtag').hidden=true;
   try{const l=latest(),v=l&&saves()[l],lk=v&&v.data&&v.data.lk;if(lk&&typeof lk==='object')Object.assign(LOOK.hero,LOOK0.hero,lk)}catch(e){}
-  AR.on=true;window.__plArena=true;window.__plArenaFree=!AR.real;document.body.classList.add('arena');
+  window.__plArenaUsed=true;AR.on=true;window.__plArena=true;window.__plArenaFree=!AR.real;document.body.classList.add('arena');
   met=true;tut=12;witchShown=false;qState='talk';questsHidden=true;hurtSeen=true;fightSeen=true;hungerSeen=true;fxSeen={zehir:true,kanama:true,'yanık':true};
   for(const s of SKILLS)skills.add(s.id);skills.add('S1');skills.add('P0');   // v2.24: parrying too (the Savuş button on phones)
   try{if(window.__p4){window.__p4.bossWait=1e9;window.__p4.bossQ.length=0}}catch(e){}
@@ -12700,7 +12700,7 @@ function enter(){regI2();
   if(!AR.held){AR.held=GT['Taş kılıç']?'Taş kılıç':null}hold(AR.held);
   closeTitle();renderInv();renderTut();buildHud();fadeIn();
   setTimeout(()=>openOv(),480)}
-function leave(){AR.on=false;window.__plArena=false;try{document.body.classList.remove('arena')}catch(e){}try{location.reload()}catch(e){}}
+function leave(){window.__plArenaUsed=true;try{location.reload()}catch(e){}}   // v2.24: stay 'in the arena' until the page is gone, so the unload autosave cannot write the arena hero
 document.addEventListener('click',e=>{if(!AR.on)return;const b=e.target.closest&&e.target.closest('#p-quit,#b-exit');if(b){e.preventDefault();e.stopPropagation();leave()}},true);
 
 // ------------------------------------------------------------------ the character: wear anything, hold anything
@@ -12863,7 +12863,7 @@ function defeat(){AR.over=true;const nm=AR.sel||'';clearFoes();pfx={};try{render
 {const _sa=spawnAnimals;spawnAnimals=function(){if(AR.on)return;return _sa.apply(this,arguments)}}
 {const _sn=spawnNight;spawnNight=function(){if(AR.on)return;return _sn.apply(this,arguments)}}
 {const _gk=guideKey;guideKey=function(){if(AR.on)return null;return _gk.apply(this,arguments)}}
-{const _sv=saveTo;saveTo=function(){if(AR.on)return false;return _sv.apply(this,arguments)}}
+{const _sv=saveTo;saveTo=function(){if(AR.on||window.__plArenaUsed)return false;return _sv.apply(this,arguments)}}   // v2.24: once the arena was entered nothing is saved until the page reloads (leaving used to autosave the arena hero over the real game)
 {const _sn2=snapshot;snapshot=function(){if(AR.on)return{};return _sn2.apply(this,arguments)};try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}}
 {const _em=exitToMenu;exitToMenu=function(){if(AR.on){leave();return}return _em.apply(this,arguments)}}
 function pre(){const now=performance.now();window.__plArenaFree=!AR.real;

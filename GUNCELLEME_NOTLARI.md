@@ -7,6 +7,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.24 · 29 Ekim 2026
+
+**Düzeltmeler**
+- **Önemli: arena kaydı bozuyordu.** Oyunu yarıda bırakıp arenaya girince ve arenadan çıkınca, sayfa kapanırken çalışan otomatik kayıt arenadaki karakteri (ör. 50. seviye) gerçek oyunun **otomatik kaydının** üstüne yazıyordu; "Devam et" arena karakteriyle açılıyordu. Artık arenaya bir kez girildikten sonra sayfa yeniden açılana kadar hiçbir kayıt yazılmıyor, arenadan çıkarken de yazılmıyor.
+- **Arenada savuşturma yoktu:** arenada bütün yetenekler açılıyordu ama savuşturma (Börü'nün dersiyle öğrenilir) açılmıyordu; telefonda Savuş düğmesi çıkmıyordu. Artık arenada savuşturma ve gard da açık.
+
+**Oynanış**
+- **Oyun başında kampın yanına fazladan malzeme konmuyor:** önceden konan 1 dal, 4 taş, 1 lif ve 1 yaprak kaldırıldı (bazen sahile düşen "taş" buydu). Öğreticinin kendi malzemeleri (böğürtlenler, Zümrüt'ün meşale malzemeleri ve 4 taşı) aynen duruyor. Yeni başlayan oyunlarda geçerli.
+
+**Kayıtlar**
+- Arenanın üzerine yazdığı otomatik kayıt geri getirilemiyor (oyunda tek otomatik kayıt yuvası var); elle yapılan kayıtlar (Kayıt 1–3) etkilenmedi.
+
+**Tasarım belgesi**
+- Arena: "kayda asla dokunmaz" ve "savuşturma açık"; öğretici: başlangıçta kampın yanına malzeme konmaz. Sürüm satırı 2.24.
+
 ## Versiyon 2.23 · 29 Ekim 2026
 
 **Düzeltmeler**

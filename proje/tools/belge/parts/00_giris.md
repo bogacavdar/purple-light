@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.23** ile birebir (29 Ekim 2026). Bu sürümde: telefonda Börü'nün savuşturma dersinde Savuş düğmesi baştan görünüyor ve oyun durunca parlıyor (ders ilk adımda takılıyordu).
+Sürüm: **Versiyon 2.24** ile birebir (29 Ekim 2026). Bu sürümde: arena artık kayda hiç dokunmuyor (arenadan çıkarken arena karakteri gerçek oyunun otomatik kaydının üstüne yazılıyordu); arenada savuşturma açık; oyun başında kampın yanına fazladan malzeme konmuyor.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

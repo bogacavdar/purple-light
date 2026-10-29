@@ -9,6 +9,12 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.24 (29 Ekim 2026) · arena kaydı bozuyordu (önemli), arenada savuşturma, başlangıç malzemeleri
+- Arena bloğu: `enter()` `window.__plArenaUsed=true`; `saveTo` sarmalı `AR.on||__plArenaUsed` iken yazmaz; `leave()` artık `AR.on`/`__plArena`'yı sıfırlamadan `location.reload()` (önceden sıfırlayıp yeniden yüklüyordu → `pagehide`/`beforeunload` `saveTo('auto')` arena durumunu yazıyordu). Playwright ile doğrulandı (kayıt değişmiyor).
+- Arena `enter()`: `skills.add('P0')` (savuşturma).
+- Başlangıçtaki `spawn` çevresine konan 7 malzeme (Dal, 4 Taş, Lif, Yaprak) kaldırıldı.
+- Kayıtlar: üzerine yazılmış otomatik kayıt geri gelmez (tek `auto` yuvası). İleride: otomatik kaydın bir önceki halini yedeklemek düşünülebilir.
+
 ## v2.23 (29 Ekim 2026) · telefonda savuşturma dersi kilidi (acil)
 - `parryKnown()` (hamle bloğu): ders sırasında `DL.on&&DL.mode==='parry'` yeterli (önceden `D.n>0||D.rel` da isteniyordu: ilk donmada düğme yoktu, ders kilitleniyordu).
 - `v189` `want()`: telefonda `DL.frz` ve parry dersinde `#parrybtn` parlar + ok.
