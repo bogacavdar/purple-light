@@ -39,7 +39,7 @@ Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır. Bir adım atl
 
 ## 5. Not
 
-- Depo kökündeki `GUNCELLEME_NOTLARI.md`'nin en üstüne `## Versiyon X.YZ · tarih` başlığıyla o sürümün notunu ekle: oyuncunun anlayacağı dille, yalnızca değişenler (yeni, değişen, düzeltme).
+- Depo kökündeki `GUNCELLEME_NOTLARI.md`'nin en üstüne `## Versiyon X.YZ · tarih` başlığıyla o sürümün notunu ekle: **bütün değişiklikler**, şu başlıklarla (olmayan başlık yazılmaz): Oynanış, Düzeltmeler, Görsel, Ses, Arayüz, Kayıtlar, Tasarım belgesi, Proje. Görsel değişiklikten belge değişikliğine kadar hiçbir şey atlanmaz; oyuncunun anlayacağı dille.
 
 - `proje/DEVAM_NOTU.md`'nin başına `## vX.YZ (tarih) · kısa başlık` bölümü ekle: ne değişti, hangi kod bloğu, eski kayıtlara etkisi.
 
