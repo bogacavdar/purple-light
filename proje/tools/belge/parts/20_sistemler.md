@@ -345,14 +345,15 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 
 - **Mizaç:** *zararsız* kaçar; *nötr* vurulunca karşılık verir, 220 piksel uzaklaşınca sakinleşir; *saldırgan* fark etme menziline girince saldırır, menzilin iki katı uzaklaşınca bırakır. Güvenli bölgede saldırgan canavar saldırmaz. Aynı anda en çok 4 canavar kovalar.
 - **Sürüler:** sürü hayvanının birine vurunca ya da saldırgan sürüye yaklaşınca hepsi gelir; sırayla saldırırlar (6. seviyeden önce aynı anda 1, sonra 2).
-- **Saldırı:** hazırlık (renkli "!", hedef çizgisi, yerde dolan halka) → atılış → ısırık. Menzilliler 0,6 sn hazırlanıp atar. Bir canavar son saldırısından 1 sn geçmeden yenisine başlayamaz (Reisler hariç).
+- **Saldırı:** v2.15'ten beri ayrı bir hazırlık beklemesi yok: kırmızı **"!"** belirdiği an (0,1 sn içinde) canavar sana doğru **atılır** (0,3 sn) → ısırık. (v2.14'e kadar: 0,42 sn hazırlık, hedef çizgisi, dolan halka, sonra 0,2 sn atılış.) Menzilliler 0,6 sn hazırlanıp atar. Bir canavar son saldırısından 1 sn geçmeden yenisine başlayamaz (Reisler hariç).
+- **Atılış hep sana doğru, kaçarsan işlemez (v2.15):** canavar ! ile birlikte o an **bulunduğun yere** atılır; atılış başladıktan sonra **yolu değişmez**, düz gider. ! görünür görünmez takla atarsan (ya da yolundan çekilirsen) kaçarsın, ısırık işlemez; sana değerse ısırık işler. Çok erken atılan takla biter ve işe yaramaz. Üstüne atlayan **bütün canlılar** böyledir; Börü'nün alıştırma kereviti de (orada atılış 0,45 sn, daha yavaş). **Savuşturma** (sağ tık / E basılı, telefonda Savuş) da kaçırır: ısırık değmeden en çok 0,2 sn önce basılırsa beyaz ve sarı ! savuşturulur (kırmızı ! yalnızca taklayla kaçılır). !'in rengi atılışla birlikte görünür; sarı ve kırmızı vuruşlara eklenen ayrı bekleme (0,18 / 0,3 sn) kalktı.
 - **Doğma:** canlılar oyuncunun 330–470 piksel çevresinde doğar, 760 pikselden uzaklaşınca silinir. Gece canlıları gündüz uzaktaysa silinir.
 
 **Özel hamleler** (kovalarken arada bir):
 
 | Hamle | Renk | Ne yapar, nasıl kaçılır |
 |---|---|---|
-| Sıçrama | sarı (iri türde kırmızı) | İşaret seni izler, sonra kilitlendiği yere atlar; iniş çevresine hasar ve itme. Yana çekil. |
+| Sıçrama | sarı (iri türde kırmızı) | v2.15: işaret çıktığı an (0,12 sn) **o an bulunduğun yere** atlar; havadayken (0,42 sn) yolu değişmez. İniş çevresine hasar ve itme. Yana çekil ya da inerken taklada ol. |
 | Hücum | sarı/kırmızı | Bir şerit boyunca koşar; çarparsa uzağa iter. Şeritten çık. Engelde durur, yorulur. |
 | Sersemleten kükreme | kırmızı | Büyüyen halka; içindeysen yarım hasar ve 1,1 sn sersem. Halkadan çık ya da takla. |
 | Alev püskürtme | kırmızı | Önüne koni şeklinde alev; içindeysen yanarsın. |
