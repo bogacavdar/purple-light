@@ -7,6 +7,26 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.15 · 29 Ekim 2026
+
+**Oynanış**
+- **Canlıların atılışı değişti (hepsi):** ayrı hazırlık beklemesi kalktı; canlının üstünde **!** çıktığı an (0,1 sn içinde) sana doğru atılır. Atılış o an **bulunduğun yere** gider ve **yolu sonradan değişmez**; 0,3 sn sürer. Doğru anda **takla** atar ya da **savuşturursan** ısırık işlemez, sana değerse işler. !'in rengi (beyaz / sarı / kırmızı) atılışla birlikte görünür; sarı ve kırmızıya eklenen ayrı bekleme kalktı. Kırmızı yalnızca taklayla atlatılır. Özel hamlelerden **Sıçrama** da işaret çıktığı an atlar.
+- **Savuşturma artık öğreniliyor:** oyunun başında savuşturma ve gard (sağ tık / E, telefonda Savuş) kapalı. Börü takla dersinin hemen ardından ücretsiz öğretir: ilk saldırıda oyun durur ve "Sağ tık'a bas!" der, sonra 3 savuşturma daha. Öğreticiyi atlayan Börü ile konuşunca öğrenir.
+- **Takla dersi keskinleşti:** ilk saldırıda karakter yürüyemez; kerevit ! ile atılır, **tam değecekken** oyun durur ve "Boşluk'a bas!" der (ondan önce basmak takla attırmaz). Sonraki 3 saldırıda: kerevit değmeden kaçarsan ya da değdiği an taklada isen "Sıyrıldın!"; erken basarsan "Erken!", hiç basmazsan "Değdi!". Derste yönsüz atılan takla kerevitin yolundan yana gider.
+
+**Düzeltmeler**
+- Börü'nün takla dersinde Börü'nün üstünde yön oku kalıyordu; ders sürerken artık hiçbir ok çıkmıyor.
+
+**Arayüz**
+- Kaydetme ve yükleme menülerinde her dolu yuvanın yanında **Sil** düğmesi; "Kayıt 2 silinecek. Emin misiniz?" diye sorar (Eminim, sil / Vazgeç).
+- Dolu yuvaya kaydederken artık soru çıkıyor: "Bu yuvada bir kayıt var. Yeni kaydı üzerine yazayım mı?" (Üzerine yaz / Vazgeç).
+
+**Kayıtlar**
+- v2.14 ve önceki kayıtlarda takla biliniyorsa savuşturma da bilinir sayılır.
+
+**Tasarım belgesi**
+- Kayıt (silme, üzerine yazma), Atılma/savuşturma (savuşturma öğrenilir), Canavarlar nasıl savaşır (atılış kuralları, Sıçrama), öğretici (takla ve savuşturma dersleri, ok yok); sürüm satırı 2.15.
+
 ## Versiyon 2.14 · 29 Ekim 2026
 
 **Düzeltmeler**

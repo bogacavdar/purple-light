@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.14** ile birebir (29 Ekim 2026). Bu sürümde: yeni oyun ve kayıt yükleme her seferinde temiz bir haritayla açılır (önceki oyunun böğürtlenleri, taşları birikmez); Almanak düğmesi küçük haritanın üstünde, Başarımlar ve Özellikler'le eşit boyutta. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.15** ile birebir (29 Ekim 2026). Bu sürümde: canlılar ! ile birlikte sana doğru düz bir çizgide atılır (taklayla ya da savuşturarak kaçılır); savuşturma Börü'den ders olarak öğrenilir; takla dersi keskinleşti; kayıt silme ve üzerine yazma soruları. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -179,16 +179,21 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 
 ### Börü'nün atılma dersi (v1.81, 11. adımın içinde)
 
+- **Ders sürerken yön oku yok (v2.15):** ikinci kerevit belirdiği andan ders bitene kadar Börü'nün üstünde ya da ekranda Börü'yü gösteren ok çıkmaz; dikkat kerevitte kalır.
 1. Kerevit yumrukla yenilince Börü "Şimdi kaçmayı öğren" der ve yanına **yeni bir kerevit** çıkar. Bu kerevit can yakmaz, ölmez; yalnızca saldırır. Atılma bu derste **ücretsiz** öğrenilir (yetenek ağacında satılmaz).
-2. Kerevit doğadaki gibi davranır: **yürüyerek** sana yaklaşır (sen uzaklaşırsan peşinden yürür), yakına gelince bir an bekler, üstünde kırmızı **!** belirir, sonra sana atılır. Saldırıdan sonra olduğu yerde kalır ve yeniden yürüyerek yaklaşır; hiçbir zaman başka bir yere ışınlanmaz.
-3. **İlk saldırıda** kerevit tam vuracakken **oyun durur** ve ekranın ortasında büyük harflerle "**Boşluk'a bas!**" (telefonda "**Atıl düğmesine dokun!**") yazar. Basınca oyun devam eder, karakter takla atar ve kereviti savuşturur ("Sıyrıldın!").
-4. Sonra kerevit **3 kez daha** saldırır; oyun artık durmaz. Saldırı anında (kırmızı ! görününce ya da kerevit atıldığında) Boşluk'a basarsan sayılır; geç ya da erken kalırsan "Bir daha!" der, can gitmez. Ekranda "Sıyrılma: 1/4" sayacı vardır.
-5. 4 sıyrılma (1 + 3) olunca Börü esprili bir dille "**İlk ders tamam!**" der: her kavgaya girmek akıllıca değildir, bazen tabanları yağlamak gerekir; bunun için hızlı koşmayı bilmek gerekir.
-6. **Yetenek ağacı zorunlu:** Börü'nün tek seçeneği "Yetenek ağacını aç"tır. Ders biter bitmez soldaki ağaç ikonu (Y) mavi parlar, ok onu gösterir ve ekranın ortasında "Yetenek ağacını aç" yazar; Börü'nün üstündeki ok kalkar. Konuşma penceresi kapansa da bu sürer; ağaç açılmadan Börü'yle konuşulursa Börü yalnızca "önce yetenek ağacını aç" der, dersi ya da kereviti **tekrar vermez**. Ağaç açılana kadar öğretici ilerlemez. Ağaç açılınca Savaş ağacındaki **Koşu** yanıp söner ve üstte Börü'nün notu çıkar: ağaçlar aşağıdan yukarı büyür; Koşu 100 sikke; Nazlı'ya bir şeyler satıp **100 sikke biriktirip** ilk iş bunu almak akıllıca olur.
+2. Kerevit doğadaki gibi **yürüyerek** sana yaklaşır (sen uzaklaşırsan peşinden yürür), yakına gelince bir an bekler. **Saldırırken üstünde kırmızı ! belirdiği an sana doğru atılır (v2.15):** ayrı bir hazırlık beklemesi yoktur; atılış o an **bulunduğun yere** düz bir çizgide gider (biraz ötesine), 0,45 sn sürer ve **yolu sonradan değişmez**. Saldırıdan sonra olduğu yerde kalır ve yeniden yürüyerek yaklaşır; hiçbir zaman başka bir yere ışınlanmaz.
+3. **İlk saldırıda** kerevit ! ile hazırlanır ve sana doğru atılır; **sana değmek üzereyken** (aranızda ~1,5 karo kala) **oyun durur** ve ekranın ortasında büyük harflerle "**Boşluk'a bas!**" (telefonda "**Atıl düğmesine dokun!**") yazar. Basınca oyun devam eder, karakter takla atar ve kereviti savuşturur ("Sıyrıldın!"). **Bu ilk saldırıda oyun durmadan önce Boşluk'a basmak takla attırmaz (v2.15);** takla yalnızca oyun durup "Boşluk'a bas!" dedikten sonra atılır. İlk saldırı bitene kadar **karakter yürüyemez** (WASD, oklar, tıklama, telefon kolu çalışmaz); ekranda "Kımıldama: kerevit saldıracak" yazar. Amaç yalnızca saldırıyı beklemek ve tam değeceği anda Boşluk ile kaçmayı öğrenmek.
+4. Sonra kerevit **3 kez daha** saldırır; oyun artık durmaz, yürümek ve takla serbesttir. **Kaçarsan başarılı, değerse başarısız (v2.15):** ! görünüp kerevit atıldığında takla at. Kerevit sana değmeden yolundan çıkarsan ya da değdiği an hâlâ taklanın içindeysen "**Sıyrıldın!**". Takla, atılış başlamadan en çok 0,15 sn önce basılmış olmalı; daha önce attıysan takla biter ve kerevit değer: "**Erken!**". Hiç takla atmadan değerse "**Değdi!**", değmeden atılış biter ama takla atmadıysan "**Kaçmadın!**". Yön tuşuna basmadan atılan takla bu derste kerevitin yolundan **yana** gider. Can gitmez. Ekranda "Sıyrılma: 1/4" sayacı vardır.
+5. **Savuşturma dersi (v2.15):** 4 sıyrılma (1 + 3) olunca Börü "Şimdi **savuşturmayı** öğren" der; aynı kerevit kalır, sayaç "Savuşturma: 0/4" olur. Yapı takla dersiyle aynıdır:
+   - **İlk saldırıda** karakter yürüyemez; kerevit ! ile atılır, sana değmek üzereyken **oyun durur** ve "**Sağ tık'a bas!**" (klavyede E; telefonda "**Savuş düğmesine dokun!**") yazar. Ondan önce basmak savuşturmaz. Basınca kerevit savuşturulur ("Savuşturuldu!").
+   - Sonra **3 kez daha**: yürümek serbest, kerevit ! ile atılır; değdiği an savuşturma penceresi (0,2 sn) açıksa sayılır. Çok erken basarsan pencere kapanır: "**Erken!**"; hiç basmazsan "**Değdi!**"; takla atarsan "**Takla değil, savuştur!**". Can gitmez.
+   - 4 savuşturma olunca savuşturma ve gard kalıcı açılır.
+6. 4 savuşturma olunca Börü esprili bir dille "**İlk ders tamam!**" der: her kavgaya girmek akıllıca değildir, bazen tabanları yağlamak gerekir; bunun için hızlı koşmayı bilmek gerekir.
+7. **Yetenek ağacı zorunlu:** Börü'nün tek seçeneği "Yetenek ağacını aç"tır. Ders biter bitmez soldaki ağaç ikonu (Y) mavi parlar, ok onu gösterir ve ekranın ortasında "Yetenek ağacını aç" yazar; Börü'nün üstündeki ok kalkar. Konuşma penceresi kapansa da bu sürer; ağaç açılmadan Börü'yle konuşulursa Börü yalnızca "önce yetenek ağacını aç" der, dersi ya da kereviti **tekrar vermez**. Ağaç açılana kadar öğretici ilerlemez. Ağaç açılınca Savaş ağacındaki **Koşu** yanıp söner ve üstte Börü'nün notu çıkar: ağaçlar aşağıdan yukarı büyür; Koşu 100 sikke; Nazlı'ya bir şeyler satıp **100 sikke biriktirip** ilk iş bunu almak akıllıca olur.
    - Ağaç açılınca Savaş ağacındaki **Koşu** mavi parlar ve yanında yanıp sönen bir ok olur (v2.09).
-7. Ağaç kapatılınca Börü önce **bilgilendirir**: "Gördün mü, en alttaki parlayan **Koşu**. Onu almak **100 sikke** ister. Nazlı'ya bir şeyler sat, 100 sikke biriktir; ilk işin Koşu'yu almak olsun." ("Anladım" düğmesi). Sonra öğretici kaldığı yerden sürer: Börü Taş balta tarifini verir (12. adım).
+8. Ağaç kapatılınca Börü önce **bilgilendirir**: "Gördün mü, en alttaki parlayan **Koşu**. Onu almak **100 sikke** ister. Nazlı'ya bir şeyler sat, 100 sikke biriktir; ilk işin Koşu'yu almak olsun." ("Anladım" düğmesi). Sonra öğretici kaldığı yerden sürer: Börü Taş balta tarifini verir (12. adım).
 
-Öğreticiyi geçen ve atılmayı bilmeyen biri sonradan Börü'yle konuşursa Börü aynı dersi ücretsiz teklif eder ("Öğret" / "Sonra").
+Öğreticiyi geçen ve atılmayı bilmeyen biri sonradan Börü'yle konuşursa Börü aynı dersi ücretsiz teklif eder ("Öğret" / "Sonra"). Atılmayı bilip savuşturmayı bilmeyen biri konuşursa Börü yalnızca **savuşturma dersini** (1 + 3) ücretsiz teklif eder (v2.15).
 
 ### Öğreticiden sonraki kısa dersler
 
@@ -504,6 +509,7 @@ Sağ altta, küçük haritanın hemen üstünde **Başarımlar**'ın solunda kü
 ## Atılma, savuşturma, savunma
 
 - **Atılma / takla** (Boşluk; öğreticide Börü ücretsiz öğretir): 0,38 sn, 50 piksel; boyunca **dokunulmazsın**. 14 enerji, bekleme 0,68 sn (Çevik atılma I/II/III: 9/7/5 enerji, 0,45/0,38/0,30 sn; Uzun atılma: %25 daha uzağa). Bir saldırının içinden taklayla geçersen "Sıyrıldın!" +6 enerji (Sıyrılma ustası ile +14).
+- **Savuşturma da öğrenilir (v2.15):** oyunun başında savuşturma ve gard (sağ tık / E, telefonda Savuş düğmesi) **kapalıdır**; Börü takla dersinin hemen ardından ücretsiz öğretir (öğretici, 11. adım). Öğreticiyi atlayan Börü ile konuşunca ücretsiz öğrenir. Bilmeden basınca "Savuşturmayı henüz bilmiyorsun: Savaşçı Börü öğretir" der; telefonda Savuş düğmesi öğrenilince görünür. v2.14 ve önceki kayıtlarda takla (Atılma) biliniyorsa savuşturma da bilinir sayılır.
 - **Savuşturma** (sağ tık, darbe değmeden hemen önce): 0,2 sn pencere (telefonda 0,25; Savuşturma ustası I/II ile ×1,3 / ×1,6), 5 enerji. Başarılıysa hasar almazsın, canavar geri savrulur ve **1,6 sn sersemler**, +6 enerji, ulti +10. Fırlatılan diken, ateş ve büyüler de savuşturulur.
 - **Darbe renkleri** (canavarın başındaki "!"): **beyaz** = normal, savuşturulur · **sarı** = ağır (×1,4 hasar), savuşturulur · **kırmızı** "!!" = savuşturulamaz (×1,7 hasar), ancak takla ile kaçılır. Reisin yere vurması ve yakalama da savuşturulamaz.
 - **Savunma duruşu** (sağ tık basılı tut): %45 hızla yürürsün, vuramazsın; fiziksel hasar beyazda ×0,35, sarıda ×0,45, kırmızıda ×0,7. Her engel enerji yer; enerji biterse kalkan düşer.
@@ -570,14 +576,15 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 
 - **Mizaç:** *zararsız* kaçar; *nötr* vurulunca karşılık verir, 220 piksel uzaklaşınca sakinleşir; *saldırgan* fark etme menziline girince saldırır, menzilin iki katı uzaklaşınca bırakır. Güvenli bölgede saldırgan canavar saldırmaz. Aynı anda en çok 4 canavar kovalar.
 - **Sürüler:** sürü hayvanının birine vurunca ya da saldırgan sürüye yaklaşınca hepsi gelir; sırayla saldırırlar (6. seviyeden önce aynı anda 1, sonra 2).
-- **Saldırı:** hazırlık (renkli "!", hedef çizgisi, yerde dolan halka) → atılış → ısırık. Menzilliler 0,6 sn hazırlanıp atar. Bir canavar son saldırısından 1 sn geçmeden yenisine başlayamaz (Reisler hariç).
+- **Saldırı:** v2.15'ten beri ayrı bir hazırlık beklemesi yok: kırmızı **"!"** belirdiği an (0,1 sn içinde) canavar sana doğru **atılır** (0,3 sn) → ısırık. (v2.14'e kadar: 0,42 sn hazırlık, hedef çizgisi, dolan halka, sonra 0,2 sn atılış.) Menzilliler 0,6 sn hazırlanıp atar. Bir canavar son saldırısından 1 sn geçmeden yenisine başlayamaz (Reisler hariç).
+- **Atılış hep sana doğru, kaçarsan işlemez (v2.15):** canavar ! ile birlikte o an **bulunduğun yere** atılır; atılış başladıktan sonra **yolu değişmez**, düz gider. ! görünür görünmez takla atarsan (ya da yolundan çekilirsen) kaçarsın, ısırık işlemez; sana değerse ısırık işler. Çok erken atılan takla biter ve işe yaramaz. Üstüne atlayan **bütün canlılar** böyledir; Börü'nün alıştırma kereviti de (orada atılış 0,45 sn, daha yavaş). **Savuşturma** (sağ tık / E basılı, telefonda Savuş) da kaçırır: ısırık değmeden en çok 0,2 sn önce basılırsa beyaz ve sarı ! savuşturulur (kırmızı ! yalnızca taklayla kaçılır). !'in rengi atılışla birlikte görünür; sarı ve kırmızı vuruşlara eklenen ayrı bekleme (0,18 / 0,3 sn) kalktı.
 - **Doğma:** canlılar oyuncunun 330–470 piksel çevresinde doğar, 760 pikselden uzaklaşınca silinir. Gece canlıları gündüz uzaktaysa silinir.
 
 **Özel hamleler** (kovalarken arada bir):
 
 | Hamle | Renk | Ne yapar, nasıl kaçılır |
 |---|---|---|
-| Sıçrama | sarı (iri türde kırmızı) | İşaret seni izler, sonra kilitlendiği yere atlar; iniş çevresine hasar ve itme. Yana çekil. |
+| Sıçrama | sarı (iri türde kırmızı) | v2.15: işaret çıktığı an (0,12 sn) **o an bulunduğun yere** atlar; havadayken (0,42 sn) yolu değişmez. İniş çevresine hasar ve itme. Yana çekil ya da inerken taklada ol. |
 | Hücum | sarı/kırmızı | Bir şerit boyunca koşar; çarparsa uzağa iter. Şeritten çık. Engelde durur, yorulur. |
 | Sersemleten kükreme | kırmızı | Büyüyen halka; içindeysen yarım hasar ve 1,1 sn sersem. Halkadan çık ya da takla. |
 | Alev püskürtme | kırmızı | Önüne koni şeklinde alev; içindeysen yanarsın. |
@@ -605,7 +612,9 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 
 ## Kayıt
 
-- Otomatik kayıt + 3 elle kayıt yuvası (tarayıcıda). Dolu yuvaya ilk basış "üzerine yazmak için bir kez daha bas" der.
+- Otomatik kayıt + 3 elle kayıt yuvası (tarayıcıda).
+- **Üzerine yazma (v2.15):** kaydetme menüsünde dolu bir yuvaya basınca bir soru çıkar: "Bu yuvada bir kayıt var (Seviye…, tarih). Yeni kaydı üzerine yazayım mı?" → **Üzerine yaz** / **Vazgeç**. (Önceden "bir kez daha bas" uyarısıydı.)
+- **Kaydı sil (v2.15):** kaydetme ve yükleme menülerinde her dolu yuvanın yanında **Sil** düğmesi (yükleme menüsünde otomatik kayıt da silinebilir). Basınca sorar: "Kayıt 2 silinecek. Emin misiniz? Bu geri alınamaz." → **Eminim, sil** / **Vazgeç**. Silinince yuva boşalır.
 - Otomatik kayıt dakikada bir, görev durumu değişince, sekme gizlenince, sayfa kapanırken ve menüye dönerken alınır; ara sahne, uyanış, deniz yolculuğu ve can 0 iken alınmaz.
 - **Aynı oyun iki sekmede (v2.10):** başka bir sekmede oyun açılınca (Devam et, Yükle, Yeni oyun ya da adalar arası geçiş) bu sekme "eski" sayılır ve artık **otomatik kayıt almaz** (yoksa arka plandaki eski sekme dakikada bir eski halini yazıp yeni sekmedeki ilerlemenin üstüne geçiyordu; "Devam et" eski kaydı açıyordu). Eski sekmeye dönünce bir kez uyarı çıkar: "Bu oyun başka bir sekmede ilerledi…". O sekmede bir kayıt yüklenir ya da yeni oyun başlatılırsa sekme yeniden kaydeder; elle kayıt her zaman alınır. "Devam et" her zaman en yeni kaydı (otomatik ya da elle) açar.
 - **Dışa aktar:** bütün kayıtlar tek bir kod (`HAMMADDE1:` ile başlar) ya da dosya. **İçe aktar:** kodu yapıştır ya da dosyayı seç. Kayıtlar her adreste ayrıdır (claude.ai sürümü ile GitHub sürümü arasında bu yolla taşınır).

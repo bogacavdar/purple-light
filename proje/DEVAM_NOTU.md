@@ -9,6 +9,12 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.15 (29 Ekim 2026) · atılış kuralları, savuşturma dersi, keskin takla dersi, kayıt sil/üzerine yaz
+- Taban canavar saldırısı: `a.wind=.1` (D.wind yalnızca bekleme süresinde), atılış hedefi rüzgâr sonunda `player`, `t:.3`, `sp=(el+12)/.3`; atılışta renkli `!` float. v110 `ADD` sıfır. Hamle `leap` WIND .12, kırmızıda ek yok.
+- v181 ders: `DL.mode` dodge/parry; ! ile atılış (wind .08), atılış .45 sn sabit çizgi; n=0'da oyuncu sabit, değmeden 24 px önce donar, yalnızca istenen tuş (`DL.rel`) takla/savuşturma yaptırır. Dodge: değme ≤12 px → taklada ise başarı; parry: `__plParry.t>0` ise başarı (`__plParryHit`). 4 sıyrılmadan sonra parry kısmı; bitince `skills P0`. Yönsüz takla derste yana.
+- v110: `parryKnown()` (P0 ya da ders) `doParry`/`raise`/Savuş düğmesini kilitler; `window.__plDoParry`. v214: `snapshot.p0m`; eski kayıtta S1 varsa P0.
+- `slotList` yeniden: Sil düğmesi ve sor/onay paneli (`.slot-ask`). v214'te en dış `guideKey` DL sürerken null.
+
 ## v2.14 (29 Ekim 2026) · temiz dünya (yeni oyun / yükleme sayfayı yeniden açar), Almanak düğmesi haritanın üstünde
 - Yeni `v214` bloğu: `closeTitle` sarmalı sekmeyi "kirli" işaretler (`window.__plWorld.dirty`). Kirliyken `#t-new` (capture) `hammadde.clicknew` + reload (v76 boot karakter yaratmayı açar); en dış `applyState` sarmalı nesneyle çağrılırsa `hammadde.pending` + `hammadde.quiet` + reload (v76 boot yükler; `quiet` varsa "Portal" duyurusu yok). sessionStorage yazılamazsa eski yerinde yükleme.
 - v92 `placeAch`: masaüstünde `#b-alm`, `#b-ach`, `#b-char` küçük haritanın üstünde tek sıra, eşit (genişlik (harita − 16)/3, yükseklik ≤ 88), sağa hizalı; harita gizliyse eski düzen; v50m (telefon) çekmecede sırayla.

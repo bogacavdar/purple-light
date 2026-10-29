@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.14** ile birebir (29 Ekim 2026). Bu sürümde: yeni oyun ve kayıt yükleme her seferinde temiz bir haritayla açılır (önceki oyunun böğürtlenleri, taşları birikmez); Almanak düğmesi küçük haritanın üstünde, Başarımlar ve Özellikler'le eşit boyutta. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.15** ile birebir (29 Ekim 2026). Bu sürümde: canlılar ! ile birlikte sana doğru düz bir çizgide atılır (taklayla ya da savuşturarak kaçılır); savuşturma Börü'den ders olarak öğrenilir; takla dersi keskinleşti; kayıt silme ve üzerine yazma soruları. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
