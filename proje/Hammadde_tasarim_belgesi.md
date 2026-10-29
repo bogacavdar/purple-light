@@ -186,10 +186,10 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 | 1 | Ekin | Kampın çevresine konan 5 böğürtleni topla (telefonda önce sürükleyerek ve dokunarak yürüme). **Bilgisayarda (v2.18)** Ekin böğürtleni nasıl toplayacağını da söyler: "Böğürtlen çalısının **yanına git** ve **F**'ye bas; böğürtlen yere düşer, üstünden yürüyünce alırsın." (Toplama tuşu değiştirildiyse o tuşu söyler.) | — |
 | 2 | Ekin | Yemek düğmesiyle (F) 5 böğürtlen ye (soldaki yemek düğmesi mavi parlar ve ok onu gösterir; yemek listesi açılınca Böğürtlen'in **Ye** düğmesi parlar) | Cadı Zümrüt görünür; Ekin seni kuzeye, ormanın kıyısına yollar |
 | 3 | Zümrüt | Zümrüt'e git ve konuş | Kazanın yanına 2 Dal, 2 Lif, 2 Yaprak konur |
-| 4 | Zümrüt | Kazanda **Kaba meşale** tarifini öğren | Malzemeler yeniden konur |
+| 4 | Zümrüt | Kazanda **Kaba meşale** tarifini öğren. Tarif seçilince, malzemeler konana kadar **kazan alanı da mavi parlar** (v2.22), malzemelerin nereye gideceği görünsün. | Malzemeler yeniden konur |
 | 5 | Zümrüt | El yapımı ekranında (Tab) meşaleyi yap, bir yuvaya koyup eline al | Meşale yapılınca Zümrüt yalnızca meşaleyi anlatır (taşlardan söz etmez). Meşale ele gelince Zümrüt **meşaleyi anlatır**: gündüz işe yaramaz, gece içindir; yalnızca eldeyken yanar ve Kaba meşale yaklaşık **110 saniye** yanınca biter (yağmurda daha çabuk); gündüz elinden indir, akşam karanlığında eline al, yedeğin olsun. Sonra kart **"Meşaleyi elinden indir"** der, meşalenin yuvası (hotbar kutusu) oku ile parlar; meşale inene kadar taş adımına geçilmez (v2.11: taşlar ve taş konuşması da meşale inince gelir; v2.12: üstteki takip satırı da o ana kadar taş istemez, haritadaki taşlar mavi parlamaz) |
 | 6 | Zümrüt | 4 taşı topla | Meşale inince Zümrüt taşları anlatır ve kazanın yanına 4 Taş konur |
-| 7 | Zümrüt | Kazanda **Keskin taş** tarifini öğren (2 Taş) | — |
+| 7 | Zümrüt | Kazanda **Keskin taş** tarifini öğren (2 Taş). Malzemeler konana kadar kazan alanı mavi parlar (v2.22). | — |
 | 8 | Zümrüt | Kalan 2 taşla elle Keskin taş yap | Zümrüt kuzeydoğudaki Nazlı'yı söyler |
 | 9 | Nazlı | Pazarcı Nazlı ile tanış | Pazar "Sat" sekmesiyle açılır |
 | 10 | Nazlı | Keskin taşı sat | Nazlı hesabı anlatır (v2.12): bir Taş 1 sikke, iki taş 2 sikke; birleştirip yapılan Keskin taş 3 sikke, aradaki 1 sikke emeğin; yapılan şeyler yeniden birleştirildikçe değerleri katlanır (taştan keskin taş, keskin taştan alet; her adımda daha çok para eder). Sonra doğudaki Börü'yü söyler |

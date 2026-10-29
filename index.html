@@ -15093,7 +15093,8 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  // what to light up now: [glow elements], the first one with arrow:true gets the arrow
  function want(){if(onTitle||wake||fading)return null;const out=[];const add=(el,arrow)=>{if(el)out.push({el,arrow:!!arrow})};
   try{
-  if(tz===2){if(craftOpen&&mode==='eat')add(Q('[data-eat="Böğürtlen"]'),1);else if(!craftOpen)add($('b-eat'),0)}   // the yellow b3 arrow already points at the eat button
+  if(tz===2){if(craftOpen&&mode==='eat')add(Q('[data-eat="Böğürtlen"]'),1);else if(!craftOpen)add($('b-eat'),0)}
+  if((tz===4||tz===7)&&craftOpen&&mode==='craft'&&station!=='forge'&&pot.r===(tz===4?'Kaba meşale':'Keskin taş')&&!potReady())add($('pot'),0);   // v2.22: Zümrüt's lessons: the cauldron glows until the ingredients are in   // the yellow b3 arrow already points at the eat button
   const DT=window.__plDLTree?window.__plDLTree():0;
   if(DT===1&&!dlgOpen&&!(craftOpen&&mode==='skills'))add($('b-skill'),1);
   if(DT===2&&craftOpen&&mode==='skills')add(Q('[data-skn="K1"]'),1);   // v2.09: Koşu in the tree
