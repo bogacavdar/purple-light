@@ -13024,6 +13024,7 @@ let TIER=null;function tierOf(a){if(!TIER){TIER={};(window.__I1B||[]).forEach((L
   const i=TIER[a.base||a.k];let t=i==null?.3:i/11;if(a.boss)t+=.25;return Math.min(1,Math.max(0,t))}
 const DODGE=new Set(['Kurt','Bataklık kurdu','Kül kurdu','Gölge kurdu','Gök tazısı','Vaşak','Goblin','Goblin okçusu','Goblin şamanı','Kartal','Fırtına kartalı','Lazer dronu','Uzaylı dronu','Kristal yarasası','Kor yarasası','Gölge muhafız','Kristal örümcek','Engerek','Işık engereği','Yavru ejder','Işık tilkisi']);
 const BIGK=new Set(['Mağara ayısı','Timsah','Yaban öküzü','Kara ejder','Kızıl ejder','Büyük golem','Lav golemi','Hurda devi','Gök bekçisi','Kristal golem','Gölge muhafız']);
+window.__plFoe=k=>({mv:(SP[k]||[]).slice(),imm:IMM.has(k),dodge:DODGE.has(k),big:BIGK.has(k)});   // v2.22: the almanac shows these
 function movesOf(a){const b=a.base||a.k,L=(SP[b]||[]).slice();if(a.boss){if(L.indexOf('roar')<0)L.push('roar');if(L.indexOf('combo3')<0)L.push('combo3');if(!L.length)L.push('charge')}return L}
 window.__plMovesOf=k=>(SP[k]||[]).map(m=>MOVES[m].n).concat(IMM.has(k)?['Bağışıklık']:[]);
 const COLC={n:'255,255,255',y:'255,206,40',r:'255,48,30'};
@@ -15005,7 +15006,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    const fx=D.fx&&typeof FXD!=='undefined'&&FXD[D.fx[0]]?FXD[D.fx[0]].n:'';
    el.insertAdjacentHTML('beforeend',`<h4>${esc(k)}<span class="tg" style="color:${tcol}">${esc(D.temper||'')}</span></h4>
      <p>Can <b>${D.hp}</b> · Hasar <b>${D.dmg||'—'}</b> · Hız <b>${D.spd||0}</b>${D.ranged?' · uzaktan saldırır':''}${fx?' · '+esc(fx):''}</p>
-     <p>Düşürdükleri: ${drops.length?drops.map(esc).join(', '):'—'}</p><p>Avladığın: <b>${kills[k]||0}</b></p>
+     ${window.__plAlmExtra?window.__plAlmExtra(k):''}<p>Düşürdükleri: ${drops.length?drops.map(esc).join(', '):'—'}</p><p>Avladığın: <b>${kills[k]||0}</b></p>
      ${ok?(bd>0?`<div class="rz">★ ${esc(k)} Reisi yenildi</div>`:`<div class="rz">Reis: <b>${bc} / ${need}</b><i><b style="width:${need?Math.round(bc/need*100):0}%"></b></i></div>`):''}`);
    return el}
  function render(){const L=lands();if(A.b<0||L.indexOf(A.b)<0)A.b=L.length?L[0]:-1;
@@ -15276,6 +15277,24 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  {const _ta2=tickAnimals;tickAnimals=function(dt){const r=_ta2.apply(this,arguments);try{if(!dt)return r;for(const a of animals){if(!fighter(a)||a.mv||a.lunge||!nearCamp(a.x,a.y))continue;
      let best=null;for(let k=40;k<=400&&!best;k+=60)for(const d of DIRS8){const x=a.x+d[0]*k,y=a.y+d[1]*k;if(!nearCamp(x,y)&&!blocked(x,y)){best=d;break}}
      if(best){const sp=(ANIM[a.k].spd||30)*.9,nx=a.x+best[0]*sp*dt,ny=a.y+best[1]*sp*dt;if(!blocked(nx,ny)){a.x=nx;a.y=ny}if(best[0])a.face=best[0]>0?1:-1;a.st='wander'}}}catch(e){}return r}}
+ // v2.22: the almanac card tells what a creature can do: its attacks, the effect each hit leaves, its special moves (each with a short
+ // line), its traits (immunity, agile, big) and what its Reis adds. All from the creature's real numbers.
+ {const st=document.createElement('style');st.textContent='#almov .ac .ax2{font-size:12px;line-height:1.35;color:#d8cfe8;margin:0}#almov .ac .ax2 b{color:#f3ecd8}#almov .ac ul.mvl{margin:2px 0 0;padding:0;list-style:none;display:grid;gap:2px}#almov .ac ul.mvl li{font-size:11.5px;line-height:1.3;color:#cfc4e4;padding:2px 5px;background:#2b2440;border-left:3px solid #c9a0ff}#almov .ac ul.mvl li b{color:#f3ecd8}#almov .ac ul.mvl li.tr{border-left-color:#7fd0ff}#almov .ac ul.mvl li.rs{border-left-color:#f2c94c}';document.head.appendChild(st)}
+ const MVD={leap:['Sıçrama','iniş çevresine hasar ve itme'],charge:['Hücum','bir şerit boyunca koşar, çarparsa uzağa iter'],roar:['Sersemleten kükreme','halkanın içindeysen 1,1 sn sersem'],breath:['Alev püskürtme','önündeki konide yanık'],
+   shards:['Buz parçaları','değerse 1,3 sn donarsın'],web:['Ağ','değerse 3 sn yavaşlarsın'],bolt:['Şok','değerse 0,8 sn sersem'],puddle:['Zehir gölü','yerde 5 sn kalan zehir'],grab:['Yakalayıp fırlatma','dibindeysen tutup fırlatır, savuşturulamaz'],combo3:['Üçlü saldırı','üç vuruş; hepsini savuşturursan sersemler']};
+ const nf=v=>(Math.round(v*10)/10).toLocaleString('tr-TR');
+ window.__plAlmExtra=function(k){try{const D=ANIM[k];if(!D)return '';const F=window.__plFoe?window.__plFoe(k):{mv:[],imm:false,dodge:false,big:false};let h='';
+   const at=[`Isırık/vuruş <b>${D.dmg||0}</b> hasar`];if(D.ranged){const R=D.ranged;at.push(`uzaktan <b>${R.n||1}</b> mermi, ${nf(R.cd||1)} sn'de bir`)}
+   h+=`<p class="ax2"><b>Saldırılar:</b> ${at.join(' · ')}</p>`;
+   if(D.fx&&typeof FXD!=='undefined'&&FXD[D.fx[0]])h+=`<p class="ax2"><b>Etki:</b> ${esc(FXD[D.fx[0]].n)} · her isabette saniyede ~${nf(D.fx[1]*1.3)} can, ~${nf(D.fx[2]*1.6)} sn</p>`;
+   const L=F.mv.filter(m=>MVD[m]);
+   const tr=[];if(F.imm)tr.push(['Bağışıklık','ara sıra kısa süre hasar almaz (mavi parıltı)']);if(F.dodge)tr.push(['Çevik','mermilerden ve vuruşlardan yana sıçrar']);if(F.big)tr.push(['İri','sıçrama ve hücumu kırmızı: savuşturulamaz']);
+   const P=window.__p4,boss=!!(P&&P.bossOk&&P.bossOk(k)),extra=boss?['roar','combo3'].filter(m=>L.indexOf(m)<0):[];
+   if(L.length||tr.length||extra.length){h+='<p class="ax2"><b>Özel hamleler ve özellikler:</b></p><ul class="mvl">'+
+     L.map(m=>`<li><b>${MVD[m][0]}</b> · ${MVD[m][1]}</li>`).join('')+tr.map(t=>`<li class="tr"><b>${t[0]}</b> · ${t[1]}</li>`).join('')+
+     (extra.length?`<li class="rs"><b>Reisi ayrıca:</b> ${extra.map(m=>MVD[m][0]).join(', ')}</li>`:'')+'</ul>'}
+   else h+='<p class="ax2"><b>Özel hamle:</b> yok</p>';
+   return h}catch(e){return ''}};
  // v2.18: a new creature in the almanac: a big banner in the middle ("Kurt" · Almanağa eklendi · U ile bak). The very first kill
  // also lights the almanac button blue with an arrow (like the tutorial's buttons) until the almanac is opened.
  {const st=document.createElement('style');st.textContent='.p218{border-color:#7fd0ff!important;animation:p3tab .9s ease-in-out infinite!important;position:relative;z-index:3}'+
