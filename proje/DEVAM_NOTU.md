@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v1.98 (29 Ekim 2026) · arka-çapraz: yalnızca saç, baş %10 küçük
+- v194 bloğu `d34(...,head,small)`: arka-çaprazda baş `small=.9` ile küçültülerek kopyalanır, `head=null` (yüz parçası çizilmez); uzak kol arkada çizilmez. Seçenek görselleri scratch `poz/arka_capraz_oneri*.png`. Kayıtlara etkisi yok.
+
 ## v1.97 (29 Ekim 2026) · arka-çapraz baş 1.94'teki gibi
 - v194 bloğu `HEADS.N` (1.94'ün yanak şeridi + burun ucu) eklendi; `d34(...,'N')`. `HEADS.B/D/E` duruyor (kullanılmıyor). Kayıtlara etkisi yok.
 

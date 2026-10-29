@@ -7,6 +7,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 1.98 · 29 Ekim 2026
+
+**Görsel**
+- Arka-çapraz (sağ-yukarı / sol-yukarı) pozda başın yalnızca arkası (saç) görünüyor: yanak, kulak ve göz yok. Baş gövdeye göre %10 küçük. Gövdenin yanında, kulağın altında kalan ayrık pikseller (uzak kol) kalktı. Seçtiğin "Öneri D".
+
+**Tasarım belgesi**
+- "Karakterin 8 yönü" maddesinde arka-çapraz poz Öneri D'ye göre güncellendi; sürüm satırı 1.98.
+
+---
+
 ## Versiyon 1.97 · 29 Ekim 2026
 
 **Görsel**
