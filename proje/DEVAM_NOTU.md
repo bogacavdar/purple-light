@@ -9,6 +9,11 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.14 (29 Ekim 2026) · temiz dünya (yeni oyun / yükleme sayfayı yeniden açar), Almanak düğmesi haritanın üstünde
+- Yeni `v214` bloğu: `closeTitle` sarmalı sekmeyi "kirli" işaretler (`window.__plWorld.dirty`). Kirliyken `#t-new` (capture) `hammadde.clicknew` + reload (v76 boot karakter yaratmayı açar); en dış `applyState` sarmalı nesneyle çağrılırsa `hammadde.pending` + `hammadde.quiet` + reload (v76 boot yükler; `quiet` varsa "Portal" duyurusu yok). sessionStorage yazılamazsa eski yerinde yükleme.
+- v92 `placeAch`: masaüstünde `#b-alm`, `#b-ach`, `#b-char` küçük haritanın üstünde tek sıra, eşit (genişlik (harita − 16)/3, yükseklik ≤ 88), sağa hizalı; harita gizliyse eski düzen; v50m (telefon) çekmecede sırayla.
+- CLAUDE.md / skill: "ciddi" hata → hemen düzelt ve paket çık.
+
 ## v2.13 (29 Ekim 2026) · Almanak, her Reis bir kez
 - Yeni `v213` bloğu: `#b-alm` (sağ sütun, `#b-set`'ten önce), `#almov` paneli; biyomlar `__v65.seen` sırasıyla, canlılar `window.__plBANIM[b]` (v65 bloğunda açıldı, ACT 2'de o adanın listesi). Kart açılması `kills[k]>0`; Reis `__p4.bossOk/bossNeed`, `s.bc`, `s.bd`. Resimler `window.__plKind.canvas/box` (taban `kindCanvas`, v2.12 `visBox` bunun üstüne). Açıkken `paused`. KB'ye `almanac` (KeyU). `tickZone` sarmalı "Almanak: X eklendi", `killAnimal` sarmalı "Almanak: X açıldı".
 - P4: `bossNeed` artık büyümez; `bossCheck` `s.bd[k]>0` ise atlar; `bossLost()` (faint, knockedOut, nightDeath) sahadaki/sıradaki Reislerin sayacını `need-1` yapar.

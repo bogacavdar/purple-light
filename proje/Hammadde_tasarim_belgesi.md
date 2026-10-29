@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.13** ile birebir (29 Ekim 2026). Bu sürümde: Almanak geldi (keşfedilen biyomların canlıları, Reis sayaçları, altın kartlar); her Reis yalnızca bir kez yenilir, Reise yenilince sayaç bir eksik kalır. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.14** ile birebir (29 Ekim 2026). Bu sürümde: yeni oyun ve kayıt yükleme her seferinde temiz bir haritayla açılır (önceki oyunun böğürtlenleri, taşları birikmez); Almanak düğmesi küçük haritanın üstünde, Başarımlar ve Özellikler'le eşit boyutta. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -144,7 +144,7 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 
 ## Açılış
 
-1. **Ana menü:** Yeni oyun, Devam et, Kayıttan yükle, Ayarlar, Kayıtları dışa/içe aktar, Arena (kilitli), Çıkış. Menünün altında sürüm etiketi (ör. "Versiyon 1.81").
+1. **Ana menü:** Yeni oyun, Devam et, Kayıttan yükle, Ayarlar, Kayıtları dışa/içe aktar, Arena (kilitli), Çıkış. Menünün altında sürüm etiketi (ör. "Versiyon 1.81"). **Temiz dünya (v2.14):** bu sekmede bir oyun oynandıktan sonra menüden **Yeni oyun**, **Devam et** ya da **Yükle** (oyun içi menüden yüklemek dahil) sayfayı kısa bir "Yükleniyor…" ekranıyla yeniden açar; harita her seferinde baştan kurulur. Önceki oyunun haritada bıraktıkları (öğreticinin koyduğu böğürtlen ve taşlar, kesilen ağaçlar, kazılan madenler) yeni oyuna ya da yüklenen kayda taşınmaz.
    - **Hakkında** penceresinde "Bir Boğaçhan Çavdar oyunu" yazısının altında **"Tasarım belgesine buradan ulaşabilirsiniz"** bağlantısı vardır (v2.09). Tıklanınca bu tasarım belgesi oyunun içinde, tam ekran bir pencerede açılır (aranabilir hali, `belge.html`); sağ üstteki **Kapat** ya da Esc ile Hakkında'ya dönülür. Belge yeni sekmede de açılabilir ("Yeni sekmede aç"). Belge oyunla birlikte cihaza kaydedilir: oyun uygulama olarak yüklendiyse ya da bir kez internetle açıldıysa, **internetsiz de** o sürümün belgesi açılır (her açılışta internet varsa en son hali alınır).
 2. **Karakter yaratma:** ad, cinsiyet, ten, saç (stil ve renk), göz rengi, sakal/bıyık, gözlük, şapka. Ardından eşinin adı sorulur (eşin görünüşü sabittir: erkek kahraman uzun kızıl saçlı bir kadını, kadın kahraman kısa saçlı bir erkeği kaybeder).
 3. **Zorluk:** Normal ya da Zor. Zor modda tarifler kapalıdır ve kazanda "Dene" ile deneyerek bulunur (ayrıntı: "Zorluk").
@@ -460,7 +460,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Hasan'ın ödüllerinden, hasatt
 
 ## Almanak (v2.13)
 
-Sağ üstte, Ayarlar düğmesinin yanında küçük bir **kitap** simgesi (kısayol **U**, Ayarlar → Kontroller'den değişir). Adanın canlılarını bölge bölge gösterir.
+Sağ altta, küçük haritanın hemen üstünde **Başarımlar**'ın solunda küçük bir **kitap** simgesi (kısayol **U**, Ayarlar → Kontroller'den değişir). Haritanın üstündeki üç düğme (Almanak, Başarımlar, Özellikler) **eşit boyuttadır** ve üçü birlikte haritanın genişliğini geçmez (v2.14). Telefonda düğmeler sağ sütunda alt alta. Adanın canlılarını bölge bölge gösterir.
 
 - **Sol sütun: keşfettiğin biyomlar.** Yalnızca adım bastığın biyomlar görünür, ilk girdiğin sırayla. Çayır'dan hiç çıkmadıysan yalnızca Çayır vardır; Orman'a ilk adım attığında ekranda "Orman" yazısı çıkar ve almanakta **2. satır** olarak Orman açılır. Henüz bilmediğin biyom hiç gösterilmez (sayı da yazmaz).
 - **Sağ taraf: seçili biyomun bütün canlıları** (o biyomda karşılaşılabilecek her tür, gece çıkanlar ve seviyeyle gelenler dahil). Her canlı bir kart:

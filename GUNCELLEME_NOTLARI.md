@@ -7,6 +7,20 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.14 · 29 Ekim 2026
+
+**Düzeltmeler**
+- **Ciddi:** menüye dönüp "Yeni oyun" (ya da "Devam et" / "Yükle") deyince harita yeniden kurulmuyordu; önceki oyunun haritaya bıraktıkları kalıyordu. Ekin'in koyduğu böğürtlenler her yeni oyunda üst üste biniyor, öğreticinin taşları, kesilen ağaçlar, kazılan madenler yeni oyuna taşınıyordu. Artık bu sekmede bir oyun oynandıktan sonra yeni oyun ya da kayıt yükleme sayfayı kısa bir "Yükleniyor…" ekranıyla yeniden açıyor; harita her seferinde temiz. Yeni oyunda doğrudan karakter yaratmaya geçiyorsun, yüklemede kaldığın yerden devam ediyorsun.
+
+**Arayüz**
+- Almanak düğmesi sağ üstten küçük haritanın üstüne, Başarımlar'ın soluna taşındı. Haritanın üstündeki üç düğme (Almanak, Başarımlar, Özellikler) eşit boyutta ve üçü birlikte haritanın genişliğini geçmiyor. Telefonda menü çekmecesinde, Başarımlar'ın yanında.
+
+**Tasarım belgesi**
+- Akış → Ana menü'ye "Temiz dünya" kuralı; Almanak düğmesinin yeri; sürüm satırı 2.14.
+
+**Proje**
+- Çalışma kuralı: Boğaç bir hatayı "ciddi" diye bildirirse "paket çık" beklenmeden düzeltilip hemen paket çıkılıyor.
+
 ## Versiyon 2.13 · 29 Ekim 2026
 
 **Arayüz**

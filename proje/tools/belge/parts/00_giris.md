@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.13** ile birebir (29 Ekim 2026). Bu sürümde: Almanak geldi (keşfedilen biyomların canlıları, Reis sayaçları, altın kartlar); her Reis yalnızca bir kez yenilir, Reise yenilince sayaç bir eksik kalır. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.14** ile birebir (29 Ekim 2026). Bu sürümde: yeni oyun ve kayıt yükleme her seferinde temiz bir haritayla açılır (önceki oyunun böğürtlenleri, taşları birikmez); Almanak düğmesi küçük haritanın üstünde, Başarımlar ve Özellikler'le eşit boyutta. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
