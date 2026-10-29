@@ -35,6 +35,7 @@ def toc_html(toks):
     return '<ul>' + ''.join(o) + '</ul>'
 
 PAGE = open(os.path.join(D, 'template.html')).read()
-out = PAGE.replace('{{TOC}}', toc_html(toc)).replace('{{BODY}}', body)
+mv = re.search(r'Sürüm: \*\*Versiyon ([0-9.]+)\*\*', src)
+out = PAGE.replace('{{VER}}', mv.group(1) if mv else '?').replace('{{TOC}}', toc_html(toc)).replace('{{BODY}}', body)
 open(os.path.join(D, 'tasarim.html'), 'w').write(out)
 print('md', len(src), 'html', len(out), 'tables', n[0])
