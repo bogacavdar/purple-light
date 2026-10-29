@@ -7,6 +7,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.00 · 29 Ekim 2026
+
+**Görsel**
+- Çapraz pozlarda (önde ve arkada) gövdenin yanına yapışık duran uzak kol pikselleri tamamen kaldırıldı; yalnızca yakın kol görünüyor.
+- Arka-çaprazda baş yeniden normal boyda (%10 küçültme geri alındı).
+- Arka-çaprazda ayaklar artık ön-çaprazdaki gibi gidilen yöne bakıyor: sol-yukarıda sol-yukarıya, sağ-yukarıda sağ-yukarıya.
+
+**Tasarım belgesi**
+- "Karakterin 8 yönü" maddesi güncellendi; sürüm satırı 2.00.
+
+---
+
 ## Versiyon 1.99 · 29 Ekim 2026
 
 **Görsel**
