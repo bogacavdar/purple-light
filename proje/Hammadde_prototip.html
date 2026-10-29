@@ -6247,7 +6247,13 @@ const SLOTS=[['auto','Otomatik kayıt'],['s1','Kayıt 1'],['s2','Kayıt 2'],['s3
 const saves=()=>store.get(SAVEKEY)||{};
 // v65: the island grew and got six lands; old saves are cleared once (everyone starts a new game)
 {const a=store.get(SAVEKEY);if(a&&typeof a==='object'){let n=0;for(const k of Object.keys(a)){const v=a[k];if(!v||!v.data||v.data.mv!==MAPV){delete a[k];n++}}if(n){store.set(SAVEKEY,a);window.__v65wiped=n}}}
+// v2.10: another tab wrote the saves: this tab is stale and stops autosaving (an old tab in the background used to overwrite newer progress every minute)
+// the tab that last started or loaded a game owns the autosave; any other tab goes quiet
+const SAVE_TAB=Math.random().toString(36).slice(2);let saveStale=false;
+const claimSaves=()=>{saveStale=false;saveTo.staleTold=false;try{localStorage.setItem('hammadde.owner',SAVE_TAB)}catch(e){}};
+addEventListener('storage',e=>{if(e.key==='hammadde.owner'&&e.newValue&&e.newValue!==SAVE_TAB)saveStale=true});
 function saveTo(id,force){
+  if(id==='auto'&&saveStale){if(!onTitle&&!document.hidden&&!saveTo.staleTold){saveTo.staleTold=true;toast('Bu oyun başka bir sekmede ilerledi; bu sekme otomatik kaydetmiyor. Kaldığın yerden sürmek için menüden Devam et.',true)}return false}
   if(!force&&(cine.on||wake||sis.on||sailing||memCur||fading||beam||hp<=0))return false;   // mid-scene states can't be restored: keep the last good save
   const all=saves();all[id]={t:Date.now(),lvl,coins,rec:found.length,diff,data:snapshot()};
   const ok=store.set(SAVEKEY,all);
@@ -6274,7 +6280,7 @@ function slotList(el,act,back){
     if(e.target.closest('[data-back]')){armed=null;back();return}
     const b=e.target.closest('[data-slot]');if(!b||b.disabled)return;const id=b.dataset.slot;
     if(act==='save'){if(a[id]&&armed!==id){armed=id;slotList(el,act,back);toast('Bu kayıt dolu: üzerine yazmak için bir kez daha bas');return}armed=null;const ok=saveTo(id);slotList(el,act,back);const nm=(SLOTS.find(x=>x[0]===id)||[0,''])[1];toast(ok?`${nm}: oyun kaydedildi`:'Şu an kaydedilemiyor (bir sahnenin ortasındasın); sahne bitince yeniden dene',!ok)}   // v1.51: saving always says whether it worked
-    else{applyState(a[id].data);closeTitle();resume();fadeIn();toast(`${SLOTS.find(x=>x[0]===id)[1]} yüklendi`)}
+    else{claimSaves();applyState(a[id].data);closeTitle();resume();fadeIn();toast(`${SLOTS.find(x=>x[0]===id)[1]} yüklendi`)}
   };
 }
 // ---------- character creator: gender, skin, hair, clothes, glasses and hats ----------
@@ -6361,7 +6367,7 @@ function showTitle(){{const db=$('daybanner');if(db)db.hidden=true}document.quer
   setTimeout(()=>(l?$('t-cont'):$('t-new')).focus(),0)}
 function closeTitle(){onTitle=false;if(IOS&&!closeTitle.told){closeTitle.told=true;setTimeout(()=>toast('iPhone ipucu: tam ekrana yakın oynamak için adres çubuğunun solundaki küçük düğme → Araç Çubuğunu Gizle. Resimli anlatımı Ayarlar\'da.'),9000)}setTimeout(applyCheat,0);document.body.classList.remove('ontitle');$('title').hidden=true}
 function showDiff(){document.querySelector('#title .tcard').classList.add('diffm');$('tmain').hidden=true;$('tslots').hidden=true;$('thard').hidden=true;$('tdiff').hidden=false;document.querySelector('#title .tcard').classList.remove('danger');$('d-normal').focus()}
-function startNew(d){document.querySelector('#title .tcard').classList.remove('diffm');applyState(null);diff=d;if(d==='hard'){bought.add('Keskin taş')}$('hardtag').hidden=d!=='hard';$('tdiff').hidden=true;$('thard').hidden=true;$('tmain').hidden=false;document.querySelector('#title .tcard').classList.remove('danger');closeTitle();renderInv();startCine(d==='hard')}
+function startNew(d){claimSaves();document.querySelector('#title .tcard').classList.remove('diffm');applyState(null);diff=d;if(d==='hard'){bought.add('Keskin taş')}$('hardtag').hidden=d!=='hard';$('tdiff').hidden=true;$('thard').hidden=true;$('tmain').hidden=false;document.querySelector('#title .tcard').classList.remove('danger');closeTitle();renderInv();startCine(d==='hard')}
 // black screen, a line of story, then the island fades in
 let fading=false,fadeT=[];
 function fadeIn(text,sub,hard){
@@ -6379,7 +6385,7 @@ $('d-hard').addEventListener('click',()=>{$('tdiff').hidden=true;$('thard').hidd
 $('d-back').addEventListener('click',()=>{document.querySelector('#title .tcard').classList.remove('diffm');$('tdiff').hidden=true;$('tmain').hidden=false});
 $('h-back').addEventListener('click',showDiff);
 $('h-go').addEventListener('click',()=>startNew('hard'));
-$('t-cont').addEventListener('click',()=>{music.start();const l=latest();if(l){applyState(saves()[l].data);closeTitle();fadeIn()}});
+$('t-cont').addEventListener('click',()=>{music.start();const l=latest();if(l){claimSaves();applyState(saves()[l].data);closeTitle();fadeIn()}});
 $('t-load').addEventListener('click',()=>{music.start();$('tmain').hidden=true;$('tslots').hidden=false;slotList($('tslots'),'load',()=>{$('tslots').hidden=true;$('tmain').hidden=false})});
 $('t-set').addEventListener('click',()=>{music.start();openSettings()});
 // pause menu
@@ -11755,7 +11761,7 @@ $('t-new').addEventListener('click',e=>{if(!I2)return;e.stopImmediatePropagation
 const boot=()=>setTimeout(()=>{try{
   if(sessionStorage.getItem('hammadde.clicknew')){sessionStorage.removeItem('hammadde.clicknew');ldHide();$('t-new').click();return}
   const p=sessionStorage.getItem('hammadde.pending');if(!p){ldHide();return}sessionStorage.removeItem('hammadde.pending');sessionStorage.removeItem('hammadde.ldtxt');
-  const d=JSON.parse(p);try{music.start()}catch(e){}applyState(d);closeTitle();fadeIn();setTimeout(ldHide,350);
+  const d=JSON.parse(p);try{music.start()}catch(e){}try{claimSaves()}catch(e){}applyState(d);closeTitle();fadeIn();setTimeout(ldHide,350);
   setTimeout(()=>{if(I2)announce(BNAME[bioAt(player.x,player.y)]||'Yüzen Kayalar','ACT 2');else announce('Yıldızsız Ada','Portal')},900);
   try{saveTo('auto',true)}catch(e){}
 }catch(e){ldHide();try{window.__hamErr('v76 yükleme: '+(e&&e.message||e))}catch(_){}}},80);
