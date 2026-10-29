@@ -39,6 +39,8 @@ Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır. Bir adım atl
 
 ## 5. Not
 
+- Depo kökündeki `GUNCELLEME_NOTLARI.md`'nin en üstüne `## Versiyon X.YZ · tarih` başlığıyla o sürümün notunu ekle: oyuncunun anlayacağı dille, yalnızca değişenler (yeni, değişen, düzeltme).
+
 - `proje/DEVAM_NOTU.md`'nin başına `## vX.YZ (tarih) · kısa başlık` bölümü ekle: ne değişti, hangi kod bloğu, eski kayıtlara etkisi.
 
 ## 6. Gönder
@@ -50,6 +52,7 @@ Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır. Bir adım atl
 
 - Push'tan sonra yayındaki sürümün tüm projesini zip'le: `git archive --format=zip --prefix=purple-light/ -o <scratchpad>/purple-light_vX.YZ_proje.zip origin/main` (`.git` girmez; GitHub'daki sürümün birebir kopyası).
 - Zip'i **her güncellemede, istenmese de** `SendUserFile` ile Boğaç'a gönder.
+- `GUNCELLEME_NOTLARI.md`'yi de her seferinde dosya olarak gönder.
 - Tasarım belgesi değiştiyse `belge.pdf`, `belge.html` ve `belge.md`'yi de dosya olarak gönder.
 
 ## 8. Boğaç'a dönüş
@@ -57,6 +60,7 @@ Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır. Bir adım atl
 - Kısa: ne değişti, commit numarası.
 - Linkler her zaman:
   - Oyun: https://bogacavdar.github.io/purple-light/
+  - Güncelleme notları: https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md
   - Belge (indirilebilir): https://bogacavdar.github.io/purple-light/belge.pdf · https://bogacavdar.github.io/purple-light/belge.html · https://bogacavdar.github.io/purple-light/belge.md
 - Ana menüde yeni sürüm numarası görünüyorsa yayın gelmiştir (GitHub Pages 1–2 dakika sürer).
 - Belge yerine artifact, depo içi yol ya da başka bir sayfa linki verilmez; her zaman yukarıdaki indirilebilir linkler ve dosyalar.

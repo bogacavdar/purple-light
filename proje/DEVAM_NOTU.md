@@ -3,6 +3,9 @@
 ## 🚀 KURAL: Her güncelleme aynı turda yayına gider (28 Ekim 2026, Boğaç)
 - Oyunda ya da belgede yapılan her değişiklik iş biter bitmez **aynı turda** commit + `git push` (main) ile yayına gönderilir; https://bogacavdar.github.io/purple-light/ ve belge linkleri (`belge.html`, `belge.pdf`, `belge.md`) **her zaman günceldir**. Yalnızca zip/dosya göndermek güncelleme sayılmaz (v1.84–v1.86 böyle yapıldı ve yayına gitmeden kaldı; tekrarlanmayacak). Oturumda depo yoksa ilk iş `add_repo` + `git clone --depth 1`, geliştirme klonda yapılır. Belge `parts/*.md`'den üretilir: `Hammadde_tasarim_belgesi.md` elle düzenlendiyse `parts` da güncellenmeli, yoksa `yayinla.sh` değişikliği ezer.
 
+## 📝 KURAL: Güncelleme notları (29 Ekim 2026, Boğaç)
+- Her sürümde kökteki `GUNCELLEME_NOTLARI.md`'nin en üstüne o sürümün notu eklenir ve dosya Boğaç'a gönderilir.
+
 ## v1.88 (29 Ekim 2026) · tokken de yemek yenir
 - `eat()` içindeki "Tıka basa toksun" engeli kaldırıldı: tokluk 100'de kalır, can ve yan etkiler işler. Tanrı modunda öğreticinin böğürtlen adımı yapılamıyordu, düzeldi. Belge: Temel sistemler, yemek satırı.
 
