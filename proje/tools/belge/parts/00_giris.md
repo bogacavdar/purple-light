@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.18** ile birebir (29 Ekim 2026). Bu sürümde: envanterden sürüklerken de hedef yuva yanıp söner (meşale dersi); canavarlar saldırırken yüzünü hep sana döner; yetenek ağacında üst/alt pay ve Koşu'nun tam görünmesi; sikke yetmezken Koşu'ya basınca ağaç kapanır, Börü anlatır; Ekin böğürtlende bilgisayarda F'yi söyler.
+Sürüm: **Versiyon 2.19** ile birebir (29 Ekim 2026). Bu sürümde: bir canlıyı ilk kez öldürünce ekranın ortasında "Almanağa eklendi" yazısı çıkar; oyundaki ilk avda Almanak düğmesi mavi parlar ve ok onu gösterir.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

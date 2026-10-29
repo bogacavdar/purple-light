@@ -7,6 +7,15 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.19 · 29 Ekim 2026
+
+**Arayüz**
+- **Yeni canlı almanağa eklenince ekranda büyük yazı:** bir türü ilk kez öldürünce ekranın ortasında canlının adı ve altında "Almanağa eklendi · U ile bak" yazıyor. Önceden yalnızca küçük, çabuk kaybolan bir bildirim çıkıyordu ve gözden kaçıyordu. Her yeni tür için bir kez çıkıyor; Reisler ve ders canlıları sayılmıyor.
+- **İlk avında almanak gösteriliyor:** oyunda ilk kez bir canlı öldürdüğünde Almanak düğmesi **mavi parlıyor** ve yanında yanıp sönen bir **ok** çıkıyor; birkaç saniye sonra "İlk avın almanağa eklendi! Almanağı aç: U" yazıyor. Almanağı açınca parlama ve ok sönüyor. Telefonda Almanak ☰ menüsünün içindeyse önce ☰ parlıyor.
+
+**Tasarım belgesi**
+- Almanak bölümüne "Yeni canlı almanağa eklenince" ve "İlk avında almanak gösterilir" kuralları; sürüm satırı 2.19.
+
 ## Versiyon 2.18 · 29 Ekim 2026
 
 **Oynanış**

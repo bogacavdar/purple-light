@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.18** ile birebir (29 Ekim 2026). Bu sürümde: envanterden sürüklerken de hedef yuva yanıp söner (meşale dersi); canavarlar saldırırken yüzünü hep sana döner; yetenek ağacında üst/alt pay ve Koşu'nun tam görünmesi; sikke yetmezken Koşu'ya basınca ağaç kapanır, Börü anlatır; Ekin böğürtlende bilgisayarda F'yi söyler.
+Sürüm: **Versiyon 2.19** ile birebir (29 Ekim 2026). Bu sürümde: bir canlıyı ilk kez öldürünce ekranın ortasında "Almanağa eklendi" yazısı çıkar; oyundaki ilk avda Almanak düğmesi mavi parlar ve ok onu gösterir.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -480,6 +480,8 @@ Sağ altta, küçük haritanın hemen üstünde **Başarımlar**'ın solunda kü
   - **İlk kez öldürülünce açılır:** resmi, adı, huyu (zararsız / nötr / saldırgan), can, hasar, hız, uzaktan saldırısı ve bıraktığı etki (zehir, yanık…), düşürdükleri, kaç tane avladığın.
   - **Reis sayacı:** kartın altında "Reis: 3 / 7" (o türden kaç avladın / Reis için kaç gerekir). Sayaç dolunca Reis gelir.
   - **Reis yenilince kart altın rengine döner** ("Reis yenildi"). Her türün Reisi **yalnızca bir kez** yenilir: kart altına boyandıktan sonra o türden ne kadar avlarsan avla Reis bir daha gelmez.
+- **Yeni canlı almanağa eklenince (v2.18):** bir türü **ilk kez** öldürdüğünde ekranın ortasında büyük bir yazı çıkar: canlının adı ve altında "**Almanağa eklendi** · U ile bak" (yeni malzeme bulunca çıkan yazıyla aynı yerde, sıraya girer). Her yeni tür için bir kez; Reisler ve ders canlıları sayılmaz.
+- **İlk avında almanak gösterilir (v2.18):** oyunda **ilk kez** bir canlı öldürdüğünde (almanakta hiç açık kart yokken) Almanak düğmesi **mavi parlar** ve yanında yanıp sönen bir **ok** olur (öğreticinin gösterme kuralı gibi); ekranda "Almanağı aç: U" yazar. Parlama ve ok, Almanak açılınca söner. Telefonda düğme ☰ menüsünün içindeyse önce ☰ parlar.
 - **Reise yenilirsen:** Reis sahadayken (ya da gelmek üzereyken) bayılırsan Reis kaybolur ve sayaç **bir eksik** kalır (ör. 6 / 7), sanki onu çağıran son av hiç yapılmamış gibi. O türden bir tane daha avlayınca Reis yeniden gelir; yenene kadar böyle sürer. (Bayıldıktan sonra 60 sn hiçbir Reis gelmez kuralı geçerli.)
 - Almanak açıkken oyun durur. Kaydedilecek yeni bir şey yok: biyomlar, avlar ve Reisler zaten kayıtta; eski kayıtlarda bugüne kadar avladıkların açık gelir.
 
