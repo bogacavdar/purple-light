@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.01 (29 Ekim 2026) · arka-çapraz ayaklar aynalandı
+- v194 bloğu `D34MK` arka dalı: bacaklar `Q` ile ön-çaprazın aynası (s>0 iken yansıtılır). Önizleme scratch `poz/arka_ayak_oneri.png`. Kayıtlara etkisi yok.
+
 ## v2.00 (29 Ekim 2026) · çapraz pozlarda uzak kol yok, arka ayaklar gidilen yöne
 - v194 bloğu `D34MK`: uzak kol çizimi (ön ve arka) silindi; arka bacaklar ön-çaprazla aynı (gidilen yandaki ayak yukarıda, ayak ucu o yana); `d34(...,small=0,flip=0)` ile baş normal boy. Önizleme scratch `poz/capraz_oneri_kol_bas.png`. Kayıtlara etkisi yok.
 

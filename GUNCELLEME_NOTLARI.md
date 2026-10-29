@@ -7,6 +7,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.01 · 29 Ekim 2026
+
+**Düzeltmeler**
+- Arka-çaprazda ayaklar ters duruyordu (sağ-yukarı giderken sol-yukarıya gidiyormuş gibi). Ayaklar aynalandı; artık gidilen yöne bakıyor.
+
+**Tasarım belgesi**
+- "Karakterin 8 yönü" maddesinde arka-çapraz ayaklar düzeltildi; sürüm satırı 2.01.
+
+---
+
 ## Versiyon 2.00 · 29 Ekim 2026
 
 **Görsel**
