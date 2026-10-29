@@ -1340,7 +1340,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.13</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.14</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -12380,12 +12380,19 @@ paint();if(mode!=='auto'){PERF.pend=true}
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
 // ---- achievements next to the character button
-function placeAch(){const a=$('b-ach'),c=$('b-char');if(!a||!c)return;
-  if(document.body.classList.contains('v50m')){if(a.previousElementSibling!==c)c.parentNode.insertBefore(a,c.nextSibling);a.style.cssText='';return}
-  const R=$('right');if(R&&a.parentNode!==R)R.appendChild(a);
-  const r=c.getBoundingClientRect();if(!r.width||!r.height){a.style.visibility='hidden';return}
+function placeAch(){const a=$('b-ach'),c=$('b-char'),al=$('b-alm');if(!a||!c)return;
+  if(document.body.classList.contains('v50m')){if(a.previousElementSibling!==c)c.parentNode.insertBefore(a,c.nextSibling);a.style.cssText='';if(al){if(al.previousElementSibling!==a)a.parentNode.insertBefore(al,a.nextSibling);al.style.cssText=''}return}
+  const R=$('right');if(R&&a.parentNode!==R)R.appendChild(a);if(al&&R&&al.parentNode!==R)R.appendChild(al);
+  // v2.13: Almanac, Achievements and Character stand in one row right above the minimap, all three the same size, together no wider than the map
+  const mi=$('mini'),mr=mi&&!mi.hidden?mi.getBoundingClientRect():null;
+  if(mr&&mr.width>40&&mr.height>20){const g=8,w=Math.floor((mr.width-2*g)/3),h=Math.min(88,Math.max(44,w+6)),top=Math.round(mr.top-g-h),x2=Math.round(mr.right-w);
+    const put=(e,x)=>{e.style.cssText='position:fixed;z-index:3;margin:0;pointer-events:auto;top:'+top+'px;left:'+x+'px;right:auto;bottom:auto;width:'+w+'px;height:'+h+'px'+(e===c?'':';padding:'+Math.round(Math.min(w,h)*.16)+'px')};
+    put(c,x2);put(a,x2-w-g);if(al)put(al,x2-2*(w+g));return}
+  c.style.cssText='';
+  const r=c.getBoundingClientRect();if(!r.width||!r.height){a.style.visibility='hidden';if(al)al.style.visibility='hidden';return}
   const h=Math.round(r.height),w=Math.round(Math.min(r.height,r.width));
-  a.style.cssText='position:fixed;z-index:3;margin:0;pointer-events:auto;top:'+Math.round(r.top)+'px;left:'+Math.round(r.left-w-8)+'px;right:auto;bottom:auto;width:'+w+'px;height:'+h+'px;padding:'+Math.round(h*.16)+'px'}
+  a.style.cssText='position:fixed;z-index:3;margin:0;pointer-events:auto;top:'+Math.round(r.top)+'px;left:'+Math.round(r.left-w-8)+'px;right:auto;bottom:auto;width:'+w+'px;height:'+h+'px;padding:'+Math.round(h*.16)+'px';
+  if(al)al.style.cssText='position:fixed;z-index:3;margin:0;pointer-events:auto;top:'+Math.round(r.top)+'px;left:'+Math.round(r.left-2*(w+8))+'px;right:auto;bottom:auto;width:'+w+'px;height:'+h+'px;padding:'+Math.round(h*.16)+'px'}
 const stA=document.createElement('style');stA.textContent='#b-ach svg{width:100%;height:100%}'
  +'.ieq{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:center;margin:8px 0 10px;padding:8px;border:2px solid var(--panel-edge);background:rgba(0,0,0,.18)}'
  +'.ieq canvas{width:72px;height:90px;image-rendering:pixelated;background:#1c2419;border:2px solid var(--panel-edge)}'
@@ -14902,7 +14909,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 {
  const st=document.createElement('style');st.textContent=`
-#b-alm svg{width:62%;height:62%}
+#b-alm svg{width:100%;height:100%}
 #almov{position:fixed;inset:0;z-index:115;background:rgba(8,6,14,.72);display:flex;align-items:center;justify-content:center;font-family:var(--font)}
 #almov[hidden]{display:none}
 #almov .ap{width:min(1000px,96vw);height:min(640px,90vh);background:#1b1726;border:3px solid #4a3d6a;box-shadow:0 0 0 2px #0c0a12,0 12px 40px rgba(0,0,0,.6);display:flex;flex-direction:column;color:#f3ecd8}
@@ -14931,7 +14938,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  // the button: a small green book, right next to Settings
  const bt=document.createElement('button');bt.className='ib';bt.id='b-alm';bt.type='button';bt.title='Almanak (U)';bt.setAttribute('aria-label','Almanak (U)');
  bt.innerHTML='<svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="2" width="11" height="12" fill="#2f6a3a"/><rect x="2" y="2" width="2" height="12" fill="#1f4a28"/><rect x="13" y="3" width="1" height="11" fill="#efe6cf"/><rect x="4" y="14" width="10" height="1" fill="#efe6cf"/><rect x="6" y="5" width="5" height="4" fill="#d8c070"/><rect x="7" y="6" width="1" height="1" fill="#2f6a3a"/><rect x="9" y="6" width="1" height="1" fill="#2f6a3a"/><rect x="6" y="10" width="5" height="1" fill="#d8c070"/></svg>';
- const setB=$('b-set');if(setB&&setB.parentNode)setB.parentNode.insertBefore(bt,setB);
+ const setB=$('b-set');if(setB&&setB.parentNode)setB.parentNode.insertBefore(bt,setB);   // placeAch (v92) moves it next to the achievements, above the minimap
  const ov=document.createElement('div');ov.id='almov';ov.hidden=true;ov.setAttribute('role','dialog');ov.setAttribute('aria-label','Almanak');
  ov.innerHTML='<div class="ap"><div class="ah"><span><b>Almanak</b><small id="alm-sub"></small></span><button class="ax" id="alm-x" type="button" aria-label="Kapat">✕</button></div><div class="ab"><div class="al" id="alm-l"></div><div class="ag" id="alm-g"></div></div></div>';
  document.body.appendChild(ov);
