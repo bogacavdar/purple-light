@@ -1344,7 +1344,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.05</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.06</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -8522,7 +8522,7 @@ const DEFB={interact:{c:'KeyF',l:'F'},eat:{c:'KeyX',l:'X'},parry:{c:'KeyE',l:'E'
 const defB=()=>JSON.parse(JSON.stringify(DEFB));
 {const o=store.get(KEYSTORE);if(o&&typeof o==='object')for(const id in o){const v=o[id];if(KDEF[id]&&v&&typeof v.c==='string'&&(v.c!==KDEF[id]||DEFB[id]))BIND[id]={c:v.c,l:String(v.l||v.c).slice(0,10)}}
   if(!store.get('hammadde.v204.keys')){for(const id in DEFB)if(!BIND[id]){const taken=Object.keys(BIND).some(k=>BIND[k].c===DEFB[id].c);if(!taken)BIND[id]=Object.assign({},DEFB[id])}store.set(KEYSTORE,BIND);store.set('hammadde.v204.keys',1)}}
-const codeOf=id=>BIND[id]?BIND[id].c:KDEF[id],labOf=id=>BIND[id]?BIND[id].l:KLAB[id];
+const codeOf=id=>BIND[id]?BIND[id].c:KDEF[id],labOf=id=>BIND[id]?BIND[id].l:KLAB[id];window.__plKey=id=>labOf(id);   // v2.06: other blocks name the bound key
 const kOn=()=>Object.keys(BIND).length>0;
 let C2A={},DEFA={};   // pressed code → action; default code → action
 function rebuildMaps(){C2A={};DEFA={};for(const [id] of KB){C2A[codeOf(id)]=id;DEFA[KDEF[id]]=id}if(!BIND.run)C2A.ShiftRight='run'}
@@ -13825,14 +13825,15 @@ const _tc133=treeChopped;treeChopped=function(t){const r=_tc133.apply(this,argum
  function hide(){if(!tip.hidden){tip.hidden=true;lk=''}}
  function what(wx,wy){
    let bd=7,bn=null;for(const d of drops){if(d.t<1)continue;const q=Math.hypot(d.x-wx,d.y-wy);if(q<bd){bd=q;bn=d}}
-   if(bn)return[bn.n,'yerde · üstünden yürü ya da E'];
+   const KE=window.__plKey?window.__plKey('interact'):'E',KQ=window.__plKey?window.__plKey('attack'):'Q';   // v2.06
+   if(bn)return[bn.n,'yerde · üstünden yürü ya da '+KE];
    let P=null;try{P=pickAt(wx,wy)}catch(x){P=null}const tg=P&&P.tg;if(!tg)return null;
-   if(tg.kind==='node'){const n=tg.n;if(n.mine){const M=MINES[n.name]||{};let need='kazma gerekli';try{need=`${PICK_FOR(ORE_TIER[n.name]||1)} ya da daha iyisi`}catch(x){}return[M.l||n.name,need]}return[n.name,'E ile topla']}
+   if(tg.kind==='node'){const n=tg.n;if(n.mine){const M=MINES[n.name]||{};let need='kazma gerekli';try{need=`${PICK_FOR(ORE_TIER[n.name]||1)} ya da daha iyisi`}catch(x){}return[M.l||n.name,need]}return[n.name,KE+' ile topla']}
    {const O={npc,witch,farmer,market,smith,durmus,trader,usta,alp,carp,kaptan,denizci,wiz};const o=O[tg.kind];if(o){const nm=o.name||({npc:'Yaşlı Ekin',witch:'Cadı Zümrüt',farmer:'Çiftçi Hasan',market:'Pazarcı Nazlı',smith:'Demirci Dursun',durmus:'Zırhçı Durmuş',trader:'Tüccar Nuri',usta:'Usta Kemal',alp:'Savaşçı Börü',carp:'Marangoz Rıza',kaptan:'Kaptan Poyraz',wiz:'Yıldızsız'})[tg.kind];if(nm)return[nm,'E ile konuş']}}   // v1.50: people and creatures under the mouse
-   if(tg.kind==='pot')return['Zümrüt\'ün kazanı','E ile tarif dene'];
-   if(tg.kind==='xtra'){let l='';try{l=typeof tg.o.label==='function'?tg.o.label():tg.o.label}catch(x){}l=String(l||'').replace(/<[^>]+>/g,'').replace(/^E\s*/,'');if(l)return[l.split('·')[0].trim(),'E ile konuş']}
-   if(tg.kind==='animal'){const a=tg.a,D=ANIM[a.k]||{};return[a.k,D.temper==='saldırgan'?'saldırgan · Q ile vur':D.temper==='zararsız'?'zararsız':'kızdırırsan saldırır']}
-   if(tg.kind==='dog')return['Köpek','E ile sev'];
+   if(tg.kind==='pot')return['Zümrüt\'ün kazanı',KE+' ile tarif dene'];
+   if(tg.kind==='xtra'){let l='';try{l=typeof tg.o.label==='function'?tg.o.label():tg.o.label}catch(x){}l=String(l||'').replace(/<[^>]+>/g,'').replace(/^E\s*/,'');if(l)return[l.split('·')[0].trim(),KE+' ile konuş']}
+   if(tg.kind==='animal'){const a=tg.a,D=ANIM[a.k]||{};return[a.k,D.temper==='saldırgan'?'saldırgan · sol tık ya da '+KQ+' ile vur':D.temper==='zararsız'?'zararsız':'kızdırırsan saldırır']}
+   if(tg.kind==='dog')return['Köpek',KE+' ile sev'];
    if(tg.kind==='tree'){const ty=tg.t.type,nm=/ağacı$/.test(ty.n)?ty.n:`${ty.n} ağacı`;return[nm,ty.noCut?'silkelenir (meyvesi düşer)':ty.fruit?'silkelenir · baltayla kesilir':'baltayla kesilir']}
    return null}
  function upd(){if(!on||mx<0||onTitle||wake||dlgOpen||craftOpen||(typeof paused!=='undefined'&&paused)){hide();return}
@@ -14841,7 +14842,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
   if(DT===1&&!dlgOpen&&!(craftOpen&&mode==='skills'))add($('b-skill'),1);
   if(tz===12&&craftOpen&&mode==='hand'){const S=AXE_STEPS[axeStep];if(S){const b=Q(`[data-hand="${S[0]}"]`);if(b&&!b.disabled){add(b,1);
      if(want.last!==S[0]+axeStep){want.last=S[0]+axeStep;try{b.scrollIntoView({block:'nearest'})}catch(e){}}}}}
-  if(tz===13&&!window.__axeHold&&forgeOpen()&&pot.r==='Taş balta'){if(!potReady())add($('pfill'),1);else add($('brew'),1)}
+  if(tz===13&&!window.__axeHold&&!(inv['Taş balta']>0)&&forgeOpen()&&pot.r==='Taş balta'){if(!potReady())add($('pfill'),1);else add($('brew'),1)}
   if(tz===13&&window.__axeHold&&!dlgOpen){const n='Taş balta',i=beltIndex(n);
     if(held()!==n){if(i<0){if(!(craftOpen&&mode==='inv')){if(!craftOpen)add($('b-inv'),1)}
         else if(invSel!==n)add(Q(`.itile[data-n="${n}"]`),1);
@@ -14958,6 +14959,11 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    e.preventDefault();e.stopImmediatePropagation();
    if(!C.length)return;   // nothing right by you: nothing happens
    C.sort((a,b)=>(a[2]-b[2])||(a[1]-b[1]));const o=C[0][0];startGoal(o.x,o.y)}catch(x){}},true);
+ // v2.06: the tutorial axe: forged → straight to "take it into your hand", even if Dursun's window was closed without the button
+ setInterval(()=>{try{if(tz===13&&!window.__axeHold&&(inv['Taş balta']||0)>0&&!onTitle){window.__axeHold=1;renderTut()}}catch(x){}},300);
+ {const _ts=talkSmith;talkSmith=function(){try{if(tz===13&&(inv['Taş balta']||0)>0){smith.met=true;window.__axeHold=1;renderTut();
+     return say(`Baltan zaten dövüldü evlat, ikincisine gerek yok! Şimdi onu eline al: ${beltHow('Taş balta')}. Sonra <b>Ekin</b>'e dön.`,[{t:'Baltayı elime alayım',pri:1,fresh:1,f:()=>{bye();renderTut()}}],smith)}}catch(x){}
+   return _ts.apply(this,arguments)}}
  // the strike follows the pointer exactly: the facing is the exact direction until the blow lands (the wind-up waits a moment),
  // while the drawing still uses the nearest of the four (or the diagonal pose)
  let AIM=null;

@@ -7,6 +7,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.06 · 29 Ekim 2026
+
+**Düzeltmeler**
+- Öğreticide Dursun'un balta adımı bozuktu: balta dövüldükten sonra "Hepsini koy" yeniden parlıyor, Dursun'un penceresi düğmeye basmadan kapanınca öğretici "Dursun'a git, döv" adımında kalıp malzemeyi ikinci kez istiyordu. Artık balta dövüldüğü anda "baltayı eline al" adımına geçiliyor; Dursun'la yeniden konuşursan "baltan zaten dövüldü, eline al" diyor, ikinci kez dövdürmüyor.
+- Fareyle bir şeyin üstüne gelince çıkan ipuçları hâlâ "E ile topla / E ile konuş" diyordu; artık bağlı tuşu gösteriyor ("F ile topla", "F ile konuş", "sol tık ya da Q ile vur").
+
+**Tasarım belgesi**
+- Öğretici 13. adım ve tuş yazıları maddesi güncellendi; sürüm satırı 2.06.
+
+---
+
 ## Versiyon 2.05 · 29 Ekim 2026
 
 **Oynanış**

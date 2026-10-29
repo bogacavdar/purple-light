@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.06 (29 Ekim 2026) · Dursun balta adımı, fare ipuçlarında tuş
+- v204 bloğu: tz 13'te `inv['Taş balta']>0` olunca `__axeHold=1` (300 ms'de bir); `talkSmith` sarmalayıcı tz 13 + balta varken yeniden dövdürmez. v189 örs parlaması baltayla birlikte durur. B5 bloğu `window.__plKey(id)` (bağlı tuş etiketi); v146 fare ipucu metinleri bunu kullanır. Kayıtlara etkisi yok.
+
 ## v2.05 (29 Ekim 2026) · F yalnızca bir kare çevresi, alet kuralı
 - v204 bloğu: F (iç KeyE) dinleyicisi artık hedef node/ağaç ya da yokken her zaman kendi seçer: 30 px içinde; maden (`n.mine`) yalnızca kazma varken, ağaç yalnızca balta varken (meyvesi olgun ağaç baltasız silkelenir); elde balta → ağaç, elde kazma → maden önce. Aday yoksa hiçbir şey yapmaz (taban E/F yolu da çalışmaz). Kişi/istasyon/tarla gibi hedefler ve ayaktaki eşyalar eski yoldan. Kayıtlara etkisi yok.
 
