@@ -1343,7 +1343,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.17</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.18</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -15239,6 +15239,19 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const _dp=drawPlayer;drawPlayer=function(){if(AIM&&player.face===AIM.fl){player.face=AIM.f4;try{return _dp.apply(this,arguments)}finally{player.face=AIM.fl}}return _dp.apply(this,arguments)};
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v204: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v218">
+// v2.18: dragging a carryable out of the bag shows its slot too (it used to show only after a click, so the torch lesson's slot
+// did not light up while the torch was dragged). The same slot as a click: the first empty one, else the first. Stops on release.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ const clr=()=>{document.querySelectorAll('.dpulse').forEach(x=>x.classList.remove('dpulse','pulse'))};
+ const _ds=idragStart;idragStart=function(d){const r=_ds.apply(this,arguments);
+   try{if(d&&d.src==='inv'&&hotThing(d.n)&&beltIndex(d.n)<0){const f=cbody.querySelector('.bs.empty')||cbody.querySelector('.bs');if(f&&!f.classList.contains('pulse'))f.classList.add('pulse','dpulse')}}catch(x){}
+   return r};
+ addEventListener('pointerup',()=>setTimeout(clr,0));addEventListener('pointercancel',()=>setTimeout(clr,0));
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v218: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
