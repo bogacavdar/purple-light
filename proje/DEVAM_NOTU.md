@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v1.95 (29 Ekim 2026) · öğretici parlaması sönmüyordu
+- v189 `place()`: `renderCraft` sarmalayıcısı `lit=[]` yapınca önceki parlayan düğme (ör. `b-eat`) listeden düşüp `.p189` sınıfı kalıyordu. Artık her seferinde `document.querySelectorAll('.p189')` taranıp hedef olmayanlardan sınıf kaldırılıyor; `lit=[]` kaldırıldı. Kayıtlara etkisi yok.
+
 ## v1.94 (29 Ekim 2026) · 8 yönlü karakter
 - Yeni `<script id="v194">`: `drawChibi` en dış sarmalayıcı `o.back34` (arka + yanak/kulak/burun ucu şeridi, kaskta yok). `drawPlayer` sarmalayıcı kareden kareye hareketten yön çıkarır (`__plD8`; iki bileşen de >%38 ise çapraz), çizim süresince `drawChibi`'yi geçici sarar ve oyuncu çiziminde fx/fy'yi çapraza, `q34`, yukarıdaysa `back34` yapar. `player.face` 4 yönlü kalır (saldırı, toplama aynı). `player.face` değişince çapraz kapanır. v63 `VIEWS` arka-çaprazlar artık `back34`. Kayıtlara etkisi yok.
 

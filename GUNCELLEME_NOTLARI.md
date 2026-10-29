@@ -7,6 +7,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 1.95 · 29 Ekim 2026
+
+**Düzeltmeler**
+- Ekin'in "Böğürtlen ye" adımı bitince soldaki yemek düğmesi parlamaya devam ediyordu (yemek menüsü açılıp kapanınca öğretici parlamayı unutuyordu). Artık adım biter bitmez parlama ve ok sönüyor; aynı düzeltme öğreticideki bütün parlayan düğmeler için geçerli.
+
+**Tasarım belgesi**
+- Öğreticinin "gösterme kuralı"na "adım bitince parlama söner" eklendi; sürüm satırı 1.95.
+
+---
+
 ## Versiyon 1.94 · 29 Ekim 2026
 
 **Görsel**
