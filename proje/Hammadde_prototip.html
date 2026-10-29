@@ -1340,7 +1340,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.10</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.11</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -6988,8 +6988,9 @@ function tzLearned(r){
     say(`İşte! <b>Kaba meşale</b> tarifini öğrendin; kitabında artık <b style="color:#8fd46b">yeşil</b>. Bundan sonra malzemelerin olduğunda ${TOUCH?'el ikonuna dokunarak':'<b>Tab</b>\'a basarak'} her yerde meşale yapabilirsin. Kazana koyduğun dal, lif ve yapraklar tarifi açmaya gitti; meşale için <b>aynılarını</b> yeniden topla. Yakına biraz bıraktım.`,[{t:'Topluyorum',pri:1,fresh:1,f:bye}],witch);return}
   if(tz===7&&r==='Keskin taş'){tz=8;closeCraft();say(`Keskin taş da kitabında! Şimdi kalan iki taşla ${TOUCH?'el ikonuna dokun':'<b>Tab</b>\'a bas'} ve bir <b>keskin taş</b> yap.`,[{t:'Tamam',pri:1,fresh:1,f:bye}],witch)}}
 function tzMade(r){
-  if(tz===5&&r==='Kaba meşale'){tz=6;closeCraft();tzPlace('Taş',4,cauldron.x,cauldron.y);
-    say(`İlk meşalen! Kulağını aç evlat: bu adada <b>geceler zifiri karanlıktır</b> ve karanlıkta bir şey dolaşır. Gece gelmeden elinde bir meşale olsun. Yaptığın meşale <b>envanterinde</b> duruyor: ${beltHow('Kaba meşale')}; sonra ${TOUCH?'o kutuya dokununca':'o yuvanın sayı tuşuna basınca'} eline gelir. Neyse ki ada halkı her gece <b>ateş yakar</b>; ateşin yanı güvenlidir. Meşalen yoksa ve geceye yakalanırsan, biri sana yardım eder… ama buna güvenme.<br><br>Önce meşaleni eline al; sonra kazanın yanındaki <b>4 taşı</b> topla. Gündüz meşaleyi elinde tutma, boşuna yanar.`,[{t:'Önce meşale, sonra taşlar',pri:1,fresh:1,f:bye}],witch);return}
+  if(tz===5&&r==='Kaba meşale'){tz=6;closeCraft();   // v2.11: the stones come only after the torch is in the hand and put away again (v49-p3 holdTick)
+
+    say(`İlk meşalen! Kulağını aç evlat: bu adada <b>geceler zifiri karanlıktır</b> ve karanlıkta bir şey dolaşır. Gece gelmeden elinde bir meşale olsun. Yaptığın meşale <b>envanterinde</b> duruyor: ${beltHow('Kaba meşale')}; sonra ${TOUCH?'o kutuya dokununca':'o yuvanın sayı tuşuna basınca'} eline gelir. Neyse ki ada halkı her gece <b>ateş yakar</b>; ateşin yanı güvenlidir. Meşalen yoksa ve geceye yakalanırsan, biri sana yardım eder… ama buna güvenme.<br><br>Hadi, önce meşaleni eline al.`,[{t:'Meşaleyi elime alayım',pri:1,fresh:1,f:bye}],witch);return}
   if(tz===8&&r==='Keskin taş'){tz=9;closeCraft();
     say(`Gördün mü? İki çıplak taş bir keskin taş oldu, değeri de katlandı. Topladığın şeyleri birleştire birleştire çok zengin olabilirsin. Kuzeydoğuda <b>Pazarcı Nazlı</b>'nın tezgâhı var; o böyle şeylerle ilgilenir. Keskin taşını ona götür, bir uğra.`,[{t:'Nazlı\'ya gidiyorum',pri:1,fresh:1,f:()=>{bye();guideTo('market',10)}}],witch)}}
 function tzSold(names){if(tz===10&&(names.indexOf('Keskin taş')>=0||!(inv['Keskin taş']>0))){tz=11;setTimeout(()=>{closeCraft();
@@ -9735,7 +9736,7 @@ function placePtr(){const hb=$('b-hand'),ib=$('b-inv'),wh=wantHand(),wi=wantInv(
   ptr.hidden=false;ptr.style.left=Math.round(r.right+6)+'px';ptr.style.top=Math.round(r.top+r.height/2-16)+'px'}
 function keyCaps(){const tt=$('tuttext');if(!tt)return;const on=wantHand()||(craftOpen&&mode==='hand'&&tz);tt.querySelectorAll('.kc').forEach(k=>{if(/^(Tab|I|[0-9])$/.test(k.textContent.trim())||on)k.classList.add('p3k')})}
 // ---- torch: from the bag into the hand (between the torch and the stones)
-const _tzMade=tzMade;tzMade=function(r){const was=tz;const o=_tzMade.apply(this,arguments);if(was===5&&tz===6&&r==='Kaba meşale'&&!torchHeld()){P3.hold=true;renderTut()}return o};
+const _tzMade=tzMade;tzMade=function(r){const was=tz;const o=_tzMade.apply(this,arguments);if(was===5&&tz===6&&r==='Kaba meşale'){if(!torchHeld())P3.hold=true;else P3.low=true;renderTut()}return o};
 const _tzCard=tzCard;tzCard=function(){if(P3.low&&tz===6){const i=beltIndex(torchHeld()||'Kaba meşale');   // v2.10
     return['witch','Zümrüt · Meşaleyi elinden indir',`Gündüz meşale boşuna yanar. ${TOUCH?'Alttaki yanıp sönen <b>'+(i>=0?slotKey(i)+'. ':'')+'kutuya</b> bir daha dokun':'<span class="kc">'+(i>=0?slotKey(i):'yuva')+'</span> tuşuna bir daha bas'}: meşale eline girer, yanması durur.`]}
   if(P3.hold&&tz===6){const n='Kaba meşale',i=beltIndex(n),inInv=craftOpen&&mode==='inv';
@@ -9748,7 +9749,9 @@ function holdMarks(){if(!(P3.hold&&tz===6))return;const n='Kaba meşale',i=beltI
   if(craftOpen&&mode==='inv'){const t=cbody.querySelector(`.itile[data-n="${n}"]`);if(i<0){if(t&&invSel!==n)t.classList.add('pulse');if(invSel===n){const b=cbody.querySelector('.bs.empty')||cbody.querySelector('.bs');if(b)b.classList.add('pulse')}}}
   else if(i>=0&&!craftOpen){const b=document.querySelector(`#hotbar [data-hs="${i}"]`);if(b&&!b.classList.contains('pulse'))b.classList.add('pulse')}}
 function holdTick(){if(P3.hold&&(tz!==6||torchHeld())){const ok=tz===6;P3.hold=false;if(ok){sfx('found');toast('Meşale elinde!');P3.low=true}renderTut()}
-  if(P3.low&&(tz!==6||!torchHeld())){const ok=tz===6;P3.low=false;if(ok){sfx('ok');toast('Meşale indi. Şimdi kazanın yanındaki 4 taşı topla.')}renderTut()}}   // v2.10: lower the torch before the stones
+  if(P3.low&&(tz!==6||!torchHeld())){const ok=tz===6;P3.low=false;if(ok){sfx('ok');stonesNow()}renderTut()}}
+function stonesNow(){tzPlace('Taş',4,cauldron.x,cauldron.y);   // v2.11: the stone step starts only now
+  const go=()=>{if(dlgOpen)bye();say(`Tamam, meşale çantada bekler; gece gelince yeniden eline alırsın. Şimdi işe dönelim: kazanın yanına <b>4 taş</b> bıraktım. Onları topla, sana taştan ne yapılır göstereyim.`,[{t:'Taşları topluyorum',pri:1,fresh:1,f:()=>{bye();renderTut()}}],witch)};setTimeout(go,400)}   // v2.10: lower the torch before the stones
 const _rip=renderInvPanel;renderInvPanel=function(){const r=_rip.apply(this,arguments);try{holdMarks()}catch(e){}return r};
 const _rt=renderTut;renderTut=function(){const r=_rt.apply(this,arguments);try{holdMarks();keyCaps();placePtr()}catch(e){}return r};
 setInterval(()=>{try{if(onTitle){ptr.hidden=true;return}holdTick();placePtr();holdMarks()}catch(e){}},300);
@@ -10992,7 +10995,7 @@ const I2C=ISLE===2&&window.__I2C||null;window.__I2A=window.__I2A||new Set();
 if(I2C)for(const b in I2C.trees){for(const t of I2C.trees[b]){const o=Object.assign({},t);if(o.fruit)o.seed=null;if(!TREE_TYPES.some(x=>x.n===o.n))TREE_TYPES.push(o);TREE_TIER[o.n]=+b<1?1:2;WOODC[o.n]=I2C.woodc[o.n]}BTREE[+b]=I2C.trees[b].map(t=>t.n)}
 {const BY={};for(const t of TREE_TYPES)BY[t.n]=t;
  const keep=[];for(const tr of trees){const tx=Math.floor(tr.x/T),ty=Math.floor(tr.y/T),b=BIO[ty*W+tx],h=hash(tx,ty,651);
-   const nearSp=Math.hypot(tr.x-spawn.x,tr.y-spawn.y)<20*T;if(!nearSp&&h<.18)continue;   // a little thinner than before (it felt crowded)
+   const nearSp=Math.hypot(tr.x-spawn.x,tr.y-spawn.y)<20*T;if(!nearSp&&h<.35)continue;   // a little thinner than before (it felt crowded); v2.11: 18% → 35%
    const L=BTREE[b],w=L.map(n=>BY[n].fruit?.45:1),sum=w.reduce((a,c)=>a+c,0);let r=hash(tx,ty,652)*sum,k=0;while(k<L.length-1&&r>=w[k]){r-=w[k];k++}
    tr.type=nearSp&&b===0&&h<.7?BY['Çam']:BY[L[k]];tr.fr=0;keep.push(tr)}
  trees.length=0;for(const t of keep)trees.push(t);rebuildTG()}
@@ -11041,6 +11044,14 @@ function putIn(b,name,n,extra){const L=LAND[b],ok=RULE[name]?RULE[name][0]:T_.la
  // finds that live by the rocks: around the new mines, in every land
  const mines=nodes.filter(n=>n.mine);
  for(const k of MINEPL){let c=0;for(let g=0;g<4000&&c<44;g++){const m=mines[Math.floor(rnd()*mines.length)];if(!m)break;const a=rnd()*6.283,d=22+rnd()*18,x=m.x+Math.cos(a)*d,y=m.y+Math.sin(a)*d;if(!T_.land(tileAt(x,y))||!freeAt(x,y,12))continue;nodes.push({name:k,x,y,alive:true,t:0,v:rnd()});c++}}}
+{// v2.11: a calmer map. Away from the first camp (20 tiles) the gatherables are thinned by a hash of their spot (no rnd(): the rest of the world stays the same).
+ // Basics island-wide ~half, land plants 68 → ~40, Kuru ot 150 → ~90, Böğürtlen 110 → ~80, bank plants 42 → ~30. Ores and cave finds stay.
+ const KEEP={'Dal':.48,'Lif':.5,'Taş':.56,'Yaprak':.54,'Nehir çakılı':.56,'Kum':.58,'Çakmaktaşı':.67,'Kuru ot':.6,'Böğürtlen':.73};
+ const hz=(x,y)=>{const v=Math.sin(x*12.9898+y*78.233+37.719)*43758.5453;return v-Math.floor(v)};
+ for(let i=nodes.length-1;i>=0;i--){const n=nodes[i];if(n.mine||n.night||MINEPL.has(n.name))continue;if(Math.hypot(n.x-spawn.x,n.y-spawn.y)<20*T)continue;
+   let k=KEEP[n.name];if(k==null){if(!SPECIAL.has(n.name))continue;const rule=RULE[n.name]?RULE[n.name][0]:null;k=rule&&!rule(0)&&!rule(1)?.71:.59}
+   if(hz(n.x,n.y)>=k)nodes.splice(i,1)}
+ NGR.m.clear();NGR.n=0;NGR.len=0}
 try{REACH_=null;for(const k in CAT_N)delete CAT_N[k]}catch(e){}
 
 // ---------------------------------------------------------------- 2b · v67.1 trees: no resting; after 3 chops a tree falls for good, and 200–300 s later a new one of the same kind grows somewhere else in the same land
@@ -14852,6 +14863,12 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
 @keyframes qbar{from{transform:translateY(-100%)}to{transform:none}}@keyframes qbar2{from{transform:translateY(100%)}to{transform:none}}
 @media (prefers-reduced-motion:reduce){body.qscene::before,body.qscene::after{animation:none}}
 </style>
+<script id="v211">
+// v2.11: fewer basics on the map, so they come back ~30% sooner
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+ for(const k of ['Dal','Taş','Lif','Yaprak','Nehir çakılı','Kum','Çakmaktaşı'])if(RES[k])RES[k].respawn=Math.round(RES[k].respawn*.7);
+}).toString()+')()')}catch(e){try{window.__hamErr('v211: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 <script id="v189">
 // v1.89: every button the tutorial asks for glows blue and gets an arrow (eat, skill tree, the Yap buttons for the axe parts,
 // Hepsini koy → Döv at Dursun's anvil, bag → axe → slot → hotbar); Zümrüt explains the torch; in Börü's fight lesson a left

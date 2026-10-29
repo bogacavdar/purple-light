@@ -7,6 +7,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.11 · 29 Ekim 2026
+
+**Oynanış**
+- **Harita sadeleşti** (kalabalık geliyordu). Kampın çevresi (yaklaşık 20 karo) aynı kaldı; geri kalan her yerde:
+  - Temel malzemeler yaklaşık yarıya indi: Dal 800, Lif 700, Taş 550, Yaprak 450, Nehir çakılı 400, Kum 350, Çakmaktaşı 300 (önce 1650 / 1410 / 990 / 840 / 720 / 600 / 450). Azaldıkları için **%30 daha çabuk** yeniden çıkıyorlar (ör. Dal 25 → 18 sn).
+  - Biyom bitkileri tür başına 68'den yaklaşık 40'a; Kuru ot 150 → ~90, Böğürtlen 110 → ~80, su kenarı bitkileri 42 → ~30.
+  - Ağaçlar yaklaşık %20 azaldı (seyreltme %18 → %35); ormanlar hâlâ orman, aralarında yürüyecek yer açıldı. Her ağaç türü yine bol.
+  - Madenler ve mağara buluntuları değişmedi.
+  - Bütün adada toplanabilir sayısı yaklaşık 12.200'den 7.100'e, ağaç sayısı 13.300'den 10.600'e indi. Eski kayıtlar da yeni yoğunlukla açılır (harita her açılışta kurulur).
+
+**Düzeltmeler**
+- Öğreticide Zümrüt'ün taş adımı meşale bitmeden geliyordu (taşlar haritaya çıkıyor, taş konuşması başlıyordu). Artık sıra: meşaleyi yap → Zümrüt yalnızca meşaleyi anlatır → meşaleyi eline al (yanar) → Zümrüt gece/gündüz kuralını anlatır → meşaleyi elinden indir → **ancak o zaman** Zümrüt taşları anlatır ve kazanın yanına 4 taş konur.
+
+**Tasarım belgesi**
+- ACT 1 → Adanın yerleşimi'ne "Haritadaki miktarlar" bölümü eklendi (her şeyin sayısı neye göre belirlenir); ACT 1 biyom tablolarındaki "Adadaki sayısı" ve yeniden çıkma süreleri yeniden ölçüldü; ACT 2 tablolarına not düşüldü; öğretici tablosu (5. ve 6. adım) güncellendi; sürüm satırı 2.11.
+
 ## Versiyon 2.10 · 29 Ekim 2026
 
 **Oynanış**

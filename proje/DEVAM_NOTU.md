@@ -9,6 +9,12 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.11 (29 Ekim 2026) · harita seyreltme, meşale → taş sırası
+- Dünya kurulumu (bölge yerleşim bloğu, `putIn` sonrası): kampın 20 karo dışındaki toplanabilirler yerin hash'ine göre seyreltilir (rnd() kullanılmaz, dünyanın geri kalanı aynı); KEEP: Dal .48, Lif .5, Taş .56, Yaprak .54, Nehir çakılı .56, Kum .58, Çakmaktaşı .67, Kuru ot .6, Böğürtlen .73, kıyı bitkileri .71, diğer biyom bitkileri .59. Madenler, MINEPL ve gece düğümleri dokunulmaz. Ağaç seyreltme `h<.18` → `h<.35`.
+- Yeni `v211` bloğu: temel malzemelerin `RES[k].respawn` ×0.7.
+- Öğretici: `tzMade` tz 5→6 artık taş koymaz, konuşma taşlardan söz etmez; v49-p3 `holdTick` meşale inince `stonesNow()` (4 taş + Zümrüt'ün taş konuşması). Meşale yapılırken zaten eldeyse `P3.low` doğrudan açılır. `P3` kayda yazılmaz: bu ara adımda yeniden yüklenirse taşlar konmamış olur, kart yine "4 taşı topla" der (adadaki herhangi bir taş yeter).
+- Ölçüm: yeni oyunda toplanabilir 12.220 → 7.140, ağaç 13.275 → 10.595.
+
 ## v2.10 (29 Ekim 2026) · ölüm yok (bayılma), meşaleyi indir, saldırı altında tıklama, iki sekme kaydı
 - v49-p3: `P3.low` (meşale ele gelince; `holdTick` indirmeyi bekler), `tzCard` "Meşaleyi elinden indir", `tzNeed` boş; v189 `want()` meşale yuvasını parlatır.
 - Taban fare tıklaması (`cv` pointerdown): `inFight()` (ekranda `chase` hayvan ya da `lastBitten` < 3 sn) → hep `attack`; yere düşen eşya (`drops`, 10 px) → `goal` (tg null). F (v204) değişmedi.

@@ -1,3 +1,5 @@
+> **Not (v2.11):** ikinci adada da harita seyreltildi (kuralı ACT 1 → Adanın yerleşimi → Haritadaki miktarlar). Bu bölümdeki "Adadaki sayısı" sütunları **seyreltmeden önce** ölçüldü: temel malzemeler bugün yaklaşık yarısı, bitkiler yaklaşık %60'ı kadar.
+
 ## Yüzen Kayalar — Güvenli
 
 İniş yeri. Havada duran kayalar, bulut koyunları, rüzgâr kuşları. Gökbilimci Ülker ve ACT 2 kazanı burada. Gece gök tazıları çıkar.

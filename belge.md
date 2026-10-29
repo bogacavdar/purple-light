@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.10** ile birebir (29 Ekim 2026). Bu sürümde: oyunda ölüm yok, her şey bayıltır; öğreticide meşaleyi indirme adımı; saldırı altındayken tıklama hep vurur, yere düşen eşyaya tıklayınca oraya yürünür; eski sekme otomatik kaydın üstüne yazmaz. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.11** ile birebir (29 Ekim 2026). Bu sürümde: harita sadeleşti (temel malzemeler yaklaşık yarıya, bitkiler ~%40, ağaçlar ~%20 azaldı; kampın çevresi aynı) ve öğreticide taş adımı meşale eline alınıp indirildikten sonra başlıyor. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -165,8 +165,8 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 | 2 | Ekin | Yemek düğmesiyle (F) 5 böğürtlen ye (soldaki yemek düğmesi mavi parlar ve ok onu gösterir; yemek listesi açılınca Böğürtlen'in **Ye** düğmesi parlar) | Cadı Zümrüt görünür; Ekin seni kuzeye, ormanın kıyısına yollar |
 | 3 | Zümrüt | Zümrüt'e git ve konuş | Kazanın yanına 2 Dal, 2 Lif, 2 Yaprak konur |
 | 4 | Zümrüt | Kazanda **Kaba meşale** tarifini öğren | Malzemeler yeniden konur |
-| 5 | Zümrüt | El yapımı ekranında (Tab) meşaleyi yap, bir yuvaya koyup eline al | Kazanın yanına 4 Taş konur. Meşale ele gelince Zümrüt **meşaleyi anlatır**: gündüz işe yaramaz, gece içindir; yalnızca eldeyken yanar ve Kaba meşale yaklaşık **110 saniye** yanınca biter (yağmurda daha çabuk); gündüz elinden indir, akşam karanlığında eline al, yedeğin olsun. Sonra kart **"Meşaleyi elinden indir"** der, meşalenin yuvası (hotbar kutusu) oku ile parlar; meşale inene kadar taş adımına geçilmez |
-| 6 | Zümrüt | 4 taşı topla | — |
+| 5 | Zümrüt | El yapımı ekranında (Tab) meşaleyi yap, bir yuvaya koyup eline al | Meşale yapılınca Zümrüt yalnızca meşaleyi anlatır (taşlardan söz etmez). Meşale ele gelince Zümrüt **meşaleyi anlatır**: gündüz işe yaramaz, gece içindir; yalnızca eldeyken yanar ve Kaba meşale yaklaşık **110 saniye** yanınca biter (yağmurda daha çabuk); gündüz elinden indir, akşam karanlığında eline al, yedeğin olsun. Sonra kart **"Meşaleyi elinden indir"** der, meşalenin yuvası (hotbar kutusu) oku ile parlar; meşale inene kadar taş adımına geçilmez (v2.11: taşlar ve taş konuşması da meşale inince gelir) |
+| 6 | Zümrüt | 4 taşı topla | Meşale inince Zümrüt taşları anlatır ve kazanın yanına 4 Taş konur |
 | 7 | Zümrüt | Kazanda **Keskin taş** tarifini öğren (2 Taş) | — |
 | 8 | Zümrüt | Kalan 2 taşla elle Keskin taş yap | Zümrüt kuzeydoğudaki Nazlı'yı söyler |
 | 9 | Nazlı | Pazarcı Nazlı ile tanış | Pazar "Sat" sekmesiyle açılır |
@@ -609,6 +609,13 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
   - **İki kısayol köprüsü** (Çayır ↔ Kayalık Dağ, %62 ve %86 yüksekliğinde): kuzey köprüsü onarılmadan onarılamaz ("Önce Orman ile Bataklık arasındaki büyük köprüyü onar"). Sonra istediğin zaman, istersen birini istersen ikisini onarırsın; onarılan kısayol Çayır'dan Kayalık Dağ'a doğrudan geçirir. Kuzey köprüsü onarıldıktan sonra kısayollar iki yakadan da onarılabilir.
 - **Sıradağ** orta sütunu doğudakinden ayırır, kıyıdan kıyıya uzanır. Tek geçidi Kayalık Dağ ile Kül Diyarı arasındadır (adanın yaklaşık %74 yüksekliğinde) ve bir **kaya yığını** kapatır. 2 Kaya patlatıcı ve kuvars ya da daha iyi bir kazmayla patlatılır. **Patlama bütün sıradağı çökertir:** o andan sonra sınır kalkar, sıradağın her yeri yürünebilir moloz olur; Bataklık'tan Mor Kristal Vadisi'ne de doğrudan geçilir. (Kayıtta yalnızca "patlatıldı" bilgisi tutulur; yüklenince sıradağ yeniden çöker.)
 - **1.84 ve öncesinin kayıtları:** her şey (envanter, görevler, köprü, patlama) korunur ama harita değiştiği için kumsalda uyanırsın ve harita yeniden keşfedilir; bir kez bildirim çıkar.
+- **Haritadaki miktarlar (v2.11'de seyreltildi, harita kalabalık geliyordu):** yeni oyunda ada kurulurken her tür sabit sayıda rastgele yere konur; yerler her oyunda farklı, sayılar aynıdır.
+  - **Temel malzemeler** bütün adaya serpilir (yaklaşık): Dal 800, Lif 700, Taş 550, Yaprak 450, Nehir çakılı 400, Kum 350, Çakmaktaşı 300 (v2.10'a kadar 1650 / 1410 / 990 / 840 / 720 / 600 / 450). Daha az oldukları için **%30 daha çabuk** yeniden çıkarlar (ör. Dal 25 → 18 sn).
+  - **Biyom bitkileri** her biyomun kendi 14 türü: tür başına kendi biyomunda yaklaşık **40** (önce 68); Kuru ot ~90 (150), Böğürtlen ~80 (110), yalnızca su kenarında biten türler ~30 (42).
+  - **Madenler** (biyom başına 3 tür, ilk iki biyomda 22, diğerlerinde 20) ve **mağara buluntuları** (Sarkıt, Yarasa gübresi, Mağara mantarı: madenlerin çevresinde 44'er) değişmedi.
+  - **Ağaçlar** sayıyla değil olasılıkla çıkar: orman zemininde her karede %20, çimende %4 (Kül Diyarı'nda bunların %45'i); sonra **%35'i** seyreltilir (v2.10'a kadar %18). Tür biyomun 5 ağacından seçilir; meyve ağaçlarının payı 0,45, diğerlerinin 1.
+  - **Başlangıç kampının çevresi (20 karo)** seyreltilmez; öğretici burada geçer.
+  - Hayvanlar haritaya konmaz; bulunduğun biyomun listesine göre çevrende belirir.
 - Büyük nehirde suya düşersen yarım saniyede bir en yakın kıyıya, köprün yoksa her zaman batı (yurt) kıyısına çıkarılırsın.
 - Haritada (M) kişilerin simgeleri görünür; bir simgeye dokununca oraya giden kalıcı bir yol oku konur. Küçük haritanın sol altında bulunduğun biyomun adı yazar.
 
@@ -617,7 +624,7 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 Aşağıdaki her biyom başlığında dört tablo var:
 
 - **Ağaçlar:** balta ile kesilir (E). "Gereken balta" kademesinin altındaki balta o ağacı kesemez. Meyve ağaçları eli boşken E ile **silkelenir** (2–3 meyve); baltayla kesilirlerse de odun, 1–2 meyve ve %35 ihtimalle tohum verirler. Bazı ağaçlar kesilince yan ürün de düşürür: Çam → 1 Çam kozalağı, Meşe → 1 Meşe palamudu, Akçaağaç → 1 Akçaağaç özsuyu, Ihlamur → 2 Ihlamur çiçeği, Söğüt → 2 Söğüt dalı.
-- **Toplanabilirler:** yerde durur, elde alet gerekmez. Toplanınca belirtilen süre sonra aynı yerde yeniden çıkar. "Adadaki sayısı" haritanın o bölgesindeki toplam yerdir (yeni oyunda ölçüldü).
+- **Toplanabilirler:** yerde durur, elde alet gerekmez. Toplanınca belirtilen süre sonra aynı yerde yeniden çıkar. "Adadaki sayısı" haritanın o bölgesindeki toplam yerdir (yeni oyunda ölçüldü; v2.11 seyreltmesinden sonra yeniden sayıldı).
 - **Madenler:** kazma elde E. Gereken kazma kademesi tabloda. Maden 300 sn sonra yeniden dolar.
 - **Canlılar:** *zararsız* kaçar; *nötr* vurulunca karşılık verir, uzaklaşınca sakinleşir; *saldırgan* görünce saldırır. **Can** ve **Hasar** oyundaki gerçek değerlerdir (savunma ve zorluk hesaba katılmadan). Hız piksel/saniye cinsindendir. Düşürdükleri yüzde ihtimalle verilir.
 
@@ -641,30 +648,30 @@ Başladığın yer: adanın güneybatısı (batı sütununun güney yarısı). T
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Böğürtlen | 2 | 115 | 40 sn sonra yeniden çıkar, çiğ yenir (+6 tokluk) |
-| Çakmaktaşı | 2 | 110 | 45 sn sonra yeniden çıkar |
-| Çayır mantarı | 2 | 68 | 50 sn sonra yeniden çıkar |
-| Dal | 1 | 444 | 25 sn sonra yeniden çıkar |
-| Ebegümeci | 1 | 68 | 40 sn sonra yeniden çıkar |
-| Gelincik | 2 | 68 | 40 sn sonra yeniden çıkar |
-| Hardal otu | 2 | 68 | 45 sn sonra yeniden çıkar |
-| Kum | 1 | 140 | 20 sn sonra yeniden çıkar |
-| Kuru ot | 1 | 150 | 25 sn sonra yeniden çıkar |
-| Lif | 1 | 425 | 20 sn sonra yeniden çıkar |
-| Mağara mantarı | 4 | 8 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
-| Nane | 2 | 68 | 40 sn sonra yeniden çıkar |
-| Nehir çakılı | 1 | 194 | 25 sn sonra yeniden çıkar |
-| Papatya | 1 | 68 | 35 sn sonra yeniden çıkar |
-| Rezene | 2 | 68 | 45 sn sonra yeniden çıkar |
-| Sarkıt | 6 | 10 | 120 sn sonra yeniden çıkar |
-| Taş | 1 | 279 | 30 sn sonra yeniden çıkar |
-| Yabani arpa | 2 | 68 | 45 sn sonra yeniden çıkar |
-| Yabani buğday | 2 | 68 | 40 sn sonra yeniden çıkar |
-| Yabani havuç | 2 | 68 | 45 sn sonra yeniden çıkar, çiğ yenir (+5 tokluk) |
-| Yabani yulaf | 2 | 68 | 45 sn sonra yeniden çıkar |
-| Yaban çileği | 2 | 68 | 45 sn sonra yeniden çıkar, çiğ yenir (+6 tokluk) |
-| Yaprak | 1 | 63 | 90 sn sonra yeniden çıkar |
-| Yarasa gübresi | 3 | 7 | 90 sn sonra yeniden çıkar |
+| Böğürtlen | 2 | 86 | 40 sn sonra yeniden çıkar, çiğ yenir (+6 tokluk) |
+| Çakmaktaşı | 2 | 68 | 31 sn sonra yeniden çıkar |
+| Çayır mantarı | 2 | 39 | 50 sn sonra yeniden çıkar |
+| Dal | 1 | 125 | 18 sn sonra yeniden çıkar |
+| Ebegümeci | 1 | 43 | 40 sn sonra yeniden çıkar |
+| Gelincik | 2 | 41 | 40 sn sonra yeniden çıkar |
+| Hardal otu | 2 | 44 | 45 sn sonra yeniden çıkar |
+| Kum | 1 | 67 | 14 sn sonra yeniden çıkar |
+| Kuru ot | 1 | 87 | 25 sn sonra yeniden çıkar |
+| Lif | 1 | 95 | 14 sn sonra yeniden çıkar |
+| Mağara mantarı | 4 | 10 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
+| Nane | 2 | 47 | 40 sn sonra yeniden çıkar |
+| Nehir çakılı | 1 | 90 | 18 sn sonra yeniden çıkar |
+| Papatya | 1 | 44 | 35 sn sonra yeniden çıkar |
+| Rezene | 2 | 38 | 45 sn sonra yeniden çıkar |
+| Sarkıt | 6 | 5 | 120 sn sonra yeniden çıkar |
+| Taş | 1 | 85 | 21 sn sonra yeniden çıkar |
+| Yabani arpa | 2 | 35 | 45 sn sonra yeniden çıkar |
+| Yabani buğday | 2 | 37 | 40 sn sonra yeniden çıkar |
+| Yabani havuç | 2 | 39 | 45 sn sonra yeniden çıkar, çiğ yenir (+5 tokluk) |
+| Yabani yulaf | 2 | 44 | 45 sn sonra yeniden çıkar |
+| Yaban çileği | 2 | 43 | 45 sn sonra yeniden çıkar, çiğ yenir (+6 tokluk) |
+| Yaprak | 1 | 23 | 63 sn sonra yeniden çıkar |
+| Yarasa gübresi | 3 | 5 | 90 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, E)
 
@@ -705,29 +712,29 @@ Adanın kuzeybatısı, batı sütununun kuzey yarısı (Çayır'dan kuzeye yür�
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ahududu | 2 | 68 | 45 sn sonra yeniden çıkar, çiğ yenir (+6 tokluk) |
-| Çakmaktaşı | 2 | 111 | 45 sn sonra yeniden çıkar |
-| Dal | 1 | 616 | 25 sn sonra yeniden çıkar |
-| Eğrelti | 1 | 68 | 40 sn sonra yeniden çıkar |
-| Isırgan | 1 | 68 | 35 sn sonra yeniden çıkar |
-| Kanlıca | 3 | 68 | 55 sn sonra yeniden çıkar |
-| Kum | 1 | 145 | 20 sn sonra yeniden çıkar |
-| Kuzugöbeği | 6 | 68 | 70 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk), zehirli! |
-| Kuzukulağı | 1 | 68 | 40 sn sonra yeniden çıkar, çiğ yenir (+2 tokluk), zehirli! |
-| Lif | 1 | 296 | 20 sn sonra yeniden çıkar |
-| Mağara mantarı | 4 | 10 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
-| Nehir çakılı | 1 | 155 | 25 sn sonra yeniden çıkar |
-| Sarmaşık | 1 | 68 | 45 sn sonra yeniden çıkar |
-| Taş | 1 | 219 | 30 sn sonra yeniden çıkar |
-| Tatlısu midyesi | 2 | 39 | 50 sn sonra yeniden çıkar |
-| Tavuk mantarı | 3 | 68 | 70 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk) |
-| Yabani bal | 8 | 68 | 90 sn sonra yeniden çıkar, çiğ yenir (+12 tokluk) |
-| Yabani mercimek | 2 | 68 | 45 sn sonra yeniden çıkar, çiğ yenir (+2 tokluk) |
-| Yabani nohut | 2 | 68 | 45 sn sonra yeniden çıkar, çiğ yenir (+2 tokluk) |
-| Yaban mersini | 3 | 68 | 50 sn sonra yeniden çıkar, çiğ yenir (+6 tokluk) |
-| Yaban sarımsağı | 2 | 68 | 45 sn sonra yeniden çıkar |
-| Yaprak | 1 | 97 | 90 sn sonra yeniden çıkar |
-| Yarasa gübresi | 3 | 5 | 90 sn sonra yeniden çıkar |
+| Ahududu | 2 | 26 | 45 sn sonra yeniden çıkar, çiğ yenir (+6 tokluk) |
+| Çakmaktaşı | 2 | 55 | 31 sn sonra yeniden çıkar |
+| Dal | 1 | 249 | 18 sn sonra yeniden çıkar |
+| Eğrelti | 1 | 42 | 40 sn sonra yeniden çıkar |
+| Isırgan | 1 | 45 | 35 sn sonra yeniden çıkar |
+| Kanlıca | 3 | 41 | 55 sn sonra yeniden çıkar |
+| Kum | 1 | 71 | 14 sn sonra yeniden çıkar |
+| Kuzugöbeği | 6 | 45 | 70 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk), zehirli! |
+| Kuzukulağı | 1 | 39 | 40 sn sonra yeniden çıkar, çiğ yenir (+2 tokluk), zehirli! |
+| Lif | 1 | 104 | 14 sn sonra yeniden çıkar |
+| Mağara mantarı | 4 | 11 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
+| Nehir çakılı | 1 | 65 | 18 sn sonra yeniden çıkar |
+| Sarmaşık | 1 | 36 | 45 sn sonra yeniden çıkar |
+| Taş | 1 | 74 | 21 sn sonra yeniden çıkar |
+| Tatlısu midyesi | 2 | 31 | 50 sn sonra yeniden çıkar |
+| Tavuk mantarı | 3 | 41 | 70 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk) |
+| Yabani bal | 8 | 46 | 90 sn sonra yeniden çıkar, çiğ yenir (+12 tokluk) |
+| Yabani mercimek | 2 | 44 | 45 sn sonra yeniden çıkar, çiğ yenir (+2 tokluk) |
+| Yabani nohut | 2 | 38 | 45 sn sonra yeniden çıkar, çiğ yenir (+2 tokluk) |
+| Yaban mersini | 3 | 45 | 50 sn sonra yeniden çıkar, çiğ yenir (+6 tokluk) |
+| Yaban sarımsağı | 2 | 37 | 45 sn sonra yeniden çıkar |
+| Yaprak | 1 | 47 | 63 sn sonra yeniden çıkar |
+| Yarasa gübresi | 3 | 7 | 90 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, E)
 
@@ -767,30 +774,30 @@ Adanın kuzey ortası, büyük nehrin doğusu: Orman'dan kuzey köprüsünü ona
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Bataklık otu | 4 | 68 | 45 sn sonra yeniden çıkar |
-| Çakmaktaşı | 2 | 42 | 45 sn sonra yeniden çıkar |
-| Dal | 1 | 191 | 25 sn sonra yeniden çıkar |
-| Göl kili | 3 | 37 | 60 sn sonra yeniden çıkar |
-| Hasırotu | 1 | 68 | 35 sn sonra yeniden çıkar |
-| Kamış | 1 | 68 | 30 sn sonra yeniden çıkar |
-| Kenevir | 3 | 68 | 45 sn sonra yeniden çıkar |
-| Keten | 3 | 68 | 45 sn sonra yeniden çıkar |
-| Kızılcık | 2 | 68 | 50 sn sonra yeniden çıkar, çiğ yenir (+5 tokluk) |
-| Kum | 1 | 74 | 20 sn sonra yeniden çıkar |
-| Lif | 1 | 165 | 20 sn sonra yeniden çıkar |
-| Mağara mantarı | 4 | 8 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
-| Nehir çakılı | 1 | 96 | 25 sn sonra yeniden çıkar |
-| Nilüfer | 3 | 42 | 50 sn sonra yeniden çıkar |
-| Sarkıt | 6 | 9 | 120 sn sonra yeniden çıkar |
-| Saz | 1 | 68 | 30 sn sonra yeniden çıkar |
-| Sinek mantarı | 4 | 68 | 60 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk), zehirli! |
-| Su kestanesi | 3 | 42 | 55 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk) |
-| Su teresi | 2 | 42 | 40 sn sonra yeniden çıkar |
-| Taş | 1 | 110 | 30 sn sonra yeniden çıkar |
-| Turba | 3 | 68 | 45 sn sonra yeniden çıkar |
-| Yaprak | 1 | 26 | 90 sn sonra yeniden çıkar |
-| Yarasa gübresi | 3 | 5 | 90 sn sonra yeniden çıkar |
-| Yosun | 1 | 68 | 30 sn sonra yeniden çıkar |
+| Bataklık otu | 4 | 43 | 45 sn sonra yeniden çıkar |
+| Çakmaktaşı | 2 | 51 | 31 sn sonra yeniden çıkar |
+| Dal | 1 | 144 | 18 sn sonra yeniden çıkar |
+| Göl kili | 3 | 31 | 60 sn sonra yeniden çıkar |
+| Hasırotu | 1 | 36 | 35 sn sonra yeniden çıkar |
+| Kamış | 1 | 42 | 30 sn sonra yeniden çıkar |
+| Kenevir | 3 | 37 | 45 sn sonra yeniden çıkar |
+| Keten | 3 | 42 | 45 sn sonra yeniden çıkar |
+| Kızılcık | 2 | 46 | 50 sn sonra yeniden çıkar, çiğ yenir (+5 tokluk) |
+| Kum | 1 | 47 | 14 sn sonra yeniden çıkar |
+| Lif | 1 | 116 | 14 sn sonra yeniden çıkar |
+| Mağara mantarı | 4 | 7 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
+| Nehir çakılı | 1 | 66 | 18 sn sonra yeniden çıkar |
+| Nilüfer | 3 | 30 | 50 sn sonra yeniden çıkar |
+| Sarkıt | 6 | 4 | 120 sn sonra yeniden çıkar |
+| Saz | 1 | 45 | 30 sn sonra yeniden çıkar |
+| Sinek mantarı | 4 | 41 | 60 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk), zehirli! |
+| Su kestanesi | 3 | 31 | 55 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk) |
+| Su teresi | 2 | 33 | 40 sn sonra yeniden çıkar |
+| Taş | 1 | 98 | 21 sn sonra yeniden çıkar |
+| Turba | 3 | 45 | 45 sn sonra yeniden çıkar |
+| Yaprak | 1 | 18 | 63 sn sonra yeniden çıkar |
+| Yarasa gübresi | 3 | 7 | 90 sn sonra yeniden çıkar |
+| Yosun | 1 | 39 | 30 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, E)
 
@@ -830,30 +837,30 @@ Adanın güney ortası, Bataklık'ın güneyi (kısayol köprüleri onarılınca
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Adaçayı | 2 | 68 | 45 sn sonra yeniden çıkar |
-| Alıç | 2 | 68 | 50 sn sonra yeniden çıkar, çiğ yenir (+5 tokluk) |
-| Beyaz kil | 6 | 68 | 80 sn sonra yeniden çıkar |
-| Civanperçemi | 2 | 68 | 45 sn sonra yeniden çıkar |
-| Çakmaktaşı | 2 | 57 | 45 sn sonra yeniden çıkar |
-| Dağ çayı | 6 | 68 | 50 sn sonra yeniden çıkar |
-| Dal | 1 | 150 | 25 sn sonra yeniden çıkar |
-| Kardelen | 8 | 68 | 60 sn sonra yeniden çıkar |
-| Kav mantarı | 2 | 68 | 60 sn sonra yeniden çıkar |
-| Kayın mantarı | 3 | 68 | 60 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk) |
-| Kekik | 2 | 68 | 40 sn sonra yeniden çıkar |
-| Kırmızı kil | 4 | 68 | 70 sn sonra yeniden çıkar |
-| Kum | 1 | 63 | 20 sn sonra yeniden çıkar |
-| Kuşburnu | 2 | 68 | 50 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk) |
-| Lavanta | 3 | 68 | 50 sn sonra yeniden çıkar |
-| Lif | 1 | 144 | 20 sn sonra yeniden çıkar |
-| Liken | 5 | 68 | 45 sn sonra yeniden çıkar |
-| Mağara mantarı | 4 | 8 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
-| Nehir çakılı | 1 | 91 | 25 sn sonra yeniden çıkar |
-| Sarkıt | 6 | 5 | 120 sn sonra yeniden çıkar |
-| Sinirotu | 2 | 68 | 45 sn sonra yeniden çıkar |
-| Taş | 1 | 104 | 30 sn sonra yeniden çıkar |
-| Yaprak | 1 | 17 | 90 sn sonra yeniden çıkar |
-| Yarasa gübresi | 3 | 8 | 90 sn sonra yeniden çıkar |
+| Adaçayı | 2 | 36 | 45 sn sonra yeniden çıkar |
+| Alıç | 2 | 39 | 50 sn sonra yeniden çıkar, çiğ yenir (+5 tokluk) |
+| Beyaz kil | 6 | 44 | 80 sn sonra yeniden çıkar |
+| Civanperçemi | 2 | 34 | 45 sn sonra yeniden çıkar |
+| Çakmaktaşı | 2 | 34 | 31 sn sonra yeniden çıkar |
+| Dağ çayı | 6 | 40 | 50 sn sonra yeniden çıkar |
+| Dal | 1 | 142 | 18 sn sonra yeniden çıkar |
+| Kardelen | 8 | 44 | 60 sn sonra yeniden çıkar |
+| Kav mantarı | 2 | 40 | 60 sn sonra yeniden çıkar |
+| Kayın mantarı | 3 | 40 | 60 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk) |
+| Kekik | 2 | 36 | 40 sn sonra yeniden çıkar |
+| Kırmızı kil | 4 | 33 | 70 sn sonra yeniden çıkar |
+| Kum | 1 | 44 | 14 sn sonra yeniden çıkar |
+| Kuşburnu | 2 | 43 | 50 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk) |
+| Lavanta | 3 | 37 | 50 sn sonra yeniden çıkar |
+| Lif | 1 | 123 | 14 sn sonra yeniden çıkar |
+| Liken | 5 | 39 | 45 sn sonra yeniden çıkar |
+| Mağara mantarı | 4 | 4 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
+| Nehir çakılı | 1 | 49 | 18 sn sonra yeniden çıkar |
+| Sarkıt | 6 | 14 | 120 sn sonra yeniden çıkar |
+| Sinirotu | 2 | 37 | 45 sn sonra yeniden çıkar |
+| Taş | 1 | 99 | 21 sn sonra yeniden çıkar |
+| Yaprak | 1 | 25 | 63 sn sonra yeniden çıkar |
+| Yarasa gübresi | 3 | 11 | 90 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, E)
 
@@ -893,30 +900,30 @@ Adanın güneydoğusu, sıradağın ardı: Kayalık Dağ'dan doğuya yürü, sı
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ateş biberi | 26 | 68 | 70 sn sonra yeniden çıkar, çiğ yenir (+2 tokluk) |
-| Ateş çiçeği | 8 | 68 | 70 sn sonra yeniden çıkar |
-| Cüruf | 24 | 68 | 80 sn sonra yeniden çıkar |
-| Çakmaktaşı | 2 | 33 | 45 sn sonra yeniden çıkar |
-| Dal | 1 | 125 | 25 sn sonra yeniden çıkar |
-| Duman çiçeği | 28 | 68 | 70 sn sonra yeniden çıkar |
-| Kara tuz | 34 | 68 | 100 sn sonra yeniden çıkar |
-| Kehribar | 15 | 68 | 120 sn sonra yeniden çıkar |
-| Kırmızı okr | 5 | 68 | 60 sn sonra yeniden çıkar |
-| Kızıl kum | 22 | 68 | 70 sn sonra yeniden çıkar |
-| Kor otu | 30 | 68 | 70 sn sonra yeniden çıkar |
-| Kum | 1 | 31 | 20 sn sonra yeniden çıkar |
-| Kül | 1 | 68 | 25 sn sonra yeniden çıkar |
-| Lav camı | 40 | 68 | 110 sn sonra yeniden çıkar |
-| Lif | 1 | 221 | 20 sn sonra yeniden çıkar |
-| Mağara mantarı | 4 | 6 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
-| Nehir çakılı | 1 | 36 | 25 sn sonra yeniden çıkar |
-| Sarı okr | 5 | 68 | 60 sn sonra yeniden çıkar |
-| Sarkıt | 6 | 8 | 120 sn sonra yeniden çıkar |
-| Sünger taşı | 26 | 68 | 90 sn sonra yeniden çıkar |
-| Taş | 1 | 134 | 30 sn sonra yeniden çıkar |
-| Yanık kök | 28 | 68 | 70 sn sonra yeniden çıkar |
-| Yaprak | 1 | 19 | 90 sn sonra yeniden çıkar |
-| Yarasa gübresi | 3 | 8 | 90 sn sonra yeniden çıkar |
+| Ateş biberi | 26 | 41 | 70 sn sonra yeniden çıkar, çiğ yenir (+2 tokluk) |
+| Ateş çiçeği | 8 | 40 | 70 sn sonra yeniden çıkar |
+| Cüruf | 24 | 40 | 80 sn sonra yeniden çıkar |
+| Çakmaktaşı | 2 | 51 | 31 sn sonra yeniden çıkar |
+| Dal | 1 | 76 | 18 sn sonra yeniden çıkar |
+| Duman çiçeği | 28 | 42 | 70 sn sonra yeniden çıkar |
+| Kara tuz | 34 | 37 | 100 sn sonra yeniden çıkar |
+| Kehribar | 15 | 36 | 120 sn sonra yeniden çıkar |
+| Kırmızı okr | 5 | 42 | 60 sn sonra yeniden çıkar |
+| Kızıl kum | 22 | 47 | 70 sn sonra yeniden çıkar |
+| Kor otu | 30 | 36 | 70 sn sonra yeniden çıkar |
+| Kum | 1 | 52 | 14 sn sonra yeniden çıkar |
+| Kül | 1 | 45 | 25 sn sonra yeniden çıkar |
+| Lav camı | 40 | 27 | 110 sn sonra yeniden çıkar |
+| Lif | 1 | 115 | 14 sn sonra yeniden çıkar |
+| Mağara mantarı | 4 | 5 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
+| Nehir çakılı | 1 | 58 | 18 sn sonra yeniden çıkar |
+| Sarı okr | 5 | 33 | 60 sn sonra yeniden çıkar |
+| Sarkıt | 6 | 9 | 120 sn sonra yeniden çıkar |
+| Sünger taşı | 26 | 35 | 90 sn sonra yeniden çıkar |
+| Taş | 1 | 91 | 21 sn sonra yeniden çıkar |
+| Yanık kök | 28 | 40 | 70 sn sonra yeniden çıkar |
+| Yaprak | 1 | 15 | 63 sn sonra yeniden çıkar |
+| Yarasa gübresi | 3 | 7 | 90 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, E)
 
@@ -956,30 +963,30 @@ Adanın kuzeydoğusu, Kül Diyarı'nın kuzeyi (sıradağ çöktükten sonra Bat
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ay otu | 70 | 68 | 90 sn sonra yeniden çıkar |
-| Ay taşı | 90 | 68 | 140 sn sonra yeniden çıkar |
-| Çakmaktaşı | 2 | 97 | 45 sn sonra yeniden çıkar |
-| Dal | 1 | 122 | 25 sn sonra yeniden çıkar |
-| Gece zambağı | 60 | 68 | 90 sn sonra yeniden çıkar |
-| Gölge otu | 70 | 68 | 90 sn sonra yeniden çıkar |
-| Işık mantarı | 55 | 68 | 80 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk) |
-| Işık tozu | 75 | 68 | 110 sn sonra yeniden çıkar |
-| Kristal çiçeği | 80 | 68 | 110 sn sonra yeniden çıkar |
-| Kristal kum | 50 | 68 | 80 sn sonra yeniden çıkar |
-| Kum | 1 | 146 | 20 sn sonra yeniden çıkar |
-| Lif | 1 | 158 | 20 sn sonra yeniden çıkar |
-| Mağara mantarı | 4 | 4 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
-| Mor kök | 55 | 68 | 80 sn sonra yeniden çıkar |
-| Mor sarmaşık | 50 | 68 | 80 sn sonra yeniden çıkar |
-| Mor yosun | 45 | 68 | 70 sn sonra yeniden çıkar |
-| Nehir çakılı | 1 | 147 | 25 sn sonra yeniden çıkar |
-| Sarkıt | 6 | 9 | 120 sn sonra yeniden çıkar |
-| Taş | 1 | 142 | 30 sn sonra yeniden çıkar |
-| Yankı taşı | 80 | 68 | 120 sn sonra yeniden çıkar |
-| Yaprak | 1 | 19 | 90 sn sonra yeniden çıkar |
-| Yarasa gübresi | 3 | 11 | 90 sn sonra yeniden çıkar |
-| Yıldız çiçeği | 65 | 68 | 90 sn sonra yeniden çıkar |
-| Yıldız tozu | 85 | 68 | 120 sn sonra yeniden çıkar |
+| Ay otu | 70 | 39 | 90 sn sonra yeniden çıkar |
+| Ay taşı | 90 | 40 | 140 sn sonra yeniden çıkar |
+| Çakmaktaşı | 2 | 47 | 31 sn sonra yeniden çıkar |
+| Dal | 1 | 75 | 18 sn sonra yeniden çıkar |
+| Gece zambağı | 60 | 34 | 90 sn sonra yeniden çıkar |
+| Gölge otu | 70 | 45 | 90 sn sonra yeniden çıkar |
+| Işık mantarı | 55 | 37 | 80 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk) |
+| Işık tozu | 75 | 40 | 110 sn sonra yeniden çıkar |
+| Kristal çiçeği | 80 | 41 | 110 sn sonra yeniden çıkar |
+| Kristal kum | 50 | 36 | 80 sn sonra yeniden çıkar |
+| Kum | 1 | 54 | 14 sn sonra yeniden çıkar |
+| Lif | 1 | 131 | 14 sn sonra yeniden çıkar |
+| Mağara mantarı | 4 | 7 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
+| Mor kök | 55 | 42 | 80 sn sonra yeniden çıkar |
+| Mor sarmaşık | 50 | 45 | 80 sn sonra yeniden çıkar |
+| Mor yosun | 45 | 33 | 70 sn sonra yeniden çıkar |
+| Nehir çakılı | 1 | 72 | 18 sn sonra yeniden çıkar |
+| Sarkıt | 6 | 5 | 120 sn sonra yeniden çıkar |
+| Taş | 1 | 113 | 21 sn sonra yeniden çıkar |
+| Yankı taşı | 80 | 44 | 120 sn sonra yeniden çıkar |
+| Yaprak | 1 | 11 | 63 sn sonra yeniden çıkar |
+| Yarasa gübresi | 3 | 6 | 90 sn sonra yeniden çıkar |
+| Yıldız çiçeği | 65 | 37 | 90 sn sonra yeniden çıkar |
+| Yıldız tozu | 85 | 48 | 120 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, E)
 
@@ -1852,6 +1859,8 @@ Bütün ACT 2 ustaları aynı kuralla çalışır:
 
 Ustaların görevleri bittikçe eşinin **ACT 2 anıları** sırayla geri gelir: Sahildeki ışık (gk3), Yıldızsız yolcular (pv3), Şapka (sl4), Mor gemi (mk3), Son söz (ej4).
 
+
+> **Not (v2.11):** ikinci adada da harita seyreltildi (kuralı ACT 1 → Adanın yerleşimi → Haritadaki miktarlar). Bu bölümdeki "Adadaki sayısı" sütunları **seyreltmeden önce** ölçüldü: temel malzemeler bugün yaklaşık yarısı, bitkiler yaklaşık %60'ı kadar.
 
 ## Yüzen Kayalar — Güvenli
 
