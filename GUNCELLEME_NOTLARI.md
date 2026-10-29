@@ -7,6 +7,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.10 · 29 Ekim 2026
+
+**Oynanış**
+- **Oyunda ölüm yok:** canavar, açlık, zehir ve gece mor ışık seni bayıltır; her bayılmadan sonra uyanırsın. Oyundaki yazılar artık "öl" değil "bayıl" diyor (Tanrı modu açıklaması: "bayılmazsın, mor ışık yine bayıltır").
+- Öğreticide Zümrüt meşaleyi anlattıktan sonra kart **"Meşaleyi elinden indir"** diyor; meşalenin kutusu okla parlıyor. Meşale inmeden taş görevine geçilmiyor; inince "Meşale indi. Şimdi kazanın yanındaki 4 taşı topla." yazıyor.
+- Fareyle **yere düşmüş bir eşyaya** (av, odun, taş) tıklayınca karakter oraya yürüyüp eşyayı alıyor.
+- **Bir hayvan sana saldırırken** (ekranda seni kovalayan bir hayvan varsa ya da son 3 saniyede ısırıldıysan ya da uzaktan vurulduysan) sol tık hiçbir şeyi toplamıyor, kimseyle konuşmuyor, bir yere yürümüyor: **hep tıkladığın yöne vuruyor**. F tuşu ve telefon bundan etkilenmiyor.
+
+**Düzeltmeler**
+- "İlk düşüş" ve "İnatçı" başarımları yalnızca gece mor ışıkla bayılmayı sayıyordu; artık her bayılma sayılıyor ("Bir kez bayıl.", "5 kez bayıl, yine de devam et."). Eski kayıtlardaki bayılmalar da sayılır.
+- Oyun iki sekmede açıkken arka plandaki eski sekme dakikada bir eski halini otomatik kayda yazıyordu; sayfa yenilenince "Devam et" eski bir kaydı açıyordu. Artık oyunu en son açan sekme (Devam et, Yükle, Yeni oyun) otomatik kaydeder; eski sekme susar ve bir kez uyarır.
+
+**Kayıtlar**
+- Eski kayıtlar sorunsuz açılır. Paketten önce açık kalmış eski sürüm sekmelerini bir kez kapatmak iyi olur (onlarda bu koruma yok).
+
+**Tasarım belgesi**
+- Bayılma bölümü (ölüm yok kuralı), mor ışık ve tanrı modu satırları, başarımlar, açıklar listesi (#12 düzeldi), Ekin ve Act 3 notları "bayıl" oldu; Kontroller'de sol tık kuralları (yere düşen eşya, saldırı altında), Kayıt'ta iki sekme kuralı, öğretici tablosunda meşaleyi indirme; sürüm satırı 2.10.
+
 ## Versiyon 2.09 · 29 Ekim 2026
 
 **Oynanış**

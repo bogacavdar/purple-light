@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.09** ile birebir (29 Ekim 2026). Bu sürümde: Börü'nün ağaç dersinde Koşu parlar; görevlerde kimse başkasına yönlendirmez, tanışılmamış görev sahipleri haritada sarı "?" ile görünür; yapma görevleri tarif öğrenilince açılır; gece görev balonları okunur. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.10** ile birebir (29 Ekim 2026). Bu sürümde: oyunda ölüm yok, her şey bayıltır; öğreticide meşaleyi indirme adımı; saldırı altındayken tıklama hep vurur, yere düşen eşyaya tıklayınca oraya yürünür; eski sekme otomatik kaydın üstüne yazmaz. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

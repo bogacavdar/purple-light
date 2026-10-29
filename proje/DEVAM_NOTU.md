@@ -9,6 +9,12 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.10 (29 Ekim 2026) · ölüm yok (bayılma), meşaleyi indir, saldırı altında tıklama, iki sekme kaydı
+- v49-p3: `P3.low` (meşale ele gelince; `holdTick` indirmeyi bekler), `tzCard` "Meşaleyi elinden indir", `tzNeed` boş; v189 `want()` meşale yuvasını parlatır.
+- Taban fare tıklaması (`cv` pointerdown): `inFight()` (ekranda `chase` hayvan ya da `lastBitten` < 3 sn) → hep `attack`; yere düşen eşya (`drops`, 10 px) → `goal` (tg null). F (v204) değişmedi.
+- Başarımlar `olum1/olum5`: `faintsAll()` = `deaths` + `__p4.s.f` toplamı. Tanrı modu yazısı "bayılmazsın".
+- Kayıt: `SAVE_TAB` + `hammadde.owner` (localStorage); `claimSaves()` Devam et / Yükle / Yeni oyun / ada geçişi boot'unda; başka sekme sahiplenince `saveStale` → `saveTo('auto')` false + bir kez uyarı. Kayıt biçimi değişmedi.
+
 ## v2.09 (29 Ekim 2026) · görev düzeltmeleri, haritada ?, belge oyunun içinde, paket kuralı
 - v181: Börü ağaç dersi `DL.tree` 3. durum (ağaç kapanınca 100 sikke bilgisi, sonra `done2`); v189 `want()` ağaçta K1 parlaması.
 - v186 görev bloğu: `matsOK` tarif kuralı (h/any parçaları `foundSet` ya da `q.rec`); `reqOK` yeni `forged` türü; D1 "Ocağa odun" (`nomat`, r: E1 + forged axe); E5/B5/T6 tanış yerine `reach`; 12 thx metni; `window.__plQUnmet` + `mki` sarı "?" (tanışılmamış görev sahibi); konuşma balonları `drawEyes` sonrasında (gece üstte).
