@@ -15268,6 +15268,18 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  {const _rc=renderCraft;renderCraft=function(){potTag();const r=_rc.apply(this,arguments);potTag();return r}}
  {const _cc=closeCraft;closeCraft=function(){const r=_cc.apply(this,arguments);potTag();return r}}
  setInterval(potTag,400);
+ // v2.22: creatures that fight (aggressive, neutral, bosses) never step into a safe place (Ekin's camp, people's fires, the forge, the
+ // cauldron, your campfire): a step that would cross the edge is not taken. One that is inside anyway (a charge, a leap) walks out
+ // by the nearest way. Harmless ones wander as before; Börü's lesson creatures and the arena are left alone.
+ const fighter=a=>{if(!a||a.tut||a.ders||window.__plArena)return false;const D=ANIM[a.k];return !!D&&(D.temper==='saldırgan'||D.temper==='nötr'||!!a.boss)};
+ {const _ma=moveA;moveA=function(a,vx,vy,dt){try{if(fighter(a)&&!nearCamp(a.x,a.y)){const nx=a.x+vx*dt,ny=a.y+vy*dt;
+     if(nearCamp(nx,ny)){const okx=!nearCamp(nx,a.y),oky=!nearCamp(a.x,ny);if(!okx&&!oky){a.t=0;if(vx)a.face=vx>0?1:-1;return}
+       return _ma.call(this,a,okx?vx:0,oky&&!okx?vy:(okx?0:vy),dt)}}}catch(e){}
+   return _ma.apply(this,arguments)}}
+ const DIRS8=[[1,0],[-1,0],[0,1],[0,-1],[.707,.707],[-.707,.707],[.707,-.707],[-.707,-.707]];
+ {const _ta2=tickAnimals;tickAnimals=function(dt){const r=_ta2.apply(this,arguments);try{if(!dt)return r;for(const a of animals){if(!fighter(a)||a.mv||a.lunge||!nearCamp(a.x,a.y))continue;
+     let best=null;for(let k=40;k<=400&&!best;k+=60)for(const d of DIRS8){const x=a.x+d[0]*k,y=a.y+d[1]*k;if(!nearCamp(x,y)&&!blocked(x,y)){best=d;break}}
+     if(best){const sp=(ANIM[a.k].spd||30)*.9,nx=a.x+best[0]*sp*dt,ny=a.y+best[1]*sp*dt;if(!blocked(nx,ny)){a.x=nx;a.y=ny}if(best[0])a.face=best[0]>0?1:-1;a.st='wander'}}}catch(e){}return r}}
  // v2.18: a new creature in the almanac: a big banner in the middle ("Kurt" · Almanağa eklendi · U ile bak). The very first kill
  // also lights the almanac button blue with an arrow (like the tutorial's buttons) until the almanac is opened.
  {const st=document.createElement('style');st.textContent='.p218{border-color:#7fd0ff!important;animation:p3tab .9s ease-in-out infinite!important;position:relative;z-index:3}'+

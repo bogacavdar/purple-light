@@ -67,6 +67,7 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - **Zifiri karanlık kuralı:** gece elinde meşale yoksa, kafa lamban yoksa, bir ışığın (kamp ateşi vb.) içinde ya da bir evin içinde değilsen sayaç başlar: 3,5 sn "Kim var orada?!", 6,5 sn "Bir şey yaklaşıyor…", **8. saniyede mor ışık iner ve bayılırsın**. İlk gece süre 20 sn'dir ve **ilk gece hiçbir şey kaybolmaz**; sonraki gecelerde bayılmadaki gibi %20 kayıp. Ertesi sabah 06:00'da kumsalda uyanırsın.
 - İlk kez meşalesiz karanlığa yakalanınca biri sana bir kez **bedava Kaba meşale** fırlatır. İlk 3 gün 17:30'da "Hava kararıyor" uyarısı gelir.
 - **Güvenli yerler** (saldırgan canavarlar uzaklaşır, mor ışık gelmez): Ekin'in kampı (352 px), kişilerin ateşleri (kuzenlerin ateşleri dahil), Dursun'un ocağı, Zümrüt'ün kazanı (120 px), kendi kamp ateşin (100 px), evin içi. Ateş böcekleri ve mor kıymıklar ışık sayılmaz.
+- **Güvenli yerlere canavar girmez (v2.22):** kavga edebilen canlılar (*saldırgan* ve *nötr*, Reisler dahil) aşağıdaki güvenli yerlerin sınırında durur, içeri **adım atmaz**; kişilerin yanına gelemez. Seni kovalarken sen güvenli yere girersen sınırda kalır, sonra vazgeçer. Bir şekilde içerde kalmış biri (ör. hücum ya da sıçrama ile) en yakın kenardan dışarı yürür. *Zararsız* canlılar (tavşan, geyik…) eskisi gibi dolaşır. Börü'nün ders canlıları ve arena bu kuraldan muaf.
 
 ### Işık kaynakları
 
