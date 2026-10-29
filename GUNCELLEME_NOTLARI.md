@@ -7,6 +7,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 1.90 · 29 Ekim 2026
+
+**Arayüz**
+- Büyük haritada (M) görevi olan kişiler artık belirgin şekilde parlar: üstünde **!** olan herkesin arkasında sarı bir ışık ve dışa doğru açılan iki sarı halka, **?** olan (teslim edilecek görev) kişilerde yeşil ışık ve halkalar var. Haritayı açınca nereye gideceğin hemen görünür. Kuzenler de dahil.
+
+**Tasarım belgesi**
+- "Harita, işaretler, defterler" bölümüne görevli kişilerin haritada parlaması eklendi; sürüm satırı 1.90.
+
+---
+
 ## Versiyon 1.89 · 29 Ekim 2026
 
 **Oynanış**

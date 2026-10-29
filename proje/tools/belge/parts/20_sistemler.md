@@ -228,6 +228,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Hasan'ın ödüllerinden, hasatt
 - Sağ altta küçük harita; **M** büyük harita (tekerlek, sürükleme ya da +/− ile yakınlaştır). Geçtiğin yerin çevresi açılır (Kâşif gözü ile iki kat). Gece harita kararır ama kişiler görünür.
 - **N** bulunduğun yere işaret koyar (ad + 5 renk, en çok 40). Büyük haritada bir kişinin simgesine dokununca ok onu gösterir; varınca, ✕ ile ya da **sağ tıkla** kalkar. Kendi işaretinde "Yol göster".
 - Haritada: ölünen yerler (kurukafa), kurduğun ev/yatak/tuzaklar, kişiler.
+- **Görevi olan kişiler büyük haritada parlar (v1.90):** üstünde **!** olan (görev veren) her kişinin simgesinin arkasında sarı bir ışık ve dışa doğru açılan iki sarı halka, **?** olan (görevi teslim edilecek) kişide yeşil ışık ve halkalar olur; haritayı açan nereye gideceğini hemen görür. Şu an üstünde çalıştığın görevin kişisi ayrıca sarı zeminli işaretle gösterilir.
 - **Keşif defteri** (Kitap): her tarif kategorisinde yaptığın tariflerin oranı. **%25** → sikke, **%50** → kalıcı **ustalık**, **%100** → sikke + 100 XP. Ustalıklar: Yiyecek (tokluk %20 yavaş iner), Şifa (can 1,5 kat hızlı), alet kategorileri (%20 körelmeme), Giyim ve Zırh (+5 savunma), Ateş (meşale %30 uzun), Ağaç (odun %20 hızlı), Taş ve kil (%20 hızlı), Av ve hayvan (ganimet +%10); diğerleri o kategorinin eşyalarını %15 pahalı sattırır.
 
 ## İzler ve anılar

@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v1.90 (29 Ekim 2026) · görevli kişiler haritada parlar
+- `drawMap` içindeki `mki`: büyük haritada simgeden önce `qm0` hesaplanır ('!' sarı, '?' yeşil); `lighter` ile radyal ışık + iki genişleyen halka. Kuzenler `__plMapPeople` → `mki` üstünden aynısını alır. Kayıtlara etkisi yok.
+
 ## v1.89 (29 Ekim 2026) · mıknatıs, öğretici gösterimleri, kerevit, çekiç
 - Mıknatıs `MAG` 30 → 21 (v-? "gentle magnet" bloğu). Dursun `drawSmith`/`smithBeat` ve kuzen `drawSmithC` hızı `time*1.8` → `time*.9`.
 - İş çubuğu: `startGather` sonunda ağaçta "Kesiliyor: X ağacı", kazmada "Kazılıyor: X".
