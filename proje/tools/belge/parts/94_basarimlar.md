@@ -27,8 +27,8 @@
 | Kazazede 🔒 | Denizci Levent'in yeni gemisini kur. | Levent'in son görevi "Yeni bir gemi" (dz4) bitince. |
 | Gökyüzüne 🔒 | Tuna ile roketi fırlat. | Tuna ile roket fırlatılınca. |
 | Açık deniz 🔒 | Levent'in gemisiyle adadan ayrıl: ACT 2. | Levent'in gemisiyle ikinci adaya geçince. |
-| İlk düşüş | Bir kez öl ya da bayıl. | **Dikkat:** sayaç yalnızca gece mor ışıkla ölünce artıyor; canavar ya da açlıkla bayılmak sayılmıyor. |
-| İnatçı | 5 kez öl ya da bayıl, yine de devam et. | Yalnızca gece ölümleri sayılıyor (yukarıdaki not). |
+| İlk düşüş | Bir kez bayıl. | Her bayılma sayılır: canavar, açlık, zehir, mor ışık (v2.10). |
+| İnatçı | 5 kez bayıl, yine de devam et. | Her bayılma sayılır (v2.10). |
 | İlk reis | Bir reis öldür. | – |
 | Reis avcısı | 5 farklı reis öldür. | – |
 | Reislerin korkusu | 10 farklı reis öldür. | – |

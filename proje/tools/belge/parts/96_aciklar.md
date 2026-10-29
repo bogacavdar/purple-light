@@ -16,7 +16,7 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 | 10 | Ölü kod | Kaptan Poyraz, Balıkçı Rüstem, Sisli Ada ve sal sonu kodda duruyor ama çalışmıyor. Son Ekin görevinde iskelenin üstüne hâlâ sal oku çiziliyor; Rüstem'in kıyısında kimsesiz bir ateş yanıyor. | Temizlik. |
 | 11 | ACT 2'de ACT 1 gezginleri | Işıkçı ve Nuri'nin gemisi ikinci adada birinci adanın koordinatlarında çıkıyordu. | **Düzeltildi v1.77.** |
 | 11b | ACT 2 kişileri | Haritada yoktular; Pervin ve Tuna ile yanlarındaki bitki yüzünden E ile konuşulamıyordu. | **Düzeltildi v1.77.** |
-| 12 | Ölüm sayacı | "İlk düşüş" ve "İnatçı" "öl ya da bayıl" diyor ama yalnızca gece mor ışıkla ölmek sayılıyor. | Bayılmada da sayacı artır. |
+| 12 | Bayılma sayacı | "İlk düşüş" ve "İnatçı" yalnızca gece mor ışıkla bayılmayı sayıyordu. | **Düzeltildi v2.10:** her bayılma sayılır; oyunda ölüm yok, yazılar "bayıl" der. |
 | 13 | Çevik atılma | Yeteneğin "kısa bekleme" kısmı çalışmıyor (takla beklemesi hep 0,68 sn); enerji indirimi çalışıyor. | Beklemeyi yeteneğe göre ayarla. |
 | 14 | Kalın deri | Açıklaması "zehir, yanık ve çiğ et %40 az" diyor; zehir ve yanığı azaltmıyor, yalnızca çiğ et ve diken hasarını azaltıyor. | Etkiye bağla ya da metni düzelt. |
 | 15 | Balık ve tuzak bölgeleri | Tablolar 6 biyoma değil 3 kuşağa göre: Kayalık Dağ'da bataklık balıkları, Mor Kristal Vadisi'nde Kül Diyarı balıkları çıkıyor; ACT 2'ye özel balık yok. | Biyom başına tablo. |
