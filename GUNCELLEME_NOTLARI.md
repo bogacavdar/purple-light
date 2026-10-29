@@ -7,6 +7,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.23 · 29 Ekim 2026
+
+**Düzeltmeler**
+- **Acil: telefonda Börü'nün savuşturma dersi ilerlemiyordu.** Oyun durup "Savuş düğmesine dokun!" diyordu ama Savuş düğmesi ekranda yoktu (düğme ancak ilk savuşturmadan sonra çıkıyordu). Artık savuşturma dersi başladığı andan itibaren Savuş düğmesi Atıl düğmesinin solunda görünüyor; oyun durduğunda da mavi parlıyor ve ok onu gösteriyor.
+
+**Tasarım belgesi**
+- Oyunun akışı, Börü'nün savuşturma dersi: telefonda Savuş düğmesinin baştan görünmesi; sürüm satırı 2.23.
+
 ## Versiyon 2.22 · 29 Ekim 2026
 
 **Oynanış**

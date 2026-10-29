@@ -9,6 +9,11 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.23 (29 Ekim 2026) · telefonda savuşturma dersi kilidi (acil)
+- `parryKnown()` (hamle bloğu): ders sırasında `DL.on&&DL.mode==='parry'` yeterli (önceden `D.n>0||D.rel` da isteniyordu: ilk donmada düğme yoktu, ders kilitleniyordu).
+- `v189` `want()`: telefonda `DL.frz` ve parry dersinde `#parrybtn` parlar + ok.
+- Playwright ile 844×390'da doğrulandı (düğme görünür ve parlıyor). Eski kayıtlara etkisi yok.
+
 ## v2.22 (29 Ekim 2026) · telefon ekranları, güvenli yerler, almanak hamleleri, telefon Vur yönü
 - `v50-mob` goPhone: `b-eat`/`b-inv` artık `#bar` (☰ kutusu) başına taşınıyor; `hlCheck` `.p189,.p218`'i de görüyor.
 - `v132-dokun`: `mvDir()` (joystick yönü) → `target()` açısı ve hedefsiz `aimPoint()` bu yönde.
