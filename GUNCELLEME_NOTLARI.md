@@ -7,6 +7,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.13 · 29 Ekim 2026
+
+**Arayüz**
+- **Almanak:** sağ üstte Ayarlar'ın yanında yeşil bir kitap (kısayol **U**, Ayarlar → Kontroller'den değişir). Açıkken oyun durur; Esc ya da U kapatır.
+  - Solda yalnızca **adım bastığın biyomlar**, keşif sırasıyla. Yeni bir biyoma ilk girince "Almanak: Orman eklendi" yazar ve yeni satır açılır. Her satırda kaç canlıyı açtığın ve kaç Reis yendiğin (ör. 3/7 ★1).
+  - Sağda o biyomun bütün canlıları. Avlamadığın canlı **kara siluet ve ???**; ilk avlayınca "Almanak: Kerevit açıldı" yazar ve kart açılır: resmi, huyu, can, hasar, hız, uzaktan saldırısı, bıraktığı etki, düşürdükleri, kaç tane avladığın.
+  - Kartın altında **Reis sayacı** (ör. Reis: 3 / 9) ve dolum çubuğu. Reis yenilince kart **altına** döner: "★ Kurt Reisi yenildi".
+
+**Oynanış**
+- **Her Reis yalnızca bir kez yenilir.** Kart altına döndükten sonra o türün Reisi bir daha gelmez (önceden her seferinde %50 daha çok avla yeniden geliyordu).
+- **Reise yenilirsen** (Reis sahadayken ya da gelmek üzereyken bayılırsan; gece mor ışıkla da) Reis kaybolur ve sayaç bir eksik kalır (ör. 14 / 15). O türden bir av daha Reisi yeniden getirir; yenene kadar böyle.
+
+**Kayıtlar**
+- Kayda yeni bir şey yazılmaz. Eski kayıtlarda bugüne kadar avladıkların Almanak'ta açık gelir; daha önce yendiğin Reislerin kartları altındır ve o Reisler bir daha gelmez.
+
+**Tasarım belgesi**
+- Sistemler'e "Almanak" bölümü eklendi; Reisler bölümünde "her Reis bir kez" ve "Reise yenilmek" kuralları; sürüm satırı 2.13.
+
 ## Versiyon 2.12 · 29 Ekim 2026
 
 **Düzeltmeler**

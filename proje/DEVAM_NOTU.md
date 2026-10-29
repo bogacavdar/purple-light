@@ -9,6 +9,11 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.13 (29 Ekim 2026) · Almanak, her Reis bir kez
+- Yeni `v213` bloğu: `#b-alm` (sağ sütun, `#b-set`'ten önce), `#almov` paneli; biyomlar `__v65.seen` sırasıyla, canlılar `window.__plBANIM[b]` (v65 bloğunda açıldı, ACT 2'de o adanın listesi). Kart açılması `kills[k]>0`; Reis `__p4.bossOk/bossNeed`, `s.bc`, `s.bd`. Resimler `window.__plKind.canvas/box` (taban `kindCanvas`, v2.12 `visBox` bunun üstüne). Açıkken `paused`. KB'ye `almanac` (KeyU). `tickZone` sarmalı "Almanak: X eklendi", `killAnimal` sarmalı "Almanak: X açıldı".
+- P4: `bossNeed` artık büyümez; `bossCheck` `s.bd[k]>0` ise atlar; `bossLost()` (faint, knockedOut, nightDeath) sahadaki/sıradaki Reislerin sayacını `need-1` yapar.
+- Kayıt biçimi değişmedi.
+
 ## v2.12 (29 Ekim 2026) · vuruş kutusu çizimden, meşale satırı, seslenme balonu sabit, Nazlı
 - Taban `attack()`: `visBox(k)` her tür için bir kez çizimi ölçer (GL'de `ctx._fwd` ile karalama tuvaline, düz tuvalde köşeye çizip kopyalar; alfa > 90, can dolu → can çubuğu yok, gölge yok); göğüsten kutunun en yakın noktasına uzaklık ≤ menzil + 3 ve ~95° koni. Ölçülemezse v2.08 kuralı. `window.__plART` (kullanılmıyor, zararsız).
 - Öğretici: tutRow tz 6 + `__p3.low` → "Meşaleyi elinden indir" satırı (Taş satırı ve mavi parlama yok).
