@@ -7,6 +7,20 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 1.92 · 29 Ekim 2026
+
+**Oynanış**
+- Her görevden önce kısa bir **görev sahnesi** giriyor (yaklaşık 3 saniye): ekranın üstüne ve altına siyah sinema şeritleri kayıyor, karakterin kişiye dönüp yanına yürüyor, başında bir selam balonu çıkıyor ("Selam Dursun! Bir işin mi var?" gibi), kişi kısa bir balonla cevap veriyor ("Hah, tam seni düşünüyordum!" gibi). Sonra kişi görevi konuşma penceresinde anlatıyor; "Tamam"a basınca görev başlıyor ve "Görev başladı: …" yazıyor.
+- Sahne bir tıkla ya da bir tuşla geçilebiliyor. Kişi uzaktaysa, arenada ya da denizdeyken sahne atlanıyor.
+
+**Görsel**
+- Görev sahnesi için siyah sinema şeritleri ve kişinin başında sarımsı konuşma balonu.
+
+**Tasarım belgesi**
+- Görev kurallarına "Görev sahnesi" maddesi eklendi; sürüm satırı 1.92.
+
+---
+
 ## Versiyon 1.91 · 29 Ekim 2026
 
 **Arayüz**

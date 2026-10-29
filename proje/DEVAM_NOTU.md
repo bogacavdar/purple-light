@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v1.92 (29 Ekim 2026) · görev sahnesi
+- v186 görev bloğu: eski `offerQ` → `offerQ0`; yeni `offerQ` sahneyi oynatır (`QSC`): `body.qscene` şeritleri (CSS v189-css'in sonunda), `dlgOpen=true` ile donma, rAF ile kişiye 24 px kalana kadar kayma (engel/su varsa yürümez), `bubble()` selam (QHI), `QSC.nb` kişi balonu (QRE, `drawNB`, v55Ents), sonra `qGo()` → `offerQ0`. Konuşma kapanınca `qEnd()` "Görev başladı". Tık/tuş (350 ms sonra, tekrar tuşları hariç) sahneyi geçer. 220 px'ten uzak, arena, deniz, cine, başlık ekranında atlanır. Kayıtlara etkisi yok.
+
 ## v1.91 (29 Ekim 2026) · görev yeri = sarı bölge
 - v186 görev bloğu: `itemCircle`/`animalCircle`/`partTarget` hedefe `bios` (biyom listesi) ya da `water:1` ekler. `zoneMask(t)` W×H maske + sarı tuval (anahtar `zKey`), `inZone` (suda 3 karo pay), `zoneNear` (1 sn'de bir en yakın karo; ok oraya). `guideKey`: bölgedeysen ok yok; kişi hedeflerinde 128 px. `__plMapQ` bölgeyi `drawImage` ile boyar (gece karanlık katmanından sonra ikinci çağrı), kişi hedefinde büyük ışık + halka. Dünyadaki `drawRing` bölge hedeflerinde çizilmez. Kayıtlara etkisi yok.
 
