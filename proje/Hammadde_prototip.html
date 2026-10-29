@@ -4542,8 +4542,8 @@ cv.addEventListener('pointerdown',e=>{
   // v2.03: with a mouse a left click always strikes towards the pointer (fist or weapon); a person, a station, something to gather is still walked to
   if(e.pointerType==='mouse'&&!placing){const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S;let tg=null;try{tg=pickAt(wx,wy).tg}catch(x){tg=null}
     const noTool=tg&&((tg.kind==='tree'&&!heldKind('axe')&&!(tg.t&&tg.t.type&&tg.t.type.fruit&&!(tg.t.fr>0)))||(tg.kind==='node'&&tg.n&&tg.n.mine&&!heldKind('pick')));   // v2.07: a tree without an axe in hand, a rock without a pick: just a strike
-    {const vw=innerWidth/S,vh=innerHeight/S,fight=performance.now()-lastBitten<3000||animals.some(a=>a.st==='chase'&&a.x>cam.cx-8&&a.x<cam.cx+vw+8&&a.y>cam.cy-8&&a.y<cam.cy+vh+16);   // v2.10: an animal on screen is after you: a click only strikes
-      if(fight){goal=null;const a=tg&&tg.kind==='animal'?tg.a:null;attack(a?{x:a.x,y:a.y}:{x:wx,y:wy});e.preventDefault();return}}
+    {if(inFight()){   // v2.10: an animal on screen is after you: a click only strikes
+      goal=null;const a=tg&&tg.kind==='animal'?tg.a:null;attack(a?{x:a.x,y:a.y}:{x:wx,y:wy});e.preventDefault();return}}
     if(!tg||noTool){let dp=null,dd=10;for(const d of drops){if(d.t<1)continue;const q=Math.hypot(d.x-wx,d.y-3-wy);if(q<dd){dd=q;dp=d}}   // v2.10: a click on a dropped thing walks to it (picked up on arrival)
       if(dp){goal={tg:null,x:dp.x,y:dp.y,reach:2,t:0,chk:0,best:Math.hypot(dp.x-player.x,dp.y-player.y)};RIPPLES.push({x:dp.x,y:dp.y,t:0,c:'#f2b84b'});e.preventDefault();return}}
     if(!tg||tg.kind==='animal'||noTool){goal=null;const a=tg&&tg.kind==='animal'?tg.a:null;attack(a?{x:a.x,y:a.y}:{x:wx,y:wy});e.preventDefault();return}}
@@ -5676,6 +5676,7 @@ function weapon(){let h=held();if(!h||!GT[h]||GT[h].kind==='torch')h=equip.silah
   return torchHeld()?{n:null,dmg:7,reach:19,cd:.48,torch:1}:{n:null,dmg:4,reach:16,cd:.45}}   // v1.36: no second weapon on your back → the torch itself strikes
 let atkCd=0,swing=null,lastBitten=-1e9;
 // running from an attack: no gathering until you are clear (so a mis-tap does not stop you at a stone)
+function inFight(){const vw=innerWidth/S,vh=innerHeight/S;return performance.now()-lastBitten<3000||animals.some(a=>a.st==='chase'&&a.x>cam.cx-8&&a.x<cam.cx+vw+8&&a.y>cam.cy-8&&a.y<cam.cy+vh+16)}   // v2.10: an animal on screen chases you (or bit you in the last 3 s)
 function underAttack(){if(performance.now()-lastBitten<3000)return true;for(const a of animals)if(a.st==='chase'&&Math.hypot(a.x-player.x,a.y-player.y)<170)return true;return false}
 function attack(focus){
   if(atkCd>0||gathering||craftOpen||dlgOpen||paused||fading||wake||placing)return;
@@ -14969,6 +14970,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const FAR=30;
  const fruitReady=t=>!!(t.type&&t.type.fruit&&!(t.fr>0));
  addEventListener('keydown',e=>{try{if(e.code!=='KeyE'||e.repeat)return;if(onTitle||dlgOpen||craftOpen||paused||wake||fading||sailing||placing)return;
+   if(inFight()){e.preventDefault();e.stopImmediatePropagation();return}   // v2.10: no gathering or talking with F while an animal is after you (keyboard only)
    const tg=eTarget();if(tg&&!/^(node|tree)$/.test(tg.kind))return;   // a person, a station, a field…: the usual
    for(const d of drops)if(d.t>=1&&Math.hypot(d.x-player.x,d.y-player.y+2)<28)return;   // loose things at your feet first
    const hAxe=!!heldKind('axe'),hPick=!!heldKind('pick'),axe=hAxe,pick=hPick;   // v2.07: the tool must be in your hand, not just in the bag
