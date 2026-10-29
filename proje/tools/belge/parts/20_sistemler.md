@@ -22,6 +22,7 @@
 
 - Bütün tuşlar **Ayarlar → Kontroller**'den yeniden atanabilir. Telefondaki dövüş düğmelerinin yeri ve boyutu (%60–200) aynı yerden ayarlanır.
 - E artık hiç vurmaz; yalnızca toplar ve konuşur.
+- **Karakterin 8 yönü (v1.94):** karakter yürüdüğü yöne göre 8 pozdan birine döner: **ön** (aşağı), **arka** (yukarı), **sağ/sol profil** (yalnızca tam yana yürürken), **ön-çapraz** (sağ-aşağı / sol-aşağı: hafif yana bakan ön poz, karakter yaratma ekranındaki gibi) ve **arka-çapraz** (sağ-yukarı / sol-yukarı: arkadan, başı hafif o yana dönük; yanağın bir kısmı görünür). Yön, hareketin açısından seçilir: yatayla dikey bileşen ikisi de yeterince büyükse (yaklaşık 22°–68° arası) çapraz poz. Durunca son poz kalır; vurunca, toplarken ya da biriyle konuşurken karakter yine o işe dönük 4 yönlü poza geçer. Karakter yaratma ekranında sürükleyerek çevirince aynı 8 poz görülür (arka-çaprazlar dahil).
 - Telefon yatay oynanır; dikey tutulunca "Telefonunu yan çevir" ekranı çıkar ("Yine de dikey oyna" ile geçilebilir).
 
 # Temel sistemler

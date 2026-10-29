@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v1.94 (29 Ekim 2026) · 8 yönlü karakter
+- Yeni `<script id="v194">`: `drawChibi` en dış sarmalayıcı `o.back34` (arka + yanak/kulak/burun ucu şeridi, kaskta yok). `drawPlayer` sarmalayıcı kareden kareye hareketten yön çıkarır (`__plD8`; iki bileşen de >%38 ise çapraz), çizim süresince `drawChibi`'yi geçici sarar ve oyuncu çiziminde fx/fy'yi çapraza, `q34`, yukarıdaysa `back34` yapar. `player.face` 4 yönlü kalır (saldırı, toplama aynı). `player.face` değişince çapraz kapanır. v63 `VIEWS` arka-çaprazlar artık `back34`. Kayıtlara etkisi yok.
+
 ## v1.93 (29 Ekim 2026) · göreve özel balonlu sahne
 - v186 görev bloğu: `qLines(q)` görevin `say` metnini düz metne çevirip cümlelere böler (≤120 harf parçalar, en çok 4), selam (QHI) + tepki (QMID) + kabul (QOK) ekler. `qNext()` balonları sırayla gösterir (süre 1,8–5,2 sn, tık/tuş ilerletir, Esc `qGo`). `drawQL` satır kıran balon (150 px). `offerQ0(q,who,fq,short)`: sahneden sonra kısa pencere (ad + 📍 + ödül). Not: `plain` adı oyunda zaten var, `qPlain` kullanıldı. Kayıtlara etkisi yok.
 

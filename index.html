@@ -1344,7 +1344,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.93</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.94</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -10782,7 +10782,7 @@ const cc=document.querySelector('#creator .ccard'),cp=$('cprev');
 {const h=document.createElement('p');h.className='v63rh';h.textContent=TOUCH?'Parmağınla sürükle: karakteri çevir':'Fareyle sürükle: karakteri çevir';const cr=document.querySelector('#creator .crot');if(cr)cr.after(h)}
 const VIEWS=[{fx:0,fy:1},{fx:1,fy:1,q34:1},{fx:1,fy:0},{fx:1,fy:-1,q34:1,back:1},{fx:0,fy:-1},{fx:-1,fy:-1,q34:1,back:1},{fx:-1,fy:0},{fx:-1,fy:1,q34:1}];
 cDraw=function(){const g=cp.getContext('2d');g.clearRect(0,0,64,64);const L=buildLook();
-  const a=((cRot*90+V63.cang)%360+360)%360;let V=VIEWS[Math.round(a/45)%8];if(V.back)V={fx:0,fy:-1};
+  const a=((cRot*90+V63.cang)%360+360)%360;let V=VIEWS[Math.round(a/45)%8];if(V.back)V={fx:V.fx,fy:-1,q34:1,back34:1};   // v1.94: a turned back
   g.save();g.translate(32,chibiFeet(L,{},32)*2);g.scale(2,2);drawChibi(g,0,0,L,Object.assign({noShadow:0},V));g.restore()};
 {let dr=null;
   cp.addEventListener('pointerdown',e=>{dr={id:e.pointerId,x:e.clientX};try{cp.setPointerCapture(e.pointerId)}catch(_){}e.preventDefault()});
@@ -14873,6 +14873,33 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    goal=null;const a=tg&&tg.kind==='animal'?tg.a:null;attack(a?{x:a.x,y:a.y}:{x:wx,y:wy});e.preventDefault();e.stopImmediatePropagation()}catch(x){}},true);
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v189: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v194">
+// v1.94: eight facings for the hero. Walking diagonally down shows the slightly turned front pose (as in the creator),
+// diagonally up a slightly turned back pose; only straight sideways is the full profile. player.face stays 4-way for the game.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ const D8={x:0,y:0,on:false,fx:0,fy:1,lx:null,ly:null};window.__plD8=D8;
+ // a slightly turned back: the back of the head with a sliver of cheek and ear on the side you look to
+ const _dc=drawChibi;drawChibi=function(g,x,y,L,o){o=o||{};
+  if(!o.back34)return _dc.apply(this,arguments);
+  const s=o.fx>0?1:-1,o2=Object.assign({},o,{fx:0,fy:-1,back34:0,q34:0});const r=_dc.call(this,g,x,y,L,o2);
+  try{if(!o.helm){const p=(a,b,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round(a),Math.round(b),w,h)};const X=Math.round(x),hy=Math.round(y)+(o.bob||0)-16,sk=L.skin||'#e8b890',sd=L.skinD||sk;
+    const ex=s>0?X+4:X-6;p(ex,hy+3,2,5,sk);p(ex+(s>0?1:0),hy+8,1,1,sd);p(s>0?X+5:X-6,hy+4,1,2,sd);   // cheek and the ear's shade
+    const nx=s>0?X+6:X-7;p(nx,hy+5,1,2,sk)}}catch(e){}   // the tip of the nose just shows
+  return r};
+ // which way you actually move (only for drawing)
+ const _dp=drawPlayer;drawPlayer=function(){try{const px=player.x,py=player.y;
+   if(D8.lx!=null){const dx=px-D8.lx,dy=py-D8.ly,l=Math.hypot(dx,dy);
+     if(l>.15&&l<20){const ax=Math.abs(dx)/l,ay=Math.abs(dy)/l;if(ax>.38&&ay>.38){D8.on=true;D8.x=Math.sign(dx);D8.y=Math.sign(dy);D8.fx=player.face.x;D8.fy=player.face.y}else D8.on=false}}
+   D8.lx=px;D8.ly=py;
+   if(D8.on&&(player.face.x!==D8.fx||player.face.y!==D8.fy))D8.on=false;   // turned to do something: back to four ways
+  }catch(e){}
+  if(!D8.on)return _dp.apply(this,arguments);
+  const dc=drawChibi;drawChibi=function(g,x,y,L,o){if(g===ctx&&o&&o.fx===D8.fx&&o.fy===D8.fy&&window.__v63&&window.__v63.pl){o=Object.assign({},o,{fx:D8.x,fy:D8.y,q34:1,back34:D8.y<0?1:0})}return dc.call(this,g,x,y,L,o)};
+  try{return _dp.apply(this,arguments)}finally{drawChibi=dc}};
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v194: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

@@ -7,6 +7,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 1.94 · 29 Ekim 2026
+
+**Görsel**
+- Karakter artık **8 yöne** bakıyor. Çapraz yürürken yana dönmüş gibi görünmüyor:
+  - Sağ-aşağı / sol-aşağı: karakter yaratma ekranındaki **hafif yana bakan ön poz**.
+  - Sağ-yukarı / sol-yukarı: yeni **arkadan, başı hafif o yana dönük poz** (yanağın ve kulağın bir kısmı görünüyor).
+  - Tam yana yürürken yan profil; yukarı arka, aşağı ön (eskisi gibi).
+- Durunca son poz kalıyor. Vururken, toplarken ya da konuşurken karakter o işe dönüyor.
+- Karakter yaratma ekranında karakteri sürükleyip çevirince arka-çapraz pozlar da görünüyor (önceden düz arka görünüyordu).
+
+**Tasarım belgesi**
+- Kontroller bölümüne "Karakterin 8 yönü" eklendi; sürüm satırı 1.94.
+
+---
+
 ## Versiyon 1.93 · 29 Ekim 2026
 
 **Oynanış**
