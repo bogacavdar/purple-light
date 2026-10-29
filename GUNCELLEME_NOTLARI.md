@@ -7,6 +7,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.08 · 29 Ekim 2026
+
+**Düzeltmeler**
+- Vuruş efekti canlıya değdiği hâlde hasar vermiyordu (özellikle çapraz vuruşlarda; örneğin Börü'nün kerevit dersinde). Vuruşun değip değmediği artık vuruşun çizildiği yerden (karakterin göğsü) canlının gövdesine göre ve canlının boyu hesaba katılarak, daha geniş bir açıyla ölçülüyor: efekt canlıya değdiği an hasar veriyor. Bütün canlılar için geçerli.
+
+**Oynanış**
+- Öğreticide balta parçaları tamamlanınca artık **Börü** "Şimdi kuzeydeki Demirci Dursun'a git, baltayı o döver, benden selam söyle" diyor (önceden Dursun "Börü haber yolladı" diye çağırıyordu). Dursun'a gidince önce onunla **tanışıyorsun**, sonra parçaları görüp örsü açıyor.
+
+**Tasarım belgesi**
+- Silahlar bölümüne "vuruş ne zaman değer" kuralı, öğretici 13. adıma Börü'nün yönlendirmesi ve Dursun'la tanışma eklendi; sürüm satırı 2.08.
+
+---
+
 ## Versiyon 2.07 · 29 Ekim 2026
 
 **Düzeltmeler**

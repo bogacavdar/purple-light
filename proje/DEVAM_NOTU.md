@@ -9,6 +9,10 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.08 (29 Ekim 2026) · vuruş isabeti, Börü → Dursun tanışma
+- Taban `attack()` döngüsü: mesafe göğüs (player.y-6) → gövde (a.y-min(8,r)), sınır `reach+r+3`; açı normalize, eşik -0.1 (yaklaşık 95°), gövdeye yapışıkken açısız. P4 vuruşları da bu tabanı çağırdığı için hepsine geçerli.
+- CALLS `d13`: artık Börü çağırır (Dursun'un haberi yok). `talkSmith` tz 13: `smith.met` değilse önce tanışma ("Börü yolladı, selamı var"), sonra örs. Kayıtlara etkisi yok.
+
 ## v2.07 (29 Ekim 2026) · F ve sol tık: alet elde olmalı
 - v204 F seçimi: `axe/pick` artık `heldKind` (çanta değil). Kanvas sol tık: elde baltasız ağaç (meyvesi olgun değilse) ya da elde kazmasız maden hedefi boş yer sayılır → `attack`. Kayıtlara etkisi yok.
 

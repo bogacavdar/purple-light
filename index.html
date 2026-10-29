@@ -1344,7 +1344,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.07</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.08</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -2183,7 +2183,8 @@ function talkMarket(){
     {t:'Hoşça kal',f:bye}],market);
 }
 function talkSmith(){
-  if(tz===13){smith.met=true;return say(`Hah! Börü'nün selamı mı? O deli oğlan hâlâ kerevitlerle mi dövüşüyor? Ben <b>Dursun</b>, adanın demircisi. Getirdiğin parçalar güzel. Hadi, örse koy, <b>Taş balta</b>nı birlikte dövelim!`,[{t:'Örse koyalım',pri:1,fresh:1,f:()=>{bye();openMenu('forge');selectRecipe('Taş balta');renderCraft();renderTut()}}],smith)}
+  if(tz===13&&!smith.met)return say(`Ooo, yeni bir yüz! Kazazede sen misin? Hoş geldin evlat. Ben <b>Dursun</b>, adanın demircisi. Ocağım hiç sönmez, örsüm hiç susmaz. Seni buraya hangi rüzgâr attı?`,[{t:'Börü yolladı, selamı var',pri:1,fresh:1,f:()=>{smith.met=true;talkSmith()}}],smith);   // v2.08: you meet Dursun first
+  if(tz===13){smith.met=true;return say(`Börü mü? O deli oğlan hâlâ kerevitlerle mi dövüşüyor? Ne istiyormuş bakalım… Hah, balta parçaları! Sopa, keskin taşlar, ipler: güzel iş çıkarmışsın. Hadi, örse koy, <b>Taş balta</b>nı birlikte dövelim!`,[{t:'Örse koyalım',pri:1,fresh:1,f:()=>{bye();openMenu('forge');selectRecipe('Taş balta');renderCraft();renderTut()}}],smith)}
   if(tz&&tz<13)return say('Örs sıcak ama sen daha hazır değilsin. Önce adanın insanlarıyla tanış; zamanı gelince Börü seni bana yollar.',[{t:'Tamam',pri:1,f:bye}],smith);
   const opts=[{t:'Alet dök',pri:1,fresh:1,f:()=>{bye();forgeWho=smith;openMenu('forge')}},{t:'Zırh lazım',f:()=>say('Zırh mı? Ona ben karışmam; kardeşim <b>Durmuş</b> hemen yandaki örste miğfer, zırh, eldiven, çizme döver. Benim işim ok, yay, kılıç, mızrak ve aletler.',[{t:'Anladım',pri:1,f:talkSmith}],smith)},{t:'Aletimi bile',fresh:1,f:()=>{bye();openMenu('shop')}},{t:'Hoşça kal',f:bye}];
   if(!smith.met){smith.met=true;return say('Hah! Kazazede sen misin? Ben <b>Dursun</b>, adanın silah demircisi. Kılıç dövmeye bayılırım; ormanda yaban domuzları, gece kurtlar dolaşıyor, bir <b>taş kılıç</b> iyi gelir. <b>Balta, kazma, bıçak, tırmık</b> da döverim. Zümrüt\'ün kazanı ip, sopa, çömlek işine iyidir; <b>alet ise örste dövülür</b>. Parçaları getir, birlikte döveriz. Körelen aletini de bilerim.',opts,smith)}
@@ -5682,8 +5683,8 @@ function attack(focus){
   if(focus){const dx=focus.x-player.x,dy=focus.y-player.y;player.face={x:Math.abs(dx)>=Math.abs(dy)?Math.sign(dx):0,y:Math.abs(dy)>Math.abs(dx)?Math.sign(dy):0}}
   const fx=player.face.x,fy=player.face.y;swing={t:0,fx,fy,w:w.reach};sfx('swing');
   const dm=Math.round(w.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1));let hitAny=false;
-  for(const a of animals.slice()){const dx=a.x-player.x,dy=a.y-6-player.y+6,d=Math.hypot(dx,dy);if(d>w.reach+ANIM[a.k].r)continue;
-    if(d>10&&(dx*fx+dy*fy)/d<.15)continue;
+  for(const a of animals.slice()){const ar=ANIM[a.k].r,dx=a.x-player.x,dy=(a.y-Math.min(8,ar))-(player.y-6),d=Math.hypot(dx,dy);if(d>w.reach+ar+3)continue;   // v2.08: from the chest (where the blow is drawn) to the body, with the body's size
+    {const fl=Math.hypot(fx,fy)||1;if(d>ar+6&&(dx*fx+dy*fy)/(d*fl)<-.1)continue}   // a wide cone: whatever the blow touches is hit, diagonals too
     hitAny=true;a.hp-=dm;a.flash=.15;madPack(a);a.kb={vx:dx/(d||1)*140,vy:dy/(d||1)*140,t:.12};
     floats.push({x:a.x,y:a.y-12,t:0,text:`-${dm}`,color:'#ffffff'});sfx('hit');
     if(a.hp<=0)killAnimal(a);if(w.n!==null||w.dmg>3)break}
@@ -7911,7 +7912,7 @@ const CALLS=[
  {k:'z4',when:()=>tz===4&&!foundSet.has('Kaba meşale')&&!tzNeed().length,who:()=>witch,g:'pot',txt:()=>'Tamam, hepsini topladın! Gel, tarifi kazanda birlikte öğrenelim.'},
  {k:'z5',when:()=>tz===5&&!tzNeed().length,who:()=>witch,txt:()=>TOUCH?'Hepsi tamam! Soldaki el ikonuna dokun, meşaleni kendin yap.':'Hepsi tamam! Tab\'a bas, meşaleni kendi ellerinle yap.'},
  {k:'z7',when:()=>tz===7,who:()=>witch,g:'pot',txt:()=>'Taşlar tamam! Gel bakalım, keskin taşın tarifini birlikte öğrenelim.'},
- {k:'d13',when:()=>tz===13,who:()=>smith,g:'smith',txt:()=>'Börü parçaları topladığını haber yolladı! Gel, baltanı örste birlikte dövelim.'},
+ {k:'d13',when:()=>tz===13&&!(inv['Taş balta']>0),who:()=>alp,g:'smith',txt:()=>'Parçalar tamam! Şimdi kuzeydeki Demirci Dursun\'a git; baltayı o döver. Benden selam söyle!'},   // v2.08: Börü sends you; Dursun does not know yet
  {k:'t1',when:()=>!tz&&torchTut===1&&met&&!ownsKind('torch')&&canBrew(REC.get('Kaba meşale')),who:()=>npc,txt:()=>TOUCH?'Malzemeler tamam evlat! El ikonuna dokun, meşaleni yap.':'Malzemeler tamam evlat! Tab\'a bas, meşaleni yap.'}];
 function npcCall(c){const who=c.who(),txt=c.txt();B3.call={who,txt,t:7};sfx('found');{const vw2=vw/S,vh2=vh/S,on=who.x>cam.cx&&who.x<cam.cx+vw2&&who.y>cam.cy&&who.y<cam.cy+vh2;if(!on)announce(who.name,'“'+txt+'”')}
   if(c.g&&Math.hypot(who.x-player.x,who.y-player.y)>70)guideTo(c.g,14);renderTut()}

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.07** ile birebir (29 Ekim 2026). Bu sürümde: F ve sol tık, elde balta yokken ağaca, elde kazma yokken madene yönelmez. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
+Sürüm: **Versiyon 2.08** ile birebir (29 Ekim 2026). Bu sürümde: vuruş efekti canlıya değdiğinde hasar veriyor; öğreticide Börü seni Dursun'a yolluyor, Dursun'la önce tanışıyorsun. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -172,7 +172,7 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 | 10 | Nazlı | Keskin taşı sat | Nazlı doğudaki Börü'yü söyler |
 | 11 | Börü | Börü ile konuş, çıkan **kereviti yumrukla** (yumruk 4 hasar). Bilgisayarda dövüş şöyle öğretilir: **WASD ya da yön tuşlarıyla** yürüyüp kerevite yaklaş, **sol tıkla** vur (bu derste sol tık yürütmez, tıklanan yöne yumruk atar; telefonda kerevite dokunulur); ardından **atılma dersi** ve **yetenek ağacı** (aşağıda) | Atılma öğrenilir (ücretsiz); Taş balta, Sopa ve İp tarifleri öğrenilmiş olur; +6 Taş; Börü'nün yanına 3 Dal, 8 Lif, 4 Taş konur |
 | 12 | Börü | Balta parçalarını elle yap: 2 Keskin taş → 1 Sopa → 2 Keskin taş → 2 İp (2 Taş da yanında kalsın). Sıradaki parçanın malzemesi tamamsa el ikonu (Tab) parlar; el yapımı ekranında o parçanın (Keskin taş, Sopa ya da İp) **Yap** düğmesi mavi parlar, ok onu gösterir ve liste oraya kayar | — |
-| 13 | Dursun | Kuzeydeki Demirci Dursun'da örste **Taş balta**yı döv (ücretsiz): önce **Hepsini koy**, sonra **Döv** düğmesi sırayla parlar ve okla gösterilir. Sonra baltayı eline al: önce envanter (çanta, I) düğmesi, envanter açılınca **Taş balta**, seçilince boş bir **alet yuvası**, en son alttaki kutusu sırayla parlar ve okla gösterilir. Balta dövüldüğü anda öğretici "baltayı eline al" adımına geçer (Dursun'un penceresi düğmeye basılmadan kapansa bile); bu adımda Dursun'la konuşulursa yeniden balta dövdürmez, malzeme istemez, "baltan zaten dövüldü, eline al" der (v2.06) | Öğretici biter; ok Ekin'i gösterir, Ekin ilk ana görevi verir |
+| 13 | Dursun | Parçalar tamamlanınca **Börü** "Şimdi kuzeydeki Demirci Dursun'a git, baltayı o döver, benden selam söyle" der (Dursun'un önceden haberi yoktur). Dursun'a gidince önce **tanışılır** (Dursun kendini tanıtır, "Börü yolladı, selamı var"), sonra parçaları görüp örsü açar. Örste **Taş balta**yı döv (ücretsiz): önce **Hepsini koy**, sonra **Döv** düğmesi sırayla parlar ve okla gösterilir. Sonra baltayı eline al: önce envanter (çanta, I) düğmesi, envanter açılınca **Taş balta**, seçilince boş bir **alet yuvası**, en son alttaki kutusu sırayla parlar ve okla gösterilir. Balta dövüldüğü anda öğretici "baltayı eline al" adımına geçer (Dursun'un penceresi düğmeye basılmadan kapansa bile); bu adımda Dursun'la konuşulursa yeniden balta dövdürmez, malzeme istemez, "baltan zaten dövüldü, eline al" der (v2.06) | Öğretici biter; ok Ekin'i gösterir, Ekin ilk ana görevi verir |
 
 **Gösterme kuralı (v1.89):** öğretici bir düğmeye basmanı istediğinde o düğme (sol menüdeki ikonlar, menülerin içindeki Ye/Yap/Hepsini koy/Döv düğmeleri, envanterdeki eşya, alet yuvası) **mavi parlar** ve yanında yanıp sönen bir **ok** olur. Sıra gerekiyorsa düğmeler sırayla parlar. Adım biter bitmez parlama ve ok söner (örneğin 5 böğürtlen yenince yemek düğmesi artık parlamaz).
 
@@ -477,6 +477,8 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Hasan'ın ödüllerinden, hasatt
 | Balta | Taş 9 · Çakmaktaşı/Granit 12 · Kuvars 16 · Tunç 20 · Bazalt 24 · Demir 30 · Obsidyen 36 | 20 | 0,5 sn |
 | Kazma | Taş 8 · Çakmaktaşı/Granit 11 · Kuvars 14 · Tunç 18 · Bazalt 21 · Demir 26 · Obsidyen 32 | 20 | 0,5 sn |
 | Asalar, ateşli silahlar | ACT 2 bölümündeki tablo | 210–340 | |
+
+- **Vuruş ne zaman değer (v2.08):** vuruşun çizildiği yer (karakterin göğsü) ile canlının **gövdesi** arasındaki uzaklık, silahın menzili + canlının boyu + 3 pikseli geçmiyorsa ve canlı vuruş yönünün en çok ~95° yanındaysa (çaprazlar dahil, geniş bir koni) vuruş değer ve hasar verir. Vuruş efekti canlının görseline değdiği an hasar sayılır; çok yakındaki (gövdesine yapışık) canlı yönden bağımsız vurulur. Yumruk ve tek elli silahlar ilk değdiği canlıya vurur.
 
 - Gerçek hasar = silah × (1 + 0,03 × (seviye − 1)) × Güç etkisi 1,2 × Güçsüzlük 0,8. Silah yuvasındaki silah, elde silah yokken kullanılır.
 - Vuruş üç evrelidir (hazırlık, darbe, takip); isabette kısa bir donma olur, ıskalarsan bir an açık kalırsın. Her isabet silahı 1 köreltir.
