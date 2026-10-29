@@ -111,3 +111,17 @@ Oyun şu an **tek oyunculu**dur ve öyle kalacaktır. İleride **4 kişiye kadar
 
 - Düşünülen yol: oyunculardan biri **ev sahibi** olur, diğerleri doğrudan onun tarayıcısına bağlanır (WebRTC). Oyun sunucusu kiralamak gerekmez; oyun GitHub Pages'te kalır. Yalnızca bağlantıyı başlatmak için küçük bir eşleştirme servisi (ya da elle paylaşılan bağlantı kodu), bazı mobil ağlarda da bir aracı (TURN) gerekebilir.
 - Başlamadan önce bu belgeye ayrı bir "Çok oyunculu mod" bölümü yazılır (öğretici, uyku, Reis ödülleri, durma, kayıt kuralları); kod ondan sonra gelir.
+
+**Bulgular (29 Ekim 2026 incelemesi):** oyun baştan tek oyunculu kurulmuş; çok oyuncu için şunlar değişmeli:
+- **Tek oyuncu → oyuncu listesi:** kodda tek bir `player` var; her oyuncunun canı, tokluğu, envanteri, sikkesi, yetenekleri, elindeki alet ve kamerası ayrı olmalı.
+- **Ortak dünya:** ağaçlar, madenler, canavarlar, yerdeki eşyalar, gün/gece herkeste aynı olmalı; canavar yapay zekâsı yalnızca ev sahibinde döner, diğerlerine saniyede 10–20 kez dünyanın son hali gider.
+- **Durma kalkar:** şu an menü ya da konuşma açılınca oyun duruyor; çok oyunculuda dünya kimse için durmaz.
+- **Tasarım kararları gerekir:** öğretici ve görevler kişiye mi özel ortak mı; uyku (herkes yatağa mı girmeli); Reis kimin avıyla gelir, ödül kime; bayılma; kayıt (dünya ev sahibinde, karakter herkeste mi).
+- **Gecikme:** karakterler ağdan gelen konumlar arasında yumuşak kaymalı; saldırı ve "!" işaretleri herkeste aynı anda görünmeli.
+- En büyük iş **hazırlık**tır (oyuncu verisini dünyadan ayırmak); bu aşamada oyun dışarıdan değişmez, tek oyunculu oyun bozulmadan çalışmaya devam etmelidir.
+
+**Maliyet (tahmin):**
+- **Emek:** birkaç küçük sürüm değil, ayrı bir proje; kabaca **birkaç hafta**lık geliştirme (sıra: belge → hazırlık → 2 kişilik deneme → 4 kişi ve cilalama).
+- **Para, ev sahipli yol:** oyun sunucusu yok, GitHub Pages ücretsiz. Eşleştirme için PeerJS'in herkese açık ücretsiz sunucusu kullanılabilir (PeerJS kalıcı kullanım için kendi sunucunu önerir; garanti yok).
+- **Aracı (TURN), yalnızca doğrudan bağlanamayan oyuncular için:** 4 kişilik bu oyun için ev sahibinin gönderdiği veri tahminen oyuncu başına saatte birkaç yüz MB'tır. Hazır servislerin ücretsiz katmanları küçüktür (ör. Metered: ayda 0,5 GB ücretsiz, ilk ücretli paket ayda 99 $, Ekim 2026). Daha ucuz yol: küçük bir kiralık sunucuya kendi TURN'ümüzü kurmak (ör. Hetzner CPX22 ayda yaklaşık 6,5 €, 20 TB trafik, Şubat 2026 listesi). Fiyatlar başlamadan önce yeniden kontrol edilir.
+- **Kendi oyun sunucusu** (ev sahibi çıkınca oyun bitmesin, yabancılarla eşleşme, hileye kapalılık istenirse): aynı boyda bir kiralık sunucu (aylık birkaç €–10 €) ve oyun mantığının bir kısmını sunucuya taşıma emeği.
