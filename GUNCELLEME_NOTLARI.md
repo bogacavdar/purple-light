@@ -16,6 +16,8 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 **Tasarım belgesi**
 - "Karakterin 8 yönü" maddesi yeni çapraz gövdelerle yeniden yazıldı; sürüm satırı 1.99.
 
+- Belgenin başındaki sürüm satırı kısaldı: yalnızca son sürümün tek cümlelik özeti ve güncelleme notlarına bağlantı (eski sürümlerin listesi kaldırıldı).
+
 ---
 
 ## Versiyon 1.98 · 29 Ekim 2026

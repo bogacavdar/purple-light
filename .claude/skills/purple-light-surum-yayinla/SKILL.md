@@ -35,7 +35,7 @@ Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır. Bir adım atl
 
 ## 4. Belgeyi yenile
 
-- Belgenin başındaki sürüm satırını (`parts/00_giris.md`, "Sürüm: **Versiyon X.YZ** ile birebir (tarih; …)") her sürümde yeni numaraya ve tarihe getir, sonuna o sürümün bir cümlelik özetini ekle. Atlanırsa yayındaki belge eski sürümü gösterir.
+- Belgenin başındaki sürüm satırını (`parts/00_giris.md`) her sürümde **yeniden yaz**: "Sürüm: **Versiyon X.YZ** ile birebir (tarih). Bu sürümde: <yalnızca bu sürümün tek cümlelik özeti>. Bütün sürümlerin değişiklikleri: [Güncelleme notları](…GUNCELLEME_NOTLARI.md)." Eski sürümlerin özetleri bu satıra **eklenmez** (Boğaç, 29 Ekim 2026: satır uzayıp okunmuyordu; geçmiş güncelleme notlarında). Atlanırsa yayındaki belge eski sürümü gösterir.
 
 - Depo kökünden: `bash proje/tools/belge/yayinla.sh`. Bu `belge.html`, `belge.pdf`, `belge.md` ve `proje/` kopyalarını yeniler.
 
