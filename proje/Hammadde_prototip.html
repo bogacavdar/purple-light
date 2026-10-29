@@ -1340,7 +1340,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.12</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.13</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -5679,14 +5679,18 @@ let atkCd=0,swing=null,lastBitten=-1e9;
 function inFight(){const vw=innerWidth/S,vh=innerHeight/S;return performance.now()-lastBitten<3000||animals.some(a=>a.st==='chase'&&a.x>cam.cx-8&&a.x<cam.cx+vw+8&&a.y>cam.cy-8&&a.y<cam.cy+vh+16)}   // v2.10: an animal on screen chases you (or bit you in the last 3 s)
 function underAttack(){if(performance.now()-lastBitten<3000)return true;for(const a of animals)if(a.st==='chase'&&Math.hypot(a.x-player.x,a.y-player.y)<170)return true;return false}
 // v2.12: what a creature's drawing covers (measured once per kind by drawing it off screen; the shadow does not count)
-const VISB=new Map();
-function visBox(k){if(VISB.has(k))return VISB.get(k);let B=null;const c=document.createElement('canvas');c.width=c.height=160;const g=c.getContext('2d');
+// v2.13: the same off-screen drawing also gives the almanac its pictures (kindCanvas: 160×160, the creature stands at 80,110 facing right)
+const VISB=new Map(),VISC=new Map();
+function kindCanvas(k){if(VISC.has(k))return VISC.get(k);const c=document.createElement('canvas');c.width=c.height=160;const g=c.getContext('2d');
   const A0={k,x:80,y:110,hp:(ANIM[k]&&ANIM[k].hp)||1,st:'wander',t:0,dx:0,dy:0,face:1,atk:0,flash:0,kb:null,step:0,mad:false,pk:0,vis:1};
   if(ctx.__gl||('_fwd' in ctx)){const f0=ctx._fwd;try{ctx._fwd=g;g.setTransform(1,0,0,1,0,0);drawAnimal(A0,0)}catch(e){}finally{ctx._fwd=f0}}   // the GPU canvas forwards its calls to the scratch canvas
   else{try{ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,160,160);drawAnimal(A0,0);g.drawImage(cv,0,0,160,160,0,0,160,160);ctx.restore()}catch(e){try{ctx.restore()}catch(_){}}}   // plain canvas: draw in a corner (redrawn next frame), copy it
-  try{const d=g.getImageData(0,0,160,160).data;let l=999,t=999,r=-1,b=-1;for(let y=0;y<160;y++)for(let x=0;x<160;x++)if(d[(y*160+x)*4+3]>90){if(x<l)l=x;if(x>r)r=x;if(y<t)t=y;if(y>b)b=y}
+  VISC.set(k,c);return c}
+function visBox(k){if(VISB.has(k))return VISB.get(k);let B=null;
+  try{const g=kindCanvas(k).getContext('2d'),d=g.getImageData(0,0,160,160).data;let l=999,t=999,r=-1,b=-1;for(let y=0;y<160;y++)for(let x=0;x<160;x++)if(d[(y*160+x)*4+3]>90){if(x<l)l=x;if(x>r)r=x;if(y<t)t=y;if(y>b)b=y}
     if(r>=0)B={l:l-80,r:r+1-80,t:t-110,b:b+1-110}}catch(e){}
   VISB.set(k,B);return B}
+window.__plKind={canvas:kindCanvas,box:visBox};
 function attack(focus){
   if(atkCd>0||gathering||craftOpen||dlgOpen||paused||fading||wake||placing)return;
   const w=weapon();atkCd=w.cd;
@@ -8552,7 +8556,7 @@ const KB=[['up','Yukarı yürü','KeyW','W'],['left','Sola yürü','KeyA','A'],[
   ['interact','Topla / konuş','KeyE','E'],['attack','Vur (tıklamak da vurur)','KeyQ','Q'],['dodge','Atıl / takla (yerleştirirken döndür)','Space','Boşluk'],['eat','Ye','KeyF','F'],['hand','Eli boşalt','KeyH','H'],
   ['inv','Envanter','KeyI','I'],['craft','Kazan','KeyB','B'],['handcraft','El yapımı','Tab','Tab'],['smith','Demirci','KeyT','T'],['book','Tarif kitabı','KeyK','K'],['sell','Pazar','KeyP','P'],
   ['char','Karakter','KeyC','C'],['skills','Yetenekler','KeyY','Y'],['quests','Görevler','KeyG','G'],['map','Harita','KeyM','M'],['camp','Kamp ateşi kur','KeyV','V'],['torch','Meşaleye reçine sür','KeyL','L'],['mark','Haritaya işaret','KeyN','N'],
-  ['dogs','Robot köpekler','KeyR','R'],['settings','Ayarlar','KeyO','O'],['cheatCoin','Hile: +100 sikke','KeyZ','Z'],['cheatXP','Hile: +100 XP','KeyX','X'],['parry','Savuştur / gard (basılı tut)','F13','—']];
+  ['dogs','Robot köpekler','KeyR','R'],['almanac','Almanak','KeyU','U'],['settings','Ayarlar','KeyO','O'],['cheatCoin','Hile: +100 sikke','KeyZ','Z'],['cheatXP','Hile: +100 XP','KeyX','X'],['parry','Savuştur / gard (basılı tut)','F13','—']];
 const KDEF={},KLAB={};for(const [id,,code,lab] of KB){KDEF[id]=code;KLAB[id]=lab}
 const KEYSTORE='hammadde.b5.keys.v1';
 let BIND={};   // action → {c:code,l:label}; only actions that differ from the default
@@ -9478,7 +9482,7 @@ const P4BIG={'Mağara ayısı':1,'Timsah':1,'Yaban öküzü':1,'Yaban atı':1};
 const P4H={'Geyik':19,'Yaban atı':19,'Turna kuşu':24,'Mağara ayısı':17,'Yaban öküzü':14,'Dağ keçisi':16,'Muflon':14,'Karaca':13,'Timsah':6,'Engerek':5,'Kerevit':7,'Kül cini':15};
 const bossName=k=>tcase(k)+' Reisi';
 function bossNeed(k){let n=P4FIX[k];if(!n){const a=P4AB[k]||1.5;n=Math.round(5+2.2*a);if(ANIM[k]&&ANIM[k].hp>=150)n-=2;n=Math.max(5,Math.min(15,n))}
-  const done=P4.s.bd[k]||0;return Math.round(n*(1+.5*done))}
+  return n}   // v2.13: each Reis comes once, so the count no longer grows
 const P4B={};   // boss name → base species
 function makeBoss(k){const D=ANIM[k];if(!D||D.boss)return null;const nm=bossName(k);if(ANIM[nm])return nm;const z=D.z||0,hpM=4,dmM=z||(window.__I1B&&window.__I1B[0]&&window.__I1B[0].indexOf(k)>=0)?1.5:1.7;
   const B=Object.assign({},D,{temper:'saldırgan',still:false,boss:1,base:k,hp:Math.round(D.hp*hpM),spd:Math.round(z?Math.max(D.spd,34):Math.min(64,Math.max(D.spd,34)*1.08)),aggro:Math.max(D.aggro||0,170),
@@ -9500,7 +9504,7 @@ function spawnBoss(k){const nm=makeBoss(k);if(!nm||bossAlive(k))return false;con
 function bossWarn(k){const nm=bossName(k);sfx('bad');p4Rumble();announce(nm,'Bir reis geliyor!');
   toast(`${P4.s.bc[k]||0} ${k} avladın: sürünün reisi öfkeyle geliyor! Kırmızı halkaya dikkat et, ${TOUCH?'Atıl düğmesiyle':'Boşluk ile'} kaç.`,true)}
 function bossCheck(){if(!met||wake||fading||sailing||onTitle||tz||P4.bossWait>0)return;if(window.__plLessonOn&&window.__plLessonOn())return; /* v1.79: no Reis during Börü's lesson */ if(nearCamp(player.x,player.y))return;
-  for(const k in P4.s.bc){if(!bossOk(k)||bossAlive(k)||(P4.s.bc[k]||0)<bossNeed(k))continue;
+  for(const k in P4.s.bc){if(!bossOk(k)||(P4.s.bd[k]||0)>0||bossAlive(k)||(P4.s.bc[k]||0)<bossNeed(k))continue;   // v2.13: a beaten Reis never comes back
     const q=P4.bossQ.find(o=>o.k===k);if(!q){P4.bossQ.push({k,t:2.6});bossWarn(k)}}}
 function tickBossQ(dt){for(let i=P4.bossQ.length-1;i>=0;i--){const q=P4.bossQ[i];q.t-=dt;if(q.t>0)continue;
   if(nearCamp(player.x,player.y)||(window.__plLessonOn&&window.__plLessonOn())){q.t=2;continue}if(spawnBoss(q.k)||bossAlive(q.k))P4.bossQ.splice(i,1);else q.t=1.5}}
@@ -9522,8 +9526,10 @@ function tickBosses(dt,before){for(const a of animals){if(!a.boss)continue;const
 const _add=add;add=function(name){try{if(!onTitle&&typeof name==='string')P4.s.g[name]=(P4.s.g[name]||0)+1}catch(e){}return _add.apply(this,arguments)};
 const _handCraft=handCraft;handCraft=function(r,quiet){const ok=_handCraft.apply(this,arguments);if(ok)P4.s.c++;return ok};
 const _brew=brew;brew=function(){const r=pot.r,FG=station==='forge',b0=r?(inv[r]||0):0;const out=_brew.apply(this,arguments);if(r&&FG&&(inv[r]||0)>b0)P4.s.c++;return out};
-const _faint=faint;faint=function(){if(!fading){const c=deathCause(lastHurt)||'Bilinmiyor';P4.s.f[c]=(P4.s.f[c]||0)+1;P4.bossWait=60;P4.bossQ.length=0}return _faint.apply(this,arguments)};
-const _knockedOut=knockedOut;knockedOut=function(){P4.s.f['Karanlık']=(P4.s.f['Karanlık']||0)+1;P4.bossWait=60;P4.bossQ.length=0;return _knockedOut.apply(this,arguments)};
+function bossLost(){try{const L=new Set();for(const a of animals)if(a.boss&&a.base)L.add(a.base);for(const q of P4.bossQ)L.add(q.k);for(const k of L){const n=bossNeed(k);if((P4.s.bc[k]||0)>=n)P4.s.bc[k]=n-1}}catch(e){}}   // v2.13: beaten by a Reis: it leaves and the count stays one short
+P4.bossLost=bossLost;
+const _faint=faint;faint=function(){if(!fading){const c=deathCause(lastHurt)||'Bilinmiyor';P4.s.f[c]=(P4.s.f[c]||0)+1;bossLost();P4.bossWait=60;P4.bossQ.length=0}return _faint.apply(this,arguments)};
+const _knockedOut=knockedOut;knockedOut=function(){P4.s.f['Karanlık']=(P4.s.f['Karanlık']||0)+1;bossLost();P4.bossWait=60;P4.bossQ.length=0;return _knockedOut.apply(this,arguments)};
 const _deathDrop=deathDrop;deathDrop=function(){const r=_deathDrop.apply(this,arguments);P4.lc=coins;return r};
 const _claimGrave=claimGrave;claimGrave=function(){const r=_claimGrave.apply(this,arguments);P4.lc=coins;return r};
 const _killAnimal=killAnimal;killAnimal=function(a){const boss=!!a.boss,base=a.base||a.k,D=ANIM[a.k];const r=_killAnimal.apply(this,arguments);
@@ -9719,7 +9725,7 @@ const _restore=restore;restore=function(d){const r=_restore.apply(this,arguments
 const _resetState=resetState;resetState=function(){const r=_resetState.apply(this,arguments);p4Load(null);return r};
 try{if(hot&&hot.data&&hot.data.inv)p4Load(hot.data)}catch(e){}
 P4.lc=coins;
-P4.spawnBoss=spawnBoss;P4.bossNeed=bossNeed;P4.bossName=bossName;P4.makeBoss=makeBoss;P4.BIG=P4BIG;
+P4.spawnBoss=spawnBoss;P4.bossNeed=bossNeed;P4.bossOk=bossOk;P4.bossName=bossName;P4.makeBoss=makeBoss;P4.BIG=P4BIG;
 window.__p4=P4;
 }).toString()+')()')}catch(e){try{window.__hamErr('v49-p4: '+(e&&e.message||e))}catch(_){}}})();
 </script>
@@ -11137,6 +11143,7 @@ const BANIM=[
 window.__I1A=[];BANIM.forEach(L=>L.forEach(x=>{if(window.__I1A.indexOf(x[0])<0)window.__I1A.push(x[0])}));window.__I1B=BANIM.map(L=>L.map(x=>x[0]));   // v100: island 1 creatures
 if(I2C){const LD={land:t=>t<=1,any:t=>t<=2};for(const b in I2C.anim)BANIM[+b]=I2C.anim[b].map(a=>{const D=Object.assign({},a.d);D.land=LD[D.land]||LD.land;D.drops=D.drops.map(x=>x.slice());ANIM[a.n]=D;window.__I2A.add(a.n);if(a.pack)PACK[a.n]=a.pack;
     const cond=a.cond==='night'?(w=>w&&isNight()):a.cond==='lvl'?(w=>w&&lvl>=6):null;return cond?[a.n,a.want,cond]:[a.n,a.want]})}
+window.__plBANIM=BANIM;   // v2.13: the almanac reads each land's creatures
 function spawnIn(k,want,b){const D=ANIM[k];if(!D)return;const P=PACK[k],of=animals.filter(a=>a.k===k),have=P?new Set(of.map(a=>a.pk)).size:of.length;if(have>=want)return;
   for(let tries=0;tries<12;tries++){const an=Math.random()*Math.PI*2,d=330+Math.random()*140,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;
     if(x<16||y<16||x>W*T-16||y>H*T-16||!reachAt(x,y)||!D.land(tileAt(x,y))||blocked(x,y)||bioAt(x,y)!==b)continue;
@@ -14888,6 +14895,98 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
 @keyframes qbar{from{transform:translateY(-100%)}to{transform:none}}@keyframes qbar2{from{transform:translateY(100%)}to{transform:none}}
 @media (prefers-reduced-motion:reduce){body.qscene::before,body.qscene::after{animation:none}}
 </style>
+<script id="v213">
+// v2.13: the Almanac. A small book by Settings (U). Left: the lands you have set foot in, in the order you found them.
+// Right: every creature of the chosen land; a black silhouette and question marks until you first kill one, then its picture and numbers,
+// the Reis count (3 / 7), and a gold card once its Reis is beaten (each Reis comes once).
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ const st=document.createElement('style');st.textContent=`
+#b-alm svg{width:62%;height:62%}
+#almov{position:fixed;inset:0;z-index:115;background:rgba(8,6,14,.72);display:flex;align-items:center;justify-content:center;font-family:var(--font)}
+#almov[hidden]{display:none}
+#almov .ap{width:min(1000px,96vw);height:min(640px,90vh);background:#1b1726;border:3px solid #4a3d6a;box-shadow:0 0 0 2px #0c0a12,0 12px 40px rgba(0,0,0,.6);display:flex;flex-direction:column;color:#f3ecd8}
+#almov .ah{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#251f36;border-bottom:2px solid #3a2f55}
+#almov .ah b{font-size:18px;letter-spacing:.5px}#almov .ah small{color:#b9aed6;margin-left:10px;font-size:12px}
+#almov .ax{background:#3a2f55;color:#f3ecd8;border:2px solid #6a5a94;min-width:34px;height:34px;font-size:18px;cursor:pointer}
+#almov .ab{flex:1;display:flex;min-height:0}
+#almov .al{width:190px;flex:none;border-right:2px solid #3a2f55;overflow:auto;padding:8px;display:flex;flex-direction:column;gap:6px;background:#17131f}
+#almov .al button{text-align:left;padding:9px 10px;background:#241e33;border:2px solid #3a2f55;color:#f3ecd8;font:inherit;font-size:14px;cursor:pointer;display:flex;justify-content:space-between;gap:6px}
+#almov .al button.on{background:#3a2f55;border-color:#c9a0ff}
+#almov .al button small{color:#b9aed6;font-size:12px}
+#almov .ag{flex:1;overflow:auto;padding:10px;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;align-content:start;align-items:start;grid-auto-rows:auto}
+#almov .ac{background:#221c2f;border:2px solid #3a2f55;padding:8px;display:block;height:auto}#almov .ac>*+*{margin-top:4px}
+#almov .ac>*{flex:none}
+#almov .ac canvas{display:block;width:100%;height:96px;object-fit:contain;image-rendering:pixelated;background:radial-gradient(ellipse at 50% 70%,#2f2842,#1b1726 70%)}
+#almov .ac h4{margin:2px 0 0;font-size:15px}#almov .ac p{margin:0;font-size:12px;line-height:1.35;color:#d8cfe8}
+#almov .ac .rz{margin-top:6px!important;padding-top:5px;border-top:1px dashed #4a3d6a;font-size:13px;color:#f3ecd8}
+#almov .ac .rz i{display:block;height:5px;background:#3a2f55;margin-top:4px}#almov .ac .rz i b{display:block;height:100%;background:#c9a0ff}
+#almov .ac.lock h4{color:#8d84a3;letter-spacing:3px}#almov .ac.lock p{color:#7d7494}
+#almov .ac.gold{background:linear-gradient(160deg,#4a3a12,#2a2008 70%);border-color:#f2c94c;box-shadow:inset 0 0 0 1px #8a6a1a}
+#almov .ac.gold h4{color:#ffe08a}#almov .ac.gold .rz{color:#ffe08a;border-top-color:#8a6a1a}
+#almov .ac .tg{display:inline-block;font-size:11px;padding:1px 5px;border:1px solid currentColor;margin-left:4px;vertical-align:middle}
+#almov .ae{grid-column:1/-1;color:#b9aed6;padding:20px;text-align:center}
+@media (max-width:640px){#almov .ab{flex-direction:column}#almov .al{width:auto;flex-direction:row;overflow-x:auto;border-right:0;border-bottom:2px solid #3a2f55}#almov .al button{flex:none}#almov .ag{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}`;
+ document.head.appendChild(st);
+ // the button: a small green book, right next to Settings
+ const bt=document.createElement('button');bt.className='ib';bt.id='b-alm';bt.type='button';bt.title='Almanak (U)';bt.setAttribute('aria-label','Almanak (U)');
+ bt.innerHTML='<svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="2" width="11" height="12" fill="#2f6a3a"/><rect x="2" y="2" width="2" height="12" fill="#1f4a28"/><rect x="13" y="3" width="1" height="11" fill="#efe6cf"/><rect x="4" y="14" width="10" height="1" fill="#efe6cf"/><rect x="6" y="5" width="5" height="4" fill="#d8c070"/><rect x="7" y="6" width="1" height="1" fill="#2f6a3a"/><rect x="9" y="6" width="1" height="1" fill="#2f6a3a"/><rect x="6" y="10" width="5" height="1" fill="#d8c070"/></svg>';
+ const setB=$('b-set');if(setB&&setB.parentNode)setB.parentNode.insertBefore(bt,setB);
+ const ov=document.createElement('div');ov.id='almov';ov.hidden=true;ov.setAttribute('role','dialog');ov.setAttribute('aria-label','Almanak');
+ ov.innerHTML='<div class="ap"><div class="ah"><span><b>Almanak</b><small id="alm-sub"></small></span><button class="ax" id="alm-x" type="button" aria-label="Kapat">✕</button></div><div class="ab"><div class="al" id="alm-l"></div><div class="ag" id="alm-g"></div></div></div>';
+ document.body.appendChild(ov);
+ const A={open:false,b:-1,wasP:false};window.__plAlm=A;
+ const lands=()=>{const V=window.__v65;return V?[...V.seen].filter(b=>BNAME[b]):[]};
+ const kindsOf=b=>{const L=(window.__plBANIM||[])[b]||[],o=[];for(const e of L){const k=e[0];if(ANIM[k]&&!ANIM[k].boss&&o.indexOf(k)<0)o.push(k)}return o};
+ const P4=()=>window.__p4||{s:{bc:{},bd:{}}};
+ const known=k=>(kills[k]||0)>0;
+ function pic(k,lock,gold){const src=window.__plKind.canvas(k),B=window.__plKind.box(k)||{l:-16,r:16,t:-24,b:2};
+   const w=B.r-B.l+6,h=B.b-B.t+6,c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.imageSmoothingEnabled=false;
+   g.drawImage(src,80+B.l-3,110+B.t-3,w,h,0,0,w,h);
+   if(lock){g.globalCompositeOperation='source-in';g.fillStyle='#07060b';g.fillRect(0,0,w,h)}
+   return c}
+ function card(k){const D=ANIM[k],S=P4().s,ok=P4().bossOk?P4().bossOk(k):false,need=ok&&P4().bossNeed?P4().bossNeed(k):0,bd=(S.bd&&S.bd[k])||0,bc=Math.min(need,(S.bc&&S.bc[k])||0);
+   const el=document.createElement('div');el.className='ac';
+   if(!known(k)){el.classList.add('lock');el.appendChild(pic(k,true));el.insertAdjacentHTML('beforeend',`<h4>&#63;&#63;&#63;</h4><p>Henüz avlamadın.</p>${ok?`<div class="rz">Reis: ? / ?</div>`:''}`);return el}
+   if(bd>0)el.classList.add('gold');
+   el.appendChild(pic(k,false));
+   const tcol=D.temper==='saldırgan'?'#ff8a7a':D.temper==='nötr'?'#f2d070':'#9fe08a';
+   const drops=[];for(const d of D.drops||[])if(drops.indexOf(d[0])<0)drops.push(d[0]);
+   const fx=D.fx&&typeof FXD!=='undefined'&&FXD[D.fx[0]]?FXD[D.fx[0]].n:'';
+   el.insertAdjacentHTML('beforeend',`<h4>${esc(k)}<span class="tg" style="color:${tcol}">${esc(D.temper||'')}</span></h4>
+     <p>Can <b>${D.hp}</b> · Hasar <b>${D.dmg||'—'}</b> · Hız <b>${D.spd||0}</b>${D.ranged?' · uzaktan saldırır':''}${fx?' · '+esc(fx):''}</p>
+     <p>Düşürdükleri: ${drops.length?drops.map(esc).join(', '):'—'}</p><p>Avladığın: <b>${kills[k]||0}</b></p>
+     ${ok?(bd>0?`<div class="rz">★ ${esc(k)} Reisi yenildi</div>`:`<div class="rz">Reis: <b>${bc} / ${need}</b><i><b style="width:${need?Math.round(bc/need*100):0}%"></b></i></div>`):''}`);
+   return el}
+ function render(){const L=lands();if(A.b<0||L.indexOf(A.b)<0)A.b=L.length?L[0]:-1;
+   const ll=$('alm-l');ll.innerHTML='';
+   for(const b of L){const K=kindsOf(b),n=K.filter(known).length,g=K.filter(k=>((P4().s.bd||{})[k]||0)>0).length;const x=document.createElement('button');x.type='button';x.className=b===A.b?'on':'';
+     x.innerHTML=`<span>${esc(BNAME[b])}</span><small>${n}/${K.length}${g?' ★'+g:''}</small>`;x.onclick=()=>{A.b=b;render()};ll.appendChild(x)}
+   const gg=$('alm-g');gg.innerHTML='';
+   if(A.b<0){gg.innerHTML='<div class="ae">Henüz hiçbir yeri keşfetmedin.</div>';$('alm-sub').textContent='';return}
+   const K=kindsOf(A.b);$('alm-sub').textContent=`${BNAME[A.b]} · ${K.filter(known).length} / ${K.length} canlı`;
+   for(const k of K)gg.appendChild(card(k));
+   if(!K.length)gg.innerHTML='<div class="ae">Bu bölgede canlı yok.</div>'}
+ function open(){if(onTitle||wake||fading||cine.on)return;if(dlgOpen)bye();if(craftOpen)closeCraft();A.open=true;A.wasP=paused;paused=true;for(const k in keys)keys[k]=false;
+   try{const b=bioAt(player.x,player.y);if(lands().indexOf(b)>=0)A.b=b}catch(e){}
+   ov.hidden=false;render();sfx('pick')}
+ function close(){if(!A.open)return;A.open=false;ov.hidden=true;paused=A.wasP&&!$('pause').hidden}
+ A.openF=open;A.close=close;
+ bt.addEventListener('click',()=>{if(A.open)close();else open()});
+ $('alm-x').addEventListener('click',close);
+ ov.addEventListener('pointerdown',e=>{if(e.target===ov)close()});
+ addEventListener('keydown',e=>{if(A.open){if(e.key==='Escape'||e.code==='KeyU'){close();e.preventDefault();e.stopImmediatePropagation()}return}
+   if(e.code!=='KeyU'||e.repeat||onTitle||dlgOpen||craftOpen||paused||wake||fading)return;const t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'))return;open();e.preventDefault();e.stopImmediatePropagation()},true);
+ // a new land joins the almanac; a first kill opens a card
+ {const _tz=tickZone;tickZone=function(){const V=window.__v65,n=V?V.seen.size:0;const r=_tz.apply(this,arguments);
+   try{if(V&&V.seen.size>n&&n>0&&!onTitle&&met&&!wake){const b=[...V.seen].pop();setTimeout(()=>toast(`Almanak: ${BNAME[b]} eklendi (${window.__plKey?window.__plKey('almanac'):'U'})`),1800)}}catch(e){}return r}}
+ {const _ka=killAnimal;killAnimal=function(a){const k=a&&a.k,first=k&&!a.boss&&!a.tut&&!(kills[k]>0);const r=_ka.apply(this,arguments);
+   try{if(first&&kills[k]>0)toast(`Almanak: ${k} açıldı`)}catch(e){}if(A.open)try{render()}catch(e){}return r}}
+ // beaten by the island's dark at night: the Reis leaves the same way
+ {const _nd=nightDeath;nightDeath=function(){try{const P=window.__p4;if(P&&P.bossLost)P.bossLost()}catch(e){}return _nd.apply(this,arguments)}}
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v213: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 <script id="v211">
 // v2.11: fewer basics on the map, so they come back ~30% sooner
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
