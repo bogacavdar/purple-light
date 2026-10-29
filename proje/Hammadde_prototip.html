@@ -1343,7 +1343,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.18</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.19</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -15030,7 +15030,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  {const _tz=tickZone;tickZone=function(){const V=window.__v65,n=V?V.seen.size:0;const r=_tz.apply(this,arguments);
    try{if(V&&V.seen.size>n&&n>0&&!onTitle&&met&&!wake){const b=[...V.seen].pop();setTimeout(()=>toast(`Almanak: ${BNAME[b]} eklendi (${window.__plKey?window.__plKey('almanac'):'U'})`),1800)}}catch(e){}return r}}
  {const _ka=killAnimal;killAnimal=function(a){const k=a&&a.k,first=k&&!a.boss&&!a.tut&&!(kills[k]>0);const r=_ka.apply(this,arguments);
-   try{if(first&&kills[k]>0)toast(`Almanak: ${k} açıldı`)}catch(e){}if(A.open)try{render()}catch(e){}return r}}
+   try{if(first&&kills[k]>0){if(window.__plAlmNew)window.__plAlmNew(k);else toast(`Almanak: ${k} açıldı`)}}catch(e){}if(A.open)try{render()}catch(e){}return r}}
  // beaten by the island's dark at night: the Reis leaves the same way
  {const _nd=nightDeath;nightDeath=function(){try{const P=window.__p4;if(P&&P.bossLost)P.bossLost()}catch(e){}return _nd.apply(this,arguments)}}
 }
@@ -15253,6 +15253,30 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  addEventListener('pointerup',()=>setTimeout(clr,0));addEventListener('pointercancel',()=>setTimeout(clr,0));
  // v2.18: a creature that is attacking always looks at you (the hero used to see its back when it backed off to shoot or when
  // you circled it during a wind-up). Only while its body is flying fast (a leap, a lunge, a charge run) it looks where it goes.
+ // v2.18: a new creature in the almanac: a big banner in the middle ("Kurt" · Almanağa eklendi · U ile bak). The very first kill
+ // also lights the almanac button blue with an arrow (like the tutorial's buttons) until the almanac is opened.
+ {const st=document.createElement('style');st.textContent='.p218{border-color:#7fd0ff!important;animation:p3tab .9s ease-in-out infinite!important;position:relative;z-index:3}'+
+   '#p218ptr{position:fixed;z-index:70;width:0;height:0;border-top:16px solid transparent;border-bottom:16px solid transparent;border-right:24px solid #7fd0ff;filter:drop-shadow(0 0 2px #11170f) drop-shadow(0 0 1px #11170f);pointer-events:none;animation:b3nudge .7s ease-in-out infinite}'+
+   '#p218ptr.lf{border-right:none;border-left:24px solid #7fd0ff}#p218ptr[hidden]{display:none!important}@media (prefers-reduced-motion:reduce){.p218,#p218ptr{animation:none!important}}';document.head.appendChild(st)}
+ const aptr=document.createElement('div');aptr.id='p218ptr';aptr.hidden=true;aptr.setAttribute('aria-hidden','true');document.body.appendChild(aptr);
+ let almGlow=false;
+ const almKey=()=>{try{return window.__plKey?window.__plKey('almanac'):'U'}catch(e){return 'U'}};
+ const visEl=el=>{if(!el||el.hidden)return false;const r=el.getBoundingClientRect();return r.width>0&&r.height>0};
+ function almPlace(){const A=window.__plAlm;if(almGlow&&A&&A.open)almGlow=false;
+   document.querySelectorAll('.p218').forEach(e=>e.classList.remove('p218'));
+   if(!almGlow||onTitle||wake||dlgOpen||craftOpen){aptr.hidden=true;return}
+   let el=$('b-alm');if(!visEl(el)){const t=$('v50tog');el=visEl(t)?t:null}
+   if(!el){aptr.hidden=true;return}el.classList.add('p218');
+   const r=el.getBoundingClientRect(),lf=r.right+34>innerWidth;aptr.classList.toggle('lf',lf);aptr.hidden=false;
+   aptr.style.left=Math.round(lf?r.left-30:r.right+6)+'px';aptr.style.top=Math.round(r.top+r.height/2-16)+'px'}
+ setInterval(()=>{try{almPlace()}catch(e){}},200);addEventListener('resize',()=>{try{almPlace()}catch(e){}});
+ {const _rs=resetState;resetState=function(){almGlow=false;return _rs.apply(this,arguments)}}
+ window.__plAlmNew=function(k){
+   const firstEver=!Object.keys(kills).some(x=>x!==k&&(kills[x]||0)>0&&ANIM[x]&&!ANIM[x].boss);
+   try{announce(k,`Almanağa eklendi · ${almKey()} ile bak`)}catch(e){toast(`${k} almanağa eklendi`)}
+   try{sfx('found')}catch(e){}
+   if(firstEver){almGlow=true;setTimeout(()=>{try{toast(`İlk avın almanağa eklendi! Almanağı aç: ${almKey()} (parlayan kitap)`)}catch(e){}},2600)}
+   try{almPlace()}catch(e){}};
  // v2.18: the skill tree keeps a margin above and below (the bottom skill, Koşu, sat on the edge and was cut in half); while Koşu
  // is the one to buy, the window scrolls so it sits a little above the lower edge (Börü's note on top pushed the tree down).
  {const st=document.createElement('style');st.id='v218-sk';st.textContent='.skbox{height:calc(100% - var(--nd) - 24px);top:calc(var(--nd) / 2 + 12px)}';document.head.appendChild(st)}
