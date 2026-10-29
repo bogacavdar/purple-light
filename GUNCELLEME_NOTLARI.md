@@ -7,6 +7,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.26 · 30 Ekim 2026
+
+**Oynanış**
+- **Tarifini bilmediğin eşyayı isteyen görev artık verilmiyor.** Bir görev tariften yapılan bir eşya istiyorsa (ör. Zümrüt'ün Gelincik boyası, Dursun'un Taş kazması, zırhçının Tunç miğferi) o tarifi kazanda öğrenmeden görev açılmıyor; kişinin başında ! çıkmıyor. Görevin kitaba tarif yazması yetmiyor. 139 görevden 40'ı bu kurala giriyor; toplanan, kesilen, avlanan ya da tarlada yetişen şeyleri isteyen görevler eskisi gibi.
+- **Kişi neden iş vermediğini söylüyor:** görevi tarif yüzünden bekleyen biriyle konuşunca bir kez "Sana bir işim var ama önce X tarifini öğrenmelisin (Zümrüt'ün kazanında)" yazıyor; pazarı, örsü normal açılıyor.
+- **Ekin'in yeni ayak işi:** bütün görevler kilitliyse ve eksik olan bir tarifse Ekin "**X tarifini öğren**" diyor; kazanda öğrenince kendiliğinden bitiyor (15 sikke, 15 XP). Tarifin bir malzemesini hiç görmediysen önce onu getirtiyor. Ekin'in "alet dövdür" ve "ışık yap" işleri de tarif bilinmiyorsa önce tarifi öğretiyor.
+
+**Arayüz**
+- **Telefonda uzun konuşmalar ekrandan taşmıyor:** konuşma penceresi en çok görünen ekran kadar uzuyor (iPhone'un adres çubuğu da hesaba katılıyor), yazı içinde kayıyor, cevap düğmeleri hep altta; yazı gelirken pencere son satırı izliyor.
+
+**Kayıtlar**
+- Bu kuraldan önce alınmış ve süren görevler (ör. tarifi bilinmeden alınmış Gelincik boyası) olduğu gibi kalıyor; istersen görev kartındaki × ile bırakabilirsin.
+
+**Tasarım belgesi**
+- Görevlerin temel kuralları 5. madde: tarif bilinmeden görev verilmez, kişi söyler, Ekin'in "tarifi öğren" işi; telefonda konuşma penceresi. Sürüm satırı 2.26.
+
 ## Versiyon 2.25 · 29 Ekim 2026
 
 **Oynanış**

@@ -9,6 +9,14 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.26 (30 Ekim 2026) · tarif bilinmeden görev yok (acil), telefonda konuşma penceresi
+- Görev bloğu: `craftOnly(n)` (`expand` hepsi `REC` ve `!isNatural`), `needRec(q)` (b/h/wear/any parçaları, `foundSet`'te yoksa); `matsOK` artık `needRec(q).length` ise kapalı (v2.09'daki `q.rec` muafiyeti kalktı). 139 görevden 40'ı etkilendi (Playwright ile sayıldı; doğal olanlar — Gece sefası, odun, tarla ürünü — etkilenmedi).
+- Yeni parça türü `kn` (tarif bil): `prog`, `plab` ("X tarifini kazanda öğren"), `partTarget` (kazan, `kaz:1`).
+- `pickFiller`: sıradaki görevin eksiği tarifse `['rec',n]` → `mkFiller` `F-rec-<n>` (`remote:1`, 15/15); tarifin görülmemiş malzemesi varsa önce `mat` işi; `tool`/`has` işleri tarif yoksa önce `rec`.
+- `interact` sarmalı: görevi tarif bekleyen kişiyle konuşunca bir kez toast (`REC_HINT`). Test için `window.__plNeedRec(id)`.
+- `v218` bloğu `style#v226-dlg`: telefonda `#dlg` `max-height:calc(100dvh - 48px)`, `#dtext` kendi içinde kayar, `.dch` altta; `MutationObserver` yazarken son satırı izler.
+- Eski kayıtlar: süren görev olduğu gibi kalır.
+
 ## v2.25 (29 Ekim 2026) · ders parlamaları, Kazanın dili, ağaç/taş/lif miktarları, kazan hedefi
 - `renderTut` parlamaları (`b-hand`, el yapımı satırı, kazan `pfill/brew`) ve v189 `#pot` parlaması `!tzNeed().length` koşulunda.
 - Görev Z2: `["learn", 8]`; `partProg 'learn'` artık `found.length` (toplam); etiket "tarif (toplam)"; hedef `cauldron` + `kaz:1`; `window.__plQT=()=>TG`; v218'de `drawGuide` sarmalı kazanın etrafına sarı ışık; `__plMapQ` r:0 hedefe 128 px yakınken ışık çizmez.

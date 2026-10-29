@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.25** ile birebir (29 Ekim 2026). Bu sürümde: Zümrüt'ün derslerinde malzemeler toplanmadan hiçbir şey parlamıyor; Kazanın dili toplam 8 tarif; ağaç kesince 1 dal + 1 yaprak; taş ve lif ~%35 fazla, ağaç ~%25 az; kazan görevinde hedef kazan ve kazan parlıyor.
+Sürüm: **Versiyon 2.26** ile birebir (30 Ekim 2026). Bu sürümde: tarifi bilinmeyen eşyayı isteyen görev verilmiyor (40 görev); Ekin'in "tarifi öğren" ayak işi; telefonda uzun konuşmalar ekrandan taşmıyor.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

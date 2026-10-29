@@ -14609,14 +14609,18 @@ function reqOK(r){switch(r[0]){case 'q':return isDone(r[1]);case 'lv':return lvl
   case 'tool':return bestTool(r[1])>=r[2];case 'forged':return [...forged].some(n=>GT[n]&&GT[n].kind===r[1]);   // v2.09: an axe forged at the anvil (the tutorial's counts)
  case 'has':return r[1].some(n=>own(n)>0);case 'dull':return dull();case 'nuri':return trader.state==='here';case 'anyq':return r[1].some(isDone)}return true}
 function matsOK(q){if(q.nomat)return true;for(const p of q.p)if(p[0]==='b'&&!seenOK(p[1]))return false;
-  const rec=q.rec||[],kn=n=>foundSet.has(n)||rec.indexOf(n)>=0;for(const p of q.p){if(p[0]==='h'&&!kn(p[1]))return false;if(p[0]==='any'&&!p[1].some(kn))return false}   // v2.09: a thing to make needs its recipe
+  if(needRec(q).length)return false;   // v2.26: a job that wants something made needs its recipe learned first (the book alone is not enough)
   return true}
+// v2.26: things that only come from a recipe (not found, felled, hunted) and the recipes a job still needs learned: [[names…], …]
+function craftOnly(n){const L=expand(n);return L.length>0&&L.every(m=>REC.has(m)&&!isNatural(m))}
+function needRec(q){const out=[];for(const p of q.p){if((p[0]==='b'||p[0]==='h'||p[0]==='wear')&&craftOnly(p[1])&&!foundSet.has(p[1]))out.push([p[1]]);else if(p[0]==='any'&&p[1].every(craftOnly)&&!p[1].some(n=>foundSet.has(n)))out.push(p[1].slice())}return out}
 function unlocked(q){return q.r.every(reqOK)&&matsOK(q)}
 function avail(q){return !!q&&!isDone(q.id)&&!(S.a&&S.a.id===q.id)&&unlocked(q)}
 function prog(p){const a=S.a,b=a?a.b:{};switch(p[0]){
   case 'b':return [Math.min(p[2],haveN(p[1])),p[2]];
   case 'h':return [Math.min(p[2],own(p[1])),p[2]];
   case 'any':return [p[1].some(n=>own(n)>0)?1:0,1];
+  case 'kn':return [foundSet.has(p[1])?1:0,1];   // v2.26: know a recipe
   case 'k':return [Math.max(0,Math.min(p[2],(kills[p[1]]||0)-(b['k:'+p[1]]||0))),p[2]];
   case 'c':return [Math.max(0,Math.min(p[2],cval(p[1])-(b['c:'+p[1]]||0))),p[2]];
   case 'learn':return [Math.max(0,Math.min(p[1],found.length)),p[1]];   // v2.25: the total learned, not new ones (someone who knew every recipe was stuck)
@@ -14640,7 +14644,7 @@ const plain=s=>String(s).replace(/<[^>]+>/g,'');
 function plab(p){const x=prog(p),ok=x[0]>=x[1],v=ok?'✓ ':'';switch(p[0]){
   case 'b':return `${x[0]}/${x[1]} ${p[1]}`;case 'h':return `${v}${p[1]}${ok?'':p[3]==='döv'?' (dövdür)':' (yap)'}`;case 'any':return `${v}${p[1].join(' ya da ')}${ok?'':' (dövdür)'}`;
   case 'k':return `${x[0]}/${x[1]} ${p[1]} avı`;case 'c':return `${x[0]}/${x[1]} ${p[3]}`;case 'learn':return `${x[0]}/${x[1]} tarif (toplam)`;case 'camp':return `Gece ateş başında ${x[0]}/${x[1]} sn`;
-  case 'sleep':return `${v}Barınakta bir gece uyu`;case 'place':return `${v}${p[1]} kur`;case 'house':return `${v}Bir ev kur`;case 'bed':return `${v}Evine yatak koy`;case 'wear':return `${v}${p[1]} ${/zırh|miğfer|çizme|eldiven/i.test(p[1])?'giy':'silah yuvasına tak'}`;
+  case 'kn':return `${v}${p[1]} tarifini kazanda öğren`;case 'sleep':return `${v}Barınakta bir gece uyu`;case 'place':return `${v}${p[1]} kur`;case 'house':return `${v}Bir ev kur`;case 'bed':return `${v}Evine yatak koy`;case 'wear':return `${v}${p[1]} ${/zırh|miğfer|çizme|eldiven/i.test(p[1])?'giy':'silah yuvasına tak'}`;
   case 'farm':return `${v}Hasan'a ${FARM_TOOLS[p[1]-2]||'alet'} getir`;case 'reach':return `${v}${DAT[p[1]]} git`;case 'meet':return `${v}${gName(p[1])} ile tanış`;
   case 'bridge':return ok?'✓ Köprü onarıldı':`Odun ${Math.min(woodCount(),BRIDGE_WOOD)}/${BRIDGE_WOOD} · köprüye git`;
   case 'rock':{const k=inv['Kaya patlatıcı']||0;return ok?'✓ Geçit açıldı':`Kaya patlatıcı ${Math.min(k,2)}/2 · kazma ${bestTool('pick')>=3?'✓':'(tunç ya da kuvars)'}`}
@@ -14657,16 +14661,19 @@ const markGivers=()=>{if(!onAct1()||S.a)return [];const L=S.vis.map(id=>QI[id].g
 // ---------------------------------------------------------------- Ekin's errands: the missing piece of the next locked job, as a real job
 function pickFiller(){
   for(const q of PRI){if(isDone(q.id)||nextOf(q.g)!==q)continue;if(q.r.some(r=>(r[0]==='q'||r[0]==='anyq')&&!reqOK(r)))continue;
-    const miss=[];for(const r of q.r)if(!reqOK(r))miss.push(r);const mats=[];for(const p of q.p)if(p[0]==='b'&&!seenOK(p[1]))mats.push(expand(p[1]).find(isNatural)||p[1]);if(mats.length)miss.push(['mat',mats]);
+    const miss=[];for(const r of q.r)if(!reqOK(r))miss.push(r);const mats=[];for(const p of q.p)if(p[0]==='b'&&!seenOK(p[1]))mats.push(expand(p[1]).find(isNatural)||p[1]);if(mats.length)miss.push(['mat',mats]);{const nr=needRec(q);if(nr.length)miss.push(['rec',nr[0][0]])}
     if(!miss.length)continue;const m=miss.find(r=>r[0]!=='nuri');if(!m)continue;return mkFiller(m)}
   return mkFiller(['lv',lvl+1])}
 function mkFiller(m){const k=m[0];
+  if(k==='rec'){const n=m[1],x=REC.get(n);   // v2.26: learn the recipe the next job needs (first the things in it you have never seen)
+    if(x){const un=[];for(const [i] of x.i){if(!seenOK(i))un.push(expand(i).find(isNatural)||i)}if(un.length)return mkFiller(['mat',un.slice(0,3)])}
+    return {id:'F-rec-'+n,g:'npc',filler:1,t:`${n} tarifini öğren`,p:[['kn',n]],r:[],c:15,x:15,remote:1,say:`Biri senden yakında <b>${esc(lc(n))}</b> isteyecek, ama sen onu yapmayı bilmiyorsun. Zümrüt'ün kazanına git, malzemeleri koy ve <b>${esc(lc(n))}</b> tarifini öğren; sonra o iş sana gelir.`,thx:'Öğrendin demek! Artık o işi de alabilirsin.'}}
   if(k==='mat'){const L=m[1],n=L[0],an=animDrops(n);const wild=L.length===1&&an.length?` Bir <b>${esc(lc(an[0][0]))}</b> avlarsan düşer.`:'';const names=L.map(x=>`<b>${esc(lc(x))}</b>`);const nm=names.length>1?names.slice(0,-1).join(', ')+' ve '+names[names.length-1]:names[0];
     return {id:'F-mat-'+L.join('+'),g:'npc',filler:1,t:L.length>1?'Ekin\'in özlemi':`${n} getir`,p:L.map(x=>['b',x,1]),r:[],c:10+5*L.length,x:8+4*L.length,say:`Dün akşam yürürken aklıma takıldı: gençken ${nm} çok kullanırdım. ${L.length>1?'Her birinden birer tane':'Bir tane'} getirir misin?${wild}`,thx:'Hah, işte bu! Kokusu bile aynı. Sağ ol evlat.'}}
   if(k==='lv')return {id:'F-lv-'+m[1],g:'npc',filler:1,t:`Seviye ${m[1]}'e ulaş`,p:[['lv',m[1]]],r:[],c:20,x:0,say:`Kollarına bir bak evlat; bu adada güçsüz yaşanmaz. Biraz topla, biraz birleştir, biraz avlan: <b>Seviye ${m[1]}</b>'e gel, sonra konuşalım.`,thx:'Gözlerin değişmiş. Artık daha sağlam basıyorsun.',remote:1};
   if(k==='bio')return {id:'F-bio-'+m[1],g:'npc',filler:1,t:`${DAT[m[1]]} git`,p:[['reach',m[1]]],r:[],c:25,x:20,say:`Hiç <b>${BNAME[m[1]]}</b> tarafına gittin mi? Gençken oralarda çok dolaşırdım. Bir git bak, nasıl bir yer olmuş; dönünce anlatırsın.`,thx:`${BNAME[m[1]]}… Anlattığın gibi miymiş? Ben de öyle hatırlıyorum.`,remote:1};
-  if(k==='tool'){const n=(TOOLNAME[m[1]]||{})[m[2]]||(m[1]==='axe'?'Çakmaktaşı balta':'Çakmaktaşı kazma');return {id:'F-tool-'+n,g:'npc',filler:1,t:`${n} dövdür`,p:[['h',n,1,'döv']],r:[],c:30,x:20,rec:[n],say:`Elinde bir <b>${esc(lc(n))}</b> olsa daha sert ağaçları da keserdin, daha derin damarları da kazardın. Bir demirciye dövdür; tarifini kitabına yazdım.`,thx:'İşte sağlam bir alet. Ellerin dert görmesin.'}}
-  if(k==='has'){const n=m[1][0];return {id:'F-has-'+n,g:'npc',filler:1,t:`${n} yap`,p:[['h',n,1,'yap']],r:[],c:15,x:12,rec:[n],say:`Gece buralar zifiri karanlık olur. Kendine bir <b>${esc(lc(n))}</b> yap; elinde ışık olmadan yola çıkma.`,thx:'Işığın oldu; artık gece de yürüyebilirsin.'}}
+  if(k==='tool'){const n=(TOOLNAME[m[1]]||{})[m[2]]||(m[1]==='axe'?'Çakmaktaşı balta':'Çakmaktaşı kazma');if(!foundSet.has(n)&&REC.has(n))return mkFiller(['rec',n]);return {id:'F-tool-'+n,g:'npc',filler:1,t:`${n} dövdür`,p:[['h',n,1,'döv']],r:[],c:30,x:20,rec:[n],say:`Elinde bir <b>${esc(lc(n))}</b> olsa daha sert ağaçları da keserdin, daha derin damarları da kazardın. Bir demirciye dövdür; tarifini kitabına yazdım.`,thx:'İşte sağlam bir alet. Ellerin dert görmesin.'}}
+  if(k==='has'){const n=m[1][0];if(!foundSet.has(n)&&REC.has(n)&&!isNatural(n))return mkFiller(['rec',n]);return {id:'F-has-'+n,g:'npc',filler:1,t:`${n} yap`,p:[['h',n,1,'yap']],r:[],c:15,x:12,rec:[n],say:`Gece buralar zifiri karanlık olur. Kendine bir <b>${esc(lc(n))}</b> yap; elinde ışık olmadan yola çıkma.`,thx:'Işığın oldu; artık gece de yürüyebilirsin.'}}
   if(k==='dull')return {id:'F-dull',g:'npc',filler:1,t:'Odun stoku',p:[['b','Herhangi odun',8]],r:[],c:25,x:15,say:'Ocak her gece yanmak ister. Bana <b>8 odun</b> kes getir; baltanın ağzı da biraz körelir ama Dursun biler.',thx:'Ateşimin bir haftalık odunu oldu. Sağ ol.'};
   return mkFiller(['lv',lvl+1])}
 // ---------------------------------------------------------------- where to go: the circle, the arrow
@@ -14680,6 +14687,7 @@ function partTarget(p,q){
      if(p[1]==='trap:')return own('Tuzak')||placed.some(o=>/Tuzak/.test(o.n))?animalCircle('Tavşan'):needTarget('Tuzak',1);
      if(p[1]==='sold')return {x:market.x,y:market.y,r:0,n:market.name};if(p[1]==='sharp'){const o=gObj(q.g);return o?{x:o.x,y:o.y,r:0,n:o.name}:null}return null;
    case 'learn':return witchShown?{x:cauldron.x,y:cauldron.y,r:0,n:'Zümrüt\'ün kazanı',kaz:1}:null;   // v2.25: the cauldron, not Zümrüt
+   case 'kn':return witchShown?{x:cauldron.x,y:cauldron.y,r:0,n:'Zümrüt\'ün kazanı',kaz:1}:null;
    case 'camp':return needTarget('Kamp ateşi',1);
    case 'sleep':return own('Yaprak barınağı')?null:{x:carp.x,y:carp.y,r:0,n:carp.name};
    case 'place':return own(p[1])?null:(needTarget(p[1],1)||{x:usta.x,y:usta.y,r:0,n:usta.name});
@@ -14818,8 +14826,10 @@ const wouldOffer=g=>{const q=nextOf(g);return !!q&&unlocked(q)};
     if(!S.a&&hasMark(g)){if(isMet(g)){offerQ(nextOf(g),gObj(g));return}pend=g}
     else if(S.a&&S.a.id==='L5'&&g==='denizci'&&!complete()){shipAct();return}
     else if(S.a&&g==='market'&&curQ().g===g&&!S.a.fq&&!complete()){const self=this,args=arguments;statusDlg(g,()=>_int.apply(self,args));return}
-    else if(S.a&&curQ().g!==g&&wouldOffer(g))busy(g)}
+    else if(S.a&&curQ().g!==g&&wouldOffer(g))busy(g)
+    else if(!S.a&&isMet(g)){const q=nextOf(g);if(q&&q.r.every(reqOK)){const nr=needRec(q);if(nr.length&&!REC_HINT[q.id]){REC_HINT[q.id]=1;const nm=nr.map(L=>L.join(' ya da ')).join(', ');setTimeout(()=>{try{toast(`${gName(g)}: Sana bir işim var ama önce ${nm} tarifini öğrenmelisin (Zümrüt'ün kazanında).`)}catch(e){}},500)}}}}   // v2.26
   return _int.apply(this,arguments)}}
+const REC_HINT={};window.__plNeedRec=id=>{const q=QI[id];return q?{need:needRec(q),open:unlocked(q)}:null};
 // Ekin
 const EKL=['Ateş sıcak, çay demde. Otur biraz evlat.','Rüzgâr dönüyor; denizci bunu kokusundan bilir.','Bu adada her şey iki şeyin buluşmasıyla başlar.','Gece olunca ateşten uzaklaşma.'];
 {const _talk=talk;talk=function(){if(!onAct1()||wake)return _talk.apply(this,arguments);if(qState!=='v2')qState='v2';refreshVis();
