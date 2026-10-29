@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v1.96 (29 Ekim 2026) · tam çapraz poz
+- v194 bloğu: `D34MK()` → `d34(base,g,x,y,L,o,s,back,head)`: gövde/kollar/bacaklar 3/4 çizilir (s<0 aynalanır), baş normal çizimden 48×48 geçici tuvale çizilip yalnızca omuz üstü satırlar kopyalanır; arka-çaprazda `HEADS.B` (yanak + 2 px kulak). `drawChibi` sarmalayıcı `o.d34`/`o.back34` görünce `d34`'ü çağırır. Oyuncu çaprazda `d34:1`, karakter yaratma `VIEWS` çaprazları `d34`/`back34`. Seçenek görselleri: scratch `poz/capraz_secenekler.png` (Boğaç Seçenek 1 + küçük kulak seçti). Kayıtlara etkisi yok.
+
 ## v1.95 (29 Ekim 2026) · öğretici parlaması sönmüyordu
 - v189 `place()`: `renderCraft` sarmalayıcısı `lit=[]` yapınca önceki parlayan düğme (ör. `b-eat`) listeden düşüp `.p189` sınıfı kalıyordu. Artık her seferinde `document.querySelectorAll('.p189')` taranıp hedef olmayanlardan sınıf kaldırılıyor; `lit=[]` kaldırıldı. Kayıtlara etkisi yok.
 

@@ -7,6 +7,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 1.96 · 29 Ekim 2026
+
+**Görsel**
+- Çapraz pozlarda karakter artık **bütünüyle** çapraz dönüyor: gövde daralıyor ve uzak yanı gölgede kalıyor, uzak kol gövdenin arkasına geçiyor, yakın kol öne geliyor, ayaklar çapraz basıyor (uzak ayak bir adım geride, ayak uçları gidilen yöne). Elde alet varsa kol gidilen yöne uzanıyor.
+- Arka-çapraz (sağ-yukarı / sol-yukarı) baş yeniden çizildi: senin seçtiğin **Seçenek 1**. Saç yüzü kapatmıyor; dönülen yanda yanak ve **küçültülmüş kulak** görünüyor, göz görünmüyor.
+- Karakter yaratma ekranında çevirince ön-çapraz ve arka-çapraz pozlar da aynı yeni gövdeyle görünüyor.
+
+**Tasarım belgesi**
+- "Karakterin 8 yönü" çapraz gövde ve arka-çapraz baş seçimiyle güncellendi; sürüm satırı 1.96.
+
+---
+
 ## Versiyon 1.95 · 29 Ekim 2026
 
 **Düzeltmeler**

@@ -1344,7 +1344,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.95</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 1.96</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -10782,7 +10782,7 @@ const cc=document.querySelector('#creator .ccard'),cp=$('cprev');
 {const h=document.createElement('p');h.className='v63rh';h.textContent=TOUCH?'Parmağınla sürükle: karakteri çevir':'Fareyle sürükle: karakteri çevir';const cr=document.querySelector('#creator .crot');if(cr)cr.after(h)}
 const VIEWS=[{fx:0,fy:1},{fx:1,fy:1,q34:1},{fx:1,fy:0},{fx:1,fy:-1,q34:1,back:1},{fx:0,fy:-1},{fx:-1,fy:-1,q34:1,back:1},{fx:-1,fy:0},{fx:-1,fy:1,q34:1}];
 cDraw=function(){const g=cp.getContext('2d');g.clearRect(0,0,64,64);const L=buildLook();
-  const a=((cRot*90+V63.cang)%360+360)%360;let V=VIEWS[Math.round(a/45)%8];if(V.back)V={fx:V.fx,fy:-1,q34:1,back34:1};   // v1.94: a turned back
+  const a=((cRot*90+V63.cang)%360+360)%360;let V=VIEWS[Math.round(a/45)%8];if(V.back)V={fx:V.fx,fy:-1,q34:1,back34:1};else if(V.q34)V={fx:V.fx,fy:1,q34:1,d34:1};   // v1.94/1.96: turned diagonals
   g.save();g.translate(32,chibiFeet(L,{},32)*2);g.scale(2,2);drawChibi(g,0,0,L,Object.assign({noShadow:0},V));g.restore()};
 {let dr=null;
   cp.addEventListener('pointerdown',e=>{dr={id:e.pointerId,x:e.clientX};try{cp.setPointerCapture(e.pointerId)}catch(_){}e.preventDefault()});
@@ -14880,14 +14880,38 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 {
  const D8={x:0,y:0,on:false,fx:0,fy:1,lx:null,ly:null};window.__plD8=D8;
- // a slightly turned back: the back of the head with a sliver of cheek and ear on the side you look to
+ // v1.96: a fully turned diagonal pose (body, arms, legs) for the hero; the creator uses the same
+ // the 3/4 body: head from the usual drawing (rows above the shoulders), body, arms and legs turned
+ const D34MK=function(){
+  const TMP=document.createElement('canvas');TMP.width=48;TMP.height=48;const tg=TMP.getContext('2d');
+  const HEADS={
+   B:(g,x,hy,L,s,P)=>{const sk=L.skin,sd=L.skinD;P(x+2,hy+2,3,6,sk);P(x+5,hy+4,1,2,sk);P(x+2,hy+3,1,2,sd);P(x+4,hy+7,2,1,sd)},
+   D:(g,x,hy,L,s,P)=>{const sk=L.skin,sd=L.skinD;P(x+1,hy+2,4,6,sk);P(x+5,hy+2,1,5,sk);P(x+1,hy+3,1,3,sd);P(x+3,hy+4,2,3,L.eye);P(x+3,hy+4,1,1,'#ffffff');P(x+4,hy+7,1,1,'#ff9a9a');P(x+6,hy+4,1,2,sk)},
+   E:(g,x,hy,L,s,P)=>{const sk=L.skin,sd=L.skinD;P(x+1,hy+3,4,5,sk);P(x+5,hy+3,1,4,sk);P(x+1,hy+4,1,2,sd);P(x+3,hy+5,2,1,L.eye);P(x+4,hy+7,1,1,'#ff9a9a');P(x+6,hy+5,1,1,sk)}};
+  return function d34(base,g,x,y,L,o,s,back,head){x=Math.round(x);y=Math.round(y);const st=o.step||0,by=y+(o.bob||0);
+   const P=(a,b,w,h,c)=>{if(s<0)a=2*x-a-w;g.fillStyle=c;g.fillRect(Math.round(a),Math.round(b),w,h)};
+   if(!o.noShadow){g.fillStyle='rgba(0,0,0,.28)';g.fillRect(x-6,y+1,12,3)}
+   const DR=L.dress!=null?L.dress:L.long,sl=L.shirtD,hand=o.glove||L.skin,bo=o.boot||'#4a3020',arm=o.arm||'down';
+   // far arm first (mostly hidden behind the body)
+   if(arm!=='up'){P(x+4,by-5,1,2,shade(sl,.8))}
+   // legs: the far one a step back and up, the toes point the way you go
+   if(!o.sit){const a=st>0?1:0,b2=st<0?1:0;P(x+1,by-2,2,2-b2,L.pants);P(x+1,by-b2,3,1,bo);P(x-3,by-1,2,2-a,L.pants);P(x-3,by+1-a,3,1,bo);if(o.boot){P(x+1,by-1-b2,3,1,bo);P(x-3,by-a,3,1,bo)}}
+   // body, narrower, with its far side in shade
+   if(DR){P(x-4,by-6,7,4,L.shirt);P(x-4,by-3,9,2,L.shirt);P(x-4,by-2,9,1,L.shirtD);P(x+2,by-6,1,4,L.shirtD);if(!back)P(x-1,by-6,2,1,'#ffffff')}
+   else{P(x-4,by-6,7,5,L.shirt);P(x-4,by-2,7,1,L.shirtD);P(x+2,by-6,1,4,L.shirtD);if(!back)P(x,by-6,2,1,L.shirtD)}
+   // near arm
+   if(arm==='reach'){P(x+3,by-6,4,1,sl);P(x+7,by-6,1,1,hand)}else if(arm==='up'){P(x-5,by-11,1,5,sl);P(x-5,by-12,1,1,hand)}else{P(x-5,by-6,1,3,sl);P(x-5,by-3,1,1,hand)}
+   // the head, from the usual drawing (only the rows above the shoulders)
+   tg.clearRect(0,0,48,48);const o2=Object.assign({},o,{noShadow:1,sit:1,bob:0,arm:'down',step:0,d34:0,back34:0});
+   if(back)Object.assign(o2,{fx:0,fy:-1,q34:0});else Object.assign(o2,{fx:s,fy:1,q34:1});
+   base(tg,24,40,L,o2);
+   {const sm=g.imageSmoothingEnabled;g.imageSmoothingEnabled=false;g.drawImage(TMP,0,0,48,34,x-24,by-40,48,34);g.imageSmoothingEnabled=sm}
+   if(back&&head&&!o.helm){const hy=by-16;const Q=(a,b,w,h,c)=>{if(s<0)a=2*x-a-w;g.fillStyle=c;g.fillRect(a,b,w,h)};HEADS[head](g,x,hy,L,s,Q)}}};
+ 
+ const d34=D34MK();
  const _dc=drawChibi;drawChibi=function(g,x,y,L,o){o=o||{};
-  if(!o.back34)return _dc.apply(this,arguments);
-  const s=o.fx>0?1:-1,o2=Object.assign({},o,{fx:0,fy:-1,back34:0,q34:0});const r=_dc.call(this,g,x,y,L,o2);
-  try{if(!o.helm){const p=(a,b,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round(a),Math.round(b),w,h)};const X=Math.round(x),hy=Math.round(y)+(o.bob||0)-16,sk=L.skin||'#e8b890',sd=L.skinD||sk;
-    const ex=s>0?X+4:X-6;p(ex,hy+3,2,5,sk);p(ex+(s>0?1:0),hy+8,1,1,sd);p(s>0?X+5:X-6,hy+4,1,2,sd);   // cheek and the ear's shade
-    const nx=s>0?X+6:X-7;p(nx,hy+5,1,2,sk)}}catch(e){}   // the tip of the nose just shows
-  return r};
+  if(!(o.back34||o.d34))return _dc.apply(this,arguments);
+  const s=o.fx<0?-1:1,back=!!o.back34||(o.fy<0);try{d34(_dc,g,x,y,L,o,s,back,'B')}catch(e){return _dc.call(this,g,x,y,L,Object.assign({},o,{back34:0,d34:0}))}};
  // which way you actually move (only for drawing)
  const _dp=drawPlayer;drawPlayer=function(){try{const px=player.x,py=player.y;
    if(D8.lx!=null){const dx=px-D8.lx,dy=py-D8.ly,l=Math.hypot(dx,dy);
@@ -14896,7 +14920,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    if(D8.on&&(player.face.x!==D8.fx||player.face.y!==D8.fy))D8.on=false;   // turned to do something: back to four ways
   }catch(e){}
   if(!D8.on)return _dp.apply(this,arguments);
-  const dc=drawChibi;drawChibi=function(g,x,y,L,o){if(g===ctx&&o&&o.fx===D8.fx&&o.fy===D8.fy&&window.__v63&&window.__v63.pl){o=Object.assign({},o,{fx:D8.x,fy:D8.y,q34:1,back34:D8.y<0?1:0})}return dc.call(this,g,x,y,L,o)};
+  const dc=drawChibi;drawChibi=function(g,x,y,L,o){if(g===ctx&&o&&o.fx===D8.fx&&o.fy===D8.fy&&window.__v63&&window.__v63.pl){o=Object.assign({},o,{fx:D8.x,fy:D8.y,q34:1,d34:1,back34:D8.y<0?1:0})}return dc.call(this,g,x,y,L,o)};
   try{return _dp.apply(this,arguments)}finally{drawChibi=dc}};
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v194: '+(e&&e.message||e))}catch(_){}}})();
