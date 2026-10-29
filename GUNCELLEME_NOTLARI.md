@@ -7,6 +7,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 1.99 · 29 Ekim 2026
+
+**Görsel**
+- Ön-çapraz (sağ-aşağı / sol-aşağı): gövde artık dönmüş görünüyor. Gövde gidilen yöne kayıyor, uzak yanı gölgede, yaka o yana dönük. Sağ çaprazda sağ kol, sol çaprazda sol kol gövdeden ayrı duruyordu; artık gövdeye yapışık.
+- Arka-çapraz (sağ-yukarı / sol-yukarı): düz duran sırt dönük çizildi (yakın yan gölgede, ortada sırt çizgisi). Ayaklar ters duruyordu; artık öbür ayak önde ve bir adım yukarıda ("öneri 2").
+
+**Tasarım belgesi**
+- "Karakterin 8 yönü" maddesi yeni çapraz gövdelerle yeniden yazıldı; sürüm satırı 1.99.
+
+---
+
 ## Versiyon 1.98 · 29 Ekim 2026
 
 **Görsel**

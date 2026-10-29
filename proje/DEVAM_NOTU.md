@@ -9,6 +9,9 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v1.99 (29 Ekim 2026) · çapraz gövdeler yeniden
+- v194 bloğu `D34MK` yeniden yazıldı: `d34(base,g,x,y,L,o,s,back,small,flip)`. Ön: gövde x-3..x+3, uzak yan 2 sütun gölge, uzak kol x+4'te yapışık, bacaklar x-2/x+1. Arka: yakın yan gölge + sırt çizgisi, `flip=1` ile gidilen yönün öbür ayağı önde/yukarıda; baş `small=.9`. Öneri görseli scratch `poz/capraz_govde_oneri.png`. Kayıtlara etkisi yok.
+
 ## v1.98 (29 Ekim 2026) · arka-çapraz: yalnızca saç, baş %10 küçük
 - v194 bloğu `d34(...,head,small)`: arka-çaprazda baş `small=.9` ile küçültülerek kopyalanır, `head=null` (yüz parçası çizilmez); uzak kol arkada çizilmez. Seçenek görselleri scratch `poz/arka_capraz_oneri*.png`. Kayıtlara etkisi yok.
 
