@@ -9,6 +9,11 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.41 (30 Ekim 2026) · hava sisi geri geldi
+- 2.39'un `drawFog` bloğu (FOGL/FOGS/fogSprite/FOGN/fogNoise/drawFog, sisli havada kenar gradyanı) birebir geri kondu; `drawWeather` içinde çağrı 2.38'deki koşulla: `(z===1&&PERF.lvl<3)||weather.k==='sis'`, kalınlık sis 0,62 (Orta Diyar) / 0,5, ince 0,22. Hava seçimi `['sis',z===1?22:10]`; kayıttaki 'sis' yine yüklenir; v232 `skipIn` listesine 'drawFog' geri eklendi.
+- Ölçüm (olcum.js, m, GL, CPU ×1): PLAY 10 sn JS 2.40 1685 ms / 2.41 1573 ms, BOOT JS 2021 / 1969 ms (sis Çayır'da açık havada çizilmez). drawFog kare başına (telefon görünümü, GL): CPU ×1 0,66–0,68 ms, CPU ×4 2,23–2,27 ms.
+- Eski kayıtlara etkisi yok.
+
 ## v2.40 (30 Ekim 2026) · ekran kartı ayarı her açılışta denenir, ısınma ≤2,5 sn, ölü sis kodu silindi, ölçüm betikleri
 - Sebep (Boğaç buldu): telefonda `hammadde.gl2='0'` kalıcı kalmış (kontextlost/OOM/kare hatası yollarından biri yazmış), oyun klasik çizimde. GL2D bloğu: `want` artık `sessionStorage hammadde.gl2s!=='0'`; eski localStorage `'0'` silinir; `window.__plGLOff(why)` (gl2s + gl2why) 4 otomatik yolda `localStorage.setItem(...,'0')`'ın yerine; v68 ayar bloğu: Ayarlar kapatması da sessionStorage, not + sebep, `#verlab`'a " · klasik çizim", bir kez toast.
 - `v238-warm`: `go` 6 kare ya da 1 sn, güvenlik 2,5 sn (önce 12×<45 ms, 7/9 sn). `v236-load` prewarm 1,5/1,8 sn (önce 3/4).

@@ -8,6 +8,25 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.41 · 30 Ekim 2026
+
+**Görsel**
+- **Sis geri geldi.** 2.39'da kaldırılan ve 2.40'ta kodu silinen hava sisi eski haliyle geri döndü: Bataklık ve Kayalık Dağ'ın üstünde her zaman ince bir sis süzülüyor, sisli havada (yaklaşık %10, Orta Diyar'da %20) her yer yoğun sisle kaplanıyor; ateşler, meşale ve fener sisin içinde ışık açıyor. Telefondaki donmanın sebebi sis değildi (2.40'ta bulundu: ekran kartı çizimi telefonda kapanmıştı).
+
+**Oynanış**
+- Sisli hava geri geldiği için siste saldırgan canavarlar seni yine %40 daha geç fark ediyor; sis meşaleyi biraz daha çabuk yakıyor (eskisi gibi).
+
+**Kayıtlar**
+- Kayıtta sisli hava varsa artık yine sisli yüklenir.
+
+**Tasarım belgesi**
+- Hava: sis oranları ve etkileri geri yazıldı; Kullanılan teknolojiler → Performans kuralları: sisin maliyeti.
+
+**Proje**
+- Ölçüm (`olcum.js`, telefon görünümü, ekran kartı açık, CPU ×1): 10 saniyelik oyunda JS 2.40'ta 1685 ms, 2.41'de 1573 ms (Çayır, açık hava; fark yok). Sis açıkken sis çizimi kare başına ~0,7 ms (CPU ×4'te ~2,3 ms).
+
+---
+
 ## Versiyon 2.40 · 30 Ekim 2026
 
 **Düzeltmeler**

@@ -1347,7 +1347,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.40</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.41</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -2286,7 +2286,7 @@ function restore(d){if(!d||!d.inv)return;
   if(d.v47&&(d.qv||0)<4)d=Object.assign({},d,{qv:4});   // v47 wrote qv twice (the 2 won), its quest index is already in v47 numbering
   {const v5=d.v45||{};tz=v5.tz||0;tzEat=v5.te||0;helpTorch=!!v5.ht;forged.clear();(v5.fg||(d.found||[]).filter(n=>TOOLS.has(n))).forEach(n=>forged.add(n));}
   durmus.met=!!d.dm;{const v=d.v44||{};toygar.met=!!v.tg;toygar.talks=v.tt||0;clues.clear();(v.cl||[]).forEach(c=>clues.add(c));for(const k in kills)delete kills[k];Object.assign(kills,v.kl||{});pbuff=v.bf||{};for(const k in codex)delete codex[k];Object.assign(codex,v.cx||{});
-   if(v.wx&&WEATHER[v.wx.k]&&v.wx.k!=='sis')weather={k:v.wx.k,t:v.wx.t||120};torchesUsed=v.tu||0;Object.assign(lampman,{shown:false,met:!!(v.lm&&v.lm.met),gone:!!(v.lm&&v.lm.gone)});balikci.shown=!!(v.bk&&v.bk.shown);balikci.met=!!(v.bk&&v.bk.met);mudHint=!!v.mh}
+   if(v.wx&&WEATHER[v.wx.k])weather={k:v.wx.k,t:v.wx.t||120};torchesUsed=v.tu||0;Object.assign(lampman,{shown:false,met:!!(v.lm&&v.lm.met),gone:!!(v.lm&&v.lm.gone)});balikci.shown=!!(v.bk&&v.bk.shown);balikci.met=!!(v.bk&&v.bk.met);mudHint=!!v.mh}
   const oldMap=d.mv!==MAPV;if(oldMap)d=Object.assign({},d,{exp:null,x:spawn.x,y:spawn.y,pl:[]});
   Object.assign(equip,{bas:null,govde:null,el:null,ayak:null,silah:null});{const e=d.eq||{};for(const k in equip){const n=e[k];if(typeof n==='string'&&slotOf(n)===k)equip[k]=n}}
   ftut=nn(d.ft,(d.tut||0)>4?3:0);ctut=nn(d.ct,(d.tut||0)>8?4:0);torchTut=nn(d.tt,(d.dy||1)>1||(d.tut||0)>=11?3:0);nightScare=nn(d.ns,(d.dy||1)>1?2:0);alp.met=!!d.am;
@@ -6802,7 +6802,7 @@ const raining=()=>weather.k==='yağmur'||weather.k==='fırtına';
 const ashStorm=()=>raining()&&bioAt(player.x,player.y)===4;
 const wxName=()=>ashStorm()?'Kül fırtınası':WEATHER[weather.k].n;
 function nextWeather(){
-  const z=zoneAt(player.x,player.y),w=[['açık',45],['bulut',20],['yağmur',18],['fırtına',7]]   /* v2.39: no fog weather */;let sum=0;for(const a of w)sum+=a[1];let r=Math.random()*sum,k='açık';for(const [n,v] of w){r-=v;if(r<=0){k=n;break}}
+  const z=zoneAt(player.x,player.y),w=[['açık',45],['bulut',20],['yağmur',18],['fırtına',7],['sis',z===1?22:10]]   /* v2.41: fog weather back */;let sum=0;for(const a of w)sum+=a[1];let r=Math.random()*sum,k='açık';for(const [n,v] of w){r-=v;if(r<=0){k=n;break}}
   if(day<=1&&!met)k='açık';const was=weather.k;weather={k,t:k==='açık'?200+Math.random()*220:110+Math.random()*150};
   if(k!==was&&met&&!wake){const tip={yağmur:'Yağmur başladı: meşaleler iki kat çabuk tükenir, tarlalar kendiliğinden sulanır.',fırtına:'Fırtına geliyor! Şimşekler çakar, meşaleler çabuk tükenir.',sis:'Sis çöktü: uzağı göremezsin ama hayvanlar da seni zor fark eder.',bulut:'Bulutlar toplandı.',açık:'Hava açıldı.'}[k];toast(tip)}
   clockK=''}
@@ -6814,10 +6814,34 @@ const RAIN=[];for(let i=0;i<140;i++)RAIN.push({x:Math.random(),y:Math.random(),v
 const FOGB=[];for(let i=0;i<9;i++)FOGB.push({x:Math.random(),y:Math.random(),r:.25+Math.random()*.3,v:.004+Math.random()*.006});
 const FLYS=[];for(let i=0;i<26;i++)FLYS.push({x:Math.random(),y:Math.random(),ph:Math.random()*6});
 // world-space tint (under the night), then screen-space rain, fog, ash and lightning (over it)
+let FOGL=null;const FOGS={};function fogSprite(night){const k=night?'n':'d';if(FOGS[k])return FOGS[k];const c=document.createElement('canvas');c.width=c.height=96;const g=c.getContext('2d'),col=night?'150,160,190':'225,232,225',gr=g.createRadialGradient(48,48,0,48,48,48);gr.addColorStop(0,`rgba(${col},1)`);gr.addColorStop(.55,`rgba(${col},.45)`);gr.addColorStop(1,`rgba(${col},0)`);g.fillStyle=gr;g.fillRect(0,0,96,96);return FOGS[k]=c}
 function drawWeatherTint(){const a=weather.k==='bulut'?.08:raining()?.16:0;if(!a&&!ashStorm())return;ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.fillStyle=ashStorm()?'rgba(60,30,20,.22)':`rgba(30,45,70,${a})`;ctx.fillRect(0,0,cv.width,cv.height);ctx.restore()}
-// v2.40: the weather fog (v1.33 drawFog + noise texture) is gone for good (v2.39 had switched it off); old saves' 'sis' is read and skipped
+// v2.41: the weather fog is back (Boğaç): the v1.33 code as it was; it was not the cause of the phone freeze (2.40: the graphics card had been switched off on that phone)
+// v1.33: fog in two world-anchored layers of soft noise drifting with the wind; every light (fires, a torch, the lamp) clears a hole in it
+let FOGN=null;
+function fogNoise(){if(FOGN)return FOGN;const N=128,c=document.createElement('canvas');c.width=c.height=N;const g=c.getContext('2d'),im=g.createImageData(N,N),d=im.data;
+  const oct=[[8,.55],[16,.3],[32,.15]],tabs=oct.map(([q])=>{const a=new Float32Array(q*q);for(let i=0;i<a.length;i++)a[i]=Math.random();return a}),sm=t=>t*t*(3-2*t);
+  for(let y=0;y<N;y++)for(let x=0;x<N;x++){let v=0;for(let k=0;k<oct.length;k++){const q=oct[k][0],A=tabs[k],fx=x/N*q,fy=y/N*q,ix=Math.floor(fx),iy=Math.floor(fy),tx=sm(fx-ix),ty=sm(fy-iy),i0=ix%q,i1=(ix+1)%q,j0=iy%q,j1=(iy+1)%q;
+      v+=oct[k][1]*((A[j0*q+i0]*(1-tx)+A[j0*q+i1]*tx)*(1-ty)+(A[j1*q+i0]*(1-tx)+A[j1*q+i1]*tx)*ty)}
+    const al=Math.max(0,Math.min(1,(v-.3)*1.9)),o=(y*N+x)*4;d[o]=d[o+1]=d[o+2]=255;d[o+3]=Math.round(255*al*al*(3-2*al))}
+  g.putImageData(im,0,0);return FOGN=c}
+function drawFog(dt,Wc,Hc,thick,dk){const fw=Math.max(16,Math.ceil(Wc/6)),fh=Math.max(16,Math.ceil(Hc/6));if(!FOGL||FOGL.width!==fw||FOGL.height!==fh){FOGL=document.createElement('canvas');FOGL.width=fw;FOGL.height=fh}
+  const g=FOGL.getContext('2d'),k=fw/Wc*S*dpr,tm=performance.now()/1000,nz=fogNoise(),col=dk>.5?'62,70,94':'226,232,228',nk=1-Math.min(1,dk)*.35;
+  g.setTransform(1,0,0,1,0,0);g.globalCompositeOperation='source-over';g.globalAlpha=1;g.clearRect(0,0,fw,fh);g.imageSmoothingEnabled=true;
+  for(const [tile,par,vx,vy,al] of [[620,1,2.2,.45,.85],[380,.82,3.1,.65,.6]]){const ts=tile*k,ox=-((((cam.cx*par+tm*vx*(1+wind*.4))*k)%ts)+ts)%ts,oy=-((((cam.cy*par+tm*vy)*k)%ts)+ts)%ts;g.globalAlpha=Math.min(1,thick*al*1.6*nk);
+    for(let y=oy;y<fh;y+=ts)for(let x=ox;x<fw;x+=ts){const X0=Math.floor(x),Y0=Math.floor(y);g.drawImage(nz,X0,Y0,Math.floor(x+ts)-X0,Math.floor(y+ts)-Y0)}}
+  g.globalAlpha=1;g.globalCompositeOperation='source-atop';g.fillStyle=`rgb(${col})`;g.fillRect(0,0,fw,fh);
+  g.globalCompositeOperation='destination-over';g.fillStyle=`rgba(${col},${(thick*.35).toFixed(3)})`;g.fillRect(0,0,fw,fh);
+  g.globalCompositeOperation='destination-out';
+  const L=lightSources().slice(),th=torchHeld();if(th)L.push([player.x,player.y-6,(TORCHL[th]||90)*1.1]);else if(lampOn())L.push([player.x,player.y-6,LAMPL]);
+  for(const l of L){const X=(l[0]-cam.cx)*k,Y=(l[1]-cam.cy)*k,r=l[2]*1.25*k*(.94+.06*Math.sin(tm*7+l[0]));if(X<-r||Y<-r||X>fw+r||Y>fh+r)continue;
+    const gr=g.createRadialGradient(X,Y,0,X,Y,r);gr.addColorStop(0,'rgba(0,0,0,.95)');gr.addColorStop(.55,'rgba(0,0,0,.6)');gr.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=gr;g.fillRect(X-r,Y-r,2*r,2*r)}
+  g.globalCompositeOperation='source-over';
+  ctx.imageSmoothingEnabled=true;ctx.drawImage(FOGL,0,0,Wc,Hc);ctx.imageSmoothingEnabled=false;
+  if(weather.k==='sis'){const X=Wc/2,Y=Hc/2,R=Math.hypot(Wc,Hc)*.55,gg=ctx.createRadialGradient(X,Y,Math.min(Wc,Hc)*.2,X,Y,R);gg.addColorStop(0,`rgba(${col},0)`);gg.addColorStop(1,`rgba(${col},${(thick*.7).toFixed(2)})`);ctx.fillStyle=gg;ctx.fillRect(0,0,Wc,Hc)}}
 function drawWeather(dt){const Wc=cv.width,Hc=cv.height,z=zoneAt(player.x,player.y),dk=darkness();ctx.save();ctx.setTransform(1,0,0,1,0,0);
   // swamp: drifting mist all the time, fireflies at night
+  if((z===1&&PERF.lvl<3)||weather.k==='sis'){const thick=weather.k==='sis'?(z===1?.62:.5):.22;drawFog(dt,Wc,Hc,thick,dk)}   // v1.33 (v2.41: back)
   if(z===1&&dk>.4){ctx.globalCompositeOperation='lighter';for(const f of FLYS){f.ph+=dt;const X=((f.x+Math.sin(f.ph*.4)*.03)%1)*Wc,Y=((f.y+Math.cos(f.ph*.3)*.03)%1)*Hc,k=.5+.5*Math.sin(f.ph*3);ctx.fillStyle=`rgba(200,255,120,${(.5*k*dk).toFixed(3)})`;ctx.fillRect(X-S,Y-S,S*2,S*2);ctx.fillStyle=`rgba(200,255,120,${(.12*k*dk).toFixed(3)})`;ctx.fillRect(X-S*4,Y-S*4,S*8,S*8)}ctx.globalCompositeOperation='source-over'}
   // rain (or ash in the ash lands)
   if(raining()){const ash=ashStorm(),n=Math.round((ash?110:weather.k==='fırtına'?140:100)*(PERF.lvl>=3?.5:PERF.lvl>=2?.75:1)),ang=ash?.5:.18+wind*.25;
@@ -16173,7 +16197,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    if(_bl.apply(this,arguments))return true;for(const D of CAVES){const dx=(px_-D.door.x)/54,dy=(py_-(D.door.y-34))/40;if(dx*dx+dy*dy<1)return true}return false}}
  // ---------------------------------------------------------------- world things hidden inside
  const skipIn=nm=>{try{const f=window.__plEval(nm);if(typeof f!=='function')return;window.__cvf=window.__cvf||{};window.__cvf[nm]=f;window.__plEval(nm+'=function(){if(window.__plCave&&window.__plCave.cur)return;return window.__cvf["'+nm+'"].apply(this,arguments)}')}catch(e){}};
- ['drawSeaPad','drawField','drawWater','drawPier','drawBridge','drawTufts','drawGlints','drawGraves','drawClues','drawWaterHint','drawV46World','drawTree','drawPlacedObj','drawDog','drawAmbient','drawGuide','drawRaft','tickDogs'].forEach(skipIn);
+ ['drawSeaPad','drawField','drawWater','drawPier','drawBridge','drawTufts','drawGlints','drawGraves','drawClues','drawWaterHint','drawV46World','drawTree','drawPlacedObj','drawDog','drawAmbient','drawFog','drawGuide','drawRaft','tickDogs'].forEach(skipIn);
  {const _g=drawGround;drawGround=function(){const C=cur();if(!C)return _g.apply(this,arguments);ctx.fillStyle='#050405';ctx.fillRect(cam.cx-40,cam.cy-40,vw+80,vh+80);ctx.drawImage(paint(C),PX,PY)}}
  {const _d=darkness;darkness=function(){if(CV.cur)return .985;return _d.apply(this,arguments)}}
  {const _rs=roomSafe;roomSafe=function(){if(CV.cur)return true;return _rs.apply(this,arguments)}}
