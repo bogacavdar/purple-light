@@ -8,7 +8,7 @@
 
 1. **Ana görevle birlikte yapılır.** Aynı anda **1 ana görev + 1 yan görev** sürebilir. Yan görev ana görevi beklemez, ana görev yan görevi beklemez; ikisi ayrı yürür. Aynı anda ikinci bir yan görev alınmaz: başka bir yan kişiyle konuşunca "Önce elindeki işi bitir" der.
 2. **Yan kişiler parlamaz.** Başlarında siyah ! yoktur, dünyada parlamazlar. Görevi olan yan kişinin başında küçük **açık mavi bir "?"** durur. Oyuncu gezerken onlara rastlar; ya da haritadaki işaretten bulur (aşağıda).
-3. **Belli saatlerde görünürler; hava etkilemez.** Her yan kişinin bir saat aralığı vardır (ör. 07:00–19:00, ya da yalnızca gece). O saatlerin dışında yerinde yoktur. Yağmur, fırtına, sis görünmelerini değiştirmez.
+3. **Belli saatlerde görünürler; hava etkilemez.** Her yan kişinin bir saat aralığı vardır (ör. 07:00–19:00, ya da yalnızca gece). O saatlerin dışında yerinde yoktur. Yağmur ve fırtına görünmelerini değiştirmez.
 4. **Hiçbir yan görev kaçırılmaz.** Yan kişi görevi bitene kadar **her gün** kendi saatinde aynı yerde yeniden çıkar. Süre sınırı yoktur, zamanlı bir adım yoktur (bekleme adımı hariç; o da bayılmadıkça yarıda kalmaz). Tamamlamaya çalışan oyuncu hepsini bitirebilir.
 5. **Bayılınca yalnızca yan görev iptal olur.** Yan görev sürerken bayılırsan (canavar, açlık ya da mor ışık) **yan görev** yarıda kalır, **ana görev** olduğu gibi durur. Yarıda kalan yan görev hiç alınmamış sayılır: yan kişi kendi yerine döner ve görevi **en baştan, aynı yerden** yeniden alırsın. Yan görev için doğan canavarlar bayılınca silinir.
 6. **Bırakmak.** Yan görev kartındaki **×** ile görev bırakılabilir ("Bu yan görevi bırakayım mı?" → Evet/Hayır). Bırakınca yan kişi yerine döner, görev yeniden alınabilir.

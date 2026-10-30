@@ -35,9 +35,11 @@ Bu bölüm oyunun ve projenin **neyle yapıldığını** anlatır: hangi program
 
 Oyun telefonda da akıcı olsun diye (Boğaç'ın telefonu: Honor 600) şu kurallar geçerlidir:
 
-- **Oyun sırasında haritanın tamamı taranmaz.** Ada 804 × 785 karodur (631 bin karo); oyun sırasında düzenli çalışan bir iş bütün haritayı dolaşırsa telefonda kare kaçırır.
+- **Oyun sırasında haritanın tamamı taranmaz.** Ada 645 × 464 karodur (299 bin karo); oyun sırasında düzenli çalışan bir iş bütün haritayı dolaşırsa telefonda kare kaçırır.
   - **Sis (keşfedilmemiş yerler):** yalnızca bir haritanın gösterdiği yerde hesaplanır: köşedeki küçük haritanın penceresi (çevresinde 8 karo payla, ~260 × 130 karo) ve büyük harita açıkken onun görünen penceresi. Bütün ada yalnızca oyun başlarken, kayıt yüklenince ve hileyle harita açılınca bir kez hesaplanır. Keşif yalnızca oyuncunun yanında olduğu için pencerenin dışı değişmez. Köşedeki küçük haritanın kendi küçük sis resmi vardır; ada büyüklüğündeki resim telefonun ekran kartına her seferinde yeniden gönderilmez. (2.35–2.37 bütün adayı saniyede 4 kez yeniden hesaplıyordu: telefon hızında her seferinde ~40 ms; şimdi ~2 ms.)
   - **Biyom keşif sayacı** (almanakta hangi biyomlara girildiği) bütün haritayı okur; en çok **12 saniyede bir** ve yalnızca yeni bir yer keşfedildiyse çalışır.
+- **Izgara eski boyutta (v2.39):** iki ada da **645 × 464** karoluk ızgaradadır (hilal ve yonca bu çerçeveye sığdırılır, kıyıda ~10 karo deniz payı). Deniz yürünmez; ızgarayı büyütmek yalnızca haritanın tamamını okuyan işleri (sis, kayıt, keşif, sarı bölge) pahalılaştırır. 2.35–2.38'de ızgara 804 × 785 idi (deniz yüzünden 2,1 kat), oyun telefonda dondu.
+- **Hava sisi yoktur (v2.39):** her karede bütün ekranı kaplayan sis tabakası kaldırıldı.
 - **Yükleme ekranında ısınma:** adaya girmeden önce yer görüntüleri ve resimler hazırlanır (Akış → Yükleme ekranı).
 - **Öğretici parlaması:** parlayan düğmenin ışığı sabit bir gölgedir; bilgisayarda düğme yalnızca büyüyüp küçülür (ekran kartında, yeniden boyamadan), **telefonda hiç oynamaz** (sabit mavi halka; yanındaki ok oynar).
 - **Ölçüm yolu:** değişiklikten sonra oyun Playwright ile, işlemci 4–6 kat yavaşlatılarak (telefon hızı) oynatılır; uzun işler (30 ms üstü) ve ekran kartına yüklenen resim miktarı ölçülür.

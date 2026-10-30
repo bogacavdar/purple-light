@@ -87,7 +87,7 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 
 ### Hava
 
-Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve Kayalık Dağ'da sis daha sık, yaklaşık %20; öbürleri o kadar azalır). Yağmur/fırtına: meşale ve kamp ateşi çabuk biter, **tarladaki tohumlar kendiliğinden sulanır**, balık %30 daha çabuk vurur; fırtınada şimşek çakar. Kül Diyarı'nda yağmur yerine **kül fırtınası** olur. Siste saldırganlar seni %40 daha geç fark eder.
+Kabaca açık %50, bulutlu %22, yağmur %20, fırtına %8. **Sis yoktur (v2.39, Boğaç):** ne sisli hava ne de Bataklık ile Kayalık Dağ'ın üstündeki sürekli sis tabakası çizilir (her karede bütün ekranı kaplayan bir efektti, telefonu yoruyordu). Yağmur/fırtına: meşale ve kamp ateşi çabuk biter, **tarladaki tohumlar kendiliğinden sulanır**, balık %30 daha çabuk vurur; fırtınada şimşek çakar. Kül Diyarı'nda yağmur yerine **kül fırtınası** olur.
 
 ### Uyku
 

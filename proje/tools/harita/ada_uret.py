@@ -94,23 +94,32 @@ def build(isle):
         e = int(4*k); m[:e] = m[-e:] = False; m[:, :e] = m[:, -e:] = False
         m = ndi.binary_fill_holes(largest(m))
         return m, rng, k
-    m, _, _ = mask_at(256)
-    N = int(round(256 * (LAND_TARGET / m.sum()) ** .5))
-    mask, rng, k = mask_at(N)
-    print(f'ada {isle}: N={N} kara={mask.sum()}')
-    # 2) kırp: kara kutusu + 22 karo deniz payı
-    ys, xs = np.where(mask); M = 22
-    y0, y1, x0, x1 = ys.min()-M, ys.max()+M+1, xs.min()-M, xs.max()+M+1
-    rn = value_noise(rng, N, 2, 2); wn = value_noise(rng, N, 3, 4)   # aynı sırayla (önizlemeyle aynı)
-    sl = (slice(y0, y1), slice(x0, x1))
-    mask = mask[sl]; rn = rn[sl]; wn = wn[sl]
+    # v2.39: the grid stays the old size (645 × 464); the shape is drawn large, cut to its land box and fitted into the grid
+    # with a thin sea margin (the sea is never walked on, so it must not cost anything). It is stretched sideways to use the width.
+    GW, GH, M = 645, 464, 10
+    N = 900
+    mask0, rng, k0 = mask_at(N)
+    rn0 = value_noise(rng, N, 2, 2); wn0 = value_noise(rng, N, 3, 4)
+    mn0 = value_noise(np.random.default_rng(P['seed']+5), N, 3, 10)
+    ys, xs = np.where(mask0); by0, by1, bx0, bx1 = ys.min(), ys.max()+1, xs.min(), xs.max()+1
+    Wi, Hi = GW - 2*M, GH - 2*M
+    zy, zx = Hi / (by1 - by0), Wi / (bx1 - bx0)
+    def fit(a, order):
+        c = a[by0:by1, bx0:bx1].astype(float)
+        z = ndi.zoom(c, (zy, zx), order=order)[:Hi, :Wi]
+        out = np.zeros((GH, GW)) if order == 0 else np.pad(z, ((M, GH-Hi-M), (M, GW-Wi-M)), mode='edge')
+        if order == 0: out[M:M+z.shape[0], M:M+z.shape[1]] = z
+        return out
+    mask = ndi.binary_fill_holes(largest(fit(mask0, 0) > .5))
+    rn, wn, mn = fit(rn0, 1), fit(wn0, 1), fit(mn0, 1)
     H, W = mask.shape
+    k = (N / BASE) * (zx * zy) ** .5      # tiles per preview unit (for the noise amplitudes)
+    print(f'ada {isle}: ızgara {W}×{H} kara={int(mask.sum())} (yatay {zx:.2f}, dikey {zy:.2f})')
     # 3) zincir ilerlemesi: polyline başından geodezik mesafe (önizleme birimine çevrilir)
-    sx, sy = pts0[0][0]*k - x0, pts0[0][1]*k - y0
+    sx, sy = (pts0[0][0]*k0 - bx0)*zx + M, (pts0[0][1]*k0 - by0)*zy + M
     land = np.argwhere(mask)
     st = tuple(land[np.argmin((land[:,0]-sy)**2 + (land[:,1]-sx)**2)])
     d = geo(mask, st) / k
-    mn = value_noise(np.random.default_rng(P['seed']+5), N, 3, 10)[sl]
     prog = d + 10*(rn - .5) + 5*(mn - .5)
     vals = prog[mask]
     q1, q2 = np.quantile(vals, [1/3, 2/3])

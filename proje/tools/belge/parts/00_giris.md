@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.38** ile birebir (30 Ekim 2026). Bu sürümde: telefonda yavaşlık giderildi (sis yalnızca haritanın gösterdiği yerde hesaplanır), adaya girmeden önce yükleme ekranında ısınma, telefonda sabit öğretici parlaması. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.39** ile birebir (30 Ekim 2026). Bu sürümde: ızgara eski boyutuna döndü (645 × 464, donma giderildi), sisli hava kaldırıldı, ACT 1 kartının arkasında hazırlık. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -25,7 +25,7 @@ Sürüm: **Versiyon 2.38** ile birebir (30 Ekim 2026). Bu sürümde: telefonda y
 
 ## Adalar ve dünya ölçüsü
 
-- **Yıldızsız Ada 804 × 785 karo** (hilal), **ikinci ada 692 × 720 karo** (yonca); bir karo 16 piksel. İkisinde de kara yaklaşık 282.000 karo, geri kalanı denizdir (v2.35; önce ikisi de 645 × 464 karolu dikdörtgen adalardı). Bir anda yalnızca bir ada bellekte durur; adalar arası geçiş bir yükleme ekranıyla yapılır.
+- İki ada da **645 × 464 karo** ızgaradadır (v2.39): Yıldızsız Ada hilal (kara ~139.000 karo), ikinci ada yonca (kara ~178.000 karo); bir karo 16 piksel. (2.35–2.38'de ızgara 804 × 785'ti ve oyun telefonda donuyordu.) Bir anda yalnızca bir ada bellekte durur; adalar arası geçiş bir yükleme ekranıyla yapılır.
 - Envanter, sikke, seviye, gün ve saat iki adada ortaktır.
-- Her adada 6 biyom vardır (**eşit büyüklükte**, her biri yaklaşık 47.000 karo; v2.35'ten beri adanın şekli boyunca **zincir halinde** sıralanır, her biyom yalnızca öncekine ve sonrakine değer; 1-2, 3-4, 5-6 ortak bölgedir, 2→3 ve 4→5 arasında keskin bir sınır vardır); biyomun tehlike seviyesi canavarların gücünü belirler: **Güvenli** (ilk iki biyom), **Tehlikeli** (3. ve 4.), **Ölümcül** (5.), **Çok ölümcül** (6.).
+- Her adada 6 biyom vardır (**eşit büyüklükte**: Yıldızsız Ada'da her biri ~23.000, ikinci adada ~29.700 karo; v2.35'ten beri adanın şekli boyunca **zincir halinde** sıralanır, her biyom yalnızca öncekine ve sonrakine değer; 1-2, 3-4, 5-6 ortak bölgedir, 2→3 ve 4→5 arasında keskin bir sınır vardır); biyomun tehlike seviyesi canavarların gücünü belirler: **Güvenli** (ilk iki biyom), **Tehlikeli** (3. ve 4.), **Ölümcül** (5.), **Çok ölümcül** (6.).
 - Oyun içinde biyomlar 3 tehlike kuşağına ayrılır ve balık tabloları, tuzak ganimetleri bu kuşağa göre değişir: **Kuşak 0** = Çayır + Orman, **Kuşak 1** = Bataklık + Kayalık Dağ, **Kuşak 2** = Kül Diyarı + Mor Kristal Vadisi (ACT 2'de aynı sırayla).

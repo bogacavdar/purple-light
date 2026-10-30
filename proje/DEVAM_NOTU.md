@@ -9,6 +9,12 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.39 (30 Ekim 2026) · 645×464 ızgara, sis havası yok, ACT 1 kartında hazırlık
+- Üretici: şekil N=900'de çizilir, kara kutusuna kırpılır, `ndi.zoom` ile 625×444'e (yatay/dikey ayrı) sığdırılıp 10 karo deniz payıyla 645×464'e konur; ilerleme/gürültü aynı ölçekte. Ada 1 kara ~139 bin (biyom ~23 bin), ada 2 ~178 bin (biyom ~29,7 bin). Doğuş ada 1 (68,208), Orman'a 161 karo.
+- Kayıt: `d.v235.g!==2` olan kayıtlar `migrate`'ten geçer (i2.bf/rf/sb varsa korunur); snapshot `g:2`.
+- Hava: 'sis' seçilmez, sis katmanı çizilmez (`if(false)`), kayıttaki 'sis' yüklenmez.
+- Açılışta `ldscr` yalnızca pending/clicknew; boot'ta prewarm yok. `v238-warm`: `startCine` sarmalı kalktı; `endCine` sonrası `__plActHold=true` + ısınma (prewarm, yazı tipleri, `#dlg` görünmez yerleşim, kareler <45 ms ×12 ya da 7 sn); `showAct` tutulurken kartta "Yükleniyor…"; `tickWake`/`tickNpc` tutulurken bekler. `__plWarm` ada geçişi/kayıt yüklemede ldscr ile.
+
 ## v2.38 (30 Ekim 2026) · telefonda yavaşlık (sis), ısınma ekranı, sabit parlama
 - Ölçüm (Playwright, CPU ×6): `updateFog` 2.34 23 ms / 2.37 38–43 ms / 2.38 2 ms; biyom sayacı 2.34 15 ms / 2.37 40 ms; küçük harita çizimi 4,8 / 7,3 / 2,2 ms. Ekran kartına yükleme her sürümde ~0,1 MB/sn (büyük doku yok). 30 ms üstü işlerin neredeyse tamamı kare gövdesi (2.34 ile eşit).
 - `updateFog`: `fogWin(big,w,h)` pencereleri; tam geçiş yalnızca `fogLastN===-1` (başlangıç, `unpackExplored`, hile); büyük harita açıkken onun penceresi `fogImg`/`fogC`'ye kirli dikdörtgenle; küçük harita için ayrı `fogS` tuvali (pencere + 8 karo, `fogSI`, `fogS0` başlangıç karosu), `drawMap(!big)` onu kullanır.

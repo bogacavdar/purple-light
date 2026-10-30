@@ -8,6 +8,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.39 · 30 Ekim 2026
+
+**Düzeltmeler**
+- **Donma giderildi: harita ızgarası eski boyutuna döndü.** 2.35'te yeni ada şekilleri kara alanı korunsun diye 804 × 785 karoluk (eskisinin 2,1 katı, çoğu deniz) bir ızgaraya çizilmişti; haritanın tamamını okuyan işler (sis, kayıt, keşif, sarı bölge) iki kat ağırlaştı ve telefonda oyun dondu. Artık iki ada da eskisi gibi **645 × 464** ızgarada: hilal ve yonca şekli bu çerçeveye sığdırıldı, kıyıda ince bir deniz payı var. Altı biyom yine eşit ve zincir halinde, köprüler ve sıradağ yerinde, oyun Çayır'ın Orman'a en uzak ucunda başlıyor, ana kişiler Çayır'da kısa yürüyüş uzaklığında.
+- **Sisli hava kaldırıldı:** sisli hava ve Bataklık ile Kayalık Dağ'ın üstündeki sürekli sis tabakası artık yok (her karede bütün ekranı yeniden çiziyordu). Harita sisi (keşfedilmemiş yerler) duruyor.
+
+**Arayüz**
+- **Açılışta yükleme yazısı yok.** Oyun açılırken yükleme ekranı çıkmıyor.
+- **ACT 1 kartının arkasında hazırlık:** "ACT 1 · Yıldızsız Ada" yazısı ekrandayken oyun duruyor; arkada kıyı çiziliyor, Ekin, ateş ve çevredeki her şey ekran kartına yükleniyor, konuşma penceresi ve yazı tipi hazırlanıyor. Hazırlık sürerken kartın altında "Yükleniyor…" yazıyor; bitince kart kalkıyor ve kıyı oynanmaya hazır açılıyor (uyanış ve Ekin'in yürüyüşü kart kalkınca başlıyor).
+
+**Kayıtlar**
+- 2.35–2.38'de kaydedilmiş oyunlar yeni ızgaraya taşınır: kumsalda uyanırsın, harita yeniden keşfedilir, yere koyduğun eşyalar Ekin'in kampının yanına taşınır; envanter, görevler, köprüler ve patlamalar korunur.
+
+**Tasarım belgesi**
+- Ada boyutları (645 × 464), biyom büyüklükleri; hava (sis yok); yükleme ekranının yeri (ACT 1 kartı); performans kuralları (ızgara eski boyutta).
+
+---
+
 ## Versiyon 2.38 · 30 Ekim 2026
 
 **Düzeltmeler**
