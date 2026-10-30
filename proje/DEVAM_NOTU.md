@@ -9,6 +9,11 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.33 (30 Ekim 2026) · başka demircide seçilen tarif örse taşınmıyor — BEKLEYEN PAKET (yayında değil)
+- `bekleyen-paket` dalında; "paket çık" denince GUNCELLEME_NOTLARI'na yazılır, `yayinla.sh`, main'e alınır.
+- Sebep: `openMenu` seçili tarifi (`pot.r`) yalnızca kazan↔örs geçişinde sıfırlıyordu; Dursun'da seçilen Taş balta Durmuş'un örsünde seçili kalıyordu. Yeni `v233` bloğu: `renderCraft` sarmalı, örs açıkken `smithOf(pot.r)!==(forgeWho||smith)` ise `returnAll()`, `pot.r=null`, `pot.put=[]`.
+- Belge: `parts/20_sistemler.md` Örs maddesine not.
+
 ## v2.32 (30 Ekim 2026) · mağaralar (Yankı Mağarası Sv 5, Kök Mağarası Sv 10)
 - Belge: yeni `parts/37_magaralar.md`; `36_yan_gorevler.md` notu; `00_giris.md` sürüm satırı.
 - Yeni `v232` bloğu (yalnızca ISLE 1). Canlılar `NK` (6) + boss'lar `BK` (boss:1, base kendisi); `MYK` çizim seti; Reis'ler P4'ün `makeBoss`'u ile kendiliğinden. Eşyalar: `RES` (draw:'cave', respawn 1e9), `DB.p` fiyatları, `addR` ile 10 tarif (DB.R, REC, RESULTS, USES), `PIXI` ile 8 elle ikon.
