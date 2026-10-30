@@ -25,6 +25,7 @@
 - Canlı can yenileme: `v233-regen` bloğu (tickAnimals sarmalı): `a._hmx` (ilk görülen can ya da ANIM hp), `a._lhp`/`a._calm`; 6 sn hasarsız ve dövüş dışı (200 px içinde chase, wind, lunge, p4slam, mv, `_burn` yok) → saniyede %4.
 - Yanma 3 kat yavaş: `v228-mesale` `BURN_DPS` .67/1, `BURN_TICK=1` (önce 2/3, .5 sn).
 - Almanak konuk kartı: v230 `MOB` → `window.__plMOB`; almanak `render()` (yerinde) sayfanın biyomundaki MOB canlılarından avlanmış ve listede olmayanları sona ekler, sayıya katmaz.
+- Almanak `lands()` (yerinde): görülmemiş biyom, BANIM listesinden bir canlısı avlandıysa sekmesiyle eklenir (Çayır'da avlanan Orman engereği). Not: Çayır'ın kendi doğumunda Engerek çıkmıyor (400 deneme, 0); Boğaç'ın gördüğü ~%10 canlı Engerek'in nereden geldiği bulunamadı, büyük ihtimalle Orman sınırından kovalayarak geldi.
 
 ## v2.32 (30 Ekim 2026) · mağaralar (Yankı Mağarası Sv 5, Kök Mağarası Sv 10)
 - Belge: yeni `parts/37_magaralar.md`; `36_yan_gorevler.md` notu; `00_giris.md` sürüm satırı.

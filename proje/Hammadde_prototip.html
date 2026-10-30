@@ -15033,7 +15033,8 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  ov.innerHTML='<div class="ap"><div class="ah"><span><b>Almanak</b><small id="alm-sub"></small></span><button class="ax" id="alm-x" type="button" aria-label="Kapat">✕</button></div><div class="ab"><div class="al" id="alm-l"></div><div class="ag" id="alm-g"></div></div></div>';
  document.body.appendChild(ov);
  const A={open:false,b:-1,wasP:false};window.__plAlm=A;
- const lands=()=>{const V=window.__v65;return V?[...V.seen].filter(b=>BNAME[b]):[]};
+ const lands=()=>{const V=window.__v65,L=V?[...V.seen].filter(b=>BNAME[b]):[];   // v2.33: a land you have not been to yet still gets its page once you hunted one of its creatures (an Orman viper that followed you into Çayır)
+   try{const BA=window.__plBANIM||[];for(let b=0;b<BA.length;b++){if(L.indexOf(b)>=0||!BNAME[b])continue;if((BA[b]||[]).some(e=>ANIM[e[0]]&&!ANIM[e[0]].boss&&(kills[e[0]]||0)>0))L.push(b)}L.sort((x,y)=>x-y)}catch(e){}return L};
  const kindsOf=b=>{const L=(window.__plBANIM||[])[b]||[],o=[];for(const e of L){const k=e[0];if(ANIM[k]&&!ANIM[k].boss&&o.indexOf(k)<0)o.push(k)}return o};
  const P4=()=>window.__p4||{s:{bc:{},bd:{}}};
  const known=k=>(kills[k]||0)>0;
