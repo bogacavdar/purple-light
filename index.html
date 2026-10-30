@@ -15067,7 +15067,9 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    if(A.b<0){gg.innerHTML='<div class="ae">Henüz hiçbir yeri keşfetmedin.</div>';$('alm-sub').textContent='';return}
    const K=kindsOf(A.b);$('alm-sub').textContent=`${BNAME[A.b]} · ${K.filter(known).length} / ${K.length} canlı`;
    for(const k of K)gg.appendChild(card(k));
-   if(!K.length)gg.innerHTML='<div class="ae">Bu bölgede canlı yok.</div>'}
+   const G=[];for(const k of ((window.__plMOB||[])[A.b]||[]))if(ANIM[k]&&known(k)&&K.indexOf(k)<0&&G.indexOf(k)<0)G.push(k);   // v2.33: a side quest's creature from another land, once hunted
+   for(const k of G){const c=card(k);c.insertAdjacentHTML('beforeend','<p style="opacity:.75;font-size:11px">Başka bölgenin canlısı · yan görevde karşına çıktı</p>');gg.appendChild(c)}
+   if(!K.length&&!G.length)gg.innerHTML='<div class="ae">Bu bölgede canlı yok.</div>'}
  function open(){if(onTitle||wake||fading||cine.on)return;if(dlgOpen)bye();if(craftOpen)closeCraft();A.open=true;A.wasP=paused;paused=true;for(const k in keys)keys[k]=false;
    try{const b=bioAt(player.x,player.y);if(lands().indexOf(b)>=0)A.b=b}catch(e){}
    ov.hidden=false;render();sfx('pick')}
@@ -15534,7 +15536,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 {
  TORCHB['Kaba meşale']=220;TORCHB['Meşale']=340;
- const BURN_T=4,BURN_DPS={'Kaba meşale':2,'Meşale':3},WEAR=.045;   /* v2.33: three times the wear per attack (was .015) */
+ const BURN_T=4,BURN_DPS={'Kaba meşale':.67,'Meşale':1},BURN_TICK=1,WEAR=.045;   /* v2.33: burning is 3 times slower (was 2 and 3 per s, every .5 s) */   /* v2.33: three times the wear per attack (was .015) */
  let lastWear=-1e9;
  const nowS=()=>performance.now()/1000;
  const wearTorch=()=>{if(window.__plDur)return;const t=torchHeld();if(!t)return;const n=nowS();if(n-lastWear<.25)return;lastWear=n;
@@ -15542,14 +15544,14 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const fireProof=a=>{const D=ANIM[a.k];return !D||a.tut||a.ders||a.dl||a.ar||!!(D.fx&&D.fx[0]==='yanık')};
  const _mp=madPack;madPack=function(a){const r=_mp.apply(this,arguments);
    try{const t=torchHeld();if(t&&a&&!fireProof(a)&&Math.hypot(a.x-player.x,a.y-player.y)<=60){
-       const was=a._burn&&a._burn.t>0;a._burn={t:BURN_T,dps:BURN_DPS[t]||2,acc:0,tick:.5};wearTorch();
+       const was=a._burn&&a._burn.t>0;a._burn={t:BURN_T,dps:BURN_DPS[t]||.67,acc:0,tick:BURN_TICK};wearTorch();
        if(!was)for(let k=0;k<8;k++)parts.push({x:a.x+(Math.random()-.5)*10,y:a.y-6,vx:(Math.random()-.5)*30,vy:-20-Math.random()*25,life:.5,c:k%2?'#ffb040':'#ff6a1a'})}}catch(e){}
    return r};
  {const _at=attack;attack=function(){const s0=swing;const r=_at.apply(this,arguments);try{if(swing&&swing!==s0&&torchHeld())wearTorch()}catch(e){}return r}}
  {const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);
    try{if(dt>0)for(const a of animals.slice()){const B=a._burn;if(!B||!(B.t>0))continue;
        B.t-=dt;B.acc+=B.dps*dt;B.tick-=dt;
-       if(B.tick<=0||B.t<=0){B.tick=.5;const dm=Math.floor(B.acc);if(dm>=1){B.acc-=dm;a.hp-=dm;a.flash=Math.max(a.flash||0,.06);floats.push({x:a.x+(Math.random()-.5)*6,y:a.y-14,t:0,text:`-${dm}`,color:'#ff8a2a'});
+       if(B.tick<=0||B.t<=0){B.tick=BURN_TICK;const dm=Math.floor(B.acc);if(dm>=1){B.acc-=dm;a.hp-=dm;a.flash=Math.max(a.flash||0,.06);floats.push({x:a.x+(Math.random()-.5)*6,y:a.y-14,t:0,text:`-${dm}`,color:'#ff8a2a'});
            if(a.hp<=0){a._burn=null;killAnimal(a);continue}}}
        if(B.t<=0)a._burn=null}}catch(e){}
    return r}}
@@ -15817,7 +15819,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
      on:()=>!onTitle&&present(q)&&!(q.ghost),label:()=>done.has(q.id)?q.name:`Konuş: ${q.name}`,act:()=>talk(q)};XTRA.push(ent)}
  {const _bl=blocked;blocked=function(px_,py_){if(_bl.apply(this,arguments))return true;for(const q of Q){if(q.ghost||!present(q))continue;const h=homeOf(q);if(Math.abs(h.x-px_)<HALF+5&&Math.abs(h.y-py_)<HALF+4)return true}return false}}
  // ---------------------------------------------------------------- creatures for a side quest
- const MOB=[['Kurt','Yaban domuzu'],['Kurt','Yaban domuzu'],['Bataklık kurdu','Engerek'],['Kurt','Muflon']];
+ const MOB=[['Kurt','Yaban domuzu'],['Kurt','Yaban domuzu'],['Bataklık kurdu','Engerek'],['Kurt','Muflon']];window.__plMOB=MOB;   // v2.33: the almanac shows a hunted guest on that land's page too
  function spawnMob(k,cx,cy,r0,r1){if(!ANIM[k])k='Kurt';if(!ANIM[k])return false;
    for(let i=0;i<60;i++){const a=Math.random()*Math.PI*2,r=r0+Math.random()*(r1-r0),x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r;
      if(!reachAt(x,y)||blocked(x,y)||isWater(tileAt(x,y))||nearCamp(x,y))continue;

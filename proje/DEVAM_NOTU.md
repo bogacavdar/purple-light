@@ -9,7 +9,7 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
-## v2.33 (30 Ekim 2026) · başka demircide seçilen tarif örse taşınmıyor, meşale vuruşta 3 kat aşınır, balta dersi listesinde sopa yok, kategorili yemek menüsü, kaya üstü toplanabilirler, telefonda düşmana otomatik vuruş, telefonda tam ekran anı ve harita, sıkışan canlı, ateş kenarında kurt, canlılar can yeniler — BEKLEYEN PAKET (yayında değil)
+## v2.33 (30 Ekim 2026) · başka demircide seçilen tarif örse taşınmıyor, meşale vuruşta 3 kat aşınır, balta dersi listesinde sopa yok, kategorili yemek menüsü, kaya üstü toplanabilirler, telefonda düşmana otomatik vuruş, telefonda tam ekran anı ve harita, sıkışan canlı, ateş kenarında kurt, canlılar can yeniler, yavaş yanma, almanak konuk kartı — BEKLEYEN PAKET (yayında değil)
 - `bekleyen-paket` dalında; "paket çık" denince GUNCELLEME_NOTLARI'na yazılır, `yayinla.sh`, main'e alınır.
 - Sebep: `openMenu` seçili tarifi (`pot.r`) yalnızca kazan↔örs geçişinde sıfırlıyordu; Dursun'da seçilen Taş balta Durmuş'un örsünde seçili kalıyordu. Yeni `v233` bloğu: `renderCraft` sarmalı, örs açıkken `smithOf(pot.r)!==(forgeWho||smith)` ise `returnAll()`, `pot.r=null`, `pot.put=[]`.
 - Belge: `parts/20_sistemler.md` Örs maddesine not.
@@ -23,6 +23,8 @@
 - Sıkışan canlı: `v233-pin` bloğu (tickAnimals sarmalı): kovalayan, 0,4 sn ilerleyemeyen ve 44 px içindeki canlı `wind=.1` ile saldırır (`a._pin`); `_pin`'li atılış 44 px içinde `biteHit` yapar (duvarı aşar).
 - Güvenli yerde canavarlar uzak: `v233-camp` bloğu (tickAnimals sarmalı): `nearCamp(player)` iken saldırgan/kızgın canlılar 160 px dışına `moveA` ile kaçar, wind/lunge/p4slam/mv iptal.
 - Canlı can yenileme: `v233-regen` bloğu (tickAnimals sarmalı): `a._hmx` (ilk görülen can ya da ANIM hp), `a._lhp`/`a._calm`; 6 sn hasarsız ve dövüş dışı (200 px içinde chase, wind, lunge, p4slam, mv, `_burn` yok) → saniyede %4.
+- Yanma 3 kat yavaş: `v228-mesale` `BURN_DPS` .67/1, `BURN_TICK=1` (önce 2/3, .5 sn).
+- Almanak konuk kartı: v230 `MOB` → `window.__plMOB`; almanak `render()` (yerinde) sayfanın biyomundaki MOB canlılarından avlanmış ve listede olmayanları sona ekler, sayıya katmaz.
 
 ## v2.32 (30 Ekim 2026) · mağaralar (Yankı Mağarası Sv 5, Kök Mağarası Sv 10)
 - Belge: yeni `parts/37_magaralar.md`; `36_yan_gorevler.md` notu; `00_giris.md` sürüm satırı.
