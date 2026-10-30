@@ -13,7 +13,7 @@
 
 ## Yaşlı Ekin · ana görevler
 
-Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanında, Çayır'ın güney kıyısında. Bir şey satmaz; ana görev zincirini verir. Kampının yanında "SATILIK" bir arsa vardır (Taş ev buraya kurulur). Bayılınca (gece mor ışıkla da) kampının hemen yanındaki kumsalda uyanırsın. Ana görevleri bitirdikçe kendi hikâyesini (kaybettiği eşi Saliha) anlatır. Her görev tesliminde %30 ihtimalle bir anın geri gelir.
+Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanında, Çayır'ın güney kıyısında. Bir şey satmaz; ana görev zincirini verir. Bayılınca (gece mor ışıkla da) kampının hemen yanındaki kumsalda uyanırsın. Ana görevleri bitirdikçe kendi hikâyesini (kaybettiği eşi Saliha) anlatır. Her görev tesliminde %30 ihtimalle bir anın geri gelir.
 
 | # | Görev | İstenen | Sikke | XP | Kitaba yazdığı tarifler |
 |---|---|---|---|---|---|
@@ -342,7 +342,7 @@ Aletleri fırtınada denize gitmiş. Tarlayı kullanmak için ona sırayla dört
 
 **Yer:** Ekin'in yaklaşık 34 karo batısı, 22 karo kuzeyi. **Tanışma:** her zaman.
 
-- **Ev ve barınak yapar** (sikkeyle). Yaprak barınağı dışındaki evlerde uyumak için içine yatak konmalıdır (Kemal yapar). Taş ev Ekin'in yanındaki arsaya kurulur. Fiyatlar için "Evler ve barınaklar" tablosuna bak (oyunda gösterilen fiyat, alt fiyat kuralı yüzünden listeden yüksek olabilir).
+- **Ev ve barınak yapar** (sikkeyle). Yaprak barınağı dışındaki evlerde uyumak için içine yatak konmalıdır (Kemal yapar). Taş ev de istediğin yere kurulur. Fiyatlar için "Evler ve barınaklar" tablosuna bak (oyunda gösterilen fiyat, alt fiyat kuralı yüzünden listeden yüksek olabilir).
 - Yaprak barınağı görevi açıkken malzemeler (8 Dal, 12 Yaprak, 4 Lif) çantandaysa konuşma doğrudan siparişler listesini açar.
 - Hikâyesi: nişanlısı Defne.
 

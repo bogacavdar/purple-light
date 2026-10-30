@@ -1,10 +1,12 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.41** ile birebir (30 Ekim 2026). Bu sürümde: hava sisi geri geldi (Orta Diyar'da ince sis, sisli hava). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.42** ile birebir (31 Ekim 2026). Bu sürümde: "+" düğmeleri zincirleme yapar, öğretici ve yan görev düzeltmeleri, belgede genel arama. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
 ## Bu belge nasıl okunur
+
+- **Bütün belgede ara (v2.42, Boğaç):** sayfanın en üstündeki **arama çubuğu** belgenin tamamını tarar: başlıklar, metinler, listeler ve **tablo satırları** (tarifler, eşyalar, canlılar, görevler). Birden çok sözcük yazarsan hepsini içeren yerler çıkar; Türkçe harfler önemsizdir ("kerevit" ile "Kerevit", "cadi" ile "Cadı" aynı). Sonuca tıklayınca belge o yere kayar ve sözcükler işaretlenir. **/** ya da **Ctrl+K** aramaya geçer, **↑ ↓** sonuçlar arasında gezer, **Enter** gider, **Esc** kapatır. Bir tablonun kendi süzgeci ("Bu tabloda ara") yalnızca o tabloyu süzer; genel arama hepsini kapsar.
 
 - **Bir şeyin nasıl yapıldığını mı arıyorsun?** En alttaki **Eşya dizini**ne git, adını ara. Her eşyanın yanında nereden geldiği (hangi biyomda toplandığı, hangi canlıdan düştüğü, hangi tarifle yapıldığı) ve hangi tariflerde kullanıldığı yazar.
 - **Bir tarifin içeriği:** **Tarif ansiklopedisi**, kategori kategori. Her satırda malzemeler, gereken alet, *nerede yapıldığı* (el yapımı, örs, usta) ve fiyatı var.

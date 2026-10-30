@@ -8,6 +8,36 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.42 · 31 Ekim 2026
+
+### Oynanış
+- **"+" artık zincirleme yapıyor:** kazandaki ve örsteki malzeme satırlarında "+" ile elle yapma (envanter) listesindeki "Yap" düğmesi, eksik malzemeyi çantandaki eşyalardan üretebiliyorsa açılır. Örnek: 4 taşın ve iki tarifin varsa Sopa için önce iki keskin taş, sonra sopa yapılır. Tek kural: zincirdeki her tarifi bilmen ve ham malzemenin yetmesi. Kazanda "+" satırın eksik miktarı kadar üretir.
+- **Nötr canlılar ilk vuruşta saldırır:** kıyıdaki Kerevit gibi nötr canlılara vurduğun anda sana dönüp saldırıyor. Kerevit'in kovalama hızı artırıldı, artık geri savrulurken yaklaşabiliyor.
+- **Gece bitkileri mor ışıktan korur:** Gece sefası ve Mor kıymık toplanana kadar çevrelerinde mor ışık vurmaz; topladığında koruma biter.
+- **Çoban Hüsnü:** Pamuk daha uzaktan başlıyor, daha yavaş ama en az 4 kat uzağa kaçıyor, engellerin yanından dolanıyor, denize ya da kıyıya gitmiyor. Pamuğu getirip pencereyi kapatsan da görev ilerliyor.
+- **Güvercinci Kerem:** güvercinler daha uzakta ve sırayla toplanıyor; haritada yalnızca sıradaki güvercinin bölgesi sarı çemberle gösteriliyor (çember büyük, güvercin içinde rastgele bir yerde).
+- **Taş ev** artık sabit arsada değil, satın alınca istediğin yere kurulur.
+
+### Düzeltmeler
+- Meşale öğreticisinde meşaleyi yuvaya koyunca envanter kapanıp öğretici devam ediyor; meşaleyi atlayıp Nazlı'ya geçme açığı kapandı.
+- Yan görev NPC'si olmayan yerde çıkan "?" bölgesi kaldırıldı; görev işareti yalnızca yakındayken ve görev etkinken görünüyor, rengi mor.
+- Konuşma kutusunda her konuşanın kendi resmi çıkıyor; Kerem'in güvercin satırlarında Nuri'nin yüzü artık çıkmıyor.
+
+### Görsel
+- Haritadaki kendi işaretinin yanıp sönmesi kaldırıldı.
+- "SATILIK" arsa yazısı haritadan kalktı.
+- Kazan listesinde şimdi yapılabilir tarifler en üstte, altın çerçeveyle parlıyor.
+
+### Tasarım belgesi
+- Belgede tüm metinde çalışan genel arama çubuğu eklendi.
+- Tarifler, yan görevler, akış ve diğer bölümler yukarıdaki değişikliklere göre güncellendi.
+
+### Proje
+- CLAUDE.md'ye "her konuşanın kendi resmi olur" kuralı eklendi.
+- Bu sürüm oynanarak test edilmedi; yalnızca sözdizimi kontrolü yapıldı.
+
+---
+
 ## Versiyon 2.41 · 30 Ekim 2026
 
 **Görsel**

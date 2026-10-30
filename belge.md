@@ -1,10 +1,12 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.41** ile birebir (30 Ekim 2026). Bu sürümde: hava sisi geri geldi (Orta Diyar'da ince sis, sisli hava). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.42** ile birebir (31 Ekim 2026). Bu sürümde: "+" düğmeleri zincirleme yapar, öğretici ve yan görev düzeltmeleri, belgede genel arama. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
 ## Bu belge nasıl okunur
+
+- **Bütün belgede ara (v2.42, Boğaç):** sayfanın en üstündeki **arama çubuğu** belgenin tamamını tarar: başlıklar, metinler, listeler ve **tablo satırları** (tarifler, eşyalar, canlılar, görevler). Birden çok sözcük yazarsan hepsini içeren yerler çıkar; Türkçe harfler önemsizdir ("kerevit" ile "Kerevit", "cadi" ile "Cadı" aynı). Sonuca tıklayınca belge o yere kayar ve sözcükler işaretlenir. **/** ya da **Ctrl+K** aramaya geçer, **↑ ↓** sonuçlar arasında gezer, **Enter** gider, **Esc** kapatır. Bir tablonun kendi süzgeci ("Bu tabloda ara") yalnızca o tabloyu süzer; genel arama hepsini kapsar.
 
 - **Bir şeyin nasıl yapıldığını mı arıyorsun?** En alttaki **Eşya dizini**ne git, adını ara. Her eşyanın yanında nereden geldiği (hangi biyomda toplandığı, hangi canlıdan düştüğü, hangi tarifle yapıldığı) ve hangi tariflerde kullanıldığı yazar.
 - **Bir tarifin içeriği:** **Tarif ansiklopedisi**, kategori kategori. Her satırda malzemeler, gereken alet, *nerede yapıldığı* (el yapımı, örs, usta) ve fiyatı var.
@@ -207,8 +209,8 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 | 2 | Ekin | Yemek düğmesiyle (F) 5 böğürtlen ye (soldaki yemek düğmesi mavi parlar ve ok onu gösterir; yemek listesi açılınca önce üstteki **Meyveler** sekmesi parlar ve ok onu gösterir; Meyveler seçilince Böğürtlen'in **Ye** düğmesi parlar (v2.33). Kartta da "listeyi açarsan önce Meyveler sekmesini seç" yazar) | Cadı Zümrüt görünür; Ekin seni kuzeye, ormanın kıyısına yollar |
 | 3 | Zümrüt | Zümrüt'e git ve konuş | Kazanın yanına 2 Dal, 2 Lif, 2 Yaprak konur |
 | 4 | Zümrüt | Kazanda **Kaba meşale** tarifini öğren. Tarif seçilince, malzemeler konana kadar **kazan alanı da mavi parlar** (v2.22), malzemelerin nereye gideceği görünsün. | Malzemeler yeniden konur (v2.35: **Zümrüt'ün kazanının yanına**, oyuncu nerede durursa dursun) |
-| 5 | Zümrüt | El yapımı ekranında (Tab) meşaleyi yap, bir yuvaya koyup eline al. **Malzemeler (2 dal, 2 lif, 2 yaprak) toplanmadan** el yapımı düğmesi, meşale satırı ve Yap düğmesi **parlamaz** (v2.25); önce malzemeler toplanır, sonra parlar. Aynı kural kazan adımlarında (4, 7) ve balta adımında (12) da geçerlidir. | Meşale yapılınca Zümrüt yalnızca meşaleyi anlatır (taşlardan söz etmez). Meşale ele gelince Zümrüt **meşaleyi anlatır**: gündüz işe yaramaz, gece içindir; yalnızca eldeyken yanar ve Kaba meşale yaklaşık **110 saniye** yanınca biter (yağmurda daha çabuk); gündüz elinden indir, akşam karanlığında eline al, yedeğin olsun. Sonra kart **"Meşaleyi elinden indir"** der, meşalenin yuvası (hotbar kutusu) oku ile parlar; meşale inene kadar taş adımına geçilmez (v2.11: taşlar ve taş konuşması da meşale inince gelir; v2.12: üstteki takip satırı da o ana kadar taş istemez, haritadaki taşlar mavi parlamaz) |
-| 6 | Zümrüt | 4 taşı topla | Meşale eline girince Zümrüt meşaleyi anlatır (**v2.28, Boğaç:** artık "gündüz işe yaramaz" demez; meşalenin bir **silah** da olduğunu, vurduğun canavarı tutuşturduğunu ama her vuruşun meşaleden yediğini söyler; asıl tehlikenin **gece** olduğunu, meşaleyi **geceyi geçirmek** için saklamayı ya da kavgada kullanacaksan bir **yedek** yapmayı tavsiye eder; Kaba meşale "yaklaşık dört dakika" dayanır). Sonra meşaleyi indirmeni ister (kart: "Gündüz meşaleyi boşuna yakma; geceye sakla"). Meşale inince Zümrüt taşları anlatır ve kazanın yanına 4 Taş konur |
+| 5 | Zümrüt | El yapımı ekranında (Tab) meşaleyi yap, bir yuvaya koyup eline al. **Malzemeler (2 dal, 2 lif, 2 yaprak) toplanmadan** el yapımı düğmesi, meşale satırı ve Yap düğmesi **parlamaz** (v2.25); önce malzemeler toplanır, sonra parlar. Aynı kural kazan adımlarında (4, 7) ve balta adımında (12) da geçerlidir. | Meşale yapılınca Zümrüt yalnızca meşaleyi anlatır (taşlardan söz etmez). Meşale ele gelince Zümrüt **meşaleyi anlatır**: gündüz işe yaramaz, gece içindir; yalnızca eldeyken yanar ve Kaba meşale yaklaşık **110 saniye** yanınca biter (yağmurda daha çabuk); gündüz elinden indir, akşam karanlığında eline al, yedeğin olsun. **Envanter kendiliğinden kapanır (v2.42, Boğaç):** meşale envanterden alttaki alet yuvasına konunca (öğretici bu adımdayken) envanter yarım saniye sonra kendi kapanır; oyuncu Esc/Kapat'a basmak zorunda kalmaz, kart hemen "yuvaya dokun / tuşa bas" der ve öğretici devam eder. Sonra kart **"Meşaleyi elinden indir"** der, meşalenin yuvası (hotbar kutusu) oku ile parlar; meşale inene kadar taş adımına geçilmez (v2.11: taşlar ve taş konuşması da meşale inince gelir; v2.12: üstteki takip satırı da o ana kadar taş istemez, haritadaki taşlar mavi parlamaz) |
+| 6 | Zümrüt | 4 taşı topla | Meşale eline girince Zümrüt meşaleyi anlatır (**v2.28, Boğaç:** artık "gündüz işe yaramaz" demez; meşalenin bir **silah** da olduğunu, vurduğun canavarı tutuşturduğunu ama her vuruşun meşaleden yediğini söyler; asıl tehlikenin **gece** olduğunu, meşaleyi **geceyi geçirmek** için saklamayı ya da kavgada kullanacaksan bir **yedek** yapmayı tavsiye eder; Kaba meşale "yaklaşık dört dakika" dayanır). Sonra meşaleyi indirmeni ister (kart: "Gündüz meşaleyi boşuna yakma; geceye sakla"). **Meşale elden inene kadar taşlar sayılmaz (v2.42, Boğaç):** yerden 4 taş toplamış olsan bile adım meşale indirilmeden ilerlemez; öğretici meşale adımı atlanamaz (Nazlı'ya meşalesiz geçilebiliyordu). Meşale inince Zümrüt taşları anlatır ve kazanın yanına 4 Taş konur |
 | 7 | Zümrüt | Kazanda **Keskin taş** tarifini öğren (2 Taş). Malzemeler konana kadar kazan alanı mavi parlar (v2.22). | — |
 | 8 | Zümrüt | Kalan 2 taşla elle Keskin taş yap | Zümrüt kuzeydoğudaki Nazlı'yı söyler |
 | 9 | Nazlı | Pazarcı Nazlı ile tanış | Pazar "Sat" sekmesiyle açılır |
@@ -340,7 +342,7 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - 19:00'dan itibaren kararır; 21:00–04:30 tam karanlıktır.
 - **Zifiri karanlık kuralı:** gece elinde meşale yoksa, kafa lamban yoksa, bir ışığın (kamp ateşi vb.) içinde ya da bir evin içinde değilsen sayaç başlar: 3,5 sn "Kim var orada?!", 6,5 sn "Bir şey yaklaşıyor…", **8. saniyede mor ışık iner ve bayılırsın**. İlk gece süre 20 sn'dir ve **ilk gece hiçbir şey kaybolmaz**; sonraki gecelerde bayılmadaki gibi %20 kayıp. Ertesi sabah 06:00'da kumsalda uyanırsın.
 - İlk kez meşalesiz karanlığa yakalanınca biri sana bir kez **bedava Kaba meşale** fırlatır. İlk 3 gün 17:30'da "Hava kararıyor" uyarısı gelir.
-- **Güvenli yerler** (saldırgan canavarlar uzaklaşır, mor ışık gelmez): Ekin'in kampı (352 px), kişilerin ateşleri (kuzenlerin ateşleri dahil), Dursun'un ocağı, Zümrüt'ün kazanı (120 px), kendi kamp ateşin (100 px), evin içi. Ateş böcekleri ve mor kıymıklar ışık sayılmaz.
+- **Güvenli yerler** (saldırgan canavarlar uzaklaşır, mor ışık gelmez): Ekin'in kampı (352 px), kişilerin ateşleri (kuzenlerin ateşleri dahil), Dursun'un ocağı, Zümrüt'ün kazanı (120 px), kendi kamp ateşin (100 px), evin içi. Ateş böcekleri ışık sayılmaz. **Gece çıkan parlak bitkiler (Gece sefası, Mor kıymık) toplanana kadar ışık sayılır (v2.42, Boğaç):** yanlarında (yaklaşık 31–34 piksel, yani toplama menzilinin dışına taşan bir halka içinde) durduğun sürece mor ışık sana dokunmaz. Bitkiyi **topladığın an** ışığı da gider; çevrede başka ışık (meşale, lamba, ateş, Gece gözü) yoksa karanlıkta kalırsın ve mor ışık vurur (normal uyarı süresiyle). Bitkinin çevresindeki parlak halka da bu menzile uyar.
 - **Güvenli yerdeyken canavarlar uzak durur (v2.33, Boğaç):** eskiden ateşe girip çıkarak kurtları hasar almadan öldürebiliyordun (ateşin içindeyken saldırmıyorlar ama yanında bekliyorlardı). Artık sen bir güvenli yerin içindeyken (kişi ateşi, kamp ateşin, ocak, kazan, Ekin'in kampı) sana **160 piksel**den yakın olan saldırgan (ya da kızdırdığın) her canavar senden uzaklaşır: tam hızıyla 160 pikselin dışına kaçar ve orada bekler, atılışı ve hazırlığı iptal olur. Güvenli yerden çıkınca yine kovalar. Böylece ateşin kenarından vurulabilecek bir yerde durmazlar.
 - **Gündüz olunca gece canlıları gider (v2.33, Boğaç):** yalnızca gece çıkan canlılar (Kurt gibi) sabah olunca (06:00) artık kalmaz: kovalamayı bırakır, senden uzağa koşar ve 300 pikselden uzaklaşınca ya da en geç **6 saniye** sonra toz bulutuyla kaybolur. Eskiden yalnızca ekranın çok dışındakiler kayboluyor, yakındakiler gündüz de kalıyordu. Reis'ler ve yan görev canavarları bu kurala girmez (görev bitene kadar kalırlar).
 - **Güvenli yerlere canavar girmez (v2.22):** kavga edebilen canlılar (*saldırgan* ve *nötr*, Reisler dahil) aşağıdaki güvenli yerlerin sınırında durur, içeri **adım atmaz**; kişilerin yanına gelemez. Seni kovalarken sen güvenli yere girersen sınırda kalır, sonra vazgeçer. Bir şekilde içerde kalmış biri (ör. hücum ya da sıçrama ile) en yakın kenardan dışarı yürür. *Zararsız* canlılar (tavşan, geyik…) eskisi gibi dolaşır. Börü'nün ders canlıları ve arena bu kuraldan muaf.
@@ -512,7 +514,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Hasan'ın ödüllerinden, hasatt
 
 ## Ev, ev içi ve döşeme
 
-- Ev **Marangoz Rıza**'dan sikkeyle alınır, envantere gelir; bir yuvaya koyup yere kurarsın (Boşluk döndürür, Esc iptal). Taş ev yalnızca Ekin'in yanındaki arsaya kurulur.
+- Ev **Marangoz Rıza**'dan sikkeyle alınır, envantere gelir; bir yuvaya koyup yere kurarsın (Boşluk döndürür, Esc iptal). Taş ev de diğer evler gibi istediğin yere kurulur (v2.42, Boğaç: Ekin'in yanındaki "SATILIK" arsa kaldırıldı; haritada arsa, tabela ya da arsa ipucu yoktur).
 - Yaprak barınağı dışındaki her evde **E = içeri gir**. İçeride ada donar (canavarlar, oklar durur) ama saat, açlık ve hava sürer. **İçeride mor ışık gelmez.**
 - Üst çubukta **Döşe** / **Dışarı çık**. Döşe kipinde envanterdeki ev eşyasını seç, ızgarada bir kareye tıkla (R döndürür); konmuş eşyaya tıklayınca geri alırsın. Kapının önü boş kalmalı; duvar eşyaları (raf, asma fener, perde, duvar halısı, resimler) üstteki duvar şeridine, halı ve kilim zemine (üstünden yürünür), diğerleri zemine konur. Eşyalar üst üste konmaz. **Döşeme her saatte yapılabilir;** gece kısıtı yalnızca uyku içindir.
 - Ev eşyaları: yataklar (Hasır yatak 1×2, Hasırotu yatak 1×2, Ahşap karyola 2×2), lambalar (Taş lamba, Kil lamba, Asma fener), Taş/Çömlek fırını 2×1, Tabure, Sandalye, Masa 2×1, Sandık, Dolap, Raf, Halı 3×2, Kilim 2×1, Perde, Duvar halısı, Saksı, Boyalı çömlek, Kil figürin, Ana tanrıça heykelciği, Taş totem, Su testisi, Mağara resmi, Av sahnesi duvar resmi, El izi resmi. Hepsi kazanda öğrenilir ve **Usta Kemal** yapar.
@@ -525,7 +527,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Hasan'ın ödüllerinden, hasatt
 | Kamış kulübe | 5 | 7×5 | |
 | Kerpiç ev | 6 | 8×6 | |
 | Ahşap ev | 7 | 9×6 | |
-| Taş ev | 8 | 10×7 | Ekin'in yanındaki arsaya |
+| Taş ev | 8 | 10×7 | İstediğin yere |
 | Konak | 10 | 12×8 | |
 
 ## Harita, işaretler, defterler
@@ -534,6 +536,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Hasan'ın ödüllerinden, hasatt
 - **Telefonda büyük harita (v2.33, Boğaç):** küçük haritaya dokununca açılan büyük harita pencerenin bütün boşluğunu kaplar (adanın en-boy oranıyla, sığan en büyük boy). Renk açıklamaları ve bilgi yazısı (keşif yüzdesi, nasıl kaydırılır) haritanın altında yer kaplamaz; sağ üstteki +, −, ◎ düğmelerinin altındaki **i** düğmesiyle haritanın üstünde açılıp kapanır (varsayılan kapalı, keşif yüzdesi açıklamanın ilk satırında). Bilgisayarda değişiklik yok.
 - **N** bulunduğun yere işaret koyar (ad + 5 renk, en çok 40). Büyük haritada bir kişinin simgesine dokununca ok onu gösterir; varınca, ✕ ile ya da **sağ tıkla** kalkar. Kendi işaretinde "Yol göster".
 - Haritada: bayıldığın yerler (kurukafa), kurduğun ev/yatak/tuzaklar, kişiler.
+- **Haritada kendi işaretin sabittir (v2.42, Boğaç):** haritadaki (küçük ve büyük) kendi yüzünün çevresindeki sarı hale **yanıp sönmez**, hep açık durur (eskiden saniyede üç kez açılıp kapanıyordu).
 - **Görevi olan kişiler büyük haritada parlar (v1.90):** üstünde **!** olan (görev veren) her kişinin simgesinin arkasında sarı bir ışık ve dışa doğru açılan iki sarı halka, **?** olan (görevi teslim edilecek) kişide yeşil ışık ve halkalar olur; haritayı açan nereye gideceğini hemen görür. Şu an üstünde çalıştığın görevin kişisi ayrıca sarı zeminli işaretle gösterilir.
 - **Keşif defteri** (Kitap): her tarif kategorisinde yaptığın tariflerin oranı. **%25** → sikke, **%50** → kalıcı **ustalık**, **%100** → sikke + 100 XP. Ustalıklar: Yiyecek (tokluk %20 yavaş iner), Şifa (can 1,5 kat hızlı), alet kategorileri (%20 körelmeme), Giyim ve Zırh (+5 savunma), Ateş (meşale %30 uzun), Ağaç (odun %20 hızlı), Taş ve kil (%20 hızlı), Av ve hayvan (ganimet +%10); diğerleri o kategorinin eşyalarını %15 pahalı sattırır.
 
@@ -653,7 +656,7 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 
 ## Canavarlar nasıl savaşır
 
-- **Mizaç:** *zararsız* kaçar; *nötr* vurulunca karşılık verir, 220 piksel uzaklaşınca sakinleşir; *saldırgan* fark etme menziline girince saldırır, menzilin iki katı uzaklaşınca bırakır. Güvenli bölgede saldırgan canavar saldırmaz. Aynı anda en çok 4 canavar kovalar.
+- **Mizaç:** *zararsız* kaçar; *nötr* vurulunca karşılık verir, 220 piksel uzaklaşınca sakinleşir; **ilk vuruşta hemen sana döner ve saldırır (v2.42, Boğaç):** yakınındayken (110 piksel içinde) vurulduğu an sana bakar, kırmızı "!" ile sana atılır (vurmayı sürdürmen gerekmez); uzaktan (ok, büyü) vurulduysa seni kovalar. Eskiden vurulan nötr canlı yavaş kalkıyordu, sen art arda vurdukça geri savruluyor, uzun süre karşılık veremiyordu. **Kıyıdaki Kerevit (nötr)** artık kızınca saniyede 46 piksel koşar (eskiden 14); *saldırgan* fark etme menziline girince saldırır, menzilin iki katı uzaklaşınca bırakır. Güvenli bölgede saldırgan canavar saldırmaz. Aynı anda en çok 4 canavar kovalar.
 - **Sürüler:** sürü hayvanının birine vurunca ya da saldırgan sürüye yaklaşınca hepsi gelir; sırayla saldırırlar (6. seviyeden önce aynı anda 1, sonra 2).
 - **Saldırı:** v2.15'ten beri ayrı bir hazırlık beklemesi yok: kırmızı **"!"** belirdiği an (0,1 sn içinde) canavar sana doğru **atılır** (0,3 sn) → ısırık. (v2.14'e kadar: 0,42 sn hazırlık, hedef çizgisi, dolan halka, sonra 0,2 sn atılış.) Menzilliler 0,6 sn hazırlanıp atar. Bir canavar son saldırısından 1 sn geçmeden yenisine başlayamaz (Reisler hariç).
 - **Atılış hep sana doğru, kaçarsan işlemez (v2.15):** canavar ! ile birlikte o an **bulunduğun yere** atılır; atılış başladıktan sonra **yolu değişmez**, düz gider. ! görünür görünmez takla atarsan (ya da yolundan çekilirsen) kaçarsın, ısırık işlemez; sana değerse ısırık işler. Çok erken atılan takla biter ve işe yaramaz. Üstüne atlayan **bütün canlılar** böyledir; Börü'nün alıştırma kereviti de (orada atılış 0,45 sn, daha yavaş). **Savuşturma** (sağ tık / E basılı, telefonda Savuş) da kaçırır: ısırık değmeden en çok 0,2 sn önce basılırsa beyaz ve sarı ! savuşturulur (kırmızı ! yalnızca taklayla kaçılır). !'in rengi atılışla birlikte görünür; sarı ve kırmızı vuruşlara eklenen ayrı bekleme (0,18 / 0,3 sn) kalktı.
@@ -1627,12 +1630,14 @@ ACT 1'de 27 kişi, **139 görev** (Dursun, Nazlı, Börü ve Toygar 6'şar; Ekin
 10. **Görev kartı.** Süren yan görev, ana görev kartının altında ince **mavi kenarlı ayrı bir kartta** görünür: "Yan görev · Kişi" başlığı, görevin adı ve şu anki adımın kısa yazısı ("Kalan güvercin: 2/4" gibi), köşede **×**. Ana görev kartının başlığı artık "… · Ana görev" yazar. **Görevler penceresi** iki bölümdür: üstte **Ana görev**, altta **Yan görevler** (süren yan görev ve adımı; sonra "Bitirdiklerin: 3/12" ve biten yan görevlerin adları). **Yeri (v2.31, Boğaç — telefonda kart ekranın ortasında kalıyordu):** yan görev kartı her zaman ana görev kartının **hemen altında, aynı genişlikte** durur (bilgisayarda üstte ortada, telefonda **sağ üstte**); ana görev kartı yoksa onun yerinde durur. Telefonda kart tek satırdır (kişi · görev · adım); dokununca açılıp bütün yazıyı gösterir, bir daha dokununca kapanır. Telefonda bir pencere (envanter, kazan, pazar…) ya da konuşma açıkken kart gizlenir.
 11. **Yol gösterme.** Süren yan görevin hedefi (gidilecek yer, kalan noktalar, götürülecek yer ya da geri dönülecek kişi) haritada **açık mavi bir halka** ile gösterilir; hedef ekranın dışındaysa ekranın kenarında küçük mavi bir ok çıkar. **Sarı bölge (v2.31, Boğaç):** yan görev sürerken haritada **ana görevin sarı bölgesi gösterilmez**; onun yerine **yan görevin hedefinin çevresi** (~180 piksel) haritada **sarı** boyanır (ana görevdeki gibi nabız gibi atan sarı alan, ortasında mavi hedef işareti). Yan görev bitince ya da bırakılınca ana görevin sarı bölgesi geri gelir.
 12. **Konuşma resmi (v2.33, Boğaç):** yan kişilerle (mağaradaki Cevdet ve Leyla dahil) konuşurken konuşma kutusunun solundaki küçük resim **o kişinin kendisi**dir: dünyadaki çizimiyle aynı saç, şapka, sakal, giysi renkleri (Nuri ve ustalarda olduğu gibi). Eskiden hepsinde Tüccar Nuri'nin resmi görünüyordu.
+    - **Hiçbir konuşmada varsayılan Nuri resmi yoktur (v2.42, Boğaç):** konuşan her şeyin kendi resmi olur. "Sen" satırlarında **senin** (oyuncunun) yüzün; hikâye anlatan satırlarda (adı "—" olan) ilgili **şeyin kendisi** (güvercin, şişe, kayık, mal sandığı, oyuncak, ayakkabı, tebeşir, taş, ejder ini, mağara) ya da şey yoksa hikâyenin kişisi görünür. Resmi olmayan bir konuşucu için pencere **resimsiz** açılır (Nuri'nin yüzü konmaz). **Yeni bir kişi ya da şey eklenirken konuşma resmi de eklenmek zorundadır** (CLAUDE.md kuralı).
 
 ## Haritada yan görevler
 
 - Görevi bekleyen bir yan kişi (kendi saatinde, görevi bitmemiş) haritada şöyle görünür; yalnızca **ayak bastığın biyomlarda** (henüz gitmediğin biyomdaki yan kişiler haritada görünmez):
   - **Kişinin durduğu yer açılmışsa** (haritanın keşfedilmiş kısmındaysa): tam yerinde **açık mavi bir "?"**.
-  - **Kişinin yeri henüz kapalıysa:** yerinin çevresinde **sisli, hafifçe dönen bir çember** ve ortasında soluk bir **"?"** (çemberin yarıçapı ~220 piksel; çemberin ortası kişinin tam yeri değildir, kişi çemberin içinde bir yerdedir). Çemberin içine girince "yakınlaştın" anlarsın; kişinin durduğu yeri açınca çember yerini tam "?"ya bırakır.
+  - **Kişinin yeri henüz kapalıysa ve ona yakınsan (v2.42, Boğaç):** yerinin çevresinde **mor (menekşe), hafifçe dönen bir çember** ve ortasında koyu mor bir **"?"** (çemberin yarıçapı ~220 piksel; çemberin ortası kişinin tam yeri değildir, kişi çemberin içinde bir yerdedir). Çember haritanın grisiyle ve mavi "?" ile karışmasın diye mordur (v2.41'e kadar soluk gri-maviydi; ilk denemede pembeydi, Boğaç beğenmedi). **Yakınsan** demek, kişiye ~600 piksel (yaklaşık 37 kare) ya da daha az mesafede olmandır; **uzaktayken sisli "?" hiç görünmez.** Kişinin durduğu yeri açınca çember yerini tam "?"ya bırakır.
+  - **Dünyada durmayan kişi için işaret yoktur (v2.42, Boğaç):** Gece görünen kız Işıl gibi dünyada yerinde durmayan (yalnızca geceleri belirip kaybolan) kişiler için haritada ne mavi "?" ne de sisli çember çıkar.
 - Hem küçük haritada (sağ alt) hem büyük haritada (M) görünür; gece de görünür. Büyük haritada üzerine gelince "Yan görev" yazar.
 - Biten yan görevler haritada işaret bırakmaz.
 
@@ -1680,8 +1685,9 @@ Akşamüstü İskele'nin ucunda, dizlerini kucaklamış bir kız oturur: **Elif*
 Elinde değnek, terlemiş, nefes nefese bir çoban.
 
 - **Konuş:** "Pamuk! Pamuk kaçtı! Beyaz, tek boynuzu kırık, inatçı mı inatçı. Kırk yıldır keçi güderim, böylesini görmedim. Bir yakalasan… ben yetişemiyorum, dizlerim tutmuyor."
-- **Kovala (3 kez):** Pamuk 120–200 piksel ötede otlar. Yanına varınca "Mee!" diye zıplayıp 100–180 piksel öteye kaçar. Üçüncüde yorulur, yakalanır.
+- **Kovala (3 kez) (v2.42, Boğaç):** Pamuk Hüsnü'den **480–800 piksel** ötede otlar (eskiden 120–200, çok yakındı). Yanına varıp dokununca "Mee!" der ve **koşarak** öteye kaçar: kaçış **en az 420 piksel** (eskiden 100–180; ~4 kat) ve **yavaştır** (saniyede 50 piksel; sen yürürken 72). Kaçarken **görüşünde değil, gitmek istediği yere** kadar gider; yolunda ağaç, taş, kişi ya da eşya varsa **sağından ya da solundan dolanıp** geçer. Kaçış yeri her seferinde yeniden seçilir: senden **uzak** yönde, aynı biyomda, **deniz ve kıyıdan en az 2 kare uzak** ve araya su ya da kıyı girmeyen düz bir yoldur; Pamuk **suya girmez, kıyıya sıkışıp takılmaz**. Bir yerde takılırsa önce öbür yandan dener, olmazsa olduğu yerde durur (yine yakalanabilir). Koşarken yakalanmaz; durunca dokunmak gerekir (yeni yakalama için ~1,5 sn bekleme). Üçüncüde yorulur, yakalanır.
 - **Eşlik et:** Pamuk peşinden gelir; onu Hüsnü'ye götür (canavar çıkmaz). Yolda arada bir durup ot yer.
+- **Teslim (v2.42, Boğaç):** Pamuk Hüsnü'nün ~90 piksel yakınına gelince teslim konuşması açılır. Konuşma penceresi **Esc ile erken kapatılsa bile** adım yine biter (görev ödülünü verir); eskiden pencere kapatılınca görev takılıp kalıyordu: ne Pamuk ne Hüsnü bir şey yapıyordu. Aynı koruma bütün yan görev konuşmaları için geçerlidir. Pamuk yakındayken Hüsnü ile konuşmak da teslimi yapar.
 - **Konuş:** "Pamuk'um! Bir daha kaçarsan seni Nazlı'ya satarım! …Satmam ya. Al evlat, emeğine sağlık."
 - **Sonra dünyada:** Pamuk Hüsnü'nün yanında otlar, ara sıra zıplar. Konuşunca: "Bak, bugün hiç kaçmadı. Ama bana öyle bir bakıyor ki…"
 
@@ -1690,7 +1696,7 @@ Elinde değnek, terlemiş, nefes nefese bir çoban.
 Elinde boş bir kafes, gözleri kızarmış bir oğlan.
 
 - **Konuş:** "Kafesin kapısını açık unuttum, dört güvercinim de uçtu! Her birinin ayağında bir not var; adadakiler bana mektup verir, ben taşırım. Notlar kaybolursa herkes bana kızar. Yardım eder misin?"
-- **Topla (4 güvercin, istediğin sırayla):** Kerem'in çevresinde 150–450 piksel ötede, yerde dolaşan güvercinler. Yaklaşınca biri eline konar, ayağındaki not okunur:
+- **Topla (4 güvercin, sırayla; v2.42, Boğaç):** Güvercinler **uzaktadır**: birincisi Kerem'den 480–800 piksel, her biri bir öncekinden 420–720 piksel ötede (eskiden Kerem'in çevresinde 150–450). **Sırayla** toplanır: dünyada ve haritada **yalnızca sıradaki güvercin** vardır. Haritada sıradaki güvercinin bölgesi **sarı bir çemberle** gösterilir (yarıçap 260 piksel, yani ~520 piksellik büyük bir alan); **çemberin ortası güvercinin yeri değildir**, güvercin çemberin içinde rastgele (ama her oyunda sabit) bir yerdedir; kesin yeri haritada işaretlenmez, çemberin içinde gezip aranır. Ekran dışındaki ok çemberin ortasını gösterir. Yaklaşınca güvercin eline konar, ayağındaki not okunur:
   - "Nazlı'dan Dursun'a: *Çekicinin sesi olmadan pazar sessiz. Akşam çay var.*"
   - "Hasan'dan Zümrüt'e: *Domatesler kazanından daha kırmızı oldu, gelip bak.*"
   - "Rıza'dan kimseye: *Defne'nin evine son çiviyi çaktım. Kapıyı açık bırakıyorum.*"
@@ -2083,7 +2089,7 @@ Tekne onarılınca Nuri'nin görev sırası devam eder: her bölge için bir bal
 
 ## Yaşlı Ekin · ana görevler
 
-Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanında, Çayır'ın güney kıyısında. Bir şey satmaz; ana görev zincirini verir. Kampının yanında "SATILIK" bir arsa vardır (Taş ev buraya kurulur). Bayılınca (gece mor ışıkla da) kampının hemen yanındaki kumsalda uyanırsın. Ana görevleri bitirdikçe kendi hikâyesini (kaybettiği eşi Saliha) anlatır. Her görev tesliminde %30 ihtimalle bir anın geri gelir.
+Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanında, Çayır'ın güney kıyısında. Bir şey satmaz; ana görev zincirini verir. Bayılınca (gece mor ışıkla da) kampının hemen yanındaki kumsalda uyanırsın. Ana görevleri bitirdikçe kendi hikâyesini (kaybettiği eşi Saliha) anlatır. Her görev tesliminde %30 ihtimalle bir anın geri gelir.
 
 | # | Görev | İstenen | Sikke | XP | Kitaba yazdığı tarifler |
 |---|---|---|---|---|---|
@@ -2412,7 +2418,7 @@ Aletleri fırtınada denize gitmiş. Tarlayı kullanmak için ona sırayla dört
 
 **Yer:** Ekin'in yaklaşık 34 karo batısı, 22 karo kuzeyi. **Tanışma:** her zaman.
 
-- **Ev ve barınak yapar** (sikkeyle). Yaprak barınağı dışındaki evlerde uyumak için içine yatak konmalıdır (Kemal yapar). Taş ev Ekin'in yanındaki arsaya kurulur. Fiyatlar için "Evler ve barınaklar" tablosuna bak (oyunda gösterilen fiyat, alt fiyat kuralı yüzünden listeden yüksek olabilir).
+- **Ev ve barınak yapar** (sikkeyle). Yaprak barınağı dışındaki evlerde uyumak için içine yatak konmalıdır (Kemal yapar). Taş ev de istediğin yere kurulur. Fiyatlar için "Evler ve barınaklar" tablosuna bak (oyunda gösterilen fiyat, alt fiyat kuralı yüzünden listeden yüksek olabilir).
 - Yaprak barınağı görevi açıkken malzemeler (8 Dal, 12 Yaprak, 4 Lif) çantandaysa konuşma doğrudan siparişler listesini açar.
 - Hikâyesi: nişanlısı Defne.
 
@@ -2981,6 +2987,8 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 ## Tarifler nasıl çalışır (kısa)
 
 - **Öğrenmek:** Bir tarifi kullanmak için önce kazanda öğrenirsin. ACT 1'de **Cadı Zümrüt'ün kazanı** (ya da kuzen cadıların kazanları), ACT 2'de **Gökbilimci Ülker'in kazanı**. Malzemeleri kazana koyup öğrenirsin; malzemeler bu sırada harcanır.
+- **Kazan listesinde yapılabilirler üstte parlar (v2.42, Boğaç):** kazandaki tarif listesinde, malzemelerin (ve gereken aletin) şu an çantanda olduğu ve henüz öğrenmediğin tarifler listenin **en üstünde**, **"Şimdi yapılabilir"** başlığı altında toplanır ve **altın sarısı bir çerçeveyle yavaşça parlar** (yalnızca saydamlık oynar, ekranı yormaz). Başlık yalnızca "Tümü" sekmesinde ve arama yokken görünür; bir kategori ya da arama seçiliyken yapılabilirler o listenin başına çıkar ve yine parlar. Kategori başlıkları altında yalnızca yapılamayanlar kalır. Seçili tarife malzeme koymaya başlayınca (malzemeler kazana geçse bile) o tarif yapılabilir sayılmaya devam eder, yerinden oynamaz. Örs listesinde bu yoktur.
+- **"+" zincirleme yapar (v2.42, Boğaç):** kazandaki ve örsteki malzeme satırlarının "+" düğmesi ile elle yapma listesindeki "Yap" düğmesi, eksik malzemeyi **çantandaki eşyalardan zincirleme** üretebiliyorsa açık olur. Kural tek: zincirdeki her tarifin **tarifini bilmen** (açık olması) ve **ham malzemenin çantada yetmesi** gerekir; aletler çantada olmalıdır. Örnek: sopa 2 keskin taş ister, her keskin taş 2 taş ister; çantada 4 taş ve iki tarif de açıksa "+" önce iki keskin taşı, sonra sopayı yapar. Eldeki hazır malzeme önce kullanılır; döngülü tarif zinciri (A için B, B için A) hiç denenmez; zincir en çok 6 basamaktır. Kazanda "+" satırın **eksik miktarı kadar** üretir (yetmiyorsa yetebildiği kadar). Zincir yetmiyorsa düğme gri kalır ve "Eksik: …" yazar.
 - **Kitapta açılması:** Tarif kitabında bir tarifin açık görünmesi için bütün malzemelerini daha önce görmüş (eline almış) olman gerekir. Bir kişinin "tarifini kitabına yazdım" demesi de tarifi açar (satın alınmış sayılır).
 - **Yapmak:** Öğrendikten sonra nerede yapıldığı tarifin türüne göre değişir (tablolardaki "Nerede yapılır" sütunu):
   - **El yapımı (Tab):** kendin yaparsın; dokunmatikte el ikonu. Tarif listesinde **+** ile tek dokunuşta yapılır.
@@ -4127,7 +4135,7 @@ Beş yuva vardır: **baş, gövde, el, ayak, silah**. Özellikler penceresinden 
 | Kamış kulübe | Sv 5 | 650 | 650 | – | Kamış çatılı, serin bir kulübe. Yatak ister. |
 | Kerpiç ev | Sv 6 | 958 | 950 | – | Kalın kerpiç duvarlı ev. Yatak ister. |
 | Ahşap ev | Sv 7 | 2.278 | 1.500 | – | Kalas duvarlı, kiremit çatılı ev. Yatak ister. |
-| Taş ev | Sv 8 | 4.049 | 2.500 | – | Ekin'in kampının yanındaki arsaya, taştan sağlam bir ev. Yatak ister. |
+| Taş ev | Sv 8 | 4.049 | 2.500 | – | Taştan sağlam bir ev. Yatak ister. |
 | Konak | Sv 10 | 8.097 | 5.000 | – | Adanın en görkemli evi. Yatak ister. |
 
 
@@ -5645,7 +5653,7 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 | 4 | Meyve ağacı odunu | Elma, Armut, Erik (ve Mürver) odunlarının fiyatı yoktu; satınca sikke NaN oluyordu. | **Düzeltildi v2.17:** 3 sikke, "Herhangi odun" grubunda; fiyatsız eşya artık satılmaz; bozuk sikke onarılır. |
 | 5 | Tüccar Nuri'nin tarifleri | Tarif satış kodu var ama menüden açılmıyor; Zümrüt "tüccardan tarif alabilirsin" diyor. | Menüye ekle ya da Zümrüt'ün sözünü değiştir.  **Kalktı v2.34** (tüccar Nuri yok). |
 | 6 | Hasan'ın tohumları | Tohum dükkânı açılmıyor; Hasan bir yerde "satarım" bir yerde "satmam" diyor. | Karar ver, metni düzelt. |
-| 7 | Ev fiyatları | Rıza alt fiyat kuralıyla satıyor: Taş ev 4.049 (arsanın ipucu metni 2.500 diyor), Deri çadır (Sv 3) 1.039 ile Kulübe'den (Sv 4, 510) pahalı. | Ev fiyatlarını alt fiyat kuralından muaf tut. |
+| 7 | Ev fiyatları | Rıza alt fiyat kuralıyla satıyor: Taş ev 4.049 (listedeki fiyat 2.500), Deri çadır (Sv 3) 1.039 ile Kulübe'den (Sv 4, 510) pahalı. | Ev fiyatlarını alt fiyat kuralından muaf tut. |
 | 8 | Gemi malzemesi | Gemi malzemeleri iki kez harcanıyor (kazanda öğrenirken ve Levent'in son görevinde). | Ya tarifi öğrenmeyi kaldır ya da görevi "gemiyi getir" yap. |
 | 9 | Küçük tutarsızlıklar | Öğreticinin 13. adımında örste her şey bedava; Hasan yalnızca adı "Taş kazma" olan kazmayı kabul ediyor; Ekin'in 3. görevi "100 sikke" diyor ama yalnızca yetenek alınmış mı bakıyor; Nuri'nin ilk siparişi XP'yi iki kez veriyor. | — |
 | 10 | Ölü kod | Kaptan Poyraz, Balıkçı Rüstem, Sisli Ada ve sal sonu kodda duruyor ama çalışmıyor. Son Ekin görevinde iskelenin üstüne hâlâ sal oku çiziliyor; Rüstem'in kıyısında kimsesiz bir ateş yanıyor. | Temizlik. |
