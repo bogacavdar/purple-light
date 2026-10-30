@@ -7,7 +7,7 @@ description: "Purple Light oyununda bir değişikliği belgeye yazıp koda geçi
 
 Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır.
 
-**Ne zaman (29 Ekim 2026, Boğaç):** 1–3. adımlar (belge, kod, kontrol) istek gelince yapılır; **4–8. adımlar (belgeyi yenile, notlar, commit/push, zip, dönüş) yalnızca Boğaç "paket çık" deyince**. Değişiklikler bitince yapılanlar kısaca anlatılır; **"Paket çıkayım mı?" diye sorulmaz** (Boğaç paket zamanı gelince kendisi "paket çık" der); araya gelen yeni istekler aynı bekleyen pakete eklenir. **İstisna (29 Ekim 2026, Boğaç):** Boğaç bir hatayı **"ciddi"** diye bildirirse "paket çık" beklenmez; hata hemen düzeltilir ve aynı turda 4–8. adımlarla paket çıkılır (bekleyen pakettekilerle birlikte). Paket çıkınca bekleyen bütün değişiklikler tek sürüm olarak notlara yazılır. Bir adım atlanırsa iş bitmiş sayılmaz. Asıl kural: **her güncelleme aynı turda yayına gider** ve Boğaç'a **her zaman indirilebilir hali** verilir. Zip tek başına güncelleme sayılmaz; yayının yerine geçmez, yayına ek olarak her zaman gönderilir.
+**Ne zaman (29 Ekim 2026, Boğaç):** 1–3. adımlar (belge, kod, kontrol) istek gelince yapılır; **4–8. adımlar (belgeyi yenile, notlar, commit/push, zip, dönüş) yalnızca Boğaç "paket çık" deyince**. Değişiklikler bitince yapılanlar kısaca anlatılır; **"Paket çıkayım mı?" diye sorulmaz** (Boğaç paket zamanı gelince kendisi "paket çık" der); araya gelen yeni istekler aynı bekleyen pakete eklenir. **İstisna · büyük güncelleme (30 Ekim 2026, Boğaç):** yeni bir sistem ya da çok sayıda içerik ekleyen büyük bir istek bitince "paket çık" beklenmez; aynı turda 4–8. adımlarla paket çıkılır. **İstisna (29 Ekim 2026, Boğaç):** Boğaç bir hatayı **"ciddi"** (ya da "kritik") diye bildirirse "paket çık" beklenmez; hata hemen düzeltilir ve aynı turda 4–8. adımlarla paket çıkılır (bekleyen pakettekilerle birlikte). Paket çıkınca bekleyen bütün değişiklikler tek sürüm olarak notlara yazılır. Bir adım atlanırsa iş bitmiş sayılmaz. Asıl kural: **her güncelleme aynı turda yayına gider** ve Boğaç'a **her zaman indirilebilir hali** verilir. Zip tek başına güncelleme sayılmaz; yayının yerine geçmez, yayına ek olarak her zaman gönderilir.
 
 ## 0. Depo
 
@@ -38,9 +38,9 @@ Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır.
 
 ## 4. Belgeyi yenile
 
-- Belgenin başındaki sürüm satırını (`parts/00_giris.md`) her sürümde **yeniden yaz**: "Sürüm: **Versiyon X.YZ** ile birebir (tarih). Bu sürümde: <yalnızca bu sürümün tek cümlelik özeti>. Bütün sürümlerin değişiklikleri: [Güncelleme notları](…GUNCELLEME_NOTLARI.md)." Eski sürümlerin özetleri bu satıra **eklenmez** (Boğaç, 29 Ekim 2026: satır uzayıp okunmuyordu; geçmiş güncelleme notlarında). Atlanırsa yayındaki belge eski sürümü gösterir.
+- Belgenin başındaki sürüm satırını (`parts/00_giris.md`) her sürümde **yeniden yaz**: "Sürüm: **Versiyon X.YZ** ile birebir (tarih). Bu sürümde: <yalnızca bu sürümün tek cümlelik özeti>. Bütün sürümlerin değişiklikleri: [Güncelleme notları](…GUNCELLEME_NOTLARI.html)." Eski sürümlerin özetleri bu satıra **eklenmez** (Boğaç, 29 Ekim 2026: satır uzayıp okunmuyordu; geçmiş güncelleme notlarında). Atlanırsa yayındaki belge eski sürümü gösterir.
 
-- Depo kökünden: `bash proje/tools/belge/yayinla.sh`. Bu `belge.html`, `belge.pdf`, `belge.md` ve `proje/` kopyalarını yeniler.
+- Depo kökünden: `bash proje/tools/belge/yayinla.sh` (5. adımdaki notu yazdıktan sonra çalıştır). Bu `belge.html`, `belge.pdf`, `belge.md`, `proje/` kopyalarını ve güncelleme notlarının `GUNCELLEME_NOTLARI.html` / `GUNCELLEME_NOTLARI.pdf` hallerini yeniler.
 
 ## 5. Not
 
@@ -57,7 +57,7 @@ Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır.
 
 - Push'tan sonra yayındaki sürümün tüm projesini zip'le: `git archive --format=zip --prefix=purple-light/ -o <scratchpad>/purple-light_vX.YZ_proje.zip origin/main` (`.git` girmez; GitHub'daki sürümün birebir kopyası).
 - Zip'i **her güncellemede, istenmese de** `SendUserFile` ile Boğaç'a gönder.
-- `GUNCELLEME_NOTLARI.md`'yi de her seferinde dosya olarak gönder.
+- Güncelleme notlarını her seferinde **`GUNCELLEME_NOTLARI.html` ve `GUNCELLEME_NOTLARI.pdf`** olarak gönder (30 Ekim 2026, Boğaç: md işine yaramıyor; md gönderilmez).
 - Tasarım belgesi değiştiyse `belge.pdf`, `belge.html` ve `belge.md`'yi de dosya olarak gönder.
 
 ## 8. Boğaç'a dönüş
@@ -65,7 +65,7 @@ Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır.
 - Kısa: ne değişti, commit numarası.
 - Linkler her zaman:
   - Oyun: https://bogacavdar.github.io/purple-light/
-  - Güncelleme notları: https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.md
+  - Güncelleme notları: https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html · https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.pdf
   - Belge (indirilebilir): https://bogacavdar.github.io/purple-light/belge.pdf · https://bogacavdar.github.io/purple-light/belge.html · https://bogacavdar.github.io/purple-light/belge.md
 - Ana menüde yeni sürüm numarası görünüyorsa yayın gelmiştir (GitHub Pages 1–2 dakika sürer).
 - Belge yerine artifact, depo içi yol ya da başka bir sayfa linki verilmez; her zaman yukarıdaki indirilebilir linkler ve dosyalar.

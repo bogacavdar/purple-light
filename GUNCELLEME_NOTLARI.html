@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Purple Light · Güncelleme notları</title><style>
+:root{--bg:#f7f3ea;--ink:#2a2418;--dim:#6a5f4c;--acc:#6a3fa0;--line:#e2d8c4;--card:#fffdf8}
+@media (prefers-color-scheme:dark){:root{--bg:#16131c;--ink:#ece6f4;--dim:#a89cb8;--acc:#c49aff;--line:#332c40;--card:#1f1a28}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:820px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:26px;margin:8px 0 6px;color:var(--acc)}
+h2{font-size:20px;margin:34px 0 10px;padding:10px 14px;background:var(--card);border-left:5px solid var(--acc);border-radius:6px}
+p,li{overflow-wrap:anywhere}strong{color:var(--ink)}a{color:var(--acc)}
+ul{padding-left:22px}li{margin:4px 0}hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+h4{margin:16px 0 4px;color:var(--acc);text-transform:uppercase;font-size:13px;letter-spacing:.06em}
+code{background:var(--card);padding:1px 5px;border-radius:4px}
+@media print{body{background:#fff;color:#000;font-size:11.5px}h2{background:none;border-left:4px solid #6a3fa0;page-break-after:avoid}main{max-width:none;padding:0}}
+</style></head>
+<body><main><h1>Purple Light · Güncelleme notları</h1>
+<p>En yeni sürüm en üstte. Her sürümde <strong>bütün</strong> değişiklikler yazılır: oynanış, görsel, ses, arayüz, tasarım belgesi ve proje/araçlar.</p>
+<ul>
+<li>Oyun: https://bogacavdar.github.io/purple-light/</li>
+<li>Belge: https://bogacavdar.github.io/purple-light/belge.pdf · https://bogacavdar.github.io/purple-light/belge.html · https://bogacavdar.github.io/purple-light/belge.md</li>
+<li>Bu notlar: https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html · https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.pdf</li>
+</ul>
+<hr />
+<h2>Versiyon 2.30 · 30 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>Yan görevler geldi.</strong> Görevler artık ikiye ayrılıyor: adanın kişilerinin görevleri <strong>ana görev</strong>, yolda karşına çıkan insanların görevleri <strong>yan görev</strong>. İlk dört biyoma üçer tane, toplam <strong>12 yan görev</strong> eklendi:<ul>
+<li><strong>Çayır:</strong> Elif (denizden dönmeyen kardeşi, mor ışık), Çoban Hüsnü (kaçan keçisi Pamuk), Güvercinci Kerem (uçup giden dört güvercin ve ayaklarındaki notlar).</li>
+<li><strong>Orman:</strong> Mina (yalnızca gece; ailesini kaybetmiş küçük kızı Ekin'in ateşine götür, yolda canavarlar çıkıyor, meşale şart), Şövalye Nadir Dede ("ejder" avı), Satıcı Sadık (devrilen araba).</li>
+<li><strong>Bataklık:</strong> Avcı Cemal (yarasını sar, sonra başında bekle), Sabri (ışığı görüp geri dönen adam), Falcı Nermin (kehanet ve kara kurt).</li>
+<li><strong>Kayalık Dağ:</strong> Saniye Teyze (kaybolan torunu Emir'in izleri; acı bir son), Yolcu Haydar (dağda kaybolmuş, ocağa götür), Işıl (yalnızca gece görünen hayalet kız).</li>
+</ul>
+</li>
+<li><strong>Ana görevle birlikte yapılır:</strong> bir ana görev ve bir yan görev aynı anda sürebilir.</li>
+<li><strong>Kaçırılmaz:</strong> yan kişiler görev bitene kadar her gün kendi saatlerinde aynı yerde çıkıyor; hava durumu etkilemiyor.</li>
+<li><strong>Bayılınca yalnızca yan görev yarıda kalır:</strong> ana görev olduğu gibi durur; yan görevi en baştan yeniden alabilirsin.</li>
+<li><strong>Yan görevde çıkan canavarlar almanakta sayılmaz</strong>, Reis sayacını doldurmaz ve bu sırada Reis gelmez.</li>
+<li><strong>Ödül:</strong> şimdilik sikke ve XP (60–180 sikke, 40–140 XP).</li>
+<li><strong>Sonuçlar adada kalıyor:</strong> Mina Ekin'in ateşinin başında oturuyor, Pamuk Hüsnü'nün yanında otluyor, Kerem'in güvercinliği kuruluyor, Sadık'ın arabası onarılmış duruyor, Saniye Teyze'nin kulübesinin yanında yıldız çizili bir taş var, Işıl'ın taşının yanında geceleri bir fener yanıyor.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li><strong>Yan görev kartı:</strong> süren yan görev, ana görev kartının altında mavi kenarlı ayrı bir kartta (adım ve ilerleme; köşede bırakmak için ×).</li>
+<li><strong>Ana görev kartı</strong> artık "… · Ana görev" yazıyor. <strong>Görevler penceresi</strong> iki bölüm: Ana görev ve Yan görevler (süren yan görev, bitirdiklerin x/12).</li>
+<li><strong>Haritada yan görevler:</strong> yeri açılmış yan kişi haritada mavi bir "?", yeri henüz kapalıysa yerinin çevresinde sisli bir çember ve ortasında "?" olarak görünüyor (yalnızca ayak bastığın biyomlarda). Süren yan görevin hedefi haritada mavi bir halka, ekran dışındaysa kenarda mavi bir ok.</li>
+<li>Görevi olan yan kişinin başında küçük açık mavi bir "?" var.</li>
+</ul>
+<h4>Görsel</h4>
+<ul>
+<li>Yan kişiler, keçi, güvercinler, kayık enkazı, şişe, mor kıymıklar, mağara, Saniye Teyze'nin kulübesi, hayalet kız ve fener için yeni çizimler.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Yeni bölüm <strong>"ACT 1 · Yan görevler"</strong>: kurallar, harita, 12 görevin bütün hikâyesi ve adımları, ödüller ve ileride konuşulacak ödül fikirleri. ACT 1 görev kurallarına ana/yan görev ayrımı notu.</li>
+</ul>
+<h4>Proje</h4>
+<ul>
+<li>Çalışma kurallarına eklendi: büyük güncellemeler "paket çık" beklemeden aynı gün yayına gider.</li>
+<li>Güncelleme notları artık <strong>HTML ve PDF</strong> olarak da yayında (telefonda okunur, yazdırılır); belgeyle birlikte otomatik üretiliyor.</li>
+<li>Tasarım belgesinin başındaki sürüm satırı 2.30'a güncellendi (2.28–2.29'da 2.27'de kalmıştı).</li>
+</ul>
+<h2>Versiyon 2.29 · 30 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li><strong>Telefonda hileler açılmıyordu (kritik):</strong> ana menüde 3 kez dokununca "hile modu açıldı" deniyordu ama bu yalnızca hile ayarlarını görünür yapıyordu; asıl <strong>Hile modu</strong> anahtarı ana menünün Ayarlar'ından ayrıca açılmalıydı, oyunun içinde de gizliydi. Bu yüzden oyuna girince Ayarlar'da hiçbir hile çıkmıyordu. Artık hile ayarları açıldığı an Hile modu da kendiliğinden açılıyor (tek tek hileler yine kapalı başlıyor), oyunun içindeki Ayarlar'da hepsi görünüyor ve <strong>Hile modu anahtarı oyunun içinde de var</strong>.</li>
+<li><strong>Hileler yanlışlıkla kapanmıyor:</strong> ana menüde hızlıca 3 kez dokunmak eskiden bütün hileleri gizleyip kapatıyordu. Artık dokunarak hileler yalnızca açılıyor; kapatmak için Hile modu anahtarını kapat (bilgisayarda yeniden <code>cheat</code> yazmak da kapatır).</li>
+<li><strong>Maden kayalarının içinden geçilmiyor:</strong> maden kayaları iki kat büyük çiziliyor ama yalnızca tabanlarındaki küçük bir alan engeldi; üst yarılarının içine yürünebiliyordu. Oyun açıldıktan sonra çıkan kayalar ise hiç engel olmuyordu. Artık her kayanın görselinin çevresi (şekline uyan bir sınır ve küçük bir pay) duvar: karakter de canavarlar da içine giremiyor, arkasından geçerken ayakların kayanın tepesinin üstünde duruyor. Tükenen kaya engel değil. Bir kayanın içinde kalmışsan kendiliğinden kayanın altına alınıyorsun.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Sistemler: "Maden kayaları geçilmez"; Hileler: "Açınca Hile modu da açılır" (oyun içinde anahtar, dokunuş yalnızca açar).</li>
+</ul>
+<h2>Versiyon 2.28 · 30 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>Meşale artık bir silah:</strong> elinde yanan bir meşale varken yakından vurduğun canavar <strong>tutuşuyor</strong> ve 4 saniye yanıyor: Kaba meşalede saniyede 2, Meşalede saniyede 3 can kaybediyor. Yanarken yeniden vurursan süre baştan başlıyor; yanarak ölen canavar normal av sayılıyor (XP ve ganimet). Kendisi yakan canavarlar (Lav kertenkelesi, Kül cini…), Börü'nün ders canavarları ve arena canavarları tutuşmuyor; asa ve fırlatılan mızrak gibi uzaktan atışlar tutuşturmuyor.</li>
+<li><strong>Meşaleler iki kat dayanıyor:</strong> Kaba meşale 110 yerine <strong>220 sn</strong>, Meşale 170 yerine <strong>340 sn</strong>. Ama meşale elindeyken yaptığın <strong>her saldırı</strong> meşalenin %1,5'ini yiyor (Kaba meşalede ~3 sn, Meşalede ~5 sn); bu, zamanla yanmaya ek. Bir vuruş birkaç canavara değse de bir kez sayılıyor.</li>
+<li><strong>Canavarlar önce başını çeviriyor, sonra başının doğrultusunda atılıyor:</strong> eskiden sen üstte ya da alttayken canavar yan durup dikine atılıyordu. Artık üstüne atlayan bütün canlılar (Börü'nün dersindeki kerevit de) saldırı menziline girince başını sana çeviriyor (tam üstündeysen yukarı, altındaysan aşağı bakıyor), sonra başının gösterdiği yöne atılıyor. Can çubuğu, ! işareti ve hedef çizgisi dik kalıyor. Saldırının hızı ve hasarı değişmedi.</li>
+<li><strong>Zümrüt meşaleyi yeniden anlatıyor:</strong> artık "gündüz işe yaramaz" demiyor; meşalenin vurduğu canavarı tutuşturan bir silah olduğunu ama her vuruşun meşaleden yediğini söylüyor. Asıl tehlikenin gece olduğunu anlatıp meşaleyi <strong>geceyi geçirmek için saklamanı</strong> ya da kavgada kullanacaksan <strong>bir yedek yapmanı</strong> tavsiye ediyor. Kaba meşalenin "yaklaşık dört dakika" dayandığını söylüyor.</li>
+</ul>
+<h4>Düzeltmeler</h4>
+<ul>
+<li><strong>Telefonda envanterden alet yuvasına sürükleme çalışıyor:</strong> taşınabilir bir eşyaya (ya da dolu bir yuvaya) parmağını koyup kaydırdığın an eşya parmağını takip ediyor (beklemek gerekmiyor); alttaki yuvalardan birine bırakınca oraya giriyor, dolu bir yuvayı yuvaların dışına bırakınca yuva boşalıyor. Tarayıcının kaydırması ya da uzun basış menüsü artık sürüklemeyi kesmiyor. Listeyi kaydırmak için boşluktan ya da taşınabilir olmayan bir eşyanın üstünden kaydır.</li>
+<li><strong>Telefonda kazana ve örse malzeme sürükleme çalışıyor:</strong> alttaki eşya kutusunu kazanın (örsün) üstüne bırakınca bir tane konuyor. Kazan ekranda görünmüyorsa parmağı pencerenin üst ya da alt kenarına götürünce liste kendiliğinden kayıyor. Dokunma (1 tane) ve basılı tutma (hepsi) eskisi gibi.</li>
+<li><strong>Telefonda görev yazısı iptal çarpısının altında kalmıyor:</strong> × görünürken kartın sağında ona yer ayrılıyor.</li>
+</ul>
+<h4>Görsel</h4>
+<ul>
+<li><strong>Yerdeki yapraklar küçüldü:</strong> haritada yerde duran yapraklar eskisinin %70'i boyunda (gölgesiyle birlikte). Toplama ve envanter simgesi aynı.</li>
+<li><strong>Yanan canavar görünüyor:</strong> tutuşan canavarın üstünde turuncu bir parıltı ve yukarı uçan alevler var, yanık hasarı turuncu sayılarla çıkıyor.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li><strong>"Başında ! olan kişiyle konuş" yazısı yalnızca ilk görevde:</strong> bu yazı artık yalnızca baltadan sonra ilk göreve giderken çıkıyor. İlk görev bittikten sonra görevin yokken kart bu yazıyı göstermiyor (süren bir ders varsa yalnızca onu gösteriyor, yoksa gizleniyor); görevi olan kişiyi parlamasından kendin fark ediyorsun.</li>
+<li>Zümrüt'ün "meşaleyi indir" kartı: "Gündüz meşaleyi boşuna yakma; geceye sakla."</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Sistemler: yerdeki yaprak boyu, telefonda sürükleme, canavarların başını çevirip atılması, ışık tablosunda yeni meşale süreleri, "Meşale silahtır da" ve "Her saldırı meşaleden yer" kuralları. ACT 1: "! olan kişiyle konuş" yazısının yalnızca ilk görevde çıkması, görev kartında × yeri. Öğretici akışı 6. adım: Zümrüt'ün yeni meşale konuşması.</li>
+</ul>
+<h2>Versiyon 2.27 · 30 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>Her kişinin 8 görevi var:</strong> 27 kişiye toplam <strong>77 yeni görev</strong> eklendi; görev sayısı 139'dan <strong>216</strong>'ya çıktı. Yeni görevler zincirin sonuna geliyor (Levent'in yenileri gemiden önce) ve artan seviye istiyor, böylece erken bölgelerin ek görevleri ana yolu tıkamıyor. Hepsi o kişinin biyomundan toplanan, kesilen, kazılan ya da avlanan şeyler istiyor; her kişinin hikâyesini sürdürüyor (Rıza'nın Defne'ye söz verdiği ev, Toygar'ın oğlu için turna işareti, Dursun'un çanı, Zümrüt'ün kardeşinin çorbası…). Ödüller zincirde bir önceki görevin altına düşmüyor.</li>
+<li><strong>Görevler artık gerçek bir sahneyle veriliyor:</strong> 216 görevin her birinin kendi hikâyeli sahnesi var. Şeritler iniyor, menüler çekiliyor; üst şeritte anlatım yazısı çıkıyor, kişi bir şeyle uğraşıyor, bir sorun çıkıyor ya da bir anısı canlanıyor (anılar sepya, gizemli anlar karanlık tonda), başında duygu işaretleri beliriyor, zıplıyor, başını sallıyor, çömeliyor; kamera görevin yapılacağı yere kayıp dönüyor; istenen eşyanın simgesi kişinin yanında adıyla beliriyor; parçacıklar ve sesler eşlik ediyor. Sahne bitince görev penceresi açılıyor. Dokunuş/tık bir adım ileri, Esc sahneyi geçer.</li>
+<li><strong>Tarif bekleyen kişi artık uyarı vermiyor:</strong> görevi tarif yüzünden bekleyen kişi "önce şu tarifi öğren" demiyor; görevsiz kalırsan yolu Ekin'in ayak işi gösteriyor.</li>
+</ul>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>Bazı teşekkür sözlerindeki "X'e söyle" yönlendirmeleri (Dursun, Hasan, Yakut, Safir, Firuze, Mercan, Kuvvet) aynı şakayı koruyarak yeniden yazıldı; kimse seni başka birine göndermiyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Görevlerin temel kuralları 2. madde: hikâyeli görev sahnesi; "Kişiler ve görevler": 8 görev kuralı ve 77 yeni görevin satırları; tarif uyarısı kaldırıldı. Sürüm satırı 2.27.</li>
+</ul>
+<h2>Versiyon 2.26 · 30 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>Tarifini bilmediğin eşyayı isteyen görev artık verilmiyor.</strong> Bir görev tariften yapılan bir eşya istiyorsa (ör. Zümrüt'ün Gelincik boyası, Dursun'un Taş kazması, zırhçının Tunç miğferi) o tarifi kazanda öğrenmeden görev açılmıyor; kişinin başında ! çıkmıyor. Görevin kitaba tarif yazması yetmiyor. 139 görevden 40'ı bu kurala giriyor; toplanan, kesilen, avlanan ya da tarlada yetişen şeyleri isteyen görevler eskisi gibi.</li>
+<li><strong>Kişi neden iş vermediğini söylüyor:</strong> görevi tarif yüzünden bekleyen biriyle konuşunca bir kez "Sana bir işim var ama önce X tarifini öğrenmelisin (Zümrüt'ün kazanında)" yazıyor; pazarı, örsü normal açılıyor.</li>
+<li><strong>Ekin'in yeni ayak işi:</strong> bütün görevler kilitliyse ve eksik olan bir tarifse Ekin "<strong>X tarifini öğren</strong>" diyor; kazanda öğrenince kendiliğinden bitiyor (15 sikke, 15 XP). Tarifin bir malzemesini hiç görmediysen önce onu getirtiyor. Ekin'in "alet dövdür" ve "ışık yap" işleri de tarif bilinmiyorsa önce tarifi öğretiyor.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li><strong>Telefonda uzun konuşmalar ekrandan taşmıyor:</strong> konuşma penceresi en çok görünen ekran kadar uzuyor (iPhone'un adres çubuğu da hesaba katılıyor), yazı içinde kayıyor, cevap düğmeleri hep altta; yazı gelirken pencere son satırı izliyor.</li>
+</ul>
+<h4>Kayıtlar</h4>
+<ul>
+<li>Bu kuraldan önce alınmış ve süren görevler (ör. tarifi bilinmeden alınmış Gelincik boyası) olduğu gibi kalıyor; istersen görev kartındaki × ile bırakabilirsin.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Görevlerin temel kuralları 5. madde: tarif bilinmeden görev verilmez, kişi söyler, Ekin'in "tarifi öğren" işi; telefonda konuşma penceresi. Sürüm satırı 2.26.</li>
+</ul>
+<h2>Versiyon 2.25 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>Ağaç kesince dal ve yaprak:</strong> baltayla her kesişte odunun yanında <strong>1 dal</strong> ve <strong>1 yaprak</strong> düşüyor (önceden dal yoktu, yaprak 1–2'ydi).</li>
+<li><strong>Haritada daha çok taş ve lif, daha az ağaç:</strong> taş yaklaşık %35 (557 → ~740), lif yaklaşık %35 (683 → ~940) arttı; ağaçlar yaklaşık %25 azaldı (10.600 → ~8.000). Başlangıç kampının çevresi aynı. Kayıtlar etkilenmiyor; mevcut oyunlarda da geçerli.</li>
+<li><strong>Zümrüt'ün "Kazanın dili" görevi:</strong> artık "5 yeni tarif" değil, <strong>toplam 8 tarif</strong> öğrenmiş olmak. Önceden öğrendiklerin de sayılıyor; bütün tarifleri bilen biri artık takılmıyor.</li>
+</ul>
+<h4>Düzeltmeler</h4>
+<ul>
+<li><strong>Zümrüt'ün meşale dersinde erken parlama:</strong> malzemeler (2 dal, 2 lif, 2 yaprak) toplanmadan el yapımı düğmesi, meşale satırı ve Yap parlıyor, telefonda ☰ kutusu açılıyordu. Artık önce malzemeler toplanıyor, sonra parlıyor. Aynısı kazan derslerinde ve balta adımında da düzeldi.</li>
+<li><strong>Kazan görevinde yanlış parlama:</strong> "Kazanın dili" görevinde hedef Zümrüt'tü; küçük haritadaki büyük sarı ışık senin üstüne biniyordu. Artık hedef <strong>kazan</strong>; yanına gelince oyunda kazanın kendisi sarı parlıyor; hedefe 8 karodan yakınken haritadaki ışık çizilmiyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Öğretici 5. adım, Zümrüt Z2, ağaç kesme, haritadaki miktarlar, yol gösterme (kazan hedefi); sürüm satırı 2.25.</li>
+</ul>
+<h2>Versiyon 2.24 · 29 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li><strong>Önemli: arena kaydı bozuyordu.</strong> Oyunu yarıda bırakıp arenaya girince ve arenadan çıkınca, sayfa kapanırken çalışan otomatik kayıt arenadaki karakteri (ör. 50. seviye) gerçek oyunun <strong>otomatik kaydının</strong> üstüne yazıyordu; "Devam et" arena karakteriyle açılıyordu. Artık arenaya bir kez girildikten sonra sayfa yeniden açılana kadar hiçbir kayıt yazılmıyor, arenadan çıkarken de yazılmıyor.</li>
+<li><strong>Arenada savuşturma yoktu:</strong> arenada bütün yetenekler açılıyordu ama savuşturma (Börü'nün dersiyle öğrenilir) açılmıyordu; telefonda Savuş düğmesi çıkmıyordu. Artık arenada savuşturma ve gard da açık.</li>
+</ul>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>Oyun başında kampın yanına fazladan malzeme konmuyor:</strong> önceden konan 1 dal, 4 taş, 1 lif ve 1 yaprak kaldırıldı (bazen sahile düşen "taş" buydu). Öğreticinin kendi malzemeleri (böğürtlenler, Zümrüt'ün meşale malzemeleri ve 4 taşı) aynen duruyor. Yeni başlayan oyunlarda geçerli.</li>
+</ul>
+<h4>Kayıtlar</h4>
+<ul>
+<li>Arenanın üzerine yazdığı otomatik kayıt geri getirilemiyor (oyunda tek otomatik kayıt yuvası var); elle yapılan kayıtlar (Kayıt 1–3) etkilenmedi.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Arena: "kayda asla dokunmaz" ve "savuşturma açık"; öğretici: başlangıçta kampın yanına malzeme konmaz. Sürüm satırı 2.24.</li>
+</ul>
+<h2>Versiyon 2.23 · 29 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li><strong>Acil: telefonda Börü'nün savuşturma dersi ilerlemiyordu.</strong> Oyun durup "Savuş düğmesine dokun!" diyordu ama Savuş düğmesi ekranda yoktu (düğme ancak ilk savuşturmadan sonra çıkıyordu). Artık savuşturma dersi başladığı andan itibaren Savuş düğmesi Atıl düğmesinin solunda görünüyor; oyun durduğunda da mavi parlıyor ve ok onu gösteriyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Oyunun akışı, Börü'nün savuşturma dersi: telefonda Savuş düğmesinin baştan görünmesi; sürüm satırı 2.23.</li>
+</ul>
+<h2>Versiyon 2.22 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>Canavarlar kişilerin yanına giremiyor:</strong> kavga edebilen canlılar (saldırgan, nötr ve Reisler) güvenli yerlerin (Ekin'in kampı, kişilerin ve kuzenlerin ateşleri, Dursun'un ocağı, Zümrüt'ün kazanı, kendi kamp ateşin) sınırında duruyor, içeri adım atmıyor. Güvenli yere kaçarsan seni kovalayan canavar kenarda kalıp vazgeçiyor. İçeri bir şekilde düşen (hücum, sıçrama) en yakın kenardan dışarı yürüyor. Zararsız canlılar (tavşan, geyik…) eskisi gibi dolaşıyor.</li>
+<li><strong>Telefonda Vur yürüdüğün yöne vuruyor:</strong> joystick'le yürürken Vur'a basınca karakter tam yürüdüğün yöne, çapraz yürüyorsan çapraza vuruyor. Yakında canlı varsa önce yürüdüğün yöndekine kilitleniyor. Dururken eskisi gibi baktığın yöne vuruyor.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li><strong>Telefonda bütün ekranlar elden geçti</strong> (yalnızca yatay telefon; bilgisayar ve tablet aynı):<ul>
+<li>Sekmeler tek ince satır (sığmazsa yana kayar), düğmeler ve satırlar alçak, uzun açıklamalar gizli.</li>
+<li><strong>Envanter:</strong> giysi yuvaları tek ince şerit; eşyalar açılır açılmaz görünüyor.</li>
+<li><strong>Pazar:</strong> her eşya tek satır; ekrana iki kat eşya sığıyor.</li>
+<li><strong>El yapımı:</strong> açıklama gizli, satırlar sıkı; yaptığın meşale listenin başında hemen görünüyor.</li>
+<li><strong>Yetenek ağacı</strong> pencereyi dolduruyor; <strong>tarif kitabı</strong>nda açıklama gizli.</li>
+<li><strong>"Yeni malzeme bulundu"</strong> yazısı bir pencere açıkken alta, küçük çıkıyor.</li>
+<li><strong>Ayarlar</strong> genişledi, müzik düğmelerinin yazıları kesilmiyor; <strong>ana menü</strong>de "PURPLE LIGHT" yazısı sağa kaydı, düğmeler üstüne binmiyor.</li>
+</ul>
+</li>
+<li><strong>Telefonda envanter ve yemek düğmeleri ☰ kutusunun içinde.</strong> Öğretici bunlardan birini gösterdiğinde kutu bir kez kendiliğinden açılıyor ve ☰ parlıyor.</li>
+<li><strong>Almanakta saldırılar ve etkiler:</strong> açılan kartlarda artık saldırılar (ısırık hasarı, uzaktan kaç mermi ve kaç saniyede bir), her isabette bıraktığı etki (saniyede kaç can, kaç saniye), özel hamleler (her biri kısa açıklamasıyla), özellikler (bağışıklık, çevik, iri) ve Reisin ek hamleleri yazıyor.</li>
+<li><strong>Zümrüt'ün kazan derslerinde kazan parlıyor:</strong> meşale (ve keskin taş) dersinde tarif seçildikten sonra malzemeler konana kadar kazan alanı mavi parlıyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Kontroller (telefonda sol menü kutusu, Vur yönü, telefona göre sıkı düzen), güvenli yerlere canavar girmemesi, almanak kart bilgileri, Zümrüt'ün 4. ve 7. adımı; Teknoloji bölümüne "İleride: çok oyunculu (plan, henüz yok)" notu (bulgular ve maliyet tahminiyle). Sürüm satırı 2.22.</li>
+</ul>
+<h2>Versiyon 2.21 · 29 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li><strong>Acil: telefonda bütün pencereler sığmıyordu.</strong> Kazanda olduğu gibi diğer pencereler de (El yapımı, Nazlı'nın pazarı, demirciler, Usta Kemal, envanter, yetenek ağacı, tarif kitabı, yemek, köpekler…) ekranın üstünde ~100 piksel boşluk bırakıp alt yarıya sıkışıyordu.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li><strong>Telefona özel pencere düzeni:</strong> telefon yatay tutulunca bütün pencereler ekranın tamamını kaplıyor (öğretici kartı varsa yalnızca onun kadar yer bırakıyor). Başlık satırı ve arama/araç satırı ince; içerik kendi içinde kayıyor. Kazan ve örslerdeki iki sütunlu düzen (2.20) aynen duruyor. Bilgisayar ve tablette hiçbir şey değişmedi.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>"Telefonda bütün pencereler" kuralı; sürüm satırı 2.21.</li>
+</ul>
+<h2>Versiyon 2.20 · 29 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li><strong>Ciddi: telefonda kazan ekranı sığmıyordu.</strong> Telefon yatay tutulunca kazan penceresi ekranın üstünde ~100 piksel boşluk bırakıp yalnızca alt yarıya sıkışıyordu (telefon, bilgisayar boyutu sayılıyordu); başlık ve arama satırı da bu alanın yarısını yiyordu, liste ve kazan kesik görünüyordu.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li><strong>Telefona özel kazan ve örs ekranı:</strong> pencere artık bütün ekranı kaplıyor (öğretici kartı varsa yalnızca onun kadar yer bırakıyor). Başlık satırı ve arama satırı ince; altta iki sütun var: solda tarif listesi, sağda seçtiğin tarif, malzemeler, kazan, düğmeler ve envanterin. İki sütun da kendi içinde kayıyor. Kazan alanı alçaldı, yazılar ve kareler telefona göre küçüldü. Örsler (Dursun, Durmuş ve kuzenleri) de aynı düzende. Bilgisayar ve tablette hiçbir şey değişmedi.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>"Tarifler: kazan, el yapımı, örs, ustalar" bölümüne "Telefonda kazan ve örs ekranı"; sürüm satırı 2.20.</li>
+</ul>
+<h2>Versiyon 2.19 · 29 Ekim 2026</h2>
+<h4>Arayüz</h4>
+<ul>
+<li><strong>Yeni canlı almanağa eklenince ekranda büyük yazı:</strong> bir türü ilk kez öldürünce ekranın ortasında canlının adı ve altında "Almanağa eklendi · U ile bak" yazıyor. Önceden yalnızca küçük, çabuk kaybolan bir bildirim çıkıyordu ve gözden kaçıyordu. Her yeni tür için bir kez çıkıyor; Reisler ve ders canlıları sayılmıyor.</li>
+<li><strong>İlk avında almanak gösteriliyor:</strong> oyunda ilk kez bir canlı öldürdüğünde Almanak düğmesi <strong>mavi parlıyor</strong> ve yanında yanıp sönen bir <strong>ok</strong> çıkıyor; birkaç saniye sonra "İlk avın almanağa eklendi! Almanağı aç: U" yazıyor. Almanağı açınca parlama ve ok sönüyor. Telefonda Almanak ☰ menüsünün içindeyse önce ☰ parlıyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Almanak bölümüne "Yeni canlı almanağa eklenince" ve "İlk avında almanak gösterilir" kuralları; sürüm satırı 2.19.</li>
+</ul>
+<h2>Versiyon 2.18 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>Canavarlar saldırırken yüzünü hep sana döner.</strong> Saldırı başladığı andan bitene kadar canavar sana bakıyor: kırmızı/sarı "!" işareti, ok/diken atanların hazırlığı, Reis hamlelerinin hazırlığı, kükreme, alev, kavrama, üçlü vuruş ve hamleden sonraki yorgunluk. Geri geri çekilen menzilliler de sana bakarak çekiliyor. Yalnızca gövdesiyle hızla yol aldığı anlarda (atılış, sıçramada havadayken, hücumda koşarken) gittiği yöne bakıyor. Tam üstünde ya da altındayken titremesin diye yön değiştirmiyor.</li>
+</ul>
+<h4>Düzeltmeler</h4>
+<ul>
+<li><strong>Meşale dersi:</strong> Cadı Zümrüt'ün dersinde meşaleye tıklayınca doğru yuva yanıp sönüyordu ama meşaleyi basılı tutup sürükleyince hiçbir yuva gösterilmiyordu. Artık sürüklerken de aynı yuva yanıp sönüyor, bırakınca sönüyor. Bu, envanterden sürüklenen bütün taşınabilir eşyalar için geçerli.</li>
+<li><strong>Yetenek ağacında Koşu yarım görünüyordu:</strong> Börü'nün dersinden sonra ağaç açılınca en alttaki Koşu alt kenardan kesiliyordu. Ağacın altında ve üstünde artık boşluk var; Koşu alt kenarın biraz üstünde tam görünüyor. Gerekirse pencere kendiliğinden kayıyor.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li><strong>Sikke yetmezken Koşu'ya basınca</strong> yetenek ağacı kendiliğinden kapanıyor ve Börü anlatıyor: ne kadar sikke eksik olduğunu, Nazlı'ya bir şeyler satıp sikke toplamanı, 100 sikken olunca <strong>Y</strong>'ye basıp (telefonda ağaç ikonuna dokunup) ağacı açmanı ve oradan istediğin geliştirmeleri alabileceğini söylüyor. Ders sırasında ağacı kapatınca çıkan Börü konuşması da aynı bilgiyi veriyor.</li>
+<li><strong>Ekin'in böğürtlen konuşması:</strong> bilgisayarda Ekin artık "Çalının yanına git ve <strong>F</strong>'ye bas; böğürtlen yere düşer, üstünden yürüyünce alırsın" diyor. Toplama tuşunu değiştirdiysen o tuşu söylüyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Oyunun akışı: gösterme kuralına "sürüklerken de gösterilir"; Börü dersine Koşu'nun tam görünmesi ve sikke yetmezken Börü'nün konuşması; Ekin'in 1. adımına F ile toplama. Canavarlar nasıl savaşır: "saldırırken yüzü hep sana dönük". Sürüm satırı 2.18.</li>
+</ul>
+<h2>Versiyon 2.17 · 29 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li><strong>Ciddi: "NaN sikke".</strong> Meyve ağaçlarının odunlarının (Elma, Armut, Erik, Mürver) fiyatı yoktu; birini Nazlı'ya satınca sikke "NaN" oluyor, pazar da bozuluyordu. Bu odunlar artık <strong>3 sikke</strong> ve tariflerde "herhangi odun" yerine kullanılabiliyor. Oyundaki bütün eşyaların (1.299 tane) fiyatı tek tek denendi; fiyatı olmayan başka eşya kalmadı. Bundan sonra fiyatı olmayan bir eşya olursa satılmıyor ("Bu eşyayı Nazlı almıyor"), "Hepsini sat" onu atlıyor.</li>
+<li><strong>Bozuk sikke onarımı:</strong> sikkesi NaN olmuş bir kayıt açılınca oyun sikkeyi kayıtlardaki <strong>en son geçerli</strong> miktara (otomatik ya da elle kayıtların en yenisi) döndürüyor ve "Sikkelerin onarıldı: … sikke" diyor; geçerli bir kayıt yoksa 0. Oyun sırasında NaN olursa son geçerli miktara dönüyor. Görev sayaçlarındaki (ör. "150 sikkelik satış") bozuk değerler 0'dan devam ediyor. Kaydın geri kalanı olduğu gibi kalıyor.</li>
+<li><strong>Ciddi: ekran maviye dönüyordu.</strong> Uzun oyunda, özellikle telefonda, ekran kartının belleği doluyor; zemin ve ağaç resimleri boş çizildiği için arkadaki mavi görünüyordu (kişiler, gölgeler ve küçük eşyalar duruyordu). Artık telefonda daha az ekran kartı belleği kullanılıyor, eski resimler daha çabuk bırakılıyor; ekran kartı "bellek doldu" derse resimler boşaltılıp yeniden yükleniyor, bir dakika içinde ikinci kez olursa oyun kaydedip klasik çizimle yeniden açılıyor.</li>
+</ul>
+<h4>Kayıtlar</h4>
+<ul>
+<li>NaN sikkeli kayıtlar açılınca sikke onarılıyor (yukarıda); başka hiçbir şeye dokunulmuyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Ekonomi (fiyatsız eşya, sikke onarımı), Teknoloji (ekran kartı belleği), Açıklar #4 düzeldi; sürüm satırı 2.17.</li>
+</ul>
+<h2>Versiyon 2.16 · 29 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li><strong>Ciddi:</strong> bir yöne vurduktan hemen sonra öbür yöne vurmaya çalışınca karakter yalnızca dönüyor, vuruş gerçekleşmiyordu (ilk vuruşun bekleme süresi bitmeden basılan vuruş yutuluyordu). Artık bekleme sırasında basılan vuruş saklanıyor ve bekleme biter bitmez (basıştan en çok 0,8 sn sonrasına kadar) <strong>son bastığın yöne</strong> atılıyor; karakter de ancak vuruş atılırken dönüyor. Sol tık ve Q için geçerli.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Kontroller'e "Vuruş tamponu" kuralı; sürüm satırı 2.16.</li>
+</ul>
+<h2>Versiyon 2.15 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>Canlıların atılışı değişti (hepsi):</strong> ayrı hazırlık beklemesi kalktı; canlının üstünde <strong>!</strong> çıktığı an (0,1 sn içinde) sana doğru atılır. Atılış o an <strong>bulunduğun yere</strong> gider ve <strong>yolu sonradan değişmez</strong>; 0,3 sn sürer. Doğru anda <strong>takla</strong> atar ya da <strong>savuşturursan</strong> ısırık işlemez, sana değerse işler. !'in rengi (beyaz / sarı / kırmızı) atılışla birlikte görünür; sarı ve kırmızıya eklenen ayrı bekleme kalktı. Kırmızı yalnızca taklayla atlatılır. Özel hamlelerden <strong>Sıçrama</strong> da işaret çıktığı an atlar.</li>
+<li><strong>Savuşturma artık öğreniliyor:</strong> oyunun başında savuşturma ve gard (sağ tık / E, telefonda Savuş) kapalı. Börü takla dersinin hemen ardından ücretsiz öğretir: ilk saldırıda oyun durur ve "Sağ tık'a bas!" der, sonra 3 savuşturma daha. Öğreticiyi atlayan Börü ile konuşunca öğrenir.</li>
+<li><strong>Takla dersi keskinleşti:</strong> ilk saldırıda karakter yürüyemez; kerevit ! ile atılır, <strong>tam değecekken</strong> oyun durur ve "Boşluk'a bas!" der (ondan önce basmak takla attırmaz). Sonraki 3 saldırıda: kerevit değmeden kaçarsan ya da değdiği an taklada isen "Sıyrıldın!"; erken basarsan "Erken!", hiç basmazsan "Değdi!". Derste yönsüz atılan takla kerevitin yolundan yana gider.</li>
+</ul>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>Börü'nün takla dersinde Börü'nün üstünde yön oku kalıyordu; ders sürerken artık hiçbir ok çıkmıyor.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li>Kaydetme ve yükleme menülerinde her dolu yuvanın yanında <strong>Sil</strong> düğmesi; "Kayıt 2 silinecek. Emin misiniz?" diye sorar (Eminim, sil / Vazgeç).</li>
+<li>Dolu yuvaya kaydederken artık soru çıkıyor: "Bu yuvada bir kayıt var. Yeni kaydı üzerine yazayım mı?" (Üzerine yaz / Vazgeç).</li>
+</ul>
+<h4>Kayıtlar</h4>
+<ul>
+<li>v2.14 ve önceki kayıtlarda takla biliniyorsa savuşturma da bilinir sayılır.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Kayıt (silme, üzerine yazma), Atılma/savuşturma (savuşturma öğrenilir), Canavarlar nasıl savaşır (atılış kuralları, Sıçrama), öğretici (takla ve savuşturma dersleri, ok yok); sürüm satırı 2.15.</li>
+</ul>
+<h2>Versiyon 2.14 · 29 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li><strong>Ciddi:</strong> menüye dönüp "Yeni oyun" (ya da "Devam et" / "Yükle") deyince harita yeniden kurulmuyordu; önceki oyunun haritaya bıraktıkları kalıyordu. Ekin'in koyduğu böğürtlenler her yeni oyunda üst üste biniyor, öğreticinin taşları, kesilen ağaçlar, kazılan madenler yeni oyuna taşınıyordu. Artık bu sekmede bir oyun oynandıktan sonra yeni oyun ya da kayıt yükleme sayfayı kısa bir "Yükleniyor…" ekranıyla yeniden açıyor; harita her seferinde temiz. Yeni oyunda doğrudan karakter yaratmaya geçiyorsun, yüklemede kaldığın yerden devam ediyorsun.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li>Almanak düğmesi sağ üstten küçük haritanın üstüne, Başarımlar'ın soluna taşındı. Haritanın üstündeki üç düğme (Almanak, Başarımlar, Özellikler) eşit boyutta ve üçü birlikte haritanın genişliğini geçmiyor. Telefonda menü çekmecesinde, Başarımlar'ın yanında.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Akış → Ana menü'ye "Temiz dünya" kuralı; Almanak düğmesinin yeri; sürüm satırı 2.14.</li>
+</ul>
+<h4>Proje</h4>
+<ul>
+<li>Çalışma kuralı: Boğaç bir hatayı "ciddi" diye bildirirse "paket çık" beklenmeden düzeltilip hemen paket çıkılıyor.</li>
+</ul>
+<h2>Versiyon 2.13 · 29 Ekim 2026</h2>
+<h4>Arayüz</h4>
+<ul>
+<li><strong>Almanak:</strong> sağ üstte Ayarlar'ın yanında yeşil bir kitap (kısayol <strong>U</strong>, Ayarlar → Kontroller'den değişir). Açıkken oyun durur; Esc ya da U kapatır.<ul>
+<li>Solda yalnızca <strong>adım bastığın biyomlar</strong>, keşif sırasıyla. Yeni bir biyoma ilk girince "Almanak: Orman eklendi" yazar ve yeni satır açılır. Her satırda kaç canlıyı açtığın ve kaç Reis yendiğin (ör. 3/7 ★1).</li>
+<li>Sağda o biyomun bütün canlıları. Avlamadığın canlı <strong>kara siluet ve ???</strong>; ilk avlayınca "Almanak: Kerevit açıldı" yazar ve kart açılır: resmi, huyu, can, hasar, hız, uzaktan saldırısı, bıraktığı etki, düşürdükleri, kaç tane avladığın.</li>
+<li>Kartın altında <strong>Reis sayacı</strong> (ör. Reis: 3 / 9) ve dolum çubuğu. Reis yenilince kart <strong>altına</strong> döner: "★ Kurt Reisi yenildi".</li>
+</ul>
+</li>
+</ul>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>Her Reis yalnızca bir kez yenilir.</strong> Kart altına döndükten sonra o türün Reisi bir daha gelmez (önceden her seferinde %50 daha çok avla yeniden geliyordu).</li>
+<li><strong>Reise yenilirsen</strong> (Reis sahadayken ya da gelmek üzereyken bayılırsan; gece mor ışıkla da) Reis kaybolur ve sayaç bir eksik kalır (ör. 14 / 15). O türden bir av daha Reisi yeniden getirir; yenene kadar böyle.</li>
+</ul>
+<h4>Kayıtlar</h4>
+<ul>
+<li>Kayda yeni bir şey yazılmaz. Eski kayıtlarda bugüne kadar avladıkların Almanak'ta açık gelir; daha önce yendiğin Reislerin kartları altındır ve o Reisler bir daha gelmez.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Sistemler'e "Almanak" bölümü eklendi; Reisler bölümünde "her Reis bir kez" ve "Reise yenilmek" kuralları; sürüm satırı 2.13.</li>
+</ul>
+<h2>Versiyon 2.12 · 29 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>Vuruşlar canlının kıskacına, boynuzuna, kuyruğuna değse bile hasar vermiyordu (yalnızca gövdenin ortası sayılıyordu). Artık canlının <strong>çiziminin neresine değerse</strong> vuruş sayılıyor. Bütün canlılarda, iki adada da, Reisler dahil.</li>
+<li>Öğreticide meşale henüz indirilmeden üstteki takip satırı "4 Taş" istiyor ve haritadaki taşlar mavi parlıyordu (taşlar yeni çıkmış gibi görünüyordu). Artık meşale inene kadar takip satırı "Meşaleyi elinden indir" diyor; hiçbir taş parlamıyor.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li>NPC'lerin seslendiği mavi balon ("Parçalar tamam! Dursun'a git" gibi) sen yürüdükçe sağa sola, yukarı aşağı zıplıyordu. Artık yeri bir kez seçiliyor ve konuşan kişiye göre sabit kalıyor; karakterin önüne gelse bile kaçmıyor. Yalnızca bir menü kutusunun altında yarım saniyeden uzun kalırsa bir kez yer değiştiriyor. Konuşan ekrandan çıkarsa balon kenarda duruyor, küçük sarı bir ok onun yönünü gösteriyor.</li>
+</ul>
+<h4>Oynanış</h4>
+<ul>
+<li>Nazlı keskin taşı alınca hesabı anlatıyor: bir taş 1 sikke, iki taş 2 sikke; birleştirip yaptığın keskin taş 3 sikke, aradaki 1 sikke senin emeğin. Yaptığın şeyleri yeniden birleştirdikçe değerleri katlanır. (Eski metin "iki taşın ayrı ayrı bir sikke etmez" diyerek çelişiyordu.)</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Vuruş kuralı (canlının her yeri sayılır), seslenme balonu, öğretici tablosu (meşale ve Nazlı adımları); sürüm satırı 2.12.</li>
+</ul>
+<h4>Proje</h4>
+<ul>
+<li>Çalışma kuralı: değişikliklerden sonra "Paket çıkayım mı?" diye sorulmuyor; paket Boğaç "paket çık" deyince çıkıyor.</li>
+</ul>
+<h2>Versiyon 2.11 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>Harita sadeleşti</strong> (kalabalık geliyordu). Kampın çevresi (yaklaşık 20 karo) aynı kaldı; geri kalan her yerde:<ul>
+<li>Temel malzemeler yaklaşık yarıya indi: Dal 800, Lif 700, Taş 550, Yaprak 450, Nehir çakılı 400, Kum 350, Çakmaktaşı 300 (önce 1650 / 1410 / 990 / 840 / 720 / 600 / 450). Azaldıkları için <strong>%30 daha çabuk</strong> yeniden çıkıyorlar (ör. Dal 25 → 18 sn).</li>
+<li>Biyom bitkileri tür başına 68'den yaklaşık 40'a; Kuru ot 150 → ~90, Böğürtlen 110 → ~80, su kenarı bitkileri 42 → ~30.</li>
+<li>Ağaçlar yaklaşık %20 azaldı (seyreltme %18 → %35); ormanlar hâlâ orman, aralarında yürüyecek yer açıldı. Her ağaç türü yine bol.</li>
+<li>Madenler ve mağara buluntuları değişmedi.</li>
+<li>Bütün adada toplanabilir sayısı yaklaşık 12.200'den 7.100'e, ağaç sayısı 13.300'den 10.600'e indi. Eski kayıtlar da yeni yoğunlukla açılır (harita her açılışta kurulur).</li>
+</ul>
+</li>
+</ul>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>Öğreticide Zümrüt'ün taş adımı meşale bitmeden geliyordu (taşlar haritaya çıkıyor, taş konuşması başlıyordu). Artık sıra: meşaleyi yap → Zümrüt yalnızca meşaleyi anlatır → meşaleyi eline al (yanar) → Zümrüt gece/gündüz kuralını anlatır → meşaleyi elinden indir → <strong>ancak o zaman</strong> Zümrüt taşları anlatır ve kazanın yanına 4 taş konur.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>ACT 1 → Adanın yerleşimi'ne "Haritadaki miktarlar" bölümü eklendi (her şeyin sayısı neye göre belirlenir); ACT 1 biyom tablolarındaki "Adadaki sayısı" ve yeniden çıkma süreleri yeniden ölçüldü; ACT 2 tablolarına not düşüldü; öğretici tablosu (5. ve 6. adım) güncellendi; sürüm satırı 2.11.</li>
+</ul>
+<h2>Versiyon 2.10 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>Oyunda ölüm yok:</strong> canavar, açlık, zehir ve gece mor ışık seni bayıltır; her bayılmadan sonra uyanırsın. Oyundaki yazılar artık "öl" değil "bayıl" diyor (Tanrı modu açıklaması: "bayılmazsın, mor ışık yine bayıltır").</li>
+<li>Öğreticide Zümrüt meşaleyi anlattıktan sonra kart <strong>"Meşaleyi elinden indir"</strong> diyor; meşalenin kutusu okla parlıyor. Meşale inmeden taş görevine geçilmiyor; inince "Meşale indi. Şimdi kazanın yanındaki 4 taşı topla." yazıyor.</li>
+<li>Fareyle <strong>yere düşmüş bir eşyaya</strong> (av, odun, taş) tıklayınca karakter oraya yürüyüp eşyayı alıyor.</li>
+<li><strong>Bir hayvan sana saldırırken</strong> (ekranda seni kovalayan bir hayvan varsa ya da son 3 saniyede ısırıldıysan ya da uzaktan vurulduysan) sol tık hiçbir şeyi toplamıyor, kimseyle konuşmuyor, bir yere yürümüyor: <strong>hep tıkladığın yöne vuruyor</strong>. F tuşu ve telefon bundan etkilenmiyor.</li>
+</ul>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>"İlk düşüş" ve "İnatçı" başarımları yalnızca gece mor ışıkla bayılmayı sayıyordu; artık her bayılma sayılıyor ("Bir kez bayıl.", "5 kez bayıl, yine de devam et."). Eski kayıtlardaki bayılmalar da sayılır.</li>
+<li>Oyun iki sekmede açıkken arka plandaki eski sekme dakikada bir eski halini otomatik kayda yazıyordu; sayfa yenilenince "Devam et" eski bir kaydı açıyordu. Artık oyunu en son açan sekme (Devam et, Yükle, Yeni oyun) otomatik kaydeder; eski sekme susar ve bir kez uyarır.</li>
+</ul>
+<h4>Kayıtlar</h4>
+<ul>
+<li>Eski kayıtlar sorunsuz açılır. Paketten önce açık kalmış eski sürüm sekmelerini bir kez kapatmak iyi olur (onlarda bu koruma yok).</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Bayılma bölümü (ölüm yok kuralı), mor ışık ve tanrı modu satırları, başarımlar, açıklar listesi (#12 düzeldi), Ekin ve Act 3 notları "bayıl" oldu; Kontroller'de sol tık kuralları (yere düşen eşya, saldırı altında), Kayıt'ta iki sekme kuralı, öğretici tablosunda meşaleyi indirme; sürüm satırı 2.10.</li>
+</ul>
+<h2>Versiyon 2.09 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li>Börü'nün dersinde yetenek ağacı açılınca <strong>Koşu</strong> mavi parlıyor ve okla gösteriliyor; ağacı kapatınca Börü Koşu'nun <strong>100 sikke</strong> olduğunu, Nazlı'ya satıp biriktirmeni ve ilk iş onu almanı anlatıyor.</li>
+<li>Dursun'un ilk görevi değişti: <strong>"Ocağa odun"</strong>: "Baltan var, değil mi? Örsün ateşi odun yer, bana 8 çam odunu kes getir." (Eski "İlk baltan" görevi öğreticide zaten yapılıyordu.) Bu görev ancak örste bir balta dövülünce açılıyor; öğreticiyi atlayan, balta tarifini öğrenip ilk baltasını dövdürünce açılıyor.</li>
+<li>Bir şeyi <strong>yapmayı ya da dövmeyi</strong> isteyen görevler o şeyin <strong>tarifi öğrenilmeden açılmıyor</strong> (görev tarifi kendisi veriyorsa hariç). Örneğin Dursun'un "Keskin işler" (Taş kazma) görevi Taş kazma tarifini öğrenince açılıyor.</li>
+<li>Görevlerde artık <strong>kimse seni başka birine yönlendirmiyor</strong>. "X ile tanış" görevleri yerine yer görevleri geldi: Ekin'in "Kıyıdaki duman" (Mor Kristal Vadisi'ne git), Börü'nün "Kuzeye keşif" (Orman'a git), Toygar'ın "Dağ yolu" (Kayalık Dağ'a in). Teşekkürlerdeki "şuna uğra, ona selam söyle" cümleleri değişti.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li>Görevi hazır olan ama <strong>henüz tanışmadığın</strong> kişiler haritada, keşfetmediğin yerde bile, kendi konumlarında <strong>parlak sarı, nabız gibi atan büyük bir "?"</strong> ile görünüyor. Gidip tanışınca "?" kalkıyor, kişinin simgesi beliriyor ve görevi alabiliyorsun.</li>
+<li>Ana menüde <strong>Hakkında</strong> penceresine "Tasarım belgesine buradan ulaşabilirsiniz" bağlantısı geldi: belge oyunun içinde tam ekran açılıyor (Kapat / Esc, "Yeni sekmede aç"). Belge oyunla birlikte cihaza kaydediliyor; <strong>internetsiz de</strong> açılıyor.</li>
+</ul>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>Gece, görev sahnesindeki konuşma balonları karanlığın altında kalıp okunmuyordu; artık karanlığın üstünde çiziliyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Görev kuralları (tarif kuralı, yönlendirme yok, haritada "?", gece okunurluk), görev tablosu (D1, D2, E5, B5, T6), Börü'nün atılma dersi ve Açılış bölümü (Hakkında'daki belge) güncellendi; sürüm satırı 2.09.</li>
+</ul>
+<h4>Proje</h4>
+<ul>
+<li>Yeni çalışma kuralı: değişiklikler yapılır ama paket ancak Boğaç "paket çık" deyince çıkar; bekleyen işler <code>bekleyen-paket</code> dalında durur (CLAUDE.md ve yayın skill'i).</li>
+<li>Uygulama önbelleği (<code>sw.js</code>) <code>purple-light-v2</code> oldu ve tasarım belgesini de saklıyor.</li>
+</ul>
+<hr />
+<h2>Versiyon 2.08 · 29 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>Vuruş efekti canlıya değdiği hâlde hasar vermiyordu (özellikle çapraz vuruşlarda; örneğin Börü'nün kerevit dersinde). Vuruşun değip değmediği artık vuruşun çizildiği yerden (karakterin göğsü) canlının gövdesine göre ve canlının boyu hesaba katılarak, daha geniş bir açıyla ölçülüyor: efekt canlıya değdiği an hasar veriyor. Bütün canlılar için geçerli.</li>
+</ul>
+<h4>Oynanış</h4>
+<ul>
+<li>Öğreticide balta parçaları tamamlanınca artık <strong>Börü</strong> "Şimdi kuzeydeki Demirci Dursun'a git, baltayı o döver, benden selam söyle" diyor (önceden Dursun "Börü haber yolladı" diye çağırıyordu). Dursun'a gidince önce onunla <strong>tanışıyorsun</strong>, sonra parçaları görüp örsü açıyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Silahlar bölümüne "vuruş ne zaman değer" kuralı, öğretici 13. adıma Börü'nün yönlendirmesi ve Dursun'la tanışma eklendi; sürüm satırı 2.08.</li>
+</ul>
+<hr />
+<h2>Versiyon 2.07 · 29 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>F, baltan çantada olunca elinde olmasa da en yakın ağaca yöneliyor, sonra "taş balta gerekli" uyarısı veriyordu. Artık ağaca yalnızca <strong>elinde balta varken</strong>, madene yalnızca <strong>elinde kazma varken</strong> yöneliyor.</li>
+<li>Sol tıkla elinde balta yokken bir ağaca, kazma yokken bir madene tıklayınca karakter oraya yürüyüp uyarı alıyordu; artık yürümüyor, yalnızca o yöne vuruyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Kontroller tablosundaki F satırı güncellendi; sürüm satırı 2.07.</li>
+</ul>
+<hr />
+<h2>Versiyon 2.06 · 29 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>Öğreticide Dursun'un balta adımı bozuktu: balta dövüldükten sonra "Hepsini koy" yeniden parlıyor, Dursun'un penceresi düğmeye basmadan kapanınca öğretici "Dursun'a git, döv" adımında kalıp malzemeyi ikinci kez istiyordu. Artık balta dövüldüğü anda "baltayı eline al" adımına geçiliyor; Dursun'la yeniden konuşursan "baltan zaten dövüldü, eline al" diyor, ikinci kez dövdürmüyor.</li>
+<li>Fareyle bir şeyin üstüne gelince çıkan ipuçları hâlâ "E ile topla / E ile konuş" diyordu; artık bağlı tuşu gösteriyor ("F ile topla", "F ile konuş", "sol tık ya da Q ile vur").</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Öğretici 13. adım ve tuş yazıları maddesi güncellendi; sürüm satırı 2.06.</li>
+</ul>
+<hr />
+<h2>Versiyon 2.05 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li>F artık yalnızca <strong>hemen yanındaki</strong> şeye yöneliyor: karakterin bir kare çevresi, çaprazlar dahil. İki kare ötedeki bir şeye gitmiyor; o zaman F hiçbir şey yapmıyor. Yaklaşınca F en yakındakini topluyor.</li>
+<li>Baltan yoksa ağaca, kazman yoksa madene/kayaya gitmiyor.</li>
+<li>Elinde balta varsa önce ağaca, kazma varsa önce madene yöneliyor; yoksa en yakın toplanacak şeye (çalı, yerdeki taş/dal, meyvesi olgun ağaç). Ayağının dibindeki düşmüş eşyalar her zaman önce alınıyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Kontroller tablosundaki F satırı bu kurallarla güncellendi; sürüm satırı 2.05.</li>
+</ul>
+<hr />
+<h2>Versiyon 2.04 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>Tuşlar değişti:</strong> toplama/konuşma artık <strong>F</strong> (eskiden E), yemek <strong>X</strong> (eskiden F; basılı tutunca yemek listesi), <strong>E</strong> sağ tık gibi <strong>savuşturur / basılı tutunca gard alır</strong>. Diyaloglarda, anılarda ve balık tutarken ilerletmek de F. Hile tuşu "+100 XP" J oldu.</li>
+<li><strong>F ile otomatik toplama:</strong> menzilde bir şey yoksa F'ye basınca karakter en yakındaki toplanacak şeye (çalı, taş, maden, ağaç; en çok ~6 karo) kendisi yürüyüp topluyor.</li>
+<li><strong>Sol tık tam tıklanan yöne vuruyor:</strong> çaprazlar dahil her açıya; karakter de o yana (8 yönlü pozla) dönüyor. Önceden 4 yönden birine vuruyordu.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li>Oyundaki bütün yazılar (öğretici, ipuçları, konuşmalar) yeni tuşları gösteriyor. Ayarlar → Kontroller'de yeni "Savuştur / gard" satırı var; "Varsayılana dön" yeni tuşlara döner. Daha önce kendi tuşlarını atadıysan seninkiler korunuyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Kontroller tablosu yeni tuşlarla güncellendi; sürüm satırı 2.04.</li>
+</ul>
+<hr />
+<h2>Versiyon 2.03 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li>Bilgisayarda <strong>sol tık her zaman vuruyor</strong>: el boşken yumruk, elde silah ya da alet varsa onunla, tıkladığın yöne. Önceden yalnızca elde silah varken vuruyordu, yoksa Q gerekiyordu.</li>
+<li>Bir kişiye, kazana/örse/pazara, kurulmuş bir eşyaya ya da toplanacak bir şeye (çalı, maden, ağaç) tıklamak eskisi gibi oraya gidip konuşuyor/topluyor.</li>
+<li>Boş yere tıklamak artık karakteri yürütmüyor; yürümek WASD ya da ok tuşlarıyla. Telefonda bir şey değişmedi.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Kontroller tablosunda "Q / sol tık" satırı güncellendi; sürüm satırı 2.03.</li>
+</ul>
+<hr />
+<h2>Versiyon 2.02 · 29 Ekim 2026</h2>
+<h4>Görsel</h4>
+<ul>
+<li>Arka-çaprazdaki ayaklar 2.00'deki haline geri döndü (2.01'deki aynalama geri alındı).</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>"Karakterin 8 yönü" maddesinde arka-çapraz ayaklar 2.00'deki tarife döndü; sürüm satırı 2.02.</li>
+</ul>
+<hr />
+<h2>Versiyon 2.01 · 29 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>Arka-çaprazda ayaklar ters duruyordu (sağ-yukarı giderken sol-yukarıya gidiyormuş gibi). Ayaklar aynalandı; artık gidilen yöne bakıyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>"Karakterin 8 yönü" maddesinde arka-çapraz ayaklar düzeltildi; sürüm satırı 2.01.</li>
+</ul>
+<hr />
+<h2>Versiyon 2.00 · 29 Ekim 2026</h2>
+<h4>Görsel</h4>
+<ul>
+<li>Çapraz pozlarda (önde ve arkada) gövdenin yanına yapışık duran uzak kol pikselleri tamamen kaldırıldı; yalnızca yakın kol görünüyor.</li>
+<li>Arka-çaprazda baş yeniden normal boyda (%10 küçültme geri alındı).</li>
+<li>Arka-çaprazda ayaklar artık ön-çaprazdaki gibi gidilen yöne bakıyor: sol-yukarıda sol-yukarıya, sağ-yukarıda sağ-yukarıya.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>"Karakterin 8 yönü" maddesi güncellendi; sürüm satırı 2.00.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.99 · 29 Ekim 2026</h2>
+<h4>Görsel</h4>
+<ul>
+<li>Ön-çapraz (sağ-aşağı / sol-aşağı): gövde artık dönmüş görünüyor. Gövde gidilen yöne kayıyor, uzak yanı gölgede, yaka o yana dönük. Sağ çaprazda sağ kol, sol çaprazda sol kol gövdeden ayrı duruyordu; artık gövdeye yapışık.</li>
+<li>Arka-çapraz (sağ-yukarı / sol-yukarı): düz duran sırt dönük çizildi (yakın yan gölgede, ortada sırt çizgisi). Ayaklar ters duruyordu; artık öbür ayak önde ve bir adım yukarıda ("öneri 2").</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>
+<p>"Karakterin 8 yönü" maddesi yeni çapraz gövdelerle yeniden yazıldı; sürüm satırı 1.99.</p>
+</li>
+<li>
+<p>Belgenin başındaki sürüm satırı kısaldı: yalnızca son sürümün tek cümlelik özeti ve güncelleme notlarına bağlantı (eski sürümlerin listesi kaldırıldı).</p>
+</li>
+</ul>
+<hr />
+<h2>Versiyon 1.98 · 29 Ekim 2026</h2>
+<h4>Görsel</h4>
+<ul>
+<li>Arka-çapraz (sağ-yukarı / sol-yukarı) pozda başın yalnızca arkası (saç) görünüyor: yanak, kulak ve göz yok. Baş gövdeye göre %10 küçük. Gövdenin yanında, kulağın altında kalan ayrık pikseller (uzak kol) kalktı. Seçtiğin "Öneri D".</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>"Karakterin 8 yönü" maddesinde arka-çapraz poz Öneri D'ye göre güncellendi; sürüm satırı 1.98.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.97 · 29 Ekim 2026</h2>
+<h4>Görsel</h4>
+<ul>
+<li>Arka-çapraz (sağ-yukarı / sol-yukarı) pozda baş yeniden 1.94'teki gibi: ince yanak şeridi ve burun ucu, büyük kulak yok. Gövde, kollar ve ayaklar 1.96'daki çapraz haliyle kalıyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>"Karakterin 8 yönü" maddesinde arka-çapraz baş tarifi güncellendi; sürüm satırı 1.97.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.96 · 29 Ekim 2026</h2>
+<h4>Görsel</h4>
+<ul>
+<li>Çapraz pozlarda karakter artık <strong>bütünüyle</strong> çapraz dönüyor: gövde daralıyor ve uzak yanı gölgede kalıyor, uzak kol gövdenin arkasına geçiyor, yakın kol öne geliyor, ayaklar çapraz basıyor (uzak ayak bir adım geride, ayak uçları gidilen yöne). Elde alet varsa kol gidilen yöne uzanıyor.</li>
+<li>Arka-çapraz (sağ-yukarı / sol-yukarı) baş yeniden çizildi: senin seçtiğin <strong>Seçenek 1</strong>. Saç yüzü kapatmıyor; dönülen yanda yanak ve <strong>küçültülmüş kulak</strong> görünüyor, göz görünmüyor.</li>
+<li>Karakter yaratma ekranında çevirince ön-çapraz ve arka-çapraz pozlar da aynı yeni gövdeyle görünüyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>"Karakterin 8 yönü" çapraz gövde ve arka-çapraz baş seçimiyle güncellendi; sürüm satırı 1.96.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.95 · 29 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>Ekin'in "Böğürtlen ye" adımı bitince soldaki yemek düğmesi parlamaya devam ediyordu (yemek menüsü açılıp kapanınca öğretici parlamayı unutuyordu). Artık adım biter bitmez parlama ve ok sönüyor; aynı düzeltme öğreticideki bütün parlayan düğmeler için geçerli.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Öğreticinin "gösterme kuralı"na "adım bitince parlama söner" eklendi; sürüm satırı 1.95.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.94 · 29 Ekim 2026</h2>
+<h4>Görsel</h4>
+<ul>
+<li>Karakter artık <strong>8 yöne</strong> bakıyor. Çapraz yürürken yana dönmüş gibi görünmüyor:<ul>
+<li>Sağ-aşağı / sol-aşağı: karakter yaratma ekranındaki <strong>hafif yana bakan ön poz</strong>.</li>
+<li>Sağ-yukarı / sol-yukarı: yeni <strong>arkadan, başı hafif o yana dönük poz</strong> (yanağın ve kulağın bir kısmı görünüyor).</li>
+<li>Tam yana yürürken yan profil; yukarı arka, aşağı ön (eskisi gibi).</li>
+</ul>
+</li>
+<li>Durunca son poz kalıyor. Vururken, toplarken ya da konuşurken karakter o işe dönüyor.</li>
+<li>Karakter yaratma ekranında karakteri sürükleyip çevirince arka-çapraz pozlar da görünüyor (önceden düz arka görünüyordu).</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Kontroller bölümüne "Karakterin 8 yönü" eklendi; sürüm satırı 1.94.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.93 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li>Görev sahneleri artık <strong>göreve özel</strong>: kişi kendi yerinde, konuşma balonlarıyla <strong>o görevi kendi sözleriyle</strong> cümle cümle anlatıyor (en çok 4 balon). Arada karakterin tepki veriyor ("Anlat bakalım.", "Dinliyorum."), en sonda işi üstleniyor ("Tamam, hallederim!", "Bana bırak.").</li>
+<li>Her balon okuma süresi kadar kalıyor; tık/dokunuş ya da bir tuş sonraki balona geçiyor, <strong>Esc</strong> sahnenin kalanını geçiyor.</li>
+<li>Sahneden sonra açılan pencere kısa: görevin adı, 📍 nerede yapılacağı ve ödül. Kişi uzaktaysa sahne yine atlanıyor, görev eskisi gibi tam metinle veriliyor.</li>
+</ul>
+<h4>Görsel</h4>
+<ul>
+<li>Konuşma balonları birden çok satıra kırılıyor; kişinin balonu sarımsı, karakterinki beyaz; köşede "tıkla ▸ / dokun ▸" ipucu.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>"Görev sahnesi" maddesi göreve özel balonlu konuşmayla yeniden yazıldı; sürüm satırı 1.93.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.92 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li>Her görevden önce kısa bir <strong>görev sahnesi</strong> giriyor (yaklaşık 3 saniye): ekranın üstüne ve altına siyah sinema şeritleri kayıyor, karakterin kişiye dönüp yanına yürüyor, başında bir selam balonu çıkıyor ("Selam Dursun! Bir işin mi var?" gibi), kişi kısa bir balonla cevap veriyor ("Hah, tam seni düşünüyordum!" gibi). Sonra kişi görevi konuşma penceresinde anlatıyor; "Tamam"a basınca görev başlıyor ve "Görev başladı: …" yazıyor.</li>
+<li>Sahne bir tıkla ya da bir tuşla geçilebiliyor. Kişi uzaktaysa, arenada ya da denizdeyken sahne atlanıyor.</li>
+</ul>
+<h4>Görsel</h4>
+<ul>
+<li>Görev sahnesi için siyah sinema şeritleri ve kişinin başında sarımsı konuşma balonu.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Görev kurallarına "Görev sahnesi" maddesi eklendi; sürüm satırı 1.92.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.91 · 29 Ekim 2026</h2>
+<h4>Arayüz</h4>
+<ul>
+<li>Görev yeri artık küçük bir sarı çemberle değil, <strong>görevin yapılabileceği her yerin sarıya boyanmasıyla</strong> gösteriliyor (büyük ve küçük haritada, yavaşça parlayarak, gece de):<ul>
+<li>Toplanacak/kazılacak/kesilecek şey: bulunduğu <strong>bütün biyomlar</strong> (her yerde çıkıyorsa bütün ada).</li>
+<li>Avlanacak hayvan ya da hayvandan düşen şey: hayvanın yaşadığı bütün biyomlar.</li>
+<li>Balık ve nehir kili: <strong>nehirler ve sığ sular</strong>.</li>
+<li>Bir biyoma gitme: o biyomun tamamı.</li>
+<li>Bir kişiye ya da yere gitme: o kişinin çevresinde büyük, nabız gibi atan sarı ışık ve halkalar.</li>
+</ul>
+</li>
+<li><strong>Ok:</strong> sarı bölgenin içindeysen (o biyomdaysan) ok çıkmıyor; dışındaysan ok seni bölgenin en yakın yerine götürüyor.</li>
+<li>Görev konuşmasındaki 📍 satırı biyomların adını yazıyor ("Orman, Bataklık · haritada sarı bölge").</li>
+<li>Oyun içinde etrafına çizilen kesikli sarı çember kaldırıldı (bölge görevlerinde).</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>"Yol gösterme: ok ve sarı bölge" bölümü yeniden yazıldı; sürüm satırı 1.91.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.90 · 29 Ekim 2026</h2>
+<h4>Arayüz</h4>
+<ul>
+<li>Büyük haritada (M) görevi olan kişiler artık belirgin şekilde parlar: üstünde <strong>!</strong> olan herkesin arkasında sarı bir ışık ve dışa doğru açılan iki sarı halka, <strong>?</strong> olan (teslim edilecek görev) kişilerde yeşil ışık ve halkalar var. Haritayı açınca nereye gideceğin hemen görünür. Kuzenler de dahil.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>"Harita, işaretler, defterler" bölümüne görevli kişilerin haritada parlaması eklendi; sürüm satırı 1.90.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.89 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li>Yere düşen eşyaları çeken mıknatısın menzili %30 kısaldı (30 → 21 piksel). Eşyalar artık ancak yanlarına gelince sana süzülür.</li>
+<li>Börü'nün atılma dersindeki kerevit artık doğadaki gibi davranır: yürüyerek yaklaşır, uzaklaşırsan peşinden yürür, bekler, kırmızı <strong>!</strong> ile saldırır ve saldırıdan sonra olduğu yerde kalır. Başka bir yere ışınlanıp durmaz.</li>
+<li>Börü'nün yumruk dersinde (bilgisayarda) dövüş doğru öğretilir: <strong>WASD ya da yön tuşlarıyla</strong> yürü, <strong>sol tıkla</strong> vur. Bu derste sol tık yürütmez, tıkladığın yöne yumruk atar.</li>
+<li>Zümrüt meşaleyi eline aldırınca meşaleyi anlatır: gündüz işe yaramaz, gece içindir; yalnızca elindeyken yanar ve Kaba meşale yaklaşık iki dakikada biter (yağmurda daha çabuk). Gündüz elinden indirmeni, akşam yeniden almanı ve yedek yapmanı söyler.</li>
+</ul>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>Börü'nün atılma dersi bitince "Yetenek ağacını aç" adımı artık kaybolmuyor: konuşma penceresi kapansa bile ağaç ikonu parlamaya devam eder. Börü'nün üstündeki ok kalkar; Börü'ye tıklarsan dersi ya da kereviti ikinci kez vermez, yalnızca "önce yetenek ağacını aç" der.</li>
+<li>Öğreticide el yapımı ekranındaki <strong>Yap</strong> düğmeleri (Sopa, Keskin taş, İp) artık gerçekten yanıp söner; İp listenin aşağısındaysa liste oraya kayar.</li>
+<li>Ekin'in "Böğürtlen ye" adımında yemek düğmesi okun yanında parlamıyordu; artık parlar.</li>
+</ul>
+<h4>Görsel</h4>
+<ul>
+<li>Demirci Dursun ve silahçı kuzenleri örse yarı hızda vurur (saniyede 1,8 vuruştan 0,9'a); kıvılcımlar da yarı sıklıkta çıkar.</li>
+<li>Balta ile ağaç keserken iş çubuğunda "Toplanıyor: Çam odunu" yerine "<strong>Kesiliyor: Çam ağacı</strong>" yazar; kazma ile kazarken "<strong>Kazılıyor: …</strong>" yazar.</li>
+</ul>
+<h4>Ses</h4>
+<ul>
+<li>Demircilerin çekiç çınlaması yarı sıklıkta çalar; sürekli çınlama bitti.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li>Öğreticide basman gereken her düğme <strong>mavi parlar</strong> ve yanında yanıp sönen bir <strong>ok</strong> olur: yemek düğmesi ve Böğürtlen'in Ye düğmesi, yetenek ağacı ikonu, balta parçalarının Yap düğmeleri, Dursun'un örsünde önce <strong>Hepsini koy</strong> sonra <strong>Döv</strong>, balta dövülünce sırayla envanter düğmesi → Taş balta → boş alet yuvası → alttaki kutusu.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Öğretici tablosu (2., 5., 11., 12. ve 13. adımlar), "gösterme kuralı" ve Börü'nün atılma dersi (kerevitin yürümesi, yetenek ağacı adımı) güncellendi.</li>
+<li>Sistemler bölümüne mıknatıs menzili (21 px) ve iş çubuğu yazıları eklendi; Dursun'un bölümüne çekiç hızı eklendi; sürüm satırı 1.89.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.88 · 29 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li>Tıka basa tokken de yemek yenir. Tokluk 100'ü geçmez; yemeğin canı ve yan etkileri (güçlendirmeler, çiğ etin mide bulantısı) yine işler.</li>
+</ul>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>Tanrı modunda öğreticinin "böğürtlen ye" adımı yapılamıyordu (tokluk hep doluydu); artık yapılıyor.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li>"Tıka basa toksun" uyarısı kaldırıldı.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Temel sistemler → Can, tokluk, enerji: yemek satırı "tokken de yenir, tanrı modunda da" diye güncellendi.</li>
+<li>Belgenin başındaki sürüm satırı 1.86'da kalmıştı; 1.88'e (1.87 ve 1.88 özetleriyle) güncellendi.</li>
+<li>Belge sayfasının kenar çubuğundaki sürüm 1.77'de kalmıştı; artık sürüm satırından kendiliğinden alınıyor.</li>
+</ul>
+<h4>Proje</h4>
+<ul>
+<li><code>GUNCELLEME_NOTLARI.md</code> eklendi (bu dosya); her sürümde güncellenip Boğaç'a gönderilir.</li>
+<li><code>CLAUDE.md</code>, <code>DEVAM_NOTU.md</code> ve yayın skill'ine güncelleme notu kuralı eklendi.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.87 · 28 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li>Telefonda <strong>Ulti</strong> düğmesine basınca ulti yerine Robot köpekler menüsü açılıyordu (arenada ve açık dünyada). Artık ulti atılıyor; R'nin köpek menüsü görevi bilgisayarda değişmedi.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Kontroller tablosu, R satırı: "arenada R yalnızca ulti; Ulti düğmesi yalnızca ulti atar, köpek menüsünü açmaz".</li>
+</ul>
+<h4>Proje</h4>
+<ul>
+<li>Yayın adımları skill olarak depoya eklendi: <code>.claude/skills/purple-light-surum-yayinla/SKILL.md</code>.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.86 · 28 Ekim 2026</h2>
+<h4>Oynanış · ACT 1 görev sistemi baştan</h4>
+<ul>
+<li>Eski ACT 1 görevlerinin hepsi kaldırıldı (Ekin'in 14 görevi, yan görevler, kuzenlerin 45 görevi). Yerine 27 kişide <strong>139 yeni görev</strong>.</li>
+<li>Aynı anda <strong>tek görev</strong> yapılır. Haritada aynı anda en çok <strong>2 kişi</strong> iş bekler.</li>
+<li>Konuşunca görev hemen başlar ("Kabul et" düğmesi yok). Tanışılmamış biriyse önce tanışma konuşması, ardından görev gelir.</li>
+<li>Görevdeyken iş veren biriyle konuşursan "Şu an bir işin var; önce onu bitir" der; kazan, örs, pazar gibi hizmetler çalışmaya devam eder.</li>
+<li>Görev bitince görevi verenin yanına (2 karo) gidince kendiliğinden biter. Gitmek, tanışmak, köprü, patlama, izler ve gemi işleri yapıldığı anda biter.</li>
+<li>Görev kartındaki <strong>×</strong> ya da görevi verenin menüsündeki "📜 Görev" satırıyla bırakılır; ilerleme silinir.</li>
+<li>Her görev, istediği malzeme oyunda bir kez bulunmadan açılmaz.</li>
+<li>Ekin yalnızca ana yolun 5 görevini verir (ilk iş, köprü, patlama, izler, Levent'i bulmak). Kimsede iş kalmazsa sıradaki kilitli görevin eksiğini kapatan bir "ayak işi" verir.</li>
+<li>Aletler, ateş, balık, tuzak, satış, maden gibi öğrenme işleri Dursun, Rıza, Börü, Nazlı, Durmuş ve kuzenlere dağıtıldı.</li>
+<li>Köprü, kaya yığını ve Levent'in gemi enkazı görev alınmadan kullanılamaz. Kısayol köprüleri ana köprüden sonra görevsiz onarılır.</li>
+<li>Ekin'in koşu dersi artık köprü görevi bitince başlar.</li>
+<li>Hikâye parçaları yeni görevlere eşit aralıkla bağlandı; Elmas Nine sahnesi 18 akrabanın yeni görevleri bitince oynar.</li>
+<li>Görev alınınca, bitince ya da bırakılınca oyun otomatik kaydeder.</li>
+<li>Rıza: barınak görevinde malzemeler çantadaysa doğrudan sipariş listesini açar.</li>
+</ul>
+<h4>Görsel</h4>
+<ul>
+<li>Görevi olan kişinin başında <strong>sarı zemin üzerinde siyah !</strong> ve çevresinde <strong>sarı parlama</strong> (dünyada).</li>
+<li>Küçük haritada ve büyük haritada görev veren kişi <strong>parlar</strong> ve başında siyah ! çıkar; keşfedilmemiş yerde olsa da görünür.</li>
+<li>İstenen şeyin yeri dünyada <strong>kesikli, dönen sarı çember</strong> (yaklaşık 12 karo), haritalarda sarı çember.</li>
+<li>Tanışılmamış kişilerin eski sarı ! işaretleri ve eski mavi !/sarı ? görev işaretleri ACT 1'de kalktı.</li>
+<li>Köprü, kaya yığını ve gemi için <strong>yüzsüz onay penceresi</strong> (krem kâğıt üzerine koyu yazı).</li>
+<li>Karakterin başında <strong>konuşma balonu</strong>: "Aa, sandığımdan kolaymış!", "Kulaklarımı tıkasam iyi olur…", "Vay be!", "İşte ACT 1'in sonu… ya da başlangıcı.", görevsiz gelince "Buradan nasıl geçebilirim acaba?" (bir kez).</li>
+<li><strong>Ders kartı:</strong> ekranın üstünde, sarı çerçeveli, adım adım (Devam / Dersi geç), ilgili düğmeler yanıp söner. 18 ders.</li>
+<li>Görev kartı: başlık "<Kişi> · Görev", ilerleme, 📍 yer satırı ve köşede <strong>×</strong> düğmesi; görev yokken "Başında siyah ! olan kişiyle konuş" yazar.</li>
+<li>Görevler paneli (G) yeni düzen: aktif görev, "Seni bekleyenler", tamamlanan sayısı, "Bu işi bırak".</li>
+</ul>
+<h4>Ses</h4>
+<ul>
+<li>Görev alma, bitirme (sikke), bırakma ve ders adımlarında oyunun mevcut efektleri.</li>
+</ul>
+<h4>Kayıtlar</h4>
+<ul>
+<li>Eski kayıtlarda görev ilerlemesi sıfırlanır; envanter, yapılar ve dünya kalır. Açılışta uyarı çıkar.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Yeni bölüm "ACT 1 · Görevler (görev sistemi v2)": kurallar, yol gösterme, 18 ders, köprü/kaya/gemi, ayak işleri, 27 kişinin görev tabloları.</li>
+<li>"ACT 1 yol haritası" yeni zincire göre yeniden yazıldı.</li>
+<li>Eski "ACT 1 · Kişiler ve görevler" bölümü referans olarak işaretlendi.</li>
+<li>Belgenin parçaları (<code>parts/*.md</code>) yeniden bölündü; belge üretme komutu 1.86 içeriğini koruyor.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.85 · 28 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li>Ada yeniden çizildi: <strong>altı biyom eşit büyüklükte</strong> ve sırayla: Çayır (güneybatı) → Orman (kuzeybatı) → Bataklık (kuzey orta) → Kayalık Dağ (güney orta) → Kül Diyarı (güneydoğu) → Mor Kristal Vadisi (kuzeydoğu).</li>
+<li>Büyük nehirde <strong>üç kırık köprü</strong>, her biri ayrı onarılır (20 odun). Kuzeydeki (Orman ↔ Bataklık) ana köprü; ikisi Çayır ↔ Kayalık Dağ arasında kısayol.</li>
+<li>Kaya yığını Kayalık Dağ ile Kül Diyarı arasında; patlayınca <strong>bütün sıradağ çöker</strong>, sınır tamamen kalkar.</li>
+<li>Başlangıç kumsalı, tarla, göl, izler ve kişilerin yerleri yeni haritaya taşındı.</li>
+</ul>
+<h4>Görsel</h4>
+<ul>
+<li>Yeni ada haritası (biyom şekilleri, nehirler, göller, bataklık gölcükleri).</li>
+<li>Haritada üç köprü işareti; sıradağ çökünce harita da güncellenir.</li>
+<li>Patlamada sıradağ boyunca toz ve taş parçacıkları, ekran sarsıntısı.</li>
+</ul>
+<h4>Kayıtlar</h4>
+<ul>
+<li>Eski haritadan gelen kayıt kumsalda başlar, harita yeniden keşfedilir; envanter ve ilerleme korunur (uyarı çıkar).</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>"Adanın yerleşimi" ve biyom bölümleri yeni haritaya göre güncellendi; köprü ve doğu geçidi kuralları yazıldı.</li>
+</ul>
+<hr />
+<h2>Versiyon 1.84 · 28 Ekim 2026</h2>
+<h4>Oynanış</h4>
+<ul>
+<li><strong>15 yeni NPC:</strong> Zümrüt, Dursun ve Durmuş'un kuzenleri; Çayır dışındaki her biyomda bir cadı, bir silahçı, bir zırhçı (Orman: Yakut, Durdu, Duran · Bataklık: Safir, Ali, Veli · Kayalık Dağ: Firuze, Kaya, Kayhan · Kül Diyarı: Mercan, Turan, Tufan · Mor Kristal Vadisi: İnci, Kudret, Kuvvet).</li>
+<li>İlk karşılaşmada onlara önceki biyomdaki akrabanın adıyla seslenirsin; "ben o değilim, kuzeniz" deyip onu küçümserler.</li>
+<li>Cadıların kazanı bütün tarifleri öğretir.</li>
+<li><strong>Kademe kuralı:</strong> her demirci yalnızca kendi biyomunun malzemesiyle (ve öncekilerin) yapılanları döver; Dursun ve Durmuş artık yalnız Çayır malzemesi.</li>
+<li><strong>Kuzenlere özel 15 eşya:</strong> Granit gürz, Timsah dişi kılıcı, Gümüş kılıç, Lav camı kılıcı, Ametist kılıcı ve 10 zırh parçası.</li>
+<li>Bütün aile görevleri bitince <strong>Elmas Nine</strong> ortak ara sahnesi (mor ışık ninelerini kaçırmış).</li>
+<li>Zümrüt, Dursun ve Durmuş'a "Kuzenlerin var mı?" sorusu.</li>
+</ul>
+<h4>Görsel</h4>
+<ul>
+<li>Kuzenler Zümrüt, Dursun ve Durmuş'la birebir aynı görünür; cadıların <strong>kazan sıvısı</strong> adlarındaki taşın renginde (kırmızı, mavi, turkuaz, mercan, inci beyazı).</li>
+<li>Demircilerin <strong>ocak, örs, çekiç ve askıları</strong> biyomdan biyoma daha gösterişli (granit ocak → demir örs ve manken → gümüş boynuzlu örs → lav dönen bazalt ocak → ametist kakmalı obsidyen örs); kıvılcım renkleri değişir.</li>
+<li>Her kuzenin yanında kendi kamp ateşi.</li>
+<li>15 özel eşyanın simgeleri; kuzen cadıların konuşma penceresi çerçevesi kazan renginde.</li>
+<li>Elmas Nine ara sahnesi (18 akraba ateş başında, geçmişte dağ evindeki mor ışık).</li>
+<li>Haritada kuzenlerin simgeleri.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Yeni bölüm "Zümrüt, Dursun ve Durmuş'un kuzenleri": aileler, kazancılar, kademe tablosu, çalışma yerleri, özel eşyalar, hikâyeler ve ailenin sahnesi.</li>
+</ul></main></body></html>

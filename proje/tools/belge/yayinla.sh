@@ -8,4 +8,6 @@ cp $D/TASARIM.md proje/Hammadde_tasarim_belgesi.md
 cp proje/Purple_Light_belgeler.html belge.html
 cp proje/Hammadde_tasarim_belgesi.md belge.md
 node $D/pdf.js
-echo "Hazır: belge.html, belge.pdf, belge.md (+ proje/ kopyaları). Commit + push sonrası: https://bogacavdar.github.io/purple-light/belge.html · /belge.pdf · /belge.md"
+python3 proje/tools/notlar/notlar.py
+node proje/tools/notlar/pdf.js
+echo "Hazır: belge.html, belge.pdf, belge.md, GUNCELLEME_NOTLARI.html/.pdf (+ proje/ kopyaları). Commit + push sonrası: https://bogacavdar.github.io/purple-light/belge.html · /belge.pdf · /belge.md"

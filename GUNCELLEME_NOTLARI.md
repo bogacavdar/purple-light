@@ -4,6 +4,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 - Oyun: https://bogacavdar.github.io/purple-light/
 - Belge: https://bogacavdar.github.io/purple-light/belge.pdf · https://bogacavdar.github.io/purple-light/belge.html · https://bogacavdar.github.io/purple-light/belge.md
+- Bu notlar: https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html · https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.pdf
 
 ---
 
@@ -36,6 +37,8 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 **Proje**
 - Çalışma kurallarına eklendi: büyük güncellemeler "paket çık" beklemeden aynı gün yayına gider.
+- Güncelleme notları artık **HTML ve PDF** olarak da yayında (telefonda okunur, yazdırılır); belgeyle birlikte otomatik üretiliyor.
+- Tasarım belgesinin başındaki sürüm satırı 2.30'a güncellendi (2.28–2.29'da 2.27'de kalmıştı).
 
 ## Versiyon 2.29 · 30 Ekim 2026
 
