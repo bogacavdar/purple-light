@@ -1343,7 +1343,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.29</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.30</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -15598,6 +15598,374 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
      if(h||bg)e.stopImmediatePropagation()}catch(x){}},true);
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v229-hile: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v230">
+// v2.30: side quests (yan görevler). The islanders' quests are now "ana görev"; twelve side people stand in the first four lands
+// of island 1 (three each), each at its own hours. One side quest runs next to the main quest; fainting ends only the side quest
+// (it can be taken again from the start); nothing can be missed. Map: an exact blue "?" where the place is explored, a foggy circle
+// with a "?" where it is not. Creatures born for a side quest never count in the almanac and no Reis comes while it fights.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ if(ISLE!==1)return;
+ // ---------------------------------------------------------------- helpers
+ const hsh=s=>{let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0};
+ const rngOf=s=>{let a=(hsh(s)+W*131+H)>>>0;return()=>{a=(a+0x6D2B79F5)>>>0;let t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}};
+ const D2=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
+ const vis=(x,y,m)=>x>cam.cx-m&&x<cam.cx+vw+m&&y>cam.cy-m&&y<cam.cy+vh+m;
+ const hhm=m=>{m=((m%1440)+1440)%1440;return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')};
+ const inWin=w=>w[0]<=w[1]?(dayT>=w[0]&&dayT<w[1]):(dayT>=w[0]||dayT<w[1]);
+ const NG=new Map();for(const n of nodes){const k=Math.floor(n.x/32)*8192+Math.floor(n.y/32);let L=NG.get(k);if(!L)NG.set(k,L=[]);L.push(n)}
+ const nodeNear=(x,y,r)=>{const gx=Math.floor(x/32),gy=Math.floor(y/32);for(let a=gx-1;a<=gx+1;a++)for(let b=gy-1;b<=gy+1;b++){const L=NG.get(a*8192+b);if(L)for(const n of L)if(Math.hypot(n.x-x,n.y-y)<r)return true}return false};
+ const okT=(tx,ty,b,sand)=>{if(tx<2||ty<2||tx>=W-2||ty>=H-2)return false;const i=ty*W+tx;return reach[i]===1&&(b<0||BIO[i]===b)&&(tiles[i]<=1||(sand&&tiles[i]===2))};
+ const shore=(tx,ty)=>{for(let dy=-2;dy<=2;dy++)for(let dx=-2;dx<=2;dx++){const t=tiles[(ty+dy)*W+tx+dx];if(t===3||t===4)return true}return false};
+ const AV=[];
+ try{for(const o of [npc.home,witch,market,smith,durmus,farmer,usta,alp,carp,toygar,hut,kaptan,dock,balikci])if(o&&o.x>-9e4)AV.push({x:o.x,y:o.y})}catch(e){}
+ try{for(const b of BRIDGES)AV.push({x:b.cx,y:b.cy})}catch(e){}
+ try{for(const F of window.__pl184.FAMS){AV.push({x:F.cx,y:F.cy});AV.push({x:F.wx,y:F.wy})}}catch(e){}
+ function spotOk(x,y,b,o){const tx=Math.floor(x/T),ty=Math.floor(y/T);
+   for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++)if(!okT(tx+dx,ty+dy,b,o.sand))return false;
+   if(o.shore&&!shore(tx,ty))return false;if(blocked(x,y))return false;
+   if(treesNear(x,y,t=>Math.hypot(t.x-x,t.y-y)<(o.big?30:20)))return false;if(nodeNear(x,y,o.big?22:14))return false;
+   if(o.av&&AV.some(p=>Math.hypot(p.x-x,p.y-y)<o.av))return false;return true}
+ function findNear(cx,cy,r0,r1,b,R,o){o=o||{};
+   for(let i=0;i<700;i++){const a=R()*Math.PI*2,r=r0+(r1-r0)*R(),x=Math.round(cx+Math.cos(a)*r),y=Math.round(cy+Math.sin(a)*r);if(spotOk(x,y,b,o))return{x,y}}
+   const o2=Object.assign({},o,{av:0});for(let r=r0;r<r1+900;r+=12)for(let k=0;k<24;k++){const a=k/24*Math.PI*2,x=Math.round(cx+Math.cos(a)*r),y=Math.round(cy+Math.sin(a)*r);if(spotOk(x,y,b,o2))return{x,y}}
+   return{x:cx,y:cy}}
+ const BOXB=[];for(let b=0;b<4;b++)BOXB.push([W,H,0,0]);
+ for(let i=0;i<W*H;i++){const b=BIO[i];if(b>3||reach[i]!==1)continue;const x=i%W,y=(i/W)|0,B=BOXB[b];if(x<B[0])B[0]=x;if(y<B[1])B[1]=y;if(x>B[2])B[2]=x;if(y>B[3])B[3]=y}
+ const SLOT=[[.3,.32],[.7,.5],[.42,.78]];
+ // ---------------------------------------------------------------- looks
+ const L=(o)=>npcLook(o);
+ const LK={
+  elif:L({skin:'#e8c09a',skinD:'#c89a74',hair:'#2a1a12',hairD:'#1a0f08',hairL:'#4a3020',hs:'long',shirt:'#4a7ab0',shirtD:'#355a88',dress:true,pants:'#2a3a5a'}),
+  husnu:L({skin:'#c88a64',skinD:'#a06a46',hair:'#d8d8d0',hairD:'#a8a8a0',hairL:'#f0f0e8',hs:'short',beard:'sakal',hat:'hasir',shirt:'#8a6a3a',shirtD:'#6a4e28',pants:'#4a3a2a'}),
+  kerem:L({skin:'#e8b890',skinD:'#c8986a',hair:'#6a3a1a',hairD:'#4a2610',hairL:'#8a5a2e',hs:'messy',shirt:'#c84a3a',shirtD:'#a0362a',pants:'#3a4a6a'}),
+  mina:L({skin:'#f0c8a0',skinD:'#d0a47a',hair:'#c8902a',hairD:'#a06e1a',hairL:'#e8b04a',hs:'long',shirt:'#e8d070',shirtD:'#c8b050',dress:true,pants:'#8a6a3a'}),
+  nadir:L({skin:'#d8a070',skinD:'#b8804e',hair:'#e8e8e8',hairD:'#bdbdbd',hairL:'#ffffff',hs:'short',beard:'sakal',hat:'kasket',hatC:'#9aa0a8',shirt:'#7a7e88',shirtD:'#5a5e68',pants:'#4a4a52'}),
+  sadik:L({skin:'#c8906a',skinD:'#a8704a',hair:'#2a1f18',hairD:'#1a120c',hairL:'#3a2a20',hs:'short',beard:'biyik',hat:'bandana',hatC:'#3a8a5a',shirt:'#c8a050',shirtD:'#a07e34',pants:'#3a2a1a'}),
+  cemal:L({skin:'#c8906a',skinD:'#a8704a',hair:'#3a2418',hairD:'#24160c',hairL:'#5a3a28',hs:'messy',beard:'keci',shirt:'#5a6a3a',shirtD:'#46542c',pants:'#3a2a1a'}),
+  sabri:L({skin:'#d0b0a0',skinD:'#b09080',hair:'#4a4048',hairD:'#2a2428',hairL:'#6a6068',hs:'messy',eye:'#a060ff',shirt:'#4a3a5a',shirtD:'#342844',pants:'#2a2a32'}),
+  nermin:L({skin:'#d8a070',skinD:'#b8804e',hair:'#1a1210',hairD:'#0a0806',hairL:'#3a2a20',hs:'long',hat:'bandana',hatC:'#8a3a9a',shirt:'#c83a4a',shirtD:'#a02a3a',dress:true,pants:'#5a2a6a'}),
+  saniye:L({skin:'#e0b090',skinD:'#c09070',hair:'#ececec',hairD:'#c0c0c0',hairL:'#ffffff',hs:'long',shirt:'#3a4a6a',shirtD:'#2a3650',dress:true,pants:'#2a2a3a'}),
+  haydar:L({skin:'#c8906a',skinD:'#a8704a',hair:'#9a9a9a',hairD:'#7a7a7a',hairL:'#bababa',hs:'short',beard:'sakal',hat:'kasket',hatC:'#7a5a3a',shirt:'#b89a6a',shirtD:'#98784a',pants:'#4a3a2a'}),
+  isil:L({skin:'#e8f0ff',skinD:'#c0d0f0',hair:'#d0d8f8',hairD:'#a8b4e0',hairL:'#ffffff',hs:'long',shirt:'#e8f0ff',shirtD:'#c8d4f0',dress:true,pants:'#c8d4f0'}),
+  emir:L({skin:'#e8c09a',skinD:'#c89a74',hair:'#3a2418',hairD:'#24160c',hairL:'#5a3a28',hs:'messy',shirt:'#6a8ab0',shirtD:'#4a6a90',pants:'#4a3a2a'})};
+ const KID={kerem:1,mina:1,isil:1,emir:1};
+ // ---------------------------------------------------------------- the twelve
+ const N=(t)=>['n',t],P=(t)=>['p',t],X=(t)=>['x',t];
+ const Q=[
+ {id:'elif',name:'Elif',title:'Denizden dönmeyen kardeş',b:0,win:[1020,1380],c:120,x:80,
+  intro:[N('Kardeşim <b>Yusuf</b> üç gece önce kayıkla balığa çıktı. Gece denizin üstünde <b>mor bir ışık</b> gördüm, sonra… kayık dönmedi.'),N('Herkes "akıntı götürmüştür" diyor. Ben beklemekten başka ne yapacağımı bilmiyorum. Kıyıya bakar mısın? Bir şey… herhangi bir şey.')],
+  remind:'Kıyıda bir şey var mı? Lütfen bak.',
+  steps:[{t:'go',p:'wreck',draw:'wreck',tx:'Kıyıda kayığı ara',on:[X('Kıyıya vurmuş, ikiye ayrılmış küçük bir kayık. Burnu kararmış, sanki içinden yanmış; ama tahtada ateş izi yok. Küreklerden biri eksik.'),X('Kumda, denize doğru tek sıra ayak izi var.')]},
+   {t:'go',p:'bottle',draw:'bottle',tx:'Kıyıda bir şey parlıyor: bak',on:[X('Mantarla tıkanmış bir şişe. İçinde kömürle yazılmış bir not:'),X('<i>"Elif, ışık denizin üstüne indi. Çok güzeldi, korkmadım. Beni çağırıyor gibiydi. Küreği bıraktım, şişeyi atıyorum ki sen merak etme. Annemin şarkısını söyle bana."</i>')]},
+   {t:'back',tx:'Notu Elif\'e götür',on:[P('Elif… kıyıda Yusuf\'un kayığını buldum. Bir de bu şişeyi. İçinde senin için bir not var.'),N('…'),N('Korkmamış. Bu iyi bir şey… değil mi? Her akşam buraya gelip şarkısını söyleyeceğim.')]}],
+  after:['Bu akşam da söyledim. Deniz dinliyor gibi.']},
+ {id:'husnu',name:'Çoban Hüsnü',title:'Kaçan keçi Pamuk',b:0,win:[420,1080],c:60,x:40,
+  intro:[N('<b>Pamuk</b>! Pamuk kaçtı! Beyaz, tek boynuzu kırık, inatçı mı inatçı. Kırk yıldır keçi güderim, böylesini görmedim.'),N('Bir yakalasan… ben yetişemiyorum, dizlerim tutmuyor.')],
+  remind:'Pamuk o tarafa kaçtı! Yakala şunu!',
+  steps:[{t:'chase',p:'goat',n:3,tx:'Pamuk\'u yakala'},{t:'escort',who:'goat',to:'npc',spd:80,tx:'Pamuk\'u Hüsnü\'ye götür',end:1,on:[N('Pamuk\'um! Bir daha kaçarsan seni Nazlı\'ya satarım! …Satmam ya.'),N('Al evlat, emeğine sağlık.')]}],
+  after:['Bak, bugün hiç kaçmadı. Ama bana öyle bir bakıyor ki…']},
+ {id:'kerem',name:'Güvercinci Kerem',title:'Kaçan güvercinler',b:0,win:[480,1020],c:80,x:50,
+  intro:[N('Kafesin kapısını açık unuttum, <b>dört güvercinim</b> de uçtu!'),N('Her birinin ayağında bir not var; adadakiler bana mektup verir, ben taşırım. Notlar kaybolursa herkes bana kızar. Yardım eder misin?')],
+  remind:'Güvercinler buralarda bir yerde. Yerde dolaşırlar, korkmazlar.',
+  steps:[{t:'collect',ps:['g1','g2','g3','g4'],draw:'pigeon',tx:'Güvercinleri bul',lines:{g1:'Güvercinin ayağındaki not: <i>"Nazlı\'dan Dursun\'a: Çekicinin sesi olmadan pazar sessiz. Akşam çay var."</i>',g2:'Not: <i>"Hasan\'dan Zümrüt\'e: Domatesler kazanından daha kırmızı oldu, gelip bak."</i>',g3:'Not: <i>"Rıza\'dan kimseye: Defne\'nin evine son çiviyi çaktım. Kapıyı açık bırakıyorum."</i>',g4:'Not, imzasız: <i>"Bu adada yıldız yok ama sen varsın."</i>'}},
+   {t:'back',tx:'Güvercinleri Kerem\'e götür',on:[N('Dördü de burada! Sonuncunun kime gideceğini bilmiyorum ama… belki kimseye gitmesi gerekmiyordur.')]}],
+  after:['Artık kapıyı hep kapatıyorum. Nazlı ile Dursun çay içmiş, duydun mu?']},
+ {id:'mina',name:'Mina',title:'Kampa giden yol',b:1,win:[1200,300],night:1,c:150,x:120,
+  intro:[N('Annemle babam ışığa doğru yürüdüler… Ben arkalarından gidemedim, korktum.'),N('Çok karanlık. Kurtlar uluyor. Beni ateşi olan bir yere götürür müsün? <b>Ekin Dede</b>\'nin ateşi hep yanar derler.')],
+  remind:'',
+  steps:[{t:'escort',who:'self',to:'camp',spd:70,light:1,waves:[[.25,2],[.5,2],[.75,3]],tx:'Mina\'yı Ekin\'in ateşine götür',end:1,on:[X('Mina ateşin yanına koşuyor. Ekin battaniyesini onun omzuna atıyor.'),['e','Gel yavrum, gel. Burada ışık hep yanar.'],N('Bir daha karanlıkta yalnız kalmayacağım, değil mi?')]}],
+  after:['Ekin Dede bana yıldızları anlattı. Burada yokmuş ama başka yerlerde varmış.']},
+ {id:'nadir',name:'Şövalye Nadir Dede',title:'Ejderin ini',b:1,win:[600,1140],c:90,x:60,
+  intro:[N('Dur, yolcu! Ben <b>Şövalye Nadir</b>, Yıldızsız Ada\'nın son şövalyesi!'),N('Bu ormanda bir <b>ejder</b> yaşıyor; kırk yıldır peşindeyim. Bugün onu yeneceğim. Sen benim… silahtarım olacaksın! Önden git, inini bul. Ben… kalkanımı parlatıp geliyorum.')],
+  remind:'İn şu tarafta! Ben hemen arkandayım. Biraz arkanda. Epey arkanda.',
+  steps:[{t:'kill',p:'den',draw:'den',mobs:['Yaban domuzu',1],tx:'Ejderin inini bul ve ejderi yen',spawnTx:'Çalılıktan homurtular… "ejder" çıkıyor!'},
+   {t:'back',tx:'Nadir\'e dön',on:[X('Ejder… koca, homurdanan bir yaban domuzuydu. Burnu yaş, kuyruğu kıvrık.'),N('Ejderi mi yendin?! Kanatlarını gördün mü? Ateş püskürttü mü? …Bir domuz mu?'),N('Olsun! Domuz kılığına girmiş bir ejderdir, en tehlikelisi! Seni bugünden sonra <b>Şövalye</b> ilan ediyorum!')]}],
+  after:['Yeni bir ejder duydum, bataklıkta. Bu sefer ben önden gideceğim. Belki.']},
+ {id:'sadik',name:'Satıcı Sadık',title:'Kırık araba',b:1,win:[480,1080],c:100,x:60,
+  intro:[N('Tekerlek bir köke çarptı, araba devrildi, ne var ne yok saçıldı! Düğmeler, iğneler, boncuklar, bir de kızımın oyuncağı.'),N('Toplar mısın? Bir de tekerleği yapacak malzeme lazım: <b>6 dal</b>, <b>4 lif</b>.')],
+  remind:'Mallar şuraya buraya saçıldı. Bir de 6 dal, 4 lif lazım.',
+  steps:[{t:'collect',ps:['m1','m2','m3','m4','m5'],draw:'goods',tx:'Saçılan malları topla',lines:{m1:'Bir kutu düğme.',m2:'Bir iğne yastığı.',m3:'Bir boncuk ipi.',m4:'Bakır bir çaydanlık.',m5:'Küçük tahta bir at.'}},
+   {t:'bring',items:[['Dal',6],['Lif',4]],tx:'Sadık\'a 6 Dal, 4 Lif götür',end:1,on:[X('Sadık tekerleği bağlıyor, arabayı doğrultuyor.'),N('Tıkır tıkır! Al bakalım, bu sikkeler senin. Tahta atı da kızım sana selam diye gönderdi… yok yok, onu ben götüreyim, ağlar sonra.')]}],
+  after:['Bu yol kökten geçilmiyor, ben de artık burada mal satıyorum. Şaka şaka, satmıyorum. Henüz.']},
+ {id:'cemal',name:'Avcı Cemal',title:'Yaralı avcı',b:2,win:[960,1440],c:160,x:120,
+  intro:[N('Bir timsah… bacağımı kaptı. Kurtuldum ama yürüyemiyorum.'),N('Yarayı sarmak için <b>3 Bataklık otu</b>, bacağımı tutturmak için <b>2 Kamış</b> getirir misin? Bir de… gece bataklık canlanır. Sarınca biraz yanımda kalır mısın?')],
+  remind:'3 Bataklık otu, 2 Kamış… ne olur çabuk.',
+  steps:[{t:'bring',items:[['Bataklık otu',3],['Kamış',2]],tx:'Cemal\'e 3 Bataklık otu, 2 Kamış götür',on:[X('Cemal otları yarasına bastırıp kamışlarla bacağını sarıyor.'),N('Şimdi… biraz yanımda kal. Bir şeyler geliyor, sesini duyuyorum.')]},
+   {t:'guard',dur:60,every:15,n:2,tx:'Cemal\'in yanında kal'},
+   {t:'back',tx:'Cemal ile konuş',on:[N('Sabaha çıkarırım artık. Bak sana bir şey diyeyim: bu bataklığın Reis\'leri hep aynı yerde yatar, suyun en sığ yerinde. Bir gün lazım olur.')]}],
+  after:['Topallıyorum ama yürüyorum. Seni unutmam.']},
+ {id:'sabri',name:'Sabri',title:'Işığı gören adam',b:2,win:[1080,180],c:140,x:100,
+  intro:[N('Gördüm… gördüm onu. İndi, beni aldı, sonra… bıraktı. Neden bıraktı?'),N('Her gece <b>onun parçaları</b> beni çağırıyor. Bataklıkta <b>mor taşlar</b> parlıyor, üç tane. Onları bana getir. Yok etmem lazım, yoksa yine gelecek.')],
+  remind:'Üç mor taş… parlıyorlar, duymuyor musun?',
+  steps:[{t:'collect',ps:['s1','s2','s3'],draw:'shard',tx:'Mor kıymıkları topla',lines:{s1:'Yerde mor parlayan bir kıymık. Eline alınca hafif bir uğultu duyuluyor.',s2:'İkinci kıymık. Uğultu biraz daha yüksek.',s3:'Üçüncü kıymık. Uğultu kulağının içinde bir isim fısıldıyor gibi.'}},
+   {t:'back',tx:'Kıymıkları Sabri\'ye götür',on:[X('Sabri kıymıkları bir taşın üstünde ezer; mor bir duman çıkar, söner. Gözleri biraz netleşir.'),N('Işık birini almadan önce onu <b>dinler</b>. Ben ona hiçbir şey söylemedim. Belki ondan bıraktı.'),N('Konuşanları alıyor; <b>sevdiklerinin adını söyleyenleri</b>.')]}],
+  after:['Artık uyuyabiliyorum. Kimsenin adını sesli söylemiyorum ama.']},
+ {id:'nermin',name:'Falcı Nermin',title:'Kader satan kadın',b:2,win:[1200,240],c:150,x:100,
+  intro:[N('Gel bakalım, Yıldızsız\'ın yolcusu. Sana kaderini söyleyeyim, ama bedava değil.'),N('Ateşim sönmek üzere: <b>3 Turba</b> getir.')],
+  remind:'Turba, yavrum. Üç tane. Kader beklemez ama ben beklerim.',
+  steps:[{t:'bring',items:[['Turba',3]],tx:'Nermin\'e 3 Turba götür',on:[X('Nermin turbaları ateşine atar, kemik zarlarını sallar.'),N('Bu gece, suyun kıyısında <b>kara bir kurt</b> seni bekliyor. Gitme dersem gidersin, git dersem gidersin. Git.')]},
+   {t:'kill',p:'wolf',draw:'',mobs:['Bataklık kurdu',2],tx:'Nermin\'in gösterdiği yere git',spawnTx:'Sazların arasından iki çift göz parlıyor…'},
+   {t:'back',tx:'Nermin\'e dön',on:[N('Gördün mü? Zarlar yalan söylemez.'),N('Şimdi sana bir kader daha: mor ışık bir gün <b>senin</b> de adını söyleyecek. O gün cevap verme.')]}],
+  after:['Yarın bir tüccar gelecek… belki.','Cebindeki sikkeler azalacak. Harcarsan.','Bir gün biri sana kapını açacak. Sen de ona açacaksın.','Zarlar bu gece sustu. Bazen susarlar.']},
+ {id:'saniye',name:'Saniye Teyze',title:'Torun Emir',b:3,win:[420,1140],c:180,x:140,quiet:1,
+  intro:[N('Torunum <b>Emir</b> dün gece "ışığa bakacağım nine" dedi, çıktı gitti. Sabah oldu, gelmedi.'),N('Yedi yaşında… Dağda iz bırakır o, hep bırakır. Ne olur bul onu.')],
+  remind:'Emir iz bırakır. Bak, dikkatle bak.',
+  steps:[{t:'go',p:'toy',draw:'toy',tx:'Emir\'in izini sür',on:[X('Yerde küçük tahta bir at. Emir\'in oyuncağı. Düşürmüş… ya da bırakmış.')]},
+   {t:'go',p:'shoe',draw:'shoe',tx:'İzleri takip et',on:[X('Tek bir küçük ayakkabı. Bağcığı çözülmüş. Ayakkabısız yürümeye devam etmiş.')]},
+   {t:'go',p:'chalk',draw:'chalk',tx:'İzleri takip et',on:[X('Bir kayanın üstünde tebeşirle çizilmiş bir ok, yanında yamuk bir yıldız.'),X('Bu adada hiç yıldız görmemiş bir çocuk.')]},
+   {t:'go',p:'cave',draw:'cave',tx:'Okun gösterdiği yere git',sad:1,on:[X('Mağaranın ağzı. Önünde, sırtüstü yatan küçük bir beden. Gözleri kapalı, yüzü sakin, elleri göğsünde. Yanında tebeşirin son parçası.'),P('…Geç kaldım.')]},
+   {t:'back',tx:'Saniye Teyze\'ye dön',sad:1,on:[P('Saniye Teyze… Emir\'i buldum. Mağaranın önünde. Çok üzgünüm.'),N('…'),X('Saniye uzun süre susar. Feneri yere bırakır.'),N('Yıldız mı çizmiş? …Hep sorardı, "nine yıldız nasıl bir şey" diye. Ben de anlatırdım. Anlatmasaydım…'),N('Teşekkür ederim, evladım. Bilmemek daha kötüydü.')]}],
+  after:['Her sabah yıldızını yeniden çiziyorum. Yağmur siliyor, ben çiziyorum.']},
+ {id:'haydar',name:'Yolcu Haydar',title:'Dağda kaybolan yolcu',b:3,win:[480,960],c:170,x:130,
+  intro:[N('Üç gündür bu dağda dönüp duruyorum. Her kaya birbirine benziyor!'),N('Duydum ki bu dağın bir yerinde demirciler, bir cadı yaşarmış, bir ocak hep yanarmış. Beni oraya götürür müsün? Bacaklarım eskisi gibi değil, yavaş yürürüm.')],
+  remind:'',
+  steps:[{t:'escort',who:'self',to:'fam3',spd:38,waves:[[.33,2],[.66,3]],tx:'Haydar\'ı dağdaki ocağa götür',end:1,on:[N('Ateş! Duman! İnsan sesi! Ah, ah… Üç gün sonra ilk sıcak yer.'),N('Sana borcum büyük.')]}],
+  after:['Burada kalacağım galiba. Demirci çekiç sallıyor, ben hikâye anlatıyorum. Adil bir takas.']},
+ {id:'isil',name:'Işıl',title:'Gece görünen kız',b:3,win:[1320,240],night:1,c:160,x:120,ghost:1,
+  intro:[],remind:'',
+  steps:[{t:'go',p:'npc',ghost:1,tx:'Soluk ışıklı kıza yaklaş',on:[X('Kız kıkırdayıp kayboluyor. Yerde ışıktan bir iz kalıyor.'),X('Ayaklarının altında ot ezilmemiş.')]},
+   {t:'go',p:'g2',ghost:1,tx:'Işık izini takip et',on:[X('Kız yeniden beliriyor, sonra yine kayboluyor. Kulağına bir şarkının yarısı geliyor.')]},
+   {t:'go',p:'g3',ghost:1,tx:'Işık izini takip et',on:[N('Beni unuttular mı? Annem adımı hâlâ söylüyor mu?'),X('Kız bir kayalığın arkasına doğru süzülüyor.')]},
+   {t:'go',p:'stone',draw:'stone',tx:'Kızın gittiği yere bak',end:1,on:[X('Otların arasında yosun tutmuş küçük bir taş. Üstüne kazınmış: <i>"IŞIL. Işığa gülümseyerek yürüdü."</i>'),X('Taşın yanına bir fener koyuyorsun. Fener kendiliğinden yanıyor.'),N('Teşekkür ederim. Artık karanlık değil.')]}],
+  after:[]}];
+ const BY={};for(const q of Q)BY[q.id]=q;
+ // ---------------------------------------------------------------- places (the same every time the island is laid out)
+ const SIDE=[];const bc=[0,0,0,0];
+ for(const q of Q){const R=rngOf('sq-'+q.id);let p;
+   if(q.id==='elif')p=findNear(dock.x,dock.y,26,90,-1,R,{sand:true});
+   else{const B=BOXB[q.b],s=SLOT[bc[q.b]++%3],tx=(B[0]+(B[2]-B[0])*s[0])*T,ty=(B[1]+(B[3]-B[1])*s[1])*T;
+     p=findNear(tx,ty,0,260,q.b,R,{av:240,big:1});if(Math.hypot(p.x-tx,p.y-ty)<1)p=findNear(tx,ty,0,900,q.b,R,{av:200,big:1})}
+   q.x=p.x;q.y=p.y;AV.push({x:p.x,y:p.y});SIDE.push(p);q.R=R;q.pts={npc:{x:q.x,y:q.y}}}
+ const PT=(q,k,from,r0,r1,o)=>{const f=from||q;q.pts[k]=findNear(f.x,f.y,r0,r1,q.b,q.R,o)};
+ {const q=BY.elif;PT(q,'wreck',q,300,620,{sand:true,shore:true});PT(q,'bottle',q.pts.wreck,200,420,{sand:true,shore:true})}
+ {const q=BY.husnu;PT(q,'goat',q,120,200)}
+ {const q=BY.kerem;for(const k of ['g1','g2','g3','g4'])PT(q,k,q,150,450)}
+ {const q=BY.nadir;PT(q,'den',q,250,400)}
+ {const q=BY.sadik;for(const k of ['m1','m2','m3','m4','m5'])PT(q,k,q,80,220)}
+ {const q=BY.sabri;for(const k of ['s1','s2','s3'])PT(q,k,q,200,450)}
+ {const q=BY.nermin;PT(q,'wolf',q,250,420,{sand:true})}
+ {const q=BY.saniye;PT(q,'cave',q,450,650,{big:1});const c=q.pts.cave;[['toy',.25],['shoe',.5],['chalk',.75]].forEach(([k,f])=>{PT(q,k,{x:q.x+(c.x-q.x)*f,y:q.y+(c.y-q.y)*f},0,60)})}
+ {const q=BY.isil;PT(q,'g2',q,200,350);PT(q,'g3',q.pts.g2,200,350);PT(q,'stone',q.pts.g3,150,300)}
+ const famPt=()=>{try{const F=window.__pl184.FAMS.find(f=>f.b===3);if(F)return{x:F.cx+40,y:F.cy+46}}catch(e){}return{x:BY.haydar.x+520,y:BY.haydar.y}};
+ const campPt=()=>({x:npc.home.x+10,y:npc.home.y+22});
+ // ---------------------------------------------------------------- state
+ let done=new Set(),A=null,SQK=false;const bioSeen=new Set();
+ const step=()=>A?BY[A.id].steps[A.step]:null;
+ const resetStep=()=>{if(!A)return;A.got=[];A.cnt=0;A.sp=false;A.killed=0;A.tm=0;A.wt=0;A.wv=0;A.busy=false;A.lost=0;
+   const s=step();if(!s)return;const q=BY[A.id];
+   if(s.t==='chase'&&!A.goat)A.goat={x:q.pts[s.p].x,y:q.pts[s.p].y};
+   if(s.t==='escort'){const f=s.who==='goat'?(A.goat||{x:player.x,y:player.y}):{x:q.x,y:q.y};A.fol={x:f.x,y:f.y,face:1,stop:'',mv:false,sayT:0};const d=dest(s,q);A.d0=Math.max(80,Math.hypot(d.x-A.fol.x,d.y-A.fol.y))}};
+ const dest=(s,q)=>s.to==='camp'?campPt():s.to==='fam3'?famPt():s.to==='npc'?{x:q.x,y:q.y}:q.pts[s.to];
+ const fighting=()=>{const s=step();return !!(s&&(s.t==='escort'&&s.waves||s.t==='kill'||s.t==='guard'))};
+ const clearMobs=()=>{for(let i=animals.length-1;i>=0;i--)if(animals[i].sq)animals.splice(i,1)};
+ function cancelA(why){if(!A)return;const q=BY[A.id];clearMobs();A=null;renderSQ();if(why)toast(`${why}: ${q.title}. Yeniden almak için ${q.name} ile konuş${q.night?' (yalnızca gece)':''}.`,true)}
+ // ---------------------------------------------------------------- talking
+ const WHO={},who=k=>{if(k==='p')return{name:'Sen'};if(k==='x')return{name:'—'};if(k==='e')return npc;return WHO[k]||(WHO[k]={name:BY[k].name})};
+ function pages(q,L,fin,last){let i=0;const nx=()=>{if(i>=L.length){bye();if(fin)fin();return}const [k,t]=L[i++];const isLast=i>=L.length;
+     say(t,[{t:isLast?(last||'Tamam'):(BY[q.id].quiet&&k!=='x'?'…':'Devam'),pri:1,fresh:1,f:nx}],k==='n'?who(q.id):who(k))};nx()}
+ function complete(q,silent){done.add(q.id);clearMobs();A=null;
+   if(!(window.__plInf))coins+=q.c;try{gainXP(q.x)}catch(e){}renderInv();renderSQ();
+   if(q.quiet){toast(`Yan görev bitti: ${q.title} · +${q.c} sikke · +${q.x} XP`)}
+   else{try{sfx('level')}catch(e){}try{announce(q.title,`Yan görev bitti · +${q.c} sikke · +${q.x} XP`)}catch(e){toast(`Yan görev bitti: ${q.title}`)}}}
+ function advance(){if(!A)return;const q=BY[A.id],s=step();if(s&&s.end){complete(q);return}A.step++;if(A.step>=q.steps.length){complete(q);return}resetStep();renderSQ()}
+ function start(q){A={id:q.id,step:0};resetStep();renderSQ();try{sfx('found')}catch(e){}toast(`Yan görev: ${q.title}`)}
+ function hasAll(items){return items.every(([n,k])=>(inv[n]||0)>=k)}
+ function talk(q){
+   if(done.has(q.id)){const L=q.after;if(!L.length)return;say(L[Math.floor(Math.random()*L.length)],[{t:'Hoşça kal',pri:1,fresh:1,f:bye}],who(q.id));return}
+   if(A&&A.id===q.id){const s=step();
+     if(s.t==='back'){pages(q,s.on,()=>complete(q),q.quiet?'…':'Tamam');return}
+     if(s.t==='bring'){if(hasAll(s.items)){for(const [n,k] of s.items)inv[n]-=k;renderInv();pages(q,s.on,advance)}
+       else say(`${q.remind}<br><small>Gereken: ${s.items.map(([n,k])=>`${Math.min(inv[n]||0,k)}/${k} ${esc(n)}`).join(' · ')}</small>`,[{t:'Getireceğim',pri:1,fresh:1,f:bye}],who(q.id));return}
+     say(q.remind||'…',[{t:'Tamam',pri:1,fresh:1,f:bye}],who(q.id));return}
+   if(A){say('Önce elindeki işi bitir, evlat. Ben buradayım, bir yere gitmiyorum.',[{t:'Tamam',pri:1,fresh:1,f:bye}],who(q.id));return}
+   let i=0;const L=q.intro;const nx=()=>{const [k,t]=L[i++];if(i<L.length){say(t,[{t:'Devam',pri:1,fresh:1,f:nx}],who(q.id));return}
+     say(t,[{t:'Yardım ederim',pri:1,fresh:1,f:()=>{bye();start(q)}},{t:'Şimdi olmaz',fresh:1,f:bye}],who(q.id))};nx()}
+ // ---------------------------------------------------------------- where the person is
+ const isFollower=q=>{if(!A||A.id!==q.id)return false;const s=step();return !!(s&&s.t==='escort'&&s.who==='self')};
+ function present(q){if(done.has(q.id))return q.id!=='isil';if(A&&A.id===q.id)return !isFollower(q)&&!q.ghost;return inWin(q.win)}
+ function homeOf(q){if(done.has(q.id)){if(q.id==='mina')return campPt();if(q.id==='haydar'){const f=famPt();return{x:f.x+24,y:f.y-8}}}return{x:q.x,y:q.y}}
+ for(const q of Q){const ent={get x(){return homeOf(q).x},get y(){return homeOf(q).y},r:28,
+     on:()=>!onTitle&&present(q)&&!(q.ghost),label:()=>done.has(q.id)?q.name:`Konuş: ${q.name}`,act:()=>talk(q)};XTRA.push(ent)}
+ {const _bl=blocked;blocked=function(px_,py_){if(_bl.apply(this,arguments))return true;for(const q of Q){if(q.ghost||!present(q))continue;const h=homeOf(q);if(Math.abs(h.x-px_)<HALF+5&&Math.abs(h.y-py_)<HALF+4)return true}return false}}
+ // ---------------------------------------------------------------- creatures for a side quest
+ const MOB=[['Kurt','Yaban domuzu'],['Kurt','Yaban domuzu'],['Bataklık kurdu','Engerek'],['Kurt','Muflon']];
+ function spawnMob(k,cx,cy,r0,r1){if(!ANIM[k])k='Kurt';if(!ANIM[k])return false;
+   for(let i=0;i<60;i++){const a=Math.random()*Math.PI*2,r=r0+Math.random()*(r1-r0),x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r;
+     if(!reachAt(x,y)||blocked(x,y)||isWater(tileAt(x,y))||nearCamp(x,y))continue;
+     animals.push({k,x,y,hp:ANIM[k].hp,st:'chase',t:0,dx:0,dy:0,face:x<player.x?1:-1,atk:1,flash:0,kb:null,step:Math.random()*6,mad:true,pk:0,sq:A?A.id:'x'});
+     for(let j=0;j<8;j++)parts.push({x,y:y-4,vx:(Math.random()-.5)*40,vy:-20,life:.4,c:'#c8b898'});return true}return false}
+ const wave=(n,cx,cy)=>{const b=Math.min(3,bioAt(player.x,player.y)),L=MOB[b];for(let i=0;i<n;i++)spawnMob(L[i%L.length],cx,cy,110,170);try{sfx('growl')}catch(e){}};
+ {const _ka=killAnimal;killAnimal=function(a){if(!a||!a.sq)return _ka.apply(this,arguments);
+   const k=a.k,k0=kills[k]||0,P=window.__p4,bc0=P&&P.s&&P.s.bc?P.s.bc[k]:undefined;SQK=true;let r;
+   try{r=_ka.apply(this,arguments)}finally{SQK=false;kills[k]=k0;if(!k0)delete kills[k];if(P&&P.s&&P.s.bc){if(bc0===undefined)delete P.s.bc[k];else P.s.bc[k]=bc0}}
+   if(A&&a.sq===A.id){const s=step();if(s&&s.t==='kill')A.killed=(A.killed||0)+1}return r}}
+ {const _an=window.__plAlmNew;if(_an)window.__plAlmNew=function(){if(SQK)return;return _an.apply(this,arguments)}}
+ {const _lo=window.__plLessonOn;window.__plLessonOn=function(){if(A&&fighting())return true;return _lo?_lo.apply(this,arguments):false}}
+ // ---------------------------------------------------------------- fainting ends only the side quest
+ {const _f=faint;faint=function(){const had=!!A&&!fading&&!window.__plGod;const r=_f.apply(this,arguments);if(had)setTimeout(()=>cancelA('Bayıldın, yan görev yarıda kaldı'),900);return r}}
+ {const _k=knockedOut;knockedOut=function(){const had=!!A;const r=_k.apply(this,arguments);if(had)setTimeout(()=>cancelA('Bayıldın, yan görev yarıda kaldı'),900);return r}}
+ // ---------------------------------------------------------------- every frame
+ let sayT=0;
+ const folSay=(t)=>{if(A&&A.fol){A.fol.stop=t;A.fol.sayT=2.2}};
+ {const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);try{tick(dt||0)}catch(e){try{window.__hamSoft&&window.__hamSoft('v230 tick: '+(e&&e.message||e))}catch(_){}}return r}}
+ function tick(dt){if(onTitle||wake||sailing)return;
+   bioSeen.add(bioAt(player.x,player.y));
+   {const g=BY.isil;if(!done.has('isil')&&!(A&&A.id==='isil')&&inWin(g.win)&&!dlgOpen&&D2(player,g)<60){
+       if(!A)start(g);else if((sayT-=dt)<=0){sayT=10;toast('Soluk ışıklı kız seni görünce kayboluyor… (Önce elindeki yan görevi bitir.)',true)}}}
+   if(!A||dlgOpen||fading)return;const q=BY[A.id],s=step();if(!s||A.busy)return;
+   if(s.t==='go'){if(s.ghost&&!inWin(q.win))return;const p=q.pts[s.p];if(D2(player,p)<(s.ghost?34:26)){A.busy=true;if(s.ghost)try{sfx('magic')}catch(e){}pages(q,s.on,advance)}return}
+   if(s.t==='collect'){for(const k of s.ps){if(A.got.indexOf(k)>=0)continue;if(D2(player,q.pts[k])<26){A.got.push(k);try{sfx('pick')}catch(e){}renderSQ();
+         const last=A.got.length>=s.ps.length;A.busy=true;say(s.lines[k]+(last?'':`<br><small>${A.got.length}/${s.ps.length}</small>`),[{t:'Tamam',pri:1,fresh:1,f:()=>{bye();A&&(A.busy=false);if(last)advance()}}],who('x'));return}}return}
+   if(s.t==='chase'){const g=A.goat;if(D2(player,g)<18){A.cnt++;try{sfx('pick')}catch(e){}
+       if(A.cnt>=s.n){floatText('Yakalandı!','#9fe07a');advance();return}
+       for(let i=0;i<40;i++){const a=Math.random()*Math.PI*2,rr=100+Math.random()*80,x=g.x+Math.cos(a)*rr,y=g.y+Math.sin(a)*rr;if(reachAt(x,y)&&!blocked(x,y)&&!isWater(tileAt(x,y))){A.gj={x0:g.x,y0:g.y,x1:x,y1:y,t:0};break}}
+       floatText('Mee!','#ffffff');renderSQ()}
+     if(A.gj){const j=A.gj;j.t+=dt*2.2;const k=Math.min(1,j.t);g.x=j.x0+(j.x1-j.x0)*k;g.y=j.y0+(j.y1-j.y0)*k-Math.sin(k*Math.PI)*10;if(k>=1){g.y=j.y1;A.gj=null}}return}
+   if(s.t==='escort'){const f=A.fol,d=dest(s,q),dd=Math.hypot(player.x-f.x,player.y-f.y);
+     if(f.sayT>0)f.sayT-=dt;
+     const lit=!s.light||torchHeld()||(typeof lampOn==='function'&&lampOn())||!isNight();
+     const fightNear=animals.some(a=>a.sq===A.id&&Math.hypot(a.x-f.x,a.y-f.y)<140);
+     if(dd>400){const a=Math.atan2(f.y-player.y,f.x-player.x);for(let r=24;r<60;r+=6){const x=player.x+Math.cos(a)*r,y=player.y+Math.sin(a)*r;if(!blocked(x,y)){f.x=x;f.y=y;break}}}
+     else if(!lit){if(f.sayT<=0)folSay('Çok karanlık, ışığın yok!');f.mv=false}
+     else if(fightNear){if(f.sayT<=0)folSay(s.who==='goat'?'Mee!':'Korkuyorum!');f.mv=false}
+     else if(dd>160){if(f.sayT<=0)folSay('Bekle!');f.mv=false}
+     else if(dd>22){const sp=Math.min(s.spd,dd*3),ux=(player.x-f.x)/dd,uy=(player.y-f.y)/dd,nx=f.x+ux*sp*dt,ny=f.y+uy*sp*dt;
+       if(!blocked(nx,ny)){f.x=nx;f.y=ny}else if(!blocked(nx,f.y))f.x=nx;else if(!blocked(f.x,ny))f.y=ny;f.mv=true;if(Math.abs(ux)>.2)f.face=ux>0?1:-1}
+     else f.mv=false;
+     if(s.waves){const prog=1-Math.hypot(d.x-f.x,d.y-f.y)/A.d0;while(A.wv<s.waves.length&&prog>=s.waves[A.wv][0]){wave(s.waves[A.wv][1],player.x,player.y);A.wv++;renderSQ()}}
+     if(Math.hypot(d.x-f.x,d.y-f.y)<44){A.busy=true;pages(q,s.on,advance)}return}
+   if(s.t==='kill'){const p=q.pts[s.p],dp=D2(player,p);
+     if(!A.sp&&dp<200){A.sp=true;const [k,n]=s.mobs;for(let i=0;i<n;i++)spawnMob(k,p.x,p.y,10,50);try{sfx('growl')}catch(e){}if(s.spawnTx)toast(s.spawnTx,true);renderSQ()}
+     if(A.sp&&!animals.some(a=>a.sq===A.id)){if((A.killed||0)>=s.mobs[1]){advance();return}if(dp>420){A.sp=false;A.killed=0}}
+     return}
+   if(s.t==='guard'){const dn=D2(player,q);if(dn<90){A.tm+=dt;A.wt-=dt;if(A.wt<=0){A.wt=s.every;wave(s.n,q.x,q.y)}if(Math.floor(A.tm)!==Math.floor(A.tm-dt))renderSQ()}
+     else if(dn>140&&(sayT-=dt)<=0){sayT=4;toast('Cemal: "Gitme, yalnız bırakma beni!"',true)}
+     if(A.tm>=s.dur){A.busy=true;clearMobs();pages(q,[N('Gitti hepsi… Sağ ol.')],advance)}return}}
+ // ---------------------------------------------------------------- drawing
+ const kidDraw=(x,y,fn)=>{ctx.save();ctx.translate(x,y);ctx.scale(.75,.75);ctx.translate(-x,-y);try{fn()}finally{ctx.restore()}};
+ const qmark=(x,y,c)=>{const b=Math.round(Math.sin(time*4)*1.5);const X=Math.round(x),Y=Math.round(y)+b;px(X-3,Y-1,7,10,'#11170f');px(X-2,Y,5,1,c);px(X+1,Y+1,1,2,c);px(X,Y+3,1,2,c);px(X-1,Y+3,1,1,c);px(X-1,Y+6,2,2,c)};
+ const bub=(x,y,t)=>{ctx.font='bold 6px Rubik, system-ui, sans-serif';const w=Math.ceil(ctx.measureText(t).width)+8,X=Math.round(x-w/2),Y=Math.round(y);px(X-1,Y-1,w+2,11,'#11170f');px(X,Y,w,9,'#e8f4ff');px(Math.round(x)-1,Y+9,3,2,'#e8f4ff');ctx.fillStyle='#1a2a3a';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(t,x,Y+5);ctx.textBaseline='alphabetic'};
+ function drawPerson(q,x,y,opt){const L0=LK[q.id];const f=()=>npcDraw({x,y},L0,time,hsh(q.id)%7,opt||{});if(KID[q.id])kidDraw(x,y,f);else f()}
+ function drawGoat(x,y,face,hop){x=Math.round(x);y=Math.round(y)-(hop||0);const P=(dx,dy,w,h,c)=>px(face>0?x+dx:x-dx-w,y+dy,w,h,c);
+   px(x-6,y+1+(hop||0),12,2,'rgba(0,0,0,.22)');P(-5,-7,10,5,'#f0ece4');P(-5,-7,10,1,'#ffffff');P(4,-10,4,4,'#f0ece4');P(7,-8,1,1,'#2a1f08');P(5,-12,1,2,'#b8a888');P(-6,-7,1,2,'#e0dcd2');P(4,-6,2,2,'#d8d0c0');
+   P(-4,-2,1,3,'#c8c0b0');P(-1,-2,1,3,'#c8c0b0');P(2,-2,1,3,'#c8c0b0');P(4,-2,1,3,'#c8c0b0')}
+ function drawObj(kind,x,y){x=Math.round(x);y=Math.round(y);const t=time;
+   if(kind==='wreck'){px(x-14,y+1,28,3,'rgba(0,0,0,.25)');px(x-13,y-4,11,4,'#6a4a2a');px(x-13,y-4,11,1,'#8a6a42');px(x-14,y-5,3,3,'#2a1a10');px(x+2,y-3,12,4,'#6a4a2a');px(x+2,y-3,12,1,'#8a6a42');px(x+12,y-6,2,4,'#3a2414');px(x-4,y-1,6,1,'#5a3a1e')}
+   else if(kind==='bottle'){px(x-3,y+1,7,2,'rgba(0,0,0,.25)');px(x-3,y-3,6,4,'#5aa890');px(x-2,y-3,4,1,'#9ad8c0');px(x+3,y-2,2,2,'#b88a50');if(Math.sin(t*3)>.8)px(x-1,y-4,1,1,'#ffffff')}
+   else if(kind==='pigeon'){const h=Math.round(Math.abs(Math.sin(t*5+x))*1);px(x-3,y+1,6,1,'rgba(0,0,0,.22)');px(x-3,y-4-h,6,4,'#a8acb8');px(x+1,y-6-h,3,3,'#8a8e9a');px(x+3,y-5-h,1,1,'#e8a040');px(x+2,y-5-h,1,1,'#11170f');px(x-4,y-3-h,2,2,'#7a7e8a');px(x-1,y-4-h,2,1,'#6aa898')}
+   else if(kind==='goods'){px(x-3,y+1,7,2,'rgba(0,0,0,.22)');px(x-3,y-4,6,5,'#b8783a');px(x-3,y-4,6,1,'#d89a5a');px(x-1,y-2,2,2,'#f2c94c')}
+   else if(kind==='shard'){const p=.5+.5*Math.sin(t*4+x);ctx.save();ctx.globalCompositeOperation='lighter';const g=ctx.createRadialGradient(x,y-3,0,x,y-3,10);g.addColorStop(0,`rgba(190,110,255,${(.35+.3*p).toFixed(2)})`);g.addColorStop(1,'rgba(190,110,255,0)');ctx.fillStyle=g;ctx.fillRect(x-10,y-13,20,20);ctx.restore();px(x-1,y-7,3,7,'#b070ff');px(x,y-8,1,2,'#e0c0ff');px(x-2,y-3,1,3,'#8a4ad8')}
+   else if(kind==='den'){px(x-12,y+1,24,3,'rgba(0,0,0,.25)');for(let i=0;i<5;i++)px(x-11+i*5,y-6-(i%2)*3,7,7+(i%2)*3,i%2?'#2e6a2a':'#3e8a34');px(x-3,y-2,6,3,'#1a2a14')}
+   else if(kind==='toy'){px(x-3,y,7,1,'rgba(0,0,0,.25)');px(x-3,y-3,5,2,'#a8743a');px(x+1,y-5,2,3,'#a8743a');px(x-3,y-1,1,2,'#7a4a22');px(x+1,y-1,1,2,'#7a4a22');px(x+2,y-5,1,1,'#2a1f08')}
+   else if(kind==='shoe'){px(x-3,y,6,1,'rgba(0,0,0,.25)');px(x-3,y-2,5,2,'#6a3a2a');px(x+1,y-3,2,1,'#6a3a2a');px(x-2,y-3,1,1,'#e8e0c8');px(x+3,y-1,2,1,'#e8e0c8')}
+   else if(kind==='chalk'){px(x-7,y-1,14,4,'rgba(0,0,0,.2)');px(x-7,y-7,14,7,'#8a8e94');px(x-7,y-7,14,1,'#aeb2b8');px(x-5,y-4,5,1,'#ffffff');px(x-1,y-5,1,1,'#ffffff');px(x-1,y-3,1,1,'#ffffff');px(x+3,y-6,1,3,'#ffffff');px(x+2,y-5,3,1,'#ffffff')}
+   else if(kind==='cave'){px(x-22,y+2,44,3,'rgba(0,0,0,.28)');px(x-22,y-18,44,20,'#7a7e86');px(x-20,y-22,40,4,'#8e939b');px(x-14,y-26,28,4,'#a2a6ae');px(x-11,y-14,22,16,'#0c0e12');px(x-8,y-17,16,3,'#0c0e12');px(x-22,y-18,3,20,'#5a5e66')}
+   else if(kind==='body'){ctx.save();ctx.translate(x+6,y);ctx.rotate(-Math.PI/2);ctx.scale(.75,.75);drawChibi(ctx,0,0,LK.emir,{noShadow:1,closed:true});ctx.restore();px(x+8,y+1,2,1,'#ffffff')}
+   else if(kind==='stone'){px(x-5,y+1,10,2,'rgba(0,0,0,.25)');px(x-4,y-8,8,9,'#7a7e86');px(x-3,y-9,6,1,'#8e939b');px(x-4,y-8,8,2,'#5a8a4a');px(x-2,y-5,4,1,'#4a4e56');px(x-2,y-3,3,1,'#4a4e56')}
+   else if(kind==='lantern'){const on=isNight()||darkness()>.2,p=.5+.5*Math.sin(t*5);if(on){ctx.save();ctx.globalCompositeOperation='lighter';const g=ctx.createRadialGradient(x,y-4,0,x,y-4,22);g.addColorStop(0,`rgba(255,200,110,${(.35+.15*p).toFixed(2)})`);g.addColorStop(1,'rgba(255,170,80,0)');ctx.fillStyle=g;ctx.fillRect(x-22,y-26,44,44);ctx.restore()}
+     px(x-2,y-7,5,7,'#3a2a1a');px(x-1,y-6,3,5,on?'#ffd27a':'#6a5a40');px(x-1,y-9,3,2,'#3a2a1a')}
+   else if(kind==='hut'){px(x-16,y+1,32,3,'rgba(0,0,0,.25)');px(x-14,y-14,28,15,'#8a6a42');px(x-14,y-14,28,2,'#a8845a');px(x-17,y-20,34,7,'#6a4a2a');px(x-13,y-24,26,4,'#7a5a34');px(x-3,y-8,6,9,'#3a2414');px(x+7,y-10,4,4,'#ffd27a')}
+   else if(kind==='grave'){px(x-5,y+1,10,2,'rgba(0,0,0,.25)');px(x-4,y-9,8,10,'#9a9ea6');px(x-3,y-10,6,1,'#aeb2b8');px(x-1,y-7,1,3,'#ffffff');px(x-2,y-6,3,1,'#ffffff');px(x-6,y-1,2,2,'#e8e070');px(x+4,y-1,2,2,'#e870a0');px(x+5,y-2,1,1,'#ffffff')}
+   else if(kind==='coop'){px(x-8,y+1,16,3,'rgba(0,0,0,.25)');px(x-7,y-12,14,13,'#a8743a');px(x-8,y-14,16,3,'#7a4a22');px(x-3,y-8,6,4,'#3a2414');px(x-1,y-15,2,2,'#7a4a22')}
+   else if(kind==='cart'||kind==='cartT'){const tp=kind==='cartT';px(x-14,y+1,28,3,'rgba(0,0,0,.25)');if(tp){px(x-12,y-6,22,7,'#8a6a42');px(x-12,y-6,22,1,'#a8845a');px(x+8,y-2,5,5,'#4a3424');px(x-14,y-3,4,2,'#6a4a2a')}
+     else{px(x-12,y-10,24,8,'#8a6a42');px(x-12,y-10,24,1,'#a8845a');px(x-10,y-13,4,3,'#c84a3a');px(x-4,y-13,5,3,'#3a8a5a');px(x+3,y-13,4,3,'#f2c94c');px(x-9,y-3,6,6,'#4a3424');px(x+3,y-3,6,6,'#4a3424');px(x-7,y-1,2,2,'#8a6a42');px(x+5,y-1,2,2,'#8a6a42');px(x+12,y-7,6,1,'#6a4a2a')}}
+   else if(kind==='embers'){const fl=Math.round(Math.sin(t*12));px(x-5,y+1,10,2,'#3a2a1a');px(x-2,y-3+fl,4,4,'#e8502a');px(x-1,y-5+fl,2,3,'#f2a03a')}
+   else if(kind==='flowers'){px(x-4,y,2,2,'#e8e070');px(x,y-1,2,2,'#e870a0');px(x+3,y,2,2,'#ffffff');px(x-3,y+2,7,1,'#4a8a3a')}}
+ // the active quest's things in the world, the people, the followers
+ const curPts=()=>{const out=[];if(!A)return out;const q=BY[A.id],s=step();if(!s)return out;
+   if(s.t==='go'&&s.draw)out.push([s.draw,q.pts[s.p]]);
+   if(s.t==='collect')for(const k of s.ps)if(A.got.indexOf(k)<0)out.push([s.draw,q.pts[k]]);
+   if(s.t==='kill'&&s.draw)out.push([s.draw,q.pts[s.p]]);
+   if(q.id==='saniye'&&A.step>=3){out.push(['cave',q.pts.cave]);out.push(['body',{x:q.pts.cave.x-4,y:q.pts.cave.y+16}])}
+   if(q.id==='elif'&&A.step>=1)out.push(['wreck',q.pts.wreck]);
+   return out};
+ {const _ve=v55Ents;v55Ents=function(ents,time_){if(_ve)_ve.apply(this,arguments);try{entsSQ(ents)}catch(e){}}}
+ function entsSQ(ents){
+   for(const q of Q){
+     // fixed things that belong to the person
+     if(q.id==='saniye'){if(vis(q.x+26,q.y,60))ents.push({y:q.y-6,d:()=>drawObj('hut',q.x+28,q.y-6)});if(done.has(q.id)&&vis(q.x-20,q.y,40))ents.push({y:q.y+4,d:()=>drawObj('grave',q.x-22,q.y+4)})}
+     if(q.id==='sadik'&&vis(q.x+22,q.y,50))ents.push({y:q.y+2,d:()=>drawObj(done.has('sadik')?'cart':'cartT',q.x+24,q.y+2)});
+     if(q.id==='isil'&&done.has('isil')){const p=q.pts.stone;if(vis(p.x,p.y,40)){ents.push({y:p.y,d:()=>drawObj('stone',p.x,p.y)});ents.push({y:p.y+1,d:()=>drawObj('lantern',p.x+9,p.y+1)})}}
+     if(done.has(q.id)){const h=homeOf(q);if(q.id==='husnu'&&vis(h.x+18,h.y,40))ents.push({y:h.y+6,d:()=>drawGoat(h.x+18,h.y+6,Math.sin(time*.4)>0?1:-1,Math.max(0,Math.sin(time*3))>.95?2:0)});
+       if(q.id==='kerem'&&vis(h.x,h.y,50)){ents.push({y:h.y-2,d:()=>drawObj('coop',h.x+20,h.y-2)});for(let i=0;i<4;i++){const px_=h.x-14+i*9+Math.sin(time*.7+i)*4,py_=h.y+12+((i*7)%5);ents.push({y:py_,d:()=>drawObj('pigeon',px_,py_)})}}
+       if(q.id==='elif'&&vis(h.x,h.y,40))ents.push({y:h.y+6,d:()=>drawObj('flowers',h.x+10,h.y+6)});
+       if(q.id==='sabri'&&vis(h.x,h.y,40))ents.push({y:h.y+6,d:()=>drawObj('embers',h.x+14,h.y+6)})}
+     if(!present(q)||q.ghost)continue;const h=homeOf(q);if(!vis(h.x,h.y,40))continue;
+     const avail=!done.has(q.id)&&!(A&&A.id===q.id);
+     ents.push({y:h.y,d:()=>{const sit=(q.id==='mina'&&done.has('mina'))||q.id==='cemal'&&!done.has('cemal')||q.id==='saniye'&&done.has('saniye')||q.id==='elif'&&!done.has('elif');
+       drawPerson(q,h.x,h.y,sit?{sit:1}:{});
+       if(q.id==='nadir'){const x=Math.round(h.x),y=Math.round(h.y);px(x+6,y-12,1,9,'#a8743a');px(x+4,y-8,5,1,'#7a4a22');if(done.has('nadir'))px(x-2,y-24,2,3,'#f4f0e8')}
+       if(avail&&(!A||true))qmark(h.x,h.y-(KID[q.id]?30:38),'#9fd8ff')}})}
+   // ghost girl
+   {const q=BY.isil;if(!done.has('isil')&&inWin(q.win)){let p=null;if(!A||A.id!=='isil'){if(!A)p={x:q.x,y:q.y}}else{const s=step();if(s&&s.ghost)p=q.pts[s.p]}
+     if(p&&vis(p.x,p.y,40))ents.push({y:p.y,d:()=>{const fl=Math.sin(time*2)*2;ctx.save();ctx.globalAlpha=.45+.15*Math.sin(time*3);kidDraw(p.x,p.y+fl,()=>drawChibi(ctx,p.x,p.y+fl,LK.isil,{noShadow:1,fx:0,fy:1}));ctx.restore();
+       ctx.save();ctx.globalCompositeOperation='lighter';const g=ctx.createRadialGradient(p.x,p.y-10,0,p.x,p.y-10,24);g.addColorStop(0,'rgba(150,190,255,.35)');g.addColorStop(1,'rgba(150,190,255,0)');ctx.fillStyle=g;ctx.fillRect(p.x-24,p.y-34,48,48);ctx.restore()}})}}
+   for(const [k,p] of curPts())if(vis(p.x,p.y,40))ents.push({y:p.y,d:()=>{drawObj(k,p.x,p.y);if(k!=='body'&&k!=='cave'){const q2=(time*1.2)%1;ctx.strokeStyle=`rgba(159,216,255,${(1-q2).toFixed(2)})`;ctx.lineWidth=1;ctx.beginPath();ctx.arc(p.x,p.y-2,6+q2*10,0,Math.PI*2);ctx.stroke()}}});
+   if(A){const q=BY[A.id],s=step();
+     if(s&&s.t==='chase'&&A.goat){const g=A.goat;ents.push({y:g.y,d:()=>drawGoat(g.x,g.y,player.x<g.x?1:-1,A.gj?0:(Math.sin(time*6)>.9?1:0))})}
+     if(s&&s.t==='escort'&&A.fol){const f=A.fol;ents.push({y:f.y,d:()=>{if(s.who==='goat')drawGoat(f.x,f.y,f.face,f.mv&&Math.sin(time*14)>0?1:0);else drawPerson(q,f.x,f.y,{step:f.mv?(Math.sin(time*12)>0?1:-1):0});if(f.sayT>0&&f.stop)bub(f.x,f.y-(KID[q.id]?34:42),f.stop)}})}
+     // a small blue arrow at the edge of the view towards the target
+     const t=targetOf();if(t&&!vis(t.x,t.y,-10)){ents.push({y:9997,d:()=>{const ex=Math.max(cam.cx+8,Math.min(cam.cx+vw-8,t.x)),ey=Math.max(cam.cy+14,Math.min(cam.cy+vh-14,t.y));px(ex-4,ey-4,8,8,'#11170f');px(ex-3,ey-3,6,6,'#9fd8ff');px(ex-1,ey-1,2,2,'#1a2a3a')}})}}}
+ function targetOf(){if(!A)return null;const q=BY[A.id],s=step();if(!s)return null;
+   if(s.t==='go'||s.t==='kill')return s.ghost&&!inWin(q.win)?null:q.pts[s.p];
+   if(s.t==='collect'){let b=null,bd=1e9;for(const k of s.ps){if(A.got.indexOf(k)>=0)continue;const p=q.pts[k],d=D2(player,p);if(d<bd){bd=d;b=p}}return b}
+   if(s.t==='chase')return A.goat;if(s.t==='escort')return dest(s,q);return{x:q.x,y:q.y}}
+ // ---------------------------------------------------------------- the map: "?" where explored, a foggy circle where not
+ const seenT=(x,y)=>{const tx=Math.floor(x/T),ty=Math.floor(y/T);return tx>=0&&ty>=0&&tx<W&&ty<H&&explored[ty*W+tx]};
+ const fogC=Q.map(q=>{const R=rngOf('fog-'+q.id),a=R()*Math.PI*2,r=R()*110;return{x:q.x+Math.cos(a)*r,y:q.y+Math.sin(a)*r}});
+ {const _mq=window.__plMapQ;window.__plMapQ=function(c,ox,oy,sx,sy,big,w,h){if(_mq)try{_mq.apply(this,arguments)}catch(e){}try{mapSQ(c,ox,oy,sx,sy,big,w,h)}catch(e){}}}
+ function mapSQ(c,ox,oy,sx,sy,big,w,h){if(onTitle)return;const now=performance.now()/1000;
+   Q.forEach((q,i)=>{if(done.has(q.id)||(A&&A.id===q.id)||!inWin(q.win)||!bioSeen.has(q.b))return;
+     if(seenT(q.x,q.y)){const X=(q.x/T-ox)*sx,Y=(q.y/T-oy)*sy;if(X<-10||Y<-10||X>w+10||Y>h+10)return;const R0=big?9:4.5,pl=.5+.5*Math.sin(now*3+i);
+       c.save();c.fillStyle='rgba(17,23,15,.85)';c.beginPath();c.arc(X,Y,R0+1.5,0,6.283);c.fill();c.fillStyle=`rgba(159,216,255,${(.85+.15*pl).toFixed(2)})`;c.beginPath();c.arc(X,Y,R0,0,6.283);c.fill();
+       c.font=`900 ${Math.round(R0*1.5)}px Rubik, system-ui, sans-serif`;c.textAlign='center';c.textBaseline='middle';c.fillStyle='#14324a';c.fillText('?',X,Y+.5);c.restore();
+       if(big)try{MAPHITS.push({X,Y,r:R0+6,k:'sq',label:'Yan görev'})}catch(e){}}
+     else{const f=fogC[i],X=(f.x/T-ox)*sx,Y=(f.y/T-oy)*sy,R=220/T*sx;if(X<-R||Y<-R||X>w+R||Y>h+R)return;const pl=.5+.5*Math.sin(now*1.6+i);
+       c.save();const g=c.createRadialGradient(X,Y,R*.15,X,Y,R);g.addColorStop(0,`rgba(225,235,245,${(.30+.08*pl).toFixed(2)})`);g.addColorStop(.7,'rgba(210,222,235,.18)');g.addColorStop(1,'rgba(210,222,235,0)');c.fillStyle=g;c.beginPath();c.arc(X,Y,R,0,6.283);c.fill();
+       c.strokeStyle='rgba(235,242,250,.35)';c.lineWidth=big?2:1;c.setLineDash([big?6:3,big?6:3]);c.lineDashOffset=-now*(big?8:4);c.beginPath();c.arc(X,Y,R*.92,0,6.283);c.stroke();c.setLineDash([]);
+       c.font=`900 ${Math.round(big?Math.max(14,R*.45):Math.max(8,R*.5))}px Rubik, system-ui, sans-serif`;c.textAlign='center';c.textBaseline='middle';c.fillStyle=`rgba(40,60,80,${(.55+.2*pl).toFixed(2)})`;c.fillText('?',X,Y);c.restore()}});
+   const t=targetOf();if(t){const X=(t.x/T-ox)*sx,Y=(t.y/T-oy)*sy,q=(now*1.4)%1,r0=big?6:3;if(X>-20&&Y>-20&&X<w+20&&Y<h+20){c.save();c.strokeStyle=`rgba(159,216,255,${(1-q).toFixed(2)})`;c.lineWidth=big?3:1.5;c.beginPath();c.arc(X,Y,r0+q*(big?18:8),0,6.283);c.stroke();
+     c.fillStyle='#11170f';c.fillRect(Math.round(X-r0-1),Math.round(Y-r0-1),Math.round(2*r0+2),Math.round(2*r0+2));c.fillStyle='#9fd8ff';c.fillRect(Math.round(X-r0),Math.round(Y-r0),Math.round(2*r0),Math.round(2*r0));c.restore()}}}
+ // ---------------------------------------------------------------- the side quest card (under the main quest card)
+ {const st=document.createElement('style');st.id='v230-css';st.textContent='#sqcard{position:fixed;z-index:8;left:50%;transform:translateX(-50%);width:min(420px,calc(100vw - 32px));box-sizing:border-box;background:#1c2630;border:3px solid #7fc0e8;box-shadow:0 0 0 3px #11170f;padding:6px 36px 7px 10px;font-size:13.5px;line-height:1.3;color:#e8f2fa;pointer-events:auto}'+
+   '#sqcard[hidden]{display:none}#sqcard .k{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9fd8ff;font-weight:700}#sqcard b{color:#fff}#sqcard small{display:block;color:#bcd4e4;font-size:12.5px}'+
+   '#sqx{position:absolute;top:4px;right:6px;width:26px;height:26px;padding:0;font:700 17px/1 Rubik,system-ui,sans-serif;border:2px solid #4a6a80;background:rgba(0,0,0,.3);color:#e8f2fa;cursor:pointer}#sqx:hover{background:#7a2a1a}'+
+   'body.cine #sqcard,body.qscene #sqcard,body.arena #sqcard{display:none!important}body.v50m #sqcard{font-size:12px;padding:4px 32px 5px 8px;border-width:2px}body.v50m #sqcard small{font-size:11.5px}'+
+   '#cbody .sqh{margin:2px 0 6px;font-size:15px;color:#f2b84b;letter-spacing:.04em}#cbody .sqh.side{color:#9fd8ff;margin-top:14px}#cbody .sqc{border:2px solid #7fc0e8;background:rgba(127,192,232,.08);padding:6px 10px;margin:4px 0}#cbody .sqd{font-size:13px;color:#bcd4e4;margin:4px 0}';document.head.appendChild(st)}
+ const card=document.createElement('div');card.id='sqcard';card.hidden=true;card.innerHTML='<span class="k"></span><b></b><small></small><button id="sqx" type="button" aria-label="Yan görevi bırak" title="Yan görevi bırak">×</button>';document.body.appendChild(card);
+ card.querySelector('#sqx').addEventListener('click',e=>{e.stopPropagation();if(!A)return;const q=BY[A.id];say(`Bu yan görevi bırakayım mı? <b>${esc(q.title)}</b><br><small>${esc(q.name)} yerine döner; görevi sonra en baştan yeniden alabilirsin.</small>`,[{t:'Evet, bırak',fresh:1,f:()=>{bye();cancelA('Yan görevi bıraktın')}},{t:'Hayır',pri:1,fresh:1,f:bye}],{name:'Yan görev'})});
+ function stepText(){if(!A)return'';const q=BY[A.id],s=step();if(!s)return'';let t=s.tx||'';
+   if(s.t==='collect')t+=` · ${A.got.length}/${s.ps.length}`;
+   if(s.t==='chase')t+=` · ${A.cnt}/${s.n}`;
+   if(s.t==='bring')t=`${q.name}'e götür: `+s.items.map(([n,k])=>`${Math.min(inv[n]||0,k)}/${k} ${n}`).join(' · ');
+   if(s.t==='guard')t+=` · ${Math.max(0,Math.ceil(s.dur-A.tm))} sn`;
+   if(s.t==='kill'&&A.sp)t+=` · ${A.killed||0}/${s.mobs[1]}`;
+   if(s.t==='escort'&&s.light&&isNight()&&!(torchHeld()||(typeof lampOn==='function'&&lampOn())))t+=' · ışık gerekli (meşale)';
+   if(s.ghost&&!inWin(q.win))t+=` · yalnızca gece (${hhm(q.win[0])}–${hhm(q.win[1])})`;
+   return t}
+ function renderSQ(){try{if(!A||onTitle||wake){card.hidden=true;return}const q=BY[A.id];card.hidden=false;card.querySelector('.k').textContent=`Yan görev · ${q.name}`;card.querySelector('b').textContent=q.title;card.querySelector('small').textContent=stepText();
+   const te=tutEl;let top=12;if(te&&!te.hidden){const r=te.getBoundingClientRect();if(r.height)top=Math.round(r.bottom+6)}card.style.top=top+'px'}catch(e){}}
+ setInterval(renderSQ,350);
+ // the main quest card says "Ana görev"; the quest log has two parts
+ {const _rt=renderTut;renderTut=function(){const r=_rt.apply(this,arguments);try{const st=$('tutstep');if(st&&/ · Görev$/.test(st.textContent))st.textContent=st.textContent.replace(/ · Görev$/,' · Ana görev')}catch(e){}return r}}
+ {const _rq=renderQlog;renderQlog=function(){const r=_rq.apply(this,arguments);try{if(!(craftOpen&&mode==='qlog'))return r;
+   cbody.insertAdjacentHTML('afterbegin','<h3 class="sqh">Ana görev</h3>');
+   let h='<h3 class="sqh side">Yan görevler</h3>';
+   if(A){const q=BY[A.id];h+=`<div class="sqc"><b>${esc(q.name)}</b> · ${esc(q.title)}<br><small>${esc(stepText())}</small></div>`}else h+='<p class="sqd">Şu an bir yan görevin yok. Adayı dolaşırken yardıma ihtiyacı olan insanlara rastlarsın; haritadaki mavi <b>?</b> ve sisli çemberler onları gösterir. Yan görev ana görevle birlikte yapılabilir.</p>';
+   const D=Q.filter(q=>done.has(q.id));h+=`<p class="sqd">Bitirdiklerin: <b>${D.length}/${Q.length}</b>${D.length?' · '+D.map(q=>esc(q.title)).join(' · '):''}</p>`;
+   cbody.insertAdjacentHTML('beforeend',h)}catch(e){}return r}}
+ // ---------------------------------------------------------------- save / load / new game
+ {const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{if(s)s.v230={d:[...done],a:A?{id:A.id,step:A.step,got:A.got.slice(),cnt:A.cnt||0,goat:A.goat||null}:null,b:[...bioSeen]}}catch(e){}return s}}
+ {const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{const v=d&&d.v230;done=new Set(v&&v.d?v.d.filter(k=>BY[k]):[]);bioSeen.clear();if(v&&v.b)v.b.forEach(b=>bioSeen.add(b));
+     for(let i=0;i<W*H;i+=3)if(explored[i]&&BIO[i]<4)bioSeen.add(BIO[i]);
+     A=null;if(v&&v.a&&BY[v.a.id]&&!done.has(v.a.id)){A={id:v.a.id,step:Math.max(0,Math.min(BY[v.a.id].steps.length-1,v.a.step|0))};A.goat=v.a.goat||null;resetStep();A.got=(v.a.got||[]).slice();A.cnt=v.a.cnt|0;
+       if(A.fol){const s=step();if(s.who==='self'){A.fol.x=player.x+14;A.fol.y=player.y+4}}}renderSQ()}catch(e){}return r}}
+ {const _rz=resetState;resetState=function(){const r=_rz.apply(this,arguments);try{done=new Set();A=null;bioSeen.clear();renderSQ()}catch(e){}return r}}
+ window.__plSide={Q,BY,get A(){return A},done:()=>done,start:id=>{if(BY[id])start(BY[id])},complete:id=>{if(BY[id])complete(BY[id])}};
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v230: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

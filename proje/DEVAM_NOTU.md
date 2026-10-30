@@ -9,6 +9,19 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.30 (30 Ekim 2026) · yan görevler (12 yan kişi, ana/yan görev ayrımı) — BEKLEYEN PAKET (yayında değil)
+- `bekleyen-paket` dalında; "paket çık" denince GUNCELLEME_NOTLARI'na yazılır, `yayinla.sh`, main'e alınır.
+- Belge: yeni `parts/36_yan_gorevler.md` (kurallar, harita, 12 hikâye, adım türleri, ödüller, ileride ödül fikirleri); `parts/30_act1.md` Temel kurallar'a ana/yan görev notu.
+- Yeni `v230` bloğu (yalnızca `ISLE===1`). Veri: `Q` (12 görev: id, b biyom 0–3, win [dk,dk], c/x ödül, intro/remind/after, steps). Adım türleri: go, collect, chase, escort (who self|goat, to camp|fam3|npc, light, waves [[ilerleme,n]]), kill (mobs [k,n]), guard (dur, every, n), bring (items, ham malzeme), back. `end:1` = adım bitince görev biter.
+- Yerler: biyom kutusu (BIO&reach) içinde SLOT kesirleri → `findNear` (deterministik `rngOf('sq-'+id)`; ağaç/düğüm/engel yok, AV listesinden 240 px uzak). Elif İskele yanında. Görev noktaları `q.pts`. Ağaç/düğüm SİLİNMEZ (eski kayıtlarda ağaç indeksleri kaymasın diye).
+- Durum: `done` (Set), `A` {id,step,got,cnt,goat,fol,...}. Kayıt: `snapshot().v230={d,a,b}`; `restore`/`resetState` sarıldı. `bioSeen` (ayak basılan biyomlar; açılışta `explored`'dan da doldurulur) haritada gösterim için.
+- Döngü: `tickAnimals` sarmalı (`tick(dt)`); dünya durunca (menü, konuşma, uyanış) yan görev de durur. Çizim: `v55Ents` sarmalı (kişiler `npcLook`+`npcDraw`, çocuklar ×0,75; keçi, güvercin, enkaz, mağara, beden, taş, fener vb. piksel çizimler; ekranın kenarında mavi ok). Etkileşim: `XTRA` girdileri (getter'lı x/y). Engel: `blocked` sarmalı (duran yan kişiler).
+- Canavarlar: `a.sq=id`; `killAnimal` sarmalı `kills` ve `__p4.s.bc`'yi geri yükler, `__plAlmNew` susturulur (`SQK`), `__plLessonOn` dövüş adımında true (Reis gelmez).
+- Bayılma: `faint`/`knockedOut` sarmalı → 0,9 sn sonra `cancelA` (yalnızca yan görev). Kart: `#sqcard` (ana kartın altında, × → `say` ile onay). `renderTut` sarmalı "· Görev" → "· Ana görev"; `renderQlog` sarmalı Ana/Yan bölümleri.
+- Harita: `window.__plMapQ` zincirlendi: keşfedilmiş yerde mavi "?", değilse `fogC` merkezli 220 px sisli çember + "?"; süren yan görevin hedefi mavi halka.
+- `window.__plSide` (Q, BY, A, done, start, complete) hata ayıklama için.
+- Doğrulama: chk.js; ayrıca oyunun açıldığı ve kerem/nadir/husnu/cemal/saniye/isil/elif adımlarının elle `tickAnimals` çağrısıyla ilerlediği Playwright ile denendi (çalışma düzenindeki "oyun açılıyor" kontrolü kapsamında).
+
 ## v2.29 (30 Ekim 2026) · maden kayaları geçilmez, telefonda hileler açılmıyordu (kritik, hemen yayın)
 - Boğaç "kritik" dedi → aynı turda yayın (bekleyen-paket → main).
 - Yeni `v229` bloğu. Belge: `parts/20_sistemler.md` "Maden kayaları geçilmez".
