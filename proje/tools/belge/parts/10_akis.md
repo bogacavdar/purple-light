@@ -88,5 +88,5 @@ ACT 2 bölümündeki "ACT 2'nin akışı"na bak: Ülker (portallar) → Pervin (
 |---|---|---|
 | Yıldızsız Gezgin | 5. gün | Bir robot köpek hediye eder (köpek seçtiğin malzemeyi senin için toplar). |
 | Yıldızsız Gezgin | 20. gün | **Mor sinyal** verir: köpekler menüsünden sikkeyle köpek ısmarlanır. Fiyat 500 × 1,6^(sahip olunan köpek), 10'a yuvarlanır: 800 → 1.280 → 2.050 → 3.280. En çok 5 köpek. |
-| Tüccar Nuri | köprü onarılınca ya da 3. günden sonra | Kumsaldaki iskeleye yanaşır, 10 dakika kalır, 6–9 dakika sonra yine gelir. Sipariş ister: ilki 5 Dal + 5 Taş + 3 Lif = 64 sikke; sonrakiler rastgele 2–3 ucuz malzeme, ödeme 3 × (değerleri) + 25 sikke. |
+| Gemici Nuri (v2.34) | Olta yaptıktan sonraki ilk sabah 06:00 | Ekin'den uzak bir kıyıya teknesiyle çarpar, haritada sarı ? çıkar. 4 görevle teknesi onarılınca seni denize, 6 balık bölgesine götürür. Ayrıntı: "ACT 1 · Gemici Nuri ve deniz". (Eski Tüccar Nuri, iskele, sipariş ve tarif satışı v2.34'te kalktı.) |
 | Yıldızsız Işıkçı | 15. günden sonra her akşam 18:00–05:30 | Yurtta sabit bir yerde (haritada mavi nokta). 5 Mor kıymık + 3 Gece sefası + 1 Tunç külçesi karşılığında **Kafa lambası** verir, sonra bir daha gelmez. |

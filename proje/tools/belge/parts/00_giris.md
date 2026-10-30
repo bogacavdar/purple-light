@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.33** ile birebir (30 Ekim 2026). Bu sürümde: telefonda düşmana otomatik vuruş, kategorili yemek menüsü, canlıların can yenilemesi, ateş kenarında ve gündüz kurt düzeltmeleri, telefonda tam ekran anı, harita ve okunur görev kartı/sahneleri. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.34** ile birebir (30 Ekim 2026). Bu sürümde: Tüccar Nuri'nin yerine Gemici Nuri (kaza, tekne tamiri), 6 bölgeli deniz balıkçılığı (18 canlı, 5 yeni olta, 16 tarif, almanak Deniz canlıları); ana adanın deniz kıyısında balık tutulmaz. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

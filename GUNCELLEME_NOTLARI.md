@@ -8,6 +8,39 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.34 · 30 Ekim 2026
+
+**Oynanış**
+- **Tüccar Nuri gitti, Gemici Nuri geldi.** Nuri artık adaya gelip giden bir tüccar değil, yaşlı bir **gemici**. Olta'yı yaptıktan sonraki ilk sabah 06:00'da teknesi Ekin'in kampından uzak bir kıyıya çarpar. Uzaktan bir gümbürtü gelir, haritada o yerde sarı bir **?** çıkar.
+- **Tekne tamiri (4 görev):** Çatlak omurga (6 odun, 3 uzun sopa), Yırtık yelken (2 halat, 6 lif), Su alan tekne (3 reçine, 4 taş), Kaptanın karnı (2 pişmiş et, 4 böğürtlen). Dördüncüsü bitince tekne onarılır ve Nuri "Balığa çıkmak istersen bana gel" der.
+- **Denize açılmak:** Nuri'yle konuşunca "Denize açılalım" → **deniz haritası**: 6 balık bölgesi.
+  - Bölgeler: Kıyı Suları (Sv 3, Olta), Rüzgârlı Körfez (Sv 6, Deniz oltası), Mercan Sığlığı (Sv 10, Makaralı olta), Derin Mavi (Sv 14, Derin su oltası), Fırtına Denizi (Sv 18, Fırtına oltası), Mor Derinlik (Sv 22, Yıldız oltası).
+  - Gidemediğin bölgeler kilitli ve eksiğin yazıyor. Her bölgenin denizi kendi renginde.
+  - Denizdeyken Nuri'nin teknesinden balık tutarsın (ana adadaki gibi: şamandıra, "Vurdu!", yeşil alan). İstediğin an başka bölgeye ya da adaya dönebilirsin. Denizdeyken adada zaman durur.
+- **18 deniz canlısı:** Hamsi, İstavrit, Tekir · Kefal, Çipura, Levrek · Barbunya, İstiridye, Lüfer · Palamut, Mersin balığı, Kalkan · Kalamar, Kılıç balığı, Orkinos · Ahtapot, Fener balığı, Işıl balığı. Hepsinin satış fiyatı var.
+- **5 yeni olta:** Deniz oltası, Makaralı olta, Derin su oltası, Fırtına oltası, Yıldız oltası. Kazanda öğrenilip yapılır; her biri bir sonraki bölgeyi açar, nehirde de kullanılır (yeşil alanı daha geniş).
+- **16 yeni deniz yemeği (kazanda):** Hamsi tava, Tekir tava, İstavrit ızgara, Kefal pilakisi, Çipura buğulama, Levrek şiş, Barbunya tava, İstiridye çorbası, Lüfer ızgara, Palamut buğulama, Kalkan tava, Kalamar tava, Kılıç şiş, Orkinos biftek, Ahtapot salatası, Işıl çorbası. Deniz balıkları eski balık tariflerinde de geçer ("herhangi balık").
+- **Nuri'nin balık defteri (6 görev):** her bölge için bir balık isteği. Görev ancak o bölgeye gidebiliyorsan açılır. Alınınca ok seni Nuri'ye götürür, Nuri'nin haritasında o bölge **sarı** yanıp söner.
+- **Ana adada deniz kıyısında balık tutulmaz** (nehir ve göller eskisi gibi). Eskiden yalnızca denizde çıkan Tatlısu kefali artık Çayır ve Orman nehirlerinde çıkıyor.
+
+**Kaldırılanlar**
+- Eski tüccar Nuri'nin iskeleye gelip gitmesi, siparişleri, tarif satışı ve gemi sayacı kalktı.
+- Eski Nuri'nin 8 görevi ve "Nuri'nin ilk siparişi" kalktı. Eski kayıtlarda yarım kalanlar sessizce silinir, alınmış ödüller sende kalır.
+- "Ada halkı" hikâyelerinden Nuri'ninki (yeğeni Deniz) kalktı.
+
+**Arayüz**
+- **Almanak → 🌊 Deniz canlıları:** 6 bölge başlık başlık. Her canlının resmi, bölgesi, fiyatı, zorluğu, kaç tane tuttuğun ve tarifleri var; tutmadıkların kapalı. Nuri'nin "Balık defteri" seçeneği de buraya açılır.
+
+**Görsel**
+- Gemici Nuri'nin yeni görünüşü (lacivert kasket, beyaz sakal) ve konuşma resmi. Kumsala oturmuş kırık tekne ve onarılmış yelkenli.
+- Deniz ekranı: bölgeye göre renkli deniz, dalgalar, balık gölgeleri. Fırtına Denizi'nde yağmur ve şimşek, Mor Derinlik'te yıldızlar.
+- Yeni olta, kalamar ve ahtapot ikonları.
+
+**Tasarım belgesi**
+- Yeni bölüm: **ACT 1 · Gemici Nuri ve deniz** (kaza, 10 görev, 6 bölge, 18 canlı, oltalar, tarifler, almanak). Akış, ACT 1 görevleri, kişiler ve balık tutma bölümleri buna göre güncellendi.
+
+---
+
 ## Versiyon 2.33 · 30 Ekim 2026
 
 **Oynanış**

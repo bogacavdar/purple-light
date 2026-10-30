@@ -369,13 +369,12 @@ Aletleri fırtınada denize gitmiş. Tarlayı kullanmak için ona sırayla dört
 | 4 | Timsah | Avla: 1 Timsah | – | 260 | 400 |
 
 
-## Tüccar Nuri, Yıldızsız Gezgin, Yıldızsız Işıkçı
+## Yıldızsız Gezgin, Yıldızsız Işıkçı
 
 Takvime bağlı gezginler; ne zaman geldikleri ve ne yaptıkları "Oyunun akışı → Gezginler ve takvim" tablosunda.
 
 | # | Görev | İstenen | Açılma şartı | Sikke | XP |
 |---|---|---|---|---|---|
-| 1 | Nuri'nin ilk siparişi | Nuri'nin ilk siparişini teslim et | – | 0 | 15 |
 
 
 ## Denizci Levent

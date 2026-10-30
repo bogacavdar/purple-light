@@ -201,10 +201,10 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 | Sular | Ne çıkar (ağırlık) |
 |---|---|
-| Çayır/Orman · deniz | Tatlısu kefali 30, Çapak 26, Sazan 22, Kızılkanat 12, Mersin balığı 3 |
-| Çayır/Orman · nehir ve göl | Alabalık 28, Kızılkanat 20, Tatlısu levreği 20, Çapak 16, Sazan 14, Tatlısu midyesi 10, Yılan balığı 9 |
-| Bataklık / Kayalık Dağ | Yayın 24, Kadife balığı 24, **Kerevit 22**, Turna balığı 18, Yılan balığı 12, Tatlısu midyesi 12, Sazan 10 |
-| Kül Diyarı / Mor Kristal Vadisi | Yayın 30, Mersin balığı 22, Turna balığı 22, Kadife balığı 14 |
+| Çayır/Orman · deniz | **v2.34'ten beri kıyıdan tutulmaz**; deniz balıkları Nuri'yle denize açılınca ("ACT 1 · Gemici Nuri ve deniz") |
+| Çayır/Orman · nehir ve göl | Alabalık 28, Kızılkanat 20, Tatlısu levreği 20, Çapak 16, Sazan 14, **Tatlısu kefali 12** (v2.34, eskiden yalnızca denizde), Tatlısu midyesi 10, Yılan balığı 9 |
+| Bataklık / Kayalık Dağ (nehir ve göl; v2.34'ten beri deniz kıyısında tutulmaz) | Yayın 24, Kadife balığı 24, **Kerevit 22**, Turna balığı 18, Yılan balığı 12, Tatlısu midyesi 12, Sazan 10 |
+| Kül Diyarı / Mor Kristal Vadisi (nehir ve göl) | Yayın 30, Mersin balığı 22, Turna balığı 22, Kadife balığı 14 |
 
 ## Tuzaklar ve balık kapanı
 
@@ -288,7 +288,7 @@ Sağ altta, küçük haritanın hemen üstünde **Başarımlar**'ın solunda kü
   - 7 **olay anısı**: uyurken (%40), bayılınca (%60) ya da görev bitince (%30), gün şartıyla: Kumsalda ilk dans (1. gün), Kırık pusula (4), Hastane koridoru (6), Yıldız haritası (8), Mektup (12), Mor fısıltı (20), Bırakılan el (25).
   - 5 **ACT 2 anısı**: ACT 2 ustalarının kilit görevleri bitince.
 - **Telefonda anı tam ekran (v2.33, Boğaç):** dokunmatik ekranda bir anı gelince resmi ekranı kaplar (en-boy oranı korunur, ekrana sığan en büyük boy). Başlık ("Bir anı geri geldi" ve anının adı) üstte, anlatım yazısı ve Devam düğmesi altta, küçük yazıyla ve yarı saydam koyu zemin üstünde resmin **üstüne** biner. Bilgisayarda değişiklik yok.
-- **Ada halkının hikâyeleri:** görev veren 9 kişinin her biri mor ışık yüzünden birini kaybetmiştir; görevler hikâyeyi parça parça açar, sonunda bir sahne (+40 XP). Kitap → Ada halkı.
+- **Ada halkının hikâyeleri:** görev veren 8 kişinin her biri mor ışık yüzünden birini kaybetmiştir (v2.34'ten beri Nuri'nin hikâyesi yok); görevler hikâyeyi parça parça açar, sonunda bir sahne (+40 XP). Kitap → Ada halkı.
 
 # Dövüş
 
