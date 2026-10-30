@@ -2,6 +2,8 @@
 
 > **v2.30, Boğaç (30 Ekim 2026).** Görevler artık ikiye ayrılır. **Ana görevler:** adanın kişilerinin (Ekin, Zümrüt, Dursun, kuzenler…) verdiği görevler; yukarıdaki "ACT 1 · Görevler" bölümündeki bütün kurallar onlar içindir. **Yan görevler:** adada kendi yerinde duran, yolda karşına çıkan **yan kişilerin** (bir teyze, kaybolmuş bir çocuk, bir çoban…) görevleri. İlk pakette **12 yan görev** var; ACT 1'in ilk dört biyomuna **üçer** tane, tonları karışık (hüzünlü, gizemli, komik).
 
+> **Mağara yan görevleri (v2.32):** Yankı Mağarası'nda **Madenci Cevdet**, Kök Mağarası'nda **Kökçü Leyla**; bu bölümdeki kurallar onlar için de geçerlidir (ayrıntı "ACT 1 · Mağaralar" bölümünde). Böylece yan görev sayısı 14'tür; Görevler penceresi "Bitirdiklerin: x/14" yazar.
+
 ## Kurallar
 
 1. **Ana görevle birlikte yapılır.** Aynı anda **1 ana görev + 1 yan görev** sürebilir. Yan görev ana görevi beklemez, ana görev yan görevi beklemez; ikisi ayrı yürür. Aynı anda ikinci bir yan görev alınmaz: başka bir yan kişiyle konuşunca "Önce elindeki işi bitir" der.

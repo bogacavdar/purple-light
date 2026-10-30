@@ -8,6 +8,31 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.32 · 30 Ekim 2026
+
+**Oynanış**
+- **Mağaralar geldi.** Şimdilik iki tane: Çayır'da **Yankı Mağarası** (en az 5. seviye) ve Orman'da **Kök Mağarası** (en az 10. seviye).
+  - **Giriş:** kocaman kayalık bir tepe ve karanlık bir ağız; önünde adını ve seviye şartını yazan bir tabela. Seviyen yetmiyorsa karakter "Bu mağara bana göre değil… en az 5. seviye olmalıyım" der; elinde yanan meşale yoksa "Meşalesiz giremem; içerisi zifiri karanlık" der. İkisi tamamsa kısa bir yükleme ekranından sonra mağaranın içindesin.
+  - **İçerisi:** kıvrımlı tüneller, yan odalar ve en dipte büyük bir oda (yaklaşık 89 × 89 karo). Hava yok, mor ışık gelmez, her yer karanlık. **Meşalenin ışığı mağarada 2 kat uzağa** vuruyor. Meşale içeride biterse zifiri karanlık oluyor; karakter "Meşalem bitti! Hiçbir şey göremiyorum…" deyip kendini mağaranın dışında buluyor (meşaleyi yalnızca indirdiysen 3 saniye içinde yeniden eline alırsan kalırsın). Girişte F ile dışarı çıkılıyor.
+  - **Canlılar:** her mağarada yalnızca orada yaşayan 3 tür. Yankı Mağarası: Mağara yarasası, Kör kertenkele, Taş örümceği. Kök Mağarası: Kök böceği, Kök yılanı, Mağara kurdu. Hepsinin **Reis'i** var.
+  - **Boss ve yan görev:** her mağaranın en dibinde bir yan görev kişisi var (Madenci Cevdet, Kökçü Leyla). Hikâyesini anlatıp mağarada toplanan bir malzeme istiyor, sonra mağaranın boss'unu çağırıyor: **Yankı Kraliçesi** ve **Yaşlı Kök** (Reis biçiminde). Boss'la karşılaşıp bayılırsan, kişiye ikinci kez gittiğinde görev baştan başlamıyor, doğrudan "Hazır mısın?" diyip boss'u çağırıyor. Ödül: 300 sikke + 250 XP ve 500 sikke + 450 XP.
+  - **Malzemeler:** her mağarada 2 toplanabilir (Yankı mantarı, Damla taşı; Kök mantarı, Kök reçinesi) ve canlılardan düşenler. Hepsi satılıyor ve her biri en az bir tarifte kullanılıyor.
+  - **10 yeni tarif (kazanda öğrenilir):** Yankı çorbası, Kök mantarlı güveç (yemek), Kertenkele merhemi (şifa), Damla akı boyası, Böcek kabuğu boyası, Yarasa zarı davul, Kök flütü, Tabaklanmış mağara kurdu postu, Kraliçe tılsımı, Kök özü iksiri.
+
+**Arayüz**
+- **Haritada mağaralar:** girişler küçük ve büyük haritada mağara simgesiyle görünüyor (o biyoma ayak bastıysan); büyük haritada üzerine gelince adı ve şartı yazıyor. Mağaranın içindeyken harita mağaranın kendi haritasını gösteriyor (yürüdükçe açılan tüneller, çıkış, en dipteki kişi).
+- **Almanak:** Çayır ve Orman sayfalarının altında "Mağara: …" bölümü (mağaraya bir kez girince): 3 canlı ve Reis sayaçları, en sonda boss kartı. Boss'la hiç karşılaşmadıysan kapalı, karşılaşıp yenemediysen özellikleri açık ama altın değil, yendiysen altın.
+- Görevler penceresinde yan görev sayısı 14 (iki mağara görevi eklendi).
+
+**Görsel**
+- Mağara girişleri, mağaraların içi (taş duvarlar, damla taşları, kökler, su birikintileri), parlayan mantarlar ve reçineler, 6 yeni canlı ve 2 boss çizimi, yeni eşyaların ikonları.
+
+**Kayıtlar**
+- Mağaradayken kaydedilen oyun, açılınca seni mağaranın girişinin önünde başlatır. Mağarada açtığın yerler ve boss'la karşılaşmaların kaydediliyor.
+
+**Tasarım belgesi**
+- Yeni bölüm **"ACT 1 · Mağaralar"**: kurallar, iki mağaranın canlıları, boss'ları, yan görev hikâyeleri, malzemeleri, fiyatları ve tarifleri. Yan görevler bölümüne mağara görevleri notu. Sürüm satırı 2.32.
+
 ## Versiyon 2.31 · 30 Ekim 2026
 
 **Düzeltmeler**

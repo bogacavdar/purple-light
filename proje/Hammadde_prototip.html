@@ -1343,7 +1343,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.31</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.32</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -15649,6 +15649,8 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
   saniye:L({skin:'#e0b090',skinD:'#c09070',hair:'#ececec',hairD:'#c0c0c0',hairL:'#ffffff',hs:'long',shirt:'#3a4a6a',shirtD:'#2a3650',dress:true,pants:'#2a2a3a'}),
   haydar:L({skin:'#c8906a',skinD:'#a8704a',hair:'#9a9a9a',hairD:'#7a7a7a',hairL:'#bababa',hs:'short',beard:'sakal',hat:'kasket',hatC:'#7a5a3a',shirt:'#b89a6a',shirtD:'#98784a',pants:'#4a3a2a'}),
   isil:L({skin:'#e8f0ff',skinD:'#c0d0f0',hair:'#d0d8f8',hairD:'#a8b4e0',hairL:'#ffffff',hs:'long',shirt:'#e8f0ff',shirtD:'#c8d4f0',dress:true,pants:'#c8d4f0'}),
+  cevdet:L({skin:'#c8906a',skinD:'#a8704a',hair:'#bdbdbd',hairD:'#9a9a9a',hairL:'#e0e0e0',hs:'short',beard:'sakal',hat:'kasket',hatC:'#c8a040',shirt:'#5a5a62',shirtD:'#44444c',pants:'#3a3228'}),
+  leyla:L({skin:'#e8c09a',skinD:'#c89a74',hair:'#5a3a1a',hairD:'#3a2410',hairL:'#7a5230',hs:'long',shirt:'#4a7a3a',shirtD:'#365a2a',dress:true,pants:'#3a2a1a',flower:true}),
   emir:L({skin:'#e8c09a',skinD:'#c89a74',hair:'#3a2418',hairD:'#24160c',hairL:'#5a3a28',hs:'messy',shirt:'#6a8ab0',shirtD:'#4a6a90',pants:'#4a3a2a'})};
  const KID={kerem:1,mina:1,isil:1,emir:1};
  // ---------------------------------------------------------------- the twelve
@@ -15729,11 +15731,25 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    {t:'go',p:'g2',ghost:1,tx:'Işık izini takip et',on:[X('Kız yeniden beliriyor, sonra yine kayboluyor. Kulağına bir şarkının yarısı geliyor.')]},
    {t:'go',p:'g3',ghost:1,tx:'Işık izini takip et',on:[N('Beni unuttular mı? Annem adımı hâlâ söylüyor mu?'),X('Kız bir kayalığın arkasına doğru süzülüyor.')]},
    {t:'go',p:'stone',draw:'stone',tx:'Kızın gittiği yere bak',end:1,on:[X('Otların arasında yosun tutmuş küçük bir taş. Üstüne kazınmış: <i>"IŞIL. Işığa gülümseyerek yürüdü."</i>'),X('Taşın yanına bir fener koyuyorsun. Fener kendiliğinden yanıyor.'),N('Teşekkür ederim. Artık karanlık değil.')]}],
-  after:[]}];
+  after:[]},
+ {id:'cevdet',name:'Madenci Cevdet',title:'Yankı Kraliçesi',b:0,cave:'c0',win:[0,1440],c:300,x:250,
+  intro:[N('Kırk yıl bu mağarada damla taşı kazdım. Bir gece mor ışık mağaranın ağzına indi; yarasalar delirdi.'),N('En dipteki büyük yarasa, <b>Yankı Kraliçesi</b>, o geceden beri uyumuyor. Çığlığı taşları çatlatıyor; bir gün tavan çökecek. Köyün içtiği dere bu mağaradan çıkıyor.'),N('Onu yuvasından çıkarmanın tek yolu ışık: Yankı mantarları ona annesini hatırlatır. <b>4 Yankı mantarı</b> getir, fenerime koyayım.')],
+  remind:'4 Yankı mantarı, evlat. Duvar diplerinde mavi mavi parlarlar.',again:'Yine geldin. Fener hazır, mantarlar yerinde. Kraliçeyi çağırayım mı?',againBtn:'Çağır',
+  steps:[{t:'bring',items:[['Yankı mantarı',4]],tx:'Cevdet\'e 4 Yankı mantarı götür',on:[X('Cevdet mantarları fenerine koyuyor; fener mavi mavi parlıyor.'),N('Işık hazır. Kulaklarını tıka evlat… geliyor!')]},
+   {t:'boss',tx:'Yankı Kraliçesi\'ni yen'},
+   {t:'back',tx:'Cevdet ile konuş',on:[N('Mağara sustu. Damlaları dinle… artık yalnızca su sesi var.'),N('Sağ ol evlat. Köyün suyu da, benim kulaklarım da sana borçlu.')]}],
+  after:['Damla taşı kazmaya döndüm. Kraliçe olmadan mağara çok sessiz, biraz da özlüyorum.']},
+ {id:'leyla',name:'Kökçü Leyla',title:'Yaşlı Kök',b:1,cave:'c1',win:[0,1440],c:500,x:450,
+  intro:[N('Ninemin ıhlamuru bu mağaranın tam üstünde. Kökleri buraya kadar iner.'),N('Bir gece mor ışık köklere sızdı; kökler birbirine sarıldı, bir canlıya dönüştü: <b>Yaşlı Kök</b>. Ormanın suyunu içiyor; ağaçlar kuruyor, ninemin ıhlamuru da.'),N('Kalbini kabukla örtmüş. Kabuğu yakmak için reçineden ateş macunu yapacağım. <b>3 Kök reçinesi</b> getir.')],
+  remind:'3 Kök reçinesi lazım. Duvarlarda amber gibi parlarlar.',again:'Yine geldin. Macun hâlâ sıcak. Yaşlı Kök\'ü uyandırayım mı?',againBtn:'Uyandır',
+  steps:[{t:'bring',items:[['Kök reçinesi',3]],tx:'Leyla\'ya 3 Kök reçinesi götür',on:[X('Leyla reçineyi bir taşın üstünde eritip küle karıştırıyor.'),N('Macun hazır. Kabuğu tutuşunca vur, hep vur! Geliyor…')]},
+   {t:'boss',tx:'Yaşlı Kök\'ü yen'},
+   {t:'back',tx:'Leyla ile konuş',on:[N('Kökler gevşedi… duyuyor musun? Yukarıda ıhlamurun yaprakları hışırdıyor.'),N('Teşekkür ederim. Ninem bunu duysa…')]}],
+  after:['Köklere su taşıyorum. Ihlamur bu bahar çiçek açacak.']}];
  const BY={};for(const q of Q)BY[q.id]=q;
  // ---------------------------------------------------------------- places (the same every time the island is laid out)
  const SIDE=[];const bc=[0,0,0,0];
- for(const q of Q){const R=rngOf('sq-'+q.id);let p;
+ for(const q of Q){const R=rngOf('sq-'+q.id);let p;if(q.cave){q.x=-1e5;q.y=-1e5;q.R=R;q.pts={npc:{x:q.x,y:q.y}};continue}
    if(q.id==='elif')p=findNear(dock.x,dock.y,26,90,-1,R,{sand:true});
    else{const B=BOXB[q.b],s=SLOT[bc[q.b]++%3],tx=(B[0]+(B[2]-B[0])*s[0])*T,ty=(B[1]+(B[3]-B[1])*s[1])*T;
      p=findNear(tx,ty,0,260,q.b,R,{av:240,big:1});if(Math.hypot(p.x-tx,p.y-ty)<1)p=findNear(tx,ty,0,900,q.b,R,{av:200,big:1})}
@@ -15780,11 +15796,13 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
        else say(`${q.remind}<br><small>Gereken: ${s.items.map(([n,k])=>`${Math.min(inv[n]||0,k)}/${k} ${esc(n)}`).join(' · ')}</small>`,[{t:'Getireceğim',pri:1,fresh:1,f:bye}],who(q.id));return}
      say(q.remind||'…',[{t:'Tamam',pri:1,fresh:1,f:bye}],who(q.id));return}
    if(A){say('Önce elindeki işi bitir, evlat. Ben buradayım, bir yere gitmiyorum.',[{t:'Tamam',pri:1,fresh:1,f:bye}],who(q.id));return}
+   if(q.cave&&window.__plCave&&window.__plCave.fought(q.cave)){const bi=q.steps.findIndex(x=>x.t==='boss');
+     say(q.again,[{t:q.againBtn,pri:1,fresh:1,f:()=>{bye();A={id:q.id,step:bi};resetStep();renderSQ();try{sfx('found')}catch(e){}toast(`Yan görev: ${q.title}`)}},{t:'Şimdi olmaz',fresh:1,f:bye}],who(q.id));return}
    let i=0;const L=q.intro;const nx=()=>{const [k,t]=L[i++];if(i<L.length){say(t,[{t:'Devam',pri:1,fresh:1,f:nx}],who(q.id));return}
      say(t,[{t:'Yardım ederim',pri:1,fresh:1,f:()=>{bye();start(q)}},{t:'Şimdi olmaz',fresh:1,f:bye}],who(q.id))};nx()}
  // ---------------------------------------------------------------- where the person is
  const isFollower=q=>{if(!A||A.id!==q.id)return false;const s=step();return !!(s&&s.t==='escort'&&s.who==='self')};
- function present(q){if(done.has(q.id))return q.id!=='isil';if(A&&A.id===q.id)return !isFollower(q)&&!q.ghost;return inWin(q.win)}
+ function present(q){if(q.cave){const C=window.__plCave;return !!(C&&C.cur===q.cave)}if(done.has(q.id))return q.id!=='isil';if(A&&A.id===q.id)return !isFollower(q)&&!q.ghost;return inWin(q.win)}
  function homeOf(q){if(done.has(q.id)){if(q.id==='mina')return campPt();if(q.id==='haydar'){const f=famPt();return{x:f.x+24,y:f.y-8}}}return{x:q.x,y:q.y}}
  for(const q of Q){const ent={get x(){return homeOf(q).x},get y(){return homeOf(q).y},r:28,
      on:()=>!onTitle&&present(q)&&!(q.ghost),label:()=>done.has(q.id)?q.name:`Konuş: ${q.name}`,act:()=>talk(q)};XTRA.push(ent)}
@@ -15811,7 +15829,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const folSay=(t)=>{if(A&&A.fol){A.fol.stop=t;A.fol.sayT=2.2}};
  {const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);try{tick(dt||0)}catch(e){try{window.__hamSoft&&window.__hamSoft('v230 tick: '+(e&&e.message||e))}catch(_){}}return r}}
  function tick(dt){if(onTitle||wake||sailing)return;
-   bioSeen.add(bioAt(player.x,player.y));
+   if(!(window.__plCave&&window.__plCave.cur))bioSeen.add(bioAt(player.x,player.y));
    {const g=BY.isil;if(!done.has('isil')&&!(A&&A.id==='isil')&&inWin(g.win)&&!dlgOpen&&D2(player,g)<60){
        if(!A)start(g);else if((sayT-=dt)<=0){sayT=10;toast('Soluk ışıklı kız seni görünce kayboluyor… (Önce elindeki yan görevi bitir.)',true)}}}
    if(!A||dlgOpen||fading)return;const q=BY[A.id],s=step();if(!s||A.busy)return;
@@ -15840,6 +15858,9 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
      if(!A.sp&&dp<200){A.sp=true;const [k,n]=s.mobs;for(let i=0;i<n;i++)spawnMob(k,p.x,p.y,10,50);try{sfx('growl')}catch(e){}if(s.spawnTx)toast(s.spawnTx,true);renderSQ()}
      if(A.sp&&!animals.some(a=>a.sq===A.id)){if((A.killed||0)>=s.mobs[1]){advance();return}if(dp>420){A.sp=false;A.killed=0}}
      return}
+   if(s.t==='boss'){const C=window.__plCave;if(!C||C.cur!==q.cave)return;
+     if(!A.sp){A.sp=true;A.bd0=C.beat(q.cave);C.spawnBoss(q.cave);renderSQ();return}
+     if(C.beat(q.cave)>A.bd0){advance();return}if(!C.bossAlive(q.cave))A.sp=false;return}
    if(s.t==='guard'){const dn=D2(player,q);if(dn<90){A.tm+=dt;A.wt-=dt;if(A.wt<=0){A.wt=s.every;wave(s.n,q.x,q.y)}if(Math.floor(A.tm)!==Math.floor(A.tm-dt))renderSQ()}
      else if(dn>140&&(sayT-=dt)<=0){sayT=4;toast('Cemal: "Gitme, yalnız bırakma beni!"',true)}
      if(A.tm>=s.dur){A.busy=true;clearMobs();pages(q,[N('Gitti hepsi… Sağ ol.')],advance)}return}}
@@ -15917,7 +15938,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const fogC=Q.map(q=>{const R=rngOf('fog-'+q.id),a=R()*Math.PI*2,r=R()*110;return{x:q.x+Math.cos(a)*r,y:q.y+Math.sin(a)*r}});
  {const _mq=window.__plMapQ;window.__plMapQ=function(c,ox,oy,sx,sy,big,w,h){if(_mq&&!A)try{_mq.apply(this,arguments)}catch(e){}   /* v2.31: no main-quest yellow while a side quest runs */try{mapSQ(c,ox,oy,sx,sy,big,w,h)}catch(e){}}}
  function mapSQ(c,ox,oy,sx,sy,big,w,h){if(onTitle)return;const now=performance.now()/1000;
-   Q.forEach((q,i)=>{if(done.has(q.id)||(A&&A.id===q.id)||!inWin(q.win)||!bioSeen.has(q.b))return;
+   Q.forEach((q,i)=>{if(q.cave||done.has(q.id)||(A&&A.id===q.id)||!inWin(q.win)||!bioSeen.has(q.b))return;
      if(seenT(q.x,q.y)){const X=(q.x/T-ox)*sx,Y=(q.y/T-oy)*sy;if(X<-10||Y<-10||X>w+10||Y>h+10)return;const R0=big?9:4.5,pl=.5+.5*Math.sin(now*3+i);
        c.save();c.fillStyle='rgba(17,23,15,.85)';c.beginPath();c.arc(X,Y,R0+1.5,0,6.283);c.fill();c.fillStyle=`rgba(159,216,255,${(.85+.15*pl).toFixed(2)})`;c.beginPath();c.arc(X,Y,R0,0,6.283);c.fill();
        c.font=`900 ${Math.round(R0*1.5)}px Rubik, system-ui, sans-serif`;c.textAlign='center';c.textBaseline='middle';c.fillStyle='#14324a';c.fillText('?',X,Y+.5);c.restore();
@@ -15974,6 +15995,313 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  window.__plSide={Q,BY,get A(){return A},done:()=>done,start:id=>{if(BY[id])start(BY[id])},complete:id=>{if(BY[id])complete(BY[id])}};
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v230: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v232">
+// v2.32: caves. Çayır (Yankı Mağarası, Sv 5) and Orman (Kök Mağarası, Sv 10). A big entrance in the land; with the level and a
+// lit torch in hand you go in (a short loading screen) to a cave a quarter of a land in size. The cave is built in a "pocket" of
+// the island far from people (both caves share it); while inside, that pocket's trees, gatherables, ground and weather are hidden
+// and its water or unreachable tiles are rock. Torches light twice as far; if the torch goes out you are thrown out. Three creature
+// kinds per cave (with Reis), a boss in Reis form called by the side quest of the person at the bottom, two gatherables, sellable
+// drops, five recipes per cave (learned at the cauldron). The map shows the entrance (outside) or the cave itself (inside).
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ if(ISLE!==1)return;
+ const hsh=s=>{let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0};
+ const rngOf=s=>{let a=(hsh(s)+W*131+H)>>>0;return()=>{a=(a+0x6D2B79F5)>>>0;let t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}};
+ const vis=(x,y,m)=>x>cam.cx-m&&x<cam.cx+vw+m&&y>cam.cy-m&&y<cam.cy+vh+m;
+ // ---------------------------------------------------------------- creatures
+ const L=()=>true;
+ const NK={
+  'Mağara yarasası':{temper:'saldırgan',hp:22,spd:78,aggro:150,r:5,xp:10,dmg:7,reach:24,wind:.4,fly:1,land:L,z:0,drops:[['Yarasa zarı',1,1,.8,'zanaat']]},
+  'Kör kertenkele':{temper:'nötr',hp:40,spd:40,r:6,xp:12,dmg:9,land:L,z:0,drops:[['Kör kertenkele eti',1,1,1,'yemek'],['Kertenkele pulu',1,2,.6,'zanaat']]},
+  'Taş örümceği':{temper:'saldırgan',hp:55,spd:56,aggro:130,r:6,xp:16,dmg:12,fx:['kanama',2,3],land:L,z:0,drops:[['Taş örümceği ipi',1,2,.8,'zanaat']]},
+  'Kök böceği':{temper:'saldırgan',hp:90,spd:44,aggro:140,r:7,xp:24,dmg:18,land:L,z:0,drops:[['Kök böceği kabuğu',1,2,.8,'zanaat']]},
+  'Kök yılanı':{temper:'saldırgan',hp:70,spd:58,aggro:120,r:6,xp:22,dmg:16,fx:['zehir',3,4],land:L,z:0,drops:[['Kök yılanı derisi',1,1,.7,'zanaat']]},
+  'Mağara kurdu':{temper:'saldırgan',hp:120,spd:66,aggro:170,r:7,xp:30,dmg:22,land:L,z:0,drops:[['Mağara kurdu eti',1,1,1,'yemek'],['Mağara kurdu postu',1,1,.6,'zırh']]}};
+ const BK={
+  'Yankı Kraliçesi':{temper:'saldırgan',boss:1,base:'Yankı Kraliçesi',hp:900,spd:62,aggro:500,r:12,xp:400,dmg:22,reach:36,wind:.45,fly:1,land:L,z:0,drops:[['Kraliçe pençesi',1,1,1,'büyü'],['Yarasa zarı',3,5,1,'zanaat']]},
+  'Yaşlı Kök':{temper:'saldırgan',boss:1,base:'Yaşlı Kök',hp:2000,spd:40,aggro:500,r:16,xp:900,dmg:38,reach:44,wind:.5,land:L,z:0,drops:[['Yaşlı Kök özü',1,1,1,'büyü'],['Kök reçinesi',3,5,1,'zanaat']]}};
+ for(const k in NK)if(!ANIM[k])ANIM[k]=NK[k];for(const k in BK)if(!ANIM[k])ANIM[k]=BK[k];
+ try{PACK['Mağara yarasası']=[2,4];PACK['Mağara kurdu']=[2,3]}catch(e){}
+ const MYK=new Set(Object.keys(NK).concat(Object.keys(BK)));
+ // ---------------------------------------------------------------- items, prices, recipes
+ const RAW={'Yankı mantarı':14,'Damla taşı':12,'Kök mantarı':20,'Kök reçinesi':24};
+ const DROP={'Yarasa zarı':16,'Kör kertenkele eti':14,'Kertenkele pulu':18,'Taş örümceği ipi':22,'Kraliçe pençesi':260,'Kök böceği kabuğu':28,'Kök yılanı derisi':32,'Mağara kurdu eti':22,'Mağara kurdu postu':40,'Yaşlı Kök özü':480};
+ for(const n in RAW){RES[n]={draw:'cave',respawn:1e9,cave:1};DB.p[n]=RAW[n]}
+ for(const n in DROP)DB.p[n]=DROP[n];
+ const addR=(n,ing,c,price)=>{if(REC.has(n))return;const r={r:n,i:ing,t:[],c};DB.R.push(r);REC.set(n,r);try{RESULTS.add(n)}catch(e){}
+   for(const [m] of ing)for(const e of expand(m)){if(!USES.has(e))USES.set(e,new Set());USES.get(e).add(n)}DB.p[n]=price};
+ addR('Yankı çorbası',[['Yankı mantarı',2],['Kör kertenkele eti',1],['Su',2],['Ateş',1]],'Yiyecek',70);
+ addR('Kertenkele merhemi',[['Kertenkele pulu',2],['Damla taşı',1],['Su',1]],'Şifa',75);
+ addR('Damla akı boyası',[['Damla taşı',2],['Su',1]],'Boya',40);
+ addR('Yarasa zarı davul',[['Yarasa zarı',3],['Taş örümceği ipi',2],['Dal',2]],'Müzik',130);
+ addR('Kraliçe tılsımı',[['Kraliçe pençesi',1],['Yankı mantarı',2],['Taş örümceği ipi',1]],'Büyü',420);
+ addR('Kök mantarlı güveç',[['Kök mantarı',2],['Mağara kurdu eti',1],['Su',2],['Ateş',1]],'Yiyecek',110);
+ addR('Böcek kabuğu boyası',[['Kök böceği kabuğu',2],['Su',1]],'Boya',75);
+ addR('Kök flütü',[['Kök yılanı derisi',1],['Kök reçinesi',1],['Dal',1]],'Müzik',95);
+ addR('Tabaklanmış mağara kurdu postu',[['Mağara kurdu postu',1],['Kök reçinesi',1],['Su',2]],'Av ve hayvan',95);
+ addR('Kök özü iksiri',[['Yaşlı Kök özü',1],['Kök mantarı',2],['Su',1]],'Büyü',680);
+ try{for(const n of Object.keys(RAW).concat(Object.keys(DROP)))if(CHEAT_RES.indexOf(n)<0)CHEAT_RES.push(n)}catch(e){}
+ // hand icons for the cave items the name rules cannot draw
+ const PX_={
+  'Damla taşı':{p:{a:'#8a8e96',b:'#bcc0c8',c:'#e0e4ec',d:'#5a5e66',w:'#9fd8ff'},m:['................','....ddddddd.....','...dbbbbbbbd....','....dbbcbbd.....','....dbbcbbd.....','.....dbcbd......','.....dbcbd......','......dcd.......','......dad.......','.......a........','.......a........','................','.......w........','................','.......w........','................']},
+  'Yarasa zarı':{p:{a:'#4a3a5a',b:'#6a5a7a',c:'#8a7a9a',d:'#2a2030'},m:['................','.d...........d..','.dd.........dd..','.dbd.......dbd..','.dbbd.....dbbd..','.dbcbd...dbcbd..','.dbbcbdddbcbbd..','.dbbbcbbbcbbbd..','.dabbbbbbbbbad..','..dabbaabbbad...','...dad..daad....','....d....dd.....','................','................','................','................']},
+  'Kraliçe pençesi':{p:{a:'#e8e0c8',b:'#c8bca0',c:'#8a7a5a',d:'#3a2a1a',v:'#b44aff'},m:['................','..d....d....d...','.dad..dad..dad..','.dad..dad..dad..','.dbd..dbd..dbd..','..dbd.dbd.dbd...','..dbbddbddbbd...','...dbbbbbbbd....','...dcbvvvbcd....','...dccvvvccd....','....dcccccd.....','.....ddddd......','................','................','................','................']},
+  'Yaşlı Kök özü':{p:{a:'#5a3c22',b:'#e89a2a',c:'#ffc860',d:'#3a2414',v:'#c070ff',w:'#fff0c0'},m:['................','......dddd......','.....dbbbbd.....','....dbccccbd....','...dbcwvvccbd...','...dbcvvvvcbd...','...dbcvvvvcbd...','...dbccvvccbd...','....dbccccbd....','.....dbbbbd.....','......dddd......','.....a.aa.a.....','....a..aa..a....','...a...aa...a...','................','................']},
+  'Kertenkele merhemi':{p:{a:'#c8a46a',b:'#e8c8c0',c:'#f8e0d8',d:'#3a2a1a',e:'#8a6a3a'},m:['................','................','.....dddddd.....','....deeeeeed....','....dddddddd....','....dbbbbbbd....','...dbbccbbbbd...','...dbccbbbbbd...','...dbbbbbbbbd...','...dbbbbbbbbd...','...dbbbbbbbbd...','....dbbbbbbd....','.....dddddd.....','................','................','................']},
+  'Kraliçe tılsımı':{p:{a:'#c8a46a',b:'#f2c94c',c:'#b44aff',d:'#3a2414',e:'#e0c0ff'},m:['................','.......dd.......','......d..d......','.....d....d.....','....d......d....','....d......d....','.....d....d.....','......dbbd......','.....dbccbd.....','....dbceccbd....','....dbccccbd....','.....dbccbd.....','......dbbd......','.......dd.......','................','................']},
+  'Kök özü iksiri':{p:{a:'#a8c8b8',b:'#c070ff',c:'#e0b0ff',d:'#2a2a32',e:'#7a5434'},m:['................','......dddd......','......deed......','......deed......','.......dd.......','......daad......','.....daaaad.....','....dabbbbad....','...dabbcbbbad...','...dabcbbbbad...','...dabbbbbbad...','...dabbbbbbad...','....dabbbbad....','.....dddddd.....','................','................']},
+  'Kök mantarlı güveç':{p:{a:'#8a5a3a',b:'#a87048',c:'#e8dcc8',d:'#2a1a10',e:'#c86a3a',w:'#ffffff'},m:['................','.....w...w......','......w...w.....','.....w...w......','................','..dddddddddddd..','.deecceecceeeed.','.deeeeccceeeeed.','dbbbbbbbbbbbbbbd','dabbbbbbbbbbbbad','.dabbbbbbbbbbad.','..daaaaaaaaaad..','...dddddddddd...','................','................','................']}};
+ for(const n in PX_){PIXI[n]=PX_[n];try{delete ICON[n];delete ICONC[n]}catch(e){}}
+
+ // ---------------------------------------------------------------- the caves
+ const CAVES=[
+  {id:'c0',b:0,name:'Yankı Mağarası',lv:5,npc:'cevdet',boss:'Yankı Kraliçesi',kinds:['Mağara yarasası','Kör kertenkele','Taş örümceği'],raw:['Yankı mantarı','Damla taşı'],
+   col:{fl:['#3a3634','#423d3a','#35312f'],wl:'#1d1b1c',face:'#57514c',hi:'#6e6862',dec:'#8a8580',glow:'#7fd0ff'}},
+  {id:'c1',b:1,name:'Kök Mağarası',lv:10,npc:'leyla',boss:'Yaşlı Kök',kinds:['Kök böceği','Kök yılanı','Mağara kurdu'],raw:['Kök mantarı','Kök reçinesi'],
+   col:{fl:['#33302a','#3a362d','#2e2b25'],wl:'#1a1914',face:'#4f4636',hi:'#66593f',dec:'#6a4a2a',glow:'#ffb84a'}}];
+ const BYC={};for(const C of CAVES)BYC[C.id]=C;
+ const AV=[];
+ try{for(const o of [npc.home,witch,market,smith,durmus,farmer,usta,alp,carp,toygar,hut,kaptan,dock,balikci,trader])if(o&&o.x>-9e4)AV.push({x:o.x,y:o.y})}catch(e){}
+ try{for(const b of BRIDGES)AV.push({x:b.cx,y:b.cy})}catch(e){}
+ try{for(const F of window.__pl184.FAMS){AV.push({x:F.cx,y:F.cy});AV.push({x:F.wx,y:F.wy})}}catch(e){}
+ try{for(const q of window.__plSide.Q)if(!q.cave&&q.x>-9e4)AV.push({x:q.x,y:q.y})}catch(e){}
+ try{for(const f of FIRES)AV.push({x:f.x,y:f.y})}catch(e){}
+ // entrances: in their land, no tree within 80 px, no node within 60, 420 px from people
+ for(const C of CAVES){const R=rngOf('cave-door-'+C.id);let best=null;
+   for(let i=0;i<4000&&!best;i++){const tx=2+Math.floor(R()*(W-4)),ty=2+Math.floor(R()*(H-4)),k=ty*W+tx;if(BIO[k]!==C.b||reach[k]!==1||tiles[k]>1)continue;
+     const x=tx*T+8,y=ty*T+8;let ok=true;
+     for(let dy=-5;dy<=2&&ok;dy++)for(let dx=-4;dx<=4;dx++){const j=(ty+dy)*W+tx+dx;if(reach[j]!==1||tiles[j]>1||BIO[j]!==C.b){ok=false;break}}
+     if(!ok)continue;if(AV.some(p=>Math.hypot(p.x-x,p.y-y)<420))continue;if(treesNear(x,y-30,t=>Math.hypot(t.x-x,t.y-y+30)<80))continue;
+     if(nodes.some(n=>Math.abs(n.x-x)<70&&Math.abs(n.y-y+30)<60))continue;best={x,y}}
+   if(!best)best={x:(C.b?.2:.18)*W*T,y:(C.b?.3:.7)*H*T};C.door=best;AV.push({x:best.x,y:best.y-30})}
+ // the pocket: a dry, reachable square in the west, far from everyone
+ const cnt=[0,0];for(let i=0;i<W*H;i++)if(reach[i]===1&&BIO[i]<2)cnt[BIO[i]]++;
+ let N=Math.round(Math.sqrt(Math.min(cnt[0],cnt[1])/4)),PK=null;
+ {const I=new Int32Array((W+1)*(H+1));for(let y=0;y<H;y++)for(let x=0;x<W;x++){const i=y*W+x,bad=(reach[i]!==1||tiles[i]>=3)?1:0;I[(y+1)*(W+1)+x+1]=bad+I[y*(W+1)+x+1]+I[(y+1)*(W+1)+x]-I[y*(W+1)+x]}
+  const badIn=(x,y,n)=>I[(y+n)*(W+1)+x+n]-I[y*(W+1)+x+n]-I[(y+n)*(W+1)+x]+I[y*(W+1)+x];
+  for(;N>=60&&!PK;N-=6){let best=null;for(let y=3;y+N<H-3;y+=3)for(let x=3;x+N<W-3;x+=3){if(ZONE[((y+N/2)|0)*W+((x+N/2)|0)]!==0)continue;
+      const m=300,x0=x*T-m,y0=y*T-m,x1=(x+N)*T+m,y1=(y+N)*T+m;if(AV.some(a=>a.x>x0&&a.x<x1&&a.y>y0&&a.y<y1))continue;const bad=badIn(x,y,N);if(bad>N*N*.3)continue;if(!best||bad<best.bad)best={x,y,bad}}
+    if(best)PK={x:best.x,y:best.y,N}}
+  if(!PK){N=60;PK={x:3,y:3,N}}}
+ N=PK.N;const PX=PK.x*T,PY=PK.y*T;
+ const inPocket=(x,y,m)=>{m=m||0;return x>PX-m&&y>PY-m&&x<PX+N*T+m&&y<PY+N*T+m};
+ // layout: a winding main tunnel from the mouth (bottom) to the deepest room (top), branches with rooms, smoothed
+ function build(C){const R=rngOf('cave-'+C.id),G=new Uint8Array(N*N),BAD=new Uint8Array(N*N);
+   for(let y=0;y<N;y++)for(let x=0;x<N;x++){const i=(PK.y+y)*W+PK.x+x;if(reach[i]!==1||tiles[i]>=3)BAD[y*N+x]=1}
+   const carve=(cx,cy,r)=>{for(let y=Math.floor(cy-r);y<=cy+r;y++)for(let x=Math.floor(cx-r);x<=cx+r;x++){if(x<3||y<3||x>=N-3||y>=N-3)continue;if((x-cx)*(x-cx)+(y-cy)*(y-cy)<=r*r+.5)G[y*N+x]=1}};
+   const e={x:Math.round(N/2+(R()-.5)*N*.3),y:N-5},d={x:Math.round(12+R()*(N-24)),y:Math.round(9+R()*5)};
+   const path=[];let x=e.x,y=e.y,a0=-Math.PI/2,r=2.5;
+   for(let s=0;s<4000;s++){const dx=d.x-x,dy=d.y-y,dd=Math.hypot(dx,dy);if(dd<2)break;const ta=Math.atan2(dy,dx);a0+=Math.max(-.5,Math.min(.5,(ta-a0+Math.PI*3)%(Math.PI*2)-Math.PI))*.25+(R()-.5)*.9;
+     x+=Math.cos(a0)*.9;y+=Math.sin(a0)*.9;x=Math.max(5,Math.min(N-6,x));y=Math.max(5,Math.min(N-6,y));r=Math.max(1.8,Math.min(3.6,r+(R()-.5)*.5));carve(x,y,r);path.push({x,y})}
+   const rooms=[];
+   for(let b=0;b<Math.round(N/5);b++){const p=path[Math.floor(path.length*(.08+R()*.85))];if(!p)continue;let bx=p.x,by=p.y,ba=R()*Math.PI*2,br=1.8;const len=22+Math.floor(R()*40);
+     for(let s=0;s<len;s++){ba+=(R()-.5)*.7;bx+=Math.cos(ba)*.9;by+=Math.sin(ba)*.9;if(bx<6||by<6||bx>N-7||by>N-7){ba+=Math.PI*.7;bx=Math.max(6,Math.min(N-7,bx));by=Math.max(6,Math.min(N-7,by))}br=Math.max(1.5,Math.min(2.8,br+(R()-.5)*.4));carve(bx,by,br)}
+     const rr=3.5+R()*3;carve(bx,by,rr);rooms.push({x:bx,y:by,r:rr})}
+   carve(d.x,d.y,8);carve(e.x,e.y,4);for(let yy=e.y;yy<N-2;yy++)carve(e.x,yy,2);
+   for(let pass=0;pass<2;pass++){const H2=G.slice();for(let yy=3;yy<N-3;yy++)for(let xx=3;xx<N-3;xx++){let n=0;for(let j=-1;j<=1;j++)for(let i=-1;i<=1;i++)if(H2[(yy+j)*N+xx+i])n++;const k=yy*N+xx;if(!H2[k]&&n>=6)G[k]=1;else if(H2[k]&&n<=2)G[k]=0}}
+   for(let i=0;i<N*N;i++)if(BAD[i])G[i]=0;
+   for(let xx=e.x-1;xx<=e.x+1;xx++)for(let yy=e.y;yy<N-1;yy++)if(!BAD[yy*N+xx])G[yy*N+xx]=1;
+   // keep only what is joined to the mouth
+   const seen=new Uint8Array(N*N),q=[e.y*N+e.x];if(!G[q[0]])G[q[0]]=1;seen[q[0]]=1;while(q.length){const k=q.pop(),xx=k%N,yy=(k/N)|0;for(const [i,j] of [[1,0],[-1,0],[0,1],[0,-1]]){const nx=xx+i,ny=yy+j;if(nx<0||ny<0||nx>=N||ny>=N)continue;const n=ny*N+nx;if(G[n]&&!seen[n]){seen[n]=1;q.push(n)}}}
+   for(let i=0;i<N*N;i++)if(G[i]&&!seen[i])G[i]=0;
+   // the deepest room, if water cut it off, is the farthest floor from the mouth
+   if(!G[d.y*N+d.x]){let bd=-1;for(let i=0;i<N*N;i++)if(G[i]){const xx=i%N,yy=(i/N)|0,dd=Math.hypot(xx-e.x,yy-e.y);if(dd>bd){bd=dd;d.x=xx;d.y=yy}}}
+   const FL=[];for(let i=0;i<N*N;i++)if(G[i])FL.push(i);
+   C.G=G;C.e=e;C.d=d;C.FL=FL;C.rooms=rooms;C.ex=new Uint8Array(N*N);
+   C.start={x:PX+e.x*T+8,y:PY+(e.y-1)*T+8};
+   C.deep={x:PX+d.x*T+8,y:PY+d.y*T+8}}
+ for(const C of CAVES)build(C);
+ const cell=(C,x,y)=>{const cx=Math.floor((x-PX)/T),cy=Math.floor((y-PY)/T);if(cx<0||cy<0||cx>=N||cy>=N)return 0;return C.G[cy*N+cx]};
+ const cellW=(C,cx,cy)=>({x:PX+cx*T+8,y:PY+cy*T+8});
+ // the people at the bottom (side quests)
+ try{const S=window.__plSide;for(const C of CAVES){const q=S.BY[C.npc];if(q){q.x=C.deep.x-10;q.y=C.deep.y-12;q.pts={npc:{x:q.x,y:q.y}}}}}catch(e){}
+ // ---------------------------------------------------------------- the picture of a cave (drawn once)
+ function paint(C){if(C.cv)return C.cv;const c=document.createElement('canvas');c.width=N*T;c.height=N*T;const g=c.getContext('2d');const R=rngOf('paint-'+C.id),K=C.col;
+   g.fillStyle='#050405';g.fillRect(0,0,N*T,N*T);const G=C.G,F=(x,y)=>x>=0&&y>=0&&x<N&&y<N&&G[y*N+x];
+   for(let y=0;y<N;y++)for(let x=0;x<N;x++){const X=x*T,Y=y*T;
+     if(G[y*N+x]){g.fillStyle=K.fl[(x*7+y*13)%3];g.fillRect(X,Y,T,T);for(let k=0;k<3;k++){g.fillStyle=R()<.5?'rgba(0,0,0,.18)':'rgba(255,255,255,.05)';g.fillRect(X+Math.floor(R()*14),Y+Math.floor(R()*14),2,2)}
+       if(R()<.025){g.fillStyle='rgba(60,90,110,.35)';g.fillRect(X+3,Y+5,9,4)}   // a puddle
+       if(R()<.03){g.fillStyle=K.dec;g.fillRect(X+6,Y+8,3,5);g.fillStyle=K.hi;g.fillRect(X+7,Y+6,1,2)}}   // a little stalagmite / root stump
+     else{const near=F(x,y+1)||F(x,y-1)||F(x+1,y)||F(x-1,y);g.fillStyle=near?K.wl:'#080708';g.fillRect(X,Y,T,T);
+       if(F(x,y+1)){g.fillStyle=K.face;g.fillRect(X,Y+6,T,10);g.fillStyle=K.hi;g.fillRect(X,Y+6,T,2);g.fillStyle='rgba(0,0,0,.25)';g.fillRect(X+((x*5)%12),Y+9,2,7);
+         if(C.id==='c1'&&R()<.35){g.fillStyle='#5a3c22';const rx=X+Math.floor(R()*12);g.fillRect(rx,Y+6,2,12+Math.floor(R()*8));g.fillRect(rx+1,Y+16,1,6)}
+         if(C.id==='c0'&&R()<.25){g.fillStyle=K.dec;const rx=X+Math.floor(R()*12);g.fillRect(rx,Y+14,3,4);g.fillRect(rx+1,Y+18,1,3)}}
+       if(near&&!F(x,y+1)){g.fillStyle='rgba(255,255,255,.04)';g.fillRect(X,Y,T,2)}}}
+   // the mouth: grey daylight on the way out
+   const e=C.e;const gr=g.createLinearGradient(0,(N-8)*T,0,N*T);gr.addColorStop(0,'rgba(200,210,220,0)');gr.addColorStop(1,'rgba(200,210,220,.25)');g.fillStyle=gr;g.fillRect((e.x-3)*T,(N-8)*T,7*T,8*T);
+   return C.cv=c}
+ // ---------------------------------------------------------------- state
+ const CV={cur:null,back:null,seen:new Set(),fought:new Set(),dark:0,darkWhy:'',hidN:[],orig:null,cn:[]};
+ const cur=()=>CV.cur?BYC[CV.cur]:null;
+ // ---------------------------------------------------------------- loading screen
+ const ld=document.createElement('div');ld.id='cvload';ld.hidden=true;ld.innerHTML='<b></b><small></small><i><u></u></i>';document.body.appendChild(ld);
+ {const st=document.createElement('style');st.id='v232-css';st.textContent='#cvload{position:fixed;inset:0;z-index:95;background:#050405;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#e8e0d0;font-family:Rubik,system-ui,sans-serif;opacity:1;transition:opacity .25s}#cvload[hidden]{display:none}#cvload b{font-size:26px;letter-spacing:.06em}#cvload small{font-size:14px;color:#a89c8a}#cvload i{display:block;width:180px;height:6px;background:#2a2420;border-radius:3px;overflow:hidden}#cvload u{display:block;height:100%;width:0;background:#c8a46a;animation:cvbar .8s linear forwards}@keyframes cvbar{to{width:100%}}'+
+   '#almov .cvh{grid-column:1/-1;margin:14px 0 2px;padding:6px 10px;border-left:4px solid #c8a46a;background:rgba(200,164,106,.1);color:#f0e0c0;font-weight:700;font-size:14px}#almov .cvh small{color:#b9aed6;font-weight:400;margin-left:8px}';document.head.appendChild(st)}
+ function loading(t1,t2,fn){ld.querySelector('b').textContent=t1;ld.querySelector('small').textContent=t2;const u=ld.querySelector('u');u.style.animation='none';void u.offsetWidth;u.style.animation='';ld.hidden=false;ld.style.opacity='1';
+   setTimeout(()=>{try{fn()}catch(e){try{window.__hamSoft&&window.__hamSoft('v232 '+(e&&e.message||e))}catch(_){}}setTimeout(()=>{ld.style.opacity='0';setTimeout(()=>{ld.hidden=true},260)},120)},820)}
+ // ---------------------------------------------------------------- entering and leaving
+ function patchSeen(){try{const S=window.__v65&&window.__v65.seen;if(S&&!S.__cv){const a=S.add.bind(S),h=S.has.bind(S);S.add=function(b){if(CV.cur)return S;return a(b)};S.has=function(b){if(CV.cur)return true;return h(b)};S.__cv=1}}catch(e){}}
+ function tryEnter(C){if(CV.cur)return;
+   if(lvl<C.lv){bubble={text:`Bu mağara bana göre değil… en az ${C.lv}. seviye olmalıyım (şimdi ${lvl}).`,t:3.6};try{sfx('bad')}catch(e){}toast(`${C.name}: en az ${C.lv}. seviye gerekir (sen ${lvl}).`,true);return}
+   if(!torchHeld()){bubble={text:'Meşalesiz giremem; içerisi zifiri karanlık.',t:3.4};try{sfx('bad')}catch(e){}toast(`${C.name}: elinde yanan bir meşaleyle girebilirsin.`,true);return}
+   loading(C.name,'Mağaraya giriliyor…',()=>doEnter(C))}
+ function doEnter(C){CV.cur=C.id;CV.back={x:C.door.x,y:C.door.y+24};CV.dark=0;patchSeen();
+   for(let i=animals.length-1;i>=0;i--)if(!animals[i].tut)animals.splice(i,1);
+   CV.hidN=[];for(const n of nodes){if(n.cave)continue;if(inPocket(n.x,n.y,40)){CV.hidN.push([n,n.x]);n.x=-99999}}
+   try{const tg=[];for(let i=0;i<TGRID.length;i++){const gx=i%TGW,gy=(i/TGW)|0,x=gx*TGC,y=gy*TGC;tg.push(inPocket(x+16,y+16,48)?[]:TGRID[i])}TGRID=tg}catch(e){}
+   CV.cn=[];const R=Math.random;
+   for(const n of C.raw){let k=0;for(let g=0;g<4000&&k<16;g++){const i=C.FL[Math.floor(R()*C.FL.length)],x=i%N,y=(i/N)|0;
+       if(Math.hypot(x-C.e.x,y-C.e.y)<9||Math.hypot(x-C.d.x,y-C.d.y)<7)continue;const G=C.G;const wall=!G[i-1]||!G[i+1]||!G[i-N]||!G[i+N];if(!wall&&R()<.75)continue;
+       const p=cellW(C,x,y);if(CV.cn.some(o=>Math.hypot(o.x-p.x,o.y-p.y)<40))continue;const o={name:n,x:p.x+(R()-.5)*6,y:p.y+(R()-.5)*6,alive:true,t:0,v:R(),cave:C.id};nodes.push(o);CV.cn.push(o);k++}}
+   CV.orig={};for(const k in TORCHL){CV.orig[k]=TORCHL[k];TORCHL[k]=TORCHL[k]*2}
+   player.x=C.start.x;player.y=C.start.y;player.face={x:0,y:-1};goal=null;for(const k in keys)keys[k]=false;
+   revealC(C,player.x,player.y);
+   const first=!CV.seen.has(C.id);CV.seen.add(C.id);
+   setTimeout(()=>{try{announce(C.name,first?'Mağaraya ilk kez girdin':'Mağaradasın');}catch(e){}},300);try{sfx('found')}catch(e){}
+   try{renderTut()}catch(e){}}
+ function exitCave(silent,noMove){const C=cur();if(!C)return;
+   for(let i=animals.length-1;i>=0;i--)if(!animals[i].tut)animals.splice(i,1);
+   for(const [n,x] of CV.hidN)n.x=x;CV.hidN=[];
+   for(const o of CV.cn){const i=nodes.indexOf(o);if(i>=0)nodes.splice(i,1)}CV.cn=[];
+   try{rebuildTG()}catch(e){}
+   if(CV.orig){for(const k in CV.orig)TORCHL[k]=CV.orig[k];CV.orig=null}
+   CV.cur=null;CV.dark=0;
+   if(!noMove&&CV.back){player.x=CV.back.x;player.y=CV.back.y;player.face={x:0,y:1};goal=null}
+   if(!silent)setTimeout(()=>{try{toast(`${C.name}'ndan çıktın.`)}catch(e){}},300)}
+ function leave(C,msg){if(msg)bubble={text:msg,t:3};loading('Gün ışığı','Mağaradan çıkılıyor…',()=>exitCave(false))}
+ // ---------------------------------------------------------------- doors and the way out
+ for(const C of CAVES){
+   XTRA.push({get x(){return C.door.x},get y(){return C.door.y+14},r:36,on:()=>!CV.cur&&!onTitle,label:()=>`${C.name} · Sv ${C.lv} · meşale`,act:()=>tryEnter(C)});
+   XTRA.push({get x(){return C.start.x},get y(){return C.start.y+20},r:30,on:()=>CV.cur===C.id,label:()=>'Mağaradan çık',act:()=>leave(C)})}
+ // ---------------------------------------------------------------- collisions
+ {const _bl=blocked;blocked=function(px_,py_){const C=cur();if(C){for(const [ox,oy] of [[-HALF,-HALF],[HALF,-HALF],[-HALF,HALF],[HALF,HALF]])if(!cell(C,px_+ox,py_+oy))return true;return false}
+   if(_bl.apply(this,arguments))return true;for(const D of CAVES){const dx=(px_-D.door.x)/54,dy=(py_-(D.door.y-34))/40;if(dx*dx+dy*dy<1)return true}return false}}
+ // ---------------------------------------------------------------- world things hidden inside
+ const skipIn=nm=>{try{const f=window.__plEval(nm);if(typeof f!=='function')return;window.__cvf=window.__cvf||{};window.__cvf[nm]=f;window.__plEval(nm+'=function(){if(window.__plCave&&window.__plCave.cur)return;return window.__cvf["'+nm+'"].apply(this,arguments)}')}catch(e){}};
+ ['drawSeaPad','drawField','drawWater','drawPier','drawBridge','drawTufts','drawGlints','drawGraves','drawClues','drawWaterHint','drawV46World','drawTree','drawPlacedObj','drawDog','drawAmbient','drawFog','drawGuide','drawRaft','tickDogs'].forEach(skipIn);
+ {const _g=drawGround;drawGround=function(){const C=cur();if(!C)return _g.apply(this,arguments);ctx.fillStyle='#050405';ctx.fillRect(cam.cx-40,cam.cy-40,vw+80,vh+80);ctx.drawImage(paint(C),PX,PY)}}
+ {const _d=darkness;darkness=function(){if(CV.cur)return .985;return _d.apply(this,arguments)}}
+ {const _rs=roomSafe;roomSafe=function(){if(CV.cur)return true;return _rs.apply(this,arguments)}}
+ {const _ls=lightSources;lightSources=function(){const C=cur();if(!C)return _ls.apply(this,arguments);if(CV.dark)return [];const L=[[C.start.x,C.start.y+30,90]];
+   try{const q=window.__plSide.BY[C.npc];if(q)L.push([q.x,q.y-8,70])}catch(e){}
+   for(const n of CV.cn)if(n.alive&&(n.name==='Yankı mantarı'||n.name==='Kök reçinesi')&&Math.abs(n.x-player.x)<500&&Math.abs(n.y-player.y)<400)L.push([n.x,n.y-4,24]);return L}}
+ {const _rv=reveal;reveal=function(px_,py_){const C=cur();if(!C)return _rv.apply(this,arguments);revealC(C,px_,py_)}}
+ let cmapK='';
+ function revealC(C,x,y){const cx=Math.floor((x-PX)/T),cy=Math.floor((y-PY)/T),k=cx+','+cy;if(k===cmapK)return;cmapK=k;const r=7;
+   for(let j=-r;j<=r;j++)for(let i=-r;i<=r;i++){if(i*i+j*j>r*r)continue;const X=cx+i,Y=cy+j;if(X<0||Y<0||X>=N||Y>=N)continue;C.ex[Y*N+X]=1}C.mapDirty=1}
+ function cmap(C){if(C.cm&&!C.mapDirty)return C.cm;if(!C.cm){C.cm=document.createElement('canvas');C.cm.width=N;C.cm.height=N}const g=C.cm.getContext('2d'),im=g.createImageData(N,N),D=im.data;
+   for(let i=0;i<N*N;i++){if(!C.ex[i])continue;const o=i*4;if(C.G[i]){D[o]=156;D[o+1]=142;D[o+2]=120;D[o+3]=255}else{D[o]=58;D[o+1]=50;D[o+2]=44;D[o+3]=255}}g.putImageData(im,0,0);C.mapDirty=0;return C.cm}
+ // the map: inside, the cave's own map
+ {const _dm=drawMap;drawMap=function(c,w,h,big){const C=cur();if(!C)return _dm.apply(this,arguments);
+   c.setTransform(1,0,0,1,0,0);c.fillStyle='#060507';c.fillRect(0,0,w,h);c.imageSmoothingEnabled=false;
+   let ox=0,oy=0,vv=N;if(!big){vv=Math.min(N,44);ox=Math.max(0,Math.min(N-vv,(player.x-PX)/T-vv/2));oy=Math.max(0,Math.min(N-vv,(player.y-PY)/T-vv*h/w/2))}
+   const s=Math.min(w,h)/vv,offX=big?(w-N*s)/2:0,offY=big?(h-N*s)/2:0,M=(wx,wy)=>[offX+((wx-PX)/T-ox)*s,offY+((wy-PY)/T-oy)*s];
+   c.drawImage(cmap(C),ox,oy,vv,vv*(big?1:h/w),offX,offY,vv*s,vv*(big?1:h/w)*s);
+   {const [X,Y]=M(C.start.x,C.start.y+12);c.fillStyle='#e8e0c8';c.fillRect(Math.round(X-2),Math.round(Y-2),5,5);if(big){c.font='bold 13px Rubik, system-ui, sans-serif';c.textAlign='center';c.fillStyle='#e8e0c8';c.fillText('Çıkış',X,Y+16)}}
+   try{const q=window.__plSide.BY[C.npc],[X,Y]=M(q.x,q.y);if(C.ex[Math.floor((q.y-PY)/T)*N+Math.floor((q.x-PX)/T)]){c.fillStyle='#9fd8ff';c.beginPath();c.arc(X,Y,big?7:3.5,0,6.283);c.fill();c.fillStyle='#14324a';c.font=`900 ${big?11:6}px Rubik, system-ui, sans-serif`;c.textAlign='center';c.textBaseline='middle';c.fillText('?',X,Y+.5);if(big)try{MAPHITS.push({X,Y,r:12,k:'sq',label:q.name})}catch(e){}}}catch(e){}
+   const [X,Y]=M(player.x,player.y);try{drawMe(c,X,Y,big,time)}catch(e){c.fillStyle='#ffd27a';c.fillRect(X-2,Y-2,5,5)}
+   c.save();c.font=`bold ${big?18:15}px Rubik, system-ui, sans-serif`;c.textAlign='left';c.textBaseline='alphabetic';c.lineWidth=4;c.strokeStyle='rgba(17,23,15,.9)';const nm=C.name;c.strokeText(nm,6,h-7);c.fillStyle='#e8c88a';c.fillText(nm,6,h-7);c.restore()}}
+ // outside: the entrance on the map with a cave sign
+ {const _mq=window.__plMapQ;window.__plMapQ=function(c,ox,oy,sx,sy,big,w,h){if(_mq)try{_mq.apply(this,arguments)}catch(e){}if(CV.cur)return;try{
+   const V=window.__v65;for(const C of CAVES){if(V&&V.seen&&!V.seen.has(C.b))continue;const X=(C.door.x/T-ox)*sx,Y=((C.door.y-20)/T-oy)*sy,s=big?1.6:.9;if(X<-20||Y<-20||X>w+20||Y>h+20)continue;
+     c.save();c.translate(X,Y);c.scale(s,s);c.fillStyle='#11170f';c.beginPath();c.ellipse(0,0,10,8,0,0,6.283);c.fill();c.fillStyle='#8e939b';c.beginPath();c.ellipse(0,0,9,7,0,0,6.283);c.fill();c.fillStyle='#0a0a0c';c.beginPath();c.ellipse(0,2,4.5,4.5,0,Math.PI,0);c.fillRect(-4.5,2,9,3);c.fill();c.restore();
+     if(big){try{MAPHITS.push({X,Y,r:16,k:'cave',label:`${C.name} · Sv ${C.lv} · meşale`})}catch(e){}c.font='bold 12px Rubik, system-ui, sans-serif';c.textAlign='center';c.lineWidth=3;c.strokeStyle='rgba(17,23,15,.85)';c.strokeText(C.name,X,Y-18);c.fillStyle='#e8d8b0';c.fillText(C.name,X,Y-18)}}}catch(e){}}}
+ // ---------------------------------------------------------------- entrance in the world
+ function drawDoor(C,time){const x=Math.round(C.door.x),y=Math.round(C.door.y);
+   ctx.fillStyle='rgba(0,0,0,.25)';ctx.beginPath();ctx.ellipse(x,y+2,58,8,0,0,6.283);ctx.fill();
+   const rk=(a,b,w,h,c)=>px(x+a,y+b,w,h,c);
+   rk(-52,-34,104,36,'#6e727a');rk(-46,-52,92,20,'#7c8088');rk(-38,-66,76,16,'#8a8e96');rk(-26,-76,52,12,'#9a9ea6');rk(-14,-82,28,8,'#a8acb4');
+   rk(-46,-52,30,3,'#a2a6ae');rk(-38,-66,24,3,'#b0b4bc');rk(-26,-76,18,3,'#bcc0c8');rk(-52,-34,10,36,'#5a5e66');rk(42,-34,10,36,'#5a5e66');rk(-52,0,104,2,'#4a4e56');
+   for(let i=0;i<9;i++){const h2=hsh(C.id+i);rk(-46+(h2%86),-60+((h2>>7)%50),4,2,'#5a5e66')}
+   if(C.id==='c1'){for(let i=0;i<6;i++){const h2=hsh('r'+i);rk(-40+(h2%80),-70+((h2>>5)%30),2,14+((h2>>9)%10),'#5a3c22')}rk(-30,-76,8,4,'#4f8a3a');rk(14,-72,10,4,'#4f8a3a')}
+   // the mouth
+   rk(-20,-38,40,40,'#0a090b');rk(-16,-44,32,8,'#0a090b');rk(-10,-48,20,6,'#0a090b');rk(-22,-38,2,40,'#3a3e44');rk(20,-38,2,40,'#3a3e44');
+   const pl=.5+.5*Math.sin(time*1.3);ctx.fillStyle=`rgba(${C.id==='c0'?'127,208,255':'255,184,74'},${(.05+.05*pl).toFixed(3)})`;ctx.fillRect(x-18,y-36,36,36);
+   // the sign
+   const sx=x+34,sy=y+10;px(sx-1,sy-16,3,16,'#5a3a1e');px(sx-24,sy-30,50,15,'#3a2414');px(sx-23,sy-29,48,13,'#a8783e');px(sx-23,sy-29,48,2,'#c89a5a');
+   ctx.font='bold 5px Rubik, system-ui, sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#2a1a0c';ctx.fillText(C.name,sx+1,sy-25);ctx.fillStyle=lvl>=C.lv?'#1f4a1a':'#7a1a10';ctx.fillText(`Sv ${C.lv} · meşale`,sx+1,sy-19);ctx.textBaseline='alphabetic'}
+ // ---------------------------------------------------------------- creatures' pictures
+ function art(k,a,x,y,f,time,l){const P=(dx,dy,w,h,c)=>px(f>0?x+dx:x-dx-w,y+dy,w,h,a.flash>0?'#ffffff':c),ch=a.st==='chase'||a.mad;
+   if(k==='Mağara yarasası'||k==='Yankı Kraliçesi'){const q=k==='Yankı Kraliçesi',fl=Math.round(-10+Math.sin(time*3+a.x*.1)*2),flap=Math.sin(time*16+a.x)>0,b=q?'#4a2a5a':'#3a3236',wn=q?'#5a3a6a':'#4a4044';
+     const Q2=(dx,dy,w,h,c)=>P(dx,dy+fl,w,h,c);Q2(-3,-5,6,5,b);Q2(-3,-5,6,1,q?'#7a5a8a':'#5a5256');Q2(2,-7,3,3,b);Q2(2,-8,1,1,b);Q2(4,-8,1,1,b);Q2(3,-6,1,1,ch?'#ff3a2a':'#e8d040');
+     if(flap){Q2(-11,-9,8,3,wn);Q2(3,-9,8,3,wn);Q2(-12,-10,2,1,b);Q2(10,-10,2,1,b)}else{Q2(-10,-4,7,2,wn);Q2(3,-4,7,2,wn)}
+     if(q){Q2(1,-11,1,2,'#f2c94c');Q2(3,-12,1,3,'#f2c94c');Q2(5,-11,1,2,'#f2c94c');Q2(1,-10,5,1,'#f2c94c')}
+     ctx.fillStyle='rgba(0,0,0,.18)';ctx.beginPath();ctx.ellipse(x,y+2,4,1.6,0,0,6.283);ctx.fill();return}
+   if(k==='Kör kertenkele'){P(-6,-4,12,4,'#e8c8c0');P(-6,-4,12,1,'#f8e0d8');P(6,-5,4,3,'#e8c8c0');P(9,-4,1,1,'#f8f0f0');P(-11,-3,5,2,'#d8b0a8');P(-13,-2,2,1,'#d8b0a8');P(-4,0,1,1+l,'#c89890');P(3,0,1,1-l,'#c89890');P(-1,-5,4,1,'#d8a8a0');return}
+   if(k==='Taş örümceği'){P(-4,-6,8,5,'#6a6e74');P(-4,-6,8,1,'#8a8e94');P(3,-5,3,3,'#5a5e64');P(5,-5,1,1,ch?'#ff3a2a':'#c8302a');P(5,-3,1,1,'#ff5a4a');
+     for(let i=0;i<4;i++){const o=(i%2?l:-l);P(-5+i*3,-2,1,3+o,'#4a4e54');P(-6+i*3,1+o,2,1,'#4a4e54')}return}
+   if(k==='Kök böceği'){P(-6,-7,12,7,'#5a3a20');P(-5,-7,10,1,'#8a6038');P(-1,-7,1,6,'#3a2412');P(6,-6,3,4,'#4a2e18');P(8,-8,2,3,'#7a5a38');P(9,-9,1,2,'#7a5a38');P(7,-5,1,1,ch?'#ff3a2a':'#e8a040');
+     for(let i=0;i<3;i++)P(-4+i*4,0,1,2+(i%2?l:-l),'#2a1a0c');return}
+   if(k==='Kök yılanı'){const w=Math.round(Math.sin(a.step*12));P(-8,-2+w,4,2,'#4a5a2a');P(-4,-2-w,4,2,'#5a4a28');P(0,-2+w,4,2,'#4a5a2a');P(4,-4,3,3,'#5a4a28');P(6,-4,1,1,ch?'#ff3a2a':'#e8e040');P(7,-2,2,1,'#c83a3a');for(let i=-7;i<4;i+=3)P(i,-2,1,1,'#2a2010');return}
+   if(k==='Mağara kurdu'){P(-6,-8,11,6,'#c8c8c4');P(-6,-8,11,1,'#e8e8e4');P(-5,-3,9,1,'#a8a8a4');P(4,-11,5,5,'#c8c8c4');P(8,-9,2,2,'#c8c8c4');P(5,-13,1,2,'#a8a8a4');P(7,-13,1,2,'#a8a8a4');P(7,-10,1,1,ch?'#9fd8ff':'#6a8aa8');P(-9,-8,3,2,'#b8b8b4');
+     P(-5,-2,2,2+l,'#9a9a96');P(-2,-2,2,2-l,'#9a9a96');P(1,-2,2,2+l,'#9a9a96');P(3,-2,2,2-l,'#9a9a96');return}
+   if(k==='Yaşlı Kök'){P(-7,-20,14,20,'#5a3c22');P(-7,-20,14,2,'#7a5434');P(-5,-26,10,6,'#4a3018');P(-3,-28,6,2,'#3e8a34');P(-2,-16,1,1,'#c070ff');P(2,-16,1,1,'#c070ff');P(-3,-12,6,1,'#2a1a0c');
+     const sw=Math.round(Math.sin(time*2+a.x)*2);P(-14,-16+sw,7,3,'#5a3c22');P(-16,-14+sw,3,6,'#4a3018');P(7,-16-sw,7,3,'#5a3c22');P(13,-14-sw,3,6,'#4a3018');
+     P(-6,0,3,2+l,'#3a2414');P(3,0,3,2-l,'#3a2414');P(-9,1,3,1,'#3a2414');P(7,1,3,1,'#3a2414');return}}
+ {const _da=drawAnimal;drawAnimal=function(a,time){const D=ANIM[a.k],k=D&&MYK.has(D.base||a.k)&&!MYK.has(a.k)?D.base:a.k;if(!MYK.has(k))return _da.apply(this,arguments);
+   const x=Math.round(a.x),y=Math.round(a.y),f=a.face||1,mv=a.st!=='wander'||a.dx||a.dy,l=mv?Math.round(Math.sin((a.step||0)*(a.st==='wander'?10:18))):0,s=+(a.scale||1)||1;
+   if(k!=='Mağara yarasası'&&k!=='Yankı Kraliçesi'){ctx.fillStyle='rgba(0,0,0,.22)';ctx.beginPath();ctx.ellipse(x,y+2,(ANIM[k].r+2)*Math.min(s,1.6),2.4,0,0,6.283);ctx.fill()}
+   ctx.save();if(s!==1){ctx.translate(x,y);ctx.scale(s,s);ctx.translate(-x,-y)}try{art(k,a,x,y,f,time,l)}finally{ctx.restore()}
+   if(a.tint||D&&D.boss){const p=.5+.5*Math.sin(time*4+a.x);ctx.save();ctx.globalCompositeOperation='lighter';const g=ctx.createRadialGradient(x,y-8*s,0,x,y-8*s,16*s);g.addColorStop(0,`rgba(180,74,255,${(.18+.12*p).toFixed(2)})`);g.addColorStop(1,'rgba(180,74,255,0)');ctx.fillStyle=g;ctx.fillRect(x-16*s,y-24*s,32*s,32*s);ctx.restore()}
+   if(a.hp<(D?D.hp:a.hp)){const w=D&&D.boss?30:14,k2=Math.max(0,a.hp/D.hp);hpBar(x-w/2,y-Math.round((D.fly?34:22)*Math.min(s,1.8)),w,k2)}}}
+ // ---------------------------------------------------------------- gatherables in a cave
+ {const _dn=drawNode;drawNode=function(n,time){if(!n.cave){if(CV.cur)return;return _dn.apply(this,arguments)}const x=Math.round(n.x),y=Math.round(n.y),t=time;
+   if(n.name==='Yankı mantarı'||n.name==='Kök mantarı'){const blue=n.name==='Yankı mantarı';if(blue){const p=.5+.5*Math.sin(t*2+n.v*9);ctx.save();ctx.globalCompositeOperation='lighter';const g=ctx.createRadialGradient(x,y-4,0,x,y-4,14);g.addColorStop(0,`rgba(127,208,255,${(.35+.2*p).toFixed(2)})`);g.addColorStop(1,'rgba(127,208,255,0)');ctx.fillStyle=g;ctx.fillRect(x-14,y-18,28,28);ctx.restore()}
+     const cap=blue?'#7fd0ff':'#e8dcc8',st=blue?'#c8e8f8':'#c8b8a0';px(x-4,y+1,9,2,'rgba(0,0,0,.25)');px(x-1,y-4,2,5,st);px(x-4,y-7,8,3,cap);px(x-3,y-8,6,1,cap);px(x+3,y-3,1,3,st);px(x+2,y-5,4,2,cap);px(x-3,y-7,2,1,'#ffffff')}
+   else if(n.name==='Damla taşı'){px(x-5,y+1,10,2,'rgba(0,0,0,.25)');px(x-3,y-8,6,9,'#a8acb4');px(x-2,y-11,4,3,'#bcc0c8');px(x-1,y-13,2,2,'#d0d4dc');px(x-3,y-8,1,9,'#8a8e96');if(Math.sin(t*3+n.v*20)>.9)px(x,y-14,1,1,'#ffffff')}
+   else if(n.name==='Kök reçinesi'){const p=.5+.5*Math.sin(t*2.4+n.v*9);ctx.save();ctx.globalCompositeOperation='lighter';const g=ctx.createRadialGradient(x,y-3,0,x,y-3,12);g.addColorStop(0,`rgba(255,184,74,${(.3+.2*p).toFixed(2)})`);g.addColorStop(1,'rgba(255,184,74,0)');ctx.fillStyle=g;ctx.fillRect(x-12,y-15,24,24);ctx.restore();
+     px(x-6,y+1,12,2,'rgba(0,0,0,.25)');px(x-5,y-3,10,4,'#5a3c22');px(x-2,y-6,5,4,'#e89a2a');px(x-1,y-7,3,1,'#ffc860');px(x,y-5,1,1,'#fff0c0')}}}
+ // ---------------------------------------------------------------- the world entrance (drawn among things), spawning inside
+ {const _ve=v55Ents;v55Ents=function(ents,time_){if(_ve)_ve.apply(this,arguments);try{if(!CV.cur)for(const C of CAVES)if(vis(C.door.x,C.door.y-40,120))ents.push({y:C.door.y,d:()=>drawDoor(C,time)})}catch(e){}}}
+ function caveSpawn(C){
+   for(let i=animals.length-1;i>=0;i--){const a=animals[i];if(Math.hypot(a.x-player.x,a.y-player.y)>820&&!a.boss)animals.splice(i,1)}
+   if(animals.filter(a=>!a.boss).length>=9)return;
+   for(const k of C.kinds){const P=PACK[k],of=animals.filter(a=>a.k===k),have=P?new Set(of.map(a=>a.pk)).size:of.length;if(have>=2)continue;
+     for(let g=0;g<30;g++){const i=C.FL[Math.floor(Math.random()*C.FL.length)],cx=i%N,cy=(i/N)|0,p=cellW(C,cx,cy),d=Math.hypot(p.x-player.x,p.y-player.y);
+       if(d<220||d>440||Math.hypot(cx-C.e.x,cy-C.e.y)<10||Math.hypot(cx-C.d.x,cy-C.d.y)<9)continue;const D=ANIM[k];
+       const mk=(x,y,pk)=>({k,x,y,hp:D.hp,st:'wander',t:0,dx:0,dy:0,face:1,atk:0,flash:0,kb:null,step:Math.random()*6,mad:false,pk});
+       if(!P){animals.push(mk(p.x,p.y,0));break}const n=P[0]+Math.floor(Math.random()*(P[1]-P[0]+1)),pk=++packId;animals.push(mk(p.x,p.y,pk));
+       for(let m=1,t=0;m<n&&t<30;t++){const x=p.x+(Math.random()-.5)*40,y=p.y+(Math.random()-.5)*40;if(!blocked(x,y)){animals.push(mk(x,y,pk));m++}}break}}}
+ {const _sa=spawnAnimals;spawnAnimals=function(){const C=cur();if(C){try{caveSpawn(C)}catch(e){}return}return _sa.apply(this,arguments)}}
+ // ---------------------------------------------------------------- the boss (called by the side quest)
+ function spawnBossC(id){const C=BYC[id];if(!C)return false;const k=C.boss,D=ANIM[k];if(animals.some(a=>a.k===k))return true;let x=C.deep.x,y=C.deep.y+56;if(!cell(C,x,y)){x=C.deep.x;y=C.deep.y+24}
+   animals.push({k,x,y,hp:D.hp,st:'chase',t:0,dx:0,dy:0,face:x<player.x?1:-1,atk:1,flash:0,kb:null,step:0,mad:true,pk:0,boss:1,base:k,scale:k==='Yankı Kraliçesi'?2.4:2,tint:'#b44aff',p4s:2.5,cvb:id});
+   CV.fought.add(id);shake=Math.max(shake,.4);shakeP=Math.max(shakeP,4);try{sfx('growl')}catch(e){}try{announce(k,'Mağaranın boss\'u!')}catch(e){}
+   for(let i=0;i<26;i++)parts.push({x,y:y-10,vx:(Math.random()-.5)*90,vy:-20-Math.random()*60,life:.8,c:i%2?'#b44aff':'#ffffff'});return true}
+ const beat=id=>{try{const P=window.__p4;return(P&&P.s&&P.s.bd&&P.s.bd[BYC[id].boss])||0}catch(e){return 0}};
+ // ---------------------------------------------------------------- the torch goes out: pitch dark, thrown out
+ {const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);try{const C=cur();if(C&&dt>0&&!fading){
+     if(torchHeld()){if(CV.dark){CV.dark=0}}else{if(!CV.dark){const own=ownsKind('torch');CV.dark=own?3:1.5;CV.darkT=0;bubble={text:own?'Karanlık! Meşalemi elime almalıyım…':'Meşalem bitti! Hiçbir şey göremiyorum…',t:3};try{sfx('bad')}catch(e){}if(own)toast('Mağara zifiri karanlık: meşaleni hemen eline al!',true)}
+       else{CV.darkT+=dt;if(CV.darkT>=CV.dark){CV.dark=0;loading('Gün ışığı','El yordamıyla dışarı çıktın…',()=>exitCave(false))}}}}}catch(e){}return r}}
+ // ---------------------------------------------------------------- fainting, saving, loading
+ {const _f=faint;faint=function(){try{if(CV.cur){if(animals.some(a=>a.cvb))CV.fought.add(CV.cur);exitCave(true)}}catch(e){}return _f.apply(this,arguments)}}
+ const pack=a=>{let s='';for(let i=0;i<a.length;i+=8){let b=0;for(let j=0;j<8;j++)if(a[i+j])b|=1<<j;s+=String.fromCharCode(b)}return btoa(s)};
+ const unpack=(s,a)=>{try{const t=atob(s);for(let i=0;i<t.length;i++){const b=t.charCodeAt(i);for(let j=0;j<8;j++)if(i*8+j<a.length)a[i*8+j]=(b>>j)&1}}catch(e){}};
+ {const _sn=snapshot;snapshot=function(){let px0=null;if(CV.cur&&CV.back){px0=[player.x,player.y];player.x=CV.back.x;player.y=CV.back.y}let s;try{s=_sn.apply(this,arguments)}finally{if(px0){player.x=px0[0];player.y=px0[1]}}
+   try{if(s){const ex={};for(const C of CAVES)ex[C.id]=pack(C.ex);s.v232={seen:[...CV.seen],f:[...CV.fought],ex}}}catch(e){}return s}}
+ {const _rs=restore;restore=function(d){try{if(CV.cur)exitCave(true,true)}catch(e){}const r=_rs.apply(this,arguments);try{const v=d&&d.v232;CV.seen=new Set(v&&v.seen||[]);CV.fought=new Set(v&&v.f||[]);for(const C of CAVES){C.ex.fill(0);if(v&&v.ex&&v.ex[C.id])unpack(v.ex[C.id],C.ex);C.mapDirty=1}}catch(e){}return r}}
+ {const _rz=resetState;resetState=function(){try{if(CV.cur)exitCave(true,true)}catch(e){}const r=_rz.apply(this,arguments);try{CV.seen=new Set();CV.fought=new Set();for(const C of CAVES){C.ex.fill(0);C.mapDirty=1}}catch(e){}return r}}
+ // ---------------------------------------------------------------- the almanac: "Mağara: …" under its land
+ {const P4=()=>window.__p4||{s:{bc:{},bd:{}}};
+  function pic(k,lock){try{const src=window.__plKind.canvas(k),B=window.__plKind.box(k)||{l:-16,r:16,t:-24,b:2};const w=B.r-B.l+6,h=B.b-B.t+6,c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.imageSmoothingEnabled=false;
+    g.drawImage(src,80+B.l-3,110+B.t-3,w,h,0,0,w,h);if(lock){g.globalCompositeOperation='source-in';g.fillStyle='#07060b';g.fillRect(0,0,w,h)}return c}catch(e){const c=document.createElement('canvas');c.width=32;c.height=24;return c}}
+  function info(k){const D=ANIM[k];const drops=[];for(const d of D.drops||[])if(drops.indexOf(d[0])<0)drops.push(d[0]);const tcol=D.temper==='saldırgan'?'#ff8a7a':D.temper==='nötr'?'#f2d070':'#9fe08a';
+    return `<h4>${esc(k)}<span class="tg" style="color:${tcol}">${esc(D.boss?'mağara boss\'u':D.temper)}</span></h4><p>Can <b>${D.hp}</b> · Hasar <b>${D.dmg||'—'}</b> · Hız <b>${D.spd||0}</b>${D.fly?' · uçar':''}</p>${window.__plAlmExtra?window.__plAlmExtra(k):''}<p>Düşürdükleri: ${drops.map(esc).join(', ')||'—'}</p>`}
+  function card(k){const el=document.createElement('div');el.className='ac';const S=P4().s,known=(kills[k]||0)>0;
+    if(!known){el.classList.add('lock');el.appendChild(pic(k,true));el.insertAdjacentHTML('beforeend','<h4>&#63;&#63;&#63;</h4><p>Henüz avlamadın.</p><div class="rz">Reis: ? / ?</div>');return el}
+    const need=P4().bossNeed?P4().bossNeed(k):10,bd=(S.bd&&S.bd[k])||0,bc=Math.min(need,(S.bc&&S.bc[k])||0);if(bd>0)el.classList.add('gold');el.appendChild(pic(k,false));
+    el.insertAdjacentHTML('beforeend',info(k)+`<p>Avladığın: <b>${kills[k]||0}</b></p>`+(bd>0?`<div class="rz">★ ${esc(k)} Reisi yenildi</div>`:`<div class="rz">Reis: <b>${bc} / ${need}</b><i><b style="width:${need?Math.round(bc/need*100):0}%"></b></i></div>`));return el}
+  function bossCard(C){const k=C.boss,el=document.createElement('div');el.className='ac';const b=beat(C.id)>0,f=CV.fought.has(C.id)||b;
+    if(!f){el.classList.add('lock');el.appendChild(pic(k,true));el.insertAdjacentHTML('beforeend','<h4>&#63;&#63;&#63;</h4><p>Mağaranın boss\'u. Henüz karşılaşmadın.</p>');return el}
+    if(b)el.classList.add('gold');el.appendChild(pic(k,false));el.insertAdjacentHTML('beforeend',info(k)+(b?`<div class="rz">★ ${esc(k)} yenildi</div>`:'<div class="rz">Karşılaştın, henüz yenemedin</div>'));return el}
+  const addCave=()=>{const A=window.__plAlm,gg=$('alm-g');if(!A||!gg||!A.open||gg.querySelector('.cvh'))return;for(const C of CAVES){if(C.b!==A.b||!CV.seen.has(C.id))continue;
+    const n=C.kinds.filter(k=>(kills[k]||0)>0).length;const h=document.createElement('div');h.className='cvh';h.innerHTML=`Mağara: ${esc(C.name)}<small>Sv ${C.lv} · ${n} / ${C.kinds.length} canlı · boss: ${beat(C.id)>0?'yenildi ★':CV.fought.has(C.id)?'karşılaşıldı':'?'}</small>`;gg.appendChild(h);
+    for(const k of C.kinds)gg.appendChild(card(k));gg.appendChild(bossCard(C))}};
+  const go=()=>{const gg=$('alm-g');if(!gg){setTimeout(go,1000);return}new MutationObserver(()=>{setTimeout(addCave,0)}).observe(gg,{childList:true});setInterval(()=>{try{addCave()}catch(e){}},700)};go()}
+ window.__plCave={get cur(){return CV.cur},caves:CAVES,PK,N,spawnBoss:spawnBossC,bossAlive:id=>animals.some(a=>a.cvb===id),beat,fought:id=>CV.fought.has(id)||beat(id)>0,enter:id=>{const C=BYC[id];if(C)doEnter(C)},exit:()=>exitCave(true)};
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v232: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

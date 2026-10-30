@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.31** ile birebir (30 Ekim 2026). Bu sürümde: telefonda yan görev kartı sağ üstte ana görev kartının altında; yan görev sürerken haritada yan görevin yeri sarı. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.32** ile birebir (30 Ekim 2026). Bu sürümde: mağaralar geldi (Çayır'da Yankı Mağarası Sv 5, Orman'da Kök Mağarası Sv 10; meşaleyle girilir, içinde canlılar, Reis'ler, boss ve en dipte bir yan görev). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

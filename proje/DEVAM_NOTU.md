@@ -9,6 +9,16 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.32 (30 Ekim 2026) · mağaralar (Yankı Mağarası Sv 5, Kök Mağarası Sv 10)
+- Belge: yeni `parts/37_magaralar.md`; `36_yan_gorevler.md` notu; `00_giris.md` sürüm satırı.
+- Yeni `v232` bloğu (yalnızca ISLE 1). Canlılar `NK` (6) + boss'lar `BK` (boss:1, base kendisi); `MYK` çizim seti; Reis'ler P4'ün `makeBoss`'u ile kendiliğinden. Eşyalar: `RES` (draw:'cave', respawn 1e9), `DB.p` fiyatları, `addR` ile 10 tarif (DB.R, REC, RESULTS, USES), `PIXI` ile 8 elle ikon.
+- Yer: girişler biyomda deterministik (`rngOf('cave-door-'+id)`), ağaç 80/düğüm 60 px, kişilerden 420 px uzak; mound `blocked` elipsi; `XTRA` giriş (Sv + meşale kontrolü) ve iç çıkış. **Cep (PK):** batı (ZONE 0) içinde, kişi/ateş/yan görev/girişlerden 300 px uzak, kötü karo ≤%30 olan en büyük kare (N≥60, şimdi ~89); iki mağara aynı cebi paylaşır. Kötü karolar duvar. `build(C)`: ağızdan derin odaya kıvrımlı ana tünel + N/5 kol + odalar, 2 geçiş yumuşatma, ağızdan erişilemeyen yer duvar. `paint(C)` bir kez tuval.
+- İçerideyken (`CV.cur`): `blocked` yalnızca mağara ızgarası; cepteki düğümler x=-99999'a, `TGRID` cepte boş, mağara düğümleri `nodes`'a eklenir (çıkışta geri); `drawGround` mağara tuvali; `skipIn` ile su/tarla/iskele/köprü/ağaç/yapı/köpek/hava/sis/yol okları çizilmez; `darkness` .985, `roomSafe` true (mor ışık yok), `lightSources` giriş + NPC feneri + parlayan düğümler; `TORCHL` ×2; `reveal`/`drawMap` mağaranın haritası; `spawnAnimals` → `caveSpawn`; `__v65.seen` add/has yamalı (cebin biyomu keşfedilmez). Meşale yoksa `CV.dark` 1,5/3 sn sonra dışarı.
+- Boss: `spawnBossC` (cvb=id, scale 2–2,4); yenilme `__p4.s.bd[boss]`. `CV.fought` (karşılaşıldı). Yan görev motoru (v230) değişti: Q'ya `cevdet`/`leyla` (cave:'c0'/'c1'), adım türü `boss`, `present` mağara kontrolü, harita/bioSeen dışı, ikinci ziyarette doğrudan boss (`q.again`).
+- Almanak: `#alm-g` MutationObserver ile biyom sayfasına "Mağara: …" bölümü (kartlar, Reis sayacı, boss kartı: kapalı / karşılaşıldı / altın).
+- Kayıt: `snapshot().v232={seen,f,ex}` (mağara haritası bit dizisi); mağaradayken kayıtta oyuncu girişin önüne yazılır; `restore`/`resetState`/`faint` önce mağaradan çıkarır.
+- Doğrulama: chk.js; Playwright ile giriş, canlı doğması, Cevdet görevi, boss yenme, almanak, dış giriş görüntüsü ve ikonlar denendi (büyük özellik, "oyun açılıyor" kontrolü kapsamında).
+
 ## v2.31 (30 Ekim 2026) · yan görev kartı telefonda sağ üstte, haritada yan görevin yeri sarı
 - `v230` bloğu yerinde düzeltildi (yeni blok yok). `renderSQ`: kart `tutEl` görünürse onun sol/genişlik/alt kenarına hizalanır; değilse telefonda sağ üst (`right:52px`), bilgisayarda üst orta. Telefonda `craftOpen||dlgOpen` iken gizli; `.sqopen` dokununca açılır (telefonda kapalıyken tek satır). `window.__plMapQ` sarmalı: `A` varken ana görevin `_mq`'su çağrılmaz; `mapSQ` hedefin çevresine 180 px sarı radyal alan + halkalar çizer.
 - Belge: `parts/36_yan_gorevler.md` kural 10 ve 11'e v2.31 ekleri; `00_giris.md` sürüm satırı.
