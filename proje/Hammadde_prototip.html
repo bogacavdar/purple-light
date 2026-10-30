@@ -15579,5 +15579,25 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v229: '+(e&&e.message||e))}catch(_){}}})();
 </script>
+<script id="v229-hile">
+// v2.29: cheats on a phone. Unlocking the cheat settings (3 taps / "cheat") used to only show them: the real "Hile modu" switch had to be
+// turned on in the main menu's Ayarlar and was hidden in the game's Ayarlar, so in a game no cheat could be switched on. Now unlocking
+// also switches Hile modu on (the single cheats still start off), the switch shows in the game's Ayarlar too, and a tap/click gesture
+// only unlocks (a quick triple tap on the main menu used to lock and switch everything off by accident; "cheat" typed still toggles).
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ {const st=document.createElement('style');st.id='v229-hile-css';st.textContent='body.setgame.cheatok label[for=cheat]{display:grid!important}';document.head.appendChild(st)}
+ const B=document.body;let was=B.classList.contains('cheatok');
+ const masterOn=()=>{try{const c=$('cheat');if(c&&!settings.cheat){c.checked=true;c.dispatchEvent(new Event('change'))}}catch(e){}};
+ if(was&&!settings.cheat)masterOn();   // already unlocked on an earlier visit but the switch was never turned on
+ new MutationObserver(()=>{const now=B.classList.contains('cheatok');if(now&&!was)setTimeout(masterOn,0);was=now}).observe(B,{attributes:true,attributeFilter:['class']});
+ // a tap/click gesture never locks once unlocked: stop the triple-tap counters before they see the press
+ window.addEventListener('pointerdown',e=>{try{if(!onTitle||!B.classList.contains('cheatok')||e.button>0)return;const t=e.target;if(!t||!t.closest)return;
+     const h=t.closest('#settings h2');
+     const bg=!h&&t.closest('#title')&&!t.closest('button,input,label,a,select,textarea,#settings,#about,#xfer,#achov,[role=dialog]');
+     if(h||bg)e.stopImmediatePropagation()}catch(x){}},true);
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v229-hile: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 </body>
 </html>

@@ -9,10 +9,11 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
-## v2.29 (30 Ekim 2026) · maden kayaları geçilmez — BEKLEYEN PAKET (yayında değil)
-- `bekleyen-paket` dalında; "paket çık" denince GUNCELLEME_NOTLARI'na yazılır, `yayinla.sh`, main'e alınır.
+## v2.29 (30 Ekim 2026) · maden kayaları geçilmez, telefonda hileler açılmıyordu (kritik, hemen yayın)
+- Boğaç "kritik" dedi → aynı turda yayın (bekleyen-paket → main).
 - Yeni `v229` bloğu. Belge: `parts/20_sistemler.md` "Maden kayaları geçilmez".
 - `blocked` sarıldı: `n.mine` ya da `RES[n].draw==='ore'` olan canlı düğümler için çizime uyan basamaklı sınır (birimde taban y+3'ten yukarı: 0..−9 yarı genişlik 8, −9..−12 6, −12..−14 3,5; madende ×2; +HALF pay). Kendi ızgarası (48 px) `nodes.length` değişince ya da 1,5 sn'de bir yenilenir (eski `MG`/`mineAt` yalnızca açılışta kuruluyordu). `window.__plRockAt`. 400 ms'de bir karakter kayanın içindeyse altına/üstüne/yanına alınır.
+- **Hileler (yeni `v229-hile` bloğu):** sebep: 3 dokunuş / `cheat` yalnızca `cheatok`'u açıyordu (ayarlar görünür), `settings.cheat` (asıl Hile modu) ana menü Ayarlar'ından ayrıca açılmalıydı; oyun içinde `body.setgame label[for=cheat]` gizli, `#b5cheat` de `settings.cheat` yoksa gizli → oyunda hiçbir hile yok. Ayrıca ana menüde arka plana hızlı 3 dokunuş (v94) `setOk(!ok)` ile her şeyi kapatıyordu. Düzeltme: `body.cheatok` eklenince (MutationObserver) `#cheat` işaretlenip `change` gönderilir; açılışta cheatok var ama Hile modu kapalıysa da açılır. `body.setgame.cheatok label[for=cheat]{display:grid!important}`. Kilit açıkken ana menüdeki arka plan ve `#settings h2` pointerdown'ları window capture'da `stopImmediatePropagation` ile durdurulur (dokunuş yalnızca açar; klavye `cheat` hâlâ aç/kapa). Playwright telefon emülasyonuyla doğrulandı (Boğaç "kritik" dedi; teşhis için).
 - Eski kayıtlara etkisi yok.
 
 ## v2.28 (30 Ekim 2026) · küçük yaprak, telefonda sürükleme, canavar başını çevirip atılır, ilk görev uyarısı, × yeri, meşale silah

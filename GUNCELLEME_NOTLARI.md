@@ -7,6 +7,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.29 · 30 Ekim 2026
+
+**Düzeltmeler**
+- **Telefonda hileler açılmıyordu (kritik):** ana menüde 3 kez dokununca "hile modu açıldı" deniyordu ama bu yalnızca hile ayarlarını görünür yapıyordu; asıl **Hile modu** anahtarı ana menünün Ayarlar'ından ayrıca açılmalıydı, oyunun içinde de gizliydi. Bu yüzden oyuna girince Ayarlar'da hiçbir hile çıkmıyordu. Artık hile ayarları açıldığı an Hile modu da kendiliğinden açılıyor (tek tek hileler yine kapalı başlıyor), oyunun içindeki Ayarlar'da hepsi görünüyor ve **Hile modu anahtarı oyunun içinde de var**.
+- **Hileler yanlışlıkla kapanmıyor:** ana menüde hızlıca 3 kez dokunmak eskiden bütün hileleri gizleyip kapatıyordu. Artık dokunarak hileler yalnızca açılıyor; kapatmak için Hile modu anahtarını kapat (bilgisayarda yeniden `cheat` yazmak da kapatır).
+- **Maden kayalarının içinden geçilmiyor:** maden kayaları iki kat büyük çiziliyor ama yalnızca tabanlarındaki küçük bir alan engeldi; üst yarılarının içine yürünebiliyordu. Oyun açıldıktan sonra çıkan kayalar ise hiç engel olmuyordu. Artık her kayanın görselinin çevresi (şekline uyan bir sınır ve küçük bir pay) duvar: karakter de canavarlar da içine giremiyor, arkasından geçerken ayakların kayanın tepesinin üstünde duruyor. Tükenen kaya engel değil. Bir kayanın içinde kalmışsan kendiliğinden kayanın altına alınıyorsun.
+
+**Tasarım belgesi**
+- Sistemler: "Maden kayaları geçilmez"; Hileler: "Açınca Hile modu da açılır" (oyun içinde anahtar, dokunuş yalnızca açar).
+
 ## Versiyon 2.28 · 30 Ekim 2026
 
 **Oynanış**
