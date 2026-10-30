@@ -7,6 +7,36 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.30 · 30 Ekim 2026
+
+**Oynanış**
+- **Yan görevler geldi.** Görevler artık ikiye ayrılıyor: adanın kişilerinin görevleri **ana görev**, yolda karşına çıkan insanların görevleri **yan görev**. İlk dört biyoma üçer tane, toplam **12 yan görev** eklendi:
+  - **Çayır:** Elif (denizden dönmeyen kardeşi, mor ışık), Çoban Hüsnü (kaçan keçisi Pamuk), Güvercinci Kerem (uçup giden dört güvercin ve ayaklarındaki notlar).
+  - **Orman:** Mina (yalnızca gece; ailesini kaybetmiş küçük kızı Ekin'in ateşine götür, yolda canavarlar çıkıyor, meşale şart), Şövalye Nadir Dede ("ejder" avı), Satıcı Sadık (devrilen araba).
+  - **Bataklık:** Avcı Cemal (yarasını sar, sonra başında bekle), Sabri (ışığı görüp geri dönen adam), Falcı Nermin (kehanet ve kara kurt).
+  - **Kayalık Dağ:** Saniye Teyze (kaybolan torunu Emir'in izleri; acı bir son), Yolcu Haydar (dağda kaybolmuş, ocağa götür), Işıl (yalnızca gece görünen hayalet kız).
+- **Ana görevle birlikte yapılır:** bir ana görev ve bir yan görev aynı anda sürebilir.
+- **Kaçırılmaz:** yan kişiler görev bitene kadar her gün kendi saatlerinde aynı yerde çıkıyor; hava durumu etkilemiyor.
+- **Bayılınca yalnızca yan görev yarıda kalır:** ana görev olduğu gibi durur; yan görevi en baştan yeniden alabilirsin.
+- **Yan görevde çıkan canavarlar almanakta sayılmaz**, Reis sayacını doldurmaz ve bu sırada Reis gelmez.
+- **Ödül:** şimdilik sikke ve XP (60–180 sikke, 40–140 XP).
+- **Sonuçlar adada kalıyor:** Mina Ekin'in ateşinin başında oturuyor, Pamuk Hüsnü'nün yanında otluyor, Kerem'in güvercinliği kuruluyor, Sadık'ın arabası onarılmış duruyor, Saniye Teyze'nin kulübesinin yanında yıldız çizili bir taş var, Işıl'ın taşının yanında geceleri bir fener yanıyor.
+
+**Arayüz**
+- **Yan görev kartı:** süren yan görev, ana görev kartının altında mavi kenarlı ayrı bir kartta (adım ve ilerleme; köşede bırakmak için ×).
+- **Ana görev kartı** artık "… · Ana görev" yazıyor. **Görevler penceresi** iki bölüm: Ana görev ve Yan görevler (süren yan görev, bitirdiklerin x/12).
+- **Haritada yan görevler:** yeri açılmış yan kişi haritada mavi bir "?", yeri henüz kapalıysa yerinin çevresinde sisli bir çember ve ortasında "?" olarak görünüyor (yalnızca ayak bastığın biyomlarda). Süren yan görevin hedefi haritada mavi bir halka, ekran dışındaysa kenarda mavi bir ok.
+- Görevi olan yan kişinin başında küçük açık mavi bir "?" var.
+
+**Görsel**
+- Yan kişiler, keçi, güvercinler, kayık enkazı, şişe, mor kıymıklar, mağara, Saniye Teyze'nin kulübesi, hayalet kız ve fener için yeni çizimler.
+
+**Tasarım belgesi**
+- Yeni bölüm **"ACT 1 · Yan görevler"**: kurallar, harita, 12 görevin bütün hikâyesi ve adımları, ödüller ve ileride konuşulacak ödül fikirleri. ACT 1 görev kurallarına ana/yan görev ayrımı notu.
+
+**Proje**
+- Çalışma kurallarına eklendi: büyük güncellemeler "paket çık" beklemeden aynı gün yayına gider.
+
 ## Versiyon 2.29 · 30 Ekim 2026
 
 **Düzeltmeler**

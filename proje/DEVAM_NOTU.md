@@ -9,8 +9,8 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
-## v2.30 (30 Ekim 2026) · yan görevler (12 yan kişi, ana/yan görev ayrımı) — BEKLEYEN PAKET (yayında değil)
-- `bekleyen-paket` dalında; "paket çık" denince GUNCELLEME_NOTLARI'na yazılır, `yayinla.sh`, main'e alınır.
+## v2.30 (30 Ekim 2026) · yan görevler (12 yan kişi, ana/yan görev ayrımı)
+- 30 Ekim 2026'da "paket çık" ile yayına gitti. Aynı gün CLAUDE.md'ye kural: büyük güncellemelerde "paket çık" beklenmez.
 - Belge: yeni `parts/36_yan_gorevler.md` (kurallar, harita, 12 hikâye, adım türleri, ödüller, ileride ödül fikirleri); `parts/30_act1.md` Temel kurallar'a ana/yan görev notu.
 - Yeni `v230` bloğu (yalnızca `ISLE===1`). Veri: `Q` (12 görev: id, b biyom 0–3, win [dk,dk], c/x ödül, intro/remind/after, steps). Adım türleri: go, collect, chase, escort (who self|goat, to camp|fam3|npc, light, waves [[ilerleme,n]]), kill (mobs [k,n]), guard (dur, every, n), bring (items, ham malzeme), back. `end:1` = adım bitince görev biter.
 - Yerler: biyom kutusu (BIO&reach) içinde SLOT kesirleri → `findNear` (deterministik `rngOf('sq-'+id)`; ağaç/düğüm/engel yok, AV listesinden 240 px uzak). Elif İskele yanında. Görev noktaları `q.pts`. Ağaç/düğüm SİLİNMEZ (eski kayıtlarda ağaç indeksleri kaymasın diye).
