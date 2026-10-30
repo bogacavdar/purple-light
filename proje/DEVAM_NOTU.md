@@ -9,8 +9,7 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
-## v2.33 (30 Ekim 2026) · başka demircide seçilen tarif örse taşınmıyor, meşale vuruşta 3 kat aşınır, balta dersi listesinde sopa yok, kategorili yemek menüsü, kaya üstü toplanabilirler, telefonda düşmana otomatik vuruş, telefonda tam ekran anı ve harita, sıkışan canlı, ateş kenarında kurt, canlılar can yeniler, yavaş yanma, almanak konuk kartı, yürürken alet seçme — BEKLEYEN PAKET (yayında değil)
-- `bekleyen-paket` dalında; "paket çık" denince GUNCELLEME_NOTLARI'na yazılır, `yayinla.sh`, main'e alınır.
+## v2.33 (30 Ekim 2026) · başka demircide seçilen tarif örse taşınmıyor, meşale vuruşta 3 kat aşınır, balta dersi listesinde sopa yok, kategorili yemek menüsü, kaya üstü toplanabilirler, telefonda düşmana otomatik vuruş, telefonda tam ekran anı ve harita, sıkışan canlı, ateş kenarında kurt, canlılar can yeniler, yavaş yanma, almanak konuk kartı, yürürken alet seçme
 - Sebep: `openMenu` seçili tarifi (`pot.r`) yalnızca kazan↔örs geçişinde sıfırlıyordu; Dursun'da seçilen Taş balta Durmuş'un örsünde seçili kalıyordu. Yeni `v233` bloğu: `renderCraft` sarmalı, örs açıkken `smithOf(pot.r)!==(forgeWho||smith)` ise `returnAll()`, `pot.r=null`, `pot.put=[]`.
 - Belge: `parts/20_sistemler.md` Örs maddesine not.
 - Börü'nün balta dersi (tz 12) takip listesi: hedef parça bir tarifse (`REC.get(S[0])`) listeye eklenmez, yalnızca malzemeleri (satır ~7852, yerinde değişiklik). Belge: `10_akis.md` 12. adım.
@@ -27,6 +26,11 @@
 - Almanak konuk kartı: v230 `MOB` → `window.__plMOB`; almanak `render()` (yerinde) sayfanın biyomundaki MOB canlılarından avlanmış ve listede olmayanları sona ekler, sayıya katmaz.
 - Almanak `lands()` (yerinde): görülmemiş biyom, BANIM listesinden bir canlısı avlandıysa sekmesiyle eklenir (Çayır'da avlanan Orman engereği). Not: Çayır'ın kendi doğumunda Engerek çıkmıyor (400 deneme, 0); Boğaç'ın gördüğü ~%10 canlı Engerek'in nereden geldiği bulunamadı, büyük ihtimalle Orman sınırından kovalayarak geldi.
 - Yürürken alet seçme: `v233-hot` bloğu; `#hotbar` touchstart/move/end (capture, passive) ile dokunuş (<12 px, <0,5 sn, aynı yuva) touchend'de `handTap`/`selectHot`; ardından gelen click 700 ms yutulur (selectHot aç/kapa yaptığı için çift sayılmasın).
+- Telefonda görev kartı ×: `v233-scene` içinde `v233-q2x` stili (`body.v50m #tut.q2xon` sağ boşluk 36 px; kapalı kartta 2 satır). Eski `#tut.q2xon` kuralı `body.v50m #tut`'a yeniliyordu.
+- Görev sahnesi: `drawQL` (yerinde) balon şeritler arasına ve ekran içine sıkıştırılır; `v233-scene`: sahnede `annNext` bekler (tek zamanlayıcı), açık duyuru kuyruğa geri döner, `toast` kuyruğa (en çok 8) alınır.
+- Gündüz gece canlıları: `v233-scene` tickAnimals sarmalı; `ANIM[k].night` (Kurt), boss/sq/tut/ders/dl/ar hariç, gündüz (`!isNightT()`) kaçar, 300 px ya da 6 sn'de silinir.
+- Yan kişi konuşma resmi: v230 `who()` nesnelerine `sqk`; `sqPor` (LK'den drawChibi 24×26) ve `say` sarmalı `#dlg.v64` + `img.v64p`.
+- Kurtların almanakta görünmemesi: yan görevde (Mina) kesilen kurtlar Boğaç'ın kuralı gereği sayılmıyor (36_yan_gorevler kural 7); kod değişmedi.
 
 ## v2.32 (30 Ekim 2026) · mağaralar (Yankı Mağarası Sv 5, Kök Mağarası Sv 10)
 - Belge: yeni `parts/37_magaralar.md`; `36_yan_gorevler.md` notu; `00_giris.md` sürüm satırı.

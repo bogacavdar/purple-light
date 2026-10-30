@@ -14827,7 +14827,7 @@ function drawQE(){const E=QSC.on&&QSC.emo;if(!E)return;const k=(performance.now(
   ctx.fillStyle='rgba(17,23,15,.85)';ctx.beginPath();ctx.arc(Math.round(o.x),y-5,8,0,6.283);ctx.fill();ctx.fillStyle=/[!?…]/.test(E.e)?'#ffd23a':'#ffffff';ctx.fillText(E.e,Math.round(o.x),y);ctx.restore()}
 function drawQL(){drawQE();const l=QSC.on&&QSC.L[QSC.i];if(!l||l.t==null)return;const o=l.w==='p'?player:QSC.o;if(!o)return;ctx.save();ctx.font='bold 7px Rubik, system-ui, sans-serif';
   const words=l.t.split(' '),lines=[];let cur='';for(const wd of words){const t=cur?cur+' '+wd:wd;if(ctx.measureText(t).width>150&&cur){lines.push(cur);cur=wd}else cur=t}if(cur)lines.push(cur);
-  const w=Math.ceil(Math.max.apply(null,lines.map(x=>ctx.measureText(x).width)))+10,h=lines.length*9+4,x=Math.round(o.x),y=Math.round(o.y)-38;
+  const w=Math.ceil(Math.max.apply(null,lines.map(x=>ctx.measureText(x).width)))+10,h=lines.length*9+4;let x=Math.round(o.x),y=Math.round(o.y)-38;{const vW=innerWidth/S,vH=innerHeight/S,bar=innerHeight*.11/S,top=cam.cy+bar+h+3,bot=cam.cy+vH-bar-10;if(y<top)y=Math.round(top);if(y>bot)y=Math.round(Math.max(top,bot));const l0=cam.cx+4+w/2,r0=cam.cx+vW-4-w/2;if(x<l0)x=Math.round(l0);if(x>r0)x=Math.round(Math.max(l0,r0))}   /* v2.33: never under the black bars or off the screen (phone) */
   const npc=l.w==='n';ctx.fillStyle=npc?'rgba(255,246,214,.97)':'rgba(255,252,240,.96)';ctx.fillRect(x-w/2,y-h,w,h);ctx.fillRect(x-2,y,4,3);ctx.strokeStyle=npc?'#7a5a1a':'#3a2a1a';ctx.lineWidth=1;ctx.strokeRect(x-w/2+.5,y-h+.5,w-1,h-1);
   ctx.fillStyle='#2a1e14';ctx.textAlign='center';ctx.textBaseline='alphabetic';lines.forEach((t,i)=>ctx.fillText(t,x,y-h+9+i*9));
   if(npc||QSC.i<QSC.L.length-1){ctx.font='6px Rubik, system-ui, sans-serif';ctx.fillStyle='rgba(255,255,255,.75)';ctx.fillText(TOUCH?'dokun ▸':'tıkla ▸',x+w/2-12,y+8)}ctx.restore()}
@@ -15790,7 +15790,9 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const clearMobs=()=>{for(let i=animals.length-1;i>=0;i--)if(animals[i].sq)animals.splice(i,1)};
  function cancelA(why){if(!A)return;const q=BY[A.id];clearMobs();A=null;renderSQ();if(why)toast(`${why}: ${q.title}. Yeniden almak için ${q.name} ile konuş${q.night?' (yalnızca gece)':''}.`,true)}
  // ---------------------------------------------------------------- talking
- const WHO={},who=k=>{if(k==='p')return{name:'Sen'};if(k==='x')return{name:'—'};if(k==='e')return npc;return WHO[k]||(WHO[k]={name:BY[k].name})};
+ const WHO={},who=k=>{if(k==='p')return{name:'Sen'};if(k==='x')return{name:'—'};if(k==='e')return npc;return WHO[k]||(WHO[k]={name:BY[k].name,sqk:k})};
+ const SQP={},sqPor=k=>{if(SQP[k])return SQP[k];const L=LK[k];if(!L)return null;const c=document.createElement('canvas');c.width=24;c.height=26;const g=c.getContext('2d');drawChibi(g,12,29,L,{noShadow:1,fx:0,fy:1});return SQP[k]=c.toDataURL()};   // v2.33: the side person's own face in the talk box (was Nuri's)
+ {const dl=$('dlg'),_say=say;say=function(text,ch,w){const r=_say.apply(this,arguments);try{if(w&&w.sqk){const src=sqPor(w.sqk),im=dl.querySelector('.dport img.v64p');if(src&&im){for(const c of ['trader','witch','smith','wizard','farmer','market','hunter','clue','lamp','fisher'])dl.classList.remove(c);dl.classList.add('v64');im.src=src}}}catch(e){}return r}}
  function pages(q,L,fin,last){let i=0;const nx=()=>{if(i>=L.length){bye();if(fin)fin();return}const [k,t]=L[i++];const isLast=i>=L.length;
      say(t,[{t:isLast?(last||'Tamam'):(BY[q.id].quiet&&k!=='x'?'…':'Devam'),pri:1,fresh:1,f:nx}],k==='n'?who(q.id):who(k))};nx()}
  function complete(q,silent){done.add(q.id);clearMobs();A=null;
@@ -16496,6 +16498,29 @@ hb.addEventListener('touchend',e=>{for(const t of e.changedTouches){const o=T[t.
 hb.addEventListener('touchcancel',e=>{for(const t of e.changedTouches)delete T[t.identifier]},{passive:true,capture:true});
 hb.addEventListener('click',e=>{if(performance.now()-sup<700&&slotOf(e.target)){e.stopImmediatePropagation();e.preventDefault()}},true);
 }).toString()+')()')}catch(e){console.warn('v233-hot',e)}})();
+</script>
+<script id="v233-scene">
+// =====================================================================================================
+// v2.33: (1) while a quest scene plays, the big banners and the small toasts wait until it ends (they covered the balloons on a phone);
+// (2) at 06:00 the night-only creatures (Kurt…) stop chasing, run off and vanish (300 px away or after 6 s); Reis and side-quest foes stay.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const inSc=()=>document.body.classList.contains('qscene');
+{const st=document.createElement('style');st.id='v233-q2x';st.textContent='body.v50m #tut.q2xon{padding-right:36px!important}body.v50m #tut.q2xon #q2x{top:3px;right:4px;width:26px;height:26px;font-size:16px}body.v50m:not(.tutx) #tut.q2xon p{-webkit-line-clamp:2!important}';document.head.appendChild(st)}   // v2.33: the phone's own #tut rule beat the room for the ×
+new MutationObserver(()=>{try{if(!inSc()||!annCur)return;const el=$('discover');if(!el||el.hidden)return;clearTimeout(discTimer);annQ.unshift(annCur);annCur=null;el.hidden=true;annNext()}catch(e){}}).observe(document.body,{attributes:true,attributeFilter:['class']});   // a banner already up when the scene starts goes back to the queue
+{let wt=false;const _an=annNext;annNext=function(){if(inSc()){if(!wt){wt=true;const go=()=>{if(inSc()){setTimeout(go,600);return}wt=false;try{_an()}catch(e){}};setTimeout(go,600)}return}return _an.apply(this,arguments)}}
+{const Q=[];const _t=toast;toast=function(m,w){if(inSc()){if(Q.length<8)Q.push([m,w]);return}return _t.apply(this,arguments)};
+ setInterval(()=>{try{if(!inSc()&&Q.length){const x=Q.shift();_t(x[0],x[1])}}catch(e){}},700)}
+const nightOnly=k=>{const D=ANIM[k];return !!(D&&D.night)};
+const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);
+  try{const t=+dt||0;if(t<=0||isNightT()||window.__plArena||(window.__plCave&&window.__plCave.cur))return r;
+    for(let i=animals.length-1;i>=0;i--){const a=animals[i];if(!a||a.boss||a.sq||a.tut||a.ders||a.dl||a.ar||!nightOnly(a.k))continue;const D=ANIM[a.k];
+      a._dawn=(a._dawn||0)+t;a.mad=false;a.wind=0;a.lunge=null;a.p4slam=null;a.mv=null;a.st='flee';
+      const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy)||1;moveA(a,dx/d*(D.spd||60)*1.1,dy/d*(D.spd||60)*1.1,t);
+      if(d>300||a._dawn>6){for(let k=0;k<10;k++)parts.push({x:a.x+(Math.random()-.5)*10,y:a.y-5,vx:(Math.random()-.5)*40,vy:-15-Math.random()*20,life:.5,c:k%2?'#c8b898':'#8a8070'});animals.splice(i,1)}}}catch(e){}
+  return r};
+}).toString()+')()')}catch(e){console.warn('v233-scene',e)}})();
 </script>
 </body>
 </html>
