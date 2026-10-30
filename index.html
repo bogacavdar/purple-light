@@ -8016,7 +8016,7 @@ const _tzKey=tzKey;
 const TZK_EXTRA={eat:()=>TOUCH?'sol menüdeki <b>yemek düğmesine</b> (ekmek simgesi) dokun':'sol menüdeki <b>yemek düğmesine</b> (ekmek simgesi) tıkla ya da <span class="kc">F</span>\'ye bas'};
 tzKey=function(k){return TZK_EXTRA[k]?TZK_EXTRA[k]():_tzKey.apply(this,arguments)};
 const _tzCard=tzCard;tzCard=function(){const C=_tzCard.apply(this,arguments);if(!C)return C;const h=n=>inv[n]||0;
-  if(tz===2)return['ekin','Ekin · Ye',`Şimdi karnını doyur: ${tzKey('eat')}. Her basışta en uygun yiyeceğini yersin; şimdilik o da böğürtlen. <b>Beşini de ye.</b>${TOUCH?' (Düğmeye basılı tutarsan ne yiyeceğini listeden kendin seçersin.)':' (Ne yiyeceğini seçmek istersen <span class="kc">F</span>\'yi basılı tut ya da düğmeye sağ tıkla: liste açılır.)'} (Yenen ${Math.min(5,tzEat)}/5)`];
+  if(tz===2)return['ekin','Ekin · Ye',`Şimdi karnını doyur: ${tzKey('eat')}. Her basışta en uygun yiyeceğini yersin; şimdilik o da böğürtlen. <b>Beşini de ye.</b>${TOUCH?' (Düğmeye basılı tutarsan ne yiyeceğini listeden kendin seçersin: önce üstten <b>Meyveler</b> sekmesini seç, sonra Böğürtlen\'in <b>Ye</b> düğmesine bas.)':' (Ne yiyeceğini seçmek istersen <span class="kc">F</span>\'yi basılı tut ya da düğmeye sağ tıkla: liste açılır; önce üstten <b>Meyveler</b> sekmesini seç, sonra Böğürtlen\'in <b>Ye</b> düğmesine bas.)'} (Yenen ${Math.min(5,tzEat)}/5)`];
   if(tz===4&&!tzNeed().length&&!foundSet.has('Kaba meşale'))return['witch','Zümrüt · Gel, tarifi öğrenelim',craftOpen&&mode==='craft'?`${TOUCH?'Listeden':'Soldan'} <b>Kaba meşale</b>'yi seç, malzemelere ${TOUCH?'dokun':'tıkla'} (basılı tutarsan hepsi birden gider) ve <b>Tarifi öğren</b>'e bas.`:`Tamam, hepsini topladın! Şimdi <b>kazanın başına</b> gel (ok yolu gösteriyor) ve kazana ${TOUCH?'dokun':'tıkla ya da yanında <span class="kc">E</span>\'ye bas'}. Sonra ${TOUCH?'listeden':'soldan'} <b>Kaba meşale</b>'yi seç, malzemeleri koy ve <b>Tarifi öğren</b>'e bas.`];
   if(tz===5&&!tzNeed().length)return['witch','Zümrüt · Meşaleni yap',craftOpen&&mode==='hand'?`Listede <b>Kaba meşale</b>'nin yanındaki yanıp sönen <b>Yap</b> düğmesine bas. Meşale envanterine gider; sonra onu bir alet yuvasına koyarsın.`:`Malzemeler tamam! Kazana gerek yok: ${TOUCH?'soldaki <b>el ikonuna</b> dokun':'<span class="kc">Tab</span> tuşuna bas (ya da soldaki el ikonuna tıkla)'} ve <b>Kaba meşale</b>'nin yanındaki <b>Yap</b>'a bas. Meşale <b>envanterine</b> gider: sonra ${beltHow('Kaba meşale')}.`];
   if(tz===7&&!(craftOpen&&mode==='craft'))return['witch','Zümrüt · Keskin taş tarifi',`Taşlar tamam! <b>Kazanın başına</b> gel (ok yolu gösteriyor), kazanı aç, <b>Keskin taş</b>'ı seç, 2 taşı koy ve <b>Tarifi öğren</b>'e bas.`];
@@ -13854,7 +13854,12 @@ function target(range){let best=null,bs=1e9;const f=mvDir()||player.face||{x:0,y
     let df=Math.abs(Math.atan2(dy,dx)-fa);if(df>Math.PI)df=2*Math.PI-df;const sc=d+df*22+(D.temper==='zararsız'?40:0)+(a.tut?20:0);if(sc<bs){bs=sc;best=a}}
   return best}
 function kind(){try{return window.__plCB?window.__plCB.kindOf():'fist'}catch(e){return 'fist'}}
-function aimPoint(){const k=kind(),a=target(k==='staff'||k==='gun'?240:110);const f=player.face||{x:0,y:1};
+// v2.33: melee on a phone: an enemy near you (150 px; chasing you or aggressive) is struck whatever way you walk or face
+function foeNear(range){let best=null,bs=1e9;const f=mvDir()||player.face||{x:0,y:1},fa=Math.atan2(f.y,f.x||(f.y?0:1));
+  for(const a of animals){const D=ANIM[a.k];if(!D||a.hp<=0||a.tut)continue;const hostile=a.mad||a.st==='chase'||a.st==='attack'||D.temper==='saldırgan'||a.boss;if(!hostile)continue;
+    const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy);if(d>range)continue;let df=Math.abs(Math.atan2(dy,dx)-fa);if(df>Math.PI)df=2*Math.PI-df;const sc=d+df*4;if(sc<bs){bs=sc;best=a}}
+  return best}
+function aimPoint(){const k=kind(),rng=k==='staff'||k==='gun';const a=(!rng&&foeNear(150))||target(rng?240:110);const f=player.face||{x:0,y:1};
   if(a)return{a,x:a.x,y:a.y-6};const m=mvDir();if(m)return{a:null,x:player.x+m.x*40,y:player.y-6+m.y*40};return{a:null,x:player.x+(f.x||0)*40,y:player.y-6+(f.y||0)*40}}
 // the same mouse events v118 listens to, at the aimed point
 function fake(type,P){const x=(P.x-cam.cx)*S,y=(P.y-cam.cy)*S;let ev;
@@ -15134,7 +15139,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  // what to light up now: [glow elements], the first one with arrow:true gets the arrow
  function want(){if(onTitle||wake||fading)return null;const out=[];const add=(el,arrow)=>{if(el)out.push({el,arrow:!!arrow})};
   try{
-  if(tz===2){if(craftOpen&&mode==='eat')add(Q('[data-eat="Böğürtlen"]'),1);else if(!craftOpen)add($('b-eat'),0)}
+  if(tz===2){if(craftOpen&&mode==='eat'){const tb=Q('[data-ecat="Meyveler"]');if(tb&&!tb.classList.contains('on'))add(tb,1);else add(Q('[data-eat="Böğürtlen"]'),1)}else if(!craftOpen)add($('b-eat'),0)}   // v2.33: first the Meyveler tab
   {const D=window.__plDL;if(TOUCH&&D&&D.on&&D.mode==='parry'&&D.frz)add($('parrybtn'),1)}   // v2.22: the frozen parry moment: the Savuş button glows with an arrow
   if((tz===4||tz===7)&&!tzNeed().length&&craftOpen&&mode==='craft'&&station!=='forge'&&pot.r===(tz===4?'Kaba meşale':'Keskin taş')&&!potReady())add($('pot'),0);   // v2.22: Zümrüt's lessons: the cauldron glows until the ingredients are in   // the yellow b3 arrow already points at the eat button
   const DT=window.__plDLTree?window.__plDLTree():0;
@@ -16316,6 +16321,57 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const _rc=renderCraft;renderCraft=function(){try{if(craftOpen&&mode==='craft'&&station==='forge'&&pot.r&&smithOf(pot.r)!==(forgeWho||smith)){const k=returnAll();pot.r=null;pot.put=[];if(k)toast(`${k} malzeme envanterine döndü`)}}catch(e){}return _rc.apply(this,arguments)};
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v233: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v233-eat">
+// v2.33: the food list has category tabs (Meyveler, Sebze ve tahıl, Otlar, Mantarlar, Etler, Balıklar, Yemekler, Şifa, Diğer); only the
+// tabs you have food for show, each with how many kinds. Pick a tab, then eat from it. The list opens on the last tab used.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ const CATS=['Meyveler','Sebze ve tahıl','Otlar','Mantarlar','Etler','Balıklar','Yemekler','Şifa','Diğer'];
+ const FISH=/balığı|balık|levre|sazan|kerevit|midye|yayın|kızılkanat|ançüez|kalamar|ahtapot|istiridye|karides|yengeç|inci|kefal|çapak/i;
+ const MEAT=/ eti$| eti |etli|kebap|şiş|sucuk|pastırma|yahni|köfte|kavurma|kurbağa|yumurtası$/i;
+ const FRUIT=/meyve|böğürtlen|ahududu|çilek|mersin|kızılcık|kuşburnu|alıç|mürver|elma|armut|erik|fındık|ceviz|kestane$|palamud|incir|üzüm|dut|kiraz|vişne|ayva|yemiş|kozalağı|bal$|eriği|narı$/i;
+ const VEG=/havuç|soğan|patates|lahana|domates|turp|pancar|bezelye|fasulye|sarımsak|buğday|arpa|mısır|kabak|ıspanak|teresi|su kestanesi|filiz|kök$|nilüfer|mercimek|nohut|ayçiçeği|yumru|biber/i;
+ const catOf=n=>{const x=REC.get(n),dish=!!(x&&x.c==='Yiyecek'),Z=(typeof ZPLANT!=='undefined'&&ZPLANT[n])?ZPLANT[n][3]:'';
+   if(x&&x.c==='Şifa')return 'Şifa';
+   if(FISH.test(n))return 'Balıklar';
+   if((typeof isRawMeat==='function'&&isRawMeat(n))||MEAT.test(n))return 'Etler';
+   if(!dish&&(/mantar|kuzugöbeği/i.test(n)||Z==='mush'))return 'Mantarlar';
+   if(!dish&&((typeof FRUITC!=='undefined'&&FRUITC[n])||Z==='bush'||FRUIT.test(n)))return 'Meyveler';
+   if(!dish&&(VEG.test(n)||Z==='grain'||Z==='reed'||Z==='pad'))return 'Sebze ve tahıl';
+   if(!dish&&(Z==='herb'||/sefası/i.test(n)))return 'Otlar';
+   if(dish)return 'Yemekler';
+   if(typeof healVal==='function'&&healVal(n)>0)return 'Şifa';
+   return 'Diğer'};
+ window.__plEatCat=catOf;
+ let eatCat='';
+ const _re=renderEat;renderEat=function(){const r=_re.apply(this,arguments);try{
+   const btns=[...cbody.querySelectorAll('[data-eat]')];if(!btns.length)return r;
+   const rows=btns.map(b=>({b,row:b.closest('.v63er')||b,c:catOf(b.dataset.eat)}));
+   const have=CATS.filter(c=>rows.some(x=>x.c===c));if(!have.length)return r;
+   if(have.indexOf(eatCat)<0)eatCat=have[0];
+   const tutTab=tz===2&&eatCat!=='Meyveler'&&have.indexOf('Meyveler')>=0;
+   const tabs=`<div class="pmode ecats" role="tablist" aria-label="Yemek türleri">${have.map(c=>`<button type="button" role="tab" data-ecat="${c}" class="${c===eatCat?'on':''}${tutTab&&c==='Meyveler'?' pulse':''}" aria-selected="${c===eatCat}">${c} <small>${rows.filter(x=>x.c===c).length}</small></button>`).join('')}</div>`;
+   const note=cbody.querySelector('.note');if(note)note.insertAdjacentHTML('afterend',tabs);else cbody.insertAdjacentHTML('afterbegin',tabs);
+   for(const x of rows)if(x.c!==eatCat)x.row.style.display='none'}catch(e){}return r};
+ {const st=document.createElement('style');st.id='v233-eat-css';st.textContent='#cbody .ecats{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}#cbody .ecats button small{opacity:.75;margin-left:2px}';document.head.appendChild(st)}
+ cbody.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-ecat]');if(!b||!(craftOpen&&mode==='eat'))return;e.stopPropagation();eatCat=b.dataset.ecat;try{sfx('pick')}catch(x){}renderCraft()},true);
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v233-eat: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v233-rock">
+// v2.33: gatherables never sit on a mine rock. Any spot inside a rock's drawing (+5 px) counts as taken when a gatherable is laid
+// out or grows back; one that already sits on a rock is moved elsewhere while it is off screen.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ const onRock=(x,y,self)=>{try{const n=window.__plRockAt&&window.__plRockAt(x,y);return !!(n&&n!==self)}catch(e){return false}};
+ const _nn=nodeNear;nodeNear=function(px_,py_,r,self){if(_nn.apply(this,arguments))return true;return onRock(px_,py_,self)};
+ const vis=(x,y,m)=>x>cam.cx-m&&x<cam.cx+vw+m&&y>cam.cy-m&&y<cam.cy+vh+m;
+ const sweep=()=>{if(onTitle||!window.__plRockAt)return;for(const n of nodes){if(!n.alive||n.mine||n.cave||n.x<0)continue;if(RES[n.name]&&RES[n.name].draw==='ore')continue;
+   if(!onRock(n.x,n.y,n)||vis(n.x,n.y,60))continue;try{const sp=findSpot(n.name,player,n);if(sp){n.x=sp.x;n.y=sp.y}}catch(e){}}};
+ setTimeout(sweep,1500);setInterval(()=>{try{sweep()}catch(e){}},4000);
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v233-rock: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
