@@ -9,7 +9,7 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
-## v2.33 (30 Ekim 2026) · başka demircide seçilen tarif örse taşınmıyor, meşale vuruşta 3 kat aşınır, balta dersi listesinde sopa yok, kategorili yemek menüsü, kaya üstü toplanabilirler, telefonda düşmana otomatik vuruş — BEKLEYEN PAKET (yayında değil)
+## v2.33 (30 Ekim 2026) · başka demircide seçilen tarif örse taşınmıyor, meşale vuruşta 3 kat aşınır, balta dersi listesinde sopa yok, kategorili yemek menüsü, kaya üstü toplanabilirler, telefonda düşmana otomatik vuruş, telefonda tam ekran anı ve harita, sıkışan canlı, ateş kenarında kurt — BEKLEYEN PAKET (yayında değil)
 - `bekleyen-paket` dalında; "paket çık" denince GUNCELLEME_NOTLARI'na yazılır, `yayinla.sh`, main'e alınır.
 - Sebep: `openMenu` seçili tarifi (`pot.r`) yalnızca kazan↔örs geçişinde sıfırlıyordu; Dursun'da seçilen Taş balta Durmuş'un örsünde seçili kalıyordu. Yeni `v233` bloğu: `renderCraft` sarmalı, örs açıkken `smithOf(pot.r)!==(forgeWho||smith)` ise `returnAll()`, `pot.r=null`, `pot.put=[]`.
 - Belge: `parts/20_sistemler.md` Örs maddesine not.
@@ -18,6 +18,10 @@
 - Yemek menüsü kategorili: yeni `v233-eat` bloğu, `renderEat` sarmalı üste `.pmode.ecats` sekmeleri (Meyveler, Sebze ve tahıl, Otlar, Mantarlar, Etler, Balıklar, Yemekler, Şifa, Diğer; yalnızca elde olanlar), `catOf` adla düzenli ifade; seçili sekme `eatCat`. Böğürtlen dersi (tz 2): p189 `want()` önce Meyveler sekmesini parlatır; tz2 kart metni. Belge: `20_sistemler.md` Yemek listesi, `10_akis.md` 2. adım.
 - Toplanabilirler kaya üstünde çıkıyordu: `v233-rock` bloğu, `nodeNear` sarmalı `__plRockAt` ile kaya üstünü dolu sayar; 1,5 sn'de ve her 4 sn'de ekran dışındaki kaya üstü düğümler `findSpot` ile taşınır (eski kayıtlar da düzelir).
 - Telefonda yakın dövüşte otomatik nişan: `v132-dokun` içinde yeni `foeNear(150)` (yerinde değişiklik); asa/tüfek dışı silahlarda `aimPoint` önce 150 px içindeki düşmanı (mad, chase/attack, saldırgan, boss; tut değil) en yakın + az yön payıyla seçer, yoksa eski `target(110)`. Belge: `20_sistemler.md` telefon Vur maddesi.
+- Telefonda anı tam ekran: `v233-mem` stili (`pointer:coarse`): `#memov canvas` mutlak, `min(100vw,100dvh*16/9)`; başlık üstte, yazı + Devam altta yarı saydam zeminle üstüne biner.
+- Telefonda büyük harita: `v233-map` bloğu; TOUCH ve `mode==='map'` iken `#craft.v233m` (panel tam yükseklik, cbody flex), tuval JS ile `.mapwrap` kutusuna sığdırılır (W:H oranı); `.note` + `.mleg` `.minfo` kutusuna taşınır, `.mapbtn`'e `data-mi` "i" düğmesi (`#craft.v233i` açar).
+- Sıkışan canlı: `v233-pin` bloğu (tickAnimals sarmalı): kovalayan, 0,4 sn ilerleyemeyen ve 44 px içindeki canlı `wind=.1` ile saldırır (`a._pin`); `_pin`'li atılış 44 px içinde `biteHit` yapar (duvarı aşar).
+- Güvenli yerde canavarlar uzak: `v233-camp` bloğu (tickAnimals sarmalı): `nearCamp(player)` iken saldırgan/kızgın canlılar 160 px dışına `moveA` ile kaçar, wind/lunge/p4slam/mv iptal.
 
 ## v2.32 (30 Ekim 2026) · mağaralar (Yankı Mağarası Sv 5, Kök Mağarası Sv 10)
 - Belge: yeni `parts/37_magaralar.md`; `36_yan_gorevler.md` notu; `00_giris.md` sürüm satırı.
