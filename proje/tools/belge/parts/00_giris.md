@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.34** ile birebir (30 Ekim 2026). Bu sürümde: Tüccar Nuri'nin yerine Gemici Nuri (kaza, tekne tamiri), 6 bölgeli deniz balıkçılığı (18 canlı, 5 yeni olta, 16 tarif, almanak Deniz canlıları); ana adanın deniz kıyısında balık tutulmaz. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.35** ile birebir (30 Ekim 2026). Bu sürümde: iki ada da yeni şeklinde — Yıldızsız Ada hilal, ikinci ada yonca; altı biyom eşit ve zincir halinde; ikinci adada da büyük nehir (3 köprü) ve sıradağ (kaya yığını) var. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -25,7 +25,7 @@ Sürüm: **Versiyon 2.34** ile birebir (30 Ekim 2026). Bu sürümde: Tüccar Nur
 
 ## Adalar ve dünya ölçüsü
 
-- Her ada **645 × 464 karo** (bir karo 16 piksel). Bir anda yalnızca bir ada bellekte durur; adalar arası geçiş bir yükleme ekranıyla yapılır.
+- **Yıldızsız Ada 804 × 785 karo** (hilal), **ikinci ada 692 × 720 karo** (yonca); bir karo 16 piksel. İkisinde de kara yaklaşık 282.000 karo, geri kalanı denizdir (v2.35; önce ikisi de 645 × 464 karolu dikdörtgen adalardı). Bir anda yalnızca bir ada bellekte durur; adalar arası geçiş bir yükleme ekranıyla yapılır.
 - Envanter, sikke, seviye, gün ve saat iki adada ortaktır.
-- Her adada 6 biyom vardır (v1.85'ten beri **eşit büyüklükte**: ada 3 sütun × 2 sıraya bölünür, her biyom yaklaşık 46.000 yürünebilir karo); biyomun tehlike seviyesi canavarların gücünü belirler: **Güvenli** (ilk iki biyom), **Tehlikeli** (3. ve 4.), **Ölümcül** (5.), **Çok ölümcül** (6.).
+- Her adada 6 biyom vardır (**eşit büyüklükte**, her biri yaklaşık 47.000 karo; v2.35'ten beri adanın şekli boyunca **zincir halinde** sıralanır, her biyom yalnızca öncekine ve sonrakine değer; 1-2, 3-4, 5-6 ortak bölgedir, 2→3 ve 4→5 arasında keskin bir sınır vardır); biyomun tehlike seviyesi canavarların gücünü belirler: **Güvenli** (ilk iki biyom), **Tehlikeli** (3. ve 4.), **Ölümcül** (5.), **Çok ölümcül** (6.).
 - Oyun içinde biyomlar 3 tehlike kuşağına ayrılır ve balık tabloları, tuzak ganimetleri bu kuşağa göre değişir: **Kuşak 0** = Çayır + Orman, **Kuşak 1** = Bataklık + Kayalık Dağ, **Kuşak 2** = Kül Diyarı + Mor Kristal Vadisi (ACT 2'de aynı sırayla).

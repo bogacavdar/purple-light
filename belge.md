@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.34** ile birebir (30 Ekim 2026). Bu sürümde: Tüccar Nuri'nin yerine Gemici Nuri (kaza, tekne tamiri), 6 bölgeli deniz balıkçılığı (18 canlı, 5 yeni olta, 16 tarif, almanak Deniz canlıları); ana adanın deniz kıyısında balık tutulmaz. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.35** ile birebir (30 Ekim 2026). Bu sürümde: iki ada da yeni şeklinde — Yıldızsız Ada hilal, ikinci ada yonca; altı biyom eşit ve zincir halinde; ikinci adada da büyük nehir (3 köprü) ve sıradağ (kaya yığını) var. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -25,9 +25,9 @@ Sürüm: **Versiyon 2.34** ile birebir (30 Ekim 2026). Bu sürümde: Tüccar Nur
 
 ## Adalar ve dünya ölçüsü
 
-- Her ada **645 × 464 karo** (bir karo 16 piksel). Bir anda yalnızca bir ada bellekte durur; adalar arası geçiş bir yükleme ekranıyla yapılır.
+- **Yıldızsız Ada 804 × 785 karo** (hilal), **ikinci ada 692 × 720 karo** (yonca); bir karo 16 piksel. İkisinde de kara yaklaşık 282.000 karo, geri kalanı denizdir (v2.35; önce ikisi de 645 × 464 karolu dikdörtgen adalardı). Bir anda yalnızca bir ada bellekte durur; adalar arası geçiş bir yükleme ekranıyla yapılır.
 - Envanter, sikke, seviye, gün ve saat iki adada ortaktır.
-- Her adada 6 biyom vardır (v1.85'ten beri **eşit büyüklükte**: ada 3 sütun × 2 sıraya bölünür, her biyom yaklaşık 46.000 yürünebilir karo); biyomun tehlike seviyesi canavarların gücünü belirler: **Güvenli** (ilk iki biyom), **Tehlikeli** (3. ve 4.), **Ölümcül** (5.), **Çok ölümcül** (6.).
+- Her adada 6 biyom vardır (**eşit büyüklükte**, her biri yaklaşık 47.000 karo; v2.35'ten beri adanın şekli boyunca **zincir halinde** sıralanır, her biyom yalnızca öncekine ve sonrakine değer; 1-2, 3-4, 5-6 ortak bölgedir, 2→3 ve 4→5 arasında keskin bir sınır vardır); biyomun tehlike seviyesi canavarların gücünü belirler: **Güvenli** (ilk iki biyom), **Tehlikeli** (3. ve 4.), **Ölümcül** (5.), **Çok ölümcül** (6.).
 - Oyun içinde biyomlar 3 tehlike kuşağına ayrılır ve balık tabloları, tuzak ganimetleri bu kuşağa göre değişir: **Kuşak 0** = Çayır + Orman, **Kuşak 1** = Bataklık + Kayalık Dağ, **Kuşak 2** = Kül Diyarı + Mor Kristal Vadisi (ACT 2'de aynı sırayla).
 
 
@@ -538,7 +538,7 @@ Sağ altta, küçük haritanın hemen üstünde **Başarımlar**'ın solunda kü
 
 ## İzler ve anılar
 
-- **İzler** (Kitap → İzler): eşinden kalan 6 mor parıltı. Kopmuş bilezik (kumsal), Islak defter sayfası (kuzeybatı ormanı), Tuhaf metal parçası (Kayalık Dağ tarafı), Çamurdaki izler (Toygar'ın güneydoğusu), Yıldız haritası ve Mor kristal (doğu). Üstüne gidip E. Sonuncusu "Gerçek" sahnesini açar.
+- **İzler** (Kitap → İzler): eşinden kalan 6 mor parıltı. Kopmuş bilezik (Çayır kumsalı), Islak defter sayfası (Orman), Tuhaf metal parçası (Bataklık), Çamurdaki izler (Toygar'ın güneydoğusu), Yıldız haritası ve Mor kristal (doğu). Üstüne gidip E. Sonuncusu "Gerçek" sahnesini açar.
 - **Anılar** (Kitap → Anılar), her biri +25 + 15 × sıra XP:
   - 5 **tarif anısı**: 10, 25, 50, 100 ve 175 tarifte (Yağmurlu çarşı, Yanık ekmek, Çay kıyısında söz, Mor bir delik, Son akşam).
   - 7 **olay anısı**: uyurken (%40), bayılınca (%60) ya da görev bitince (%30), gün şartıyla: Kumsalda ilk dans (1. gün), Kırık pusula (4), Hastane koridoru (6), Yıldız haritası (8), Mektup (12), Mor fısıltı (20), Bırakılan el (25).
@@ -692,20 +692,24 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 
 ## Adanın yerleşimi
 
-- **Yerleşim (v1.85):** ada üç sütun ve iki sıradan oluşur; altı biyom eşit büyüklükte ve **yılan gibi sırayla** gezilir: **Çayır** (güneybatı, başladığın yer) → **Orman** (kuzeybatı) → *köprü* → **Bataklık** (kuzey orta) → **Kayalık Dağ** (güney orta) → *kaya yığını* → **Kül Diyarı** (güneydoğu) → **Mor Kristal Vadisi** (kuzeydoğu). Aynı sütundaki iki biyom arasında engel yoktur.
-- **Büyük nehir** batı sütununu (yurt: Çayır ve Orman) ortadan ayırır; iki ucu da denize dökülür, etrafından dolaşılmaz. Nehrin üstünde **üç kırık köprü** vardır, her biri **ayrı ayrı** 20 odunla onarılır:
-  - **Kuzey köprüsü** (Orman ↔ Bataklık, adanın yaklaşık %27 yüksekliğinde): yolu açan köprüdür. Ekin'in 2. görevi ("Bir köprüyü onar") bununla biter. Toygar'ın kulübesi bu köprünün doğu ucunun yakınındadır.
-  - **İki kısayol köprüsü** (Çayır ↔ Kayalık Dağ, %62 ve %86 yüksekliğinde): kuzey köprüsü onarılmadan onarılamaz ("Önce Orman ile Bataklık arasındaki büyük köprüyü onar"). Sonra istediğin zaman, istersen birini istersen ikisini onarırsın; onarılan kısayol Çayır'dan Kayalık Dağ'a doğrudan geçirir. Kuzey köprüsü onarıldıktan sonra kısayollar iki yakadan da onarılabilir.
-- **Sıradağ** orta sütunu doğudakinden ayırır, kıyıdan kıyıya uzanır. Tek geçidi Kayalık Dağ ile Kül Diyarı arasındadır (adanın yaklaşık %74 yüksekliğinde) ve bir **kaya yığını** kapatır. 2 Kaya patlatıcı ve kuvars ya da daha iyi bir kazmayla patlatılır. **Patlama bütün sıradağı çökertir:** o andan sonra sınır kalkar, sıradağın her yeri yürünebilir moloz olur; Bataklık'tan Mor Kristal Vadisi'ne de doğrudan geçilir. (Kayıtta yalnızca "patlatıldı" bilgisi tutulur; yüklenince sıradağ yeniden çöker.)
-- **1.84 ve öncesinin kayıtları:** her şey (envanter, görevler, köprü, patlama) korunur ama harita değiştiği için kumsalda uyanırsın ve harita yeniden keşfedilir; bir kez bildirim çıkar.
+- **Yerleşim (v2.35, hilal ada):** Yıldızsız Ada artık dikdörtgen değil, **hilal** biçiminde bir adadır (804 × 785 karo; kara yaklaşık 282.000 karo, eski adayla aynı). Altı biyom **eşit büyüklükte** (her biri yaklaşık 47.000 karo) ve hilalin bir ucundan öbürüne **zincir halinde** sıralanır; her biyom yalnızca bir öncekine ve bir sonrakine değer: **Çayır** (batı ucu, başladığın yer) → **Orman** (kuzeybatı) → *büyük nehir, köprü* → **Bataklık** (kuzey) → **Kayalık Dağ** (doğu) → *sıradağ, kaya yığını* → **Kül Diyarı** (güneydoğu) → **Mor Kristal Vadisi** (güney ucu). Hilalin ortası denizdir (iç körfez).
+- Biyomlar üç ortak bölgede ikişer durur: **Yurt** (Çayır + Orman), **Orta Diyar** (Bataklık + Kayalık Dağ), **Doğu Diyarı** (Kül Diyarı + Mor Kristal Vadisi). Aynı bölgedeki iki biyom arasında engel yoktur, sınırları kıvrımlıdır. Bölgeler arasındaki iki sınır ise **keskindir**: biri büyük nehir, öbürü sıradağ.
+- **Büyük nehir** Orman ile Bataklık'ın arasından geçer, iki ucu da denize dökülür; etrafından dolaşılmaz. Nehrin üstünde **üç kırık köprü** vardır, her biri **ayrı ayrı** 20 odunla onarılır; üçü de Orman ↔ Bataklık arasındadır:
+  - **Ana köprü** (nehrin ortası): yolu açan köprüdür. Ekin'in 2. görevi ("Bir köprüyü onar") bununla biter. Toygar'ın kulübesi bu köprünün Bataklık ucunun yakınındadır.
+  - **İki kısayol köprüsü** (nehrin iki ucuna yakın, biri kuzey kıyısına, biri iç körfeze doğru): ana köprü onarılmadan onarılamaz ("Önce ana köprüyü onar"). Sonra istediğin zaman, istersen birini istersen ikisini onarırsın; nehrin öbür ucundaki yerlere yolu kısaltırlar. Ana köprü onarıldıktan sonra kısayollar iki yakadan da onarılabilir.
+- **Sıradağ** Kayalık Dağ ile Kül Diyarı'nın arasından geçer, kıyıdan kıyıya uzanır. Tek geçidi (Doğu geçidi) sıradağın ortasına yakındır ve bir **kaya yığını** kapatır. 2 Kaya patlatıcı ve kuvars ya da daha iyi bir kazmayla patlatılır. **Patlama bütün sıradağı çökertir:** o andan sonra sınır kalkar, sıradağın her yeri yürünebilir moloz olur ve Kayalık Dağ ile Kül Diyarı arasında her yerden geçilir. (Kayıtta yalnızca "patlatıldı" bilgisi tutulur; yüklenince sıradağ yeniden çöker.)
+- **Göller ve dereler:** Orman'da bir pınar gölü ve denize akan deresi, Çayır'da bir göl, Kayalık Dağ'da bir pınar gölü ve deresi, Bataklık'ta 20 küçük gölcük vardır (su, kil, çakıl, su kenarı bitkileri ve tatlı su balıkları bunların başında).
+- **2.34 ve öncesinin kayıtları (v2.35):** her şey (envanter, sikke, görevler, köprüler, patlama, ev ve tarla) korunur ama harita değiştiği için kumsalda (iki adada da iniş yerinde) uyanırsın ve harita yeniden keşfedilir; bir kez bildirim çıkar. Yere koyduğun eşyalar (sandık, yatak, kamp, tuzak gibi) yeni haritada yerlerini kaybettiği için **çantana geri döner**; düştüğün yerdeki eşya yığınları da çantana eklenir.
+- **1.84 ve öncesinin kayıtları:** aynı kural (kumsalda uyanırsın, harita yeniden keşfedilir).
 - **Haritadaki miktarlar (v2.11'de seyreltildi, harita kalabalık geliyordu):** yeni oyunda ada kurulurken her tür sabit sayıda rastgele yere konur; yerler her oyunda farklı, sayılar aynıdır.
   - **Temel malzemeler** bütün adaya serpilir (yaklaşık): Dal 800, **Lif ~950, Taş ~735** (v2.25'te ikisi de ~%35 artırıldı; önce 700 ve 550), Yaprak 450, Nehir çakılı 400, Kum 350, Çakmaktaşı 300 (v2.10'a kadar 1650 / 1410 / 990 / 840 / 720 / 600 / 450). Daha az oldukları için **%30 daha çabuk** yeniden çıkarlar (ör. Dal 25 → 18 sn).
   - **Biyom bitkileri** her biyomun kendi 14 türü: tür başına kendi biyomunda yaklaşık **40** (önce 68); Kuru ot ~90 (150), Böğürtlen ~80 (110), yalnızca su kenarında biten türler ~30 (42).
   - **Madenler** (biyom başına 3 tür, ilk iki biyomda 22, diğerlerinde 20) ve **mağara buluntuları** (Sarkıt, Yarasa gübresi, Mağara mantarı: madenlerin çevresinde 44'er) değişmedi.
   - **Ağaçlar** sayıyla değil olasılıkla çıkar: orman zemininde her karede %20, çimende %4 (Kül Diyarı'nda bunların %45'i); sonra **%35'i** seyreltilir (v2.10'a kadar %18). Tür biyomun 5 ağacından seçilir; meyve ağaçlarının payı 0,45, diğerlerinin 1.
   - **Başlangıç kampının çevresi (20 karo)** seyreltilmez; öğretici burada geçer.
+  - **Keşif yüzdesi (v2.35):** haritanın keşfedilen payı (öğreticideki %30, Kâşif başarımındaki yarı, gün sonu özeti) karaya ve kıyıdan 7 karo içindeki denize göre hesaplanır; açık deniz sayılmaz.
   - Hayvanlar haritaya konmaz; bulunduğun biyomun listesine göre çevrende belirir.
-- Büyük nehirde suya düşersen yarım saniyede bir en yakın kıyıya, köprün yoksa her zaman batı (yurt) kıyısına çıkarılırsın.
+- Büyük nehirde suya düşersen yarım saniyede bir en yakın kıyıya çıkarılırsın; nehrin 14 karo yakınında her zaman **yurt (Orman) kıyısına** çıkarsın, karşıya böyle geçilmez.
 - Haritada (M) kişilerin simgeleri görünür; bir simgeye dokununca oraya giden kalıcı bir yol oku konur. Küçük haritanın sol altında bulunduğun biyomun adı yazar.
 
 ## Biyomları okuma rehberi
@@ -723,7 +727,7 @@ Her yerde ortak olan temel toplanabilirler (Dal, Taş, Lif, Yaprak) ve su kıyı
 
 ## Çayır — Güvenli
 
-Başladığın yer: adanın güneybatısı (batı sütununun güney yarısı). Tavşanlar, keklikler, meyve ağaçları. Ekin, Zümrüt, Nazlı, Börü, Dursun, Durmuş ve Rıza burada. Canavarlar zayıf; kurt sürüleri yalnız gece çıkar.
+Başladığın yer: hilalin batı ucu (iç körfeze bakan kumsal). Tavşanlar, keklikler, meyve ağaçları. Ekin, Zümrüt, Nazlı, Börü, Dursun, Durmuş ve Rıza burada. Canavarlar zayıf; kurt sürüleri yalnız gece çıkar.
 
 **Ağaçlar**
 
@@ -787,7 +791,7 @@ Başladığın yer: adanın güneybatısı (batı sütununun güney yarısı). T
 
 ## Orman — Güvenli
 
-Adanın kuzeybatısı, batı sütununun kuzey yarısı (Çayır'dan kuzeye yürü). Gölgeli ve sık; yaban domuzları, dikenli kirpiler, engerekler. Usta Kemal ve Çiftçi Hasan'ın tarlası bu tarafta. **Kuzenler (v1.84):** Cadı Yakut (kırmızı kazan), Silahçı Durdu ve Zırhçı Duran. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
+Adanın kuzeybatısı (Çayır'dan doğuya, büyük nehre doğru yürü). Gölgeli ve sık; yaban domuzları, dikenli kirpiler, engerekler. Usta Kemal ve Çiftçi Hasan'ın tarlası bu tarafta. **Kuzenler (v1.84):** Cadı Yakut (kırmızı kazan), Silahçı Durdu ve Zırhçı Duran. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
 
 **Ağaçlar**
 
@@ -849,7 +853,7 @@ Adanın kuzeybatısı, batı sütununun kuzey yarısı (Çayır'dan kuzeye yür�
 
 ## Bataklık — Tehlikeli
 
-Adanın kuzey ortası, büyük nehrin doğusu: Orman'dan kuzey köprüsünü onarıp karşıya geç. Çamur ayağını tutar (Kamış çizme işe yarar), timsahlar ve zehirli kurbağalar. Demir cevheri yalnızca burada. Avcı Toygar'ın kulübesi burada. **Kuzenler (v1.84):** Cadı Safir (mavi kazan), Silahçı Ali ve Zırhçı Veli. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
+Adanın kuzeyi, büyük nehrin doğusu: Orman'dan ana köprüyü onarıp karşıya geç. Çamur ayağını tutar (Kamış çizme işe yarar), timsahlar ve zehirli kurbağalar. Demir cevheri yalnızca burada. Avcı Toygar'ın kulübesi burada. **Kuzenler (v1.84):** Cadı Safir (mavi kazan), Silahçı Ali ve Zırhçı Veli. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
 
 **Ağaçlar**
 
@@ -912,7 +916,7 @@ Adanın kuzey ortası, büyük nehrin doğusu: Orman'dan kuzey köprüsünü ona
 
 ## Kayalık Dağ — Tehlikeli
 
-Adanın güney ortası, Bataklık'ın güneyi (kısayol köprüleri onarılınca Çayır'dan da geçilir). Kartallar, vaşaklar, mağara ayıları. Kuvars, gümüş ve altın madenleri. **Kuzenler (v1.84):** Cadı Firuze (turkuaz kazan), Silahçı Kaya ve Zırhçı Kayhan. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
+Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartallar, vaşaklar, mağara ayıları. Kuvars, gümüş ve altın madenleri. **Kuzenler (v1.84):** Cadı Firuze (turkuaz kazan), Silahçı Kaya ve Zırhçı Kayhan. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
 
 **Ağaçlar**
 
@@ -975,7 +979,7 @@ Adanın güney ortası, Bataklık'ın güneyi (kısayol köprüleri onarılınca
 
 ## Kül Diyarı — Ölümcül
 
-Adanın güneydoğusu, sıradağın ardı: Kayalık Dağ'dan doğuya yürü, sıradağdaki **Doğu geçidi**ndeki kaya yığınını patlat (patlayınca bütün sıradağ çöker). Ateş ve kül her yerde; zırhsız gelme. Lav kertenkelesi ve Kara ejder burada. **Kuzenler (v1.84):** Cadı Mercan (mercan kazan), Silahçı Turan ve Zırhçı Tufan. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
+Adanın güneydoğusu, sıradağın ardı: Kayalık Dağ'dan sıradağa yürü, sıradağdaki **Doğu geçidi**ndeki kaya yığınını patlat (patlayınca bütün sıradağ çöker). Ateş ve kül her yerde; zırhsız gelme. Lav kertenkelesi ve Kara ejder burada. **Kuzenler (v1.84):** Cadı Mercan (mercan kazan), Silahçı Turan ve Zırhçı Tufan. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
 
 **Ağaçlar**
 
@@ -1038,7 +1042,7 @@ Adanın güneydoğusu, sıradağın ardı: Kayalık Dağ'dan doğuya yürü, sı
 
 ## Mor Kristal Vadisi — Çok ölümcül
 
-Adanın kuzeydoğusu, Kül Diyarı'nın kuzeyi (sıradağ çöktükten sonra Bataklık'tan da geçilir). Mor ışığın en sık indiği yer; kristal golemler, gölge kurtları. Son iz ve Denizci Levent'in enkazı burada. **Kuzenler (v1.84):** Cadı İnci (inci beyazı kazan), Silahçı Kudret ve Zırhçı Kuvvet. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
+Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığın en sık indiği yer; kristal golemler, gölge kurtları. Son iz ve Denizci Levent'in enkazı burada. **Kuzenler (v1.84):** Cadı İnci (inci beyazı kazan), Silahçı Kudret ve Zırhçı Kuvvet. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
 
 **Ağaçlar**
 
@@ -1185,7 +1189,7 @@ Bir görev oyuncunun henüz bilmediği bir mekaniği istiyorsa, görev **önce k
 - Köprüye, kaya yığınına ya da gemi enkazına **E ya da sol tıkla** basınca bir **onay penceresi** açılır (hiçbir kişinin portresi yok): "20 odun harcanacak. Onarılsın mı?" gibi. Onaylayınca malzeme gider ve karakter duruma göre tepki verir (konuşma balonu): köprüde "Aa, sandığımdan kolaymış!", patlamada önce "Kulaklarımı tıkasam iyi olur…" sonra sarsıntı ve "Vay be!", gemide "İşte ACT 1'in sonu… ya da başlangıcı."
 - **Görev alınmamışken** gerekli malzemeyle oraya gelen kişi **yalnızca bir kez** kendi kendine konuşur: "Buradan nasıl geçebilirim acaba? Ekin bilir belki." Onay penceresi açılmaz.
 - Köprü onarılınca Ekin'in **koşu dersi** başlar (eskiden olduğu gibi).
-- Kuzey köprüsü (Orman ↔ Bataklık) onarıldıktan sonra iki kısayol köprüsü (Çayır ↔ Kayalık Dağ) görevsiz, istenen an onay penceresiyle onarılır. Patlama bütün sıradağı çökertir (v1.85).
+- Ana köprü (Orman ↔ Bataklık) onarıldıktan sonra iki kısayol köprüsü (Çayır ↔ Kayalık Dağ) görevsiz, istenen an onay penceresiyle onarılır. Patlama bütün sıradağı çökertir (v1.85).
 
 ## Ekin'in ayak işleri (boşluk doldurma)
 
@@ -1213,7 +1217,7 @@ Kumsalda seni bulan yaşlı denizci; sakin, kollayıcı, öğretici. Ekin'de yal
 | # | Görev | İstenen | Açılma | Açar | Ders | Ödül |
 |---|---|---|---|---|---|---|
 | E1 | Ateşlik çalı | Getir: 6 Dal, 2 Kuru ot | Öğretici bitti ya da geçildi | Dursun 1, Zümrüt 1 | – | 20 · 15 XP |
-| E2 | Bir köprüyü onar | Kuzey köprüsü (Orman ↔ Bataklık): 20 odun, onay penceresiyle | Orman keşfedildi · Seviye 6 · Hasan 2 | Toygar 1 ve Bataklık'taki görevler | Köprü onarımı | 150 · 120 XP |
+| E2 | Bir köprüyü onar | Ana köprü (Orman ↔ Bataklık): 20 odun, onay penceresiyle | Orman keşfedildi · Seviye 6 · Hasan 2 | Toygar 1 ve Bataklık'taki görevler | Köprü onarımı | 150 · 120 XP |
 | E3 | Doğu geçidini aç | 2 Kaya patlatıcı + 3. kademe ya da daha iyi kazma (Tunç ya da Kuvars); kaya yığınına E, onay | Kayalık Dağ keşfedildi · Seviye 10 | Kül Diyarı'ndaki görevler | Kaya patlatıcı | 300 · 400 XP |
 | E4 | Eşinden kalan izler | Bul: 6 iz (önceden bulunanlar sayılır) | Kül Diyarı keşfedildi | E5, Gemi tarifi | – | 300 · 600 XP |
 | E5 | Kıyıdaki duman | Ulaş: Mor Kristal Vadisi'ne git (Ekin dumanı merak eder; kimseyi söylemez) | E4 | E6, Levent 1 | – | 200 · 300 XP |
@@ -2065,7 +2069,7 @@ Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanınd
 | # | Görev | İstenen | Sikke | XP | Kitaba yazdığı tarifler |
 |---|---|---|---|---|---|
 | 1 | 5 odun kes | Çamdan 5 odun (taş balta yalnızca çam, ladin, kavak ve meyve ağaçlarını keser) | 40 | – | – |
-| 2 | Bir köprüyü onar | Kuzey köprüsüne (Orman ↔ Bataklık) 20 odun; öbür iki köprü sonra kısayol | 100 | 40 | – (koşma dersi başlar) |
+| 2 | Bir köprüyü onar | Ana köprüne (Orman ↔ Bataklık) 20 odun; öbür iki köprü sonra kısayol | 100 | 40 | – (koşma dersi başlar) |
 | 3 | İlk yeteneğini al | Yetenek ağacından bir yetenek (Y) | 30 | – | – |
 | 4 | Seviye 5'e ulaş | – | 60 | – | – |
 | 5 | Kamp kur, bir gece ateşin başında bekle | Kamp ateşini (5 Dal + 3 Taş + 2 Kuru ot + 1 Çakmaktaşı) kur, gece yanında 60 sn dur | 60 | 30 | – |
@@ -2447,7 +2451,10 @@ Son görev (Yeni bir gemi) bitince Levent'le konuş: hikâye sahnesi, ardından 
 - **Gökbilimci Ülker** iniş yerinin biraz kuzeyinde, Yüzen Kayalar'da yüksek bir kayanın üstündedir. Teleskobu ve **ACT 2 kazanı** onun yanındadır: ikinci adanın bütün tarifleri burada öğrenilir (birinci adadaki Zümrüt'ün kazanıyla aynı çalışır).
 - **Portallar:** ikinci adaya ilk varışta **Levent'in yanındaki portal** ve birinci adada **Ekin'in yanındaki portal** açılır (v1.76). Ülker'in üç görevi bitince ("Portal çekirdeği" ile) bütün portallar açılır. Birinci adada **her kişinin yanında** bir portal belirir (Ekin, Zümrüt, Nazlı, Dursun, Hasan, Kemal, Börü, Rıza, Toygar): kişinin sağ yanında, ama hiçbir zaman kazanın, örsün, tezgâhın önünde ya da **Hasan'ın tarlasının içinde** değil (tarla parsellerine en az 26 piksel uzak; v1.79). İkinci adada iki portal vardır: **Ülker'in yanında** ve **Levent'in yanında**. Portaldan geçmek ücretsizdir; geçiş kaydeder, sayfayı yeniden yükler ve öbür adayı hazırlar.
 - **İkinci adada birinci adanın kişileri yoktur.** Satış (Nazlı), alet bileme ve örs (Dursun, Durmuş), ev işleri (Kemal, Rıza) ve tarla için portaldan birinci adaya dönülür. Envanter ve sikke ortak olduğu için bir sorun çıkmaz.
-- İkinci adada köprü ve Doğu geçidi gibi engeller yoktur; her yere yürünür. Ama canavarlar çok güçlüdür (ACT 2 canavarları ACT 1'in en güçlülerinden de güçlüdür, aşağıdaki tablolara bak).
+- **İkinci adanın yerleşimi (v2.35, yonca ada):** ada **yonca** biçimindedir (692 × 720 karo, kara yaklaşık 282.000 karo); altı biyom eşit büyüklükte (her biri yaklaşık 47.000 karo) ve zincir halinde sıralanır, her biyom yalnızca öncekine ve sonrakine değer: **Yüzen Kayalar** (güneybatı yaprağı, iniş yeri) → **Dev Mantar Ormanı** (batı) → *büyük nehir, köprü* → **Hurda Çölü** (kuzey) → **Kristal Golem Ocağı** (kuzeydoğu) → *sıradağ, kaya yığını* → **Ejder Volkanı** (doğu) → **Gök Rıhtımı** (güneydoğu yaprağı, adanın en uzak ucu). İki alt yaprağın arasında denizden bir körfez girer.
+- **Engeller birinci adadaki gibidir (v2.35):** Dev Mantar Ormanı ile Hurda Çölü arasında kıyıdan kıyıya bir **büyük nehir** ve üstünde **üç kırık köprü** (bir ana köprü, iki kısayol), Kristal Golem Ocağı ile Ejder Volkanı arasında kıyıdan kıyıya bir **sıradağ** ve tek geçidinde bir **kaya yığını** vardır. Kurallar aynıdır: her köprü ayrı ayrı **20 odunla** onarılır, kısayollar ana köprüden sonra; kaya yığını **2 Kaya patlatıcı** ve kuvars ya da daha iyi bir kazmayla patlatılır, patlayınca bütün sıradağ çöker. Odun ve patlatıcı yoksa portaldan birinci adaya dönülür. Köprülerin ve kaya yığınının durumu iki adada **ayrı ayrı** tutulur (birinci adada onardığın köprü ikinci adadakini onarmaz).
+- **2.34 ve öncesinin kayıtları:** daha önce Silahçı Tamer ile tanıştıysan ikinci adanın ana köprüsü, Ejder Avcısı Alara ile tanıştıysan kaya yığını onarılmış/patlatılmış sayılır (eski adada bu engeller yoktu, ilerlemen kapanmasın diye). Kısayol köprüleri onarılmamış başlar.
+- Canavarlar çok güçlüdür (ACT 2 canavarları ACT 1'in en güçlülerinden de güçlüdür, aşağıdaki tablolara bak).
 
 ## Mor mana, asalar ve ateşli silahlar
 

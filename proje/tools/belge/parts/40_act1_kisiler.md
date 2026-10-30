@@ -18,7 +18,7 @@ Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanınd
 | # | Görev | İstenen | Sikke | XP | Kitaba yazdığı tarifler |
 |---|---|---|---|---|---|
 | 1 | 5 odun kes | Çamdan 5 odun (taş balta yalnızca çam, ladin, kavak ve meyve ağaçlarını keser) | 40 | – | – |
-| 2 | Bir köprüyü onar | Kuzey köprüsüne (Orman ↔ Bataklık) 20 odun; öbür iki köprü sonra kısayol | 100 | 40 | – (koşma dersi başlar) |
+| 2 | Bir köprüyü onar | Ana köprüne (Orman ↔ Bataklık) 20 odun; öbür iki köprü sonra kısayol | 100 | 40 | – (koşma dersi başlar) |
 | 3 | İlk yeteneğini al | Yetenek ağacından bir yetenek (Y) | 30 | – | – |
 | 4 | Seviye 5'e ulaş | – | 60 | – | – |
 | 5 | Kamp kur, bir gece ateşin başında bekle | Kamp ateşini (5 Dal + 3 Taş + 2 Kuru ot + 1 Çakmaktaşı) kur, gece yanında 60 sn dur | 60 | 30 | – |

@@ -8,6 +8,39 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.35 · 30 Ekim 2026
+
+**Oynanış**
+- **Yıldızsız Ada artık bir hilal.** Dikdörtgen ada gitti; ada hilal biçiminde, ortasında denizden bir iç körfez var. Kara alanı eskisiyle aynı (yaklaşık 282.000 karo), harita 804 × 785 karo.
+- **Biyomlar zincir halinde:** Çayır (batı ucu, başladığın yer) → Orman → Bataklık → Kayalık Dağ → Kül Diyarı → Mor Kristal Vadisi (güney ucu). Altısı da birebir eşit büyüklükte; her biyom yalnızca bir öncekine ve bir sonrakine değer. Çayır–Orman, Bataklık–Kayalık Dağ ve Kül Diyarı–Mor Kristal Vadisi ikişer ortak bölgede, aralarındaki sınır kıvrımlı ve engelsiz.
+- **Büyük nehir** artık Orman ile Bataklık'ın arasından kıyıdan kıyıya akıyor. Üç köprünün üçü de bu nehirde: **ana köprü** nehrin ortasında, iki **kısayol köprüsü** nehrin iki ucuna yakın (ana köprüden sonra onarılır, 20'şer odun). Eskiden kısayollar Çayır'dan Kayalık Dağ'a geçiriyordu; yeni adada bu iki biyom komşu değil.
+- **Sıradağ** Kayalık Dağ ile Kül Diyarı'nın arasından kıyıdan kıyıya uzanıyor; tek geçidi (Doğu geçidi) ortasına yakın, kaya yığını eskisi gibi 2 kaya patlatıcı ve kuvars kazmayla patlatılır, patlayınca bütün sıradağ çöker.
+- **İkinci ada artık bir yonca.** Harita 692 × 720 karo, kara alanı yine aynı. Yüzen Kayalar (güneybatı yaprağı, iniş yeri) → Dev Mantar Ormanı → Hurda Çölü → Kristal Golem Ocağı → Ejder Volkanı → Gök Rıhtımı (güneydoğu yaprağı).
+- **İkinci adada da engeller var:** Dev Mantar Ormanı ile Hurda Çölü arasında büyük nehir ve 3 kırık köprü (ana + 2 kısayol, 20'şer odun), Kristal Golem Ocağı ile Ejder Volkanı arasında sıradağ ve kaya yığını (2 kaya patlatıcı + kuvars kazma). Odun ya da patlatıcı yoksa portaldan birinci adaya dönersin. Köprüler ve kaya yığını iki adada ayrı ayrı tutulur.
+- Göller ve dereler yeni şekle göre yeniden yerleşti: Orman'da pınar gölü ve deresi, Çayır'da bir göl, Kayalık Dağ'da pınar gölü ve deresi, Bataklık'ta 20 gölcük (ikinci adada aynı düzen).
+- Ekin'in kampı, Zümrüt, Nazlı, Dursun, Durmuş, Rıza, Börü (Çayır), Kemal ve Hasan'ın tarlası (Orman), Toygar (ana köprünün Bataklık ucu), 6 iz, mağaralar ve yan görev kişileri yeni adada kendi biyomlarına yerleşti.
+- Büyük nehre düşersen nehrin 14 karo yakınında her zaman yurt (Orman) kıyısına çıkarsın; bu kural ikinci adada da geçerli.
+
+**Arayüz**
+- Haritanın keşif yüzdesi (öğreticideki %30, Kâşif başarımı, gün sonu özeti) artık karaya ve kıyıdan 7 karo içindeki denize göre hesaplanıyor; açık deniz sayılmıyor.
+- Köprü ve kaya yığını yazıları biyom adlarını kullanıyor ("Önce Orman ile Bataklık arasındaki ana köprüyü onar"; ikinci adada kendi biyom adları). "Kuzey köprüsü" artık "ana köprü".
+
+**Kayıtlar**
+- 2.34 ve öncesinin kayıtlarında her şey korunur (envanter, sikke, seviye, görevler, köprüler, patlama, ev, tarla). Harita değiştiği için **kumsalda uyanırsın** ve iki adanın haritası yeniden keşfedilir; bir kez bildirim çıkar.
+- Yere koyduğun eşyalar (Ekin'in yanındaki taş ev, yataklar, sandıklar, yapılar) içleriyle birlikte **Ekin'in kampının yanına** (ikinci adada iniş yerinin yanına) taşınır.
+- Düştüğün yerde kalan eşyalar ve sikkeler, yerdeki eşyalar, kurduğun tuzaklar ve içlerindekiler **çantana** konur. Kamp ateşleri ve harita işaretlerin silinir.
+- İkinci adada eskiden engel yoktu: Silahçı Tamer ile tanıştıysan ikinci adanın ana köprüsü onarılmış, Ejder Avcısı Alara ile tanıştıysan kaya yığını patlatılmış sayılır.
+
+**Tasarım belgesi**
+- ACT 1 · Adanın yerleşimi baştan yazıldı (hilal ada, zincir biyomlar, ortak bölgeler, nehir ve üç köprü, sıradağ, göller, eski kayıtlar, keşif yüzdesi). Biyomların yer tarifleri ve izlerin yerleri güncellendi.
+- ACT 2 · Geçiş ve portallar: ikinci adanın yerleşimi (yonca) ve engelleri eklendi; "ikinci adada engel yok" kuralı kalktı.
+- Giriş: ada boyutları ve biyom kuralı güncellendi.
+
+**Proje**
+- Yeni ada üreticisi `proje/tools/harita/ada_uret.py`: iki adayı oyun çözünürlüğünde üretir (eşit alanlı zincir biyomlar, nehir, sıradağ, köprü ve geçit yerleri, göller, iniş yeri, kişilerin yerleri) ve oyuna gömülen `adalar.js` verisini yazar; önizlemeler `ada1.png`, `ada2.png`.
+
+---
+
 ## Versiyon 2.34 · 30 Ekim 2026
 
 **Oynanış**

@@ -282,7 +282,7 @@ Sağ altta, küçük haritanın hemen üstünde **Başarımlar**'ın solunda kü
 
 ## İzler ve anılar
 
-- **İzler** (Kitap → İzler): eşinden kalan 6 mor parıltı. Kopmuş bilezik (kumsal), Islak defter sayfası (kuzeybatı ormanı), Tuhaf metal parçası (Kayalık Dağ tarafı), Çamurdaki izler (Toygar'ın güneydoğusu), Yıldız haritası ve Mor kristal (doğu). Üstüne gidip E. Sonuncusu "Gerçek" sahnesini açar.
+- **İzler** (Kitap → İzler): eşinden kalan 6 mor parıltı. Kopmuş bilezik (Çayır kumsalı), Islak defter sayfası (Orman), Tuhaf metal parçası (Bataklık), Çamurdaki izler (Toygar'ın güneydoğusu), Yıldız haritası ve Mor kristal (doğu). Üstüne gidip E. Sonuncusu "Gerçek" sahnesini açar.
 - **Anılar** (Kitap → Anılar), her biri +25 + 15 × sıra XP:
   - 5 **tarif anısı**: 10, 25, 50, 100 ve 175 tarifte (Yağmurlu çarşı, Yanık ekmek, Çay kıyısında söz, Mor bir delik, Son akşam).
   - 7 **olay anısı**: uyurken (%40), bayılınca (%60) ya da görev bitince (%30), gün şartıyla: Kumsalda ilk dans (1. gün), Kırık pusula (4), Hastane koridoru (6), Yıldız haritası (8), Mektup (12), Mor fısıltı (20), Bırakılan el (25).
