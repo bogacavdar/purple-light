@@ -9,10 +9,11 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
-## v2.33 (30 Ekim 2026) · başka demircide seçilen tarif örse taşınmıyor; meşale vuruşta 3 kat aşınır — BEKLEYEN PAKET (yayında değil)
+## v2.33 (30 Ekim 2026) · başka demircide seçilen tarif örse taşınmıyor, meşale vuruşta 3 kat aşınır, balta dersi listesinde sopa yok — BEKLEYEN PAKET (yayında değil)
 - `bekleyen-paket` dalında; "paket çık" denince GUNCELLEME_NOTLARI'na yazılır, `yayinla.sh`, main'e alınır.
 - Sebep: `openMenu` seçili tarifi (`pot.r`) yalnızca kazan↔örs geçişinde sıfırlıyordu; Dursun'da seçilen Taş balta Durmuş'un örsünde seçili kalıyordu. Yeni `v233` bloğu: `renderCraft` sarmalı, örs açıkken `smithOf(pot.r)!==(forgeWho||smith)` ise `returnAll()`, `pot.r=null`, `pot.put=[]`.
 - Belge: `parts/20_sistemler.md` Örs maddesine not.
+- Börü'nün balta dersi (tz 12) takip listesi: hedef parça bir tarifse (`REC.get(S[0])`) listeye eklenmez, yalnızca malzemeleri (satır ~7852, yerinde değişiklik). Belge: `10_akis.md` 12. adım.
 - Meşale vuruş aşınması 3 kat: `v228-mesale` bloğunda `WEAR=.045` (önce .015). Belge: `20_sistemler.md` "Her saldırı meşaleden yer" maddesi.
 
 ## v2.32 (30 Ekim 2026) · mağaralar (Yankı Mağarası Sv 5, Kök Mağarası Sv 10)

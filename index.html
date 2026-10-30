@@ -7853,7 +7853,7 @@ function tutRow(){
   if(tz===7)return rowFor('Keskin taş',1,'Zümrüt · Keskin taş tarifi');
   if(tz===8)return rowFor('Keskin taş',1,'Zümrüt · Keskin taş yap');
   if(tz===12){const S=AXE_STEPS[axeStep];if(!S)return null;const x=REC.get(S[0]),have=h(S[0]),miss=Math.max(0,S[1]-have);
-    const items=[{n:S[0],need:S[1],have}];if(x&&miss)x.i.forEach(([n,k])=>items.push({n,need:k*miss,have:haveOf(n)}));
+    const items=x?[]:[{n:S[0],need:S[1],have}];   /* v2.33: a part you make (Sopa, Keskin taş, İp) is not in the gather list, only its materials */if(x&&miss)x.i.forEach(([n,k])=>items.push({n,need:k*miss,have:haveOf(n)}));
     return{t:`Börü · Taş balta ${axeStep+1}/${AXE_STEPS.length}`,r:'Taş balta',items}}
   if(tz===9||tz===10)return{t:'Nazlı · Keskin taşı sat',r:'Keskin taş',items:[{n:'Keskin taş',need:1,have:Math.min(1,h('Keskin taş')),ng:1}]};
   if(tz===13&&window.__axeHold)return{t:'Dursun · Baltayı eline al',r:'Taş balta',items:[{n:'Taş balta',need:1,have:held()==='Taş balta'?1:0,ng:1}]};   // v103
