@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.36** ile birebir (30 Ekim 2026). Bu sürümde: başlangıç Çayır'ın Orman'a en uzak ucunda; Zümrüt, Nazlı, Börü, Dursun ve Durmuş Çayır'da kısa yürüyüş uzaklığında; öğretici malzemeleri kişilerin yanında; beş kuzen ailesinin hepsi yerleşiyor; telefonda isim için oyunun kendi klavyesi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.37** ile birebir (30 Ekim 2026). Bu sürümde: her açılışta ve yeni oyunda yükleme ekranı (menü donmaz), başlangıç bölgesi yükleme sırasında önceden çizilir, mavi öğretici parlamaları telefonda hafif; öğretici yeni haritada baştan sona denendi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

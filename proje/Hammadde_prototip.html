@@ -1282,7 +1282,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
 </head>
 <body>
 <div id="ldscr" style="position:fixed;inset:0;z-index:200;background:#07060e;color:#e8dcff;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;font:600 18px system-ui,sans-serif;letter-spacing:.08em"><div style="width:46px;height:46px;border-radius:50%;border:4px solid #3a2a5a;border-top-color:#c080ff;animation:ldspin 1s linear infinite"></div><span id="ldtxt">Yükleniyor…</span><style>@keyframes ldspin{to{transform:rotate(360deg)}}</style></div>
-<script>try{var __p=sessionStorage.getItem("hammadde.pending");if(__p){var __l=document.getElementById("ldscr");__l.style.display="flex";var __t=sessionStorage.getItem("hammadde.ldtxt");if(__t)document.getElementById("ldtxt").textContent=__t;setTimeout(function(){__l.style.display="none"},20000)}}catch(e){}</script>
+<script>/* v2.36: the loading screen shows from the first moment of every page load (the island is built before the menu) */try{var __l=document.getElementById("ldscr"),__p=sessionStorage.getItem("hammadde.pending"),__n=sessionStorage.getItem("hammadde.clicknew"),__t=sessionStorage.getItem("hammadde.ldtxt");__l.style.display="flex";document.getElementById("ldtxt").textContent=__p&&__t?__t:__p?"Yükleniyor…":__n?"Yeni oyun · ada hazırlanıyor…":"Ada hazırlanıyor…";setTimeout(function(){__l.style.display="none"},45000)}catch(e){}</script>
 <canvas id="game" aria-label="Orman kenarı ve nehir: karakteri WASD ile yürüt, E ile malzeme topla"></canvas>
 <div id="left">
 <div id="clock" class="hud"><i id="clockic" aria-hidden="true">☀️</i><span id="clockv">1. gün · 06:00</span></div>
@@ -1343,7 +1343,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.36</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.37</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -10405,7 +10405,7 @@ function idle(){try{if(onTitle||document.hidden)return;const t0=performance.now(
   if(!iconQ)iconQ=DB.R.map(x=>x.r).filter(n=>!ICON[n]);while(iconQ.length&&performance.now()-t0<6){const n=iconQ.pop();if(!ICON[n])icon(n)}}catch(e){}}
 const ric=window.requestIdleCallback?f=>window.requestIdleCallback(f,{timeout:600}):f=>setTimeout(f,250);
 (function loopIdle(){ric(()=>{idle();setTimeout(loopIdle,180)})})();
-window.__v58={chunks,PERF,setLvl};
+window.__v58={chunks,PERF,setLvl,bake,CH,CW,CHH,MAXC};   // v2.36: bake is used to draw the start area behind the loading screen
 }).toString()+')()')}catch(e){try{window.__hamErr('v58: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v59-story">
@@ -11805,8 +11805,8 @@ const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);cons
 $('t-new').addEventListener('click',e=>{if(!I2)return;e.stopImmediatePropagation();e.preventDefault();try{sessionStorage.setItem('hammadde.isle','1');sessionStorage.setItem('hammadde.clicknew','1')}catch(x){}ldShow('Yükleniyor…');setTimeout(()=>location.reload(),200)},true);
 // ---------------------------------------------------------------- after the reload: load at once
 const boot=()=>setTimeout(()=>{try{
-  if(sessionStorage.getItem('hammadde.clicknew')){sessionStorage.removeItem('hammadde.clicknew');ldHide();$('t-new').click();return}
-  const p=sessionStorage.getItem('hammadde.pending');if(!p){ldHide();return}sessionStorage.removeItem('hammadde.pending');sessionStorage.removeItem('hammadde.ldtxt');
+  if(sessionStorage.getItem('hammadde.clicknew')){sessionStorage.removeItem('hammadde.clicknew');const go=()=>{$('t-new').click();requestAnimationFrame(()=>requestAnimationFrame(()=>setTimeout(ldHide,60)))};if(window.__plPrewarm)window.__plPrewarm(go);else go();return}   // v2.36: the loading screen stays until the start area is drawn and the creator is open
+  const p=sessionStorage.getItem('hammadde.pending');if(!p){if(window.__plPrewarm)window.__plPrewarm(ldHide);else ldHide();return}sessionStorage.removeItem('hammadde.pending');sessionStorage.removeItem('hammadde.ldtxt');
   const d=JSON.parse(p);try{music.start()}catch(e){}try{claimSaves()}catch(e){}applyState(d);closeTitle();fadeIn();setTimeout(ldHide,350);
   {let q=false;try{q=!!sessionStorage.getItem('hammadde.quiet');sessionStorage.removeItem('hammadde.quiet')}catch(e){}   // v2.14: a load after a reload (clean world) says nothing about portals
    if(!q)setTimeout(()=>{if(I2)announce(BNAME[bioAt(player.x,player.y)]||'Yüzen Kayalar','ACT 2');else announce('Yıldızsız Ada','Portal')},900)}
@@ -16859,6 +16859,26 @@ kb.addEventListener('click',e=>{e.preventDefault();e.stopPropagation()});
 inp.readOnly=true;inp.setAttribute('inputmode','none');
 const _ask=askName;askName=function(){const r=_ask.apply(this,arguments);el.classList.add('tkb');inp.readOnly=true;setTimeout(()=>{try{inp.blur()}catch(e){}},80);return r};
 }).toString()+')()')}catch(e){try{window.__hamErr('v235-name: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<style id="v236-css">
+/* v2.36: the blue tutorial glow no longer animates its shadow (a repaint every frame); the light stays, only the size breathes */
+@keyframes p236{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.p189,.ibs .bs.p189{box-shadow:0 0 0 2px #11170f,0 0 14px 6px rgba(127,208,255,.8)!important;animation:p236 .9s ease-in-out infinite!important;will-change:transform}
+@media (prefers-reduced-motion:reduce){.p189,.ibs .bs.p189{animation:none!important}}
+</style>
+<script id="v236-load">
+// v2.36: behind the loading screen, draw the ground around the landing before the player sees it (a few pieces per frame,
+// so the spinner keeps turning), then hand over (new game: the creator opens; first load: the menu)
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+window.__plPrewarm=function(cb){let done=false;const fin=()=>{if(done)return;done=true;try{cb()}catch(e){}};
+  try{const V=window.__v58;if(!V||!V.bake){fin();return}const CP=V.CH*T,x0=Math.floor(spawn.x/CP),y0=Math.floor(spawn.y/CP);
+    const L=[];for(let r=0;r<=3;r++)for(let dy=-r;dy<=r;dy++)for(let dx=-r;dx<=r;dx++){if(Math.max(Math.abs(dx),Math.abs(dy))!==r||Math.abs(dy)>2)continue;const cx=x0+dx,cy=y0+dy;if(cx>=0&&cy>=0&&cx<V.CW&&cy<V.CHH)L.push([cx,cy])}
+    const max=Math.max(4,V.MAXC-4),list=L.slice(0,max),t0=performance.now();let i=0;
+    const step=()=>{if(done)return;const s=performance.now();while(i<list.length&&performance.now()-s<24){const [cx,cy]=list[i++];try{if(!V.chunks.has(cy*V.CW+cx))V.bake(cx,cy)}catch(e){}}
+      if(i>=list.length||performance.now()-t0>3000)fin();else requestAnimationFrame(step)};
+    requestAnimationFrame(step);setTimeout(fin,4000)}catch(e){fin()}};
+}).toString()+')()')}catch(e){try{window.__hamErr('v236-load: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

@@ -9,6 +9,12 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.37 (30 Ekim 2026) · yükleme ekranı, önceden çizim, hafif parlama, öğretici denemesi
+- Erken satır içi betik (ldscr'den hemen sonra): `#ldscr` artık her sayfa açılışında görünür ("Ada hazırlanıyor…" / clicknew: "Yeni oyun · ada hazırlanıyor…" / pending: ldtxt), 45 sn güvenlik kapanışı. v76 `boot`: pending yoksa `__plPrewarm(ldHide)`; clicknew: `__plPrewarm` → `$('t-new').click()` → iki kare sonra `ldHide`.
+- `window.__v58` = {chunks,PERF,setLvl,bake,CH,CW,CHH,MAXC}. Yeni `<script id="v236-load">`: `__plPrewarm(cb)` doğuş çevresindeki zemin parçalarını (en çok MAXC-4, kare başına ~24 ms) yükleme ekranının arkasında çizer, 3–4 sn sınırı.
+- Yeni `<style id="v236-css">`: `.p189` parlaması `box-shadow` animasyonu yerine sabit gölge + `transform: scale` (p236), `will-change: transform`.
+- Öğretici Playwright ile baştan sona oynandı (masaüstü klavye/fare): böğürtlen → ye → Zümrüt → meşale tarifi → elle meşale → yuvaya koy/ele al/indir → kazan yanında 4 taş → keskin taş tarifi/yapımı → Nazlı'da satış → Börü kerevit yumruğu, 4 takla + 4 savuşturma, yetenek ağacı → balta parçaları (malzemeler Börü'ye 2–6 karo) → Dursun örs → balta yuvaya/ele → tz 0, "Ekin'le konuş". Sayfa hatası yok. Ölçüm (CPU ×4): temiz dünyada yeni oyun yükleme ekranı ~19 sn, menü görünmeden karakter ekranı.
+
 ## v2.36 (30 Ekim 2026) · başlangıç yeri, ana kişiler, kuzenler, telefon isim klavyesi
 - Üretici: iniş = ilk biyomda güneyi deniz kuzeyi kara olan kumsal; v45 ofsetleri (Zümrüt -2,-29 · Nazlı 30,-51 · Börü 62,-36 · Dursun 70,-71 · Durmuş 76,-66 · Rıza -34,-22 …) 7×7 temiz karayla sığmalı (puan), eşitlikte Orman'a EDT uzaklığı en büyük. Ada 1 iniş (92,351), Orman'a 239 karo. `an` içine fam1s…fam5w (kuzen demirci/cadı) eklendi.
 - v184 kuzen yerleşimi: `D.target[b]` yerine `MAPD.an['fam'+b+'s'/'w']` (eski sabit karolar denize/başka biyoma düşüyordu, b2–b4 aileleri kuruluyordu ama findSpot null → hiç yoktu).

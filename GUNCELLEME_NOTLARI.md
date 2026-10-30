@@ -8,6 +8,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.37 · 30 Ekim 2026
+
+**Arayüz**
+- **Yükleme ekranı:** oyun her açılışta ada kurulurken siyah bir yükleme ekranı gösteriyor (dönen mor halka, "Ada hazırlanıyor…"); ana menü ancak ada hazır olunca çıkıyor. Önceden ada kurulurken ekran beyaz kalıyor ya da menü donmuş görünüyordu.
+- **Yeni oyun artık donmadan açılıyor:** bir oyun oynadıktan sonra Yeni oyun'a basınca sayfa yeniden açılıyordu ve ada kurulurken ana menü birkaç saniye donuk kalıp birden karakter ekranına geçiyordu. Artık o süre boyunca "Yeni oyun · ada hazırlanıyor…" yükleme ekranı kalıyor; ada kurulunca, başlangıç bölgesinin yer görüntüleri önceden çizilince ve karakter ekranı açılınca kalkıyor.
+- **Mavi öğretici parlamaları hafifledi:** parlayan düğmeler artık yalnızca büyüyüp küçülüyor, çevresindeki ışık sabit. Görünüş aynı, ama telefon her karede ışığı yeniden boyamak zorunda kalmıyor.
+
+**Düzeltmeler**
+- Öğretici baştan sona (Ekin'in böğürtleninden Dursun'un baltasına kadar) yeni haritada oynanarak denendi.
+
+**Tasarım belgesi**
+- Akış: yükleme ekranı (her açılış, yeni oyun, kayıt yükleme, ada geçişi); öğretici parlamasının telefonda hafif olduğu.
+
+**Proje**
+- `__v58.bake` dışarı açıldı; yeni `__plPrewarm` başlangıç bölgesini yükleme ekranının arkasında parça parça çiziyor.
+
+---
+
 ## Versiyon 2.36 · 30 Ekim 2026
 
 **Düzeltmeler**
