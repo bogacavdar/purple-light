@@ -15525,7 +15525,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 {
  TORCHB['Kaba meşale']=220;TORCHB['Meşale']=340;
- const BURN_T=4,BURN_DPS={'Kaba meşale':2,'Meşale':3},WEAR=.015;
+ const BURN_T=4,BURN_DPS={'Kaba meşale':2,'Meşale':3},WEAR=.045;   /* v2.33: three times the wear per attack (was .015) */
  let lastWear=-1e9;
  const nowS=()=>performance.now()/1000;
  const wearTorch=()=>{if(window.__plDur)return;const t=torchHeld();if(!t)return;const n=nowS();if(n-lastWear<.25)return;lastWear=n;
