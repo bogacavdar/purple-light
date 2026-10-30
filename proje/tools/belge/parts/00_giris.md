@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.30** ile birebir (30 Ekim 2026). Bu sürümde: yan görevler geldi (ilk dört biyoma 12 yan kişi; ana görevle birlikte yapılır, haritada mavi ? ve sisli çemberle gösterilir). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.31** ile birebir (30 Ekim 2026). Bu sürümde: telefonda yan görev kartı sağ üstte ana görev kartının altında; yan görev sürerken haritada yan görevin yeri sarı. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

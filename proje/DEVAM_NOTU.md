@@ -9,6 +9,10 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.31 (30 Ekim 2026) · yan görev kartı telefonda sağ üstte, haritada yan görevin yeri sarı
+- `v230` bloğu yerinde düzeltildi (yeni blok yok). `renderSQ`: kart `tutEl` görünürse onun sol/genişlik/alt kenarına hizalanır; değilse telefonda sağ üst (`right:52px`), bilgisayarda üst orta. Telefonda `craftOpen||dlgOpen` iken gizli; `.sqopen` dokununca açılır (telefonda kapalıyken tek satır). `window.__plMapQ` sarmalı: `A` varken ana görevin `_mq`'su çağrılmaz; `mapSQ` hedefin çevresine 180 px sarı radyal alan + halkalar çizer.
+- Belge: `parts/36_yan_gorevler.md` kural 10 ve 11'e v2.31 ekleri; `00_giris.md` sürüm satırı.
+
 ## v2.30 (30 Ekim 2026) · yan görevler (12 yan kişi, ana/yan görev ayrımı)
 - 30 Ekim 2026'da "paket çık" ile yayına gitti. Aynı gün CLAUDE.md'ye kural: büyük güncellemelerde "paket çık" beklenmez.
 - Belge: yeni `parts/36_yan_gorevler.md` (kurallar, harita, 12 hikâye, adım türleri, ödüller, ileride ödül fikirleri); `parts/30_act1.md` Temel kurallar'a ana/yan görev notu.

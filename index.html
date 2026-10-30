@@ -1347,7 +1347,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.30</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.31</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -15919,7 +15919,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  // ---------------------------------------------------------------- the map: "?" where explored, a foggy circle where not
  const seenT=(x,y)=>{const tx=Math.floor(x/T),ty=Math.floor(y/T);return tx>=0&&ty>=0&&tx<W&&ty<H&&explored[ty*W+tx]};
  const fogC=Q.map(q=>{const R=rngOf('fog-'+q.id),a=R()*Math.PI*2,r=R()*110;return{x:q.x+Math.cos(a)*r,y:q.y+Math.sin(a)*r}});
- {const _mq=window.__plMapQ;window.__plMapQ=function(c,ox,oy,sx,sy,big,w,h){if(_mq)try{_mq.apply(this,arguments)}catch(e){}try{mapSQ(c,ox,oy,sx,sy,big,w,h)}catch(e){}}}
+ {const _mq=window.__plMapQ;window.__plMapQ=function(c,ox,oy,sx,sy,big,w,h){if(_mq&&!A)try{_mq.apply(this,arguments)}catch(e){}   /* v2.31: no main-quest yellow while a side quest runs */try{mapSQ(c,ox,oy,sx,sy,big,w,h)}catch(e){}}}
  function mapSQ(c,ox,oy,sx,sy,big,w,h){if(onTitle)return;const now=performance.now()/1000;
    Q.forEach((q,i)=>{if(done.has(q.id)||(A&&A.id===q.id)||!inWin(q.win)||!bioSeen.has(q.b))return;
      if(seenT(q.x,q.y)){const X=(q.x/T-ox)*sx,Y=(q.y/T-oy)*sy;if(X<-10||Y<-10||X>w+10||Y>h+10)return;const R0=big?9:4.5,pl=.5+.5*Math.sin(now*3+i);
@@ -15930,13 +15930,16 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
        c.save();const g=c.createRadialGradient(X,Y,R*.15,X,Y,R);g.addColorStop(0,`rgba(225,235,245,${(.30+.08*pl).toFixed(2)})`);g.addColorStop(.7,'rgba(210,222,235,.18)');g.addColorStop(1,'rgba(210,222,235,0)');c.fillStyle=g;c.beginPath();c.arc(X,Y,R,0,6.283);c.fill();
        c.strokeStyle='rgba(235,242,250,.35)';c.lineWidth=big?2:1;c.setLineDash([big?6:3,big?6:3]);c.lineDashOffset=-now*(big?8:4);c.beginPath();c.arc(X,Y,R*.92,0,6.283);c.stroke();c.setLineDash([]);
        c.font=`900 ${Math.round(big?Math.max(14,R*.45):Math.max(8,R*.5))}px Rubik, system-ui, sans-serif`;c.textAlign='center';c.textBaseline='middle';c.fillStyle=`rgba(40,60,80,${(.55+.2*pl).toFixed(2)})`;c.fillText('?',X,Y);c.restore()}});
-   const t=targetOf();if(t){const X=(t.x/T-ox)*sx,Y=(t.y/T-oy)*sy,q=(now*1.4)%1,r0=big?6:3;if(X>-20&&Y>-20&&X<w+20&&Y<h+20){c.save();c.strokeStyle=`rgba(159,216,255,${(1-q).toFixed(2)})`;c.lineWidth=big?3:1.5;c.beginPath();c.arc(X,Y,r0+q*(big?18:8),0,6.283);c.stroke();
+   const t=targetOf();if(t){const X=(t.x/T-ox)*sx,Y=(t.y/T-oy)*sy,q=(now*1.4)%1,r0=big?6:3;
+     {const R=Math.max(big?26:9,180/T*sx),pl=.5+.5*Math.sin(now*2.6);if(X>-R&&Y>-R&&X<w+R&&Y<h+R){c.save();c.globalCompositeOperation='lighter';const g=c.createRadialGradient(X,Y,0,X,Y,R);g.addColorStop(0,`rgba(255,210,58,${(.5+.25*pl).toFixed(2)})`);g.addColorStop(.75,`rgba(255,210,58,${(.22+.12*pl).toFixed(2)})`);g.addColorStop(1,'rgba(255,210,58,0)');c.fillStyle=g;c.beginPath();c.arc(X,Y,R,0,6.283);c.fill();c.restore();
+       const q2=(now*.9)%1;c.save();for(const k2 of [q2,(q2+.5)%1]){c.strokeStyle=`rgba(255,210,58,${(1-k2).toFixed(2)})`;c.lineWidth=big?3:1.5;c.beginPath();c.arc(X,Y,R*(.4+k2*.6),0,6.283);c.stroke()}c.restore()}}   // v2.31: the side quest's place in yellow
+     if(X>-20&&Y>-20&&X<w+20&&Y<h+20){c.save();c.strokeStyle=`rgba(159,216,255,${(1-q).toFixed(2)})`;c.lineWidth=big?3:1.5;c.beginPath();c.arc(X,Y,r0+q*(big?18:8),0,6.283);c.stroke();
      c.fillStyle='#11170f';c.fillRect(Math.round(X-r0-1),Math.round(Y-r0-1),Math.round(2*r0+2),Math.round(2*r0+2));c.fillStyle='#9fd8ff';c.fillRect(Math.round(X-r0),Math.round(Y-r0),Math.round(2*r0),Math.round(2*r0));c.restore()}}}
  // ---------------------------------------------------------------- the side quest card (under the main quest card)
  {const st=document.createElement('style');st.id='v230-css';st.textContent='#sqcard{position:fixed;z-index:8;left:50%;transform:translateX(-50%);width:min(420px,calc(100vw - 32px));box-sizing:border-box;background:#1c2630;border:3px solid #7fc0e8;box-shadow:0 0 0 3px #11170f;padding:6px 36px 7px 10px;font-size:13.5px;line-height:1.3;color:#e8f2fa;pointer-events:auto}'+
    '#sqcard[hidden]{display:none}#sqcard .k{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9fd8ff;font-weight:700}#sqcard b{color:#fff}#sqcard small{display:block;color:#bcd4e4;font-size:12.5px}'+
    '#sqx{position:absolute;top:4px;right:6px;width:26px;height:26px;padding:0;font:700 17px/1 Rubik,system-ui,sans-serif;border:2px solid #4a6a80;background:rgba(0,0,0,.3);color:#e8f2fa;cursor:pointer}#sqx:hover{background:#7a2a1a}'+
-   'body.cine #sqcard,body.qscene #sqcard,body.arena #sqcard{display:none!important}body.v50m #sqcard{font-size:12px;padding:4px 32px 5px 8px;border-width:2px}body.v50m #sqcard small{font-size:11.5px}'+
+   'body.cine #sqcard,body.qscene #sqcard,body.arena #sqcard{display:none!important}body.v50m #sqcard{font-size:11px;line-height:1.25;padding:3px 26px 4px 7px;border-width:2px;min-width:140px;cursor:pointer}body.v50m #sqcard .k{font-size:9px}body.v50m #sqcard b,body.v50m #sqcard small{font-size:11px}body.v50m #sqcard:not(.sqopen) b,body.v50m #sqcard:not(.sqopen) small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}body.v50m #sqx{width:20px;height:20px;font-size:13px;top:2px;right:3px}'+
    '#cbody .sqh{margin:2px 0 6px;font-size:15px;color:#f2b84b;letter-spacing:.04em}#cbody .sqh.side{color:#9fd8ff;margin-top:14px}#cbody .sqc{border:2px solid #7fc0e8;background:rgba(127,192,232,.08);padding:6px 10px;margin:4px 0}#cbody .sqd{font-size:13px;color:#bcd4e4;margin:4px 0}';document.head.appendChild(st)}
  const card=document.createElement('div');card.id='sqcard';card.hidden=true;card.innerHTML='<span class="k"></span><b></b><small></small><button id="sqx" type="button" aria-label="Yan görevi bırak" title="Yan görevi bırak">×</button>';document.body.appendChild(card);
  card.querySelector('#sqx').addEventListener('click',e=>{e.stopPropagation();if(!A)return;const q=BY[A.id];say(`Bu yan görevi bırakayım mı? <b>${esc(q.title)}</b><br><small>${esc(q.name)} yerine döner; görevi sonra en baştan yeniden alabilirsin.</small>`,[{t:'Evet, bırak',fresh:1,f:()=>{bye();cancelA('Yan görevi bıraktın')}},{t:'Hayır',pri:1,fresh:1,f:bye}],{name:'Yan görev'})});
@@ -15950,7 +15953,12 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    if(s.ghost&&!inWin(q.win))t+=` · yalnızca gece (${hhm(q.win[0])}–${hhm(q.win[1])})`;
    return t}
  function renderSQ(){try{if(!A||onTitle||wake){card.hidden=true;return}const q=BY[A.id];card.hidden=false;card.querySelector('.k').textContent=`Yan görev · ${q.name}`;card.querySelector('b').textContent=q.title;card.querySelector('small').textContent=stepText();
-   const te=tutEl;let top=12;if(te&&!te.hidden){const r=te.getBoundingClientRect();if(r.height)top=Math.round(r.bottom+6)}card.style.top=top+'px'}catch(e){}}
+   const ph=document.body.classList.contains('v50m');if(ph&&(craftOpen||dlgOpen)){card.hidden=true;return}   // v2.31: under the main quest card, same width; on a phone at the top right
+   const te=tutEl,r=te&&!te.hidden?te.getBoundingClientRect():null,cs=card.style;
+   if(r&&r.height){cs.left=Math.round(r.left)+'px';cs.right='auto';cs.width=Math.round(r.width)+'px';cs.transform='none';cs.top=Math.round(r.bottom+4)+'px'}
+   else if(ph){cs.left='auto';cs.right='calc(env(safe-area-inset-right,0px) + 52px)';cs.width='min(31vw,250px)';cs.transform='none';cs.top='calc(env(safe-area-inset-top,0px) + 6px)'}
+   else{cs.left='50%';cs.right='auto';cs.width='';cs.transform='translateX(-50%)';cs.top='12px'}}catch(e){}}
+ card.addEventListener('click',e=>{if(e.target.closest('#sqx'))return;card.classList.toggle('sqopen')});
  setInterval(renderSQ,350);
  // the main quest card says "Ana görev"; the quest log has two parts
  {const _rt=renderTut;renderTut=function(){const r=_rt.apply(this,arguments);try{const st=$('tutstep');if(st&&/ · Görev$/.test(st.textContent))st.textContent=st.textContent.replace(/ · Görev$/,' · Ana görev')}catch(e){}return r}}

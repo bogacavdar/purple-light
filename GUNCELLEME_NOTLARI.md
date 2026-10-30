@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.31 · 30 Ekim 2026
+
+**Düzeltmeler**
+- **Telefonda yan görev kartı ekranın ortasında kalıyordu:** artık kart her zaman ana görev kartının **hemen altında ve aynı genişlikte** duruyor; telefonda **sağ üstte**, tek satır (kişi · görev · adım). Karta dokununca açılıp bütün yazıyı gösteriyor, bir daha dokununca kapanıyor. Telefonda bir pencere ya da konuşma açıkken gizleniyor. Yan görev, Görevler penceresinin "Yan görevler" bölümünde de görünmeye devam ediyor.
+
+**Arayüz**
+- **Haritada sarı bölge yan göreve geçiyor:** yan görev sürerken ana görevin sarı bölgesi haritada gösterilmiyor; onun yerine **yan görevin gidilecek yerinin çevresi sarı** boyanıyor (ortasında mavi hedef işareti). Yan görev bitince ya da bırakılınca ana görevin sarı bölgesi geri geliyor.
+
+**Tasarım belgesi**
+- Yan görevler: kartın yeri (telefonda sağ üst, tek satır) ve haritadaki sarı bölge kuralı. Belgenin sürüm satırı 2.31.
+
 ## Versiyon 2.30 · 30 Ekim 2026
 
 **Oynanış**
