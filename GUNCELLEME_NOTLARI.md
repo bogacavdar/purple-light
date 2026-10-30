@@ -8,6 +8,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.40 · 30 Ekim 2026
+
+**Düzeltmeler**
+- **Telefondaki donmanın asıl sebebi bulundu ve kapatıldı:** oyun bir çizim hatasında ya da ekran kartı belleği dolunca "Ekran kartıyla çiz" ayarını **kalıcı olarak** kapatıp klasik (yavaş) çizime geçiyordu; bir kez olunca telefon sonraki her sürümde yavaş kalıyor, sebebi de görünmüyordu (2.35–2.39'daki donma ve kasma buydu; Boğaç ayarı elle açınca düzeldi). Artık bu ayar **varsayılan açık** ve **her açılışta cihaz destekliyorsa yeniden açılıyor**: kendiliğinden kapanma yalnızca o sekme açık kaldığı sürece geçerli; eski kalıcı kapanma kaydı siliniyor. Kapanırsa bir kez bildirim çıkıyor (sebebiyle), ana menüdeki sürüm yazısında "· klasik çizim" eki ve Ayarlar › Grafik'te sebep görünüyor.
+- **Açılışta uzun bekleme kısaldı:** "ACT 1" kartının ve yükleme ekranının arkasındaki hazırlık "12 kare üst üste akıcı olana kadar, en çok 7–9 sn" bekliyordu; 30 kare/sn çizen telefonda bu hiç sağlanmadığı için her açılışta 7 sn "Yükleniyor…" kalıyordu. Şimdi zemin çizilince birkaç kare sonra bitiyor, en çok 2,5 sn.
+
+**Görsel**
+- **Telefonda öğretici parlaması yine nefes alıyor** (2.38'de tamamen durdurulmuştu, "efektler dondu" gibi görünüyordu); yalnızca büyüyüp küçülüyor, ekranı yormuyor.
+
+**Tasarım belgesi**
+- Kullanılan teknolojiler → Performans kuralları: ekran kartı ayarının her açılışta denenmesi, bekleme sınırı, parlama, ölçüm betiği; Akış → yükleme ekranı süresi.
+
+**Proje**
+- Ölü sis kodu silindi (2.39'da yalnızca kapatılmıştı). Performans ölçüm betikleri depoya girdi: `proje/tests/olcum.js` (açılış ve oyun profili, kare süreleri) ve `proje/tests/olcum_cizim.js` (kare başına çizim çağrıları, ekran kartına yükleme). Ölçüm (bilgisayar, Playwright): 2.34 ile 2.39 kumsalda ve yürürken aynı iş yükünde (JS ~1,7 sn / 10 sn; çizim çağrıları ve ekran kartı yüklemesi eşit) — yavaşlık koddan değil, kapanmış ayardan geliyordu.
+- CLAUDE.md'ye performans kuralları eklendi: önce sebep sonra düzeltme, ölçüm zorunlu, kalıcı bayrak yok, "akıcı olana kadar bekle" yok, ölü kod bırakılmaz, efekti durdurmak düzeltme değil.
+
+---
+
 ## Versiyon 2.39 · 30 Ekim 2026
 
 **Düzeltmeler**

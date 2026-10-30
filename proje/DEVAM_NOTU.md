@@ -9,6 +9,14 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.40 (30 Ekim 2026) · ekran kartı ayarı her açılışta denenir, ısınma ≤2,5 sn, ölü sis kodu silindi, ölçüm betikleri
+- Sebep (Boğaç buldu): telefonda `hammadde.gl2='0'` kalıcı kalmış (kontextlost/OOM/kare hatası yollarından biri yazmış), oyun klasik çizimde. GL2D bloğu: `want` artık `sessionStorage hammadde.gl2s!=='0'`; eski localStorage `'0'` silinir; `window.__plGLOff(why)` (gl2s + gl2why) 4 otomatik yolda `localStorage.setItem(...,'0')`'ın yerine; v68 ayar bloğu: Ayarlar kapatması da sessionStorage, not + sebep, `#verlab`'a " · klasik çizim", bir kez toast.
+- `v238-warm`: `go` 6 kare ya da 1 sn, güvenlik 2,5 sn (önce 12×<45 ms, 7/9 sn). `v236-load` prewarm 1,5/1,8 sn (önce 3/4).
+- `v236-css`: telefonda `.p189` `animation-duration:1.2s` (animation:none kalktı).
+- Ana betik: `FOGL/FOGS/fogSprite/fogNoise/drawFog` ve `if(false)` çağrısı silindi; v232 `skipIn` listesinden 'drawFog' çıktı. `WEATHER.sis` eski kayıt için duruyor.
+- Yeni `proje/tests/olcum.js` (CDP Profiler: açılış + 10 sn oyun, kendi/kapsayan süreler, kare istatistiği) ve `olcum_cizim.js` (ctx çağrı sayımı, gl texImage/drawArrays). Ölçüm 2.34 vs 2.39 (telefon emülasyonu, GL, CPU×1): PLAY js 1786 vs 1726 ms/10 sn; çizim çağrıları fillRect 663/608, drawImage 603/774; GL yükleme 0,1/0 MB — fark yok. CPU×4'te ACT kartı tutma 0,6 sn (2.34) vs 8,7 sn (2.39) → kısaltıldı.
+- Eski kayıtlara etkisi yok. CLAUDE.md: PERFORMANS KURALLARI maddesi.
+
 ## v2.39 (30 Ekim 2026) · 645×464 ızgara, sis havası yok, ACT 1 kartında hazırlık
 - Üretici: şekil N=900'de çizilir, kara kutusuna kırpılır, `ndi.zoom` ile 625×444'e (yatay/dikey ayrı) sığdırılıp 10 karo deniz payıyla 645×464'e konur; ilerleme/gürültü aynı ölçekte. Ada 1 kara ~139 bin (biyom ~23 bin), ada 2 ~178 bin (biyom ~29,7 bin). Doğuş ada 1 (68,208), Orman'a 161 karo.
 - Kayıt: `d.v235.g!==2` olan kayıtlar `migrate`'ten geçer (i2.bf/rf/sb varsa korunur); snapshot `g:2`.

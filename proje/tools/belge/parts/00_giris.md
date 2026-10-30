@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.39** ile birebir (30 Ekim 2026). Bu sürümde: ızgara eski boyutuna döndü (645 × 464, donma giderildi), sisli hava kaldırıldı, ACT 1 kartının arkasında hazırlık. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.40** ile birebir (30 Ekim 2026). Bu sürümde: ekran kartı çizimi her açılışta denenir (kalıcı kapanma yok; telefondaki donmanın sebebi buydu), kapalıysa menüde görünür, ACT 1 kartı ve yükleme ekranındaki bekleme kısaldı (en çok 2,5 sn), telefonda öğretici parlaması yine nefes alır, ölü sis kodu silindi, performans ölçüm betiği depoda. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

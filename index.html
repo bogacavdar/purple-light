@@ -1347,7 +1347,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.39</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.40</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -1457,10 +1457,16 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
 // every 2D canvas remembers when it was last drawn on, so a texture made from it knows when to refresh
 try{const P=CanvasRenderingContext2D.prototype;for(const m of ['fillRect','clearRect','strokeRect','drawImage','putImageData','fill','stroke','fillText','strokeText']){const f=P[m];if(!f)continue;
   P[m]=function(){const r=f.apply(this,arguments);const c=this.canvas;if(c)c.__v=(c.__v|0)+1;return r}}}catch(e){}
-let want=true;try{want=localStorage.getItem('hammadde.gl2')!=='0'}catch(e){}
+// v2.40 (Boğaç): the card is tried on EVERY start. A switch-off — automatic (a drawing fault, a lost context, memory full twice) or from
+// Ayarlar — is kept in sessionStorage only, so it lasts until the tab is closed; the next start tries the card again. Before 2.40 the
+// flag was in localStorage and for good: once tripped, a phone stayed on the slow 2D canvas for ever and nobody knew why.
+let want=true,glWhy='';try{want=sessionStorage.getItem('hammadde.gl2s')!=='0';glWhy=sessionStorage.getItem('hammadde.gl2why')||''}catch(e){}
+try{if(localStorage.getItem('hammadde.gl2')==='0')localStorage.removeItem('hammadde.gl2')}catch(e){}   // the old permanent flag is cleared
+window.__plGLWhy=glWhy;
+window.__plGLOff=function(why){try{sessionStorage.setItem('hammadde.gl2s','0');sessionStorage.setItem('hammadde.gl2why',String(why||'').slice(0,120))}catch(e){}};
 const GLPHONE=(()=>{try{return matchMedia('(pointer:coarse)').matches}catch(e){return false}})(),GLMAXP=GLPHONE?3:6,GLMAXOWN=GLPHONE?40:120;   // v2.17: memory caps   // v68.2: on again (the black screen was the light vignette painted with a gradient a plain 2D canvas could not read); a fresh key so everyone starts with it on
 window.__plGLWanted=want;
-window.addEventListener('error',function(ev){try{const st=String(ev.error&&ev.error.stack||'');if(window.__plGLOn&&/GL2D|earcut/.test(st)){localStorage.setItem('hammadde.gl2','0');location.reload()}}catch(_){}});
+window.addEventListener('error',function(ev){try{const st=String(ev.error&&ev.error.stack||'');if(window.__plGLOn&&/GL2D|earcut/.test(st)){window.__plGLOff('hata: '+(ev.error&&ev.error.message||''));location.reload()}}catch(_){}});
 window.__mkGL2D=function(cv){if(!want)return null;try{const g=new GL2D(cv);window.__plGLOn=true;return g}catch(e){try{console.warn('[Purple Light] WebGL kapalı:',e)}catch(_){}window.__plGLFail=String(e&&e.message||e);return null}};
 
 // ---------------------------------------------------------------- colours
@@ -1501,7 +1507,7 @@ class GL2D{
     this.pages=[];this.atl=new Map();this.own=new Map();this.txt=new Map();this.frameN=0;this.sched=false;this._fwd=null;
     this.st={a:1,b:0,c:0,d:1,e:0,f:0,alpha:1,fill:'#000',stroke:'#000',lw:1,font:'10px sans-serif',align:'start',base:'alphabetic',comp:'source-over',sb:0,sc:'rgba(0,0,0,0)',sx:0,sy:0,smooth:true,dash:[],cap:'butt',filter:'none'};
     this.stack=[];this.path=[];this.cur=null;this.mtx=document.createElement('canvas').getContext('2d');
-    cv.addEventListener('webglcontextlost',e=>{e.preventDefault();try{localStorage.setItem('hammadde.gl2','0')}catch(_){}try{window.__hamErr&&window.__hamErr('Ekran kartı çizimi durdu; oyun klasik çizimle yeniden açılıyor.',true)}catch(_){}setTimeout(()=>location.reload(),1200)});
+    cv.addEventListener('webglcontextlost',e=>{e.preventDefault();try{window.__plGLOff('ekran kartı bağlantısı koptu')}catch(_){}try{window.__hamErr&&window.__hamErr('Ekran kartı çizimi durdu; oyun klasik çizimle yeniden açılıyor.',true)}catch(_){}setTimeout(()=>location.reload(),1200)});
   }
   // -------- forwarding (a draw meant for a real 2D canvas, e.g. a portrait snapshot)
   __fwd(g){this.flush();this._fwd=g}
@@ -1611,7 +1617,7 @@ class GL2D{
   // Fewer pages and big textures on phones, a cap on big textures, and an out-of-memory check after each new upload: free everything and
   // build again; a second time within a minute → save and reopen with the plain 2D canvas.
   memChk(){const gl=this.gl,e=gl.getError();if(e!==gl.OUT_OF_MEMORY)return false;const now=performance.now();
-    if(this.oomT&&now-this.oomT<60000){try{localStorage.setItem('hammadde.gl2','0')}catch(_){}try{window.__hamErr&&window.__hamErr('Ekran kartının belleği doldu; oyun kaydedilip klasik çizimle yeniden açılıyor.',true)}catch(_){}setTimeout(()=>location.reload(),1200);this.oomT=now;return true}
+    if(this.oomT&&now-this.oomT<60000){try{window.__plGLOff('ekran kartı belleği iki kez doldu')}catch(_){}try{window.__hamErr&&window.__hamErr('Ekran kartının belleği doldu; oyun kaydedilip klasik çizimle yeniden açılıyor.',true)}catch(_){}setTimeout(()=>location.reload(),1200);this.oomT=now;return true}
     this.oomT=now;this.freeAll();return true}
   freeAll(){const gl=this.gl;try{this.flush()}catch(_){}for(const p of this.pages)gl.deleteTexture(p.tex.t);this.pages=[];this.atl.clear();for(const [,e] of this.own)gl.deleteTexture(e.tex.t);this.own.clear();this.curTex=null}
   newPage(){const P=2048,gl=this.gl;if(this.pages.length>=GLMAXP){this.flush();for(const p of this.pages)gl.deleteTexture(p.tex.t);this.pages=[];this.atl.clear()}
@@ -5910,7 +5916,7 @@ addEventListener('resize',()=>{hudK='';layoutHUD()});setInterval(layoutHUD,1000)
 // one bad frame must not freeze the game: schedule the next frame first, show the first error once
 let frameErrs=0;
 function frame(now){requestAnimationFrame(frame);
-  try{frameBody(now)}catch(e){if(ctx.__gl&&/GL2D|earcut/.test(String(e&&e.stack||''))){try{localStorage.setItem('hammadde.gl2','0');saveTo('auto')}catch(_){}location.reload();return}   // v68: a drawing fault in the graphics-card path falls back to the classic 2D canvas
+  try{frameBody(now)}catch(e){if(ctx.__gl&&/GL2D|earcut/.test(String(e&&e.stack||''))){try{window.__plGLOff('kare hatası: '+(e&&e.message||''));saveTo('auto')}catch(_){}location.reload();return}   // v68: a drawing fault in the graphics-card path falls back to the classic 2D canvas
     if(!frameErrs++){try{console.error(e)}catch(_){}try{window.__hamErr((e&&e.message||'hata')+' (kare)',true)}catch(_){}}}}
 function frameBody(now){
   const dt=Math.max(0,Math.min(.05,(now-last)/1000));last=now;time+=dt;
@@ -6808,33 +6814,10 @@ const RAIN=[];for(let i=0;i<140;i++)RAIN.push({x:Math.random(),y:Math.random(),v
 const FOGB=[];for(let i=0;i<9;i++)FOGB.push({x:Math.random(),y:Math.random(),r:.25+Math.random()*.3,v:.004+Math.random()*.006});
 const FLYS=[];for(let i=0;i<26;i++)FLYS.push({x:Math.random(),y:Math.random(),ph:Math.random()*6});
 // world-space tint (under the night), then screen-space rain, fog, ash and lightning (over it)
-let FOGL=null;const FOGS={};function fogSprite(night){const k=night?'n':'d';if(FOGS[k])return FOGS[k];const c=document.createElement('canvas');c.width=c.height=96;const g=c.getContext('2d'),col=night?'150,160,190':'225,232,225',gr=g.createRadialGradient(48,48,0,48,48,48);gr.addColorStop(0,`rgba(${col},1)`);gr.addColorStop(.55,`rgba(${col},.45)`);gr.addColorStop(1,`rgba(${col},0)`);g.fillStyle=gr;g.fillRect(0,0,96,96);return FOGS[k]=c}
 function drawWeatherTint(){const a=weather.k==='bulut'?.08:raining()?.16:0;if(!a&&!ashStorm())return;ctx.save();ctx.setTransform(1,0,0,1,0,0);ctx.fillStyle=ashStorm()?'rgba(60,30,20,.22)':`rgba(30,45,70,${a})`;ctx.fillRect(0,0,cv.width,cv.height);ctx.restore()}
-// v1.33: fog in two world-anchored layers of soft noise drifting with the wind; every light (fires, a torch, the lamp) clears a hole in it
-let FOGN=null;
-function fogNoise(){if(FOGN)return FOGN;const N=128,c=document.createElement('canvas');c.width=c.height=N;const g=c.getContext('2d'),im=g.createImageData(N,N),d=im.data;
-  const oct=[[8,.55],[16,.3],[32,.15]],tabs=oct.map(([q])=>{const a=new Float32Array(q*q);for(let i=0;i<a.length;i++)a[i]=Math.random();return a}),sm=t=>t*t*(3-2*t);
-  for(let y=0;y<N;y++)for(let x=0;x<N;x++){let v=0;for(let k=0;k<oct.length;k++){const q=oct[k][0],A=tabs[k],fx=x/N*q,fy=y/N*q,ix=Math.floor(fx),iy=Math.floor(fy),tx=sm(fx-ix),ty=sm(fy-iy),i0=ix%q,i1=(ix+1)%q,j0=iy%q,j1=(iy+1)%q;
-      v+=oct[k][1]*((A[j0*q+i0]*(1-tx)+A[j0*q+i1]*tx)*(1-ty)+(A[j1*q+i0]*(1-tx)+A[j1*q+i1]*tx)*ty)}
-    const al=Math.max(0,Math.min(1,(v-.3)*1.9)),o=(y*N+x)*4;d[o]=d[o+1]=d[o+2]=255;d[o+3]=Math.round(255*al*al*(3-2*al))}
-  g.putImageData(im,0,0);return FOGN=c}
-function drawFog(dt,Wc,Hc,thick,dk){const fw=Math.max(16,Math.ceil(Wc/6)),fh=Math.max(16,Math.ceil(Hc/6));if(!FOGL||FOGL.width!==fw||FOGL.height!==fh){FOGL=document.createElement('canvas');FOGL.width=fw;FOGL.height=fh}
-  const g=FOGL.getContext('2d'),k=fw/Wc*S*dpr,tm=performance.now()/1000,nz=fogNoise(),col=dk>.5?'62,70,94':'226,232,228',nk=1-Math.min(1,dk)*.35;
-  g.setTransform(1,0,0,1,0,0);g.globalCompositeOperation='source-over';g.globalAlpha=1;g.clearRect(0,0,fw,fh);g.imageSmoothingEnabled=true;
-  for(const [tile,par,vx,vy,al] of [[620,1,2.2,.45,.85],[380,.82,3.1,.65,.6]]){const ts=tile*k,ox=-((((cam.cx*par+tm*vx*(1+wind*.4))*k)%ts)+ts)%ts,oy=-((((cam.cy*par+tm*vy)*k)%ts)+ts)%ts;g.globalAlpha=Math.min(1,thick*al*1.6*nk);
-    for(let y=oy;y<fh;y+=ts)for(let x=ox;x<fw;x+=ts){const X0=Math.floor(x),Y0=Math.floor(y);g.drawImage(nz,X0,Y0,Math.floor(x+ts)-X0,Math.floor(y+ts)-Y0)}}
-  g.globalAlpha=1;g.globalCompositeOperation='source-atop';g.fillStyle=`rgb(${col})`;g.fillRect(0,0,fw,fh);
-  g.globalCompositeOperation='destination-over';g.fillStyle=`rgba(${col},${(thick*.35).toFixed(3)})`;g.fillRect(0,0,fw,fh);
-  g.globalCompositeOperation='destination-out';
-  const L=lightSources().slice(),th=torchHeld();if(th)L.push([player.x,player.y-6,(TORCHL[th]||90)*1.1]);else if(lampOn())L.push([player.x,player.y-6,LAMPL]);
-  for(const l of L){const X=(l[0]-cam.cx)*k,Y=(l[1]-cam.cy)*k,r=l[2]*1.25*k*(.94+.06*Math.sin(tm*7+l[0]));if(X<-r||Y<-r||X>fw+r||Y>fh+r)continue;
-    const gr=g.createRadialGradient(X,Y,0,X,Y,r);gr.addColorStop(0,'rgba(0,0,0,.95)');gr.addColorStop(.55,'rgba(0,0,0,.6)');gr.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=gr;g.fillRect(X-r,Y-r,2*r,2*r)}
-  g.globalCompositeOperation='source-over';
-  ctx.imageSmoothingEnabled=true;ctx.drawImage(FOGL,0,0,Wc,Hc);ctx.imageSmoothingEnabled=false;
-  if(weather.k==='sis'){const X=Wc/2,Y=Hc/2,R=Math.hypot(Wc,Hc)*.55,gg=ctx.createRadialGradient(X,Y,Math.min(Wc,Hc)*.2,X,Y,R);gg.addColorStop(0,`rgba(${col},0)`);gg.addColorStop(1,`rgba(${col},${(thick*.7).toFixed(2)})`);ctx.fillStyle=gg;ctx.fillRect(0,0,Wc,Hc)}}
+// v2.40: the weather fog (v1.33 drawFog + noise texture) is gone for good (v2.39 had switched it off); old saves' 'sis' is read and skipped
 function drawWeather(dt){const Wc=cv.width,Hc=cv.height,z=zoneAt(player.x,player.y),dk=darkness();ctx.save();ctx.setTransform(1,0,0,1,0,0);
   // swamp: drifting mist all the time, fireflies at night
-  if(false){   /* v2.39 (Boğaç): no fog layer at all (it covered the whole screen every frame) */const thick=weather.k==='sis'?(z===1?.62:.5):.22;drawFog(dt,Wc,Hc,thick,dk)}   // v1.33
   if(z===1&&dk>.4){ctx.globalCompositeOperation='lighter';for(const f of FLYS){f.ph+=dt;const X=((f.x+Math.sin(f.ph*.4)*.03)%1)*Wc,Y=((f.y+Math.cos(f.ph*.3)*.03)%1)*Hc,k=.5+.5*Math.sin(f.ph*3);ctx.fillStyle=`rgba(200,255,120,${(.5*k*dk).toFixed(3)})`;ctx.fillRect(X-S,Y-S,S*2,S*2);ctx.fillStyle=`rgba(200,255,120,${(.12*k*dk).toFixed(3)})`;ctx.fillRect(X-S*4,Y-S*4,S*8,S*8)}ctx.globalCompositeOperation='source-over'}
   // rain (or ash in the ash lands)
   if(raining()){const ash=ashStorm(),n=Math.round((ash?110:weather.k==='fırtına'?140:100)*(PERF.lvl>=3?.5:PERF.lvl>=2?.75:1)),ang=ash?.5:.18+wind*.25;
@@ -12476,10 +12459,14 @@ if(card){card.style.position='relative';const x=document.createElement('button')
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
 const cb=$('glon');if(!cb)return;const on=!!ctx.__gl;cb.checked=window.__plGLWanted!==false;
-const sm=cb.parentNode&&cb.parentNode.querySelector('small');if(sm){if(window.__plGLFail)sm.insertAdjacentHTML('beforeend',' <b style="color:#ff9a7a">Bu cihazda açılamadı, klasik çizim kullanılıyor.</b>');else sm.insertAdjacentHTML('beforeend',on?' <b style="color:#8fd46b">Şu an açık.</b>':' <b>Şu an kapalı.</b>')}
+// v2.40: a switch-off holds only until the tab is closed; the note says why, the menu label shows the mode
+const why=window.__plGLWhy||'';
+const sm=cb.parentNode&&cb.parentNode.querySelector('small');if(sm){if(window.__plGLFail)sm.insertAdjacentHTML('beforeend',' <b style="color:#ff9a7a">Bu cihazda açılamadı, klasik çizim kullanılıyor.</b>');else sm.insertAdjacentHTML('beforeend',on?' <b style="color:#8fd46b">Şu an açık.</b>':` <b style="color:#ff9a7a">Şu an kapalı${why?' ('+why+')':''}; oyun bir sonraki açılışta yine ekran kartıyla dener.</b>`)}
+try{if(!on){const v=$('verlab');if(v&&v.textContent.indexOf('klasik')<0)v.textContent+=' · klasik çizim'}}catch(e){}
+try{if(!on&&why&&!window.__plGLFail){setTimeout(()=>{try{toast(`Ekran kartı çizimi kapandı (${why}): oyun bu sekmede klasik çizimle, daha yavaş çalışıyor. Sekmeyi kapatıp açınca yine ekran kartıyla dener.`,true)}catch(e){}},1500)}}catch(e){}
 const was=cb.checked;   // v70.3: the switch is applied when Ayarlar is closed with Tamam
 cb.addEventListener('change',()=>{toast(cb.checked!==was?'Tamam\'a basınca uygulanır':'Değişiklik yok')});
-let gone=false;function apply(){if(gone||cb.checked===was)return;gone=true;try{localStorage.setItem('hammadde.gl2',cb.checked?'1':'0')}catch(e){}try{if(!onTitle)saveTo('auto')}catch(e){}
+let gone=false;function apply(){if(gone||cb.checked===was)return;gone=true;try{if(cb.checked)sessionStorage.removeItem('hammadde.gl2s');else{sessionStorage.setItem('hammadde.gl2s','0');sessionStorage.setItem('hammadde.gl2why','Ayarlar')}}catch(e){}try{if(!onTitle)saveTo('auto')}catch(e){}
   toast(cb.checked?'Ekran kartıyla çizim açık · oyun yeniden açılıyor':'Ekran kartıyla çizim kapalı · oyun yeniden açılıyor');setTimeout(()=>location.reload(),1100)}
 const _cs=closeSettings;closeSettings=function(){const r=_cs.apply(this,arguments);apply();return r};$('s-close').addEventListener('click',apply);
 }).toString()+')()')}catch(e){try{window.__hamErr('v68: '+(e&&e.message||e))}catch(_){}}})();
@@ -16186,7 +16173,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    if(_bl.apply(this,arguments))return true;for(const D of CAVES){const dx=(px_-D.door.x)/54,dy=(py_-(D.door.y-34))/40;if(dx*dx+dy*dy<1)return true}return false}}
  // ---------------------------------------------------------------- world things hidden inside
  const skipIn=nm=>{try{const f=window.__plEval(nm);if(typeof f!=='function')return;window.__cvf=window.__cvf||{};window.__cvf[nm]=f;window.__plEval(nm+'=function(){if(window.__plCave&&window.__plCave.cur)return;return window.__cvf["'+nm+'"].apply(this,arguments)}')}catch(e){}};
- ['drawSeaPad','drawField','drawWater','drawPier','drawBridge','drawTufts','drawGlints','drawGraves','drawClues','drawWaterHint','drawV46World','drawTree','drawPlacedObj','drawDog','drawAmbient','drawFog','drawGuide','drawRaft','tickDogs'].forEach(skipIn);
+ ['drawSeaPad','drawField','drawWater','drawPier','drawBridge','drawTufts','drawGlints','drawGraves','drawClues','drawWaterHint','drawV46World','drawTree','drawPlacedObj','drawDog','drawAmbient','drawGuide','drawRaft','tickDogs'].forEach(skipIn);
  {const _g=drawGround;drawGround=function(){const C=cur();if(!C)return _g.apply(this,arguments);ctx.fillStyle='#050405';ctx.fillRect(cam.cx-40,cam.cy-40,vw+80,vh+80);ctx.drawImage(paint(C),PX,PY)}}
  {const _d=darkness;darkness=function(){if(CV.cur)return .985;return _d.apply(this,arguments)}}
  {const _rs=roomSafe;roomSafe=function(){if(CV.cur)return true;return _rs.apply(this,arguments)}}
@@ -16884,8 +16871,8 @@ const _ask=askName;askName=function(){const r=_ask.apply(this,arguments);el.clas
 @keyframes p236{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 .p189,.ibs .bs.p189{box-shadow:0 0 0 2px #11170f,0 0 14px 6px rgba(127,208,255,.8)!important;animation:p236 .9s ease-in-out infinite!important;will-change:transform}
 @media (prefers-reduced-motion:reduce){.p189,.ibs .bs.p189{animation:none!important}}
-/* v2.38: on phones the glow does not move at all (a steady ring); the arrow beside it still nudges */
-@media (pointer:coarse){.p189,.ibs .bs.p189{animation:none!important;transform:none!important;will-change:auto}}
+/* v2.40: on phones the glow breathes too, a little slower (transform only: no repaint; 2.38 had stopped it and it read as "the effects froze") */
+@media (pointer:coarse){.p189,.ibs .bs.p189{animation-duration:1.2s!important}}
 </style>
 <script id="v236-load">
 // v2.36: behind the loading screen, draw the ground around the landing before the player sees it (a few pieces per frame,
@@ -16897,8 +16884,8 @@ window.__plPrewarm=function(cb){let done=false;const fin=()=>{if(done)return;don
     const L=[];for(let r=0;r<=3;r++)for(let dy=-r;dy<=r;dy++)for(let dx=-r;dx<=r;dx++){if(Math.max(Math.abs(dx),Math.abs(dy))!==r||Math.abs(dy)>2)continue;const cx=x0+dx,cy=y0+dy;if(cx>=0&&cy>=0&&cx<V.CW&&cy<V.CHH)L.push([cx,cy])}
     const max=Math.max(4,V.MAXC-4),list=L.slice(0,max),t0=performance.now();let i=0;
     const step=()=>{if(done)return;const s=performance.now();while(i<list.length&&performance.now()-s<24){const [cx,cy]=list[i++];try{if(!V.chunks.has(cy*V.CW+cx))V.bake(cx,cy)}catch(e){}}
-      if(i>=list.length||performance.now()-t0>3000)fin();else requestAnimationFrame(step)};
-    requestAnimationFrame(step);setTimeout(fin,4000)}catch(e){fin()}};
+      if(i>=list.length||performance.now()-t0>1500)fin();else requestAnimationFrame(step)};   // v2.40: 1.5 s cap (was 3–4 s)
+    requestAnimationFrame(step);setTimeout(fin,1800)}catch(e){fin()}};
 }).toString()+')()')}catch(e){try{window.__hamErr('v236-load: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v238-warm">
@@ -16914,9 +16901,10 @@ function prepUI(){try{if(document.fonts&&document.fonts.load){document.fonts.loa
 function warm(cb,useScreen,txt){let done=false;const was=paused;const l=$('ldscr');
   const fin=()=>{if(done)return;done=true;paused=was;window.__plActHold=false;if(useScreen){try{l.style.display='none'}catch(e){}}try{cb()}catch(e){}};
   paused=true;if(useScreen){try{if(txt)$('ldtxt').textContent=txt;l.style.display='flex'}catch(e){}}prepUI();
-  const go=()=>{const t0=performance.now();let last=t0,good=0,fr=0;const step=t=>{if(done)return;fr++;const dt=t-last;last=t;good=dt<45?good+1:0;
-      if((good>=12&&fr>=24)||t-t0>7000){fin();return}requestAnimationFrame(step)};requestAnimationFrame(step)};
-  setTimeout(fin,9000);if(window.__plPrewarm)window.__plPrewarm(go);else go()}
+  // v2.40: after the ground is baked, 6 more frames and done; 2.5 s at the very most (the old "12 smooth frames in a row, up to 7–9 s"
+  // never came true on a 30 fps phone, so every start waited the full 7 s behind "Yükleniyor…")
+  const go=()=>{const t0=performance.now();let fr=0;const step=t=>{if(done)return;fr++;if(fr>=6||t-t0>1000){fin();return}requestAnimationFrame(step)};requestAnimationFrame(step)};
+  setTimeout(fin,2500);if(window.__plPrewarm)window.__plPrewarm(go);else go()}
 window.__plWarm=(txt,cb)=>warm(cb||(()=>{}),true,txt);
 // the wake-up and Ekin's walk wait while the card holds
 {const _tw=tickWake;tickWake=function(){if(window.__plActHold)return;return _tw.apply(this,arguments)}}
