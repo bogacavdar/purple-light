@@ -9792,7 +9792,7 @@ function keyCaps(){const tt=$('tuttext');if(!tt)return;const on=wantHand()||(cra
 // ---- torch: from the bag into the hand (between the torch and the stones)
 const _tzMade=tzMade;tzMade=function(r){const was=tz;const o=_tzMade.apply(this,arguments);if(was===5&&tz===6&&r==='Kaba meşale'){if(!torchHeld())P3.hold=true;else P3.low=true;renderTut()}return o};
 const _tzCard=tzCard;tzCard=function(){if(P3.low&&tz===6){const i=beltIndex(torchHeld()||'Kaba meşale');   // v2.10
-    return['witch','Zümrüt · Meşaleyi elinden indir',`Gündüz meşale boşuna yanar. ${TOUCH?'Alttaki yanıp sönen <b>'+(i>=0?slotKey(i)+'. ':'')+'kutuya</b> bir daha dokun':'<span class="kc">'+(i>=0?slotKey(i):'yuva')+'</span> tuşuna bir daha bas'}: meşale eline girer, yanması durur.`]}
+    return['witch','Zümrüt · Meşaleyi elinden indir',`Gündüz meşaleyi boşuna yakma; geceye sakla. ${TOUCH?'Alttaki yanıp sönen <b>'+(i>=0?slotKey(i)+'. ':'')+'kutuya</b> bir daha dokun':'<span class="kc">'+(i>=0?slotKey(i):'yuva')+'</span> tuşuna bir daha bas'}: meşale eline girer, yanması durur.`]}
   if(P3.hold&&tz===6){const n='Kaba meşale',i=beltIndex(n),inInv=craftOpen&&mode==='inv';
   if(i<0)return['witch','Zümrüt · Meşaleyi eline al',inInv?(TOUCH?`<b>${n}</b> simgesine dokun, sonra alttaki yanıp sönen <b>yuvaya</b> dokun.`:`<b>${n}</b> simgesini alttaki yanıp sönen <b>yuvaya</b> sürükle (ya da tıkla, sonra yuvaya tıkla).`)
     :`Meşalen <b>envanterinde</b>; elinde değil. Önce ${TOUCH?'soldaki <b>çanta ikonuna</b> dokun':'<span class="kc">I</span> tuşuna bas (ya da soldaki çanta ikonuna tıkla)'}, meşaleyi alttaki bir <b>alet yuvasına</b> koy.`];
@@ -15165,8 +15165,8 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  let hold0=false,told=false;
  setInterval(()=>{try{const P=window.__p3;const h=!!(P&&P.hold);
    if(hold0&&!h&&tz===6&&torchHeld()&&!told&&!onTitle){told=true;const i=hotList().indexOf(torchHeld()),k=i>=0?slotKey(i):'';
-     setTimeout(()=>{if(dlgOpen)bye();say(`Aferin, meşale elinde! Şimdi iyi dinle, bu hayat kurtarır: <b>meşale gündüz işe yaramaz</b>; gün ışığında zaten görürsün. O <b>gece</b> içindir. Yalnızca <b>elindeyken yanar</b> ve yanmaya başladı mı biter: bir Kaba meşale yaklaşık <b>iki dakika</b> dayanır, yağmurda daha da çabuk. Gündüz elinde tutarsan gece geldiğinde elinde kül kalır, karanlıkta da o şey seni bulur.<br><br>O yüzden şimdi <b>elinden indir</b>: ${TOUCH?'aynı kutuya bir daha dokun':'<span class="kc">'+(k||'yuva')+'</span> tuşuna bir daha bas'}. Hava kararınca yeniden eline al. Akıllı olan bir de <b>yedek</b> yapar; malzemen oldukça ${TOUCH?'el ikonundan':'<b>Tab</b> ile'} bir tane daha yap.`,
-       [{t:'Anladım: meşale gece için',pri:1,fresh:1,f:()=>{bye();renderTut()}}],witch)},600)}
+     setTimeout(()=>{if(dlgOpen)bye();say(`Aferin, meşale elinde! Şimdi iyi dinle, bu hayat kurtarır: meşale yalnızca ışık değil, bir <b>silahtır</b> da. Elindeyken vurduğun canavar <b>tutuşur</b>, bir süre yanarak can kaybeder. Ama her vuruş meşaleden biraz yer; üstelik yalnızca <b>elindeyken yanar</b> ve yanmaya başladı mı biter: bir Kaba meşale yaklaşık <b>dört dakika</b> dayanır, yağmurda daha da çabuk.<br><br>Asıl tehlike <b>gece</b>: karanlıkta o şey seni bulur. Gündüz yakıp bitirirsen gece geldiğinde elinde kül kalır. Benim tavsiyem: meşaleni <b>geceyi geçirmek</b> için sakla. Gündüz kavgada kullanacaksan bir <b>yedek</b> yap; malzemen oldukça ${TOUCH?'el ikonundan':'<b>Tab</b> ile'} bir tane daha yap.<br><br>Şimdilik <b>elinden indir</b>: ${TOUCH?'aynı kutuya bir daha dokun':'<span class="kc">'+(k||'yuva')+'</span> tuşuna bir daha bas'}. Hava kararınca yeniden eline al.`,
+       [{t:'Anladım: geceye sakla, yedek yap',pri:1,fresh:1,f:()=>{bye();renderTut()}}],witch)},600)}
    hold0=h}catch(e){}},250);
 
  // ---- Börü's fist lesson: with a mouse a left click punches towards the pointer, walking is WASD / arrows
@@ -15518,6 +15518,40 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
     return r}}
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v228: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v228-mesale">
+// v2.28: the torch is a weapon too: a melee hit with a lit torch in hand sets the creature on fire (4 s, 2/s Kaba meşale, 3/s Meşale,
+// an orange glow and flames); torches last twice as long (220 / 340 s) and every attack eats 1.5% of a full torch on top of time.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ TORCHB['Kaba meşale']=220;TORCHB['Meşale']=340;
+ const BURN_T=4,BURN_DPS={'Kaba meşale':2,'Meşale':3},WEAR=.015;
+ let lastWear=-1e9;
+ const nowS=()=>performance.now()/1000;
+ const wearTorch=()=>{if(window.__plDur)return;const t=torchHeld();if(!t)return;const n=nowS();if(n-lastWear<.25)return;lastWear=n;
+   const mx=TORCHB[t]||170;torchBurn[t]=Math.max(.01,nn(torchBurn[t],mx)-mx*WEAR)};   // tickTorch puts it out when it reaches 0
+ const fireProof=a=>{const D=ANIM[a.k];return !D||a.tut||a.ders||a.dl||a.ar||!!(D.fx&&D.fx[0]==='yanık')};
+ const _mp=madPack;madPack=function(a){const r=_mp.apply(this,arguments);
+   try{const t=torchHeld();if(t&&a&&!fireProof(a)&&Math.hypot(a.x-player.x,a.y-player.y)<=60){
+       const was=a._burn&&a._burn.t>0;a._burn={t:BURN_T,dps:BURN_DPS[t]||2,acc:0,tick:.5};wearTorch();
+       if(!was)for(let k=0;k<8;k++)parts.push({x:a.x+(Math.random()-.5)*10,y:a.y-6,vx:(Math.random()-.5)*30,vy:-20-Math.random()*25,life:.5,c:k%2?'#ffb040':'#ff6a1a'})}}catch(e){}
+   return r};
+ {const _at=attack;attack=function(){const s0=swing;const r=_at.apply(this,arguments);try{if(swing&&swing!==s0&&torchHeld())wearTorch()}catch(e){}return r}}
+ {const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);
+   try{if(dt>0)for(const a of animals.slice()){const B=a._burn;if(!B||!(B.t>0))continue;
+       B.t-=dt;B.acc+=B.dps*dt;B.tick-=dt;
+       if(B.tick<=0||B.t<=0){B.tick=.5;const dm=Math.floor(B.acc);if(dm>=1){B.acc-=dm;a.hp-=dm;a.flash=Math.max(a.flash||0,.06);floats.push({x:a.x+(Math.random()-.5)*6,y:a.y-14,t:0,text:`-${dm}`,color:'#ff8a2a'});
+           if(a.hp<=0){a._burn=null;killAnimal(a);continue}}}
+       if(B.t<=0)a._burn=null}}catch(e){}
+   return r}}
+ {const _da=drawAnimal;drawAnimal=function(a,time){const r=_da.apply(this,arguments);
+   try{const B=a._burn;if(B&&B.t>0){const D=ANIM[a.k]||{r:6},s=+(a.scale||1)||1,R=(D.r||6)*s,x=a.x,y=a.y-R*.9,f=Math.min(1,B.t/1.2),pl=.5+.5*Math.sin(time*18+a.x);
+       ctx.save();ctx.globalCompositeOperation='lighter';const g=ctx.createRadialGradient(x,y,1,x,y,R*1.9+4);g.addColorStop(0,`rgba(255,150,40,${((.38+.18*pl)*f).toFixed(3)})`);g.addColorStop(1,'rgba(255,90,20,0)');
+       ctx.fillStyle=g;ctx.beginPath();ctx.ellipse(x,y,R*1.9+4,R*1.5+3,0,0,Math.PI*2);ctx.fill();ctx.restore();
+       if(Math.random()<.45)parts.push({x:x+(Math.random()-.5)*R*1.8,y:y+(Math.random()-.3)*R,vx:(Math.random()-.5)*8,vy:-18-Math.random()*18,life:.35+Math.random()*.25,c:Math.random()<.5?'#ff7a1a':'#ffc040'})}}catch(e){}
+   return r}}
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v228-mesale: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

@@ -73,12 +73,14 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 
 | Işık | Yarıçap | Süre | Not |
 |---|---|---|---|
-| Kaba meşale | 80 px | 110 sn (yalnızca eldeyken yanar) | 2 Dal + 2 Lif + 2 Yaprak, el yapımı |
-| Meşale | 115 px | 170 sn | Dursun döver |
+| Kaba meşale | 80 px | 220 sn (v2.28'e kadar 110; yalnızca eldeyken yanar) | 2 Dal + 2 Lif + 2 Yaprak, el yapımı |
+| Meşale | 115 px | 340 sn (v2.28'e kadar 170) | Dursun döver |
 | Kafa lambası | 125 px | sonsuz | Baş yuvası; Işıkçı'dan takasla |
 | Kamp ateşi | – | 330 sn; 2 Dal +95 sn, 1 odun +190 sn, 1 Kav +285 sn; en çok 720 sn | V ile kurulur; yağmurda 1,6 kat hızlı söner |
 
-- Meşale sol elde taşınır; sağ elde silah olabilir. Yağmurda 2 kat, fırtınada 2,7 kat hızlı biter. **Reçine** (L): Meşale +%65, Kaba meşale +%50 süre. Biten meşale yığından 1 eksilir, varsa yenisi yanar.
+- Meşale sol elde taşınır; sağ elde silah olabilir. Yağmurda 2 kat, fırtınada 2,7 kat hızlı biter.
+- **Meşale silahtır da (v2.28, Boğaç):** elinde yanan bir meşale varken yakın dövüşte vurduğun her canavar (normal vuruş, kombolar, güçlü vuruş, ulti; senden en çok 60 piksel uzaktaki) **tutuşur**: **4 sn** boyunca yanar, Kaba meşalede saniyede **2**, Meşalede saniyede **3** can kaybeder (her 0,5 sn'de bir turuncu hasar sayısı). Yanan canavarın üstünde **turuncu bir parıltı** ve yukarı uçan alevler görünür. Yanarken yeniden vurursan süre baştan başlar (yanık üst üste binmez). Yanıkla ölen canavar normal avlanmış sayılır (XP ve ganimet). Kendisi yakan canavarlar (Lav kertenkelesi, Kül cini gibi saldırısı yanık bırakanlar) tutuşmaz; Börü'nün ders canavarları ve arenanın canavarları da tutuşmaz. Uzaktan atışlar (asa, fırlatılan mızrak) tutuşturmaz.
+- **Her saldırı meşaleden yer (v2.28, Boğaç):** meşale elindeyken yaptığın her saldırı (isabet etsin etmesin) meşalenin tam süresinin **%1,5'ini** yer (Kaba meşalede ~3,3 sn, Meşalede ~5,1 sn); bu, zamanla yanmaya ektir. Aynı vuruşun birden çok canavara değmesi tek saldırı sayılır (0,25 sn içinde en çok bir kez). Sınırsız dayanıklılık hilesi açıkken yemez. **Reçine** (L): Meşale +%65, Kaba meşale +%50 süre. Biten meşale yığından 1 eksilir, varsa yenisi yanar.
 - Kamp ateşinin başında **E**: odun at ya da çiğ et/balığı **közle**.
 
 ### Hava

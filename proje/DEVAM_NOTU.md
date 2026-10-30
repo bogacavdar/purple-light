@@ -9,7 +9,7 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
-## v2.28 (30 Ekim 2026) · küçük yaprak, telefonda sürükleme, canavar başını çevirip atılır, ilk görev uyarısı, × yeri — BEKLEYEN PAKET (yayında değil)
+## v2.28 (30 Ekim 2026) · küçük yaprak, telefonda sürükleme, canavar başını çevirip atılır, ilk görev uyarısı, × yeri, meşale silah — BEKLEYEN PAKET (yayında değil)
 - `bekleyen-paket` dalında; "paket çık" denince GUNCELLEME_NOTLARI'na bu beş madde yazılır, `yayinla.sh`, main'e alınır.
 - Yeni `v228` bloğu (</body> öncesi). Belge: `parts/20_sistemler.md` (yaprak, telefonda sürükleme, başını çevirme) ve `parts/30_act1.md` (ilk görev uyarısı, ×).
 - **Yaprak:** `drawNode` sarıldı; `n.name==='Yaprak'` ise ctx (x, y+3) çevresinde ×0,7 ölçeklenir (gölge dahil). Envanter simgesi, `SPR.bush` ve toplama değişmedi.
@@ -17,6 +17,7 @@
 - **Canavar başı:** en dıştaki `drawAnimal` sarmalı: hedef açı = başın oyuncuya bakması (menzil+24 px içinde kovalarken, `a.wind>0`, Börü kereviti idle/wind) ya da atılış yönü (`a.lunge`, `__plDL` lunge). En çok ±90°, 14 rad/sn (atılışta anında), dönüşte 8 rad/sn; `a._rot`'ta tutulur. Dönükken `a.wind=0` ve `a.hp=max` ile çizilir; can çubuğu, ! ve hedef çizgisi sonra dik çizilir (v110'daki renklerle). Sersem/geri savrulma/donma/`a.mv`/`a.p4slam`'da dönmez. Oyun mantığı (zamanlama, isabet) değişmedi.
 - **İlk görev uyarısı:** `renderTut` sarıldı: kart "Görevler" iken ve `window.__v55.d.length>0` ise "Başında siyah !" yazısı kalkar (ders satırı `.lessonl` varsa yalnız o kalır, yoksa kart gizlenir).
 - **× yeri:** `#q2x` görünürken `#tut.q2xon{padding-right:40px}`.
+- **Meşale silah (aynı paket, ikinci istek):** yeni `v228-mesale` bloğu. `TORCHB` ×2 (Kaba 220, Meşale 340 sn). `madPack` sarıldı: `torchHeld()` varken ve canavar ≤60 px ise `a._burn={t:4,dps:2|3}` (yakan canavarlar, `tut/ders/dl/ar` hariç). `tickAnimals` sarmalı 0,5 sn'de bir tam sayı hasar düşer (turuncu sayı), ölürse `killAnimal`. `drawAnimal` sarmalı turuncu parıltı + alev parçacığı. Aşınma: `attack` sarmalı (`swing` değiştiyse) ve tutuşturma anında `torchBurn[t]-=mx*0,015` (0,25 sn'de en çok bir kez; `__plDur` hilesinde yok). Zümrüt'ün meşale konuşması (eski blok, ~15168) ve tz6 indir kartı (~9795) metni yerinde değişti.
 - Eski kayıtlara etkisi yok (yeni kayıt alanı yok).
 
 ## v2.27 (30 Ekim 2026) · 8 görev × 27 kişi, hikâyeli görev sahneleri
