@@ -1343,7 +1343,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.28</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.29</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -15552,6 +15552,32 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    return r}}
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v228-mesale: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v229">
+// v2.29: a mine rock is a wall all around its drawing (drawn twice the size: 32 × 28 px). A stepped outline that follows the drawn
+// rock (bottom 32, middle 24, top 14 px wide; 28 px from top to base) plus a 5 px margin; the old blocker was a small ellipse at
+// the base only, and the grid behind it was built once at start (rocks laid later did not block at all). A hero caught inside a
+// rock (old save) is moved just below it (or above if that is taken).
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ const C=48,G=new Map();let gN=-1,gT=0;
+ const isRock=n=>!!(n&&n.alive&&(n.mine||(RES[n.name]&&RES[n.name].draw==='ore')));
+ const rebuild=()=>{G.clear();for(const n of nodes){if(!isRock(n))continue;const k=Math.floor(n.x/C)*8192+Math.floor(n.y/C);let L=G.get(k);if(!L)G.set(k,L=[]);L.push(n)}gN=nodes.length;gT=performance.now()};
+ // the drawn outline, in the rock's own units (scale 1); mines are drawn ×2 about (x, y+3)
+ const inRock=(n,px,py)=>{const s=n.mine?2:1,base=Math.round(n.y)+3,dy=(py-base)/s,dx=Math.abs(px-Math.round(n.x));
+   const M=HALF;if(dy>0+M/s||dy<-14-2/s)return false;            // from 14 units above the base (the top) to the base, + margin
+   const hw=dy>=-9?8:dy>=-12?6:3.5;return dx<hw*s+M};
+ const rockAt=(px,py)=>{const now=performance.now();if(nodes.length!==gN||now-gT>1500)rebuild();
+   const gx=Math.floor(px/C),gy=Math.floor(py/C);for(let a=gx-1;a<=gx+1;a++)for(let b=gy-1;b<=gy+1;b++){const L=G.get(a*8192+b);if(!L)continue;
+     for(const n of L)if(n.alive&&inRock(n,px,py))return n}return null};
+ window.__plRockAt=rockAt;
+ {const _bl=blocked;blocked=function(px,py){if(_bl.apply(this,arguments))return true;return !!rockAt(px,py)}}
+ setInterval(()=>{try{if(onTitle||sailing)return;const n=rockAt(player.x,player.y);if(!n)return;const s=n.mine?2:1,base=Math.round(n.y)+3;
+     const below=base+HALF+2,above=base-14*s-HALF-3;
+     if(!blocked(player.x,below))player.y=below;else if(!blocked(player.x,above))player.y=above;
+     else{const side=n.x+(player.x<n.x?-1:1)*(8*s+HALF+2);if(!blocked(side,player.y))player.x=side}}catch(e){}},400);
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v229: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

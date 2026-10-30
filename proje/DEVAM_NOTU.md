@@ -9,6 +9,12 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.29 (30 Ekim 2026) · maden kayaları geçilmez — BEKLEYEN PAKET (yayında değil)
+- `bekleyen-paket` dalında; "paket çık" denince GUNCELLEME_NOTLARI'na yazılır, `yayinla.sh`, main'e alınır.
+- Yeni `v229` bloğu. Belge: `parts/20_sistemler.md` "Maden kayaları geçilmez".
+- `blocked` sarıldı: `n.mine` ya da `RES[n].draw==='ore'` olan canlı düğümler için çizime uyan basamaklı sınır (birimde taban y+3'ten yukarı: 0..−9 yarı genişlik 8, −9..−12 6, −12..−14 3,5; madende ×2; +HALF pay). Kendi ızgarası (48 px) `nodes.length` değişince ya da 1,5 sn'de bir yenilenir (eski `MG`/`mineAt` yalnızca açılışta kuruluyordu). `window.__plRockAt`. 400 ms'de bir karakter kayanın içindeyse altına/üstüne/yanına alınır.
+- Eski kayıtlara etkisi yok.
+
 ## v2.28 (30 Ekim 2026) · küçük yaprak, telefonda sürükleme, canavar başını çevirip atılır, ilk görev uyarısı, × yeri, meşale silah
 - 30 Ekim 2026'da "paket çık" ile yayına gitti (bekleyen-paket → main, `yayinla.sh` ile belge yenilendi).
 - Yeni `v228` bloğu (</body> öncesi). Belge: `parts/20_sistemler.md` (yaprak, telefonda sürükleme, başını çevirme) ve `parts/30_act1.md` (ilk görev uyarısı, ×).
