@@ -1,3 +1,6 @@
+## v2.43 (31 Ekim 2026) · haritada deniz baştan açık (paket bekliyor)
+- `updateFog` içindeki `paint`: `explored[i]||tiles[i]===4` ise duman alfa 0. `explored`/`exploredCount` değişmedi (yüzde, başarım, adım hesabı aynı). Kenar yumuşatması (`edge`) hâlâ yalnızca keşfedilmiş komşuya bakar, deniz kıyısındaki bilinmeyen karada tam duman görünür. Oynanmadı, yalnızca chk.js.
+
 ## v2.42 (31 Ekim 2026) · öğretici düzeltmeleri, SATILIK arsa kalktı, harita "?" düzeltmesi
 
 - **"+" zincirleme (Boğaç):** `chainTry/chainPlan/chainMax` (kopya envanter üzerinde özyinelemeli; döngü ve 6 basamak sınırı). `canQuick` ve `quickBrew(r,k)` zinciri kullanır (kazan + örs, satır eksiği kadar `data-k`); `handCraft` ve `handN` el yapımı listesinde aynı zinciri yapar. Zümrüt-Dursun NPC `make()` ücretli işleri değişmedi. Oynanmadı, yalnızca chk.js.
