@@ -9,6 +9,16 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.28 (30 Ekim 2026) · küçük yaprak, telefonda sürükleme, canavar başını çevirip atılır, ilk görev uyarısı, × yeri — BEKLEYEN PAKET (yayında değil)
+- `bekleyen-paket` dalında; "paket çık" denince GUNCELLEME_NOTLARI'na bu beş madde yazılır, `yayinla.sh`, main'e alınır.
+- Yeni `v228` bloğu (</body> öncesi). Belge: `parts/20_sistemler.md` (yaprak, telefonda sürükleme, başını çevirme) ve `parts/30_act1.md` (ilk görev uyarısı, ×).
+- **Yaprak:** `drawNode` sarıldı; `n.name==='Yaprak'` ise ctx (x, y+3) çevresinde ×0,7 ölçeklenir (gölge dahil). Envanter simgesi, `SPR.bush` ve toplama değişmedi.
+- **Telefonda sürükleme:** `TOUCH` ise belge düzeyinde touchstart/touchmove/touchend (capture) ile ayrı bir sürükleme: envanterde `.itile.carry` ve dolu `[data-bs]`, kazanda/örste `.tile`. 8 px kayınca başlar; başlarken `window`'a sahte `pointercancel` gönderilir (eski pointer yollarının hayaleti, `potHold`, `rowHold` temizlensin). Bırakınca envanterde `beltSet`/`beltClear`, kazanda `deposit(n,1)` ya da `trialAdd`. Kaydırılabilir üst öğe kenara 44 px yaklaşınca kendiliğinden kayar (hedef üstündeyken kaymaz). `.itile.carry{touch-action:none}`; envanter/kazanda `contextmenu` engelli. Fare yolu aynı.
+- **Canavar başı:** en dıştaki `drawAnimal` sarmalı: hedef açı = başın oyuncuya bakması (menzil+24 px içinde kovalarken, `a.wind>0`, Börü kereviti idle/wind) ya da atılış yönü (`a.lunge`, `__plDL` lunge). En çok ±90°, 14 rad/sn (atılışta anında), dönüşte 8 rad/sn; `a._rot`'ta tutulur. Dönükken `a.wind=0` ve `a.hp=max` ile çizilir; can çubuğu, ! ve hedef çizgisi sonra dik çizilir (v110'daki renklerle). Sersem/geri savrulma/donma/`a.mv`/`a.p4slam`'da dönmez. Oyun mantığı (zamanlama, isabet) değişmedi.
+- **İlk görev uyarısı:** `renderTut` sarıldı: kart "Görevler" iken ve `window.__v55.d.length>0` ise "Başında siyah !" yazısı kalkar (ders satırı `.lessonl` varsa yalnız o kalır, yoksa kart gizlenir).
+- **× yeri:** `#q2x` görünürken `#tut.q2xon{padding-right:40px}`.
+- Eski kayıtlara etkisi yok (yeni kayıt alanı yok).
+
 ## v2.27 (30 Ekim 2026) · 8 görev × 27 kişi, hikâyeli görev sahneleri
 - Görev verisi (tek satır JSON dizisi `[{"id": "E1"…`): 77 yeni görev (her kişi 8), her görevde `sc` (sahne adımları). Levent: `L6–L8` dizide L4 ile L5 arasında, `L5.r` = `["q","L8"]`. İçerik 5 yardımcıya yazdırıldı; şartname, doğrulayıcı ve birleştirici: scratchpad `q/SPEC.md`, `q/validate.py`, `q/merge.py` (depoda değil). Yeni görevlerin ödülleri bir önceki görevin ≥%106'sı (Ekin E6–E8 hariç).
 - Sahne motoru: görev bloğunda `qBeats` (q.sc → adımlar), `qBeat` (nar/emo/act/fx/cam/show/sfx/wait/tint), `qAct` (kişi/oyuncu konum ofseti, sonra geri), `qTarget` (partTarget/zoneNear), `drawQE` (duygu işareti). v218'de `window.__qscn` (üst şerit `#qnar`, `#qshow` eşya simgesi, `body.qtint-*`, `window.__camOv` kamera kayması, `parts` efektleri) ve sahne sırasında HUD gizleme. Kamera: kare döngüsündeki `cx/cy` artık `__camOv` ile karışıyor. Betiği olmayan görev (Ekin ayak işleri) eski `qLines` balonlarıyla.

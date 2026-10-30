@@ -1347,7 +1347,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.27</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.28</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -15426,6 +15426,102 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    return r};
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v218: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v228">
+// v2.28: smaller leaves on the ground; phone drag (bag → belt, items → cauldron/anvil) on touch events; creatures turn their head
+// to you and leap along it; the "talk to the one with !" line only before the first quest; room for the quest card's ×.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{
+ {const st=document.createElement('style');st.id='v228-css';st.textContent='#tut.q2xon{padding-right:40px!important}.itile.carry{touch-action:none}';document.head.appendChild(st)}
+ // ---- v2.28: the Yaprak lying on the ground is drawn at 70% (its shadow too); picking it up is unchanged
+ {const LK=.7;const _dn=drawNode;drawNode=function(n,time){if(!n||n.name!=='Yaprak')return _dn.apply(this,arguments);
+   const x=Math.round(n.x),y=Math.round(n.y)+3;ctx.save();ctx.translate(x,y);ctx.scale(LK,LK);ctx.translate(-x,-y);try{return _dn.apply(this,arguments)}finally{ctx.restore()}}}
+ // ---- v2.28: the "talk to the one with a black !" line only until the first quest is done; afterwards the card keeps only a lesson
+ // line (or hides). The quest card makes room on its right for the × so the text never sits under it.
+ {const qDone=()=>{const q=window.__v55;return q&&q.d?q.d.length:0};
+  const _rt=renderTut;renderTut=function(){const r=_rt.apply(this,arguments);try{const tx=$('tuttext'),st=$('tutstep'),qx=$('q2x');
+     if(!tutEl.hidden&&st&&st.textContent==='Görevler'&&tx&&tx.innerHTML.indexOf('Başında siyah')>=0&&qDone()>0){const les=tx.querySelector('.lessonl');
+       if(les){tx.innerHTML='';tx.appendChild(les)}else{tutEl.hidden=true;craftEl.classList.remove('tutpad')}}
+     tutEl.classList.toggle('q2xon',!!(qx&&!qx.hidden&&!tutEl.hidden))}catch(e){}return r}}
+ // ---- v2.28: phone drag on touch events (the browser's scroll or long-press menu used to cancel the pointer drag). Bag: a carryable or
+ // a filled slot follows the finger as soon as it moves; drop on a slot (bag or bottom bar) = put it there, a slot dropped off the belt
+ // empties. Cauldron/anvil: an item tile follows the finger; drop on the pot = one in (Zor mode: thrown into the trial). The list
+ // scrolls by itself when the finger nears its top or bottom edge, so the pot can be reached.
+ if(TOUCH){let TD=null,raf=0;
+  const clrOver=()=>{document.querySelectorAll('.bs.over,#hotbar .hs.over').forEach(x=>x.classList.remove('over'));const p=$('pot');if(p)p.classList.remove('over')};
+  const srcOf=t=>{if(!craftOpen||!t||!t.closest)return null;
+    if(mode==='inv'){const s=t.closest('[data-bs]');if(s&&cbody.contains(s)){const i=+s.dataset.bs,n=belt[i];return n?{k:'inv',src:'slot',i,n,el:s}:null}
+      const c=t.closest('.itile.carry');if(c&&cbody.contains(c)&&c.dataset.n)return {k:'inv',src:'inv',n:c.dataset.n,el:c};return null}
+    if(mode==='craft'){if(t.closest('.sb'))return null;const c=t.closest('.tile');if(c&&cbody.contains(c)&&c.dataset.n)return {k:'pot',n:c.dataset.n,el:c}}
+    return null};
+  const scrollerOf=el=>{for(let p=el&&el.parentElement;p&&p!==document.body;p=p.parentElement){const o=getComputedStyle(p).overflowY;if((o==='auto'||o==='scroll')&&p.scrollHeight>p.clientHeight+1)return p}return null};
+  const target=(d,x,y)=>{const el=document.elementFromPoint(x,y);
+    if(d.k==='inv'){const o=cst(el,'[data-bs],#hotbar [data-hs]');return o?{o,i:+(o.dataset.bs!=null?o.dataset.bs:o.dataset.hs)}:null}
+    const p=cst(el,'#pot');return p?{o:p}:null};
+  const loop=()=>{raf=0;if(!TD||!TD.on)return;const s=TD.sc;
+    if(s&&!TD.over){const r=s.getBoundingClientRect(),E=44;let v=0;if(TD.ly<r.top+E)v=-Math.ceil((r.top+E-TD.ly)/4);else if(TD.ly>r.bottom-E)v=Math.ceil((TD.ly-(r.bottom-E))/4);if(v)s.scrollTop+=v}
+    raf=requestAnimationFrame(loop)};
+  const start=()=>{TD.on=true;try{dispatchEvent(new Event('pointercancel'))}catch(e){}   // stops the pointer drag paths (their ghost and hold timers)
+    document.querySelectorAll('#ghost').forEach(g=>g.remove());
+    const g=document.createElement('img');g.id='ghost';g.alt='';g.src=icon(TD.n);g.style.left=TD.lx+'px';g.style.top=TD.ly+'px';document.body.appendChild(g);TD.g=g;
+    cbody.classList.add('idrag');TD.sc=scrollerOf(TD.el);try{if(navigator.vibrate)navigator.vibrate(12)}catch(e){}
+    const d=TD;if(d.k==='inv'&&d.src==='inv')setTimeout(()=>{try{if(TD!==d||!hotThing(d.n)||beltIndex(d.n)>=0)return;const f=cbody.querySelector('.bs.empty')||cbody.querySelector('.bs');if(f&&!f.classList.contains('pulse'))f.classList.add('pulse','dpulse')}catch(e){}},20);
+    if(!raf)raf=requestAnimationFrame(loop)};
+  const tp=e=>{if(!TD)return null;for(const t of e.changedTouches)if(t.identifier===TD.id)return t;return null};
+  document.addEventListener('touchstart',e=>{if(TD||e.touches.length!==1)return;const t=e.touches[0],s=srcOf(e.target);if(!s)return;
+    TD=Object.assign(s,{id:t.identifier,x:t.clientX,y:t.clientY,lx:t.clientX,ly:t.clientY,on:false,over:false})},{capture:true,passive:true});
+  document.addEventListener('touchmove',e=>{const t=tp(e);if(!t)return;TD.lx=t.clientX;TD.ly=t.clientY;
+    if(!TD.on){if(Math.hypot(t.clientX-TD.x,t.clientY-TD.y)<8)return;start()}
+    if(e.cancelable)e.preventDefault();TD.g.style.left=TD.lx+'px';TD.g.style.top=TD.ly+'px';clrOver();const o=target(TD,TD.lx,TD.ly);if(o)o.o.classList.add('over');TD.over=!!o},{capture:true,passive:false});
+  const end=(e,cancel)=>{const t=tp(e);if(!t)return;const d=TD;TD=null;if(raf){cancelAnimationFrame(raf);raf=0}if(!d.on)return;
+    if(e.cancelable)e.preventDefault();if(d.g)d.g.remove();cbody.classList.remove('idrag');clrOver();document.querySelectorAll('.dpulse').forEach(x=>x.classList.remove('dpulse','pulse'));
+    suppressClick=true;setTimeout(()=>{suppressClick=false},350);
+    if(cancel){renderCraft();return}
+    const o=target(d,t.clientX,t.clientY);
+    try{if(d.k==='inv'){
+        if(o&&o.i>=0&&o.i<hotN()){if(d.src==='slot'&&o.i===d.i){renderCraft();return}beltSet(o.i,d.n);hotK='';renderHot();toast(`${d.n} ${slotKey(o.i)}. yuvada`);renderCraft()}
+        else if(d.src==='slot'){beltClear(d.i);toast(`${d.n} yuvadan çıktı; envanterinde duruyor`);renderCraft()}
+        else renderCraft()}
+      else if(o&&mode==='craft'){if(potMode==='dene')trialAdd(d.n);else deposit(d.n,1);renderTut()}}catch(x){try{window.__hamSoft&&window.__hamSoft('v228 drop: '+(x&&x.message||x))}catch(_){}}};
+  document.addEventListener('touchend',e=>end(e,false),{capture:true,passive:false});
+  document.addEventListener('touchcancel',e=>end(e,true),{capture:true,passive:false});
+  cbody.addEventListener('contextmenu',e=>{if(craftOpen&&(mode==='inv'||mode==='craft'))e.preventDefault()});
+ }
+ // ---- v2.28: a creature turns its head to you, then leaps along it. Creatures are drawn from the side; while one is about to bite
+ // (in reach + 24 px, its warning, Börü's lesson crayfish), the whole drawing turns about its body so the head points at you
+ // (at most 90°, ~14 rad/s); during the leap it points where it flies. Back to level at ~8 rad/s. The health bar, the ! and the
+ // aim line are drawn upright in their old places. Not while stunned, knocked back, frozen or in a Reis move.
+ {const RMAX=Math.PI/2,lastT=new WeakMap();
+  const aimOf=a=>{if(!a||a.stun>0||a.kb||a.frz>0)return null;
+    const DLx=window.__plDL;if(DLx&&DLx.on&&DLx.crab===a){if(DLx.ph==='lunge')return [DLx.tx-DLx.lx,DLx.ty-DLx.ly,1];if(DLx.ph==='idle'||DLx.ph==='wind')return [player.x-a.x,player.y-a.y,0];return null}
+    if(a.mv||a.p4slam)return null;
+    if(a.lunge)return [a.lunge.vx,a.lunge.vy,1];
+    const D=ANIM[a.k];if(!D||D.temper==='zararsız')return null;
+    if(a.wind>0)return [player.x-a.x,player.y-a.y,0];
+    if(a.st==='chase'&&!D.ranged){const d=Math.hypot(player.x-a.x,player.y-a.y);if(d<(D.reach||26)+24)return [player.x-a.x,player.y-a.y,0]}
+    return null};
+  const _da=drawAnimal;drawAnimal=function(a,time){
+    let dt=.016;try{const lt=lastT.get(a);if(lt!=null)dt=Math.max(0,Math.min(.1,time-lt));lastT.set(a,time)}catch(e){}
+    let aim=null;try{aim=aimOf(a)}catch(e){}
+    let tg=0,rate=8;
+    if(aim){const dx=aim[0],dy=aim[1];if(Math.abs(dx)>2)a.face=dx>0?1:-1;const f=a.face<0?-1:1;tg=f>0?Math.atan2(dy,dx):Math.atan2(-dy,-dx);
+      if(tg>Math.PI)tg-=2*Math.PI;if(tg<-Math.PI)tg+=2*Math.PI;tg=Math.max(-RMAX,Math.min(RMAX,tg));rate=aim[2]?99:14}
+    let r0=+a._rot||0;const s=rate*dt;r0+=Math.max(-s,Math.min(s,tg-r0));a._rot=r0;
+    if(Math.abs(r0)<.03)return _da.apply(this,arguments);
+    const D=ANIM[a.k]||{r:6},sc=+(a.scale||1)||1,cx=a.x,cy=a.y-Math.max(3,(D.r||6)*.9)*sc;
+    const w0=a.wind,h0=a.hp,mx=D.hp;a.wind=0;if(mx&&h0<mx)a.hp=mx;
+    let r;ctx.save();ctx.translate(cx,cy);ctx.rotate(r0);ctx.translate(-cx,-cy);
+    try{r=_da.apply(this,arguments)}finally{ctx.restore();a.wind=w0;a.hp=h0}
+    try{const x=Math.round(a.x),hy=Math.round(a.y-((D.r||6)*2+12)*sc-(D.fly?12:0));
+      if(mx&&h0<mx){const w=a.k==='Kara ejder'?26:a.boss?20:14;hpBar(x-w/2,hy+2,w,Math.max(0,h0/mx))}
+      if(w0>0&&a.tx!=null){const ty=a.atkT||'n',C=ty==='r'?'255,59,48':ty==='y'?'255,208,40':'255,255,255',rx=a.boss?11:8,ry=a.boss?4.5:3.2;
+        ctx.lineWidth=ty==='r'?1.6:1;ctx.strokeStyle=`rgba(${C},${(.55+.4*Math.sin(time*30)).toFixed(2)})`;ctx.beginPath();ctx.ellipse(a.tx,a.ty+2,rx,ry,0,0,Math.PI*2);ctx.stroke();
+        ctx.lineWidth=1;ctx.strokeStyle=`rgba(${C},${(.25+.35*Math.sin(time*30)).toFixed(2)})`;ctx.beginPath();ctx.moveTo(a.x,a.y-4);ctx.lineTo(a.tx,a.ty);ctx.stroke();
+        const c=ty==='r'?'#ff3a2a':ty==='y'?'#ffd028':'#ffffff',big=ty!=='n',n=ty==='r'?2:1;
+        for(let i=0;i<n;i++){const ox=n>1?(i?3:-3):0;px(x-2+ox,hy-1,5,big?11:9,'#11170f');px(x-1+ox,hy,3,big?6:5,c);px(x-1+ox,hy+(big?7:6),3,2,c)}}}catch(e){}
+    return r}}
+}
+}).toString()+')()')}catch(e){try{window.__hamErr('v228: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
