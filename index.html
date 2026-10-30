@@ -16455,5 +16455,24 @@ const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments)
   return r};
 }).toString()+')()')}catch(e){console.warn('v233-camp',e)}})();
 </script>
+<script id="v233-regen">
+// =====================================================================================================
+// v2.33: a hurt creature heals slowly once the fight is over: 6 s without taking damage and not fighting (not chasing you within
+// 200 px, no wind-up/leap/slam) → +4% of full HP per second up to full. Any HP drop (any source, burning too) restarts the 6 s.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const WAIT=6,RATE=.04,NEAR=200;
+const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);
+  try{const t=+dt||0;if(t<=0)return r;for(const a of animals){const D=ANIM[a.k];if(!D||!(a.hp>0))continue;
+    if(!a._hmx)a._hmx=Math.max(a.hp,D.hp||a.hp);
+    if(a._lhp!=null&&a.hp<a._lhp-1e-6)a._calm=0;else a._calm=(a._calm||0)+t;
+    if(a.hp<a._hmx&&a._calm>=WAIT){const d=Math.hypot(player.x-a.x,player.y-a.y);
+      const fight=(a.st==='chase'&&d<NEAR)||a.wind>0||!!a.lunge||!!a.p4slam||!!a.mv||!!a._burn&&a._burn.t>0;
+      if(!fight)a.hp=Math.min(a._hmx,a.hp+a._hmx*RATE*t)}
+    a._lhp=a.hp}}catch(e){}
+  return r};
+}).toString()+')()')}catch(e){console.warn('v233-regen',e)}})();
+</script>
 </body>
 </html>
