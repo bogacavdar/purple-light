@@ -8,6 +8,26 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.38 · 30 Ekim 2026
+
+**Düzeltmeler**
+- **Telefonda yavaşlık giderildi (yeni haritadan beri).** Haritadaki sis (keşfedilmemiş yerler) bütün ada için saniyede 4 kez baştan hesaplanıyordu; yeni ada eskisinin iki katı büyük olduğu için bu iş de iki katına çıkmış, telefonda her çeyrek saniyede bir takılma yapıyordu. Artık sis yalnızca haritanın gösterdiği yerde hesaplanıyor (köşedeki küçük harita ve açıkken büyük harita): telefon hızında ~40 ms'den ~2 ms'ye indi, eski sürümden (2.34) bile çok daha hafif. Köşedeki küçük haritanın çizimi de ~3 kat hızlandı.
+- Almanaktaki biyom keşif sayacı artık 3 saniyede bir değil, en çok 12 saniyede bir ve yalnızca yeni bir yer keşfettiğinde bütün haritayı okuyor.
+
+**Arayüz**
+- **Yükleme ekranı istediğin yerde:** karakter ekranında Başla'ya basınca, "ACT 1" yazısından önce "Yıldızsız Ada hazırlanıyor…" ekranı geliyor. Oyun duruyor; arkada başlangıç bölgesi çiziliyor, kişilerin, ağaçların ve eşyaların resimleri ekran kartına yükleniyor ve oyun birkaç kare üst üste akıcı çizene kadar (en çok 7 sn) bekleniyor. Sonra hikâye başlıyor; ilk dakikada takılma olmuyor. Adalar arasında geçerken ve kayıt yüklerken de aynısı yapılıyor.
+- Oyun açılırken görünen yükleme yazısı artık "Purple Light · yükleniyor…" (sayfa yüklenirken kısa süre).
+- **Telefonda mavi öğretici parlaması artık oynamıyor:** düğmenin çevresinde sabit bir mavi ışık halkası var, yanındaki ok oynuyor. Bilgisayarda düğme hafifçe büyüyüp küçülüyor.
+
+**Tasarım belgesi**
+- Kullanılan teknolojiler: yeni "Performans kuralları" bölümü (sis yalnızca görünen pencerede, tam harita taraması yasak, ısınma, parlama, ölçüm yolu).
+- Akış: yükleme ekranının yeri (adaya girmeden önce, ada geçişinde, kayıt yüklemede; açılışta kısa).
+
+**Proje**
+- Ölçüm betikleri (Playwright, işlemci ×4–×6): 30 ms üstü işler, ekran kartına yüklenen resim miktarı, sis/sayaç/küçük harita süreleri; 2.34, 2.37 ve 2.38 karşılaştırıldı.
+
+---
+
 ## Versiyon 2.37 · 30 Ekim 2026
 
 **Arayüz**

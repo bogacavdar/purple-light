@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.37** ile birebir (30 Ekim 2026). Bu sürümde: her açılışta ve yeni oyunda yükleme ekranı (menü donmaz), başlangıç bölgesi yükleme sırasında önceden çizilir, mavi öğretici parlamaları telefonda hafif; öğretici yeni haritada baştan sona denendi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.38** ile birebir (30 Ekim 2026). Bu sürümde: telefonda yavaşlık giderildi (sis yalnızca haritanın gösterdiği yerde hesaplanır), adaya girmeden önce yükleme ekranında ısınma, telefonda sabit öğretici parlaması. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

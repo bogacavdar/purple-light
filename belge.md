@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.37** ile birebir (30 Ekim 2026). Bu sürümde: her açılışta ve yeni oyunda yükleme ekranı (menü donmaz), başlangıç bölgesi yükleme sırasında önceden çizilir, mavi öğretici parlamaları telefonda hafif; öğretici yeni haritada baştan sona denendi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.38** ile birebir (30 Ekim 2026). Bu sürümde: telefonda yavaşlık giderildi (sis yalnızca haritanın gösterdiği yerde hesaplanır), adaya girmeden önce yükleme ekranında ısınma, telefonda sabit öğretici parlaması. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -63,6 +63,17 @@ Bu bölüm oyunun ve projenin **neyle yapıldığını** anlatır: hangi program
 | Yapay zekâ desteği | **Claude** (Anthropic), Claude Code | Kodlamada, tasarım belgesinin yazımında ve testlerde kullanılır: yapay zekâ oyunu gerçek bir tarayıcıda oynatan test turları koşar, hataları bulup raporlar ve düzeltir; oyun ve belge claude.ai artifact'ı olarak da yayınlanır |
 
 **Kullanılmayanlar:** Oyun motoru (Unity, Godot, Unreal, Phaser vb.) ve hazır JavaScript kütüphanesi (React, Three.js, PixiJS vb.) **yoktur**; her şey sıfırdan yazıldı. Sunucu tarafı kod (backend) ve veritabanı sunucusu **yoktur**; oyun tamamen oyuncunun cihazında çalışır. Dışarıdan resim ya da ses dosyası **yüklenmez**.
+
+## Performans kuralları (v2.38)
+
+Oyun telefonda da akıcı olsun diye (Boğaç'ın telefonu: Honor 600) şu kurallar geçerlidir:
+
+- **Oyun sırasında haritanın tamamı taranmaz.** Ada 804 × 785 karodur (631 bin karo); oyun sırasında düzenli çalışan bir iş bütün haritayı dolaşırsa telefonda kare kaçırır.
+  - **Sis (keşfedilmemiş yerler):** yalnızca bir haritanın gösterdiği yerde hesaplanır: köşedeki küçük haritanın penceresi (çevresinde 8 karo payla, ~260 × 130 karo) ve büyük harita açıkken onun görünen penceresi. Bütün ada yalnızca oyun başlarken, kayıt yüklenince ve hileyle harita açılınca bir kez hesaplanır. Keşif yalnızca oyuncunun yanında olduğu için pencerenin dışı değişmez. Köşedeki küçük haritanın kendi küçük sis resmi vardır; ada büyüklüğündeki resim telefonun ekran kartına her seferinde yeniden gönderilmez. (2.35–2.37 bütün adayı saniyede 4 kez yeniden hesaplıyordu: telefon hızında her seferinde ~40 ms; şimdi ~2 ms.)
+  - **Biyom keşif sayacı** (almanakta hangi biyomlara girildiği) bütün haritayı okur; en çok **12 saniyede bir** ve yalnızca yeni bir yer keşfedildiyse çalışır.
+- **Yükleme ekranında ısınma:** adaya girmeden önce yer görüntüleri ve resimler hazırlanır (Akış → Yükleme ekranı).
+- **Öğretici parlaması:** parlayan düğmenin ışığı sabit bir gölgedir; bilgisayarda düğme yalnızca büyüyüp küçülür (ekran kartında, yeniden boyamadan), **telefonda hiç oynamaz** (sabit mavi halka; yanındaki ok oynar).
+- **Ölçüm yolu:** değişiklikten sonra oyun Playwright ile, işlemci 4–6 kat yavaşlatılarak (telefon hızı) oynatılır; uzun işler (30 ms üstü) ve ekran kartına yüklenen resim miktarı ölçülür.
 
 ## Programlama dilleri
 
@@ -166,7 +177,7 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 
 ## Açılış
 
-**Yükleme ekranı (v2.36, Boğaç):** oyun her açılışta ada kurulurken siyah bir **yükleme ekranı** gösterir (dönen mor halka ve "Ada hazırlanıyor…"); ana menü ancak ada hazır olunca çıkar, donmuş bir menü görünmez. Bir oyun oynandıktan sonra **Yeni oyun** sayfayı yeniden açar (temiz dünya); bu durumda yükleme ekranı ("Yeni oyun · ada hazırlanıyor…") ada kurulana, başlangıç bölgesinin yer görüntüleri önceden çizilene ve karakter ekranı açılana kadar kalır, ardından doğrudan karakter ekranı gelir. Kayıt yüklerken ve adalar arasında geçerken de aynı ekran çıkar.
+**Yükleme ekranı (v2.38, Boğaç):** iki yerde çıkar. (1) **Adaya girmeden önce:** karakter ekranında Başla'ya basınca, "ACT 1" yazısından önce "Yıldızsız Ada hazırlanıyor…" yazan bir yükleme ekranı gelir; oyun durur, arkada başlangıç bölgesinin yer görüntüleri çizilir, kişilerin, ağaçların ve eşyaların resimleri ekran kartına yüklenir ve oyun birkaç kare üst üste akıcı çizene kadar (en çok 7 sn) beklenir; sonra hikâye başlar. Adalar arasında geçerken ve kayıt yüklerken de aynısı olur. Böylece ilk dakikalarda takılma olmaz. (2) **Oyun açılırken** sayfa yüklenirken kısa bir "Purple Light · yükleniyor…" ekranı görünür (ada bu sırada kurulur); bir oyun oynandıktan sonra Yeni oyun sayfayı yeniden açar, o zaman "Yeni oyun · yükleniyor…" ekranı karakter ekranı açılana kadar kalır.
 
 1. **Ana menü:** Yeni oyun, Devam et, Kayıttan yükle, Ayarlar, Kayıtları dışa/içe aktar, Arena (kilitli), Çıkış. Menünün altında sürüm etiketi (ör. "Versiyon 1.81"). **Temiz dünya (v2.14):** bu sekmede bir oyun oynandıktan sonra menüden **Yeni oyun**, **Devam et** ya da **Yükle** (oyun içi menüden yüklemek dahil) sayfayı kısa bir "Yükleniyor…" ekranıyla yeniden açar; harita her seferinde baştan kurulur. Önceki oyunun haritada bıraktıkları (öğreticinin koyduğu böğürtlen ve taşlar, kesilen ağaçlar, kazılan madenler) yeni oyuna ya da yüklenen kayda taşınmaz.
    - **Hakkında** penceresinde "Bir Boğaçhan Çavdar oyunu" yazısının altında **"Tasarım belgesine buradan ulaşabilirsiniz"** bağlantısı vardır (v2.09). Tıklanınca bu tasarım belgesi oyunun içinde, tam ekran bir pencerede açılır (aranabilir hali, `belge.html`); sağ üstteki **Kapat** ya da Esc ile Hakkında'ya dönülür. Belge yeni sekmede de açılabilir ("Yeni sekmede aç"). Belge oyunla birlikte cihaza kaydedilir: oyun uygulama olarak yüklendiyse ya da bir kez internetle açıldıysa, **internetsiz de** o sürümün belgesi açılır (her açılışta internet varsa en son hali alınır).

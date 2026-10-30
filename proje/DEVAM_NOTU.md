@@ -9,6 +9,14 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.38 (30 Ekim 2026) · telefonda yavaşlık (sis), ısınma ekranı, sabit parlama
+- Ölçüm (Playwright, CPU ×6): `updateFog` 2.34 23 ms / 2.37 38–43 ms / 2.38 2 ms; biyom sayacı 2.34 15 ms / 2.37 40 ms; küçük harita çizimi 4,8 / 7,3 / 2,2 ms. Ekran kartına yükleme her sürümde ~0,1 MB/sn (büyük doku yok). 30 ms üstü işlerin neredeyse tamamı kare gövdesi (2.34 ile eşit).
+- `updateFog`: `fogWin(big,w,h)` pencereleri; tam geçiş yalnızca `fogLastN===-1` (başlangıç, `unpackExplored`, hile); büyük harita açıkken onun penceresi `fogImg`/`fogC`'ye kirli dikdörtgenle; küçük harita için ayrı `fogS` tuvali (pencere + 8 karo, `fogSI`, `fogS0` başlangıç karosu), `drawMap(!big)` onu kullanır.
+- v154 biyom sayacı: `tk%12` ve `exploredCount` değişmediyse atla.
+- Yeni `<script id="v238-warm">`: `__plWarm(txt,cb)` = `ldscr` göster, `paused=true`, `__plPrewarm` (zemin parçaları) + kareler 12 kez üst üste <45 ms (en az 24 kare) ya da 7 sn → gizle, `paused` eski haline, `cb`. `startCine` sarıldı (Başla → ısınma → giriş sahnesi). v76 `boot` pending yolu: `setTimeout(ldHide,350)` yerine `__plWarm('',…)`. Açılış yazısı "Purple Light · yükleniyor…".
+- `v236-css`: `@media (pointer:coarse)` `.p189` animasyonsuz.
+- Kontrol: öğretici başı (1–5) ısınmayla oynandı; ada geçişi (1→2) ısınmayla yüklendi, hata yok.
+
 ## v2.37 (30 Ekim 2026) · yükleme ekranı, önceden çizim, hafif parlama, öğretici denemesi
 - Erken satır içi betik (ldscr'den hemen sonra): `#ldscr` artık her sayfa açılışında görünür ("Ada hazırlanıyor…" / clicknew: "Yeni oyun · ada hazırlanıyor…" / pending: ldtxt), 45 sn güvenlik kapanışı. v76 `boot`: pending yoksa `__plPrewarm(ldHide)`; clicknew: `__plPrewarm` → `$('t-new').click()` → iki kare sonra `ldHide`.
 - `window.__v58` = {chunks,PERF,setLvl,bake,CH,CW,CHH,MAXC}. Yeni `<script id="v236-load">`: `__plPrewarm(cb)` doğuş çevresindeki zemin parçalarını (en çok MAXC-4, kare başına ~24 ms) yükleme ekranının arkasında çizer, 3–4 sn sınırı.

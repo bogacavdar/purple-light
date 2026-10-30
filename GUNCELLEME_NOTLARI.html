@@ -22,6 +22,28 @@ code{background:var(--card);padding:1px 5px;border-radius:4px}
 <li>Bu notlar: https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html · https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.pdf</li>
 </ul>
 <hr />
+<h2>Versiyon 2.38 · 30 Ekim 2026</h2>
+<h4>Düzeltmeler</h4>
+<ul>
+<li><strong>Telefonda yavaşlık giderildi (yeni haritadan beri).</strong> Haritadaki sis (keşfedilmemiş yerler) bütün ada için saniyede 4 kez baştan hesaplanıyordu; yeni ada eskisinin iki katı büyük olduğu için bu iş de iki katına çıkmış, telefonda her çeyrek saniyede bir takılma yapıyordu. Artık sis yalnızca haritanın gösterdiği yerde hesaplanıyor (köşedeki küçük harita ve açıkken büyük harita): telefon hızında ~40 ms'den ~2 ms'ye indi, eski sürümden (2.34) bile çok daha hafif. Köşedeki küçük haritanın çizimi de ~3 kat hızlandı.</li>
+<li>Almanaktaki biyom keşif sayacı artık 3 saniyede bir değil, en çok 12 saniyede bir ve yalnızca yeni bir yer keşfettiğinde bütün haritayı okuyor.</li>
+</ul>
+<h4>Arayüz</h4>
+<ul>
+<li><strong>Yükleme ekranı istediğin yerde:</strong> karakter ekranında Başla'ya basınca, "ACT 1" yazısından önce "Yıldızsız Ada hazırlanıyor…" ekranı geliyor. Oyun duruyor; arkada başlangıç bölgesi çiziliyor, kişilerin, ağaçların ve eşyaların resimleri ekran kartına yükleniyor ve oyun birkaç kare üst üste akıcı çizene kadar (en çok 7 sn) bekleniyor. Sonra hikâye başlıyor; ilk dakikada takılma olmuyor. Adalar arasında geçerken ve kayıt yüklerken de aynısı yapılıyor.</li>
+<li>Oyun açılırken görünen yükleme yazısı artık "Purple Light · yükleniyor…" (sayfa yüklenirken kısa süre).</li>
+<li><strong>Telefonda mavi öğretici parlaması artık oynamıyor:</strong> düğmenin çevresinde sabit bir mavi ışık halkası var, yanındaki ok oynuyor. Bilgisayarda düğme hafifçe büyüyüp küçülüyor.</li>
+</ul>
+<h4>Tasarım belgesi</h4>
+<ul>
+<li>Kullanılan teknolojiler: yeni "Performans kuralları" bölümü (sis yalnızca görünen pencerede, tam harita taraması yasak, ısınma, parlama, ölçüm yolu).</li>
+<li>Akış: yükleme ekranının yeri (adaya girmeden önce, ada geçişinde, kayıt yüklemede; açılışta kısa).</li>
+</ul>
+<h4>Proje</h4>
+<ul>
+<li>Ölçüm betikleri (Playwright, işlemci ×4–×6): 30 ms üstü işler, ekran kartına yüklenen resim miktarı, sis/sayaç/küçük harita süreleri; 2.34, 2.37 ve 2.38 karşılaştırıldı.</li>
+</ul>
+<hr />
 <h2>Versiyon 2.37 · 30 Ekim 2026</h2>
 <h4>Arayüz</h4>
 <ul>

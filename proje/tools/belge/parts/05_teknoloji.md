@@ -31,6 +31,17 @@ Bu bölüm oyunun ve projenin **neyle yapıldığını** anlatır: hangi program
 
 **Kullanılmayanlar:** Oyun motoru (Unity, Godot, Unreal, Phaser vb.) ve hazır JavaScript kütüphanesi (React, Three.js, PixiJS vb.) **yoktur**; her şey sıfırdan yazıldı. Sunucu tarafı kod (backend) ve veritabanı sunucusu **yoktur**; oyun tamamen oyuncunun cihazında çalışır. Dışarıdan resim ya da ses dosyası **yüklenmez**.
 
+## Performans kuralları (v2.38)
+
+Oyun telefonda da akıcı olsun diye (Boğaç'ın telefonu: Honor 600) şu kurallar geçerlidir:
+
+- **Oyun sırasında haritanın tamamı taranmaz.** Ada 804 × 785 karodur (631 bin karo); oyun sırasında düzenli çalışan bir iş bütün haritayı dolaşırsa telefonda kare kaçırır.
+  - **Sis (keşfedilmemiş yerler):** yalnızca bir haritanın gösterdiği yerde hesaplanır: köşedeki küçük haritanın penceresi (çevresinde 8 karo payla, ~260 × 130 karo) ve büyük harita açıkken onun görünen penceresi. Bütün ada yalnızca oyun başlarken, kayıt yüklenince ve hileyle harita açılınca bir kez hesaplanır. Keşif yalnızca oyuncunun yanında olduğu için pencerenin dışı değişmez. Köşedeki küçük haritanın kendi küçük sis resmi vardır; ada büyüklüğündeki resim telefonun ekran kartına her seferinde yeniden gönderilmez. (2.35–2.37 bütün adayı saniyede 4 kez yeniden hesaplıyordu: telefon hızında her seferinde ~40 ms; şimdi ~2 ms.)
+  - **Biyom keşif sayacı** (almanakta hangi biyomlara girildiği) bütün haritayı okur; en çok **12 saniyede bir** ve yalnızca yeni bir yer keşfedildiyse çalışır.
+- **Yükleme ekranında ısınma:** adaya girmeden önce yer görüntüleri ve resimler hazırlanır (Akış → Yükleme ekranı).
+- **Öğretici parlaması:** parlayan düğmenin ışığı sabit bir gölgedir; bilgisayarda düğme yalnızca büyüyüp küçülür (ekran kartında, yeniden boyamadan), **telefonda hiç oynamaz** (sabit mavi halka; yanındaki ok oynar).
+- **Ölçüm yolu:** değişiklikten sonra oyun Playwright ile, işlemci 4–6 kat yavaşlatılarak (telefon hızı) oynatılır; uzun işler (30 ms üstü) ve ekran kartına yüklenen resim miktarı ölçülür.
+
 ## Programlama dilleri
 
 - **JavaScript** projenin ana dilidir: oyunun bütün kodu JavaScript'tir (yaklaşık 1,9 MB'lık tek HTML dosyasının içinde, 60'tan fazla `<script>` bloğu). Eski telefonlar da çalıştırabilsin diye **ECMAScript 2018** sınırında kalınır: `?.` ve `??` gibi yeni yazımlar kullanılmaz (yerine `nn(a,b)` yardımcısı), her sürümde `chk.js` ile denetlenir.

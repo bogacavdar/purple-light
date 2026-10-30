@@ -1282,7 +1282,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
 </head>
 <body>
 <div id="ldscr" style="position:fixed;inset:0;z-index:200;background:#07060e;color:#e8dcff;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;font:600 18px system-ui,sans-serif;letter-spacing:.08em"><div style="width:46px;height:46px;border-radius:50%;border:4px solid #3a2a5a;border-top-color:#c080ff;animation:ldspin 1s linear infinite"></div><span id="ldtxt">Yükleniyor…</span><style>@keyframes ldspin{to{transform:rotate(360deg)}}</style></div>
-<script>/* v2.36: the loading screen shows from the first moment of every page load (the island is built before the menu) */try{var __l=document.getElementById("ldscr"),__p=sessionStorage.getItem("hammadde.pending"),__n=sessionStorage.getItem("hammadde.clicknew"),__t=sessionStorage.getItem("hammadde.ldtxt");__l.style.display="flex";document.getElementById("ldtxt").textContent=__p&&__t?__t:__p?"Yükleniyor…":__n?"Yeni oyun · ada hazırlanıyor…":"Ada hazırlanıyor…";setTimeout(function(){__l.style.display="none"},45000)}catch(e){}</script>
+<script>/* v2.36: the loading screen shows from the first moment of every page load (the island is built before the menu) */try{var __l=document.getElementById("ldscr"),__p=sessionStorage.getItem("hammadde.pending"),__n=sessionStorage.getItem("hammadde.clicknew"),__t=sessionStorage.getItem("hammadde.ldtxt");__l.style.display="flex";document.getElementById("ldtxt").textContent=__p&&__t?__t:__p?"Yükleniyor…":__n?"Yeni oyun · yükleniyor…":"Purple Light · yükleniyor…";setTimeout(function(){__l.style.display="none"},45000)}catch(e){}</script>
 <canvas id="game" aria-label="Orman kenarı ve nehir: karakteri WASD ile yürüt, E ile malzeme topla"></canvas>
 <div id="left">
 <div id="clock" class="hud"><i id="clockic" aria-hidden="true">☀️</i><span id="clockv">1. gün · 06:00</span></div>
@@ -1343,7 +1343,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.37</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.38</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -6074,17 +6074,28 @@ const revealR=()=>sk('H6')?12:7;
 function reveal(px,py){const tx=Math.floor(px/T),ty=Math.floor(py/T),k=ty*W+tx;if(k===lastRevealTile)return;lastRevealTile=k;const r=revealR();
   for(let y=ty-r;y<=ty+r;y++)for(let x=tx-r;x<=tx+r;x++){if(x<0||y<0||x>=W||y>=H||(x-tx)*(x-tx)+(y-ty)*(y-ty)>r*r)continue;const i=y*W+x;if(!explored[i]){explored[i]=1;exploredCount++}}}
 function packExplored(){let s2='';for(let i=0;i<explored.length;i+=8){let b=0;for(let j=0;j<8;j++)if(explored[i+j])b|=1<<j;s2+=String.fromCharCode(b)}return btoa(s2)}
-function unpackExplored(str){explored.fill(0);exploredCount=0;lastRevealTile=-1;if(!str)return;try{const s2=atob(str);for(let i=0;i<s2.length;i++){const b=s2.charCodeAt(i);for(let j=0;j<8;j++){const k=i*8+j;if(k<explored.length&&(b&(1<<j))){explored[k]=1;exploredCount++}}}}catch(e){}}
+function unpackExplored(str){explored.fill(0);exploredCount=0;lastRevealTile=-1;fogLastN=-1;if(!str)return;try{const s2=atob(str);for(let i=0;i<s2.length;i++){const b=s2.charCodeAt(i);for(let j=0;j<8;j++){const k=i*8+j;if(k<explored.length&&(b&(1<<j))){explored[k]=1;exploredCount++}}}}catch(e){}}
 // grey smoke over unknown land: two slow drifting waves, thinner right at the edge of what you know
 // the waves are separable, so three small sine tables replace two trig calls per cell; the slow drift only needs ~4 updates a second
 const fogSX=new Float32Array(W),fogCY=new Float32Array(H),fogD=new Float32Array(W+H);let fogLastT=-9,fogLastN=-1;
-function updateFog(t){if(t-fogLastT<(PERF.lvl?1:.25)&&t>=fogLastT&&exploredCount===fogLastN)return;fogLastT=t;fogLastN=exploredCount;
-  const d=fogImg.data;for(let x=0;x<W;x++)fogSX[x]=Math.sin(x*.45+t*.6);for(let y=0;y<H;y++)fogCY[y]=Math.cos(y*.5-t*.45);for(let k=0;k<W+H;k++)fogD[k]=Math.sin(k*.23+t*.3)*.8;
-  for(let y=0;y<H;y++){const cy=fogCY[y];for(let x=0;x<W;x++){const i=y*W+x,o=i*4;if(explored[i]){d[o+3]=0;continue}
-  const n=fogSX[x]*cy+fogD[x+y];const v=(116+n*15+.5)|0;
-  const edge=(x>0&&explored[i-1])||(x<W-1&&explored[i+1])||(y>0&&explored[i-W])||(y<H-1&&explored[i+W]);
-  d[o]=v;d[o+1]=v+2;d[o+2]=v+7;d[o+3]=edge?175:255}}
-  fogX.putImageData(fogImg,0,0)}
+// v2.38: the fog is worked out only where a map shows it (the corner map's window, and the big map's while it is open); the whole
+// island once at the start, after a load and when the map is revealed (fogLastN = -1). Exploring only ever happens beside you,
+// inside the corner map's window, so nothing outside it changes. (2.35–2.37 redrew all 804×785 tiles four times a second.)
+function fogWin(big,w,h){if(big){const v=mapView(w,h);return[v.ox,v.oy,v.vwT,v.vhT]}const vwT=Math.round(Math.min(W,645)*.3),vhT=Math.round(vwT*h/w);return[Math.max(0,Math.min(W-vwT,player.x/T-vwT/2)),Math.max(0,Math.min(H-vhT,player.y/T-vhT/2)),vwT,vhT]}
+// the corner map has its own small fog picture (its window and an 8-tile margin), so a phone never re-sends the island-sized one
+const fogS=document.createElement('canvas'),fogSG=fogS.getContext('2d');let fogSI=null,fogS0=[0,0];
+function updateFog(t){const full=fogLastN===-1;if(!full&&t-fogLastT<(PERF.lvl?1:.25)&&t>=fogLastT&&exploredCount===fogLastN)return;fogLastT=t;fogLastN=exploredCount;
+  for(let x=0;x<W;x++)fogSX[x]=Math.sin(x*.45+t*.6);for(let y=0;y<H;y++)fogCY[y]=Math.cos(y*.5-t*.45);for(let k=0;k<W+H;k++)fogD[k]=Math.sin(k*.23+t*.3)*.8;
+  const paint=(d,x0,y0,x1,y1,sw,bx,by)=>{for(let y=y0;y<y1;y++){const cy=fogCY[y];for(let x=x0;x<x1;x++){const i=y*W+x,o=sw?((y-by)*sw+(x-bx))*4:i*4;if(explored[i]){d[o+3]=0;continue}
+    const n=fogSX[x]*cy+fogD[x+y];const v=(116+n*15+.5)|0;
+    const edge=(x>0&&explored[i-1])||(x<W-1&&explored[i+1])||(y>0&&explored[i-W])||(y<H-1&&explored[i+W]);
+    d[o]=v;d[o+1]=v+2;d[o+2]=v+7;d[o+3]=edge?175:255}}};
+  const clip=r=>{const m=r[4]||2;return[Math.max(0,Math.floor(r[0])-m),Math.max(0,Math.floor(r[1])-m),Math.min(W,Math.ceil(r[0]+r[2])+m),Math.min(H,Math.ceil(r[1]+r[3])+m)]};
+  if(full){paint(fogImg.data,0,0,W,H,0,0,0);fogX.putImageData(fogImg,0,0)}
+  else{try{if(craftOpen&&mode==='map'){const bc=$('bigmap');if(bc){const [x0,y0,x1,y1]=clip(fogWin(true,bc.width,bc.height));if(x1>x0&&y1>y0){paint(fogImg.data,x0,y0,x1,y1,0,0,0);fogX.putImageData(fogImg,0,0,x0,y0,x1-x0,y1-y0)}}}}catch(e){}}
+  try{const r=fogWin(false,mini.width,mini.height);r[4]=8;const [x0,y0,x1,y1]=clip(r),cw=x1-x0,ch=y1-y0;if(cw<1||ch<1)return;
+    if(!fogSI||fogSI.width!==cw||fogSI.height!==ch){fogS.width=cw;fogS.height=ch;fogSI=fogSG.createImageData(cw,ch)}
+    paint(fogSI.data,x0,y0,x1,y1,cw,x0,y0);fogSG.putImageData(fogSI,0,0);fogS0=[x0,y0]}catch(e){fogSI=null}}
 // a few black question marks drift in and out of the unknown (never many at once)
 const QM=[];for(let i=0;i<5;i++)QM.push({x:-1,y:-1,t:0,life:1,s:1});
 function placeQM(q){q.x=-1;for(let k=0;k<40;k++){const x=1+Math.floor(Math.random()*(W-2)),y=1+Math.floor(Math.random()*(H-2)),i=y*W+x;if(!explored[i]&&(k>25||tiles[i]<4)){q.x=x;q.y=y;break}}q.t=0;q.life=2.4+Math.random()*2.4;q.s=.75+Math.random()*.5}
@@ -6125,7 +6136,7 @@ function drawMap(c,w,h,big){
   if(!big){vwT=Math.round(Math.min(W,645)*.3);vhT=Math.round(vwT*h/w);ox=Math.max(0,Math.min(W-vwT,player.x/T-vwT/2));oy=Math.max(0,Math.min(H-vhT,player.y/T-vhT/2))}
   const sx=w/vwT,sy=h/vhT;c.setTransform(1,0,0,1,0,0);if(big)MAPHITS.length=0;
   c.imageSmoothingEnabled=false;c.drawImage(mapBase,ox,oy,vwT,vhT,0,0,w,h);
-  c.imageSmoothingEnabled=true;c.drawImage(fogC,ox,oy,vwT,vhT,0,0,w,h);c.imageSmoothingEnabled=false;
+  c.imageSmoothingEnabled=true;if(!big&&fogSI)c.drawImage(fogS,ox-fogS0[0],oy-fogS0[1],vwT,vhT,0,0,w,h);else c.drawImage(fogC,ox,oy,vwT,vhT,0,0,w,h);c.imageSmoothingEnabled=false;   // v2.38: the corner map reads its own small fog
   c.textAlign='center';c.textBaseline='middle';
   for(const q of QM){if(q.x<0)continue;const a=Math.pow(Math.sin(Math.PI*Math.min(1,q.t/q.life)),1.5);c.font=`bold ${Math.round((big?26:10)*q.s)}px Rubik, system-ui, sans-serif`;c.fillStyle=`rgba(12,12,18,${(a*.8).toFixed(3)})`;c.fillText('?',(q.x+.5-ox)*sx,(q.y+.5-oy)*sy)}
   const dk=darkness(),trq=torchHeld(),pl_=trq?TORCHL[trq]:lampOn()?LAMPL:buffOn('göz')?58:0,lit=(wx,wy)=>dk<.5||litAt(wx,wy)||(pl_&&Math.hypot(wx-player.x,wy-player.y)<pl_);
@@ -11807,7 +11818,7 @@ $('t-new').addEventListener('click',e=>{if(!I2)return;e.stopImmediatePropagation
 const boot=()=>setTimeout(()=>{try{
   if(sessionStorage.getItem('hammadde.clicknew')){sessionStorage.removeItem('hammadde.clicknew');const go=()=>{$('t-new').click();requestAnimationFrame(()=>requestAnimationFrame(()=>setTimeout(ldHide,60)))};if(window.__plPrewarm)window.__plPrewarm(go);else go();return}   // v2.36: the loading screen stays until the start area is drawn and the creator is open
   const p=sessionStorage.getItem('hammadde.pending');if(!p){if(window.__plPrewarm)window.__plPrewarm(ldHide);else ldHide();return}sessionStorage.removeItem('hammadde.pending');sessionStorage.removeItem('hammadde.ldtxt');
-  const d=JSON.parse(p);try{music.start()}catch(e){}try{claimSaves()}catch(e){}applyState(d);closeTitle();fadeIn();setTimeout(ldHide,350);
+  const d=JSON.parse(p);try{music.start()}catch(e){}try{claimSaves()}catch(e){}applyState(d);closeTitle();fadeIn();if(window.__plWarm)window.__plWarm('',()=>{});else setTimeout(ldHide,350);   // v2.38: warm the island first
   {let q=false;try{q=!!sessionStorage.getItem('hammadde.quiet');sessionStorage.removeItem('hammadde.quiet')}catch(e){}   // v2.14: a load after a reload (clean world) says nothing about portals
    if(!q)setTimeout(()=>{if(I2)announce(BNAME[bioAt(player.x,player.y)]||'Yüzen Kayalar','ACT 2');else announce('Yıldızsız Ada','Portal')},900)}
   try{saveTo('auto',true)}catch(e){}
@@ -13997,7 +14008,8 @@ if(ISLE!==2)try{
       cres.querySelectorAll('[data-cr] span').forEach(s=>s.textContent='+'+AMT);e.stopPropagation();return}
     const b=e.target.closest('[data-cr]');if(!b)return;e.stopPropagation();e.preventDefault();const n=b.dataset.cr;if(!n||onTitle)return;gain(n,AMT);sfx('pick');toast(`Hile: +${AMT} ${n}`);renderInv();if(craftOpen)renderCraft();renderTut()},true)}}
 // 3 · a land counts as reached when you have explored it on the map (the far bank seen from across the river does not count)
-{const V=window.__v128;let tk=0;setInterval(()=>{try{if(onTitle||!V||ISLE===2)return;if(++tk%3)return;const cnt=[0,0,0,0,0,0];
+{const V=window.__v128;let tk=0,lastN=-1;setInterval(()=>{try{if(onTitle||!V||ISLE===2)return;if(++tk%12)return;if(exploredCount===lastN)return;lastN=exploredCount;   // v2.38: every 12 s and only after new ground (it reads the whole map)
+const cnt=[0,0,0,0,0,0];
    for(let i=0;i<W*H;i++){if(!explored[i]||tiles[i]>2)continue;const b=BIO[i];if((b===2||b===3)&&GRD[i]<14)continue;cnt[b]++}   // v2.35
    let m=V.b||0;for(let b=5;b>m;b--)if(cnt[b]>=60){m=b;break}if(m>(V.b||0))V.b=m}catch(e){}},1000)}
 }).toString()+')()')}catch(e){try{window.__hamErr('v154: '+(e&&e.message||e))}catch(_){}}})();
@@ -16865,6 +16877,8 @@ const _ask=askName;askName=function(){const r=_ask.apply(this,arguments);el.clas
 @keyframes p236{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
 .p189,.ibs .bs.p189{box-shadow:0 0 0 2px #11170f,0 0 14px 6px rgba(127,208,255,.8)!important;animation:p236 .9s ease-in-out infinite!important;will-change:transform}
 @media (prefers-reduced-motion:reduce){.p189,.ibs .bs.p189{animation:none!important}}
+/* v2.38: on phones the glow does not move at all (a steady ring); the arrow beside it still nudges */
+@media (pointer:coarse){.p189,.ibs .bs.p189{animation:none!important;transform:none!important;will-change:auto}}
 </style>
 <script id="v236-load">
 // v2.36: behind the loading screen, draw the ground around the landing before the player sees it (a few pieces per frame,
@@ -16879,6 +16893,21 @@ window.__plPrewarm=function(cb){let done=false;const fin=()=>{if(done)return;don
       if(i>=list.length||performance.now()-t0>3000)fin();else requestAnimationFrame(step)};
     requestAnimationFrame(step);setTimeout(fin,4000)}catch(e){fin()}};
 }).toString()+')()')}catch(e){try{window.__hamErr('v236-load: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v238-warm">
+// v2.38: the island warms up behind a loading screen before you see it: after the character screen (before "ACT 1") and after an
+// island switch. The game is paused; the ground around you is drawn, the pictures of the people, trees and things in view go to
+// the graphics card, and it waits until a few frames in a row run smoothly (at most 7 s). Then the story starts.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+function warm(txt,cb){const l=$('ldscr');let done=false;const fin=()=>{if(done)return;done=true;paused=was;try{l.style.display='none'}catch(e){}try{cb()}catch(e){}};
+  const was=paused;paused=true;try{if(txt)$('ldtxt').textContent=txt;l.style.display='flex'}catch(e){}
+  const go=()=>{const t0=performance.now();let last=t0,good=0,fr=0;const step=t=>{if(done)return;fr++;const dt=t-last;last=t;good=dt<45?good+1:0;
+      if((good>=12&&fr>=24)||t-t0>7000){fin();return}requestAnimationFrame(step)};requestAnimationFrame(step)};
+  setTimeout(fin,9000);if(window.__plPrewarm)window.__plPrewarm(go);else go()}
+window.__plWarm=warm;
+const _sc=startCine;startCine=function(){const a=arguments,self=this;warm(ISLE===2?'Yüzen Kayalar hazırlanıyor…':'Yıldızsız Ada hazırlanıyor…',()=>_sc.apply(self,a))};
+}).toString()+')()')}catch(e){try{window.__hamErr('v238-warm: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
