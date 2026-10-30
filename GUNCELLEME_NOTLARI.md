@@ -8,6 +8,27 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.36 · 30 Ekim 2026
+
+**Düzeltmeler**
+- **Başlangıç yeri:** oyun artık Çayır'ın **Orman'a en uzak** ucunda, hilalin batı ucundaki güneye bakan kumsalda başlıyor (2.35'te iç körfezin kıyısındaydı ve kişiler Orman'a, kıyıya taşıyordu).
+- **Ana kişiler yine yakın ve Çayır'da:** Ekin (kumsal) → Zümrüt (~29 karo kuzeyde) → Nazlı (~37 karo) → Börü (~35 karo) → Dursun ve Durmuş (~36 karo). Aralarındaki yollarda başka kişi durmuyor; Rıza kampın batısında, Elif ve Kaptan kumsalda Ekin'in arkasında.
+- **Kuzen aileleri:** 2.35'te Bataklık, Kayalık Dağ ve Kül Diyarı'ndaki aileler yeni haritada yer bulamayıp hiç çıkmıyordu; beş ailenin hepsi artık kendi biyomunda. Orman'daki aile (Cadı Yakut) Çayır tarafına yakın.
+
+**Oynanış**
+- Öğretici malzemeleri kişilerin yanında çıkıyor: böğürtlenler Ekin'in kampının 2–6 karo çevresinde (yiyemeden kaybedersen yine Ekin'in yanında yeniden çıkar), meşale malzemeleri (iki tur da) ve taşlar Zümrüt'ün kazanının yanında, balta malzemeleri Börü'nün yanında.
+
+**Arayüz**
+- **Telefonda ve tablette isim girişi:** telefonun kendi klavyesi açılmıyor (yatay ekranda ikiye bölünüp pencereyi kapatıyordu); isim penceresinde oyunun kendi Türkçe klavyesi var: üç sıra harf (Ğ, Ü, Ş, İ, Ö, Ç dahil), Boşluk, Sil, Rastgele, Tamam. İlk harf büyük, sonrakiler küçük yazılır. Bilgisayarda eskisi gibi klavyeyle yazılır.
+
+**Tasarım belgesi**
+- Öğretici: malzemelerin yeri, ana kişilerin sırası ve uzaklıkları, başlangıç yeri; isim penceresinin telefon klavyesi. ACT 1: başlangıç yeri ve kuzen aileleri.
+
+**Proje**
+- Ada üreticisi: iniş yeri kuralı (ana kişilerin dizilimi sığmalı, sonra Orman'a en uzak kumsal), kuzen aileleri için her biyomda yer işaretleri.
+
+---
+
 ## Versiyon 2.35 · 30 Ekim 2026
 
 **Oynanış**

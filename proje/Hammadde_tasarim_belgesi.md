@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.35** ile birebir (30 Ekim 2026). Bu sürümde: iki ada da yeni şeklinde — Yıldızsız Ada hilal, ikinci ada yonca; altı biyom eşit ve zincir halinde; ikinci adada da büyük nehir (3 köprü) ve sıradağ (kaya yığını) var. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.36** ile birebir (30 Ekim 2026). Bu sürümde: başlangıç Çayır'ın Orman'a en uzak ucunda; Zümrüt, Nazlı, Börü, Dursun ve Durmuş Çayır'da kısa yürüyüş uzaklığında; öğretici malzemeleri kişilerin yanında; beş kuzen ailesinin hepsi yerleşiyor; telefonda isim için oyunun kendi klavyesi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -170,7 +170,7 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
    - **Hakkında** penceresinde "Bir Boğaçhan Çavdar oyunu" yazısının altında **"Tasarım belgesine buradan ulaşabilirsiniz"** bağlantısı vardır (v2.09). Tıklanınca bu tasarım belgesi oyunun içinde, tam ekran bir pencerede açılır (aranabilir hali, `belge.html`); sağ üstteki **Kapat** ya da Esc ile Hakkında'ya dönülür. Belge yeni sekmede de açılabilir ("Yeni sekmede aç"). Belge oyunla birlikte cihaza kaydedilir: oyun uygulama olarak yüklendiyse ya da bir kez internetle açıldıysa, **internetsiz de** o sürümün belgesi açılır (her açılışta internet varsa en son hali alınır).
 2. **Karakter yaratma:** ad, cinsiyet, ten, saç (stil ve renk), göz rengi, sakal/bıyık, gözlük, şapka. Ardından eşinin adı sorulur (eşin görünüşü sabittir: erkek kahraman uzun kızıl saçlı bir kadını, kadın kahraman kısa saçlı bir erkeği kaybeder).
 3. **Zorluk:** Normal ya da Zor. Zor modda tarifler kapalıdır ve kazanda "Dene" ile deneyerek bulunur (ayrıntı: "Zorluk").
-4. **Giriş sahnesi** (gemi, fırtına, mor ışık) ve **kumsalda uyanış**: Yaşlı Ekin seni bulur, adını sorar.
+4. **Giriş sahnesi** (gemi, fırtına, mor ışık) ve **kumsalda uyanış**: Yaşlı Ekin seni bulur, adını sorar. **İsim penceresi telefonda ve tablette (v2.35, Boğaç):** telefonun kendi klavyesi açılmaz (yatay ekranda ikiye bölünüp pencereyi kapatıyordu); pencerenin içinde oyunun kendi **Türkçe klavyesi** çıkar: üç sıra harf (Q W E R T Y U I O P Ğ Ü · A S D F G H J K L Ş İ · Z X C V B N M Ö Ç), **Boşluk**, **Sil**, **Rastgele** ve **Tamam**. İlk harf büyük, sonrakiler küçük yazılır; en çok 14 harf. Uzun açıklama yazısı telefonda gizlenir, pencere ekrana sığar. Bilgisayarda eskisi gibi klavyeyle yazılır.
 
 ## Öğretici (13 adım)
 
@@ -181,6 +181,8 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 - **"Öğrenmek istiyorum"** → uyarı kapanır, öğretici kaldığı yerden sürer.
 - **"Zaten biliyorum, geç"** → öğretici biter, menüler açılır, Ekin'in ilk ana görevi gelir. **Hiçbir şey otomatik verilmez:** meşale, balta, taş, tarif, XP ya da sikke yok; oyuncu her şeyi kendisi bulur (Normal modda tarifler malzemeleri görünce zaten açılır). O ana kadar kazandıkların sende kalır. Atılmayı bilmiyorsan Börü'yle konuşunca atılma dersini ücretsiz verir (aşağıda).
 
+**Öğretici malzemelerinin yeri (v2.35, Boğaç):** 5 böğürtlen **Ekin'in kampının** çevresine; meşale malzemeleri (iki tur da), taşlar ve keskin taş için taşlar **Zümrüt'ün kazanının** çevresine; balta malzemeleri **Börü'nün** çevresine konur. Kişiler kampın kuzeyine/kuzeydoğusuna sırayla dizilir ve her biri bir öncekine kısa bir yürüyüş uzaklığındadır: Ekin → Zümrüt (~29 karo) → Nazlı (~37) → Börü (~35) → Dursun ve Durmuş (~36); Rıza kampın batısında. Başlangıç yeri Çayır'ın **Orman'a en uzak** ucundaki (hilalin batı ucu) güneye bakan kumsaldır (Orman'a ~239 karo).
+
 **Başlangıçta kampın yanına malzeme konmaz (v2.24):** oyun başlarken kampın hemen yanına önceden fazladan konan 1 dal, 4 taş, 1 lif ve 1 yaprak artık yok; başlangıç bölgesinde yalnızca haritanın normal malzemeleri ve öğreticinin kendi adımlarında koyduğu malzemeler (böğürtlenler, Zümrüt'ün meşale malzemeleri ve 4 taşı) vardır.
 
 | Adım | Kim | Ne yaparsın | Sonuç |
@@ -188,7 +190,7 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 | 1 | Ekin | Kampın çevresine konan 5 böğürtleni topla (telefonda önce sürükleyerek ve dokunarak yürüme). **Bilgisayarda (v2.18)** Ekin böğürtleni nasıl toplayacağını da söyler: "Böğürtlen çalısının **yanına git** ve **F**'ye bas; böğürtlen yere düşer, üstünden yürüyünce alırsın." (Toplama tuşu değiştirildiyse o tuşu söyler.) | — |
 | 2 | Ekin | Yemek düğmesiyle (F) 5 böğürtlen ye (soldaki yemek düğmesi mavi parlar ve ok onu gösterir; yemek listesi açılınca önce üstteki **Meyveler** sekmesi parlar ve ok onu gösterir; Meyveler seçilince Böğürtlen'in **Ye** düğmesi parlar (v2.33). Kartta da "listeyi açarsan önce Meyveler sekmesini seç" yazar) | Cadı Zümrüt görünür; Ekin seni kuzeye, ormanın kıyısına yollar |
 | 3 | Zümrüt | Zümrüt'e git ve konuş | Kazanın yanına 2 Dal, 2 Lif, 2 Yaprak konur |
-| 4 | Zümrüt | Kazanda **Kaba meşale** tarifini öğren. Tarif seçilince, malzemeler konana kadar **kazan alanı da mavi parlar** (v2.22), malzemelerin nereye gideceği görünsün. | Malzemeler yeniden konur |
+| 4 | Zümrüt | Kazanda **Kaba meşale** tarifini öğren. Tarif seçilince, malzemeler konana kadar **kazan alanı da mavi parlar** (v2.22), malzemelerin nereye gideceği görünsün. | Malzemeler yeniden konur (v2.35: **Zümrüt'ün kazanının yanına**, oyuncu nerede durursa dursun) |
 | 5 | Zümrüt | El yapımı ekranında (Tab) meşaleyi yap, bir yuvaya koyup eline al. **Malzemeler (2 dal, 2 lif, 2 yaprak) toplanmadan** el yapımı düğmesi, meşale satırı ve Yap düğmesi **parlamaz** (v2.25); önce malzemeler toplanır, sonra parlar. Aynı kural kazan adımlarında (4, 7) ve balta adımında (12) da geçerlidir. | Meşale yapılınca Zümrüt yalnızca meşaleyi anlatır (taşlardan söz etmez). Meşale ele gelince Zümrüt **meşaleyi anlatır**: gündüz işe yaramaz, gece içindir; yalnızca eldeyken yanar ve Kaba meşale yaklaşık **110 saniye** yanınca biter (yağmurda daha çabuk); gündüz elinden indir, akşam karanlığında eline al, yedeğin olsun. Sonra kart **"Meşaleyi elinden indir"** der, meşalenin yuvası (hotbar kutusu) oku ile parlar; meşale inene kadar taş adımına geçilmez (v2.11: taşlar ve taş konuşması da meşale inince gelir; v2.12: üstteki takip satırı da o ana kadar taş istemez, haritadaki taşlar mavi parlamaz) |
 | 6 | Zümrüt | 4 taşı topla | Meşale eline girince Zümrüt meşaleyi anlatır (**v2.28, Boğaç:** artık "gündüz işe yaramaz" demez; meşalenin bir **silah** da olduğunu, vurduğun canavarı tutuşturduğunu ama her vuruşun meşaleden yediğini söyler; asıl tehlikenin **gece** olduğunu, meşaleyi **geceyi geçirmek** için saklamayı ya da kavgada kullanacaksan bir **yedek** yapmayı tavsiye eder; Kaba meşale "yaklaşık dört dakika" dayanır). Sonra meşaleyi indirmeni ister (kart: "Gündüz meşaleyi boşuna yakma; geceye sakla"). Meşale inince Zümrüt taşları anlatır ve kazanın yanına 4 Taş konur |
 | 7 | Zümrüt | Kazanda **Keskin taş** tarifini öğren (2 Taş). Malzemeler konana kadar kazan alanı mavi parlar (v2.22). | — |
@@ -707,6 +709,7 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
   - **Madenler** (biyom başına 3 tür, ilk iki biyomda 22, diğerlerinde 20) ve **mağara buluntuları** (Sarkıt, Yarasa gübresi, Mağara mantarı: madenlerin çevresinde 44'er) değişmedi.
   - **Ağaçlar** sayıyla değil olasılıkla çıkar: orman zemininde her karede %20, çimende %4 (Kül Diyarı'nda bunların %45'i); sonra **%35'i** seyreltilir (v2.10'a kadar %18). Tür biyomun 5 ağacından seçilir; meyve ağaçlarının payı 0,45, diğerlerinin 1.
   - **Başlangıç kampının çevresi (20 karo)** seyreltilmez; öğretici burada geçer.
+  - **Kuzen aileleri (v2.35):** her ailenin demircileri ve cadısı kendi biyomunun içindeki sabit yerlerde durur (adanın verisinden); Orman'daki aile (Cadı Yakut) Çayır tarafına yakındır.
   - **Keşif yüzdesi (v2.35):** haritanın keşfedilen payı (öğreticideki %30, Kâşif başarımındaki yarı, gün sonu özeti) karaya ve kıyıdan 7 karo içindeki denize göre hesaplanır; açık deniz sayılmaz.
   - Hayvanlar haritaya konmaz; bulunduğun biyomun listesine göre çevrende belirir.
 - Büyük nehirde suya düşersen yarım saniyede bir en yakın kıyıya çıkarılırsın; nehrin 14 karo yakınında her zaman **yurt (Orman) kıyısına** çıkarsın, karşıya böyle geçilmez.
@@ -727,7 +730,7 @@ Her yerde ortak olan temel toplanabilirler (Dal, Taş, Lif, Yaprak) ve su kıyı
 
 ## Çayır — Güvenli
 
-Başladığın yer: hilalin batı ucu (iç körfeze bakan kumsal). Tavşanlar, keklikler, meyve ağaçları. Ekin, Zümrüt, Nazlı, Börü, Dursun, Durmuş ve Rıza burada. Canavarlar zayıf; kurt sürüleri yalnız gece çıkar.
+Başladığın yer: hilalin batı ucunda, Çayır'ın Orman'a en uzak yerinde, güneye bakan kumsal. Tavşanlar, keklikler, meyve ağaçları. Ekin, Zümrüt, Nazlı, Börü, Dursun, Durmuş ve Rıza burada. Canavarlar zayıf; kurt sürüleri yalnız gece çıkar.
 
 **Ağaçlar**
 

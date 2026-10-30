@@ -9,6 +9,13 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
+## v2.36 (30 Ekim 2026) · başlangıç yeri, ana kişiler, kuzenler, telefon isim klavyesi
+- Üretici: iniş = ilk biyomda güneyi deniz kuzeyi kara olan kumsal; v45 ofsetleri (Zümrüt -2,-29 · Nazlı 30,-51 · Börü 62,-36 · Dursun 70,-71 · Durmuş 76,-66 · Rıza -34,-22 …) 7×7 temiz karayla sığmalı (puan), eşitlikte Orman'a EDT uzaklığı en büyük. Ada 1 iniş (92,351), Orman'a 239 karo. `an` içine fam1s…fam5w (kuzen demirci/cadı) eklendi.
+- v184 kuzen yerleşimi: `D.target[b]` yerine `MAPD.an['fam'+b+'s'/'w']` (eski sabit karolar denize/başka biyoma düşüyordu, b2–b4 aileleri kuruluyordu ama findSpot null → hiç yoktu).
+- Öğretici: `tzLearned` tz 4→5 malzemeleri `cauldron` çevresine (önce oyuncunun yanı); tz 2→1 yeniden böğürtlen `npc.home` çevresine.
+- Yeni `<script id="v235-name">` + `<style id="v235-name-css">`: TOUCH'ta `#nmin` readOnly + inputmode none, `#nmkb` (Q-Ğ-Ü / A-Ş-İ / Z-Ö-Ç, Boşluk, Sil), `askName` sarmalı `#names.tkb` (açıklama gizli). `window.__plCaves=CAVES` (mağara kapıları dışarıdan okunabilsin).
+- Kontrol (Playwright, öğretici 1–10. adım oynandı): böğürtlen Ekin'e 2–6 karo, meşale malzemeleri kazana 2–6 karo, kazan yanında 4 taş, yürüyüşler Ekin→Zümrüt ~30, Zümrüt→Nazlı ~38, Nazlı→Börü ~35 karo (kuş uçuşu); yol üstünde başka kişi yok. 11. adımdan (kerevit) sonrası henüz oynanmadı.
+
 ## v2.35 (30 Ekim 2026) · hilal ve yonca adalar (büyük güncelleme)
 - Harita verisi: `<script id="v235-map">` (ana betikten önce) = `proje/tools/harita/adalar.js`, üretici `proje/tools/harita/ada_uret.py` (python3 + numpy/scipy/PIL; ~1 dk). `window.__plMAPS[isle]={W,H,rle,br,ps,sp,an,vn}`: rle = base64 (değer,uzunluk) çiftleri, değer = sınıf*8+biyom (sınıf 0 kara, 1 kum, 2 tatlı su, 3 deniz, 4 sıradağ, 5 büyük nehir; denizin biyomu en yakın karanınki). br = köprüler [y,x0,x1] (ilki ana), ps = geçit [y,x0,x1] (kaya yığını y±1), sp = iniş karosu, an = yer işaretleri (witch, farm, usta, defter, defter2, metal, harita, kristal, kristal2, market, smith, carp, bilezik, bilezik2, cave0, cave1), vn = keşif paydası.
 - Çekirdek: `W,H` = `MAPD` (adaya göre); eski SPRING/MOUTH/LAKES/RIV/river()/wet/edge/RIDGEX/RIVX/mkBridge kodu kalktı; `tiles`+`BIO`+`GRV` veriden çözülür, orman zemini fbm(x/34,5)+(biyom 1 +.22, biyom 0 +.05)>.58. Yeni: `GRD` (büyük nehre karo mesafesi, 60'a kadar), `nearGR(px,py,r)`, `MAPN`, `ANC(k)`. `ZONE=BIO>>1`. `PASS={y,x0,x1,rx}`, `BRIDGES` veriden. `SPX/SPY` veriden.

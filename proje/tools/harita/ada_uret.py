@@ -268,18 +268,38 @@ def build(isle):
     for o in (-1, 0, 1):
         for xx in range(pa, pb+1):
             if cls[py+o, xx] == 4: cls[py+o, xx] = 0
-    # 10) doğuş noktası: ilk biyomun kıyısı, çevresinde bol kara
-    b0 = bio == 0
-    cnt = ndi.uniform_filter(b0.astype(float), size=81)
-    cand = np.argwhere(b0 & (docean >= 5) & (docean <= 7) & (cls == 0))
-    sc = [cnt[tuple(c)] for c in cand]
-    sp = cand[int(np.argmax(sc))]
+    # 10) doğuş noktası: ilk biyomun batı yarısında, güneye bakan bir kumsal. Ekin'in kampı buradadır; Zümrüt, Nazlı,
+    #     Börü, Dursun/Durmuş ve Rıza kampın kuzeyine/kuzeydoğusuna dizilir (v45 düzeni: karo ofsetleri aşağıda),
+    #     hepsi ilk biyomun içinde kalmalı.
+    OFF = [(-2,-29),(30,-51),(62,-36),(70,-71),(76,-66),(-34,-22),(0,0),(20,-15),(45,-20),(15,-60),(50,-60)]
+    b0 = (bio == 0) & mask
+    good0 = b0 & (docean >= 7) & (cls == 0)
+    xs0 = np.where(b0.any(0))[0]; xmid = (xs0.min() + xs0.max()) / 2
+    dOrm = ndi.distance_transform_edt(~((bio == 1) & mask))   # Orman'a uzaklık (karo)
+    best = None
+    for y in range(8, H-14):
+        for x in range(8, W-8):
+            if not b0[y, x] or cls[y, x] not in (0, 1) or not (4 <= docean[y, x] <= 7): continue
+            if not ocean[y+8:y+16, x].any(): continue          # deniz güneyde
+            if ocean[y-12:y, x].any(): continue                # kuzeyi kara
+            sc = 0
+            for dx, dy in OFF:
+                X, Y = x + dx, y + dy
+                if 3 <= X < W-3 and 3 <= Y < H-3 and good0[Y-3:Y+4, X-3:X+4].all(): sc += 1
+            k = sc * 1000 + dOrm[y, x]   # önce kişiler sığsın, sonra Orman'a en uzak yer (v2.36, Boğaç)
+            if best is None or k > best[0]: best = (k, sc, y, x)
+    print('  doğuş puanı', best[1], '/', len(OFF), 'Orman\'a', int(dOrm[best[2], best[3]]), 'karo')
+    sp = np.array([best[2], best[3]])
     # 11) yer işaretleri (ACT 1 kişileri ve buluntular eskiden ızgara kesirleriyle duruyordu)
     A = {}
     for name, b, u, v in [('witch', 0, .82, .5), ('farm', 1, .3, .5), ('usta', 1, .62, .55), ('defter', 1, .8, .3), ('defter2', 1, .7, .5),
                           ('metal', 2, .55, .7), ('harita', 4, .5, .5), ('kristal', 5, .55, .6), ('kristal2', 5, .4, .4),
                           ('market', 0, .5, .72), ('smith', 0, .42, .28), ('carp', 0, .62, .42), ('bilezik', 0, .35, .8), ('bilezik2', 0, .45, .7),
-                          ('cave0', 0, .3, .5), ('cave1', 1, .5, .5)]:
+                          ('cave0', 0, .3, .5), ('cave1', 1, .5, .5),
+                          # kuzen aileleri (v1.84): s = demirciler, w = cadı; 2. biyomda Çayır'a yakın
+                          ('fam1s', 1, .35, .5), ('fam1w', 1, .18, .45), ('fam2s', 2, .45, .5), ('fam2w', 2, .72, .4),
+                          ('fam3s', 3, .45, .5), ('fam3w', 3, .72, .55), ('fam4s', 4, .45, .5), ('fam4w', 4, .72, .4),
+                          ('fam5s', 5, .45, .5), ('fam5w', 5, .72, .55)]:
         y, x = anchor(b, u, v, 14, 12); A[name] = [int(x), int(y)]
     # keşif sayacının paydası: kara + kıyıdan 7 karo içi deniz
     visn = int((docean_full := ndi.distance_transform_edt(~mask) <= 7).sum())

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.35** ile birebir (30 Ekim 2026). Bu sürümde: iki ada da yeni şeklinde — Yıldızsız Ada hilal, ikinci ada yonca; altı biyom eşit ve zincir halinde; ikinci adada da büyük nehir (3 köprü) ve sıradağ (kaya yığını) var. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.36** ile birebir (30 Ekim 2026). Bu sürümde: başlangıç Çayır'ın Orman'a en uzak ucunda; Zümrüt, Nazlı, Börü, Dursun ve Durmuş Çayır'da kısa yürüyüş uzaklığında; öğretici malzemeleri kişilerin yanında; beş kuzen ailesinin hepsi yerleşiyor; telefonda isim için oyunun kendi klavyesi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
