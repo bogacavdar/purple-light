@@ -16473,5 +16473,25 @@ const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments)
   return r};
 }).toString()+')()')}catch(e){console.warn('v233-regen',e)}})();
 </script>
+<script id="v233-hot">
+// =====================================================================================================
+// v2.33: phone: a tap on a tool slot (or the empty hand) while another finger walks did nothing (the browser makes no click while
+// a second finger is down). The tap is taken on touchend (< 12 px, < 0.5 s, same slot); the click that may follow is swallowed.
+// =====================================================================================================
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const hb=$('hotbar');if(!hb)return;
+const T={};let sup=0;
+const slotOf=el=>el&&el.closest?el.closest('#handbtn,[data-hs]'):null;
+hb.addEventListener('touchstart',e=>{for(const t of e.changedTouches){const el=slotOf(t.target);if(el)T[t.identifier]={el,x:t.clientX,y:t.clientY,t:performance.now(),mv:false}}},{passive:true,capture:true});
+hb.addEventListener('touchmove',e=>{for(const t of e.changedTouches){const o=T[t.identifier];if(o&&Math.hypot(t.clientX-o.x,t.clientY-o.y)>12)o.mv=true}},{passive:true,capture:true});
+const fire=el=>{if(el.id==='handbtn'){handTap();return}const i=+el.dataset.hs;const n0=hotList()[i];selectHot(i);if(hand<0&&!(n0&&isTorch(n0)))toast('Sağ elin boş: toplama kipindesin')};
+hb.addEventListener('touchend',e=>{for(const t of e.changedTouches){const o=T[t.identifier];delete T[t.identifier];if(!o||o.mv||performance.now()-o.t>500)continue;
+  const at=slotOf(document.elementFromPoint(t.clientX,t.clientY));if(at!==o.el||!hb.contains(o.el))continue;
+  if(o.el.classList.contains('locked'))continue;try{fire(o.el)}catch(_){}sup=performance.now();try{V50.hbT=sup}catch(_){}}},{passive:true,capture:true});
+hb.addEventListener('touchcancel',e=>{for(const t of e.changedTouches)delete T[t.identifier]},{passive:true,capture:true});
+hb.addEventListener('click',e=>{if(performance.now()-sup<700&&slotOf(e.target)){e.stopImmediatePropagation();e.preventDefault()}},true);
+}).toString()+')()')}catch(e){console.warn('v233-hot',e)}})();
+</script>
 </body>
 </html>
