@@ -7,6 +7,30 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.28 · 30 Ekim 2026
+
+**Oynanış**
+- **Meşale artık bir silah:** elinde yanan bir meşale varken yakından vurduğun canavar **tutuşuyor** ve 4 saniye yanıyor: Kaba meşalede saniyede 2, Meşalede saniyede 3 can kaybediyor. Yanarken yeniden vurursan süre baştan başlıyor; yanarak ölen canavar normal av sayılıyor (XP ve ganimet). Kendisi yakan canavarlar (Lav kertenkelesi, Kül cini…), Börü'nün ders canavarları ve arena canavarları tutuşmuyor; asa ve fırlatılan mızrak gibi uzaktan atışlar tutuşturmuyor.
+- **Meşaleler iki kat dayanıyor:** Kaba meşale 110 yerine **220 sn**, Meşale 170 yerine **340 sn**. Ama meşale elindeyken yaptığın **her saldırı** meşalenin %1,5'ini yiyor (Kaba meşalede ~3 sn, Meşalede ~5 sn); bu, zamanla yanmaya ek. Bir vuruş birkaç canavara değse de bir kez sayılıyor.
+- **Canavarlar önce başını çeviriyor, sonra başının doğrultusunda atılıyor:** eskiden sen üstte ya da alttayken canavar yan durup dikine atılıyordu. Artık üstüne atlayan bütün canlılar (Börü'nün dersindeki kerevit de) saldırı menziline girince başını sana çeviriyor (tam üstündeysen yukarı, altındaysan aşağı bakıyor), sonra başının gösterdiği yöne atılıyor. Can çubuğu, ! işareti ve hedef çizgisi dik kalıyor. Saldırının hızı ve hasarı değişmedi.
+- **Zümrüt meşaleyi yeniden anlatıyor:** artık "gündüz işe yaramaz" demiyor; meşalenin vurduğu canavarı tutuşturan bir silah olduğunu ama her vuruşun meşaleden yediğini söylüyor. Asıl tehlikenin gece olduğunu anlatıp meşaleyi **geceyi geçirmek için saklamanı** ya da kavgada kullanacaksan **bir yedek yapmanı** tavsiye ediyor. Kaba meşalenin "yaklaşık dört dakika" dayandığını söylüyor.
+
+**Düzeltmeler**
+- **Telefonda envanterden alet yuvasına sürükleme çalışıyor:** taşınabilir bir eşyaya (ya da dolu bir yuvaya) parmağını koyup kaydırdığın an eşya parmağını takip ediyor (beklemek gerekmiyor); alttaki yuvalardan birine bırakınca oraya giriyor, dolu bir yuvayı yuvaların dışına bırakınca yuva boşalıyor. Tarayıcının kaydırması ya da uzun basış menüsü artık sürüklemeyi kesmiyor. Listeyi kaydırmak için boşluktan ya da taşınabilir olmayan bir eşyanın üstünden kaydır.
+- **Telefonda kazana ve örse malzeme sürükleme çalışıyor:** alttaki eşya kutusunu kazanın (örsün) üstüne bırakınca bir tane konuyor. Kazan ekranda görünmüyorsa parmağı pencerenin üst ya da alt kenarına götürünce liste kendiliğinden kayıyor. Dokunma (1 tane) ve basılı tutma (hepsi) eskisi gibi.
+- **Telefonda görev yazısı iptal çarpısının altında kalmıyor:** × görünürken kartın sağında ona yer ayrılıyor.
+
+**Görsel**
+- **Yerdeki yapraklar küçüldü:** haritada yerde duran yapraklar eskisinin %70'i boyunda (gölgesiyle birlikte). Toplama ve envanter simgesi aynı.
+- **Yanan canavar görünüyor:** tutuşan canavarın üstünde turuncu bir parıltı ve yukarı uçan alevler var, yanık hasarı turuncu sayılarla çıkıyor.
+
+**Arayüz**
+- **"Başında ! olan kişiyle konuş" yazısı yalnızca ilk görevde:** bu yazı artık yalnızca baltadan sonra ilk göreve giderken çıkıyor. İlk görev bittikten sonra görevin yokken kart bu yazıyı göstermiyor (süren bir ders varsa yalnızca onu gösteriyor, yoksa gizleniyor); görevi olan kişiyi parlamasından kendin fark ediyorsun.
+- Zümrüt'ün "meşaleyi indir" kartı: "Gündüz meşaleyi boşuna yakma; geceye sakla."
+
+**Tasarım belgesi**
+- Sistemler: yerdeki yaprak boyu, telefonda sürükleme, canavarların başını çevirip atılması, ışık tablosunda yeni meşale süreleri, "Meşale silahtır da" ve "Her saldırı meşaleden yer" kuralları. ACT 1: "! olan kişiyle konuş" yazısının yalnızca ilk görevde çıkması, görev kartında × yeri. Öğretici akışı 6. adım: Zümrüt'ün yeni meşale konuşması.
+
 ## Versiyon 2.27 · 30 Ekim 2026
 
 **Oynanış**

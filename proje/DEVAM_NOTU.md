@@ -9,8 +9,8 @@
 ## ⚠ Belgenin sürüm satırı (29 Ekim 2026)
 - `parts/00_giris.md`'deki "Sürüm: **Versiyon X.YZ**" satırı her sürümde güncellenir (1.87–1.88'de unutulmuştu, belge 1.86 gösteriyordu).
 
-## v2.28 (30 Ekim 2026) · küçük yaprak, telefonda sürükleme, canavar başını çevirip atılır, ilk görev uyarısı, × yeri, meşale silah — BEKLEYEN PAKET (yayında değil)
-- `bekleyen-paket` dalında; "paket çık" denince GUNCELLEME_NOTLARI'na bu beş madde yazılır, `yayinla.sh`, main'e alınır.
+## v2.28 (30 Ekim 2026) · küçük yaprak, telefonda sürükleme, canavar başını çevirip atılır, ilk görev uyarısı, × yeri, meşale silah
+- 30 Ekim 2026'da "paket çık" ile yayına gitti (bekleyen-paket → main, `yayinla.sh` ile belge yenilendi).
 - Yeni `v228` bloğu (</body> öncesi). Belge: `parts/20_sistemler.md` (yaprak, telefonda sürükleme, başını çevirme) ve `parts/30_act1.md` (ilk görev uyarısı, ×).
 - **Yaprak:** `drawNode` sarıldı; `n.name==='Yaprak'` ise ctx (x, y+3) çevresinde ×0,7 ölçeklenir (gölge dahil). Envanter simgesi, `SPR.bush` ve toplama değişmedi.
 - **Telefonda sürükleme:** `TOUCH` ise belge düzeyinde touchstart/touchmove/touchend (capture) ile ayrı bir sürükleme: envanterde `.itile.carry` ve dolu `[data-bs]`, kazanda/örste `.tile`. 8 px kayınca başlar; başlarken `window`'a sahte `pointercancel` gönderilir (eski pointer yollarının hayaleti, `potHold`, `rowHold` temizlensin). Bırakınca envanterde `beltSet`/`beltClear`, kazanda `deposit(n,1)` ya da `trialAdd`. Kaydırılabilir üst öğe kenara 44 px yaklaşınca kendiliğinden kayar (hedef üstündeyken kaymaz). `.itile.carry{touch-action:none}`; envanter/kazanda `contextmenu` engelli. Fare yolu aynı.
