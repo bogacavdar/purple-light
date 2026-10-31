@@ -66,20 +66,20 @@ while changed:
 for r in R:
     if r['r'] in act2rec: N2.add(r['r'])
 
-MASTER = {'Ateş asası': ('Büyücü Pervin', 100), 'Buz asası': ('Büyücü Pervin', 200), 'Yıldırım asası': ('Büyücü Pervin', 300),
-          'Mana iksiri': ('Büyücü Pervin', 10), 'Tabanca': ('Silahçı Tamer', 200), 'Pompalı': ('Silahçı Tamer', 400),
-          'Meka zırh': ('Mühendis Selin', 600), 'Işın kılıcı': ('Ejder Avcısı Alara', 800),
-          'Roket gövdesi': ('Astronot Tuna', 1000), 'Roket motoru': ('Astronot Tuna', 1500), 'Roket': ('Astronot Tuna', 2000)}
+MASTER = {'Ateş asası': ('Büyücü Efsun', 100), 'Buz asası': ('Büyücü Efsun', 200), 'Yıldırım asası': ('Büyücü Efsun', 300),
+          'Mana iksiri': ('Büyücü Efsun', 10), 'Tabanca': ('Silahçı Tufan', 200), 'Pompalı': ('Silahçı Tufan', 400),
+          'Meka zırh': ('Mühendis Işın', 600), 'Işın kılıcı': ('Ejder Avcısı Tomris', 800),
+          'Roket gövdesi': ('Astronot Gökay', 1000), 'Roket motoru': ('Astronot Gökay', 1500), 'Roket': ('Astronot Gökay', 2000)}
 PLACEABLE = {r['r'] for r in R if r['c'] == 'Yapılar' or re.search('yatak', r['r'], re.I)}
 def station(n):
     r = REC[n]
     if n in MASTER: return '%s yapar (%s sikke işçilik)' % MASTER[n]
-    if r['c'] == 'Ev eşyası': return 'Usta Kemal yapar (ev içine konur)'
+    if r['c'] == 'Ev eşyası': return 'Usta Sinan yapar (ev içine konur)'
     if n in DB['f']: return 'Örs · Zırhçı Durmuş döver'
     if n in DB['t']: return 'Örs · Demirci Dursun döver'
-    if n in PLACEABLE: return 'Usta Kemal / Marangoz Rıza yapar, yere kurulur'
+    if n in PLACEABLE: return 'Usta Sinan / Marangoz Çınar yapar, yere kurulur'
     return 'El yapımı (Tab)'
-def learnat(n): return "Ülker'in kazanı (ACT 2)" if n in act2rec else "Zümrüt'ün kazanı"
+def learnat(n): return "Yıldız'ın kazanı (ACT 2)" if n in act2rec else "Zümrüt'ün kazanı"
 
 # ------------------------------------------------------------------ kaynak dizini: her eşya nereden gelir
 SRC = collections.defaultdict(list); USE = collections.defaultdict(set)
@@ -126,7 +126,7 @@ for n in ['Gece sefası', 'Mor kıymık']:
     pass
 SRC['Mor kıymık'].append('Gece balık tutarken %5 ihtimalle oltaya takılır')
 for s, pr in DB['seeds'].items():
-    SRC[s].append('Çiftçi Hasan alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar')
+    SRC[s].append('Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar')
 for c, pr in DB['crops'].items():
     SRC[c].append('Tarlada yetiştirilir (tohumunu ek, sula, tırpanla biç)')
 for r in R:
@@ -154,7 +154,7 @@ SRC['Gece sefası'].append('Yalnız gece, karanlık iyice çökünce karada (Ça
 SRC['Mor kıymık'].append('Yalnız gece, karanlıkta karada beliren mor parıltı (Çayır/Orman); E ile toplanır')
 SRC['Mor pusula'].append('Eski Sisli Ada sonunun ödülü (kodda duruyor; güncel akışta ulaşılıp ulaşılmadığı test raporuna bakın)')
 for h in A1['HOUSES']:
-    SRC[h['n']].append('Marangoz Rıza yapar (%s sikke%s)' % (fmt(h['c']), ', malzeme: ' + ', '.join('%d %s' % (q, n) for n, q in h['mat']) if h.get('mat') else ''))
+    SRC[h['n']].append('Marangoz Çınar yapar (%s sikke%s)' % (fmt(h['c']), ', malzeme: ' + ', '.join('%d %s' % (q, n) for n, q in h['mat']) if h.get('mat') else ''))
 for c, s in [('Buğday', 'Buğday tohumu'), ('Havuç', 'Havuç tohumu'), ('Patates', 'Patates tohumu'), ('Soğan', 'Soğan tohumu'), ('Kabak', 'Kabak tohumu'), ('Ayçiçeği', 'Ayçiçeği tohumu')]:
     SRC[s].append('Hasatta %%45 ihtimalle 1 tane (%s)' % c)
 SRC['Su'].append('Kap ile (Yaprak kova vb.) suyun kıyısında E')
@@ -180,20 +180,20 @@ def creature_rows(names):
 CH = ['Canlı', 'Mizaç', 'Can', 'Hasar', 'Hız', 'XP', 'Özellik', 'Düşürdükleri (ihtimal)']
 
 INTRO1 = [
- "Başladığın yer: büyük nehrin batısı, adanın güney yarısı. Tavşanlar, keklikler, meyve ağaçları. Ekin, Zümrüt, Nazlı, Börü, Dursun, Durmuş ve Rıza burada. Canavarlar zayıf; kurt sürüleri yalnız gece çıkar.",
- "Nehrin batısı, adanın kuzey yarısı (Çayır'dan kuzeye yürü). Gölgeli ve sık; yaban domuzları, dikenli kirpiler, engerekler. Usta Kemal ve Çiftçi Hasan'ın tarlası bu tarafta.",
- "Büyük nehrin doğusu, köprünün karşısı ve güneyi: önce köprüyü onar. Çamur ayağını tutar (Kamış çizme işe yarar), timsahlar ve zehirli kurbağalar. Demir cevheri yalnızca burada. Avcı Toygar'ın kulübesi burada.",
+ "Başladığın yer: büyük nehrin batısı, adanın güney yarısı. Tavşanlar, keklikler, meyve ağaçları. Kemal, Zümrüt, Nazlı, Börü, Dursun, Durmuş ve Çınar burada. Canavarlar zayıf; kurt sürüleri yalnız gece çıkar.",
+ "Nehrin batısı, adanın kuzey yarısı (Çayır'dan kuzeye yürü). Gölgeli ve sık; yaban domuzları, dikenli kirpiler, engerekler. Usta Sinan ve Çiftçi Ekin'in tarlası bu tarafta.",
+ "Büyük nehrin doğusu, köprünün karşısı ve güneyi: önce köprüyü onar. Çamur ayağını tutar (Kamış çizme işe yarar), timsahlar ve zehirli kurbağalar. Demir cevheri yalnızca burada. Avcı Doğan'ın kulübesi burada.",
  "Nehrin doğusu, köprünün kuzeyi. Kartallar, vaşaklar, mağara ayıları. Kuvars, gümüş ve altın madenleri.",
  "Sıradağın ardı: köprüden geç, doğuya yürü, sıradağdaki **Doğu geçidi**ni Kaya patlatıcıyla aç. Ateş ve kül her yerde; zırhsız gelme. Lav kertenkelesi ve Kara ejder burada.",
- "Adanın en doğu ucu, Kül Diyarı'nın ötesi. Mor ışığın en sık indiği yer; kristal golemler, gölge kurtları. Son iz ve Denizci Levent'in enkazı burada.",
+ "Adanın en doğu ucu, Kül Diyarı'nın ötesi. Mor ışığın en sık indiği yer; kristal golemler, gölge kurtları. Son iz ve Denizci Barbaros'un enkazı burada.",
 ]
 INTRO2 = [
- "İniş yeri. Havada duran kayalar, bulut koyunları, rüzgâr kuşları. Gökbilimci Ülker ve ACT 2 kazanı burada. Gece gök tazıları çıkar.",
- "Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzaktan atar, şamanları zehirler. Büyücü Pervin burada.",
- "Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dronları ve dev bir hurda devi. Silahçı Tamer burada.",
- "Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendis Selin burada.",
- "Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ejder adanın en güçlü canavarlarından. Ejder Avcısı Alara burada.",
- "Adanın en uzak ucu, roket rampası. Uzaylı dronları, gölge muhafızlar ve dev Gök bekçisi. Astronot Tuna burada.",
+ "İniş yeri. Havada duran kayalar, bulut koyunları, rüzgâr kuşları. Gökbilimci Yıldız ve ACT 2 kazanı burada. Gece gök tazıları çıkar.",
+ "Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzaktan atar, şamanları zehirler. Büyücü Efsun burada.",
+ "Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dronları ve dev bir hurda devi. Silahçı Tufan burada.",
+ "Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendis Işın burada.",
+ "Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ejder adanın en güçlü canavarlarından. Ejder Avcısı Tomris burada.",
+ "Adanın en uzak ucu, roket rampası. Uzaylı dronları, gölge muhafızlar ve dev Gök bekçisi. Astronot Gökay burada.",
 ]
 def biome_md(isle):
     A = A1 if isle == 1 else A2; names = BN1 if isle == 1 else BN2; act = 'ACT 1' if isle == 1 else 'ACT 2'
@@ -303,9 +303,9 @@ open(os.path.join(OUT, 'zirhlar.md'), 'w').write(table(['Zırh', 'Yuva', 'Savunm
 
 # ------------------------------------------------------------------ 6) Görevler
 GN = {'witch': 'Cadı Zümrüt', 'market': 'Pazarcı Nazlı', 'alp': 'Savaşçı Börü', 'smith': 'Demirci Dursun', 'durmus': 'Zırhçı Durmuş',
-      'farmer': 'Çiftçi Hasan', 'usta': 'Usta Kemal', 'carp': 'Marangoz Rıza', 'toygar': 'Avcı Toygar', 'tuna': 'Astronot Tuna',
-      'alara': 'Ejder Avcısı Alara', 'selin': 'Mühendis Selin', 'tamer': 'Silahçı Tamer', 'pervin': 'Büyücü Pervin',
-      'gok': 'Gökbilimci Ülker', 'denizci': 'Denizci Levent', 'trader': 'Tüccar Nuri'}
+      'farmer': 'Çiftçi Ekin', 'usta': 'Usta Sinan', 'carp': 'Marangoz Çınar', 'toygar': 'Avcı Doğan', 'tuna': 'Astronot Gökay',
+      'alara': 'Ejder Avcısı Tomris', 'selin': 'Mühendis Işın', 'tamer': 'Silahçı Tufan', 'pervin': 'Büyücü Efsun',
+      'gok': 'Gökbilimci Yıldız', 'denizci': 'Denizci Barbaros', 'trader': 'Gemici Poyraz'}
 def qwant(q):
     if q.get('bring'): return 'Getir: ' + ', '.join('%d %s' % (n, m) for m, n in q['bring'])
     if q.get('kill'): k = q['kill']; k = json.loads(k.replace("'", '"')) if isinstance(k, str) else k; return 'Avla: %d %s' % (k[1], k[0])
@@ -314,7 +314,7 @@ def qwant(q):
     return {'w2': '10 tarif öğren', 's1': 'Taş kılıcı örste döv', 'smith_bronze': 'Tunç balta/kazma/kılıç/mızraktan birini döv',
             's4': 'Demir balta/kazma/kılıç/mızraktan birini döv', 'd1': 'Başına bir şey giy', 'd3': 'Tunç zırh dövdür',
             'u1': 'Atölye kur', 'u3': 'Çit kur', 'carp1': 'Yaprak barınağı yaptır ve gece içinde uyu', 'c3': 'Kalıcı bir ev kur (yaprak barınağı sayılmaz)',
-            't1': 'Kamış çizme yap', 'gk2': 'Bir gece bekle (gün değişsin)', 'nuri1': "Nuri'nin ilk siparişini teslim et"}.get(q['id'], str(p)[:80])
+            't1': 'Kamış çizme yap', 'gk2': 'Bir gece bekle (gün değişsin)', 'nuri1': "Poyraz'ın ilk siparişini teslim et"}.get(q['id'], str(p)[:80])
 o = []
 for g in GN:
     qs = [q for q in M1['NQ'] if q['g'] == g]
@@ -343,7 +343,7 @@ for l in M1['LES']:
 open(os.path.join(OUT, 'dersler.md'), 'w').write(table(['Ders', 'Şart', 'Ücret', 'XP', 'Alıştırma canavarı', 'Adımlar'], rows))
 REAL = {'Yaprak barınağı': 5, 'Deri çadır': 1039, 'Kulübe': 510, 'Kamış kulübe': 650, 'Kerpiç ev': 958, 'Ahşap ev': 2278, 'Taş ev': 4049, 'Konak': 8097}
 rows = [[h['n'], 'Sv %d' % h['lv'], fmt(REAL.get(h['n'], h['c'])), fmt(h['c']), ', '.join('%d %s' % (q, n) for n, q in h.get('mat', [])) or '–', h.get('d', '')] for h in A1['HOUSES']]
-open(os.path.join(OUT, 'evler.md'), 'w').write(table(['Yapı', 'Seviye', 'Rıza\'nın aldığı ücret', 'Tasarımdaki liste fiyatı', 'Malzeme', 'Açıklama'], rows))
+open(os.path.join(OUT, 'evler.md'), 'w').write(table(['Yapı', 'Seviye', 'Çınar\'ın aldığı ücret', 'Tasarımdaki liste fiyatı', 'Malzeme', 'Açıklama'], rows))
 
 print('ACT2 tarif:', len(act2rec), 'kaynaksız eşya:', len(nosrc))
 print(nosrc[:80])

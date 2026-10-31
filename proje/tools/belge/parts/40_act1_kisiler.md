@@ -2,6 +2,40 @@
 
 > **Referans (eski görev sistemi, v1.85'e kadar).** Bu bölümdeki görev tabloları **artık oyunda yok** (v1.86); geçerli görevler yukarıdaki "ACT 1 · Görevler" bölümünde. Kişilerin tanıtımları, çalışma yerleri, kuzenlere özel eşyalar ve hikâyeleri geçerlidir.
 
+## İsimler (v2.45, Boğaç)
+
+Kişilerin adları karakterlerine uysun diye 31 Ekim 2026'da değişti (Boğaç seçti). Pazarcı Nazlı, Savaşçı Börü ve Işıl aynı kaldı; cadılar, demirciler, zırhçılar ve kuzenleri kendi isimlendirme kurallarıyla durur; Yıldızsız Gezgin ve Işıkçı'nın adı yoktur. Belgenin her yerinde yeni adlar kullanılır. Eski kayıtlar etkilenmez (kayıtta kişi adı tutulmaz).
+
+| Eski ad | Yeni ad |
+|---|---|
+| Yaşlı Ekin | Yaşlı Kemal |
+| Çiftçi Hasan | Çiftçi Ekin |
+| Usta Kemal | Usta Sinan |
+| Marangoz Rıza | Marangoz Çınar |
+| Avcı Toygar | Avcı Doğan |
+| Denizci Levent | Denizci Barbaros |
+| Gemici Nuri | Gemici Poyraz |
+| Gökbilimci Ülker | Gökbilimci Yıldız |
+| Büyücü Pervin | Büyücü Efsun |
+| Silahçı Tamer | Silahçı Tufan |
+| Mühendis Selin | Mühendis Işın |
+| Ejder Avcısı Alara | Ejder Avcısı Tomris |
+| Astronot Tuna | Astronot Gökay |
+| Elif | Mavi |
+| Çoban Hüsnü | Çoban Davut |
+| Güvercinci Kerem | Güvercinci Bulut |
+| Mina | Ela |
+| Şövalye Nadir Dede | Şövalye Kahraman Dede |
+| Seyyar satıcı Sadık | Seyyar satıcı Bekir |
+| Avcı Cemal | Avcı Kartal |
+| Sabri | Hayali |
+| Falcı Nermin | Falcı Kader |
+| Saniye Teyze | Hatice Nine |
+| Yolcu Haydar | Yolcu Yahya |
+| Madenci Cevdet | Madenci Kaya |
+| Kökçü Leyla | Kökçü Fidan |
+| Hatice (ustanın kızı) | Zeynep |
+
 ## Görevler nasıl çalışır
 
 - Herkesin kendi mesleğine uygun, **sabit sırayla ilerleyen** bir yan görev zinciri vardır. Farklı kişilerin görevleri aynı anda açık olabilir.
@@ -9,9 +43,9 @@
 - Görev defteri **G** tuşuyla açılır; bir görevi takip etmek ekranda mavi bir yol oku açar. Getirme ve av görevlerinde "Nerede:" satırı malzemenin hangi biyomda olduğunu söyler. Av görevleri yalnızca görev kabul edildikten sonraki avları sayar (önceki avlar sayılmaz).
 - Bazı görevler kabul edildiği anda bir tarifi kitabına yazar (tabloda "Açılma şartı"ndan ayrı olarak kişinin açıklamasında yazılı).
 - **Hikâyeler:** Her yan görev, o kişinin bu adaya nasıl geldiğini anlatan hikâyesinden bir parça açar ("📖 Sen bu adaya nasıl geldin?"). Bütün parçalar dinlenince "📖 O geceyi anlat" bir sahne açar (+40 XP). Herkes mor ışık yüzünden birini kaybetmiştir. **İstisna (v1.84):** Zümrüt, Dursun, Durmuş ve 15 kuzenin kendi sahneleri yoktur; 18'inin bütün görevleri bitince tek bir ortak sahne oynar (Elmas Nine, +300 XP).
-- **Ücretler:** Dursun, Durmuş ve silahçı/zırhçı kuzenlerinin işçiliği eşya fiyatının %15'i (en az 2), Kemal'inki %20'si (en az 3); alet bileme aletin değerinin onda biri.
+- **Ücretler:** Dursun, Durmuş ve silahçı/zırhçı kuzenlerinin işçiliği eşya fiyatının %15'i (en az 2), Sinan'ınki %20'si (en az 3); alet bileme aletin değerinin onda biri.
 
-## Yaşlı Ekin · ana görevler
+## Yaşlı Kemal · ana görevler
 
 Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanında, Çayır'ın güney kıyısında. Bir şey satmaz; ana görev zincirini verir. Bayılınca (gece mor ışıkla da) kampının hemen yanındaki kumsalda uyanırsın. Ana görevleri bitirdikçe kendi hikâyesini (kaybettiği eşi Saliha) anlatır. Her görev tesliminde %30 ihtimalle bir anın geri gelir.
 
@@ -36,7 +70,7 @@ Toplam 2.020 sikke, 2.130 XP.
 
 ## Cadı Zümrüt
 
-**Yer:** Ekin'in kampının yaklaşık 29 karo kuzeyinde, ormanın kıyısında, kazanının başında. **Tanışma:** öğreticinin 3. adımı.
+**Yer:** Kemal'in kampının yaklaşık 29 karo kuzeyinde, ormanın kıyısında, kazanının başında. **Tanışma:** öğreticinin 3. adımı.
 
 - **Kazan:** bütün ACT 1 tariflerini kazanda öğrenirsin. Kazan eşya yapmaz; malzemeyi alır, tarifi öğretir (Zor modda "Dene").
 - **Bilmece:** bilinmeyen bir tarifi ipucuyla sorar; o tarifi öğrenince 30 + 2 × fiyat sikke (Bilmece yeteneğiyle iki katı) ve 20 XP. 2 günden eski bilmece yenilenir.
@@ -55,7 +89,7 @@ Toplam 2.020 sikke, 2.130 XP.
 
 ## Pazarcı Nazlı
 
-**Yer:** Ekin'in yaklaşık 30 karo doğusu, 51 karo kuzeyi, Çayır'da tezgâhının başında. **Tanışma:** öğreticinin 9. adımı.
+**Yer:** Kemal'in yaklaşık 30 karo doğusu, 51 karo kuzeyi, Çayır'da tezgâhının başında. **Tanışma:** öğreticinin 9. adımı.
 
 - **Her şeyi satın alır.** Fiyat sabittir, çok satmak düşürmez. "Aletler, zırhlar, eşyalar hariç hepsini sat" ve "Kazanda işe yaramayanları sat" düğmeleri vardır.
 - **Yalnızca doğal malzeme satar**, o da en az bir kez eline geçmiş olanları (yapılmış eşya satmaz). Alış fiyatı malzemenin değerinin kabaca 2,6–5,6 katıdır (pahalı ve tehlikeli bölgelerin malzemesi daha pahalı). 1'li ya da 10'lu alınır.
@@ -73,7 +107,7 @@ Toplam 2.020 sikke, 2.130 XP.
 
 ## Savaşçı Börü
 
-**Yer:** Ekin'in yaklaşık 62 karo doğusu, 36 karo kuzeyi. **Tanışma:** öğreticinin 11. adımı (yumruk dersi, kerevit; ardından ücretsiz **atılma dersi** ve yetenek ağacında Koşu'yu gösterir — ayrıntı "Oyunun akışı → Börü'nün atılma dersi").
+**Yer:** Kemal'in yaklaşık 62 karo doğusu, 36 karo kuzeyi. **Tanışma:** öğreticinin 11. adımı (yumruk dersi, kerevit; ardından ücretsiz **atılma dersi** ve yetenek ağacında Koşu'yu gösterir — ayrıntı "Oyunun akışı → Börü'nün atılma dersi").
 
 - Atılmayı bilmeyen (öğreticiyi geçmiş) biri konuşunca atılma dersini ücretsiz teklif eder.
 - 100 sikkeyi ilk kez bulunca "Börü: Koşu'yu alma vakti" bildirimi gelir (Koşu henüz alınmadıysa).
@@ -95,7 +129,7 @@ Toplam 2.020 sikke, 2.130 XP.
 
 ## Demirci Dursun
 
-**Yer:** Ekin'in yaklaşık 70 karo doğusu, 71 karo kuzeyi; ocak ve örs. **Tanışma:** öğreticinin 13. adımı (Börü'nün selamıyla).
+**Yer:** Kemal'in yaklaşık 70 karo doğusu, 71 karo kuzeyi; ocak ve örs. **Tanışma:** öğreticinin 13. adımı (Börü'nün selamıyla).
 
 - **Çekiç:** örse yaklaşık **1,1 saniyede bir** vurur (0,9 vuruş/sn; 1.89'a kadar 1,8 vuruş/sn idi). Her vuruşta kıvılcım çıkar; 110 px yakınındaysan ve menü/konuşma açık değilse çınlama sesi gelir. Silahçı kuzenleri de aynı hızda döver.
 
@@ -300,7 +334,7 @@ Toplam 45 görev, 14.570 sikke, 20.150 XP.
 | 6 | <b>Dursun</b>: “Ninemizi o gemiden geri alacağız. Hepimiz.” O gece adadaki on sekiz ocak aynı anda harladı. |
 
 
-## Çiftçi Hasan
+## Çiftçi Ekin
 
 **Yer:** adanın batısında, Orman'daki 4 × 3'lük tarlanın batı ucu. **Tanışma:** her zaman.
 
@@ -314,7 +348,7 @@ Aletleri fırtınada denize gitmiş. Tarlayı kullanmak için ona sırayla dört
 | Tırpan | 2 Patates + 2 Soğan tohumu | 40 | Taş kazma |
 | Taş kazma (adıyla; daha iyi kazma sayılmaz) | 2 Kabak + 2 Ayçiçeği tohumu | 60 | – |
 
-**Tarla:** tırmıkla toprağı hazırla → tohum ek → sulama kabıyla sula → olgunlaşınca tırpanla biç. Büyüme: Buğday 60 sn, Havuç 80, Soğan 90, Patates 100, Ayçiçeği 120, Kabak 150. Hasatta %45 ihtimalle 1 tohum geri gelir. Hasan tohum satmaz.
+**Tarla:** tırmıkla toprağı hazırla → tohum ek → sulama kabıyla sula → olgunlaşınca tırpanla biç. Büyüme: Buğday 60 sn, Havuç 80, Soğan 90, Patates 100, Ayçiçeği 120, Kabak 150. Hasatta %45 ihtimalle 1 tohum geri gelir. Ekin tohum satmaz.
 
 | # | Görev | İstenen | Açılma şartı | Sikke | XP |
 |---|---|---|---|---|---|
@@ -323,13 +357,13 @@ Aletleri fırtınada denize gitmiş. Tarlayı kullanmak için ona sırayla dört
 | 3 | Ayçiçeği tarlası | Getir: 2 Ayçiçeği | dört alet tamamlanınca | 100 | 40 |
 
 
-## Usta Kemal
+## Usta Sinan
 
 **Yer:** kuzeybatıda, tezgâhı ve kereste yığınının başında. **Tanışma:** her zaman; ilk konuşmada **Hasır yatak** hediye eder.
 
 - Yere kurulan yapıları (Yapılar kategorisi), yatakları ve **ev eşyalarını** (evin içine konur) yapar. Tarif kazanda öğrenilmiş, malzeme çantanda olmalı. İşçilik %20.
 - **Atölye:** yere kurulur, seçtiğin bir tarifi 25 saniyede bir kendiliğinden üretir (en çok 50 tane biriktirir).
-- Hikâyesi: kızı Hatice.
+- Hikâyesi: kızı Zeynep.
 
 | # | Görev | İstenen | Açılma şartı | Sikke | XP |
 |---|---|---|---|---|---|
@@ -338,11 +372,11 @@ Aletleri fırtınada denize gitmiş. Tarlayı kullanmak için ona sırayla dört
 | 3 | Çit | Çit kur | – | 40 | 20 |
 
 
-## Marangoz Rıza
+## Marangoz Çınar
 
-**Yer:** Ekin'in yaklaşık 34 karo batısı, 22 karo kuzeyi. **Tanışma:** her zaman.
+**Yer:** Kemal'in yaklaşık 34 karo batısı, 22 karo kuzeyi. **Tanışma:** her zaman.
 
-- **Ev ve barınak yapar** (sikkeyle). Yaprak barınağı dışındaki evlerde uyumak için içine yatak konmalıdır (Kemal yapar). Taş ev de istediğin yere kurulur. Fiyatlar için "Evler ve barınaklar" tablosuna bak (oyunda gösterilen fiyat, alt fiyat kuralı yüzünden listeden yüksek olabilir).
+- **Ev ve barınak yapar** (sikkeyle). Yaprak barınağı dışındaki evlerde uyumak için içine yatak konmalıdır (Sinan yapar). Taş ev de istediğin yere kurulur. Fiyatlar için "Evler ve barınaklar" tablosuna bak (oyunda gösterilen fiyat, alt fiyat kuralı yüzünden listeden yüksek olabilir).
 - Yaprak barınağı görevi açıkken malzemeler (8 Dal, 12 Yaprak, 4 Lif) çantandaysa konuşma doğrudan siparişler listesini açar.
 - Hikâyesi: nişanlısı Defne.
 
@@ -353,7 +387,7 @@ Aletleri fırtınada denize gitmiş. Tarlayı kullanmak için ona sırayla dört
 | 3 | Kalıcı bir ev | Kalıcı bir ev kur (yaprak barınağı sayılmaz) | – | 120 | 50 |
 
 
-## Avcı Toygar
+## Avcı Doğan
 
 **Yer:** Bataklık'ta, köprünün doğu ucundan yaklaşık 26 karo doğuda, kulübesinin yanında. **Tanışma:** köprüyü onarıp karşıya geçince.
 
@@ -377,7 +411,7 @@ Takvime bağlı gezginler; ne zaman geldikleri ve ne yaptıkları "Oyunun akış
 |---|---|---|---|---|---|
 
 
-## Denizci Levent
+## Denizci Barbaros
 
 **Yer:** Gemi tarifini öğrenince Mor Kristal Vadisi kıyısına düşen enkazın başında. ACT 2'de seni indirdiği kıyıda bekler. Kızı Meltem'i kaybetmiştir; yeni gemiye onun adını verir.
 
@@ -389,4 +423,4 @@ Takvime bağlı gezginler; ne zaman geldikleri ve ne yaptıkları "Oyunun akış
 | 4 | Yeni bir gemi | Getir: 8 Herhangi kalas, 4 Halat, 3 Demir levha, 6 Hasır, 2 Kristal ipek | – | 0 | 2.000 |
 
 
-Son görev (Yeni bir gemi) bitince Levent'le konuş: hikâye sahnesi, ardından "Götür beni" → deniz yolculuğu (yaklaşık 14 sn) → **ACT 2**.
+Son görev (Yeni bir gemi) bitince Barbaros'la konuş: hikâye sahnesi, ardından "Götür beni" → deniz yolculuğu (yaklaşık 14 sn) → **ACT 2**.

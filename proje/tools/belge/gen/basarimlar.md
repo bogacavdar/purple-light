@@ -20,9 +20,9 @@
 | Ejder avcısı | Kül Diyarı'nın kara ejderini yen. | ejder | ()=>k_('Kara ejder')>0 |
 | Ada efsanesi | Seviye 25 ol. | lvl25 | ()=>lvl>=25 |
 | Yaşayan ansiklopedi | 250 tarif bul. | tarif250 | ()=>found.length>=250 |
-| Kazazede | Denizci Levent'in yeni gemisini kur. | levent | ()=>!!(window.__v55&&window.__v55.d.indexOf('dz4')>=0) |
-| Gökyüzüne | Tuna ile roketi fırlat. | roket | ()=>!!(window.__tuna&&window.__tuna.launched) |
-| Açık deniz | Levent'in gemisiyle adadan ayrıl: ACT 2. | act2 | ()=>!!(window.__plDz&&window.__plDz.D.act2) |
+| Kazazede | Denizci Barbaros'un yeni gemisini kur. | levent | ()=>!!(window.__v55&&window.__v55.d.indexOf('dz4')>=0) |
+| Gökyüzüne | Gökay ile roketi fırlat. | roket | ()=>!!(window.__tuna&&window.__tuna.launched) |
+| Açık deniz | Barbaros'un gemisiyle adadan ayrıl: ACT 2. | act2 | ()=>!!(window.__plDz&&window.__plDz.D.act2) |
 | İlk düşüş | Bir kez öl ya da bayıl. | olum1 | ()=>deaths>=1 |
 | İnatçı | 5 kez öl ya da bayıl, yine de devam et. | olum5 | ()=>deaths>=5 |
 | İlk reis | Bir reis öldür. | reis1 | ()=>bossKinds()>=1 |

@@ -123,12 +123,12 @@ Beş yuva vardır: **baş, gövde, el, ayak, silah**. Özellikler penceresinden 
 | Ejder pulu zırh | Gövde | 60 | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | direnç: yanık %60, metal |
 | Kül böceği zırh | Gövde | 64 | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | direnç: yanık %50, metal |
 | Kristal ipek zırh | Gövde | 72 | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | direnç: kanama %25, yanık %25, zehir %25 |
-| Meka zırh ² | Gövde | 90 | Mühendis Selin yapar (600 sikke işçilik) | direnç: kanama %50, yanık %50, zehir %50, metal |
+| Meka zırh ² | Gövde | 90 | Mühendis Işın yapar (600 sikke işçilik) | direnç: kanama %50, yanık %50, zehir %50, metal |
 
 
-## Evler ve barınaklar (Marangoz Rıza)
+## Evler ve barınaklar (Marangoz Çınar)
 
-| Yapı | Seviye | Rıza'nın aldığı ücret | Tasarımdaki liste fiyatı | Malzeme | Açıklama |
+| Yapı | Seviye | Çınar'ın aldığı ücret | Tasarımdaki liste fiyatı | Malzeme | Açıklama |
 |---|---|---|---|---|---|
 | Yaprak barınağı | Sv 1 | 5 | 5 | 8 Dal, 12 Yaprak, 4 Lif | Yatak gerekmez. Bir gecelik: uyanınca dağılır. |
 | Deri çadır | Sv 3 | 1.039 | 300 | – | Kalıcı bir çadır. İçinde uyumak için yatak koymalısın. |

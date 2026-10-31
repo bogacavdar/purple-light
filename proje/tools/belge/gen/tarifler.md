@@ -428,7 +428,7 @@ Toplam **825 tarif**: ACT 1 malzemeleriyle 760, ACT 2 malzemesi isteyen 65.
 | Enerji hücresi ² | 2 Enerji taşı, 2 Bakır tel, 1 Pil | – | El yapımı (Tab) | 221 |
 | Gece zambağı yağı | 3 Gece zambağı, 1 Herhangi çömlek | – | El yapımı (Tab) | 303 |
 | Hasır | 3 Lif, 2 İp | – | El yapımı (Tab) | 17 |
-| Hasırotu yatak | 3 Hasırotu, 1 Herhangi tabaklanmış deri, 4 Lif, 3 İp | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 240 |
+| Hasırotu yatak | 3 Hasırotu, 1 Herhangi tabaklanmış deri, 4 Lif, 3 İp | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 240 |
 | Huş kabuğu kabı | 1 Huş kabuğu, 4 İp, 2 Lif | – | El yapımı (Tab) | 43 |
 | Huş kaşığı | 1 Huş sapı, 4 Lif, 3 İp | Taş bıçak | El yapımı (Tab) | 69 |
 | Ihlamur kaşığı | 1 Ihlamur sapı, 4 Lif, 3 İp | Taş bıçak | El yapımı (Tab) | 69 |
@@ -500,7 +500,7 @@ Toplam **825 tarif**: ACT 1 malzemeleriyle 760, ACT 2 malzemesi isteyen 65.
 | Kükürtlü merhem | 1 Kükürt, 2 Hayvan yağı, 2 Yosun | – | El yapımı (Tab) | 17 |
 | Lavanta çayı | 1 Kurutulmuş lavanta, 1 Sıcak su, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 71 |
 | Lavanta yağı | 2 Lavanta, 2 Hayvan yağı, 1 Su, 1 Yaprak | – | El yapımı (Tab) | 17 |
-| Mana iksiri ² | 2 Büyü otu, 2 Su, 1 Herhangi çömlek | – | Büyücü Pervin yapar (10 sikke işçilik) | 139 |
+| Mana iksiri ² | 2 Büyü otu, 2 Su, 1 Herhangi çömlek | – | Büyücü Efsun yapar (10 sikke işçilik) | 139 |
 | Nane çayı | 1 Kurutulmuş nane, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 69 |
 | Panzehir | 3 Bataklık otu, 1 Zehir bezesi, 2 Su | – | El yapımı (Tab) | 35 |
 | Papatya çayı | 1 Kurutulmuş papatya, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 65 |
@@ -679,31 +679,31 @@ Toplam **825 tarif**: ACT 1 malzemeleriyle 760, ACT 2 malzemesi isteyen 65.
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Ağıl | 10 Çit | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 810 |
-| Arı kovanı | 2 Söğüt sepeti, 1 Balmumu, 3 Taş, 2 Dal, 2 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 140 |
-| Ateş yeri | 1 Ateş, 4 Taş, 1 Dal, 1 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 34 |
-| Atölye | 4 Herhangi kalas, 4 Taş, 2 İp, 2 Sopa | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 127 |
-| Çit | 1 Herhangi sap, 2 Sarmaşık ipi, 2 Taş, 2 Dal, 1 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 60 |
-| Çömlek fırını | 1 Kerpiç duvar, 1 Herhangi kömür, 3 Taş, 3 Dal, 2 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 331 |
-| Deri çadır | 1 Kulübe iskeleti, 1 Herhangi tabaklanmış deri, 3 Taş, 3 Dal, 3 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 410 |
-| Erzak çukuru | 1 Taş levha, 3 Kuru ot, 1 Taş, 1 Dal | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 22 |
-| Hasır yatak | 2 Hasır, 6 Yaprak, 2 Sopa | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 83 |
-| İskele | 1 Herhangi kalas, 1 Kenevir halatı, 3 Taş, 2 Dal, 2 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 215 |
-| Kamış kulübe | 1 Kulübe iskeleti, 1 Kamış kulübe çatısı, 3 Taş, 2 Dal, 2 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 229 |
-| Kamış kulübe çatısı | 6 Kamış hasır | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 38 |
-| Kerpiç duvar | 9 Herhangi kerpiç | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 234 |
-| Kerpiç ev | 1 Kerpiç duvar, 1 Kamış kulübe çatısı, 3 Taş, 3 Dal, 2 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 378 |
-| Kulübe | 1 Kulübe iskeleti, 1 Hasır, 3 Taş, 2 Dal, 2 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 201 |
-| Kulübe iskeleti | 7 Herhangi kalas | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 131 |
-| Kurutma rafı | 1 Herhangi sap, 1 Hasır, 2 Taş, 2 Dal, 2 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 70 |
-| Megalit | 2 Granit, 1 Kenevir halatı, 2 Taş, 2 Dal, 2 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 198 |
-| Su testisi | 1 Herhangi çömlek, 3 Su, 2 Taş, 2 Dal, 1 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 77 |
-| Tabakhane | 1 Deri tulum, 1 Meşe tanini, 4 Taş, 4 Dal, 3 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 607 |
-| Taş çember | 11 Megalit | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 2.941 |
-| Taş fırın | 1 Herhangi tuğla, 1 Ateş yeri, 3 Taş, 3 Dal, 2 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 138 |
-| Tuz havuzu | 1 Tuz, 1 Herhangi kase, 3 Taş, 3 Dal, 3 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 145 |
-| Tütsühane | 1 Kulübe iskeleti, 1 Duman, 3 Taş, 3 Dal, 2 Kum | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 234 |
-| Yosun yalıtım | 3 Yosun, 1 Islak nehir kili, 1 Taş, 1 Dal | – | Usta Kemal / Marangoz Rıza yapar, yere kurulur | 20 |
+| Ağıl | 10 Çit | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 810 |
+| Arı kovanı | 2 Söğüt sepeti, 1 Balmumu, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 140 |
+| Ateş yeri | 1 Ateş, 4 Taş, 1 Dal, 1 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 34 |
+| Atölye | 4 Herhangi kalas, 4 Taş, 2 İp, 2 Sopa | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 127 |
+| Çit | 1 Herhangi sap, 2 Sarmaşık ipi, 2 Taş, 2 Dal, 1 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 60 |
+| Çömlek fırını | 1 Kerpiç duvar, 1 Herhangi kömür, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 331 |
+| Deri çadır | 1 Kulübe iskeleti, 1 Herhangi tabaklanmış deri, 3 Taş, 3 Dal, 3 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 410 |
+| Erzak çukuru | 1 Taş levha, 3 Kuru ot, 1 Taş, 1 Dal | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 22 |
+| Hasır yatak | 2 Hasır, 6 Yaprak, 2 Sopa | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 83 |
+| İskele | 1 Herhangi kalas, 1 Kenevir halatı, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 215 |
+| Kamış kulübe | 1 Kulübe iskeleti, 1 Kamış kulübe çatısı, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 229 |
+| Kamış kulübe çatısı | 6 Kamış hasır | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 38 |
+| Kerpiç duvar | 9 Herhangi kerpiç | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 234 |
+| Kerpiç ev | 1 Kerpiç duvar, 1 Kamış kulübe çatısı, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 378 |
+| Kulübe | 1 Kulübe iskeleti, 1 Hasır, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 201 |
+| Kulübe iskeleti | 7 Herhangi kalas | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 131 |
+| Kurutma rafı | 1 Herhangi sap, 1 Hasır, 2 Taş, 2 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 70 |
+| Megalit | 2 Granit, 1 Kenevir halatı, 2 Taş, 2 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 198 |
+| Su testisi | 1 Herhangi çömlek, 3 Su, 2 Taş, 2 Dal, 1 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 77 |
+| Tabakhane | 1 Deri tulum, 1 Meşe tanini, 4 Taş, 4 Dal, 3 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 607 |
+| Taş çember | 11 Megalit | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 2.941 |
+| Taş fırın | 1 Herhangi tuğla, 1 Ateş yeri, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 138 |
+| Tuz havuzu | 1 Tuz, 1 Herhangi kase, 3 Taş, 3 Dal, 3 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 145 |
+| Tütsühane | 1 Kulübe iskeleti, 1 Duman, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 234 |
+| Yosun yalıtım | 3 Yosun, 1 Islak nehir kili, 1 Taş, 1 Dal | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 20 |
 
 #### Giyim (25)
 
@@ -797,7 +797,7 @@ Toplam **825 tarif**: ACT 1 malzemeleriyle 760, ACT 2 malzemesi isteyen 65.
 | Kristal miğfer ² | 3 Kristal kanat, 4 Golem parçası, 2 Kobalt külçesi, 1 Fırtına tüyü başlık | – | Örs · Zırhçı Durmuş döver | 3.699 |
 | Mantar lifi eldiven ² | 4 Böcek kabuğu, 4 Spor tozu, 2 Goblin kulağı, 1 Demir eldiven | – | Örs · Zırhçı Durmuş döver | 1.520 |
 | Meka çizme ² | 3 Titanyum külçesi, 2 Uzaylı devresi, 1 Muhafız zırhı parçası, 1 Hurda çizme | – | Örs · Zırhçı Durmuş döver | 4.298 |
-| Meka zırh ² | 4 Titanyum külçesi, 3 Kobalt külçesi, 2 Enerji hücresi, 1 Motor, 1 Golem çekirdeği | – | Mühendis Selin yapar (600 sikke işçilik) | 5.200 |
+| Meka zırh ² | 4 Titanyum külçesi, 3 Kobalt külçesi, 2 Enerji hücresi, 1 Motor, 1 Golem çekirdeği | – | Mühendis Işın yapar (600 sikke işçilik) | 5.200 |
 | Tunç çizme | 1 Tunç levha, 1 Herhangi tabaklanmış deri, 4 Lif | – | Örs · Zırhçı Durmuş döver | 884 |
 | Tunç eldiven | 1 Tunç levha, 1 Herhangi tabaklanmış deri, 2 İp | – | Örs · Zırhçı Durmuş döver | 893 |
 | Tunç miğfer | 1 Tunç levha, 1 Herhangi tabaklanmış deri, 2 Sinir | – | Örs · Zırhçı Durmuş döver | 887 |
@@ -807,20 +807,20 @@ Toplam **825 tarif**: ACT 1 malzemeleriyle 760, ACT 2 malzemesi isteyen 65.
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Ahşap karyola | 4 Herhangi kalas, 2 Herhangi tabaklanmış deri, 6 Kuru ot | – | Usta Kemal yapar (ev içine konur) | 475 |
-| Asma fener | 1 Balmumu mumu, 1 Herhangi kalas, 1 Halat | – | Usta Kemal yapar (ev içine konur) | 246 |
-| Dolap | 5 Herhangi kalas, 1 Halat, 1 Herhangi boya | – | Usta Kemal yapar (ev içine konur) | 174 |
-| Duvar halısı | 2 Keten kumaş, 2 Herhangi boya, 1 Sopa | – | Usta Kemal yapar (ev içine konur) | 332 |
-| Halı | 3 Keten kumaş, 2 Herhangi boya, 2 Keten ipliği | – | Usta Kemal yapar (ev içine konur) | 585 |
-| Kilim | 3 Keten ipliği, 1 Herhangi boya, 6 Lif | – | Usta Kemal yapar (ev içine konur) | 228 |
-| Masa | 3 Herhangi kalas, 4 Sopa, 2 İp | – | Usta Kemal yapar (ev içine konur) | 139 |
-| Mor yosun yastığı | 4 Mor yosun, 3 Lif | – | Usta Kemal yapar (ev içine konur) | 243 |
-| Perde | 2 Keten kumaş, 1 Sopa, 2 İp | – | Usta Kemal yapar (ev içine konur) | 302 |
-| Raf | 2 Herhangi kalas, 2 İp, 1 Sopa | – | Usta Kemal yapar (ev içine konur) | 70 |
-| Saksı | 1 Herhangi çömlek, 2 Kum, 2 Papatya | – | Usta Kemal yapar (ev içine konur) | 72 |
-| Sandalye | 2 Herhangi kalas, 2 Sopa, 2 İp | – | Usta Kemal yapar (ev içine konur) | 86 |
-| Sandık | 4 Herhangi kalas, 1 Halat, 2 Taş | – | Usta Kemal yapar (ev içine konur) | 135 |
-| Tabure | 1 Herhangi kalas, 3 Sopa, 1 İp | – | Usta Kemal yapar (ev içine konur) | 76 |
+| Ahşap karyola | 4 Herhangi kalas, 2 Herhangi tabaklanmış deri, 6 Kuru ot | – | Usta Sinan yapar (ev içine konur) | 475 |
+| Asma fener | 1 Balmumu mumu, 1 Herhangi kalas, 1 Halat | – | Usta Sinan yapar (ev içine konur) | 246 |
+| Dolap | 5 Herhangi kalas, 1 Halat, 1 Herhangi boya | – | Usta Sinan yapar (ev içine konur) | 174 |
+| Duvar halısı | 2 Keten kumaş, 2 Herhangi boya, 1 Sopa | – | Usta Sinan yapar (ev içine konur) | 332 |
+| Halı | 3 Keten kumaş, 2 Herhangi boya, 2 Keten ipliği | – | Usta Sinan yapar (ev içine konur) | 585 |
+| Kilim | 3 Keten ipliği, 1 Herhangi boya, 6 Lif | – | Usta Sinan yapar (ev içine konur) | 228 |
+| Masa | 3 Herhangi kalas, 4 Sopa, 2 İp | – | Usta Sinan yapar (ev içine konur) | 139 |
+| Mor yosun yastığı | 4 Mor yosun, 3 Lif | – | Usta Sinan yapar (ev içine konur) | 243 |
+| Perde | 2 Keten kumaş, 1 Sopa, 2 İp | – | Usta Sinan yapar (ev içine konur) | 302 |
+| Raf | 2 Herhangi kalas, 2 İp, 1 Sopa | – | Usta Sinan yapar (ev içine konur) | 70 |
+| Saksı | 1 Herhangi çömlek, 2 Kum, 2 Papatya | – | Usta Sinan yapar (ev içine konur) | 72 |
+| Sandalye | 2 Herhangi kalas, 2 Sopa, 2 İp | – | Usta Sinan yapar (ev içine konur) | 86 |
+| Sandık | 4 Herhangi kalas, 1 Halat, 2 Taş | – | Usta Sinan yapar (ev içine konur) | 135 |
+| Tabure | 1 Herhangi kalas, 3 Sopa, 1 İp | – | Usta Sinan yapar (ev içine konur) | 76 |
 
 #### Boya (13)
 
@@ -848,9 +848,9 @@ Toplam **825 tarif**: ACT 1 malzemeleriyle 760, ACT 2 malzemesi isteyen 65.
 | Kızak | 1 Herhangi kalas, 2 Hayvan yağı, 2 İp, 2 Dal | – | El yapımı (Tab) | 41 |
 | Kütük salı | 2 Herhangi odun, 1 Halat, 2 İp, 2 Dal | – | El yapımı (Tab) | 73 |
 | Oyma kano | 2 Herhangi odun, 1 Kor, 4 İp, 3 Dal | – | El yapımı (Tab) | 97 |
-| Roket ² | 1 Roket gövdesi, 1 Roket motoru, 4 Uzaylı devresi, 6 Gök ipeği | – | Astronot Tuna yapar (2000 sikke işçilik) | 30.000 |
-| Roket gövdesi ² | 4 Meteor demiri külçesi, 4 Titanyum külçesi, 3 Gök camı | – | Astronot Tuna yapar (1000 sikke işçilik) | 9.000 |
-| Roket motoru ² | 2 Yıldız külçesi, 3 Plazma hücresi, 1 Ejder kalbi, 1 Yakıt hücresi | – | Astronot Tuna yapar (1500 sikke işçilik) | 14.000 |
+| Roket ² | 1 Roket gövdesi, 1 Roket motoru, 4 Uzaylı devresi, 6 Gök ipeği | – | Astronot Gökay yapar (2000 sikke işçilik) | 30.000 |
+| Roket gövdesi ² | 4 Meteor demiri külçesi, 4 Titanyum külçesi, 3 Gök camı | – | Astronot Gökay yapar (1000 sikke işçilik) | 9.000 |
+| Roket motoru ² | 2 Yıldız külçesi, 3 Plazma hücresi, 1 Ejder kalbi, 1 Yakıt hücresi | – | Astronot Gökay yapar (1500 sikke işçilik) | 14.000 |
 | Sal | 1 Herhangi kalas, 1 Halat, 3 İp, 3 Dal | – | El yapımı (Tab) | 92 |
 | Sandal küreği | 1 Herhangi kalas, 3 İp, 3 Dal | Çakmaktaşı bıçak | El yapımı (Tab) | 52 |
 | Yelkenli sal | 1 Sal, 3 Hasır, 2 Halat, 2 Uzun sopa, 1 Sandal küreği, 1 Hasat sepeti | Taş balta | El yapımı (Tab) | 640 |
@@ -919,10 +919,10 @@ Toplam **825 tarif**: ACT 1 malzemeleriyle 760, ACT 2 malzemesi isteyen 65.
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Işın kılıcı ² | 2 Titanyum külçesi, 2 Plazma hücresi, 2 Ejder dişi, 3 Kristal lifi | – | Ejder Avcısı Alara yapar (800 sikke işçilik) | 6.400 |
-| Pompalı ² | 1 Ağır plaka, 4 Dişli, 2 Herhangi kalas, 6 Vida, 1 Motor | – | Silahçı Tamer yapar (400 sikke işçilik) | 2.600 |
+| Işın kılıcı ² | 2 Titanyum külçesi, 2 Plazma hücresi, 2 Ejder dişi, 3 Kristal lifi | – | Ejder Avcısı Tomris yapar (800 sikke işçilik) | 6.400 |
+| Pompalı ² | 1 Ağır plaka, 4 Dişli, 2 Herhangi kalas, 6 Vida, 1 Motor | – | Silahçı Tufan yapar (400 sikke işçilik) | 2.600 |
 | Pompalı fişeği ² | 1 Pirinç külçesi, 2 Barut | – | El yapımı (Tab) | 90 |
-| Tabanca ² | 2 Gök demiri külçesi, 3 Dişli, 1 Herhangi sap, 4 Vida | – | Silahçı Tamer yapar (200 sikke işçilik) | 1.400 |
+| Tabanca ² | 2 Gök demiri külçesi, 3 Dişli, 1 Herhangi sap, 4 Vida | – | Silahçı Tufan yapar (200 sikke işçilik) | 1.400 |
 | Tabanca mermisi ² | 1 Pirinç külçesi, 1 Barut | – | El yapımı (Tab) | 60 |
 
 #### Temel (4)
@@ -946,6 +946,6 @@ Toplam **825 tarif**: ACT 1 malzemeleriyle 760, ACT 2 malzemesi isteyen 65.
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Ateş asası ² | 1 Mavi mantar kalası, 2 Spor kristali, 3 Büyü otu, 1 Yüzer taş | – | Büyücü Pervin yapar (100 sikke işçilik) | 900 |
-| Buz asası ² | 1 Kristal çam kalası, 3 Buz kristali, 1 Enerji taşı, 2 Büyü otu | – | Büyücü Pervin yapar (200 sikke işçilik) | 1.600 |
-| Yıldırım asası ² | 1 Kömür ağacı kalası, 3 Plazma taşı, 2 Ejder kristali, 3 Büyü otu | – | Büyücü Pervin yapar (300 sikke işçilik) | 3.200 |
+| Ateş asası ² | 1 Mavi mantar kalası, 2 Spor kristali, 3 Büyü otu, 1 Yüzer taş | – | Büyücü Efsun yapar (100 sikke işçilik) | 900 |
+| Buz asası ² | 1 Kristal çam kalası, 3 Buz kristali, 1 Enerji taşı, 2 Büyü otu | – | Büyücü Efsun yapar (200 sikke işçilik) | 1.600 |
+| Yıldırım asası ² | 1 Kömür ağacı kalası, 3 Plazma taşı, 2 Ejder kristali, 3 Büyü otu | – | Büyücü Efsun yapar (300 sikke işçilik) | 3.200 |

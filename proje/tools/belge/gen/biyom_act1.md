@@ -1,6 +1,6 @@
 ## Çayır — Güvenli
 
-Başladığın yer: büyük nehrin batısı, adanın güney yarısı. Tavşanlar, keklikler, meyve ağaçları. Ekin, Zümrüt, Nazlı, Börü, Dursun, Durmuş ve Rıza burada. Canavarlar zayıf; kurt sürüleri yalnız gece çıkar.
+Başladığın yer: büyük nehrin batısı, adanın güney yarısı. Tavşanlar, keklikler, meyve ağaçları. Kemal, Zümrüt, Nazlı, Börü, Dursun, Durmuş ve Çınar burada. Canavarlar zayıf; kurt sürüleri yalnız gece çıkar.
 
 **Ağaçlar**
 
@@ -64,7 +64,7 @@ Başladığın yer: büyük nehrin batısı, adanın güney yarısı. Tavşanlar
 
 ## Orman — Güvenli
 
-Nehrin batısı, adanın kuzey yarısı (Çayır'dan kuzeye yürü). Gölgeli ve sık; yaban domuzları, dikenli kirpiler, engerekler. Usta Kemal ve Çiftçi Hasan'ın tarlası bu tarafta.
+Nehrin batısı, adanın kuzey yarısı (Çayır'dan kuzeye yürü). Gölgeli ve sık; yaban domuzları, dikenli kirpiler, engerekler. Usta Sinan ve Çiftçi Ekin'in tarlası bu tarafta.
 
 **Ağaçlar**
 
@@ -126,7 +126,7 @@ Nehrin batısı, adanın kuzey yarısı (Çayır'dan kuzeye yürü). Gölgeli ve
 
 ## Bataklık — Tehlikeli
 
-Büyük nehrin doğusu, köprünün karşısı ve güneyi: önce köprüyü onar. Çamur ayağını tutar (Kamış çizme işe yarar), timsahlar ve zehirli kurbağalar. Demir cevheri yalnızca burada. Avcı Toygar'ın kulübesi burada.
+Büyük nehrin doğusu, köprünün karşısı ve güneyi: önce köprüyü onar. Çamur ayağını tutar (Kamış çizme işe yarar), timsahlar ve zehirli kurbağalar. Demir cevheri yalnızca burada. Avcı Doğan'ın kulübesi burada.
 
 **Ağaçlar**
 
@@ -315,7 +315,7 @@ Sıradağın ardı: köprüden geç, doğuya yürü, sıradağdaki **Doğu geçi
 
 ## Mor Kristal Vadisi — Çok ölümcül
 
-Adanın en doğu ucu, Kül Diyarı'nın ötesi. Mor ışığın en sık indiği yer; kristal golemler, gölge kurtları. Son iz ve Denizci Levent'in enkazı burada.
+Adanın en doğu ucu, Kül Diyarı'nın ötesi. Mor ışığın en sık indiği yer; kristal golemler, gölge kurtları. Son iz ve Denizci Barbaros'un enkazı burada.
 
 **Ağaçlar**
 

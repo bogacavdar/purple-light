@@ -2,7 +2,7 @@
 
 ## Yüzen Kayalar — Güvenli
 
-İniş yeri. Havada duran kayalar, bulut koyunları, rüzgâr kuşları. Gökbilimci Ülker ve ACT 2 kazanı burada. Gece gök tazıları çıkar.
+İniş yeri. Havada duran kayalar, bulut koyunları, rüzgâr kuşları. Gökbilimci Yıldız ve ACT 2 kazanı burada. Gece gök tazıları çıkar.
 
 **Ağaçlar**
 
@@ -46,7 +46,7 @@
 
 ## Dev Mantar Ormanı — Güvenli
 
-Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzaktan atar, şamanları zehirler. Büyücü Pervin burada.
+Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzaktan atar, şamanları zehirler. Büyücü Efsun burada.
 
 **Ağaçlar**
 
@@ -91,7 +91,7 @@ Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzak
 
 ## Hurda Çölü — Tehlikeli
 
-Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dronları ve dev bir hurda devi. Silahçı Tamer burada.
+Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dronları ve dev bir hurda devi. Silahçı Tufan burada.
 
 **Ağaçlar**
 
@@ -136,7 +136,7 @@ Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dron
 
 ## Kristal Golem Ocağı — Tehlikeli
 
-Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendis Selin burada.
+Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendis Işın burada.
 
 **Ağaçlar**
 
@@ -181,7 +181,7 @@ Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendi
 
 ## Ejder Volkanı — Ölümcül
 
-Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ejder adanın en güçlü canavarlarından. Ejder Avcısı Alara burada.
+Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ejder adanın en güçlü canavarlarından. Ejder Avcısı Tomris burada.
 
 **Ağaçlar**
 
@@ -226,7 +226,7 @@ Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ej
 
 ## Gök Rıhtımı — Çok ölümcül
 
-Adanın en uzak ucu, roket rampası. Uzaylı dronları, gölge muhafızlar ve dev Gök bekçisi. Astronot Tuna burada.
+Adanın en uzak ucu, roket rampası. Uzaylı dronları, gölge muhafızlar ve dev Gök bekçisi. Astronot Gökay burada.
 
 **Ağaçlar**
 

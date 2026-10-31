@@ -20,9 +20,9 @@
 | Ejder avcısı 🔒 | Kül Diyarı'nın kara ejderini yen. | Kara ejder Kül Diyarı'nda. |
 | Ada efsanesi | Seviye 25 ol. | – |
 | Yaşayan ansiklopedi | 250 tarif bul. | – |
-| Kazazede 🔒 | Denizci Levent'in yeni gemisini kur. | Levent'in son görevi "Yeni bir gemi" (dz4) bitince. |
-| Gökyüzüne 🔒 | Tuna ile roketi fırlat. | Tuna ile roket fırlatılınca. |
-| Açık deniz 🔒 | Levent'in gemisiyle adadan ayrıl: ACT 2. | Levent'in gemisiyle ikinci adaya geçince. |
+| Kazazede 🔒 | Denizci Barbaros'un yeni gemisini kur. | Barbaros'un son görevi "Yeni bir gemi" (dz4) bitince. |
+| Gökyüzüne 🔒 | Gökay ile roketi fırlat. | Gökay ile roket fırlatılınca. |
+| Açık deniz 🔒 | Barbaros'un gemisiyle adadan ayrıl: ACT 2. | Barbaros'un gemisiyle ikinci adaya geçince. |
 | İlk düşüş | Bir kez öl ya da bayıl. | **Dikkat:** sayaç yalnızca gece mor ışıkla ölünce artıyor; canavar ya da açlıkla bayılmak sayılmıyor. |
 | İnatçı | 5 kez öl ya da bayıl, yine de devam et. | Yalnızca gece ölümleri sayılıyor (yukarıdaki not). |
 | İlk reis | Bir reis öldür. | – |

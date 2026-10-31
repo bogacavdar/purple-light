@@ -1,3 +1,9 @@
+## v2.45 (31 Ekim 2026) · kişilerin yeni adları, öğretici parlaması, masaüstü görev kartı
+- **İsimler:** prototip, `parts/*.md`, `gen/*.md`, `x/*.json`, `x/gen.py` içinde ad değişikliği (önce tam unvanlar, sonra tek adlar; harf sınırlı regex, büyük/küçük harf duyarlı; tanımlayıcılar (`talkAlara`, `window.__selin`, `lesson('ekin')`) değişmedi). Kesme işaretinden sonraki ekler yeni adın ünlü uyumuna göre yeniden yazıldı (Kemal istisna: ince). "Sadık dost" başarımı ve "Nadir pişmiş" sıfatı dokunulmadı. Ustanın kızı Hatice → Zeynep (Hatice Nine ile çakışmasın). Kaptan Poyraz ölü kodu hâlâ duruyor (adı Gemici Poyraz ile aynı, çalışmıyor). Köpek adı ve kahraman ad listesinde de "Bulut", "Çınar", "Ela", "Mavi" var (oyuncu seçerse aynı ad iki kişide olabilir). CLAUDE.md'de "Nuri yüzü" → "Poyraz (eski Nuri) yüzü".
+- **Öğretici parlaması:** `<style id="v245-desk">`: `#craft:has(.pulse) .rb.mk:not(.pulse)::after{display:none}`.
+- **Masaüstü:** aynı blokta `(min-width:900px) and (pointer:fine)`: `#tut` 540 px / 17 px, `#dlg .dbody p` 16,5 px, ad 15,5 px, düğmeler 15 px; menü açıkken `#tut` genişliği eski kuralda.
+- Oynanmadı, yalnızca chk.js.
+
 ## v2.44 (31 Ekim 2026) · köpek sırtı, miktarla satış, satış uyarısı, meşale titremesi, tek silah
 - **Meşale:** `frameBody` yön seçiminde histerezis (mevcut eksen ×0,7 ile korunur); `drawLeftT` `window.__plD8.on` iken `D8.x`/`D8.y<0` ile çizer.
 - **Tek silah:** `drawPlayer` içinde `armed` (eldeki GT kind sword/hunt/axe/pick) iken `equip.silah` sırtta çizilmez. Dövüş mantığı (`weapon()`) değişmedi.

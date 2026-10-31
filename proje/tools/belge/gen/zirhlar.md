@@ -40,4 +40,4 @@
 | Kül postu pelerin | Gövde | 26 | El yapımı (Tab) | direnç: yanık %40 |
 | Demir zırh | Gövde | 40 | Örs · Zırhçı Durmuş döver | direnç: kanama %30, metal |
 | Ejder pulu zırh | Gövde | 60 | Örs · Zırhçı Durmuş döver | direnç: yanık %60, metal |
-| Meka zırh ² | Gövde | 90 | Mühendis Selin yapar (600 sikke işçilik) | direnç: kanama %50, yanık %50, zehir %50, metal |
+| Meka zırh ² | Gövde | 90 | Mühendis Işın yapar (600 sikke işçilik) | direnç: kanama %50, yanık %50, zehir %50, metal |

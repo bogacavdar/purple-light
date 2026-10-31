@@ -8,6 +8,56 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.45 · 31 Ekim 2026
+
+### Oynanış
+- **Kişilerin yeni adları:** adlar karakterlerine uysun diye değişti. Oyunda ve belgede her yerde yeni adlar geçiyor. Pazarcı Nazlı, Savaşçı Börü ve Işıl aynı kaldı; cadılar, demirciler, zırhçılar ve kuzenleri değişmedi.
+
+| Eski ad | Yeni ad |
+|---|---|
+| Yaşlı Ekin | Yaşlı Kemal |
+| Çiftçi Hasan | Çiftçi Ekin |
+| Usta Kemal | Usta Sinan |
+| Marangoz Rıza | Marangoz Çınar |
+| Avcı Toygar | Avcı Doğan |
+| Denizci Levent | Denizci Barbaros |
+| Gemici Nuri | Gemici Poyraz |
+| Gökbilimci Ülker | Gökbilimci Yıldız |
+| Büyücü Pervin | Büyücü Efsun |
+| Silahçı Tamer | Silahçı Tufan |
+| Mühendis Selin | Mühendis Işın |
+| Ejder Avcısı Alara | Ejder Avcısı Tomris |
+| Astronot Tuna | Astronot Gökay |
+| Elif | Mavi |
+| Çoban Hüsnü | Çoban Davut |
+| Güvercinci Kerem | Güvercinci Bulut |
+| Mina | Ela |
+| Şövalye Nadir Dede | Şövalye Kahraman Dede |
+| Seyyar satıcı Sadık | Seyyar satıcı Bekir |
+| Avcı Cemal | Avcı Kartal |
+| Sabri | Hayali |
+| Falcı Nermin | Falcı Kader |
+| Saniye Teyze | Hatice Nine |
+| Yolcu Haydar | Yolcu Yahya |
+| Madenci Cevdet | Madenci Kaya |
+| Kökçü Leyla | Kökçü Fidan |
+| Hatice (ustanın kızı) | Zeynep |
+
+### Arayüz
+- **Öğreticide yalnızca istenen parlıyor:** öğretici kazanda belirli bir şey isterken (ör. Kaba meşale) yapılabilir diğer tarifler artık parlamıyor; yalnızca istenen satır, + düğmesi ya da Kaynat parlıyor.
+- **Bilgisayarda görev kartı büyüdü:** sağ üstteki görev kartı daha geniş ve yazısı daha büyük (15 → 17 px); kişilerin konuşma yazısı biraz küçüldü (19 → 16,5 px). Telefon düzeni değişmedi.
+
+### Kayıtlar
+- Eski kayıtlar etkilenmez; kişiler yeni adlarıyla görünür.
+
+### Tasarım belgesi
+- Bütün bölümlerde kişi adları yenilendi; "ACT 1 · Kişiler ve görevler" bölümüne eski/yeni ad tablosu eklendi. Öğretici parlaması ve görev kartı boyutları yazıldı.
+
+### Proje
+- Bu sürüm oynanarak test edilmedi; yalnızca sözdizimi kontrolü yapıldı.
+
+---
+
 ## Versiyon 2.44 · 31 Ekim 2026
 
 ### Oynanış
