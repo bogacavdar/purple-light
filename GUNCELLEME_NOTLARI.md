@@ -8,6 +8,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.46 · 31 Ekim 2026
+
+### Düzeltmeler
+- **Demirci Dursun · "Ağzı köreldi" görevi geçilemiyordu:** alet biletmek görevde hiç sayılmıyordu, kaç kez biletsen de "0/1" kalıyordu. Artık her bileme sayılıyor. Daha önce biletmiş olanlar bir kez daha biletince görev biter.
+
+### Arayüz
+- Görev kartı ne bileteceğini açıkça yazıyor: körelmiş aletinin adı ve nerede yapılacağı, ör. "0/1 Taş balta bilet (Dursun · Aletimi bile)". Dursun'un görev sözü de nasıl yapılacağını anlatıyor: körelmiş alet çantandayken onunla konuş, "Aletimi bile" de, aletin yanındaki "Bile" düğmesine bas.
+
+### Tasarım belgesi
+- D4 görev satırı güncellendi.
+
+### Proje
+- Bu sürüm oynanarak test edilmedi; yalnızca sözdizimi kontrolü yapıldı.
+
+---
+
 ## Versiyon 2.45 · 31 Ekim 2026
 
 ### Oynanış

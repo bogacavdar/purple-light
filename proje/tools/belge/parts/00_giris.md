@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.45** ile birebir (31 Ekim 2026). Bu sürümde: kişilerin yeni adları, öğreticide yalnızca istenen tarifin parlaması, bilgisayarda büyük görev kartı. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.46** ile birebir (31 Ekim 2026). Bu sürümde: Demirci Dursun'un "Ağzı köreldi" görevi artık bilemeyi sayıyor ve neyin bileneceğini açıkça yazıyor. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

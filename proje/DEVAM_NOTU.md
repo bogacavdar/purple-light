@@ -1,3 +1,8 @@
+## v2.46 (31 Ekim 2026) · "Ağzı köreldi" (D4) bileme sayılmıyordu
+- D4 hedefi `["c","sharp",1]` ama `qc('sharp')` hiçbir yerde çağrılmıyordu. `[data-sharp]` tıklamasına `qc('sharp')` eklendi (Dursun, Durmuş ve kuzenlerin bilemesi aynı yoldan). `plab` içinde `c`/`sharp` etiketi körelmiş aletleri (`dullTool`) adıyla yazar. D4 `say` metni nasıl yapılacağını anlatır.
+- Diğer sayaç hedefleri (`sold`, `fish:`, `trap:`) sayılıyor; kontrol edildi.
+- Oynanmadı, yalnızca chk.js.
+
 ## v2.45 (31 Ekim 2026) · kişilerin yeni adları, öğretici parlaması, masaüstü görev kartı
 - **İsimler:** prototip, `parts/*.md`, `gen/*.md`, `x/*.json`, `x/gen.py` içinde ad değişikliği (önce tam unvanlar, sonra tek adlar; harf sınırlı regex, büyük/küçük harf duyarlı; tanımlayıcılar (`talkAlara`, `window.__selin`, `lesson('ekin')`) değişmedi). Kesme işaretinden sonraki ekler yeni adın ünlü uyumuna göre yeniden yazıldı (Kemal istisna: ince). "Sadık dost" başarımı ve "Nadir pişmiş" sıfatı dokunulmadı. Ustanın kızı Hatice → Zeynep (Hatice Nine ile çakışmasın). Kaptan Poyraz ölü kodu hâlâ duruyor (adı Gemici Poyraz ile aynı, çalışmıyor). Köpek adı ve kahraman ad listesinde de "Bulut", "Çınar", "Ela", "Mavi" var (oyuncu seçerse aynı ad iki kişide olabilir). CLAUDE.md'de "Nuri yüzü" → "Poyraz (eski Nuri) yüzü".
 - **Öğretici parlaması:** `<style id="v245-desk">`: `#craft:has(.pulse) .rb.mk:not(.pulse)::after{display:none}`.
