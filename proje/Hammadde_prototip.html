@@ -114,6 +114,9 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);font-family
 .mkt .pr{color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
 .mkt button{background:#1c2419;border:2px solid var(--panel-edge);color:var(--ink);font-family:inherit;font-size:13px;padding:3px 8px;cursor:pointer;white-space:nowrap}
 .mkt button.all{border-color:var(--accent)}
+.mkt .sq{display:inline-flex;align-items:center;gap:3px}.mkt .sq .qb{padding:3px 6px;min-width:28px;touch-action:none;user-select:none;-webkit-user-select:none}.mkt .sq .qi{width:46px;box-sizing:border-box;text-align:center;font-family:inherit;font-size:14px;font-weight:700;background:#141b12;color:var(--ink);border:2px solid var(--panel-edge);padding:3px 2px}.mkt .sq .qi:focus{outline:2px solid var(--accent);outline-offset:1px}
+.sellask{position:sticky;top:0;z-index:3;background:#3a2414;border:2px solid #ffb05a;padding:8px 10px;margin:0 0 8px;font-size:14px}.sellask p{margin:0 0 6px}.sellask label{display:block;margin:0 0 8px;font-size:13px;color:var(--ink-dim)}.sellask div{display:flex;gap:8px}.sellask button{font-family:inherit;font-weight:700;font-size:14px;padding:6px 12px;background:#1c2419;color:var(--ink);border:2px solid var(--panel-edge);cursor:pointer}.sellask button.pri{background:var(--accent);border-color:var(--accent);color:#2a1f08}
+@media (max-width:720px){.mkt li.sl{grid-template-columns:minmax(0,1fr) auto}.mkt li.sl .sq{grid-column:1/2}.mkt .sq .qb{min-width:40px;min-height:40px}.mkt .sq .qi{width:54px;min-height:40px;font-size:16px}}
 .mkt button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .mkt .tl{font-size:11px;color:var(--bad)}
 .mkttop{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
@@ -1344,7 +1347,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.43</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.44</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -2248,6 +2251,12 @@ const DOG_MAX=5,WIZ_DAY1=5,WIZ_DAY2=20;   // v54: the first dog is a gift on day
 const DOG_NAMES=['Bobo','Cıvata','Pırpır','Zımba','Tik','Fıstık','Bulut','Mıknatıs'];
 const dogPrice=()=>Math.round(500*Math.pow(1.6,dogs.length)/10)*10;
 const DOG_SPEED=36;                  // half of the player's base speed; never changed by skills or levels
+const DOG_CAP=20;                    // v2.44: a dog carries at most this many things, then brings them to you
+const bagN=d=>{let k=0;for(const n in (d.bag||{}))k+=d.bag[n];return k};
+const bagTxt=(d,max)=>Object.keys(d.bag||{}).filter(n=>d.bag[n]>0).slice(0,max||99).map(n=>`${d.bag[n]} ${n}`).join(', ');
+function dogDeliver(d){const B=d.bag||{},L=Object.keys(B).filter(n=>B[n]>0);d.bag={};if(!L.length)return;
+  L.forEach((n,i)=>{gain(n,B[n]);floats.push({x:d.x,y:d.y-14-i*7,t:0,text:`+${B[n]} ${n}`,color:'#7fe0ff',size:6})});
+  sfx('woof');toast(`${d.name} getirdi: ${L.map(n=>`+${B[n]} ${n}`).join(', ')}`);renderInv();if(craftOpen&&mode==='dogs')renderCraft()}
 const DOG_WORK=2;                    // dogs gather at half the player's base speed (twice the time)
 
 // ---------- player & state ----------
@@ -2278,7 +2287,7 @@ let tut=0;                 // tutorial step, 12 = done
 const seen=new Set();      // every item ever obtained
 const PRICE=DB.p;
 let hot=window.claude&&window.claude.hot;
-function snapshot(){return{v47:v47Save(),v46:v46Save(),v45:{tz,te:tzEat,ht:helpTorch,fg:[...forged]},v44:{tg:toygar.met,tt:toygar.talks,cl:[...clues],kl:Object.assign({},kills),bf:JSON.parse(JSON.stringify(pbuff)),cx:Object.assign({},codex),wx:{k:weather.k,t:Math.round(weather.t)},tu:torchesUsed,lm:{met:lampman.met,gone:lampman.gone},bk:{shown:balikci.shown,met:balikci.met},mh:mudHint},lk:Object.assign({},LOOK.hero),ll:Object.assign({},LOOK.love),qv:7,ekq:{wb:EKQ.wb,cs:EKQ.cs,tr:EKQ.tr},dm:durmus.met,gv:graves.slice(),bf:bridge.fixed,ss:shelterSlept,km:kaptan.met,ks:kaptan.state,rm:carp.met,dr:drops.filter(d=>d.t>=1||d.keep).map(d=>d.keep?[d.n,Math.round(d.t>=1?d.x:d.tx),Math.round(d.t>=1?d.y:d.ty),1]:[d.n,Math.round(d.x),Math.round(d.y)]),dh:dropHint,ht:htut,yt:ytut,th:torchHint,dn:deaths,tb:Object.assign({},torchBurn),ft:ftut,ct:ctut,tt:torchTut,ns:nightScare===1?0:nightScare,am:alp.met,eq:Object.assign({},equip),fd:Math.round(food),hg:hungerSeen,fs2:fightSeen,os:[...openSeq.keys()],pl:JSON.parse(JSON.stringify(placed.concat(placing&&placing.moving?[placing.moving]:[]))),dt:Math.round(dayT),dy:day,ho:hotList().filter(Boolean),bt:belt.slice(0,12).map(n=>n||null),hd:hand,lt:leftT,mv:MAPV,tc:trader.called,tf:trader.firstDone,um:usta.met,hp:Math.round(hp),stm:Math.round(st),rt:runTut,hs:hurtSeen,hn:heroName,ln:loveName,diff,x:player.x,y:player.y,inv:Object.fromEntries(Object.entries(inv).filter(e=>e[1]>0)),order:[...order],found:[...found],tried:[...tried],coins,seen:[...seen],tut,skills:[...skills],toolDur:{...toolDur},xp,lvl,woodCut,questsHidden,met,qState,dlgSeen:[...dlgSeen],bought:[...bought],won,walked,mapSeen,tapMoved,exp:packExplored(),playTime,learned:[...learned],tlog:[...tlog],pot:{r:pot.r,put:pot.put},witchMet,farmerMet,farmStep,witchShown,selSeed,plots:plots.map(f=>({st:f.st,crop:f.crop,t:f.t,wet:f.wet})),wiz:{...wiz},mm:market.met,sm:smith.met,dogs:dogs.map(d=>({mat:d.mat,name:d.name,n:d.n||0})),playing:!onTitle}}
+function snapshot(){return{v47:v47Save(),v46:v46Save(),v45:{tz,te:tzEat,ht:helpTorch,fg:[...forged]},v44:{tg:toygar.met,tt:toygar.talks,cl:[...clues],kl:Object.assign({},kills),bf:JSON.parse(JSON.stringify(pbuff)),cx:Object.assign({},codex),wx:{k:weather.k,t:Math.round(weather.t)},tu:torchesUsed,lm:{met:lampman.met,gone:lampman.gone},bk:{shown:balikci.shown,met:balikci.met},mh:mudHint},lk:Object.assign({},LOOK.hero),ll:Object.assign({},LOOK.love),qv:7,ekq:{wb:EKQ.wb,cs:EKQ.cs,tr:EKQ.tr},dm:durmus.met,gv:graves.slice(),bf:bridge.fixed,ss:shelterSlept,km:kaptan.met,ks:kaptan.state,rm:carp.met,dr:drops.filter(d=>d.t>=1||d.keep).map(d=>d.keep?[d.n,Math.round(d.t>=1?d.x:d.tx),Math.round(d.t>=1?d.y:d.ty),1]:[d.n,Math.round(d.x),Math.round(d.y)]),dh:dropHint,ht:htut,yt:ytut,th:torchHint,dn:deaths,tb:Object.assign({},torchBurn),ft:ftut,ct:ctut,tt:torchTut,ns:nightScare===1?0:nightScare,am:alp.met,eq:Object.assign({},equip),fd:Math.round(food),hg:hungerSeen,fs2:fightSeen,os:[...openSeq.keys()],pl:JSON.parse(JSON.stringify(placed.concat(placing&&placing.moving?[placing.moving]:[]))),dt:Math.round(dayT),dy:day,ho:hotList().filter(Boolean),bt:belt.slice(0,12).map(n=>n||null),hd:hand,lt:leftT,mv:MAPV,tc:trader.called,tf:trader.firstDone,um:usta.met,hp:Math.round(hp),stm:Math.round(st),rt:runTut,hs:hurtSeen,hn:heroName,ln:loveName,diff,x:player.x,y:player.y,inv:Object.fromEntries(Object.entries(inv).filter(e=>e[1]>0)),order:[...order],found:[...found],tried:[...tried],coins,seen:[...seen],tut,skills:[...skills],toolDur:{...toolDur},xp,lvl,woodCut,questsHidden,met,qState,dlgSeen:[...dlgSeen],bought:[...bought],won,walked,mapSeen,tapMoved,exp:packExplored(),playTime,learned:[...learned],tlog:[...tlog],pot:{r:pot.r,put:pot.put},witchMet,farmerMet,farmStep,witchShown,selSeed,plots:plots.map(f=>({st:f.st,crop:f.crop,t:f.t,wet:f.wet})),wiz:{...wiz},mm:market.met,sm:smith.met,dogs:dogs.map(d=>({mat:d.mat,name:d.name,n:d.n||0,bag:Object.assign({},d.bag||{})})),playing:!onTitle}}
 function restore(d){if(!d||!d.inv)return;
   if(d.v47&&(d.qv||0)<4)d=Object.assign({},d,{qv:4});   // v47 wrote qv twice (the 2 won), its quest index is already in v47 numbering
   {const v5=d.v45||{};tz=v5.tz||0;tzEat=v5.te||0;helpTorch=!!v5.ht;forged.clear();(v5.fg||(d.found||[]).filter(n=>TOOLS.has(n))).forEach(n=>forged.add(n));}
@@ -2300,7 +2309,7 @@ function restore(d){if(!d||!d.inv)return;
     const done=new Set(OLD.slice(0,d.tut-11));let ni=NEW.findIndex(k=>!done.has(k));if(ni<0)ni=NEW.length;d=Object.assign({},d,{tut:11+ni,qState:'talk'})}
   if((d.qv||0)<6&&(d.tut||0)>=15){const ti=11+Q5KEYS.indexOf('t10');if(d.tut>ti)d=Object.assign({},d,{tut:d.tut+3});else if(d.tut===ti)d=Object.assign({},d,{qState:'talk'})}   // v1.44: Ekin's "10 tarif" became four quests
   if((d.qv||0)<7&&(d.tut||0)>=15){const ti=11+Q5KEYS.indexOf('t10'),t=d.tut;let nt=t,ns=d.qState;if(t===ti){nt=ti;ns='talk'}else if(t===ti+1)nt=ti;else if(t===ti+2){nt=ti+1;ns='talk'}else if(t===ti+3)nt=ti+1;else if(t>ti+3)nt=t-2;d=Object.assign({},d,{tut:nt,qState:ns})}   // v1.50: Ekin's trap and wolf quests are gone (Alp's 'Kapan ustası' and 'Kurt sürüsü' ask the same)
-  trader.called=nn(d.tc,(d.tut||0)>=15);trader.firstDone=nn(d.tf,(d.tut||0)>=16);usta.met=!!d.um;hp=Math.max(1,+nn(d.hp,1e9)||1);st=nn(d.stm,1e9);runTut=d.rt||0;hurtSeen=!!d.hs;heroName=d.hn||'';loveName=d.ln||'';diff=d.diff||'normal';player.x=d.x;player.y=d.y;Object.assign(inv,d.inv);order.push(...d.order);(d.found||[]).forEach(f=>{found.push(f);foundSet.add(f)});(d.tried||[]).forEach(t=>tried.add(t));coins=d.coins||0;(d.seen||order).forEach(x=>seen.add(x));tut=nn(d.tut,tut);(d.skills||[]).forEach(x=>skills.add(x));Object.assign(toolDur,d.toolDur||{});xp=d.xp||0;lvl=d.lvl||1;woodCut=d.woodCut||0;questsHidden=!!d.questsHidden;met=nn(d.met,d.tut>0);qState=d.qState||'talk';(d.dlgSeen||[]).forEach(x=>dlgSeen.add(x));(d.bought||[]).forEach(x=>bought.add(x));(d.learned||[]).forEach(x=>learned.add(x));won=!!d.won;walked=nn(d.walked,true);mapSeen=nn(d.mapSeen,2);tapMoved=nn(d.tapMoved,true);unpackExplored(d.exp);if((d.tut||0)>=11&&met)witchShown=true;playTime=d.playTime||0;trader.nextAt=trader.called?playTime+150:Infinity;(d.tlog||[]).forEach(([k,v])=>tlog.set(k,v));if(d.wiz)Object.assign(wiz,d.wiz);market.met=!!d.mm;smith.met=!!d.sm;if(dogs.length||wiz.plan){if(dogs.length&&wiz.shown){wiz.shown=false;wiz.gone=true}}if(d.pot&&d.pot.r&&REC.has(d.pot.r)){pot.r=d.pot.r;pot.put=d.pot.put}witchMet=!!d.witchMet;farmerMet=!!d.farmerMet;farmStep=nn(d.farmStep,d.farmerMet?1:0);witchShown=nn(d.witchShown,!!d.witchMet||(d.tut||0)>=12);selSeed=d.selSeed||null;(d.plots||[]).forEach((o,i)=>{if(plots[i])Object.assign(plots[i],o)});(d.dogs||[]).forEach(o=>dogs.push({...o,x:player.x+8,y:player.y+8,state:o.mat?'idle':'wait',t:0,dur:0,target:null,face:1,ph:Math.random()*6,happy:0}));beltLoad(d);lastCoins=coins;renderInv()}
+  trader.called=nn(d.tc,(d.tut||0)>=15);trader.firstDone=nn(d.tf,(d.tut||0)>=16);usta.met=!!d.um;hp=Math.max(1,+nn(d.hp,1e9)||1);st=nn(d.stm,1e9);runTut=d.rt||0;hurtSeen=!!d.hs;heroName=d.hn||'';loveName=d.ln||'';diff=d.diff||'normal';player.x=d.x;player.y=d.y;Object.assign(inv,d.inv);order.push(...d.order);(d.found||[]).forEach(f=>{found.push(f);foundSet.add(f)});(d.tried||[]).forEach(t=>tried.add(t));coins=d.coins||0;(d.seen||order).forEach(x=>seen.add(x));tut=nn(d.tut,tut);(d.skills||[]).forEach(x=>skills.add(x));Object.assign(toolDur,d.toolDur||{});xp=d.xp||0;lvl=d.lvl||1;woodCut=d.woodCut||0;questsHidden=!!d.questsHidden;met=nn(d.met,d.tut>0);qState=d.qState||'talk';(d.dlgSeen||[]).forEach(x=>dlgSeen.add(x));(d.bought||[]).forEach(x=>bought.add(x));(d.learned||[]).forEach(x=>learned.add(x));won=!!d.won;walked=nn(d.walked,true);mapSeen=nn(d.mapSeen,2);tapMoved=nn(d.tapMoved,true);unpackExplored(d.exp);if((d.tut||0)>=11&&met)witchShown=true;playTime=d.playTime||0;trader.nextAt=trader.called?playTime+150:Infinity;(d.tlog||[]).forEach(([k,v])=>tlog.set(k,v));if(d.wiz)Object.assign(wiz,d.wiz);market.met=!!d.mm;smith.met=!!d.sm;if(dogs.length||wiz.plan){if(dogs.length&&wiz.shown){wiz.shown=false;wiz.gone=true}}if(d.pot&&d.pot.r&&REC.has(d.pot.r)){pot.r=d.pot.r;pot.put=d.pot.put}witchMet=!!d.witchMet;farmerMet=!!d.farmerMet;farmStep=nn(d.farmStep,d.farmerMet?1:0);witchShown=nn(d.witchShown,!!d.witchMet||(d.tut||0)>=12);selSeed=d.selSeed||null;(d.plots||[]).forEach((o,i)=>{if(plots[i])Object.assign(plots[i],o)});(d.dogs||[]).forEach(o=>dogs.push({...o,bag:Object.assign({},o.bag||{}),x:player.x+8,y:player.y+8,state:o.mat?'idle':'wait',t:0,dur:0,target:null,face:1,ph:Math.random()*6,happy:0}));beltLoad(d);lastCoins=coins;renderInv()}
 try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}
 
 const keys={};
@@ -3090,10 +3099,10 @@ function renderCraft(){
     {const sa=$('sellall');if(sa)sa.hidden=false}
     const total=Math.round(order.filter(n=>inv[n]>0&&bulkSellable(n)).reduce((t,n)=>t+unitPrice(n,true)*inv[n],0));
     const sa=$('sellall');if(sa){sa.textContent=`Aletler, zırhlar ve eşyalar hariç hepsini sat · ${total.toLocaleString('tr-TR')}`;sa.disabled=!total;if(!$('sellsafe')){const b2=document.createElement('button');b2.id='sellsafe';b2.type='button';sa.after(b2)}const safe=Math.round(order.filter(n=>inv[n]>0&&bulkSellable(n)&&!potUses(n)).reduce((t,n)=>t+unitPrice(n,true)*inv[n],0));$('sellsafe').textContent=`Kazanda işe yaramayanları sat · ${safe.toLocaleString('tr-TR')}`;$('sellsafe').disabled=!safe;$('sellsafe').hidden=false}
-    cbody.innerHTML=mktTabs()+(list.length?`<p class="note">Fiyatlar sabit; çok satmak fiyatı düşürmez.${tradePct()||sk('Z4')?' Yetenek bonusların fiyatlara dahil.':''}</p><ul class="mkt">${list.map(n=>`<li><span class="nm">${esc(n)} ×${inv[n]}${TOOLS.has(n)?' <span class="tl">alet</span>':''}${(()=>{const u=potUses(n);if(u)return `<span class="kz warn">Kazanda şimdi ${u} tarifte işe yarar</span>`;const l=potLater(n);return l?`<span class="kz">İleride ${l} tarifte lazım olabilir</span>`:''})()}</span><span class="pr">${(Math.round(unitPrice(n)*10)/10).toLocaleString('tr-TR')} sikke</span><button data-sell="1" data-n="${esc(n)}" type="button">1 sat</button><button class="all" data-sell="all" data-n="${esc(n)}" type="button">Hepsi · ${Math.round(unitPrice(n)*inv[n]).toLocaleString('tr-TR')}</button></li>`).join('')}</ul>`
+    cbody.innerHTML=mktTabs()+(list.length?`<p class="note">Fiyatlar sabit; çok satmak fiyatı düşürmez.${tradePct()||sk('Z4')?' Yetenek bonusların fiyatlara dahil.':''}</p><ul class="mkt">${list.map(n=>`<li class="sl"><span class="nm">${esc(n)} ×${inv[n]}${TOOLS.has(n)?' <span class="tl">alet</span>':''}${(()=>{const u=potUses(n);if(u)return `<span class="kz warn">Kazanda şimdi ${u} tarifte işe yarar</span>`;const l=potLater(n);return l?`<span class="kz">İleride ${l} tarifte lazım olabilir</span>`:''})()}</span><span class="pr">${(Math.round(unitPrice(n)*10)/10).toLocaleString('tr-TR')} sikke</span><span class="sq"><button type="button" class="qb" data-qd="-1" data-n="${esc(n)}" aria-label="Bir azalt">▼</button><input class="qi" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" data-qn="${esc(n)}" value="${sellQ(n)}" aria-label="${esc(n)} kaç tane"><button type="button" class="qb" data-qd="1" data-n="${esc(n)}" aria-label="Bir artır">▲</button><button data-sell="1" data-n="${esc(n)}" type="button" class="sq1">Sat · ${Math.round(unitPrice(n)*sellQ(n)).toLocaleString('tr-TR')}</button></span><button class="all" data-sell="all" data-n="${esc(n)}" type="button">Hepsi · ${Math.round(unitPrice(n)*inv[n]).toLocaleString('tr-TR')}</button></li>`).join('')}</ul>`
       :`<p class="note">${filter?'Aramana uyan malzeme yok.':'Satacak bir şeyin yok. Malzeme topla ya da birleştirerek değerli eşyalar yap.'}</p>`);
   }else if(mode==='dogs'){
-    cbody.innerHTML=`<p class="note">Köpekler senin seçtiğin malzemeyi kendi başına toplar ve envanterine getirir. Senin ilk günkü hızının yarısıyla çalışırlar; yeteneklerinden ve seviyenden etkilenmezler. Bir köpeği yanına çağırıp sevebilirsin.</p><div class="dogs">${dogs.map((d,i)=>`<div class="dog"><div class="dh"><b>${esc(d.name)}</b><span>${d.state==='wait'?'<b style="color:#f2b84b">ne toplayacağını seç</b>':d.state==='called'?'sana koşuyor':d.state==='play'?'yanında oynuyor':d.state==='gather'?`${esc(d.mat)} topluyor`:d.state==='walk'?`${esc(d.mat)} arıyor`:'bekliyor'} · topladığı: ${d.n||0}</span></div><div class="dact">${d.state==='called'||d.state==='play'?`<button type="button" data-work="${i}">İşine gönder</button>${d.state==='play'?`<button type="button" class="pet" data-pet="${i}">♥ Sev</button>`:''}`:`<button type="button" data-call="${i}">Yanıma çağır</button>`}</div><div class="dm">${DOG_MATS.filter(m=>seen.has(m)||d.mat===m||m==='Dal').map(m=>`<button type="button" class="${d.mat===m?'on':''}" data-dog="${i}" data-mat="${esc(m)}"><img src="${icon(m)}" alt="">${esc(m)}</button>`).join('')}</div></div>`).join('')||'<p class="note">Henüz robot köpeğin yok.</p>'}</div>
+    cbody.innerHTML=`<p class="note">Köpekler senin seçtiğin malzemeyi kendi başına toplar; sırtlarında en çok ${DOG_CAP} eşya taşırlar. Sırtı dolan köpek sana gelip topladığını teslim eder; dolmadan <b>Yanıma çağır</b> dersen o ana kadar topladığını getirir. Senin ilk günkü hızının yarısıyla çalışırlar; yeteneklerinden ve seviyenden etkilenmezler. Bir köpeği yanına çağırıp sevebilirsin.</p><div class="dogs">${dogs.map((d,i)=>`<div class="dog"><div class="dh"><b>${esc(d.name)}</b><span>${d.state==='wait'?'<b style="color:#f2b84b">ne toplayacağını seç</b>':d.state==='called'?'sana koşuyor':d.state==='play'?'yanında oynuyor':d.state==='gather'?`${esc(d.mat)} topluyor`:d.state==='walk'?`${esc(d.mat)} arıyor`:d.state==='home'?'<b style="color:#7fe0ff">sırtı doldu, sana getiriyor</b>':'bekliyor'} · topladığı: ${d.n||0} · taşıdığı: ${bagN(d)}/${DOG_CAP}${bagN(d)?' · '+esc(bagTxt(d,4)):''}</span></div><div class="dact">${d.state==='called'||d.state==='play'?`<button type="button" data-work="${i}">İşine gönder</button>${d.state==='play'?`<button type="button" class="pet" data-pet="${i}">♥ Sev</button>`:''}`:`<button type="button" data-call="${i}">Yanıma çağır</button>`}</div><div class="dm">${DOG_MATS.filter(m=>seen.has(m)||d.mat===m||m==='Dal').map(m=>`<button type="button" class="${d.mat===m?'on':''}" data-dog="${i}" data-mat="${esc(m)}"><img src="${icon(m)}" alt="">${esc(m)}</button>`).join('')}</div></div>`).join('')||'<p class="note">Henüz robot köpeğin yok.</p>'}</div>
       ${wiz.sig?`<div class="sigbox"><div class="sigh">📡 <b>Mor sinyal</b> · Yıldızsız Gezgin</div><div class="sigm">${dogMsgs.slice(-6).map(([w,t])=>`<p class="${w==='sen'?'me':'him'}">${esc(t)}</p>`).join('')||'<p class="him">Bir köpek daha istersen yaz, dünyalı.</p>'}</div><div class="hintbox"><span>${dogs.length>=DOG_MAX?`En çok ${DOG_MAX} köpek: gemi daha fazlasını taşımaz.`:`Bir köpek daha iste · ${dogs.length}/${DOG_MAX}`}</span><button id="buydog" type="button"${dogs.length>=DOG_MAX||dogBeams.some(b=>!b.done)||(!plInf()&&coins<dogPrice())?' disabled':''}>Mesaj gönder · ${dogPrice().toLocaleString('tr-TR')} sikke</button></div></div>`:`<p class="note" style="margin-top:12px">Başka köpek almanın yolu yok… şimdilik.</p>`}`;
   }else if(mode==='char'){
     const row=(nm,f,fmt)=>`<tr><td>${nm}</td><td class="v">${fmt(f(lvl))}</td><td class="n">${fmt(f(lvl+1))}</td></tr>`;
@@ -3343,11 +3352,44 @@ cbody.addEventListener('click',e=>{
   if(e.target.id==='buydog'){orderDog();return}
   if(e.target.id==='buyrec'){const c=recipeCandidates();if(c.length&&learnRecipe(c[Math.floor(Math.random()*c.length)],RECIPE_PRICE))renderCraft();return}
   const b=e.target.closest('.tile');if(b&&mode==='craft'&&potMode!=='dene'){if(suppressClick||potHeld)return;deposit(b.dataset.n,1);renderTut();return}
-  const sb=e.target.closest('[data-sell]');if(sb){sell(sb.dataset.n,sb.dataset.sell==='all'?inv[sb.dataset.n]:1);return}
+  const sb=e.target.closest('[data-sell]');if(sb){const n=sb.dataset.n;trySell(n,sb.dataset.sell==='all'?inv[n]:sellQ(n),sb);return}
 });
 ctools.addEventListener('click',e=>{
   if(e.target.id==='sellall'){let got=0,free=0,soldNames=[];for(const n of order){if(inv[n]>0&&bulkSellable(n)){soldNames.push(n);const v=unitPrice(n,true);got+=v*inv[n];free+=v*(inv[n]-shopTake(n,inv[n]));inv[n]=0}}got=Math.round(got);let lucky=sk('T3')&&free>0&&rnd()<.05+luck();if(lucky)got+=Math.round(free);coins+=got;slots=[null,null];if(got)toast(`${lucky?'Şanslı müşteri! ':''}+${got.toLocaleString('tr-TR')} sikke`);tutSold(soldNames);renderInv();renderCraft()}
 });
+// v2.44: sell a chosen amount (box with ▼/▲, hold to speed up, 10 at a time after 2.5 s) and ask before selling what a recipe uses
+const SQ={},noAsk=new Set();
+function sellQ(n){const h=inv[n]||0;return Math.max(1,Math.min(h||1,SQ[n]||1))}
+function qBox(n){for(const el of cbody.querySelectorAll('input.qi'))if(el.dataset.qn===n)return el;return null}
+function setQ(n,v){const h=inv[n]||0;v=Math.max(1,Math.min(Math.max(1,h),Math.round(v)||1));SQ[n]=v;const el=qBox(n);if(el&&document.activeElement!==el||el&&+el.value!==v)el.value=v;
+  const li=el&&el.closest('li');const b=li&&li.querySelector('.sq1');if(b)b.textContent=`Sat · ${Math.round(unitPrice(n)*v).toLocaleString('tr-TR')}`;return v}
+function recUses(n){const U=USES.get(n);if(!U)return [];const o=[];for(const r of U)if(REC.has(r)&&(foundSet.has(r)||isOpen(r)))o.push(r);return o}
+let ASK=null;
+function askSell(names,go){const W=names.filter(n=>!noAsk.has(n)&&recUses(n).length);if(!W.length){go();return}
+  ASK={go,names:W};const one=W.length===1,u=one?recUses(W[0]):[];
+  const txt=one?`<b>${esc(W[0])}</b> şu tariflerde kullanılıyor: ${esc(u.slice(0,6).join(', '))}${u.length>6?` ve ${u.length-6} tarif daha`:''}.`:`Satacakların arasında <b>${W.length} çeşit</b> malzeme tariflerde kullanılıyor: ${esc(W.slice(0,6).join(', '))}${W.length>6?'…':''}.`;
+  const old=cbody.querySelector('.sellask');if(old)old.remove();
+  cbody.insertAdjacentHTML('afterbegin',`<div class="sellask" role="alertdialog" aria-label="Emin misin?"><p><b>Emin misin?</b> ${txt}</p><label><input type="checkbox" id="askno"> ${one?'Bu malzeme':'Bu malzemeler'} için bir daha sorma</label><div><button type="button" data-ask="yes" class="pri">Evet, sat</button><button type="button" data-ask="no">Vazgeç</button></div></div>`);
+  cbody.scrollTop=0;sfx('bad');try{cbody.querySelector('[data-ask="no"]').focus()}catch(e){}}
+function trySell(n,q,btn){if(btn&&btn.classList.contains('pulse')){sell(n,q);return}askSell([n],()=>sell(n,q))}   // a tutorial step that asks you to sell this: no question
+cbody.addEventListener('click',e=>{const a=e.target.closest('[data-ask]');if(!a||!ASK)return;const A=ASK;ASK=null;const box=cbody.querySelector('.sellask');
+  if(a.dataset.ask==='yes'){const c=$('askno');if(c&&c.checked)A.names.forEach(n=>noAsk.add(n));if(box)box.remove();A.go()}else{if(box)box.remove();sfx('pick')}});
+// the bulk buttons ask too (they keep their own handlers; a confirmed click passes through)
+let askPass=false;
+document.addEventListener('click',e=>{const t=e.target;if(!t||(t.id!=='sellall'&&t.id!=='sellsafe')||askPass||!craftOpen||mode!=='sell')return;
+  const L=order.filter(n=>inv[n]>0&&bulkSellable(n)&&(t.id==='sellall'||!potUses(n)));if(!L.some(n=>!noAsk.has(n)&&recUses(n).length))return;
+  e.preventDefault();e.stopImmediatePropagation();askSell(L,()=>{askPass=true;try{t.click()}finally{askPass=false}})},true);
+// ▼/▲: one step, hold to repeat faster and faster, ten at a time after 2.5 s
+{let HQ=null;const stopQ=()=>{if(HQ){clearTimeout(HQ.tm);HQ=null}};
+ const stepQ=()=>{if(!HQ)return;const held=performance.now()-HQ.t0,k=held>2500?10:1;setQ(HQ.n,sellQ(HQ.n)+HQ.d*k);HQ.c++;HQ.tm=setTimeout(stepQ,Math.max(50,200-HQ.c*12))};
+ cbody.addEventListener('pointerdown',e=>{const b=e.target.closest('[data-qd]');if(!b||mode!=='sell')return;e.preventDefault();stopQ();const n=b.dataset.n,d=+b.dataset.qd;setQ(n,sellQ(n)+d);HQ={n,d,t0:performance.now(),c:0,tm:setTimeout(stepQ,400)}});
+ ['pointerup','pointercancel'].forEach(t=>addEventListener(t,stopQ));cbody.addEventListener('pointerout',e=>{if(e.target.closest&&e.target.closest('[data-qd]'))stopQ()});addEventListener('blur',stopQ);
+ cbody.addEventListener('click',e=>{const b=e.target.closest('[data-qd]');if(b&&e.detail===0){setQ(b.dataset.n,sellQ(b.dataset.n)+(+b.dataset.qd))}});   // keyboard Enter/Space on the arrow
+ cbody.addEventListener('input',e=>{const t=e.target;if(!t.classList||!t.classList.contains('qi'))return;const d=t.value.replace(/[^0-9]/g,'');if(d!==t.value)t.value=d;if(d)setQ(t.dataset.qn,+d)});
+ cbody.addEventListener('focusout',e=>{const t=e.target;if(t.classList&&t.classList.contains('qi'))t.value=sellQ(t.dataset.qn)});
+ const KQ={};cbody.addEventListener('keydown',e=>{const t=e.target;if(!t.classList||!t.classList.contains('qi'))return;const n=t.dataset.qn;
+   if(e.key==='ArrowUp'||e.key==='ArrowDown'){e.preventDefault();e.stopPropagation();if(!e.repeat)KQ.t0=performance.now();const k=performance.now()-(KQ.t0||0)>2500?10:1;setQ(n,sellQ(n)+(e.key==='ArrowUp'?k:-k));t.value=sellQ(n)}
+   else if(e.key==='Enter'){e.preventDefault();e.stopPropagation();trySell(n,sellQ(n))}})}
 function sell(n,q){
   if(!(inv[n]>0)||q<1)return;
   if(!(unitPrice(n)>0)){toast(`Bu eşyayı Nazlı almıyor: ${n}`,true);sfx('bad');return}   // v2.17
@@ -4003,7 +4045,7 @@ function wizVanish(){
 function wizChoices(){return [{t:'Hoşça kal',pri:1,f:bye}]}
 function spawnDog(sx,sy){
   if(dogs.length>=DOG_MAX){toast(`En çok ${DOG_MAX} köpek olabilir.`,true);return null}
-  const d={mat:null,x:sx!=null?sx:player.x+10,y:sy!=null?sy:player.y+6,state:'wait',t:0,dur:0,target:null,name:DOG_NAMES[dogs.length%DOG_NAMES.length]+(dogs.length>=DOG_NAMES.length?' '+(1+Math.floor(dogs.length/DOG_NAMES.length)):''),n:0,face:1,ph:Math.random()*6,happy:0};
+  const d={mat:null,x:sx!=null?sx:player.x+10,y:sy!=null?sy:player.y+6,state:'wait',t:0,dur:0,target:null,name:DOG_NAMES[dogs.length%DOG_NAMES.length]+(dogs.length>=DOG_NAMES.length?' '+(1+Math.floor(dogs.length/DOG_NAMES.length)):''),n:0,bag:{},face:1,ph:Math.random()*6,happy:0};
   dogs.push(d);sfx('woof');setTimeout(()=>sfx('magic'),200);announce(d.name,'Robot köpeğin canlandı');
   for(let i=0;i<20;i++){const an=Math.random()*Math.PI*2,sp=20+Math.random()*40;parts.push({x:d.x,y:d.y,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp,life:1,c:i%2?'#7fe0ff':'#c9a0ff'})}
   renderInv();return d;
@@ -4021,13 +4063,18 @@ function petDog(d){d.happy=2.2;sfx('woof');for(let i=0;i<8;i++)parts.push({x:d.x
 function tickDogs(dt){
   for(const d of dogs){
     if(d.happy>0)d.happy-=dt;
+    if(d.state==='home'){   // v2.44: the bag is full: run to you, hand it over, go back to work
+      const tx=player.x+14,ty=player.y+8,k=Math.hypot(tx-d.x,ty-d.y),v=DOG_SPEED*2.2*dt;
+      if(k>1){d.face=tx>=d.x?1:-1;d.x+=(tx-d.x)/k*Math.min(v,k);d.y+=(ty-d.y)/k*Math.min(v,k)}
+      if(Math.hypot(player.x-d.x,player.y-d.y)<22){dogDeliver(d);d.state=d.mat?'idle':'wait'}
+      continue}
     if(d.state==='wait'||d.state==='called'||d.state==='play'){
       // waiting for orders, running to you, or fooling around at your feet
       d.ph=(d.ph||0)+dt*(d.state==='play'?2.4:1);
       const tx=d.state==='play'?player.x+Math.cos(d.ph)*16:player.x+14,ty=d.state==='play'?player.y+6+Math.sin(d.ph)*7:player.y+8;
       const k=Math.hypot(tx-d.x,ty-d.y),v=DOG_SPEED*(d.state==='called'?2.2:1.6)*dt;
       if(k>1){d.face=tx>=d.x?1:-1;d.x+=(tx-d.x)/k*Math.min(v,k);d.y+=(ty-d.y)/k*Math.min(v,k)}
-      if(d.state==='called'&&Math.hypot(player.x-d.x,player.y-d.y)<22){d.state='play';sfx('woof')}
+      if(d.state==='called'&&Math.hypot(player.x-d.x,player.y-d.y)<22){d.state='play';sfx('woof');dogDeliver(d)}
       if(d.state==='play'&&Math.random()<dt*.6)d.face*=-1;
       continue;
     }
@@ -4045,7 +4092,8 @@ function tickDogs(dt){
     if(d.state==='gather'){
       const n=d.target;if(!n||!n.alive){if(n)n.claim=null;d.state='idle';d.target=null;continue}
       d.t+=dt;
-      if(d.t>=d.dur){n.alive=false;n.claim=null;n.t=RES[n.name].respawn;gain(n.name);d.n=(d.n||0)+1;floats.push({x:d.x,y:d.y-14,t:0,text:`+1 ${n.name}`,color:'#7fe0ff'});d.state='idle';d.target=null;renderInv()}
+      if(d.t>=d.dur){n.alive=false;n.claim=null;n.t=RES[n.name].respawn;if(!d.bag)d.bag={};d.bag[n.name]=(d.bag[n.name]||0)+1;d.n=(d.n||0)+1;floats.push({x:d.x,y:d.y-14,t:0,text:`${bagN(d)}/${DOG_CAP}`,color:'#7fe0ff',size:6});d.target=null;   // v2.44: into the dog's bag, not your inventory
+        if(bagN(d)>=DOG_CAP){d.state='home';sfx('woof');toast(`Sırtı doldu: ${d.name} topladıklarını sana getiriyor`)}else d.state='idle';if(craftOpen&&mode==='dogs')renderCraft()}
     }
   }
 }
@@ -4353,10 +4401,11 @@ function drawPlayer(){
     px(x-11,y,22,4,'rgba(0,0,0,.22)');
     ctx.save();ctx.translate(x+8,y+1);ctx.rotate(-Math.PI/2);drawChibi(ctx,0,0,LOOK.hero,{noShadow:1,closed:!open});ctx.restore();return}
   const s=Math.sin(player.step*10),mv=!!player.mv;if(dodge){ctx.globalAlpha=.55}
+  const armed=(()=>{const h=held(),k=h&&GT[h]?GT[h].kind:'';return k==='sword'||k==='hunt'||k==='axe'||k==='pick'})();   // v2.44: one weapon at a time: the back weapon hides while the right hand holds one
   const back=player.face.y<0&&!player.face.x;if(back)drawHeld(x,y);
-  if(equip.silah&&!back&&held()!==equip.silah){const ic=ICONC[equip.silah]||(icon(equip.silah),ICONC[equip.silah]);if(ic){ctx.save();ctx.translate(x-(player.face.x>0?2:-2),y-9);ctx.rotate(player.face.x>0?-.6:.6);ctx.drawImage(ic,-5,-6,10,10);ctx.restore()}}
+  if(equip.silah&&!armed&&!back&&held()!==equip.silah){const ic=ICONC[equip.silah]||(icon(equip.silah),ICONC[equip.silah]);if(ic){ctx.save();ctx.translate(x-(player.face.x>0?2:-2),y-9);ctx.rotate(player.face.x>0?-.6:.6);ctx.drawImage(ic,-5,-6,10,10);ctx.restore()}}
   drawChibi(ctx,x,y,eqLook(),Object.assign(eqOpts(),{fx:player.face.x,fy:player.face.y,step:mv?(s>.3?1:s<-.3?-1:0):0,bob:mv&&Math.abs(s)>.7?-1:0,arm:held()&&!PLACEABLE.has(held())&&!back?'reach':'down'}));
-  if(equip.silah&&back&&held()!==equip.silah){const ic=ICONC[equip.silah]||(icon(equip.silah),ICONC[equip.silah]);if(ic){ctx.save();ctx.translate(x,y-9);ctx.rotate(.7);ctx.drawImage(ic,-5,-6,10,10);ctx.restore()}}
+  if(equip.silah&&!armed&&back&&held()!==equip.silah){const ic=ICONC[equip.silah]||(icon(equip.silah),ICONC[equip.silah]);if(ic){ctx.save();ctx.translate(x,y-9);ctx.rotate(.7);ctx.drawImage(ic,-5,-6,10,10);ctx.restore()}}
   if(!back)drawHeld(x,y);
   drawLeftT(x,y,back);
   ctx.globalAlpha=1;
@@ -5230,7 +5279,8 @@ $('hotbar').addEventListener('click',e=>{if(e.target.closest('#handbtn')){handTa
 cv.addEventListener('wheel',e=>{if(!canTap())return;e.preventDefault();const d=e.deltaY>0?1:-1,L=hotList();let i=hand;for(let k=0;k<=hotN();k++){i+=d;if(i>hotN()-1)i=-1;if(i<-1)i=hotN()-1;if(i<0||!(L[i]&&isTorch(L[i])))break}setHand(i);sfx('pick')},{passive:false});
 // the tool in the hero's hand (swings while working)
 function drawLeftT(x,y,back){const t=torchHeld();if(!t||t===held())return;try{const S=P4.sw;if(S&&S.k==='torch'&&S.t<.5)return}catch(e){}const c=ICONC[t]||(icon(t),ICONC[t]);if(!c)return;   // v1.41: the torch in the left hand
-  const fx=player.face.x,sgn=fx<0?1:-1,sw=Math.sin(time*2)*.05;ctx.save();ctx.translate(x+sgn*(back?3:4),y-3);ctx.scale(sgn,1);ctx.rotate(-.35+sw);ctx.drawImage(c,-2,-11,10,10);ctx.restore()}
+  let fx=player.face.x;try{const D8=window.__plD8;if(D8&&D8.on){fx=D8.x;back=D8.y<0}}catch(e){}   // v2.44: on a diagonal the torch follows the turned pose
+  const sgn=fx<0?1:-1,sw=Math.sin(time*2)*.05;ctx.save();ctx.translate(x+sgn*(back?3:4),y-3);ctx.scale(sgn,1);ctx.rotate(-.35+sw);ctx.drawImage(c,-2,-11,10,10);ctx.restore()}
 function hpBar(x,y,w,k){w=Math.round(w);const f=Math.round(w*Math.max(0,Math.min(1,k)));px(x-1,y-1,w+2,4,'#0b0f0a');px(x,y,w,2,'#5a2a26');if(f>0)px(x,y,f,2,k>.5?'#8fd46b':k>.25?'#f2b84b':'#e8775a')}   // v1.47: a creature's life bar with a visible empty part, so a long bar does not look short
 function drawHeld(x,y){
   const h=held();if(!h||PLACEABLE.has(h))return;const c=ICONC[h]||(icon(h),ICONC[h]);if(!c)return;
@@ -5939,7 +5989,8 @@ function frameBody(now){
   else if(goal){const st=stepGoal(dt);if(st){mx=st[0];my=st[1]}}
   if(dodge&&dodge.T){mx=0;my=0}   // v116: no walking or running on top of a roll: it always goes the same distance
   player.run=false;
-  if(mx||my){const l=Math.hypot(mx,my);mx/=l;my/=l;player.face=Math.abs(mx)>=Math.abs(my)*.92?{x:Math.sign(mx),y:0}:{x:0,y:Math.sign(my)};
+  if(mx||my){const l=Math.hypot(mx,my);mx/=l;my/=l;{const ax=Math.abs(mx),ay=Math.abs(my),cf=player.face;   // v2.44: keep the way you face until the other axis clearly wins (no flicker near a diagonal)
+      if(!(cf.x&&Math.sign(mx)===cf.x&&ax>=ay*.7)&&!(cf.y&&Math.sign(my)===cf.y&&ay>=ax*.7))player.face=ax>=ay*.92?{x:Math.sign(mx),y:0}:{x:0,y:Math.sign(my)}}
     if(!player.face.x&&!player.face.y)player.face={x:Math.sign(mx),y:0};
     const run=wantsRun();player.run=run;const inMud=mudAt(player.x,player.y)&&!mudProof();const sp=72*dt*speedMult()*spdK*(run?runMult():1)*(inMud?.6:1)*(weather.k==='fırtına'&&!ashStorm()?.93:1);
     if(inMud&&Math.random()<dt*8)parts.push({x:player.x+(Math.random()-.5)*6,y:player.y+1,vx:(Math.random()-.5)*10,vy:-8,life:.3,c:'#4a3a22'});

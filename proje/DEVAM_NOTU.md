@@ -1,3 +1,11 @@
+## v2.44 (31 Ekim 2026) · köpek sırtı, miktarla satış, satış uyarısı, meşale titremesi, tek silah
+- **Meşale:** `frameBody` yön seçiminde histerezis (mevcut eksen ×0,7 ile korunur); `drawLeftT` `window.__plD8.on` iken `D8.x`/`D8.y<0` ile çizer.
+- **Tek silah:** `drawPlayer` içinde `armed` (eldeki GT kind sword/hunt/axe/pick) iken `equip.silah` sırtta çizilmez. Dövüş mantığı (`weapon()`) değişmedi.
+- **Köpek sırtı:** `DOG_CAP=20`, `bagN`, `bagTxt`, `dogDeliver`; toplama `d.bag`'e; dolunca `state:'home'` (2,2× hızla sana, <22 px'te teslim, sonra `idle`); `called` varınca da teslim. Kayıt: `dogs[].bag` (eski kayıtta `{}`).
+- **Miktarla satış:** satış satırında `.sq` (▼ `input.qi` ▲ `Sat · tutar`); `SQ`/`sellQ`/`setQ`; basılı tutma `HQ` (0,4 sn sonra, 200 ms'den 50 ms'ye, 2,5 sn sonra ×10), klavye ↑/↓ (`e.repeat` 2,5 sn sonra ×10), Enter satar. Öğretici `[data-sell="1"]` düğmesi korunur (şimdi kutudaki miktarı satar, varsayılan 1).
+- **Satış uyarısı:** `recUses(n)` (USES içinde `foundSet` ya da `isOpen`), `askSell` (cbody başına yapışkan `.sellask`), `noAsk` (oturumluk). `#sellall`/`#sellsafe` yakalama aşamasında durdurulur, onayda `askPass` ile yeniden tıklanır. Parlayan (öğretici) düğmede soru yok.
+- Oynanmadı, yalnızca chk.js.
+
 ## v2.43 (31 Ekim 2026) · haritada deniz baştan açık, duraklatınca hava durur
 - **Duraklatınca hava durur:** `frameBody`: `if(!paused)time+=dt`; `drawWeather(paused?0:dt)` (yağmur/ateşböceği dt ile ilerler); `drawFog` `performance.now()` yerine `FOGCLK+=dt` saatini kullanır; su halkası rastgele çizimi `dt>0` ister. Oynanmadı, yalnızca chk.js.
 - `updateFog` içindeki `paint`: `explored[i]||tiles[i]===4` ise duman alfa 0. `explored`/`exploredCount` değişmedi (yüzde, başarım, adım hesabı aynı). Kenar yumuşatması (`edge`) hâlâ yalnızca keşfedilmiş komşuya bakar, deniz kıyısındaki bilinmeyen karada tam duman görünür. Oynanmadı, yalnızca chk.js.

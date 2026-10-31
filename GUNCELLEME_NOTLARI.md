@@ -8,6 +8,25 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.44 · 31 Ekim 2026
+
+### Oynanış
+- **Robot köpeklerin sırtı var:** köpekler topladıklarını artık hemen envanterine koymuyor; sırtlarında en çok 20 eşya taşıyor. Sırtı dolan köpek sana koşup getiriyor: üstünde küçük "+8 Dal", "+12 Taş" satırları beliriyor, "Karabaş getirdi: …" bildirimi çıkıyor ve eşyalar o anda envantere geçiyor. Dolmadan **Yanıma çağır** dersen o ana kadar topladığını getiriyor. Köpekler menüsünde her köpeğin ne taşıdığı görünüyor.
+- **Nazlı'da miktarla satış:** her satırda bir miktar kutusu var. ▼/▲ ile birer birer değişiyor, ya da sayıyı elle yazıyorsun; **Sat** yazılan kadarını satıyor. Oklara basılı tutunca sayı giderek hızlanıyor, 2,5 saniyeden sonra 10'ar 10'ar değişiyor. Bilgisayarda kutu seçiliyken ↑/↓ tuşları ve Enter da çalışıyor.
+- **Tarif malzemesi satarken uyarı:** bildiğin ya da açık bir tarifte kullanılan malzemeyi satarken (tek tek ya da toplu) "Emin misin?" sorusu çıkıyor ve hangi tariflerde kullanıldığı yazıyor. "Bir daha sorma" ile o malzeme için oyunu kapatana kadar sormuyor.
+
+### Düzeltmeler
+- Çapraz yürürken elde meşale varsa meşalenin yanıp sönmesi düzeldi: meşale artık karakterin çapraz pozuna göre çiziliyor ve karakter iki yön arasında her karede dönüp durmuyor.
+- Elde iki silah görünmesi düzeldi: sağ elde balta, kazma, kılıç ya da mızrak varken silah yuvasındaki silah sırtta çizilmiyor. İki el yalnızca meşale için.
+
+### Tasarım belgesi
+- Robot köpeklerin taşıma kapasitesi, miktarla satış, satış uyarısı, meşale ve tek silah kuralları belgeye işlendi.
+
+### Proje
+- Bu sürüm oynanarak test edilmedi; yalnızca sözdizimi kontrolü yapıldı.
+
+---
+
 ## Versiyon 2.43 · 31 Ekim 2026
 
 ### Oynanış

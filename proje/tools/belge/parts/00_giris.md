@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.43** ile birebir (31 Ekim 2026). Bu sürümde: haritada deniz baştan açık, duraklatınca hava ve ortam animasyonları durur. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.44** ile birebir (31 Ekim 2026). Bu sürümde: robot köpeklerin taşıma kapasitesi, Nazlı'da miktarla satış ve tarif malzemesi uyarısı, çapraz yürürken meşale titremesi ve elde iki silah düzeltmesi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
