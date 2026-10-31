@@ -5932,7 +5932,7 @@ function frame(now){requestAnimationFrame(frame);
   try{frameBody(now)}catch(e){if(ctx.__gl&&/GL2D|earcut/.test(String(e&&e.stack||''))){try{window.__plGLOff('kare hatası: '+(e&&e.message||''));saveTo('auto')}catch(_){}location.reload();return}   // v68: a drawing fault in the graphics-card path falls back to the classic 2D canvas
     if(!frameErrs++){try{console.error(e)}catch(_){}try{window.__hamErr((e&&e.message||'hata')+' (kare)',true)}catch(_){}}}}
 function frameBody(now){
-  const dt=Math.max(0,Math.min(.05,(now-last)/1000));last=now;time+=dt;
+  const dt=Math.max(0,Math.min(.05,(now-last)/1000));last=now;if(!paused)time+=dt;   // v2.43: the world's clock stops while paused
   if(cine.on){cineFrame(dt);return}
   // move
   const frozen=craftOpen||paused||dlgOpen||fading||!!sailing||!!wake||!!beam||v46Hold()||roomBusy();
@@ -6075,7 +6075,7 @@ function frameBody(now){
   drawDarkness(cx,cy,scale);
   drawV46Over(cx,cy,scale,time);
   drawEyes(cx,cy,scale);
-  drawWeather(dt);
+  drawWeather(paused?0:dt);
   drawBeam(cx,cy,scale);
   drawLight();
   if(!wake)drawGuide(time,cx,cy,viewW,viewH,scale);
@@ -6837,8 +6837,9 @@ function fogNoise(){if(FOGN)return FOGN;const N=128,c=document.createElement('ca
       v+=oct[k][1]*((A[j0*q+i0]*(1-tx)+A[j0*q+i1]*tx)*(1-ty)+(A[j1*q+i0]*(1-tx)+A[j1*q+i1]*tx)*ty)}
     const al=Math.max(0,Math.min(1,(v-.3)*1.9)),o=(y*N+x)*4;d[o]=d[o+1]=d[o+2]=255;d[o+3]=Math.round(255*al*al*(3-2*al))}
   g.putImageData(im,0,0);return FOGN=c}
+let FOGCLK=0;   // v2.43: fog drift runs on its own clock that only moves when dt does (paused = 0)
 function drawFog(dt,Wc,Hc,thick,dk){const fw=Math.max(16,Math.ceil(Wc/6)),fh=Math.max(16,Math.ceil(Hc/6));if(!FOGL||FOGL.width!==fw||FOGL.height!==fh){FOGL=document.createElement('canvas');FOGL.width=fw;FOGL.height=fh}
-  const g=FOGL.getContext('2d'),k=fw/Wc*S*dpr,tm=performance.now()/1000,nz=fogNoise(),col=dk>.5?'62,70,94':'226,232,228',nk=1-Math.min(1,dk)*.35;
+  const g=FOGL.getContext('2d'),k=fw/Wc*S*dpr,tm=(FOGCLK+=dt),nz=fogNoise(),col=dk>.5?'62,70,94':'226,232,228',nk=1-Math.min(1,dk)*.35;
   g.setTransform(1,0,0,1,0,0);g.globalCompositeOperation='source-over';g.globalAlpha=1;g.clearRect(0,0,fw,fh);g.imageSmoothingEnabled=true;
   for(const [tile,par,vx,vy,al] of [[620,1,2.2,.45,.85],[380,.82,3.1,.65,.6]]){const ts=tile*k,ox=-((((cam.cx*par+tm*vx*(1+wind*.4))*k)%ts)+ts)%ts,oy=-((((cam.cy*par+tm*vy)*k)%ts)+ts)%ts;g.globalAlpha=Math.min(1,thick*al*1.6*nk);
     for(let y=oy;y<fh;y+=ts)for(let x=ox;x<fw;x+=ts){const X0=Math.floor(x),Y0=Math.floor(y);g.drawImage(nz,X0,Y0,Math.floor(x+ts)-X0,Math.floor(y+ts)-Y0)}}
@@ -6859,7 +6860,7 @@ function drawWeather(dt){const Wc=cv.width,Hc=cv.height,z=zoneAt(player.x,player
   if(raining()){const ash=ashStorm(),n=Math.round((ash?110:weather.k==='fırtına'?140:100)*(PERF.lvl>=3?.5:PERF.lvl>=2?.75:1)),ang=ash?.5:.18+wind*.25;
     for(let i=0;i<n;i++){const r=RAIN[i];r.y+=r.v*dt*(ash?.35:1.6);r.x+=r.v*dt*ang*(ash?.5:1.6);if(r.y>1){r.y-=1;r.x=Math.random()}if(r.x>1)r.x-=1;const X=r.x*Wc,Y=r.y*Hc;
       if(ash){ctx.fillStyle=i%7?'rgba(170,160,155,.7)':'rgba(255,130,60,.85)';ctx.fillRect(X,Y,S*1.5,S*1.5)}else{ctx.strokeStyle=`rgba(190,215,255,${(.35+.25*r.l).toFixed(2)})`;ctx.lineWidth=Math.max(1,S*.5);ctx.beginPath();ctx.moveTo(X,Y);ctx.lineTo(X-ang*14*S*r.l,Y-14*S*r.l);ctx.stroke()}}
-    if(!ash&&Math.random()<.6){const X=Math.random()*Wc,Y=Math.random()*Hc;ctx.strokeStyle='rgba(210,230,255,.5)';ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(X,Y,S*3,S,0,0,Math.PI*2);ctx.stroke()}
+    if(!ash&&dt>0&&Math.random()<.6){const X=Math.random()*Wc,Y=Math.random()*Hc;ctx.strokeStyle='rgba(210,230,255,.5)';ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(X,Y,S*3,S,0,0,Math.PI*2);ctx.stroke()}
     if(ash){ctx.fillStyle='rgba(90,50,35,.18)';ctx.fillRect(0,0,Wc,Hc)}}
   if(flash>0){ctx.fillStyle=`rgba(235,240,255,${(Math.min(1,flash/.35)*(dk>.5?.55:.35)).toFixed(3)})`;ctx.fillRect(0,0,Wc,Hc)}
   ctx.restore()}

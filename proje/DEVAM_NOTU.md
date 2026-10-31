@@ -1,4 +1,5 @@
 ## v2.43 (31 Ekim 2026) · haritada deniz baştan açık (paket bekliyor)
+- **Duraklatınca hava durur:** `frameBody`: `if(!paused)time+=dt`; `drawWeather(paused?0:dt)` (yağmur/ateşböceği dt ile ilerler); `drawFog` `performance.now()` yerine `FOGCLK+=dt` saatini kullanır; su halkası rastgele çizimi `dt>0` ister. Oynanmadı, yalnızca chk.js.
 - `updateFog` içindeki `paint`: `explored[i]||tiles[i]===4` ise duman alfa 0. `explored`/`exploredCount` değişmedi (yüzde, başarım, adım hesabı aynı). Kenar yumuşatması (`edge`) hâlâ yalnızca keşfedilmiş komşuya bakar, deniz kıyısındaki bilinmeyen karada tam duman görünür. Oynanmadı, yalnızca chk.js.
 
 ## v2.42 (31 Ekim 2026) · öğretici düzeltmeleri, SATILIK arsa kalktı, harita "?" düzeltmesi
