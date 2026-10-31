@@ -8,6 +8,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.43 · 31 Ekim 2026
+
+### Oynanış
+- **Duraklatınca her şey durur:** Esc menüsü (ya da haritanın, yetenek ekranının gibi oyunu durduran pencereler) açıkken yağmur, sis, ateşböcekleri, havadaki ortam hareketleri ve su halkaları da donuyor; menü kapanınca kaldığı yerden devam ediyor. Eskiden menüde yağmur ve sis akmaya devam ediyordu.
+
+### Görsel
+- **Haritada deniz baştan açık:** küçük ve büyük haritada adayı çevreleyen deniz artık gri dumanla örtülü değil. Duman yalnızca keşfedilmemiş karada kalıyor. Keşif yüzdesi, "Adayı tanı" adımı ve Kâşif başarımı eskisi gibi karadan hesaplanıyor.
+
+### Tasarım belgesi
+- Harita ve duraklatma kuralları belgeye işlendi.
+
+### Proje
+- Bu sürüm oynanarak test edilmedi; yalnızca sözdizimi kontrolü yapıldı.
+
+---
+
 ## Versiyon 2.42 · 31 Ekim 2026
 
 ### Oynanış
