@@ -1,3 +1,8 @@
+## v2.47 (31 Ekim 2026) · renderFx "reading 'c'" çökmesi (Android Chrome 156, satır 5724)
+- Hata `renderFx` içinde `FXD[k].c` ya da `BUFFS[k].c`: `pfx`/`pbuff` içinde tabloda olmayan bir anahtar. Bütün `addBuff`/`addFx` çağrıları bilinen anahtarlar veriyor (V46BUFF, buffOf, RAWGOOD, ODD, ANIM fx kontrol edildi); `pfx` kayıttan yüklenirken zaten süzülüyordu ama `pbuff=v.bf||{}` süzülmüyordu → en olası kaynak kayıttaki eski/bozuk bir etki. Kesin kaynak cihazda doğrulanmadı.
+- Düzeltme: kayıt yüklemede `pbuff` yalnızca `BUFFS`'ta olan ve `t>0` olanlarla kurulur; `renderFx` bilinmeyenleri siler; `addBuff`/`addFx` bilinmeyen anahtarı yok sayar; `tickBuffs` ve yemek listesi (`P.good`/`P.bad`) korumalı.
+- Oynanmadı, yalnızca chk.js.
+
 ## v2.46 (31 Ekim 2026) · "Ağzı köreldi" (D4) bileme sayılmıyordu
 - D4 hedefi `["c","sharp",1]` ama `qc('sharp')` hiçbir yerde çağrılmıyordu. `[data-sharp]` tıklamasına `qc('sharp')` eklendi (Dursun, Durmuş ve kuzenlerin bilemesi aynı yoldan). `plab` içinde `c`/`sharp` etiketi körelmiş aletleri (`dullTool`) adıyla yazar. D4 `say` metni nasıl yapılacağını anlatır.
 - Diğer sayaç hedefleri (`sold`, `fish:`, `trap:`) sayılıyor; kontrol edildi.

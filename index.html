@@ -1351,7 +1351,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.46</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.47</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -2295,7 +2295,8 @@ function snapshot(){return{v47:v47Save(),v46:v46Save(),v45:{tz,te:tzEat,ht:helpT
 function restore(d){if(!d||!d.inv)return;
   if(d.v47&&(d.qv||0)<4)d=Object.assign({},d,{qv:4});   // v47 wrote qv twice (the 2 won), its quest index is already in v47 numbering
   {const v5=d.v45||{};tz=v5.tz||0;tzEat=v5.te||0;helpTorch=!!v5.ht;forged.clear();(v5.fg||(d.found||[]).filter(n=>TOOLS.has(n))).forEach(n=>forged.add(n));}
-  durmus.met=!!d.dm;{const v=d.v44||{};toygar.met=!!v.tg;toygar.talks=v.tt||0;clues.clear();(v.cl||[]).forEach(c=>clues.add(c));for(const k in kills)delete kills[k];Object.assign(kills,v.kl||{});pbuff=v.bf||{};for(const k in codex)delete codex[k];Object.assign(codex,v.cx||{});
+  durmus.met=!!d.dm;{const v=d.v44||{};toygar.met=!!v.tg;toygar.talks=v.tt||0;clues.clear();(v.cl||[]).forEach(c=>clues.add(c));for(const k in kills)delete kills[k];Object.assign(kills,v.kl||{});pbuff={};{const bf=v.bf&&typeof v.bf==='object'?v.bf:{};for(const k in bf)if(BUFFS[k]&&bf[k]&&+bf[k].t>0)pbuff[k]={t:+bf[k].t}}   // v2.47: an unknown or broken buff in a save is dropped
+  for(const k in codex)delete codex[k];Object.assign(codex,v.cx||{});
    if(v.wx&&WEATHER[v.wx.k])weather={k:v.wx.k,t:v.wx.t||120};torchesUsed=v.tu||0;Object.assign(lampman,{shown:false,met:!!(v.lm&&v.lm.met),gone:!!(v.lm&&v.lm.gone)});balikci.shown=!!(v.bk&&v.bk.shown);balikci.met=!!(v.bk&&v.bk.met);mudHint=!!v.mh}
   const oldMap=d.mv!==MAPV;if(oldMap)d=Object.assign({},d,{exp:null,x:spawn.x,y:spawn.y,pl:[]});
   Object.assign(equip,{bas:null,govde:null,el:null,ayak:null,silah:null});{const e=d.eq||{};for(const k in equip){const n=e[k];if(typeof n==='string'&&slotOf(n)===k)equip[k]=n}}
@@ -5711,7 +5712,7 @@ function drawShots(){for(const s2 of shots){ctx.fillStyle='rgba(0,0,0,.2)';ctx.f
 // ---------- effects: poison, bleeding and burns hurt for a while, then pass ----------
 const FXD={zehir:{n:'Zehir',c:'#9ad84a',i:'☠'},kanama:{n:'Kanama',c:'#ff5a4a',i:'✚'},'yanık':{n:'Yanık',c:'#ffa040',i:'✹'}};
 let pfx={},fxSeen={};
-function addFx(k,dps,dur){dps*=1.3;dur*=1.6;   // v73: poison, burns and bleeding last longer and hurt more
+function addFx(k,dps,dur){if(!FXD[k])return;dps*=1.3;dur*=1.6;   // v73: poison, burns and bleeding last longer and hurt more
   dps*=(1-resOf(k))*(k==='zehir'&&buffOn('panzehir')?0:1)*(k==='yanık'&&buffOn('ateşsiz')?.3:1)*(k==='kanama'&&buffOn('pıhtı')?.4:1);if(dps<=.05)return;const f=pfx[k];if(f){f.t=Math.max(f.t,dur);f.dps=Math.max(f.dps,dps)}else pfx[k]={t:dur,dps,acc:0};
   if(!fxSeen[k]){fxSeen[k]=true;setTimeout(()=>toast(k==='zehir'?'Zehirlendin! Bir süre can yakar, sonra geçer. Yemek yiyip canını doldur; kırmızı "!" gördüğünde yana atıl ya da uzaklaş.':`${FXD[k].n}! Bir süre can yakar, sonra geçer.`,true),300)}renderFx()}
 function tickFx(dt){let ch=false;for(const k in pfx){const f=pfx[k];const dmg=f.dps*dt;hp-=dmg;lastHurt=FXD[k].n.toLocaleLowerCase('tr-TR');f.acc+=dmg;f.t-=dt;
@@ -5721,7 +5722,8 @@ function tickFx(dt){let ch=false;for(const k in pfx){const f=pfx[k];const dmg=f.
   if(Object.keys(pfx).length){vitK='';if(hp<=0){hp=0;pfx={};faint()}}
   fxK=Math.ceil(Object.values(pfx).reduce((t,f)=>t+f.t,0));if(ch||fxK!==fxK0){fxK0=fxK;renderFx()}}
 let fxK=0,fxK0=-1;
-function renderFx(){const el=$('fxbar');if(!el)return;const ks=Object.keys(pfx),bs=Object.keys(pbuff);el.hidden=!ks.length&&!bs.length;el.innerHTML=ks.map(k=>`<span style="--c:${FXD[k].c}"><b>${FXD[k].i}</b>${FXD[k].n} ${Math.ceil(pfx[k].t)} sn</span>`).join('')+bs.map(k=>`<span class="fxbuff" style="--c:${BUFFS[k].c}" title="${BUFFS[k].e}"><b>${BUFFS[k].i}</b>${BUFFS[k].n} ${pbuff[k].t>=60?Math.ceil(pbuff[k].t/60)+' dk':Math.ceil(pbuff[k].t)+' sn'}</span>`).join('')}
+function renderFx(){const el=$('fxbar');if(!el)return;for(const k in pfx)if(!FXD[k]||!pfx[k])delete pfx[k];for(const k in pbuff)if(!BUFFS[k]||!pbuff[k])delete pbuff[k];   // v2.47: never trip over an effect the game does not know
+  const ks=Object.keys(pfx),bs=Object.keys(pbuff);el.hidden=!ks.length&&!bs.length;el.innerHTML=ks.map(k=>`<span style="--c:${FXD[k].c}"><b>${FXD[k].i}</b>${FXD[k].n} ${Math.ceil(pfx[k].t)} sn</span>`).join('')+bs.map(k=>`<span class="fxbuff" style="--c:${BUFFS[k].c}" title="${BUFFS[k].e}"><b>${BUFFS[k].i}</b>${BUFFS[k].n} ${pbuff[k].t>=60?Math.ceil(pbuff[k].t/60)+' dk':Math.ceil(pbuff[k].t)+' sn'}</span>`).join('')}
 // ---------- dodge: a quick dash; nothing touches you while you are in it ----------
 let dodge=null,dodgeCd=0;
 function doDodge(){if(dodge||dodgeCd>0||frozenNow()||!met)return;if(!sk('S1')){if(performance.now()-runHintAt>4000){runHintAt=performance.now();toast('Atılmayı henüz bilmiyorsun: Savaşçı Börü ücretsiz öğretir, onunla konuş.',true)}return}const dc=sk('S4')?5:sk('S3')?7:sk('S2')?9:14;if(st<dc){floatText('Yorgunsun','#e8c860');return}
@@ -6813,9 +6815,9 @@ function buffOf(n){if(V46BUFF[n])return V46BUFF[n];const x=REC.get(n);if(!x||(x.
   return x.c==='Şifa'?['ılık',d]:null}
 let pbuff={};
 const buffOn=k=>!!pbuff[k];
-function addBuff(k,dur){const had=!!pbuff[k];pbuff[k]={t:Math.max(dur,pbuff[k]?pbuff[k].t:0)};if(!had){floatText(BUFFS[k].n,BUFFS[k].c);if(k==='panzehir'&&pfx.zehir)delete pfx.zehir}renderFx()}
+function addBuff(k,dur){if(!BUFFS[k])return;const had=!!pbuff[k];pbuff[k]={t:Math.max(dur,pbuff[k]?pbuff[k].t:0)};if(!had){floatText(BUFFS[k].n,BUFFS[k].c);if(k==='panzehir'&&pfx.zehir)delete pfx.zehir}renderFx()}
 let buffK0='';
-function tickBuffs(dt){let ch=false;for(const k in pbuff){pbuff[k].t-=dt;if(pbuff[k].t<=0){delete pbuff[k];ch=true;toast(`${BUFFS[k].n} etkisi geçti`)}}const kk=Object.keys(pbuff).map(k=>k+Math.ceil(pbuff[k].t/10)).join();if(ch||kk!==buffK0){buffK0=kk;renderFx()}}
+function tickBuffs(dt){let ch=false;for(const k in pbuff){pbuff[k].t-=dt;if(pbuff[k].t<=0){delete pbuff[k];ch=true;if(BUFFS[k])toast(`${BUFFS[k].n} etkisi geçti`)}}const kk=Object.keys(pbuff).map(k=>k+Math.ceil(pbuff[k].t/10)).join();if(ch||kk!==buffK0){buffK0=kk;renderFx()}}
 // ---------- the discovery log: every recipe group shows how much of it you know, with rewards ----------
 const CODEX_PERK={'Yiyecek':['Tokluk %20 daha yavaş azalır'],'Şifa':['Can %50 daha hızlı yenilenir'],'Temel aletler':['Aletler %20 ihtimalle körelmez'],'Alet kademeleri':['Aletler %20 ihtimalle körelmez'],'Metal aletler':['Aletler %20 ihtimalle körelmez'],
   'Giyim':['Savunma +5'],'Zırh':['Savunma +5'],'Ateş':['Meşaleler %30 daha uzun yanar'],'Ağaç':['Odun %20 daha hızlı kesilir'],'Taş ve kil':['Taş ve kil %20 daha hızlı toplanır'],'Av ve hayvan':['Avlarda düşürme şansı +%10']};
@@ -11702,9 +11704,9 @@ renderEat=function(){const L=eatList();
   cbody.innerHTML=`<p class="note">Tokluk <b>${Math.ceil(food)}</b> / 100 · Can <b>${Math.ceil(hp)}</b> / ${maxHP()}. Bir şeyi ilk kez yiyene kadar ne yapacağını bilemezsin; yedikten sonra burada yazar. Değerli yemeklerin etkisi uzun sürer.</p>`+
   (L.length?`<div class="v63eat">${L.map(n=>{const kn=KN.has(n);let info='<span style="opacity:.75">Bilgim yok</span>';
     if(kn){const P=prof(n),f=foodVal(n),a=[];if(f)a.push(`+${f} tokluk`);if(P.heal)a.push(`+${P.heal} can`);if(P.en)a.push(`+${P.en} enerji`);
-      for(const k of P.good)a.push(`<span style="color:${BUFFS[k].c}">${BUFFS[k].n} ${fmtT(P.dG)}</span>`);
+      for(const k of P.good.filter(k=>BUFFS[k]))a.push(`<span style="color:${BUFFS[k].c}">${BUFFS[k].n} ${fmtT(P.dG)}</span>`);
       if(POISON[n])a.push('<span style="color:#9ad84a">zehirli!</span>');
-      if(P.bad)a.push(`<span style="color:#ff8a6a">${P.bad.map(k=>BUFFS[k].n).join(', ')} ${fmtT(P.dB)}${P.pBad<1?' (olabilir)':''}</span>`);
+      if(P.bad)a.push(`<span style="color:#ff8a6a">${P.bad.filter(k=>BUFFS[k]).map(k=>BUFFS[k].n).join(', ')} ${fmtT(P.dB)}${P.pBad<1?' (olabilir)':''}</span>`);
       info=a.join(' · ')||'Bir etkisi yok'}
     return `<div class="v63er"><img src="${icon(n)}" alt=""><span class="v63en"><b>${esc(n)}</b> <small>×${inv[n]}</small><br><small>${info}</small></span><button type="button" class="v63ye" data-eat="${esc(n)}" aria-label="${esc(n)} ye">Ye</button></div>`}).join('')}</div>`:'<p class="note">Yiyecek bir şeyin kalmadı.</p>');
   if(tz===2){const b=cbody.querySelector('[data-eat="Böğürtlen"]');if(b)b.classList.add('pulse')}};

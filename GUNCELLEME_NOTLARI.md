@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.47 · 31 Ekim 2026
+
+### Düzeltmeler
+- **"Cannot read properties of undefined (reading 'c')" hatası:** ekranın üstündeki etki çubuğu (zehir, kanama, yanık ve yemeklerin iyi/kötü etkileri) oyunun tanımadığı bir etkiyle karşılaşınca oyunu hata ekranına düşürüyordu. Böyle bir etki (ör. eski bir kayıttan gelen) artık sessizce atlanıyor; kayıt yüklenirken de temizleniyor. Yemek listesindeki etki yazıları da aynı korumayı aldı.
+
+### Proje
+- Bu sürüm oynanarak test edilmedi; yalnızca sözdizimi kontrolü yapıldı.
+
+---
+
 ## Versiyon 2.46 · 31 Ekim 2026
 
 ### Düzeltmeler
