@@ -16,6 +16,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.69 · 1 Kasım 2026
+
+### Arayüz
+- **El yapımı listesinde düğmeler hizalı:** her satırda **Yap** düğmesi en sağda; bütün satırların Yap düğmeleri alt alta tek sütun olur. **×5** ve **Hepsi** Yap'ın soluna dizilir; Kamp ateşinin **Yak** düğmesi en solda.
+
+### Tasarım belgesi
+- Sistemler · El yapımı: düğme düzeni.
 ## Versiyon 2.68 · 1 Kasım 2026
 
 ### Oynanış

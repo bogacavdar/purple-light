@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.68** ile birebir (1 Kasım 2026). Bu sürümde: tarlacılık şimdilik yok (Çiftçi Ekin, tarlası ve görevleri kaldırıldı; eski kayıtlara sikke); Pazarcı Nazlı öğrendiğin tariflerin eşyalarını da satar; her maden kazılırken taş da verir. Önceki sürüm (2.67): Börü'nün Çift vuruş dersinde domuz hiç ölmez.
+Sürüm: **Versiyon 2.69** ile birebir (1 Kasım 2026). Bu sürümde: El yapımı listesinde bütün Yap düğmeleri sağda alt alta, ×5 ve Hepsi onların solunda. Önceki sürüm (2.68): tarlacılık şimdilik yok; Nazlı öğrenilen tariflerin eşyalarını satar; madenler taş da verir.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

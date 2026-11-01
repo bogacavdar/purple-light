@@ -12,6 +12,10 @@
 
 
 
+
+## v2.69 — El yapımı düğme düzeni
+
+- `.rr.hq` CSS yerinde: row-reverse + order (Yap [data-q=1] 0, ×5 1, Hepsi 2, Yak 3), Yap min-width 58px.
 ## v2.68 — tarlacılık kalktı, Nazlı tarif eşyası satar, maden taş verir
 
 - `<script id="v268">`: ACT 1'de (I2 değilse) farmer/field/plots −1e5'e (ikinci adadaki `away` kalıbı), P1'den Ekin kapısı silinir. restore sarmalayıcısı `settle()`: __q2 (S.a/S.d) ve __v55 (QS f1–f3) Ekin görevleri ödül kadar sikke ve listeden silinir (tekrar ödenmez), farmStep>1 → 25×(adım−1), tohum/ürün/kaldırılan yemekler fiyatından sikke; farmStep=0.
