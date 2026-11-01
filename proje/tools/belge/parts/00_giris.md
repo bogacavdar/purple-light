@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.74** ile birebir (1 Kasım 2026). Bu sürümde: silah/zırh bilgi satırları yalnızca üzerine gelince görünür; Çam kesilince reçine de düşer (2.70'ten beri silinmişti); görev oku reçine için ağaçları gösterir. Önceki sürüm (2.73): pazar listesi düzeldi.
+Sürüm: **Versiyon 2.74** ile birebir (1 Kasım 2026). Bu sürümde: silah/zırh bilgi satırları yalnızca üzerine gelince görünür; Çam kesilince reçine de düşer (2.70'ten beri silinmişti); görev oku reçine için ağaçları gösterir; Reis'lerde tek can çubuğu. Önceki sürüm (2.73): pazar listesi düzeldi.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

@@ -29,10 +29,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Düzeltmeler
 - **Çam reçine vermiyordu:** 2.70'te eklenen "Çam kesilince reçine düşer" kuralı, Çam kozalağını ekleyen eski bir satır yüzünden siliniyordu; Çam yalnızca kozalak veriyordu. Artık Çam kesilince her odunla 1 Çam kozalağı ve 1 Çam reçinesi düşer (Ladin zaten reçine veriyordu).
+- **Reis'lerde çift can çubuğu:** saldırmak üzere olan canlının çizimi başı sana bakacak şekilde döner; Reis'te bununla birlikte mor can çubuğu ve adı da yan yatıyor, üstüne ikinci küçük bir can çubuğu çıkıyordu. Artık Reis'ler dönmez: tek can çubuğu (taçlı, uzun, mor) ve düz duran adı kalır.
 - **Görev oku "Huş kabuğu"nu gösteriyordu:** reçine isteyen bir görevde ok, reçinenin ağaçtan düştüğünü bilmediği için Huş katranının malzemesine (Huş kabuğu, Kayalık Dağ) yönlendiriyordu. Artık ağaçların ekstra düşürdükleri (Çam reçinesi, Ladin reçinesi, kozalak, palamut…) o ağaçtan çıkar sayılır; ok en yakın Çam ya da Ladin ağacını gösterir.
 
 ### Tasarım belgesi
-- Aletler: bilgi satırlarının görünme kuralı. Tarifler: Çam reçinesinin kaynağı.
+- Aletler: bilgi satırlarının görünme kuralı. Tarifler: Çam reçinesinin kaynağı. Sistemler · Dövüş: Reis dönmez.
 ## Versiyon 2.73 · 1 Kasım 2026
 
 ### Düzeltmeler
