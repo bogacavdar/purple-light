@@ -15,6 +15,11 @@
 
 
 
+
+## v2.72 — mağarada hava yok
+
+- `raining()` mağarada false; tickWeather gök gürültüsü, tickAmb `on` mağarada kapalı; v232 skipIn listesine drawWeather ve drawWeatherTint eklendi (sis, yağmur, şimşek çizilmez).
+- Açık: "mağarada toplama bug'ı" — aday sebep `underAttack()` (170 px içinde kovalayan canlı ya da son 3 sn ısırılma tıklamayla toplamayı engeller; mağarada canlılar sürekli doğduğu için sık olur). Boğaç'a soruldu, değiştirilmedi.
 ## v2.71 — Nazlı'nın kuzenleri
 
 - `<script id="v271">`: MK (k_fidan, k_nilufer, k_kardelen, k_lale, k_menekse), __plFams'ın ocağının 110–260 px yakınına (kendi biyomu, kuru, 70 px boşluk) yerleşir; NPCL.market görünümü + hatC. nearMarket sarmalayıcısı (62 px) → aynı pazar; openMenu başlığı. XTRA (kişi + tezgâh) → talkM; GIVER/MetG kaydı (DATA görev sistemi gidOfTg ile bulur). say sarmalayıcısı v64 resim (porM). v55Ents çizim (tezgâh + kişi), MAPIC/__plMapPeople/__plMapObj, snapshot.v271.m, restore/resetState.

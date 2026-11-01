@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.71** ile birebir (1 Kasım 2026). Bu sürümde: Nazlı'nın kuzenleri her biyomda pazar kurar (aynı satış, farklı renk yemeni, 3'er basit görev). Önceki sürüm (2.70): hiçbir tarif bıçak istemez; Çam ve Ladin reçine verir.
+Sürüm: **Versiyon 2.72** ile birebir (1 Kasım 2026). Bu sürümde: mağaraya hava girmez (yağmur, sis, şimşek ve hava sesleri yok). Önceki sürüm (2.71): Nazlı'nın kuzenleri her biyomda pazar kurar.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

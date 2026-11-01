@@ -19,6 +19,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.72 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Mağarada yağmur yağıyordu:** dışarıdaki hava mağaranın içine de geliyordu. Artık mağarada yağmur, sis, şimşek, gök gürültüsü, bataklık sisi ve dışarının ortam sesleri (yağmur, rüzgâr, dalga) yok; yağmur içerideyken kamp ateşini ve meşaleyi de etkilemez.
+
+### Tasarım belgesi
+- Mağaralar: "içeride hava yoktur" maddesi genişletildi.
 ## Versiyon 2.71 · 1 Kasım 2026
 
 ### Oynanış
