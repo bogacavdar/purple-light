@@ -19,6 +19,7 @@
 ## v2.72 — mağarada hava yok
 
 - `raining()` mağarada false; tickWeather gök gürültüsü, tickAmb `on` mağarada kapalı; v232 skipIn listesine drawWeather ve drawWeatherTint eklendi (sis, yağmur, şimşek çizilmez).
+- v258alm yerinde: newList yalnızca __plBANIM/__plMOB'daki canlıları sayar; "yeni" etiketi h4'ün içine satır içi (mutlak konum ve animasyon kalktı).
 - Açık: "mağarada toplama bug'ı" — aday sebep `underAttack()` (170 px içinde kovalayan canlı ya da son 3 sn ısırılma tıklamayla toplamayı engeller; mağarada canlılar sürekli doğduğu için sık olur). Boğaç'a soruldu, değiştirilmedi.
 ## v2.71 — Nazlı'nın kuzenleri
 

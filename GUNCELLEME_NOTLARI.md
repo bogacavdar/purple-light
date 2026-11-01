@@ -25,8 +25,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Düzeltmeler
 - **Mağarada yağmur yağıyordu:** dışarıdaki hava mağaranın içine de geliyordu. Artık mağarada yağmur, sis, şimşek, gök gürültüsü, bataklık sisi ve dışarının ortam sesleri (yağmur, rüzgâr, dalga) yok; yağmur içerideyken kamp ateşini ve meşaleyi de etkilemez.
 
+- **Almanak yeni bir şey yokken "yeni" gösteriyordu:** almanak düğmesindeki kırmızı sayı, almanakta kartı olmayan canlıları da (ders hayvanları, ikinci ada ve arena canlıları) sayıyordu; bunlar hiç "görülemediği" için sayı sönmüyordu. Artık yalnızca almanakta kartı olan canlılar sayılır.
+- Almanak kartlarındaki "YENİ" etiketi resmin üstüne biniyor ve yanıp sönüyordu; artık adın yanında küçük, sabit bir "yeni" yazısı.
+
 ### Tasarım belgesi
-- Mağaralar: "içeride hava yoktur" maddesi genişletildi.
+- Mağaralar: "içeride hava yoktur" maddesi genişletildi. Sistemler · Almanak: "yeni" sayısının düzeltmesi.
 ## Versiyon 2.71 · 1 Kasım 2026
 
 ### Oynanış

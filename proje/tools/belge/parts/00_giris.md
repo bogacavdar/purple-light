@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.72** ile birebir (1 Kasım 2026). Bu sürümde: mağaraya hava girmez (yağmur, sis, şimşek ve hava sesleri yok). Önceki sürüm (2.71): Nazlı'nın kuzenleri her biyomda pazar kurar.
+Sürüm: **Versiyon 2.72** ile birebir (1 Kasım 2026). Bu sürümde: mağaraya hava girmez (yağmur, sis, şimşek ve hava sesleri yok); almanağın "yeni" sayısı yalnızca kartı olan canlıları sayar, etiket adın yanında. Önceki sürüm (2.71): Nazlı'nın kuzenleri her biyomda pazar kurar.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
