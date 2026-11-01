@@ -12,6 +12,7 @@
 | X | En uygun yemeği ye (basılı tut: yemek listesi; v2.04'e kadar F idi) | Tabak simgesi |
 | H | Eli boşalt (meyve silkelemek için) | El düğmesi |
 | 1–0 | Alet yuvasındaki aleti ele al | Alttaki kutuya dokun |
+| Yuvaya sağ tık | **Yuvadaki eşyayı değiştir (v2.58, Boğaç):** oyun sırasında, envanteri açmadan; kemerin üstünde taşınabilir eşyalarının listesi açılır, birini seçince o yuvaya girer (başka yuvadaysa yer değiştirir); "Yuvayı boşalt" de var. Esc ya da dışarı tıklamak kapatır | Yuvaya **basılı tut** (0,5 sn) |
 | Tab | El yapımı | El simgesi |
 | B / T / P / K | Kazan / Demirci / Pazar / Tarif kitabı | Menü simgeleri |
 | I / C / Y / G | Envanter / Karakter (giyim, istatistik) / Yetenekler / Görevler | Menü simgeleri |
@@ -84,7 +85,9 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - **Çapraz yürürken meşale titremez (v2.44, Boğaç):** çapraz yürürken meşale ve eldeki eşya, karakterin çapraz pozunun gidilen yönüne göre çizilir; karakterin yönü de iki yön arasında kararsızken (çubukla çapraza yakın yürürken) her karede değişmez, ancak öbür yön açıkça baskın olunca döner. Eskiden meşale her karede sağ ve sol el arasında gidip gelip yanıp sönüyordu.
 - **Meşale silahtır da (v2.28, Boğaç):** elinde yanan bir meşale varken yakın dövüşte vurduğun her canavar (normal vuruş, kombolar, güçlü vuruş, ulti; senden en çok 60 piksel uzaktaki) **tutuşur**: **4 sn** boyunca yanar ve yavaş yavaş can kaybeder: Kaba meşalede ~1,5 saniyede **1**, Meşalede saniyede **1** (her saniye bir turuncu hasar sayısı; bir yanık toplam Kaba meşalede 2–3, Meşalede 4 can). v2.33'te Boğaç'ın isteğiyle 3 kat yavaşladı (önce saniyede 2 ve 3, her 0,5 sn'de). Yanan canavarın üstünde **turuncu bir parıltı** ve yukarı uçan alevler görünür. Yanarken yeniden vurursan süre baştan başlar (yanık üst üste binmez). Yanıkla ölen canavar normal avlanmış sayılır (XP ve ganimet). Kendisi yakan canavarlar (Lav kertenkelesi, Kül cini gibi saldırısı yanık bırakanlar) tutuşmaz; Börü'nün ders canavarları ve arenanın canavarları da tutuşmaz. Uzaktan atışlar (asa, fırlatılan mızrak) tutuşturmaz.
 - **Her saldırı meşaleden yer (v2.28, Boğaç):** meşale elindeyken yaptığın her saldırı (isabet etsin etmesin) meşalenin tam süresinin **%4,5'ini** yer (Kaba meşalede ~10 sn, Meşalede ~15 sn; v2.33'te Boğaç'ın isteğiyle 3 katına çıktı, önce %1,5'ti); bu, zamanla yanmaya ektir. Bir meşale yalnızca vuruşla ~22 saldırıda biter. Aynı vuruşun birden çok canavara değmesi tek saldırı sayılır (0,25 sn içinde en çok bir kez). Sınırsız dayanıklılık hilesi açıkken yemez. **Reçine** (L): Meşale +%65, Kaba meşale +%50 süre. Biten meşale yığından 1 eksilir, varsa yenisi yanar.
-- Kamp ateşinin başında **E**: odun at ya da çiğ et/balığı **közle**.
+- Kamp ateşinin başında **F** (toplama/konuşma tuşu): odun at ya da çiğ et/balığı **közle**.
+- **Kişilerin ateşinde yemek (v2.58, Boğaç):** Kemal'in ve öbür kişilerin kamplarındaki ateşlerde de çiğ et ve balık közlenir: ateşin **üstüne tıkla / dokun** (uzaktaysan karakter yürür, varınca açılır) ya da ateşin hemen yanındayken (~16 piksel) ve çantanda çiğ et ya da balık varken **F**'ye bas. Pencerede "Hepsini közle" ve tek tek közleme vardır; kişilerin ateşi sönmez, odun istemez. Çiğ yemeğin yoksa "Çiğ et ya da balık getirirsen közleyebilirsin" der.
+- **Elde kazmayla madene sol tık (v2.58, Boğaç):** elinde kazma varken bir madenin (taşın, cevherin) üstüne sol tıklayınca karakter madene yürür ve kazar; tıklama madenin bütün görüntüsünü tutar (eskiden yalnızca ortasındaki küçük nokta sayılıyordu, kenarına tıklayınca vuruş yapılıyordu). Yakında canavar olsa da kazmayla madene tıklamak kazar.
 
 ### Hava
 

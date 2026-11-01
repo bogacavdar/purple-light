@@ -18,11 +18,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Demirciler yalnızca silah, zırh, balta ve kazma dövüyor; öbür aletler elle yapılıyor.** Örste artık yalnızca kılıç, gürz, topuz, mızrak, yay, bıçak, asa ve silahlar, baltalar ve kazmalar, zırhlar dövülüyor. **Tuzak, sapan, bola, olta, ağ, zıpkın, balık kapanı, deniz oltaları, kürek, tırmık, tırpan, sulama kabı, meşale, kazıyıcılar, iğne, kirmen, dokuma tezgâhı, taş aletler (bileği, çekiç, öğütme, pişirme taşı, havan), pirit çakmağı** gibi aletleri tarifini kazanda öğrendikten sonra **elle** yapıyorsun (bilgisayarda Tab, telefonda el ikonu). Bir aletten aynı anda bir tane taşınıyor; körelince Dursun eskisi gibi biliyor.
 - **Nazlı tuzak görevini Tuzak tarifini öğrenmeden vermiyor.** "Kürk siparişi" (tuzak kur, onunla av yakala, 3 tavşan derisi getir) eskiden tuzak tarifini bilmesen de geliyordu. Artık **Tuzak tarifini kazanda öğrenene kadar** Nazlı'nın başında ! çıkmıyor, görev verilmiyor. Önceden almış olduğun görev aynen devam ediyor.
 
+### Arayüz
+- **Alet kemerindeki eşyaları oyun içinde değiştir.** Alttaki 1-2-3-4-5 kemerinde bir yuvaya **sağ tıkla** (telefonda **basılı tut**): kemerin üstünde taşınabilir eşyalarının listesi açılır; birini seçince o yuvaya girer (başka yuvadaysa yer değiştirir). "Yuvayı boşalt" ile yuvayı boşaltabilirsin. Envanteri açmak gerekmiyor; Esc ya da dışarı tıklamak listeyi kapatır.
+- **Elde kazmayla madene sol tıkla, kazsın.** Eskiden yalnızca madenin ortasındaki küçük bir nokta sayılıyordu, kenarına tıklayınca karakter havaya vuruyordu. Artık madenin her yerine tıklamak sayılıyor: karakter madene yürüyüp kazıyor. Yakında canavar olsa da kazmayla madene tıklarsan kazıyor.
+- **Kişilerin ateşinde yemek pişir.** Kemal'in ve öbür kişilerin kamplarındaki ateşlere **tıkla / dokun** (uzaktaysan karakter yürür, varınca açılır) ya da çantanda çiğ et/balık varken ateşin hemen yanında **F**'ye bas: çiğ et ve balığı közleyebilirsin ("Hepsini közle" ya da tek tek). Bu ateşler sönmez, odun istemez.
+
 ### Tasarım belgesi
 - Act 1 · Pazarcı Nazlı: "Satış sayacı" notu (toplu düğmeler de sayılır).
 - Sistemler · Satış: "Kazanda işe yaramayanları sat" tariflerde kullanılan hiçbir şeyi satmaz, soru sormaz.
 - Act 1 · Görev kuralları ve Nazlı tablosu: "tuzakla av" isteyen görev Tuzak tarifi öğrenilmeden açılmaz.
 - Aletler: yeni "Nerede yapılır: örs ya da el" bölümü.
+- Sistemler · Kontroller: yuvaya sağ tık / basılı tut ile eşya değiştirme; elde kazmayla madene sol tık. Işık ve ateş: kişilerin ateşinde közleme.
 
 ---
 

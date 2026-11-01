@@ -17555,5 +17555,71 @@ for(const n of Array.from(FORGED))if(!keepAnvil(n))FORGED.delete(n);
   const ok=_hc.apply(this,arguments);try{if(ok&&wearTool(r))giveTool(r)}catch(e){}return ok}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v258forge: '+(e&&e.message||e))}catch(_){}}})();
 </script>
+<style id="v258-hot">
+#hotpick{position:fixed;z-index:30;background:rgba(17,23,15,.96);border:2px solid #8fd46b;padding:6px;display:flex;flex-direction:column;gap:6px;max-width:min(420px,calc(100vw - 16px));box-shadow:0 6px 20px rgba(0,0,0,.5)}
+#hotpick[hidden]{display:none}
+#hotpick .hph{font-size:13px;font-weight:700;color:#f3ecd8}
+#hotpick .hpl{display:flex;flex-wrap:wrap;gap:4px;max-height:40vh;overflow:auto}
+#hotpick .hpi{position:relative;width:44px;height:44px;padding:0;background:#1c2419;border:2px solid #3d4a33;cursor:pointer;display:flex;align-items:center;justify-content:center}
+#hotpick .hpi:hover,#hotpick .hpi:focus-visible{border-color:#f2b84b;outline:none}
+#hotpick .hpi.cur{border-color:#f2b84b;background:#3d4d2c}
+#hotpick .hpi img{width:30px;height:30px;image-rendering:pixelated}
+#hotpick .hpi b{position:absolute;right:2px;bottom:0;font-size:10px;color:#f2b84b}
+#hotpick .hpi kbd{position:absolute;left:2px;top:0;font-size:9px;color:#b9c2a8;font-family:inherit}
+#hotpick .hpb{display:flex;gap:6px}#hotpick .hpb button{font:inherit;font-size:13px;padding:4px 8px;background:#2a3424;color:#f3ecd8;border:2px solid #4b5a40;cursor:pointer}
+</style>
+<div id="hotpick" hidden role="dialog" aria-label="Yuvaya eşya seç"><div class="hph" id="hp-h"></div><div class="hpl" id="hp-l"></div><div class="hpb"><button type="button" id="hp-clr">Yuvayı boşalt</button><button type="button" id="hp-x">Kapat</button></div></div>
+<script id="v258b">
+// v2.58 (Boğaç): (1) change what is on the belt during play: right click (phone: hold) a slot → pick a carried thing;
+// (2) a left click with a pick in hand on any part of a mine mines it (even with a monster about);
+// (3) cook raw meat and fish at the people's fires (click/tap the fire, or F right beside it).
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+const hb=$('hotbar'),hp=$('hotpick');let hpI=-1;
+function hpClose(){hp.hidden=true;hpI=-1}
+function hpOpen(i,el){if(onTitle||craftOpen||dlgOpen||i<0||i>=hotN())return;hpI=i;const cur=hotList()[i];
+  const L=order.filter(n=>inv[n]>0&&hotThing(n));
+  $('hp-h').textContent=`${slotKey(i)}. yuva: ne koyalım?`;
+  $('hp-l').innerHTML=L.length?L.map(n=>{const bi=beltIndex(n);return `<button type="button" class="hpi${n===cur?' cur':''}" data-hp="${esc(n)}" title="${esc(n)}${bi>=0&&bi!==i?' · '+slotKey(bi)+'. yuvada':''}"><img src="${icon(n)}" alt="${esc(n)}">${bi>=0?`<kbd>${slotKey(bi)}</kbd>`:''}${inv[n]>1?`<b>${inv[n]}</b>`:''}</button>`}).join(''):'<small style="color:#b9c2a8">Taşınabilir eşyan yok.</small>';
+  $('hp-clr').disabled=!cur;hp.hidden=false;
+  const r=(el||hb).getBoundingClientRect(),w=hp.offsetWidth,h=hp.offsetHeight;
+  hp.style.left=Math.max(8,Math.min(innerWidth-w-8,r.left+r.width/2-w/2))+'px';hp.style.top=Math.max(8,r.top-h-8)+'px';sfx('pick')}
+hp.addEventListener('click',e=>{const b=e.target.closest('[data-hp]');if(b&&hpI>=0){const n=b.dataset.hp,i=hpI;beltSet(i,n);hotK='';renderHot();try{renderInv()}catch(_){}toast(`${n} ${slotKey(i)}. yuvada`);hpClose();return}
+  if(e.target.id==='hp-clr'&&hpI>=0){const i=hpI;if(hand===i)hand=-1;belt[i]=null;hotK='';renderHot();try{renderInv()}catch(_){}hpClose();sfx('pick');return}
+  if(e.target.id==='hp-x')hpClose()});
+hb.addEventListener('contextmenu',e=>{const b=e.target.closest('[data-hs]');if(!b)return;e.preventDefault();hpOpen(+b.dataset.hs,b)});
+{let lp=null;hb.addEventListener('touchstart',e=>{const b=e.target.closest('[data-hs]');if(!b||e.touches.length>1)return;const t=e.changedTouches[0];lp={b,x:t.clientX,y:t.clientY,tm:setTimeout(()=>{if(lp){hpOpen(+lp.b.dataset.hs,lp.b);lp.done=true}},500)}},{passive:true});
+ hb.addEventListener('touchmove',e=>{if(!lp)return;const t=e.changedTouches[0];if(Math.hypot(t.clientX-lp.x,t.clientY-lp.y)>12){clearTimeout(lp.tm);lp=null}},{passive:true});
+ hb.addEventListener('touchend',e=>{if(!lp)return;clearTimeout(lp.tm);if(lp.done){e.preventDefault();e.stopImmediatePropagation()}lp=null},{capture:true});
+ hb.addEventListener('click',e=>{if(!hp.hidden&&e.target.closest('[data-hs]')&&performance.now()-(hpOpen.t||0)<600){e.stopImmediatePropagation();e.preventDefault()}},true)}
+{const _o=hpOpen;hpOpen=function(){hpOpen.t=performance.now();return _o.apply(this,arguments)}}
+document.addEventListener('pointerdown',e=>{if(!hp.hidden&&!hp.contains(e.target)&&!e.target.closest('#hotbar'))hpClose()},true);
+addEventListener('keydown',e=>{if(!hp.hidden&&e.key==='Escape'){hpClose();e.preventDefault();e.stopImmediatePropagation()}},true);
+setInterval(()=>{if(!hp.hidden&&(onTitle||craftOpen||dlgOpen))hpClose()},400);
+// (2) a mine is hit anywhere on its picture; with a pick in hand a click on it mines, even in a fight
+{const _pa=pickAt;pickAt=function(wx,wy){const r=_pa.apply(this,arguments);let bn=null,bd=14;for(const n of nodes){if(!n.alive||!n.mine)continue;const q=Math.hypot(n.x-wx,n.y-5-wy);if(q<bd){bd=q;bn=n}}
+  if(!bn||(r&&r.tg&&Math.hypot(r.x-wx,r.y-wy)<=bd))return r;return{tg:{kind:'node',n:bn},x:bn.x,y:bn.y,reach:REACH*(sk('H4')?1.5:1)*.75+13}}}
+cv.addEventListener('pointerdown',e=>{try{if(e.pointerType!=='mouse'||e.button!==0||onTitle||dlgOpen||craftOpen||placing||!heldKind('pick')||!canTap())return;if(!inFight())return;
+  const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S;const p=pickAt(wx,wy);if(!(p&&p.tg&&p.tg.kind==='node'&&p.tg.n.mine))return;
+  e.preventDefault();e.stopImmediatePropagation();startGoal(wx,wy)}catch(_){}},true);
+// (3) the people's fires
+const nearF=(x,y,r)=>{let b=null,bd=r;for(const f of FIRES){const d=Math.hypot(f.x-x,f.y-y);if(d<bd){bd=d;b=f}}return b};
+function cookAt(f){const raw=order.filter(n=>inv[n]>0&&KOZ[n]);
+  if(!raw.length){toast('Çiğ et ya da balık getirirsen bu ateşte közleyebilirsin.');return}
+  const go=names=>{let n=0;for(const r of names){while(inv[r]>0){inv[r]--;gain(KOZ[r]);n++}}renderInv();
+    if(n){sfx('craft');gainXP(Math.min(30,n));try{dstat.cook+=n}catch(_){}for(let k=0;k<10;k++)parts.push({x:f.x+(Math.random()-.5)*8,y:f.y-6,vx:(Math.random()-.5)*12,vy:-18-Math.random()*16,life:.9,c:'rgba(220,220,220,.7)'});toast(`${n} parça közlendi. Afiyet olsun!`)}
+    bye();setTimeout(()=>{if(order.some(m=>inv[m]>0&&KOZ[m]))cookAt(f)},80)};
+  const tot=raw.reduce((a,n)=>a+inv[n],0),L=[{t:`Hepsini közle (${tot} parça)`,pri:1,f:()=>go(raw)}];
+  for(const n of raw.slice(0,4))L.push({t:`Közle: ${n} ×${inv[n]}`,f:()=>go([n])});L.push({t:'Isın ve dinlen',f:bye});
+  sayV('Bu kampın ateşi harıl harıl yanıyor. Çiğ eti ve balığı burada da közleyebilirsin: közlenmiş yemek çiğinden kat kat doyurur.',L,'Ateş','Kamp ateşi','#ffb05a')}
+let pendF=null;
+cv.addEventListener('pointerdown',e=>{try{if((e.pointerType==='mouse'&&e.button!==0)||onTitle||dlgOpen||craftOpen||placing||!canTap())return;
+  const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S,f=nearF(wx,wy+3,11);if(!f)return;
+  e.preventDefault();e.stopImmediatePropagation();
+  if(Math.hypot(f.x-player.x,f.y-player.y)<34){pendF=null;cookAt(f);return}
+  pendF=f;startGoal(f.x,f.y+12)}catch(_){}},true);
+setInterval(()=>{try{if(!pendF)return;if(onTitle||dlgOpen||craftOpen){pendF=null;return}if(Math.hypot(pendF.x-player.x,pendF.y-player.y)<34){const f=pendF;pendF=null;goal=null;cookAt(f)}else if(!goal)pendF=null}catch(_){pendF=null}},150);
+{const _int=interact;interact=function(over){try{if(!over&&!dlgOpen&&!craftOpen&&!gathering){const f=nearF(player.x,player.y,16);if(f&&order.some(n=>inv[n]>0&&KOZ[n])){cookAt(f);return}}}catch(_){}return _int.apply(this,arguments)}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v258b: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 </body>
 </html>
