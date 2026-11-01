@@ -1,6 +1,7 @@
 ## v2.58 (1 Kasım 2026) · toplu satış "sold" sayacını artırır
 - Belge: `parts/30_act1.md` (Nazlı tablosunun altı), `00_giris.md`.
 - Yerinde: `#sellall` dinleyicisi ve `sellSafe()` artık `qc('sold',got)` çağırıyor (şans bonusundan önce, `sell()` ile aynı ölçü). Daha önce yalnızca `sell(n,q)` sayıyordu.
+- `safeSell(n)` = bulkSellable && !potUses && !recUses.length; `#sellsafe` tutarı, askSell süzgeci ve `sellSafe()` bunu kullanıyor (eskiden yalnızca !potUses → bilinen tarif malzemeleri satılıp soru çıkıyordu). Belge `parts/20_sistemler.md` satış uyarısı.
 - Eski kayıtlara etkisi yok (geçmiş toplu satışlar geriye dönük sayılmaz). Kontrol: chk.js 0 hata.
 
 ## v2.57 (1 Kasım 2026) · kamp ateşleri küçük ve büyük haritada

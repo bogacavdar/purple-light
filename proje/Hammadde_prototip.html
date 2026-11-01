@@ -3106,7 +3106,7 @@ function renderCraft(){
   }else if(mode==='sell'){
     {const sa=$('sellall');if(sa)sa.hidden=false}
     const total=Math.round(order.filter(n=>inv[n]>0&&bulkSellable(n)).reduce((t,n)=>t+unitPrice(n,true)*inv[n],0));
-    const sa=$('sellall');if(sa){sa.textContent=`Aletler, zırhlar ve eşyalar hariç hepsini sat · ${total.toLocaleString('tr-TR')}`;sa.disabled=!total;if(!$('sellsafe')){const b2=document.createElement('button');b2.id='sellsafe';b2.type='button';sa.after(b2)}const safe=Math.round(order.filter(n=>inv[n]>0&&bulkSellable(n)&&!potUses(n)).reduce((t,n)=>t+unitPrice(n,true)*inv[n],0));$('sellsafe').textContent=`Kazanda işe yaramayanları sat · ${safe.toLocaleString('tr-TR')}`;$('sellsafe').disabled=!safe;$('sellsafe').hidden=false}
+    const sa=$('sellall');if(sa){sa.textContent=`Aletler, zırhlar ve eşyalar hariç hepsini sat · ${total.toLocaleString('tr-TR')}`;sa.disabled=!total;if(!$('sellsafe')){const b2=document.createElement('button');b2.id='sellsafe';b2.type='button';sa.after(b2)}const safe=Math.round(order.filter(n=>inv[n]>0&&safeSell(n)).reduce((t,n)=>t+unitPrice(n,true)*inv[n],0));$('sellsafe').textContent=`Kazanda işe yaramayanları sat · ${safe.toLocaleString('tr-TR')}`;$('sellsafe').disabled=!safe;$('sellsafe').hidden=false}
     cbody.innerHTML=mktTabs()+(list.length?`<p class="note">Fiyatlar sabit; çok satmak fiyatı düşürmez.${tradePct()||sk('Z4')?' Yetenek bonusların fiyatlara dahil.':''}</p><ul class="mkt">${list.map(n=>`<li class="sl"><span class="nm">${esc(n)} ×${inv[n]}${TOOLS.has(n)?' <span class="tl">alet</span>':''}${(()=>{const u=potUses(n);if(u)return `<span class="kz warn">Kazanda şimdi ${u} tarifte işe yarar</span>`;const l=potLater(n);return l?`<span class="kz">İleride ${l} tarifte lazım olabilir</span>`:''})()}</span><span class="pr">${(Math.round(unitPrice(n)*10)/10).toLocaleString('tr-TR')} sikke</span><span class="sq"><button type="button" class="qb" data-qd="-1" data-n="${esc(n)}" aria-label="Bir azalt">▼</button><input class="qi" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" data-qn="${esc(n)}" value="${sellQ(n)}" aria-label="${esc(n)} kaç tane"><button type="button" class="qb" data-qd="1" data-n="${esc(n)}" aria-label="Bir artır">▲</button><button data-sell="1" data-n="${esc(n)}" type="button" class="sq1">Sat · ${Math.round(unitPrice(n)*sellQ(n)).toLocaleString('tr-TR')}</button></span><button class="all" data-sell="all" data-n="${esc(n)}" type="button">Hepsi · ${Math.round(unitPrice(n)*inv[n]).toLocaleString('tr-TR')}</button></li>`).join('')}</ul>`
       :`<p class="note">${filter?'Aramana uyan malzeme yok.':'Satacak bir şeyin yok. Malzeme topla ya da birleştirerek değerli eşyalar yap.'}</p>`);
   }else if(mode==='dogs'){
@@ -3385,7 +3385,7 @@ cbody.addEventListener('click',e=>{const a=e.target.closest('[data-ask]');if(!a|
 // the bulk buttons ask too (they keep their own handlers; a confirmed click passes through)
 let askPass=false;
 document.addEventListener('click',e=>{const t=e.target;if(!t||(t.id!=='sellall'&&t.id!=='sellsafe')||askPass||!craftOpen||mode!=='sell')return;
-  const L=order.filter(n=>inv[n]>0&&bulkSellable(n)&&(t.id==='sellall'||!potUses(n)));if(!L.some(n=>!noAsk.has(n)&&recUses(n).length))return;
+  const L=order.filter(n=>inv[n]>0&&(t.id==='sellall'?bulkSellable(n):safeSell(n)));if(!L.some(n=>!noAsk.has(n)&&recUses(n).length))return;
   e.preventDefault();e.stopImmediatePropagation();askSell(L,()=>{askPass=true;try{t.click()}finally{askPass=false}})},true);
 // ▼/▲: one step, hold to repeat faster and faster, ten at a time after 2.5 s
 {let HQ=null;const stopQ=()=>{if(HQ){clearTimeout(HQ.tm);HQ=null}};
@@ -7858,8 +7858,10 @@ function coinWatch(){if(!coin100&&met&&!tz&&coins>=100&&!sk('K1')){coin100=true;
 function potLater(n){const U=USES.get(n);if(!U)return 0;let c=0;for(const r of U)if(!foundSet.has(r)&&!PLACEABLE.has(r))c++;return c}
 function potUses(n){const U=USES.get(n);if(!U)return 0;let c=0;for(const r of U)if(!foundSet.has(r)&&!PLACEABLE.has(r)&&(diff==='hard'||isOpen(r)))c++;return c}
 // bulk selling never takes tools, armour, torches, beds, shelters, campfires or anything else that goes on the belt
+// v2.58: "Kazanda işe yaramayanları sat" sells nothing any recipe uses (known, open or not yet found), so it never asks
+function safeSell(n){return bulkSellable(n)&&!potUses(n)&&!recUses(n).length}
 function bulkSellable(n){return unitPrice(n,true)>0&&!TOOLS.has(n)&&!EQUIP[n]&&!hotThing(n)&&!PLACEABLE.has(n)&&n!=='Kamp ateşi'}
-function sellSafe(){let got=0,names=[];for(const n of order){if(inv[n]>0&&bulkSellable(n)&&!potUses(n)){names.push(n);got+=unitPrice(n,true)*inv[n];shopTake(n,inv[n]);inv[n]=0}}
+function sellSafe(){let got=0,names=[];for(const n of order){if(inv[n]>0&&safeSell(n)){names.push(n);got+=unitPrice(n,true)*inv[n];shopTake(n,inv[n]);inv[n]=0}}
   got=Math.round(got);if(!got){toast('Kazanda işe yaramayan satılık bir şeyin yok.',true);return}qc('sold',got);coins+=got;tutSold(names);toast(`${names.length} çeşit satıldı · +${got.toLocaleString('tr-TR')} sikke (kazanda işe yarayanlar sende kaldı)`);renderInv();renderCraft()}
 document.addEventListener('click',e=>{if(e.target&&e.target.id==='sellsafe')sellSafe()});
 
