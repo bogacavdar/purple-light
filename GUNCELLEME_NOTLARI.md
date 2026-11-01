@@ -8,6 +8,20 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.55 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Nazlı'dan görev alınca pazar artık açılıyor.** Pazarcı Nazlı'nın görevi sürerken onunla konuşunca yalnızca görev durumu çıkıyordu, satış yapamıyordun. Artık açılan pencerenin ilk seçeneği **"Pazarı aç"**: bir tıkla satıp alabiliyorsun. Tezgâhın yanında **P** tuşu ya da Pazar düğmesi de pazarı doğrudan açar.
+
+### Oynanış
+- **Kaçan keçi Pamuk artık gerçekten kaçıyor.** Çoban Davut'un görevinde Pamuk eskiden senden yavaş koşuyordu. Artık kaçarken **senin koşu hızının 2,5 katıyla** kaçıyor (koşsan da yetişemezsin); durduğu yerde yakalarsın. Hız becerilerin ve iksirin hızlandıkça Pamuk da ona göre hızlanır.
+
+### Tasarım belgesi
+- Act 1 · Görevler: "Görevdeyken başkası" ve "İptal" maddelerine Nazlı'nın "Pazarı aç" seçeneği.
+- Yan görevler · 2 (Kaçan keçi Pamuk): kaçış hızı koşu hızının 2,5 katı (en az saniyede 180 piksel).
+
+---
+
 ## Versiyon 2.54 · 1 Kasım 2026
 
 ### Arayüz

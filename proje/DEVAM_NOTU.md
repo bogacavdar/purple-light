@@ -1,3 +1,9 @@
+## v2.55 (1 Kasım 2026) · Nazlı görevi sürerken "Pazarı aç", Pamuk 2,5× hızlı kaçar
+- Belge: `parts/30_act1.md` (madde 3 ve 4), `parts/36_yan_gorevler.md` (Pamuk kaçışı), `00_giris.md`.
+- v186 bloğu `statusDlg`: `g==='market'` iken ilk seçenek `Pazarı aç` (`mktTab='sell';openMenu('sell')`), "Tamam" vurgusuz. Yerinde düzenleme (statusDlg kapalı kapsamda, sarmalanamıyor).
+- v230 bloğu: `GOAT_RUN=50` silindi → `goatSpd()` = max(180, 72·speedMult()·runMult()·2,5); adım `min(sp,dd)` (hedefi aşmasın).
+- Eski kayıtlara etkisi yok. Kontrol: chk.js 0 hata (?. 1, ?? 8).
+
 ## v2.54 (1 Kasım 2026) · bilgisayarda "Bilgisayara yükle" düğmesi
 - Belge: `parts/10_akis.md` → "Bilgisayara yükle (v2.54)", `00_giris.md` sürüm satırı.
 - `<style id="v254-inst">`, `#pcinst-ov` penceresi ve `<script id="v254inst">` (`</body>` öncesi, düz script): yalnızca bilgisayarda (`hover:hover` + `pointer:fine`, iOS/Android değil) `#t-pcinst` düğmesi `#t-load`'un hemen arkasına eklenir (Arena'nın önüne). `body.pl-pc` iken v2.53'ün sağ üstteki `#t-install` düğmesi gizli.
