@@ -11,6 +11,14 @@
 
 
 
+
+## v2.68 — tarlacılık kalktı, Nazlı tarif eşyası satar, maden taş verir
+
+- `<script id="v268">`: ACT 1'de (I2 değilse) farmer/field/plots −1e5'e (ikinci adadaki `away` kalıbı), P1'den Ekin kapısı silinir. restore sarmalayıcısı `settle()`: __q2 (S.a/S.d) ve __v55 (QS f1–f3) Ekin görevleri ödül kadar sikke ve listeden silinir (tekrar ödenmez), farmStep>1 → 25×(adım−1), tohum/ürün/kaldırılan yemekler fiyatından sikke; farmStep=0.
+- DATA: H1–H8 silindi, E2'den ['q','H2'] kalktı, B6 metni, GB.farmer. db: 12 tarla tarifi silindi, Yelkenli sal'dan Hasat sepeti. `startQ` içindeki H1 satırı silindi.
+- rawList/rawPrice sarmalayıcıları: tohum/ürün çıkarılır; öğrenilen tarif eşyaları (PLACEABLE/GT/EQUIP/TOOLS/RAW_NO/HOUSESET hariç) PRICE×1,5 (buyFloor tabanı).
+- Maden vuruşu: %50 1 Taş.
+- **Kalan ölü kod (temizlenecek):** tarla sistemi (CROP, plots, farmAct/farmPrompt/tickFarm/drawField/talkFarmer, farmStep, NQ f1–f3, tarla ikonları) artık erişilmiyor ama silinmedi; acil paket olduğu için bir sonraki işte kaldırılacak (performans kuralı 6).
 ## v2.67 — Çift vuruş dersi
 
 - LES 'double': st yalnızca ['hit:double',7]; kill adımı yok → spawnFoe killLeft=false, killAnimal koruması ('Dayanıyor!') domuzu hep ayakta tutar.

@@ -111,7 +111,6 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 | Avlamak | türün XP'si (tablolarda) |
 | Reis | türün XP'si × 6 + 20 |
 | Toplamak (her düğüm, ağaç, meyve) | 1 |
-| Tarla adımı / hasat / Ekin'e alet | 1 / 3 / 10 |
 | Balık | 3 + fiyatın yarısı |
 | Tuzaktan av almak | 4 |
 | Közleme | közlenen parça sayısı (en çok 30) |
@@ -233,6 +232,8 @@ Karanlık çökünce (gece), ışık olmayan çimen ve orman zemininde çevrende
 - **Ateş böcekleri:** gece sefalarının çevresinde; yalnızca görüntü.
 
 ## Tarım
+
+> **v2.68: tarlacılık şimdilik oyunda yok** (bkz. Açıklar · İleride: Tarlacılık). Aşağıdaki eski düzen ileride geri gelirse başlangıç noktasıdır.
 
 Bkz. "Çiftçi Ekin". Tarla 4 × 3 = 12 parsel. Adımlar (aletler çantada, E): tırmıkla hazırla → tohum ek → **sula** (yalnızca sulanmış tohum büyür; yağmur da sular) → olgunlaşınca tırpanla biç.
 

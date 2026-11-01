@@ -87,7 +87,7 @@ Kartın altında kısa dersler çıkar: **koşma dersi** (Kemal'in köprü göre
 v1.86'dan beri ACT 1 tek görevlik bir zincirle ilerler (ayrıntı: **ACT 1 · Görevler**). Kemal'in yalnızca ana yolda 5 görevi vardır; gerisi adadaki 26 kişiye dağılmıştır ve birbirini açar.
 
 1. **Çayır:** Kemal'in ilk işi (6 dal, 2 kuru ot) → Dursun aletleri öğretir (taş balta, kazma, çakmaktaşı balta, bileme, tunç) → Çınar kalas ve barınak, Nazlı meyve, balık, satış ve tuzak, Börü kamp ateşi, dövüş ve taş kılıç, Durmuş kemik, kiriş, tunç levha, Zümrüt otlar ve kazan. Börü oyuncuyu **Orman**'a yollar (Ekin ile tanışma).
-2. **Orman:** Ekin'in tarlası (dört alet), Sinan'ın yapıları, kuzenler Yakut, Durdu, Duran. Ekin'in ikinci işi bitince Kemal'in **köprü** görevi açılır (Seviye 6).
+2. **Orman:** Sinan'ın yapıları, kuzenler Yakut, Durdu, Duran. Kemal'in **köprü** görevi Seviye 6'da açılır (v2.68: Ekin ve tarlası şimdilik yok).
 3. **Köprünün ötesi:** Bataklık'ta Doğan ve kuzenler Safir, Ali (demir), Veli. Doğan'ın son işi oyuncuyu **Kayalık Dağ**'a götürür (Firuze, Kaya, Kayhan).
 4. **Doğu geçidi:** Kayalık Dağ'a varınca ve Seviye 10'da Kemal'in **patlatma** görevi: 2 kaya patlatıcı + kuvars ya da çelik kazma (4. kademe); patlayınca bütün sıradağ çöker ("Yol açıcı" başarımı).
 5. **Kül Diyarı:** Mercan, Turan, Tufan. Kül Diyarı'na varınca Kemal'in **izler** görevi: 6 mor iz; bitince **Gemi** tarifi kitaba yazılır, Barbaros'un enkazı Mor Kristal Vadisi kıyısına çarpar. Kemal'in son işi: Barbaros'u bul.

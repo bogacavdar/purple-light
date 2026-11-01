@@ -21,6 +21,8 @@ Yazılanlar: **Hasar** (temel; seviye ve güç iksiri ayrıca artırır), **hız
 
 ## Madenler ve ekipman merdiveni (v2.48, Boğaç)
 
+- **Her maden taş da verir (v2.68, Boğaç):** kazmayla bir madene (cevher, kömür, kristal…) her vuruşta madenin kendisinin yanında **%50 ihtimalle 1 Taş** düşer (Taş madeni zaten taş verir).
+
 ACT 1'in madenleri ve metal ekipmanı tek bir merdivene göre dizildi. Amaç: **her biyomda o biyomun madenleriyle bir öncekinden daha güçlü ve daha pahalı tam bir set yapılabilsin, biyom değiştirdikçe satılan madenler de daha pahalı olsun.** ACT 2 bu sürümde değişmedi (sonra aynı kurallarla ele alınacak).
 
 ### Kurallar

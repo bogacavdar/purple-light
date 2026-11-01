@@ -92,7 +92,7 @@ Toplam 2.020 sikke, 2.130 XP.
 **Yer:** Kemal'in yaklaşık 30 karo doğusu, 51 karo kuzeyi, Çayır'da tezgâhının başında. **Tanışma:** öğreticinin 9. adımı.
 
 - **Her şeyi satın alır.** Fiyat sabittir, çok satmak düşürmez. "Aletler, zırhlar, eşyalar hariç hepsini sat" ve "Kazanda işe yaramayanları sat" düğmeleri vardır.
-- **Yalnızca doğal malzeme satar**, o da en az bir kez eline geçmiş olanları (yapılmış eşya satmaz). Alış fiyatı malzemenin değerinin kabaca 2,6–5,6 katıdır (pahalı ve tehlikeli bölgelerin malzemesi daha pahalı). 1'li ya da 10'lu alınır.
+- **Doğal malzeme ve tarifini öğrendiğin eşyaları satar (v2.68, Boğaç):** doğal malzemeleri en az bir kez eline geçmişse; ayrıca **tarifini öğrendiğin her eşyayı** (Uzun sopa, İp, Sopa, yemekler…; yapılar, aletler, silahlar ve zırhlar hariç) değerinin **1,5 katına** satar (hiçbir zaman sana ödediği fiyatın altına inmez). Tohum ve tarla ürünü satmaz (tarlacılık şimdilik yok). Alış fiyatı malzemenin değerinin kabaca 2,6–5,6 katıdır (pahalı ve tehlikeli bölgelerin malzemesi daha pahalı). 1'li ya da 10'lu alınır.
 - Satış fiyatın bütün yeteneklerle en çok temel fiyatın 2,3 katına çıkar.
 - Hikâyesi: kardeşi Cem.
 
@@ -332,26 +332,7 @@ Toplam 45 görev, 14.570 sikke, 20.150 XP.
 
 ## Çiftçi Ekin
 
-**Yer:** adanın batısında, Orman'daki 4 × 3'lük tarlanın batı ucu. **Tanışma:** her zaman.
-
-Aletleri fırtınada denize gitmiş. Tarlayı kullanmak için ona sırayla dört alet getirirsin (aleti almaz, görüp onaylar; her adım +10 XP):
-
-| Getirdiğin | Verdiği tohum | Sikke | Kitabına yazdığı |
-|---|---|---|---|
-| (ilk konuşma) | – | – | Tırmık |
-| Tırmık | 4 Buğday tohumu | 15 | Sulama kabı |
-| Sulama kabı | 2 Havuç tohumu | 20 | Tırpan |
-| Tırpan | 2 Patates + 2 Soğan tohumu | 40 | Taş kazma |
-| Taş kazma (adıyla; daha iyi kazma sayılmaz) | 2 Kabak + 2 Ayçiçeği tohumu | 60 | – |
-
-**Tarla:** tırmıkla toprağı hazırla → tohum ek → sulama kabıyla sula → olgunlaşınca tırpanla biç. Büyüme: Buğday 60 sn, Havuç 80, Soğan 90, Patates 100, Ayçiçeği 120, Kabak 150. Hasatta %45 ihtimalle 1 tohum geri gelir. Ekin tohum satmaz.
-
-| # | Görev | İstenen | Açılma şartı | Sikke | XP |
-|---|---|---|---|---|---|
-| 1 | İlk hasat | Getir: 5 Buğday | dört alet tamamlanınca | 60 | 30 |
-| 2 | Sebze sepeti | Getir: 3 Havuç, 3 Soğan | dört alet tamamlanınca | 80 | 40 |
-| 3 | Ayçiçeği tarlası | Getir: 2 Ayçiçeği | dört alet tamamlanınca | 100 | 40 |
-
+> **v2.68, Boğaç: tarlacılık şimdilik oyunda yok.** Çiftçi Ekin, tarlası, kapısı ve H1–H8 görevleri kaldırıldı (ikinci adadaki gibi haritadan çıkarıldı). Eski kayıtlarda alınmış ya da bitirilmiş her Ekin görevi ödülü kadar sikke verir; tohumlar, ürünler ve tarla yemekleri fiyatından sikkeye çevrilir. Tarlacılık ileride geri gelebilir (bkz. **Açıklar · İleride: Tarlacılık**).
 
 ## Usta Sinan
 

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.67** ile birebir (1 Kasım 2026). Bu sürümde: Börü'nün Çift vuruş dersinde domuz hiç ölmez; ders 7 çift vuruş isabetiyle biter. Önceki sürüm (2.66): mağara girişine tıklayınca gir/çık penceresi, mağarada meşale daha yavaş biter.
+Sürüm: **Versiyon 2.68** ile birebir (1 Kasım 2026). Bu sürümde: tarlacılık şimdilik yok (Çiftçi Ekin, tarlası ve görevleri kaldırıldı; eski kayıtlara sikke); Pazarcı Nazlı öğrendiğin tariflerin eşyalarını da satar; her maden kazılırken taş da verir. Önceki sürüm (2.67): Börü'nün Çift vuruş dersinde domuz hiç ölmez.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

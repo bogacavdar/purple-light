@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.67** ile birebir (1 Kasım 2026). Bu sürümde: Börü'nün Çift vuruş dersinde domuz hiç ölmez; ders 7 çift vuruş isabetiyle biter. Önceki sürüm (2.66): mağara girişine tıklayınca gir/çık penceresi, mağarada meşale daha yavaş biter.
+Sürüm: **Versiyon 2.68** ile birebir (1 Kasım 2026). Bu sürümde: tarlacılık şimdilik yok (Çiftçi Ekin, tarlası ve görevleri kaldırıldı; eski kayıtlara sikke); Pazarcı Nazlı öğrendiğin tariflerin eşyalarını da satar; her maden kazılırken taş da verir. Önceki sürüm (2.67): Börü'nün Çift vuruş dersinde domuz hiç ölmez.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -265,7 +265,7 @@ Kartın altında kısa dersler çıkar: **koşma dersi** (Kemal'in köprü göre
 v1.86'dan beri ACT 1 tek görevlik bir zincirle ilerler (ayrıntı: **ACT 1 · Görevler**). Kemal'in yalnızca ana yolda 5 görevi vardır; gerisi adadaki 26 kişiye dağılmıştır ve birbirini açar.
 
 1. **Çayır:** Kemal'in ilk işi (6 dal, 2 kuru ot) → Dursun aletleri öğretir (taş balta, kazma, çakmaktaşı balta, bileme, tunç) → Çınar kalas ve barınak, Nazlı meyve, balık, satış ve tuzak, Börü kamp ateşi, dövüş ve taş kılıç, Durmuş kemik, kiriş, tunç levha, Zümrüt otlar ve kazan. Börü oyuncuyu **Orman**'a yollar (Ekin ile tanışma).
-2. **Orman:** Ekin'in tarlası (dört alet), Sinan'ın yapıları, kuzenler Yakut, Durdu, Duran. Ekin'in ikinci işi bitince Kemal'in **köprü** görevi açılır (Seviye 6).
+2. **Orman:** Sinan'ın yapıları, kuzenler Yakut, Durdu, Duran. Kemal'in **köprü** görevi Seviye 6'da açılır (v2.68: Ekin ve tarlası şimdilik yok).
 3. **Köprünün ötesi:** Bataklık'ta Doğan ve kuzenler Safir, Ali (demir), Veli. Doğan'ın son işi oyuncuyu **Kayalık Dağ**'a götürür (Firuze, Kaya, Kayhan).
 4. **Doğu geçidi:** Kayalık Dağ'a varınca ve Seviye 10'da Kemal'in **patlatma** görevi: 2 kaya patlatıcı + kuvars ya da çelik kazma (4. kademe); patlayınca bütün sıradağ çöker ("Yol açıcı" başarımı).
 5. **Kül Diyarı:** Mercan, Turan, Tufan. Kül Diyarı'na varınca Kemal'in **izler** görevi: 6 mor iz; bitince **Gemi** tarifi kitaba yazılır, Barbaros'un enkazı Mor Kristal Vadisi kıyısına çarpar. Kemal'in son işi: Barbaros'u bul.
@@ -402,7 +402,6 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 | Avlamak | türün XP'si (tablolarda) |
 | Reis | türün XP'si × 6 + 20 |
 | Toplamak (her düğüm, ağaç, meyve) | 1 |
-| Tarla adımı / hasat / Ekin'e alet | 1 / 3 / 10 |
 | Balık | 3 + fiyatın yarısı |
 | Tuzaktan av almak | 4 |
 | Közleme | közlenen parça sayısı (en çok 30) |
@@ -524,6 +523,8 @@ Karanlık çökünce (gece), ışık olmayan çimen ve orman zemininde çevrende
 - **Ateş böcekleri:** gece sefalarının çevresinde; yalnızca görüntü.
 
 ## Tarım
+
+> **v2.68: tarlacılık şimdilik oyunda yok** (bkz. Açıklar · İleride: Tarlacılık). Aşağıdaki eski düzen ileride geri gelirse başlangıç noktasıdır.
 
 Bkz. "Çiftçi Ekin". Tarla 4 × 3 = 12 parsel. Adımlar (aletler çantada, E): tırmıkla hazırla → tohum ek → **sula** (yalnızca sulanmış tohum büyür; yağmur da sular) → olgunlaşınca tırpanla biç.
 
@@ -851,7 +852,7 @@ Başladığın yer: hilalin batı ucunda, Çayır'ın Orman'a en uzak yerinde, g
 
 ## Orman — Güvenli
 
-Adanın kuzeybatısı (Çayır'dan doğuya, büyük nehre doğru yürü). Gölgeli ve sık; yaban domuzları, dikenli kirpiler, engerekler. Usta Sinan ve Çiftçi Ekin'in tarlası bu tarafta. **Kuzenler (v1.84):** Cadı Yakut (kırmızı kazan), Silahçı Durdu ve Zırhçı Duran. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
+Adanın kuzeybatısı (Çayır'dan doğuya, büyük nehre doğru yürü). Gölgeli ve sık; yaban domuzları, dikenli kirpiler, engerekler. Usta Sinan bu tarafta. **Kuzenler (v1.84):** Cadı Yakut (kırmızı kazan), Silahçı Durdu ve Zırhçı Duran. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
 
 **Ağaçlar**
 
@@ -1239,7 +1240,6 @@ Bir görev oyuncunun henüz bilmediği bir mekaniği istiyorsa, görev **önce k
 | Barınak ve uyku | Çınar 2 | Barınak yaptır → yere koy → gece içinde E ile uyu |
 | Kil ve kürek | Çınar 4 | Kürek yap → nehir kıyısında E → ıslak kil → kerpiç |
 | Ev ve yatak | Çınar 5 | Çınar'dan ev al → yere koy → içine gir → Sinan'dan yatak → evin içine koy |
-| Tarla | Ekin 1–3 | Tırmıkla hazırla → tohum ek → sulama kabıyla sula → tırpanla biç |
 | Yapı kurma | Sinan 2 | Malzemeyi topla → Sinan'a E → kurar → yere yerleştir |
 | Çamur ve çizme | Doğan 1 | Bataklık çamuru yavaşlatır → kamış çizme yap → giy |
 
@@ -1277,7 +1277,7 @@ Kumsalda seni bulan yaşlı denizci; sakin, kollayıcı, öğretici. Kemal'de ya
 | # | Görev | İstenen | Açılma | Açar | Ders | Ödül |
 |---|---|---|---|---|---|---|
 | E1 | Ateşlik çalı | Getir: 6 Dal, 2 Kuru ot | Öğretici bitti ya da geçildi | Dursun 1, Zümrüt 1 | – | 20 · 15 XP |
-| E2 | Bir köprüyü onar | Ana köprü (Orman ↔ Bataklık): 20 odun, onay penceresiyle | Orman keşfedildi · Seviye 6 · Ekin 2 | Doğan 1 ve Bataklık'taki görevler | Köprü onarımı | 150 · 120 XP |
+| E2 | Bir köprüyü onar | Ana köprü (Orman ↔ Bataklık): 20 odun, onay penceresiyle | Orman keşfedildi · Seviye 6 (v2.68: Ekin şartı kalktı) | Doğan 1 ve Bataklık'taki görevler | Köprü onarımı | 150 · 120 XP |
 | E3 | Doğu geçidini aç | 2 Kaya patlatıcı + 4. kademe ya da daha iyi kazma (Kuvars ya da Çelik); kaya yığınına E, onay | Kayalık Dağ keşfedildi · Seviye 10 | Kül Diyarı'ndaki görevler | Kaya patlatıcı | 300 · 400 XP |
 | E4 | Eşinden kalan izler | Bul: 6 iz (önceden bulunanlar sayılır) | Kül Diyarı keşfedildi | E5, Gemi tarifi | – | 300 · 600 XP |
 | E5 | Kıyıdaki duman | Ulaş: Mor Kristal Vadisi'ne git (Kemal dumanı merak eder; kimseyi söylemez) | E4 | E6, Barbaros 1 | – | 200 · 300 XP |
@@ -1361,7 +1361,7 @@ Sert ama sıcak; kaçmayı da öğreten savaşçı. Oyuncuyu kuzeye, Orman'a ilk
 | B4 | Geyik sürüsü | Avla: 2 Geyik | B3 · N4 | B5 | – | 60 · 40 XP |
 
 **Börü belirli bir silah istemez (v2.58, Boğaç):** Börü'nün dersleri ve görevleri kılıç, mızrak gibi belirli bir silah istemez; "İlk silah" (B3) **herhangi bir** silah çantana (ya da eline, silah yuvana) girdiği an biter (kılıç, gürz, topuz, mızrak; kendi yaptığın, dövdürdüğün ya da bulduğun). **Silah yuvasına takmak gerekmez (v2.59, Boğaç).** Görev kartında "Bir silah edin (kılıç, gürz, topuz ya da mızrak)" yazar; silahın yoksa ok demirciyi gösterir.
-| B5 | Kuzeye keşif | Ulaş: Orman'a git (kimseyle tanıştırmaz) | B4 · Seviye 3 | B6, Ekin 1, Sinan 1 | – | 80 · 50 XP |
+| B5 | Kuzeye keşif | Ulaş: Orman'a git (kimseyle tanıştırmaz) | B4 · Seviye 3 | B6, Sinan 1 | – | 80 · 50 XP |
 | B6 | Domuz avı | Avla: 2 Yaban domuzu (Orman) | B5 | B7, Durdu 2 | – | 120 · 80 XP |
 | B7 | Kurt gecesi | Avla: 3 Kurt | B6 · Seviye 7 | B8 | – | 130 · 85 XP |
 | B8 | Kaan'ın borusu | Getir: 2 Geyik boynuzu · Avla: 2 Yaban atı | B7 · Seviye 9 | – | – | 140 · 95 XP |
@@ -1388,18 +1388,7 @@ Eski Gemici Poyraz'ın U1–U8 görevleri v2.34'te kalktı. Poyraz'ın yeni gör
 
 ### Çiftçi Ekin · Orman
 
-Kızı Gül için tarla eken sabırlı çiftçi.
-
-| # | Görev | İstenen | Açılma | Açar | Ders | Ödül |
-|---|---|---|---|---|---|---|
-| H1 | Tırmık | Yap ve Ekin'e ver: Tırmık | B5 ya da Orman keşfedildi | H2 | Tarla (hazırlama) | 40 · 30 XP |
-| H2 | Sulama kabı | Yap ve Ekin'e ver: Sulama kabı | H1 | H3, E2 | Tarla (ekme, sulama) | 50 · 35 XP |
-| H3 | İlk hasat | Ekin'e Tırpan ver; ek, sula, biç: 5 Buğday getir | H2 | H4 | Tarla (biçme) | 80 · 50 XP |
-| H4 | Sebze sepeti | Ekin'e Taş kazma ver; getir: 3 Havuç, 3 Soğan (tarladan) | H3 | H5 | – | 100 · 60 XP |
-| H5 | Bataklık kamışı | Getir: 8 Kamış (Bataklık, çit için) | H4 · E2 | H6 | – | 120 · 80 XP |
-| H6 | Kavrulmuş nohut | Getir: 8 Yabani nohut, 8 Yabani mercimek | H5 · Seviye 8 | H7 | – | 140 · 90 XP |
-| H7 | Ambar hırsızları | Avla: 3 Sincap · Getir: 6 Yaban sarımsağı | H6 · Seviye 10 | H8 | – | 160 · 100 XP |
-| H8 | Yorgun toprak | Getir: 8 Yarasa gübresi, 10 Eğrelti | H7 · Seviye 12 | – | – | 180 · 110 XP |
+> **v2.68, Boğaç: tarlacılık şimdilik oyunda yok.** Çiftçi Ekin, tarlası, kapısı ve H1–H8 görevleri kaldırıldı (ikinci adadaki gibi haritadan çıkarıldı). Eski kayıtlarda alınmış ya da bitirilmiş her Ekin görevi ödülü kadar sikke verir; tohumlar, ürünler ve tarla yemekleri fiyatından sikkeye çevrilir. Tarlacılık ileride geri gelebilir (bkz. **Açıklar · İleride: Tarlacılık**).
 
 ### Usta Sinan · Orman
 
@@ -2209,7 +2198,7 @@ Toplam 2.020 sikke, 2.130 XP.
 **Yer:** Kemal'in yaklaşık 30 karo doğusu, 51 karo kuzeyi, Çayır'da tezgâhının başında. **Tanışma:** öğreticinin 9. adımı.
 
 - **Her şeyi satın alır.** Fiyat sabittir, çok satmak düşürmez. "Aletler, zırhlar, eşyalar hariç hepsini sat" ve "Kazanda işe yaramayanları sat" düğmeleri vardır.
-- **Yalnızca doğal malzeme satar**, o da en az bir kez eline geçmiş olanları (yapılmış eşya satmaz). Alış fiyatı malzemenin değerinin kabaca 2,6–5,6 katıdır (pahalı ve tehlikeli bölgelerin malzemesi daha pahalı). 1'li ya da 10'lu alınır.
+- **Doğal malzeme ve tarifini öğrendiğin eşyaları satar (v2.68, Boğaç):** doğal malzemeleri en az bir kez eline geçmişse; ayrıca **tarifini öğrendiğin her eşyayı** (Uzun sopa, İp, Sopa, yemekler…; yapılar, aletler, silahlar ve zırhlar hariç) değerinin **1,5 katına** satar (hiçbir zaman sana ödediği fiyatın altına inmez). Tohum ve tarla ürünü satmaz (tarlacılık şimdilik yok). Alış fiyatı malzemenin değerinin kabaca 2,6–5,6 katıdır (pahalı ve tehlikeli bölgelerin malzemesi daha pahalı). 1'li ya da 10'lu alınır.
 - Satış fiyatın bütün yeteneklerle en çok temel fiyatın 2,3 katına çıkar.
 - Hikâyesi: kardeşi Cem.
 
@@ -2449,26 +2438,7 @@ Toplam 45 görev, 14.570 sikke, 20.150 XP.
 
 ## Çiftçi Ekin
 
-**Yer:** adanın batısında, Orman'daki 4 × 3'lük tarlanın batı ucu. **Tanışma:** her zaman.
-
-Aletleri fırtınada denize gitmiş. Tarlayı kullanmak için ona sırayla dört alet getirirsin (aleti almaz, görüp onaylar; her adım +10 XP):
-
-| Getirdiğin | Verdiği tohum | Sikke | Kitabına yazdığı |
-|---|---|---|---|
-| (ilk konuşma) | – | – | Tırmık |
-| Tırmık | 4 Buğday tohumu | 15 | Sulama kabı |
-| Sulama kabı | 2 Havuç tohumu | 20 | Tırpan |
-| Tırpan | 2 Patates + 2 Soğan tohumu | 40 | Taş kazma |
-| Taş kazma (adıyla; daha iyi kazma sayılmaz) | 2 Kabak + 2 Ayçiçeği tohumu | 60 | – |
-
-**Tarla:** tırmıkla toprağı hazırla → tohum ek → sulama kabıyla sula → olgunlaşınca tırpanla biç. Büyüme: Buğday 60 sn, Havuç 80, Soğan 90, Patates 100, Ayçiçeği 120, Kabak 150. Hasatta %45 ihtimalle 1 tohum geri gelir. Ekin tohum satmaz.
-
-| # | Görev | İstenen | Açılma şartı | Sikke | XP |
-|---|---|---|---|---|---|
-| 1 | İlk hasat | Getir: 5 Buğday | dört alet tamamlanınca | 60 | 30 |
-| 2 | Sebze sepeti | Getir: 3 Havuç, 3 Soğan | dört alet tamamlanınca | 80 | 40 |
-| 3 | Ayçiçeği tarlası | Getir: 2 Ayçiçeği | dört alet tamamlanınca | 100 | 40 |
-
+> **v2.68, Boğaç: tarlacılık şimdilik oyunda yok.** Çiftçi Ekin, tarlası, kapısı ve H1–H8 görevleri kaldırıldı (ikinci adadaki gibi haritadan çıkarıldı). Eski kayıtlarda alınmış ya da bitirilmiş her Ekin görevi ödülü kadar sikke verir; tohumlar, ürünler ve tarla yemekleri fiyatından sikkeye çevrilir. Tarlacılık ileride geri gelebilir (bkz. **Açıklar · İleride: Tarlacılık**).
 
 ## Usta Sinan
 
@@ -3098,7 +3068,6 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Ateş çiçeği balı | 1 Ateş çiçeği, 1 Yabani bal, 1 Su | – | El yapımı (Tab) | 20 |
 | Ateş narı şerbeti | 3 Ateş narı, 1 Herhangi çömlek, 2 Su | – | El yapımı (Tab) | 126 |
 | Avcı yahnisi | 3 Herhangi çiğ et, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
-| Ayçiçek yağı | 5 Ayçiçeği | – | El yapımı (Tab) | 96 |
 | Ay elması reçeli | 3 Ay elması, 1 Yabani bal, 1 Herhangi çömlek | – | El yapımı (Tab) | 165 |
 | Balık çorbası | 3 Herhangi balık, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
 | Ballı ekmek | 1 Herhangi yassı ekmek, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 75 |
@@ -3108,13 +3077,10 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Bal şerbeti | 1 Yabani bal, 5 Su, 1 Yaprak | – | El yapımı (Tab) | 17 |
 | Böğürtlen ezmesi | 3 Böğürtlen, 1 Su | Taş havan | El yapımı (Tab) | 14 |
 | Böğürtlen suyu | 3 Böğürtlen, 1 Herhangi çömlek, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
-| Buğday unu | 5 Buğday | – | El yapımı (Tab) | 48 |
 | Ceviz içi | 2 Ceviz, 2 Su, 1 Yaprak | Çekiç taşı | El yapımı (Tab) | 12 |
 | Ceviz yağı | 1 Ceviz içi, 3 Su, 3 Yaprak | Öğütme taşı | El yapımı (Tab) | 25 |
-| Çiftçi yahnisi | 2 Patates, 2 Havuç, 2 Soğan, 2 Su, 1 Ateş | – | El yapımı (Tab) | 112 |
 | Dağ çayı demi | 3 Dağ çayı, 2 Su, 1 Ateş | – | El yapımı (Tab) | 57 |
 | Ejder meyvesi şerbeti ² | 3 Ejder meyvesi, 2 Su, 1 Herhangi çömlek | – | El yapımı (Tab) | 142 |
-| Ekmek | 2 Buğday unu, 2 Su, 1 Ateş | – | El yapımı (Tab) | 153 |
 | Et şişi | 3 Herhangi çiğ et, 1 Sopa, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 28 |
 | Goblin eriği reçeli ² | 3 Goblin eriği, 1 Herhangi çömlek | – | El yapımı (Tab) | 108 |
 | Gök üzümü suyu ² | 3 Gök üzümü, 2 Su | – | El yapımı (Tab) | 86 |
@@ -3125,15 +3091,12 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Haşlanmış turna kuşu yumurtası | 2 Turna kuşu yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
 | Haşlanmış ur kekliği yumurtası | 2 Ur kekliği yumurtası, 2 Su, 1 Ateş | – | El yapımı (Tab) | 47 |
 | Haşlanmış yaban kazı yumurtası | 2 Yaban kazı yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
-| Havuç çorbası | 3 Havuç, 2 Su, 1 Soğan | – | El yapımı (Tab) | 50 |
 | Havyar | 1 Mersin balığı, 1 Tuz kayası, 2 Yaprak | Taş bıçak | El yapımı (Tab) | 26 |
 | Hurma ezmesi ² | 3 Hurma, 1 Herhangi çömlek | – | El yapımı (Tab) | 108 |
 | Isırgan çorbası | 3 Isırgan, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 56 |
 | Işık mantarı çorbası | 3 Işık mantarı, 2 Su, 1 Ateş | – | El yapımı (Tab) | 248 |
-| Kabak çorbası | 1 Kabak, 2 Su, 1 Soğan, 1 Havuç | – | El yapımı (Tab) | 55 |
 | Kara tuzlu et | 2 Herhangi çiğ et, 1 Kara tuz | – | El yapımı (Tab) | 54 |
 | Kavrulmuş fındık | 3 Fındık, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
-| Kavrulmuş kabak çekirdeği | 3 Kabak, 1 Ateş | – | El yapımı (Tab) | 120 |
 | Kavrulmuş kestane | 3 Kestane, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
 | Kavrulmuş su kestanesi | 2 Su kestanesi, 1 Ateş, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 39 |
 | Kavrulmuş yabani arpa | 3 Yabani arpa, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
@@ -3152,7 +3115,6 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Kızarmış yabani havuç | 3 Yabani havuç, 1 Su | Pişirme taşı | El yapımı (Tab) | 15 |
 | Kızılcık ezmesi | 3 Kızılcık, 1 Su | Taş havan | El yapımı (Tab) | 14 |
 | Kızılcık suyu | 3 Kızılcık, 1 Herhangi çömlek, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
-| Közde patates | 3 Patates, 1 Ateş | – | El yapımı (Tab) | 73 |
 | Közlenmiş şiş | 1 Et şişi, 1 Kor, 5 Su, 4 Yaprak | – | El yapımı (Tab) | 108 |
 | Kristal armut kompostosu ² | 3 Kristal armut, 2 Su, 1 Ateş | – | El yapımı (Tab) | 88 |
 | Kurutulmuş ahududu | 3 Ahududu, 3 Kuru ot | – | El yapımı (Tab) | 11 |
@@ -3227,7 +3189,6 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Ot salatası | 3 Kuzukulağı, 3 Su teresi | – | El yapımı (Tab) | 11 |
 | Palamut ekmeği | 1 Palamut unu, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 42 |
 | Palamut unu | 3 Meşe palamudu, 1 Su | Öğütme taşı | El yapımı (Tab) | 7 |
-| Patates püresi | 4 Patates, 1 Su | – | El yapımı (Tab) | 59 |
 | Pemmikan | 1 Herhangi kurutulmuş et, 2 Hayvan yağı, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 54 |
 | Pişmiş alabalık | 2 Alabalık, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 46 |
 | Pişmiş bıldırcın eti | 2 Bıldırcın eti, 1 Ateş, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 39 |
@@ -3274,7 +3235,6 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Pişmiş yılan balığı | 1 Yılan balığı, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 42 |
 | Pişmiş yıldız tilkisi eti ² | 1 Yıldız tilkisi eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 60 |
 | Sarımsaklı et | 1 Herhangi pişmiş et, 3 Yaban sarımsağı, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 65 |
-| Soğan halkası | 3 Soğan, 1 Buğday unu, 1 Ayçiçek yağı | – | El yapımı (Tab) | 218 |
 | Spor ekmeği ² | 3 Spor tozu, 2 Su, 1 Ateş | – | El yapımı (Tab) | 88 |
 | Taşta alabalık | 2 Alabalık, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 23 |
 | Taşta çapak | 2 Çapak, 2 Su, 1 Yaprak | Pişirme taşı | El yapımı (Tab) | 17 |
@@ -3900,7 +3860,7 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Roket motoru ² | 2 Yıldız külçesi, 3 Plazma hücresi, 1 Ejder kalbi, 1 Yakıt hücresi | – | Astronot Gökay yapar (1500 sikke işçilik) | 14.000 |
 | Sal | 1 Herhangi kalas, 1 Halat, 3 İp, 3 Dal | – | El yapımı (Tab) | 92 |
 | Sandal küreği | 1 Herhangi kalas, 3 İp, 3 Dal | Çakmaktaşı bıçak | El yapımı (Tab) | 52 |
-| Yelkenli sal | 1 Sal, 3 Hasır, 2 Halat, 2 Uzun sopa, 1 Sandal küreği, 1 Hasat sepeti | Taş balta | El yapımı (Tab) | 640 |
+| Yelkenli sal | 1 Sal, 3 Hasır, 2 Halat, 2 Uzun sopa, 1 Sandal küreği | Taş balta | El yapımı (Tab) | 640 |
 
 #### Metal (9)
 
@@ -3960,8 +3920,6 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Hasat sepeti | 2 Buğday, 2 Havuç, 2 Patates, 2 Soğan, 1 Kabak, 1 Ayçiçeği | – | El yapımı (Tab) | 144 |
-| Korkuluk | 2 Sopa, 4 Kuru ot, 1 Kabak, 1 İp | – | El yapımı (Tab) | 74 |
 | Sulama kabı | 1 Herhangi çömlek, 2 İp, 1 Sopa | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 96 |
 | Tırmık | 2 Sopa, 3 Keskin taş, 1 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 50 |
 | Tırpan | 1 Uzun sopa, 2 Çakmaktaşı pulu, 2 İp, 1 Dal | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 153 |
@@ -4053,6 +4011,8 @@ Yazılanlar: **Hasar** (temel; seviye ve güç iksiri ayrıca artırır), **hız
 **Her yerde kısa etiket (v2.65, Boğaç):** silah ya da zırh olan her eşya karesinin sol üst köşesinde kısa bir etiket durur: silahta **⚔hasar**, zırhta **🛡savunma** (envanter, kemer, tarif kitabı, kuşanma yuvaları, pazar ve diğer eşya kareleri). Listelerde (giyme seçimi, kemer seçici, pazar satırları) adın altında tam satır yazar; üzerine gelince ya da dokununca tam bilgi ipucu çıkar. Tarif kitabında tarifi henüz açılmamış silah ve zırhın da özellikleri görünür.
 
 ## Madenler ve ekipman merdiveni (v2.48, Boğaç)
+
+- **Her maden taş da verir (v2.68, Boğaç):** kazmayla bir madene (cevher, kömür, kristal…) her vuruşta madenin kendisinin yanında **%50 ihtimalle 1 Taş** düşer (Taş madeni zaten taş verir).
 
 ACT 1'in madenleri ve metal ekipmanı tek bir merdivene göre dizildi. Amaç: **her biyomda o biyomun madenleriyle bir öncekinden daha güçlü ve daha pahalı tam bir set yapılabilsin, biyom değiştirdikçe satılan madenler de daha pahalı olsun.** ACT 2 bu sürümde değişmedi (sonra aynı kurallarla ele alınacak).
 
@@ -4586,9 +4546,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Atölye | 127 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan / Marangoz Çınar yapar, yere kurulur | – |
 | Avcı yahnisi | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ziyafet sofrası |
 | Av sahnesi duvar resmi | 216 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Ayçiçeği | 16 | yenir +4 | Tarlada yetiştirilir (tohumunu ek, sula, tırpanla biç) | Ayçiçek yağı, Hasat sepeti |
-| Ayçiçeği tohumu | 6 | – | Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar · Hasatta %45 ihtimalle 1 tane (Ayçiçeği) | – |
-| Ayçiçek yağı | 96 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Soğan halkası |
 | Ayı pençesi | 22 | – | Av: Mağara ayısı düşürür %60 (ACT 1 · Kayalık Dağ) | Pençe kolye, Gümüş pullu zırh |
 | Ay çayı | 26 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ay çiçeği ² | 28 | – | Yerden toplanır: Gök Rıhtımı (ACT 2) | – |
@@ -4657,9 +4614,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Böğürtlen | 2 | yenir +6 | Yerden toplanır: Çayır (ACT 1) | Böğürtlen ezmesi, Böğürtlen suyu, Kurutulmuş böğürtlen, Meyve karışımı |
 | Böğürtlen ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Böğürtlen suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Buğday | 8 | – | Tarlada yetiştirilir (tohumunu ek, sula, tırpanla biç) | Buğday unu, Hasat sepeti |
-| Buğday tohumu | 3 | – | Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar · Hasatta %45 ihtimalle 1 tane (Buğday) | – |
-| Buğday unu | 48 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ekmek, Soğan halkası |
 | Buhar | 83 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Bulut çamı kalası ² | 47 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+14) |
 | Bulut çamı odunu ² | 14 | – | Balta ile Bulut çamı ağacından: Yüzen Kayalar (ACT 2) | Bulut çamı kalası, Kütük salı, Oyma kano |
@@ -4715,7 +4669,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Çapak | 3 | – | Balık: Çayır/Orman suları (deniz), olta/ağ/zıpkın ile %28; balık kapanına da girer · Balık: Çayır/Orman suları (nehir/göl), olta/ağ/zıpkın ile %14; balık kapanına da girer | Balık çorbası, Balık sepeti, Kurutulmuş çapak, Pişmiş çapak, Taşta çapak, Tütsülenmiş çapak |
 | Çayır mantarı | 2 | – | Yerden toplanır: Çayır (ACT 1) | Kızarmış çayır mantarı, Kurutulmuş çayır mantarı |
 | Çekiç taşı | 5 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | Bazalt pulu (alet), Bileği taşı (alet), Ceviz içi (alet), Çakmaktaşı pulu (alet), Kemik ok ucu (alet), Kristal parçası (alet) … (+10) |
-| Çiftçi yahnisi | 112 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Çit | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan / Marangoz Çınar yapar, yere kurulur | Ağıl |
 | Çöl otu ² | 8 | – | Yerden toplanır: Hurda Çölü (ACT 2) | – |
 | Çömlek fırını | 331 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan / Marangoz Çınar yapar, yere kurulur | – |
@@ -4783,7 +4736,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ejder otu ² | 28 | – | Yerden toplanır: Ejder Volkanı (ACT 2) | – |
 | Ejder pulu eldiven ² | 2.968 | giyilir +16 savunma | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | – |
 | Ejder zırhı | 2.488 | giyilir +60 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | – |
-| Ekmek | 153 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Elma odunu | – | – | Balta ile Elma ağacından: Çayır (ACT 1) | – |
 | Elma tohumu | 3 | – | Elma ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
 | El izi resmi | 45 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -4869,7 +4821,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Halı | 585 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Hardal ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Hardal otu | 2 | – | Yerden toplanır: Çayır (ACT 1) | Hardal ezmesi, Kurutulmuş hardal otu |
-| Hasat sepeti | 144 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Yelkenli sal |
 | Hasır | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Gemi, Hasır yatak, Kulübe, Kurutma rafı, Sepet, Yelkenli sal |
 | Hasırotu | 1 | – | Yerden toplanır: Bataklık (ACT 1) | Hasırotu meşalesi, Hasırotu yatak |
 | Hasırotu meşalesi | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -4881,9 +4832,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Haşlanmış turna kuşu yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Haşlanmış ur kekliği yumurtası | 47 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Haşlanmış yaban kazı yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Havuç | 10 | yenir +8 | Tarlada yetiştirilir (tohumunu ek, sula, tırpanla biç) | Çiftçi yahnisi, Hasat sepeti, Havuç çorbası, Kabak çorbası |
-| Havuç çorbası | 50 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Havuç tohumu | 4 | – | Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar · Hasatta %45 ihtimalle 1 tane (Havuç) | – |
 | Havyar | 26 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Hayvan yağı | 3 | – | Av: Geyik düşürür %30 (ACT 1 · Çayır) · Av: Yaban öküzü düşürür %60 (ACT 1 · Kayalık Dağ) · Av: Yaban domuzu düşürür %40 (ACT 1 · Orman) · Av: Mağara ayısı düşürür %60 (ACT 1 · Kayalık Dağ) · Av: Mantar geyiği düşürür %30 (ACT 2 · Dev Mantar Ormanı) · Av: Kor domuzu düşürür %40 (ACT 2 · Ejder Volkanı) · Av: Yıldız geyiği düşürür %30 (ACT 2 · Gök Rıhtımı) | Ateş çiçeği merhemi, Beyaz boya, Don yağı mumu, Gelincik boyası, Hasırotu meşalesi, Kara boya … (+13) |
 | Hurda çizme ² | 1.631 | giyilir +15 savunma | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | Meka çizme |
@@ -4936,9 +4884,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | İp | 5 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ağ, Akçaağaç kaşığı, Akrep kabuğu kalkanı, Akrep ok ucu, Altın kolye, Ana tanrıça heykelciği … (+161) |
 | İri diken | 12 | – | Av: Oklu kirpi düşürür %100 (ACT 1 · Orman) | Diken ok ucu, Ceviz kabuğu miğfer |
 | İskele | 215 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan / Marangoz Çınar yapar, yere kurulur | – |
-| Kabak | 24 | yenir +10 | Tarlada yetiştirilir (tohumunu ek, sula, tırpanla biç) | Hasat sepeti, Kabak çorbası, Kavrulmuş kabak çekirdeği, Korkuluk |
-| Kabak çorbası | 55 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kabak tohumu | 8 | – | Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar · Hasatta %45 ihtimalle 1 tane (Kabak) | – |
 | Kaba meşale | 7 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kadife balığı | 4 | – | Balık: Bataklık/Kayalık Dağ suları, olta/ağ/zıpkın ile %20; balık kapanına da girer · Balık: Kül Diyarı/Mor Kristal Vadisi suları, olta/ağ/zıpkın ile %16; balık kapanına da girer | Balık çorbası, Balık sepeti, Kurutulmuş kadife balığı, Pişmiş kadife balığı, Taşta kadife balığı, Tütsülenmiş kadife balığı |
 | Kafa lambası | 300 | giyilir +3 savunma | Yıldızsız Işıkçı ile takas: 5 Mor kıymık + 3 Gece sefası + 1 Tunç külçesi (baş yuvasına takılır, gece kendiliğinden yanar) | – |
@@ -4980,7 +4925,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kavak odunu | 3 | – | Balta ile Kavak ağacından: Çayır (ACT 1) | Kavak kabuğu, Kavak kalası, Kavak kömürü, Kütük salı, Oyma kano |
 | Kavak sapı | 31 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bazalt bıçak, Boynuz kazma, Çakmaktaşı balta, Çakmaktaşı bıçak … (+22) |
 | Kavrulmuş fındık | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ballı fındık |
-| Kavrulmuş kabak çekirdeği | 120 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kavrulmuş kestane | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ballı kestane |
 | Kavrulmuş su kestanesi | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kavrulmuş yabani arpa | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -5086,7 +5030,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kobalt külçesi ² | 184 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Kristal miğfer, Meka zırh |
 | Konak | 3.200 | – | Marangoz Çınar yapar (5.000 sikke) | – |
 | Kor | 40 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Balık tutkalı, Közlenmiş şiş, Oyma kano |
-| Korkuluk | 74 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kor kertenkelesi eti ² | 14 | – | Av: Kor kertenkelesi düşürür %100 (ACT 2 · Ejder Volkanı) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş kor kertenkelesi eti, Turba ateşinde tütsü |
 | Kor mantarı ² | 26 | – | Yerden toplanır: Ejder Volkanı (ACT 2) | – |
 | Kor merhemi | 87 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -5099,7 +5042,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kök yumrusu ² | 14 | yenir +5 | Yerden toplanır: Dev Mantar Ormanı (ACT 2) | – |
 | Kömür ağacı kalası ² | 99 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+15) |
 | Kömür ağacı odunu ² | 34 | – | Balta ile Kömür ağacı ağacından: Ejder Volkanı (ACT 2) | Kömür ağacı kalası, Kütük salı, Oyma kano |
-| Közde patates | 73 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Közlenmiş alabalık | 11 | – | Kamp ateşinde közlenir (çiğ hali: Alabalık) | – |
 | Közlenmiş bıldırcın eti | 7 | – | Kamp ateşinde közlenir (çiğ hali: Bıldırcın eti) | – |
 | Közlenmiş çapak | 7 | – | Kamp ateşinde közlenir (çiğ hali: Çapak) | – |
@@ -5405,9 +5347,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Pas ağacı kalası ² | 73 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+14) |
 | Pas ağacı odunu ² | 24 | – | Balta ile Pas ağacı ağacından: Hurda Çölü (ACT 2) | Kütük salı, Oyma kano, Pas ağacı kalası |
 | Pas tozu ² | 8 | – | Yerden toplanır: Hurda Çölü (ACT 2) · Av: Pas böceği düşürür %100 (ACT 2 · Hurda Çölü) | – |
-| Patates | 12 | yenir +5 | Tarlada yetiştirilir (tohumunu ek, sula, tırpanla biç) | Çiftçi yahnisi, Hasat sepeti, Közde patates, Patates püresi |
-| Patates püresi | 59 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Patates tohumu | 5 | – | Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar · Hasatta %45 ihtimalle 1 tane (Patates) | – |
 | Pemmikan | 54 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Meyveli pemmikan |
 | Pençe kolye | 63 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Perde | 302 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
@@ -5515,9 +5454,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Sinirotu çayı | 69 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Sinir kirişi | 16 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Demir balta, Demir kazma, Demir kılıç, Demir mızrak, Demir zırh … (+12) |
 | Sivri taş | 23 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Taş bıçak, Taş kazma |
-| Soğan | 10 | yenir +3 | Tarlada yetiştirilir (tohumunu ek, sula, tırpanla biç) | Çiftçi yahnisi, Hasat sepeti, Havuç çorbası, Kabak çorbası, Soğan halkası |
-| Soğan halkası | 218 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Soğan tohumu | 4 | – | Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar · Hasatta %45 ihtimalle 1 tane (Soğan) | – |
 | Sopa | 12 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Atölye, Duvar halısı, Et şişi, Hasır yatak, Kirmen, Korkuluk … (+15) |
 | Söğüt dalı | 1 | – | Söğüt ağacı kesilince 2 tane düşer | Söğüt sepeti |
 | Söğüt kabuğu | 12 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Söğüt kabuğu çayı |
@@ -6004,6 +5940,11 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 | 27 | ACT 2 zorluğu | ACT 2'nin "Güvenli" biyomlarındaki canavarlar bile çok güçlü (Bulut koyunu 1.200 can, Goblin 2.580 can / 343 hasar); ACT 1 sonu ekipmanla bir goblin 1 dakikadan uzun sürüyor. | Denge kararı (Boğaç). |
 | 28 | ACT 2 küçükleri | Yıldız'ın kazanının başlığı "Cadının kazanı"; hileyle geçişte görev kartı Kemal'i gösteriyor ve köprü/geçit başarımları bedava geliyor; Tabanca yakın hedefte ıskalayabiliyor (belirsiz). | Düzeltme. |
 | 29 | Meşale (öğretici) | Sabah yakılan meşale gündüz de yanıp öğlen sönüyor. | Tasarım kararı. |
+
+
+## İleride: Tarlacılık
+
+> **v2.68, Boğaç:** tarlacılık şimdilik oyundan çıkarıldı; ileride yeniden eklenebilir. Eski düzen (geri getirilirse başlangıç noktası): Orman'da Çiftçi Ekin ve 4 × 3'lük tarlası; dört alet (Tırmık, Sulama kabı, Tırpan, Taş kazma) getirilince tarla açılır; tırmıkla hazırla, tohum ek, sula, biç; ürünler Buğday, Havuç, Patates, Soğan, Kabak, Ayçiçeği; H1–H8 görev zinciri; ürünlerden yapılan yemekler (Ekmek, Buğday unu, çorbalar, Çiftçi yahnisi, Patates püresi, Soğan halkası, Ayçiçek yağı…), Korkuluk ve Hasat sepeti. Geri gelirse biyom kuralları ve "önce belge" kuralıyla yeniden tasarlanır.
 
 
 # ACT 3 ve sonrası (henüz oyunda değil)

@@ -34,3 +34,8 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 | 27 | ACT 2 zorluğu | ACT 2'nin "Güvenli" biyomlarındaki canavarlar bile çok güçlü (Bulut koyunu 1.200 can, Goblin 2.580 can / 343 hasar); ACT 1 sonu ekipmanla bir goblin 1 dakikadan uzun sürüyor. | Denge kararı (Boğaç). |
 | 28 | ACT 2 küçükleri | Yıldız'ın kazanının başlığı "Cadının kazanı"; hileyle geçişte görev kartı Kemal'i gösteriyor ve köprü/geçit başarımları bedava geliyor; Tabanca yakın hedefte ıskalayabiliyor (belirsiz). | Düzeltme. |
 | 29 | Meşale (öğretici) | Sabah yakılan meşale gündüz de yanıp öğlen sönüyor. | Tasarım kararı. |
+
+
+## İleride: Tarlacılık
+
+> **v2.68, Boğaç:** tarlacılık şimdilik oyundan çıkarıldı; ileride yeniden eklenebilir. Eski düzen (geri getirilirse başlangıç noktası): Orman'da Çiftçi Ekin ve 4 × 3'lük tarlası; dört alet (Tırmık, Sulama kabı, Tırpan, Taş kazma) getirilince tarla açılır; tırmıkla hazırla, tohum ek, sula, biç; ürünler Buğday, Havuç, Patates, Soğan, Kabak, Ayçiçeği; H1–H8 görev zinciri; ürünlerden yapılan yemekler (Ekmek, Buğday unu, çorbalar, Çiftçi yahnisi, Patates püresi, Soğan halkası, Ayçiçek yağı…), Korkuluk ve Hasat sepeti. Geri gelirse biyom kuralları ve "önce belge" kuralıyla yeniden tasarlanır.

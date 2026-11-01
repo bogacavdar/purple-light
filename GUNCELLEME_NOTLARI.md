@@ -15,6 +15,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.68 · 1 Kasım 2026
+
+### Oynanış
+- **Tarlacılık şimdilik yok:** Çiftçi Ekin, tarlası, yanındaki kapı (portal) ve görevleri (Tırmık, Sulama kabı, İlk hasat, Sebze sepeti, Bataklık kamışı, Kavrulmuş nohut, Ambar hırsızları, Yorgun toprak) oyundan kaldırıldı. Tarlacılık ileride geri gelebilir; tasarım belgesine yazıldı.
+- Ekin'in görevine bağlı olan Kemal'in **"Bir köprüyü onar"** görevi artık Orman keşfi ve 6. seviyeyle açılır; görev zinciri kesilmeden devam eder.
+- Tarla ürünlerinden yapılan tarifler kaldırıldı: Ekmek, Buğday unu, Ayçiçek yağı, Havuç çorbası, Kabak çorbası, Çiftçi yahnisi, Patates püresi, Közde patates, Soğan halkası, Kavrulmuş kabak çekirdeği, Korkuluk, Hasat sepeti. **Yelkenli sal** artık Hasat sepeti istemez.
+- Börü'nün "Yaban domuzu" görevindeki konuşma Ekin'in tarlası yerine kampın erzakından söz ediyor.
+- **Pazarcı Nazlı tarifini öğrendiğin eşyaları da satar:** Uzun sopa, İp, Sopa, yemekler gibi tarifini öğrendiğin her eşya (yapılar, aletler, silahlar ve zırhlar hariç) değerinin 1,5 katına "Satın al" listesinde. Tohum ve tarla ürünü satmaz.
+- **Her maden taş da verir:** kazmayla bir madene her vuruşta madenin yanında %50 ihtimalle 1 Taş düşer.
+
+### Kayıtlar
+- Eski kayıtlarda alınmış ya da bitirilmiş **her Ekin görevi ödülü kadar sikke** verir; Ekin'e götürdüğün aletler için de adım başına 25 sikke. Tohumlar, tarla ürünleri ve kaldırılan tarla yemekleri fiyatından sikkeye çevrilir. Oyuna girince bir kez bildirim çıkar.
+
+### Tasarım belgesi
+- ACT 1 görevleri ve kişileri: Çiftçi Ekin bölümleri "şimdilik yok" notuyla; köprü görevinin şartı.
+- Açıklar: **İleride: Tarlacılık** bölümü (eski düzen, geri gelirse başlangıç noktası).
+- Pazarcı Nazlı: öğrenilen tariflerin eşyalarını satma kuralı. Aletler: her maden taş da verir. Tarifler ve eşya dizini: kaldırılan tarifler, tohumlar ve ürünler silindi.
 ## Versiyon 2.67 · 1 Kasım 2026
 
 ### Düzeltmeler

@@ -40,7 +40,6 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Ateş çiçeği balı | 1 Ateş çiçeği, 1 Yabani bal, 1 Su | – | El yapımı (Tab) | 20 |
 | Ateş narı şerbeti | 3 Ateş narı, 1 Herhangi çömlek, 2 Su | – | El yapımı (Tab) | 126 |
 | Avcı yahnisi | 3 Herhangi çiğ et, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
-| Ayçiçek yağı | 5 Ayçiçeği | – | El yapımı (Tab) | 96 |
 | Ay elması reçeli | 3 Ay elması, 1 Yabani bal, 1 Herhangi çömlek | – | El yapımı (Tab) | 165 |
 | Balık çorbası | 3 Herhangi balık, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
 | Ballı ekmek | 1 Herhangi yassı ekmek, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 75 |
@@ -50,13 +49,10 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Bal şerbeti | 1 Yabani bal, 5 Su, 1 Yaprak | – | El yapımı (Tab) | 17 |
 | Böğürtlen ezmesi | 3 Böğürtlen, 1 Su | Taş havan | El yapımı (Tab) | 14 |
 | Böğürtlen suyu | 3 Böğürtlen, 1 Herhangi çömlek, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
-| Buğday unu | 5 Buğday | – | El yapımı (Tab) | 48 |
 | Ceviz içi | 2 Ceviz, 2 Su, 1 Yaprak | Çekiç taşı | El yapımı (Tab) | 12 |
 | Ceviz yağı | 1 Ceviz içi, 3 Su, 3 Yaprak | Öğütme taşı | El yapımı (Tab) | 25 |
-| Çiftçi yahnisi | 2 Patates, 2 Havuç, 2 Soğan, 2 Su, 1 Ateş | – | El yapımı (Tab) | 112 |
 | Dağ çayı demi | 3 Dağ çayı, 2 Su, 1 Ateş | – | El yapımı (Tab) | 57 |
 | Ejder meyvesi şerbeti ² | 3 Ejder meyvesi, 2 Su, 1 Herhangi çömlek | – | El yapımı (Tab) | 142 |
-| Ekmek | 2 Buğday unu, 2 Su, 1 Ateş | – | El yapımı (Tab) | 153 |
 | Et şişi | 3 Herhangi çiğ et, 1 Sopa, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 28 |
 | Goblin eriği reçeli ² | 3 Goblin eriği, 1 Herhangi çömlek | – | El yapımı (Tab) | 108 |
 | Gök üzümü suyu ² | 3 Gök üzümü, 2 Su | – | El yapımı (Tab) | 86 |
@@ -67,15 +63,12 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Haşlanmış turna kuşu yumurtası | 2 Turna kuşu yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
 | Haşlanmış ur kekliği yumurtası | 2 Ur kekliği yumurtası, 2 Su, 1 Ateş | – | El yapımı (Tab) | 47 |
 | Haşlanmış yaban kazı yumurtası | 2 Yaban kazı yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
-| Havuç çorbası | 3 Havuç, 2 Su, 1 Soğan | – | El yapımı (Tab) | 50 |
 | Havyar | 1 Mersin balığı, 1 Tuz kayası, 2 Yaprak | Taş bıçak | El yapımı (Tab) | 26 |
 | Hurma ezmesi ² | 3 Hurma, 1 Herhangi çömlek | – | El yapımı (Tab) | 108 |
 | Isırgan çorbası | 3 Isırgan, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 56 |
 | Işık mantarı çorbası | 3 Işık mantarı, 2 Su, 1 Ateş | – | El yapımı (Tab) | 248 |
-| Kabak çorbası | 1 Kabak, 2 Su, 1 Soğan, 1 Havuç | – | El yapımı (Tab) | 55 |
 | Kara tuzlu et | 2 Herhangi çiğ et, 1 Kara tuz | – | El yapımı (Tab) | 54 |
 | Kavrulmuş fındık | 3 Fındık, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
-| Kavrulmuş kabak çekirdeği | 3 Kabak, 1 Ateş | – | El yapımı (Tab) | 120 |
 | Kavrulmuş kestane | 3 Kestane, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
 | Kavrulmuş su kestanesi | 2 Su kestanesi, 1 Ateş, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 39 |
 | Kavrulmuş yabani arpa | 3 Yabani arpa, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
@@ -94,7 +87,6 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Kızarmış yabani havuç | 3 Yabani havuç, 1 Su | Pişirme taşı | El yapımı (Tab) | 15 |
 | Kızılcık ezmesi | 3 Kızılcık, 1 Su | Taş havan | El yapımı (Tab) | 14 |
 | Kızılcık suyu | 3 Kızılcık, 1 Herhangi çömlek, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
-| Közde patates | 3 Patates, 1 Ateş | – | El yapımı (Tab) | 73 |
 | Közlenmiş şiş | 1 Et şişi, 1 Kor, 5 Su, 4 Yaprak | – | El yapımı (Tab) | 108 |
 | Kristal armut kompostosu ² | 3 Kristal armut, 2 Su, 1 Ateş | – | El yapımı (Tab) | 88 |
 | Kurutulmuş ahududu | 3 Ahududu, 3 Kuru ot | – | El yapımı (Tab) | 11 |
@@ -169,7 +161,6 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Ot salatası | 3 Kuzukulağı, 3 Su teresi | – | El yapımı (Tab) | 11 |
 | Palamut ekmeği | 1 Palamut unu, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 42 |
 | Palamut unu | 3 Meşe palamudu, 1 Su | Öğütme taşı | El yapımı (Tab) | 7 |
-| Patates püresi | 4 Patates, 1 Su | – | El yapımı (Tab) | 59 |
 | Pemmikan | 1 Herhangi kurutulmuş et, 2 Hayvan yağı, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 54 |
 | Pişmiş alabalık | 2 Alabalık, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 46 |
 | Pişmiş bıldırcın eti | 2 Bıldırcın eti, 1 Ateş, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 39 |
@@ -216,7 +207,6 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Pişmiş yılan balığı | 1 Yılan balığı, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 42 |
 | Pişmiş yıldız tilkisi eti ² | 1 Yıldız tilkisi eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 60 |
 | Sarımsaklı et | 1 Herhangi pişmiş et, 3 Yaban sarımsağı, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 65 |
-| Soğan halkası | 3 Soğan, 1 Buğday unu, 1 Ayçiçek yağı | – | El yapımı (Tab) | 218 |
 | Spor ekmeği ² | 3 Spor tozu, 2 Su, 1 Ateş | – | El yapımı (Tab) | 88 |
 | Taşta alabalık | 2 Alabalık, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 23 |
 | Taşta çapak | 2 Çapak, 2 Su, 1 Yaprak | Pişirme taşı | El yapımı (Tab) | 17 |
@@ -842,7 +832,7 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Roket motoru ² | 2 Yıldız külçesi, 3 Plazma hücresi, 1 Ejder kalbi, 1 Yakıt hücresi | – | Astronot Gökay yapar (1500 sikke işçilik) | 14.000 |
 | Sal | 1 Herhangi kalas, 1 Halat, 3 İp, 3 Dal | – | El yapımı (Tab) | 92 |
 | Sandal küreği | 1 Herhangi kalas, 3 İp, 3 Dal | Çakmaktaşı bıçak | El yapımı (Tab) | 52 |
-| Yelkenli sal | 1 Sal, 3 Hasır, 2 Halat, 2 Uzun sopa, 1 Sandal küreği, 1 Hasat sepeti | Taş balta | El yapımı (Tab) | 640 |
+| Yelkenli sal | 1 Sal, 3 Hasır, 2 Halat, 2 Uzun sopa, 1 Sandal küreği | Taş balta | El yapımı (Tab) | 640 |
 
 #### Metal (9)
 
@@ -902,8 +892,6 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Hasat sepeti | 2 Buğday, 2 Havuç, 2 Patates, 2 Soğan, 1 Kabak, 1 Ayçiçeği | – | El yapımı (Tab) | 144 |
-| Korkuluk | 2 Sopa, 4 Kuru ot, 1 Kabak, 1 İp | – | El yapımı (Tab) | 74 |
 | Sulama kabı | 1 Herhangi çömlek, 2 İp, 1 Sopa | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 96 |
 | Tırmık | 2 Sopa, 3 Keskin taş, 1 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 50 |
 | Tırpan | 1 Uzun sopa, 2 Çakmaktaşı pulu, 2 İp, 1 Dal | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 153 |
