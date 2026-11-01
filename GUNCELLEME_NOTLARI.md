@@ -8,6 +8,60 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.50 · 1 Kasım 2026
+
+### Oynanış
+- **Alevli, zehirli ve keskin silahlar.** Bu silahlar vuruşun hasarının üstüne canavara ek hasar veriyor:
+  - **Alevli** yakar: 3 saniye, saniyede silah hasarının %20'si.
+  - **Zehirli** zehirler: 6 saniye, saniyede %10. Her isabette bir kat daha birikir, en çok 3 kat.
+  - **Keskin** kanatır: 4 saniye, saniyede %15.
+  - Reislerde süreler yarı. Yakan canavarlar yanmaz, zehirleyenler zehirlenmez. Golemler, robotlar ve kabuklu taş canlılar kanamaz.
+- **Etki yağdan gelir.** Cadı kazanında üç yeni tarif öğrenilip elle yapılıyor:
+  - **Ateş yağı:** reçine, hardal otu, kömür.
+  - **Zehir yağı:** sinek mantarı, reçine.
+  - **Bileme macunu:** kumtaşı, reçine.
+- **Etkili silahlar:** ACT 1'in her kılıcı, gürzü, topuzu ve mızrağı silahçıda yağla işlenebiliyor. Örneğin Çelik kılıç ve Ateş yağı birlikte **Alevli Çelik kılıç** olur. Her silahın en çok bir etkisi var.
+- **Ustaların imza silahları etkileriyle doğuyor, tariflerinde ilgili yağ var:**
+  - Keskin: Granit gürz, Gümüş kılıç.
+  - Zehirli: Timsah dişi kılıcı, Ametist kılıcı.
+  - Alevli: Lav camı kılıcı, Ejder kılıcı.
+- **Etkili oklar:** 10 ok ve 1 yağdan 10 etkili ok yapılıyor (Alevli Bakır ok, Zehirli Demir ok, Keskin Mor kristal ok…).
+- **Oku sen seçiyorsun:** envanterde bir oka dokun ve **Yayla bunu at**'a bas. Seçili okun kutusu altın çerçeveli olur.
+  - Seçili ok bitince ya da hiç seçim yapılmamışsa yay en güçlü oku atar.
+  - Seçim kayda yazılıyor. Böylece güçlü okları reislere saklayabilirsin.
+- **Eski oklar kaldırıldı:** Ok, Tüylü ok, Zehirli ok ve Mor ok tarifleriyle birlikte oyundan çıktı. Eski kayıttaki bu oklar, tanesi tanesine Basit ok oluyor.
+
+### Arayüz
+- **Arena:**
+  - Silah listesinde kılıçlar, gürzler ve topuzlar ayrı gruplarda.
+  - Elindeki silahın hemen altında yeni bir **Etki** satırı var: Etkisiz, Alevli, Zehirli ya da Keskin.
+  - Elinde yay varsa onun altında bir **Ok** satırı çıkıyor: en güçlü ok, her ok ya da her etkili ok seçilebiliyor.
+  - Bütün setler, imza parçaları, yaylar, baltalar ve kazmalar arenada seçilebiliyor.
+- Silah bilgisinde etkisi yazıyor (ör. "alevli: yakar").
+
+### Görsel
+- Yanan canavarın üstünde alev (meşalenin alevi), zehirlenenin üstünde yeşil kabarcıklar, kanayanın altından kırmızı damlalar çıkıyor. Etki hasarı canavarın üstünde kendi renginde yazıyor: turuncu, yeşil ya da kırmızı.
+- Etkili silah ve okların simgesinin köşesinde etkinin işareti var: alev, yeşil damla ya da kırmızı damla. Yağlar küçük şişeler olarak görünüyor.
+
+### Kayıtlar
+- Eski kayıtlardaki eski oklar Basit oka dönüşüyor. Seçili ok kayda yazılıyor.
+
+### Tasarım belgesi
+- Yeni alt bölüm: **Aletler · Alevli, zehirli, keskin silahlar** (etkiler, yağlar, etkili silah ve oklar, imza silahları, arena).
+- Yaylar ve oklar bölümünde ok seçimi ve eski okların kaldırılması yazıyor.
+- Tarif ve eşya dizininden eski oklar çıkarıldı.
+
+### Proje
+- Bu sürüm oynanarak test edilmedi. Sözdizimi kontrolü yapıldı. Ayrıca bir kez bakıldı:
+  - Oyun hatasız açılıyor.
+  - Zehir, kanama ve yanık bir geyikte işliyor ve hasar veriyor.
+  - Alevli ok atılınca yakma etkisini taşıyor.
+  - Seçili ok önce atılıyor, güçlü oklar saklı kalıyor.
+  - Arenada etki ve ok satırları çıkıyor.
+- Kombolar oynanmadı.
+
+---
+
 ## Versiyon 2.49 · 1 Kasım 2026
 
 ### Oynanış

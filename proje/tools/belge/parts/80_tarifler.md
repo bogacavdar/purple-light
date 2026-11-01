@@ -600,8 +600,6 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Kirmen | 1 Sopa, 1 Taş halka, 2 İp, 2 Dal, 1 Taş | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 63 |
 | Kürek | 1 Herhangi kalas, 2 Keskin taş, 2 İp, 1 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 41 |
 | Mızrak | 1 Sopa, 2 Keskin taş, 2 İp, 1 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 39 |
-| Mor ok | 2 Ok, 1 Mor zehir | – | El yapımı (Tab) | 377 |
-| Ok | 1 Herhangi sap, 1 Herhangi ok ucu, 2 İp, 2 Dal, 2 Taş | – | El yapımı (Tab) | 78 |
 | Olta | 1 Uzun sopa, 4 İp, 2 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 69 |
 | Öğütme taşı | 2 Granit, 1 İp, 1 Dal, 1 Taş | Çekiç taşı | Örs · Silahçı Durdu (Orman) ve üstü döver | 17 |
 | Pişirme taşı | 1 Taş levha, 1 Ateş, 2 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 60 |
@@ -616,10 +614,8 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Taş kazma | 1 Sivri taş, 1 Sopa, 2 İp, 2 Dal, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 64 |
 | Taş kılıç | 1 Sopa, 4 Keskin taş, 2 İp, 1 Çakmaktaşı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 47 |
 | Tuzak | 1 Halat, 1 Sopa, 2 İp, 2 Dal, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 84 |
-| Tüylü ok | 1 Ok, 3 Herhangi tüy, 2 İp, 2 Dal, 1 Taş | – | El yapımı (Tab) | 141 |
 | Uzun sopa | 1 Sopa, 4 Dal, 1 İp | – | El yapımı (Tab) | 28 |
 | Yaprak kova | 4 Yaprak, 3 Lif | – | El yapımı (Tab) | 8 |
-| Zehirli ok | 1 Ok, 2 Sinek mantarı, 2 İp, 2 Dal, 2 Taş | – | El yapımı (Tab) | 145 |
 
 #### Süs (38)
 

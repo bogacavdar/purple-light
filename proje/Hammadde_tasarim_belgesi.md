@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.49** ile birebir (1 Kasım 2026). Bu sürümde: imza silah ve zırhları kendi biyomlarının setinin üstüne, el yapımı post ve pelerinler bir önceki setin düzeyine çekildi; her biyoma bir yay ve bir ok eklendi, ayrıca herkesin elle yapabileceği Basit yay ve Basit ok (ayrıntı: **Aletler · Madenler ve ekipman merdiveni**). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.50** ile birebir (1 Kasım 2026). Bu sürümde: alevli (yanık), zehirli (zehir) ve keskin (kanama) silahlar ve oklar; etkiyi tarifteki yağ verir (Ateş yağı, Zehir yağı, Bileme macunu); imza silahları etkileriyle doğar; atılacak ok envanterde seçilir, eski oklar (Ok, Tüylü ok, Zehirli ok, Mor ok) kaldırıldı; arenada etki ve ok seçimi (ayrıntı: **Aletler · Alevli, zehirli, keskin silahlar**). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -463,6 +463,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - Alınan **fiziksel hasar × 25 / (25 + savunma + zırh)**. Zehir, yanık ve kanama da bu oranın yarısı kadar yumuşar. Karakter ekranında "Zırh", "Savunma" ve toplam hasar azalması ayrı ayrı yazar. (Kemal'in "Savunmanı 60'a çıkar" görevi yalnızca eşya savunmasını sayar.)
 - **Çamur:** Bataklık çamurunda yavaşlarsın (×0,6); Kamış çizme, Demir çizme, Çelik çizme, Kara çelik çizme, Mor kristal çizme, Bataklık çizmesi, Hurda çizme ve Meka çizme bunu önler.
 - **Durum etkileri** canavarlardan, alev/zehir gölünden ve zehirli yemekten gelir: **zehir**, **kanama**, **yanık** belirli süre saniyede can yakar; zırh bunu da yarı oranda yumuşatır. Dirençler: Bataklık postu pelerin (zehir %30), Timsah derisi zırh (kanama %40), Kül postu pelerin (yanık %40), Lav pulu eldiven (yanık %30), Demir zırh (kanama %30), Çelik zırh (kanama %35), Kara çelik zırh (yanık %40, kanama %30), Mor kristal zırh (kanama, yanık, zehir %30), Ejder pulu zırh (yanık %60), Mantar lifi eldiven (zehir %40), Kristal miğfer (kanama %30), Ejder pulu eldiven (yanık %40), Meka çizme (kanama %20), Meka zırh (üçü de %50); kuzenlerin zırhları: Meşe kabuk zırh (kanama %15), Timsah pulu zırh (kanama %40), Bataklık çizmesi (zehir %25), Gümüş pullu zırh (kanama %35), Kül böceği zırh (yanık %50), Akrep kabuğu çizme (zehir %35), Kristal ipek zırh (üçü de %25), Işık pulu eldiven (zehir %35). Dayanıklılık ağacındaki Zehre/Ateşe/Kanamaya dayanıklı yetenekleri ilgili hasarı ayrıca %40 azaltır (çarpılarak birleşir); Çelik beden üçünün süresini yarıya indirir; Son nefes canın dörtte birinin altındayken fiziksel hasarı %25 azaltır.
+- **Canavarlara etki (v2.50):** alevli, zehirli ve keskin silahlar ve oklar canavarı yakar, zehirler ya da kanatır (ayrıntı: Aletler · Alevli, zehirli, keskin silahlar). Meşale de eskisi gibi yakar.
 - **Yemek kalkanları:** Panzehir zehri tamamen keser, Ateş kalkanı yanığı %70, Pıhtı kanamayı %60 azaltır.
 
 ## Yemek
@@ -3634,8 +3635,6 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Kirmen | 1 Sopa, 1 Taş halka, 2 İp, 2 Dal, 1 Taş | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 63 |
 | Kürek | 1 Herhangi kalas, 2 Keskin taş, 2 İp, 1 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 41 |
 | Mızrak | 1 Sopa, 2 Keskin taş, 2 İp, 1 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 39 |
-| Mor ok | 2 Ok, 1 Mor zehir | – | El yapımı (Tab) | 377 |
-| Ok | 1 Herhangi sap, 1 Herhangi ok ucu, 2 İp, 2 Dal, 2 Taş | – | El yapımı (Tab) | 78 |
 | Olta | 1 Uzun sopa, 4 İp, 2 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 69 |
 | Öğütme taşı | 2 Granit, 1 İp, 1 Dal, 1 Taş | Çekiç taşı | Örs · Silahçı Durdu (Orman) ve üstü döver | 17 |
 | Pişirme taşı | 1 Taş levha, 1 Ateş, 2 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 60 |
@@ -3650,10 +3649,8 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Taş kazma | 1 Sivri taş, 1 Sopa, 2 İp, 2 Dal, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 64 |
 | Taş kılıç | 1 Sopa, 4 Keskin taş, 2 İp, 1 Çakmaktaşı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 47 |
 | Tuzak | 1 Halat, 1 Sopa, 2 İp, 2 Dal, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 84 |
-| Tüylü ok | 1 Ok, 3 Herhangi tüy, 2 İp, 2 Dal, 1 Taş | – | El yapımı (Tab) | 141 |
 | Uzun sopa | 1 Sopa, 4 Dal, 1 İp | – | El yapımı (Tab) | 28 |
 | Yaprak kova | 4 Yaprak, 3 Lif | – | El yapımı (Tab) | 8 |
-| Zehirli ok | 1 Ok, 2 Sinek mantarı, 2 İp, 2 Dal, 2 Taş | – | El yapımı (Tab) | 145 |
 
 #### Süs (38)
 
@@ -4151,7 +4148,8 @@ Her hücrede **savunma ya da hasar · satış fiyatı**. Zırhçılar zırhları
 ### Yaylar ve oklar (v2.49, Boğaç)
 
 - **Yay** eldeyken vuruş (tık, Vur düğmesi) fare yönüne (telefonda en yakın düşmana) **bir ok atar**. Ok bir canlıya değince durur. Her atış yayı 1 köreltir (bilenince yenilenir); kör yay atmaz.
-- **Ok gerekir:** her atış çantadaki **en güçlü oktan** bir tane harcar. Ok yoksa "Ok yok" yazar. Eski **Ok, Tüylü ok, Zehirli ok, Mor ok** da atılabilir ama yalnızca yeni oklar bitince (×1, ×1,1, ×1,2, ×1,5). Arenada ok harcanmaz.
+- **Ok gerekir:** her atış bir ok harcar. Hangi oku atacağını **envanterde seçersin** (v2.50): okun üstüne dokun → **Yayla bunu at**; seçili okun kutusu altın çerçevelidir, yeniden dokunup **Seçimi kaldır** dersin. Seçim yoksa ya da seçili ok bittiyse yay çantadaki **en güçlü oku** atar (bitince bir kez "… bitti" yazar); aynı güçte etkili ok varsa önce onu. Ok hiç yoksa "Ok yok" yazar. Seçim kayda yazılır. Arenada ok harcanmaz.
+- **Eski oklar kaldırıldı (v2.50, Boğaç):** Ok, Tüylü ok, Zehirli ok ve Mor ok tarifleriyle birlikte oyundan çıktı. Eski kayıttaki bu okların hepsi tanesi tanesine **Basit ok** olur. Ok uçları ve Kamış ok gövdesi eşya olarak kalır.
 - **Hasar** = yayın hasarı × okun çarpanı × (1 + 0,03 × (seviye − 1)) × Güç/Güçsüzlük. Okun hızı ve menzili yaydan gelir.
 - Yay silah yuvasına girmez; elde tutulur (balta ve kazma gibi alet yuvasında). Silahlar listesinde ayrı bir **Yaylar** grubu vardır.
 - Her biyomun yayı o biyomun ağacından ve setinin metalinden yapılır; o biyomun silahçısı ve ondan sonrakiler döver. Okları herkes elle yapar (bir yapımda 10 ok, Basit okta 5).
@@ -4177,6 +4175,36 @@ Her hücrede **savunma ya da hasar · satış fiyatı**. Zırhçılar zırhları
 | Mor kristal ok | Mor Kristal Vadisi | ×1,8 | 1 Mor kristal levhası, 4 Dal, 2 Herhangi tüy → 10 ok | 159 |
 
 - **Yayın özel vuruşları** (Dövüş · Özel vuruşlar tablosu): Hızlı atış, Delici ok, Çift ok, Gergin atış, Geri sıçrayıp atış, Ok yelpazesi; ultisi **Ok yağmuru**. Her ok atışı bir ok harcar (ulti harcamaz).
+
+### Alevli, zehirli, keskin silahlar (v2.50, Boğaç)
+
+- **Üç etki**, vuruşun kendi hasarının üstüne **ek hasar** olarak işler:
+
+| Etki | Silahın adı | Canavara ne olur | Süre | Saniyede hasar | Üst üste |
+|---|---|---|---|---|---|
+| Yanık | **Alevli** … | yanar (turuncu alev, turuncu sayılar) | 3 sn | silah hasarının %20'si | yenilenir |
+| Zehir | **Zehirli** … | zehirlenir (yeşil kabarcıklar, yeşil sayılar) | 6 sn | kat başına %10 | her isabet 1 kat, en çok 3 kat |
+| Kanama | **Keskin** … | kanar (kırmızı damlalar, kırmızı sayılar) | 4 sn | %15 | yenilenir |
+
+- **Silah hasarı** burada silahın tablodaki hasarıdır × (1 + 0,03 × (seviye − 1)); okta yayın hasarı × okun çarpanı × aynı seviye katsayısı.
+- **Her silahın en çok bir etkisi** vardır; etki silah yapılırken tarifteki **yağdan** gelir. Reislerde süre yarıdır. Etkiler 1 saniyede bir vurur.
+- **Kime işlemez:** yanık, kendisi yakan canavarlara (Kül Diyarı'nın ateşli canavarları, ejderler; meşalenin kuralı); zehir, kendisi zehirleyenlere; kanama, golemlere, robotlara, dronlara ve kabuklu taş canlılara. Börü'nün ders canlılarına ve evcil hayvanlara hiçbiri işlemez.
+- Yakın dövüşte etki, yalnızca **70 piksel içindeki** isabette işler (kombolar dahil; fırlatılan mızrak ve topuz etki vermez). Okta etkiyi o anda atılan ok verir.
+
+**Yağlar** (kazanda öğrenilir, elle yapılır, kategori Zanaat):
+
+| Yağ | Tarif | Verdiği etki |
+|---|---|---|
+| Ateş yağı | 2 Herhangi reçine, 1 Hardal otu, 1 Herhangi kömür | Alevli (yanık) |
+| Zehir yağı | 2 Sinek mantarı, 1 Herhangi reçine | Zehirli (zehir) |
+| Bileme macunu | 2 Kumtaşı, 1 Herhangi reçine | Keskin (kanama) |
+
+- **Etkili silah:** ACT 1'in her kılıcı, gürzü, topuzu ve mızrağı (imza silahları hariç) üç biçimde de yapılabilir: **Alevli X** = 1 X + 1 Ateş yağı, **Zehirli X** = 1 X + 1 Zehir yağı, **Keskin X** = 1 X + 1 Bileme macunu. Bunları her silahçı döver (silahı getirdiğin için usta sırası aranmaz). Hasar, menzil, dayanıklılık X ile aynı; fiyatı (X + yağ) × 1,1.
+- **Etkili ok:** her biyomun oku için 10 ok + 1 yağ → 10 etkili ok (Alevli Bakır ok, Zehirli Demir ok, Keskin Mor kristal ok…), elle yapılır; tanesinin fiyatı ok + yağın onda biri, × 1,1. Atılacak ok envanterde seçilir; seçim yoksa yay en güçlü oku atar (aynı güçte etkili ok varsa önce onu).
+- **İmza silahları** etkileriyle doğar ve tariflerine ilgili yağ eklendi: Granit gürz **keskin** (+1 Bileme macunu), Timsah dişi kılıcı **zehirli** (+1 Zehir yağı), Gümüş kılıç **keskin** (+1 Bileme macunu), Lav camı kılıcı **alevli** (+1 Ateş yağı), Ejder kılıcı **alevli** (+1 Ateş yağı), Ametist kılıcı **zehirli** (+1 Zehir yağı). Bunların etkili biçimleri yoktur.
+- Baltalar, kazmalar ve yaylar etki almaz (yayda etkiyi ok taşır). Meşalenin kendi yakması (v2.28) değişmedi.
+- **Arena (v2.50):** silah listesinde kılıçlar, gürzler ve topuzlar ayrı gruplardır; etkili biçimler listede ayrıca görünmez: elindeki silahın hemen altındaki **Etki** satırından Etkisiz / Alevli / Zehirli / Keskin seçilir (imza silahı için etkisi yazılır). Elinde yay varsa altında **Ok** satırı çıkar: "En güçlü" ya da her ok ve etkili ok seçilebilir. Bütün setler, imza parçaları, yaylar, baltalar ve kazmalar arenada seçilebilir.
+- Simgeler: etkili silah ve okun simgesinin köşesinde etkinin işareti (alev, yeşil damla, kırmızı damla); yağlar küçük birer şişe.
 
 ### Gürz ve topuz
 
@@ -4516,7 +4544,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Beyaz kil | 6 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Beyaz boya, Islak beyaz kil |
 | Beyaz tuğla | 68 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Taş fırın |
 | Bıldırcın eti | 3 | – | Av: Bıldırcın düşürür %100 (ACT 1 · Çayır) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş bıldırcın eti, Pişmiş bıldırcın eti, Turba ateşinde tütsü … (+1) |
-| Bıldırcın tüyü | 2 | – | Av: Bıldırcın düşürür %80 (ACT 1 · Çayır) | Tüylü başlık, Tüylü ok |
+| Bıldırcın tüyü | 2 | – | Av: Bıldırcın düşürür %80 (ACT 1 · Çayır) | Tüylü başlık |
 | Bıldırcın yumurtası | 3 | – | Av: Bıldırcın düşürür %40 (ACT 1 · Çayır) | Haşlanmış bıldırcın yumurtası |
 | Bileği taşı | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | Beyaz kase (alet), Boynuz borazan (alet), Cilalı kristal (alet), Göl kasesi (alet), Kehribar boncuk (alet), Kemik iğne (alet) … (+5) |
 | Bola | 63 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
@@ -4845,7 +4873,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kartal eti | 10 | – | Av: Kartal düşürür %100 (ACT 1 · Kayalık Dağ) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş kartal eti, Pişmiş kartal eti, Turba ateşinde tütsü … (+1) |
 | Kartal pençesi | 22 | – | Av: Kartal düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Fırtına kartalı düşürür %50 (ACT 2 · Yüzen Kayalar) | Kartal pençesi kolyesi, Gümüş kılıç |
 | Kartal pençesi kolyesi | 75 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kartal tüyü | 14 | – | Av: Kartal düşürür %90 (ACT 1 · Kayalık Dağ) | Tüylü başlık, Tüylü ok, Kartal tüyü miğfer |
+| Kartal tüyü | 14 | – | Av: Kartal düşürür %90 (ACT 1 · Kayalık Dağ) | Tüylü başlık, Kartal tüyü miğfer |
 | Kartal tüyü miğfer | 435 | giyilir +24 savunma | Tarif: kazanda öğrenilir (Zümrüt ya da kuzen cadılar; tanışınca kitaba yazılır) → Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | – |
 | Kav | 24 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ateş, Kozalak ateşi, Turba ateşinde tütsü |
 | Kavak kabuğu | 12 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -4880,7 +4908,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kekikli balık | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kekik çayı | 69 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Keklik eti | 3 | – | Av: Keklik düşürür %100 (ACT 1 · Çayır) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş keklik eti, Pişmiş keklik eti, Turba ateşinde tütsü … (+1) |
-| Keklik tüyü | 2 | – | Av: Keklik düşürür %85 (ACT 1 · Çayır) | Tüylü başlık, Tüylü ok |
+| Keklik tüyü | 2 | – | Av: Keklik düşürür %85 (ACT 1 · Çayır) | Tüylü başlık |
 | Keklik yumurtası | 3 | – | Av: Keklik düşürür %30 (ACT 1 · Çayır) | Haşlanmış keklik yumurtası |
 | Kemik | 2 | – | Av: Tavşan düşürür %30 (ACT 1 · Çayır) · Av: Geyik düşürür %50 (ACT 1 · Çayır) · Av: Karaca düşürür %50 (ACT 1 · Orman) · Av: Yaban öküzü düşürür %80 (ACT 1 · Kayalık Dağ) · Av: Yaban domuzu düşürür %50 (ACT 1 · Orman) · Av: Kurt düşürür %50 (ACT 1 · Çayır) · Av: Dikenli kirpi düşürür %30 (ACT 1 · Orman) · Av: Bataklık kurdu düşürür %50 (ACT 1 · Bataklık) · Av: Engerek düşürür %30 (ACT 1 · Orman) · Av: Oklu kirpi düşürür %40 (ACT 1 · Orman) · Av: Kunduz düşürür %30 (ACT 1 · Orman) · Av: Yaban atı düşürür %50 (ACT 1 · Çayır) · Av: Dağ keçisi düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Muflon düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Mağara ayısı düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Vaşak düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Porsuk düşürür %30 (ACT 1 · Çayır) · Av: Mantar geyiği düşürür %50 (ACT 2 · Dev Mantar Ormanı) · Av: Pas kirpisi düşürür %30 (ACT 2 · Hurda Çölü) · Av: Buz karacası düşürür %50 (ACT 2 · Kristal Golem Ocağı) · Av: Kor domuzu düşürür %50 (ACT 2 · Ejder Volkanı) · Av: Yıldız geyiği düşürür %50 (ACT 2 · Gök Rıhtımı) | Bazalt kazıyıcı, Çakmaktaşı kazıyıcı, Diken iğnesi, Kemik flüt, Kemik iğne, Kemik ilikli çorba … (+9) |
 | Kemik flüt | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -5227,7 +5255,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Mor kıymık | 30 | – | Gece balık tutarken %5 ihtimalle oltaya takılır · Yalnız gece, karanlıkta karada beliren mor parıltı (Çayır/Orman); E ile toplanır | Ay ışığı iksiri, Kıymık kolye |
 | Mor kök | 55 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Mor kök boyası |
 | Mor kök boyası | 149 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Boyalı tunik, Dolap, Duvar halısı, Halı, Kilim … (+1) |
-| Mor ok | 377 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Mor pusula | 250 | – | Eski Sisli Ada sonunun ödülü (kodda duruyor; güncel akışta ulaşılıp ulaşılmadığı test raporuna bakın) | – |
 | Mor sarmaşık | 50 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Kristal çiçeği tacı, Mor ip, Yıldız çelengi |
 | Mor söğüt kalası | 73 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+15) |
@@ -5236,7 +5263,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Mor söğüt sapı | 108 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bazalt balta, Bazalt bıçak, Bazalt kazma, Boynuz kazma, Çakmaktaşı balta, Çakmaktaşı bıçak … (+21) |
 | Mor yosun | 45 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Mor yosun yastığı |
 | Mor yosun yastığı | 243 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
-| Mor zehir | 130 | – | Av: Işık engereği düşürür %70 (ACT 1 · Mor Kristal Vadisi) | Mor ok |
+| Mor zehir | 130 | – | Av: Işık engereği düşürür %70 (ACT 1 · Mor Kristal Vadisi) | – |
 | Motor ² | 180 | – | Av: Hurda devi düşürür %80 (ACT 2 · Hurda Çölü) | Meka zırh, Pompalı |
 | Muflon derisi | 7 | – | Av: Muflon düşürür %80 (ACT 1 · Kayalık Dağ) | Tabaklanmış muflon derisi |
 | Muflon eti | 7 | – | Av: Muflon düşürür %100 (ACT 1 · Kayalık Dağ) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş muflon eti, Pişmiş muflon eti, Turba ateşinde tütsü … (+1) |
@@ -5272,7 +5299,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Obsidyen ok ucu | 1.114 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ok |
 | Obsidyen pulu | 75 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Obsidyen bıçak, Obsidyen kazıyıcı, Obsidyen ok ucu |
 | Obsidyen sivri ucu | 481 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Obsidyen kazma, Obsidyen mızrak |
-| Ok | 78 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Mor ok, Tüylü ok, Zehirli ok |
 | Ok kılıfı | 240 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Olta | 69 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Ot salatası | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -5280,7 +5306,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Öğütme taşı | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | Ceviz yağı (alet), Nilüfer kökü unu (alet), Palamut unu (alet), Yabani arpa unu (alet), Yabani buğday unu (alet), Yabani mercimek unu (alet) … (+2) |
 | Öküz boynuzu | 16 | – | Av: Yaban öküzü düşürür %50 (ACT 1 · Kayalık Dağ) | Boynuz borazan, Boynuz kupa, Kartal tüyü miğfer |
 | Ördek eti | 4 | – | Av: Ördek düşürür %100 (ACT 1 · Bataklık) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş ördek eti, Pişmiş ördek eti, Turba ateşinde tütsü … (+1) |
-| Ördek tüyü | 2 | – | Av: Ördek düşürür %85 (ACT 1 · Bataklık) | Tüylü başlık, Tüylü ok |
+| Ördek tüyü | 2 | – | Av: Ördek düşürür %85 (ACT 1 · Bataklık) | Tüylü başlık |
 | Ördek yumurtası | 3 | – | Av: Ördek düşürür %35 (ACT 1 · Bataklık) | Haşlanmış ördek yumurtası |
 | Örümcek gözü | 100 | – | Av: Kristal örümcek düşürür %50 (ACT 1 · Mor Kristal Vadisi) | Gölge iksiri |
 | Palamut ekmeği | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -5396,7 +5422,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Sıcak su | 34 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Adaçayı çayı, Avcı yahnisi, Balık çorbası, Balmumu, Bataklık otu çayı, Buhar … (+26) |
 | Sincap derisi | 2 | – | Av: Sincap düşürür %60 (ACT 1 · Orman) | Tabaklanmış sincap derisi |
 | Sincap eti | 2 | – | Av: Sincap düşürür %100 (ACT 1 · Orman) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş sincap eti, Pişmiş sincap eti, Turba ateşinde tütsü … (+1) |
-| Sinek mantarı | 4 | yenir +4, zehirli | Yerden toplanır: Bataklık (ACT 1) | Zehirli ok |
+| Sinek mantarı | 4 | yenir +4, zehirli | Yerden toplanır: Bataklık (ACT 1) | Zehir yağı |
 | Sinir | 3 | – | Av: Tavşan düşürür %15 (ACT 1 · Çayır) · Av: Geyik düşürür %50 (ACT 1 · Çayır) · Av: Karaca düşürür %40 (ACT 1 · Orman) · Av: Yaban öküzü düşürür %60 (ACT 1 · Kayalık Dağ) · Av: Kurt düşürür %40 (ACT 1 · Çayır) · Av: Yaban atı düşürür %50 (ACT 1 · Çayır) · Av: Muflon düşürür %40 (ACT 1 · Kayalık Dağ) · Av: Mantar geyiği düşürür %50 (ACT 2 · Dev Mantar Ormanı) · Av: Buz karacası düşürür %40 (ACT 2 · Kristal Golem Ocağı) · Av: Yıldız geyiği düşürür %50 (ACT 2 · Gök Rıhtımı) | Kemik miğfer, Kemik zırh, Sinir kirişi, Tunç miğfer |
 | Sinirotu | 2 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Kurutulmuş sinirotu |
 | Sinirotu çayı | 69 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -5522,7 +5548,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Turba ateşinde tütsü | 24 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Turna balığı | 6 | – | Balık: Bataklık/Kayalık Dağ suları, olta/ağ/zıpkın ile %15; balık kapanına da girer · Balık: Kül Diyarı/Mor Kristal Vadisi suları, olta/ağ/zıpkın ile %25; balık kapanına da girer | Balık çorbası, Balık sepeti, Kurutulmuş turna balığı, Pişmiş turna balığı, Taşta turna balığı, Tütsülenmiş turna balığı |
 | Turna kuşu eti | 5 | – | Av: Turna kuşu düşürür %100 (ACT 1 · Bataklık) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş turna kuşu eti, Pişmiş turna kuşu eti, Turba ateşinde tütsü … (+1) |
-| Turna kuşu tüyü | 2 | – | Av: Turna kuşu düşürür %85 (ACT 1 · Bataklık) | Tüylü başlık, Tüylü ok |
+| Turna kuşu tüyü | 2 | – | Av: Turna kuşu düşürür %85 (ACT 1 · Bataklık) | Tüylü başlık |
 | Turna kuşu yumurtası | 3 | – | Av: Turna kuşu düşürür %30 (ACT 1 · Bataklık) | Haşlanmış turna kuşu yumurtası |
 | Tuz | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Acı biber ezmesi, Kaya patlatıcı, Kurutulmuş alabalık, Kurutulmuş bıldırcın eti, Kurutulmuş çapak, Kurutulmuş dağ keçisi eti … (+34) |
 | Tuzak | 84 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
@@ -5567,10 +5593,9 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Tütsülenmiş yayın | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Tütsülenmiş yılan balığı | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Tüylü başlık | 244 | giyilir +3 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tüylü ok | 141 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Tüy yosunu ² | 10 | – | Yerden toplanır: Yüzen Kayalar (ACT 2) | – |
 | Ur kekliği eti | 6 | – | Av: Ur kekliği düşürür %100 (ACT 1 · Kayalık Dağ) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş ur kekliği eti, Pişmiş ur kekliği eti, Turba ateşinde tütsü … (+1) |
-| Ur kekliği tüyü | 4 | – | Av: Ur kekliği düşürür %85 (ACT 1 · Kayalık Dağ) | Tüylü başlık, Tüylü ok |
+| Ur kekliği tüyü | 4 | – | Av: Ur kekliği düşürür %85 (ACT 1 · Kayalık Dağ) | Tüylü başlık |
 | Ur kekliği yumurtası | 5 | yenir +3 | Av: Ur kekliği düşürür %35 (ACT 1 · Kayalık Dağ) | Haşlanmış ur kekliği yumurtası |
 | Uzaylı devresi ² | 200 | – | Av: Uzaylı dronu düşürür %70 (ACT 2 · Gök Rıhtımı) · Av: Gök bekçisi düşürür %100 (ACT 2 · Gök Rıhtımı) | Meka çizme, Roket |
 | Uzun sopa | 28 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bazalt mızrak, Çakmaktaşı mızrak, Demir mızrak, Kemik zıpkın, Kuvars mızrak, Obsidyen mızrak … (+4) |
@@ -5626,7 +5651,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yaban domuzu eti | 7 | – | Av: Yaban domuzu düşürür %100 (ACT 1 · Orman) · Av: Kor domuzu düşürür %100 (ACT 2 · Ejder Volkanı) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş yaban domuzu eti, Pişmiş yaban domuzu eti, Turba ateşinde tütsü … (+1) |
 | Yaban domuzu postu giysi | 262 | giyilir +8 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yaban kazı eti | 5 | – | Av: Yaban kazı düşürür %100 (ACT 1 · Bataklık) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş yaban kazı eti, Pişmiş yaban kazı eti, Turba ateşinde tütsü … (+1) |
-| Yaban kazı tüyü | 2 | – | Av: Yaban kazı düşürür %85 (ACT 1 · Bataklık) | Tüylü başlık, Tüylü ok |
+| Yaban kazı tüyü | 2 | – | Av: Yaban kazı düşürür %85 (ACT 1 · Bataklık) | Tüylü başlık |
 | Yaban kazı yumurtası | 3 | – | Av: Yaban kazı düşürür %35 (ACT 1 · Bataklık) | Haşlanmış yaban kazı yumurtası |
 | Yaban mersini | 3 | yenir +6 | Yerden toplanır: Orman (ACT 1) | Kurutulmuş yaban mersini, Yaban mersini boyası, Yaban mersini ezmesi, Yaban mersini suyu |
 | Yaban mersini boyası | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Boyalı tunik, Dolap, Duvar halısı, Halı, Kilim … (+1) |
@@ -5678,7 +5703,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yosun yalıtım | 20 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan / Marangoz Çınar yapar, yere kurulur | – |
 | Yosun yastık | 240 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yüzer taş ² | 30 | – | Yerden toplanır: Yüzen Kayalar (ACT 2) | Ateş asası |
-| Zehirli ok | 145 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Zehir bezesi | 16 | – | Av: Zehirli kurbağa düşürür %80 (ACT 1 · Bataklık) · Av: Engerek düşürür %60 (ACT 1 · Orman) | Panzehir |
 | Ziyafet sofrası | 152 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 

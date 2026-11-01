@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.49** ile birebir (1 Kasım 2026). Bu sürümde: imza silah ve zırhları kendi biyomlarının setinin üstüne, el yapımı post ve pelerinler bir önceki setin düzeyine çekildi; her biyoma bir yay ve bir ok eklendi, ayrıca herkesin elle yapabileceği Basit yay ve Basit ok (ayrıntı: **Aletler · Madenler ve ekipman merdiveni**). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.50** ile birebir (1 Kasım 2026). Bu sürümde: alevli (yanık), zehirli (zehir) ve keskin (kanama) silahlar ve oklar; etkiyi tarifteki yağ verir (Ateş yağı, Zehir yağı, Bileme macunu); imza silahları etkileriyle doğar; atılacak ok envanterde seçilir, eski oklar (Ok, Tüylü ok, Zehirli ok, Mor ok) kaldırıldı; arenada etki ve ok seçimi (ayrıntı: **Aletler · Alevli, zehirli, keskin silahlar**). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

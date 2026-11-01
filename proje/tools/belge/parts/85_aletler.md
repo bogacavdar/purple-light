@@ -99,7 +99,8 @@ Her hücrede **savunma ya da hasar · satış fiyatı**. Zırhçılar zırhları
 ### Yaylar ve oklar (v2.49, Boğaç)
 
 - **Yay** eldeyken vuruş (tık, Vur düğmesi) fare yönüne (telefonda en yakın düşmana) **bir ok atar**. Ok bir canlıya değince durur. Her atış yayı 1 köreltir (bilenince yenilenir); kör yay atmaz.
-- **Ok gerekir:** her atış çantadaki **en güçlü oktan** bir tane harcar. Ok yoksa "Ok yok" yazar. Eski **Ok, Tüylü ok, Zehirli ok, Mor ok** da atılabilir ama yalnızca yeni oklar bitince (×1, ×1,1, ×1,2, ×1,5). Arenada ok harcanmaz.
+- **Ok gerekir:** her atış bir ok harcar. Hangi oku atacağını **envanterde seçersin** (v2.50): okun üstüne dokun → **Yayla bunu at**; seçili okun kutusu altın çerçevelidir, yeniden dokunup **Seçimi kaldır** dersin. Seçim yoksa ya da seçili ok bittiyse yay çantadaki **en güçlü oku** atar (bitince bir kez "… bitti" yazar); aynı güçte etkili ok varsa önce onu. Ok hiç yoksa "Ok yok" yazar. Seçim kayda yazılır. Arenada ok harcanmaz.
+- **Eski oklar kaldırıldı (v2.50, Boğaç):** Ok, Tüylü ok, Zehirli ok ve Mor ok tarifleriyle birlikte oyundan çıktı. Eski kayıttaki bu okların hepsi tanesi tanesine **Basit ok** olur. Ok uçları ve Kamış ok gövdesi eşya olarak kalır.
 - **Hasar** = yayın hasarı × okun çarpanı × (1 + 0,03 × (seviye − 1)) × Güç/Güçsüzlük. Okun hızı ve menzili yaydan gelir.
 - Yay silah yuvasına girmez; elde tutulur (balta ve kazma gibi alet yuvasında). Silahlar listesinde ayrı bir **Yaylar** grubu vardır.
 - Her biyomun yayı o biyomun ağacından ve setinin metalinden yapılır; o biyomun silahçısı ve ondan sonrakiler döver. Okları herkes elle yapar (bir yapımda 10 ok, Basit okta 5).
@@ -125,6 +126,36 @@ Her hücrede **savunma ya da hasar · satış fiyatı**. Zırhçılar zırhları
 | Mor kristal ok | Mor Kristal Vadisi | ×1,8 | 1 Mor kristal levhası, 4 Dal, 2 Herhangi tüy → 10 ok | 159 |
 
 - **Yayın özel vuruşları** (Dövüş · Özel vuruşlar tablosu): Hızlı atış, Delici ok, Çift ok, Gergin atış, Geri sıçrayıp atış, Ok yelpazesi; ultisi **Ok yağmuru**. Her ok atışı bir ok harcar (ulti harcamaz).
+
+### Alevli, zehirli, keskin silahlar (v2.50, Boğaç)
+
+- **Üç etki**, vuruşun kendi hasarının üstüne **ek hasar** olarak işler:
+
+| Etki | Silahın adı | Canavara ne olur | Süre | Saniyede hasar | Üst üste |
+|---|---|---|---|---|---|
+| Yanık | **Alevli** … | yanar (turuncu alev, turuncu sayılar) | 3 sn | silah hasarının %20'si | yenilenir |
+| Zehir | **Zehirli** … | zehirlenir (yeşil kabarcıklar, yeşil sayılar) | 6 sn | kat başına %10 | her isabet 1 kat, en çok 3 kat |
+| Kanama | **Keskin** … | kanar (kırmızı damlalar, kırmızı sayılar) | 4 sn | %15 | yenilenir |
+
+- **Silah hasarı** burada silahın tablodaki hasarıdır × (1 + 0,03 × (seviye − 1)); okta yayın hasarı × okun çarpanı × aynı seviye katsayısı.
+- **Her silahın en çok bir etkisi** vardır; etki silah yapılırken tarifteki **yağdan** gelir. Reislerde süre yarıdır. Etkiler 1 saniyede bir vurur.
+- **Kime işlemez:** yanık, kendisi yakan canavarlara (Kül Diyarı'nın ateşli canavarları, ejderler; meşalenin kuralı); zehir, kendisi zehirleyenlere; kanama, golemlere, robotlara, dronlara ve kabuklu taş canlılara. Börü'nün ders canlılarına ve evcil hayvanlara hiçbiri işlemez.
+- Yakın dövüşte etki, yalnızca **70 piksel içindeki** isabette işler (kombolar dahil; fırlatılan mızrak ve topuz etki vermez). Okta etkiyi o anda atılan ok verir.
+
+**Yağlar** (kazanda öğrenilir, elle yapılır, kategori Zanaat):
+
+| Yağ | Tarif | Verdiği etki |
+|---|---|---|
+| Ateş yağı | 2 Herhangi reçine, 1 Hardal otu, 1 Herhangi kömür | Alevli (yanık) |
+| Zehir yağı | 2 Sinek mantarı, 1 Herhangi reçine | Zehirli (zehir) |
+| Bileme macunu | 2 Kumtaşı, 1 Herhangi reçine | Keskin (kanama) |
+
+- **Etkili silah:** ACT 1'in her kılıcı, gürzü, topuzu ve mızrağı (imza silahları hariç) üç biçimde de yapılabilir: **Alevli X** = 1 X + 1 Ateş yağı, **Zehirli X** = 1 X + 1 Zehir yağı, **Keskin X** = 1 X + 1 Bileme macunu. Bunları her silahçı döver (silahı getirdiğin için usta sırası aranmaz). Hasar, menzil, dayanıklılık X ile aynı; fiyatı (X + yağ) × 1,1.
+- **Etkili ok:** her biyomun oku için 10 ok + 1 yağ → 10 etkili ok (Alevli Bakır ok, Zehirli Demir ok, Keskin Mor kristal ok…), elle yapılır; tanesinin fiyatı ok + yağın onda biri, × 1,1. Atılacak ok envanterde seçilir; seçim yoksa yay en güçlü oku atar (aynı güçte etkili ok varsa önce onu).
+- **İmza silahları** etkileriyle doğar ve tariflerine ilgili yağ eklendi: Granit gürz **keskin** (+1 Bileme macunu), Timsah dişi kılıcı **zehirli** (+1 Zehir yağı), Gümüş kılıç **keskin** (+1 Bileme macunu), Lav camı kılıcı **alevli** (+1 Ateş yağı), Ejder kılıcı **alevli** (+1 Ateş yağı), Ametist kılıcı **zehirli** (+1 Zehir yağı). Bunların etkili biçimleri yoktur.
+- Baltalar, kazmalar ve yaylar etki almaz (yayda etkiyi ok taşır). Meşalenin kendi yakması (v2.28) değişmedi.
+- **Arena (v2.50):** silah listesinde kılıçlar, gürzler ve topuzlar ayrı gruplardır; etkili biçimler listede ayrıca görünmez: elindeki silahın hemen altındaki **Etki** satırından Etkisiz / Alevli / Zehirli / Keskin seçilir (imza silahı için etkisi yazılır). Elinde yay varsa altında **Ok** satırı çıkar: "En güçlü" ya da her ok ve etkili ok seçilebilir. Bütün setler, imza parçaları, yaylar, baltalar ve kazmalar arenada seçilebilir.
+- Simgeler: etkili silah ve okun simgesinin köşesinde etkinin işareti (alev, yeşil damla, kırmızı damla); yağlar küçük birer şişe.
 
 ### Gürz ve topuz
 
