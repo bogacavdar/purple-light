@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.59 · 1 Kasım 2026
+
+### Oynanış
+- **Börü'nün "İlk silah" görevi silahı takmadan bitiyor.** Bir silah (kılıç, gürz, topuz ya da mızrak) çantana girdiği an görev tamamlanıyor; silah yuvasına takmak gerekmiyor. Görev kartında "Bir silah edin" yazıyor.
+- **Eline aldığın silah kendiliğinden silah yuvasına takılıyor.** Alet kemerinden bir silahı eline alınca o silah silah yuvasına geçiyor (yuvada başka silah varsa çantaya dönüyor) ve vuruşlarını onunla yapıyorsun; kemerdeki kutusu boşalıyor. Arenada değişiklik yok.
+
+### Tasarım belgesi
+- Act 1 · Börü: B3 bir silah edinince biter, takmak gerekmez.
+- Sistemler · Dövüş: eldeki silah kendiliğinden silah yuvasına takılır.
+
+---
+
 ## Versiyon 2.58 · 1 Kasım 2026
 
 ### Düzeltmeler

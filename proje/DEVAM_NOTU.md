@@ -1,3 +1,9 @@
+## v2.59 (1 Kasım 2026) · İlk silah takmadan biter, eldeki silah yuvaya takılır
+- Belge: `parts/30_act1.md` (B3), `20_sistemler.md` (dövüş), `00_giris.md`.
+- `'*silah'` ilerlemesi: equip.silah ya da çantada slotOf==='silah' bir eşya. progText "Bir silah edin (…)". B3 metinleri "edin".
+- `<script id="v259">`: `setHand` sarmalı; elde silah → (eski silah `unwear` sessiz) `inv--`, `equip.silah=h`, `hand=-1`, bildirim. Arenada (`__plArena`) çalışmaz.
+- Eski kayıtlara etkisi yok. Kontrol: chk.js 0 hata.
+
 ## v2.58 (1 Kasım 2026) · satış düzeltmeleri, tuzak görevi, örs/el ayrımı, kemer seçici, kazmayla tık, kişilerin ateşi, silah bilgisi, Börü İlk silah, almanak yenileri
 - Belge: `parts/30_act1.md` (Nazlı tablosunun altı), `00_giris.md`.
 - Yerinde: `#sellall` dinleyicisi ve `sellSafe()` artık `qc('sold',got)` çağırıyor (şans bonusundan önce, `sell()` ile aynı ölçü). Daha önce yalnızca `sell(n,q)` sayıyordu.
