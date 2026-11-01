@@ -8,6 +8,47 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.52 · 1 Kasım 2026
+
+### Oynanış
+- **Sevdiğin kişiyi sen seçiyorsun.** Karakter yaratma artık iki adım:
+  - **1. Karakterini yarat:** eskisi gibi.
+  - **2. Sevdiğin kişi:** aynı seçenekler, cinsiyet dahil. Kadın ya da erkek, ten, saç, saç rengi, kıyafet, gözlük, şapka.
+  - Varsayılan karşı cins ama istediğin gibi seçebilirsin.
+  - **Geri** birinci adıma döner. Zorluk ekranındaki **Geri** de ikinci adıma döner; seçtiklerin kaybolmaz.
+  - İsim kutusu yok. İsimleri eskisi gibi Kemal soruyor.
+- **Bütün sahneler seçtiğin iki karakterle oynuyor:** giriş sahnesi, anılar, Sisli Ada'daki gemi.
+- **Onu anlatan yazılar seçtiğin görünüşe göre:**
+  - Saç rengi ve uzunluğu, ör. "uzun kızıl saçları", "kısa siyah saçlar".
+  - Toygar'ın anlattığı gecedeki "bir kadın / bir adam".
+  - Kemal'in ad önerisi.
+- **Teklif anısı** ("Çay kıyısında söz"): biri erkek biri kadınsa erkek teklif eder; iki erkek ya da iki kadınsa senin karakterin teklif eder.
+- **İzler sevdiğin kişiye uyuyor:**
+  - Kadınsa: Kopmuş kolye, çamurdaki izlerin yanında bir küpe, Sisli Ada'da kızıl bir kurdele.
+  - Erkekse: Kopmuş bileklik, deri bir cüzdan, bir kol saati.
+  - Diğer izler ikisi için de aynı.
+
+### Düzeltmeler
+- İlk anıdaki "Kızıl saçlarından damlalar süzülüyordu" satırı, kadın kahramanın kısa kahverengi saçlı eşinde de "kızıl" diyordu. Artık sevdiğin kişinin gerçek saçını anlatıyor.
+
+### Arayüz
+- Karakter ekranının başlığı ve altındaki not adıma göre değişiyor ("Karakterini yarat" / "Sevdiğin kişi"). İkinci adımda düğme "Başla" yazıyor.
+
+### Kayıtlar
+- Eski kayıtlar değişmiyor: kayıtta sevdiğin kişinin cinsiyeti yoksa eski kural sürüyor (erkek kahraman kızıl saçlı bir kadını, kadın kahraman kahverengi saçlı bir erkeği arar). Yeni oyunlarda seçtiğin kişi kayda yazılıyor.
+
+### Tasarım belgesi
+- **Oyun akışı · Karakter yaratma** yeniden yazıldı: iki adım, metinler, teklif anısı, izler. İzler ve anılar maddeleri güncellendi.
+
+### Proje
+- Bu sürüm oynanarak test edilmedi. Sözdizimi kontrolü yapıldı. Ayrıca bir kez bakıldı:
+  - İki adımlı yaratma çalışıyor; zorluk ekranından geri dönüş de çalışıyor.
+  - İki kadın seçince teklifi oyuncu yapıyor.
+  - Saç yazısı seçilen görünüşten geliyor.
+  - İz adları ve yazıları iki cinsiyet için doğru çıkıyor.
+
+---
+
 ## Versiyon 2.51 · 1 Kasım 2026
 
 ### Oynanış

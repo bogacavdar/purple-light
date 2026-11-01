@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.51** ile birebir (1 Kasım 2026). Bu sürümde: set mantığı: ACT 1'de her silah, alet ve zırh türünden 13 parça; başlangıç seti, 6 metal seti ve 6 usta seti (Kül Diyarı'nın usta seti Ejder seti); fazla giysiler ve Bazalt aletleri kalktı (eski kayıtta sikkeye döner); Kafa lambası setlere girmeyen tek özel eşya (ayrıntı: **Aletler · Bütün setler**). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.52** ile birebir (1 Kasım 2026). Bu sürümde: karakter yaratmanın ikinci adımında sevdiğin kişinin tipi (cinsiyet ve görünüş) seçilir; bütün sahneler ve onu anlatan yazılar seçilen görünüşe göre oynar; teklif anısında karşı cinste erkek, hemcinste oynadığın karakter teklif eder (ayrıntı: **Oyun akışı · Karakter yaratma**). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

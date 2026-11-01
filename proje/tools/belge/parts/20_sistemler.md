@@ -291,9 +291,9 @@ Sağ altta, küçük haritanın hemen üstünde **Başarımlar**'ın solunda kü
 
 ## İzler ve anılar
 
-- **İzler** (Kitap → İzler): eşinden kalan 6 mor parıltı. Kopmuş bilezik (Çayır kumsalı), Islak defter sayfası (Orman), Tuhaf metal parçası (Bataklık), Çamurdaki izler (Doğan'ın güneydoğusu), Yıldız haritası ve Mor kristal (doğu). Üstüne gidip E. Sonuncusu "Gerçek" sahnesini açar.
+- **İzler** (Kitap → İzler): eşinden kalan 6 mor parıltı. Kopmuş kolye ya da Kopmuş bileklik (Çayır kumsalı; v2.52: sevdiğin kişi kadınsa kolye, erkekse bileklik), Islak defter sayfası (Orman), Tuhaf metal parçası (Bataklık), Çamurdaki izler (Doğan'ın güneydoğusu; yanında kadınsa bir küpe, erkekse deri bir cüzdan), Yıldız haritası ve Mor kristal (doğu). Üstüne gidip E. Sonuncusu "Gerçek" sahnesini açar.
 - **Anılar** (Kitap → Anılar), her biri +25 + 15 × sıra XP:
-  - 5 **tarif anısı**: 10, 25, 50, 100 ve 175 tarifte (Yağmurlu çarşı, Yanık ekmek, Çay kıyısında söz, Mor bir delik, Son akşam).
+  - 5 **tarif anısı**: 10, 25, 50, 100 ve 175 tarifte (Yağmurlu çarşı, Yanık ekmek, Çay kıyısında söz, Mor bir delik, Son akşam). İlk anının son satırı sevdiğin kişinin saçını anlatır ("Uzun kızıl saçlarından damlalar süzülüyordu" gibi, seçilen görünüşten). "Çay kıyısında söz"de karşı cinste erkek, hemcinste oynadığın karakter teklif eder (v2.52).
   - 7 **olay anısı**: uyurken (%40), bayılınca (%60) ya da görev bitince (%30), gün şartıyla: Kumsalda ilk dans (1. gün), Kırık pusula (4), Hastane koridoru (6), Yıldız haritası (8), Mektup (12), Mor fısıltı (20), Bırakılan el (25).
   - 5 **ACT 2 anısı**: ACT 2 ustalarının kilit görevleri bitince.
 - **Telefonda anı tam ekran (v2.33, Boğaç):** dokunmatik ekranda bir anı gelince resmi ekranı kaplar (en-boy oranı korunur, ekrana sığan en büyük boy). Başlık ("Bir anı geri geldi" ve anının adı) üstte, anlatım yazısı ve Devam düğmesi altta, küçük yazıyla ve yarı saydam koyu zemin üstünde resmin **üstüne** biner. Bilgisayarda değişiklik yok.
