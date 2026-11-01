@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.75** ile birebir (1 Kasım 2026). Bu sürümde: her kişinin ateşinde közleme kolaylaştı ("Ateşte közle" hedefi); közlenmiş et ve balık "pişmiş" sayılır. Önceki sürüm (2.74): Reis'lerde tek can çubuğu; Çam reçinesi; bilgi satırları üzerine gelince.
+Sürüm: **Versiyon 2.76** ile birebir (1 Kasım 2026). Bu sürümde: Çiftçi Ekin, tarlası, ateşi ve kapısı gerçekten kalktı (2.68'deki kaldırma çalışmamıştı); Deri parçasının ikonu. Önceki sürüm (2.75): her ateşte közle, közlenmiş = pişmiş.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

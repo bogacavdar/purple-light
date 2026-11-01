@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.75** ile birebir (1 Kasım 2026). Bu sürümde: her kişinin ateşinde közleme kolaylaştı ("Ateşte közle" hedefi); közlenmiş et ve balık "pişmiş" sayılır. Önceki sürüm (2.74): Reis'lerde tek can çubuğu; Çam reçinesi; bilgi satırları üzerine gelince.
+Sürüm: **Versiyon 2.76** ile birebir (1 Kasım 2026). Bu sürümde: Çiftçi Ekin, tarlası, ateşi ve kapısı gerçekten kalktı (2.68'deki kaldırma çalışmamıştı); Deri parçasının ikonu. Önceki sürüm (2.75): her ateşte közle, közlenmiş = pişmiş.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -1388,7 +1388,7 @@ Eski Gemici Poyraz'ın U1–U8 görevleri v2.34'te kalktı. Poyraz'ın yeni gör
 
 ### Çiftçi Ekin · Orman
 
-> **v2.68, Boğaç: tarlacılık şimdilik oyunda yok.** Çiftçi Ekin, tarlası, kapısı ve H1–H8 görevleri kaldırıldı (ikinci adadaki gibi haritadan çıkarıldı). Eski kayıtlarda alınmış ya da bitirilmiş her Ekin görevi ödülü kadar sikke verir; tohumlar, ürünler ve tarla yemekleri fiyatından sikkeye çevrilir. Tarlacılık ileride geri gelebilir (bkz. **Açıklar · İleride: Tarlacılık**).
+> **v2.68, Boğaç: tarlacılık şimdilik oyunda yok.** Çiftçi Ekin, tarlası, ateşi, kapısı ve H1–H8 görevleri kaldırıldı (ikinci adadaki gibi haritadan çıkarıldı; v2.76: 2.68'de kaldırma kodu çalışmamıştı, Ekin ve tarla yerinde kalmıştı). Eski kayıtlarda alınmış ya da bitirilmiş her Ekin görevi ödülü kadar sikke verir; tohumlar, ürünler ve tarla yemekleri fiyatından sikkeye çevrilir. Tarlacılık ileride geri gelebilir (bkz. **Açıklar · İleride: Tarlacılık**).
 
 ### Usta Sinan · Orman
 

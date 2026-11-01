@@ -23,6 +23,15 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.76 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Çiftçi Ekin ve tarlası hâlâ duruyordu:** 2.68'de görevleri kalkmış, eski kayıtlara sikke verilmişti ama Ekin'i, tarlasını ve kapısını haritadan çıkaran kod bir hata yüzünden hiç çalışmamıştı. Artık Ekin, tarlası, tarladaki ateşi ve yanındaki kapı gerçekten yok.
+- **Deri parçasının ikonu:** Deri parçası envanterde genel bir kutu olarak görünüyordu; artık deri ikonuyla çizilir.
+
+### Proje
+- 2.54–2.75'te eklenen bütün kod blokları, oyunun kodunda tanımlı olmayan bir ada başvuruyor mu diye tarandı; başka sorun bulunmadı.
 ## Versiyon 2.75 · 1 Kasım 2026
 
 ### Düzeltmeler

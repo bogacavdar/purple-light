@@ -19,6 +19,12 @@
 
 
 
+
+## v2.76 — Ekin gerçekten kalktı
+
+- v268 `away()` `I2` kullanıyordu; ana kapsamda yok (bloklara özel) → ReferenceError try içinde yutuldu, hiçbir şey taşınmadı. Artık `ISLE!==2`, farmer.by da −1e5 (tickNPCs y'yi by'den kurar), Ekin'in ateşi FIRES'tan, kapısı `window.__plIsle.P1`'den.
+- v262 Deri parçası ikonu P1I/p1pelt'e (v49-p1 bloğuna özel) bağlıydı → çizim kuralı `/derisi$|postu|pelerin|^Deri parçası$/`.
+- Araç: scratchpad `free.js` (blokların serbest adlarını __plEval'ın ana kapsamına karşı denetler) — yeni blok eklerken çalıştır.
 ## v2.75 — her ateşte közle, közlenmiş = pişmiş
 
 - KOZ'dan sonra: Közlenmiş … eti → DB.c['Herhangi pişmiş et'], közlenmiş balık → 'Herhangi pişmiş balık'.
