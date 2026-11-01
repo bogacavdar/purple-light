@@ -8,6 +8,25 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.53 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Öğreticideki malzemeler artık ışınlanmıyor.** Kemal'in böğürtlen dersinde sen çalıya yürürken çalı başka bir yere atlıyordu. Artık haritadaki hiçbir çalı ya da malzeme yerinden oynamıyor; yakında uygun bir tane yoksa boş bir yerde **yeni bir tane** bitiyor ve ok ona bağlı kalıyor. Diğer öğretmenlerin derslerine bakıldı: onlar zaten yeni malzeme koyuyordu, taşıyan başka yer yoktu.
+
+### Oynanış
+- **Kemal 5 böğürtlenin beşini de yemen gerektiğini açıkça söylüyor.** İlk kartta "5 böğürtlen topla ve beşini de ye" yazıyor; altında **Toplanan x/5 · Yenen y/5** sayacı ve yediklerinin çubuğu var. İkinci kartın başlığı "Kemal · 5 böğürtlen ye"; **Yenen y/5** sayacı her lokmada artıyor.
+- **Yemek düğmesi ders bitene kadar yanıp sönüyor:** çantana ilk böğürtlen girdiği andan beşini de yiyene kadar, yemek listesi açıkken bile.
+
+### Arayüz
+- **Bilgisayarda yazılar ve alet kemeri büyüdü** (telefon aynı):
+  - Öğretici/görev kartı 18 px; bir menü açıkken 16 px ve 3 satır.
+  - Yan görev kartı ve takip çipleri daha büyük.
+  - Alttaki **1-2-3-4-5 alet kemeri** iki kat büyük.
+
+### Tasarım belgesi
+- Akış: "Öğretici malzemeleri yer değiştirmez", Kemal'in 2. adımı (5 böğürtlenin hepsi, sayaçlar, yanan düğme).
+- Sistemler: "Bilgisayarda kart yazıları daha büyük (v2.53)".
+
 ## Versiyon 2.52 · 1 Kasım 2026
 
 ### Oynanış

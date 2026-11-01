@@ -1,3 +1,10 @@
+## v2.53 (1 Kasım 2026) · öğretici malzemesi ışınlanmaz, 5 böğürtlen sayacı, bilgisayarda büyük kart/kemer
+- Belge: `parts/10_akis.md` ("Öğretici malzemeleri yer değiştirmez", adım 2), `20_sistemler.md` (v2.53 yazı boyları).
+- `bringBerry` ve telefon öğreticisindeki "parmağa yakın getir" artık mevcut düğümü taşımıyor; boş yerde yeni düğüm (`tutN:1`) ekliyor, ok `tutN`'yi önceliyor. Ölü `if(false)0;` silindi. Taşıyan başka öğretici kodu yok (`tzPlace` zaten push ediyor; 6021 yalnızca ölü düğüm yeniden doğuşu).
+- Kemal kartları (tz 1/2) sayaç + `.tbar`; `tzAte` her lokmada renderTut; yemek düğmesi `tz===2 || (tz===1 && çantada böğürtlen)` boyunca pulse (b3After + v63 sarmalı).
+- `<style id="v253-desk">` (min-width:721px, pointer:fine, `:not(.v50m)`): #tut 18/16px, #sqcard 16px, b3 çipleri 17px, #hotbar kutuları 92px (iki kat).
+- Kontrol: chk.js 0 hata; yükleme, kart metni, yeni düğüm eklenmesi ve 1366×768 ekran görüntüsünde kemer bakıldı.
+
 ## v2.52 (1 Kasım 2026) · sevdiğin kişiyi seç (iki adımlı yaratma), metinler/izler/teklif ona göre
 - Belge: `parts/10_akis.md` → "Karakter yaratma (v2.52)", `20_sistemler.md` anılar ve izler.
 - `<script id="v252">`: `__plLoveFem` (LOOK.love.gender, yoksa eski kural), `__plLoveProposes` (kadın kahraman + erkek eş → eş; diğerleri → oyuncu), `__plLoveHair(ek)` (CC.hair sırası → renk adı, hs → uzun/küt/kısa); yaratıcıda `cMode` ('hero'/'love'): `c-go` yakalama dinleyicisi (1. adım `applyLook` + karşı cins varsayılanı; 2. adım `applyLove` → zorluk), `c-back` 2. adımda 1. adıma (heroC'den), zorluktan `d-back` 2. adıma (`fromLove`; v2.04'ün `b4FromCreator` bayrağı bu yolda kullanılmıyor); `cRender` sarmalı başlık/not/düğme; `restore` sarmalı LOOK.love'ı temizleyip yükler (kayıttaki `ll.gender` yoksa v64 `setLove` eski kuralı uygular); CLUES 'bilezik' ve SIS_IT 'kurdele' için `n`/`t` getter'ları.

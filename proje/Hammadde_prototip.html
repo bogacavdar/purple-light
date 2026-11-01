@@ -1347,7 +1347,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.52</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.53</small>
     </div>
     <div id="ttop"><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
     <div class="tmenu" id="tslots" hidden></div>
@@ -3920,7 +3920,7 @@ function renderTut(){
 }
 $('tutok').addEventListener('click',()=>{if(runTut===2&&tut>=11){runTut=3;sfx('found');toast('Koşu dersi tamam');renderTut();return}if(tut===4){if(craftOpen)closeCraft();if(ftut<3){ftut=1;guideTo('alp',12);announce('Savaşçı Börü','Kampın yakınında biri seni bekliyor');renderTut();return}startWitchLesson()}else if(tut===10){if(craftOpen)closeCraft();if(met){tut=11;qState='talk';toast(`${npc.name} seninle konuşmak istiyor`)}else{tut=11;qState='talk';appearFx(npc.x,npc.y,'#f2b84b');announce(npc.name,'Biri seni çağırıyor')}}renderTut()});
 function bringBerry(){let b=null,bd=1e9;for(const n of nodes)if(n.alive&&n.name==='Böğürtlen'){const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;b=n}}if(!b||bd<170)return;
-  for(let k=0;k<60;k++){const an=Math.random()*6.28,d=60+Math.random()*50,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;if(!reachAt(x,y)||blocked(x,y)||tileAt(x,y)>1||treesNear(x,y,t=>Math.hypot(t.x-x,t.y-y)<14))continue;b.x=x;b.y=y;b.pop=.35;return}}
+  for(let k=0;k<60;k++){const an=Math.random()*6.28,d=60+Math.random()*50,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;if(!reachAt(x,y)||blocked(x,y)||tileAt(x,y)>1||treesNear(x,y,t=>Math.hypot(t.x-x,t.y-y)<14)||nodes.some(o=>o.alive&&Math.hypot(o.x-x,o.y-y)<12))continue;nodes.push({name:'Böğürtlen',x,y,alive:true,t:0,v:Math.random(),pop:.35,tutN:1});return}}   // v2.53: a new bush grows in an empty spot; the far one stays where it is
 $('tutskip').addEventListener('click',e=>{const b=$('tutskip');if(false&&TOUCH&&tz&&!b.dataset.arm){e.stopImmediatePropagation();b.dataset.arm='1';b.textContent='Emin misin? Geç';clearTimeout(b._t);b._t=setTimeout(()=>{delete b.dataset.arm;renderTut()},3500)}},true);
 $('tutskip').addEventListener('click',()=>{delete $('tutskip').dataset.arm;if(qPeek&&!tz){qPeek=false;renderTut();return}if(tz){tzSkip();return}{const ax=tut===11&&woodCut<5?Object.keys(GT).find(n=>GT[n].kind==='axe'&&inv[n]>0):null;if(ax&&beltIndex(ax)<0){beltFront(ax);renderTut();return}}if(htut===1){htut=2;renderTut();return}if(ytut===1||ytut===2){ytut=3;renderTut();return}if((runTut===1||runTut===2)&&tut>=11){runTut=3;renderTut();return}if(torchTut===1||torchTut===2){torchTut=3;renderTut();return}ftut=3;ctut=4;walked=true;mapSeen=2;tapMoved=true;if(tut>=11)questsHidden=true;else{witchShown=true;tut=11;qState='talk'}renderInv();renderTut()});
 function appearFx(x,y,c){for(let i=0;i<28;i++){const an=Math.random()*Math.PI*2,sp=20+Math.random()*50;parts.push({x,y:y-6,vx:Math.cos(an)*sp,vy:Math.sin(an)*sp,life:1.3,c:i%2?c:'#ffffff'})}sfx('magic')}
@@ -6060,17 +6060,17 @@ function frameBody(now){
   drawClues(time,inView);
   if(!tz&&((tut===0&&walked&&tapDone()&&mapSeen>=2&&ytut!==2)||tut===5)){
     const want=tut===5?'Taş':ytut===1?'Böğürtlen':'Dal';
-    if(false)0;
     // on phones point at things that are actually reachable with a finger: below the tutorial card, away from the screen edges
     const cardB=JOYMODE()?(($('tut').getBoundingClientRect().bottom||0)+24)/S:0;
     const okSpot=n=>!JOYMODE()||(n.y-cy>cardB&&n.y-cy<viewH-40/S*2&&n.x-cx>30&&n.x-cx<viewW-30);
-    const st=nodes.filter(n=>n.alive&&n.name===want).sort((a,b)=>(okSpot(b)-okSpot(a))||(Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y))).slice(0,tut===5?4:1);
+    const st=nodes.filter(n=>n.alive&&n.name===want).sort((a,b)=>((b.tutN?1:0)-(a.tutN?1:0))||(okSpot(b)-okSpot(a))||(Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y))).slice(0,tut===5?4:1);
     // phone tutorial: if nothing suitable is on screen, bring one within easy reach of the thumb
-    if(JOYMODE()&&tut===0&&st[0]&&!okSpot(st[0])&&!gathering){
-      for(const [ox,oy] of [[44,24],[-44,24],[50,-4],[-50,-4],[30,40],[-30,40],[60,20],[-60,20]]){const x=player.x+ox,y=player.y+oy,n=st[0];
+    // v2.53: a NEW one grows in an empty spot, once; nodes already on the map never move (they used to jump away as you walked to them)
+    if(JOYMODE()&&tut===0&&st[0]&&!st[0].tutN&&!okSpot(st[0])&&!gathering){
+      for(const [ox,oy] of [[44,24],[-44,24],[50,-4],[-50,-4],[30,40],[-30,40],[60,20],[-60,20]]){const x=player.x+ox,y=player.y+oy;
         if(x-cx<30||x-cx>viewW-30||y-cy<=cardB||y-cy>viewH-40)continue;
-        if(tileAt(x,y)>1||!reachAt(x,y)||blocked(x,y)||trees.some(t=>Math.hypot(t.x-x,t.y-y)<12))continue;
-        n.x=x;n.y=y;n.pop=.35;break}
+        if(tileAt(x,y)>1||!reachAt(x,y)||blocked(x,y)||trees.some(t=>Math.hypot(t.x-x,t.y-y)<12)||nodes.some(o=>o.alive&&Math.hypot(o.x-x,o.y-y)<12))continue;
+        const n={name:want,x,y,alive:true,t:0,v:Math.random(),pop:.35,tutN:1};nodes.push(n);st[0]=n;break}
     }
     const bob=Math.round(Math.sin(time*6)*2);
     for(const n of st){const x=Math.round(n.x),y=Math.round(n.y)-14+bob;
@@ -7064,7 +7064,7 @@ function tzCard(){const h=n=>inv[n]||0,c=(n,q)=>`${n} ${Math.min(h(n),q)}/${q}`;
   if(tz===1&&JOYMODE()&&!walked)return ['ekin','Kemal · Önce yürü',`Önce ayaklarını bir dene evlat. Ekranda <b>parmağını basılı tut ve sürükle</b>: o yöne yürürsün; ne kadar uzağa çekersen o kadar hızlı.<span class="tbar"><i style="width:${Math.min(100,walkDist/WALK_NEED*100)}%"></i></span>`];
   if(tz===1&&JOYMODE()&&!tapMoved)return ['ekin','Kemal · Dokunarak yürü',`Aferin! Bir yol daha var: gitmek istediğin yere <b>bir kez dokun</b>, kendiliğinden oraya yürürsün. Parmak işaretinin olduğu yere dokun.`];
   return {
-   1:['ekin','Kemal · Önce karnını doyur',`Bu adada en önemli şey <b>yemek</b>. Tokluk çubuğun (turuncu; azalınca <b>kırmızı yanıp söner</b>) sıfıra inerse canın hızla tükenir. Şu çalılardan <b>5 böğürtlen</b> topla: ${TOUCH?'çalıya dokun':'tıkla ya da yanında <span class="kc">E</span>'}; düşen meyvenin üstünden yürü. (Böğürtlen ${Math.min(5,h('Böğürtlen')+tzEat)}/5)`],
+   1:['ekin','Kemal · Önce karnını doyur',`Bu adada en önemli şey <b>yemek</b>. Tokluk çubuğun (turuncu; azalınca <b>kırmızı yanıp söner</b>) sıfıra inerse canın hızla tükenir. Şu çalılardan <b>5 böğürtlen</b> topla ve <b>beşini de ye</b>: ${TOUCH?'çalıya dokun':'tıkla ya da yanında <span class="kc">E</span>'}; düşen meyvenin üstünden yürü. Yemek için ${tzKey('eat')}. <b>Toplanan ${Math.min(5,h('Böğürtlen')+tzEat)}/5 · Yenen ${Math.min(5,tzEat)}/5</b><span class="tbar"><i style="width:${Math.min(100,tzEat/5*100)}%"></i></span>`],
    2:['ekin','Kemal · Ye',`Şimdi ye: ${tzKey('eat')} ve listeden <b>böğürtleni</b> seç. Beşini de ye. (Yenen ${Math.min(5,tzEat)}/5)`],
    3:['ekin','Kemal · Cadı Zümrüt',`Karnın doydu. Şimdi kuzeydeki ormanın kıyısında yaşayan <b>Cadı Zümrüt</b>'e git; ok yolu gösteriyor. Bu adada bir şey yapmayı ondan öğrenirsin.`],
    4:['witch','Zümrüt · İlk tarif: Kaba meşale',`Kazan bir şey <b>yapmaz</b>, sana <b>tarif öğretir</b>. Yanımdaki dal, lif ve yaprakları topla: ${c('Dal',2)} · ${c('Lif',2)} · ${c('Yaprak',2)}. Sonra kazanı aç, ${TOUCH?'listeden':'soldan'} <b>Kaba meşale</b>'yi seç, malzemeleri koy ve <b>Tarifi öğren</b>'e bas.`],
@@ -7093,7 +7093,7 @@ function tzTick(){if(!tz)return;const h=n=>inv[n]||0;
   if(tz===2&&!h('Böğürtlen')&&tzEat<5&&!order.some(n=>inv[n]>0&&foodVal(n)>0)){tz=1;tzPlace('Böğürtlen',5-tzEat,npc.home.x,npc.home.y+10);renderTut()}
   if(tz===6&&!(window.__p3&&(window.__p3.hold||window.__p3.low))&&h('Taş')>=4){tz=7;sfx('found');toast('Taşlar tamam. Şimdi kazana: Keskin taş tarifini öğren.');renderTut()}
 }
-function tzAte(n){if(tz&&n==='Böğürtlen'){tzEat++;if(tz===2&&tzEat>=5){tz=3;witchShown=true;appearFx(witch.x,witch.y,'#8fd46b');sfx('level');
+function tzAte(n){if(tz&&n==='Böğürtlen'){tzEat++;setTimeout(()=>{try{renderTut()}catch(e){}},0);if(tz===2&&tzEat>=5){tz=3;witchShown=true;appearFx(witch.x,witch.y,'#8fd46b');sfx('level');
   setTimeout(()=>(craftOpen&&closeCraft(),say(`Aferin evlat! Gördün mü, ada cömerttir; ama gözünü açık tutacaksın. Ormanda meyve ağaçları, çalılarda yemişler, toprakta kökler var. <br><br>Şimdi kuzeye, ormanın kıyısına git: orada <b>Cadı Zümrüt</b> yaşar. Bu adada bir şey yapmanın yolunu o öğretir. Ok yolu gösteriyor.`,[{t:'Zümrüt\'e gidiyorum',pri:1,fresh:1,f:()=>{bye();guideTo('pot',10)}}])),500)}renderTut()}}
 function tzLearned(r){
   if(tz===4&&r==='Kaba meşale'){tz=5;closeCraft();tzPlace('Dal',2,cauldron.x,cauldron.y);tzPlace('Lif',2,cauldron.x,cauldron.y);tzPlace('Yaprak',2,cauldron.x,cauldron.y);   // v2.35: beside Zümrüt's cauldron
@@ -8085,7 +8085,7 @@ const _tzKey=tzKey;
 const TZK_EXTRA={eat:()=>TOUCH?'sol menüdeki <b>yemek düğmesine</b> (ekmek simgesi) dokun':'sol menüdeki <b>yemek düğmesine</b> (ekmek simgesi) tıkla ya da <span class="kc">F</span>\'ye bas'};
 tzKey=function(k){return TZK_EXTRA[k]?TZK_EXTRA[k]():_tzKey.apply(this,arguments)};
 const _tzCard=tzCard;tzCard=function(){const C=_tzCard.apply(this,arguments);if(!C)return C;const h=n=>inv[n]||0;
-  if(tz===2)return['ekin','Kemal · Ye',`Şimdi karnını doyur: ${tzKey('eat')}. Her basışta en uygun yiyeceğini yersin; şimdilik o da böğürtlen. <b>Beşini de ye.</b>${TOUCH?' (Düğmeye basılı tutarsan ne yiyeceğini listeden kendin seçersin: önce üstten <b>Meyveler</b> sekmesini seç, sonra Böğürtlen\'in <b>Ye</b> düğmesine bas.)':' (Ne yiyeceğini seçmek istersen <span class="kc">F</span>\'yi basılı tut ya da düğmeye sağ tıkla: liste açılır; önce üstten <b>Meyveler</b> sekmesini seç, sonra Böğürtlen\'in <b>Ye</b> düğmesine bas.)'} (Yenen ${Math.min(5,tzEat)}/5)`];
+  if(tz===2)return['ekin','Kemal · 5 böğürtlen ye',`<b>5 böğürtlenin beşini de yemelisin</b>; beşi bitmeden ders bitmez. Yemek için ${tzKey('eat')}. Her basışta en uygun yiyeceğini yersin; şimdilik o da böğürtlen. <b>Beşini de ye.</b>${TOUCH?' (Düğmeye basılı tutarsan ne yiyeceğini listeden kendin seçersin: önce üstten <b>Meyveler</b> sekmesini seç, sonra Böğürtlen\'in <b>Ye</b> düğmesine bas.)':' (Ne yiyeceğini seçmek istersen <span class="kc">F</span>\'yi basılı tut ya da düğmeye sağ tıkla: liste açılır; önce üstten <b>Meyveler</b> sekmesini seç, sonra Böğürtlen\'in <b>Ye</b> düğmesine bas.)'} <b>Yenen ${Math.min(5,tzEat)}/5</b><span class="tbar"><i style="width:${Math.min(100,tzEat/5*100)}%"></i></span>`];
   if(tz===4&&!tzNeed().length&&!foundSet.has('Kaba meşale'))return['witch','Zümrüt · Gel, tarifi öğrenelim',craftOpen&&mode==='craft'?`${TOUCH?'Listeden':'Soldan'} <b>Kaba meşale</b>'yi seç, malzemelere ${TOUCH?'dokun':'tıkla'} (basılı tutarsan hepsi birden gider) ve <b>Tarifi öğren</b>'e bas.`:`Tamam, hepsini topladın! Şimdi <b>kazanın başına</b> gel (ok yolu gösteriyor) ve kazana ${TOUCH?'dokun':'tıkla ya da yanında <span class="kc">E</span>\'ye bas'}. Sonra ${TOUCH?'listeden':'soldan'} <b>Kaba meşale</b>'yi seç, malzemeleri koy ve <b>Tarifi öğren</b>'e bas.`];
   if(tz===5&&!tzNeed().length)return['witch','Zümrüt · Meşaleni yap',craftOpen&&mode==='hand'?`Listede <b>Kaba meşale</b>'nin yanındaki yanıp sönen <b>Yap</b> düğmesine bas. Meşale envanterine gider; sonra onu bir alet yuvasına koyarsın.`:`Malzemeler tamam! Kazana gerek yok: ${TOUCH?'soldaki <b>el ikonuna</b> dokun':'<span class="kc">Tab</span> tuşuna bas (ya da soldaki el ikonuna tıkla)'} ve <b>Kaba meşale</b>'nin yanındaki <b>Yap</b>'a bas. Meşale <b>envanterine</b> gider: sonra ${beltHow('Kaba meşale')}.`];
   if(tz===7&&!(craftOpen&&mode==='craft'))return['witch','Zümrüt · Keskin taş tarifi',`Taşlar tamam! <b>Kazanın başına</b> gel (ok yolu gösteriyor), kazanı aç, <b>Keskin taş</b>'ı seç, 2 taşı koy ve <b>Tarifi öğren</b>'e bas.`];
@@ -8127,7 +8127,7 @@ const _hurt=hurt;hurt=function(n,why){const r=_hurt.apply(this,arguments);if(!B3
 const _renderTut=renderTut;renderTut=function(){_renderTut.apply(this,arguments);try{b3After()}catch(e){}};
 function b3After(){if(onTitle)return;
   if(eb.hidden===$('fdbar').hidden){}else{eb.hidden=$('fdbar').hidden;hudK=''}
-  if((tz===2||(!tz&&ytut===2))&&!eb.hidden)eb.classList.add('pulse');
+  if((tz===2||(tz===1&&(inv['Böğürtlen']||0)>0)||(!tz&&ytut===2))&&!eb.hidden)eb.classList.add('pulse');   // v2.53: lit until the five berries are eaten
   syncLocks();renderBar();placePtr()}
 // steps advance as soon as their condition is met, even while a menu or a talk is open (the world clock is paused then)
 function b3Tick(){if(onTitle)return;try{
@@ -11003,7 +11003,7 @@ const _tc=tzCard;tzCard=function(){if(tz===2){const n=Math.min(5,tzEat);
       :`Şimdi ye: ${tzKey('eat')}. Yiyeceklerin açılır; <b>böğürtlenin yanındaki Ye</b> düğmesine bas. Beşini de ye. (Yenen ${n}/5)`]}
   return _tc.apply(this,arguments)};
 const _rt=renderTut;renderTut=function(){const r=_rt.apply(this,arguments);try{const eb=$('b-eat'),fb=$('fdbar');
-  if(tz===2){if(fb)fb.classList.remove('pulse');if(eb)eb.classList.toggle('pulse',!(craftOpen&&mode==='eat'))}else if(eb&&eb.classList.contains('pulse')&&!(!tz&&ytut===2))eb.classList.remove('pulse')}catch(e){}return r};
+  if(tz===2||(tz===1&&(inv['Böğürtlen']||0)>0)){if(fb)fb.classList.remove('pulse');if(eb)eb.classList.add('pulse')}else if(eb&&eb.classList.contains('pulse')&&!(!tz&&ytut===2))eb.classList.remove('pulse')}catch(e){}return r};
 renderTut();
 }).toString()+')()')}catch(e){try{window.__hamErr('v63: '+(e&&e.message||e))}catch(_){}}})();
 </script>
@@ -17113,6 +17113,29 @@ setInterval(()=>{try{arm()}catch(e){}},300);
  html body #dlg .dbody p{font-size:16.5px;line-height:1.45;margin:4px 0 12px}
  html body #dlg .dbody b{font-size:15.5px}
  html body #dlg .dch button{font-size:15px;padding:7px 12px}
+}
+</style>
+<style id="v253-desk">
+/* v2.53 (Boğaç): on a computer the tutorial card, the side quest card and the tracking chips read bigger; phones (v50m) untouched */
+@media (min-width:721px) and (pointer:fine){
+ html body:not(.v50m):not(.menuopen) #tut{font-size:18px;line-height:1.45}
+ html body:not(.v50m) #tut .th b{font-size:14.5px}
+ html body:not(.v50m).menuopen #tut{width:min(420px,calc(100vw - 640px));min-width:300px;font-size:16px;line-height:1.4}
+ html body:not(.v50m).menuopen #tut p{font-size:16px;-webkit-line-clamp:3}
+ html body:not(.v50m) #tut .tbar{height:10px}
+ html body:not(.v50m) #sqcard{width:min(480px,calc(100vw - 32px));font-size:16px;line-height:1.35}
+ html body:not(.v50m) #sqcard .k{font-size:13px}
+ html body:not(.v50m) #sqcard small{font-size:15px}
+ html body:not(.v50m) .b3lab{font-size:16px}
+ html body:not(.v50m) .b3c{font-size:17px}
+ html body:not(.v50m) .b3c b{font-size:18px}
+ /* the 1-2-3-4-5 tool belt at the bottom: twice the size */
+ html body:not(.v50m) #hotbar{gap:6px;padding:6px;border-width:3px}
+ html body:not(.v50m) #hotbar .hs,html body:not(.v50m) #hotbar #handbtn{width:92px;height:92px;border-width:3px}
+ html body:not(.v50m) #hotbar .hs img,html body:not(.v50m) #hotbar #handbtn img{width:64px;height:64px}
+ html body:not(.v50m) #hotbar .hs kbd{font-size:18px;left:5px;top:2px}
+ html body:not(.v50m) #hotbar .hs b{font-size:19px;right:5px;bottom:2px}
+ html body:not(.v50m) #hotbar .hs .dur{height:6px;left:5px;bottom:4px;max-width:calc(100% - 10px)}
 }
 </style>
 <script id="v248">
