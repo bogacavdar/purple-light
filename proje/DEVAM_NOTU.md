@@ -3,6 +3,7 @@
 - Yerinde: `#sellall` dinleyicisi ve `sellSafe()` artık `qc('sold',got)` çağırıyor (şans bonusundan önce, `sell()` ile aynı ölçü). Daha önce yalnızca `sell(n,q)` sayıyordu.
 - `safeSell(n)` = bulkSellable && !potUses && !recUses.length; `#sellsafe` tutarı, askSell süzgeci ve `sellSafe()` bunu kullanıyor (eskiden yalnızca !potUses → bilinen tarif malzemeleri satılıp soru çıkıyordu). Belge `parts/20_sistemler.md` satış uyarısı.
 - `needRec`: `['c','trap:']` isteyen görev `foundSet.has('Tuzak')` olmadan `[['Tuzak']]` döndürür → N4 açılmaz, Kemal'in ayak işi tarife yönlendirir. Alınmış N4 etkilenmez. Belge `30_act1.md` (v2.26 kuralı + N4 satırı).
+- `<script id="v258forge">`: yükleme sonunda FORGED'dan örs dışı aletler silinir (kalan: ARMORSET/EQUIP, GT kind axe/pick/sword/hunt/staff/bow/gun ya da mace, adı bıçak/Boynuz kazma). `handSimple` FORGED'a baktığı için silinenler kendiliğinden El yapımı'na geçer. `handCraft` sarmalı: wearTool varken yenisi yok, yapılınca `giveTool` (tam keskinlik). Dişbudak/Porsuk yayı GT kind 'trap' → elle. Belge `85_aletler.md` "Nerede yapılır".
 - Eski kayıtlara etkisi yok (geçmiş toplu satışlar geriye dönük sayılmaz). Kontrol: chk.js 0 hata.
 
 ## v2.57 (1 Kasım 2026) · kamp ateşleri küçük ve büyük haritada

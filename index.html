@@ -17548,5 +17548,16 @@ body.pl-pc #t-install{display:none!important}
 {let tip=0;const _sh=setHand;setHand=function(){const r=_sh.apply(this,arguments);try{if(held()==='Kamp ateşi'&&performance.now()-tip>8000){tip=performance.now();toast(TOUCH?'Kamp ateşi elinde: Vur\'a bas, önüne yakılır.':'Kamp ateşi elinde: tıkla, önüne yakılır.')}}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v256: '+(e&&e.message||e))}catch(_){}}})();
 </script>
+<script id="v258forge">
+// v2.58 (Boğaç): the anvil only makes weapons, armour, axes and picks (and knives); every other tool is made by hand (El yapımı).
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+const KEEP={axe:1,pick:1,sword:1,hunt:1,staff:1,bow:1,gun:1};
+const keepAnvil=n=>ARMORSET.has(n)||!!EQUIP[n]||(GT[n]&&(KEEP[GT[n].kind]||GT[n].mace))||/bıçak|Boynuz kazma/.test(n);
+for(const n of Array.from(FORGED))if(!keepAnvil(n))FORGED.delete(n);
+// one of a worn tool at a time (like the anvil), and a new one comes sharp
+{const _hc=handCraft;handCraft=function(r,quiet){try{if(wearTool(r)&&inv[r]>0){if(!quiet){toast(`${r} zaten sende. Körelince Demirci Dursun'a bilet.`,true);sfx('bad')}return false}}catch(e){}
+  const ok=_hc.apply(this,arguments);try{if(ok&&wearTool(r))giveTool(r)}catch(e){}return ok}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v258forge: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 </body>
 </html>
