@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.73** ile birebir (1 Kasım 2026). Bu sürümde: pazar listesi düzeldi (silah/zırh bilgisi düğmelerin içine yazılıyordu). Önceki sürüm (2.72): mağaraya hava girmez; almanağın "yeni" sayısı düzeldi.
+Sürüm: **Versiyon 2.74** ile birebir (1 Kasım 2026). Bu sürümde: silah/zırh bilgi satırları yalnızca üzerine gelince görünür. Önceki sürüm (2.73): pazar listesi düzeldi.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

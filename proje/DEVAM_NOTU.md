@@ -17,6 +17,10 @@
 
 
 
+
+## v2.74 — bilgi satırları üzerine gelince
+
+- v258-wst stiline: `.wst,.pl-stl` varsayılan gizli; li/.psel/button :hover ve :focus-within ile, `.bkinfo` ve `.iact .ii` içinde her zaman görünür.
 ## v2.73 — pazar satırı
 
 - v265 deco: kare olmayan elemanlara satır içi bilgi yalnızca data-wear/data-hp düğmelerine; `.mkt li` içindeki düğmeler için bilgi satırın `.nm`'sine bir kez. Öbür düğmelere yalnızca title.

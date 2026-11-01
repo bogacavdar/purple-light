@@ -21,6 +21,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.74 · 1 Kasım 2026
+
+### Arayüz
+- **Silah ve zırh bilgisi üzerine gelince:** listelerdeki uzun bilgi satırları (hasar, vuruş/sn, menzil… ya da savunma, yuva, direnç) artık varsayılan olarak yazmaz; satırın üzerine gelince açılır. Tarif kitabının bilgi kutusunda ve envanterde seçtiğin eşyada her zaman görünür; karelerin köşesindeki kısa ⚔/🛡 etiketi yerinde durur.
+
+### Tasarım belgesi
+- Aletler: bilgi satırlarının görünme kuralı.
 ## Versiyon 2.73 · 1 Kasım 2026
 
 ### Düzeltmeler

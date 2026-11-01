@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.73** ile birebir (1 Kasım 2026). Bu sürümde: pazar listesi düzeldi (silah/zırh bilgisi düğmelerin içine yazılıyordu). Önceki sürüm (2.72): mağaraya hava girmez; almanağın "yeni" sayısı düzeldi.
+Sürüm: **Versiyon 2.74** ile birebir (1 Kasım 2026). Bu sürümde: silah/zırh bilgi satırları yalnızca üzerine gelince görünür. Önceki sürüm (2.73): pazar listesi düzeldi.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -4022,7 +4022,7 @@ Yazılanlar: **Hasar** (temel; seviye ve güç iksiri ayrıca artırır), **hız
 
 **Zırhlar da ne verdiğini gösterir (v2.64, Boğaç):** aynı yerlerde (tarif listeleri, El yapımı, envanter, kemer ipucu) zırh parçalarının altında "🛡 Savunma +X · yuvası (baş/gövde/el/ayak)" ve varsa **direnç** (kanama/zehir/yanık %), **çamurda yavaşlamazsın**, **karanlıkta ışık verir** yazar. Değerler oyunun hasar hesabında kullandığı değerlerle aynıdır.
 
-**Her yerde kısa etiket (v2.65, Boğaç):** silah ya da zırh olan her eşya karesinin sol üst köşesinde kısa bir etiket durur: silahta **⚔hasar**, zırhta **🛡savunma** (envanter, kemer, tarif kitabı, kuşanma yuvaları, pazar ve diğer eşya kareleri). Listelerde (giyme seçimi, kemer seçici, pazar satırları) adın altında tam satır yazar (pazarda her satırda **bir kez**, eşyanın adının altında; düğmelerin içine hiçbir şey yazılmaz — v2.73 düzeltmesi); üzerine gelince ya da dokununca tam bilgi ipucu çıkar. Tarif kitabında tarifi henüz açılmamış silah ve zırhın da özellikleri görünür.
+**Her yerde kısa etiket (v2.65, Boğaç):** silah ya da zırh olan her eşya karesinin sol üst köşesinde kısa bir etiket durur: silahta **⚔hasar**, zırhta **🛡savunma** (envanter, kemer, tarif kitabı, kuşanma yuvaları, pazar ve diğer eşya kareleri). Listelerde (giyme seçimi, kemer seçici, pazar satırları) adın altında tam satır yazar (pazarda her satırda **bir kez**, eşyanın adının altında; düğmelerin içine hiçbir şey yazılmaz — v2.73 düzeltmesi); **v2.74 (Boğaç: "üzerine gelince yazsın, default yazmasın"):** listelerdeki bu uzun satırlar varsayılan olarak gizlidir; satırın üzerine gelince (ya da klavyeyle seçince) açılır. Tarif kitabının bilgi kutusunda ve envanterde seçili eşyada her zaman görünür; karelerdeki kısa ⚔/🛡 etiketi durur. üzerine gelince ya da dokununca tam bilgi ipucu çıkar. Tarif kitabında tarifi henüz açılmamış silah ve zırhın da özellikleri görünür.
 
 ## Madenler ve ekipman merdiveni (v2.48, Boğaç)
 
