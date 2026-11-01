@@ -8,6 +8,10 @@
 
 
 
+
+## v2.65 — her yerde ⚔/🛡
+
+- `<script id="v265">` + `<style id="v265-st">`: body'de MutationObserver (yalnızca eklenen Element'lerde, rAF ile tek geçiş) → data-n/isel/bk/hs/eqs/wear/hp/cr/aw/pn/qn/tr/d taşıyan elemanlara: karelerde `.pl-st` rozeti (⚔hasar/🛡savunma), listelerde `.pl-stl` tam satır, title'a tam bilgi. Metin `__plWInfo` (v258c) ile, ad+keskinlik anahtarlı önbellekte. bookInfo kapalı tariflerde de bilgi ekler. Ölçüm yapılmadı (kare döngüsüne dokunmuyor; metin güncellemeleri tetiklemez).
 ## v2.64 — zırh bilgisi
 
 - v258c yerinde düzenlendi: `wInfo` artık `wInfo0` (silah) || `aInfo` (EQUIP: def, s, res, mud, lamp). Bütün süsleme yerleri (deco, bookInfo, hotbar, hotpick) zırhı da gösterir; title kontrolü `indexOf(t)`.

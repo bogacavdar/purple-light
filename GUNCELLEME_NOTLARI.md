@@ -12,6 +12,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.65 · 1 Kasım 2026
+
+### Arayüz
+- **Silah ve zırh özellikleri her yerde:** silah ya da zırh olan her eşya karesinin sol üst köşesinde kısa bir etiket var: silahta **⚔ hasar**, zırhta **🛡 savunma**. Envanterde, kemerde, tarif kitabında, kuşanma yuvalarında, pazarda ve öteki eşya karelerinde görünür.
+- Listelerde (giyme seçimi, kemer yuvası seçici, pazar satırları) eşyanın adının altında tam bilgi yazar: silahta hasar, vuruş/sn, menzil, keskinlik, etki; zırhta savunma, yuva, direnç, çamur, ışık. Üzerine gelince ya da dokununca da tam bilgi çıkar.
+- **Tarif kitabı:** tarifi henüz açılmamış silah ve zırhların da özellikleri görünür.
+
+### Tasarım belgesi
+- Aletler: "Her yerde kısa etiket" eklendi.
 ## Versiyon 2.64 · 1 Kasım 2026
 
 ### Arayüz
