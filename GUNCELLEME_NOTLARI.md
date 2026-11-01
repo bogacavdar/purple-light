@@ -18,6 +18,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.71 · 1 Kasım 2026
+
+### Oynanış
+- **Nazlı'nın kuzenleri:** Çayır'dan sonraki her biyomda, demirci ocağının yanında Nazlı'nın bir kuzeni pazar kurdu: Orman'da **Fidan** (yeşil yemeni), Bataklık'ta **Nilüfer** (su yeşili), Kayalık Dağ'da **Kardelen** (kar beyazı), Kül Diyarı'nda **Lale** (kırmızı), Mor Kristal Vadisi'nde **Menekşe** (pembe).
+- Hepsi Nazlı'yla tıpatıp aynı görünür, yalnızca yemenilerinin ve tezgâh tentelerinin rengi farklıdır. **Alıp satmaları Nazlı'yla aynıdır:** aynı satış ve satın alma listeleri, aynı fiyatlar, toplu satış düğmeleri.
+- **Yeni görevler:** her kuzen sırayla 3 basit görev verir (toplam 15): o biyomun doğal malzemelerini getirmek (mantar, fındık, nilüfer, ördek yumurtası, dağ çayı, kardelen, ateş biberi, kehribar, ay otu, ışık mantarı, deriler ve postlar). İlk görev biyomu keşfedince açılır.
+- Haritada kuzenler pazar simgesiyle görünür; tanışmadan önce başlarında ünlem durur.
+
+### Tasarım belgesi
+- ACT 1 kişileri: "Nazlı'nın kuzenleri" bölümü (yerler, yemeni renkleri, 15 görev).
 ## Versiyon 2.70 · 1 Kasım 2026
 
 ### Oynanış

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.70** ile birebir (1 Kasım 2026). Bu sürümde: hiçbir tarif bıçak istemez; Çam ve Ladin kesilince reçine düşer (kabuk ve reçine tarifleri kalktı). Önceki sürüm (2.69): El yapımı listesinde Yap düğmeleri sağda alt alta.
+Sürüm: **Versiyon 2.71** ile birebir (1 Kasım 2026). Bu sürümde: Nazlı'nın kuzenleri her biyomda pazar kurar (aynı satış, farklı renk yemeni, 3'er basit görev). Önceki sürüm (2.70): hiçbir tarif bıçak istemez; Çam ve Ladin reçine verir.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -2510,6 +2510,23 @@ Son görev (Yeni bir gemi) bitince Barbaros'la konuş: hikâye sahnesi, ardında
 
 
 > **v2.51 · usta setleri:** her biyomun silahçısı ve zırhçısı kendi biyomunun usta setini döver (Aletler · Bütün setler). Yukarıdaki listelere ek olarak: Orman — Granit kılıç, Granit topuz, Granit mızrak, Ihlamur yayı, Meşe kabuk eldiven ve çizme; Bataklık — Timsah dişi gürz, topuz, mızrak, balta, kazma, Söğüt yayı, Timsah miğfer, Timsah eldiven, Kamış çizme; Kayalık Dağ — Kuvars gürz ve topuz, Huş yayı, Gümüş eldiven ve çizme; Mor Kristal Vadisi — Ametist gürz ve topuz, Işık ağacı yayı, Ametist miğfer, Kristal ipek çizme, Obsidyen balta, kazma ve mızrak (artık Kudret döver); Çayır — Çakmaktaşı kılıç, gürz ve topuz, Kemik yay (Kemik eldiven ve çizme elle yapılır).
+
+## Nazlı'nın kuzenleri (v2.71, Boğaç)
+
+Çayır'dan sonraki her biyomda Nazlı'nın bir kuzeni pazar kurar. **Nazlı'yla tıpatıp aynıdır**, yalnızca başındaki **yemeninin rengi** farklıdır; tezgâhının tentesi de o renktedir. Yeri: o biyomun demirci–zırhçı ocağının yanında (110–260 piksel ötede, kendi biyomunun kuru toprağında). Haritada pazar simgesiyle görünür.
+
+| Biyom | Kuzen | Yemeni | Görevler (sırayla; ilki biyom keşfedilince açılır) |
+|---|---|---|---|
+| Orman | Pazarcı Fidan | yeşil | NF1 Mantar tezgâhı (4 Tavuk mantarı, 3 Mağara mantarı · 90 sikke, 60 XP) → NF2 Fındık zamanı (6 Fındık, 4 Kanlıca · 120, 80) → NF3 Karaca kürkü (3 Karaca derisi, 4 Ahududu · 150, 110) |
+| Bataklık | Pazarcı Nilüfer | su yeşili | NN1 Nilüfer çiçeği (5 Nilüfer, 3 Su kestanesi · 140, 100) → NN2 Ördek pazarı (4 Ördek yumurtası, 6 Ördek tüyü · 170, 130) → NN3 Su samuru (2 Su samuru derisi, 6 Kızılcık · 200, 160) |
+| Kayalık Dağ | Pazarcı Kardelen | kar beyazı | NK1 Dağ çayı (4 Dağ çayı, 4 Kekik · 200, 150) → NK2 Kardelen buketi (3 Kardelen, 4 Lavanta · 240, 190) → NK3 Kartal tüyü (4 Kartal tüyü, 3 Dağ keçisi derisi · 280, 230) |
+| Kül Diyarı | Pazarcı Lale | kırmızı | NL1 Ateş biberi (4 Ateş biberi, 3 Ateş çiçeği · 300, 250) → NL2 Kehribar (5 Kehribar, 3 Kara tuz · 350, 300) → NL3 Kül kurdu (2 Kül kurdu postu, 3 Kül dişi · 420, 360) |
+| Mor Kristal Vadisi | Pazarcı Menekşe | pembe | NM1 Ay otu (3 Ay otu, 3 Mor yosun · 450, 400) → NM2 Işık mantarı (4 Işık mantarı, 3 Gece zambağı · 520, 460) → NM3 Işık tilkisi (2 Işık tilkisi postu, 3 Kristal · 600, 540) |
+
+- **Satış aynı:** kuzenin yanında Nazlı'nın pazarı açılır (aynı satış ve satın alma listeleri, aynı fiyatlar, toplu satış düğmeleri, envanterde "1 sat"). Pencere başlığında kuzenin adı yazar.
+- **Tanışma:** ilk konuşmada "tıpatıp Nazlı, yalnızca yemenisi …" der, kendini tanıtır; tanışmadan önce başında yemeni renginde ünlem durur.
+- **Görevler basittir:** hepsi o biyomun doğal malzemesini getirmektir (toplanan ya da avlanan); görev sistemi diğer kuzenlerinkiyle aynıdır (bir anda tek görev).
+- **Konuşma resmi:** Nazlı'nın yüzü, kuzenin yemenisiyle.
 
 
 # ACT 2 · İkinci ada

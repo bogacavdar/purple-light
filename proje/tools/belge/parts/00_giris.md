@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.70** ile birebir (1 Kasım 2026). Bu sürümde: hiçbir tarif bıçak istemez; Çam ve Ladin kesilince reçine düşer (kabuk ve reçine tarifleri kalktı). Önceki sürüm (2.69): El yapımı listesinde Yap düğmeleri sağda alt alta.
+Sürüm: **Versiyon 2.71** ile birebir (1 Kasım 2026). Bu sürümde: Nazlı'nın kuzenleri her biyomda pazar kurar (aynı satış, farklı renk yemeni, 3'er basit görev). Önceki sürüm (2.70): hiçbir tarif bıçak istemez; Çam ve Ladin reçine verir.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

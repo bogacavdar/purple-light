@@ -84,11 +84,11 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </style>
 <div class="gs" id="gs" role="search"><div class="gsin"><input id="gsq" type="search" placeholder="Belgenin tamamında ara…  ( / )" aria-label="Belgenin tamamında ara" autocomplete="off" enterkeyhint="search"><span class="gsc" id="gsc" aria-live="polite"></span><button type="button" id="gsp" aria-label="Önceki sonuç" title="Önceki sonuç (↑)">↑</button><button type="button" id="gsn" aria-label="Sonraki sonuç" title="Sonraki sonuç (↓ ya da Enter)">↓</button><button type="button" id="gsx" aria-label="Aramayı temizle" title="Temizle (Esc)">×</button></div><div class="gsr" id="gsr" hidden></div></div>
 <div class="layout">
-<nav class="toc" aria-label="İçindekiler"><p class="brand">Purple Light</p><p class="ver">Tasarım belgesi · Versiyon 2.70</p><ul><li class="h1"><a href="#purple-light-tasarim-belgesi">Purple Light · Tasarım Belgesi</a><ul><li><a href="#bu-belge-nasil-okunur">Bu belge nasıl okunur</a></li><li><a href="#oyun-bir-bakista">Oyun bir bakışta</a></li><li><a href="#adalar-ve-dunya-olcusu">Adalar ve dünya ölçüsü</a></li></ul></li><li class="h1"><a href="#kullanilan-teknolojiler">Kullanılan teknolojiler</a><ul><li><a href="#teknoloji-ozeti">Teknoloji özeti</a></li><li><a href="#performans-kurallari-v2-38">Performans kuralları (v2.38)</a></li><li><a href="#programlama-dilleri">Programlama dilleri</a></li><li><a href="#grafik-webgl-glsl-ve-canvas-2d">Grafik: WebGL, GLSL ve Canvas 2D</a></li><li><a href="#ses-web-audio-api">Ses: Web Audio API</a></li><li><a href="#veri-ve-kayit">Veri ve kayıt</a></li><li><a href="#uygulama-olarak-yukleme-pwa">Uygulama olarak yükleme (PWA)</a></li><li><a href="#dosya-duzeni">Dosya düzeni</a></li><li><a href="#gelistirme-araclari">Geliştirme araçları</a></li><li><a href="#hedeflenen-ortamlar">Hedeflenen ortamlar</a></li><li><a href="#i-leride-cok-oyunculu-plan-henuz-yok">İleride: çok oyunculu (plan, henüz yok)</a></li></ul></li><li class="h1"><a href="#oyunun-akisi">Oyunun akışı</a><ul><li><a href="#acilis">Açılış</a></li><li><a href="#ogretici-13-adim">Öğretici (13 adım)</a></li><li><a href="#act-1-yol-haritasi">ACT 1 yol haritası</a></li><li><a href="#act-2-yol-haritasi">ACT 2 yol haritası</a></li><li><a href="#gezginler-ve-takvim">Gezginler ve takvim</a></li></ul></li><li class="h1"><a href="#kontroller">Kontroller</a></li><li class="h1"><a href="#temel-sistemler">Temel sistemler</a><ul><li><a href="#can-tokluk-enerji">Can, tokluk, enerji</a></li><li><a href="#bayilma">Bayılma</a></li><li><a href="#gun-gece-ve-mor-isik">Gün, gece ve mor ışık</a></li><li><a href="#seviye-xp-ve-yetenekler">Seviye, XP ve yetenekler</a></li><li><a href="#zorluk">Zorluk</a></li><li><a href="#ekonomi">Ekonomi</a></li><li><a href="#tarifler-kazan-el-yapimi-ors-ustalar">Tarifler: kazan, el yapımı, örs, ustalar</a></li><li><a href="#aletler-dayaniklilik-kademe">Aletler, dayanıklılık, kademe</a></li><li><a href="#zirh-ve-durum-etkileri">Zırh ve durum etkileri</a></li><li><a href="#yemek">Yemek</a></li><li><a href="#balik-tutma">Balık tutma</a></li><li><a href="#tuzaklar-ve-balik-kapani">Tuzaklar ve balık kapanı</a></li><li><a href="#gece-buluntulari">Gece buluntuları</a></li><li><a href="#tarim">Tarım</a></li><li><a href="#ev-ev-ici-ve-doseme">Ev, ev içi ve döşeme</a></li><li><a href="#harita-isaretler-defterler">Harita, işaretler, defterler</a></li><li><a href="#almanak-v2-13">Almanak (v2.13)</a></li><li><a href="#i-zler-ve-anilar">İzler ve anılar</a></li></ul></li><li class="h1"><a href="#dovus">Dövüş</a><ul><li><a href="#silahlar">Silahlar</a></li><li><a href="#atilma-savusturma-savunma">Atılma, savuşturma, savunma</a></li><li><a href="#ozel-vuruslar-kombolar">Özel vuruşlar (kombolar)</a></li><li><a href="#ulti">Ulti</a></li><li><a href="#boru-nun-dovus-dersleri">Börü'nün dövüş dersleri</a></li><li><a href="#canavarlar-nasil-savasir">Canavarlar nasıl savaşır</a></li></ul></li><li class="h1"><a href="#arena-hileler-kayit">Arena, hileler, kayıt</a><ul><li><a href="#arena">Arena</a></li><li><a href="#hileler">Hileler</a></li><li><a href="#kayit">Kayıt</a></li></ul></li><li class="h1"><a href="#act-1-yildizsiz-ada">ACT 1 · Yıldızsız Ada</a><ul><li><a href="#adanin-yerlesimi">Adanın yerleşimi</a></li><li><a href="#biyomlari-okuma-rehberi">Biyomları okuma rehberi</a></li><li><a href="#cayir-guvenli">Çayır — Güvenli</a></li><li><a href="#orman-guvenli">Orman — Güvenli</a></li><li><a href="#bataklik-tehlikeli">Bataklık — Tehlikeli</a></li><li><a href="#kayalik-dag-tehlikeli">Kayalık Dağ — Tehlikeli</a></li><li><a href="#kul-diyari-olumcul">Kül Diyarı — Ölümcül</a></li><li><a href="#mor-kristal-vadisi-cok-olumcul">Mor Kristal Vadisi — Çok ölümcül</a></li></ul></li><li class="h1"><a href="#act-1-gorevler-gorev-sistemi-v2">ACT 1 · Görevler (görev sistemi v2)</a><ul><li><a href="#temel-kurallar">Temel kurallar</a></li><li><a href="#yol-gosterme-ok-ve-sari-bolge-v1-91">Yol gösterme: ok ve sarı bölge (v1.91)</a></li><li><a href="#yeni-mekanik-dersleri">Yeni mekanik dersleri</a></li><li><a href="#kopru-kaya-yigini-ve-gemi">Köprü, kaya yığını ve gemi</a></li><li><a href="#kemal-in-ayak-isleri-bosluk-doldurma">Kemal'in ayak işleri (boşluk doldurma)</a></li><li><a href="#kisiler-ve-gorevler">Kişiler ve görevler</a></li><li><a href="#hikayeler-ve-sahneler">Hikâyeler ve sahneler</a></li><li><a href="#toplam">Toplam</a></li></ul></li><li class="h1"><a href="#act-1-yan-gorevler-v2-30">ACT 1 · Yan görevler (v2.30)</a><ul><li><a href="#kurallar">Kurallar</a></li><li><a href="#haritada-yan-gorevler">Haritada yan görevler</a></li><li><a href="#12-yan-gorev">12 yan görev</a></li><li><a href="#oduller">Ödüller</a></li><li><a href="#i-leride-odul-fikirleri-konusulacak">İleride ödül fikirleri (konuşulacak)</a></li></ul></li><li class="h1"><a href="#act-1-magaralar-v2-32">ACT 1 · Mağaralar (v2.32)</a><ul><li><a href="#genel-kurallar">Genel kurallar</a></li><li><a href="#1-yanki-magarasi-cayir-sv-5">1 · Yankı Mağarası (Çayır · Sv 5)</a></li><li><a href="#2-kok-magarasi-orman-sv-10">2 · Kök Mağarası (Orman · Sv 10)</a></li><li><a href="#teknik-not-magaranin-yeri">Teknik not (mağaranın yeri)</a></li></ul></li><li class="h1"><a href="#act-1-gemici-poyraz-ve-deniz-v2-34">ACT 1 · Gemici Poyraz ve deniz (v2.34)</a><ul><li><a href="#kalkanlar-eski-gemici-poyraz">Kalkanlar (eski Gemici Poyraz)</a></li><li><a href="#kaza">Kaza</a></li><li><a href="#gemici-poyraz">Gemici Poyraz</a></li><li><a href="#tekne-tamiri-4-gorev">Tekne tamiri: 4 görev</a></li><li><a href="#denize-acilmak">Denize açılmak</a></li><li><a href="#6-bolge">6 bölge</a></li><li><a href="#deniz-gorevleri-poyraz-in-balik-defteri">Deniz görevleri (Poyraz'ın balık defteri)</a></li><li><a href="#almanak-deniz-canlilari">Almanak · Deniz canlıları</a></li><li><a href="#ana-adada-balik">Ana adada balık</a></li></ul></li><li class="h1"><a href="#act-1-kisiler-ve-gorevler">ACT 1 · Kişiler ve görevler</a><ul><li><a href="#i-simler-v2-45-bogac">İsimler (v2.45, Boğaç)</a></li><li><a href="#gorevler-nasil-calisir">Görevler nasıl çalışır</a></li><li><a href="#yasli-kemal-ana-gorevler">Yaşlı Kemal · ana görevler</a></li><li><a href="#cadi-zumrut">Cadı Zümrüt</a></li><li><a href="#pazarci-nazli">Pazarcı Nazlı</a></li><li><a href="#savasci-boru">Savaşçı Börü</a></li><li><a href="#demirci-dursun">Demirci Dursun</a></li><li><a href="#zirhci-durmus">Zırhçı Durmuş</a></li><li><a href="#zumrut-dursun-ve-durmus-un-kuzenleri-v1-84">Zümrüt, Dursun ve Durmuş'un kuzenleri (v1.84)</a></li><li><a href="#ciftci-ekin">Çiftçi Ekin</a></li><li><a href="#usta-sinan">Usta Sinan</a></li><li><a href="#marangoz-cinar">Marangoz Çınar</a></li><li><a href="#avci-dogan">Avcı Doğan</a></li><li><a href="#yildizsiz-gezgin-yildizsiz-isikci">Yıldızsız Gezgin, Yıldızsız Işıkçı</a></li><li><a href="#denizci-barbaros">Denizci Barbaros</a></li></ul></li><li class="h1"><a href="#act-2-i-kinci-ada">ACT 2 · İkinci ada</a><ul><li><a href="#gecis-ve-portallar">Geçiş ve portallar</a></li><li><a href="#mor-mana-asalar-ve-atesli-silahlar">Mor mana, asalar ve ateşli silahlar</a></li><li><a href="#act-2-ustalari-nasil-calisir">ACT 2 ustaları nasıl çalışır</a></li><li><a href="#act-2-nin-akisi">ACT 2'nin akışı</a></li><li><a href="#yuzen-kayalar-guvenli">Yüzen Kayalar — Güvenli</a></li><li><a href="#dev-mantar-ormani-guvenli">Dev Mantar Ormanı — Güvenli</a></li><li><a href="#hurda-colu-tehlikeli">Hurda Çölü — Tehlikeli</a></li><li><a href="#kristal-golem-ocagi-tehlikeli">Kristal Golem Ocağı — Tehlikeli</a></li><li><a href="#ejder-volkani-olumcul">Ejder Volkanı — Ölümcül</a></li><li><a href="#gok-rihtimi-cok-olumcul">Gök Rıhtımı — Çok ölümcül</a></li></ul></li><li class="h1"><a href="#act-2-kisiler-ve-gorevler">ACT 2 · Kişiler ve görevler</a><ul><li><a href="#gokbilimci-yildiz">Gökbilimci Yıldız</a></li><li><a href="#buyucu-efsun-dev-mantar-ormani">Büyücü Efsun · Dev Mantar Ormanı</a></li><li><a href="#silahci-tufan-hurda-colu">Silahçı Tufan · Hurda Çölü</a></li><li><a href="#muhendis-isin-kristal-golem-ocagi">Mühendis Işın · Kristal Golem Ocağı</a></li><li><a href="#ejder-avcisi-tomris-ejder-volkani">Ejder Avcısı Tomris · Ejder Volkanı</a></li><li><a href="#astronot-gokay-gok-rihtimi">Astronot Gökay · Gök Rıhtımı</a></li></ul></li><li class="h1"><a href="#reisler-boss-lar">Reisler (boss'lar)</a></li><li class="h1"><a href="#tarif-ansiklopedisi">Tarif ansiklopedisi</a><ul><li><a href="#tarifler-nasil-calisir-kisa">Tarifler nasıl çalışır (kısa)</a></li><li><a href="#herhangi-gruplari">"Herhangi" grupları</a></li></ul></li><li class="h1"><a href="#aletler-silahlar-ve-zirhlar">Aletler, silahlar ve zırhlar</a><ul><li><a href="#nerede-yapilir-ors-ya-da-el-v2-58-bogac">Nerede yapılır: örs ya da el (v2.58, Boğaç)</a></li><li><a href="#silah-bilgisi-her-yerde-yazar-v2-58-bogac">Silah bilgisi her yerde yazar (v2.58, Boğaç)</a></li><li><a href="#madenler-ve-ekipman-merdiveni-v2-48-bogac">Madenler ve ekipman merdiveni (v2.48, Boğaç)</a></li><li><a href="#aletler-ve-silahlar">Aletler ve silahlar</a></li><li><a href="#zirhlar">Zırhlar</a></li><li><a href="#evler-ve-barinaklar-marangoz-cinar">Evler ve barınaklar (Marangoz Çınar)</a></li></ul></li><li class="h1"><a href="#esya-dizini">Eşya dizini</a></li><li class="h1"><a href="#yetenek-agaci">Yetenek ağacı</a><ul><li><a href="#gorunus">Görünüş</a></li><li><a href="#kurallar_2">Kurallar</a></li><li><a href="#savas-kirmizi">Savaş (kırmızı)</a></li><li><a href="#ekonomi-altin-sarisi">Ekonomi (altın sarısı)</a></li><li><a href="#dayaniklilik-yesil">Dayanıklılık (yeşil)</a></li></ul></li><li class="h1"><a href="#basarimlar">Başarımlar</a></li><li class="h1"><a href="#bilinen-aciklar-ve-tutarsizliklar">Bilinen açıklar ve tutarsızlıklar</a><ul><li><a href="#i-leride-tarlacilik">İleride: Tarlacılık</a></li></ul></li><li class="h1"><a href="#act-3-ve-sonrasi-henuz-oyunda-degil">ACT 3 ve sonrası (henüz oyunda değil)</a></li></ul></nav>
+<nav class="toc" aria-label="İçindekiler"><p class="brand">Purple Light</p><p class="ver">Tasarım belgesi · Versiyon 2.71</p><ul><li class="h1"><a href="#purple-light-tasarim-belgesi">Purple Light · Tasarım Belgesi</a><ul><li><a href="#bu-belge-nasil-okunur">Bu belge nasıl okunur</a></li><li><a href="#oyun-bir-bakista">Oyun bir bakışta</a></li><li><a href="#adalar-ve-dunya-olcusu">Adalar ve dünya ölçüsü</a></li></ul></li><li class="h1"><a href="#kullanilan-teknolojiler">Kullanılan teknolojiler</a><ul><li><a href="#teknoloji-ozeti">Teknoloji özeti</a></li><li><a href="#performans-kurallari-v2-38">Performans kuralları (v2.38)</a></li><li><a href="#programlama-dilleri">Programlama dilleri</a></li><li><a href="#grafik-webgl-glsl-ve-canvas-2d">Grafik: WebGL, GLSL ve Canvas 2D</a></li><li><a href="#ses-web-audio-api">Ses: Web Audio API</a></li><li><a href="#veri-ve-kayit">Veri ve kayıt</a></li><li><a href="#uygulama-olarak-yukleme-pwa">Uygulama olarak yükleme (PWA)</a></li><li><a href="#dosya-duzeni">Dosya düzeni</a></li><li><a href="#gelistirme-araclari">Geliştirme araçları</a></li><li><a href="#hedeflenen-ortamlar">Hedeflenen ortamlar</a></li><li><a href="#i-leride-cok-oyunculu-plan-henuz-yok">İleride: çok oyunculu (plan, henüz yok)</a></li></ul></li><li class="h1"><a href="#oyunun-akisi">Oyunun akışı</a><ul><li><a href="#acilis">Açılış</a></li><li><a href="#ogretici-13-adim">Öğretici (13 adım)</a></li><li><a href="#act-1-yol-haritasi">ACT 1 yol haritası</a></li><li><a href="#act-2-yol-haritasi">ACT 2 yol haritası</a></li><li><a href="#gezginler-ve-takvim">Gezginler ve takvim</a></li></ul></li><li class="h1"><a href="#kontroller">Kontroller</a></li><li class="h1"><a href="#temel-sistemler">Temel sistemler</a><ul><li><a href="#can-tokluk-enerji">Can, tokluk, enerji</a></li><li><a href="#bayilma">Bayılma</a></li><li><a href="#gun-gece-ve-mor-isik">Gün, gece ve mor ışık</a></li><li><a href="#seviye-xp-ve-yetenekler">Seviye, XP ve yetenekler</a></li><li><a href="#zorluk">Zorluk</a></li><li><a href="#ekonomi">Ekonomi</a></li><li><a href="#tarifler-kazan-el-yapimi-ors-ustalar">Tarifler: kazan, el yapımı, örs, ustalar</a></li><li><a href="#aletler-dayaniklilik-kademe">Aletler, dayanıklılık, kademe</a></li><li><a href="#zirh-ve-durum-etkileri">Zırh ve durum etkileri</a></li><li><a href="#yemek">Yemek</a></li><li><a href="#balik-tutma">Balık tutma</a></li><li><a href="#tuzaklar-ve-balik-kapani">Tuzaklar ve balık kapanı</a></li><li><a href="#gece-buluntulari">Gece buluntuları</a></li><li><a href="#tarim">Tarım</a></li><li><a href="#ev-ev-ici-ve-doseme">Ev, ev içi ve döşeme</a></li><li><a href="#harita-isaretler-defterler">Harita, işaretler, defterler</a></li><li><a href="#almanak-v2-13">Almanak (v2.13)</a></li><li><a href="#i-zler-ve-anilar">İzler ve anılar</a></li></ul></li><li class="h1"><a href="#dovus">Dövüş</a><ul><li><a href="#silahlar">Silahlar</a></li><li><a href="#atilma-savusturma-savunma">Atılma, savuşturma, savunma</a></li><li><a href="#ozel-vuruslar-kombolar">Özel vuruşlar (kombolar)</a></li><li><a href="#ulti">Ulti</a></li><li><a href="#boru-nun-dovus-dersleri">Börü'nün dövüş dersleri</a></li><li><a href="#canavarlar-nasil-savasir">Canavarlar nasıl savaşır</a></li></ul></li><li class="h1"><a href="#arena-hileler-kayit">Arena, hileler, kayıt</a><ul><li><a href="#arena">Arena</a></li><li><a href="#hileler">Hileler</a></li><li><a href="#kayit">Kayıt</a></li></ul></li><li class="h1"><a href="#act-1-yildizsiz-ada">ACT 1 · Yıldızsız Ada</a><ul><li><a href="#adanin-yerlesimi">Adanın yerleşimi</a></li><li><a href="#biyomlari-okuma-rehberi">Biyomları okuma rehberi</a></li><li><a href="#cayir-guvenli">Çayır — Güvenli</a></li><li><a href="#orman-guvenli">Orman — Güvenli</a></li><li><a href="#bataklik-tehlikeli">Bataklık — Tehlikeli</a></li><li><a href="#kayalik-dag-tehlikeli">Kayalık Dağ — Tehlikeli</a></li><li><a href="#kul-diyari-olumcul">Kül Diyarı — Ölümcül</a></li><li><a href="#mor-kristal-vadisi-cok-olumcul">Mor Kristal Vadisi — Çok ölümcül</a></li></ul></li><li class="h1"><a href="#act-1-gorevler-gorev-sistemi-v2">ACT 1 · Görevler (görev sistemi v2)</a><ul><li><a href="#temel-kurallar">Temel kurallar</a></li><li><a href="#yol-gosterme-ok-ve-sari-bolge-v1-91">Yol gösterme: ok ve sarı bölge (v1.91)</a></li><li><a href="#yeni-mekanik-dersleri">Yeni mekanik dersleri</a></li><li><a href="#kopru-kaya-yigini-ve-gemi">Köprü, kaya yığını ve gemi</a></li><li><a href="#kemal-in-ayak-isleri-bosluk-doldurma">Kemal'in ayak işleri (boşluk doldurma)</a></li><li><a href="#kisiler-ve-gorevler">Kişiler ve görevler</a></li><li><a href="#hikayeler-ve-sahneler">Hikâyeler ve sahneler</a></li><li><a href="#toplam">Toplam</a></li></ul></li><li class="h1"><a href="#act-1-yan-gorevler-v2-30">ACT 1 · Yan görevler (v2.30)</a><ul><li><a href="#kurallar">Kurallar</a></li><li><a href="#haritada-yan-gorevler">Haritada yan görevler</a></li><li><a href="#12-yan-gorev">12 yan görev</a></li><li><a href="#oduller">Ödüller</a></li><li><a href="#i-leride-odul-fikirleri-konusulacak">İleride ödül fikirleri (konuşulacak)</a></li></ul></li><li class="h1"><a href="#act-1-magaralar-v2-32">ACT 1 · Mağaralar (v2.32)</a><ul><li><a href="#genel-kurallar">Genel kurallar</a></li><li><a href="#1-yanki-magarasi-cayir-sv-5">1 · Yankı Mağarası (Çayır · Sv 5)</a></li><li><a href="#2-kok-magarasi-orman-sv-10">2 · Kök Mağarası (Orman · Sv 10)</a></li><li><a href="#teknik-not-magaranin-yeri">Teknik not (mağaranın yeri)</a></li></ul></li><li class="h1"><a href="#act-1-gemici-poyraz-ve-deniz-v2-34">ACT 1 · Gemici Poyraz ve deniz (v2.34)</a><ul><li><a href="#kalkanlar-eski-gemici-poyraz">Kalkanlar (eski Gemici Poyraz)</a></li><li><a href="#kaza">Kaza</a></li><li><a href="#gemici-poyraz">Gemici Poyraz</a></li><li><a href="#tekne-tamiri-4-gorev">Tekne tamiri: 4 görev</a></li><li><a href="#denize-acilmak">Denize açılmak</a></li><li><a href="#6-bolge">6 bölge</a></li><li><a href="#deniz-gorevleri-poyraz-in-balik-defteri">Deniz görevleri (Poyraz'ın balık defteri)</a></li><li><a href="#almanak-deniz-canlilari">Almanak · Deniz canlıları</a></li><li><a href="#ana-adada-balik">Ana adada balık</a></li></ul></li><li class="h1"><a href="#act-1-kisiler-ve-gorevler">ACT 1 · Kişiler ve görevler</a><ul><li><a href="#i-simler-v2-45-bogac">İsimler (v2.45, Boğaç)</a></li><li><a href="#gorevler-nasil-calisir">Görevler nasıl çalışır</a></li><li><a href="#yasli-kemal-ana-gorevler">Yaşlı Kemal · ana görevler</a></li><li><a href="#cadi-zumrut">Cadı Zümrüt</a></li><li><a href="#pazarci-nazli">Pazarcı Nazlı</a></li><li><a href="#savasci-boru">Savaşçı Börü</a></li><li><a href="#demirci-dursun">Demirci Dursun</a></li><li><a href="#zirhci-durmus">Zırhçı Durmuş</a></li><li><a href="#zumrut-dursun-ve-durmus-un-kuzenleri-v1-84">Zümrüt, Dursun ve Durmuş'un kuzenleri (v1.84)</a></li><li><a href="#ciftci-ekin">Çiftçi Ekin</a></li><li><a href="#usta-sinan">Usta Sinan</a></li><li><a href="#marangoz-cinar">Marangoz Çınar</a></li><li><a href="#avci-dogan">Avcı Doğan</a></li><li><a href="#yildizsiz-gezgin-yildizsiz-isikci">Yıldızsız Gezgin, Yıldızsız Işıkçı</a></li><li><a href="#denizci-barbaros">Denizci Barbaros</a></li><li><a href="#nazli-nin-kuzenleri-v2-71-bogac">Nazlı'nın kuzenleri (v2.71, Boğaç)</a></li></ul></li><li class="h1"><a href="#act-2-i-kinci-ada">ACT 2 · İkinci ada</a><ul><li><a href="#gecis-ve-portallar">Geçiş ve portallar</a></li><li><a href="#mor-mana-asalar-ve-atesli-silahlar">Mor mana, asalar ve ateşli silahlar</a></li><li><a href="#act-2-ustalari-nasil-calisir">ACT 2 ustaları nasıl çalışır</a></li><li><a href="#act-2-nin-akisi">ACT 2'nin akışı</a></li><li><a href="#yuzen-kayalar-guvenli">Yüzen Kayalar — Güvenli</a></li><li><a href="#dev-mantar-ormani-guvenli">Dev Mantar Ormanı — Güvenli</a></li><li><a href="#hurda-colu-tehlikeli">Hurda Çölü — Tehlikeli</a></li><li><a href="#kristal-golem-ocagi-tehlikeli">Kristal Golem Ocağı — Tehlikeli</a></li><li><a href="#ejder-volkani-olumcul">Ejder Volkanı — Ölümcül</a></li><li><a href="#gok-rihtimi-cok-olumcul">Gök Rıhtımı — Çok ölümcül</a></li></ul></li><li class="h1"><a href="#act-2-kisiler-ve-gorevler">ACT 2 · Kişiler ve görevler</a><ul><li><a href="#gokbilimci-yildiz">Gökbilimci Yıldız</a></li><li><a href="#buyucu-efsun-dev-mantar-ormani">Büyücü Efsun · Dev Mantar Ormanı</a></li><li><a href="#silahci-tufan-hurda-colu">Silahçı Tufan · Hurda Çölü</a></li><li><a href="#muhendis-isin-kristal-golem-ocagi">Mühendis Işın · Kristal Golem Ocağı</a></li><li><a href="#ejder-avcisi-tomris-ejder-volkani">Ejder Avcısı Tomris · Ejder Volkanı</a></li><li><a href="#astronot-gokay-gok-rihtimi">Astronot Gökay · Gök Rıhtımı</a></li></ul></li><li class="h1"><a href="#reisler-boss-lar">Reisler (boss'lar)</a></li><li class="h1"><a href="#tarif-ansiklopedisi">Tarif ansiklopedisi</a><ul><li><a href="#tarifler-nasil-calisir-kisa">Tarifler nasıl çalışır (kısa)</a></li><li><a href="#herhangi-gruplari">"Herhangi" grupları</a></li></ul></li><li class="h1"><a href="#aletler-silahlar-ve-zirhlar">Aletler, silahlar ve zırhlar</a><ul><li><a href="#nerede-yapilir-ors-ya-da-el-v2-58-bogac">Nerede yapılır: örs ya da el (v2.58, Boğaç)</a></li><li><a href="#silah-bilgisi-her-yerde-yazar-v2-58-bogac">Silah bilgisi her yerde yazar (v2.58, Boğaç)</a></li><li><a href="#madenler-ve-ekipman-merdiveni-v2-48-bogac">Madenler ve ekipman merdiveni (v2.48, Boğaç)</a></li><li><a href="#aletler-ve-silahlar">Aletler ve silahlar</a></li><li><a href="#zirhlar">Zırhlar</a></li><li><a href="#evler-ve-barinaklar-marangoz-cinar">Evler ve barınaklar (Marangoz Çınar)</a></li></ul></li><li class="h1"><a href="#esya-dizini">Eşya dizini</a></li><li class="h1"><a href="#yetenek-agaci">Yetenek ağacı</a><ul><li><a href="#gorunus">Görünüş</a></li><li><a href="#kurallar_2">Kurallar</a></li><li><a href="#savas-kirmizi">Savaş (kırmızı)</a></li><li><a href="#ekonomi-altin-sarisi">Ekonomi (altın sarısı)</a></li><li><a href="#dayaniklilik-yesil">Dayanıklılık (yeşil)</a></li></ul></li><li class="h1"><a href="#basarimlar">Başarımlar</a></li><li class="h1"><a href="#bilinen-aciklar-ve-tutarsizliklar">Bilinen açıklar ve tutarsızlıklar</a><ul><li><a href="#i-leride-tarlacilik">İleride: Tarlacılık</a></li></ul></li><li class="h1"><a href="#act-3-ve-sonrasi-henuz-oyunda-degil">ACT 3 ve sonrası (henüz oyunda değil)</a></li></ul></nav>
 <main>
-<details class="mtoc"><summary>İçindekiler</summary><ul><li class="h1"><a href="#purple-light-tasarim-belgesi">Purple Light · Tasarım Belgesi</a><ul><li><a href="#bu-belge-nasil-okunur">Bu belge nasıl okunur</a></li><li><a href="#oyun-bir-bakista">Oyun bir bakışta</a></li><li><a href="#adalar-ve-dunya-olcusu">Adalar ve dünya ölçüsü</a></li></ul></li><li class="h1"><a href="#kullanilan-teknolojiler">Kullanılan teknolojiler</a><ul><li><a href="#teknoloji-ozeti">Teknoloji özeti</a></li><li><a href="#performans-kurallari-v2-38">Performans kuralları (v2.38)</a></li><li><a href="#programlama-dilleri">Programlama dilleri</a></li><li><a href="#grafik-webgl-glsl-ve-canvas-2d">Grafik: WebGL, GLSL ve Canvas 2D</a></li><li><a href="#ses-web-audio-api">Ses: Web Audio API</a></li><li><a href="#veri-ve-kayit">Veri ve kayıt</a></li><li><a href="#uygulama-olarak-yukleme-pwa">Uygulama olarak yükleme (PWA)</a></li><li><a href="#dosya-duzeni">Dosya düzeni</a></li><li><a href="#gelistirme-araclari">Geliştirme araçları</a></li><li><a href="#hedeflenen-ortamlar">Hedeflenen ortamlar</a></li><li><a href="#i-leride-cok-oyunculu-plan-henuz-yok">İleride: çok oyunculu (plan, henüz yok)</a></li></ul></li><li class="h1"><a href="#oyunun-akisi">Oyunun akışı</a><ul><li><a href="#acilis">Açılış</a></li><li><a href="#ogretici-13-adim">Öğretici (13 adım)</a></li><li><a href="#act-1-yol-haritasi">ACT 1 yol haritası</a></li><li><a href="#act-2-yol-haritasi">ACT 2 yol haritası</a></li><li><a href="#gezginler-ve-takvim">Gezginler ve takvim</a></li></ul></li><li class="h1"><a href="#kontroller">Kontroller</a></li><li class="h1"><a href="#temel-sistemler">Temel sistemler</a><ul><li><a href="#can-tokluk-enerji">Can, tokluk, enerji</a></li><li><a href="#bayilma">Bayılma</a></li><li><a href="#gun-gece-ve-mor-isik">Gün, gece ve mor ışık</a></li><li><a href="#seviye-xp-ve-yetenekler">Seviye, XP ve yetenekler</a></li><li><a href="#zorluk">Zorluk</a></li><li><a href="#ekonomi">Ekonomi</a></li><li><a href="#tarifler-kazan-el-yapimi-ors-ustalar">Tarifler: kazan, el yapımı, örs, ustalar</a></li><li><a href="#aletler-dayaniklilik-kademe">Aletler, dayanıklılık, kademe</a></li><li><a href="#zirh-ve-durum-etkileri">Zırh ve durum etkileri</a></li><li><a href="#yemek">Yemek</a></li><li><a href="#balik-tutma">Balık tutma</a></li><li><a href="#tuzaklar-ve-balik-kapani">Tuzaklar ve balık kapanı</a></li><li><a href="#gece-buluntulari">Gece buluntuları</a></li><li><a href="#tarim">Tarım</a></li><li><a href="#ev-ev-ici-ve-doseme">Ev, ev içi ve döşeme</a></li><li><a href="#harita-isaretler-defterler">Harita, işaretler, defterler</a></li><li><a href="#almanak-v2-13">Almanak (v2.13)</a></li><li><a href="#i-zler-ve-anilar">İzler ve anılar</a></li></ul></li><li class="h1"><a href="#dovus">Dövüş</a><ul><li><a href="#silahlar">Silahlar</a></li><li><a href="#atilma-savusturma-savunma">Atılma, savuşturma, savunma</a></li><li><a href="#ozel-vuruslar-kombolar">Özel vuruşlar (kombolar)</a></li><li><a href="#ulti">Ulti</a></li><li><a href="#boru-nun-dovus-dersleri">Börü'nün dövüş dersleri</a></li><li><a href="#canavarlar-nasil-savasir">Canavarlar nasıl savaşır</a></li></ul></li><li class="h1"><a href="#arena-hileler-kayit">Arena, hileler, kayıt</a><ul><li><a href="#arena">Arena</a></li><li><a href="#hileler">Hileler</a></li><li><a href="#kayit">Kayıt</a></li></ul></li><li class="h1"><a href="#act-1-yildizsiz-ada">ACT 1 · Yıldızsız Ada</a><ul><li><a href="#adanin-yerlesimi">Adanın yerleşimi</a></li><li><a href="#biyomlari-okuma-rehberi">Biyomları okuma rehberi</a></li><li><a href="#cayir-guvenli">Çayır — Güvenli</a></li><li><a href="#orman-guvenli">Orman — Güvenli</a></li><li><a href="#bataklik-tehlikeli">Bataklık — Tehlikeli</a></li><li><a href="#kayalik-dag-tehlikeli">Kayalık Dağ — Tehlikeli</a></li><li><a href="#kul-diyari-olumcul">Kül Diyarı — Ölümcül</a></li><li><a href="#mor-kristal-vadisi-cok-olumcul">Mor Kristal Vadisi — Çok ölümcül</a></li></ul></li><li class="h1"><a href="#act-1-gorevler-gorev-sistemi-v2">ACT 1 · Görevler (görev sistemi v2)</a><ul><li><a href="#temel-kurallar">Temel kurallar</a></li><li><a href="#yol-gosterme-ok-ve-sari-bolge-v1-91">Yol gösterme: ok ve sarı bölge (v1.91)</a></li><li><a href="#yeni-mekanik-dersleri">Yeni mekanik dersleri</a></li><li><a href="#kopru-kaya-yigini-ve-gemi">Köprü, kaya yığını ve gemi</a></li><li><a href="#kemal-in-ayak-isleri-bosluk-doldurma">Kemal'in ayak işleri (boşluk doldurma)</a></li><li><a href="#kisiler-ve-gorevler">Kişiler ve görevler</a></li><li><a href="#hikayeler-ve-sahneler">Hikâyeler ve sahneler</a></li><li><a href="#toplam">Toplam</a></li></ul></li><li class="h1"><a href="#act-1-yan-gorevler-v2-30">ACT 1 · Yan görevler (v2.30)</a><ul><li><a href="#kurallar">Kurallar</a></li><li><a href="#haritada-yan-gorevler">Haritada yan görevler</a></li><li><a href="#12-yan-gorev">12 yan görev</a></li><li><a href="#oduller">Ödüller</a></li><li><a href="#i-leride-odul-fikirleri-konusulacak">İleride ödül fikirleri (konuşulacak)</a></li></ul></li><li class="h1"><a href="#act-1-magaralar-v2-32">ACT 1 · Mağaralar (v2.32)</a><ul><li><a href="#genel-kurallar">Genel kurallar</a></li><li><a href="#1-yanki-magarasi-cayir-sv-5">1 · Yankı Mağarası (Çayır · Sv 5)</a></li><li><a href="#2-kok-magarasi-orman-sv-10">2 · Kök Mağarası (Orman · Sv 10)</a></li><li><a href="#teknik-not-magaranin-yeri">Teknik not (mağaranın yeri)</a></li></ul></li><li class="h1"><a href="#act-1-gemici-poyraz-ve-deniz-v2-34">ACT 1 · Gemici Poyraz ve deniz (v2.34)</a><ul><li><a href="#kalkanlar-eski-gemici-poyraz">Kalkanlar (eski Gemici Poyraz)</a></li><li><a href="#kaza">Kaza</a></li><li><a href="#gemici-poyraz">Gemici Poyraz</a></li><li><a href="#tekne-tamiri-4-gorev">Tekne tamiri: 4 görev</a></li><li><a href="#denize-acilmak">Denize açılmak</a></li><li><a href="#6-bolge">6 bölge</a></li><li><a href="#deniz-gorevleri-poyraz-in-balik-defteri">Deniz görevleri (Poyraz'ın balık defteri)</a></li><li><a href="#almanak-deniz-canlilari">Almanak · Deniz canlıları</a></li><li><a href="#ana-adada-balik">Ana adada balık</a></li></ul></li><li class="h1"><a href="#act-1-kisiler-ve-gorevler">ACT 1 · Kişiler ve görevler</a><ul><li><a href="#i-simler-v2-45-bogac">İsimler (v2.45, Boğaç)</a></li><li><a href="#gorevler-nasil-calisir">Görevler nasıl çalışır</a></li><li><a href="#yasli-kemal-ana-gorevler">Yaşlı Kemal · ana görevler</a></li><li><a href="#cadi-zumrut">Cadı Zümrüt</a></li><li><a href="#pazarci-nazli">Pazarcı Nazlı</a></li><li><a href="#savasci-boru">Savaşçı Börü</a></li><li><a href="#demirci-dursun">Demirci Dursun</a></li><li><a href="#zirhci-durmus">Zırhçı Durmuş</a></li><li><a href="#zumrut-dursun-ve-durmus-un-kuzenleri-v1-84">Zümrüt, Dursun ve Durmuş'un kuzenleri (v1.84)</a></li><li><a href="#ciftci-ekin">Çiftçi Ekin</a></li><li><a href="#usta-sinan">Usta Sinan</a></li><li><a href="#marangoz-cinar">Marangoz Çınar</a></li><li><a href="#avci-dogan">Avcı Doğan</a></li><li><a href="#yildizsiz-gezgin-yildizsiz-isikci">Yıldızsız Gezgin, Yıldızsız Işıkçı</a></li><li><a href="#denizci-barbaros">Denizci Barbaros</a></li></ul></li><li class="h1"><a href="#act-2-i-kinci-ada">ACT 2 · İkinci ada</a><ul><li><a href="#gecis-ve-portallar">Geçiş ve portallar</a></li><li><a href="#mor-mana-asalar-ve-atesli-silahlar">Mor mana, asalar ve ateşli silahlar</a></li><li><a href="#act-2-ustalari-nasil-calisir">ACT 2 ustaları nasıl çalışır</a></li><li><a href="#act-2-nin-akisi">ACT 2'nin akışı</a></li><li><a href="#yuzen-kayalar-guvenli">Yüzen Kayalar — Güvenli</a></li><li><a href="#dev-mantar-ormani-guvenli">Dev Mantar Ormanı — Güvenli</a></li><li><a href="#hurda-colu-tehlikeli">Hurda Çölü — Tehlikeli</a></li><li><a href="#kristal-golem-ocagi-tehlikeli">Kristal Golem Ocağı — Tehlikeli</a></li><li><a href="#ejder-volkani-olumcul">Ejder Volkanı — Ölümcül</a></li><li><a href="#gok-rihtimi-cok-olumcul">Gök Rıhtımı — Çok ölümcül</a></li></ul></li><li class="h1"><a href="#act-2-kisiler-ve-gorevler">ACT 2 · Kişiler ve görevler</a><ul><li><a href="#gokbilimci-yildiz">Gökbilimci Yıldız</a></li><li><a href="#buyucu-efsun-dev-mantar-ormani">Büyücü Efsun · Dev Mantar Ormanı</a></li><li><a href="#silahci-tufan-hurda-colu">Silahçı Tufan · Hurda Çölü</a></li><li><a href="#muhendis-isin-kristal-golem-ocagi">Mühendis Işın · Kristal Golem Ocağı</a></li><li><a href="#ejder-avcisi-tomris-ejder-volkani">Ejder Avcısı Tomris · Ejder Volkanı</a></li><li><a href="#astronot-gokay-gok-rihtimi">Astronot Gökay · Gök Rıhtımı</a></li></ul></li><li class="h1"><a href="#reisler-boss-lar">Reisler (boss'lar)</a></li><li class="h1"><a href="#tarif-ansiklopedisi">Tarif ansiklopedisi</a><ul><li><a href="#tarifler-nasil-calisir-kisa">Tarifler nasıl çalışır (kısa)</a></li><li><a href="#herhangi-gruplari">"Herhangi" grupları</a></li></ul></li><li class="h1"><a href="#aletler-silahlar-ve-zirhlar">Aletler, silahlar ve zırhlar</a><ul><li><a href="#nerede-yapilir-ors-ya-da-el-v2-58-bogac">Nerede yapılır: örs ya da el (v2.58, Boğaç)</a></li><li><a href="#silah-bilgisi-her-yerde-yazar-v2-58-bogac">Silah bilgisi her yerde yazar (v2.58, Boğaç)</a></li><li><a href="#madenler-ve-ekipman-merdiveni-v2-48-bogac">Madenler ve ekipman merdiveni (v2.48, Boğaç)</a></li><li><a href="#aletler-ve-silahlar">Aletler ve silahlar</a></li><li><a href="#zirhlar">Zırhlar</a></li><li><a href="#evler-ve-barinaklar-marangoz-cinar">Evler ve barınaklar (Marangoz Çınar)</a></li></ul></li><li class="h1"><a href="#esya-dizini">Eşya dizini</a></li><li class="h1"><a href="#yetenek-agaci">Yetenek ağacı</a><ul><li><a href="#gorunus">Görünüş</a></li><li><a href="#kurallar_2">Kurallar</a></li><li><a href="#savas-kirmizi">Savaş (kırmızı)</a></li><li><a href="#ekonomi-altin-sarisi">Ekonomi (altın sarısı)</a></li><li><a href="#dayaniklilik-yesil">Dayanıklılık (yeşil)</a></li></ul></li><li class="h1"><a href="#basarimlar">Başarımlar</a></li><li class="h1"><a href="#bilinen-aciklar-ve-tutarsizliklar">Bilinen açıklar ve tutarsızlıklar</a><ul><li><a href="#i-leride-tarlacilik">İleride: Tarlacılık</a></li></ul></li><li class="h1"><a href="#act-3-ve-sonrasi-henuz-oyunda-degil">ACT 3 ve sonrası (henüz oyunda değil)</a></li></ul></details>
+<details class="mtoc"><summary>İçindekiler</summary><ul><li class="h1"><a href="#purple-light-tasarim-belgesi">Purple Light · Tasarım Belgesi</a><ul><li><a href="#bu-belge-nasil-okunur">Bu belge nasıl okunur</a></li><li><a href="#oyun-bir-bakista">Oyun bir bakışta</a></li><li><a href="#adalar-ve-dunya-olcusu">Adalar ve dünya ölçüsü</a></li></ul></li><li class="h1"><a href="#kullanilan-teknolojiler">Kullanılan teknolojiler</a><ul><li><a href="#teknoloji-ozeti">Teknoloji özeti</a></li><li><a href="#performans-kurallari-v2-38">Performans kuralları (v2.38)</a></li><li><a href="#programlama-dilleri">Programlama dilleri</a></li><li><a href="#grafik-webgl-glsl-ve-canvas-2d">Grafik: WebGL, GLSL ve Canvas 2D</a></li><li><a href="#ses-web-audio-api">Ses: Web Audio API</a></li><li><a href="#veri-ve-kayit">Veri ve kayıt</a></li><li><a href="#uygulama-olarak-yukleme-pwa">Uygulama olarak yükleme (PWA)</a></li><li><a href="#dosya-duzeni">Dosya düzeni</a></li><li><a href="#gelistirme-araclari">Geliştirme araçları</a></li><li><a href="#hedeflenen-ortamlar">Hedeflenen ortamlar</a></li><li><a href="#i-leride-cok-oyunculu-plan-henuz-yok">İleride: çok oyunculu (plan, henüz yok)</a></li></ul></li><li class="h1"><a href="#oyunun-akisi">Oyunun akışı</a><ul><li><a href="#acilis">Açılış</a></li><li><a href="#ogretici-13-adim">Öğretici (13 adım)</a></li><li><a href="#act-1-yol-haritasi">ACT 1 yol haritası</a></li><li><a href="#act-2-yol-haritasi">ACT 2 yol haritası</a></li><li><a href="#gezginler-ve-takvim">Gezginler ve takvim</a></li></ul></li><li class="h1"><a href="#kontroller">Kontroller</a></li><li class="h1"><a href="#temel-sistemler">Temel sistemler</a><ul><li><a href="#can-tokluk-enerji">Can, tokluk, enerji</a></li><li><a href="#bayilma">Bayılma</a></li><li><a href="#gun-gece-ve-mor-isik">Gün, gece ve mor ışık</a></li><li><a href="#seviye-xp-ve-yetenekler">Seviye, XP ve yetenekler</a></li><li><a href="#zorluk">Zorluk</a></li><li><a href="#ekonomi">Ekonomi</a></li><li><a href="#tarifler-kazan-el-yapimi-ors-ustalar">Tarifler: kazan, el yapımı, örs, ustalar</a></li><li><a href="#aletler-dayaniklilik-kademe">Aletler, dayanıklılık, kademe</a></li><li><a href="#zirh-ve-durum-etkileri">Zırh ve durum etkileri</a></li><li><a href="#yemek">Yemek</a></li><li><a href="#balik-tutma">Balık tutma</a></li><li><a href="#tuzaklar-ve-balik-kapani">Tuzaklar ve balık kapanı</a></li><li><a href="#gece-buluntulari">Gece buluntuları</a></li><li><a href="#tarim">Tarım</a></li><li><a href="#ev-ev-ici-ve-doseme">Ev, ev içi ve döşeme</a></li><li><a href="#harita-isaretler-defterler">Harita, işaretler, defterler</a></li><li><a href="#almanak-v2-13">Almanak (v2.13)</a></li><li><a href="#i-zler-ve-anilar">İzler ve anılar</a></li></ul></li><li class="h1"><a href="#dovus">Dövüş</a><ul><li><a href="#silahlar">Silahlar</a></li><li><a href="#atilma-savusturma-savunma">Atılma, savuşturma, savunma</a></li><li><a href="#ozel-vuruslar-kombolar">Özel vuruşlar (kombolar)</a></li><li><a href="#ulti">Ulti</a></li><li><a href="#boru-nun-dovus-dersleri">Börü'nün dövüş dersleri</a></li><li><a href="#canavarlar-nasil-savasir">Canavarlar nasıl savaşır</a></li></ul></li><li class="h1"><a href="#arena-hileler-kayit">Arena, hileler, kayıt</a><ul><li><a href="#arena">Arena</a></li><li><a href="#hileler">Hileler</a></li><li><a href="#kayit">Kayıt</a></li></ul></li><li class="h1"><a href="#act-1-yildizsiz-ada">ACT 1 · Yıldızsız Ada</a><ul><li><a href="#adanin-yerlesimi">Adanın yerleşimi</a></li><li><a href="#biyomlari-okuma-rehberi">Biyomları okuma rehberi</a></li><li><a href="#cayir-guvenli">Çayır — Güvenli</a></li><li><a href="#orman-guvenli">Orman — Güvenli</a></li><li><a href="#bataklik-tehlikeli">Bataklık — Tehlikeli</a></li><li><a href="#kayalik-dag-tehlikeli">Kayalık Dağ — Tehlikeli</a></li><li><a href="#kul-diyari-olumcul">Kül Diyarı — Ölümcül</a></li><li><a href="#mor-kristal-vadisi-cok-olumcul">Mor Kristal Vadisi — Çok ölümcül</a></li></ul></li><li class="h1"><a href="#act-1-gorevler-gorev-sistemi-v2">ACT 1 · Görevler (görev sistemi v2)</a><ul><li><a href="#temel-kurallar">Temel kurallar</a></li><li><a href="#yol-gosterme-ok-ve-sari-bolge-v1-91">Yol gösterme: ok ve sarı bölge (v1.91)</a></li><li><a href="#yeni-mekanik-dersleri">Yeni mekanik dersleri</a></li><li><a href="#kopru-kaya-yigini-ve-gemi">Köprü, kaya yığını ve gemi</a></li><li><a href="#kemal-in-ayak-isleri-bosluk-doldurma">Kemal'in ayak işleri (boşluk doldurma)</a></li><li><a href="#kisiler-ve-gorevler">Kişiler ve görevler</a></li><li><a href="#hikayeler-ve-sahneler">Hikâyeler ve sahneler</a></li><li><a href="#toplam">Toplam</a></li></ul></li><li class="h1"><a href="#act-1-yan-gorevler-v2-30">ACT 1 · Yan görevler (v2.30)</a><ul><li><a href="#kurallar">Kurallar</a></li><li><a href="#haritada-yan-gorevler">Haritada yan görevler</a></li><li><a href="#12-yan-gorev">12 yan görev</a></li><li><a href="#oduller">Ödüller</a></li><li><a href="#i-leride-odul-fikirleri-konusulacak">İleride ödül fikirleri (konuşulacak)</a></li></ul></li><li class="h1"><a href="#act-1-magaralar-v2-32">ACT 1 · Mağaralar (v2.32)</a><ul><li><a href="#genel-kurallar">Genel kurallar</a></li><li><a href="#1-yanki-magarasi-cayir-sv-5">1 · Yankı Mağarası (Çayır · Sv 5)</a></li><li><a href="#2-kok-magarasi-orman-sv-10">2 · Kök Mağarası (Orman · Sv 10)</a></li><li><a href="#teknik-not-magaranin-yeri">Teknik not (mağaranın yeri)</a></li></ul></li><li class="h1"><a href="#act-1-gemici-poyraz-ve-deniz-v2-34">ACT 1 · Gemici Poyraz ve deniz (v2.34)</a><ul><li><a href="#kalkanlar-eski-gemici-poyraz">Kalkanlar (eski Gemici Poyraz)</a></li><li><a href="#kaza">Kaza</a></li><li><a href="#gemici-poyraz">Gemici Poyraz</a></li><li><a href="#tekne-tamiri-4-gorev">Tekne tamiri: 4 görev</a></li><li><a href="#denize-acilmak">Denize açılmak</a></li><li><a href="#6-bolge">6 bölge</a></li><li><a href="#deniz-gorevleri-poyraz-in-balik-defteri">Deniz görevleri (Poyraz'ın balık defteri)</a></li><li><a href="#almanak-deniz-canlilari">Almanak · Deniz canlıları</a></li><li><a href="#ana-adada-balik">Ana adada balık</a></li></ul></li><li class="h1"><a href="#act-1-kisiler-ve-gorevler">ACT 1 · Kişiler ve görevler</a><ul><li><a href="#i-simler-v2-45-bogac">İsimler (v2.45, Boğaç)</a></li><li><a href="#gorevler-nasil-calisir">Görevler nasıl çalışır</a></li><li><a href="#yasli-kemal-ana-gorevler">Yaşlı Kemal · ana görevler</a></li><li><a href="#cadi-zumrut">Cadı Zümrüt</a></li><li><a href="#pazarci-nazli">Pazarcı Nazlı</a></li><li><a href="#savasci-boru">Savaşçı Börü</a></li><li><a href="#demirci-dursun">Demirci Dursun</a></li><li><a href="#zirhci-durmus">Zırhçı Durmuş</a></li><li><a href="#zumrut-dursun-ve-durmus-un-kuzenleri-v1-84">Zümrüt, Dursun ve Durmuş'un kuzenleri (v1.84)</a></li><li><a href="#ciftci-ekin">Çiftçi Ekin</a></li><li><a href="#usta-sinan">Usta Sinan</a></li><li><a href="#marangoz-cinar">Marangoz Çınar</a></li><li><a href="#avci-dogan">Avcı Doğan</a></li><li><a href="#yildizsiz-gezgin-yildizsiz-isikci">Yıldızsız Gezgin, Yıldızsız Işıkçı</a></li><li><a href="#denizci-barbaros">Denizci Barbaros</a></li><li><a href="#nazli-nin-kuzenleri-v2-71-bogac">Nazlı'nın kuzenleri (v2.71, Boğaç)</a></li></ul></li><li class="h1"><a href="#act-2-i-kinci-ada">ACT 2 · İkinci ada</a><ul><li><a href="#gecis-ve-portallar">Geçiş ve portallar</a></li><li><a href="#mor-mana-asalar-ve-atesli-silahlar">Mor mana, asalar ve ateşli silahlar</a></li><li><a href="#act-2-ustalari-nasil-calisir">ACT 2 ustaları nasıl çalışır</a></li><li><a href="#act-2-nin-akisi">ACT 2'nin akışı</a></li><li><a href="#yuzen-kayalar-guvenli">Yüzen Kayalar — Güvenli</a></li><li><a href="#dev-mantar-ormani-guvenli">Dev Mantar Ormanı — Güvenli</a></li><li><a href="#hurda-colu-tehlikeli">Hurda Çölü — Tehlikeli</a></li><li><a href="#kristal-golem-ocagi-tehlikeli">Kristal Golem Ocağı — Tehlikeli</a></li><li><a href="#ejder-volkani-olumcul">Ejder Volkanı — Ölümcül</a></li><li><a href="#gok-rihtimi-cok-olumcul">Gök Rıhtımı — Çok ölümcül</a></li></ul></li><li class="h1"><a href="#act-2-kisiler-ve-gorevler">ACT 2 · Kişiler ve görevler</a><ul><li><a href="#gokbilimci-yildiz">Gökbilimci Yıldız</a></li><li><a href="#buyucu-efsun-dev-mantar-ormani">Büyücü Efsun · Dev Mantar Ormanı</a></li><li><a href="#silahci-tufan-hurda-colu">Silahçı Tufan · Hurda Çölü</a></li><li><a href="#muhendis-isin-kristal-golem-ocagi">Mühendis Işın · Kristal Golem Ocağı</a></li><li><a href="#ejder-avcisi-tomris-ejder-volkani">Ejder Avcısı Tomris · Ejder Volkanı</a></li><li><a href="#astronot-gokay-gok-rihtimi">Astronot Gökay · Gök Rıhtımı</a></li></ul></li><li class="h1"><a href="#reisler-boss-lar">Reisler (boss'lar)</a></li><li class="h1"><a href="#tarif-ansiklopedisi">Tarif ansiklopedisi</a><ul><li><a href="#tarifler-nasil-calisir-kisa">Tarifler nasıl çalışır (kısa)</a></li><li><a href="#herhangi-gruplari">"Herhangi" grupları</a></li></ul></li><li class="h1"><a href="#aletler-silahlar-ve-zirhlar">Aletler, silahlar ve zırhlar</a><ul><li><a href="#nerede-yapilir-ors-ya-da-el-v2-58-bogac">Nerede yapılır: örs ya da el (v2.58, Boğaç)</a></li><li><a href="#silah-bilgisi-her-yerde-yazar-v2-58-bogac">Silah bilgisi her yerde yazar (v2.58, Boğaç)</a></li><li><a href="#madenler-ve-ekipman-merdiveni-v2-48-bogac">Madenler ve ekipman merdiveni (v2.48, Boğaç)</a></li><li><a href="#aletler-ve-silahlar">Aletler ve silahlar</a></li><li><a href="#zirhlar">Zırhlar</a></li><li><a href="#evler-ve-barinaklar-marangoz-cinar">Evler ve barınaklar (Marangoz Çınar)</a></li></ul></li><li class="h1"><a href="#esya-dizini">Eşya dizini</a></li><li class="h1"><a href="#yetenek-agaci">Yetenek ağacı</a><ul><li><a href="#gorunus">Görünüş</a></li><li><a href="#kurallar_2">Kurallar</a></li><li><a href="#savas-kirmizi">Savaş (kırmızı)</a></li><li><a href="#ekonomi-altin-sarisi">Ekonomi (altın sarısı)</a></li><li><a href="#dayaniklilik-yesil">Dayanıklılık (yeşil)</a></li></ul></li><li class="h1"><a href="#basarimlar">Başarımlar</a></li><li class="h1"><a href="#bilinen-aciklar-ve-tutarsizliklar">Bilinen açıklar ve tutarsızlıklar</a><ul><li><a href="#i-leride-tarlacilik">İleride: Tarlacılık</a></li></ul></li><li class="h1"><a href="#act-3-ve-sonrasi-henuz-oyunda-degil">ACT 3 ve sonrası (henüz oyunda değil)</a></li></ul></details>
 <h1 id="purple-light-tasarim-belgesi">Purple Light · Tasarım Belgesi</h1>
-<p>Sürüm: <strong>Versiyon 2.70</strong> ile birebir (1 Kasım 2026). Bu sürümde: hiçbir tarif bıçak istemez; Çam ve Ladin kesilince reçine düşer (kabuk ve reçine tarifleri kalktı). Önceki sürüm (2.69): El yapımı listesinde Yap düğmeleri sağda alt alta.</p>
+<p>Sürüm: <strong>Versiyon 2.71</strong> ile birebir (1 Kasım 2026). Bu sürümde: Nazlı'nın kuzenleri her biyomda pazar kurar (aynı satış, farklı renk yemeni, 3'er basit görev). Önceki sürüm (2.70): hiçbir tarif bıçak istemez; Çam ve Ladin reçine verir.</p>
 <blockquote>
 <p><strong>Kural (Boğaç, 28 Ekim 2026):</strong> Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.</p>
 </blockquote>
@@ -8702,6 +8702,56 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <blockquote>
 <p><strong>v2.51 · usta setleri:</strong> her biyomun silahçısı ve zırhçısı kendi biyomunun usta setini döver (Aletler · Bütün setler). Yukarıdaki listelere ek olarak: Orman — Granit kılıç, Granit topuz, Granit mızrak, Ihlamur yayı, Meşe kabuk eldiven ve çizme; Bataklık — Timsah dişi gürz, topuz, mızrak, balta, kazma, Söğüt yayı, Timsah miğfer, Timsah eldiven, Kamış çizme; Kayalık Dağ — Kuvars gürz ve topuz, Huş yayı, Gümüş eldiven ve çizme; Mor Kristal Vadisi — Ametist gürz ve topuz, Işık ağacı yayı, Ametist miğfer, Kristal ipek çizme, Obsidyen balta, kazma ve mızrak (artık Kudret döver); Çayır — Çakmaktaşı kılıç, gürz ve topuz, Kemik yay (Kemik eldiven ve çizme elle yapılır).</p>
 </blockquote>
+<h2 id="nazli-nin-kuzenleri-v2-71-bogac">Nazlı'nın kuzenleri (v2.71, Boğaç)</h2>
+<p>Çayır'dan sonraki her biyomda Nazlı'nın bir kuzeni pazar kurar. <strong>Nazlı'yla tıpatıp aynıdır</strong>, yalnızca başındaki <strong>yemeninin rengi</strong> farklıdır; tezgâhının tentesi de o renktedir. Yeri: o biyomun demirci–zırhçı ocağının yanında (110–260 piksel ötede, kendi biyomunun kuru toprağında). Haritada pazar simgesiyle görünür.</p>
+<div class="tw" id="t105"><table>
+<thead>
+<tr>
+<th>Biyom</th>
+<th>Kuzen</th>
+<th>Yemeni</th>
+<th>Görevler (sırayla; ilki biyom keşfedilince açılır)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Orman</td>
+<td>Pazarcı Fidan</td>
+<td>yeşil</td>
+<td>NF1 Mantar tezgâhı (4 Tavuk mantarı, 3 Mağara mantarı · 90 sikke, 60 XP) → NF2 Fındık zamanı (6 Fındık, 4 Kanlıca · 120, 80) → NF3 Karaca kürkü (3 Karaca derisi, 4 Ahududu · 150, 110)</td>
+</tr>
+<tr>
+<td>Bataklık</td>
+<td>Pazarcı Nilüfer</td>
+<td>su yeşili</td>
+<td>NN1 Nilüfer çiçeği (5 Nilüfer, 3 Su kestanesi · 140, 100) → NN2 Ördek pazarı (4 Ördek yumurtası, 6 Ördek tüyü · 170, 130) → NN3 Su samuru (2 Su samuru derisi, 6 Kızılcık · 200, 160)</td>
+</tr>
+<tr>
+<td>Kayalık Dağ</td>
+<td>Pazarcı Kardelen</td>
+<td>kar beyazı</td>
+<td>NK1 Dağ çayı (4 Dağ çayı, 4 Kekik · 200, 150) → NK2 Kardelen buketi (3 Kardelen, 4 Lavanta · 240, 190) → NK3 Kartal tüyü (4 Kartal tüyü, 3 Dağ keçisi derisi · 280, 230)</td>
+</tr>
+<tr>
+<td>Kül Diyarı</td>
+<td>Pazarcı Lale</td>
+<td>kırmızı</td>
+<td>NL1 Ateş biberi (4 Ateş biberi, 3 Ateş çiçeği · 300, 250) → NL2 Kehribar (5 Kehribar, 3 Kara tuz · 350, 300) → NL3 Kül kurdu (2 Kül kurdu postu, 3 Kül dişi · 420, 360)</td>
+</tr>
+<tr>
+<td>Mor Kristal Vadisi</td>
+<td>Pazarcı Menekşe</td>
+<td>pembe</td>
+<td>NM1 Ay otu (3 Ay otu, 3 Mor yosun · 450, 400) → NM2 Işık mantarı (4 Işık mantarı, 3 Gece zambağı · 520, 460) → NM3 Işık tilkisi (2 Işık tilkisi postu, 3 Kristal · 600, 540)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Satış aynı:</strong> kuzenin yanında Nazlı'nın pazarı açılır (aynı satış ve satın alma listeleri, aynı fiyatlar, toplu satış düğmeleri, envanterde "1 sat"). Pencere başlığında kuzenin adı yazar.</li>
+<li><strong>Tanışma:</strong> ilk konuşmada "tıpatıp Nazlı, yalnızca yemenisi …" der, kendini tanıtır; tanışmadan önce başında yemeni renginde ünlem durur.</li>
+<li><strong>Görevler basittir:</strong> hepsi o biyomun doğal malzemesini getirmektir (toplanan ya da avlanan); görev sistemi diğer kuzenlerinkiyle aynıdır (bir anda tek görev).</li>
+<li><strong>Konuşma resmi:</strong> Nazlı'nın yüzü, kuzenin yemenisiyle.</li>
+</ul>
 <h1 id="act-2-i-kinci-ada">ACT 2 · İkinci ada</h1>
 <h2 id="gecis-ve-portallar">Geçiş ve portallar</h2>
 <ul>
@@ -8721,7 +8771,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <li><strong>Mana iksiri</strong> içince +60 mana. Tarifi Efsun'un ilk görevinden sonra kitaba yazılır; Efsun 10 sikkeye yapar.</li>
 <li><strong>Asa</strong> bir alettir: alet yuvasına konur, ele alınır; saldırı tuşu (sol tık / Boşluk / Vur düğmesi) büyüyü fırlatır, en yakın düşmana nişan alır.</li>
 </ul>
-<div class="tw" id="t105"><table>
+<div class="tw" id="t106"><table>
 <thead>
 <tr>
 <th>Silah</th>
@@ -8802,7 +8852,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <li>Tarifi <strong>Yıldız'ın kazanında öğrenirsin</strong> (malzemeleri kazana at, "Öğren").</li>
 <li>Malzemeleri çantana koyup ustayla konuşursun → "✦ … yap (N sikke)" seçeneği. ✦ = her şey hazır, · = bir eksik var. Usta malzemeyi ve işçilik ücretini alır, eşyayı verir.</li>
 </ol>
-<div class="tw" id="t106"><table>
+<div class="tw" id="t107"><table>
 <thead>
 <tr>
 <th>Usta</th>
@@ -8866,7 +8916,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <h2 id="yuzen-kayalar-guvenli">Yüzen Kayalar — Güvenli</h2>
 <p>İniş yeri. Havada duran kayalar, bulut koyunları, rüzgâr kuşları. Gökbilimci Yıldız ve ACT 2 kazanı burada. Gece gök tazıları çıkar.</p>
 <p><strong>Ağaçlar</strong></p>
-<div class="tw" id="t107"><table>
+<div class="tw" id="t108"><table>
 <thead>
 <tr>
 <th>Ağaç</th>
@@ -8908,7 +8958,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Toplanabilirler</strong> (E ile, elde alet gerekmez)</p>
-<div class="tw" id="t108"><table>
+<div class="tw" id="t109"><table>
 <thead>
 <tr>
 <th>Eşya</th>
@@ -8969,7 +9019,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Madenler</strong> (kazma elde, E)</p>
-<div class="tw" id="t109"><table>
+<div class="tw" id="t110"><table>
 <thead>
 <tr>
 <th>Maden</th>
@@ -9004,7 +9054,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Canlılar</strong></p>
-<div class="tw" id="t110"><table>
+<div class="tw" id="t111"><table>
 <thead>
 <tr>
 <th>Canlı</th>
@@ -9073,7 +9123,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <h2 id="dev-mantar-ormani-guvenli">Dev Mantar Ormanı — Güvenli</h2>
 <p>Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzaktan atar, şamanları zehirler. Büyücü Efsun burada.</p>
 <p><strong>Ağaçlar</strong></p>
-<div class="tw" id="t111"><table>
+<div class="tw" id="t112"><table>
 <thead>
 <tr>
 <th>Ağaç</th>
@@ -9115,7 +9165,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Toplanabilirler</strong> (E ile, elde alet gerekmez)</p>
-<div class="tw" id="t112"><table>
+<div class="tw" id="t113"><table>
 <thead>
 <tr>
 <th>Eşya</th>
@@ -9176,7 +9226,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Madenler</strong> (kazma elde, E)</p>
-<div class="tw" id="t113"><table>
+<div class="tw" id="t114"><table>
 <thead>
 <tr>
 <th>Maden</th>
@@ -9211,7 +9261,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Canlılar</strong></p>
-<div class="tw" id="t114"><table>
+<div class="tw" id="t115"><table>
 <thead>
 <tr>
 <th>Canlı</th>
@@ -9290,7 +9340,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <h2 id="hurda-colu-tehlikeli">Hurda Çölü — Tehlikeli</h2>
 <p>Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dronları ve dev bir hurda devi. Silahçı Tufan burada.</p>
 <p><strong>Ağaçlar</strong></p>
-<div class="tw" id="t115"><table>
+<div class="tw" id="t116"><table>
 <thead>
 <tr>
 <th>Ağaç</th>
@@ -9332,7 +9382,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Toplanabilirler</strong> (E ile, elde alet gerekmez)</p>
-<div class="tw" id="t116"><table>
+<div class="tw" id="t117"><table>
 <thead>
 <tr>
 <th>Eşya</th>
@@ -9393,7 +9443,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Madenler</strong> (kazma elde, E)</p>
-<div class="tw" id="t117"><table>
+<div class="tw" id="t118"><table>
 <thead>
 <tr>
 <th>Maden</th>
@@ -9428,7 +9478,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Canlılar</strong></p>
-<div class="tw" id="t118"><table>
+<div class="tw" id="t119"><table>
 <thead>
 <tr>
 <th>Canlı</th>
@@ -9507,7 +9557,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <h2 id="kristal-golem-ocagi-tehlikeli">Kristal Golem Ocağı — Tehlikeli</h2>
 <p>Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendis Işın burada.</p>
 <p><strong>Ağaçlar</strong></p>
-<div class="tw" id="t119"><table>
+<div class="tw" id="t120"><table>
 <thead>
 <tr>
 <th>Ağaç</th>
@@ -9549,7 +9599,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Toplanabilirler</strong> (E ile, elde alet gerekmez)</p>
-<div class="tw" id="t120"><table>
+<div class="tw" id="t121"><table>
 <thead>
 <tr>
 <th>Eşya</th>
@@ -9610,7 +9660,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Madenler</strong> (kazma elde, E)</p>
-<div class="tw" id="t121"><table>
+<div class="tw" id="t122"><table>
 <thead>
 <tr>
 <th>Maden</th>
@@ -9645,7 +9695,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Canlılar</strong></p>
-<div class="tw" id="t122"><table>
+<div class="tw" id="t123"><table>
 <thead>
 <tr>
 <th>Canlı</th>
@@ -9724,7 +9774,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <h2 id="ejder-volkani-olumcul">Ejder Volkanı — Ölümcül</h2>
 <p>Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ejder adanın en güçlü canavarlarından. Ejder Avcısı Tomris burada.</p>
 <p><strong>Ağaçlar</strong></p>
-<div class="tw" id="t123"><table>
+<div class="tw" id="t124"><table>
 <thead>
 <tr>
 <th>Ağaç</th>
@@ -9766,7 +9816,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Toplanabilirler</strong> (E ile, elde alet gerekmez)</p>
-<div class="tw" id="t124"><table>
+<div class="tw" id="t125"><table>
 <thead>
 <tr>
 <th>Eşya</th>
@@ -9827,7 +9877,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Madenler</strong> (kazma elde, E)</p>
-<div class="tw" id="t125"><table>
+<div class="tw" id="t126"><table>
 <thead>
 <tr>
 <th>Maden</th>
@@ -9862,7 +9912,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Canlılar</strong></p>
-<div class="tw" id="t126"><table>
+<div class="tw" id="t127"><table>
 <thead>
 <tr>
 <th>Canlı</th>
@@ -9941,7 +9991,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <h2 id="gok-rihtimi-cok-olumcul">Gök Rıhtımı — Çok ölümcül</h2>
 <p>Adanın en uzak ucu, roket rampası. Uzaylı dronları, gölge muhafızlar ve dev Gök bekçisi. Astronot Gökay burada.</p>
 <p><strong>Ağaçlar</strong></p>
-<div class="tw" id="t127"><table>
+<div class="tw" id="t128"><table>
 <thead>
 <tr>
 <th>Ağaç</th>
@@ -9983,7 +10033,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Toplanabilirler</strong> (E ile, elde alet gerekmez)</p>
-<div class="tw" id="t128"><table>
+<div class="tw" id="t129"><table>
 <thead>
 <tr>
 <th>Eşya</th>
@@ -10044,7 +10094,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Madenler</strong> (kazma elde, E)</p>
-<div class="tw" id="t129"><table>
+<div class="tw" id="t130"><table>
 <thead>
 <tr>
 <th>Maden</th>
@@ -10079,7 +10129,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <p><strong>Canlılar</strong></p>
-<div class="tw" id="t130"><table>
+<div class="tw" id="t131"><table>
 <thead>
 <tr>
 <th>Canlı</th>
@@ -10159,7 +10209,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <p>ACT 2'nin bütün kişileri ikinci adaya vardığın andan itibaren yerindedir ve konuşulabilir. Görev zincirleri onlarla tanışınca açılır. Ok ve görev kartı şu sırayı önerir: Yıldız → Efsun → Tufan → Işın → Tomris → Gökay. Efsun'un 4. ve 5. görevleri Işın ve Tomris ile tanışmayı bekler. ACT 2 görevlerinin ödülleri ACT 1'dekilerin kabaca on katıdır.</p>
 <h2 id="gokbilimci-yildiz">Gökbilimci Yıldız</h2>
 <p>Yüzen Kayalar'da, inişin kuzeyindeki yüksek bir kayada, teleskobunun başında; ACT 2 kazanı yanındadır. Kırk yıldır gökyüzünü ve mor ışığı izler; portalı o icat etmiştir. Son görevi portalları açar ve ilk ACT 2 anısını (Sahildeki ışık) getirir.</p>
-<div class="tw" id="t131"><table>
+<div class="tw" id="t132"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -10199,7 +10249,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </table></div>
 <h2 id="buyucu-efsun-dev-mantar-ormani">Büyücü Efsun · Dev Mantar Ormanı</h2>
 <p>İnişe en yakın mantar ormanı köşesinde, havada asılı mor bir ateşin başında. Onunla tanışınca <strong>mor mana</strong> çubuğu açılır. Asaları ve mana iksirini yapar (ücretler ve değerler ACT 2 girişindeki tabloda). Goblinler gruplar halinde gezer; şamanları zehir atar.</p>
-<div class="tw" id="t132"><table>
+<div class="tw" id="t133"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -10256,7 +10306,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <p>Açtığı tarifler: Mana iksiri (1. görev), Ateş asası (3.), Buz asası (4.), Yıldırım asası (5.).</p>
 <h2 id="silahci-tufan-hurda-colu">Silahçı Tufan · Hurda Çölü</h2>
 <p>Geminin düşürdüğü dronların (robotların) dolaştığı hurda çölünde. Tabanca (200 sikke) ve Pompalı (400 sikke) yapar; mermiyi sen elle yaparsın.</p>
-<div class="tw" id="t133"><table>
+<div class="tw" id="t134"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -10305,7 +10355,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <p>Açtığı tarifler: Pirinç külçesi ve Barut (1. görev), Tabanca ve Tabanca mermisi (3.), Pompalı ve Pompalı fişeği (4.). "Devin motoru" görevindeki Motor, Hurda devi'nden düşer.</p>
 <h2 id="muhendis-isin-kristal-golem-ocagi">Mühendis Işın · Kristal Golem Ocağı</h2>
 <p>Adanın güney ortasındaki kayalıklarda. <strong>Meka zırh</strong> yapar (600 sikke): gövde yuvası, +90 savunma, canı %25 artırır, hareketi %12 hızlandırır, zehir/yanık/kanama hasarının yarısını tutar.</p>
-<div class="tw" id="t134"><table>
+<div class="tw" id="t135"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -10346,7 +10396,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <p>Açtığı tarifler: Kobalt külçesi, Titanyum külçesi, Enerji hücresi (1. görev), Meka zırh (3.).</p>
 <h2 id="ejder-avcisi-tomris-ejder-volkani">Ejder Avcısı Tomris · Ejder Volkanı</h2>
 <p>Adanın doğusundaki volkanda. Ejderhalar geminin volkana döktüğü plazmayla büyümüş. <strong>Işın kılıcı</strong> yapar (800 sikke).</p>
-<div class="tw" id="t135"><table>
+<div class="tw" id="t136"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -10395,7 +10445,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <p>Açtığı tarifler: Plazma hücresi (1. görev), Işın kılıcı (3.). Son görevdeki <strong>Kızıl ejder</strong> ACT 2'nin en güçlü ikinci canavarıdır.</p>
 <h2 id="astronot-gokay-gok-rihtimi">Astronot Gökay · Gök Rıhtımı</h2>
 <p>Adanın en uzak ucunda, yarım kalmış bir fırlatma rampasının başında. Sevdiği Nehir'i uzaylılarla savaşırken kaybetmiş, onu gemiden geri almak istiyor. Roketin parçalarını o yapar: Roket gövdesi 1.000, Roket motoru 1.500, Roket 2.000 sikke.</p>
-<div class="tw" id="t136"><table>
+<div class="tw" id="t137"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -10461,7 +10511,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <li><strong>Ödül:</strong> türün düşürdükleri + 25 + (türün XP'si × 5) sikke. Reis öldürmek "İlk reis", "Reis avcısı" (5 farklı), "Reislerin korkusu" (10), "Reis yiyen" (20) ve "Bütün reisler" başarımlarını ilerletir.</li>
 <li>Börü'nün derslerindeki alıştırma canavarı öldürülünce av sayılmaz; ders Reis çağırmaz (v1.70). Ders sürerken hiçbir Reis gelmez; o sırada dolan Reis ders bitince gelir (v1.79).</li>
 </ul>
-<div class="filt"><label for="f137">Bu tabloda ara</label><input id="f137" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t137" autocomplete="off"><span class="cnt" id="c137">76 satır</span></div><div class="tw" id="t137"><table>
+<div class="filt"><label for="f138">Bu tabloda ara</label><input id="f138" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t138" autocomplete="off"><span class="cnt" id="c138">76 satır</span></div><div class="tw" id="t138"><table>
 <thead>
 <tr>
 <th>Reis</th>
@@ -11191,7 +11241,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </ul>
 <p>Toplam <strong>840 tarif</strong>: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.84: kuzenlere özel 15 tarif eklendi: 5 kılıç Metal aletler'de, 10 zırh Zırh'ta).</p>
 <h4 id="yiyecek-273">Yiyecek (273)</h4>
-<div class="filt"><label for="f138">Bu tabloda ara</label><input id="f138" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t138" autocomplete="off"><span class="cnt" id="c138">263 satır</span></div><div class="tw" id="t138"><table>
+<div class="filt"><label for="f139">Bu tabloda ara</label><input id="f139" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t139" autocomplete="off"><span class="cnt" id="c139">263 satır</span></div><div class="tw" id="t139"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -13046,7 +13096,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="agac-121">Ağaç (121)</h4>
-<div class="filt"><label for="f139">Bu tabloda ara</label><input id="f139" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t139" autocomplete="off"><span class="cnt" id="c139">117 satır</span></div><div class="tw" id="t139"><table>
+<div class="filt"><label for="f140">Bu tabloda ara</label><input id="f140" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t140" autocomplete="off"><span class="cnt" id="c140">117 satır</span></div><div class="tw" id="t140"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -13879,7 +13929,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="zanaat-53">Zanaat (53)</h4>
-<div class="filt"><label for="f140">Bu tabloda ara</label><input id="f140" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t140" autocomplete="off"><span class="cnt" id="c140">52 satır</span></div><div class="tw" id="t140"><table>
+<div class="filt"><label for="f141">Bu tabloda ara</label><input id="f141" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t141" autocomplete="off"><span class="cnt" id="c141">52 satır</span></div><div class="tw" id="t141"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -14257,7 +14307,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="sifa-43">Şifa (43)</h4>
-<div class="filt"><label for="f141">Bu tabloda ara</label><input id="f141" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t141" autocomplete="off"><span class="cnt" id="c141">43 satır</span></div><div class="tw" id="t141"><table>
+<div class="filt"><label for="f142">Bu tabloda ara</label><input id="f142" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t142" autocomplete="off"><span class="cnt" id="c142">43 satır</span></div><div class="tw" id="t142"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -14572,7 +14622,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="alet-kademeleri-43">Alet kademeleri (43)</h4>
-<div class="filt"><label for="f142">Bu tabloda ara</label><input id="f142" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t142" autocomplete="off"><span class="cnt" id="c142">40 satır</span></div><div class="tw" id="t142"><table>
+<div class="filt"><label for="f143">Bu tabloda ara</label><input id="f143" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t143" autocomplete="off"><span class="cnt" id="c143">40 satır</span></div><div class="tw" id="t143"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -14866,7 +14916,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="temel-aletler-38">Temel aletler (38)</h4>
-<div class="filt"><label for="f143">Bu tabloda ara</label><input id="f143" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t143" autocomplete="off"><span class="cnt" id="c143">34 satır</span></div><div class="tw" id="t143"><table>
+<div class="filt"><label for="f144">Bu tabloda ara</label><input id="f144" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t144" autocomplete="off"><span class="cnt" id="c144">34 satır</span></div><div class="tw" id="t144"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -15118,7 +15168,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="sus-38">Süs (38)</h4>
-<div class="filt"><label for="f144">Bu tabloda ara</label><input id="f144" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t144" autocomplete="off"><span class="cnt" id="c144">38 satır</span></div><div class="tw" id="t144"><table>
+<div class="filt"><label for="f145">Bu tabloda ara</label><input id="f145" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t145" autocomplete="off"><span class="cnt" id="c145">38 satır</span></div><div class="tw" id="t145"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -15398,7 +15448,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="tas-ve-kil-26">Taş ve kil (26)</h4>
-<div class="filt"><label for="f145">Bu tabloda ara</label><input id="f145" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t145" autocomplete="off"><span class="cnt" id="c145">26 satır</span></div><div class="tw" id="t145"><table>
+<div class="filt"><label for="f146">Bu tabloda ara</label><input id="f146" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t146" autocomplete="off"><span class="cnt" id="c146">26 satır</span></div><div class="tw" id="t146"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -15594,7 +15644,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="yapilar-25">Yapılar (25)</h4>
-<div class="filt"><label for="f146">Bu tabloda ara</label><input id="f146" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t146" autocomplete="off"><span class="cnt" id="c146">25 satır</span></div><div class="tw" id="t146"><table>
+<div class="filt"><label for="f147">Bu tabloda ara</label><input id="f147" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t147" autocomplete="off"><span class="cnt" id="c147">25 satır</span></div><div class="tw" id="t147"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -15783,7 +15833,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="giyim-25">Giyim (25)</h4>
-<div class="tw" id="t147"><table>
+<div class="tw" id="t148"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -15846,7 +15896,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="av-ve-hayvan-19">Av ve hayvan (19)</h4>
-<div class="tw" id="t148"><table>
+<div class="tw" id="t149"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -15874,7 +15924,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="ates-18">Ateş (18)</h4>
-<div class="filt"><label for="f149">Bu tabloda ara</label><input id="f149" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t149" autocomplete="off"><span class="cnt" id="c149">18 satır</span></div><div class="tw" id="t149"><table>
+<div class="filt"><label for="f150">Bu tabloda ara</label><input id="f150" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t150" autocomplete="off"><span class="cnt" id="c150">18 satır</span></div><div class="tw" id="t150"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16014,7 +16064,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="zirh-26">Zırh (26)</h4>
-<div class="filt"><label for="f150">Bu tabloda ara</label><input id="f150" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t150" autocomplete="off"><span class="cnt" id="c150">23 satır</span></div><div class="tw" id="t150"><table>
+<div class="filt"><label for="f151">Bu tabloda ara</label><input id="f151" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t151" autocomplete="off"><span class="cnt" id="c151">23 satır</span></div><div class="tw" id="t151"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16189,7 +16239,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="ev-esyasi-14">Ev eşyası (14)</h4>
-<div class="filt"><label for="f151">Bu tabloda ara</label><input id="f151" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t151" autocomplete="off"><span class="cnt" id="c151">14 satır</span></div><div class="tw" id="t151"><table>
+<div class="filt"><label for="f152">Bu tabloda ara</label><input id="f152" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t152" autocomplete="off"><span class="cnt" id="c152">14 satır</span></div><div class="tw" id="t152"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16301,7 +16351,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="boya-13">Boya (13)</h4>
-<div class="filt"><label for="f152">Bu tabloda ara</label><input id="f152" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t152" autocomplete="off"><span class="cnt" id="c152">13 satır</span></div><div class="tw" id="t152"><table>
+<div class="filt"><label for="f153">Bu tabloda ara</label><input id="f153" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t153" autocomplete="off"><span class="cnt" id="c153">13 satır</span></div><div class="tw" id="t153"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16406,7 +16456,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="tasitlar-10">Taşıtlar (10)</h4>
-<div class="tw" id="t153"><table>
+<div class="tw" id="t154"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16490,7 +16540,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="metal-9">Metal (9)</h4>
-<div class="tw" id="t154"><table>
+<div class="tw" id="t155"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16567,7 +16617,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="metal-aletler-14">Metal aletler (14)</h4>
-<div class="filt"><label for="f155">Bu tabloda ara</label><input id="f155" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t155" autocomplete="off"><span class="cnt" id="c155">13 satır</span></div><div class="tw" id="t155"><table>
+<div class="filt"><label for="f156">Bu tabloda ara</label><input id="f156" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t156" autocomplete="off"><span class="cnt" id="c156">13 satır</span></div><div class="tw" id="t156"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16672,7 +16722,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="muzik-6">Müzik (6)</h4>
-<div class="tw" id="t156"><table>
+<div class="tw" id="t157"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16728,7 +16778,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="maden-6">Maden (6)</h4>
-<div class="tw" id="t157"><table>
+<div class="tw" id="t158"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16784,7 +16834,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="tarim-5">Tarım (5)</h4>
-<div class="tw" id="t158"><table>
+<div class="tw" id="t159"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16819,7 +16869,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="silah-5">Silah (5)</h4>
-<div class="tw" id="t159"><table>
+<div class="tw" id="t160"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16868,7 +16918,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="temel-4">Temel (4)</h4>
-<div class="tw" id="t160"><table>
+<div class="tw" id="t161"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16910,7 +16960,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="bitki-3">Bitki (3)</h4>
-<div class="tw" id="t161"><table>
+<div class="tw" id="t162"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16945,7 +16995,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h4 id="buyu-3">Büyü (3)</h4>
-<div class="tw" id="t162"><table>
+<div class="tw" id="t163"><table>
 <thead>
 <tr>
 <th>Ürün</th>
@@ -16980,7 +17030,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h2 id="herhangi-gruplari">"Herhangi" grupları</h2>
-<div class="filt"><label for="f163">Bu tabloda ara</label><input id="f163" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t163" autocomplete="off"><span class="cnt" id="c163">23 satır</span></div><div class="tw" id="t163"><table>
+<div class="filt"><label for="f164">Bu tabloda ara</label><input id="f164" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t164" autocomplete="off"><span class="cnt" id="c164">23 satır</span></div><div class="tw" id="t164"><table>
 <thead>
 <tr>
 <th>Grup</th>
@@ -17113,7 +17163,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <li>Her madenden alet yapılmaz: madenlerin bir kısmı yemek (Tuz), yakıt (Taş kömürü), yapı (Kireçtaşı, Kumtaşı, Arduvaz), ateş (Pirit), şifa (Kükürt) ya da süs ve değer (Gümüş, Altın) içindir.</li>
 </ol>
 <h3 id="biyomlarin-madenleri">Biyomların madenleri</h3>
-<div class="tw" id="t164"><table>
+<div class="tw" id="t165"><table>
 <thead>
 <tr>
 <th>#</th>
@@ -17181,7 +17231,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <li><strong>Yeni ara ürünler</strong> (el yapımı): Ateş tuğlası <strong>56</strong>, Çelik külçesi <strong>277</strong>, Kara çelik külçesi <strong>966</strong>, Mor kristal levhası <strong>700</strong>.</li>
 </ul>
 <h3 id="kademe-merdiveni-balta-ve-kazma">Kademe merdiveni (balta ve kazma)</h3>
-<div class="tw" id="t165"><table>
+<div class="tw" id="t166"><table>
 <thead>
 <tr>
 <th>Kademe</th>
@@ -17230,7 +17280,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <blockquote>
 <p>v2.51: usta setlerinin aletleri (Çakmaktaşı, Granit, Timsah dişi, Kuvars, Ejder, Obsidyen) yeni değerlerle <strong>Bütün setler</strong> bölümünde ve aşağıdaki alet tablosunda.</p>
 </blockquote>
-<div class="tw" id="t166"><table>
+<div class="tw" id="t167"><table>
 <thead>
 <tr>
 <th>Alet malzemesi</th>
@@ -17334,7 +17384,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </table></div>
 <h3 id="setler">Setler</h3>
 <p>Her hücrede <strong>savunma ya da hasar · satış fiyatı</strong>. Zırhçılar zırhları, silahçılar silahları ve aletleri döver; set hangi biyomun malzemesiyse o biyomun ustası ve ondan sonrakiler döver (Bakır ve Tunç: Dursun ve Durmuş ve bütün kuzenleri; Demir: Ali ve Veli; Çelik: Kaya ve Kayhan; Kara çelik: Turan ve Tufan; Mor kristal: Kudret ve Kuvvet).</p>
-<div class="tw" id="t167"><table>
+<div class="tw" id="t168"><table>
 <thead>
 <tr>
 <th>Set</th>
@@ -17389,7 +17439,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tr>
 </tbody>
 </table></div>
-<div class="tw" id="t168"><table>
+<div class="tw" id="t169"><table>
 <thead>
 <tr>
 <th>Set</th>
@@ -17475,7 +17525,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <li><strong>Usta seti</strong> aynı biyomun metal setinden <strong>%12 güçlüdür</strong> (savunma ve hasar; dayanıklılık aynı). Silahları (kılıç, gürz, topuz, mızrak) biyomun <strong>etkisiyle doğar</strong> ve tariflerinde o etkinin yağı vardır. Baltası ve kazması o biyomun metal setiyle <strong>aynı kademededir</strong>, %10 hızlı çalışır ama dayanıklılığı %55'tir. Yayları etki almaz (etkiyi ok taşır): metal yayından %12 güçlü, %5 hızlı, 10 px uzun menzilli, %30 az dayanıklı.</li>
 <li><strong>Fiyat:</strong> usta parçası = en büyüğü (malzeme × 1,3; aynı biyomun metal setindeki parça × 1,15). Yeni başlangıç parçaları malzeme × 1,3.</li>
 </ul>
-<div class="filt"><label for="f169">Bu tabloda ara</label><input id="f169" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t169" autocomplete="off"><span class="cnt" id="c169">13 satır</span></div><div class="tw" id="t169"><table>
+<div class="filt"><label for="f170">Bu tabloda ara</label><input id="f170" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t170" autocomplete="off"><span class="cnt" id="c170">13 satır</span></div><div class="tw" id="t170"><table>
 <thead>
 <tr>
 <th>Set</th>
@@ -17665,7 +17715,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <li>Yay silah yuvasına girmez; elde tutulur (balta ve kazma gibi alet yuvasında). Silahlar listesinde ayrı bir <strong>Yaylar</strong> grubu vardır.</li>
 <li>Her biyomun yayı o biyomun ağacından ve setinin metalinden yapılır; o biyomun silahçısı ve ondan sonrakiler döver. Okları herkes elle yapar (bir yapımda 10 ok, Basit okta 5).</li>
 </ul>
-<div class="tw" id="t170"><table>
+<div class="tw" id="t171"><table>
 <thead>
 <tr>
 <th>Yay</th>
@@ -17759,7 +17809,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tr>
 </tbody>
 </table></div>
-<div class="tw" id="t171"><table>
+<div class="tw" id="t172"><table>
 <thead>
 <tr>
 <th>Ok</th>
@@ -17828,7 +17878,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <ul>
 <li><strong>Üç etki</strong>, vuruşun kendi hasarının üstüne <strong>ek hasar</strong> olarak işler:</li>
 </ul>
-<div class="tw" id="t172"><table>
+<div class="tw" id="t173"><table>
 <thead>
 <tr>
 <th>Etki</th>
@@ -17873,7 +17923,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <li>Yakın dövüşte etki, yalnızca <strong>70 piksel içindeki</strong> isabette işler (kombolar dahil; fırlatılan mızrak ve topuz etki vermez). Okta etkiyi o anda atılan ok verir.</li>
 </ul>
 <p><strong>Yağlar</strong> (kazanda öğrenilir, elle yapılır, kategori Zanaat):</p>
-<div class="tw" id="t173"><table>
+<div class="tw" id="t174"><table>
 <thead>
 <tr>
 <th>Yağ</th>
@@ -17920,7 +17970,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <li><strong>Dayanıklılık:</strong> her kullanımda 1 azalır; sıfırlanınca alet körelir ve çalışmaz. Demirci Dursun "Aletimi bile" ile bileme ücretine yeniler. Hile panelindeki "Sınırsız dayanıklılık" aletleri hiç köreltmez.</li>
 <li><strong>İş süresi:</strong> bir toplamanın kaç saniye sürdüğü (yetenekler ve seviye kısaltır).</li>
 </ul>
-<div class="filt"><label for="f174">Bu tabloda ara</label><input id="f174" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t174" autocomplete="off"><span class="cnt" id="c174">115 satır</span></div><div class="tw" id="t174"><table>
+<div class="filt"><label for="f175">Bu tabloda ara</label><input id="f175" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t175" autocomplete="off"><span class="cnt" id="c175">115 satır</span></div><div class="tw" id="t175"><table>
 <thead>
 <tr>
 <th>Alet</th>
@@ -19088,7 +19138,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </table></div>
 <h2 id="zirhlar">Zırhlar</h2>
 <p>Beş yuva vardır: <strong>baş, gövde, el, ayak, silah</strong>. Özellikler penceresinden (C) giyilir. Canavar hasarı <strong>25 / (25 + toplam savunma)</strong> katına iner: 25 savunma hasarı yarıya, 75 savunma dörtte bire indirir.</p>
-<div class="filt"><label for="f175">Bu tabloda ara</label><input id="f175" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t175" autocomplete="off"><span class="cnt" id="c175">60 satır</span></div><div class="tw" id="t175"><table>
+<div class="filt"><label for="f176">Bu tabloda ara</label><input id="f176" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t176" autocomplete="off"><span class="cnt" id="c176">60 satır</span></div><div class="tw" id="t176"><table>
 <thead>
 <tr>
 <th>Zırh</th>
@@ -19522,7 +19572,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h2 id="evler-ve-barinaklar-marangoz-cinar">Evler ve barınaklar (Marangoz Çınar)</h2>
-<div class="tw" id="t176"><table>
+<div class="tw" id="t177"><table>
 <thead>
 <tr>
 <th>Yapı</th>
@@ -19605,7 +19655,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <p><strong>v2.48 notu:</strong> ACT 1 madenlerinin fiyatları ve yerleri değişti (<strong>Aletler · Madenler ve ekipman merdiveni</strong>). Bir madeni kullanan tariflerin fiyatı, maden fiyatındaki değişim × miktar × 1,3 kadar (zincir boyunca) kendiliğinden değişir; bu tablodaki türetilmiş fiyatlar henüz yeniden üretilmedi (v2.47 değerleri). Yeni setlerin, ara ürünlerin ve Tunç/Demir set parçalarının fiyatları o bölümdeki tablolardadır.</p>
 </blockquote>
 <p>Oyundaki bütün eşyalar alfabetik sırada. <strong>Nereden gelir</strong> sütunu bir eşyayı elde etmenin bütün yollarını sayar: yerden toplama (hangi biyomda), ağaç, av (hangi canlı, yüzde kaç ihtimalle), balık, tarif (nerede öğrenilir ve kim yapar), kişilerin verdikleri. <strong>Kullanıldığı tarifler</strong> ilk altı tarifi gösterir; tamamı için tarif ansiklopedisinde malzeme adını arat.</p>
-<div class="filt"><label for="f177">Bu tabloda ara</label><input id="f177" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t177" autocomplete="off"><span class="cnt" id="c177">1226 satır</span></div><div class="tw" id="t177"><table>
+<div class="filt"><label for="f178">Bu tabloda ara</label><input id="f178" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t178" autocomplete="off"><span class="cnt" id="c178">1226 satır</span></div><div class="tw" id="t178"><table>
 <thead>
 <tr>
 <th>Eşya</th>
@@ -28219,7 +28269,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <li>Bu kural <strong>sınırsız sikke (tanrı modu) açıkken de</strong> aynıdır.</li>
 <li>Fiyat ve seviye şartı yeteneğin <strong>katına</strong> (kökten kaçıncı basamak olduğuna) göredir; yukarı çıktıkça pahalı ve güçlü:</li>
 </ul>
-<div class="tw" id="t178"><table>
+<div class="tw" id="t179"><table>
 <thead>
 <tr>
 <th>Kat</th>
@@ -28278,7 +28328,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 <li><strong>Eski kayıtlar:</strong> kaldırılan bir yeteneğe sahip kayıt açılınca o yeteneğin eski parası sikke olarak iade edilir ve bir bildirim çıkar. Elde kalan yetenekler alınmış kalır; alınmış bir yeteneğin altındaki (ona giden yoldaki) yetenekler de görünür olur.</li>
 </ul>
 <h2 id="savas-kirmizi">Savaş (kırmızı)</h2>
-<div class="filt"><label for="f179">Bu tabloda ara</label><input id="f179" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t179" autocomplete="off"><span class="cnt" id="c179">30 satır</span></div><div class="tw" id="t179"><table>
+<div class="filt"><label for="f180">Bu tabloda ara</label><input id="f180" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t180" autocomplete="off"><span class="cnt" id="c180">30 satır</span></div><div class="tw" id="t180"><table>
 <thead>
 <tr>
 <th>Kat</th>
@@ -28626,7 +28676,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h2 id="ekonomi-altin-sarisi">Ekonomi (altın sarısı)</h2>
-<div class="filt"><label for="f180">Bu tabloda ara</label><input id="f180" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t180" autocomplete="off"><span class="cnt" id="c180">30 satır</span></div><div class="tw" id="t180"><table>
+<div class="filt"><label for="f181">Bu tabloda ara</label><input id="f181" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t181" autocomplete="off"><span class="cnt" id="c181">30 satır</span></div><div class="tw" id="t181"><table>
 <thead>
 <tr>
 <th>Kat</th>
@@ -28974,7 +29024,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 </tbody>
 </table></div>
 <h2 id="dayaniklilik-yesil">Dayanıklılık (yeşil)</h2>
-<div class="filt"><label for="f181">Bu tabloda ara</label><input id="f181" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t181" autocomplete="off"><span class="cnt" id="c181">30 satır</span></div><div class="tw" id="t181"><table>
+<div class="filt"><label for="f182">Bu tabloda ara</label><input id="f182" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t182" autocomplete="off"><span class="cnt" id="c182">30 satır</span></div><div class="tw" id="t182"><table>
 <thead>
 <tr>
 <th>Kat</th>
@@ -29325,7 +29375,7 @@ h1,h2,h3,h4{scroll-margin-top:64px}
 Direnç yetenekleri eşya dirençleriyle; Dirençli beden ayrı yeteneklerin yerine geçer (−%60, üçü birden), ve yemek kalkanlarıyla çarpılarak birleşir (ör. Bataklık postu pelerin %30 + Zehre dayanıklı %40 → zehir 0,7 × 0,6 = 0,42).</p>
 <h1 id="basarimlar">Başarımlar</h1>
 <p>41 başarım vardır. Başarımlar <strong>cihaza</strong> kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.</p>
-<div class="filt"><label for="f182">Bu tabloda ara</label><input id="f182" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t182" autocomplete="off"><span class="cnt" id="c182">41 satır</span></div><div class="tw" id="t182"><table>
+<div class="filt"><label for="f183">Bu tabloda ara</label><input id="f183" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t183" autocomplete="off"><span class="cnt" id="c183">41 satır</span></div><div class="tw" id="t183"><table>
 <thead>
 <tr>
 <th>Başarım</th>
@@ -29543,7 +29593,7 @@ Direnç yetenekleri eşya dirençleriyle; Dirençli beden ayrı yeteneklerin yer
 </table></div>
 <h1 id="bilinen-aciklar-ve-tutarsizliklar">Bilinen açıklar ve tutarsızlıklar</h1>
 <p>Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzeltilenler ayrı test raporunda.</p>
-<div class="filt"><label for="f183">Bu tabloda ara</label><input id="f183" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t183" autocomplete="off"><span class="cnt" id="c183">30 satır</span></div><div class="tw" id="t183"><table>
+<div class="filt"><label for="f184">Bu tabloda ara</label><input id="f184" type="search" placeholder="ör. kerevit, odun, Bataklık…" data-t="t184" autocomplete="off"><span class="cnt" id="c184">30 satır</span></div><div class="tw" id="t184"><table>
 <thead>
 <tr>
 <th>#</th>

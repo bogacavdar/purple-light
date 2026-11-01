@@ -14,6 +14,12 @@
 
 
 
+
+## v2.71 — Nazlı'nın kuzenleri
+
+- `<script id="v271">`: MK (k_fidan, k_nilufer, k_kardelen, k_lale, k_menekse), __plFams'ın ocağının 110–260 px yakınına (kendi biyomu, kuru, 70 px boşluk) yerleşir; NPCL.market görünümü + hatC. nearMarket sarmalayıcısı (62 px) → aynı pazar; openMenu başlığı. XTRA (kişi + tezgâh) → talkM; GIVER/MetG kaydı (DATA görev sistemi gidOfTg ile bulur). say sarmalayıcısı v64 resim (porM). v55Ents çizim (tezgâh + kişi), MAPIC/__plMapPeople/__plMapObj, snapshot.v271.m, restore/resetState.
+- DATA: 15 görev (NF/NN/NK/NL/NM 1–3), GB.
+- Açık: Boğaç'ın "Zümrüt'ün kuzenlerinin kazanı yarım açılıyor" hatası yeniden üretilemedi; ekran görüntüsü istendi.
 ## v2.70 — bıçaksız tarifler, reçine ağaçtan
 
 - db: 64 tarifin `t`'sinden bıçak silindi; Çam/Ladin kabuğu ve reçinesi tarifleri (ve kabuk fiyatları) silindi. TREE_EXTRA: Çam → Çam reçinesi 1, Ladin → Ladin reçinesi 1. `<script id="v270">`: eski kayıtta kabuk → reçine, found/belt temizliği.
