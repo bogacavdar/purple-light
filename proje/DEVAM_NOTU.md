@@ -20,6 +20,7 @@
 
 ## v2.74 — bilgi satırları üzerine gelince
 
+- 8332'deki `Object.assign(TREE_EXTRA,{…'Çam':[['Çam kozalağı',1]]})` v2.70 reçinesini eziyordu → Çam: kozalak + reçine. `treeTypes(m)` TREE_EXTRA düşmelerini de sayar (isNatural, görev oku hedefi).
 - v258-wst stiline: `.wst,.pl-stl` varsayılan gizli; li/.psel/button :hover ve :focus-within ile, `.bkinfo` ve `.iact .ii` içinde her zaman görünür.
 ## v2.73 — pazar satırı
 

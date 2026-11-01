@@ -27,8 +27,12 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Arayüz
 - **Silah ve zırh bilgisi üzerine gelince:** listelerdeki uzun bilgi satırları (hasar, vuruş/sn, menzil… ya da savunma, yuva, direnç) artık varsayılan olarak yazmaz; satırın üzerine gelince açılır. Tarif kitabının bilgi kutusunda ve envanterde seçtiğin eşyada her zaman görünür; karelerin köşesindeki kısa ⚔/🛡 etiketi yerinde durur.
 
+### Düzeltmeler
+- **Çam reçine vermiyordu:** 2.70'te eklenen "Çam kesilince reçine düşer" kuralı, Çam kozalağını ekleyen eski bir satır yüzünden siliniyordu; Çam yalnızca kozalak veriyordu. Artık Çam kesilince her odunla 1 Çam kozalağı ve 1 Çam reçinesi düşer (Ladin zaten reçine veriyordu).
+- **Görev oku "Huş kabuğu"nu gösteriyordu:** reçine isteyen bir görevde ok, reçinenin ağaçtan düştüğünü bilmediği için Huş katranının malzemesine (Huş kabuğu, Kayalık Dağ) yönlendiriyordu. Artık ağaçların ekstra düşürdükleri (Çam reçinesi, Ladin reçinesi, kozalak, palamut…) o ağaçtan çıkar sayılır; ok en yakın Çam ya da Ladin ağacını gösterir.
+
 ### Tasarım belgesi
-- Aletler: bilgi satırlarının görünme kuralı.
+- Aletler: bilgi satırlarının görünme kuralı. Tarifler: Çam reçinesinin kaynağı.
 ## Versiyon 2.73 · 1 Kasım 2026
 
 ### Düzeltmeler
