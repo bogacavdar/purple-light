@@ -15,6 +15,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **"Kazanda işe yaramayanları sat" artık gerçekten işe yarayanları satmıyor.** Bu düğme bildiğin tariflerde kullanılan malzemeleri de satıyordu, o yüzden basınca "Emin misin?" uyarısı çıkıyordu. Artık **hiçbir tarifte kullanılan** malzemeyi (bildiğin ya da henüz keşfetmediğin) satmıyor, uyarı da çıkmıyor; düğmedeki tutar da yalnızca bunları sayıyor. Tariflerde kullanılanları da satmak istersen "Aletler, zırhlar ve eşyalar hariç hepsini sat" düğmesi eskisi gibi önce soruyor.
 
 ### Oynanış
+- **Börü artık belirli bir silah istemiyor.** "Taş kılıç" görevi **"İlk silah"** oldu: kılıç, gürz, topuz ya da mızrak, **herhangi bir silahı** silah yuvana takman yetiyor.
 - **Demirciler yalnızca silah, zırh, balta ve kazma dövüyor; öbür aletler elle yapılıyor.** Örste artık yalnızca kılıç, gürz, topuz, mızrak, yay, bıçak, asa ve silahlar, baltalar ve kazmalar, zırhlar dövülüyor. **Tuzak, sapan, bola, olta, ağ, zıpkın, balık kapanı, deniz oltaları, kürek, tırmık, tırpan, sulama kabı, meşale, kazıyıcılar, iğne, kirmen, dokuma tezgâhı, taş aletler (bileği, çekiç, öğütme, pişirme taşı, havan), pirit çakmağı** gibi aletleri tarifini kazanda öğrendikten sonra **elle** yapıyorsun (bilgisayarda Tab, telefonda el ikonu). Bir aletten aynı anda bir tane taşınıyor; körelince Dursun eskisi gibi biliyor.
 - **Nazlı tuzak görevini Tuzak tarifini öğrenmeden vermiyor.** "Kürk siparişi" (tuzak kur, onunla av yakala, 3 tavşan derisi getir) eskiden tuzak tarifini bilmesen de geliyordu. Artık **Tuzak tarifini kazanda öğrenene kadar** Nazlı'nın başında ! çıkmıyor, görev verilmiyor. Önceden almış olduğun görev aynen devam ediyor.
 
@@ -23,12 +24,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Elde kazmayla madene sol tıkla, kazsın.** Eskiden yalnızca madenin ortasındaki küçük bir nokta sayılıyordu, kenarına tıklayınca karakter havaya vuruyordu. Artık madenin her yerine tıklamak sayılıyor: karakter madene yürüyüp kazıyor. Yakında canavar olsa da kazmayla madene tıklarsan kazıyor.
 - **Kişilerin ateşinde yemek pişir.** Kemal'in ve öbür kişilerin kamplarındaki ateşlere **tıkla / dokun** (uzaktaysan karakter yürür, varınca açılır) ya da çantanda çiğ et/balık varken ateşin hemen yanında **F**'ye bas: çiğ et ve balığı közleyebilirsin ("Hepsini közle" ya da tek tek). Bu ateşler sönmez, odun istemez.
 
+- **Silahların değerleri her yerde yazıyor.** Bir silahın ya da vuran bir aletin **hasarı, hızı (saniyede vuruş), menzili, keskinliği** ve varsa **etkisi** (alevli, zehirli, keskin) artık envanterde (eşyaya dokununca ve üstüne gelince), alet kemerinde (yuvanın üstüne gelince ve eşya seçme listesinde), **kazanda tarif öğrenirken, örste dövülürken**, El yapımı listesinde ve tarif kitabında yazıyor.
+- **Almanakta bakılmamış yeniler.** Yeni bir canlıyı ilk kez avlayınca ya da bir **Reis**'i yenince Almanak düğmesinin köşesinde **bakmadığın yenilerin sayısı** kırmızı rozetle yazıyor. Almanağı açınca o kartlarda **"YENİ"** yazıyor, sol sütunda bölgenin yanında da kaç yeni olduğu görünüyor. **Fareyi kartın üstüne getirince** (telefonda dokununca) "YENİ" kalkıyor ve sayı azalıyor. Eski kayıtlarda o ana kadarki her şey bakılmış sayılır.
+
 ### Tasarım belgesi
 - Act 1 · Pazarcı Nazlı: "Satış sayacı" notu (toplu düğmeler de sayılır).
 - Sistemler · Satış: "Kazanda işe yaramayanları sat" tariflerde kullanılan hiçbir şeyi satmaz, soru sormaz.
 - Act 1 · Görev kuralları ve Nazlı tablosu: "tuzakla av" isteyen görev Tuzak tarifi öğrenilmeden açılmaz.
 - Aletler: yeni "Nerede yapılır: örs ya da el" bölümü.
 - Sistemler · Kontroller: yuvaya sağ tık / basılı tut ile eşya değiştirme; elde kazmayla madene sol tık. Işık ve ateş: kişilerin ateşinde közleme.
+- Aletler: "Silah bilgisi her yerde yazar". Act 1 · Börü: B3 "İlk silah" (herhangi bir silah). Kişiler: Dursun'un listesi. Sistemler · Almanak: bakılmamış yeniler.
 
 ---
 

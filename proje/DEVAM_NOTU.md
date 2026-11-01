@@ -1,10 +1,13 @@
-## v2.58 (1 Kasım 2026) · toplu satış "sold" sayacını artırır
+## v2.58 (1 Kasım 2026) · satış düzeltmeleri, tuzak görevi, örs/el ayrımı, kemer seçici, kazmayla tık, kişilerin ateşi, silah bilgisi, Börü İlk silah, almanak yenileri
 - Belge: `parts/30_act1.md` (Nazlı tablosunun altı), `00_giris.md`.
 - Yerinde: `#sellall` dinleyicisi ve `sellSafe()` artık `qc('sold',got)` çağırıyor (şans bonusundan önce, `sell()` ile aynı ölçü). Daha önce yalnızca `sell(n,q)` sayıyordu.
 - `safeSell(n)` = bulkSellable && !potUses && !recUses.length; `#sellsafe` tutarı, askSell süzgeci ve `sellSafe()` bunu kullanıyor (eskiden yalnızca !potUses → bilinen tarif malzemeleri satılıp soru çıkıyordu). Belge `parts/20_sistemler.md` satış uyarısı.
 - `needRec`: `['c','trap:']` isteyen görev `foundSet.has('Tuzak')` olmadan `[['Tuzak']]` döndürür → N4 açılmaz, Kemal'in ayak işi tarife yönlendirir. Alınmış N4 etkilenmez. Belge `30_act1.md` (v2.26 kuralı + N4 satırı).
 - `<script id="v258forge">`: yükleme sonunda FORGED'dan örs dışı aletler silinir (kalan: ARMORSET/EQUIP, GT kind axe/pick/sword/hunt/staff/bow/gun ya da mace, adı bıçak/Boynuz kazma). `handSimple` FORGED'a baktığı için silinenler kendiliğinden El yapımı'na geçer. `handCraft` sarmalı: wearTool varken yenisi yok, yapılınca `giveTool` (tam keskinlik). Dişbudak/Porsuk yayı GT kind 'trap' → elle. Belge `85_aletler.md` "Nerede yapılır".
 - `<script id="v258b">` + `#hotpick` + `<style id="v258-hot">`: (1) `#hotbar` sağ tık/0,5 sn basılı tut → `hpOpen(i)`; seçim `beltSet`, "Yuvayı boşalt" `belt[i]=null`. (2) `pickAt` sarmalı: canlı maden (n.x, n.y-5) 14 px içinde ise daha yakın bir şey yoksa maden döner (eski 7 px merkez); kavgada elde kazma + maden tıklaması yakalama dinleyicisiyle `startGoal`. (3) `FIRES` (kişilerin ateşleri): tıkla/dokun (11 px) → yakınsa `cookAt`, uzaksa `startGoal` + `pendF` varışta açar; `interact` sarmalı: 16 px içinde ve çiğ yemek varsa `cookAt`. Közleme `KOZ`, XP, dstat.cook; ateş süresi yok.
+- `<script id="v258c">`: `wInfo(n)` (weapon()'ı hand=-1, equip.silah=n, tam keskinlikle geçici çağırıp geri alır) → `.wst` satırı: `[data-rec]`, `[data-hrow]`, `.psel`, `.iact .ii`; tile/hotbar/hotpick title; `bookInfo` sarmalı. renderCraft/renderInv/renderHot sarmalları.
+- B3 DATA'da yerinde: "İlk silah", `p:[['wear','*silah']]`, rec yok, sahne metni silahsız. `prog`/`progText`/hedef `'*silah'` özel durumu (equip.silah). Belge 30_act1 v2.26 sayımı 39.
+- `<script id="v258alm">`: `ALS{k:1|2}` (1 kart, 2 Reis) kayıtta `alS`; yoksa restore anındaki durum bakılmış sayılır. `#almbadge` (fixed, 400 ms'de b-alm'ın köşesine), `#alm-g`/`#alm-l` MutationObserver ile "YENİ" ve bölge sayısı; pointerenter(mouse)/click → görüldü.
 - Eski kayıtlara etkisi yok (geçmiş toplu satışlar geriye dönük sayılmaz). Kontrol: chk.js 0 hata.
 
 ## v2.57 (1 Kasım 2026) · kamp ateşleri küçük ve büyük haritada
