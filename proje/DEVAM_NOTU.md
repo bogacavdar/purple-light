@@ -1,3 +1,8 @@
+## v2.58 (1 Kasım 2026) · toplu satış "sold" sayacını artırır
+- Belge: `parts/30_act1.md` (Nazlı tablosunun altı), `00_giris.md`.
+- Yerinde: `#sellall` dinleyicisi ve `sellSafe()` artık `qc('sold',got)` çağırıyor (şans bonusundan önce, `sell()` ile aynı ölçü). Daha önce yalnızca `sell(n,q)` sayıyordu.
+- Eski kayıtlara etkisi yok (geçmiş toplu satışlar geriye dönük sayılmaz). Kontrol: chk.js 0 hata.
+
 ## v2.57 (1 Kasım 2026) · kamp ateşleri küçük ve büyük haritada
 - Belge: `parts/20_sistemler.md` (kamp ateşi satırı), `00_giris.md`.
 - `drawMap` içinde yerinde (İskele `mki`'sinin arkası): `camps` içinde `t>0` olanlar için turuncu parıltı + piksel alev (mini u=1, büyük u=2), büyükte "Kamp ateşi" yazısı. `try{}` içinde (camps `const`'u drawMap'ten sonra tanımlı, erken çağrıda TDZ olmasın). Keşif/ışık koşulu yok.

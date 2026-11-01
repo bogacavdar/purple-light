@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.58 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Toplu satış artık Nazlı'nın görevini sayıyor.** "Bereketli satış" (150 sikkelik satış) görevinin sayacı yalnızca tek tek satışları sayıyordu. Artık **"Aletler, zırhlar ve eşyalar hariç hepsini sat"** ve **"Kazanda işe yaramayanları sat"** düğmeleriyle yaptığın satışlar da sayılıyor. Sayılan, satışın sikke değeri; şanslı müşteri bonusu sayılmıyor.
+
+### Tasarım belgesi
+- Act 1 · Pazarcı Nazlı: "Satış sayacı" notu (toplu düğmeler de sayılır).
+
+---
+
 ## Versiyon 2.57 · 1 Kasım 2026
 
 ### Arayüz
