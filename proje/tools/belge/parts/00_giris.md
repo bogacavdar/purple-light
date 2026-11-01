@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.62** ile birebir (1 Kasım 2026). Bu sürümde: tabaklama ve tanin kalktı; derisi olan her hayvan Deri parçası düşürür, zırhlar ve deri eşyalar onunla yapılır. Önceki sürüm (2.61): eldeki silah doğrudan kullanılır, kemerde gezinirken silahlar silah yuvasına taşınmaz.
+Sürüm: **Versiyon 2.63** ile birebir (1 Kasım 2026). Bu sürümde: aynı setin zırh parçalarının tarifleri ayrıştı (miğfer +2 Taş, eldiven +3 Lif, çizme +3 Yaprak), kazanda hepsi öğrenilebilir. Önceki sürüm (2.62): tabaklama kalktı, zırhlar doğadan düşenle ve aletsiz yapılır.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

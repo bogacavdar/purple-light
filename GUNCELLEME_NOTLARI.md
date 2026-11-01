@@ -10,6 +10,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.63 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Zırh tarifleri kazanda açılmıyordu:** 2.62'de sadeleşen tariflerde aynı setin parçaları aynı malzemeleri istiyordu (ör. Kürk başlık, Kürk eldiven, Deri çarık ve Kürk yelek hepsi Deri parçası + Sinir). Kazan tarifi malzemelerin cinsine bakarak bulduğu için hep ilkini buluyor, ötekiler hiç açılmıyordu.
+- Artık her parçanın tarifi farklı: gövde zırhı yalın kalır, **miğfer/başlık +2 Taş**, **eldiven +3 Lif**, **çizme/çarık +3 Yaprak**.
+  - Çayır: Kürk yelek = 2 Deri parçası, 2 Sinir · Kürk başlık = 1 Deri parçası, 2 Sinir, 2 Taş · Kürk eldiven = 1 Deri parçası, 2 Sinir, 3 Lif · Deri çarık = 1 Deri parçası, 2 Sinir, 3 Yaprak.
+  - Kemik zırh = 8 Kemik, 3 Sinir, 2 Deri parçası · Kemik miğfer = 4 Kemik, 2 Sinir, 1 Deri parçası, 2 Taş · Kemik eldiven = 4 Kemik, 2 Sinir, 1 Deri parçası, 3 Lif · Kemik çizme = 4 Kemik, 1 Deri parçası, 3 Yaprak.
+  - Bakır zırh = 10 Bakır cevheri, 2 Deri parçası, 2 Sinir · Bakır miğfer = 4 Bakır cevheri, 1 Deri parçası, 2 Sinir, 2 Taş · Bakır eldiven = 4 Bakır cevheri, 1 Deri parçası, 3 Lif · Bakır çizme = 4 Bakır cevheri, 1 Deri parçası, 3 Yaprak.
+  - Sonraki setler de aynı kuralla ayrıştı.
+
+### Tasarım belgesi
+- Tarifler: "her parçanın tarifi farklıdır" kuralı, zırh satırları güncellendi.
 ## Versiyon 2.62 · 1 Kasım 2026
 
 ### Oynanış

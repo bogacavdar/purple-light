@@ -6,6 +6,10 @@
 
 
 
+
+## v2.63 — zırh tarifleri ayrıştı
+
+- `judgeTrial` kazanda `matchSet` (malzeme cinsi, miktarsız) ile ilk eşleşeni bulur; 2.62'de 16 grup zırh aynı kümeye düştü, yalnızca ilki öğrenilebiliyordu. Betik scratchpad `uniq.py`: slot işareti (bas +2 Taş, el +3 Lif, ayak +3 Yaprak, govde yalın) eklendi; `uniq.py check` ile zırh içeren eş küme kalmadı. Yeni tarif değiştirirken bu kontrol çalıştırılmalı.
 ## v2.62 — tabaklama kalktı, Deri parçası
 
 - db: Tanin, Meşe tanini, 17+1 Tabaklanmış* tarif ve v2.60'ın 4 kabuğu silindi; Herhangi tanin/kabuk/tabaklanmış deri grupları silindi; bütün tariflerde (db + V set verisi + usta verisi) tabaklanmış deri → `Deri parçası` (aynı sayı), p=15. ACT 2 `addR('Tabaklanmış mağara kurdu postu')` silindi; ikon kuralındaki ölü Tabaklanmış dalı kaldırıldı.
