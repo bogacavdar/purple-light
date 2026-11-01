@@ -5,6 +5,13 @@
 - Eski kayıtlara etkisi yok (öğrenilmiş tarifler adla tutulur; Tanin ve yeni kabuklar kazanda öğrenilir). Kontrol: chk.js 0 hata.
 
 
+
+## v2.62 — tabaklama kalktı, Deri parçası
+
+- db: Tanin, Meşe tanini, 17+1 Tabaklanmış* tarif ve v2.60'ın 4 kabuğu silindi; Herhangi tanin/kabuk/tabaklanmış deri grupları silindi; bütün tariflerde (db + V set verisi + usta verisi) tabaklanmış deri → `Deri parçası` (aynı sayı), p=15. ACT 2 `addR('Tabaklanmış mağara kurdu postu')` silindi; ikon kuralındaki ölü Tabaklanmış dalı kaldırıldı.
+- DATA: M5 metni, K4 (Deri kayış, 3 DP), DR3 (Deri astar, 4 DP), KV3 (2 Gölge postu).
+- `<script id="v262">`: ANIM'de derisi/postu düşen her hayvana `['Deri parçası',1,hp>=60?2:1,max(.6,şans),'zırh']`; P1I ikonu; restore sarmalayıcısı eski kayıtları çevirir (tabaklanmış → 2 DP, tanin/kabuk → sikke, found/belt temizliği).
+- Belgede gen/*.md tabloları (probe çıktıları) eski; parts elle güncellendi.
 ## v2.61 — v259 bloğu kaldırıldı
 
 - `<script id="v259">` (setHand sarmalayıcısı: eldeki silahı equip.silah'a taşıyıp inv'den düşüyordu) silindi. Tekerlek/1–5 ile gezinmek silahları kemerden siliyordu. `weapon()` zaten önce `held()`'ı kullanıyor. `'*silah'` görev ilerlemesi (v2.59) duruyor. Eski kayıtlarda yuvaya taşınmış silahlar equip.silah'ta kalır (göç yok).

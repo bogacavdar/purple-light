@@ -95,11 +95,11 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 | Malzeme | Nereden | Fiyat (sikke) | Kullanıldığı tarif |
 |---|---|---|---|
 | Kök mantarı | toplanır | 20 | Kök mantarlı güveç, Kök özü iksiri |
-| Kök reçinesi | toplanır | 24 | Kök flütü, Tabaklanmış mağara kurdu postu |
+| Kök reçinesi | toplanır | 24 | Kök flütü |
 | Kök böceği kabuğu | Kök böceği | 28 | Böcek kabuğu boyası |
 | Kök yılanı derisi | Kök yılanı | 32 | Kök flütü |
 | Mağara kurdu eti | Mağara kurdu | 22 | Kök mantarlı güveç (çiğ de yenir) |
-| Mağara kurdu postu | Mağara kurdu | 40 | Tabaklanmış mağara kurdu postu |
+| Mağara kurdu postu | Mağara kurdu | 40 | – (satılır; Deri parçası da düşer) |
 | Yaşlı Kök özü | Yaşlı Kök | 480 | Kök özü iksiri |
 
 **Tarifler (kazanda öğrenilir)**
@@ -109,7 +109,6 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 | Kök mantarlı güveç | Yiyecek | 2 Kök mantarı, 1 Mağara kurdu eti, 2 Su, 1 Ateş | 110 |
 | Böcek kabuğu boyası | Boya | 2 Kök böceği kabuğu, 1 Su | 75 |
 | Kök flütü | Müzik | 1 Kök yılanı derisi, 1 Kök reçinesi, 1 Dal | 95 |
-| Tabaklanmış mağara kurdu postu | Av ve hayvan | 1 Mağara kurdu postu, 1 Kök reçinesi, 2 Su | 95 |
 | Kök özü iksiri | Büyü | 1 Yaşlı Kök özü, 2 Kök mantarı, 1 Su | 680 |
 
 ## Teknik not (mağaranın yeri)

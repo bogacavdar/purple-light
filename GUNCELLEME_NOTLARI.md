@@ -9,6 +9,29 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ---
 
 
+
+## Versiyon 2.62 · 1 Kasım 2026
+
+### Oynanış
+- **Tabaklama kalktı:** Tanin, Meşe tanini ve bütün "tabaklanmış deri" tarifleri oyundan çıkarıldı.
+- **Yeni malzeme: Deri parçası.** Derisi ya da postu olan her hayvan avlanınca derisinin yanında Deri parçası da düşürür; büyük hayvanlar (yaban öküzü, mağara ayısı gibi) 1–2 tane.
+- **Zırhlar deri parçasıyla yapılır:** bütün zırhlar (Kürk, Kemik, Bakır ve sonraki setler), deri isteyen silahlar ve eşyalar (çanta, tulum, çadır, yatak, ok kılıfı, sapan…) tabaklanmış deri yerine aynı sayıda Deri parçası ister. Örnek: Kürk başlık = 1 Deri parçası, 1 Sinir kirişi, 5 Lif, 4 İp; Bakır miğfer = 2 Bakır külçesi, 1 Deri parçası, 2 Sinir.
+- Hayvanların kendi derileri (Kurt derisi, Geyik derisi…) yine düşer; Nazlı'ya satılır ve görevlerde istenir.
+- Tabakhane artık Meşe tanini istemez.
+- 2.60'ta eklenen Kül ağacı, Kara çam, Mor söğüt ve Gece ağacı kabukları kaldırıldı (yalnızca tanin içindi).
+
+### Görevler
+- Usta Sinan "Meşe tanini" görevi → **Deri kayış:** 3 Deri parçası getir.
+- Zırhçı Duran "Tabaklama" görevi → **Deri astar:** 4 Deri parçası getir.
+- Kuvvet "Gölge postu" görevi: 2 tabaklanmış gölge postu yerine 2 Gölge postu getir.
+- Durmuş'un Tunç miğfer konuşması artık tanin değil deri parçası anlatıyor.
+
+### Kayıtlar
+- Eski kayıtlardaki her tabaklanmış deri 2 Deri parçası olur; Tanin, Meşe tanini ve kaldırılan kabuklar fiyatından sikkeye çevrilir (oyuna girince bir kez bildirim çıkar). Öğrenilmiş tanin ve tabaklama tarifleri listeden silinir.
+
+### Tasarım belgesi
+- Tarifler: "Tabaklama yok, zırh deri parçasıyla yapılır" kuralı; tabaklama, tanin ve kabuk satırları silindi, bütün tariflerde tabaklanmış deri yerine Deri parçası yazıldı.
+- Eşya dizini: Deri parçası eklendi. ACT 1 görevleri (M5, K4, DR3, KV3) güncellendi.
 ## Versiyon 2.61 · 1 Kasım 2026
 
 ### Düzeltmeler

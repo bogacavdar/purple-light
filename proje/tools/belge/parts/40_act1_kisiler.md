@@ -193,7 +193,7 @@ Kuzen cadıların kazanı **Zümrüt'ün kazanıyla aynı mantıkta** çalışı
 ### Silahçılar ve zırhçılar: kademe kuralı
 
 - Her örsün bir **kademesi** vardır: Dursun ve Durmuş **0 (Çayır)**, Orman kuzenleri 1, Bataklık 2, Kayalık Dağ 3, Kül Diyarı 4, Mor Kristal Vadisi 5.
-- Bir eşyanın kademesi, **ana malzemesinin** en erken toplanabildiği biyomdur: malzeme zincirinin içindeki her ham maddenin ilk çıktığı biyomlardan en ileridekidir. Tabaklanmış deri bu hesaba katılmaz (her zırhın astarıdır; v2.60'tan beri her biyomda o biyomun ağaç kabuğundan yapılan Tanin'le tabaklanır). ACT 2 malzemeli zırhlar (²) kademe 0 sayılır, Durmuş ve bütün zırhçılar döver.
+- Bir eşyanın kademesi, **ana malzemesinin** en erken toplanabildiği biyomdur: malzeme zincirinin içindeki her ham maddenin ilk çıktığı biyomlardan en ileridekidir. Deri parçası bu hesaba katılmaz (her zırhın astarıdır; v2.62'den beri her biyomun hayvanından düşer, tabaklama yoktur). ACT 2 malzemeli zırhlar (²) kademe 0 sayılır, Durmuş ve bütün zırhçılar döver.
 - Bir demirci **kendi kademesindeki ve altındaki** bütün eşyaları döver; ayrıca **kendine özel** eşyaları vardır. Yani Dursun ile Durmuş yalnızca Çayır malzemesiyle (taş, çakmaktaşı, çakıl, bakır + kalay = tunç…) yapılanları döverken, bir sonraki biyomun kuzenleri o biyoma özgü silah ve zırhları da döver. Silahçılar alet ve silah, zırhçılar zırh döver.
 - Örs panelinde, öğrendiğin ama o demircinin kademesini aşan eşyalar üstte bir notla listelenir: "… bunları dövemez: Demir kılıç → Silahçı Ali (Bataklık)". Kazanda bir örs tarifini öğrenince çıkan mesaj da onu dövebilen **ilk** demircinin adını söyler.
 - İşçilik bütün kuzenlerde de fiyatın **%15**'i (en az 2). Silahçılar **Aletimi bile** de yapar (aletin değerinin onda biri).
@@ -227,16 +227,16 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 | Eşya | Tür | Değer | Malzemeler | Döven | Fiyat |
 |---|---|---|---|---|---|
 | Granit gürz | Kılıç (silah) | 27 hasar · 100 kullanım | 4 Granit, 1 Meşe sapı, 3 Yaban domuzu dişi, 1 Sinir kirişi | Silahçı Durdu (Orman) ve üstü | 112 |
-| Meşe kabuk zırh | Zırh · Gövde | +30 savunma · direnç: kanama %15 | 3 Meşe kalası, 2 Tabaklanmış yaban domuzu derisi, 6 Kirpi dikeni, 1 Sinir kirişi | Zırhçı Duran (Orman) ve üstü | 543 |
-| Ceviz kabuğu miğfer | Zırh · Baş | +15 savunma | 6 Ceviz, 1 Meşe kalası, 1 Tabaklanmış karaca derisi, 2 İri diken | Zırhçı Duran (Orman) ve üstü | 280 |
-| Timsah dişi kılıcı | Kılıç (silah) | 38 hasar · 140 kullanım | 4 Demir külçesi, 3 Timsah dişi, 1 Bataklık servisi sapı, 1 Tabaklanmış su samuru derisi | Silahçı Ali (Bataklık) ve üstü | 1.011 |
+| Meşe kabuk zırh | Zırh · Gövde | +30 savunma · direnç: kanama %15 | 3 Meşe kalası, 2 Deri parçası, 6 Kirpi dikeni, 1 Sinir kirişi | Zırhçı Duran (Orman) ve üstü | 543 |
+| Ceviz kabuğu miğfer | Zırh · Baş | +15 savunma | 6 Ceviz, 1 Meşe kalası, 1 Deri parçası, 2 İri diken | Zırhçı Duran (Orman) ve üstü | 280 |
+| Timsah dişi kılıcı | Kılıç (silah) | 38 hasar · 140 kullanım | 4 Demir külçesi, 3 Timsah dişi, 1 Bataklık servisi sapı, 1 Deri parçası | Silahçı Ali (Bataklık) ve üstü | 1.011 |
 | Timsah pulu zırh | Zırh · Gövde | +46 savunma · direnç: kanama %40, metal | 2 Demir levha, 3 Timsah derisi, 2 Bataklık kurdu postu, 1 Sinir kirişi | Zırhçı Veli (Bataklık) ve üstü | 1.177 |
 | Gümüş kılıç | Kılıç (silah) | 44 hasar · 160 kullanım | 4 Gümüş külçesi, 3 Kuvars, 1 Ardıç sapı, 2 Kartal pençesi | Silahçı Kaya (Kayalık Dağ) ve üstü | 472 |
-| Gümüş pullu zırh | Zırh · Gövde | +52 savunma · direnç: kanama %35, metal | 3 Gümüş külçesi, 3 Demir halka, 2 Tabaklanmış mağara ayısı derisi, 2 Ayı pençesi | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 1.396 |
-| Kartal tüyü miğfer | Zırh · Baş | +24 savunma · metal | 6 Kartal tüyü, 1 Gümüş külçesi, 2 Öküz boynuzu, 1 Tabaklanmış yaban öküzü derisi | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 435 |
+| Gümüş pullu zırh | Zırh · Gövde | +52 savunma · direnç: kanama %35, metal | 3 Gümüş külçesi, 3 Demir halka, 2 Deri parçası, 2 Ayı pençesi | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 1.396 |
+| Kartal tüyü miğfer | Zırh · Baş | +24 savunma · metal | 6 Kartal tüyü, 1 Gümüş külçesi, 2 Öküz boynuzu, 1 Deri parçası | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 435 |
 | Ametist kılıcı | Kılıç (silah) | 58 hasar · 240 kullanım | 5 Ametist, 3 Obsidyen, 2 Kristal, 1 Işık ağacı sapı, 2 Gölge dişi | Silahçı Kudret (Mor Kristal Vadisi) ve üstü | 763 |
-| Kristal ipek zırh | Zırh · Gövde | +72 savunma · direnç: kanama %25, yanık %25, zehir %25 | 5 Kristal ipek, 3 Ametist, 2 Demir levha, 2 Tabaklanmış gölge postu | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 2.554 |
-| Işık pulu eldiven | Zırh · El | +18 savunma · direnç: zehir %35 | 4 Işık pulu, 2 Kristal, 1 Tabaklanmış işık tilkisi postu | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 1.000 |
+| Kristal ipek zırh | Zırh · Gövde | +72 savunma · direnç: kanama %25, yanık %25, zehir %25 | 5 Kristal ipek, 3 Ametist, 2 Demir levha, 2 Deri parçası | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 2.554 |
+| Işık pulu eldiven | Zırh · El | +18 savunma · direnç: zehir %35 | 4 Işık pulu, 2 Kristal, 1 Deri parçası | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 1.000 |
 
 ### Kuzenlerin görevleri
 
