@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.76** ile birebir (1 Kasım 2026). Bu sürümde: Çiftçi Ekin, tarlası, ateşi ve kapısı gerçekten kalktı (2.68'deki kaldırma çalışmamıştı); Deri parçasının ikonu. Önceki sürüm (2.75): her ateşte közle, közlenmiş = pişmiş.
+Sürüm: **Versiyon 2.77** ile birebir (1 Kasım 2026). Bu sürümde: mağaraların girişi ve çıkışı sarı parlar, ÇIKIŞ tabelası görünür, çıkış noktası hep zeminde; Mağara mantarı yalnızca mağaralarda. Önceki sürüm (2.76): Çiftçi Ekin gerçekten kalktı.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -764,7 +764,7 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 - **Haritadaki miktarlar (v2.11'de seyreltildi, harita kalabalık geliyordu):** yeni oyunda ada kurulurken her tür sabit sayıda rastgele yere konur; yerler her oyunda farklı, sayılar aynıdır.
   - **Temel malzemeler** bütün adaya serpilir (yaklaşık): Dal 800, **Lif ~950, Taş ~735** (v2.25'te ikisi de ~%35 artırıldı; önce 700 ve 550), Yaprak 450, Nehir çakılı 400, Kum 350, Çakmaktaşı 300 (v2.10'a kadar 1650 / 1410 / 990 / 840 / 720 / 600 / 450). Daha az oldukları için **%30 daha çabuk** yeniden çıkarlar (ör. Dal 25 → 18 sn).
   - **Biyom bitkileri** her biyomun kendi 14 türü: tür başına kendi biyomunda yaklaşık **40** (önce 68); Kuru ot ~90 (150), Böğürtlen ~80 (110), yalnızca su kenarında biten türler ~30 (42).
-  - **Madenler** (biyom başına 3 tür, ilk iki biyomda 22, diğerlerinde 20) ve **mağara buluntuları** (Sarkıt, Yarasa gübresi, Mağara mantarı: madenlerin çevresinde 44'er) değişmedi.
+  - **Madenler** (biyom başına 3 tür, ilk iki biyomda 22, diğerlerinde 20) ve **mağara buluntuları** (Sarkıt, Yarasa gübresi — v2.77: Mağara mantarı artık yalnızca mağaraların içinde çıkar: madenlerin çevresinde 44'er) değişmedi.
   - **Ağaçlar** sayıyla değil olasılıkla çıkar: orman zemininde her karede %20, çimende %4 (Kül Diyarı'nda bunların %45'i); sonra **%35'i** seyreltilir (v2.10'a kadar %18). Tür biyomun 5 ağacından seçilir; meyve ağaçlarının payı 0,45, diğerlerinin 1.
   - **Başlangıç kampının çevresi (20 karo)** seyreltilmez; öğretici burada geçer.
   - **Kuzen aileleri (v2.35):** her ailenin demircileri ve cadısı kendi biyomunun içindeki sabit yerlerde durur (adanın verisinden); Orman'daki aile (Cadı Yakut) Çayır tarafına yakındır.
@@ -814,7 +814,6 @@ Başladığın yer: hilalin batı ucunda, Çayır'ın Orman'a en uzak yerinde, g
 | Kum | 1 | 67 | 14 sn sonra yeniden çıkar |
 | Kuru ot | 1 | 87 | 25 sn sonra yeniden çıkar |
 | Lif | 1 | 95 | 14 sn sonra yeniden çıkar |
-| Mağara mantarı | 4 | 10 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
 | Nane | 2 | 47 | 40 sn sonra yeniden çıkar |
 | Nehir çakılı | 1 | 90 | 18 sn sonra yeniden çıkar |
 | Papatya | 1 | 44 | 35 sn sonra yeniden çıkar |
@@ -878,7 +877,6 @@ Adanın kuzeybatısı (Çayır'dan doğuya, büyük nehre doğru yürü). Gölge
 | Kuzugöbeği | 6 | 45 | 70 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk), zehirli! |
 | Kuzukulağı | 1 | 39 | 40 sn sonra yeniden çıkar, çiğ yenir (+2 tokluk), zehirli! |
 | Lif | 1 | 104 | 14 sn sonra yeniden çıkar |
-| Mağara mantarı | 4 | 11 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
 | Nehir çakılı | 1 | 65 | 18 sn sonra yeniden çıkar |
 | Sarmaşık | 1 | 36 | 45 sn sonra yeniden çıkar |
 | Taş | 1 | 74 | 21 sn sonra yeniden çıkar |
@@ -941,7 +939,6 @@ Adanın kuzeyi, büyük nehrin doğusu: Orman'dan ana köprüyü onarıp karşı
 | Kızılcık | 2 | 46 | 50 sn sonra yeniden çıkar, çiğ yenir (+5 tokluk) |
 | Kum | 1 | 47 | 14 sn sonra yeniden çıkar |
 | Lif | 1 | 116 | 14 sn sonra yeniden çıkar |
-| Mağara mantarı | 4 | 7 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
 | Nehir çakılı | 1 | 66 | 18 sn sonra yeniden çıkar |
 | Nilüfer | 3 | 30 | 50 sn sonra yeniden çıkar |
 | Sarkıt | 6 | 4 | 120 sn sonra yeniden çıkar |
@@ -1010,7 +1007,6 @@ Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartalla
 | Lavanta | 3 | 37 | 50 sn sonra yeniden çıkar |
 | Lif | 1 | 123 | 14 sn sonra yeniden çıkar |
 | Liken | 5 | 39 | 45 sn sonra yeniden çıkar |
-| Mağara mantarı | 4 | 4 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
 | Nehir çakılı | 1 | 49 | 18 sn sonra yeniden çıkar |
 | Sarkıt | 6 | 14 | 120 sn sonra yeniden çıkar |
 | Sinirotu | 2 | 37 | 45 sn sonra yeniden çıkar |
@@ -1071,7 +1067,6 @@ Adanın güneydoğusu, sıradağın ardı: Kayalık Dağ'dan sıradağa yürü, 
 | Kül | 1 | 45 | 25 sn sonra yeniden çıkar |
 | Lav camı | 40 | 27 | 110 sn sonra yeniden çıkar |
 | Lif | 1 | 115 | 14 sn sonra yeniden çıkar |
-| Mağara mantarı | 4 | 5 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
 | Nehir çakılı | 1 | 58 | 18 sn sonra yeniden çıkar |
 | Sarı okr | 5 | 33 | 60 sn sonra yeniden çıkar |
 | Sarkıt | 6 | 9 | 120 sn sonra yeniden çıkar |
@@ -1131,7 +1126,6 @@ Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığ�
 | Kristal kum | 50 | 36 | 80 sn sonra yeniden çıkar |
 | Kum | 1 | 54 | 14 sn sonra yeniden çıkar |
 | Lif | 1 | 131 | 14 sn sonra yeniden çıkar |
-| Mağara mantarı | 4 | 7 | 80 sn sonra yeniden çıkar, çiğ yenir (+3 tokluk), zehirli! |
 | Mor kök | 55 | 42 | 80 sn sonra yeniden çıkar |
 | Mor sarmaşık | 50 | 45 | 80 sn sonra yeniden çıkar |
 | Mor yosun | 45 | 33 | 70 sn sonra yeniden çıkar |
@@ -1849,7 +1843,7 @@ Yalnızca gece 22:00–04:00 arası görünür: soluk, mavi ışıklı, yarı sa
 3. **Yükleme.** Girerken kısa bir yükleme ekranı (~0,9 sn): mağaranın adı ve "Mağaraya giriliyor…". Çıkarken "Gün ışığına çıkılıyor…".
 4. **İç alan.** Her mağara ayrı bir alandır: istenen boyut biyomun dörtte biriydi (~107 × 107 karo); adada kişilerden, ateşlerden ve yerlerden uzak, buna sığan en büyük kuru alan **~89 × 89 karo** (biyomun yaklaşık beşte biri) olduğu için mağaralar bu boyuttadır. İçinde kıvrımlı tüneller, ~18 yan kol ve oda, en dipte büyük bir oda vardır. Giriş en alttadır; en derin oda en uzak uçtadır. İçeride **hava yoktur** (yağmur, sis, rüzgâr, şimşek ve gök gürültüsü yok; dışarının hava ve ortam sesleri de içeri gelmez — v2.72, Boğaç: "mağarada yağmur yağıyor"), mor ışık gelmez, gün ışığı yoktur: her yer gece gibi karanlıktır.
 5. **Meşale.** **Mağarada hava meşaleyi etkilemez (v2.66, Boğaç: "mağarada meşale çok hızlı tükeniyor"):** dışarıda yağmur ya da fırtına varken meşale 2–2,7 kat hızlı yanar; içeride hava olmadığı için mağarada her zaman normal hızda yanar. Meşale sol eldeyken her saldırıda harcanan pay da mağarada **üçte birdir** (dışarıda %4,5, içeride %1,5). Mağarada meşalenin aydınlattığı alan **2 katıdır** (Kaba meşale 160 px, Meşale 230 px; ışığın dışı karanlıktır). Meşale içeride biterse (ya da elinden indirilirse) her yer **zifiri karanlık** olur; karakter "Meşalem bitti! Hiçbir şey göremiyorum…" der ve 1,5 sn sonra kendini mağaranın dışında, girişin önünde bulur (eldeki meşaleyi indirdiysen 3 sn içinde yeniden eline alırsan kalırsın). Mağaranın ağzından içeri vuran soluk bir ışık ve parlayan mantarlar ya da reçineler küçük ışık halkaları yapar ama yolu göstermeye yetmez.
-6. **Çıkış.** İçeride girişin olduğu yerde ışıklı bir **"ÇIKIŞ" tabelası** ve aşağı ok durur (v2.66). Tabelaya tıklayınca ya da yanında **F**: "Mağaradan çıkıp gün ışığına dönmek ister misin?" penceresi, **Mağaradan çık** düğmesiyle. Bayılırsan mağaradan çıkarılırsın (her zamanki gibi uyanma yerinde uyanırsın).
+6. **Çıkış.** İçeride girişin olduğu yerde ışıklı bir **"ÇIKIŞ" tabelası** ve aşağı ok durur (v2.66; v2.77: tabela mağara zemininin üstüne çizilir, önceden görünmüyordu). **Giriş ve çıkış sarı parlar (v2.77, Boğaç):** dışarıda mağaranın ağzında, içeride çıkışta yerde nabız gibi atan sarı bir halka ve ışıltı vardır; gece de görünür (ağzın 60 px ışığı). Çıkış alanı 56 px'tir (tıklama 50 px). Başlangıç/çıkış noktası her zaman yürünebilir zemindedir (mağara kurulurken su ağzın üstündeki hücreyi silerse en yakın zemine alınır). Tabelaya tıklayınca ya da yanında **F**: "Mağaradan çıkıp gün ışığına dönmek ister misin?" penceresi, **Mağaradan çık** düğmesiyle. Bayılırsan mağaradan çıkarılırsın (her zamanki gibi uyanma yerinde uyanırsın).
 7. **Kayıt.** Mağaradayken kaydedilirse oyun, kayıt açılınca seni **mağaranın girişinin önünde** başlatır. Mağarada açtığın yerler (harita) kaydedilir.
 8. **Harita.** Dışarıda mağaranın girişi küçük ve büyük haritada **mağara simgesiyle** görünür (o biyoma ayak basmışsan); büyük haritada üzerine gelince adı ve şartı yazar ("Yankı Mağarası · Sv 5 · meşale"). Mağaranın içindeyken harita **mağaranın kendi haritasını** gösterir: yürüdükçe açılan tüneller, giriş ve en dipteki kişi.
 9. **Canlılar.** Her mağarada **3 canlı türü** yaşar; yalnızca o mağarada çıkarlar (dışarıda yoktur). Mağarada dolaşırken çevrende (200–420 px) karanlıkta doğarlar. Her tür adanın öbür canlıları gibi **Reis** sayacına sahiptir: yeteri kadar avlayınca o türün Reisi gelir. Almanakta biyomun canlılarının altında ayrı bir **"Mağara: …"** bölümünde görünürler (mağaraya bir kez girmiş olmak yeter).
@@ -1858,7 +1852,7 @@ Yalnızca gece 22:00–04:00 arası görünür: soluk, mavi ışıklı, yarı sa
     - karşılaşıp yenemediysen (bayıldıysan): özellikleri açılır (can, hasar, hız, hamleler, düşürdükleri) ama kart **altın değildir** ("Karşılaştın, henüz yenemedin");
     - yendiysen kart kendiliğinden **altın** olur ("★ Yenildi").
 11. **Yan görev.** Her mağaranın en derin odasında bir **yan görev kişisi** vardır (yan görev kuralları geçerlidir: ana görevle birlikte yapılır, bayılınca yalnızca yan görev iptal olur). Kişi başında mavi "?" ile görünür; yalnızca mağaranın içinden ulaşılır (dış haritada işaret yoktur). Görev bir hikâyeyle başlar, mağarada toplanan bir malzemeyi ister, sonra boss'u çağırır. Boss'la karşılaşıp bayıldıysan ve kişiye **ikinci kez** gidersen, görev en baştan başlamaz: kişi doğrudan "Hazır mısın?" diye sorar ve boss hemen çağrılır. Boss yenilince kişiye dönülür; görev biter.
-12. **Malzemeler.** Mağarada **2 toplanabilir** malzeme (duvar diplerinde, her girişte yeniden dizilir; içerideyken yeniden çıkmaz) ve canlılardan düşen malzemeler vardır. **Hepsinin bir satış fiyatı vardır** (Nazlı'ya satılır) ve her biri **en az bir tarifte** kullanılır. Bu tarifler **kazandan öğrenilir** (malzemeler bir kez bulununca Normal modda açık görünür); çoğu tarif kitabında az tarif olan kategorilerdendir (Büyü, Müzik, Boya, Şifa, Av ve hayvan) ve iki tanesi yemektir.
+12. **Malzemeler.** Her mağarada **Mağara mantarı** da toplanır (v2.77, Boğaç: yalnızca mağaraların içinde çıkar, dışarıda yoktur; çiğ yenir, zehirli). Ayrıca mağarada **2 toplanabilir** malzeme (duvar diplerinde, her girişte yeniden dizilir; içerideyken yeniden çıkmaz) ve canlılardan düşen malzemeler vardır. **Hepsinin bir satış fiyatı vardır** (Nazlı'ya satılır) ve her biri **en az bir tarifte** kullanılır. Bu tarifler **kazandan öğrenilir** (malzemeler bir kez bulununca Normal modda açık görünür); çoğu tarif kitabında az tarif olan kategorilerdendir (Büyü, Müzik, Boya, Şifa, Av ve hayvan) ve iki tanesi yemektir.
 
 ## 1 · Yankı Mağarası (Çayır · Sv 5)
 

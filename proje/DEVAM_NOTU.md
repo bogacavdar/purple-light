@@ -20,6 +20,11 @@
 
 
 
+
+## v2.77 — mağara çıkışı, sarı parıltı, Mağara mantarı
+
+- v232: C.start zemin değilse girişe en yakın zemin hücresi; OUTX y=C.start, r 56; pickAt 50 px, reach 40. 2.66'nın tabela sarmalayıcısı mağara zemin boyacısının ALTINDA kalıyordu (o, mağaradayken alt katmanları çağırmaz) → silindi; `<script id="v277">` en üstte: tabela + sarı halka (içeride çıkış, dışarıda kapılar) + kapılara 60 px gece ışığı.
+- MINEPL üretiminde Mağara mantarı atlanır; iki mağaranın C.raw'ına eklendi.
 ## v2.76 — Ekin gerçekten kalktı
 
 - v268 `away()` `I2` kullanıyordu; ana kapsamda yok (bloklara özel) → ReferenceError try içinde yutuldu, hiçbir şey taşınmadı. Artık `ISLE!==2`, farmer.by da −1e5 (tickNPCs y'yi by'den kurar), Ekin'in ateşi FIRES'tan, kapısı `window.__plIsle.P1`'den.

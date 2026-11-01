@@ -24,6 +24,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.77 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Kök Mağarası'ndan çıkılamıyordu:** mağara kurulurken içerideki su, ağzın üstündeki hücreyi silebiliyordu; o zaman başlangıç ve çıkış noktası duvarın içine düşüyordu. Artık çıkış noktası her zaman yürünebilir zemindedir ve çıkış alanı daha geniştir.
+- **ÇIKIŞ tabelası görünmüyordu:** 2.66'da eklenen tabela mağara zemininin altında kalıyordu; artık üstüne çizilir.
+
+### Oynanış
+- **Giriş ve çıkış sarı parlar:** dışarıda mağaranın ağzında, içeride çıkışta yerde nabız gibi atan sarı bir halka ve ışıltı var; gece de görünür.
+- **Mağara mantarı yalnızca mağaralarda:** artık Çayır'da ve dışarıdaki maden ağızlarının çevresinde çıkmaz; Yankı Mağarası'nda ve Kök Mağarası'nda toplanır. Zümrüt'ün "Güneş görmeyenler" ve Fidan'ın "Mantar tezgâhı" görevleri için mağaraya girmek gerekir.
+
+### Tasarım belgesi
+- Mağaralar: çıkış, sarı parıltı, Mağara mantarı. ACT 1 biyomları: dışarıdaki Mağara mantarı satırları kaldırıldı.
 ## Versiyon 2.76 · 1 Kasım 2026
 
 ### Düzeltmeler

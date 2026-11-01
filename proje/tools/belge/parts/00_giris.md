@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.76** ile birebir (1 Kasım 2026). Bu sürümde: Çiftçi Ekin, tarlası, ateşi ve kapısı gerçekten kalktı (2.68'deki kaldırma çalışmamıştı); Deri parçasının ikonu. Önceki sürüm (2.75): her ateşte közle, közlenmiş = pişmiş.
+Sürüm: **Versiyon 2.77** ile birebir (1 Kasım 2026). Bu sürümde: mağaraların girişi ve çıkışı sarı parlar, ÇIKIŞ tabelası görünür, çıkış noktası hep zeminde; Mağara mantarı yalnızca mağaralarda. Önceki sürüm (2.76): Çiftçi Ekin gerçekten kalktı.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
