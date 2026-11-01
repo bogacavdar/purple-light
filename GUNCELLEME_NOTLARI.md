@@ -11,6 +11,15 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.64 · 1 Kasım 2026
+
+### Arayüz
+- **Zırhlar ne verdiğini gösteriyor:** kazanın ve örsün tarif listesinde, El yapımı listesinde, tarif defterinde, envanterde seçili eşyada ve kemer/eşya ipuçlarında zırh parçalarının altında "🛡 Savunma +X · baş/gövde/el/ayak yuvası" yazar; varsa direnci (kanama, zehir, yanık %), "çamurda yavaşlamazsın" ve "karanlıkta ışık verir" de yazar.
+- Silahların bilgisi (⚔ hasar, vuruş/sn, menzil, keskinlik, etki) aynı yerlerde görünmeye devam ediyor.
+
+### Tasarım belgesi
+- Aletler: "Zırhlar da ne verdiğini gösterir" eklendi.
 ## Versiyon 2.63 · 1 Kasım 2026
 
 ### Düzeltmeler

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.63** ile birebir (1 Kasım 2026). Bu sürümde: aynı setin zırh parçalarının tarifleri ayrıştı (miğfer +2 Taş, eldiven +3 Lif, çizme +3 Yaprak), kazanda hepsi öğrenilebilir. Önceki sürüm (2.62): tabaklama kalktı, zırhlar doğadan düşenle ve aletsiz yapılır.
+Sürüm: **Versiyon 2.64** ile birebir (1 Kasım 2026). Bu sürümde: zırhlar da tarif ekranında, envanterde ve kemerde ne verdiğini (savunma, yuva, direnç, çamur, ışık) gösterir. Önceki sürüm (2.63): aynı setin zırh parçalarının tarifleri ayrıştı.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.63** ile birebir (1 Kasım 2026). Bu sürümde: aynı setin zırh parçalarının tarifleri ayrıştı (miğfer +2 Taş, eldiven +3 Lif, çizme +3 Yaprak), kazanda hepsi öğrenilebilir. Önceki sürüm (2.62): tabaklama kalktı, zırhlar doğadan düşenle ve aletsiz yapılır.
+Sürüm: **Versiyon 2.64** ile birebir (1 Kasım 2026). Bu sürümde: zırhlar da tarif ekranında, envanterde ve kemerde ne verdiğini (savunma, yuva, direnç, çamur, ışık) gösterir. Önceki sürüm (2.63): aynı setin zırh parçalarının tarifleri ayrıştı.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -4047,6 +4047,8 @@ Bir silahın ya da vuran bir aletin (kılıç, gürz, topuz, mızrak, balta, kaz
 - **Yapılırken**: kazanın ve örsün tarif listesinde ve El yapımı listesinde, tarifin adının altında.
 
 Yazılanlar: **Hasar** (temel; seviye ve güç iksiri ayrıca artırır), **hız** (saniyede vuruş), **menzil** (piksel), **keskinlik** (şu anki/en çok; tarif listesinde en çok) ve varsa **etkisi** (alevli: yakar, zehirli: zehirler, keskin: kanatır). Değerler oyunun vuruşta kullandığı değerlerle aynıdır.
+
+**Zırhlar da ne verdiğini gösterir (v2.64, Boğaç):** aynı yerlerde (tarif listeleri, El yapımı, envanter, kemer ipucu) zırh parçalarının altında "🛡 Savunma +X · yuvası (baş/gövde/el/ayak)" ve varsa **direnç** (kanama/zehir/yanık %), **çamurda yavaşlamazsın**, **karanlıkta ışık verir** yazar. Değerler oyunun hasar hesabında kullandığı değerlerle aynıdır.
 
 ## Madenler ve ekipman merdiveni (v2.48, Boğaç)
 

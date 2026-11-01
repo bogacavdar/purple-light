@@ -7,6 +7,10 @@
 
 
 
+
+## v2.64 — zırh bilgisi
+
+- v258c yerinde düzenlendi: `wInfo` artık `wInfo0` (silah) || `aInfo` (EQUIP: def, s, res, mud, lamp). Bütün süsleme yerleri (deco, bookInfo, hotbar, hotpick) zırhı da gösterir; title kontrolü `indexOf(t)`.
 ## v2.63 — zırh tarifleri ayrıştı
 
 - `judgeTrial` kazanda `matchSet` (malzeme cinsi, miktarsız) ile ilk eşleşeni bulur; 2.62'de 16 grup zırh aynı kümeye düştü, yalnızca ilki öğrenilebiliyordu. Betik scratchpad `uniq.py`: slot işareti (bas +2 Taş, el +3 Lif, ayak +3 Yaprak, govde yalın) eklendi; `uniq.py check` ile zırh içeren eş küme kalmadı. Yeni tarif değiştirirken bu kontrol çalıştırılmalı.

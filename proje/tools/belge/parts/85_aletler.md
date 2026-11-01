@@ -15,6 +15,8 @@ Bir silahın ya da vuran bir aletin (kılıç, gürz, topuz, mızrak, balta, kaz
 
 Yazılanlar: **Hasar** (temel; seviye ve güç iksiri ayrıca artırır), **hız** (saniyede vuruş), **menzil** (piksel), **keskinlik** (şu anki/en çok; tarif listesinde en çok) ve varsa **etkisi** (alevli: yakar, zehirli: zehirler, keskin: kanatır). Değerler oyunun vuruşta kullandığı değerlerle aynıdır.
 
+**Zırhlar da ne verdiğini gösterir (v2.64, Boğaç):** aynı yerlerde (tarif listeleri, El yapımı, envanter, kemer ipucu) zırh parçalarının altında "🛡 Savunma +X · yuvası (baş/gövde/el/ayak)" ve varsa **direnç** (kanama/zehir/yanık %), **çamurda yavaşlamazsın**, **karanlıkta ışık verir** yazar. Değerler oyunun hasar hesabında kullandığı değerlerle aynıdır.
+
 ## Madenler ve ekipman merdiveni (v2.48, Boğaç)
 
 ACT 1'in madenleri ve metal ekipmanı tek bir merdivene göre dizildi. Amaç: **her biyomda o biyomun madenleriyle bir öncekinden daha güçlü ve daha pahalı tam bir set yapılabilsin, biyom değiştirdikçe satılan madenler de daha pahalı olsun.** ACT 2 bu sürümde değişmedi (sonra aynı kurallarla ele alınacak).
