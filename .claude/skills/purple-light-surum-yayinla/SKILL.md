@@ -53,6 +53,13 @@ Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır.
 - `git add -A` → Türkçe, sürüm numaralı commit (`vX.YZ: …`) → `git push origin main`.
 - Push'un gerçekten gittiğini `git log --oneline -1 origin/main` ile doğrula.
 
+## 6b. Yayının bitmesini bekle (1 Kasım 2026, Boğaç)
+
+- Paket, yayındaki oyun yeni sürümle **açılabilir olunca** biter; Boğaç "bitti" dendiği an linke girip oynayabilmeli.
+- `SHA=$(git rev-parse origin/main)` → `gh api "repos/bogacavdar/purple-light/actions/runs?head_sha=$SHA" --jq '.workflow_runs[]|.name+" "+.status+" "+.conclusion'` çıktısında **"pages build and deployment completed success"** görünene kadar bekle (Monitor ile until döngüsü; foreground sleep yok). Genelde 1–2 dakika.
+- `failure` olursa ya da 10 dakikada bitmezse "paket bitti" deme; durumu Boğaç'a söyle (gerekirse boş commit ile yeniden tetikle).
+- github.io'ya erişim varsa ana sayfadaki `verlab` metninin "Versiyon X.YZ" olduğunu da doğrula.
+
 ## 7. İndirilebilir hal (her seferinde)
 
 - Push'tan sonra yayındaki sürümün tüm projesini zip'le: `git archive --format=zip --prefix=purple-light/ -o <scratchpad>/purple-light_vX.YZ_proje.zip origin/main` (`.git` girmez; GitHub'daki sürümün birebir kopyası).
@@ -67,5 +74,5 @@ Bu adımlar `CLAUDE.md`'deki kuralların uygulanış sırasıdır.
   - Oyun: https://bogacavdar.github.io/purple-light/
   - Güncelleme notları: https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html · https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.pdf
   - Belge (indirilebilir): https://bogacavdar.github.io/purple-light/belge.pdf · https://bogacavdar.github.io/purple-light/belge.html · https://bogacavdar.github.io/purple-light/belge.md
-- Ana menüde yeni sürüm numarası görünüyorsa yayın gelmiştir (GitHub Pages 1–2 dakika sürer).
+- Dönüş ancak 6b'deki yayın "completed success" olduktan sonra yapılır ve "yayında, şimdi açılabilir" diye yazılır (Boğaç'ın tarayıcısı eskiyi gösterirse sayfayı yenilemesi yeterli).
 - Belge yerine artifact, depo içi yol ya da başka bir sayfa linki verilmez; her zaman yukarıdaki indirilebilir linkler ve dosyalar.
