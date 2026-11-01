@@ -16,6 +16,10 @@
 
 
 
+
+## v2.73 — pazar satırı
+
+- v265 deco: kare olmayan elemanlara satır içi bilgi yalnızca data-wear/data-hp düğmelerine; `.mkt li` içindeki düğmeler için bilgi satırın `.nm`'sine bir kez. Öbür düğmelere yalnızca title.
 ## v2.72 — mağarada hava yok
 
 - `raining()` mağarada false; tickWeather gök gürültüsü, tickAmb `on` mağarada kapalı; v232 skipIn listesine drawWeather ve drawWeatherTint eklendi (sis, yağmur, şimşek çizilmez).

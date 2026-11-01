@@ -20,6 +20,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.73 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Pazar listesi dağılıyordu:** 2.65'te eklenen silah/zırh bilgisi, pazardaki silah satırlarında her düğmenin (▼, ▲, Sat, Hepsi) içine yazılıyordu; satır genişleyip eşyanın adı harf harf alt alta diziliyordu. Artık bilgi her satırda bir kez, eşyanın adının altında yazar; düğmeler eski haline döndü (Nazlı'da ve kuzenlerinde).
+
+### Tasarım belgesi
+- Aletler: pazar satırında bilginin yeri.
 ## Versiyon 2.72 · 1 Kasım 2026
 
 ### Düzeltmeler
