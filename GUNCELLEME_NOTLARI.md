@@ -34,8 +34,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Arayüz
 - **Almanak kartları aynı boyutta:** kartlar yazısının uzunluğuna göre uzayıp kısalıyor, düzen bozuluyordu. Artık her canlı kartı aynı yükseklikte; uzun yazı (Reis hareketleri, tarifler) kartın içinde kaydırılarak okunur. Uzun adlar tek satırda kalır, sığmazsa "…" ile kısalır; üzerine gelince tamamı görünür.
 
+### Düzeltmeler
+- **Tarifi öğrenilmeden alınmış görev:** 2.79'dan önce alınmış bir görev (ör. Sinan'ın "Atölye kur" görevi) tarifi öğrenilmemiş olsa da aktif kalıyordu. Artık kayıt açılınca böyle bir görev geri bırakılır; görevi veren kişi "Önce X tarifini Zümrüt'ün kazanında öğren" der, Kemal tarif işini verir, tarif öğrenilince görev yeniden verilir.
+
 ### Tasarım belgesi
-- Sistemler · Almanak: kart boyutu.
+- Sistemler · Almanak: kart boyutu. ACT 1 · görev kuralları: eski kayıtlar.
 ## Versiyon 2.80 · 1 Kasım 2026
 
 ### Oynanış

@@ -27,6 +27,7 @@
 
 ## v2.81 — almanak kartları eşit
 
+- DATA bloğu: `parkLocked()` (restore'dan sonra setTimeout 0): S.a'nın needRec'i doluysa ve tamamlanmamışsa S.a=null + veren kişinin uyarısı.
 - v258-alm stiline: `.ag` grid-auto-rows 300px (≤520px: 270px), align-items stretch; `.ac` height 100%, overflow-y auto; h4 tek satır ellipsis + title (decoG).
 ## v2.80 — Fındık ağacı
 
