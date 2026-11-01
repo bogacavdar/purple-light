@@ -6,6 +6,7 @@
 
 - **Her biyomun seti kendi biyomunda yapılır (v2.60, Boğaç):** bir biyomun silah ve zırh setleri (başlangıç, metal ve usta setleri) o biyomun (ya da önceki biyomların) malzemesiyle yapılabilir; hiçbir parça sonraki bir biyomdan malzeme istemez. Deri her biyomun hayvanından düşen Deri parçasıdır (aşağıda).
 - **Tabaklama yok, zırh deri parçasıyla yapılır (v2.62, Boğaç):** Tanin, Meşe tanini ve bütün tabaklanmış deri tarifleri oyundan kalktı. Derisi ya da postu olan her hayvan avlanınca derisinin yanında **Deri parçası** da düşürür (büyük hayvanlar — canı 60 ve üstü — 1–2 tane). Zırhlar, deri isteyen silahlar ve eşyalar (çanta, tulum, çadır, yatak, ok kılıfı…) eskiden istedikleri tabaklanmış deri yerine aynı sayıda Deri parçası ister. Hayvanların kendi derileri (Kurt derisi, Geyik derisi…) satılır ve görevlerde istenir. Eski kayıtlardaki her tabaklanmış deri 2 Deri parçası olur; Tanin, Meşe tanini ve v2.60 kabukları fiyatından sikkeye çevrilir.
+- **Zırhlar doğadan düşenle, aletsiz yapılır (v2.62, Boğaç):** bütün zırhlar ve setlerin zırh parçaları yalnızca doğadan toplanan ya da hayvandan düşen malzemeyle yapılır: Deri parçası, Sinir, Kemik, cevher, odun, pul, post. Külçe, levha, halka, kalas ve Sinir kirişi gibi ara ürünler istenmez; hiçbir zırh alet (Taş bıçak vb.) istemez. Dönüşüm: 1 külçe → 2 cevher (Tunç: 2 Bakır + 1 Kalay cevheri; Çelik: 3 Demir cevheri + 1 Taş kömürü; Kara çelik: 3 Demir cevheri + 2 Obsidyen), 1 Demir levha → 3, 1 Demir halka → 1 Demir cevheri, 1 Mor kristal levhası → 2 Kristal + 1 Ametist, 1 Meşe kalası → 2 Meşe odunu, 1 Sinir kirişi → 2 Sinir; İp ve Lif çıkarıldı. Metal setleri yine zırhçının örsünde dövülür.
 - **Her biyomun aletleri de o biyomda ya da öncekilerde bulunur (v2.60, Boğaç):** bir aletin (ve aletin istediği aletin) malzemesi, o aleti gerektiren tariflerin biyomundan sonra gelmez. Çayır yemeklerinin ve ezmelerinin istediği taş aletler artık Çayır taşından yapılır: **Pişirme taşı** (Taş levha: Kumtaşı), **Öğütme taşı** (Kumtaşı), **Taş havan** (Taş kase: Kireçtaşı), **Kirmen** (Taş halka: Kireçtaşı). Kül Diyarı'nın **Ejder kılıcı** Mor Kristal Vadisi'nin altınını istemez (2 Ejder kemiği, 1 Kara çelik külçesi, 1 tabaklanmış deri, 1 Ateş yağı; Aletler bölümündeki tarif).
 
 - **Öğrenmek:** Bir tarifi kullanmak için önce kazanda öğrenirsin. ACT 1'de **Cadı Zümrüt'ün kazanı** (ya da kuzen cadıların kazanları), ACT 2'de **Gökbilimci Yıldız'ın kazanı**. Malzemeleri kazana koyup öğrenirsin; malzemeler bu sırada harcanır.
@@ -725,13 +726,13 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Deri çarık | 1 Deri parçası, 1 Sinir kirişi, 5 Lif, 4 İp | – | El yapımı (Tab) | 276 |
-| Kamış çizme | 6 Kamış, 3 İp, 2 Yosun | – | El yapımı (Tab) | 29 |
+| Deri çarık | 1 Deri parçası, 2 Sinir | – | El yapımı (Tab) | 276 |
+| Kamış çizme | 6 Kamış, 1 Timsah derisi, 1 Demir cevheri | – | El yapımı (Tab) | 29 |
 | Kemik miğfer | 4 Kemik, 2 Sinir, 1 Deri parçası | – | El yapımı (Tab) | 228 |
-| Kemik zırh | 8 Kemik, 3 Sinir, 2 Deri parçası, 4 İp | – | El yapımı (Tab) | 480 |
+| Kemik zırh | 8 Kemik, 3 Sinir, 2 Deri parçası | – | El yapımı (Tab) | 480 |
 | Kristal ipek kumaş | 4 Kristal ipek, 2 Lif | – | El yapımı (Tab) | 476 |
-| Kürk başlık | 1 Deri parçası, 1 Sinir kirişi, 5 Lif, 4 İp | – | El yapımı (Tab) | 277 |
-| Kürk eldiven | 1 Deri parçası, 1 Sinir kirişi, 5 Lif, 4 İp | – | El yapımı (Tab) | 270 |
+| Kürk başlık | 1 Deri parçası, 2 Sinir | – | El yapımı (Tab) | 277 |
+| Kürk eldiven | 1 Deri parçası, 2 Sinir | – | El yapımı (Tab) | 270 |
 
 #### Av ve hayvan (19)
 
@@ -767,29 +768,29 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Ceviz kabuğu miğfer | 6 Ceviz, 1 Meşe kalası, 1 Deri parçası, 2 İri diken | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 280 |
-| Demir çizme | 1 Demir levha, 1 Demir halka, 1 Deri parçası, 4 Lif | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 905 |
-| Demir eldiven | 1 Demir levha, 1 Demir halka, 1 Deri parçası, 2 İp | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 914 |
-| Demir miğfer | 1 Demir levha, 2 Demir halka, 1 Deri parçası | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.134 |
-| Demir zırh | 3 Demir levha, 4 Demir halka, 2 Deri parçası, 1 Sinir kirişi | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 2.748 |
+| Ceviz kabuğu miğfer | 6 Ceviz, 2 Meşe odunu, 1 Deri parçası, 2 İri diken | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 280 |
+| Demir çizme | 4 Demir cevheri, 1 Deri parçası | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 905 |
+| Demir eldiven | 4 Demir cevheri, 1 Deri parçası | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 914 |
+| Demir miğfer | 4 Demir cevheri, 1 Deri parçası, 2 Sinir | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.134 |
+| Demir zırh | 10 Demir cevheri, 2 Deri parçası, 2 Sinir | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 2.748 |
 | Ejder pulu eldiven ² | 4 Yavru ejder pulu, 2 Ejder dişi, 1 Mantar lifi eldiven | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 2.968 |
-| Ejder zırhı | 2 Kara pul, 2 Demir levha, 2 Deri parçası | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 2.488 |
+| Ejder zırhı | 2 Kara pul, 6 Demir cevheri, 2 Deri parçası | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 2.488 |
 | Fırtına tüyü başlık ² | 4 Fırtına tüyü, 2 Gök tazısı postu, 1 Demir miğfer | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 1.980 |
-| Gümüş pullu zırh | 3 Gümüş külçesi, 3 Demir halka, 2 Deri parçası, 2 Ayı pençesi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.396 |
+| Gümüş pullu zırh | 6 Gümüş cevheri, 3 Demir cevheri, 2 Deri parçası, 2 Ayı pençesi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.396 |
 | Hurda çizme ² | 2 Ağır plaka, 6 Vida, 4 Dişli, 1 Demir çizme | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 1.631 |
 | Işık pulu eldiven | 4 Işık pulu, 2 Kristal, 1 Deri parçası | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 1.000 |
-| Kartal tüyü miğfer | 6 Kartal tüyü, 1 Gümüş külçesi, 2 Öküz boynuzu, 1 Deri parçası | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 435 |
-| Kristal ipek zırh | 5 Kristal ipek, 3 Ametist, 2 Demir levha, 2 Deri parçası | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 2.554 |
+| Kartal tüyü miğfer | 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Deri parçası | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 435 |
+| Kristal ipek zırh | 5 Kristal ipek, 3 Ametist, 6 Demir cevheri, 2 Deri parçası | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 2.554 |
 | Kristal miğfer ² | 3 Kristal kanat, 4 Golem parçası, 2 Kobalt külçesi, 1 Fırtına tüyü başlık | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 3.699 |
 | Mantar lifi eldiven ² | 4 Böcek kabuğu, 4 Spor tozu, 2 Goblin kulağı, 1 Demir eldiven | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 1.520 |
 | Meka çizme ² | 3 Titanyum külçesi, 2 Uzaylı devresi, 1 Muhafız zırhı parçası, 1 Hurda çizme | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 4.298 |
 | Meka zırh ² | 4 Titanyum külçesi, 3 Kobalt külçesi, 2 Enerji hücresi, 1 Motor, 1 Golem çekirdeği | – | Mühendis Işın yapar (600 sikke işçilik) | 5.200 |
-| Meşe kabuk zırh | 3 Meşe kalası, 2 Deri parçası, 6 Kirpi dikeni, 1 Sinir kirişi | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 543 |
-| Timsah pulu zırh | 2 Demir levha, 3 Timsah derisi, 2 Bataklık kurdu postu, 1 Sinir kirişi | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.177 |
-| Tunç çizme | 1 Tunç levha, 1 Deri parçası, 4 Lif | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 884 |
-| Tunç eldiven | 1 Tunç levha, 1 Deri parçası, 2 İp | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 893 |
-| Tunç miğfer | 1 Tunç levha, 1 Deri parçası, 2 Sinir | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 887 |
-| Tunç zırh | 3 Tunç levha, 2 Deri parçası, 1 Sinir kirişi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 2.452 |
+| Meşe kabuk zırh | 6 Meşe odunu, 2 Deri parçası, 6 Kirpi dikeni, 2 Sinir | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 543 |
+| Timsah pulu zırh | 6 Demir cevheri, 3 Timsah derisi, 2 Bataklık kurdu postu, 2 Sinir | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.177 |
+| Tunç çizme | 4 Bakır cevheri, 2 Kalay cevheri, 1 Deri parçası | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 884 |
+| Tunç eldiven | 4 Bakır cevheri, 2 Kalay cevheri, 1 Deri parçası | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 893 |
+| Tunç miğfer | 4 Bakır cevheri, 2 Kalay cevheri, 1 Deri parçası, 2 Sinir | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 887 |
+| Tunç zırh | 10 Bakır cevheri, 5 Kalay cevheri, 2 Deri parçası, 2 Sinir | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 2.452 |
 
 #### Ev eşyası (14)
 

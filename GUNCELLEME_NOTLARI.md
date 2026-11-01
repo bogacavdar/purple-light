@@ -15,7 +15,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Oynanış
 - **Tabaklama kalktı:** Tanin, Meşe tanini ve bütün "tabaklanmış deri" tarifleri oyundan çıkarıldı.
 - **Yeni malzeme: Deri parçası.** Derisi ya da postu olan her hayvan avlanınca derisinin yanında Deri parçası da düşürür; büyük hayvanlar (yaban öküzü, mağara ayısı gibi) 1–2 tane.
-- **Zırhlar deri parçasıyla yapılır:** bütün zırhlar (Kürk, Kemik, Bakır ve sonraki setler), deri isteyen silahlar ve eşyalar (çanta, tulum, çadır, yatak, ok kılıfı, sapan…) tabaklanmış deri yerine aynı sayıda Deri parçası ister. Örnek: Kürk başlık = 1 Deri parçası, 1 Sinir kirişi, 5 Lif, 4 İp; Bakır miğfer = 2 Bakır külçesi, 1 Deri parçası, 2 Sinir.
+- **Deri isteyen her şey Deri parçası ister:** silahlar ve eşyalar (çanta, tulum, çadır, yatak, ok kılıfı, sapan…) tabaklanmış deri yerine aynı sayıda Deri parçası ister.
+- **Zırh tarifleri sadeleşti:** bütün zırhlar yalnızca doğadan toplanan ya da hayvandan düşen şeylerle yapılır: Deri parçası, Sinir, Kemik, cevher, odun, pul. Külçe, levha, halka, kalas, Sinir kirişi, İp ve Lif istenmez; hiçbir zırh Taş bıçak gibi bir alet istemez. Metal setlerini yine zırhçı örsünde döver.
+  - Çayır: Kürk başlık / eldiven / Deri çarık = 1 Deri parçası, 2 Sinir · Kürk yelek = 2 Deri parçası, 2 Sinir · Kemik miğfer / eldiven = 4 Kemik, 2 Sinir, 1 Deri parçası · Kemik zırh = 8 Kemik, 3 Sinir, 2 Deri parçası · Kemik çizme = 4 Kemik, 1 Deri parçası · Bakır miğfer = 4 Bakır cevheri, 1 Deri parçası, 2 Sinir · Bakır zırh = 10 Bakır cevheri, 2 Deri parçası, 2 Sinir · Bakır eldiven / çizme = 4 Bakır cevheri, 1 Deri parçası.
+  - Sonraki setler aynı kuralla: Tunç = Bakır + Kalay cevheri, Demir = Demir cevheri, Çelik = Demir cevheri + Taş kömürü, Kara çelik = Demir cevheri + Obsidyen, Mor kristal = Kristal + Ametist.
+- **Sinir kirişi sadeleşti:** yalnızca 2 Sinir ister; su, lif ve Taş bıçak gerekmez (yaylar ve bazı silahlar hâlâ kullanır).
 - Hayvanların kendi derileri (Kurt derisi, Geyik derisi…) yine düşer; Nazlı'ya satılır ve görevlerde istenir.
 - **Sinir kirişi sadeleşti:** yalnızca 2 Sinir ister; su, lif ve Taş bıçak gerekmez.
 - Tabakhane artık Meşe tanini istemez.
@@ -31,7 +35,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Eski kayıtlardaki her tabaklanmış deri 2 Deri parçası olur; Tanin, Meşe tanini ve kaldırılan kabuklar fiyatından sikkeye çevrilir (oyuna girince bir kez bildirim çıkar). Öğrenilmiş tanin ve tabaklama tarifleri listeden silinir.
 
 ### Tasarım belgesi
-- Tarifler: "Tabaklama yok, zırh deri parçasıyla yapılır" kuralı; tabaklama, tanin ve kabuk satırları silindi, bütün tariflerde tabaklanmış deri yerine Deri parçası yazıldı.
+- Tarifler: "Tabaklama yok" ve "Zırhlar doğadan düşenle, aletsiz yapılır" kuralları; zırh satırları yeni tariflerle; tabaklama, tanin ve kabuk satırları silindi, bütün tariflerde tabaklanmış deri yerine Deri parçası yazıldı.
 - Eşya dizini: Deri parçası eklendi. ACT 1 görevleri (M5, K4, DR3, KV3) güncellendi.
 ## Versiyon 2.61 · 1 Kasım 2026
 

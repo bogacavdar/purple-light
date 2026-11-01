@@ -11,6 +11,7 @@
 - db: Tanin, Meşe tanini, 17+1 Tabaklanmış* tarif ve v2.60'ın 4 kabuğu silindi; Herhangi tanin/kabuk/tabaklanmış deri grupları silindi; bütün tariflerde (db + V set verisi + usta verisi) tabaklanmış deri → `Deri parçası` (aynı sayı), p=15. ACT 2 `addR('Tabaklanmış mağara kurdu postu')` silindi; ikon kuralındaki ölü Tabaklanmış dalı kaldırıldı.
 - DATA: M5 metni, K4 (Deri kayış, 3 DP), DR3 (Deri astar, 4 DP), KV3 (2 Gölge postu).
 - `<script id="v262">`: ANIM'de derisi/postu düşen her hayvana `['Deri parçası',1,hp>=60?2:1,max(.6,şans),'zırh']`; P1I ikonu; restore sarmalayıcısı eski kayıtları çevirir (tabaklanmış → 2 DP, tanin/kabuk → sikke, found/belt temizliği).
+- Zırhlar (52 tarif: db + V metal + V usta + start): İp/Lif silindi, Sinir kirişi → 2 Sinir, ara ürünler cevhere/odun'a çevrildi (külçe→2 cevher, Tunç→2 Bakır+1 Kalay, Çelik→3 Demir+1 Taş kömürü, Kara çelik→3 Demir+2 Obsidyen, Demir levha→3, halka→1, Mor kristal levhası→2 Kristal+1 Ametist, Meşe kalası→2 Meşe odunu); db zırh tariflerinde t=[]. Betik: scratchpad zirh.py. Sinir kirişi = 2 Sinir, aletsiz.
 - Belgede gen/*.md tabloları (probe çıktıları) eski; parts elle güncellendi.
 ## v2.61 — v259 bloğu kaldırıldı
 
