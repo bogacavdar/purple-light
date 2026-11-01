@@ -8,6 +8,27 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.60 · 1 Kasım 2026
+
+### Oynanış
+- **Her biyomun seti kendi biyomunda yapılıyor.** Çayır'ın zırh setleri (Kürk, Kemik, Bakır) tabaklanmış deri istiyordu, tabaklama da yalnızca Orman'ın meşesinden yapılan Meşe tanini ile oluyordu; yani Çayır seti için Orman'a gitmek gerekiyordu. Artık:
+  - Yeni **Tanin** tarifi: 1 ağaç kabuğu (herhangi biri; Çayır'da **Çam ya da Kavak kabuğu**), 1 Sıcak su, 4 Lif, 3 İp.
+  - Bütün **tabaklanmış deri** tarifleri "Herhangi tanin" istiyor: Tanin ya da Meşe tanini olur.
+  - Kül Diyarı ve Mor Kristal Vadisi'nde de tabaklama için yeni kabuk tarifleri: **Kül ağacı, Kara çam, Mor söğüt, Gece ağacı kabuğu**.
+  - **Kürk başlık** artık Orman'ın kunduz derisi yerine Çayır'ın **kurt derisini** istiyor.
+- **Her biyomun aletleri o biyomda ya da öncekilerde bulunuyor.** Çayır yemeklerinin ve ezmelerinin istediği taş aletler sonraki biyomların taşını istiyordu. Artık hepsi Çayır taşından:
+  - **Pişirme taşı:** Taş levha artık 2 Kumtaşı ile yapılıyor (eskiden Bataklık'ın Arduvaz'ı).
+  - **Öğütme taşı:** 2 Kumtaşı (eskiden Orman'ın Granit'i); artık elle yapılıyor.
+  - **Taş havan:** Taş kase artık 2 Kireçtaşı ile yapılıyor (eskiden Kül Diyarı'nın Bazalt'ı).
+  - **Kirmen:** Taş halka artık 2 Kireçtaşı ile yapılıyor (eskiden Granit).
+  - **Ejder kılıcı** (Kül Diyarı) artık Mor Kristal Vadisi'nin altınını istemiyor: 2 Ejder kemiği, 1 Kara çelik külçesi, 1 tabaklanmış deri, 1 Ateş yağı.
+
+### Tasarım belgesi
+- Tarifler: "Her biyomun seti kendi biyomunda yapılır" ve "Her biyomun aletleri de o biyomda ya da öncekilerde bulunur" kuralları; Tanin, yeni kabuklar, Herhangi kabuk ve Herhangi tanin grupları; değişen tarif satırları.
+- Kişiler · kademe kuralı: tabaklama notu.
+
+---
+
 ## Versiyon 2.59 · 1 Kasım 2026
 
 ### Oynanış

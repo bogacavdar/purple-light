@@ -1,3 +1,9 @@
+## v2.60 (1 Kasım 2026) · her biyomun seti ve aletleri kendi biyomunda (ya da öncekilerde)
+- Belge: `parts/80_tarifler.md` (iki kural, satırlar, gruplar), `40_act1_kisiler.md` (kademe notu), `00_giris.md`.
+- `#db` JSON yerinde: 17 "Tabaklanmış …" tarifinde Meşe tanini → `Herhangi tanin`; yeni `Tanin` (Herhangi kabuk + Sıcak su + 4 Lif + 3 İp, 90); yeni kabuklar Kül ağacı/Kara çam/Mor söğüt/Gece ağacı (Taş bıçak); gruplar `Herhangi kabuk` (19) ve `Herhangi tanin`; Kürk başlık kunduz → kurt; Taş levha/Öğütme taşı Kumtaşı, Taş kase/Taş halka Kireçtaşı; Ejder kılıcı usta tarifi (DB'deki eski altınlı tarif usta listesini eziyordu).
+- Denetim betiği (scratch): set parçaları ve aletlerin ham maddelerinin biyomu (ağaç listesi, maden sırası /3, BANIM düşmeleri); bilinmeyen toplanabilirler denetlenemedi. Tunç/Demir eski parçaları (old:true) ve Kamış çizme farkı bilerek bırakıldı.
+- Eski kayıtlara etkisi yok (öğrenilmiş tarifler adla tutulur; Tanin ve yeni kabuklar kazanda öğrenilir). Kontrol: chk.js 0 hata.
+
 ## v2.59 (1 Kasım 2026) · İlk silah takmadan biter, eldeki silah yuvaya takılır
 - Belge: `parts/30_act1.md` (B3), `20_sistemler.md` (dövüş), `00_giris.md`.
 - `'*silah'` ilerlemesi: equip.silah ya da çantada slotOf==='silah' bir eşya. progText "Bir silah edin (…)". B3 metinleri "edin".

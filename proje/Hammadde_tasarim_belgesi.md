@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.59** ile birebir (1 Kasım 2026). Bu sürümde: Börü'nün "İlk silah" görevi silahı yuvaya takmadan, bir silah edinince biter (ayrıntı: **Act 1 · Savaşçı Börü**); eline aldığın silah kendiliğinden silah yuvasına takılır (ayrıntı: **Sistemler · Dövüş**). 2.58: toplu satış düğmeleri "sikkelik satış" görevlerini (Nazlı N3) sayar (ayrıntı: **Act 1 · Pazarcı Nazlı**); "Kazanda işe yaramayanları sat" tariflerde kullanılan hiçbir şeyi satmaz ve soru sormaz (ayrıntı: **Sistemler · Satış**); Nazlı Tuzak tarifi öğrenilmeden tuzak görevini (N4) vermez (ayrıntı: **Act 1 · Görev kuralları**); demirciler yalnızca silah, zırh, balta ve kazma döver, tuzak/olta gibi öbür aletler elle yapılır (ayrıntı: **Aletler · Nerede yapılır**); alet kemerindeki eşyalar oyun içinde sağ tık / basılı tutarak değişir, elde kazmayla madene sol tık kazar, kişilerin ateşinde yemek közlenir (ayrıntı: **Sistemler · Kontroller ve Işık ve ateş**); silahların hasar, hız, menzil ve keskinliği envanterde, kemerde ve yapılırken yazar (ayrıntı: **Aletler · Silah bilgisi**); Börü'nün "İlk silah" görevi herhangi bir silahla biter (ayrıntı: **Act 1 · Savaşçı Börü**); Almanak düğmesi bakılmamış yenilerin (yeni canlı, yenilen Reis) sayısını gösterir, kartlarda "YENİ" yazar, fareyle üstüne gelince kalkar (ayrıntı: **Sistemler · Almanak**). 2.57: yanan kamp ateşlerin küçük ve büyük haritada görünür (ayrıntı: **Sistemler · Kamp ateşi**). 2.56: kamp ateşi alet yuvasına girer, eline alıp tıklayınca (telefonda Vur) önüne yakılır (ayrıntı: **Sistemler · Kamp ateşi**). 2.55: Nazlı'nın görevi sürerken de pazar açılır (durum penceresinde "Pazarı aç"; ayrıntı: **Act 1 · Görevler**); Çoban Davut'un keçisi Pamuk kaçarken senin koşu hızının 2,5 katıyla kaçar (ayrıntı: **Yan görevler · 2**). 2.54: bilgisayarda ana menüye **"Bilgisayara yükle"** düğmesi gelir; oyun bir kez yüklenince düğme bir daha görünmez (ayrıntı: **Oyun akışı · Ana menü**). Önceki sürüm (2.53): öğretici malzemeleri artık ışınlanmaz, Kemal 5 böğürtlenin beşini de yemeyi sayaçla ister, toplama bildirimi birikir, bilgisayarda kart yazıları ve alet kemeri büyür, ana menüye "Güncelleme notları" ve "Uygulama olarak indir" gelir.
+Sürüm: **Versiyon 2.60** ile birebir (1 Kasım 2026). Bu sürümde: her biyomun seti kendi biyomunda yapılır: tabaklama her ağacın kabuğundan yapılan Tanin'le her yerde yapılır, Kürk başlık kurt derisi ister; her biyomun aletleri o biyomda ya da öncekilerde bulunur (Pişirme taşı, Öğütme taşı, Taş havan, Kirmen Çayır taşından; Ejder kılıcı altınsız) (ayrıntı: **Tarifler · Tarifler nasıl çalışır**). 2.59: Börü'nün "İlk silah" görevi silahı yuvaya takmadan, bir silah edinince biter (ayrıntı: **Act 1 · Savaşçı Börü**); eline aldığın silah kendiliğinden silah yuvasına takılır (ayrıntı: **Sistemler · Dövüş**). 2.58: toplu satış düğmeleri "sikkelik satış" görevlerini (Nazlı N3) sayar (ayrıntı: **Act 1 · Pazarcı Nazlı**); "Kazanda işe yaramayanları sat" tariflerde kullanılan hiçbir şeyi satmaz ve soru sormaz (ayrıntı: **Sistemler · Satış**); Nazlı Tuzak tarifi öğrenilmeden tuzak görevini (N4) vermez (ayrıntı: **Act 1 · Görev kuralları**); demirciler yalnızca silah, zırh, balta ve kazma döver, tuzak/olta gibi öbür aletler elle yapılır (ayrıntı: **Aletler · Nerede yapılır**); alet kemerindeki eşyalar oyun içinde sağ tık / basılı tutarak değişir, elde kazmayla madene sol tık kazar, kişilerin ateşinde yemek közlenir (ayrıntı: **Sistemler · Kontroller ve Işık ve ateş**); silahların hasar, hız, menzil ve keskinliği envanterde, kemerde ve yapılırken yazar (ayrıntı: **Aletler · Silah bilgisi**); Börü'nün "İlk silah" görevi herhangi bir silahla biter (ayrıntı: **Act 1 · Savaşçı Börü**); Almanak düğmesi bakılmamış yenilerin (yeni canlı, yenilen Reis) sayısını gösterir, kartlarda "YENİ" yazar, fareyle üstüne gelince kalkar (ayrıntı: **Sistemler · Almanak**). 2.57: yanan kamp ateşlerin küçük ve büyük haritada görünür (ayrıntı: **Sistemler · Kamp ateşi**). 2.56: kamp ateşi alet yuvasına girer, eline alıp tıklayınca (telefonda Vur) önüne yakılır (ayrıntı: **Sistemler · Kamp ateşi**). 2.55: Nazlı'nın görevi sürerken de pazar açılır (durum penceresinde "Pazarı aç"; ayrıntı: **Act 1 · Görevler**); Çoban Davut'un keçisi Pamuk kaçarken senin koşu hızının 2,5 katıyla kaçar (ayrıntı: **Yan görevler · 2**). 2.54: bilgisayarda ana menüye **"Bilgisayara yükle"** düğmesi gelir; oyun bir kez yüklenince düğme bir daha görünmez (ayrıntı: **Oyun akışı · Ana menü**). Önceki sürüm (2.53): öğretici malzemeleri artık ışınlanmaz, Kemal 5 böğürtlenin beşini de yemeyi sayaçla ister, toplama bildirimi birikir, bilgisayarda kart yazıları ve alet kemeri büyür, ana menüye "Güncelleme notları" ve "Uygulama olarak indir" gelir.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -2311,7 +2311,7 @@ Kuzen cadıların kazanı **Zümrüt'ün kazanıyla aynı mantıkta** çalışı
 ### Silahçılar ve zırhçılar: kademe kuralı
 
 - Her örsün bir **kademesi** vardır: Dursun ve Durmuş **0 (Çayır)**, Orman kuzenleri 1, Bataklık 2, Kayalık Dağ 3, Kül Diyarı 4, Mor Kristal Vadisi 5.
-- Bir eşyanın kademesi, **ana malzemesinin** en erken toplanabildiği biyomdur: malzeme zincirinin içindeki her ham maddenin ilk çıktığı biyomlardan en ileridekidir. Tabaklanmış deri bu hesaba katılmaz (her zırhın astarıdır). ACT 2 malzemeli zırhlar (²) kademe 0 sayılır, Durmuş ve bütün zırhçılar döver.
+- Bir eşyanın kademesi, **ana malzemesinin** en erken toplanabildiği biyomdur: malzeme zincirinin içindeki her ham maddenin ilk çıktığı biyomlardan en ileridekidir. Tabaklanmış deri bu hesaba katılmaz (her zırhın astarıdır; v2.60'tan beri her biyomda o biyomun ağaç kabuğundan yapılan Tanin'le tabaklanır). ACT 2 malzemeli zırhlar (²) kademe 0 sayılır, Durmuş ve bütün zırhçılar döver.
 - Bir demirci **kendi kademesindeki ve altındaki** bütün eşyaları döver; ayrıca **kendine özel** eşyaları vardır. Yani Dursun ile Durmuş yalnızca Çayır malzemesiyle (taş, çakmaktaşı, çakıl, bakır + kalay = tunç…) yapılanları döverken, bir sonraki biyomun kuzenleri o biyoma özgü silah ve zırhları da döver. Silahçılar alet ve silah, zırhçılar zırh döver.
 - Örs panelinde, öğrendiğin ama o demircinin kademesini aşan eşyalar üstte bir notla listelenir: "… bunları dövemez: Demir kılıç → Silahçı Ali (Bataklık)". Kazanda bir örs tarifini öğrenince çıkan mesaj da onu dövebilen **ilk** demircinin adını söyler.
 - İşçilik bütün kuzenlerde de fiyatın **%15**'i (en az 2). Silahçılar **Aletimi bile** de yapar (aletin değerinin onda biri).
@@ -3063,6 +3063,9 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 
 ## Tarifler nasıl çalışır (kısa)
 
+- **Her biyomun seti kendi biyomunda yapılır (v2.60, Boğaç):** bir biyomun silah ve zırh setleri (başlangıç, metal ve usta setleri) o biyomun (ya da önceki biyomların) malzemesiyle yapılabilir; hiçbir parça sonraki bir biyomdan malzeme istemez. Bu yüzden **tabaklama** artık her biyomda yapılır: bütün tabaklanmış derilerde **Herhangi tanin** vardır; **Tanin** her ağacın kabuğundan (Herhangi kabuk: Çayır'da Çam ya da Kavak kabuğu) yapılır, Orman'ın Meşe tanini de yerine geçer. Kül Diyarı ve Mor Kristal Vadisi ağaçlarına da kabuk tarifi eklendi (Kül ağacı, Kara çam, Mor söğüt, Gece ağacı kabuğu). Kürk başlık artık Orman'ın kunduz derisi yerine Çayır'ın **kurt derisini** ister.
+- **Her biyomun aletleri de o biyomda ya da öncekilerde bulunur (v2.60, Boğaç):** bir aletin (ve aletin istediği aletin) malzemesi, o aleti gerektiren tariflerin biyomundan sonra gelmez. Çayır yemeklerinin ve ezmelerinin istediği taş aletler artık Çayır taşından yapılır: **Pişirme taşı** (Taş levha: Kumtaşı), **Öğütme taşı** (Kumtaşı), **Taş havan** (Taş kase: Kireçtaşı), **Kirmen** (Taş halka: Kireçtaşı). Kül Diyarı'nın **Ejder kılıcı** Mor Kristal Vadisi'nin altınını istemez (2 Ejder kemiği, 1 Kara çelik külçesi, 1 tabaklanmış deri, 1 Ateş yağı; Aletler bölümündeki tarif).
+
 - **Öğrenmek:** Bir tarifi kullanmak için önce kazanda öğrenirsin. ACT 1'de **Cadı Zümrüt'ün kazanı** (ya da kuzen cadıların kazanları), ACT 2'de **Gökbilimci Yıldız'ın kazanı**. Malzemeleri kazana koyup öğrenirsin; malzemeler bu sırada harcanır.
 - **Kazan listesinde yapılabilirler üstte parlar (v2.42, Boğaç):** kazandaki tarif listesinde, malzemelerin (ve gereken aletin) şu an çantanda olduğu ve henüz öğrenmediğin tarifler listenin **en üstünde**, **"Şimdi yapılabilir"** başlığı altında toplanır ve **altın sarısı bir çerçeveyle yavaşça parlar** (yalnızca saydamlık oynar, ekranı yormaz). Başlık yalnızca "Tümü" sekmesinde ve arama yokken görünür; bir kategori ya da arama seçiliyken yapılabilirler o listenin başına çıkar ve yine parlar. Kategori başlıkları altında yalnızca yapılamayanlar kalır. Seçili tarife malzeme koymaya başlayınca (malzemeler kazana geçse bile) o tarif yapılabilir sayılmaya devam eder, yerinden oynamaz. Örs listesinde bu yoktur.
 - **Öğreticide yalnızca istenen parlar (v2.45, Boğaç):** öğretici kazanda belirli bir şey istiyorsa (ör. "Kaba meşale yap", "Keskin taş yap", "Sopa yap": parlayan satır, + düğmesi ya da Kaynat) yapılabilir tariflerin altın parlaması **gösterilmez**; yalnızca öğreticinin istediği şey parlar. Öğretici bir şey istemiyorsa yapılabilirler yine parlar.
@@ -3386,6 +3389,10 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Ceviz kömürü | 2 Ceviz odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 46 |
 | Ceviz sapı | 1 Ceviz kalası, 4 Dal, 3 Lif | Taş bıçak | El yapımı (Tab) | 39 |
 | Çam kabuğu | 1 Çam odunu, 2 Yaprak, 1 Su | Taş bıçak | El yapımı (Tab) | 12 |
+| Kül ağacı kabuğu | 1 Kül ağacı odunu, 2 Yaprak, 1 Su | Taş bıçak | El yapımı (Tab) | 22 |
+| Kara çam kabuğu | 1 Kara çam odunu, 2 Yaprak, 1 Su | Taş bıçak | El yapımı (Tab) | 22 |
+| Mor söğüt kabuğu | 1 Mor söğüt odunu, 2 Yaprak, 1 Su | Taş bıçak | El yapımı (Tab) | 32 |
+| Gece ağacı kabuğu | 1 Gece ağacı odunu, 2 Yaprak, 1 Su | Taş bıçak | El yapımı (Tab) | 34 |
 | Çam kalası | 2 Çam odunu, 2 Dal, 1 Lif | Taş balta | El yapımı (Tab) | 15 |
 | Çam kömürü | 2 Çam odunu, 1 Ateş, 2 Dal, 2 Lif | – | El yapımı (Tab) | 39 |
 | Çam reçinesi | 1 Çam kabuğu, 3 Dal, 3 Lif | Taş bıçak | El yapımı (Tab) | 27 |
@@ -3526,6 +3533,7 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Ladin kaşığı | 1 Ladin sapı, 4 Lif, 3 İp | Taş bıçak | El yapımı (Tab) | 69 |
 | Meşe kaşığı | 1 Meşe sapı, 4 Lif, 4 İp | Taş bıçak | El yapımı (Tab) | 80 |
 | Meşe tanini | 1 Meşe kabuğu, 1 Sıcak su, 4 Lif, 3 İp | – | El yapımı (Tab) | 90 |
+| Tanin | 1 Herhangi kabuk, 1 Sıcak su, 4 Lif, 3 İp | – | El yapımı (Tab) | 90 |
 | Midye kabuğu kaşık | 3 Tatlısu midyesi, 1 Lif | Bileği taşı | El yapımı (Tab) | 11 |
 | Mor ip | 3 Mor sarmaşık | – | El yapımı (Tab) | 200 |
 | Ok kılıfı | 1 Herhangi tabaklanmış deri, 4 İp, 2 Dal | – | El yapımı (Tab) | 240 |
@@ -3537,7 +3545,7 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Söğüt kaşığı | 1 Söğüt sapı, 4 Lif, 3 İp | Taş bıçak | El yapımı (Tab) | 69 |
 | Söğüt sepeti | 4 Söğüt dalı | – | El yapımı (Tab) | 5 |
 | Sünger taşı bileği | 2 Sünger taşı, 1 Su | – | El yapımı (Tab) | 74 |
-| Taş kase | 2 Bazalt, 2 Lif, 2 İp | Bileği taşı | El yapımı (Tab) | 27 |
+| Taş kase | 2 Kireçtaşı, 2 Lif, 2 İp (v2.60: eskiden 2 Bazalt) | Bileği taşı | El yapımı (Tab) | 27 |
 | Tohum yağı | 4 Herhangi meyve tohumu, 1 Herhangi çömlek | Taş havan | El yapımı (Tab) | 84 |
 | Yosun yastık | 3 Yosun, 1 Herhangi tabaklanmış deri, 4 Lif, 3 İp | – | El yapımı (Tab) | 240 |
 
@@ -3657,7 +3665,7 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Kürek | 1 Herhangi kalas, 2 Keskin taş, 2 İp, 1 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 41 |
 | Mızrak | 1 Sopa, 2 Keskin taş, 2 İp, 1 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 39 |
 | Olta | 1 Uzun sopa, 4 İp, 2 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 69 |
-| Öğütme taşı | 2 Granit, 1 İp, 1 Dal, 1 Taş | Çekiç taşı | Örs · Silahçı Durdu (Orman) ve üstü döver | 17 |
+| Öğütme taşı | 2 Kumtaşı, 1 İp, 1 Dal, 1 Taş (v2.60: eskiden 2 Granit) | Çekiç taşı | El yapımı (Tab) | 17 |
 | Pişirme taşı | 1 Taş levha, 1 Ateş, 2 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 60 |
 | Porsuk yayı | 1 Porsuk sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 92 |
 | Sapan | 1 Herhangi tabaklanmış deri, 1 Halat, 3 İp, 3 Dal, 3 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 293 |
@@ -3709,7 +3717,7 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Papatya tacı | 3 Papatya, 3 Lif | – | El yapımı (Tab) | 8 |
 | Pençe kolye | 1 Ayı pençesi, 5 İp, 2 Kum | – | El yapımı (Tab) | 63 |
 | Sarkıt parçası | 1 Sarkıt, 3 İp, 3 Kum | Çekiç taşı | El yapımı (Tab) | 31 |
-| Taş halka | 2 Granit, 2 İp, 1 Kum | Bileği taşı | El yapımı (Tab) | 23 |
+| Taş halka | 2 Kireçtaşı, 2 İp, 1 Kum (v2.60: eskiden 2 Granit) | Bileği taşı | El yapımı (Tab) | 23 |
 | Taş totem | 2 Granit, 1 Herhangi boya, 2 İp, 2 Kum | – | El yapımı (Tab) | 48 |
 | Tatlısu incisi | 3 Tatlısu midyesi, 1 İp | Taş bıçak | El yapımı (Tab) | 19 |
 | Timsah dişi kolye | 2 Timsah dişi, 2 İp, 1 Kemik | – | El yapımı (Tab) | 104 |
@@ -3745,7 +3753,7 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Nehir kerpici | 1 Islak nehir kili, 3 Kuru ot, 1 Kum, 1 Su | – | El yapımı (Tab) | 20 |
 | Nehir tuğlası | 1 Nehir kerpici, 1 Ateş, 3 Kum, 3 Su | – | El yapımı (Tab) | 60 |
 | Sönmemiş kireç | 2 Kireçtaşı, 1 Ateş, 2 Kum, 2 Su | – | El yapımı (Tab) | 39 |
-| Taş levha | 2 Arduvaz, 2 Kum, 1 Su | Çekiç taşı | El yapımı (Tab) | 12 |
+| Taş levha | 2 Kumtaşı, 2 Kum, 1 Su (v2.60: eskiden 2 Arduvaz) | Çekiç taşı | El yapımı (Tab) | 12 |
 
 #### Yapılar (25)
 
@@ -3786,7 +3794,7 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Kemik miğfer | 4 Kemik, 2 Sinir, 1 Herhangi tabaklanmış deri | – | El yapımı (Tab) | 228 |
 | Kemik zırh | 8 Kemik, 3 Sinir, 2 Herhangi tabaklanmış deri, 4 İp | – | El yapımı (Tab) | 480 |
 | Kristal ipek kumaş | 4 Kristal ipek, 2 Lif | – | El yapımı (Tab) | 476 |
-| Kürk başlık | 1 Tabaklanmış kunduz derisi, 1 Sinir kirişi, 5 Lif, 4 İp | – | El yapımı (Tab) | 277 |
+| Kürk başlık | 1 Tabaklanmış kurt derisi, 1 Sinir kirişi, 5 Lif, 4 İp | – | El yapımı (Tab) | 277 |
 | Kürk eldiven | 1 Tabaklanmış tavşan derisi, 1 Sinir kirişi, 5 Lif, 4 İp | – | El yapımı (Tab) | 270 |
 
 #### Av ve hayvan (19)
@@ -3795,23 +3803,23 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 |---|---|---|---|---|
 | Balık yağı | 1 Yayın, 3 Su, 3 Lif | Taş havan | El yapımı (Tab) | 21 |
 | Sinir kirişi | 2 Sinir, 2 Su, 1 Lif | Taş bıçak | El yapımı (Tab) | 16 |
-| Tabaklanmış dağ keçisi derisi | 1 Dağ keçisi derisi, 1 Meşe tanini, 4 Su, 4 Lif | – | El yapımı (Tab) | 147 |
-| Tabaklanmış geyik derisi | 1 Geyik derisi, 1 Meşe tanini, 4 Su, 4 Lif | – | El yapımı (Tab) | 149 |
-| Tabaklanmış gölge postu | 1 Gölge postu, 1 Meşe tanini, 4 Su, 4 Lif | – | El yapımı (Tab) | 327 |
-| Tabaklanmış işık tilkisi postu | 1 Işık tilkisi postu, 1 Meşe tanini, 4 Su, 4 Lif | – | El yapımı (Tab) | 210 |
-| Tabaklanmış karaca derisi | 1 Karaca derisi, 1 Meşe tanini, 4 Su, 4 Lif | – | El yapımı (Tab) | 146 |
-| Tabaklanmış kristal geyik derisi | 1 Kristal geyik derisi, 1 Meşe tanini, 4 Su, 4 Lif | – | El yapımı (Tab) | 236 |
-| Tabaklanmış kunduz derisi | 2 Kunduz derisi, 1 Meşe tanini, 4 Su, 3 Lif | – | El yapımı (Tab) | 150 |
-| Tabaklanmış kurt derisi | 1 Kurt derisi, 1 Meşe tanini, 4 Su, 4 Lif | – | El yapımı (Tab) | 150 |
-| Tabaklanmış mağara ayısı derisi | 1 Mağara ayısı derisi, 1 Meşe tanini, 4 Su, 4 Lif | – | El yapımı (Tab) | 170 |
-| Tabaklanmış muflon derisi | 1 Muflon derisi, 1 Meşe tanini, 4 Su, 4 Lif | – | El yapımı (Tab) | 147 |
-| Tabaklanmış sincap derisi | 3 Sincap derisi, 1 Meşe tanini, 3 Su, 3 Lif | – | El yapımı (Tab) | 143 |
-| Tabaklanmış su samuru derisi | 2 Su samuru derisi, 1 Meşe tanini, 4 Su, 3 Lif | – | El yapımı (Tab) | 150 |
-| Tabaklanmış tavşan derisi | 2 Tavşan derisi, 1 Meşe tanini, 4 Su, 3 Lif | – | El yapımı (Tab) | 145 |
-| Tabaklanmış vaşak derisi | 1 Vaşak derisi, 1 Meşe tanini, 4 Su, 4 Lif | – | El yapımı (Tab) | 164 |
-| Tabaklanmış yaban atı derisi | 1 Yaban atı derisi, 1 Meşe tanini, 4 Su, 4 Lif | – | El yapımı (Tab) | 151 |
-| Tabaklanmış yaban domuzu derisi | 1 Yaban domuzu derisi, 1 Meşe tanini, 4 Su, 4 Lif | – | El yapımı (Tab) | 150 |
-| Tabaklanmış yaban öküzü derisi | 1 Yaban öküzü derisi, 1 Meşe tanini, 4 Su, 4 Lif | – | El yapımı (Tab) | 157 |
+| Tabaklanmış dağ keçisi derisi | 1 Dağ keçisi derisi, 1 Herhangi tanin, 4 Su, 4 Lif | – | El yapımı (Tab) | 147 |
+| Tabaklanmış geyik derisi | 1 Geyik derisi, 1 Herhangi tanin, 4 Su, 4 Lif | – | El yapımı (Tab) | 149 |
+| Tabaklanmış gölge postu | 1 Gölge postu, 1 Herhangi tanin, 4 Su, 4 Lif | – | El yapımı (Tab) | 327 |
+| Tabaklanmış işık tilkisi postu | 1 Işık tilkisi postu, 1 Herhangi tanin, 4 Su, 4 Lif | – | El yapımı (Tab) | 210 |
+| Tabaklanmış karaca derisi | 1 Karaca derisi, 1 Herhangi tanin, 4 Su, 4 Lif | – | El yapımı (Tab) | 146 |
+| Tabaklanmış kristal geyik derisi | 1 Kristal geyik derisi, 1 Herhangi tanin, 4 Su, 4 Lif | – | El yapımı (Tab) | 236 |
+| Tabaklanmış kunduz derisi | 2 Kunduz derisi, 1 Herhangi tanin, 4 Su, 3 Lif | – | El yapımı (Tab) | 150 |
+| Tabaklanmış kurt derisi | 1 Kurt derisi, 1 Herhangi tanin, 4 Su, 4 Lif | – | El yapımı (Tab) | 150 |
+| Tabaklanmış mağara ayısı derisi | 1 Mağara ayısı derisi, 1 Herhangi tanin, 4 Su, 4 Lif | – | El yapımı (Tab) | 170 |
+| Tabaklanmış muflon derisi | 1 Muflon derisi, 1 Herhangi tanin, 4 Su, 4 Lif | – | El yapımı (Tab) | 147 |
+| Tabaklanmış sincap derisi | 3 Sincap derisi, 1 Herhangi tanin, 3 Su, 3 Lif | – | El yapımı (Tab) | 143 |
+| Tabaklanmış su samuru derisi | 2 Su samuru derisi, 1 Herhangi tanin, 4 Su, 3 Lif | – | El yapımı (Tab) | 150 |
+| Tabaklanmış tavşan derisi | 2 Tavşan derisi, 1 Herhangi tanin, 4 Su, 3 Lif | – | El yapımı (Tab) | 145 |
+| Tabaklanmış vaşak derisi | 1 Vaşak derisi, 1 Herhangi tanin, 4 Su, 4 Lif | – | El yapımı (Tab) | 164 |
+| Tabaklanmış yaban atı derisi | 1 Yaban atı derisi, 1 Herhangi tanin, 4 Su, 4 Lif | – | El yapımı (Tab) | 151 |
+| Tabaklanmış yaban domuzu derisi | 1 Yaban domuzu derisi, 1 Herhangi tanin, 4 Su, 4 Lif | – | El yapımı (Tab) | 150 |
+| Tabaklanmış yaban öküzü derisi | 1 Yaban öküzü derisi, 1 Herhangi tanin, 4 Su, 4 Lif | – | El yapımı (Tab) | 157 |
 
 #### Ateş (18)
 
@@ -3939,7 +3947,7 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Demir kazma | 4 Demir külçesi, 1 Herhangi sap, 1 Sinir kirişi, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 696 |
 | Demir kılıç | 5 Demir külçesi, 1 Herhangi sap, 1 Herhangi tabaklanmış deri, 1 Sinir kirişi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.086 |
 | Demir mızrak | 3 Demir külçesi, 1 Uzun sopa, 1 Sinir kirişi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 528 |
-| Ejder kılıcı | 2 Ejder kemiği, 3 Demir külçesi, 1 Altın külçesi, 1 Herhangi tabaklanmış deri | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 1.392 |
+| Ejder kılıcı | 2 Ejder kemiği, 1 Kara çelik külçesi, 1 Herhangi tabaklanmış deri, 1 Ateş yağı (v2.60: eski tarif Mor Kristal Vadisi'nin altınını istiyordu) | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 1.392 |
 | Granit gürz | 4 Granit, 1 Meşe sapı, 3 Yaban domuzu dişi, 1 Sinir kirişi | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 112 |
 | Gümüş kılıç | 4 Gümüş külçesi, 3 Kuvars, 1 Ardıç sapı, 2 Kartal pençesi | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 472 |
 | Timsah dişi kılıcı | 4 Demir külçesi, 3 Timsah dişi, 1 Bataklık servisi sapı, 1 Tabaklanmış su samuru derisi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.011 |
@@ -4020,6 +4028,8 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 
 | Grup | Yerine geçen eşyalar |
 |---|---|
+| Herhangi kabuk | Bütün ağaç kabukları: Çam, Kavak, Meşe, Ladin, Kayın, Ihlamur, Ceviz, Söğüt, Kızılağaç, Dişbudak, Akçaağaç, Huş, Porsuk, Kestane, Ardıç, Kül ağacı, Kara çam, Mor söğüt, Gece ağacı kabuğu (v2.60) |
+| Herhangi tanin | Tanin, Meşe tanini (v2.60) |
 | Herhangi balık | Sazan, Alabalık, Yayın, Tatlısu kefali, Kerevit, Tatlısu midyesi, Turna balığı, Kızılkanat, Tatlısu levreği, Yılan balığı, Kadife balığı, Kurbağa, Mersin balığı, Çapak |
 | Herhangi boya | Kırmızı boya, Sarı boya, Kara boya, Beyaz boya, Mürver boyası, Yaban mersini boyası, Gelincik boyası, Işıltılı boya, Liken boyası, Mor kök boyası, Yıldız mürekkebi |
 | Herhangi çakmak | Kıvılcım, Pirit çakmağı, Kükürt çakmağı, Kav |
