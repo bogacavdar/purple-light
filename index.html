@@ -14800,7 +14800,7 @@ function matsOK(q){if(q.nomat)return true;for(const p of q.p)if(p[0]==='b'&&!see
   return true}
 // v2.26: things that only come from a recipe (not found, felled, hunted) and the recipes a job still needs learned: [[names…], …]
 function craftOnly(n){const L=expand(n);return L.length>0&&L.every(m=>REC.has(m)&&!isNatural(m))}
-function needRec(q){const out=[];for(const p of q.p){if((p[0]==='b'||p[0]==='h'||p[0]==='wear')&&craftOnly(p[1])&&!foundSet.has(p[1]))out.push([p[1]]);else if(p[0]==='any'&&p[1].every(craftOnly)&&!p[1].some(n=>foundSet.has(n)))out.push(p[1].slice())}return out}
+function needRec(q){const out=[];for(const p of q.p){if((p[0]==='b'||p[0]==='h'||p[0]==='wear')&&craftOnly(p[1])&&!foundSet.has(p[1]))out.push([p[1]]);else if(p[0]==='any'&&p[1].every(craftOnly)&&!p[1].some(n=>foundSet.has(n)))out.push(p[1].slice());else if(p[0]==='c'&&p[1]==='trap:'&&!foundSet.has('Tuzak'))out.push(['Tuzak'])}return out}   // v2.58: a trap job waits for the trap recipe
 function unlocked(q){return q.r.every(reqOK)&&matsOK(q)}
 function avail(q){return !!q&&!isDone(q.id)&&!(S.a&&S.a.id===q.id)&&unlocked(q)}
 function prog(p){const a=S.a,b=a?a.b:{};switch(p[0]){

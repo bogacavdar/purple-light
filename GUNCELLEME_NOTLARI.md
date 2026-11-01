@@ -14,9 +14,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Toplu satış artık Nazlı'nın görevini sayıyor.** "Bereketli satış" (150 sikkelik satış) görevinin sayacı yalnızca tek tek satışları sayıyordu. Artık **"Aletler, zırhlar ve eşyalar hariç hepsini sat"** ve **"Kazanda işe yaramayanları sat"** düğmeleriyle yaptığın satışlar da sayılıyor. Sayılan, satışın sikke değeri; şanslı müşteri bonusu sayılmıyor.
 - **"Kazanda işe yaramayanları sat" artık gerçekten işe yarayanları satmıyor.** Bu düğme bildiğin tariflerde kullanılan malzemeleri de satıyordu, o yüzden basınca "Emin misin?" uyarısı çıkıyordu. Artık **hiçbir tarifte kullanılan** malzemeyi (bildiğin ya da henüz keşfetmediğin) satmıyor, uyarı da çıkmıyor; düğmedeki tutar da yalnızca bunları sayıyor. Tariflerde kullanılanları da satmak istersen "Aletler, zırhlar ve eşyalar hariç hepsini sat" düğmesi eskisi gibi önce soruyor.
 
+### Oynanış
+- **Nazlı tuzak görevini Tuzak tarifini öğrenmeden vermiyor.** "Kürk siparişi" (tuzak kur, onunla av yakala, 3 tavşan derisi getir) eskiden tuzak tarifini bilmesen de geliyordu. Artık **Tuzak tarifini kazanda öğrenene kadar** Nazlı'nın başında ! çıkmıyor, görev verilmiyor. Önceden almış olduğun görev aynen devam ediyor.
+
 ### Tasarım belgesi
 - Act 1 · Pazarcı Nazlı: "Satış sayacı" notu (toplu düğmeler de sayılır).
 - Sistemler · Satış: "Kazanda işe yaramayanları sat" tariflerde kullanılan hiçbir şeyi satmaz, soru sormaz.
+- Act 1 · Görev kuralları ve Nazlı tablosu: "tuzakla av" isteyen görev Tuzak tarifi öğrenilmeden açılmaz.
 
 ---
 

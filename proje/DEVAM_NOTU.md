@@ -2,6 +2,7 @@
 - Belge: `parts/30_act1.md` (Nazlı tablosunun altı), `00_giris.md`.
 - Yerinde: `#sellall` dinleyicisi ve `sellSafe()` artık `qc('sold',got)` çağırıyor (şans bonusundan önce, `sell()` ile aynı ölçü). Daha önce yalnızca `sell(n,q)` sayıyordu.
 - `safeSell(n)` = bulkSellable && !potUses && !recUses.length; `#sellsafe` tutarı, askSell süzgeci ve `sellSafe()` bunu kullanıyor (eskiden yalnızca !potUses → bilinen tarif malzemeleri satılıp soru çıkıyordu). Belge `parts/20_sistemler.md` satış uyarısı.
+- `needRec`: `['c','trap:']` isteyen görev `foundSet.has('Tuzak')` olmadan `[['Tuzak']]` döndürür → N4 açılmaz, Kemal'in ayak işi tarife yönlendirir. Alınmış N4 etkilenmez. Belge `30_act1.md` (v2.26 kuralı + N4 satırı).
 - Eski kayıtlara etkisi yok (geçmiş toplu satışlar geriye dönük sayılmaz). Kontrol: chk.js 0 hata.
 
 ## v2.57 (1 Kasım 2026) · kamp ateşleri küçük ve büyük haritada
