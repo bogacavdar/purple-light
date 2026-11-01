@@ -1,3 +1,9 @@
+## v2.56 (1 Kasım 2026) · kamp ateşi alet yuvasında, elde tıklayınca yakılır (kritik)
+- Belge: `parts/20_sistemler.md` (kamp ateşi satırı), `00_giris.md`.
+- Yerinde: `hotThing` ve `hotItem` (const, sarmalanamıyor) `n==='Kamp ateşi'` da sayıyor → envanterde "carry", `add()` boş yuvaya kendiliğinden koyar. PLACEABLE'a eklenmedi (handSimple/Usta yapı yolu bozulmasın).
+- `<script id="v256">`: `attack` sarmalı (elde Kamp ateşi → `placeCamp()`), `setHand` sarmalı (ipucu bildirimi, 8 sn'de bir).
+- Eski kayıtlar: envanterdeki kamp ateşi yuvaya kendiliğinden girmez; oyuncu bir kez "Yuvaya koy/Eline al" der. Kontrol: chk.js 0 hata.
+
 ## v2.55 (1 Kasım 2026) · Nazlı görevi sürerken "Pazarı aç", Pamuk 2,5× hızlı kaçar
 - Belge: `parts/30_act1.md` (madde 3 ve 4), `parts/36_yan_gorevler.md` (Pamuk kaçışı), `00_giris.md`.
 - v186 bloğu `statusDlg`: `g==='market'` iken ilk seçenek `Pazarı aç` (`mktTab='sell';openMenu('sell')`), "Tamam" vurgusuz. Yerinde düzenleme (statusDlg kapalı kapsamda, sarmalanamıyor).

@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.56 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Kamp ateşi artık eline alınıp yakılabiliyor (kritik).** Kamp ateşi envanterde duruyor ama eline alınamıyordu. Artık bir alet gibi **alet yuvasına giriyor**: yapınca boş bir yuvaya kendiliğinden konuyor (envanterde "Yuvaya koy" ve "Eline al" da var). **Elindeyken tıkla** (telefonda **Vur**), ateş önüne yakılıyor. V tuşu ve envanterdeki "Yak" düğmesi de eskisi gibi çalışıyor. Eski kayıtlarda envanterdeki kamp ateşini bir kez "Yuvaya koy" ya da "Eline al" ile yuvaya almak yeterli.
+
+### Tasarım belgesi
+- Sistemler · Işık ve ateş tablosu: kamp ateşi alet yuvasına girer, elindeyken tıklayınca kurulur.
+
+---
+
 ## Versiyon 2.55 · 1 Kasım 2026
 
 ### Düzeltmeler
