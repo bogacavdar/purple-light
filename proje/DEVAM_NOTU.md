@@ -24,6 +24,10 @@
 
 
 
+
+## v2.81 — almanak kartları eşit
+
+- v258-alm stiline: `.ag` grid-auto-rows 300px (≤520px: 270px), align-items stretch; `.ac` height 100%, overflow-y auto; h4 tek satır ellipsis + title (decoG).
 ## v2.80 — Fındık ağacı
 
 - TREE_TYPES'a Fındık (fruit Fındık), BTREE[1] (Orman), TREE_TIER 1, WOODC, 'Fındık odunu' fiyat 3 + Herhangi odun. V.trees (set verisi) değişmedi. Ağaçlar yüklemede konumdan yeniden üretildiği için eski kayıtlarda Orman'daki ağaç türlerinin dağılımı biraz değişir.

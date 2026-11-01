@@ -28,6 +28,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.81 · 1 Kasım 2026
+
+### Arayüz
+- **Almanak kartları aynı boyutta:** kartlar yazısının uzunluğuna göre uzayıp kısalıyor, düzen bozuluyordu. Artık her canlı kartı aynı yükseklikte; uzun yazı (Reis hareketleri, tarifler) kartın içinde kaydırılarak okunur. Uzun adlar tek satırda kalır, sığmazsa "…" ile kısalır; üzerine gelince tamamı görünür.
+
+### Tasarım belgesi
+- Sistemler · Almanak: kart boyutu.
 ## Versiyon 2.80 · 1 Kasım 2026
 
 ### Oynanış

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.80** ile birebir (1 Kasım 2026). Bu sürümde: Orman'a Fındık ağacı geldi (silkelenince fındık, kesilince Fındık odunu). Önceki sürüm (2.79): bütün görev türleri tarif öğrenilmeden verilmez.
+Sürüm: **Versiyon 2.81** ile birebir (1 Kasım 2026). Bu sürümde: almanak kartları aynı boyutta. Önceki sürüm (2.80): Orman'a Fındık ağacı.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
