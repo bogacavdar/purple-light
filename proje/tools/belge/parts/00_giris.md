@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.47** ile birebir (31 Ekim 2026). Bu sürümde: etki çubuğundaki (zehir, yanık, yemek etkileri) "reading 'c'" hatası giderildi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.48** ile birebir (1 Kasım 2026). Bu sürümde: ACT 1 madenleri biyomlara yeniden dağıtıldı ve fiyatları biyomdan biyoma artıyor; balta ve kazma kademeleri biyom sırasına bağlandı; her biyomun tam bir ekipman seti var (Bakır, Tunç, Demir, Çelik, Kara çelik, Mor kristal); yeni silahlar gürz ve topuz, kendi kombo ve ultileriyle (ayrıntı: **Aletler · Madenler ve ekipman merdiveni**). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

@@ -8,6 +8,71 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.48 · 1 Kasım 2026
+
+### Oynanış
+- **Madenler biyom biyom yeniden dağıtıldı.** Her biyomda 3 maden var ve madenler biyomdan biyoma daha pahalıya satılıyor:
+  - Çayır: Kireçtaşı 2 · Kumtaşı 3 · Bakır 5
+  - Orman: Granit 6 · Taş kömürü 7 · Kalay 9
+  - Bataklık: Arduvaz 10 · Tuz kayası 12 · Demir 14
+  - Kayalık Dağ: Pirit 16 · Kuvars 18 · Gümüş 24
+  - Kül Diyarı: Bazalt 26 · Kükürt 28 · Obsidyen 34
+  - Mor Kristal Vadisi: Kristal 40 · Ametist 50 · Altın 70
+  - Yer değiştirenler: Kalay Orman'a, Kumtaşı Çayır'a, Pirit Kayalık Dağ'a, Obsidyen Kül Diyarı'na, Altın Mor Kristal Vadisi'ne geçti. Bataklık aynı kaldı.
+- **Madeni kullanan eşyaların fiyatı da değişti:** maden pahalanınca ya da ucuzlayınca ondan yapılan her şeyin fiyatı da kayıyor. Örnekler: Demir külçesi 111 → 68, Gümüş külçesi 61 → 100, Altın külçesi 93 → 280.
+- **Balta ve kazma kademeleri biyom sırasına bağlandı.** Bir biyomun aleti en çok bir sonraki biyomu keser ve kazar, ötesini açamaz:
+  - 1. kademe: Taş, Çakmaktaşı, Bakır (Çayır ve Orman)
+  - 2. kademe: Granit, Tunç (Bataklık da)
+  - 3. kademe: Demir (Kayalık Dağ da)
+  - 4. kademe: Kuvars, Çelik (Kül Diyarı da)
+  - 5. kademe: Bazalt, Obsidyen, Kara çelik (Mor Kristal Vadisi de)
+  - 6. kademe: Mor kristal
+  - Bir biyomdaki bütün ağaçlar ve madenler aynı kademeyi istiyor. Örneğin Orman'daki Meşe, Kayın, Ihlamur ve Ceviz artık taş baltayla kesiliyor.
+  - Aletlerin hızı, dayanıklılığı ve silah olarak hasarı da bu sıraya göre ayarlandı (ör. Demir balta artık 1,8 sn; Kuvars ve Bazalt aletler biraz daha dayanıklı).
+- **Doğu geçidi** (Kayalık Dağ'dan Kül Diyarı'na) artık 4. kademe kazma istiyor: Kuvars ya da Çelik kazma.
+- **Her biyomun tam bir ekipman seti var:** miğfer, zırh, eldiven, çizme, kılıç, mızrak, gürz, topuz, balta ve kazma. Her set bir öncekinden güçlü ve pahalı:
+  - **Bakır** (Çayır, yeni): Dursun ve Durmuş döver. Zırh 16, kılıç 16.
+  - **Tunç** (Orman): eski parçalara gürz ve topuz eklendi.
+  - **Demir** (Bataklık): eski parçalara gürz ve topuz eklendi.
+  - **Çelik** (Kayalık Dağ, yeni): Çelik külçesi = 2 Demir külçesi + 2 kömür + 1 Ateş tuğlası. Ateş tuğlası yeni bir eşya, Kayalık Dağ'ın Beyaz kilinden yapılıyor. Zırh 54, kılıç 46.
+  - **Kara çelik** (Kül Diyarı, yeni; obsidyenle dövülmüş çelik): Kara çelik külçesi = 2 Çelik külçesi + 3 Obsidyen + 1 Kükürt + 2 kömür. Zırh 68, kılıç 58.
+  - **Mor kristal** (Mor Kristal Vadisi, yeni): Mor kristal levhası = 3 Kristal + 2 Ametist + 1 Altın külçesi. Zırh 84, kılıç 72.
+  - Çelik, Kara çelik ve Mor kristal zırhlar kanama, yanık ya da zehre karşı direnç veriyor; çizmeleri çamurda yavaşlatmıyor.
+  - Tunç ve Demir parçalarının fiyatları da sıraya göre yeniden hesaplandı; örneğin Demir kılıç artık Tunç kılıçtan pahalı.
+- **Yeni silahlar: gürz ve topuz.**
+  - **Gürz:** ağır ve yavaş, geniş menzilli, kılıçtan sert vurur; kombolarıyla sersemletir.
+  - **Topuz:** hafif ve hızlı, art arda vurur, fırlatılabilir.
+  - İkisinin de kendi özel vuruşları var:
+    - Gürz: Yandan ezme, Kafa ezen, Çifte ezme, Yer sarsan, Ezerek atılma, Gürz kasırgası.
+    - Topuz: Hızlı darbe, Sersemleten darbe, Üçlü darbe, Topuz fırlatma, Atılıp vurma, Topuz yağmuru.
+  - İkisinin de kendi ultisi var: Gürz'ün ultisi **Dağ yaran** (sıçrayıp üç sarsıntı halkası), Topuz'unki **Gök gürültüsü** (sekiz hızlı darbe ve gök gürültüsü halkası).
+  - Ormandaki Durdu'nun Granit gürzü de artık gürz gibi vuruyor.
+- **Taş mızraklar ve ustaların imza silahları:** Kuvars mızrak 36, Bazalt mızrak 46, Obsidyen mızrak 48 hasara çıktı. Ametist kılıcı 58'den 68'e çıktı; böylece Mor Kristal Vadisi'nin silahı Kül Diyarı setinden geride kalmıyor.
+- **Ustalar:** obsidyen aletleri artık Kül Diyarı'ndaki Turan da dövüyor, Pirit çakmağını Kayalık Dağ'daki Kaya da dövüyor. Ekin'in "Meşe tanini" görevi artık herhangi bir balta istiyor.
+
+### Görsel
+- Bütün yeni eşyaların kendi simgeleri var: her metalin kendi rengi, gürzün dikenli başı, topuzun yuvarlak başı, yeni külçeler, Mor kristal levhası ve Ateş tuğlası.
+
+### Arayüz
+- "Daha iyi balta/kazma gerekli" uyarıları yeni kademe adlarını yazıyor (ör. "Kuvars ya da Çelik kazma ya da daha iyisi").
+
+### Düzeltmeler
+- Konuşmalarda madenlerin yerini anlatan sözler yeni yerlerine göre düzeltildi: Turan obsidyeni Kül Diyarı'ndan istiyor, Durdu kumtaşının Çayır'da olduğunu söylüyor, Kaya piriti kendi dağından istiyor, Kudret kendi vadisinin mor kristalini anlatıyor.
+
+### Tasarım belgesi
+- Yeni bölüm: **Aletler · Madenler ve ekipman merdiveni**. Kurallar, biyomların madenleri, kademe merdiveni, bütün setlerin değerleri ve fiyatları, tarifler, gürz ve topuz.
+- Değişen bölümler: ACT 1 biyom tabloları (madenler ve ağaç kademeleri), görev satırları (E3, K4, AL1, TU5, L3, KU2), ustaların dövdükleri tablosu, Dövüş bölümündeki silah, kombo ve ulti tabloları, eşya dizinindeki maden satırları.
+- Tarif ve eşya ansiklopedisindeki türetilmiş fiyatlar henüz yeniden üretilmedi; bu belgede not olarak yazıyor.
+
+### Kayıtlar
+- Eski kayıtlar açılıyor. Madenler her yüklemede yeni yerlerine dizilir. Elindeki aletler ve zırhlar kalır, yalnızca kademeleri yeni sıraya göre okunur.
+
+### Proje
+- Bu sürüm oynanarak test edilmedi. Sözdizimi kontrolü yapıldı ve oyunun hatasız açıldığına bir kez bakıldı (madenlerin biyomlara dağılımı, yeni eşyalar ve simgeler).
+- Sonraki adımlar: aynı kademedeki silahlara dövüşü etkileyen özellikler (kanatma, yakma, zehirleme) ve ACT 2'nin aynı kurallarla düzenlenmesi.
+
+---
+
 ## Versiyon 2.47 · 31 Ekim 2026
 
 ### Düzeltmeler
