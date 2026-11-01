@@ -26,6 +26,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.79 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Tarifi öğrenilmemiş işin görevi veriliyordu:** "tarif bilinmeden görev verilmez" kuralı yalnızca getir/dövdür/giy görevlerine bakıyordu. Artık Sinan'ın **Atölye** ve **Çit** kurma görevleri, Börü'nün **ateş başında nöbet** görevi (Kamp ateşi), Nazlı'nın **taze balık** görevi (Olta) ve Çınar'ın **ev ve yatak** görevi de, gereken tarif Zümrüt'ün kazanında öğrenilmeden (ya da eşya elinde değilse) verilmez. O zaman Kemal sana önce o tarifi öğrenme işini verir; görev zinciri kilitlenmez.
+
+### Tasarım belgesi
+- ACT 1 · görev kuralları: "tarif bilinmeden görev verilmez" bütün görev türlerine genişledi.
 ## Versiyon 2.78 · 1 Kasım 2026
 
 ### Arayüz

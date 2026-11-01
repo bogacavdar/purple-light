@@ -22,6 +22,10 @@
 
 
 
+
+## v2.79 — needRec bütün türler
+
+- needRec: place (craftOnly, öğrenilmemiş, elde değil), camp (Kamp ateşi), c fish: (Olta), bed (yataklardan biri), house (HOUSESET'teki REC evlerden biri). pickFiller → Kemal 'tarifini öğren' işi. Gemi (L5) bilinçli olarak dışarıda (hikâye görevi).
 ## v2.78 — yer satırında malzeme adı
 
 - needTarget: doğal malzeme çemberinin kopyasına `item`; whereTxt `item` varsa adı kalın yazar.
