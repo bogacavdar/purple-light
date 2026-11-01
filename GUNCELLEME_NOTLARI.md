@@ -8,6 +8,44 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.49 · 1 Kasım 2026
+
+### Oynanış
+- **Yaylar ve oklar.** Her biyomun bir yayı ve bir oku var; ayrıca herkesin elle yapabileceği **Basit yay** ve **Basit ok**.
+  - Yaylar (hasar): Basit yay 8 · Çam yayı 12 (Çayır) · Meşe yayı 17 (Orman) · Kızılağaç yayı 26 (Bataklık) · Akçaağaç yayı 35 (Kayalık Dağ) · Kızıl sedir yayı 45 (Kül Diyarı) · Gece ağacı yayı 56 (Mor Kristal Vadisi).
+    - Her yay o biyomun ağacından, kirişten ve o biyomun metalinden yapılır.
+    - O biyomun silahçısı ve ondan sonrakiler döver; Basit yay elle yapılır.
+    - Biyom ilerledikçe yaylar daha hızlı atar ve daha uzağa ulaşır.
+  - Oklar (hasar çarpanı): Basit ok ×0,8 · Bakır ok ×1 · Tunç ok ×1,15 · Demir ok ×1,3 · Çelik ok ×1,45 · Kara çelik ok ×1,6 · Mor kristal ok ×1,8.
+    - Okları herkes elle yapar: bir yapımda 10 ok, Basit okta 5.
+  - Nasıl kullanılır:
+    - Yay eldeyken vuruş fare yönüne bir ok atar; telefonda en yakın düşmana atar.
+    - Her atış çantadaki en güçlü oktan bir tane harcar. Eski Ok, Tüylü ok, Zehirli ok ve Mor ok yeni oklar bitince kullanılır.
+    - Her atış yayı biraz köreltir; bilenince yenilenir.
+  - Yayın kendi özel vuruşları var: Hızlı atış, Delici ok, Çift ok, Gergin atış, Geri sıçrayıp atış, Ok yelpazesi. Ultisi **Ok yağmuru**: seçtiğin alana 16 ok yağar.
+- **Dengeleme: ustaların imza parçaları artık kendi biyomlarının setinden güçlü.**
+  - Silahlar: Gümüş kılıç 50, Lav camı kılıcı 62, Ejder kılıcı 66, Ametist kılıcı 78.
+  - Zırhlar: Kartal tüyü miğfer 31, Gümüş pullu zırh 58, Ejder pulu zırh 76, Kül böceği zırh 72, Kristal ipek zırh 90, Işık pulu eldiven 29, Akrep kabuğu çizme 24.
+- **El yapımı giysiler bir önceki biyomun seti kadar koruyor:** Kamış çizme 7, Bataklık postu pelerin 22, Timsah derisi zırh 26, Mağara ayısı postu giysi 32, Ayı postu pelerin 36, Kül postu pelerin 50, Lav pulu eldiven 16.
+
+### Görsel
+- Yayların ve okların kendi simgeleri var: yayın ağacı ve metal kabzası, okun ucu biyomun metalinin renginde. Atılan ok da kendi rengiyle uçar.
+
+### Ses
+- Yay atışında kiriş sesi.
+
+### Arayüz
+- Silah listesinde (arena seçimi) yeni bir **Yaylar** grubu var.
+
+### Tasarım belgesi
+- **Aletler · Madenler ve ekipman merdiveni** bölümüne iki alt bölüm eklendi: Dengeleme, Yaylar ve oklar.
+- Alet ve zırh tabloları, Dövüş bölümündeki silah, kombo ve ulti tabloları ve ustaların dövdükleri tablosu güncellendi.
+
+### Proje
+- Bu sürüm oynanarak test edilmedi. Sözdizimi kontrolü yapıldı, oyunun hatasız açıldığına ve bir yayın ok atıp ok harcadığına bir kez bakıldı.
+
+---
+
 ## Versiyon 2.48 · 1 Kasım 2026
 
 ### Oynanış

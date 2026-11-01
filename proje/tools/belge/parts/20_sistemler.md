@@ -306,12 +306,13 @@ Sağ altta, küçük haritanın hemen üstünde **Başarımlar**'ın solunda kü
 |---|---|---|---|
 | Yumruk | 4 | 16 | 0,45 sn |
 | Meşale (başka silah yoksa) | 7 | 19 | 0,48 sn |
-| Kılıç | Taş 12 · Bakır 16 · Tunç 22 · Demir 34 · Timsah dişi kılıcı 38 · Gümüş kılıç 44 · Çelik 46 · Ejder kılıcı 52 · Lav camı kılıcı 55 · Kara çelik 58 · Işın kılıcı 60 · Ametist kılıcı 68 · Mor kristal 72 | 22 | 0,42 sn |
+| Kılıç | Taş 12 · Bakır 16 · Tunç 22 · Demir 34 · Timsah dişi kılıcı 38 · Çelik 46 · Gümüş kılıç 50 · Kara çelik 58 · Işın kılıcı 60 · Lav camı kılıcı 62 · Ejder kılıcı 66 · Mor kristal 72 · Ametist kılıcı 78 | 22 | 0,42 sn |
 | Gürz (v2.48) | Bakır 18 · Tunç 25 · Granit gürz 27 · Demir 39 · Çelik 53 · Kara çelik 67 · Mor kristal 83 | 24 | 0,62 sn |
 | Topuz (v2.48) | Bakır 14 · Tunç 19 · Demir 29 · Çelik 39 · Kara çelik 49 · Mor kristal 61 | 20 | 0,36 sn |
 | Mızrak | Mızrak 10 · Çakmaktaşı 14 · Bakır 15 · Tunç 20 · Demir 30 · Kuvars 36 · Çelik 41 · Bazalt 46 · Obsidyen 48 · Kara çelik 52 · Mor kristal 64 | 30 | 0,6 sn |
 | Balta | Taş 9 · Çakmaktaşı 10 · Bakır 12 · Granit 16 · Tunç 20 · Demir 30 · Kuvars 34 · Çelik 38 · Bazalt 44 · Obsidyen 46 · Kara çelik 50 · Mor kristal 58 | 20 | 0,5 sn |
 | Kazma | Taş 8 · Çakmaktaşı 9 · Bakır 11 · Granit 14 · Tunç 18 · Demir 26 · Kuvars 30 · Çelik 34 · Bazalt 39 · Obsidyen 41 · Kara çelik 45 · Mor kristal 52 | 20 | 0,5 sn |
+| Yay (v2.49) | Basit 8 · Çam 12 · Meşe 17 · Kızılağaç 26 · Akçaağaç 35 · Kızıl sedir 45 · Gece ağacı 56 (× okun çarpanı) | 240–360 | 0,75–0,6 sn |
 | Asalar, ateşli silahlar | ACT 2 bölümündeki tablo | 210–340 | |
 
 - **Vuruş ne zaman değer (v2.08):** vuruşun çizildiği yer (karakterin göğsü) ile canlının **gövdesi** arasındaki uzaklık, silahın menzili + canlının boyu + 3 pikseli geçmiyorsa ve canlı vuruş yönünün en çok ~95° yanındaysa (çaprazlar dahil, geniş bir koni) vuruş değer ve hasar verir. Vuruş efekti canlının görseline değdiği an hasar sayılır; çok yakındaki (gövdesine yapışık) canlı yönden bağımsız vurulur. Yumruk ve tek elli silahlar ilk değdiği canlıya vurur.
@@ -350,6 +351,7 @@ Her silahın kendi hamleleri vardır (parantezde hasar çarpanı ve enerji):
 | Balta/kazma | Geri savuruş (×1,25; 10) | Yere vurma, çevre (×2,6, sersem; 18) | Dönerek biçme (×1,5; 12) | Ezici darbe (×3,2, sersem; 22) | Yan savuruş (×1,6; 7) | Kafa kıran (×3, sersem; 11) |
 | Yumruk | Çifte yumruk (8) | Güçlü yumruk (×3, sersem; 16) | Omuz atma (×1,3; 10) | Tekme kombosu (4×0,75 + ×1,7; 20) | Kroşe (×1,5; 5) | Aparkat (×2,6, sersem; 9) |
 | Meşale | Alev savuruşu (×1,5; 10) | Ateş çemberi (×2,4; 18) | Ateşli hamle (×1,8; 12) | Alev patlaması (×3; 22) | Kor savuruşu (×1,6; 7) | Alev kesiği (×2,4; 11) |
+| Yay (ok) | Çift ok, ±0,08 rad (2×1,0; 2 ok, 8) | Gergin atış (×3, menzil ×1,3; 1 ok, 14) | Geri sıçrayıp atış (×1,5; 1 ok, 10) | Ok yelpazesi, 5 ok (5×0,9; 5 ok, 18) | Hızlı atış (2×0,9; 2 ok, 5) | Delici ok (×2,6, hız ×1,3; 1 ok, 8) |
 | Asa (mana) | Üçlü atış (×2 mana) | Büyük büyü ×3 (×3) | Kaçarken atış (×1,5) | Büyü halkası, 8 yön (×4) | İkiz atış (×1,4) | Güç topu ×2,8 (×2,2) |
 | Ateşli (mermi) | Çift atış (2) | Nişanlı atış ×3 (1) | Kayarak atış, 3 yayılım (3) | Şarjör boşaltma, 5 atış (5) | Seri atış (2) | Delici mermi ×3,2 (1) |
 
@@ -369,6 +371,7 @@ Her silahın kendi hamleleri vardır (parantezde hasar çarpanı ve enerji):
 | Topuz (v2.48) | Gök gürültüsü | Çevrende 8 hızlı darbe (her biri ×0,9) + ×3,5 gök gürültüsü halkası, sersem 1 sn |
 | Yumruk | Öfke | 10 yumruk + son ×4 |
 | Meşale | Ateş fırtınası | 3 ateş halkası ×2 |
+| Yay (v2.49) | Ok yağmuru | Fare yönündeki alana 16 ok yağar, her biri ×1,4, sersem 0,3 sn; ok harcamaz |
 | Asa | Meteor | Fare yönüne ×5, sersem 1,2 sn |
 | Ateşli | Kurşun yağmuru | 20 atış (pompalıda 10), mermi harcamaz |
 
