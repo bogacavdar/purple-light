@@ -4,6 +4,10 @@
 - Denetim betiği (scratch): set parçaları ve aletlerin ham maddelerinin biyomu (ağaç listesi, maden sırası /3, BANIM düşmeleri); bilinmeyen toplanabilirler denetlenemedi. Tunç/Demir eski parçaları (old:true) ve Kamış çizme farkı bilerek bırakıldı.
 - Eski kayıtlara etkisi yok (öğrenilmiş tarifler adla tutulur; Tanin ve yeni kabuklar kazanda öğrenilir). Kontrol: chk.js 0 hata.
 
+
+## v2.61 — v259 bloğu kaldırıldı
+
+- `<script id="v259">` (setHand sarmalayıcısı: eldeki silahı equip.silah'a taşıyıp inv'den düşüyordu) silindi. Tekerlek/1–5 ile gezinmek silahları kemerden siliyordu. `weapon()` zaten önce `held()`'ı kullanıyor. `'*silah'` görev ilerlemesi (v2.59) duruyor. Eski kayıtlarda yuvaya taşınmış silahlar equip.silah'ta kalır (göç yok).
 ## v2.59 (1 Kasım 2026) · İlk silah takmadan biter, eldeki silah yuvaya takılır
 - Belge: `parts/30_act1.md` (B3), `20_sistemler.md` (dövüş), `00_giris.md`.
 - `'*silah'` ilerlemesi: equip.silah ya da çantada slotOf==='silah' bir eşya. progText "Bir silah edin (…)". B3 metinleri "edin".

@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+
+## Versiyon 2.61 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Kemerde gezinirken eşyalar artık kaybolmuyor:** 2.59'da eklenen "eline aldığın silah kendiliğinden silah yuvasına takılır" kaldırıldı. Kemerde tekerlekle ya da 1–5 tuşlarıyla gezinirken silahlar kemerden alınıp silah yuvasına taşınıyordu; kemerdeki kutular boşalıyor, iki kez tıklayınca silah "sırta" geçiyordu.
+- **Eldeki silah doğrudan kullanılır:** kemerden eline aldığın silahla vurursun; silah kemerdeki yerinde kalır, hiçbir yuvaya taşınmaz.
+- 2.59–2.60'ta kemerden kaybolan silahlar silah yuvasındadır: Kuşanma'dan çıkarıp kemere geri koyabilirsin (kemer yuvasına sağ tıkla ya da basılı tut).
+- Kemerdeki eşyaların yerini değiştirme (sağ tık / basılı tut) olduğu gibi duruyor.
+
+### Tasarım belgesi
+- Sistemler · Dövüş: "eldeki silah doğrudan kullanılır, sırt yok" kuralı yazıldı; 2.59 kuralı kaldırıldı.
 ## Versiyon 2.60 · 1 Kasım 2026
 
 ### Oynanış
