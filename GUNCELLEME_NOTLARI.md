@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.57 · 1 Kasım 2026
+
+### Arayüz
+- **Kamp ateşlerin haritada görünüyor.** Yaktığın her kamp ateşi, yandığı sürece hem köşedeki **küçük haritada** hem **büyük haritada** titreşen turuncu bir alevle gösteriliyor; büyük haritada üstünde "Kamp ateşi" yazıyor. Gece de, keşfetmediğin yerde de görünür; ateş sönünce haritadan kalkar.
+
+### Tasarım belgesi
+- Sistemler · Işık ve ateş tablosu: kamp ateşi haritada görünür.
+
+---
+
 ## Versiyon 2.56 · 1 Kasım 2026
 
 ### Düzeltmeler

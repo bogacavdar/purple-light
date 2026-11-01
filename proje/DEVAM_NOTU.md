@@ -1,3 +1,8 @@
+## v2.57 (1 Kasım 2026) · kamp ateşleri küçük ve büyük haritada
+- Belge: `parts/20_sistemler.md` (kamp ateşi satırı), `00_giris.md`.
+- `drawMap` içinde yerinde (İskele `mki`'sinin arkası): `camps` içinde `t>0` olanlar için turuncu parıltı + piksel alev (mini u=1, büyük u=2), büyükte "Kamp ateşi" yazısı. `try{}` içinde (camps `const`'u drawMap'ten sonra tanımlı, erken çağrıda TDZ olmasın). Keşif/ışık koşulu yok.
+- Eski kayıtlara etkisi yok. Kontrol: chk.js 0 hata.
+
 ## v2.56 (1 Kasım 2026) · kamp ateşi alet yuvasında, elde tıklayınca yakılır (kritik)
 - Belge: `parts/20_sistemler.md` (kamp ateşi satırı), `00_giris.md`.
 - Yerinde: `hotThing` ve `hotItem` (const, sarmalanamıyor) `n==='Kamp ateşi'` da sayıyor → envanterde "carry", `add()` boş yuvaya kendiliğinden koyar. PLACEABLE'a eklenmedi (handSimple/Usta yapı yolu bozulmasın).
