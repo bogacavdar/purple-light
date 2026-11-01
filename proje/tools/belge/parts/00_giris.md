@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.53** ile birebir (1 Kasım 2026). Bu sürümde: öğretici malzemeleri artık ışınlanmaz, Kemal 5 böğürtlenin beşini de yemeyi sayaçla ister, toplama bildirimi birikir, bilgisayarda kart yazıları ve alet kemeri büyür, ana menüye "Güncelleme notları" ve "Uygulama olarak indir" gelir (ayrıntı: **Oyun akışı · Ana menü**). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 2.54** ile birebir (1 Kasım 2026). Bu sürümde: bilgisayarda ana menüye **"Bilgisayara yükle"** düğmesi gelir; oyun bir kez yüklenince düğme bir daha görünmez (ayrıntı: **Oyun akışı · Ana menü**). Önceki sürüm (2.53): öğretici malzemeleri artık ışınlanmaz, Kemal 5 böğürtlenin beşini de yemeyi sayaçla ister, toplama bildirimi birikir, bilgisayarda kart yazıları ve alet kemeri büyür, ana menüye "Güncelleme notları" ve "Uygulama olarak indir" gelir.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

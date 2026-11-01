@@ -8,6 +8,20 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.54 · 1 Kasım 2026
+
+### Arayüz
+- **Ana menüde "Bilgisayara yükle" düğmesi.** Bilgisayarda, **Yükle**'nin hemen altında büyük bir düğme var. Basınca oyun bilgisayarına uygulama olarak kurulur: masaüstünde / Başlat menüsünde (Mac'te Uygulamalar'da) **Purple Light** simgesi çıkar, oyun oradan kendi penceresinde ve internetsiz de açılır.
+  - **Chrome ve Edge'de** tek tıkla tarayıcının yükleme penceresi açılır, **Yükle** demen yeterli.
+  - Tarayıcı pencere açmıyorsa (Firefox, Mac Safari) düğme kısa adımları gösterir. Firefox uygulama yükleyemediği için oyunu Chrome ya da Edge'de açman söylenir.
+  - **Yükledikten sonra düğme bir daha görünmez:** oyun yüklenince, adımlar penceresinde "Yükledim, bir daha gösterme"ye basınca ya da oyunu bir kez uygulamadan açınca kaybolur.
+  - Bilgisayarda sağ üstteki küçük "Uygulama olarak indir" düğmesi artık çıkmıyor (yerine bu düğme var). Telefon ve tablette değişiklik yok.
+
+### Tasarım belgesi
+- Oyun akışı · Ana menü: "Bilgisayara yükle (v2.54)" bölümü; giriş sürüm satırı 2.54.
+
+---
+
 ## Versiyon 2.53 · 1 Kasım 2026
 
 ### Düzeltmeler

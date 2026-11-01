@@ -1,3 +1,9 @@
+## v2.54 (1 Kasım 2026) · bilgisayarda "Bilgisayara yükle" düğmesi
+- Belge: `parts/10_akis.md` → "Bilgisayara yükle (v2.54)", `00_giris.md` sürüm satırı.
+- `<style id="v254-inst">`, `#pcinst-ov` penceresi ve `<script id="v254inst">` (`</body>` öncesi, düz script): yalnızca bilgisayarda (`hover:hover` + `pointer:fine`, iOS/Android değil) `#t-pcinst` düğmesi `#t-load`'un hemen arkasına eklenir (Arena'nın önüne). `body.pl-pc` iken v2.53'ün sağ üstteki `#t-install` düğmesi gizli.
+- `beforeinstallprompt` yakalanır → `prompt()`; kabul ya da `appinstalled` → `localStorage['pl.installed']='1'` ve düğme kalıcı gizli. Pencere yoksa tarayıcıya göre adım penceresi (Chrome/Edge/Firefox/Mac Safari) + "Yükledim, bir daha gösterme". Uygulama olarak açılınca (standalone/fullscreen/minimal-ui/wco) bayrak kendiliğinden yazılır. https değilse düğme yok.
+- Eski kayıtlara etkisi yok. Kontrol: chk.js 0 hata (?. 1, ?? 8 değişmedi).
+
 ## v2.53 (1 Kasım 2026) · öğretici malzemesi ışınlanmaz, 5 böğürtlen sayacı, bilgisayarda büyük kart/kemer
 - Belge: `parts/10_akis.md` ("Öğretici malzemeleri yer değiştirmez", adım 2), `20_sistemler.md` (v2.53 yazı boyları).
 - `bringBerry` ve telefon öğreticisindeki "parmağa yakın getir" artık mevcut düğümü taşımıyor; boş yerde yeni düğüm (`tutN:1`) ekliyor, ok `tutN`'yi önceliyor. Ölü `if(false)0;` silindi. Taşıyan başka öğretici kodu yok (`tzPlace` zaten push ediyor; 6021 yalnızca ölü düğüm yeniden doğuşu).
