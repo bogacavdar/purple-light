@@ -35,3 +35,22 @@ out = f"""<!doctype html>
 """
 open('GUNCELLEME_NOTLARI.html', 'w', encoding='utf-8').write(out)
 print('GUNCELLEME_NOTLARI.html hazır')
+
+# v2.53 (Boğaç): the game's main menu shows the LATEST version's notes ("Güncelleme notları" under the version label).
+# The top "## Versiyon" section, without the design-document and project parts, goes between <!--RELNOTES--> and <!--/RELNOTES-->
+# in proje/Hammadde_prototip.html and index.html (works offline, no fetch).
+raw = open('GUNCELLEME_NOTLARI.md', encoding='utf-8').read()
+m = re.search(r'^## Versiyon .*?(?=^## Versiyon |\Z)', raw, re.S | re.M)
+if m:
+    sec = m.group(0).strip()
+    parts = re.split(r'(?m)^(?=### )', sec)
+    keep = [p for p in parts if not re.match(r'### (Tasarım belgesi|Proje)\b', p)]
+    sec = re.sub(r'\n-{3,}\s*$', '', ''.join(keep).strip())
+    rn = markdown.markdown(sec, extensions=['sane_lists'], tab_length=2)
+    rn = rn.replace('<!--', '').replace('-->', '')
+    for f in ('proje/Hammadde_prototip.html', 'index.html'):
+        t = open(f, encoding='utf-8').read()
+        t2, k = re.subn(r'<!--RELNOTES-->.*?<!--/RELNOTES-->', lambda _: '<!--RELNOTES-->' + rn.replace('\n', '') + '<!--/RELNOTES-->', t, count=1, flags=re.S)
+        if k:
+            open(f, 'w', encoding='utf-8').write(t2)
+    print('Oyundaki güncelleme notları:', sec.split('\n')[0])

@@ -23,10 +23,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Öğretici/görev kartı 18 px; bir menü açıkken 16 px ve 3 satır.
   - Yan görev kartı ve takip çipleri daha büyük.
   - Alttaki **1-2-3-4-5 alet kemeri** iki kat büyük.
+- **Ana menüde "Güncelleme notları".** Sürüm yazısının hemen altında; tıklayınca son sürümde nelerin değiştiği oyunun içinde açılıyor (internetsiz de). **Tamam** ya da **Esc** ile kapanır.
 
 ### Tasarım belgesi
 - Akış: "Öğretici malzemeleri yer değiştirmez", Kemal'in 2. adımı (5 böğürtlenin hepsi, sayaçlar, yanan düğme).
-- Sistemler: "Bilgisayarda kart yazıları daha büyük (v2.53)", "Toplama bildirimi birikir (v2.53)".
+- Sistemler: "Bilgisayarda kart yazıları daha büyük (v2.53)", "Toplama bildirimi birikir (v2.53)"; Akış: ana menüde "Güncelleme notları".
 
 ## Versiyon 2.52 · 1 Kasım 2026
 
