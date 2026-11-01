@@ -22,6 +22,15 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.75 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Közlenmiş et "pişmiş et" sayılmıyordu:** Poyraz'ın "Kaptanın karnı" görevi gibi "Herhangi pişmiş et" isteyen görevler ateşte közlenen eti kabul etmiyordu. Artık her közlenmiş et "pişmiş et", her közlenmiş balık "pişmiş balık" sayılır.
+- **Kişilerin ateşinde közlemek zordu:** Nazlı'nın, Durmuş'un ve öteki kişilerin ateşlerinde közlemek için ateşe tam isabetle tıklamak ya da dibine girmek gerekiyordu. Artık çantanda çiğ et ya da balık varken her ateşin yanında **"E · Ateşte közle"** yazar; ateşe tıklayınca ya da yanında E/F'ye basınca közleme penceresi açılır. Çiğ yiyecek yokken ateş hedef olmaz, yanındaki kişiyle konuşmak eskisi gibidir.
+
+### Tasarım belgesi
+- Tarifler: "Közlenmiş et ve balık pişmiş sayılır" ve "Her ateşte közlenir" kuralları.
 ## Versiyon 2.74 · 1 Kasım 2026
 
 ### Arayüz

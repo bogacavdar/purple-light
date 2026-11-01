@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.74** ile birebir (1 Kasım 2026). Bu sürümde: silah/zırh bilgi satırları yalnızca üzerine gelince görünür; Çam kesilince reçine de düşer (2.70'ten beri silinmişti); görev oku reçine için ağaçları gösterir; Reis'lerde tek can çubuğu. Önceki sürüm (2.73): pazar listesi düzeldi.
+Sürüm: **Versiyon 2.75** ile birebir (1 Kasım 2026). Bu sürümde: her kişinin ateşinde közleme kolaylaştı ("Ateşte közle" hedefi); közlenmiş et ve balık "pişmiş" sayılır. Önceki sürüm (2.74): Reis'lerde tek can çubuğu; Çam reçinesi; bilgi satırları üzerine gelince.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -3049,6 +3049,8 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 
 ## Tarifler nasıl çalışır (kısa)
 
+- **Közlenmiş et ve balık pişmiş sayılır (v2.75, Boğaç):** ateşte közlenen her et "Herhangi pişmiş et", her balık "Herhangi pişmiş balık" grubuna girer; "pişmiş et" isteyen tarif ve görevler (ör. Poyraz'ın "Kaptanın karnı") közlenmişi de kabul eder.
+- **Her ateşte közlenir (v2.75, Boğaç):** bütün kişilerin ateşlerinde (Nazlı, Durmuş, Dursun, kuzenler, Kemal…) çiğ et ve balık közlenir: çantanda çiğ yiyecek varken ateşin yanında **"E · Ateşte közle"** yazar; ateşe tıklayınca (18 px) ya da 30 px yakınında E/F ile közleme penceresi açılır. Çiğ yiyecek yokken ateş hedef olmaz (yanındaki kişiyle konuşmayı engellemez).
 - **Hiçbir tarif bıçak istemez (v2.70, Boğaç):** eskiden Taş bıçak ya da Çakmaktaşı bıçak isteyen 64 tarif (saplar, kaşıklar, kabuklar, zıpkın, kürek, havyar…) artık alet istemez. **Reçine ağaçtan düşer:** Çam kesilince her odunla birlikte 1 **Çam reçinesi** (ve 1 Çam kozalağı; v2.74: 2.70'te reçine bir eski satır yüzünden düşmüyordu), Ladin kesilince 1 **Ladin reçinesi** düşer; Çam/Ladin kabuğu ve reçine tarifleri kalktı. Görev oku ve "nerede bulunur" bilgisi ağaçların ekstra düşürdüklerini o ağaçtan çıkar sayar. Reçine isteyen tarife reçine götürülür (Herhangi reçine: Çam reçinesi, Ladin reçinesi, Huş katranı). Eski kayıtlardaki Çam/Ladin kabuğu kendi reçinesine dönüşür.
 - **Her biyomun seti kendi biyomunda yapılır (v2.60, Boğaç):** bir biyomun silah ve zırh setleri (başlangıç, metal ve usta setleri) o biyomun (ya da önceki biyomların) malzemesiyle yapılabilir; hiçbir parça sonraki bir biyomdan malzeme istemez. Deri her biyomun hayvanından düşen Deri parçasıdır (aşağıda).
 - **Tabaklama yok, zırh deri parçasıyla yapılır (v2.62, Boğaç):** Tanin, Meşe tanini ve bütün tabaklanmış deri tarifleri oyundan kalktı. Derisi ya da postu olan her hayvan avlanınca derisinin yanında **Deri parçası** da düşürür (büyük hayvanlar — canı 60 ve üstü — 1–2 tane). Zırhlar, deri isteyen silahlar ve eşyalar (çanta, tulum, çadır, yatak, ok kılıfı…) eskiden istedikleri tabaklanmış deri yerine aynı sayıda Deri parçası ister. Hayvanların kendi derileri (Kurt derisi, Geyik derisi…) satılır ve görevlerde istenir. Eski kayıtlardaki her tabaklanmış deri 2 Deri parçası olur; Tanin, Meşe tanini ve v2.60 kabukları fiyatından sikkeye çevrilir.

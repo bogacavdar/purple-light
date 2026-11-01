@@ -18,6 +18,11 @@
 
 
 
+
+## v2.75 — her ateşte közle, közlenmiş = pişmiş
+
+- KOZ'dan sonra: Közlenmiş … eti → DB.c['Herhangi pişmiş et'], közlenmiş balık → 'Herhangi pişmiş balık'.
+- v258b: ateş tıklaması 18 px ve yalnızca çiğ yiyecek varken; interact yarıçapı 30; her FIRES için XTRA "Ateşte közle" (çiğ yiyecek varken, mağara/arena dışı).
 ## v2.74 — bilgi satırları üzerine gelince
 
 - 8332'deki `Object.assign(TREE_EXTRA,{…'Çam':[['Çam kozalağı',1]]})` v2.70 reçinesini eziyordu → Çam: kozalak + reçine. `treeTypes(m)` TREE_EXTRA düşmelerini de sayar (isNatural, görev oku hedefi).
