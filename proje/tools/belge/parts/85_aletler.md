@@ -6,6 +6,15 @@
 - **Geri kalan bütün aletler elle yapılır** (El yapımı: bilgisayarda **Tab**, telefonda el ikonu): Tuzak, Sapan, Bola, Dişbudak yayı ve Porsuk yayı (küçük av aletleri), Olta, Ağ, Kemik zıpkın, Balık kapanı ve deniz oltaları, Kürek, Tırmık, Tırpan, Sulama kabı, meşaleler, kazıyıcılar, Kemik iğne, Kirmen, Dokuma tezgâhı, Bileği taşı, Çekiç taşı, Öğütme taşı, Pişirme taşı, Taş havan, Pirit çakmağı. Tarifleri eskisi gibi **kazanda öğrenilir**; öğrenilince El yapımı listesinde çıkar, demircinin listesinde çıkmaz.
 - Elle yapılan bir aletten (dayanıklılığı olan) **aynı anda bir tane** taşınır: elindeyken yenisi yapılmaz ("zaten sende"), yeni yapılan tam keskinlikle gelir. Körelince Demirci Dursun eskisi gibi **bileyler**.
 
+## Silah bilgisi her yerde yazar (v2.58, Boğaç)
+
+Bir silahın ya da vuran bir aletin (kılıç, gürz, topuz, mızrak, balta, kazma; yay, asa ve silahlarda hasar) değerleri şu yerlerde yazar:
+- **Envanterde** eşyaya dokununca açılan kutuda ve eşyanın üstüne gelince (ipucu),
+- **Alet kemerinde** yuvanın üstüne gelince (ipucu) ve kemerin eşya seçme listesinde,
+- **Yapılırken**: kazanın ve örsün tarif listesinde ve El yapımı listesinde, tarifin adının altında.
+
+Yazılanlar: **Hasar** (temel; seviye ve güç iksiri ayrıca artırır), **hız** (saniyede vuruş), **menzil** (piksel), **keskinlik** (şu anki/en çok; tarif listesinde en çok) ve varsa **etkisi** (alevli: yakar, zehirli: zehirler, keskin: kanatır). Değerler oyunun vuruşta kullandığı değerlerle aynıdır.
+
 ## Madenler ve ekipman merdiveni (v2.48, Boğaç)
 
 ACT 1'in madenleri ve metal ekipmanı tek bir merdivene göre dizildi. Amaç: **her biyomda o biyomun madenleriyle bir öncekinden daha güçlü ve daha pahalı tam bir set yapılabilsin, biyom değiştirdikçe satılan madenler de daha pahalı olsun.** ACT 2 bu sürümde değişmedi (sonra aynı kurallarla ele alınacak).
