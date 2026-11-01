@@ -29,6 +29,15 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.82 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Orman'ın örslerinde set yoktu:** maden merdiveninde Orman'ın seti **Tunç** (Çayır'ın bakırı + Orman'ın kalayı). Ama Tunç seti kodda yanlışlıkla Çayır'a bağlıydı: Tunç'u Çayır'daki Dursun ve Durmuş dövüyor, Orman'daki **Durdu** ve **Duran**'ın örsünde yalnızca usta seti (Meşe kabuk) çıkıyordu. Artık Tunç silahlarını, baltasını, kazmasını ve zırhlarını Orman'da Durdu ve Duran (ve sonraki biyomların ustaları) döver.
+- Dursun'un "Tunç zamanı" ve Durmuş'un "Tunç miğfer" görevleri artık seni Orman'daki kuzenlerine yollar; "Tunç zamanı" Orman keşfedilince açılır.
+
+### Tasarım belgesi
+- Aletler · Madenler ve ekipman merdiveni: setin dövüldüğü yer. ACT 1 görevleri: D5, M5.
 ## Versiyon 2.81 · 1 Kasım 2026
 
 ### Arayüz

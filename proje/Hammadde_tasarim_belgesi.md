@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.81** ile birebir (1 Kasım 2026). Bu sürümde: almanak kartları aynı boyutta; tarifi öğrenilmeden alınmış eski görevler geri bırakılır. Önceki sürüm (2.80): Orman'a Fındık ağacı.
+Sürüm: **Versiyon 2.82** ile birebir (1 Kasım 2026). Bu sürümde: Tunç seti Orman'ın örslerinde dövülür (yanlışlıkla Çayır'a bağlıydı). Önceki sürüm (2.81): almanak kartları aynı boyutta.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -1308,7 +1308,7 @@ Kazanının başında, otları ve geceyi bilen sabırlı cadı.
 | D2 | Keskin işler | Dövdür: Taş kazma (Taş kazma tarifi öğrenilmeden açılmaz) | D1 · Taş kazma tarifi | D3, Durmuş 1 | – | 30 · 20 XP |
 | D3 | Çakmaktaşı balta | Dövdür: Çakmaktaşı balta | D2 | D4 | – | 50 · 35 XP |
 | D4 | Ağzı köreldi | Körelmiş bir aletini Dursun'a biledir: konuş → **Aletimi bile** → aletin yanındaki **Bile** (v2.46: görev kartı körelmiş aletin adını yazar, ör. "0/1 Taş balta bilet (Dursun · Aletimi bile)"; 2.45'e kadar bileme görevde sayılmıyordu, görev geçilemiyordu) | D3 · körelmiş bir alet | D5 | Bileme | 40 · 30 XP |
-| D5 | Tunç zamanı | Yap: Tunç külçesi; dövdür: Tunç balta, Tunç kazma ya da Tunç mızrak | D4 · Seviye 4 | D6, Durmuş 3 | Maden ve eritme | 150 · 120 XP |
+| D5 | Tunç zamanı | Yap: Tunç külçesi; dövdür: Tunç balta, Tunç kazma ya da Tunç mızrak | D4 · Seviye 4 | D6, Durmuş 3 | Maden ve eritme | 150 · 120 XP (v2.82: Orman'da Durdu'ya dövdür; Orman keşfedilince açılır) |
 | D6 | Ocağın kömürü | Getir: 5 Taş kömürü (Orman madeni) | D5 · Orman keşfedildi | D7, Durdu 1 | – | 90 · 60 XP |
 | D7 | Ocağın çanı | Getir: 6 Bakır cevheri, 3 Kalay cevheri | D6 · Seviye 7 | D8 | – | 110 · 70 XP |
 | D8 | Örsün tabanı | Getir: 4 Granit, 3 Kireçtaşı | D7 · Seviye 9 | – | – | 140 · 85 XP |
@@ -1372,7 +1372,7 @@ Dursun'un küçük kardeşi; korumayı her şeyden önemli sayar.
 | M2 | Sinir kirişi | Yap: 2 Sinir kirişi | M1 | M3 | – | 40 · 30 XP |
 | M3 | Tunç levha | Yap: 1 Tunç levha | M2 · D5 | M4 | – | 120 · 90 XP |
 | M4 | Deri astar | Getir: 4 Tavşan derisi, 2 Geyik derisi | M3 | M5 | – | 90 · 70 XP |
-| M5 | Tunç miğfer | Dövdür ve giy: Tunç miğfer (içine Deri parçası; v2.62) | M4 · Orman keşfedildi | M6, Duran 1 | Zırh giyme | 150 · 120 XP |
+| M5 | Tunç miğfer | Duran'a (Orman) dövdür ve giy: Tunç miğfer (içine Deri parçası; v2.62; v2.82: Tunç Orman'da dövülür) | M4 · Orman keşfedildi | M6, Duran 1 | Zırh giyme | 150 · 120 XP |
 | M6 | Unutulan kol | Getir: 2 Yaban atı derisi, 4 Sinir | M5 · Seviye 5 | M7 | – | 159 · 127 XP |
 | M7 | Kış yeleği | Getir: 3 Kurt derisi, 2 Geyik boynuzu | M6 · Seviye 7 | M8 | – | 169 · 135 XP |
 | M8 | İnce iş | Getir: 5 Sincap derisi, 2 Kunduz derisi | M7 · Seviye 9 | – | – | 179 · 143 XP |
@@ -4035,7 +4035,7 @@ ACT 1'in madenleri ve metal ekipmanı tek bir merdivene göre dizildi. Amaç: **
 3. **Her biyomda en az bir set** vardır: miğfer, zırh, eldiven, çizme, kılıç, mızrak, gürz, topuz, balta, kazma. Her set bir öncekinden güçlü ve pahalıdır.
 4. **Kademe = biyom numarası:** bir biyomun malzemesinden yapılan balta ve kazma o biyomun numarasını taşır (Çayır 1 … Mor Kristal Vadisi 6).
 5. **Biyom N'nin madenleri ve ağaçları N − 1. kademe ister** (Çayır'da ve Orman'da 1). Böylece bir alet en çok bir sonraki biyomu keser ve kazar; 2. biyomun aleti 4. biyomu, 3. biyomun aleti 5. biyomu açamaz.
-6. **Ergitilen metalde** kademe, tarifteki en geç biyomdan gelir (Tunç: Çayır'ın bakırı + Orman'ın kalayı → 2).
+6. **Ergitilen metalde** kademe, tarifteki en geç biyomdan gelir (Tunç: Çayır'ın bakırı + Orman'ın kalayı → 2). **Dövüldüğü yer de buna uyar (v2.82, Boğaç: "ormanda neden set yok"):** Tunç seti Orman'ın setidir; Orman'ın demircisi Durdu ve zırhçısı Duran (ve sonraki biyomlarınkiler) döver, Çayır'ın Dursun ve Durmuş'u dövmez. (2.81'e kadar Tunç yanlışlıkla Çayır'a bağlıydı; Orman'ın örslerinde yalnızca usta seti çıkıyordu.)
 7. Her madenden alet yapılmaz: madenlerin bir kısmı yemek (Tuz), yakıt (Taş kömürü), yapı (Kireçtaşı, Kumtaşı, Arduvaz), ateş (Pirit), şifa (Kükürt) ya da süs ve değer (Gümüş, Altın) içindir.
 
 ### Biyomların madenleri

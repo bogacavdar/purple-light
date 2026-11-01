@@ -25,6 +25,10 @@
 
 
 
+
+## v2.82 — Tunç Orman'a
+
+- v184 D.tiers: 'Tunç *' 0 → 1 (lowestFor/smithOf: Orman ve üstü örsler). Öteki metal setleri doğruydu (Bakır 0, Demir 2, Çelik 3, Kara çelik 4, Mor kristal 5). DATA: D5 r'ye ['bio',1], D5/M5 metinleri Durdu/Duran'a yönlendirir.
 ## v2.81 — almanak kartları eşit
 
 - DATA bloğu: `parkLocked()` (restore'dan sonra setTimeout 0): S.a'nın needRec'i doluysa ve tamamlanmamışsa S.a=null + veren kişinin uyarısı.

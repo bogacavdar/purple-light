@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.81** ile birebir (1 Kasım 2026). Bu sürümde: almanak kartları aynı boyutta; tarifi öğrenilmeden alınmış eski görevler geri bırakılır. Önceki sürüm (2.80): Orman'a Fındık ağacı.
+Sürüm: **Versiyon 2.82** ile birebir (1 Kasım 2026). Bu sürümde: Tunç seti Orman'ın örslerinde dövülür (yanlışlıkla Çayır'a bağlıydı). Önceki sürüm (2.81): almanak kartları aynı boyutta.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
