@@ -8,6 +8,69 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 2.51 · 1 Kasım 2026
+
+### Oynanış
+- **Set mantığı:** ilk adadaki her silah, alet ve zırh artık bir sete ait.
+  - Her setin 11 parçası var: miğfer, zırh, eldiven, çizme, kılıç, gürz, topuz, mızrak, yay, balta, kazma.
+  - Her türden **13 parça** var. Toplam 13 set:
+    - **Başlangıç seti** (Çayır, elle yapılır): Kürk başlık, **Kürk yelek** (yeni), Kürk eldiven, Deri çarık, Taş kılıç, **Taş gürz** (yeni), **Taş topuz** (yeni), Mızrak, Basit yay, Taş balta, Taş kazma.
+    - **6 metal seti:** Bakır, Tunç, Demir, Çelik, Kara çelik, Mor kristal.
+    - **6 usta seti:** her biyomun silahçısı ve zırhçısı yapar. Aynı biyomun metal setinden %12 güçlü; silahları biyomun etkisiyle doğar:
+      - Çayır: **Kemik ve çakmaktaşı**, keskin
+      - Orman: **Meşe ve granit**, keskin
+      - Bataklık: **Timsah**, zehirli
+      - Kayalık Dağ: **Gümüş ve kuvars**, keskin
+      - Kül Diyarı: **Ejder**, alevli. Ejder kılıcı, gürzü, topuzu, mızrağı, yayı, baltası, kazması; miğferi, zırhı, eldiveni, çizmesi.
+      - Mor Kristal Vadisi: **Ametist ve obsidyen**, zehirli
+  - Usta setlerinin baltası ve kazması o biyomun metal setiyle aynı kademede; daha hızlı çalışıyor ama daha çabuk köreliyor.
+  - Obsidyen balta ve kazma artık 6. kademe (Mor Kristal Vadisi'nin ustası Kudret yapıyor, tarifinde ametist var).
+- **Yeni parçalar:** usta setlerine yaklaşık 40 yeni silah, yay, alet ve zırh eklendi. Boşta kalan malzemeler bu tariflerde kullanılıyor: Lav pulu, Kül kurdu postu, Bazalt sivri ucu, Kızıl sedir sapı.
+- **Kaldırılan fazlalıklar:**
+  - 10 post giysi, Keten ve Boyalı tunik, 3 pelerin, Timsah derisi zırh, Tüylü başlık, Bataklık çizmesi.
+  - Kül Diyarı'nın eski eşyaları: Lav camı kılıcı, Kül böceği zırh, Akrep kabuğu çizme, Lav pulu eldiven.
+  - Bazalt balta, kazma ve mızrak.
+- **Ad değişikliği:** Ejder pulu zırh artık **Ejder zırhı**.
+- **Kafa lambası** setlere girmeyen tek özel eşya olarak kaldı.
+
+### Düzeltmeler
+- **Ejder kılıcı tarifinde Altın külçesi vardı.** Altın 2.48'den beri Mor Kristal Vadisi'nde olduğu için Kül Diyarı'ndaki ejder görevi tıkanabiliyordu. Tarif artık Kara çelik külçesi istiyor.
+- **Kaya'nın "Altın damar" görevi** aynı sebeple Kayalık Dağ'da yapılamıyordu. Artık 4 altın cevheri yerine **4 pirit** istiyor. "Pençe ve pirit" görevi de piriti "dağın yamaçlarından" istiyor.
+
+### Görevler
+- Turan'ın "Bazalt kazma" görevi → **Kara çelik kazma** dövdür.
+- Turan'ın "Lavın kenarı" görevi ve kuzen görevi → **Kara çelik kılıç** dövdür.
+- Tufan'ın "Kül zırhı" görevi ve kuzen görevi → **Kara çelik zırh** dövdür.
+- Toygar'ın "Çamur yürüyüşü" görevi: Kamış çizme artık Zırhçı Veli'nin işi (kamış, timsah derisi ve demir halkayla).
+- Turan, Tufan, Veli ve Kudret kendilerini anlatırken yeni setlerini anıyor.
+
+### Arayüz
+- Arenada her türün grubunda 13 parça var: kılıçlar, gürzler, topuzlar, mızraklar, yaylar, baltalar, kazmalar. Bütün yeni setler arenada da seçilebiliyor.
+
+### Görsel
+- Yeni parçaların kendi simgeleri var: metal ya da malzeme rengi, setin vurgu rengi; yeni yaylar kendi ağacının renginde.
+
+### Kayıtlar
+- Eski kayıtlarda kaldırılan eşyalar **eski fiyatıyla sikkeye** çevriliyor: çantadakiler, giyilenler ve yuvalardakiler. Yüklenince ne kadar sikke geldiği yazıyor.
+- Ejder pulu zırh, Ejder zırhı oluyor.
+- Eski etkili Çakmaktaşı, Kuvars ve Obsidyen mızraklar etkisiz mızrağa dönüyor; bu mızraklar artık etkileriyle doğuyor.
+
+### Tasarım belgesi
+- Yeni bölüm: **Aletler · Bütün setler** (13 setin tablosu, yeni tarifler, kaldırılanlar, görev değişiklikleri).
+- Alet ve zırh tabloları oyunun verisinden yeniden üretildi.
+- Dövüş tabloları, ustaların dövdükleri ve görev satırları güncellendi. Tarif ve eşya dizininden kaldırılan eşyalar çıkarıldı.
+
+### Proje
+- Çalışma kurallarına yeni bir kural eklendi: **oyun ve arena ortaktır.** Oyunda eklenen ya da değişen her silah, zırh, ok ve etki aynı sürümde arenaya da yansıtılıyor.
+- Bu sürüm oynanarak test edilmedi. Sözdizimi kontrolü yapıldı. Ayrıca bir kez bakıldı:
+  - Oyun hatasız açılıyor.
+  - Her türden 13 parça var.
+  - Yeni simgeler çiziliyor.
+  - Arenada gruplar tamam.
+- Eski kayıtların sikkeye çevrilmesi gerçek bir eski kayıtla denenmedi.
+
+---
+
 ## Versiyon 2.50 · 1 Kasım 2026
 
 ### Oynanış

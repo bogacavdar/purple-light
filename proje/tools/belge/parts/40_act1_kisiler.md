@@ -61,7 +61,7 @@ Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanınd
 | 8 | 25 farklı tarif öğren | – | 150 | 50 | – |
 | 9 | İlk tunç külçeni dök | Bakır ve Kalay cevherini kömür ya da turbayla eritip külçe yap; 3 Bakır külçesi + 1 Kalay külçesi → Tunç külçesi (el yapımı) | 150 | 240 | Bakır, Kalay, Tunç külçesi |
 | 10 | Demir külçesi yap | 3 Demir cevheri (Bataklık) + 2 kömür/turba + 1 taş | 200 | 320 | Demir külçesi, Demir levha |
-| 11 | Savunmanı 60'a çıkar | Tunç takım 50 eder; bir demir parça 60'ı geçirir | 200 | 240 | Tunç levha, Tunç miğfer, Tunç zırh, Timsah derisi zırh, Demir zırh |
+| 11 | Savunmanı 60'a çıkar | Tunç takım 50 eder; bir demir parça 60'ı geçirir | 200 | 240 | Tunç levha, Tunç miğfer, Tunç zırh, Demir zırh |
 | 12 | Doğu geçidini aç | 2 Kaya patlatıcı, 4. kademe kazma (Kuvars ya da Çelik) ya da daha iyisi, kaya yığınının başında (Kayalık Dağ ↔ Kül Diyarı); patlama bütün sıradağı çökertir | 250 | 100 | Kaya patlatıcı |
 | 13 | Kül Diyarı'nda lav kertenkelesi avla | 1 Lav kertenkelesi | 300 | 480 | Ateş çiçeği merhemi |
 | 14 | Eşinden kalan bütün izleri bul | 6 iz | 300 | 600 | Gemi (görevden sonra) |
@@ -150,7 +150,7 @@ Toplam 2.020 sikke, 2.130 XP.
 
 **Yer:** Dursun'un hemen yanında, ikinci örs. **Tanışma:** öğretici bitince.
 
-- Kademe 0 zırhları döver (v1.84): Tunç miğfer, zırh, eldiven, çizme ve ACT 2 malzemeleriyle yapılan Fırtına tüyü başlık, Mantar lifi eldiven, Hurda çizme, Kristal miğfer, Ejder pulu eldiven, Meka çizme. Demir zırhları Bataklık'taki kuzeni **Zırhçı Veli**, Ejder pulu zırhı Kül Diyarı'ndaki **Zırhçı Tufan** (ya da üstü) döver. İşçilik %15.
+- Kademe 0 zırhları döver (v1.84): Tunç miğfer, zırh, eldiven, çizme ve ACT 2 malzemeleriyle yapılan Fırtına tüyü başlık, Mantar lifi eldiven, Hurda çizme, Kristal miğfer, Ejder pulu eldiven, Meka çizme. Demir zırhları Bataklık'taki kuzeni **Zırhçı Veli**, Ejder zırhıı Kül Diyarı'ndaki **Zırhçı Tufan** (ya da üstü) döver. İşçilik %15.
 - "Kuzenlerin var mı?" diye sorulunca beş zırhçı kuzenini (Duran, Veli, Kayhan, Tufan, Kuvvet) sayar.
 - Hikâyesi: babası Demirhan Usta (Dursun'la aynı). Kendi sahnesi ("Kumsaldaki çekiç") yerine ailenin ortak sahnesi oynar (v1.84).
 - Deri, kürk ve kemik zırhlar elle yapılır (Tab).
@@ -202,9 +202,9 @@ Kuzen cadıların kazanı **Zümrüt'ün kazanıyla aynı mantıkta** çalışı
 |---|---|---|---|
 | 0 · Çayır | Demirci Dursun | Zırhçı Durmuş | Alet/silah: Çam yayı, Ağ, Balık kapanı, Bola, Boynuz kazma, Dokuma tezgâhı, Kemik zıpkın, Kürek, Meşale, Mızrak, Olta, Sapan, Sulama kabı, Taş balta, Taş bıçak, Taş kazma, Taş kılıç, Tunç balta, Tunç gürz, Tunç kazma, Tunç kılıç, Tunç mızrak, Tunç topuz, Bakır balta, Bakır gürz, Bakır kazma, Bakır kılıç, Bakır mızrak, Bakır topuz, Tuzak, Tırmık, Tırpan, Çakmaktaşı balta, Çakmaktaşı bıçak, Çakmaktaşı kazma, Çakmaktaşı kazıyıcı, Çakmaktaşı mızrak, Çekiç taşı. Zırh: Bakır çizme, Bakır eldiven, Bakır miğfer, Bakır zırh, Ejder pulu eldiven, Fırtına tüyü başlık, Hurda çizme, Kristal miğfer, Mantar lifi eldiven, Meka çizme, Tunç eldiven, Tunç miğfer, Tunç zırh, Tunç çizme |
 | 1 · Orman | Silahçı Durdu | Zırhçı Duran | Alet/silah: Meşe yayı, Bileği taşı, Granit balta, Granit gürz, Granit kazma, Kemik iğne, Kirmen, Öğütme taşı. Zırh: Ceviz kabuğu miğfer, Meşe kabuk zırh |
-| 2 · Bataklık | Silahçı Ali | Zırhçı Veli | Alet/silah: Kızılağaç yayı, Demir balta, Demir gürz, Demir kazma, Demir kılıç, Demir mızrak, Demir topuz, Dişbudak yayı, Pişirme taşı, Timsah dişi kılıcı. Zırh: Bataklık çizmesi, Demir eldiven, Demir miğfer, Demir zırh, Demir çizme, Timsah pulu zırh |
+| 2 · Bataklık | Silahçı Ali | Zırhçı Veli | Alet/silah: Kızılağaç yayı, Demir balta, Demir gürz, Demir kazma, Demir kılıç, Demir mızrak, Demir topuz, Dişbudak yayı, Pişirme taşı, Timsah dişi kılıcı. Zırh: Demir eldiven, Demir miğfer, Demir zırh, Demir çizme, Timsah pulu zırh |
 | 3 · Kayalık Dağ | Silahçı Kaya | Zırhçı Kayhan | Alet/silah: Akçaağaç yayı, Gümüş kılıç, Kuvars balta, Kuvars bıçak, Kuvars kazma, Kuvars kazıyıcı, Kuvars mızrak, Pirit çakmağı, Porsuk yayı, Çelik balta, Çelik gürz, Çelik kazma, Çelik kılıç, Çelik mızrak, Çelik topuz. Zırh: Gümüş pullu zırh, Kartal tüyü miğfer, Çelik çizme, Çelik eldiven, Çelik miğfer, Çelik zırh |
-| 4 · Kül Diyarı | Silahçı Turan | Zırhçı Tufan | Alet/silah: Kızıl sedir yayı, Bazalt balta, Bazalt bıçak, Bazalt kazma, Bazalt kazıyıcı, Bazalt mızrak, Ejder kılıcı, Lav camı kılıcı, Obsidyen balta, Obsidyen bıçak, Obsidyen kazma, Obsidyen kazıyıcı, Obsidyen mızrak, Taş havan, Kara çelik balta, Kara çelik gürz, Kara çelik kazma, Kara çelik kılıç, Kara çelik mızrak, Kara çelik topuz. Zırh: Akrep kabuğu çizme, Ejder pulu zırh, Kül böceği zırh, Kara çelik çizme, Kara çelik eldiven, Kara çelik miğfer, Kara çelik zırh |
+| 4 · Kül Diyarı | Silahçı Turan | Zırhçı Tufan | Alet/silah: Ejder kılıcı, Ejder gürzü, Ejder topuzu, Ejder mızrağı, Ejder yayı, Ejder baltası, Ejder kazması, Kızıl sedir yayı, Bazalt bıçak, Bazalt kazıyıcı, Ejder kılıcı, Obsidyen balta, Obsidyen bıçak, Obsidyen kazma, Obsidyen kazıyıcı, Obsidyen mızrak, Taş havan, Kara çelik balta, Kara çelik gürz, Kara çelik kazma, Kara çelik kılıç, Kara çelik mızrak, Kara çelik topuz. Zırh: Ejder miğferi, Ejder eldiveni, Ejder çizmesi, Ejder zırhı, Kara çelik çizme, Kara çelik eldiven, Kara çelik miğfer, Kara çelik zırh |
 | 5 · Mor Kristal Vadisi | Silahçı Kudret | Zırhçı Kuvvet | Alet/silah: Gece ağacı yayı, Ametist kılıcı, Mor kristal balta, Mor kristal gürz, Mor kristal kazma, Mor kristal kılıç, Mor kristal mızrak, Mor kristal topuz. Zırh: Işık pulu eldiven, Kristal ipek zırh, Mor kristal çizme, Mor kristal eldiven, Mor kristal miğfer, Mor kristal zırh |
 
 ### Çalışma yerleri (görsel fark)
@@ -231,13 +231,9 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 | Ceviz kabuğu miğfer | Zırh · Baş | +15 savunma | 6 Ceviz, 1 Meşe kalası, 1 Tabaklanmış karaca derisi, 2 İri diken | Zırhçı Duran (Orman) ve üstü | 280 |
 | Timsah dişi kılıcı | Kılıç (silah) | 38 hasar · 140 kullanım | 4 Demir külçesi, 3 Timsah dişi, 1 Bataklık servisi sapı, 1 Tabaklanmış su samuru derisi | Silahçı Ali (Bataklık) ve üstü | 1.011 |
 | Timsah pulu zırh | Zırh · Gövde | +46 savunma · direnç: kanama %40, metal | 2 Demir levha, 3 Timsah derisi, 2 Bataklık kurdu postu, 1 Sinir kirişi | Zırhçı Veli (Bataklık) ve üstü | 1.177 |
-| Bataklık çizmesi | Zırh · Ayak | +14 savunma · direnç: zehir %25, çamurda yavaşlatmaz | 1 Demir levha, 3 Su samuru derisi, 6 Kamış, 2 Turba | Zırhçı Veli (Bataklık) ve üstü | 479 |
 | Gümüş kılıç | Kılıç (silah) | 44 hasar · 160 kullanım | 4 Gümüş külçesi, 3 Kuvars, 1 Ardıç sapı, 2 Kartal pençesi | Silahçı Kaya (Kayalık Dağ) ve üstü | 472 |
 | Gümüş pullu zırh | Zırh · Gövde | +52 savunma · direnç: kanama %35, metal | 3 Gümüş külçesi, 3 Demir halka, 2 Tabaklanmış mağara ayısı derisi, 2 Ayı pençesi | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 1.396 |
 | Kartal tüyü miğfer | Zırh · Baş | +24 savunma · metal | 6 Kartal tüyü, 1 Gümüş külçesi, 2 Öküz boynuzu, 1 Tabaklanmış yaban öküzü derisi | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 435 |
-| Lav camı kılıcı | Kılıç (silah) | 55 hasar · 200 kullanım | 4 Lav camı, 3 Bazalt, 3 Demir külçesi, 1 Kızıl sedir sapı, 1 Ateş bezesi | Silahçı Turan (Kül Diyarı) ve üstü | 955 |
-| Kül böceği zırh | Zırh · Gövde | +64 savunma · direnç: yanık %50, metal | 5 Kül böceği kabuğu, 2 Demir levha, 2 Kül kurdu postu, 2 Lav pulu | Zırhçı Tufan (Kül Diyarı) ve üstü | 1.736 |
-| Akrep kabuğu çizme | Zırh · Ayak | +18 savunma · direnç: zehir %35 | 3 Akrep kabuğu, 1 Lav pulu, 1 Herhangi tabaklanmış deri, 1 Akrep iğnesi | Zırhçı Tufan (Kül Diyarı) ve üstü | 620 |
 | Ametist kılıcı | Kılıç (silah) | 58 hasar · 240 kullanım | 5 Ametist, 3 Obsidyen, 2 Kristal, 1 Işık ağacı sapı, 2 Gölge dişi | Silahçı Kudret (Mor Kristal Vadisi) ve üstü | 763 |
 | Kristal ipek zırh | Zırh · Gövde | +72 savunma · direnç: kanama %25, yanık %25, zehir %25 | 5 Kristal ipek, 3 Ametist, 2 Demir levha, 2 Tabaklanmış gölge postu | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 2.554 |
 | Işık pulu eldiven | Zırh · El | +18 savunma · direnç: zehir %35 | 4 Işık pulu, 2 Kristal, 1 Tabaklanmış işık tilkisi postu | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 1.000 |
@@ -297,10 +293,10 @@ Her kuzenin 3 görevi vardır; hepsi **kendi biyomunda** bulunan bir şeyi ister
 | Cadı Mercan | 3 | Kül cini | Avla: 2 Kül cini | 460 | 700 |
 | Silahçı Turan | 1 | Bazalt ve kükürt | Getir: 6 Bazalt, 4 Kükürt | 340 | 500 |
 | Silahçı Turan | 2 | Akrep avı | Avla: 2 Ateş akrebi | 440 | 680 |
-| Silahçı Turan | 3 | Lavın kenarı | Döv(dür): Lav camı kılıcı | 520 | 800 |
+| Silahçı Turan | 3 | Lavın kenarı | Döv(dür): Kara çelik kılıç | 520 | 800 |
 | Zırhçı Tufan | 1 | Böcek kabuğu | Getir: 4 Kül böceği kabuğu | 340 | 500 |
 | Zırhçı Tufan | 2 | Kül kurtları | Avla: 3 Kül kurdu | 440 | 680 |
-| Zırhçı Tufan | 3 | Kül zırhı | Döv(dür): Kül böceği zırh | 520 | 800 |
+| Zırhçı Tufan | 3 | Kül zırhı | Döv(dür): Kara çelik zırh | 520 | 800 |
 
 #### Mor Kristal Vadisi ailesi
 
@@ -424,3 +420,6 @@ Takvime bağlı gezginler; ne zaman geldikleri ve ne yaptıkları "Oyunun akış
 
 
 Son görev (Yeni bir gemi) bitince Barbaros'la konuş: hikâye sahnesi, ardından "Götür beni" → deniz yolculuğu (yaklaşık 14 sn) → **ACT 2**.
+
+
+> **v2.51 · usta setleri:** her biyomun silahçısı ve zırhçısı kendi biyomunun usta setini döver (Aletler · Bütün setler). Yukarıdaki listelere ek olarak: Orman — Granit kılıç, Granit topuz, Granit mızrak, Ihlamur yayı, Meşe kabuk eldiven ve çizme; Bataklık — Timsah dişi gürz, topuz, mızrak, balta, kazma, Söğüt yayı, Timsah miğfer, Timsah eldiven, Kamış çizme; Kayalık Dağ — Kuvars gürz ve topuz, Huş yayı, Gümüş eldiven ve çizme; Mor Kristal Vadisi — Ametist gürz ve topuz, Işık ağacı yayı, Ametist miğfer, Kristal ipek çizme, Obsidyen balta, kazma ve mızrak (artık Kudret döver); Çayır — Çakmaktaşı kılıç, gürz ve topuz, Kemik yay (Kemik eldiven ve çizme elle yapılır).
