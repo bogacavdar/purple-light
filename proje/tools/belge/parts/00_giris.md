@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.79** ile birebir (1 Kasım 2026). Bu sürümde: kur/ateş başında/balık/yatak/ev görevleri de tarif öğrenilmeden verilmez. Önceki sürüm (2.78): görev kartının yer satırı malzeme adını yazar.
+Sürüm: **Versiyon 2.80** ile birebir (1 Kasım 2026). Bu sürümde: Orman'a Fındık ağacı geldi (silkelenince fındık, kesilince Fındık odunu). Önceki sürüm (2.79): bütün görev türleri tarif öğrenilmeden verilmez.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

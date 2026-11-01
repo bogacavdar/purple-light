@@ -23,6 +23,10 @@
 
 
 
+
+## v2.80 — Fındık ağacı
+
+- TREE_TYPES'a Fındık (fruit Fındık), BTREE[1] (Orman), TREE_TIER 1, WOODC, 'Fındık odunu' fiyat 3 + Herhangi odun. V.trees (set verisi) değişmedi. Ağaçlar yüklemede konumdan yeniden üretildiği için eski kayıtlarda Orman'daki ağaç türlerinin dağılımı biraz değişir.
 ## v2.79 — needRec bütün türler
 
 - needRec: place (craftOnly, öğrenilmemiş, elde değil), camp (Kamp ateşi), c fish: (Olta), bed (yataklardan biri), house (HOUSESET'teki REC evlerden biri). pickFiller → Kemal 'tarifini öğren' işi. Gemi (L5) bilinçli olarak dışarıda (hikâye görevi).

@@ -273,7 +273,8 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Erzak çukuru | 22 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan / Marangoz Çınar yapar, yere kurulur | – |
 | Eski devre ² | 30 | – | Yerden toplanır: Hurda Çölü (ACT 2) | – |
 | Et şişi | 28 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Közlenmiş şiş |
-| Fındık | 2 | yenir +5 | Av: Sincap düşürür %35 (ACT 1 · Orman) | Kavrulmuş fındık |
+| Fındık | 2 | yenir +5 | Ağaç: Fındık ağacı silkelenince (ACT 1 · Orman; v2.80) · Av: Sincap düşürür %35 (ACT 1 · Orman) | Kavrulmuş fındık |
+| Fındık odunu | 3 | – | Balta ile Fındık ağacından: Orman (ACT 1; v2.80) | Herhangi odun isteyen tarifler |
 | Fırtına tüyü ² | 40 | – | Av: Fırtına kartalı düşürür %90 (ACT 2 · Yüzen Kayalar) | Fırtına tüyü başlık |
 | Fırtına tüyü başlık ² | 1.980 | giyilir +22 savunma | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | Kristal miğfer |
 | Füzyon taşı ² | 80 | – | Yerden toplanır: Gök Rıhtımı (ACT 2) | Meteor demiri külçesi |

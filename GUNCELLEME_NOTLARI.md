@@ -27,6 +27,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.80 · 1 Kasım 2026
+
+### Oynanış
+- **Fındık ağacı:** Orman'a yeni bir meyve ağacı geldi. Boş elle silkeleyince **fındık** düşer (silkelenen ağaç bir süre sonra yeniden meyve verir); 1. kademe baltayla kesilince **Fındık odunu** ve dal verir. Fındık odunu "herhangi odun" isteyen tariflerde kullanılır. Sincaplar da fındık düşürmeye devam eder; Fidan'ın "Fındık zamanı" görevi artık kolay.
+
+### Tasarım belgesi
+- ACT 1 · Orman ağaçları: Fındık. Eşya dizini: Fındık'ın kaynağı, Fındık odunu.
 ## Versiyon 2.79 · 1 Kasım 2026
 
 ### Düzeltmeler
