@@ -13,6 +13,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.66 · 1 Kasım 2026
+
+### Oynanış
+- **Mağaraya tıklayarak girilir:** mağaranın ağzına tıklayınca (ya da dokununca) karakter oraya yürür ve "Mağaraya girmek ister misin?" penceresi açılır. Pencerede iki şart yazar: ✓/✗ en az X. seviye, ✓/✗ elinde yanan bir meşale. **Mağaraya gir** düğmesi ancak ikisi de tamamsa basılır. Vazgeç (ya da Esc) kapatır, Enter girer. Ağzın önünde F de aynı pencereyi açar.
+- **Mağaradan çıkış:** içeride girişin olduğu yerde ışıklı bir **ÇIKIŞ** tabelası ve aşağı ok var. Tabelaya tıklayınca ya da yanında F'ye basınca "Mağaradan çık" penceresi açılır.
+
+### Düzeltmeler
+- **Meşale mağarada çok hızlı bitiyordu:** dışarıda yağmur ya da fırtına varken meşale mağaranın içinde de 2–2,7 kat hızlı yanıyordu. Mağarada hava olmadığı için artık içeride hep normal hızda yanar.
+- Meşale sol eldeyken her saldırıda harcanan pay mağarada üçte bire indi (%4,5 → %1,5); yarasa sürüleriyle dövüşürken meşale bir anda bitmez.
+
+### Tasarım belgesi
+- Mağaralar: şartlar penceresi, ÇIKIŞ tabelası, mağarada meşale kuralı.
 ## Versiyon 2.65 · 1 Kasım 2026
 
 ### Arayüz

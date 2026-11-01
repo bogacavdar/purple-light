@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.65** ile birebir (1 Kasım 2026). Bu sürümde: silah ve zırh özellikleri her yerde: her eşya karesinde ⚔/🛡 etiketi, listelerde tam satır, tarif kitabında kapalı tariflerde de. Önceki sürüm (2.64): zırhlar da tarif ekranında, envanterde ve kemerde ne verdiğini gösterir.
+Sürüm: **Versiyon 2.66** ile birebir (1 Kasım 2026). Bu sürümde: mağara girişine tıklayınca gir/çık penceresi (şartlar ✓/✗), içeride ışıklı ÇIKIŞ tabelası; mağarada hava meşaleyi etkilemez, saldırıda meşale aşınması üçte bir. Önceki sürüm (2.65): silah ve zırh özellikleri her yerde.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

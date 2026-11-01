@@ -9,6 +9,12 @@
 
 
 
+
+## v2.66 — mağara girişi, meşale
+
+- v232 mağara bloğu yerinde: kapı/çıkış XTRA'ları DOORX/OUTX'te; act → `askEnter`/`askLeave` (#cvask penceresi, şartlar ✓/✗, Enter/Esc). pickAt sarmalayıcısı: ağız elipsi (62×50, door.y−28) ve içeride çıkış (36 px) tıklaması → xtra hedefi. drawGround sarmalayıcısı ÇIKIŞ tabelası (çıkıştaki 90 px ışığın içinde).
+- `torchRate` mağarada hava çarpanını 1 alır; `wearTorch` mağarada WEAR/3.
+- Açık: Boğaç'ın "bazı canlılar saldırırken iki ayrı görünüyor" görsel hatası yeniden üretilemedi; hangi canlı olduğu soruldu.
 ## v2.65 — her yerde ⚔/🛡
 
 - `<script id="v265">` + `<style id="v265-st">`: body'de MutationObserver (yalnızca eklenen Element'lerde, rAF ile tek geçiş) → data-n/isel/bk/hs/eqs/wear/hp/cr/aw/pn/qn/tr/d taşıyan elemanlara: karelerde `.pl-st` rozeti (⚔hasar/🛡savunma), listelerde `.pl-stl` tam satır, title'a tam bilgi. Metin `__plWInfo` (v258c) ile, ad+keskinlik anahtarlı önbellekte. bookInfo kapalı tariflerde de bilgi ekler. Ölçüm yapılmadı (kare döngüsüne dokunmuyor; metin güncellemeleri tetiklemez).
