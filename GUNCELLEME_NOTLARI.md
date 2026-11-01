@@ -17,6 +17,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.70 · 1 Kasım 2026
+
+### Oynanış
+- **Hiçbir tarif bıçak istemez:** eskiden Taş bıçak ya da Çakmaktaşı bıçak isteyen 64 tarif (saplar, kaşıklar, kabuklar, Kemik zıpkın, Sandal küreği, Havyar, Balık pulu, Kemik flüt…) artık yanında alet istemez.
+- **Çam ve Ladin reçine verir:** Çam kesilince her odunla birlikte 1 **Çam reçinesi**, Ladin kesilince 1 **Ladin reçinesi** düşer. Reçine isteyen tarife (Meşale, Kara cila…) reçineyi götürmen yeter.
+- Çam kabuğu, Ladin kabuğu, Çam reçinesi ve Ladin reçinesi tarifleri kaldırıldı. Reçineler artık doğal malzeme sayılır; bir kez eline geçince Nazlı da satar.
+
+### Kayıtlar
+- Eski kayıtlardaki Çam kabuğu ve Ladin kabuğu kendi reçinesine dönüşür.
+
+### Tasarım belgesi
+- Tarifler: "Hiçbir tarif bıçak istemez" ve "Reçine ağaçtan düşer" kuralı; tariflerin alet sütunlarından bıçak silindi. Eşya dizini: reçinelerin kaynağı, kabuklar silindi.
 ## Versiyon 2.69 · 1 Kasım 2026
 
 ### Arayüz

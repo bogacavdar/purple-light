@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.69** ile birebir (1 Kasım 2026). Bu sürümde: El yapımı listesinde bütün Yap düğmeleri sağda alt alta, ×5 ve Hepsi onların solunda. Önceki sürüm (2.68): tarlacılık şimdilik yok; Nazlı öğrenilen tariflerin eşyalarını satar; madenler taş da verir.
+Sürüm: **Versiyon 2.70** ile birebir (1 Kasım 2026). Bu sürümde: hiçbir tarif bıçak istemez; Çam ve Ladin kesilince reçine düşer (kabuk ve reçine tarifleri kalktı). Önceki sürüm (2.69): El yapımı listesinde Yap düğmeleri sağda alt alta.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

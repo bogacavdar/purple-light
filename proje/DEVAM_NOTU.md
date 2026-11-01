@@ -13,6 +13,10 @@
 
 
 
+
+## v2.70 — bıçaksız tarifler, reçine ağaçtan
+
+- db: 64 tarifin `t`'sinden bıçak silindi; Çam/Ladin kabuğu ve reçinesi tarifleri (ve kabuk fiyatları) silindi. TREE_EXTRA: Çam → Çam reçinesi 1, Ladin → Ladin reçinesi 1. `<script id="v270">`: eski kayıtta kabuk → reçine, found/belt temizliği.
 ## v2.69 — El yapımı düğme düzeni
 
 - `.rr.hq` CSS yerinde: row-reverse + order (Yap [data-q=1] 0, ×5 1, Hepsi 2, Yak 3), Yap min-width 58px.
