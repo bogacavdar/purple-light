@@ -5,6 +5,7 @@
 - `<style id="v253-desk">` (min-width:721px, pointer:fine, `:not(.v50m)`): #tut 18/16px, #sqcard 16px, b3 çipleri 17px, #hotbar kutuları 92px (iki kat).
 - `add()` artık `pickToast(name,q)`: aynı adın bildirimi ekrandaysa (`PICKT[name].el.isConnected`) silinip `+n` ile yeniden açılır (süre baştan); belge `20_sistemler.md` "Toplama bildirimi birikir".
 - Ana menü "Güncelleme notları" (`#t-notes` → `#relnotes`, `<style id="v253-rn">`, `<script id="v253rn">`). İçerik `<!--RELNOTES-->…<!--/RELNOTES-->` arasında; `proje/tools/notlar/notlar.py` (yayinla.sh içinde) en üstteki `## Versiyon` bölümünü Tasarım belgesi/Proje olmadan prototipe ve index.html'e basar. Elle not ekledikten sonra yayinla.sh'den önce index eşitlenirse sorun yok: ikisine ayrı ayrı yazar.
+- "Uygulama olarak indir": `#t-install` (`#ttop`'un başında, `.tib.tinst`), `<script id="v253inst">`: `beforeinstallprompt` yakalanır → `prompt()`; iOS / Mac Safari (yalnızca https) için `#instov` adım penceresi; standalone/fullscreen/minimal-ui ya da `appinstalled` sonrası gizli. Sahte `beforeinstallprompt` ile denendi (düğme göründü, prompt çağrıldı, sonra gizlendi); gerçek cihazda yüklenmedi.
 - Kontrol: chk.js 0 hata; yükleme, kart metni, yeni düğüm eklenmesi ve 1366×768 ekran görüntüsünde kemer bakıldı.
 
 ## v2.52 (1 Kasım 2026) · sevdiğin kişiyi seç (iki adımlı yaratma), metinler/izler/teklif ona göre

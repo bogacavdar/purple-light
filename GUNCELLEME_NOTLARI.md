@@ -24,10 +24,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Yan görev kartı ve takip çipleri daha büyük.
   - Alttaki **1-2-3-4-5 alet kemeri** iki kat büyük.
 - **Ana menüde "Güncelleme notları".** Sürüm yazısının hemen altında; tıklayınca son sürümde nelerin değiştiği oyunun içinde açılıyor (internetsiz de). **Tamam** ya da **Esc** ile kapanır.
+- **Oyunu uygulama olarak indir.** Oyun cihazına yüklenebiliyorsa ana menünün sağ üstünde **"Uygulama olarak indir"** düğmesi çıkıyor. Bilgisayarda ve Android'de (Chrome, Edge, Samsung tarayıcısı) tek dokunuşla yükleniyor. iPhone/iPad'de ve Mac'te Safari'de düğme, ana ekrana ya da Dock'a eklemenin iki adımını gösteriyor. Yüklenen oyun kendi penceresinde, tam ekran ve internetsiz de açılıyor. Oyun zaten uygulama olarak açıksa ya da tarayıcı yüklemeye izin vermiyorsa düğme görünmüyor.
 
 ### Tasarım belgesi
 - Akış: "Öğretici malzemeleri yer değiştirmez", Kemal'in 2. adımı (5 böğürtlenin hepsi, sayaçlar, yanan düğme).
-- Sistemler: "Bilgisayarda kart yazıları daha büyük (v2.53)", "Toplama bildirimi birikir (v2.53)"; Akış: ana menüde "Güncelleme notları".
+- Sistemler: "Bilgisayarda kart yazıları daha büyük (v2.53)", "Toplama bildirimi birikir (v2.53)"; Akış: ana menüde "Güncelleme notları" ve "Uygulama olarak indir".
 
 ## Versiyon 2.52 · 1 Kasım 2026
 
