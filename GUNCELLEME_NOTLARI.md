@@ -12,6 +12,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Düzeltmeler
 - **Öğreticideki malzemeler artık ışınlanmıyor.** Kemal'in böğürtlen dersinde sen çalıya yürürken çalı başka bir yere atlıyordu. Artık haritadaki hiçbir çalı ya da malzeme yerinden oynamıyor; yakında uygun bir tane yoksa boş bir yerde **yeni bir tane** bitiyor ve ok ona bağlı kalıyor. Diğer öğretmenlerin derslerine bakıldı: onlar zaten yeni malzeme koyuyordu, taşıyan başka yer yoktu.
+- **Toplama bildirimi artık sayıyor.** Aynı şeyden art arda toplayınca her seferinde yeni bir "+1 Odun" çıkmıyor; ekrandaki bildirim **+2, +3 Odun** diye güncelleniyor.
 
 ### Oynanış
 - **Kemal 5 böğürtlenin beşini de yemen gerektiğini açıkça söylüyor.** İlk kartta "5 böğürtlen topla ve beşini de ye" yazıyor; altında **Toplanan x/5 · Yenen y/5** sayacı ve yediklerinin çubuğu var. İkinci kartın başlığı "Kemal · 5 böğürtlen ye"; **Yenen y/5** sayacı her lokmada artıyor.
@@ -25,7 +26,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Akış: "Öğretici malzemeleri yer değiştirmez", Kemal'in 2. adımı (5 böğürtlenin hepsi, sayaçlar, yanan düğme).
-- Sistemler: "Bilgisayarda kart yazıları daha büyük (v2.53)".
+- Sistemler: "Bilgisayarda kart yazıları daha büyük (v2.53)", "Toplama bildirimi birikir (v2.53)".
 
 ## Versiyon 2.52 · 1 Kasım 2026
 

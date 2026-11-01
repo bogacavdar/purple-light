@@ -3,6 +3,7 @@
 - `bringBerry` ve telefon öğreticisindeki "parmağa yakın getir" artık mevcut düğümü taşımıyor; boş yerde yeni düğüm (`tutN:1`) ekliyor, ok `tutN`'yi önceliyor. Ölü `if(false)0;` silindi. Taşıyan başka öğretici kodu yok (`tzPlace` zaten push ediyor; 6021 yalnızca ölü düğüm yeniden doğuşu).
 - Kemal kartları (tz 1/2) sayaç + `.tbar`; `tzAte` her lokmada renderTut; yemek düğmesi `tz===2 || (tz===1 && çantada böğürtlen)` boyunca pulse (b3After + v63 sarmalı).
 - `<style id="v253-desk">` (min-width:721px, pointer:fine, `:not(.v50m)`): #tut 18/16px, #sqcard 16px, b3 çipleri 17px, #hotbar kutuları 92px (iki kat).
+- `add()` artık `pickToast(name,q)`: aynı adın bildirimi ekrandaysa (`PICKT[name].el.isConnected`) silinip `+n` ile yeniden açılır (süre baştan); belge `20_sistemler.md` "Toplama bildirimi birikir".
 - Kontrol: chk.js 0 hata; yükleme, kart metni, yeni düğüm eklenmesi ve 1366×768 ekran görüntüsünde kemer bakıldı.
 
 ## v2.52 (1 Kasım 2026) · sevdiğin kişiyi seç (iki adımlı yaratma), metinler/izler/teklif ona göre

@@ -2491,7 +2491,11 @@ function annNext(){clearTimeout(discTimer);const el=document.getElementById('dis
 function lvlFirst(){if(annCur){annQ.unshift(annCur);annCur=null;document.getElementById('discover').hidden=true}lvlUntil=performance.now()+3000;clearTimeout(discTimer);discTimer=setTimeout(annNext,3150)}
 function gain(name,q=1){
   if(!(name in inv)){inv[name]=0;if(order.indexOf(name)<0)order.push(name)} /* v1.79: a save drops empty items but keeps their order: no second tile */ inv[name]+=q;if(hotThing(name)&&!onTitle&&met&&!beltTold.has(name)&&beltIndex(name)<0){beltTold.add(name);setTimeout(()=>beltTip(name),900)}if(!seen.has(name)){seen.add(name);announce(name);if(sk('T6')){const r=PRICE_[name]*5;coins+=r;setTimeout(()=>toast(`İlk keşif ödülü: +${r} sikke`),300)}return true}return false}
-function add(name){const first=gain(name);renderInv();sfx(first?'found':'pick');if(!first)toast(`+1 ${name}`)}
+function add(name){const first=gain(name);renderInv();sfx(first?'found':'pick');if(!first)pickToast(name,1)}
+// v2.53 (Boğaç): picking up the same thing again while its note is still on screen adds to that note (+1 → +2 → +3 Odun) instead of a new "+1"
+const PICKT={};
+function pickToast(name,q){const o=PICKT[name];let n=q;if(o&&o.el&&o.el.isConnected){n=o.n+q;o.el.remove()}
+  toast(`+${n} ${name}`);const el=toasts.lastElementChild;PICKT[name]={n,el:el&&el.textContent.indexOf(name)>=0?el:null}}
 // gathering takes time: press E, a bar fills, moving cancels
 const GTIME={'Dal':1,'Taş':1.5,'Lif':1,'Yaprak':.8,'Böğürtlen':1.2,'Çakmaktaşı':2,'Nehir çakılı':1.2,'Kum':1.5,'Su':3,'Nehir kili':2.5,'odun':2.5};
 let gathering=null;
