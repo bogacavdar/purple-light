@@ -17,6 +17,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Yeni malzeme: Deri parçası.** Derisi ya da postu olan her hayvan avlanınca derisinin yanında Deri parçası da düşürür; büyük hayvanlar (yaban öküzü, mağara ayısı gibi) 1–2 tane.
 - **Zırhlar deri parçasıyla yapılır:** bütün zırhlar (Kürk, Kemik, Bakır ve sonraki setler), deri isteyen silahlar ve eşyalar (çanta, tulum, çadır, yatak, ok kılıfı, sapan…) tabaklanmış deri yerine aynı sayıda Deri parçası ister. Örnek: Kürk başlık = 1 Deri parçası, 1 Sinir kirişi, 5 Lif, 4 İp; Bakır miğfer = 2 Bakır külçesi, 1 Deri parçası, 2 Sinir.
 - Hayvanların kendi derileri (Kurt derisi, Geyik derisi…) yine düşer; Nazlı'ya satılır ve görevlerde istenir.
+- **Sinir kirişi sadeleşti:** yalnızca 2 Sinir ister; su, lif ve Taş bıçak gerekmez.
 - Tabakhane artık Meşe tanini istemez.
 - 2.60'ta eklenen Kül ağacı, Kara çam, Mor söğüt ve Gece ağacı kabukları kaldırıldı (yalnızca tanin içindi).
 

@@ -738,7 +738,7 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Balık yağı | 1 Yayın, 3 Su, 3 Lif | Taş havan | El yapımı (Tab) | 21 |
-| Sinir kirişi | 2 Sinir, 2 Su, 1 Lif | Taş bıçak | El yapımı (Tab) | 16 |
+| Sinir kirişi | 2 Sinir (v2.62: su, lif ve Taş bıçak istemez) | – | El yapımı (Tab) | 16 |
 
 #### Ateş (18)
 
