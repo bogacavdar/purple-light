@@ -30,6 +30,9 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Akış: "Öğretici malzemeleri yer değiştirmez", Kemal'in 2. adımı (5 böğürtlenin hepsi, sayaçlar, yanan düğme).
 - Sistemler: "Bilgisayarda kart yazıları daha büyük (v2.53)", "Toplama bildirimi birikir (v2.53)"; Akış: ana menüde "Güncelleme notları" ve "Uygulama olarak indir".
 
+### Proje
+- `yayinla.sh` artık güncelleme notlarının en üstündeki sürümü oyunun içindeki "Güncelleme notları" penceresine de koyuyor (`proje/tools/notlar/notlar.py`).
+
 ## Versiyon 2.52 · 1 Kasım 2026
 
 ### Oynanış
