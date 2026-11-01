@@ -10,6 +10,10 @@
 
 
 
+
+## v2.67 — Çift vuruş dersi
+
+- LES 'double': st yalnızca ['hit:double',7]; kill adımı yok → spawnFoe killLeft=false, killAnimal koruması ('Dayanıyor!') domuzu hep ayakta tutar.
 ## v2.66 — mağara girişi, meşale
 
 - v232 mağara bloğu yerinde: kapı/çıkış XTRA'ları DOORX/OUTX'te; act → `askEnter`/`askLeave` (#cvask penceresi, şartlar ✓/✗, Enter/Esc). pickAt sarmalayıcısı: ağız elipsi (62×50, door.y−28) ve içeride çıkış (36 px) tıklaması → xtra hedefi. drawGround sarmalayıcısı ÇIKIŞ tabelası (çıkıştaki 90 px ışığın içinde).

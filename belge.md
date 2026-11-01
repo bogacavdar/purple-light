@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.66** ile birebir (1 Kasım 2026). Bu sürümde: mağara girişine tıklayınca gir/çık penceresi (şartlar ✓/✗), içeride ışıklı ÇIKIŞ tabelası; mağarada hava meşaleyi etkilemez, saldırıda meşale aşınması üçte bir. Önceki sürüm (2.65): silah ve zırh özellikleri her yerde.
+Sürüm: **Versiyon 2.67** ile birebir (1 Kasım 2026). Bu sürümde: Börü'nün Çift vuruş dersinde domuz hiç ölmez; ders 7 çift vuruş isabetiyle biter. Önceki sürüm (2.66): mağara girişine tıklayınca gir/çık penceresi, mağarada meşale daha yavaş biter.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -685,7 +685,7 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 | Ders | Seviye | Bölge şartı | Ücret | XP | Alıştırma canavarı | Adımlar |
 |---|---|---|---|---|---|---|
 | Takla vuruşu | 3 | Çayır (Atılma gerekli) | 150 | 40 | Kurt | Saldırırken takla at, 3 kez kurtul → takla vuruşuyla 4 isabet |
-| Çift vuruş | 6 | Orman | 300 | 60 | Yaban domuzu | Çift vuruşla 5 isabet → çift vuruşla 2 canavar bitir |
+| Çift vuruş | 6 | Orman | 300 | 60 | Yaban domuzu | Çift vuruşla 7 isabet (v2.67, Boğaç: ders domuzu hiç ölmez, "bitir" adımı kalktı) |
 | Ritimli 2. vuruş | 10 | Bataklık | 600 | 100 | Bataklık kurdu | Ritimli 2. vuruşla 5 isabet |
 | Ritimli 3. vuruş | 15 | Kayalık Dağ | 1.000 | 160 | Muflon | Sırayla: 3 savuşturma → ritimli 3. vuruşla 3 isabet |
 | Güçlü vuruş | 17 | Kayalık Dağ | 1.200 | 180 | Yaban öküzü | Savuşturarak 3 canavarı sersemlet → sersem canavara 3 güçlü vuruş |

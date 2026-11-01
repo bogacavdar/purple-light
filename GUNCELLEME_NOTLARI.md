@@ -14,6 +14,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.67 · 1 Kasım 2026
+
+### Düzeltmeler
+- **Börü · Çift vuruş dersi:** ders domuzunun canı artık hiç bitmez. "İki canavarı çift vuruşla bitir" adımı kaldırıldı; ders **çift vuruşla 7 isabetle** biter. Dersin ortasındaysan kaldığın yerden sayılır.
+
+### Tasarım belgesi
+- Sistemler · Dersler tablosu: Çift vuruş satırı güncellendi.
 ## Versiyon 2.66 · 1 Kasım 2026
 
 ### Oynanış

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.66** ile birebir (1 Kasım 2026). Bu sürümde: mağara girişine tıklayınca gir/çık penceresi (şartlar ✓/✗), içeride ışıklı ÇIKIŞ tabelası; mağarada hava meşaleyi etkilemez, saldırıda meşale aşınması üçte bir. Önceki sürüm (2.65): silah ve zırh özellikleri her yerde.
+Sürüm: **Versiyon 2.67** ile birebir (1 Kasım 2026). Bu sürümde: Börü'nün Çift vuruş dersinde domuz hiç ölmez; ders 7 çift vuruş isabetiyle biter. Önceki sürüm (2.66): mağara girişine tıklayınca gir/çık penceresi, mağarada meşale daha yavaş biter.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
