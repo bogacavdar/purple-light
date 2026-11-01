@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.77** ile birebir (1 Kasım 2026). Bu sürümde: mağaraların girişi ve çıkışı sarı parlar, ÇIKIŞ tabelası görünür, çıkış noktası hep zeminde; Mağara mantarı yalnızca mağaralarda. Önceki sürüm (2.76): Çiftçi Ekin gerçekten kalktı.
+Sürüm: **Versiyon 2.78** ile birebir (1 Kasım 2026). Bu sürümde: görev kartındaki yer satırı hangi malzeme için olduğunu yazar. Önceki sürüm (2.77): mağara girişi/çıkışı sarı parlar, çıkış hep zeminde; Mağara mantarı yalnızca mağaralarda.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -1200,7 +1200,7 @@ Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığ�
 9. **Kendiliğinden biten işler.** Bir yere gitmek, biriyle tanışmak, köprüyü onarmak, sıradağı patlatmak, izleri bulmak ve Barbaros'un gemisini kurmak: bunlar yapıldığı anda biter, ödül oracıkta gelir (geri dönüp teslim etmek gerekmez). Kemal'e bu yüzden yalnızca yeni iş almaya gidilir.
 10. **Ödül.** Sikke + XP; bazı görevler ayrıca tarif yazar. Kabaca biyoma göre: Çayır 20–120, Orman 40–180, Bataklık 120–300, Kayalık Dağ 200–420, Kül Diyarı 300–550, Mor Kristal Vadisi 450–800 sikke.
 
-## Yol gösterme: ok ve sarı bölge (v1.91)
+## Yol gösterme: ok ve sarı bölge (v1.91) **Hangi malzeme için (v2.78, Boğaç: "atölye kurda neden Çayır istiyor"):** görev kartındaki yer satırı, gösterdiği bölgenin hangi malzeme için olduğunu yazar (ör. "**Taş**: Çayır · haritada sarı bölge"); bir şey yap/kur görevinde bölge, henüz eksik olan ilk malzemenin bulunduğu yerdir.
 
 - Görev alınınca görevin **yapılabileceği her yer** haritada (büyük ve küçük harita) **sarı boyanır** ve yavaşça nabız gibi parlar; görev sürdükçe kalır, görevdeki **son parça** toplanınca ya da görev iptal edilince kalkar. Küçük bir çember çizilmez.
   - Toplanabilir / maden / ağaç: o şeyin **bulunduğu bütün biyomlar** baştan sona sarı (yalnızca kara; su boyanmaz). Örneğin her biyomda çıkan bir şey için bütün ada.

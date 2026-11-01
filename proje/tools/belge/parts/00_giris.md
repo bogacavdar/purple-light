@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.77** ile birebir (1 Kasım 2026). Bu sürümde: mağaraların girişi ve çıkışı sarı parlar, ÇIKIŞ tabelası görünür, çıkış noktası hep zeminde; Mağara mantarı yalnızca mağaralarda. Önceki sürüm (2.76): Çiftçi Ekin gerçekten kalktı.
+Sürüm: **Versiyon 2.78** ile birebir (1 Kasım 2026). Bu sürümde: görev kartındaki yer satırı hangi malzeme için olduğunu yazar. Önceki sürüm (2.77): mağara girişi/çıkışı sarı parlar, çıkış hep zeminde; Mağara mantarı yalnızca mağaralarda.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

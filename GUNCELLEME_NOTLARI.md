@@ -25,6 +25,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+
+## Versiyon 2.78 · 1 Kasım 2026
+
+### Arayüz
+- **Görev kartı hangi malzemeyi aradığını söylüyor:** "Atölye kur" gibi bir şey yapma/kurma görevinde kart, eksik malzemenin bulunduğu bölgeyi gösteriyordu ama malzemenin adını yazmıyordu; atölye Çayır'da kurulacakmış gibi görünüyordu. Artık yer satırı "**Taş**: Çayır · haritada sarı bölge" gibi malzemenin adıyla başlar.
+
+### Tasarım belgesi
+- ACT 1 · görev oku: yer satırında malzeme adı.
 ## Versiyon 2.77 · 1 Kasım 2026
 
 ### Düzeltmeler
