@@ -30,6 +30,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.86 · 2 Kasım 2026
+
+### Arayüz
+- **Sol menüde Robot köpeklere yer ayrıldı.** Bilgisayarda menü karelerinin boyu, henüz açılmamış düğmeler (Robot köpekler, Yemek) de hesaba katılarak bulunuyor; yeni bir düğme gelince yeri hazır, kareler küçülüp kaymıyor.
+
+### Tasarım belgesi
+- Sistemler: Bilgisayarda sol üst (kare boyu bütün düğmelere göre).
+
 ## Versiyon 2.85 · 2 Kasım 2026
 
 ### Arayüz

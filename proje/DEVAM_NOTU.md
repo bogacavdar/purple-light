@@ -1,3 +1,6 @@
+## v2.86 (2 Kasım 2026) · menü kareleri bütün düğmelere göre
+- `layoutHUD`: `n=bar.children.length` (gizli b-dog, b-eat dahil; 9 → 5 satır). Belge `20_sistemler.md`.
+
 ## v2.85 (2 Kasım 2026) · meşale yuvasındaki sayı sağ üstte, tek canlı etiketi, bilgisayarda büyük menü pencereleri
 - `<style id="v285-hud">`: bilgisayarda #clock, #vit .vb, #fxbar iki kat (yazı `min(24px, --lw × .085)`); `layoutHUD` kare tavanı 128 → `innerWidth × .12`.
 - `<style id="v284-mktwin">` (artık genel) + `<script id="v285win">`: bilgisayarda `#craft .cpanel{zoom:1.2}`, `--plTop` (70/132) ve `--plMaxH` (kemerin `getBoundingClientRect().top`'una göre: eski alt sınırla kemer arası boşluğun 1/3'ü kalır; zoom'a bölünür), `#cbody` kaydırılır. Not: `offsetParent` sabit konumlu kemerde null döndüğü için kullanılmıyor.
