@@ -30,6 +30,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 3.03 · 3 Kasım 2026
+
+### Arayüz
+- **Ana menüdeki sol düğmeler ilk tasarımına döndü:** ahşap tahtalar yerine 2.93'teki yarı saydam mor düğmeler. Küçük boyları ve telefondaki düzen aynı kalıyor; başlık, ada ve gece sahnesi değişmedi.
+
+### Tasarım belgesi
+- Akış › Ana menü görünümü: menü düğmeleri (v3.03).
+
 ## Versiyon 3.02 · 3 Kasım 2026
 
 ### Düzeltmeler

@@ -1,3 +1,7 @@
+## v3.03 (3 Kasım 2026) · sol menü düğmeleri 2.93 tasarımına döndü
+- `v294-title`'dan `#tmain .mb` tahta kuralları (zemin, kristaller, seçili/kilitli tahta, Pixelify yazı, verlab/notlar yazısı, `max-height:520px` tahta bloğu) silindi; 2.93'ün kendi `.mb` kuralları geçerli. Genişlik bilgisayarda min(340px,26vw), zoom yok. v3.02 telefon bloğundan kristal satırı çıktı, `.mb` dolgusu 18 px ve köşe 12 px. Sağ üst simge karoları tahta kaldı. `#t-notes` açılışta gri şerit göstermez.
+- Kontrol: chk.js 0 hata; bilgisayar (açılış + son) ve 1123×521 telefon ekran görüntüleri, sayfa hatası 0.
+
 ## v3.02 (3 Kasım 2026) · telefonda ana menü kayması, açılıştaki eski görünüm, bilgisayarda küçük menü
 - Sebep (telefon): telefon düzeni yalnızca `max-height:520px`'te devreye giriyordu; Boğaç'ın telefonunda CSS yüksekliği bunun üstünde (≈521+), menü bilgisayar boyunda (34vw) kalıp başlığa biniyor ve üstten taşıyordu. `v294-title` sonuna `@media (pointer:coarse),(max-height:640px)` bloğu: `#tmain` min(300px,30vw), düğme yüksekliği/yazısı vh ile, logo menünün sağındaki alanın ortasında (en çok 640 px).
 - Sebep (açılış): `v287-title` ve `v294-title` stilleri dosyanın sonundaydı (~18000. satır); tarayıcı oraya gelmeden çiziyordu. İkisi `<head>`'e, `v48-b5-css`'in hemen arkasına taşındı. `#t-notes` kendi arka planını sıfırlar.
