@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.04** ile birebir (3 Kasım 2026). Bu sürümde: ana menü açılırken büyümüyor, hazır olunca bir kerede görünüyor; (3.03: ana menüde soldaki düğmeler 2.93'teki ilk tasarımına döndü (küçük kalır); (3.02: telefonda ana menü düğmeleri yazının üstüne binmiyor ve ekrandan taşmıyor, bilgisayarda menü sol altta küçük, menü açılışta eski görünümde açılmıyor; (3.01: ana menü 2.94'teki haline döndü; hep gece, başlığın üstündeki süs yok, başlığın gölgesi yumuşak; oyun içinde soldaki kare düğmeler küçük ve üçlü iki sıra (ayrıntı: **Oyun akışı · Ana menü**, **Sistemler**).
+Sürüm: **Versiyon 3.05** ile birebir (3 Kasım 2026). Bu sürümde: başlık neon gibi yanar ve arada söner, dağa inen ışık başlıktan çıkar, rastgele mor ışık adanın her yerine rastgele açıyla vurur, başlık biraz aşağıda; (3.04: ana menü açılırken büyümüyor, hazır olunca bir kerede görünüyor; (3.03: ana menüde soldaki düğmeler 2.93'teki ilk tasarımına döndü (küçük kalır); (3.02: telefonda ana menü düğmeleri yazının üstüne binmiyor ve ekrandan taşmıyor, bilgisayarda menü sol altta küçük, menü açılışta eski görünümde açılmıyor; (3.01: ana menü 2.94'teki haline döndü; hep gece, başlığın üstündeki süs yok, başlığın gölgesi yumuşak; oyun içinde soldaki kare düğmeler küçük ve üçlü iki sıra (ayrıntı: **Oyun akışı · Ana menü**, **Sistemler**).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

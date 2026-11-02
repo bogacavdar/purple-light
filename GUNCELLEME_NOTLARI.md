@@ -30,6 +30,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 3.05 · 3 Kasım 2026
+
+### Görsel
+- **PURPLE LIGHT neon gibi yanıyor.** Birkaç saniyede bir neon titreyip sönüyor, sonra yeniden yanıyor.
+- **Dağdaki mor ışık yazıdan geliyor:** adanın tepesine inen sürekli ışık artık gökten değil, PURPLE LIGHT yazısından çıkıyor; neon söndüğünde o da sönüyor.
+- **Rastgele mor ışık adanın her yerine vuruyor:** rastgele bir yere, rastgele bir açıyla. Eskiden çarpmaların bir kısmı hep dağın tepesine düşüyordu.
+- Başlık biraz aşağı alındı.
+
+### Tasarım belgesi
+- Akış › Ana menü: "Neon başlık ve dağa inen ışık" (v3.05).
+
 ## Versiyon 3.04 · 3 Kasım 2026
 
 ### Düzeltmeler

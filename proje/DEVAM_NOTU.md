@@ -1,3 +1,9 @@
+## v3.05 (3 Kasım 2026) · neon başlık, ışık başlıktan dağa, rastgele çarpmalar her yere
+- `newStrike`: %18 tepe payı ve tepeye düşme kaldırıldı; 20 denemede aralıklı nokta, yoksa `T5.surf`'ten rastgele nokta; açı yine ±0,62.
+- `neonAt(t)` (b5 bloğu): 4–10 sn'de bir 2–4 kısa sönme; `.logo.pl.plneon-off` sınıfı; sürekli ışığın gücü ile çarpılır (sönükken 0,08). Işığın üst ucu logonun alt-ortası (0,5 sn'de bir `getBoundingClientRect`, tuval koordinatına çevrilir), tepeye eğik iner.
+- CSS (`v294-title`): logo neon parıltısı (b5night/b5hit kurallarını ezer), sönük hal; logo üstü bilgisayarda 10vh, telefon bloğunda max(70px,16vh).
+- Kontrol: chk.js 0 hata; bilgisayar ve 1123×521 telefon ekran görüntüleri, sayfa hatası 0.
+
 ## v3.04 (3 Kasım 2026) · ana menü açılışta büyümüyor
 - Sebep: `#t-arena` geç çalışan blokta (~3,5 sn) `t-load`'ın arkasına ekleniyor; `#tmain` alta dayalı olduğu için menü yukarı uzuyordu (ayrıca kayıt yoksa 1,2 sn'de `t-cont` gizleniyor).
 - `#tmain` işaretlemede `plwait` sınıfıyla başlar (`visibility:hidden;opacity:0`, `v294-title` başta); arena bloğu `syncBtn()`'dan sonra bir karede sınıfı kaldırır (0,35 sn solarak görünür). Güvenlik: menünün hemen arkasındaki satır içi betik 6 sn'de sınıfı kendisi kaldırır.
