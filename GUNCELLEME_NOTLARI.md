@@ -30,6 +30,15 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.90 · 2 Kasım 2026
+
+### Görsel
+- **Ana menüdeki ada eski haline döndü**, yalnızca biraz daha gerçekçi: tepede karlı kaya, katmanlı çamlar, gölgeli yuvarlak ağaçlar ve kumsalda kırık direkli bir kayık. 2.89'daki hayvanlar kaldırıldı.
+- **PURPLE LIGHT yazısı adanın tam üstünde, ona ortalı.**
+
+### Tasarım belgesi
+- Akış: Ana menüdeki ada (v2.90).
+
 ## Versiyon 2.89 · 2 Kasım 2026
 
 ### Görsel

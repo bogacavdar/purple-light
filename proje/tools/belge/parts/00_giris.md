@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.89** ile birebir (2 Kasım 2026). Bu sürümde: ana menüdeki ada canlandı (küçük engebeli tepeler, sık ağaçlar, gündüz tavşan ve geyik, gece kurtlar) ve PURPLE LIGHT yazısı daha büyük (ayrıntı: **Oyun akışı · Ana menü**).
+Sürüm: **Versiyon 2.90** ile birebir (2 Kasım 2026). Bu sürümde: ana menüdeki ada 2.86'daki haline döndü (biraz daha gerçekçi), hayvanlar kaldırıldı, PURPLE LIGHT yazısı adanın üstünde ortalı (ayrıntı: **Oyun akışı · Ana menü**).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

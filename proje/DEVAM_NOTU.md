@@ -1,3 +1,6 @@
+## v2.90 (2 Kasım 2026) · 2.86 adası geri, biraz gerçekçi; hayvanlar silindi; logo adaya ortalı
+- `islandShape`/`buildIsland` 6bfd206'dan alındı; dokulu kaya + kar, 2×2 çim deseni, tiered çam / gölgeli yuvarlak ağaç (aynı R5 yerleri), kayık. `T5.crit`/`T5.wolf` ve çizimleri silindi. Logo `left:62%`, genişlik min(76vw−250, 1400).
+
 ## v2.89 (2 Kasım 2026) · ana menü adası: küçük engebeli tepeler, sık ağaç, gündüz tavşan/geyik, gece kurtlar, büyük logo
 - `islandShape`: cx 0,5, R min(Wc×0,38,160), K 0,6 + sinüs engebe; renk eşikleri 23/18/28; ağaç adımı 3–6, atlama %20. `T5.crit`/`T5.wolf` (setupScene), çizim drawTitle'da ateşböceklerinden önce; yalnızca alçak yerde (yükseklik ≤ 13) yürür. Logo min(100vw−220, 1800).
 
