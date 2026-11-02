@@ -1,3 +1,10 @@
+## v2.98 (3 Kasım 2026) · başlık tabelası, gece/gündüz ışığı, rastgele mor ışık yanıkları, köşe düğmeleri
+- Belge `10_akis.md` (Başlık, Yanık izleri, Bilgisayarda ana menü düzeni), `00_giris.md`.
+- `LOGO_PNG` sert gölgesiz yeniden üretildi; `v294-title`: `.logo.pl` ahşap tabela (padding, kenar, `::before/::after` kristaller; bilgisayarda en çok 1100 px), `#b5logo` yumuşak gölge; gündüz sıcak drop-shadow + güneş parıltısı, gece eski mor parıltı (b5night/b5hit). 2.95'teki gündüz konturu silindi.
+- `<script id="v298hits">`: gece 2,5–6 sn'de bir rastgele vuruş (%55 tabela, %45 görünen bir menü tahtası, tahtada yalnızca uçlar %9–25 / %75–91); `.plh.hit` (1,4 sn sütun + parlama, `plshot`) ve 0,3 sn sonra aynı noktaya kalıcı `.plh.burn` (`plburn`); tabelada en çok 10, tahta başına 3 iz. Sayfa yeniden açılınca izler sıfırlanır (kaydedilmez).
+- Köşe düğmeleri: `#t-exit` order 1, `#t-set` 2; `#t-ach` `position:fixed` sağ alt 120 px (telefonda 76), sayı rozeti sağ üstte.
+- Kontrol: chk.js 0 hata; gece (14 sn bekleyip) ve gündüz ekran görüntüsüyle bakıldı, sayfa hatası 0. Kare döngüsüne dokunulmadı (vuruşlar CSS animasyonu + 250 ms'lik zamanlayıcı).
+
 ## v2.97 (3 Kasım 2026) · başlığın üstündeki süs kaldırıldı
 - `LOGO_PNG` yeniden üretildi (süs çizgisi ve yıldız yok, 750×74, boş üst kenar kırpıldı). Belge `10_akis.md`, `00_giris.md`. chk.js 0 hata.
 

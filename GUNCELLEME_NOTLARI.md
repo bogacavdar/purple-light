@@ -30,6 +30,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.98 · 3 Kasım 2026
+
+### Görsel
+- **Başlık ahşap bir tabelada.** PURPLE LIGHT yazısı menü düğmeleriyle aynı ahşaptan, iki ucu kristalli bir tabelanın üstünde; gündüz ve gece aynı görünüyor. Harflerin altındaki keskin koyu gölge yumuşak bir gölgeyle değişti.
+- **Gece mor ışık, gündüz güneş:** gece tabelaya mor ışık vuruyor, gündüz güneş sıcak bir ışıkla aydınlatıyor.
+- **Mor ışık yanıkları:** gece mor ışık başlık tabelasına ve menü tahtalarına rastgele yerlere vuruyor (yazılara değmeden) ve tam vurduğu yerde bir yanık izi bırakıyor. İzler gündüz de görünüyor, sayfa yeniden açılana kadar kalıyor.
+
+### Arayüz
+- **Sağ üstte Çıkış en üstte, altında Ayarlar; Başarımlar sağ altta büyük bir kare.**
+
+### Tasarım belgesi
+- Akış › Ana menü görünümü: başlık tabelası, yumuşak gölge, ışık, yanık izleri (v2.98); bilgisayarda ana menü düzeni: köşe düğmeleri.
+
 ## Versiyon 2.97 · 3 Kasım 2026
 
 ### Görsel

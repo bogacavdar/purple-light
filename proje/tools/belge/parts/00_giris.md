@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.97** ile birebir (3 Kasım 2026). Bu sürümde: ana menü başlığının üstündeki süs kaldırıldı (2.96: oyun içinde soldaki kare düğmeler küçük ve üçlü iki sıra; 2.95: ana menü gündüz de okunur ve ışıklı (2.94'te ana menü yenilendi: Cinzel piksel başlık, solda kristalli ahşap düğmeler (Pixelify Sans), paletteki gece renkleri, daha ince çizilmiş ada, tepeye inen mor ışık, halkalar ve zerreler, kuzey ışığı ve kayan yıldız, Ayarlar'da menü vurgu rengi)) (ayrıntı: **Oyun akışı · Ana menü**).
+Sürüm: **Versiyon 2.98** ile birebir (3 Kasım 2026). Bu sürümde: ana menü başlığı ahşap tabelada, gece mor ışık, gündüz güneş aydınlatır; Çıkış ve Ayarlar sağ üstte, Başarımlar sağ altta büyük kare (2.97: başlığın üstündeki süs kaldırıldı; 2.96: oyun içinde soldaki kare düğmeler küçük ve üçlü iki sıra; 2.95: ana menü gündüz de okunur ve ışıklı (2.94'te ana menü yenilendi: Cinzel piksel başlık, solda kristalli ahşap düğmeler (Pixelify Sans), paletteki gece renkleri, daha ince çizilmiş ada, tepeye inen mor ışık, halkalar ve zerreler, kuzey ışığı ve kayan yıldız, Ayarlar'da menü vurgu rengi))) (ayrıntı: **Oyun akışı · Ana menü**).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
