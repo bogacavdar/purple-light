@@ -30,6 +30,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 3.04 · 3 Kasım 2026
+
+### Düzeltmeler
+- **Ana menü açılırken büyüyordu:** ⚔ Arena düğmesi sayfa açıldıktan birkaç saniye sonra eklendiği için menü önce kısa görünüp sonra yukarı doğru uzuyordu. Artık menü arkada hazırlanıyor ve tamamlanınca tek seferde, yumuşakça görünüyor.
+
+### Tasarım belgesi
+- Akış › Ana menü: "Menü tek seferde açılır" (v3.04).
+
 ## Versiyon 3.03 · 3 Kasım 2026
 
 ### Arayüz

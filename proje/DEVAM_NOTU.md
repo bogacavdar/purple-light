@@ -1,3 +1,8 @@
+## v3.04 (3 Kasım 2026) · ana menü açılışta büyümüyor
+- Sebep: `#t-arena` geç çalışan blokta (~3,5 sn) `t-load`'ın arkasına ekleniyor; `#tmain` alta dayalı olduğu için menü yukarı uzuyordu (ayrıca kayıt yoksa 1,2 sn'de `t-cont` gizleniyor).
+- `#tmain` işaretlemede `plwait` sınıfıyla başlar (`visibility:hidden;opacity:0`, `v294-title` başta); arena bloğu `syncBtn()`'dan sonra bir karede sınıfı kaldırır (0,35 sn solarak görünür). Güvenlik: menünün hemen arkasındaki satır içi betik 6 sn'de sınıfı kendisi kaldırır.
+- Ölçüm (scratch betik, 1890×807): görünür olduğu an menü son boyunda (392 px), önceki ara boylar gizliyken geçti. chk.js 0 hata.
+
 ## v3.03 (3 Kasım 2026) · sol menü düğmeleri 2.93 tasarımına döndü
 - `v294-title`'dan `#tmain .mb` tahta kuralları (zemin, kristaller, seçili/kilitli tahta, Pixelify yazı, verlab/notlar yazısı, `max-height:520px` tahta bloğu) silindi; 2.93'ün kendi `.mb` kuralları geçerli. Genişlik bilgisayarda min(340px,26vw), zoom yok. v3.02 telefon bloğundan kristal satırı çıktı, `.mb` dolgusu 18 px ve köşe 12 px. Sağ üst simge karoları tahta kaldı. `#t-notes` açılışta gri şerit göstermez.
 - Kontrol: chk.js 0 hata; bilgisayar (açılış + son) ve 1123×521 telefon ekran görüntüleri, sayfa hatası 0.
