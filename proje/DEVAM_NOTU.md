@@ -1,8 +1,9 @@
-## v2.95 (3 Kasım 2026) · ana menü gündüz (bekleyen paket, yayında değil)
+## v2.95 (3 Kasım 2026) · ana menü gündüz, küçük menü düğmeleri
 - Belge: `10_akis.md` "Gündüz (v2.95)", `00_giris.md`.
 - b5 bloğu: `SKYK` gündüz/akşam/şafak durakları morumsu (gündüz #5b6fd6 → #e6d4f6, deniz #4a5fb0). Güneş yuvarlak (0,5 px), yay 70 → 38; altında suda pırıltılar (26, `sin` ile yanıp söner, gündüz). Işık sütunu/hale/şerit/halkalar/zerreler gündüz de çizilir (`pa`=0,5+0,5×gece; gündüz `source-over`, gece `lighter`); çiçekler yalnızca gece. Kenar ışığı saydamlığı .25+.6n → .5+.35n.
 - `v294-title` stili: gündüz (`#title:not(.b5night)`) `#b5logo`'ya koyu mor 4 yönlü piksel kontur + gölge; verlab ve notlar koyu gölgeli; `.mb:disabled` saydam değil (gri tahta).
-- Kontrol: chk.js 0 hata; gündüz (faz 0,2) ve akşam (0,44) ekran görüntüsüyle bakıldı, sayfa hatası 0. Kare döngüsüne gündüz birkaç çizim eklendi (pırıltılar, ışık); ölçüm paket çıkarken yapılacak.
+- Menü düğmeleri küçüldü: `<script id="v287title">` (boşluğu doldurmak için 1–1,5 kat zoom) silindi; `v294-title`: yazı 26 → 21 px, en az yükseklik 68 → 54, bilgisayarda genişlik min(460px, 34vw) → min(360px, 26vw), aralık 18 → 14.
+- Kontrol: chk.js 0 hata; gündüz (faz 0,2) ve akşam (0,44) ekran görüntüsüyle bakıldı, sayfa hatası 0. **Ölçülmedi:** Boğaç ölçüm çalıştırmasını durdurdu; gündüz kare döngüsüne eklenen çizimler (26 pırıltı, ışık sütunu/halkalar/zerreler) 2.94'te gece zaten çizilenlerle aynı türden. Telefonda gündüz yavaşlık şikâyeti gelirse ilk bakılacak yer bu.
 
 ## v2.94 (3 Kasım 2026) · yeni ana menü (Boğaç'ın 45 önizleme arasından seçtiği tasarım + "Purple Light — Ana Ekran Renk Paleti")
 - Belge: `10_akis.md` "Ana menü görünümü" ve "Ana menü sahnesi" (v2.94), `00_giris.md`.

@@ -30,6 +30,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.95 · 3 Kasım 2026
+
+### Görsel
+- **Ana menü gündüz de güzel.** Gökyüzü düz mavi yerine morumsu mavi, ufuk leylak; akşam ufku pembeye dönüyor. Güneş yuvarlak ve başlığın altından geçiyor, altındaki suda pırıltılar yanıp sönüyor.
+- **Işık efektleri gündüz de var:** tepeye inen ışık sütunu, hale, sudaki ışık şeridi, halkalar ve zerreler gündüz gecenin yarısı güçte görünüyor (gece çiçekleri ve kuzey ışığı yalnızca gece). Adanın mor kenar ışığı gündüz daha belirgin.
+- Ana menüdeki gün döngüsü sürüyor: menü gece açılıyor, sonra şafak, gündüz, akşam (bir tur 80 saniye).
+
+### Arayüz
+- **Başlık gündüz okunuyor:** açık gökte PURPLE LIGHT yazısının etrafında koyu mor bir kontur ve gölge var.
+- **Soldaki menü düğmeleri küçüldü.** Büyük ekranda 1,5 katına kadar büyüyüp adayı kapatıyordu; artık kendi boylarında (en çok 360 px).
+- Sürüm yazısı ve "Güncelleme notları" koyu gölgeli, açık arka planda da okunuyor. Kayıt yokken basılamayan "Yükle" yarı saydam değil, gri tahta.
+
+### Tasarım belgesi
+- Akış › Ana menü: "Gündüz (v2.95)" eklendi; bilgisayarda ana menü düzeninde düğmelerin boyu güncellendi.
+
 ## Versiyon 2.94 · 3 Kasım 2026
 
 ### Görsel
