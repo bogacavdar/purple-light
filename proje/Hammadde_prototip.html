@@ -4661,12 +4661,6 @@ function ghostAtMouse(){if(!placing||!lastMouse.on)return false;const wx=cam.cx+
 cv.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;lastMouse.x=e.clientX;lastMouse.y=e.clientY;lastMouse.on=true;if(placing)ghostAtMouse()});
 cv.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')lastMouse.on=false});
 cv.addEventListener('pointercancel',e=>joyEnd(e,false));
-// mouse over an animal or monster: its name, temper and health at the cursor
-cv.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const tip=$('hovertip');if(onTitle||craftOpen||dlgOpen){tip.hidden=true;return}
-  const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S;let a=null,bd=20;for(const o of animals){const d=Math.hypot(o.x-wx,o.y-6-wy);if(d<bd){bd=d;a=o}}
-  if(!a){tip.hidden=true;return}const D=ANIM[a.k];tip.innerHTML=`<b>${esc(a.k)}</b> <span style="color:${TEMPC[D.temper]}">${D.temper}</span><br><small>Can ${Math.max(0,Math.ceil(a.hp))}/${D.hp}${D.ranged?' · uzaktan saldırır':''}${D.fx?' · '+FXD[D.fx[0]].n:''}${kills[a.k]?'<br>Düşebilir: '+D.drops.filter(d=>d[3]>=1).map(d=>esc(d[0])).concat(dropOdds(D).map(([n,p])=>`${esc(n)} %${Math.round(p*100)}`)).join(' · ')+(dropRolls(D)>1?` (${dropRolls(D)} çekiliş)`:''):''}</small>`;
-  tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+12)+'px';tip.hidden=false});
-cv.addEventListener('pointerleave',()=>{$('hovertip').hidden=true});
 cv.addEventListener('contextmenu',e=>e.preventDefault());
 function drawGoal(time){
   for(let i=RIPPLES.length-1;i>=0;i--){const r=RIPPLES[i];r.t+=1/60;const k=r.t/.45;if(k>=1){RIPPLES.splice(i,1);continue}ctx.strokeStyle=r.c;ctx.globalAlpha=1-k;ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(r.x,r.y+3,4+k*10,2+k*5,0,0,Math.PI*2);ctx.stroke();ctx.globalAlpha=1}
@@ -14155,7 +14149,7 @@ const _tc133=treeChopped;treeChopped=function(t){const r=_tc133.apply(this,argum
    {const O={npc,witch,farmer,market,smith,durmus,trader,usta,alp,carp,kaptan,denizci,wiz};const o=O[tg.kind];if(o){const nm=o.name||({npc:'Yaşlı Kemal',witch:'Cadı Zümrüt',farmer:'Çiftçi Ekin',market:'Pazarcı Nazlı',smith:'Demirci Dursun',durmus:'Zırhçı Durmuş',trader:'Gemici Poyraz',usta:'Usta Sinan',alp:'Savaşçı Börü',carp:'Marangoz Çınar',kaptan:'Kaptan Poyraz',wiz:'Yıldızsız'})[tg.kind];if(nm)return[nm,'E ile konuş']}}   // v1.50: people and creatures under the mouse
    if(tg.kind==='pot')return['Zümrüt\'ün kazanı',KE+' ile tarif dene'];
    if(tg.kind==='xtra'){let l='';try{l=typeof tg.o.label==='function'?tg.o.label():tg.o.label}catch(x){}l=String(l||'').replace(/<[^>]+>/g,'').replace(/^E\s*/,'');if(l)return[l.split('·')[0].trim(),KE+' ile konuş']}
-   if(tg.kind==='animal'){const a=tg.a,D=ANIM[a.k]||{};return[a.k,D.temper==='saldırgan'?'saldırgan · sol tık ya da '+KQ+' ile vur':D.temper==='zararsız'?'zararsız':'kızdırırsan saldırır']}
+   if(tg.kind==='animal'){const a=tg.a,D=ANIM[a.k]||{};return[a.k,(D.temper==='saldırgan'?'saldırgan · sol tık ya da '+KQ+' ile vur':D.temper==='zararsız'?'zararsız':'kızdırırsan saldırır')+(D.hp?` · Can ${Math.max(0,Math.ceil(a.hp))}/${D.hp}`:'')]}   // v2.85 (Boğaç): one label only (the second one under the cursor is gone); health joins this line
    if(tg.kind==='dog')return['Köpek',KE+' ile sev'];
    if(tg.kind==='tree'){const ty=tg.t.type,nm=/ağacı$/.test(ty.n)?ty.n:`${ty.n} ağacı`;return[nm,ty.noCut?'silkelenir (meyvesi düşer)':ty.fruit?'silkelenir · baltayla kesilir':'baltayla kesilir']}
    return null}
