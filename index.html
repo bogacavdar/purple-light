@@ -1351,7 +1351,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.86</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 2.87</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <div id="ttop"><button class="tib tinst" id="t-install" type="button" hidden title="Oyunu bu cihaza uygulama olarak yükle"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="7" y="1" width="2" height="8" fill="#e2c8ff"/><rect x="5" y="7" width="6" height="2" fill="#e2c8ff"/><rect x="6" y="9" width="4" height="1" fill="#e2c8ff"/><rect x="7" y="10" width="2" height="1" fill="#e2c8ff"/><rect x="2" y="12" width="12" height="2" fill="#b9a9d8"/><rect x="2" y="10" width="2" height="2" fill="#b9a9d8"/><rect x="12" y="10" width="2" height="2" fill="#b9a9d8"/></svg><span>Uygulama olarak indir</span></button><button class="tib" id="t-set" type="button" aria-label="Ayarlar" title="Ayarlar"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="3" fill="#b9a9d8"/><rect x="6" y="12" width="4" height="3" fill="#b9a9d8"/><rect x="1" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="12" y="6" width="3" height="4" fill="#b9a9d8"/><rect x="2" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="2" width="3" height="3" fill="#9a8ac0"/><rect x="2" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="11" y="11" width="3" height="3" fill="#9a8ac0"/><rect x="3" y="3" width="10" height="10" fill="#8a7ab0"/><rect x="4" y="3" width="8" height="1" fill="#d8ccf0"/><rect x="6" y="6" width="4" height="4" fill="#140c26"/></svg></button><button class="tib" id="t-exit" type="button" aria-label="Çıkış" title="Çıkış"><svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="1" width="9" height="14" fill="#3a2a4a"/><rect x="2" y="2" width="7" height="13" fill="#6a4426"/><rect x="3" y="3" width="5" height="5" fill="#8a5a30"/><rect x="3" y="9" width="5" height="5" fill="#8a5a30"/><rect x="7" y="8" width="1" height="1" fill="#f2b84b"/><rect x="10" y="7" width="5" height="2" fill="#d8b0ff"/><rect x="12" y="5" width="1" height="6" fill="#d8b0ff"/><rect x="13" y="6" width="1" height="4" fill="#d8b0ff"/></svg></button></div>
@@ -18004,6 +18004,24 @@ function sign(C){const x=Math.round(C.start.x),y=Math.round(C.start.y+22),b=Math
   else for(const D of V.caves){if(D.door&&Math.abs(D.door.x-(cam.cx+vw/2))<vw&&Math.abs(D.door.y-(cam.cy+vh/2))<vh)glow(D.door.x,D.door.y+8,t)}}catch(e){}return r}}
 {const _ls=lightSources;lightSources=function(){const L=_ls.apply(this,arguments);try{const V=CVo();if(V&&!V.cur&&!onTitle){const out=L.slice();for(const D of V.caves)if(D.door)out.push([D.door.x,D.door.y+4,60]);return out}}catch(e){}return L}}   // the mouth is lit at night
 }).toString()+')()')}catch(e){try{window.__hamErr('v277: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<style id="v287-title">
+/* v2.87 (Boğaç): on a computer the main menu and the PURPLE LIGHT title are larger; the menu sits low on the left and never runs into the title
+   (its size is set by the v287 script from the free height under the title) */
+@media (min-width:900px) and (pointer:fine){
+ html body #title .logo.pl{width:min(calc(100vw - 260px),1500px);top:calc(env(safe-area-inset-top,0px) + max(28px,6vh))}
+ html body #title #tmain{bottom:max(5vh,calc(env(safe-area-inset-bottom,0px) + 22px))}
+ html body #title #ttop{flex-direction:column;align-items:flex-end;gap:14px;top:calc(env(safe-area-inset-top,0px) + 20px);right:calc(env(safe-area-inset-right,0px) + 20px)}
+ html body #title #ttop .tib{width:84px;height:84px;padding:14px;border-radius:18px}html body #title #ttop .tib svg{width:52px;height:52px}
+ html body #title #ttop .tib.tinst{width:auto;height:auto;font-size:17px}
+}
+</style>
+<script id="v287title">
+(function(){const fit=()=>{try{const m=document.getElementById('tmain'),t=document.getElementById('title'),lg=t&&t.querySelector('.logo.pl');if(!m||!t||t.hidden)return;
+  if(!matchMedia('(min-width:900px) and (pointer:fine)').matches){m.style.zoom='';return}
+  const prev=m.style.zoom;m.style.zoom='1';const h=m.getBoundingClientRect().height,lb=lg?lg.getBoundingClientRect().bottom:0,free=innerHeight*0.95-22-lb-24;
+  const z=Math.max(1,Math.min(1.5,free/(h||1)));m.style.zoom=z.toFixed(3);if(prev===m.style.zoom)return}catch(e){}};
+ addEventListener('resize',fit);setInterval(fit,1000);setTimeout(fit,60)})();
 </script>
 <style id="v286-hud">
 /* v2.86 (Boğaç): the cauldron, smithy and market buttons are gone (walk there); achievements sit under Ayarlar at its size; the recipe book takes their old place */

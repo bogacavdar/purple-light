@@ -1,3 +1,6 @@
+## v2.87 (2 Kasım 2026) · bilgisayarda büyük ana menü
+- `<style id="v287-title">` + `<script id="v287title">` (menü zoom = logo altındaki boş yükseklik / menü yüksekliği, 1–1,5); `#ttop` dikey 84 px.
+
 ## v2.86 (2 Kasım 2026) · Kazan/Demirci/Pazar düğmeleri ve kısayolları kalktı, başarımlar sağ üstte, tarif kitabı sağ altta, sol menü 5 kare, menü katlanır
 - `#b-craft,#b-sell,#b-shop{display:none!important}` (öğe duruyor: LOCKS ve öğretici parlamaları adla erişiyor, null hatası olmasın); `MK` ve `KB`'den B/T/P çıktı; openMenu uzaktan → yalnızca bildirim (ok yok), `guideFlip` silindi; Kemal eğitim 4 metninde P yok.
 - `placeAch`: masaüstünde `#b-ach` `#b-set`'in altına (CSS 96×44), `#b-book` sağ alt satırda Başarımlar'ın yerine; v50m'de kitap `#bar`'a geri döner.

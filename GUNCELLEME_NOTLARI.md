@@ -30,6 +30,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.87 · 2 Kasım 2026
+
+### Arayüz
+- **Bilgisayarda ana menü büyüdü.** PURPLE LIGHT yazısı ve soldaki menü düğmeleri daha büyük; sağ üstteki Başarımlar, Ayarlar ve Çıkış alt alta ve büyük.
+
+### Tasarım belgesi
+- Akış: Ana menü (bilgisayarda büyük ana menü).
+
 ## Versiyon 2.86 · 2 Kasım 2026
 
 ### Oynanış
