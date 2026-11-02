@@ -34,6 +34,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Arayüz
 - **Meşale yuvasındaki sayı okunuyor.** Kaç meşalen kaldığı artık yuvanın sağ üst köşesinde, beyaz ve siyah kenarlı; turuncu yanma çubuğunun üstüne binmiyor.
+- **Canlının üstünde tek etiket.** Fareyle bir canlının üstüne gelince artık yalnızca bir yazı çıkıyor: adı, ne yaptığı ve canı. İmlecin yanındaki ikinci "nötr" kutusu kalktı.
 
 ### Tasarım belgesi
 - Sistemler: Meşale yuvası (sayının yeri).
