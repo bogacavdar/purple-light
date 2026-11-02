@@ -30,6 +30,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.84 · 2 Kasım 2026
+
+### Düzeltmeler
+- **Kamp ateşinin yanındaki lif artık toplanıyor.** Ateşin ya da bir tuzağın hemen yanında toplanacak bir şey varsa Topla önce onu alıyor; ateşin menüsü ondan sonra açılıyor.
+
+### Arayüz
+- **Pazarda düğmeler alt alta.** Fiyat, adet okları, Sat ve Hepsi her satırda aynı genişlikte; fiyat 1, 2 ya da 3 haneli olsa da düğmeler kaymıyor.
+- **Nazlı'nın "Keskin taşı sat" dersinde Keskin taş listenin en üstünde.**
+- **El yapımında düğmeler hep aynı yerde.** Her satırda sırayla **Yap · ×5 · Hepsi · Takip et**; basılabilenler renkli, basılamayanlar soluk ama yerinde duruyor. Düğmeler artık 2'li 3'lü kaymıyor, alt alta sütun oluyor.
+
+### Tasarım belgesi
+- Sistemler: El yapımı düğmeleri (v2.84), Pazar sütunları ve Keskin taş dersi, Kamp ateşinin yanında önce toplama.
+
 ## Versiyon 2.83 · 2 Kasım 2026
 
 ### Oynanış

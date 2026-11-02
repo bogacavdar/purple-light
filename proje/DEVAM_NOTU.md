@@ -1,3 +1,10 @@
+## v2.84 (2 Kasım 2026) · pazar ve el yapımı düğme sütunları, Keskin taş dersi sırası, ateşin yanında önce toplama
+- Belge: `20_sistemler.md` (El yapımı düğmeleri, Pazar sütunları, önce yanındaki toplanır).
+- `<style id="v284-mkt">`: `.mkt li.sl` sabit sütunlar (fiyat 6.6em, Sat 7.2em, Hepsi 7.4em; telefonda daha dar). `sellOrder(list)`: tz 9/10'da Keskin taş başa.
+- `<style id="v284-hand">` + el yapımı satırı: ×5 ve Hepsi hep çizilir (yetmiyorsa disabled), sıra Yap·×5·Hepsi·Takip·Yak, sabit genişlik; satır opaklığı yerine `li.hno .bn`.
+- `target()`: v46 kamp/tuzak hedefinde önce `gatherTarget(false)`.
+- Kontrol: chk.js 0 hata; pazar ve el yapımı bilgisayar/tablet/telefon ekran görüntüsüyle bakıldı.
+
 ## v2.83 (2 Kasım 2026) · meşale yuvası, canlılar biyomunda, Reis son avın yanında, biyomda yeniden doğma, alet yerine daha iyisi, 3 takip + Yap, E3 tarif kuralı
 - Belge: `20_sistemler.md` (Meşale yuvası, Tarifteki alet, "Herhangi" +, Takip, Yeniden doğma, Arena), `70_canavarlar.md` (Reis kuralları), `30_act1.md` (E3 + Kemal zinciri), `10_akis.md` (Zümrüt 5. adım, meşale dersi), `00_giris.md`.
 - **Meşale yuvası** (`<script id="v283">` ikinci kısım): `TS` (kayıt `v283.ts`), `#torchslot` (kemerin soluna konumlanır), `tsSet/tsToggle`; `beltSet`/`beltAuto`/`hotList`/`bsAt` sarılır (meşale kemere girmez, yuvaya bırakılan meşale dışı şey reddedilir), eski kayıtta kemerdeki meşale taşınır. Tuş `torchlit` = Backquote (KB tablosu). Yerinde: Kemal ışık dersi metni/parlama, `torchKeyText` → `__plTSKey`, ilk karanlık hediyesi `__plTSSet`, Zümrüt `wantInv`/`holdMarks`/`tzCard` (→ `__plTSCard`), v242-torchclose `placed`, `beltTip` meşale metni. Arena: `pickerHTML` "Sol el · meşale yuvası" + `[data-atorch]` → `__plTSArena`.
