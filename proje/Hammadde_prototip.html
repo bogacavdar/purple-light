@@ -17249,21 +17249,18 @@ setInterval(()=>{try{arm()}catch(e){}},300);
 body.v50m .book.hand .rr.hq{gap:4px}body.v50m .book.hand .rr.hq>[data-q="1"]{width:3.8em}body.v50m .book.hand .rr.hq>[data-q="5"]{width:2.9em}body.v50m .book.hand .rr.hq>.hall{width:7em}body.v50m .book.hand .rr.hq>.b3t{width:6.2em}
 </style>
 <style id="v284-mktwin">
-/* v2.84 (Boğaç): on a computer the market is a wide window that stops above the XP bar; the list scrolls inside it */
+/* v2.85 (Boğaç): on a computer every menu window (pazar, kazan, envanter, el yapımı…) is shown 20% larger and grows down to just above the belt
+   (a third of the old gap is left); --plTop / --plMaxH are set by the v285 script from the belt's real place */
 @media (min-width:900px) and (pointer:fine){
- html body:not(.v50m) #craft.cm-sell .cpanel{width:min(1040px,calc(100vw - 300px))!important;max-width:none!important;max-height:min(680px,calc(100vh - 290px))!important;display:flex;flex-direction:column}
- html body:not(.v50m) #craft.cm-sell #cbody{flex:1 1 auto;min-height:0;overflow-y:auto}
- html body:not(.v50m) #craft.cm-sell{align-items:flex-start;padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
- html body:not(.v50m) #craft.cm-sell.tutpad{padding-top:calc(env(safe-area-inset-top,0px) + 132px)}
- html body:not(.v50m) #craft.cm-sell.tutpad .cpanel{max-height:min(680px,calc(100vh - 352px))!important}
- html body:not(.v50m) #craft.cm-sell .cpanel{font-size:17px}
- html body:not(.v50m) #craft.cm-sell .mkt li{font-size:18px;padding-bottom:8px}
- html body:not(.v50m) #craft.cm-sell .mkt .kz{font-size:14px}
- html body:not(.v50m) #craft.cm-sell .mkt button{font-size:16px;padding:5px 10px}
- html body:not(.v50m) #craft.cm-sell .mkt .sq .qi{font-size:17px;width:56px;height:34px}
- html body:not(.v50m) #craft.cm-sell .mkt .sq .qb{min-width:34px;height:34px}
- html body:not(.v50m) #craft.cm-sell #cbody .note,html body:not(.v50m) #craft.cm-sell .mkttop button,html body:not(.v50m) #craft.cm-sell .mkttop input{font-size:16px}
- html body:not(.v50m) #craft.cm-sell #crafttitle{font-size:22px}
+ html body:not(.v50m) #craft{align-items:flex-start!important;padding-top:var(--plTop,70px)!important}
+ html body:not(.v50m) #craft .cpanel{zoom:1.2;max-height:var(--plMaxH,calc((100vh - 300px) / 1.2))!important;max-width:calc((100vw - 60px) / 1.2)!important;display:flex;flex-direction:column}
+ html body:not(.v50m) #craft #cbody{flex:1 1 auto;min-height:0;overflow-y:auto}
+ html body:not(.v50m) #craft.cm-sell .cpanel{width:calc(min(1100px,100vw - 260px) / 1.2)!important}
+ html body:not(.v50m) #craft.cm-sell .mkt li{font-size:16px;padding-bottom:6px}
+ html body:not(.v50m) #craft.cm-sell .mkt .kz{font-size:12.5px}
+ html body:not(.v50m) #craft.cm-sell .mkt button{font-size:14px;padding:4px 9px}
+ html body:not(.v50m) #craft.cm-sell .mkt .sq .qi{font-size:15px;width:50px;height:30px}
+ html body:not(.v50m) #craft.cm-sell .mkt .sq .qb{min-width:30px;height:30px}
 }
 </style>
 <style id="v284-mkt">
@@ -17989,6 +17986,17 @@ function sign(C){const x=Math.round(C.start.x),y=Math.round(C.start.y+22),b=Math
   else for(const D of V.caves){if(D.door&&Math.abs(D.door.x-(cam.cx+vw/2))<vw&&Math.abs(D.door.y-(cam.cy+vh/2))<vh)glow(D.door.x,D.door.y+8,t)}}catch(e){}return r}}
 {const _ls=lightSources;lightSources=function(){const L=_ls.apply(this,arguments);try{const V=CVo();if(V&&!V.cur&&!onTitle){const out=L.slice();for(const D of V.caves)if(D.door)out.push([D.door.x,D.door.y+4,60]);return out}}catch(e){}return L}}   // the mouth is lit at night
 }).toString()+')()')}catch(e){try{window.__hamErr('v277: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v285win">
+// v2.85 (Boğaç): computer menu windows reach down to just above the belt, leaving a third of the gap the 2.84 window left
+(function(){const Z=1.2;let k='';
+ function fit(){try{const c=document.getElementById('craft');if(!c||c.hidden)return;
+   const pc=matchMedia('(min-width:900px) and (pointer:fine)').matches&&!document.body.classList.contains('v50m');if(!pc){if(k){c.style.removeProperty('--plTop');c.style.removeProperty('--plMaxH');k=''}return}
+   const H=innerHeight,tut=c.classList.contains('tutpad'),top=tut?132:70;
+   const hb=document.getElementById('hotbar');let hbTop=H-20;if(hb&&!hb.hidden){const r=hb.getBoundingClientRect();if(r.height&&r.top>H*.4)hbTop=r.top}
+   const oldBottom=top+Math.min(680,H-(tut?352:290)),gap=Math.max(0,hbTop-oldBottom),bottom=Math.max(oldBottom,hbTop-Math.round(gap/3)-8);
+   const maxH=Math.max(260,bottom-top),key=top+'|'+maxH;if(key===k)return;k=key;c.style.setProperty('--plTop',top+'px');c.style.setProperty('--plMaxH',(maxH/Z).toFixed(1)+'px')}catch(e){}}
+ setInterval(fit,250);addEventListener('resize',fit)})();
 </script>
 <script id="v283">
 // v2.83 (Boğaç): every creature stays in its own land. Its land is where it first stood (a.hb); a step that would take it over the border is undone
