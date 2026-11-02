@@ -1172,9 +1172,8 @@ html body #title #tmain #t-notes{background:none;border:0;box-shadow:none}   /* 
 html body #title #tmain.plwait{visibility:hidden;opacity:0}html body #title #tmain{transition:opacity .35s}
 /* v3.01 (Boğaç): a soft shadow under the title letters instead of the hard dark one */
 html body #title #b5logo{filter:drop-shadow(0 4px 5px rgba(12,7,32,.55)) drop-shadow(0 1px 1px rgba(12,7,32,.35))}
-/* v3.05 (Boğaç): the title glows like a neon sign; when it flickers off it goes dim for a moment */
+/* v3.05 (Boğaç): the title glows like a neon sign (v3.06: always on, no flicker) */
 html body #title .logo.pl,html body #title.b5night .logo.pl,html body #title.b5night.b5hit .logo.pl{filter:drop-shadow(0 0 3px rgba(246,232,255,.9)) drop-shadow(0 0 10px rgba(var(--plAcc),.95)) drop-shadow(0 0 26px rgba(var(--plAcc),.7));transition:none}
-html body #title .logo.pl.plneon-off{filter:brightness(.55) saturate(.6) drop-shadow(0 0 2px rgba(var(--plAcc),.25))}
 html body #title .logo.pl{top:calc(env(safe-area-inset-top,0px) + 10vh)!important}   /* v3.05: a little lower */
 @media (min-width:900px) and (pointer:fine){html body #title #tmain{width:min(340px,26vw)}}   /* v3.02 (Boğaç): small, bottom left */
 /* v3.02 (Boğaç, phone: the planks ran over the title and off the top): on touch screens and short screens (up to 640 px tall; the old
@@ -1389,7 +1388,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.05</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.06</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1466,7 +1465,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
 <div id="instov" class="ov" hidden role="dialog" aria-label="Uygulama olarak indir"><div class="tcard small rncard"><h2 class="rnh">Uygulama olarak indir</h2><div class="rnbody" id="inst-body"></div><div class="tmenu"><button class="mb" id="inst-close" type="button">Tamam</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.05 · 3 Kasım 2026</h2><h3>Görsel</h3><ul><li><strong>PURPLE LIGHT neon gibi yanıyor.</strong> Birkaç saniyede bir neon titreyip sönüyor, sonra yeniden yanıyor.</li><li><strong>Dağdaki mor ışık yazıdan geliyor:</strong> adanın tepesine inen sürekli ışık artık gökten değil, PURPLE LIGHT yazısından çıkıyor; neon söndüğünde o da sönüyor.</li><li><strong>Rastgele mor ışık adanın her yerine vuruyor:</strong> rastgele bir yere, rastgele bir açıyla. Eskiden çarpmaların bir kısmı hep dağın tepesine düşüyordu.</li><li>Başlık biraz aşağı alındı.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.06 · 3 Kasım 2026</h2><h3>Görsel</h3><ul><li>PURPLE LIGHT yazısı artık titreyip sönmüyor, neon gibi hep yanıyor.</li><li><strong>Dağa inen sürekli ışık kaldırıldı;</strong> onunla birlikte tepedeki hale, sudaki ışık şeridi, halkalar ve yükselen zerreler de gitti.</li><li><strong>Rastgele mor ışık adaya da denize de vuruyor,</strong> farklı açılarla. Denize düştüğünde suda halkalar yayılıyor.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -8514,19 +8513,15 @@ function buildIsland(Wc,Hc){rs5=7;const c=document.createElement('canvas');c.wid
   return c}
 // v2.94 (Boğaç): the island drawn at twice the detail: fine texture and dither on the ground (tinted with the sky),
 // plus a separate light layer (purple rim on the top edges, moonlight on the right edges) and glowing flowers drawn over the tint
-// v2.94 palette: the island's colours snap to the palette's tones (grass 6, rock 5, sand 3, the lit peak 3); browns (trunks, boat) and sails stay
-const PGRASS=['#143723','#1D4A2C','#275E35','#347640','#4F954B','#76B85E'].map(hx),PROCK=['#33283F','#4A3C5C','#63537A','#8371A0','#A796C4'].map(hx),PSAND=['#9C7556','#C19A74','#DDB98F'].map(hx),PPEAK=['#8E64C4','#B98BE6','#E6CCFF'].map(hx);
+// v2.94 palette: the island's colours snap to the palette's tones (grass 6, rock 5, sand 3); browns (trunks, boat) and sails stay
+const PGRASS=['#143723','#1D4A2C','#275E35','#347640','#4F954B','#76B85E'].map(hx),PROCK=['#33283F','#4A3C5C','#63537A','#8371A0','#A796C4'].map(hx),PSAND=['#9C7556','#C19A74','#DDB98F'].map(hx);
 const near=(L,c)=>{let b=L[0],bd=1e9;for(const q of L){const d=(q[0]-c[0])**2+(q[1]-c[1])**2+(q[2]-c[2])**2;if(d<bd){bd=d;b=q}}return b};
 function palIsl(R,G,B,x,y){const S=T5.S,c=[R,G,B],lum=.3*R+.59*G+.11*B;
   if(G>R+8)return near(PGRASS,c);
   if(y>=S.wl-2&&R>150&&G>120&&B<150)return near(PSAND,c);
   if(R>B+25&&R>G)return c;                                            // trunks, boat, oar
-  if(Math.abs(x-S.peakX)<S.R*.22&&y<S.wl-40){if(lum>205)return PPEAK[2];if(lum>165)return PPEAK[1];if(lum>140)return PPEAK[0]}
   if(lum>200)return c;                                                // the sail
   return near(PROCK,c)}
-// v3.05 (Boğaç): the title burns like a neon sign; every 4–10 s it flickers off for a moment (a few quick blinks)
-function neonAt(t){const N=T5.neon||(T5.neon={next:t+3,off:[]});if(t>N.next){N.off=[];let a=t;const k=2+Math.floor(Math.random()*3);for(let i=0;i<k;i++){const d=.05+Math.random()*.16;N.off.push([a,a+d]);a+=d+.04+Math.random()*.14}N.next=a+4+Math.random()*6}
-  const on=!N.off.some(o=>t>=o[0]&&t<o[1]);const lg=document.querySelector('#title .logo.pl');if(lg&&lg.classList.contains('plneon-off')===on)lg.classList.toggle('plneon-off',!on);return on?1:.08}
 function hdIsland(c){const W=c.width,H=c.height,sd=c.getContext('2d').getImageData(0,0,W,H).data,o=document.createElement('canvas');o.width=W*2;o.height=H*2;
   const og=o.getContext('2d'),oi=og.createImageData(W*2,H*2),od=oi.data,rc=document.createElement('canvas');rc.width=W*2;rc.height=H*2;const rg=rc.getContext('2d'),ri=rg.createImageData(W*2,H*2),rd=ri.data;
   const A=(x,y)=>x>=0&&y>=0&&x<W&&y<H&&sd[(y*W+x)*4+3]>0;let r=11;const rn=()=>{r=(r*16807)%2147483647;return r/2147483647};const S=T5.S,fl=[];
@@ -8558,8 +8553,9 @@ function setupScene(Wc,Hc){T5.Wc=Wc;T5.Hc=Hc;T5.isl=hdIsland(buildIsland(Wc,Hc))
 function newStrike(t){const S=T5.S,sf=T5.surf;let x=null,y=0;   // v3.05 (Boğaç): a random spot of the island, never a set share for the peak
   for(let k=0;k<20;k++){const xx=Math.round(S.cx+(Math.random()*1.78-.95)*S.R);if(sf[xx]!=null&&T5.strikes.every(s=>Math.abs(s.x-xx)>24)){x=xx;y=sf[xx];break}}
   if(x==null){const xs=Object.keys(sf).map(Number).filter(v=>sf[v]!=null);x=xs[Math.floor(Math.random()*xs.length)];y=sf[x]}
-  let a=(Math.random()*2-1)*.62;if(Math.abs(a)<.08)a=a<0?-.12:.12;
-  T5.strikes.push({x,y,a,ta:Math.tan(a),t0:t,hd:.28+Math.random()*.32,hold:1.4+Math.random()*3.4,out:.9+Math.random()*1.4,sd:Math.random()*9,hit:false})}
+  let sea=false;if(Math.random()<.35){sea=true;x=Math.round(Math.random()*T5.Wc);y=Math.round(S.wl+6+Math.random()*(T5.Hc-S.wl-16))}   // v3.06 (Boğaç): the sea too
+  let a=(Math.random()*2-1)*.8;if(Math.abs(a)<.08)a=a<0?-.12:.12;
+  T5.strikes.push({x,y,a,ta:Math.tan(a),t0:t,hd:.28+Math.random()*.32,hold:1.4+Math.random()*3.4,out:.9+Math.random()*1.4,sd:Math.random()*9,hit:false,sea})}
 // eyes in the dark: under the trees, on the beach, in the wreck
 function eyeSpot(){const S=T5.S,sf=T5.surf,r=Math.random(),far=(x,y)=>T5.eyes.every(e=>Math.abs(e.x-x)+Math.abs(e.y-y)>10)&&!(T5.fire&&Math.abs(x-T5.fire.x)<12);
   for(let k=0;k<10;k++){let x,y,kd;
@@ -8609,18 +8605,7 @@ function drawTitle(t,dt){const c=$('b5tbg');if(!c)return;const vw=innerWidth||12
   g.save();g.globalAlpha=.25+.6*n;g.drawImage(T5.rimT,0,0,Wc,Hc);g.restore();
   // v2.94: glowing flowers on the grass, and a steady thin purple light onto the peak with its glow and a purple strip on the water (night)
   if(n>.3){const fa=(n-.3)/.7;for(const f of T5.flw){const b=fa*(.6+.4*Math.sin(t*1.3+f.ph));g.fillStyle=acc(.22*b);g.fillRect(f.x-1,f.y-1,2.5,2.5);g.fillStyle=acc(b,.6);g.fillRect(f.x,f.y,.5,.5)}
-    const px=S.peakX+.5,py=S.peakY,pa=fa*(.85+.15*Math.sin(t*1.1))*neonAt(t);g.save();g.globalCompositeOperation='lighter';
-    if(!T5.lgAt||t-T5.lgAt>.5){T5.lgAt=t;try{const lr=document.querySelector('#title .logo.pl').getBoundingClientRect(),cr=c.getBoundingClientRect();T5.lgx=(lr.left+lr.width/2-cr.left)/cr.width*Wc;T5.lgy=(lr.bottom-lr.height*.12-cr.top)/cr.height*Hc}catch(e){T5.lgx=px;T5.lgy=0}}
-    const hg=g.createRadialGradient(px,py+8,2,px,py+8,60);hg.addColorStop(0,acc(.32*pa));hg.addColorStop(1,acc(0));g.fillStyle=hg;g.fillRect(px-60,py-52,120,120);
-    const h2=g.createRadialGradient(px,py,1,px,py,24);h2.addColorStop(0,`rgba(246,232,255,${(.55*pa).toFixed(3)})`);h2.addColorStop(.3,acc(.3*pa));h2.addColorStop(1,acc(0));g.fillStyle=h2;g.fillRect(px-24,py-24,48,48);
-    {const lx=T5.lgx,ly=Math.max(0,T5.lgy),N=Math.max(1,py-ly);for(let i=0;i<N;i++){const k=i/N,y=ly+i,x=lx+(px-lx)*k,w=.5+k*3.2;g.fillStyle=acc(.2*pa*(.35+.65*k),.15);g.fillRect(x-w,y,w*2,1);g.fillStyle=`rgba(246,232,255,${(.26*pa*(.3+.7*k)).toFixed(3)})`;g.fillRect(x-.5,y,1,1)}}   // v3.05: from the title to the peak
-    for(let y=S.wl+3;y<Hc;y+=1.5){const k=(y-S.wl)/(Hc-S.wl),w=Math.max(.5,7*(1-k)),wob=Math.sin(y*.8+t*1.6)*1.5;g.fillStyle=acc(.16*pa*(1-k*.6),.2);g.fillRect(px-w+wob,y,w*2,.5)}
-    // rings spreading slowly on the water where the light's strip falls
-    g.lineWidth=.5;for(let i=0;i<5;i++){const ph=(t*.18+i/5)%1;g.strokeStyle=acc(.4*pa*(1-ph),.3);g.beginPath();g.ellipse(px,S.wl+7+ph*5,5+ph*42,1+ph*5,0,0,Math.PI*2);g.stroke()}
-    // motes rising around the peak
-    if(!T5.pm)T5.pm=[];while(T5.pm.length<36)T5.pm.push({x:(Math.random()-.5)*34,y:6-Math.random()*60,v:4+Math.random()*7,ph:Math.random()*6});
-    for(const q of T5.pm){q.y-=q.v*dt;if(q.y<-70){q.y=6;q.x=(Math.random()-.5)*34}const b=pa*(1+q.y/70)*(.6+.4*Math.sin(t*3+q.ph));if(b<.04)continue;g.fillStyle=acc(b,.55);g.fillRect(px+q.x+Math.sin(t+q.ph)*1.5,py+q.y,.5,q.v>8?1:.5)}
-    g.restore()}
+}
   // shore foam
   {const f=.5+.5*Math.sin(t*1.3);g.fillStyle=`rgba(240,248,255,${(.35+.35*f).toFixed(3)})`;for(let x=S.cx-S.R-2;x<S.cx+S.R*.84;x++){if((x+Math.floor(t*3))%7<4)g.fillRect(x,S.wl+1+(x%9===0?1:0),1,1)}
    for(const rx of [S.cx+S.R*.93,S.cx+S.R*1.0])g.fillRect(Math.round(rx)-1+Math.round(f*2),S.wl+3,4,1)}
@@ -8646,9 +8631,10 @@ function drawTitle(t,dt){const c=$('b5tbg');if(!c)return;const vw=innerWidth||12
     if(age<s.hd){const X=Math.round(s.x+(s.y-yh)*s.ta),Y=Math.round(yh);g.fillStyle=`rgba(255,235,255,${(.9*bn).toFixed(3)})`;g.fillRect(X-1,Y-1,3,3)}   // the falling head
     else{const X=s.x,Y=s.y,r=24+im*16;const ig=g.createRadialGradient(X,Y,1,X,Y,r);ig.addColorStop(0,`rgba(225,180,255,${(.7*A).toFixed(3)})`);ig.addColorStop(.35,`rgba(150,80,255,${(.28*A).toFixed(3)})`);ig.addColorStop(1,'rgba(120,60,255,0)');g.fillStyle=ig;g.fillRect(X-r,Y-r,r*2,r*2);
      // the light runs along the ground from where it lands
-     if(im>0){const d=Math.round((1-im)*28);for(const sd of [-1,1]){const gx=X+sd*d,gy=T5.surf[gx];if(gy==null)continue;g.fillStyle=`rgba(230,190,255,${(.85*im*bn).toFixed(3)})`;g.fillRect(gx-1,gy-1,3,2)}}
+     if(s.sea){g.lineWidth=.5;for(let r=0;r<4;r++){const ph=Math.min(1,(age-s.hd)/(1.6+r*.5)),rr=2+ph*(10+r*9);g.strokeStyle=`rgba(220,180,255,${(.6*A*(1-ph)).toFixed(3)})`;g.beginPath();g.ellipse(X,Y,rr,rr*.22,0,0,Math.PI*2);g.stroke()}}   // rings on the water where it lands
+     else if(im>0){const d=Math.round((1-im)*28);for(const sd of [-1,1]){const gx=X+sd*d,gy=T5.surf[gx];if(gy==null)continue;g.fillStyle=`rgba(230,190,255,${(.85*im*bn).toFixed(3)})`;g.fillRect(gx-1,gy-1,3,2)}}
      // its reflection: the mirrored beam on the water, wobbling
-     for(let y=S.wl+2;y<Hc;y+=2){const k=(y-S.wl)/(Hc-S.wl),w=1+Math.round(k*3),wob=Math.round(Math.sin(y*.9+t*2.4+s.sd)*(1+k*3)),rx=Math.round(s.x+(s.y-2*S.wl+y)*s.ta);
+     if(!s.sea)for(let y=S.wl+2;y<Hc;y+=2){const k=(y-S.wl)/(Hc-S.wl),w=1+Math.round(k*3),wob=Math.round(Math.sin(y*.9+t*2.4+s.sd)*(1+k*3)),rx=Math.round(s.x+(s.y-2*S.wl+y)*s.ta);
       g.fillStyle=`rgba(190,120,255,${(.38*A*(1-k*.75)).toFixed(3)})`;g.fillRect(rx-w+wob,y,w*2,1)}}
     // motes sliding down the beam, sparks rising from where it lands
     if(T5.motes.length<60&&Math.random()<dt*20*A){const D=L-vis+Math.random()*vis;

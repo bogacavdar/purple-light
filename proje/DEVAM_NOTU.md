@@ -1,3 +1,8 @@
+## v3.06 (3 Kasım 2026) · neon hep yanar, tepeye inen ışık yok, çarpmalar denize de
+- `neonAt` ve `.plneon-off` silindi. Gece bloğundan sürekli ışık (logo→tepe sütunu, iki hale, su şeridi, 5 halka, `T5.pm` zerreleri, `T5.lgx/lgy`) silindi; çiçekler kaldı. `palIsl`'den tepe renkleri (`PPEAK`) silindi.
+- `newStrike`: %35 deniz (x rastgele, y su çizgisi+6 … alt−10), açı ±0,8; `s.sea` çarpmasında yerde koşan ışık ve yansıma yerine suda 4 büyüyen elips.
+- Kontrol: chk.js 0 hata; ekran görüntüsü, sayfa hatası 0.
+
 ## v3.05 (3 Kasım 2026) · neon başlık, ışık başlıktan dağa, rastgele çarpmalar her yere
 - `newStrike`: %18 tepe payı ve tepeye düşme kaldırıldı; 20 denemede aralıklı nokta, yoksa `T5.surf`'ten rastgele nokta; açı yine ±0,62.
 - `neonAt(t)` (b5 bloğu): 4–10 sn'de bir 2–4 kısa sönme; `.logo.pl.plneon-off` sınıfı; sürekli ışığın gücü ile çarpılır (sönükken 0,08). Işığın üst ucu logonun alt-ortası (0,5 sn'de bir `getBoundingClientRect`, tuval koordinatına çevrilir), tepeye eğik iner.

@@ -30,6 +30,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 3.06 · 3 Kasım 2026
+
+### Görsel
+- PURPLE LIGHT yazısı artık titreyip sönmüyor, neon gibi hep yanıyor.
+- **Dağa inen sürekli ışık kaldırıldı;** onunla birlikte tepedeki hale, sudaki ışık şeridi, halkalar ve yükselen zerreler de gitti.
+- **Rastgele mor ışık adaya da denize de vuruyor,** farklı açılarla. Denize düştüğünde suda halkalar yayılıyor.
+
+### Tasarım belgesi
+- Akış › Ana menü: neon başlık hep yanar, tepeye inen ışık yok, ışık denize de vurur (v3.06).
+
 ## Versiyon 3.05 · 3 Kasım 2026
 
 ### Görsel
