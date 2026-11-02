@@ -43,6 +43,8 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 
 Öğretici sürerken Kazan, Pazar ve Demirci menüleri kilitlidir; ilgili kişiyle tanışınca açılır.
 
+**Öğretici kartını küçültmek (v3.07, Boğaç):** bilgisayarda öğretici kartının (Kemal, Zümrüt ve diğer eğitim adımları) başlık satırının sağında küçük bir **▾** düğmesi vardır; basınca kart yalnızca başlık satırına (konuşanın resmi ve adımın adı) iner, metin ve düğmeler gizlenir; **▸** ile yeniden açılır. Küçükken yeni bir adım gelirse başlık kısa bir süre parlar. Seçim bu tarayıcıda hatırlanır (oyuncunun kendi seçimi). Telefonda kart zaten başlığa dokununca açılıp kapanır, bu düğme yoktur.
+
 **Öğreticiyi geçmek (v1.81):** kartın üstündeki "Eğitimi geç" önce bir uyarı açar. Kemal şunu söyler: öğretici adayı ilk kez görenler için önemlidir, oyunun ana mekaniklerini (toplama, yeme, kazan, el yapımı, satış, dövüş, atılma) öğretir; geçilirse öğretici boyunca verilecek **ödüller, XP ve eşyalar alınmaz**. İki seçenek vardır:
 
 - **"Öğrenmek istiyorum"** → uyarı kapanır, öğretici kaldığı yerden sürer.

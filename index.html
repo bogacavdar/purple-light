@@ -18220,7 +18220,24 @@ html body:not(.v50m) #hotbar .hs kbd{font-size:13px;left:4px;top:1px}
 html body:not(.v50m) #hotbar .hs b{font-size:14px;right:4px;bottom:1px}
 html body:not(.v50m) #hotbar .hs .dur{height:4px;left:4px;bottom:3px;max-width:calc(100% - 8px)}
 @media (min-width:721px) and (pointer:fine){html body:not(.v50m) #torchslot{width:64px;height:64px;border-width:2px}html body:not(.v50m) #torchslot img{width:44px;height:44px}html body:not(.v50m) #torchslot kbd{font-size:13px;left:4px;top:1px}}
+/* v3.07 (Boğaç): the tutorial card can be folded to its title line on a computer */
+#tutmin{display:none}
+body:not(.v50m) #tut #tutmin{display:inline-block;margin-left:auto;font-size:13px;padding:2px 9px;line-height:1.2}
+body.tutmin:not(.v50m) #tut #tuttext,body.tutmin:not(.v50m) #tut .tb{display:none}
+body.tutmin:not(.v50m) #tut .th{margin-bottom:0}
+#tut.tnew .th{animation:tutnew 1.4s ease-out}
+@keyframes tutnew{0%,40%{background:rgba(242,184,75,.35)}100%{background:transparent}}
 </style>
+<script id="v307tut">
+// v3.07 (Boğaç): a ▾/▸ button folds the tutorial card to its title line (computer); remembered in this browser; a new step flashes the title while folded
+(function(){const K='pl.tutmin';const tut=document.getElementById('tut');if(!tut)return;const th=tut.querySelector('.th');if(!th)return;
+ const b=document.createElement('button');b.type='button';b.id='tutmin';th.appendChild(b);
+ const get=()=>{try{return localStorage.getItem(K)==='1'}catch(e){return false}};
+ const draw=()=>{const m=document.body.classList.contains('tutmin');b.textContent=m?'▸':'▾';b.setAttribute('aria-expanded',String(!m));b.title=m?'Öğretici kartını aç':'Öğretici kartını küçült'};
+ document.body.classList.toggle('tutmin',get());draw();
+ b.addEventListener('click',e=>{e.stopPropagation();const m=!document.body.classList.contains('tutmin');document.body.classList.toggle('tutmin',m);try{localStorage.setItem(K,m?'1':'0')}catch(_){}draw()});
+ const st=document.getElementById('tutstep');if(st&&window.MutationObserver)new MutationObserver(()=>{if(!document.body.classList.contains('tutmin'))return;tut.classList.remove('tnew');void tut.offsetWidth;tut.classList.add('tnew')}).observe(st,{childList:true,characterData:true,subtree:true})})();
+</script>
 <script id="v307hud">
 // v3.07: move the Menü toggle under the square buttons (it was beside Görevler)
 (function(){let n=0;const go=()=>{const m=document.getElementById('b-menut'),bar=document.getElementById('bar');if(m&&bar&&bar.parentNode){if(m.previousElementSibling!==bar)bar.parentNode.insertBefore(m,bar.nextSibling);return}if(++n<40)setTimeout(go,250)};go()})();
