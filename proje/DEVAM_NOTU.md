@@ -1,4 +1,7 @@
 ## v2.87 (2 Kasım 2026) · bilgisayarda büyük ana menü
+- `<style id="v287-title">` (logo genişliği min(100vw−260, 1500), #ttop sütun 84 px) + `<script id="v287title">` (#tmain zoom = logonun altındaki boşluk / menü yüksekliği, 1–1,5).
+
+## v2.87 (2 Kasım 2026) · bilgisayarda büyük ana menü
 - `<style id="v287-title">` + `<script id="v287title">` (menü zoom = logo altındaki boş yükseklik / menü yüksekliği, 1–1,5); `#ttop` dikey 84 px.
 
 ## v2.86 (2 Kasım 2026) · Kazan/Demirci/Pazar düğmeleri ve kısayolları kalktı, başarımlar sağ üstte, tarif kitabı sağ altta, sol menü 5 kare, menü katlanır
