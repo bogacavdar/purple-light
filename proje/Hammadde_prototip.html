@@ -14149,7 +14149,7 @@ const _tc133=treeChopped;treeChopped=function(t){const r=_tc133.apply(this,argum
    {const O={npc,witch,farmer,market,smith,durmus,trader,usta,alp,carp,kaptan,denizci,wiz};const o=O[tg.kind];if(o){const nm=o.name||({npc:'Yaşlı Kemal',witch:'Cadı Zümrüt',farmer:'Çiftçi Ekin',market:'Pazarcı Nazlı',smith:'Demirci Dursun',durmus:'Zırhçı Durmuş',trader:'Gemici Poyraz',usta:'Usta Sinan',alp:'Savaşçı Börü',carp:'Marangoz Çınar',kaptan:'Kaptan Poyraz',wiz:'Yıldızsız'})[tg.kind];if(nm)return[nm,'E ile konuş']}}   // v1.50: people and creatures under the mouse
    if(tg.kind==='pot')return['Zümrüt\'ün kazanı',KE+' ile tarif dene'];
    if(tg.kind==='xtra'){let l='';try{l=typeof tg.o.label==='function'?tg.o.label():tg.o.label}catch(x){}l=String(l||'').replace(/<[^>]+>/g,'').replace(/^E\s*/,'');if(l)return[l.split('·')[0].trim(),KE+' ile konuş']}
-   if(tg.kind==='animal'){const a=tg.a,D=ANIM[a.k]||{};return[a.k,(D.temper==='saldırgan'?'saldırgan · sol tık ya da '+KQ+' ile vur':D.temper==='zararsız'?'zararsız':'kızdırırsan saldırır')+(D.hp?` · Can ${Math.max(0,Math.ceil(a.hp))}/${D.hp}`:'')]}   // v2.85 (Boğaç): one label only (the second one under the cursor is gone); health joins this line
+   if(tg.kind==='animal'){const a=tg.a,D=ANIM[a.k]||{};return[a.k,(D.temper==='saldırgan'?'saldırgan · sol tık ya da '+KQ+' ile vur':D.temper==='zararsız'?'zararsız':'kızdırırsan saldırır')]}   // v2.85 (Boğaç): one short label only: name and what it does (the second box with health and drops is gone)
    if(tg.kind==='dog')return['Köpek',KE+' ile sev'];
    if(tg.kind==='tree'){const ty=tg.t.type,nm=/ağacı$/.test(ty.n)?ty.n:`${ty.n} ağacı`;return[nm,ty.noCut?'silkelenir (meyvesi düşer)':ty.fruit?'silkelenir · baltayla kesilir':'baltayla kesilir']}
    return null}
