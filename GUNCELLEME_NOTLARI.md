@@ -30,6 +30,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 3.00 · 3 Kasım 2026
+
+### Görsel
+- Ana menüde başlık tabelasına ve menü tahtalarına vuran mor ışık ve bıraktığı yanık izleri kaldırıldı. Tabela, gece mor ışık ve gündüz güneş aydınlatması kalıyor; adadaki yanıklar (2.99) duruyor.
+
+### Tasarım belgesi
+- Akış › Ana menü görünümü: tabela ve menü yanıkları kaldırıldı (v3.00).
+
 ## Versiyon 2.99 · 3 Kasım 2026
 
 ### Görsel

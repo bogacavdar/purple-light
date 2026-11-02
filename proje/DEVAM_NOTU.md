@@ -1,3 +1,6 @@
+## v3.00 (3 Kasım 2026) · tabela/menü yanıkları kaldırıldı
+- `<script id="v298hits">` ve `.plh`/`plshot`/`plburn` CSS'i silindi (Boğaç: yazının üstüne düşüyor, lazerle delinmiş gibi). Adadaki yanıklar (`T5.burns`, v2.99) duruyor. Belge `10_akis.md`, `00_giris.md`. chk.js 0 hata.
+
 ## v2.99 (3 Kasım 2026) · adada mor ışık yanıkları
 - Belge `10_akis.md` "Adada yanık izleri", `00_giris.md`.
 - b5 bloğu: vuruş yere değince (`s.hit`) `T5.burns`'e {x,t0,sd} (en çok 12). Ada ve kenar ışığından sonra her iz yüzey boyunca (`T5.surf`) ±w piksel, 3–5 derinlik çizilir; aşamalar 0–20 sn kömür (w 6), 20–35 kahve (5), 35–50 zeytin (4), 50–65 açık yeşil (3), 65 sn'de silinir; ilk 4 sn vurgu renginde korlar. Gündüz de çizilir.
