@@ -1,7 +1,7 @@
 ## v2.84 (2 Kasım 2026) · pazar ve el yapımı düğme sütunları, Keskin taş dersi sırası, ateşin yanında önce toplama
 - Belge: `20_sistemler.md` (El yapımı düğmeleri, Pazar sütunları, önce yanındaki toplanır).
 - `<style id="v284-mkt">`: `.mkt li.sl` sabit sütunlar (fiyat 6.6em, Sat 7.2em, Hepsi 7.4em; telefonda daha dar). `sellOrder(list)`: tz 9/10'da Keskin taş başa.
-- `<style id="v284-hand">` + el yapımı satırı: ×5 ve Hepsi hep çizilir (yetmiyorsa disabled), sıra Yap·×5·Hepsi·Takip·Yak, sabit genişlik; satır opaklığı yerine `li.hno .bn`.
+- `<style id="v284-hand">` + el yapımı satırı: ×5 ve Hepsi hep çizilir (yetmiyorsa disabled), sıra Yap·×5·Hepsi·Takip·Yak, sabit genişlik; düğme grubu satırın solunda (`order:-1`), ad ve malzeme sağda; satır opaklığı yerine `li.hno .bn`.
 - `target()`: v46 kamp/tuzak hedefinde önce `gatherTarget(false)`.
 - Kontrol: chk.js 0 hata; pazar ve el yapımı bilgisayar/tablet/telefon ekran görüntüsüyle bakıldı.
 
