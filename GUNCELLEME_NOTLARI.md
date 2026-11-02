@@ -30,6 +30,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.85 · 2 Kasım 2026
+
+### Arayüz
+- **Meşale yuvasındaki sayı okunuyor.** Kaç meşalen kaldığı artık yuvanın sağ üst köşesinde, beyaz ve siyah kenarlı; turuncu yanma çubuğunun üstüne binmiyor.
+
+### Tasarım belgesi
+- Sistemler: Meşale yuvası (sayının yeri).
+
 ## Versiyon 2.84 · 2 Kasım 2026
 
 ### Düzeltmeler

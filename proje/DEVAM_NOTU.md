@@ -1,3 +1,6 @@
+## v2.85 (2 Kasım 2026) · meşale yuvasındaki sayı sağ üstte
+- `#torchslot b`: sağ üst, beyaz + siyah kenar (önce sağ altta turuncu, yanma çubuğuyla aynı renkteydi). Belge `20_sistemler.md` Meşale yuvası.
+
 ## v2.84 (2 Kasım 2026) · pazar ve el yapımı düğme sütunları, Keskin taş dersi sırası, ateşin yanında önce toplama
 - Belge: `20_sistemler.md` (El yapımı düğmeleri, Pazar sütunları, önce yanındaki toplanır).
 - `<style id="v284-mkt">`: `.mkt li.sl` sabit sütunlar (fiyat 6.6em, Sat 7.2em, Hepsi 7.4em; telefonda daha dar). `sellOrder(list)`: tz 9/10'da Keskin taş başa.
