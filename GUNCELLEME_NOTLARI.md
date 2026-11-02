@@ -30,6 +30,28 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.94 · 3 Kasım 2026
+
+### Görsel
+- **Yeni ana menü.** Beş turda 45 önizleme arasından seçilen tasarım; bütün renkler "Purple Light — Ana Ekran Renk Paleti"nden.
+- **Başlık:** PURPLE LIGHT artık Cinzel yazı tipinde, iri piksellere dökülmüş; beyazdan mora üç basamak renk, üstünde ince bir süs çizgisi ve yıldız. Eski logonun arkasından geçen ışık şeridi kaldırıldı.
+- **Gece başlıyor:** ana menü gece açılıyor (gün döngüsü sürüyor). Gökyüzü ve deniz paletteki gece morlarına, ufuk pembeye boyandı; ay yuvarlak ve leylak renkli, başlığın altından geçiyor.
+- **Ada:** biraz sağa kaydı ve iki kat ince çiziliyor. Çimen, kaya ve kum paletteki tonlarda; tepelerin ve ağaçların üst kenarında mor kenar ışığı, gece parlayan küçük çiçekler, gece eskisi kadar kararmıyor.
+- **Mor ışık:** gece adanın tepesine sürekli inen ince bir ışık sütunu, tepede güçlü bir hale, suda yavaşça yayılan halkalar ve tepeden yükselen ışık zerreleri. Rastgele düşen mor ışık çarpmaları da sürüyor.
+- **Gökyüzü:** başlığın arkasında yavaşça dalgalanan iki ışık şeridi (kuzey ışığı) ve arada bir kayan yıldız (gece ortalama 10 saniyede bir, eskisinden uzun ve parlak).
+- Ateş böcekleri 22'den 11'e indi; kamp ateşi ve ateş böcekleri de paletteki renklerde.
+
+### Arayüz
+- **Menü düğmeleri ahşap tahta.** Her tahtanın iki ucunda bir kristal parlıyor; yazılar Pixelify Sans. Devam et (yoksa ilk düğme) ve üzerine gelinen tahta mor tonlu ahşaba döner ve parlar; kilitli Arena gri tahta. Sağ üstteki Başarımlar, Ayarlar ve Çıkış da aynı tahtadan. Telefonda da aynı görünüm.
+- **Ayarlar › Menü vurgusu:** ana menüdeki ışığın, parlamanın ve kristallerin rengi seçilebilir: mor (varsayılan), pembe, mavi, altın.
+
+### Tasarım belgesi
+- Akış › Ana menü: "Ana menü görünümü" ve "Ana menü sahnesi" (v2.94) eklendi: renkler, yazı tipleri, vurgu rengi, ada, mor ışık, gökyüzü.
+
+### Proje
+- Pixelify Sans'ın kullanılan harfleri ve Cinzel başlık resmi oyunun içine gömüldü (internetsiz çalışır; iki yazı tipi de SIL Açık Yazı Tipi Lisansı).
+- Ana menü ölçümü (telefon ayarı, işlemci 4 kat yavaş, 5 sn): sahne çizimi 2.93'te 306 ms, 2.94'te 288 ms.
+
 ## Versiyon 2.93 · 2 Kasım 2026
 
 ### Arayüz

@@ -1,3 +1,12 @@
+## v2.94 (3 Kasım 2026) · yeni ana menü (Boğaç'ın 45 önizleme arasından seçtiği tasarım + "Purple Light — Ana Ekran Renk Paleti")
+- Belge: `10_akis.md` "Ana menü görünümü" ve "Ana menü sahnesi" (v2.94), `00_giris.md`.
+- b5 bloğu (yerinde): `drawLogo` artık gömülü `LOGO_PNG`'yi (Cinzel, 2x piksel, 750×116, üç palet basamağı) çizer; `GLYPH` silindi. Logonun `.lbeam` ışık şeridi (öğe, CSS, `plbeam`) silindi.
+- Vurgu: `ACCS`/`ACC`/`accSet`/`acc(a,k)`, `settings.plAcc` (mor/pembe/mavi/altın), CSS `--plAcc`; Ayarlar'da `#placc` satırı. Rastgele mor çarpmalar (`strikes`) vurguya bağlı değil.
+- Sahne: `islandShape` cx 0,5 → 0,58; tuval 2x (`c.width=Wc*2`, `g.setTransform(2,…)`), `hdIsland` (2x doku + `palIsl` ile palet tonları + ayrı kenar ışığı katmanı `T5.rim`, vurguyla boyanmış kopyası `T5.rimT`/`rimK`, 18 çiçek `T5.flw`); `tintIsland` 2x kaynakla çalışır. Gece: `SKYN` (5) ve `SEAN` (3) palet durakları `n` ile karışır; gece tint `#4a4c94` → `#9a90c0`. Sürekli ışık sütunu + hale + su şeridi + halkalar (5 elips) + zerreler (`T5.pm`, 36). `buildAur` (bir kez kurulan, kenarları birleşen şerit; `aurK`). Kayan yıldız: olasılık dt×0,06 → dt×0,1, 30 adımlık iz, 1,1 sn. Ay yuvarlak (0,5 px), yay yüksekliği 64 → 36. Ateş böceği 22 → 11, renkler palette. Başlangıç fazı 0,40 → 0,56 (gece).
+- `<style id="v294-title">`: ahşap düğmeler (palet), Pixelify Sans alt kümesi (woff, ~11 KB, base64), kristaller `::before/::after`, seçili/kilitli tahta, sağ üst karolar, verlab/notlar yazısı.
+- Ölçüm (scratch betik: telefon görünümü 915×412, işlemci ×4, swiftshader, ana menüde 5 sn, `drawTitle` toplam): 2.93 306 ms · 2.94 288 ms (gürültü içinde; 2x tuvale rağmen artış yok). Bilgisayarda (1920×1080) bir ekran görüntüsüyle bakıldı; sayfa hatası 0.
+- Eski kayıtlara etkisi yok (yalnızca `settings.plAcc` eklendi, yoksa mor).
+
 ## v2.93 (2 Kasım 2026) · menü yeniden solda
 - `v287-title`: #tmain satır kuralları silindi, `v287title` zoom betiği geri (2b009e3'ten); logo ortada; kayık cx+R×0,36.
 
