@@ -1,3 +1,8 @@
+## v2.96 (3 Kasım 2026) · oyun içinde sol kare düğmeler küçük, üçlü iki sıra
+- Belge: `20_sistemler.md` (Bilgisayarda sol üst, v2.96), `00_giris.md`.
+- `layoutHUD`: kare kenarı = clamp(48, innerWidth×0,042, 84); `--lw` = 3×kare + 2×6. Sikke kutusuna kadar doldurma hesabı (bar üstü, Tokluk altı, sikke üstü) silindi. CSS `#left #bar` 2 → 3 sütun. Telefon görünümü (PHONE_MQ) değişmedi.
+- Kontrol: chk.js 0 hata; oyuna girip bir ekran görüntüsüyle bakıldı (eğitim başında 3 düğme tek sırada), sayfa hatası 0. Kare döngüsüne dokunulmadı.
+
 ## v2.95 (3 Kasım 2026) · ana menü gündüz, küçük menü düğmeleri
 - Belge: `10_akis.md` "Gündüz (v2.95)", `00_giris.md`.
 - b5 bloğu: `SKYK` gündüz/akşam/şafak durakları morumsu (gündüz #5b6fd6 → #e6d4f6, deniz #4a5fb0). Güneş yuvarlak (0,5 px), yay 70 → 38; altında suda pırıltılar (26, `sin` ile yanıp söner, gündüz). Işık sütunu/hale/şerit/halkalar/zerreler gündüz de çizilir (`pa`=0,5+0,5×gece; gündüz `source-over`, gece `lighter`); çiçekler yalnızca gece. Kenar ışığı saydamlığı .25+.6n → .5+.35n.

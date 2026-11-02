@@ -30,6 +30,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.96 · 3 Kasım 2026
+
+### Arayüz
+- **Oyunun içinde soldaki kare düğmeler küçüldü.** Envanter, El yapımı, Yetenekler, Yemek ve Robot köpekler artık yan yana üçlü, iki sıra halinde ve küçük (1920 px ekranda 81 px); eskiden iki sütun halinde sikke kutusuna kadar uzayıp oyunu kapatıyordu.
+
+### Tasarım belgesi
+- Sistemler › Bilgisayarda sol üst: kare düğmelerin dizilişi ve boyu (v2.96).
+
 ## Versiyon 2.95 · 3 Kasım 2026
 
 ### Görsel
