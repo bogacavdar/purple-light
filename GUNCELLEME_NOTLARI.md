@@ -38,7 +38,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Maden kayaları (deneme):** yeniden çıkan bir kaya çıktığı anda engel oluyor; ağaçların arasındaki bir kayanın içinde kalırsan çevredeki en yakın boş yere alınıyorsun. Telefonda bir kayanın içine girilebildiği bildirildi; sebebi henüz bulunamadı, bu iki değişiklik onu çözmeyebilir.
 
 ### Arayüz
-- **Bilgisayarda pazar penceresi geniş ve okunur.** Pencere geniş, XP çubuğuna kadar uzamıyor; liste içinde kaydırılıyor, yazılar ve düğmeler büyük.
+- **Bilgisayarda pazar penceresi geniş ve okunur.** Pencere geniş ve alttaki alet kemerinin üstünde bitiyor (kemer, sikke ve envanter düğmeleri görünüyor); liste içinde kaydırılıyor, yazılar ve düğmeler büyük.
 - **Pazarda düğmeler alt alta.** Fiyat, adet okları, Sat ve Hepsi her satırda aynı genişlikte; fiyat 1, 2 ya da 3 haneli olsa da düğmeler kaymıyor.
 - **Nazlı'nın "Keskin taşı sat" dersinde Keskin taş listenin en üstünde.**
 - **Kazan, Demirhane ve Pazar düğmeleri:** uzaktayken bir kez basınca ok yolu gösteriyor; ok yanarken bir daha basınca ok kalkıyor.
