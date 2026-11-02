@@ -30,21 +30,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
-## Versiyon 2.87 · 2 Kasım 2026
+## Versiyon 2.88 · 2 Kasım 2026
 
-### Arayüz
-- **Bilgisayarda ana menü büyüdü.** PURPLE LIGHT yazısı ve soldaki menü düğmeleri daha büyük; sağ üstteki Başarımlar, Ayarlar ve Çıkış alt alta ve büyük.
-
-### Tasarım belgesi
-- Akış: Ana menü (bilgisayarda büyük ana menü).
-
-## Versiyon 2.87 · 2 Kasım 2026
+### Görsel
+- **Ana menüdeki ada yenilendi.** Ada ortada; karlı, kayalık bir zirve ve yanında ormanlık bir tepe. Ağaçlar daha az ve gerçekçi: yukarıda çamlar, aşağıda yuvarlak yapraklı ağaçlar. Kumsalda kırık direkli, yırtık yelkenli bir kayık, yanında kürek. Bulutlar ortaya, yazının altına alındı ve yavaş kayıyor.
 
 ### Arayüz
 - **Bilgisayarda ana menü büyüdü.** PURPLE LIGHT yazısı, soldaki menü düğmeleri ve sağ üstteki Başarımlar / Ayarlar / Çıkış simgeleri büyük; simgeler alt alta. Telefon aynı.
 
 ### Tasarım belgesi
-- Akış: Ana menü (bilgisayarda büyük ana menü).
+- Akış: Ana menü (bilgisayarda büyük ana menü, ada).
 
 ## Versiyon 2.86 · 2 Kasım 2026
 

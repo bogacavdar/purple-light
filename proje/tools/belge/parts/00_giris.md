@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.86** ile birebir (2 Kasım 2026). Bu sürümde: Kazan, Demirhane ve Pazar menü düğmeleri, kısayolları ve yol gösteren okları kalktı (oraya gidilir); Başarımlar sağ üstte, Tarif kitabı sağ altta; solda yalnızca Envanter, El yapımı, Yetenek ağacı, Yemek ve Robot köpekler; sol menü katlanabilir (ayrıntı: **Sistemler**).
+Sürüm: **Versiyon 2.88** ile birebir (2 Kasım 2026). Bu sürümde: ana menüdeki ada yenilendi (ortada, gerçekçi dağ, ağaç ve kayık), bilgisayarda ana menü büyük (yazı, düğmeler, alt alta simgeler) (ayrıntı: **Oyun akışı · Ana menü**).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

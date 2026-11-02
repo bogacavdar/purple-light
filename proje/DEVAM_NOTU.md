@@ -1,8 +1,6 @@
-## v2.87 (2 Kasım 2026) · bilgisayarda büyük ana menü
-- `<style id="v287-title">` (logo genişliği min(100vw−260, 1500), #ttop sütun 84 px) + `<script id="v287title">` (#tmain zoom = logonun altındaki boşluk / menü yüksekliği, 1–1,5).
-
-## v2.87 (2 Kasım 2026) · bilgisayarda büyük ana menü
-- `<style id="v287-title">` + `<script id="v287title">` (menü zoom = logo altındaki boş yükseklik / menü yüksekliği, 1–1,5); `#ttop` dikey 84 px.
+## v2.88 (2 Kasım 2026) · bilgisayarda büyük ana menü (2.87 yayınlanmadı, buraya katıldı), yeni ada
+- `<style id="v287-title">` (logo min(100vw−260, 1500), #ttop sütun 84 px) + `<script id="v287title">` (#tmain zoom = logonun altındaki boşluk / menü yüksekliği, 1–1,5).
+- `islandShape`/`buildIsland` (b5 bloğu) yeniden yazıldı (Boğaç'ın seçtiği B önizlemesi, ağaçlar azaltıldı, dağlar ×0,8): cx = Wc×0,55, iki tepe, kar/kaya/çakıl katmanları, çam + yuvarlak ağaç, kayık sağ kumsalda (cx+R×0,56), kamp solda. Bulutlar Wc×0,3–0,75 arası, y 46–76, yavaş (v 0,15–0,45). Mor ışık inişi `T5.surf`/`S.peakX` ile çalışmaya devam ediyor.
 
 ## v2.86 (2 Kasım 2026) · Kazan/Demirci/Pazar düğmeleri ve kısayolları kalktı, başarımlar sağ üstte, tarif kitabı sağ altta, sol menü 5 kare, menü katlanır
 - `#b-craft,#b-sell,#b-shop{display:none!important}` (öğe duruyor: LOCKS ve öğretici parlamaları adla erişiyor, null hatası olmasın); `MK` ve `KB`'den B/T/P çıktı; openMenu uzaktan → yalnızca bildirim (ok yok), `guideFlip` silindi; Kemal eğitim 4 metninde P yok.
