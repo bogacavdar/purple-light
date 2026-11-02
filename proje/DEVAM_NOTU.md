@@ -1,3 +1,6 @@
+## v2.92 (2 Kasım 2026) · bilgisayarda ana menü düzeni: logo üstte ortada, ada ortada, düğmeler altta tek sıra
+- `v287-title` yeniden yazıldı (#tmain yatay, `width:max-content`, translateX(-50%)); `v287title` zoom betiği silindi; `islandShape` cx 0,62 → 0,5.
+
 ## v2.91 (2 Kasım 2026) · logo ortada ve büyük
 - `v287-title`: logo `left:50%`, genişlik min(100vw−236, 1900).
 

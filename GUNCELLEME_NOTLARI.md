@@ -30,6 +30,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.92 · 2 Kasım 2026
+
+### Arayüz
+- **Ana menü yeniden düzenlendi (bilgisayar).** PURPLE LIGHT yazısı üstte tam ortada ve büyük, ada onun altında ortada, menü düğmeleri adanın altında tek sıra halinde ortalı; sürüm ve Güncelleme notları altlarında. Başarımlar, Ayarlar ve Çıkış sağ üstte alt alta. Telefon aynı.
+
+### Tasarım belgesi
+- Akış: Bilgisayarda ana menü düzeni (v2.92).
+
 ## Versiyon 2.91 · 2 Kasım 2026
 
 ### Görsel

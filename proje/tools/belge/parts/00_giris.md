@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.91** ile birebir (2 Kasım 2026). Bu sürümde: ana menüde PURPLE LIGHT yazısı ortada ve büyük (ayrıntı: **Oyun akışı · Ana menü**).
+Sürüm: **Versiyon 2.92** ile birebir (2 Kasım 2026). Bu sürümde: bilgisayarda ana menü yeniden düzenlendi (yazı üstte ortada, ada ortada, düğmeler altta tek sıra) (ayrıntı: **Oyun akışı · Ana menü**).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
