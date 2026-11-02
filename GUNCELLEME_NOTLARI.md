@@ -33,6 +33,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ## Versiyon 2.86 · 2 Kasım 2026
 
 ### Arayüz
+- **Sol menü katlanabiliyor.** Bilgisayarda Görevler/Gizle düğmesinin yanındaki **Menü ▾** ile kare düğmeleri gizleyebilirsin; kısayol tuşları çalışmaya devam ediyor, seçimin hatırlanıyor.
 - **Sol menüde Robot köpeklere yer ayrıldı.** Bilgisayarda menü karelerinin boyu, henüz açılmamış düğmeler (Robot köpekler, Yemek) de hesaba katılarak bulunuyor; yeni bir düğme gelince yeri hazır, kareler küçülüp kaymıyor.
 
 ### Tasarım belgesi

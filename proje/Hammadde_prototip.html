@@ -5986,6 +5986,7 @@ let last=performance.now(),time=0,shake=0,shakeP=0;
 // desktop: the menu icons grow until the grid reaches the coin box
 const PHONE_MQ=matchMedia('(pointer:coarse) and (orientation:landscape) and (max-height:520px)');let hudK='';
 function layoutHUD(){const L=$('left');if(PHONE_MQ.matches){if(hudK!=='p'){hudK='p';L.style.removeProperty('--ibs');L.style.removeProperty('--lw')}return}
+  if(document.body.classList.contains('menuhid'))return;   // v2.86: folded menu keeps the last size
   const bar=$('bar'),coin=$('coinbox');const n=bar.children.length,rows=Math.ceil(n/2),gap=6;   // v2.86 (Boğaç): sized for every button the menu can ever show (robot dogs, eating…), so a new one fits without the squares jumping
   L.style.setProperty('--ibs','52px');const top=bar.getBoundingClientRect().top,bottom=coin.getBoundingClientRect().top-12;
   let sz=Math.floor((bottom-top-(rows-1)*gap)/rows);sz=Math.max(48,Math.min(Math.round(innerWidth*.12),sz));   // v2.85 (Boğaç): the squares fill the column down to the coin box (the old 128 px ceiling left a gap); a later button (robot dogs…) adds a row and they shrink to fit
@@ -18000,6 +18001,25 @@ function sign(C){const x=Math.round(C.start.x),y=Math.round(C.start.y+22),b=Math
   else for(const D of V.caves){if(D.door&&Math.abs(D.door.x-(cam.cx+vw/2))<vw&&Math.abs(D.door.y-(cam.cy+vh/2))<vh)glow(D.door.x,D.door.y+8,t)}}catch(e){}return r}}
 {const _ls=lightSources;lightSources=function(){const L=_ls.apply(this,arguments);try{const V=CVo();if(V&&!V.cur&&!onTitle){const out=L.slice();for(const D of V.caves)if(D.door)out.push([D.door.x,D.door.y+4,60]);return out}}catch(e){}return L}}   // the mouth is lit at night
 }).toString()+')()')}catch(e){try{window.__hamErr('v277: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<style id="v286-menut">
+/* v2.86 (Boğaç): the left menu squares can be folded away (for players who use the keys) */
+#qmrow{display:flex;gap:6px;pointer-events:auto}#qmrow>#b-quest{flex:1 1 auto;min-width:0;width:auto!important}
+#b-menut{flex:none;width:auto!important;justify-content:center;gap:6px;font-weight:700;padding-left:12px;padding-right:12px;white-space:nowrap}
+#b-menut b{font-size:.9em;opacity:.8}
+body.menuhid #left #bar{display:none!important}
+body.v50m #b-menut{display:none!important}
+</style>
+<script id="v286menut">
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const K='hammadde.v286.menuhid';const bar=$('bar');if(!bar)return;
+const b=document.createElement('button');b.type='button';b.className='ib wide';b.id='b-menut';{const q=$('b-quest'),row=document.createElement('div');row.id='qmrow';if(q&&q.parentNode){q.parentNode.insertBefore(row,q);row.appendChild(q);row.appendChild(b)}else bar.parentNode.insertBefore(b,bar)}   // beside Görevler/Gizle: no extra row, the squares keep their size
+const lab=()=>{const h=document.body.classList.contains('menuhid');b.innerHTML=`<span>Menü</span><b>${h?'▸':'▾'}</b>`;b.setAttribute('aria-expanded',String(!h));b.title=h?'Menü düğmelerini göster (kısayollar çalışmaya devam eder)':'Menü düğmelerini gizle (kısayollar çalışmaya devam eder)'};
+const set=h=>{document.body.classList.toggle('menuhid',h);store.set(K,h?1:0);lab();hudK='';try{layoutHUD()}catch(e){}};
+document.body.classList.toggle('menuhid',!!store.get(K));lab();
+b.addEventListener('click',e=>{e.stopPropagation();set(!document.body.classList.contains('menuhid'));sfx('pick')});
+}).toString()+')()')}catch(e){try{window.__hamErr('v286menut: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v285win">
 // v2.85 (Boğaç): computer menu windows reach down to just above the belt, leaving a third of the gap the 2.84 window left

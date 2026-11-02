@@ -1,4 +1,5 @@
-## v2.86 (2 Kasım 2026) · menü kareleri bütün düğmelere göre
+## v2.86 (2 Kasım 2026) · menü kareleri bütün düğmelere göre, menü katlanır
+- `<script id="v286menut">` + `<style id="v286-menut">`: `#qmrow` (b-quest + `#b-menut`), `body.menuhid` → `#bar` gizli, localStorage `hammadde.v286.menuhid` (oyuncu seçimi); `layoutHUD` katlıyken boyu değiştirmez.
 - `layoutHUD`: `n=bar.children.length` (gizli b-dog, b-eat dahil; 9 → 5 satır). Belge `20_sistemler.md`.
 
 ## v2.85 (2 Kasım 2026) · meşale yuvasındaki sayı sağ üstte, tek canlı etiketi, bilgisayarda büyük menü pencereleri
