@@ -1,3 +1,6 @@
+## v2.89 (2 Kasım 2026) · ana menü adası: küçük engebeli tepeler, sık ağaç, gündüz tavşan/geyik, gece kurtlar, büyük logo
+- `islandShape`: cx 0,5, R min(Wc×0,38,160), K 0,6 + sinüs engebe; renk eşikleri 23/18/28; ağaç adımı 3–6, atlama %20. `T5.crit`/`T5.wolf` (setupScene), çizim drawTitle'da ateşböceklerinden önce; yalnızca alçak yerde (yükseklik ≤ 13) yürür. Logo min(100vw−220, 1800).
+
 ## v2.88 (2 Kasım 2026) · bilgisayarda büyük ana menü (2.87 yayınlanmadı, buraya katıldı), yeni ada
 - `<style id="v287-title">` (logo min(100vw−260, 1500), #ttop sütun 84 px) + `<script id="v287title">` (#tmain zoom = logonun altındaki boşluk / menü yüksekliği, 1–1,5).
 - `islandShape`/`buildIsland` (b5 bloğu) yeniden yazıldı (Boğaç'ın seçtiği B önizlemesi, ağaçlar azaltıldı, dağlar ×0,8): cx = Wc×0,55, iki tepe, kar/kaya/çakıl katmanları, çam + yuvarlak ağaç, kayık sağ kumsalda (cx+R×0,56), kamp solda. Bulutlar Wc×0,3–0,75 arası, y 46–76, yavaş (v 0,15–0,45). Mor ışık inişi `T5.surf`/`S.peakX` ile çalışmaya devam ediyor.

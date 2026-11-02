@@ -30,6 +30,15 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.89 · 2 Kasım 2026
+
+### Görsel
+- **Ana menüdeki ada canlandı.** Tepeler daha küçük ve arası engebeli, ağaçlar yeniden sık. Gündüz bir tavşan zıplıyor ve bir geyik otluyor; gece kızıl gözlü iki kurt dolaşıyor.
+- **PURPLE LIGHT yazısı daha büyük**, ortada, adanın üstünde.
+
+### Tasarım belgesi
+- Akış: Ana menüdeki ada (hayvanlar, tepeler, yazı boyu).
+
 ## Versiyon 2.88 · 2 Kasım 2026
 
 ### Görsel
