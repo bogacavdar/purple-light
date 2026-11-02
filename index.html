@@ -1388,7 +1388,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.06</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.07</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -18203,6 +18203,27 @@ window.__plTSArena=n=>{if(!n){leftT=null;TS=null}else{inv[n]=Math.max(inv[n]||0,
   for(let i=0;i<belt.length;i++)if(belt[i]&&isTorch(belt[i])){if(!TS)TS=belt[i];belt[i]=null}if(!TS&&leftT&&isTorch(leftT))TS=leftT;hotK='';tsK='';renderHot()}catch(e){}return r}}
 {const _rs=resetState;resetState=function(){TS=null;tsK='';return _rs.apply(this,arguments)}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v283: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<style id="v307-hud">
+/* v3.07 (Boğaç): on a computer the quest button and the effect chips are at least as big as the Tokluk bar (full column width, 46 px tall);
+   the Menü toggle is a thin full-width bar under the square buttons */
+body:not(.v50m) #left #qmrow{display:block}
+body:not(.v50m) #left #qmrow>#b-quest{width:100%!important;min-height:46px;box-sizing:border-box}
+body:not(.v50m) #fxbar{flex-direction:column;align-items:stretch;gap:6px}
+body:not(.v50m) #fxbar span{width:100%;min-height:46px;box-sizing:border-box}
+body:not(.v50m) #left #b-menut{width:var(--lw,180px)!important;height:22px;min-height:0;padding:0 10px;font-size:13px;line-height:1;justify-content:center;gap:6px;margin-top:6px;box-sizing:border-box}
+/* v3.07 (Boğaç: "the belt is too big"): the 1–5 belt and the torch slot at the bottom are smaller on a computer (92 → 64 px) */
+html body:not(.v50m) #hotbar{gap:4px;padding:4px;border-width:2px}
+html body:not(.v50m) #hotbar .hs,html body:not(.v50m) #hotbar #handbtn{width:64px;height:64px;border-width:2px}
+html body:not(.v50m) #hotbar .hs img,html body:not(.v50m) #hotbar #handbtn img{width:44px;height:44px}
+html body:not(.v50m) #hotbar .hs kbd{font-size:13px;left:4px;top:1px}
+html body:not(.v50m) #hotbar .hs b{font-size:14px;right:4px;bottom:1px}
+html body:not(.v50m) #hotbar .hs .dur{height:4px;left:4px;bottom:3px;max-width:calc(100% - 8px)}
+@media (min-width:721px) and (pointer:fine){html body:not(.v50m) #torchslot{width:64px;height:64px;border-width:2px}html body:not(.v50m) #torchslot img{width:44px;height:44px}html body:not(.v50m) #torchslot kbd{font-size:13px;left:4px;top:1px}}
+</style>
+<script id="v307hud">
+// v3.07: move the Menü toggle under the square buttons (it was beside Görevler)
+(function(){let n=0;const go=()=>{const m=document.getElementById('b-menut'),bar=document.getElementById('bar');if(m&&bar&&bar.parentNode){if(m.previousElementSibling!==bar)bar.parentNode.insertBefore(m,bar.nextSibling);return}if(++n<40)setTimeout(go,250)};go()})();
 </script>
 </body>
 </html>

@@ -1,3 +1,8 @@
+## v3.07 (3 Kasım 2026) · oyun içi sol üst: Görevler ve etkiler büyük, ince Menü çubuğu, küçük kemer (bekleyen paket, yayında değil)
+- Belge `20_sistemler.md` (Bilgisayarda sol üst: v3.07 maddeleri), `00_giris.md`.
+- `<style id="v307-hud">` + `<script id="v307hud">` (dosya sonu): bilgisayarda (`body:not(.v50m)`) `#qmrow` blok, `#b-quest` tam genişlik en az 46 px; `#fxbar` sütun, her çip tam genişlik en az 46 px; `#b-menut` `#bar`'ın arkasına taşınır (sütun genişliğinde 22 px çubuk). Kemer `#hotbar .hs` 92 → 64 px (simge 64 → 44), `#torchslot` aynı.
+- Kontrol: chk.js 0 hata; oyun içi ekran görüntüsü (iki etki açık), sayfa hatası 0. Telefon görünümü (v50m) değişmedi.
+
 ## v3.06 (3 Kasım 2026) · neon hep yanar, tepeye inen ışık yok, çarpmalar denize de
 - `neonAt` ve `.plneon-off` silindi. Gece bloğundan sürekli ışık (logo→tepe sütunu, iki hale, su şeridi, 5 halka, `T5.pm` zerreleri, `T5.lgx/lgy`) silindi; çiçekler kaldı. `palIsl`'den tepe renkleri (`PPEAK`) silindi.
 - `newStrike`: %35 deniz (x rastgele, y su çizgisi+6 … alt−10), açı ±0,8; `s.sea` çarpmasında yerde koşan ışık ve yansıma yerine suda 4 büyüyen elips.
