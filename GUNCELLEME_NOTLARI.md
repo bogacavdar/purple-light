@@ -30,6 +30,42 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.83 · 2 Kasım 2026
+
+### Oynanış
+- **Meşalenin kendi yuvası var.** Alttaki alet kemerinin hemen solunda tek bir **meşale yuvası** duruyor; meşale artık yalnızca oraya takılıyor (kemere bırakırsan da oraya geçiyor).
+  - Yuvaya bas (bilgisayarda tıkla ya da 1'in solundaki **"** tuşu): meşale **yanar** ve sol eline geçer. Bir daha bas: **söner**, yuvasında bekler.
+  - Meşale yalnızca yanarken tükeniyor; sönükken azalmıyor. Yuvada kaç tane kaldığı ve ne kadar yanacağı görünüyor.
+  - Yanan meşale, elinde başka silah yoksa vurur.
+  - Fare tekerleği artık yalnızca kemerde geziyor; meşale kemerde olmadığı için atlanma sorunu da kalmadı.
+  - Zümrüt'ün ve Kemal'in meşale dersleri meşaleyi bu yuvaya koymanı ve yuvaya basıp yakmanı söylüyor.
+- **Canlılar kendi biyomlarından çıkmıyor.** Bir canlı biyomunun sınırına gelince geri dönüyor, kovalamayı sınırda bırakıyor.
+- **Reis, son av düştüğü anda onun yanında çıkıyor** ve yalnızca kendi biyomunda. Bataklıkta timsah avlayıp ormana yürüyünce Timsah Reisi artık ormanda çıkmıyor.
+- **Reisten çok uzaklaşırsan Reis kayboluyor;** sayaç bir eksik kalıyor (ör. 6 / 7). O türden bir av daha Reisi yeniden getiriyor.
+- **Her şey kendi biyomunda yeniden doğuyor.** Biten bitkiler, taşlar ve madenler ilk çıktıkları biyomda yeniden çıkıyor; Bataklık'ta biten demir artık Orman'da çıkmıyor.
+- **Daha iyi balta da yeter.** "Taş balta" isteyen tariflerde (kalaslar, saplar…) elindeki her balta işe yarıyor; kazmalar için de aynısı. Tarifte "Taş balta ya da daha iyisi" yazıyor.
+- **3 tarif birden takip edebilirsin.** Ekranın üstündeki şeritte en yenisi üstte. 4. tarifi takibe alınca en eskisi bırakılıyor.
+- **Şeritte Yap düğmesi.** Takip ettiğin tarif elle yapılabiliyorsa ve malzemeleri tamamsa şeritte yeşil **Yap** çıkıyor; Tab'ı açmadan yapıyorsun. Kazanda ya da örste yapılan tariflerde çıkmıyor.
+- **"Herhangi sap" gibi parçalarda + daha akıllı.** Kazan ve örsteki **+**, gruptan şimdi yapabildiğin en ucuz olanı yapıyor (eşitse malzemesi en çok olanı).
+
+### Düzeltmeler
+- **Doğu geçidi görevi artık kuralına uyuyor.** Kemal "Doğu geçidini aç" görevini, **Kaya patlatıcı** tarifini Zümrüt'ün kazanında öğrenmeden vermiyor. Önceden tarif yalnızca kitaba yazılıyordu ve içindeki çömleğin tarifi kazanda görünmüyordu. Kemal'in ayak işleri artık adım adım götürüyor: görülmemiş malzemeler, sonra çömlek (Nehir çömleği, ıslak nehir kili, nehir kili), en sonda Kaya patlatıcı. Her "tarifini öğren" işi o tarifi kitabına da yazıyor.
+
+### Arayüz
+- Kemerin solunda meşale yuvası (bilgisayarda kemerle aynı büyüklükte); yanarken turuncu parlıyor.
+- Kontroller'de yeni tuş: **Meşaleyi yak / söndür** (varsayılan **"**, 1'in solundaki tuş).
+- Arena'da silah seçicisinin altında **Sol el · meşale yuvası** satırı.
+
+### Kayıtlar
+- Eski kayıtta kemerde duran meşale açılışta meşale yuvasına taşınıyor.
+- Kaya patlatıcı tarifi öğrenilmeden alınmış Doğu geçidi görevi açılışta geri bırakılıyor; Kemal önce tarife götürüyor.
+
+### Tasarım belgesi
+- Sistemler: Meşale yuvası, Tarifteki alet yerine daha iyisi, "Herhangi" parçada +, Takip (3 tarif, şeritte Yap), Yeniden doğma kendi biyomunda, Arena'da meşale yuvası.
+- Reisler: Reis kendi biyomunda, uzaklaşınca kaybolur, canlılar biyomlarından çıkmaz.
+- ACT 1 görev kuralları: Doğu geçidi tarif kuralı ve Kemal'in zinciri; E3'ün açılma koşulu.
+- Akış: Zümrüt'ün 5. adımı ve Kemal'in meşale dersi meşale yuvasıyla.
+
 ## Versiyon 2.82 · 1 Kasım 2026
 
 ### Düzeltmeler

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.82** ile birebir (1 Kasım 2026). Bu sürümde: Tunç seti Orman'ın örslerinde dövülür (yanlışlıkla Çayır'a bağlıydı). Önceki sürüm (2.81): almanak kartları aynı boyutta.
+Sürüm: **Versiyon 2.83** ile birebir (2 Kasım 2026). Bu sürümde: meşalenin kendi yuvası olur, canlılar biyomlarından çıkmaz ve Reis son avın yanında çıkar, her şey kendi biyomunda yeniden doğar, daha iyi balta Taş balta isteyen tariflerde geçer, 3 tarif takip edilir ve şeritte Yap düğmesi çıkar, Doğu geçidi görevi Kaya patlatıcı tarifi öğrenilmeden verilmez (ayrıntı: **Sistemler**, **Reisler**, **ACT 1 · görev kuralları**).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
