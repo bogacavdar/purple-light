@@ -30,6 +30,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 3.02 · 3 Kasım 2026
+
+### Düzeltmeler
+- **Telefonda ana menü kayıyordu:** menü düğmeleri PURPLE LIGHT yazısının üstüne biniyor, en üstteki düğme ekrandan taşıyordu. Artık telefonda menü daha dar, düğmeler ekran boyuna göre küçülüyor ve başlık menünün sağındaki boşluğa ortalanıyor.
+- **Ana menü önce eski görünümde açılıp sonra değişiyordu** (bilgisayarda da): artık ilk andan itibaren tahta düğmelerle açılıyor.
+
+### Arayüz
+- **Bilgisayarda menü sol altta küçük.** Düğmeler boşluğu doldurmak için büyümüyor.
+
+### Tasarım belgesi
+- Akış › Ana menü: telefon ve kısa ekran düzeni, açılış, bilgisayarda düğme boyu (v3.02).
+
 ## Versiyon 3.01 · 3 Kasım 2026
 
 ### Görsel

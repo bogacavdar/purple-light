@@ -1,3 +1,9 @@
+## v3.02 (3 Kasım 2026) · telefonda ana menü kayması, açılıştaki eski görünüm, bilgisayarda küçük menü
+- Sebep (telefon): telefon düzeni yalnızca `max-height:520px`'te devreye giriyordu; Boğaç'ın telefonunda CSS yüksekliği bunun üstünde (≈521+), menü bilgisayar boyunda (34vw) kalıp başlığa biniyor ve üstten taşıyordu. `v294-title` sonuna `@media (pointer:coarse),(max-height:640px)` bloğu: `#tmain` min(300px,30vw), düğme yüksekliği/yazısı vh ile, logo menünün sağındaki alanın ortasında (en çok 640 px).
+- Sebep (açılış): `v287-title` ve `v294-title` stilleri dosyanın sonundaydı (~18000. satır); tarayıcı oraya gelmeden çiziyordu. İkisi `<head>`'e, `v48-b5-css`'in hemen arkasına taşındı. `#t-notes` kendi arka planını sıfırlar.
+- Bilgisayar: `<script id="v287title">` (zoom) silindi; düğme yazı 20 px, en az 52 px, genişlik min(340px,24vw).
+- Kontrol: chk.js 0 hata; 1123×521 (Boğaç'ın telefonu), 844×390 ve 1890×807 (açılıştan 250 ms sonra ve sonunda) ekran görüntüleri, sayfa hatası 0.
+
 ## v3.01 (3 Kasım 2026) · ana menü 2.94'e döndü, hep gece, süssüz yumuşak gölgeli başlık
 - Boğaç: "alayını kaldır, 94'e dön". `proje/Hammadde_prototip.html` 2.94'ten (fd20065) alındı, üstüne yalnızca: 2.96'nın `layoutHUD` + `#left #bar` 3 sütun (oyun içi sol kareler), `LOGO_PNG` süssüz ve sert gölgesiz (yumuşak CSS gölgesi `#b5logo`), gün döngüsü kalktı (`CYC` ve `T5.p` ilerlemesi silindi, `T5.p` 0,6). 2.95–3.00'daki ana menü kodu (gündüz, `v294-title` tabela/köşe/yanık ekleri, `v298hits`, `T5.burns`, zoom betiğinin silinmesi) geri alındı; `v287title` zoom betiği yine var.
 - Belge `10_akis.md` 2.94'ten alınıp güncellendi; `20_sistemler.md` (2.96 sol kareler) olduğu gibi.
