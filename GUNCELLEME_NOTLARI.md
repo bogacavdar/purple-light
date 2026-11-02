@@ -30,6 +30,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.93 · 2 Kasım 2026
+
+### Arayüz
+- **Ana menü düğmeleri yeniden solda (bilgisayar).** 2.92'de alta alınmıştı, geri alındı; düğmeler solda büyük. PURPLE LIGHT yazısı ve ada ekranın ortasında kalıyor, kayık sağ kumsalda.
+
+### Tasarım belgesi
+- Akış: Bilgisayarda ana menü düzeni (v2.93).
+
 ## Versiyon 2.92 · 2 Kasım 2026
 
 ### Arayüz

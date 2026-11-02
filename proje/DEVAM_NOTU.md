@@ -1,3 +1,6 @@
+## v2.93 (2 Kasım 2026) · menü yeniden solda
+- `v287-title`: #tmain satır kuralları silindi, `v287title` zoom betiği geri (2b009e3'ten); logo ortada; kayık cx+R×0,36.
+
 ## v2.92 (2 Kasım 2026) · bilgisayarda ana menü düzeni: logo üstte ortada, ada ortada, düğmeler altta tek sıra
 - `v287-title` yeniden yazıldı (#tmain yatay, `width:max-content`, translateX(-50%)); `v287title` zoom betiği silindi; `islandShape` cx 0,62 → 0,5.
 
