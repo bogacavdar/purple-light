@@ -30,6 +30,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.99 · 3 Kasım 2026
+
+### Görsel
+- **Mor ışık adayı yakıyor.** Gece mor ışık adaya nereye vurursa tam orada toprak kararıyor (ilk saniyelerde içinde mor korlar). İz gündüz de kalıyor ve adım adım yeşile dönüyor: kömür karası, koyu kahve, kurumuş zeytin yeşili, açık yeşil; yaklaşık bir dakikada tamamen kayboluyor.
+
+### Tasarım belgesi
+- Akış › Ana menü sahnesi: "Adada yanık izleri" (v2.99).
+
 ## Versiyon 2.98 · 3 Kasım 2026
 
 ### Görsel

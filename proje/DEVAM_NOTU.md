@@ -1,3 +1,8 @@
+## v2.99 (3 Kasım 2026) · adada mor ışık yanıkları
+- Belge `10_akis.md` "Adada yanık izleri", `00_giris.md`.
+- b5 bloğu: vuruş yere değince (`s.hit`) `T5.burns`'e {x,t0,sd} (en çok 12). Ada ve kenar ışığından sonra her iz yüzey boyunca (`T5.surf`) ±w piksel, 3–5 derinlik çizilir; aşamalar 0–20 sn kömür (w 6), 20–35 kahve (5), 35–50 zeytin (4), 50–65 açık yeşil (3), 65 sn'de silinir; ilk 4 sn vurgu renginde korlar. Gündüz de çizilir.
+- Kontrol: chk.js 0 hata; 16 sn gece ekran görüntüsünde adada iz göründü, sayfa hatası 0. Kare döngüsüne en çok 12 iz × ~13 sütun × ≤5 piksel eklendi (ölçülmedi).
+
 ## v2.98 (3 Kasım 2026) · başlık tabelası, gece/gündüz ışığı, rastgele mor ışık yanıkları, köşe düğmeleri
 - Belge `10_akis.md` (Başlık, Yanık izleri, Bilgisayarda ana menü düzeni), `00_giris.md`.
 - `LOGO_PNG` sert gölgesiz yeniden üretildi; `v294-title`: `.logo.pl` ahşap tabela (padding, kenar, `::before/::after` kristaller; bilgisayarda en çok 1100 px), `#b5logo` yumuşak gölge; gündüz sıcak drop-shadow + güneş parıltısı, gece eski mor parıltı (b5night/b5hit). 2.95'teki gündüz konturu silindi.
