@@ -2690,9 +2690,9 @@ function openMenu(m){
   let st=null;if(m==='forge'){st='forge';m='craft'}else if(m==='craft')st='pot';
   if(st==='pot'&&!nearPot()&&!(craftOpen&&mode==='craft'&&station==='pot')){sfx('bad');
     if(!witchShown){toast('Kazan Cadı Zümrüt\'ün yanında ama onunla henüz tanışmadın. Zamanı gelince seni çağıracak.',true);return}
-    guideTo('pot');toast(witchMet?'Kazan, Cadı Zümrüt\'ün yanında. Oraya yürü; ok yolu gösteriyor.':'Kazanı kullanmak için önce Cadı Zümrüt\'ün yanına git. Ok yolu gösteriyor.');return}
-  if((st==='forge'||m==='shop')&&!nearSmith()&&!atSmithMenu()){sfx('bad');guideTo('smith');toast(`Demirhane, ${smith.name}'un yanında. Oraya yürü; ok yolu gösteriyor.`);return}
-  if(m==='sell'&&!nearMarket()&&!(craftOpen&&mode==='sell')){sfx('bad');guideTo('market');toast(`Pazar, ${market.name}'nın tezgâhında. Oraya yürü; ok yolu gösteriyor.`);return}
+    guideFlip('pot',witchMet?'Kazan, Cadı Zümrüt\'ün yanında. Oraya yürü; ok yolu gösteriyor.':'Kazanı kullanmak için önce Cadı Zümrüt\'ün yanına git. Ok yolu gösteriyor.');return}
+  if((st==='forge'||m==='shop')&&!nearSmith()&&!atSmithMenu()){sfx('bad');guideFlip('smith',`Demirhane, ${smith.name}'un yanında. Oraya yürü; ok yolu gösteriyor.`);return}
+  if(m==='sell'&&!nearMarket()&&!(craftOpen&&mode==='sell')){sfx('bad');guideFlip('market',`Pazar, ${market.name}'nın tezgâhında. Oraya yürü; ok yolu gösteriyor.`);return}
   if(dlgOpen)bye();
   if(craftOpen&&mode===m&&(m!=='craft'||station===st)){closeCraft();return}
   if(m==='sell'&&!(craftOpen&&mode==='sell')&&tut<11)mktTab='sell';
@@ -3468,6 +3468,8 @@ function take(n){if(TOOLS.has(n))return;inv[n]--}
 const pot={r:null,put:[]};          // put[i] = {itemName: qty} for ingredient row i
 let potPing=0, gping=null;
 function guideTo(w,sec){gping={w,until:performance.now()+(sec||16)*1000}}
+// v2.84 (Boğaç): a menu button that shows the way (Kazan, Demirhane, Pazar far away): pressed again while its arrow is on, the arrow goes away
+function guideFlip(w,msg){if(gping&&gping.w===w&&performance.now()<gping.until){gping=null;toast('Ok kaldırıldı.');return}guideTo(w);toast(msg+' (Yine basarsan ok kalkar.)')}
 const GUIDE={denizci:()=>({x:denizci.x,y:denizci.y,n:denizci.name}),bridge:()=>({x:bridge.x0*T-10,y:bridge.cy,n:'Kırık köprü (Orman–Bataklık)'}),carp:()=>({x:carp.x,y:carp.y,n:carp.name}),kaptan:()=>({x:kaptan.x,y:kaptan.y,n:kaptan.name}),alp:()=>({x:alp.x,y:alp.y,n:alp.name}),usta:()=>({x:usta.x,y:usta.y,n:usta.name}),trader:()=>({x:trader.x,y:trader.y,n:'Gemici Poyraz'}),market:()=>({x:market.x-6,y:market.y,n:market.name}),smith:()=>({x:smith.x,y:smith.y,n:smith.name}),durmus:()=>({x:durmus.x,y:durmus.y,n:durmus.name}),pot:()=>({x:cauldron.x,y:cauldron.y,n:'Cadı Zümrüt · Kazan'}),
   ekin:()=>({x:npc.x,y:npc.y,n:npc.name}),berry:()=>{let b=null,bd=1e9;for(const n of nodes)if(n.alive&&n.name==='Böğürtlen'){const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;b=n}}return b?{x:b.x,y:b.y,n:'Böğürtlen'}:{x:player.x,y:player.y,n:''}},farmer:()=>({x:farmer.x,y:farmer.y,n:farmer.name}),dock:()=>({x:dock.x,y:dock.y,n:'İskele'}),toygar:()=>({x:toygar.x,y:toygar.y,n:toygar.name}),tzmat:tzMat,balikci:()=>({x:balikci.x,y:balikci.y,n:balikci.name}),
   clue:()=>{let b=null,bd=1e9;for(const c of CLUES){if(clues.has(c.id))continue;const d=Math.hypot(c.x-player.x,c.y-player.y);if(d<bd){bd=d;b=c}}return b?{x:b.x,y:b.y,n:'Mor parıltı'}:{x:player.x,y:player.y,n:''}}};

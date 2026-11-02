@@ -277,6 +277,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
 
 ## Harita, işaretler, defterler
 
+- **Yol gösteren menü düğmeleri (v2.84, Boğaç):** uzaktayken Kazan, Demirhane ya da Pazar düğmesine basınca ok o yeri (Zümrüt'ün kazanı, Dursun, Nazlı) gösterir. Ok yanarken **aynı düğmeye bir daha basmak oku kaldırır** ("Ok kaldırıldı"); üçüncü basış yeniden açar.
 - Sağ altta küçük harita; **M** büyük harita (tekerlek, sürükleme ya da +/− ile yakınlaştır). Geçtiğin yerin çevresi açılır (Kâşif gözü ile iki kat). Gece harita kararır ama kişiler görünür.
 - **Telefonda büyük harita (v2.33, Boğaç):** küçük haritaya dokununca açılan büyük harita pencerenin bütün boşluğunu kaplar (adanın en-boy oranıyla, sığan en büyük boy). Renk açıklamaları ve bilgi yazısı (keşif yüzdesi, nasıl kaydırılır) haritanın altında yer kaplamaz; sağ üstteki +, −, ◎ düğmelerinin altındaki **i** düğmesiyle haritanın üstünde açılıp kapanır (varsayılan kapalı, keşif yüzdesi açıklamanın ilk satırında). Bilgisayarda değişiklik yok.
 - **N** bulunduğun yere işaret koyar (ad + 5 renk, en çok 40). Büyük haritada bir kişinin simgesine dokununca ok onu gösterir; varınca, ✕ ile ya da **sağ tıkla** kalkar. Kendi işaretinde "Yol göster".

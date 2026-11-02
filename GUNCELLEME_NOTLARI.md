@@ -40,6 +40,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Arayüz
 - **Pazarda düğmeler alt alta.** Fiyat, adet okları, Sat ve Hepsi her satırda aynı genişlikte; fiyat 1, 2 ya da 3 haneli olsa da düğmeler kaymıyor.
 - **Nazlı'nın "Keskin taşı sat" dersinde Keskin taş listenin en üstünde.**
+- **Kazan, Demirhane ve Pazar düğmeleri:** uzaktayken bir kez basınca ok yolu gösteriyor; ok yanarken bir daha basınca ok kalkıyor.
 - **El yapımında düğmeler hep aynı yerde.** Her satırın en solunda sırayla **Yap · ×5 · Hepsi · Takip et**, sağında tarifin adı ve malzemeleri; basılabilenler renkli, basılamayanlar soluk ama yerinde duruyor. Düğmeler artık 2'li 3'lü kaymıyor, alt alta sütun oluyor.
 
 ### Tasarım belgesi

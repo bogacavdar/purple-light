@@ -3,6 +3,7 @@
 - `<style id="v284-mkt">`: `.mkt li.sl` sabit sütunlar (fiyat 6.6em, Sat 7.2em, Hepsi 7.4em; telefonda daha dar). `sellOrder(list)`: tz 9/10'da Keskin taş başa.
 - `<style id="v284-hand">` + el yapımı satırı: ×5 ve Hepsi hep çizilir (yetmiyorsa disabled), sıra Yap·×5·Hepsi·Takip·Yak, sabit genişlik; düğme grubu satırın solunda (`order:-1`), ad ve malzeme sağda; satır opaklığı yerine `li.hno .bn`.
 - `target()`: v46 kamp/tuzak hedefinde önce `gatherTarget(false)`.
+- `guideFlip(w,msg)`: Kazan/Demirhane/Pazar uzaktan basılınca ok; ok yanarken ikinci basış `gping=null`.
 - v229 kaya: yeniden doğan düğüm `__plRockDirty` ile ızgarayı hemen yeniler; içeride kalınca alt/üst/yan doluysa 6–96 px halka araması (250 ms). Kayaya nasıl girildiği bulunamadı: ilk karşılaşmada kaya sınırları doğru engelliyor, kaçış da çalışıyor; olası yol yeniden doğan kayanın 1,5 sn eski ızgarası ya da ağaçlarla dolu kaçış yerleri.
 - Kontrol: chk.js 0 hata; pazar ve el yapımı bilgisayar/tablet/telefon ekran görüntüsüyle bakıldı.
 
