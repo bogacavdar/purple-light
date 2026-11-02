@@ -30,6 +30,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 3.01 · 3 Kasım 2026
+
+### Görsel
+- **Ana menü 2.94'teki haline döndü.** 2.95–3.00'daki ana menü değişiklikleri geri alındı: gündüz düzenlemeleri, başlığın arkasındaki tahta, başlık ve tahtalardaki yanıklar, adadaki yanıklar, köşe düğmelerinin yeni yeri, küçültülmüş menü tahtaları.
+- **Ana menü hep gece.** Gün döngüsü yok; rastgele düşen mor ışık, kayan yıldız, kuzey ışığı, sudaki halkalar ve ışık zerreleri sürüyor.
+- **Başlık:** PURPLE LIGHT yazısının üstündeki süs çizgisi ve yıldız yok; harflerin altındaki keskin koyu gölge yumuşak bir gölge oldu.
+
+### Arayüz
+- Oyunun içinde soldaki kare düğmeler 2.96'daki gibi küçük ve üçlü iki sıra kalıyor.
+
+### Tasarım belgesi
+- Akış › Ana menü: 2.94'teki metne dönüldü; başlık (süs yok, yumuşak gölge) ve "hep gece" (v3.01).
+
 ## Versiyon 3.00 · 3 Kasım 2026
 
 ### Görsel

@@ -1,3 +1,8 @@
+## v3.01 (3 Kasım 2026) · ana menü 2.94'e döndü, hep gece, süssüz yumuşak gölgeli başlık
+- Boğaç: "alayını kaldır, 94'e dön". `proje/Hammadde_prototip.html` 2.94'ten (fd20065) alındı, üstüne yalnızca: 2.96'nın `layoutHUD` + `#left #bar` 3 sütun (oyun içi sol kareler), `LOGO_PNG` süssüz ve sert gölgesiz (yumuşak CSS gölgesi `#b5logo`), gün döngüsü kalktı (`CYC` ve `T5.p` ilerlemesi silindi, `T5.p` 0,6). 2.95–3.00'daki ana menü kodu (gündüz, `v294-title` tabela/köşe/yanık ekleri, `v298hits`, `T5.burns`, zoom betiğinin silinmesi) geri alındı; `v287title` zoom betiği yine var.
+- Belge `10_akis.md` 2.94'ten alınıp güncellendi; `20_sistemler.md` (2.96 sol kareler) olduğu gibi.
+- Kontrol: chk.js 0 hata; 16 sn gece ekran görüntüsü, sayfa hatası 0.
+
 ## v3.00 (3 Kasım 2026) · tabela/menü yanıkları kaldırıldı
 - `<script id="v298hits">` ve `.plh`/`plshot`/`plburn` CSS'i silindi (Boğaç: yazının üstüne düşüyor, lazerle delinmiş gibi). Adadaki yanıklar (`T5.burns`, v2.99) duruyor. Belge `10_akis.md`, `00_giris.md`. chk.js 0 hata.
 
