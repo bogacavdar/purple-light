@@ -1,3 +1,9 @@
+## v2.95 (3 Kasım 2026) · ana menü gündüz (bekleyen paket, yayında değil)
+- Belge: `10_akis.md` "Gündüz (v2.95)", `00_giris.md`.
+- b5 bloğu: `SKYK` gündüz/akşam/şafak durakları morumsu (gündüz #5b6fd6 → #e6d4f6, deniz #4a5fb0). Güneş yuvarlak (0,5 px), yay 70 → 38; altında suda pırıltılar (26, `sin` ile yanıp söner, gündüz). Işık sütunu/hale/şerit/halkalar/zerreler gündüz de çizilir (`pa`=0,5+0,5×gece; gündüz `source-over`, gece `lighter`); çiçekler yalnızca gece. Kenar ışığı saydamlığı .25+.6n → .5+.35n.
+- `v294-title` stili: gündüz (`#title:not(.b5night)`) `#b5logo`'ya koyu mor 4 yönlü piksel kontur + gölge; verlab ve notlar koyu gölgeli; `.mb:disabled` saydam değil (gri tahta).
+- Kontrol: chk.js 0 hata; gündüz (faz 0,2) ve akşam (0,44) ekran görüntüsüyle bakıldı, sayfa hatası 0. Kare döngüsüne gündüz birkaç çizim eklendi (pırıltılar, ışık); ölçüm paket çıkarken yapılacak.
+
 ## v2.94 (3 Kasım 2026) · yeni ana menü (Boğaç'ın 45 önizleme arasından seçtiği tasarım + "Purple Light — Ana Ekran Renk Paleti")
 - Belge: `10_akis.md` "Ana menü görünümü" ve "Ana menü sahnesi" (v2.94), `00_giris.md`.
 - b5 bloğu (yerinde): `drawLogo` artık gömülü `LOGO_PNG`'yi (Cinzel, 2x piksel, 750×116, üç palet basamağı) çizer; `GLYPH` silindi. Logonun `.lbeam` ışık şeridi (öğe, CSS, `plbeam`) silindi.
