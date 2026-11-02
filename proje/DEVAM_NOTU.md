@@ -1,4 +1,5 @@
 ## v2.85 (2 Kasım 2026) · meşale yuvasındaki sayı sağ üstte, tek canlı etiketi, bilgisayarda büyük menü pencereleri
+- `<style id="v285-hud">`: bilgisayarda #clock, #vit .vb, #fxbar iki kat (yazı `min(24px, --lw × .085)`); `layoutHUD` kare tavanı 128 → `innerWidth × .12`.
 - `<style id="v284-mktwin">` (artık genel) + `<script id="v285win">`: bilgisayarda `#craft .cpanel{zoom:1.2}`, `--plTop` (70/132) ve `--plMaxH` (kemerin `getBoundingClientRect().top`'una göre: eski alt sınırla kemer arası boşluğun 1/3'ü kalır; zoom'a bölünür), `#cbody` kaydırılır. Not: `offsetParent` sabit konumlu kemerde null döndüğü için kullanılmıyor.
 - `#torchslot b`: sağ üst, beyaz + siyah kenar (önce sağ altta turuncu, yanma çubuğuyla aynı renkteydi). Belge `20_sistemler.md` Meşale yuvası.
 - Canlı ipucu: imleçteki `#hovertip` doldurucu (pointermove) silindi; fare etiketi yalnızca ad + ne yaptığı. Belge `20_sistemler.md` Mizaç altı.

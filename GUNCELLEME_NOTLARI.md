@@ -35,6 +35,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Arayüz
 - **Meşale yuvasındaki sayı okunuyor.** Kaç meşalen kaldığı artık yuvanın sağ üst köşesinde, beyaz ve siyah kenarlı; turuncu yanma çubuğunun üstüne binmiyor.
 - **Bilgisayarda bütün menü pencereleri büyüdü.** Pazar, kazan, envanter, el yapımı, tarif kitabı ve öbürleri %20 daha büyük (yazılar, düğmeler, her şey) ve aşağıda alet kemerinin hemen üstüne kadar uzanıyor; içerik pencerenin içinde kayıyor. Telefon aynı.
+- **Bilgisayarda sol üst büyüdü.** Saat, can / enerji / tokluk çubukları ve etkiler iki kat büyük; sol menünün kare düğmeleri sikke kutusuna kadar sütunu dolduruyor (yeni düğme gelince kendiliğinden küçülüyor).
 - **Canlının üstünde tek etiket.** Fareyle bir canlının üstüne gelince artık yalnızca kısa bir yazı çıkıyor: adı ve ne yaptığı. Can, huy ve düşürdüklerini sayan ikinci kutu kalktı (bunlar Almanak'ta).
 
 ### Tasarım belgesi

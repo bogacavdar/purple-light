@@ -5988,7 +5988,7 @@ const PHONE_MQ=matchMedia('(pointer:coarse) and (orientation:landscape) and (max
 function layoutHUD(){const L=$('left');if(PHONE_MQ.matches){if(hudK!=='p'){hudK='p';L.style.removeProperty('--ibs');L.style.removeProperty('--lw')}return}
   const bar=$('bar'),coin=$('coinbox');const n=[...bar.children].filter(b=>!b.hidden).length,rows=Math.ceil(n/2),gap=6;
   L.style.setProperty('--ibs','52px');const top=bar.getBoundingClientRect().top,bottom=coin.getBoundingClientRect().top-12;
-  let sz=Math.floor((bottom-top-(rows-1)*gap)/rows);sz=Math.max(48,Math.min(128,sz));
+  let sz=Math.floor((bottom-top-(rows-1)*gap)/rows);sz=Math.max(48,Math.min(Math.round(innerWidth*.12),sz));   // v2.85 (Boğaç): the squares fill the column down to the coin box (the old 128 px ceiling left a gap); a later button (robot dogs…) adds a row and they shrink to fit
   const k=sz+'|'+n;if(k===hudK){L.style.setProperty('--ibs',sz+'px');return}hudK=k;L.style.setProperty('--ibs',sz+'px');L.style.setProperty('--lw',(2*sz+gap)+'px')}
 addEventListener('resize',()=>{hudK='';layoutHUD()});setInterval(layoutHUD,1000);setTimeout(layoutHUD,50);
 // one bad frame must not freeze the game: schedule the next frame first, show the first error once
@@ -17247,6 +17247,20 @@ setInterval(()=>{try{arm()}catch(e){}},300);
 /* v2.84 (Boğaç): the buttons stand at the left edge of the row, Yap first; the name and materials follow */
 .book.hand li{justify-content:flex-start}.book.hand li>.rr.hq{order:-1;flex:none;justify-content:flex-start}.book.hand li>.bn{flex:1 1 auto}
 body.v50m .book.hand .rr.hq{gap:4px}body.v50m .book.hand .rr.hq>[data-q="1"]{width:3.8em}body.v50m .book.hand .rr.hq>[data-q="5"]{width:2.9em}body.v50m .book.hand .rr.hq>.hall{width:7em}body.v50m .book.hand .rr.hq>.b3t{width:6.2em}
+</style>
+<style id="v285-hud">
+/* v2.85 (Boğaç): on a computer the clock, the health/energy/fullness bars and the effect chips at the top left are twice the size */
+@media (min-width:900px) and (pointer:fine){
+ html body:not(.v50m) #left #clock{font-size:min(26px,calc(var(--lw,262px) * .095));padding:7px 14px;gap:12px;border-width:3px}
+ html body:not(.v50m) #left #clock svg,html body:not(.v50m) #left #clock img{width:32px;height:32px}
+ html body:not(.v50m) #vit{gap:8px}
+ html body:not(.v50m) #vit .vb{height:46px;border-width:4px}
+ html body:not(.v50m) #vit .vb span{font-size:min(24px,calc(var(--lw,262px) * .085))}
+ html body:not(.v50m) #vit .vb.st{height:30px;border-width:3px}html body:not(.v50m) #vit .vb.st span{font-size:19px}
+ html body:not(.v50m) #fxbar{gap:7px}
+ html body:not(.v50m) #fxbar span{font-size:20px;padding:3px 9px;border-width:3px;gap:6px}
+ html body:not(.v50m) #fxbar span b{font-size:21px}
+}
 </style>
 <style id="v284-mktwin">
 /* v2.85 (Boğaç): on a computer every menu window (pazar, kazan, envanter, el yapımı…) is shown 20% larger and grows down to just above the belt
