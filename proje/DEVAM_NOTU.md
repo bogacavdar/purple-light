@@ -1,4 +1,7 @@
-## v2.86 (2 Kasım 2026) · menü kareleri bütün düğmelere göre, menü katlanır
+## v2.86 (2 Kasım 2026) · Kazan/Demirci/Pazar düğmeleri ve kısayolları kalktı, başarımlar sağ üstte, tarif kitabı sağ altta, sol menü 5 kare, menü katlanır
+- `#b-craft,#b-sell,#b-shop{display:none!important}` (öğe duruyor: LOCKS ve öğretici parlamaları adla erişiyor, null hatası olmasın); `MK` ve `KB`'den B/T/P çıktı; openMenu uzaktan → yalnızca bildirim (ok yok), `guideFlip` silindi; Kemal eğitim 4 metninde P yok.
+- `placeAch`: masaüstünde `#b-ach` `#b-set`'in altına (CSS 96×44), `#b-book` sağ alt satırda Başarımlar'ın yerine; v50m'de kitap `#bar`'a geri döner.
+- `layoutHUD`: n = b-craft/b-sell/b-shop/b-book dışındaki çocuklar (5 → 3 sıra); alt sınır = Tokluk altı + (sikke üstü − Tokluk altı) × 0,67. b-eat b-dog'un önüne alınır.
 - `<script id="v286menut">` + `<style id="v286-menut">`: `#qmrow` (b-quest + `#b-menut`), `body.menuhid` → `#bar` gizli, localStorage `hammadde.v286.menuhid` (oyuncu seçimi); `layoutHUD` katlıyken boyu değiştirmez.
 - `layoutHUD`: `n=bar.children.length` (gizli b-dog, b-eat dahil; 9 → 5 satır). Belge `20_sistemler.md`.
 

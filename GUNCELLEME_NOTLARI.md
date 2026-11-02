@@ -32,7 +32,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ## Versiyon 2.86 · 2 Kasım 2026
 
+### Oynanış
+- **Kazan, Demirhane ve Pazar artık menüden açılmıyor.** Bu üç düğme, B / T / P kısayolları ve uzaktan basınca yol gösteren ok kaldırıldı. Kazanı Zümrüt'ün yanına gidip kazana dokunarak, demirhaneyi Dursun'la, pazarı Nazlı'yla konuşarak açıyorsun; yerlerini kendin buluyorsun. Öğreticinin ve görevlerin okları sürüyor.
+
 ### Arayüz
+- **Sol menü sadeleşti.** Solda yalnızca Envanter, El yapımı, Yetenek ağacı, Yemek ve (gelince) Robot köpekler var; eşit kareler, Tokluk çubuğu ile sikke arasındaki boşluğun alt üçte biri boş kalıyor. Robot köpeklerin yeri baştan ayrılmış.
+- **Başarımlar sağ üstte**, Çıkış ve Ayarlar'ın altında, onlarla aynı boyda.
+- **Tarif kitabı sağ altta**, Başarımlar'ın eski yerinde, Almanak'la aynı boyda (telefonda ☰ menüsünde).
 - **Sol menü katlanabiliyor.** Bilgisayarda Görevler/Gizle düğmesinin yanındaki **Menü ▾** ile kare düğmeleri gizleyebilirsin; kısayol tuşları çalışmaya devam ediyor, seçimin hatırlanıyor.
 - **Sol menüde Robot köpeklere yer ayrıldı.** Bilgisayarda menü karelerinin boyu, henüz açılmamış düğmeler (Robot köpekler, Yemek) de hesaba katılarak bulunuyor; yeni bir düğme gelince yeri hazır, kareler küçülüp kaymıyor.
 
