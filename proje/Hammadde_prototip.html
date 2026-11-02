@@ -17254,6 +17254,24 @@ setInterval(()=>{try{arm()}catch(e){}},300);
 .book.hand li{justify-content:flex-start}.book.hand li>.rr.hq{order:-1;flex:none;justify-content:flex-start}.book.hand li>.bn{flex:1 1 auto}
 body.v50m .book.hand .rr.hq{gap:4px}body.v50m .book.hand .rr.hq>[data-q="1"]{width:3.8em}body.v50m .book.hand .rr.hq>[data-q="5"]{width:2.9em}body.v50m .book.hand .rr.hq>.hall{width:7em}body.v50m .book.hand .rr.hq>.b3t{width:6.2em}
 </style>
+<style id="v284-mktwin">
+/* v2.84 (Boğaç): on a computer the market is a wide window that stops above the XP bar; the list scrolls inside it */
+@media (min-width:900px) and (pointer:fine){
+ html body:not(.v50m) #craft.cm-sell .cpanel{width:min(1040px,calc(100vw - 300px))!important;max-width:none!important;max-height:min(680px,calc(100vh - 190px))!important;display:flex;flex-direction:column}
+ html body:not(.v50m) #craft.cm-sell #cbody{flex:1 1 auto;min-height:0;overflow-y:auto}
+ html body:not(.v50m) #craft.cm-sell{align-items:flex-start;padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+ html body:not(.v50m) #craft.cm-sell.tutpad{padding-top:calc(env(safe-area-inset-top,0px) + 132px)}
+ html body:not(.v50m) #craft.cm-sell.tutpad .cpanel{max-height:min(680px,calc(100vh - 250px))!important}
+ html body:not(.v50m) #craft.cm-sell .cpanel{font-size:17px}
+ html body:not(.v50m) #craft.cm-sell .mkt li{font-size:18px;padding-bottom:8px}
+ html body:not(.v50m) #craft.cm-sell .mkt .kz{font-size:14px}
+ html body:not(.v50m) #craft.cm-sell .mkt button{font-size:16px;padding:5px 10px}
+ html body:not(.v50m) #craft.cm-sell .mkt .sq .qi{font-size:17px;width:56px;height:34px}
+ html body:not(.v50m) #craft.cm-sell .mkt .sq .qb{min-width:34px;height:34px}
+ html body:not(.v50m) #craft.cm-sell #cbody .note,html body:not(.v50m) #craft.cm-sell .mkttop button,html body:not(.v50m) #craft.cm-sell .mkttop input{font-size:16px}
+ html body:not(.v50m) #craft.cm-sell #crafttitle{font-size:22px}
+}
+</style>
 <style id="v284-mkt">
 /* v2.84 (Boğaç): the sell rows line up: price, − qty +, Sat and Hepsi keep the same width on every row, whatever the number of digits */
 .mkt li.sl{grid-template-columns:minmax(0,1fr) 6.6em auto 7.4em}
