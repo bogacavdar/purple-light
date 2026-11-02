@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 2.84** ile birebir (2 Kasım 2026). Bu sürümde: pazar ve el yapımı düğmeleri her satırda aynı yerde (el yapımında Yap en solda), bilgisayarda pazar penceresi geniş ve okunur, Keskin taş dersi listenin başında, ateşin yanındaki şey önce toplanır, Kazan/Demirhane/Pazar düğmesine ikinci basış oku kaldırır, maden kayası için iki deneme düzeltmesi (ayrıntı: **Sistemler**).
+Sürüm: **Versiyon 2.85** ile birebir (2 Kasım 2026). Bu sürümde: bilgisayarda bütün menü pencereleri %20 büyük ve kemerin üstüne kadar uzun, sol üst (saat, çubuklar, etkiler) iki kat büyük ve menü kareleri sikke kutusuna kadar, canlıların üstünde tek kısa etiket, meşale yuvasındaki sayı okunur (ayrıntı: **Sistemler**).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

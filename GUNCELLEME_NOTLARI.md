@@ -39,7 +39,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Canlının üstünde tek etiket.** Fareyle bir canlının üstüne gelince artık yalnızca kısa bir yazı çıkıyor: adı ve ne yaptığı. Can, huy ve düşürdüklerini sayan ikinci kutu kalktı (bunlar Almanak'ta).
 
 ### Tasarım belgesi
-- Sistemler: Meşale yuvası (sayının yeri).
+- Sistemler: Meşale yuvası (sayının yeri), fareyle canlının üstüne gelince tek etiket, bilgisayarda menü pencereleri (v2.85), bilgisayarda sol üst iki kat büyük.
 
 ## Versiyon 2.84 · 2 Kasım 2026
 
