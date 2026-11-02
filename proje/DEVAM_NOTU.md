@@ -1,3 +1,6 @@
+## v2.97 (3 Kasım 2026) · başlığın üstündeki süs kaldırıldı
+- `LOGO_PNG` yeniden üretildi (süs çizgisi ve yıldız yok, 750×74, boş üst kenar kırpıldı). Belge `10_akis.md`, `00_giris.md`. chk.js 0 hata.
+
 ## v2.96 (3 Kasım 2026) · oyun içinde sol kare düğmeler küçük, üçlü iki sıra
 - Belge: `20_sistemler.md` (Bilgisayarda sol üst, v2.96), `00_giris.md`.
 - `layoutHUD`: kare kenarı = clamp(48, innerWidth×0,042, 84); `--lw` = 3×kare + 2×6. Sikke kutusuna kadar doldurma hesabı (bar üstü, Tokluk altı, sikke üstü) silindi. CSS `#left #bar` 2 → 3 sütun. Telefon görünümü (PHONE_MQ) değişmedi.

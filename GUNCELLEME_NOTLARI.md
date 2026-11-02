@@ -30,6 +30,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.97 · 3 Kasım 2026
+
+### Görsel
+- Ana menüde PURPLE LIGHT yazısının üstündeki küçük süs çizgisi ve yıldız kaldırıldı.
+
+### Tasarım belgesi
+- Akış › Ana menü görünümü: başlık (v2.97).
+
 ## Versiyon 2.96 · 3 Kasım 2026
 
 ### Arayüz
