@@ -35,6 +35,8 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Düzeltmeler
 - **Kamp ateşinin yanındaki lif artık toplanıyor.** Ateşin ya da bir tuzağın hemen yanında toplanacak bir şey varsa Topla önce onu alıyor; ateşin menüsü ondan sonra açılıyor.
 
+- **Maden kayalarının içine girilmiyor.** Yeniden çıkan bir kaya çıktığı anda engel oluyor (önceden kısa bir süre içine girilebiliyordu). Ağaçların arasındaki bir kayanın içinde kalırsan çevredeki en yakın boş yere alınıyorsun; önceden üstü, altı ve yanı doluysa içinde kalıyordun.
+
 ### Arayüz
 - **Pazarda düğmeler alt alta.** Fiyat, adet okları, Sat ve Hepsi her satırda aynı genişlikte; fiyat 1, 2 ya da 3 haneli olsa da düğmeler kaymıyor.
 - **Nazlı'nın "Keskin taşı sat" dersinde Keskin taş listenin en üstünde.**

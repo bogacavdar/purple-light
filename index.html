@@ -6042,7 +6042,7 @@ function frameBody(now){
   tickAmb(dt);
   renderHot();
   tickSailing(dt);
-  if(slowT){for(const n of nodes){if(!n.alive){n.t-=slowT;if(n.t<=0){const sp=findSpot(n.name,player,n);if(sp){n.x=sp.x;n.y=sp.y;n.v=rnd();n.alive=true;n.pop=.35;if(n.mine)n.left=mineLeft();PERF.visT=0}else n.t=3}}else if(n.pop>0&&!n._v)n.pop=0}}
+  if(slowT){for(const n of nodes){if(!n.alive){n.t-=slowT;if(n.t<=0){const sp=findSpot(n.name,player,n);if(sp){n.x=sp.x;n.y=sp.y;n.v=rnd();n.alive=true;n.pop=.35;if(n.mine)n.left=mineLeft();PERF.visT=0;window.__plRockDirty=1}else n.t=3}}else if(n.pop>0&&!n._v)n.pop=0}}
   for(const n of PERF.vis)if(n.pop>0)n.pop-=dt;
   for(let i=parts.length-1;i>=0;i--){const p=parts[i];p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=80*dt;if(p.life<=0)parts.splice(i,1)}
   tickGather(dt,!!(mx||my));
@@ -15801,7 +15801,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const inRock=(n,px,py)=>{const s=n.mine?2:1,base=Math.round(n.y)+3,dy=(py-base)/s,dx=Math.abs(px-Math.round(n.x));
    const M=HALF;if(dy>0+M/s||dy<-14-2/s)return false;            // from 14 units above the base (the top) to the base, + margin
    const hw=dy>=-9?8:dy>=-12?6:3.5;return dx<hw*s+M};
- const rockAt=(px,py)=>{const now=performance.now();if(nodes.length!==gN||now-gT>1500)rebuild();
+ const rockAt=(px,py)=>{const now=performance.now();if(nodes.length!==gN||now-gT>1500||window.__plRockDirty){window.__plRockDirty=0;rebuild()}   // v2.84: a rock that grew back somewhere else blocks at once
    const gx=Math.floor(px/C),gy=Math.floor(py/C);for(let a=gx-1;a<=gx+1;a++)for(let b=gy-1;b<=gy+1;b++){const L=G.get(a*8192+b);if(!L)continue;
      for(const n of L)if(n.alive&&inRock(n,px,py))return n}return null};
  window.__plRockAt=rockAt;
@@ -15809,7 +15809,10 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  setInterval(()=>{try{if(onTitle||sailing)return;const n=rockAt(player.x,player.y);if(!n)return;const s=n.mine?2:1,base=Math.round(n.y)+3;
      const below=base+HALF+2,above=base-14*s-HALF-3;
      if(!blocked(player.x,below))player.y=below;else if(!blocked(player.x,above))player.y=above;
-     else{const side=n.x+(player.x<n.x?-1:1)*(8*s+HALF+2);if(!blocked(side,player.y))player.x=side}}catch(e){}},400);
+     else{const side=n.x+(player.x<n.x?-1:1)*(8*s+HALF+2);if(!blocked(side,player.y))player.x=side;
+       else{let best=null,bd=1e9;for(let r=6;r<=96&&!best;r+=4)for(let k=0;k<24;k++){const a=k/24*Math.PI*2,x=player.x+Math.cos(a)*r,y=player.y+Math.sin(a)*r;   // v2.84 (Boğaç): rocks among trees: the nearest free spot all around
+         if(blocked(x,y)||!reachAt(x,y)||isWater(tileAt(x,y)))continue;const d=Math.hypot(x-player.x,y-player.y);if(d<bd){bd=d;best={x,y}}}
+         if(best){player.x=best.x;player.y=best.y;goal=null}}}}catch(e){}},250);
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v229: '+(e&&e.message||e))}catch(_){}}})();
 </script>
