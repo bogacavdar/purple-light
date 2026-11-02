@@ -1,3 +1,6 @@
+## v2.91 (2 Kasım 2026) · logo ortada ve büyük
+- `v287-title`: logo `left:50%`, genişlik min(100vw−236, 1900).
+
 ## v2.90 (2 Kasım 2026) · 2.86 adası geri, biraz gerçekçi; hayvanlar silindi; logo adaya ortalı
 - `islandShape`/`buildIsland` 6bfd206'dan alındı; dokulu kaya + kar, 2×2 çim deseni, tiered çam / gölgeli yuvarlak ağaç (aynı R5 yerleri), kayık. `T5.crit`/`T5.wolf` ve çizimleri silindi. Logo `left:62%`, genişlik min(76vw−250, 1400).
 

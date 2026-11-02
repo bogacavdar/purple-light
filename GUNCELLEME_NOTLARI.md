@@ -30,6 +30,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 
 
+## Versiyon 2.91 · 2 Kasım 2026
+
+### Görsel
+- **PURPLE LIGHT yazısı ortada ve büyük.** Bilgisayarda ekranın ortasında, sağ üstteki simgelere değmeyecek kadar geniş.
+
+### Tasarım belgesi
+- Akış: Ana menüdeki ada (yazının yeri ve boyu).
+
 ## Versiyon 2.90 · 2 Kasım 2026
 
 ### Görsel
