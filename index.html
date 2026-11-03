@@ -14141,7 +14141,7 @@ const ult=document.createElement('button');ult.id='ultbtn';ult.type='button';ult
 // ---------------------------------------------------------------- soft lock: the nearest creature in front of you
 const mvDir=()=>{try{if(joy.on&&joy.mag>.12){const l=Math.hypot(joy.vx,joy.vy);if(l>.01)return{x:joy.vx/l,y:joy.vy/l}}}catch(e){}return null};   // v2.22: walking with the stick: strike where you walk (diagonals too)
 function target(range){let best=null,bs=1e9;const f=mvDir()||player.face||{x:0,y:1},fa=Math.atan2(f.y,f.x||(f.y?0:1));
-  for(const a of animals){const D=ANIM[a.k];if(!D||a.hp<=0)continue;const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy);if(d>range)continue;
+  for(const a of animals){const D=ANIM[a.k];if(!D||a.hp<=0||a.dl)continue;const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy);if(d>range)continue;   // v3.14: Börü's lesson crab is not a target
     let df=Math.abs(Math.atan2(dy,dx)-fa);if(df>Math.PI)df=2*Math.PI-df;const sc=d+df*22+(D.temper==='zararsız'?40:0)+(a.tut?20:0);if(sc<bs){bs=sc;best=a}}
   return best}
 function kind(){try{return window.__plCB?window.__plCB.kindOf():'fist'}catch(e){return 'fist'}}
@@ -14399,7 +14399,8 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
  const small=(h)=>`<div style="font-size:clamp(14px,2.6vw,20px);font-weight:700;margin-top:6px">${h}</div>`;
  const spot=()=>{for(let k=0;k<40;k++){const an=Math.random()*Math.PI*2,d=44+Math.random()*12,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;if(reachAt(x,y)&&!blocked(x,y)&&!isWater(tileAt(x,y)))return{x,y}}return{x:player.x+44,y:player.y}};
  const spawn=()=>{if(DL.crab){const i=animals.indexOf(DL.crab);if(i>=0)animals.splice(i,1)}const p=spot();
-   DL.crab={k:'Kerevit',x:p.x,y:p.y,hp:ANIM['Kerevit'].hp,st:'wander',t:0,dx:0,dy:0,face:1,atk:0,flash:0,kb:null,step:0,mad:false,tut:true,dl:true};animals.push(DL.crab);DL.hx=p.x;DL.hy=p.y};
+   DL.crab={k:'Kerevit',x:p.x,y:p.y,hp:ANIM['Kerevit'].hp,st:'wander',t:0,dx:0,dy:0,face:1,atk:0,flash:0,kb:null,step:0,mad:false,tut:true,dl:true};Object.defineProperty(DL.crab,'hp',{get:()=>ANIM['Kerevit'].hp,set:()=>{},enumerable:true,configurable:true});animals.push(DL.crab);   // v3.14: the lesson's crab takes no harm and cannot die
+  DL.hx=p.x;DL.hy=p.y};
  const count=()=>small(`${DL.mode==='parry'?'Savuşturma':'Sıyrılma'}: ${DL.n}/4`)+(DL.n===0&&!DL.frz?small('Kımıldama: kerevit saldıracak'):'');
  function startLesson(after,mode){if(DL.on)return;DL.on=true;DL.mode=mode==='parry'?'parry':'dodge';DL.n=0;DL.px=null;DL.ph='idle';DL.t=1.6;DL.after=after||null;if(DL.mode==='dodge')skills.add('S1');st=maxSt();spawn();
    try{document.body.classList.remove('nododge')}catch(e){}hint(count());sfx('found')}
@@ -14417,7 +14418,7 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
  const walkTo=(c,tx,ty,sp,dt)=>{const dx=tx-DL.hx,dy=ty-DL.hy,d=Math.hypot(dx,dy);if(d<1){c.dx=0;c.dy=0;return true}const k=Math.min(d,sp*dt)/d,nx=DL.hx+dx*k,ny=DL.hy+dy*k;
    if(!blocked(nx,ny)&&!isWater(tileAt(nx,ny))){DL.hx=nx;DL.hy=ny}else if(!blocked(nx,DL.hy)&&!isWater(tileAt(nx,DL.hy)))DL.hx=nx;else if(!blocked(DL.hx,ny)&&!isWater(tileAt(DL.hx,ny)))DL.hy=ny;
    c.dx=dx/d;c.dy=dy/d;c.step=(c.step||0)+dt*8;return false};
- const tickDL=(dt)=>{const c=DL.crab;if(!DL.on||!c)return;if(DL.ph==='talk'){c.x=DL.hx;c.y=DL.hy;c.dx=0;c.dy=0;
+ const tickDL=(dt)=>{const c=DL.crab;if(!DL.on||!c)return;if(animals.indexOf(c)<0){spawn();return}if(DL.ph==='talk'){c.x=DL.hx;c.y=DL.hy;c.dx=0;c.dy=0;
      if(!dlgOpen&&NOW()-(DL.talkT||0)>1.5){DL.ph='idle';DL.t=1.4;st=maxSt();hint(count())}   // v3.14: Börü's parry words closed without "Hazırım" (a click outside, Esc): the lesson goes on anyway
      return}
    if(DL.n===0){if(DL.px==null){DL.px=player.x;DL.py=player.y}player.x=DL.px;player.y=DL.py;goal=null;for(const k in keys)keys[k]=false}   // v2.15: the first time you stand still and wait for it
