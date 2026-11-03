@@ -8,6 +8,49 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.18 · 4 Kasım 2026
+
+### Oynanış
+- **Asıl hikâye: ACT 1'in anıları yeniden yazıldı.** ACT 1 artık hikâyenin romantik ve güzel kısmı; mor ışık ACT 2'de öğrenilecek. **22 anı**, her zaman bu sırayla geri gelir (bir anı gelmeden sonrakisi gelmez):
+  1. Kampüste ilk gün: üniversitede tanışma
+  2. Voleybol: arkadaşlarla maç, el çakma
+  3. Konser: ilk kez birbirinizden etkilendiğiniz gece; sonra onu evine bırakıyorsun
+  4. Açık hava sineması
+  5. Ödev gecesi: ödevine yardım ediyorsun
+  6. Bir mesaj: "Yarın yanıma sevgilim olarak gelir misin?" · "Bunun cevabı için sana sarılmam lazım."
+  7. Otogarda: utangaç, "seni seviyorum" diyemiyor; ilk öpücük
+  8. Yağmurda şemsiye: o ıslanmasın diye aldığın şemsiye
+  9. Bisiklet: kiralık bisikletlerle romantik bir tur
+  10. Waffle: "Öyle süzük süzük bakma… utanıyorum."
+  11. Peçeteden gül: seninki gül, onunki saçak saçak, hiçbir şeye benzemeyen bir peçete
+  12. Sinema biletleri: hepsini saklıyor
+  13. Tavla: o kazanıyor, şeytan boynuzlu "LOSER" fotoğrafın
+  14. Kardan kalp: kardan kalp biçiminde bir kartopu
+  15. Çay kenarında kahvaltı: teklifin yapılacağı çayın kenarında poğaça ve çay
+  16. Doğum günü pastası: damla çikolatadan kalp, limonata
+  17. Şatonun önünde: masal şatosu, göl ve korsan gemisi, fotoğraf
+  18. Hamburger: bitiremeyip yarısını sana veriyor
+  19. Kaktüs: evden çalıştığın ilk işinde "en dayanıklı çiçek"
+  20. Kelebekli kolye
+  21. Yüzme dersi: ilk tatiliniz
+  22. Çay kıyısında söz: evlenme teklifi, artık gece
+- **Her anının kendi resmi var** (22 yeni piksel sahne; yağmur anısı eski şemsiye resmini kullanır).
+- **Nasıl gelir:** her seferinde sıradaki anı gelir: 10, 25, 50, 100 ve 175 tarifte, uyurken (%40), bayılınca (%60), görev bitince (%30) ya da Zümrüt'e 2 Mor kıymık verince. Hepsi bir anda gelmesin diye uyku, bayılma ve görev için gün sınırı var: ilk anılar 1. günden, teklif en erken 18. günde.
+- **Mor ışık anıları ACT 2'ye taşındı:** Yıldız haritası, Mor bir delik, Mektup, Son akşam, Bırakılan el ve Mor fısıltı artık yalnızca ikinci adada gelir (uyku, bayılma, görev; bu sırayla). Usta görevleriyle gelen 5 ACT 2 anısı aynen duruyor.
+- **Çıkan anılar:** Yağmurlu çarşı, Yanık ekmek, Kumsalda ilk dans, Kırık pusula, Hastane koridoru.
+- **İz: Kelebekli kolye.** Kumsaldaki iz artık her zaman, ona senin aldığın gümüş kelebekli kolye (sevdiğin kişi erkekse de). Kolye anısı geldiğinde izi bulduysan anı bunu hatırlatır.
+- "Hatırladım" başarımı artık 33 anı ister (22 + 6 + 5).
+
+### Arayüz
+- Kitap › Anılar: önce ACT 1 (x / 22), sonra "ACT 2 · Mor ışık". Sıradaki anının yerinde nasıl ve en erken hangi gün geleceği yazar.
+- 22 anının hepsi gelince: "ACT 1'in bütün anıları geri geldi."
+
+### Kayıtlar
+- Eski kayıtlarda çıkan anılar kitaptan silinir; mor ışık anılarından ve ACT 2 usta anılarından gördüklerin korunur. ACT 1'in yeni anıları baştan, sırayla gelir. Tarif sayın zaten geçtiyse o eşikler kullanılmış sayılır (yükleyince bir anda anı yağmaz). "Kopmuş kolye/bileklik" izi "Kelebekli kolye" olur.
+
+### Tasarım belgesi
+- Sistemler › İzler ve anılar baştan yazıldı (22 anının tablosu, metinler, resimler, kurallar); Akış › Karakter yaratma (anılarda roller, iz); ACT 1 görevleri; ACT 2 girişi (mor ışık anıları); Zümrüt; Başarımlar.
+
 ## Versiyon 3.17 · 4 Kasım 2026
 
 ### Oynanış

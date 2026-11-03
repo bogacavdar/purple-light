@@ -1,3 +1,13 @@
+## v3.18 (4 Kasım 2026) · asıl hikâye: ACT 1'in 22 romantik anısı, mor ışık anıları ACT 2'ye, kelebekli kolye
+- Belge `20_sistemler.md` (İzler ve anılar, baştan), `10_akis.md`, `30_act1.md`, `40_act1_kisiler.md`, `50_act2_giris.md`, `94_basarimlar.md`.
+- `<script id="v318story">` (dosya sonu). Açılışta eski `MEMS` (`OLD`, 17 anı) kopyalanır ve `MEMS` yeniden kurulur: 0..11 ACT 1 #1–12 · **12..16 ACT 2 usta anıları (aynı nesneler; v104 bloğundaki `I0=12` aralığı ve sahneleri değişmeden çalışsın diye)** · 17..26 ACT 1 #13–22 · 27..32 mor ışık (Yıldız haritası, Mor bir delik, Mektup, Son akşam, Bırakılan el, Mor fısıltı; `old` = eski index).
+- ACT 1 anılarının `L`'si erişimci (setter boş): base `memFix()` her açılışta `MEMS[2].L`'yi yazıyordu. Teklif (`Çay kıyısında söz`) `MEM2M/MEM2K`'nın gece metni; kolye anısı `clues.has('bilezik')` ise bir satır ekler.
+- Tetikler: `ev318(ev)` (uyku %40, bayılma %60, görev %30; `MIN[pos]` gün şartı; ISLE===2'de önce mor ışık sırası). v57'nin `memEvent`'i artık hiçbir şey seçmez (bütün anılarda `ev:[]`); `window.__v57.quest` → ev318. Tarif eşikleri (10/25/50/100/175) oturumda geçilince (`lastF`, yüklemede yeniden taban) sıradakini getirir. Zümrüt: `v46WitchChoices` sarmalanır, "Mor kıymıkları göster (2)" sıradaki ACT 1 anısını getirir.
+- Sahneler: `memScene` yeni; usta anıları eski zincire aynı index'le, mor ışık ve "Yağmurda şemsiye" (eski Yağmurlu çarşı resmi) `withOld` ile (`MEMS` bir kare süresince eski diziye döner) eski index'le çizilir. 21 yeni sahne isimle seçilir (`S===...`).
+- `memText` sarmalandı: `{HAIRI}` = "Uzun kızıl saçları", bütün `{L}`/`{H}`'ler. `renderMem` yeni (ACT 1 sırası + ACT 2 bölümü). İz `bilezik` adı her zaman "Kelebekli kolye", `clueText` yeni metin.
+- Kayıt: `snapshot.v318=1`. `v318` olmayan kayıt yüklenince `mems` eski index→ad ile taşınır (yalnızca mor ışık + usta anıları), ACT 1 baştan; `memKind` aynı yolla.
+- Kontrol: chk.js 0 hata (`?.` 1, `??` 8; defterdeki `???` `&#63;` ile yazıldı). Test yapılmadı.
+
 ## v3.17 (4 Kasım 2026) · Nazlı: "Kazanda işe yaramayanları sat" yalnızca fazlayı satar
 - Belge `20_sistemler.md` (Ekonomi, yeni madde), `40_act1_kisiler.md` (Nazlı).
 - `<script id="v317spare">` (dosya sonu): `needOf(n)` = n'yi kullanan tariflerin (USES; potUses ∪ recUses ile aynı küme: bulunmamış+yerleştirilemez+(zor ya da açık) veya bulunmuş/açık) içindeki adetlerinin toplamı; `spareOf(n)` = bulkSellable ise max(0, inv − need). `safeSell` ve `sellSafe` yeniden tanımlandı (yalnızca fazlayı satar, shopTake(n,q)). `window` capture dinleyicisi #sellsafe tıklamasını alır, eski "Emin misin?" (3424) ve eski bütün yığın satışı (7909) çalışmaz. renderCraft sarmalayıcısı düğme tutarını fazlaya göre yazar. `window.__plSpare` hata ayıklama için.

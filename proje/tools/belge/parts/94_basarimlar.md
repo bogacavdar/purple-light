@@ -19,7 +19,7 @@
 | Kurt avcısı | 10 kurt avla. | – |
 | Kâşif | Adanın yarısını keşfet. | Haritanın açılan kısmı; "Haritayı aç" hilesi de sayılır. |
 | İz sürücü 🔒 | Eşinden kalan bütün izleri bul. | 6 iz: ikisi yurtta (Çayır/Orman), ikisi köprünün karşısında (biri Bataklık'ta, biri Kayalık Dağ'da), ikisi doğuda. Gece mor parıltı. |
-| Hatırladım 🔒 | Bütün anılarını geri getir. | 29 anı (v3.18): ACT 1'in 18 anısı (tanışmadan evlenme teklifine), ikinci adada gelen 6 mor ışık anısı, 5 usta anısı (ACT 2 ustalarının son görevleri). |
+| Hatırladım 🔒 | Bütün anılarını geri getir. | 33 anı (v3.18): ACT 1'in 22 anısı (tanışmadan evlenme teklifine), ikinci adada gelen 6 mor ışık anısı, 5 usta anısı (ACT 2 ustalarının son görevleri). |
 | Adada bir ay | 30. güne ulaş. | – |
 | Ejder avcısı 🔒 | Kül Diyarı'nın kara ejderini yen. | Kara ejder Kül Diyarı'nda. |
 | Ada efsanesi | Seviye 25 ol. | – |
