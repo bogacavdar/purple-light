@@ -59,3 +59,5 @@ Bütün ACT 2 ustaları aynı kuralla çalışır:
 6. **Gökay** (Gök Rıhtımı): 5 görev; göktaşları, uzaylı dronları, gölge muhafızlar, **Gök bekçisi** ve **Roket**. Roket bitince Gökay ile konuşup **Fırlat!** → fırlatma sahnesi → mor gemi → eşinle kavuşma → son kartı ("Yeniden birliktesiniz. Hikâye ACT 3 ile devam edecek."). Son karttan sonra oyuna devam edebilirsin; Gökay'dan yeniden fırlatılabilir.
 
 Ustaların görevleri bittikçe eşinin **ACT 2 anıları** sırayla geri gelir: Sahildeki ışık (gk3), Yıldızsız yolcular (pv3), Şapka (sl4), Mor gemi (mk3), Son söz (ej4).
+
+**Mor ışığın anıları (v3.18, Boğaç):** ACT 1'den çıkarılan mor ışıklı 6 anı (Yıldız haritası, Mor bir delik, Mektup, Son akşam, Bırakılan el, Mor fısıltı) ikinci adada bu sırayla gelir: uyurken %40, bayılınca %60, görev bitince %30. Şimdilik böyle; ACT 2 hikâyesi ayrıca değerlendirilecek (Sistemler › İzler ve anılar).
