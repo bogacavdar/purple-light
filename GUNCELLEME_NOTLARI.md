@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.16 · 4 Kasım 2026
+
+### Görsel
+- **Takla: gözler artık pörtlemiyor.** Yana ve çapraz taklada gözler kapkara büyümüş gibi görünüyordu; karakter artık kendi piksel boyunda döndürülüyor, her piksel aynı boyda kalıyor.
+- **Top hâlinde gözler kapalı:** takla sırasında karakter top olduğu anlarda gözlerini sıkıca kapatıyor.
+
+### Oynanış
+- **Takla biraz uzadı:** 0,38 → 0,46 saniye (mesafe aynı, 50 piksel). Dokunulmaz olduğun süre de aynı oranda uzadı; iki takla arası bekleme 0,76 saniye.
+
+### Tasarım belgesi
+- Sistemler › Dövüş › Atılma / takla ve Takla görüntüsü.
+
 ## Versiyon 3.15 · 4 Kasım 2026
 
 ### Görsel

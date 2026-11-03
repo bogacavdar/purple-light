@@ -1,4 +1,4 @@
-## v3.16 (4 Kasım 2026, bekleyen paket) · takla: gözler pörtlemiyor, top hâlinde kapalı, 0,46 sn
+## v3.16 (4 Kasım 2026) · takla: gözler pörtlemiyor, top hâlinde kapalı, 0,46 sn
 - Belge `20_sistemler.md` (Takla görüntüsü), `00_giris.md`.
 - `v315roll`: poz artık ana tuvalde (kamera ölçeğinde) döndürülmüyor; `build()` 60×60 küçük tuvalde (1 oyun pikseli = 1 piksel, yumuşatma kapalı) parçaları tam sayı satırlarla kurar, döndürür (π/16 adımları, 12°'den küçük dönüş 0), `blit()` tam sayı konuma kopyalar. Dikey takladaki ters çevirme de küçük tuvalde.
 - Süre: v113-roll `RT` .38 → .46 (Boğaç: "animasyon süresini biraz uzat"); bekleme RT+.3 = 0,76 sn kendiliğinden. Gözler: `K` pozlarına `sh` (3–6. pozlar 1), `paint(...,shut)` → `drawChibi` `closed:1`.
