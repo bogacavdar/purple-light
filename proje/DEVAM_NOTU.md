@@ -1,6 +1,7 @@
-## v3.11 (3 Kasım 2026) · yiyecekler biyom biyom iyileşir (bekleyen paket, yayında değil)
+## v3.11 (3 Kasım 2026) · yiyecekler ve fiyatlar biyom biyom iyileşir (bekleyen paket, yayında değil)
 - Belge `20_sistemler.md` (Yemek: biyom tablosu), `30_act1.md` / `55_act2_biyomlar.md` / `90_esyalar.md` (tokluk sayıları), `00_giris.md`.
 - Kod (yiyecek etkileri bloğu, eski `RAWGOOD`/`RAWHEAL` yerine): `FOODT` [biyom kademesi, tokluk, etki, ek can]; `RAWFOOD` bundan yazılır, `FOODC` (pişmiş yemek önbelleği) temizlenir; `RAWGOOD` FOODT'tan + ekili ürünler; `RAWHEAL` = kademe×3 (zehirliler 0) + ek can; `prof`'ta FOODT yiyeceğinin süresi 60+30×kademe sn; Yabani bal/Ay elması özel can satırı silindi.
+- Fiyatlar: `<script id="v311price">` (dosya sonu) `NEWP` (119 eşya: biyoma özgü toplananlar, odunlar, madenler; 3+ biyomda olanlar hariç) bantlara oturtuldu (Çayır 1–6 olduğu gibi, Orman 7–12, Bataklık 13–20, Kayalık 21–32, Kül 33–52, Mor 53–90; biyom içi sıra korunarak doğrusal). v2.48 kuralıyla tarif fiyatları değişim×miktar×1,3 zincirle güncellenir (toplam 652 fiyat değişti; ör. Kamış 1→13, Kenevir halatı 140→404, Meşe kalası 18→31, Demir külçesi 68→120); `FOODC` temizlenir (pişmiş yemeğin tokluğu fiyatından da hesaplanır). Mağara buluntuları ve ACT 2 dokunulmadı. Belge: 30_act1 (tablolar + kural), 90_esyalar, 85_aletler maden fiyatları; 80_tarifler'in türetilmiş fiyatları zaten yeniden üretilmemişti (v2.48 notu).
 - Kontrol: Böğürtlen 5 tok +4 can → Ahududu 9 +3 Şifa 90 sn → Kızılcık 12 +6 Pıhtı 120 sn → Alıç 15 +9 Şifa 150 sn → Ateş narı 19 +18 180 sn → Ay elması 24 +21 210 sn; chk.js 0 hata.
 
 ## v3.10 (3 Kasım 2026) · "Herhangi" kalktı

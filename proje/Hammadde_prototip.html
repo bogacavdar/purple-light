@@ -18532,5 +18532,19 @@ Object.assign(ATK,{
  'Işık Yutan':(ac,o,t)=>{tone(ac,o,t,2000,60,1.2,'sine',.5);hiss(ac,o,t,1.1,'bandpass',3000,2,.3,200)}});
 }).toString()+')()')}catch(e){try{window.__hamErr('v309cave: '+(e&&e.message||e))}catch(_){}}})();
 </script>
+<script id="v311price">
+// v3.11 (Boğaç: "her biyomda topladıklarım bir önceki biyoma göre daha değerli olmalı"): what is gathered in a land (plants, fruit, wood, ores; things
+// found in every land like Dal, Taş, Lif stay as they were) is priced in that land's band: Çayır 1–6, Orman 7–12, Bataklık 13–20, Kayalık Dağ 21–32,
+// Kül Diyarı 33–52, Mor Kristal Vadisi 53–90; the order inside a land stays. Every recipe that uses them follows by change × amount × 1,3 (the v2.48 rule).
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const NEWP={"Eğrelti":7,"Isırgan":7,"Kuzukulağı":7,"Sarmaşık":7,"Ahududu":8,"Fındık":8,"Tatlısu midyesi":8,"Yaban sarımsağı":8,"Yabani mercimek":8,"Yabani nohut":8,"Ceviz":8,"Fındık odunu":8,"Ihlamur odunu":8,"Kanlıca":8,"Kayın odunu":8,"Ladin odunu":8,"Tavuk mantarı":8,"Yaban mersini":8,"Meşe odunu":9,"Ceviz odunu":10,"Granit":10,"Kuzugöbeği":10,"Taş kömürü":11,"Yabani bal":11,"Kalay cevheri":12,"Hasırotu":13,"Kamış":13,"Saz":13,"Yosun":13,"Kızılcık":14,"Mürver":14,"Su teresi":14,"Dişbudak odunu":14,"Göl kili":14,"Kenevir":14,"Keten":14,"Kızılağaç odunu":14,"Mürver odunu":14,"Nilüfer":14,"Su kestanesi":14,"Söğüt odunu":14,"Turba":14,"Bataklık otu":15,"Sinek mantarı":15,"Bataklık servisi odunu":17,"Arduvaz":18,"Tuz kayası":19,"Demir cevheri":20,"Adaçayı":21,"Alıç":21,"Ardıç meyvesi":21,"Civanperçemi":21,"Kav mantarı":21,"Kekik":21,"Kestane":21,"Kuşburnu":21,"Sinirotu":21,"Akçaağaç odunu":22,"Huş odunu":22,"Kayın mantarı":22,"Kestane odunu":22,"Lavanta":22,"Ardıç odunu":22,"Kırmızı kil":22,"Liken":22,"Beyaz kil":23,"Dağ çayı":23,"Porsuk odunu":23,"Kardelen":24,"Pirit":28,"Kuvars":29,"Gümüş cevheri":32,"Kül":33,"Kırmızı okr":35,"Sarı okr":35,"Ateş çiçeği":36,"Ateş narı":39,"Kara çam odunu":39,"Kül ağacı odunu":39,"Kehribar":40,"Ateş narı odunu":40,"Dikenli akasya odunu":40,"Kızıl sedir odunu":41,"Kızıl kum":43,"Cüruf":44,"Ateş biberi":45,"Bazalt":45,"Sünger taşı":45,"Duman çiçeği":46,"Kükürt":46,"Yanık kök":46,"Kor otu":47,"Kara tuz":49,"Obsidyen":49,"Lav camı":52,"Ay elması":53,"Yıldız eriği":53,"Ay elması odunu":54,"Mor söğüt odunu":54,"Yıldız eriği odunu":54,"Gece ağacı odunu":55,"Işık ağacı odunu":56,"Kristal":62,"Mor yosun":64,"Ametist":67,"Kristal kum":67,"Mor sarmaşık":67,"Işık mantarı":70,"Mor kök":70,"Gece zambağı":72,"Yıldız çiçeği":74,"Altın cevheri":77,"Ay otu":77,"Gölge otu":77,"Işık tozu":80,"Kristal çiçeği":82,"Yankı taşı":82,"Ay taşı":87,"Yıldız tozu":90};
+const delta={};for(const k in NEWP){delta[k]=NEWP[k]-(PRICE_[k]||0);PRICE_[k]=NEWP[k];if(DB.p)DB.p[k]=NEWP[k]}
+const byR={};for(const x of DB.R)byR[x.r]=x;const memo={},busy={};
+const rd=r=>{if(r in memo)return memo[r];if(busy[r])return 0;busy[r]=1;let t=0;for(const [n,q] of byR[r].i)t+=q*(byR[n]?rd(n):(delta[n]||0));busy[r]=0;return memo[r]=Math.round(t*1.3)};
+for(const x of DB.R){const d=rd(x.r);if(d&&PRICE_[x.r]!=null)PRICE_[x.r]=Math.max(1,PRICE_[x.r]+d)}
+try{for(const k in FOODC)delete FOODC[k]}catch(e){}
+}).toString()+')()')}catch(e){try{window.__hamErr('v311price: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 </body>
 </html>
