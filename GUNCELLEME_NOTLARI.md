@@ -8,6 +8,38 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.07 · 3 Kasım 2026
+
+### Oynanış
+- **Birden çok yan görev alınabiliyor.** Yan kişiler artık "Önce elindeki işi bitir" demiyor. Takip ettiğin yan görev üstteki kartta yazıyor ve yol gösteriyor; diğerleri Görevler'de bekliyor. Kartın ▾ düğmesi görevi Görevler'e gönderir; Görevler'de her yan görevin altında **📌 Takip et** ve **Bırak** var. Bekleyen bir görevin kişisiyle konuşunca o görev takibe giriyor. Takibi değiştirince yarıda kalan eskort, bekleme ya da dövüş adımı o görev yeniden takip edilince baştan başlıyor.
+- **Bulut'un güvercinleri görünmüyor:** yaklaştıkça guruldamaları duyuluyor (yaklaştıkça daha sık ve yüksek), güvercin ancak dibine gelince çıkıyor. Dördü Bulut'un çevresinde dört yönde, istediğin sırayla toplanıyor; haritada yalnızca büyük arama alanı var.
+
+### Düzeltmeler
+- Güvercinin (ve her yan görev eşyasının) not penceresi düğmesiz kapatılınca görev kilitleniyordu; güvercinin üstünde durunca hiçbir şey olmuyordu. Düzeldi; kilitli kalmış kayıtlar da açılıyor.
+- Börü'nün kerevit dersinde: dövüşürken Börü'nün üstünde ok çıkmıyor; kerevit ölmeden Börü'ye gidince kerevit baştan doğmuyor, canı kaldığı yerden devam ediyor.
+- Öğretici sürerken "sonra gel" diyen kişilerin (Durmuş, kuzen demirciler ve zırhçılar, pazarcı kuzenleri) başında ünlem yanmıyor.
+- Demircinin yanında ana menüye dönünce örs sesi susuyor; ana menüde oyun içi seslerin hiçbiri çalmıyor (bölge, hava, sahne ve anı müzikleri, hayvanlar, konuşma sesleri). Menüde yalnızca menünün müziği, rüzgârı, ışığın uğultusu ve düğme sesleri var.
+- Telefonda Görevler düğmesi bir ders sürerken paneli açmıyordu; artık her zaman açıyor, ders sürüyorsa en üstte ders kartı yazıyor.
+- Telefonda yetenek ağacının düğümleri üst üste biniyordu; ağaç artık büyük ve kaydırılabilir, en alttan açılıyor.
+
+### Arayüz
+- Bilgisayarda Görevler düğmesi ve etki çipleri (Canlılık, Gece gözü…) en az Tokluk çubuğu boyunda; **Menü** kare düğmelerin altında ince bir çubuk, basınca düğmeleri gizler/gösterir.
+- Alttaki kemer küçüldü; kemerde silahların hasarı yazmıyor (üzerine gelince de).
+- Öğretici kartı bilgisayarda ▾ ile küçültülebiliyor.
+- Öğretici bir düğmeyi gösterirken düğme kapalı menünün içindeyse Menü çubuğu (telefonda ☰) mavi parlıyor; açınca parlama içerideki düğmeye geçiyor. Kemer kutusunun üstündeki mavi ok kalktı, kutu yalnızca parlıyor.
+
+### Görsel
+- Ana menüde PURPLE LIGHT yeniden oyunun ilk piksel harfleriyle; sağ üstteki simgelerin tahta arka planı kalktı.
+
+### Ses
+- Ana menüde yalnızca menünün sesleri çalıyor (yukarıda).
+
+### Kayıtlar
+- Kayıt artık alınmış bütün yan görevleri ve hangisinin takip edildiğini saklıyor; eski kayıtlar (tek yan görevli) sorunsuz açılıyor.
+
+### Tasarım belgesi
+- Akış › Ana menü (başlık, simgeler, ana menünün sesi), öğretici (ünlem, kerevit dersi, gizli menü parlaması); Sistemler (sol üst, telefonda Görevler, yetenek ağacı); Yan görevler (birden çok görev ve takip, güvercinler); Aletler (kemerde etiket yok); Kişiler (örs sesi).
+
 
 
 

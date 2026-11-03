@@ -1,4 +1,4 @@
-## v3.07 (3 Kasım 2026) · oyun içi sol üst: Görevler ve etkiler büyük, ince Menü çubuğu, küçük kemer (bekleyen paket, yayında değil)
+## v3.07 (3 Kasım 2026) · oyun içi sol üst: Görevler ve etkiler büyük, ince Menü çubuğu, küçük kemer (yayında; Boğaç "paket çık" dedi)
 - Belge `20_sistemler.md` (Bilgisayarda sol üst: v3.07 maddeleri), `00_giris.md`.
 - `<style id="v307-hud">` + `<script id="v307hud">` (dosya sonu): bilgisayarda (`body:not(.v50m)`) `#qmrow` blok, `#b-quest` tam genişlik en az 46 px; `#fxbar` sütun, her çip tam genişlik en az 46 px; `#b-menut` `#bar`'ın arkasına taşınır (sütun genişliğinde 22 px çubuk). Kemer `#hotbar .hs` 92 → 64 px (simge 64 → 44), `#torchslot` aynı.
 - Öğretici kartı küçültülür: `<script id="v307tut">` `.th`'ye `#tutmin` (▾/▸) ekler, `body.tutmin` (bilgisayarda metin ve düğmeler gizli), `localStorage` `pl.tutmin` (oyuncunun seçimi); küçükken `#tutstep` değişince başlık parlar (`tnew`). Telefonda gizli (orada `tutx` var). Belge `10_akis.md`.
