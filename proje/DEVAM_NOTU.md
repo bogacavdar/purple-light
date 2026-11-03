@@ -1,3 +1,8 @@
+## v3.09 (3 Kasım 2026) · Savuş düğmesi yuvarlak (bekleyen paket, yayında değil)
+- Belge `20_sistemler.md` (Telefon › Savuş düğmesi).
+- v110-parry `place()`: genişlik/yükseklik/yazı boyu (Atıl'ın büyük kenarı, kare, padding 0) artık `__plLayHas` dönüşünden önce verilir; kayıtlı düğme yerleşimi varken boy hiç verilmiyordu, düğme yazısına göre oval kalıyordu.
+- Kontrol: chk.js 0 hata.
+
 ## v3.08 (3 Kasım 2026) · Çayır canlıları sert vurur, yiyeceklerin etkileri farklı
 - Belge `30_act1.md` (Çayır canlılar tablosu + not), `20_sistemler.md` (Yemek: yiyecek etkileri tablosu), `00_giris.md`.
 - Hasar: `SET` (denge bloğu) Geyik 10→15, Yaban atı 11→17, Kerevit 7→11; ada tablosunda Porsuk 9→14. Arena aynı `ANIM`'den okur.

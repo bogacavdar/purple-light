@@ -1380,7 +1380,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.08</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.09</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -13255,7 +13255,8 @@ addEventListener('pointerup',e=>{if(e.pointerType==='mouse'&&e.button===2)lower(
   const st_=document.createElement('style');st_.textContent='#parrybtn{display:none;position:fixed;z-index:4;border-radius:50%;font:inherit;font-weight:800;color:#e8f6ff;background:rgba(20,30,48,.8);border:3px solid #9ad8ff;touch-action:manipulation;-webkit-tap-highlight-color:transparent}#parrybtn.on{display:block}#parrybtn:active{transform:scale(.92)}body.ontitle #parrybtn,body.cine #parrybtn{display:none!important}';document.head.appendChild(st_);
   b.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();doParry();raise()});b.addEventListener('pointerup',lower);b.addEventListener('pointercancel',lower);b.addEventListener('pointerleave',lower);
   const place=()=>{try{const d=$('dodgebtn');const cs=d&&getComputedStyle(d);if(!d||cs.display==='none'||onTitle||!parryKnown()){b.classList.remove('on');return}const r=d.getBoundingClientRect();if(!r.width){b.classList.remove('on');return}
-    b.classList.add('on');if(window.__plLayHas&&window.__plLayHas('parrybtn'))return;const k=window.__plLayS?window.__plLayS('parrybtn'):1;b.style.width=r.width+'px';b.style.height=r.height+'px';b.style.fontSize=Math.max(10,Math.round(r.width*.22))+'px';b.style.left=Math.round(r.left-r.width-10)+'px';b.style.top=Math.round(r.top)+'px';b.style.transform=k!==1?'scale('+k+')':''}catch(e){}};
+    b.classList.add('on');{const z=Math.round(Math.max(r.width,r.height));b.style.width=z+'px';b.style.height=z+'px';b.style.padding='0';b.style.fontSize=Math.max(10,Math.round(z*.22))+'px'}   // v3.09: always round, also after the buttons were moved (it was sized by its text: an oval)
+    if(window.__plLayHas&&window.__plLayHas('parrybtn'))return;const k=window.__plLayS?window.__plLayS('parrybtn'):1;b.style.left=Math.round(r.left-r.width-10)+'px';b.style.top=Math.round(r.top)+'px';b.style.transform=k!==1?'scale('+k+')':''}catch(e){}};
   setInterval(place,500);addEventListener('resize',place)}
 }).toString()+')()')}catch(e){try{window.__hamErr('v110-parry: '+(e&&e.message||e))}catch(_){}}})();
 </script>
