@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.10** ile birebir (3 Kasım 2026). Bu sürümde: "Herhangi …" malzemeler kalktı; 171 tarif ve 10 görev, biyomuna göre belli bir malzeme istiyor (Çayır'da Çam sapı, Orman'da Meşe kalası gibi). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.11** ile birebir (3 Kasım 2026). Bu sürümde: toplanan yiyecekler biyom biyom iyileşir (daha çok tokluk, daha uzun etki, daha çok can). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

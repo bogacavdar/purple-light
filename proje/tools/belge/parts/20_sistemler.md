@@ -212,24 +212,20 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 - **Tokluk değeri:** çiğ meyve ve sebzeler 2–12 (biyom tablolarında), çiğ et 6, çiğ balık 4, közlenmiş et/balık 12–32, pişmiş yemek tarifleri 10–65 (pahalı tarif daha doyurur). Şifa tarifleri doğrudan can verir (15–60).
 - **İyi etkiler** yemeğin türüne göre 60–240 sn sürer: **Güç** (+%20 vuruş: et, şiş, yahni), **Şifa** (can 3 kat hızlı: çorba, lapa), **Doygunluk** (tokluk inmez: ekmek, kek, patates), **Çeviklik** (+%12 hız: bal, şerbet), **Canlılık** (enerji 1,5 kat: çay, meyve suyu), **Gece gözü** (karanlıkta görme: mantar, balık, gece sefası), **Panzehir**, **Ateş kalkanı**, **Pıhtı**. Nadir pişmiş yemeklerde ek **Dayanıklılık** (can sınırı +%20).
-- **Toplanan yiyeceklerin her birinin kendi etkisi var (v3.08, Boğaç: "hepsi neredeyse aynı şeyi veriyor"):** eskiden çiğ meyvelerin çoğu Canlılık veriyordu. Artık:
+- **Toplanan yiyecekler biyom biyom iyileşir (v3.11, Boğaç: "her biyomda daha iyi statlı yiyecekler bulmalıyız, hem tokluk hem özellik"; v3.08'de her yiyeceğe kendi etkisi verilmişti):** ileriki biyomun yiyeceği hem daha çok doyurur hem etkisi daha uzun sürer hem de daha çok can verir. Orman'dan başlayarak zehirsiz her toplanan yiyecek biyom başına **+3 can** verir (Orman 3, Bataklık 6, Kayalık Dağ 9, Kül Diyarı 12, Mor Kristal 15, ACT 2'de 18–21); bazılarının ayrıca ek canı vardır. Etki süresi: Çayır **60 sn**, Orman 90, Bataklık 120, Kayalık Dağ 150, Kül Diyarı 180, Mor Kristal **210 sn** (ACT 2'de 240–270).
 
-| Yiyecek | Etki |
+| Biyom | Yiyecek · tokluk · etki (anında can) |
 |---|---|
-| Böğürtlen | anında **+5 can** |
-| Kuşburnu | anında **+12 can** |
-| Su kestanesi | anında **+6 can** |
-| Yabani elma | anında **+4 can** ve **Canlılık** (enerji 1,5 kat hızlı) |
-| Ahududu, Alıç | **Şifa** (can 3 kat hızlı dolar) |
-| Yaban çileği, Yabani erik | **Çeviklik** (hareket +%12) |
-| Yaban mersini, Havuç, Yabani havuç | **Gece gözü** |
-| Kızılcık | **Pıhtı** (kanama %60 az) |
-| Yabani armut, Kestane, Kabak, Patates | **Doygunluk** (tokluk inmez) |
-| Fındık, Ayçiçeği | **Güç** (vuruş +%20) |
-| Ceviz | **Dayanıklılık** (can sınırı +%20) |
-| Soğan | **Panzehir** |
+| Çayır | Böğürtlen 5 (+4 can) · Yaban çileği 6 Çeviklik · Yabani erik 6 Çeviklik · Yabani armut 7 Doygunluk · Yabani elma 7 Canlılık (+2 can) · Yabani havuç 5 Gece gözü |
+| Orman | Ahududu 9 Şifa · Yaban mersini 9 Gece gözü · Fındık 8 Güç · Ceviz 8 Dayanıklılık · Yabani bal 12 Çeviklik (+7 can) · Akçaağaç özsuyu 8 Canlılık · Tavuk mantarı 8 · Yabani mercimek 7 · Yabani nohut 7 (hepsi +3 can) · Kuzugöbeği 8, Kuzukulağı 7, Meşe palamudu 6 (zehirli, can vermez) |
+| Bataklık | Kızılcık 12 Pıhtı · Su kestanesi 12 (+14 can) (+6 can) · Mürver 11, Sinek mantarı 11 (zehirli) |
+| Kayalık Dağ | Alıç 15 Şifa · Kestane 15 Doygunluk · Ur kekliği yumurtası 15 Güç · Kayın mantarı 14 (+9 can) · Kuşburnu 14 (+21 can) · Ardıç meyvesi 14 (zehirli) |
+| Kül Diyarı | Ateş narı 19 Ateş kalkanı (+18 can) · Ateş biberi 17 Güç (+12 can) |
+| Mor Kristal Vadisi | Ay elması 24 Dayanıklılık (+21 can) · Yıldız eriği 22 Çeviklik · Işık mantarı 21 Gece gözü (+15 can) |
+| Yüzen Kayalar (ACT 2) | Bulut elması 26 Canlılık (+22 can) · Gök mantarı 25 Gece gözü (+18 can) |
+| Dev Mantar Ormanı (ACT 2) | Goblin eriği 29 Çeviklik · Kök yumrusu 29 Doygunluk · Mantar şapkası 28 Şifa (+21 can) |
 
-  Süreler yiyeceğin nadirliğine göredir (45 sn'den başlar). Tokluk değerleri değişmedi. Bir yiyeceğin etkisi ilk kez yiyene kadar listede "Bilgim yok" görünür. Arenada yemek yoktur; etkiler (Güç, Şifa, Çeviklik…) arenanın etki seçicisinde aynen vardır.
+  Ekili ürünler (Havuç Gece gözü, Kabak ve Patates Doygunluk, Soğan Panzehir, Ayçiçeği Güç) ve Gece sefası (Gece gözü) bir biyoma ait değildir, eski değerlerindedir. Pişmiş yemeklerin tokluğu malzemelerinden hesaplandığı için ileriki biyomun meyvesiyle yapılan yemek de daha doyurucu olur. Arenada yemek yoktur; etkiler arenanın etki seçicisinde aynen vardır.
 - **Kötü etkiler** ucuz ve garip yiyeceklerde (ihtimal ucuzda %90, pahalıda %20): Ağırlık (−%20 hız), Halsizlik (enerji yarı hızda), Bulantı (can yenilenmez), Güçsüzlük (−%20 vuruş). Çiğ et ayrıca %35 ihtimalle 4 can yakar.
 - **Zehirli yiyecekler:** Mürver, Meşe palamudu, Sinek mantarı, Kurt eti, Kurbağa (çiğ), Kuzukulağı, Kuzugöbeği, Mağara mantarı, Ardıç meyvesi. Bir kez yiyince listede "zehirli!" yazar.
 - Bir yemeği ilk kez yiyene kadar listede etkisi "Bilgim yok" görünür.

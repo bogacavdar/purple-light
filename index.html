@@ -1384,7 +1384,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.10</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.11</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -11795,17 +11795,27 @@ const ODD={'Kurbağa':['bulantı'],'Sinek mantarı':['yavaş'],'Kuzugöbeği':['
   'Yabani mercimek':['bulantı'],'Yabani nohut':['bulantı'],'Ur kekliği yumurtası':['bulantı'],'Ateş biberi':['bulantı']};
 const oddOf=n=>ODD[n]||(isRawMeat(n)?['bulantı','zayıf']:RAWFISH.has(n)?['bulantı']:null);
 // the good side of plain raw food (cooked food keeps the game's own pick, buffOf)
-// v3.07 (Boğaç: "bütün yiyeceklerin aynı etki, hoş olmamış"): every gathered food has its own effect; some heal at once (RAWHEAL)
-const RAWGOOD={'Ahududu':'ılık','Yaban çileği':'hız','Yaban mersini':'göz','Kızılcık':'pıhtı','Alıç':'ılık','Yabani elma':'enerji','Yabani armut':'doygun',
-  'Yabani erik':'hız','Ceviz':'dayanık','Fındık':'güç','Kestane':'doygun','Havuç':'göz','Yabani havuç':'göz','Kabak':'doygun','Patates':'doygun','Soğan':'panzehir','Ayçiçeği':'güç',
-  'Yabani bal':'hız','Akçaağaç özsuyu':'enerji','Ateş narı':'ateşsiz','Yıldız eriği':'hız','Ay elması':'dayanık','Işık mantarı':'göz','Gece sefası':'göz','Ateş biberi':'güç'};
-const RAWHEAL={'Böğürtlen':5,'Kuşburnu':12,'Su kestanesi':6,'Yabani elma':4};
+// v3.10 (Boğaç: "her biyomda daha iyi statlı yiyecekler"): gathered food gets better land by land: more fullness, a longer effect,
+// and from Orman on a little heal (3 per land, poisonous ones none). FOODT: [land tier, fullness, effect, extra heal]
+const FOODT={
+ 'Böğürtlen':[0,5,null,4],'Yaban çileği':[0,6,'hız'],'Yabani erik':[0,6,'hız'],'Yabani armut':[0,7,'doygun'],'Yabani elma':[0,7,'enerji',2],'Yabani havuç':[0,5,'göz'],
+ 'Ahududu':[1,9,'ılık'],'Yaban mersini':[1,9,'göz'],'Fındık':[1,8,'güç'],'Ceviz':[1,8,'dayanık'],'Yabani bal':[1,12,'hız',4],'Tavuk mantarı':[1,8],'Kuzugöbeği':[1,8],'Kuzukulağı':[1,7],
+ 'Yabani mercimek':[1,7],'Yabani nohut':[1,7],'Meşe palamudu':[1,6],'Akçaağaç özsuyu':[1,8,'enerji'],
+ 'Kızılcık':[2,12,'pıhtı'],'Su kestanesi':[2,12,null,8],'Mürver':[2,11],'Sinek mantarı':[2,11],
+ 'Alıç':[3,15,'ılık'],'Kestane':[3,15,'doygun'],'Kuşburnu':[3,14,null,12],'Ardıç meyvesi':[3,14],'Kayın mantarı':[3,14],'Ur kekliği yumurtası':[3,15,'güç'],
+ 'Ateş narı':[4,19,'ateşsiz',6],'Ateş biberi':[4,17,'güç'],
+ 'Ay elması':[5,24,'dayanık',6],'Yıldız eriği':[5,22,'hız'],'Işık mantarı':[5,21,'göz'],
+ 'Bulut elması':[6,26,'enerji',4],'Gök mantarı':[6,25,'göz'],'Goblin eriği':[7,29,'hız'],'Kök yumrusu':[7,29,'doygun'],'Mantar şapkası':[7,28,'ılık']};
+for(const n in FOODT)RAWFOOD[n]=FOODT[n][1];try{for(const k in FOODC)delete FOODC[k]}catch(e){}   // cooked dishes are worked out again from the new numbers
+const RAWGOOD={};for(const n in FOODT)if(FOODT[n][2])RAWGOOD[n]=FOODT[n][2];
+Object.assign(RAWGOOD,{'Havuç':'göz','Kabak':'doygun','Patates':'doygun','Soğan':'panzehir','Ayçiçeği':'güç','Gece sefası':'göz'});   // crops and night flower: not of a land
+const RAWHEAL={};for(const n in FOODT){const t=FOODT[n],h=(POISON[n]?0:t[0]*3)+(t[3]||0);if(h)RAWHEAL[n]=h}
 const DRINK=/çayı|suyu$|şerbeti|şurubu|likörü|özsuyu/;
 function prof(n){const r=rar(n),x=REC.get(n),cooked=!!x;const P={r,good:[],bad:null,pBad:0,heal:healVal(n),en:0,dG:Math.round(45+r*300),dB:Math.round(25+r*110)};
   const b=buffOf(n);if(b)P.good.push(b[0]);const rg=RAWGOOD[n];if(rg&&P.good.indexOf(rg)<0)P.good.push(rg);
   if(cooked&&x.c==='Yiyecek'){P.heal+=Math.round(4+r*30);if(r>.62){const extra=P.good.indexOf('dayanık')<0?'dayanık':'ılık';if(P.good.indexOf(extra)<0)P.good.push(extra)}}
-  if(n==='Yabani bal'||n==='Ay elması')P.heal+=Math.round(6+r*20);
   if(RAWHEAL[n])P.heal+=RAWHEAL[n];
+  if(FOODT[n])P.dG=60+30*FOODT[n][0];   // v3.10: a later land's food lasts longer (60 s in Çayır … 210 s in Mor Kristal)
   if(P.good.indexOf('enerji')>=0||DRINK.test(n))P.en=Math.round(10+r*45);
   const o=oddOf(n);if(o){P.bad=o;P.pBad=POISON[n]?1:Math.max(.2,Math.min(.9,.95-r*.9))}
   return P}

@@ -1,3 +1,8 @@
+## v3.11 (3 Kasım 2026) · yiyecekler biyom biyom iyileşir (bekleyen paket, yayında değil)
+- Belge `20_sistemler.md` (Yemek: biyom tablosu), `30_act1.md` / `55_act2_biyomlar.md` / `90_esyalar.md` (tokluk sayıları), `00_giris.md`.
+- Kod (yiyecek etkileri bloğu, eski `RAWGOOD`/`RAWHEAL` yerine): `FOODT` [biyom kademesi, tokluk, etki, ek can]; `RAWFOOD` bundan yazılır, `FOODC` (pişmiş yemek önbelleği) temizlenir; `RAWGOOD` FOODT'tan + ekili ürünler; `RAWHEAL` = kademe×3 (zehirliler 0) + ek can; `prof`'ta FOODT yiyeceğinin süresi 60+30×kademe sn; Yabani bal/Ay elması özel can satırı silindi.
+- Kontrol: Böğürtlen 5 tok +4 can → Ahududu 9 +3 Şifa 90 sn → Kızılcık 12 +6 Pıhtı 120 sn → Alıç 15 +9 Şifa 150 sn → Ateş narı 19 +18 180 sn → Ay elması 24 +21 210 sn; chk.js 0 hata.
+
 ## v3.10 (3 Kasım 2026) · "Herhangi" kalktı
 - Belge: `80_tarifler.md` (kural + bütün tablolar, "Herhangi grupları" bölümü silindi), `85_aletler.md`, `20_sistemler.md`, `30_act1.md`, `38_nuri_deniz.md`, `40_act1_kisiler.md`, `58_act2_kisiler.md`, `90_esyalar.md`, `96_aciklar.md`, `00_giris.md`.
 - Veri: tarif veritabanında (`#db`) 171 tarifin grup malzemesi belli bir malzemeyle değişti, `DB.c` boş. Kodda yazılı tarifler de (oltalar, ACT 2 balık yemekleri, alet merdiveni, yaylar, zırhlar, yağlar) aynı eşlemeyle. Seçim: öbür malzemelerin biyomları sayılır (3+ biyomda bulunan malzeme sayılmaz), en çok olan biyom (eşitlikte ilerideki), yoksa Çayır; biyom başına tercih (ağaç Çam/Meşe/Bataklık servisi/Huş/Kül ağacı/Mor söğüt, kil Nehir/Nehir/Göl/Kırmızı/Kırmızı(Cüruf tuğlası)/Beyaz, reçine, çakmak, un), tercih yoksa o biyomdaki en ucuz üye; ACT 2 külçeleri Taş kömürü. Eşleme listesi Boğaç'a HTML olarak gönderildi.
