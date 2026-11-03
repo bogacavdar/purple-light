@@ -3885,7 +3885,7 @@ function renderTut(){
     return}}
   if(tut===4&&(ftut===1||ftut===2)){
     lesson('alp','Savaşçı Börü · Savaş dersi',ftut===1?`Kampın yakınında <b>Savaşçı Börü</b> seni bekliyor. Ok onu gösteriyor: yanına git ve ${TOUCH?'ona dokun':'E ile konuş'}.`
-      :`Elin boş olsun (alttaki kutularda seçili bir şey olmasın) ve <b>kereviti</b> yumrukla: ${TOUCH?'ona dokun':'yanına gidip ona tıkla'}. Her yumruk 3 hasar verir; canı bitene kadar vur. Avlanan hayvanlar malzeme düşürür.`);
+      :`<b>Kereviti</b> vur: ${TOUCH?'ona dokun':'yanına gidip ona tıkla'}. Canı bitene kadar vur. Avlanan hayvanlar malzeme düşürür.`);
     return}
   if(htut===1&&!(ctut>=1&&ctut<=3)){
     lesson('witch','Cadının dersi · Elinle yap',`Bir şey daha: <b>keskin taş, ip, sopa, meşale</b> gibi ✓ olan basit tarifler için kazana gelmen gerekmez; <b>elinle her yerde</b> yaparsın. ${TOUCH?'Soldaki <b>el</b> ikonuna dokun':'<span class="kc">Tab</span> tuşuna bas'} ve sana verdiğim taşlarla bir <b>Keskin taş</b> yap.${craftOpen&&mode==='hand'?'':''}`);
@@ -5053,11 +5053,11 @@ function spawnTutCrab(){for(let i=animals.length-1;i>=0;i--)if(animals[i].tut)an
     if(!reachAt(x,y)||blocked(x,y)||isWater(tileAt(x,y)))continue;animals.push({k:'Kerevit',x,y,hp:ANIM['Kerevit'].hp,st:'wander',t:0,dx:0,dy:0,face:1,atk:0,flash:0,kb:null,step:0,mad:false,tut:true});return}}
 function talkAlp(){
   if(tz===11&&ftut!==2){alp.met=true;ftut=2;spawnTutCrab();renderTut();sfx('found');
-    return say('Nazlı mı yolladı? İyi etmiş. Ben <b>Börü</b>. Gece bu adada domuzlar, kurtlar dolaşır; önce <b>yumruğunla</b> savaşmayı öğren. Şuradaki <b>kereviti</b> görüyor musun? Kıyıda ağır ağır yürür ama ne kaçar ne ısırır; elin boşken ona vur. İleride saldıran hayvanların üstünde önce kırmızı bir <b>!</b> belirir: o an yana atıl.',[{t:'Hadi bakalım',pri:1,fresh:1,f:bye}],alp)}
+    return say('Nazlı mı yolladı? İyi etmiş. Ben <b>Börü</b>. Gece bu adada domuzlar, kurtlar dolaşır; önce <b>yumruğunla</b> savaşmayı öğren. Şuradaki <b>kereviti</b> görüyor musun? Kıyıda ağır ağır yürür ama ne kaçar ne ısırır; git, ona vur. İleride saldıran hayvanların üstünde önce kırmızı bir <b>!</b> belirir: o an yana atıl.',[{t:'Hadi bakalım',pri:1,fresh:1,f:bye}],alp)}
   if(tz&&tz<11)return say('Hah, yeni gelen! Önce Kemal\'in, Zümrüt\'ün dediklerini yap; sonra gel, sana dövüşmeyi öğreteyim.',[{t:'Tamam',pri:1,f:bye}],alp);
   if(ftut===1){alp.met=true;ftut=2;spawnTutCrab();renderTut();sfx('found');
-    return say('Hah! Kemal\'in kazazedesi. Ben <b>Börü</b>. Bu adada her şey sana dost değil: ormanda yaban domuzları, gece kurtlar dolaşır. Önce yumruğunla başlayalım. Şuradaki <b>kereviti</b> görüyor musun? Kıyıda ağır ağır yürür ama ne kaçar ne ısırır; elin boşken ona vur.',[{t:'Hadi bakalım',pri:1,fresh:1,f:bye}],alp)}
-  if(ftut===2){if(!animals.some(c=>c.tut&&c.hp>0))spawnTutCrab();return say('Kerevit seni bekliyor. Elin boş olsun ve vur!',[{t:'Tamam',pri:1,f:bye}],alp)}
+    return say('Hah! Kemal\'in kazazedesi. Ben <b>Börü</b>. Bu adada her şey sana dost değil: ormanda yaban domuzları, gece kurtlar dolaşır. Önce yumruğunla başlayalım. Şuradaki <b>kereviti</b> görüyor musun? Kıyıda ağır ağır yürür ama ne kaçar ne ısırır; git, ona vur.',[{t:'Hadi bakalım',pri:1,fresh:1,f:bye}],alp)}
+  if(ftut===2){if(!animals.some(c=>c.tut&&c.hp>0))spawnTutCrab();return say('Kerevit seni bekliyor. Vur!',[{t:'Tamam',pri:1,f:bye}],alp)}
   alp.met=true;
   say(['Kılıcın keskin, nefesin derin olsun.','Nötr hayvana bulaşırsan karşılık verir; zararsız olan kaçar, saldırgan olan seni arar.','Zırhın varsa yaralar daha az acıtır. Postlardan giysi diktir.'][Math.floor(Math.random()*3)],[
     {t:'Kılıç nasıl yapılır?',f:()=>{bought.add('Taş kılıç');say('Bir sopa, dört keskin taş, iki ip ve bir çakmaktaşı. Tarifini kitabına yazdım; <b>Dursun</b> örsünde döver. Kılıcı envanterden bir alet yuvasına koyup eline alırsın ya da Özellikler\'de silah yuvasına takarsın.',[{t:'Anladım',pri:1,f:talkAlp}],alp)}},
@@ -7123,7 +7123,7 @@ function tzCard(){const h=n=>inv[n]||0,c=(n,q)=>`${n} ${Math.min(h(n),q)}/${q}`;
    8:['witch','Zümrüt · Keskin taş yap',`Kalan 2 taşla bir <b>keskin taş</b> yap: ${tzKey('tab')}. Kazandan bir tarif öğrendin mi, gerisi hep elinde.`],
    9:['witch','Pazarcı Nazlı',`Keskin taşı al ve kuzeydoğudaki <b>Pazarcı Nazlı</b>'ya git; ok yolu gösteriyor. Birleştirdiğin şeyleri o alır.`],
    10:['','Nazlı · Sat',`Satış listesinde <b>Keskin taş</b>'ın yanındaki <b>1 sat</b> düğmesine bas.`],
-   11:ftut===2?['','Börü · Kereviti yumrukla',TOUCH?`Elin boş olsun (alttaki kutularda seçili bir şey olmasın) ve <b>kereviti</b> yumrukla: <b>ona dokun</b>. Canı bitene kadar vur.`:`Elin boş olsun (alttaki kutularda seçili bir şey olmasın). <b>Yürü:</b> <span class="kc">W</span><span class="kc">A</span><span class="kc">S</span><span class="kc">D</span> ya da <span class="kc">↑</span><span class="kc">←</span><span class="kc">↓</span><span class="kc">→</span> ile kerevite yaklaş. <b>Vur:</b> <span class="kc">Sol tık</span>: tıkladığın yöne yumruk atarsın. Canı bitene kadar vur.`]:['','Savaşçı Börü',`Nazlı seni doğudaki <b>Savaşçı Börü</b>'ye yolladı. Ok yolu gösteriyor; yanına git ve ${TOUCH?'ona dokun':'<span class="kc">E</span> ile konuş'}.`],
+   11:ftut===2?['','Börü · Kereviti vur',TOUCH?`<b>Kereviti</b> vur: <b>ona dokun</b>. Canı bitene kadar vur.`:`<b>Yürü:</b> <span class="kc">W</span><span class="kc">A</span><span class="kc">S</span><span class="kc">D</span> ya da <span class="kc">↑</span><span class="kc">←</span><span class="kc">↓</span><span class="kc">→</span> ile kerevite yaklaş. <b>Vur:</b> <span class="kc">Sol tık</span>: tıkladığın yöne vurursun. Canı bitene kadar vur.`]:['','Savaşçı Börü',`Nazlı seni doğudaki <b>Savaşçı Börü</b>'ye yolladı. Ok yolu gösteriyor; yanına git ve ${TOUCH?'ona dokun':'<span class="kc">E</span> ile konuş'}.`],
    12:axeCard()||['','Börü · Balta parçaları',`<b>Taş balta</b> = 1 Sopa + 2 Keskin taş + 2 İp + 2 Taş. Sopa, ip ve keskin taşı ${tzKey('tab')} ile yap (sopa için 3 dal ve 2 keskin taş, ip için 4 lif). Börü yakınına malzeme bıraktı. (${c('Sopa',1)} · ${c('Keskin taş',2)} · ${c('İp',2)} · ${c('Taş',2)})`],
    13:['','Demirci Dursun',`Parçalar hazır! Kuzeydeki <b>Demirci Dursun</b>'a git, Börü'nün selamını söyle; baltayı o döver. Ok yolu gösteriyor.`]}[tz]}
 function renderTz(){const C=tzCard();if(!C)return false;const [who,title,html]=C;tutEl.hidden=false;craftEl.classList.add('tutpad');$('tutstep').textContent=title;$('tuttext').innerHTML=html;

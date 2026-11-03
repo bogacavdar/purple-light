@@ -2,6 +2,7 @@
 - Belge `10_akis.md` (Börü dersi adım 5), `00_giris.md`.
 - Börü'nün takla → savuşturma geçişinde `DL.ph='talk'` yalnızca "Hazırım" ile bitiyordu; konuşma dışarı tıklayıp/Esc ile kapanınca kerevit oyuncunun yanında donup kalıyordu. `tickDL`: `talk` evresinde `!dlgOpen` ve geçişten 1,5 sn sonra ders kendiliğinden `idle`'a geçer (`DL.talkT`).
 - Dersin kereviti: `spawn()`'da `hp` erişimcisi (get: tam can, set: yok sayılır) → hasar almaz, ölmez; `target(range)` `a.dl`'yi atlar; `tickDL` kerevit `animals`'ta yoksa evreden önce yeniden çıkarır (talk evresinde öldürülünce ders kereviti kaybolup kalıyordu).
+- Börü'nün ilk dersi (kereviti vur): ders kartı, öğretici kartı ve Börü'nün sözlerinden "Elin boş olsun (alttaki kutularda seçili bir şey olmasın)" / "elin boşken" kalktı, yalnızca "vur" (Boğaç: gece meşaleyle gelince meşaleyle vurmak da sayılıyordu, yazı yanıltıyordu).
 - Kontrol: chk.js 0 hata; talk evresi diyalog kapalıyken 1,5 sn sonra idle oldu; hp-=999 sonrası can 40, hedef seçilmiyor; silinen kerevit yeniden çıktı.
 
 ## v3.13 (3 Kasım 2026) · gürz → savaş çekici, öğretici Keskin taş takılması, hile araması "e"
