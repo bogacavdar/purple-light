@@ -2,6 +2,8 @@
 - Belge `20_sistemler.md` (Bilgisayarda sol üst: v3.07 maddeleri), `00_giris.md`.
 - `<style id="v307-hud">` + `<script id="v307hud">` (dosya sonu): bilgisayarda (`body:not(.v50m)`) `#qmrow` blok, `#b-quest` tam genişlik en az 46 px; `#fxbar` sütun, her çip tam genişlik en az 46 px; `#b-menut` `#bar`'ın arkasına taşınır (sütun genişliğinde 22 px çubuk). Kemer `#hotbar .hs` 92 → 64 px (simge 64 → 44), `#torchslot` aynı.
 - Öğretici kartı küçültülür: `<script id="v307tut">` `.th`'ye `#tutmin` (▾/▸) ekler, `body.tutmin` (bilgisayarda metin ve düğmeler gizli), `localStorage` `pl.tutmin` (oyuncunun seçimi); küçükken `#tutstep` değişince başlık parlar (`tnew`). Telefonda gizli (orada `tutx` var). Belge `10_akis.md`.
+- Ana menü: `drawLogo` + `GLYPH` 2.93'ten geri (piksel harfler), `LOGO_PNG` silindi; `v294-title`'dan `#ttop .tib` tahta karo kuralları ve artık kullanılmayan Pixelify `@font-face` silindi. Neon parıltısı ve yer aynı.
+- Örs sesi: `smithBeat` ve kuzen demircilerin vuruşu (v1.84 bloğu) `!onTitle` koşulu aldı; ana menüde arkada dünya çizilirken `sfx('clank')` çalıyordu (Boğaç: demircinin yanında menüye dönünce ses sürüyor). Belge `40_act1_kisiler.md`.
 - Kontrol: chk.js 0 hata; oyun içi ekran görüntüsü (iki etki açık), sayfa hatası 0. Telefon görünümü (v50m) değişmedi. Öğretici kartı açık/küçük ekran görüntüsü.
 
 ## v3.06 (3 Kasım 2026) · neon hep yanar, tepeye inen ışık yok, çarpmalar denize de
