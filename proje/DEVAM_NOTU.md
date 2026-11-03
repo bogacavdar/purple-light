@@ -1,3 +1,9 @@
+## v3.15 (3 Kasım 2026, bekleyen paket) · 16 adımlık takla
+- Belge `20_sistemler.md` (Dövüş › Takla görüntüsü), `00_giris.md`.
+- `<script id="v315roll">` (dosya sonu) `window.__plRoll16`'yı tanımlar; v113-roll'un drawPlayer sarmalayıcısı takla sırasında önce onu çağırır (varsa çizer ve döner). 8 ana poz `K` (a: dönüş, hy/by/ly, bs/ls: basma, lx: dizleri çekme, up: yerden kalkma) + aralarda yarı yol = 16 adım, `floor(k*16)`. Karakter `drawChibi(eqLook(), eqOpts())` ile 44×44 küçük tuvale çizilir; baş/gövde/bacak satırları ayrı ayrı kaydırılıp basılarak poz kurulur. Elde tutulanlar ve meşale çizilmez. Yatay: yan sprite döner (yön dir); dikey: dikey basma ile öne takla, baş aşağıyken öbür yüz (ön/arka). Bir önceki adım %35 iz.
+- **Geri alma (Boğaç isterse):** bu sürümün commit'i geri alınır (`git revert`); ya da yalnızca `v315roll` bloğu ve v113'teki `__plRoll16` satırı silinir → eski 4 pozlu dönme kendiliğinden döner.
+- Kontrol: chk.js 0 hata; 16 adım sağa/aşağı/yukarı karelenip bakıldı (adım 0 çömelme dik, adım 15 dik).
+
 ## v3.14 (3 Kasım 2026) · savuşturma dersi takılması, pencere dışına basmak = "Anladım"
 - Genel: `say()` seçenekleri `dlgCh`'de tutulur; `dlgOut()` (canvas pointerdown, Esc, #dclose) yalnızca `bye` olan seçeneği → tek seçeneği → `pri` seçeneği çalıştırır, hiçbiri yoksa `bye()`. CLAUDE.md'ye kural yazıldı.
 - Belge `10_akis.md` (Börü dersi adım 5), `00_giris.md`.

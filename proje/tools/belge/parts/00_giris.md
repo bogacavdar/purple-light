@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.14** ile birebir (3 Kasım 2026). Bu sürümde: Börü'nün savuşturma dersi, konuşma "Hazırım" denmeden kapanınca da başlar (kerevit yanında donup kalıyordu); dersin kereviti hasar almaz, ölmez, kaybolursa yeniden çıkar; konuşma penceresinin dışına basmak "Anladım" demekle aynı (bütün pencereler); Börü'nün ilk dersi "elin boş olsun" demez, yalnızca "kereviti vur" der. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.15** ile birebir (3 Kasım 2026). Bu sürümde: takla 16 adımlık gerçek bir takla animasyonu oldu (8 ana poz + ara pozlar; süre ve zamanlama aynı).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

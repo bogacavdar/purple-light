@@ -1380,7 +1380,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.14</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.15</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -13482,7 +13482,7 @@ const ROLL=true,STEPS=4,RT=.38,RD=50;   /* v116: 50 px in every direction, walki
 {const _d=doDodge;doDodge=function(){const was=dodge;const r=_d.apply(this,arguments);if(ROLL&&dodge&&dodge!==was){const l=Math.hypot(dodge.vx,dodge.vy)||1,v=RD/RT;dodge.vx=dodge.vx/l*v;dodge.vy=dodge.vy/l*v;dodge.t=RT;dodge.T=RT;dodgeCd=Math.max(dodgeCd,RT+.3)}return r}}
 {const _t=tickDodge;tickDodge=function(dt){if(!ROLL||!dodge||!dodge.T)return _t.apply(this,arguments);const k=Math.max(0,Math.min(1,1-dodge.t/dodge.T)),e=1.7-1.4*k,vx=dodge.vx,vy=dodge.vy,D=dodge;D.vx=vx*e;D.vy=vy*e;try{return _t.apply(this,arguments)}finally{D.vx=vx;D.vy=vy}}}
 function pose(i,dir){const a=dir*i*(Math.PI*2/STEPS),side=i%2===1;return{a,sx:side?1.12:1,sy:side?.78:(i===2?.86:1)}}
-{const _dp=drawPlayer;drawPlayer=function(){if(!ROLL||!dodge)return _dp.apply(this,arguments);
+{const _dp=drawPlayer;drawPlayer=function(){if(!ROLL||!dodge)return _dp.apply(this,arguments);try{if(window.__plRoll16&&window.__plRoll16())return}catch(e){}   // v3.15: the 16-step roll (v315roll block) draws it when present
   const k=Math.max(0,Math.min(.999,1-dodge.t/(dodge.T||.24))),dir=Math.abs(dodge.vx)>=Math.abs(dodge.vy)*.35?(dodge.vx<0?-1:1):(dodge.vy<0?-1:1),i=Math.floor(k*STEPS);
   const hop=Math.round(Math.sin(k*Math.PI)*3),px0=player.x,py0=player.y,cx=px0,cy=py0-7;
   const D=dodge,args=arguments;
@@ -18703,6 +18703,62 @@ function skip(){if(!foundSet.has('Keskin taş'))return;const P3=window.__p3;
   renderInv();renderTut()}
 setInterval(()=>{try{if(!onTitle&&!dlgOpen&&tz>=6&&tz<=8)skip()}catch(e){}},600);
 }).toString()+')()')}catch(e){try{window.__hamErr('v312tz: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v315roll">
+// v3.15 (Boğaç: "takla 360 derece dönme değil, gerçek takla pozları olsun"; 16 adım, kararı bana bıraktı): the roll is 8 key poses
+// built from the hero's own drawing (head, body and legs cut apart and moved), with one in-between after each = 16 steps over the
+// 0.38 s roll. Held tool/weapon and torch are hidden while rolling. Timing, distance and invulnerability are not touched (v113-roll).
+// Undo: revert this version (the v113 4-pose spin comes back by itself when window.__plRoll16 is missing).
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const W=44,H=44,FX=22,FY=34;   // the hero is drawn into a small canvas with its feet at (FX,FY)
+const mk=()=>{const c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');g.imageSmoothingEnabled=false;return{c,g}};
+const SPR={side:mk(),front:mk(),back:mk()};
+// key poses: a = turn of the whole figure (in turns), hy/by/ly = head/body/legs shift up-down, bs = body squash, ls = legs squash,
+// lx = legs pulled toward the head (knees in), up = lift off the ground, flip = for rolls up/down the screen (front → back → front)
+const K=[
+  {a:0,    hy:2, by:1, bs:.75,ls:.8, lx:0, up:0},   // 1 çömelme
+  {a:.10,  hy:2, by:1, bs:.8, ls:.9, lx:1, up:1},   // 2 öne atılma
+  {a:.25,  hy:5, by:2, bs:.6, ls:.7, lx:3, up:2},   // 3 top olma
+  {a:.42,  hy:5, by:2, bs:.6, ls:.7, lx:3, up:3},   // 4 top: sırt üstte
+  {a:.58,  hy:5, by:2, bs:.6, ls:.7, lx:3, up:3},   // 5 top: baş aşağıda
+  {a:.75,  hy:5, by:2, bs:.6, ls:.7, lx:3, up:2},   // 6 top: açılmaya başlar
+  {a:.90,  hy:3, by:1, bs:.7, ls:.85,lx:1, up:1},   // 7 diz üstü açılma
+  {a:.98,  hy:1, by:0, bs:.9, ls:1,  lx:0, up:0}];  // 8 doğrulma
+const lerp=(p,q,t)=>{const r={};for(const k in p)r[k]=p[k]+(q[k]-p[k])*t;return r};
+function poseAt(step){const i=step>>1;const p=K[i];if(!(step&1))return p;const q=K[i+1]||Object.assign({},K[0],{a:1,hy:0,by:0,bs:1,ls:1});return lerp(p,q,.5)}
+function paint(s,fx,fy){const g=s.g;g.clearRect(0,0,W,H);
+  const o=Object.assign(eqOpts(),{fx,fy,step:0,bob:0,arm:'down',noShadow:1});drawChibi(g,FX,FY,eqLook(),o)}
+// one pose, drawn at (x,y) = the feet on the screen; dir = +1/-1 the way it rolls
+function drawPose(s,P,x,y,dir,turn,al){const g=ctx,c=s.c;
+  const cx=x,cy=y-7-P.up;   // the figure turns about its middle
+  g.save();if(al<1)g.globalAlpha*=al;g.translate(Math.round(cx),Math.round(cy));
+  if(turn)g.rotate(dir*P.a*Math.PI*2);
+  // parts in the small canvas (rows above the feet): legs 0..2, body 2..7, head (and hat) 7..30
+  const part=(sy0,sy1,dx,dy,sx,sy)=>{const h=sy1-sy0;g.save();g.translate(dx,dy);g.scale(sx,sy);g.drawImage(c,0,FY-sy1+2,W,h,-FX,-h,W,h);g.restore()};
+  // legs (knees pulled in toward the body), body (squashed), head (sunk into the shoulders)
+  part(0,3,  -dir*P.lx*.6, 7-P.lx,           1+P.lx*.08, P.ls);
+  part(3,8,  0,            7-3*P.bs+P.by*.5,  1.05,       P.bs);
+  part(8,32, dir*P.lx*.3,  7-3-5*P.bs+P.hy*.6-(1-P.bs)*2, 1, 1);
+  g.restore()}
+window.__plRoll16=function(){if(!dodge||!dodge.T)return false;const D=dodge;
+  const k=Math.max(0,Math.min(.999,1-D.t/D.T)),step=Math.floor(k*16);
+  const side=Math.abs(D.vx)>=Math.abs(D.vy)*.35,dir=side?(D.vx<0?-1:1):(D.vy<0?-1:1);
+  const x=Math.round(player.x),y=Math.round(player.y);
+  // shadow stays on the ground, smaller while the body is up
+  {const P=poseAt(step);ctx.fillStyle='rgba(0,0,0,.28)';const w=12-P.up*2;ctx.fillRect(x-w/2|0,y+1,w,3)}
+  const one=(st,al,ox,oy)=>{const P=poseAt(st);
+    if(side){paint(SPR.side,dir,0);drawPose(SPR.side,P,x+ox,y+oy,dir,true,al);return}
+    // up/down the screen: a forward somersault seen from the front/back: squash through flat, the other side shows when upside down
+    const ang=P.a*Math.PI*2,c=Math.cos(ang),down=dir>0;
+    const s=(c>=0)===down?SPR.front:SPR.back;paint(s,0,s===SPR.front?1:-1);
+    ctx.save();ctx.translate(x+ox,y-7-P.up+oy);ctx.scale(1,Math.max(.25,Math.abs(c))*(c<0?-1:1));ctx.translate(-(x+ox),-(y-7-P.up+oy));
+    drawPose(s,P,x+ox,y+oy,dir,false,al);ctx.restore()};
+  if(step>0)one(step-1,.35,-D.vx*.04,-D.vy*.04);
+  one(step,1,0,0);
+  if(Math.random()<.8)parts.push({x:player.x+(Math.random()-.5)*6,y:player.y,vx:-D.vx*.08+(Math.random()-.5)*10,vy:-6-Math.random()*6,life:.3,c:Math.random()<.5?'#c8b898':'#a89878'});
+  return true};
+}).toString()+')()')}catch(e){try{window.__hamErr('v315roll: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
