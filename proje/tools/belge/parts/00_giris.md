@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.11** ile birebir (3 Kasım 2026). Bu sürümde: toplanan yiyecekler biyom biyom iyileşir (daha çok tokluk, daha uzun etki, daha çok can); bir biyomda toplanan her şey bir önceki biyomdakilerden daha değerli (fiyat bantları, tarifler de buna göre). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.11** ile birebir (3 Kasım 2026). Bu sürümde: gürz ve topuz kılıçtan farklı oynanır (gürz çevreye vurur, sersemletir, savurur; topuz kombo ve kıvılcımla hızlanır) ve yeni hamle/ultileri var; toplanan yiyecekler biyom biyom iyileşir; bir biyomda toplanan her şey bir öncekinden daha değerli. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

@@ -384,8 +384,8 @@ Her silahın kendi hamleleri vardır (parantezde hasar çarpanı ve enerji):
 |---|---|---|---|---|---|---|
 | Kılıç | Çift kesik (×0,85+×0,95; 10) | Dönen kesik, 360° (×2,2; 18) | Hamle (×1,6; 12) | Kılıç fırtınası (3×0,9 + ×2,1, sersem; 22) | Ters kesik (×1,5; 6) | Ağır kesik (×2,6, sersem; 10) |
 | Mızrak | Çifte dürtme (×0,9+×1,15; 10) | Mızrak fırlatma, delip geçer (×2,4; 18) | Koşarak saplama (×1,8; 12) | Sırıkla sıçrama, çevre (×2,2, sersem; 22) | Derin dürtme (×1,5; 6) | Delip geçme (×2,6, sersem; 10) |
-| Gürz (v2.48) | Çifte ezme (×1,0+×1,2; 11) | Yer sarsan, çevre 46 px (×2,8, sersem 1,2 sn; 20) | Ezerek atılma (×1,8; 13) | Gürz kasırgası (2 dönüş ×1,3 + ×2,4 halka, sersem; 24) | Yandan ezme (×1,7; 8) | Kafa ezen (×3, sersem 1 sn; 12) |
-| Topuz (v2.48) | Üçlü darbe (3×0,7; 9) | Topuz fırlatma, delip geçer (×2,2; 16) | Atılıp vurma (×1,6; 10) | Topuz yağmuru (5×0,65 + ×1,6, sersem; 20) | Hızlı darbe (×1,4; 5) | Sersemleten darbe (×2,2, sersem 0,7 sn; 8) |
+| Gürz (v3.11) | Çifte ezme: iki ezme, ikincisi önüne kısa bir çatlak açar (×1,0+×1,3; 11) | **Yer yarığı:** önüne 110 px ilerleyen bir çatlak, üstündekiler (×2,4, sersem 1,2 sn; 20) | Ezerek atılma: atılıp yere iner, iniş yerinde küçük krater (çevre 30 px ×1,8, sersem 0,4 sn; 13) | **Deprem çekici:** önüne giderek büyüyen 3 ezme kraterı (×1,2 / ×1,6 / ×2,4, sonuncusu sersem 1,2 sn; 24) | Yandan ezme (×1,7; 8) | Kafa ezen: tepeden indirir, çarptığı yerde krater (çevre 26 px ×3, sersem 1 sn; 12) |
+| Topuz (v3.11) | Üçlü darbe: dar, çok hızlı üç vuruş (3×0,7; 9) | **Bumerang:** topuz fırlatılır, 200 px gider ve geri döner; gidişte ve dönüşte vurur (her geçiş ×1,6; 16) | **Zikzak:** iki kısa atılış, her birinde en yakın düşmana (2×1,2; 10) | **Kombo patlatma:** kombo sayacını harcar: ×(1,5 + 0,5×kombo), kombo 3 ve üstüyse kıvılcım 2 düşmana daha sıçrar; sayaç sıfırlanır (20) | Hızlı darbe (×1,4; 5) | **Çan çalan:** metal bir çınlama, sersem 0,7 sn (×2,2; 8) |
 | Balta/kazma | Geri savuruş (×1,25; 10) | Yere vurma, çevre (×2,6, sersem; 18) | Dönerek biçme (×1,5; 12) | Ezici darbe (×3,2, sersem; 22) | Yan savuruş (×1,6; 7) | Kafa kıran (×3, sersem; 11) |
 | Yumruk | Çifte yumruk (8) | Güçlü yumruk (×3, sersem; 16) | Omuz atma (×1,3; 10) | Tekme kombosu (4×0,75 + ×1,7; 20) | Kroşe (×1,5; 5) | Aparkat (×2,6, sersem; 9) |
 | Meşale | Alev savuruşu (×1,5; 10) | Ateş çemberi (×2,4; 18) | Ateşli hamle (×1,8; 12) | Alev patlaması (×3; 22) | Kor savuruşu (×1,6; 7) | Alev kesiği (×2,4; 11) |
@@ -393,6 +393,10 @@ Her silahın kendi hamleleri vardır (parantezde hasar çarpanı ve enerji):
 | Asa (mana) | Üçlü atış (×2 mana) | Büyük büyü ×3 (×3) | Kaçarken atış (×1,5) | Büyü halkası, 8 yön (×4) | İkiz atış (×1,4) | Güç topu ×2,8 (×2,2) |
 | Ateşli (mermi) | Çift atış (2) | Nişanlı atış ×3 (1) | Kayarak atış, 3 yayılım (3) | Şarjör boşaltma, 5 atış (5) | Seri atış (2) | Delici mermi ×3,2 (1) |
 
+- **Silahların karakteri (v3.11, Boğaç: "kılıç, gürz ve topuz kullanış olarak da efekt olarak da farklı olmalı"):** kılıç dengeli silahtır (orta hız, geniş yay; değişmedi). Gürz ve topuzun kendi kuralları vardır; arenada da aynen geçerlidir:
+  - **Gürz: yavaş, ağır, kalabalığa karşı.** (1) **Çarptığı yere de vurur:** her isabet, vurulanın çevresindeki (36 px) öbür düşmanlara hasarının **yarısını** verir. (2) **Sersemletme birikir:** aynı düşmana 3 saniye içinde **3 isabet** onu **1 sn** sersemletir (Reis ve boss 0,5 sn); sayaç sıfırlanır. (3) **Geri itme iki kat.** (4) **Sağlam duruş:** savururken aldığın hasar **%25 az**. (5) Bedeli: savururken **%40 yavaş** yürürsün; vuruş hızı en yavaş silah (0,62 sn). Efektler toprak ve taş: kraterler, çatlaklar, toz, sıçrayan taşlar; ses kalın bir gümleme.
+  - **Topuz: hızlı, hareketli, tek hedefe karşı.** (1) **Kombo sayacı:** 1,2 sn içinde yapılan her isabet bir sonrakinin hasarını **%10** artırır, en çok **%60** (6 isabet; aynı anda birden çok düşmana değmek tek isabet sayılır). Vurulunca ya da 1,2 sn isabet olmazsa sayaç sıfırlanır; sayaç karakterin üstünde yazar ("Kombo ×4"). (2) **Kıvılcım:** her **5. isabette** bir kıvılcım en yakın başka düşmana (120 px içinde) sıçrar, o isabetin **0,8** katı hasar verir. (3) **Hareketli:** vururken yavaşlamazsın; taklanın enerjisi **%30 az**. (4) Bedeli: özel hamlelerinin yayı dar, geri itmesi yarı. Efektler metal ve şimşek: kıvılcımlar, yıldız parlamaları, şimşekler; ses metal çınlaması.
+  - İlk kez gürz ya da topuz eline aldığında bu kurallar kısa bir bildirimle anlatılır.
 - **Kilit:** ACT 1'de her özel vuruş ve ulti **Börü'den dersi alınana kadar kapalıdır** (kapalı hamle normal vuruş olur). ACT 2'ye geçince ve arenada hepsi açılır.
 
 ## Ulti
@@ -405,8 +409,8 @@ Her silahın kendi hamleleri vardır (parantezde hasar çarpanı ve enerji):
 | Kılıç | Kılıç dansı | 8 yönlü dönüş (her biri ×1,2) + ×3 patlama, sersem 1 sn |
 | Mızrak | Mızrak yağmuru | Fare yönündeki alana 12 mızrak, her biri ×1,5 |
 | Balta | Deprem | Büyüyen 3 halka, ×2,4, sersem 1 sn |
-| Gürz (v2.48) | Dağ yaran | Fare yönüne sıçrar, indiği yerde büyüyen 3 sarsıntı halkası (×2,6), sersem 1,4 sn |
-| Topuz (v2.48) | Gök gürültüsü | Çevrende 8 hızlı darbe (her biri ×0,9) + ×3,5 gök gürültüsü halkası, sersem 1 sn |
+| Gürz (v3.11) | Dağ yaran | Fare yönüne sıçrar; indiği yerden 4 çapraz yöne 120 px çatlak açılır, çatlak boyunca kayalar fışkırır (×2,6, sersem 1,4 sn), ortada ×2 halka |
+| Topuz (v3.11) | Gök gürültüsü | Çevrendeki (220 px) en yakın 6 düşmana sırayla şimşek iner (her biri ×2,2, sersem 0,5 sn), sonunda gök gürültüsü (çevre 70 px ×1,5); kombo sayacı dolar (6) |
 | Yumruk | Öfke | 10 yumruk + son ×4 |
 | Meşale | Ateş fırtınası | 3 ateş halkası ×2 |
 | Yay (v2.49) | Ok yağmuru | Fare yönündeki alana 16 ok yağar, her biri ×1,4, sersem 0,3 sn; ok harcamaz |

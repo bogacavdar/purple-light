@@ -8,6 +8,27 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.11 · 3 Kasım 2026
+
+### Oynanış
+- **Gürz ve topuz artık kılıçtan farklı oynanıyor** (kılıç dengeli silah olarak kaldı):
+  - **Gürz (yavaş, ağır, kalabalığa karşı):** her vuruş çarptığı yerin çevresindekilere de yarı hasar verir; aynı düşmana 3 isabet onu 1 saniye sersemletir; düşmanı iki kat uzağa savurur; savururken %25 az hasar alırsın ama %40 yavaş yürürsün.
+  - **Topuz (hızlı, hareketli, tek hedefe karşı):** art arda her isabet bir sonrakinin hasarını %10 artırır, en çok %60 (kombo sayacı başının üstünde yazar; vurulunca ya da 1,2 saniye vuramazsan sıfırlanır); her 5. isabette bir kıvılcım yakındaki başka bir düşmana sıçrar; taklası %30 daha az enerji ister; özel hamleleri dar ve tek hedefe.
+  - **Yeni hamleler:** Gürz: Yer yarığı (önüne ilerleyen çatlak), Deprem çekici (büyüyen üç krater), Kafa ezen kraterle, Ezerek atılma iniş krateriyle. Topuz: Bumerang (gidip dönen topuz), Zikzak, Kombo patlatma (komboyu tek darbede harcar, kıvılcım sıçratır), Çan çalan.
+  - **Yeni ultiler:** Gürz · Dağ yaran (sıçrayıp indiği yerden dört yöne kaya fışkıran çatlaklar); Topuz · Gök gürültüsü (çevredeki altı düşmana sırayla şimşek, sonunda gök gürültüsü).
+  - Arenada da aynı kurallar geçerli. İlk kez gürz ya da topuz eline alınca kuralları kısa bir bildirimle anlatılıyor.
+- **Toplanan yiyecekler biyom biyom iyileşiyor:** ileriki biyomun yiyeceği daha çok doyuruyor (Çayır 5–7 … Mor Kristal 21–24), etkisi daha uzun sürüyor (60 sn … 210 sn) ve Orman'dan sonra her biyomda biraz daha can veriyor.
+- **Toplananlar biyom biyom daha değerli:** bir biyomda toplanan bitki, meyve, odun ve maden bir öncekindekilerden pahalı (Çayır 1–6, Orman 7–12, Bataklık 13–20, Kayalık Dağ 21–32, Kül Diyarı 33–52, Mor Kristal 53–90 sikke); bunlarla yapılan tariflerin fiyatı da buna göre arttı.
+
+### Görsel
+- Gürz: kraterler, yerde açılan çatlaklar, sıçrayan taşlar, toz. Topuz: metal kıvılcımları, yıldız parlamaları, şimşekler, çan halkaları, dönen bumerang.
+
+### Ses
+- Gürz: kalın gümleme ve yer sarsıntısı. Topuz: metal çınlaması, kıvılcım çıtırtısı, çan ve gök gürültüsü.
+
+### Tasarım belgesi
+- Sistemler › Dövüş (silahların karakteri, hamle ve ulti tabloları), Aletler; Sistemler › Yemek (biyom tablosu); Act 1 (fiyat kuralı ve tablolar), Eşyalar, Aletler (maden fiyatları).
+
 ## Versiyon 3.10 · 3 Kasım 2026
 
 ### Oynanış
