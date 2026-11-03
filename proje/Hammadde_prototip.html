@@ -1380,7 +1380,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.18</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.19</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -18845,7 +18845,8 @@ for(const m of MAST)MEMS.push(m);                 // 12..16, where the ACT 2 cod
 for(let k=12;k<A1.length;k++)MEMS.push(A1[k]);
 for(const m of PURM)MEMS.push(m);
 const A1I=A1.map(m=>MEMS.indexOf(m)),PURI=PURM.map(m=>MEMS.indexOf(m)),PROP=A1I[A1I.length-1];
-const nextA1=()=>{for(const i of A1I)if(!mems.has(i))return i;return -1};
+// v3.19 (Boğaç): the proposal is not in the chain; it comes only at the very end of ACT 1, right before boarding Barbaros's ship
+const nextA1=()=>{for(const i of A1I)if(i!==PROP&&!mems.has(i))return i;return -1};
 const nextPur=()=>{for(const i of PURI)if(!mems.has(i))return i;return -1};
 const kind=(window.__v57&&window.__v57.kind)||{};
 function bring(i,ev){if(i<0||mems.has(i))return false;if(ev)kind[i]=ev;else delete kind[i];memUnlock(i);return true}
@@ -18861,10 +18862,15 @@ if(window.__v57)window.__v57.quest=()=>ev318('quest');
 {const _t=turnIn;turnIn=function(){const r=_t.apply(this,arguments);setTimeout(()=>ev318('quest'),1200);return r}}
 // recipes: 10, 25, 50, 100 and 175 learned recipes each bring the next one (no day limit); counted from the moment you play,
 // so loading a save that is already past them does not pour five memories at once
-const MS=[10,25,50,100,175];let lastF=null,wasProp=false;
+const MS=[10,25,50,100,175];let lastF=null,allA1=null;
 setInterval(()=>{try{if(onTitle){lastF=null;return}const f=found.length;if(lastF==null){lastF=f;return}
   if(f>lastF)for(const s of MS)if(lastF<s&&f>=s)bring(nextA1(),null);lastF=f;
-  if(memCur&&memCur.i===PROP&&!memCur.again)wasProp=true;else if(wasProp&&!memCur){wasProp=false;setTimeout(()=>toast('ACT 1\'in bütün anıları geri geldi.'),900)}}catch(e){}},1000);
+  const a=A1I.every(i=>mems.has(i));if(allA1===null||!a)allA1=a;else if(!allA1&&!memCur&&!memQ.length){allA1=true;setTimeout(()=>toast('ACT 1\'in bütün anıları geri geldi.'),900)}}catch(e){}},1000);
+// "Götür beni": first the proposal (once), then the voyage
+{const _say=say;say=function(text,ch,who){try{if(Array.isArray(ch)&&ISLE!==2&&!mems.has(PROP)){const k=ch.findIndex(o=>o&&o.t==='Götür beni'&&typeof o.f==='function');
+  if(k>=0){ch=ch.slice();const o=ch[k],go=o.f;ch[k]=Object.assign({},o,{f:function(){if(mems.has(PROP)||memCur)return go.apply(this,arguments);const self=this,args=arguments;try{bye()}catch(e){}
+    mems.add(PROP);delete kind[PROP];setTimeout(()=>{openMem(PROP);const w=setInterval(()=>{if(memCur)return;clearInterval(w);setTimeout(()=>go.apply(self,args),400)},200)},300)}})}}}catch(e){}
+  return _say.call(this,text,ch,who)}}
 // Zümrüt's purple shards bring the next ACT 1 memory
 {const _w=v46WitchChoices;v46WitchChoices=function(){const L=_w.apply(this,arguments);try{const k=L.findIndex(o=>o&&o.t==='Mor kıymıkları göster (2)');if(k>=0)L.splice(k,1);
   const nx=nextA1();if((inv['Mor kıymık']||0)>=2&&nx>=0){const o={t:'Mor kıymıkları göster (2)',f:()=>say(`Ooo… bunlar gökten düşen ışığın kırıntıları. Kazanda eritirsem buharı sana unuttuğun bir şeyi hatırlatır. İki tanesi yeter. Deneyelim mi?`,[{t:'Erit',pri:1,f:()=>{inv['Mor kıymık']-=2;renderInv();bye();sfx('magic');appearFx(cauldron.x,cauldron.y,'#a050e0');bring(nextA1(),null)}},{t:'Sonra',f:bye}],witch)};
@@ -18881,13 +18887,13 @@ try{const c=CLUES.find(x=>x.id==='bilezik');if(c)Object.defineProperty(c,'n',{ge
 renderMem=function(){const rd=riddle?`<div class="memrd"><b>Zümrüt'ün bilmecesi:</b> ${riddleText(riddle)}<br><small>Bu tarifi kazanda öğrenince Zümrüt seni ödüllendirir.</small></div>`:'';
   const nx=nextA1();
   const row=(i,how)=>{const m=MEMS[i],ok=mems.has(i);return `<li${ok?'':' style="opacity:.55"'}><span class="bn"><img src="${ok?clueIcon():unkIcon()}" alt=""><span><b>${ok?esc(m.n):'&#63;&#63;&#63;'}</b>${ok&&kind[i]?` <small style="color:#c9a0ff">· ${({sleep:'rüya',faint:'bayılma',quest:'görev'})[kind[i]]}</small>`:''}<br><small>${ok?esc(memText(m.L[0][1]).replace(/<[^>]+>/g,'')):how}</small></span></span>${ok?`<span class="rr"><button class="mk ghost" type="button" data-mem="${i}">İzle</button></span>`:''}</li>`};
-  const a1=A1I.map((i,k)=>row(i,i===nx?`Sıradaki anı · tarif eşiğinde (10, 25, 50, 100, 175; şimdi ${found.length}), rüyada, bayılınca ya da bir görevi bitirince${MIN[k]>1?` · en erken ${MIN[k]}. gün`:''}`:'Önceki anılar gelince')).join('');
+  const a1=A1I.map((i,k)=>row(i,i===PROP?'ACT 1\'in sonunda, Barbaros\'un gemisine binmeden hemen önce':i===nx?`Sıradaki anı · tarif eşiğinde (10, 25, 50, 100, 175; şimdi ${found.length}), rüyada, bayılınca ya da bir görevi bitirince${MIN[k]>1?` · en erken ${MIN[k]}. gün`:''}`:'Önceki anılar gelince')).join('');
   const pu=PURI.map(i=>row(i,'ACT 2\'de, ikinci adada: rüyada, bayılınca ya da bir görevi bitirince')).join('');
   const ma=MAST.map(m=>row(MEMS.indexOf(m),'ACT 2\'de, ikinci adanın ustalarına yardım ettikçe')).join('');
   return bookTabs()+rd+`<p class="note">${loveName?`<b>${esc(loveName)}</b>`:'Eşin'} ile anıların sırayla geri geliyor: kazanda yeni tarifler öğrendikçe, <b>uykuda rüya</b> olarak, <b>bayılınca</b> ya da <b>bir görevi bitirince</b>. Mor kıymıkları Zümrüt'e götürürsen sıradaki anı hemen döner. Her anı bir kez gelir; buradan yeniden izlersin.</p><h4 style="margin:10px 0 4px">ACT 1 · ${A1I.filter(i=>mems.has(i)).length} / ${A1I.length}</h4><ul class="book mem">${a1}</ul><h4 style="margin:12px 0 4px">ACT 2 · Mor ışık</h4><ul class="book mem">${pu}${ma}</ul>`};
 // ---------------------------------------------------------------- saves: v318 marks the new layout; an older save is moved over by name
 {const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);try{s.v318=1}catch(e){}return s}}
-{const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);lastF=null;
+{const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);lastF=null;allA1=null;
   try{if(d&&!d.v318){const keep=new Set(PUR.concat(MAST.map(m=>m.n))),was=[...mems];mems.clear();memQ=[];for(const k in kind)delete kind[k];
     const ok=d.v57&&d.v57.k||{};
     for(const o of was){const n=OLDN[o];if(!keep.has(n))continue;const j=MEMS.findIndex(m=>m.n===n);if(j>=0){mems.add(j);if(ok[o])kind[j]=ok[o]}}}}catch(e){}
