@@ -8,6 +8,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.17 · 4 Kasım 2026
+
+### Oynanış
+- **Nazlı · "Kazanda işe yaramayanları sat" artık fazlayı satıyor.** Her malzeme için, o malzemeyi kullanan bütün tarifleri (bildiklerin, açık olanlar ve henüz bulmadıkların) **birer kez** yapmaya yetecek miktar hesaplanır; o kadarı çantanda kalır, **fazlası satılır**. Örnek: 30 Çakılın var ve tarifler toplam 8 tane istiyorsa 22'si satılır, 8'i sende kalır. Hiçbir tarifte geçmeyen malzemenin hepsi satılır. Eskiden tarifte geçen bir malzemeye hiç dokunmuyordu.
+- Aletler, zırhlar, kemer eşyaları ve fiyatsız eşyalar bu düğmeyle yine satılmaz.
+
+### Arayüz
+- Düğmede satılacak fazlanın tutarı yazar; yalnızca fazla satıldığı için "Emin misin?" sorusu çıkmaz.
+- Satıştan sonra: "N çeşidin fazlası satıldı · +X sikke (her tarifi bir kez yapmaya yetecek kadarı sende kaldı)".
+
+### Tasarım belgesi
+- Sistemler › Ekonomi: "Kazanda işe yaramayanları sat fazlayı satar" maddesi; Pazarcı Nazlı'nın kişi sayfası.
+
 ## Versiyon 3.16 · 4 Kasım 2026
 
 ### Görsel

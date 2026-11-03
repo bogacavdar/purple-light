@@ -1,3 +1,9 @@
+## v3.17 (4 Kasım 2026) · Nazlı: "Kazanda işe yaramayanları sat" yalnızca fazlayı satar
+- Belge `20_sistemler.md` (Ekonomi, yeni madde), `40_act1_kisiler.md` (Nazlı).
+- `<script id="v317spare">` (dosya sonu): `needOf(n)` = n'yi kullanan tariflerin (USES; potUses ∪ recUses ile aynı küme: bulunmamış+yerleştirilemez+(zor ya da açık) veya bulunmuş/açık) içindeki adetlerinin toplamı; `spareOf(n)` = bulkSellable ise max(0, inv − need). `safeSell` ve `sellSafe` yeniden tanımlandı (yalnızca fazlayı satar, shopTake(n,q)). `window` capture dinleyicisi #sellsafe tıklamasını alır, eski "Emin misin?" (3424) ve eski bütün yığın satışı (7909) çalışmaz. renderCraft sarmalayıcısı düğme tutarını fazlaya göre yazar. `window.__plSpare` hata ayıklama için.
+- Eski kayıtlara etkisi yok.
+- Kontrol: chk.js 0 hata (`?.` 1, `??` 8, değişmedi). Test yapılmadı.
+
 ## v3.16 (4 Kasım 2026) · takla: gözler pörtlemiyor, top hâlinde kapalı, 0,46 sn
 - Belge `20_sistemler.md` (Takla görüntüsü), `00_giris.md`.
 - `v315roll`: poz artık ana tuvalde (kamera ölçeğinde) döndürülmüyor; `build()` 60×60 küçük tuvalde (1 oyun pikseli = 1 piksel, yumuşatma kapalı) parçaları tam sayı satırlarla kurar, döndürür (π/16 adımları, 12°'den küçük dönüş 0), `blit()` tam sayı konuma kopyalar. Dikey takladaki ters çevirme de küçük tuvalde.
