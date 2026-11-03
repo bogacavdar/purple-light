@@ -12,6 +12,7 @@
 - Alttaki kemer: v265 `SEL`'den `[data-hs]` ve `nameOf`'taki hotbar dalı silindi (⚔ etiketi yok); v2.6x `renderHot` title sarmalayıcısı (hasar ipucu) silindi.
 - Telefonda Görevler: `<script id="v307qlog">` `v50m`'de `#b-quest` tıklamasını yakalar (capture), ☰'ı kapatır, `openMenu('qlog')`/kapat; `renderQlog` sarmalayıcısı ders sürerken (`tz||lessonCard`) en üste Ders kartı koyar.
 - Kontrol (telefon 844×390): öğreticide Görevler paneli açılıyor; iki yan görev alındı, ▾ ile kart kalktı, Görevler'den Takip et çalıştı, kayıt/yükleme listeyi ve takip edileni koruyor; sayfa hatası 0.
+- Güvercinler (kerem): adım `seq` yerine `hide:1`; yerler Bulut çevresinde 4 yön, 250–650 px (`PIGR/PIGH/PIGS`=700/260/60); `KAREA`, `q.area` ve bütün `s.seq` dalları silindi. `coo(v)` (`audio.synth`, iki inen sinüs + titreşim) 260 px içinde, aralık .45+1.9·uzaklık. `curPts` gizli güvercini 60 px'te çizer; `targetOf` yalnızca alan döner, alanlı hedefe kenar oku yok. Toplama `pages()` ile (erken kapanınca `busy` çözülür); ayrıca `tick` `busy` 1 sn'den uzun ve `PG` yoksa çözer (Boğaç'ın kilidi: `say` düğmesiz kapanınca `A.busy` sonsuza dek true kalıyordu). Kontrol: 150 px'te 3 sn'de 3 guruldama, 600 px'te 0; üstüne gelince toplandı, Esc ile kapatıp sonrakini de topladı.
 - Kontrol: chk.js 0 hata; oyun içi ekran görüntüsü (iki etki açık), sayfa hatası 0. Telefon görünümü (v50m) değişmedi. Öğretici kartı açık/küçük ekran görüntüsü.
 
 ## v3.06 (3 Kasım 2026) · neon hep yanar, tepeye inen ışık yok, çarpmalar denize de

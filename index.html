@@ -15989,7 +15989,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  {id:'kerem',name:'Güvercinci Bulut',title:'Kaçan güvercinler',b:0,win:[480,1020],c:80,x:50,
   intro:[N('Kafesin kapısını açık unuttum, <b>dört güvercinim</b> de uçtu!'),N('Her birinin ayağında bir not var; adadakiler bana mektup verir, ben taşırım. Notlar kaybolursa herkes bana kızar. Yardım eder misin?')],
   remind:'Güvercinler buralarda bir yerde. Yerde dolaşırlar, korkmazlar.',
-  steps:[{t:'collect',ps:['g1','g2','g3','g4'],seq:1,draw:'pigeon',tx:'Güvercinleri bul',lines:{g1:'Güvercinin ayağındaki not: <i>"Nazlı\'dan Dursun\'a: Çekicinin sesi olmadan pazar sessiz. Akşam çay var."</i>',g2:'Not: <i>"Ekin\'den Zümrüt\'e: Domatesler kazanından daha kırmızı oldu, gelip bak."</i>',g3:'Not: <i>"Çınar\'dan kimseye: Defne\'nin evine son çiviyi çaktım. Kapıyı açık bırakıyorum."</i>',g4:'Not, imzasız: <i>"Bu adada yıldız yok ama sen varsın."</i>'}},
+  steps:[{t:'collect',ps:['g1','g2','g3','g4'],hide:1,draw:'pigeon',tx:'Güvercinleri bul: yaklaştıkça guruldamalarını duyarsın',lines:{g1:'Güvercinin ayağındaki not: <i>"Nazlı\'dan Dursun\'a: Çekicinin sesi olmadan pazar sessiz. Akşam çay var."</i>',g2:'Not: <i>"Ekin\'den Zümrüt\'e: Domatesler kazanından daha kırmızı oldu, gelip bak."</i>',g3:'Not: <i>"Çınar\'dan kimseye: Defne\'nin evine son çiviyi çaktım. Kapıyı açık bırakıyorum."</i>',g4:'Not, imzasız: <i>"Bu adada yıldız yok ama sen varsın."</i>'}},
    {t:'back',tx:'Güvercinleri Bulut\'a götür',on:[N('Dördü de burada! Sonuncunun kime gideceğini bilmiyorum ama… belki kimseye gitmesi gerekmiyordur.')]}],
   after:['Artık kapıyı hep kapatıyorum. Nazlı ile Dursun çay içmiş, duydun mu?']},
  {id:'mina',name:'Ela',title:'Kampa giden yol',b:1,win:[1200,300],night:1,c:150,x:120,
@@ -16072,12 +16072,12 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    else{const B=BOXB[q.b],s=SLOT[bc[q.b]++%3],tx=(B[0]+(B[2]-B[0])*s[0])*T,ty=(B[1]+(B[3]-B[1])*s[1])*T;
      p=findNear(tx,ty,0,260,q.b,R,{av:240,big:1});if(Math.hypot(p.x-tx,p.y-ty)<1)p=findNear(tx,ty,0,900,q.b,R,{av:200,big:1})}
    q.x=p.x;q.y=p.y;AV.push({x:p.x,y:p.y});SIDE.push(p);q.R=R;q.pts={npc:{x:q.x,y:q.y}}}
- const KAREA=260;   // px, radius of the yellow search circle for a pigeon
  const PT=(q,k,from,r0,r1,o)=>{const f=from||q;q.pts[k]=findNear(f.x,f.y,r0,r1,q.b,q.R,o)};
  {const q=BY.elif;PT(q,'wreck',q,300,620,{sand:true,shore:true});PT(q,'bottle',q.pts.wreck,200,420,{sand:true,shore:true})}
  {const q=BY.husnu;PT(q,'goat',q,480,800)}   // v2.42: 4x farther (was 120–200)
- {const q=BY.kerem;q.area={};let from=q;   // v2.42: far (was 150–450 from Bulut), one after the other; each has a big search area whose centre is NOT the bird
-   ['g1','g2','g3','g4'].forEach((k,i)=>{PT(q,k,from,i?420:480,i?720:800);from=q.pts[k];const a=q.R()*Math.PI*2,r=q.R()*KAREA*.62;q.area[k]={x:q.pts[k].x+Math.cos(a)*r,y:q.pts[k].y+Math.sin(a)*r}})}
+ const PIGR=700,PIGH=260,PIGS=60;   // v3.07: pigeons are within PIGR px of Bulut, heard from PIGH px, seen from PIGS px
+ {const q=BY.kerem;const a0=q.R()*Math.PI*2;   // v3.07 (Boğaç): four directions around Bulut, 250–650 px out, any order
+   ['g1','g2','g3','g4'].forEach((k,i)=>{const a=a0+i*Math.PI/2+(q.R()-.5)*.9,r=250+q.R()*400;PT(q,k,{x:q.x+Math.cos(a)*r,y:q.y+Math.sin(a)*r},0,140)})}
  {const q=BY.nadir;PT(q,'den',q,250,400)}
  {const q=BY.sadik;for(const k of ['m1','m2','m3','m4','m5'])PT(q,k,q,80,220)}
  {const q=BY.sabri;for(const k of ['s1','s2','s3'])PT(q,k,q,200,450)}
@@ -16183,6 +16183,10 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    const sp=Math.min(goatSpd()*dt,dd),ang=Math.atan2(dy,dx);
    for(const da of [0,.55,-.55,1.1,-1.1,1.7,-1.7]){const a=ang+da*j.side,nx=g.x+Math.cos(a)*sp,ny=g.y+Math.sin(a)*sp;   // straight on; if something is in the way, round it on one side
      if(goatOk(nx,ny)){g.x=nx;g.y=ny;g.fx=Math.cos(a)>0?1:-1;return}}}
+ // v3.07: a pigeon's coo, louder and more often the nearer you are
+ function coo(v){try{audio.synth((ac,out)=>{const t0=ac.currentTime,g=ac.createGain();g.connect(out);const vol=.05+.22*v*v;
+   for(const [dt0,f0,f1,d] of [[0,330,290,.22],[.26,300,250,.34]]){const o=ac.createOscillator(),og=ac.createGain(),lf=ac.createOscillator(),lg=ac.createGain();o.type='sine';o.frequency.setValueAtTime(f0,t0+dt0);o.frequency.linearRampToValueAtTime(f1,t0+dt0+d);
+     lf.frequency.value=22;lg.gain.value=14;lf.connect(lg);lg.connect(o.frequency);og.gain.setValueAtTime(0,t0+dt0);og.gain.linearRampToValueAtTime(vol,t0+dt0+.04);og.gain.linearRampToValueAtTime(0,t0+dt0+d);o.connect(og);og.connect(g);o.start(t0+dt0);lf.start(t0+dt0);o.stop(t0+dt0+d+.02);lf.stop(t0+dt0+d+.02)}})}catch(e){}}
  // ---------------------------------------------------------------- every frame
  let sayT=0;
  const folSay=(t)=>{if(A&&A.fol){A.fol.stop=t;A.fol.sayT=2.2}};
@@ -16191,10 +16195,13 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    if(!(window.__plCave&&window.__plCave.cur))bioSeen.add(bioAt(player.x,player.y));
    {const g=BY.isil;if(!done.has('isil')&&!actOf('isil')&&inWin(g.win)&&!dlgOpen&&D2(player,g)<60)start(g)}
    if(PG){if(dlgOpen)PG.gone=0;else if((PG.gone+=dt)>.6){const f=PG.fin;PG.fin=null;PG=null;if(A)A.busy=false;if(f)f()}}
-   if(!A||dlgOpen||fading)return;const q=BY[A.id],s=step();if(!s||A.busy)return;
+   if(!A||dlgOpen||fading)return;const q=BY[A.id],s=step();
+   if(A.busy&&!PG){A.bt=(A.bt||0)+dt;if(A.bt>1){A.busy=false;A.bt=0}}else A.bt=0;   // v3.07: a box closed without its button left the quest stuck (Boğaç: "üstünde duruyorum, hiçbir şey olmuyor")
+   if(!s||A.busy)return;
    if(s.t==='go'){if(s.ghost&&!inWin(q.win))return;const p=q.pts[s.p];if(D2(player,p)<(s.ghost?34:26)){A.busy=true;if(s.ghost)try{sfx('magic')}catch(e){}pages(q,s.on,advance)}return}
-   if(s.t==='collect'){for(const k of (s.seq?s.ps.filter(k=>A.got.indexOf(k)<0).slice(0,1):s.ps)){if(A.got.indexOf(k)>=0)continue;if(D2(player,q.pts[k])<26){A.got.push(k);try{sfx('pick')}catch(e){}renderSQ();
-         const last=A.got.length>=s.ps.length;A.busy=true;say(s.lines[k]+(last?'':`<br><small>${A.got.length}/${s.ps.length}</small>`),[{t:'Tamam',pri:1,fresh:1,f:()=>{bye();A&&(A.busy=false);if(last)advance()}}],who('x'));return}}return}
+   if(s.t==='collect'){let nd=1e9;for(const k of s.ps){if(A.got.indexOf(k)>=0)continue;const d=D2(player,q.pts[k]);if(d<nd)nd=d;if(d<(s.hide?34:26)){A.got.push(k);try{sfx('pick')}catch(e){}renderSQ();
+         const last=A.got.length>=s.ps.length;A.busy=true;pages(q,[['x',s.lines[k]+(last?'':`<br><small>${A.got.length}/${s.ps.length}</small>`)]],()=>{if(A)A.busy=false;if(last)advance()});return}}   // v3.07: pages(): closing the box early no longer freezes the quest
+     if(s.hide&&nd<PIGH&&(A.coo=(A.coo||0)-dt)<=0){const k=nd/PIGH;A.coo=.45+k*1.9;coo(1-k)}return}
    if(s.t==='chase'){const g=A.goat;if(A.gcd>0)A.gcd-=dt;
      if(!A.gj&&!(A.gcd>0)&&D2(player,g)<18){A.cnt++;try{sfx('pick')}catch(e){}
        if(A.cnt>=s.n){floatText('Yakalandı!','#9fe07a');advance();return}
@@ -16257,7 +16264,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  // the active quest's things in the world, the people, the followers
  const curPts=()=>{const out=[];if(!A)return out;const q=BY[A.id],s=step();if(!s)return out;
    if(s.t==='go'&&s.draw)out.push([s.draw,q.pts[s.p]]);
-   if(s.t==='collect')for(const k of (s.seq?s.ps.filter(k=>A.got.indexOf(k)<0).slice(0,1):s.ps))if(A.got.indexOf(k)<0)out.push([s.draw,q.pts[k]]);
+   if(s.t==='collect')for(const k of s.ps)if(A.got.indexOf(k)<0&&(!s.hide||D2(player,q.pts[k])<PIGS))out.push([s.draw,q.pts[k]]);   // v3.07: a hidden pigeon shows only when you are next to it
    if(s.t==='kill'&&s.draw)out.push([s.draw,q.pts[s.p]]);
    if(q.id==='saniye'&&A.step>=3){out.push(['cave',q.pts.cave]);out.push(['body',{x:q.pts.cave.x-4,y:q.pts.cave.y+16}])}
    if(q.id==='elif'&&A.step>=1)out.push(['wreck',q.pts.wreck]);
@@ -16288,10 +16295,10 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
      if(s&&s.t==='chase'&&A.goat){const g=A.goat;ents.push({y:g.y,d:()=>drawGoat(g.x,g.y,player.x<g.x?1:-1,A.gj?(Math.sin(time*14)>0?1:0):(Math.sin(time*6)>.9?1:0))})}
      if(s&&s.t==='escort'&&A.fol){const f=A.fol;ents.push({y:f.y,d:()=>{if(s.who==='goat')drawGoat(f.x,f.y,f.face,f.mv&&Math.sin(time*14)>0?1:0);else drawPerson(q,f.x,f.y,{step:f.mv?(Math.sin(time*12)>0?1:-1):0});if(f.sayT>0&&f.stop)bub(f.x,f.y-(KID[q.id]?34:42),f.stop)}})}
      // a small blue arrow at the edge of the view towards the target
-     const t=targetOf();if(t&&!vis(t.x,t.y,-10)){ents.push({y:9997,d:()=>{const ex=Math.max(cam.cx+8,Math.min(cam.cx+vw-8,t.x)),ey=Math.max(cam.cy+14,Math.min(cam.cy+vh-14,t.y));px(ex-4,ey-4,8,8,'#11170f');px(ex-3,ey-3,6,6,'#9fd8ff');px(ex-1,ey-1,2,2,'#1a2a3a')}})}}}
+     const t=targetOf();if(t&&!t.area&&!vis(t.x,t.y,-10)){ents.push({y:9997,d:()=>{const ex=Math.max(cam.cx+8,Math.min(cam.cx+vw-8,t.x)),ey=Math.max(cam.cy+14,Math.min(cam.cy+vh-14,t.y));px(ex-4,ey-4,8,8,'#11170f');px(ex-3,ey-3,6,6,'#9fd8ff');px(ex-1,ey-1,2,2,'#1a2a3a')}})}}}
  function targetOf(){if(!A)return null;const q=BY[A.id],s=step();if(!s)return null;
    if(s.t==='go'||s.t==='kill')return s.ghost&&!inWin(q.win)?null:q.pts[s.p];
-   if(s.t==='collect'&&s.seq){const k=s.ps.find(k=>A.got.indexOf(k)<0),a=k&&q.area&&q.area[k];return a?{x:a.x,y:a.y,area:KAREA}:null}   // v2.42: the circle, not the bird
+   if(s.t==='collect'&&s.hide)return{x:q.x,y:q.y,area:PIGR};   // v3.07: only the whole search ground around Bulut, never a bird
    if(s.t==='collect'){let b=null,bd=1e9;for(const k of s.ps){if(A.got.indexOf(k)>=0)continue;const p=q.pts[k],d=D2(player,p);if(d<bd){bd=d;b=p}}return b}
    if(s.t==='chase')return A.goat;if(s.t==='escort')return dest(s,q);return{x:q.x,y:q.y}}
  // ---------------------------------------------------------------- the map: "?" where explored, a foggy circle where not
