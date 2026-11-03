@@ -77,6 +77,7 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 
 ### Börü'nün atılma dersi (v1.81, 11. adımın içinde)
 
+- **Öğretici sürerken ünlem yok (v3.07, Boğaç: "gidince zırh işi sonra diyor, o zaman neden ünlem var?"):** ilk öğretici Dursun adımına (13) gelene kadar hiçbir kişinin başında tanışma ünlemi (**!**) yanmaz; bu sırada Durmuş, kuzen demirciler/zırhçılar, terzi ve pazarcı kuzenleri "önce adanın insanlarıyla tanış, sonra gel" der. Öğreticinin göstereceği kişi ok ile gösterilir. 13. adımdan (ya da öğretici atlanınca) sonra tanışılmamış kişilerin ünlemi yine yanar.
 - **Yumruk dersinde de ok yok, kerevit yenilenmez (v3.07, Boğaç):** Börü ile konuşup ilk kerevit çıktıktan sonra, kerevit yenilene kadar Börü'yü gösteren ok çıkmaz. Kerevit henüz ölmemişken Börü'ye gidip konuşursan Börü yalnızca "Kerevit seni bekliyor" der; kerevit **yeniden doğmaz**, canı kaldığı yerden devam eder (yeni kerevit yalnızca ortada canlı ders kereviti yoksa çıkar).
 - **Ders sürerken yön oku yok (v2.15):** ikinci kerevit belirdiği andan ders bitene kadar Börü'nün üstünde ya da ekranda Börü'yü gösteren ok çıkmaz; dikkat kerevitte kalır.
 1. Kerevit yumrukla yenilince Börü "Şimdi kaçmayı öğren" der ve yanına **yeni bir kerevit** çıkar. Bu kerevit can yakmaz, ölmez; yalnızca saldırır. Atılma bu derste **ücretsiz** öğrenilir (yetenek ağacında satılmaz).
