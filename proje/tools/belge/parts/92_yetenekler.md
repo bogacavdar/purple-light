@@ -58,7 +58,7 @@
 | 6 | A3 | Kemer III | kemer | Alet yuvası 10 | Kemer II | Kemer IV, Çabuk toparlanma II | 1.800 | Sv 8 |
 | 6 | S2 | Çevik atılma I | hız çizgili ok | Atılma 9 enerji (14 yerine), bekleme 0,45 sn | Kemer II | Çevik atılma II | 1.800 | Sv 8 |
 | 7 | H7 | Hızlı adımlar IV | ileri okları | Hareket hızı toplam +%40 | Hızlı adımlar III | – | 3.000 | Sv 11 |
-| 7 | H6 | Kâşif gözü | pusula | Haritada açılan alan neredeyse iki kat genişler | Hızlı adımlar III | – | 3.000 | Sv 11 |
+| 7 | H6 | **Keskin göz I** (v3.12; eskiden Kâşif gözü) | pusula | Kritik vuruş ihtimali +%3 (kritik vurabilen silahlarla) | Hızlı adımlar III | – | 3.000 | Sv 11 |
 | 7 | K9 | Hafif adım II | tüy | Koşarken toplam %50 daha az enerji harcarsın | Hafif adım I | Rüzgâr gibi, Baykuş gözü | 3.000 | Sv 11 |
 | 7 | K7 | Derin nefes III | nefes (ciğer) | En yüksek enerji toplam +%75 | Derin nefes II | – | 3.000 | Sv 11 |
 | 7 | W4 | Güçlü kol IV | kılıç | Hasar toplam +%55 | Güçlü kol III | – | 3.000 | Sv 11 |
@@ -66,8 +66,8 @@
 | 7 | A4 | Kemer IV | kemer | Alet yuvası 12 | Kemer III | – | 3.000 | Sv 11 |
 | 7 | K8 | Çabuk toparlanma II | şimşek | Enerji iki kat hızlı dolar | Kemer III | – | 3.000 | Sv 11 |
 | 7 | S3 | Çevik atılma II | hız çizgili ok | Atılma 7 enerji, bekleme 0,38 sn | Çevik atılma I | Çevik atılma III, Uzun atılma | 3.000 | Sv 11 |
-| 8 | K4 | Rüzgâr gibi | rüzgâr | Koşu hızı 1,6 kattan 1,85 kata çıkar | Hafif adım II | – | 5.000 | Sv 14 |
-| 8 | H8 | Baykuş gözü | hilal | Karanlıkta yakın çevreni hep biraz görürsün | Hafif adım II | – | 5.000 | Sv 14 |
+| 8 | K4 | **Keskin göz II** (v3.12; eskiden Rüzgâr gibi) | rüzgâr | Kritik vuruş ihtimali toplam +%6 | Keskin göz I | – | 5.000 | Sv 14 |
+| 8 | H8 | **Ölümcül vuruş** (v3.12; eskiden Baykuş gözü) | hilal | Kritik vuruş %50 yerine %80 fazla vurur | Keskin göz II | – | 5.000 | Sv 14 |
 | 8 | S4 | Çevik atılma III | hız çizgili ok | Atılma 5 enerji, bekleme 0,30 sn | Çevik atılma II | – | 5.000 | Sv 14 |
 | 8 | S5 | Uzun atılma | uzun ok | Takla %25 daha uzağa götürür | Çevik atılma II | – | 5.000 | Sv 14 |
 

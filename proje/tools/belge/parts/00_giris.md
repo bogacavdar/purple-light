@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.11** ile birebir (3 Kasım 2026). Bu sürümde: gürz ve topuz kılıçtan farklı oynanır (gürz çevreye vurur, sersemletir, savurur; topuz kombo ve kıvılcımla hızlanır) ve yeni hamle/ultileri var; toplanan yiyecekler biyom biyom iyileşir; bir biyomda toplanan her şey bir öncekinden daha değerli. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.12** ile birebir (3 Kasım 2026). Bu sürümde: kritik vuruş (%50 fazla; seviye, Keskin göz yetenekleri ve silahın biyom kademesi artırır, silah türüne göre değişir; savuşturma sonrası ilk vuruş hep kritik); Savaş ağacında üç yetenek kritik vuruşa döndü. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

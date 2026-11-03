@@ -8,6 +8,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.12 · 3 Kasım 2026
+
+### Oynanış
+- **Kritik vuruş geldi:** kritik vuruş normalin %50 fazlasını vurur (başının üstünde kırmızı "KRİTİK!" yazar).
+  - **Savuşturmayla sersemlettiğin canlıya ilk vuruşun her zaman kritik.**
+  - İhtimal seviyeyle artar (her seviye %0,2), Keskin göz yetenekleriyle artar (%3 / %6) ve silahın hangi biyomun silahı olduğuna göre artar: ilk biyomların silahları (taş, bakır, kemik, çakmaktaşı, basit yaylar) kritik vuramaz; Tunç'tan Mor kristale her kademe +%1.
+  - Silah türü de önemli: yay ve ateşli silah ×1,5, mızrak ×1,2, topuz ×1,1, kılıç ×1, asa ×0,8, gürz ×0,6; balta, kazma, meşale ve yumruk kritik vuramaz.
+  - Silahın bilgi satırında kritik ihtimali yazar. Arenada da geçerli.
+- **Savaş ağacında üç yetenek değişti:** Kâşif gözü → **Keskin göz I** (kritik +%3), Rüzgâr gibi → **Keskin göz II** (toplam +%6), Baykuş gözü → **Ölümcül vuruş** (kritik %80 fazla vurur). Bunları almış olanlar yeni hallerine sahip; haritanın açılma alanı ve koşu hızı eski temel değerinde.
+
+### Ses
+- Kritik vuruşta kısa, tiz bir çınlama.
+
+### Tasarım belgesi
+- Sistemler › Dövüş › Kritik vuruş; Yetenekler (Savaş ağacı).
+
 ## Versiyon 3.11 · 3 Kasım 2026
 
 ### Oynanış

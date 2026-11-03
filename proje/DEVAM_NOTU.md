@@ -1,3 +1,9 @@
+## v3.12 (3 Kasım 2026) · kritik vuruş
+- Belge `20_sistemler.md` (Dövüş › Kritik vuruş), `92_yetenekler.md` (H6/K4/H8), `00_giris.md`.
+- `<script id="v311crit">`: `check()` her karenin başında ve `tickAnimals`'tan sonra çalışır; canın düştüğü ve `flash≥.12` olan (oyuncunun doğrudan vuruşu: temel, hamle, ok/atış/büyü, fırlatılan; gürzün yan hasarı .1, yanma/zehir .06 sayılmaz) canlıya kritik zarı atar; kritikte düşüşün %50'si (H8 %80) eklenir. `parried` canlıya `_pc=1` koyar → ilk vuruş zorunlu kritik, sersemlik vurmadan biterse silinir. `forName(n)`/`pct()`; `wInfo0`'a "kritik %x" satırı.
+- Yetenekler: SKT'de H6 → Keskin göz I, K4 → Keskin göz II (p H6), H8 → Ölümcül vuruş (p K4). Eski etkiler silindi: `runMult` sabit 1,6, `revealR` sabit 7, H8 karanlık ışığı, H6'nın mini haritayı açması; açıklama metinleri yenilendi.
+- Kontrol: 50. seviye Demir kılıç %11,8, 40 vuruşta 7 kritik; savuşturma sonrası baltayla ilk vuruş kritik, balta %0; bilgi satırı doğru; chk.js 0 hata.
+
 ## v3.11 (3 Kasım 2026) · gürz ve topuz farklı oynanır, yiyecekler ve fiyatlar biyom biyom iyileşir
 - Belge `20_sistemler.md` (Yemek: biyom tablosu), `30_act1.md` / `55_act2_biyomlar.md` / `90_esyalar.md` (tokluk sayıları), `00_giris.md`.
 - Kod (yiyecek etkileri bloğu, eski `RAWGOOD`/`RAWHEAL` yerine): `FOODT` [biyom kademesi, tokluk, etki, ek can]; `RAWFOOD` bundan yazılır, `FOODC` (pişmiş yemek önbelleği) temizlenir; `RAWGOOD` FOODT'tan + ekili ürünler; `RAWHEAL` = kademe×3 (zehirliler 0) + ek can; `prof`'ta FOODT yiyeceğinin süresi 60+30×kademe sn; Yabani bal/Ay elması özel can satırı silindi.

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.11** ile birebir (3 Kasım 2026). Bu sürümde: gürz ve topuz kılıçtan farklı oynanır (gürz çevreye vurur, sersemletir, savurur; topuz kombo ve kıvılcımla hızlanır) ve yeni hamle/ultileri var; toplanan yiyecekler biyom biyom iyileşir; bir biyomda toplanan her şey bir öncekinden daha değerli. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.12** ile birebir (3 Kasım 2026). Bu sürümde: kritik vuruş (%50 fazla; seviye, Keskin göz yetenekleri ve silahın biyom kademesi artırır, silah türüne göre değişir; savuşturma sonrası ilk vuruş hep kritik); Savaş ağacında üç yetenek kritik vuruşa döndü. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -704,6 +704,14 @@ Her silahın kendi hamleleri vardır (parantezde hasar çarpanı ve enerji):
 | Asa (mana) | Üçlü atış (×2 mana) | Büyük büyü ×3 (×3) | Kaçarken atış (×1,5) | Büyü halkası, 8 yön (×4) | İkiz atış (×1,4) | Güç topu ×2,8 (×2,2) |
 | Ateşli (mermi) | Çift atış (2) | Nişanlı atış ×3 (1) | Kayarak atış, 3 yayılım (3) | Şarjör boşaltma, 5 atış (5) | Seri atış (2) | Delici mermi ×3,2 (1) |
 
+- **Kritik vuruş (v3.12, Boğaç):** kritik vuruş normal hasarın **%50 fazlasını** vurur (Ölümcül vuruş yeteneğiyle **%80**); vuranın başında kırmızı "KRİTİK!" yazar, kısa tiz bir ses çıkar.
+  - **Savuşturmayla sersemlettiğin canlıya ilk vuruşun her zaman kritiktir** (her silahla, yumrukla bile). Sersemlik vurmadan geçerse bu hak kalkar.
+  - **İhtimal** = (seviye: 2. seviyeden başlayarak her seviye **%0,2**, 50. seviyede %9,8 · Keskin göz I **%3** / II **%6** · silahın biyom kademesi **×%1**) × **silah türü**.
+  - **Silahın kademesi:** yalnızca ilerleyen biyomların silahları kritik vurabilir. Başlangıç, Bakır, Kemik/Çakmaktaşı setleri ve Basit/Çam/Kemik yayı (kademe 0) **kritik vuramaz**; Tunç, Granit, Meşe ve Ihlamur yayı 1; Demir, Timsah, Kızılağaç ve Söğüt yayı 2; Çelik, Gümüş, Kuvars, Akçaağaç ve Huş yayı 3; Kara çelik, Ejder, Obsidyen, Kızıl sedir yayı 4; Mor kristal, Ametist, Gece ağacı ve Işık ağacı yayı 5; ACT 2 silahları (ateşli silahlar, asalar, Işın kılıcı) 6.
+  - **Silah türü:** yay ve ateşli silah **×1,5**, mızrak **×1,2**, topuz **×1,1**, kılıç **×1**, asa **×0,8**, gürz **×0,6**; balta, kazma, meşale ve yumruk **hiç kritik vuramaz** (savuşturma sonrası ilk vuruş hariç).
+  - Örnek (50. seviye, yeteneksiz): Demir kılıç %11,8 · Mor kristal gürz %8,9 · Mor kristal topuz %16,3 · Mor kristal mızrak %17,8 · Işık ağacı yayı %22,2 · Tabanca %23,7.
+  - Silahın bilgi satırında kritik ihtimali yazar ("kritik %11,8" ya da "kritik vuramaz"). Arenada da aynen geçerlidir.
+  - **Yetenek ağacı (Savaş):** üç yetenek değişti: Kâşif gözü → **Keskin göz I** (+%3), Rüzgâr gibi → **Keskin göz II** (toplam +%6, Keskin göz I'den sonra), Baykuş gözü → **Ölümcül vuruş** (kritik %80, Keskin göz II'den sonra). Bunları önceden almış olanlar yeni hallerine sahip olur; harita açılma alanı ve koşu hızı herkes için eski temel değerindedir (7 karo, 1,6 kat), karanlıkta çevreni görme yalnızca meşale, lamba ya da Gece gözü etkisiyle olur.
 - **Silahların karakteri (v3.11, Boğaç: "kılıç, gürz ve topuz kullanış olarak da efekt olarak da farklı olmalı"):** kılıç dengeli silahtır (orta hız, geniş yay; değişmedi). Gürz ve topuzun kendi kuralları vardır; arenada da aynen geçerlidir:
   - **Gürz: yavaş, ağır, kalabalığa karşı.** (1) **Çarptığı yere de vurur:** her isabet, vurulanın çevresindeki (36 px) öbür düşmanlara hasarının **yarısını** verir. (2) **Sersemletme birikir:** aynı düşmana 3 saniye içinde **3 isabet** onu **1 sn** sersemletir (Reis ve boss 0,5 sn); sayaç sıfırlanır. (3) **Geri itme iki kat.** (4) **Sağlam duruş:** savururken aldığın hasar **%25 az**. (5) Bedeli: savururken **%40 yavaş** yürürsün; vuruş hızı en yavaş silah (0,62 sn). Efektler toprak ve taş: kraterler, çatlaklar, toz, sıçrayan taşlar; ses kalın bir gümleme.
   - **Topuz: hızlı, hareketli, tek hedefe karşı.** (1) **Kombo sayacı:** 1,2 sn içinde yapılan her isabet bir sonrakinin hasarını **%10** artırır, en çok **%60** (6 isabet; aynı anda birden çok düşmana değmek tek isabet sayılır). Vurulunca ya da 1,2 sn isabet olmazsa sayaç sıfırlanır; sayaç karakterin üstünde yazar ("Kombo ×4"). (2) **Kıvılcım:** her **5. isabette** bir kıvılcım en yakın başka düşmana (120 px içinde) sıçrar, o isabetin **0,8** katı hasar verir. (3) **Hareketli:** vururken yavaşlamazsın; taklanın enerjisi **%30 az**. (4) Bedeli: özel hamlelerinin yayı dar, geri itmesi yarı. Efektler metal ve şimşek: kıvılcımlar, yıldız parlamaları, şimşekler; ses metal çınlaması.
@@ -6002,7 +6010,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | 6 | A3 | Kemer III | kemer | Alet yuvası 10 | Kemer II | Kemer IV, Çabuk toparlanma II | 1.800 | Sv 8 |
 | 6 | S2 | Çevik atılma I | hız çizgili ok | Atılma 9 enerji (14 yerine), bekleme 0,45 sn | Kemer II | Çevik atılma II | 1.800 | Sv 8 |
 | 7 | H7 | Hızlı adımlar IV | ileri okları | Hareket hızı toplam +%40 | Hızlı adımlar III | – | 3.000 | Sv 11 |
-| 7 | H6 | Kâşif gözü | pusula | Haritada açılan alan neredeyse iki kat genişler | Hızlı adımlar III | – | 3.000 | Sv 11 |
+| 7 | H6 | **Keskin göz I** (v3.12; eskiden Kâşif gözü) | pusula | Kritik vuruş ihtimali +%3 (kritik vurabilen silahlarla) | Hızlı adımlar III | – | 3.000 | Sv 11 |
 | 7 | K9 | Hafif adım II | tüy | Koşarken toplam %50 daha az enerji harcarsın | Hafif adım I | Rüzgâr gibi, Baykuş gözü | 3.000 | Sv 11 |
 | 7 | K7 | Derin nefes III | nefes (ciğer) | En yüksek enerji toplam +%75 | Derin nefes II | – | 3.000 | Sv 11 |
 | 7 | W4 | Güçlü kol IV | kılıç | Hasar toplam +%55 | Güçlü kol III | – | 3.000 | Sv 11 |
@@ -6010,8 +6018,8 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | 7 | A4 | Kemer IV | kemer | Alet yuvası 12 | Kemer III | – | 3.000 | Sv 11 |
 | 7 | K8 | Çabuk toparlanma II | şimşek | Enerji iki kat hızlı dolar | Kemer III | – | 3.000 | Sv 11 |
 | 7 | S3 | Çevik atılma II | hız çizgili ok | Atılma 7 enerji, bekleme 0,38 sn | Çevik atılma I | Çevik atılma III, Uzun atılma | 3.000 | Sv 11 |
-| 8 | K4 | Rüzgâr gibi | rüzgâr | Koşu hızı 1,6 kattan 1,85 kata çıkar | Hafif adım II | – | 5.000 | Sv 14 |
-| 8 | H8 | Baykuş gözü | hilal | Karanlıkta yakın çevreni hep biraz görürsün | Hafif adım II | – | 5.000 | Sv 14 |
+| 8 | K4 | **Keskin göz II** (v3.12; eskiden Rüzgâr gibi) | rüzgâr | Kritik vuruş ihtimali toplam +%6 | Keskin göz I | – | 5.000 | Sv 14 |
+| 8 | H8 | **Ölümcül vuruş** (v3.12; eskiden Baykuş gözü) | hilal | Kritik vuruş %50 yerine %80 fazla vurur | Keskin göz II | – | 5.000 | Sv 14 |
 | 8 | S4 | Çevik atılma III | hız çizgili ok | Atılma 5 enerji, bekleme 0,30 sn | Çevik atılma II | – | 5.000 | Sv 14 |
 | 8 | S5 | Uzun atılma | uzun ok | Takla %25 daha uzağa götürür | Çevik atılma II | – | 5.000 | Sv 14 |
 
