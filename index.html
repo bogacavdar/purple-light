@@ -13481,7 +13481,7 @@ function etkisiz(){for(const f of floats){if(f._im||f.t>.12||typeof f.text!=='st
 // =====================================================================================================
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
-const ROLL=true,STEPS=4,RT=.38,RD=50;   /* v116: 50 px in every direction, walking and running add nothing */   // v115: a slower, shorter roll: 0,38 s, about 34 px (was 0,24 s, 48 px)
+const ROLL=true,STEPS=4,RT=.46,RD=50;   /* v3.16 (Boğaç: "animasyon süresini biraz uzat"): 0,38 → 0,46 s */   /* v116: 50 px in every direction, walking and running add nothing */   // v115: a slower, shorter roll: 0,38 s, about 34 px (was 0,24 s, 48 px)
 // the roll starts quick and slows down to a stop (speed × 1,7 → × 0,3, the same distance on average)
 {const _d=doDodge;doDodge=function(){const was=dodge;const r=_d.apply(this,arguments);if(ROLL&&dodge&&dodge!==was){const l=Math.hypot(dodge.vx,dodge.vy)||1,v=RD/RT;dodge.vx=dodge.vx/l*v;dodge.vy=dodge.vy/l*v;dodge.t=RT;dodge.T=RT;dodgeCd=Math.max(dodgeCd,RT+.3)}return r}}
 {const _t=tickDodge;tickDodge=function(dt){if(!ROLL||!dodge||!dodge.T)return _t.apply(this,arguments);const k=Math.max(0,Math.min(1,1-dodge.t/dodge.T)),e=1.7-1.4*k,vx=dodge.vx,vy=dodge.vy,D=dodge;D.vx=vx*e;D.vy=vy*e;try{return _t.apply(this,arguments)}finally{D.vx=vx;D.vy=vy}}}
@@ -18711,7 +18711,7 @@ setInterval(()=>{try{if(!onTitle&&!dlgOpen&&tz>=6&&tz<=8)skip()}catch(e){}},600)
 <script id="v315roll">
 // v3.15 (Boğaç: "takla 360 derece dönme değil, gerçek takla pozları olsun"; 16 adım, kararı bana bıraktı): the roll is 8 key poses
 // built from the hero's own drawing (head, body and legs cut apart and moved), with one in-between after each = 16 steps over the
-// 0.38 s roll. Held tool/weapon and torch are hidden while rolling. Timing, distance and invulnerability are not touched (v113-roll).
+// 0.46 s roll (v3.16). Held tool/weapon and torch are hidden while rolling. Timing, distance and invulnerability are not touched (v113-roll).
 // Undo: revert this version (the v113 4-pose spin comes back by itself when window.__plRoll16 is missing).
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
@@ -18721,18 +18721,18 @@ const SPR={side:mk(),front:mk(),back:mk()};
 // key poses: a = turn of the whole figure (in turns), hy/by/ly = head/body/legs shift up-down, bs = body squash, ls = legs squash,
 // lx = legs pulled toward the head (knees in), up = lift off the ground, flip = for rolls up/down the screen (front → back → front)
 const K=[
-  {a:0,    hy:2, by:1, bs:.75,ls:.8, lx:0, up:0},   // 1 çömelme
-  {a:.10,  hy:2, by:1, bs:.8, ls:.9, lx:1, up:1},   // 2 öne atılma
-  {a:.25,  hy:5, by:2, bs:.6, ls:.7, lx:3, up:2},   // 3 top olma
-  {a:.42,  hy:5, by:2, bs:.6, ls:.7, lx:3, up:3},   // 4 top: sırt üstte
-  {a:.58,  hy:5, by:2, bs:.6, ls:.7, lx:3, up:3},   // 5 top: baş aşağıda
-  {a:.75,  hy:5, by:2, bs:.6, ls:.7, lx:3, up:2},   // 6 top: açılmaya başlar
-  {a:.90,  hy:3, by:1, bs:.7, ls:.85,lx:1, up:1},   // 7 diz üstü açılma
-  {a:.98,  hy:1, by:0, bs:.9, ls:1,  lx:0, up:0}];  // 8 doğrulma
+  {a:0,    hy:2, by:1, bs:.75,ls:.8, lx:0, up:0, sh:0},   // 1 çömelme
+  {a:.10,  hy:2, by:1, bs:.8, ls:.9, lx:1, up:1, sh:0},   // 2 öne atılma
+  {a:.25,  hy:5, by:2, bs:.6, ls:.7, lx:3, up:2, sh:1},   // 3 top olma
+  {a:.42,  hy:5, by:2, bs:.6, ls:.7, lx:3, up:3, sh:1},   // 4 top: sırt üstte
+  {a:.58,  hy:5, by:2, bs:.6, ls:.7, lx:3, up:3, sh:1},   // 5 top: baş aşağıda
+  {a:.75,  hy:5, by:2, bs:.6, ls:.7, lx:3, up:2, sh:1},   // 6 top: açılmaya başlar
+  {a:.90,  hy:3, by:1, bs:.7, ls:.85,lx:1, up:1, sh:0},   // 7 diz üstü açılma
+  {a:.98,  hy:1, by:0, bs:.9, ls:1,  lx:0, up:0, sh:0}];  // 8 doğrulma
 const lerp=(p,q,t)=>{const r={};for(const k in p)r[k]=p[k]+(q[k]-p[k])*t;return r};
-function poseAt(step){const i=step>>1;const p=K[i];if(!(step&1))return p;const q=K[i+1]||Object.assign({},K[0],{a:1,hy:0,by:0,bs:1,ls:1});return lerp(p,q,.5)}
-function paint(s,fx,fy){const g=s.g;g.clearRect(0,0,W,H);
-  const o=Object.assign(eqOpts(),{fx,fy,step:0,bob:0,arm:'down',noShadow:1});drawChibi(g,FX,FY,eqLook(),o)}
+function poseAt(step){const i=step>>1;const p=K[i];if(!(step&1))return p;const q=K[i+1]||Object.assign({},K[0],{a:1,hy:0,by:0,bs:1,ls:1,sh:0});return lerp(p,q,.5)}
+function paint(s,fx,fy,shut){const g=s.g;g.clearRect(0,0,W,H);   // v3.16: eyes squeezed shut while curled up (Boğaç: "gözlere özen")
+  const o=Object.assign(eqOpts(),{fx,fy,step:0,bob:0,arm:'down',noShadow:1,closed:shut?1:0});drawChibi(g,FX,FY,eqLook(),o)}
 // one pose, drawn at (x,y) = the feet on the screen; dir = +1/-1 the way it rolls
 // v3.15b (Boğaç: "sağa sola gözleri pörtletiyor"): the pose is turned in the hero's own pixel size in a small canvas and then
 // copied whole, so every pixel stays one game pixel (turning the big screen picture stretched some rows: the eyes bulged);
@@ -18756,10 +18756,10 @@ window.__plRoll16=function(){if(!dodge||!dodge.T)return false;const D=dodge;
   // shadow stays on the ground, smaller while the body is up
   {const P=poseAt(step);ctx.fillStyle='rgba(0,0,0,.28)';const w=12-P.up*2;ctx.fillRect(x-w/2|0,y+1,w,3)}
   const one=(st,al,ox,oy)=>{const P=poseAt(st);
-    if(side){paint(SPR.side,dir,0);build(SPR.side,P,dir,true,1);blit(x+ox,y+oy,P,al);return}
+    if(side){paint(SPR.side,dir,0,P.sh>.5);build(SPR.side,P,dir,true,1);blit(x+ox,y+oy,P,al);return}
     // up/down the screen: a forward somersault seen from the front/back: squash through flat, the other side shows when upside down
     const ang=P.a*Math.PI*2,c=Math.cos(ang),down=dir>0;
-    const s=(c>=0)===down?SPR.front:SPR.back;paint(s,0,s===SPR.front?1:-1);
+    const s=(c>=0)===down?SPR.front:SPR.back;paint(s,0,s===SPR.front?1:-1,P.sh>.5);
     build(s,P,dir,false,Math.max(.25,Math.abs(c))*(c<0?-1:1));blit(x+ox,y+oy,P,al)};
   if(step>0)one(step-1,.35,-D.vx*.04,-D.vy*.04);
   one(step,1,0,0);
