@@ -1384,7 +1384,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.16</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.17</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -18766,6 +18766,37 @@ window.__plRoll16=function(){if(!dodge||!dodge.T)return false;const D=dodge;
   if(Math.random()<.8)parts.push({x:player.x+(Math.random()-.5)*6,y:player.y,vx:-D.vx*.08+(Math.random()-.5)*10,vy:-6-Math.random()*6,life:.3,c:Math.random()<.5?'#c8b898':'#a89878'});
   return true};
 }).toString()+')()')}catch(e){try{window.__hamErr('v315roll: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v317spare">
+// v3.17 (Boğaç): "Kazanda işe yaramayanları sat" sells only the surplus: for each material it adds up how many of it every recipe
+// that uses it asks for (known, open, or not yet found — the same recipes potUses/recUses count), i.e. enough to make each of them
+// once; that much stays in the bag, the rest is sold. A material no recipe uses is sold whole. No "Emin misin?" (only surplus goes).
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+function needOf(n){const U=USES.get(n);if(!U)return 0;let k=0;
+  for(const r of U){if(!REC.has(r))continue;
+    const later=!foundSet.has(r)&&!PLACEABLE.has(r)&&(diff==='hard'||isOpen(r)),known=foundSet.has(r)||isOpen(r);
+    if(!later&&!known)continue;
+    for(const x of REC.get(r).i)if(expand(x[0]).indexOf(n)>=0)k+=Math.max(1,+x[1]||1)}
+  return k}
+function spareOf(n){if(!(inv[n]>0)||!bulkSellable(n))return 0;return Math.max(0,inv[n]-needOf(n))}
+window.__plSpare=spareOf;
+safeSell=function(n){return spareOf(n)>0};
+sellSafe=function(){let got=0;const names=[];
+  for(const n of order){const q=spareOf(n);if(q>0){names.push(n);got+=unitPrice(n,true)*q;shopTake(n,q);inv[n]-=q}}
+  got=Math.round(got);if(!got){toast('Tariflerin ihtiyacından fazla satılık bir şeyin yok.',true);return}
+  qc('sold',got);coins+=got;tutSold(names);
+  toast(`${names.length} çeşidin fazlası satıldı · +${got.toLocaleString('tr-TR')} sikke (her tarifi bir kez yapmaya yetecek kadarı sende kaldı)`);
+  renderInv();renderCraft()};
+// the old handlers (the "Emin misin?" check and the whole-stack sale) never see this button's click
+window.addEventListener('click',e=>{const t=e.target;if(!t||t.id!=='sellsafe'||!craftOpen||mode!=='sell')return;
+  e.preventDefault();e.stopImmediatePropagation();if(t.disabled)return;sellSafe()},true);
+// the button shows what the surplus is worth
+{const _rc=renderCraft;renderCraft=function(){const r=_rc.apply(this,arguments);try{const b=$('sellsafe');
+  if(b&&craftOpen&&mode==='sell'){const v=Math.round(order.reduce((t,n)=>{const q=spareOf(n);return q>0?t+unitPrice(n,true)*q:t},0));
+    b.textContent=`Kazanda işe yaramayanları sat · ${v.toLocaleString('tr-TR')}`;b.disabled=!v;
+    b.title='Her tarifi bir kez yapmaya yetecek kadarı sende kalır, fazlası satılır'}}catch(e){}return r}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v317spare: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

@@ -91,7 +91,7 @@ Toplam 2.020 sikke, 2.130 XP.
 
 **Yer:** Kemal'in yaklaşık 30 karo doğusu, 51 karo kuzeyi, Çayır'da tezgâhının başında. **Tanışma:** öğreticinin 9. adımı.
 
-- **Her şeyi satın alır.** Fiyat sabittir, çok satmak düşürmez. "Aletler, zırhlar, eşyalar hariç hepsini sat" ve "Kazanda işe yaramayanları sat" düğmeleri vardır.
+- **Her şeyi satın alır.** Fiyat sabittir, çok satmak düşürmez. "Aletler, zırhlar, eşyalar hariç hepsini sat" ve "Kazanda işe yaramayanları sat" düğmeleri vardır (ikincisi her tarifi bir kez yapmaya yetecek kadarını bırakıp fazlasını satar, v3.17; Sistemler › Ekonomi).
 - **Doğal malzeme ve tarifini öğrendiğin eşyaları satar (v2.68, Boğaç):** doğal malzemeleri en az bir kez eline geçmişse; ayrıca **tarifini öğrendiğin her eşyayı** (Uzun sopa, İp, Sopa, yemekler…; yapılar, aletler, silahlar ve zırhlar hariç) değerinin **1,5 katına** satar (hiçbir zaman sana ödediği fiyatın altına inmez). Tohum ve tarla ürünü satmaz (tarlacılık şimdilik yok). Alış fiyatı malzemenin değerinin kabaca 2,6–5,6 katıdır (pahalı ve tehlikeli bölgelerin malzemesi daha pahalı). 1'li ya da 10'lu alınır.
 - Satış fiyatın bütün yeteneklerle en çok temel fiyatın 2,3 katına çıkar.
 - Hikâyesi: kardeşi Cem.
