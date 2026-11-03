@@ -5061,7 +5061,7 @@ function talkAlp(){
   if(tz&&tz<11)return say('Hah, yeni gelen! Önce Kemal\'in, Zümrüt\'ün dediklerini yap; sonra gel, sana dövüşmeyi öğreteyim.',[{t:'Tamam',pri:1,f:bye}],alp);
   if(ftut===1){alp.met=true;ftut=2;spawnTutCrab();renderTut();sfx('found');
     return say('Hah! Kemal\'in kazazedesi. Ben <b>Börü</b>. Bu adada her şey sana dost değil: ormanda yaban domuzları, gece kurtlar dolaşır. Önce yumruğunla başlayalım. Şuradaki <b>kereviti</b> görüyor musun? Kıyıda ağır ağır yürür ama ne kaçar ne ısırır; elin boşken ona vur.',[{t:'Hadi bakalım',pri:1,fresh:1,f:bye}],alp)}
-  if(ftut===2){spawnTutCrab();return say('Kerevit seni bekliyor. Elin boş olsun ve vur!',[{t:'Tamam',pri:1,f:bye}],alp)}
+  if(ftut===2){if(!animals.some(c=>c.tut&&c.hp>0))spawnTutCrab();return say('Kerevit seni bekliyor. Elin boş olsun ve vur!',[{t:'Tamam',pri:1,f:bye}],alp)}
   alp.met=true;
   say(['Kılıcın keskin, nefesin derin olsun.','Nötr hayvana bulaşırsan karşılık verir; zararsız olan kaçar, saldırgan olan seni arar.','Zırhın varsa yaralar daha az acıtır. Postlardan giysi diktir.'][Math.floor(Math.random()*3)],[
     {t:'Kılıç nasıl yapılır?',f:()=>{bought.add('Taş kılıç');say('Bir sopa, dört keskin taş, iki ip ve bir çakmaktaşı. Tarifini kitabına yazdım; <b>Dursun</b> örsünde döver. Kılıcı envanterden bir alet yuvasına koyup eline alırsın ya da Özellikler\'de silah yuvasına takarsın.',[{t:'Anladım',pri:1,f:talkAlp}],alp)}},
@@ -7108,7 +7108,7 @@ function tzNeed(){const h=n=>inv[n]||0;
 const potLearnedOk=r=>foundSet.has(r);
 function tzGuideKey(){if(!tz)return null;
   if(tzNeed().length)return 'tzmat';
-  return {1:null,2:null,3:'pot',4:'pot',5:null,6:null,7:'pot',8:null,9:'market',10:'market',11:'alp',12:null,13:'smith'}[tz]||null}
+  return {1:null,2:null,3:'pot',4:'pot',5:null,6:null,7:'pot',8:null,9:'market',10:'market',11:ftut===2?null:'alp',12:null,13:'smith'}[tz]||null}
 function tzMat(){const need=tzNeed();let b=null,bd=1e9;for(const n of nodes)if(n.alive&&need.indexOf(n.name)>=0){const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;b=n}}return b?{x:b.x,y:b.y,n:b.name}:{x:player.x,y:player.y,n:''}}
 function tzStart(){tz=1;tzEat=0;ytut=3;ftut=3;ctut=4;htut=2;walked=!JOYMODE();tapMoved=!JOYMODE();walkDist=0;mapSeen=2;tut=0;
   tzPlace('Böğürtlen',5,npc.home.x,npc.home.y+10);renderTut()}

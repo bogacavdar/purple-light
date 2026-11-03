@@ -77,6 +77,7 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 
 ### Börü'nün atılma dersi (v1.81, 11. adımın içinde)
 
+- **Yumruk dersinde de ok yok, kerevit yenilenmez (v3.07, Boğaç):** Börü ile konuşup ilk kerevit çıktıktan sonra, kerevit yenilene kadar Börü'yü gösteren ok çıkmaz. Kerevit henüz ölmemişken Börü'ye gidip konuşursan Börü yalnızca "Kerevit seni bekliyor" der; kerevit **yeniden doğmaz**, canı kaldığı yerden devam eder (yeni kerevit yalnızca ortada canlı ders kereviti yoksa çıkar).
 - **Ders sürerken yön oku yok (v2.15):** ikinci kerevit belirdiği andan ders bitene kadar Börü'nün üstünde ya da ekranda Börü'yü gösteren ok çıkmaz; dikkat kerevitte kalır.
 1. Kerevit yumrukla yenilince Börü "Şimdi kaçmayı öğren" der ve yanına **yeni bir kerevit** çıkar. Bu kerevit can yakmaz, ölmez; yalnızca saldırır. Atılma bu derste **ücretsiz** öğrenilir (yetenek ağacında satılmaz).
 2. Kerevit doğadaki gibi **yürüyerek** sana yaklaşır (sen uzaklaşırsan peşinden yürür), yakına gelince bir an bekler. **Saldırırken üstünde kırmızı ! belirdiği an sana doğru atılır (v2.15):** ayrı bir hazırlık beklemesi yoktur; atılış o an **bulunduğun yere** düz bir çizgide gider (biraz ötesine), 0,45 sn sürer ve **yolu sonradan değişmez**. Saldırıdan sonra olduğu yerde kalır ve yeniden yürüyerek yaklaşır; hiçbir zaman başka bir yere ışınlanmaz.
