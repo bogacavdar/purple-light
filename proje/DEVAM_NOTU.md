@@ -1,3 +1,10 @@
+## v3.10 (3 Kasım 2026) · "Herhangi" kalktı
+- Belge: `80_tarifler.md` (kural + bütün tablolar, "Herhangi grupları" bölümü silindi), `85_aletler.md`, `20_sistemler.md`, `30_act1.md`, `38_nuri_deniz.md`, `40_act1_kisiler.md`, `58_act2_kisiler.md`, `90_esyalar.md`, `96_aciklar.md`, `00_giris.md`.
+- Veri: tarif veritabanında (`#db`) 171 tarifin grup malzemesi belli bir malzemeyle değişti, `DB.c` boş. Kodda yazılı tarifler de (oltalar, ACT 2 balık yemekleri, alet merdiveni, yaylar, zırhlar, yağlar) aynı eşlemeyle. Seçim: öbür malzemelerin biyomları sayılır (3+ biyomda bulunan malzeme sayılmaz), en çok olan biyom (eşitlikte ilerideki), yoksa Çayır; biyom başına tercih (ağaç Çam/Meşe/Bataklık servisi/Huş/Kül ağacı/Mor söğüt, kil Nehir/Nehir/Göl/Kırmızı/Kırmızı(Cüruf tuğlası)/Beyaz, reçine, çakmak, un), tercih yoksa o biyomdaki en ucuz üye; ACT 2 külçeleri Taş kömürü. Eşleme listesi Boğaç'a HTML olarak gönderildi.
+- Görevler: R3/c2 Çam odunu, u2 Meşe kalası, G1 Çam odunu, G3 Çam reçinesi, G4 Közlenmiş tavşan eti, dz4 Mor söğüt kalası, gk1 Bulut çamı kalası, Kemal'in ek odun görevi ve köprü Çam odunu.
+- Kod: `expand=x=>[x]`; `subRecipe` sadeleşti (`subHave` silindi); `tipText`'in grup dalı, köz/balık/meyve odunu grup eklemeleri silindi; `woodCount` Çam odunu; meşaleye reçine sürmek `RESINS` listesiyle.
+- Kontrol: iki adada da `REC`'te "Herhangi" 0, bilinmeyen malzeme 0; chk.js 0 hata.
+
 ## v3.09 (3 Kasım 2026) · dört yeni mağara, Act 1 canlı sesleri, Savuş yuvarlak
 - Belge `20_sistemler.md` (Telefon › Savuş düğmesi).
 - v110-parry `place()`: genişlik/yükseklik/yazı boyu (Atıl'ın büyük kenarı, kare, padding 0) artık `__plLayHas` dönüşünden önce verilir; kayıtlı düğme yerleşimi varken boy hiç verilmiyordu, düğme yazısına göre oval kalıyordu.

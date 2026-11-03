@@ -28,10 +28,10 @@ Poyraz'ın görevleri ana görev sırasına girer (aynı anda tek ana görev). P
 
 | # | Görev | İstenen | Açılma | Ödül |
 |---|---|---|---|---|
-| G1 | Çatlak omurga | Getir: 6 Herhangi odun, 3 Uzun sopa | Poyraz karaya oturdu | 40 sikke · 25 XP |
+| G1 | Çatlak omurga | Getir: 6 Çam odunu, 3 Uzun sopa | Poyraz karaya oturdu | 40 sikke · 25 XP |
 | G2 | Yırtık yelken | Getir: 2 Halat, 6 Lif | G1 | 55 sikke · 35 XP |
-| G3 | Su alan tekne | Getir: 3 Herhangi reçine, 4 Taş | G2 | 70 sikke · 45 XP |
-| G4 | Kaptanın karnı | Getir: 2 Herhangi pişmiş et, 4 Böğürtlen | G3 | 90 sikke · 60 XP |
+| G3 | Su alan tekne | Getir: 3 Çam reçinesi, 4 Taş | G2 | 70 sikke · 45 XP |
+| G4 | Kaptanın karnı | Getir: 2 Közlenmiş tavşan eti, 4 Böğürtlen (v3.10: eskiden herhangi pişmiş et) | G3 | 90 sikke · 60 XP |
 
 - **G4 bitince:** tekne onarılır. Ekran kısa bir an kararıp açılır; tekne artık suyun üstünde, dik direği ve beyaz yelkeniyle durur. Poyraz: "Bak hele! Yüzüyor! Sana bir borcum var evlat. Balığa çıkmak istersen bana gel; bu sulara açılırız. Nereye istersen." Duyuru: **"Deniz açıldı"** · "Poyraz'la denize çıkabilirsin".
 
@@ -84,7 +84,7 @@ Satış fiyatı Nazlı'nın pazarında. Zorluk yeşil alanı böler (1 = kolay).
 | Fener balığı | 6 | 85 | 1,55 | 10 |
 | Işıl balığı | 6 | 110 | 1,75 | 12 |
 
-- Hepsi "Herhangi balık" sayılır (balık çorbası gibi eski tariflerde kullanılır). Yemek listesinde **Balıklar** sekmesinde.
+- Satılır ve yenir; v3.10'dan beri "herhangi balık" grubu yoktur. Yemek listesinde **Balıklar** sekmesinde.
 
 ### Deniz oltaları (kazanda öğrenilir, kazanda yapılır)
 
@@ -92,8 +92,8 @@ Satış fiyatı Nazlı'nın pazarında. Zorluk yeşil alanı böler (1 = kolay).
 |---|---|---|---|---|
 | Olta (eski) | – | 1 | %27 | 25 |
 | Deniz oltası | 1 Olta, 1 Halat, 2 Bakır külçesi, 1 Uzun sopa | 1–2 | %29 | 30 |
-| Makaralı olta | 1 Deniz oltası, 2 Tunç külçesi, 1 Kenevir halatı, 2 Herhangi kalas | 1–3 | %31 | 35 |
-| Derin su oltası | 1 Makaralı olta, 3 Demir külçesi, 2 Kenevir halatı, 2 Herhangi reçine | 1–4 | %33 | 40 |
+| Makaralı olta | 1 Deniz oltası, 2 Tunç külçesi, 1 Kenevir halatı, 2 Bataklık servisi kalası | 1–3 | %31 | 35 |
+| Derin su oltası | 1 Makaralı olta, 3 Demir külçesi, 2 Kenevir halatı, 2 Huş katranı | 1–4 | %33 | 40 |
 | Fırtına oltası | 1 Derin su oltası, 3 Gümüş külçesi, 2 Kenevir halatı, 2 Balık tutkalı | 1–5 | %35 | 45 |
 | Yıldız oltası | 1 Fırtına oltası, 4 Ametist, 1 Kristal ipek kumaş, 2 Gümüş külçesi | 1–6 | %37 | 50 |
 
@@ -103,18 +103,18 @@ Satış fiyatı Nazlı'nın pazarında. Zorluk yeşil alanı böler (1 = kolay).
 
 | Tarif | Malzeme | Tür | Fiyat |
 |---|---|---|---|
-| Hamsi tava | 4 Hamsi, 1 Herhangi un, 1 Ateş | Yiyecek | 40 |
-| Tekir tava | 2 Tekir, 1 Herhangi un, 1 Ateş | Yiyecek | 40 |
+| Hamsi tava | 4 Hamsi, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 40 |
+| Tekir tava | 2 Tekir, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 40 |
 | İstavrit ızgara | 2 İstavrit, 1 Ateş | Yiyecek | 30 |
 | Kefal pilakisi | 2 Kefal, 1 Su, 1 Ateş | Yiyecek | 50 |
 | Çipura buğulama | 1 Çipura, 1 Su, 1 Ateş | Yiyecek | 45 |
 | Levrek şiş | 1 Levrek, 2 Dal, 1 Ateş | Yiyecek | 50 |
-| Barbunya tava | 2 Barbunya, 1 Herhangi un, 1 Ateş | Yiyecek | 70 |
+| Barbunya tava | 2 Barbunya, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 70 |
 | İstiridye çorbası | 2 İstiridye, 2 Su, 1 Ateş | Yiyecek | 75 |
 | Lüfer ızgara | 1 Lüfer, 1 Ateş | Yiyecek | 60 |
 | Palamut buğulama | 1 Palamut, 1 Su, 1 Ateş | Yiyecek | 75 |
-| Kalkan tava | 1 Kalkan, 1 Herhangi un, 1 Ateş | Yiyecek | 90 |
-| Kalamar tava | 2 Kalamar, 1 Herhangi un, 1 Ateş | Yiyecek | 120 |
+| Kalkan tava | 1 Kalkan, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 90 |
+| Kalamar tava | 2 Kalamar, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 120 |
 | Kılıç şiş | 1 Kılıç balığı, 2 Dal, 1 Ateş | Yiyecek | 130 |
 | Orkinos biftek | 1 Orkinos, 1 Ateş | Yiyecek | 140 |
 | Ahtapot salatası | 1 Ahtapot, 1 Su, 1 Ateş | Yiyecek | 160 |

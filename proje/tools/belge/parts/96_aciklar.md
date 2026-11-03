@@ -7,7 +7,7 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 | 1 | Kerevit kapanı | Börü'nün "Kapan ustası" görevi "Nerede: Çayır" diyordu; kapana kerevit yalnızca Bataklık/Kayalık Dağ sularında girer. | **Düzeltildi v1.79:** Nerede satırı Bataklık. |
 | 2 | Kötü son | "Yalnız dönüş" başarımı ve dolayısıyla "Platin" kazanılamaz; kötü son yok. | Kötü son yazılana kadar başarımı gizle ya da Platin'den çıkar. |
 | 3 | ACT 2'den dönüş | Birinci adaya dönmenin tek yolu portaldı; portal Yıldız'ın 3. görevi bitince açılıyordu ve o görev yalnızca birinci adada bulunan malzemeler istiyor. | **Düzeltildi v1.76:** Barbaros ve Kemal portalları ikinci adaya varınca hep açık. |
-| 4 | Meyve ağacı odunu | Elma, Armut, Erik (ve Mürver) odunlarının fiyatı yoktu; satınca sikke NaN oluyordu. | **Düzeltildi v2.17:** 3 sikke, "Herhangi odun" grubunda; fiyatsız eşya artık satılmaz; bozuk sikke onarılır. |
+| 4 | Meyve ağacı odunu | Elma, Armut, Erik (ve Mürver) odunlarının fiyatı yoktu; satınca sikke NaN oluyordu. | **Düzeltildi v2.17:** 3 sikke; fiyatsız eşya artık satılmaz; bozuk sikke onarılır. |
 | 5 | Gemici Poyraz'ın tarifleri | Tarif satış kodu var ama menüden açılmıyor; Zümrüt "tüccardan tarif alabilirsin" diyor. | Menüye ekle ya da Zümrüt'ün sözünü değiştir.  **Kalktı v2.34** (tüccar Poyraz yok). |
 | 6 | Ekin'in tohumları | Tohum dükkânı açılmıyor; Ekin bir yerde "satarım" bir yerde "satmam" diyor. | Karar ver, metni düzelt. |
 | 7 | Ev fiyatları | Çınar alt fiyat kuralıyla satıyor: Taş ev 4.049 (listedeki fiyat 2.500), Deri çadır (Sv 3) 1.039 ile Kulübe'den (Sv 4, 510) pahalı. | Ev fiyatlarını alt fiyat kuralından muaf tut. |

@@ -8,6 +8,20 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.10 · 3 Kasım 2026
+
+### Oynanış
+- **"Herhangi …" malzemeler kalktı.** Hiçbir tarif ve görev artık "Herhangi sap", "Herhangi kalas", "Herhangi çömlek" gibi bir grup istemiyor; her biri belli bir malzeme istiyor. Hangisi olduğu, tarifin öbür malzemelerinin en çok hangi biyomdan geldiğine göre seçildi:
+  - Ağaçtan gelenler (sap, kalas, odun, kömür): Çayır **Çam**, Orman **Meşe**, Bataklık **Bataklık servisi**, Kayalık Dağ **Huş**, Kül Diyarı **Kül ağacı**, Mor Kristal Vadisi **Mor söğüt**.
+  - Kilden olanlar (çömlek, kase, kerpiç, tuğla): Çayır ve Orman **Nehir**, Bataklık **Göl**, Kayalık Dağ ve Kül Diyarı **Kırmızı** (Kül Diyarı'nda tuğla **Cüruf tuğlası**), Mor Kristal **Beyaz**.
+  - Reçine, çakmak, un, et, balık, tüy ve boya da o biyomun malzemesi (ör. ateş yakmak için **Kıvılcım**).
+  - Bir tarifte belli bir biyoma ait malzeme yoksa (yalnızca Dal, Taş, Su gibi her yerde bulunanlar varsa) Çayır'ın malzemesini ister.
+- **Görevler de değişti:** Kemal'in köprüsü ve ek odun görevi, Marangoz'un odun stokları, Poyraz'ın Çatlak omurga görevi **Çam odunu**; Usta'nın kalas görevi **Meşe kalası**; Poyraz'ın Su alan tekne görevi **Çam reçinesi**, Kaptanın karnı görevi **Közlenmiş tavşan eti**; Denizci'nin gemisi **Mor söğüt kalası**; Gökbilimci Yıldız'ın teleskobu **Bulut çamı kalası**.
+- Meşaleye reçine sürmek için yine Çam reçinesi, Ladin reçinesi ya da Huş katranı kullanılır.
+
+### Tasarım belgesi
+- Tarifler: yeni kural ve bütün tablolar güncel, "Herhangi grupları" bölümü kalktı; Aletler, görev tabloları ve Sistemler buna göre düzeltildi.
+
 ## Versiyon 3.09 · 3 Kasım 2026
 
 ### Oynanış

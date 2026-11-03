@@ -346,7 +346,7 @@ Toplam 45 görev, 14.570 sikke, 20.150 XP.
 | # | Görev | İstenen | Açılma şartı | Sikke | XP |
 |---|---|---|---|---|---|
 | 1 | Atölye kur | Atölye kur | – | 80 | 40 |
-| 2 | Kalas | Getir: 6 Herhangi kalas | – | 70 | 30 |
+| 2 | Kalas | Getir: 6 Meşe kalası | – | 70 | 30 |
 | 3 | Çit | Çit kur | – | 40 | 20 |
 
 
@@ -361,7 +361,7 @@ Toplam 45 görev, 14.570 sikke, 20.150 XP.
 | # | Görev | İstenen | Açılma şartı | Sikke | XP |
 |---|---|---|---|---|---|
 | 1 | Yaprak barınağı | Yaprak barınağı yaptır ve gece içinde uyu | – | 40 | 20 |
-| 2 | Odun stoku | Getir: 20 Herhangi odun | – | 80 | 30 |
+| 2 | Odun stoku | Getir: 20 Çam odunu | – | 80 | 30 |
 | 3 | Kalıcı bir ev | Kalıcı bir ev kur (yaprak barınağı sayılmaz) | – | 120 | 50 |
 
 
@@ -398,7 +398,7 @@ Takvime bağlı gezginler; ne zaman geldikleri ve ne yaptıkları "Oyunun akış
 | 1 | Kazazedenin yarası | Getir: 1 Kardelen merhemi, 2 Ay otu | – | 400 | 600 |
 | 2 | Enkazın bekçileri | Avla: 2 Gölge kurdu | – | 600 | 1.000 |
 | 3 | Yıldızlarla yön | Getir: 2 Ay taşı, 4 Kristal | – | 500 | 800 |
-| 4 | Yeni bir gemi | Getir: 8 Herhangi kalas, 4 Halat, 3 Demir levha, 6 Hasır, 2 Kristal ipek | – | 0 | 2.000 |
+| 4 | Yeni bir gemi | Getir: 8 Mor söğüt kalası, 4 Halat, 3 Demir levha, 6 Hasır, 2 Kristal ipek | – | 0 | 2.000 |
 
 
 Son görev (Yeni bir gemi) bitince Barbaros'la konuş: hikâye sahnesi, ardından "Götür beni" → deniz yolculuğu (yaklaşık 14 sn) → **ACT 2**.

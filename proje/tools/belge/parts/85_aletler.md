@@ -42,8 +42,8 @@ ACT 1'in madenleri ve metal ekipmanı tek bir merdivene göre dizildi. Amaç: **
 | 1 | Çayır | Kireçtaşı **2** · Kumtaşı **3** · Bakır cevheri **5** | 1. kademe | Bakır | Bakır külçesi (Çayır ağaçlarının kömürüyle ergir) |
 | 2 | Orman | Granit **6** · Taş kömürü **7** · Kalay cevheri **9** | 1. kademe | Tunç | Tunç külçesi (3 Bakır külçesi + 1 Kalay külçesi) |
 | 3 | Bataklık | Arduvaz **10** · Tuz kayası **12** · Demir cevheri **14** | 2. kademe | Demir | Demir külçesi |
-| 4 | Kayalık Dağ | Pirit **16** · Kuvars **18** · Gümüş cevheri **24** | 3. kademe | Çelik | Çelik külçesi (2 Demir külçesi + 2 Herhangi kömür + 1 Ateş tuğlası; Ateş tuğlası = 3 Beyaz kil + 2 Kum + 1 Ateş, Beyaz kil Kayalık Dağ'da toplanır) |
-| 5 | Kül Diyarı | Bazalt **26** · Kükürt **28** · Obsidyen **34** | 4. kademe | Kara çelik (obsidyen çeliği) | Kara çelik külçesi (2 Çelik külçesi + 3 Obsidyen + 1 Kükürt + 2 Herhangi kömür) |
+| 4 | Kayalık Dağ | Pirit **16** · Kuvars **18** · Gümüş cevheri **24** | 3. kademe | Çelik | Çelik külçesi (2 Demir külçesi + 2 Huş kömürü + 1 Ateş tuğlası; Ateş tuğlası = 3 Beyaz kil + 2 Kum + 1 Ateş, Beyaz kil Kayalık Dağ'da toplanır) |
+| 5 | Kül Diyarı | Bazalt **26** · Kükürt **28** · Obsidyen **34** | 4. kademe | Kara çelik (obsidyen çeliği) | Kara çelik külçesi (2 Çelik külçesi + 3 Obsidyen + 1 Kükürt + 2 Kül ağacı kömürü) |
 | 6 | Mor Kristal Vadisi | Kristal **40** · Ametist **50** · Altın cevheri **70** | 5. kademe | Mor kristal | Mor kristal levhası (3 Kristal + 2 Ametist + 1 Altın külçesi) |
 
 - **Yer değiştiren madenler:** Kalay (Çayır → Orman), Kumtaşı (Orman → Çayır), Pirit (Kül Diyarı → Kayalık Dağ), Altın (Kayalık Dağ → Mor Kristal Vadisi), Obsidyen (Mor Kristal Vadisi → Kül Diyarı). Bataklık değişmedi. Yatak sayıları aynı (ilk iki biyomda 22, diğerlerinde 20), yatak 300 sn sonra yeniden dolar.
@@ -106,7 +106,7 @@ Her hücrede **savunma ya da hasar · satış fiyatı**. Zırhçılar zırhları
 - **Dirençler:** Demir zırh kanama %30; Çelik zırh kanama %35; Kara çelik zırh yanık %40, kanama %30; Mor kristal zırh kanama, yanık ve zehir %30. Demir, Çelik, Kara çelik ve Mor kristal çizmeler çamurda yavaşlatmaz. Bütün set parçaları metaldir.
 - **Tarifler** (I = setin malzemesi; Tunç ve Demir'in eski 8 parçası eski tarifiyle kalır, yalnızca gürz ve topuz yeni):
   - Miğfer: 2 I, 1 Deri parçası, 2 Sinir · Zırh: 5 I, 2 Deri parçası, 1 Sinir kirişi · Eldiven: 2 I, 1 Deri parçası, 2 İp · Çizme: 2 I, 1 Deri parçası, 4 Lif
-  - Kılıç: 4 I, 1 Herhangi sap, 1 Deri parçası · Mızrak: 2 I, 1 Uzun sopa, 3 İp · Gürz: 5 I, 1 Herhangi sap, 1 Sinir kirişi · Topuz: 3 I, 1 Herhangi sap, 2 İp · Balta: 3 I, 1 Herhangi sap, 2 İp · Kazma: 3 I, 1 Herhangi sap, 2 İp, 2 Taş
+  - Kılıç: 4 I, 1 sap (o biyomun ağacının sapı: Çayır Çam, Orman Meşe, Bataklık Bataklık servisi, Kayalık Dağ Huş, Kül Diyarı Kül ağacı, Mor Kristal Mor söğüt; v3.10), 1 Deri parçası · Mızrak: 2 I, 1 Uzun sopa, 3 İp · Gürz: 5 I, 1 sap, 1 Sinir kirişi · Topuz: 3 I, 1 sap, 2 İp · Balta: 3 I, 1 sap, 2 İp · Kazma: 3 I, 1 sap, 2 İp, 2 Taş
 - **Fiyat kuralı:** parça fiyatı = en büyüğü (malzemelerin değeri × 1,3; parçanın taban değeri × kademe katsayısı; önceki setteki aynı parça × 1,25). Taban değerler: miğfer 100, zırh 260, eldiven 80, çizme 80, kılıç 180, mızrak 150, gürz 210, topuz 140, balta 110, kazma 120; kademe katsayıları 1 · 2 · 3,5 · 5,5 · 8 · 12. Bu yüzden Tunç ve Demir parçalarının fiyatları da değişti (ör. Demir kılıç 1.086 → 1.278, artık Tunç kılıçtan pahalı).
 - **Taş silahlar** (v2.51): Taş kılıç başlangıç setinde; Çakmaktaşı, Kuvars ve Obsidyen mızrak usta setlerindedir (Bütün setler). Bazalt mızrak kalktı.
 - Sonraki adım (bu sürümde yok): aynı kademedeki farklı silahlara dövüşü etkileyen özellikler (kanatma, yakma, zehirleme, sersemletme).
@@ -141,9 +141,9 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 
 - Kemik eldiven: 4 Kemik, 2 Sinir, 1 Deri parçası
 - Kemik çizme: 4 Kemik, 1 Deri parçası, 4 Lif
-- Çakmaktaşı kılıç: 3 Yontulmuş çakmaktaşı, 1 Herhangi sap, 2 İp, 1 Bileme macunu
-- Çakmaktaşı gürz: 4 Yontulmuş çakmaktaşı, 1 Herhangi sap, 1 Sinir kirişi, 1 Bileme macunu
-- Çakmaktaşı topuz: 2 Yontulmuş çakmaktaşı, 1 Herhangi sap, 2 İp, 1 Bileme macunu
+- Çakmaktaşı kılıç: 3 Yontulmuş çakmaktaşı, 1 Çam sapı, 2 İp, 1 Bileme macunu
+- Çakmaktaşı gürz: 4 Yontulmuş çakmaktaşı, 1 Çam sapı, 1 Sinir kirişi, 1 Bileme macunu
+- Çakmaktaşı topuz: 2 Yontulmuş çakmaktaşı, 1 Çam sapı, 2 İp, 1 Bileme macunu
 - Kemik yay: 3 Kemik, 1 Uzun sopa, 1 Sinir kirişi
 - Meşe kabuk eldiven: 1 Meşe kalası, 1 Deri parçası, 3 Kirpi dikeni
 - Meşe kabuk çizme: 1 Meşe kalası, 1 Deri parçası, 4 Lif
@@ -158,8 +158,8 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 - Timsah dişi topuz: 2 Timsah dişi, 1 Demir külçesi, 1 Bataklık servisi sapı, 1 Zehir yağı
 - Timsah dişi mızrak: 2 Timsah dişi, 1 Uzun sopa, 3 İp, 1 Zehir yağı
 - Söğüt yayı: 3 Söğüt odunu, 2 Sinir kirişi, 1 Timsah dişi
-- Timsah dişi balta: 2 Timsah dişi, 1 Demir külçesi, 1 Herhangi sap, 2 İp
-- Timsah dişi kazma: 2 Timsah dişi, 2 Demir külçesi, 1 Herhangi sap, 2 Taş
+- Timsah dişi balta: 2 Timsah dişi, 1 Demir külçesi, 1 Bataklık servisi sapı, 2 İp
+- Timsah dişi kazma: 2 Timsah dişi, 2 Demir külçesi, 1 Bataklık servisi sapı, 2 Taş
 - Gümüş eldiven: 1 Gümüş külçesi, 1 Demir halka, 1 Deri parçası
 - Gümüş çizme: 1 Gümüş külçesi, 1 Demir halka, 1 Deri parçası, 4 Lif
 - Kuvars gürz: 3 Yontulmuş kuvars, 1 Ardıç sapı, 1 Sinir kirişi, 1 Bileme macunu
@@ -173,8 +173,8 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 - Ejder topuzu: 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kızıl sedir sapı, 1 Ateş yağı
 - Ejder mızrağı: 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Uzun sopa, 3 İp, 1 Ateş yağı
 - Ejder yayı: 3 Kül ağacı odunu, 1 Ejder kemiği, 2 Sinir kirişi
-- Ejder baltası: 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Herhangi sap, 2 İp
-- Ejder kazması: 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Kara çelik külçesi, 1 Herhangi sap
+- Ejder baltası: 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kül ağacı sapı, 2 İp
+- Ejder kazması: 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Kara çelik külçesi, 1 Kül ağacı sapı
 - Ametist miğfer: 2 Ametist, 1 Kristal ipek, 1 Deri parçası
 - Kristal ipek çizme: 2 Kristal ipek, 1 Işık pulu, 1 Deri parçası
 - Ametist gürz: 4 Ametist, 2 Obsidyen, 1 Işık ağacı sapı, 1 Zehir yağı
@@ -226,12 +226,12 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Ok | Biyom | Hasar çarpanı | Tarif | Tanesinin fiyatı |
 |---|---|---|---|---|
 | Basit ok | El yapımı (herkes) | ×0,8 | 2 Dal, 1 Keskin taş, 1 Lif → 5 ok | 2 |
-| Bakır ok | Çayır | ×1,0 | 1 Bakır külçesi, 4 Dal, 2 Herhangi tüy → 10 ok | 4 |
-| Tunç ok | Orman | ×1,15 | 1 Tunç külçesi, 4 Dal, 2 Herhangi tüy → 10 ok | 21 |
-| Demir ok | Bataklık | ×1,3 | 1 Demir külçesi, 4 Dal, 2 Herhangi tüy → 10 ok | 26 |
-| Çelik ok | Kayalık Dağ | ×1,45 | 1 Çelik külçesi, 4 Dal, 2 Herhangi tüy → 10 ok | 37 |
-| Kara çelik ok | Kül Diyarı | ×1,6 | 1 Kara çelik külçesi, 4 Dal, 2 Herhangi tüy → 10 ok | 127 |
-| Mor kristal ok | Mor Kristal Vadisi | ×1,8 | 1 Mor kristal levhası, 4 Dal, 2 Herhangi tüy → 10 ok | 159 |
+| Bakır ok | Çayır | ×1,0 | 1 Bakır külçesi, 4 Dal, 2 Keklik tüyü → 10 ok | 4 |
+| Tunç ok | Orman | ×1,15 | 1 Tunç külçesi, 4 Dal, 2 Keklik tüyü → 10 ok | 21 |
+| Demir ok | Bataklık | ×1,3 | 1 Demir külçesi, 4 Dal, 2 Ördek tüyü → 10 ok | 26 |
+| Çelik ok | Kayalık Dağ | ×1,45 | 1 Çelik külçesi, 4 Dal, 2 Ur kekliği tüyü → 10 ok | 37 |
+| Kara çelik ok | Kül Diyarı | ×1,6 | 1 Kara çelik külçesi, 4 Dal, 2 Ur kekliği tüyü → 10 ok | 127 |
+| Mor kristal ok | Mor Kristal Vadisi | ×1,8 | 1 Mor kristal levhası, 4 Dal, 2 Ur kekliği tüyü → 10 ok | 159 |
 
 - **Yayın özel vuruşları** (Dövüş · Özel vuruşlar tablosu): Hızlı atış, Delici ok, Çift ok, Gergin atış, Geri sıçrayıp atış, Ok yelpazesi; ultisi **Ok yağmuru**. Her ok atışı bir ok harcar (ulti harcamaz).
 
@@ -254,9 +254,9 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 
 | Yağ | Tarif | Verdiği etki |
 |---|---|---|
-| Ateş yağı | 2 Herhangi reçine, 1 Hardal otu, 1 Herhangi kömür | Alevli (yanık) |
-| Zehir yağı | 2 Sinek mantarı, 1 Herhangi reçine | Zehirli (zehir) |
-| Bileme macunu | 2 Kumtaşı, 1 Herhangi reçine | Keskin (kanama) |
+| Ateş yağı | 2 Çam reçinesi, 1 Hardal otu, 1 Çam kömürü | Alevli (yanık) |
+| Zehir yağı | 2 Sinek mantarı, 1 Çam reçinesi | Zehirli (zehir) |
+| Bileme macunu | 2 Kumtaşı, 1 Çam reçinesi | Keskin (kanama) |
 
 - **Etkili silah:** ACT 1'in her kılıcı, gürzü, topuzu ve mızrağı (imza silahları hariç) üç biçimde de yapılabilir: **Alevli X** = 1 X + 1 Ateş yağı, **Zehirli X** = 1 X + 1 Zehir yağı, **Keskin X** = 1 X + 1 Bileme macunu. Bunları her silahçı döver (silahı getirdiğin için usta sırası aranmaz). Hasar, menzil, dayanıklılık X ile aynı; fiyatı (X + yağ) × 1,1.
 - **Etkili ok:** her biyomun oku için 10 ok + 1 yağ → 10 etkili ok (Alevli Bakır ok, Zehirli Demir ok, Keskin Mor kristal ok…), elle yapılır; tanesinin fiyatı ok + yağın onda biri, × 1,1. Atılacak ok envanterde seçilir; seçim yoksa yay en güçlü oku atar (aynı güçte etkili ok varsa önce onu).
