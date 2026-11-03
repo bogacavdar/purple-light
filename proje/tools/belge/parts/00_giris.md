@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.07** ile birebir (3 Kasım 2026). Bu sürümde: birden çok yan görev alınır ve takip edilen üstteki kartta yazar, Bulut'un güvercinleri sesle bulunur, ana menüde oyun içi sesler çalmaz, öğreticide ünlem/ok/parlama düzeltmeleri, telefonda Görevler ve yetenek ağacı düzgün, sol üst ve kemer yeni boyutta. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.08** ile birebir (3 Kasım 2026). Bu sürümde: Çayır canlıları (Kerevit, Porsuk, Yaban atı, Geyik) %50 daha sert vurur; toplanan yiyeceklerin her birinin kendi etkisi var (anında can, can yenilenmesi, hız, güç, gece gözü…). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

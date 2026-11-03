@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.07** ile birebir (3 Kasım 2026). Bu sürümde: birden çok yan görev alınır ve takip edilen üstteki kartta yazar, Bulut'un güvercinleri sesle bulunur, ana menüde oyun içi sesler çalmaz, öğreticide ünlem/ok/parlama düzeltmeleri, telefonda Görevler ve yetenek ağacı düzgün, sol üst ve kemer yeni boyutta. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.08** ile birebir (3 Kasım 2026). Bu sürümde: Çayır canlıları (Kerevit, Porsuk, Yaban atı, Geyik) %50 daha sert vurur; toplanan yiyeceklerin her birinin kendi etkisi var (anında can, can yenilenmesi, hız, güç, gece gözü…). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -522,6 +522,24 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 - **Tokluk değeri:** çiğ meyve ve sebzeler 2–12 (biyom tablolarında), çiğ et 6, çiğ balık 4, közlenmiş et/balık 12–32, pişmiş yemek tarifleri 10–65 (pahalı tarif daha doyurur). Şifa tarifleri doğrudan can verir (15–60).
 - **İyi etkiler** yemeğin türüne göre 60–240 sn sürer: **Güç** (+%20 vuruş: et, şiş, yahni), **Şifa** (can 3 kat hızlı: çorba, lapa), **Doygunluk** (tokluk inmez: ekmek, kek, patates), **Çeviklik** (+%12 hız: bal, şerbet), **Canlılık** (enerji 1,5 kat: çay, meyve suyu), **Gece gözü** (karanlıkta görme: mantar, balık, gece sefası), **Panzehir**, **Ateş kalkanı**, **Pıhtı**. Nadir pişmiş yemeklerde ek **Dayanıklılık** (can sınırı +%20).
+- **Toplanan yiyeceklerin her birinin kendi etkisi var (v3.08, Boğaç: "hepsi neredeyse aynı şeyi veriyor"):** eskiden çiğ meyvelerin çoğu Canlılık veriyordu. Artık:
+
+| Yiyecek | Etki |
+|---|---|
+| Böğürtlen | anında **+5 can** |
+| Kuşburnu | anında **+12 can** |
+| Su kestanesi | anında **+6 can** |
+| Yabani elma | anında **+4 can** ve **Canlılık** (enerji 1,5 kat hızlı) |
+| Ahududu, Alıç | **Şifa** (can 3 kat hızlı dolar) |
+| Yaban çileği, Yabani erik | **Çeviklik** (hareket +%12) |
+| Yaban mersini, Havuç, Yabani havuç | **Gece gözü** |
+| Kızılcık | **Pıhtı** (kanama %60 az) |
+| Yabani armut, Kestane, Kabak, Patates | **Doygunluk** (tokluk inmez) |
+| Fındık, Ayçiçeği | **Güç** (vuruş +%20) |
+| Ceviz | **Dayanıklılık** (can sınırı +%20) |
+| Soğan | **Panzehir** |
+
+  Süreler yiyeceğin nadirliğine göredir (45 sn'den başlar). Tokluk değerleri değişmedi. Bir yiyeceğin etkisi ilk kez yiyene kadar listede "Bilgim yok" görünür. Arenada yemek yoktur; etkiler (Güç, Şifa, Çeviklik…) arenanın etki seçicisinde aynen vardır.
 - **Kötü etkiler** ucuz ve garip yiyeceklerde (ihtimal ucuzda %90, pahalıda %20): Ağırlık (−%20 hız), Halsizlik (enerji yarı hızda), Bulantı (can yenilenmez), Güçsüzlük (−%20 vuruş). Çiğ et ayrıca %35 ihtimalle 4 can yakar.
 - **Zehirli yiyecekler:** Mürver, Meşe palamudu, Sinek mantarı, Kurt eti, Kurbağa (çiğ), Kuzukulağı, Kuzugöbeği, Mağara mantarı, Ardıç meyvesi. Bir kez yiyince listede "zehirli!" yazar.
 - Bir yemeği ilk kez yiyene kadar listede etkisi "Bilgim yok" görünür.
@@ -880,11 +898,13 @@ Başladığın yer: hilalin batı ucunda, Çayır'ın Orman'a en uzak yerinde, g
 | Tavşan | zararsız | 10 | – | 54 | 4 | – | Tavşan eti %100; Tavşan derisi %70; Kemik %30; Sinir %15 |
 | Keklik | zararsız | 6 | – | 50 | 3 | – | Keklik eti %100; Keklik tüyü %85 ×1–3; Keklik yumurtası %30 |
 | Bıldırcın | zararsız | 5 | – | 52 | 3 | – | Bıldırcın eti %100; Bıldırcın tüyü %80 ×1–2; Bıldırcın yumurtası %40 ×1–2 |
-| Geyik | nötr | 55 | 10 | 62 | 11 | sürü 2–5 | Geyik eti %100 ×1–2; Geyik derisi %80; Geyik boynuzu %40; Sinir %50 ×1–2; Kemik %50 ×1–2; Hayvan yağı %30 |
-| Yaban atı | nötr | 80 | 11 | 72 | 16 | sürü 2–4 | Yaban atı eti %100 ×1–2; Yaban atı derisi %80; Kemik %50 ×1–2; Sinir %50 ×1–2 |
-| Kerevit | nötr | 40 | 7 | 14 | 11 | – | Kerevit %100 ×1–2 |
+| Geyik | nötr | 55 | 15 | 62 | 11 | sürü 2–5 | Geyik eti %100 ×1–2; Geyik derisi %80; Geyik boynuzu %40; Sinir %50 ×1–2; Kemik %50 ×1–2; Hayvan yağı %30 |
+| Yaban atı | nötr | 80 | 17 | 72 | 16 | sürü 2–4 | Yaban atı eti %100 ×1–2; Yaban atı derisi %80; Kemik %50 ×1–2; Sinir %50 ×1–2 |
+| Kerevit | nötr | 40 | 11 | 14 | 11 | – | Kerevit %100 ×1–2 |
 | Kurt | saldırgan | 70 | 12 | 66 | 23 | gece, sürü 2–5 | Kurt eti %100; Kurt derisi %75; Kurt dişi %50; Kemik %50 ×1–2; Sinir %40 |
-| Porsuk | nötr | 50 | 9 | 40 | 21 | – | Kunduz eti %100; Kunduz derisi %75; Kemik %30 |
+| Porsuk | nötr | 50 | 14 | 40 | 21 | – | Kunduz eti %100; Kunduz derisi %75; Kemik %30 |
+
+**Çayır canlıları daha sert vurur (v3.08, Boğaç):** Kerevit, Porsuk, Yaban atı ve Geyik'in hasarı %50 arttı (7→11, 9→14, 11→17, 10→15). Arenada da bu canlılar aynı hasarla vurur (arena canlıları oyunun canlı tablosundan gelir). Kurt değişmedi.
 
 ## Orman — Güvenli
 

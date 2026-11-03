@@ -211,6 +211,24 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 - **Tokluk değeri:** çiğ meyve ve sebzeler 2–12 (biyom tablolarında), çiğ et 6, çiğ balık 4, közlenmiş et/balık 12–32, pişmiş yemek tarifleri 10–65 (pahalı tarif daha doyurur). Şifa tarifleri doğrudan can verir (15–60).
 - **İyi etkiler** yemeğin türüne göre 60–240 sn sürer: **Güç** (+%20 vuruş: et, şiş, yahni), **Şifa** (can 3 kat hızlı: çorba, lapa), **Doygunluk** (tokluk inmez: ekmek, kek, patates), **Çeviklik** (+%12 hız: bal, şerbet), **Canlılık** (enerji 1,5 kat: çay, meyve suyu), **Gece gözü** (karanlıkta görme: mantar, balık, gece sefası), **Panzehir**, **Ateş kalkanı**, **Pıhtı**. Nadir pişmiş yemeklerde ek **Dayanıklılık** (can sınırı +%20).
+- **Toplanan yiyeceklerin her birinin kendi etkisi var (v3.08, Boğaç: "hepsi neredeyse aynı şeyi veriyor"):** eskiden çiğ meyvelerin çoğu Canlılık veriyordu. Artık:
+
+| Yiyecek | Etki |
+|---|---|
+| Böğürtlen | anında **+5 can** |
+| Kuşburnu | anında **+12 can** |
+| Su kestanesi | anında **+6 can** |
+| Yabani elma | anında **+4 can** ve **Canlılık** (enerji 1,5 kat hızlı) |
+| Ahududu, Alıç | **Şifa** (can 3 kat hızlı dolar) |
+| Yaban çileği, Yabani erik | **Çeviklik** (hareket +%12) |
+| Yaban mersini, Havuç, Yabani havuç | **Gece gözü** |
+| Kızılcık | **Pıhtı** (kanama %60 az) |
+| Yabani armut, Kestane, Kabak, Patates | **Doygunluk** (tokluk inmez) |
+| Fındık, Ayçiçeği | **Güç** (vuruş +%20) |
+| Ceviz | **Dayanıklılık** (can sınırı +%20) |
+| Soğan | **Panzehir** |
+
+  Süreler yiyeceğin nadirliğine göredir (45 sn'den başlar). Tokluk değerleri değişmedi. Bir yiyeceğin etkisi ilk kez yiyene kadar listede "Bilgim yok" görünür. Arenada yemek yoktur; etkiler (Güç, Şifa, Çeviklik…) arenanın etki seçicisinde aynen vardır.
 - **Kötü etkiler** ucuz ve garip yiyeceklerde (ihtimal ucuzda %90, pahalıda %20): Ağırlık (−%20 hız), Halsizlik (enerji yarı hızda), Bulantı (can yenilenmez), Güçsüzlük (−%20 vuruş). Çiğ et ayrıca %35 ihtimalle 4 can yakar.
 - **Zehirli yiyecekler:** Mürver, Meşe palamudu, Sinek mantarı, Kurt eti, Kurbağa (çiğ), Kuzukulağı, Kuzugöbeği, Mağara mantarı, Ardıç meyvesi. Bir kez yiyince listede "zehirli!" yazar.
 - Bir yemeği ilk kez yiyene kadar listede etkisi "Bilgim yok" görünür.

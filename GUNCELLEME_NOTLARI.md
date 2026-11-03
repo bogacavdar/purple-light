@@ -8,6 +8,15 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.08 · 3 Kasım 2026
+
+### Oynanış
+- **Çayır canlıları daha sert vuruyor:** Kerevit, Porsuk, Yaban atı ve Geyik %50 daha çok hasar veriyor (Kerevit 11, Porsuk 14, Yaban atı 17, Geyik 15). Arenada da öyle.
+- **Toplanan yiyeceklerin her birinin kendi etkisi var:** Böğürtlen, Kuşburnu ve Su kestanesi anında can veriyor; Ahududu ve Alıç canı hızlı dolduruyor (Şifa); Yaban çileği ve Yabani erik geçici olarak hızlandırıyor (Çeviklik); Fındık ve Ayçiçeği güç veriyor; Kızılcık kanamayı azaltıyor; Yabani armut ve Kestane tokluğu bir süre düşürmüyor; Soğan zehre karşı koruyor; Ceviz can sınırını artırıyor; Yabani elma hem biraz can hem Canlılık veriyor. Eskiden çoğu yalnızca Canlılık veriyordu.
+
+### Tasarım belgesi
+- Act 1 › Çayır canlıları (yeni hasarlar), Sistemler › Yemek (yiyecek etkileri tablosu).
+
 ## Versiyon 3.07 · 3 Kasım 2026
 
 ### Oynanış

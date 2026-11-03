@@ -1,3 +1,9 @@
+## v3.08 (3 Kasım 2026) · Çayır canlıları sert vurur, yiyeceklerin etkileri farklı
+- Belge `30_act1.md` (Çayır canlılar tablosu + not), `20_sistemler.md` (Yemek: yiyecek etkileri tablosu), `00_giris.md`.
+- Hasar: `SET` (denge bloğu) Geyik 10→15, Yaban atı 11→17, Kerevit 7→11; ada tablosunda Porsuk 9→14. Arena aynı `ANIM`'den okur.
+- Yiyecek: `RAWGOOD` yeniden dağıtıldı (Böğürtlen, Kuşburnu, Su kestanesi buff'sız), yeni `RAWHEAL` (`prof` içinde `P.heal`'e eklenir → anında can). Kayıtlara etkisi yok.
+- Kontrol: chk.js 0 hata.
+
 ## v3.07 (3 Kasım 2026) · oyun içi sol üst: Görevler ve etkiler büyük, ince Menü çubuğu, küçük kemer (yayında; Boğaç "paket çık" dedi)
 - Belge `20_sistemler.md` (Bilgisayarda sol üst: v3.07 maddeleri), `00_giris.md`.
 - `<style id="v307-hud">` + `<script id="v307hud">` (dosya sonu): bilgisayarda (`body:not(.v50m)`) `#qmrow` blok, `#b-quest` tam genişlik en az 46 px; `#fxbar` sütun, her çip tam genişlik en az 46 px; `#b-menut` `#bar`'ın arkasına taşınır (sütun genişliğinde 22 px çubuk). Kemer `#hotbar .hs` 92 → 64 px (simge 64 → 44), `#torchslot` aynı.
