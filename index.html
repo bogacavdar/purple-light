@@ -1384,7 +1384,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.13</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.14</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -14405,7 +14405,7 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
    try{document.body.classList.remove('nododge')}catch(e){}hint(count());sfx('found')}
  window.__plDodgeLesson=startLesson;
  const strikeDone=(ok,why)=>{const c=DL.crab;if(ok){DL.n++;if(DL.mode!=='parry')floatText('Sıyrıldın!','#9fe07a');sfx('found')}else{floatText(why?why+' Bir daha!':'Bir daha!','#e8c860');sfx('bad')}
-   if(DL.n>=4){if(DL.mode==='dodge'&&!sk('P0')){DL.mode='parry';DL.n=0;DL.px=null;DL.ph='talk';hint('');   // v2.15: straight on to the parry
+   if(DL.n>=4){if(DL.mode==='dodge'&&!sk('P0')){DL.mode='parry';DL.n=0;DL.px=null;DL.ph='talk';DL.talkT=NOW();hint('');   // v2.15: straight on to the parry
        setTimeout(()=>say(`Güzel kaçtın! Ama her saldırıdan kaçamazsın evlat. Şimdi <b>savuşturmayı</b> öğren: kerevit atıldığında, sana değmeden hemen önce ${TOUCH?'<b>Savuş</b> düğmesine dokun':'<b>sağ tık</b>a (ya da <b>E</b>\'ye) bas'}. Doğru anda yaparsan darbeyi geri çevirirsin, kerevit sersemler. Beyaz ve sarı <b>!</b> savuşturulur; kırmızı olanı ancak taklayla atlatırsın.`,
          [{t:'Hazırım',pri:1,fresh:1,f:()=>{bye();DL.ph='idle';DL.t=1.4;st=maxSt();hint(count())}}],alp),500);return}
        finishLesson();return}DL.ph='idle';DL.t=1.3+Math.random()*.8;st=maxSt();hint(count())};
@@ -14417,7 +14417,9 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
  const walkTo=(c,tx,ty,sp,dt)=>{const dx=tx-DL.hx,dy=ty-DL.hy,d=Math.hypot(dx,dy);if(d<1){c.dx=0;c.dy=0;return true}const k=Math.min(d,sp*dt)/d,nx=DL.hx+dx*k,ny=DL.hy+dy*k;
    if(!blocked(nx,ny)&&!isWater(tileAt(nx,ny))){DL.hx=nx;DL.hy=ny}else if(!blocked(nx,DL.hy)&&!isWater(tileAt(nx,DL.hy)))DL.hx=nx;else if(!blocked(DL.hx,ny)&&!isWater(tileAt(DL.hx,ny)))DL.hy=ny;
    c.dx=dx/d;c.dy=dy/d;c.step=(c.step||0)+dt*8;return false};
- const tickDL=(dt)=>{const c=DL.crab;if(!DL.on||!c)return;if(DL.ph==='talk'){c.x=DL.hx;c.y=DL.hy;c.dx=0;c.dy=0;return}
+ const tickDL=(dt)=>{const c=DL.crab;if(!DL.on||!c)return;if(DL.ph==='talk'){c.x=DL.hx;c.y=DL.hy;c.dx=0;c.dy=0;
+     if(!dlgOpen&&NOW()-(DL.talkT||0)>1.5){DL.ph='idle';DL.t=1.4;st=maxSt();hint(count())}   // v3.14: Börü's parry words closed without "Hazırım" (a click outside, Esc): the lesson goes on anyway
+     return}
    if(DL.n===0){if(DL.px==null){DL.px=player.x;DL.py=player.y}player.x=DL.px;player.y=DL.py;goal=null;for(const k in keys)keys[k]=false}   // v2.15: the first time you stand still and wait for it
    if(animals.indexOf(c)<0){spawn();return}
    c.hp=ANIM['Kerevit'].hp;c.mad=false;c.mv=null;c.lunge=null;c.wind=0;c.st='wander';c.t=1;

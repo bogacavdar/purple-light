@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.13** ile birebir (3 Kasım 2026). Bu sürümde: gürzün adı **savaş çekici** oldu (topuz aynı); öğreticide meşale dersinde yalnızca meşale öğrenilir, Keskin taş zaten biliniyorsa Keskin taş adımları atlanır; hile panelindeki eşya aramasına "e" yazılabilir. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.14** ile birebir (3 Kasım 2026). Bu sürümde: Börü'nün savuşturma dersi, konuşma "Hazırım" denmeden kapanınca da başlar (kerevit yanında donup kalmıyordu). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
