@@ -18243,5 +18243,23 @@ body.tutmin:not(.v50m) #tut .th{margin-bottom:0}
 // v3.07: move the Menü toggle under the square buttons (it was beside Görevler)
 (function(){let n=0;const go=()=>{const m=document.getElementById('b-menut'),bar=document.getElementById('bar');if(m&&bar&&bar.parentNode){if(m.previousElementSibling!==bar)bar.parentNode.insertBefore(m,bar.nextSibling);return}if(++n<40)setTimeout(go,250)};go()})();
 </script>
+<script id="v307snd">
+// v3.07: on the main menu only the menu's own sounds play (wind, beam drone, music, button clicks); every in-game sound stops and stays silent
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const MENU={wind:1,b5drone:1};let lastIn=-1e9;const live=new Set();const DUMMY={stop(){}};
+for(const ev of ['pointerdown','keydown','click','touchend'])addEventListener(ev,()=>{lastIn=performance.now()},{capture:true});
+const byUser=()=>performance.now()-lastIn<400;   // a menu click, not the world ticking behind the menu
+const _play=audio.play;audio.play=function(k){if(onTitle&&!MENU[k])return DUMMY;const h=_play.apply(this,arguments);
+  if(h&&!onTitle&&!MENU[k]){live.add(h);const st=h.stop;h.stop=function(){live.delete(h);return st.apply(this,arguments)}}return h};
+const _sfx=audio.sfx;audio.sfx=function(){if(onTitle&&!byUser())return;return _sfx.apply(this,arguments)};
+const _syn=audio.synth;audio.synth=function(){if(onTitle&&!byUser())return;return _syn.apply(this,arguments)};
+const old=showTitle;showTitle=function(){const r=old.apply(this,arguments);
+  for(const h of Array.from(live)){try{h.stop(.6)}catch(e){}}live.clear();
+  for(const k in AMB){if(AMB[k]){try{AMB[k].stop(.6)}catch(e){}AMB[k]=null}}
+  try{cineStopSounds(false)}catch(e){}
+  musicLv=1;try{audio.musicTo(1,1.2)}catch(e){}return r};
+}).toString()+')()')}catch(e){try{window.__hamErr('v307snd: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 </body>
 </html>
