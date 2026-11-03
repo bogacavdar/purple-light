@@ -16,6 +16,9 @@
 | Tab | El yapımı | El simgesi |
 | K | Tarif kitabı | Sağ alttaki kitap simgesi. **Kazan, Demirci ve Pazar'ın kısayolu ve düğmesi yoktur (v2.86, Boğaç):** oraya gidip kişiye ya da kazana dokunarak açılır |
 | I / C / Y / G | Envanter / Karakter (giyim, istatistik) / Yetenekler / Görevler | Menü simgeleri |
+
+**Telefonda Görevler (v3.07, Boğaç: "telefonda görevleri açamadım"):** telefonda ☰ içindeki **Görevler** düğmesi her zaman Görevler panelini açar (eskiden bir ders sürerken yalnızca ders kartını katlayıp açıyordu, panel açılmıyordu). Ders sürerken panelin en üstünde **Ders** kartı (dersin adı ve ne yapılacağı) yazar.
+
 | M / N | Büyük harita / bulunduğun yere işaret koy | Küçük haritaya dokun |
 | V | Kamp ateşi kur | – |
 | L | Elindeki meşaleye reçine sür | – |

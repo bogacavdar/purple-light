@@ -15915,7 +15915,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
 </script>
 <script id="v230">
 // v2.30: side quests (yan görevler). The islanders' quests are now "ana görev"; twelve side people stand in the first four lands
-// of island 1 (three each), each at its own hours. One side quest runs next to the main quest; fainting ends only the side quest
+// of island 1 (three each), each at its own hours. v3.07: several side quests can be taken; the tracked one (A) runs and shows on the card, the others wait in Görevler; fainting ends only the side quest
 // (it can be taken again from the start); nothing can be missed. Map: an exact blue "?" where the place is explored, a foggy circle
 // with a "?" where it is not. Creatures born for a side quest never count in the almanac and no Reis comes while it fights.
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
@@ -16083,7 +16083,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const famPt=()=>{try{const F=window.__pl184.FAMS.find(f=>f.b===3);if(F)return{x:F.cx+40,y:F.cy+46}}catch(e){}return{x:BY.haydar.x+520,y:BY.haydar.y}};
  const campPt=()=>({x:npc.home.x+10,y:npc.home.y+22});
  // ---------------------------------------------------------------- state
- let done=new Set(),A=null,SQK=false;const bioSeen=new Set();
+ let done=new Set(),A=null,SQK=false,ACT=[];const actOf=id=>{for(const a of ACT)if(a.id===id)return a;return null};const bioSeen=new Set();
  const step=()=>A?BY[A.id].steps[A.step]:null;
  const resetStep=()=>{if(!A)return;A.got=[];A.cnt=0;A.sp=false;A.killed=0;A.tm=0;A.wt=0;A.wv=0;A.busy=false;A.lost=0;
    const s=step();if(!s)return;const q=BY[A.id];
@@ -16092,7 +16092,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const dest=(s,q)=>s.to==='camp'?campPt():s.to==='fam3'?famPt():s.to==='npc'?{x:q.x,y:q.y}:q.pts[s.to];
  const fighting=()=>{const s=step();return !!(s&&(s.t==='escort'&&s.waves||s.t==='kill'||s.t==='guard'))};
  const clearMobs=()=>{for(let i=animals.length-1;i>=0;i--)if(animals[i].sq)animals.splice(i,1)};
- function cancelA(why){if(!A)return;const q=BY[A.id];clearMobs();A=null;renderSQ();if(why)toast(`${why}: ${q.title}. Yeniden almak için ${q.name} ile konuş${q.night?' (yalnızca gece)':''}.`,true)}
+ function cancelA(why){if(!A)return;const q=BY[A.id];clearMobs();ACT=ACT.filter(a=>a!==A);A=null;renderSQ();if(why)toast(`${why}: ${q.title}. Yeniden almak için ${q.name} ile konuş${q.night?' (yalnızca gece)':''}.`,true)}
  // ---------------------------------------------------------------- talking
  const WHO={},who=k=>{if(k==='p')return{name:'Sen',sqp:1};if(k==='x')return{name:'—',sqo:1};if(k==='e')return npc;return WHO[k]||(WHO[k]={name:BY[k].name,sqk:k})};
  const SQP={},sqPor=k=>{if(SQP[k])return SQP[k];const L=LK[k];if(!L)return null;const c=document.createElement('canvas');c.width=24;c.height=26;const g=c.getContext('2d');drawChibi(g,12,29,L,{noShadow:1,fx:0,fy:1});return SQP[k]=c.toDataURL()};   // v2.33: the side person's own face in the talk box (was Poyraz's)
@@ -16111,29 +16111,36 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  let PG=null;   // v2.42: the text window may be closed early (Esc); the step still ends
  function pages(q,L,fin,last){const tok={fin:fin,gone:0};PG=tok;let i=0;const nx=()=>{if(i>=L.length){bye();if(PG===tok)PG=null;const f=tok.fin;tok.fin=null;if(f)f();return}const [k,t]=L[i++];const isLast=i>=L.length;
      say(t,[{t:isLast?(last||'Tamam'):(BY[q.id].quiet&&k!=='x'?'…':'Devam'),pri:1,fresh:1,f:nx}],k==='n'?who(q.id):who(k))};nx()}
- function complete(q,silent){done.add(q.id);clearMobs();A=null;
+ function complete(q,silent){done.add(q.id);clearMobs();ACT=ACT.filter(a=>a.id!==q.id);A=null;
    if(!(window.__plInf))coins+=q.c;try{gainXP(q.x)}catch(e){}renderInv();renderSQ();
    if(q.quiet){toast(`Yan görev bitti: ${q.title} · +${q.c} sikke · +${q.x} XP`)}
    else{try{sfx('level')}catch(e){}try{announce(q.title,`Yan görev bitti · +${q.c} sikke · +${q.x} XP`)}catch(e){toast(`Yan görev bitti: ${q.title}`)}}}
  function advance(){if(!A)return;const q=BY[A.id],s=step();if(s&&s.end){complete(q);return}A.step++;if(A.step>=q.steps.length){complete(q);return}resetStep();renderSQ()}
- function start(q){A={id:q.id,step:0};resetStep();renderSQ();try{sfx('found')}catch(e){}toast(`Yan görev: ${q.title}`)}
+ // v3.07: park the tracked quest (it waits in Görevler; a fight, an escort or a watch starts again when it is tracked again)
+ const LIVE={escort:1,kill:1,guard:1,boss:1};
+ function park(){if(!A)return;clearMobs();A.busy=false;A.gj=null;const s=step();if(s&&LIVE[s.t])A.rs=1;A=null;if(PG)PG=null}
+ function track(a){if(a===A)return;park();A=a;if(a.rs){a.rs=0;const g=a.got,c=a.cnt,go=a.goat;resetStep();a.got=g||[];a.cnt=c||0;if(go)a.goat=go}renderSQ();refreshLog()}
+ function untrack(){if(!A)return;const q=BY[A.id];park();renderSQ();refreshLog();toast(`Görevlere gönderildi: ${q.title}. Görevler'den yeniden takip edebilirsin.`)}
+ function drop(a){if(a===A){cancelA('Yan görevi bıraktın');refreshLog();return}const q=BY[a.id];ACT=ACT.filter(x=>x!==a);refreshLog();toast(`Yan görevi bıraktın: ${q.title}. Yeniden almak için ${q.name} ile konuş.`)}
+ function refreshLog(){try{if(craftOpen&&mode==='qlog')renderCraft()}catch(e){}}
+ function start(q,at){park();A={id:q.id,step:at|0};ACT.push(A);resetStep();renderSQ();refreshLog();try{sfx('found')}catch(e){}toast(`Yan görev: ${q.title}`)}
  function hasAll(items){return items.every(([n,k])=>(inv[n]||0)>=k)}
  function talk(q){
    if(done.has(q.id)){const L=q.after;if(!L.length)return;say(L[Math.floor(Math.random()*L.length)],[{t:'Hoşça kal',pri:1,fresh:1,f:bye}],who(q.id));return}
+   {const mine=actOf(q.id);if(mine&&mine!==A)track(mine)}   // v3.07: talking to a waiting quest's person tracks it
    if(A&&A.id===q.id){const s=step();
      if(s.t==='back'){pages(q,s.on,()=>complete(q),q.quiet?'…':'Tamam');return}
      if(s.t==='escort'&&s.to==='npc'&&A.fol&&Math.hypot(A.fol.x-q.x,A.fol.y-q.y)<90){pages(q,s.on,advance);return}   // v2.42: she is here: hand her over
      if(s.t==='bring'){if(hasAll(s.items)){for(const [n,k] of s.items)inv[n]-=k;renderInv();pages(q,s.on,advance)}
        else say(`${q.remind}<br><small>Gereken: ${s.items.map(([n,k])=>`${Math.min(inv[n]||0,k)}/${k} ${esc(n)}`).join(' · ')}</small>`,[{t:'Getireceğim',pri:1,fresh:1,f:bye}],who(q.id));return}
      say(q.remind||'…',[{t:'Tamam',pri:1,fresh:1,f:bye}],who(q.id));return}
-   if(A){say('Önce elindeki işi bitir, evlat. Ben buradayım, bir yere gitmiyorum.',[{t:'Tamam',pri:1,fresh:1,f:bye}],who(q.id));return}
    if(q.cave&&window.__plCave&&window.__plCave.fought(q.cave)){const bi=q.steps.findIndex(x=>x.t==='boss');
-     say(q.again,[{t:q.againBtn,pri:1,fresh:1,f:()=>{bye();A={id:q.id,step:bi};resetStep();renderSQ();try{sfx('found')}catch(e){}toast(`Yan görev: ${q.title}`)}},{t:'Şimdi olmaz',fresh:1,f:bye}],who(q.id));return}
+     say(q.again,[{t:q.againBtn,pri:1,fresh:1,f:()=>{bye();start(q,bi)}},{t:'Şimdi olmaz',fresh:1,f:bye}],who(q.id));return}
    let i=0;const L=q.intro;const nx=()=>{const [k,t]=L[i++];if(i<L.length){say(t,[{t:'Devam',pri:1,fresh:1,f:nx}],who(q.id));return}
      say(t,[{t:'Yardım ederim',pri:1,fresh:1,f:()=>{bye();start(q)}},{t:'Şimdi olmaz',fresh:1,f:bye}],who(q.id))};nx()}
  // ---------------------------------------------------------------- where the person is
  const isFollower=q=>{if(!A||A.id!==q.id)return false;const s=step();return !!(s&&s.t==='escort'&&s.who==='self')};
- function present(q){if(q.cave){const C=window.__plCave;return !!(C&&C.cur===q.cave)}if(done.has(q.id))return q.id!=='isil';if(A&&A.id===q.id)return !isFollower(q)&&!q.ghost;return inWin(q.win)}
+ function present(q){if(q.cave){const C=window.__plCave;return !!(C&&C.cur===q.cave)}if(done.has(q.id))return q.id!=='isil';if(actOf(q.id))return !isFollower(q)&&!q.ghost;return inWin(q.win)}
  function homeOf(q){if(done.has(q.id)){if(q.id==='mina')return campPt();if(q.id==='haydar'){const f=famPt();return{x:f.x+24,y:f.y-8}}}return{x:q.x,y:q.y}}
  for(const q of Q){const ent={get x(){return homeOf(q).x},get y(){return homeOf(q).y},r:28,
      on:()=>!onTitle&&present(q)&&!(q.ghost),label:()=>done.has(q.id)?q.name:`Konuş: ${q.name}`,act:()=>talk(q)};XTRA.push(ent)}
@@ -16178,8 +16185,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  {const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);try{tick(dt||0)}catch(e){try{window.__hamSoft&&window.__hamSoft('v230 tick: '+(e&&e.message||e))}catch(_){}}return r}}
  function tick(dt){if(onTitle||wake||sailing)return;
    if(!(window.__plCave&&window.__plCave.cur))bioSeen.add(bioAt(player.x,player.y));
-   {const g=BY.isil;if(!done.has('isil')&&!(A&&A.id==='isil')&&inWin(g.win)&&!dlgOpen&&D2(player,g)<60){
-       if(!A)start(g);else if((sayT-=dt)<=0){sayT=10;toast('Soluk ışıklı kız seni görünce kayboluyor… (Önce elindeki yan görevi bitir.)',true)}}}
+   {const g=BY.isil;if(!done.has('isil')&&!actOf('isil')&&inWin(g.win)&&!dlgOpen&&D2(player,g)<60)start(g)}
    if(PG){if(dlgOpen)PG.gone=0;else if((PG.gone+=dt)>.6){const f=PG.fin;PG.fin=null;PG=null;if(A)A.busy=false;if(f)f()}}
    if(!A||dlgOpen||fading)return;const q=BY[A.id],s=step();if(!s||A.busy)return;
    if(s.t==='go'){if(s.ghost&&!inWin(q.win))return;const p=q.pts[s.p];if(D2(player,p)<(s.ghost?34:26)){A.busy=true;if(s.ghost)try{sfx('magic')}catch(e){}pages(q,s.on,advance)}return}
@@ -16264,13 +16270,13 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
        if(q.id==='elif'&&vis(h.x,h.y,40))ents.push({y:h.y+6,d:()=>drawObj('flowers',h.x+10,h.y+6)});
        if(q.id==='sabri'&&vis(h.x,h.y,40))ents.push({y:h.y+6,d:()=>drawObj('embers',h.x+14,h.y+6)})}
      if(!present(q)||q.ghost)continue;const h=homeOf(q);if(!vis(h.x,h.y,40))continue;
-     const avail=!done.has(q.id)&&!(A&&A.id===q.id);
+     const avail=!done.has(q.id)&&!actOf(q.id);
      ents.push({y:h.y,d:()=>{const sit=(q.id==='mina'&&done.has('mina'))||q.id==='cemal'&&!done.has('cemal')||q.id==='saniye'&&done.has('saniye')||q.id==='elif'&&!done.has('elif');
        drawPerson(q,h.x,h.y,sit?{sit:1}:{});
        if(q.id==='nadir'){const x=Math.round(h.x),y=Math.round(h.y);px(x+6,y-12,1,9,'#a8743a');px(x+4,y-8,5,1,'#7a4a22');if(done.has('nadir'))px(x-2,y-24,2,3,'#f4f0e8')}
-       if(avail&&(!A||true))qmark(h.x,h.y-(KID[q.id]?30:38),'#9fd8ff')}})}
+       if(avail)qmark(h.x,h.y-(KID[q.id]?30:38),'#9fd8ff')}})}
    // ghost girl
-   {const q=BY.isil;if(!done.has('isil')&&inWin(q.win)){let p=null;if(!A||A.id!=='isil'){if(!A)p={x:q.x,y:q.y}}else{const s=step();if(s&&s.ghost)p=q.pts[s.p]}
+   {const q=BY.isil;if(!done.has('isil')&&inWin(q.win)){let p=null;const ia=actOf('isil');if(!ia)p={x:q.x,y:q.y};else if(ia===A){const s=step();if(s&&s.ghost)p=q.pts[s.p]}
      if(p&&vis(p.x,p.y,40))ents.push({y:p.y,d:()=>{const fl=Math.sin(time*2)*2;ctx.save();ctx.globalAlpha=.45+.15*Math.sin(time*3);kidDraw(p.x,p.y+fl,()=>drawChibi(ctx,p.x,p.y+fl,LK.isil,{noShadow:1,fx:0,fy:1}));ctx.restore();
        ctx.save();ctx.globalCompositeOperation='lighter';const g=ctx.createRadialGradient(p.x,p.y-10,0,p.x,p.y-10,24);g.addColorStop(0,'rgba(150,190,255,.35)');g.addColorStop(1,'rgba(150,190,255,0)');ctx.fillStyle=g;ctx.fillRect(p.x-24,p.y-34,48,48);ctx.restore()}})}}
    for(const [k,p] of curPts())if(vis(p.x,p.y,40))ents.push({y:p.y,d:()=>{drawObj(k,p.x,p.y);if(k!=='body'&&k!=='cave'){const q2=(time*1.2)%1;ctx.strokeStyle=`rgba(159,216,255,${(1-q2).toFixed(2)})`;ctx.lineWidth=1;ctx.beginPath();ctx.arc(p.x,p.y-2,6+q2*10,0,Math.PI*2);ctx.stroke()}}});
@@ -16289,7 +16295,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const fogC=Q.map(q=>{const R=rngOf('fog-'+q.id),a=R()*Math.PI*2,r=R()*110;return{x:q.x+Math.cos(a)*r,y:q.y+Math.sin(a)*r}});
  {const _mq=window.__plMapQ;window.__plMapQ=function(c,ox,oy,sx,sy,big,w,h){if(_mq&&!A)try{_mq.apply(this,arguments)}catch(e){}   /* v2.31: no main-quest yellow while a side quest runs */try{mapSQ(c,ox,oy,sx,sy,big,w,h)}catch(e){}}}
  function mapSQ(c,ox,oy,sx,sy,big,w,h){if(onTitle)return;const now=performance.now()/1000;
-   Q.forEach((q,i)=>{if(q.cave||q.ghost||done.has(q.id)||(A&&A.id===q.id)||!inWin(q.win)||!bioSeen.has(q.b))return;   // v2.42: a ghost has no one standing there: no mark
+   Q.forEach((q,i)=>{if(q.cave||q.ghost||done.has(q.id)||actOf(q.id)||!inWin(q.win)||!bioSeen.has(q.b))return;   // v2.42: a ghost has no one standing there: no mark
      if(seenT(q.x,q.y)){const X=(q.x/T-ox)*sx,Y=(q.y/T-oy)*sy;if(X<-10||Y<-10||X>w+10||Y>h+10)return;const R0=big?9:4.5,pl=.5+.5*Math.sin(now*3+i);
        c.save();c.fillStyle='rgba(17,23,15,.85)';c.beginPath();c.arc(X,Y,R0+1.5,0,6.283);c.fill();c.fillStyle=`rgba(159,216,255,${(.85+.15*pl).toFixed(2)})`;c.beginPath();c.arc(X,Y,R0,0,6.283);c.fill();
        c.font=`900 ${Math.round(R0*1.5)}px Rubik, system-ui, sans-serif`;c.textAlign='center';c.textBaseline='middle';c.fillStyle='#14324a';c.fillText('?',X,Y+.5);c.restore();
@@ -16305,19 +16311,22 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
      if(!t.area&&X>-20&&Y>-20&&X<w+20&&Y<h+20){c.save();c.strokeStyle=`rgba(159,216,255,${(1-q).toFixed(2)})`;c.lineWidth=big?3:1.5;c.beginPath();c.arc(X,Y,r0+q*(big?18:8),0,6.283);c.stroke();
      c.fillStyle='#11170f';c.fillRect(Math.round(X-r0-1),Math.round(Y-r0-1),Math.round(2*r0+2),Math.round(2*r0+2));c.fillStyle='#9fd8ff';c.fillRect(Math.round(X-r0),Math.round(Y-r0),Math.round(2*r0),Math.round(2*r0));c.restore()}}}
  // ---------------------------------------------------------------- the side quest card (under the main quest card)
- {const st=document.createElement('style');st.id='v230-css';st.textContent='#sqcard{position:fixed;z-index:8;left:50%;transform:translateX(-50%);width:min(420px,calc(100vw - 32px));box-sizing:border-box;background:#1c2630;border:3px solid #7fc0e8;box-shadow:0 0 0 3px #11170f;padding:6px 36px 7px 10px;font-size:13.5px;line-height:1.3;color:#e8f2fa;pointer-events:auto}'+
+ {const st=document.createElement('style');st.id='v230-css';st.textContent='#sqcard{position:fixed;z-index:8;left:50%;transform:translateX(-50%);width:min(420px,calc(100vw - 32px));box-sizing:border-box;background:#1c2630;border:3px solid #7fc0e8;box-shadow:0 0 0 3px #11170f;padding:6px 66px 7px 10px;font-size:13.5px;line-height:1.3;color:#e8f2fa;pointer-events:auto}'+
    '#sqcard[hidden]{display:none}#sqcard .k{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9fd8ff;font-weight:700}#sqcard b{color:#fff}#sqcard small{display:block;color:#bcd4e4;font-size:12.5px}'+
+   '#sqhide{position:absolute;top:4px;right:36px;width:26px;height:26px;padding:0;font:700 15px/1 Rubik,system-ui,sans-serif;border:2px solid #4a6a80;background:rgba(0,0,0,.3);color:#e8f2fa;cursor:pointer}#sqhide:hover{background:#2a4a60}body.v50m #sqhide{width:20px;height:20px;top:2px;right:26px;font-size:12px}'+
+   '#cbody .sqc .qbtns{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px}#cbody .sqc.trk{border-color:#ffd23a;background:rgba(255,210,58,.08)}#cbody .sqc button{font-size:12.5px;padding:3px 8px}'+
    '#sqx{position:absolute;top:4px;right:6px;width:26px;height:26px;padding:0;font:700 17px/1 Rubik,system-ui,sans-serif;border:2px solid #4a6a80;background:rgba(0,0,0,.3);color:#e8f2fa;cursor:pointer}#sqx:hover{background:#7a2a1a}'+
    'body.cine #sqcard,body.qscene #sqcard,body.arena #sqcard{display:none!important}body.v50m #sqcard{font-size:11px;line-height:1.25;padding:3px 26px 4px 7px;border-width:2px;min-width:140px;cursor:pointer}body.v50m #sqcard .k{font-size:9px}body.v50m #sqcard b,body.v50m #sqcard small{font-size:11px}body.v50m #sqcard:not(.sqopen) b,body.v50m #sqcard:not(.sqopen) small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}body.v50m #sqx{width:20px;height:20px;font-size:13px;top:2px;right:3px}'+
    '#cbody .sqh{margin:2px 0 6px;font-size:15px;color:#f2b84b;letter-spacing:.04em}#cbody .sqh.side{color:#9fd8ff;margin-top:14px}#cbody .sqc{border:2px solid #7fc0e8;background:rgba(127,192,232,.08);padding:6px 10px;margin:4px 0}#cbody .sqd{font-size:13px;color:#bcd4e4;margin:4px 0}';document.head.appendChild(st)}
- const card=document.createElement('div');card.id='sqcard';card.hidden=true;card.innerHTML='<span class="k"></span><b></b><small></small><button id="sqx" type="button" aria-label="Yan görevi bırak" title="Yan görevi bırak">×</button>';document.body.appendChild(card);
+ const card=document.createElement('div');card.id='sqcard';card.hidden=true;card.innerHTML='<span class="k"></span><b></b><small></small><button id="sqhide" type="button" aria-label="Görevlere gönder" title="Görevlere gönder: kart kalkar, görev Görevler\'de bekler">▾</button><button id="sqx" type="button" aria-label="Yan görevi bırak" title="Yan görevi bırak">×</button>';document.body.appendChild(card);
+ card.querySelector('#sqhide').addEventListener('click',e=>{e.stopPropagation();untrack()});
  card.querySelector('#sqx').addEventListener('click',e=>{e.stopPropagation();if(!A)return;const q=BY[A.id];say(`Bu yan görevi bırakayım mı? <b>${esc(q.title)}</b><br><small>${esc(q.name)} yerine döner; görevi sonra en baştan yeniden alabilirsin.</small>`,[{t:'Evet, bırak',fresh:1,f:()=>{bye();cancelA('Yan görevi bıraktın')}},{t:'Hayır',pri:1,fresh:1,f:bye}],{name:'Yan görev'})});
- function stepText(){if(!A)return'';const q=BY[A.id],s=step();if(!s)return'';let t=s.tx||'';
-   if(s.t==='collect')t+=` · ${A.got.length}/${s.ps.length}`;
-   if(s.t==='chase')t+=` · ${A.cnt}/${s.n}`;
+ function stepText(a){a=a||A;if(!a)return'';const q=BY[a.id],s=q.steps[a.step];if(!s)return'';let t=s.tx||'';
+   if(s.t==='collect')t+=` · ${a.got.length}/${s.ps.length}`;
+   if(s.t==='chase')t+=` · ${a.cnt}/${s.n}`;
    if(s.t==='bring')t=`${q.name}'e götür: `+s.items.map(([n,k])=>`${Math.min(inv[n]||0,k)}/${k} ${n}`).join(' · ');
-   if(s.t==='guard')t+=` · ${Math.max(0,Math.ceil(s.dur-A.tm))} sn`;
-   if(s.t==='kill'&&A.sp)t+=` · ${A.killed||0}/${s.mobs[1]}`;
+   if(s.t==='guard')t+=` · ${Math.max(0,Math.ceil(s.dur-a.tm))} sn`;
+   if(s.t==='kill'&&a.sp)t+=` · ${a.killed||0}/${s.mobs[1]}`;
    if(s.t==='escort'&&s.light&&isNight()&&!(torchHeld()||(typeof lampOn==='function'&&lampOn())))t+=' · ışık gerekli (meşale)';
    if(s.ghost&&!inWin(q.win))t+=` · yalnızca gece (${hhm(q.win[0])}–${hhm(q.win[1])})`;
    return t}
@@ -16334,17 +16343,25 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  {const _rq=renderQlog;renderQlog=function(){const r=_rq.apply(this,arguments);try{if(!(craftOpen&&mode==='qlog'))return r;
    cbody.insertAdjacentHTML('afterbegin','<h3 class="sqh">Ana görev</h3>');
    let h='<h3 class="sqh side">Yan görevler</h3>';
-   if(A){const q=BY[A.id];h+=`<div class="sqc"><b>${esc(q.name)}</b> · ${esc(q.title)}<br><small>${esc(stepText())}</small></div>`}else h+='<p class="sqd">Şu an bir yan görevin yok. Adayı dolaşırken yardıma ihtiyacı olan insanlara rastlarsın; haritadaki mavi <b>?</b> ve sisli çemberler onları gösterir. Yan görev ana görevle birlikte yapılabilir.</p>';
+   if(ACT.length){h+='<p class="sqd">Aynı anda birden çok yan görev alabilirsin. <b>Takip ettiğin</b> görev ekranın üstündeki kartta yazar ve dünyada yol gösterir; diğerleri burada bekler. Kartı ▾ ile buraya gönderebilirsin.</p>';
+     for(const a of ACT){const q=BY[a.id],on=a===A;h+=`<div class="sqc${on?' trk':''}"><b>${esc(q.name)}</b> · ${esc(q.title)}<br><small>${esc(stepText(a))}</small><div class="qbtns">${on?`<button type="button" class="mk ghost" data-squ="1">📌 Takip ediliyor · Görevlere gönder</button>`:`<button type="button" class="mk" data-sqt="${a.id}">📌 Takip et</button>`}<button type="button" class="mk ghost" data-sqd="${a.id}">Bırak</button></div></div>`}}
+   else h+='<p class="sqd">Şu an bir yan görevin yok. Adayı dolaşırken yardıma ihtiyacı olan insanlara rastlarsın; haritadaki mavi <b>?</b> ve sisli çemberler onları gösterir. Yan görevler ana görevle birlikte yapılabilir; aynı anda birden çok yan görev alabilirsin.</p>';
    const D=Q.filter(q=>done.has(q.id));h+=`<p class="sqd">Bitirdiklerin: <b>${D.length}/${Q.length}</b>${D.length?' · '+D.map(q=>esc(q.title)).join(' · '):''}</p>`;
    cbody.insertAdjacentHTML('beforeend',h)}catch(e){}return r}}
+ cbody.addEventListener('click',e=>{if(!(craftOpen&&mode==='qlog'))return;const t=e.target.closest('[data-sqt],[data-squ],[data-sqd]');if(!t)return;e.stopPropagation();try{sfx('pick')}catch(_){}
+   if(t.dataset.sqt){const a=actOf(t.dataset.sqt);if(a){track(a);toast(`Takip ediliyor: ${BY[a.id].title}`)}return}
+   if(t.dataset.squ){untrack();return}
+   if(t.dataset.sqd){if(!t.dataset.arm){t.dataset.arm=1;t.textContent='Emin misin? Bırak';return}const a=actOf(t.dataset.sqd);if(a)drop(a)}});
  // ---------------------------------------------------------------- save / load / new game
- {const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{if(s)s.v230={d:[...done],a:A?{id:A.id,step:A.step,got:A.got.slice(),cnt:A.cnt||0,goat:A.goat||null}:null,b:[...bioSeen]}}catch(e){}return s}}
+ {const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{if(s)s.v230={d:[...done],a:A?{id:A.id,step:A.step,got:A.got.slice(),cnt:A.cnt||0,goat:A.goat||null}:null,L:ACT.map(a=>({id:a.id,step:a.step,got:(a.got||[]).slice(),cnt:a.cnt||0,goat:a.goat||null})),t:A?A.id:null,b:[...bioSeen]}}catch(e){}return s}}
  {const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{const v=d&&d.v230;done=new Set(v&&v.d?v.d.filter(k=>BY[k]):[]);bioSeen.clear();if(v&&v.b)v.b.forEach(b=>bioSeen.add(b));
      for(let i=0;i<W*H;i+=3)if(explored[i]&&BIO[i]<4)bioSeen.add(BIO[i]);
-     A=null;if(v&&v.a&&BY[v.a.id]&&!done.has(v.a.id)){A={id:v.a.id,step:Math.max(0,Math.min(BY[v.a.id].steps.length-1,v.a.step|0))};A.goat=v.a.goat||null;resetStep();A.got=(v.a.got||[]).slice();A.cnt=v.a.cnt|0;
-       if(A.fol){const s=step();if(s.who==='self'){A.fol.x=player.x+14;A.fol.y=player.y+4}}}renderSQ()}catch(e){}return r}}
- {const _rz=resetState;resetState=function(){const r=_rz.apply(this,arguments);try{done=new Set();A=null;bioSeen.clear();renderSQ()}catch(e){}return r}}
- window.__plSide={Q,BY,get A(){return A},done:()=>done,start:id=>{if(BY[id])start(BY[id])},complete:id=>{if(BY[id])complete(BY[id])}};
+     A=null;ACT=[];const L=v?(v.L||(v.a?[v.a]:[])):[],tid=v?(v.L?v.t:(v.a&&v.a.id)):null;let tr=null;   // v3.07: a list (older saves: the one quest)
+     for(const x of L){if(!x||!BY[x.id]||done.has(x.id)||actOf(x.id))continue;A={id:x.id,step:Math.max(0,Math.min(BY[x.id].steps.length-1,x.step|0))};A.goat=x.goat||null;resetStep();A.got=(x.got||[]).slice();A.cnt=x.cnt|0;ACT.push(A);
+       if(x.id===tid){tr=A;if(A.fol){const s=step();if(s.who==='self'){A.fol.x=player.x+14;A.fol.y=player.y+4}}}else{const s=step();if(s&&LIVE[s.t])A.rs=1}A=null}
+     A=tr;renderSQ()}catch(e){}return r}}
+ {const _rz=resetState;resetState=function(){const r=_rz.apply(this,arguments);try{done=new Set();A=null;ACT=[];bioSeen.clear();renderSQ()}catch(e){}return r}}
+ window.__plSide={Q,BY,get A(){return A},get ACT(){return ACT},done:()=>done,start:id=>{if(BY[id])start(BY[id])},complete:id=>{if(BY[id])complete(BY[id])}};
 }
 }).toString()+')()')}catch(e){try{window.__hamErr('v230: '+(e&&e.message||e))}catch(_){}}})();
 </script>
@@ -17872,7 +17889,6 @@ function deco(root){try{root=root||cbody;
 {const _rc=renderCraft;renderCraft=function(){const r=_rc.apply(this,arguments);deco();return r}}
 {const _ri=renderInv;renderInv=function(){const r=_ri.apply(this,arguments);if(craftOpen)deco();return r}}
 {const _bi=bookInfo;bookInfo=function(r){const h=_bi.apply(this,arguments);try{const t=r&&isOpen(r)&&wInfo(r);if(t)return h.replace(/<\/div>\s*$/,tag(t)+'</div>')}catch(e){}return h}}
-{const _rh=renderHot;renderHot=function(){const r=_rh.apply(this,arguments);try{const L=hotList();$('hotbar').querySelectorAll('[data-hs]').forEach(el=>{const n=L[+el.dataset.hs],t=wInfo(n,1);if(t&&el.title.indexOf(t)<0)el.title=n+'\n'+t})}catch(e){}return r}}
 try{const hl=$('hp-l');if(hl&&window.MutationObserver)new MutationObserver(()=>{hl.querySelectorAll('[data-hp]').forEach(el=>{const t=wInfo(el.dataset.hp,1);if(t&&el.title.indexOf(t)<0)el.title+='\n'+t})}).observe(hl,{childList:true})}catch(e){}
 hotK='';try{renderHot()}catch(e){}
 }).toString()+')()')}catch(e){try{window.__hamErr('v258c: '+(e&&e.message||e))}catch(_){}}})();
@@ -17950,12 +17966,12 @@ const gone=n=>n in PAY||/^Tabaklanmış /.test(n);
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 const C=new Map();const full=n=>{if(!n)return '';const k=n+'|'+(toolDur[n]==null?'':toolDur[n]);if(C.has(k))return C.get(k);let t='';try{t=window.__plWInfo?window.__plWInfo(n,1)||'':''}catch(e){t=''}if(C.size>400)C.clear();C.set(k,t);return t};
 const short=t=>{let m=/Hasar (\d+)/.exec(t);if(m)return '⚔'+m[1];m=/Savunma \+(\d+)/.exec(t);return m?'🛡'+m[1]:''};
-const nameOf=el=>{const d=el.dataset;if(d.hs!=null){try{return hotList()[+d.hs]}catch(e){return null}}if(d.eqs!=null)return equip[d.eqs]||null;return d.n||d.isel||d.bk||d.wear||d.hp||d.cr||d.aw||d.pn||d.qn||d.tr||d.d||null};
-const SEL='[data-n],[data-isel],[data-bk],[data-hs],[data-eqs],[data-wear],[data-hp],[data-cr],[data-aw],[data-pn],[data-qn],[data-tr],[data-d]';
+const nameOf=el=>{const d=el.dataset;if(d.eqs!=null)return equip[d.eqs]||null;return d.n||d.isel||d.bk||d.wear||d.hp||d.cr||d.aw||d.pn||d.qn||d.tr||d.d||null};
+const SEL='[data-n],[data-isel],[data-bk],[data-eqs],[data-wear],[data-hp],[data-cr],[data-aw],[data-pn],[data-qn],[data-tr],[data-d]';
 function deco(root){try{(root||document).querySelectorAll(SEL).forEach(el=>{const n=nameOf(el);const t=full(n);const old=el.querySelector(':scope>.pl-st'),ol=el.querySelector('.pl-stl');
     if(!t){if(old)old.remove();if(ol)ol.remove();return}
     if(el.title.indexOf(t)<0)el.title=(el.title&&el.title.indexOf(n)>=0?el.title.split('\n')[0]:n)+'\n'+t;
-    const isTile=el.classList.contains('tile')||el.classList.contains('hs')||el.dataset.bk!=null;
+    const isTile=el.classList.contains('tile')||el.dataset.bk!=null;
     if(isTile){const s=short(t);if(old&&old.textContent===s)return;if(old)old.remove();if(!s)return;if(getComputedStyle(el).position==='static')el.classList.add('pl-stp');el.insertAdjacentHTML('afterbegin',`<span class="pl-st">${s}</span>`)}
     else if(el.closest('.mkt li')){const li=el.closest('li'),nm=li.querySelector('.nm');if(nm&&!nm.querySelector('.pl-stl'))nm.insertAdjacentHTML('beforeend',`<small class="pl-stl">${esc(t)}</small>`)}   // v2.73: the market row gets one line under the name, never inside its buttons
     else if((el.dataset.wear||el.dataset.hp)&&!el.querySelector('.wst')){if(ol&&ol.textContent===t)return;if(ol)ol.remove();const sp=el.querySelector('span span')||el.querySelector('span:last-child')||el;sp.insertAdjacentHTML('beforeend',`<small class="pl-stl">${esc(t)}</small>`)}})}catch(e){}}
@@ -18277,6 +18293,18 @@ setInterval(()=>{try{const m=$('b-menut'),bar=$('bar');if(!m||!bar)return;const 
   const on=B.classList.contains('menuhid')&&!B.classList.contains('v50m')&&!!bar.querySelector('.ib.pulse,.ib.p3tab,.ib.b3unl,.ib.p218');
   m.classList.toggle('pulse',on)}catch(e){}},300);
 }).toString()+')()')}catch(e){try{window.__hamErr('v307menuglow: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v307qlog">
+// v3.07: on a phone the Görevler button always opens the quest log (during a lesson it only folded the lesson card, so nothing seemed to open);
+// while a lesson runs, the log shows it at the top
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+document.addEventListener('click',e=>{try{if(!document.body.classList.contains('v50m')||!e.target.closest||!e.target.closest('#b-quest'))return;e.preventDefault();e.stopPropagation();
+  const V=window.__v50;if(V&&V.open){V.open=false;document.body.classList.remove('v50open')}
+  if(craftOpen&&mode==='qlog'){closeCraft();return}if(dlgOpen)return;openMenu('qlog');try{sfx('pick')}catch(_){}}catch(_){}},true);
+{const _rq=renderQlog;renderQlog=function(){const r=_rq.apply(this,arguments);try{if(!(craftOpen&&mode==='qlog'))return r;const te=$('tuttext'),ts=$('tutstep');
+  if((tz||lessonCard)&&te&&te.textContent.trim())cbody.insertAdjacentHTML('afterbegin',`<div class="qcard main"><div class="qh"><b>Ders</b></div><div class="qt">${esc(ts?ts.textContent:'')}</div><small>${te.innerHTML}</small></div>`)}catch(e){}return r}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v307qlog: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
