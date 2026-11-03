@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.15 · 4 Kasım 2026
+
+### Görsel
+- **Takla yeniden çizildi:** karakter artık döndürülen bir resim gibi değil, gerçekten takla atıyor. 16 adım: 8 ana poz (çömelme, öne atılma, top olma, top hâlinde yuvarlanma, açılma, doğrulma) ve her ikisinin arasında bir ara poz.
+  - Kendi görünüşünle atılıyor (saç, şapka/miğfer, zırh, eldiven, çizme); elindeki alet ve meşale takla boyunca görünmez.
+  - Sağa/sola yuvarlanır; yukarı/aşağı atılınca öne doğru takla atar.
+  - Süre, mesafe ve zamanlama aynı (atılma ve savuşturma etkilenmez).
+
+### Tasarım belgesi
+- Sistemler › Dövüş › Takla görüntüsü.
+
 ## Versiyon 3.14 · 3 Kasım 2026
 
 ### Düzeltmeler
