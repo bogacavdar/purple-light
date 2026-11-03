@@ -8,6 +8,20 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.14 · 3 Kasım 2026
+
+### Düzeltmeler
+- **Börü'nün savuşturma dersi kilitleniyordu (acil):** "Şimdi savuşturmayı öğren" penceresi dışına tıklayınca pencere kapanıyor ama ders başlamıyordu; kerevit yanında hiç saldırmadan duruyor, tıklamalar onu öldürüyor, sonra yenisi de çıkmıyordu.
+  - **Bütün konuşma pencerelerinde:** pencerenin dışına tıklamak/dokunmak, Esc ya da X, "Anladım"a basmakla aynı. "Sonra" / "Hoşça kal" gibi yalnızca kapatan bir seçenek varsa o, tek seçenek varsa o, yoksa ana seçenek seçilir. Hiçbir ders ya da görev artık bir düğmeye basılmadı diye takılı kalmaz.
+  - Savuşturma dersi, konuşma bir şekilde kapanırsa kısa süre sonra kendiliğinden başlar.
+  - Derslerin kereviti hasar almaz, ölmez, hedef seçilmez; bir yolla kaybolursa hemen yenisi çıkar.
+
+### Arayüz
+- Börü'nün ilk dersi artık "elin boş olsun" demez, yalnızca "kereviti vur" der (gece meşaleyle vurmak da sayılıyordu).
+
+### Tasarım belgesi
+- Sistemler › Konuşma penceresi (dışına basmak = "Anladım", kalıcı kural); Akış (Börü dersi).
+
 ## Versiyon 3.13 · 3 Kasım 2026
 
 ### Oynanış

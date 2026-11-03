@@ -1,4 +1,5 @@
-## v3.14 (3 Kasım 2026, bekleyen paket) · savuşturma dersi takılması
+## v3.14 (3 Kasım 2026) · savuşturma dersi takılması, pencere dışına basmak = "Anladım"
+- Genel: `say()` seçenekleri `dlgCh`'de tutulur; `dlgOut()` (canvas pointerdown, Esc, #dclose) yalnızca `bye` olan seçeneği → tek seçeneği → `pri` seçeneği çalıştırır, hiçbiri yoksa `bye()`. CLAUDE.md'ye kural yazıldı.
 - Belge `10_akis.md` (Börü dersi adım 5), `00_giris.md`.
 - Börü'nün takla → savuşturma geçişinde `DL.ph='talk'` yalnızca "Hazırım" ile bitiyordu; konuşma dışarı tıklayıp/Esc ile kapanınca kerevit oyuncunun yanında donup kalıyordu. `tickDL`: `talk` evresinde `!dlgOpen` ve geçişten 1,5 sn sonra ders kendiliğinden `idle`'a geçer (`DL.talkT`).
 - Dersin kereviti: `spawn()`'da `hp` erişimcisi (get: tam can, set: yok sayılır) → hasar almaz, ölmez; `target(range)` `a.dl`'yi atlar; `tickDL` kerevit `animals`'ta yoksa evreden önce yeniden çıkarır (talk evresinde öldürülünce ders kereviti kaybolup kalıyordu).
