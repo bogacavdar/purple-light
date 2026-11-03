@@ -18804,7 +18804,7 @@ window.addEventListener('click',e=>{const t=e.target;if(!t||t.id!=='sellsafe'||!
 const OLD=MEMS.slice(),OLDN=OLD.map(m=>m.n),oldScene=memScene;
 const byOld=n=>OLDN.indexOf(n);
 const T=[
- {n:'Kampüste ilk gün',L:[['','Bir sonbahar sabahı, üniversitenin bahçesi. Sarı yapraklar dökülüyor; kollarda kitaplar, telaşlı adımlar.'],['love','<b>{L}</b>: "Pardon… Kütüphane ne tarafta, biliyor musun?"'],['hero','<b>{H}</b>: "Biliyorum. İstersen birlikte gidelim."'],['','Kütüphaneye giden yol hiç o kadar kısa gelmemişti. {HAIRI} rüzgârda savruluyordu.']]},
+ {n:'Sınıfta bir doğum günü',L:[['','Üniversitede bir sınıf. Aynı sınıftasınız ama daha hiç konuşmadınız. Bugün bir arkadaşınızın doğum günü: sıranın üstünde bir pasta, mumlar, alkışlar.'],['love','<b>{L}</b>: "Ben keserim! Herkese yetecek, merak etmeyin."'],['','Dilim dilim herkese dağıttı. Son tabağı da uzattığında pastadan ona hiç kalmamıştı. Hiç dert etmedi; gülümsedi.'],['','Sen o gülümsemeye hayranlıkla baktın. {HAIRI} pencereden gelen ışıkta parlıyordu. Onu ilk kez o gün gerçekten gördün.']]},
  {n:'Voleybol',L:[['','Bir cumartesi, kum sahasında voleybol. Arkadaşlar iki takıma ayrıldı; ikiniz aynı taraftasınız.'],['love','<b>{L}</b>: "Top bana gelirse kaçarım, haberin olsun!"'],['','Top ona geldi. Kaçmadı. Sayıyı alınca ilk sana koştu, el çaktınız.'],['','Maçı kim kazandı, hatırlamıyorsun. O beşliği hatırlıyorsun.']]},
  {n:'Konser',L:[['','Voleyboldan birkaç gün sonra, bir yaz konseri. Kalabalık, renkli ışıklar, hep bir ağızdan söylenen şarkılar.'],['love','<b>{L}</b>: "Bu şarkıya bayılıyorum!"'],['','Şarkı boyunca gözleriniz birkaç kez buluştu. İkiniz de hemen başka yere baktınız; ama ikiniz de gülümsüyordunuz.'],['','Konserden sonra onu evine bıraktın. Kapıda bir an durdu, el salladı. Eve dönerken hâlâ gülümsüyordun.']]},
  {n:'Açık hava sineması',L:[['','Bir yaz gecesi, açık hava sineması. Battaniyeler, patlamış mısır, perdede eski bir film.'],['love','<b>{L}</b> (fısıldayarak): "En sevdiğim sahne geliyor, bak!"'],['','Sen filme değil, ona bakıyordun. Perdenin ışığı yüzünde oynaşıyordu.']]},
@@ -18923,13 +18923,17 @@ memScene=function(g,i,t,line){const m=MEMS[i];if(!m)return;
     for(let q=0;q<18;q++)p((q*29+t*18)%250-10,116+(q*7)%16,10,1,nt?'rgba(200,210,255,.35)':'rgba(220,240,255,.7)');
     if(nt)for(let q=0;q<6;q++)p(176+Math.sin(t*2+q)*4,116+q*3,16-q*2,1,'rgba(244,240,216,.6)');
     for(let q=0;q<5;q++)p((q*53+20)%240,114+(q%2)*14,6,3,nt?'#4a4a58':'#8a8a80');p(0,132,240,3,nt?'#173020':'#3f7a2e')};
-  if(S==='Kampüste ilk gün'){   // campus, autumn
-    sky('#9ccbe8','#f4e6c4',80);p(0,80,240,55,'#8aa860');p(96,80,48,55,'#cdb88e');
-    p(140,26,92,56,'#a8543c');p(136,22,100,6,'#7a3a2a');for(let q=0;q<4;q++)for(let r=0;r<3;r++)p(148+q*22,32+r*15,10,10,'#f4e2b0');p(178,62,16,20,'#4a2a1a');for(let q=0;q<5;q++)p(142+q*20,70,4,12,'#efe6d0');
-    tree(30,84,28,24,'#e08a2a','#f2b84b');tree(76,84,22,18,'#d85a2a','#f0a040');
-    for(let q=0;q<16;q++){const lx=(q*37+t*(10+q%4*4))%250-5,ly=(q*23+t*(18+q%3*6))%120;p(lx,ly,2,2,q%3?'#f2b84b':'#d85a2a')}
-    drawChibi(g,104,110,H,{fx:1});drawChibi(g,134,110,Lv,{fx:-1,arm:'reach'});p(98,96,6,4,'#3a5aa8');p(98,95,6,1,'#e8e0c8');p(140,96,6,5,'#a83a3a');
-    if(line>=3)hearts(120,84,3);warm()}
+  if(S==='Sınıfta bir doğum günü'){   // the classroom: a friend's birthday, she cuts the cake and gives it all away
+    p(0,0,240,135,'#e8dcc0');p(0,96,240,39,'#a8805a');for(let q=0;q<240;q+=16)p(q,96,1,39,'#987048');
+    p(20,12,110,48,'#2f5a44');p(18,10,114,3,'#8a6a40');p(18,60,114,3,'#8a6a40');g.fillStyle='#f4f4ee';g.font='9px sans-serif';g.textBaseline='middle';g.fillText('İyi ki doğdun!',38,30);for(let q=0;q<4;q++)p(34+q*18,46,10,1,'rgba(244,244,238,.6)');
+    p(160,12,62,52,'#bfe4f8');p(160,37,62,2,'#f4f0e8');p(190,12,2,52,'#f4f0e8');g.fillStyle='rgba(255,246,210,.18)';g.beginPath();g.moveTo(160,64);g.lineTo(222,64);g.lineTo(180,135);g.lineTo(110,135);g.fill();
+    const fr=(x,c,h)=>{p(x-3,92,6,9,c);p(x-2,86,5,5,'#e8b890');p(x-2,85,5,2,h)};fr(150,'#3a8ad0','#2a1a10');fr(172,'#5aa860','#c8a050');fr(196,'#e0604a','#4a2a1a');fr(218,'#f2b84b','#2a1a10');
+    const n=line>=2?4:line>=1?Math.min(4,Math.floor((t%4)*1.2)):0;for(let q=0;q<n;q++){p(146+q*22,84,8,2,'#ffffff');p(148+q*22,81,4,3,'#f8f0e0');p(148+q*22,81,4,1,'#f0a0b8')}
+    drawChibi(g,62,112,H,{fx:1});drawChibi(g,108,112,Lv,{fx:1,arm:line===1?'reach':'down'});
+    p(84,100,46,6,'#c89a68');p(84,106,4,29,'#8a6440');p(126,106,4,29,'#8a6440');
+    if(line<2){p(94,90,24,10,'#f8f0e0');p(94,88,24,3,'#fff8f0');p(94,94,24,1,'#f0a0b8');for(let q=0;q<3;q++){p(99+q*7,82,1,6,'#7ac8ff');const f=Math.sin(t*12+q);p(99+q*7,79-f,1,3,'#ffd27a')}}
+    else{p(92,98,28,2,'#ffffff');p(96,96,4,2,'#f8f0e0')}
+    if(line>=3)hearts(70,84,3);warm()}
   else if(S==='Voleybol'){   // beach volleyball with friends
     sky('#7ec8f0','#cfeefc',70);p(0,70,240,12,'#3a8ad0');for(let q=0;q<10;q++)p((q*31+t*10)%240,74,12,1,'rgba(255,255,255,.5)');p(0,82,240,53,'#ecd8a0');for(let q=0;q<30;q++)p((q*41)%240,86+(q*17)%46,2,1,'#d8c088');
     p(118,62,3,50,'#6a4a2a');p(102,62,36,1,'#ffffff');for(let q=0;q<5;q++)p(102,64+q*3,36,1,'rgba(255,255,255,.6)');for(let q=0;q<9;q++)p(102+q*4,62,1,15,'rgba(255,255,255,.6)');
