@@ -1,6 +1,7 @@
-## v3.09 (3 Kasım 2026) · Savuş düğmesi yuvarlak (bekleyen paket, yayında değil)
+## v3.09 (3 Kasım 2026) · Savuş düğmesi yuvarlak, canlı sesleri (bekleyen paket, yayında değil)
 - Belge `20_sistemler.md` (Telefon › Savuş düğmesi).
 - v110-parry `place()`: genişlik/yükseklik/yazı boyu (Atıl'ın büyük kenarı, kare, padding 0) artık `__plLayHas` dönüşünden önce verilir; kayıtlı düğme yerleşimi varken boy hiç verilmiyordu, düğme yazısına göre oval kalıyordu.
+- Canlı sesleri: `<script id="v309snd">` `tickAnimals`'ı sarar: önceki kareden bu yana `hp` düştü ve `flash>.08` ise `hurtS` (kare başına en çok 3); `wind` 0→>0 olunca `ATK[a.k]` (Çayır/Orman 11 canlı) ya da yoksa eski `sfx('growl')`; tick içindeki `growl` susturulur. `killAnimal` sarmalayıcısı `dieS`. Ses `audio.synth` ile anında üretilir, uzaklıkla azalır (340 px). Belge `30_act1.md` (Canlı sesleri).
 - Kontrol: chk.js 0 hata.
 
 ## v3.08 (3 Kasım 2026) · Çayır canlıları sert vurur, yiyeceklerin etkileri farklı
