@@ -1,3 +1,8 @@
+## v3.16 (4 Kasım 2026, bekleyen paket) · takla: gözler pörtlemiyor
+- Belge `20_sistemler.md` (Takla görüntüsü), `00_giris.md`.
+- `v315roll`: poz artık ana tuvalde (kamera ölçeğinde) döndürülmüyor; `build()` 60×60 küçük tuvalde (1 oyun pikseli = 1 piksel, yumuşatma kapalı) parçaları tam sayı satırlarla kurar, döndürür (π/16 adımları, 12°'den küçük dönüş 0), `blit()` tam sayı konuma kopyalar. Dikey takladaki ters çevirme de küçük tuvalde.
+- Kontrol: chk.js 0 hata; sağa takla kareleri: gözler duruştaki boyda.
+
 ## v3.15 (4 Kasım 2026) · 16 adımlık takla
 - Belge `20_sistemler.md` (Dövüş › Takla görüntüsü), `00_giris.md`.
 - `<script id="v315roll">` (dosya sonu) `window.__plRoll16`'yı tanımlar; v113-roll'un drawPlayer sarmalayıcısı takla sırasında önce onu çağırır (varsa çizer ve döner). 8 ana poz `K` (a: dönüş, hy/by/ly, bs/ls: basma, lx: dizleri çekme, up: yerden kalkma) + aralarda yarı yol = 16 adım, `floor(k*16)`. Karakter `drawChibi(eqLook(), eqOpts())` ile 44×44 küçük tuvale çizilir; baş/gövde/bacak satırları ayrı ayrı kaydırılıp basılarak poz kurulur. Elde tutulanlar ve meşale çizilmez. Yatay: yan sprite döner (yön dir); dikey: dikey basma ile öne takla, baş aşağıyken öbür yüz (ön/arka). Bir önceki adım %35 iz.

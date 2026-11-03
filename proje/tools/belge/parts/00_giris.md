@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.15** ile birebir (4 Kasım 2026). Bu sürümde: takla 16 adımlık gerçek bir takla animasyonu oldu (8 ana poz + ara pozlar; süre ve zamanlama aynı).
+Sürüm: **Versiyon 3.16** ile birebir (4 Kasım 2026). Bu sürümde: yana taklada gözlerin büyüyüp pörtlemesi düzeldi (poz karakterin kendi piksel boyunda döndürülür).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

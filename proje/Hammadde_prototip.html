@@ -1380,7 +1380,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.15</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.16</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -18730,17 +18730,21 @@ function poseAt(step){const i=step>>1;const p=K[i];if(!(step&1))return p;const q
 function paint(s,fx,fy){const g=s.g;g.clearRect(0,0,W,H);
   const o=Object.assign(eqOpts(),{fx,fy,step:0,bob:0,arm:'down',noShadow:1});drawChibi(g,FX,FY,eqLook(),o)}
 // one pose, drawn at (x,y) = the feet on the screen; dir = +1/-1 the way it rolls
-function drawPose(s,P,x,y,dir,turn,al){const g=ctx,c=s.c;
-  const cx=x,cy=y-7-P.up;   // the figure turns about its middle
-  g.save();if(al<1)g.globalAlpha*=al;g.translate(Math.round(cx),Math.round(cy));
-  if(turn)g.rotate(dir*P.a*Math.PI*2);
+// v3.15b (Boğaç: "sağa sola gözleri pörtletiyor"): the pose is turned in the hero's own pixel size in a small canvas and then
+// copied whole, so every pixel stays one game pixel (turning the big screen picture stretched some rows: the eyes bulged);
+// near-upright turns (under 12°) are drawn straight.
+const RW=60,RC=30,RR=mk();RR.c.width=RW;RR.c.height=RW;RR.g.imageSmoothingEnabled=false;
+function build(s,P,dir,turn,fy){const g=RR.g,c=s.c;g.setTransform(1,0,0,1,0,0);g.clearRect(0,0,RW,RW);g.imageSmoothingEnabled=false;
+  g.save();g.translate(RC,RC);
+  if(turn){let an=dir*P.a*Math.PI*2;const m=((an%(Math.PI*2))+Math.PI*2)%(Math.PI*2);if(m<.21||m>Math.PI*2-.21)an=0;else an=Math.round(an/(Math.PI/16))*(Math.PI/16);if(an)g.rotate(an)}
+  if(fy!==1)g.scale(1,fy);
   // parts in the small canvas (rows above the feet): legs 0..2, body 2..7, head (and hat) 7..30
-  const part=(sy0,sy1,dx,dy,sx,sy)=>{const h=sy1-sy0;g.save();g.translate(dx,dy);g.scale(sx,sy);g.drawImage(c,0,FY-sy1+2,W,h,-FX,-h,W,h);g.restore()};
-  // legs (knees pulled in toward the body), body (squashed), head (sunk into the shoulders)
-  part(0,3,  -dir*P.lx*.6, 7-P.lx,           1+P.lx*.08, P.ls);
-  part(3,8,  0,            7-3*P.bs+P.by*.5,  1.05,       P.bs);
-  part(8,32, dir*P.lx*.3,  7-3-5*P.bs+P.hy*.6-(1-P.bs)*2, 1, 1);
-  g.restore()}
+  const part=(sy0,sy1,dx,dy,sx,sy)=>{const h=sy1-sy0,hh=Math.max(1,Math.round(h*sy)),ww=Math.round(W*sx);g.drawImage(c,0,FY-sy1+2,W,h,Math.round(dx-ww/2),Math.round(dy-hh),ww,hh)};
+  part(0,3,  -dir*P.lx*.6, 7-P.lx,                              1+P.lx*.08, P.ls);
+  part(3,8,  0,            7-3*P.bs+P.by*.5,                    1,          P.bs);
+  part(8,32, dir*P.lx*.3,  7-3-5*P.bs+P.hy*.6-(1-P.bs)*2,       1,          1);
+  g.restore();return RR.c}
+const blit=(x,y,P,al)=>{ctx.save();ctx.imageSmoothingEnabled=false;if(al<1)ctx.globalAlpha*=al;ctx.drawImage(RR.c,Math.round(x)-RC,Math.round(y-7-P.up)-RC);ctx.restore()};
 window.__plRoll16=function(){if(!dodge||!dodge.T)return false;const D=dodge;
   const k=Math.max(0,Math.min(.999,1-D.t/D.T)),step=Math.floor(k*16);
   const side=Math.abs(D.vx)>=Math.abs(D.vy)*.35,dir=side?(D.vx<0?-1:1):(D.vy<0?-1:1);
@@ -18748,12 +18752,11 @@ window.__plRoll16=function(){if(!dodge||!dodge.T)return false;const D=dodge;
   // shadow stays on the ground, smaller while the body is up
   {const P=poseAt(step);ctx.fillStyle='rgba(0,0,0,.28)';const w=12-P.up*2;ctx.fillRect(x-w/2|0,y+1,w,3)}
   const one=(st,al,ox,oy)=>{const P=poseAt(st);
-    if(side){paint(SPR.side,dir,0);drawPose(SPR.side,P,x+ox,y+oy,dir,true,al);return}
+    if(side){paint(SPR.side,dir,0);build(SPR.side,P,dir,true,1);blit(x+ox,y+oy,P,al);return}
     // up/down the screen: a forward somersault seen from the front/back: squash through flat, the other side shows when upside down
     const ang=P.a*Math.PI*2,c=Math.cos(ang),down=dir>0;
     const s=(c>=0)===down?SPR.front:SPR.back;paint(s,0,s===SPR.front?1:-1);
-    ctx.save();ctx.translate(x+ox,y-7-P.up+oy);ctx.scale(1,Math.max(.25,Math.abs(c))*(c<0?-1:1));ctx.translate(-(x+ox),-(y-7-P.up+oy));
-    drawPose(s,P,x+ox,y+oy,dir,false,al);ctx.restore()};
+    build(s,P,dir,false,Math.max(.25,Math.abs(c))*(c<0?-1:1));blit(x+ox,y+oy,P,al)};
   if(step>0)one(step-1,.35,-D.vx*.04,-D.vy*.04);
   one(step,1,0,0);
   if(Math.random()<.8)parts.push({x:player.x+(Math.random()-.5)*6,y:player.y,vx:-D.vx*.08+(Math.random()-.5)*10,vy:-6-Math.random()*6,life:.3,c:Math.random()<.5?'#c8b898':'#a89878'});
