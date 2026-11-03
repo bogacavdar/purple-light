@@ -18317,5 +18317,21 @@ document.addEventListener('click',e=>{try{if(!document.body.classList.contains('
   if((tz||lessonCard)&&te&&te.textContent.trim())cbody.insertAdjacentHTML('afterbegin',`<div class="qcard main"><div class="qh"><b>Ders</b></div><div class="qt">${esc(ts?ts.textContent:'')}</div><small>${te.innerHTML}</small></div>`)}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v307qlog: '+(e&&e.message||e))}catch(_){}}})();
 </script>
+<style id="v307-sktree">
+/* v3.07 (Boğaç: "telefonda skill ağacı üst üste biniyor"): on a phone the tree was ~250 px wide and ~220 px tall, so close nodes sat on each other;
+   now the tree is a fixed 520×440 board that scrolls up and down inside its frame */
+body.v50m .sktree{overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+body.v50m .sktree .skbox{height:440px;width:min(100%,520px)}
+</style>
+<script id="v307sktree">
+// v3.07: the phone tree opens at its bottom (trees grow upwards) and keeps its place when it is drawn again (after buying)
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+let pos=null,tab='';
+{const _rc=renderCraft;renderCraft=function(){const t0=cbody.querySelector('.sktree');if(t0)pos=t0.scrollTop;const r=_rc.apply(this,arguments);
+  try{const t=document.body.classList.contains('v50m')&&craftOpen&&mode==='skills'&&cbody.querySelector('.sktree');
+    if(t){const k=String(skTab);if(k!==tab||pos==null){tab=k;t.scrollTop=t.scrollHeight}else t.scrollTop=pos}else if(!(craftOpen&&mode==='skills')){pos=null;tab=''}}catch(e){}return r}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v307sktree: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 </body>
 </html>
