@@ -201,12 +201,12 @@ Kuzen cadıların kazanı **Zümrüt'ün kazanıyla aynı mantıkta** çalışı
 
 | Kademe | Silahçı | Zırhçı | Dövülen (o kademenin eşyaları; alttakiler de dövülür) |
 |---|---|---|---|
-| 0 · Çayır | Demirci Dursun | Zırhçı Durmuş | Silah/balta/kazma (v2.58: Ağ, Balık kapanı, Bola, Dokuma tezgâhı, Kemik zıpkın, Kürek, Meşale, Olta, Sapan, Sulama kabı, Tuzak, Tırmık, Tırpan, kazıyıcı, Çekiç taşı artık elle yapılır, bkz. Aletler · Nerede yapılır): Çam yayı, Boynuz kazma, Mızrak, Taş balta, Taş bıçak, Taş kazma, Taş kılıç, Tunç balta, Tunç gürz, Tunç kazma, Tunç kılıç, Tunç mızrak, Tunç topuz, Bakır balta, Bakır gürz, Bakır kazma, Bakır kılıç, Bakır mızrak, Bakır topuz, Tuzak, Tırmık, Tırpan, Çakmaktaşı balta, Çakmaktaşı bıçak, Çakmaktaşı kazma, Çakmaktaşı kazıyıcı, Çakmaktaşı mızrak, Çekiç taşı. Zırh: Bakır çizme, Bakır eldiven, Bakır miğfer, Bakır zırh, Ejder pulu eldiven, Fırtına tüyü başlık, Hurda çizme, Kristal miğfer, Mantar lifi eldiven, Meka çizme, Tunç eldiven, Tunç miğfer, Tunç zırh, Tunç çizme |
-| 1 · Orman | Silahçı Durdu | Zırhçı Duran | Alet/silah: Meşe yayı, Bileği taşı, Granit balta, Granit gürz, Granit kazma, Kemik iğne, Kirmen, Öğütme taşı. Zırh: Ceviz kabuğu miğfer, Meşe kabuk zırh |
-| 2 · Bataklık | Silahçı Ali | Zırhçı Veli | Alet/silah: Kızılağaç yayı, Demir balta, Demir gürz, Demir kazma, Demir kılıç, Demir mızrak, Demir topuz, Dişbudak yayı, Pişirme taşı, Timsah dişi kılıcı. Zırh: Demir eldiven, Demir miğfer, Demir zırh, Demir çizme, Timsah pulu zırh |
-| 3 · Kayalık Dağ | Silahçı Kaya | Zırhçı Kayhan | Alet/silah: Akçaağaç yayı, Gümüş kılıç, Kuvars balta, Kuvars bıçak, Kuvars kazma, Kuvars kazıyıcı, Kuvars mızrak, Pirit çakmağı, Porsuk yayı, Çelik balta, Çelik gürz, Çelik kazma, Çelik kılıç, Çelik mızrak, Çelik topuz. Zırh: Gümüş pullu zırh, Kartal tüyü miğfer, Çelik çizme, Çelik eldiven, Çelik miğfer, Çelik zırh |
-| 4 · Kül Diyarı | Silahçı Turan | Zırhçı Tufan | Alet/silah: Ejder kılıcı, Ejder gürzü, Ejder topuzu, Ejder mızrağı, Ejder yayı, Ejder baltası, Ejder kazması, Kızıl sedir yayı, Bazalt bıçak, Bazalt kazıyıcı, Ejder kılıcı, Obsidyen balta, Obsidyen bıçak, Obsidyen kazma, Obsidyen kazıyıcı, Obsidyen mızrak, Taş havan, Kara çelik balta, Kara çelik gürz, Kara çelik kazma, Kara çelik kılıç, Kara çelik mızrak, Kara çelik topuz. Zırh: Ejder miğferi, Ejder eldiveni, Ejder çizmesi, Ejder zırhı, Kara çelik çizme, Kara çelik eldiven, Kara çelik miğfer, Kara çelik zırh |
-| 5 · Mor Kristal Vadisi | Silahçı Kudret | Zırhçı Kuvvet | Alet/silah: Gece ağacı yayı, Ametist kılıcı, Mor kristal balta, Mor kristal gürz, Mor kristal kazma, Mor kristal kılıç, Mor kristal mızrak, Mor kristal topuz. Zırh: Işık pulu eldiven, Kristal ipek zırh, Mor kristal çizme, Mor kristal eldiven, Mor kristal miğfer, Mor kristal zırh |
+| 0 · Çayır | Demirci Dursun | Zırhçı Durmuş | Silah/balta/kazma (v2.58: Ağ, Balık kapanı, Bola, Dokuma tezgâhı, Kemik zıpkın, Kürek, Meşale, Olta, Sapan, Sulama kabı, Tuzak, Tırmık, Tırpan, kazıyıcı, Çekiç taşı artık elle yapılır, bkz. Aletler · Nerede yapılır): Çam yayı, Boynuz kazma, Mızrak, Taş balta, Taş bıçak, Taş kazma, Taş kılıç, Tunç balta, Tunç savaş çekici, Tunç kazma, Tunç kılıç, Tunç mızrak, Tunç topuz, Bakır balta, Bakır savaş çekici, Bakır kazma, Bakır kılıç, Bakır mızrak, Bakır topuz, Tuzak, Tırmık, Tırpan, Çakmaktaşı balta, Çakmaktaşı bıçak, Çakmaktaşı kazma, Çakmaktaşı kazıyıcı, Çakmaktaşı mızrak, Çekiç taşı. Zırh: Bakır çizme, Bakır eldiven, Bakır miğfer, Bakır zırh, Ejder pulu eldiven, Fırtına tüyü başlık, Hurda çizme, Kristal miğfer, Mantar lifi eldiven, Meka çizme, Tunç eldiven, Tunç miğfer, Tunç zırh, Tunç çizme |
+| 1 · Orman | Silahçı Durdu | Zırhçı Duran | Alet/silah: Meşe yayı, Bileği taşı, Granit balta, Granit savaş çekici, Granit kazma, Kemik iğne, Kirmen, Öğütme taşı. Zırh: Ceviz kabuğu miğfer, Meşe kabuk zırh |
+| 2 · Bataklık | Silahçı Ali | Zırhçı Veli | Alet/silah: Kızılağaç yayı, Demir balta, Demir savaş çekici, Demir kazma, Demir kılıç, Demir mızrak, Demir topuz, Dişbudak yayı, Pişirme taşı, Timsah dişi kılıcı. Zırh: Demir eldiven, Demir miğfer, Demir zırh, Demir çizme, Timsah pulu zırh |
+| 3 · Kayalık Dağ | Silahçı Kaya | Zırhçı Kayhan | Alet/silah: Akçaağaç yayı, Gümüş kılıç, Kuvars balta, Kuvars bıçak, Kuvars kazma, Kuvars kazıyıcı, Kuvars mızrak, Pirit çakmağı, Porsuk yayı, Çelik balta, Çelik savaş çekici, Çelik kazma, Çelik kılıç, Çelik mızrak, Çelik topuz. Zırh: Gümüş pullu zırh, Kartal tüyü miğfer, Çelik çizme, Çelik eldiven, Çelik miğfer, Çelik zırh |
+| 4 · Kül Diyarı | Silahçı Turan | Zırhçı Tufan | Alet/silah: Ejder kılıcı, Ejder savaş çekici, Ejder topuzu, Ejder mızrağı, Ejder yayı, Ejder baltası, Ejder kazması, Kızıl sedir yayı, Bazalt bıçak, Bazalt kazıyıcı, Ejder kılıcı, Obsidyen balta, Obsidyen bıçak, Obsidyen kazma, Obsidyen kazıyıcı, Obsidyen mızrak, Taş havan, Kara çelik balta, Kara çelik savaş çekici, Kara çelik kazma, Kara çelik kılıç, Kara çelik mızrak, Kara çelik topuz. Zırh: Ejder miğferi, Ejder eldiveni, Ejder çizmesi, Ejder zırhı, Kara çelik çizme, Kara çelik eldiven, Kara çelik miğfer, Kara çelik zırh |
+| 5 · Mor Kristal Vadisi | Silahçı Kudret | Zırhçı Kuvvet | Alet/silah: Gece ağacı yayı, Ametist kılıcı, Mor kristal balta, Mor kristal savaş çekici, Mor kristal kazma, Mor kristal kılıç, Mor kristal mızrak, Mor kristal topuz. Zırh: Işık pulu eldiven, Kristal ipek zırh, Mor kristal çizme, Mor kristal eldiven, Mor kristal miğfer, Mor kristal zırh |
 
 ### Çalışma yerleri (görsel fark)
 
@@ -227,7 +227,7 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 
 | Eşya | Tür | Değer | Malzemeler | Döven | Fiyat |
 |---|---|---|---|---|---|
-| Granit gürz | Kılıç (silah) | 27 hasar · 100 kullanım | 4 Granit, 1 Meşe sapı, 3 Yaban domuzu dişi, 1 Sinir kirişi | Silahçı Durdu (Orman) ve üstü | 112 |
+| Granit savaş çekici | Kılıç (silah) | 27 hasar · 100 kullanım | 4 Granit, 1 Meşe sapı, 3 Yaban domuzu dişi, 1 Sinir kirişi | Silahçı Durdu (Orman) ve üstü | 112 |
 | Meşe kabuk zırh | Zırh · Gövde | +30 savunma · direnç: kanama %15 | 6 Meşe odunu, 2 Deri parçası, 6 Kirpi dikeni, 2 Sinir | Zırhçı Duran (Orman) ve üstü | 543 |
 | Ceviz kabuğu miğfer | Zırh · Baş | +15 savunma | 6 Ceviz, 2 Meşe odunu, 1 Deri parçası, 2 İri diken, 2 Taş | Zırhçı Duran (Orman) ve üstü | 280 |
 | Timsah dişi kılıcı | Kılıç (silah) | 38 hasar · 140 kullanım | 4 Demir külçesi, 3 Timsah dişi, 1 Bataklık servisi sapı, 1 Deri parçası | Silahçı Ali (Bataklık) ve üstü | 1.011 |
@@ -252,7 +252,7 @@ Her kuzenin 3 görevi vardır; hepsi **kendi biyomunda** bulunan bir şeyi ister
 | Cadı Yakut | 3 | Engerek dili | Avla: 3 Engerek | 160 | 120 |
 | Silahçı Durdu | 1 | Granit yığını | Getir: 6 Granit, 4 Taş kömürü | 100 | 70 |
 | Silahçı Durdu | 2 | Domuz dişi | Getir: 4 Yaban domuzu dişi | 130 | 90 |
-| Silahçı Durdu | 3 | Gürzün ağırlığı | Döv(dür): Granit gürz | 180 | 140 |
+| Silahçı Durdu | 3 | Savaş çekicinin ağırlığı | Döv(dür): Granit savaş çekici | 180 | 140 |
 | Zırhçı Duran | 1 | Ceviz kabukları | Getir: 8 Ceviz | 90 | 60 |
 | Zırhçı Duran | 2 | Karaca derisi | Getir: 3 Karaca derisi, 6 Kirpi dikeni | 130 | 90 |
 | Zırhçı Duran | 3 | Kabuk zırh | Döv(dür): Meşe kabuk zırh | 180 | 140 |
@@ -404,7 +404,7 @@ Takvime bağlı gezginler; ne zaman geldikleri ve ne yaptıkları "Oyunun akış
 Son görev (Yeni bir gemi) bitince Barbaros'la konuş: hikâye sahnesi, ardından "Götür beni" → deniz yolculuğu (yaklaşık 14 sn) → **ACT 2**.
 
 
-> **v2.51 · usta setleri:** her biyomun silahçısı ve zırhçısı kendi biyomunun usta setini döver (Aletler · Bütün setler). Yukarıdaki listelere ek olarak: Orman — Granit kılıç, Granit topuz, Granit mızrak, Ihlamur yayı, Meşe kabuk eldiven ve çizme; Bataklık — Timsah dişi gürz, topuz, mızrak, balta, kazma, Söğüt yayı, Timsah miğfer, Timsah eldiven, Kamış çizme; Kayalık Dağ — Kuvars gürz ve topuz, Huş yayı, Gümüş eldiven ve çizme; Mor Kristal Vadisi — Ametist gürz ve topuz, Işık ağacı yayı, Ametist miğfer, Kristal ipek çizme, Obsidyen balta, kazma ve mızrak (artık Kudret döver); Çayır — Çakmaktaşı kılıç, gürz ve topuz, Kemik yay (Kemik eldiven ve çizme elle yapılır).
+> **v2.51 · usta setleri:** her biyomun silahçısı ve zırhçısı kendi biyomunun usta setini döver (Aletler · Bütün setler). Yukarıdaki listelere ek olarak: Orman — Granit kılıç, Granit topuz, Granit mızrak, Ihlamur yayı, Meşe kabuk eldiven ve çizme; Bataklık — Timsah dişi savaş çekici, topuz, mızrak, balta, kazma, Söğüt yayı, Timsah miğfer, Timsah eldiven, Kamış çizme; Kayalık Dağ — Kuvars savaş çekici ve topuz, Huş yayı, Gümüş eldiven ve çizme; Mor Kristal Vadisi — Ametist savaş çekici ve topuz, Işık ağacı yayı, Ametist miğfer, Kristal ipek çizme, Obsidyen balta, kazma ve mızrak (artık Kudret döver); Çayır — Çakmaktaşı kılıç, savaş çekici ve topuz, Kemik yay (Kemik eldiven ve çizme elle yapılır).
 
 ## Nazlı'nın kuzenleri (v2.71, Boğaç)
 

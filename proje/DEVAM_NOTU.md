@@ -1,3 +1,11 @@
+## v3.13 (3 Kasım 2026) · gürz → savaş çekici, öğretici Keskin taş takılması, hile araması "e"
+- Belge `85_aletler.md` (ad), gürz geçen bütün parts (`30_act1`, `40_act1_kisiler`, `80_tarifler`, `20_sistemler`, `90_esyalar`), `10_akis.md` (adım 7 notu), `20_sistemler.md` (Hileler), `00_giris.md`.
+- Ad: eşya adları `X gürz` → `X savaş çekici` (Ejder gürzü → Ejder savaş çekici); iç alanlar (`sl:'gürz'`, `mace:'gurz'`) aynı. `<script id="v312names">` `restore(d)`'yi sarar: kayıt JSON'unda eski adlar yeniye çevrilir (alt dize, etkili silah adlarını da kapsar).
+- Öğretici: `brew()`'da `tz<=5` iken Kaba meşale dışı tarif reddedilir. `<script id="v312tz">` 600 ms'de bir: Keskin taş biliniyorsa ve tz 6 (meşale inmiş) / 7 / 8 (elde Keskin taş) ise tz=9, yoksa 1 Keskin taş verilir, Zümrüt konuşur.
+- Hile araması: yakalama evresindeki KeyE (topla) işleyicisi INPUT/TEXTAREA/contenteditable hedefte çıkar.
+- Ayarlar: "Hile modu (test için)" → "Hile modu"; Tanrı modu açıklamasından "(mor ışık yine bayıltır)" kalktı.
+- Kontrol: chk.js 0 hata; tz=7 + Keskin taş biliniyor → tz 9, 1 Keskin taş, Zümrüt konuşur; #csrch'te "e" engellenmiyor; verlab 3.13.
+
 ## v3.12 (3 Kasım 2026) · kritik vuruş
 - Belge `20_sistemler.md` (Dövüş › Kritik vuruş), `92_yetenekler.md` (H6/K4/H8), `00_giris.md`.
 - `<script id="v311crit">`: `check()` her karenin başında ve `tickAnimals`'tan sonra çalışır; canın düştüğü ve `flash≥.12` olan (oyuncunun doğrudan vuruşu: temel, hamle, ok/atış/büyü, fırlatılan; gürzün yan hasarı .1, yanma/zehir .06 sayılmaz) canlıya kritik zarı atar; kritikte düşüşün %50'si (H8 %80) eklenir. `parried` canlıya `_pc=1` koyar → ilk vuruş zorunlu kritik, sersemlik vurmadan biterse silinir. `forName(n)`/`pct()`; `wInfo0`'a "kritik %x" satırı.

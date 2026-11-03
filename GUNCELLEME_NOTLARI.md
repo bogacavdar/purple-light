@@ -8,6 +8,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.13 · 3 Kasım 2026
+
+### Oynanış
+- **Gürzün adı artık savaş çekici:** Taş savaş çekici'nden Ametist savaş çekici'ne, Ejder savaş çekici dahil hepsi. Topuz aynı kaldı. Nasıl oynandıkları değişmedi. Eski kayıtlardaki gürzler yüklenince kendiliğinden yeni adını alır. Arenada da yeni adlarla.
+
+### Düzeltmeler
+- **Öğretici takılması (acil):** Zümrüt meşaleyi öğretirken kazanda Keskin taş da öğrenilebiliyordu; sonra Keskin taş adımında tarif ikinci kez açılmadığı için öğretici ilerlemiyordu.
+  - Meşale dersinde kazanda artık yalnızca Kaba meşale öğrenilebilir; başka tarif denenirse Zümrüt "Önce meşaleyi öğrenelim" der.
+  - Keskin taşı zaten biliyorsan (eski kayıtlarda da) Keskin taş adımlarının hepsi atlanır: Zümrüt sana bir Keskin taş verir ve seni doğrudan Nazlı'ya yollar.
+- **Hile paneli:** eşya arama kutusuna "e" yazılamıyordu (E tuşu toplama tuşu olarak yakalanıyordu). Artık yazarken oyunun tuşları çalışmaz.
+
+### Arayüz
+- Ayarlar'da "Hile modu (test için)" yazısı artık yalnızca "Hile modu".
+- Tanrı modunun açıklamasından mor ışıkla ilgili ipucu kaldırıldı.
+
+### Tasarım belgesi
+- Akış (öğretici adım 7), Sistemler › Hileler, Aletler (savaş çekici adı) ve adın geçtiği bütün bölümler.
+
 ## Versiyon 3.12 · 3 Kasım 2026
 
 ### Oynanış
