@@ -1,7 +1,10 @@
-## v3.09 (3 Kasım 2026) · Savuş düğmesi yuvarlak, canlı sesleri (bekleyen paket, yayında değil)
+## v3.09 (3 Kasım 2026) · dört yeni mağara, Act 1 canlı sesleri, Savuş yuvarlak
 - Belge `20_sistemler.md` (Telefon › Savuş düğmesi).
 - v110-parry `place()`: genişlik/yükseklik/yazı boyu (Atıl'ın büyük kenarı, kare, padding 0) artık `__plLayHas` dönüşünden önce verilir; kayıtlı düğme yerleşimi varken boy hiç verilmiyordu, düğme yazısına göre oval kalıyordu.
 - Canlı sesleri: `<script id="v309snd">` `tickAnimals`'ı sarar: önceki kareden bu yana `hp` düştü ve `flash>.08` ise `hurtS` (kare başına en çok 3); `wind` 0→>0 olunca `ATK[a.k]` (Çayır/Orman 11 canlı) ya da yoksa eski `sfx('growl')`; tick içindeki `growl` susturulur. `killAnimal` sarmalayıcısı `dieS`. Ses `audio.synth` ile anında üretilir, uzaklıkla azalır (340 px). Belge `30_act1.md` (Canlı sesleri).
+- Yeni mağaralar (v232 bloğu içinde): `NK2`/`BK2` (canlılar `art`+`tint`/`filt` ile akrabasının resminde; `window.__plCaveArt`), `RAW2` (bitki görünüşleriyle çizilen buluntular, `PLANTC`), `DROP2`, 20 yeni `addR` tarifi, `CAVES` c2–c5 (Sv 18/26/34/42). v230'a 4 kişi (`nail`, `tuncay`, `alev`, `nur`; `LK` yüzleri + `Q` görevleri). Cep (mağara içi alanı) artık kapılardan önce seçiliyor, kapılar cebe konmuyor (altı kapıyla c0'ın kapısı tek uygun cebi kapatıyordu, mağaralar 1 karoya düşüyordu); kapı yedek araması kendi biyomunda. Kapı ışığı `C.col.glow`'dan; mağara ışıkları `window.__plCaveGlow`; v232 `drawNode` artık `draw:'plant'` buluntuları `drawPlant` ile çiziyor (Mağara mantarı da içeride görünür oldu).
+- `<script id="v309cave">`: `drawAnimal` sarmalayıcısı akraba resmini çizer (boss/Reis yalnızca `a.base`'i değiştirir, adı ve çubuğu kendisinin kalır; `filt` canvas `filter` destekleyen tarayıcıda); `ATK`'ye Act 1'in bütün canlıları, iki eski mağaranın canlıları, yeni 12 canlı ve 4 boss eklendi.
+- Kontrol: dört yeni mağaraya girildi, canlılar ve boss doğdu, 5'er buluntu dizildi, ekran görüntüsü (c3, c5); sayfa hatası 0.
 - Kontrol: chk.js 0 hata.
 
 ## v3.08 (3 Kasım 2026) · Çayır canlıları sert vurur, yiyeceklerin etkileri farklı

@@ -1,6 +1,6 @@
 # ACT 1 · Mağaralar (v2.32)
 
-> **v2.32, Boğaç (30 Ekim 2026).** Her biyomda bir mağara olacak; ilk pakette **Çayır** ve **Orman** mağaraları var. Mağaraya meşalesiz ve seviyesi yetmeyen giremez. İçeride kendi canlıları, Reis'leri, toplanan malzemeleri ve en dipte bir yan görev kişisi vardır; o kişinin görevi mağaranın **boss'una** götürür.
+> **v2.32, Boğaç (30 Ekim 2026).** Her biyomda bir mağara olacak; ilk pakette **Çayır** ve **Orman** mağaraları var. **v3.09 (Boğaç, 3 Kasım 2026):** Bataklık, Kayalık Dağ, Kül Diyarı ve Mor Kristal Vadisi'ne de birer mağara eklendi; artık Act 1'in altı biyomunun her birinde bir mağara var. Yeni mağaraların her birinde 3 canlı türü, en dipte 1 yan görev kişisi ve bir boss, **4 yalnızca mağarada bulunan toplanabilir** ve Mağara mantarı, canlılardan düşen kendine özgü malzemeler ve az olan tarif türlerinden (Av ve hayvan, Müzik, Süs, Boya, Büyü; yemek yok) tarifler vardır. Mağaraya meşalesiz ve seviyesi yetmeyen giremez. İçeride kendi canlıları, Reis'leri, toplanan malzemeleri ve en dipte bir yan görev kişisi vardır; o kişinin görevi mağaranın **boss'una** götürür.
 
 ## Genel kurallar
 
@@ -111,6 +111,154 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 | Kök flütü | Müzik | 1 Kök yılanı derisi, 1 Kök reçinesi, 1 Dal | 95 |
 | Kök özü iksiri | Büyü | 1 Yaşlı Kök özü, 2 Kök mantarı, 1 Su | 680 |
 
+## Yeni mağaraların ortak kuralları (v3.09)
+
+- **Canlıların görünüşü:** yeni canlılar adadaki akrabalarının biçiminde, kendi renkleriyle çizilir (ör. Batak semenderi yeşil bir Lav kertenkelesi, Lav yılanı kızıl bir Engerek; Kaya yarasası, Kristal yarasa, Tavan örümceği, Ayna örümceği ve Kor böceği Yankı ve Kök mağaralarının canlılarının renk değiştirmiş halidir). Boss'lar Reis biçimindedir (mor parıltılı, iri, adı ve uzun can çubuğuyla).
+- **Toplanabilenler:** her yeni mağarada 4 toplanabilir yalnızca o mağarada çıkar, beşincisi Mağara mantarıdır. Parlayanlar (Parıltı yosunu, Gümüş filizi, Dağ kristali, Kükürt kristali, Kor taşı, Mor damar taşı, Işık sporu, Ayna taşı, Yıldız tozu) çevrelerini hafifçe aydınlatır. **v3.09 düzeltmesi:** Mağara mantarı mağaraların içinde artık görünüyor (önceden toplanabildiği halde çizilmiyordu).
+- **Sesler:** bütün mağara canlılarının ve boss'larının kendi saldırı sesi vardır (bkz. Act 1 › Canlı sesleri).
+- **Yan görev kalıbı:** dipteki kişi bir hikâye anlatır, mağarada toplanan bir malzemeden **4** tane ister, boss'u çağırır; boss yenilince kişiyle konuşulur. İkinci denemede boss doğrudan çağrılır.
+- **Mağaranın yeri (v3.09):** mağaraların içi için seçilen alan artık mağara girişlerinden önce seçilir; altı giriş bu alana konmaz (altı mağarayla bir giriş bu alanı kapatabiliyordu).
+
+## 3 · Batık Mağara (Bataklık · Sv 18)
+
+Bataklığın altında, tavanından su sızan, yerleri balçıklı bir mağara. Duvarlarda yeşil parlayan yosunlar, suyun içinde batmış kökler.
+
+| Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri |
+|---|---|---|---|---|---|---|---|
+| Mağara sülüğü | saldırgan | 300 | 30 | 40 | 60 | 2–3'lü sürü, ısırığı kanatır | Sülük 1–2 (%80) |
+| Balçık kurbağası | saldırgan | 420 | 34 | 38 | 75 | uzaktan atar (140 menzil, 2 atış), zehir | Balçık bezesi (%70) |
+| Batak semenderi | saldırgan | 520 | 40 | 50 | 85 | – | Semender derisi (%70) |
+
+**Boss · Çamur Ana** (dev kurbağa): can 3.600, hasar 75, hız 34, XP 1.500, zehirler; düşürdükleri: Çamur Ana gözü (her zaman), Balçık bezesi 3–5.
+
+**Toplanabilenler:** Parıltı yosunu (yeşil parlar), Siyah balçık, Batık kök, Sazlı inci, Mağara mantarı.
+
+**Yan görev · Sazcı Nail — "Çamur Ana"** (yaşlı bir sazcı): köyün kuyusu mağaranın altından beslenir; mor ışıktan beri Çamur Ana suyu balçığa çeviriyor. **4 Parıltı yosunu** ister, ondan ışıklı bir yem yapar; Çamur Ana yeme gelir, yen. Ödül: **700 sikke · 650 XP**. Sonra: "Kuyudan yine tatlı su çıkıyor."
+
+| Malzeme | Nereden | Fiyat | Tarif |
+|---|---|---|---|
+| Parıltı yosunu | toplanır | 36 | Yosun yeşili boya |
+| Siyah balçık | toplanır | 30 | Sülük yemi |
+| Batık kök | toplanır | 32 | Semender derisi tef, İnci kolye |
+| Sazlı inci | toplanır | 48 | İnci kolye, Çamur Ana muskası |
+| Sülük | Mağara sülüğü | 62 | Sülük yemi |
+| Balçık bezesi | Balçık kurbağası | 78 | – (satılır) |
+| Semender derisi | Batak semenderi | 86 | Semender derisi tef, Çamur Ana muskası |
+| Çamur Ana gözü | Çamur Ana | 900 | Çamur Ana muskası |
+
+| Tarif | Kategori | Malzemeler | Fiyat |
+|---|---|---|---|
+| Sülük yemi | Av ve hayvan | 2 Sülük, 1 Siyah balçık | 160 |
+| Semender derisi tef | Müzik | 2 Semender derisi, 2 Batık kök, 1 Dal | 270 |
+| İnci kolye | Süs | 3 Sazlı inci, 1 Batık kök | 230 |
+| Yosun yeşili boya | Boya | 2 Parıltı yosunu, 1 Su | 95 |
+| Çamur Ana muskası | Büyü | 1 Çamur Ana gözü, 2 Sazlı inci, 1 Semender derisi | 1.400 |
+
+## 4 · Rüzgâr Mağarası (Kayalık Dağ · Sv 26)
+
+Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlarda gümüş damarlar ve buz gibi kristaller, tavandan sarkan saçaklar.
+
+| Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri |
+|---|---|---|---|---|---|---|---|
+| Kaya yarasası | saldırgan | 520 | 50 | 80 | 110 | uçar, 2–4'lü sürü | Kaya yarasası kanadı (%80) |
+| Tavan örümceği | saldırgan | 700 | 58 | 56 | 130 | zehir | Tavan ağı 1–2 (%80) |
+| Mağara vaşağı | saldırgan | 1.000 | 66 | 84 | 160 | kanama | Gri vaşak postu (%70) |
+
+**Boss · Dağ Devi** (mor ışığın taşları birbirine yapıştırdığı dev; Mağara ayısı biçiminde): can 6.000, hasar 125, hız 36, XP 2.400; düşürdükleri: Dev yüreği (her zaman), Gümüş filizi 3–5.
+
+**Toplanabilenler:** Gümüş filizi (parlar), Dağ kristali (parlar), Rüzgâr taşı, Kar likeni, Mağara mantarı.
+
+**Yan görev · Dağcı Tuncay — "Dağ Devi"** (ipi kopmuş bir dağcı): Dağ Devi uyandı, tavandan kaya yağıyor, yol kapandı. **4 Gümüş filizi** ister, bir çan döver; çanın sesiyle dev çıkar, yen. Ödül: **1.000 sikke · 950 XP**.
+
+| Malzeme | Nereden | Fiyat | Tarif |
+|---|---|---|---|
+| Gümüş filizi | toplanır / Dağ Devi | 52 | Gümüş çan |
+| Dağ kristali | toplanır | 58 | Kristal kolye, Dev yüreği tılsımı |
+| Rüzgâr taşı | toplanır | 42 | Ağ kapanı |
+| Kar likeni | toplanır | 40 | Dev yüreği tılsımı |
+| Kaya yarasası kanadı | Kaya yarasası | 104 | Kanat yelpazesi |
+| Tavan ağı | Tavan örümceği | 112 | Gümüş çan, Ağ kapanı, Kristal kolye |
+| Gri vaşak postu | Mağara vaşağı | 150 | – (satılır) |
+| Dev yüreği | Dağ Devi | 1.300 | Dev yüreği tılsımı |
+
+| Tarif | Kategori | Malzemeler | Fiyat |
+|---|---|---|---|
+| Gümüş çan | Müzik | 3 Gümüş filizi, 1 Tavan ağı | 440 |
+| Ağ kapanı | Av ve hayvan | 3 Tavan ağı, 1 Rüzgâr taşı | 420 |
+| Kristal kolye | Süs | 2 Dağ kristali, 1 Tavan ağı | 360 |
+| Kanat yelpazesi | Süs | 3 Kaya yarasası kanadı, 2 Dal | 380 |
+| Dev yüreği tılsımı | Büyü | 1 Dev yüreği, 2 Dağ kristali, 2 Kar likeni | 2.000 |
+
+## 5 · Kor Mağarası (Kül Diyarı · Sv 34)
+
+Kül Diyarı'nın altında, yarıklarından kor ışığı sızan sıcak bir mağara. Duvarlarda sarı kükürt, yerde volkan camı parçaları.
+
+| Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri |
+|---|---|---|---|---|---|---|---|
+| Kor böceği | saldırgan | 1.300 | 92 | 34 | 220 | yanık | Kor kabuğu 1–2 (%80) |
+| Lav yılanı | saldırgan | 1.100 | 105 | 60 | 240 | yanık | Lav yılanı pulu (%70) |
+| Duman cini | saldırgan | 1.000 | 98 | 46 | 260 | uzaktan atar (190 menzil, 3 atış), yanık | Duman özü (%60) |
+
+**Boss · Kor Kral** (ocakların ateşini yutan dev kertenkele): can 8.500, hasar 165, hız 38, XP 3.400, yakar; düşürdükleri: Kor Kral tacı (her zaman), Kor kabuğu 3–5.
+
+**Toplanabilenler:** Kükürt kristali (parlar), Kor taşı (parlar), Kül mantarı, Volkan camı, Mağara mantarı.
+
+**Yan görev · Ocakçı Alev — "Kor Kral"** (bir demircinin kızı): mor ışık babasının yüz yıllık ocağının ateşini mağaraya çekti, Kor Kral onu yuttu. **4 Kükürt kristali** ister, bir duman yakar; Kor Kral dumana gelir, yen. Ödül: **1.400 sikke · 1.300 XP**.
+
+| Malzeme | Nereden | Fiyat | Tarif |
+|---|---|---|---|
+| Kükürt kristali | toplanır | 66 | Kükürt sarısı boya, Duman fişeği |
+| Kor taşı | toplanır | 60 | Kor zurnası, Kor tacı tılsımı |
+| Kül mantarı | toplanır | 54 | Duman fişeği |
+| Volkan camı | toplanır | 74 | Volkan camı muska, Kor tacı tılsımı |
+| Kor kabuğu | Kor böceği / Kor Kral | 160 | Kor zurnası |
+| Lav yılanı pulu | Lav yılanı | 178 | Volkan camı muska |
+| Duman özü | Duman cini | 196 | Duman fişeği |
+| Kor Kral tacı | Kor Kral | 1.800 | Kor tacı tılsımı |
+
+| Tarif | Kategori | Malzemeler | Fiyat |
+|---|---|---|---|
+| Kükürt sarısı boya | Boya | 2 Kükürt kristali, 1 Su | 210 |
+| Duman fişeği | Av ve hayvan | 1 Duman özü, 1 Kükürt kristali, 1 Kül mantarı | 420 |
+| Kor zurnası | Müzik | 2 Kor kabuğu, 1 Kor taşı | 500 |
+| Volkan camı muska | Süs | 2 Volkan camı, 1 Lav yılanı pulu | 540 |
+| Kor tacı tılsımı | Büyü | 1 Kor Kral tacı, 2 Kor taşı, 1 Volkan camı | 2.800 |
+
+## 6 · Ayna Mağarası (Mor Kristal Vadisi · Sv 42)
+
+Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara. Mor damarlar, yerde yıldız tozu gibi ışıltılar.
+
+| Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri |
+|---|---|---|---|---|---|---|---|
+| Kristal yarasa | saldırgan | 1.200 | 135 | 86 | 330 | uçar, 2–4'lü sürü | Kristal kanat (%80) |
+| Ayna örümceği | saldırgan | 1.500 | 160 | 58 | 380 | uzaktan atar (180 menzil, 3 atış), zehir | Ayna ipeği 1–2 (%80) |
+| Gölge semenderi | saldırgan | 2.000 | 185 | 64 | 420 | kanama | Gölge pulu (%70) |
+
+**Boss · Işık Yutan** (ışıkla beslenen, Kara ejder biçiminde dev bir gölge): can 12.000, hasar 250, hız 32, XP 5.000; düşürdükleri: Işık Yutan kalbi (her zaman), Mor damar taşı 3–5.
+
+**Toplanabilenler:** Mor damar taşı (parlar), Işık sporu (parlar), Ayna taşı (parlar), Yıldız tozu (parlar), Mağara mantarı.
+
+**Yan görev · Gökbilimci Nur — "Işık Yutan"** (mor ışığı inceleyen bir bilgin): mağara ışığı içiyor, dipteki Işık Yutan büyüdükçe vadinin kristalleri sönüyor. **4 Işık sporu** ister, fenerini doldurur; Işık Yutan ışığa gelir, yen. Ödül: **2.000 sikke · 1.900 XP**. Sonra Nur bir ipucu verir: mor ışık düştüğü yerde bir şey doğuruyor.
+
+| Malzeme | Nereden | Fiyat | Tarif |
+|---|---|---|---|
+| Mor damar taşı | toplanır / Işık Yutan | 86 | Mor damar boyası, Işık Yutan kalbi tılsımı |
+| Işık sporu | toplanır | 80 | Yıldız tozu yemi |
+| Ayna taşı | toplanır | 90 | Kristal zil, Işık Yutan kalbi tılsımı |
+| Yıldız tozu | toplanır | 96 | Yıldız tozu yemi |
+| Kristal kanat | Kristal yarasa | 230 | Kristal zil |
+| Ayna ipeği | Ayna örümceği | 250 | Gölge pulu muska |
+| Gölge pulu | Gölge semenderi | 290 | Gölge pulu muska |
+| Işık Yutan kalbi | Işık Yutan | 2.600 | Işık Yutan kalbi tılsımı |
+
+| Tarif | Kategori | Malzemeler | Fiyat |
+|---|---|---|---|
+| Kristal zil | Müzik | 2 Kristal kanat, 1 Ayna taşı | 700 |
+| Mor damar boyası | Boya | 2 Mor damar taşı, 1 Su | 300 |
+| Gölge pulu muska | Süs | 2 Gölge pulu, 1 Ayna ipeği | 860 |
+| Yıldız tozu yemi | Av ve hayvan | 2 Yıldız tozu, 1 Işık sporu | 520 |
+| Işık Yutan kalbi tılsımı | Büyü | 1 Işık Yutan kalbi, 2 Mor damar taşı, 2 Ayna taşı | 4.200 |
+
 ## Teknik not (mağaranın yeri)
 
-Mağaranın içi adanın üstünde, kişilerden, ateşlerden ve yerlerden en az ~360 piksel uzak, ulaşılabilir kuru bir alana kurulur (iki mağara aynı alanı paylaşır; aynı anda yalnızca birinin içinde olunur). İçerideyken o alanın ağaçları, toplanabilirleri, zemini ve havası gizlenir; altındaki su ya da ulaşılamayan yerler mağarada kaya duvar olur. Mağaradayken o alanın biyomu "keşfedilmiş" sayılmaz.
+Mağaranın içi adanın üstünde, kişilerden, ateşlerden ve yerlerden en az ~360 piksel uzak, ulaşılabilir kuru bir alana kurulur (bütün mağaralar aynı alanı paylaşır; aynı anda yalnızca birinin içinde olunur). İçerideyken o alanın ağaçları, toplanabilirleri, zemini ve havası gizlenir; altındaki su ya da ulaşılamayan yerler mağarada kaya duvar olur. Mağaradayken o alanın biyomu "keşfedilmiş" sayılmaz.

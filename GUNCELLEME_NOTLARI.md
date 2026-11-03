@@ -8,6 +8,27 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.09 · 3 Kasım 2026
+
+### Oynanış
+- **Dört yeni mağara:** her biyomun artık bir mağarası var.
+  - **Batık Mağara** (Bataklık · Sv 18): Mağara sülüğü, Balçık kurbağası, Batak semenderi; boss **Çamur Ana**; yan görev **Sazcı Nail**.
+  - **Rüzgâr Mağarası** (Kayalık Dağ · Sv 26): Kaya yarasası, Tavan örümceği, Mağara vaşağı; boss **Dağ Devi**; yan görev **Dağcı Tuncay**.
+  - **Kor Mağarası** (Kül Diyarı · Sv 34): Kor böceği, Lav yılanı, Duman cini; boss **Kor Kral**; yan görev **Ocakçı Alev**.
+  - **Ayna Mağarası** (Mor Kristal Vadisi · Sv 42): Kristal yarasa, Ayna örümceği, Gölge semenderi; boss **Işık Yutan**; yan görev **Gökbilimci Nur**.
+- Her yeni mağarada yalnızca orada çıkan **4 toplanabilir** (bazıları karanlıkta parlar) ve Mağara mantarı, canlılardan düşen kendine özgü malzemeler ve **5 yeni tarif** var. Tarifler az olan türlerden: Av ve hayvan, Müzik, Süs, Boya ve Büyü (yemek yok).
+
+### Ses
+- Vurduğun **her canlı** can kaybedince bir acı sesi, ölünce bir ölüm sesi çıkarıyor (küçükler ince, büyükler kalın).
+- **Act 1'in bütün canlıları** (altı biyom, altı mağara ve mağara boss'ları) saldırıya başlarken kendi sesini çıkarıyor: kurt hırlar, geyik böğürür, at kişner, kerevit kıskaç tıkırdatır, yılanlar tıslar, kristal canlılar çınlar, ateş canlıları çıtırdar…
+
+### Düzeltmeler
+- Telefonda **Savuş** düğmesi düğmelerin yeri değiştirildikten sonra oval görünüyordu; artık her zaman yuvarlak.
+- Mağara mantarı mağaraların içinde görünmüyordu (toplanabildiği halde); artık görünüyor.
+
+### Tasarım belgesi
+- Mağaralar: dört yeni mağara (canlılar, boss, yan görev, buluntular, malzemeler, tarifler); Act 1 › Canlı sesleri; Sistemler › Telefon › Savuş düğmesi.
+
 ## Versiyon 3.08 · 3 Kasım 2026
 
 ### Oynanış

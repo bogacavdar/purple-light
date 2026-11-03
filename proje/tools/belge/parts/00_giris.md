@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.08** ile birebir (3 Kasım 2026). Bu sürümde: Çayır canlıları (Kerevit, Porsuk, Yaban atı, Geyik) %50 daha sert vurur; toplanan yiyeceklerin her birinin kendi etkisi var (anında can, can yenilenmesi, hız, güç, gece gözü…). Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.09** ile birebir (3 Kasım 2026). Bu sürümde: Bataklık, Kayalık Dağ, Kül Diyarı ve Mor Kristal Vadisi'ne birer mağara (3 canlı, boss, yan görev kişisi, 5 toplanabilir, 5 tarif), Act 1'in bütün canlılarına vurulunca acı sesi ve kendi saldırı sesleri, Savuş düğmesi her zaman yuvarlak. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
