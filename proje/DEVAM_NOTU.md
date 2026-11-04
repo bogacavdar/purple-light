@@ -1,3 +1,12 @@
+## v3.20 (4 Kasım 2026) · oyun kolu, kehribar göz rengi, gizli başarım Kehribar gözlüm
+- Belge `20_sistemler.md` (yeni "Oyun kolu" bölümü, `# Temel sistemler` öncesi), `10_akis.md`, `94_basarimlar.md`, `00_giris.md`.
+- `<script id="v320pad">` (dosya sonu): kol, klavye olayı üretir (`KeyboardEvent` keydown/keyup, `document.body`'ye). Her eylem için **bağlı tuş** gönderilir (`store.get('hammadde.b5.keys.v1')[id].c`, yoksa varsayılan), v48-b5'teki `translate` onu oyunun varsayılan tuşuna çevirir; böylece tuş değiştirmek kolu bozmaz ve klavyenin yaptığı her şey (arena, deniz, balık, anılar) kolla da olur. Escape doğrudan gönderilir.
+- Döngü: kendi `requestAnimationFrame`'i, yalnızca kol bağlıyken (`gamepadconnected`; sayfa açılmadan bağlı kol için açılışta bir kez `getGamepads`). Kol yoksa döngü durur, basılı tuşlar bırakılır. Oyunun `frame` döngüsüne dokunulmadı, bu yüzden olcum.js ölçümü gerekmedi.
+- Pencere varken (`.ov`, `#dlg`, `#craft`, `#b5keys`, `[role=dialog]`; en yüksek z-index, görünür) yürüme tuşları bırakılır, çubuk/d-pad odak gezdirir (uzaysal en yakın; 380 ms sonra 120 ms tekrar), A odaklı düğmeye `click` (ad ekranında `#nmok`), odak yoksa etkileşim tuşu; B Escape.
+- Titreşim: `hurt` sarıldı, `hp` düşüşüne göre `vibrationActuator.playEffect('dual-rumble')`. Yardım: `#b5keys` panelinde `#padhelp` (`#b5kdesk`'in arkasına; `openKeys` başka eval kapsamında olduğundan sarılmadı, kol gelince/gidince yenilenir). `body.padmode :focus` mavi çerçeve.
+- Kehribar: önceki iki bekleyen commit (b90d2d3, 6e62374). Notlarda hitaptan söz edilmez (belge kuralı).
+- Kontrol: chk.js 0 hata (`?.` 1, `??` 7). Test yapılmadı (kolla deneme Boğaç'ta).
+
 ## v3.19 (4 Kasım 2026) · teklif gemide, anıların düzeltmeleri, keskin yazılar, Yıldız haritası silindi
 - Belge `20_sistemler.md` (İzler ve anılar), `10_akis.md`, `50_act2_giris.md`, `94_basarimlar.md`.
 - `v318story`: `nextA1` teklifi (`PROP`) atlar; `say` sarmalayıcısı "Götür beni" seçeneğinin `f`'sini sarar: `mems.has(PROP)` değilse önce `openMem(PROP)`, kapanınca asıl `f` (voyage). "ACT 1'in bütün anıları" bildirimi `allA1` geçişinde (hepsi tamam, kart ve kuyruk boş).

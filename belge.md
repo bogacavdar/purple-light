@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.16** ile birebir (4 Kasım 2026). Bu sürümde: yana taklada gözlerin büyüyüp pörtlemesi düzeldi (poz karakterin kendi piksel boyunda döndürülür, top hâlinde gözler kapalı); takla 0,46 saniyeye uzadı.
+Sürüm: **Versiyon 3.20** ile birebir (4 Kasım 2026). Bu sürümde: **oyun kolu** desteği (Xbox, PlayStation ve standart düzendeki kollar; Sistemler › Oyun kolu), karakter yaratmada yeni göz rengi **Kehribar** ve yeni bir gizli başarım.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -208,12 +208,13 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
      - **Bir daha görünmez:** oyun yüklendiğinde (tarayıcının "yüklendi" haberi), oyuncu "Yükledim, bir daha gösterme"ye bastığında ya da oyun bir kez uygulama olarak açıldığında bu tarayıcıda kalıcı olarak gizlenir (`localStorage` `pl.installed=1`; oyuncunun kendi seçimi olduğu için kalıcıdır). Oyun uygulama olarak açıkken de görünmez. Dosyadan (https olmadan) açılan kopyada düğme yoktur.
    - **Hakkında** penceresinde "Bir Boğaçhan Çavdar oyunu" yazısının altında **"Tasarım belgesine buradan ulaşabilirsiniz"** bağlantısı vardır (v2.09). Tıklanınca bu tasarım belgesi oyunun içinde, tam ekran bir pencerede açılır (aranabilir hali, `belge.html`); sağ üstteki **Kapat** ya da Esc ile Hakkında'ya dönülür. Belge yeni sekmede de açılabilir ("Yeni sekmede aç"). Belge oyunla birlikte cihaza kaydedilir: oyun uygulama olarak yüklendiyse ya da bir kez internetle açıldıysa, **internetsiz de** o sürümün belgesi açılır (her açılışta internet varsa en son hali alınır).
 2. **Karakter yaratma (v2.52, Boğaç):** iki adım, ikisinde de **isim yazılmaz** (isimler eskisi gibi Kemal'in sahnelerinde sorulur).
-   - **1. Karakterin:** cinsiyet, ten, saç (stil ve renk), sakal/bıyık, kıyafet ve renkleri, gözlük, şapka. Pencerenin başlığı "Karakterini yarat"; **Devam** ikinci adıma geçer.
+   - **1. Karakterin:** cinsiyet, ten, **göz rengi** (Koyu, Ela, Mavi, Yeşil, Gri, Mor ve v3.20'den beri **Kehribar**), saç (stil ve renk), sakal/bıyık, kıyafet ve renkleri, gözlük, şapka. Pencerenin başlığı "Karakterini yarat"; **Devam** ikinci adıma geçer.
    - **2. Sevdiğin kişi:** aynı seçenekler (cinsiyet dahil) bu kez kaybettiğin kişi için; başlık "Sevdiğin kişi". Varsayılanı karşı cinstir ama kadın ya da erkek, istediğin gibi seçilir; **Döndür** ve **Rastgele** burada da var. **Geri** birinci adıma döner (seçtiklerin durur), **Devam** zorluk seçimine geçer.
    - Giriş sahnesi, anılar, sisli adadaki gemi ve bütün çizimler bu iki karakterin seçilen görünüşüyle oynar.
    - **Sevdiğin kişinin özelliği geçen yazılar** onun seçilen görünüşünden kurulur: saç rengi (kahverengi, siyah, kızıl, sarı, beyaz, mor, yeşil, pembe) ve uzunluğu (Uzun, At kuyruğu, Örgü, Topuz, İki kuyruk → "uzun"; Küt → "küt"; diğerleri → "kısa"), ör. "uzun kızıl saçları", "kısa siyah saçlar". Toygar'ın anlattığı gece "kollarında bir kadın / bir adam vardı" sevdiğin kişinin cinsiyetine göre yazılır. Kemal'in sevdiğin kişinin adını sorduğu pencere, ad önerisini de onun cinsiyetine göre yapar.
    - **İzler cinsiyete uyar:** haritadaki izlerden kumsaldaki takı her zaman **Kelebekli kolye**dir (v3.18, Boğaç: anılardaki, ona senin aldığın kolye; eskiden kadınsa kolye, erkekse bileklik); çamurdaki izlerin yanında kadınsa **bir küpe**, erkekse **deri bir cüzdan** bulunur; Sisli Ada'da kadınsa **Kızıl bir kurdele** (saçındaki kurdele), erkekse **Bir kol saati** (akrebi gece yarısında durmuş). Defter sayfası, metal parça, yıldız haritası, mor kristal, fener ve tasma ikisi için de aynıdır.
    - **Anılarda roller (v3.18):** anılarda tanışan, yardım eden, "sevgilim olur musun" diye yazan, konserden sonra eve bırakan, yüzme öğreten, fotoğraf çeken, peçeteden gül yapan, tavlada yenilen, kardan kalp yapan ve kolyeyi alan **oynadığın karakter**dir; utangaç olan, sarılan, pasta yapan, biletleri saklayan, gülü beceremeyip saçak saçak bir peçete çıkaran, tavlada kazanıp "LOSER" fotoğrafı çeken, hamburgerini veren ve kaktüs yollayan **sevdiğin kişi**dir; cinsiyetler bunu değiştirmez (yalnızca teklif aşağıdaki kurala bağlı).
+   - **Kehribar gözlüm (v3.20, Boğaç; gizli):** sevdiğin kişinin göz rengini **Kehribar** seçersen bazı anılarda ona **"kehribar gözlüm"** diye seslenirsin (Boğaç: her anıya değil, bazılarına; ilk 5 ve son 5 anı hariç, aralarda); başka bir göz rengi seçenlerde bu hitap hiç yoktur. Oyunun hiçbir yerinde (seçim ekranı, ipucu, kitap, güncelleme notları) bunun izi verilmez; yalnızca anıların kendisinde duyulur. Her anıda değil, **yalnızca bazılarında**: ilk 5 ve son 5 anıda hiç geçmez, yalnızca aradaki anılarda (6–17) ve onların da dördünde geçer (hepsi senin sözlerin): Bir mesaj ("Kehribar gözlüm… Yarın yanıma sevgilim olarak gelir misin?"), Yağmurda şemsiye ("Bunu senin için aldım, kehribar gözlüm."), Kardan kalp ("Bu sana, kehribar gözlüm. Ama atmak yok!"), Şatonun önünde ("Dur, kıpırdama, kehribar gözlüm… şimdi gülümse!"). Gizli başarımı: **Kehribar gözlüm** (Başarımlar).
    - **Teklif anısı** ("Çay kıyısında söz", ACT 1'in son anısı, gece): biri erkek biri kadınsa **erkek** teklif eder (yüzük onun elindedir, diz çöker); iki erkek ya da iki kadınsa **oynadığın karakter** teklif eder.
    - **Eski kayıtlar:** sevdiğin kişinin cinsiyeti kayıtta yoksa eski kural sürer (erkek kahraman uzun kızıl saçlı bir kadını, kadın kahraman kısa kahverengi saçlı bir erkeği kaybeder).
 3. **Zorluk:** Normal ya da Zor. Zor modda tarifler kapalıdır ve kazanda "Dene" ile deneyerek bulunur (ayrıntı: "Zorluk").
@@ -344,6 +345,30 @@ ACT 2 bölümündeki "ACT 2'nin akışı"na bak: Yıldız (portallar) → Efsun 
 - **Telefonda sol menü kutusu (v2.22):** sol üstteki ☰ düğmesi menü kutusunu açar; **Envanter (çanta)** ve **Yemek** düğmeleri de bu kutunun içindedir (önceden ☰'ün yanında dışarıda dururlardı). Öğretici bu düğmelerden birini gösterdiğinde (parladığında) kutu bir kez kendiliğinden açılır ve ☰ parlar.
 - **Telefonda Vur düğmesi yürüdüğün yöne vurur (v2.22):** sol taraftaki görünmez joystick'le yürürken **Vur**'a basınca karakter tam yürüdüğün yöne vurur; **çapraz** yürüyorsan çapraza vurur (karakter 8 yönlü pozla o yana döner). Yakında bir canlı varsa yine ona kilitlenir, ama önce yürüdüğün yöndekini seçer. Dururken basınca son baktığın yöne vurur (eskisi gibi). **Yakında düşman varsa ona vurur (v2.33, Boğaç):** telefonda yakın dövüşte (yumruk, meşale, kılıç, mızrak, balta, kazma…) **Vur**'a basınca çevrende (150 piksel içinde) seni kovalayan ya da saldırgan bir canavar varsa, yürüdüğün ya da baktığın yön ne olursa olsun karakter **en yakın düşmana döner ve ona vurur** (tam açıyla, çaprazlar dahil). Birden çok düşman varsa en yakını, eşit yakınlıkta önündeki seçilir. Yakında düşman yoksa eskisi gibidir: 110 piksel içindeki zararsız bir hayvana (önündekine öncelik) ya da yürüdüğün/baktığın yöne vurur. Uzaktan silahlarda (asa, tüfek) hedef seçimi değişmedi (240 piksel).
 - Telefon yatay oynanır; dikey tutulunca "Telefonunu yan çevir" ekranı çıkar ("Yine de dikey oyna" ile geçilebilir).
+
+## Oyun kolu (v3.20, Boğaç)
+
+Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth kol; tarayıcının standart kol düzeni). Kol bağlanınca bir bildirim çıkar ve **Ayarlar → Kontroller** penceresinde kol düzeni yazar. Kol, oyuna klavyenin **varsayılan** tuşlarına basıyormuş gibi davranır; bu yüzden tuşları değiştirmek kolu etkilemez ve klavyeyle yapılabilen her şey kolla da yapılır (arena, deniz ekranı, balık tutma, anılar dahil).
+
+| Kol | Oyunda | Klavyedeki karşılığı |
+|---|---|---|
+| Sol çubuk | Yürü (8 yön) | WASD |
+| L3 (sol çubuğa bas) | Koş: basınca çubuk bırakılana kadar koşar | Shift |
+| A (PlayStation: ✕) | Topla / konuş / kullan | F |
+| X (PS: □) ya da RT (R2) | Vur | Q |
+| B (PS: ○) | Atıl / takla | Boşluk |
+| Y (PS: △) | En uygun yemeği ye (basılı tut: yemek listesi) | X |
+| LT (L2), basılı tut | Savuştur / gard | E |
+| R3 (sağ çubuğa bas) | Ulti | R |
+| LB / RB (L1 / R1) | Alet kemerinde önceki / sonraki yuva | fare tekerleği |
+| Yön tuşları | Yukarı El yapımı · aşağı Envanter · sol Tarif kitabı · sağ Görevler | Tab · I · K · G |
+| Select / Back (PS: Paylaş) | Büyük harita | M |
+| Start / Menu (PS: Options) | Duraklat | Esc |
+
+- **Pencerelerde ve menülerde** (ana menü, karakter yaratma, konuşma, envanter, ayarlar…) sol çubuk ya da yön tuşları seçili düğmeyi o yöndeki düğmeye taşır (basılı tutunca tekrarlar); seçili düğme mavi bir çerçeveyle görünür. **A** seçili düğmeye basar (seçili düğme yoksa F'ye basılmış gibi ilerletir: anılar, balık tutma), **B** Esc gibi kapatır/geri döner, kaydırıcıda sol/sağ değeri değiştirir. Karakter adını yazarken **A** önerilen adı kabul eder.
+- Kol klavye ya da fare kullanılınca susmaz; ikisi birlikte kullanılabilir. Kol ayrılınca basılı kalan tuşlar bırakılır.
+- **Titreşim:** hasar alınca kol titrer (alınan hasarla güçlenir); titreşimi desteklemeyen kolda bir şey olmaz.
+- Kol yalnızca bağlıyken okunur: kol yokken oyuna hiçbir yük eklenmez.
 
 # Temel sistemler
 
@@ -6143,7 +6168,7 @@ Direnç yetenekleri eşya dirençleriyle; Dirençli beden ayrı yeteneklerin yer
 
 # Başarımlar
 
-41 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
+42 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
 
 | Başarım | Nasıl kazanılır | Not |
 |---|---|---|
@@ -6187,6 +6212,7 @@ Direnç yetenekleri eşya dirençleriyle; Dirençli beden ayrı yeteneklerin yer
 | Avcıların avcısı | İki adadaki her canlı türünden en az birini öldür. | – |
 | Ganimet avcısı | Canlılardan düşebilecek her eşyayı en az bir kez elde et. | – |
 | Oyunlardaki gibi 🔒 | Ana menüde “cheat” yazdın: hile modu açıldı. | Ana menüde klavyeyle "cheat" yaz. Telefonda Ayarlar başlığına art arda 3 kez dokun (başarımın metni yanlışlıkla "ekrana 3 kez dokundun" diyor). |
+| Kehribar gözlüm 🔒 | Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1'i tamamla. | v3.20 (Boğaç): karakter yaratmada sevdiğin kişinin göz rengi **Kehribar** olmalı; ACT 1, Barbaros'un gemisiyle ikinci adaya geçince (ya da ikinci adadayken) tamamlanmış sayılır. Kazanılana kadar listede "???" ve "Gizli başarım" görünür, hiçbir ipucu verilmez. **Platin'e sayılmaz** (belli bir karakter seçimini istediği için). |
 | Platin | Bütün başarımları kazan. | **Şu an kazanılamaz:** "Yalnız dönüş" kazanılamadığı için. |
 
 

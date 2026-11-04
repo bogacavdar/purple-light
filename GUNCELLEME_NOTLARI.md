@@ -8,6 +8,32 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.20 · 4 Kasım 2026
+
+### Oynanış
+- **Oyun kolu ile oynanır:** Xbox, PlayStation ve standart düzendeki kolların çoğu (kablolu ya da Bluetooth) bilgisayarda ve telefonda tanınır. Kolu bağlayıp bir tuşuna basınca "Oyun kolu bağlandı" yazar.
+  - **Sol çubuk** yürü (sekiz yön) · **L3** (çubuğa bas) koş, çubuğu bırakana kadar
+  - **A / ✕** topla, konuş, kullan · **X / □** ya da **RT** vur · **B / ○** atıl (takla) · **Y / △** ye (basılı tut: yiyecek listesi)
+  - **LT** basılı tut: savuştur / gard · **R3** ulti · **LB / RB** alet kemerinde önceki / sonraki
+  - **Yön tuşları:** yukarı El yapımı, aşağı Envanter, sol Tarif kitabı, sağ Görevler · **Select** büyük harita · **Start** duraklat
+  - **Pencerelerde ve menülerde** çubuk ya da yön tuşları mavi çerçeveli bir seçimi gezdirir (basılı tutunca tekrar eder), **A** seçer, **B** geri (Esc). Kaydırma çubuklarında sağ/sol değeri değiştirir. Ad ekranında A önerilen adı kabul eder. Anılarda ve balıkta A, klavyedeki etkileşim tuşu gibi çalışır.
+  - Hasar alınca kol, aldığın hasar kadar titrer (titreşimi destekleyen kollarda).
+  - Klavye, fare ve dokunmatik düğmeler kolla birlikte çalışmaya devam eder; kol çıkarılınca basılı kalan tuş olmaz.
+  - Arena ve deniz yolculuğu da kolla oynanır (kol klavyenin tuşlarına basar).
+- **Yeni göz rengi:** karakter yaratmada **Kehribar**.
+- **Yeni bir gizli başarım** eklendi (başarım sayısı 42).
+
+### Arayüz
+- **Ayarlar → Kontroller**'de kolun bütün düzeni yazılı; kol bağlıysa "(bağlı)" görünür.
+
+### Tasarım belgesi
+- Yeni bölüm **Sistemler › Oyun kolu** (tuş tablosu ve menü kuralları). Karakter yaratmaya Kehribar göz rengi, Başarımlar'a yeni gizli başarım işlendi; giriş sürümü 3.20.
+
+### Proje
+- Kol yalnızca bağlıyken okunur; kol yokken oyuna ek yük yoktur (oyunun kare döngüsüne dokunulmadı).
+
+---
+
 ## Versiyon 3.19 · 4 Kasım 2026
 
 ### Oynanış

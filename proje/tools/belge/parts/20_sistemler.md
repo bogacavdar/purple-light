@@ -33,6 +33,30 @@
 - **Telefonda Vur düğmesi yürüdüğün yöne vurur (v2.22):** sol taraftaki görünmez joystick'le yürürken **Vur**'a basınca karakter tam yürüdüğün yöne vurur; **çapraz** yürüyorsan çapraza vurur (karakter 8 yönlü pozla o yana döner). Yakında bir canlı varsa yine ona kilitlenir, ama önce yürüdüğün yöndekini seçer. Dururken basınca son baktığın yöne vurur (eskisi gibi). **Yakında düşman varsa ona vurur (v2.33, Boğaç):** telefonda yakın dövüşte (yumruk, meşale, kılıç, mızrak, balta, kazma…) **Vur**'a basınca çevrende (150 piksel içinde) seni kovalayan ya da saldırgan bir canavar varsa, yürüdüğün ya da baktığın yön ne olursa olsun karakter **en yakın düşmana döner ve ona vurur** (tam açıyla, çaprazlar dahil). Birden çok düşman varsa en yakını, eşit yakınlıkta önündeki seçilir. Yakında düşman yoksa eskisi gibidir: 110 piksel içindeki zararsız bir hayvana (önündekine öncelik) ya da yürüdüğün/baktığın yöne vurur. Uzaktan silahlarda (asa, tüfek) hedef seçimi değişmedi (240 piksel).
 - Telefon yatay oynanır; dikey tutulunca "Telefonunu yan çevir" ekranı çıkar ("Yine de dikey oyna" ile geçilebilir).
 
+## Oyun kolu (v3.20, Boğaç)
+
+Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth kol; tarayıcının standart kol düzeni). Kol bağlanınca bir bildirim çıkar ve **Ayarlar → Kontroller** penceresinde kol düzeni yazar. Kol, oyuna klavyenin **varsayılan** tuşlarına basıyormuş gibi davranır; bu yüzden tuşları değiştirmek kolu etkilemez ve klavyeyle yapılabilen her şey kolla da yapılır (arena, deniz ekranı, balık tutma, anılar dahil).
+
+| Kol | Oyunda | Klavyedeki karşılığı |
+|---|---|---|
+| Sol çubuk | Yürü (8 yön) | WASD |
+| L3 (sol çubuğa bas) | Koş: basınca çubuk bırakılana kadar koşar | Shift |
+| A (PlayStation: ✕) | Topla / konuş / kullan | F |
+| X (PS: □) ya da RT (R2) | Vur | Q |
+| B (PS: ○) | Atıl / takla | Boşluk |
+| Y (PS: △) | En uygun yemeği ye (basılı tut: yemek listesi) | X |
+| LT (L2), basılı tut | Savuştur / gard | E |
+| R3 (sağ çubuğa bas) | Ulti | R |
+| LB / RB (L1 / R1) | Alet kemerinde önceki / sonraki yuva | fare tekerleği |
+| Yön tuşları | Yukarı El yapımı · aşağı Envanter · sol Tarif kitabı · sağ Görevler | Tab · I · K · G |
+| Select / Back (PS: Paylaş) | Büyük harita | M |
+| Start / Menu (PS: Options) | Duraklat | Esc |
+
+- **Pencerelerde ve menülerde** (ana menü, karakter yaratma, konuşma, envanter, ayarlar…) sol çubuk ya da yön tuşları seçili düğmeyi o yöndeki düğmeye taşır (basılı tutunca tekrarlar); seçili düğme mavi bir çerçeveyle görünür. **A** seçili düğmeye basar (seçili düğme yoksa F'ye basılmış gibi ilerletir: anılar, balık tutma), **B** Esc gibi kapatır/geri döner, kaydırıcıda sol/sağ değeri değiştirir. Karakter adını yazarken **A** önerilen adı kabul eder.
+- Kol klavye ya da fare kullanılınca susmaz; ikisi birlikte kullanılabilir. Kol ayrılınca basılı kalan tuşlar bırakılır.
+- **Titreşim:** hasar alınca kol titrer (alınan hasarla güçlenir); titreşimi desteklemeyen kolda bir şey olmaz.
+- Kol yalnızca bağlıyken okunur: kol yokken oyuna hiçbir yük eklenmez.
+
 # Temel sistemler
 
 ## Can, tokluk, enerji

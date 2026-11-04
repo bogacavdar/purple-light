@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.16** ile birebir (4 Kasım 2026). Bu sürümde: yana taklada gözlerin büyüyüp pörtlemesi düzeldi (poz karakterin kendi piksel boyunda döndürülür, top hâlinde gözler kapalı); takla 0,46 saniyeye uzadı.
+Sürüm: **Versiyon 3.20** ile birebir (4 Kasım 2026). Bu sürümde: **oyun kolu** desteği (Xbox, PlayStation ve standart düzendeki kollar; Sistemler › Oyun kolu), karakter yaratmada yeni göz rengi **Kehribar** ve yeni bir gizli başarım.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
