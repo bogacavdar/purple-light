@@ -1,3 +1,12 @@
+## v3.27 (5 Kasım 2026) · Bilgisayara yükle yalnızca tek tıkla; nasıl yüklenir pencereleri silindi
+- Boğaç: "oyuncuya ona bas buna bas denmez, buton olur basar ve yükler bitti". `v254inst` yeniden yazıldı:
+  - Düğme yalnızca `beforeinstallprompt` gelince görünür; basınca `prompt()`.
+  - `howto()`, `#pcinst-ov` penceresi ve CSS'i silindi; "Yükledim, bir daha gösterme" de onunla gitti. Kurulunca `appinstalled` ya da `standalone` ile gizlenir.
+- `v320pad` kol yardımındaki Firefox notu silindi.
+- Belge: `10_akis.md`, `20_sistemler.md`, `00_giris.md`.
+- Telefondaki "Uygulama olarak indir" (`v253inst`, iPhone'da Ana Ekrana Ekle adımları) değişmedi.
+- Kontrol: chk.js 0 hata.
+
 ## v3.26 (5 Kasım 2026) · Firefox'tan yükleme, kol kopması notu, Godot planı
 - Belge: yeni `parts/99_godot.md`, `10_akis.md` (Bilgisayara yükle, Firefox), `20_sistemler.md` (Oyun kolu › kol kopuyorsa), `00_giris.md`.
 - `v254inst` `howto()`: Windows'ta Firefox (`ff && /Windows/`) için web uygulaması adımları; diğer Firefox'larda eski metin.

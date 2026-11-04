@@ -1380,7 +1380,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.26</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.27</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
 <div id="instov" class="ov" hidden role="dialog" aria-label="Uygulama olarak indir"><div class="tcard small rncard"><h2 class="rnh">Uygulama olarak indir</h2><div class="rnbody" id="inst-body"></div><div class="tmenu"><button class="mb" id="inst-close" type="button">Tamam</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.26 · 5 Kasım 2026</h2><h3>Arayüz</h3><ul><li><strong>Firefox'tan bilgisayara yükleme:</strong> Windows'ta Firefox 143 ve sonrası oyunu uygulama olarak yükleyebiliyor. Ana menüdeki "Bilgisayara yükle" Firefox'ta artık "yükleyemiyor" demiyor, adımları gösteriyor: adres çubuğundaki web uygulaması düğmesi, görev çubuğu ve Başlat menüsündeki "Firefox Web Apps". Ayrıca Chrome'dan yüklenmiş uygulamanın hep Chrome'la açıldığını ve kayıtların nasıl taşınacağını yazıyor. Mac ve Linux'taki Firefox'ta yükleme hâlâ yok.</li><li><strong>Kol yardımı:</strong> Ayarlar → Kontroller'deki kol yardımına bir not eklendi. Xbox kolu kablosuz aparatla bağlıyken Chrome ya da Edge'de (masaüstü uygulamasında da) kopuyorsa: oyunu Firefox'ta aç (Windows'ta oradan uygulama olarak da yüklenir) ya da kolu kabloyla bağla. Bu kopma oyundan değil, aparat ile Chrome/Edge arasındaki uyumsuzluktan.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.27 · 5 Kasım 2026</h2><h3>Arayüz</h3><ul><li><strong>Bilgisayara yükle tek tıkla:</strong> düğme yalnızca oyunun tek basışta yüklenebildiği tarayıcılarda (Chrome, Edge) görünür; basınca yükleme penceresi açılır, "Yükle" deyince oyun masaüstüne gelir. Yüklenemeyen tarayıcılarda (Firefox, Mac Safari) düğme hiç çıkmaz. Adım adım nasıl yüklenir anlatan pencereler kaldırıldı.</li><li>Kol yardımındaki "Firefox'ta aç ya da kabloyla bağla" notu kaldırıldı.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -17776,14 +17776,12 @@ try{const it=SIS_IT.find(x=>x.id==='kurdele');if(it){Object.defineProperty(it,'n
 #t-pcinst[hidden]{display:none!important}
 #t-pcinst small{font-size:12px;font-weight:400;opacity:.8;letter-spacing:.02em}
 body.pl-pc #t-install{display:none!important}
-#pcinst-ov .tcard.rncard{max-width:min(560px,calc(100vw - 32px))!important;width:min(560px,calc(100vw - 32px))}
-#pcinst-body ol{margin:6px 0 0;padding-left:22px}#pcinst-body li{margin:6px 0}#pcinst-body p{margin:0 0 6px}
 </style>
-<div id="pcinst-ov" class="ov" hidden role="dialog" aria-label="Bilgisayara yükle"><div class="tcard small rncard"><h2 class="rnh">Bilgisayara yükle</h2><div class="rnbody" id="pcinst-body"></div><div class="tmenu row"><button class="mb" id="pcinst-done" type="button">Yükledim, bir daha gösterme</button><button class="mb ghost" id="pcinst-close" type="button">Kapat</button></div></div></div>
 <script id="v254inst">
 // v2.54 (Boğaç): on a computer the main menu gets a big "Bilgisayara yükle" button right under "Yükle".
-// Chrome/Edge: opens the browser's install prompt. Otherwise: a short how-to window.
-// Once installed (appinstalled), confirmed by the player, or opened as an app, it never shows again in this browser (pl.installed=1).
+// v3.27 (Boğaç: "oyuncuya ona bas buna bas denmez; buton olur basar ve yükler, bitti"): the button shows only where the browser
+// can install in one press (Chrome/Edge: beforeinstallprompt); a press opens the browser's own install window. No how-to windows.
+// Hidden once installed (appinstalled) or when opened as an app (pl.installed=1).
 (function(){
   var KEY='pl.installed',ua=navigator.userAgent||'',ev=null;
   var get=function(){try{return localStorage.getItem(KEY)==='1'}catch(e){return false}};
@@ -17793,32 +17791,16 @@ body.pl-pc #t-install{display:none!important}
   if(!pc)return;
   document.body.classList.add('pl-pc');
   if(standalone())set();
-  addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e});
   var tl=document.getElementById('t-load');if(!tl||!tl.parentNode)return;
-  var b=document.createElement('button');b.className='mb';b.id='t-pcinst';b.type='button';
+  var b=document.createElement('button');b.className='mb';b.id='t-pcinst';b.type='button';b.hidden=true;
   b.innerHTML='<span>⬇ Bilgisayara yükle</span><small>Masaüstünden uygulama gibi aç</small>';
   tl.parentNode.insertBefore(b,tl.nextSibling);
-  var o=document.getElementById('pcinst-ov'),body=document.getElementById('pcinst-body'),dn=document.getElementById('pcinst-done'),cl=document.getElementById('pcinst-close');
-  function show(){b.hidden=get()||standalone()||location.protocol!=='https:'}
-  function done(){set();show();if(o)o.hidden=true}
-  addEventListener('appinstalled',function(){ev=null;done();try{if(typeof toast==='function')toast('Purple Light bilgisayara yüklendi. Masaüstündeki simgeden açabilirsin.')}catch(_){}});
-  function howto(){
-    var edge=/Edg\//.test(ua),ff=/Firefox\//.test(ua),chrome=/Chrome\//.test(ua)&&!edge&&!/OPR\//.test(ua);
-    var saf=/Macintosh/.test(ua)&&/Safari\//.test(ua)&&!/Chrome|Chromium|Edg|OPR|Firefox/.test(ua);
-    var h;
-    if(ff&&/Windows/.test(ua))h='<p>Windows\'ta Firefox oyunu uygulama olarak yükleyebilir (Firefox 143 ve sonrası):</p><ol><li>Adres çubuğundaki <b>web uygulaması</b> düğmesine tıkla (yoksa önce Firefox\'u güncelle: ☰ → Yardım → Firefox hakkında).</li><li>Oyun görev çubuğuna eklenir; sabitlemek istiyor musun diye sorarsa <b>Evet</b> de. Başlat menüsünde <b>Firefox Web Apps</b> klasöründe de bulunur.</li></ol><p>Daha önce Chrome\'dan yüklediysen o uygulama hep Chrome\'la açılır: onu kaldırıp buradan yükle. Kayıtlar tarayıcıya bağlıdır; Chrome\'daki kayıtlarını taşımak için orada Ayarlar → <b>Kayıtları dışa aktar</b>, burada <b>içe aktar</b>.</p>';
-    else if(ff)h='<p>Firefox oyunu bilgisayara uygulama olarak yükleyemiyor.</p><ol><li>Oyunu <b>Chrome</b> ya da <b>Edge</b>\'de aç: <b>bogacavdar.github.io/purple-light</b></li><li>Ana menüdeki <b>Bilgisayara yükle</b> düğmesine bas, açılan pencerede <b>Yükle</b> de.</li></ol><p>Kayıtların bu tarayıcıda; yanında götürmek için Ayarlar → <b>Kayıtları dışa aktar</b>.</p>';
-    else if(saf)h='<p>Mac\'te Safari\'de:</p><ol><li>Üstteki menüden <b>Dosya</b> → <b>Dock\'a Ekle</b>\'yi seç.</li><li><b>Ekle</b>\'ye bas.</li><li>Dock\'taki <b>Purple Light</b> simgesinden aç: kendi penceresinde, internetsiz de açılır.</li></ol>';
-    else if(edge)h='<p>Edge\'de:</p><ol><li>Sağ üstteki <b>…</b> menüsünü aç → <b>Uygulamalar</b> → <b>Bu siteyi uygulama olarak yükle</b>.</li><li><b>Yükle</b>\'ye bas; "Masaüstü kısayolu oluştur" kutusunu işaretle.</li><li>Masaüstündeki <b>Purple Light</b> simgesinden aç.</li></ol>';
-    else h='<p>'+(chrome?'Chrome':'Tarayıcın')+' yükleme penceresini henüz açmadı. Elle yüklemek için:</p><ol><li>Adres çubuğunun sağındaki <b>yükle simgesine</b> (ekran ve aşağı ok) tıkla, ya da sağ üstteki <b>⋮</b> menüsü → <b>Yayınla, kaydet ve paylaş</b> → <b>Sayfayı uygulama olarak yükle</b>.</li><li><b>Yükle</b>\'ye bas.</li><li>Masaüstündeki / Başlat menüsündeki <b>Purple Light</b> simgesinden aç: kendi penceresinde, internetsiz de açılır.</li></ol><p>Menüde yükleme yerine <b>"Purple Light\'ı aç"</b> yazıyorsa oyun zaten yüklü: aşağıdan "Yükledim" de.</p>';
-    body.innerHTML=h;o.hidden=false;try{cl.focus()}catch(_){}}
-  b.addEventListener('click',function(){
-    if(ev&&navigator.userActivation&&!navigator.userActivation.isActive){try{if(typeof toast==='function')toast('Yükleme penceresini tarayıcı yalnızca fareyle tıklayınca ya da dokununca açar: bu düğmeye fareyle bas.',true)}catch(_){}return}   // v3.23: a gamepad press is no gesture for the browser
-    if(ev){var e=ev;ev=null;try{Promise.resolve(e.prompt()).catch(function(){ev=e});(e.userChoice||Promise.resolve({})).then(function(r){if(r&&r.outcome==='accepted')done();else ev=e}).catch(function(){})}catch(_){howto()}return}
-    howto()});
-  dn.addEventListener('click',done);
-  cl.addEventListener('click',function(){o.hidden=true;try{b.focus()}catch(_){}});
-  addEventListener('keydown',function(e){if(!o.hidden&&e.key==='Escape'){o.hidden=true;e.preventDefault();e.stopPropagation()}},true);
+  function show(){b.hidden=!ev||get()||standalone()}
+  addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e;show()});
+  addEventListener('appinstalled',function(){ev=null;set();show();try{if(typeof toast==='function')toast('Purple Light bilgisayara yüklendi. Masaüstündeki simgeden açabilirsin.')}catch(_){}});
+  b.addEventListener('click',function(){if(!ev)return;
+    if(navigator.userActivation&&!navigator.userActivation.isActive){try{if(typeof toast==='function')toast('Yükleme penceresini tarayıcı yalnızca fareyle tıklayınca ya da dokununca açar: bu düğmeye fareyle bas.',true)}catch(_){}return}   // v3.23: a gamepad press is no gesture for the browser
+    var e=ev;ev=null;try{Promise.resolve(e.prompt()).catch(function(){ev=e;show()});(e.userChoice||Promise.resolve({})).then(function(r){if(r&&r.outcome==='accepted'){set();show()}else{ev=e;show()}}).catch(function(){})}catch(_){ev=e}});
   show()})();
 </script>
 <script id="v256">
@@ -19249,7 +19231,7 @@ addEventListener('gamepaddisconnected',()=>{releaseAll();setTimeout(()=>{let any
 function renderHelp(){const box=$('b5keys');if(!box)return;let el=$('padhelp');
   if(!el){el=document.createElement('div');el.id='padhelp';el.className='note';const card=box.querySelector('.tcard')||box;const ref=$('b5kdesk');if(ref&&ref.parentNode)ref.parentNode.insertBefore(el,ref.nextSibling);else card.appendChild(el)}
   let any=false;try{any=Array.prototype.slice.call(navigator.getGamepads()||[]).some(x=>x&&x.connected)}catch(e){}
-  el.innerHTML='<b>Oyun kolu</b>'+(any?' (bağlı)':' (bağlı değil: kolu bağlayıp bir tuşuna bas)')+'<ul class="padl"><li><b>Sol çubuk</b> yürü · <b>L3</b> koş</li><li><b>A</b> topla / konuş · <b>X</b> ya da <b>RT</b> vur · <b>B</b> atıl · <b>Y</b> ye (basılı tut: liste)</li><li><b>LT</b> basılı tut: savuştur / gard · <b>R3</b> ulti · <b>LB / RB</b> alet kemeri</li><li><b>Yön tuşları:</b> yukarı El yapımı, aşağı Envanter, sol Tarif kitabı, sağ Görevler · <b>Select</b> harita · <b>Start</b> duraklat</li><li>Pencerelerde: çubuk ya da yön tuşlarıyla gez, <b>A</b> seç, <b>B</b> geri.</li><li>Xbox kolu kablosuz aparatla bağlıyken Chrome ya da Edge\'de (masaüstü uygulamasında da) kopuyorsa: oyunu <b>Firefox</b>\'ta aç (Windows\'ta Firefox\'tan da uygulama olarak yüklenir: ana menü → Bilgisayara yükle) ya da kolu <b>kabloyla</b> bağla.</li></ul>'}
+  el.innerHTML='<b>Oyun kolu</b>'+(any?' (bağlı)':' (bağlı değil: kolu bağlayıp bir tuşuna bas)')+'<ul class="padl"><li><b>Sol çubuk</b> yürü · <b>L3</b> koş</li><li><b>A</b> topla / konuş · <b>X</b> ya da <b>RT</b> vur · <b>B</b> atıl · <b>Y</b> ye (basılı tut: liste)</li><li><b>LT</b> basılı tut: savuştur / gard · <b>R3</b> ulti · <b>LB / RB</b> alet kemeri</li><li><b>Yön tuşları:</b> yukarı El yapımı, aşağı Envanter, sol Tarif kitabı, sağ Görevler · <b>Select</b> harita · <b>Start</b> duraklat</li><li>Pencerelerde: çubuk ya da yön tuşlarıyla gez, <b>A</b> seç, <b>B</b> geri.</li></ul>'}
 try{renderHelp()}catch(e){}
 // v3.24 (Boğaç): Alt + Enter toggles full screen everywhere; the press does nothing else
 let altGr=false;addEventListener('keyup',e=>{if(e.code==='AltRight'||e.key==='AltGraph')altGr=false},true);addEventListener('blur',()=>{altGr=false});   // v3.25: Alt Gr too (Chrome on Windows reports it as AltGraph, not altKey)

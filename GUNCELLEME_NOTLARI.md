@@ -8,6 +8,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.27 · 5 Kasım 2026
+
+### Arayüz
+- **Bilgisayara yükle tek tıkla:** düğme yalnızca oyunun tek basışta yüklenebildiği tarayıcılarda (Chrome, Edge) görünür; basınca yükleme penceresi açılır, "Yükle" deyince oyun masaüstüne gelir. Yüklenemeyen tarayıcılarda (Firefox, Mac Safari) düğme hiç çıkmaz. Adım adım nasıl yüklenir anlatan pencereler kaldırıldı.
+- Kol yardımındaki "Firefox'ta aç ya da kabloyla bağla" notu kaldırıldı.
+
+---
+
 ## Versiyon 3.26 · 5 Kasım 2026
 
 ### Arayüz
