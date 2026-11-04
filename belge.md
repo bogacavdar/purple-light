@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.25** ile birebir (4 Kasım 2026). Bu sürümde: kolda nişan yardımı, menüde seçim yerinde kalır, kolla ad yazmak için ekran klavyesi, Alt Gr + Enter tam ekran. 3.24'te: kolda LB/RB yalnızca dolu yuvalarda gezer, Kehribar göz rengi daha koyu, Alt + Enter tam ekran. 3.23'te: oyun kolunda **hile kodu** (ana menüde ↑↑↓↓←→←→ B A; kolla oynayana son kartta Astronot Gökay verir). 3.22'de: **silahların kademe kimliği** (her türün 7 kademesi kendi biçimi, boyu, izi, isabet efekti ve sesiyle; ok ok gibi uçar, elde yay nişan alır ve kirişte atılacak ok görünür; daha yüksek kademe ilk kez alınınca "Yeni kademe!"; Aletler › Silahların kademe kimliği). 3.21'de: kolda menü seçimi düzeltmesi, PS5 yol haritası. 3.20'de: oyun kolu.
+Sürüm: **Versiyon 3.26** ile birebir (5 Kasım 2026). Bu sürümde: Windows Firefox'ta uygulama olarak yükleme adımları, kol kopması notu; belgeye gelecek planı (Godot'ya geçiş). 3.25'te: kolda nişan yardımı, menüde seçim yerinde kalır, kolla ad yazmak için ekran klavyesi, Alt Gr + Enter tam ekran. 3.24'te: kolda LB/RB yalnızca dolu yuvalarda gezer, Kehribar göz rengi daha koyu, Alt + Enter tam ekran. 3.23'te: oyun kolunda **hile kodu** (ana menüde ↑↑↓↓←→←→ B A; kolla oynayana son kartta Astronot Gökay verir). 3.22'de: **silahların kademe kimliği** (her türün 7 kademesi kendi biçimi, boyu, izi, isabet efekti ve sesiyle; ok ok gibi uçar, elde yay nişan alır ve kirişte atılacak ok görünür; daha yüksek kademe ilk kez alınınca "Yeni kademe!"; Aletler › Silahların kademe kimliği). 3.21'de: kolda menü seçimi düzeltmesi, PS5 yol haritası. 3.20'de: oyun kolu.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -204,7 +204,7 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
    - **Uygulama olarak indir (v2.53, Boğaç):** oyun o cihaza yüklenebiliyorsa ana menünün sağ üstünde (madalya, Ayarlar ve Çıkış'ın solunda) **"Uygulama olarak indir"** düğmesi görünür. Chrome/Edge/Samsung gibi yükleme izni veren tarayıcılarda (bilgisayar, Android) düğme tarayıcının yükleme penceresini açar. iPhone/iPad'de ve Mac Safari'de böyle bir pencere olmadığı için düğme adımları gösterir: iPhone/iPad'de Paylaş → Ana Ekrana Ekle, Mac'te Dosya → Dock'a Ekle. Oyun zaten uygulama olarak açıksa, yüklendikten sonra ya da tarayıcı yüklemeye izin vermiyorsa (ör. Firefox masaüstü, dosyadan açılan kopya) düğme gizlidir. Yüklenen oyun `manifest.webmanifest` ve `sw.js` ile kendi penceresinde ve internetsiz açılır.
    - **Bilgisayara yükle (v2.54, Boğaç):** bilgisayarda (fare ile oynanan cihaz) ana menüde **Yükle**'nin hemen altında büyük **"Bilgisayara yükle"** düğmesi vardır (altında küçük yazı: "Masaüstünden uygulama gibi aç"). Bilgisayarda sağ üstteki "Uygulama olarak indir" düğmesi gösterilmez, onun yerine bu düğme kullanılır (telefon ve tablette sağ üstteki düğme eskisi gibi). Davranış: **Oyun koluyla basılırsa (v3.23):** tarayıcı yükleme penceresini yalnızca fare tıklaması ya da dokunmayla açar; kolla basınca hata vermez, "Yükleme penceresini tarayıcı yalnızca fareyle tıklayınca ya da dokununca açar: bu düğmeye fareyle bas." yazar ve yükleme hakkı kaybolmaz (aynısı iPhone/Android'deki Yükle düğmesinde).
      - Tarayıcı yüklemeye izin veriyorsa (Chrome, Edge) düğme tarayıcının **yükleme penceresini** açar; **Yükle** denince oyun bilgisayara kurulur, masaüstünde / Başlat menüsünde (Mac'te Uygulamalar ve Launchpad'de) **Purple Light** simgesi çıkar ve oyun oradan kendi penceresinde, internetsiz de açılır.
-     - Tarayıcı pencere açmıyorsa (Firefox, Mac Safari ya da tarayıcı henüz izin vermediyse) düğme kısa adımları gösteren bir pencere açar: Chrome'da adres çubuğunun sağındaki yükle simgesi ya da ⋮ menüsü → "Yayınla, kaydet ve paylaş" → "Sayfayı uygulama olarak yükle"; Edge'de … menüsü → Uygulamalar → "Bu siteyi uygulama olarak yükle"; Mac Safari'de Dosya → Dock'a Ekle; Firefox'ta yükleme yok, oyun Chrome ya da Edge'de açılır. Pencerede **"Yükledim, bir daha gösterme"** ve **Kapat** düğmeleri vardır.
+     - Tarayıcı pencere açmıyorsa (Firefox, Mac Safari ya da tarayıcı henüz izin vermediyse) düğme kısa adımları gösteren bir pencere açar: Chrome'da adres çubuğunun sağındaki yükle simgesi ya da ⋮ menüsü → "Yayınla, kaydet ve paylaş" → "Sayfayı uygulama olarak yükle"; Edge'de … menüsü → Uygulamalar → "Bu siteyi uygulama olarak yükle"; Mac Safari'de Dosya → Dock'a Ekle; Firefox'ta: **Windows'ta Firefox 143 ve sonrası** siteyi uygulama olarak yükleyebilir (v3.26, Boğaç: Xbox aparatıyla kol yalnızca Firefox'ta çalışıyor): adres çubuğundaki **web uygulaması** düğmesine tıklanır, oyun görev çubuğuna ve Başlat menüsündeki "Firefox Web Apps" klasörüne eklenir; Firefox eskiyse önce güncellenir. Mac ve Linux'taki Firefox'ta yükleme yok, oyun Chrome ya da Edge'de açılır. Chrome ile yüklenmiş uygulama hep Chrome'la açılır; Firefox'la açmak için önce Chrome'daki uygulama kaldırılıp Firefox'tan yeniden yüklenir. Pencerede **"Yükledim, bir daha gösterme"** ve **Kapat** düğmeleri vardır.
      - **Bir daha görünmez:** oyun yüklendiğinde (tarayıcının "yüklendi" haberi), oyuncu "Yükledim, bir daha gösterme"ye bastığında ya da oyun bir kez uygulama olarak açıldığında bu tarayıcıda kalıcı olarak gizlenir (`localStorage` `pl.installed=1`; oyuncunun kendi seçimi olduğu için kalıcıdır). Oyun uygulama olarak açıkken de görünmez. Dosyadan (https olmadan) açılan kopyada düğme yoktur.
    - **Hakkında** penceresinde "Bir Boğaçhan Çavdar oyunu" yazısının altında **"Tasarım belgesine buradan ulaşabilirsiniz"** bağlantısı vardır (v2.09). Tıklanınca bu tasarım belgesi oyunun içinde, tam ekran bir pencerede açılır (aranabilir hali, `belge.html`); sağ üstteki **Kapat** ya da Esc ile Hakkında'ya dönülür. Belge yeni sekmede de açılabilir ("Yeni sekmede aç"). Belge oyunla birlikte cihaza kaydedilir: oyun uygulama olarak yüklendiyse ya da bir kez internetle açıldıysa, **internetsiz de** o sürümün belgesi açılır (her açılışta internet varsa en son hali alınır).
 2. **Karakter yaratma (v2.52, Boğaç):** iki adım, ikisinde de **isim yazılmaz** (isimler eskisi gibi Kemal'in sahnelerinde sorulur).
@@ -370,6 +370,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - Kol klavye ya da fare kullanılınca susmaz; ikisi birlikte kullanılabilir. Kol ayrılınca basılı kalan tuşlar bırakılır.
 - **Titreşim:** hasar alınca kol titrer (alınan hasarla güçlenir); titreşimi desteklemeyen kolda bir şey olmaz.
 - Kol yalnızca bağlıyken okunur: kol yokken oyuna hiçbir yük eklenmez.
+- **Kol kopuyorsa (v3.26, Boğaç'ın denemesi):** Xbox kolu **Xbox kablosuz aparatıyla** bağlıyken Chrome ve Edge'de (masaüstü uygulaması da Chrome/Edge'dir) tarayıcı kolu okumaya başladığı an bağlantı kopabiliyor; bu oyundan değil, aparat ile Chrome/Edge arasındaki uyumsuzluktan (kolu okuyan her sayfada oluyor, ör. hardwaretester.com). **Firefox'ta sorun yok** (Windows'ta Firefox'tan da masaüstü uygulaması olarak yüklenebilir, bkz. Akış › Bilgisayara yükle); kabloyla bağlamak da çözer. Ayarlar → Kontroller'deki kol yardımında bir satırla yazar.
 - **Hile kodu (v3.23):** ana menüde Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A hile ayarlarını açar/kapatır (Sistemler › Hile modu).
 
 # Temel sistemler
@@ -6312,6 +6313,61 @@ Bunlar Boğaç'la konuşulmuş kararlar; oyuna eklenmedi.
 - **Eş:** ikinci adaya hiç uğramadı; ilk ada yakınında kaçırıldı.
 - **Kötü son:** "Yalnız dönüş" başarımı var ama kötü sonun kendisi henüz yazılmadı.
 - **Planlanan gizli başarım (Boğaç, 28 Ekim 2026):** tanrı modu açıkken mor ışığa yakalanıp bayılmak gizli bir başarım olacak (adı ve simgesi henüz seçilmedi). Mor ışığın tanrı modunu da delmesi bilinçli bir tasarım kararıdır; "düzeltilmez".
+
+
+# Gelecek planı: Godot'ya geçiş (henüz başlanmadı)
+
+**Karar (5 Kasım 2026, Boğaç):** oyunun ileride Godot oyun motoruna taşınması planlanıyor. Amaç: Steam'de tam uyum (başarımlar, bulut kayıt, Steam Input), konsollar (bkz. **PlayStation 5 sürümü**), daha iyi performans ve ışık/efekt kalitesi. Bu bölüm işin büyüklüğünü, sırasını ve tahmini süresini yazar. Web sürümü taşıma bitene kadar oynanır ve güncellenir.
+
+## Neden
+
+- **Platformlar:** PS5, Xbox, Switch ancak bir oyun motoruyla; Steam'de başarımlar, bulut kayıt ve Steam Input. Xbox kablosuz aparatının Chrome/Edge'de kolu düşürmesi gibi tarayıcı sorunları kalmaz (bkz. Sistemler › Oyun kolu).
+- **Performans:** ekran kartı doğrudan kullanılır; telefondaki donma ve yavaşlama sınırları (bkz. Performans kuralları) büyük ölçüde kalkar.
+- **Görsel:** karanlık, meşale, mor ışık, kor ve kristal parıltıları için gerçek 2D ışık ve gölge.
+- **Araçlar:** harita karo karo elle boyanabilir, animasyonlar görerek ayarlanır. Telefon için App Store ve Google Play uygulaması çıkar.
+- **Kaybedilenler:** bir linkle anında oynama ve anında güncelleme. Godot'nun web çıktısı var ama daha ağır; asıl dağıtım indirme ve Steam olur. Geliştirme biraz yavaşlar: her sürüm derlenip paketlenir, görsel ayarlar daha çok Boğaç'ın denemesine dayanır.
+
+## İşin büyüklüğü (4 Kasım 2026, Versiyon 3.25 itibarıyla)
+
+| Ne | Bugün | Godot'da |
+|---|---|---|
+| Kod | Tek dosya, ~19.500 satır, 144 kod bloğu, JavaScript | GDScript ile baştan yazılır (otomatik çeviri yok) |
+| Çizimler | Neredeyse hepsi kodla çiziliyor | Oyundan otomatik olarak PNG'ye dökülür, Godot'ya resim olarak girer |
+| Sesler | Kodla üretiliyor | WAV dosyası olarak kaydedilip taşınır |
+| Menüler, pencereler | Tarayıcı sayfa öğeleri | Godot arayüz sistemiyle baştan |
+| Veriler (eşyalar, tarifler, canlılar, görevler, yetenekler) | Kodun içinde tablolar | Otomatik çıkarılıp Godot veri dosyalarına dönüştürülür |
+| Kurallar | Bu belge (~6.400 satır) | Kılavuz olarak aynen kullanılır |
+
+## Sıra ve tahmini süre
+
+**Yalnızca yazılım süresi** (5 Kasım 2026, Boğaç: "testlerini ben yapıcam"): Claude'un kodu yazma süresi; testler ve deneme Boğaç'ta, paralel yürür. Bugünkü çalışma temposuna (her gün birkaç saatlik yoğun çalışma) göre tahmindir.
+
+| Aşama | İçerik | Yazılım süresi |
+|---|---|---|
+| 0 · Deneme | İlk ada haritası, karakter, yürüme, oyun kolu, bir canlı ve vuruş. Karar noktası: devam mı? | 1–2 gün |
+| 1 · Hazırlık | Bütün çizimlerin ve seslerin dökülmesi, verilerin çıkarılması, Godot projesinin iskeleti, otomatik derleme (Windows ve web) | 2–3 gün |
+| 2 · Çekirdek | Harita ve biyomlar, hareket, çarpışma, kamera, gün-gece, karanlık ve ışık, toplama, envanter, alet kemeri, el yapımı, kayıt | 1 hafta |
+| 3 · Dövüş | Silahlar ve kademeleri, kombolar, savaş çekici ve topuz, yay ve oklar, asalar, etkiler, savuşturma, takla, ulti, canlıların yapay zekâsı, reisler, arena | 1 hafta |
+| 4 · İçerik ve hikâye | Kişiler ve konuşmalar, ana ve yan görevler, mağaralar, anılar ve ara sahneler, ACT 1 ve ACT 2 adaları, deniz yolculuğu, pazar ve ekonomi, 90 yetenek, 42 başarım | 2 hafta |
+| 5 · Arayüz ve platform | Ana menü, ayarlar, tuş atama, oyun kolu, dokunmatik, Steam (başarımlar, bulut kayıt) | 4–5 gün |
+| **Toplam yazılım** | | **yaklaşık 5–6 hafta** |
+
+- Boğaç'ın testlerinden çıkan hataların düzeltilmesi bu sürenin içinde, aşamalar ilerlerken yapılır. Aşamalar sırayla gider; her aşamanın sonunda oynanabilir bir sürüm çıkar.
+
+- **Konsol için ek:** PS5 başvurusu, kit ve sertifikasyon bu sürenin dışında (bkz. PlayStation 5 sürümü); Godot'nun konsol eklentisi (W4 Consoles) yıllık ücretlidir.
+- **ACT 3:** henüz yazılmadı. Taşımadan önce bitirilirse taşıma süresine eklenir (iki kez yazılmaz). Taşıma sürerken web sürümüne yeni özellik eklenirse o özellik Godot'da da yazılır; bu yüzden taşıma sırasında web sürümü yalnızca hata düzeltmeleriyle sürer.
+
+## Kredi (Claude kullanımı)
+
+- Kesin kredi miktarı bilinmiyor: kullanım hesabın planına ve günlük sınırlara göre değişir, Claude bunu buradan göremez.
+- Ölçü olarak: taşıma, **bugünkü yoğunlukta 5–6 haftalık kullanım** kadardır (son haftalardaki gibi her gün uzun oturumlar). Oturum başına iş miktarı, bir büyük web güncellemesi kadardır.
+- Kredinin bir kısmı kod yazmaya değil, Godot'da görülmeden yapılan işin doğrulanmasına gider (derleme, ekran görüntüsüyle kontrol). Boğaç'ın erken ve sık denemesi bu kısmı küçültür.
+
+## Önerilen başlangıç
+
+1. **Aşama 0 (deneme)** web sürümünü durdurmadan yapılır; sonucuna göre karar verilir.
+2. Tam taşımaya ACT 3'ün tasarımı belgede netleşince geçilir. Web sürümü dondurulur, yalnızca hata düzeltmesi alır.
+3. **Steam'e erken çıkmak** istenirse, beklemeden bugünkü oyun bir kabukla (Electron) Steam'e konabilir; Godot sürümü hazır olunca güncelleme olarak onun yerini alır.
 
 
 # PlayStation 5 sürümü (hedef, henüz başlanmadı)

@@ -1,3 +1,10 @@
+## v3.26 (5 Kasım 2026) · Firefox'tan yükleme, kol kopması notu, Godot planı
+- Belge: yeni `parts/99_godot.md`, `10_akis.md` (Bilgisayara yükle, Firefox), `20_sistemler.md` (Oyun kolu › kol kopuyorsa), `00_giris.md`.
+- `v254inst` `howto()`: Windows'ta Firefox (`ff && /Windows/`) için web uygulaması adımları; diğer Firefox'larda eski metin.
+- `v320pad` `renderHelp`: Xbox aparatı ile Chrome/Edge notu.
+- Boğaç'ın bulgusu: Xbox kablosuz aparatı Chrome/Edge kolu okumaya başlayınca bağlantıyı kesiyor (kol güncel, Chrome yeniden kuruldu); Firefox'ta sorun yok.
+- Kontrol: chk.js 0 hata (`?.` 1, `??` 7). Test yapılmadı.
+
 ## v3.25 (4 Kasım 2026) · kolda nişan yardımı, seçim yerinde kalır, ekran klavyesi, Alt Gr + Enter
 - Belge `20_sistemler.md` (Oyun kolu, Kontroller), `00_giris.md`.
 - `v320pad`:
