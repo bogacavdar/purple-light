@@ -18823,7 +18823,7 @@ const T=[
  {n:'Şatonun önünde',L:[['','Yeşil tepeler, ağaçlar; arkada masallardan çıkmış beyaz bir şato, sivri kuleleri ve mavi çatılarıyla. Yanda bir göl, üstünde küçük bir korsan gemisi.'],['hero','<b>{H}</b>: "Dur, kıpırdama… şimdi gülümse!"'],['','Deklanşör tıkladı. O fotoğrafta şato arkada kaldı; gözler hep ona gitti.']]},
  {n:'Hamburger',L:[['','Bir hamburgerci. Önünüzde kocaman iki hamburger, patatesler.'],['love','<b>{L}</b>: "Ben bunu bitiremem… sen yer misin?"'],['','Seninki çoktan bitmişti. Yine de yedin. Sonra hep böyle oldu: yarısı hep sana kaldı.']]},
  {n:'Kaktüs',L:[['','İlk işin. Evden çalışıyorsun; ilk gün kapı çaldı. Bir paket: içinde küçük bir cam fanus ve bir not. Fanusun içinde minicik bir kaktüs, yanında el ele iki figür: siz.'],['love','<b>{L}</b> (notta): "Yeni işin kutlu olsun! Sen çiçeğe bakamazsın, biliyorum. O yüzden dünyanın en dayanıklı çiçeğini yolladım. Bunu da öldürürsen konuşacağız."'],['','Fanusu masanın köşesine koydun. Her gün ona baktın, her gün onu düşündün.']]},
- {n:'Kelebekli kolye',L:[['','Küçük bir kutu. İçinde ince bir zincir, ucunda gümüş bir kelebek.'],['hero','<b>{H}</b>: "Görünce seni hatırlattı."'],['love','<b>{L}</b>: "Hiç çıkarmayacağım. Söz."']]},
+ {n:'Kelebekli kolye',L:[['','Küçük bir kutu. İçinde ince bir zincir, üstünde beş lacivert kelebek: üçü altta, ikisi üstte.'],['hero','<b>{H}</b>: "Görünce seni hatırlattı."'],['love','<b>{L}</b>: "Hiç çıkarmayacağım. Söz."']]},
  {n:'Yüzme dersi',L:[['','İlk tatiliniz. Masmavi bir deniz, sıcak kum, tuzlu rüzgâr.'],['love','<b>{L}</b>: "Ben yüzme bilmiyorum… beni bırakma ama!"'],['hero','<b>{H}</b>: "Bırakmam. Tutuyorum seni."'],['','O gün yüzmeyi öğrendi. Her kulaçta dönüp sana baktı.']]},
  {n:'Çay kıyısında söz',L:null}];
 const night=L=>L.map((x,k)=>k?x:[x[0],x[1].replace('Yeşil bir çayır','Bir yaz gecesi, ay ışığında yeşil bir çayır')]);
@@ -18834,7 +18834,7 @@ const mk=(t,k)=>{const o={n:t.n,ev:[],min:1,a1:1,pos:k,old:t.old!=null&&t.old>=0
   // the old code (memFix) writes MEMS[2].L on every opening: these lines can't be overwritten
   Object.defineProperty(o,'L',{configurable:true,enumerable:true,get(){
     if(t.n==='Çay kıyısında söz')return (window.__plLoveProposes?window.__plLoveProposes():LOOK.hero.gender==='k')?PROP_K:PROP_M;
-    if(t.n==='Kelebekli kolye'&&clues.has('bilezik'))return L.concat([['','Kumsalda bulduğun kelebek… o kolyeydi.']]);
+    if(t.n==='Kelebekli kolye'&&clues.has('bilezik'))return L.concat([['','Kumsalda bulduğun lacivert kelebekler… o kolyeydi.']]);
     return L},set(v){}});return o};
 const A1=T.map(mk);
 const MAST=OLD.filter(m=>m.act2);
@@ -18881,7 +18881,7 @@ setInterval(()=>{try{if(onTitle){lastF=null;return}const f=found.length;if(lastF
 // ---------------------------------------------------------------- the trace on the beach: the butterfly necklace
 try{const c=CLUES.find(x=>x.id==='bilezik');if(c)Object.defineProperty(c,'n',{get:()=>'Kelebekli kolye',configurable:true})}catch(e){}
 {const _ct=clueText;clueText=function(c){if(c&&c.id==='bilezik'){const L=loveName?`<b>${esc(loveName)}</b>`:'eşin';
-  return `Kumun içinde bir şey parlıyor: ince bir zincir, ucunda gümüş bir <b>kelebek</b>. Bu, ${L} için aldığın kolye! Hiç çıkarmayacağına söz vermişti. Zinciri kopmuş, ama kıyıya vurmuş. Demek ki o da bu sularda bir yerdeydi…`}
+  return `Kumun içinde bir şey parlıyor: ince bir zincir, üstünde beş <b>lacivert kelebek</b>, üçü altta, ikisi üstte. Bu, ${L} için aldığın kolye! Hiç çıkarmayacağına söz vermişti. Zinciri kopmuş, ama kıyıya vurmuş. Demek ki o da bu sularda bir yerdeydi…`}
   return _ct.apply(this,arguments)}}
 // ---------------------------------------------------------------- the book
 renderMem=function(){const rd=riddle?`<div class="memrd"><b>Zümrüt'ün bilmecesi:</b> ${riddleText(riddle)}<br><small>Bu tarifi kazanda öğrenince Zümrüt seni ödüllendirir.</small></div>`:'';
@@ -19149,11 +19149,12 @@ function scene318(g,i,t,line){const m=MEMS[i];if(!m)return;const lab=(x,y,tx,o)=
     p(0,0,240,135,'#2a1a3a');for(let q=0;q<14;q++){const a=.12+.1*Math.sin(t*1.5+q);g.fillStyle=`rgba(255,${190+(q*13)%60},${200+(q*7)%50},${a.toFixed(2)})`;g.beginPath();g.arc((q*53)%240,(q*31)%90,6+(q%3)*4,0,6.28);g.fill()}
     p(0,100,240,35,'#3a2a4a');
     drawChibi(g,72,110,H,{fx:1,arm:'reach'});drawChibi(g,168,110,Lv,{fx:-1,arm:line>=2?'reach':'down'});
-    p(100,74,40,8,'#7a2a4a');p(100,64,40,10,'#9a3a5a');p(102,66,36,6,'#e8d8f0');p(100,62,40,2,'#b84a6a');
-    g.strokeStyle='#e0e4f0';g.lineWidth=1;g.beginPath();g.moveTo(108,68);g.quadraticCurveTo(120,82,132,68);g.stroke();
+    p(96,50,48,10,'#9a3a5a');p(96,50,48,2,'#b84a6a');p(96,76,48,8,'#7a2a4a');p(96,60,48,16,'#9a3a5a');p(98,60,44,16,'#f4eef8');
+    g.strokeStyle='#b8bccc';g.lineWidth=1;g.beginPath();g.moveTo(102,62);g.quadraticCurveTo(120,80,138,62);g.stroke();
     const fl=Math.abs(Math.sin(t*3));const bw=(x,y,s,c)=>{const w=Math.max(1,Math.round(4*s*(.4+.6*fl)));p(x-w,y-2,w,3,c);p(x+1,y-2,w,3,c);p(x-w+1,y+1,w-1,2,c);p(x+1,y+1,w-1,2,c);p(x,y-2,1,5,'#3a2a3a')};
-    bw(120,77,1.4,'#f4f6ff');if(Math.sin(t*5)>.6){p(124,73,1,1,'#ffffff');p(116,79,1,1,'#ffffff')}
-    for(let q=0;q<6;q++){const bx=60+((q*41+t*(14+q*3))%140),by=20+(q*17)%50+Math.sin(t*2+q)*8;bw(bx,by,.8,['#f2b84b','#ff9ab8','#7ac8ff','#c8a0ff'][q%4])}
+    // five navy butterflies on the chain: three below, two above
+    for(const c of [[113,65],[127,65],[109,70],[120,72],[131,70]]){bw(c[0],c[1],.9,'#1e2c78');p(c[0]-2,c[1]-1,1,1,'#4a62c0');p(c[0]+2,c[1]-1,1,1,'#4a62c0')}if(Math.sin(t*5)>.6){p(124,69,1,1,'#ffffff');p(112,72,1,1,'#ffffff')}
+    for(let q=0;q<6;q++){const bx=60+((q*41+t*(14+q*3))%140),by=20+(q*17)%50+Math.sin(t*2+q)*8;bw(bx,by,.8,['#2a3a9a','#4a62c0','#7a9ae8','#1e2c78'][q%4])}
     if(line>=2)hearts(168,82,2);warm()}
   else if(S==='Yüzme dersi'){   // the first holiday: learning to swim
     sky('#5ab4ec','#bfe6fa',56);circ(200,22,12,'#fff2b0');p(0,56,240,79,'#2a8ad0');for(let q=0;q<26;q++)p((q*31+t*12)%250-6,60+(q*13)%70,10,1,'rgba(255,255,255,.45)');p(0,120,240,15,'#ecd8a0');
