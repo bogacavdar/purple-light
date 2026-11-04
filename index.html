@@ -18827,7 +18827,7 @@ const T=[
  {n:'Şatonun önünde',L:[['','Yeşil tepeler, ağaçlar; arkada masallardan çıkmış beyaz bir şato, sivri kuleleri ve mavi çatılarıyla. Yanda bir göl, üstünde küçük bir korsan gemisi.'],['hero','<b>{H}</b>: "Dur, kıpırdama… şimdi gülümse!"'],['','Deklanşör tıkladı. O fotoğrafta şato arkada kaldı; gözler hep ona gitti.']]},
  {n:'Hamburger',L:[['','Bir hamburgerci. Önünüzde kocaman iki hamburger, patatesler.'],['love','<b>{L}</b>: "Ben bunu bitiremem… sen yer misin?"'],['','Seninki çoktan bitmişti. Yine de yedin. Sonra hep böyle oldu: yarısı hep sana kaldı.']]},
  {n:'Kaktüs',L:[['','İlk işin. Evden çalışıyorsun; ilk gün kapı çaldı. Bir paket: içinde küçük bir cam fanus ve bir not. Fanusun içinde minicik bir kaktüs, yanında el ele iki figür: siz.'],['love','<b>{L}</b> (notta): "Yeni işin kutlu olsun! Sen çiçeğe bakamazsın, biliyorum. O yüzden dünyanın en dayanıklı çiçeğini yolladım. Bunu da öldürürsen konuşacağız."'],['','Fanusu masanın köşesine koydun. Her gün ona baktın, her gün onu düşündün.']]},
- {n:'Kelebekli kolye',L:[['','Küçük bir kutu. İçinde ince bir zincir, üstünde beş lacivert kelebek: üçü altta, ikisi üstte.'],['hero','<b>{H}</b>: "Görünce seni hatırlattı."'],['love','<b>{L}</b>: "Hiç çıkarmayacağım. Söz."']]},
+ {n:'Kelebekli kolye',L:[['','Küçük bir kutu. İçinde ince bir zincir, üstünde beş lacivert kelebek: üçü altta, ikisi üstte.'],['hero','<b>{H}</b>: "Görünce seni hatırlattı."'],['love','<b>{L}</b>: "Çok güzel… Bu en sevdiğim kolye oldu!"']]},
  {n:'Yüzme dersi',L:[['','İlk tatiliniz. Masmavi bir deniz, sıcak kum, tuzlu rüzgâr.'],['love','<b>{L}</b>: "Ben yüzme bilmiyorum… beni bırakma ama!"'],['hero','<b>{H}</b>: "Bırakmam. Tutuyorum seni."'],['','O gün yüzmeyi öğrendi. Her kulaçta dönüp sana baktı.']]},
  {n:'Çay kıyısında söz',L:null}];
 const night=L=>L.map((x,k)=>k?x:[x[0],x[1].replace('Yeşil bir çayır','Bir yaz gecesi, ay ışığında yeşil bir çayır')]);
@@ -18885,7 +18885,7 @@ setInterval(()=>{try{if(onTitle){lastF=null;return}const f=found.length;if(lastF
 // ---------------------------------------------------------------- the trace on the beach: the butterfly necklace
 try{const c=CLUES.find(x=>x.id==='bilezik');if(c)Object.defineProperty(c,'n',{get:()=>'Kelebekli kolye',configurable:true})}catch(e){}
 {const _ct=clueText;clueText=function(c){if(c&&c.id==='bilezik'){const L=loveName?`<b>${esc(loveName)}</b>`:'eşin';
-  return `Kumun içinde bir şey parlıyor: ince bir zincir, üstünde beş <b>lacivert kelebek</b>, üçü altta, ikisi üstte. Bu, ${L} için aldığın kolye! Hiç çıkarmayacağına söz vermişti. Zinciri kopmuş, ama kıyıya vurmuş. Demek ki o da bu sularda bir yerdeydi…`}
+  return `Kumun içinde bir şey parlıyor: ince bir zincir, üstünde beş <b>lacivert kelebek</b>, üçü altta, ikisi üstte. Bu, ${L} için aldığın kolye! "En sevdiğim kolye oldu" demişti. Zinciri kopmuş, ama kıyıya vurmuş. Demek ki o da bu sularda bir yerdeydi…`}
   return _ct.apply(this,arguments)}}
 // ---------------------------------------------------------------- the book
 renderMem=function(){const rd=riddle?`<div class="memrd"><b>Zümrüt'ün bilmecesi:</b> ${riddleText(riddle)}<br><small>Bu tarifi kazanda öğrenince Zümrüt seni ödüllendirir.</small></div>`:'';
