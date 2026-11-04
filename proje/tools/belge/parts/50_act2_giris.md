@@ -60,4 +60,4 @@ Bütün ACT 2 ustaları aynı kuralla çalışır:
 
 Ustaların görevleri bittikçe eşinin **ACT 2 anıları** sırayla geri gelir: Sahildeki ışık (gk3), Yıldızsız yolcular (pv3), Şapka (sl4), Mor gemi (mk3), Son söz (ej4).
 
-**Mor ışığın anıları (v3.18, Boğaç):** ACT 1'den çıkarılan mor ışıklı 6 anı (Yıldız haritası, Mor bir delik, Mektup, Son akşam, Bırakılan el, Mor fısıltı) ikinci adada bu sırayla gelir: uyurken %40, bayılınca %60, görev bitince %30. Şimdilik böyle; ACT 2 hikâyesi ayrıca değerlendirilecek (Sistemler › İzler ve anılar).
+**Mor ışığın anıları (v3.18, Boğaç):** ACT 1'den çıkarılan mor ışıklı 5 anı (v3.19: Yıldız haritası silindi; Mor bir delik, Mektup, Son akşam, Bırakılan el, Mor fısıltı) ikinci adada bu sırayla gelir: uyurken %40, bayılınca %60, görev bitince %30. Şimdilik böyle; ACT 2 hikâyesi ayrıca değerlendirilecek (Sistemler › İzler ve anılar).

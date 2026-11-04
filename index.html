@@ -7519,18 +7519,14 @@ function v46Glows(){const L=[];if(!nightOn()&&!sis.on)return L;
 
 // ---------------------------------------------------------------- 4 · Mavi's memories
 const MEMS=[
- {n:'Yağmurlu çarşı',at:10,L:[['','Bir şehir, gece ve sağanak yağmur. Çarşıdaki herkes saçak altına kaçışıyor.'],['love','<b>{L}</b>: "Şemsiyem ikimize de yeter. Gel, ıslanma."'],['','Adını o gece öğrendin. {HAIR} damlalar süzülüyordu.']]},
- {n:'Yanık ekmek',at:25,L:[['','Bir yaz günü, çimenlerde piknik. Ekmeği közde unutmuşsun.'],['love','<b>{L}</b>: "Kömür olmuş! …Ama senin yaptığın kömür, yerim."'],['','O gülüş. Masanın öbür ucundaki gülüş buydu.']]},
- {n:'Çay kıyısında söz',at:50,L:[['','Yeşil bir çayır, ağaçların gölgesi, önünüzden şırıl şırıl bir çay akıyor. Kadehlerde şarap; cebinde küçük bir yüzük, elin titriyor.'],['hero','<b>{H}</b>: "Benimle dünyanın öbür ucuna gelir misin?"'],['love','<b>{L}</b>: "Öbür ucuna mı? Daha da ötesine!"']]},
  {n:'Mor bir delik',at:100,L:[['','Bir çatı, yıldızlı bir gece. Gökte, yıldızların arasında mor bir halka.'],['love','<b>{L}</b>: "Bak! Gökyüzünde bir delik var sanki. Hep merak ederim: oraya ne düşer?"'],['','O gece mor ışığı ikiniz gördünüz. Başka kimse görmedi.']]},
  {n:'Son akşam',at:175,L:[['','Geminin güvertesi, mum ışığında bir akşam yemeği. Deniz cam gibi.'],['love','<b>{L}</b>: "Bir gün beni kaybedersen… beni bulur musun?"'],['hero','<b>{H}</b>: "Yıldızların ötesinde bile."'],['','Sonra mor ışık. Sonra hiçbir şey. Ama artık hatırlıyorsun: ona söz verdin.']]}];
 const mems=new Set();let memQ=[],memCur=null;
-const MEM2M=MEMS[2].L,MEM2K=[['','Yeşil bir çayır, ağaçların gölgesi, önünüzden şırıl şırıl bir çay akıyor. Kadehlerde şarap; onun elinde küçük bir yüzük var, eli titriyor.'],['love','<b>{L}</b>: "Benimle dünyanın öbür ucuna gelir misin?"'],['hero','<b>{H}</b>: "Öbür ucuna mı? Daha da ötesine!"']];
-const memFix=()=>{MEMS[2].L=(window.__plLoveProposes?window.__plLoveProposes():LOOK.hero.gender==='k')?MEM2K:MEM2M};   // v2.52: man and woman → the man proposes; two men or two women → you propose
+const MEM2M=[['','Yeşil bir çayır, ağaçların gölgesi, önünüzden şırıl şırıl bir çay akıyor. Kadehlerde şarap; cebinde küçük bir yüzük, elin titriyor.'],['hero','<b>{H}</b>: "Benimle dünyanın öbür ucuna gelir misin?"'],['love','<b>{L}</b>: "Öbür ucuna mı? Daha da ötesine!"']],MEM2K=[['','Yeşil bir çayır, ağaçların gölgesi, önünüzden şırıl şırıl bir çay akıyor. Kadehlerde şarap; onun elinde küçük bir yüzük var, eli titriyor.'],['love','<b>{L}</b>: "Benimle dünyanın öbür ucuna gelir misin?"'],['hero','<b>{H}</b>: "Öbür ucuna mı? Daha da ötesine!"']];
 const memOv=v46Div('memov','<h3>Bir anı geri geldi</h3><h2 id="mem-n"></h2><canvas id="mem-c" width="240" height="135"></canvas><p id="mem-t"></p><button type="button" id="mem-go">Devam</button>');
 const memC=$('mem-c').getContext('2d');
 function memText(s){return s.replace('{L}',esc(loveName||'Mavi')).replace('{H}',esc(heroName||'Sen')).replace('{HAIR}',()=>{const h=window.__plLoveHair?window.__plLoveHair('larından'):'Kızıl saçlarından';return h.charAt(0).toLocaleUpperCase('tr')+h.slice(1)})}   // v2.52: the hair of the one you chose
-function openMem(i,again){memFix();memCur={i,line:0,t:0,again};memOv.hidden=false;$('mem-n').textContent=MEMS[i].n;memLine();sfx('magic');try{audio.play('hum',{vol:.5})}catch(e){}requestAnimationFrame(memLoop);setTimeout(()=>{try{$('mem-go').focus()}catch(e){}},50)}
+function openMem(i,again){memCur={i,line:0,t:0,again};memOv.hidden=false;$('mem-n').textContent=MEMS[i].n;memLine();sfx('magic');try{audio.play('hum',{vol:.5})}catch(e){}requestAnimationFrame(memLoop);setTimeout(()=>{try{$('mem-go').focus()}catch(e){}},50)}
 function memLine(){const m=MEMS[memCur.i],l=m.L[memCur.line];$('mem-t').innerHTML=memText(l[1]);$('mem-go').textContent=memCur.line<m.L.length-1?'Devam':'Anıyı sakla'}
 function memNext(){if(!memCur)return;const m=MEMS[memCur.i];if(memCur.line<m.L.length-1){memCur.line++;memLine();return}
   const i=memCur.i,again=memCur.again;memCur=null;memOv.hidden=true;
@@ -7543,36 +7539,7 @@ function memTick(){for(let i=0;i<MEMS.length;i++)if(!mems.has(i)&&found.length>=
   if(memQ.length&&!memCur&&!craftOpen&&!dlgOpen&&!fading&&!beam&&!sailing&&!wake&&!fish&&!underAttack()&&!markOpen&&darkT===0){openMem(memQ.shift())}}
 function memScene(g,i,t,line){const p=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round(x),Math.round(y),w,h)};g.setTransform(1,0,0,1,0,0);g.imageSmoothingEnabled=false;
   const H=LOOK.hero,Lv=LOOK.love,star=(n,top)=>{for(let k=0;k<n;k++){const sx=(k*97)%240,sy=(k*53)%top;if(Math.sin(t*2+k)>-.3)p(sx,sy,1,1,k%5?'#cfd8ff':'#ffffff')}};
-  if(i===0){p(0,0,240,135,'#141a33');for(let k=0;k<7;k++){const bx=k*36-6,bh=40+(k*29)%35;p(bx,100-bh,32,bh,'#0e1328');for(let wy=100-bh+6;wy<92;wy+=9)for(let wx=bx+4;wx<bx+28;wx+=8)if((wx*7+wy*3+k)%5<2)p(wx,wy,4,4,'#f2c46a')}
-    p(0,100,240,35,'#232b48');for(let k=0;k<12;k++)p((k*41)%240,108+(k*13)%22,18,1,'rgba(242,196,106,.35)');
-    p(10,72,46,6,'#c84a3a');for(let k=0;k<46;k+=8)p(10+k,72,4,6,'#efe6d0');p(12,78,2,24,'#5a3d22');p(52,78,2,24,'#5a3d22');p(14,90,38,4,'#8a5a30');
-    drawChibi(g,108,104,H,{fx:1,arm:'reach'});drawChibi(g,132,104,Lv,{fx:-1});
-    g.fillStyle='#c84a3a';g.beginPath();g.arc(124,74,20,Math.PI,0);g.fill();p(104,73,41,2,'#8a2a22');p(123,74,1,14,'#3a2a1a');for(let k=0;k<5;k++)p(106+k*8,72,1,2,'#efe6d0');
-    for(let k=0;k<90;k++){const rx=(k*53+t*60*(1+k%3*.2))%260-10,ry=(k*37+t*170)%140;if(rx>102&&rx<146&&ry>60&&ry<104)continue;p(rx,ry,1,4,'rgba(170,200,255,.55)')}
-    if(line>=1)cH(g,120,50+Math.sin(t*3)*2,Math.min(1,(t%4)))}
-  else if(i===1){p(0,0,240,135,'#9fd6f5');p(0,70,240,65,'#6cb043');g.fillStyle='#5a9a3a';g.beginPath();g.ellipse(60,82,90,20,0,0,6.28);g.fill();g.fillStyle='#f6e8a0';g.beginPath();g.arc(205,24,12,0,6.28);g.fill();
-    for(let k=0;k<3;k++){p(20+k*70+(t*4)%240,18+k*9,26,6,'#ffffff');p(26+k*70+(t*4)%240,14+k*9,14,4,'#ffffff')}
-    p(180,40,6,52,'#6a4426');g.fillStyle='#3f8a36';g.beginPath();g.arc(183,38,22,0,6.28);g.fill();
-    for(let yy=0;yy<14;yy+=4)for(let xx=0;xx<56;xx+=4)p(92+xx,104+yy,4,4,((xx+yy)/4)%2?'#efe6d0':'#c84a3a');
-    p(114,100,14,6,'#2a1a10');p(116,99,10,2,'#3a2a1a');for(let k=0;k<3;k++){const a=(t*1.2+k*.33)%1;p(120+Math.sin(t*3+k)*3,96-a*24,2,2,`rgba(90,90,90,${(1-a).toFixed(2)})`)}
-    drawChibi(g,98,106,H,{fx:1});drawChibi(g,142,106,Lv,{fx:-1,step:Math.sin(t*10)>0?1:0});if(line>=1){cH(g,146,72-((t*14)%20),1-((t*14)%20)/20);cH(g,136,78-((t*14+10)%20),1-((t*14+10)%20)/20)}}
-  else if(i===2){const gr=g.createLinearGradient(0,0,0,64);gr.addColorStop(0,'#a8d8f0');gr.addColorStop(1,'#f4dca0');g.fillStyle=gr;g.fillRect(0,0,240,64);   // v70.3: a meadow under the trees, a stream in front, wine
-    g.fillStyle='#86c25e';g.beginPath();g.ellipse(120,66,150,14,0,0,6.28);g.fill();p(0,62,240,58,'#5fae46');
-    for(let k=0;k<26;k++)p((k*47)%236,66+(k*23)%44,4,2,k%3?'#6cbc50':'#4f9a3a');
-    for(let k=0;k<18;k++){const fx=(k*61+7)%232,fy=70+(k*31)%38;p(fx,fy,2,2,k%3===0?'#f2e070':k%3===1?'#ffffff':'#e88aa8')}
-    const tree=(x,h,r)=>{p(x-3,64-h,7,h+8,'#6a4426');p(x-1,64-h,2,h+8,'#8a5a32');g.fillStyle='#2f7a2e';g.beginPath();g.arc(x,58-h,r,0,6.28);g.fill();g.fillStyle='#3f9a3a';g.beginPath();g.arc(x-r*.35,52-h,r*.7,0,6.28);g.fill();g.beginPath();g.arc(x+r*.4,50-h,r*.6,0,6.28);g.fill()};
-    tree(34,30,30);tree(206,26,28);g.fillStyle='#2f7a2e';for(let k=0;k<9;k++){g.beginPath();g.arc(k*30,-4+(k%2)*5,22,0,6.28);g.fill()}g.fillStyle='#3f9a3a';for(let k=0;k<9;k++){g.beginPath();g.arc(k*30+12,4+(k%3)*3,10,0,6.28);g.fill()}
-    for(let k=0;k<7;k++){const lx=(k*37+Math.sin(t*.8+k)*3)%240,ly=72+(k*17)%30;g.fillStyle='rgba(255,240,170,.18)';g.beginPath();g.ellipse(lx,ly,9,3,0,0,6.28);g.fill()}
-    for(let k=0;k<3;k++){const lf=(t*14+k*80)%150;p(40+k*60+Math.sin(t*2+k)*8,lf-10,2,2,'#4f9a3a')}
-    p(0,110,240,4,'#3f7a2e');p(0,113,240,22,'#4a96d0');for(let k=0;k<18;k++)p((k*29+t*18)%250-10,116+(k*7)%16,10,1,'rgba(220,240,255,.7)');
-    for(let k=0;k<5;k++)p((k*53+20)%240,114+(k%2)*14,6,3,'#8a8a80');p(0,132,240,3,'#3f7a2e');
-    for(let yy=0;yy<8;yy+=4)for(let xx=0;xx<52;xx+=4)p(94+xx,100+yy,4,4,((xx+yy)/4)%2?'#efe6d0':'#c84a3a');
-    p(118,90,4,10,'#24502a');p(119,86,2,4,'#24502a');p(119,85,2,1,'#c84a3a');p(118,93,4,3,'#e8dcc0');
-    const glass=(x,y)=>{p(x,y,3,3,'#a01e38');p(x,y,3,1,'#e8e8f0');p(x+1,y+3,1,3,'#e8e8f0');p(x,y+6,3,1,'#e8e8f0')};glass(108,94);glass(140,84+Math.round(Math.sin(t*2)));
-    {const fem=window.__plLoveProposes?window.__plLoveProposes():LOOK.hero.gender==='k';drawChibi(g,104,106,fem?Lv:H,{fx:1,arm:'reach',bob:2});drawChibi(g,134,106,fem?H:Lv,{fx:-1})}   // v2.52: the one who proposes kneels (man and woman: the man; same sex: you)
-   
-    if(line>=1&&Math.sin(t*6)>0){p(117,88,2,2,'#ffffff');p(116,89,4,1,'#ffe080')}if(line>=2){for(let k=0;k<4;k++)cH(g,106+k*8,70-((t*16+k*6)%24),1-((t*16+k*6)%24)/24)}}
-  else if(i===3){p(0,0,240,135,'#0a0c1c');star(120,95);const r=12+Math.sin(t*2)*1.5;g.strokeStyle='#a050e0';g.lineWidth=3;g.beginPath();g.arc(172,32,r,0,6.28);g.stroke();
+  if(i===0){p(0,0,240,135,'#0a0c1c');star(120,95);const r=12+Math.sin(t*2)*1.5;g.strokeStyle='#a050e0';g.lineWidth=3;g.beginPath();g.arc(172,32,r,0,6.28);g.stroke();
     g.fillStyle='rgba(160,80,224,.18)';g.beginPath();g.arc(172,32,r+10,0,6.28);g.fill();g.fillStyle='#05030c';g.beginPath();g.arc(172,32,r-2,0,6.28);g.fill();
     if(line>=2){g.fillStyle='rgba(200,150,255,.25)';g.beginPath();g.moveTo(166,40);g.lineTo(178,40);g.lineTo(230,135);g.lineTo(150,135);g.fill()}
     p(0,96,240,39,'#2a1a1a');for(let k=0;k<240;k+=8)p(k,96,7,3,'#5a2a22');for(let k=0;k<6;k++)p(k*44+6,102+(k%2)*6,30,1,'#3a2420');p(30,84,10,12,'#3a2420');p(32,80,6,4,'#5a3a2a');
@@ -10484,59 +10451,33 @@ body.inroom #mini,body.inroom #prompt,body.inroom #b3trk{display:none!important}
 </style>
 <script id="v57-mem">
 // =====================================================================================================
-// v57: more memories of the lost one. The five recipe memories stay as they were; seven new ones come back
-// by chance — as a dream when you sleep, as a flash when you faint, or when you finish a quest — and some
-// only after a certain day. Each one comes once, wherever it first came; all are in Kitap › Anılar.
+// v57: memories of the lost one. Since v3.19 only three purple-light memories are left here (Mektup, Mor fısıltı,
+// Bırakılan el: their lines and pictures); when and in what order they come is decided by v318story. The card's
+// title (how it came) and the saved 'how' (memKind) also live here.
 // Runs inside the game's scope through window.__plEval.
 // =====================================================================================================
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
 const B0=MEMS.length;
 const NEWM=[
- {n:'Kumsalda ilk dans',ev:['sleep','quest'],min:1,L:[['','Bir yaz gecesi, kumsalda bir şenlik ateşi. Biri gitar çalıyor, kıvılcımlar yıldızlara karışıyor.'],['love','<b>{L}</b>: "Dans etmeyi bilmiyorum, ama ayağına basarsam sayılmaz, tamam mı?"'],['','Ateşin çıtırtısı… Kemal\'in ateşi de tam böyle çıtırdıyor.']]},
- {n:'Kırık pusula',ev:['faint','quest'],min:4,L:[['','Küçük bir atölye, tezgâhın üstünde dağınık dişliler. Elinde eski, camı çatlak bir pusula.'],['love','<b>{L}</b>: "Yönünü kaybedersen kuzeyi değil, beni düşün. İğne hep bana döner."'],['','O pusula hiçbir zaman kuzeyi göstermedi. Hep onu gösterdi.']]},
- {n:'Hastane koridoru',ev:['faint'],min:6,L:[['','Beyaz bir koridor, titreyen bir floresan. Biri elini sımsıkı tutuyor.'],['love','<b>{L}</b>: "Korkma. Gözünü açtığında ilk göreceğin yüz benim olacak. Söz."'],['','Şimdi her uyandığında, ilk önce o yüzü arıyorsun.']]},
- {n:'Yıldız haritası',ev:['sleep'],min:8,L:[['','Bir çatı katı, yere serilmiş kocaman bir yıldız haritası. Mumlar, çay, kalemler.'],['love','<b>{L}</b>: "Şuraya bak: yıldızların arasında boşluk var. Sanki biri onları söndürmüş. Annem bunlara <i>yıldızsızlar</i> derdi."'],['','Yıldızsızlar. O kelimeyi ilk kez ondan duymuştun.']]},
  {n:'Mektup',ev:['quest'],min:12,L:[['','Mutfak masasında katlanmış bir kâğıt, üstünde onun eğri büğrü yazısı.'],['love','<b>{L}</b>: "Bu mektubu okuyorsan yine geç kaldın demektir. Çorba ocakta. Ben limandayım; gökte bir şey var, görmen lazım."'],['','Limanda, mor ışığın ilk kez yere indiği o gece…']]},
  {n:'Mor fısıltı',ev:['sleep','faint'],min:20,L:[['','Karanlık. Su sesi. Uzakta, yıldızsız bir gökte mor bir göz açılıp kapanıyor.'],['love','<b>{L}</b>: "{H}… beni duyuyor musun? Burası soğuk. Hiç yıldız yok… ama senin ateşini görüyorum."'],['','Bu bir anı değildi. Bu… şimdiydi.']]},
  {n:'Bırakılan el',ev:['faint','sleep'],min:25,L:[['','Dalgaların altı. Mor bir ışık suyu yarıyor, köpükler yukarı kaçışıyor.'],['love','<b>{L}</b>: "Tut elimi!"'],['hero','<b>{H}</b>: "Bırakmayacağım!"'],['','Ama parmakların kaydı. Ya da biri onları çekti. Son gördüğün, pelerinli bir gölgeydi… ve tasmasında mor bir göz.']]}];
 for(const m of NEWM)MEMS.push(m);
 const KIND={sleep:'Bir rüya gördün',faint:'Bayılırken bir anı',quest:'Bir anı geri geldi'};
-const CH={sleep:.4,faint:.6,quest:.3};
-const memKind={};window.__v57={quest:()=>memEvent('quest'),kind:memKind};
-function memEvent(ev){if(onTitle||!met||tz)return false;if(Math.random()>CH[ev])return false;
-  const L=[];for(let i=B0;i<MEMS.length;i++){const m=MEMS[i];if(!mems.has(i)&&m.ev.indexOf(ev)>=0&&day>=m.min)L.push(i)}
-  if(!L.length)return false;const i=L[Math.floor(Math.random()*L.length)];memKind[i]=ev;memUnlock(i);return true}
+const memKind={};window.__v57={quest:()=>false,kind:memKind};   // v3.19: the memories now come through v318story (in order)
 // the title of the card says how it came back
 {const _o=openMem;openMem=function(i,again){const r=_o.apply(this,arguments);try{const h=memOv.querySelector('h3');if(h)h.textContent=again?'Bir anı':KIND[memKind[i]]||'Bir anı geri geldi'}catch(e){}return r}}
-// the hooks: sleep, faint (any blackout), finishing a quest (Kemal's or anyone's)
-{const _s=sleepBed;sleepBed=function(o){const night=isNight();const r=_s.apply(this,arguments);if(night)setTimeout(()=>memEvent('sleep'),3600);return r}}
-{const _f=faint;faint=function(){const r=_f.apply(this,arguments);setTimeout(()=>memEvent('faint'),2500);return r}}
-{const _n=nightDeath;nightDeath=function(){const r=_n.apply(this,arguments);setTimeout(()=>memEvent('faint'),2500);return r}}
-{const _t=turnIn;turnIn=function(){const r=_t.apply(this,arguments);setTimeout(()=>memEvent('quest'),1200);return r}}
 // scenes for the new memories
 const _sc=memScene;
 memScene=function(g,i,t,line){if(i<B0)return _sc.apply(this,arguments);
   const p=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(Math.round(x),Math.round(y),w,h)};g.setTransform(1,0,0,1,0,0);g.imageSmoothingEnabled=false;
   const H=LOOK.hero,Lv=LOOK.love,k=i-B0,star=(n,top)=>{for(let q=0;q<n;q++){const sx=(q*97)%240,sy=(q*53)%top;if(Math.sin(t*2+q)>-.3)p(sx,sy,1,1,q%5?'#cfd8ff':'#ffffff')}};
-  if(k===0){p(0,0,240,135,'#141a3a');star(70,70);p(0,78,240,57,'#d8c08a');p(0,72,240,8,'#2a4a7a');for(let q=0;q<10;q++)p((q*31+t*10)%240,74,12,1,'rgba(255,255,255,.4)');
-    const fx=170,fy=104;for(let q=0;q<5;q++)p(fx-8+q*4,fy,3,4,'#6a4426');const f=Math.sin(t*12);p(fx-5,fy-8,10,8,'#f2902a');p(fx-3,fy-12-f,6,6,'#ffd27a');
-    for(let q=0;q<6;q++){const a=(t*.8+q/6)%1;p(fx+Math.sin(q*3+t)*6,fy-12-a*40,1,1,`rgba(255,200,100,${(1-a).toFixed(2)})`)}
-    const sw=Math.sin(t*3)*4;drawChibi(g,100+sw,108,H,{fx:1,step:Math.sin(t*6)>0?1:0});drawChibi(g,118+sw,108,Lv,{fx:-1,step:Math.sin(t*6)>0?0:1,arm:'reach'});if(line>=1)cH(g,110+sw,80-((t*14)%20),1-((t*14)%20)/20)}
-  else if(k===1){p(0,0,240,135,'#3a2a1e');p(0,90,240,45,'#5a3e28');p(20,70,200,8,'#8a5a30');p(20,70,200,2,'#a8713f');for(let q=0;q<8;q++){const gx=40+q*20;g.strokeStyle='#c8a050';g.lineWidth=1;g.beginPath();g.arc(gx,64,3+q%3,0,6.28);g.stroke()}
-    p(0,0,240,30,'#2a1e14');p(150,8,30,20,'#9ad0ff');const a=Math.sin(t*1.5)*.6;g.save();g.translate(120,52);p(-10,-10,20,20,'#b8a070');g.fillStyle='#f0e8d0';g.beginPath();g.arc(0,0,8,0,6.28);g.fill();g.rotate(a);p(-1,-7,2,7,'#c84a3a');p(-1,0,2,6,'#3a3a3a');g.restore();p(112,46,16,1,'rgba(255,255,255,.6)');
-    drawChibi(g,90,108,H,{fx:1});drawChibi(g,150,108,Lv,{fx:-1,arm:'reach'})}
-  else if(k===2){p(0,0,240,135,'#c8d0d4');p(0,96,240,39,'#9aa4a8');for(let q=0;q<8;q++)p(q*32,0,2,96,'#b0b8bc');const fl=Math.sin(t*20)>.7?.5:1;g.globalAlpha=fl;p(60,4,40,4,'#f8fcff');p(160,4,40,4,'#f8fcff');g.globalAlpha=1;
-    p(70,80,100,14,'#e8ecee');p(70,80,100,3,'#ffffff');p(74,94,3,14,'#6a7478');p(163,94,3,14,'#6a7478');drawChibi(g,100,84,H,{closed:1,fx:1});drawChibi(g,150,106,Lv,{fx:-1,arm:'reach'});
-    if(line>=1)cH(g,126,70-((t*12)%18),1-((t*12)%18)/18);const vg=g.createRadialGradient(120,68,30,120,68,140);vg.addColorStop(0,'rgba(255,255,255,0)');vg.addColorStop(1,'rgba(200,220,230,.5)');g.fillStyle=vg;g.fillRect(0,0,240,135)}
-  else if(k===3){p(0,0,240,135,'#1a1430');p(0,0,240,40,'#0a0c1c');star(50,38);p(20,60,200,60,'#d8c8a0');for(let q=0;q<40;q++){const sx=26+(q*47)%186,sy=64+(q*29)%52;if((q*7)%9>1)p(sx,sy,2,2,'#2a2440')}
-    p(120,84,24,14,'#d8c8a0');g.strokeStyle='#8a4aff';g.lineWidth=1;g.strokeRect(118,82,28,18);
-    for(let q=0;q<3;q++){const mx=40+q*70;p(mx,104,3,8,'#efe6d0');p(mx,100+Math.sin(t*10+q),3,4,'#ffd27a')}drawChibi(g,70,112,H,{fx:1,sit:1});drawChibi(g,180,112,Lv,{fx:-1,sit:1,arm:'reach'})}
-  else if(k===4){p(0,0,240,135,'#5a3a22');p(0,0,240,60,'#6a4a2e');p(160,10,50,34,'#e8a060');p(184,10,2,34,'#5a3418');p(160,26,50,2,'#5a3418');
+  if(k===0){p(0,0,240,135,'#5a3a22');p(0,0,240,60,'#6a4a2e');p(160,10,50,34,'#e8a060');p(184,10,2,34,'#5a3418');p(160,26,50,2,'#5a3418');
     p(30,80,180,10,'#8a5a30');p(30,80,180,2,'#a8713f');p(40,90,4,30,'#5a3418');p(196,90,4,30,'#5a3418');p(90,72,40,10,'#f6eedc');for(let q=0;q<5;q++)p(94,74+q*2,30-q*4,1,'#5a5a6a');
     p(150,66,16,14,'#b0603a');for(let q=0;q<3;q++){const a=(t*.9+q*.33)%1;p(156+Math.sin(t*2+q)*3,64-a*22,2,2,`rgba(220,220,220,${(1-a).toFixed(2)})`)}drawChibi(g,60,112,H,{fx:1});
     if(line>=2){g.fillStyle='rgba(160,80,224,.25)';g.fillRect(160,10,50,34)}}
-  else if(k===5){p(0,0,240,135,'#04030a');const r=10+Math.sin(t*1.3)*4,o=.5+.5*Math.sin(t*1.3);g.fillStyle=`rgba(160,80,224,${(.25+.3*o).toFixed(2)})`;g.beginPath();g.ellipse(120,40,40,r,0,0,6.28);g.fill();g.fillStyle='#05030c';g.beginPath();g.ellipse(120,40,26,r*.6,0,0,6.28);g.fill();g.fillStyle='#c080ff';g.beginPath();g.arc(120,40,4*o+1,0,6.28);g.fill();
+  else if(k===1){p(0,0,240,135,'#04030a');const r=10+Math.sin(t*1.3)*4,o=.5+.5*Math.sin(t*1.3);g.fillStyle=`rgba(160,80,224,${(.25+.3*o).toFixed(2)})`;g.beginPath();g.ellipse(120,40,40,r,0,0,6.28);g.fill();g.fillStyle='#05030c';g.beginPath();g.ellipse(120,40,26,r*.6,0,0,6.28);g.fill();g.fillStyle='#c080ff';g.beginPath();g.arc(120,40,4*o+1,0,6.28);g.fill();
     for(let q=0;q<20;q++)p((q*41+t*6)%240,90+(q*11)%40,14,1,'rgba(120,80,200,.35)');const a=.4+.3*Math.sin(t*2);g.globalAlpha=a;drawChibi(g,120,112,Lv,{fx:-1,closed:Math.sin(t)>0?1:0});g.globalAlpha=1;
     if(line>=1){const f=Math.sin(t*9)>0;p(30,110,4,6,'#6a4426');p(29,104-(f?1:0),6,6,'#f2902a');p(30,102,4,3,'#ffd27a')}}
   else{p(0,0,240,135,'#0a2a4a');for(let q=0;q<60;q++){const bx=(q*53)%240,by=135-((t*30+q*17)%150);p(bx,by,2,2,'rgba(180,220,255,.5)')}
@@ -10544,11 +10485,6 @@ memScene=function(g,i,t,line){if(i<B0)return _sc.apply(this,arguments);
     const d=line>=3?Math.min(30,(t%8)*6):0;drawChibi(g,100-d*.3,90,H,{fx:1,arm:'reach'});drawChibi(g,136+d,80-d,Lv,{fx:-1,arm:'reach'});
     if(line>=3){p(170,20,14,20,'#140a26');p(173,14,8,8,'#140a26');p(176,17,2,1,'#c080ff')}}
   const vg=g.createRadialGradient(120,68,40,120,68,150);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(20,6,40,.55)');g.fillStyle=vg;g.fillRect(0,0,240,135)};
-// the book: recipe memories say how many recipes; the new ones say how they may come
-renderMem=function(){const rd=riddle?`<div class="memrd"><b>Zümrüt'ün bilmecesi:</b> ${riddleText(riddle)}<br><small>Bu tarifi kazanda öğrenince Zümrüt seni ödüllendirir.</small></div>`:'';
-  const how=m=>m.act2?'ACT 2\'de, ikinci adanın ustalarına yardım ettikçe':m.ev.map(e=>({sleep:'rüyada',faint:'bayılınca',quest:'bir görevi bitirince'})[e]).join(' ya da ')+(m.min>1?` · ${m.min}. günden sonra`:'');
-  return bookTabs()+rd+`<p class="note">${loveName?`<b>${esc(loveName)}</b>`:'Eşin'} ile ilgili anılar geri geliyor: bazıları yeni tarifler öğrendikçe, bazıları rastgele: <b>uykuda rüya</b> olarak, <b>bayılınca</b> ya da <b>bir görevi bitirince</b>. Her anı bir kez gelir; buradan yeniden izlersin. Mor kıymıkları Zümrüt'e götürürsen sıradaki anı erken döner.</p><ul class="book mem">${MEMS.map((m,i)=>{const ok=mems.has(i);
-    return `<li${ok?'':' style="opacity:.55"'}><span class="bn"><img src="${ok?clueIcon():unkIcon()}" alt=""><span><b>${ok?esc(m.n):'???'}</b>${ok&&memKind[i]?` <small style="color:#c9a0ff">· ${({sleep:'rüya',faint:'bayılma',quest:'görev'})[memKind[i]]}</small>`:''}<br><small>${ok?esc(memText(m.L[0][1]).replace(/<[^>]+>/g,'')):m.at?`${m.at} tarif öğrenince (şimdi ${found.length})`:how(m)}</small></span></span>${ok?`<span class="rr"><button class="mk ghost" type="button" data-mem="${i}">İzle</button></span>`:''}</li>`}).join('')}</ul>`};
 const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);s.v57={k:Object.assign({},memKind)};return s};
 const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);for(const k in memKind)delete memKind[k];if(d&&d.v57&&d.v57.k)for(const i in d.v57.k)if(MEMS[+i])memKind[+i]=d.v57.k[i];return r};
 }).toString()+')()')}catch(e){try{window.__hamErr('v57: '+(e&&e.message||e))}catch(_){}}})();
@@ -18806,6 +18742,10 @@ window.addEventListener('click',e=>{const t=e.target;if(!t||t.id!=='sellsafe'||!
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
 const OLD=MEMS.slice(),OLDN=OLD.map(m=>m.n),oldScene=memScene;
+// how older saves numbered the memories (index → name): before v3.18, and in v3.18
+const PRE318=['Yağmurlu çarşı','Yanık ekmek','Çay kıyısında söz','Mor bir delik','Son akşam','Kumsalda ilk dans','Kırık pusula','Hastane koridoru','Yıldız haritası','Mektup','Mor fısıltı','Bırakılan el','Sahildeki ışık','Yıldızsız yolcular','Şapka','Mor gemi','Son söz'];
+const V318N=['Kampüste ilk gün','Voleybol','Konser','Açık hava sineması','Ödev gecesi','Bir mesaj','Otogarda','Yağmurda şemsiye','Bisiklet','Waffle','Peçeteden gül','Sinema biletleri','Sahildeki ışık','Yıldızsız yolcular','Şapka','Mor gemi','Son söz','Tavla','Kardan kalp','Çay kenarında kahvaltı','Doğum günü pastası','Şatonun önünde','Hamburger','Kaktüs','Kelebekli kolye','Yüzme dersi','Çay kıyısında söz','Yıldız haritası','Mor bir delik','Mektup','Son akşam','Bırakılan el','Mor fısıltı'];
+const REN={'Kampüste ilk gün':'Sınıfta bir doğum günü','Ödev gecesi':'Maket ödevi'};
 const byOld=n=>OLDN.indexOf(n);
 const T=[
  {n:'Sınıfta bir doğum günü',L:[['','Üniversitede bir sınıf. Aynı sınıftasınız ama daha hiç konuşmadınız. Bugün bir arkadaşınızın doğum günü: sıranın üstünde bir pasta, mumlar, alkışlar.'],['love','<b>{L}</b>: "Ben keserim! Herkese yetecek, merak etmeyin."'],['','Dilim dilim herkese dağıttı. Son tabağı da uzattığında pastadan ona hiç kalmamıştı. Hiç dert etmedi; gülümsedi.'],['','Sen o gülümsemeye hayranlıkla baktın. {HAIRI} pencereden gelen ışıkta parlıyordu. Onu ilk kez o gün gerçekten gördün.']]},
@@ -18832,7 +18772,7 @@ const T=[
  {n:'Çay kıyısında söz',L:null}];
 const night=L=>L.map((x,k)=>k?x:[x[0],x[1].replace('Yeşil bir çayır','Bir yaz gecesi, ay ışığında yeşil bir çayır')]);
 const PROP_M=night(MEM2M),PROP_K=night(MEM2K);
-const PUR=['Yıldız haritası','Mor bir delik','Mektup','Son akşam','Bırakılan el','Mor fısıltı'];
+const PUR=['Mor bir delik','Mektup','Son akşam','Bırakılan el','Mor fısıltı'];   // v3.19: Yıldız haritası is gone
 const MIN=[1,1,1,2,2,3,3,4,5,6,6,7,8,8,9,10,11,12,13,14,15,18];   // the earliest day each ACT 1 memory may come by sleep, faint or a quest
 const mk=(t,k)=>{const o={n:t.n,ev:[],min:1,a1:1,pos:k,old:t.old!=null&&t.old>=0?t.old:null};let L=t.L;
   // the old code (memFix) writes MEMS[2].L on every opening: these lines can't be overwritten
@@ -18843,10 +18783,12 @@ const mk=(t,k)=>{const o={n:t.n,ev:[],min:1,a1:1,pos:k,old:t.old!=null&&t.old>=0
 const A1=T.map(mk);
 const MAST=OLD.filter(m=>m.act2);
 const PURM=PUR.map(n=>{const j=byOld(n);return j<0?null:{n,ev:[],min:1,pur:1,old:j,L:OLD[j].L}}).filter(Boolean);
-MEMS.length=0;
-for(let k=0;k<12;k++)MEMS.push(A1[k]);
-for(const m of MAST)MEMS.push(m);                 // 12..16, where the ACT 2 code expects them
-for(let k=12;k<A1.length;k++)MEMS.push(A1[k]);
+// the ACT 2 masters must stay where the ACT 2 block counted them (its I0): the index of the first one in OLD
+const MI=Math.max(0,OLD.findIndex(m=>m.act2));
+MEMS.length=0;let a1k=0;
+while(MEMS.length<MI&&a1k<A1.length)MEMS.push(A1[a1k++]);
+for(const m of MAST)MEMS.push(m);
+while(a1k<A1.length)MEMS.push(A1[a1k++]);
 for(const m of PURM)MEMS.push(m);
 const A1I=A1.map(m=>MEMS.indexOf(m)),PURI=PURM.map(m=>MEMS.indexOf(m)),PROP=A1I[A1I.length-1];
 // v3.19 (Boğaç): the proposal is not in the chain; it comes only at the very end of ACT 1, right before boarding Barbaros's ship
@@ -18896,11 +18838,15 @@ renderMem=function(){const rd=riddle?`<div class="memrd"><b>Zümrüt'ün bilmece
   const ma=MAST.map(m=>row(MEMS.indexOf(m),'ACT 2\'de, ikinci adanın ustalarına yardım ettikçe')).join('');
   return bookTabs()+rd+`<p class="note">${loveName?`<b>${esc(loveName)}</b>`:'Eşin'} ile anıların sırayla geri geliyor: kazanda yeni tarifler öğrendikçe, <b>uykuda rüya</b> olarak, <b>bayılınca</b> ya da <b>bir görevi bitirince</b>. Mor kıymıkları Zümrüt'e götürürsen sıradaki anı hemen döner. Her anı bir kez gelir; buradan yeniden izlersin.</p><h4 style="margin:10px 0 4px">ACT 1 · ${A1I.filter(i=>mems.has(i)).length} / ${A1I.length}</h4><ul class="book mem">${a1}</ul><h4 style="margin:12px 0 4px">ACT 2 · Mor ışık</h4><ul class="book mem">${pu}${ma}</ul>`};
 // ---------------------------------------------------------------- saves: v318 marks the new layout; an older save is moved over by name
-{const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);try{s.v318=1}catch(e){}return s}}
+// v3.19: saved by NAME (v319), so adding or removing a memory never shifts an old save
+{const _snap=snapshot;snapshot=function(){const s=_snap.apply(this,arguments);try{s.v318=1;const k={};for(const i in kind)if(MEMS[+i])k[MEMS[+i].n]=kind[i];s.v319={n:[...mems].map(i=>MEMS[i]&&MEMS[i].n).filter(Boolean),k}}catch(e){}return s}}
 {const _rest=restore;restore=function(d){const r=_rest.apply(this,arguments);lastF=null;allA1=null;
-  try{if(d&&!d.v318){const keep=new Set(PUR.concat(MAST.map(m=>m.n))),was=[...mems];mems.clear();memQ=[];for(const k in kind)delete kind[k];
-    const ok=d.v57&&d.v57.k||{};
-    for(const o of was){const n=OLDN[o];if(!keep.has(n))continue;const j=MEMS.findIndex(m=>m.n===n);if(j>=0){mems.add(j);if(ok[o])kind[j]=ok[o]}}}}catch(e){}
+  try{if(d){const idx=n=>MEMS.findIndex(m=>m.n===n);
+    if(d.v319&&Array.isArray(d.v319.n)){mems.clear();memQ=[];for(const k in kind)delete kind[k];for(const n of d.v319.n){const j=idx(n);if(j>=0)mems.add(j)}
+      const kk=d.v319.k||{};for(const n in kk){const j=idx(n);if(j>=0)kind[j]=kk[n]}}
+    else{const v318=!!d.v318,names=v318?V318N:PRE318,keep=new Set(PUR.concat(MAST.map(m=>m.n))),was=[...mems],ok=d.v57&&d.v57.k||{};
+      mems.clear();memQ=[];for(const k in kind)delete kind[k];
+      for(const o of was){let n=names[o];if(!n)continue;n=REN[n]||n;if(!v318&&!keep.has(n))continue;const j=idx(n);if(j>=0){mems.add(j);if(ok[o])kind[j]=ok[o]}}}}}catch(e){}
   return r}}
 // ---------------------------------------------------------------- the pictures
 // v3.19 (Boğaç: "bu yazı hiç okunmuyor"): words in the pictures are real text laid over the canvas (sharp at any size), not
