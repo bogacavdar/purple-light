@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.28** ile birebir (5 Kasım 2026). Bu sürümde: oyuncuya adım adım iş tarif eden bütün pencereler ve yazılar kaldırıldı (yükleme adımları, iPhone tam ekran rehberi, "fareyle bas" bildirimi); yükleme düğmeleri yalnızca tek tıkla yüklenebilen yerde görünür.
+Sürüm: **Versiyon 3.29** ile birebir (5 Kasım 2026). Bu sürümde: telefonda kutucuklarda eşyanın tam adı (dokununca balon; envanterde basılı tutunca seçmeden); reçine yokken çıkan uyarı düzeltildi; Giriş › Kural sadeleşti.
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 

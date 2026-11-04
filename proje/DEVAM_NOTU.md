@@ -1,3 +1,9 @@
+## v3.29 (5 Kasım 2026) · telefonda eşyanın tam adı; reçine uyarısı
+- Yeni blok `v329name`: dokunmatikte `#craft .tile[data-n]` kutucuğuna dokununca (ad `.nm` kısalmışsa) `#nmtip` balonu 2,5 sn; envanterde (`mode==='inv'`) 0,4 sn basılı tutunca balon parmak kalkana kadar, ardından gelen click yutulur. Taşınabilir eşyanın `pointerup` yolunda (`invClick` çağrısı) yerinde kanca: `window.__plNmHeld()`. Fare değişmedi.
+- `feedTorch`: reçine yok uyarısı "Reçinen yok." (eski metin v2.70'te kalkan kabuk tarifini gösteriyordu).
+- CLAUDE.md ve belge Giriş › Kural: 80 yaş cümlesi silindi.
+- Kontrol: chk.js 0 hata. Eski kayıtlara etkisi yok.
+
 ## v3.28 (5 Kasım 2026) · oyuncuya iş tarif eden her şey silindi
 - Yeni kural (CLAUDE.md en üstte, belge Giriş): oyuncuya adım adım iş yaptırılmaz; otomatikse yapılır, değilse gösterilmez.
 - `v253inst` yeniden yazıldı: yalnızca `beforeinstallprompt`. `#instov` penceresi ve CSS'i silindi; iOS/Mac Safari için `manual` dalı gitti.

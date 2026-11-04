@@ -8,6 +8,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.29 · 5 Kasım 2026
+
+### Arayüz
+- **Telefonda eşyanın tam adı:** kutucuklarda uzun adlar kısalıyordu ("Çam…"). Artık bir kutucuğa dokununca eşyanın tam adı kutucuğun üstünde küçük bir balonda birkaç saniye görünür (envanter, el yapımı, kazan, örs, yemek, pazar). Envanterde bir kutucuğa basılı tutunca da tam ad çıkar ve parmağını kaldırana kadar durur; bu basış eşyayı seçmez.
+
+### Düzeltmeler
+- Meşaleye reçine sürmek isteyip reçinen yokken çıkan uyarı artık yalnızca "Reçinen yok." diyor; eskiden artık olmayan bir kabuk tarifini gösteriyordu. (Reçine sürmek her seferinde 1 reçine harcar; bu değişmedi.)
+
+### Tasarım belgesi
+- Sistemler › Telefona göre sıkı düzen: eşyanın tam adı balonu.
+- Işık kaynakları: reçine sürünce 1 reçine harcandığı ve yeni uyarı yazıldı.
+- Giriş › Kural sadeleşti.
+
+---
+
 ## Versiyon 3.28 · 5 Kasım 2026
 
 ### Arayüz
