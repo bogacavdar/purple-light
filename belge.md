@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.20** ile birebir (4 Kasım 2026). Bu sürümde: **oyun kolu** desteği (Xbox, PlayStation ve standart düzendeki kollar; Sistemler › Oyun kolu), karakter yaratmada yeni göz rengi **Kehribar** ve yeni bir gizli başarım.
+Sürüm: **Versiyon 3.21** ile birebir (4 Kasım 2026). Bu sürümde: oyun kolunda menü seçimi önce aynı satır/sütundaki düğmeye gider; belgeye **PlayStation 5 sürümü** yol haritası eklendi. 3.20'de: oyun kolu desteği (Sistemler › Oyun kolu), Kehribar göz rengi, yeni gizli başarım.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -365,7 +365,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 | Select / Back (PS: Paylaş) | Büyük harita | M |
 | Start / Menu (PS: Options) | Duraklat | Esc |
 
-- **Pencerelerde ve menülerde** (ana menü, karakter yaratma, konuşma, envanter, ayarlar…) sol çubuk ya da yön tuşları seçili düğmeyi o yöndeki düğmeye taşır (basılı tutunca tekrarlar); seçili düğme mavi bir çerçeveyle görünür. **A** seçili düğmeye basar (seçili düğme yoksa F'ye basılmış gibi ilerletir: anılar, balık tutma), **B** Esc gibi kapatır/geri döner, kaydırıcıda sol/sağ değeri değiştirir. Karakter adını yazarken **A** önerilen adı kabul eder.
+- **Pencerelerde ve menülerde** (ana menü, karakter yaratma, konuşma, envanter, ayarlar…) sol çubuk ya da yön tuşları seçili düğmeyi o yöndeki düğmeye taşır (basılı tutunca tekrarlar). Önce **aynı satırdaki** (sağ/sol) ya da **aynı sütundaki** (yukarı/aşağı) en yakın düğmeye gidilir; orada düğme yoksa o yöne bakan 45°lik açı içindeki en yakın düğmeye; o da yoksa seçim yerinde kalır (v3.21, Boğaç: yiyecek listesinde sağdaki "Ye"den sola basınca yukarıdaki sekmeye çıkıyordu). seçili düğme mavi bir çerçeveyle görünür. **A** seçili düğmeye basar (seçili düğme yoksa F'ye basılmış gibi ilerletir: anılar, balık tutma), **B** Esc gibi kapatır/geri döner, kaydırıcıda sol/sağ değeri değiştirir. Karakter adını yazarken **A** önerilen adı kabul eder.
 - Kol klavye ya da fare kullanılınca susmaz; ikisi birlikte kullanılabilir. Kol ayrılınca basılı kalan tuşlar bırakılır.
 - **Titreşim:** hasar alınca kol titrer (alınan hasarla güçlenir); titreşimi desteklemeyen kolda bir şey olmaz.
 - Kol yalnızca bağlıyken okunur: kol yokken oyuna hiçbir yük eklenmez.
@@ -6269,3 +6269,77 @@ Bunlar Boğaç'la konuşulmuş kararlar; oyuna eklenmedi.
 - **Eş:** ikinci adaya hiç uğramadı; ilk ada yakınında kaçırıldı.
 - **Kötü son:** "Yalnız dönüş" başarımı var ama kötü sonun kendisi henüz yazılmadı.
 - **Planlanan gizli başarım (Boğaç, 28 Ekim 2026):** tanrı modu açıkken mor ışığa yakalanıp bayılmak gizli bir başarım olacak (adı ve simgesi henüz seçilmedi). Mor ışığın tanrı modunu da delmesi bilinçli bir tasarım kararıdır; "düzeltilmez".
+
+
+# PlayStation 5 sürümü (hedef, henüz başlanmadı)
+
+**Karar (4 Kasım 2026, Boğaç):** Purple Light'ın PS5'e de çıkması isteniyor. Bu bölüm o yolun planıdır: nereye, nasıl başvurulur, oyunda neyin değişmesi gerekir. Bilgiler Kasım 2026'da Sony'nin ve oyun motorlarının yayımlanmış sayfalarından derlendi; başvurudan önce güncel hâli PlayStation Partners sitesinden yeniden kontrol edilir. Sony'nin ayrıntılı belgeleri (teknik kurallar, ücretler, gelir payı) gizlilik sözleşmesi altındadır, burada yalnızca açık bilgiler var.
+
+## Neden bugünkü oyun doğrudan PS5'e gidemez
+
+- PS5 yalnızca Sony'nin imzaladığı yazılımları çalıştırır; USB'den ya da tarayıcıdan bir HTML oyunu "kurulamaz". PS5'in gizli tarayıcısı resmî değildir, oyun dağıtımı için kullanılamaz.
+- Purple Light tek bir HTML/JavaScript dosyasıdır (bkz. **Kullanılan teknolojiler**). PS5 sürümü için oyun, PS5 desteği olan bir **oyun motoruna taşınır** (kod yeniden yazılır).
+- Geliştirme ve deneme normal PS5'te değil, Sony'nin verdiği **geliştirme kiti (DevKit)** ve **test kitinde (TestKit)** yapılır. Bunlar yalnızca Sony'nin onayladığı geliştiricilere verilir.
+
+## Yol haritası
+
+| Adım | Ne yapılır | Not |
+|---|---|---|
+| 1. Oyunu bitir | ACT 1–3 tamam, oynanabilir sürüm. | Başvuruda en güçlü kanıt çalışan bir sürümdür. |
+| 2. Şirket | Başvuru şirket/stüdyo bilgisi ister; genelde tüzel kişilik gerekir. | Türkiye'de şahıs şirketi mi limited mi yeteceği Sony'nin formunda ve bir mali müşavirle kontrol edilir. Stüdyo adı, web sitesi, kurumsal e-posta hazır olur. |
+| 3. Motor seçimi ve taşıma | Oyun Godot, Defold, Unity ya da GameMaker'a taşınır; önce PC'de çalışır. | Aşağıda **Motor seçenekleri**. |
+| 4. PC'de yayın (önerilen) | Steam'de mağaza sayfası, fragman, demo. | İlgi (istek listesi, oyuncu yorumları) hem Sony başvurusunu hem yayıncı görüşmelerini güçlendirir. |
+| 5. PlayStation Partners kaydı | https://partners.playstation.net/ (kayıt: register.playstation.net/partnership). Ortaklık türü seçilir, şirket bilgileri girilir. | Başvuru ücretsizdir. |
+| 6. İlk başvuru | Kısa proje özeti: tür ve stil, yaklaşık çıkış tarihi, başka platform planı, oyunu ayıran 1–2 özellik. | Sony bu aşamada uzun anlatım istemiyor. |
+| 7. Sözleşme | Onay gelirse lisans ve gizlilik sözleşmeleri imzalanır. | Gelir payı ve şartlar sözleşmede yazar. |
+| 8. DevNet ve kitler | PS5 DevNet'e (araçlar, belgeler, forum) erişim açılır. Kit istenir. | Sony 2022'den beri yeni kaydolan ve oyun fikri kabul edilen geliştiricilere **bir PS5 geliştirme kiti ve bir test kitini ücretsiz ödünç** veriyor (en çok 2 yıl, sonra iade). Programın sürüp sürmediği başvuruda sorulur. |
+| 9. Motorun PS5 eklentisi | DevNet'te Development → Tools & Middleware → motorun sayfası → "Confirm status". Motor firması lisansı açar. | Godot için W4 Games, Unity için Unity Pro, GameMaker için Enterprise aboneliği gerekir. |
+| 10. PS5'e özel işler | Kupalar, kayıt sistemi, DualSense, performans, yaş derecelendirmesi, mağaza sayfası, diller. | Aşağıda **PS5 için oyunda değişecekler**. |
+| 11. Sertifikasyon | Sony'nin teknik ve içerik kontrolü; hata çıkarsa düzeltilip yeniden gönderilir. | Kurallar DevNet'te; erken okunur. |
+| 12. Yayın | PlayStation Store'da çıkış. | |
+
+**Alternatif yol: yayıncı ya da port şirketi.** Oyun PC'de ilgi görürse bir yayıncı ya da konsol port şirketi PS5 sürümünü, Sony başvurusunu, kitleri ve sertifikasyonu üstlenebilir (gelir paylaşılır). Küçük stüdyoların konsola çıkışında en yaygın yol budur (ör. Balatro, Playstack ile).
+
+## Sony'ye sunum (pitch) dosyası
+
+Sony'nin yayımladığı rehbere göre ayrıntılı sunumda olması gerekenler, Purple Light için karşılıklarıyla:
+
+| Sony'nin istediği | Purple Light için |
+|---|---|
+| Kısa tanıtım ve oyunu farklı kılan şey | Hayatta kalma + üretim + hikâye; kayıp sevgilinin anıları, mor ışık gizemi, el yapımı piksel dünya. |
+| Neden PlayStation'a uygun | Kolla oynanacak biçimde tasarlandı (v3.20 oyun kolu düzeni), DualSense titreşimi, 42 başarımın kupaya dönüşmesi. |
+| Ekip ve geçmiş | Boğaç (tasarım, yönetim), stüdyo bilgileri. |
+| Çalışan sürüm ya da oynanış videosu | Yayındaki oyun (https://bogacavdar.github.io/purple-light/), PC sürümü, fragman. Sony çalışan sürümü en iyi sunum sayıyor. |
+| İş soruları | Diğer platformlar (PC/Steam), hedef pazarlar, diller (Türkçe, İngilizce), iş modeli (tek seferlik satış), istenen destek, geliştirme ve pazarlama bütçesi, çıkış sonrası güncelleme planı (ACT 3). |
+
+## Motor seçenekleri
+
+| Motor | PS5 için ne gerekir | Purple Light'a uygunluğu |
+|---|---|---|
+| **Godot** | Açık kaynak, ücretsiz. PS5 desteği W4 Games'in **W4 Consoles** eklentisiyle: 8 kişiye kadar ekipte tek platform yılda 800 $ (2 platform 1.500 $, 3 platform 2.000 $; fiyatlar değişebilir). | 2D piksel oyun için iyi; en olası seçim. |
+| **Defold** | Ücretsiz. PS5 eklentisi, Sony onayı DevNet'te doğrulanınca verilir. | 2D'ye uygun, hafif; topluluğu küçük. |
+| **Unity** | PS5 için Unity Pro ya da Enterprise aboneliği. | Güçlü ama 2D piksel oyun için ağır ve pahalı. |
+| **GameMaker** | Konsol için Enterprise aboneliği. | 2D'ye çok uygun; abonelik ücretli. |
+
+Taşırken yeniden kullanılacaklar: bu tasarım belgesi (oyunun tam tanımı), bütün sayılar ve tablolar, harita verisi, metinler, piksel çizimler (dışa aktarılarak), müzik ve ses tasarımı. Yeniden yazılacak olan: kod.
+
+## PS5 için oyunda değişecekler
+
+- **Kupalar (Trophies):** 42 başarım PS5 kupalarına eşlenir; Platin zaten oyunda var. Sony'nin kupa kuralları (sayı, dağılım) DevNet'te.
+- **Kontroller:** v3.20 oyun kolu düzeni (**Sistemler › Oyun kolu**) temel alınır; DualSense'in dokunmatik yüzeyi, hoparlörü, tetik direnci isteğe bağlı eklenir. Klavye/fare ekranları ve dokunmatik düğmeler kaldırılır.
+- **Kayıt:** tarayıcı kaydı yerine PS5'in kayıt sistemi; bulut kaydı.
+- **Arayüz:** televizyonda uzaktan okunabilir yazı boyları; bütün menüler kolla gezilir; ekranda tuş simgeleri PlayStation'ınki (✕ ○ □ △).
+- **Performans:** sabit kare hızı (en az 30, hedef 60 kare/sn), hızlı yükleme.
+- **Yaş derecelendirmesi:** Avrupa ve Türkiye için PEGI, ABD için ESRB (IARC üzerinden ya da Sony'nin yönlendirmesiyle). İçerik (dövüş, kan efekti) buna göre gözden geçirilir.
+- **Diller:** en az Türkçe ve İngilizce.
+- **Mağaza:** kapak görselleri, fragman, açıklama, fiyat.
+
+## Kaynaklar
+
+- PlayStation Partners: https://partners.playstation.net/
+- Sony, ücretsiz geliştirme donanımı (2022): https://sonyinteractive.com/en/news/blog/complimentary-development-hardware/
+- Sony'nin sunum rehberi (WN Hub özeti): https://wnhub.io/news/stores-and-publishing/item-18374
+- Defold PlayStation kılavuzu: https://defold.com/manuals/sony-playstation
+- GameMaker konsol başvurusu: https://gamemaker.io/en/help/articles/application-process-for-console-access
+- Unity, PlayStation geliştirme: https://support.unity.com/hc/en-us/articles/212064606-How-do-I-develop-to-PlayStation-platforms
+- W4 Consoles fiyatları: https://gamefromscratch.com/w4-games-release-godot-w4-console-pricing/

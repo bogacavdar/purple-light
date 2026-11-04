@@ -1,3 +1,8 @@
+## v3.21 (4 Kasım 2026) · kolda menü seçimi düzeltmesi, belgeye PS5 yol haritası
+- Belge: yeni `parts/99_ps5.md` (PS5 sürümü planı, kaynaklarıyla); `20_sistemler.md` Oyun kolu menü maddesi; `00_giris.md`.
+- `v320pad` `moveFocus`: aday önce aynı satır (sağ/sol: dikey aralıklar örtüşür) ya da aynı sütun (yukarı/aşağı) → en küçük `along+perp*.5`; yoksa 45° koni (`perp<=along`) → `along+perp*2`; yoksa yerinde kalır. Eskisi koni sınırı olmadan `along+perp*2.2` idi; yiyecek listesinde sağdaki "Ye"den sola, yukarıdaki Balıklar sekmesi seçiliyordu (Boğaç'ın ekran görüntüsü).
+- Kontrol: chk.js 0 hata (`?.` 1, `??` 7). Test yapılmadı.
+
 ## v3.20 (4 Kasım 2026) · oyun kolu, kehribar göz rengi, gizli başarım Kehribar gözlüm
 - Belge `20_sistemler.md` (yeni "Oyun kolu" bölümü, `# Temel sistemler` öncesi), `10_akis.md`, `94_basarimlar.md`, `00_giris.md`.
 - `<script id="v320pad">` (dosya sonu): kol, klavye olayı üretir (`KeyboardEvent` keydown/keyup, `document.body`'ye). Her eylem için **bağlı tuş** gönderilir (`store.get('hammadde.b5.keys.v1')[id].c`, yoksa varsayılan), v48-b5'teki `translate` onu oyunun varsayılan tuşuna çevirir; böylece tuş değiştirmek kolu bozmaz ve klavyenin yaptığı her şey (arena, deniz, balık, anılar) kolla da olur. Escape doğrudan gönderilir.

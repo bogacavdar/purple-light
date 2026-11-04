@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.21 · 4 Kasım 2026
+
+### Düzeltmeler
+- **Oyun kolunda menülerde gezinme:** çubuğu ya da yön tuşunu bir yöne itince seçim artık önce **aynı satırdaki** (sağ/sol) ya da **aynı sütundaki** (yukarı/aşağı) en yakın düğmeye gider; orada düğme yoksa o yöne bakan en yakın düğmeye, o da yoksa yerinde kalır. Yiyecek listesinde sağdaki "Ye"den sola basınca seçim yukarıdaki sekmeye kaçıyordu, düzeldi.
+
+### Tasarım belgesi
+- Yeni bölüm **PlayStation 5 sürümü:** PS5'e çıkmanın yol haritası (şirket, PlayStation Partners başvurusu, geliştirme kitleri, motor seçenekleri ve ücretleri, Sony'ye sunum dosyası, kupalar ve PS5'e özel işler).
+- Oyun kolu bölümüne menüde seçimin hangi düğmeye gittiği yazıldı.
+
+---
+
 ## Versiyon 3.20 · 4 Kasım 2026
 
 ### Oynanış

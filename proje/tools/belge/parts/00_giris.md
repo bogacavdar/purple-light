@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.20** ile birebir (4 Kasım 2026). Bu sürümde: **oyun kolu** desteği (Xbox, PlayStation ve standart düzendeki kollar; Sistemler › Oyun kolu), karakter yaratmada yeni göz rengi **Kehribar** ve yeni bir gizli başarım.
+Sürüm: **Versiyon 3.21** ile birebir (4 Kasım 2026). Bu sürümde: oyun kolunda menü seçimi önce aynı satır/sütundaki düğmeye gider; belgeye **PlayStation 5 sürümü** yol haritası eklendi. 3.20'de: oyun kolu desteği (Sistemler › Oyun kolu), Kehribar göz rengi, yeni gizli başarım.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
