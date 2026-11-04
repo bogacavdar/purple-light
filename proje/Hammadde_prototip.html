@@ -18824,7 +18824,7 @@ const T=[
  {n:'Hamburger',L:[['','Bir hamburgerci. Önünüzde kocaman iki hamburger, patatesler.'],['love','<b>{L}</b>: "Ben bunu bitiremem… sen yer misin?"'],['','Seninki çoktan bitmişti. Yine de yedin. Sonra hep böyle oldu: yarısı hep sana kaldı.']]},
  {n:'Kaktüs',L:[['','İlk işin. Evden çalışıyorsun; ilk gün kapı çaldı. Bir paket: içinde küçük bir cam fanus ve bir not. Fanusun içinde minicik bir kaktüs, yanında el ele iki figür: siz.'],['love','<b>{L}</b> (notta): "Yeni işin kutlu olsun! Sen çiçeğe bakamazsın, biliyorum. O yüzden dünyanın en dayanıklı çiçeğini yolladım. Bunu da öldürürsen konuşacağız."'],['','Fanusu masanın köşesine koydun. Her gün ona baktın, her gün onu düşündün.']]},
  {n:'Kelebekli kolye',L:[['','Küçük bir kutu. İçinde ince bir zincir, üstünde beş lacivert kelebek: üçü altta, ikisi üstte.'],['hero','<b>{H}</b>: "Görünce seni hatırlattı."'],['love','<b>{L}</b>: "Çok güzel… Bu en sevdiğim kolye oldu!"']]},
- {n:'Yüzme dersi',L:[['','İlk tatiliniz. Masmavi bir deniz, sıcak kum, tuzlu rüzgâr.'],['love','<b>{L}</b>: "Ben yüzme bilmiyorum… beni bırakma ama!"'],['hero','<b>{H}</b>: "Bırakmam. Tutuyorum seni."'],['','O gün yüzmeyi öğrendi. Her kulaçta dönüp sana baktı.']]},
+ {n:'Yüzme dersi',L:[['','İlk tatiliniz. Masmavi bir deniz, sıcak kum, tuzlu rüzgâr.'],['love','<b>{L}</b>: "Ben yüzme bilmiyorum… beni bırakma ama!"'],['hero','<b>{H}</b>: "Bırakmam. Yeşil can simidin var, ben de buradayım."'],['','Can simidinin içinde ayaklarını çırpmayı, kollarını açmayı gösterdin. Simidi sen tuttun, o yüzdü.'],['','O gün yüzmeyi öğrendi. Her kulaçta dönüp sana baktı.']]},
  {n:'Çay kıyısında söz',L:null}];
 const night=L=>L.map((x,k)=>k?x:[x[0],x[1].replace('Yeşil bir çayır','Bir yaz gecesi, ay ışığında yeşil bir çayır')]);
 const PROP_M=night(MEM2M),PROP_K=night(MEM2K);
@@ -19158,12 +19158,14 @@ function scene318(g,i,t,line){const m=MEMS[i];if(!m)return;const lab=(x,y,tx,o)=
     if(line>=2)hearts(168,82,2);warm()}
   else if(S==='Yüzme dersi'){   // the first holiday: learning to swim
     sky('#5ab4ec','#bfe6fa',56);circ(200,22,12,'#fff2b0');p(0,56,240,79,'#2a8ad0');for(let q=0;q<26;q++)p((q*31+t*12)%250-6,60+(q*13)%70,10,1,'rgba(255,255,255,.45)');p(0,120,240,15,'#ecd8a0');
-    const sw=line>=3?Math.sin(t*2)*30:0;
-    drawChibi(g,100,104,H,{fx:1,arm:'reach',noShadow:1});drawChibi(g,124+sw,106,Lv,{fx:sw<0?-1:1,arm:'reach',noShadow:1,bob:Math.round(Math.sin(t*4))});
+    const sw=line>=4?Math.sin(t*2)*30:0,ring=line<4,lx=ring?116:124+sw;
+    drawChibi(g,100,104,H,{fx:1,arm:'reach',noShadow:1});drawChibi(g,lx,106,Lv,{fx:sw<0?-1:1,arm:'reach',noShadow:1,bob:Math.round(Math.sin(t*4))});
     g.fillStyle='rgba(42,138,208,.82)';g.fillRect(0,94,240,26);for(let q=0;q<14;q++)p((q*19+t*16)%240,94+(q%3)*2,8,1,'rgba(255,255,255,.6)');
-    for(let q=0;q<4;q++){const a=(t+q*.25)%1;p(124+sw+Math.sin(q)*8,96-a*4,2,1,`rgba(255,255,255,${(1-a).toFixed(2)})`)}
+    for(let q=0;q<4;q++){const a=(t+q*.25)%1;p(lx+Math.sin(q)*8,96-a*4,2,1,`rgba(255,255,255,${(1-a).toFixed(2)})`)}
+    // the green swim ring around her (v3.19); you hold it while she learns
+    {const rb=Math.round(Math.sin(t*4));g.strokeStyle='#3aa84a';g.lineWidth=4;g.beginPath();g.ellipse(lx,95+rb,9,3.5,0,0,6.28);g.stroke();g.strokeStyle='#f4f8f0';g.lineWidth=4;for(const a0 of [.3,1.9,3.5,5.1]){g.beginPath();g.ellipse(lx,95+rb,9,3.5,0,a0,a0+.4);g.stroke()}g.strokeStyle='#6ad47a';g.lineWidth=1;g.beginPath();g.ellipse(lx,94+rb,9,3,0,Math.PI,6.28);g.stroke()}
     p(20,112,24,3,'#e05a8a');p(30,100,2,14,'#6a4a2a');g.fillStyle='#f2b84b';g.beginPath();g.moveTo(16,102);g.lineTo(46,102);g.lineTo(31,92);g.fill();
-    if(line>=3)hearts(116,74,3);warm()}
+    if(line>=4)hearts(116,74,3);warm()}
   else if(S==='Çay kıyısında söz'){   // the proposal, at night by the stream
     stream(true);for(let q=0;q<10;q++){const fx=(q*47+Math.sin(t*.7+q)*14)%240,fy=64+(q*19)%44+Math.cos(t*.9+q)*5,a=.4+.6*Math.abs(Math.sin(t*2+q));g.fillStyle=`rgba(230,255,140,${(a*.35).toFixed(2)})`;g.beginPath();g.arc(fx,fy,3,0,6.28);g.fill();p(fx,fy,1,1,`rgba(240,255,170,${a.toFixed(2)})`)}
     for(let yy=0;yy<8;yy+=4)for(let xx=0;xx<52;xx+=4)p(94+xx,100+yy,4,4,((xx+yy)/4)%2?'#cfc6b0':'#a83a3a');
