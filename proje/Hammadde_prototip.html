@@ -1380,7 +1380,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.19</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.20</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -8184,7 +8184,7 @@ renderTut();
 const B4={kb:false};
 
 // ---------------------------------------------------------------- 1 · character: eyes, bald, moustache + beard
-const B4EYES=[['#2a1f08','Koyu'],['#6a4220','Ela'],['#2a62b0','Mavi'],['#2a8050','Yeşil'],['#5a6270','Gri'],['#7a3aa8','Mor']];
+const B4EYES=[['#2a1f08','Koyu'],['#6a4220','Ela'],['#2a62b0','Mavi'],['#2a8050','Yeşil'],['#5a6270','Gri'],['#7a3aa8','Mor'],['#c8901e','Kehribar']];   // v3.20: Kehribar
 const B4BI=[['yok','Yok'],['ince','İnce'],['kalin','Kalın'],['pala','Pala'],['sarkik','Sarkık']];
 const B4SK=[['yok','Yok'],['kirli','Kirli sakal'],['kisa','Kısa sakal'],['uzun','Uzun sakal'],['keci','Keçi sakalı']];
 const B4OLD={sakal:['kalin','kisa'],biyik:['kalin','yok'],keci:['ince','keci']};   // v47 beards → moustache + beard
@@ -11566,9 +11566,12 @@ const ACH=[
  ['canlitum','Avcıların avcısı','İki adadaki her canlı türünden en az birini öldür.','Kürk yelek',()=>{const L=allAnim();return L.length>0&&L.every(n=>KS.has(n))}],
  ['dusentum','Ganimet avcısı','Canlılardan düşebilecek her eşyayı en az bir kez elde et.','Tavşan derisi',()=>{const L=allDrop();return L.length>0&&L.every(n=>IS.has(n))}],
  ['hile','Oyunlardaki gibi',(TOUCH?'Ana menüde ekrana art arda 3 kez dokundun: hile modu açıldı.':'Ana menüde “cheat” yazdın: hile modu açıldı.'),'Mor pusula',()=>{try{return localStorage.getItem('hammadde.cheatach')==='1'||localStorage.getItem('hammadde.cheatok')==='1'}catch(e){return false}}],
- ['platin','Platin','Bütün başarımları kazan.','*platin',()=>ACH.every(a=>a[0]==='platin'||got[a[0]])]];
+ // v3.20 (Boğaç): secret, and not counted for Platin (it needs one particular choice in the creator)
+ ['kehribar','Kehribar gözlüm','Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1\'i tamamla.','Kehribar kolye',()=>{try{const D=window.__plDz&&window.__plDz.D;return LOOK.love.eye==='#c8901e'&&(ISLE===2||!!(D&&D.act2))}catch(e){return false}}],
+ ['platin','Platin','Bütün başarımları kazan.','*platin',()=>ACH.every(a=>NOPLAT.has(a[0])||got[a[0]])]];
+const NOPLAT=new Set(['platin','kehribar']);
 // v100: secret ones show ??? until won; the rest show their name and what to do, greyed. PROG: [now, goal] for a bar
-const SECRET=new Set(['iz','ani','ejder','levent','roket','act2','iyison','kotuson','hile','kaya','kopru']);
+const SECRET=new Set(['iz','ani','ejder','levent','roket','act2','iyison','kotuson','hile','kaya','kopru','kehribar']);
 const fl=()=>found.length,dd=()=>day,bk=()=>bossKinds();
 const PROG={tarif1:()=>[fl(),1],tarif25:()=>[fl(),25],tarif100:()=>[fl(),100],tarif250:()=>[fl(),250],tariftum:()=>[cnt(DB.R,x=>foundSet.has(x.r)),DB.R.length],
  hafta:()=>[dd(),7],ay:()=>[dd(),30],gece1:()=>[dd()-1,1],lvl10:()=>[lvl,10],lvl25:()=>[lvl,25],balik:()=>[fishTotal,10],kurt:()=>[k_('Kurt'),10],
@@ -11577,7 +11580,7 @@ const PROG={tarif1:()=>[fl(),1],tarif25:()=>[fl(),25],tarif100:()=>[fl(),100],ta
  reis1:()=>[bk(),1],reis5:()=>[bk(),5],reis10:()=>[bk(),10],reis20:()=>[bk(),20],reishep:()=>{const A=allBoss();return [cnt(A,k=>(bossD()[k]||0)>0),A.length]},
  toplatum:()=>{const L=allGather();return [cnt(L,gotOf),L.length]},madentum:()=>{const L=allOre();return [cnt(L,gotOf),L.length]},
  agactum:()=>{const L=allTree();return [cnt(L,n=>TS.has(n)),L.length]},canlitum:()=>{const L=allAnim();return [cnt(L,n=>KS.has(n)),L.length]},
- dusentum:()=>{const L=allDrop();return [cnt(L,n=>IS.has(n)),L.length]},platin:()=>[ACH.filter(a=>a[0]!=='platin'&&got[a[0]]).length,ACH.length-1]};
+ dusentum:()=>{const L=allDrop();return [cnt(L,n=>IS.has(n)),L.length]},platin:()=>[ACH.filter(a=>!NOPLAT.has(a[0])&&got[a[0]]).length,ACH.filter(a=>!NOPLAT.has(a[0])).length]};
 // the best progress ever seen is kept on the device, so the list shows it on the main menu too
 // v101/v102: won but not looked at yet = "Yeni". Seen when hovered, focused or tapped. Achievements won before this start as new too.
 const SK='hammadde.achseen2';let SEEN=new Set();try{const r=localStorage.getItem(SK);if(r)SEEN=new Set(JSON.parse(r))}catch(e){}
@@ -11610,7 +11613,7 @@ function track(){try{for(const k in kills)if(kills[k]>0)gput(KS,'hammadde.kill',
   let ch=false;for(const id in PROG){if(id==='platin')continue;let v=null;try{v=PROG[id]()}catch(e){}if(!v)continue;const b=PB[id];if(!b||v[0]>b[0]||v[1]!==b[1]){PB[id]=[Math.max(v[0],b&&b[1]===v[1]?b[0]:0),v[1]];ch=true}}
   if(ch)localStorage.setItem(PK,JSON.stringify(PB))}catch(e){}}
 function check(){if(onTitle||wake||window.__plArena)return;track();let n=0;for(const a of ACH){if(got[a[0]])continue;let ok=false;try{ok=!!a[4]()}catch(e){}if(ok){got[a[0]]=Date.now();q.push(a);n++}}
-  if(!got.platin&&ACH.every(a=>a[0]==='platin'||got[a[0]])){const p=ACH.filter(a=>a[0]==='platin')[0];got.platin=Date.now();q.push(p);n++}
+  if(!got.platin&&ACH.every(a=>NOPLAT.has(a[0])||got[a[0]])){const p=ACH.filter(a=>a[0]==='platin')[0];got.platin=Date.now();q.push(p);n++}
   if(n){try{localStorage.setItem(KEY,JSON.stringify(got))}catch(e){}show();if(!ov.hidden)render()}}
 setInterval(check,1500);
 function render(){const c=ACH.filter(a=>got[a[0]]).length,live=!onTitle&&!wake,pl=!!got.platin;
@@ -18748,10 +18751,10 @@ const T=[
  {n:'Voleybol',L:[['','Okulun voleybol sahası. Arkadaşlarla bir maç; ikiniz aynı takımdasınız.'],['hero','<b>{H}</b>: "Merak etme, ben buradayım. Top bana gelsin yeter."'],['','Top sana geldi; kaçırdın. Bir daha geldi; kafana çarptı. Üçüncüsünde fileye takıldın.'],['','O ise her topa yetişti, her smaçı vurdu. Sayıyı alınca dönüp sana baktı.'],['love','<b>{L}</b>: "Top bana gelsin yeter, öyle mi? Sen bu sefer sadece alkışla!"'],['','Maçı o kazandı. Sen bütün maç boyunca ona baktın.']]},
  {n:'Konser',L:[['','Voleyboldan birkaç gün sonra, bir yaz konseri. Kalabalık, renkli ışıklar, hep bir ağızdan söylenen şarkılar.'],['love','<b>{L}</b>: "Bu şarkıya bayılıyorum!"'],['','Şarkı boyunca gözleriniz birkaç kez buluştu. İkiniz de hemen başka yere baktınız; ama ikiniz de gülümsüyordunuz.'],['','Konserden sonra onu evine bıraktın. Kapıda bir an durdu, el salladı. Eve dönerken hâlâ gülümsüyordun.']]},
  {n:'Açık hava sineması',L:[['','Bir yaz gecesi, açık hava sineması. Arkadaşlar battaniyeleri sermiş, mısırlar hazır. Sen o gece gelemedin.'],['','{L} perdeye pek bakmadı. Gözü hep girişteydi; gelen her gölgede seni aradı.'],['love','<b>{L}</b> (gece sana yazdığı mesajda): "Film güzeldi… ama yanımdaki yer boş kaldı."'],['','O mesajı okuyunca anladın: o da seni düşünüyordu.']]},
- {n:'Maket ödevi',L:[['','Güneşli bir öğleden sonra, okulun atölyesi. Masada kartonlar, maket bıçakları, yapıştırıcılar. Ödevi o çoktan çözmüştü; ama minicik parçaları kesip yapıştırmak saatler sürecekti.'],['love','<b>{L}</b>: "Nasıl yapılacağını biliyorum… sadece bu ufacık parçalar bitmek bilmiyor!"'],['hero','<b>{H}</b>: "Sen ölçüp çiz, ben keseyim. Çatıyı da ben tutarım."'],['','Akşam olmadan maket bitti; küçük evin çatısı dimdik duruyordu. "İyi ki geldin," dedi. O cümleyi günlerce düşündün.']]},
- {n:'Bir mesaj',L:[['','Gece, odanda. Telefon elinde; yazıyorsun, siliyorsun, yeniden yazıyorsun.'],['hero','<b>{H}</b>: "Yarın yanıma sevgilim olarak gelir misin?"'],['','Gönderildi. Ekranda üç nokta… uzun, upuzun bir bekleyiş.'],['love','<b>{L}</b>: "Bunun cevabı için sana sarılmam lazım."'],['','Ertesi gün geldi ve sana sarıldı. Cevap buydu. O gün sevgili oldunuz.']]},
+ {n:'Maket ödevi',L:[['','Güneşli bir öğleden sonra, okulun atölyesi. Masada kartonlar, maket bıçakları, yapıştırıcılar. Ödevi o çoktan çözmüştü; ama minicik parçaları kesip yapıştırmak saatler sürecekti.'],['love','<b>{L}</b>: "Nasıl yapılacağını biliyorum… sadece bu ufacık parçalar bitmek bilmiyor!"'],['hero','<b>{H}</b>: "Sen ölçüp çiz, ben keseyim{KG}. Çatıyı da ben tutarım."'],['','Akşam olmadan maket bitti; küçük evin çatısı dimdik duruyordu. "İyi ki geldin," dedi. O cümleyi günlerce düşündün.']]},
+ {n:'Bir mesaj',L:[['','Gece, odanda. Telefon elinde; yazıyorsun, siliyorsun, yeniden yazıyorsun.'],['hero','<b>{H}</b>: "{KGB}Yarın yanıma sevgilim olarak gelir misin?"'],['','Gönderildi. Ekranda üç nokta… uzun, upuzun bir bekleyiş.'],['love','<b>{L}</b>: "Bunun cevabı için sana sarılmam lazım."'],['','Ertesi gün geldi ve sana sarıldı. Cevap buydu. O gün sevgili oldunuz.']]},
  {n:'Otogarda',L:[['','Gece, otogar. Peronların ışıkları yanıyor; otobüsün motoru çalışıyor, hoparlörden son anons yapılıyor.'],['','{L} çok utangaçtı; "seni seviyorum" demeye bir türlü dili varmıyordu.'],['love','<b>{L}</b>: "Kendine dikkat et… tamam mı?"'],['','Otobüse binmeden bir an durdunuz. Ve ilk kez öpüştünüz. Söyleyemediği her şey o andaydı.']]},
- {n:'Yağmurda şemsiye',L:[['','Gündüz, bardaktan boşanırcasına yağmur. Gökyüzü kurşun gibi, sokaklar ırmak gibi akıyor.'],['','Sen hiç şemsiye taşımazdın. O gün yoldaki bir büfeden bir şemsiye aldın: o ıslanmasın diye.'],['love','<b>{L}</b>: "Sen şemsiye taşımazdın ki?"'],['hero','<b>{H}</b>: "Bunu senin için aldım."'],['','İkiniz de aynı şemsiyenin altına sığdınız; ikinizden de tek damla su süzülmedi. Yağmurun sesi hiç bu kadar güzel gelmemişti.']]},
+ {n:'Yağmurda şemsiye',L:[['','Gündüz, bardaktan boşanırcasına yağmur. Gökyüzü kurşun gibi, sokaklar ırmak gibi akıyor.'],['','Sen hiç şemsiye taşımazdın. O gün yoldaki bir büfeden bir şemsiye aldın: o ıslanmasın diye.'],['love','<b>{L}</b>: "Sen şemsiye taşımazdın ki?"'],['hero','<b>{H}</b>: "Bunu senin için aldım{KG}."'],['','İkiniz de aynı şemsiyenin altına sığdınız; ikinizden de tek damla su süzülmedi. Yağmurun sesi hiç bu kadar güzel gelmemişti.']]},
  {n:'Bisiklet',L:[['','Bir gün iki bisiklet kiraladınız. Ağaçlı bir yolda, yan yana, ağır ağır.'],['love','<b>{L}</b>: "Yavaş git, bu an bitmesin."'],['','Yol bitti; siz bitmesin diye bir tur daha attınız.']]},
  {n:'Waffle',L:[['','Başka bir gün, küçük bir kafe, pencere kenarında bir masa. Önünüzde çikolatalı, çilekli kocaman bir waffle.'],['love','<b>{L}</b>: "Yarısı senin… ama çilekler benim!"'],['','Bir ara göz göze geldiniz. Sen gözlerini ondan alamadın.'],['love','<b>{L}</b>: "Öyle süzük süzük bakma… utanıyorum."'],['','Burnunun ucuna çikolata bulaşmıştı. Söylemedin; biraz daha öyle kalsın istedin.']]},
  {n:'Peçeteden gül',L:[['','Bir kafe, köşede küçük bir masa. Kahveler gelene kadar eline bir peçete aldın.'],['','Katladın, büktün, kıvırdın… ve ortaya bir gül çıktı. Gerçeğinden ayırt edilmeyecek kadar güzel.'],['love','<b>{L}</b>: "Dur, ben de yaparım! Bu kadar zor olamaz."'],['','On dakika sonra masada bir şey vardı: saçak saçak, hiçbir şeye benzemeyen bir peçete.'],['love','<b>{L}</b>: "Bu bir gül! …Biraz rüzgâr yemiş bir gül. Tamam… sadece bir peçete. Gülme!"'],['','Güldün. O da güldü. Kahveler geldi, gülmeye devam ettiniz.']]},
@@ -18763,10 +18766,11 @@ const T=[
  {n:'Şatonun önünde',L:[['','Yeşil tepeler, ağaçlar; arkada masallardan çıkmış beyaz bir şato, sivri kuleleri ve mavi çatılarıyla. Yanda bir göl, üstünde küçük bir korsan gemisi.'],['hero','<b>{H}</b>: "Dur, kıpırdama… şimdi gülümse!"'],['','Deklanşör tıkladı. O fotoğrafta şato arkada kaldı; gözler hep ona gitti.']]},
  {n:'Hamburger',L:[['','Bir hamburgerci. Önünüzde kocaman iki hamburger, patatesler.'],['love','<b>{L}</b>: "Ben bunu bitiremem… sen yer misin?"'],['','Seninki çoktan bitmişti. Yine de yedin. Sonra hep böyle oldu: yarısı hep sana kaldı.']]},
  {n:'Kaktüs',L:[['','İlk işin. Evden çalışıyorsun; ilk gün kapı çaldı. Bir paket: içinde küçük bir cam fanus ve bir not. Fanusun içinde minicik bir kaktüs, yanında el ele iki figür: siz.'],['love','<b>{L}</b> (notta): "Yeni işin kutlu olsun! Sen çiçeğe bakamazsın, biliyorum. O yüzden dünyanın en dayanıklı çiçeğini yolladım. Bunu da öldürürsen konuşacağız."'],['','Fanusu masanın köşesine koydun. Her gün ona baktın, her gün onu düşündün.']]},
- {n:'Kelebekli kolye',L:[['','Küçük bir kutu. İçinde ince bir zincir, üstünde beş lacivert kelebek: üçü altta, ikisi üstte.'],['hero','<b>{H}</b>: "Görünce seni hatırlattı."'],['love','<b>{L}</b>: "Çok güzel… Bu en sevdiğim kolye oldu!"']]},
- {n:'Yüzme dersi',L:[['','İlk tatiliniz. Masmavi bir deniz, sıcak kum, tuzlu rüzgâr.'],['love','<b>{L}</b>: "Ben yüzme bilmiyorum… beni bırakma ama!"'],['hero','<b>{H}</b>: "Bırakmam. Yeşil can simidin var, ben de buradayım."'],['','Can simidinin içinde ayaklarını çırpmayı, kollarını açmayı gösterdin. Simidi sen tuttun, o yüzdü.'],['','O gün yüzmeyi öğrendi. Her kulaçta dönüp sana baktı.']]},
+ {n:'Kelebekli kolye',L:[['','Küçük bir kutu. İçinde ince bir zincir, üstünde beş lacivert kelebek: üçü altta, ikisi üstte.'],['hero','<b>{H}</b>: "Görünce seni hatırlattı{KG}."'],['love','<b>{L}</b>: "Çok güzel… Bu en sevdiğim kolye oldu!"']]},
+ {n:'Yüzme dersi',L:[['','İlk tatiliniz. Masmavi bir deniz, sıcak kum, tuzlu rüzgâr.'],['love','<b>{L}</b>: "Ben yüzme bilmiyorum… beni bırakma ama!"'],['hero','<b>{H}</b>: "Bırakmam{KG}. Yeşil can simidin var, ben de buradayım."'],['','Can simidinin içinde ayaklarını çırpmayı, kollarını açmayı gösterdin. Simidi sen tuttun, o yüzdü.'],['','O gün yüzmeyi öğrendi. Her kulaçta dönüp sana baktı.']]},
  {n:'Çay kıyısında söz',L:null}];
-const night=L=>L.map((x,k)=>k?x:[x[0],x[1].replace('Yeşil bir çayır','Bir yaz gecesi, ay ışığında yeşil bir çayır')]);
+// v3.20: the hero's line in the proposal carries the secret name ({KGB}/{KG}: only when the loved one's eyes are amber)
+const night=L=>L.map((x,k)=>k?(x[0]==='hero'?[x[0],x[1].replace('"Benimle','"{KGB}Benimle').replace('Daha da ötesine!"','Daha da ötesine{KG}!"')]:x):[x[0],x[1].replace('Yeşil bir çayır','Bir yaz gecesi, ay ışığında yeşil bir çayır')]);
 const PROP_M=night(MEM2M),PROP_K=night(MEM2K);
 const PUR=['Mor bir delik','Mektup','Son akşam','Bırakılan el','Mor fısıltı'];   // v3.19: Yıldız haritası is gone
 const MIN=[1,1,1,2,2,3,3,4,5,6,6,7,8,8,9,10,11,12,13,14,15,18];   // the earliest day each ACT 1 memory may come by sleep, faint or a quest
@@ -18819,6 +18823,7 @@ setInterval(()=>{try{if(onTitle){lastF=null;return}const f=found.length;if(lastF
     if(k>=0)L.splice(k,0,o);else L.push(o)}}catch(e){}return L}}
 // ---------------------------------------------------------------- text: {HAIRI} = "Uzun kızıl saçları"; every {L} and {H}
 {const _mt=memText;memText=function(s){s=String(s);if(s.indexOf('{HAIRI}')>=0){let h='Saçları';try{h=window.__plLoveHair?window.__plLoveHair('ları'):'kızıl saçları';h=h.charAt(0).toLocaleUpperCase('tr')+h.slice(1)}catch(e){}s=s.split('{HAIRI}').join(h)}
+  const amb=!!(LOOK.love&&LOOK.love.eye==='#c8901e');s=s.split('{KGB}').join(amb?'Kehribar gözlüm… ':'').split('{KG}').join(amb?', kehribar gözlüm':'');
   const nm=esc(loveName||'Mavi'),hn=esc(heroName||'Sen');s=s.split('{L}').join(nm).split('{H}').join(hn);return _mt(s)}}
 // ---------------------------------------------------------------- the trace on the beach: the butterfly necklace
 try{const c=CLUES.find(x=>x.id==='bilezik');if(c)Object.defineProperty(c,'n',{get:()=>'Kelebekli kolye',configurable:true})}catch(e){}

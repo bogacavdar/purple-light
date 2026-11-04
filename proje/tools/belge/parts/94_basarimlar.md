@@ -1,6 +1,6 @@
 # Başarımlar
 
-41 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
+42 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
 
 | Başarım | Nasıl kazanılır | Not |
 |---|---|---|
@@ -44,4 +44,5 @@
 | Avcıların avcısı | İki adadaki her canlı türünden en az birini öldür. | – |
 | Ganimet avcısı | Canlılardan düşebilecek her eşyayı en az bir kez elde et. | – |
 | Oyunlardaki gibi 🔒 | Ana menüde “cheat” yazdın: hile modu açıldı. | Ana menüde klavyeyle "cheat" yaz. Telefonda Ayarlar başlığına art arda 3 kez dokun (başarımın metni yanlışlıkla "ekrana 3 kez dokundun" diyor). |
+| Kehribar gözlüm 🔒 | Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1'i tamamla. | v3.20 (Boğaç): karakter yaratmada sevdiğin kişinin göz rengi **Kehribar** olmalı; ACT 1, Barbaros'un gemisiyle ikinci adaya geçince (ya da ikinci adadayken) tamamlanmış sayılır. Kazanılana kadar listede "???" ve "Gizli başarım" görünür, hiçbir ipucu verilmez. **Platin'e sayılmaz** (belli bir karakter seçimini istediği için). |
 | Platin | Bütün başarımları kazan. | **Şu an kazanılamaz:** "Yalnız dönüş" kazanılamadığı için. |
