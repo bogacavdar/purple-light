@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.28 · 5 Kasım 2026
+
+### Arayüz
+- **Oyuncuya iş tarif eden bütün pencereler ve yazılar kaldırıldı:** "Uygulama olarak indir"in iPhone/iPad ve Mac adım penceresi, iPhone tam ekran rehberi (Ayarlar'daki not ve telefonu çevir ekranındaki düğme), yükleme düğmesine kolla basınca çıkan "fareyle bas" yazısı.
+- **Yükleme düğmeleri** (bilgisayarda "Bilgisayara yükle", telefonda "Uygulama olarak indir") yalnızca oyunun tek tıkla yüklenebildiği yerde görünür; yüklenemiyorsa hiç çıkmaz.
+
+### Tasarım belgesi
+- Girişe yeni kural: oyun oyuncuya asla adım adım iş tarif etmez; yapabiliyorsa otomatik yapar, yapamıyorsa göstermez.
+
+---
+
 ## Versiyon 3.27 · 5 Kasım 2026
 
 ### Arayüz

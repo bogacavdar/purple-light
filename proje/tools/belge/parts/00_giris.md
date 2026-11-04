@@ -1,6 +1,8 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.27** ile birebir (5 Kasım 2026). Bu sürümde: "Bilgisayara yükle" yalnızca tek tıkla yüklenebilen tarayıcıda görünür, nasıl yüklenir pencereleri kaldırıldı. 3.25'te: kolda nişan yardımı, menüde seçim yerinde kalır, kolla ad yazmak için ekran klavyesi, Alt Gr + Enter tam ekran. 3.24'te: kolda LB/RB yalnızca dolu yuvalarda gezer, Kehribar göz rengi daha koyu, Alt + Enter tam ekran. 3.23'te: oyun kolunda **hile kodu** (ana menüde ↑↑↓↓←→←→ B A; kolla oynayana son kartta Astronot Gökay verir). 3.22'de: **silahların kademe kimliği** (her türün 7 kademesi kendi biçimi, boyu, izi, isabet efekti ve sesiyle; ok ok gibi uçar, elde yay nişan alır ve kirişte atılacak ok görünür; daha yüksek kademe ilk kez alınınca "Yeni kademe!"; Aletler › Silahların kademe kimliği). 3.21'de: kolda menü seçimi düzeltmesi, PS5 yol haritası. 3.20'de: oyun kolu.
+Sürüm: **Versiyon 3.28** ile birebir (5 Kasım 2026). Bu sürümde: oyuncuya adım adım iş tarif eden bütün pencereler ve yazılar kaldırıldı (yükleme adımları, iPhone tam ekran rehberi, "fareyle bas" bildirimi); yükleme düğmeleri yalnızca tek tıkla yüklenebilen yerde görünür.
+
+> **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunu 80 yaşında bir dede de açıp oynayabilmelidir. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

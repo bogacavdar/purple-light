@@ -1,3 +1,10 @@
+## v3.28 (5 Kasım 2026) · oyuncuya iş tarif eden her şey silindi
+- Yeni kural (CLAUDE.md en üstte, belge Giriş): oyuncuya adım adım iş yaptırılmaz; otomatikse yapılır, değilse gösterilmez.
+- `v253inst` yeniden yazıldı: yalnızca `beforeinstallprompt`. `#instov` penceresi ve CSS'i silindi; iOS/Mac Safari için `manual` dalı gitti.
+- iPhone tam ekran rehberi silindi: `#s-ios` notu, `#r-ios` düğmesi ve `#r-iosp`, `.iosg` ve `#r-iosp` CSS'i, `IOS&&!canLock` satırı.
+- `v253inst`/`v254inst`: kol basışında bildirim yok, sessizce bir şey yapmaz.
+- Kontrol: chk.js 0 hata.
+
 ## v3.27 (5 Kasım 2026) · Bilgisayara yükle yalnızca tek tıkla; nasıl yüklenir pencereleri silindi
 - Boğaç: "oyuncuya ona bas buna bas denmez, buton olur basar ve yükler bitti". `v254inst` yeniden yazıldı:
   - Düğme yalnızca `beforeinstallprompt` gelince görünür; basınca `prompt()`.
