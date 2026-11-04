@@ -19068,12 +19068,14 @@ function scene318(g,i,t,line){const m=MEMS[i];if(!m)return;const lab=(x,y,tx,o)=
     warm()}
   else if(S==='Tavla'){   // she wins and takes a "LOSER" photo
     p(0,0,240,135,'#5a3a2a');p(0,0,240,12,'#4a2a1a');p(16,14,44,34,'#2a3050');star(8,30);p(16,30,44,1,'#4a2a1a');p(37,14,1,34,'#4a2a1a');circ(206,30,10,'#f2c46a');p(204,40,4,8,'#8a5a30');
-    const sad=line>=2;drawChibi(g,84,100,H,{fx:1,closed:sad});drawChibi(g,158,100,Lv,{fx:-1,arm:line>=3?'reach':'down',bob:line>=2?Math.round(Math.abs(Math.sin(t*10))*-1):0});
+    const sad=line>=2;drawChibi(g,78,100,H,{fx:1,closed:sad});drawChibi(g,162,100,Lv,{fx:-1,arm:line>=3?'reach':'down',bob:line>=2?Math.round(Math.abs(Math.sin(t*10))*-1):0});
     p(40,96,160,8,'#8a5a30');p(40,104,160,31,'#6a4426');p(40,96,160,2,'#a8713f');
-    p(84,82,72,16,'#c8945a');p(84,82,72,2,'#e0b070');p(119,82,2,16,'#6a4426');
-    for(let q=0;q<6;q++){g.fillStyle=q%2?'#7a2a2a':'#efe6d0';for(const ox of [86,122]){const x=ox+q*5.6;g.beginPath();g.moveTo(x,83);g.lineTo(x+5,83);g.lineTo(x+2.5,89);g.fill();g.fillStyle=q%2?'#efe6d0':'#7a2a2a';g.beginPath();g.moveTo(x,97);g.lineTo(x+5,97);g.lineTo(x+2.5,91);g.fill();g.fillStyle=q%2?'#7a2a2a':'#efe6d0'}}
-    for(let q=0;q<5;q++){circ(90+q*5,94,2,'#f4ecdc');circ(130+q*4,86,2,'#2a1a1a')}
-    const dr=line<2?Math.floor(t*6)%6:5;for(const dx of [100,110]){p(dx,88,6,6,'#ffffff');p(dx+2,90,2,2,'#2a2a2a');if(dr>2)p(dx+1,89,1,1,'#2a2a2a')}
+    // a closed backgammon box on the table (it stays low, so both faces show)
+    p(102,88,36,9,'#6a3a1e');p(102,88,36,2,'#8a5230');p(102,92,36,1,'#3a1e0e');p(103,89,34,1,'#a8683a');
+    for(let q=0;q<5;q++){p(106+q*7,90,3,1,q%2?'#e0c890':'#3a1e0e')}p(106,94,28,1,'#c8a060');p(118,91,4,3,'#e0b040');p(119,92,2,1,'#8a6020');
+    p(100,96,40,1,'rgba(0,0,0,.3)');
+    const dr=line<2?Math.floor(t*6)%6:5;for(const dx of [144,152]){p(dx,90,6,6,'#ffffff');p(dx,95,6,1,'#c8c8c8');p(dx+2,92,2,2,'#2a2a2a');if(dr>2){p(dx+1,91,1,1,'#2a2a2a');p(dx+4,94,1,1,'#2a2a2a')}}
+    for(let q=0;q<3;q++){circ(92+q*5,95,2,q%2?'#2a1a1a':'#f4ecdc')}
     if(sad&&line<4){g.fillStyle='rgba(120,150,200,.8)';g.font='8px sans-serif';g.fillText('…',80,72)}
     if(line===3||line===4){p(160,72,8,12,'#2a2a3a');p(161,73,6,9,'#5a8ad0')}
     if(line===3){const a=Math.max(0,1-((t%2.5)*2));if(a>0){g.fillStyle=`rgba(255,255,255,${(a*.7).toFixed(2)})`;g.fillRect(0,0,240,135)}}
