@@ -1380,7 +1380,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.23</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.24</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -19193,7 +19193,8 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
   const hold=(i,id)=>{if(hit(i))down(id);else if(rel(i))up(id)};
   hold(0,'interact');hold(2,'attack');hold(7,'attack');hold(1,'dodge');hold(3,'eat');hold(6,'parry');
   if(hit(11))tap('dogs');
-  if(hit(4)||hit(5)){try{let i=hand+(hit(5)?1:-1),n=hotN();if(i>=n)i=-1;if(i<-1)i=n-1;setHand(i);sfx('pick')}catch(e){}}
+  if(hit(4)||hit(5)){try{const L=hotList(),n=hotN(),d=hit(5)?1:-1,ar=!!window.__plArena;let i=hand;   // v3.24: only filled slots (and the empty hand, not in the arena)
+    for(let k=0;k<=n;k++){i+=d;if(i>=n)i=-1;if(i<-1)i=n-1;if(i<0?!ar:!!L[i])break}if(i!==hand&&(i<0?!ar:!!L[i])){setHand(i);sfx('pick')}}catch(e){}}
   if(hit(9))tap('Escape');if(hit(8))tap('map');
   if(hit(12))tap('handcraft');if(hit(13))tap('inv');if(hit(14))tap('book');if(hit(15))tap('quests')}
 function start(){if(!P.raf)P.raf=requestAnimationFrame(tick)}

@@ -47,7 +47,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 | Y (PS: △) | En uygun yemeği ye (basılı tut: yemek listesi) | X |
 | LT (L2), basılı tut | Savuştur / gard | E |
 | R3 (sağ çubuğa bas) | Ulti | R |
-| LB / RB (L1 / R1) | Alet kemerinde önceki / sonraki yuva | fare tekerleği |
+| LB / RB (L1 / R1) | Alet kemerinde önceki / sonraki **dolu** yuva; boş yuvaları atlar, boş el de bir durak (v3.24, Boğaç: arenada RB silahı elden alıyordu; arenada boş el durağı yok) | fare tekerleği |
 | Yön tuşları | Yukarı El yapımı · aşağı Envanter · sol Tarif kitabı · sağ Görevler | Tab · I · K · G |
 | Select / Back (PS: Paylaş) | Büyük harita | M |
 | Start / Menu (PS: Options) | Duraklat | Esc |
