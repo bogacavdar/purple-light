@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.28</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.29</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -3109,7 +3109,7 @@ addEventListener('pointermove',e=>{const d=idrag;if(!d||e.pointerId!==d.id)retur
   if(!d.on&&Math.hypot(e.clientX-d.x,e.clientY-d.y)>(d.touch?10:6)){if(d.touch){clearTimeout(d.tm);idrag=null;return}idragStart(d,e.clientX,e.clientY)}
   if(d.on){e.preventDefault();d.g.style.left=e.clientX+'px';d.g.style.top=e.clientY+'px';document.querySelectorAll('.bs.over,#hotbar .hs.over').forEach(x=>x.classList.remove('over'));const o=bsAt(e.clientX,e.clientY);if(o)o.o.classList.add('over')}},{passive:false});
 addEventListener('pointerup',e=>{const d=idrag;if(!d||e.pointerId!==d.id)return;idrag=null;clearTimeout(d.tm);cbody.classList.remove('idrag');if(!d.on)return;d.g.remove();
-  if(d.touch&&Math.hypot(e.clientX-d.x,e.clientY-d.y)<10){invClick({target:d.el});suppressClick=true;setTimeout(()=>suppressClick=false,350);return}   // a long press that did not move = a tap
+  if(d.touch&&Math.hypot(e.clientX-d.x,e.clientY-d.y)<10){if(!(window.__plNmHeld&&window.__plNmHeld()))invClick({target:d.el});suppressClick=true;setTimeout(()=>suppressClick=false,350);return}   // a long press that did not move = a tap
   suppressClick=true;setTimeout(()=>suppressClick=false,50);
   const o=bsAt(e.clientX,e.clientY);document.querySelectorAll('.bs.over,#hotbar .hs.over').forEach(x=>x.classList.remove('over'));
   if(o&&o.i>=0&&o.i<hotN()){const i=o.i;if(d.src==='slot'&&i===d.i){renderCraft();return}beltSet(i,d.n);hotK='';renderHot();toast(`${d.n} ${slotKey(i)}. yuvada`)}
@@ -19498,6 +19498,41 @@ function announceUp(I,prev){const pg=GT[prev.n],ng=GT[I.n];let lab='Yeni kademe!
 {const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{BEST={};const v=d&&d.v322&&d.v322.b;if(v&&typeof v==='object')for(const k in v){const o=v[k];if(o&&typeof o.n==='string'&&+o.t>=0)BEST[k]={t:+o.t,n:o.n}}fill()}catch(e){}return r}}
 {const _st=startNew;startNew=function(){BEST={};const r=_st.apply(this,arguments);try{fill()}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v322tier: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v329name">
+// v3.29 (Boğaç): on touch, tile names are cut ("Çam…"). A tap shows the full name in a small bubble above the tile for ~2.5 s;
+// in the bag a long press (~0.4 s) shows it while the finger stays down and does NOT select the item. Mouse keeps the title tooltip.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const st=document.createElement('style');st.id='v329name-css';
+st.textContent='#nmtip{position:fixed;z-index:9999;pointer-events:none;max-width:min(80vw,320px);padding:5px 10px;background:#141b12;color:#f3ead2;border:2px solid #e8b44a;font-family:inherit;font-weight:700;font-size:15px;line-height:1.25;text-align:center;white-space:normal;overflow-wrap:anywhere;box-shadow:0 4px 12px rgba(0,0,0,.5);opacity:0;transition:opacity .12s}#nmtip.on{opacity:1}'
+ +'#craft .tile{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}';
+document.head.appendChild(st);
+const tip=document.createElement('div');tip.id='nmtip';tip.setAttribute('aria-hidden','true');document.body.appendChild(tip);
+let hideT=0,lp=null,held=false,heldT=0;
+function cut(t){const m=t.querySelector('.nm');if(!m)return false;return m.scrollWidth>m.clientWidth+1||m.scrollHeight>m.clientHeight+1}
+function place(r){const w=tip.offsetWidth,h=tip.offsetHeight,vw=innerWidth;
+  let x=r.left+r.width/2-w/2;x=Math.max(6,Math.min(vw-w-6,x));let y=r.top-h-6;if(y<4)y=r.bottom+6;tip.style.left=x+'px';tip.style.top=y+'px'}
+let shownAt=0;function show(n,r,ms){clearTimeout(hideT);shownAt=performance.now();tip.textContent=n;tip.classList.add('on');place(r);if(ms)hideT=setTimeout(hide,ms)}
+function hide(){clearTimeout(hideT);tip.classList.remove('on')}
+const tileOf=e=>{const t=e.target&&e.target.closest?e.target.closest('#craft .tile[data-n]'):null;return t};
+addEventListener('pointerdown',e=>{if(e.pointerType==='mouse')return;const t=tileOf(e);if(!t){hide();return}
+  const n=t.dataset.n,c=cut(t);lp={id:e.pointerId,x:e.clientX,y:e.clientY,n,c,r:t.getBoundingClientRect(),t0:performance.now()};held=false;
+  if(mode==='inv')lp.tm=setTimeout(()=>{if(!lp)return;held=true;show(lp.n,lp.r,0);try{if(navigator.vibrate)navigator.vibrate(10)}catch(_){}},400)},true);
+addEventListener('pointermove',e=>{if(!lp||e.pointerId!==lp.id)return;if(Math.hypot(e.clientX-lp.x,e.clientY-lp.y)>10){clearTimeout(lp.tm);if(!held)lp=null}},true);
+function up(e,cancel){if(!lp||e.pointerId!==lp.id)return;const d=lp;lp=null;clearTimeout(d.tm);
+  if(held){heldT=performance.now();hideT=setTimeout(hide,900);return}
+  if(cancel||!d.c||Math.hypot(e.clientX-d.x,e.clientY-d.y)>10)return;
+  // a tap: the panel redraws, so find the tile again before showing the bubble
+  setTimeout(()=>{let r=d.r;try{const t=document.querySelector('#craft .tile[data-n="'+(window.CSS&&CSS.escape?CSS.escape(d.n):d.n)+'"]');if(t)r=t.getBoundingClientRect()}catch(_){}if(r.width)show(d.n,r,2500)},30)}
+addEventListener('pointerup',e=>up(e,false),true);addEventListener('pointercancel',e=>up(e,true),true);
+const justHeld=()=>held&&performance.now()-heldT<500;
+window.__plNmHeld=justHeld;
+addEventListener('click',e=>{if(justHeld()&&e.target&&e.target.closest&&e.target.closest('#craft')){e.preventDefault();e.stopImmediatePropagation();held=false}},true);
+addEventListener('contextmenu',e=>{if(e.target&&e.target.closest&&e.target.closest('#craft .tile'))e.preventDefault()},true);
+document.addEventListener('scroll',()=>{if(!held&&performance.now()-shownAt>400)hide()},true);
+{const _cc=closeCraft;closeCraft=function(){hide();return _cc.apply(this,arguments)}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v329name: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
