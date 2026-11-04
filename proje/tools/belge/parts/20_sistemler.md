@@ -52,7 +52,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 | Select / Back (PS: Paylaş) | Büyük harita | M |
 | Start / Menu (PS: Options) | Duraklat | Esc |
 
-- **Pencerelerde ve menülerde** (ana menü, karakter yaratma, konuşma, envanter, ayarlar…) sol çubuk ya da yön tuşları seçili düğmeyi o yöndeki düğmeye taşır (basılı tutunca tekrarlar); seçili düğme mavi bir çerçeveyle görünür. **A** seçili düğmeye basar (seçili düğme yoksa F'ye basılmış gibi ilerletir: anılar, balık tutma), **B** Esc gibi kapatır/geri döner, kaydırıcıda sol/sağ değeri değiştirir. Karakter adını yazarken **A** önerilen adı kabul eder.
+- **Pencerelerde ve menülerde** (ana menü, karakter yaratma, konuşma, envanter, ayarlar…) sol çubuk ya da yön tuşları seçili düğmeyi o yöndeki düğmeye taşır (basılı tutunca tekrarlar). Önce **aynı satırdaki** (sağ/sol) ya da **aynı sütundaki** (yukarı/aşağı) en yakın düğmeye gidilir; orada düğme yoksa o yöne bakan 45°lik açı içindeki en yakın düğmeye; o da yoksa seçim yerinde kalır (v3.21, Boğaç: yiyecek listesinde sağdaki "Ye"den sola basınca yukarıdaki sekmeye çıkıyordu). seçili düğme mavi bir çerçeveyle görünür. **A** seçili düğmeye basar (seçili düğme yoksa F'ye basılmış gibi ilerletir: anılar, balık tutma), **B** Esc gibi kapatır/geri döner, kaydırıcıda sol/sağ değeri değiştirir. Karakter adını yazarken **A** önerilen adı kabul eder.
 - Kol klavye ya da fare kullanılınca susmaz; ikisi birlikte kullanılabilir. Kol ayrılınca basılı kalan tuşlar bırakılır.
 - **Titreşim:** hasar alınca kol titrer (alınan hasarla güçlenir); titreşimi desteklemeyen kolda bir şey olmaz.
 - Kol yalnızca bağlıyken okunur: kol yokken oyuna hiçbir yük eklenmez.

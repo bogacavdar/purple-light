@@ -1380,7 +1380,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.20</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.21</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -19152,8 +19152,11 @@ const focusables=L=>Array.prototype.filter.call(L.querySelectorAll('button,input
 function moveFocus(L,dx,dy){const list=focusables(L);if(!list.length)return;const cur=document.activeElement;
   if(!cur||!L.contains(cur)||list.indexOf(cur)<0){list[0].focus();return}
   if(cur.type==='range'&&dx){cur.value=Math.max(+cur.min||0,Math.min(+cur.max||100,+cur.value+dx*(+cur.step||1)*5));cur.dispatchEvent(new Event('input',{bubbles:true}));cur.dispatchEvent(new Event('change',{bubbles:true}));return}
-  const r=cur.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;let best=null,bs=1e9;
-  for(const b of list){if(b===cur)continue;const q=b.getBoundingClientRect(),ddx=q.left+q.width/2-cx,ddy=q.top+q.height/2-cy,along=ddx*dx+ddy*dy;if(along<=4)continue;const sc=along+(Math.abs(ddx*dy)+Math.abs(ddy*dx))*2.2;if(sc<bs){bs=sc;best=b}}
+  // v3.21: first the same row (left/right) or column (up/down), then a 45° cone, otherwise stay
+  const r=cur.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;let best=null,bs=1e9,bt=9;
+  for(const b of list){if(b===cur)continue;const q=b.getBoundingClientRect(),ddx=q.left+q.width/2-cx,ddy=q.top+q.height/2-cy,along=ddx*dx+ddy*dy,perp=Math.abs(ddx*dy)+Math.abs(ddy*dx);if(along<=4)continue;
+    const same=dx?(q.top<r.bottom-2&&q.bottom>r.top+2):(q.left<r.right-2&&q.right>r.left+2),tier=same?0:perp<=along?1:9;if(tier===9)continue;
+    const sc=along+perp*(tier?2:.5);if(tier<bt||(tier===bt&&sc<bs)){bt=tier;bs=sc;best=b}}
   if(best){best.focus();try{best.scrollIntoView({block:'nearest',inline:'nearest'})}catch(e){}try{sfx('pick')}catch(e){}}}
 function press(L){const a=document.activeElement;
   if(a&&L.contains(a)&&a!==L&&focusables(L).indexOf(a)>=0){if(a.tagName==='INPUT'&&L.id==='names'){cl($('nmok'));return}if(a.tagName==='INPUT'&&a.type!=='checkbox'&&a.type!=='radio')return;a.click();return}
