@@ -1,3 +1,11 @@
+## v3.23 (4 Kasım 2026) · oyun kolunda hile kodu, son kartta Gökay'ın sırrı
+- Belge `20_sistemler.md` (Hile modu › Açmak, Oyun kolu), `50_act2_giris.md`, `58_act2_kisiler.md`, `00_giris.md`.
+- `v320pad` `tick`: yön (d-pad ya da çubuk > .55, baskın eksen) değişiminde ve B/A basışında `P.kq`'ya harf (2 sn boşlukta sıfırlanır). `UUDDLRLRBA` olunca `window.__plCheatCode()` çağrılır ve o karede başka iş yapılmaz (son A menüye basmaz).
+- `v69c`: `window.__plCheatCode` = `cheat` yazmanın aynısı (yalnızca `onTitle`; değilse "Hile kodu ana menüde çalışır").
+- Son kart (`endov`, v81 roket bloğu): `.egk` satırı yalnızca `body.padmode` ya da bağlı bir kol varsa görünür.
+- Xbox kablosuz aparatıyla kolun tarayıcıda kopması oyunla ilgili değil: Boğaç'ta hardwaretester.com'da da koptu. Çözüm aparat/kol yazılım güncellemesi ya da kablo.
+- Kontrol: chk.js 0 hata (`?.` 1, `??` 7). Test yapılmadı.
+
 ## v3.22 (4 Kasım 2026) · silahların kademe kimliği (biçim, iz, isabet, ses), ok çizimi, elde yay, "Yeni kademe!"
 - Belge `85_aletler.md` (yeni "Silahların kademe kimliği", "Savaş çekici ve topuz"un önünde), `00_giris.md`.
 - `<script id="v322tier">` (dosya sonu):

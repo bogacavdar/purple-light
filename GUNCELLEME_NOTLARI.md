@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.23 · 4 Kasım 2026
+
+### Oynanış
+- **Oyun kolunda hile kodu:** ana menüde **Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A** girilince hile ayarları açılır, yeniden girilince gizlenip kapanır (klavyede `cheat` yazmakla aynı). Yönler yön tuşlarıyla ya da sol çubukla girilebilir; tuşlar arasında en çok 2 saniye olabilir. Son A'ya basış o an seçili menü düğmesine basmaz. Oyunun içinde girilirse "Hile kodu ana menüde çalışır" yazar.
+- **Astronot Gökay'ın sırrı:** oyunu kolla oynayan, ACT 2'nin sonundaki kartta Gökay'dan bu kodu öğrenir.
+
+### Tasarım belgesi
+- Sistemler › Hile modu ve Oyun kolu bölümlerine hile kodu; ACT 2'ye giriş ve Gökay'ın bölümüne son karttaki satır eklendi.
+
+---
+
 ## Versiyon 3.22 · 4 Kasım 2026
 
 ### Oynanış

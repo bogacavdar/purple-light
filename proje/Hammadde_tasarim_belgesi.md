@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.22** ile birebir (4 Kasım 2026). Bu sürümde: **silahların kademe kimliği** (her türün 7 kademesi kendi biçimi, boyu, izi, isabet efekti ve sesiyle; ok ok gibi uçar, elde yay nişan alır ve kirişte atılacak ok görünür; daha yüksek kademe ilk kez alınınca "Yeni kademe!"; Aletler › Silahların kademe kimliği). 3.21'de: kolda menü seçimi düzeltmesi, PS5 yol haritası. 3.20'de: oyun kolu.
+Sürüm: **Versiyon 3.23** ile birebir (4 Kasım 2026). Bu sürümde: oyun kolunda **hile kodu** (ana menüde ↑↑↓↓←→←→ B A; kolla oynayana son kartta Astronot Gökay verir). 3.22'de: **silahların kademe kimliği** (her türün 7 kademesi kendi biçimi, boyu, izi, isabet efekti ve sesiyle; ok ok gibi uçar, elde yay nişan alır ve kirişte atılacak ok görünür; daha yüksek kademe ilk kez alınınca "Yeni kademe!"; Aletler › Silahların kademe kimliği). 3.21'de: kolda menü seçimi düzeltmesi, PS5 yol haritası. 3.20'de: oyun kolu.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -369,6 +369,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - Kol klavye ya da fare kullanılınca susmaz; ikisi birlikte kullanılabilir. Kol ayrılınca basılı kalan tuşlar bırakılır.
 - **Titreşim:** hasar alınca kol titrer (alınan hasarla güçlenir); titreşimi desteklemeyen kolda bir şey olmaz.
 - Kol yalnızca bağlıyken okunur: kol yokken oyuna hiçbir yük eklenmez.
+- **Hile kodu (v3.23):** ana menüde Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A hile ayarlarını açar/kapatır (Sistemler › Hile modu).
 
 # Temel sistemler
 
@@ -860,7 +861,7 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 
 ## Hileler
 
-- **Açmak:** ana menüde klavyeyle `cheat` yaz (tekrar yazınca kapanır) ya da telefonda Ayarlar başlığına art arda 3 kez dokun. Sayfa her açıldığında bütün hile anahtarları kapalı başlar.
+- **Açmak:** ana menüde klavyeyle `cheat` yaz (tekrar yazınca kapanır) ya da telefonda Ayarlar başlığına art arda 3 kez dokun. **Oyun kolunda (v3.23, Boğaç):** ana menüde **Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A** (yönler yön tuşlarıyla ya da sol çubukla; tuşlar arasında en çok 2 saniye) girilince hile ayarları açılır, yeniden girilince gizlenip kapanır (`cheat` yazmakla aynı). Son A'ya basış o anda seçili düğmeye basmaz. Kod oyunun içinde girilirse "Hile kodu ana menüde çalışır" yazar. Sayfa her açıldığında bütün hile anahtarları kapalı başlar.
 - **Açınca Hile modu da açılır (v2.29, Boğaç — telefonda hileler açılamıyordu):** eskiden 3 dokunuş (ya da `cheat`) yalnızca hile ayarlarını **görünür** yapıyordu; asıl **Hile modu** anahtarı ayrıca ana menünün Ayarlar'ından açılmalıydı ve oyunun içindeki Ayarlar'da bu anahtar gizli olduğu için oyuna girince hiçbir hile görünmüyordu. Artık: (1) hile ayarları açıldığı an **Hile modu da kendiliğinden açılır** (tek tek hileler yine kapalı başlar; oyun içindeki Ayarlar'da hepsi görünür). (2) **Hile modu anahtarı oyunun içindeki Ayarlar'da da görünür**; oradan açılıp kapatılabilir. (3) Dokunarak ya da tıklayarak (ana menüde 3 kez dokunma, Ayarlar başlığına 3 kez dokunma) hile ayarları yalnızca **açılır**, bir daha dokunmak onları **kapatmaz** (eskiden ana menüde hızlıca 3 kez dokunmak hepsini yanlışlıkla kapatıyordu). Kapatmak için Hile modu anahtarını kapat ya da klavyeyle yeniden `cheat` yaz.
 - **Ekrandaki yazılar (v3.13, Boğaç):** anahtarın adı yalnızca "Hile modu"dur ("test için" yazmaz); Tanrı modunun açıklaması mor ışıktan söz etmez (oyuncuya ipucu vermesin). **Eşya araması (v3.13):** arama kutusuna yazarken oyunun tuşları (ör. E = topla) çalışmaz; "e" harfi yazılabilir.
 - **Tanrı modu:** can, tokluk, enerji, mana hep dolu; canavarla ve açlıkla bayılmazsın, ama **mor ışık seni yine bayıltır** (bilinçli). **Hile paneli:** +100 sikke, +100 XP, +2 saat, günü bitir, zamanı sar, eşya arama (miktar 1/10/50/100). **Tek vuruşta öldür**, **Sınırsız dayanıklılık**, **Sınırsız sikke**, **Gece ışığı**, **Hile kısayolları** (Z +100 sikke, X +100 XP), **ACT 2'ye geç**, **Bütün ara sahneler açık**, **Seviyeyi en üste çıkar**, **Haritayı tamamen aç**.
@@ -2902,7 +2903,7 @@ Bütün ACT 2 ustaları aynı kuralla çalışır:
 3. **Tufan** (Hurda Çölü): tabanca ve pompalı. 4 görev.
 4. **Işın** (Kristal Golem Ocağı): meka zırh. 3 görev.
 5. **Tomris** (Ejder Volkanı): ışın kılıcı. 4 görev; sonuncusu **Kızıl ejder** (9.360 canlı).
-6. **Gökay** (Gök Rıhtımı): 5 görev; göktaşları, uzaylı dronları, gölge muhafızlar, **Gök bekçisi** ve **Roket**. Roket bitince Gökay ile konuşup **Fırlat!** → fırlatma sahnesi → mor gemi → eşinle kavuşma → son kartı ("Yeniden birliktesiniz. Hikâye ACT 3 ile devam edecek."). Son karttan sonra oyuna devam edebilirsin; Gökay'dan yeniden fırlatılabilir.
+6. **Gökay** (Gök Rıhtımı): 5 görev; göktaşları, uzaylı dronları, gölge muhafızlar, **Gök bekçisi** ve **Roket**. Roket bitince Gökay ile konuşup **Fırlat!** → fırlatma sahnesi → mor gemi → eşinle kavuşma → son kartı ("Yeniden birliktesiniz. Hikâye ACT 3 ile devam edecek."). **Kolla oynayana (v3.23, Boğaç):** bu oturumda oyun kolu kullanıldıysa son kartta bir satır daha çıkar: *"Astronot Gökay'dan kolla oynayanlara bir sır: ana menüde Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A."* (hile kodu; Sistemler › Hile modu). Klavye ve dokunmatikle oynayan bu satırı görmez. Son karttan sonra oyuna devam edebilirsin; Gökay'dan yeniden fırlatılabilir.
 
 Ustaların görevleri bittikçe eşinin **ACT 2 anıları** sırayla geri gelir: Sahildeki ışık (gk3), Yıldızsız yolcular (pv3), Şapka (sl4), Mor gemi (mk3), Son söz (ej4).
 
@@ -3265,7 +3266,7 @@ Adanın en uzak ucunda, yarım kalmış bir fırlatma rampasının başında. Se
 | 5 | Roket | Getir: 1 Roket | – | 0 | 5.000 |
 
 
-Açtığı tarifler: Meteor demiri külçesi ve Yıldız külçesi (1. görev), Roket gövdesi, Roket motoru ve Roket (4.). Son görevde roketi teslim edince Gökay'la konuşup **Fırlat!** de: fırlatma sahnesi → mor gemi → kavuşma → son kartı. "Gökyüzüne" ve "Yeniden birlikte" başarımları burada gelir.
+Açtığı tarifler: Meteor demiri külçesi ve Yıldız külçesi (1. görev), Roket gövdesi, Roket motoru ve Roket (4.). Son görevde roketi teslim edince Gökay'la konuşup **Fırlat!** de: fırlatma sahnesi → mor gemi → kavuşma → son kartı. "Gökyüzüne" ve "Yeniden birlikte" başarımları burada gelir. Kolla oynayana son kartta Gökay hile kodunu verir (v3.23; ACT 2'ye giriş › Gökay).
 
 
 # Reisler (boss'lar)
