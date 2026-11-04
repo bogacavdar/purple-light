@@ -2337,7 +2337,7 @@ function restore(d){if(!d||!d.inv)return;
   Object.assign(equip,{bas:null,govde:null,el:null,ayak:null,silah:null});{const e=d.eq||{};for(const k in equip){const n=e[k];if(typeof n==='string'&&slotOf(n)===k)equip[k]=n}}
   ftut=nn(d.ft,(d.tut||0)>4?3:0);ctut=nn(d.ct,(d.tut||0)>8?4:0);torchTut=nn(d.tt,(d.dy||1)>1||(d.tut||0)>=11?3:0);nightScare=nn(d.ns,(d.dy||1)>1?2:0);alp.met=!!d.am;
   drops.length=0;(d.dr||[]).forEach(a=>{if(Array.isArray(a))drops.push({n:a[0],x:a[1],y:a[2],tx:a[1],ty:a[2],t:.99,age:1,ph:Math.random()*6,keep:a[3]?1:0})});dropHint=nn(d.dh,true);
-  if(d.lk){Object.assign(LOOK.hero,LOOK0.hero,d.lk);Object.assign(LOOK.love,LOOK0.love,d.ll||{})}else{Object.assign(LOOK.hero,LOOK0.hero);for(const k of ['hs','dress','gl','hat','hatC','flower','gender'])delete LOOK.hero[k];Object.assign(LOOK.love,LOOK0.love);for(const k of ['hs','dress','flower'])delete LOOK.love[k]}
+  if(d.lk){Object.assign(LOOK.hero,LOOK0.hero,d.lk);Object.assign(LOOK.love,LOOK0.love,d.ll||{})}else{Object.assign(LOOK.hero,LOOK0.hero);for(const k of ['hs','dress','gl','hat','hatC','flower','gender'])delete LOOK.hero[k];Object.assign(LOOK.love,LOOK0.love);for(const k of ['hs','dress','flower'])delete LOOK.love[k]}for(const W of [LOOK.hero,LOOK.love])if(W&&W.eye==='#c8901e')W.eye='#a6620c';   // v3.24: the darker Kehribar (old saves)
   graves.length=0;(d.gv||[]).forEach(g=>{const q=graveSpot(g.x,g.y);g.x=q.x;g.y=q.y;graves.push(g)});bridge.fixed=!!d.bf;shelterSlept=!!d.ss;kaptan.met=!!d.km;kaptan.state=d.ks==='here'?'here':'away';carp.met=!!d.rm;
   htut=nn(d.ht,(d.ct||0)>=4||(d.tut||0)>=11?2:0);ytut=nn(d.yt,3);torchHint=!!d.th;deaths=d.dn||0;for(const k of Object.keys(torchBurn))delete torchBurn[k];Object.assign(torchBurn,d.tb||{});darkT=0;beam=null;
   food=nn(d.fd,100);hungerSeen=!!d.hg;fightSeen=!!d.fs2;animals.length=0;
@@ -8184,7 +8184,7 @@ renderTut();
 const B4={kb:false};
 
 // ---------------------------------------------------------------- 1 · character: eyes, bald, moustache + beard
-const B4EYES=[['#2a1f08','Koyu'],['#6a4220','Ela'],['#2a62b0','Mavi'],['#2a8050','Yeşil'],['#5a6270','Gri'],['#7a3aa8','Mor'],['#c8901e','Kehribar']];   // v3.20: Kehribar
+const B4EYES=[['#2a1f08','Koyu'],['#6a4220','Ela'],['#2a62b0','Mavi'],['#2a8050','Yeşil'],['#5a6270','Gri'],['#7a3aa8','Mor'],['#a6620c','Kehribar']];   // v3.20: Kehribar
 const B4BI=[['yok','Yok'],['ince','İnce'],['kalin','Kalın'],['pala','Pala'],['sarkik','Sarkık']];
 const B4SK=[['yok','Yok'],['kirli','Kirli sakal'],['kisa','Kısa sakal'],['uzun','Uzun sakal'],['keci','Keçi sakalı']];
 const B4OLD={sakal:['kalin','kisa'],biyik:['kalin','yok'],keci:['ince','keci']};   // v47 beards → moustache + beard
@@ -11569,7 +11569,7 @@ const ACH=[
  ['dusentum','Ganimet avcısı','Canlılardan düşebilecek her eşyayı en az bir kez elde et.','Tavşan derisi',()=>{const L=allDrop();return L.length>0&&L.every(n=>IS.has(n))}],
  ['hile','Oyunlardaki gibi',(TOUCH?'Ana menüde ekrana art arda 3 kez dokundun: hile modu açıldı.':'Ana menüde “cheat” yazdın: hile modu açıldı.'),'Mor pusula',()=>{try{return localStorage.getItem('hammadde.cheatach')==='1'||localStorage.getItem('hammadde.cheatok')==='1'}catch(e){return false}}],
  // v3.20 (Boğaç): secret, and not counted for Platin (it needs one particular choice in the creator)
- ['kehribar','Kehribar gözlüm','Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1\'i tamamla.','Kehribar kolye',()=>{try{const D=window.__plDz&&window.__plDz.D;return LOOK.love.eye==='#c8901e'&&(ISLE===2||!!(D&&D.act2))}catch(e){return false}}],
+ ['kehribar','Kehribar gözlüm','Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1\'i tamamla.','Kehribar kolye',()=>{try{const D=window.__plDz&&window.__plDz.D;return LOOK.love.eye==='#a6620c'&&(ISLE===2||!!(D&&D.act2))}catch(e){return false}}],
  ['platin','Platin','Bütün başarımları kazan.','*platin',()=>ACH.every(a=>NOPLAT.has(a[0])||got[a[0]])]];
 const NOPLAT=new Set(['platin','kehribar']);
 // v100: secret ones show ??? until won; the rest show their name and what to do, greyed. PROG: [now, goal] for a bar
@@ -12895,7 +12895,7 @@ function brazier(x,y,time,i){x=Math.round(x);y=Math.round(y);px(x-3,y-1,7,2,'rgb
 function setLv(L){lvl=Math.max(1,Math.min(MAXLV,L));xp=0;AR.lv=lvl;try{renderXP()}catch(e){}hp=maxHP();st=maxSt();vitK='';renderVitals()}
 function enter(){regI2();
   applyState(null);diff='normal';$('hardtag').hidden=true;
-  try{const l=latest(),v=l&&saves()[l],lk=v&&v.data&&v.data.lk;if(lk&&typeof lk==='object')Object.assign(LOOK.hero,LOOK0.hero,lk)}catch(e){}
+  try{const l=latest(),v=l&&saves()[l],lk=v&&v.data&&v.data.lk;if(lk&&typeof lk==='object'){Object.assign(LOOK.hero,LOOK0.hero,lk);if(LOOK.hero.eye==='#c8901e')LOOK.hero.eye='#a6620c'}}catch(e){}
   window.__plArenaUsed=true;AR.on=true;window.__plArena=true;window.__plArenaFree=!AR.real;document.body.classList.add('arena');
   met=true;tut=12;witchShown=false;qState='talk';questsHidden=true;hurtSeen=true;fightSeen=true;hungerSeen=true;fxSeen={zehir:true,kanama:true,'yanık':true};
   for(const s of SKILLS)skills.add(s.id);skills.add('S1');skills.add('P0');   // v2.24: parrying too (the Savuş button on phones)
@@ -18830,7 +18830,7 @@ setInterval(()=>{try{if(onTitle){lastF=null;return}const f=found.length;if(lastF
 // ---------------------------------------------------------------- text: {HAIRI} = "Uzun kızıl saçları"; every {L} and {H}
 {const _mt=memText;memText=function(s){s=String(s);if(s.indexOf('{HAIRI}')>=0){let h='Saçları';try{h=window.__plLoveHair?window.__plLoveHair('ları'):'kızıl saçları';h=h.charAt(0).toLocaleUpperCase('tr')+h.slice(1)}catch(e){}s=s.split('{HAIRI}').join(h)}
   // v3.20 (Boğaç): only in some memories, never in the first five or the last five
-  const amb=!!(LOOK.love&&LOOK.love.eye==='#c8901e');s=s.split('{KGB}').join(amb?'Kehribar gözlüm… ':'').split('{KG}').join(amb?', kehribar gözlüm':'');
+  const amb=!!(LOOK.love&&LOOK.love.eye==='#a6620c');s=s.split('{KGB}').join(amb?'Kehribar gözlüm… ':'').split('{KG}').join(amb?', kehribar gözlüm':'');
   const nm=esc(loveName||'Mavi'),hn=esc(heroName||'Sen');s=s.split('{L}').join(nm).split('{H}').join(hn);return _mt(s)}}
 // ---------------------------------------------------------------- the trace on the beach: the butterfly necklace
 try{const c=CLUES.find(x=>x.id==='bilezik');if(c)Object.defineProperty(c,'n',{get:()=>'Kelebekli kolye',configurable:true})}catch(e){}
