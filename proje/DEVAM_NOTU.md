@@ -4,6 +4,7 @@
 - `v69c`: `window.__plCheatCode` = `cheat` yazmanın aynısı (yalnızca `onTitle`; değilse "Hile kodu ana menüde çalışır").
 - Son kart (`endov`, v81 roket bloğu): `.egk` satırı yalnızca `body.padmode` ya da bağlı bir kol varsa görünür.
 - Xbox kablosuz aparatıyla kolun tarayıcıda kopması oyunla ilgili değil: Boğaç'ta hardwaretester.com'da da koptu. Çözüm aparat/kol yazılım güncellemesi ya da kablo.
+- Yükle düğmeleri (`v253inst` t-install, `v254inst` Bilgisayara yükle): `navigator.userActivation.isActive` değilse (kol basışı) `prompt()` çağrılmaz, bildirim; `prompt()` sözü reddedilirse `ev` geri konur (Boğaç'ın ekranındaki "must be called with a user gesture" hatası).
 - Kontrol: chk.js 0 hata (`?.` 1, `??` 7). Test yapılmadı.
 
 ## v3.22 (4 Kasım 2026) · silahların kademe kimliği (biçim, iz, isabet, ses), ok çizimi, elde yay, "Yeni kademe!"

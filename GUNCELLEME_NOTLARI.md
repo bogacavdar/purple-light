@@ -14,8 +14,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Oyun kolunda hile kodu:** ana menüde **Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A** girilince hile ayarları açılır, yeniden girilince gizlenip kapanır (klavyede `cheat` yazmakla aynı). Yönler yön tuşlarıyla ya da sol çubukla girilebilir; tuşlar arasında en çok 2 saniye olabilir. Son A'ya basış o an seçili menü düğmesine basmaz. Oyunun içinde girilirse "Hile kodu ana menüde çalışır" yazar.
 - **Astronot Gökay'ın sırrı:** oyunu kolla oynayan, ACT 2'nin sonundaki kartta Gökay'dan bu kodu öğrenir.
 
+### Düzeltmeler
+- **Bilgisayara yükle + oyun kolu:** düğmeye kolla basınca "Küçük bir hata oldu" kutusu çıkıyordu (tarayıcı yükleme penceresini kolla açtırmıyor). Artık hata çıkmaz; "bu düğmeye fareyle bas" yazar, fareyle tıklayınca yükleme penceresi açılır.
+
 ### Tasarım belgesi
-- Sistemler › Hile modu ve Oyun kolu bölümlerine hile kodu; ACT 2'ye giriş ve Gökay'ın bölümüne son karttaki satır eklendi.
+- Sistemler › Hile modu ve Oyun kolu bölümlerine hile kodu; Ana menü › Bilgisayara yükle'ye kolla basma notu; ACT 2'ye giriş ve Gökay'ın bölümüne son karttaki satır eklendi.
 
 ---
 
