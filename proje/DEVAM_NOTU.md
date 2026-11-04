@@ -1,3 +1,9 @@
+## v3.24 (4 Kasım 2026) · kolda LB/RB dolu yuvalar, koyu kehribar, Alt + Enter tam ekran
+- Belge `20_sistemler.md` (Kontroller, Oyun kolu tablosu), `10_akis.md` (Kehribar), `00_giris.md`.
+- `v320pad`: LB/RB `hotList()` içinde dolu yuvaya kadar ilerler; -1 (boş el) arenada (`__plArena`) atlanır. Aynı blokta Alt + Enter (window capture keydown, `stopImmediatePropagation`): `requestFullscreen`/`exitFullscreen`.
+- Kehribar `#c8901e` → `#a6620c`: `B4EYES`, başarım kontrolü (v104 başarım listesi), anı hitabı (v318story). Eski kayıt göçü: `applyState` (2340. satır civarı, `LOOK.hero/love.eye`) ve arenanın son kayıttan aldığı görünüş.
+- Kontrol: chk.js 0 hata (`?.` 1, `??` 7). Test yapılmadı.
+
 ## v3.23 (4 Kasım 2026) · oyun kolunda hile kodu, son kartta Gökay'ın sırrı
 - Belge `20_sistemler.md` (Hile modu › Açmak, Oyun kolu), `50_act2_giris.md`, `58_act2_kisiler.md`, `00_giris.md`.
 - `v320pad` `tick`: yön (d-pad ya da çubuk > .55, baskın eksen) değişiminde ve B/A basışında `P.kq`'ya harf (2 sn boşlukta sıfırlanır). `UUDDLRLRBA` olunca `window.__plCheatCode()` çağrılır ve o karede başka iş yapılmaz (son A menüye basmaz).

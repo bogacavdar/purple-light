@@ -8,6 +8,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.24 · 4 Kasım 2026
+
+### Düzeltmeler
+- **Oyun kolunda LB / RB:** alet kemerinde yalnızca **dolu** yuvalar arasında gezer, boş yuvaları atlar; boş el de bir durak. Arenada RB'ye basınca silah elden gidiyordu (kemerde tek silah olduğu için boş yuvaya geçiyordu); arenada boş el durağı yok, silah elde kalır.
+
+### Görsel
+- **Kehribar göz rengi daha koyu:** açık sarı-turuncu yerine koyu bal rengi; Ela'dan ayrı durur. Eski kayıtlardaki kehribar gözler kendiliğinden yeni tona geçer.
+
+### Arayüz
+- **Alt + Enter:** bilgisayarda oyunu tam ekrana alır, yeniden basınca çıkar (Esc de çıkarır). Her ekranda çalışır.
+
+### Tasarım belgesi
+- Kontroller (Alt + Enter), Oyun kolu tablosu (LB / RB), Karakter yaratma (Kehribar) güncellendi.
+
+---
+
 ## Versiyon 3.23 · 4 Kasım 2026
 
 ### Oynanış
