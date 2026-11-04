@@ -1384,7 +1384,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.22</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.23</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -11470,6 +11470,8 @@ addEventListener('keydown',e=>{const t=e.target;if(t&&(t.tagName==='INPUT'||t.ta
 {const hd=document.querySelector('#settings h2');if(hd){let n=0,last=0;hd.style.userSelect='none';hd.style.webkitUserSelect='none';hd.style.cursor='pointer';hd.style.touchAction='manipulation';hd.style.webkitTapHighlightColor='transparent';
   hd.addEventListener('pointerdown',e=>{if(e.button>0)return;const now=performance.now();n=now-last<800?n+1:1;last=now;if(n>=3){n=0;if(!onTitle)return;try{audio.start()}catch(x){}setOk(!ok);if(ok)grantAch();sfx(ok?'level':'bad');try{if(navigator.vibrate)navigator.vibrate(ok?[70,50,140]:90)}catch(x){}toast(ok?'Hile ayarları açıldı':'Hile ayarları gizlendi ve kapatıldı')}})}}   // v72: pointerdown (iPhone gives no click on a heading)
 function grantAch(){try{localStorage.setItem('hammadde.cheatach','1')}catch(e){}try{window.__plAch.grant('hile')}catch(e){}}
+// v3.23: the same switch from the gamepad code (v320pad): only in the main menu, like typing "cheat"
+window.__plCheatCode=()=>{if(!onTitle){toast('Hile kodu ana menüde çalışır',true);sfx('bad');return false}setOk(!ok);if(ok)grantAch();sfx(ok?'level':'bad');toast(ok?'Hile ayarları açıldı: Ayarlar\'da':'Hile ayarları gizlendi ve kapatıldı');return true};
 // v89: the cheat switches are only in Ayarlar opened from the main menu; in a game only the cheat actions show
 {const s2=document.createElement('style');s2.textContent='body.setgame label[for=cheat]{display:none!important}body.settitle #b5cheat{display:none!important}';document.head.appendChild(s2);
  const sp=$('settings');function mark(){document.body.classList.toggle('settitle',!!onTitle);document.body.classList.toggle('setgame',!onTitle)}mark();
@@ -19149,7 +19151,7 @@ function down(id){if(held[id])return;const c=id==='Escape'?'Escape':codeFor(id);
 function up(id){const c=held[id];if(!c)return;delete held[id];send('keyup',c)}
 function tap(id){down(id);setTimeout(()=>up(id),60)}
 function releaseAll(){for(const id in held)up(id)}
-const P={on:false,prev:[],dir:'',rep:0,raf:0,used:false,runOn:false};
+const P={on:false,prev:[],dir:'',rep:0,raf:0,used:false,runOn:false,kq:'',kt:0,kdir:''};
 // the window on top that has buttons to move between
 const LAYERS='.ov:not([hidden]),#dlg:not([hidden]),#craft:not([hidden]),#b5keys:not([hidden]),[role="dialog"]:not([hidden])';
 function layer(){let best=null,bz=-1e9;for(const el of document.querySelectorAll(LAYERS)){if(!el.getClientRects().length)continue;const cs=getComputedStyle(el);if(cs.display==='none'||cs.visibility==='hidden')continue;
@@ -19172,6 +19174,10 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
   const btn=i=>!!(g.buttons[i]&&(g.buttons[i].pressed||g.buttons[i].value>.5)),now=Array.prototype.map.call(g.buttons,(b,i)=>btn(i)),was=P.prev;P.prev=now;
   const hit=i=>now[i]&&!was[i],rel=i=>!now[i]&&was[i];
   const ax=g.axes[0]||0,ay=g.axes[1]||0,mag=Math.hypot(ax,ay);
+  // v3.23: the cheat code ↑↑↓↓←→←→ B A (d-pad or stick; at most 2 s between presses); the last A does not press the chosen button
+  {const tn=performance.now();let kd=now[12]?'U':now[13]?'D':now[14]?'L':now[15]?'R':'';if(!kd&&mag>.55)kd=Math.abs(ax)>Math.abs(ay)?(ax>0?'R':'L'):(ay>0?'D':'U');
+    const push=c=>{if(tn-P.kt>2000)P.kq='';P.kt=tn;P.kq=(P.kq+c).slice(-10)};if(kd&&kd!==P.kdir)push(kd);P.kdir=kd;if(hit(1))push('B');if(hit(0))push('A');
+    if(P.kq==='UUDDLRLRBA'){P.kq='';try{window.__plCheatCode&&window.__plCheatCode()}catch(e){}return}}
   if(!P.used&&(mag>.3||now.some(v=>v))){P.used=true;document.body.classList.add('padmode')}
   const L=layer();
   if(L){if(held.up||held.down||held.left||held.right||held.run||held.parry||held.eat)releaseAll();

@@ -56,6 +56,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - Kol klavye ya da fare kullanılınca susmaz; ikisi birlikte kullanılabilir. Kol ayrılınca basılı kalan tuşlar bırakılır.
 - **Titreşim:** hasar alınca kol titrer (alınan hasarla güçlenir); titreşimi desteklemeyen kolda bir şey olmaz.
 - Kol yalnızca bağlıyken okunur: kol yokken oyuna hiçbir yük eklenmez.
+- **Hile kodu (v3.23):** ana menüde Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A hile ayarlarını açar/kapatır (Sistemler › Hile modu).
 
 # Temel sistemler
 
@@ -547,7 +548,7 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 
 ## Hileler
 
-- **Açmak:** ana menüde klavyeyle `cheat` yaz (tekrar yazınca kapanır) ya da telefonda Ayarlar başlığına art arda 3 kez dokun. Sayfa her açıldığında bütün hile anahtarları kapalı başlar.
+- **Açmak:** ana menüde klavyeyle `cheat` yaz (tekrar yazınca kapanır) ya da telefonda Ayarlar başlığına art arda 3 kez dokun. **Oyun kolunda (v3.23, Boğaç):** ana menüde **Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A** (yönler yön tuşlarıyla ya da sol çubukla; tuşlar arasında en çok 2 saniye) girilince hile ayarları açılır, yeniden girilince gizlenip kapanır (`cheat` yazmakla aynı). Son A'ya basış o anda seçili düğmeye basmaz. Kod oyunun içinde girilirse "Hile kodu ana menüde çalışır" yazar. Sayfa her açıldığında bütün hile anahtarları kapalı başlar.
 - **Açınca Hile modu da açılır (v2.29, Boğaç — telefonda hileler açılamıyordu):** eskiden 3 dokunuş (ya da `cheat`) yalnızca hile ayarlarını **görünür** yapıyordu; asıl **Hile modu** anahtarı ayrıca ana menünün Ayarlar'ından açılmalıydı ve oyunun içindeki Ayarlar'da bu anahtar gizli olduğu için oyuna girince hiçbir hile görünmüyordu. Artık: (1) hile ayarları açıldığı an **Hile modu da kendiliğinden açılır** (tek tek hileler yine kapalı başlar; oyun içindeki Ayarlar'da hepsi görünür). (2) **Hile modu anahtarı oyunun içindeki Ayarlar'da da görünür**; oradan açılıp kapatılabilir. (3) Dokunarak ya da tıklayarak (ana menüde 3 kez dokunma, Ayarlar başlığına 3 kez dokunma) hile ayarları yalnızca **açılır**, bir daha dokunmak onları **kapatmaz** (eskiden ana menüde hızlıca 3 kez dokunmak hepsini yanlışlıkla kapatıyordu). Kapatmak için Hile modu anahtarını kapat ya da klavyeyle yeniden `cheat` yaz.
 - **Ekrandaki yazılar (v3.13, Boğaç):** anahtarın adı yalnızca "Hile modu"dur ("test için" yazmaz); Tanrı modunun açıklaması mor ışıktan söz etmez (oyuncuya ipucu vermesin). **Eşya araması (v3.13):** arama kutusuna yazarken oyunun tuşları (ör. E = topla) çalışmaz; "e" harfi yazılabilir.
 - **Tanrı modu:** can, tokluk, enerji, mana hep dolu; canavarla ve açlıkla bayılmazsın, ama **mor ışık seni yine bayıltır** (bilinçli). **Hile paneli:** +100 sikke, +100 XP, +2 saat, günü bitir, zamanı sar, eşya arama (miktar 1/10/50/100). **Tek vuruşta öldür**, **Sınırsız dayanıklılık**, **Sınırsız sikke**, **Gece ışığı**, **Hile kısayolları** (Z +100 sikke, X +100 XP), **ACT 2'ye geç**, **Bütün ara sahneler açık**, **Seviyeyi en üste çıkar**, **Haritayı tamamen aç**.
