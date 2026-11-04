@@ -5114,7 +5114,7 @@ const RESINS=['Çam reçinesi','Ladin reçinesi','Huş katranı'];const resinFor
 function feedTorch(quiet){const t=torchHeld()||Object.keys(TORCHB).find(n=>inv[n]>0&&torchBurn[n]!=null)||Object.keys(TORCHB).find(n=>inv[n]>0);
   if(!t){if(!quiet){toast('Reçine sürecek bir meşalen yok.',true);sfx('bad')}return false}
   const mx=TORCHB[t],b=nn(torchBurn[t],mx);if(b>=mx*.92){if(!quiet)toast(`${t} zaten gürül gürül yanıyor.`);return false}
-  const r=resinFor();if(!r){if(!quiet){toast('Reçinen yok: Çam ya da Ladin reçinesi yap (kabuk + dal + lif).',true);sfx('bad')}return false}
+  const r=resinFor();if(!r){if(!quiet){toast('Reçinen yok.',true);sfx('bad')}return false}
   inv[r]--;torchBurn[t]=Math.min(mx,b+mx*(t==='Meşale'?.65:.5));torchWarn[t]=0;sfx('craft');toast(`${t} reçineyle tazelendi · %${Math.round(torchPct(t))}`);
   for(let k=0;k<8;k++)parts.push({x:player.x+6,y:player.y-14,vx:(Math.random()-.5)*16,vy:-20-Math.random()*20,life:.6,c:k%2?'#ffd27a':'#f2902a'});renderInv();return true}
 function tickTorch(dt){{const h=held();if(h&&isTorch(h)){leftT=h;hand=-1;hotK='';renderHot()}if(leftT&&!(inv[leftT]>0)){leftT=null;hotK='';renderHot()}}const t=torchHeld();if(!t)return;const mx=TORCHB[t]||170,b=Math.min(mx,nn(torchBurn[t],mx));torchBurn[t]=b-dt*torchRate();
