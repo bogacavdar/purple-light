@@ -8,6 +8,39 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.19 · 4 Kasım 2026
+
+### Oynanış
+- **Evlenme teklifi ACT 1'in sonunda:** "Çay kıyısında söz" artık yalnızca Meltem yapılıp Barbaros'a **"Götür beni"** dediğinde, gemiye binmeden hemen önce oynar; anı kapanınca deniz yolculuğu başlar. Uyku, bayılma, görev ya da tarifle gelmez. Öbür 21 anı eskisi gibi sırayla gelir.
+- **Anılar asıl hikâyeye göre düzeltildi:**
+  - **Sınıfta bir doğum günü** (ilk anı): aynı sınıftasınız; bir arkadaşınızın doğum gününde pastayı o kesip herkese dağıtır, kendine kalmaz; sen hayranlıkla bakarsın.
+  - **Voleybol:** okulun voleybol sahasında; o çok iyi oynar, sen hiçbir topu tutamazsın (komik anı).
+  - **Açık hava sineması:** sen o gece gelemezsin; o gelen her gölgede seni arar, "yanımdaki yer boş kaldı" diye yazar.
+  - **Maket ödevi** (eski adı Ödev gecesi): gündüz, atölyede; ödevi o çözmüş, iş el oyalayıcı olduğu için sen yardım edersin.
+  - **Otogarda:** artık gece.
+  - **Yağmurda şemsiye:** gündüz, sağanakta; şemsiyeyi o ıslanmasın diye yoldaki büfeden alırsın.
+  - **Peçeteden gül:** onun saçak saçak peçetesi saklanmaz, gülüp geçersiniz.
+  - **Doğum günü pastası:** parkta; yuvarlak bir pasta, üstünde siyah damla çikolatalardan kalp, yanında bir şişe limonata.
+  - **Kaktüs:** küçük bir cam fanusun içinde, el ele iki figürün yanında. "Kaktüs hâlâ yaşıyor" satırı çıktı.
+  - **Kelebekli kolye:** üstünde beş lacivert kelebek, üçü altta ikisi üstte; "Bu en sevdiğim kolye oldu!" der. Kumsaldaki iz de böyle anlatılır.
+  - **Yüzme dersi:** yüzmeyi ona yeşil bir can simidiyle öğretirsin.
+- **Yıldız haritası anısı silindi.** Mor ışık anıları artık 5 tane; toplam 32 anı, "Hatırladım" 32'yi ister.
+
+### Görsel
+- **Anı resimlerindeki yazılar okunuyor:** mesaj balonları, tahtadaki "İyi ki doğdun!", PERON 7, BURGER, LOSER artık resmin içine çizilmiyor; üstüne gerçek yazı olarak konuyor, her boyutta keskin. Mesaj balonları uzun cümleye göre genişledi.
+- Yeni ya da yeniden çizilen resimler: sınıf ve pasta, okulun voleybol sahası (top kafana çarpar), sinemada boş yer, güneşli atölyede maket, gece otogarı, gündüz sağanak ve şemsiye, peçeteden katlanmış gül (artık şekere benzemiyor), parkta yuvarlak pasta ve limonata şişesi, cam fanusta kaktüs ve iki figür, lacivert kelebekli kolye, yeşil can simidi.
+- **Tavla:** masada kapalı bir tavla kutusu; tahta artık yüzlerinizi kapatmıyor.
+- **Hamburger:** hamburgerler küçüldü, yüzlerinizi kapatmıyor.
+
+### Kayıtlar
+- Kayıt artık anıları **adıyla** saklar: bir anı eklenip çıkınca eski kayıtlar kaymaz. v3.18 kayıtlarında gördüğün anılar korunur (adı değişenler yeni adlarıyla).
+
+### Tasarım belgesi
+- Sistemler › İzler ve anılar: anı tablosu ve kurallar (teklifin yeri, resimlerdeki yazılar, mor ışık anıları, kayıt); Akış › ACT 1 yol haritası (Barbaros'ta teklif); ACT 2 girişi; Başarımlar.
+
+### Proje
+- Oyundan çıkan anıların (Yağmurlu çarşı, Yanık ekmek, Kumsalda ilk dans, Kırık pusula, Hastane koridoru, Yıldız haritası) eski metinleri ve resim kodları koddan da silindi.
+
 ## Versiyon 3.18 · 4 Kasım 2026
 
 ### Oynanış

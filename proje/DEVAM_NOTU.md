@@ -1,3 +1,11 @@
+## v3.19 (4 Kasım 2026) · teklif gemide, anıların düzeltmeleri, keskin yazılar, Yıldız haritası silindi
+- Belge `20_sistemler.md` (İzler ve anılar), `10_akis.md`, `50_act2_giris.md`, `94_basarimlar.md`.
+- `v318story`: `nextA1` teklifi (`PROP`) atlar; `say` sarmalayıcısı "Götür beni" seçeneğinin `f`'sini sarar: `mems.has(PROP)` değilse önce `openMem(PROP)`, kapanınca asıl `f` (voyage). "ACT 1'in bütün anıları" bildirimi `allA1` geçişinde (hepsi tamam, kart ve kuyruk boş).
+- Yazılar: `lab(x,y,t,o)` → `LABS`; `memScene` → `scene318` + `labsOut(g)`: `#mem-lab` div'i (memOv içinde, `position:absolute`, z-index 0) kanvasın üstüne gerçek metin yerleştirir (ölçek = canvas.clientWidth/240). Kanvasa `fillText` ile kelime yazılmaz.
+- Temizlik: base `MEMS` yalnızca Mor bir delik + Son akşam (`MEM2M` artık sabit metin, `memFix` silindi, `openMem` onu çağırmıyor; base sahneler i===0/else). v57: yalnızca Mektup, Mor fısıltı, Bırakılan el (k 0/1/else), `memEvent`, `CH`, uyku/bayılma/görev kancaları ve v57 `renderMem` silindi; `window.__v57.quest` v318'de. ACT 2 usta anıları `OLD.findIndex(act2)` (=5, ACT 2 bloğunun `I0`'ı) konumuna yerleşir.
+- Kayıt: `snapshot.v319={n:[adlar],k:{ad:nasıl}}`. Yükleme: v319 → adla; yalnızca v318 → `V318N` (v3.18 dizilimi) + `REN` (Kampüste ilk gün → Sınıfta bir doğum günü, Ödev gecesi → Maket ödevi); daha eski → `PRE318`, yalnızca mor ışık + usta.
+- Kontrol: chk.js 0 hata (`?.` 1, `??` 7; v57'deki `???` gitti). Test yapılmadı. (Ara commit'te voleybol değişikliği 8 sahneyi silmişti, yayına çıkmadan geri getirildi.)
+
 ## v3.18 (4 Kasım 2026) · asıl hikâye: ACT 1'in 22 romantik anısı, mor ışık anıları ACT 2'ye, kelebekli kolye
 - Belge `20_sistemler.md` (İzler ve anılar, baştan), `10_akis.md`, `30_act1.md`, `40_act1_kisiler.md`, `50_act2_giris.md`, `94_basarimlar.md`.
 - `<script id="v318story">` (dosya sonu). Açılışta eski `MEMS` (`OLD`, 17 anı) kopyalanır ve `MEMS` yeniden kurulur: 0..11 ACT 1 #1–12 · **12..16 ACT 2 usta anıları (aynı nesneler; v104 bloğundaki `I0=12` aralığı ve sahneleri değişmeden çalışsın diye)** · 17..26 ACT 1 #13–22 · 27..32 mor ışık (Yıldız haritası, Mor bir delik, Mektup, Son akşam, Bırakılan el, Mor fısıltı; `old` = eski index).
