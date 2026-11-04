@@ -19189,11 +19189,31 @@ function kbKey(k){const i=$('nmin');if(!i)return;let v=i.value||'';
 function press(L){const a=document.activeElement;
   if(a&&L.contains(a)&&a!==L&&focusables(L).indexOf(a)>=0){if(a.tagName==='INPUT'&&L.id==='names'){kbShow();return}remember(a);if(a.tagName==='INPUT'&&a.type!=='checkbox'&&a.type!=='radio')return;a.click();return}
   tap('interact')}
+// v3.25 (Boğaç): aim assist for the gamepad only (the mouse has none): the same choice as the phone's Vur button (v132-dokun):
+// a hostile creature within 150 px (melee), else the nearest in front (110 px; bow, staff, gun 240), else where the stick points.
+// The blow is the mouse's own click at that point (pointerdown/up on the canvas), so holds, combos and the bow work as with the mouse.
+let stick=null,adown=null;
+function pkind(){try{return window.__plCB?window.__plCB.kindOf():'fist'}catch(e){return 'fist'}}
+function aimDir(){return stick||player.face||{x:0,y:1}}
+function pick(range,hostileOnly,w){let best=null,bs=1e9;const f=aimDir(),fa=Math.atan2(f.y,f.x||(f.y?0:1));
+  for(const a of animals){const D=ANIM[a.k];if(!D||a.hp<=0||a.dl||(hostileOnly&&a.tut))continue;
+    if(hostileOnly&&!(a.mad||a.st==='chase'||a.st==='attack'||D.temper==='saldırgan'||a.boss))continue;
+    const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy);if(d>range)continue;let df=Math.abs(Math.atan2(dy,dx)-fa);if(df>Math.PI)df=2*Math.PI-df;
+    const sc=d+df*w+(!hostileOnly&&D.temper==='zararsız'?40:0)+(!hostileOnly&&a.tut?20:0);if(sc<bs){bs=sc;best=a}}return best}
+function aimAt(){const k=pkind(),rng=k==='staff'||k==='gun'||k==='bow';const a=(!rng&&pick(150,true,4))||pick(rng?240:110,false,22);
+  if(a)return{a,x:a.x,y:a.y-6};const f=aimDir();return{a:null,x:player.x+(f.x||0)*40,y:player.y-6+(f.y||0)*40}}
+function fakeP(type,Q){try{const ev=new PointerEvent(type,{pointerType:'mouse',pointerId:78,isPrimary:true,button:0,buttons:type==='pointerdown'?1:0,clientX:(Q.x-cam.cx)*S,clientY:(Q.y-cam.cy)*S,bubbles:true,cancelable:true});cv.dispatchEvent(ev);return true}catch(e){return false}}
+function atkDown(){if(adown)return;const Q=aimAt(),k=pkind();
+  if(Q.a){const dx=Q.a.x-player.x,dy=Q.a.y-player.y;player.face=Math.abs(dx)>=Math.abs(dy)?{x:Math.sign(dx)||1,y:0}:{x:0,y:Math.sign(dy)||1}}
+  const via=weaponHeld()||!!window.__plArena||((k==='axe'||k==='torch'||torchHeld())&&Q.a);
+  if(!via||!fakeP('pointerdown',Q)){try{attack({x:Q.x,y:Q.y+6})}catch(e){}adown={plain:true};return}adown={Q}}
+function atkUp(){const d=adown;adown=null;if(d&&!d.plain)fakeP('pointerup',d.Q)}
 function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call(navigator.getGamepads()||[]))if(x&&x.connected){g=x;break}}catch(e){}
-  if(!g){P.on=false;releaseAll();return}P.raf=requestAnimationFrame(tick);
+  if(!g){P.on=false;releaseAll();if(adown)atkUp();return}P.raf=requestAnimationFrame(tick);
   const btn=i=>!!(g.buttons[i]&&(g.buttons[i].pressed||g.buttons[i].value>.5)),now=Array.prototype.map.call(g.buttons,(b,i)=>btn(i)),was=P.prev;P.prev=now;
   const hit=i=>now[i]&&!was[i],rel=i=>!now[i]&&was[i];
   const ax=g.axes[0]||0,ay=g.axes[1]||0,mag=Math.hypot(ax,ay);
+  stick=mag>.3?{x:ax/mag,y:ay/mag}:null;
   // v3.23: the cheat code ↑↑↓↓←→←→ B A (d-pad or stick; at most 2 s between presses); the last A does not press the chosen button
   {const tn=performance.now();let kd=now[12]?'U':now[13]?'D':now[14]?'L':now[15]?'R':'';if(!kd&&mag>.55)kd=Math.abs(ax)>Math.abs(ay)?(ax>0?'R':'L'):(ay>0?'D':'U');
     const push=c=>{if(tn-P.kt>2000)P.kq='';P.kt=tn;P.kq=(P.kq+c).slice(-10)};if(kd&&kd!==P.kdir)push(kd);P.kdir=kd;if(hit(1))push('B');if(hit(0))push('A');
@@ -19203,6 +19223,7 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
   if(L){if(held.up||held.down||held.left||held.right||held.run||held.parry||held.eat)releaseAll();
     let dx=now[15]?1:now[14]?-1:(ax>.55?1:ax<-.55?-1:0),dy=now[13]?1:now[12]?-1:(ay>.55?1:ay<-.55?-1:0);if(dx&&dy){if(Math.abs(ax)>Math.abs(ay))dy=0;else dx=0}
     const d=dx+','+dy,t=performance.now();if(d!=='0,0'){if(d!==P.dir){P.dir=d;P.rep=t+380;moveFocus(L,dx,dy)}else if(t>=P.rep){P.rep=t+120;moveFocus(L,dx,dy)}}else P.dir='';
+    if(adown)atkUp();
     if(L!==P.lastL){P.lastL=L;lastC=null}else keepFocus(L);
     if(L.id==='padkb'){if(hit(0))press(L);if(hit(1))kbHide();if(hit(2))kbKey('del');if(hit(9))kbKey('ok');return}
     if(hit(0))press(L);
@@ -19214,7 +19235,7 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
   sx?down('right'):up('right');sxn?down('left'):up('left');sy?down('down'):up('down');syn?down('up'):up('up');
   if(hit(10))P.runOn=!P.runOn;if(!k)P.runOn=false;(P.runOn&&k)?down('run'):up('run');
   const hold=(i,id)=>{if(hit(i))down(id);else if(rel(i))up(id)};
-  hold(0,'interact');hold(2,'attack');hold(7,'attack');hold(1,'dodge');hold(3,'eat');hold(6,'parry');
+  hold(0,'interact');if(hit(2)||hit(7))atkDown();if((rel(2)&&!now[7])||(rel(7)&&!now[2]))atkUp();hold(1,'dodge');hold(3,'eat');hold(6,'parry');
   if(hit(11))tap('dogs');
   if(hit(4)||hit(5)){try{const L=hotList(),n=hotN(),d=hit(5)?1:-1,ar=!!window.__plArena;let i=hand;   // v3.24: only filled slots (and the empty hand, not in the arena)
     for(let k=0;k<=n;k++){i+=d;if(i>=n)i=-1;if(i<-1)i=n-1;if(i<0?!ar:!!L[i])break}if(i!==hand&&(i<0?!ar:!!L[i])){setHand(i);sfx('pick')}}catch(e){}}
