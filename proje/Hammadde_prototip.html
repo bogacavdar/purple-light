@@ -1380,7 +1380,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.25</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.26</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -19248,7 +19248,7 @@ addEventListener('gamepaddisconnected',()=>{releaseAll();setTimeout(()=>{let any
 function renderHelp(){const box=$('b5keys');if(!box)return;let el=$('padhelp');
   if(!el){el=document.createElement('div');el.id='padhelp';el.className='note';const card=box.querySelector('.tcard')||box;const ref=$('b5kdesk');if(ref&&ref.parentNode)ref.parentNode.insertBefore(el,ref.nextSibling);else card.appendChild(el)}
   let any=false;try{any=Array.prototype.slice.call(navigator.getGamepads()||[]).some(x=>x&&x.connected)}catch(e){}
-  el.innerHTML='<b>Oyun kolu</b>'+(any?' (bağlı)':' (bağlı değil: kolu bağlayıp bir tuşuna bas)')+'<ul class="padl"><li><b>Sol çubuk</b> yürü · <b>L3</b> koş</li><li><b>A</b> topla / konuş · <b>X</b> ya da <b>RT</b> vur · <b>B</b> atıl · <b>Y</b> ye (basılı tut: liste)</li><li><b>LT</b> basılı tut: savuştur / gard · <b>R3</b> ulti · <b>LB / RB</b> alet kemeri</li><li><b>Yön tuşları:</b> yukarı El yapımı, aşağı Envanter, sol Tarif kitabı, sağ Görevler · <b>Select</b> harita · <b>Start</b> duraklat</li><li>Pencerelerde: çubuk ya da yön tuşlarıyla gez, <b>A</b> seç, <b>B</b> geri.</li></ul>'}
+  el.innerHTML='<b>Oyun kolu</b>'+(any?' (bağlı)':' (bağlı değil: kolu bağlayıp bir tuşuna bas)')+'<ul class="padl"><li><b>Sol çubuk</b> yürü · <b>L3</b> koş</li><li><b>A</b> topla / konuş · <b>X</b> ya da <b>RT</b> vur · <b>B</b> atıl · <b>Y</b> ye (basılı tut: liste)</li><li><b>LT</b> basılı tut: savuştur / gard · <b>R3</b> ulti · <b>LB / RB</b> alet kemeri</li><li><b>Yön tuşları:</b> yukarı El yapımı, aşağı Envanter, sol Tarif kitabı, sağ Görevler · <b>Select</b> harita · <b>Start</b> duraklat</li><li>Pencerelerde: çubuk ya da yön tuşlarıyla gez, <b>A</b> seç, <b>B</b> geri.</li><li>Xbox kolu kablosuz aparatla bağlıyken Chrome ya da Edge\'de (masaüstü uygulamasında da) kopuyorsa: oyunu <b>Firefox</b>\'ta aç ya da kolu <b>kabloyla</b> bağla.</li></ul>'}
 try{renderHelp()}catch(e){}
 // v3.24 (Boğaç): Alt + Enter toggles full screen everywhere; the press does nothing else
 let altGr=false;addEventListener('keyup',e=>{if(e.code==='AltRight'||e.key==='AltGraph')altGr=false},true);addEventListener('blur',()=>{altGr=false});   // v3.25: Alt Gr too (Chrome on Windows reports it as AltGraph, not altKey)

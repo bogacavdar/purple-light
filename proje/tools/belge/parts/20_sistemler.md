@@ -57,6 +57,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - Kol klavye ya da fare kullanılınca susmaz; ikisi birlikte kullanılabilir. Kol ayrılınca basılı kalan tuşlar bırakılır.
 - **Titreşim:** hasar alınca kol titrer (alınan hasarla güçlenir); titreşimi desteklemeyen kolda bir şey olmaz.
 - Kol yalnızca bağlıyken okunur: kol yokken oyuna hiçbir yük eklenmez.
+- **Kol kopuyorsa (v3.26, Boğaç'ın denemesi):** Xbox kolu **Xbox kablosuz aparatıyla** bağlıyken Chrome ve Edge'de (masaüstü uygulaması da Chrome/Edge'dir) tarayıcı kolu okumaya başladığı an bağlantı kopabiliyor; bu oyundan değil, aparat ile Chrome/Edge arasındaki uyumsuzluktan (kolu okuyan her sayfada oluyor, ör. hardwaretester.com). **Firefox'ta sorun yok**; kabloyla bağlamak da çözer. Ayarlar → Kontroller'deki kol yardımında bir satırla yazar.
 - **Hile kodu (v3.23):** ana menüde Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A hile ayarlarını açar/kapatır (Sistemler › Hile modu).
 
 # Temel sistemler
