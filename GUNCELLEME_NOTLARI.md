@@ -8,6 +8,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.25 · 4 Kasım 2026
+
+### Oynanış
+- **Kolda nişan yardımı:** kolla Vur'a (X ya da RT) basınca vuruş önce yakınındaki saldırgan bir canlıya (150 piksel), yoksa önündeki en yakın canlıya (yakın dövüşte 110, yay, asa ve tabancada 240 piksel), o da yoksa sol çubuğun gösterdiği yöne gider; karakter vurduğu yöne döner. Telefondaki Vur düğmesiyle aynı kurallar. Basılı tutmak ağır vuruş, art arda basmak kombo; yayda ok hedefe gider. Fareyle oynarken nişan yardımı yok.
+
+### Düzeltmeler
+- **Kolda seçim yerinde kalır:** yiyecek listesinde "Ye"ye basınca seçim en başa atlıyordu, her yemekte yeniden aşağı inmek gerekiyordu. Artık aynı düğmede kalır; o yiyecek bittiyse yerindeki en yakın düğmeye geçer. Bütün pencerelerde böyle.
+- **Kolla ad yazmak:** ad kutusunda A rastgele ad veriyordu. Artık ekran klavyesi açılır: Türkçe harfler, Boşluk, Sil, Tamam. A yazar, X siler, B geri döner, Start bitirir. İlk harf ve boşluktan sonraki harf büyük yazılır. Rastgele ad için ekrandaki "Rastgele" düğmesi.
+- **Alt Gr + Enter:** tam ekran sol Alt'la çalışıyordu, Alt Gr'yle çalışmıyordu; artık ikisiyle de çalışır.
+
+### Tasarım belgesi
+- Oyun kolu bölümüne nişan yardımı, seçimin yerinde kalması ve ekran klavyesi; Kontroller'e Alt Gr eklendi.
+
+---
+
 ## Versiyon 3.24 · 4 Kasım 2026
 
 ### Düzeltmeler

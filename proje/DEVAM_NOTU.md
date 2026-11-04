@@ -1,3 +1,13 @@
+## v3.25 (4 Kasım 2026) · kolda nişan yardımı, seçim yerinde kalır, ekran klavyesi, Alt Gr + Enter
+- Belge `20_sistemler.md` (Oyun kolu, Kontroller), `00_giris.md`.
+- `v320pad`:
+  - **Nişan:** `atkDown`/`atkUp` (X ya da RT). `aimAt` v132-dokun'un `aimPoint` kurallarının kopyası; çubuk yönü `stick`. Silah eldeyse ya da arenadaysa (balta/meşalede hedef varsa) tuvale sahte fare `pointerdown`/`pointerup` gönderir (v118 kombo yolu), yoksa `attack({x,y})`.
+  - **Seçim:** `remember`/`keepFocus` (pencere değişince sıfırlanır).
+  - **Ekran klavyesi:** `#padkb` (z 40), `kbShow`/`kbKey`; `#nmin`'e yazar ve `input` olayı gönderir; dışına basmak = geri.
+  - **Alt Gr:** `AltRight`/`AltGraph` izlenir.
+- Sahte kolla bir kontrol: arkadaki yaban domuzuna dönüp vurdu. Başka test yapılmadı.
+- chk.js 0 hata (`?.` 1, `??` 7).
+
 ## v3.24 (4 Kasım 2026) · kolda LB/RB dolu yuvalar, koyu kehribar, Alt + Enter tam ekran
 - Belge `20_sistemler.md` (Kontroller, Oyun kolu tablosu), `10_akis.md` (Kehribar), `00_giris.md`.
 - `v320pad`: LB/RB `hotList()` içinde dolu yuvaya kadar ilerler; -1 (boş el) arenada (`__plArena`) atlanır. Aynı blokta Alt + Enter (window capture keydown, `stopImmediatePropagation`): `requestFullscreen`/`exitFullscreen`.
