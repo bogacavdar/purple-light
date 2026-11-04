@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.21** ile birebir (4 Kasım 2026). Bu sürümde: oyun kolunda menü seçimi önce aynı satır/sütundaki düğmeye gider; belgeye **PlayStation 5 sürümü** yol haritası eklendi. 3.20'de: oyun kolu desteği (Sistemler › Oyun kolu), Kehribar göz rengi, yeni gizli başarım.
+Sürüm: **Versiyon 3.22** ile birebir (4 Kasım 2026). Bu sürümde: **silahların kademe kimliği** (her türün 7 kademesi kendi biçimi, boyu, izi, isabet efekti ve sesiyle; ok ok gibi uçar, elde yay nişan alır ve kirişte atılacak ok görünür; daha yüksek kademe ilk kez alınınca "Yeni kademe!"; Aletler › Silahların kademe kimliği). 3.21'de: kolda menü seçimi düzeltmesi, PS5 yol haritası. 3.20'de: oyun kolu.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

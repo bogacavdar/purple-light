@@ -8,6 +8,35 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.22 · 4 Kasım 2026
+
+### Oynanış
+- **Her yeni kademe yeni bir silah gibi:** kılıç, savaş çekici, topuz, mızrak, balta, kazma ve yayın 7 kademesinin (Başlangıç, Bakır, Tunç, Demir, Çelik, Kara çelik, Mor kristal; ustaların parçaları kendi biyomunun kademesinde) her biri artık **biçimiyle** ayrılıyor, yalnızca rengiyle değil:
+  - Taş silahlar kaba ve iple sarılı; Bakır sade; Tunç yaprak biçimli ve süslü; Demir uzun, oluklu, geniş siperli; Çelik parlak kenarlı ve kabzası taşlı; Kara çelik koyu, dişli, kızgın kenarlı; Mor kristal billur, parlayan, çevresinde kristal kıymıklarıyla.
+  - Yüksek kademeler elde daha büyük görünür (11 pikselden 15 piksele); Çelik elde parıldar, Kara çelikten kor tüter, Mor kristalden mor ışık süzülür.
+  - Savururken iz kademenin renginde ve kademe yükseldikçe kalınlaşır: gri toz, bakır, altın, beyaz çelik, mavi-beyaz parıltı, kor, mor ışık.
+  - İsabette kademenin kıvılcımları: taş kırıntısı, bakır ve altın kıvılcım, çelik halkası, kor patlaması, kristal patlaması.
+  - Her kademenin kendi sesi var: taşın boğuk tok sesi, bakırın kısa "tınk"ı, demirin çınlaması, çeliğin "şiing"i, kara çeliğin gürlemesi, kristalin çan sesi. Savurma ve isabet sesine eklenir; özel vuruşlarda da duyulur.
+  - Ustaların parçaları kendi kademesinin biçiminde, kendi malzemesinin renginde ve üstünde doğduğu etkinin rengiyle bir çizgi taşır (keskin kırmızı, zehirli yeşil, alevli turuncu).
+- **Ok ok gibi uçuyor:** gövdesi, ucu ve tüyleriyle, uçtuğu yöne dönük. Ucu ve tüyü attığın oka göre değişir; Kara çelik ok kor, Mor kristal ok mor ışık izi bırakır, alevli, zehirli ve keskin oklar etkisinin renginde iz bırakır. İsabette okun kıvılcımı ve sesi çıkar.
+- **Elde yay:** yay nişan yönüne döner. Atışa hazırken kirişte atılacak ok takılı durur; atınca kiriş boşalır, yay hafifçe geri teper, yay dolunca yeni ok takılır. Kiriş sesi yayın kademesine göre değişir.
+- **"Yeni kademe!":** bir türün elindeki en yüksek kademesinden daha yükseğini ilk kez alınca parçanın adıyla "Yeni kademe! · %113 daha güçlü (öncekin: Bakır kılıç)" yazar (balta ve kazmada "% daha hızlı"). Kısa bir zafer ezgisi çalar, karakterin çevresinde kademenin renginde bir ışık halkası yayılır. Bu bilgi kayda yazılır.
+- Hasar, hız, menzil ve fiyatlar değişmedi; bu sürüm görünüş, efekt ve ses.
+
+### Arayüz
+- Envanterde, alet kemerinde, dükkânlarda ve arenada silahların simgeleri de yeni kademe çizimleriyle.
+
+### Kayıtlar
+- Eski kayıtlarda sahip olduğun en iyi parçalar sayılır, "Yeni kademe!" yazısı bunlar için çıkmaz.
+
+### Tasarım belgesi
+- Yeni bölüm **Aletler › Silahların kademe kimliği:** kademe tablosu (görünüş, iz, isabet, ses), türlere göre biçimler, ok ve yay, yeni kademe yazısı, arena.
+
+### Proje
+- Performans ölçüldü (olcum.js, işlemci 4× yavaş, 3.21 ile aynı ayarlar); yavaşlama yok.
+
+---
+
 ## Versiyon 3.21 · 4 Kasım 2026
 
 ### Düzeltmeler

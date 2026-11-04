@@ -1,3 +1,22 @@
+## v3.22 (4 Kasım 2026) · silahların kademe kimliği (biçim, iz, isabet, ses), ok çizimi, elde yay, "Yeni kademe!"
+- Belge `85_aletler.md` (yeni "Silahların kademe kimliği", "Savaş çekici ve topuz"un önünde), `00_giris.md`.
+- `<script id="v322tier">` (dosya sonu):
+  - `info(n)`: aile (GT.kind + mace) ve kademe. Kademe malzeme önekinden (`MT`) ya da yay adından (`BOWT`) gelir; "Mızrak" 0. Etkili ad önekleri ayıklanır, Işın kılıcı hariç. Ustalarda `__plUSTAFX`.
+  - `shapeOf`/`drawTier`: 16×16 çaprazda (s,w) rasterleme; aile × kademe biçimi, `MAT` paletleri, `HND` sapları. `icon()` sarıldı: önce kademe çizimi, etki köşesi `mark`, sonra `outlineCanvas`; açılışta bu adların `ICON`/`ICONC` önbelleği silinir.
+  - Sesler `SW`/`HT`/`twang`, `audio.synth` ile katman olarak çalar.
+  - Pencere: `window.__plTier` (info, swing, hit, spark, tip, shot, arrow), `__plTierZ` (eldeki boy), `__plHeldSkip` (yayı taban `drawHeld` çizmez, `v322` çizer).
+  - "Yeni kademe": `gain` sarıldı, `BEST[aile]`; kayıt `snapshot.v322={b}`, yoksa sahip olunanlardan (`fill`); `startNew` sıfırlar, arenada çıkmaz.
+- Yerinde kancalar:
+  - taban `drawHeld` (boy, yay atlama), `v49-p4` (attack → `swing`, p4Strike kıvılcım/halka/`hit`, p4DrawSwing iz rengi/kalınlığı/`tip`, savurmada eldeki boy), parry `drawHeld` ve sırttaki silah boyu;
+  - CB `hitIn` (`spark` her isabette, `hit` sesi bir kez);
+  - `v77` (shot `S.draw`, `S.onHit`);
+  - `v249` `shot()` (`arrow(S,okAdı)`, `shot()` twang'ın yerine; yoksa eski twang).
+- Ölçüm (`olcum.js <html> 4`, swiftshader, bu sandbox çok gürültülü):
+  - 3.21: BOOT 20,1 sn, sahil ort. 255 ms/kare (p95 352), yürüme 250 (p95 410), PLAY js 3982 ms.
+  - 3.22: BOOT 15,2 sn, sahil 218 (p95 257), yürüme 202 (p95 269), PLAY js 3858 ms.
+  - Gerileme yok. Efektler yalnızca savurma, isabet ve atışta; eldeki parıltı saniyede en çok ~5 parçacık.
+- Kontrol: chk.js 0 hata (`?.` 1, `??` 7). Ajan kontrolü: hata yakalama ve birkaç kare görüntüsü, yalnızca çizimlerin doğruluğu için; ikon sayfası ayrı bir boş sayfada çizildi.
+
 ## v3.21 (4 Kasım 2026) · kolda menü seçimi düzeltmesi, belgeye PS5 yol haritası
 - Belge: yeni `parts/99_ps5.md` (PS5 sürümü planı, kaynaklarıyla); `20_sistemler.md` Oyun kolu menü maddesi; `00_giris.md`.
 - `v320pad` `moveFocus`: aday önce aynı satır (sağ/sol: dikey aralıklar örtüşür) ya da aynı sütun (yukarı/aşağı) → en küçük `along+perp*.5`; yoksa 45° koni (`perp<=along`) → `along+perp*2`; yoksa yerinde kalır. Eskisi koni sınırı olmadan `along+perp*2.2` idi; yiyecek listesinde sağdaki "Ye"den sola, yukarıdaki Balıklar sekmesi seçiliyordu (Boğaç'ın ekran görüntüsü).

@@ -1380,7 +1380,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.21</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.22</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
 <div id="instov" class="ov" hidden role="dialog" aria-label="Uygulama olarak indir"><div class="tcard small rncard"><h2 class="rnh">Uygulama olarak indir</h2><div class="rnbody" id="inst-body"></div><div class="tmenu"><button class="mb" id="inst-close" type="button">Tamam</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.21 · 4 Kasım 2026</h2><h3>Düzeltmeler</h3><ul><li><strong>Oyun kolunda menülerde gezinme:</strong> çubuğu ya da yön tuşunu bir yöne itince seçim artık önce <strong>aynı satırdaki</strong> (sağ/sol) ya da <strong>aynı sütundaki</strong> (yukarı/aşağı) en yakın düğmeye gider; orada düğme yoksa o yöne bakan en yakın düğmeye, o da yoksa yerinde kalır. Yiyecek listesinde sağdaki "Ye"den sola basınca seçim yukarıdaki sekmeye kaçıyordu, düzeldi.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.22 · 4 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Her yeni kademe yeni bir silah gibi:</strong> kılıç, savaş çekici, topuz, mızrak, balta, kazma ve yayın 7 kademesinin (Başlangıç, Bakır, Tunç, Demir, Çelik, Kara çelik, Mor kristal; ustaların parçaları kendi biyomunun kademesinde) her biri artık <strong>biçimiyle</strong> ayrılıyor, yalnızca rengiyle değil:<ul><li>Taş silahlar kaba ve iple sarılı; Bakır sade; Tunç yaprak biçimli ve süslü; Demir uzun, oluklu, geniş siperli; Çelik parlak kenarlı ve kabzası taşlı; Kara çelik koyu, dişli, kızgın kenarlı; Mor kristal billur, parlayan, çevresinde kristal kıymıklarıyla.</li><li>Yüksek kademeler elde daha büyük görünür (11 pikselden 15 piksele); Çelik elde parıldar, Kara çelikten kor tüter, Mor kristalden mor ışık süzülür.</li><li>Savururken iz kademenin renginde ve kademe yükseldikçe kalınlaşır: gri toz, bakır, altın, beyaz çelik, mavi-beyaz parıltı, kor, mor ışık.</li><li>İsabette kademenin kıvılcımları: taş kırıntısı, bakır ve altın kıvılcım, çelik halkası, kor patlaması, kristal patlaması.</li><li>Her kademenin kendi sesi var: taşın boğuk tok sesi, bakırın kısa "tınk"ı, demirin çınlaması, çeliğin "şiing"i, kara çeliğin gürlemesi, kristalin çan sesi. Savurma ve isabet sesine eklenir; özel vuruşlarda da duyulur.</li><li>Ustaların parçaları kendi kademesinin biçiminde, kendi malzemesinin renginde ve üstünde doğduğu etkinin rengiyle bir çizgi taşır (keskin kırmızı, zehirli yeşil, alevli turuncu).</li></ul></li><li><strong>Ok ok gibi uçuyor:</strong> gövdesi, ucu ve tüyleriyle, uçtuğu yöne dönük. Ucu ve tüyü attığın oka göre değişir; Kara çelik ok kor, Mor kristal ok mor ışık izi bırakır, alevli, zehirli ve keskin oklar etkisinin renginde iz bırakır. İsabette okun kıvılcımı ve sesi çıkar.</li><li><strong>Elde yay:</strong> yay nişan yönüne döner. Atışa hazırken kirişte atılacak ok takılı durur; atınca kiriş boşalır, yay hafifçe geri teper, yay dolunca yeni ok takılır. Kiriş sesi yayın kademesine göre değişir.</li><li><strong>"Yeni kademe!":</strong> bir türün elindeki en yüksek kademesinden daha yükseğini ilk kez alınca parçanın adıyla "Yeni kademe! · %113 daha güçlü (öncekin: Bakır kılıç)" yazar (balta ve kazmada "% daha hızlı"). Kısa bir zafer ezgisi çalar, karakterin çevresinde kademenin renginde bir ışık halkası yayılır. Bu bilgi kayda yazılır.</li><li>Hasar, hız, menzil ve fiyatlar değişmedi; bu sürüm görünüş, efekt ve ses.</li></ul><h3>Arayüz</h3><ul><li>Envanterde, alet kemerinde, dükkânlarda ve arenada silahların simgeleri de yeni kademe çizimleriyle.</li></ul><h3>Kayıtlar</h3><ul><li>Eski kayıtlarda sahip olduğun en iyi parçalar sayılır, "Yeni kademe!" yazısı bunlar için çıkmaz.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -4457,9 +4457,9 @@ function drawPlayer(){
   const s=Math.sin(player.step*10),mv=!!player.mv;if(dodge){ctx.globalAlpha=.55}
   const armed=(()=>{const h=held(),k=h&&GT[h]?GT[h].kind:'';return k==='sword'||k==='hunt'||k==='axe'||k==='pick'})();   // v2.44: one weapon at a time: the back weapon hides while the right hand holds one
   const back=player.face.y<0&&!player.face.x;if(back)drawHeld(x,y);
-  if(equip.silah&&!armed&&!back&&held()!==equip.silah){const ic=ICONC[equip.silah]||(icon(equip.silah),ICONC[equip.silah]);if(ic){ctx.save();ctx.translate(x-(player.face.x>0?2:-2),y-9);ctx.rotate(player.face.x>0?-.6:.6);ctx.drawImage(ic,-5,-6,10,10);ctx.restore()}}
+  if(equip.silah&&!armed&&!back&&held()!==equip.silah){const ic=ICONC[equip.silah]||(icon(equip.silah),ICONC[equip.silah]);if(ic){ctx.save();ctx.translate(x-(player.face.x>0?2:-2),y-9);ctx.rotate(player.face.x>0?-.6:.6);{const z=window.__plTierZ?window.__plTierZ(equip.silah,10):10;ctx.drawImage(ic,-5,-z+4,z,z)}ctx.restore()}}
   drawChibi(ctx,x,y,eqLook(),Object.assign(eqOpts(),{fx:player.face.x,fy:player.face.y,step:mv?(s>.3?1:s<-.3?-1:0):0,bob:mv&&Math.abs(s)>.7?-1:0,arm:held()&&!PLACEABLE.has(held())&&!back?'reach':'down'}));
-  if(equip.silah&&!armed&&back&&held()!==equip.silah){const ic=ICONC[equip.silah]||(icon(equip.silah),ICONC[equip.silah]);if(ic){ctx.save();ctx.translate(x,y-9);ctx.rotate(.7);ctx.drawImage(ic,-5,-6,10,10);ctx.restore()}}
+  if(equip.silah&&!armed&&back&&held()!==equip.silah){const ic=ICONC[equip.silah]||(icon(equip.silah),ICONC[equip.silah]);if(ic){ctx.save();ctx.translate(x,y-9);ctx.rotate(.7);{const z=window.__plTierZ?window.__plTierZ(equip.silah,10):10;ctx.drawImage(ic,-5,-z+4,z,z)}ctx.restore()}}
   if(!back)drawHeld(x,y);
   drawLeftT(x,y,back);
   ctx.globalAlpha=1;
@@ -5334,9 +5334,9 @@ function drawLeftT(x,y,back){const t=torchHeld();if(!t||t===held())return;try{co
   const sgn=fx<0?1:-1,sw=Math.sin(time*2)*.05;ctx.save();ctx.translate(x+sgn*(back?3:4),y-3);ctx.scale(sgn,1);ctx.rotate(-.35+sw);ctx.drawImage(c,-2,-11,10,10);ctx.restore()}
 function hpBar(x,y,w,k){w=Math.round(w);const f=Math.round(w*Math.max(0,Math.min(1,k)));px(x-1,y-1,w+2,4,'#0b0f0a');px(x,y,w,2,'#5a2a26');if(f>0)px(x,y,f,2,k>.5?'#8fd46b':k>.25?'#f2b84b':'#e8775a')}   // v1.47: a creature's life bar with a visible empty part, so a long bar does not look short
 function drawHeld(x,y){
-  const h=held();if(!h||PLACEABLE.has(h))return;const c=ICONC[h]||(icon(h),ICONC[h]);if(!c)return;
-  const fx=player.face.x,sgn=fx<0?-1:1,sw=gathering&&gathering.tool===h?Math.sin(time*14)*.9:Math.sin(time*2)*.05;
-  ctx.save();ctx.translate(x+sgn*5,y-3);ctx.scale(sgn,1);ctx.rotate(-.5+sw);ctx.drawImage(c,-2,-11,11,11);ctx.restore();
+  const h=held();if(!h||PLACEABLE.has(h))return;if(window.__plHeldSkip&&window.__plHeldSkip(h))return;const c=ICONC[h]||(icon(h),ICONC[h]);if(!c)return;   // v3.22: the bow draws itself (v322tier)
+  const fx=player.face.x,sgn=fx<0?-1:1,sw=gathering&&gathering.tool===h?Math.sin(time*14)*.9:Math.sin(time*2)*.05,z=window.__plTierZ?window.__plTierZ(h,11):11;   // v3.22: higher tiers are bigger in the hand
+  ctx.save();ctx.translate(x+sgn*5,y-3);ctx.scale(sgn,1);ctx.rotate(-.5+sw);ctx.drawImage(c,-2,-z,z,z);ctx.restore();
 }
 
 // ---------- day and night: one day is 12 minutes (8 of daylight, 4 of night) ----------
@@ -9742,7 +9742,7 @@ attack=function(focus){
   const slow=stLow()<.35?1+(.35-stLow())*1.6:1;   // low on breath: a heavier, slower swing
   const fx=player.face.x,fy=player.face.y,ang=Math.atan2(fy,fx||(fy?0:1)),w=weapon();
   P4.sw={t:0,k:K.k,n:K.n||(K.k==='fist'?null:w.n),ang,dir:fx<0?-1:1,r:Math.max(14,w.reach*.85),ant:C.ant*slow,str:C.str*slow,fol:C.fol,col:C.col,trail:[],hit:false,slow};
-  P4.pend={t:C.ant*slow,focus,slow};atkCd=9;p4Whoosh(K.k,slow)};
+  P4.pend={t:C.ant*slow,focus,slow};atkCd=9;p4Whoosh(K.k,slow);try{if(window.__plTier)window.__plTier.swing(P4.sw.n,K.k)}catch(e){}};   // v3.22: the tier's own layer
 function p4Strike(){const pd=P4.pend;P4.pend=null;if(frozenNow()){atkCd=.2;P4.sw=null;return}
   const before=new Map();for(const a of animals)before.set(a,a.hp);const fl0=floats.length;
   atkCd=0;P4.mute=true;try{_attack.call(null,null)}finally{P4.mute=false}swing=null;
@@ -9753,12 +9753,12 @@ function p4Strike(){const pd=P4.pend;P4.pend=null;if(frozenNow()){atkCd=.2;P4.sw
     for(const [a,dm,gone] of hits){const D=ANIM[a.k]||{r:6};const ix=player.x+(a.x-player.x)*.6,iy=player.y-6+(a.y-6-player.y+6)*.6;
       if(!gone&&a.kb){const k=a.boss?.25:Math.min(1.8,.9+dm/30);a.kb.vx*=k;a.kb.vy*=k;a.kb.t=a.boss?.08:.14}
       if(!gone)a.flash=Math.max(a.flash,.12);
-      const sc=sw&&sw.k==='torch'?['#ffd040','#ff7a2a','#fff2b0']:['#ffffff','#fff2b0',a.boss?'#c890ff':'#e86a4a'];
+      const TI=sw&&sw.n&&window.__plTier?window.__plTier.info(sw.n):null,sc=sw&&sw.k==='torch'?['#ffd040','#ff7a2a','#fff2b0']:TI?TI.sparks:['#ffffff','#fff2b0',a.boss?'#c890ff':'#e86a4a'];
       for(let i=0;i<10+Math.min(14,dm);i++){const t=Math.atan2(a.y-player.y,a.x-player.x)+(Math.random()-.5)*2.2,s=50+Math.random()*90;parts.push({x:ix,y:iy,vx:Math.cos(t)*s,vy:Math.sin(t)*s-30,life:.22+Math.random()*.25,c:sc[i%3]})}
-      P4.rings.push({x:ix,y:iy,t:0,r:6+Math.min(10,dm/3),c:sw&&sw.k==='torch'?'255,160,60':'255,255,255'})}
+      P4.rings.push({x:ix,y:iy,t:0,r:6+Math.min(10,dm/3),c:sw&&sw.k==='torch'?'255,160,60':TI?TI.rgb:'255,255,255'})}
     P4.stop=Math.max(P4.stop,.06+Math.min(.04,best/400)+(hits.some(h=>h[2])?.03:0));
     shake=Math.max(shake,.1+Math.min(.18,best/160));shakeP=Math.max(shakeP,Math.min(4,1.4+best/9));
-    p4HitSnd(best,sw?sw.k:'fist');try{if(TOUCH&&navigator.vibrate)navigator.vibrate(Math.min(60,18+best))}catch(e){}
+    p4HitSnd(best,sw?sw.k:'fist');try{if(window.__plTier&&sw&&sw.n)window.__plTier.hit(sw.n,best,hits)}catch(e){}try{if(TOUCH&&navigator.vibrate)navigator.vibrate(Math.min(60,18+best))}catch(e){}
     atkCd=w.cd*pd.slow-(sw?sw.ant:0)}
   else atkCd=w.cd*pd.slow+.14-(sw?sw.ant:0)}   // a whiff leaves you open a moment longer
 // mute the old swing/hit beeps while our own sounds play
@@ -9790,17 +9790,17 @@ function swReach(S){const a=S.ant,b=a+S.str,t=S.t;if(t<a)return 3-2*(t/a);if(t<b
 function p4DrawSwing(dt){const S=P4.sw;
   for(let i=P4.rings.length-1;i>=0;i--){const R=P4.rings[i];R.t+=dt;const k=R.t/.22;if(k>=1){P4.rings.splice(i,1);continue}ctx.strokeStyle=`rgba(${R.c},${(.9*(1-k)).toFixed(2)})`;ctx.lineWidth=Math.max(.5,2*(1-k));ctx.beginPath();ctx.arc(R.x,R.y,R.r*(.4+k),0,Math.PI*2);ctx.stroke()}
   if(!S)return;S.t+=dt;const end=S.ant+S.str+S.fol;if(S.t>end+.12){P4.sw=null;return}
-  const hx=player.x,hy=player.y-6,thrust=S.k==='spear'||S.k==='fist';
+  const hx=player.x,hy=player.y-6,thrust=S.k==='spear'||S.k==='fist',TI=S.n&&window.__plTier?window.__plTier.info(S.n):null;   // v3.22: the tier colours the trail
   if(thrust){const L=swReach(S),tx=hx+Math.cos(S.ang)*L,ty=hy+Math.sin(S.ang)*L;
-    if(S.t>S.ant&&S.t<S.ant+S.str+S.fol*.6){const al=S.t<S.ant+S.str?.9:.9*(1-(S.t-S.ant-S.str)/(S.fol*.6));ctx.strokeStyle=`rgba(255,255,255,${al.toFixed(2)})`;ctx.lineWidth=S.k==='fist'?1:1.5;
+    if(S.t>S.ant&&S.t<S.ant+S.str+S.fol*.6){const al=S.t<S.ant+S.str?.9:.9*(1-(S.t-S.ant-S.str)/(S.fol*.6));ctx.strokeStyle=`rgba(${TI?TI.rgb:'255,255,255'},${al.toFixed(2)})`;ctx.lineWidth=S.k==='fist'?1:1.5+(TI?TI.t*.15:0);if(TI)window.__plTier.tip(TI,{x:tx,y:ty});
       for(const o of [-2,0,2]){const px_=-Math.sin(S.ang)*o,py_=Math.cos(S.ang)*o;ctx.beginPath();ctx.moveTo(hx+px_+Math.cos(S.ang)*4,hy+py_+Math.sin(S.ang)*4);ctx.lineTo(tx+px_,ty+py_);ctx.stroke()}
       if(S.k==='fist'&&Math.random()<.5)parts.push({x:tx,y:ty,vx:(Math.random()-.5)*20,vy:-10,life:.2,c:'rgba(255,255,255,.8)'})}
     S.tip={x:tx,y:ty};return}
   const A=swAngle(S),R=S.r,tip={x:hx+Math.cos(A)*R,y:hy+Math.sin(A)*R};S.tip=tip;S.A=A;
-  if(S.t>S.ant&&S.t<end){S.trail.push({a:A,t:S.t});if(S.k==='torch'){for(let i=0;i<3;i++)parts.push({x:tip.x+(Math.random()-.5)*3,y:tip.y+(Math.random()-.5)*3,vx:(Math.random()-.5)*14,vy:-18-Math.random()*16,life:.25+Math.random()*.25,c:i?'#ff9a3a':'#ffe080'})}}
+  if(S.t>S.ant&&S.t<end){S.trail.push({a:A,t:S.t});if(TI&&S.t<S.ant+S.str+S.fol*.5)window.__plTier.tip(TI,tip);if(S.k==='torch'){for(let i=0;i<3;i++)parts.push({x:tip.x+(Math.random()-.5)*3,y:tip.y+(Math.random()-.5)*3,vx:(Math.random()-.5)*14,vy:-18-Math.random()*16,life:.25+Math.random()*.25,c:i?'#ff9a3a':'#ffe080'})}}
   // the trail: a crescent that fades from the oldest edge
-  const L=S.trail.filter(p=>S.t-p.t<.13);if(L.length>1){const rgb=S.k==='torch'?'255,170,60':S.k==='axe'?'255,220,170':'235,245,255';
-    for(let i=1;i<L.length;i++){const p0=L[i-1],p1=L[i],age=S.t-p1.t,al=Math.max(0,.9*(1-age/.13))*(S.hit?1:.85);const ri=R*(S.k==='axe'?.45:.35);
+  const L=S.trail.filter(p=>S.t-p.t<.13);if(L.length>1){const rgb=S.k==='torch'?'255,170,60':TI?TI.rgb:S.k==='axe'?'255,220,170':'235,245,255';
+    for(let i=1;i<L.length;i++){const p0=L[i-1],p1=L[i],age=S.t-p1.t,al=Math.max(0,.9*(1-age/.13))*(S.hit?1:.85);const ri=R*(S.k==='axe'?.45:.35)*(TI?TI.tw:1);
       ctx.fillStyle=`rgba(${rgb},${al.toFixed(2)})`;ctx.beginPath();ctx.moveTo(hx+Math.cos(p0.a)*ri,hy+Math.sin(p0.a)*ri);ctx.lineTo(hx+Math.cos(p0.a)*(R+1),hy+Math.sin(p0.a)*(R+1));ctx.lineTo(hx+Math.cos(p1.a)*(R+1),hy+Math.sin(p1.a)*(R+1));ctx.lineTo(hx+Math.cos(p1.a)*ri,hy+Math.sin(p1.a)*ri);ctx.closePath();ctx.fill()}
     const p=L[L.length-1];ctx.strokeStyle=`rgba(255,255,255,${S.t<S.ant+S.str?.95:.5})`;ctx.lineWidth=1;ctx.beginPath();ctx.arc(hx,hy,R,Math.min(p.a,L[0].a),Math.max(p.a,L[0].a));ctx.stroke()}
   if(S.k==='torch'&&S.t<end){const g=ctx.createRadialGradient(tip.x,tip.y,0,tip.x,tip.y,9);g.addColorStop(0,'rgba(255,220,120,.55)');g.addColorStop(1,'rgba(255,120,40,0)');ctx.fillStyle=g;ctx.fillRect(tip.x-9,tip.y-9,18,18)}}
@@ -9809,7 +9809,7 @@ const _drawHeld=drawHeld;
 drawHeld=function(x,y){const S=P4.sw;if(!S||S.k==='fist')return _drawHeld.apply(this,arguments);const n=S.n||held();if(!n)return _drawHeld.apply(this,arguments);
   const c=ICONC[n]||(icon(n),ICONC[n]);if(!c)return _drawHeld.apply(this,arguments);
   const A=S.k==='spear'?S.ang:(S.A!=null?S.A:swAngle(S)),off=S.k==='spear'?swReach(S)*.6:4;
-  ctx.save();ctx.translate(x+Math.cos(A)*off,y-6+Math.sin(A)*off);ctx.rotate(A+Math.PI/4);ctx.drawImage(c,-2,-11,12,12);ctx.restore()};
+  ctx.save();ctx.translate(x+Math.cos(A)*off,y-6+Math.sin(A)*off);ctx.rotate(A+Math.PI/4);{const z=window.__plTierZ?window.__plTierZ(n,12):12;ctx.drawImage(c,-2,-z+1,z,z)}ctx.restore()};
 // the stowed weapon on the back hides while it is in the hand
 const _drawPlayer=drawPlayer;drawPlayer=function(){const S=P4.sw;if(S&&S.n&&equip.silah===S.n&&held()!==S.n){const e=equip.silah;equip.silah=null;try{return _drawPlayer.apply(this,arguments)}finally{equip.silah=e}}return _drawPlayer.apply(this,arguments)};
 drawSwing=function(){try{p4DrawSwing(P4.gdt)}catch(e){P4.sw=null}};
@@ -12100,7 +12100,7 @@ function tickShots(){const now=performance.now(),dt=Math.min(.05,(now-lastT)/100
   for(let i=shots.length-1;i>=0;i--){const s=shots[i],mx=s.vx*dt,my=s.vy*dt;s.x+=mx;s.y+=my;s.left-=Math.hypot(mx,my);
     if(Math.random()<(s.S.trail==null?.7:s.S.trail))parts.push({x:s.x,y:s.y,vx:(Math.random()-.5)*20,vy:(Math.random()-.5)*20,life:.25,c:Math.random()<.5?s.S.c1:s.S.c2});
     let hit=null;for(const a of animals){if(s.hs&&s.hs.has(a))continue;if(Math.hypot(a.x-s.x,a.y-6-s.y)<ANIM[a.k].r+7){hit=a;break}}
-    if(hit){hit.hp-=s.dm;hit.flash=.15;if(s.S.freeze){const nw=performance.now()/1000;if(!(hit._fImm>nw)){const fz=hit.boss?s.S.freeze*.5:s.S.freeze;hit.frz=Math.max(hit.frz||0,fz);hit._fImm=nw+fz+3}}try{madPack(hit)}catch(e){}const d=Math.hypot(s.vx,s.vy)||1;hit.kb={vx:s.vx/d*120,vy:s.vy/d*120,t:.1};floats.push({x:hit.x,y:hit.y-12,t:0,text:`-${s.dm}`,color:'#ffb060'});sfx('hit');
+    if(hit){hit.hp-=s.dm;hit.flash=.15;if(s.S.freeze){const nw=performance.now()/1000;if(!(hit._fImm>nw)){const fz=hit.boss?s.S.freeze*.5:s.S.freeze;hit.frz=Math.max(hit.frz||0,fz);hit._fImm=nw+fz+3}}try{madPack(hit)}catch(e){}const d=Math.hypot(s.vx,s.vy)||1;hit.kb={vx:s.vx/d*120,vy:s.vy/d*120,t:.1};floats.push({x:hit.x,y:hit.y-12,t:0,text:`-${s.dm}`,color:'#ffb060'});sfx('hit');if(s.S.onHit)try{s.S.onHit(s,hit)}catch(e){}
       for(let k=0;k<10;k++)parts.push({x:s.x,y:s.y,vx:(Math.random()-.5)*80,vy:(Math.random()-.5)*80,life:.35,c:k%2?s.S.c1:s.S.c2});if(s.S.chain>0){const hs=s.hs||new Set();hs.add(hit);let nx=null,nd=110;for(const b of animals){if(hs.has(b)||b===hit)continue;const dd=Math.hypot(b.x-hit.x,b.y-hit.y);if(dd<nd){nd=dd;nx=b}}
         if(nx){const ang=Math.atan2(nx.y-6-(hit.y-6),nx.x-hit.x),sp=s.S.spd;shots.push({x:hit.x,y:hit.y-6,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp,left:140,S:Object.assign({},s.S,{chain:s.S.chain-1}),dm:Math.round(s.dm*.8),hs})}}
       if(hit.hp<=0)killAnimal(hit);shots.splice(i,1);continue}
@@ -12137,7 +12137,8 @@ setInterval(()=>{try{if(QD().indexOf('pv3')>=0&&!bought.has('Ateş asası')){bou
 // ---------------------------------------------------------------- drawing
 const inV=(x,y,m)=>Math.abs(x-player.x)<320+m&&Math.abs(y-player.y)<230+m;
 const _ve=v55Ents;v55Ents=function(ents,time){if(_ve)_ve.apply(this,arguments);
-  for(const s of shots)ents.push({y:s.y+12,d:()=>{const k=.6+.4*Math.sin(time*30),z=s.S.sz||4;if(s.S.line){const d=Math.hypot(s.vx,s.vy)||1;ctx.strokeStyle=s.S.c1;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(Math.round(s.x),Math.round(s.y));ctx.lineTo(Math.round(s.x-s.vx/d*8),Math.round(s.y-s.vy/d*8));ctx.stroke();return}ctx.fillStyle=s.S.c2;ctx.beginPath();ctx.arc(Math.round(s.x),Math.round(s.y),z,0,6.283);ctx.fill();ctx.fillStyle=s.S.c1;ctx.beginPath();ctx.arc(Math.round(s.x),Math.round(s.y),z/2+k,0,6.283);ctx.fill()}});
+  for(const s of shots)ents.push({y:s.y+12,d:()=>{if(s.S.draw){try{s.S.draw(s,time)}catch(e){}return}   // v3.22: arrows draw as arrows
+  const k=.6+.4*Math.sin(time*30),z=s.S.sz||4;if(s.S.line){const d=Math.hypot(s.vx,s.vy)||1;ctx.strokeStyle=s.S.c1;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(Math.round(s.x),Math.round(s.y));ctx.lineTo(Math.round(s.x-s.vx/d*8),Math.round(s.y-s.vy/d*8));ctx.stroke();return}ctx.fillStyle=s.S.c2;ctx.beginPath();ctx.arc(Math.round(s.x),Math.round(s.y),z,0,6.283);ctx.fill();ctx.fillStyle=s.S.c1;ctx.beginPath();ctx.arc(Math.round(s.x),Math.round(s.y),z/2+k,0,6.283);ctx.fill()}});
   if(I2&&inV(pervin.x,pervin.y,40)){ents.push({y:pervin.y-1,d:()=>{const x=Math.round(pervin.x+18),y=Math.round(pervin.y),f=Math.sin(time*5);ctx.fillStyle='rgba(120,60,200,.35)';ctx.beginPath();ctx.ellipse(x,y+1,9,3,0,0,6.283);ctx.fill();
       px(x-3,y-10+Math.round(f),6,6,'#a050e0');px(x-2,y-12+Math.round(f),4,4,'#d8b0ff');px(x-1,y-13+Math.round(f),2,2,'#ffffff');if(Math.random()<.1)parts.push({x:x+(Math.random()-.5)*6,y:y-12,vx:0,vy:-14,life:.7,c:'#c9a0ff'})}});
     ents.push({y:pervin.y,d:()=>{const P=npcDraw(pervin,NPCL.pervin,time,9.3,{});const hy=P.hy;px(P.x-6,hy-2,12,2,'#3e1a66');px(P.x-4,hy-5,8,3,'#3e1a66');px(P.x-2,hy-8,4,3,'#3e1a66');px(P.x-1,hy-10,2,2,'#3e1a66');if(!pervin.met)npcMark(P.x,P.y,time,'#c9a0ff')}})}};
@@ -13191,7 +13192,7 @@ function drawShield(){const t=performance.now()/1000,up=Math.min(1,(t-PR.h0)/.08
 {const _dp=drawPlayer;drawPlayer=function(){if(!PR.hold||dodge)return _dp.apply(this,arguments);const t=performance.now()/1000,up=Math.min(1,(t-PR.h0)/.08),a=aimA(),c=Math.cos(a),fl=PR.bf>0?PR.bf/.15:0;
   const cx=player.x-c*(1.5*up+fl*2),cy=player.y;ctx.save();ctx.translate(cx,cy);ctx.rotate(c*.1*up);ctx.scale(1+.06*up,1-.12*up);ctx.translate(-player.x,-player.y);try{return _dp.apply(this,arguments)}finally{ctx.restore()}}}
 {const _dh=drawHeld;drawHeld=function(x,y){if(!PR.hold||dodge)return _dh.apply(this,arguments);const n=held();if(!n)return;const ic=ICONC[n]||(icon(n),ICONC[n]);if(!ic)return _dh.apply(this,arguments);
-  const a=aimA(),f=Math.cos(a)<0?-1:1;ctx.save();ctx.translate(x+Math.cos(a)*4,y-8+Math.sin(a)*2);ctx.rotate(f>0?Math.PI/4:Math.PI*1.25);ctx.drawImage(ic,-6,-6,12,12);ctx.restore()}}
+  const a=aimA(),f=Math.cos(a)<0?-1:1;ctx.save();ctx.translate(x+Math.cos(a)*4,y-8+Math.sin(a)*2);ctx.rotate(f>0?Math.PI/4:Math.PI*1.25);{const z=window.__plTierZ?window.__plTierZ(n,12):12;ctx.drawImage(ic,-z/2,-z/2,z,z)}ctx.restore()}}
 
 // ------------------------------------------------------------------ input: right mouse button; a button on touch screens
 function raise(){if(!parryKnown()||PR.brk>0||frozenNow()||!met)return;PR.hold=true;PR.h0=performance.now()/1000}
@@ -13464,8 +13465,8 @@ function hitIn(test,m,o){o=o||{};let n=0,big=0;const B=base();
     if(o.once){if(o.once.has(a))continue;o.once.add(a)}
     const dm=Math.max(1,Math.round(B.dm*m));a.hp-=dm;a.flash=.15;try{madPack(a)}catch(e){}const k=(o.kb||140)*(a.boss?.3:1);a.kb={vx:dx/(d||1)*k,vy:dy/(d||1)*k,t:.12};
     if(o.stun)a.stun=Math.max(a.stun||0,a.boss?o.stun*.6:o.stun);if(o.stun&&a.mv)a.mv=null;
-    floats.push({x:a.x,y:a.y-12,t:0,text:`-${dm}`,color:m>=2?'#ffd040':'#ffffff',size:Math.min(18,8+dm/3)});sparks(a,o.col);n++;if(dm>big)big=dm;if(a.hp<=0)killAnimal(a);if(o.max&&n>=o.max)break}
-  if(n){const p=P4();p.stop=Math.max(p.stop||0,.05+Math.min(.07,big/300));shake=Math.max(shake,.1+Math.min(.22,big/150));shakeP=Math.max(shakeP,Math.min(4.5,1.5+big/9));thump(big)}
+    floats.push({x:a.x,y:a.y-12,t:0,text:`-${dm}`,color:m>=2?'#ffd040':'#ffffff',size:Math.min(18,8+dm/3)});sparks(a,o.col);try{if(window.__plTier&&B.w&&B.w.n)window.__plTier.spark(B.w.n,a,dm)}catch(e){}n++;if(dm>big)big=dm;if(a.hp<=0)killAnimal(a);if(o.max&&n>=o.max)break}
+  if(n){const p=P4();p.stop=Math.max(p.stop||0,.05+Math.min(.07,big/300));shake=Math.max(shake,.1+Math.min(.22,big/150));shakeP=Math.max(shakeP,Math.min(4.5,1.5+big/9));thump(big);try{if(window.__plTier&&B.w&&B.w.n)window.__plTier.hit(B.w.n,big,null)}catch(e){}}
   return n}
 const ADIFF=(a,b)=>{let d=a-b;while(d>Math.PI)d-=Math.PI*2;while(d<-Math.PI)d+=Math.PI*2;return Math.abs(d)};
 const arc=(ang,half,r)=>(dx,dy,d,R)=>d<=r+R&&(d<8||ADIFF(Math.atan2(dy-6+6,dx),ang)<=half);
@@ -17566,7 +17567,8 @@ function shot(a,m,da,o){o=o||{};const h=held(),B=BOW[h];if(!B)return false;
   if(!free()){inv[A[0]]=Math.max(0,(inv[A[0]]||0)-1);if(wearsNow()){toolDur[h]=Math.max(0,nn(toolDur[h],GT[h].dur)-1);if(toolDur[h]<=0)setTimeout(()=>toast(`${h} köreldi! Silahçıda bilet.`,true),300)}}
   const dm=Math.max(1,Math.round(B.dmg*A[1]*(m||1)*lv()));
   const S={c1:A[2],c2:'#e8d8b0',spd:B.spd*(o.spd||1),range:B.rng*(o.range||1),line:1,trail:.04,efx:A[3],edm:B.dmg*A[1]*lv()};
-  window.__plFire(S,dm,{x:player.x+Math.cos(a)*120,y:player.y-10+Math.sin(a)*120},da||0);twang();
+  try{if(window.__plTier)window.__plTier.arrow(S,A[0])}catch(e){}   // v3.22: the arrow you shoot is drawn, trails and sparks as itself
+  window.__plFire(S,dm,{x:player.x+Math.cos(a)*120,y:player.y-10+Math.sin(a)*120},da||0);{let ok=false;try{ok=!!(window.__plTier&&window.__plTier.shot(h,A[0],a))}catch(e){}if(!ok)twang()}
   if(!invT)invT=setTimeout(()=>{invT=0;try{renderInv()}catch(e){}},120);return true}
 let bcd=0,bl=performance.now();setInterval(()=>{const now=performance.now();bcd=Math.max(0,bcd-(now-bl)/1000);bl=now},50);
 window.__plBow={shot,has:k=>free()||count()>=(k||1),cd:h=>BOW[h]?BOW[h].cd:.7,dmg:h=>BOW[h]?BOW[h].dmg:0,
@@ -19200,6 +19202,274 @@ if(typeof hurt==='function'){const _h=hurt;hurt=function(n){const h0=hp,r=_h.app
 try{if(Array.prototype.slice.call(navigator.getGamepads?navigator.getGamepads():[]).some(x=>x&&x.connected)){P.on=true;start()}}catch(e){}
 const st=document.createElement('style');st.textContent='body.padmode :focus{outline:3px solid #7fb8e0!important;outline-offset:2px}.padl{margin:6px 0 0;padding-left:18px;text-align:left;font-size:13.5px;line-height:1.45}.padl li{margin:0 0 4px}';document.head.appendChild(st);
 }).toString()+')()')}catch(e){try{window.__hamErr('v320pad: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v322tier">
+// v3.22 (Boğaç: "bir sonraki seviyesi alındığında 'yeni bir şey aldım' hissini vermeli; tek fark renk olmasın, ok attığı belli olsun").
+// Every kind of weapon and tool (kılıç, savaş çekici, topuz, mızrak, balta, kazma, yay) has 7 tiers with their own shape, size in the hand,
+// trail, hit sparks and a sound layer; usta pieces wear their effect's colour in a line. Arrows fly as the arrow you shot; the bow in the hand
+// aims, shows the nocked arrow and snaps. A higher tier for the first time: "Yeni kademe!". Older blocks call window.__plTier (v49-p4,
+// CB hitIn, v77 shots, v249 shot) and __plTierZ/__plHeldSkip (drawHeld). Belge: Aletler › Silahların kademe kimliği. Arena: same data.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+// ---------------------------------------------------------------- 1 · the pictures: one shape per kind and tier (16×16, along the diagonal)
+const R2=Math.SQRT1_2;
+const MAT={'Taş':{b:'#8d9196',l:'#b8bcc0',d:'#5e6266'},'Bakır':{b:'#d8783a',l:'#f4ac6c',d:'#9a4a1e'},'Çakmaktaşı':{b:'#4e4d56',l:'#9896a8',d:'#2a2930'},
+  'Tunç':{b:'#c4903e',l:'#f0c878',d:'#8a5e22'},'Granit':{b:'#9a8f8a',l:'#c8beb8',d:'#665c58'},'Demir':{b:'#8e939b',l:'#c8cdd4',d:'#5a5e66'},
+  'Timsah dişi':{b:'#e2d6b8',l:'#fbf3dc',d:'#a89a78'},'Çelik':{b:'#b4c0ce',l:'#f2f7ff',d:'#6a7686'},'Gümüş':{b:'#d0d6e0',l:'#ffffff',d:'#8a92a0'},
+  'Kuvars':{b:'#e0dcec',l:'#ffffff',d:'#a09ab6'},'Kara çelik':{b:'#3a3a46',l:'#6c6c7e',d:'#1c1c24',g:'#ff6a2a'},'Ejder':{b:'#5a3440',l:'#8c5262',d:'#2e1820',g:'#ff8a3a'},
+  'Mor kristal':{b:'#a46cf0',l:'#dcc4ff',d:'#6a38b0',g:'#f6eeff'},'Ametist':{b:'#8a3ac8',l:'#c890f0',d:'#521c80',g:'#f4e0ff'},'Obsidyen':{b:'#2e2244',l:'#5c4a84',d:'#140e22',g:'#b88aff'}};
+const HND=[{h:'#9b6f42',w:'#dcc48e'},{h:'#8a5a2e',w:'#5e3a1c'},{h:'#7a4a26',w:'#e8c060'},{h:'#4a3226',w:'#b4bac4'},{h:'#3a2a22',w:'#e8c060'},{h:'#241a1e',w:'#c83a2a'},{h:'#2c1e40',w:'#dcc4ff'}];
+const ACC=['#dcc48e','#f4ac6c','#e8c060','#c8cdd4','#4ab0ff','#ff6a2a','#ffffff'];
+const FXC={kanama:'#e8303a',zehir:'#6ad040','yanık':'#ff8a2a'};
+const lit=(c,k)=>shade(c,k);
+function rast(g,fn){for(let y=0;y<16;y++)for(let x=0;x<16;x++){const s=(x-y+13)*R2,w=(x+y-15)*R2,c=fn(s,w,x,y);if(c){g.fillStyle=c;g.fillRect(x,y,1,1)}}}
+function at(s,w){const a=s/R2-13,b=w/R2+15;return[Math.round((a+b)/2),Math.round((b-a)/2)]}
+function dot(g,s,w,c){const p=at(s,w);if(p[0]<0||p[1]<0||p[0]>15||p[1]>15)return;g.fillStyle=c;g.fillRect(p[0],p[1],1,1)}
+// a handle two pixels wide (light on the upper-left), like the old sticks
+function handle(s,w,a,b,H,t,bands){if(s<a||s>=b||w<=-.75||w>=.5)return null;if(bands&&t>=3&&Math.abs(((s*1.414)%5)-2.5)<.5)return H.w;return w<-.3?lit(H.h,1.3):H.h}
+function shapeOf(I){const t=I.t,m=I.pal,H=HND[t],acc=ACC[t],fxc=I.u&&I.fx?FXC[I.fx]:null,u=I.u;let tip=[14,0];
+  const sd=(w,hw)=>w<-hw*.4?m.l:(w>hw*.4?m.d:m.b);
+  if(I.fam==='kılıç'){const L=[12.4,13.2,14.1,15,16,17,17.9][t],gw=[.75,1.6,2.2,2.9,3.3,3.6,4.0][t];tip=[L,0];
+    return{tip,fn:(s,w,x,y)=>{const aw=Math.abs(w);
+      if(s>=.2&&s<1.3){if(t>=2&&aw<1.1)return t>=4?acc:m.d;if(aw<.75)return H.h;return null}
+      if(s>=1.3&&s<4.3){if(aw<.75){if(t===0)return (x+y)%2?H.w:H.h;if(t>=3&&Math.round(s*1.414)%2)return H.w;return w<-.3?lit(H.h,1.3):H.h}return null}
+      let g0=4.3,g1=5.2;if(t===4&&aw>2.2){g0+=.7;g1+=.7}if(t===5&&aw>2.8){g0+=1;g1+=.6}if(t===6)g1+=aw*.35;
+      if(s>=g0&&s<g1&&aw<=gw){if(t===0)return H.w;if(t===2&&aw>1.5)return acc;if(t===6&&aw>gw-.8)return m.g;return aw>gw-.8?(t===5?m.g:m.l):m.b}
+      if(s>=5.2&&s<=L){const k=(s-5.2)/(L-5.2);let hw;
+        if(t===0)hw=1.45*Math.min(1,(L-s)/1.6);else if(t===1)hw=1.0*Math.min(1,(L-s)/2);
+        else if(t===2)hw=(.75+.8*Math.sin(Math.PI*Math.min(1,k*1.05)))*Math.min(1,(L-s)/1.4);
+        else if(t===3)hw=1.45*Math.min(1,(L-s)/2.6);else if(t===4)hw=1.45*Math.min(1,(L-s)/3.2);
+        else if(t===5)hw=1.45*Math.min(1,(L-s)/2.8)+(w>0&&s<L-3&&Math.floor(s*1.414)%2?.72:0);
+        else hw=.6+1.4*Math.pow(1-k,.7);
+        if(aw>hw+.01)return null;if(t===0&&aw>hw-.75&&(x*7+y*3)%5===0)return null;
+        if(fxc&&aw<.5&&s>6&&s<L-2.2)return fxc;
+        if(t===3&&aw<.5&&s<L-3)return m.d;if(t===4&&w<-hw+.76)return '#ffffff';if(t===5&&w<-hw+.76)return m.g||'#ff6a2a';
+        if(t===6)return aw<.5?(m.g||'#ffffff'):(w<0?m.l:m.b);return sd(w,hw)}
+      return null}}}
+  if(I.fam==='savaş çekici'){const Hd=[10.2,10.4,10.8,11,11.4,11.8,12][t],hs=[1.5,1.5,1.7,1.9,2,2.2,2.3][t],a=[2.2,2.6,3,3.4,3.7,4.1,4.6][t],sc=Hd+hs;tip=[sc+hs+(t>=3?1.4:0),0];
+    return{tip,fn:(s,w,x,y)=>{const aw=Math.abs(w),ds=Math.abs(s-sc);let inH=ds<=hs&&aw<=a;
+      if(t===0&&ds>hs-.75&&aw>a-.75)inH=false;if(t===4&&aw>a-.9&&aw<=a&&ds<=hs+.75)inH=true;if(t===6&&aw<=a&&ds<=hs+(a-aw)*.22)inH=true;
+      if(inH){if(t===0&&aw<.5)return H.w;if(fxc&&aw<.5&&ds<.8)return fxc;if(t===2&&Math.abs(aw-a*.5)<.4)return acc;
+        if(t===5&&aw<.5&&ds<hs-.5)return m.g;if(t===6&&aw<.8&&ds<.8)return m.g;
+        if(aw>a-.76)return t===5?m.g:m.l;return s>sc+.3?m.l:(s<sc-hs*.4?m.d:m.b)}
+      if(t>=3&&s>sc+hs&&s<sc+hs+1.9&&aw<=.55*(1-(s-sc-hs)/1.9)+.2)return t===5?m.g:(t===6?m.g:m.l);
+      if(t===5&&aw>a&&aw<a+1.5&&ds<.6*(1-(aw-a)/1.5)+.15)return m.l;
+      if(t===0&&s>=sc-hs-1.4&&s<sc-hs&&aw<.75)return H.w;
+      return handle(s,w,.4,sc-hs+.2,H,t,true)}}}
+  if(I.fam==='topuz'){const sc=[12.2,12.3,12.5,12.7,12.9,13.1,13.3][t],r=[1.9,2,2.2,2.2,2.3,2.4,2.6][t];
+    const n=[0,0,4,4,8,8,6][t],len=[0,0,r+.9,r+1.3,r+1.1,r+1.9,r+2.1][t];tip=[sc+len||sc+r,0];
+    return{tip,fn:(s,w,x,y)=>{const ds=s-sc,d=Math.hypot(ds,w),ang=Math.atan2(w,ds);let rr=r;if(t===0&&(x*5+y*3)%4===0)rr=r-.6;
+      if(d<=rr){if(fxc&&d<.8)return fxc;if(t>=5&&d<.95)return m.g;return (w<0&&ds>-.3)?m.l:(ds<-r*.4||w>r*.4?m.d:m.b)}
+      if(n){const step=2*Math.PI/n,off=(t===2||t>=4)?step/2:0;let a2=((ang-off)%step+step)%step;if(a2>step/2)a2-=step;const pe=Math.abs(Math.sin(a2))*d;
+        const wid=t===2?.75:t===3?.55:t===4?.5:(t===5?.55:.6)*(1-(d-r)/(len-r))+.15;
+        if(d<=len&&pe<=wid&&Math.cos(a2)>0&&ds>-r-.2)return t===6?(d>len-1?m.g:m.l):(t===5?m.l:t===4?m.l:m.b)}
+      if(t===0&&s>=sc-r-1.4&&s<sc-r&&Math.abs(w)<.75)return H.w;
+      return handle(s,w,.4,sc-r+.3,H,t,true)}}}
+  if(I.fam==='mızrak'){const HS=[11.6,12,11.8,11.5,11.2,11,10.6][t],HE=[15.2,15.6,16.2,16.8,17.3,17.6,18.1][t],hm=[1.3,1.25,1.6,1.5,1.55,1.55,1.85][t];tip=[HE,0];
+    return{tip,fn:(s,w,x,y)=>{const aw=Math.abs(w);
+      if(s>=HS&&s<=HE){const k=(s-HS)/(HE-HS);let hw=hm*Math.pow(Math.sin(Math.PI*Math.min(1,k*.92+.04)),.7);
+        if(t>=3)hw=hm*Math.min(1,(HE-s)/((HE-HS)*.7))*(k<.15?k/.15*.6+.4:1);
+        if(t===5&&w>0&&Math.floor(s*1.414)%2&&s<HE-1.5)hw+=.7;
+        if(t===4&&s<HS+1.8&&s>HS+.2)hw=Math.max(hw,2.4-(s-HS-.2)*.5);
+        if(aw<=hw+.01){if(fxc&&aw<.5&&k>.2&&k<.7)return fxc;if(t===6&&aw<.5)return m.g;if(t===5&&w<-hw+.76)return m.g;if(t===4&&w<-hw+.76)return '#ffffff';
+          if(t===0&&aw>hw-.75&&(x*7+y*3)%5===0)return null;return sd(w,hw)}}
+      if(t===3&&s>=HS-.3&&s<HS+.5&&aw<=2.2)return m.d;
+      if(t===2&&s>=HS-.9&&s<HS&&aw<=1.1)return acc;
+      if(t===0&&s>=HS-1.3&&s<HS&&aw<=1.1)return H.w;
+      if(t===5&&s>=.2&&s<1.6&&aw<.75)return m.g;
+      if(t===5&&s>HS-1.7&&s<HS-.5&&w>.6&&w<2.4)return '#c83a2a';
+      if(t===6&&s>=.2&&s<1.3&&aw<.75)return m.l;
+      if(s>=.2&&s<HS&&aw<.5){if(t>=3&&Math.abs(((s*1.414)%5)-2.5)<.5)return t===6?m.l:H.w;return t===0?H.h:lit(H.h,1.15)}
+      return null}}}
+  if(I.fam==='balta'){const sc=[11.8,11.9,12,12.1,12.2,12.2,12.4][t],R=[2.8,3.2,3.7,4,4.3,3.9,4.6][t];tip=[sc,-R];
+    const blade=(s,d,x,y)=>{if(d<.4||d>R)return null;let half=t===0?1.3+.15*d:t===1?1+.35*d:t===3?0:t===5?.8+.5*d:.8+.6*d;
+      let lo=sc-half,hi=sc+half;if(t===3){lo=sc-.8-.95*d;hi=sc+.8+.25*d;half=hi-sc}if(s<lo||s>hi)return null;
+      if(fxc&&d>.9&&d<1.8&&Math.abs(s-sc)<.6)return fxc;if(d>R-.76)return t>=5?m.g:(t===4?'#ffffff':m.l);
+      if(t===0&&(x*7+y*3)%5===0&&d>R-1.4)return null;if(t===6&&Math.abs(s-sc)<.6)return m.g;return s>sc+.3?m.l:(s<sc-half*.5?m.d:m.b)};
+    return{tip,fn:(s,w,x,y)=>{const aw=Math.abs(w);if(w<0){const c=blade(s,-w,x,y);if(c)return c}if(w>0&&t>=5){const c=blade(s,w,x,y);if(c)return c}
+      if(t===4&&w>.5&&w<2.4&&Math.abs(s-sc)<=.55*(1-(w-.5)/1.9)+.25)return m.l;
+      if(t===0&&s>=sc-1.5&&s<sc+1.2&&aw<1.05)return H.w;
+      return handle(s,w,.4,sc+(t===0?1.3:1),H,t,true)}}}
+  if(I.fam==='kazma'){const sc=[12.3,12.4,12.5,12.6,12.7,12.8,12.9][t],a=[3,3,3.6,4.2,4.5,4.7,5.1][t],cv=[.04,.05,.08,.1,.1,.1,.09][t],th=[.85,.6,.65,.7,.7,.75,.8][t];tip=[sc,-a];
+    return{tip,fn:(s,w,x,y)=>{const aw=Math.abs(w);
+      if(aw<=a&&!(t===0&&w>.5)){const cs=sc-cv*w*w,thk=th*(1-aw/a*.45)+(aw<.8?.35:0);if(Math.abs(s-cs)<=thk){if(fxc&&aw<.6)return fxc;if(aw>a-1.1)return t>=5?m.g:(t===4?'#ffffff':m.l);if(t===6&&Math.abs(s-cs)<.4)return m.g;return s>cs?m.l:m.b}}
+      if(t>=5&&s>sc+.6&&s<sc+2.2&&aw<=.5*(1-(s-sc-.6)/1.6)+.15)return t===5?m.l:m.g;
+      if(t===0&&s>=sc-1.5&&s<sc-.3&&aw<1.05)return H.w;
+      return handle(s,w,.4,sc,H,t,true)}}}
+  if(I.fam==='yay'){const sA=[2.6,2.3,2.1,1.9,1.7,1.5,1.3][t],sB=18.4-sA-.6,mid=(sA+sB)/2,bu=[3.2,3.6,3.9,4.1,4.3,4.5,4.9][t],th=[.45,.75,.75,.8,.8,.85,.9][t],sw0=2.12,wood=I.wood;
+    const lw=s=>{const k=(s-sA)/(sB-sA);let v=sw0-bu*Math.sin(Math.PI*k);if(t===2||t>=4){const e=Math.min(s-sA,sB-s);if(e<1.6)v-=(1.6-e)*.9}return v};tip=[mid,sw0-bu];
+    return{tip,fn:(s,w,x,y)=>{if(s<sA-.2||s>sB+.2)return null;const L=lw(s),dl=Math.abs(w-L),grip=Math.abs(s-mid)<1.1,e=Math.min(s-sA,sB-s);
+      if(dl<=th+(grip?.45:0)){if(I.u&&grip&&Math.abs(s-mid)<.5&&dl<.5)return acc;if(grip&&t>=1)return t>=3?H.w:lit(wood,.7);if(e<1.2&&t>=1)return t>=5?(m.g||m.l):m.b;
+        if(t===6)return dl<.4?m.g:m.l;if(t===4)return w>L?lit(wood,1.35):wood;return w<L?lit(wood,1.25):(w>L+.3?lit(wood,.7):wood)}
+      if(t===5&&w<L&&Math.abs(Math.abs(s-mid)-3.4)<.45&&L-w<1.6)return m.l;
+      if(Math.abs(w-sw0)<.4&&s>=sA&&s<=sB)return t>=5?m.g:'#f0ead8';return null}}}
+  return null}
+function drawTier(g,I){const S=shapeOf(I);if(!S)return false;rast(g,S.fn);const t=I.t,m=I.pal,tp=S.tip;
+  if(t===4){dot(g,tp[0]-1.4,tp[1]-1.9,'#ffffff')}
+  if(t===5){dot(g,tp[0]-1.2,tp[1]-2.4,m.g||'#ff6a2a');dot(g,tp[0]-3.6,tp[1]+2.6,'#ffd060')}
+  if(t===6){dot(g,tp[0]-2.6,tp[1]-2.9,m.g||'#ffffff');dot(g,tp[0]-2,tp[1]-2.9,m.l);dot(g,tp[0]-5.2,tp[1]+2.9,m.l)}
+  return true}
+// ---------------------------------------------------------------- 2 · which tier a piece is
+const MT=[['Mor kristal',6,0],['Kara çelik',5,0],['Çelik',4,0],['Demir',3,0],['Tunç',2,0],['Bakır',1,0],['Taş',0,0],
+  ['Çakmaktaşı',1,1],['Granit',2,1],['Timsah dişi',3,1],['Gümüş',4,1],['Kuvars',4,1],['Ejder',5,1],['Ametist',6,1],['Obsidyen',6,1]];
+const BOWT={'Basit yay':[0,0,'#9b6f42'],'Çam yayı':[1,0,'#b07a45'],'Meşe yayı':[2,0,'#8a5a2e'],'Kızılağaç yayı':[3,0,'#b0542e'],'Akçaağaç yayı':[4,0,'#c47a3a'],
+  'Kızıl sedir yayı':[5,0,'#7a2a26'],'Gece ağacı yayı':[6,0,'#3a2a5a'],'Kemik yay':[1,1,'#e8e0c8'],'Ihlamur yayı':[2,1,'#d9b98a'],'Söğüt yayı':[3,1,'#b8a070'],
+  'Huş yayı':[4,1,'#e8e2d0'],'Ejder yayı':[5,1,'#5a3440'],'Işık ağacı yayı':[6,1,'#f0e6c0']};
+const TMET=['Taş','Bakır','Tunç','Demir','Çelik','Kara çelik','Mor kristal'];
+// per tier: trail colour, how wide the trail is (smaller = wider), spark colours, size in the hand (+px)
+const TIERS=[{rgb:'200,196,184',tw:1.1,sp:['#c8c4b8','#8d9196','#e8e0d0'],z:0},{rgb:'255,190,140',tw:1,sp:['#ffd0a0','#ff9a4a','#ffffff'],z:0},
+  {rgb:'255,220,120',tw:.95,sp:['#ffe080','#e8b040','#ffffff'],z:1},{rgb:'235,240,250',tw:.85,sp:['#ffffff','#dfe8f0','#ffe8a0'],z:1},
+  {rgb:'200,230,255',tw:.78,sp:['#ffffff','#bfe4ff','#8ad0ff'],z:2},{rgb:'255,110,50',tw:.7,sp:['#ff8a3a','#ffd060','#ff4a1a'],z:3},
+  {rgb:'220,170,255',tw:.62,sp:['#f0d8ff','#c080ff','#ffffff'],z:4}];
+const EFP=/^(Alevli|Zehirli|Keskin) /;
+const baseOf=n=>{if(EFP.test(n)){const b=n.replace(EFP,'');if(GT[b])return b}return n};
+function famOf(n){const g=GT[n];if(!g)return null;if(g.kind==='bow')return 'yay';if(g.kind==='hunt')return 'mızrak';if(g.kind==='axe')return 'balta';if(g.kind==='pick')return 'kazma';
+  if(g.kind==='sword')return g.mace==='gurz'?'savaş çekici':g.mace==='topuz'?'topuz':'kılıç';return null}
+const INFO={};
+function info(n){if(!n)return null;if(INFO[n]!==undefined)return INFO[n];const b=baseOf(n),fam=famOf(b);let r=null;
+  if(fam&&b!=='Işın kılıcı'){let t=-1,u=0,mat=null,wood=null;
+    if(fam==='yay'){const B=BOWT[b];if(B){t=B[0];u=B[1];wood=B[2];mat=TMET[t]}}
+    else if(b==='Mızrak'){t=0;mat='Taş'}
+    else{const m=MT.find(x=>b.indexOf(x[0]+' ')===0||b.indexOf(x[0]+'ı ')===0);if(m){t=m[1];u=m[2];mat=m[0]}}
+    if(t>=0){const T=TIERS[t];r={n:b,fam,t,u,mat,wood,fx:u?(window.__plUSTAFX||{})[b]||null:null,pal:MAT[mat],rgb:T.rgb,tw:T.tw,sparks:T.sp,z:T.z}}}
+  return INFO[n]=r}
+// ---------------------------------------------------------------- 3 · icons: the tier's own picture (effect pieces keep their corner mark)
+function mark(g,n){const pre=(n.match(EFP)||[])[1];if(!pre)return;const p=(x,y,w,h,c)=>{g.fillStyle=c;g.fillRect(x,y,w,h)};
+  if(pre==='Alevli'){p(1,1,3,4,'#ff7a1a');p(2,0,1,1,'#ffc040');p(2,2,1,2,'#ffe080')}else if(pre==='Zehirli'){p(2,0,1,1,'#7ad04a');p(1,1,3,3,'#5ab03a');p(2,2,1,1,'#c8f090')}else{p(2,0,1,1,'#ff4a4a');p(1,1,3,3,'#c8202a');p(2,2,1,1,'#ff9a9a')}}
+{const _icon=icon;icon=function(n){if(ICON[n])return ICON[n];const I=info(n);if(!I)return _icon.apply(this,arguments);
+  const c=document.createElement('canvas');c.width=16;c.height=16;const g=c.getContext('2d');
+  try{if(!drawTier(g,I))return _icon.apply(this,arguments);mark(g,n)}catch(e){return _icon.apply(this,arguments)}
+  try{outlineCanvas(c,[26,20,12,235])}catch(e){}ICONC[n]=c;return ICON[n]=c.toDataURL()}}
+for(const n in GT)if(info(n)){delete ICON[n];try{delete ICONC[n]}catch(e){}}
+try{hotK=''}catch(e){}
+// ---------------------------------------------------------------- 4 · sounds: a layer of the tier on top of the swing, the hit and the bow string
+let NB=null;
+function noise(ac){if(NB&&NB.ac===ac)return NB.b;const n=Math.floor(ac.sampleRate*.6),b=ac.createBuffer(1,n,ac.sampleRate),c=b.getChannelData(0);for(let i=0;i<n;i++)c[i]=Math.random()*2-1;NB={ac,b};return b}
+function snd(fn,v){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005,g=ac.createGain();g.gain.value=v;g.connect(out);fn(ac,g,t)})}catch(e){}}
+function osc(ac,o,t,f0,f1,d,type,vol){const s=ac.createOscillator(),g=ac.createGain();s.type=type||'sine';s.frequency.setValueAtTime(f0,t);s.frequency.exponentialRampToValueAtTime(Math.max(20,f1),t+d);
+  g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.006);g.gain.exponentialRampToValueAtTime(.0005,t+d);s.connect(g);g.connect(o);s.start(t);s.stop(t+d+.02)}
+function nz(ac,o,t,d,type,f,vol,f1){const s=ac.createBufferSource(),fl=ac.createBiquadFilter(),g=ac.createGain();s.buffer=noise(ac);fl.type=type;fl.frequency.setValueAtTime(f,t);if(f1)fl.frequency.exponentialRampToValueAtTime(f1,t+d);
+  g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.0005,t+d);s.connect(fl);fl.connect(g);g.connect(o);s.start(t);s.stop(t+d+.02)}
+const SW=[ (ac,o,t)=>nz(ac,o,t,.09,'lowpass',420,.5),
+  (ac,o,t)=>osc(ac,o,t,900,700,.07,'triangle',.06),
+  (ac,o,t)=>{osc(ac,o,t,1200,1000,.09,'triangle',.07);osc(ac,o,t,1800,1700,.06,'sine',.04)},
+  (ac,o,t)=>osc(ac,o,t+.03,1600,1500,.16,'sine',.06),
+  (ac,o,t)=>{nz(ac,o,t,.18,'highpass',3000,.18,7000);osc(ac,o,t+.04,2600,2400,.28,'sine',.07)},
+  (ac,o,t)=>{osc(ac,o,t,95,50,.28,'sawtooth',.16);for(let k=0;k<5;k++)nz(ac,o,t+.03+k*.035,.025,'bandpass',2500+k*500,.25)},
+  (ac,o,t)=>{[[1568,0],[2349,.03],[3136,.06]].forEach(([f,d])=>osc(ac,o,t+d,f,f*.995,.5,'sine',.05));nz(ac,o,t,.2,'highpass',5000,.08)}];
+const HT=[ (ac,o,t,v)=>{nz(ac,o,t,.1,'lowpass',600,.5*v);osc(ac,o,t,110,60,.12,'sine',.4*v)},
+  (ac,o,t,v)=>{osc(ac,o,t,340,300,.09,'square',.05*v);nz(ac,o,t,.05,'bandpass',1800,.25*v)},
+  (ac,o,t,v)=>{osc(ac,o,t,520,515,.16,'triangle',.11*v);osc(ac,o,t,780,775,.12,'triangle',.07*v)},
+  (ac,o,t,v)=>{[880,1290,1720].forEach((f,i)=>osc(ac,o,t,f,f*.99,.26-i*.04,'sine',(.09-i*.02)*v))},
+  (ac,o,t,v)=>{[1320,1980,2970].forEach((f,i)=>osc(ac,o,t,f,f*.995,.42-i*.08,'sine',(.08-i*.02)*v));nz(ac,o,t,.04,'highpass',4000,.3*v)},
+  (ac,o,t,v)=>{osc(ac,o,t,72,38,.38,'sawtooth',.28*v);osc(ac,o,t,660,640,.3,'sine',.06*v);for(let k=0;k<4;k++)nz(ac,o,t+.05+k*.04,.03,'bandpass',2200+k*700,.3*v)},
+  (ac,o,t,v)=>{[1760,2637,3520].forEach((f,i)=>osc(ac,o,t+i*.015,f,f*.998,.75-i*.12,'sine',(.08-i*.02)*v));nz(ac,o,t,.3,'highpass',6000,.1*v)}];
+const TW=[220,250,280,300,330,290,360];
+function swingSnd(I){if(I)snd((ac,o,t)=>SW[I.t](ac,o,t),1)}
+function hitSnd(t,dm,k){const v=Math.min(1,.55+(dm||0)/50)*(k||1);snd((ac,o,t0)=>HT[t](ac,o,t0,v),1)}
+function twang(t){snd((ac,o,t0)=>{const f=TW[t];osc(ac,o,t0,f,f*.46,.2+t*.015,'triangle',.15);
+  if(t===0)nz(ac,o,t0,.06,'lowpass',500,.3);if(t>=3)osc(ac,o,t0,f*4,f*3.9,.14,'sine',.04);if(t===4)osc(ac,o,t0+.02,1400,1380,.3,'sine',.05);
+  if(t===5){osc(ac,o,t0,80,45,.25,'sawtooth',.12);nz(ac,o,t0+.04,.03,'bandpass',3000,.25)}
+  if(t===6){osc(ac,o,t0+.02,2093,2090,.45,'sine',.05);osc(ac,o,t0+.05,3136,3130,.4,'sine',.035)}
+  nz(ac,o,t0,.12,'bandpass',1800,.12,4000)},1)}
+// ---------------------------------------------------------------- 5 · pictures in the world: trail tip, hit sparks, glow in the hand
+const R=()=>Math.random()-.5;
+function tip(I,p){const t=I.t;
+  if(t===0){if(Math.random()<.3)parts.push({x:p.x,y:p.y,vx:R()*10,vy:10,life:.25,c:'#b8b0a0'})}
+  else if(t===4){if(Math.random()<.3)parts.push({x:p.x,y:p.y,vx:0,vy:0,life:.16,c:'#ffffff'})}
+  else if(t===5){for(let i=0;i<2;i++)parts.push({x:p.x+R()*3,y:p.y+R()*3,vx:R()*20,vy:-20-Math.random()*25,life:.3+Math.random()*.25,c:i?'#ff7a2a':'#ffd060'})}
+  else if(t===6){for(let i=0;i<2;i++)parts.push({x:p.x+R()*4,y:p.y+R()*4,vx:R()*30,vy:R()*30,life:.35,c:i?'#e2c8ff':'#ffffff'})}}
+const EXTRA=[0,2,4,6,10,14,18];
+function burst(I,x,y,dm){const t=I.t,sp=I.sparks,P=window.__p4;
+  for(let i=0;i<EXTRA[t];i++){const a=Math.random()*6.283,s=40+Math.random()*(60+t*12);parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-20,life:.22+Math.random()*.2+t*.02,c:sp[i%3]})}
+  if(t===0)for(let i=0;i<4;i++)parts.push({x,y,vx:R()*60,vy:-30-Math.random()*30,life:.35,c:i%2?'#8d9196':'#c8c4b8'});
+  if(t>=3&&P&&P.rings)P.rings.push({x,y,t:0,r:5+t,c:I.rgb});
+  if(t===4&&P&&P.rings)P.rings.push({x,y,t:0,r:3,c:'255,255,255'});
+  if(t===5){for(let i=0;i<6;i++)parts.push({x:x+R()*8,y,vx:R()*30,vy:-50-Math.random()*40,life:.5+Math.random()*.3,c:i%2?'#ff6a2a':'#ffd060'});try{shake=Math.max(shake,.16)}catch(e){}}
+  if(t===6){for(let i=0;i<8;i++){const a=Math.random()*6.283,s=30+Math.random()*50;parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:.55,c:i%2?'#c080ff':'#ffffff'})}
+    if(P&&P.rings){P.rings.push({x,y,t:0,r:14,c:'200,140,255'});P.stop=Math.max(P.stop||0,.07)}}}
+const hitPos=a=>({x:player.x+(a.x-player.x)*.6,y:player.y-6+(a.y-player.y)*.6});
+let heldT=performance.now();
+function heldFx(n,x,y){const now=performance.now(),dt=Math.min(.1,(now-heldT)/1000);heldT=now;const I=info(n);if(!I||I.t<4)return;
+  const sgn=(player.face.x||1)<0?-1:1,hx=x+sgn*8,hy=y-11,r=I.t===4?.8:I.t===5?4:5;if(Math.random()>r*dt)return;
+  if(I.t===4)parts.push({x:hx+R()*6,y:hy+R()*6,vx:0,vy:0,life:.14,c:'#ffffff'});
+  else if(I.t===5)parts.push({x:hx+R()*5,y:hy+R()*5,vx:R()*6,vy:-16-Math.random()*10,life:.5,c:Math.random()<.5?'#ff7a2a':'#ffc040'});
+  else parts.push({x:hx+R()*7,y:hy+R()*7,vx:R()*6,vy:-8,life:.6,c:Math.random()<.5?'#d8b0ff':'#ffffff'})}
+// ---------------------------------------------------------------- 6 · arrows and the bow in the hand
+const ARRT={'Basit ok':0,'Bakır ok':1,'Tunç ok':2,'Demir ok':3,'Çelik ok':4,'Kara çelik ok':5,'Mor kristal ok':6};
+const ARRP=[{hd:'#8d9196',fe:'#d8d0c0',sh:'#b08a5a'},{hd:'#d8783a',fe:'#9a7a5a',sh:'#a07a4a'},{hd:'#e0a84a',fe:'#9a7a5a',sh:'#a07a4a'},{hd:'#a8aeb8',fe:'#3a8a5a',sh:'#8a6a40'},
+  {hd:'#eef4ff',fe:'#f0ece4',sh:'#7a5a3a',gl:'255,255,255'},{hd:'#3a3a46',fe:'#2a2a2a',sh:'#4a3a30',gl:'255,110,40'},{hd:'#c890ff',fe:'#e8d8ff',sh:'#3a2a5a',gl:'220,170,255'}];
+const EFRGB={Alevli:['#ff7a1a','#ffd060'],Zehirli:['#6ad040','#c8f090'],Keskin:['#e8303a','#ff9a9a']};
+function arrInfo(n){n=n||'Basit ok';const pre=(n.match(EFP)||[])[1]||null,b=pre?n.replace(EFP,''):n,t=ARRT[b]!=null?ARRT[b]:0;return{t,pre,P:ARRP[t],I:{t,rgb:TIERS[t].rgb,sparks:TIERS[t].sp}}}
+function drawArrow(x,y,a,A,k){const P=A.P,t=A.t,hw=.8+t*.08;ctx.save();ctx.translate(x,y);ctx.rotate(a);if(k)ctx.scale(k,k);
+  ctx.fillStyle='#1a140c';ctx.fillRect(-7.5,-1,10,2);ctx.fillStyle=P.sh;ctx.fillRect(-7,-.5,9,1);
+  ctx.fillStyle='#1a140c';ctx.beginPath();ctx.moveTo(6.8,0);ctx.lineTo(1.6,-2*hw-.6);ctx.lineTo(1.6,2*hw+.6);ctx.closePath();ctx.fill();
+  ctx.fillStyle=P.hd;ctx.beginPath();ctx.moveTo(6,0);ctx.lineTo(2,-1.8*hw);ctx.lineTo(2,1.8*hw);ctx.closePath();ctx.fill();
+  ctx.fillStyle=P.fe;ctx.beginPath();ctx.moveTo(-4,0);ctx.lineTo(-7.6,-2.2);ctx.lineTo(-6.4,0);ctx.lineTo(-7.6,2.2);ctx.closePath();ctx.fill();
+  if(A.pre){ctx.fillStyle=EFRGB[A.pre][0];ctx.fillRect(-5,-.5,2,1)}
+  if(P.gl){ctx.globalCompositeOperation='lighter';const g=ctx.createRadialGradient(4,0,0,4,0,4+t*.5);g.addColorStop(0,`rgba(${P.gl},.65)`);g.addColorStop(1,`rgba(${P.gl},0)`);ctx.fillStyle=g;ctx.fillRect(-1,-5,10,10)}
+  ctx.restore()}
+function arrowShot(S,an){const A=arrInfo(an);S.trail=0;S.c1=A.P.hd;S.c2=A.pre?EFRGB[A.pre][0]:A.I.sparks[0];
+  S.draw=s=>{const a=Math.atan2(s.vy,s.vx),L=[4,6,7,8,10,12,16][A.t],c=Math.cos(a),sn=Math.sin(a);
+    ctx.strokeStyle=`rgba(${A.pre?'255,255,255':A.I.rgb},${A.t>=4?.55:.35})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(s.x-c*7,s.y-sn*7);ctx.lineTo(s.x-c*(7+L),s.y-sn*(7+L));ctx.stroke();
+    drawArrow(s.x,s.y,a,A);
+    if(A.pre&&Math.random()<.6){const E=EFRGB[A.pre];parts.push({x:s.x-c*6,y:s.y-sn*6,vx:R()*14,vy:A.pre==='Alevli'?-18:R()*14,life:.3,c:Math.random()<.5?E[0]:E[1]})}
+    else if(A.t===5&&Math.random()<.6)parts.push({x:s.x-c*5,y:s.y-sn*5,vx:R()*12,vy:-14,life:.35,c:Math.random()<.5?'#ff6a2a':'#ffd060'});
+    else if(A.t===6&&Math.random()<.6)parts.push({x:s.x-c*5,y:s.y-sn*5,vx:R()*10,vy:R()*10,life:.4,c:Math.random()<.5?'#d8b0ff':'#ffffff'})};
+  S.onHit=(s,a)=>{const now=performance.now();if(now-(arrowShot.t||0)>40){arrowShot.t=now;hitSnd(A.t,s.dm,.7)}burst(A.I,s.x,s.y,s.dm)}}
+const BS={at:-9,a:0,cd:.7,h:null};
+function bowShot(h,an,a){const I=info(h);BS.at=performance.now()/1000;BS.a=a;BS.h=h;try{BS.cd=window.__plBow.cd(h)}catch(e){BS.cd=.7}
+  if(!I)return false;twang(I.t);const x=player.x+Math.cos(a)*10,y=player.y-10+Math.sin(a)*10;
+  const n=[3,3,4,5,6,8,9][I.t],cs=I.t>=5?I.sparks:['#e8e0d0','#ffffff','#c8c0b0'];for(let i=0;i<n;i++)parts.push({x,y,vx:Math.cos(a)*40+R()*40,vy:Math.sin(a)*40+R()*40-6,life:.18+I.t*.02,c:cs[i%3]});
+  return true}
+function drawBow(x,y,I){const now=performance.now()/1000,t=I.t,m=I.pal,wood=I.wood,since=now-BS.at;
+  let a;if(since<1.4&&BS.h===held())a=BS.a;else{const f=player.face;a=Math.atan2(f.y||0,f.x||(f.y?0:1))}
+  const Hh=[5.5,6,6.5,7,7.5,8,8.5][t],c=[1.8,2,2.3,2.4,2.6,2.8,3][t],lw=[1,1.3,1.4,1.5,1.6,1.7,1.8][t];
+  let pull=0,rec=0,nock=false;if(since<.14){const k=since/.14;pull=-1.3*Math.sin(k*Math.PI*3)*(1-k);rec=1.6*(1-k)}else if(since>BS.cd-.06||BS.h!==held()){nock=true;pull=1.8}
+  ctx.save();ctx.translate(x+Math.cos(a)*(5-rec),y-5+Math.sin(a)*(3-rec));ctx.rotate(a);ctx.lineCap='round';ctx.lineJoin='round';
+  const limb=()=>{ctx.beginPath();ctx.moveTo(0,-Hh);ctx.quadraticCurveTo(c*2,0,0,Hh);if(t===2||t>=4){ctx.moveTo(0,-Hh);ctx.lineTo(1.4,-Hh-1.2);ctx.moveTo(0,Hh);ctx.lineTo(1.4,Hh+1.2)}};
+  ctx.strokeStyle='#1a140c';ctx.lineWidth=lw+1.4;limb();ctx.stroke();
+  ctx.strokeStyle=t===6?m.l:wood;ctx.lineWidth=lw;limb();ctx.stroke();
+  if(t===4){ctx.strokeStyle=shade(wood,1.4);ctx.lineWidth=.6;ctx.beginPath();ctx.moveTo(-.4,-Hh+.6);ctx.quadraticCurveTo(c*2-1,0,-.4,Hh-.6);ctx.stroke()}
+  if(t>=1){ctx.fillStyle=t>=5?(m.g||m.l):m.b;ctx.fillRect(-1,-Hh-1,2,2);ctx.fillRect(-1,Hh-1,2,2)}
+  if(t>=3||I.u){ctx.fillStyle=t>=3?HND[t].w:shade(wood,.7);ctx.fillRect(c-1.2,-1.6,2.2,3.2)}
+  if(t===5){ctx.strokeStyle=m.l;ctx.lineWidth=1;for(const sy of [-1,1]){ctx.beginPath();ctx.moveTo(c*.75,sy*Hh*.5);ctx.lineTo(c*.75+2.4,sy*Hh*.5+sy*.6);ctx.stroke()}}
+  ctx.strokeStyle=t>=5?(m.g||'#ffffff'):'#f0ead8';ctx.lineWidth=t>=5?.9:.6;ctx.beginPath();ctx.moveTo(0,-Hh);ctx.lineTo(-pull,0);ctx.lineTo(0,Hh);ctx.stroke();
+  if(t===6){ctx.globalCompositeOperation='lighter';const g=ctx.createRadialGradient(c,0,0,c,0,Hh);g.addColorStop(0,'rgba(220,170,255,.35)');g.addColorStop(1,'rgba(220,170,255,0)');ctx.fillStyle=g;ctx.fillRect(c-Hh,-Hh,Hh*2,Hh*2);ctx.globalCompositeOperation='source-over'}
+  ctx.restore();
+  if(nock){let an='Basit ok';try{an=window.__plBow.arrowName()}catch(e){}const ca=Math.cos(a),sa=Math.sin(a),bx=x+Math.cos(a)*(5-rec),by=y-5+Math.sin(a)*(3-rec);drawArrow(bx+ca*(6.5-pull),by+sa*(6.5-pull),a,arrInfo(an),.85)}}
+window.__plHeldSkip=h=>{const g=GT[h];if(!g||g.kind!=='bow'||!info(h))return false;const P=window.__p4,PR=window.__plParry;return !(P&&P.sw)&&!(PR&&PR.hold)};
+{const _dh=drawHeld;drawHeld=function(x,y){const r=_dh.apply(this,arguments);try{const h=held();if(h){if(window.__plHeldSkip(h))drawBow(x,y,info(h));else heldFx(h,x,y)}}catch(e){}return r}}
+// ---------------------------------------------------------------- 7 · the hooks the older blocks call (v49-p4 swing and hits, CB moves, v77 shots, v249 bow)
+window.__plTier={info,z:(n,b)=>{const I=info(n);return b+(I?I.z:0)},
+  swing:(n,k)=>{const I=info(n);if(I)swingSnd(I)},
+  hit:(n,dm,list)=>{const I=info(n);if(!I)return;hitSnd(I.t,dm);if(list)for(const h of list){const a=h[0],p=hitPos(a);burst(I,p.x,p.y,h[1])}},
+  spark:(n,a,dm)=>{const I=info(n);if(I)burst(I,a.x,a.y-6,dm)},
+  tip,shot:(h,an,a)=>bowShot(h,an,a),arrow:arrowShot};
+window.__plTierZ=(n,b)=>b+((info(n)||{}).z||0);
+{const _sf=sfx;sfx=function(k){const r=_sf.apply(this,arguments);try{if(k==='swing'){const P=window.__p4;if(P&&!P.mute&&P.sw&&P.sw.t<.05){const I=info(P.sw.n);if(I)swingSnd(I)}}}catch(e){}return r}}
+// ---------------------------------------------------------------- 8 · a higher tier for the first time: "Yeni kademe!"
+let BEST={};
+const DMG=n=>{const g=GT[n];if(!g)return 0;if(g.kind==='bow')try{return window.__plBow.dmg(n)}catch(e){return 0}return WDMG[n]||0};
+function owned(){const L=Object.keys(inv).filter(n=>inv[n]>0);try{for(const k in equip)if(equip[k])L.push(equip[k])}catch(e){}return L}
+function fill(){for(const n of owned()){const I=info(n);if(!I)continue;const b=BEST[I.fam];if(!b||I.t>b.t)BEST[I.fam]={t:I.t,n:I.n}}}
+function fanfare(I){snd((ac,o,t)=>{[523,659,784,1047].forEach((f,i)=>osc(ac,o,t+i*.09,f,f,.35,'triangle',.09));osc(ac,o,t+.36,1568,1568,.6,'sine',.05)},1);setTimeout(()=>swingSnd(I),420);
+  const x=player.x,y=player.y-8;for(let i=0;i<28;i++){const a=i/28*6.283,s=70+Math.random()*30;parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s*.6,life:.6,c:I.sparks[i%3]})}
+  for(let i=0;i<10;i++)parts.push({x:x+R()*14,y:y+6,vx:R()*8,vy:-30-Math.random()*30,life:.9,c:I.sparks[i%3]});
+  const P=window.__p4;if(P&&P.rings){P.rings.push({x,y,t:0,r:26,c:I.rgb});P.rings.push({x,y,t:-.08,r:16,c:'255,255,255'})}}
+function announceUp(I,prev){const pg=GT[prev.n],ng=GT[I.n];let lab='Yeni kademe!';
+  if(I.fam==='balta'||I.fam==='kazma'){const a=pg&&+pg.time,b=ng&&+ng.time;if(a>0&&b>0){const pc=Math.round((a/b-1)*100);if(pc>0)lab+=` · %${pc} daha hızlı`}}
+  else{const a=DMG(prev.n),b=DMG(I.n);if(a>0&&b>0){const pc=Math.round((b/a-1)*100);if(pc>0)lab+=` · %${pc} daha güçlü`}}
+  lab+=` (öncekin: ${prev.n})`;
+  let done=false;for(const it of annQ)if(it[0]===I.n||it[0]===I.n){it[0]=I.n;it[1]=lab;done=true}
+  if(!done&&annCur&&(annCur[0]===I.n)){annCur[1]=lab;try{document.getElementById('disclabel').textContent=lab}catch(e){}done=true}
+  if(!done)announce(I.n,lab);fanfare(I)}
+{const _g=gain;gain=function(name){let up=null;try{const I=info(name);if(I&&!window.__plArena&&!onTitle){const b=BEST[I.fam];if(!b||I.t>b.t){if(b)up=[I,b];BEST[I.fam]={t:I.t,n:I.n}}}}catch(e){}
+  const r=_g.apply(this,arguments);if(up)try{announceUp(up[0],up[1])}catch(e){}return r}}
+{const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{s.v322={b:BEST}}catch(e){}return s}}
+{const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{BEST={};const v=d&&d.v322&&d.v322.b;if(v&&typeof v==='object')for(const k in v){const o=v[k];if(o&&typeof o.n==='string'&&+o.t>=0)BEST[k]={t:+o.t,n:o.n}}fill()}catch(e){}return r}}
+{const _st=startNew;startNew=function(){BEST={};const r=_st.apply(this,arguments);try{fill()}catch(e){}return r}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v322tier: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

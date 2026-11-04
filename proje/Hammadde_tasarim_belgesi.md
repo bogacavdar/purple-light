@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.21** ile birebir (4 Kasım 2026). Bu sürümde: oyun kolunda menü seçimi önce aynı satır/sütundaki düğmeye gider; belgeye **PlayStation 5 sürümü** yol haritası eklendi. 3.20'de: oyun kolu desteği (Sistemler › Oyun kolu), Kehribar göz rengi, yeni gizli başarım.
+Sürüm: **Versiyon 3.22** ile birebir (4 Kasım 2026). Bu sürümde: **silahların kademe kimliği** (her türün 7 kademesi kendi biçimi, boyu, izi, isabet efekti ve sesiyle; ok ok gibi uçar, elde yay nişan alır ve kirişte atılacak ok görünür; daha yüksek kademe ilk kez alınınca "Yeni kademe!"; Aletler › Silahların kademe kimliği). 3.21'de: kolda menü seçimi düzeltmesi, PS5 yol haritası. 3.20'de: oyun kolu.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -4567,6 +4567,47 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 - Baltalar, kazmalar ve yaylar etki almaz (yayda etkiyi ok taşır). Meşalenin kendi yakması (v2.28) değişmedi.
 - **Arena (v2.50):** silah listesinde kılıçlar, savaş çekiçleri ve topuzlar ayrı gruplardır; etkili biçimler listede ayrıca görünmez: elindeki silahın hemen altındaki **Etki** satırından Etkisiz / Alevli / Zehirli / Keskin seçilir (imza silahı için etkisi yazılır). Elinde yay varsa altında **Ok** satırı çıkar: "En güçlü" ya da her ok ve etkili ok seçilebilir. Bütün setler, imza parçaları, yaylar, baltalar ve kazmalar arenada seçilebilir.
 - Simgeler: etkili silah ve okun simgesinin köşesinde etkinin işareti (alev, yeşil damla, kırmızı damla); yağlar küçük birer şişe.
+
+### Silahların kademe kimliği (v3.22, Boğaç)
+
+> Boğaç: "Bir sonraki seviyesi alındığında 'yeni bir şey aldım' hissini vermeli. Şu an aynı tip silahların tek farkı rengi. X yaydan Y yaya geçince bariz görsel fark göreyim; ok attığı da belli olsun, saldırılar kullanılan oka göre gitsin. Aynısı kılıç, mızrak, gürz, balta için de."
+
+- **Kural:** her silah ve alet türünün (kılıç, savaş çekici, topuz, mızrak, balta, kazma, yay) **7 kademesi** vardır. Her kademe bir öncekinden **biçimiyle** ayrılır (renk tek fark değildir): boyu, ağzı, siperi, başı, süsü değişir; elde daha büyük görünür; savururken kendi izi, isabette kendi kıvılcımı ve kendi sesi vardır. Görünüş, envanterdeki simgede, elde, sırtta, savururken ve arenada aynıdır.
+- **Usta parçaları** kendi kademesinin biçimini taşır ama kendi malzemesinin rengindedir ve üstünde doğduğu **etkinin rengiyle bir çizgi** vardır (keskin kırmızı, zehirli yeşil, alevli turuncu). Böylece aynı biyomun metal parçasıyla karışmaz.
+- **Etkili biçimler** (Alevli / Zehirli / Keskin X) X'in çizimini ve köşede etkinin işaretini taşır (v2.50 gibi).
+- **Işın kılıcı** (ACT 2) bu merdivene girmez, kendi çizimiyle kalır.
+
+| Kademe | Parçalar | Görünüş | Savurma izi | İsabet | Ses |
+|---|---|---|---|---|---|
+| 0 · Başlangıç | Taş kılıç, Taş savaş çekici, Taş topuz, Mızrak, Taş balta, Taş kazma, Basit yay | kaba yontulmuş taş, iple sarılı sap, kısa ve küçük | ince, gri toz izi | taş kırıntısı | boğuk, tok |
+| 1 · Bakır | Bakır seti, Çam yayı · usta: Çakmaktaşı, Kemik yay | sade metal, düz ağız, küçük siper | sıcak bakır rengi ince iz | bakır kıvılcımı | kısa, tok bir metal "tınk" |
+| 2 · Tunç | Tunç seti, Meşe yayı · usta: Granit, Ihlamur yayı | yaprak biçimli ağız, yuvarlak siper ve topuz düğmesi, bantlar | altın sarısı iz | altın kıvılcım | daha dolgun "çınk" |
+| 3 · Demir | Demir seti, Kızılağaç yayı · usta: Timsah dişi, Söğüt yayı | daha uzun ve geniş, ortada oluk, geniş siper, sapta metal halkalar | kalın, beyaz çelik izi | beyaz kıvılcım ve küçük halka | metalik çınlama |
+| 4 · Çelik | Çelik seti, Akçaağaç yayı · usta: Gümüş, Kuvars, Huş yayı | uzun, parlak keskin kenar, kıvrık siper, kabzada taş; elde ara sıra parıltı | mavi-beyaz parlak iz, ucunda parıltı yıldızı | bol kıvılcım, parlak halka | uzun, keskin "şiing" |
+| 5 · Kara çelik | Kara çelik seti, Kızıl sedir yayı · usta: Ejder, Ejder yayı | koyu metal, dişli ya da dikenli, kızgın turuncu kenar; elde kor tüter | koyu kırmızı-turuncu iz, kor parçacıkları | kor patlaması, biraz daha sarsıntı | ağır gürleme ve kor çıtırtısı |
+| 6 · Mor kristal | Mor kristal seti, Gece ağacı yayı · usta: Ametist, Obsidyen, Işık ağacı yayı | billur, parlayan çekirdek, kanatlı siper, çevresinde süzülen kristal kıymıkları; elde mor ışık | mor-beyaz ışık izi, kristal kıymıkları | kristal patlaması ve mor halka | kristal çan sesi |
+
+- **Elde boyu** (piksel): kademe 0–1: 11 · 2–3: 12 · 4: 13 · 5: 14 · 6: 15.
+- **Türlere göre biçim** (kademe 0 → 6):
+  - **Kılıç:** kısa kaba taş ağız, siper yok → düz kısa ağız, küçük siper → yaprak ağız, yuvarlak siper → uzun ağız, oluk, geniş siper → çok uzun parlak ağız, kıvrık siper, kabzada taş → sırtı dişli kara ağız, dikenli siper, kızgın kenar → billur ağız, kanatlı siper, parlayan çekirdek.
+  - **Savaş çekici:** iple bağlı taş yumru → küçük bakır kütük → bantlı tunç kütük → büyük demir baş, tepede sivri → iki yanı kanatlı çelik baş → iki yüzü dikenli kara baş, kızgın çatlaklar → büyük billur baş.
+  - **Topuz:** taş yumru → bakır top → düğmeli tunç top → kanatlı demir topuz → altı kanatlı parlak çelik topuz → dikenli kara gürz yıldızı, kızgın → kristal dikenli parlayan top.
+  - **Mızrak:** iple bağlı taş uç → küçük bakır yaprak uç → büyük tunç uç ve halka → uzun demir uç, yan kanatlar, sapta bantlar → yan ağızlı parlak çelik uç → dişli kara uç, kızgın kenar, dipte diken → uzun billur uç, parlayan.
+  - **Balta:** iple bağlı taş kama → küçük bakır ağız → hilal tunç ağız → sakallı demir ağız → arkası sivri çelik hilal → çift ağızlı kara balta, kızgın kenarlar → çift billur hilal.
+  - **Kazma:** tek kollu taş keser → kısa bakır kazma → uzun tunç kazma → uzun kıvrık demir kazma → parlak uçlu çelik kazma → kızgın uçlu, tepesi dikenli kara kazma → billur kollu parlayan kazma.
+  - **Yay:** ince düz sopa yay → kalın yay, metal uçlar → uçları dışa kıvrık (kıvrık yay) → metal uçlar ve sargılı kabza → iki renkli bileşik yay, parlak → dikenli koyu yay, kızgın kiriş → billur kollu yay, ışıktan kiriş.
+
+**Ok ve yay (v3.22):**
+
+- **Ok gerçekten ok gibi uçar:** gövde, uç ve tüyleriyle, uçtuğu yöne dönük çizilir; ucu ve tüyü **atılan oka göre** değişir (Basit ok taş uç gri tüy; Bakır ve Tunç okta keklik tüyü; Demir okta ördek tüyü; Çelik, Kara çelik ve Mor kristal okta ur kekliği tüyü). Kara çelik ok kor, Mor kristal ok mor ışık izi bırakır; etkili oklar etkisinin rengiyle iz bırakır (alevli turuncu, zehirli yeşil, keskin kırmızı). İsabette okun malzemesinin kıvılcımı ve kademesinin isabet sesi çıkar.
+- **Elde yay:** yay nişan yönüne döner; atışa hazırken kirişte **atılacak ok** (seçili ya da en güçlü ok) takılı görünür. Atışta kiriş gerilip boşalır, yay hafifçe geri teper, ok çıkar; yay yeniden dolana kadar kiriş boştur. Kiriş sesi yayın kademesine göre: ince sopa yayın boğuk "tıng"ından kristal yayın çınlayan sesine.
+- Hasar, hız ve menzil değişmedi (yukarıdaki tablolar); bu bölüm yalnızca görünüş, efekt ve ses.
+
+**Yeni kademe duyurusu:** bir türün (kılıç, savaş çekici, topuz, mızrak, balta, kazma, yay) elindeki en yüksek kademesinden **daha yüksek kademede** bir parçayı ilk kez aldığında ekranın ortasında parçanın adıyla **"Yeni kademe! · %113 daha güçlü (öncekin: Bakır kılıç)"** yazısı çıkar (silahlarda ve yaylarda önceki en iyi parçana göre hasar farkı; balta ve kazmada "% daha hızlı", iş süresine göre). Bir türün ilk parçası için çıkmaz (karşılaştıracak önceki yok). Kısa bir zafer ezgisi çalar ve karakterin çevresinde kademenin renginde bir ışık halkası yayılır. Eski kayıtlarda o an sahip olunanlar sayılır, duyuru çıkmaz. Duyuru kayda yazılır (aynı kademe için bir daha çıkmaz).
+
+**Arena:** arenada her silah aynı biçim, iz, isabet ve sesle görünür (arena aynı verilerden beslenir); yeni kademe duyurusu arenada çıkmaz.
+
+**Performans:** iz ve isabet efektleri yalnızca savururken ve isabette çizilir; elde tüten kor ve parıltılar saniyede en çok birkaç parçacıktır. Oyun sırasında harita taranmaz.
 
 ### Savaş çekici ve topuz
 
