@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.30** ile birebir (5 Kasım 2026). Bu sürümde: mor ışık saldırıları ve Yıldızsızlar (3–10 günde bir; güce ve güne göre, sikke düşürür, almanakta ayrı sayfa); denizde gizli yol ve "Denizde yürüyen"; gece beliren klon ve "Öteki ben"; gece 15 saniye beliren yazılımcı Boğaç; tavla anısında mor boynuzlar.
+Sürüm: **Versiyon 3.31** ile birebir (5 Kasım 2026). Bu sürümde: mor ışık saldırıları gece 20:00'de, sabit günlerde (6, 11, 18, 22…; özel olaylı günlere denk gelmez, evde/mağarada ertelenir); mor bölge geceyi aydınlatır; Yıldızsızlar biyom sınırında kovalamayı bırakmaz.
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -876,11 +876,13 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 
 Belirli günlerde mor ışık, karakterin bulunduğu bölgeye **o dünyadan olmayan, mor renkli uzaylı canlılar** indirir: **Yıldızsızlar**.
 
-- **Ne zaman:** saldırılar arasında **en az 3, en çok 10 gün** vardır (her seferinde bu aralıktan rastgele; özel günler seçilmez). İlk saldırı yeni bir oyunun 4–11. gününde olur. Saldırı günü 09:00–19:00 arasında rastgele bir anda başlar. Sıradaki saldırının günü ve saati kayıtta saklanır. Her iki adada da olur; arenada olmaz.
-- **Başlamaz** (koşul düzelince aynı gün başlar): evin içinde, mağarada, deniz yolculuğunda, güvenli bir yerin (kamp ateşi, Kemal'in kampı, kişilerin ateşleri) yanında, konuşma ya da pencere açıkken, ara sahnede, bayılırken. O gün hiç başlayamazsa ertesi gün aynı saatte dener.
+- **Ne zaman (v3.31, Boğaç: gece, gecenin başladığı an, belli günler):** saldırı **gecenin başladığı an (20:00)** gelir. Günleri sabittir: **6, 11, 18, 22, 31, 37, 40, 48, 53, 60, 64, 73, 79, 82, 90, 95…** (aralar sırayla 5, 7, 4, 9, 6, 3, 8 gün ve bu sıra tekrar eder; aralar hep 3–9 gün; v3.31, Boğaç: 10 günlük ara çok uzun, kaldırıldı). **Özel olaylı günlere denk gelmez:** 5. gün (Yıldızsız Gezgin'in köpeği), 15. gün (Yıldızsız Işıkçı gelmeye başlar), 20. gün (mor sinyal) ve ilk 3 gün; sıradaki gün bunlardan biriyse bir sonraki olaysız güne kayar. Her iki adada da olur; arenada olmaz.
+- **Ertelenir:** gece başladığı an (20:00) **evin içindeysen, mağaradaysan, deniz yolculuğundaysan ya da güvenli bir yerin (kamp ateşi, Kemal'in kampı, kişilerin ateşleri) yanındaysan** saldırı o gün olmaz, **bir sonraki olaysız güne** kayar (ör. 11. günde evdeysen 12. gün). Uyuyarak geçen gece de ertesi olaysız güne kayar. O an bir konuşma ya da pencere açıksa, kapanınca gelir (20:00–21:00 arası). Bir saldırı olunca sıradaki, listedeki ilk en az 3 gün sonraki gündür. Sıradaki saldırının günü kayıtta saklanır.
+- **Gece aydınlıktır:** mor bölgenin içi mor ışıkla aydınlanır (meşale gerekmez, mor ışık seni bu bölgede bayıltmaz); her Yıldızsız da kendi soluk ışığıyla parlar.
 - **Başlarken:** ekranda "Mor ışık saldırısı! · Yıldızsızlar geliyor" yazar, uğultu ve gümbürtü duyulur. Karakterin bulunduğu yerin çevresi (yaklaşık 16 kare yarıçap) **mora döner**: yer mor bir örtüyle kaplanır, kenarında parlayan mor bir halka döner, havada mor zerreler yükselir. Yıldızsızlar bu bölgenin içine, gökten inen **mor ışık sütunlarıyla** (0,7 sn) iner.
 - **İki dalga:** önce yarısı iner; ilk dalgadan en çok 1 tane kalınca ya da 20 sn geçince kalanı iner. Sayı: 4 + (gün / 5) + (seviye / 6), en az 4, en çok 12.
-- **Bitiş:** bütün Yıldızsızlar ölünce "Mor ışık çekildi" yazar ve bölge eski rengine döner. Bölgeden çok uzaklaşırsan (halkanın ~5 kare dışına), bayılırsan ya da 4 dakika geçerse saldırı yarıda biter, kalan Yıldızsızlar ışıkla geri çekilir.
+- **Peşini bırakmazlar (v3.31, Boğaç: "birden ben yokmuşum gibi bırakıp gidiyorlar"):** öbür canlılar kendi biyomlarının sınırında kovalamayı bırakıp geri döner; Yıldızsızlar bu kurala uymaz, biyom sınırını geçip seni kovalamaya devam eder (yalnızca güvenli yerlere girmezler).
+- **Bitiş:** bütün Yıldızsızlar ölünce "Mor ışık çekildi" yazar ve bölge eski rengine döner. Bölgeden çok uzaklaşırsan (halkanın ~5 kare dışına), bayılırsan ya da 4 dakika (gerçek) geçerse saldırı yarıda biter, kalan Yıldızsızlar ışıkla geri çekilir.
 - **Türler (gücüne ve güne göre):** saldırıya hangi türlerin geleceği seviyene ve güne göre belirlenir:
 
 | Tür | Ne zaman gelir | Nasıl savaşır | Can (silahının kaç vuruşu) | Hasar (tam canının) | Sikke |

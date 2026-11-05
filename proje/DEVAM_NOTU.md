@@ -1,3 +1,8 @@
+## v3.31 (5 Kasım 2026) · saldırılar gece ve sabit günlerde
+- `v330ys`: günler `seqFrom` (6'dan başlar, aralar 5,7,4,9,6,3,8 tekrar), `free()` 1–3 ve 5/15/20. günleri atlar. 20:00'de başlar; ev/mağara/deniz/güvenli yer → `free(day+1)`; kaçırılırsa (uyku, geç yükleme) sıradaki olaysız gün. Kayıt `v330ys.f=2` (eski kayıtlar `seqFrom(day)`). Saldırıda bölge merkezi ve her Yıldızsız `lightSources`'a eklenir.
+- Biyom sınırı bloğu (`a.hb`): `a.ysA` muaf.
+- Kontrol: chk.js 0 hata.
+
 ## v3.30 (5 Kasım 2026) · mor ışık saldırıları, gizli yol, klon, Boğaç
 - `v330ys`: saldırılar. Kayıtta `v330ys={n:gün,a:dakika,c:sayı}`; 3–10 günde bir, 09:00–19:00. Türler `ANIM[...]` (ys:1, drops boş). Statlar saldırı başında `setStats(silah vuruşu, maxHP)`. `killAnimal` sarmalı sikke ekler. Almanakta b=99 sayfası (`window.__plYS`). Yerinde kancalar: `bossOk` (ys hariç), killAnimal toast (ys'de yok), v213 `lands`/`kindsOf`/ad/alt yazı/kart, arena `groups()`.
 - `v330sea`: ACT 1 gizli deniz yolu (kayıtta `v330sea`), `window.__plSeaPath` (blocked ve v149 kıyıya çıkarma). Sonunda kayıpsız bayılma, Kemal'in yanında uyanma, Kemal konuşması, başarım `deniz` (localStorage `hammadde.denizach`, Platin'e sayılmaz).

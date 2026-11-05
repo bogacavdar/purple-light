@@ -8,6 +8,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.31 · 5 Kasım 2026
+
+### Oynanış
+- **Mor ışık saldırıları artık gece:** Yıldızsızlar gecenin başladığı an (20:00) gelir. Günleri belli: 6, 11, 18, 22, 31, 37, 40, 48, 53, 60… (aralar 3 ila 9 gün). Köpeğin geldiği gün gibi özel olaylı günlere denk gelmez.
+- O an evdeysen, mağaradaysan, denizdeysen ya da kamp ateşi gibi güvenli bir yerin yanındaysan saldırı bir sonraki olaysız güne kayar. Uyuyarak geçen gece de öyle.
+- Mor bölge geceyi aydınlatır: içinde meşale gerekmez, mor ışık seni orada bayıltmaz. Yıldızsızlar da kendi ışıklarıyla parlar.
+
+### Düzeltmeler
+- Yıldızsızlar bir biyomun sınırına gelince birden kovalamayı bırakıp gidiyordu; artık sınırı geçip peşinden gelirler.
+
+### Tasarım belgesi
+- Mor ışık saldırıları bölümü güncellendi (gece, sabit günler, erteleme, aydınlık bölge, kovalama).
+
+---
+
 ## Versiyon 3.30 · 5 Kasım 2026
 
 ### Oynanış

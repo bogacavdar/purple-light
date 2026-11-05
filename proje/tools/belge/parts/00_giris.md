@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.30** ile birebir (5 Kasım 2026). Bu sürümde: mor ışık saldırıları ve Yıldızsızlar (3–10 günde bir; güce ve güne göre, sikke düşürür, almanakta ayrı sayfa); denizde gizli yol ve "Denizde yürüyen"; gece beliren klon ve "Öteki ben"; gece 15 saniye beliren yazılımcı Boğaç; tavla anısında mor boynuzlar.
+Sürüm: **Versiyon 3.31** ile birebir (5 Kasım 2026). Bu sürümde: mor ışık saldırıları gece 20:00'de, sabit günlerde (6, 11, 18, 22…; özel olaylı günlere denk gelmez, evde/mağarada ertelenir); mor bölge geceyi aydınlatır; Yıldızsızlar biyom sınırında kovalamayı bırakmaz.
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
