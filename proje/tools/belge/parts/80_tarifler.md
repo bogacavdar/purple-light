@@ -20,7 +20,7 @@
 - **Yapmak:** Öğrendikten sonra nerede yapıldığı tarifin türüne göre değişir (tablolardaki "Nerede yapılır" sütunu):
   - **El yapımı (Tab):** kendin yaparsın; dokunmatikte el ikonu. Tarif listesinde **+** ile tek dokunuşta yapılır.
   - **Örs · Demirci Dursun / silahçı kuzenleri:** aletler ve silahlar. **Örs · Zırhçı Durmuş / zırhçı kuzenleri:** metal ve özel zırhlar. "… ve bütün kuzenleri döver" yazan eşya kademe 0'dır; "Silahçı Ali (Bataklık) ve üstü döver" yazan eşyayı Ali ve ondan sonraki biyomların silahçıları döver.
-  - **Usta Sinan:** ev eşyaları (evin içine konur). **Usta Sinan / Marangoz Çınar:** yere kurulan yapılar ve yataklar.
+  - **Usta Sinan:** ev eşyaları (evin içine konur). **Usta Sinan:** yere kurulan yapılar ve yataklar.
   - **ACT 2 ustaları:** asalar (Efsun), ateşli silahlar (Tufan), meka zırh (Işın), ışın kılıcı (Tomris), roket (Gökay); işçilik ücreti alırlar.
 - **Alet sütunu:** tarifte adı geçen alet çantanda olmalıdır ama harcanmaz.
 - **"Herhangi" yok (v3.10, Boğaç: "herhangi kafa karıştırıyor"):** hiçbir tarif ve görev "Herhangi sap", "Herhangi kalas" gibi bir grup istemez; her biri belli bir malzeme ister. Hangisi olduğu tarifin öbür malzemelerinin en çok hangi biyomdan geldiğine göre seçildi (eşitlikte ilerideki biyom; her biyomda bulunan Dal, Taş, Su, Ateş gibi malzemeler sayılmaz; hiçbiri belli bir biyoma ait değilse Çayır). Ağaçtan gelenler o biyomun ağacı: Çayır Çam, Orman Meşe, Bataklık Bataklık servisi, Kayalık Dağ Huş, Kül Diyarı Kül ağacı, Mor Kristal Vadisi Mor söğüt (ör. Çayır tarifleri Çam sapı, Orman tarifleri Meşe kalası ister). Kil: Çayır ve Orman Nehir, Bataklık Göl, Kayalık Dağ ve Kül Diyarı Kırmızı (tuğlada Kül Diyarı Cüruf tuğlası), Mor Kristal Beyaz. Reçine: Çayır Çam reçinesi, Orman Ladin reçinesi, Kayalık Dağ Huş katranı. Çakmak: Kıvılcım (Kayalık Dağ Pirit çakmağı, Kül Diyarı Kükürt çakmağı). Un: Çayır Yabani buğday unu, Orman Palamut unu, Bataklık Nilüfer kökü unu. ACT 2 metal külçeleri Taş kömürü ister. Tabloda her tarifin istediği yazar.
@@ -442,7 +442,7 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 | Enerji hücresi ² | 2 Enerji taşı, 2 Bakır tel, 1 Pil | – | El yapımı (Tab) | 221 |
 | Gece zambağı yağı | 3 Gece zambağı, 1 Beyaz çömlek | – | El yapımı (Tab) | 303 |
 | Hasır | 3 Lif, 2 İp | – | El yapımı (Tab) | 17 |
-| Hasırotu yatak | 3 Hasırotu, 1 Deri parçası, 4 Lif, 3 İp | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 240 |
+| Hasırotu yatak | 3 Hasırotu, 1 Deri parçası, 4 Lif, 3 İp | – | Usta Sinan yapar, yere kurulur | 240 |
 | Huş kabuğu kabı | 1 Huş kabuğu, 4 İp, 2 Lif | – | El yapımı (Tab) | 43 |
 | Huş kaşığı | 1 Huş sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 69 |
 | Ihlamur kaşığı | 1 Ihlamur sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 69 |
@@ -685,31 +685,31 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (v1.8
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Ağıl | 10 Çit | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 810 |
-| Arı kovanı | 2 Söğüt sepeti, 1 Balmumu, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 140 |
-| Ateş yeri | 1 Ateş, 4 Taş, 1 Dal, 1 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 34 |
-| Atölye | 4 Çam kalası, 4 Taş, 2 İp, 2 Sopa | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 127 |
-| Çit | 1 Meşe sapı, 2 Sarmaşık ipi, 2 Taş, 2 Dal, 1 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 60 |
-| Çömlek fırını | 1 Kerpiç duvar, 1 Çam kömürü, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 331 |
-| Deri çadır | 1 Kulübe iskeleti, 1 Deri parçası, 3 Taş, 3 Dal, 3 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 410 |
-| Erzak çukuru | 1 Taş levha, 3 Kuru ot, 1 Taş, 1 Dal | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 22 |
-| Hasır yatak | 2 Hasır, 6 Yaprak, 2 Sopa | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 83 |
-| İskele | 1 Bataklık servisi kalası, 1 Kenevir halatı, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 215 |
-| Kamış kulübe | 1 Kulübe iskeleti, 1 Kamış kulübe çatısı, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 229 |
-| Kamış kulübe çatısı | 6 Kamış hasır | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 38 |
-| Kerpiç duvar | 9 Nehir kerpici | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 234 |
-| Kerpiç ev | 1 Kerpiç duvar, 1 Kamış kulübe çatısı, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 378 |
-| Kulübe | 1 Kulübe iskeleti, 1 Hasır, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 201 |
-| Kulübe iskeleti | 7 Çam kalası | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 131 |
-| Kurutma rafı | 1 Çam sapı, 1 Hasır, 2 Taş, 2 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 70 |
-| Megalit | 2 Granit, 1 Kenevir halatı, 2 Taş, 2 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 198 |
-| Su testisi | 1 Nehir çömleği, 3 Su, 2 Taş, 2 Dal, 1 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 77 |
-| Tabakhane | 1 Deri tulum, 4 Taş, 4 Dal, 3 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 607 |
-| Taş çember | 11 Megalit | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 2.941 |
-| Taş fırın | 1 Nehir tuğlası, 1 Ateş yeri, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 138 |
-| Tuz havuzu | 1 Tuz, 1 Göl kasesi, 3 Taş, 3 Dal, 3 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 145 |
-| Tütsühane | 1 Kulübe iskeleti, 1 Duman, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 234 |
-| Yosun yalıtım | 3 Yosun, 1 Islak nehir kili, 1 Taş, 1 Dal | – | Usta Sinan / Marangoz Çınar yapar, yere kurulur | 20 |
+| Ağıl | 10 Çit | – | Usta Sinan yapar, yere kurulur | 810 |
+| Arı kovanı | 2 Söğüt sepeti, 1 Balmumu, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 140 |
+| Ateş yeri | 1 Ateş, 4 Taş, 1 Dal, 1 Kum | – | Usta Sinan yapar, yere kurulur | 34 |
+| Atölye | 4 Çam kalası, 4 Taş, 2 İp, 2 Sopa | – | Usta Sinan yapar, yere kurulur | 127 |
+| Çit | 1 Meşe sapı, 2 Sarmaşık ipi, 2 Taş, 2 Dal, 1 Kum | – | Usta Sinan yapar, yere kurulur | 60 |
+| Çömlek fırını | 1 Kerpiç duvar, 1 Çam kömürü, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 331 |
+| Deri çadır | 1 Kulübe iskeleti, 1 Deri parçası, 3 Taş, 3 Dal, 3 Kum | – | Usta Sinan yapar, yere kurulur | 410 |
+| Erzak çukuru | 1 Taş levha, 3 Kuru ot, 1 Taş, 1 Dal | – | Usta Sinan yapar, yere kurulur | 22 |
+| Hasır yatak | 2 Hasır, 6 Yaprak, 2 Sopa | – | Usta Sinan yapar, yere kurulur | 83 |
+| İskele | 1 Bataklık servisi kalası, 1 Kenevir halatı, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 215 |
+| Kamış kulübe | 1 Kulübe iskeleti, 1 Kamış kulübe çatısı, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 229 |
+| Kamış kulübe çatısı | 6 Kamış hasır | – | Usta Sinan yapar, yere kurulur | 38 |
+| Kerpiç duvar | 9 Nehir kerpici | – | Usta Sinan yapar, yere kurulur | 234 |
+| Kerpiç ev | 1 Kerpiç duvar, 1 Kamış kulübe çatısı, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 378 |
+| Kulübe | 1 Kulübe iskeleti, 1 Hasır, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 201 |
+| Kulübe iskeleti | 7 Çam kalası | – | Usta Sinan yapar, yere kurulur | 131 |
+| Kurutma rafı | 1 Çam sapı, 1 Hasır, 2 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 70 |
+| Megalit | 2 Granit, 1 Kenevir halatı, 2 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 198 |
+| Su testisi | 1 Nehir çömleği, 3 Su, 2 Taş, 2 Dal, 1 Kum | – | Usta Sinan yapar, yere kurulur | 77 |
+| Tabakhane | 1 Deri tulum, 4 Taş, 4 Dal, 3 Kum | – | Usta Sinan yapar, yere kurulur | 607 |
+| Taş çember | 11 Megalit | – | Usta Sinan yapar, yere kurulur | 2.941 |
+| Taş fırın | 1 Nehir tuğlası, 1 Ateş yeri, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 138 |
+| Tuz havuzu | 1 Tuz, 1 Göl kasesi, 3 Taş, 3 Dal, 3 Kum | – | Usta Sinan yapar, yere kurulur | 145 |
+| Tütsühane | 1 Kulübe iskeleti, 1 Duman, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 234 |
+| Yosun yalıtım | 3 Yosun, 1 Islak nehir kili, 1 Taş, 1 Dal | – | Usta Sinan yapar, yere kurulur | 20 |
 
 #### Giyim (25)
 

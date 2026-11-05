@@ -10,11 +10,12 @@
 
 
 
-## v3.39 (bekleyen paket) · tam ekran yenilemede kaybolmuyor, takip şeridi kıpırdamıyor ve sıralı, başarım kartı ortada, mağara ve ev görselleri
+## v3.39 (bekleyen paket) · tam ekran yenilemede kaybolmuyor, takip şeridi kıpırdamıyor ve sıralı, başarım kartı ortada, mağara ve ev görselleri, Marangoz Çınar kaldırıldı (Usta Sinan'da birleşti)
 - Belge: Godot planına "Neden Godot, neden Unity değil" bölümü (Unity ileride açık seçenek; Unreal düşünülmüyor).
 - Takip şeridi: `rows()` takip satırlarını `items.length`'e göre sıralar (görünüş; `B3.trk` sırası ve en eskinin çıkması aynı). `placeBar()` satır/parça adları + ekran + yan panel anahtarı (`bar._lk`) değişmedikçe eski sol/üst konumu (`bar._pos`) korur.
 - Başarım kartı: `v339ach` stili ortada (%42), 176 px, büyüyerek; `card` tıklayınca hemen kapanır (`card._t` zamanlayıcısı), pointerdown/mousedown/touchstart oyuna geçmez.
 - Yeni `v339art`: mağara girişleri biyoma göre (`window.__plCaveSpr(C)`, önbellekli kanvas; mağara bloğundaki `drawDoor` onu çizer, ışık ağzın elipsine), 8 evin her biri için `houseSprite` (`H3:` anahtarı; hepsi `HOUSE_ART`'a eklendi, eski 4 evin ve yeni 4 evin önbelleği yalnızca bu adlar için silinir).
+- **Usta Sinan + Marangoz Çınar birleşti (Boğaç):** `carp` nesnesi, çizimi (`drawCarp`), konuşması (`talkCarp`), hedefi, çarpışması, ateşi, harita işareti, ses tablosu, hikâyesi (Defne) ve bütün listelerdeki yeri silindi. `openCarp`/`renderCarp` (ev listesi; mod adı hâlâ `carp`) Sinan'dan açılır (`talkUsta`'ya "Ev ve barınak siparişi"; R2 kısayolu `talkUsta` sarmalayıcısında). DATA: R1,R3,R6,R7,R8,K4,K5,K7 silindi; R2,K1,K2,K3,R4,R5,K6,K8 `g:'usta'` ve zincir R2(bio1)→K1→K2→K3→R4→R5(lv4)→K6(lv8)→K8(lv12); `chop` dersi D1'e; N1/B1 R1 yerine D1'den, DR3 K4 yerine K3'ten açılır; `GB.carp` silindi. Eski kayıtlar: `QI`'de olmayan görev kayıttan düşer. Eski görev sisteminin (v1) carp1/c2/c3 tanımları `g:'usta'` oldu. Usta Sinan zaten Orman'daydı (ANC usta = 299,99, biyom 1).
 - `v88` tam ekran bloğu: `sync()` tam ekrandan çıkışı F5/Ctrl+R/`beforeunload`/`pagehide` sırasında (`leaving`) `hammadde.fs=0` diye kaydetmez; tam ekrana girince `1` yazar. Böylece açılışta ilk tıklama/tuşla (`once`) yeniden tam ekran olur. Alt+Enter, Esc ya da Ayarlar kutusuyla çıkış yine `0`.
 ## v3.38 (6 Kasım 2026) · sıkı el yapımı listesi, ıslık gibi olmayan canlı sesleri, düzenli takip şeridi
 - Yeni `v337hand` (stil) + `v337handjs`: el yapımı satırları tek satır; malzemeler (`.bn>span>br+small`) gizli, bilgisayarda satır üstüne gelince, telefonda ada dokununca (`li.hopen`) satırın altında mutlak konumlu kutuda açılır. Düğmeler küçük (26 px).

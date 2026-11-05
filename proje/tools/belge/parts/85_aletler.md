@@ -509,9 +509,9 @@ Beş yuva vardır: **baş, gövde, el, ayak, silah**. Özellikler penceresinden 
 | Meka zırh ² | Gövde | 90 | Mühendis Işın yapar (600 sikke işçilik) | direnç: kanama %50, yanık %50, zehir %50, metal |
 
 
-## Evler ve barınaklar (Marangoz Çınar)
+## Evler ve barınaklar (Usta Sinan; v3.39'a kadar Marangoz Çınar)
 
-| Yapı | Seviye | Çınar'ın aldığı ücret | Tasarımdaki liste fiyatı | Malzeme | Açıklama |
+| Yapı | Seviye | Sinan'ın aldığı ücret | Tasarımdaki liste fiyatı | Malzeme | Açıklama |
 |---|---|---|---|---|---|
 | Yaprak barınağı | Sv 1 | 5 | 5 | 8 Dal, 12 Yaprak, 4 Lif | Yatak gerekmez. Bir gecelik: uyanınca dağılır. |
 | Deri çadır | Sv 3 | 1.039 | 300 | – | Kalıcı bir çadır. İçinde uyumak için yatak koymalısın. |

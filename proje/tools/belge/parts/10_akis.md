@@ -55,7 +55,7 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 
 **Öğretici malzemeleri yer değiştirmez (v2.53, Boğaç):** öğreticinin istediği malzeme (böğürtlen, dal, taş…) yakında yoksa ya da telefonda parmağın kolay ulaşacağı yerde değilse, haritadaki mevcut bir çalı/malzeme **taşınmaz**: yakındaki **boş bir yerde yeni bir tane** biter ve ok ona bağlı kalır. Haritada duran bir malzeme, sen ona yürürken hiçbir zaman başka bir yere ışınlanmaz (eskiden en yakın böğürtlen oyuncunun yanına çekiliyor, telefonda da kamera kaydıkça yeniden taşınıyordu).
 
-**Öğretici malzemelerinin yeri (v2.35, Boğaç):** 5 böğürtlen **Kemal'in kampının** çevresine; meşale malzemeleri (iki tur da), taşlar ve keskin taş için taşlar **Zümrüt'ün kazanının** çevresine; balta malzemeleri **Börü'nün** çevresine konur. Kişiler kampın kuzeyine/kuzeydoğusuna sırayla dizilir ve her biri bir öncekine kısa bir yürüyüş uzaklığındadır: Kemal → Zümrüt (~29 karo) → Nazlı (~37) → Börü (~35) → Dursun ve Durmuş (~36); Çınar kampın batısında. Başlangıç yeri Çayır'ın **Orman'a en uzak** ucundaki (hilalin batı ucu) güneye bakan kumsaldır (Orman'a ~161 karo).
+**Öğretici malzemelerinin yeri (v2.35, Boğaç):** 5 böğürtlen **Kemal'in kampının** çevresine; meşale malzemeleri (iki tur da), taşlar ve keskin taş için taşlar **Zümrüt'ün kazanının** çevresine; balta malzemeleri **Börü'nün** çevresine konur. Kişiler kampın kuzeyine/kuzeydoğusuna sırayla dizilir ve her biri bir öncekine kısa bir yürüyüş uzaklığındadır: Kemal → Zümrüt (~29 karo) → Nazlı (~37) → Börü (~35) → Dursun ve Durmuş (~36). Başlangıç yeri Çayır'ın **Orman'a en uzak** ucundaki (hilalin batı ucu) güneye bakan kumsaldır (Orman'a ~161 karo).
 
 **Başlangıçta kampın yanına malzeme konmaz (v2.24):** oyun başlarken kampın hemen yanına önceden fazladan konan 1 dal, 4 taş, 1 lif ve 1 yaprak artık yok; başlangıç bölgesinde yalnızca haritanın normal malzemeleri ve öğreticinin kendi adımlarında koyduğu malzemeler (böğürtlenler, Zümrüt'ün meşale malzemeleri ve 4 taşı) vardır.
 
@@ -110,7 +110,7 @@ Kartın altında kısa dersler çıkar: **koşma dersi** (Kemal'in köprü göre
 
 v1.86'dan beri ACT 1 tek görevlik bir zincirle ilerler (ayrıntı: **ACT 1 · Görevler**). Kemal'in yalnızca ana yolda 5 görevi vardır; gerisi adadaki 26 kişiye dağılmıştır ve birbirini açar.
 
-1. **Çayır:** Kemal'in ilk işi (6 dal, 2 kuru ot) → Dursun aletleri öğretir (taş balta, kazma, çakmaktaşı balta, bileme, tunç) → Çınar kalas ve barınak, Nazlı meyve, balık, satış ve tuzak, Börü kamp ateşi, dövüş ve taş kılıç, Durmuş kemik, kiriş, tunç levha, Zümrüt otlar ve kazan. Börü oyuncuyu **Orman**'a yollar (Ekin ile tanışma).
+1. **Çayır:** Kemal'in ilk işi (6 dal, 2 kuru ot) → Dursun aletleri öğretir (taş balta, kazma, çakmaktaşı balta, bileme, tunç) → Nazlı meyve, balık, satış ve tuzak, Börü kamp ateşi, dövüş ve taş kılıç, Durmuş kemik, kiriş, tunç levha, Zümrüt otlar ve kazan. Börü oyuncuyu **Orman**'a yollar (Ekin ile tanışma).
 2. **Orman:** Sinan'ın yapıları, kuzenler Yakut, Durdu, Duran. Kemal'in **köprü** görevi Seviye 6'da açılır (v2.68: Ekin ve tarlası şimdilik yok).
 3. **Köprünün ötesi:** Bataklık'ta Doğan ve kuzenler Safir, Ali (demir), Veli. Doğan'ın son işi oyuncuyu **Kayalık Dağ**'a götürür (Firuze, Kaya, Kayhan).
 4. **Doğu geçidi:** Kayalık Dağ'a varınca ve Seviye 10'da Kemal'in **patlatma** görevi: 2 kaya patlatıcı + kuvars ya da çelik kazma (4. kademe); patlayınca bütün sıradağ çöker ("Yol açıcı" başarımı).

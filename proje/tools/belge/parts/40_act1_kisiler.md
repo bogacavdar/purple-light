@@ -11,7 +11,7 @@ Kişilerin adları karakterlerine uysun diye 31 Ekim 2026'da değişti (Boğaç 
 | Yaşlı Ekin | Yaşlı Kemal |
 | Çiftçi Hasan | Çiftçi Ekin |
 | Usta Kemal | Usta Sinan |
-| Marangoz Rıza | Marangoz Çınar |
+| Marangoz Rıza | Marangoz Çınar (v3.39'da oyundan kaldırıldı; işi Usta Sinan'da) |
 | Avcı Toygar | Avcı Doğan |
 | Denizci Levent | Denizci Barbaros |
 | Gemici Nuri | Gemici Poyraz |
@@ -337,32 +337,24 @@ Toplam 45 görev, 14.570 sikke, 20.150 XP.
 
 ## Usta Sinan
 
-**Yer:** kuzeybatıda, tezgâhı ve kereste yığınının başında. **Tanışma:** her zaman; ilk konuşmada **Hasır yatak** hediye eder.
+**Yer:** Orman'da (2. biyom), tezgâhı ve kereste yığınının başında. **Tanışma:** her zaman; ilk konuşmada **Hasır yatak** hediye eder.
 
+- **v3.39 (Boğaç): Marangoz Çınar ile birleşti.** Çınar oyundan kaldırıldı; onun işleri, ev ve barınak satışı dahil, Sinan'dadır. Görevleri 16'dan 8'e indi (ACT 1 · Görevler › Usta Sinan).
 - Yere kurulan yapıları (Yapılar kategorisi), yatakları ve **ev eşyalarını** (evin içine konur) yapar. Tarif kazanda öğrenilmiş, malzeme çantanda olmalı. İşçilik %20.
+- **Ev ve barınak yapar** (sikkeyle; konuşmada "Ev ve barınak siparişi"): Yaprak barınağından Konak'a 8 ev. Yaprak barınağı dışındaki evlerde uyumak için içine yatak konmalıdır. Fiyatlar için "Evler ve barınaklar" tablosuna bak. Yaprak barınağı görevi açıkken malzemeler (8 Dal, 12 Yaprak, 4 Lif) çantandaysa konuşma doğrudan ev listesini açar.
 - **Atölye:** yere kurulur, seçtiğin bir tarifi 25 saniyede bir kendiliğinden üretir (en çok 50 tane biriktirir).
-- Hikâyesi: kızı Zeynep.
+- Hikâyesi: kızı Zeynep (parçaları 8 görevine eşit aralıklarla dağılır).
 
 | # | Görev | İstenen | Açılma şartı | Sikke | XP |
 |---|---|---|---|---|---|
-| 1 | Atölye kur | Atölye kur | – | 80 | 40 |
-| 2 | Kalas | Getir: 6 Meşe kalası | – | 70 | 30 |
-| 3 | Çit | Çit kur | – | 40 | 20 |
-
-
-## Marangoz Çınar
-
-**Yer:** Kemal'in yaklaşık 34 karo batısı, 22 karo kuzeyi. **Tanışma:** her zaman.
-
-- **Ev ve barınak yapar** (sikkeyle). Yaprak barınağı dışındaki evlerde uyumak için içine yatak konmalıdır (Sinan yapar). Taş ev de istediğin yere kurulur. Fiyatlar için "Evler ve barınaklar" tablosuna bak (oyunda gösterilen fiyat, alt fiyat kuralı yüzünden listeden yüksek olabilir).
-- Yaprak barınağı görevi açıkken malzemeler (8 Dal, 12 Yaprak, 4 Lif) çantandaysa konuşma doğrudan siparişler listesini açar.
-- Hikâyesi: nişanlısı Defne.
-
-| # | Görev | İstenen | Açılma şartı | Sikke | XP |
-|---|---|---|---|---|---|
-| 1 | Yaprak barınağı | Yaprak barınağı yaptır ve gece içinde uyu | – | 40 | 20 |
-| 2 | Odun stoku | Getir: 20 Çam odunu | – | 80 | 30 |
-| 3 | Kalıcı bir ev | Kalıcı bir ev kur (yaprak barınağı sayılmaz) | – | 120 | 50 |
+| 1 | Yaprak barınağı | Yaprak barınağı yaptır ve gece içinde uyu | Orman'a varış | 40 | 30 |
+| 2 | Ladin kalası | Getir: 6 Ladin kalası | 1 | 60 | 40 |
+| 3 | Atölye | Atölye kur | 2 | 90 | 60 |
+| 4 | Çit | Çit kur | 3 | 70 | 45 |
+| 5 | Kerpiç | Yap: 6 Nehir kerpici | 4 | 80 | 50 |
+| 6 | Kalıcı bir ev | Kalıcı bir ev kur ve içine yatak koy | 5 · Seviye 4 | 120 | 80 |
+| 7 | Taş temel | Getir: 10 Meşe odunu, 6 Granit | 6 · Seviye 8 | 140 | 90 |
+| 8 | Ocak başı | Getir: 10 Kum, 6 Kireçtaşı, 4 Ceviz odunu | 7 · Seviye 12 | 190 | 110 |
 
 
 ## Avcı Doğan

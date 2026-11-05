@@ -10,7 +10,7 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 | 4 | Meyve ağacı odunu | Elma, Armut, Erik (ve Mürver) odunlarının fiyatı yoktu; satınca sikke NaN oluyordu. | **Düzeltildi v2.17:** 3 sikke; fiyatsız eşya artık satılmaz; bozuk sikke onarılır. |
 | 5 | Gemici Poyraz'ın tarifleri | Tarif satış kodu var ama menüden açılmıyor; Zümrüt "tüccardan tarif alabilirsin" diyor. | Menüye ekle ya da Zümrüt'ün sözünü değiştir.  **Kalktı v2.34** (tüccar Poyraz yok). |
 | 6 | Ekin'in tohumları | Tohum dükkânı açılmıyor; Ekin bir yerde "satarım" bir yerde "satmam" diyor. | Karar ver, metni düzelt. |
-| 7 | Ev fiyatları | Çınar alt fiyat kuralıyla satıyor: Taş ev 4.049 (listedeki fiyat 2.500), Deri çadır (Sv 3) 1.039 ile Kulübe'den (Sv 4, 510) pahalı. | Ev fiyatlarını alt fiyat kuralından muaf tut. |
+| 7 | Ev fiyatları | Usta Sinan alt fiyat kuralıyla satıyor: Taş ev 4.049 (listedeki fiyat 2.500), Deri çadır (Sv 3) 1.039 ile Kulübe'den (Sv 4, 510) pahalı. | Ev fiyatlarını alt fiyat kuralından muaf tut. |
 | 8 | Gemi malzemesi | Gemi malzemeleri iki kez harcanıyor (kazanda öğrenirken ve Barbaros'un son görevinde). | Ya tarifi öğrenmeyi kaldır ya da görevi "gemiyi getir" yap. |
 | 9 | Küçük tutarsızlıklar | Öğreticinin 13. adımında örste her şey bedava; Ekin yalnızca adı "Taş kazma" olan kazmayı kabul ediyor; Kemal'in 3. görevi "100 sikke" diyor ama yalnızca yetenek alınmış mı bakıyor; Poyraz'ın ilk siparişi XP'yi iki kez veriyor. | — |
 | 10 | Ölü kod | Kaptan Poyraz, Balıkçı Rüstem, Sisli Ada ve sal sonu kodda duruyor ama çalışmıyor. Son Kemal görevinde iskelenin üstüne hâlâ sal oku çiziliyor; Rüstem'in kıyısında kimsesiz bir ateş yanıyor. | Temizlik. |

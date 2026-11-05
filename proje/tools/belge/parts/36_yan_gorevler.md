@@ -93,7 +93,7 @@ Elinde boş bir kafes, gözleri kızarmış bir oğlan.
 - **Topla (4 güvercin, herhangi bir sırayla; v3.07, Boğaç: "net göstermeyelim, yaklaştıkça ses çıkarsın"):** güvercinler Bulut'un çevresinde dört ayrı yönde, Bulut'tan **250–650 piksel** uzakta, yürünebilir yerlerdedir (her oyunda aynı yer). **Görünmezler:** dünyada güvercin ancak **60 piksel** yakınına gelince görünür; haritada ve ekranın kenarında güvercinin yeri gösterilmez, haritada yalnızca Bulut'u merkez alan **büyük sarı arama alanı** (yarıçap 700 piksel) vardır. **Ses:** bir güvercinin **260 piksel** yakınına girince güvercin guruldaması duyulur; yaklaştıkça **daha sık** (yaklaşık 2,3 sn'den 0,45 sn'ye) ve **daha yüksek** çalar. Güvercinin **34 piksel** yakınına gelince eline konar ve ayağındaki not okunur (sıra yok; hangisine denk gelirsen). Not penceresi düğmesiz kapatılsa da (Esc, dışarıya dokunmak) görev takılmaz (v3.07 düzeltmesi: eskiden pencere düğmeyle kapatılmazsa görev kilitleniyor, güvercinin üstünde durunca hiçbir şey olmuyordu). Notlar:
   - "Nazlı'dan Dursun'a: *Çekicinin sesi olmadan pazar sessiz. Akşam çay var.*"
   - "Ekin'den Zümrüt'e: *Domatesler kazanından daha kırmızı oldu, gelip bak.*"
-  - "Çınar'dan kimseye: *Defne'nin evine son çiviyi çaktım. Kapıyı açık bırakıyorum.*"
+  - "Sinan'dan Zeynep'e: *Sana söz verdiğim evin son çivisini çaktım. Kapıyı açık bırakıyorum.*" (v3.39; Marangoz Çınar kaldırılınca)
   - "İmzasız: *Bu adada yıldız yok ama sen varsın.*"
 - **Konuş:** "Dördü de burada! Sonuncunun kime gideceğini bilmiyorum ama… belki kimseye gitmesi gerekmiyordur." Görev biter.
 - **Sonra dünyada:** Bulut'un yanında küçük bir güvercinlik, çevresinde dolaşan dört güvercin. Konuşunca: "Artık kapıyı hep kapatıyorum. Nazlı ile Dursun çay içmiş, duydun mu?"
