@@ -20013,6 +20013,9 @@ window.__plFoodTier=n=>tierOf(n);
 const K='hammadde.hideLearned';
 window.__plHideL=()=>{try{return localStorage.getItem(K)==='1'}catch(e){return false}};
 {const st=document.createElement('style');st.textContent='#cbody .hlrn{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-dim);padding:2px 2px 6px;cursor:pointer}#cbody .hlrn input{width:16px;height:16px;margin:0}';document.head.appendChild(st)}
+// the lists keep their place when the window is drawn again (choosing a recipe low in the list used to jump back to the top)
+{const _rc=renderCraft;renderCraft=function(){const keep=mode==='craft'?['.rlist','.pside','.tiles'].map(q=>{const e=cbody.querySelector(q);return e?e.scrollTop:0}):null,k0=mode+'|'+station,top=cbody.scrollTop;
+  const r=_rc.apply(this,arguments);try{if(keep&&k0===mode+'|'+station){['.rlist','.pside','.tiles'].forEach((q,i)=>{const e=cbody.querySelector(q);if(e&&keep[i])e.scrollTop=keep[i]});if(top)cbody.scrollTop=top}}catch(e){}return r}}
 cbody.addEventListener('change',e=>{if(!e.target||e.target.id!=='hlrn')return;try{localStorage.setItem(K,e.target.checked?'1':'0')}catch(x){}renderCraft()});
 }).toString()+')()')}catch(e){try{window.__hamErr('v336learned: '+(e&&e.message||e))}catch(_){}}})();
 </script>
