@@ -11564,13 +11564,14 @@ const ACH=[
  ['dusentum','Ganimet avcısı','Canlılardan düşebilecek her eşyayı en az bir kez elde et.','Tavşan derisi',()=>{const L=allDrop();return L.length>0&&L.every(n=>IS.has(n))}],
  ['hile','Oyunlardaki gibi',(TOUCH?'Ana menüde ekrana art arda 3 kez dokundun: hile modu açıldı.':'Ana menüde “cheat” yazdın: hile modu açıldı.'),'Mor pusula',()=>{try{return localStorage.getItem('hammadde.cheatach')==='1'||localStorage.getItem('hammadde.cheatok')==='1'}catch(e){return false}}],
  // v3.30 (Boğaç): secret, walk to the end of the hidden sea path (v330sea); not counted for Platin
+ ['klon','Öteki ben','Gece beliren klonunu 5 farklı gecede gördün.','Gece zambağı',()=>!!(window.__plKlonN&&window.__plKlonN()>=5)],
  ['deniz','Denizde yürüyen','Denizin üstünde yürüdün.','Mor yosun',()=>{try{return localStorage.getItem('hammadde.denizach')==='1'}catch(e){return false}}],
  // v3.20 (Boğaç): secret, and not counted for Platin (it needs one particular choice in the creator)
  ['kehribar','Kehribar gözlüm','Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1\'i tamamla.','Kehribar kolye',()=>{try{const D=window.__plDz&&window.__plDz.D;return LOOK.love.eye==='#a6620c'&&(ISLE===2||!!(D&&D.act2))}catch(e){return false}}],
  ['platin','Platin','Bütün başarımları kazan.','*platin',()=>ACH.every(a=>NOPLAT.has(a[0])||got[a[0]])]];
 const NOPLAT=new Set(['platin','kehribar','deniz']);
 // v100: secret ones show ??? until won; the rest show their name and what to do, greyed. PROG: [now, goal] for a bar
-const SECRET=new Set(['iz','ani','ejder','levent','roket','act2','iyison','kotuson','hile','kaya','kopru','kehribar','deniz']);
+const SECRET=new Set(['iz','ani','ejder','levent','roket','act2','iyison','kotuson','hile','kaya','kopru','kehribar','deniz','klon']);
 const fl=()=>found.length,dd=()=>day,bk=()=>bossKinds();
 const PROG={tarif1:()=>[fl(),1],tarif25:()=>[fl(),25],tarif100:()=>[fl(),100],tarif250:()=>[fl(),250],tariftum:()=>[cnt(DB.R,x=>foundSet.has(x.r)),DB.R.length],
  hafta:()=>[dd(),7],ay:()=>[dd(),30],gece1:()=>[dd()-1,1],lvl10:()=>[lvl,10],lvl25:()=>[lvl,25],balik:()=>[fishTotal,10],kurt:()=>[k_('Kurt'),10],
@@ -19613,6 +19614,44 @@ setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);las
   ctx.save();ctx.globalAlpha=Math.max(0,a);drawChibi(ctx,D.x,D.y,DL,{fx});ctx.restore();
   if(D.age<.8||D.left<.8){ctx.save();ctx.globalAlpha=.7*Math.max(0,1-Math.min(D.age,D.left)/.8);for(let k=0;k<6;k++){const an=k/6*6.283+time_*3;px(D.x+Math.cos(an)*9,D.y-8+Math.sin(an)*9,2,2,k%2?'#c07aff':'#f0d8ff')}ctx.restore()}}}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v330dev: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v330klon">
+// v3.30 (Boğaç): some nights an exact copy of your character stands a little way off and watches you; walk towards it and it is gone.
+// Seen on 5 different nights (counted on the device) → the secret "Öteki ben" achievement.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const KN='hammadde.klonN';
+const seenN=()=>{try{return +(localStorage.getItem(KN)||0)||0}catch(e){return 0}};
+window.__plKlonN=seenN;
+const C={night:null,at:-1,on:false,x:0,y:0,d0:0,age:0,counted:false};
+const nightKey=()=>dayT>=1200?day:day-1;
+const nightMin=()=>dayT>=1260?dayT-1260:dayT<270?dayT+180:-1;   // the full dark, 21:00–04:30
+const busy=()=>onTitle||window.__plArena||!met||wake||fading||sailing||dlgOpen||craftOpen||paused||(cine&&cine.on)||roomSafe()||(window.__plCave&&window.__plCave.cur);
+function spot(){const vW=vw/S,vH=vh/S;for(let k=0;k<60;k++){const a=Math.random()*6.283,r=100+Math.random()*40,x=player.x+Math.cos(a)*r,y=player.y+Math.sin(a)*r;
+  const sx=x-cam.cx,sy=y-cam.cy;if(sx<14||sx>vW-14||sy<30||sy>vH-10)continue;
+  if(!reachAt(x,y)||isWater(tileAt(x,y)))continue;try{if(blocked(x,y))continue}catch(e){continue}return{x,y}}return null}
+function gone(puff){if(!C.on)return;C.on=false;if(puff)for(let k=0;k<10;k++)parts.push({x:C.x+(Math.random()-.5)*8,y:C.y-6-Math.random()*10,vx:(Math.random()-.5)*30,vy:-10-Math.random()*20,life:.45,c:k%2?'#1a1420':'#3a2c48'})}
+let last=performance.now();
+setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);last=now;try{
+  const nm=nightMin();
+  if(nm>=0){const k=nightKey();if(C.night!==k){C.night=k;C.at=Math.random()<.4?(Math.random()*440)|0:-1;C.counted=false}
+    if(!C.on&&C.at>=0&&nm>=C.at&&!busy()){const s=spot();if(s){C.at=-1;C.on=true;C.x=s.x;C.y=s.y;C.d0=Math.hypot(player.x-s.x,player.y-s.y);C.age=0}}}
+  if(!C.on)return;
+  if(onTitle||window.__plArena||sailing||roomSafe()||(window.__plCave&&window.__plCave.cur)||nm<0){gone(false);return}
+  if(paused||dlgOpen||fading)return;
+  C.age+=dt;
+  if(!C.counted&&C.age>=.6){C.counted=true;try{localStorage.setItem(KN,String(seenN()+1))}catch(e){}}
+  const d=Math.hypot(player.x-C.x,player.y-C.y);
+  if(d<C.d0-14||C.age>25)gone(true)}catch(e){}},100);
+{const _ls=lightSources;lightSources=function(){const L=_ls.apply(this,arguments);try{if(C.on&&!onTitle)return L.concat([[C.x,C.y-6,40]])}catch(e){}return L}}
+{const _dg=drawGoal;drawGoal=function(time_){const r=_dg.apply(this,arguments);try{if(C.on&&!onTitle){
+  // the very same drawing as the player: swap the player's place and facing for a moment
+  const px0=player.x,py0=player.y,fx0=player.face.x,fy0=player.face.y,mv0=player.mv,st0=player.step;
+  const dx=px0-C.x,dy=py0-C.y;let fx=0,fy=1;if(Math.abs(dx)>Math.abs(dy))fx=dx>0?1:-1;else{fx=0;fy=dy>0?1:-1}
+  try{player.x=C.x;player.y=C.y;player.face.x=fx;player.face.y=fy;player.mv=false;player.step=0;ctx.save();ctx.globalAlpha=Math.min(1,C.age/.25);drawPlayer();ctx.restore()}
+  finally{player.x=px0;player.y=py0;player.face.x=fx0;player.face.y=fy0;player.mv=mv0;player.step=st0}
+  if(heroName){ctx.save();ctx.font='bold 7px sans-serif';ctx.textAlign='center';ctx.fillStyle='rgba(0,0,0,.7)';ctx.fillText(heroName,Math.round(C.x)+1,Math.round(C.y)-25);ctx.fillStyle='#f3ead2';ctx.fillText(heroName,Math.round(C.x),Math.round(C.y)-26);ctx.restore()}}}catch(e){}return r}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v330klon: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

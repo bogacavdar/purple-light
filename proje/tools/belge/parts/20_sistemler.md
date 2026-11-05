@@ -109,6 +109,13 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - Yanına varınca (yaklaşık 22 piksel) kendiliğinden konuşur. Boğaç: "Kapat oyunu artık." · "Tamam". Konuşma bitince (ya da pencere dışına basılınca) **oyun kaydedilir ve ana menüye dönülür** (Ana menüye dön düğmesiyle aynı: otomatik kayıt).
 - **Bir kez (v3.30, Boğaç: "1 kere konuştuktan sonra bir daha gelmesin, şimdilik"):** Boğaç'la bir kez konuşunca o oyunda (kayıtta) bir daha hiç belirmez. Yeni bir oyunda yine çıkar.
 
+### Öteki sen: gece beliren klonun (v3.30, Boğaç)
+
+- Bazı gecelerde (her gece **%40** ihtimalle, tam karanlıkta 21:00–04:30 arasında rastgele bir anda) karakterinin **birebir kopyası** belirir: aynı görünüş, aynı giysi ve zırh, elinde aynı alet ve meşale; başının üstünde **karakterinin adı** yazar. Ekranın içinde, senden yaklaşık 100–140 piksel uzakta, yürünebilen bir yerde durur, yüzü sana dönüktür ve hiç konuşmaz. Çevresinde soluk bir ışık vardır (karanlıkta görünsün diye).
+- Ona doğru yürümeye başladığın an (aradaki uzaklık ~14 piksel azalınca) **birden kaybolur** (küçük bir kara duman). Yaklaşmazsan 25 saniye sonra kendiliğinden kaybolur. Bir gecede en çok bir kez çıkar.
+- Evin içinde, mağarada, denizde yolculukta, konuşma ya da pencere açıkken, ara sahnede ve arenada çıkmaz.
+- **5 farklı gecede** onu gören (ekranda en az 0,6 saniye kalmış olması yeter) gizli **Öteki ben** başarımını kazanır. Görülen geceler cihazda sayılır (başarımlar gibi, bütün kayıtlar için ortak).
+
 ### Işık kaynakları
 
 | Işık | Yarıçap | Süre | Not |
