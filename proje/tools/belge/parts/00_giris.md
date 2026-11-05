@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.35** ile birebir (5 Kasım 2026). Bu sürümde: bütün yemekler (közlenmiş, pişmiş, çiğ et ve balık, tarifler) tokluğun yanında biyom kademesine göre iyi etki ve can verir, satış değerleri kademeyle artar; dans 3 kez sol-sağ ile başlar ve başka tuşla biter; sudaki yüz yalnızca boş beklerken.
+Sürüm: **Versiyon 3.36** ile birebir (6 Kasım 2026). Bu sürümde: kazanda öğrenilenler aşağıda ve gizlenebilir, liste yerinde kalır; takip şeridinde + ile parça yapma; pazarda ara parçaların malzemeleri sayılır; el yapımında yapılabilecek parça sarı; dansta hayvanlar çemberde izler ve karakter şarkı söyler; körelmiş alet ağaca yönelmez; canlıların türlerine göre acı ve ölüm sesleri.
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 

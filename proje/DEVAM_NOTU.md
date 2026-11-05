@@ -1,3 +1,12 @@
+## v3.36 (6 Kasım 2026) · kazan listesi, takip +, pazar zinciri, dans çemberi ve şarkı, canlı sesleri
+- `v336learned`: kazan listesinde öğrenilenler sona (`open` sıralaması), `hammadde.hideLearned` kutusu; `renderCraft` sarmalı `.rlist/.pside/.tiles` kaydırmasını korur.
+- Takip şeridi (B3): `b3plus`/`b3make` (zincir `chainPlan(m,k,b3subOK)`; yalnızca öğrenilmiş el tarifleri).
+- `v317spare`: `reqMap(ok)` ara parçaların eksik kadarını kendi malzemelerine açar (6 kat).
+- `v334egg`: dans çemberi (`a.dnc`, yarıçap 50×34, `tickAnimals` sırasında yerleri sabit), şarkı (`hum`, kadın Re4 / erkek Re3, iki formant).
+- `gatherTarget`: körelmiş balta/kazma ağaç/maden hedeflemez. El yapımı: zincirle yapılacak eksik parça sarı.
+- `v336voice`: `window.__plVoice` (v309snd `hurtS`/`dieS` önce bunu dener): 13 ses türü, formantlı.
+- Kontrol: chk.js 0 hata; kazan sıralaması, liste kaydırması, takip + denendi.
+
 ## v3.35 (5 Kasım 2026) · bütün yemeklere etki, dans, ayna
 - `v335food`: `tierOf` (toplanan: v74 `FOODT` → `window.__plFoodT`; et: avın biyomu `__I1B`/`__I2C`; ön ekli pişmiş: çiğinin; tarif: malzemelerin en yükseği; yoksa fiyattan), `kindEffect`, `window.__plFoodFix` (v74 `prof` sonunda çağrılır): etki, süre 60+30·k (+30 pişmiş, ≤420), can. Fiyat ×(1+0,15·k) yüklemede bir kez; `FOODC` temizlenir. Denemede etkisiz yemek kalmadı (0).
 - `v334egg`: dans `keys.a/keys.d` kenarlarıyla 6 alternatif basış (≤0,6 sn arayla, 3 sn içinde); başka keydown ya da yürüyüş bitirir; hayvan çekme 60 px/sn. Ayna: toplama, olta, basılı tuş varken sayaç sıfır.

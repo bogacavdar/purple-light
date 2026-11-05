@@ -8,6 +8,29 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.36 · 6 Kasım 2026
+
+### Arayüz
+- **Cadının kazanı:** öğrendiğin tarifler listede her grubun en altına iner. Listenin üstündeki "Öğrenilenleri gösterme" kutusuyla hiç görünmezler; kutuyu kaldırınca geri gelirler.
+- **Cadının kazanı:** listenin aşağısından bir tarif seçince liste artık en başa kaymıyor.
+- **Takip şeridi:** takip ettiğin tarifin eksik bir parçasını (Sopa, İp gibi) şu an elinle yapabiliyorsan yanında **+** çıkar; basınca hemen yapılır.
+- **El yapımı:** eksik bir parçayı önce yapıp tarifi tamamlayabiliyorsan o parça kırmızı değil, sarı yazar ("yapılır").
+
+### Oynanış
+- **Dans:** yanına gelen hayvanlar çevrende bir çembere dizilir, durur ve seni izler. Dans ederken karakterin şarkı mırıldanır: erkekse kalın, kadınsa ince sesle.
+- Elindeki balta ya da kazma tamamen körelmişse F artık ağaca ya da madene değil, yerdeki eşyaya yönelir.
+
+### Düzeltmeler
+- Nazlı'nın "yeteni bırak" düğmeleri, bir tarifin istediği ara parçanın (ör. Sopa) malzemelerini saymıyordu; artık sayar, bu malzemeler satılmaz.
+
+### Ses
+- Canlıların acı ve ölüm sesleri türlerine göre yenilendi: kuşlar cıvıldar, ördekler vaklar, geyikler meler, atlar kişner, kurtlar inler, ayılar kükrer… Sesler daha uzun ve anlaşılır.
+
+### Tasarım belgesi
+- Kazan listesi, takip şeridi, toplu satış hesabı, el yapımı renkleri, körelmiş alet, dans ve canlı sesleri güncellendi.
+
+---
+
 ## Versiyon 3.35 · 5 Kasım 2026
 
 ### Oynanış
