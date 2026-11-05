@@ -9,6 +9,9 @@
 
 
 
+
+## v3.39 (bekleyen paket) · tam ekran yenilemede kaybolmuyor
+- `v88` tam ekran bloğu: `sync()` tam ekrandan çıkışı F5/Ctrl+R/`beforeunload`/`pagehide` sırasında (`leaving`) `hammadde.fs=0` diye kaydetmez; tam ekrana girince `1` yazar. Böylece açılışta ilk tıklama/tuşla (`once`) yeniden tam ekran olur. Alt+Enter, Esc ya da Ayarlar kutusuyla çıkış yine `0`.
 ## v3.38 (6 Kasım 2026) · sıkı el yapımı listesi, ıslık gibi olmayan canlı sesleri, düzenli takip şeridi
 - Yeni `v337hand` (stil) + `v337handjs`: el yapımı satırları tek satır; malzemeler (`.bn>span>br+small`) gizli, bilgisayarda satır üstüne gelince, telefonda ada dokununca (`li.hopen`) satırın altında mutlak konumlu kutuda açılır. Düğmeler küçük (26 px).
 - Takip şeridi: `chipHTML` her kutucuğu sabit genişlikte `.b3cell` içine koyar (+ yeri boşsa `::after` ile ayrılır), adlara `title`; `b3lab` içinde `.b3lt`. Yeni `v338trk` stili: satırlar aynı genişlikte (`align-items:stretch`), etiket 9,4em, kutucuk 11,4em, × en sağda; telefonda satırlar yine sarar.

@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.38</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.39</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -12585,7 +12585,10 @@ let mine=false;
 if(cb&&row&&canFS&&!TOUCH){row.hidden=false;const sf=$('s-full');if(sf){sf.hidden=true;sf.style.display='none'}
   cb.checked=isFS();
   cb.addEventListener('change',function(){mine=true;setPref('hammadde.fs',cb.checked?'1':'0');if(cb.checked)enter();else leave();setTimeout(function(){mine=false},800)});
-  function sync(){const f=isFS();cb.checked=f;if(f)lockEsc();else if(!mine)setPref('hammadde.fs','0')}
+  // v3.39 (Boğaç): a reload (F5, Ctrl+R) or closing the page also drops full screen; that is not the player turning it off, so it is not saved
+  let leaving=false;addEventListener('keydown',function(e){if(e.key==='F5'||((e.ctrlKey||e.metaKey)&&(e.key==='r'||e.key==='R')))leaving=true},true);
+  addEventListener('beforeunload',function(){leaving=true});addEventListener('pagehide',function(){leaving=true});
+  function sync(){const f=isFS();cb.checked=f;if(f){lockEsc();setPref('hammadde.fs','1')}else if(!mine&&!leaving)setPref('hammadde.fs','0')}
   document.addEventListener('fullscreenchange',sync);document.addEventListener('webkitfullscreenchange',sync);
   if(getPref('hammadde.fs')!=='0'){const once=function(){removeEventListener('pointerdown',once,true);removeEventListener('keydown',once,true);if(!isFS()&&getPref('hammadde.fs')!=='0'){mine=true;enter();setTimeout(function(){mine=false},800)}};
     addEventListener('pointerdown',once,true);addEventListener('keydown',once,true)}}
