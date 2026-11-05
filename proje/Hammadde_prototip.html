@@ -19671,8 +19671,8 @@ function setStats(P,H){const dk=1+Math.min(.8,day*.02);
 for(const k of KINDS){const d=YD[k];ANIM[k]={ys:1,temper:'saldırgan',hp:d.hits*10,dmg:Math.round(d.pc*100),spd:d.spd,r:d.r,xp:d.hits*3,aggro:520,land:t=>t<=2,drops:[]};
   if(d.ranged)ANIM[k].ranged=Object.assign({},d.ranged);if(d.reach){ANIM[k].reach=d.reach;ANIM[k].wind=d.wind}}
 const S={next:6,at:1200,cnt:0};
-// v3.31 (Boğaç): fixed days (6, 11, 18, 22, 31…; gaps 5,7,4,9,6,3,8,10 repeating), never on a day with its own event, at the very start of the night
-const GAPS=[5,7,4,9,6,3,8,10],SPECIAL=new Set([5,15,20]);
+// v3.31 (Boğaç): fixed days (6, 11, 18, 22, 31…; gaps 5,7,4,9,6,3,8 repeating), never on a day with its own event, at the very start of the night
+const GAPS=[5,7,4,9,6,3,8],SPECIAL=new Set([5,15,20]);
 const free=d=>{while(d<=3||SPECIAL.has(d))d++;return d};
 function seqFrom(m){let d=6,i=0;while(d<m){d+=GAPS[i%GAPS.length];i++}return free(d)}
 function fresh(){S.next=6;S.at=1200;S.cnt=0}
