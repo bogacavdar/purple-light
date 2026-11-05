@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.33** ile birebir (5 Kasım 2026). Bu sürümde: Nazlı'da üç toplu satış düğmesi (hepsini sat; kazandaki açık tariflere yeteni bırak; bütün tariflere yeteni bırak).
+Sürüm: **Versiyon 3.34** ile birebir (5 Kasım 2026). Bu sürümde: gizli şeyler (kazana çöp ve görünmezlik iksiri, Börü'nün kemeri, 100. gecede yıldızlar, eski kamp ateşi, ayna, dans, inatçı balıkçı, barışçı saldırı, gece 03:00, devam ederken bir satır); gece beliren sevdiğin kişi (mor ışıkta); iki yeni gizli başarım.
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -430,12 +430,30 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - Yanına varınca (yaklaşık 22 piksel) kendiliğinden konuşur. Boğaç: "Kapat oyunu artık." · "Tamam". Konuşma bitince (ya da pencere dışına basılınca) **oyun kaydedilir ve ana menüye dönülür** (Ana menüye dön düğmesiyle aynı: otomatik kayıt).
 - **Bir kez (v3.30, Boğaç: "1 kere konuştuktan sonra bir daha gelmesin, şimdilik"):** Boğaç'la bir kez konuşunca o oyunda (kayıtta) bir daha hiç belirmez. Yeni bir oyunda yine çıkar.
 
-### Öteki sen: gece beliren klonun (v3.30, Boğaç)
+### Mor ışıkta o: gece beliren sevdiğin kişi (v3.30; v3.34, Boğaç: kendi kopyan yerine sevdiğin kişi)
 
-- Bazı gecelerde (her gece **%40** ihtimalle, tam karanlıkta 21:00–04:30 arasında rastgele bir anda) karakterinin **birebir kopyası** belirir: aynı görünüş, aynı giysi ve zırh, elinde aynı alet ve meşale; başının üstünde **karakterinin adı** yazar. Ekranın içinde, senden yaklaşık 100–140 piksel uzakta, yürünebilen bir yerde durur, yüzü sana dönüktür ve hiç konuşmaz. Çevresinde soluk bir ışık vardır (karanlıkta görünsün diye).
-- Ona doğru yürümeye başladığın an (aradaki uzaklık ~14 piksel azalınca) **birden kaybolur** (küçük bir kara duman). Yaklaşmazsan 25 saniye sonra kendiliğinden kaybolur. Bir gecede en çok bir kez çıkar.
+- Bazı gecelerde (her gece **%40** ihtimalle, tam karanlıkta 21:00–04:30 arasında rastgele bir anda) adada **sevdiğin kişi** belirir, ama **mor ışığın etkisi altındaymış gibi**: gözleri mor parlar, başının çevresinde soluk mor bir hale vardır, çevresinde mor zerreler yükselir; başının üstünde onun adı yazar. Karakter yaratmadaki görünüşüyle çizilir. Ekranın içinde, senden yaklaşık 100–140 piksel uzakta, yürünebilen bir yerde durur, yüzü sana dönüktür, konuşmaz. Çevresinde soluk mor bir ışık vardır (karanlıkta görünsün diye). (v3.30–3.33'te burada karakterinin kendi kopyası çıkıyordu.)
+- Ona doğru yürümeye başladığın an (aradaki uzaklık ~14 piksel azalınca) **birden kaybolur** (küçük bir mor duman). Yaklaşmazsan 25 saniye sonra kendiliğinden kaybolur. Bir gecede en çok bir kez çıkar.
 - Evin içinde, mağarada, denizde yolculukta, konuşma ya da pencere açıkken, ara sahnede ve arenada çıkmaz.
-- **5 farklı gecede** onu gören (ekranda en az 0,6 saniye kalmış olması yeter) gizli **Öteki ben** başarımını kazanır. Görülen geceler cihazda sayılır (başarımlar gibi, bütün kayıtlar için ortak).
+- **5 farklı gecede** onu gören (ekranda en az 0,6 saniye kalmış olması yeter) gizli **Mor ışıkta o** başarımını kazanır (eski adı Öteki ben; eski sayaç sürer). Görülen geceler cihazda sayılır (başarımlar gibi, bütün kayıtlar için ortak).
+
+### Gizli şeyler (v3.34, Boğaç)
+
+Oyunun hiçbir yerinde anlatılmaz; oyuncu kendisi bulur.
+
+- **Zümrüt'ün kazanına çöp:** kazanın tarif ekranında (Tarifle kaynat) **hiçbir tarifte kullanılmayan** bir malzemeye (deri, kabuk, kömür, kaşık gibi; aletler, zırhlar, kemer eşyaları hariç) dokununca o malzemeden **1 tane kazana atılır**: kazan fokurdar, mor duman yükselir ("X kazanda kaynadı… mor bir duman yükseldi"). Seçili tarif olmasa da olur. **5 farklı** böyle malzeme atınca Zümrüt kızar ve sayaç sıfırlanır:
+  - 1. kez: "Evlat! Ne yapıyorsun? Kazanım çöp tenekesi değil! Attığın her şey duman oldu."
+  - 2. kez: "Yine mi?! Bu kazan bana ninemden kaldı, evlat! Bir daha görmeyeyim."
+  - 3. kez: "Peki, peki… Madem bu kadar meraklısın. Bak, senin çöplerinden tuhaf bir şey kaynadı. Al iç bakalım… Aaa! Neredesin evlat?!" Karakter bunu içer ve **10 saniye görünmez** olur: yarı saydam (neredeyse görünmez) çizilir, canlılar onu görmez (kovalayan bırakır, saldırmaz, atış yapmaz). Gizli başarım **Görünmezlik iksiri**. Sonraki her 5 çöpte Zümrüt yalnızca kızar (1. ve 2. sözler sırayla), iksir bir daha çıkmaz. Sayaç kayıtta saklanır.
+- **Börü'yü yenmek:** elin boşken (silahsız, yumrukla) Börü'nün yanında (~26 piksel) **50 kez vurursan** (vuruşlar arasında en az 0,2 sn) Börü pes eder: "Tamam, tamam! Pes ediyorum! Yumrukların taş gibi olmuş evlat. Al, bu kemeri gençliğimde bir ayıdan kazanmıştım. Artık senin." Sana **Börü'nün kemeri** verir: **gövdeye giyilen** bir zırh, **26 savunma** (orman zırhları kadar), kanamaya %20 direnç, kahverengi deri. Arenada da seçilebilir. Bir kez verilir (kayıtta saklanır); sonra 50 vuruşta "Yine mi? Kemerimi aldın ya!" der.
+- **100. gecede yıldızlar:** "Yıldızsız Ada"da yıllar sonra bir gece yıldızlar çıkar: **100., 200., 300.… günün gecesinde** (20:00–06:00) gökyüzünde parlayan yıldızlar görünür (ekranın her yerinde hafifçe yanıp sönen beyaz ve mor noktalar), yıldız ışığı her yeri aydınlatır: o gece meşale gerekmez ve **mor ışık gelmez**. Gecenin başında ekranda "Gökyüzünde yıldızlar…" yazısı çıkar.
+- **Eski kamp ateşi:** her yeni oyunda adanın ıssız bir köşesinde (Kemal'in kampından en az ~120 kare uzakta, yürünebilen bir yerde) **sönmüş bir kamp ateşi** vardır: kül, kararmış taşlar ve yanında üstüne **karakterinin adı kazınmış** bir taş. Yanına gelince karakter: "Bu taşa… benim adım kazınmış: {ad}. Ben buraya ne zaman geldim?" Yer kayıtta saklanır.
+- **Ayna:** suyun (göl, nehir, deniz) kenarında, yüzün suya dönük **10 saniye hiç kıpırdamadan** durursan sudaki yansımanda bir anlığına (3 sn) **sevdiğin kişinin yüzü** belirir (soluk, ters, dalgalanarak), sonra kaybolur. En çok 2 dakikada bir.
+- **Dans:** yerinde hızlıca **sol-sağ-sol-sağ** (1,2 saniye içinde dört kez yön değiştirerek, neredeyse yerinden oynamadan) yürürsen karakter **dans eder** (sağa sola sallanır, zıplar, üstünde notalar çıkar). Sol-sağ yapmayı sürdürdükçe dans sürer; bırakınca 2 sn sonra biter. **20 saniye** aralıksız dans edersen yakındaki (300 piksel) zararsız ve nötr hayvanlar yanına gelip çevrende toplanır, dans bitince dağılır.
+- **İnatçı balıkçı:** aynı yere (ilk atışın 24 piksel çevresine) art arda **100 kez** olta atarsan (başka bir yere atınca sayaç sıfırlanır) sudan **yaşlı bir balık** çıkar ve konuşur: "Yüz kez! Yüz kez aynı yere attın oltayı! Ben bu suyun en yaşlısıyım; seni artık tanıyorum. Ama beni yakalayamazsın, inatçı. Hoşça kal!" ve suya dalıp kaybolur (sıçrama). Bir kez olur (kayıtta saklanır).
+- **Barışçı (mor ışık saldırısı):** bir saldırıda **hiçbir Yıldızsız'ı öldürmeden** saldırının sonuna kadar (4 dakika) bölgede kalıp **bayılmazsan**, saldırı biterken kalan Yıldızsızlar durur, sana el sallar (başlarının üstünde mor "~" işareti), sonra ışıkla gider; ekranda "Konuk · Yıldızsızlar el salladı" yazar. Gizli başarım **Konuk**.
+- **Gece 03:00:** gerçek saat (cihazın saati) **03:00–03:59** arasındaysa Kemal'le konuşunca sözüne şöyle başlar: "Bu saatte uyanık mısın evlat? Git yat." (oturumda bir kez).
+- **Devam ederken bir satır:** ana menüde **Devam et**'e basıp oyuna girince ekranın ortasında birkaç saniyeliğine (4 sn) şiirsel tek bir satır belirip kaybolur; her girişte sıradaki satır (bu cihazda sırayla döner): "Denizin her yeri derin değildir." · "Bazı geceler ada yalnız değildir." · "Kazan bazen tarifsiz de bir şey verir." · "Su, bakana başka bir yüz gösterir." · "Yıldızsız Ada'nın da yıldızlı bir gecesi vardır." · "Adada senden önce de bir ateş yanmıştı." · "Yumruk da bir dildir; Börü onu anlar." · "Ayakların ritmi tutunca ada da seninle dans eder." · "Sabır, suyun dibindekini bile yüzeye çıkarır." · "Her yabancı düşman değildir." · "Gece yarısından sonra bazı yüzler yalnızca bir kez görünür." Oyuncuya iş tarif etmez, yalnızca merak uyandırır.
 
 ### Işık kaynakları
 
@@ -6280,7 +6298,7 @@ Direnç yetenekleri eşya dirençleriyle; Dirençli beden ayrı yeteneklerin yer
 
 # Başarımlar
 
-44 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
+46 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
 
 | Başarım | Nasıl kazanılır | Not |
 |---|---|---|
@@ -6326,7 +6344,9 @@ Direnç yetenekleri eşya dirençleriyle; Dirençli beden ayrı yeteneklerin yer
 | Oyunlardaki gibi 🔒 | Ana menüde “cheat” yazdın: hile modu açıldı. | Ana menüde klavyeyle "cheat" yaz. Telefonda Ayarlar başlığına art arda 3 kez dokun (başarımın metni yanlışlıkla "ekrana 3 kez dokundun" diyor). |
 | Kehribar gözlüm 🔒 | Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1'i tamamla. | v3.20 (Boğaç): karakter yaratmada sevdiğin kişinin göz rengi **Kehribar** olmalı; ACT 1, Barbaros'un gemisiyle ikinci adaya geçince (ya da ikinci adadayken) tamamlanmış sayılır. Kazanılana kadar listede "???" ve "Gizli başarım" görünür, hiçbir ipucu verilmez. **Platin'e sayılmaz** (belli bir karakter seçimini istediği için). |
 | Denizde yürüyen 🔒 | Denizin üstünde yürü. | v3.30 (Boğaç): ACT 1 haritasında **denize hiç yürünmez**; ama her yeni oyunda rastgele bir kıyıdan denize doğru düz, 1 kare genişliğinde, **8–10 kare uzunluğunda gizli bir yol** vardır (bkz. ACT 1 › Denizdeki gizli yol). Yolun sonuna yürüyünce bayılırsın ve **Kemal'in yanında** uyanırsın; bu bir hata değil, bu başarımı kazandırır. Kazanılana kadar listede "???" ve "Gizli başarım" görünür, ipucu verilmez. **Platin'e sayılmaz** (rastgele bir yeri bulmaya bağlı). |
-| Öteki ben 🔒 | Gece beliren klonunu 5 farklı gecede gör. | v3.30 (Boğaç): bkz. Temel sistemler › Öteki sen. Kazanılana kadar "???" görünür. Platin'e sayılır (oynadıkça mutlaka çıkar). |
+| Mor ışıkta o 🔒 | Gece beliren sevdiğin kişiyi 5 farklı gecede gör. | v3.30 (Boğaç), v3.34'te kendi kopyan yerine sevdiğin kişi (eski adı Öteki ben): bkz. Temel sistemler › Mor ışıkta o. Kazanılana kadar "???" görünür. Platin'e sayılır. |
+| Görünmezlik iksiri 🔒 | Zümrüt'ün sabrını üç kez taşır. | v3.34: kazana hiçbir tarifte kullanılmayan 5 farklı malzemeyi üç kez atınca Zümrüt'ün verdiği iksiri içersin (bkz. Temel sistemler › Gizli şeyler). Platin'e sayılır. |
+| Konuk 🔒 | Mor ışığın konuklarına dokunma. | v3.34: bir mor ışık saldırısını hiç Yıldızsız öldürmeden, bayılmadan sonuna kadar geçir (bkz. Gizli şeyler). Platin'e sayılır. |
 | Platin | Bütün başarımları kazan. | **Şu an kazanılamaz:** "Yalnız dönüş" kazanılamadığı için. |
 
 
@@ -6476,7 +6496,7 @@ Sony'nin yayımladığı rehbere göre ayrıntılı sunumda olması gerekenler, 
 | Sony'nin istediği | Purple Light için |
 |---|---|
 | Kısa tanıtım ve oyunu farklı kılan şey | Hayatta kalma + üretim + hikâye; kayıp sevgilinin anıları, mor ışık gizemi, el yapımı piksel dünya. |
-| Neden PlayStation'a uygun | Kolla oynanacak biçimde tasarlandı (v3.20 oyun kolu düzeni), DualSense titreşimi, 44 başarımın kupaya dönüşmesi. |
+| Neden PlayStation'a uygun | Kolla oynanacak biçimde tasarlandı (v3.20 oyun kolu düzeni), DualSense titreşimi, 46 başarımın kupaya dönüşmesi. |
 | Ekip ve geçmiş | Boğaç (tasarım, yönetim), stüdyo bilgileri. |
 | Çalışan sürüm ya da oynanış videosu | Yayındaki oyun (https://bogacavdar.github.io/purple-light/), PC sürümü, fragman. Sony çalışan sürümü en iyi sunum sayıyor. |
 | İş soruları | Diğer platformlar (PC/Steam), hedef pazarlar, diller (Türkçe, İngilizce), iş modeli (tek seferlik satış), istenen destek, geliştirme ve pazarlama bütçesi, çıkış sonrası güncelleme planı (ACT 3). |
@@ -6494,7 +6514,7 @@ Taşırken yeniden kullanılacaklar: bu tasarım belgesi (oyunun tam tanımı), 
 
 ## PS5 için oyunda değişecekler
 
-- **Kupalar (Trophies):** 44 başarım PS5 kupalarına eşlenir; Platin zaten oyunda var. Sony'nin kupa kuralları (sayı, dağılım) DevNet'te.
+- **Kupalar (Trophies):** 46 başarım PS5 kupalarına eşlenir; Platin zaten oyunda var. Sony'nin kupa kuralları (sayı, dağılım) DevNet'te.
 - **Kontroller:** v3.20 oyun kolu düzeni (**Sistemler › Oyun kolu**) temel alınır; DualSense'in dokunmatik yüzeyi, hoparlörü, tetik direnci isteğe bağlı eklenir. Klavye/fare ekranları ve dokunmatik düğmeler kaldırılır.
 - **Kayıt:** tarayıcı kaydı yerine PS5'in kayıt sistemi; bulut kaydı.
 - **Arayüz:** televizyonda uzaktan okunabilir yazı boyları; bütün menüler kolla gezilir; ekranda tuş simgeleri PlayStation'ınki (✕ ○ □ △).

@@ -1,3 +1,8 @@
+## v3.34 (5 Kasım 2026) · easter egg'ler
+- `v334egg`: kazana çöp (`deposit` sarmalı; hiçbir tarifte geçmeyen satılabilir malzeme, 5 farklı → Zümrüt kızar, 3. kez 10 sn görünmezlik: `tickAnimals` sırasında aggro 0, `drawPlayer` %18 opak), Börü'ye 50 yumruk (`attack` sarmalı, `EQUIP["Börü'nün kemeri"]` gövde 26 + kanama %20, `ICON` elle çizildi), her 100. gece yıldızlar (`drawDarkness` sarmalı + oyuncuda 420 px ışık), eski kamp ateşi (ACT 1, Kemal'den ≥120 kare, kayıtta), ayna (10 sn hareketsiz, yüz suya), dans (1,2 sn'de 4 yön dönüşü; 20 sn → zararsız/nötr hayvanlar toplanır), inatçı balıkçı (`startFish` sarmalı, aynı yere 100 atış), Kemal 03:00 (`say` sarmalı), devam satırı (`#v334line`, `hammadde.line`). Kayıt: `v334={j,s,b,bg,f,c}`.
+- `v330klon`: artık sevdiğin kişi (mor göz, hale, zerreler, adı); başarım `klon` adı "Mor ışıkta o". `v330ys`: saldırıda öldürme sayılır (`ATK.k`); süre dolup kimse ölmediyse "Konuk". Yeni başarımlar `gorunmez`, `konuk` (localStorage bayrakları).
+- Kontrol: chk.js 0 hata; kazana çöp yolu ve kayıt alanı denendi.
+
 ## v3.33 (5 Kasım 2026) · üç toplu satış düğmesi
 - `v317spare` yeniden yazıldı: `needOf(n,ok)` öğrenilmemiş tariflerin istediği adetleri toplar; `sellsafe` = kazanda şimdi açık (`!found && (hard||isOpen)`), yeni `sellall3` = bütün öğrenilmemişler. Hariç: `bulkSellable`. Deneme: 305 Taş → bütün tariflere yeten 195 Taş kaldı.
 - "Yeni tarif öğrendin" yazısının arkasındaki siyah dikdörtgen (yalnızca Chrome masaüstü uygulamasında) bulunamadı; v3.32'deki parıltı kaldırma bir denemedir.

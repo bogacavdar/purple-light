@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.33</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.34</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.33 · 5 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Nazlı'da üç toplu satış düğmesi.</strong> Üçü de aletleri, silahları, zırhları ve alet kemerine konabilen eşyaları satmaz.<ul><li><strong>Aletler, zırhlar ve eşyalar hariç hepsini sat:</strong> satılabilen her şeyi satar.</li><li><strong>Kazandaki açık tariflere yeteni bırak:</strong> kazanda şu an öğrenebileceğin tariflerin istediği kadarını ayırır, fazlasını satar (ör. bu tarifler 19 Sap istiyorsa 19 Sap sende kalır).</li><li><strong>Bütün tariflere yeteni bırak:</strong> henüz öğrenmediğin bütün tarifler için aynısını yapar (ör. bu tarifler 300 Taş istiyor, sende 305 varsa yalnızca 5 Taş satılır).</li></ul></li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.34 · 5 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Adada yeni sırlar var.</strong> Neler olduklarını söylemiyoruz; kazanda, suyun kenarında, gece gökyüzünde ve hiç beklemediğin yerlerde bulacaksın.</li><li>Bazı gecelerde adada uzakta duran kişi artık sen değilsin: o, mor ışığın etkisinde.</li><li>Börü'nün eskiden kazandığı bir kemer var; gövdeye giyilir, arenada da seçilebilir.</li></ul><h3>Başarımlar</h3><ul><li>İki yeni gizli başarım; bir gizli başarımın adı değişti. Başarım sayısı 46 oldu.</li></ul><h3>Arayüz</h3><ul><li>Bir oyuna devam ederken ekranda kısa, tek satırlık bir söz belirir.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -11566,14 +11566,16 @@ const ACH=[
  ['dusentum','Ganimet avcısı','Canlılardan düşebilecek her eşyayı en az bir kez elde et.','Tavşan derisi',()=>{const L=allDrop();return L.length>0&&L.every(n=>IS.has(n))}],
  ['hile','Oyunlardaki gibi',(TOUCH?'Ana menüde ekrana art arda 3 kez dokundun: hile modu açıldı.':'Ana menüde “cheat” yazdın: hile modu açıldı.'),'Mor pusula',()=>{try{return localStorage.getItem('hammadde.cheatach')==='1'||localStorage.getItem('hammadde.cheatok')==='1'}catch(e){return false}}],
  // v3.30 (Boğaç): secret, walk to the end of the hidden sea path (v330sea); not counted for Platin
- ['klon','Öteki ben','Gece beliren klonunu 5 farklı gecede gördün.','Gece zambağı',()=>!!(window.__plKlonN&&window.__plKlonN()>=5)],
+ ['klon','Mor ışıkta o','Gece beliren sevdiğin kişiyi 5 farklı gecede gördün.','Gece zambağı',()=>!!(window.__plKlonN&&window.__plKlonN()>=5)],
+ ['gorunmez','Görünmezlik iksiri','Zümrüt\'ün sabrını üç kez taşırdın.','Mor yosun',()=>{try{return localStorage.getItem('hammadde.gorunmez')==='1'}catch(e){return false}}],
+ ['konuk','Konuk','Mor ışığın konuklarına dokunmadın.','Mor kıymık',()=>{try{return localStorage.getItem('hammadde.konuk')==='1'}catch(e){return false}}],
  ['deniz','Denizde yürüyen','Denizin üstünde yürüdün.','Mor yosun',()=>{try{return localStorage.getItem('hammadde.denizach')==='1'}catch(e){return false}}],
  // v3.20 (Boğaç): secret, and not counted for Platin (it needs one particular choice in the creator)
  ['kehribar','Kehribar gözlüm','Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1\'i tamamla.','Kehribar kolye',()=>{try{const D=window.__plDz&&window.__plDz.D;return LOOK.love.eye==='#a6620c'&&(ISLE===2||!!(D&&D.act2))}catch(e){return false}}],
  ['platin','Platin','Bütün başarımları kazan.','*platin',()=>ACH.every(a=>NOPLAT.has(a[0])||got[a[0]])]];
 const NOPLAT=new Set(['platin','kehribar','deniz']);
 // v100: secret ones show ??? until won; the rest show their name and what to do, greyed. PROG: [now, goal] for a bar
-const SECRET=new Set(['iz','ani','ejder','levent','roket','act2','iyison','kotuson','hile','kaya','kopru','kehribar','deniz','klon']);
+const SECRET=new Set(['iz','ani','ejder','levent','roket','act2','iyison','kotuson','hile','kaya','kopru','kehribar','deniz','klon','gorunmez','konuk']);
 const fl=()=>found.length,dd=()=>day,bk=()=>bossKinds();
 const PROG={tarif1:()=>[fl(),1],tarif25:()=>[fl(),25],tarif100:()=>[fl(),100],tarif250:()=>[fl(),250],tariftum:()=>[cnt(DB.R,x=>foundSet.has(x.r)),DB.R.length],
  hafta:()=>[dd(),7],ay:()=>[dd(),30],gece1:()=>[dd()-1,1],lvl10:()=>[lvl,10],lvl25:()=>[lvl,25],balik:()=>[fishTotal,10],kurt:()=>[k_('Kurt'),10],
@@ -19225,7 +19227,7 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
   if(hit(9))tap('Escape');if(hit(8))tap('map');
   if(hit(12))tap('handcraft');if(hit(13))tap('inv');if(hit(14))tap('book');if(hit(15))tap('quests')}
 let blockK=false;
-{const _dp=drawPlayer;drawPlayer=function(){if(RS&&!onTitle&&!window.__plKlonDraw)player.face=Math.abs(RS.x)>=Math.abs(RS.y)?{x:Math.sign(RS.x)||1,y:0}:{x:0,y:Math.sign(RS.y)||1};return _dp.apply(this,arguments)}}   // v3.32: face where the right stick aims
+{const _dp=drawPlayer;drawPlayer=function(){if(RS&&!onTitle)player.face=Math.abs(RS.x)>=Math.abs(RS.y)?{x:Math.sign(RS.x)||1,y:0}:{x:0,y:Math.sign(RS.y)||1};return _dp.apply(this,arguments)}}   // v3.32: face where the right stick aims
 function start(){if(!P.raf)P.raf=requestAnimationFrame(tick)}
 addEventListener('gamepadconnected',()=>{P.on=true;start();toast('Oyun kolu bağlandı: sol çubuk yürü · A topla/konuş · X ya da RT vur · B atıl · LT gard · Y ye · R3 ulti · Start duraklat. Bütün düzen Ayarlar → Kontroller\'de.');renderHelp()});
 addEventListener('gamepaddisconnected',()=>{releaseAll();setTimeout(()=>{let any=false;try{any=Array.prototype.slice.call(navigator.getGamepads()||[]).some(x=>x&&x.connected)}catch(e){}if(!any){P.used=false;document.body.classList.remove('padmode');toast('Oyun kolu ayrıldı',true)}renderHelp()},50)});
@@ -19633,8 +19635,8 @@ setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);las
 }).toString()+')()')}catch(e){try{window.__hamErr('v330dev: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v330klon">
-// v3.30 (Boğaç): some nights an exact copy of your character stands a little way off and watches you; walk towards it and it is gone.
-// Seen on 5 different nights (counted on the device) → the secret "Öteki ben" achievement.
+// v3.30 (Boğaç): some nights someone stands a little way off and watches you; walk towards them and they are gone (v3.34: the one you love, under the purple light).
+// Seen on 5 different nights (counted on the device) → the secret "Mor ışıkta o" achievement.
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
 const KN='hammadde.klonN';
@@ -19647,7 +19649,7 @@ const busy=()=>onTitle||window.__plArena||!met||wake||fading||sailing||dlgOpen||
 function spot(){const vW=vw/S,vH=vh/S;for(let k=0;k<60;k++){const a=Math.random()*6.283,r=100+Math.random()*40,x=player.x+Math.cos(a)*r,y=player.y+Math.sin(a)*r;
   const sx=x-cam.cx,sy=y-cam.cy;if(sx<14||sx>vW-14||sy<30||sy>vH-10)continue;
   if(!reachAt(x,y)||isWater(tileAt(x,y)))continue;try{if(blocked(x,y))continue}catch(e){continue}return{x,y}}return null}
-function gone(puff){if(!C.on)return;C.on=false;if(puff)for(let k=0;k<10;k++)parts.push({x:C.x+(Math.random()-.5)*8,y:C.y-6-Math.random()*10,vx:(Math.random()-.5)*30,vy:-10-Math.random()*20,life:.45,c:k%2?'#1a1420':'#3a2c48'})}
+function gone(puff){if(!C.on)return;C.on=false;if(puff)for(let k=0;k<10;k++)parts.push({x:C.x+(Math.random()-.5)*8,y:C.y-6-Math.random()*10,vx:(Math.random()-.5)*30,vy:-10-Math.random()*20,life:.45,c:k%2?'#c070ff':'#5a2a8a'})}
 let last=performance.now();
 setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);last=now;try{
   const nm=nightMin();
@@ -19662,12 +19664,13 @@ setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);las
   if(d<C.d0-14||C.age>25)gone(true)}catch(e){}},100);
 {const _ls=lightSources;lightSources=function(){const L=_ls.apply(this,arguments);try{if(C.on&&!onTitle)return L.concat([[C.x,C.y-6,40]])}catch(e){}return L}}
 {const _dg=drawGoal;drawGoal=function(time_){const r=_dg.apply(this,arguments);try{if(C.on&&!onTitle){
-  // the very same drawing as the player: swap the player's place and facing for a moment
-  const px0=player.x,py0=player.y,fx0=player.face.x,fy0=player.face.y,mv0=player.mv,st0=player.step;
-  const dx=px0-C.x,dy=py0-C.y;let fx=0,fy=1;if(Math.abs(dx)>Math.abs(dy))fx=dx>0?1:-1;else{fx=0;fy=dy>0?1:-1}
-  try{window.__plKlonDraw=1;player.x=C.x;player.y=C.y;player.face.x=fx;player.face.y=fy;player.mv=false;player.step=0;ctx.save();ctx.globalAlpha=Math.min(1,C.age/.25);drawPlayer();ctx.restore()}
-  finally{window.__plKlonDraw=0;player.x=px0;player.y=py0;player.face.x=fx0;player.face.y=fy0;player.mv=mv0;player.step=st0}
-  if(heroName){ctx.save();ctx.font='bold 7px sans-serif';ctx.textAlign='center';ctx.fillStyle='rgba(0,0,0,.7)';ctx.fillText(heroName,Math.round(C.x)+1,Math.round(C.y)-25);ctx.fillStyle='#f3ead2';ctx.fillText(heroName,Math.round(C.x),Math.round(C.y)-26);ctx.restore()}}}catch(e){}return r}}
+  // v3.34 (Boğaç): not a copy of you any more: the one you love, as if under the purple light (purple eyes, a purple halo, rising motes)
+  const x=Math.round(C.x),y=Math.round(C.y),a=Math.min(1,C.age/.25),fx=player.x<C.x-2?-1:player.x>C.x+2?1:0,LV=Object.assign({},LOOK.love,{eye:'#d070ff'});
+  ctx.save();ctx.globalAlpha=a*(.35+.15*Math.sin(time_*3));const gr=ctx.createRadialGradient(x,y-14,1,x,y-14,15);gr.addColorStop(0,'rgba(210,120,255,.9)');gr.addColorStop(1,'rgba(150,60,230,0)');ctx.fillStyle=gr;ctx.beginPath();ctx.arc(x,y-14,15,0,6.283);ctx.fill();ctx.restore();
+  ctx.save();ctx.globalAlpha=a;drawChibi(ctx,x,y,LV,{fx});ctx.restore();
+  ctx.save();ctx.globalAlpha=a*(.6+.4*Math.sin(time_*6));px(x-3,y-11,2,1,'#f0c0ff');px(x+1,y-11,2,1,'#f0c0ff');ctx.restore();
+  for(let k=0;k<6;k++){const ph=(time_*.8+k/6)%1;px(x+Math.round(Math.sin(k*2.1+time_)*8),y-4-Math.round(ph*26),1,1,k%2?'#e0b0ff':'#a050ff')}
+  if(loveName){ctx.save();ctx.font='bold 7px sans-serif';ctx.textAlign='center';ctx.fillStyle='rgba(0,0,0,.7)';ctx.fillText(loveName,x+1,y-25);ctx.fillStyle='#e8c8ff';ctx.fillText(loveName,x,y-26);ctx.restore()}}}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v330klon: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v330ys">
@@ -19711,10 +19714,12 @@ function start(){const w=weapon(),P=Math.max(6,w&&w.dmg||0,WDMG[equip.silah]||0)
   const n=Math.max(4,Math.min(12,4+Math.floor(day/5)+Math.floor(lvl/6))),list=pickKinds(n);
   ATK={x:player.x,y:player.y,R:256,t:0,pend:[],w2:list.slice(Math.ceil(n/2)),w2done:false,a:0};queue(ATK,list.slice(0,Math.ceil(n/2)));
   S.cnt++;try{announce('Mor ışık saldırısı!','Yıldızsızlar geliyor')}catch(e){}try{sfx('bad');sfx('growl')}catch(e){}shake=Math.max(shake||0,.45);shakeP=Math.max(shakeP||0,3)}
-function end(win){if(!ATK)return;const C=ATK;ATK=null;FADE={x:C.x,y:C.y,R:C.R,t:1};
+function end(win,timeUp){if(!ATK)return;const C=ATK;ATK=null;FADE={x:C.x,y:C.y,R:C.R,t:1};
+  // v3.34 (Boğaç): nobody hurt, nobody fainted, the whole raid through: they wave and go (secret "Konuk")
+  const calm=!win&&timeUp&&!C.k&&!fading;if(calm){for(const a of animals)if(a.ysA)floats.push({x:a.x,y:a.y-22,t:0,text:'~',color:'#e0b0ff',size:14});try{localStorage.setItem('hammadde.konuk','1')}catch(e){}try{window.__plAch.grant('konuk')}catch(e){}}
   for(let i=animals.length-1;i>=0;i--){const a=animals[i];if(!a.ysA)continue;for(let k=0;k<8;k++)parts.push({x:a.x,y:a.y-6,vx:(Math.random()-.5)*14,vy:-40-Math.random()*40,life:.7,c:k%2?'#c070ff':'#f0d8ff'});animals.splice(i,1)}
   S.next=seqFrom(day+3);
-  if(!fading)try{announce('Mor ışık çekildi',win?'Yıldızsızlar yenildi':'Yıldızsızlar geri çekildi')}catch(e){}}
+  if(!fading)try{if(calm)announce('Konuk','Yıldızsızlar el salladı');else announce('Mor ışık çekildi',win?'Yıldızsızlar yenildi':'Yıldızsızlar geri çekildi')}catch(e){}}
 let last=performance.now();
 setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);last=now;try{
   if(FADE&&!paused){FADE.t-=dt;if(FADE.t<=0)FADE=null}
@@ -19730,11 +19735,12 @@ setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);las
     animals.push({k:q.k,x:q.x,y:q.y,hp:D.hp,st:'chase',t:0,dx:0,dy:0,face:player.x>q.x?1:-1,atk:0,flash:0,kb:null,step:Math.random()*6,mad:true,pk:0,ysA:1});
     for(let k=0;k<10;k++)parts.push({x:q.x,y:q.y-4,vx:(Math.random()-.5)*50,vy:-10-Math.random()*30,life:.5,c:k%2?'#c070ff':'#ffe0ff'})}
   if(!C.w2done&&((alive().length<=1&&!C.pend.length)||C.t>20)){C.w2done=true;queue(C,C.w2)}
-  if(Math.hypot(player.x-C.x,player.y-C.y)>C.R+80||C.t>240){end(false);return}
+  if(Math.hypot(player.x-C.x,player.y-C.y)>C.R+80){end(false);return}
+  if(C.t>240){end(false,true);return}
   if(C.w2done&&!C.pend.length&&!alive().length)end(true)}catch(e){}},100);
 // a Yıldızsız falling drops sikke straight into your purse
 {const _ka=killAnimal;killAnimal=function(a){const D=a&&ANIM[a.k],ys=!!(D&&D.ys),x=a&&a.x,y=a&&a.y;const r=_ka.apply(this,arguments);
-  if(ys){try{const d=YD[a.k],base=d.coin[0]+Math.floor(Math.random()*(d.coin[1]-d.coin[0]+1)),n=Math.max(1,Math.round(base*(1+day*.03)*(1+lvl*.04)));
+  if(ys){try{if(ATK)ATK.k=(ATK.k||0)+1}catch(e){}try{const d=YD[a.k],base=d.coin[0]+Math.floor(Math.random()*(d.coin[1]-d.coin[0]+1)),n=Math.max(1,Math.round(base*(1+day*.03)*(1+lvl*.04)));
     if(!window.__plInf)coins+=n;for(let k=0;k<12;k++)parts.push({x:x,y:y-6,vx:(Math.random()-.5)*50,vy:-30-Math.random()*40,life:.7,c:k%3?'#ffd84a':'#fff4b0'});
     sfx('coin');toast(`${a.k} yenildi · +${n.toLocaleString('tr-TR')} sikke`);renderInv()}catch(e){}}
   return r}}
@@ -19839,5 +19845,113 @@ body.plmodal #discover{animation:v332found 2.4s ease-out forwards!important}
 @keyframes v332found{0%{opacity:0}10%{opacity:1}80%{opacity:1}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){body.plmodal #discover{animation:none!important}}
 </style>
+<script id="v334egg">
+// v3.34 (Boğaç): hidden things nobody tells you about: junk in Zümrüt's cauldron (and her invisibility brew), beating Börü with
+// bare fists (his belt), stars on every 100th night, an old campfire with your name, your love's face in the water, dancing,
+// the stubborn angler's old fish, Kemal at 3 a.m., and a line of poetry each time you continue a game.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const E={j:[],s:0,b:0,bg:0,f:0,c:null};          // junk thrown (distinct), scoldings, Börü punches, belt given, fish met, campfire place
+const now=()=>performance.now();
+// ---------------------------------------------------------------- save
+function fresh(){E.j=[];E.s=0;E.b=0;E.bg=0;E.f=0;E.c=null;camp()}
+{const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{s.v334={j:E.j.slice(),s:E.s,b:E.b,bg:E.bg,f:E.f,c:E.c}}catch(e){}return s}}
+try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}
+{const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{const v=d&&d.v334;fresh();if(v){E.j=Array.isArray(v.j)?v.j.filter(n=>typeof n==='string'):[];E.s=+v.s||0;E.b=+v.b||0;E.bg=+v.bg||0;E.f=+v.f||0;if(v.c&&+v.c.x>0)E.c={x:+v.c.x,y:+v.c.y}}if(!E.c)camp()}catch(e){}return r}}
+{const _rz=resetState;resetState=function(){const r=_rz.apply(this,arguments);try{fresh()}catch(e){}return r}}
+// ---------------------------------------------------------------- 1 · junk in the cauldron → Zümrüt scolds; the third time, invisibility
+const junk=n=>!!n&&inv[n]>0&&!(USES.get(n)&&USES.get(n).size)&&!recUses(n).length&&bulkSellable(n);
+let INV=0;
+const invisible=()=>INV>now();
+function brewInvisible(){INV=now()+10000;try{localStorage.setItem('hammadde.gorunmez','1')}catch(e){}try{window.__plAch.grant('gorunmez')}catch(e){}
+  for(let k=0;k<16;k++)parts.push({x:player.x+(Math.random()-.5)*14,y:player.y-8-Math.random()*12,vx:(Math.random()-.5)*30,vy:-20-Math.random()*20,life:.8,c:k%2?'#c070ff':'#e8d8ff'});sfx('magic')}
+function scold(){E.s++;const k=E.s;
+  if(k===3){closeCraft();say('Peki, peki… Madem bu kadar meraklısın. Bak, senin çöplerinden tuhaf bir şey kaynadı. Al iç bakalım… Aaa! Neredesin evlat?!',[{t:'…',pri:1,fresh:1,f:()=>{bye();brewInvisible()}}],witch);return}
+  const L=['Evlat! Ne yapıyorsun? Kazanım çöp tenekesi değil! Attığın her şey duman oldu.','Yine mi?! Bu kazan bana ninemden kaldı, evlat! Bir daha görmeyeyim.'];
+  closeCraft();say(L[(k===1||k>3&&k%2===0)?0:1],[{t:'Özür dilerim',pri:1,fresh:1,f:bye}],witch)}
+{const _dp=deposit;deposit=function(n){try{if(mode==='craft'&&station!=='forge'&&potMode!=='dene'&&junk(n)){
+  inv[n]--;if(E.j.indexOf(n)<0)E.j.push(n);potFx=now()+700;sfx('craft');msg(`${n} kazanda kaynadı… mor bir duman yükseldi.`,'bad');renderInv();renderCraft();
+  if(E.j.length>=5){E.j=[];setTimeout(scold,500)}return 0}}catch(e){}return _dp.apply(this,arguments)}}
+// invisible: drawn faint; creatures lose you (no chase, no blow, no throw)
+{const _ta=tickAnimals;tickAnimals=function(){if(!invisible())return _ta.apply(this,arguments);const keep={};
+  for(const k in ANIM){keep[k]=ANIM[k].aggro;ANIM[k].aggro=0}for(const a of animals){a.mad=false;a.wind=0;a.lunge=null;if(a.st==='chase')a.st='wander'}
+  try{return _ta.apply(this,arguments)}finally{for(const k in keep)ANIM[k].aggro=keep[k]}}}
+// ---------------------------------------------------------------- 2 · fifty bare-fisted blows on Börü → his belt
+const BELT='Börü\'nün kemeri';
+EQUIP[BELT]={s:'govde',def:26,c:'#7a5230',res:{kanama:.2}};
+if(PRICE[BELT]==null)PRICE[BELT]=140;
+{const c=document.createElement('canvas');c.width=16;c.height=16;const g=c.getContext('2d');const p=(x,y,w,h,col)=>{g.fillStyle=col;g.fillRect(x,y,w,h)};
+ p(1,6,14,4,'#1a1008');p(2,7,12,2,'#7a5230');p(2,7,12,1,'#a07040');p(6,5,5,6,'#1a1008');p(7,6,3,4,'#c8a050');p(8,7,1,2,'#7a5230');p(3,8,1,1,'#3a2414');p(12,8,1,1,'#3a2414');ICON[BELT]=c.toDataURL()}
+let lastHit=0;
+{const _at=attack;attack=function(){const r=_at.apply(this,arguments);try{
+  if(onTitle||!alp||window.__plArena)return r;const w=weapon();if(w.n||w.torch||Math.hypot(player.x-alp.x,player.y-alp.y)>28)return r;
+  const t=now();if(t-lastHit<200)return r;lastHit=t;E.b++;floats.push({x:alp.x,y:alp.y-18,t:0,text:String(E.b),color:'#ffd27a',size:9});
+  if(E.b>=50){E.b=0;if(!E.bg){E.bg=1;say('Tamam, tamam! Pes ediyorum! Yumrukların taş gibi olmuş evlat. Al, bu kemeri gençliğimde bir ayıdan kazanmıştım. Artık senin.',[{t:'Sağ ol, Börü',pri:1,fresh:1,f:()=>{bye();gain(BELT);sfx('found');announce(BELT,'Börü pes etti');renderInv()}}],alp)}
+    else say('Yine mi? Kemerimi aldın ya! Git bir ağaca vur.',[{t:'Tamam',pri:1,fresh:1,f:bye}],alp)}}catch(e){}return r}}
+// ---------------------------------------------------------------- 3 · every 100th night the stars come out
+const starNight=()=>(dayT>=1200&&day%100===0)||(dayT<360&&day>1&&(day-1)%100===0);
+let starTold=-1;
+{const _ls=lightSources;lightSources=function(){const L=_ls.apply(this,arguments);try{if(starNight()&&!onTitle&&!(window.__plCave&&window.__plCave.cur))return L.concat([[player.x,player.y-6,420]])}catch(e){}return L}}
+{const _dd=drawDarkness;drawDarkness=function(){const r=_dd.apply(this,arguments);try{if(!starNight()||onTitle||(window.__plCave&&window.__plCave.cur))return r;
+  const W_=cv.width,H_=cv.height,t=now()/1000;ctx.save();ctx.setTransform(1,0,0,1,0,0);
+  for(let k=0;k<120;k++){const x=(k*733)%W_,y=(k*389)%H_,tw=.35+.65*Math.abs(Math.sin(t*(1+k%5*.3)+k));ctx.globalAlpha=tw;ctx.fillStyle=k%7?'#ffffff':'#d8b0ff';const z=k%9?2:3;ctx.fillRect(x,y,z,z)}
+  ctx.restore();if(starTold!==day&&dayT>=1200){starTold=day;try{announce('Gökyüzünde yıldızlar…','Yıldızsız Ada\'da bir gece')}catch(e){}}}catch(e){}return r}}
+// ---------------------------------------------------------------- 4 · an old campfire far away, a stone with your name on it
+function camp(){E.c=null;if(ISLE!==1)return;for(let k=0;k<3000;k++){const x=(Math.random()*W)|0,y=(Math.random()*H)|0,i=y*W+x;if(reach[i]!==1||isWater(tiles[i]))continue;
+  const px_=x*T+8,py_=y*T+8;if(Math.hypot(px_-npc.home.x,py_-npc.home.y)<120*T)continue;try{if(blocked(px_,py_)||blocked(px_+14,py_)||blocked(px_-14,py_))continue}catch(e){continue}E.c={x:px_,y:py_};return}}
+let campSaid=0;
+// ---------------------------------------------------------------- 5 · the mirror, 6 · the dance (state)
+let still=0,lx=0,ly=0,MIR=null,mirNext=0;
+let D={flips:[],fx:0,until:0,acc:0,fromX:0,fromY:0};
+const dancing=()=>D.until>now();
+setInterval(()=>{try{if(onTitle||paused||fading||wake)return;const dt=.1;
+  // the campfire: a thought when you come near
+  if(E.c&&Math.hypot(player.x-E.c.x,player.y-E.c.y)<40&&now()>campSaid){campSaid=now()+60000;bubble={text:`Bu taşa… benim adım kazınmış: ${heroName||'…'}. Ben buraya ne zaman geldim?`,t:5}}
+  // mirror: ten seconds still, facing water
+  const moved=Math.hypot(player.x-lx,player.y-ly)>.5;lx=player.x;ly=player.y;
+  if(moved||dlgOpen||craftOpen)still=0;else still+=dt;
+  if(!MIR&&still>=10&&now()>mirNext){const f=player.face||{x:0,y:1};for(const r of [14,22,30]){const wx=player.x+(f.x||0)*r,wy=player.y+(f.y||0)*r+(f.y?0:4);
+    if(isWater(tileAt(wx,wy))&&!onBridge(wx,wy)&&!(window.__plSeaPath&&window.__plSeaPath(wx,wy))){MIR={x:wx,y:wy,t0:now()};mirNext=now()+120000;break}}}
+  if(MIR&&now()-MIR.t0>3000)MIR=null;
+  // dance: four quick turns left/right, barely moving
+  const fx=player.face&&player.face.x||0;
+  if(fx&&fx!==D.fx&&D.fx){D.flips.push(now());if(D.flips.length===1){D.fromX=player.x;D.fromY=player.y}}
+  if(fx)D.fx=fx;D.flips=D.flips.filter(t=>now()-t<1200);
+  if(D.flips.length>=4&&Math.hypot(player.x-D.fromX,player.y-D.fromY)<24){D.until=now()+2000;D.flips=[];D.fromX=player.x;D.fromY=player.y}
+  if(dancing()){D.acc+=dt;if(Math.random()<.25)floats.push({x:player.x+(Math.random()-.5)*14,y:player.y-22,t:0,text:'♪',color:'#e8d8ff',size:10});
+    if(D.acc>=20)for(const a of animals){const A=ANIM[a.k];if(!A||A.temper==='saldırgan'||a.ysA)continue;const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy);if(d>300||d<26)continue;
+      a.mad=false;a.st='wander';a.dx=0;a.dy=0;const nx=a.x+dx/d*40*dt,ny=a.y+dy/d*40*dt;if(!blocked(nx,ny)){a.x=nx;a.y=ny;a.face=dx>0?1:-1}}}
+  else D.acc=0}catch(e){}},100);
+// drawing: invisible (faint), dancing (sway and hop)
+{const _dp=drawPlayer;drawPlayer=function(){const inv_=invisible(),dc=dancing();if(!inv_&&!dc)return _dp.apply(this,arguments);
+  ctx.save();if(inv_)ctx.globalAlpha=.18;if(dc){const t=now()/1000,x=player.x,y=player.y;ctx.translate(x,y);ctx.rotate(Math.sin(t*9)*.18);ctx.translate(-x,-y-Math.abs(Math.sin(t*9))*3)}
+  try{return _dp.apply(this,arguments)}finally{ctx.restore()}}}
+// the old campfire and the face in the water
+{const _db=drawBridge;drawBridge=function(time_,inView){_db.apply(this,arguments);try{if(onTitle)return;
+  if(E.c&&inView(E.c.x,E.c.y,40)){const x=Math.round(E.c.x),y=Math.round(E.c.y);
+    ctx.fillStyle='rgba(40,34,30,.55)';ctx.beginPath();ctx.ellipse(x,y,10,5,0,0,6.283);ctx.fill();
+    for(let k=0;k<8;k++){const a=k/8*6.283;px(x+Math.round(Math.cos(a)*10)-1,y+Math.round(Math.sin(a)*5)-1,3,2,k%2?'#5a5650':'#3a3632')}
+    px(x-5,y-1,10,2,'#2a1a10');px(x-3,y-2,6,1,'#4a3a2a');px(x-1,y-1,2,1,'#6a6a6a');
+    px(x+15,y-9,9,10,'#3a3a40');px(x+16,y-10,7,1,'#5a5a62');px(x+16,y-9,7,9,'#6a6a72');for(let k=0;k<5;k++)px(x+17+(k%3)*2,y-7+Math.floor(k/3)*3,1,2,'#2a2a30')}
+  if(MIR){const k=Math.min(1,(now()-MIR.t0)/600,(3000-(now()-MIR.t0))/600),x=Math.round(MIR.x),y=Math.round(MIR.y)+10;
+    ctx.save();ctx.globalAlpha=Math.max(0,k)*.5;ctx.translate(x+Math.sin(time_*4)*1.5,y);ctx.scale(1,-1);drawChibi(ctx,0,0,LOOK.love,{noShadow:1,fx:0});ctx.restore()}}catch(e){}}}
+// ---------------------------------------------------------------- 7 · the stubborn angler
+const F={p:null,n:0};
+{const _sf=startFish;startFish=function(w){const was=!!fish;const r=_sf.apply(this,arguments);try{if(!was&&fish&&w&&!E.f){
+  if(F.p&&Math.hypot(w.x-F.p.x,w.y-F.p.y)<24)F.n++;else{F.p={x:w.x,y:w.y};F.n=1}
+  if(F.n>=100){E.f=1;const at={x:w.x,y:w.y};setTimeout(()=>{try{for(let k=0;k<14;k++)parts.push({x:at.x,y:at.y,vx:(Math.random()-.5)*50,vy:-30-Math.random()*40,life:.7,c:k%2?'#9fd0f0':'#ffffff'});
+    sayV('Yüz kez! Yüz kez aynı yere attın oltayı! Ben bu suyun en yaşlısıyım; seni artık tanıyorum. Ama beni yakalayamazsın, inatçı. Hoşça kal!',[{t:'…',pri:1,fresh:1,f:bye}],'Yaşlı balık','Alabalık','#7fb8e0')}catch(e){}},700)}}}catch(e){}return r}}
+// ---------------------------------------------------------------- 8 · Kemal at three in the morning (the device's clock)
+let told3=false;
+{const _say=say;say=function(text,ch,who){try{if(!told3&&(!who||who===npc)&&new Date().getHours()===3&&typeof text==='string'){told3=true;text='Bu saatte uyanık mısın evlat? Git yat.<br><br>'+text}}catch(e){}return _say.call(this,text,ch,who)}}
+// ---------------------------------------------------------------- 9 · a line each time you continue a game
+const LINES=['Denizin her yeri derin değildir.','Bazı geceler ada yalnız değildir.','Kazan bazen tarifsiz de bir şey verir.','Su, bakana başka bir yüz gösterir.','Yıldızsız Ada\'nın da yıldızlı bir gecesi vardır.','Adada senden önce de bir ateş yanmıştı.','Yumruk da bir dildir; Börü onu anlar.','Ayakların ritmi tutunca ada da seninle dans eder.','Sabır, suyun dibindekini bile yüzeye çıkarır.','Her yabancı düşman değildir.','Gece yarısından sonra bazı yüzler yalnızca bir kez görünür.'];
+{const st=document.createElement('style');st.textContent='#v334line{position:fixed;left:50%;top:30%;transform:translateX(-50%);z-index:40;pointer-events:none;font-style:italic;font-size:clamp(16px,2.2vw,24px);color:#ecdcff;text-shadow:0 2px 6px #000,0 0 18px rgba(150,60,230,.6);text-align:center;max-width:90vw;opacity:0;transition:opacity 1s}#v334line.on{opacity:1}';document.head.appendChild(st)}
+const lineEl=document.createElement('div');lineEl.id='v334line';lineEl.setAttribute('aria-hidden','true');document.body.appendChild(lineEl);
+{const b=$('t-cont');if(b)b.addEventListener('click',()=>{let i=0;try{i=(+(localStorage.getItem('hammadde.line')||0)||0)%LINES.length;localStorage.setItem('hammadde.line',String(i+1))}catch(e){}
+  setTimeout(()=>{lineEl.textContent=LINES[i];lineEl.classList.add('on');setTimeout(()=>lineEl.classList.remove('on'),4000)},2600)})}
+fresh();
+}).toString()+')()')}catch(e){try{window.__hamErr('v334egg: '+(e&&e.message||e))}catch(_){}}})();
+</script>
 </body>
 </html>

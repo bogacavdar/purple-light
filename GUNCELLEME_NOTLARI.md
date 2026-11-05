@@ -8,6 +8,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.34 · 5 Kasım 2026
+
+### Oynanış
+- **Adada yeni sırlar var.** Neler olduklarını söylemiyoruz; kazanda, suyun kenarında, gece gökyüzünde ve hiç beklemediğin yerlerde bulacaksın.
+- Bazı gecelerde adada uzakta duran kişi artık sen değilsin: o, mor ışığın etkisinde.
+- Börü'nün eskiden kazandığı bir kemer var; gövdeye giyilir, arenada da seçilebilir.
+
+### Başarımlar
+- İki yeni gizli başarım; bir gizli başarımın adı değişti. Başarım sayısı 46 oldu.
+
+### Arayüz
+- Bir oyuna devam ederken ekranda kısa, tek satırlık bir söz belirir.
+
+### Tasarım belgesi
+- Temel sistemler'e "Gizli şeyler" bölümü; "Mor ışıkta o" bölümü ve Başarımlar güncellendi.
+
+---
+
 ## Versiyon 3.33 · 5 Kasım 2026
 
 ### Oynanış

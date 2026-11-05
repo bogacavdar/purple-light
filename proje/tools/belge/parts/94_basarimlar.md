@@ -1,6 +1,6 @@
 # Başarımlar
 
-44 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
+46 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
 
 | Başarım | Nasıl kazanılır | Not |
 |---|---|---|
@@ -46,5 +46,7 @@
 | Oyunlardaki gibi 🔒 | Ana menüde “cheat” yazdın: hile modu açıldı. | Ana menüde klavyeyle "cheat" yaz. Telefonda Ayarlar başlığına art arda 3 kez dokun (başarımın metni yanlışlıkla "ekrana 3 kez dokundun" diyor). |
 | Kehribar gözlüm 🔒 | Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1'i tamamla. | v3.20 (Boğaç): karakter yaratmada sevdiğin kişinin göz rengi **Kehribar** olmalı; ACT 1, Barbaros'un gemisiyle ikinci adaya geçince (ya da ikinci adadayken) tamamlanmış sayılır. Kazanılana kadar listede "???" ve "Gizli başarım" görünür, hiçbir ipucu verilmez. **Platin'e sayılmaz** (belli bir karakter seçimini istediği için). |
 | Denizde yürüyen 🔒 | Denizin üstünde yürü. | v3.30 (Boğaç): ACT 1 haritasında **denize hiç yürünmez**; ama her yeni oyunda rastgele bir kıyıdan denize doğru düz, 1 kare genişliğinde, **8–10 kare uzunluğunda gizli bir yol** vardır (bkz. ACT 1 › Denizdeki gizli yol). Yolun sonuna yürüyünce bayılırsın ve **Kemal'in yanında** uyanırsın; bu bir hata değil, bu başarımı kazandırır. Kazanılana kadar listede "???" ve "Gizli başarım" görünür, ipucu verilmez. **Platin'e sayılmaz** (rastgele bir yeri bulmaya bağlı). |
-| Öteki ben 🔒 | Gece beliren klonunu 5 farklı gecede gör. | v3.30 (Boğaç): bkz. Temel sistemler › Öteki sen. Kazanılana kadar "???" görünür. Platin'e sayılır (oynadıkça mutlaka çıkar). |
+| Mor ışıkta o 🔒 | Gece beliren sevdiğin kişiyi 5 farklı gecede gör. | v3.30 (Boğaç), v3.34'te kendi kopyan yerine sevdiğin kişi (eski adı Öteki ben): bkz. Temel sistemler › Mor ışıkta o. Kazanılana kadar "???" görünür. Platin'e sayılır. |
+| Görünmezlik iksiri 🔒 | Zümrüt'ün sabrını üç kez taşır. | v3.34: kazana hiçbir tarifte kullanılmayan 5 farklı malzemeyi üç kez atınca Zümrüt'ün verdiği iksiri içersin (bkz. Temel sistemler › Gizli şeyler). Platin'e sayılır. |
+| Konuk 🔒 | Mor ışığın konuklarına dokunma. | v3.34: bir mor ışık saldırısını hiç Yıldızsız öldürmeden, bayılmadan sonuna kadar geçir (bkz. Gizli şeyler). Platin'e sayılır. |
 | Platin | Bütün başarımları kazan. | **Şu an kazanılamaz:** "Yalnız dönüş" kazanılamadığı için. |

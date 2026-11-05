@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.33** ile birebir (5 Kasım 2026). Bu sürümde: Nazlı'da üç toplu satış düğmesi (hepsini sat; kazandaki açık tariflere yeteni bırak; bütün tariflere yeteni bırak).
+Sürüm: **Versiyon 3.34** ile birebir (5 Kasım 2026). Bu sürümde: gizli şeyler (kazana çöp ve görünmezlik iksiri, Börü'nün kemeri, 100. gecede yıldızlar, eski kamp ateşi, ayna, dans, inatçı balıkçı, barışçı saldırı, gece 03:00, devam ederken bir satır); gece beliren sevdiğin kişi (mor ışıkta); iki yeni gizli başarım.
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
