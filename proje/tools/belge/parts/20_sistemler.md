@@ -102,6 +102,12 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - **Gündüz olunca gece canlıları gider (v2.33, Boğaç):** yalnızca gece çıkan canlılar (Kurt gibi) sabah olunca (06:00) artık kalmaz: kovalamayı bırakır, senden uzağa koşar ve 300 pikselden uzaklaşınca ya da en geç **6 saniye** sonra toz bulutuyla kaybolur. Eskiden yalnızca ekranın çok dışındakiler kayboluyor, yakındakiler gündüz de kalıyordu. Reis'ler ve yan görev canavarları bu kurala girmez (görev bitene kadar kalırlar).
 - **Güvenli yerlere canavar girmez (v2.22):** kavga edebilen canlılar (*saldırgan* ve *nötr*, Reisler dahil) aşağıdaki güvenli yerlerin sınırında durur, içeri **adım atmaz**; kişilerin yanına gelemez. Seni kovalarken sen güvenli yere girersen sınırda kalır, sonra vazgeçer. Bir şekilde içerde kalmış biri (ör. hücum ya da sıçrama ile) en yakın kenardan dışarı yürür. *Zararsız* canlılar (tavşan, geyik…) eskisi gibi dolaşır. Börü'nün ders canlıları ve arena bu kuraldan muaf.
 
+### Boğaç, gece beliren yazılımcı (v3.30, Boğaç)
+
+- **Her gece** (20:00–06:00) gecenin rastgele bir anında, haritanın (o anki adanın) rastgele bir yerinde, yürünebilen bir karada **Boğaç** adında bir yazılımcı belirir ve yalnızca **15 saniye** kalır (gerçek saniye; oyun duraklatılınca sayaç da durur), sonra kaybolur. Bir gecede bir kez çıkar; uyuyarak geçen gecede çıkmaz. Haritada ya da hiçbir yerde işareti, ipucu yoktur.
+- **Görünüşü:** varsayılan erkek karaktere benzer (kahve saç, açık ten, mavi pantolon) ama koyu gri tişörtlü ve **kare gözlüklüdür**. Belirirken ve kaybolurken çevresinde kısa bir mor parıltı olur. Konuşma kutusunda kendi resmi görünür.
+- Yanına varınca (yaklaşık 22 piksel) kendiliğinden konuşur. Boğaç: "Kapat oyunu artık." · "Tamam". Konuşma bitince (ya da pencere dışına basılınca) **oyun kaydedilir ve ana menüye dönülür** (Ana menüye dön düğmesiyle aynı: otomatik kayıt).
+
 ### Işık kaynakları
 
 | Işık | Yarıçap | Süre | Not |
