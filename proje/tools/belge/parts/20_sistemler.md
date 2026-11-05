@@ -107,6 +107,7 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - **Her gece** (20:00–06:00) gecenin rastgele bir anında, haritanın (o anki adanın) rastgele bir yerinde, yürünebilen bir karada **Boğaç** adında bir yazılımcı belirir ve yalnızca **15 saniye** kalır (gerçek saniye; oyun duraklatılınca sayaç da durur), sonra kaybolur. Bir gecede bir kez çıkar; uyuyarak geçen gecede çıkmaz. Haritada ya da hiçbir yerde işareti, ipucu yoktur.
 - **Görünüşü:** varsayılan erkek karaktere benzer (kahve saç, açık ten, mavi pantolon) ama koyu gri tişörtlü ve **kare gözlüklüdür**. Belirirken ve kaybolurken çevresinde kısa bir mor parıltı olur. Konuşma kutusunda kendi resmi görünür.
 - Yanına varınca (yaklaşık 22 piksel) kendiliğinden konuşur. Boğaç: "Kapat oyunu artık." · "Tamam". Konuşma bitince (ya da pencere dışına basılınca) **oyun kaydedilir ve ana menüye dönülür** (Ana menüye dön düğmesiyle aynı: otomatik kayıt).
+- **Bir kez (v3.30, Boğaç: "1 kere konuştuktan sonra bir daha gelmesin, şimdilik"):** Boğaç'la bir kez konuşunca o oyunda (kayıtta) bir daha hiç belirmez. Yeni bir oyunda yine çıkar.
 
 ### Işık kaynakları
 

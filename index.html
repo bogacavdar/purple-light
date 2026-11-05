@@ -19589,17 +19589,21 @@ setInterval(()=>{try{if(busy||END<0||onTitle||wake||fading||paused||window.__plA
 const DL={hair:'#7a4a2a',hairD:'#4e2e18',hairL:'#a8703e',shirt:'#3a3c46',shirtD:'#26272e',pants:'#5a6a9a',skin:'#f8d2ae',skinD:'#e6b08a',eye:'#2a1f08',tuft:true,gl:'kare'};
 const WHO={name:'Boğaç'};
 let por='';function devPor(){if(por)return por;try{const c=document.createElement('canvas');c.width=24;c.height=26;drawChibi(c.getContext('2d'),12,29,DL,{noShadow:1,fx:0,fy:1});por=c.toDataURL()}catch(e){}return por}
-const D={night:null,at:-1,on:false,x:0,y:0,left:0,age:0,talked:false};
+const D={night:null,at:-1,on:false,x:0,y:0,left:0,age:0,talked:false,done:false};   // done: talked to him once in this save, he never comes again (v3.30, Boğaç)
+{const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{if(D.done)s.v330dev=1}catch(e){}return s}}
+try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}
+{const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{D.done=!!(d&&d.v330dev);D.on=false}catch(e){}return r}}
+{const _rz=resetState;resetState=function(){const r=_rz.apply(this,arguments);try{D.done=false;D.on=false;D.night=null}catch(e){}return r}}
 const nightKey=()=>dayT>=1200?day:day-1;
 const nightMin=()=>dayT>=1200?dayT-1200:dayT<360?dayT+240:-1;
 function spot(){for(let k=0;k<600;k++){const x=(Math.random()*W)|0,y=(Math.random()*H)|0,i=y*W+x;if(reach[i]!==1||isWater(tiles[i]))continue;const px_=x*T+8,py_=y*T+8;
   try{if(blocked(px_,py_)||blocked(px_-6,py_)||blocked(px_+6,py_)||blocked(px_,py_+6))continue}catch(e){continue}return{x:px_,y:py_}}return null}
 function talk(){D.talked=true;
-  say('Kapat oyunu artık.',[{t:'Tamam',pri:1,fresh:1,f:()=>{D.on=false;try{bye()}catch(e){}try{exitToMenu()}catch(e){}}}],WHO);
+  say('Kapat oyunu artık.',[{t:'Tamam',pri:1,fresh:1,f:()=>{D.on=false;D.done=true;try{bye()}catch(e){}try{exitToMenu()}catch(e){}}}],WHO);
   try{const dl=$('dlg'),im=dl.querySelector('.dport img.v64p'),src=devPor();if(im&&src){for(const c of ['trader','witch','smith','wizard','farmer','market','hunter','clue','lamp','fisher','sqn'])dl.classList.remove(c);dl.classList.add('v64');im.src=src}}catch(e){}}
 let last=performance.now();
 setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);last=now;try{
-  if(onTitle||window.__plArena){D.on=false;return}
+  if(onTitle||window.__plArena||D.done){D.on=false;return}
   const nm=nightMin();
   if(nm>=0){const k=nightKey();if(D.night!==k){D.night=k;D.at=(Math.random()*590)|0;D.on=false;D.talked=false}
     if(!D.on&&D.at>=0&&nm>=D.at&&!fading&&!wake&&!(cine&&cine.on)&&!sailing){D.at=-1;const s=spot();if(s){D.on=true;D.x=s.x;D.y=s.y;D.left=15;D.age=0}}}
