@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.32</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.33</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.32 · 5 Kasım 2026</h2><h3>Düzeltmeler</h3><ul><li>Bir tarif öğrenince ekranın altında çıkan "Yeni tarif öğrendin" yazısının arkasında siyah bir dikdörtgen yanıp sönüyordu. Yazının çevresindeki geniş parıltı kaldırıldı; pencere açıkken yazı yalnızca belirip kaybolur.</li><li>Kolla ana menüde hile kodunu girerken seçim Çıkış'a kayıp oyunu kapatıyordu; kod girilirken menü artık yerinden oynamaz.</li><li>Zümrüt'ün meşale ve keskin taş derslerinde başka tarife geçilebiliyor, meşalenin parıltısı kayboluyordu. Ders sürerken yalnızca ders tarifi seçilir ve yapılır.</li><li>Kazan gibi pencerelerin içinde parlayan şeyler artık büyüyüp küçülmez; kaydırma çubukları gelip gitmiyor.</li></ul><h3>Oynanış</h3><ul><li><strong>Oyun kolu:</strong> sağ çubuk nişan alır. Sol çubukla yürürken sağ çubuğu çevirdiğin yöne döner ve vurursun; oklar ve atışlar da o yöne gider.</li><li><strong>Oyun kolu:</strong> bir pencere açılınca seçim ilk kullanılabilir şeyde başlar: kazanda ilk tarif, yemekte ilk yiyecek.</li></ul><h3>Görsel</h3><ul><li>"Sınıfta bir doğum günü" anısında pasta artık sevdiğin kişiyi kapatmıyor; ikiniz de tam görünüyorsunuz.</li><li>Bilgisayarda fare imleci oyunun piksel tarzında: krem bir ok, basılabilen şeylerin üstünde mor ok, oynarken mor bir nişangâh.</li></ul><h3>Arayüz</h3><ul><li>Hile modundaki "Bütün ara sahneler açık" anahtarı kaldırıldı.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.33 · 5 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Nazlı'da üç toplu satış düğmesi.</strong> Üçü de aletleri, silahları, zırhları ve alet kemerine konabilen eşyaları satmaz.<ul><li><strong>Aletler, zırhlar ve eşyalar hariç hepsini sat:</strong> satılabilen her şeyi satar.</li><li><strong>Kazandaki açık tariflere yeteni bırak:</strong> kazanda şu an öğrenebileceğin tariflerin istediği kadarını ayırır, fazlasını satar (ör. bu tarifler 19 Sap istiyorsa 19 Sap sende kalır).</li><li><strong>Bütün tariflere yeteni bırak:</strong> henüz öğrenmediğin bütün tarifler için aynısını yapar (ör. bu tarifler 300 Taş istiyor, sende 305 varsa yalnızca 5 Taş satılır).</li></ul></li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -18681,34 +18681,36 @@ window.__plRoll16=function(){if(!dodge||!dodge.T)return false;const D=dodge;
 }).toString()+')()')}catch(e){try{window.__hamErr('v315roll: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v317spare">
-// v3.17 (Boğaç): "Kazanda işe yaramayanları sat" sells only the surplus: for each material it adds up how many of it every recipe
-// that uses it asks for (known, open, or not yet found — the same recipes potUses/recUses count), i.e. enough to make each of them
-// once; that much stays in the bag, the rest is sold. A material no recipe uses is sold whole. No "Emin misin?" (only surplus goes).
+// v3.33 (Boğaç): three bulk sales at Nazlı, none of them takes tools, weapons, armour, belt things, structures or the campfire:
+// (1) "Aletler, zırhlar ve eşyalar hariç hepsini sat" (unchanged); (2) keep what the recipes you can learn in the cauldron NOW ask
+// for (open, not yet learned), sell the rest; (3) keep what ALL recipes you have not learned yet ask for, sell the rest.
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
-function needOf(n){const U=USES.get(n);if(!U)return 0;let k=0;
-  for(const r of U){if(!REC.has(r))continue;
-    const later=!foundSet.has(r)&&!PLACEABLE.has(r)&&(diff==='hard'||isOpen(r)),known=foundSet.has(r)||isOpen(r);
-    if(!later&&!known)continue;
-    for(const x of REC.get(r).i)if(expand(x[0]).indexOf(n)>=0)k+=Math.max(1,+x[1]||1)}
+const nowOK=r=>!foundSet.has(r)&&(diff==='hard'||isOpen(r)),allOK=r=>!foundSet.has(r);
+function needOf(n,ok){const U=USES.get(n);if(!U)return 0;let k=0;
+  for(const r of U){if(!REC.has(r)||!ok(r))continue;for(const x of REC.get(r).i)if(expand(x[0]).indexOf(n)>=0)k+=Math.max(1,+x[1]||1)}
   return k}
-function spareOf(n){if(!(inv[n]>0)||!bulkSellable(n))return 0;return Math.max(0,inv[n]-needOf(n))}
-window.__plSpare=spareOf;
-safeSell=function(n){return spareOf(n)>0};
-sellSafe=function(){let got=0;const names=[];
-  for(const n of order){const q=spareOf(n);if(q>0){names.push(n);got+=unitPrice(n,true)*q;shopTake(n,q);inv[n]-=q}}
+const spare=(n,ok)=>{if(!(inv[n]>0)||!bulkSellable(n))return 0;return Math.max(0,inv[n]-needOf(n,ok))};
+const worth=ok=>Math.round(order.reduce((t,n)=>{const q=spare(n,ok);return q>0?t+unitPrice(n,true)*q:t},0));
+window.__plSpare=n=>spare(n,allOK);
+safeSell=function(n){return spare(n,allOK)>0};
+function sellBy(ok,keep){let got=0;const names=[];
+  for(const n of order){const q=spare(n,ok);if(q>0){names.push(n);got+=unitPrice(n,true)*q;shopTake(n,q);inv[n]-=q}}
   got=Math.round(got);if(!got){toast('Tariflerin ihtiyacından fazla satılık bir şeyin yok.',true);return}
   qc('sold',got);coins+=got;tutSold(names);
-  toast(`${names.length} çeşidin fazlası satıldı · +${got.toLocaleString('tr-TR')} sikke (her tarifi bir kez yapmaya yetecek kadarı sende kaldı)`);
-  renderInv();renderCraft()};
-// the old handlers (the "Emin misin?" check and the whole-stack sale) never see this button's click
-window.addEventListener('click',e=>{const t=e.target;if(!t||t.id!=='sellsafe'||!craftOpen||mode!=='sell')return;
-  e.preventDefault();e.stopImmediatePropagation();if(t.disabled)return;sellSafe()},true);
-// the button shows what the surplus is worth
+  toast(`${names.length} çeşidin fazlası satıldı · +${got.toLocaleString('tr-TR')} sikke (${keep} sende kaldı)`);
+  renderInv();renderCraft()}
+sellSafe=function(){sellBy(nowOK,'kazandaki açık tariflere yetecek kadarı')};
+// the old handlers (the "Emin misin?" check and the whole-stack sale) never see these buttons' clicks
+window.addEventListener('click',e=>{const t=e.target;if(!t||(t.id!=='sellsafe'&&t.id!=='sellall3')||!craftOpen||mode!=='sell')return;
+  e.preventDefault();e.stopImmediatePropagation();if(t.disabled)return;if(t.id==='sellsafe')sellSafe();else sellBy(allOK,'öğrenmediğin bütün tariflere yetecek kadarı')},true);
 {const _rc=renderCraft;renderCraft=function(){const r=_rc.apply(this,arguments);try{const b=$('sellsafe');
-  if(b&&craftOpen&&mode==='sell'){const v=Math.round(order.reduce((t,n)=>{const q=spareOf(n);return q>0?t+unitPrice(n,true)*q:t},0));
-    b.textContent=`Kazanda işe yaramayanları sat · ${v.toLocaleString('tr-TR')}`;b.disabled=!v;
-    b.title='Her tarifi bir kez yapmaya yetecek kadarı sende kalır, fazlası satılır'}}catch(e){}return r}}
+  if(b&&craftOpen&&mode==='sell'){const v=worth(nowOK);b.textContent=`Kazandaki açık tariflere yeteni bırak, fazlasını sat · ${v.toLocaleString('tr-TR')}`;b.disabled=!v;
+    b.title='Kazanda şimdi öğrenebileceğin tariflerin istediği kadarı sende kalır, fazlası satılır';
+    let c=$('sellall3');if(!c){c=document.createElement('button');c.id='sellall3';c.type='button';b.after(c)}c.hidden=false;
+    const w=worth(allOK);c.textContent=`Bütün tariflere yeteni bırak, fazlasını sat · ${w.toLocaleString('tr-TR')}`;c.disabled=!w;
+    c.title='Henüz öğrenmediğin bütün tariflerin istediği kadarı sende kalır, fazlası satılır'}
+  else{const c=$('sellall3');if(c)c.hidden=true}}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v317spare: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v318story">

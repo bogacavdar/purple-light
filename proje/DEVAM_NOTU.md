@@ -1,3 +1,7 @@
+## v3.33 (5 Kasım 2026) · üç toplu satış düğmesi
+- `v317spare` yeniden yazıldı: `needOf(n,ok)` öğrenilmemiş tariflerin istediği adetleri toplar; `sellsafe` = kazanda şimdi açık (`!found && (hard||isOpen)`), yeni `sellall3` = bütün öğrenilmemişler. Hariç: `bulkSellable`. Deneme: 305 Taş → bütün tariflere yeten 195 Taş kaldı.
+- "Yeni tarif öğrendin" yazısının arkasındaki siyah dikdörtgen (yalnızca Chrome masaüstü uygulamasında) bulunamadı; v3.32'deki parıltı kaldırma bir denemedir.
+
 ## v3.32 (5 Kasım 2026) · kol nişanı, ders kilidi, sahneler, siyah dikdörtgen
 - `v320pad`: sağ çubuk (`RS`) nişan; `aimAt` RS'de yalnızca o yöndeki canlıyı seçer (`pick` maxDf); `C.mx/C.my` RS/sol çubuğa göre; `drawPlayer` RS yönüne bakar (klonda `__plKlonDraw` ile atlanır). Ana menüde hile kodu girilirken (`blockK`) odak ve A/B susar. `firstFocus`: yeni pencere/sekme ilk kullanılabilir öğede.
 - `v332lock`: tz 4/7 kazan, tz 5/8 el yapımı yalnızca ders tarifi. `v332glow` (CSS): #craft içinde `.p189` ölçeklenmez.

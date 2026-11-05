@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.32** ile birebir (5 Kasım 2026). Bu sürümde: "Yeni tarif öğrendin" yazısının arkasındaki siyah yanıp sönme giderildi (deneme); sahneleri izleme hileden çıktı (ana menüde "love", Kitap › Anılar'da küçük resimli); doğum günü anısında pasta karakteri kapatmıyor; kolda sağ çubukla nişan, menüde hile kodu düzeltmesi, pencerelerin ilk seçimi; Zümrüt'ün derslerinde yalnızca ders tarifi; pencere içinde parıltı büyümez; piksel fare imleci.
+Sürüm: **Versiyon 3.33** ile birebir (5 Kasım 2026). Bu sürümde: Nazlı'da üç toplu satış düğmesi (hepsini sat; kazandaki açık tariflere yeteni bırak; bütün tariflere yeteni bırak).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 

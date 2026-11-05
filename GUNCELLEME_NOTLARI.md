@@ -8,6 +8,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.33 · 5 Kasım 2026
+
+### Oynanış
+- **Nazlı'da üç toplu satış düğmesi.** Üçü de aletleri, silahları, zırhları ve alet kemerine konabilen eşyaları satmaz.
+  - **Aletler, zırhlar ve eşyalar hariç hepsini sat:** satılabilen her şeyi satar.
+  - **Kazandaki açık tariflere yeteni bırak:** kazanda şu an öğrenebileceğin tariflerin istediği kadarını ayırır, fazlasını satar (ör. bu tarifler 19 Sap istiyorsa 19 Sap sende kalır).
+  - **Bütün tariflere yeteni bırak:** henüz öğrenmediğin bütün tarifler için aynısını yapar (ör. bu tarifler 300 Taş istiyor, sende 305 varsa yalnızca 5 Taş satılır).
+
+### Tasarım belgesi
+- Ekonomi bölümüne üç toplu satış düğmesinin kuralı yazıldı.
+
+---
+
 ## Versiyon 3.32 · 5 Kasım 2026
 
 ### Düzeltmeler
