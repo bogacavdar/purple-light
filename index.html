@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.36</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.37</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -19625,17 +19625,20 @@ try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}
 {const _rz=resetState;resetState=function(){const r=_rz.apply(this,arguments);try{D.done=false;D.on=false;D.night=null}catch(e){}return r}}
 const nightKey=()=>dayT>=1200?day:day-1;
 const nightMin=()=>dayT>=1200?dayT-1200:dayT<360?dayT+240:-1;
+// v3.37 (Boğaç): only when the player's real clock says 02:00–06:00; he tells you the real time before sending you to the menu
+const realLate=()=>{const h=new Date().getHours();return h>=2&&h<6};
+const realTime=()=>{const d=new Date(),p2=n=>(n<10?'0':'')+n;return p2(d.getHours())+':'+p2(d.getMinutes())};
 function spot(){for(let k=0;k<600;k++){const x=(Math.random()*W)|0,y=(Math.random()*H)|0,i=y*W+x;if(reach[i]!==1||isWater(tiles[i]))continue;const px_=x*T+8,py_=y*T+8;
   try{if(blocked(px_,py_)||blocked(px_-6,py_)||blocked(px_+6,py_)||blocked(px_,py_+6))continue}catch(e){continue}return{x:px_,y:py_}}return null}
 function talk(){D.talked=true;
-  say('Kapat oyunu artık.',[{t:'Tamam',pri:1,fresh:1,f:()=>{D.on=false;D.done=true;try{bye()}catch(e){}try{exitToMenu()}catch(e){}}}],WHO);
+  say('Saat '+realTime()+' olmuş. Kapat oyunu artık.',[{t:'Tamam',pri:1,fresh:1,f:()=>{D.on=false;D.done=true;try{bye()}catch(e){}try{exitToMenu()}catch(e){}}}],WHO);
   try{const dl=$('dlg'),im=dl.querySelector('.dport img.v64p'),src=devPor();if(im&&src){for(const c of ['trader','witch','smith','wizard','farmer','market','hunter','clue','lamp','fisher','sqn'])dl.classList.remove(c);dl.classList.add('v64');im.src=src}}catch(e){}}
 let last=performance.now();
 setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);last=now;try{
   if(onTitle||window.__plArena||D.done){D.on=false;return}
   const nm=nightMin();
   if(nm>=0){const k=nightKey();if(D.night!==k){D.night=k;D.at=(Math.random()*590)|0;D.on=false;D.talked=false}
-    if(!D.on&&D.at>=0&&nm>=D.at&&!fading&&!wake&&!(cine&&cine.on)&&!sailing){D.at=-1;const s=spot();if(s){D.on=true;D.x=s.x;D.y=s.y;D.left=15;D.age=0}}}
+    if(!D.on&&D.at>=0&&nm>=D.at&&realLate()&&!fading&&!wake&&!(cine&&cine.on)&&!sailing){D.at=-1;const s=spot();if(s){D.on=true;D.x=s.x;D.y=s.y;D.left=15;D.age=0}}}
   if(!D.on)return;
   if(paused)return;
   if(dlgOpen&&D.talked)return;
@@ -19656,6 +19659,7 @@ const KN='hammadde.klonN';
 const seenN=()=>{try{return +(localStorage.getItem(KN)||0)||0}catch(e){return 0}};
 window.__plKlonN=seenN;
 const C={night:null,at:-1,on:false,x:0,y:0,d0:0,age:0,counted:false};
+window.__plKlon=()=>C;   // v3.37: the heartbeat (v337meta) listens to this
 const nightKey=()=>dayT>=1200?day:day-1;
 const nightMin=()=>dayT>=1260?dayT-1260:dayT<270?dayT+180:-1;   // the full dark, 21:00–04:30
 const busy=()=>onTitle||window.__plArena||!met||wake||fading||sailing||dlgOpen||craftOpen||paused||(cine&&cine.on)||roomSafe()||(window.__plCave&&window.__plCave.cur);
@@ -20098,6 +20102,44 @@ function kindOf(a){const k=a.k||'';const base=a.base||k.replace(/ Reisi$/,'');if
   const D=ANIM[base]||ANIM[k]||{};return (D.r||7)<=5?'squeak':'bleat'}
 window.__plVoice=function(a,v,what,f){const K=KIND[kindOf(a)];if(!K)return false;const big=a.boss?.7:1;S((ac,o,t)=>K[what](ac,o,t,f*big),v*(what==='die'?.65:.6));return true};
 }).toString()+')()')}catch(e){try{window.__hamErr('v336voice: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v337meta">
+// v3.37 (Boğaç): (1) while the one you love stands in the purple light, a heartbeat sounds; the phone (Titreşim on) and a
+// rumbling game pad beat with it. (2) "Seni hatırlıyorum": a new game with the very same look and name as a character started
+// before on this device makes Kemal stop when he hears the name (device list, last 30). Belge: Sistemler › Mor ışıkta o / Seni hatırlıyorum.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+// ---- (1) heartbeat ----
+function beatSnd(){try{audio.synth((ac,out)=>{const t=ac.currentTime;
+  for(const [dt,v,f] of [[0,.9,62],[.24,.6,54]]){const o=ac.createOscillator(),g=ac.createGain(),lp=ac.createBiquadFilter();lp.type='lowpass';lp.frequency.value=180;
+    o.type='sine';o.frequency.setValueAtTime(f,t+dt);o.frequency.exponentialRampToValueAtTime(f*.62,t+dt+.18);
+    g.gain.setValueAtTime(.0001,t+dt);g.gain.exponentialRampToValueAtTime(v,t+dt+.018);g.gain.exponentialRampToValueAtTime(.001,t+dt+.22);
+    o.connect(lp);lp.connect(g);g.connect(out);o.start(t+dt);o.stop(t+dt+.25)}})}catch(e){}}
+function beatBuzz(){
+  try{if(TOUCH&&settings.vib&&typeof navigator.vibrate==='function')navigator.vibrate([40,180,30])}catch(e){}
+  try{const g=Array.prototype.slice.call(navigator.getGamepads?navigator.getGamepads():[]).find(x=>x&&x.connected),va=g&&g.vibrationActuator;
+    if(va&&va.playEffect){va.playEffect('dual-rumble',{duration:60,strongMagnitude:.45,weakMagnitude:.2});setTimeout(()=>{try{va.playEffect('dual-rumble',{duration:50,strongMagnitude:.3,weakMagnitude:.12})}catch(e){}},220)}}catch(e){}}
+function stopBuzz(){try{if(TOUCH&&typeof navigator.vibrate==='function')navigator.vibrate(0)}catch(e){}}
+let acc=.6,was=false,last=performance.now();
+setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);last=now;try{
+  const k=window.__plKlon&&window.__plKlon(),on=!!(k&&k.on)&&!onTitle&&!paused&&!dlgOpen&&!fading;
+  if(!on){if(was)stopBuzz();was=false;acc=.6;return}
+  was=true;acc+=dt;if(acc>=.9){acc=0;beatSnd();beatBuzz()}}catch(e){}},50);
+// ---- (2) the same character again ----
+const KH='hammadde.heroSeen';
+const sig=n=>{const L=LOOK.hero,o={};Object.keys(L).sort().forEach(k=>{o[k]=L[k]});return (n||'').toLocaleLowerCase('tr-TR')+'|'+JSON.stringify(o)};
+const readSeen=()=>{try{const a=JSON.parse(localStorage.getItem(KH)||'[]');return Array.isArray(a)?a:[]}catch(e){return []}};
+const _ask=askName;askName=function(kind,cb){
+  if(kind!=='hero'||!wake)return _ask.apply(this,arguments);
+  return _ask.call(this,kind,function(n){
+    let cnt=0;try{const s=sig(n),A=readSeen(),e=A.find(x=>x&&x.s===s);cnt=e?e.c:0;
+      const B=A.filter(x=>x&&x.s!==s);B.push({s,c:cnt+1});while(B.length>30)B.shift();localStorage.setItem(KH,JSON.stringify(B))}catch(e){}
+    if(cnt<=0)return cb(n);
+    const t=cnt===1
+      ?`<i>(Kemal bir an durur, yüzüne uzun uzun bakar.)</i> <b>${NM(n)}</b>… Seni daha önce de bu kumsalda bulmuş muydum? Aynı yüz, aynı ad… <i>(Başını sallar.)</i> Yaşlandım evlat, aldırma.`
+      :`<i>(Kemal geri çekilir.)</i> <b>${NM(n)}</b>. Yine sen. Bu kaçıncı oluyor evlat? Her seferinde aynı kumsal, aynı yüz, aynı ad… ve her seferinde hiçbir şey hatırlamıyorsun. <i>(Gözü denize kayar.)</i> Neyse. Unut gitsin, ben de unuturum.`;
+    say(t,[{t:'…',pri:1,fresh:1,f:()=>cb(n)}])})};
+}).toString()+')()')}catch(e){try{window.__hamErr('v337meta: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

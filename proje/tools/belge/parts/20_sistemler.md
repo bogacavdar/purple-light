@@ -106,11 +106,11 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - **Gündüz olunca gece canlıları gider (v2.33, Boğaç):** yalnızca gece çıkan canlılar (Kurt gibi) sabah olunca (06:00) artık kalmaz: kovalamayı bırakır, senden uzağa koşar ve 300 pikselden uzaklaşınca ya da en geç **6 saniye** sonra toz bulutuyla kaybolur. Eskiden yalnızca ekranın çok dışındakiler kayboluyor, yakındakiler gündüz de kalıyordu. Reis'ler ve yan görev canavarları bu kurala girmez (görev bitene kadar kalırlar).
 - **Güvenli yerlere canavar girmez (v2.22):** kavga edebilen canlılar (*saldırgan* ve *nötr*, Reisler dahil) aşağıdaki güvenli yerlerin sınırında durur, içeri **adım atmaz**; kişilerin yanına gelemez. Seni kovalarken sen güvenli yere girersen sınırda kalır, sonra vazgeçer. Bir şekilde içerde kalmış biri (ör. hücum ya da sıçrama ile) en yakın kenardan dışarı yürür. *Zararsız* canlılar (tavşan, geyik…) eskisi gibi dolaşır. Börü'nün ders canlıları ve arena bu kuraldan muaf.
 
-### Boğaç, gece beliren yazılımcı (v3.30, Boğaç)
+### Boğaç, gece beliren yazılımcı (v3.30; v3.37, Boğaç: yalnızca gerçek gece 02:00–06:00)
 
-- **Her gece** (20:00–06:00) gecenin rastgele bir anında, haritanın (o anki adanın) rastgele bir yerinde, yürünebilen bir karada **Boğaç** adında bir yazılımcı belirir ve yalnızca **15 saniye** kalır (gerçek saniye; oyun duraklatılınca sayaç da durur), sonra kaybolur. Bir gecede bir kez çıkar; uyuyarak geçen gecede çıkmaz. Haritada ya da hiçbir yerde işareti, ipucu yoktur.
+- **Yalnızca gerçekten geç saatte (v3.37, Boğaç):** Boğaç yalnızca oyuncunun **gerçek saati** (cihazın saati) **02:00 ile 06:00 arasındayken** çıkabilir. Bu saatlerin dışında oyunda gece olsa da hiç belirmez. Gerçek saat 02:00–06:00 arasındayken, oyundaki **her gece** (20:00–06:00) gecenin rastgele bir anında, haritanın (o anki adanın) rastgele bir yerinde, yürünebilen bir karada belirir ve yalnızca **15 saniye** kalır (gerçek saniye; oyun duraklatılınca sayaç da durur), sonra kaybolur. Bir gecede bir kez çıkar; uyuyarak geçen gecede çıkmaz. Haritada ya da hiçbir yerde işareti, ipucu yoktur. (v3.30–3.36'da gerçek saate bakmadan her oyun gecesi çıkıyordu.)
 - **Görünüşü:** varsayılan erkek karaktere benzer (kahve saç, açık ten, mavi pantolon) ama koyu gri tişörtlü ve **kare gözlüklüdür**. Belirirken ve kaybolurken çevresinde kısa bir mor parıltı olur. Konuşma kutusunda kendi resmi görünür.
-- Yanına varınca (yaklaşık 22 piksel) kendiliğinden konuşur. Boğaç: "Kapat oyunu artık." · "Tamam". Konuşma bitince (ya da pencere dışına basılınca) **oyun kaydedilir ve ana menüye dönülür** (Ana menüye dön düğmesiyle aynı: otomatik kayıt).
+- Yanına varınca (yaklaşık 22 piksel) kendiliğinden konuşur ve **gerçek saati söyler** (v3.37, Boğaç): "Saat 02:47 olmuş. Kapat oyunu artık." (saat ve dakika cihazın o anki saatidir) · "Tamam". Konuşma bitince (ya da pencere dışına basılınca) **oyun kaydedilir ve ana menüye dönülür** (Ana menüye dön düğmesiyle aynı: otomatik kayıt).
 - **Bir kez (v3.30, Boğaç: "1 kere konuştuktan sonra bir daha gelmesin, şimdilik"):** Boğaç'la bir kez konuşunca o oyunda (kayıtta) bir daha hiç belirmez. Yeni bir oyunda yine çıkar.
 
 ### Mor ışıkta o: gece beliren sevdiğin kişi (v3.30; v3.34, Boğaç: kendi kopyan yerine sevdiğin kişi)
@@ -118,7 +118,16 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - Bazı gecelerde (her gece **%40** ihtimalle, tam karanlıkta 21:00–04:30 arasında rastgele bir anda) adada **sevdiğin kişi** belirir, ama **mor ışığın etkisi altındaymış gibi**: gözleri mor parlar, başının çevresinde soluk mor bir hale vardır, çevresinde mor zerreler yükselir; başının üstünde onun adı yazar. Karakter yaratmadaki görünüşüyle çizilir. Ekranın içinde, senden yaklaşık 100–140 piksel uzakta, yürünebilen bir yerde durur, yüzü sana dönüktür, konuşmaz. Çevresinde soluk mor bir ışık vardır (karanlıkta görünsün diye). (v3.30–3.33'te burada karakterinin kendi kopyası çıkıyordu.)
 - Ona doğru yürümeye başladığın an (aradaki uzaklık ~14 piksel azalınca) **birden kaybolur** (küçük bir mor duman). Yaklaşmazsan 25 saniye sonra kendiliğinden kaybolur. Bir gecede en çok bir kez çıkar.
 - Evin içinde, mağarada, denizde yolculukta, konuşma ya da pencere açıkken, ara sahnede ve arenada çıkmaz.
+- **Kalp atışı (v3.37, Boğaç):** o göründüğü sürece **kalp atışı** duyulur: iki vuruşlu ("güm-güm"), derin ve boğuk bir ses, yaklaşık **0,9 saniyede bir**. Her vuruşla birlikte **telefon** (Ayarlar'da Titreşim açıksa, titreşimi destekleyen telefonlarda) ve bağlı **oyun kolu** (titreşimi olan kollarda) iki kısa, hafif titreşimle atar. O kaybolunca kalp atışı ve titreşim hemen durur. Oyun duraklatılınca ya da bir pencere açılınca da durur.
 - **5 farklı gecede** onu gören (ekranda en az 0,6 saniye kalmış olması yeter) gizli **Mor ışıkta o** başarımını kazanır (eski adı Öteki ben; eski sayaç sürer). Görülen geceler cihazda sayılır (başarımlar gibi, bütün kayıtlar için ortak).
+
+### Seni hatırlıyorum: aynı karakterle yeni oyun (v3.37, Boğaç)
+
+- Bu cihazda **yeni bir oyuna** başlayıp Kemal adını sorduğunda, karakterinin **görünüşü** (karakter yaratmadaki bütün seçimler: cinsiyet, ten, göz, saç, sakal, kıyafet ve renkleri, gözlük, şapka) **ve adı** bu cihazda daha önce başlatılmış bir oyundakiyle **birebir aynıysa** (adda büyük/küçük harf önemsiz), Kemal adını duyunca bir an durur. Görünüş ya da ad farklıysa hiçbir şey olmaz.
+  - **İkinci kez** (aynı karakter daha önce bir kez başlatılmış): Kemal: "<i>(Kemal bir an durur, yüzüne uzun uzun bakar.)</i> {Ad}… Seni daha önce de bu kumsalda bulmuş muydum? Aynı yüz, aynı ad… <i>(Başını sallar.)</i> Yaşlandım evlat, aldırma." · "…"
+  - **Üçüncü kez ve sonrası:** Kemal: "<i>(Kemal geri çekilir.)</i> {Ad}. Yine sen. Bu kaçıncı oluyor evlat? Her seferinde aynı kumsal, aynı yüz, aynı ad… ve her seferinde hiçbir şey hatırlamıyorsun. <i>(Gözü denize kayar.)</i> Neyse. Unut gitsin, ben de unuturum." · "…"
+  - Ardından konuşma her zamanki gibi sürer (Kemal sevdiğin kişinin adını sorar).
+- Hangi karakterlerin başlatıldığı **cihazda** saklanır (başarımlar gibi, bütün kayıtlar için ortak; en çok son 30 karakter). Bir karakter Kemal ona adını söylediği an kaydedilir; kayıt yüklemek ya da Devam et sayılmaz, yalnızca Yeni oyun. Oyunun hiçbir yerinde anlatılmaz.
 
 ### Gizli şeyler (v3.34, Boğaç)
 

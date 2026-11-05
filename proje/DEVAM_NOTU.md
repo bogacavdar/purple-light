@@ -7,6 +7,12 @@
 - `v336voice`: `window.__plVoice` (v309snd `hurtS`/`dieS` önce bunu dener): 13 ses türü, formantlı.
 - Kontrol: chk.js 0 hata; kazan sıralaması, liste kaydırması, takip + denendi.
 
+
+## v3.37 (6 Kasım 2026, bekleyen paket) · gerçek saatte Boğaç, kalp atışı, "seni hatırlıyorum", ACT 3 notları
+- `v330dev`: Boğaç yalnızca cihazın gerçek saati 02:00–06:00 iken çıkar (`realLate`), konuşmada gerçek saati söyler ("Saat 02:47 olmuş. Kapat oyunu artık.").
+- `v330klon`: `window.__plKlon=()=>C` (durum dışarı açıldı).
+- Yeni `v337meta`: (1) Mor ışıkta o görünürken 0,9 sn'de bir iki vuruşlu kalp sesi (`audio.synth`), telefonda titreşim (Ayarlar › Titreşim açıksa) ve oyun kolunda `dual-rumble`; kaybolunca/duraklayınca durur. (2) `askName('hero')` sarıldı (yalnızca `wake` sırasında): `localStorage['hammadde.heroSeen']` = [{s:ad|LOOK.hero JSON, c:sayı}] (son 30); aynı görünüş+ad 2. kez → Kemal "daha önce bulmuş muydum", 3.+ → "Yine sen". Kayıt yükleme etkilenmez.
+- Belge: Sistemler › Boğaç / Mor ışıkta o / Seni hatırlıyorum; ACT 3 › ACT 3 fikir notları (köpek kamerası, kurallar hikâyeden, sahte not, duraklatmayan menü, sahte çökme, kötü son, uzun aradan dönüş). `yayinla.sh` paket çıkınca çalışacak.
 ## v3.35 (5 Kasım 2026) · bütün yemeklere etki, dans, ayna
 - `v335food`: `tierOf` (toplanan: v74 `FOODT` → `window.__plFoodT`; et: avın biyomu `__I1B`/`__I2C`; ön ekli pişmiş: çiğinin; tarif: malzemelerin en yükseği; yoksa fiyattan), `kindEffect`, `window.__plFoodFix` (v74 `prof` sonunda çağrılır): etki, süre 60+30·k (+30 pişmiş, ≤420), can. Fiyat ×(1+0,15·k) yüklemede bir kez; `FOODC` temizlenir. Denemede etkisiz yemek kalmadı (0).
 - `v334egg`: dans `keys.a/keys.d` kenarlarıyla 6 alternatif basış (≤0,6 sn arayla, 3 sn içinde); başka keydown ya da yürüyüş bitirir; hayvan çekme 60 px/sn. Ayna: toplama, olta, basılı tuş varken sayaç sıfır.
