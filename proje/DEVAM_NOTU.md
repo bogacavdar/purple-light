@@ -1,3 +1,11 @@
+## v3.32 (5 Kasım 2026) · kol nişanı, ders kilidi, sahneler, siyah dikdörtgen
+- `v320pad`: sağ çubuk (`RS`) nişan; `aimAt` RS'de yalnızca o yöndeki canlıyı seçer (`pick` maxDf); `C.mx/C.my` RS/sol çubuğa göre; `drawPlayer` RS yönüne bakar (klonda `__plKlonDraw` ile atlanır). Ana menüde hile kodu girilirken (`blockK`) odak ve A/B susar. `firstFocus`: yeni pencere/sekme ilk kullanılabilir öğede.
+- `v332lock`: tz 4/7 kazan, tz 5/8 el yapımı yalnızca ders tarifi. `v332glow` (CSS): #craft içinde `.p189` ölçeklenmez.
+- `v332cur` (CSS): piksel imleçler (pointer:fine). `v332disc` (CSS): #discover geniş parıltısı kaldırıldı, plmodal'da yalnızca opaklık animasyonu. Siyah dikdörtgen deneme ortamında (yazılım çizimi) oluşmadı; ekran kartı katmanı olarak düşünüldü, Boğaç'ın denemesi bekleniyor.
+- v69c: `b5scn` kaldırıldı; sahneler `localStorage hammadde.love` (ana menüde "love"); `window.__plScn`. `v332scn`: Kitap › Anılar'da küçük resimli "Bütün sahneler" (anılar `memScene`'den).
+- Doğum günü anısı: masa/pasta küçüldü ve aranıza alındı, sevdiğin kişi masanın sağında.
+- Kontrol: chk.js 0 hata.
+
 ## v3.31 (5 Kasım 2026) · saldırılar gece ve sabit günlerde
 - `v330ys`: günler `seqFrom` (6'dan başlar, aralar 5,7,4,9,6,3,8 tekrar), `free()` 1–3 ve 5/15/20. günleri atlar. 20:00'de başlar; ev/mağara/deniz/güvenli yer → `free(day+1)`; kaçırılırsa (uyku, geç yükleme) sıradaki olaysız gün. Kayıt `v330ys.f=2` (eski kayıtlar `seqFrom(day)`). Saldırıda bölge merkezi ve her Yıldızsız `lightSources`'a eklenir.
 - Biyom sınırı bloğu (`a.hb`): `a.ysA` muaf.

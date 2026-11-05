@@ -8,6 +8,30 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.32 · 5 Kasım 2026
+
+### Düzeltmeler
+- Bir tarif öğrenince ekranın altında çıkan "Yeni tarif öğrendin" yazısının arkasında siyah bir dikdörtgen yanıp sönüyordu. Yazının çevresindeki geniş parıltı kaldırıldı; pencere açıkken yazı yalnızca belirip kaybolur.
+- Kolla ana menüde hile kodunu girerken seçim Çıkış'a kayıp oyunu kapatıyordu; kod girilirken menü artık yerinden oynamaz.
+- Zümrüt'ün meşale ve keskin taş derslerinde başka tarife geçilebiliyor, meşalenin parıltısı kayboluyordu. Ders sürerken yalnızca ders tarifi seçilir ve yapılır.
+- Kazan gibi pencerelerin içinde parlayan şeyler artık büyüyüp küçülmez; kaydırma çubukları gelip gitmiyor.
+
+### Oynanış
+- **Oyun kolu:** sağ çubuk nişan alır. Sol çubukla yürürken sağ çubuğu çevirdiğin yöne döner ve vurursun; oklar ve atışlar da o yöne gider.
+- **Oyun kolu:** bir pencere açılınca seçim ilk kullanılabilir şeyde başlar: kazanda ilk tarif, yemekte ilk yiyecek.
+
+### Görsel
+- "Sınıfta bir doğum günü" anısında pasta artık sevdiğin kişiyi kapatmıyor; ikiniz de tam görünüyorsunuz.
+- Bilgisayarda fare imleci oyunun piksel tarzında: krem bir ok, basılabilen şeylerin üstünde mor ok, oynarken mor bir nişangâh.
+
+### Arayüz
+- Hile modundaki "Bütün ara sahneler açık" anahtarı kaldırıldı.
+
+### Tasarım belgesi
+- Oyun kolu (sağ çubuk, ilk seçim, hile kodu), Zümrüt'ün ders kilidi, gösterme kuralı, ekrana gelen yazılar, fare imleci, doğum günü anısı ve sahnelerin yeni yeri güncellendi.
+
+---
+
 ## Versiyon 3.31 · 5 Kasım 2026
 
 ### Oynanış
