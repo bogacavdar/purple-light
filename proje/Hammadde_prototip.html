@@ -19898,8 +19898,18 @@ function camp(){E.c=null;if(ISLE!==1)return;for(let k=0;k<3000;k++){const x=(Mat
 let campSaid=0;
 // ---------------------------------------------------------------- 5 · the mirror, 6 · the dance (state)
 let still=0,lx=0,ly=0,MIR=null,mirNext=0;
-let D={flips:[],fx:0,until:0,acc:0,fromX:0,fromY:0};
-const dancing=()=>D.until>now();
+let D={on:false,seq:[],acc:0,x:0,y:0,prev:{}};
+const dancing=()=>D.on;window.__plDance=()=>D.on?'on '+Math.round(D.acc):'';
+addEventListener('keydown',e=>{if(D.on&&!e.repeat)D.on=false},true);   // any other key ends the dance
+// v3.35 (Boğaç): left, right ×3 starts the dance; it goes on by itself until any other key is pressed
+(function watch(){requestAnimationFrame(watch);try{if(onTitle){D.on=false;D.seq=[];return}const t=now();
+  for(const k in keys){const was=!!D.prev[k],on=!!keys[k];D.prev[k]=on;if(!on||was)continue;
+    if(D.on){D.on=false;D.seq=[];continue}
+    if(k!=='a'&&k!=='d'){D.seq=[];continue}   // the game's walking keys: a = left, d = right (rebinding and the pad map onto these)
+    const c=k==='a'?'L':'R',L=D.seq;if(L.length&&(t-L[L.length-1].t>600||L[L.length-1].c===c))D.seq=[];if(!D.seq.length){D.x=player.x;D.y=player.y}D.seq.push({c,t});
+    if(D.seq.length>=6&&D.seq[0].c==='L'&&t-D.seq[0].t<3000&&Math.hypot(player.x-D.x,player.y-D.y)<40){D.on=true;D.acc=0;D.seq=[];D.x=player.x;D.y=player.y}
+    else if(D.seq.length>=6)D.seq=D.seq.slice(-5)}
+  if(D.on&&(dlgOpen||craftOpen||fading))D.on=false}catch(e){}})();
 setInterval(()=>{try{if(onTitle||paused||fading||wake)return;const dt=.1;
   // the campfire: a thought when you come near
   if(E.c&&Math.hypot(player.x-E.c.x,player.y-E.c.y)<40&&now()>campSaid){campSaid=now()+60000;bubble={text:`Bu taşa… benim adım kazınmış: ${heroName||'…'}. Ben buraya ne zaman geldim?`,t:5}}
@@ -19909,11 +19919,8 @@ setInterval(()=>{try{if(onTitle||paused||fading||wake)return;const dt=.1;
   if(!MIR&&still>=10&&now()>mirNext){const f=player.face||{x:0,y:1};for(const r of [14,22,30]){const wx=player.x+(f.x||0)*r,wy=player.y+(f.y||0)*r+(f.y?0:4);
     if(isWater(tileAt(wx,wy))&&!onBridge(wx,wy)&&!(window.__plSeaPath&&window.__plSeaPath(wx,wy))){MIR={x:wx,y:wy,t0:now()};mirNext=now()+120000;break}}}
   if(MIR&&now()-MIR.t0>3000)MIR=null;
-  // dance: four quick turns left/right, barely moving
-  const fx=player.face&&player.face.x||0;
-  if(fx&&fx!==D.fx&&D.fx){D.flips.push(now());if(D.flips.length===1){D.fromX=player.x;D.fromY=player.y}}
-  if(fx)D.fx=fx;D.flips=D.flips.filter(t=>now()-t<1200);
-  if(D.flips.length>=4&&Math.hypot(player.x-D.fromX,player.y-D.fromY)<24){D.until=now()+2000;D.flips=[];D.fromX=player.x;D.fromY=player.y}
+  // dance: while it lasts the animals come after 20 s (the dance itself starts and stops in watch())
+  if(D.on&&Math.hypot(player.x-D.x,player.y-D.y)>12)D.on=false;
   if(dancing()){D.acc+=dt;if(Math.random()<.25)floats.push({x:player.x+(Math.random()-.5)*14,y:player.y-22,t:0,text:'♪',color:'#e8d8ff',size:10});
     if(D.acc>=20)for(const a of animals){const A=ANIM[a.k];if(!A||A.temper==='saldırgan'||a.ysA)continue;const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy);if(d>300||d<26)continue;
       a.mad=false;a.st='wander';a.dx=0;a.dy=0;const nx=a.x+dx/d*40*dt,ny=a.y+dy/d*40*dt;if(!blocked(nx,ny)){a.x=nx;a.y=ny;a.face=dx>0?1:-1}}}
