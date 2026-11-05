@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.37** ile birebir (6 Kasım 2026). Bu sürümde: ölen canlılar yan yatar, düşürdükleri leşin içindedir ve toplanır, toplanmayan leş oyun saatiyle kaybolur; 194 eşyanın "hediye paketi" yerine gerçek resmi; tarif kitabında seçilen tarifin kutusu sabit; envanterde meşale yuvası, biten meşalenin yerine öbürü; Boğaç gerçek gece saatinde; sevdiğin kişinin kalp atışı; "Seni hatırlıyorum"; ACT 3 fikir notları.
+Sürüm: **Versiyon 3.38** ile birebir (6 Kasım 2026). Bu sürümde: el yapımı listesi tek satırlık ve sıkı, malzemeler üstüne gelince; takip şeridi sütun sütun düzenli; canlı sesleri ıslık gibi değil, tavşana kendi sesi.
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 

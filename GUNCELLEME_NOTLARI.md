@@ -8,6 +8,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.38 · 6 Kasım 2026
+
+### Arayüz
+- **El yapımı listesi sıkı:** her tarif tek satır; ekranda alt alta 12–15 tarif görünür. Malzemeler satırda yazmaz: bilgisayarda satırın üstüne gelince, telefonda tarifin adına dokununca küçük bir kutuda açılır.
+- **Takip şeridi düzenli:** takip edilen tariflerin kutucukları sütun sütun alt alta durur, satırlar aynı genişliktedir. Uzun adlar kısalır; üstüne gelince tam adı görünür.
+
+### Ses
+- **Canlı sesleri artık ıslık gibi değil:** "bip bip biiip" diye çınlayan ince sesler kalktı. Sesler daha kalın, nefesli ve hırıltılı; kuşlar tek bir ötüş, kemirgenler tek bir ciyak, kerevit ve böcekler kuru bir hışırtı çıkarır.
+- **Tavşan:** boğuk bir ayak sesi ve kısa, nefesli bir ciyak.
+
+### Tasarım belgesi
+- El yapımı listesi, takip şeridi ve canlı sesleri güncellendi.
+
+---
+
 ## Versiyon 3.37 · 6 Kasım 2026
 
 ### Oynanış
