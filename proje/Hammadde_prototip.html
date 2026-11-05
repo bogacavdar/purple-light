@@ -20090,8 +20090,8 @@ const KIND={
  screech:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.1,f*.9,.35,1600,2700,.42,[22,.06],0,950);hiss(ac,o,t,.3,'bandpass',2400,1.2,.25)},
           die:(ac,o,t,f)=>{vox(ac,o,t,f*1.1,f*.6,.9,1500,2600,.42,[16,.07],0,950);hiss(ac,o,t,.8,'bandpass',2200,1.2,.2,1000)}},
  // v3.37 (Boğaç: "tavşanın sesi ıslık çalıyor gibi olmasın"): no pure tone at all: a dull thump, then a short breathy, raspy squeal (noise through low formants)
- rabbit:{hurt:(ac,o,t,f)=>{tone(ac,o,t,140,70,.12,'sine',.55);hiss(ac,o,t+.03,.16,'bandpass',1500,1.6,.55,1100);vox(ac,o,t+.04,Math.min(520,f*.5),Math.min(440,f*.42),.14,900,1700,.16,[30,.08],'sawtooth')},
-        die:(ac,o,t,f)=>{tone(ac,o,t,120,60,.18,'sine',.5);hiss(ac,o,t+.05,.55,'bandpass',1400,1.4,.45,700);vox(ac,o,t+.06,Math.min(500,f*.48),Math.min(300,f*.3),.5,850,1500,.14,[24,.1],'sawtooth')}},
+ rabbit:{hurt:(ac,o,t,f)=>{tone(ac,o,t,140,70,.12,'sine',.55);hiss(ac,o,t+.03,.18,'bandpass',1500,1.6,.9,1100);vox(ac,o,t+.04,Math.min(520,f*.5),Math.min(440,f*.42),.16,900,1700,.38,[30,.08],'sawtooth')},
+        die:(ac,o,t,f)=>{tone(ac,o,t,120,60,.18,'sine',.5);hiss(ac,o,t+.05,.55,'bandpass',1400,1.4,.8,700);vox(ac,o,t+.06,Math.min(500,f*.48),Math.min(300,f*.3),.5,850,1500,.34,[24,.1],'sawtooth')}},
  squeak:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*.6,f*.5,.2,1100,1900,.4,[28,.07]);hiss(ac,o,t+.02,.16,'bandpass',1500,1.4,.4,1000)},   /* v3.38: one breathy squeal */
          die:(ac,o,t,f)=>{vox(ac,o,t,f*.6,f*.35,.6,1000,1800,.38,[22,.08]);hiss(ac,o,t+.04,.5,'bandpass',1400,1.3,.35,700)}},
  bleat:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.05,f*.9,.45,700,1250,.55,[6.5,.05])},
@@ -20110,8 +20110,8 @@ const KIND={
        die:(ac,o,t,f)=>{hiss(ac,o,t,1,'highpass',4200,.8,.42,2000)}},
  croak:{hurt:(ac,o,t,f)=>{for(const k of [0,.18])vox(ac,o,t+k,f,f*.8,.13,500,1300,.6,[40,.2],'square')},
         die:(ac,o,t,f)=>{vox(ac,o,t,f,f*.5,.8,450,1200,.6,[30,.25],'square')}},
- click:{hurt:(ac,o,t,f)=>{hiss(ac,o,t,.18,'bandpass',2200,1.2,.45,1600);hiss(ac,o,t+.08,.12,'bandpass',1600,1.2,.3)},   /* v3.38: a dry rattle, no ticking */
-        die:(ac,o,t,f)=>{hiss(ac,o,t,.6,'bandpass',2000,1,.4,700);hiss(ac,o,t+.3,.4,'lowpass',900,1,.2)}}};
+ click:{hurt:(ac,o,t,f)=>{hiss(ac,o,t,.18,'bandpass',2200,1.2,.9,1600);hiss(ac,o,t+.08,.12,'bandpass',1600,1.2,.6)},   /* v3.38: a dry rattle, no ticking */
+        die:(ac,o,t,f)=>{hiss(ac,o,t,.6,'bandpass',2000,1,.8,700);hiss(ac,o,t+.3,.4,'lowpass',900,1,.4)}}};
 const BY={'Keklik':'chirp','Bıldırcın':'chirp','Ur kekliği':'chirp','Ördek':'quack','Yaban kazı':'quack','Turna kuşu':'quack','Kartal':'screech',
  'Tavşan':'rabbit','Sincap':'squeak','Kunduz':'squeak','Porsuk':'squeak','Su samuru':'squeak','Geyik':'bleat','Karaca':'bleat','Dağ keçisi':'bleat','Muflon':'bleat',
  'Yaban atı':'neigh','Yaban öküzü':'moo','Kurt':'yelp','Bataklık kurdu':'yelp','Kül kurdu':'yelp','Vaşak':'yelp','Mağara ayısı':'roar','Kara ejder':'roar',
