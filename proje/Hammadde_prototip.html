@@ -18385,8 +18385,8 @@ const ATK={
 // hurt and death: pitch from the creature's size; small ones squeak, big ones grunt
 const HF={'Tavşan':1500,'Keklik':1800,'Bıldırcın':1900,'Sincap':1700,'Kerevit':900,'Engerek':1100,'Dikenli kirpi':1100,'Oklu kirpi':800,'Porsuk':700,'Kunduz':650,'Kurt':520,'Karaca':560,'Geyik':420,'Yaban atı':360,'Yaban domuzu':300};
 const fOf=a=>{if(HF[a.k])return HF[a.k];const D=ANIM[a.k]||{};const r=(D.r||7)*(a.scale||1)*(a.boss?1.6:1);return Math.max(140,Math.min(1600,1900/Math.max(3,r)*2.2))};
-function hurtS(a,v){const f=fOf(a);S((ac,o,t)=>{tone(ac,o,t,f,f*.62,.14,f>900?'square':'sawtooth',.35);hiss(ac,o,t,.08,'lowpass',Math.min(1600,f*1.4),1,.5)},v*.55)}
-function dieS(a,v){const f=fOf(a);S((ac,o,t)=>{tone(ac,o,t,f*1.1,f*.42,.42,f>900?'square':'sawtooth',.38,[12,f*.03]);hiss(ac,o,t+.05,.3,'lowpass',Math.min(1400,f),1,.35)},v*.6)}
+function hurtS(a,v){const f=fOf(a);if(window.__plVoice&&window.__plVoice(a,v,'hurt',f))return;S((ac,o,t)=>{tone(ac,o,t,f,f*.62,.14,f>900?'square':'sawtooth',.35);hiss(ac,o,t,.08,'lowpass',Math.min(1600,f*1.4),1,.5)},v*.55)}
+function dieS(a,v){const f=fOf(a);if(window.__plVoice&&window.__plVoice(a,v,'die',f))return;S((ac,o,t)=>{tone(ac,o,t,f*1.1,f*.42,.42,f>900?'square':'sawtooth',.38,[12,f*.03]);hiss(ac,o,t+.05,.3,'lowpass',Math.min(1400,f),1,.35)},v*.6)}
 let inTick=false,nHurt=0;
 // the generic growl at a wind-up gives way to the creature's own voice
 {const _s=sfx;sfx=function(k){if(inTick&&k==='growl')return;return _s.apply(this,arguments)}}
@@ -20041,6 +20041,59 @@ window.__plHideL=()=>{try{return localStorage.getItem(K)==='1'}catch(e){return f
   const r=_rc.apply(this,arguments);try{if(keep&&k0===mode+'|'+station){['.rlist','.pside','.tiles'].forEach((q,i)=>{const e=cbody.querySelector(q);if(e&&keep[i])e.scrollTop=keep[i]});if(top)cbody.scrollTop=top}}catch(e){}return r}}
 cbody.addEventListener('change',e=>{if(!e.target||e.target.id!=='hlrn')return;try{localStorage.setItem(K,e.target.checked?'1':'0')}catch(x){}renderCraft()});
 }).toString()+')()')}catch(e){try{window.__hamErr('v336learned: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v336voice">
+// v3.36 (Boğaç: "the animal sounds are too short, unclear, all alike"): a voice per kind of creature for hurt and death: a buzzing source
+// shaped by two vowel-like filters (formants), with vibrato and a pitch contour, longer and fading. v309snd's hurtS/dieS call this.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const C=window.__plCrSnd;if(!C)return;const {tone,hiss}=C;
+function S(fn,v){if(v<=.02)return;try{audio.synth((ac,out)=>{const t=ac.currentTime,g=ac.createGain();g.gain.value=v;g.connect(out);fn(ac,g,t)})}catch(e){}}
+// a voiced sound: pitch from f0 to f1 over d seconds, through two formants, with vibrato
+function vox(ac,o,t,f0,f1,d,F1,F2,vol,vib,type){const os=ac.createOscillator();os.type=type||'sawtooth';os.frequency.setValueAtTime(f0,t);os.frequency.exponentialRampToValueAtTime(Math.max(30,f1),t+d);
+  if(vib){const l=ac.createOscillator(),lg=ac.createGain();l.frequency.value=vib[0];lg.gain.value=f0*vib[1];l.connect(lg);lg.connect(os.frequency);l.start(t);l.stop(t+d+.05)}
+  const g=ac.createGain();g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+Math.min(.05,d*.15));g.gain.setValueAtTime(vol,t+d*.6);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+  for(const [F,Q,k] of [[F1,5,1],[F2,8,.6]]){const b=ac.createBiquadFilter();b.type='bandpass';b.frequency.value=F;b.Q.value=Q;const bg=ac.createGain();bg.gain.value=k*2.2;os.connect(b);b.connect(bg);bg.connect(g)}
+  g.connect(o);os.start(t);os.stop(t+d+.05)}
+const KIND={
+ chirp:{hurt:(ac,o,t,f)=>{for(const k of [0,.1,.19])tone(ac,o,t+k,f*1.1,f*1.6,.07,'sine',.5)},
+        die:(ac,o,t,f)=>{tone(ac,o,t,f*1.5,f*.7,.9,'sine',.45,[18,f*.08]);tone(ac,o,t+.05,f*1.2,f*.6,.7,'triangle',.15)}},
+ quack:{hurt:(ac,o,t,f)=>{for(const k of [0,.2])vox(ac,o,t+k,f,f*.85,.16,1100,2600,.5,null,'square')},
+        die:(ac,o,t,f)=>{vox(ac,o,t,f*1.05,f*.6,.8,1000,2400,.5,[7,.03],'square')}},
+ screech:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.4,f*1.1,.35,2600,4200,.45,[22,.04]);hiss(ac,o,t,.3,'bandpass',3500,2,.2)},
+          die:(ac,o,t,f)=>{vox(ac,o,t,f*1.5,f*.7,1,2400,3800,.45,[16,.05]);hiss(ac,o,t,.8,'bandpass',3000,2,.15,1500)}},
+ squeak:{hurt:(ac,o,t,f)=>{for(const k of [0,.12,.22])vox(ac,o,t+k,f*1.2,f*1.45,.09,2200,3400,.45,null,'square')},
+         die:(ac,o,t,f)=>{vox(ac,o,t,f*1.4,f*.8,.8,2000,3200,.42,[13,.06],'square')}},
+ bleat:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.05,f*.9,.45,700,1250,.55,[6.5,.05])},
+        die:(ac,o,t,f)=>{vox(ac,o,t,f*1.1,f*.55,1.1,650,1150,.55,[5.5,.07])}},
+ neigh:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.6,f*2.2,.18,900,1900,.4,[18,.04]);vox(ac,o,t+.18,f*2.2,f*1.2,.3,850,1800,.4,[20,.05])},
+        die:(ac,o,t,f)=>{vox(ac,o,t,f*1.8,f*2.4,.25,900,1900,.42,[16,.04]);vox(ac,o,t+.25,f*2.4,f*.9,.7,800,1700,.42,[14,.06]);hiss(ac,o,t+.95,.25,'lowpass',500,1,.3)}},
+ moo:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f,f*.85,.5,420,850,.6,[4,.02])},
+      die:(ac,o,t,f)=>{vox(ac,o,t,f*1.05,f*.6,1.2,400,800,.6,[3.5,.03])}},
+ yelp:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.6,f*2.2,.08,1100,2300,.5);vox(ac,o,t+.08,f*2.2,f*1.1,.22,1000,2200,.5)},
+       die:(ac,o,t,f)=>{for(const k of [0,.18])vox(ac,o,t+k,f*1.8,f*1.3,.14,1000,2100,.4);vox(ac,o,t+.38,f*1.2,f*.7,.9,700,1300,.45,[5,.04],'triangle')}},
+ roar:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*.9,f*.7,.5,380,900,.6,[30,.1]);hiss(ac,o,t,.45,'lowpass',900,1,.3)},
+       die:(ac,o,t,f)=>{vox(ac,o,t,f,f*.45,1.3,350,850,.6,[25,.12]);hiss(ac,o,t,1.2,'lowpass',800,1,.28,250)}},
+ pig:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*.5,f*.4,.2,350,900,.5,[35,.15]);vox(ac,o,t+.2,f*2.4,f*3,.25,1400,2800,.35,null,'square')},
+      die:(ac,o,t,f)=>{vox(ac,o,t,f*2.6,f*3.2,.3,1500,3000,.38,[12,.04],'square');vox(ac,o,t+.3,f*3.2,f*1.6,.7,1300,2600,.38,[10,.06],'square')}},
+ hiss:{hurt:(ac,o,t,f)=>{hiss(ac,o,t,.35,'highpass',3800,.8,.45,5200)},
+       die:(ac,o,t,f)=>{hiss(ac,o,t,1,'highpass',4200,.8,.42,2000)}},
+ croak:{hurt:(ac,o,t,f)=>{for(const k of [0,.18])vox(ac,o,t+k,f,f*.8,.13,500,1300,.6,[40,.2],'square')},
+        die:(ac,o,t,f)=>{vox(ac,o,t,f,f*.5,.8,450,1200,.6,[30,.25],'square')}},
+ click:{hurt:(ac,o,t,f)=>{for(const k of [0,.06,.11,.17])hiss(ac,o,t+k,.035,'highpass',3600,1,.55)},
+        die:(ac,o,t,f)=>{for(let k=0;k<7;k++)hiss(ac,o,t+k*.07,.04,'highpass',3200-k*200,1,.5);hiss(ac,o,t+.5,.4,'bandpass',1800,1,.2)}}};
+const BY={'Keklik':'chirp','Bıldırcın':'chirp','Ur kekliği':'chirp','Ördek':'quack','Yaban kazı':'quack','Turna kuşu':'quack','Kartal':'screech',
+ 'Tavşan':'squeak','Sincap':'squeak','Kunduz':'squeak','Porsuk':'squeak','Su samuru':'squeak','Geyik':'bleat','Karaca':'bleat','Dağ keçisi':'bleat','Muflon':'bleat',
+ 'Yaban atı':'neigh','Yaban öküzü':'moo','Kurt':'yelp','Bataklık kurdu':'yelp','Kül kurdu':'yelp','Vaşak':'yelp','Mağara ayısı':'roar','Kara ejder':'roar',
+ 'Yaban domuzu':'pig','Engerek':'hiss','Timsah':'hiss','Zehirli kurbağa':'croak','Kerevit':'click','Dikenli kirpi':'click','Oklu kirpi':'click'};
+const RX=[[/kuş|keklik|serçe|baykuş|güvercin|tavuk/i,'chirp'],[/ördek|kaz\b|turna/i,'quack'],[/kartal|şahin|yarasa|güve|kelebek/i,'screech'],
+ [/tavşan|sincap|fare|kunduz|porsuk|samur|kirpi/i,'squeak'],[/geyik|karaca|keçi|muflon|koyun|kuzu/i,'bleat'],[/\bat\b|atı/i,'neigh'],[/öküz|inek|boğa|bizon/i,'moo'],
+ [/kurt|tilki|vaşak|çakal|köpek/i,'yelp'],[/ayı|ejder|golem|dev|reis|boss/i,'roar'],[/domuz/i,'pig'],[/engerek|yılan|timsah|kertenkele|semender/i,'hiss'],
+ [/kurbağa/i,'croak'],[/kerevit|akrep|böcek|örümcek|yengeç|robot|dron|pas/i,'click']];
+function kindOf(a){const k=a.k||'';const base=a.base||k.replace(/ Reisi$/,'');if(BY[base])return BY[base];for(const [r,v] of RX)if(r.test(base))return v;
+  const D=ANIM[base]||ANIM[k]||{};return (D.r||7)<=5?'squeak':'bleat'}
+window.__plVoice=function(a,v,what,f){const K=KIND[kindOf(a)];if(!K)return false;const big=a.boss?.7:1;S((ac,o,t)=>K[what](ac,o,t,f*big),v*(what==='die'?.65:.6));return true};
+}).toString()+')()')}catch(e){try{window.__hamErr('v336voice: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
