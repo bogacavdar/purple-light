@@ -8,6 +8,10 @@
 - Kontrol: chk.js 0 hata; kazan sıralaması, liste kaydırması, takip + denendi.
 
 
+
+## v3.38 (bekleyen paket) · sıkı el yapımı listesi, tavşan sesi
+- Yeni `v337hand` (stil) + `v337handjs`: el yapımı satırları tek satır; malzemeler (`.bn>span>br+small`) gizli, bilgisayarda satır üstüne gelince, telefonda ada dokununca (`li.hopen`) satırın altında mutlak konumlu kutuda açılır. Düğmeler küçük (26 px).
+- `v336voice`: yeni `rabbit` sesi (boğuk ayak/düşüş + nefesli gürültü ciyağı, saf ton yok); `'Tavşan':'rabbit'`.
 ## v3.37 (6 Kasım 2026) · leş, 194 eşya resmi, meşale yuvası, tarif kitabı, Boğaç gerçek saatte, kalp atışı, "seni hatırlıyorum", ACT 3 notları
 - `v330dev`: Boğaç yalnızca cihazın gerçek saati 02:00–06:00 iken çıkar (`realLate`), konuşmada gerçek saati söyler ("Saat 02:47 olmuş. Kapat oyunu artık.").
 - `v330klon`: `window.__plKlon=()=>C` (durum dışarı açıldı).

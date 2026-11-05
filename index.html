@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.37</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.38</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -20086,6 +20086,9 @@ const KIND={
         die:(ac,o,t,f)=>{vox(ac,o,t,f*1.05,f*.6,.8,1000,2400,.5,[7,.03],'square')}},
  screech:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.4,f*1.1,.35,2600,4200,.45,[22,.04]);hiss(ac,o,t,.3,'bandpass',3500,2,.2)},
           die:(ac,o,t,f)=>{vox(ac,o,t,f*1.5,f*.7,1,2400,3800,.45,[16,.05]);hiss(ac,o,t,.8,'bandpass',3000,2,.15,1500)}},
+ // v3.37 (Boğaç: "tavşanın sesi ıslık çalıyor gibi olmasın"): no pure tone at all: a dull thump, then a short breathy, raspy squeal (noise through low formants)
+ rabbit:{hurt:(ac,o,t,f)=>{tone(ac,o,t,140,70,.12,'sine',.55);hiss(ac,o,t+.03,.16,'bandpass',1500,1.6,.55,1100);vox(ac,o,t+.04,Math.min(520,f*.5),Math.min(440,f*.42),.14,900,1700,.16,[30,.08],'sawtooth')},
+        die:(ac,o,t,f)=>{tone(ac,o,t,120,60,.18,'sine',.5);hiss(ac,o,t+.05,.55,'bandpass',1400,1.4,.45,700);vox(ac,o,t+.06,Math.min(500,f*.48),Math.min(300,f*.3),.5,850,1500,.14,[24,.1],'sawtooth')}},
  squeak:{hurt:(ac,o,t,f)=>{for(const k of [0,.12,.22])vox(ac,o,t+k,f*1.2,f*1.45,.09,2200,3400,.45,null,'square')},
          die:(ac,o,t,f)=>{vox(ac,o,t,f*1.4,f*.8,.8,2000,3200,.42,[13,.06],'square')}},
  bleat:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.05,f*.9,.45,700,1250,.55,[6.5,.05])},
@@ -20107,7 +20110,7 @@ const KIND={
  click:{hurt:(ac,o,t,f)=>{for(const k of [0,.06,.11,.17])hiss(ac,o,t+k,.035,'highpass',3600,1,.55)},
         die:(ac,o,t,f)=>{for(let k=0;k<7;k++)hiss(ac,o,t+k*.07,.04,'highpass',3200-k*200,1,.5);hiss(ac,o,t+.5,.4,'bandpass',1800,1,.2)}}};
 const BY={'Keklik':'chirp','Bıldırcın':'chirp','Ur kekliği':'chirp','Ördek':'quack','Yaban kazı':'quack','Turna kuşu':'quack','Kartal':'screech',
- 'Tavşan':'squeak','Sincap':'squeak','Kunduz':'squeak','Porsuk':'squeak','Su samuru':'squeak','Geyik':'bleat','Karaca':'bleat','Dağ keçisi':'bleat','Muflon':'bleat',
+ 'Tavşan':'rabbit','Sincap':'squeak','Kunduz':'squeak','Porsuk':'squeak','Su samuru':'squeak','Geyik':'bleat','Karaca':'bleat','Dağ keçisi':'bleat','Muflon':'bleat',
  'Yaban atı':'neigh','Yaban öküzü':'moo','Kurt':'yelp','Bataklık kurdu':'yelp','Kül kurdu':'yelp','Vaşak':'yelp','Mağara ayısı':'roar','Kara ejder':'roar',
  'Yaban domuzu':'pig','Engerek':'hiss','Timsah':'hiss','Zehirli kurbağa':'croak','Kerevit':'click','Dikenli kirpi':'click','Oklu kirpi':'click'};
 const RX=[[/kuş|keklik|serçe|baykuş|güvercin|tavuk/i,'chirp'],[/ördek|kaz\b|turna/i,'quack'],[/kartal|şahin|yarasa|güve|kelebek/i,'screech'],
@@ -20422,6 +20425,32 @@ try{if(/[?&]debug/.test(location.search))setTimeout(()=>{try{const c=p1mk(16,16)
   for(const n of Object.keys(PRICE_)){if(ICON[n]===sack)miss.push(n)}   // only what has already been drawn: never draw early (later blocks add art)
   if(miss.length)console.warn('Purple Light: resmi yok ('+miss.length+') → '+miss.join(', '));else console.log('Purple Light: her eşyanın resmi var')}catch(e){console.warn('art check: '+e)}},12000)}catch(e){}
 }).toString()+')()')}catch(e){try{window.__hamErr('v337art: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<style id="v337hand">
+/* v3.37 (Boğaç: "koskoca ekranda 3 tarifi görmemeliyim, alt alta görebilmeliyiz, üstüne gelince malzemeler yazsın"): el yapımı is one short line
+   per recipe; the materials open in a small box under the row on hover (computer) or on a tap on the name (phone), over the rows below */
+#craft .book.hand{gap:0}
+#craft .book.hand li{position:relative;align-items:center!important;min-height:0!important;padding:3px 0!important;gap:8px!important}
+#craft .book.hand .rr.hq{gap:4px!important}
+#craft .book.hand .rr.hq .mk{font-size:13px!important;height:26px!important;min-height:0!important;line-height:1!important;padding:0 4px!important;border-width:2px}
+#craft .book.hand .rr.hq>[data-q="1"]{width:3.4em!important}#craft .book.hand .rr.hq>[data-q="5"]{width:2.6em!important}#craft .book.hand .rr.hq>.hall{width:6.6em!important}#craft .book.hand .rr.hq>.b3t{width:5.4em!important}#craft .book.hand .rr.hq>[data-camp]{width:3.4em!important}
+#craft .book.hand .rr.hq .mk small{font-size:11px}
+#craft .book.hand .bn{align-items:center!important;gap:6px!important;min-width:0;cursor:default}
+#craft .book.hand .bn>img{width:20px!important;height:20px!important;flex:none}
+#craft .book.hand .bn>span{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:14px;line-height:1.2}
+#craft .book.hand .bn>span>br{display:none}
+#craft .book.hand .bn>span>br+small{display:none;position:absolute;left:0;right:0;top:100%;z-index:6;white-space:normal;background:#11170f;border:2px solid #5a6a4a;padding:5px 8px;font-size:12.5px;line-height:1.45;box-shadow:0 6px 10px rgba(0,0,0,.6);pointer-events:none}
+@media (hover:hover){#craft .book.hand li:hover{background:rgba(255,255,255,.04)}#craft .book.hand li:hover .bn>span>br+small{display:block}}
+#craft .book.hand li.hopen .bn>span>br+small{display:block}
+#craft .book.hand li.hopen{background:rgba(255,255,255,.05)}
+</style>
+<script id="v337handjs">
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+// phone: a tap on the name shows / hides that recipe's materials (one at a time)
+cbody.addEventListener('click',e=>{const bn=e.target.closest&&e.target.closest('.book.hand .bn');if(!bn)return;const li=bn.closest('li');if(!li)return;
+  const was=li.classList.contains('hopen');cbody.querySelectorAll('.book.hand li.hopen').forEach(x=>x.classList.remove('hopen'));if(!was)li.classList.add('hopen')});
+}).toString()+')()')}catch(e){try{window.__hamErr('v337handjs: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
