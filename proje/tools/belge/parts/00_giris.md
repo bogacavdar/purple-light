@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.34** ile birebir (5 Kasım 2026). Bu sürümde: gizli şeyler (kazana çöp ve görünmezlik iksiri, Börü'nün kemeri, 100. gecede yıldızlar, eski kamp ateşi, ayna, dans, inatçı balıkçı, barışçı saldırı, gece 03:00, devam ederken bir satır); gece beliren sevdiğin kişi (mor ışıkta); iki yeni gizli başarım.
+Sürüm: **Versiyon 3.35** ile birebir (5 Kasım 2026). Bu sürümde: bütün yemekler (közlenmiş, pişmiş, çiğ et ve balık, tarifler) tokluğun yanında biyom kademesine göre iyi etki ve can verir, satış değerleri kademeyle artar; dans 3 kez sol-sağ ile başlar ve başka tuşla biter; sudaki yüz yalnızca boş beklerken.
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 

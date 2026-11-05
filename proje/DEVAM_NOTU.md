@@ -1,3 +1,8 @@
+## v3.35 (5 Kasım 2026) · bütün yemeklere etki, dans, ayna
+- `v335food`: `tierOf` (toplanan: v74 `FOODT` → `window.__plFoodT`; et: avın biyomu `__I1B`/`__I2C`; ön ekli pişmiş: çiğinin; tarif: malzemelerin en yükseği; yoksa fiyattan), `kindEffect`, `window.__plFoodFix` (v74 `prof` sonunda çağrılır): etki, süre 60+30·k (+30 pişmiş, ≤420), can. Fiyat ×(1+0,15·k) yüklemede bir kez; `FOODC` temizlenir. Denemede etkisiz yemek kalmadı (0).
+- `v334egg`: dans `keys.a/keys.d` kenarlarıyla 6 alternatif basış (≤0,6 sn arayla, 3 sn içinde); başka keydown ya da yürüyüş bitirir; hayvan çekme 60 px/sn. Ayna: toplama, olta, basılı tuş varken sayaç sıfır.
+- Kontrol: chk.js 0 hata.
+
 ## v3.34 (5 Kasım 2026) · easter egg'ler
 - `v334egg`: kazana çöp (`deposit` sarmalı; hiçbir tarifte geçmeyen satılabilir malzeme, 5 farklı → Zümrüt kızar, 3. kez 10 sn görünmezlik: `tickAnimals` sırasında aggro 0, `drawPlayer` %18 opak), Börü'ye 50 yumruk (`attack` sarmalı, `EQUIP["Börü'nün kemeri"]` gövde 26 + kanama %20, `ICON` elle çizildi), her 100. gece yıldızlar (`drawDarkness` sarmalı + oyuncuda 420 px ışık), eski kamp ateşi (ACT 1, Kemal'den ≥120 kare, kayıtta), ayna (10 sn hareketsiz, yüz suya), dans (1,2 sn'de 4 yön dönüşü; 20 sn → zararsız/nötr hayvanlar toplanır), inatçı balıkçı (`startFish` sarmalı, aynı yere 100 atış), Kemal 03:00 (`say` sarmalı), devam satırı (`#v334line`, `hammadde.line`). Kayıt: `v334={j,s,b,bg,f,c}`.
 - `v330klon`: artık sevdiğin kişi (mor göz, hale, zerreler, adı); başarım `klon` adı "Mor ışıkta o". `v330ys`: saldırıda öldürme sayılır (`ATK.k`); süre dolup kimse ölmediyse "Konuk". Yeni başarımlar `gorunmez`, `konuk` (localStorage bayrakları).

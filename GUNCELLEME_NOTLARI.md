@@ -8,6 +8,23 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.35 · 5 Kasım 2026
+
+### Oynanış
+- **Bütün yemeklerin bir etkisi var.** Közlenmiş etler ve balıklar, çiğ et ve balık, deniz balıkları ve bütün yemek tarifleri artık yalnızca doyurmuyor; toplanan yiyecekler gibi bir iyi etki ve can da veriyor:
+  - et Güç verir; balık ve deniz ürünleri Gece gözü; yumurta Dayanıklılık; kuruyemiş ve tahıl Doygunluk; bal ve reçel Çeviklik; salata, meyve ve sebze Canlılık;
+  - ileriki biyomun yemeği daha güçlü: etki daha uzun sürer, daha çok can verir; Kayalık Dağ'dan sonra pişmiş yemekler ayrıca Şifa, Mor Kristal'den sonra Dayanıklılık da verir.
+- **Yemeklerin satış değeri biyomla artar:** Orman'ın yemeği %15, Mor Kristal'inki %75 daha pahalı; ikinci adada daha da fazla.
+
+### Düzeltmeler
+- Dans artık sol-sağ'a 3 kez basınca başlıyor, tuşu bırakınca da sürüyor ve başka bir tuşa basınca bitiyor; 20 saniye dans edince hayvanlar gerçekten yanına geliyor.
+- Sudaki yansıma yalnızca hiçbir şey yapmadan beklerken çıkar; su toplarken ya da olta atarken çıkmaz.
+
+### Tasarım belgesi
+- Yemek bölümüne "Bütün yemeklerin etkisi var" kuralı (kademeler, etki türleri, süre, can, fiyat) eklendi; Gizli şeyler'de dans ve ayna güncellendi.
+
+---
+
 ## Versiyon 3.34 · 5 Kasım 2026
 
 ### Oynanış
