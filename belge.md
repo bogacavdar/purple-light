@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.29** ile birebir (5 Kasım 2026). Bu sürümde: telefonda kutucuklarda eşyanın tam adı (dokununca balon; envanterde basılı tutunca seçmeden); reçine yokken çıkan uyarı düzeltildi; Giriş › Kural sadeleşti.
+Sürüm: **Versiyon 3.30** ile birebir (5 Kasım 2026). Bu sürümde: mor ışık saldırıları ve Yıldızsızlar (3–10 günde bir; güce ve güne göre, sikke düşürür, almanakta ayrı sayfa); denizde gizli yol ve "Denizde yürüyen"; gece beliren klon ve "Öteki ben"; gece 15 saniye beliren yazılımcı Boğaç; tavla anısında mor boynuzlar.
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -417,6 +417,20 @@ Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki se
 - **Gündüz olunca gece canlıları gider (v2.33, Boğaç):** yalnızca gece çıkan canlılar (Kurt gibi) sabah olunca (06:00) artık kalmaz: kovalamayı bırakır, senden uzağa koşar ve 300 pikselden uzaklaşınca ya da en geç **6 saniye** sonra toz bulutuyla kaybolur. Eskiden yalnızca ekranın çok dışındakiler kayboluyor, yakındakiler gündüz de kalıyordu. Reis'ler ve yan görev canavarları bu kurala girmez (görev bitene kadar kalırlar).
 - **Güvenli yerlere canavar girmez (v2.22):** kavga edebilen canlılar (*saldırgan* ve *nötr*, Reisler dahil) aşağıdaki güvenli yerlerin sınırında durur, içeri **adım atmaz**; kişilerin yanına gelemez. Seni kovalarken sen güvenli yere girersen sınırda kalır, sonra vazgeçer. Bir şekilde içerde kalmış biri (ör. hücum ya da sıçrama ile) en yakın kenardan dışarı yürür. *Zararsız* canlılar (tavşan, geyik…) eskisi gibi dolaşır. Börü'nün ders canlıları ve arena bu kuraldan muaf.
 
+### Boğaç, gece beliren yazılımcı (v3.30, Boğaç)
+
+- **Her gece** (20:00–06:00) gecenin rastgele bir anında, haritanın (o anki adanın) rastgele bir yerinde, yürünebilen bir karada **Boğaç** adında bir yazılımcı belirir ve yalnızca **15 saniye** kalır (gerçek saniye; oyun duraklatılınca sayaç da durur), sonra kaybolur. Bir gecede bir kez çıkar; uyuyarak geçen gecede çıkmaz. Haritada ya da hiçbir yerde işareti, ipucu yoktur.
+- **Görünüşü:** varsayılan erkek karaktere benzer (kahve saç, açık ten, mavi pantolon) ama koyu gri tişörtlü ve **kare gözlüklüdür**. Belirirken ve kaybolurken çevresinde kısa bir mor parıltı olur. Konuşma kutusunda kendi resmi görünür.
+- Yanına varınca (yaklaşık 22 piksel) kendiliğinden konuşur. Boğaç: "Kapat oyunu artık." · "Tamam". Konuşma bitince (ya da pencere dışına basılınca) **oyun kaydedilir ve ana menüye dönülür** (Ana menüye dön düğmesiyle aynı: otomatik kayıt).
+- **Bir kez (v3.30, Boğaç: "1 kere konuştuktan sonra bir daha gelmesin, şimdilik"):** Boğaç'la bir kez konuşunca o oyunda (kayıtta) bir daha hiç belirmez. Yeni bir oyunda yine çıkar.
+
+### Öteki sen: gece beliren klonun (v3.30, Boğaç)
+
+- Bazı gecelerde (her gece **%40** ihtimalle, tam karanlıkta 21:00–04:30 arasında rastgele bir anda) karakterinin **birebir kopyası** belirir: aynı görünüş, aynı giysi ve zırh, elinde aynı alet ve meşale; başının üstünde **karakterinin adı** yazar. Ekranın içinde, senden yaklaşık 100–140 piksel uzakta, yürünebilen bir yerde durur, yüzü sana dönüktür ve hiç konuşmaz. Çevresinde soluk bir ışık vardır (karanlıkta görünsün diye).
+- Ona doğru yürümeye başladığın an (aradaki uzaklık ~14 piksel azalınca) **birden kaybolur** (küçük bir kara duman). Yaklaşmazsan 25 saniye sonra kendiliğinden kaybolur. Bir gecede en çok bir kez çıkar.
+- Evin içinde, mağarada, denizde yolculukta, konuşma ya da pencere açıkken, ara sahnede ve arenada çıkmaz.
+- **5 farklı gecede** onu gören (ekranda en az 0,6 saniye kalmış olması yeter) gizli **Öteki ben** başarımını kazanır. Görülen geceler cihazda sayılır (başarımlar gibi, bütün kayıtlar için ortak).
+
 ### Işık kaynakları
 
 | Işık | Yarıçap | Süre | Not |
@@ -669,6 +683,7 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda (
 - **Kartlar aynı boyutta (v2.81, Boğaç):** almanaktaki her canlı kartı aynı yüksekliktedir (300 px, telefonda 270 px); uzun yazı (hareketler, tarifler) kartın içinde kaydırılır, satırları uzatmaz. Ad tek satırdır; sığmazsa "…" ile kısalır, üzerine gelince tamamı görünür.
 - **Başka bölgenin canlısı (v2.33, Boğaç):** her canlının kartı kendi bölgesinin sayfasındadır (Engerek → Orman). Yan görevde başka bölgenin canlısı çıkar (Bataklık'taki görevde Engerek, Kayalık Dağ'da Kurt, Çayır'da Yaban domuzu); onu avlayınca kartı **görevin bölgesinin sayfasında da** en sonda görünür, altında "Başka bölgenin canlısı · yan görevde karşına çıktı" yazar. Bu konuk kartlar o sayfanın sayısına (x / y canlı) katılmaz. Eskiden "Almanağa eklendi" yazıp avladığın bölgenin sayfasında görünmüyordu. Ayrıca henüz gitmediğin bir bölgenin canlısını avlarsan (ör. Orman'ın kenarından seni kovalayıp Çayır'a giren bir Engerek) o bölgenin sayfası almanakta açılır; sayfada yalnızca avladıkların görünür, gerisi ??? kalır.
 - **Reise yenilirsen:** Reis sahadayken (ya da gelmek üzereyken) bayılırsan Reis kaybolur ve sayaç **bir eksik** kalır (ör. 6 / 7), sanki onu çağıran son av hiç yapılmamış gibi. O türden bir tane daha avlayınca Reis yeniden gelir; yenene kadar böyle sürer. (Bayıldıktan sonra 60 sn hiçbir Reis gelmez kuralı geçerli.)
+- **Yıldızsızlar sayfası (v3.30):** ilk mor ışık saldırısından sonra biyomların altında ayrı bir **Yıldızsızlar** sayfası çıkar (bkz. Mor ışık saldırıları).
 - Almanak açıkken oyun durur. Kaydedilecek yeni bir şey yok: biyomlar, avlar ve Reisler zaten kayıtta; eski kayıtlarda bugüne kadar avladıkların açık gelir.
 
 ## İzler ve anılar
@@ -692,7 +707,7 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda (
 | 10 | Waffle | Başka bir gün, küçük bir kafe, pencere kenarı; çikolatalı, çilekli kocaman bir waffle. O: "Yarısı senin… ama çilekler benim!" "Bir ara göz göze geldiniz. Sen gözlerini ondan alamadın." O (kızararak): "Öyle süzük süzük bakma… utanıyorum." "Burnunun ucuna çikolata bulaşmıştı. Söylemedin; biraz daha öyle kalsın istedin." | Kafe masası, waffle, iki fincan, buhar |
 | 11 | Peçeteden gül | Bir kafede, kahveler gelene kadar peçeteyi katlayıp **peçeteden bir gül** yaparsın, gerçeğinden ayırt edilmez. O: "Dur, ben de yaparım! Bu kadar zor olamaz." "On dakika sonra masada bir şey vardı: saçak saçak, hiçbir şeye benzemeyen bir peçete." O: "Bu bir gül! …Biraz rüzgâr yemiş bir gül. Tamam… sadece bir peçete. Gülme!" "Güldün. O da güldü. Kahveler geldi, gülmeye devam ettiniz." (komik anı) | Kafe masası, fincanlar; senin önünde beyaz, katlanmış bir **peçete gülü** (kat kat yapraklar, burgulu peçete sapı, peçeteden bir yaprak; v3.19, Boğaç: şekere benzemesin), onun önünde saçak saçak, hiçbir şekle benzemeyen bir peçete, üstte soru işaretleri |
 | 12 | Sinema biletleri | Defalarca sinema: komedi, korku, aşk filmleri. "O her bileti saklardı: bir kutuda, tek tek, tarihleriyle." O: "Bunlar bizim. Bir gün sayarız, kaç film izlemişiz diye." | Salon, perde; önde bilet kutusu |
-| 13 | Tavla | Bir akşam tavla. Sen: "Tavlada beni kimse yenemez." "Üç el üst üste kaybettin. Son elde bir de mars oldun." O (tatlı tatlı dalga geçerek): "Kimse yenemez, öyle mi? Dur, dur, kıpırdama…" "Tavlanın başında suratını asmışken telefonuyla fotoğrafını çekti; fotoğrafa şeytan boynuzu çizip altına kocaman 'LOSER' yazdı. O fotoğraf hâlâ telefonunda." | Masada **kapalı bir tavla kutusu** ve zarlar (v3.19, Boğaç: tahta yüzleri kapatmasın, yüzler görünür); sen üzgün, o zıplıyor; flaş, sonra telefon ekranında boynuzlu fotoğrafın ve kırmızı LOSER |
+| 13 | Tavla | Bir akşam tavla. Sen: "Tavlada beni kimse yenemez." "Üç el üst üste kaybettin. Son elde bir de mars oldun." O (tatlı tatlı dalga geçerek): "Kimse yenemez, öyle mi? Dur, dur, kıpırdama…" "Tavlanın başında suratını asmışken telefonuyla fotoğrafını çekti; fotoğrafa şeytan boynuzu çizip altına kocaman 'LOSER' yazdı. O fotoğraf hâlâ telefonunda." | Masada **kapalı bir tavla kutusu** ve zarlar (v3.19, Boğaç: tahta yüzleri kapatmasın, yüzler görünür); sen üzgün, o zıplıyor; flaş, sonra telefon ekranında fotoğrafın: **mor şeytan boynuzları tam kafanın üstünde** (v3.30, Boğaç; eskiden kırmızıydı ve kafanın çok üstünde havada duruyordu) ve kırmızı LOSER |
 | 14 | Kardan kalp | Kar yağan bir gün; sokak lambalarının altında kar taneleri. Eğilip kardan **kalp biçiminde bir kartopu** yaparsın. Sen: "Bu sana. Ama atmak yok!" O (çok hoşuna gider): "Çok güzel! Erimesin diye ne yapacağım şimdi?" "Eriyene kadar eldiveninin içinde tuttu onu. Yanakları soğuktan mı kızarmıştı, yoksa…" | Karlı akşam, sokak lambası, yağan kar; elinden onun eline geçen beyaz kardan kalp |
 | 15 | Çay kenarında kahvaltı | Bir sabah, **teklifin sonradan yapılacağı o çayın kenarında** kahvaltı: örtü, sıcak poğaçalar, ince belli bardaklarda çay. O: "Poğaçanın en sıcağı benim, haberin olsun." "Kuşlar, suyun sesi, buharı tüten çay. O sabah burayı çok sevdiniz." | Sabah, akan çay (teklifteki çayır ve ağaçlar), örtü, poğaça, çaydanlık, çay bardakları |
 | 16 | Doğum günü pastası | Senin doğum günün, **parkta** (v3.19, Boğaç): ağaçların altındaki bankta bir sürpriz. O: "Sürpriz! Kendim yaptım!" "**Yuvarlak** bir pasta; üstünde **siyah damla çikolatalardan** bir kalp. Yanında **bir şişe** soğuk limonata." "Hayatının en güzel pastasıydı. Limonatayı da ikiniz paylaştınız." | Park: gökyüzü, ağaçlar, çimen, yol, bank; bankta mumlu yuvarlak pasta, üstünde siyah damla çikolatadan kalp; yanında küçük bir limonata şişesi |
@@ -857,6 +872,31 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 - **Yakalama** yapanlar: Mağara ayısı, golemler, Lav golemi, Hurda devi, Gölge muhafız, Timsah, Yaban öküzü, Kızıl ejder, Gök bekçisi, Kristal golemcik, Devriye robotu. **Üçlü saldırı:** kurtlar, Gök tazısı, Vaşak, Goblin, Yaban domuzu, Mağara ayısı, Gölge muhafız, Devriye robotu, Kristal golemcik, Yavru ejder, Timsah, Ateş akrebi ve bütün Reisler.
 - Daha doğudaki (ve ACT 2'deki) canavarlar hamleleri daha sık yapar, mermilerden yana sıçrayabilir, ara sıra mavi parıltıyla kısa süre **bağışık** olur ("Etkisiz").
 
+## Mor ışık saldırıları ve Yıldızsızlar (v3.30, Boğaç)
+
+Belirli günlerde mor ışık, karakterin bulunduğu bölgeye **o dünyadan olmayan, mor renkli uzaylı canlılar** indirir: **Yıldızsızlar**.
+
+- **Ne zaman:** saldırılar arasında **en az 3, en çok 10 gün** vardır (her seferinde bu aralıktan rastgele; özel günler seçilmez). İlk saldırı yeni bir oyunun 4–11. gününde olur. Saldırı günü 09:00–19:00 arasında rastgele bir anda başlar. Sıradaki saldırının günü ve saati kayıtta saklanır. Her iki adada da olur; arenada olmaz.
+- **Başlamaz** (koşul düzelince aynı gün başlar): evin içinde, mağarada, deniz yolculuğunda, güvenli bir yerin (kamp ateşi, Kemal'in kampı, kişilerin ateşleri) yanında, konuşma ya da pencere açıkken, ara sahnede, bayılırken. O gün hiç başlayamazsa ertesi gün aynı saatte dener.
+- **Başlarken:** ekranda "Mor ışık saldırısı! · Yıldızsızlar geliyor" yazar, uğultu ve gümbürtü duyulur. Karakterin bulunduğu yerin çevresi (yaklaşık 16 kare yarıçap) **mora döner**: yer mor bir örtüyle kaplanır, kenarında parlayan mor bir halka döner, havada mor zerreler yükselir. Yıldızsızlar bu bölgenin içine, gökten inen **mor ışık sütunlarıyla** (0,7 sn) iner.
+- **İki dalga:** önce yarısı iner; ilk dalgadan en çok 1 tane kalınca ya da 20 sn geçince kalanı iner. Sayı: 4 + (gün / 5) + (seviye / 6), en az 4, en çok 12.
+- **Bitiş:** bütün Yıldızsızlar ölünce "Mor ışık çekildi" yazar ve bölge eski rengine döner. Bölgeden çok uzaklaşırsan (halkanın ~5 kare dışına), bayılırsan ya da 4 dakika geçerse saldırı yarıda biter, kalan Yıldızsızlar ışıkla geri çekilir.
+- **Türler (gücüne ve güne göre):** saldırıya hangi türlerin geleceği seviyene ve güne göre belirlenir:
+
+| Tür | Ne zaman gelir | Nasıl savaşır | Can (silahının kaç vuruşu) | Hasar (tam canının) | Sikke |
+|---|---|---|---|---|---|
+| Yıldızsız gözcü | her saldırıda | yerden biraz yukarıda süzülen tek gözlü, dokunaçlı küçük canlı; hızlı, ısırır | 3 vuruş | %5 | 6–10 |
+| Yıldızsız sürüngen | her saldırıda | yerde sürünen, sırtında parlayan benekler olan, çok bacaklı canlı | 6 vuruş | %8 | 12–20 |
+| Yıldızsız tükürücü | seviye 5 ya da 8. gün | uzun, yarı saydam, saplı gözlü canlı; uzaktan mor top tükürür (kenara çekil) | 4 vuruş | %6 | 10–16 |
+| Yıldızsız dev | seviye 12 ya da 18. gün (saldırıda en çok 2) | iri, üç gözlü, göğsünde parlayan çekirdek; ağır vuruşundan önce durup kollarını kaldırır (kaç!) | 14 vuruş | %14 | 40–60 |
+
+  - **Can**, elindeki (ya da silah yuvandaki) silahın bir vuruşunun hasarıyla ölçülür (en az 6 sayılır) ve günle artar: her gün +%2, en çok +%80. **Hasar** tam canının yüzdesidir ve günle aynı oranda artar; zırhın bunu da azaltır. Yani güçlendikçe Yıldızsızlar da güçlenir. Hepsi saldırgandır, seni uzaktan görür ve kovalar; güvenli yerlere girmezler.
+  - **XP:** türün vuruş sayısının 3 katı × (1 + seviye × 0,15).
+- **Sikke düşürürler:** her Yıldızsız ölünce yerde altın parıltısı çıkar ve tablodaki kadar **sikke** doğrudan keseye eklenir ("+12 sikke"); sayı gün ve seviyeyle artar (× (1 + gün × 0,03) × (1 + seviye × 0,04)). Eşya düşürmezler.
+- **Reisleri yoktur:** kaç tane avlarsan avla Yıldızsız Reisi gelmez. "Avcıların avcısı" ve "Ganimet avcısı" başarımlarına sayılmazlar.
+- **Almanak:** ilk saldırıdan sonra almanağın sol sütununda biyomların altında **Yıldızsızlar** sayfası açılır; dört türün kartı oradadır (öldürülene kadar siluet ve ???). Kartta can ve hasar, son saldırıdaki değerleridir; düşürdükleri "Sikke".
+- **Arena:** dört tür arenanın canlı listesinde **Yıldızsızlar** başlığıyla seçilebilir (son mor ışık saldırısındaki değerleriyle; o oturumda saldırı olmadıysa başlangıç değerleriyle: gözcü 30 can, sürüngen 60, tükürücü 40, dev 140).
+
 # Arena, hileler, kayıt
 
 ## Arena
@@ -907,6 +947,17 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
   - Hayvanlar haritaya konmaz; bulunduğun biyomun listesine göre çevrende belirir.
 - Büyük nehirde suya düşersen yarım saniyede bir en yakın kıyıya çıkarılırsın; nehrin 14 karo yakınında her zaman **yurt (Orman) kıyısına** çıkarsın, karşıya böyle geçilmez.
 - Haritada (M) kişilerin simgeleri görünür; bir simgeye dokununca oraya giden kalıcı bir yol oku konur. Küçük haritanın sol altında bulunduğun biyomun adı yazar.
+
+### Denizdeki gizli yol (v3.30, Boğaç)
+
+- ACT 1 adasında deniz normalde hiç yürünmez. Her **yeni oyunda** rastgele seçilen bir kıyıda (iskele ve köprülerden uzakta) karadan denize doğru dümdüz giden **1 kare genişliğinde, 8–10 kare uzunluğunda** bir yol vardır; yalnızca o kareler yürünür. **Yol mutlaka yürüyerek ulaşılabilir olmalı (Boğaç):** yolun başladığı kıyı adanın yürünebilen karasındadır (başlangıç kumsalından yürüyerek varılan kara; bazı yerler köprü onarılınca ya da kaya yığını patlatılınca açılır, yine de yürüyerek) ve yolun hemen arkasındaki 3 kara karesinde ağaç, kaya, maden, ev ya da başka bir engel olmaz; yola karadan dümdüz yürünerek girilir. Yer kayıtta saklanır (aynı oyunda hep aynı yer); eski kayıtlarda ilk açılışta seçilir. ACT 2 adasında yoktur.
+- **Şimdilik deneme için** yolun kareleri denizden farklı renkte (turkuaz) çizilir; ileride normal deniz rengine dönecek (gizli olacak).
+- Yolun **son karesine** varınca ekran kararır ("Gözlerin karardı…") ve **Kemal'in yanında** uyanırsın. Bu sıradan bir bayılma değildir: eşya ve sikke kaybolmaz, çanta bırakılmaz, bayılma sayısına ("İlk düşüş", "İnatçı") eklenmez, anı açmaz; can, enerji ve tokluk değişmez. Gizli **Denizde yürüyen** başarımını kazandırır (bkz. Başarımlar). Yolun sonuna her varışta yine bayılırsın.
+- **Kemal'in şaşkınlığı (v3.30, Boğaç):** uyanınca Kemal, ne olduğunu ve senin oraya nasıl geldiğini anlayamamış bir şaşkınlıkla karşılar (her seferinde):
+  - Kemal: "Hı?! Evlat! Sen… nereden çıktın? Az önce burada kimse yoktu, yemin ederim. Üstün başın sırılsıklam, saçından deniz suyu damlıyor… Ne oldu sana?"
+  - Seçenek: "Denizin üstünde yürüyordum… sonra gözlerim karardı."
+  - Kemal: "Denizin… üstünde mi? Hah! Bu adada yıllardır yaşarım, böylesini ne gördüm ne duydum. Ya ben yaşlandım ya bu ada iyice tuhaflaştı. Otur şu ateşin yanına, kendine gel; ben de bir çay koyayım. Kendime de bir bardak… iki bardak." · "Tamam"
+  - Konuşma bitince (ya da pencere dışına basılınca) başarım kartı çıkar.
 
 ## Biyomları okuma rehberi
 
@@ -6215,7 +6266,7 @@ Direnç yetenekleri eşya dirençleriyle; Dirençli beden ayrı yeteneklerin yer
 
 # Başarımlar
 
-42 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
+44 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
 
 | Başarım | Nasıl kazanılır | Not |
 |---|---|---|
@@ -6260,6 +6311,8 @@ Direnç yetenekleri eşya dirençleriyle; Dirençli beden ayrı yeteneklerin yer
 | Ganimet avcısı | Canlılardan düşebilecek her eşyayı en az bir kez elde et. | – |
 | Oyunlardaki gibi 🔒 | Ana menüde “cheat” yazdın: hile modu açıldı. | Ana menüde klavyeyle "cheat" yaz. Telefonda Ayarlar başlığına art arda 3 kez dokun (başarımın metni yanlışlıkla "ekrana 3 kez dokundun" diyor). |
 | Kehribar gözlüm 🔒 | Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1'i tamamla. | v3.20 (Boğaç): karakter yaratmada sevdiğin kişinin göz rengi **Kehribar** olmalı; ACT 1, Barbaros'un gemisiyle ikinci adaya geçince (ya da ikinci adadayken) tamamlanmış sayılır. Kazanılana kadar listede "???" ve "Gizli başarım" görünür, hiçbir ipucu verilmez. **Platin'e sayılmaz** (belli bir karakter seçimini istediği için). |
+| Denizde yürüyen 🔒 | Denizin üstünde yürü. | v3.30 (Boğaç): ACT 1 haritasında **denize hiç yürünmez**; ama her yeni oyunda rastgele bir kıyıdan denize doğru düz, 1 kare genişliğinde, **8–10 kare uzunluğunda gizli bir yol** vardır (bkz. ACT 1 › Denizdeki gizli yol). Yolun sonuna yürüyünce bayılırsın ve **Kemal'in yanında** uyanırsın; bu bir hata değil, bu başarımı kazandırır. Kazanılana kadar listede "???" ve "Gizli başarım" görünür, ipucu verilmez. **Platin'e sayılmaz** (rastgele bir yeri bulmaya bağlı). |
+| Öteki ben 🔒 | Gece beliren klonunu 5 farklı gecede gör. | v3.30 (Boğaç): bkz. Temel sistemler › Öteki sen. Kazanılana kadar "???" görünür. Platin'e sayılır (oynadıkça mutlaka çıkar). |
 | Platin | Bütün başarımları kazan. | **Şu an kazanılamaz:** "Yalnız dönüş" kazanılamadığı için. |
 
 
@@ -6409,7 +6462,7 @@ Sony'nin yayımladığı rehbere göre ayrıntılı sunumda olması gerekenler, 
 | Sony'nin istediği | Purple Light için |
 |---|---|
 | Kısa tanıtım ve oyunu farklı kılan şey | Hayatta kalma + üretim + hikâye; kayıp sevgilinin anıları, mor ışık gizemi, el yapımı piksel dünya. |
-| Neden PlayStation'a uygun | Kolla oynanacak biçimde tasarlandı (v3.20 oyun kolu düzeni), DualSense titreşimi, 42 başarımın kupaya dönüşmesi. |
+| Neden PlayStation'a uygun | Kolla oynanacak biçimde tasarlandı (v3.20 oyun kolu düzeni), DualSense titreşimi, 44 başarımın kupaya dönüşmesi. |
 | Ekip ve geçmiş | Boğaç (tasarım, yönetim), stüdyo bilgileri. |
 | Çalışan sürüm ya da oynanış videosu | Yayındaki oyun (https://bogacavdar.github.io/purple-light/), PC sürümü, fragman. Sony çalışan sürümü en iyi sunum sayıyor. |
 | İş soruları | Diğer platformlar (PC/Steam), hedef pazarlar, diller (Türkçe, İngilizce), iş modeli (tek seferlik satış), istenen destek, geliştirme ve pazarlama bütçesi, çıkış sonrası güncelleme planı (ACT 3). |
@@ -6427,7 +6480,7 @@ Taşırken yeniden kullanılacaklar: bu tasarım belgesi (oyunun tam tanımı), 
 
 ## PS5 için oyunda değişecekler
 
-- **Kupalar (Trophies):** 42 başarım PS5 kupalarına eşlenir; Platin zaten oyunda var. Sony'nin kupa kuralları (sayı, dağılım) DevNet'te.
+- **Kupalar (Trophies):** 44 başarım PS5 kupalarına eşlenir; Platin zaten oyunda var. Sony'nin kupa kuralları (sayı, dağılım) DevNet'te.
 - **Kontroller:** v3.20 oyun kolu düzeni (**Sistemler › Oyun kolu**) temel alınır; DualSense'in dokunmatik yüzeyi, hoparlörü, tetik direnci isteğe bağlı eklenir. Klavye/fare ekranları ve dokunmatik düğmeler kaldırılır.
 - **Kayıt:** tarayıcı kaydı yerine PS5'in kayıt sistemi; bulut kaydı.
 - **Arayüz:** televizyonda uzaktan okunabilir yazı boyları; bütün menüler kolla gezilir; ekranda tuş simgeleri PlayStation'ınki (✕ ○ □ △).

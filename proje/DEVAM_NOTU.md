@@ -1,3 +1,11 @@
+## v3.30 (5 Kasım 2026) · mor ışık saldırıları, gizli yol, klon, Boğaç
+- `v330ys`: saldırılar. Kayıtta `v330ys={n:gün,a:dakika,c:sayı}`; 3–10 günde bir, 09:00–19:00. Türler `ANIM[...]` (ys:1, drops boş). Statlar saldırı başında `setStats(silah vuruşu, maxHP)`. `killAnimal` sarmalı sikke ekler. Almanakta b=99 sayfası (`window.__plYS`). Yerinde kancalar: `bossOk` (ys hariç), killAnimal toast (ys'de yok), v213 `lands`/`kindsOf`/ad/alt yazı/kart, arena `groups()`.
+- `v330sea`: ACT 1 gizli deniz yolu (kayıtta `v330sea`), `window.__plSeaPath` (blocked ve v149 kıyıya çıkarma). Sonunda kayıpsız bayılma, Kemal'in yanında uyanma, Kemal konuşması, başarım `deniz` (localStorage `hammadde.denizach`, Platin'e sayılmaz).
+- `v330klon`: gece klonu, `drawPlayer` oyuncunun yeri/yönü geçici değiştirilerek çizilir. localStorage `hammadde.klonN`, başarım `klon` (Platin'e sayılır).
+- `v330dev`: Boğaç, her gece 15 sn; konuşunca `exitToMenu()`; kayıtta `v330dev=1` olunca bir daha gelmez.
+- Tavla anısı: boynuzlar kafada (hy=80), mor. `closeTitle` içindeki iPhone ipucu toast'ı silindi.
+- Kontrol: chk.js 0 hata.
+
 ## v3.29 (5 Kasım 2026) · telefonda eşyanın tam adı; reçine uyarısı
 - Yeni blok `v329name`: dokunmatikte `#craft .tile[data-n]` kutucuğuna dokununca (ad `.nm` kısalmışsa) `#nmtip` balonu 2,5 sn; envanterde (`mode==='inv'`) 0,4 sn basılı tutunca balon parmak kalkana kadar, ardından gelen click yutulur. Taşınabilir eşyanın `pointerup` yolunda (`invClick` çağrısı) yerinde kanca: `window.__plNmHeld()`. Fare değişmedi.
 - `feedTorch`: reçine yok uyarısı "Reçinen yok." (eski metin v2.70'te kalkan kabuk tarifini gösteriyordu).

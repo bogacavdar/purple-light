@@ -8,6 +8,29 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.30 · 5 Kasım 2026
+
+### Oynanış
+- **Mor ışık saldırıları ve Yıldızsızlar:** 3 ila 10 günde bir, gündüz rastgele bir saatte mor ışık bulunduğun yere iner: çevren mora döner ve gökten inen mor ışık sütunlarıyla **Yıldızsızlar** gelir. Bu, o dünyadan olmayan dört uzaylı canlı: gözcü, sürüngen, tükürücü ve dev. Hangilerinin geleceği ve ne kadar güçlü oldukları senin gücüne ve güne göre değişir. İki dalga halinde gelirler. Hepsi yenilince "Mor ışık çekildi" yazar. Her biri ölünce **sikke** düşürür. Güvenli yerlerde, evde, mağarada ve denizde başlamaz.
+- **Gece beliren klonun:** bazı gecelerde karakterinin birebir kopyası (aynı görünüş, aynı ad) uzakta belirip seni izler. Ona doğru yürüdüğün an kaybolur.
+- **Gece beliren yazılımcı:** her gece rastgele bir anda, haritanın rastgele bir yerinde yalnızca 15 saniye beliren biri var. Onu bulursan söyleyeceği bir şey var.
+- **Denizde bir sır:** ACT 1 adasında bir yerde bir sır saklı.
+
+### Başarımlar
+- İki yeni gizli başarım (kazanılana kadar ??? görünür). Başarım sayısı 44 oldu.
+
+### Görsel
+- Tavla anısında telefondaki fotoğrafın şeytan boynuzları artık başının üstünde ve mor.
+
+### Arayüz
+- Almanakta yeni bir **Yıldızsızlar** sayfası (ilk saldırıdan sonra açılır). Arenada Yıldızsızlar da seçilebilir.
+- iPhone'da oyun açılınca çıkan "Araç Çubuğunu Gizle" ipucu kaldırıldı.
+
+### Tasarım belgesi
+- Yeni bölümler: Mor ışık saldırıları ve Yıldızsızlar, Öteki sen, Boğaç, Denizdeki gizli yol. Başarımlar tablosuna iki gizli başarım eklendi.
+
+---
+
 ## Versiyon 3.29 · 5 Kasım 2026
 
 ### Arayüz

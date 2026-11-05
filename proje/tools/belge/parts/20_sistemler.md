@@ -368,6 +368,7 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda (
 - **Kartlar aynı boyutta (v2.81, Boğaç):** almanaktaki her canlı kartı aynı yüksekliktedir (300 px, telefonda 270 px); uzun yazı (hareketler, tarifler) kartın içinde kaydırılır, satırları uzatmaz. Ad tek satırdır; sığmazsa "…" ile kısalır, üzerine gelince tamamı görünür.
 - **Başka bölgenin canlısı (v2.33, Boğaç):** her canlının kartı kendi bölgesinin sayfasındadır (Engerek → Orman). Yan görevde başka bölgenin canlısı çıkar (Bataklık'taki görevde Engerek, Kayalık Dağ'da Kurt, Çayır'da Yaban domuzu); onu avlayınca kartı **görevin bölgesinin sayfasında da** en sonda görünür, altında "Başka bölgenin canlısı · yan görevde karşına çıktı" yazar. Bu konuk kartlar o sayfanın sayısına (x / y canlı) katılmaz. Eskiden "Almanağa eklendi" yazıp avladığın bölgenin sayfasında görünmüyordu. Ayrıca henüz gitmediğin bir bölgenin canlısını avlarsan (ör. Orman'ın kenarından seni kovalayıp Çayır'a giren bir Engerek) o bölgenin sayfası almanakta açılır; sayfada yalnızca avladıkların görünür, gerisi ??? kalır.
 - **Reise yenilirsen:** Reis sahadayken (ya da gelmek üzereyken) bayılırsan Reis kaybolur ve sayaç **bir eksik** kalır (ör. 6 / 7), sanki onu çağıran son av hiç yapılmamış gibi. O türden bir tane daha avlayınca Reis yeniden gelir; yenene kadar böyle sürer. (Bayıldıktan sonra 60 sn hiçbir Reis gelmez kuralı geçerli.)
+- **Yıldızsızlar sayfası (v3.30):** ilk mor ışık saldırısından sonra biyomların altında ayrı bir **Yıldızsızlar** sayfası çıkar (bkz. Mor ışık saldırıları).
 - Almanak açıkken oyun durur. Kaydedilecek yeni bir şey yok: biyomlar, avlar ve Reisler zaten kayıtta; eski kayıtlarda bugüne kadar avladıkların açık gelir.
 
 ## İzler ve anılar
@@ -555,6 +556,31 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 - **Kim ne yapar:** kurtlar, Gök tazısı, Vaşak, Goblin, Ateş akrebi, Kartal: sıçrama · Zehirli kurbağa: sıçrama + zehir gölü · Yaban domuzu, Geyik, Muflon, Dağ keçisi, Yaban atı: hücum · Yaban öküzü, Timsah, Hurda devi: hücum + kükreme · Kristal geyik: hücum + buz · Devriye robotu: hücum + şok · Mağara ayısı: kükreme + sıçrama · Kristal golem, Büyük golem: kükreme + buz · Lav golemi: kükreme + alev · Gölge muhafız: sıçrama + kükreme · Gök bekçisi: kükreme + şok + buz · Kara ejder: alev + kükreme · Kızıl ejder: alev + sıçrama + kükreme · Yavru ejder: alev + sıçrama · Lav kertenkelesi, Kül cini, Kor yarasası: alev · Kristal golemcik, Kristal yarasası: buz · Kristal örümcek: ağ + sıçrama · Engerek, Goblin şamanı: zehir gölü · Işık engereği: zehir gölü + ağ · Lazer ve Uzaylı dronu: şok · Fırtına kartalı: şok + sıçrama.
 - **Yakalama** yapanlar: Mağara ayısı, golemler, Lav golemi, Hurda devi, Gölge muhafız, Timsah, Yaban öküzü, Kızıl ejder, Gök bekçisi, Kristal golemcik, Devriye robotu. **Üçlü saldırı:** kurtlar, Gök tazısı, Vaşak, Goblin, Yaban domuzu, Mağara ayısı, Gölge muhafız, Devriye robotu, Kristal golemcik, Yavru ejder, Timsah, Ateş akrebi ve bütün Reisler.
 - Daha doğudaki (ve ACT 2'deki) canavarlar hamleleri daha sık yapar, mermilerden yana sıçrayabilir, ara sıra mavi parıltıyla kısa süre **bağışık** olur ("Etkisiz").
+
+## Mor ışık saldırıları ve Yıldızsızlar (v3.30, Boğaç)
+
+Belirli günlerde mor ışık, karakterin bulunduğu bölgeye **o dünyadan olmayan, mor renkli uzaylı canlılar** indirir: **Yıldızsızlar**.
+
+- **Ne zaman:** saldırılar arasında **en az 3, en çok 10 gün** vardır (her seferinde bu aralıktan rastgele; özel günler seçilmez). İlk saldırı yeni bir oyunun 4–11. gününde olur. Saldırı günü 09:00–19:00 arasında rastgele bir anda başlar. Sıradaki saldırının günü ve saati kayıtta saklanır. Her iki adada da olur; arenada olmaz.
+- **Başlamaz** (koşul düzelince aynı gün başlar): evin içinde, mağarada, deniz yolculuğunda, güvenli bir yerin (kamp ateşi, Kemal'in kampı, kişilerin ateşleri) yanında, konuşma ya da pencere açıkken, ara sahnede, bayılırken. O gün hiç başlayamazsa ertesi gün aynı saatte dener.
+- **Başlarken:** ekranda "Mor ışık saldırısı! · Yıldızsızlar geliyor" yazar, uğultu ve gümbürtü duyulur. Karakterin bulunduğu yerin çevresi (yaklaşık 16 kare yarıçap) **mora döner**: yer mor bir örtüyle kaplanır, kenarında parlayan mor bir halka döner, havada mor zerreler yükselir. Yıldızsızlar bu bölgenin içine, gökten inen **mor ışık sütunlarıyla** (0,7 sn) iner.
+- **İki dalga:** önce yarısı iner; ilk dalgadan en çok 1 tane kalınca ya da 20 sn geçince kalanı iner. Sayı: 4 + (gün / 5) + (seviye / 6), en az 4, en çok 12.
+- **Bitiş:** bütün Yıldızsızlar ölünce "Mor ışık çekildi" yazar ve bölge eski rengine döner. Bölgeden çok uzaklaşırsan (halkanın ~5 kare dışına), bayılırsan ya da 4 dakika geçerse saldırı yarıda biter, kalan Yıldızsızlar ışıkla geri çekilir.
+- **Türler (gücüne ve güne göre):** saldırıya hangi türlerin geleceği seviyene ve güne göre belirlenir:
+
+| Tür | Ne zaman gelir | Nasıl savaşır | Can (silahının kaç vuruşu) | Hasar (tam canının) | Sikke |
+|---|---|---|---|---|---|
+| Yıldızsız gözcü | her saldırıda | yerden biraz yukarıda süzülen tek gözlü, dokunaçlı küçük canlı; hızlı, ısırır | 3 vuruş | %5 | 6–10 |
+| Yıldızsız sürüngen | her saldırıda | yerde sürünen, sırtında parlayan benekler olan, çok bacaklı canlı | 6 vuruş | %8 | 12–20 |
+| Yıldızsız tükürücü | seviye 5 ya da 8. gün | uzun, yarı saydam, saplı gözlü canlı; uzaktan mor top tükürür (kenara çekil) | 4 vuruş | %6 | 10–16 |
+| Yıldızsız dev | seviye 12 ya da 18. gün (saldırıda en çok 2) | iri, üç gözlü, göğsünde parlayan çekirdek; ağır vuruşundan önce durup kollarını kaldırır (kaç!) | 14 vuruş | %14 | 40–60 |
+
+  - **Can**, elindeki (ya da silah yuvandaki) silahın bir vuruşunun hasarıyla ölçülür (en az 6 sayılır) ve günle artar: her gün +%2, en çok +%80. **Hasar** tam canının yüzdesidir ve günle aynı oranda artar; zırhın bunu da azaltır. Yani güçlendikçe Yıldızsızlar da güçlenir. Hepsi saldırgandır, seni uzaktan görür ve kovalar; güvenli yerlere girmezler.
+  - **XP:** türün vuruş sayısının 3 katı × (1 + seviye × 0,15).
+- **Sikke düşürürler:** her Yıldızsız ölünce yerde altın parıltısı çıkar ve tablodaki kadar **sikke** doğrudan keseye eklenir ("+12 sikke"); sayı gün ve seviyeyle artar (× (1 + gün × 0,03) × (1 + seviye × 0,04)). Eşya düşürmezler.
+- **Reisleri yoktur:** kaç tane avlarsan avla Yıldızsız Reisi gelmez. "Avcıların avcısı" ve "Ganimet avcısı" başarımlarına sayılmazlar.
+- **Almanak:** ilk saldırıdan sonra almanağın sol sütununda biyomların altında **Yıldızsızlar** sayfası açılır; dört türün kartı oradadır (öldürülene kadar siluet ve ???). Kartta can ve hasar, son saldırıdaki değerleridir; düşürdükleri "Sikke".
+- **Arena:** dört tür arenanın canlı listesinde **Yıldızsızlar** başlığıyla seçilebilir (son mor ışık saldırısındaki değerleriyle; o oturumda saldırı olmadıysa başlangıç değerleriyle: gözcü 30 can, sürüngen 60, tükürücü 40, dev 140).
 
 # Arena, hileler, kayıt
 
