@@ -2,6 +2,8 @@
 
 46 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
 
+**Başarım kartı ekranın ortasında (v3.39, Boğaç: "sağ altta haritanın üzerinde değil, ortada göster; tıklarsa direk kaybolsun"):** bir başarım kazanılınca kartı (simgesi, "BAŞARIM KAZANILDI" ve adı) **ekranın ortasında**, biraz büyük, hafifçe büyüyerek belirir ve **3,6 saniye** kalır, sonra söner. Karta **tıklanınca (dokununca) hemen kaybolur**; sırada başka başarım varsa o gelir. Kart oyunu durdurmaz, kartın dışına tıklamak oyunu etkilemez. (v3.38'e kadar kart sağ altta, haritanın üstünde çıkıyordu.)
+
 | Başarım | Nasıl kazanılır | Not |
 |---|---|---|
 | İlk tarif | Kazanda ilk tarifini öğren. | – |

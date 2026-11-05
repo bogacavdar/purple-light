@@ -10,8 +10,10 @@
 
 
 
-## v3.39 (bekleyen paket) · tam ekran yenilemede kaybolmuyor
+## v3.39 (bekleyen paket) · tam ekran yenilemede kaybolmuyor, takip şeridi kıpırdamıyor ve sıralı, başarım kartı ortada
 - Belge: Godot planına "Neden Godot, neden Unity değil" bölümü (Unity ileride açık seçenek; Unreal düşünülmüyor).
+- Takip şeridi: `rows()` takip satırlarını `items.length`'e göre sıralar (görünüş; `B3.trk` sırası ve en eskinin çıkması aynı). `placeBar()` satır/parça adları + ekran + yan panel anahtarı (`bar._lk`) değişmedikçe eski sol/üst konumu (`bar._pos`) korur.
+- Başarım kartı: `v339ach` stili ortada (%42), 176 px, büyüyerek; `card` tıklayınca hemen kapanır (`card._t` zamanlayıcısı), pointerdown/mousedown/touchstart oyuna geçmez.
 - `v88` tam ekran bloğu: `sync()` tam ekrandan çıkışı F5/Ctrl+R/`beforeunload`/`pagehide` sırasında (`leaving`) `hammadde.fs=0` diye kaydetmez; tam ekrana girince `1` yazar. Böylece açılışta ilk tıklama/tuşla (`once`) yeniden tam ekran olur. Alt+Enter, Esc ya da Ayarlar kutusuyla çıkış yine `0`.
 ## v3.38 (6 Kasım 2026) · sıkı el yapımı listesi, ıslık gibi olmayan canlı sesleri, düzenli takip şeridi
 - Yeni `v337hand` (stil) + `v337handjs`: el yapımı satırları tek satır; malzemeler (`.bn>span>br+small`) gizli, bilgisayarda satır üstüne gelince, telefonda ada dokununca (`li.hopen`) satırın altında mutlak konumlu kutuda açılır. Düğmeler küçük (26 px).

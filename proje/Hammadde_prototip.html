@@ -7953,7 +7953,7 @@ function crossRow(){if(!(tut>=11&&qState==='active'))return null;const q=QUESTS[
   if(/Doğu geçidini/.test(q.t)&&typeof rockfall!=='undefined'&&!rockfall.cleared){let pt=0;for(const n in PICK_TIER)if((inv[n]||0)>0)pt=Math.max(pt,PICK_TIER[n]);
     return{t:'Kemal · Doğu geçidi',r:'Kaya patlatıcı',items:[{n:'Kaya patlatıcı',need:2,have:Math.min(2,inv['Kaya patlatıcı']||0)},{n:'Kuvars kazma',need:1,have:pt>=4?1:0,tool:true}]}}
   return null}
-function rows(){const L=[];const t=tutRow();if(t)L.push(t);{const c=crossRow();if(c)L.push(c)}{const qr=window.__qrow&&window.__qrow();if(qr)L.push(qr);else for(const r of B3.trk.slice(-3).reverse()){const x=rowFor(r,1,r,true);if(x)L.push(x)}}return L}   // v2.83 (Boğaç): up to three tracked recipes, the newest on top
+function rows(){const L=[];const t=tutRow();if(t)L.push(t);{const c=crossRow();if(c)L.push(c)}{const qr=window.__qrow&&window.__qrow();if(qr)L.push(qr);else{const T=[];for(const r of B3.trk.slice(-3).reverse()){const x=rowFor(r,1,r,true);if(x)T.push(x)}T.sort((a,b)=>b.items.length-a.items.length);for(const x of T)L.push(x)}}return L}   /* v3.39: most materials on top (look only; the oldest still goes first) */   // v2.83 (Boğaç): up to three tracked recipes, the newest on top
 
 // the world things that give a still-missing ingredient (crafted parts are followed down to their raw materials)
 function refreshNodeNames(){if(B3.nnAt&&performance.now()-B3.nnAt<4000)return;B3.nnAt=performance.now();const s=new Set();for(const n of nodes)s.add(n.name);B3.nodeNames=s}
@@ -7991,6 +7991,10 @@ function placeBar(){if(bar.hidden)return;
   let left,top,maxW;
   if(x1-x0>=Math.min(w,260)){maxW=x1-x0;left=x0+Math.max(0,(maxW-w)/2);top=8}
   else{top=(tutOn?T.bottom:8)+6;left=tutOn?T.left:x0;maxW=Math.max(200,(tutOn?T.right:innerWidth-8)-left)}
+  // v3.39 (Boğaç): picking things up changes counts, "hazır" and the Yap button, so the width; while the same recipes and parts are tracked
+  // the left edge stays where it was (no sliding left and right). It is placed afresh when the tracked set, the screen or the side panels change.
+  {const lk=[...bar.querySelectorAll('.b3row')].map(r=>[...r.querySelectorAll('[data-n]')].map(c=>c.dataset.n).join(',')+'|'+(r.querySelector('.b3lt')||{}).textContent).join(';')+'#'+innerWidth+'x'+innerHeight+'#'+Math.round(x0)+'#'+Math.round(x1)+'#'+(tutOn?1:0);
+   if(lk===bar._lk&&bar._pos){left=bar._pos[0];top=bar._pos[1];maxW=Math.max(maxW,bar._pos[2])}else{bar._lk=lk;bar._pos=[left,top,maxW]}}
   bar.style.maxWidth=Math.round(maxW)+'px';bar.style.left=Math.round(left)+'px';bar.style.top=Math.round(top)+'px'}
 function renderBar(force){
   let R=rows();const phone=PHONE();
@@ -11613,10 +11617,12 @@ const st=document.createElement('style');st.textContent=
  +'#b-ach svg{image-rendering:pixelated}';
 document.head.appendChild(st);
 const card=document.createElement('div');card.id='achcard';card.setAttribute('role','status');card.setAttribute('aria-live','polite');document.body.appendChild(card);
+for(const ev of ['pointerdown','mousedown','touchstart'])card.addEventListener(ev,e=>e.stopPropagation(),{passive:true});
+card.addEventListener('click',e=>{e.stopPropagation();if(!card.classList.contains('on'))return;card.classList.remove('on');clearTimeout(card._t);setTimeout(()=>{busy=false;show()},320)});   // v3.39: a click closes the card at once
 const ov=document.createElement('div');ov.id='achov';ov.hidden=true;ov.setAttribute('role','dialog');ov.setAttribute('aria-label','Başarımlar');document.body.appendChild(ov);
 let q=[],busy=false;
 function show(){if(busy||!q.length)return;busy=true;const a=q.shift();card.innerHTML=`<img src="${ic(a[3])}" alt=""><span><small>BAŞARIM KAZANILDI</small><b>${esc(a[1])}</b></span>`;
-  requestAnimationFrame(()=>card.classList.add('on'));sfx('found');setTimeout(()=>{card.classList.remove('on');setTimeout(()=>{busy=false;show()},450)},3600)}
+  requestAnimationFrame(()=>card.classList.add('on'));sfx('found');card._t=setTimeout(()=>{if(!card.classList.contains('on'))return;card.classList.remove('on');setTimeout(()=>{busy=false;show()},450)},3600)}
 function track(){try{for(const k in kills)if(kills[k]>0)gput(KS,'hammadde.kill',k.replace(/ Reisi$/,''));
   for(const n of allDrop())if((inv[n]||0)>0)gput(IS,'hammadde.items',n);
   let ch=false;for(const id in PROG){if(id==='platin')continue;let v=null;try{v=PROG[id]()}catch(e){}if(!v)continue;const b=PB[id];if(!b||v[0]>b[0]||v[1]!==b[1]){PB[id]=[Math.max(v[0],b&&b[1]===v[1]?b[0]:0),v[1]];ch=true}}
@@ -20472,6 +20478,12 @@ cbody.addEventListener('click',e=>{const bn=e.target.closest&&e.target.closest('
 #b3trk .b3mk~.b3x{margin-left:2px}
 @media (max-height:520px){#b3trk .b3lab{width:6.4em}#b3trk .b3cell{width:6.2em}#b3trk .b3cell:not(:has(.b3plus))::after{width:16px}}
 body.v50m #b3trk .b3row{flex-wrap:wrap}body.v50m #b3trk .b3lab{width:6.4em}body.v50m #b3trk .b3cell{width:7.4em}
+</style>
+<style id="v339ach">
+/* v3.39 (Boğaç): the achievement card shows in the middle of the screen, a little bigger, and a click/tap on it closes it at once */
+#achcard{right:auto!important;bottom:auto!important;left:50%!important;top:42%!important;width:176px!important;height:176px!important;transform:translate(-50%,-50%) scale(.6)!important;opacity:0;transition:transform .3s,opacity .3s!important;pointer-events:none!important;cursor:pointer;z-index:61!important}
+#achcard.on{transform:translate(-50%,-50%) scale(1)!important;opacity:1;pointer-events:auto!important}
+#achcard img{width:64px!important;height:64px!important}#achcard small{font-size:11.5px!important}#achcard b{font-size:16px!important}
 </style>
 </body>
 </html>
