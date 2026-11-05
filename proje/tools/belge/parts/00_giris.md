@@ -1,8 +1,10 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.36** ile birebir (6 Kasım 2026). Bu sürümde: kazanda öğrenilenler aşağıda ve gizlenebilir, liste yerinde kalır; takip şeridinde + ile parça yapma; pazarda ara parçaların malzemeleri sayılır; el yapımında yapılabilecek parça sarı; dansta hayvanlar çemberde izler ve karakter şarkı söyler; körelmiş alet ağaca yönelmez; canlıların türlerine göre acı ve ölüm sesleri.
+Sürüm: **Versiyon 3.37** ile birebir (6 Kasım 2026). Bu sürümde: ölen canlılar yan yatar, düşürdükleri leşin içindedir ve toplanır, toplanmayan leş oyun saatiyle kaybolur; 194 eşyanın "hediye paketi" yerine gerçek resmi; tarif kitabında seçilen tarifin kutusu sabit; envanterde meşale yuvası, biten meşalenin yerine öbürü; Boğaç gerçek gece saatinde; sevdiğin kişinin kalp atışı; "Seni hatırlıyorum"; ACT 3 fikir notları.
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
+
+> **KURAL: HER EŞYANIN KENDİ RESMİ OLUR (Boğaç, 6 Kasım 2026):** oyundaki her eşyanın (malzeme, yemek, alet, yapı, ACT 2 eşyaları dahil) **adına ve gerçeğine uygun** bir resmi vardır; bu resim envanterde, tarif kitabında, elde, **yere düştüğünde** ve **kurulduğunda** (yapılarda) kullanılır. Adıyla ilgisi olmayan, adından renk alan "hediye paketi" kutusu **hiçbir eşyada görünmez**. Yeni bir eşya eklenirken resmi de aynı sürümde, ne olduğuna göre (yemek tabakta ya da tavada, iksir şişede, merhem kapta, taş taş gibi…) çizilir. Resmi olmayan bir eşya bulunursa bu bir hatadır. v3.37'de 194 eşyanın hediye paketi yerine gerçek resmi çizildi (Eşyalar › Eşya resimleri). Resmi unutulmuş bir eşya oyunda sade, nötr bir bez torba olarak görünür (renkli kutu değil) ve geliştirici araçları açıkken (`?debug`) konsola yazılır (kontrol önbelleği silmez, yalnızca karşılaştırır).
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

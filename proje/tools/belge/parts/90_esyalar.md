@@ -1,5 +1,17 @@
 # Eşya dizini
 
+## Eşya resimleri (v3.37, Boğaç)
+
+Her eşyanın adına uygun bir resmi vardır (Giriş › Kural). v3.37'ye kadar **194 eşya** resimsizdi ve adından renk alan bir "hediye paketi" kutusu olarak görünüyordu; hepsine gerçek resim çizildi. Resim envanterde, kitapta, elde, yere düşünce ve kurulunca aynıdır.
+
+- **Pişmiş / Tütsülenmiş / Kurutulmuş / Taşta balık** (Sazan, Yayın, Tatlısu kefali, Kerevit, Turna balığı, Kızılkanat, Yılan balığı, Kadife balığı, Kurbağa, Mersin balığı, Çapak): çiğ halinin resminden: pişmiş kızarmış renkte ve ızgara izli, tütsülenmiş koyu ve dumanlı, kurutulmuş soluk ve tuzlu, taşta olan taş levhanın üstünde.
+- **Deniz yemekleri:** tavada (Hamsi, Tekir, Barbunya, Kalkan tava), tabakta (Kalamar tava, Çipura buğulama, Orkinos biftek), ızgarada (İstavrit, Lüfer), kapta (Kefal pilakisi), şişte (Levrek, Kılıç şiş), kâsede (Ahtapot salatası); Kılıç balığı, Fener balığı ve Işıl balığı kendi biçimleriyle.
+- **Mutfak:** kavrulmuş ve ballı yemişler, şişler, Ziyafet sofrası, salata, et, Dağ çayı demi (demlik), Bal şarabı (şişe).
+- **Merhemler kapta, yağlar şişede, iksirler cam şişede, reçeller kavanozda, tohumlar çekirdek olarak, inciler sedefle.**
+- **Yapılan şeyler:** Sapan, Bola, Kirmen, Dokuma tezgâhı, Ok kılıfı, Deri çanta, Deri tulum, Yelkenli sal, Atölye, çanlar, ipler (kangal), yelpazeler, tılsımlar, Golem feneri, Kaya patlatıcı, Semender derisi tef, Ağ kapanı, Kor zurnası, yemler…
+- **Toplananlar ve canlı parçaları:** bölge bitkileri (Kardelen, Ay otu, Gece zambağı…), taşlar ve kristaller (Kükürt kristali, Volkan camı, Ayna taşı, Ametist…), tozlar, yosunlar, kökler, Sülük, Dev yüreği, Çamur Ana gözü, Kartal pençesi, Örümcek gözü…
+- **Unutulan resim:** resmi olmayan bir eşya renkli kutu değil, sade bir bez torba olarak görünür; geliştirici araçları açıkken (`?debug`) oyun açıldıktan 12 saniye sonra konsola "resmi yok" listesi yazılır.
+
 > **v2.48 notu:** ACT 1 madenlerinin fiyatları ve yerleri değişti (**Aletler · Madenler ve ekipman merdiveni**). Bir madeni kullanan tariflerin fiyatı, maden fiyatındaki değişim × miktar × 1,3 kadar (zincir boyunca) kendiliğinden değişir; bu tablodaki türetilmiş fiyatlar henüz yeniden üretilmedi (v2.47 değerleri). Yeni setlerin, ara ürünlerin ve Tunç/Demir set parçalarının fiyatları o bölümdeki tablolardadır.
 
 Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşyayı elde etmenin bütün yollarını sayar: yerden toplama (hangi biyomda), ağaç, av (hangi canlı, yüzde kaç ihtimalle), balık, tarif (nerede öğrenilir ve kim yapar), kişilerin verdikleri. **Kullanıldığı tarifler** ilk altı tarifi gösterir; tamamı için tarif ansiklopedisinde malzeme adını arat.
