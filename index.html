@@ -2422,7 +2422,7 @@ document.addEventListener('touchmove',e=>{if(e.touches.length>1||e.target===cv||
 const HALF=5;
 function blocked(px,py){
   const pts=[[px-HALF,py-HALF],[px+HALF,py-HALF],[px-HALF,py+HALF],[px+HALF,py+HALF]];
-  if(pts.some(([x,y])=>isWater(tileAt(x,y))&&!onBridge(x,y)))return true;
+  if(pts.some(([x,y])=>isWater(tileAt(x,y))&&!onBridge(x,y)&&!(window.__plSeaPath&&window.__plSeaPath(x,y))))return true;   // v3.30: the hidden sea path
   if(!rockfall.cleared&&pts.some(([x,y])=>inRockfall(x,y)))return true;
   if(ekinOn()&&Math.abs(npc.x-px)<HALF+5&&Math.abs(npc.y-py)<HALF+4)return true;
   if(witchShown&&Math.abs(witch.x-px)<HALF+5&&Math.abs(witch.y-py)<HALF+4)return true;
@@ -11567,12 +11567,14 @@ const ACH=[
  ['canlitum','Avcıların avcısı','İki adadaki her canlı türünden en az birini öldür.','Kürk yelek',()=>{const L=allAnim();return L.length>0&&L.every(n=>KS.has(n))}],
  ['dusentum','Ganimet avcısı','Canlılardan düşebilecek her eşyayı en az bir kez elde et.','Tavşan derisi',()=>{const L=allDrop();return L.length>0&&L.every(n=>IS.has(n))}],
  ['hile','Oyunlardaki gibi',(TOUCH?'Ana menüde ekrana art arda 3 kez dokundun: hile modu açıldı.':'Ana menüde “cheat” yazdın: hile modu açıldı.'),'Mor pusula',()=>{try{return localStorage.getItem('hammadde.cheatach')==='1'||localStorage.getItem('hammadde.cheatok')==='1'}catch(e){return false}}],
+ // v3.30 (Boğaç): secret, walk to the end of the hidden sea path (v330sea); not counted for Platin
+ ['deniz','Denizde yürüyen','Denizin üstünde yürüdün.','Mor yosun',()=>{try{return localStorage.getItem('hammadde.denizach')==='1'}catch(e){return false}}],
  // v3.20 (Boğaç): secret, and not counted for Platin (it needs one particular choice in the creator)
  ['kehribar','Kehribar gözlüm','Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1\'i tamamla.','Kehribar kolye',()=>{try{const D=window.__plDz&&window.__plDz.D;return LOOK.love.eye==='#a6620c'&&(ISLE===2||!!(D&&D.act2))}catch(e){return false}}],
  ['platin','Platin','Bütün başarımları kazan.','*platin',()=>ACH.every(a=>NOPLAT.has(a[0])||got[a[0]])]];
-const NOPLAT=new Set(['platin','kehribar']);
+const NOPLAT=new Set(['platin','kehribar','deniz']);
 // v100: secret ones show ??? until won; the rest show their name and what to do, greyed. PROG: [now, goal] for a bar
-const SECRET=new Set(['iz','ani','ejder','levent','roket','act2','iyison','kotuson','hile','kaya','kopru','kehribar']);
+const SECRET=new Set(['iz','ani','ejder','levent','roket','act2','iyison','kotuson','hile','kaya','kopru','kehribar','deniz']);
 const fl=()=>found.length,dd=()=>day,bk=()=>bossKinds();
 const PROG={tarif1:()=>[fl(),1],tarif25:()=>[fl(),25],tarif100:()=>[fl(),100],tarif250:()=>[fl(),250],tariftum:()=>[cnt(DB.R,x=>foundSet.has(x.r)),DB.R.length],
  hafta:()=>[dd(),7],ay:()=>[dd(),30],gece1:()=>[dd()-1,1],lvl10:()=>[lvl,10],lvl25:()=>[lvl,25],balik:()=>[fishTotal,10],kurt:()=>[k_('Kurt'),10],
@@ -14180,7 +14182,7 @@ const _tc133=treeChopped;treeChopped=function(t){const r=_tc133.apply(this,argum
 <script id="v149">
 // v1.49: a save made on the old beach strip at the river mouth is now in the water: lift the player onto the nearest shore
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
-{let told=false;setInterval(()=>{try{if(onTitle||wake||sailing||fading||!met)return;const x=player.x,y=player.y;if(!isWater(tileAt(x,y))||onBridge(x,y))return;
+{let told=false;setInterval(()=>{try{if(onTitle||wake||sailing||fading||!met)return;const x=player.x,y=player.y;if(!isWater(tileAt(x,y))||onBridge(x,y)||(window.__plSeaPath&&window.__plSeaPath(x,y)))return;
    let best=null,bd=1e9;const gr=nearGR(x,y,14);   // v2.35: near the great river (any shape) · v1.50: out of the great river always onto the home (west) bank: no one is stranded across before the bridge
    for(let r=8;r<=480&&!best;r+=4)for(let k=0;k<32;k++){const a=k/32*Math.PI*2,sx=x+Math.cos(a)*r,sy=y+Math.sin(a)*r;if(isWater(tileAt(sx,sy))||!reachAt(sx,sy)||blocked(sx,sy)||(gr&&zoneAt(sx,sy)!==0))continue;const d=Math.hypot(sx-x,sy-y);if(d<bd){bd=d;best={x:sx,y:sy}}}
    if(!best)return;player.x=best.x;player.y=best.y;goal=null;if(!told){told=true;toast('Suyun içinde kalmıştın; seni en yakın kıyıya çıkardım.')}}catch(e){}},500)}
@@ -19533,6 +19535,45 @@ addEventListener('contextmenu',e=>{if(e.target&&e.target.closest&&e.target.close
 document.addEventListener('scroll',()=>{if(!held&&performance.now()-shownAt>400)hide()},true);
 {const _cc=closeCraft;closeCraft=function(){hide();return _cc.apply(this,arguments)}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v329name: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v330sea">
+// v3.30 (Boğaç): a hidden 8-10 tile path straight out into the sea, at a random shore of the ACT 1 island (picked per game, kept in the save).
+// Walking to its end knocks you out (no loss, not counted as a faint) and you wake by Kemal: the secret "Denizde yürüyen" achievement.
+// For testing the path is drawn in a colour different from the sea.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+let SP=null,CELLS=null,END=-1,busy=false;
+function setSP(v){SP=null;CELLS=null;END=-1;if(!v||ISLE!==1)return;const i=+v.i,dx=+v.dx,dy=+v.dy,n=+v.n;if(!(i>=0&&i<W*H)||Math.abs(dx)+Math.abs(dy)!==1||!(n>=8&&n<=10))return;
+  const x0=i%W,y0=(i/W)|0,C=new Set();for(let k=0;k<n;k++){const x=x0+dx*k,y=y0+dy*k;if(x<0||y<0||x>=W||y>=H)return;C.add(y*W+x)}
+  SP={i,dx,dy,n};CELLS=C;END=(y0+dy*(n-1))*W+(x0+dx*(n-1))}
+function pick(){if(ISLE!==1)return null;const sea=(x,y)=>x>=0&&y>=0&&x<W&&y<H&&tiles[y*W+x]===4;
+  const far=(x,y)=>{const px_=x*T+8,py_=y*T+8;if(Math.hypot(px_-dock.x,py_-dock.y)<120)return false;try{const e=pierEnd(PIER_LEN/2);if(Math.hypot(px_-e.x,py_-e.y)<120)return false}catch(e){}
+    for(const b of BRIDGES)if(Math.hypot(px_-b.cx,py_-b.cy)<160)return false;return true};
+  for(let tries=0;tries<4000;tries++){const x=(Math.random()*W)|0,y=(Math.random()*H)|0;if(!sea(x,y))continue;
+    const D=[[1,0],[-1,0],[0,1],[0,-1]];const o=(Math.random()*4)|0;
+    for(let q=0;q<4;q++){const d=D[(o+q)%4],lx=x-d[0],ly=y-d[1];if(lx<0||ly<0||lx>=W||ly>=H)continue;const L=ly*W+lx;if(isWater(tiles[L])||reach[L]!==1)continue;
+      const n=8+((Math.random()*3)|0);let ok=far(x,y);
+      for(let k=0;k<n&&ok;k++){const cx=x+d[0]*k,cy=y+d[1]*k;if(!sea(cx,cy)){ok=false;break}if(k>0&&(!sea(cx+d[1],cy+d[0])||!sea(cx-d[1],cy-d[0])))ok=false}
+      if(ok&&sea(x+d[0]*n,y+d[1]*n))return{i:y*W+x,dx:d[0],dy:d[1],n}}}
+  return null}
+function ensure(){if(ISLE!==1)return;if(!SP)setSP(pick())}
+// a point counts as on the path if it lies on a path tile or within 5 px of one (the player's box is 10 px)
+window.__plSeaPath=(px_,py_)=>{if(!CELLS)return false;for(const [ox,oy] of [[0,0],[5,0],[-5,0],[0,5],[0,-5]]){const x=Math.floor((px_+ox)/T),y=Math.floor((py_+oy)/T);if(x>=0&&y>=0&&x<W&&y<H&&CELLS.has(y*W+x))return true}return false};
+{const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{if(SP)s.v330sea={i:SP.i,dx:SP.dx,dy:SP.dy,n:SP.n}}catch(e){}return s}}
+try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}
+{const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{setSP(d&&d.v330sea);ensure()}catch(e){}return r}}
+{const _rz=resetState;resetState=function(){const r=_rz.apply(this,arguments);try{SP=null;CELLS=null;END=-1;ensure()}catch(e){}return r}}
+ensure();
+{const _db=drawBridge;drawBridge=function(time_,inView){_db.apply(this,arguments);if(!CELLS)return;
+  for(const j of CELLS){const x=(j%W)*T,y=((j/W)|0)*T;if(!inView(x+8,y+8,24))continue;px(x,y,T,T,'#3cc8b0');px(x,y,T,1,'#7ae8d4');px(x+3,y+5+((Math.floor(time_*2)+j)%3)*3,6,1,'#9af0e0')}}}
+function wakeNearKemal(){const h=npc.home;for(const [dx,dy] of [[-22,10],[24,10],[0,24],[-30,-12],[32,-12],[0,-26],[-44,0],[44,0]]){const x=h.x+dx,y=h.y+dy;if(!blocked(x,y)&&!isWater(tileAt(x,y)))return{x,y}}return{x:wakeSpot.x,y:wakeSpot.y}}
+function knock(){if(busy)return;busy=true;goal=null;try{cancelPlace()}catch(e){}try{stopGather()}catch(e){}
+  fadeIn('Gözlerin karardı…','');
+  setTimeout(()=>{try{const s=wakeNearKemal();player.x=s.x;player.y=s.y;goal=null}catch(e){}},700);
+  setTimeout(()=>{busy=false;try{localStorage.setItem('hammadde.denizach','1')}catch(e){}try{window.__plAch.grant('deniz')}catch(e){}},3600)}
+setInterval(()=>{try{if(busy||END<0||onTitle||wake||fading||paused||window.__plArena)return;
+  const x=Math.floor(player.x/T),y=Math.floor(player.y/T);if(y*W+x===END)knock()}catch(e){}},120);
+}).toString()+')()')}catch(e){try{window.__hamErr('v330sea: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
