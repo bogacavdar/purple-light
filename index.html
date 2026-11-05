@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.30</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.31</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -18176,7 +18176,7 @@ const _ta=tickAnimals;tickAnimals=function(dt){
   const on=!(window.__plArena||(typeof AR!=='undefined'&&AR.on)||(window.__plCave&&window.__plCave.cur));
   if(on)for(const a of animals){if(a.hb==null)a.hb=bioAt(a.x,a.y);a._px=a.x;a._py=a.y}
   const r=_ta.apply(this,arguments);
-  if(on)for(const a of animals){if(a.tut||a.ders||a.hb==null||a._px==null)continue;if(bioAt(a.x,a.y)===a.hb)continue;
+  if(on)for(const a of animals){if(a.tut||a.ders||a.ysA||a.hb==null||a._px==null)continue;   /* v3.31: the Yıldızsızlar cross biome borders */if(bioAt(a.x,a.y)===a.hb)continue;
     a.x=a._px;a.y=a._py;if(a.dx)a.dx=-a.dx;if(a.dy)a.dy=-a.dy;if(a.st==='chase'&&!a.boss){a.st='wander';a.mad=false}if(a.mv)a.mv=null;if(a.lunge)a.lunge=null;a.kb=null}
   return r};
 
@@ -19674,18 +19674,22 @@ function setStats(P,H){const dk=1+Math.min(.8,day*.02);
   for(const k of KINDS){const d=YD[k],D=ANIM[k];D.hp=Math.max(4,Math.round(d.hits*P*dk));D.dmg=Math.max(2,Math.round(d.pc*H*dk));D.xp=Math.round(d.hits*3*(1+lvl*.15))}}
 for(const k of KINDS){const d=YD[k];ANIM[k]={ys:1,temper:'saldırgan',hp:d.hits*10,dmg:Math.round(d.pc*100),spd:d.spd,r:d.r,xp:d.hits*3,aggro:520,land:t=>t<=2,drops:[]};
   if(d.ranged)ANIM[k].ranged=Object.assign({},d.ranged);if(d.reach){ANIM[k].reach=d.reach;ANIM[k].wind=d.wind}}
-const S={next:0,at:0,cnt:0};
-const rnd3=()=>3+((Math.random()*8)|0),rat=()=>540+((Math.random()*600)|0);
-function fresh(){S.next=1+rnd3();S.at=rat();S.cnt=0}
+const S={next:6,at:1200,cnt:0};
+// v3.31 (Boğaç): fixed days (6, 11, 18, 22, 31…; gaps 5,7,4,9,6,3,8,10 repeating), never on a day with its own event, at the very start of the night
+const GAPS=[5,7,4,9,6,3,8,10],SPECIAL=new Set([5,15,20]);
+const free=d=>{while(d<=3||SPECIAL.has(d))d++;return d};
+function seqFrom(m){let d=6,i=0;while(d<m){d+=GAPS[i%GAPS.length];i++}return free(d)}
+function fresh(){S.next=6;S.at=1200;S.cnt=0}
 fresh();
 window.__plYS={kinds:KINDS,show:()=>S.cnt>0||KINDS.some(k=>(kills[k]||0)>0)};
-{const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{s.v330ys={n:S.next,a:S.at,c:S.cnt}}catch(e){}return s}}
+{const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{s.v330ys={n:S.next,a:S.at,c:S.cnt,f:2}}catch(e){}return s}}
 try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}
-{const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{ATK=null;const v=d&&d.v330ys;if(v&&+v.n>0){S.next=+v.n;S.at=+v.a||rat();S.cnt=+v.c||0}else{S.next=day+rnd3();S.at=rat();S.cnt=0}}catch(e){}return r}}
+{const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{ATK=null;const v=d&&d.v330ys;S.cnt=v?(+v.c||0):0;S.at=1200;if(v&&v.f===2&&+v.n>0)S.next=+v.n;else S.next=seqFrom(dayT>=1260?day+1:day)}catch(e){}return r}}
 {const _rz=resetState;resetState=function(){const r=_rz.apply(this,arguments);try{ATK=null;fresh()}catch(e){}return r}}
 let ATK=null,FADE=null;
 const alive=()=>animals.filter(a=>a.ysA);
-const okStart=()=>!onTitle&&!window.__plArena&&met&&!wake&&!fading&&!sailing&&!dlgOpen&&!craftOpen&&!paused&&!(cine&&cine.on)&&!roomSafe()&&!(window.__plCave&&window.__plCave.cur)&&!nearCamp(player.x,player.y)&&!beam;
+const sheltered=()=>roomSafe()||!!(window.__plCave&&window.__plCave.cur)||!!sailing||nearCamp(player.x,player.y);   // at 20:00 here → the next day without an event
+const waitNow=()=>onTitle||!!window.__plArena||!met||!!wake||fading||dlgOpen||craftOpen||paused||!!(cine&&cine.on)||!!beam;
 function spot(C){for(let k=0;k<80;k++){const a=Math.random()*6.283,r=60+Math.random()*(C.R-80),x=C.x+Math.cos(a)*r,y=C.y+Math.sin(a)*r;
   if(Math.hypot(x-player.x,y-player.y)<90)continue;if(!reachAt(x,y)||isWater(tileAt(x,y))||nearCamp(x,y))continue;try{if(blocked(x,y))continue}catch(e){continue}return{x,y}}return null}
 function pickKinds(n){const L=['Yıldızsız gözcü','Yıldızsız sürüngen'];if(lvl>=5||day>=8)L.push('Yıldızsız tükürücü');const big=lvl>=12||day>=18;let devs=0;const out=[];
@@ -19697,12 +19701,15 @@ function start(){const w=weapon(),P=Math.max(6,w&&w.dmg||0,WDMG[equip.silah]||0)
   S.cnt++;try{announce('Mor ışık saldırısı!','Yıldızsızlar geliyor')}catch(e){}try{sfx('bad');sfx('growl')}catch(e){}shake=Math.max(shake||0,.45);shakeP=Math.max(shakeP||0,3)}
 function end(win){if(!ATK)return;const C=ATK;ATK=null;FADE={x:C.x,y:C.y,R:C.R,t:1};
   for(let i=animals.length-1;i>=0;i--){const a=animals[i];if(!a.ysA)continue;for(let k=0;k<8;k++)parts.push({x:a.x,y:a.y-6,vx:(Math.random()-.5)*14,vy:-40-Math.random()*40,life:.7,c:k%2?'#c070ff':'#f0d8ff'});animals.splice(i,1)}
-  S.next=day+rnd3();S.at=rat();
+  S.next=seqFrom(day+3);
   if(!fading)try{announce('Mor ışık çekildi',win?'Yıldızsızlar yenildi':'Yıldızsızlar geri çekildi')}catch(e){}}
 let last=performance.now();
 setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);last=now;try{
   if(FADE&&!paused){FADE.t-=dt;if(FADE.t<=0)FADE=null}
-  if(!ATK){if(day>=S.next&&dayT>=S.at&&dayT<1200&&okStart())start();return}
+  if(!ATK){if(onTitle||window.__plArena)return;
+    if(day>S.next||(day===S.next&&dayT>=1260)){S.next=free(dayT<1200?day:day+1);return}   // missed (slept through, loaded late): the next day without an event
+    if(day===S.next&&dayT>=1200){if(waitNow())return;if(sheltered()){S.next=free(day+1);return}start()}
+    return}
   if(onTitle||window.__plArena){ATK=null;return}
   if(fading){end(false);return}
   if(paused||dlgOpen||craftOpen)return;
@@ -19719,6 +19726,7 @@ setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);las
     if(!window.__plInf)coins+=n;for(let k=0;k<12;k++)parts.push({x:x,y:y-6,vx:(Math.random()-.5)*50,vy:-30-Math.random()*40,life:.7,c:k%3?'#ffd84a':'#fff4b0'});
     sfx('coin');toast(`${a.k} yenildi · +${n.toLocaleString('tr-TR')} sikke`);renderInv()}catch(e){}}
   return r}}
+{const _ls0=lightSources;lightSources=function(){const L=_ls0.apply(this,arguments);try{if(ATK&&!onTitle){const o=L.concat([[ATK.x,ATK.y,ATK.R]]);for(const q of animals)if(q.ysA)o.push([q.x,q.y-6,30]);return o}}catch(e){}return L}}   // v3.31: the purple ground lights the night
 // the purple ground, its ring and the beams
 {const _db=drawBridge;drawBridge=function(time_,inView){_db.apply(this,arguments);try{const C=ATK||FADE;if(!C||onTitle)return;const al=ATK?ATK.a:FADE.t;
   ctx.save();ctx.globalAlpha=Math.max(0,al);ctx.fillStyle='rgba(130,40,210,.24)';ctx.beginPath();ctx.arc(C.x,C.y,C.R,0,6.283);ctx.fill();
