@@ -19136,6 +19136,10 @@ function moveFocus(L,dx,dy){const list=focusables(L);if(!list.length)return;cons
   if(best){best.focus();try{best.scrollIntoView({block:'nearest',inline:'nearest'})}catch(e){}try{sfx('pick')}catch(e){}}}
 // v3.25: after a press the window may redraw (food list): the focus goes back to the same button or the nearest one where it was
 let lastC=null;
+// v3.32 (Boğaç): a window opened with the pad starts on the first thing you can use: the first recipe, the first thing you can make or eat, the first item
+function firstFocus(L){try{const list=focusables(L);if(!list.length)return;let sel=null;if(L.id==='craft')sel=mode==='craft'?'[data-rec]':mode==='hand'?'[data-hand]':mode==='eat'?'[data-eat]':mode==='inv'?'.itile':null;
+  let el=sel?list.find(b=>b.matches(sel)):null;const cb=$('cbody');if(!el&&L.id==='craft'&&cb)el=list.find(b=>cb.contains(b)&&!b.closest('[role="tablist"],.pmode'));
+  if(el){el.focus();try{el.scrollIntoView({block:'nearest',inline:'nearest'})}catch(e){}}}catch(e){}}
 function remember(a){try{const r=a.getBoundingClientRect();lastC={x:r.left+r.width/2,y:r.top+r.height/2,id:a.id||''}}catch(e){lastC=null}}
 function keepFocus(L){if(!lastC)return;const a=document.activeElement,list=focusables(L);if(!list.length||(a&&L.contains(a)&&a!==L&&list.indexOf(a)>=0))return;
   let best=null,bd=1e9;for(const b of list){if(lastC.id&&b.id===lastC.id){best=b;break}const q=b.getBoundingClientRect(),d=Math.hypot(q.left+q.width/2-lastC.x,q.top+q.height/2-lastC.y);if(d<bd){bd=d;best=b}}
@@ -19195,7 +19199,7 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
     let dx=now[15]?1:now[14]?-1:(ax>.55?1:ax<-.55?-1:0),dy=now[13]?1:now[12]?-1:(ay>.55?1:ay<-.55?-1:0);if(dx&&dy){if(Math.abs(ax)>Math.abs(ay))dy=0;else dx=0}
     const d=dx+','+dy,t=performance.now();if(d!=='0,0'){if(d!==P.dir){P.dir=d;P.rep=t+380;if(!blockK)moveFocus(L,dx,dy)}else if(t>=P.rep){P.rep=t+120;if(!blockK)moveFocus(L,dx,dy)}}else P.dir='';RS=null;
     if(adown)atkUp();
-    if(L!==P.lastL){P.lastL=L;lastC=null}else keepFocus(L);
+    {const key=(L.id||'')+'|'+(L.id==='craft'?mode:'');if(L!==P.lastL||key!==P.lastK){P.lastL=L;P.lastK=key;lastC=null;firstFocus(L)}else keepFocus(L)}   // v3.32: a window opens on its first usable thing
     if(L.id==='padkb'){if(hit(0))press(L);if(hit(1))kbHide();if(hit(2))kbKey('del');if(hit(9))kbKey('ok');return}
     if(hit(0)&&!blockK)press(L);
     if(hit(1)&&!blockK)tap('Escape');
@@ -19767,6 +19771,22 @@ function drawYS(a,time_){const x=Math.round(a.x),y=Math.round(a.y),f=a.face||1,f
 {const _da=drawAnimal;drawAnimal=function(a,time_){if(!a||!ANIM[a.k]||!ANIM[a.k].ys)return _da.apply(this,arguments);try{drawYS(a,time_)}catch(e){}
   try{if(a.ysA||a.mad){const D=ANIM[a.k];if(a.hp<D.hp&&a.hp>0){const w=16,x=Math.round(a.x)-8,y=Math.round(a.y)-(a.k==='Yıldızsız dev'?26:a.k==='Yıldızsız gözcü'?24:20);px(x,y,w,2,'#1a0a2a');px(x,y,Math.max(1,Math.round(w*a.hp/D.hp)),2,'#c070ff')}}}catch(e){}}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v330ys: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v332lock">
+// v3.32 (Boğaç: "only the torch can be made in the torch lesson, and only it should blink"): while one of Zümrüt's lessons runs,
+// the cauldron opens on that recipe and no other can be chosen; in El yapımı only the lesson's Yap button works.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const lockK=()=>station!=='forge'?(tz===4?'Kaba meşale':tz===7?'Keskin taş':null):null;
+const lockH=()=>tz===5?'Kaba meşale':tz===8?'Keskin taş':null;
+{const st=document.createElement('style');st.textContent='#craft .lk{opacity:.38;filter:grayscale(.6);cursor:not-allowed}';document.head.appendChild(st)}
+{const _sr=selectRecipe;selectRecipe=function(r){try{if(mode==='craft'){const L=lockK();if(L&&r!==L){sfx('bad');return}}}catch(e){}return _sr.apply(this,arguments)}}
+{const _rc=renderCraft;renderCraft=function(){try{if(mode==='craft'&&potMode!=='dene'){const L=lockK();if(L&&pot.r!==L&&REC.get(L))selectRecipe(L)}}catch(e){}
+  const r=_rc.apply(this,arguments);
+  try{if(mode==='craft'){const L=lockK();if(L)cbody.querySelectorAll('[data-rec]').forEach(b=>{if(b.dataset.rec!==L){b.disabled=true;b.classList.add('lk')}})}
+    if(mode==='hand'){const L=lockH();if(L)cbody.querySelectorAll('[data-hand]').forEach(b=>{if(b.dataset.hand!==L){b.disabled=true;b.classList.add('lk')}})}}catch(e){}
+  return r}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v332lock: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
