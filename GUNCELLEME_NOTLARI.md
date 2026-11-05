@@ -8,6 +8,31 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.39 · 6 Kasım 2026
+
+### Oynanış
+- **24 yeni yan görev:** her biyomda yeni insanlar. Çayır'da arıcı, uçurtmasını kaybeden çocuk ve değirmenci; Orman'da mantarcı nine, yaralı oduncu ve ressam; Bataklık'ta siste kaybolan kayıkçı, kurbağa arayan kız ve hekim; Kayalık Dağ'da oğlağı kaçan çoban kız, kartal gözcüsü ve rüzgâr çanlarını arayan keşiş; Kül Diyarı'nda küllerde mektup arayan kadın, yangıncı, çırak, yumurta bulan kız, kükürt dumanında sesler duyan ihtiyar ve katırcı; Mor Kristal Vadisi'nde şarkı söyleyen kristaller, Ayna Gölü'ndeki kız, uyuyan golem, batık geminin lostromosu, mor gözlü yavru ve düşen ışığı toplayan fenerci. Toplam yan görev 42.
+- **Yeni yan görev adımları:** su taşıyıp yanan ağaçları söndürmek, kazmayla kabuk kırmak, vıraklamayı ve çan sesini dinleyerek aramak, kaçan oğlağı ve katırı kovalamak.
+- **Fenerci'nin fenerleri:** Mor Kristal Vadisi'nde bitirince üç kalıcı fener ateşi yanar; yanlarında gece mor ışık gelmez.
+- **Marangoz Çınar artık yok; evleri Usta Sinan yapar** (Orman). İki ustanın 16 görevi 8'e indi; ağaç kesme dersi Dursun'un ilk görevine geçti.
+- **Tam ekran:** sayfa yenilenince ya da oyun yeniden açılınca ilk tıklamada tam ekrana geri döner.
+
+### Görsel
+- **Mağaralar** biyomlarına göre: çimenli kireçtaşı, köklü toprak, yosunlu ve sulu kaya, karlı ve buz sarkıtlı kayalık, kor çatlaklı bazalt, kristalli mor kaya.
+- **Evler** birbirinden farklı ve pahalılaştıkça daha görkemli: yapraklı çatmadan iki katlı konağa.
+
+### Arayüz
+- **Başarım kartı** ekranın ortasında çıkar; tıklayınca hemen kapanır.
+- **Takip şeridi** bir şey toplayınca sağa sola kaymaz; en çok malzemeli tarif en üstte durur.
+
+### Kayıtlar
+- Silinen ustalık görevlerinden yarım kalan varsa kayıttan düşer; bitmiş görevler bitmiş sayılır.
+
+### Tasarım belgesi
+- 24 yan görev, Usta Sinan'ın yeni görev listesi, mağara ve ev görünüşleri, tam ekran, başarım kartı, takip şeridi; Godot planına "Neden Godot, neden Unity değil" bölümü.
+
+---
+
 ## Versiyon 3.38 · 6 Kasım 2026
 
 ### Arayüz

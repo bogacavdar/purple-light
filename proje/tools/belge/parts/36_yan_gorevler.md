@@ -2,7 +2,7 @@
 
 > **v2.30, Boğaç (30 Ekim 2026).** Görevler artık ikiye ayrılır. **Ana görevler:** adanın kişilerinin (Kemal, Zümrüt, Dursun, kuzenler…) verdiği görevler; yukarıdaki "ACT 1 · Görevler" bölümündeki bütün kurallar onlar içindir. **Yan görevler:** adada kendi yerinde duran, yolda karşına çıkan **yan kişilerin** (bir teyze, kaybolmuş bir çocuk, bir çoban…) görevleri. İlk pakette **12 yan görev** var; ACT 1'in ilk dört biyomuna **üçer** tane, tonları karışık (hüzünlü, gizemli, komik).
 
-> **Mağara yan görevleri (v2.32):** Yankı Mağarası'nda **Madenci Kaya**, Kök Mağarası'nda **Kökçü Fidan**; bu bölümdeki kurallar onlar için de geçerlidir (ayrıntı "ACT 1 · Mağaralar" bölümünde). Böylece yan görev sayısı 14'tür; Görevler penceresi "Bitirdiklerin: x/14" yazar.
+> **Mağara yan görevleri (v2.32):** Yankı Mağarası'nda **Madenci Kaya**, Kök Mağarası'nda **Kökçü Fidan**; bu bölümdeki kurallar onlar için de geçerlidir (ayrıntı "ACT 1 · Mağaralar" bölümünde). Böylece yan görev sayısı 14'tür (mağaraların hepsiyle 18; v3.39'da 24 yeni yan görevle **42**); Görevler penceresi "Bitirdiklerin: x/42" yazar.
 
 ## Kurallar
 
@@ -185,6 +185,44 @@ Yalnızca gece 22:00–04:00 arası görünür: soluk, mavi ışıklı, yarı sa
 - **Git (üçüncü görünüş):** bir kayalığın dibinde belirir; bu sefer konuşur: "Beni unuttular mı? Annem adımı hâlâ söylüyor mu?"
 - **Git (taş):** son yerde, otların arasında yosun tutmuş **küçük bir taş**; üstüne kazınmış: *"IŞIL. Işığa gülümseyerek yürüdü."* Taşın yanına bir fener konur, kendiliğinden yanar. Kızın sesi: "Teşekkür ederim. Artık karanlık değil." Görev **orada** biter (geri dönülecek kimse yoktur).
 - **Sonra dünyada:** taş ve yanındaki fener kalır; fener geceleri yanar. Işıl bir daha görünmez.
+
+## 24 yeni yan görev (v3.39, Boğaç)
+
+Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biyoma 3'er yeni yan görev; "beğenmediğimi sonra kaldırırım". Hepsi yukarıdaki kurallara uyar (birden çok alınabilir, kaçırılmaz, süre sınırı yok, bayılınca yalnızca takip edilen yan görev yarıda kalır, görev canavarları almanağa sayılmaz). Kişiler biyomlarında, ilk on ikinin yerlerinden uzakta durur; haritada mavi **?** ile görünürler. **Yeni adım türleri ve kurallar:**
+- **Kullan:** belli noktalara elinde gereken eşyayla gidince her nokta bir tane harcar (ör. her yanan ağaç 1 Su). Eşya yoksa "X gerekli" yazar, nokta kalır.
+- **Aletli bulma:** bazı noktalar için çantada o tür bir alet olmalı (ör. kazma); yoksa "Kazma gerekli" yazar.
+- **Sesle bulma:** güvercinler gibi, yaklaştıkça sesi duyulan şeyler: kurbağalarda vırak, çanlarda ve kristallerde çınlama.
+- **Kovalanan hayvan** kendi biyomunda kaçar (Pamuk gibi; oğlak ve katır).
+- **Beklemede** kişi kendi sözüyle seslenir ("Gitme! Yumurta çatlıyor!" gibi).
+- **5. ve 6. biyomda dövüş adımlarının canlıları:** Kül Diyarı'nda Kül kurdu ve Lav kertenkelesi, Mor Kristal Vadisi'nde Gölge kurdu ve Kristal örümcek.
+- **İz:** her görev bitince kişinin yanında görevle ilgili bir şey kalır (aşağıda "İz").
+
+| # | Kişi · Görev | Biyom · saat | Adımlar | Ödül | İz |
+|---|---|---|---|---|---|
+| 19 | **Arıcı Gülsüm** · Kaçan arı oğulu | Çayır · 07:00–18:00 | Üç arı salkımını bul → Gülsüm'e dön | 80 · 60 XP | yanında arı kovanları |
+| 20 | **Ozan** (çocuk) · Ağaca takılan uçurtma | Çayır · 08:00–18:00 | Ağaçtaki uçurtmayı bul → 2 İp götür | 70 · 50 XP | başının üstünde uçan uçurtma |
+| 21 | **Değirmenci Rıfat** · Duran değirmen | Çayır · 07:00–19:00 | Değirmenin önündeki 2 kurdu kov → 6 Dal, 4 Lif götür | 100 · 70 XP | kanatları dönen değirmen (öncesi kırık) |
+| 22 | **Mantarcı Saadet** · Mantar sepeti | Orman · 06:00–17:00 | Dört kanlıca kümesini topla (sinek mantarına dokunma) → dön | 110 · 80 XP | mantar kurutma ipi |
+| 23 | **Oduncu Tarık** · Ağacın altında | Orman · 07:00–18:00 | 2 Sopa, 2 İp götür (koltuk değneği) → Tarık'ı Usta Sinan'ın tezgâhına götür (yolda domuz ve kurt) | 130 · 90 XP | Tarık artık Sinan'ın yanında |
+| 24 | **Ressam Lale** · Ormanın renkleri | Orman · 08:00–18:00 | 3 Gelincik, 4 Yaban mersini götür → ormanın en güzel açıklığını bul → dön | 120 · 90 XP | şövalesi (hep) |
+| 25 | **Kayıkçı Remzi** · Sisteki kayıkçı | Bataklık · yalnızca gece | Remzi'yi ışıkla Avcı Doğan'ın kulübesine götür (yolda kurtlar) | 160 · 120 XP | Remzi Doğan'ın ateşinin başında |
+| 26 | **Cemile** (çocuk) · Şarkı söyleyen kurbağalar | Bataklık · 18:00–23:00 | Vıraklamaları dinleyip dört kurbağayı bul (yakalamak yok) → dön | 150 · 110 XP | yanında iki kurbağa |
+| 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 07:00–18:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn, kurtlar) → dön | 170 · 130 XP | ilaç kazanı (hep) |
+| 28 | **Dağlı Zehra** · Uçurumdaki oğlak | Kayalık Dağ · 07:00–18:00 | Oğlak Boncuk'u 3 kez yakala → Zehra'ya götür | 180 · 140 XP | yanında Boncuk |
+| 29 | **Gözcü Bora** · Kartal yumurtası | Kayalık Dağ · 08:00–17:00 | Düşen yumurtayı bul → yuvanın dibindeki 2 kurdu kov, yumurtayı koy → dön | 190 · 150 XP | – |
+| 30 | **Keşiş Sükûn** · Dağın çanları | Kayalık Dağ · 05:00–20:00 | Rüzgârda çınlayan üç çanı bul → dön | 200 · 160 XP | yanında asılı rüzgâr çanı |
+| 31 | **Külcü Hasret** · Küllerin altındaki mektup | Kül Diyarı · 07:00–18:00 | Dumanı tüten dört mektup parçasını bul (her biri bir satır) → dön (acı son, sessiz) | 320 · 280 XP | mektup kutusu |
+| 32 | **Yangıncı Kor Ali** · Sönmeyen ağaçlar | Kül Diyarı · 07:00–19:00 | İçten yanan beş kül ağacını söndür (her biri 1 Su) → dön | 340 · 300 XP | diyarın ilk yeşil fidanı |
+| 33 | **Çırak Çelik** · Lava düşen çekiç | Kül Diyarı · 07:00–18:00 | Çelik'le lav tarlasına git (yolda kertenkeleler) → çekici kazmayla kabuktan çıkar (kazma gerekli) → dön | 360 · 320 XP | örsü (hep) |
+| 34 | **Nar** (çocuk) · Sıcak yumurta | Kül Diyarı · 18:00–23:00 | Saklanan yumurtayı bul → yumurta çatlarken ateşin başında bekle (60 sn, kurtlar) → dön | 380 · 330 XP | omzunda yavru ateş kertenkelesi Kıvılcım |
+| 35 | **Duman Dede** · Kükürtteki sesler | Kül Diyarı · yalnızca gece | 4 Kükürt kristali götür → üç sunakta yak; dumanlar Yıldızsızların adaya inişini, köpekleri ve şapkayı gösterir → dön | 380 · 340 XP | – |
+| 36 | **Katırcı Ömer** · Kül fırtınasında kaybolan | Kül Diyarı · 07:00–18:00 | Katır Kınalı'yı 3 kez yakala → Ömer'e götür | 400 · 360 XP | yanında Kınalı |
+| 37 | **Melodi** · Şarkı söyleyen kristaller | Mor Kristal Vadisi · 07:00–19:00 | Çınlamalarını dinleyip beş kristali bul → dön | 450 · 400 XP | yanında parlayan bir kristal |
+| 38 | **Balıkçı Selim** · Ayna Gölü'ndeki kız | Mor Kristal Vadisi · yalnızca gece | Dört ayna parçasını topla → kıyıda birleştir (kız mor ışığın içinde, kurtarılamaz; acı son, sessiz) → dön | 480 · 430 XP | göl kıyısında ayna |
+| 39 | **Kristalci Yaren** · Taşkalp | Mor Kristal Vadisi · 07:00–18:00 | Taşocağındaki 3 Kristal golemi yen (çekirdek taşları) → dön; golem Taşkalp uyanır | 520 · 470 XP | Taşkalp ayakta, gözleri mavi (öncesi yıkık) |
+| 40 | **Lostromo Rıza** · Tayfanın künyeleri | Mor Kristal Vadisi · yalnızca gece | Gölge kurtlarının yatağında 4 kurdu yen (künyeler) → kıyıda dört fener yak → dön | 560 · 500 XP | kıyıda dört fener |
+| 41 | **Asena** · Mor gözlü yavru | Mor Kristal Vadisi · 18:00–23:00 | 3 Geyik eti götür → gece yavruyu sürüsünden koru (60 sn) → dön; yavru Gece onunla kalır | 540 · 480 XP | yanında yavru Gece |
+| 42 | **Fenerci Işık** · Düşen ışığı toplamak | Mor Kristal Vadisi · yalnızca gece (21:00–04:30) | Mor ışığın düştüğü yerlerde üç mor damla topla (elinde ışık olmalı, yoksa ışık seni alır) → dön | 600 · 550 XP | **üç kalıcı fener ateşi:** yanlarında gece mor ışık gelmez (güvenli yer) |
 
 ## Ödüller
 
