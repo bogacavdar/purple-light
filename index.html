@@ -19570,7 +19570,11 @@ function wakeNearKemal(){const h=npc.home;for(const [dx,dy] of [[-22,10],[24,10]
 function knock(){if(busy)return;busy=true;goal=null;try{cancelPlace()}catch(e){}try{stopGather()}catch(e){}
   fadeIn('Gözlerin karardı…','');
   setTimeout(()=>{try{const s=wakeNearKemal();player.x=s.x;player.y=s.y;goal=null}catch(e){}},700);
-  setTimeout(()=>{busy=false;try{localStorage.setItem('hammadde.denizach','1')}catch(e){}try{window.__plAch.grant('deniz')}catch(e){}},3600)}
+  const award=()=>{try{localStorage.setItem('hammadde.denizach','1')}catch(e){}try{window.__plAch.grant('deniz')}catch(e){}};
+  // v3.30 (Boğaç): Kemal meets you puzzled, he cannot tell how you got there
+  setTimeout(()=>{busy=false;if(dlgOpen){award();return}
+    say('Hı?! Evlat! Sen… nereden çıktın? Az önce burada kimse yoktu, yemin ederim. Üstün başın sırılsıklam, saçından deniz suyu damlıyor… Ne oldu sana?',[{t:'Denizin üstünde yürüyordum… sonra gözlerim karardı.',pri:1,fresh:1,f:()=>{
+      say('Denizin… üstünde mi? Hah! Bu adada yıllardır yaşarım, böylesini ne gördüm ne duydum. Ya ben yaşlandım ya bu ada iyice tuhaflaştı. Otur şu ateşin yanına, kendine gel; ben de bir çay koyayım. Kendime de bir bardak… iki bardak.',[{t:'Tamam',pri:1,fresh:1,f:()=>{bye();award()}}])}}])},3600)}
 setInterval(()=>{try{if(busy||END<0||onTitle||wake||fading||paused||window.__plArena)return;
   const x=Math.floor(player.x/T),y=Math.floor(player.y/T);if(y*W+x===END)knock()}catch(e){}},120);
 }).toString()+')()')}catch(e){try{window.__hamErr('v330sea: '+(e&&e.message||e))}catch(_){}}})();
