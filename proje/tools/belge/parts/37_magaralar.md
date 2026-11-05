@@ -2,6 +2,19 @@
 
 > **v2.32, Boğaç (30 Ekim 2026).** Her biyomda bir mağara olacak; ilk pakette **Çayır** ve **Orman** mağaraları var. **v3.09 (Boğaç, 3 Kasım 2026):** Bataklık, Kayalık Dağ, Kül Diyarı ve Mor Kristal Vadisi'ne de birer mağara eklendi; artık Act 1'in altı biyomunun her birinde bir mağara var. Yeni mağaraların her birinde 3 canlı türü, en dipte 1 yan görev kişisi ve bir boss, **4 yalnızca mağarada bulunan toplanabilir** ve Mağara mantarı, canlılardan düşen kendine özgü malzemeler ve az olan tarif türlerinden (Av ve hayvan, Müzik, Süs, Boya, Büyü; yemek yok) tarifler vardır. Mağaraya meşalesiz ve seviyesi yetmeyen giremez. İçeride kendi canlıları, Reis'leri, toplanan malzemeleri ve en dipte bir yan görev kişisi vardır; o kişinin görevi mağaranın **boss'una** götürür.
 
+## Mağara girişlerinin görünüşü (v3.39, Boğaç: "mağara mağaraya benzesin, her biyomdaki farklı olsun, biyomuna uygun")
+
+Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz kenarlı bir kaya tepesidir; ortasında kemerli, içe doğru kararan bir ağız ve ağzın çevresinde kemer taşları vardır. İçerideki ışık (mağaranın rengi) ağızda hafifçe nefes alır; tabela ve kapı yeri aynıdır.
+
+| Mağara | Biyom | Görünüş |
+|---|---|---|
+| Yankı Mağarası | Çayır | gri kireçtaşı tepe, üstü çimenli ve çiçekli, kayada yosun lekeleri, yanında bir çalı; içeride mavi ışık |
+| Kök Mağarası | Orman | toprak renkli kaya, ağzın üstünden ve yüzünden aşağı sarkan kalın ağaç kökleri, tepesinde küçük bir ağaç, dibinde eğrelti; içeride turuncu ışık |
+| Batık Mağara | Bataklık | alçak, yarı batık, koyu yeşil ıslak kaya, ağır yosun, ağzın önüne sarkan sarmaşıklar, ağzın önünde bir su birikintisi ve kenarlarda sazlar; içeride yeşil ışık |
+| Rüzgâr Mağarası | Kayalık Dağ | yüksek, sivri, mavi-gri kayalık, tepesinde ve çıkıntılarda kar, ağzın üstünde buz sarkıtları; içeride soğuk beyaz-mavi ışık |
+| Kor Mağarası | Kül Diyarı | kara bazalt, içinden turuncu parlayan çatlaklar, ağzın altından sızan kor, tepede kül ve duman; içeride turuncu ışık |
+| Ayna Mağarası | Mor Kristal Vadisi | koyu mor kaya, ağzın iki yanında ve tepede mor kristal kümeleri, ışıltılar; içeride mor ışık |
+
 ## Genel kurallar
 
 1. **Giriş.** Mağaranın girişi büyüktür (genişliği ~4–5 ağaç, ~100 × 76 piksel kayalık bir tepe ve ortasında karanlık bir ağız). Ana kişilerden ve ateşlerden en az ~400 piksel uzakta, kendi biyomunda, ağaçsız bir yerdedir (ada her kurulduğunda aynı yer). Ağzın önünde ahşap bir tabela durur: mağaranın adı ve **seviye şartı** ("Yankı Mağarası · Sv 5").
