@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.34</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.35</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -19909,7 +19909,7 @@ setInterval(()=>{try{if(onTitle||paused||fading||wake)return;const dt=.1;
   if(E.c&&Math.hypot(player.x-E.c.x,player.y-E.c.y)<40&&now()>campSaid){campSaid=now()+60000;bubble={text:`Bu taşa… benim adım kazınmış: ${heroName||'…'}. Ben buraya ne zaman geldim?`,t:5}}
   // mirror: ten seconds still, facing water
   const moved=Math.hypot(player.x-lx,player.y-ly)>.5;lx=player.x;ly=player.y;
-  if(moved||dlgOpen||craftOpen)still=0;else still+=dt;
+  if(moved||dlgOpen||craftOpen||gathering||fish||Object.keys(keys).some(k=>keys[k]))still=0;else still+=dt;   // v3.35: only truly idle (not while gathering water or fishing)
   if(!MIR&&still>=10&&now()>mirNext){const f=player.face||{x:0,y:1};for(const r of [14,22,30]){const wx=player.x+(f.x||0)*r,wy=player.y+(f.y||0)*r+(f.y?0:4);
     if(isWater(tileAt(wx,wy))&&!onBridge(wx,wy)&&!(window.__plSeaPath&&window.__plSeaPath(wx,wy))){MIR={x:wx,y:wy,t0:now()};mirNext=now()+120000;break}}}
   if(MIR&&now()-MIR.t0>3000)MIR=null;
