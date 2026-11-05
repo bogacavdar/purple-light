@@ -1378,7 +1378,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.29</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.30</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -19000,7 +19000,7 @@ function scene318(g,i,t,line){const m=MEMS[i];if(!m)return;const lab=(x,y,tx,o)=
     if(line===3){const a=Math.max(0,1-((t%2.5)*2));if(a>0){g.fillStyle=`rgba(255,255,255,${(a*.7).toFixed(2)})`;g.fillRect(0,0,240,135)}}
     if(line>=4){p(70,6,100,124,'#1a1a22');p(74,14,92,104,'#f0e4d0');p(110,8,20,3,'#3a3a44');
       g.save();g.beginPath();g.rect(74,14,92,104);g.clip();p(74,80,92,38,'#8a5a30');drawChibi(g,120,96,H,{fx:0,closed:1});
-      g.fillStyle='#e02a2a';for(const hx of [111,129]){g.beginPath();g.moveTo(hx-3,62);g.lineTo(hx+3,62);g.lineTo(hx+(hx<120?-4:4),50);g.fill()}
+      {const HN=[[116,78,3,2],[115,76,3,2],[114,74,2,2],[113,72,2,2],[113,71,1,1]];for(const s of [-1,1])for(let i=0;i<HN.length;i++){const q=HN[i],hx=s<0?q[0]:240-q[0]-q[2];p(hx,q[1],q[2],q[3],i%2?'#7a2ac0':'#9a4ae0');if(i<3)p(s<0?hx:hx+q[2]-1,q[1],1,1,'#c88aff')}}   // v3.30: purple devil horns sitting on the head (hy=80)
       g.restore();lab(120,107,'LOSER',{s:17,b:1,c:'#ff3a3a',a:'c',sh:'#2a0000'});
       hearts(200,90,2)}
     warm()}
