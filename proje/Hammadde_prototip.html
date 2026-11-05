@@ -7979,11 +7979,11 @@ function b3make(m,k){const plan=chainPlan(m,k,b3subOK);if(!plan){toast(`${m} iç
   for(const z of plan){const x=REC.get(z);for(const [n,q] of x.i){let need=q;for(const mm of expand(n)){const c=Math.min(need,inv[mm]||0);inv[mm]=(inv[mm]||0)-c;need-=c}}gain(z);made.push(z)}
   const mid=[...new Set(made.filter(z=>z!==m))];sfx('craft');toast(`${k} ${m} yapıldı${mid.length?` (önce: ${mid.join(', ')})`:''}`);renderInv();if(craftOpen)renderCraft()}
 function chipHTML(it){const ok=it.have>=it.need,src=icon(expand(it.n)[0]);
-  return `<span class="b3c${ok?' ok':''}${it.tool?' tool':''}" data-n="${esc(it.n)}" tabindex="0"><img src="${src}" alt=""><span class="b3nm">${esc(it.n)}</span><b>${Math.min(it.have,it.need)}/${it.need}</b>${ok?'<i aria-hidden="true">✓</i>':''}</span>${b3plus(it)}`}
+  return `<span class="b3cell"><span class="b3c${ok?' ok':''}${it.tool?' tool':''}" data-n="${esc(it.n)}" tabindex="0" title="${esc(it.n)}"><img src="${src}" alt=""><span class="b3nm">${esc(it.n)}</span><b>${Math.min(it.have,it.need)}/${it.need}</b>${ok?'<i aria-hidden="true">✓</i>':''}</span>${b3plus(it)}</span>`}   // v3.38: a fixed cell, so rows line up
 // v2.83 (Boğaç): a tracked recipe made by hand gets a Yap button on the bar once everything is there (cauldron and anvil recipes do not)
 function b3HandOK(r){const y=REC.get(r);return !!y&&handSimple(y)&&handKnown(r)&&handN(y)>0}
 function rowHTML(r){const done=r.items.every(it=>it.have>=it.need);
-  return `<div class="b3row${r.own?' own':''}${done?' done':''}"><span class="b3lab"><img src="${icon(r.ic||r.r)}" alt="">${esc(r.t)}${done?' <em>hazır</em>':''}</span>${r.items.map(chipHTML).join('')}${r.own&&done&&b3HandOK(r.r)?`<button type="button" class="b3mk" data-b3make="${esc(r.r)}" title="Şimdi elinle yap">Yap</button>`:''}${r.own?`<button type="button" class="b3x" data-untrack="${esc(r.r)}" aria-label="${esc(r.r)} takibini bırak" title="Takibi bırak">×</button>`:''}</div>`}
+  return `<div class="b3row${r.own?' own':''}${done?' done':''}"><span class="b3lab" title="${esc(r.t)}"><img src="${icon(r.ic||r.r)}" alt=""><span class="b3lt">${esc(r.t)}</span>${done?' <em>hazır</em>':''}</span>${r.items.map(chipHTML).join('')}${r.own&&done&&b3HandOK(r.r)?`<button type="button" class="b3mk" data-b3make="${esc(r.r)}" title="Şimdi elinle yap">Yap</button>`:''}${r.own?`<button type="button" class="b3x" data-untrack="${esc(r.r)}" aria-label="${esc(r.r)} takibini bırak" title="Takibi bırak">×</button>`:''}</div>`}
 const PHONE=()=>PHONE_MQ.matches||innerHeight<=520;
 function placeBar(){if(bar.hidden)return;
   const L=$('left').getBoundingClientRect(),Rt=$('right').getBoundingClientRect(),tutOn=!tutEl.hidden&&!document.body.classList.contains('ontitle'),T=tutEl.getBoundingClientRect();
@@ -20455,5 +20455,20 @@ cbody.addEventListener('click',e=>{const bn=e.target.closest&&e.target.closest('
   const was=li.classList.contains('hopen');cbody.querySelectorAll('.book.hand li.hopen').forEach(x=>x.classList.remove('hopen'));if(!was)li.classList.add('hopen')});
 }).toString()+')()')}catch(e){try{window.__hamErr('v337handjs: '+(e&&e.message||e))}catch(_){}}})();
 </script>
+<style id="v338trk">
+/* v3.38 (Boğaç: "takip edilenler düzensiz, alt alta gelsin kutucuklar; uzunları kısalt, üstüne gidince tam adı yazar"): same-width rows, fixed columns */
+#b3trk{align-items:stretch}
+#b3trk .b3row{flex-wrap:nowrap}
+#b3trk .b3lab{flex:none;width:9.4em;overflow:hidden}#b3trk .b3lab .b3lt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+#b3trk .b3cell{flex:none;display:flex;align-items:center;gap:3px;width:11.4em}
+#b3trk .b3cell .b3c{flex:1 1 auto;min-width:0;box-sizing:border-box}
+#b3trk .b3cell .b3c .b3nm{flex:1 1 auto;min-width:0;max-width:none}
+#b3trk .b3cell .b3plus{flex:none;margin-left:0}
+#b3trk .b3cell:not(:has(.b3plus))::after{content:"";flex:none;width:20px}
+#b3trk .b3x,#b3trk .b3mk{margin-left:auto}
+#b3trk .b3mk~.b3x{margin-left:2px}
+@media (max-height:520px){#b3trk .b3lab{width:6.4em}#b3trk .b3cell{width:6.2em}#b3trk .b3cell:not(:has(.b3plus))::after{width:16px}}
+body.v50m #b3trk .b3row{flex-wrap:wrap}body.v50m #b3trk .b3lab{width:6.4em}body.v50m #b3trk .b3cell{width:7.4em}
+</style>
 </body>
 </html>

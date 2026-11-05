@@ -9,8 +9,9 @@
 
 
 
-## v3.38 (bekleyen paket) · sıkı el yapımı listesi, ıslık gibi olmayan canlı sesleri
+## v3.38 (bekleyen paket) · sıkı el yapımı listesi, ıslık gibi olmayan canlı sesleri, düzenli takip şeridi
 - Yeni `v337hand` (stil) + `v337handjs`: el yapımı satırları tek satır; malzemeler (`.bn>span>br+small`) gizli, bilgisayarda satır üstüne gelince, telefonda ada dokununca (`li.hopen`) satırın altında mutlak konumlu kutuda açılır. Düğmeler küçük (26 px).
+- Takip şeridi: `chipHTML` her kutucuğu sabit genişlikte `.b3cell` içine koyar (+ yeri boşsa `::after` ile ayrılır), adlara `title`; `b3lab` içinde `.b3lt`. Yeni `v338trk` stili: satırlar aynı genişlikte (`align-items:stretch`), etiket 9,4em, kutucuk 11,4em, × en sağda; telefonda satırlar yine sarar.
 - `v336voice` `vox` yeniden yazıldı: perde tavanı 650 Hz (kuş/yırtıcı 1000, 12. parametre), hep sawtooth + jitter, geniş formantlar (Q 1,8/2,4, F1≤1800, F2≤2900), %55 gürültü (nefes) aynı formantlardan, 3 kHz alçak geçiren. `chirp` (sine bip üçlüsü), `squeak` (üçlü kare ciyak), `yelp`, `pig` (kare tiz), `click` (tıkırtı dizisi), `screech` tek nefeslik seslere çevrildi.
 - `v336voice`: yeni `rabbit` sesi (boğuk ayak/düşüş + nefesli gürültü ciyağı, saf ton yok); `'Tavşan':'rabbit'`.
 ## v3.37 (6 Kasım 2026) · leş, 194 eşya resmi, meşale yuvası, tarif kitabı, Boğaç gerçek saatte, kalp atışı, "seni hatırlıyorum", ACT 3 notları
