@@ -20070,41 +20070,48 @@ cbody.addEventListener('change',e=>{if(!e.target||e.target.id!=='hlrn')return;tr
 const C=window.__plCrSnd;if(!C)return;const {tone,hiss}=C;
 function S(fn,v){if(v<=.02)return;try{audio.synth((ac,out)=>{const t=ac.currentTime,g=ac.createGain();g.gain.value=v;g.connect(out);fn(ac,g,t)})}catch(e){}}
 // a voiced sound: pitch from f0 to f1 over d seconds, through two formants, with vibrato
-function vox(ac,o,t,f0,f1,d,F1,F2,vol,vib,type){const os=ac.createOscillator();os.type=type||'sawtooth';os.frequency.setValueAtTime(f0,t);os.frequency.exponentialRampToValueAtTime(Math.max(30,f1),t+d);
-  if(vib){const l=ac.createOscillator(),lg=ac.createGain();l.frequency.value=vib[0];lg.gain.value=f0*vib[1];l.connect(lg);lg.connect(os.frequency);l.start(t);l.stop(t+d+.05)}
-  const g=ac.createGain();g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+Math.min(.05,d*.15));g.gain.setValueAtTime(vol,t+d*.6);g.gain.exponentialRampToValueAtTime(.0001,t+d);
-  for(const [F,Q,k] of [[F1,5,1],[F2,8,.6]]){const b=ac.createBiquadFilter();b.type='bandpass';b.frequency.value=F;b.Q.value=Q;const bg=ac.createGain();bg.gain.value=k*2.2;os.connect(b);b.connect(bg);bg.connect(g)}
-  g.connect(o);os.start(t);os.stop(t+d+.05)}
+// v3.38 (Boğaç: "hepsinin sesleri ıslık çalıyor gibi, bib bib biiiib"): a voice is never a pure or high tone any more. The pitch is capped
+// (650 Hz, birds 1000), the source is always a buzzy sawtooth with a little jitter, the two mouth filters are wide (no whistling resonance),
+// half of the sound is breath (noise through the same filters) and everything above ~3 kHz is cut.
+function vox(ac,o,t,f0,f1,d,F1,F2,vol,vib,type,cap){cap=cap||650;f0=Math.min(cap,f0);f1=Math.min(cap,f1);F1=Math.min(F1,1800);F2=Math.min(F2,2900);
+  const os=ac.createOscillator();os.type='sawtooth';os.frequency.setValueAtTime(f0,t);os.frequency.exponentialRampToValueAtTime(Math.max(30,f1),t+d);
+  const l=ac.createOscillator(),lg=ac.createGain();l.frequency.value=vib?vib[0]:23;lg.gain.value=f0*(vib?Math.min(.08,vib[1]):.025);l.connect(lg);lg.connect(os.frequency);l.start(t);l.stop(t+d+.05);
+  const nb=ac.createBuffer(1,Math.ceil(ac.sampleRate*(d+.05)),ac.sampleRate),nc=nb.getChannelData(0);for(let i=0;i<nc.length;i++)nc[i]=Math.random()*2-1;const ns=ac.createBufferSource();ns.buffer=nb;
+  const g=ac.createGain(),at=Math.min(.06,d*.25);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+at);g.gain.setValueAtTime(vol,t+d*.55);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+  const lp=ac.createBiquadFilter();lp.type='lowpass';lp.frequency.value=3000;lp.Q.value=.5;lp.connect(g);
+  const vg=ac.createGain();vg.gain.value=1;const bg0=ac.createGain();bg0.gain.value=.55;os.connect(vg);ns.connect(bg0);
+  for(const [F,Q,k] of [[F1,1.8,1],[F2,2.4,.55]])for(const [src,m] of [[vg,1.7],[bg0,1.2]]){const b=ac.createBiquadFilter();b.type='bandpass';b.frequency.value=F;b.Q.value=Q;const bg=ac.createGain();bg.gain.value=k*m;src.connect(b);b.connect(bg);bg.connect(lp)}
+  g.connect(o);os.start(t);os.stop(t+d+.05);ns.start(t);ns.stop(t+d+.05)}
 const KIND={
- chirp:{hurt:(ac,o,t,f)=>{for(const k of [0,.1,.19])tone(ac,o,t+k,f*1.1,f*1.6,.07,'sine',.5)},
-        die:(ac,o,t,f)=>{tone(ac,o,t,f*1.5,f*.7,.9,'sine',.45,[18,f*.08]);tone(ac,o,t+.05,f*1.2,f*.6,.7,'triangle',.15)}},
+ chirp:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f,f*1.15,.22,1500,2600,.45,[26,.05],0,1000);hiss(ac,o,t,.15,'bandpass',2200,1.2,.15)},   /* v3.38: one raspy squawk, not three beeps */
+        die:(ac,o,t,f)=>{vox(ac,o,t,f*1.1,f*.6,.75,1400,2500,.42,[18,.06],0,1000);hiss(ac,o,t+.1,.5,'bandpass',2000,1,.12,900)}},
  quack:{hurt:(ac,o,t,f)=>{for(const k of [0,.2])vox(ac,o,t+k,f,f*.85,.16,1100,2600,.5,null,'square')},
         die:(ac,o,t,f)=>{vox(ac,o,t,f*1.05,f*.6,.8,1000,2400,.5,[7,.03],'square')}},
- screech:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.4,f*1.1,.35,2600,4200,.45,[22,.04]);hiss(ac,o,t,.3,'bandpass',3500,2,.2)},
-          die:(ac,o,t,f)=>{vox(ac,o,t,f*1.5,f*.7,1,2400,3800,.45,[16,.05]);hiss(ac,o,t,.8,'bandpass',3000,2,.15,1500)}},
+ screech:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.1,f*.9,.35,1600,2700,.42,[22,.06],0,950);hiss(ac,o,t,.3,'bandpass',2400,1.2,.25)},
+          die:(ac,o,t,f)=>{vox(ac,o,t,f*1.1,f*.6,.9,1500,2600,.42,[16,.07],0,950);hiss(ac,o,t,.8,'bandpass',2200,1.2,.2,1000)}},
  // v3.37 (Boğaç: "tavşanın sesi ıslık çalıyor gibi olmasın"): no pure tone at all: a dull thump, then a short breathy, raspy squeal (noise through low formants)
  rabbit:{hurt:(ac,o,t,f)=>{tone(ac,o,t,140,70,.12,'sine',.55);hiss(ac,o,t+.03,.16,'bandpass',1500,1.6,.55,1100);vox(ac,o,t+.04,Math.min(520,f*.5),Math.min(440,f*.42),.14,900,1700,.16,[30,.08],'sawtooth')},
         die:(ac,o,t,f)=>{tone(ac,o,t,120,60,.18,'sine',.5);hiss(ac,o,t+.05,.55,'bandpass',1400,1.4,.45,700);vox(ac,o,t+.06,Math.min(500,f*.48),Math.min(300,f*.3),.5,850,1500,.14,[24,.1],'sawtooth')}},
- squeak:{hurt:(ac,o,t,f)=>{for(const k of [0,.12,.22])vox(ac,o,t+k,f*1.2,f*1.45,.09,2200,3400,.45,null,'square')},
-         die:(ac,o,t,f)=>{vox(ac,o,t,f*1.4,f*.8,.8,2000,3200,.42,[13,.06],'square')}},
+ squeak:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*.6,f*.5,.2,1100,1900,.4,[28,.07]);hiss(ac,o,t+.02,.16,'bandpass',1500,1.4,.4,1000)},   /* v3.38: one breathy squeal */
+         die:(ac,o,t,f)=>{vox(ac,o,t,f*.6,f*.35,.6,1000,1800,.38,[22,.08]);hiss(ac,o,t+.04,.5,'bandpass',1400,1.3,.35,700)}},
  bleat:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.05,f*.9,.45,700,1250,.55,[6.5,.05])},
         die:(ac,o,t,f)=>{vox(ac,o,t,f*1.1,f*.55,1.1,650,1150,.55,[5.5,.07])}},
  neigh:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.6,f*2.2,.18,900,1900,.4,[18,.04]);vox(ac,o,t+.18,f*2.2,f*1.2,.3,850,1800,.4,[20,.05])},
         die:(ac,o,t,f)=>{vox(ac,o,t,f*1.8,f*2.4,.25,900,1900,.42,[16,.04]);vox(ac,o,t+.25,f*2.4,f*.9,.7,800,1700,.42,[14,.06]);hiss(ac,o,t+.95,.25,'lowpass',500,1,.3)}},
  moo:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f,f*.85,.5,420,850,.6,[4,.02])},
       die:(ac,o,t,f)=>{vox(ac,o,t,f*1.05,f*.6,1.2,400,800,.6,[3.5,.03])}},
- yelp:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.6,f*2.2,.08,1100,2300,.5);vox(ac,o,t+.08,f*2.2,f*1.1,.22,1000,2200,.5)},
-       die:(ac,o,t,f)=>{for(const k of [0,.18])vox(ac,o,t+k,f*1.8,f*1.3,.14,1000,2100,.4);vox(ac,o,t+.38,f*1.2,f*.7,.9,700,1300,.45,[5,.04],'triangle')}},
+ yelp:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*1.2,f*.8,.3,800,1700,.5,[20,.05]);hiss(ac,o,t,.12,'lowpass',1200,1,.25)},
+       die:(ac,o,t,f)=>{vox(ac,o,t,f*1.2,f*.9,.25,800,1700,.42);vox(ac,o,t+.25,f*.9,f*.5,1,650,1300,.45,[5,.05])}},
  roar:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*.9,f*.7,.5,380,900,.6,[30,.1]);hiss(ac,o,t,.45,'lowpass',900,1,.3)},
        die:(ac,o,t,f)=>{vox(ac,o,t,f,f*.45,1.3,350,850,.6,[25,.12]);hiss(ac,o,t,1.2,'lowpass',800,1,.28,250)}},
- pig:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*.5,f*.4,.2,350,900,.5,[35,.15]);vox(ac,o,t+.2,f*2.4,f*3,.25,1400,2800,.35,null,'square')},
-      die:(ac,o,t,f)=>{vox(ac,o,t,f*2.6,f*3.2,.3,1500,3000,.38,[12,.04],'square');vox(ac,o,t+.3,f*3.2,f*1.6,.7,1300,2600,.38,[10,.06],'square')}},
+ pig:{hurt:(ac,o,t,f)=>{vox(ac,o,t,f*.5,f*.4,.2,350,900,.5,[35,.15]);vox(ac,o,t+.18,f*1.2,f*1.1,.3,900,1800,.38,[30,.08])},
+      die:(ac,o,t,f)=>{vox(ac,o,t,f*1.2,f*1.3,.35,900,1800,.38,[28,.08]);vox(ac,o,t+.35,f*1.2,f*.6,.7,800,1600,.38,[20,.08])}},
  hiss:{hurt:(ac,o,t,f)=>{hiss(ac,o,t,.35,'highpass',3800,.8,.45,5200)},
        die:(ac,o,t,f)=>{hiss(ac,o,t,1,'highpass',4200,.8,.42,2000)}},
  croak:{hurt:(ac,o,t,f)=>{for(const k of [0,.18])vox(ac,o,t+k,f,f*.8,.13,500,1300,.6,[40,.2],'square')},
         die:(ac,o,t,f)=>{vox(ac,o,t,f,f*.5,.8,450,1200,.6,[30,.25],'square')}},
- click:{hurt:(ac,o,t,f)=>{for(const k of [0,.06,.11,.17])hiss(ac,o,t+k,.035,'highpass',3600,1,.55)},
-        die:(ac,o,t,f)=>{for(let k=0;k<7;k++)hiss(ac,o,t+k*.07,.04,'highpass',3200-k*200,1,.5);hiss(ac,o,t+.5,.4,'bandpass',1800,1,.2)}}};
+ click:{hurt:(ac,o,t,f)=>{hiss(ac,o,t,.18,'bandpass',2200,1.2,.45,1600);hiss(ac,o,t+.08,.12,'bandpass',1600,1.2,.3)},   /* v3.38: a dry rattle, no ticking */
+        die:(ac,o,t,f)=>{hiss(ac,o,t,.6,'bandpass',2000,1,.4,700);hiss(ac,o,t+.3,.4,'lowpass',900,1,.2)}}};
 const BY={'Keklik':'chirp','Bıldırcın':'chirp','Ur kekliği':'chirp','Ördek':'quack','Yaban kazı':'quack','Turna kuşu':'quack','Kartal':'screech',
  'Tavşan':'rabbit','Sincap':'squeak','Kunduz':'squeak','Porsuk':'squeak','Su samuru':'squeak','Geyik':'bleat','Karaca':'bleat','Dağ keçisi':'bleat','Muflon':'bleat',
  'Yaban atı':'neigh','Yaban öküzü':'moo','Kurt':'yelp','Bataklık kurdu':'yelp','Kül kurdu':'yelp','Vaşak':'yelp','Mağara ayısı':'roar','Kara ejder':'roar',
