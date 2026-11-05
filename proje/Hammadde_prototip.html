@@ -1378,7 +1378,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.31</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.32</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -19161,15 +19161,15 @@ function press(L){const a=document.activeElement;
 // v3.25 (Boğaç): aim assist for the gamepad only (the mouse has none): the same choice as the phone's Vur button (v132-dokun):
 // a hostile creature within 150 px (melee), else the nearest in front (110 px; bow, staff, gun 240), else where the stick points.
 // The blow is the mouse's own click at that point (pointerdown/up on the canvas), so holds, combos and the bow work as with the mouse.
-let stick=null,adown=null;
+let stick=null,adown=null,RS=null;   // v3.32: RS = the right stick's aim
 function pkind(){try{return window.__plCB?window.__plCB.kindOf():'fist'}catch(e){return 'fist'}}
-function aimDir(){return stick||player.face||{x:0,y:1}}
-function pick(range,hostileOnly,w){let best=null,bs=1e9;const f=aimDir(),fa=Math.atan2(f.y,f.x||(f.y?0:1));
+function aimDir(){return RS||stick||player.face||{x:0,y:1}}
+function pick(range,hostileOnly,w,maxDf){let best=null,bs=1e9;const f=aimDir(),fa=Math.atan2(f.y,f.x||(f.y?0:1));
   for(const a of animals){const D=ANIM[a.k];if(!D||a.hp<=0||a.dl||(hostileOnly&&a.tut))continue;
     if(hostileOnly&&!(a.mad||a.st==='chase'||a.st==='attack'||D.temper==='saldırgan'||a.boss))continue;
-    const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy);if(d>range)continue;let df=Math.abs(Math.atan2(dy,dx)-fa);if(df>Math.PI)df=2*Math.PI-df;
+    const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy);if(d>range)continue;let df=Math.abs(Math.atan2(dy,dx)-fa);if(df>Math.PI)df=2*Math.PI-df;if(maxDf&&df>maxDf)continue;
     const sc=d+df*w+(!hostileOnly&&D.temper==='zararsız'?40:0)+(!hostileOnly&&a.tut?20:0);if(sc<bs){bs=sc;best=a}}return best}
-function aimAt(){const k=pkind(),rng=k==='staff'||k==='gun'||k==='bow';const a=(!rng&&pick(150,true,4))||pick(rng?240:110,false,22);
+function aimAt(){const k=pkind(),rng=k==='staff'||k==='gun'||k==='bow';const a=RS?pick(rng?240:130,false,60,.75):((!rng&&pick(150,true,4))||pick(rng?240:110,false,22));   // v3.32: with the right stick only what lies that way
   if(a)return{a,x:a.x,y:a.y-6};const f=aimDir();return{a:null,x:player.x+(f.x||0)*40,y:player.y-6+(f.y||0)*40}}
 function fakeP(type,Q){try{const ev=new PointerEvent(type,{pointerType:'mouse',pointerId:78,isPrimary:true,button:0,buttons:type==='pointerdown'?1:0,clientX:(Q.x-cam.cx)*S,clientY:(Q.y-cam.cy)*S,bubbles:true,cancelable:true});cv.dispatchEvent(ev);return true}catch(e){return false}}
 function atkDown(){if(adown)return;const Q=aimAt(),k=pkind();
@@ -19186,19 +19186,24 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
   // v3.23: the cheat code ↑↑↓↓←→←→ B A (d-pad or stick; at most 2 s between presses); the last A does not press the chosen button
   {const tn=performance.now();let kd=now[12]?'U':now[13]?'D':now[14]?'L':now[15]?'R':'';if(!kd&&mag>.55)kd=Math.abs(ax)>Math.abs(ay)?(ax>0?'R':'L'):(ay>0?'D':'U');
     const push=c=>{if(tn-P.kt>2000)P.kq='';P.kt=tn;P.kq=(P.kq+c).slice(-10)};if(kd&&kd!==P.kdir)push(kd);P.kdir=kd;if(hit(1))push('B');if(hit(0))push('A');
-    if(P.kq==='UUDDLRLRBA'){P.kq='';try{window.__plCheatCode&&window.__plCheatCode()}catch(e){}return}}
+    if(P.kq==='UUDDLRLRBA'){P.kq='';try{window.__plCheatCode&&window.__plCheatCode()}catch(e){}return}
+    // v3.32 (Boğaç): while the code is being typed on the main menu (after ↑↑), the menu does not move and A/B press nothing (it used to land on Çıkış)
+    blockK=false;if(onTitle&&P.kq&&tn-P.kt<=2000)for(let n=Math.min(P.kq.length,10);n>=2;n--)if('UUDDLRLRBA'.indexOf(P.kq.slice(-n))===0){blockK=true;break}}
   if(!P.used&&(mag>.3||now.some(v=>v))){P.used=true;document.body.classList.add('padmode')}
   const L=layer();
   if(L){if(held.up||held.down||held.left||held.right||held.run||held.parry||held.eat)releaseAll();
     let dx=now[15]?1:now[14]?-1:(ax>.55?1:ax<-.55?-1:0),dy=now[13]?1:now[12]?-1:(ay>.55?1:ay<-.55?-1:0);if(dx&&dy){if(Math.abs(ax)>Math.abs(ay))dy=0;else dx=0}
-    const d=dx+','+dy,t=performance.now();if(d!=='0,0'){if(d!==P.dir){P.dir=d;P.rep=t+380;moveFocus(L,dx,dy)}else if(t>=P.rep){P.rep=t+120;moveFocus(L,dx,dy)}}else P.dir='';
+    const d=dx+','+dy,t=performance.now();if(d!=='0,0'){if(d!==P.dir){P.dir=d;P.rep=t+380;if(!blockK)moveFocus(L,dx,dy)}else if(t>=P.rep){P.rep=t+120;if(!blockK)moveFocus(L,dx,dy)}}else P.dir='';RS=null;
     if(adown)atkUp();
     if(L!==P.lastL){P.lastL=L;lastC=null}else keepFocus(L);
     if(L.id==='padkb'){if(hit(0))press(L);if(hit(1))kbHide();if(hit(2))kbKey('del');if(hit(9))kbKey('ok');return}
-    if(hit(0))press(L);
-    if(hit(1))tap('Escape');
+    if(hit(0)&&!blockK)press(L);
+    if(hit(1)&&!blockK)tap('Escape');
     if(hit(9)&&paused)tap('Escape');
     return}
+  // v3.32 (Boğaç): the right stick aims while the left one walks: the hero turns that way and blows, arrows and shots go there
+  {const rx=g.axes[2]||0,ry=g.axes[3]||0,rm=Math.hypot(rx,ry);RS=rm>.35?{x:rx/rm,y:ry/rm}:null;
+   const C=window.__plCombo;if(C&&(RS||stick)){const f=aimDir();C.mx=player.x+(f.x||0)*60;C.my=player.y-6+(f.y||0)*60}}
   // walking: the stick holds the walking keys (8 directions)
   const k=mag>.3?1:0,sx=k&&ax>.38,sxn=k&&ax<-.38,sy=k&&ay>.38,syn=k&&ay<-.38;
   sx?down('right'):up('right');sxn?down('left'):up('left');sy?down('down'):up('down');syn?down('up'):up('up');
@@ -19210,6 +19215,8 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
     for(let k=0;k<=n;k++){i+=d;if(i>=n)i=-1;if(i<-1)i=n-1;if(i<0?!ar:!!L[i])break}if(i!==hand&&(i<0?!ar:!!L[i])){setHand(i);sfx('pick')}}catch(e){}}
   if(hit(9))tap('Escape');if(hit(8))tap('map');
   if(hit(12))tap('handcraft');if(hit(13))tap('inv');if(hit(14))tap('book');if(hit(15))tap('quests')}
+let blockK=false;
+{const _dp=drawPlayer;drawPlayer=function(){if(RS&&!onTitle&&!window.__plKlonDraw)player.face=Math.abs(RS.x)>=Math.abs(RS.y)?{x:Math.sign(RS.x)||1,y:0}:{x:0,y:Math.sign(RS.y)||1};return _dp.apply(this,arguments)}}   // v3.32: face where the right stick aims
 function start(){if(!P.raf)P.raf=requestAnimationFrame(tick)}
 addEventListener('gamepadconnected',()=>{P.on=true;start();toast('Oyun kolu bağlandı: sol çubuk yürü · A topla/konuş · X ya da RT vur · B atıl · LT gard · Y ye · R3 ulti · Start duraklat. Bütün düzen Ayarlar → Kontroller\'de.');renderHelp()});
 addEventListener('gamepaddisconnected',()=>{releaseAll();setTimeout(()=>{let any=false;try{any=Array.prototype.slice.call(navigator.getGamepads()||[]).some(x=>x&&x.connected)}catch(e){}if(!any){P.used=false;document.body.classList.remove('padmode');toast('Oyun kolu ayrıldı',true)}renderHelp()},50)});
@@ -19649,8 +19656,8 @@ setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);las
   // the very same drawing as the player: swap the player's place and facing for a moment
   const px0=player.x,py0=player.y,fx0=player.face.x,fy0=player.face.y,mv0=player.mv,st0=player.step;
   const dx=px0-C.x,dy=py0-C.y;let fx=0,fy=1;if(Math.abs(dx)>Math.abs(dy))fx=dx>0?1:-1;else{fx=0;fy=dy>0?1:-1}
-  try{player.x=C.x;player.y=C.y;player.face.x=fx;player.face.y=fy;player.mv=false;player.step=0;ctx.save();ctx.globalAlpha=Math.min(1,C.age/.25);drawPlayer();ctx.restore()}
-  finally{player.x=px0;player.y=py0;player.face.x=fx0;player.face.y=fy0;player.mv=mv0;player.step=st0}
+  try{window.__plKlonDraw=1;player.x=C.x;player.y=C.y;player.face.x=fx;player.face.y=fy;player.mv=false;player.step=0;ctx.save();ctx.globalAlpha=Math.min(1,C.age/.25);drawPlayer();ctx.restore()}
+  finally{window.__plKlonDraw=0;player.x=px0;player.y=py0;player.face.x=fx0;player.face.y=fy0;player.mv=mv0;player.step=st0}
   if(heroName){ctx.save();ctx.font='bold 7px sans-serif';ctx.textAlign='center';ctx.fillStyle='rgba(0,0,0,.7)';ctx.fillText(heroName,Math.round(C.x)+1,Math.round(C.y)-25);ctx.fillStyle='#f3ead2';ctx.fillText(heroName,Math.round(C.x),Math.round(C.y)-26);ctx.restore()}}}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v330klon: '+(e&&e.message||e))}catch(_){}}})();
 </script>

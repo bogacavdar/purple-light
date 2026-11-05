@@ -47,6 +47,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 | B (PS: ○) | Atıl / takla | Boşluk |
 | Y (PS: △) | En uygun yemeği ye (basılı tut: yemek listesi) | X |
 | LT (L2), basılı tut | Savuştur / gard | E |
+| Sağ çubuk (v3.32, Boğaç) | **Nişan:** sol çubukla yürürken sağ çubuğu hangi yöne çevirirsen karakter o yöne döner ve vuruşlar, oklar, asa ve ateşli silah atışları o yöne gider (nişan yardımı yalnızca o yöndeki canlıları seçer). Bırakınca nişan yürüdüğün yöne döner. | fare imleci |
 | R3 (sağ çubuğa bas) | Ulti | R |
 | LB / RB (L1 / R1) | Alet kemerinde önceki / sonraki **dolu** yuva; boş yuvaları atlar, boş el de bir durak (v3.24, Boğaç: arenada RB silahı elden alıyordu; arenada boş el durağı yok) | fare tekerleği |
 | Yön tuşları | Yukarı El yapımı · aşağı Envanter · sol Tarif kitabı · sağ Görevler | Tab · I · K · G |
@@ -58,7 +59,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - **Titreşim:** hasar alınca kol titrer (alınan hasarla güçlenir); titreşimi desteklemeyen kolda bir şey olmaz.
 - Kol yalnızca bağlıyken okunur: kol yokken oyuna hiçbir yük eklenmez.
 - **Kol kopuyorsa (v3.26, Boğaç'ın denemesi):** Xbox kolu **Xbox kablosuz aparatıyla** bağlıyken Chrome ve Edge'de (masaüstü uygulaması da Chrome/Edge'dir) tarayıcı kolu okumaya başladığı an bağlantı kopabiliyor; bu oyundan değil, aparat ile Chrome/Edge arasındaki uyumsuzluktan (kolu okuyan her sayfada oluyor, ör. hardwaretester.com). **Firefox'ta sorun yok**; kabloyla bağlamak da çözer. Kalıcı çözüm tarayıcı dışı sürüm (bkz. Gelecek planı: Godot'ya geçiş). Oyunun içinde bu konuda bir yazı yoktur (v3.27, Boğaç: oyuncuya adım adım iş yaptırılmaz).
-- **Hile kodu (v3.23):** ana menüde Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A hile ayarlarını açar/kapatır (Sistemler › Hile modu).
+- **Hile kodu (v3.23):** ana menüde Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A hile ayarlarını açar/kapatır (Sistemler › Hile modu). **Kod girerken menü oynamaz (v3.32, Boğaç: "sol sağ sol sağ yaparken çıkışa denk geliyor, oyun kapanıyor"):** ana menüde iki kez Yukarı'ya basıldıktan sonra kodun devamı (Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A) girildiği sürece seçili düğme yer değiştirmez ve A/B hiçbir düğmeye basmaz; kod bozulursa (başka bir tuş ya da 2 sn ara) menü yine normal çalışır.
 
 # Temel sistemler
 
