@@ -1378,7 +1378,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.35</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.36</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -3650,7 +3650,7 @@ function renderPot(list){
   const lc=v=>v.toLocaleLowerCase('tr-TR');
   const match=x=>!f||(potBy==='ing'?x.i.some(([n])=>lc(n).includes(f)||expand(n).some(m=>lc(m).includes(f))):lc(x.r).includes(f));
   syncSeq();
-  const open=DB.R.filter(x=>isOpen(x.r)&&stOK(x)&&!PLACEABLE.has(x.r)&&(potCat==='Tümü'||x.c===potCat)&&match(x)).sort((a,b)=>openSeq.get(a.r)-openSeq.get(b.r));
+  const open=DB.R.filter(x=>isOpen(x.r)&&stOK(x)&&!PLACEABLE.has(x.r)&&(potCat==='Tümü'||x.c===potCat)&&match(x)).filter(x=>FG||!(window.__plHideL&&window.__plHideL())||!foundSet.has(x.r)).sort((a,b)=>(FG?0:(foundSet.has(a.r)?1:0)-(foundSet.has(b.r)?1:0))||openSeq.get(a.r)-openSeq.get(b.r));   // v3.36: learned ones last (or hidden)
   const mk=y=>!FG&&!foundSet.has(y.r)&&canWith(y),mkOn=new Set(open.filter(mk).map(y=>y.r)),mkL=open.filter(y=>mkOn.has(y.r)),rest=open.filter(y=>!mkOn.has(y.r));   // v2.42: what can be made now goes to the top and glows
   const groups=potCat==='Tümü'&&!f&&!FG?[['Şimdi yapılabilir',mkL]].concat(CATS.map(c=>[c,rest.filter(x=>x.c===c)])).filter(g=>g[1].length):[[null,mkL.concat(rest)]];
   const newest=openN-3;
@@ -3666,7 +3666,7 @@ function renderPot(list){
   const tiles=list.filter(n=>!need||need.has(n)||!sk('B2'));
   const wantOf=n=>{if(!x||potMode==='dene'||(!FG&&foundSet.has(x.r)))return 0;let w=0;x.i.forEach(([m],i)=>{if(expand(m).includes(n))w+=Math.max(0,needLeft(i))});return w};
   cbody.innerHTML=(FG?smithTabs():'')+potSwitch()+`<div class="cauldron">
-    <div class="rlist" role="list">${open.length?groups.map(([c,L])=>(c?`<div class="rgrp"><span>${esc(c)}</span><span>${L.length}</span></div>`:'')+L.map(y=>`<button type="button" class="rb${pot.r===y.r?' on':''}${canBrew(y)?' can':''}${mkOn.has(y.r)?' mk':''}${!FG&&foundSet.has(y.r)?' learned':''}" data-rec="${esc(y.r)}"><img src="${icon(y.r)}" alt=""><span>${esc(y.r)}${foundSet.has(y.r)?(FG?' <small>✓</small>':' <small>öğrenildi</small>'):''}${openSeq.get(y.r)>newest&&!foundSet.has(y.r)?' <small style="color:#ffd27a">yeni</small>':''}</span><em class="${inv[y.r]>0?'own':''}" title="Sende kaç tane var">${inv[y.r]>0?'×'+inv[y.r]:'0'}</em></button>`).join('')).join(''):(f?'<p class="note">Aramana uyan tarif yok.</p>':'')+FG?'<p class="note">Henüz açık bir alet tarifi yok. Alet tarifleri parçalarını (sopa, ip, keskin taş…) elde edince açılır; parçaları Zümrüt\'ün kazanında yaparsın.</p>':'<p class="note">Açık tarif yok. Malzeme topladıkça tarifler açılır.</p>'}</div>
+    <div class="rlist" role="list">${FG?'':`<label class="hlrn"><input type="checkbox" id="hlrn"${window.__plHideL&&window.__plHideL()?' checked':''}> Öğrenilenleri gösterme</label>`}${open.length?groups.map(([c,L])=>(c?`<div class="rgrp"><span>${esc(c)}</span><span>${L.length}</span></div>`:'')+L.map(y=>`<button type="button" class="rb${pot.r===y.r?' on':''}${canBrew(y)?' can':''}${mkOn.has(y.r)?' mk':''}${!FG&&foundSet.has(y.r)?' learned':''}" data-rec="${esc(y.r)}"><img src="${icon(y.r)}" alt=""><span>${esc(y.r)}${foundSet.has(y.r)?(FG?' <small>✓</small>':' <small>öğrenildi</small>'):''}${openSeq.get(y.r)>newest&&!foundSet.has(y.r)?' <small style="color:#ffd27a">yeni</small>':''}</span><em class="${inv[y.r]>0?'own':''}" title="Sende kaç tane var">${inv[y.r]>0?'×'+inv[y.r]:'0'}</em></button>`).join('')).join(''):(f?'<p class="note">Aramana uyan tarif yok.</p>':'')+FG?'<p class="note">Henüz açık bir alet tarifi yok. Alet tarifleri parçalarını (sopa, ip, keskin taş…) elde edince açılır; parçaları Zümrüt\'ün kazanında yaparsın.</p>':'<p class="note">Açık tarif yok. Malzeme topladıkça tarifler açılır.</p>'}</div>
     <div class="pside">
       ${x?`<div class="psel"><img src="${icon(x.r)}" alt=""><div><b>${esc(x.r)}</b><small>sende ${inv[x.r]||0} · satış ${Math.round(unitPrice(x.r))} sikke</small></div></div><ul class="ping">${rows}</ul>`:FG?'<p class="note">Listeden bir alet seç. Parçaları örse sürükle ya da dokun, sonra <b>Döv</b>. Kılıç dövmek mi? Dursun hâlâ umutlu.</p>':'<p class="note">Kazan eşya yapmaz, <b>tarif öğretir</b>. Listeden bir tarif seç, malzemeleri koy, <b>Tarifi öğren</b>\'e bas: malzemeler tarifi açmaya gider. Öğrendiklerin <b style="color:#8fd46b">yeşil</b> olur; onları sonra '+(TOUCH?'el ikonuyla':'Tab ile')+' her yerde yaparsın, aletleri Demirci Dursun döver.</p>'}
       <div id="pot" class="potz${potReady()?' ready':''}${performance.now()<potFx?' fx':''}" aria-label="${FG?'Örs':'Kazan'}"><div class="liq"></div><span>${x?(!FG&&foundSet.has(x.r)?'Bu tarifi zaten öğrendin':potReady()?(FG?'Hazır! Döv':'Hazır! Tarifi öğren'):(FG?'Parçaları örse sürükle':'Malzemeleri buraya sürükle')):(FG?'Örs boş':'Kazan boş')}</span></div>
@@ -20001,6 +20001,16 @@ window.__plFoodFix=function(n,P,cooked){if(!edible(n))return;const t=tierOf(n),c
  try{for(const k in FOODC)delete FOODC[k]}catch(e){}}
 window.__plFoodTier=n=>tierOf(n);
 }).toString()+')()')}catch(e){try{window.__hamErr('v335food: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v336learned">
+// v3.36 (Boğaç): in the cauldron's list learned recipes go last; a box hides them (kept on this device)
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const K='hammadde.hideLearned';
+window.__plHideL=()=>{try{return localStorage.getItem(K)==='1'}catch(e){return false}};
+{const st=document.createElement('style');st.textContent='#cbody .hlrn{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-dim);padding:2px 2px 6px;cursor:pointer}#cbody .hlrn input{width:16px;height:16px;margin:0}';document.head.appendChild(st)}
+cbody.addEventListener('change',e=>{if(!e.target||e.target.id!=='hlrn')return;try{localStorage.setItem(K,e.target.checked?'1':'0')}catch(x){}renderCraft()});
+}).toString()+')()')}catch(e){try{window.__hamErr('v336learned: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
