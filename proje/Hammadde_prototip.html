@@ -2451,7 +2451,7 @@ const has=n=>(inv[n]||0)>0;
 const axe=()=>bestTool('axe');
 const shovel=()=>bestTool('shovel');
 // what E would gather right now with what is in your hand (null if the hand is busy with another tool)
-function gatherTarget(trees){const h=held(),free=true,pick=heldKind('pick'),axe=heldKind('axe');
+function gatherTarget(trees){const h=held(),free=true,dull=!!h&&typeof dullTool==='function'&&dullTool(h),pick=!dull&&heldKind('pick'),axe=!dull&&heldKind('axe');   // v3.36: a blunt axe or pick does not aim at trees and ore
   if(trees&&axe){let tr=null,bd=22;treesNear(player.x,player.y,t=>{if(t.type.noCut)return false;const d=Math.hypot(t.x-player.x,t.y-player.y);if(d<bd){bd=d;tr=t}return false});if(tr)return{kind:'tree',t:tr}}
   let best=null,bd=REACH*(sk('H4')?1.5:1);
   for(const n of PERF.vis){if(!n.alive)continue;if(n.mine?!pick:!free)continue;const d=Math.hypot(n.x-player.x,n.y-player.y)-(n.mine?13:0);if(d<bd){bd=d;best={kind:'node',n}}}
@@ -7969,9 +7969,16 @@ const G={n:new Set(),t:new Set(),a:new Set(),d:new Set()};
 
 // ---------------------------------------------------------------- the bar at the top of the screen
 const bar=document.createElement('div');bar.id='b3trk';bar.hidden=true;bar.setAttribute('aria-live','polite');document.body.appendChild(bar);
+{const st=document.createElement('style');st.textContent='#b3trk .b3plus{font:inherit;font-weight:700;font-size:13px;line-height:1;min-width:20px;height:20px;padding:0 4px;margin-left:-2px;background:#2f5a2a;color:#e8ffd8;border:2px solid #8fd46b;cursor:pointer;align-self:center}#b3trk .b3plus:hover,#b3trk .b3plus:focus{background:#3f7a36}';document.head.appendChild(st)}
 const tip=document.createElement('div');tip.id='b3tip';tip.hidden=true;document.body.appendChild(tip);
+// v3.36 (Boğaç): a missing part that is a hand recipe you know, and you can make now, gets a + (made at once, its own parts first)
+const b3subOK=m=>subOK(m)&&foundSet.has(m)&&!FORGED.has(m);
+function b3plus(it){if(it.tool||it.have>=it.need)return '';const m=expand(it.n)[0];if(!b3subOK(m))return '';const k=chainMax(m,it.need-it.have,b3subOK);return k>0?`<button type="button" class="b3plus" data-b3sub="${esc(m)}" data-k="${k}" title="${k} ${esc(m)} yap" aria-label="${k} ${esc(m)} yap">+</button>`:''}
+function b3make(m,k){const plan=chainPlan(m,k,b3subOK);if(!plan){toast(`${m} için eksik: ${missingFor(REC.get(m))||'malzeme'}`,true);sfx('bad');return}const made=[];
+  for(const z of plan){const x=REC.get(z);for(const [n,q] of x.i){let need=q;for(const mm of expand(n)){const c=Math.min(need,inv[mm]||0);inv[mm]=(inv[mm]||0)-c;need-=c}}gain(z);made.push(z)}
+  const mid=[...new Set(made.filter(z=>z!==m))];sfx('craft');toast(`${k} ${m} yapıldı${mid.length?` (önce: ${mid.join(', ')})`:''}`);renderInv();if(craftOpen)renderCraft()}
 function chipHTML(it){const ok=it.have>=it.need,src=icon(expand(it.n)[0]);
-  return `<span class="b3c${ok?' ok':''}${it.tool?' tool':''}" data-n="${esc(it.n)}" tabindex="0"><img src="${src}" alt=""><span class="b3nm">${esc(it.n)}</span><b>${Math.min(it.have,it.need)}/${it.need}</b>${ok?'<i aria-hidden="true">✓</i>':''}</span>`}
+  return `<span class="b3c${ok?' ok':''}${it.tool?' tool':''}" data-n="${esc(it.n)}" tabindex="0"><img src="${src}" alt=""><span class="b3nm">${esc(it.n)}</span><b>${Math.min(it.have,it.need)}/${it.need}</b>${ok?'<i aria-hidden="true">✓</i>':''}</span>${b3plus(it)}`}
 // v2.83 (Boğaç): a tracked recipe made by hand gets a Yap button on the bar once everything is there (cauldron and anvil recipes do not)
 function b3HandOK(r){const y=REC.get(r);return !!y&&handSimple(y)&&handKnown(r)&&handN(y)>0}
 function rowHTML(r){const done=r.items.every(it=>it.have>=it.need);
@@ -8006,7 +8013,7 @@ function showTip(el){const n=el.dataset.n;if(!n)return;tip.innerHTML=tipText(n);
   const w=tip.offsetWidth;tip.style.left=Math.round(Math.max(6,Math.min(innerWidth-w-6,r.left+r.width/2-w/2)))+'px';tip.style.top=Math.round(r.bottom+6)+'px'}
 bar.addEventListener('pointerover',e=>{if(e.pointerType!=='mouse')return;const c=e.target.closest('.b3c');if(c)showTip(c)});
 bar.addEventListener('pointerout',e=>{if(e.pointerType!=='mouse')return;const c=e.target.closest('.b3c');if(c&&!c.contains(e.relatedTarget))tip.hidden=true});
-bar.addEventListener('click',e=>{const mk=e.target.closest('[data-b3make]');if(mk){e.stopPropagation();const r=mk.dataset.b3make;if(b3HandOK(r))handCraft(r);else{toast(`${r} için eksik: ${missingFor(REC.get(r))||'malzeme'}`,true);sfx('bad')}renderBar(true);return}const x=e.target.closest('[data-untrack]');if(x){const u=x.dataset.untrack;if(/^Q:/.test(u)){if(window.__qtrack)window.__qtrack(u.slice(2))}else trackRecipe(u);return}
+bar.addEventListener('click',e=>{const sp=e.target.closest('[data-b3sub]');if(sp){e.stopPropagation();b3make(sp.dataset.b3sub,+sp.dataset.k||1);renderBar(true);return}const mk=e.target.closest('[data-b3make]');if(mk){e.stopPropagation();const r=mk.dataset.b3make;if(b3HandOK(r))handCraft(r);else{toast(`${r} için eksik: ${missingFor(REC.get(r))||'malzeme'}`,true);sfx('bad')}renderBar(true);return}const x=e.target.closest('[data-untrack]');if(x){const u=x.dataset.untrack;if(/^Q:/.test(u)){if(window.__qtrack)window.__qtrack(u.slice(2))}else trackRecipe(u);return}
   const c=e.target.closest('.b3c');if(c){if(!tip.hidden&&tip.dataset.n===c.dataset.n){tip.hidden=true;return}showTip(c);tip.dataset.n=c.dataset.n;clearTimeout(B3.tipT);B3.tipT=setTimeout(()=>{tip.hidden=true},3500)}});
 bar.addEventListener('focusin',e=>{const c=e.target.closest('.b3c');if(c)showTip(c)});bar.addEventListener('focusout',()=>{tip.hidden=true});
 
@@ -18687,15 +18694,19 @@ window.__plRoll16=function(){if(!dodge||!dodge.T)return false;const D=dodge;
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
 const nowOK=r=>!foundSet.has(r)&&(diff==='hard'||isOpen(r)),allOK=r=>!foundSet.has(r);
-function needOf(n,ok){const U=USES.get(n);if(!U)return 0;let k=0;
-  for(const r of U){if(!REC.has(r)||!ok(r))continue;for(const x of REC.get(r).i)if(expand(x[0]).indexOf(n)>=0)k+=Math.max(1,+x[1]||1)}
-  return k}
-const spare=(n,ok)=>{if(!(inv[n]>0)||!bulkSellable(n))return 0;return Math.max(0,inv[n]-needOf(n,ok))};
-const worth=ok=>Math.round(order.reduce((t,n)=>{const q=spare(n,ok);return q>0?t+unitPrice(n,true)*q:t},0));
-window.__plSpare=n=>spare(n,allOK);
-safeSell=function(n){return spare(n,allOK)>0};
-function sellBy(ok,keep){let got=0;const names=[];
-  for(const n of order){const q=spare(n,ok);if(q>0){names.push(n);got+=unitPrice(n,true)*q;shopTake(n,q);inv[n]-=q}}
+// v3.36 (Boğaç): parts that are recipes themselves (Sopa…) also need their own materials for whatever of them the bag still lacks
+function reqMap(ok){const R=new Map(),add=(n,q)=>R.set(n,(R.get(n)||0)+q),done=new Map();
+  for(const x of DB.R){if(!ok(x.r))continue;for(const [i0,q] of x.i)for(const m of expand(i0))add(m,Math.max(1,+q||1))}
+  let front=[...R.keys()];for(let d=0;d<6&&front.length;d++){const nx=[];for(const c of front){const y=REC.get(c);if(!y||!subOK(c))continue;
+    const miss=Math.max(0,(R.get(c)||0)-(inv[c]||0)-(done.get(c)||0));if(!miss)continue;done.set(c,(done.get(c)||0)+miss);
+    for(const [i0,q] of y.i){const m=expand(i0)[0];add(m,miss*Math.max(1,+q||1));nx.push(m)}}front=nx}
+  return R}
+const spare=(n,R)=>{if(!(inv[n]>0)||!bulkSellable(n))return 0;return Math.max(0,inv[n]-(R.get(n)||0))};
+const worth=ok=>{const R=reqMap(ok);return Math.round(order.reduce((t,n)=>{const q=spare(n,R);return q>0?t+unitPrice(n,true)*q:t},0))};
+window.__plSpare=n=>spare(n,reqMap(allOK));
+safeSell=function(n){return spare(n,reqMap(allOK))>0};
+function sellBy(ok,keep){let got=0;const names=[];const R=reqMap(ok);
+  for(const n of order){const q=spare(n,R);if(q>0){names.push(n);got+=unitPrice(n,true)*q;shopTake(n,q);inv[n]-=q}}
   got=Math.round(got);if(!got){toast('Tariflerin ihtiyacından fazla satılık bir şeyin yok.',true);return}
   qc('sold',got);coins+=got;tutSold(names);
   toast(`${names.length} çeşidin fazlası satıldı · +${got.toLocaleString('tr-TR')} sikke (${keep} sende kaldı)`);
@@ -19924,9 +19935,25 @@ setInterval(()=>{try{if(onTitle||paused||fading||wake)return;const dt=.1;
   // dance: while it lasts the animals come after 20 s (the dance itself starts and stops in watch())
   if(D.on&&Math.hypot(player.x-D.x,player.y-D.y)>12)D.on=false;
   if(dancing()){D.acc+=dt;if(Math.random()<.25)floats.push({x:player.x+(Math.random()-.5)*14,y:player.y-22,t:0,text:'♪',color:'#e8d8ff',size:10});
-    if(D.acc>=20)for(const a of animals){const A=ANIM[a.k];if(!A||A.temper==='saldırgan'||a.ysA)continue;const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy);if(d>300||d<26)continue;
-      a.mad=false;a.st='wander';a.dx=0;a.dy=0;const nx=a.x+dx/d*60*dt,ny=a.y+dy/d*60*dt;if(!blocked(nx,ny)){a.x=nx;a.y=ny;a.face=dx>0?1:-1}}}
-  else D.acc=0}catch(e){}},100);
+    if(D.acc>=20){   // v3.36 (Boğaç): they come and stand on a circle round you, facing you, and watch (no running off)
+      const G=animals.filter(a=>{const A=ANIM[a.k];return A&&A.temper!=='saldırgan'&&!a.ysA&&!a.tut&&!a.boss&&(a.dnc||Math.hypot(player.x-a.x,player.y-a.y)<300)});
+      G.forEach((a,i)=>{a.dnc=1;const an=i/G.length*6.283+.4,tx=player.x+Math.cos(an)*50,ty=player.y+Math.sin(an)*34,dx=tx-a.x,dy=ty-a.y,d=Math.hypot(dx,dy);
+        a.mad=false;a.st='wander';a.dx=0;a.dy=0;a.t=5;if(d>2){const s=Math.min(d,60*dt);const nx=a.x+dx/d*s,ny=a.y+dy/d*s;if(!blocked(nx,ny)||!isWater(tileAt(nx,ny))){a.x=nx;a.y=ny}}
+        a.face=player.x>a.x?1:-1})}}
+  else{D.acc=0;for(const a of animals)if(a.dnc)a.dnc=0}}catch(e){}},100);
+// v3.36 (Boğaç): the dancer hums a little tune, a low voice for a man, a high one for a woman
+const SONG=[0,2,4,7,4,2,0,-3,0,4,7,9,7,4,2,0];let songI=0,songAt=0;
+function hum(semi,dur){const fem=LOOK.hero&&LOOK.hero.gender==='k',f=(fem?293.66:146.83)*Math.pow(2,semi/12);
+  audio.synth((ac,out)=>{const t=ac.currentTime+.02,o=ac.createOscillator(),v=ac.createOscillator(),vg=ac.createGain(),g=ac.createGain(),f1=ac.createBiquadFilter(),f2=ac.createBiquadFilter();
+    o.type='sawtooth';o.frequency.value=f;v.frequency.value=5.5;vg.gain.value=f*.012;v.connect(vg);vg.connect(o.frequency);
+    f1.type='bandpass';f1.frequency.value=fem?850:730;f1.Q.value=6;f2.type='bandpass';f2.frequency.value=fem?1220:1090;f2.Q.value=8;
+    o.connect(f1);o.connect(f2);f1.connect(g);f2.connect(g);g.connect(out);
+    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.32,t+.04);g.gain.setValueAtTime(.32,t+dur*.6);g.gain.linearRampToValueAtTime(0,t+dur);
+    o.start(t);v.start(t);o.stop(t+dur+.05);v.stop(t+dur+.05)})}
+setInterval(()=>{try{if(!dancing()||paused||onTitle){songI=0;return}const t=now();if(t<songAt)return;const n=SONG[songI%SONG.length],d=songI%8===7?.62:.3;hum(n,d);songI++;songAt=t+(d+.05)*1000}catch(e){}},50);
+// while they watch the dance, the animals' own walking (and running away) is held still
+{const _ta2=tickAnimals;tickAnimals=function(){const W=dancing()?animals.filter(a=>a.dnc).map(a=>[a,a.x,a.y,a.face]):null;const r=_ta2.apply(this,arguments);
+  if(W)for(const [a,x,y,f] of W){a.x=x;a.y=y;a.face=f;a.st='wander';a.mad=false;a.dx=0;a.dy=0}return r}}
 // drawing: invisible (faint), dancing (sway and hop)
 {const _dp=drawPlayer;drawPlayer=function(){const inv_=invisible(),dc=dancing();if(!inv_&&!dc)return _dp.apply(this,arguments);
   ctx.save();if(inv_)ctx.globalAlpha=.18;if(dc){const t=now()/1000,x=player.x,y=player.y;ctx.translate(x,y);ctx.rotate(Math.sin(t*9)*.18);ctx.translate(-x,-y-Math.abs(Math.sin(t*9))*3)}
