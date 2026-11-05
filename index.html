@@ -19553,6 +19553,8 @@ function pick(){if(ISLE!==1)return null;const sea=(x,y)=>x>=0&&y>=0&&x<W&&y<H&&t
     const D=[[1,0],[-1,0],[0,1],[0,-1]];const o=(Math.random()*4)|0;
     for(let q=0;q<4;q++){const d=D[(o+q)%4],lx=x-d[0],ly=y-d[1];if(lx<0||ly<0||lx>=W||ly>=H)continue;const L=ly*W+lx;if(isWater(tiles[L])||reach[L]!==1)continue;
       const n=8+((Math.random()*3)|0);let ok=far(x,y);
+      // v3.30 (Boğaç): it must be reachable on foot: three land tiles in a row behind the shore, on the island's walkable land (reach), none blocked by a tree, rock, house or anything else
+      for(let k=1;k<=3&&ok;k++){const ax=x-d[0]*k,ay=y-d[1]*k;if(ax<0||ay<0||ax>=W||ay>=H){ok=false;break}const A=ay*W+ax;if(isWater(tiles[A])||reach[A]!==1){ok=false;break}const cx_=ax*T+8,cy_=ay*T+8;try{if(blocked(cx_,cy_)||blocked(cx_-4,cy_)||blocked(cx_+4,cy_)||blocked(cx_,cy_-4)||blocked(cx_,cy_+4))ok=false}catch(e){ok=false}}
       for(let k=0;k<n&&ok;k++){const cx=x+d[0]*k,cy=y+d[1]*k;if(!sea(cx,cy)){ok=false;break}if(k>0&&(!sea(cx+d[1],cy+d[0])||!sea(cx-d[1],cy-d[0])))ok=false}
       if(ok&&sea(x+d[0]*n,y+d[1]*n))return{i:y*W+x,dx:d[0],dy:d[1],n}}}
   return null}
