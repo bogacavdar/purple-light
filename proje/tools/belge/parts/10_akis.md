@@ -1,6 +1,6 @@
-# Oyunun akışı
+# Oyun akışı
 
-Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntılar (her görevin istediği, ödülü) "Kişiler ve görevler" bölümlerinde.
+Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntılar (her görevin istediği, ödülü) "ACT 1 › Ana görevler", "ACT 1 › Yan görevler" ve "ACT 2 › Kişiler ve görevler" bölümlerinde.
 
 ## Açılış
 
@@ -39,7 +39,7 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
    - **Kehribar gözlüm (v3.20, Boğaç; gizli):** sevdiğin kişinin göz rengini **Kehribar** seçersen bazı anılarda ona **"kehribar gözlüm"** diye seslenirsin (Boğaç: her anıya değil, bazılarına; ilk 5 ve son 5 anı hariç, aralarda); başka bir göz rengi seçenlerde bu hitap hiç yoktur. Oyunun hiçbir yerinde (seçim ekranı, ipucu, kitap, güncelleme notları) bunun izi verilmez; yalnızca anıların kendisinde duyulur. Her anıda değil, **yalnızca bazılarında**: ilk 5 ve son 5 anıda hiç geçmez, yalnızca aradaki anılarda (6–17) ve onların da dördünde geçer (hepsi senin sözlerin): Bir mesaj ("Kehribar gözlüm… Yarın yanıma sevgilim olarak gelir misin?"), Yağmurda şemsiye ("Bunu senin için aldım, kehribar gözlüm."), Kardan kalp ("Bu sana, kehribar gözlüm. Ama atmak yok!"), Şatonun önünde ("Dur, kıpırdama, kehribar gözlüm… şimdi gülümse!"). Gizli başarımı: **Kehribar gözlüm** (Başarımlar).
    - **Teklif anısı** ("Çay kıyısında söz", ACT 1'in son anısı, gece): biri erkek biri kadınsa **erkek** teklif eder (yüzük onun elindedir, diz çöker); iki erkek ya da iki kadınsa **oynadığın karakter** teklif eder.
    - **Eski kayıtlar:** sevdiğin kişinin cinsiyeti kayıtta yoksa eski kural sürer (erkek kahraman uzun kızıl saçlı bir kadını, kadın kahraman kısa kahverengi saçlı bir erkeği kaybeder).
-3. **Zorluk:** Normal ya da Zor. Zor modda tarifler kapalıdır ve kazanda "Dene" ile deneyerek bulunur (ayrıntı: "Zorluk").
+3. **Zorluk:** Normal ya da Zor. Zor modda tarifler kapalıdır ve kazanda "Dene" ile deneyerek bulunur (ayrıntı: "Sistemler › Gelişim › Zorluk").
 4. **Giriş sahnesi** (gemi, fırtına, mor ışık) ve **kumsalda uyanış**: Yaşlı Kemal seni bulur, adını sorar. **İsim penceresi telefonda ve tablette (v2.35, Boğaç):** telefonun kendi klavyesi açılmaz (yatay ekranda ikiye bölünüp pencereyi kapatıyordu); pencerenin içinde oyunun kendi **Türkçe klavyesi** çıkar: üç sıra harf (Q W E R T Y U I O P Ğ Ü · A S D F G H J K L Ş İ · Z X C V B N M Ö Ç), **Boşluk**, **Sil**, **Rastgele** ve **Tamam**. İlk harf büyük, sonrakiler küçük yazılır; en çok 14 harf. Uzun açıklama yazısı telefonda gizlenir, pencere ekrana sığar. Bilgisayarda eskisi gibi klavyeyle yazılır.
 
 ## Öğretici (13 adım)
@@ -108,7 +108,7 @@ Kartın altında kısa dersler çıkar: **koşma dersi** (Kemal'in köprü göre
 
 ## ACT 1 yol haritası
 
-v1.86'dan beri ACT 1 tek görevlik bir zincirle ilerler (ayrıntı: **ACT 1 · Görevler**). Kemal'in yalnızca ana yolda 5 görevi vardır; gerisi adadaki 26 kişiye dağılmıştır ve birbirini açar.
+v1.86'dan beri ACT 1 tek görevlik bir zincirle ilerler (ayrıntı: **ACT 1 › Ana görevler**). Kemal'in yalnızca ana yolda 5 görevi vardır; gerisi adadaki 26 kişiye dağılmıştır ve birbirini açar.
 
 1. **Çayır:** Kemal'in ilk işi (6 dal, 2 kuru ot) → Dursun aletleri öğretir (taş balta, kazma, çakmaktaşı balta, bileme, tunç) → Nazlı meyve, balık, satış ve tuzak, Börü kamp ateşi, dövüş ve taş kılıç, Durmuş kemik, kiriş, tunç levha, Zümrüt otlar ve kazan. Börü oyuncuyu **Orman**'a yollar (Ekin ile tanışma).
 2. **Orman:** Sinan'ın yapıları, kuzenler Yakut, Durdu, Duran. Kemal'in **köprü** görevi Seviye 6'da açılır (v2.68: Ekin ve tarlası şimdilik yok).
@@ -131,5 +131,5 @@ ACT 2 bölümündeki "ACT 2'nin akışı"na bak: Yıldız (portallar) → Efsun 
 |---|---|---|
 | Yıldızsız Gezgin | 5. gün | Bir robot köpek hediye eder (köpek seçtiğin malzemeyi senin için toplar). |
 | Yıldızsız Gezgin | 20. gün | **Mor sinyal** verir: köpekler menüsünden sikkeyle köpek ısmarlanır. Fiyat 500 × 1,6^(sahip olunan köpek), 10'a yuvarlanır: 800 → 1.280 → 2.050 → 3.280. En çok 5 köpek. |
-| Gemici Poyraz (v2.34) | Olta yaptıktan sonraki ilk sabah 06:00 | Kemal'den uzak bir kıyıya teknesiyle çarpar, haritada sarı ? çıkar. 4 görevle teknesi onarılınca seni denize, 6 balık bölgesine götürür. Ayrıntı: "ACT 1 · Gemici Poyraz ve deniz". (Eski Gemici Poyraz, iskele, sipariş ve tarif satışı v2.34'te kalktı.) |
+| Gemici Poyraz (v2.34) | Olta yaptıktan sonraki ilk sabah 06:00 | Kemal'den uzak bir kıyıya teknesiyle çarpar, haritada sarı ? çıkar. 4 görevle teknesi onarılınca seni denize, 6 balık bölgesine götürür. Ayrıntı: "ACT 1 › Gemici Poyraz ve deniz". (Eski Gemici Poyraz, iskele, sipariş ve tarif satışı v2.34'te kalktı.) |
 | Yıldızsız Işıkçı | 15. günden sonra her akşam 18:00–05:30 | Yurtta sabit bir yerde (haritada mavi nokta). 5 Mor kıymık + 3 Gece sefası + 1 Tunç külçesi karşılığında **Kafa lambası** verir, sonra bir daha gelmez. |

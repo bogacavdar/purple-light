@@ -1,4 +1,4 @@
-# Purple Light · Tasarım Belgesi
+# Purple Light · Giriş ve kurallar
 
 Sürüm: **Versiyon 3.43** ile birebir (6 Kasım 2026). Bu sürümde: Çiftçi Ekin ve Bereket Adası (Barbaros'un kayığıyla gidilen küçük ada), tarla ve fidanlar geri geldi, Ekin'in 8 ana görevi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
@@ -8,6 +8,25 @@ Sürüm: **Versiyon 3.43** ile birebir (6 Kasım 2026). Bu sürümde: Çiftçi E
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
+## Belge haritası
+
+- **Giriş ve kurallar:** sürüm, belgenin temel kuralları, belgeyi okuma rehberi, oyunun özeti, adalar ve dünya ölçüsü.
+- **Teknoloji:** kullanılan diller ve araçlar, performans kuralları, dosya düzeni, hedef ortamlar.
+- **Oyun akışı:** açılış, öğretici, ACT 1 ve ACT 2 yol haritaları, gezginler ve takvim.
+- **Sistemler:** kontroller, arayüz, hayatta kalma, gelişim, üretim ve ekonomi, toplama ve tarım, ev ve kayıt defterleri, dövüş, arena/hileler/kayıt.
+- **ACT 1 · Yıldızsız Ada:** adanın yerleşimi, 6 biyom, ana görevler, yan görevler, mağaralar, deniz, kişilerin tanıtımları ve hikâyeleri.
+- **ACT 2 · İkinci ada:** geçiş, mana ve ateşli silahlar, 6 biyom, kişiler ve görevler.
+- **ACT 3 ve sonrası:** henüz oyunda olmayan fikir notları.
+- **Canavarlar:** Reisler (boss'lar) ve canlıların genel kuralları.
+- **Tarifler:** tarif ansiklopedisi, kategori kategori.
+- **Aletler:** alet, silah, zırh, madenler ve ekipman merdiveni, evler.
+- **Eşyalar:** eşya dizini (nereden gelir, nerede kullanılır).
+- **Yetenekler:** yetenek ağacı.
+- **Başarımlar.**
+- **Bilinen açıklar ve tutarsızlıklar.**
+- **Platformlar (Godot · PS5):** gelecekteki motor geçişi ve PS5 sürümü planları.
+- **Arşiv:** artık oyunda olmayan, yalnızca referans için tutulan eski bölümler.
+
 ## Bu belge nasıl okunur
 
 - **Bütün belgede ara (v2.42, Boğaç):** sayfanın en üstündeki **arama çubuğu** belgenin tamamını tarar: başlıklar, metinler, listeler ve **tablo satırları** (tarifler, eşyalar, canlılar, görevler). Birden çok sözcük yazarsan hepsini içeren yerler çıkar; Türkçe harfler önemsizdir ("kerevit" ile "Kerevit", "cadi" ile "Cadı" aynı). Sonuca tıklayınca belge o yere kayar ve sözcükler işaretlenir. **/** ya da **Ctrl+K** aramaya geçer, **↑ ↓** sonuçlar arasında gezer, **Enter** gider, **Esc** kapatır. Bir tablonun kendi süzgeci ("Bu tabloda ara") yalnızca o tabloyu süzer; genel arama hepsini kapsar.
@@ -15,7 +34,7 @@ Sürüm: **Versiyon 3.43** ile birebir (6 Kasım 2026). Bu sürümde: Çiftçi E
 - **Bir şeyin nasıl yapıldığını mı arıyorsun?** En alttaki **Eşya dizini**ne git, adını ara. Her eşyanın yanında nereden geldiği (hangi biyomda toplandığı, hangi canlıdan düştüğü, hangi tarifle yapıldığı) ve hangi tariflerde kullanıldığı yazar.
 - **Bir tarifin içeriği:** **Tarif ansiklopedisi**, kategori kategori. Her satırda malzemeler, gereken alet, *nerede yapıldığı* (el yapımı, örs, usta) ve fiyatı var.
 - **Bir bölgede ne var:** **ACT 1** ve **ACT 2** bölümlerinde her biyom ayrı başlık: ağaçlar, toplanabilirler, madenler, canlılar.
-- **Bir NPC ne istiyor:** **Kişiler ve görevler** bölümü. Her görevin istediği, açılma şartı ve ödülü tablo halinde.
+- **Bir NPC ne istiyor:** **ACT 1 › Ana görevler**, **ACT 1 › Yan görevler** ve **ACT 2 › Kişiler ve görevler** bölümleri. Her görevin istediği, açılma şartı ve ödülü tablo halinde.
 - **²** işareti: o eşya ya da tarif ACT 2 adasına ait (malzemesi yalnızca ikinci adada çıkar).
 - **Fiyat** her yerde *temel satış fiyatıdır*; oyunda seviye ve Ekonomi ağacının yetenekleri bunu artırır.
 

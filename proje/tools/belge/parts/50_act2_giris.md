@@ -56,7 +56,7 @@ Bütün ACT 2 ustaları aynı kuralla çalışır:
 3. **Tufan** (Hurda Çölü): tabanca ve pompalı. 4 görev.
 4. **Işın** (Kristal Golem Ocağı): meka zırh. 3 görev.
 5. **Tomris** (Ejder Volkanı): ışın kılıcı. 4 görev; sonuncusu **Kızıl ejder** (9.360 canlı).
-6. **Gökay** (Gök Rıhtımı): 5 görev; göktaşları, uzaylı dronları, gölge muhafızlar, **Gök bekçisi** ve **Roket**. Roket bitince Gökay ile konuşup **Fırlat!** → fırlatma sahnesi → mor gemi → eşinle kavuşma → son kartı ("Yeniden birliktesiniz. Hikâye ACT 3 ile devam edecek."). **Kolla oynayana (v3.23, Boğaç):** bu oturumda oyun kolu kullanıldıysa son kartta bir satır daha çıkar: *"Astronot Gökay'dan kolla oynayanlara bir sır: ana menüde Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A."* (hile kodu; Sistemler › Hile modu). Klavye ve dokunmatikle oynayan bu satırı görmez. Son karttan sonra oyuna devam edebilirsin; Gökay'dan yeniden fırlatılabilir.
+6. **Gökay** (Gök Rıhtımı): 5 görev; göktaşları, uzaylı dronları, gölge muhafızlar, **Gök bekçisi** ve **Roket**. Roket bitince Gökay ile konuşup **Fırlat!** → fırlatma sahnesi → mor gemi → eşinle kavuşma → son kartı ("Yeniden birliktesiniz. Hikâye ACT 3 ile devam edecek."). **Kolla oynayana (v3.23, Boğaç):** bu oturumda oyun kolu kullanıldıysa son kartta bir satır daha çıkar: *"Astronot Gökay'dan kolla oynayanlara bir sır: ana menüde Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A."* (hile kodu; Sistemler › Arena, hileler, kayıt › Hileler). Klavye ve dokunmatikle oynayan bu satırı görmez. Son karttan sonra oyuna devam edebilirsin; Gökay'dan yeniden fırlatılabilir.
 
 Ustaların görevleri bittikçe eşinin **ACT 2 anıları** sırayla geri gelir: Sahildeki ışık (gk3), Yıldızsız yolcular (pv3), Şapka (sl4), Mor gemi (mk3), Son söz (ej4).
 

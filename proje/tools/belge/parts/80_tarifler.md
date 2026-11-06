@@ -1,4 +1,4 @@
-# Tarif ansiklopedisi
+# Tarifler · Tarif ansiklopedisi
 
 > **v2.48 notu:** ACT 1 madenlerinin fiyatları ve yerleri değişti (**Aletler · Madenler ve ekipman merdiveni**). Bir madeni kullanan tariflerin fiyatı, maden fiyatındaki değişim × miktar × 1,3 kadar (zincir boyunca) kendiliğinden değişir; bu tablodaki türetilmiş fiyatlar henüz yeniden üretilmedi (v2.47 değerleri). Yeni setlerin, ara ürünlerin ve Tunç/Demir set parçalarının fiyatları o bölümdeki tablolardadır.
 

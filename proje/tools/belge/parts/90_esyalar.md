@@ -1,4 +1,4 @@
-# Eşya dizini
+# Eşyalar · Eşya dizini
 
 ## Eşya resimleri (v3.37, Boğaç)
 

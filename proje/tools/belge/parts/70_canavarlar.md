@@ -1,4 +1,6 @@
-# Reisler (boss'lar)
+# Canavarlar
+
+## Reisler (boss'lar)
 
 Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yeterince avlayınca o türün Reisi **son av düştüğü anda, onun yanında** belirir; büyük, mor çerçeveli can çubuğu olan, daha hızlı ve daha sert vuran bir sürümdür.
 

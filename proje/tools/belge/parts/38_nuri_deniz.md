@@ -1,28 +1,28 @@
-# ACT 1 · Gemici Poyraz ve deniz (v2.34)
+## Gemici Poyraz ve deniz (v2.34)
 
 **Boğaç, 30 Ekim 2026:** Gemici Poyraz'ın eski işi tamamen kalktı. Kaçırılma hikâyesi yok; bu adayla bağı yok. Poyraz artık **gemisi olan bir gemici**: adaya kaza ile çarpar. Teknesini tamir edince seni denize, 6 farklı balık bölgesine götürür. Ana adanın **deniz kıyısında** balık tutulmaz (nehir ve göller eskisi gibi).
 
-## Kalkanlar (eski Gemici Poyraz)
+### Kalkanlar (eski Gemici Poyraz)
 
 - İskeleye gelip giden tüccar gemisi, 10 dakikalık kalış, sipariş (ister, öder), tarif satışı, gemi sayacı (üstteki gemi rozeti) **kalktı**.
 - Poyraz'ın 8 görevi (U1–U8) ve "Poyraz'ın ilk siparişi" otomatik görevi **kalktı**. Eski kayıtlarda yarım kalan bu görevler sessizce silinir; bitmişlerin ödülleri sende kalır.
 - "Ada halkı" hikâyelerinden Poyraz'ın bölümü (yeğeni Deniz, iskeledeki fener) **kalktı**. Ada halkı artık görev veren 8 kişinin hikâyesi.
 - İskele yerinde kalır (boş); oraya gemi gelmez.
 
-## Kaza
+### Kaza
 
 - **Ne zaman:** **Olta**'yı ilk kez yaptıktan (ya da elinde Olta varken) sonraki **ilk sabah 06:00**'da. Saat 06:00'dan önce yaptıysan aynı sabah, sonra yaptıysan ertesi sabah. Eski kayıtta Olta zaten varsa ilk sabah.
 - **Ne olur:** uzaktan büyük bir çatırtı ve gümbürtü sesi gelir ("GÜMMM!"). Uyuyorsan bu ses seni uyandırır. Ekranın ortasında duyuru çıkar: **"Uzak bir kıyıdan gürültü geldi"** · "Bir tekne karaya oturmuş olmalı". Kısa bildirim: "Haritada sarı ? ile işaretlendi."
 - **Yer:** Kemal'in kampından **uzak**, başka bir kıyı. Çayır ya da Orman'ın deniz kıyısında, Kemal'in kampına en uzak kumsal (kişilerden, ateşlerden, mağara girişlerinden uzak). Teknenin burnu kumsala oturmuş, kıçı suda.
 - **Haritada:** Poyraz'la konuşana kadar o yerde **büyük sarı nabız gibi atan bir "?"** görünür (keşfedilmemiş yerde bile). Konuşunca "?" kalkar, yerine Poyraz'ın simgesi gelir (adı: **Gemici Poyraz**).
 
-## Gemici Poyraz
+### Gemici Poyraz
 
 - **Görünüş:** gri saçlı, beyaz sakallı, koyu lacivert kasketli yaşlı bir gemici; beyaz gömlek, lacivert yelek ve pantolon. Konuşma kutusundaki küçük resim de bu çizim.
 - **İlk konuşma:** "Hey! Sağ mısın? Ben **Poyraz**, gemiciyim. Fırtına beni bu kıyıya fırlattı; teknem karaya oturdu, omurgası çatladı, yelkeni yırtıldı. Bu adayı hiç bilmem… Ama tekne yüzerse sana borcum olur." Seçenekler: "Nereden geliyorsun?", "Hoşça kal". Konuşma kapanınca ilk görevi gelir.
 - Poyraz hep kaza yerinde durur; gitmez. Gece yanında küçük bir fener yanar (ışık sayılır, mor ışık oraya inmez; güvenli yer değildir).
 
-## Tekne tamiri: 4 görev
+### Tekne tamiri: 4 görev
 
 Poyraz'ın görevleri ana görev sırasına girer (aynı anda tek ana görev). Poyraz'ın başında siyah ! çıkar, kart ve harita her zamanki gibi. Balık tutma görevi yoktur.
 
@@ -35,7 +35,7 @@ Poyraz'ın görevleri ana görev sırasına girer (aynı anda tek ana görev). P
 
 - **G4 bitince:** tekne onarılır. Ekran kısa bir an kararıp açılır; tekne artık suyun üstünde, dik direği ve beyaz yelkeniyle durur. Poyraz: "Bak hele! Yüzüyor! Sana bir borcum var evlat. Balığa çıkmak istersen bana gel; bu sulara açılırız. Nereye istersen." Duyuru: **"Deniz açıldı"** · "Poyraz'la denize çıkabilirsin".
 
-## Denize açılmak
+### Denize açılmak
 
 - Onarımdan sonra Poyraz'la konuşunca: **"Denize açılalım"** (ilk seçenek), "Balık defteri" (almanağın Deniz canlıları sayfası), "Hoşça kal".
 - **Deniz haritası** açılır: ortada ada, çevresinde 6 balık bölgesi kartı. Her kartta bölgenin rengi, adı, istenen **seviye** ve **ekipman**, orada çıkan balıklar (tuttukların adıyla, tutmadıkların "?") ve durum:
@@ -46,7 +46,7 @@ Poyraz'ın görevleri ana görev sırasına girer (aynı anda tek ana görev). P
 - **Zaman:** denizdeyken adada zaman akmaz (saat, tokluk, enerji, ateşler, ekinler durur); canavarlar sana ulaşamaz.
 - **Balık tutma (denizde):** ana adadaki ile aynı kural. Olta at → şamandıra suda 2–6 sn bekle → "Vurdu!" çıkınca 1,05 sn içinde bas (iki kez kaçırırsan balık gider) → gidip gelen ibre **yeşil alandayken** bas. Kaçırırsan balık gider. Yeşil alanın genişliği en iyi deniz oltana göre (aşağıdaki tablo), zor balıklarda daralır. Her tutuşta en iyi deniz oltan 1 aşınır. Her atışta %5 çöp (Yosun). Tutulan balık envantere girer; +XP = 3 + fiyatının yarısı. Envanterde yer yoksa balık suya geri kaçar.
 
-## 6 bölge
+### 6 bölge
 
 Ekipman sırası birikir: üst bir olta alttaki bölgelerin hepsinde de geçer. İstenen olta (ya da daha iyisi) envanterinde ya da kemerinde olmalı; elinde tutman gerekmez.
 
@@ -59,7 +59,7 @@ Ekipman sırası birikir: üst bir olta alttaki bölgelerin hepsinde de geçer. 
 | 5 | Fırtına Denizi | gri-yeşil, köpüklü | 18 | Fırtına oltası | Kalamar %50, Kılıç balığı %33, Orkinos %17 |
 | 6 | Mor Derinlik | mor, ışıltılı | 22 | Yıldız oltası | Ahtapot %50, Fener balığı %33, Işıl balığı %17 |
 
-### Deniz canlıları
+#### Deniz canlıları
 
 Satış fiyatı Nazlı'nın pazarında. Zorluk yeşil alanı böler (1 = kolay). Çiğ yenince verdiği tokluk.
 
@@ -86,7 +86,7 @@ Satış fiyatı Nazlı'nın pazarında. Zorluk yeşil alanı böler (1 = kolay).
 
 - Satılır ve yenir; v3.10'dan beri "herhangi balık" grubu yoktur. Yemek listesinde **Balıklar** sekmesinde.
 
-### Deniz oltaları (kazanda öğrenilir, kazanda yapılır)
+#### Deniz oltaları (kazanda öğrenilir, kazanda yapılır)
 
 | Olta | Malzeme | Bölgeler | Yeşil alan | Dayanıklılık |
 |---|---|---|---|---|
@@ -99,7 +99,7 @@ Satış fiyatı Nazlı'nın pazarında. Zorluk yeşil alanı böler (1 = kolay).
 
 - Deniz oltaları nehirde de olta gibi kullanılır (yeşil alanları daha geniş). Ağ ve Kemik zıpkın yalnızca 1. bölgeye yeter.
 
-### Deniz tarifleri (kazanda öğrenilir)
+#### Deniz tarifleri (kazanda öğrenilir)
 
 | Tarif | Malzeme | Tür | Fiyat |
 |---|---|---|---|
@@ -120,7 +120,7 @@ Satış fiyatı Nazlı'nın pazarında. Zorluk yeşil alanı böler (1 = kolay).
 | Ahtapot salatası | 1 Ahtapot, 1 Su, 1 Ateş | Yiyecek | 160 |
 | Işıl çorbası | 1 Işıl balığı, 1 Fener balığı, 2 Su, 1 Ateş | Yiyecek | 330 |
 
-## Deniz görevleri (Poyraz'ın balık defteri)
+### Deniz görevleri (Poyraz'ın balık defteri)
 
 Tekne onarılınca Poyraz'ın görev sırası devam eder: her bölge için bir balık isteği. Görev **ancak o bölgeye gidebiliyorsan** (seviye ve olta tamam) açılır. Görev alınınca kart ve ok önce seni **Poyraz'a** götürür ("Poyraz'la denize açıl: Kıyı Suları · haritada sarı"); Poyraz'ın deniz haritasında o bölge **sarı** işaretlidir. Balıkları tutup Poyraz'a getirirsin.
 
@@ -135,11 +135,11 @@ Tekne onarılınca Poyraz'ın görev sırası devam eder: her bölge için bir b
 
 - **Genel kural (ileride eklenecek balık görevleri için de):** bir görev denizden çıkan bir canlı isterse, o canlının bölgesine gidebilene kadar görev açılmaz; alınınca yol Poyraz'ı gösterir, Poyraz'ın haritasında bölge sarıdır. Nehir balığı isteyen görevler (Nazlı'nın "Taze balık"ı) eskisi gibi nehirde yapılır.
 
-## Almanak · Deniz canlıları
+### Almanak · Deniz canlıları
 
 - Almanağın sol listesinde bölgelerin altında **"🌊 Deniz canlıları"** satırı (tekne onarılınca ya da ilk deniz canlısını tutunca). 6 bölge başlık başlık; her canlının kartı: resmi, adı, bölgesi, fiyatı, zorluğu, kaç tane tuttuğun, kullanıldığı tarifler. Tutmadıkların kapalı (siyah gölge, "???", "Henüz tutmadın"). Gidemediğin bölgenin başlığında kilit ve şartı yazar. Sayaç: "x / 18 deniz canlısı".
 
-## Ana adada balık
+### Ana adada balık
 
 - **Deniz kıyısında balık tutulmaz.** Açık denize (ada çevresindeki koyu su) olta atınca: "Bu derin suda kıyıdan balık tutulmaz. Poyraz'ın teknesiyle denize açıl." (Poyraz daha gelmediyse: "Kıyıdan açık denize olta yetmez; nehirleri ve gölleri dene.")
 - **Nehir ve göller** eskisi gibi; listeler değişmedi, yalnızca eskiden yalnızca denizde çıkan **Tatlısu kefali** artık Çayır/Orman nehirlerinde çıkar (ağırlık 12). Mersin balığı Kül Diyarı / Mor Kristal Vadisi sularında ve 4. bölgede.

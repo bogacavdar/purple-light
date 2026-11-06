@@ -1,6 +1,8 @@
-> **Not (v2.11):** ikinci adada da harita seyreltildi (kuralı ACT 1 → Adanın yerleşimi → Haritadaki miktarlar). Bu bölümdeki "Adadaki sayısı" sütunları **seyreltmeden önce** ölçüldü: temel malzemeler bugün yaklaşık yarısı, bitkiler yaklaşık %60'ı kadar.
+## Biyomlar
 
-## Yüzen Kayalar — Güvenli
+> **Not (v2.11):** ikinci adada da harita seyreltildi (kuralı ACT 1 › Adanın yerleşimi → Haritadaki miktarlar). Bu bölümdeki "Adadaki sayısı" sütunları **seyreltmeden önce** ölçüldü: temel malzemeler bugün yaklaşık yarısı, bitkiler yaklaşık %60'ı kadar.
+
+### Yüzen Kayalar — Güvenli
 
 İniş yeri. Havada duran kayalar, bulut koyunları, rüzgâr kuşları. Gökbilimci Yıldız ve ACT 2 kazanı burada. Gece gök tazıları çıkar.
 
@@ -44,7 +46,7 @@
 | Gök tazısı | saldırgan | 2.940 | 427 | 110 | 450 | gece, kanama etkisi, sürü 2–3 | Gök tazısı postu %85; Tazı dişi %60 ×1–2 |
 | Fırtına kartalı | saldırgan | 2.570 | 477 | 100 | 515 | uçar | Fırtına tüyü %90 ×1–3; Kartal pençesi %50 ×1–2 |
 
-## Dev Mantar Ormanı — Güvenli
+### Dev Mantar Ormanı — Güvenli
 
 Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzaktan atar, şamanları zehirler. Büyücü Efsun burada.
 
@@ -89,7 +91,7 @@ Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzak
 | Goblin şamanı | saldırgan | 3.725 | 477 | 60 | 727 | uzaktan atar (210 menzil, 3 atış), zehir etkisi | Şaman tüyü %60 ×1–2; Büyü otu %80 ×1–2 |
 | Mantar geyiği | nötr | 1.800 | 330 | 62 | 152 | – | Geyik eti %100 ×1–2; Geyik derisi %80; Geyik boynuzu %40; Sinir %50 ×1–2; Kemik %50 ×1–2; Hayvan yağı %30 |
 
-## Hurda Çölü — Tehlikeli
+### Hurda Çölü — Tehlikeli
 
 Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dronları ve dev bir hurda devi. Silahçı Tufan burada.
 
@@ -134,7 +136,7 @@ Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dron
 | Hurda devi | saldırgan | 5.940 | 1.038 | 34 | 1.282 | – | Motor %80; Ağır plaka %90 ×1–2 |
 | Pas kirpisi | nötr | 1.300 | 260 | 30 | 130 | uzaktan atar (140 menzil, 3 atış) | Kirpi dikeni %100 ×2–4; Kemik %30 |
 
-## Kristal Golem Ocağı — Tehlikeli
+### Kristal Golem Ocağı — Tehlikeli
 
 Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendis Işın burada.
 
@@ -179,7 +181,7 @@ Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendi
 | Büyük golem | saldırgan | 7.560 | 2.524 | 28 | 1.490 | – | Golem çekirdeği %70; Titanyum plaka %90 ×1–2 |
 | Buz karacası | nötr | 2.600 | 760 | 66 | 184 | – | Karaca eti %100 ×1–2; Karaca derisi %80; Kemik %50; Sinir %40 |
 
-## Ejder Volkanı — Ölümcül
+### Ejder Volkanı — Ölümcül
 
 Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ejder adanın en güçlü canavarlarından. Ejder Avcısı Tomris burada.
 
@@ -224,7 +226,7 @@ Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ej
 | Kızıl ejder | saldırgan | 9.360 | 1.355 | 60 | 2.508 | uzaktan atar (260 menzil, 5 atış), yanık etkisi | Ejder kalbi %100; Kızıl ejder pulu %100 ×2–4 |
 | Kor domuzu | nötr | 3.000 | 640 | 50 | 197 | – | Yaban domuzu eti %100 ×1–2; Yaban domuzu derisi %70; Yaban domuzu dişi %45; Kemik %50 ×1–2; Hayvan yağı %40 |
 
-## Gök Rıhtımı — Çok ölümcül
+### Gök Rıhtımı — Çok ölümcül
 
 Adanın en uzak ucu, roket rampası. Uzaylı dronları, gölge muhafızlar ve dev Gök bekçisi. Astronot Gökay burada.
 

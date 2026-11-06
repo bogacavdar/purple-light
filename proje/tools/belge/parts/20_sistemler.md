@@ -1,4 +1,6 @@
-# Kontroller
+# Sistemler
+
+## Kontroller
 
 | Tuş (bilgisayar) | Ne yapar | Telefonda |
 |---|---|---|
@@ -37,7 +39,7 @@
 
 - **Fare imleci (v3.32, Boğaç: "normal mouse imleci gibi olmasın"):** bilgisayarda (fareyle) imleç oyunun piksel tarzındadır: her yerde koyu kenarlı **krem rengi piksel ok**; basılabilen şeylerin (düğmeler, sekmeler, eşya kutuları, alet yuvaları) üstünde aynı ok **mor** olur; oyun sahnesinin üstünde (oynarken) **mor piksel nişangâh** (artı, ortası krem nokta). Yazı kutularında yazı imleci kalır. Ana menüde sahnenin üstünde de ok görünür. Dokunmatik ekranlarda imleç yoktur.
 
-## Oyun kolu (v3.20, Boğaç)
+### Oyun kolu (v3.20, Boğaç)
 
 Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth kol; tarayıcının standart kol düzeni). Kol bağlanınca bir bildirim çıkar ve **Ayarlar → Kontroller** penceresinde kol düzeni yazar. Kol, oyuna klavyenin **varsayılan** tuşlarına basıyormuş gibi davranır; bu yüzden tuşları değiştirmek kolu etkilemez ve klavyeyle yapılabilen her şey kolla da yapılır (arena, deniz ekranı, balık tutma, anılar dahil).
 
@@ -62,12 +64,42 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - Kol klavye ya da fare kullanılınca susmaz; ikisi birlikte kullanılabilir. Kol ayrılınca basılı kalan tuşlar bırakılır.
 - **Titreşim:** hasar alınca kol titrer (alınan hasarla güçlenir); titreşimi desteklemeyen kolda bir şey olmaz.
 - Kol yalnızca bağlıyken okunur: kol yokken oyuna hiçbir yük eklenmez.
-- **Kol kopuyorsa (v3.26, Boğaç'ın denemesi):** Xbox kolu **Xbox kablosuz aparatıyla** bağlıyken Chrome ve Edge'de (masaüstü uygulaması da Chrome/Edge'dir) tarayıcı kolu okumaya başladığı an bağlantı kopabiliyor; bu oyundan değil, aparat ile Chrome/Edge arasındaki uyumsuzluktan (kolu okuyan her sayfada oluyor, ör. hardwaretester.com). **Firefox'ta sorun yok**; kabloyla bağlamak da çözer. Kalıcı çözüm tarayıcı dışı sürüm (bkz. Gelecek planı: Godot'ya geçiş). Oyunun içinde bu konuda bir yazı yoktur (v3.27, Boğaç: oyuncuya adım adım iş yaptırılmaz).
-- **Hile kodu (v3.23):** ana menüde Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A hile ayarlarını açar/kapatır (Sistemler › Hile modu). **Kod girerken menü oynamaz (v3.32, Boğaç: "sol sağ sol sağ yaparken çıkışa denk geliyor, oyun kapanıyor"):** ana menüde iki kez Yukarı'ya basıldıktan sonra kodun devamı (Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A) girildiği sürece seçili düğme yer değiştirmez ve A/B hiçbir düğmeye basmaz; kod bozulursa (başka bir tuş ya da 2 sn ara) menü yine normal çalışır.
+- **Kol kopuyorsa (v3.26, Boğaç'ın denemesi):** Xbox kolu **Xbox kablosuz aparatıyla** bağlıyken Chrome ve Edge'de (masaüstü uygulaması da Chrome/Edge'dir) tarayıcı kolu okumaya başladığı an bağlantı kopabiliyor; bu oyundan değil, aparat ile Chrome/Edge arasındaki uyumsuzluktan (kolu okuyan her sayfada oluyor, ör. hardwaretester.com). **Firefox'ta sorun yok**; kabloyla bağlamak da çözer. Kalıcı çözüm tarayıcı dışı sürüm (bkz. Platformlar › Godot'ya geçiş). Oyunun içinde bu konuda bir yazı yoktur (v3.27, Boğaç: oyuncuya adım adım iş yaptırılmaz).
+- **Hile kodu (v3.23):** ana menüde Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A hile ayarlarını açar/kapatır (Sistemler › Arena, hileler, kayıt › Hileler). **Kod girerken menü oynamaz (v3.32, Boğaç: "sol sağ sol sağ yaparken çıkışa denk geliyor, oyun kapanıyor"):** ana menüde iki kez Yukarı'ya basıldıktan sonra kodun devamı (Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A) girildiği sürece seçili düğme yer değiştirmez ve A/B hiçbir düğmeye basmaz; kod bozulursa (başka bir tuş ya da 2 sn ara) menü yine normal çalışır.
 
-# Temel sistemler
+## Arayüz ve pencereler
 
-## Can, tokluk, enerji
+> Bu maddeler v3.43'e kadar "Tarifler: kazan, el yapımı, örs, ustalar" başlığının içindeydi; ekran düzeniyle ilgili oldukları için buraya taşındı. "Konuşma penceresi" ayrı başlık olarak aşağıdadır.
+
+- **Bilgisayarda görev kartı büyük, konuşma yazısı küçük (v2.45, Boğaç):** genişliği 900 pikselden fazla ve fareyle oynanan ekranda sağ üstteki görev kartı daha geniştir (en çok 540 px; yazı 17 px, başlık 13,5 px, düğmeler 15 px); kişilerin konuşma kutusunda metin 16,5 px, ad 15,5 px, seçenek düğmeleri 15 px'tir (önce 19 / 17 / 17 px). Bir menü açıkken görev kartı eskisi gibi daralır. Telefon düzeni değişmedi.
+- **Bilgisayarda kart yazıları daha büyük (v2.53, Boğaç):** fareyle oynanan ve 720 pikselden geniş ekranda (telefon görünümü değilken) öğretici/ana görev kartı 18 px (bir menü açıkken 16 px, 3 satır), yan görev kartı 16 px (alt satırı 15 px, genişliği 480 px) ve takip çipleri 17 px yazıyla gösterilir. Alttaki **1-2-3-4-5 alet kemeri** iki kat büyür: kutular 92 px, simgeler 64 px, tuş numarası 18 px. Telefon görünümü değişmez.
+- **Bilgisayarda sol üst iki kat büyük (v2.85, Boğaç):** saat, Can / Enerji / Tokluk çubukları ve etki çipleri (Canlılık, Gece gözü, Bulantı…) iki kat büyüktür (çubuklar 46 px, yazılar sütun genişliğine göre en çok 24 px). Sol menünün kare düğmeleri sütunu **sikke kutusuna kadar** doldurur: **v2.86 (Boğaç):** solda yalnızca **Envanter, El yapımı, Yetenek ağacı, Yemek** ve (gelince) **Robot köpekler** durur. **v2.96 (Boğaç: "çok büyük olmuş, oyunu kapatıyor"):** kareler **yan yana üçlü, iki sıra** dizilir ve küçüktür: kenarı ekran genişliğinin %4,2'si, en az 48, en çok 84 px (1920 px ekranda 81 px); sıra genişliği üç kare kadardır. (v2.86–2.95'te iki sütun üç sıraydı ve kareler sikke kutusuna kadar uzayıp ekranın %12'sine kadar büyüyordu.) Robot köpeklerin yeri baştan ayrılır, gelince kareler değişmez. **Başarımlar** sağ üstte Çıkış ve Ayarlar'ın altına, onlarla aynı boyda taşındı; **Tarif kitabı** sağ altta Başarımlar'ın eski yerine, Almanak'la aynı boyda geçti (telefonda ☰ menüsünde kalır); **Görevler ve etkiler en az Tokluk boyunda (v3.07, Boğaç):** bilgisayarda Görevler/Gizle düğmesi sütunun bütün genişliğini kaplar ve en az Tokluk çubuğu kadar yüksektir (46 px); etki çipleri (Canlılık, Gece gözü, Bulantı…) da her biri sütun genişliğinde ve en az 46 px yüksekliktedir, alt alta dizilir. **Kemer küçüldü (v3.07, Boğaç):** bilgisayarda alttaki 1–5 kemer yuvaları ve meşale yuvası 92 px'ten **64 px**'e küçüldü (simgeler 44 px). **İnce Menü çubuğu (v3.07, Boğaç):** **Menü ▾** artık Görevler'in yanında değil, kare düğmelerin **altında** sütun genişliğinde ince bir çubuktur (22 px); basınca kare düğmeler gizlenir/açılır (katlıyken çubuk Görevler'in altında kalır). **Menü katlanır (v2.86, Boğaç):** Menü düğmesine basınca kare düğmeler gizlenir (kısayol tuşları çalışmaya devam eder), bir daha basınca açılır. Seçim bu tarayıcıda hatırlanır (oyuncunun kendi seçimi; otomatik ayar değil). Katlıyken kare boyu değişmez. Telefon görünümünde bu düğme yoktur (orada menü zaten açılır kapanır).
+- **Toplama bildirimi birikir (v2.53, Boğaç):** yerden bir şey toplayınca köşede çıkan "+1 Odun" bildirimi ekrandayken aynı şeyden bir daha toplarsan yeni "+1" çıkmaz, aynı bildirim **+2, +3 Odun** diye güncellenir ve süresi baştan başlar. Bildirim kaybolduktan sonra toplanan yeniden +1'den sayılır.
+- **Telefonda bütün pencereler (v2.21):** telefon yatay tutulunca kişilerin ve menülerin bütün pencereleri (Nazlı'nın pazarı, demirciler, Usta Sinan, El yapımı, envanter, yetenek ağacı, tarif kitabı, yemek, köpekler…) **bütün ekranı** kaplar; üstte boşluk kalmaz (öğretici kartı varsa yalnızca ~40 piksel). Başlık satırı ve araç satırı incedir (başlık solda, Kapat sağda), içerik kendi içinde kayar.
+- **Telefona göre sıkı düzen (v2.22):** telefon yatay tutulunca bütün pencerelerde sekmeler (Hepsi/Yiyecekler…, Sat/Satın al, Savaş/Ekonomi…, Tarifler/Keşif defteri…) tek ve ince bir satırdır, sığmazsa yana kayar; düğmeler ve satırlar alçak, yazılar küçüktür; uzun açıklama yazıları gizlenir. Ekran ekran:
+  - **Telefonda sürükleme (v2.28, Boğaç):** telefonda ve tablette sürükleme parmak olaylarıyla çalışır, tarayıcının kaydırması ya da uzun basış menüsü sürüklemeyi kesmez. **Envanter:** taşınabilir bir eşyaya (ya da dolu bir alet yuvasına) parmağını koyup **kaydırdığın an** eşya parmağının ucunda gelir (beklemek gerekmez); alttaki yuvalardan birinin (çantadaki ya da ekranın altındaki) üstünde bırakınca oraya girer, dolu bir yuvayı yuvaların dışına bırakınca yuva boşalır. **Kazan ve örs:** alttaki eşya kutularından birini kaydırınca eşya parmakla gelir; **kazanın (örsün) üstünde** bırakınca bir tane konur (Zor modda denemeye atılır). Sürüklerken parmak pencerenin üst ya da alt kenarına gelirse liste kendiliğinden kayar, kazan görünmüyorsa ona ulaşılır. Dokun (1 tane koy / seç) ve basılı tut (gerekenin hepsini koy) eskisi gibidir. Eşyaların arasındaki boşluktan ya da eşya olmayan yerden kaydırınca liste kayar.
+  - **Yürürken alet seçmek (v2.33, Boğaç):** telefonda bir parmağın yön tuşunda/kolunda yürürken öbür parmakla alt kutulardaki bir alete (meşale, balta…) ya da boş ele dokununca **hemen seçilir**; durmak gerekmez. Dokunuş parmağı kaldırınca sayılır (yerinden 12 pikselden az oynamış ve 0,5 sn'den kısa olmalı; daha uzunu sürüklemedir). Eskiden telefon, ekranda başka bir parmak varken dokunuşu tıklama saymıyordu.
+  - **Envanter:** giysi yuvaları karakterin yanında **tek ince şerit** (her yuva küçük simge + ad); "bir giysi seç…" ve "Taşınabilir eşyaları alttaki yuvalara koy…" yazıları gizli (bir eşya seçilince eylem düğmeleri yine çıkar). Böylece eşyalar açılır açılmaz görünür.
+  - **Eşyanın tam adı (v3.29, Boğaç: "seçtiğimin tam halini görebilmeliyim, basılı tutarsam seçmeden de"):** kutucuklarda uzun adlar kısalır ("Çam…"). Telefonda ve tablette bir kutucuğa **dokununca** eşyanın tam adı kutucuğun hemen üstünde küçük bir balonda ~2,5 sn görünür (envanter, el yapımı, kazan, örs, yemek, pazar: adı kısalan her kutucuk). Envanterde bir kutucuğa **basılı tutunca** (~0,4 sn) tam ad balonda çıkar ve parmak kalkana kadar durur; bu basış eşyayı **seçmez**. Taşınabilir eşyada basılı tutup kaydırınca sürükleme eskisi gibi çalışır. Bilgisayarda fare üstüne gelince tam ad zaten görünür.
+  - **Pazar:** her eşya **tek satır**: ad ×adet, yanında küçük ipucu ("Kazanda şimdi 5 tarifte işe yarar"), fiyat, **1 sat** ve **Hepsi** düğmeleri; ekrana çok daha fazla eşya sığar.
+  - **Pazar sütunları (v2.84, Boğaç):** fiyat, ▼ adet ▲, **Sat** ve **Hepsi** her satırda aynı genişlikte durur; fiyat 1, 2 ya da 3 haneli de olsa düğmeler alt alta aynı yerdedir (fiyat sağa yaslı). Nazlı'nın **Keskin taşı sat** dersinde (öğretici 9–10. adım) Keskin taş satış listesinin **en üstünde** durur. **Bilgisayarda menü pencereleri (v2.85, Boğaç; v2.84'ün pazar kuralının yerine):** bilgisayarda (fareyle, 900 pikselden geniş ekran) **bütün menü pencereleri** (pazar, kazan, örs, envanter, el yapımı, tarif kitabı, yetenekler…) içindeki her şeyle birlikte **%20 büyük** gösterilir ve aşağıda **alet kemerinin hemen üstüne** kadar uzar: 2.84'teki pencerenin altıyla kemer arasındaki boşluğun yalnızca üçte biri kalır (oyun kemerin gerçek yerini ölçer). Pencere ekranın üstünden 70 piksel aşağıda başlar (öğretici kartı açıkken 132); içerik pencerenin içinde kaydırılır. Pencere ekrana sığacak kadar daralır; pazar penceresi en çok 1100 piksel geniştir. Telefon görünümü değişmez.
+  - **El yapımı:** üstteki uzun açıklama gizli; meşale durumu ince bir satır; tarif satırları alçak, yaptığın eşya hemen görünür.
+  - **Savuş düğmesi her zaman yuvarlak (v3.09, Boğaç: "neden oval"):** Savuş, Atıl düğmesiyle aynı boyda tam bir dairedir; düğmeler Ayarlar'dan yerinden oynatıldıktan sonra da (eskiden o durumda boyu yazısına göre kalıyor, oval görünüyordu).
+  - **Yetenek ağacı:** ağaç pencerenin geri kalanını doldurur, düğümler küçüktür. **v3.07 (Boğaç: "telefonda üst üste biniyor"):** telefonda ağaç 520×440 piksellik sabit bir tahtadır, çerçevesinin içinde yukarı aşağı kaydırılır (eskiden ~250×220 pikseldi, yakın düğümler birbirinin üstüne biniyordu). Ağaç açılınca en alttan (Koşu tarafından) başlar; yetenek alınca kaydırdığın yer korunur.
+  - **Tarif kitabı:** üstteki açıklama gizli.
+  - **"Yeni malzeme bulundu"** yazısı bir pencere açıkken ekranın ortasına değil **altına, küçük** çıkar; menünün üstünü kapatmaz.
+  - **Ayarlar:** pencere ekranın genişliğine yayılır, müzik düğmelerinin yazısı kesilmez.
+  - **Ana menü:** "PURPLE LIGHT" yazısı küçülüp sağa kayar; soldaki düğmeler (Yeni oyun, Yükle…) yazının üstüne binmez.
+- **Telefonda kazan ve örs ekranı (v2.20):** telefon yatay tutulunca kazan (ve örs) penceresi **bütün ekranı** kaplar; ekranın üstünde boşluk bırakılmaz (yalnızca öğretici kartı varsa onun yüksekliği kadar, ~40 piksel). Başlık satırı ince (başlık solda, Kapat sağda), arama satırı tek ve ince satır. Altta iki sütun: solda **tarif listesi** (ekranın ~%38'i), sağda seçilen tarif, malzemeler, kazan, düğmeler ve envanter; ikisi de **kendi içinde kayar**. Kazan alanı alçalır, yazılar ve kareler küçülür. Bilgisayar ve tablet görünümü değişmez.
+
+### Konuşma penceresi
+
+- **Konuşma penceresi (v2.26):** uzun konuşmalar (ör. görev anlatımları) ekranın üstünden taşmaz: pencere en çok **görünen ekran yüksekliği** kadar olur (iPhone'da adres çubuğu hesaba katılır), yazı kendi içinde kayar, **cevap düğmeleri hep altta görünür**; yazı harf harf gelirken pencere son satırı izler, bitince yukarı kaydırıp baştan okunabilir. Yazılar ve düğmeler telefona göre biraz küçüktür.
+- **Pencere dışına basmak = "Anladım" (v3.14, Boğaç — kalıcı kural):** konuşma penceresi seçim yapılmadan kapatılırsa (pencerenin dışına tıklama/dokunma, Esc, X) oyuncu pencereyi okumuş sayılır ve sade cevap seçilmiş olur: yalnızca kapatan bir seçenek varsa ("Sonra", "Hoşça kal") o, tek seçenek varsa o, yoksa ana (vurgulu) seçenek. Böylece "Hazırım" / "Anladım" bekleyen bir ders ya da görev hiçbir zaman takılı kalmaz. **Eklenen her yeni pencere bu kurala uyar.**
+
+## Hayatta kalma
+
+### Can, tokluk, enerji
 
 **Seviye puanları (v3.40, Boğaç: "otomatik level ile bunların artmasını oyundan kaldırıcaz… kullanıcı kendi kararı ile arttıracak"):** özellikler artık seviyeyle kendiliğinden artmaz. Her seviye atlayışta **seviye puanı** kazanılır ve oyuncu Karakter penceresinde (C) dilediği özelliğin yanındaki **+** düğmesine basıp puanı oraya verir. Verilen puan geri alınmaz.
 
@@ -103,7 +135,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - **Kamp ateşinin** 64 piksel yakınında saniyede +1,4 can (Kamp ateşi ustası ile +2,8).
 - Diken: böğürtlen 3, çakmaktaşı 2 can yakar (ilk 3 toplayışta kesin, sonra %20; eldiven giyiliyse hiç). Kirpiye çıplak elle vurmak 3 can.
 
-## Bayılma
+### Bayılma
 
 - **Oyunda ölüm yok (v2.10, Boğaç):** karakter hiçbir zaman ölmez, oyun hiç bitmez. Canavar, açlık, zehir, gece mor ışık: hepsi **bayıltır** ve her bayılmadan sonra uyanırsın. Oyundaki ve belgedeki bütün yazılar "öl" değil "bayıl" der. (Canavarları öldürmek, av ve Reis avı bundan ayrıdır.)
 - **Can 0 olunca bayılırsın.** Taşıdığın her yığının (aletler ve kurulabilir yapılar hariç) **%20'si ve sikkelerin %20'si kaybolur**; kalan her şey düştüğün yerde bir **çantada** kalır (haritada kurukafa). Çantanın üstüne yürüyünce her şey geri gelir. Kumsaldaki uyanış yerinde can %50 ile uyanırsın.
@@ -111,7 +143,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - Bayıldıktan sonra 60 sn Reis çıkmaz. Bayılmak %60 ihtimalle bir anı açar.
 - **Tanrı modu** (hile) açıkken canavar, açlık ya da zehirle bayılmazsın. **Mor ışık ise tanrı modunda bile bayıltır** (Boğaç'ın kararı, bilinçli: oyunun adı Mor Işık). Gece ışıksız kalırsan tanrı modu seni korumaz.
 
-## Gün, gece ve mor ışık
+### Gün, gece ve mor ışık
 
 - **Gündüz 06:00–20:00 = 8 dakika**, **gece 20:00–06:00 = 2,5 dakika**; bir gün yaklaşık 10,5 dakika. Menü ya da konuşma açıkken dünya durur.
 - 19:00'dan itibaren kararır; 21:00–04:30 tam karanlıktır.
@@ -122,14 +154,14 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - **Gündüz olunca gece canlıları gider (v2.33, Boğaç):** yalnızca gece çıkan canlılar (Kurt gibi) sabah olunca (06:00) artık kalmaz: kovalamayı bırakır, senden uzağa koşar ve 300 pikselden uzaklaşınca ya da en geç **6 saniye** sonra toz bulutuyla kaybolur. Eskiden yalnızca ekranın çok dışındakiler kayboluyor, yakındakiler gündüz de kalıyordu. Reis'ler ve yan görev canavarları bu kurala girmez (görev bitene kadar kalırlar).
 - **Güvenli yerlere canavar girmez (v2.22):** kavga edebilen canlılar (*saldırgan* ve *nötr*, Reisler dahil) aşağıdaki güvenli yerlerin sınırında durur, içeri **adım atmaz**; kişilerin yanına gelemez. Seni kovalarken sen güvenli yere girersen sınırda kalır, sonra vazgeçer. Bir şekilde içerde kalmış biri (ör. hücum ya da sıçrama ile) en yakın kenardan dışarı yürür. *Zararsız* canlılar (tavşan, geyik…) eskisi gibi dolaşır. Börü'nün ders canlıları ve arena bu kuraldan muaf.
 
-### Boğaç, gece beliren yazılımcı (v3.30; v3.37, Boğaç: yalnızca gerçek gece 02:00–06:00)
+#### Boğaç, gece beliren yazılımcı (v3.30; v3.37, Boğaç: yalnızca gerçek gece 02:00–06:00)
 
 - **Yalnızca gerçekten geç saatte (v3.37, Boğaç):** Boğaç yalnızca oyuncunun **gerçek saati** (cihazın saati) **02:00 ile 06:00 arasındayken** çıkabilir. Bu saatlerin dışında oyunda gece olsa da hiç belirmez. Gerçek saat 02:00–06:00 arasındayken, oyundaki **her gece** (20:00–06:00) gecenin rastgele bir anında, haritanın (o anki adanın) rastgele bir yerinde, yürünebilen bir karada belirir ve yalnızca **15 saniye** kalır (gerçek saniye; oyun duraklatılınca sayaç da durur), sonra kaybolur. Bir gecede bir kez çıkar; uyuyarak geçen gecede çıkmaz. Haritada ya da hiçbir yerde işareti, ipucu yoktur. (v3.30–3.36'da gerçek saate bakmadan her oyun gecesi çıkıyordu.)
 - **Görünüşü:** varsayılan erkek karaktere benzer (kahve saç, açık ten, mavi pantolon) ama koyu gri tişörtlü ve **kare gözlüklüdür**. Belirirken ve kaybolurken çevresinde kısa bir mor parıltı olur. Konuşma kutusunda kendi resmi görünür.
 - Yanına varınca (yaklaşık 22 piksel) kendiliğinden konuşur ve **gerçek saati söyler** (v3.37, Boğaç): "Saat 02:47 olmuş. Kapat oyunu artık." (saat ve dakika cihazın o anki saatidir) · "Tamam". Konuşma bitince (ya da pencere dışına basılınca) **oyun kaydedilir ve ana menüye dönülür** (Ana menüye dön düğmesiyle aynı: otomatik kayıt).
 - **Bir kez (v3.30, Boğaç: "1 kere konuştuktan sonra bir daha gelmesin, şimdilik"):** Boğaç'la bir kez konuşunca o oyunda (kayıtta) bir daha hiç belirmez. Yeni bir oyunda yine çıkar.
 
-### Mor ışıkta o: gece beliren sevdiğin kişi (v3.30; v3.34, Boğaç: kendi kopyan yerine sevdiğin kişi)
+#### Mor ışıkta o: gece beliren sevdiğin kişi (v3.30; v3.34, Boğaç: kendi kopyan yerine sevdiğin kişi)
 
 - Bazı gecelerde (her gece **%40** ihtimalle, tam karanlıkta 21:00–04:30 arasında rastgele bir anda) adada **sevdiğin kişi** belirir, ama **mor ışığın etkisi altındaymış gibi**: gözleri mor parlar, başının çevresinde soluk mor bir hale vardır, çevresinde mor zerreler yükselir; başının üstünde onun adı yazar. Karakter yaratmadaki görünüşüyle çizilir. Ekranın içinde, senden yaklaşık 100–140 piksel uzakta, yürünebilen bir yerde durur, yüzü sana dönüktür, konuşmaz. Çevresinde soluk mor bir ışık vardır (karanlıkta görünsün diye). (v3.30–3.33'te burada karakterinin kendi kopyası çıkıyordu.)
 - Ona doğru yürümeye başladığın an (aradaki uzaklık ~14 piksel azalınca) **birden kaybolur** (küçük bir mor duman). Yaklaşmazsan 25 saniye sonra kendiliğinden kaybolur. Bir gecede en çok bir kez çıkar.
@@ -137,7 +169,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - **Kalp atışı (v3.37, Boğaç):** o göründüğü sürece **kalp atışı** duyulur: iki vuruşlu ("güm-güm"), derin ve boğuk bir ses, yaklaşık **0,9 saniyede bir**. Her vuruşla birlikte **telefon** (Ayarlar'da Titreşim açıksa, titreşimi destekleyen telefonlarda) ve bağlı **oyun kolu** (titreşimi olan kollarda) iki kısa, hafif titreşimle atar. O kaybolunca kalp atışı ve titreşim hemen durur. Oyun duraklatılınca ya da bir pencere açılınca da durur.
 - **5 farklı gecede** onu gören (ekranda en az 0,6 saniye kalmış olması yeter) gizli **Mor ışıkta o** başarımını kazanır (eski adı Öteki ben; eski sayaç sürer). Görülen geceler cihazda sayılır (başarımlar gibi, bütün kayıtlar için ortak).
 
-### Seni hatırlıyorum: aynı karakterle yeni oyun (v3.37, Boğaç)
+#### Seni hatırlıyorum: aynı karakterle yeni oyun (v3.37, Boğaç)
 
 - Bu cihazda **yeni bir oyuna** başlayıp Kemal adını sorduğunda, karakterinin **görünüşü** (karakter yaratmadaki bütün seçimler: cinsiyet, ten, göz, saç, sakal, kıyafet ve renkleri, gözlük, şapka) **ve adı** bu cihazda daha önce başlatılmış bir oyundakiyle **birebir aynıysa** (adda büyük/küçük harf önemsiz), Kemal adını duyunca bir an durur. Görünüş ya da ad farklıysa hiçbir şey olmaz.
   - **İkinci kez** (aynı karakter daha önce bir kez başlatılmış): Kemal: "<i>(Kemal bir an durur, yüzüne uzun uzun bakar.)</i> {Ad}… Seni daha önce de bu kumsalda bulmuş muydum? Aynı yüz, aynı ad… <i>(Başını sallar.)</i> Yaşlandım evlat, aldırma." · "…"
@@ -145,7 +177,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
   - Ardından konuşma her zamanki gibi sürer (Kemal sevdiğin kişinin adını sorar).
 - Hangi karakterlerin başlatıldığı **cihazda** saklanır (başarımlar gibi, bütün kayıtlar için ortak; en çok son 30 karakter). Bir karakter Kemal ona adını söylediği an kaydedilir; kayıt yüklemek ya da Devam et sayılmaz, yalnızca Yeni oyun. Oyunun hiçbir yerinde anlatılmaz.
 
-### Gizli şeyler (v3.34, Boğaç)
+#### Gizli şeyler (v3.34, Boğaç)
 
 Oyunun hiçbir yerinde anlatılmaz; oyuncu kendisi bulur.
 
@@ -163,7 +195,7 @@ Oyunun hiçbir yerinde anlatılmaz; oyuncu kendisi bulur.
 - **Gece 03:00:** gerçek saat (cihazın saati) **03:00–03:59** arasındaysa Kemal'le konuşunca sözüne şöyle başlar: "Bu saatte uyanık mısın evlat? Git yat." (oturumda bir kez).
 - **Devam ederken bir satır:** ana menüde **Devam et**'e basıp oyuna girince ekranın ortasında birkaç saniyeliğine (4 sn) şiirsel tek bir satır belirip kaybolur; her girişte sıradaki satır (bu cihazda sırayla döner): "Denizin her yeri derin değildir." · "Bazı geceler ada yalnız değildir." · "Kazan bazen tarifsiz de bir şey verir." · "Su, bakana başka bir yüz gösterir." · "Yıldızsız Ada'nın da yıldızlı bir gecesi vardır." · "Adada senden önce de bir ateş yanmıştı." · "Yumruk da bir dildir; Börü onu anlar." · "Ayakların ritmi tutunca ada da seninle dans eder." · "Sabır, suyun dibindekini bile yüzeye çıkarır." · "Her yabancı düşman değildir." · "Gece yarısından sonra bazı yüzler yalnızca bir kez görünür." Oyuncuya iş tarif etmez, yalnızca merak uyandırır.
 
-### Işık kaynakları
+#### Işık kaynakları
 
 | Işık | Yarıçap | Süre | Not |
 |---|---|---|---|
@@ -183,16 +215,18 @@ Oyunun hiçbir yerinde anlatılmaz; oyuncu kendisi bulur.
 - **Kişilerin ateşinde yemek (v2.58, Boğaç):** Kemal'in ve öbür kişilerin kamplarındaki ateşlerde de çiğ et ve balık közlenir: ateşin **üstüne tıkla / dokun** (uzaktaysan karakter yürür, varınca açılır) ya da ateşin hemen yanındayken (~16 piksel) ve çantanda çiğ et ya da balık varken **F**'ye bas. Pencerede "Hepsini közle" ve tek tek közleme vardır; kişilerin ateşi sönmez, odun istemez. Çiğ yemeğin yoksa "Çiğ et ya da balık getirirsen közleyebilirsin" der.
 - **Elde kazmayla madene sol tık (v2.58, Boğaç):** elinde kazma varken bir madenin (taşın, cevherin) üstüne sol tıklayınca karakter madene yürür ve kazar; tıklama madenin bütün görüntüsünü tutar (eskiden yalnızca ortasındaki küçük nokta sayılıyordu, kenarına tıklayınca vuruş yapılıyordu). Yakında canavar olsa da kazmayla madene tıklamak kazar.
 
-### Hava
+#### Hava
 
 Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve Kayalık Dağ'da sis daha sık, yaklaşık %20; öbürleri o kadar azalır). **Sis geri geldi (v2.41, Boğaç):** 2.39–2.40'ta kaldırılmıştı, ama telefondaki donmanın sebebi o değildi (2.40: telefonda ekran kartı çizimi kapanmıştı). Bataklık ve Kayalık Dağ'ın üstünde her zaman ince bir sis süzülür, sisli havada her yerde yoğun sis olur; ateşler, meşale ve fener sisin içinde ışık açar. Grafik kalitesi en düşük düzeydeyse (otomatik kalite) Orta Diyar'ın sürekli ince sisi çizilmez, sisli hava yine çizilir. Yağmur/fırtına: meşale ve kamp ateşi çabuk biter, **tarladaki tohumlar kendiliğinden sulanır**, balık %30 daha çabuk vurur; fırtınada şimşek çakar. Kül Diyarı'nda yağmur yerine **kül fırtınası** olur. Siste saldırganlar seni %40 daha geç fark eder.
 
-### Uyku
+#### Uyku
 
 - Uyku yalnızca **20:00–05:00** arası. Uyuyunca saat 06:00 olur, can ve enerji dolar, tokluk 20 azalır; %40 ihtimalle bir rüya anısı gelir.
 - Yataklar: Hasır yatak (Usta Sinan ilk tanışmada hediye eder), Hasırotu yatak, Ahşap karyola. Yatak açıkta da kurulabilir; evde içeri yerleştirilir. **Yaprak barınağı** yatak istemez ama bir gecelik (uyanınca dağılır).
 
-## Seviye, XP ve yetenekler
+## Gelişim
+
+### Seviye, XP ve yetenekler
 
 - En üst seviye **60** (v3.41; eskiden 50). Gereken XP 16. seviyeye kadar her seviye %35 artar (1→2: 40, 5: 133, 10: 596, 16: 3.606), sonra yavaş artar (25: 5.553, 49: 10.746, 59: 12.909). Seviye atlayınca özellikler değil **seviye puanı** gelir (yukarıda "Seviye puanları").
 
@@ -214,11 +248,11 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 | Köprü onarımı / Doğu geçidi | 40 / 320 |
 | Görevler, Börü'nün dersleri | tablolarda |
 
-- **Yetenek ağacı** (Y; v1.83): üç renkli ağaç — **Savaş** (kırmızı), **Ekonomi** (altın) ve **Dayanıklılık** (yeşil); her birinde 30 yetenek (toplam 90). Yetenekler sade, iki renkli ikonlu yuvarlaklardır; hepsi açılınca bir ağaç silüeti çizer. Başta yalnızca kök yetenek görünür; bir yetenek alınınca **yalnızca ona bağlı üstündekiler** açılır. Satın alma ikona tıklayarak. Fiyat ve seviye şartı kata göre: 100 (–), 250 (Sv 2), 400 (Sv 3), 600 (Sv 4), 1.000 (Sv 6), 1.800 (Sv 8), 3.000 (Sv 11), 5.000 (Sv 14). Tam liste "Yetenek ağacı" bölümünde.
+- **Yetenek ağacı** (Y; v1.83): üç renkli ağaç — **Savaş** (kırmızı), **Ekonomi** (altın) ve **Dayanıklılık** (yeşil); her birinde 30 yetenek (toplam 90). Yetenekler sade, iki renkli ikonlu yuvarlaklardır; hepsi açılınca bir ağaç silüeti çizer. Başta yalnızca kök yetenek görünür; bir yetenek alınınca **yalnızca ona bağlı üstündekiler** açılır. Satın alma ikona tıklayarak. Fiyat ve seviye şartı kata göre: 100 (–), 250 (Sv 2), 400 (Sv 3), 600 (Sv 4), 1.000 (Sv 6), 1.800 (Sv 8), 3.000 (Sv 11), 5.000 (Sv 14). Tam liste "Yetenekler · Yetenek ağacı" bölümünde.
 - **Koşu** Savaş ağacının ilk yeteneğidir: yalnızca 100 sikke; seviye, köprü ya da Atılma şartı yok.
-- **Atılma** yetenek ağacında değildir: öğreticide Börü ücretsiz öğretir (bkz. "Oyunun akışı").
+- **Atılma** yetenek ağacında değildir: öğreticide Börü ücretsiz öğretir (bkz. "Oyun akışı › Öğretici").
 
-## Evcil hayvanlar (v3.42, 6 Kasım 2026, Boğaç)
+### Evcil hayvanlar (v3.42, 6 Kasım 2026, Boğaç)
 
 > Evcilleştirmeyi **Çoban Davut** öğretir (ACT 1 · "Çoban Davut"). Bir canlı ancak Davut'un o canlıyı anlatan görevi alınınca (ya da bitince) evcilleşir.
 
@@ -247,7 +281,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - **Arena:** evcil hayvanlar arenada görünmez (arenada olup olmayacakları henüz konuşulmadı).
 - **Mağara ve ev:** mağaraya ya da evin içine girerken bineğinden inersin; yoldaşlar dışarıda bekler, çıkınca yanına gelir.
 
-## Zorluk
+### Zorluk
 
 İki mod vardır. **Zor mod** yalnızca tarif keşfini değiştirir (canavarlar, açlık, ekonomi aynı):
 
@@ -255,7 +289,9 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - Kazanda iki sekme olur: **Tarifle kaynat** ve **Deneyerek bul**. "Dene"ye en çok 6 farklı malzeme atılır; hiçbir şey harcanmaz. Cevaplar yol gösterir: "yeni tarif buldun", "en yakın tarife N malzeme eksik", "bildiğin bir tarifte birlikte", "tek başına bir şey olmuyor", "yanlış yer (örs)". Her tarifin malzeme türü kümesi benzersizdir.
 - Kitapta **Tarif satın al**: rastgele kapalı bir tarif 50 sikke.
 
-## Ekonomi
+## Üretim ve ekonomi
+
+### Ekonomi
 
 - **Satış** yalnızca Pazarcı Nazlı'ya. Birim fiyat = temel fiyat × satış çarpanı. Satış çarpanı = (1 + Ticaret yüzdesi + Değerli işçilik (yapılmış eşyada) + Toptancı (Hepsini sat) + Keşif defteri ustalığı) × seviye çarpanı; **en çok 2,3**.
 - **Fiyatsız eşya satılmaz (v2.17):** her eşyanın bir fiyatı olmalı; fiyatı bulunmayan bir eşya pazarda **satılmaz** ("Bu eşyayı Nazlı almıyor"), "Hepsini sat" onu atlar. Meyve ağacı odunları (Elma, Armut, Erik, Mürver) **3 sikke** (v2.16'ya kadar fiyatları yoktu; satınca sikke **NaN** oluyordu).
@@ -270,11 +306,11 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
   - Hesap: bir tarif bir malzemeyi "şunlardan biri" diye istiyorsa (ör. herhangi bir odun) o adet o gruptaki her malzeme için ayrılır (fazla değil, eksik satılsın diye). Öğrendiğin tarifler sayılmaz. Satıştan sonra "N çeşidin fazlası satıldı · +X sikke" yazar; satılacak fazla yoksa "Tariflerin ihtiyacından fazla satılık bir şeyin yok." 
 - **Şanslı müşteri** satışta %5 (II ile toplam %12) + şans ihtimalle iki kat öder.
 - **Satın alma:** yalnızca Nazlı, yalnızca daha önce eline geçmiş **doğal** malzemeler (tohumlar dahil). Alış fiyatı temel fiyatın 2,6 ile 5,6 katı arası (pahalı ve tehlikeli bölge malzemesi daha pahalı).
-- Başka hiçbir kişi sikkeyle eşya satmaz; ustalar malzemeyi senden alıp **işçilik** ister (Dursun/Durmuş %15, Sinan %20, ACT 2 ustaları sabit ücret). Usta Sinan evleri de sikkeyle yapar.
+- Başka hiçbir kişi sikkeyle eşya satmaz; ustalar malzemeyi senden alıp **işçilik** ister: Dursun, Durmuş ve silahçı/zırhçı kuzenleri eşya fiyatının %15'i (en az 2), Sinan %20'si (en az 3), ACT 2 ustaları sabit ücret. Alet bileme aletin değerinin onda biri (bkz. Aletler, dayanıklılık, kademe). Usta Sinan evleri de sikkeyle yapar.
 - **Robot köpeklerin taşıma kapasitesi (v2.44, Boğaç):** köpekler topladıklarını artık hemen envanterine koymaz; **sırtlarında en çok 20 eşya** taşırlar. Sırtı dolan köpek işi bırakıp **sana koşar**, yanına gelince taşıdıklarını teslim eder: köpeğin üstünde küçük "+8 Dal", "+12 Taş" gibi satırlar belirir, ekranda "Karabaş getirdi: +8 Dal, +12 Taş" bildirimi çıkar ve eşyalar ancak o anda envantere geçer; sonra köpek işine döner. Köpekler menüsünde her köpeğin **taşıdığı** (ör. "taşıdığı: 7/20 · 4 Dal, 3 Taş") görünür. Sırtı dolmadan **Yanıma çağır** dersen köpek gelir ve o ana kadar topladığını yine aynı şekilde teslim eder. Taşınan eşyalar kayda yazılır; eski kayıtta köpeklerin sırtı boş başlar.
 - **Temel fiyat** formülü: malzemelerin toplam değeri × (1,15 + 0,05 × zincir adımı, en çok 6) + gereken aletin değerinin %10'u.
 
-## Tarifler: kazan, el yapımı, örs, ustalar
+### Tarifler: kazan, el yapımı, örs, ustalar
 
 - **Kazan yalnızca öğretir:** malzemeleri koyup kaynatırsın, malzemeler gider, tarif öğrenilir (+12 XP); ürün çıkmaz. ACT 1'de Zümrüt'ün ve beş kuzen cadının (Yakut, Safir, Firuze, Mercan, İnci) kazanları, ACT 2'de Yıldız'ın kazanı. Bütün ACT 1 kazanları aynı tarifleri öğretir.
 - **Kazanda öğrenilenler aşağıda (v3.36, Boğaç):** kazanın tarif listesinde her grubun içinde **öğrenilmiş** (yeşil, "öğrenildi") tarifler en alta iner; henüz öğrenilmemişler üstte kalır. Listenin en üstünde **"Öğrenilenleri gösterme"** kutusu vardır: işaretlenince öğrenilmiş tarifler listede hiç görünmez; kaldırılınca geri gelir. Seçim bu cihazda hatırlanır. (Örsteki listeye dokunmaz; orada yalnızca dövebildiklerin görünür.) **Liste yerinde kalır (v3.36, Boğaç):** listenin aşağısından bir tarif seçince (ya da malzeme koyunca, pencere yenilenince) sol liste en başa kaymaz, olduğu yerde kalır; aynısı örs ve sağdaki malzeme kutuları için de geçerlidir.
@@ -289,33 +325,15 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - **Takip şeridi düzenli (v3.38, Boğaç: "düzensiz duruyorlar, alt alta gelsin kutucuklar; uzun olanları kısalt, üstüne gidince tam adı yazar"):** takip edilen tariflerin satırları aynı genişliktedir ve kutucuklar **sütun sütun alt alta** durur: solda tarifin adı (sabit genişlik), sonra her malzeme aynı genişlikte bir kutucukta (resim, ad, sayı; yanında + düğmesinin yeri boş olsa da ayrılır), en sağda ×. Sığmayan adlar "…" ile kısalır; üstüne gelince (telefonda dokununca) tam adı görünür.
 - **Takip şeridi kıpırdamaz, en çok malzemeli tarif üstte (v3.39, Boğaç: "+1 dal, +1 lif bildirimi takip edilenleri sağa sola kaydırıyor; en fazla malzeme içereni en üstte göster"):** şeridin yeri yalnızca takip edilen tarifler ya da malzemeleri değişince yeniden hesaplanır; bir şey toplayınca (sayılar, "hazır", Yap düğmesi) şeridin sol kenarı yerinde kalır, şerit sağa sola kaymaz. Takip edilen tarifler (en çok 3) **malzeme sayısına göre** sıralanır: en çok malzemesi olan en üstte (eşitse son eklenen üstte). Bu yalnızca görünüştür: 4. tarif eklenince yine **en eski eklenen** takipten çıkar, kalanlar yeniden sıralanır.
 - **Takip şeridinde + ile parça yapmak (v3.36, Boğaç):** takip ettiğin bir tarifin eksik bir parçası kendisi elle yapılan bir tarifse (ör. Sopa, İp, Keskin taş) ve onu şu an elindekilerden yapabiliyorsan, şeritte o parçanın kutusunun yanında küçük bir **+** düğmesi çıkar. Basınca eksik kadarı (yapabildiğin kadar) hemen yapılır; gerekirse onun da parçaları önce yapılır (kazandaki + gibi zincirle). Yalnızca **öğrendiğin ve elle yapılan** tarifler bu yolla yapılır (örste dövülenler, yapılar ve aletler hariç). Ekranda "2 Sopa yapıldı (önce: Keskin taş)" yazar.
-- **Örs:** aletler ve silahlar Demirci Dursun'da ve silahçı kuzenlerinde, örste dövülen zırhlar Zırhçı Durmuş'ta ve zırhçı kuzenlerinde. **Kademe kuralı (v1.84):** her demirci yalnızca kendi biyomunun ve öncekilerin malzemesiyle yapılan eşyaları döver (Dursun/Durmuş: yalnız Çayır); ayrıntı "Zümrüt, Dursun ve Durmuş'un kuzenleri" bölümünde. Örs listesinde bir ara parçanın yanındaki **+** o parçayı elindeki malzemeden hemen yapıp örse koyar. **Seçili tarif başka örse taşınmaz (v2.33, Boğaç):** bir demircinin örsünde seçtiğin tarif (ör. Dursun'da Taş balta), o eşyayı dövmeyen başka bir demircinin örsü açılınca (ör. Durmuş) seçili kalmaz: seçim kalkar, örse koyduğun parçalar envanterine döner ("N malzeme envanterine döndü"). Her örste yalnızca o demircinin dövdüğü eşyalar seçilebilir.
-- **Bilgisayarda görev kartı büyük, konuşma yazısı küçük (v2.45, Boğaç):** genişliği 900 pikselden fazla ve fareyle oynanan ekranda sağ üstteki görev kartı daha geniştir (en çok 540 px; yazı 17 px, başlık 13,5 px, düğmeler 15 px); kişilerin konuşma kutusunda metin 16,5 px, ad 15,5 px, seçenek düğmeleri 15 px'tir (önce 19 / 17 / 17 px). Bir menü açıkken görev kartı eskisi gibi daralır. Telefon düzeni değişmedi.
-- **Bilgisayarda kart yazıları daha büyük (v2.53, Boğaç):** fareyle oynanan ve 720 pikselden geniş ekranda (telefon görünümü değilken) öğretici/ana görev kartı 18 px (bir menü açıkken 16 px, 3 satır), yan görev kartı 16 px (alt satırı 15 px, genişliği 480 px) ve takip çipleri 17 px yazıyla gösterilir. Alttaki **1-2-3-4-5 alet kemeri** iki kat büyür: kutular 92 px, simgeler 64 px, tuş numarası 18 px. Telefon görünümü değişmez.
-- **Bilgisayarda sol üst iki kat büyük (v2.85, Boğaç):** saat, Can / Enerji / Tokluk çubukları ve etki çipleri (Canlılık, Gece gözü, Bulantı…) iki kat büyüktür (çubuklar 46 px, yazılar sütun genişliğine göre en çok 24 px). Sol menünün kare düğmeleri sütunu **sikke kutusuna kadar** doldurur: **v2.86 (Boğaç):** solda yalnızca **Envanter, El yapımı, Yetenek ağacı, Yemek** ve (gelince) **Robot köpekler** durur. **v2.96 (Boğaç: "çok büyük olmuş, oyunu kapatıyor"):** kareler **yan yana üçlü, iki sıra** dizilir ve küçüktür: kenarı ekran genişliğinin %4,2'si, en az 48, en çok 84 px (1920 px ekranda 81 px); sıra genişliği üç kare kadardır. (v2.86–2.95'te iki sütun üç sıraydı ve kareler sikke kutusuna kadar uzayıp ekranın %12'sine kadar büyüyordu.) Robot köpeklerin yeri baştan ayrılır, gelince kareler değişmez. **Başarımlar** sağ üstte Çıkış ve Ayarlar'ın altına, onlarla aynı boyda taşındı; **Tarif kitabı** sağ altta Başarımlar'ın eski yerine, Almanak'la aynı boyda geçti (telefonda ☰ menüsünde kalır); **Görevler ve etkiler en az Tokluk boyunda (v3.07, Boğaç):** bilgisayarda Görevler/Gizle düğmesi sütunun bütün genişliğini kaplar ve en az Tokluk çubuğu kadar yüksektir (46 px); etki çipleri (Canlılık, Gece gözü, Bulantı…) da her biri sütun genişliğinde ve en az 46 px yüksekliktedir, alt alta dizilir. **Kemer küçüldü (v3.07, Boğaç):** bilgisayarda alttaki 1–5 kemer yuvaları ve meşale yuvası 92 px'ten **64 px**'e küçüldü (simgeler 44 px). **İnce Menü çubuğu (v3.07, Boğaç):** **Menü ▾** artık Görevler'in yanında değil, kare düğmelerin **altında** sütun genişliğinde ince bir çubuktur (22 px); basınca kare düğmeler gizlenir/açılır (katlıyken çubuk Görevler'in altında kalır). **Menü katlanır (v2.86, Boğaç):** Menü düğmesine basınca kare düğmeler gizlenir (kısayol tuşları çalışmaya devam eder), bir daha basınca açılır. Seçim bu tarayıcıda hatırlanır (oyuncunun kendi seçimi; otomatik ayar değil). Katlıyken kare boyu değişmez. Telefon görünümünde bu düğme yoktur (orada menü zaten açılır kapanır).
-- **Toplama bildirimi birikir (v2.53, Boğaç):** yerden bir şey toplayınca köşede çıkan "+1 Odun" bildirimi ekrandayken aynı şeyden bir daha toplarsan yeni "+1" çıkmaz, aynı bildirim **+2, +3 Odun** diye güncellenir ve süresi baştan başlar. Bildirim kaybolduktan sonra toplanan yeniden +1'den sayılır.
-- **Telefonda bütün pencereler (v2.21):** telefon yatay tutulunca kişilerin ve menülerin bütün pencereleri (Nazlı'nın pazarı, demirciler, Usta Sinan, El yapımı, envanter, yetenek ağacı, tarif kitabı, yemek, köpekler…) **bütün ekranı** kaplar; üstte boşluk kalmaz (öğretici kartı varsa yalnızca ~40 piksel). Başlık satırı ve araç satırı incedir (başlık solda, Kapat sağda), içerik kendi içinde kayar.
-- **Telefona göre sıkı düzen (v2.22):** telefon yatay tutulunca bütün pencerelerde sekmeler (Hepsi/Yiyecekler…, Sat/Satın al, Savaş/Ekonomi…, Tarifler/Keşif defteri…) tek ve ince bir satırdır, sığmazsa yana kayar; düğmeler ve satırlar alçak, yazılar küçüktür; uzun açıklama yazıları gizlenir. Ekran ekran:
-  - **Telefonda sürükleme (v2.28, Boğaç):** telefonda ve tablette sürükleme parmak olaylarıyla çalışır, tarayıcının kaydırması ya da uzun basış menüsü sürüklemeyi kesmez. **Envanter:** taşınabilir bir eşyaya (ya da dolu bir alet yuvasına) parmağını koyup **kaydırdığın an** eşya parmağının ucunda gelir (beklemek gerekmez); alttaki yuvalardan birinin (çantadaki ya da ekranın altındaki) üstünde bırakınca oraya girer, dolu bir yuvayı yuvaların dışına bırakınca yuva boşalır. **Kazan ve örs:** alttaki eşya kutularından birini kaydırınca eşya parmakla gelir; **kazanın (örsün) üstünde** bırakınca bir tane konur (Zor modda denemeye atılır). Sürüklerken parmak pencerenin üst ya da alt kenarına gelirse liste kendiliğinden kayar, kazan görünmüyorsa ona ulaşılır. Dokun (1 tane koy / seç) ve basılı tut (gerekenin hepsini koy) eskisi gibidir. Eşyaların arasındaki boşluktan ya da eşya olmayan yerden kaydırınca liste kayar.
-  - **Yürürken alet seçmek (v2.33, Boğaç):** telefonda bir parmağın yön tuşunda/kolunda yürürken öbür parmakla alt kutulardaki bir alete (meşale, balta…) ya da boş ele dokununca **hemen seçilir**; durmak gerekmez. Dokunuş parmağı kaldırınca sayılır (yerinden 12 pikselden az oynamış ve 0,5 sn'den kısa olmalı; daha uzunu sürüklemedir). Eskiden telefon, ekranda başka bir parmak varken dokunuşu tıklama saymıyordu.
-  - **Envanter:** giysi yuvaları karakterin yanında **tek ince şerit** (her yuva küçük simge + ad); "bir giysi seç…" ve "Taşınabilir eşyaları alttaki yuvalara koy…" yazıları gizli (bir eşya seçilince eylem düğmeleri yine çıkar). Böylece eşyalar açılır açılmaz görünür.
-  - **Eşyanın tam adı (v3.29, Boğaç: "seçtiğimin tam halini görebilmeliyim, basılı tutarsam seçmeden de"):** kutucuklarda uzun adlar kısalır ("Çam…"). Telefonda ve tablette bir kutucuğa **dokununca** eşyanın tam adı kutucuğun hemen üstünde küçük bir balonda ~2,5 sn görünür (envanter, el yapımı, kazan, örs, yemek, pazar: adı kısalan her kutucuk). Envanterde bir kutucuğa **basılı tutunca** (~0,4 sn) tam ad balonda çıkar ve parmak kalkana kadar durur; bu basış eşyayı **seçmez**. Taşınabilir eşyada basılı tutup kaydırınca sürükleme eskisi gibi çalışır. Bilgisayarda fare üstüne gelince tam ad zaten görünür.
-  - **Pazar:** her eşya **tek satır**: ad ×adet, yanında küçük ipucu ("Kazanda şimdi 5 tarifte işe yarar"), fiyat, **1 sat** ve **Hepsi** düğmeleri; ekrana çok daha fazla eşya sığar.
-  - **Pazar sütunları (v2.84, Boğaç):** fiyat, ▼ adet ▲, **Sat** ve **Hepsi** her satırda aynı genişlikte durur; fiyat 1, 2 ya da 3 haneli de olsa düğmeler alt alta aynı yerdedir (fiyat sağa yaslı). Nazlı'nın **Keskin taşı sat** dersinde (öğretici 9–10. adım) Keskin taş satış listesinin **en üstünde** durur. **Bilgisayarda menü pencereleri (v2.85, Boğaç; v2.84'ün pazar kuralının yerine):** bilgisayarda (fareyle, 900 pikselden geniş ekran) **bütün menü pencereleri** (pazar, kazan, örs, envanter, el yapımı, tarif kitabı, yetenekler…) içindeki her şeyle birlikte **%20 büyük** gösterilir ve aşağıda **alet kemerinin hemen üstüne** kadar uzar: 2.84'teki pencerenin altıyla kemer arasındaki boşluğun yalnızca üçte biri kalır (oyun kemerin gerçek yerini ölçer). Pencere ekranın üstünden 70 piksel aşağıda başlar (öğretici kartı açıkken 132); içerik pencerenin içinde kaydırılır. Pencere ekrana sığacak kadar daralır; pazar penceresi en çok 1100 piksel geniştir. Telefon görünümü değişmez.
-  - **El yapımı:** üstteki uzun açıklama gizli; meşale durumu ince bir satır; tarif satırları alçak, yaptığın eşya hemen görünür.
-  - **Savuş düğmesi her zaman yuvarlak (v3.09, Boğaç: "neden oval"):** Savuş, Atıl düğmesiyle aynı boyda tam bir dairedir; düğmeler Ayarlar'dan yerinden oynatıldıktan sonra da (eskiden o durumda boyu yazısına göre kalıyor, oval görünüyordu).
-  - **Yetenek ağacı:** ağaç pencerenin geri kalanını doldurur, düğümler küçüktür. **v3.07 (Boğaç: "telefonda üst üste biniyor"):** telefonda ağaç 520×440 piksellik sabit bir tahtadır, çerçevesinin içinde yukarı aşağı kaydırılır (eskiden ~250×220 pikseldi, yakın düğümler birbirinin üstüne biniyordu). Ağaç açılınca en alttan (Koşu tarafından) başlar; yetenek alınca kaydırdığın yer korunur.
-  - **Tarif kitabı:** üstteki açıklama gizli.
-  - **"Yeni malzeme bulundu"** yazısı bir pencere açıkken ekranın ortasına değil **altına, küçük** çıkar; menünün üstünü kapatmaz.
-  - **Ayarlar:** pencere ekranın genişliğine yayılır, müzik düğmelerinin yazısı kesilmez.
-  - **Ana menü:** "PURPLE LIGHT" yazısı küçülüp sağa kayar; soldaki düğmeler (Yeni oyun, Yükle…) yazının üstüne binmez.
-  - **Pencere dışına basmak = "Anladım" (v3.14, Boğaç — kalıcı kural):** konuşma penceresi seçim yapılmadan kapatılırsa (pencerenin dışına tıklama/dokunma, Esc, X) oyuncu pencereyi okumuş sayılır ve sade cevap seçilmiş olur: yalnızca kapatan bir seçenek varsa ("Sonra", "Hoşça kal") o, tek seçenek varsa o, yoksa ana (vurgulu) seçenek. Böylece "Hazırım" / "Anladım" bekleyen bir ders ya da görev hiçbir zaman takılı kalmaz. **Eklenen her yeni pencere bu kurala uyar.**
-  - **Konuşma penceresi (v2.26):** uzun konuşmalar (ör. görev anlatımları) ekranın üstünden taşmaz: pencere en çok **görünen ekran yüksekliği** kadar olur (iPhone'da adres çubuğu hesaba katılır), yazı kendi içinde kayar, **cevap düğmeleri hep altta görünür**; yazı harf harf gelirken pencere son satırı izler, bitince yukarı kaydırıp baştan okunabilir. Yazılar ve düğmeler telefona göre biraz küçüktür.
-- **Telefonda kazan ve örs ekranı (v2.20):** telefon yatay tutulunca kazan (ve örs) penceresi **bütün ekranı** kaplar; ekranın üstünde boşluk bırakılmaz (yalnızca öğretici kartı varsa onun yüksekliği kadar, ~40 piksel). Başlık satırı ince (başlık solda, Kapat sağda), arama satırı tek ve ince satır. Altta iki sütun: solda **tarif listesi** (ekranın ~%38'i), sağda seçilen tarif, malzemeler, kazan, düğmeler ve envanter; ikisi de **kendi içinde kayar**. Kazan alanı alçalır, yazılar ve kareler küçülür. Bilgisayar ve tablet görünümü değişmez.
-- **Usta Sinan:** yapılar, yataklar, ev eşyaları. **Atölye** kurulursa seçtiğin tarifi 25 sn'de bir kendisi üretir (en çok 50).
-- **Zümrüt'ün bilmecesi:** bilinmeyen bir tarifi ipucuyla sorar; öğrenince 30 + 2 × fiyat sikke ve 20 XP.
+- **Örs:** aletler ve silahlar Demirci Dursun'da ve silahçı kuzenlerinde, örste dövülen zırhlar Zırhçı Durmuş'ta ve zırhçı kuzenlerinde. **Kademe kuralı (v1.84):** her demirci yalnızca kendi biyomunun ve öncekilerin malzemesiyle yapılan eşyaları döver (Dursun/Durmuş: yalnız Çayır); kuralın tamamı bu maddenin altında; kuzenlerin tanıtımı "ACT 1 › Kişiler › Zümrüt, Dursun ve Durmuş'un kuzenleri" bölümünde. Örs listesinde bir ara parçanın yanındaki **+** o parçayı elindeki malzemeden hemen yapıp örse koyar. **Seçili tarif başka örse taşınmaz (v2.33, Boğaç):** bir demircinin örsünde seçtiğin tarif (ör. Dursun'da Taş balta), o eşyayı dövmeyen başka bir demircinin örsü açılınca (ör. Durmuş) seçili kalmaz: seçim kalkar, örse koyduğun parçalar envanterine döner ("N malzeme envanterine döndü"). Her örste yalnızca o demircinin dövdüğü eşyalar seçilebilir.
+  - Her örsün bir **kademesi** vardır: Dursun ve Durmuş **0 (Çayır)**, Orman kuzenleri 1, Bataklık 2, Kayalık Dağ 3, Kül Diyarı 4, Mor Kristal Vadisi 5.
+  - Bir eşyanın kademesi, **ana malzemesinin** en erken toplanabildiği biyomdur: malzeme zincirinin içindeki her ham maddenin ilk çıktığı biyomlardan en ileridekidir. Deri parçası bu hesaba katılmaz (her zırhın astarıdır; v2.62'den beri her biyomun hayvanından düşer, tabaklama yoktur). ACT 2 malzemeli zırhlar (²) kademe 0 sayılır, Durmuş ve bütün zırhçılar döver.
+  - Bir demirci **kendi kademesindeki ve altındaki** bütün eşyaları döver; ayrıca **kendine özel** eşyaları vardır. Yani Dursun ile Durmuş yalnızca Çayır malzemesiyle (taş, çakmaktaşı, çakıl, bakır + kalay = tunç…) yapılanları döverken, bir sonraki biyomun kuzenleri o biyoma özgü silah ve zırhları da döver. Silahçılar alet ve silah, zırhçılar zırh döver.
+  - Örs panelinde, öğrendiğin ama o demircinin kademesini aşan eşyalar üstte bir notla listelenir: "… bunları dövemez: Demir kılıç → Silahçı Ali (Bataklık)". Kazanda bir örs tarifini öğrenince çıkan mesaj da onu dövebilen **ilk** demircinin adını söyler.
+- **Usta Sinan:** yapılar, yataklar, ev eşyaları ve Atölye (bkz. ACT 1 › Kişiler › Usta Sinan).
+- **Zümrüt'ün bilmecesi:** bkz. ACT 1 › Kişiler › Cadı Zümrüt (Bilmece).
 
-## Aletler, dayanıklılık, kademe
+### Aletler, dayanıklılık, kademe
 
 - Her toplama, isabet ya da balık aletin 1 kullanımını yer. Dayanıklılık rengi yeşilden kırmızıya döner; sıfırda alet çalışmaz, silah yumruk gibi vurur. **Bileme** (Dursun ve silahçı kuzenleri): aletin değerinin onda biri. Kova ve asalar/ateşli silahlar körelmez.
 - **Körelmiş aletle F (v3.36, Boğaç):** elindeki balta ya da kazma tamamen körelmişse (dayanıklılığı 0) **F** (topla) ağaca ya da madene yönelmez; aletin hiç yokmuş gibi yerdeki eşyaya, bitkiye ya da yakındaki başka bir şeye yönelir (eskiden körelmiş baltayla ağaca gidip boşuna "köreldi" diyordu).
@@ -330,7 +348,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - **Maden kayaları geçilmez (v2.28, Boğaç):** yerdeki maden kayalarının (cevher damarları; çizimleri öbür toplanabilirlerin iki katı büyüklüğünde, yaklaşık 32 × 28 piksel) **çiziminin çevresi** bir duvardır: kayanın görünen şekline uyan basamaklı bir sınır (alt kısmı 32, ortası 24, tepesi 14 piksel geniş; tepeden tabana 28 piksel) ve çevresinde 5 piksellik pay. Karakter de canavarlar da kayanın görseline giremez; kayanın arkasından (üstünden) geçerken ayakların kayanın tepesinin üstünde durur. Eskiden yalnızca tabandaki küçük bir elips engeldi (çizimin üst yarısının içine yürünebiliyordu) ve oyun açıldıktan sonra yerleşen kayalar hiç engel olmuyordu; artık her kaya, ne zaman çıkmış olursa olsun engeldir. Kazılıp tükenen kaya engel olmaz. Karakter bir kayanın içinde kalmışsa (eski kayıt) kendiliğinden kayanın hemen altına (orası doluysa üstüne, sonra yanına) alınır; **v2.84 (Boğaç):** bu üçü de ağaç ya da başka bir engelle doluysa çevresindeki en yakın boş yere alınır (çeyrek saniyede bir bakılır). Tükenip başka yerde yeniden çıkan kaya da **çıktığı anda** engel olur (önceden bir buçuk saniye kadar içine girilebiliyordu). **Toplanabilirler kayanın üstünde çıkmaz (v2.33, Boğaç):** dal, taş, lif, ot, meyve gibi toplanabilirler bir maden kayasının çizim alanına (aynı sınır + 5 piksel) yerleşmez; yeniden çıkarken de kayanın üstüne düşmez. Ada kurulurken ya da sonradan bir kayanın üstüne denk gelmiş olan toplanabilir, ekranın dışındayken başka bir yere taşınır.
 - **Yeniden doğma kendi biyomunda (v2.83, Boğaç):** tükenen her toplanabilir (bitki, taş, dal, maden) yeniden doğarken **ilk doğduğu biyomda** boş bir yer seçer; Bataklık'ta biten demir cevheri yine Bataklık'ta çıkar, Orman'a kaymaz. Canlılar da yalnızca oyuncunun bulunduğu biyomun kendi canlılarından doğar ve o biyomun dışına çıkmaz (Canavarlar bölümü).
 
-## Zırh ve durum etkileri
+### Zırh ve durum etkileri
 
 - Beş yuva: baş, gövde, eller, ayaklar, silah. Giyilen eşyaların toplamı **savunma**dır; Keşif defterinin Giyim ve Zırh ustalıkları +5'er savunma verir.
 - **Zırh** (v1.81) karakterin temel özelliğidir: **seviye − 1** (Sv 1'de 0, Sv 50'de 49) + Dayanıklılık ağacındaki Zırh I–IV yetenekleri (+5 / toplam +12 / +20 / +30). Eşyaya bağlı değildir, hiç çıkmaz.
@@ -340,7 +358,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - **Canavarlara etki (v2.50):** alevli, zehirli ve keskin silahlar ve oklar canavarı yakar, zehirler ya da kanatır (ayrıntı: Aletler · Alevli, zehirli, keskin silahlar). Meşale de eskisi gibi yakar.
 - **Yemek kalkanları:** Panzehir zehri tamamen keser, Ateş kalkanı yanığı %70, Pıhtı kanamayı %60 azaltır.
 
-## Yemek
+### Yemek
 
 - **Tokluk değeri:** çiğ meyve ve sebzeler 2–12 (biyom tablolarında), çiğ et 6, çiğ balık 4, közlenmiş et/balık 12–32, pişmiş yemek tarifleri 10–65 (pahalı tarif daha doyurur). Şifa tarifleri doğrudan can verir (15–60).
 - **İyi etkiler** yemeğin türüne göre 60–240 sn sürer: **Güç** (+%20 vuruş: et, şiş, yahni), **Şifa** (can 3 kat hızlı: çorba, lapa), **Doygunluk** (tokluk inmez: ekmek, kek, patates), **Çeviklik** (+%12 hız: bal, şerbet), **Canlılık** (enerji 1,5 kat: çay, meyve suyu), **Gece gözü** (karanlıkta görme: mantar, balık, gece sefası), **Panzehir**, **Ateş kalkanı**, **Pıhtı**. Nadir pişmiş yemeklerde ek **Dayanıklılık** (can sınırı +%20).
@@ -369,7 +387,9 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - Bir yemeği ilk kez yiyene kadar listede etkisi "Bilgim yok" görünür.
 - **Yemek listesi kategorili (v2.33, Boğaç):** yemek listesi (yemek düğmesine basılı tut / sağ tık, bilgisayarda X'i basılı tut) artık tek uzun liste değildir. Üstte **kategori sekmeleri** vardır; yalnızca elinde o türden yiyecek olan sekmeler görünür ve her sekmenin yanında kaç çeşit olduğu yazar. Önce sekme seçilir, sonra o sekmedeki yiyeceğin **Ye** düğmesine basılır. Sekmeler (bu sırayla): **Meyveler** (çalı meyveleri, ağaç meyveleri, yemişler), **Sebze ve tahıl**, **Otlar**, **Mantarlar**, **Etler** (çiğ ve pişmiş), **Balıklar** (balık, kerevit, midye…; çiğ ve pişmiş), **Yemekler** (kazanda öğrenilen yemek tarifleri: çorba, güveç, reçel, kurutulmuş…), **Şifa** (merhem, çay gibi can veren tarifler), **Diğer**. Liste son seçtiğin sekmeyle açılır (o sekmede yiyecek kalmadıysa ilk dolu sekmeyle). Yemek düğmesine kısa basınca en uygun yiyeceği doğrudan yeme eskisi gibidir.
 
-## Balık tutma
+## Toplama ve tarım
+
+### Balık tutma
 
 - Alet: **Ağ** (en kolay), **Olta**, **Kemik zıpkın**. Eline al, suya dön, E. Şamandıra dalınca 1,05 sn içinde E (iki kez kaçırırsan balık gider), sonra gidip gelen ibre **yeşil alandayken** bir daha bas. Yürürsen ya da bir şey saldırırsa olta çekilir.
 - Zor balıklar (yeşil alan dar): Mersin balığı, Turna balığı, Yayın, Alabalık, Tatlısu levreği.
@@ -377,19 +397,19 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 | Sular | Ne çıkar (ağırlık) |
 |---|---|
-| Çayır/Orman · deniz | **v2.34'ten beri kıyıdan tutulmaz**; deniz balıkları Poyraz'la denize açılınca ("ACT 1 · Gemici Poyraz ve deniz") |
+| Çayır/Orman · deniz | **v2.34'ten beri kıyıdan tutulmaz**; deniz balıkları Poyraz'la denize açılınca ("ACT 1 › Gemici Poyraz ve deniz") |
 | Çayır/Orman · nehir ve göl | Alabalık 28, Kızılkanat 20, Tatlısu levreği 20, Çapak 16, Sazan 14, **Tatlısu kefali 12** (v2.34, eskiden yalnızca denizde), Tatlısu midyesi 10, Yılan balığı 9 |
 | Bataklık / Kayalık Dağ (nehir ve göl; v2.34'ten beri deniz kıyısında tutulmaz) | Yayın 24, Kadife balığı 24, **Kerevit 22**, Turna balığı 18, Yılan balığı 12, Tatlısu midyesi 12, Sazan 10 |
 | Kül Diyarı / Mor Kristal Vadisi (nehir ve göl) | Yayın 30, Mersin balığı 22, Turna balığı 22, Kadife balığı 14 |
 
-## Tuzaklar ve balık kapanı
+### Tuzaklar ve balık kapanı
 
 - En çok **6** tuzak + kapan (toplam). Haritada kahverengi kare, dolunca sarı.
 - **Tuzak:** elde Tuzak, çimen ya da orman zeminde E. 110–230 sn sonra bir av düşer: Çayır/Orman'da Tavşan, Keklik, Sincap; Bataklık/Kayalık Dağ'da Ördek, Keklik, Tavşan; doğuda Tavşan. Avın normal ganimetini verir.
 - **Balık kapanı** (2 Sepet + 3 İp + 1 Dal; Dursun döver): elde kapan varken yakındaki suya E, kapan suyun kenarına konur. 130–250 sn sonra **o bölgenin balık listesinden 2 balık** (yukarıdaki tablonun nehir satırları; kapan ağırlığa bakmaz, listedeki her balık eşit ihtimalle çıkar). Kerevit yalnızca Bataklık/Kayalık Dağ sularında çıkar: her çekilişte 1/7, yani bir kapan boşaltmada yaklaşık %27 ihtimalle en az bir kerevit.
 - Dolu tuzağa E: av alınır, tuzak kendiliğinden yeniden kurulur ve dayanıklılığı 1 düşer (Tuzak 20, Kapan 40 kullanım). Boş tuzağa E: "Bekle" ya da "Tuzağı topla". Her av +4 XP.
 
-## Gece buluntuları
+### Gece buluntuları
 
 Karanlık çökünce (gece), ışık olmayan çimen ve orman zemininde çevrende belirir, sabah kaybolur:
 
@@ -397,7 +417,7 @@ Karanlık çökünce (gece), ışık olmayan çimen ve orman zemininde çevrende
 - **Mor kıymık:** 1 tane (3. günden sonra 2). Işıkçı takası; Zümrüt'e 2 tane verince sıradaki anı erken gelir.
 - **Ateş böcekleri:** gece sefalarının çevresinde; yalnızca görüntü.
 
-## Tarım
+### Tarım
 
 > **v2.68: tarlacılık şimdilik oyunda yok** (bkz. Açıklar · İleride: Tarlacılık). Aşağıdaki eski düzen ileride geri gelirse başlangıç noktasıdır.
 
@@ -414,7 +434,9 @@ Bkz. "Çiftçi Ekin". Tarla 4 × 3 = 12 parsel. Adımlar (aletler çantada, E): 
 
 Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan ve (bir kez görüldükten sonra) Nazlı'dan alınır. Meyve ağaçları silkelendikten 150 sn sonra yeniden meyve verir.
 
-## Ev, ev içi ve döşeme
+## Ev, harita ve defterler
+
+### Ev, ev içi ve döşeme
 
 - Ev **Usta Sinan**'dan (Orman; v3.39'a kadar Marangoz Çınar) sikkeyle alınır, envantere gelir; bir yuvaya koyup yere kurarsın (Boşluk döndürür, Esc iptal). Taş ev de diğer evler gibi istediğin yere kurulur (v2.42, Boğaç: Kemal'in yanındaki "SATILIK" arsa kaldırıldı; haritada arsa, tabela ya da arsa ipucu yoktur).
 - **Evlerin görünüşü (v3.39, Boğaç: "ev eve benzesin, her ev farklı, pahalılaştıkça daha lüks"):** her ev kendine özgü çizilir ve fiyatı arttıkça daha görkemli görünür (envanterde, yerde ve kurulunca aynı resim):
@@ -441,7 +463,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
 | Taş ev | 8 | 10×7 | İstediğin yere |
 | Konak | 10 | 12×8 | |
 
-## Harita, işaretler, defterler
+### Harita, işaretler, defterler
 
 - **Kazan, Demirhane ve Pazar düğmesiz (v2.86, Boğaç):** sol menüde Kazan, Demirci ve Pazar düğmeleri, B / T / P kısayolları ve uzaktan basınca yol gösteren ok **yoktur**. Kazan Zümrüt'ün yanında kazana dokunarak, demirhane Dursun'la (ya da kuzen demircilerle) konuşarak, pazar Nazlı'yla konuşarak açılır; yerlerini oyuncu kendisi bulur (öğreticinin ve görevlerin kendi okları sürer). v2.84'teki "yol gösteren menü düğmeleri" kuralı kalktı.
 - Sağ altta küçük harita; **M** büyük harita (tekerlek, sürükleme ya da +/− ile yakınlaştır). Geçtiğin yerin çevresi açılır (Kâşif gözü ile iki kat). Gece harita kararır ama kişiler görünür.
@@ -454,7 +476,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
 - **Görevi olan kişiler büyük haritada parlar (v1.90):** üstünde **!** olan (görev veren) her kişinin simgesinin arkasında sarı bir ışık ve dışa doğru açılan iki sarı halka, **?** olan (görevi teslim edilecek) kişide yeşil ışık ve halkalar olur; haritayı açan nereye gideceğini hemen görür. Şu an üstünde çalıştığın görevin kişisi ayrıca sarı zeminli işaretle gösterilir.
 - **Keşif defteri** (Kitap): her tarif kategorisinde yaptığın tariflerin oranı. **%25** → sikke, **%50** → kalıcı **ustalık**, **%100** → sikke + 100 XP. Ustalıklar: Yiyecek (tokluk %20 yavaş iner), Şifa (can 1,5 kat hızlı), alet kategorileri (%20 körelmeme), Giyim ve Zırh (+5 savunma), Ateş (meşale %30 uzun), Ağaç (odun %20 hızlı), Taş ve kil (%20 hızlı), Av ve hayvan (ganimet +%10); diğerleri o kategorinin eşyalarını %15 pahalı sattırır.
 
-## Almanak (v2.13)
+### Almanak (v2.13)
 
 Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda (v2.86'ya kadar Başarımlar'ın solunda) küçük bir **kitap** simgesi (kısayol **U**, Ayarlar → Kontroller'den değişir). Haritanın üstündeki üç düğme (Almanak, Başarımlar, Özellikler) **eşit boyuttadır** ve üçü birlikte haritanın genişliğini geçmez (v2.14). Telefonda düğmeler sağ sütunda alt alta. Adanın canlılarını bölge bölge gösterir.
 
@@ -474,7 +496,7 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda (
 - **Yıldızsızlar sayfası (v3.30):** ilk mor ışık saldırısından sonra biyomların altında ayrı bir **Yıldızsızlar** sayfası çıkar (bkz. Mor ışık saldırıları).
 - Almanak açıkken oyun durur. Kaydedilecek yeni bir şey yok: biyomlar, avlar ve Reisler zaten kayıtta; eski kayıtlarda bugüne kadar avladıkların açık gelir.
 
-## İzler ve anılar
+### İzler ve anılar
 
 - **İzler** (Kitap → İzler): eşinden kalan 6 mor parıltı. **Kelebekli kolye** (Çayır kumsalı; v3.18, Boğaç: sevdiğin kişinin cinsiyeti ne olursa olsun kolyedir, ona senin aldığın kolye; v3.19: üstünde **beş lacivert kelebek**, üçü altta, ikisi üstte; zinciri kopmuş; eskiden kadınsa "Kopmuş kolye", erkekse "Kopmuş bileklik"), Islak defter sayfası (Orman), Tuhaf metal parçası (Bataklık), Çamurdaki izler (Doğan'ın güneydoğusu; yanında kadınsa bir küpe, erkekse deri bir cüzdan), Yıldız haritası ve Mor kristal (doğu). Üstüne gidip E. Sonuncusu "Gerçek" sahnesini açar.
   - Kolyenin yazısı: "Kumun içinde bir şey parlıyor: ince bir zincir, üstünde beş **lacivert kelebek**, üçü altta, ikisi üstte. Bu, {L} için aldığın kolye! 'En sevdiğim kolye oldu' demişti. Zinciri kopmuş, ama kıyıya vurmuş. Demek ki o da bu sularda bir yerdeydi…"
@@ -519,9 +541,9 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda (
 - **Telefonda anı tam ekran (v2.33, Boğaç):** dokunmatik ekranda bir anı gelince resmi ekranı kaplar (en-boy oranı korunur, ekrana sığan en büyük boy). Başlık ("Bir anı geri geldi" ve anının adı) üstte, anlatım yazısı ve Devam düğmesi altta, küçük yazıyla ve yarı saydam koyu zemin üstünde resmin **üstüne** biner. Bilgisayarda değişiklik yok.
 - **Ada halkının hikâyeleri:** görev veren 8 kişinin her biri mor ışık yüzünden birini kaybetmiştir (v2.34'ten beri Poyraz'ın hikâyesi yok); görevler hikâyeyi parça parça açar, sonunda bir sahne (+40 XP). Kitap → Ada halkı.
 
-# Dövüş
+## Dövüş
 
-## Silahlar
+### Silahlar
 
 | Tür | Hasar | Menzil | Bekleme |
 |---|---|---|---|
@@ -543,7 +565,7 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda (
 - Vuruş üç evrelidir (hazırlık, darbe, takip); isabette kısa bir donma olur, ıskalarsan bir an açık kalırsın. Her isabet silahı 1 köreltir.
 - Reisler ve iri türler (Timsah, Yaban öküzü, Kara ejder, Mağara ayısı, golemler, ejderler, robotlar, muhafızlar) vuruşla geri itilmez.
 
-## Atılma, savuşturma, savunma
+### Atılma, savuşturma, savunma
 
 - **Atılma / takla** (Boşluk; öğreticide Börü ücretsiz öğretir): **0,46 sn** (v3.16, Boğaç: animasyon biraz uzasın; önce 0,38), 50 piksel; boyunca **dokunulmazsın**. 14 enerji, bekleme 0,76 sn (Çevik atılma I/II/III: 9/7/5 enerji, 0,45/0,38/0,30 sn; Uzun atılma: %25 daha uzağa). Bir saldırının içinden taklayla geçersen "Sıyrıldın!" +6 enerji (Sıyrılma ustası ile +14).
 - **Takla görüntüsü (v3.15, Boğaç):** takla artık karakterin döndürülmüş resmi değil, **16 adımlık** bir animasyon: 8 ana poz (çömelme, öne atılma, top olma, üç top hâlinde yuvarlanma pozu, diz üstü açılma, doğrulma) ve her ikisinin arasında bir ara poz. Pozlar karakterin kendi çiziminden (ten, saç, şapka/miğfer, gövde zırhı, eldiven, çizme) parça parça kurulur: baş, gövde ve bacaklar ayrı ayrı yer değiştirir; elde tutulan alet/silah ve meşale takla boyunca görünmez. Sağa/sola taklada karakter yan döner ve yuvarlanır; yukarı/aşağı taklada öne doğru takla (baş aşağı geçerken sırtı görünür). Arkasında bir önceki adımın soluk izi kalır. **Piksel bütünlüğü (v3.16, Boğaç: "sağa sola gözleri pörtletiyor"):** poz, karakterin kendi piksel boyunda küçük bir tuvalde döndürülüp bütün olarak ekrana konur; böylece her piksel aynı boyda kalır (büyük ekran resmini döndürmek bazı satırları uzatıp gözleri büyütüyordu). Dönüş 11,25°'lik adımlarla yapılır, 12°'den küçük eğiklik dik çizilir. v3.15'te süre değişmedi; **v3.16'da 0,46 sn'ye uzadı** (mesafe yine 50 piksel, takla biraz daha yavaş). **Gözler (v3.16):** top hâlindeki dört pozda (ve aralarındaki adımlarda) gözler sıkıca kapalı çizilir; dönen açık gözler kapkara büyümüş gibi görünüyordu. Geri almak istenirse bu sürümün değişikliği geri alınır (eski 4 pozlu dönme geri gelir).
@@ -552,7 +574,7 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda (
 - **Darbe renkleri** (canavarın başındaki "!"): **beyaz** = normal, savuşturulur · **sarı** = ağır (×1,4 hasar), savuşturulur · **kırmızı** "!!" = savuşturulamaz (×1,7 hasar), ancak takla ile kaçılır. Reisin yere vurması ve yakalama da savuşturulamaz.
 - **Savunma duruşu** (sağ tık basılı tut): %45 hızla yürürsün, vuramazsın; fiziksel hasar beyazda ×0,35, sarıda ×0,45, kırmızıda ×0,7. Her engel enerji yer; enerji biterse kalkan düşer.
 
-## Özel vuruşlar (kombolar)
+### Özel vuruşlar (kombolar)
 
 | Giriş | Hamle |
 |---|---|
@@ -591,7 +613,7 @@ Her silahın kendi hamleleri vardır (parantezde hasar çarpanı ve enerji):
   - İlk kez savaş çekici ya da topuz eline aldığında bu kurallar kısa bir bildirimle anlatılır.
 - **Kilit:** ACT 1'de her özel vuruş ve ulti **Börü'den dersi alınana kadar kapalıdır** (kapalı hamle normal vuruş olur). ACT 2'ye geçince ve arenada hepsi açılır.
 
-## Ulti
+### Ulti
 
 - Altın ulti çubuğu: her isabet +1,5, özel vuruş +4, ritimli 2. +5, ritimli 3. +10, başarılı savuşturma +10. Dolunca **R** (telefonda Ulti). Ulti boyunca hasar almazsın.
 - ACT 1'de ulti dersi Kara ejder ya da Kristal golem Reisi yenilince açılır; ACT 2'de kendiliğinden öğrenilir.
@@ -609,7 +631,7 @@ Her silahın kendi hamleleri vardır (parantezde hasar çarpanı ve enerji):
 | Asa | Meteor | Fare yönüne ×5, sersem 1,2 sn |
 | Ateşli | Kurşun yağmuru | 20 atış (pompalıda 10), mermi harcamaz |
 
-## Börü'nün dövüş dersleri
+### Börü'nün dövüş dersleri
 
 Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğretici bittikten sonra). Ücret peşin; ders bitince hamle kalıcı açılır ve XP verilir. Ders için o bölgeyi gezmiş olman gerekir (haritada en az 60 karesi açılmış olmalı).
 
@@ -628,7 +650,7 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 | Bitirici | 21 | Kül Diyarı (Atılma gerekli) | 2.000 | 300 | Kül kurdu | Takla ile 3 kaçış → bitiriciyle 3 isabet |
 | Ulti | – | Kara ejder ya da Kristal golem Reisi yenilmiş | 2.500 | 500 | Mağara ayısı | Çubuk dolunca R: ulti ile 3 isabet (derste çubuk 3 kat hızlı dolar) |
 
-## Canavarlar nasıl savaşır
+### Canavarlar nasıl savaşır
 
 - **Mizaç:** *zararsız* kaçar; *nötr* vurulunca karşılık verir, 220 piksel uzaklaşınca sakinleşir; **ilk vuruşta hemen sana döner ve saldırır (v2.42, Boğaç):** yakınındayken (110 piksel içinde) vurulduğu an sana bakar, kırmızı "!" ile sana atılır (vurmayı sürdürmen gerekmez); uzaktan (ok, büyü) vurulduysa seni kovalar. Eskiden vurulan nötr canlı yavaş kalkıyordu, sen art arda vurdukça geri savruluyor, uzun süre karşılık veremiyordu. **Kıyıdaki Kerevit (nötr)** artık kızınca saniyede 46 piksel koşar (eskiden 14); *saldırgan* fark etme menziline girince saldırır, menzilin iki katı uzaklaşınca bırakır. Güvenli bölgede saldırgan canavar saldırmaz. Aynı anda en çok 4 canavar kovalar.
 - **Fareyle canlının üstüne gelince (v2.85, Boğaç):** yalnızca **kısa tek etiket** çıkar: canlının adı ve altında ne yaptığı (zararsız / kızdırırsan saldırır / saldırgan · vur). İmlecin yanında can, huy ve düşürdüklerini sayan ikinci kutu artık çıkmaz (bunlar Almanak'ta).
@@ -660,7 +682,7 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 - **Yakalama** yapanlar: Mağara ayısı, golemler, Lav golemi, Hurda devi, Gölge muhafız, Timsah, Yaban öküzü, Kızıl ejder, Gök bekçisi, Kristal golemcik, Devriye robotu. **Üçlü saldırı:** kurtlar, Gök tazısı, Vaşak, Goblin, Yaban domuzu, Mağara ayısı, Gölge muhafız, Devriye robotu, Kristal golemcik, Yavru ejder, Timsah, Ateş akrebi ve bütün Reisler.
 - Daha doğudaki (ve ACT 2'deki) canavarlar hamleleri daha sık yapar, mermilerden yana sıçrayabilir, ara sıra mavi parıltıyla kısa süre **bağışık** olur ("Etkisiz").
 
-## Ölüm pozu ve leş (v3.37, Boğaç)
+### Ölüm pozu ve leş (v3.37, Boğaç)
 
 - **Ölüm pozu:** öldürdüğün her canlı (Reisler, mağara canlıları, ACT 2 canlıları dahil) olduğu yerde **yan yatarak yere düşer** (yaklaşık 0,35 saniyelik bir devrilme), sonra hareketsiz yatar; altında koyu bir gölge olur, can çubuğu görünmez.
 - **Düşürdükleri leşin içindedir:** bir canlıyı öldürünce düşürdükleri artık hemen yere saçılmaz. Ekranda "{Canlı} avlandı · leşini topla" yazar. **Leşin yanına gidip topla** (bilgisayarda **E**, telefonda toplama düğmesi; üstünde "{Canlı} leşini topla" yazar): eşya toplar gibi çubuk dolar. Süre canlının büyüklüğüne göredir: **0,8 + √can / 12 saniye, en çok 3 saniye** (Toplayıcılık yetenekleri hızlandırır). Yürürsen ya da bir canavar sana saldırıyorsa toplama yarıda kalır. Çubuk dolunca leş kaybolur ve içindekiler leşin yerinde **yere saçılır** (yerdeki eşya kuralları geçerlidir: 180 sn sonra kaybolur, görev eşyaları kaybolmaz). İçinde bir şey yoksa "Leşte işe yarar bir şey yok" yazar.
@@ -669,7 +691,7 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 - **Kayıt:** yerdeki leşler (yeri, türü ve içindekiler) kayda yazılır; kayıt yüklenince yerlerinde durur.
 - **İstisnalar:** Kemal'in ilk dövüş dersindeki ve Börü'nün dövüş derslerindeki canlıların düşürdükleri eskisi gibi hemen yere düşer; leşleri yalnızca görüntüdür, 3 saniye sonra söner. **Yıldızsızlar** sikkeyi eskisi gibi doğrudan keseye bırakır; leşleri 3 saniye içinde mor bir dumanla kaybolur. **Arenada** ölen canlının leşi 3 saniye yatıp söner, toplanmaz.
 
-## Mor ışık saldırıları ve Yıldızsızlar (v3.30, Boğaç)
+### Mor ışık saldırıları ve Yıldızsızlar (v3.30, Boğaç)
 
 Belirli günlerde mor ışık, karakterin bulunduğu bölgeye **o dünyadan olmayan, mor renkli uzaylı canlılar** indirir: **Yıldızsızlar**.
 
@@ -696,14 +718,14 @@ Belirli günlerde mor ışık, karakterin bulunduğu bölgeye **o dünyadan olma
 - **Almanak:** ilk saldırıdan sonra almanağın sol sütununda biyomların altında **Yıldızsızlar** sayfası açılır; dört türün kartı oradadır (öldürülene kadar siluet ve ???). Kartta can ve hasar, son saldırıdaki değerleridir; düşürdükleri "Sikke".
 - **Arena:** dört tür arenanın canlı listesinde **Yıldızsızlar** başlığıyla seçilebilir (son mor ışık saldırısındaki değerleriyle; o oturumda saldırı olmadıysa başlangıç değerleriyle: gözcü 30 can, sürüngen 60, tükürücü 40, dev 140).
 
-# Arena, hileler, kayıt
+## Arena, hileler, kayıt
 
-## Arena
+### Arena
 
 Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır. Seviye (1/10/25/50/60; seçilen seviyenin puanları bütün özelliklere eşit dağılır), giyim ve silah seçilir; iki adanın bütün canlıları ve Reisleri ile dövüşülür. Arenada bütün yetenekler, **atılma** ve **savuşturma/gard** açıktır (v2.24; önceden savuşturma kapalıydı, telefonda Savuş düğmesi çıkmıyordu). Varsayılan olarak kimsenin canı gitmez (hasar ölçülür), enerji/mana/mermi sınırsızdır; "Gerçek dövüş" anahtarıyla gerçek olur. Arenada hiçbir şey kaydedilmez ve başarım işlemez. **Arena kayda asla dokunmaz (v2.24):** arenaya bir kez girildikten sonra sayfa yeniden açılana kadar hiçbir kayıt (otomatik ya da elle) yazılmaz; arenadan çıkarken de yazılmaz. (v2.23'e kadar arenadan çıkarken sayfa kapanırken çalışan otomatik kayıt, arena karakterini — ör. 50. seviye — gerçek oyunun otomatik kaydının üstüne yazıyordu; o kayıt geri gelmez, elle kayıtlar etkilenmedi.)
 - **Meşale yuvası arenada (v2.83):** silah seçicisinin altında **"Sol el · meşale yuvası"** satırı vardır: Meşalesiz, Kaba meşale ya da Meşale. Seçilen meşale yanar ve sol ele geçer; elde başka silah yoksa meşale vurur (7 hasar). Yuva arenada da tıklanınca söner/yanar.
 
-## Hileler
+### Hileler
 
 - **Açmak:** ana menüde klavyeyle `cheat` yaz (tekrar yazınca kapanır) ya da telefonda Ayarlar başlığına art arda 3 kez dokun. **Oyun kolunda (v3.23, Boğaç):** ana menüde **Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A** (yönler yön tuşlarıyla ya da sol çubukla; tuşlar arasında en çok 2 saniye) girilince hile ayarları açılır, yeniden girilince gizlenip kapanır (`cheat` yazmakla aynı). Son A'ya basış o anda seçili düğmeye basmaz. Kod oyunun içinde girilirse "Hile kodu ana menüde çalışır" yazar. Sayfa her açıldığında bütün hile anahtarları kapalı başlar.
 - **Açınca Hile modu da açılır (v2.29, Boğaç — telefonda hileler açılamıyordu):** eskiden 3 dokunuş (ya da `cheat`) yalnızca hile ayarlarını **görünür** yapıyordu; asıl **Hile modu** anahtarı ayrıca ana menünün Ayarlar'ından açılmalıydı ve oyunun içindeki Ayarlar'da bu anahtar gizli olduğu için oyuna girince hiçbir hile görünmüyordu. Artık: (1) hile ayarları açıldığı an **Hile modu da kendiliğinden açılır** (tek tek hileler yine kapalı başlar; oyun içindeki Ayarlar'da hepsi görünür). (2) **Hile modu anahtarı oyunun içindeki Ayarlar'da da görünür**; oradan açılıp kapatılabilir. (3) Dokunarak ya da tıklayarak (ana menüde 3 kez dokunma, Ayarlar başlığına 3 kez dokunma) hile ayarları yalnızca **açılır**, bir daha dokunmak onları **kapatmaz** (eskiden ana menüde hızlıca 3 kez dokunmak hepsini yanlışlıkla kapatıyordu). Kapatmak için Hile modu anahtarını kapat ya da klavyeyle yeniden `cheat` yaz.
@@ -712,7 +734,7 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 
 - **Bütün sahneler (v3.32, Boğaç: hile modundan çıkarıldı):** ara sahneleri ve anıları istediğin zaman izleme artık hile modunda **yoktur** ("Bütün ara sahneler açık" anahtarı ve Keşif defterindeki liste kaldırıldı). Yalnızca **ana menüde klavyeyle `love` yazınca** açılır (yeniden yazınca kapanır; bu cihazda hatırlanır; ekranda "Bütün sahneler açıldı" / "kapandı" yazar). Bir başarımı yoktur, hile modu sayılmaz. Açıkken **Kitap › Anılar**'ın en üstünde **Bütün sahneler** bölümü çıkar: her sahne **küçük resmiyle** (anılarda sahnenin kendi çiziminden alınmış küçük resim; açılış sahnesi, deniz yolculuğu, roket ve kişilerin hikâyelerinde adıyla mor bir kart) bir kutudur; kutuya basınca sahne baştan oynar. Bütün anılar (henüz gelmemiş olanlar dahil) ve bütün ara sahneler buradadır.
 
-## Kayıt
+### Kayıt
 
 - Otomatik kayıt + 3 elle kayıt yuvası (tarayıcıda).
 - **Üzerine yazma (v2.15):** kaydetme menüsünde dolu bir yuvaya basınca bir soru çıkar: "Bu yuvada bir kayıt var (Seviye…, tarih). Yeni kaydı üzerine yazayım mı?" → **Üzerine yaz** / **Vazgeç**. (Önceden "bir kez daha bas" uyarısıydı.)

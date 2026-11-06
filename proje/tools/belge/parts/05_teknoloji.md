@@ -1,4 +1,4 @@
-# Kullanılan teknolojiler
+# Teknoloji · Kullanılan teknolojiler
 
 Bu bölüm oyunun ve projenin **neyle yapıldığını** anlatır: hangi programlama dilleri, hangi grafik/ses teknolojileri, hangi tarayıcı özellikleri ve hangi araçlar (28 Ekim 2026, Versiyon 1.83 itibarıyla). Oyun bir **web oyunudur**: tarayıcıda çalışır, kurulum istemez; bilgisayarda, telefonda ve tablette **aynı tek dosya** çalışır.
 

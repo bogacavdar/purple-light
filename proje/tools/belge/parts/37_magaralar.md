@@ -1,8 +1,8 @@
-# ACT 1 · Mağaralar (v2.32)
+## Mağaralar (v2.32)
 
 > **v2.32, Boğaç (30 Ekim 2026).** Her biyomda bir mağara olacak; ilk pakette **Çayır** ve **Orman** mağaraları var. **v3.09 (Boğaç, 3 Kasım 2026):** Bataklık, Kayalık Dağ, Kül Diyarı ve Mor Kristal Vadisi'ne de birer mağara eklendi; artık Act 1'in altı biyomunun her birinde bir mağara var. Yeni mağaraların her birinde 3 canlı türü, en dipte 1 yan görev kişisi ve bir boss, **4 yalnızca mağarada bulunan toplanabilir** ve Mağara mantarı, canlılardan düşen kendine özgü malzemeler ve az olan tarif türlerinden (Av ve hayvan, Müzik, Süs, Boya, Büyü; yemek yok) tarifler vardır. Mağaraya meşalesiz ve seviyesi yetmeyen giremez. İçeride kendi canlıları, Reis'leri, toplanan malzemeleri ve en dipte bir yan görev kişisi vardır; o kişinin görevi mağaranın **boss'una** götürür.
 
-## Mağara girişlerinin görünüşü (v3.39, Boğaç: "mağara mağaraya benzesin, her biyomdaki farklı olsun, biyomuna uygun")
+### Mağara girişlerinin görünüşü (v3.39, Boğaç: "mağara mağaraya benzesin, her biyomdaki farklı olsun, biyomuna uygun")
 
 Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz kenarlı bir kaya tepesidir; ortasında kemerli, içe doğru kararan bir ağız ve ağzın çevresinde kemer taşları vardır. İçerideki ışık (mağaranın rengi) ağızda hafifçe nefes alır; tabela ve kapı yeri aynıdır.
 
@@ -15,7 +15,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 | Kor Mağarası | Kül Diyarı | kara bazalt, içinden turuncu parlayan çatlaklar, ağzın altından sızan kor, tepede kül ve duman; içeride turuncu ışık |
 | Ayna Mağarası | Mor Kristal Vadisi | koyu mor kaya, ağzın iki yanında ve tepede mor kristal kümeleri, ışıltılar; içeride mor ışık |
 
-## Genel kurallar
+### Genel kurallar
 
 1. **Giriş.** Mağaranın girişi büyüktür (genişliği ~4–5 ağaç, ~100 × 76 piksel kayalık bir tepe ve ortasında karanlık bir ağız). Ana kişilerden ve ateşlerden en az ~400 piksel uzakta, kendi biyomunda, ağaçsız bir yerdedir (ada her kurulduğunda aynı yer). Ağzın önünde ahşap bir tabela durur: mağaranın adı ve **seviye şartı** ("Yankı Mağarası · Sv 5").
 2. **Şartlar.** **Girişe tıklayınca (v2.66, Boğaç)** karakter mağaranın ağzına yürür ve bir pencere açılır: "Mağaraya girmek ister misin?", altında iki şart işaretiyle (✓/✗ en az X. seviye, ✓/✗ elinde yanan bir meşale). **Mağaraya gir** düğmesi yalnızca iki şart da tamamsa basılır; **Vazgeç** (ya da Esc) kapatır, Enter girer. Ağzın önünde **F** de aynı pencereyi açar. Eski davranış (şart tutmazsa karakterin söylediği): seviye yetmiyorsa karakter "Bu mağara bana göre değil… en az **5. seviye** olmalıyım (şimdi 3)." der. Seviye yetiyor ama **elinde yanan bir meşale yoksa** "Meşalesiz giremem; içerisi zifiri karanlık." der (kafa lambası yetmez). İkisi de tamamsa girer.
@@ -33,7 +33,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 11. **Yan görev.** Her mağaranın en derin odasında bir **yan görev kişisi** vardır (yan görev kuralları geçerlidir: ana görevle birlikte yapılır, bayılınca yalnızca yan görev iptal olur). Kişi başında mavi "?" ile görünür; yalnızca mağaranın içinden ulaşılır (dış haritada işaret yoktur). Görev bir hikâyeyle başlar, mağarada toplanan bir malzemeyi ister, sonra boss'u çağırır. Boss'la karşılaşıp bayıldıysan ve kişiye **ikinci kez** gidersen, görev en baştan başlamaz: kişi doğrudan "Hazır mısın?" diye sorar ve boss hemen çağrılır. Boss yenilince kişiye dönülür; görev biter.
 12. **Malzemeler.** Her mağarada **Mağara mantarı** da toplanır (v2.77, Boğaç: yalnızca mağaraların içinde çıkar, dışarıda yoktur; çiğ yenir, zehirli). Ayrıca mağarada **2 toplanabilir** malzeme (duvar diplerinde, her girişte yeniden dizilir; içerideyken yeniden çıkmaz) ve canlılardan düşen malzemeler vardır. **Hepsinin bir satış fiyatı vardır** (Nazlı'ya satılır) ve her biri **en az bir tarifte** kullanılır. Bu tarifler **kazandan öğrenilir** (malzemeler bir kez bulununca Normal modda açık görünür); çoğu tarif kitabında az tarif olan kategorilerdendir (Büyü, Müzik, Boya, Şifa, Av ve hayvan) ve iki tanesi yemektir.
 
-## 1 · Yankı Mağarası (Çayır · Sv 5)
+### 1 · Yankı Mağarası (Çayır · Sv 5)
 
 Çayır'ın kayalık bir köşesinde, ağzından serin hava ve damla sesleri gelen alçak tavanlı bir mağara. Duvarlarda mavi parlayan mantarlar, tavandan sarkan damla taşları.
 
@@ -79,7 +79,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 | Yarasa zarı davul | Müzik | 3 Yarasa zarı, 2 Taş örümceği ipi, 2 Dal | 130 |
 | Kraliçe tılsımı | Büyü | 1 Kraliçe pençesi, 2 Yankı mantarı, 1 Taş örümceği ipi | 420 |
 
-## 2 · Kök Mağarası (Orman · Sv 10)
+### 2 · Kök Mağarası (Orman · Sv 10)
 
 Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geniş bir mağara. Duvarlarda amber renkli reçine damlaları parlar, yerde soluk mantarlar.
 
@@ -124,15 +124,15 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 | Kök flütü | Müzik | 1 Kök yılanı derisi, 1 Kök reçinesi, 1 Dal | 95 |
 | Kök özü iksiri | Büyü | 1 Yaşlı Kök özü, 2 Kök mantarı, 1 Su | 680 |
 
-## Yeni mağaraların ortak kuralları (v3.09)
+### Yeni mağaraların ortak kuralları (v3.09)
 
 - **Canlıların görünüşü:** yeni canlılar adadaki akrabalarının biçiminde, kendi renkleriyle çizilir (ör. Batak semenderi yeşil bir Lav kertenkelesi, Lav yılanı kızıl bir Engerek; Kaya yarasası, Kristal yarasa, Tavan örümceği, Ayna örümceği ve Kor böceği Yankı ve Kök mağaralarının canlılarının renk değiştirmiş halidir). Boss'lar Reis biçimindedir (mor parıltılı, iri, adı ve uzun can çubuğuyla).
 - **Toplanabilenler:** her yeni mağarada 4 toplanabilir yalnızca o mağarada çıkar, beşincisi Mağara mantarıdır. Parlayanlar (Parıltı yosunu, Gümüş filizi, Dağ kristali, Kükürt kristali, Kor taşı, Mor damar taşı, Işık sporu, Ayna taşı, Yıldız tozu) çevrelerini hafifçe aydınlatır. **v3.09 düzeltmesi:** Mağara mantarı mağaraların içinde artık görünüyor (önceden toplanabildiği halde çizilmiyordu).
-- **Sesler:** bütün mağara canlılarının ve boss'larının kendi saldırı sesi vardır (bkz. Act 1 › Canlı sesleri).
+- **Sesler:** bütün mağara canlılarının ve boss'larının kendi saldırı sesi vardır (bkz. ACT 1 › Canlı sesleri).
 - **Yan görev kalıbı:** dipteki kişi bir hikâye anlatır, mağarada toplanan bir malzemeden **4** tane ister, boss'u çağırır; boss yenilince kişiyle konuşulur. İkinci denemede boss doğrudan çağrılır.
 - **Mağaranın yeri (v3.09):** mağaraların içi için seçilen alan artık mağara girişlerinden önce seçilir; altı giriş bu alana konmaz (altı mağarayla bir giriş bu alanı kapatabiliyordu).
 
-## 3 · Batık Mağara (Bataklık · Sv 18)
+### 3 · Batık Mağara (Bataklık · Sv 18)
 
 Bataklığın altında, tavanından su sızan, yerleri balçıklı bir mağara. Duvarlarda yeşil parlayan yosunlar, suyun içinde batmış kökler.
 
@@ -167,7 +167,7 @@ Bataklığın altında, tavanından su sızan, yerleri balçıklı bir mağara. 
 | Yosun yeşili boya | Boya | 2 Parıltı yosunu, 1 Su | 95 |
 | Çamur Ana muskası | Büyü | 1 Çamur Ana gözü, 2 Sazlı inci, 1 Semender derisi | 1.400 |
 
-## 4 · Rüzgâr Mağarası (Kayalık Dağ · Sv 26)
+### 4 · Rüzgâr Mağarası (Kayalık Dağ · Sv 26)
 
 Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlarda gümüş damarlar ve buz gibi kristaller, tavandan sarkan saçaklar.
 
@@ -202,7 +202,7 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 | Kanat yelpazesi | Süs | 3 Kaya yarasası kanadı, 2 Dal | 380 |
 | Dev yüreği tılsımı | Büyü | 1 Dev yüreği, 2 Dağ kristali, 2 Kar likeni | 2.000 |
 
-## 5 · Kor Mağarası (Kül Diyarı · Sv 34)
+### 5 · Kor Mağarası (Kül Diyarı · Sv 34)
 
 Kül Diyarı'nın altında, yarıklarından kor ışığı sızan sıcak bir mağara. Duvarlarda sarı kükürt, yerde volkan camı parçaları.
 
@@ -237,7 +237,7 @@ Kül Diyarı'nın altında, yarıklarından kor ışığı sızan sıcak bir ma�
 | Volkan camı muska | Süs | 2 Volkan camı, 1 Lav yılanı pulu | 540 |
 | Kor tacı tılsımı | Büyü | 1 Kor Kral tacı, 2 Kor taşı, 1 Volkan camı | 2.800 |
 
-## 6 · Ayna Mağarası (Mor Kristal Vadisi · Sv 42)
+### 6 · Ayna Mağarası (Mor Kristal Vadisi · Sv 42)
 
 Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara. Mor damarlar, yerde yıldız tozu gibi ışıltılar.
 
@@ -272,6 +272,6 @@ Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara
 | Yıldız tozu yemi | Av ve hayvan | 2 Yıldız tozu, 1 Işık sporu | 520 |
 | Işık Yutan kalbi tılsımı | Büyü | 1 Işık Yutan kalbi, 2 Mor damar taşı, 2 Ayna taşı | 4.200 |
 
-## Teknik not (mağaranın yeri)
+### Teknik not (mağaranın yeri)
 
 Mağaranın içi adanın üstünde, kişilerden, ateşlerden ve yerlerden en az ~360 piksel uzak, ulaşılabilir kuru bir alana kurulur (bütün mağaralar aynı alanı paylaşır; aynı anda yalnızca birinin içinde olunur). İçerideyken o alanın ağaçları, toplanabilirleri, zemini ve havası gizlenir; altındaki su ya da ulaşılamayan yerler mağarada kaya duvar olur. Mağaradayken o alanın biyomu "keşfedilmiş" sayılmaz.

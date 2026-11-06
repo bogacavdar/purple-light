@@ -1,10 +1,10 @@
-# ACT 1 · Yan görevler (v2.30)
+## Yan görevler (v2.30)
 
-> **v2.30, Boğaç (30 Ekim 2026).** Görevler artık ikiye ayrılır. **Ana görevler:** adanın kişilerinin (Kemal, Zümrüt, Dursun, kuzenler…) verdiği görevler; yukarıdaki "ACT 1 · Görevler" bölümündeki bütün kurallar onlar içindir. **Yan görevler:** adada kendi yerinde duran, yolda karşına çıkan **yan kişilerin** (bir teyze, kaybolmuş bir çocuk, bir çoban…) görevleri. İlk pakette **12 yan görev** var; ACT 1'in ilk dört biyomuna **üçer** tane, tonları karışık (hüzünlü, gizemli, komik).
+> **v2.30, Boğaç (30 Ekim 2026).** Görevler artık ikiye ayrılır. **Ana görevler:** adanın kişilerinin (Kemal, Zümrüt, Dursun, kuzenler…) verdiği görevler; yukarıdaki "ACT 1 › Ana görevler" bölümündeki bütün kurallar onlar içindir. **Yan görevler:** adada kendi yerinde duran, yolda karşına çıkan **yan kişilerin** (bir teyze, kaybolmuş bir çocuk, bir çoban…) görevleri. İlk pakette **12 yan görev** var; ACT 1'in ilk dört biyomuna **üçer** tane, tonları karışık (hüzünlü, gizemli, komik).
 
-> **Mağara yan görevleri (v2.32):** Yankı Mağarası'nda **Madenci Kaya**, Kök Mağarası'nda **Kökçü Fidan**; bu bölümdeki kurallar onlar için de geçerlidir (ayrıntı "ACT 1 · Mağaralar" bölümünde). Böylece yan görev sayısı 14'tür (mağaraların hepsiyle 18; v3.39'da 24 yeni yan görevle **42**); Görevler penceresi "Bitirdiklerin: x/42" yazar.
+> **Mağara yan görevleri (v2.32):** Yankı Mağarası'nda **Madenci Kaya**, Kök Mağarası'nda **Kökçü Fidan**; bu bölümdeki kurallar onlar için de geçerlidir (ayrıntı "ACT 1 › Mağaralar" bölümünde). Böylece yan görev sayısı 14'tür (mağaraların hepsiyle 18; v3.39'da 24 yeni yan görevle **42**); Görevler penceresi "Bitirdiklerin: x/42" yazar.
 
-## Kurallar
+### Kurallar
 
 1. **Ana görevle birlikte yapılır; birden çok yan görev alınabilir (v3.07, Boğaç).** Yan görev ana görevi beklemez, ana görev yan görevi beklemez; ikisi ayrı yürür. Aynı anda **birden çok yan görev** alınabilir (eskiden tek yan görev vardı, ikinci yan kişi "Önce elindeki işi bitir" derdi; artık demez).
    - **Takip edilen yan görev:** alınan yan görevlerden yalnızca **biri takip edilir**. Takip edilen görev ekranın üstündeki yan görev kartında yazar; görev eşyalarının mavi parıltısı yalnızca onunkiler için çıkar; adımları (bulma, toplama, kovalama, eskort, bekleme, dövüş) yalnızca o ilerler. Takip edilmeyenler **Görevler**'de bekler; kaldıkları adım ve topladıkları korunur.
@@ -28,7 +28,7 @@
 12. **Konuşma resmi (v2.33, Boğaç):** yan kişilerle (mağaradaki Kaya ve Fidan dahil) konuşurken konuşma kutusunun solundaki küçük resim **o kişinin kendisi**dir: dünyadaki çizimiyle aynı saç, şapka, sakal, giysi renkleri (Poyraz ve ustalarda olduğu gibi). Eskiden hepsinde Gemici Poyraz'ın resmi görünüyordu.
     - **Hiçbir konuşmada varsayılan Poyraz resmi yoktur (v2.42, Boğaç):** konuşan her şeyin kendi resmi olur. "Sen" satırlarında **senin** (oyuncunun) yüzün; hikâye anlatan satırlarda (adı "—" olan) ilgili **şeyin kendisi** (güvercin, şişe, kayık, mal sandığı, oyuncak, ayakkabı, tebeşir, taş, ejder ini, mağara) ya da şey yoksa hikâyenin kişisi görünür. Resmi olmayan bir konuşucu için pencere **resimsiz** açılır (Poyraz'ın yüzü konmaz). **Yeni bir kişi ya da şey eklenirken konuşma resmi de eklenmek zorundadır** (CLAUDE.md kuralı).
 
-## Haritada yan görevler
+### Haritada yan görevler
 
 - **Yalnızca çok yakındayken sisli "?" (v3.40, Boğaç):** görevi bekleyen bir yan kişiye (kendi saatinde, ya da bir kez alınmış görevin kişisi) **~10 kare (160 piksel)** ya da daha yakınsan haritada onun çevresinde **mor, hafifçe dönen küçük bir çember** ve ortasında koyu mor bir **"?"** belirir. Çemberin ortası kişinin tam yeri değildir (kişi çemberin içinde bir yerdedir). Uzaktayken hiçbir işaret yoktur; yerinin açılmış olması da işaret göstermez (eskiden açılmış yerde tam yerinde mavi "?" vardı, kaldırıldı).
 - **Saat gelince belirir:** harita açıkken kişinin saati gelirse ve yakınındaysan "?" o an belirir; oyuncu "bu soru işareti de ne?" diyerek gidip arar.
@@ -36,7 +36,7 @@
 - Süren (alınmış) görevin kişisi ve hedefleri için haritada işaret yoktur. Biten yan görevler işaret bırakmaz.
 - Hem küçük haritada hem büyük haritada (M) görünür; gece de görünür.
 
-## Açılış sırası (v3.40)
+### Açılış sırası (v3.40)
 
 Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş ana görev sayısı** ve gerekiyorsa belli bir ana görev (E2 köprü, E3 Doğu geçidi, E4 izler, E5 Kıyıdaki duman, E6 Saliha'nın çorbası). Koşulu tutan ilk iki bitmemiş görev açıktır.
 
@@ -47,7 +47,7 @@ Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş an
 - **Kül Diyarı:** Çelik (28 · E3) → Ömer (31 · E3) → Kor Ali (34 · E3) → Hasret (37 · E3) → Nar (40 · E3) → Duman Dede (42 · E4)
 - **Mor Kristal Vadisi:** Melodi (E5) → Yaren (E5) → Asena (44 · E5) → Selim (46 · E5) → Rıza (48 · E5) → Fenerci Işık (50 · E6)
 
-## 12 yan görev
+### 12 yan görev
 
 | # | Biyom | Kişi | Görev | Saat | Ton | Ödül |
 |---|---|---|---|---|---|---|
@@ -76,7 +76,7 @@ Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş an
 - **Avla:** gösterilen yerde çıkan canavarları yen.
 - **Bekle:** kişinin yanında (90 piksel içinde) belli bir süre kal; bu sürede canavar dalgaları gelir. Uzaklaşırsan sayaç durur.
 
-### 1 · Mavi — Denizden dönmeyen kardeş (Çayır, İskele)
+#### 1 · Mavi — Denizden dönmeyen kardeş (Çayır, İskele)
 
 Akşamüstü İskele'nin ucunda, dizlerini kucaklamış bir kız oturur: **Mavi**. Her akşam aynı yerde, denize bakar.
 
@@ -86,7 +86,7 @@ Akşamüstü İskele'nin ucunda, dizlerini kucaklamış bir kız oturur: **Mavi*
 - **Konuş (Mavi'ye dön):** Notu okur, uzun süre susar. "Korkmamış. Bu iyi bir şey… değil mi? Her akşam buraya gelip şarkısını söyleyeceğim." Görev biter.
 - **Sonra dünyada:** Mavi İskele'de, yanında suya bıraktığı kır çiçekleri. Konuşunca: "Bu akşam da söyledim. Deniz dinliyor gibi."
 
-### 2 · Toprak — Gece öten kuş (Çayır) (v3.42, Boğaç)
+#### 2 · Toprak — Gece öten kuş (Çayır) (v3.42, Boğaç)
 
 > Çoban Davut'un "Kaçan keçi Pamuk" görevi **ana görev** oldu (ACT 1 · "Çoban Davut", CB1); Davut evcilleştirme hocası. Çayır'daki yan görev yerine bu geldi.
 
@@ -99,7 +99,7 @@ Pijamasının üstüne babasının ceketini giymiş, uykusu kaçmış küçük b
 - **Sonra dünyada:** Toprak'ın yanında, kenarda küçük bir yuva; gece yanından geçerken kısık bir ötüş duyulur. Konuşunca: "Yumurtadan bir yavru çıktı. Adını sen koy dedim ama sen yoktun, ben 'Fıstık' dedim."
 - **İz:** yanındaki yuva. **Konuşma resmi:** Toprak'ın kendisi; bıldırcın satırlarında bıldırcın (kod yazılırken eklenir).
 
-### 3 · Güvercinci Bulut — Kaçan güvercinler (Çayır)
+#### 3 · Güvercinci Bulut — Kaçan güvercinler (Çayır)
 
 Elinde boş bir kafes, gözleri kızarmış bir oğlan.
 
@@ -112,7 +112,7 @@ Elinde boş bir kafes, gözleri kızarmış bir oğlan.
 - **Konuş:** "Dördü de burada! Sonuncunun kime gideceğini bilmiyorum ama… belki kimseye gitmesi gerekmiyordur." Görev biter.
 - **Sonra dünyada:** Bulut'un yanında küçük bir güvercinlik, çevresinde dolaşan dört güvercin. Konuşunca: "Artık kapıyı hep kapatıyorum. Nazlı ile Dursun çay içmiş, duydun mu?"
 
-### 4 · Ela — Kampa giden yol (Orman, yalnızca gece)
+#### 4 · Ela — Kampa giden yol (Orman, yalnızca gece)
 
 **Yalnızca gece** (20:00–05:00) çıkar. Ormanda, bir ağacın dibinde, dizlerini kucaklamış ağlayan küçük bir kız.
 
@@ -121,7 +121,7 @@ Elinde boş bir kafes, gözleri kızarmış bir oğlan.
 - **Varınca (Kemal'in ateşi):** Ela ateşin yanına koşar. Kemal battaniyesini omzuna atar: "Gel yavrum, gel. Burada ışık hep yanar." Ela: "Bir daha karanlıkta yalnız kalmayacağım, değil mi?" Görev biter.
 - **Sonra dünyada:** Ela Kemal'in ateşinin başında oturur. Konuşunca: "Kemal Dede bana yıldızları anlattı. Burada yokmuş ama başka yerlerde varmış."
 
-### 5 · Şövalye Kahraman Dede — Ejderin ini (Orman)
+#### 5 · Şövalye Kahraman Dede — Ejderin ini (Orman)
 
 Tencereden miğfer, tahtadan kılıç, tahta kapaktan kalkan; dimdik duran yaşlı bir adam.
 
@@ -130,7 +130,7 @@ Tencereden miğfer, tahtadan kılıç, tahta kapaktan kalkan; dimdik duran yaşl
 - **Konuş (Kahraman Dede'ye dön):** "Ejderi mi yendin?! Kanatlarını gördün mü? Ateş püskürttü mü? …Bir domuz mu? Olsun! Domuz kılığına girmiş bir ejderdir, en tehlikelisi! Seni bugünden sonra **Şövalye** ilan ediyorum!" Görev biter.
 - **Sonra dünyada:** Kahraman Dede'nin tencere miğferinde bir domuz dişi asılı. Konuşunca: "Yeni bir ejder duydum, bataklıkta. Bu sefer ben önden gideceğim. Belki."
 
-### 6 · Seyyar satıcı Bekir — Kırık araba (Orman)
+#### 6 · Seyyar satıcı Bekir — Kırık araba (Orman)
 
 Tekerleği kırılmış, yan yatmış bir el arabası; çevresinde dökülmüş mallar.
 
@@ -140,7 +140,7 @@ Tekerleği kırılmış, yan yatmış bir el arabası; çevresinde dökülmüş 
 - **Konuş:** Bekir tekerleği bağlar, arabayı doğrultur. "Tıkır tıkır! Al bakalım, bu sikkeler senin. Tahta atı da kızım sana selam diye gönderdi… yok yok, onu ben götüreyim, ağlar sonra." Görev biter.
 - **Sonra dünyada:** Bekir onarılmış arabasının yanında durur. Konuşunca: "Bu yol kökten geçilmiyor, ben de artık burada mal satıyorum. Şaka şaka, satmıyorum. Henüz."
 
-### 7 · Avcı Kartal — Yaralı avcı (Bataklık)
+#### 7 · Avcı Kartal — Yaralı avcı (Bataklık)
 
 Bir kütüğe yaslanmış, bacağı kanlı bir avcı; yanında kırık bir mızrak.
 
@@ -150,7 +150,7 @@ Bir kütüğe yaslanmış, bacağı kanlı bir avcı; yanında kırık bir mızr
 - **Konuş:** "Sabaha çıkarırım artık. Bak sana bir şey diyeyim: bu bataklığın Reis'leri hep aynı yerde yatar, suyun en sığ yerinde. Bir gün lazım olur." Görev biter.
 - **Sonra dünyada:** Kartal ayağa kalkmış, sargılı bacağıyla durur. Konuşunca: "Topallıyorum ama yürüyorum. Seni unutmam."
 
-### 8 · Hayali — Işığı gören adam (Bataklık)
+#### 8 · Hayali — Işığı gören adam (Bataklık)
 
 Gözlerinin içi hafifçe mor; konuşması dağınık, elleri titreyen bir adam.
 
@@ -159,7 +159,7 @@ Gözlerinin içi hafifçe mor; konuşması dağınık, elleri titreyen bir adam.
 - **Konuş:** Hayali kıymıkları bir taşın üstünde ezer; mor duman çıkar, söner. Gözleri biraz netleşir. "Işık birini almadan önce onu **dinler**. Ben ona hiçbir şey söylemedim. Belki ondan bıraktı. Konuşanları alıyor; sevdiklerinin adını söyleyenleri." Görev biter. (Ana hikâyeye bir ipucu: ışık, sevdiklerini sayıklayanları seçiyor.)
 - **Sonra dünyada:** Hayali küçük bir ateşin başında, sakin oturur. Konuşunca: "Artık uyuyabiliyorum. Kimsenin adını sesli söylemiyorum ama."
 
-### 9 · Falcı Kader — Kader satan kadın (Bataklık, gece)
+#### 9 · Falcı Kader — Kader satan kadın (Bataklık, gece)
 
 Rengârenk şallara sarınmış, elinde kemikten zarlar olan bir kadın.
 
@@ -169,7 +169,7 @@ Rengârenk şallara sarınmış, elinde kemikten zarlar olan bir kadın.
 - **Konuş:** "Gördün mü? Zarlar yalan söylemez. Şimdi sana bir kader daha: mor ışık bir gün **senin** de adını söyleyecek. O gün cevap verme." Görev biter.
 - **Sonra dünyada:** Kader her konuşmada başka bir kehanet söyler ("Yarın bir tüccar gelecek… belki", "Cebindeki sikkeler azalacak, harcarsan").
 
-### 10 · Hatice Nine — Torun Emir (Kayalık Dağ, acı son)
+#### 10 · Hatice Nine — Torun Emir (Kayalık Dağ, acı son)
 
 Dağın yamacında küçük bir kulübenin önünde, elinde feneriyle bekleyen yaşlı bir kadın.
 
@@ -181,7 +181,7 @@ Dağın yamacında küçük bir kulübenin önünde, elinde feneriyle bekleyen y
 - **Konuş (Hatice Nine'ye dön):** Konuşma penceresinde seçenek yoktur, yalnızca "…" ile ilerlenir. Karakter: "Hatice Nine… Emir'i buldum. Mağaranın önünde. Çok üzgünüm." Hatice Nine uzun süre susar. Feneri yere bırakır. "Yıldız mı çizmiş? …Hep sorardı, 'nine yıldız nasıl bir şey' diye. Ben de anlatırdım. Anlatmasaydım…" Sonra: "Teşekkür ederim, evladım. Bilmemek daha kötüydü." **Görev bu acı haberi verince biter** (ödül sessizce eklenir; kutlama sesi ve "Görev tamamlandı" sevinci çalmaz).
 - **Sonra dünyada:** Kulübenin yanında küçük bir mezar taşı, üstünde tebeşirle çizilmiş bir yıldız ve kır çiçekleri; Hatice Nine yanında oturur. Konuşunca: "Her sabah yıldızını yeniden çiziyorum. Yağmur siliyor, ben çiziyorum."
 
-### 11 · Yolcu Yahya — Dağda kaybolan yolcu (Kayalık Dağ)
+#### 11 · Yolcu Yahya — Dağda kaybolan yolcu (Kayalık Dağ)
 
 Sırtında koca bir heybe, elinde asası, yorgun ve şaşkın bir adam.
 
@@ -190,7 +190,7 @@ Sırtında koca bir heybe, elinde asası, yorgun ve şaşkın bir adam.
 - **Varınca:** "Ateş! Duman! İnsan sesi! Ah, ah… Üç gün sonra ilk sıcak yer. Sana borcum büyük." Görev biter.
 - **Sonra dünyada:** Yahya kuzenlerin ocağının yanında oturur, heybesini açmış. Konuşunca: "Burada kalacağım galiba. Demirci çekiç sallıyor, ben hikâye anlatıyorum. Adil bir takas."
 
-### 12 · Işıl — Gece görünen kız (Kayalık Dağ, gece)
+#### 12 · Işıl — Gece görünen kız (Kayalık Dağ, gece)
 
 Yalnızca gece 22:00–04:00 arası görünür: soluk, mavi ışıklı, yarı saydam küçük bir kız. Yaklaşınca konuşmaz, gülümser ve kaybolur.
 
@@ -200,7 +200,7 @@ Yalnızca gece 22:00–04:00 arası görünür: soluk, mavi ışıklı, yarı sa
 - **Git (taş):** son yerde, otların arasında yosun tutmuş **küçük bir taş**; üstüne kazınmış: *"IŞIL. Işığa gülümseyerek yürüdü."* Taşın yanına bir fener konur, kendiliğinden yanar. Kızın sesi: "Teşekkür ederim. Artık karanlık değil." Görev **orada** biter (geri dönülecek kimse yoktur).
 - **Sonra dünyada:** taş ve yanındaki fener kalır; fener geceleri yanar. Işıl bir daha görünmez.
 
-## 24 yeni yan görev (v3.39, Boğaç)
+### 24 yeni yan görev (v3.39, Boğaç)
 
 Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biyoma 3'er yeni yan görev; "beğenmediğimi sonra kaldırırım". Hepsi yukarıdaki kurallara uyar (birden çok alınabilir, kaçırılmaz, süre sınırı yok, bayılınca yalnızca takip edilen yan görev yarıda kalır, görev canavarları almanağa sayılmaz). Kişiler biyomlarında, ilk on ikinin yerlerinden uzakta durur; haritada mavi **?** ile görünürler. **Yeni adım türleri ve kurallar:**
 - **Kullan:** belli noktalara elinde gereken eşyayla gidince her nokta bir tane harcar (ör. her yanan ağaç 1 Su). Eşya yoksa "X gerekli" yazar, nokta kalır.
@@ -238,11 +238,11 @@ Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biy
 | 41 | **Asena** · Mor gözlü yavru | Mor Kristal Vadisi · 19:00–24:00 | 3 Geyik eti götür → gece yavruyu sürüsünden koru (60 sn) → dön; yavru Gece onunla kalır | 540 · 480 XP | yanında yavru Gece |
 | 42 | **Fenerci Işık** · Düşen ışığı toplamak | Mor Kristal Vadisi · yalnızca gece (21:00–04:30) | Mor ışığın düştüğü yerlerde üç mor damla topla (elinde ışık olmalı, yoksa ışık seni alır) → dön | 600 · 550 XP | **üç kalıcı fener ateşi:** yanlarında gece mor ışık gelmez (güvenli yer) |
 
-## Ödüller
+### Ödüller
 
 Şimdilik her yan görev yalnızca **sikke + XP** verir (tablodaki değerler); XP, bir canavar avının birkaç katı kadardır. Ödül yan görev bitince bir kez verilir; yarıda kalıp yeniden yapılan görev ödülü yine bir kez verir.
 
-## İleride ödül fikirleri (konuşulacak)
+### İleride ödül fikirleri (konuşulacak)
 
 - **Benzersiz bir tarif:** her yan kişi başka yerde öğrenilmeyen bir tarif öğretir (Mavi: deniz feneri lambası; Bekir: el arabası; Kartal: bataklık sargısı).
 - **Bir anı ya da Kitap sayfası:** "Yol Hikâyeleri" ya da **Kayıp Defteri**: her yardım ettiğin kişi bir sayfa.

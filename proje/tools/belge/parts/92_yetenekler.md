@@ -1,4 +1,4 @@
-# Yetenek ağacı
+# Yetenekler · Yetenek ağacı
 
 **v1.83'ten itibaren** yetenekler üç ağaçtadır: **Savaş** (kırmızı), **Ekonomi** (altın sarısı) ve **Dayanıklılık** (yeşil). Her ağaçta **30 yetenek**, toplam **90 yetenek**.
 
