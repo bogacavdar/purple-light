@@ -8,6 +8,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.46 · 6 Kasım 2026
+
+### Kayıtlar
+
+- Eski bir kayıt silindiğinde çıkan bilgi artık ana menüde her şeyin üstünde, okunur büyüklükte ve 5 saniye görünür: "Kaydın eski bir hatadan etkilendiği için silindi." ya da "Ada değiştiği için eski kayıt silindi."
+
+---
+
 ## Versiyon 3.45 · 6 Kasım 2026
 
 ### Oynanış
@@ -374,15 +382,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Arayüz
 - **Bilgisayara yükle tek tıkla:** düğme yalnızca oyunun tek basışta yüklenebildiği tarayıcılarda (Chrome, Edge) görünür; basınca yükleme penceresi açılır, "Yükle" deyince oyun masaüstüne gelir. Yüklenemeyen tarayıcılarda (Firefox, Mac Safari) düğme hiç çıkmaz. Adım adım nasıl yüklenir anlatan pencereler kaldırıldı.
 - Kol yardımındaki "Firefox'ta aç ya da kabloyla bağla" notu kaldırıldı.
-
----
-
-## Versiyon 3.26 · 5 Kasım 2026
-
-### Arayüz
-- **Firefox'tan bilgisayara yükleme:** Windows'ta Firefox 143 ve sonrası oyunu uygulama olarak yükleyebiliyor. Ana menüdeki "Bilgisayara yükle" Firefox'ta artık "yükleyemiyor" demiyor, adımları gösteriyor: adres çubuğundaki web uygulaması düğmesi, görev çubuğu ve Başlat menüsündeki "Firefox Web Apps". Ayrıca Chrome'dan yüklenmiş uygulamanın hep Chrome'la açıldığını ve kayıtların nasıl taşınacağını yazıyor. Mac ve Linux'taki Firefox'ta yükleme hâlâ yok.
-- **Kol yardımı:** Ayarlar → Kontroller'deki kol yardımına bir not eklendi. Xbox kolu kablosuz aparatla bağlıyken Chrome ya da Edge'de (masaüstü uygulamasında da) kopuyorsa: oyunu Firefox'ta aç (Windows'ta oradan uygulama olarak da yüklenir) ya da kolu kabloyla bağla. Bu kopma oyundan değil, aparat ile Chrome/Edge arasındaki uyumsuzluktan.
-
-### Tasarım belgesi
-- Yeni bölüm **Gelecek planı: Godot'ya geçiş:** nedenler, işin büyüklüğü, aşamalar ve yalnızca yazılım süresi (yaklaşık 5–6 hafta), kredi notu.
-- Akış › Bilgisayara yükle (Firefox) ve Sistemler › Oyun kolu (kol kopuyorsa) güncellendi.

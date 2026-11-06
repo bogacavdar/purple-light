@@ -1,3 +1,11 @@
+## v3.46 (6 Kasım 2026) · kayıt silme bildirimi ana menüde en üstte, 5 sn (ÇYR-15)
+
+- v3.45'teki `toastLong` silindi; yerine ana kodda `saveNote(msg)` (`toast`'un altında): kendi `#savenote` kutusu (`position:fixed`, `z-index:2147483000`, alt ortada, uyarı çerçeveli, 15–19 px kalın yazı, `pointer-events:none`). İki bildirim gelirse alt alta. 5 sn sayımı sayfa tam yüklenip (`readyState==='complete'`) ana menü (`#title`) görününce başlar, sonra 0,4 sn'de söner (v3.45'te toast 1,4 sn'lik `rise` animasyonuyla ~1,5 sn okunuyor, `#tcard` altında kalıyordu).
+- Metinler (belge Sistemler › Kayıt): MAPV silmesi (~11381) "Ada değiştiği için eski kayıt silindi.", yan görev XP silmesi (`v345`) "Kaydın eski bir hatadan etkilendiği için silindi."; ikisi de gecikmesiz çağrılır.
+- Deneme (Playwright, sayfa saatine göre): bitmiş yan görevli eski kayıtla açılış: sayım başladıktan 1 sn ve 4,5 sn sonra kutu görünür, opaklık 1, başlığın ve menü kartlarının üstünde (ekran görüntüsü); 6 sn'de kapanmış. MAPV 5 kayıtla aynı (1 sn ve 4,5 sn görünür). Kayıtlar doğru silindi.
+- Geri almak için: `saveNote` ve iki çağrısı (v3.45 hali `toastLong`). Kayıt alanı ve MAPV değişmedi.
+- Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
+
 ## v3.45 (6 Kasım 2026) · Çayır E2E düzeltmeleri: Porsuk, yan görev harita işaretleri, harita açıkken duyurular, süs "?"ler silindi
 
 - **ÇYR-11 yan görev XP (kritik; v3.44 yayında da var, yan görevler v2.30'dan beri aynı kodla):** `v230` yer döngüsü (`for(const q of Q)`, ~16232) `q.x`'i kişinin dünya konumuyla eziyordu; `complete()` `gainXP(q.x)` ile konum kadar XP veriyordu (Bulut +3.422 XP; ana görev sayılan `husnu`/`ekin1` de konum kadar). Şimdi döngünün başında `q.xp=q.x||0` (ödül) saklanır, `complete()` `gainXP(q.xp)` (0 ise vermez) ve iki bitiş yazısı `q.xp`. 42 yan görevin sikke/XP'si belgeyle (36_yan_gorevler tabloları, 37_magaralar) karşılaştırıldı: hepsi aynı (kodda "Satıcı Bekir", belgede "Seyyar satıcı Bekir"). Eski kayıtlarda bozuk alan yok (kayıt XP ödülünü tutmuyor); ama v3.44 ile yan görev bitirmiş kayıtların seviyesi/XP'si şişmiş olabilir, kayıttan hangi kısmın yan görevden geldiği ayrılamaz, düzeltilmedi (karar Boğaç'ta).
@@ -168,10 +176,3 @@
 - Belge: `10_akis.md`, `20_sistemler.md`, `00_giris.md`.
 - Telefondaki "Uygulama olarak indir" (`v253inst`, iPhone'da Ana Ekrana Ekle adımları) değişmedi.
 - Kontrol: chk.js 0 hata.
-
-## v3.26 (5 Kasım 2026) · Firefox'tan yükleme, kol kopması notu, Godot planı
-- Belge: yeni `parts/99_godot.md`, `10_akis.md` (Bilgisayara yükle, Firefox), `20_sistemler.md` (Oyun kolu › kol kopuyorsa), `00_giris.md`.
-- `v254inst` `howto()`: Windows'ta Firefox (`ff && /Windows/`) için web uygulaması adımları; diğer Firefox'larda eski metin.
-- `v320pad` `renderHelp`: Xbox aparatı ile Chrome/Edge notu.
-- Boğaç'ın bulgusu: Xbox kablosuz aparatı Chrome/Edge kolu okumaya başlayınca bağlantıyı kesiyor (kol güncel, Chrome yeniden kuruldu); Firefox'ta sorun yok.
-- Kontrol: chk.js 0 hata (`?.` 1, `??` 7). Test yapılmadı.

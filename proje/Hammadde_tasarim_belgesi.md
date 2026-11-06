@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.45** ile birebir (6 Kasım 2026). Bu sürümde: Çayır'da Porsuk doğar, haritada yan görev işaretleri yeni kurala göre (keşfedilmiş yerde kişinin yerinde "?", keşfedilmemiş yerde yakınken sisli daire), büyük harita açıkken ekran ortası duyurular beklemeye alınır. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.46** ile birebir (6 Kasım 2026). Bu sürümde: eski kayıt silinince çıkan bilgi ana menüde en üstte, okunur ve 5 sn kalır. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -1082,8 +1082,8 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 ### Kayıt
 
 - Otomatik kayıt + 3 elle kayıt yuvası (tarayıcıda).
-- **Yan görev XP hatasından etkilenen kayıtlar silinir (v3.45, 6 Kasım 2026, Boğaç):** v3.44'te yan görev bitince XP olarak kişinin x konumu veriliyordu. v3.45'ten önceki bir kayıtta **en az bir yan görev bitmişse** o kayıt açılışta silinir ve oyuncu yeni oyuna başlar; yan görev bitirmemiş kayıtlar korunur. Silinince yalnızca tek cümlelik bir bilgi çıkar: "Kaydın eski bir hatadan etkilendiği için yeni oyun başladı." (adım tarif edilmez; ekranda **5 sn** kalır).
-- **Ada değişince eski kayıtlar silinir:** harita değişikliğiyle (harita sürümü `MAPV` artınca) eski kayıt açılışta silinir ve yeni oyun başlar. Bildirim tek cümledir: "Ada değiştiği için yeni oyun başladı." (adım tarif edilmez; ekranda **5 sn** kalır).
+- **Yan görev XP hatasından etkilenen kayıtlar silinir (v3.45, 6 Kasım 2026, Boğaç):** v3.44'te yan görev bitince XP olarak kişinin x konumu veriliyordu. v3.45'ten önceki bir kayıtta **en az bir yan görev bitmişse** o kayıt açılışta silinir, oyun ana menüde açılır; yan görev bitirmemiş kayıtlar korunur. Silinince yalnızca tek cümlelik bir bilgi çıkar: "Kaydın eski bir hatadan etkilendiği için silindi." (adım tarif edilmez; ana menüde başlığın ve öbür katmanların **üstünde**, okunur, **5 sn** kalır).
+- **Ada değişince eski kayıtlar silinir:** harita değişikliğiyle (harita sürümü `MAPV` artınca) eski kayıt açılışta silinir, oyun ana menüde açılır. Bildirim tek cümledir: "Ada değiştiği için eski kayıt silindi." (adım tarif edilmez; ana menüde başlığın ve öbür katmanların **üstünde**, okunur, **5 sn** kalır).
 - **Anılar adıyla saklanır:** kayıt, görülen anıları **adıyla** saklar; bir anı eklenip çıkınca kayıtlar kaymaz.
 - **Üzerine yazma:** kaydetme menüsünde dolu bir yuvaya basınca bir soru çıkar: "Bu yuvada bir kayıt var (Seviye…, tarih). Yeni kaydı üzerine yazayım mı?" → **Üzerine yaz** / **Vazgeç**. (Önceden "bir kez daha bas" uyarısıydı.)
 - **Kaydı sil:** kaydetme ve yükleme menülerinde her dolu yuvanın yanında **Sil** düğmesi (yükleme menüsünde otomatik kayıt da silinebilir). Basınca sorar: "Kayıt 2 silinecek. Emin misiniz? Bu geri alınamaz." → **Eminim, sil** / **Vazgeç**. Silinince yuva boşalır.
