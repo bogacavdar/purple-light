@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.46** ile birebir (6 Kasım 2026). Bu sürümde: eski kayıt silinince çıkan bilgi ana menüde en üstte, okunur ve 5 sn kalır. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.47** ile birebir (6 Kasım 2026). Bu sürümde: yan görev ödülleri yükseldi, "!" önce bulunduğun biyomda çıkar, Yaban domuzu yalnızca gece, Börü'nün dersi öğreticiyi geçeni kilitlemez. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -305,6 +305,8 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
    - **Koşu tam görünür:** ağaç açılınca Koşu kesilmeden, alt kenarın biraz üstünde görünür (altında boşluk kalır). Ağacın üstünde ve altında her zaman biraz pay vardır; en üstteki ve en alttaki yetenekler kenara yapışmaz. Börü'nün notu ağacı aşağı itip Koşu ekranın dışına kayarsa pencere kendiliğinden kayar, Koşu kenarın biraz üstüne gelir.
    - **Sikke yetmezken Koşu'ya basılırsa:** satın alma olmaz, yetenek ağacı **kendiliğinden kapanır** ve Börü konuşma penceresinde söyler: "Önce sikke topla evlat! Koşu 100 sikke; sende X var, Y sikke daha lazım. Nazlı'nın pazarında bir şeyler sat. 100 sikken olunca **Y**'ye bas (telefonda yanıp sönen ağaç ikonuna dokun), yetenek ağacını aç: oradan istediğin geliştirmeleri alırsın. İlk işin Koşu olsun." ("Anladım" düğmesi). Bu, ders sırasında da sonradan da (Koşu alınana kadar) böyledir; ders sırasındaysa bu konuşma 8. maddedeki konuşmanın yerine geçer ve "Anladım"dan sonra öğretici sürer.
 8. Ağaç kapatılınca Börü önce **bilgilendirir** ("Anladım" düğmesi). 100 sikken yoksa ne kadar eksik olduğunu söyler, Nazlı'ya bir şeyler satıp sikke toplamanı, **100 sikken olunca Y'ye basıp** (telefonda ağaç ikonuna dokunup) yetenek ağacını açmanı ve oradan istediğin geliştirmeleri almanı söyler, ilk iş Koşu olsun der. 100 sikken varsa: "Gördün mü, en alttaki parlayan Koşu. Onu almak 100 sikke ister; Y'ye bas, ağacı aç, oradan istediğin geliştirmeleri alırsın." Sonra öğretici kaldığı yerden sürer: Börü Taş balta tarifini verir (12. adım).
+
+**Ders sırasında ayrılmak:** atılma ve savuşturma dersi (kerevit dersi) öğreticinin parçasıdır; öğreticiyi oynayan oyuncu ders bitene kadar Börü'nün yanından ayrılamaz. **"Eğitimi geç" seçilmişse** ders oyuncuyu kilitlemez: Börü'den uzaklaşınca (~280 piksel) ders sessizce biter, öğrenilmemiş kısım (atılma ya da savuşturma) öğrenilmemiş kalır ve aşağıdaki kurala göre Börü'yle yeniden konuşunca ücretsiz alınabilir.
 
 Öğreticiyi geçen ve atılmayı bilmeyen biri sonradan Börü'yle konuşursa Börü aynı dersi ücretsiz teklif eder ("Öğret" / "Sonra"). Atılmayı bilip savuşturmayı bilmeyen biri konuşursa Börü yalnızca **savuşturma dersini** (1 + 3) ücretsiz teklif eder.
 
@@ -1157,7 +1159,7 @@ Başladığın yer: hilalin batı ucunda, Çayır'ın Orman'a en uzak yerinde, g
 | Elma | Elma odunu | – | Yabani elma | 1. kademe (Taş, Çakmaktaşı ya da Bakır balta) |
 | Erik | Erik odunu | – | Yabani erik | 1. kademe (Taş, Çakmaktaşı ya da Bakır balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
@@ -1185,7 +1187,7 @@ Başladığın yer: hilalin batı ucunda, Çayır'ın Orman'a en uzak yerinde, g
 | Yaprak | 1 | 51 | 63 sn sonra yeniden çıkar |
 | Yarasa gübresi | 3 | 21 | 90 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
@@ -1279,7 +1281,7 @@ Adanın kuzeybatısı (Çayır'dan doğuya, büyük nehre doğru yürü). Gölge
 | Ceviz | Ceviz odunu | 10 | Ceviz | 1. kademe (Taş, Çakmaktaşı ya da Bakır balta) |
 | Fındık | Fındık odunu | 8 | Fındık (silkele) | 1. kademe (Taş, Çakmaktaşı ya da Bakır balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
@@ -1304,9 +1306,10 @@ Adanın kuzeybatısı (Çayır'dan doğuya, büyük nehre doğru yürü). Gölge
 | Yaban mersini | 8 | 62 | 50 sn sonra yeniden çıkar, çiğ yenir (+9 tokluk) |
 | Yaban sarımsağı | 8 | 74 | 45 sn sonra yeniden çıkar |
 | Yaprak | 1 | 51 | 63 sn sonra yeniden çıkar |
+| Sarkıt | 6 | 9 | 120 sn sonra yeniden çıkar |
 | Yarasa gübresi | 3 | 12 | 90 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
@@ -1318,13 +1321,18 @@ Adanın kuzeybatısı (Çayır'dan doğuya, büyük nehre doğru yürü). Gölge
 
 | Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri (ihtimal) |
 |---|---|---|---|---|---|---|---|
-| Sincap | zararsız | 6 | – | 58 | 3 | – | Sincap eti %100; Sincap derisi %60; Ceviz %35 ×1–2; Fındık %35 ×1–2 |
+| Sincap | zararsız | 6 | – | 58 | 5 | – | Sincap eti %100; Sincap derisi %60; Ceviz %35 ×1–2; Fındık %35 ×1–2 |
 | Karaca | nötr | 70 | 14 | 66 | 12 | sürü 2–4 | Karaca eti %100 ×1–2; Karaca derisi %80; Kemik %50; Sinir %40 |
 | Kunduz | nötr | 55 | 12 | 40 | 10 | – | Kunduz eti %100; Kunduz derisi %75; Kemik %30 |
-| Yaban domuzu | saldırgan | 130 | 21 | 50 | 24 | sürü 2–5 | Yaban domuzu eti %100 ×1–2; Yaban domuzu derisi %70; Yaban domuzu dişi %45; Kemik %50 ×1–2; Hayvan yağı %40 |
+| Yaban domuzu | saldırgan | 130 | 21 | 50 | 24 | gece, sürü 2–5 | Yaban domuzu eti %100 ×1–2; Yaban domuzu derisi %70; Yaban domuzu dişi %45; Kemik %50 ×1–2; Hayvan yağı %40 |
 | Dikenli kirpi | nötr | 60 | 12 | 30 | 16 | uzaktan atar (120 menzil, 3 atış), kanama etkisi | Kirpi dikeni %100 ×2–4; Kemik %30 |
 | Engerek | saldırgan | 75 | 14 | 40 | 20 | uzaktan atar (115 menzil, 1 atış), zehir etkisi | Zehir bezesi %60; Kemik %30 |
 | Oklu kirpi | saldırgan | 205 | 19 | 28 | 48 | uzaktan atar (150 menzil, 3 atış), kanama etkisi | İri diken %100 ×2–3; Kirpi dikeni %80 ×2–4; Kemik %40 |
+
+**Orman canlılarının ayrıntıları:**
+- **Deri parçası:** derisi olan canlılar avlanınca derisinin yanında Deri parçası da düşürür: Sincap %60, Karaca %80 ×1–2, Kunduz %75, Yaban domuzu %70 ×1–2.
+- **Doğma koşulları:** **Yaban domuzu yalnızca gece** çıkar (gündüz çıkmaz; 6 Kasım 2026, Boğaç) ve saldırgandır: oyuncuyu görünce saldırır. **Engerek** Seviye 6'dan ya da 3. günden sonra, **Oklu kirpi** Seviye 10'dan ya da Seviye 8 ve 5. günden sonra doğar.
+- **Saldırgan sürülerin boyu seviyeyle büyür:** sürü hâlinde gelen saldırgan bir canlı (Yaban domuzu, Kurt, Bataklık kurdu, Kül kurdu) Seviye 1–3'te **2**, Seviye 4–6'da **2–3**, Seviye 7'den sonra tablodaki aralıkta (ör. Yaban domuzu 2–5) gelir. Nötr sürüler (Geyik, Karaca…) her seviyede tablodaki aralıktadır.
 
 ### Bataklık — Tehlikeli
 
@@ -1340,7 +1348,7 @@ Adanın kuzeyi, büyük nehrin doğusu: Orman'dan ana köprüyü onarıp karşı
 | Söğüt | Söğüt odunu | 14 | – | 2. kademe (Granit ya da Tunç balta) |
 | Mürver | Mürver odunu | 14 | Mürver | 2. kademe (Granit ya da Tunç balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
@@ -1368,7 +1376,7 @@ Adanın kuzeyi, büyük nehrin doğusu: Orman'dan ana köprüyü onarıp karşı
 | Yarasa gübresi | 3 | 9 | 90 sn sonra yeniden çıkar |
 | Yosun | 13 | 61 | 30 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
@@ -1402,7 +1410,7 @@ Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartalla
 | Kestane | Kestane odunu | 22 | Kestane | 3. kademe (Demir balta) |
 | Ardıç | Ardıç odunu | 22 | Ardıç meyvesi | 3. kademe (Demir balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
@@ -1430,7 +1438,7 @@ Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartalla
 | Yaprak | 1 | 37 | 63 sn sonra yeniden çıkar |
 | Yarasa gübresi | 3 | 10 | 90 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
@@ -1464,7 +1472,7 @@ Adanın güneydoğusu, sıradağın ardı: Kayalık Dağ'dan sıradağa yürü, 
 | Dikenli akasya | Dikenli akasya odunu | 40 | – | 4. kademe (Kuvars ya da Çelik balta) |
 | Ateş narı | Ateş narı odunu | 40 | Ateş narı | 4. kademe (Kuvars ya da Çelik balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
@@ -1492,7 +1500,7 @@ Adanın güneydoğusu, sıradağın ardı: Kayalık Dağ'dan sıradağa yürü, 
 | Yaprak | 1 | 12 | 63 sn sonra yeniden çıkar |
 | Yarasa gübresi | 3 | 5 | 90 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
@@ -1526,7 +1534,7 @@ Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığ�
 | Yıldız eriği | Yıldız eriği odunu | 54 | Yıldız eriği | 5. kademe (Bazalt, Obsidyen ya da Kara çelik balta) |
 | Ay elması | Ay elması odunu | 54 | Ay elması | 5. kademe (Bazalt, Obsidyen ya da Kara çelik balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
@@ -1554,7 +1562,7 @@ Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığ�
 | Yıldız çiçeği | 74 | 63 | 90 sn sonra yeniden çıkar |
 | Yıldız tozu | 90 | 67 | 120 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
@@ -1614,7 +1622,7 @@ Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığ�
    - **Görevsiz kalınmaz:** bütün görevler kilitliyse ve sıradaki görevin eksiği bir tarifse Kemal "**X tarifini öğren**" ayak işini verir (Zümrüt'ün kazanında öğrenince kendiliğinden biter, 15 sikke · 15 XP). Tarifin içindeki bir malzemeyi hiç görmediysen önce onu getirtir. Kemal'in "alet dövdür" ve "ışık yap" ayak işleri de tarif bilinmiyorsa önce tarifi öğretir.
    - **Doğu geçidi de bu kurala girer:** Kemal'in "Doğu geçidini aç" (E3) görevi **Kaya patlatıcı** tarifi Zümrüt'ün kazanında öğrenilmeden verilmez (önceden görev tarifi yalnızca kitaba yazıyordu; Kaya patlatıcının içindeki çömlek kazanda görünmüyordu). Kemal'in ayak işi zinciri adım adım götürür: önce görülmemiş malzemeler (ör. Yarasa gübresi), sonra tarifin içindeki ve henüz hiçbir türü öğrenilmemiş parça (Kaya patlatıcı için **Nehir çömleği** → Islak nehir kili → Nehir kili getir), en sonda Kaya patlatıcı. Her "tarifini öğren" ayak işi o tarifi kitaba da yazar, kazanda görünsün diye. Bu sürümden önce tarifsiz alınmış E3 açılışta geri bırakılır (kuralı).
    - Bu kural gelmeden önce alınmış ve sürmekte olan görevler (ör. tarifi bilinmeden alınmış Gelincik boyası) olduğu gibi kalır; istenirse iptal edilebilir.
-6. **En çok 2 "!".** Haritada aynı anda en fazla **2 kişide** görev bekler. Bir görev daha açılırsa sıraya girer; bekleyen iki görevden biri tamamlanınca görünür. Sıra: önce erken biyom, sonra kişinin görev sırası. (Kemal'in ayak işleri bu sayıya girmez.)
+6. **En çok 2 "!".** Haritada aynı anda en fazla **2 kişide** görev bekler. Bir görev daha açılırsa sıraya girer; bekleyen iki görevden biri tamamlanınca görünür. Sıra (6 Kasım 2026, Boğaç): **önce oyuncunun bulunduğu biyomdaki görevler**, sonra erken biyom, sonra kişinin görev sırası (ör. Orman'a varınca Usta Sinan'ın R2 "!"si görünür). (Kemal'in ayak işleri bu sayıya girmez.)
 7. **Görevsiz kalınmaz.** Hiç görev yoksa (bütün zincirler kilitliyse) **Kemal'in başında ! çıkar** ve bir sonraki kilitli görevin eksik koşulunu tamamlatan bir iş verir ("Kemal'in ayak işleri", aşağıda). Oyuncu bunun bir eksiklikten doğduğunu anlamaz: Kemal'in gerçekten bir işi varmış gibi konuşur.
 8. **İstenenler biyomdan.** Her kişi kendi biyomunun malzemesini ister; yalnızca **son görevleri** bir sonraki biyomun **bol ve kolay** (zararsız ya da toplanabilir) bir şeyini isteyebilir. Akış kolaydan zora, Çayır'dan Mor Kristal Vadisi'ne gider.
 9. **Kendiliğinden biten işler.** Bir yere gitmek, biriyle tanışmak, köprüyü onarmak, sıradağı patlatmak, izleri bulmak ve Barbaros'un gemisini kurmak: bunlar yapıldığı anda biter, ödül oracıkta gelir (geri dönüp teslim etmek gerekmez). Kemal'e bu yüzden yalnızca yeni iş almaya gidilir.
@@ -2104,7 +2112,7 @@ ACT 1'de 27 kişi, **216 görev** (her kişinin 8 görevi) + Kemal'in ayak işle
 4. **Hiçbir yan görev kaçırılmaz.** Yan kişi görevi bitene kadar **her gün** kendi saatinde aynı yerde yeniden çıkar. Süre sınırı yoktur, zamanlı bir adım yoktur (bekleme adımı hariç; o da bayılmadıkça yarıda kalmaz). Tamamlamaya çalışan oyuncu hepsini bitirebilir.
 5. **Bayılınca yalnızca takip edilen yan görev iptal olur (Görevler'de bekleyenler kalır).** Yan görev sürerken bayılırsan (canavar, açlık ya da mor ışık) **yan görev** yarıda kalır, **ana görev** olduğu gibi durur. Yarıda kalan yan görev hiç alınmamış sayılır: yan kişi kendi yerine döner ve görevi **en baştan, aynı yerden** yeniden alırsın. Yan görev için doğan canavarlar bayılınca silinir.
 6. **Bırakmak.** Yan görev kartındaki **×** ile görev bırakılabilir ("Bu yan görevi bırakayım mı?" → Evet/Hayır). Bırakınca yan kişi yerine döner, görev yeniden alınabilir.
-7. **Görev sırasında kesilen canavarlar almanakta sayılmaz.** Yan görev için ortaya çıkan canavarlar (eskortta, beklemede, avda) almanağa eklenmez, av sayısını artırmaz, Reis sayacını doldurmaz ve **hiçbir zaman Reis çıkmaz**; yan görevin dövüş adımı sürerken Reis gelmez. Ganimet ve XP'leri normaldir.
+7. **Görev sırasında kesilen canavarlar almanakta sayılmaz.** Bir yan görevin kendi çıkardığı canavarlar biyomun gece/gündüz doğma kurallarına bağlı değildir. Yan görev için ortaya çıkan canavarlar (eskortta, beklemede, avda) almanağa eklenmez, av sayısını artırmaz, Reis sayacını doldurmaz ve **hiçbir zaman Reis çıkmaz**; yan görevin dövüş adımı sürerken Reis gelmez. Ganimet ve XP'leri normaldir.
 8. **Ödül (şimdilik):** her yan görev bitince **sikke + XP** verir (aşağıdaki tabloda); yan görev ödülü belgedeki XP'dir (v3.44'teki hatalı XP'den etkilenen kayıtlar: Sistemler › Kayıt). Başka ödüller ileride konuşulacak (bölümün sonundaki "İleride ödül fikirleri").
 9. **Sonuç dünyada görünür.** Bitirdiğin her yan görev adada iz bırakır: kurtardığın çocuk (Ela) Kemal'in kampındaki ateşin başında oturur, çobanın keçisi yanında otlar, satıcının arabası onarılmış durur… Bu kişiler artık saat aralığına bakmadan **hep** yerlerindedir (hayalet kız dışında; onun yerinde bir mezar taşı ve yanan bir fener kalır). Onlarla konuşunca görevden sonraki hallerini anlatan kısa bir söz söylerler.
 10. **Görev kartı.** Süren yan görev, ana görev kartının altında ince **mavi kenarlı ayrı bir kartta** görünür: "Yan görev · Kişi" başlığı, görevin adı ve şu anki adımın kısa yazısı ("Kalan güvercin: 2/4" gibi), köşede **×**. Ana görev kartının başlığı artık "… · Ana görev" yazar. **Görevler penceresi** iki bölümdür: üstte **Ana görev**, altta **Yan görevler** (süren yan görev ve adımı; sonra "Bitirdiklerin: 3/12" ve biten yan görevlerin adları). **Yeri (telefonda kart ekranın ortasında kalıyordu):** yan görev kartı her zaman ana görev kartının **hemen altında, aynı genişlikte** durur (bilgisayarda üstte ortada, telefonda **sağ üstte**); ana görev kartı yoksa onun yerinde durur. Telefonda kart tek satırdır (kişi · görev · adım); dokununca açılıp bütün yazıyı gösterir, bir daha dokununca kapanır. Telefonda bir pencere (envanter, kazan, pazar…) ya da konuşma açıkken kart gizlenir.
@@ -2115,7 +2123,7 @@ ACT 1'de 27 kişi, **216 görev** (her kişinin 8 görevi) + Kemal'in ayak işle
 ### Haritada yan görevler
 
 - **Yan görev işaretleri (6 Kasım 2026, Boğaç):** yan kişiler haritanın belli yerlerinde, kendi saatlerinde belirir. İşaret, saati gelmiş ve görevi bekleyen kişi için çıkar (kendi saatindeki ya da bir kez alınmış görevin kişisi); renk önemli değildir (mavi ya da mor).
-  - **Keşfedilmiş (haritada açılmış) yerdeyse:** kişi büyük haritada **kendi yerinde bir "?"** ile görünür; bu "?" ana görevin "!" işaretiyle **aynı boyda** ve okunur büyüklüktedir. Harita açıkken kişinin saati gelirse "?" o an belirir.
+  - **Keşfedilmiş (haritada açılmış) yerdeyse:** kişi büyük haritada **kendi yerinde bir "?"** ile görünür; bu "?" ana görevin "!" işaretiyle **aynı boyda** ve okunur büyüklüktedir. Yan görev "?"si ve sisli daire harita ölçeğinden bağımsız bir **en küçük boyda** çizilir: ekranda en az ana görevin "!"i kadar (~16 piksel). Harita açıkken kişinin saati gelirse "?" o an belirir.
   - **Keşfedilmemiş yerdeyse:** "?" gösterilmez; yalnızca oyuncu kişiye **~10 kare (160 piksel)** ya da daha yakınken (harita kapalıyken de) kişinin çevresi haritada **sisli bir daire** ile gösterilir. Dairenin ortası kişinin tam yeri değildir: kişiden en çok **48 piksel** kayar (kişi dairenin içinde bir yerdedir).
   - **En çok 2:** bir biyomda aynı anda en çok 2 bitmemiş yan görev açık olduğu için (kural 3, "Sırayla açılırlar") haritada da **biyom başına en çok 2** yan görev işareti görünür.
 - **Dünyada durmayan kişi için işaret yoktur:** Gece görünen kız Işıl için haritada işaret çıkmaz. Mağarada iken haritada yan görev işareti çıkmaz.
@@ -2137,18 +2145,18 @@ Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş an
 
 | # | Biyom | Kişi | Görev | Saat | Ton | Ödül |
 |---|---|---|---|---|---|---|
-| 1 | Çayır | Mavi (genç kız) | Denizden dönmeyen kardeş | 17:00–23:00 | hüzünlü, mor ışık | 120 sikke · 80 XP |
-| 2 | Çayır | Toprak (çocuk) | Gece öten kuş (v3.42; eskiden Davut'un "Kaçan keçi Pamuk"u, artık ana görev) | 21:00–01:00 | tatlı, sessiz | 70 sikke · 50 XP |
-| 3 | Çayır | Güvercinci Bulut (çocuk) | Kaçan güvercinler | 10:00–15:00 | tatlı, sırlar | 80 sikke · 50 XP |
-| 4 | Orman | Ela (küçük kız) | Kampa giden yol | yalnızca gece (20:00–05:00) | gerilimli, sıcak son | 150 sikke · 120 XP |
-| 5 | Orman | Şövalye Kahraman Dede | Ejderin ini | 11:00–16:00 | komik | 90 sikke · 60 XP |
-| 6 | Orman | Seyyar satıcı Bekir | Kırık araba | 12:00–17:00 | hafif | 100 sikke · 60 XP |
-| 7 | Bataklık | Avcı Kartal | Yaralı avcı | 15:00–21:00 | gerilimli | 160 sikke · 120 XP |
-| 8 | Bataklık | Hayali | Işığı gören adam | 18:00–03:00 | gizemli, mor ışık | 140 sikke · 100 XP |
-| 9 | Bataklık | Falcı Kader | Kader satan kadın | 22:00–06:00 | gizemli | 150 sikke · 100 XP |
-| 10 | Kayalık Dağ | Hatice Nine | Torun Emir | 07:00–13:00 | acı son | 180 sikke · 140 XP |
-| 11 | Kayalık Dağ | Yolcu Yahya | Dağda kaybolan yolcu | 12:30–17:30 | yol hikâyesi | 170 sikke · 130 XP |
-| 12 | Kayalık Dağ | Işıl (hayalet kız) | Gece görünen kız | 22:00–04:00 | gizemli, hüzünlü | 160 sikke · 120 XP |
+| 1 | Çayır | Mavi (genç kız) | Denizden dönmeyen kardeş | 17:00–23:00 | hüzünlü, mor ışık | 270 sikke · 220 XP |
+| 2 | Çayır | Toprak (çocuk) | Gece öten kuş (v3.42; eskiden Davut'un "Kaçan keçi Pamuk"u, artık ana görev) | 21:00–01:00 | tatlı, sessiz | 210 sikke · 170 XP |
+| 3 | Çayır | Güvercinci Bulut (çocuk) | Kaçan güvercinler | 10:00–15:00 | tatlı, sırlar | 210 sikke · 170 XP |
+| 4 | Orman | Ela (küçük kız) | Kampa giden yol | yalnızca gece (20:00–05:00) | gerilimli, sıcak son | 240 sikke · 180 XP |
+| 5 | Orman | Şövalye Kahraman Dede | Ejderin ini | 11:00–16:00 | komik | 270 sikke · 200 XP |
+| 6 | Orman | Seyyar satıcı Bekir | Kırık araba | 12:00–17:00 | hafif | 270 sikke · 200 XP |
+| 7 | Bataklık | Avcı Kartal | Yaralı avcı | 15:00–21:00 | gerilimli | 480 sikke · 580 XP |
+| 8 | Bataklık | Hayali | Işığı gören adam | 18:00–03:00 | gizemli, mor ışık | 440 sikke · 530 XP |
+| 9 | Bataklık | Falcı Kader | Kader satan kadın | 22:00–06:00 | gizemli | 480 sikke · 580 XP |
+| 10 | Kayalık Dağ | Hatice Nine | Torun Emir | 07:00–13:00 | acı son | 830 sikke · 1.060 XP |
+| 11 | Kayalık Dağ | Yolcu Yahya | Dağda kaybolan yolcu | 12:30–17:30 | yol hikâyesi | 580 sikke · 740 XP |
+| 12 | Kayalık Dağ | Işıl (hayalet kız) | Gece görünen kız | 22:00–04:00 | gizemli, hüzünlü | 630 sikke · 800 XP |
 
 **Yerleri:** her yan kişi kendi biyomunda, biyomun farklı bir köşesinde, başka kişilere, kuzenlerin evlerine, köprülere ve öbür yan kişilere en az ~220 piksel uzakta, ağaçsız düz bir yerde durur (ada her kurulduğunda aynı yer). **İstisna: Mavi** İskele'nin hemen yanında, Kemal'in kampının dibinde durur (Kemal'e ~45 px, Poyraz'a ~70 px); hikâyesi iskeleye bağlı olduğu için ~220 px kuralı ona uygulanmaz. Görev noktaları (izler, enkaz, güvercinler…) kişinin çevresinde, kendi biyomunda, yürünebilir yerlere konur.
 
@@ -2299,34 +2307,34 @@ Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biy
 
 | # | Kişi · Görev | Biyom · saat | Adımlar | Ödül | İz |
 |---|---|---|---|---|---|
-| 19 | **Arıcı Gülsüm** · Kaçan arı oğulu | Çayır · 08:00–13:00 | Üç arı salkımını bul → Gülsüm'e dön | 80 · 60 XP | yanında arı kovanları |
-| 20 | **Ozan** (çocuk) · Ağaca takılan uçurtma | Çayır · 14:00–19:00 | Ağaçtaki uçurtmayı bul → 2 İp götür | 70 · 50 XP | başının üstünde uçan uçurtma |
-| 21 | **Değirmenci Rıfat** · Duran değirmen | Çayır · 05:00–10:00 | Değirmenin önündeki 2 kurdu kov → 6 Dal, 4 Lif götür | 100 · 70 XP | kanatları dönen değirmen (öncesi kırık) |
-| 22 | **Mantarcı Saadet** · Mantar sepeti | Orman · 05:30–10:30 | Dört kanlıca kümesini topla (sinek mantarına dokunma) → dön | 110 · 80 XP | mantar kurutma ipi |
-| 23 | **Oduncu Tarık** · Ağacın altında | Orman · 07:00–12:00 | 2 Sopa, 2 İp götür (koltuk değneği) → Tarık'ı Usta Sinan'ın tezgâhına götür (yolda domuz ve kurt) | 130 · 90 XP | Tarık artık Sinan'ın yanında |
-| 24 | **Ressam Lale** · Ormanın renkleri | Orman · 16:00–20:30 | 3 Gelincik, 4 Yaban mersini götür → ormanın en güzel açıklığını bul → dön | 120 · 90 XP | şövalesi (hep) |
-| 25 | **Kayıkçı Remzi** · Sisteki kayıkçı | Bataklık · yalnızca gece (00:00–05:00) | Remzi'yi ışıkla Avcı Doğan'ın kulübesine götür (yolda kurtlar) | 160 · 120 XP | Remzi Doğan'ın ateşinin başında |
-| 26 | **Cemile** (çocuk) · Şarkı söyleyen kurbağalar | Bataklık · 18:30–23:00 | Vıraklamaları dinleyip dört kurbağayı bul (yakalamak yok) → dön | 150 · 110 XP | yanında iki kurbağa |
-| 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 08:00–14:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn, kurtlar) → dön | 170 · 130 XP | ilaç kazanı (hep) |
-| 28 | **Dağlı Zehra** · Uçurumdaki oğlak | Kayalık Dağ · 06:00–12:00 | Oğlak Boncuk'u 3 kez yakala → Zehra'ya götür | 180 · 140 XP | yanında Boncuk |
-| 29 | **Gözcü Bora** · Kartal yumurtası | Kayalık Dağ · 09:00–15:00 | Düşen yumurtayı bul → yuvanın dibindeki 2 kurdu kov, yumurtayı koy → dön | 190 · 150 XP | – |
-| 30 | **Keşiş Sükûn** · Dağın çanları | Kayalık Dağ · 04:30–09:30 | Rüzgârda çınlayan üç çanı bul → dön | 200 · 160 XP | yanında asılı rüzgâr çanı |
-| 31 | **Külcü Hasret** · Küllerin altındaki mektup | Kül Diyarı · 09:00–14:00 | Dumanı tüten dört mektup parçasını bul (her biri bir satır) → dön (acı son, sessiz) | 320 · 280 XP | mektup kutusu |
-| 32 | **Yangıncı Kor Ali** · Sönmeyen ağaçlar | Kül Diyarı · 13:00–18:00 | İçten yanan beş kül ağacını söndür (her biri 1 Su) → dön | 340 · 300 XP | diyarın ilk yeşil fidanı |
-| 33 | **Çırak Çelik** · Lava düşen çekiç | Kül Diyarı · 07:00–11:30 | Çelik'le lav tarlasına git (yolda kertenkeleler) → çekici kazmayla kabuktan çıkar (kazma gerekli) → dön | 360 · 320 XP | örsü (hep) |
-| 34 | **Nar** (çocuk) · Sıcak yumurta | Kül Diyarı · 17:30–22:30 | Saklanan yumurtayı bul → yumurta çatlarken ateşin başında bekle (60 sn, kurtlar) → dön | 380 · 330 XP | omzunda yavru ateş kertenkelesi Kıvılcım |
-| 35 | **Duman Dede** · Kükürtteki sesler | Kül Diyarı · yalnızca gece (23:00–04:00) | 4 Kükürt kristali götür → üç sunakta yak; dumanlar Yıldızsızların adaya inişini, köpekleri ve şapkayı gösterir → dön | 380 · 340 XP | – |
-| 36 | **Katırcı Ömer** · Kül fırtınasında kaybolan | Kül Diyarı · 15:00–20:00 | Katır Kınalı'yı 3 kez yakala → Ömer'e götür | 400 · 360 XP | yanında Kınalı |
-| 37 | **Melodi** · Şarkı söyleyen kristaller | Mor Kristal Vadisi · 11:30–16:30 | Çınlamalarını dinleyip beş kristali bul → dön | 450 · 400 XP | yanında parlayan bir kristal |
-| 38 | **Balıkçı Selim** · Ayna Gölü'ndeki kız | Mor Kristal Vadisi · yalnızca gece (20:30–01:30) | Dört ayna parçasını topla → kıyıda birleştir (kız mor ışığın içinde, kurtarılamaz; acı son, sessiz) → dön | 480 · 430 XP | göl kıyısında ayna |
-| 39 | **Kristalci Yaren** · Taşkalp | Mor Kristal Vadisi · 08:00–13:30 | Taşocağındaki 3 Kristal golemi yen (çekirdek taşları) → dön; golem Taşkalp uyanır | 520 · 470 XP | Taşkalp ayakta, gözleri mavi (öncesi yıkık) |
-| 40 | **Lostromo Rıza** · Tayfanın künyeleri | Mor Kristal Vadisi · yalnızca gece (01:00–05:00) | Gölge kurtlarının yatağında 4 kurdu yen (künyeler) → kıyıda dört fener yak → dön | 560 · 500 XP | kıyıda dört fener |
-| 41 | **Asena** · Mor gözlü yavru | Mor Kristal Vadisi · 19:00–24:00 | 3 Geyik eti götür → gece yavruyu sürüsünden koru (60 sn) → dön; yavru Gece onunla kalır | 540 · 480 XP | yanında yavru Gece |
-| 42 | **Fenerci Işık** · Düşen ışığı toplamak | Mor Kristal Vadisi · yalnızca gece (21:00–04:30) | Mor ışığın düştüğü yerlerde üç mor damla topla (elinde ışık olmalı, yoksa ışık seni alır) → dön | 600 · 550 XP | **üç kalıcı fener ateşi:** yanlarında gece mor ışık gelmez (güvenli yer) |
+| 19 | **Arıcı Gülsüm** · Kaçan arı oğulu | Çayır · 08:00–13:00 | Üç arı salkımını bul → Gülsüm'e dön | 220 · 180 XP | yanında arı kovanları |
+| 20 | **Ozan** (çocuk) · Ağaca takılan uçurtma | Çayır · 14:00–19:00 | Ağaçtaki uçurtmayı bul → 2 İp götür | 220 · 180 XP | başının üstünde uçan uçurtma |
+| 21 | **Değirmenci Rıfat** · Duran değirmen | Çayır · 05:00–10:00 | Değirmenin önündeki 2 kurdu kov → 6 Dal, 4 Lif götür | 250 · 200 XP | kanatları dönen değirmen (öncesi kırık) |
+| 22 | **Mantarcı Saadet** · Mantar sepeti | Orman · 05:30–10:30 | Dört kanlıca kümesini topla (sinek mantarına dokunma) → dön | 240 · 180 XP | mantar kurutma ipi |
+| 23 | **Oduncu Tarık** · Ağacın altında | Orman · 07:00–12:00 | 2 Sopa, 2 İp götür (koltuk değneği) → Tarık'ı Usta Sinan'ın tezgâhına götür (yolda domuz ve kurt) | 280 · 210 XP | Tarık artık Sinan'ın yanında |
+| 24 | **Ressam Lale** · Ormanın renkleri | Orman · 16:00–20:30 | 3 Gelincik, 4 Yaban mersini götür → ormanın en güzel açıklığını bul → dön | 280 · 210 XP | şövalesi (hep) |
+| 25 | **Kayıkçı Remzi** · Sisteki kayıkçı | Bataklık · yalnızca gece (00:00–05:00) | Remzi'yi ışıkla Avcı Doğan'ın kulübesine götür (yolda kurtlar) | 390 · 470 XP | Remzi Doğan'ın ateşinin başında |
+| 26 | **Cemile** (çocuk) · Şarkı söyleyen kurbağalar | Bataklık · 18:30–23:00 | Vıraklamaları dinleyip dört kurbağayı bul (yakalamak yok) → dön | 390 · 470 XP | yanında iki kurbağa |
+| 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 08:00–14:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn, kurtlar) → dön | 500 · 610 XP | ilaç kazanı (hep) |
+| 28 | **Dağlı Zehra** · Uçurumdaki oğlak | Kayalık Dağ · 06:00–12:00 | Oğlak Boncuk'u 3 kez yakala → Zehra'ya götür | 580 · 740 XP | yanında Boncuk |
+| 29 | **Gözcü Bora** · Kartal yumurtası | Kayalık Dağ · 09:00–15:00 | Düşen yumurtayı bul → yuvanın dibindeki 2 kurdu kov, yumurtayı koy → dön | 750 · 950 XP | – |
+| 30 | **Keşiş Sükûn** · Dağın çanları | Kayalık Dağ · 04:30–09:30 | Rüzgârda çınlayan üç çanı bul → dön | 580 · 740 XP | yanında asılı rüzgâr çanı |
+| 31 | **Külcü Hasret** · Küllerin altındaki mektup | Kül Diyarı · 09:00–14:00 | Dumanı tüten dört mektup parçasını bul (her biri bir satır) → dön (acı son, sessiz) | 820 · 1.260 XP | mektup kutusu |
+| 32 | **Yangıncı Kor Ali** · Sönmeyen ağaçlar | Kül Diyarı · 13:00–18:00 | İçten yanan beş kül ağacını söndür (her biri 1 Su) → dön | 820 · 1.260 XP | diyarın ilk yeşil fidanı |
+| 33 | **Çırak Çelik** · Lava düşen çekiç | Kül Diyarı · 07:00–11:30 | Çelik'le lav tarlasına git (yolda kertenkeleler) → çekici kazmayla kabuktan çıkar (kazma gerekli) → dön | 1.060 · 1.620 XP | örsü (hep) |
+| 34 | **Nar** (çocuk) · Sıcak yumurta | Kül Diyarı · 17:30–22:30 | Saklanan yumurtayı bul → yumurta çatlarken ateşin başında bekle (60 sn, kurtlar) → dön | 1.060 · 1.620 XP | omzunda yavru ateş kertenkelesi Kıvılcım |
+| 35 | **Duman Dede** · Kükürtteki sesler | Kül Diyarı · yalnızca gece (23:00–04:00) | 4 Kükürt kristali götür → üç sunakta yak; dumanlar Yıldızsızların adaya inişini, köpekleri ve şapkayı gösterir → dön | 940 · 1.440 XP | – |
+| 36 | **Katırcı Ömer** · Kül fırtınasında kaybolan | Kül Diyarı · 15:00–20:00 | Katır Kınalı'yı 3 kez yakala → Ömer'e götür | 820 · 1.260 XP | yanında Kınalı |
+| 37 | **Melodi** · Şarkı söyleyen kristaller | Mor Kristal Vadisi · 11:30–16:30 | Çınlamalarını dinleyip beş kristali bul → dön | 1.090 · 1.810 XP | yanında parlayan bir kristal |
+| 38 | **Balıkçı Selim** · Ayna Gölü'ndeki kız | Mor Kristal Vadisi · yalnızca gece (20:30–01:30) | Dört ayna parçasını topla → kıyıda birleştir (kız mor ışığın içinde, kurtarılamaz; acı son, sessiz) → dön | 1.400 · 2.330 XP | göl kıyısında ayna |
+| 39 | **Kristalci Yaren** · Taşkalp | Mor Kristal Vadisi · 08:00–13:30 | Taşocağındaki 3 Kristal golemi yen (çekirdek taşları) → dön; golem Taşkalp uyanır | 1.240 · 2.070 XP | Taşkalp ayakta, gözleri mavi (öncesi yıkık) |
+| 40 | **Lostromo Rıza** · Tayfanın künyeleri | Mor Kristal Vadisi · yalnızca gece (01:00–05:00) | Gölge kurtlarının yatağında 4 kurdu yen (künyeler) → kıyıda dört fener yak → dön | 1.400 · 2.330 XP | kıyıda dört fener |
+| 41 | **Asena** · Mor gözlü yavru | Mor Kristal Vadisi · 19:00–24:00 | 3 Geyik eti götür → gece yavruyu sürüsünden koru (60 sn) → dön; yavru Gece onunla kalır | 1.400 · 2.330 XP | yanında yavru Gece |
+| 42 | **Fenerci Işık** · Düşen ışığı toplamak | Mor Kristal Vadisi · yalnızca gece (21:00–04:30) | Mor ışığın düştüğü yerlerde üç mor damla topla (elinde ışık olmalı, yoksa ışık seni alır) → dön | 1.090 · 1.810 XP | **üç kalıcı fener ateşi:** yanlarında gece mor ışık gelmez (güvenli yer) |
 
 ### Ödüller
 
-Şimdilik her yan görev yalnızca **sikke + XP** verir (tablodaki değerler); XP, bir canavar avının birkaç katı kadardır. Ödül yan görev bitince bir kez verilir; yarıda kalıp yeniden yapılan görev ödülü yine bir kez verir.
+Şimdilik her yan görev yalnızca **sikke + XP** verir (tablodaki değerler). **Ödül kuralı (geçici, 6 Kasım 2026, Boğaç: "görevi yaptığına değecek kadar XP ve altın ver"; yan görevler yeniden tasarlanacak):** her yan görevin sikkesi ve XP'si, **aynı biyomun ana görevlerinin ortalama ödülünün en az 1,5 katıdır**; emeğe göre (adım sayısı, dövüş, koruma, bekleme) 1,5–2,5 kat (mağara yan görevleri 2,5 kat). Daha önce bundan yüksek olan ödül düşürülmez; değerler 10'a yuvarlanır. Ödül yan görev bitince bir kez verilir; yarıda kalıp yeniden yapılan görev ödülü yine bir kez verir.
 
 ### İleride ödül fikirleri (konuşulacak)
 
@@ -2396,7 +2404,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 - *Boss:* Yankı Kraliçesi odaya iner; yen.
 - *Dön:* "Mağara sustu. Damlaları dinle… artık yalnızca su sesi var. Sağ ol." Görev biter.
 - *İkinci deneme:* "Yine geldin. Fener hazır, mantarlar yerinde. Kraliçeyi çağırayım mı?" → **Çağır**.
-- *Ödül:* 300 sikke · 250 XP (boss'u yenince ayrıca Reis ödülü: sikke ve boss'un XP'si). *Sonra:* "Damla taşı kazmaya döndüm. Kraliçe olmadan mağara çok sessiz, biraz da özlüyorum."
+- *Ödül:* 310 sikke · 260 XP (boss'u yenince ayrıca Reis ödülü: sikke ve boss'un XP'si). *Sonra:* "Damla taşı kazmaya döndüm. Kraliçe olmadan mağara çok sessiz, biraz da özlüyorum."
 
 **Malzemeler ve fiyatlar**
 
@@ -2487,7 +2495,7 @@ Bataklığın altında, tavanından su sızan, yerleri balçıklı bir mağara. 
 
 **Toplanabilenler:** Parıltı yosunu (yeşil parlar), Siyah balçık, Batık kök, Sazlı inci, Mağara mantarı.
 
-**Yan görev · Sazcı Nail — "Çamur Ana"** (yaşlı bir sazcı): köyün kuyusu mağaranın altından beslenir; mor ışıktan beri Çamur Ana suyu balçığa çeviriyor. **4 Parıltı yosunu** ister, ondan ışıklı bir yem yapar; Çamur Ana yeme gelir, yen. Ödül: **700 sikke · 650 XP**. Sonra: "Kuyudan yine tatlı su çıkıyor."
+**Yan görev · Sazcı Nail — "Çamur Ana"** (yaşlı bir sazcı): köyün kuyusu mağaranın altından beslenir; mor ışıktan beri Çamur Ana suyu balçığa çeviriyor. **4 Parıltı yosunu** ister, ondan ışıklı bir yem yapar; Çamur Ana yeme gelir, yen. Ödül: **700 sikke · 680 XP**. Sonra: "Kuyudan yine tatlı su çıkıyor."
 
 | Malzeme | Nereden | Fiyat | Tarif |
 |---|---|---|---|
@@ -2522,7 +2530,7 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 
 **Toplanabilenler:** Gümüş filizi (parlar), Dağ kristali (parlar), Rüzgâr taşı, Kar likeni, Mağara mantarı.
 
-**Yan görev · Dağcı Tuncay — "Dağ Devi"** (ipi kopmuş bir dağcı): Dağ Devi uyandı, tavandan kaya yağıyor, yol kapandı. **4 Gümüş filizi** ister, bir çan döver; çanın sesiyle dev çıkar, yen. Ödül: **1.000 sikke · 950 XP**.
+**Yan görev · Dağcı Tuncay — "Dağ Devi"** (ipi kopmuş bir dağcı): Dağ Devi uyandı, tavandan kaya yağıyor, yol kapandı. **4 Gümüş filizi** ister, bir çan döver; çanın sesiyle dev çıkar, yen. Ödül: **1.000 sikke · 1.060 XP**.
 
 | Malzeme | Nereden | Fiyat | Tarif |
 |---|---|---|---|
@@ -2557,7 +2565,7 @@ Kül Diyarı'nın altında, yarıklarından kor ışığı sızan sıcak bir ma�
 
 **Toplanabilenler:** Kükürt kristali (parlar), Kor taşı (parlar), Kül mantarı, Volkan camı, Mağara mantarı.
 
-**Yan görev · Ocakçı Alev — "Kor Kral"** (bir demircinin kızı): mor ışık babasının yüz yıllık ocağının ateşini mağaraya çekti, Kor Kral onu yuttu. **4 Kükürt kristali** ister, bir duman yakar; Kor Kral dumana gelir, yen. Ödül: **1.400 sikke · 1.300 XP**.
+**Yan görev · Ocakçı Alev — "Kor Kral"** (bir demircinin kızı): mor ışık babasının yüz yıllık ocağının ateşini mağaraya çekti, Kor Kral onu yuttu. **4 Kükürt kristali** ister, bir duman yakar; Kor Kral dumana gelir, yen. Ödül: **1.400 sikke · 1.800 XP**.
 
 | Malzeme | Nereden | Fiyat | Tarif |
 |---|---|---|---|
@@ -2592,7 +2600,7 @@ Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara
 
 **Toplanabilenler:** Mor damar taşı (parlar), Işık sporu (parlar), Ayna taşı (parlar), Yıldız tozu (parlar), Mağara mantarı.
 
-**Yan görev · Gökbilimci Nur — "Işık Yutan"** (mor ışığı inceleyen bir bilgin): mağara ışığı içiyor, dipteki Işık Yutan büyüdükçe vadinin kristalleri sönüyor. **4 Işık sporu** ister, fenerini doldurur; Işık Yutan ışığa gelir, yen. Ödül: **2.000 sikke · 1.900 XP**. Sonra Nur bir ipucu verir: mor ışık düştüğü yerde bir şey doğuruyor.
+**Yan görev · Gökbilimci Nur — "Işık Yutan"** (mor ışığı inceleyen bir bilgin): mağara ışığı içiyor, dipteki Işık Yutan büyüdükçe vadinin kristalleri sönüyor. **4 Işık sporu** ister, fenerini doldurur; Işık Yutan ışığa gelir, yen. Ödül: **2.000 sikke · 2.580 XP**. Sonra Nur bir ipucu verir: mor ışık düştüğü yerde bir şey doğuruyor.
 
 | Malzeme | Nereden | Fiyat | Tarif |
 |---|---|---|---|
@@ -2963,7 +2971,7 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 
 ### Usta Sinan
 
-**Yer:** Orman'da (2. biyom), tezgâhı ve kereste yığınının başında. **Tanışma:** her zaman; ilk konuşmada **Hasır yatak** hediye eder.
+**Yer:** Orman'da (2. biyom), tezgâhı ve kereste yığınının başında. **Tanışma:** her zaman; ilk konuşmada **Hasır yatak** hediye eder. Görevi yokken (R2 açılmamışken) ilk sözü tek cümlelik bir yönlendirmedir: "Önce Börü'nün işini bitir evlat, sonra sana bir barınak çatarız."
 
 - **v3.39 (Boğaç): Marangoz Çınar ile birleşti.** Çınar oyundan kaldırıldı; onun işleri, ev ve barınak satışı dahil, Sinan'dadır. Görevleri 16'dan 8'e indi (ACT 1 › Ana görevler › Usta Sinan).
 - Yere kurulan yapıları (Yapılar kategorisi), yatakları ve **ev eşyalarını** (evin içine konur) yapar. Tarif kazanda öğrenilmiş, malzeme çantanda olmalı. İşçilik: bkz. Sistemler › Ekonomi.

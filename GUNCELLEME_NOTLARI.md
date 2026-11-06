@@ -8,6 +8,31 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.47 · 6 Kasım 2026
+
+### Oynanış
+
+- **Görev işaretleri bulunduğun yere göre:** iki "!" önce bulunduğun bölgedeki kişilerde çıkar. Orman'a varınca Usta Sinan'ın ilk görevi hemen görünür.
+- **Börü'nün kaçma dersi:** öğreticiyi geçtiysen ders seni Börü'nün yanında tutmaz; uzaklaşırsan ders biter, istediğin zaman Börü'den yeniden alabilirsin.
+- **Yaban domuzları geceleri:** Orman'da yaban domuzu artık yalnızca gece çıkar ve gördüğü an saldırır.
+- Usta Sinan'ın sana henüz işi yokken ilk sözü seni nereye gideceğine yönlendirir.
+
+### Denge
+
+- **Yan görev ödülleri yükseldi:** bütün yan görevler artık aynı bölgenin ana görevlerinden belirgin biçimde fazla sikke ve XP verir (ör. Güvercinci Bulut 210 sikke · 170 XP, Kristalci Yaren 1.240 sikke · 2.070 XP).
+- Sincap avı 5 XP verir.
+- Sürü hâlinde gelen saldırgan canlılar düşük seviyede her bölgede küçük gelir: Seviye 1–3'te 2, Seviye 4–6'da 2–3.
+
+### Arayüz
+
+- Büyük haritada yan görev "?"si ve sisli daire, haritayı ne kadar uzaklaştırırsan uzaklaştır okunur büyüklükte kalır.
+
+### Tasarım belgesi
+
+- Orman bölümü oyunla karşılaştırıldı: Deri parçası oranları, canlıların doğma koşulları, sürü boyunun seviyeyle büyümesi, Sarkıt ve yeni yan görev ödülleri eklendi.
+
+---
+
 ## Versiyon 3.46 · 6 Kasım 2026
 
 ### Kayıtlar
@@ -374,11 +399,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Girişe yeni kural: oyun oyuncuya asla adım adım iş tarif etmez; yapabiliyorsa otomatik yapar, yapamıyorsa göstermez.
-
----
-
-## Versiyon 3.27 · 5 Kasım 2026
-
-### Arayüz
-- **Bilgisayara yükle tek tıkla:** düğme yalnızca oyunun tek basışta yüklenebildiği tarayıcılarda (Chrome, Edge) görünür; basınca yükleme penceresi açılır, "Yükle" deyince oyun masaüstüne gelir. Yüklenemeyen tarayıcılarda (Firefox, Mac Safari) düğme hiç çıkmaz. Adım adım nasıl yüklenir anlatan pencereler kaldırıldı.
-- Kol yardımındaki "Firefox'ta aç ya da kabloyla bağla" notu kaldırıldı.

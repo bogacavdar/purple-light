@@ -1,3 +1,17 @@
+## v3.47 (6 Kasım 2026) · E2E Orman: "!" önce bulunduğun biyomda, Börü dersi kilitlemez, gece domuzu, yeni yan görev ödülleri
+
+- **"!" sırası (30_act1 kural 6):** `v186` `refreshVis` yeniden yazıldı: uygun görevler (her kişiden ilki) önce verenin bulunduğu biyom = oyuncunun biyomu (`gObj` konumu, yoksa `GB`), sonra `PRI` (erken biyom, kişinin sırası); ilk 2. Eski "yapışkan" `S.vis` (açılmış "!" yerinde kalırdı) yok: biyom değişince "!" de değişir. Denendi: B5 bitmiş, Orman'da `["R2","B6"]`, Çayır'da `["B6","CB3"]`.
+- **Börü dersi (10_akis):** `v181` `startLesson` `DL.free=!tz` (öğretici dışında başladı) ve `DL.hadS1`. Serbestse ilk saldırıda yerinde tutma, oyun durdurma ve atılma engeli yok; `tickDL` başında Börü'ye (`alp`) >280 px → yeni `quitLesson()` (kerevit silinir, yazı kalkar, ders başında verilen `S1` önceden yoksa geri alınır, `DL.after` boşalır; `DL.done` değişmez, Börü'den yeniden alınır). Öğretici içinde (`tz`) eskisi gibi. Denendi: 400 px uzaklaşınca ders bitti, S1 yok.
+- **Yaban domuzu yalnızca gece:** `BANIM[1]` koşulu `w&&isNight()` (önce `!isNight()`). Yan görev canavarları `v230` `spawnMob` ile doğduğu için etkilenmez (Tarık, Kahraman Dede).
+- **Sincap XP 5** (ANIM, önce 3). **Sürü boyu (30_act1 Orman notu):** `spawnIn` saldırgan sürüler Sv 1–3: 2, Sv 4–6: 2–3, sonra tablo; önceki kod `!D.z` ile bu kuralı yalnız Çayır/Orman canlılarına uyguluyordu (Bataklık kurdu, Kül kurdu Sv 1'de de 2–4 gelebiliyordu), artık her biyomda. Orman Deri parçası oranları (Sincap %60, Karaca %80 ×1–2, Kunduz %75, Domuz %70 ×1–2) kodla zaten aynıydı.
+- **Yan görev ödülleri:** 42 görevin `c`/`x` verisi belgeden (36_yan_gorevler tabloları, 37_magaralar) güncellendi (41 değişti; Kökçü Fidan aynı). Oyunda dökülen `q.c`/`q.xp` belgeyle otomatik karşılaştırıldı: 0 fark.
+- **OYN-07:** `v230` `mapSQ` büyük haritada tuvalin ekran ölçeğini (`canvas.width/clientWidth`) hesaba katar: "?" ve sisli daire en az ~18 ekran pikseli.
+- **OYN-08:** `talkUsta` (ana kod): R2 açılmamışsa (`__pl186.unlocked(R2)` değil, bitmemiş, sürmüyor) ilk sözü "Önce Börü'nün işini bitir evlat, sonra sana bir barınak çatarız." (ilk tanışmada hediye metninden önce).
+- **ORM-07:** belgede "konuşma açıkken uzaklaşınca pencere kapanır" kuralı yok; dokunulmadı (normalde konuşma sırasında yürünmüyor, yalnızca ışınlamayla görülür).
+- **Ölçüm** (`olcum.js` CPU×4, gl; 3.46 → 3.47): BOOT 18.467 → 18.794 ms; kumsal avg 185,4 → 188,2; yürürken 167,8 → 158,1; PLAY 10 sn js 3.992 → 4.349 ms (gürültü içinde).
+- **Geri almak için:** `refreshVis` (v3.46 hali), `v181` `DL.free`/`quitLesson` ve üç `!DL.free` koşulu, `BANIM[1]` domuz koşulu, `Sincap xp`, `spawnIn` sürü satırı, yan görev `c`/`x` değerleri (v3.46 hali), `mapSQ` `K`, `talkUsta` `lock`. Kayıt alanı ve MAPV değişmedi.
+- Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
+
 ## v3.46 (6 Kasım 2026) · kayıt silme bildirimi ana menüde en üstte, 5 sn (ÇYR-15)
 
 - v3.45'teki `toastLong` silindi; yerine ana kodda `saveNote(msg)` (`toast`'un altında): kendi `#savenote` kutusu (`position:fixed`, `z-index:2147483000`, alt ortada, uyarı çerçeveli, 15–19 px kalın yazı, `pointer-events:none`). İki bildirim gelirse alt alta. 5 sn sayımı sayfa tam yüklenip (`readyState==='complete'`) ana menü (`#title`) görününce başlar, sonra 0,4 sn'de söner (v3.45'te toast 1,4 sn'lik `rise` animasyonuyla ~1,5 sn okunuyor, `#tcard` altında kalıyordu).
@@ -166,13 +180,4 @@
 - `v253inst` yeniden yazıldı: yalnızca `beforeinstallprompt`. `#instov` penceresi ve CSS'i silindi; iOS/Mac Safari için `manual` dalı gitti.
 - iPhone tam ekran rehberi silindi: `#s-ios` notu, `#r-ios` düğmesi ve `#r-iosp`, `.iosg` ve `#r-iosp` CSS'i, `IOS&&!canLock` satırı.
 - `v253inst`/`v254inst`: kol basışında bildirim yok, sessizce bir şey yapmaz.
-- Kontrol: chk.js 0 hata.
-
-## v3.27 (5 Kasım 2026) · Bilgisayara yükle yalnızca tek tıkla; nasıl yüklenir pencereleri silindi
-- Boğaç: "oyuncuya ona bas buna bas denmez, buton olur basar ve yükler bitti". `v254inst` yeniden yazıldı:
-  - Düğme yalnızca `beforeinstallprompt` gelince görünür; basınca `prompt()`.
-  - `howto()`, `#pcinst-ov` penceresi ve CSS'i silindi; "Yükledim, bir daha gösterme" de onunla gitti. Kurulunca `appinstalled` ya da `standalone` ile gizlenir.
-- `v320pad` kol yardımındaki Firefox notu silindi.
-- Belge: `10_akis.md`, `20_sistemler.md`, `00_giris.md`.
-- Telefondaki "Uygulama olarak indir" (`v253inst`, iPhone'da Ana Ekrana Ekle adımları) değişmedi.
 - Kontrol: chk.js 0 hata.
