@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.42** ile birebir (6 Kasım 2026). Bu sürümde: evcil hayvanlar (ağıl, güven çubuğu, binekler ve savaşçı yoldaşlar), Çoban Davut evcilleştirme hocası ve ana görev, yeni yan görev "Gece öten kuş". Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.43** ile birebir (6 Kasım 2026). Bu sürümde: Çiftçi Ekin ve Bereket Adası (Barbaros'un kayığıyla gidilen küçük ada), tarla ve fidanlar geri geldi, Ekin'in 8 ana görevi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 

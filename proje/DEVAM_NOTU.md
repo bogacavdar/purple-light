@@ -10,6 +10,16 @@
 
 
 
+## v3.43 (6 Kasım 2026) · Çiftçi Ekin, Barbaros olayı, Bereket Adası, tarla geri geldi
+
+- `v343ciftlik` bloğu: ada `IS` (açık denizde 58×46'lık tamamen okyanus kutusu, Barbaros'a en yakını; elips RX 20, RY 14, kenarı kum): yüklemede `tiles/BIO/ZONE/reach/MUD/tvar/shoreM` yazılır, çevresindeki deniz sığ olur, `mapBase` boyanır. `onIs()`; ada `roomSafe` (gece ve mor ışık güvenli), ada üstündeki hayvanlar silinir. Yerler: ev (`houseSprite('Kerpiç ev')`), ambar, kuyu (Su), iskele, korkuluk (EK4), 6 fidan yeri (3 günde `trees`'e gerçek meyve ağacı; kayıtta yeniden eklenir), tavuklar.
+- Ekin: `k_ekin` giver (`sqk:'ekin1'`), durum `EK.st` cayir → gone (EK1 bitince ikinci konuşma) → atB (L4 + EK1, Barbaros'a 110 px) → home. Kayık `BOAT()` Barbaros'un yanında; geçiş kendi karartması (`#v343fade`). Dükkân: tohum 4'lü paket, EK4'ten sonra fidanlar. Ödüller `EK.got` ile bir kez (EK2 tohum, EK3 tohumlar, EK4 Elma fidanı, EK6 tarla 24 tarh).
+- Eski tarla kodu (`plots`, `farmAct`, `tickFarm`, `drawField`, `CROP`) adaya taşındı (`layField`: 12 tarh, EK6'dan sonra 24). `v268` sadeleşti: `settle` (tarla eşyalarını silen) ve `NOFARM` kaldırıldı; yalnızca eski çiftçi yeri ve Nazlı'nın öğrenilen tarifleri satması kaldı.
+- `v186`: `GB.k_ekin`, EK1–EK8 (eski H kimlikleri v2.68 dönüştürmesine takılmasın diye), `L5.r` + `['ekin']`, `reqOK` 'ekin', `prog` 'fidan'/'ekin', `mkFiller` 'ekin' (Kemal yönlendirir), `partTarget` 'ekin'.
+- `v230`: `ekin1` (main, saman izi `straw`, korkuluk+kirpi `scare` çizimleri).
+- İkonlar: kendi `icon()` katmanı, yalnızca kendi 20 adı için önbellek silinir.
+- Kontrol: chk 0 hata; `/home/claude/scripts/farm_t.js` (EK1 motorla, gidiş, Barbaros sahnesi → home, kayık, adada güvenli, tarh bulunuyor, EK2/EK4 ödülleri).
+
 ## v3.42 (6 Kasım 2026) · evcil hayvanlar, Çoban Davut ana görev (CB1–CB8), Gece öten kuş
 
 - `v342pet` bloğu: `SP` (6 tür; `m` binek, `pup` yavru yolu), `PT` (pets, tr güven, trT bekleme, ever, den yeniden doğma, dead taş, no, mom), `FD` yere bırakılan yiyecek (`f.a` hedefe bağlı; yürürken iç `tickAnimals`'ın kaçırmasını önlemek için konumu sabitlenir), `PUP` (gündüz inin çevresinde, gece içeride, gece yaklaşınca anne bir kez saldırır). `canTame`: ağıl var + Davut'un o tür görevi sürüyor ya da bitti. Binek: `STAT.move` çarpanı, `wantsRun` kapalı, `hurt` bineğe gider, `interact`/`attack` indirir, `drawPlayer` bineği 1,6 kat çizip karakteri 14 px yukarı koyar; B tuşu, dokunmatikte `#v342ride`. Savaşçı: `enemyFor` (oyuncuya 170 px içinde `mad`/`chase`), 0,7×hasar yer, ölüm → `PT.dead`, `PT.den[sp]=+3 gün`. Ağıl: `PSPR['Ağıl']` çizimi, `useplaced` → `#v342pen` penceresi (dışına basmak kapatır). İsim: `#v342nm` (dışı/Enter/Esc = Tamam). Kayıt `v342={pt,dm}`.

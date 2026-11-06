@@ -8,6 +8,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.43 · 6 Kasım 2026
+
+### Oynanış
+- **Çiftçi Ekin (Çayır, ana görev):** korkuluğu her gece kayboluyor. Saman izlerini takip et; korkuluğu yürüten aç kirpiye bir yabani elma bırak. Görevden sonra Ekin "adama döneceğim" deyip gider.
+- **Barbaros'un yanında Ekin:** Barbaros'un dördüncü görevini (Yelken ipi) teslim edince Ekin enkazın yanında belirir; akıntı onu oraya atmış. Barbaros onu adasına götürür. Barbaros'un son görevi (gemi, ACT 2'ye geçiş) bu olaydan sonra gelir.
+- **Bereket Adası:** Barbaros'un yanındaki kayıkla gidilen küçük bir ada. Ekin'in evi, ambarı, tarlası, kuyusu, tavukları, fidan yerleri var. Canavar çıkmaz, mor ışık inmez, gece güvenlidir.
+- **Tarla geri geldi:** tırmıkla hazırla, tohum ek, sulama kabıyla sula, tırpanla biç. Ürünler sen adada değilken de büyür. Ekin tohum ve fidan satar; fidan dikince üç günde gerçek bir meyve ağacı olur.
+- **Ekin'in 7 yeni görevi:** dört alet, ilk başak, yeni korkuluk, ilk fidan, tarlayı büyütmek, bereketli sepet ve ekmek kokusu.
+- **Yeni tarifler:** Korkuluk, Hasat sepeti, Buğday unu, Ekmek.
+
+### Görsel
+- Ekin, kirpi ve devrilmiş korkuluk, saman izleri, adanın kumsalı ve iskelesi, ambar, kuyu, tavuklar, fidanlar; tohum keseleri, başak, un çuvalı, ekmek, korkuluk, hasat sepeti ve fidan resimleri.
+
+### Tasarım belgesi
+- "Çiftçi Ekin · Çayır → Bereket Adası" bölümü oyundaki haliyle güncellendi.
+
 ## Versiyon 3.42 · 6 Kasım 2026
 
 ### Oynanış

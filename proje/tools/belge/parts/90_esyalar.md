@@ -3,6 +3,7 @@
 ## Eşya resimleri (v3.37, Boğaç)
 
 Her eşyanın adına uygun bir resmi vardır (Giriş › Kural). v3.37'ye kadar **194 eşya** resimsizdi ve adından renk alan bir "hediye paketi" kutusu olarak görünüyordu; hepsine gerçek resim çizildi. Resim envanterde, kitapta, elde, yere düşünce ve kurulunca aynıdır.
+- **v3.43 tarla eşyaları:** altı tohum kesesi (her biri içindeki tohumun renginde), Buğday (başak demeti), Patates, Soğan, Kabak, Ayçiçeği, Buğday unu (çuval), Ekmek (somun), Korkuluk, Hasat sepeti (dolu sepet), Elma / Armut / Erik fidanı (saksıda fidan, meyvesinin renginde bir tomurcuk).
 
 - **Pişmiş / Tütsülenmiş / Kurutulmuş / Taşta balık** (Sazan, Yayın, Tatlısu kefali, Kerevit, Turna balığı, Kızılkanat, Yılan balığı, Kadife balığı, Kurbağa, Mersin balığı, Çapak): çiğ halinin resminden: pişmiş kızarmış renkte ve ızgara izli, tütsülenmiş koyu ve dumanlı, kurutulmuş soluk ve tuzlu, taşta olan taş levhanın üstünde.
 - **Deniz yemekleri:** tavada (Hamsi, Tekir, Barbunya, Kalkan tava), tabakta (Kalamar tava, Çipura buğulama, Orkinos biftek), ızgarada (İstavrit, Lüfer), kapta (Kefal pilakisi), şişte (Levrek, Kılıç şiş), kâsede (Ahtapot salatası); Kılıç balığı, Fener balığı ve Işıl balığı kendi biçimleriyle.
