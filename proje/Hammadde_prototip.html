@@ -1318,7 +1318,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
 <body>
 <div id="ldscr" style="position:fixed;inset:0;z-index:200;background:#07060e;color:#e8dcff;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;font:600 18px system-ui,sans-serif;letter-spacing:.08em"><div style="width:46px;height:46px;border-radius:50%;border:4px solid #3a2a5a;border-top-color:#c080ff;animation:ldspin 1s linear infinite"></div><span id="ldtxt">Yükleniyor…</span><style>@keyframes ldspin{to{transform:rotate(360deg)}}</style></div>
 <script>/* v2.39: the loading screen shows only for a save load or an island switch, and after pressing Yeni oyun (the page reopens) — not when the game opens */try{var __l=document.getElementById("ldscr"),__p=sessionStorage.getItem("hammadde.pending"),__n=sessionStorage.getItem("hammadde.clicknew"),__t=sessionStorage.getItem("hammadde.ldtxt");if(__p||__n){__l.style.display="flex";document.getElementById("ldtxt").textContent=__p&&__t?__t:"Yükleniyor…";setTimeout(function(){__l.style.display="none"},45000)}}catch(e){}</script>
-<canvas id="game" aria-label="Orman kenarı ve nehir: karakteri WASD ile yürüt, E ile malzeme topla"></canvas>
+<canvas id="game" aria-label="Orman kenarı ve nehir: karakteri WASD ile yürüt, F ile malzeme topla"></canvas>
 <div id="left">
 <div id="clock" class="hud"><i id="clockic" aria-hidden="true">☀️</i><span id="clockv">1. gün · 06:00</span></div>
 <div id="vit"><div class="vb hp" id="hpbar" title="Can"><i id="hpfill"></i><span id="hpval">Can</span></div><div class="vb food" id="fdbar" hidden title="Tokluk (dokun: ye)"><i id="fdfill"></i><span id="fdval">Tokluk</span></div><div class="vb st" id="stbar" hidden title="Enerji"><i id="stfill"></i><span id="stval">Enerji</span></div><div id="fxbar" hidden></div></div>
@@ -1378,7 +1378,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.44</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.45</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1453,7 +1453,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.44 · 6 Kasım 2026</h2><h3>Arayüz</h3><ul><li><strong>Görev işaretleri sadeleşti:</strong> ana görevlerin tek işareti artık görev veren kişinin üstündeki siyah <strong>!</strong> ve parlamadır; dünyada, köşedeki haritada ve büyük haritada aynı. İşi bitince çıkan yeşil "?" ve mavi işaretler kalktı. Henüz tanışmadığın görev sahibi ve karaya oturan Gemici Poyraz da haritada parlayan bir <strong>!</strong> ile görünür. Yan görevlerin sisli mor "?" işareti aynı kaldı.</li></ul><h3>Düzeltmeler</h3><ul><li><strong>Biyomlar doğru büyüklükte:</strong> 3.40'ta "her biyomu %50 büyüt" kararı yanlış uygulanmış, biyomlar istenenden çok fazla büyümüştü (en ve boy 1,5 kat, alan 2,25 kat; 968 × 696 karo). Artık her biyom 3.39'a göre <strong>alanca %50</strong> büyük: iki ada da 790 × 568 karo. Adaların şekli, biyomların sırası, nehir, köprüler ve sıradağ aynı; göller de aynı oranda büyüdü, Bataklık'ta 30 gölcük var. Ağaçlar, taşlar, bitkiler ve madenler yine aynı sıklıkta; biyomlar arasında yürümek eskisinden kısa sürer.</li></ul><h3>Kayıtlar</h3><ul><li>Harita değiştiği için eski kayıtlar açılışta silinir; yeni bir oyunla başlanır.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.45 · 6 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Porsuk Çayır'da:</strong> Çayır'da artık porsuk da dolaşır (tek başına, günün her saatinde).</li><li>Yerdeki yaprak sayısı artık her yeni oyunda aynı.</li></ul><h3>Düzeltmeler</h3><ul><li><strong>Yan görevler fazla XP veriyordu:</strong> bir yan görev bitince, görevin XP ödülü yerine binlerce XP verilebiliyordu (ör. Güvercinci Bulut 50 yerine 3.000'den fazla XP; karakter birden çok seviye atlıyordu). Artık her yan görev tablodaki XP'yi verir.</li></ul><h3>Kayıtlar</h3><ul><li>Yan görevlerin fazla XP verdiği hatadan etkilenen kayıtlar (3.45'ten önce en az bir yan görevi bitmiş kayıtlar) açılışta silinir ve yeni oyun başlar. Yan görev bitirmemiş kayıtlar olduğu gibi kalır.</li><li>Bir kayıt silinince çıkan kısa bilgi artık 5 saniye ekranda kalır; harita değiştiği için silinen kayıtlarda "Ada değiştiği için yeni oyun başladı." yazar.</li></ul><h3>Arayüz</h3><ul><li><strong>Yan görevler haritada:</strong> saati gelmiş, görevi bekleyen bir yan kişi keşfettiğin bir yerdeyse büyük haritada ve köşedeki haritada tam yerinde bir <strong>"?"</strong> ile görünür. Bu "?" ana görevin "!" işareti kadar büyük ve parlaktır. Henüz keşfetmediğin bir yerdeyse ancak yanına yaklaşınca haritada sisli bir daire belirir. Bir bölgede aynı anda en çok iki yan görev işareti olur.</li><li>Haritanın keşfedilmemiş yerlerinde gelip giden süs soru işaretleri kaldırıldı; artık haritadaki her "?" gerçekten bir yan kişidir.</li><li><strong>Harita açıkken yazılar üstüne binmez:</strong> büyük harita açıkken "Yeni bir gün", yeni malzeme, seviye ve seviye puanı yazıları ve başarım kartı haritanın üstünde çıkmaz; harita kapanınca gösterilir.</li><li>Kamp ateşinin ilk ipucu artık doğru tuşu (F) yazar.</li><li>Orman'daki satıcı Bekir'in adı artık "Seyyar satıcı Bekir".</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -2644,6 +2644,7 @@ function goldBurst(n){
 }
 const toasts=document.getElementById('toasts');
 function toast(msg,warn){const d=document.createElement('div');d.className='toast';d.textContent=msg;if(warn)d.style.borderColor='var(--bad)';toasts.appendChild(d);setTimeout(()=>d.remove(),1400);while(toasts.children.length>4)toasts.firstChild.remove()}
+function toastLong(msg){const d=document.createElement('div');d.className='toast';d.textContent=msg;d.style.borderColor='var(--bad)';toasts.appendChild(d);setTimeout(()=>d.remove(),5000);while(toasts.children.length>4)toasts.firstChild.remove()}   // v3.45: the two wiped-save notes stay 5 s
 const prompt=document.getElementById('prompt');
 // touch: the prompt is a big button that does what E does (traps, fish traps, campfires, beds… anything E can reach)
 prompt.addEventListener('pointerdown',e=>{if(!prompt.classList.contains('act'))return;e.preventDefault();e.stopPropagation();prompt.classList.add('down')});
@@ -6215,10 +6216,6 @@ function updateFog(t){const full=fogLastN===-1;if(!full&&t-fogLastT<(PERF.lvl?1:
   try{const r=fogWin(false,mini.width,mini.height);r[4]=8;const [x0,y0,x1,y1]=clip(r),cw=x1-x0,ch=y1-y0;if(cw<1||ch<1)return;
     if(!fogSI||fogSI.width!==cw||fogSI.height!==ch){fogS.width=cw;fogS.height=ch;fogSI=fogSG.createImageData(cw,ch)}
     paint(fogSI.data,x0,y0,x1,y1,cw,x0,y0);fogSG.putImageData(fogSI,0,0);fogS0=[x0,y0]}catch(e){fogSI=null}}
-// a few black question marks drift in and out of the unknown (never many at once)
-const QM=[];for(let i=0;i<5;i++)QM.push({x:-1,y:-1,t:0,life:1,s:1});
-function placeQM(q){q.x=-1;for(let k=0;k<40;k++){const x=1+Math.floor(Math.random()*(W-2)),y=1+Math.floor(Math.random()*(H-2)),i=y*W+x;if(!explored[i]&&(k>25||tiles[i]<4)){q.x=x;q.y=y;break}}q.t=0;q.life=2.4+Math.random()*2.4;q.s=.75+Math.random()*.5}
-function tickQM(dt){for(const q of QM){q.t+=dt;if(q.x<0||q.t>=q.life||explored[q.y*W+q.x]){if(q.x<0&&q.t<Math.random()*2)continue;placeQM(q)}}}
 const MAPIC={
  ekin:{p:{a:'#5a3d22',b:'#e8502a',c:'#f2a03a',d:'#ffe29b'},m:['....d....','...cdc...','...cbc...','..cbbbc..','..bbbbb..','...bbb...','.aa.a.aa.','aaaaaaaaa','.a.....a.']},
  witch:{p:{a:'#2a2a30',b:'#5ad06a',c:'#8cf09a',d:'#3a3a44'},m:['..c...c..','...c.c...','.ddddddd.','.abbbbba.','.aaaaaaa.','.aaaaaaa.','..aaaaa..','.a.....a.','.........']},
@@ -6256,7 +6253,6 @@ function drawMap(c,w,h,big){
   c.imageSmoothingEnabled=false;c.drawImage(mapBase,ox,oy,vwT,vhT,0,0,w,h);
   c.imageSmoothingEnabled=true;if(!big&&fogSI)c.drawImage(fogS,ox-fogS0[0],oy-fogS0[1],vwT,vhT,0,0,w,h);else c.drawImage(fogC,ox,oy,vwT,vhT,0,0,w,h);c.imageSmoothingEnabled=false;   // v2.38: the corner map reads its own small fog
   c.textAlign='center';c.textBaseline='middle';
-  for(const q of QM){if(q.x<0)continue;const a=Math.pow(Math.sin(Math.PI*Math.min(1,q.t/q.life)),1.5);c.font=`bold ${Math.round((big?26:10)*q.s)}px Rubik, system-ui, sans-serif`;c.fillStyle=`rgba(12,12,18,${(a*.8).toFixed(3)})`;c.fillText('?',(q.x+.5-ox)*sx,(q.y+.5-oy)*sy)}
   const dk=darkness(),trq=torchHeld(),pl_=trq?TORCHL[trq]:lampOn()?LAMPL:buffOn('göz')?58:0,lit=(wx,wy)=>dk<.5||litAt(wx,wy)||(pl_&&Math.hypot(wx-player.x,wy-player.y)<pl_);
   const seenAt=(wx,wy)=>{const tx=Math.floor(wx/T),ty=Math.floor(wy/T);return tx>=0&&ty>=0&&tx<W&&ty<H&&explored[ty*W+tx]&&lit(wx,wy)};
   const mk=(wx,wy,col,label,r)=>{if(!seenAt(wx,wy))return;r=r||(big?5:2.5);const X=(wx/T-ox)*sx,Y=(wy/T-oy)*sy;if(X<-4||Y<-4||X>w+4||Y>h+4)return;c.fillStyle='#11170f';c.fillRect(Math.round(X-r-1),Math.round(Y-r-1),Math.round(2*r+2),Math.round(2*r+2));c.fillStyle=col;c.fillRect(Math.round(X-r),Math.round(Y-r),Math.round(2*r),Math.round(2*r));
@@ -6344,7 +6340,7 @@ function renderMapPanel(){
 }
 function tickMap(dt){
   if(onTitle)return;
-  reveal(player.x,player.y);tickQM(dt);
+  reveal(player.x,player.y);
   if(++miniTick%3===0){updateFog(time);updateFar();drawMap(mctx,mini.width,mini.height,false);if(craftOpen&&mode==='map'){const bc=$('bigmap');if(bc)drawMap(bc.getContext('2d'),bc.width,bc.height,true)}}
 }
 // the minimap opens the big map through the shared menu-button wiring (BTN.map = 'mini')
@@ -6367,7 +6363,7 @@ function resetState(){
 }
 // a save may come from an old version, a broken import or a hand-edited code: coerce it into a safe shape BEFORE resetting the game
 const RENAMED={'Ay çiçeği':'Gece sefası','Kürek (sandal)':'Sandal küreği','Bal likörü (mead)':'Bal şarabı','Bira mayası (yabani)':'Yabani bira mayası','İnci (tatlısu)':'Tatlısu incisi'};   // v48 names
-function cleanSave(d){if(!d||typeof d!=='object'||!d.inv||typeof d.inv!=='object'||Array.isArray(d.inv))return null;if(d.mv!==MAPV)return null;   // v65: saves from the old, smaller island do not open
+function cleanSave(d){if(!d||typeof d!=='object'||!d.inv||typeof d.inv!=='object'||Array.isArray(d.inv))return null;if(d.mv!==MAPV||sqBroken(d))return null;   // v65: saves from the old, smaller island do not open
   d=JSON.parse(JSON.stringify(d,(k,v)=>typeof v==='string'&&RENAMED[v]?RENAMED[v]:v));{const i2={};for(const k in d.inv)i2[RENAMED[k]||k]=(+i2[RENAMED[k]||k]||0)+(+d.inv[k]||0);d.inv=i2}
   const o=Object.assign({},d),num=(v,def,lo,hi)=>{v=+v;if(!isFinite(v))v=def;if(lo!==undefined)v=Math.max(lo,v);if(hi!==undefined)v=Math.min(hi,v);return v};
   const bad=/[<>"&]/,strs=a=>Array.isArray(a)?a.filter(x=>typeof x==='string'&&x.length<80&&!bad.test(x)):[];
@@ -6396,6 +6392,10 @@ const SLOTS=[['auto','Otomatik kayıt'],['s1','Kayıt 1'],['s2','Kayıt 2'],['s3
 const saves=()=>store.get(SAVEKEY)||{};
 // v65: the island grew and got six lands; old saves are cleared once (everyone starts a new game)
 {const a=store.get(SAVEKEY);if(a&&typeof a==='object'){let n=0;for(const k of Object.keys(a)){const v=a[k];if(!v||!v.data||v.data.mv!==MAPV){delete a[k];n++}}if(n){store.set(SAVEKEY,a);window.__v65wiped=n}}}
+// v3.45 (Boğaç): up to v3.44 a finished side quest gave the giver's x position as XP (ÇYR-11). A save from before 3.45 (no "sv" field)
+// with at least one finished side quest is wiped and a new game starts; saves without one are kept. husnu and ekin1 are main quests.
+function sqBroken(d){return !!(d&&!(d.sv>=345)&&d.v230&&Array.isArray(d.v230.d)&&d.v230.d.some(id=>id!=='husnu'&&id!=='ekin1'))}
+{const a=store.get(SAVEKEY);if(a&&typeof a==='object'){let n=0;for(const k of Object.keys(a)){const v=a[k];if(v&&sqBroken(v.data)){delete a[k];n++}}if(n){store.set(SAVEKEY,a);window.__v345wiped=n}}}
 // v2.10: another tab wrote the saves: this tab is stale and stops autosaving (an old tab in the background used to overwrite newer progress every minute)
 // the tab that last started or loaded a game owns the autosave; any other tab goes quiet
 const SAVE_TAB=Math.random().toString(36).slice(2);let saveStale=false;
@@ -7365,7 +7365,7 @@ function placeCamp(){
   inv['Kamp ateşi']--;camps.push({x:sp.x,y:sp.y,t:CAMP_BURN,ash:0});if(craftOpen)closeCraft();renderInv();sfx('craft');
   for(let k=0;k<14;k++)parts.push({x:sp.x+(Math.random()-.5)*6,y:sp.y-4,vx:(Math.random()-.5)*30,vy:-20-Math.random()*30,life:.6,c:k%2?'#ffd27a':'#e8502a'});
   dstat.camp++;
-  v46Hint('campUse',()=>setTimeout(()=>toast(`Kamp ateşi yandı! Yanında gece güvendesin ve canın hızlı dolar. ${TOUCH?'Ateşe dokun':'E'}: odun at ya da çiğ et ve balığı közle.`),300));
+  v46Hint('campUse',()=>setTimeout(()=>toast(`Kamp ateşi yandı! Yanında gece güvendesin ve canın hızlı dolar. ${TOUCH?'Ateşe dokun':(window.__plKey?window.__plKey('interact'):'F')}: odun at ya da çiğ et ve balığı közle.`),300));
   return true}
 function tickCamps(dt){if(isNight()&&camps.some(c=>c.t>0&&Math.hypot(player.x-c.x,player.y-c.y)<48)){const c0=Math.floor(EKQ.cs);EKQ.cs+=dt;if(Math.floor(EKQ.cs)!==c0&&qState==='active')renderTut()} /* v1.79: the quest card counts up and completes by itself   // v1.44 */ 
 for(let i=camps.length-1;i>=0;i--){const c=camps[i];
@@ -8861,7 +8861,7 @@ function cheatMaxLevel(){if(onTitle){toast('Önce oyuna gir',true);return}const 
   sfx('level');try{lvlFirst()}catch(e){}const el=$('lvlup');$('lvlupn').textContent=`Seviye ${lvl}`;el.hidden=true;void el.offsetWidth;el.hidden=false;setTimeout(()=>el.hidden=true,3000);
   try{checkRunLesson()}catch(e){}renderInv();renderTut();if(craftOpen)renderCraft();toast(`Hile: seviye ${L}`)}
 function cheatRevealMap(){if(onTitle){toast('Önce oyuna gir',true);return}explored.fill(1);exploredCount=explored.length;lastRevealTile=-1;fogLastT=-9;fogLastN=-1;
-  for(const q of QM)q.x=-1;try{saveTo('auto')}catch(e){}sfx('magic');toast('Hile: bütün harita açıldı');try{renderTut();if(craftOpen)renderCraft()}catch(e){}}
+  try{saveTo('auto')}catch(e){}sfx('magic');toast('Hile: bütün harita açıldı');try{renderTut();if(craftOpen)renderCraft()}catch(e){}}
 $('b5max').addEventListener('click',cheatMaxLevel);$('b5map').addEventListener('click',cheatRevealMap);
 B5.maxLevel=cheatMaxLevel;B5.revealMap=cheatRevealMap;
 
@@ -11269,7 +11269,7 @@ Object.assign(ANIM,NA);const NEWA=new Set(Object.keys(NA));
 Object.assign(PACK,{'Gölge kurdu':[2,3],'Kristal geyik':[1,2],'Ur kekliği':[2,4]});
 for(const k of NEWA)for(const d of ANIM[k].drops)if(CHEAT_RES.indexOf(d[0])<0)CHEAT_RES.push(d[0]);
 const BANIM=[
- [['Tavşan',3],['Keklik',2],['Bıldırcın',2],['Geyik',1],['Yaban atı',1,()=>lvl>=2],['Kerevit',1],['Kurt',2,w=>w&&isNight()]],
+ [['Tavşan',3],['Keklik',2],['Bıldırcın',2],['Geyik',1],['Yaban atı',1,()=>lvl>=2],['Kerevit',1],['Kurt',2,w=>w&&isNight()],['Porsuk',1]],   // v3.45: Porsuk in Çayır's own list (no pack, every hour; its numbers come from v128 NEWN)
  [['Sincap',2],['Karaca',1],['Kunduz',1],['Yaban domuzu',1,w=>w&&!isNight()],['Dikenli kirpi',1],['Engerek',1,w=>w&&(lvl>=6||day>=3)&&!(earlyWild()&&rangedNear('Engerek'))],['Oklu kirpi',1,w=>(lvl>=10||lvl>=8&&day>=5)&&!(earlyWild()&&rangedNear('Oklu kirpi'))]],
  [['Ördek',2],['Yaban kazı',1],['Turna kuşu',2],['Su samuru',1],['Zehirli kurbağa',3],['Bataklık kurdu',1],['Timsah',2]],
  [['Dağ keçisi',2],['Muflon',1],['Yaban öküzü',1],['Ur kekliği',1],['Kartal',2],['Vaşak',1],['Mağara ayısı',1]],
@@ -11378,7 +11378,7 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
 document.addEventListener('pointerup',()=>{setTimeout(()=>{mt.hidden=true},1200)});
 
 // ---------------------------------------------------------------- 8 · old saves were cleared: say so once on the title
-if(window.__v65wiped){setTimeout(()=>{try{toast('Ada iki kat büyüdü ve altı bölgeye ayrıldı: eski kayıtlar bu güncellemeyle silindi. Yeni bir oyuna başla!',true)}catch(e){}},1500)}
+if(window.__v65wiped){setTimeout(()=>{try{toastLong('Ada değiştiği için yeni oyun başladı.')}catch(e){}},1500)}
 }).toString()+')()')}catch(e){try{window.__hamErr('v65: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <style id="v65-css">
@@ -11598,7 +11598,8 @@ for(const ev of ['pointerdown','mousedown','touchstart'])card.addEventListener(e
 card.addEventListener('click',e=>{e.stopPropagation();if(!card.classList.contains('on'))return;card.classList.remove('on');clearTimeout(card._t);setTimeout(()=>{busy=false;show()},320)});   // v3.39: a click closes the card at once
 const ov=document.createElement('div');ov.id='achov';ov.hidden=true;ov.setAttribute('role','dialog');ov.setAttribute('aria-label','Başarımlar');document.body.appendChild(ov);
 let q=[],busy=false;
-function show(){if(busy||!q.length)return;busy=true;const a=q.shift();card.innerHTML=`<img src="${ic(a[3])}" alt=""><span><small>BAŞARIM KAZANILDI</small><b>${esc(a[1])}</b></span>`;
+function show(){if(busy||!q.length)return;if(craftOpen&&mode==='map'){clearTimeout(show.w);show.w=setTimeout(show,400);return}   /* v3.45: not over the big map */
+  busy=true;const a=q.shift();card._a=a;card.innerHTML=`<img src="${ic(a[3])}" alt=""><span><small>BAŞARIM KAZANILDI</small><b>${esc(a[1])}</b></span>`;
   requestAnimationFrame(()=>card.classList.add('on'));sfx('found');card._t=setTimeout(()=>{if(!card.classList.contains('on'))return;card.classList.remove('on');setTimeout(()=>{busy=false;show()},450)},3600)}
 function track(){try{for(const k in kills)if(kills[k]>0)gput(KS,'hammadde.kill',k.replace(/ Reisi$/,''));
   for(const n of allDrop())if((inv[n]||0)>0)gput(IS,'hammadde.items',n);
@@ -11640,6 +11641,7 @@ function grant(id){if(got[id])return;const a=ACH.filter(x=>x[0]===id)[0];if(!a)r
  const mark=e=>{const li=e.target&&e.target.closest&&e.target.closest('li.new');if(!li)return;li.classList.remove('new');seeIt(li.dataset.aid)};
  ov.addEventListener('mouseover',mark);ov.addEventListener('focusin',mark);ov.addEventListener('pointerdown',mark);badges()}
 window.__plAch={list:ACH,got:()=>got,open:open_,grant:grant};
+window.__plAchBack=()=>{if(!card.classList.contains('on')||!card._a)return;card.classList.remove('on');clearTimeout(card._t);q.unshift(card._a);card._a=null;busy=false;show()};   // v3.45: the big map opened over a card: it comes back after
 }).toString()+')()')}catch(e){try{window.__hamErr('v71: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v72">
@@ -13745,7 +13747,7 @@ regLists();
 // they live where they belong
 window.__plNEWN=NEWN;   // v2.83: the Reis reads each creature's land
 {const _sa=spawnAnimals;spawnAnimals=function(){const r=_sa.apply(this,arguments);try{if(!met||wake||window.__plArena)return r;const b=bioAt(player.x,player.y);
-  for(const k in NEWN){const o=NEWN[k];if(o.b!==b||(o.isle===1)!==!I2||!ANIM[k])continue;if(animals.filter(a=>a.k===k).length>=o.want)continue;
+  for(const k in NEWN){const o=NEWN[k];if(o.b!==b||(o.isle===1)!==!I2||!ANIM[k]||((window.__plBANIM||[])[o.b]||[]).some(e=>e[0]===k))continue;if(animals.filter(a=>a.k===k).length>=o.want)continue;
     for(let n=0;n<10;n++){const an=Math.random()*Math.PI*2,d=330+Math.random()*140,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;
       if(x<16||y<16||x>W*T-16||y>H*T-16||!reachAt(x,y)||blocked(x,y)||bioAt(x,y)!==b||isWater(tileAt(x,y)))continue;
       animals.push({k,x,y,hp:ANIM[k].hp,st:'wander',t:0,dx:0,dy:0,face:1,atk:0,flash:0,kb:null,step:Math.random()*6,mad:false,pk:0});break}}}catch(e){}return r}}
@@ -14132,7 +14134,7 @@ const _ta133=tickAnimals;tickAnimals=function(dt){const r=_ta133.apply(this,argu
   a.mad=false;a.wind=0;a.lunge=null;if(a.st==='chase')a.st='wander';const dx=a.hx-a.x,dy=a.hy-a.y,d=Math.hypot(dx,dy);if(d>26){a.dx=dx/d;a.dy=dy/d;a.t=1}}}catch(e){}return r};
 // leaves: rare on the ground, slow to come back, and every chop shakes some down
 try{RES['Yaprak'].respawn=90}catch(e){}
-{const sp=typeof spawn!=='undefined'?spawn:{x:player.x,y:player.y};for(let i=nodes.length-1;i>=0;i--){const n=nodes[i];if(n.name!=='Yaprak'||n.pop)continue;if(Math.hypot(n.x-sp.x,n.y-sp.y)<300)continue;if(Math.random()<.72)nodes.splice(i,1)}}
+{const sp=typeof spawn!=='undefined'?spawn:{x:player.x,y:player.y};for(let i=nodes.length-1;i>=0;i--){const n=nodes[i];if(n.name!=='Yaprak'||n.pop)continue;if(Math.hypot(n.x-sp.x,n.y-sp.y)<300)continue;const v=Math.sin(n.x*7.137+n.y*41.97+11.3)*24634.6345;if(v-Math.floor(v)<.72)nodes.splice(i,1)}}   // v3.45: seeded by the spot (no Math.random), so every new game keeps the same leaves
 const _tc133=treeChopped;treeChopped=function(t){const r=_tc133.apply(this,arguments);try{if(t&&t.type)dropItem('Yaprak',t.x+(player.x<t.x?-6:6),t.y,1)   /* v2.25: one leaf a chop */}catch(e){}return r};
 }).toString()+')()')}catch(e){try{window.__hamErr('v133: '+(e&&e.message||e))}catch(_){}}})();
 </script>
@@ -15945,7 +15947,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
   steps:[{t:'kill',p:'den',draw:'den',mobs:['Yaban domuzu',1],tx:'Ejderin inini bul ve ejderi yen',spawnTx:'Çalılıktan homurtular… "ejder" çıkıyor!'},
    {t:'back',tx:'Kahraman Dede\'ye dön',on:[X('Ejder… koca, homurdanan bir yaban domuzuydu. Burnu yaş, kuyruğu kıvrık.'),N('Ejderi mi yendin?! Kanatlarını gördün mü? Ateş püskürttü mü? …Bir domuz mu?'),N('Olsun! Domuz kılığına girmiş bir ejderdir, en tehlikelisi! Seni bugünden sonra <b>Şövalye</b> ilan ediyorum!')]}],
   after:['Yeni bir ejder duydum, bataklıkta. Bu sefer ben önden gideceğim. Belki.']},
- {id:'sadik',name:'Satıcı Bekir',title:'Kırık araba',b:1,win:[720,1020],c:100,x:60,
+ {id:'sadik',name:'Seyyar satıcı Bekir',title:'Kırık araba',b:1,win:[720,1020],c:100,x:60,
   intro:[N('Tekerlek bir köke çarptı, araba devrildi, ne var ne yok saçıldı! Düğmeler, iğneler, boncuklar, bir de kızımın oyuncağı.'),N('Toplar mısın? Bir de tekerleği yapacak malzeme lazım: <b>6 dal</b>, <b>4 lif</b>.')],
   remind:'Mallar şuraya buraya saçıldı. Bir de 6 dal, 4 lif lazım.',
   steps:[{t:'collect',ps:['m1','m2','m3','m4','m5'],draw:'goods',tx:'Saçılan malları topla',lines:{m1:'Bir kutu düğme.',m2:'Bir iğne yastığı.',m3:'Bir boncuk ipi.',m4:'Bakır bir çaydanlık.',m5:'Küçük tahta bir at.'}},
@@ -16234,7 +16236,8 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  for(const q of Q)if(!BY[q.id])BY[q.id]=q;
  // ---------------------------------------------------------------- places (the same every time the island is laid out)
  const SIDE=[];const bc=[0,0,0,0,0,0];
- for(const q of Q){const R=rngOf('sq-'+q.id);let p;if(q.cave){q.x=-1e5;q.y=-1e5;q.R=R;q.pts={npc:{x:q.x,y:q.y}};continue}
+ for(const q of Q){if(q.xp==null)q.xp=q.x||0;   /* v3.45: the XP reward moves to q.xp before q.x becomes the giver's map position (ÇYR-11) */
+   const R=rngOf('sq-'+q.id);let p;if(q.cave){q.x=-1e5;q.y=-1e5;q.R=R;q.pts={npc:{x:q.x,y:q.y}};continue}
    if(q.id==='elif')p=findNear(dock.x,dock.y,26,90,-1,R,{sand:true});
    else{const B=BOXB[q.b],s=SLOT[bc[q.b]++%SLOT.length],tx=(B[0]+(B[2]-B[0])*s[0])*T,ty=(B[1]+(B[3]-B[1])*s[1])*T;
      p=findNear(tx,ty,0,260,q.b,R,{av:240,big:1});if(Math.hypot(p.x-tx,p.y-ty)<1)p=findNear(tx,ty,0,900,q.b,R,{av:200,big:1});
@@ -16244,7 +16247,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const PT=(q,k,from,r0,r1,o)=>{const f=from||q;q.pts[k]=findNear(f.x,f.y,r0,r1,q.b,q.R,o)};
  {const q=BY.elif;PT(q,'wreck',q,300,620,{sand:true,shore:true});PT(q,'bottle',q.pts.wreck,200,420,{sand:true,shore:true})}
  {const q=BY.husnu;PT(q,'goat',q,480,800)}   // v2.42: 4x farther (was 120–200)
- const PIGR=700,PIGH=260,PIGS=60;   // v3.07: pigeons are within PIGR px of Bulut, heard from PIGH px, seen from PIGS px
+ const PIGH=260,PIGS=60;   // v3.07: pigeons are heard from PIGH px, seen from PIGS px (v3.45: no search area on the map)
  {const q=BY.kerem;const a0=q.R()*Math.PI*2;   // v3.07 (Boğaç): four directions around Bulut, 250–650 px out, any order
    ['g1','g2','g3','g4'].forEach((k,i)=>{const a=a0+i*Math.PI/2+(q.R()-.5)*.9,r=250+q.R()*400;PT(q,k,{x:q.x+Math.cos(a)*r,y:q.y+Math.sin(a)*r},0,140)})}
  {const q=BY.nadir;PT(q,'den',q,250,400)}
@@ -16291,9 +16294,9 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
      say(t,[{t:isLast?(last||'Tamam'):(BY[q.id].quiet&&k!=='x'?'…':'Devam'),pri:1,fresh:1,f:nx}],k==='n'?who(q.id):who(k))};nx()}
  const FENER=()=>{const q=BY.fener;if(!q||!done.has('fener')||q._lit)return;q._lit=1;for(const k of ['l1','l2','l3']){const p=q.pts[k];if(p)FIRES.push({x:p.x,y:p.y+8})}};   // v3.39: Fenerci Işık's three lights are safe fires
  function complete(q,silent){done.add(q.id);if(q.id==='fener')try{FENER()}catch(e){}clearMobs();ACT=ACT.filter(a=>a.id!==q.id);A=null;
-   if(!(window.__plInf))coins+=q.c;try{gainXP(q.x)}catch(e){}renderInv();renderSQ();
-   if(q.main){}else if(q.quiet){toast(`Yan görev bitti: ${q.title} · +${q.c} sikke · +${q.x} XP`)}
-   else{try{sfx('level')}catch(e){}try{announce(q.title,`Yan görev bitti · +${q.c} sikke · +${q.x} XP`)}catch(e){toast(`Yan görev bitti: ${q.title}`)}}}
+   if(!(window.__plInf))coins+=q.c;try{if(q.xp>0)gainXP(q.xp)}catch(e){}renderInv();renderSQ();
+   if(q.main){}else if(q.quiet){toast(`Yan görev bitti: ${q.title} · +${q.c} sikke · +${q.xp} XP`)}
+   else{try{sfx('level')}catch(e){}try{announce(q.title,`Yan görev bitti · +${q.c} sikke · +${q.xp} XP`)}catch(e){toast(`Yan görev bitti: ${q.title}`)}}}
  function advance(){if(!A)return;const q=BY[A.id],s=step();if(s&&s.end){complete(q);return}A.step++;if(A.step>=q.steps.length){complete(q);return}resetStep();renderSQ()}
  // v3.07: park the tracked quest (it waits in Görevler; a fight, an escort or a watch starts again when it is tracked again)
  const LIVE={escort:1,kill:1,guard:1,boss:1};
@@ -16534,16 +16537,22 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
      if(s&&s.t==='chase'&&A.goat){const g=A.goat;ents.push({y:g.y,d:()=>(s.anim==='mule'?drawMule:drawGoat)(g.x,g.y,player.x<g.x?1:-1,A.gj?(Math.sin(time*14)>0?1:0):(Math.sin(time*6)>.9?1:0))})}
      if(s&&s.t==='escort'&&A.fol){const f=A.fol;ents.push({y:f.y,d:()=>{if(s.who==='goat')(s.anim==='mule'?drawMule:drawGoat)(f.x,f.y,f.face,f.mv&&Math.sin(time*14)>0?1:0);else drawPerson(q,f.x,f.y,{step:f.mv?(Math.sin(time*12)>0?1:-1):0});if(f.sayT>0&&f.stop)bub(f.x,f.y-(KID[q.id]?34:42),f.stop)}})}}}
  // v3.40 (Boğaç): side quests are found by exploring. No target ring, no yellow side-quest ground, no edge arrow.
- // The only map mark: a foggy violet "?" near a waiting giver, and only when you are really close (~10 tiles) at his hour (or always, once taken).
+ // v3.45 (Boğaç): a waiting giver (at his hour, or once taken) on explored ground: a "?" on his very spot (always, on both maps);
+ // on unexplored ground: only a foggy circle (no "?", no exact spot) while you are within ~10 tiles. At most 2 a land (opened()).
  const fogC=Q.map(q=>{const R=rngOf('fog-'+q.id),a=R()*Math.PI*2,r=R()*48;return{x:q.x+Math.cos(a)*r,y:q.y+Math.sin(a)*r}});
  {const _mq=window.__plMapQ;window.__plMapQ=function(c,ox,oy,sx,sy,big,w,h){if(_mq)try{_mq.apply(this,arguments)}catch(e){}try{mapSQ(c,ox,oy,sx,sy,big,w,h)}catch(e){}}}
  function mapSQ(c,ox,oy,sx,sy,big,w,h){if(onTitle||(window.__plCave&&window.__plCave.cur))return;const now=performance.now()/1000;
-   Q.forEach((q,i)=>{if(q.cave||q.ghost||done.has(q.id)||actOf(q.id)||!present(q)||D2(player,q)>NEAR)return;
-     const f=fogC[i],X=(f.x/T-ox)*sx,Y=(f.y/T-oy)*sy,R=Math.max(big?16:7,96/T*sx);if(X<-R||Y<-R||X>w+R||Y>h+R)return;const pl=.5+.5*Math.sin(now*1.6+i);
+   Q.forEach((q,i)=>{if(q.cave||q.ghost||done.has(q.id)||actOf(q.id)||!present(q))return;const pl=.5+.5*Math.sin(now*1.6+i);
+     const tx=Math.floor(q.x/T),ty=Math.floor(q.y/T);
+     if(tx>=0&&ty>=0&&tx<W&&ty<H&&explored[ty*W+tx]){const X=(q.x/T-ox)*sx,Y=(q.y/T-oy)*sy,R0=big?16:7;if(X<-R0*2.2||Y<-R0*2.2||X>w+R0*2.2||Y>h+R0*2.2)return;
+       // v3.45 (Boğaç): the same size as a main quest's glowing "!" on the map (drawMap mki, __plQUnmet), in violet
+       c.save();c.globalCompositeOperation='lighter';const g=c.createRadialGradient(X,Y,0,X,Y,R0*2.2);g.addColorStop(0,`rgba(170,120,255,${(.55+.3*pl).toFixed(2)})`);g.addColorStop(1,'rgba(170,120,255,0)');c.fillStyle=g;c.beginPath();c.arc(X,Y,R0*2.2,0,6.283);c.fill();c.restore();
+       c.save();c.font=`900 ${Math.round(R0*2*(1+.08*pl))}px Rubik, system-ui, sans-serif`;c.textAlign='center';c.textBaseline='middle';c.lineWidth=big?4:2;c.strokeStyle='#1a0e3a';c.strokeText('?',X,Y);c.fillStyle='#e0d0ff';c.fillText('?',X,Y);c.restore();
+       if(big)try{MAPHITS.push({X,Y,r:R0+6,k:'sq',label:'?'})}catch(e){}return}
+     if(D2(player,q)>NEAR)return;
+     const f=fogC[i],X=(f.x/T-ox)*sx,Y=(f.y/T-oy)*sy,R=Math.max(big?16:7,96/T*sx);if(X<-R||Y<-R||X>w+R||Y>h+R)return;
      c.save();const g=c.createRadialGradient(X,Y,R*.15,X,Y,R);g.addColorStop(0,`rgba(150,100,255,${(.36+.08*pl).toFixed(2)})`);g.addColorStop(.7,'rgba(150,100,255,.22)');g.addColorStop(1,'rgba(150,100,255,0)');c.fillStyle=g;c.beginPath();c.arc(X,Y,R,0,6.283);c.fill();
-     c.strokeStyle='rgba(160,115,255,.9)';c.lineWidth=big?2:1;c.setLineDash([big?6:3,big?6:3]);c.lineDashOffset=-now*(big?8:4);c.beginPath();c.arc(X,Y,R*.92,0,6.283);c.stroke();c.setLineDash([]);
-     c.font=`900 ${Math.round(big?Math.max(14,R*.7):Math.max(8,R*.8))}px Rubik, system-ui, sans-serif`;c.textAlign='center';c.textBaseline='middle';c.fillStyle=`rgba(70,25,170,${(.85+.15*pl).toFixed(2)})`;c.fillText('?',X,Y);c.restore();
-     if(big)try{MAPHITS.push({X,Y,r:R,k:'sq',label:'?'})}catch(e){}})}
+     c.strokeStyle='rgba(160,115,255,.9)';c.lineWidth=big?2:1;c.setLineDash([big?6:3,big?6:3]);c.lineDashOffset=-now*(big?8:4);c.beginPath();c.arc(X,Y,R*.92,0,6.283);c.stroke();c.setLineDash([]);c.restore()})}
  const NEAR=10*T;   // ~10 tiles
  // ---------------------------------------------------------------- the side quest card (under the main quest card)
  {const st=document.createElement('style');st.id='v230-css';st.textContent='#sqcard{position:fixed;z-index:8;left:50%;transform:translateX(-50%);width:min(420px,calc(100vw - 32px));box-sizing:border-box;background:#1c2630;border:3px solid #7fc0e8;box-shadow:0 0 0 3px #11170f;padding:6px 66px 7px 10px;font-size:13.5px;line-height:1.3;color:#e8f2fa;pointer-events:auto}'+
@@ -16580,7 +16589,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
    let h='<h3 class="sqh side">Yan görevler</h3>';
    if(ACT.length){h+='<p class="sqd">Aynı anda birden çok yan görev alabilirsin. <b>Takip ettiğin</b> görev ekranın üstündeki kartta yazar ve dünyada yol gösterir; diğerleri burada bekler. Kartı ▾ ile buraya gönderebilirsin.</p>';
      for(const a of ACT){const q=BY[a.id],on=a===A;if(q.main)continue;h+=`<div class="sqc${on?' trk':''}"><b>${esc(q.name)}</b> · ${esc(q.title)}<br><small>${esc(stepText(a))}</small><div class="qbtns">${on?`<button type="button" class="mk ghost" data-squ="1">📌 Takip ediliyor · Görevlere gönder</button>`:`<button type="button" class="mk" data-sqt="${a.id}">📌 Takip et</button>`}<button type="button" class="mk ghost" data-sqd="${a.id}">Bırak</button></div></div>`}}
-   else h+='<p class="sqd">Şu an bir yan görevin yok. Adayı dolaşırken yardıma ihtiyacı olan insanlara rastlarsın; her biri günün başka bir saatinde ortaya çıkar; birine çok yaklaşınca haritada sisli bir <b>?</b> belirir. Yan görevler ana görevle birlikte yapılabilir; aynı anda birden çok yan görev alabilirsin.</p>';
+   else h+='<p class="sqd">Şu an bir yan görevin yok. Adayı dolaşırken yardıma ihtiyacı olan insanlara rastlarsın; her biri günün başka bir saatinde ortaya çıkar; keşfettiğin yerdeyse haritada kendi yerinde bir <b>?</b> görünür, keşfetmediğin yerdeyse yanına yaklaşınca haritada sisli bir daire belirir. Yan görevler ana görevle birlikte yapılabilir; aynı anda birden çok yan görev alabilirsin.</p>';
    const D=Q.filter(q=>!q.main&&done.has(q.id));h+=`<p class="sqd">Bitirdiklerin: <b>${D.length}/${Q.filter(q=>!q.main).length}</b>${D.length?' · '+D.map(q=>esc(q.title)).join(' · '):''}</p>`;
    cbody.insertAdjacentHTML('beforeend',h)}catch(e){}return r}}
  cbody.addEventListener('click',e=>{if(!(craftOpen&&mode==='qlog'))return;const t=e.target.closest('[data-sqt],[data-squ],[data-sqd]');if(!t)return;e.stopPropagation();try{sfx('pick')}catch(_){}
@@ -21234,6 +21243,27 @@ const EKLOOK=npcLook({skin:'#f0c8a0',skinD:'#d0a47a',hair:'#c86a2a',hairD:'#a04a
     for(let i=trees.length-1;i>=0;i--)if(trees[i].v343!=null)trees.splice(i,1);EK.sap.forEach((s,i)=>{if(s&&s.g)treeFor(i)});layField()}catch(e){}return r}}
 {const _rz=resetState;resetState=function(){const r=_rz.apply(this,arguments);try{EK={st:'cayir',met:false,got:{},sap:[null,null,null,null,null,null],vis:false};for(let i=trees.length-1;i>=0;i--)if(trees[i].v343!=null)trees.splice(i,1);layField()}catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v343ciftlik: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v345">
+// v3.45 (Boğaç): while the big map is open the day banner ("YENİ BİR GÜN · N. Gün"), the discovery banner, the level-up banner,
+// the achievement card and the level-point notes are not drawn over it; anything already on screen is taken down and shown again once the map closes.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+const mapOn=()=>craftOpen&&mode==='map';
+{const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);if(s)s.sv=345;return s}}   // the save's version: 345 = 3.45 (older saves have none)
+if(window.__v345wiped)setTimeout(()=>{try{toastLong('Kaydın eski bir hatadan etkilendiği için yeni oyun başladı.')}catch(e){}},1600);
+{const _an=annNext;annNext=function(){if(mapOn()){clearTimeout(discTimer);annCur=null;discTimer=setTimeout(annNext,400);return}return _an.apply(this,arguments)}}
+let lvlBack=false;const TQ=[];
+{const _to=toast;toast=function(m){if(mapOn()&&/seviye puan/i.test(String(m))){TQ.push(arguments);return}return _to.apply(this,arguments)}}   // the level-point notes wait for the map too
+setInterval(()=>{try{
+  if(mapOn()){
+    const db=$('daybanner');if(db&&!db.hidden){db.hidden=true;clearTimeout(dayBanner.t);dayBannerShow()}   // dayBannerShow waits while a panel is open
+    const dc=$('discover');if(dc&&!dc.hidden){if(annCur)annQ.unshift(annCur);annCur=null;dc.hidden=true;clearTimeout(discTimer);discTimer=setTimeout(annNext,400)}
+    const lu=$('lvlup');if(lu&&!lu.hidden){lu.hidden=true;clearTimeout(gainXP.t);lvlBack=true}
+    if(window.__plAchBack)window.__plAchBack();
+  }else{while(TQ.length){const a=TQ.shift();toast.apply(null,a)}}
+  if(!mapOn()&&lvlBack){lvlBack=false;const lu=$('lvlup');lu.hidden=true;void lu.offsetWidth;lu.hidden=false;clearTimeout(gainXP.t);gainXP.t=setTimeout(()=>lu.hidden=true,3000)}
+}catch(e){}},200);
+}).toString()+')()')}catch(e){try{window.__hamErr('v345: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

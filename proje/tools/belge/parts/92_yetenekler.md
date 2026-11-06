@@ -104,7 +104,7 @@ Yetenekler üç ağaçtadır: **Savaş** (kırmızı), **Ekonomi** (altın sarı
 | 8 | G6 | Taşçı | kazma | Taş, çakmaktaşı, çakıl, kum, kil %50 daha hızlı | Verimli toprak II | – | 5.000 | Sv 14 |
 | 8 | G7 | Su taşıyıcı | su damlası | Su %50 daha hızlı | Verimli toprak II | – | 5.000 | Sv 14 |
 | 8 | H5 | Keskin göz | göz | Çakmaktaşı ve böğürtlen haritada parlar | Usta işi II | – | 5.000 | Sv 14 |
-| 8 | H4 | Uzun kol | uzanan ok | E ile %50 daha uzaktan toplama | Usta işi II | – | 5.000 | Sv 14 |
+| 8 | H4 | Uzun kol | uzanan ok | F ile %50 daha uzaktan toplama | Usta işi II | – | 5.000 | Sv 14 |
 
 ## Dayanıklılık (yeşil)
 

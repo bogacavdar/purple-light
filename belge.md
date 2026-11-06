@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.44** ile birebir (6 Kasım 2026). Bu sürümde: biyomlar v3.39'a göre alanca %50 büyük (790 × 568; v3.40–3.43'te yanlışlıkla 2,25 kat büyümüştü), eski kayıtlar silinir; tasarım belgesi bölümlere ayrıldı ve tekrarlar tekilleştirildi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.45** ile birebir (6 Kasım 2026). Bu sürümde: Çayır'da Porsuk doğar, haritada yan görev işaretleri yeni kurala göre (keşfedilmiş yerde kişinin yerinde "?", keşfedilmemiş yerde yakınken sisli daire), büyük harita açıkken ekran ortası duyurular beklemeye alınır. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -437,7 +437,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 
 ### Konuşma penceresi
 
-- **Konuşma penceresi:** uzun konuşmalar (ör. görev anlatımları) ekranın üstünden taşmaz: pencere en çok **görünen ekran yüksekliği** kadar olur (iPhone'da adres çubuğu hesaba katılır), yazı kendi içinde kayar, **cevap düğmeleri hep altta görünür**; yazı harf harf gelirken pencere son satırı izler, bitince yukarı kaydırıp baştan okunabilir. Yazılar ve düğmeler telefona göre biraz küçüktür.
+- **Konuşma penceresi:** uzun konuşmalar (ör. görev anlatımları) ekranın üstünden taşmaz: pencere en çok **görünen ekran yüksekliği** kadar olur (iPhone'da adres çubuğu hesaba katılır), yazı kendi içinde kayar, **cevap düğmeleri hep altta görünür**; yazı harf harf gelirken pencere son satırı izler, bitince yukarı kaydırıp baştan okunabilir. **Yazı harf harf akarken ilk basış** (tık, dokunuş, tuş ya da seçenek numarası) **yazıyı tamamlar, ikinci basış seçer.** Yazılar ve düğmeler telefona göre biraz küçüktür.
 - **Pencere dışına basmak = "Anladım" (kalıcı kural):** konuşma penceresi seçim yapılmadan kapatılırsa (pencerenin dışına tıklama/dokunma, Esc, X) oyuncu pencereyi okumuş sayılır ve sade cevap seçilmiş olur: yalnızca kapatan bir seçenek varsa ("Sonra", "Hoşça kal") o, tek seçenek varsa o, yoksa ana (vurgulu) seçenek. Böylece "Hazırım" / "Anladım" bekleyen bir ders ya da görev hiçbir zaman takılı kalmaz. **Eklenen her yeni pencere bu kurala uyar.**
 
 ## Hayatta kalma
@@ -681,7 +681,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - Her toplama, isabet ya da balık aletin 1 kullanımını yer. Dayanıklılık rengi yeşilden kırmızıya döner; sıfırda alet çalışmaz, silah yumruk gibi vurur. **Bileme** (Dursun ve silahçı kuzenleri): aletin değerinin onda biri. Kova ve asalar/ateşli silahlar körelmez.
 - **Körelmiş aletle F (v3.36, Boğaç):** elindeki balta ya da kazma tamamen körelmişse (dayanıklılığı 0) **F** (topla) ağaca ya da madene yönelmez; aletin hiç yokmuş gibi yerdeki eşyaya, bitkiye ya da yakındaki başka bir şeye yönelir (eskiden körelmiş baltayla ağaca gidip boşuna "köreldi" diyordu).
 - **Alet yuvaları:** 5 (Alet kemeri dalıyla 6/7/8/10/12). Yuva doluysa yeni alet yere düşer; yerdeki eşya 180 sn sonra kaybolur.
-- **Mıknatıs:** yere düşen küçük eşyalar (yeni düşenler yarım saniye bekler) **21 px** yakına gelince sana doğru süzülür (%30 kısaltıldı). 10 px içinde hızla çekilir, 6 px'te toplanır; E ile 28 px içindekiler alınır.
+- **Mıknatıs:** yere düşen küçük eşyalar (yeni düşenler yarım saniye bekler) **21 px** yakına gelince sana doğru süzülür 10 px içinde hızla çekilir, 6 px'te toplanır; F ile 28 px içindekiler alınır.
 - **Ağaç kesince dal ve yaprak düşer:** baltayla her kesişte ağacın odununun yanında **1 Dal** ve **1 Yaprak** düşer (Söğüt'ün söğüt dalı ve meyve ağaçlarının meyvesi eskisi gibi ayrıca düşer).
 - **Yerdeki yaprak daha küçük:** dünyada yerde duran toplanabilir **Yaprak** eskisinin **%70'i** boyunda çizilir (gölgesiyle birlikte). Toplama mesafesi, envanter simgesi ve sayıları değişmez.
 - **İş çubuğunun yazısı:** balta ile ağaç keserken "**Kesiliyor: Çam ağacı**" (ağacın adı), kazma ile kazarken "**Kazılıyor: …**", öbür toplamalarda "Toplanıyor: …" yazar.
@@ -807,6 +807,9 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
 | Konak | 10 | 12×8 | |
 
 ### Harita, işaretler, defterler
+
+- **Görev dışı süs işaret yoktur:** haritanın keşfedilmemiş yerlerinde görevle ilgisi olmayan süs işaretleri (gelip giden "?" gibi) yoktur; haritadaki her "?" bir yan görev işaretidir.
+- **Harita açıkken ekran yazıları üstüne binmez:** büyük harita açıkken gün başı yazısı ("YENİ BİR GÜN · N. Gün") ve benzeri ekran ortası duyurular harita penceresinin üstüne çizilmez; harita kapanınca gösterilir. Haritadaki yan kişi işaretleri yalnızca yan görev kuralına göre çıkar (ACT 1 › Yan görevler › Haritada yan görevler: keşfedilmiş yerde kişinin yerinde "?", keşfedilmemiş yerde yakınken sisli daire; biyom başına en çok 2).
 
 - **Kazan, Demirhane ve Pazar düğmesiz:** sol menüde Kazan, Demirci ve Pazar düğmeleri, B / T / P kısayolları ve uzaktan basınca yol gösteren ok **yoktur**. Kazan Zümrüt'ün yanında kazana dokunarak, demirhane Dursun'la (ya da kuzen demircilerle) konuşarak, pazar Nazlı'yla konuşarak açılır; yerlerini oyuncu kendisi bulur (öğreticinin ve görevlerin kendi okları sürer).
 - Sağ altta küçük harita; **M** büyük harita (tekerlek, sürükleme ya da +/− ile yakınlaştır). Geçtiğin yerin çevresi açılır (Kâşif gözü ile iki kat). Gece harita kararır ama kişiler görünür.
@@ -1079,6 +1082,8 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 ### Kayıt
 
 - Otomatik kayıt + 3 elle kayıt yuvası (tarayıcıda).
+- **Yan görev XP hatasından etkilenen kayıtlar silinir (v3.45, 6 Kasım 2026, Boğaç):** v3.44'te yan görev bitince XP olarak kişinin x konumu veriliyordu. v3.45'ten önceki bir kayıtta **en az bir yan görev bitmişse** o kayıt açılışta silinir ve oyuncu yeni oyuna başlar; yan görev bitirmemiş kayıtlar korunur. Silinince yalnızca tek cümlelik bir bilgi çıkar: "Kaydın eski bir hatadan etkilendiği için yeni oyun başladı." (adım tarif edilmez; ekranda **5 sn** kalır).
+- **Ada değişince eski kayıtlar silinir:** harita değişikliğiyle (harita sürümü `MAPV` artınca) eski kayıt açılışta silinir ve yeni oyun başlar. Bildirim tek cümledir: "Ada değiştiği için yeni oyun başladı." (adım tarif edilmez; ekranda **5 sn** kalır).
 - **Anılar adıyla saklanır:** kayıt, görülen anıları **adıyla** saklar; bir anı eklenip çıkınca kayıtlar kaymaz.
 - **Üzerine yazma:** kaydetme menüsünde dolu bir yuvaya basınca bir soru çıkar: "Bu yuvada bir kayıt var (Seviye…, tarih). Yeni kaydı üzerine yazayım mı?" → **Üzerine yaz** / **Vazgeç**. (Önceden "bir kez daha bas" uyarısıydı.)
 - **Kaydı sil:** kaydetme ve yükleme menülerinde her dolu yuvanın yanında **Sil** düğmesi (yükleme menüsünde otomatik kayıt da silinebilir). Basınca sorar: "Kayıt 2 silinecek. Emin misiniz? Bu geri alınamaz." → **Eminim, sil** / **Vazgeç**. Silinince yuva boşalır.
@@ -1101,9 +1106,9 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 - **Sıradağ** Kayalık Dağ ile Kül Diyarı'nın arasından geçer, kıyıdan kıyıya uzanır. Tek geçidi (Doğu geçidi) sıradağın ortasına yakındır ve bir **kaya yığını** kapatır. 2 Kaya patlatıcı ve 4. kademe (Kuvars ya da Çelik) ya da daha iyi bir kazmayla patlatılır. **Patlama bütün sıradağı çökertir:** o andan sonra sınır kalkar, sıradağın her yeri yürünebilir moloz olur ve Kayalık Dağ ile Kül Diyarı arasında her yerden geçilir. (Kayıtta yalnızca "patlatıldı" bilgisi tutulur; yüklenince sıradağ yeniden çöker.)
 - **Göller ve dereler:** Orman'da bir pınar gölü ve denize akan deresi, Çayır'da bir göl, Kayalık Dağ'da bir pınar gölü ve deresi, Bataklık'ta 30 küçük gölcük vardır (v3.44; önce 20) (su, kil, çakıl, su kenarı bitkileri ve tatlı su balıkları bunların başında).
 - **Haritadaki miktarlar:** yeni oyunda ada kurulurken her tür sabit sayıda rastgele yere konur; yerler her oyunda farklı, sayılar aynıdır.
-  - **Temel malzemeler** bütün adaya serpilir (yaklaşık): Dal 800, **Lif ~950, Taş ~735** (önce 700 ve 550), Yaprak 450, Nehir çakılı 400, Kum 350, Çakmaktaşı 300. Daha az oldukları için **%30 daha çabuk** yeniden çıkarlar (ör. Dal 25 → 18 sn).
-  - **Biyom bitkileri** her biyomun kendi 14 türü: tür başına kendi biyomunda yaklaşık **40** (önce 68); Kuru ot ~90 (150), Böğürtlen ~80 (110), yalnızca su kenarında biten türler ~30 (42).
-  - **Madenler** (biyom başına 3 tür, ilk iki biyomda 22, diğerlerinde 20) ve **mağara buluntuları** (Sarkıt, Yarasa gübresi —: Mağara mantarı artık yalnızca mağaraların içinde çıkar: madenlerin çevresinde 44'er) değişmedi.
+  - **Temel malzemeler** bütün adaya serpilir (yaklaşık): Dal ~1.177, **Lif ~1.457, Taş ~1.071**, Yaprak 201, Nehir çakılı ~616, Kum ~530, Çakmaktaşı ~459 (v3.45 yeni oyun ölçümü; serpme v3.39'un 1,5 katı, Giriş › Adalar ve dünya ölçüsü). **Yaprak yerde seyrektir:** serpilen yaprakların, başlangıç kampının çevresi dışında kalanlarının **%72'si** ada kurulurken silinir; silme tohumludur: **her oyunda aynı karolarda olur**, böylece kalan yaprak sayısı her yeni oyunda aynıdır (sayılar aynıdır kuralı yaprakta da geçerli). Yaprak çoğunlukla ağaç kesince düşer. Daha az oldukları için **%30 daha çabuk** yeniden çıkarlar (ör. Dal 25 → 18 sn).
+  - **Biyom bitkileri** her biyomun kendi 14 türü: tür başına kendi biyomunda yaklaşık **60**; Kuru ot ~135, Böğürtlen ~120, yalnızca su kenarında biten türler ~45 (v3.44: v3.39'un 1,5 katı).
+  - **Madenler** (biyom başına 3 tür, ilk iki biyomda 33, diğerlerinde 30) ve **mağara buluntuları** (Sarkıt, Yarasa gübresi madenlerin çevresinde 66'şar; Mağara mantarı yalnızca mağaraların içinde çıkar) da v3.39'un 1,5 katıdır (v3.44).
   - **Ağaçlar** sayıyla değil olasılıkla çıkar: orman zemininde her karede %20, çimende %4 (Kül Diyarı'nda bunların %45'i); sonra **%35'i** seyreltilir. Tür biyomun 5 ağacından seçilir; meyve ağaçlarının payı 0,45, diğerlerinin 1.
   - **Başlangıç kampının çevresi (20 karo)** seyreltilmez; öğretici burada geçer.
   - **Kuzen aileleri:** her ailenin demircileri ve cadısı kendi biyomunun içindeki sabit yerlerde durur (adanın verisinden); Orman'daki aile (Cadı Yakut) Çayır tarafına yakındır.
@@ -1129,14 +1134,14 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 
 Aşağıdaki her biyom başlığında dört tablo var:
 
-- **Ağaç sayısı:** ada kurulurken ağaçlar yaklaşık **%25 azaltılır** (başlangıç kampının 20 karo çevresi hariç; orası öğretici için aynı kalır). Kayıtlar etkilenmez, harita her açılışta aynı kurulur.
+- **Ağaç sayısı:** ada kurulurken ağaçlar **%35** seyreltilir (kural: yukarıda Haritadaki miktarlar; başlangıç kampının 20 karo çevresi hariç; orası öğretici için aynı kalır). Kayıtlar etkilenmez, harita her açılışta aynı kurulur.
 - **Her kesişte:** ağacın odunu + **1 Dal** + **1 Yaprak** düşer (önceden yaprak 1–2'ydi, dal yoktu).
-- **Ağaçlar:** balta ile kesilir (E). "Gereken balta" kademesinin altındaki balta o ağacı kesemez. Meyve ağaçları eli boşken E ile **silkelenir** (2–3 meyve); baltayla kesilirlerse de odun, 1–2 meyve ve %35 ihtimalle tohum verirler. Bazı ağaçlar kesilince yan ürün de düşürür: Çam → 1 Çam kozalağı, Meşe → 1 Meşe palamudu, Akçaağaç → 1 Akçaağaç özsuyu, Ihlamur → 2 Ihlamur çiçeği, Söğüt → 2 Söğüt dalı.
-- **Toplanabilirler:** yerde durur, elde alet gerekmez. Toplanınca belirtilen süre sonra aynı yerde yeniden çıkar. "Adadaki sayısı" haritanın o bölgesindeki toplam yerdir (yeni oyunda ölçüldü).
+- **Ağaçlar:** balta ile kesilir (F). "Gereken balta" kademesinin altındaki balta o ağacı kesemez. Meyve ağaçları eli boşken F ile **silkelenir** (2–3 meyve); baltayla kesilirlerse de odun, 1–2 meyve ve %35 ihtimalle tohum verirler. Bazı ağaçlar kesilince yan ürün de düşürür: Çam → 1 Çam kozalağı, Meşe → 1 Meşe palamudu, Akçaağaç → 1 Akçaağaç özsuyu, Ihlamur → 2 Ihlamur çiçeği, Söğüt → 2 Söğüt dalı.
+- **Toplanabilirler:** yerde durur, elde alet gerekmez. Toplanınca belirtilen süre sonra aynı yerde yeniden çıkar. "Adadaki sayısı" haritanın o bölgesindeki toplam yerdir (v3.45 yeni oyun ölçümü).
 - **Madenler:** kazma elde E. Gereken kazma kademesi tabloda. Maden 300 sn sonra yeniden dolar.
 - **Canlılar:** *zararsız* kaçar; *nötr* vurulunca karşılık verir, uzaklaşınca sakinleşir; *saldırgan* görünce saldırır. **Can** ve **Hasar** oyundaki gerçek değerlerdir (savunma ve zorluk hesaba katılmadan). Hız piksel/saniye cinsindendir. Düşürdükleri yüzde ihtimalle verilir.
 
-Her yerde ortak olan temel toplanabilirler (Dal, Taş, Lif, Yaprak) ve su kıyısındaki Nehir çakılı, Kum, Çakmaktaşı en çok yurtta bulunur. **Su** bir kapla (Yaprak kova vb.) suyun başında E ile alınır; **Nehir kili** kürekle kıyıdan kazılır.
+Her yerde ortak olan temel toplanabilirler (Dal, Taş, Lif, Yaprak) ve su kıyısındaki Nehir çakılı, Kum, Çakmaktaşı en çok yurtta bulunur. **Su** bir kapla (Yaprak kova vb.) suyun başında F ile alınır; **Nehir kili** kürekle kıyıdan kazılır.
 
 ### Çayır — Güvenli
 
@@ -1156,37 +1161,37 @@ Başladığın yer: hilalin batı ucunda, Çayır'ın Orman'a en uzak yerinde, g
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Böğürtlen | 2 | 86 | 40 sn sonra yeniden çıkar, çiğ yenir (+5 tokluk) |
-| Çakmaktaşı | 2 | 68 | 31 sn sonra yeniden çıkar |
-| Çayır mantarı | 2 | 39 | 50 sn sonra yeniden çıkar |
-| Dal | 1 | 125 | 18 sn sonra yeniden çıkar |
-| Ebegümeci | 1 | 43 | 40 sn sonra yeniden çıkar |
-| Gelincik | 2 | 41 | 40 sn sonra yeniden çıkar |
-| Hardal otu | 2 | 44 | 45 sn sonra yeniden çıkar |
-| Kum | 1 | 67 | 14 sn sonra yeniden çıkar |
-| Kuru ot | 1 | 87 | 25 sn sonra yeniden çıkar |
-| Lif | 1 | 95 | 14 sn sonra yeniden çıkar |
-| Nane | 2 | 47 | 40 sn sonra yeniden çıkar |
-| Nehir çakılı | 1 | 90 | 18 sn sonra yeniden çıkar |
-| Papatya | 1 | 44 | 35 sn sonra yeniden çıkar |
-| Rezene | 2 | 38 | 45 sn sonra yeniden çıkar |
-| Sarkıt | 6 | 5 | 120 sn sonra yeniden çıkar |
-| Taş | 1 | 85 | 21 sn sonra yeniden çıkar |
-| Yabani arpa | 2 | 35 | 45 sn sonra yeniden çıkar |
-| Yabani buğday | 2 | 37 | 40 sn sonra yeniden çıkar |
-| Yabani havuç | 2 | 39 | 45 sn sonra yeniden çıkar, çiğ yenir (+5 tokluk) |
-| Yabani yulaf | 2 | 44 | 45 sn sonra yeniden çıkar |
-| Yaban çileği | 2 | 43 | 45 sn sonra yeniden çıkar, çiğ yenir (+6 tokluk) |
-| Yaprak | 1 | 23 | 63 sn sonra yeniden çıkar |
-| Yarasa gübresi | 3 | 5 | 90 sn sonra yeniden çıkar |
+| Böğürtlen | 2 | 123 + öğretici kampında 5 (toplam 128) | 40 sn sonra yeniden çıkar, çiğ yenir (+5 tokluk) |
+| Çakmaktaşı | 2 | 98 | 31 sn sonra yeniden çıkar |
+| Çayır mantarı | 2 | 70 | 50 sn sonra yeniden çıkar |
+| Dal | 1 | 242 | 18 sn sonra yeniden çıkar |
+| Ebegümeci | 1 | 62 | 40 sn sonra yeniden çıkar |
+| Gelincik | 2 | 57 | 40 sn sonra yeniden çıkar |
+| Hardal otu | 2 | 71 | 45 sn sonra yeniden çıkar |
+| Kum | 1 | 99 | 14 sn sonra yeniden çıkar |
+| Kuru ot | 1 | 141 | 25 sn sonra yeniden çıkar |
+| Lif | 1 | 238 | 14 sn sonra yeniden çıkar |
+| Nane | 2 | 62 | 40 sn sonra yeniden çıkar |
+| Nehir çakılı | 1 | 127 | 18 sn sonra yeniden çıkar |
+| Papatya | 1 | 66 | 35 sn sonra yeniden çıkar |
+| Rezene | 2 | 62 | 45 sn sonra yeniden çıkar |
+| Sarkıt | 6 | 9 | 120 sn sonra yeniden çıkar |
+| Taş | 1 | 176 | 21 sn sonra yeniden çıkar |
+| Yabani arpa | 2 | 51 | 45 sn sonra yeniden çıkar |
+| Yabani buğday | 2 | 64 | 40 sn sonra yeniden çıkar |
+| Yabani havuç | 2 | 57 | 45 sn sonra yeniden çıkar, çiğ yenir (+5 tokluk) |
+| Yabani yulaf | 2 | 64 | 45 sn sonra yeniden çıkar |
+| Yaban çileği | 2 | 60 | 45 sn sonra yeniden çıkar, çiğ yenir (+6 tokluk) |
+| Yaprak | 1 | 51 | 63 sn sonra yeniden çıkar |
+| Yarasa gübresi | 3 | 21 | 90 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, E)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Kireçtaşı | 2 | 1. kademe (Taş, Çakmaktaşı ya da Bakır kazma) | 22 | 300 sn sonra yeniden çıkar |
-| Kumtaşı | 3 | 1. kademe (Taş, Çakmaktaşı ya da Bakır kazma) | 22 | 300 sn sonra yeniden çıkar |
-| Bakır cevheri | 5 | 1. kademe (Taş, Çakmaktaşı ya da Bakır kazma) | 22 | 300 sn sonra yeniden çıkar |
+| Kireçtaşı | 2 | 1. kademe (Taş, Çakmaktaşı ya da Bakır kazma) | 33 | 300 sn sonra yeniden çıkar |
+| Kumtaşı | 3 | 1. kademe (Taş, Çakmaktaşı ya da Bakır kazma) | 33 | 300 sn sonra yeniden çıkar |
+| Bakır cevheri | 5 | 1. kademe (Taş, Çakmaktaşı ya da Bakır kazma) | 33 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -1200,6 +1205,8 @@ Başladığın yer: hilalin batı ucunda, Çayır'ın Orman'a en uzak yerinde, g
 | Kerevit | nötr | 40 | 11 | 14 | 11 | – | Kerevit %100 ×1–2 |
 | Kurt | saldırgan | 70 | 12 | 66 | 23 | gece, sürü 2–5 | Kurt eti %100; Kurt derisi %75; Kurt dişi %50; Kemik %50 ×1–2; Sinir %40 |
 | Porsuk | nötr | 50 | 14 | 40 | 21 | – | Kunduz eti %100; Kunduz derisi %75; Kemik %30 |
+
+**Deri parçası ve Yaban atı:** derisi ya da postu olan her canlı (Çayır'da Tavşan, Geyik, Yaban atı, Kurt, Porsuk) avlanınca derisinin yanında **Deri parçası** da düşürür (%70–80; Yaban atı ve Kurt ×1–2; kural: Tarifler › Tarifler nasıl çalışır). **Yaban atı** Çayır'da yalnızca karakter **Seviye 2**'ye ulaşınca çıkar. **Porsuk** Çayır'ın doğan canlılarındandır (sürü yok, her saatte).
 
 **Çayır canlıları daha sert vurur:** Kerevit, Porsuk, Yaban atı ve Geyik'in hasarı %50 arttı (7→11, 9→14, 11→17, 10→15). Arenada da bu canlılar aynı hasarla vurur (arena canlıları oyunun canlı tablosundan gelir). Kurt değişmedi.
 
@@ -1276,36 +1283,36 @@ Adanın kuzeybatısı (Çayır'dan doğuya, büyük nehre doğru yürü). Gölge
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ahududu | 8 | 26 | 45 sn sonra yeniden çıkar, çiğ yenir (+9 tokluk) |
-| Çakmaktaşı | 2 | 55 | 31 sn sonra yeniden çıkar |
-| Dal | 1 | 249 | 18 sn sonra yeniden çıkar |
-| Eğrelti | 7 | 42 | 40 sn sonra yeniden çıkar |
-| Isırgan | 7 | 45 | 35 sn sonra yeniden çıkar |
-| Kanlıca | 8 | 41 | 55 sn sonra yeniden çıkar |
-| Kum | 1 | 71 | 14 sn sonra yeniden çıkar |
-| Kuzugöbeği | 10 | 45 | 70 sn sonra yeniden çıkar, çiğ yenir (+8 tokluk), zehirli! |
-| Kuzukulağı | 7 | 39 | 40 sn sonra yeniden çıkar, çiğ yenir (+7 tokluk), zehirli! |
-| Lif | 1 | 104 | 14 sn sonra yeniden çıkar |
-| Nehir çakılı | 1 | 65 | 18 sn sonra yeniden çıkar |
-| Sarmaşık | 7 | 36 | 45 sn sonra yeniden çıkar |
-| Taş | 1 | 74 | 21 sn sonra yeniden çıkar |
-| Tatlısu midyesi | 8 | 31 | 50 sn sonra yeniden çıkar |
-| Tavuk mantarı | 8 | 41 | 70 sn sonra yeniden çıkar, çiğ yenir (+8 tokluk) |
-| Yabani bal | 11 | 46 | 90 sn sonra yeniden çıkar, çiğ yenir (+12 tokluk) |
-| Yabani mercimek | 8 | 44 | 45 sn sonra yeniden çıkar, çiğ yenir (+7 tokluk) |
-| Yabani nohut | 8 | 38 | 45 sn sonra yeniden çıkar, çiğ yenir (+7 tokluk) |
-| Yaban mersini | 8 | 45 | 50 sn sonra yeniden çıkar, çiğ yenir (+9 tokluk) |
-| Yaban sarımsağı | 8 | 37 | 45 sn sonra yeniden çıkar |
-| Yaprak | 1 | 47 | 63 sn sonra yeniden çıkar |
-| Yarasa gübresi | 3 | 7 | 90 sn sonra yeniden çıkar |
+| Ahududu | 8 | 66 | 45 sn sonra yeniden çıkar, çiğ yenir (+9 tokluk) |
+| Çakmaktaşı | 2 | 73 | 31 sn sonra yeniden çıkar |
+| Dal | 1 | 312 | 18 sn sonra yeniden çıkar |
+| Eğrelti | 7 | 52 | 40 sn sonra yeniden çıkar |
+| Isırgan | 7 | 61 | 35 sn sonra yeniden çıkar |
+| Kanlıca | 8 | 64 | 55 sn sonra yeniden çıkar |
+| Kum | 1 | 83 | 14 sn sonra yeniden çıkar |
+| Kuzugöbeği | 10 | 61 | 70 sn sonra yeniden çıkar, çiğ yenir (+8 tokluk), zehirli! |
+| Kuzukulağı | 7 | 57 | 40 sn sonra yeniden çıkar, çiğ yenir (+7 tokluk), zehirli! |
+| Lif | 1 | 239 | 14 sn sonra yeniden çıkar |
+| Nehir çakılı | 1 | 112 | 18 sn sonra yeniden çıkar |
+| Sarmaşık | 7 | 63 | 45 sn sonra yeniden çıkar |
+| Taş | 1 | 156 | 21 sn sonra yeniden çıkar |
+| Tatlısu midyesi | 8 | 45 | 50 sn sonra yeniden çıkar |
+| Tavuk mantarı | 8 | 66 | 70 sn sonra yeniden çıkar, çiğ yenir (+8 tokluk) |
+| Yabani bal | 11 | 64 | 90 sn sonra yeniden çıkar, çiğ yenir (+12 tokluk) |
+| Yabani mercimek | 8 | 65 | 45 sn sonra yeniden çıkar, çiğ yenir (+7 tokluk) |
+| Yabani nohut | 8 | 55 | 45 sn sonra yeniden çıkar, çiğ yenir (+7 tokluk) |
+| Yaban mersini | 8 | 62 | 50 sn sonra yeniden çıkar, çiğ yenir (+9 tokluk) |
+| Yaban sarımsağı | 8 | 74 | 45 sn sonra yeniden çıkar |
+| Yaprak | 1 | 51 | 63 sn sonra yeniden çıkar |
+| Yarasa gübresi | 3 | 12 | 90 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, E)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Granit | 10 | 1. kademe (Taş, Çakmaktaşı ya da Bakır kazma) | 22 | 300 sn sonra yeniden çıkar |
-| Taş kömürü | 11 | 1. kademe (Taş, Çakmaktaşı ya da Bakır kazma) | 22 | 300 sn sonra yeniden çıkar |
-| Kalay cevheri | 12 | 1. kademe (Taş, Çakmaktaşı ya da Bakır kazma) | 22 | 300 sn sonra yeniden çıkar |
+| Granit | 10 | 1. kademe (Taş, Çakmaktaşı ya da Bakır kazma) | 33 | 300 sn sonra yeniden çıkar |
+| Taş kömürü | 11 | 1. kademe (Taş, Çakmaktaşı ya da Bakır kazma) | 32 | 300 sn sonra yeniden çıkar |
+| Kalay cevheri | 12 | 1. kademe (Taş, Çakmaktaşı ya da Bakır kazma) | 33 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -1337,37 +1344,37 @@ Adanın kuzeyi, büyük nehrin doğusu: Orman'dan ana köprüyü onarıp karşı
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Bataklık otu | 15 | 43 | 45 sn sonra yeniden çıkar |
-| Çakmaktaşı | 2 | 51 | 31 sn sonra yeniden çıkar |
-| Dal | 1 | 144 | 18 sn sonra yeniden çıkar |
-| Göl kili | 14 | 31 | 60 sn sonra yeniden çıkar |
-| Hasırotu | 13 | 36 | 35 sn sonra yeniden çıkar |
-| Kamış | 13 | 42 | 30 sn sonra yeniden çıkar |
-| Kenevir | 14 | 37 | 45 sn sonra yeniden çıkar |
-| Keten | 14 | 42 | 45 sn sonra yeniden çıkar |
-| Kızılcık | 14 | 46 | 50 sn sonra yeniden çıkar, çiğ yenir (+12 tokluk) |
-| Kum | 1 | 47 | 14 sn sonra yeniden çıkar |
-| Lif | 1 | 116 | 14 sn sonra yeniden çıkar |
-| Nehir çakılı | 1 | 66 | 18 sn sonra yeniden çıkar |
-| Nilüfer | 14 | 30 | 50 sn sonra yeniden çıkar |
-| Sarkıt | 6 | 4 | 120 sn sonra yeniden çıkar |
-| Saz | 13 | 45 | 30 sn sonra yeniden çıkar |
-| Sinek mantarı | 15 | 41 | 60 sn sonra yeniden çıkar, çiğ yenir (+11 tokluk), zehirli! |
-| Su kestanesi | 14 | 31 | 55 sn sonra yeniden çıkar, çiğ yenir (+12 tokluk) |
-| Su teresi | 14 | 33 | 40 sn sonra yeniden çıkar |
-| Taş | 1 | 98 | 21 sn sonra yeniden çıkar |
-| Turba | 14 | 45 | 45 sn sonra yeniden çıkar |
-| Yaprak | 1 | 18 | 63 sn sonra yeniden çıkar |
-| Yarasa gübresi | 3 | 7 | 90 sn sonra yeniden çıkar |
-| Yosun | 13 | 39 | 30 sn sonra yeniden çıkar |
+| Bataklık otu | 15 | 66 | 45 sn sonra yeniden çıkar |
+| Çakmaktaşı | 2 | 88 | 31 sn sonra yeniden çıkar |
+| Dal | 1 | 161 | 18 sn sonra yeniden çıkar |
+| Göl kili | 14 | 45 | 60 sn sonra yeniden çıkar |
+| Hasırotu | 13 | 57 | 35 sn sonra yeniden çıkar |
+| Kamış | 13 | 54 | 30 sn sonra yeniden çıkar |
+| Kenevir | 14 | 60 | 45 sn sonra yeniden çıkar |
+| Keten | 14 | 58 | 45 sn sonra yeniden çıkar |
+| Kızılcık | 14 | 57 | 50 sn sonra yeniden çıkar, çiğ yenir (+12 tokluk) |
+| Kum | 1 | 113 | 14 sn sonra yeniden çıkar |
+| Lif | 1 | 248 | 14 sn sonra yeniden çıkar |
+| Nehir çakılı | 1 | 105 | 18 sn sonra yeniden çıkar |
+| Nilüfer | 14 | 45 | 50 sn sonra yeniden çıkar |
+| Sarkıt | 6 | 10 | 120 sn sonra yeniden çıkar |
+| Saz | 13 | 61 | 30 sn sonra yeniden çıkar |
+| Sinek mantarı | 15 | 62 | 60 sn sonra yeniden çıkar, çiğ yenir (+11 tokluk), zehirli! |
+| Su kestanesi | 14 | 39 | 55 sn sonra yeniden çıkar, çiğ yenir (+12 tokluk) |
+| Su teresi | 14 | 37 | 40 sn sonra yeniden çıkar |
+| Taş | 1 | 168 | 21 sn sonra yeniden çıkar |
+| Turba | 14 | 54 | 45 sn sonra yeniden çıkar |
+| Yaprak | 1 | 35 | 63 sn sonra yeniden çıkar |
+| Yarasa gübresi | 3 | 9 | 90 sn sonra yeniden çıkar |
+| Yosun | 13 | 61 | 30 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, E)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Arduvaz | 18 | 2. kademe (Granit ya da Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Tuz kayası | 19 | 2. kademe (Granit ya da Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Demir cevheri | 20 | 2. kademe (Granit ya da Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
+| Arduvaz | 18 | 2. kademe (Granit ya da Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Tuz kayası | 19 | 2. kademe (Granit ya da Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Demir cevheri | 20 | 2. kademe (Granit ya da Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -1399,37 +1406,37 @@ Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartalla
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Adaçayı | 21 | 36 | 45 sn sonra yeniden çıkar |
-| Alıç | 21 | 39 | 50 sn sonra yeniden çıkar, çiğ yenir (+15 tokluk) |
-| Beyaz kil | 23 | 44 | 80 sn sonra yeniden çıkar |
-| Civanperçemi | 21 | 34 | 45 sn sonra yeniden çıkar |
-| Çakmaktaşı | 2 | 34 | 31 sn sonra yeniden çıkar |
-| Dağ çayı | 23 | 40 | 50 sn sonra yeniden çıkar |
-| Dal | 1 | 142 | 18 sn sonra yeniden çıkar |
-| Kardelen | 24 | 44 | 60 sn sonra yeniden çıkar |
-| Kav mantarı | 21 | 40 | 60 sn sonra yeniden çıkar |
-| Kayın mantarı | 22 | 40 | 60 sn sonra yeniden çıkar, çiğ yenir (+14 tokluk) |
-| Kekik | 21 | 36 | 40 sn sonra yeniden çıkar |
-| Kırmızı kil | 22 | 33 | 70 sn sonra yeniden çıkar |
-| Kum | 1 | 44 | 14 sn sonra yeniden çıkar |
-| Kuşburnu | 21 | 43 | 50 sn sonra yeniden çıkar, çiğ yenir (+14 tokluk) |
-| Lavanta | 22 | 37 | 50 sn sonra yeniden çıkar |
-| Lif | 1 | 123 | 14 sn sonra yeniden çıkar |
-| Liken | 22 | 39 | 45 sn sonra yeniden çıkar |
-| Nehir çakılı | 1 | 49 | 18 sn sonra yeniden çıkar |
-| Sarkıt | 6 | 14 | 120 sn sonra yeniden çıkar |
-| Sinirotu | 21 | 37 | 45 sn sonra yeniden çıkar |
-| Taş | 1 | 99 | 21 sn sonra yeniden çıkar |
-| Yaprak | 1 | 25 | 63 sn sonra yeniden çıkar |
-| Yarasa gübresi | 3 | 11 | 90 sn sonra yeniden çıkar |
+| Adaçayı | 21 | 59 | 45 sn sonra yeniden çıkar |
+| Alıç | 21 | 55 | 50 sn sonra yeniden çıkar, çiğ yenir (+15 tokluk) |
+| Beyaz kil | 23 | 68 | 80 sn sonra yeniden çıkar |
+| Civanperçemi | 21 | 66 | 45 sn sonra yeniden çıkar |
+| Çakmaktaşı | 2 | 37 | 31 sn sonra yeniden çıkar |
+| Dağ çayı | 23 | 54 | 50 sn sonra yeniden çıkar |
+| Dal | 1 | 219 | 18 sn sonra yeniden çıkar |
+| Kardelen | 24 | 59 | 60 sn sonra yeniden çıkar |
+| Kav mantarı | 21 | 59 | 60 sn sonra yeniden çıkar |
+| Kayın mantarı | 22 | 57 | 60 sn sonra yeniden çıkar, çiğ yenir (+14 tokluk) |
+| Kekik | 21 | 60 | 40 sn sonra yeniden çıkar |
+| Kırmızı kil | 22 | 67 | 70 sn sonra yeniden çıkar |
+| Kum | 1 | 46 | 14 sn sonra yeniden çıkar |
+| Kuşburnu | 21 | 58 | 50 sn sonra yeniden çıkar, çiğ yenir (+14 tokluk) |
+| Lavanta | 22 | 61 | 50 sn sonra yeniden çıkar |
+| Lif | 1 | 236 | 14 sn sonra yeniden çıkar |
+| Liken | 22 | 67 | 45 sn sonra yeniden çıkar |
+| Nehir çakılı | 1 | 56 | 18 sn sonra yeniden çıkar |
+| Sarkıt | 6 | 10 | 120 sn sonra yeniden çıkar |
+| Sinirotu | 21 | 51 | 45 sn sonra yeniden çıkar |
+| Taş | 1 | 173 | 21 sn sonra yeniden çıkar |
+| Yaprak | 1 | 37 | 63 sn sonra yeniden çıkar |
+| Yarasa gübresi | 3 | 10 | 90 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, E)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Pirit | 28 | 3. kademe (Demir kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Kuvars | 29 | 3. kademe (Demir kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Gümüş cevheri | 32 | 3. kademe (Demir kazma) | 20 | 300 sn sonra yeniden çıkar |
+| Pirit | 28 | 3. kademe (Demir kazma) | 29 | 300 sn sonra yeniden çıkar |
+| Kuvars | 29 | 3. kademe (Demir kazma) | 29 | 300 sn sonra yeniden çıkar |
+| Gümüş cevheri | 32 | 3. kademe (Demir kazma) | 30 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -1461,37 +1468,37 @@ Adanın güneydoğusu, sıradağın ardı: Kayalık Dağ'dan sıradağa yürü, 
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ateş biberi | 45 | 41 | 70 sn sonra yeniden çıkar, çiğ yenir (+17 tokluk) |
-| Ateş çiçeği | 36 | 40 | 70 sn sonra yeniden çıkar |
-| Cüruf | 44 | 40 | 80 sn sonra yeniden çıkar |
-| Çakmaktaşı | 2 | 51 | 31 sn sonra yeniden çıkar |
-| Dal | 1 | 76 | 18 sn sonra yeniden çıkar |
-| Duman çiçeği | 46 | 42 | 70 sn sonra yeniden çıkar |
-| Kara tuz | 49 | 37 | 100 sn sonra yeniden çıkar |
-| Kehribar | 40 | 36 | 120 sn sonra yeniden çıkar |
-| Kırmızı okr | 35 | 42 | 60 sn sonra yeniden çıkar |
-| Kızıl kum | 43 | 47 | 70 sn sonra yeniden çıkar |
-| Kor otu | 47 | 36 | 70 sn sonra yeniden çıkar |
-| Kum | 1 | 52 | 14 sn sonra yeniden çıkar |
-| Kül | 33 | 45 | 25 sn sonra yeniden çıkar |
-| Lav camı | 52 | 27 | 110 sn sonra yeniden çıkar |
-| Lif | 1 | 115 | 14 sn sonra yeniden çıkar |
-| Nehir çakılı | 1 | 58 | 18 sn sonra yeniden çıkar |
-| Sarı okr | 35 | 33 | 60 sn sonra yeniden çıkar |
-| Sarkıt | 6 | 9 | 120 sn sonra yeniden çıkar |
-| Sünger taşı | 45 | 35 | 90 sn sonra yeniden çıkar |
-| Taş | 1 | 91 | 21 sn sonra yeniden çıkar |
-| Yanık kök | 46 | 40 | 70 sn sonra yeniden çıkar |
-| Yaprak | 1 | 15 | 63 sn sonra yeniden çıkar |
-| Yarasa gübresi | 3 | 7 | 90 sn sonra yeniden çıkar |
+| Ateş biberi | 45 | 55 | 70 sn sonra yeniden çıkar, çiğ yenir (+17 tokluk) |
+| Ateş çiçeği | 36 | 55 | 70 sn sonra yeniden çıkar |
+| Cüruf | 44 | 63 | 80 sn sonra yeniden çıkar |
+| Çakmaktaşı | 2 | 28 | 31 sn sonra yeniden çıkar |
+| Dal | 1 | 126 | 18 sn sonra yeniden çıkar |
+| Duman çiçeği | 46 | 51 | 70 sn sonra yeniden çıkar |
+| Kara tuz | 49 | 59 | 100 sn sonra yeniden çıkar |
+| Kehribar | 40 | 55 | 120 sn sonra yeniden çıkar |
+| Kırmızı okr | 35 | 66 | 60 sn sonra yeniden çıkar |
+| Kızıl kum | 43 | 53 | 70 sn sonra yeniden çıkar |
+| Kor otu | 47 | 57 | 70 sn sonra yeniden çıkar |
+| Kum | 1 | 31 | 14 sn sonra yeniden çıkar |
+| Kül | 33 | 62 | 25 sn sonra yeniden çıkar |
+| Lav camı | 52 | 57 | 110 sn sonra yeniden çıkar |
+| Lif | 1 | 253 | 14 sn sonra yeniden çıkar |
+| Nehir çakılı | 1 | 36 | 18 sn sonra yeniden çıkar |
+| Sarı okr | 35 | 61 | 60 sn sonra yeniden çıkar |
+| Sarkıt | 6 | 13 | 120 sn sonra yeniden çıkar |
+| Sünger taşı | 45 | 61 | 90 sn sonra yeniden çıkar |
+| Taş | 1 | 196 | 21 sn sonra yeniden çıkar |
+| Yanık kök | 46 | 63 | 70 sn sonra yeniden çıkar |
+| Yaprak | 1 | 12 | 63 sn sonra yeniden çıkar |
+| Yarasa gübresi | 3 | 5 | 90 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, E)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Bazalt | 45 | 4. kademe (Kuvars ya da Çelik kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Kükürt | 46 | 4. kademe (Kuvars ya da Çelik kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Obsidyen | 49 | 4. kademe (Kuvars ya da Çelik kazma) | 20 | 300 sn sonra yeniden çıkar |
+| Bazalt | 45 | 4. kademe (Kuvars ya da Çelik kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Kükürt | 46 | 4. kademe (Kuvars ya da Çelik kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Obsidyen | 49 | 4. kademe (Kuvars ya da Çelik kazma) | 30 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -1523,37 +1530,37 @@ Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığ�
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ay otu | 77 | 39 | 90 sn sonra yeniden çıkar |
-| Ay taşı | 87 | 40 | 140 sn sonra yeniden çıkar |
-| Çakmaktaşı | 2 | 47 | 31 sn sonra yeniden çıkar |
-| Dal | 1 | 75 | 18 sn sonra yeniden çıkar |
-| Gece zambağı | 72 | 34 | 90 sn sonra yeniden çıkar |
-| Gölge otu | 77 | 45 | 90 sn sonra yeniden çıkar |
-| Işık mantarı | 70 | 37 | 80 sn sonra yeniden çıkar, çiğ yenir (+21 tokluk) |
-| Işık tozu | 80 | 40 | 110 sn sonra yeniden çıkar |
-| Kristal çiçeği | 82 | 41 | 110 sn sonra yeniden çıkar |
-| Kristal kum | 67 | 36 | 80 sn sonra yeniden çıkar |
-| Kum | 1 | 54 | 14 sn sonra yeniden çıkar |
-| Lif | 1 | 131 | 14 sn sonra yeniden çıkar |
-| Mor kök | 70 | 42 | 80 sn sonra yeniden çıkar |
-| Mor sarmaşık | 67 | 45 | 80 sn sonra yeniden çıkar |
-| Mor yosun | 64 | 33 | 70 sn sonra yeniden çıkar |
-| Nehir çakılı | 1 | 72 | 18 sn sonra yeniden çıkar |
-| Sarkıt | 6 | 5 | 120 sn sonra yeniden çıkar |
-| Taş | 1 | 113 | 21 sn sonra yeniden çıkar |
-| Yankı taşı | 82 | 44 | 120 sn sonra yeniden çıkar |
-| Yaprak | 1 | 11 | 63 sn sonra yeniden çıkar |
-| Yarasa gübresi | 3 | 6 | 90 sn sonra yeniden çıkar |
-| Yıldız çiçeği | 74 | 37 | 90 sn sonra yeniden çıkar |
-| Yıldız tozu | 90 | 48 | 120 sn sonra yeniden çıkar |
+| Ay otu | 77 | 58 | 90 sn sonra yeniden çıkar |
+| Ay taşı | 87 | 61 | 140 sn sonra yeniden çıkar |
+| Çakmaktaşı | 2 | 135 | 31 sn sonra yeniden çıkar |
+| Dal | 1 | 117 | 18 sn sonra yeniden çıkar |
+| Gece zambağı | 72 | 61 | 90 sn sonra yeniden çıkar |
+| Gölge otu | 77 | 54 | 90 sn sonra yeniden çıkar |
+| Işık mantarı | 70 | 57 | 80 sn sonra yeniden çıkar, çiğ yenir (+21 tokluk) |
+| Işık tozu | 80 | 62 | 110 sn sonra yeniden çıkar |
+| Kristal çiçeği | 82 | 65 | 110 sn sonra yeniden çıkar |
+| Kristal kum | 67 | 56 | 80 sn sonra yeniden çıkar |
+| Kum | 1 | 158 | 14 sn sonra yeniden çıkar |
+| Lif | 1 | 243 | 14 sn sonra yeniden çıkar |
+| Mor kök | 70 | 54 | 80 sn sonra yeniden çıkar |
+| Mor sarmaşık | 67 | 60 | 80 sn sonra yeniden çıkar |
+| Mor yosun | 64 | 59 | 70 sn sonra yeniden çıkar |
+| Nehir çakılı | 1 | 180 | 18 sn sonra yeniden çıkar |
+| Sarkıt | 6 | 14 | 120 sn sonra yeniden çıkar |
+| Taş | 1 | 202 | 21 sn sonra yeniden çıkar |
+| Yankı taşı | 82 | 60 | 120 sn sonra yeniden çıkar |
+| Yaprak | 1 | 15 | 63 sn sonra yeniden çıkar |
+| Yarasa gübresi | 3 | 9 | 90 sn sonra yeniden çıkar |
+| Yıldız çiçeği | 74 | 63 | 90 sn sonra yeniden çıkar |
+| Yıldız tozu | 90 | 67 | 120 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, E)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Kristal | 62 | 5. kademe (Bazalt, Obsidyen ya da Kara çelik kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Ametist | 67 | 5. kademe (Bazalt, Obsidyen ya da Kara çelik kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Altın cevheri | 77 | 5. kademe (Bazalt, Obsidyen ya da Kara çelik kazma) | 20 | 300 sn sonra yeniden çıkar |
+| Kristal | 62 | 5. kademe (Bazalt, Obsidyen ya da Kara çelik kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Ametist | 67 | 5. kademe (Bazalt, Obsidyen ya da Kara çelik kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Altın cevheri | 77 | 5. kademe (Bazalt, Obsidyen ya da Kara çelik kazma) | 30 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -1581,7 +1588,7 @@ Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığ�
 > **Ana görevler:** bu bölümdeki görevler (adanın kişilerinin görevleri) artık **ana görev** adını taşır; görev kartının başlığı "… · Ana görev" yazar. Ayrıca yolda karşına çıkan yan kişilerin **yan görevleri** vardır; kuralları "ACT 1 › Yan görevler" bölümünde. "Tek aktif görev" kuralı ana görevler içindir; yanında bir yan görev de sürebilir.
 
 1. **Tek aktif görev.** Aynı anda yalnızca bir görev yapılır. Görev alınınca bütün kişilerin başındaki **!** ve haritadaki parlamaları kalkar (dünyada da, küçük ve büyük haritada da).
-2. **Görev almak.** Görevi olan kişinin başında **siyah bir !** vardır ve hem dünyada hem haritada **belirgin şekilde parlar**. **Ana görevin tek işareti budur (6 Kasım 2026, Boğaç):** üstte "!" ve parlama; başka görev işareti ("?", mavi işaret, yeşil teslim işareti) yoktur. Görev alınınca "!" ve parlama kalkar (1. madde). Öğretici sürerken ünlem yoktur (Oyun akışı › Öğretici). Yan görevlerin işareti ayrıdır (ACT 1 › Yan görevler: yakınken ya da harita açıkken sisli mor "?"). Onunla konuştuğun anda "şunlara ihtiyacım var" der ve görev **doğrudan başlar** (Kabul et / Görev al düğmesi yok).
+2. **Görev almak.** Görevi olan kişinin başında **siyah bir !** vardır ve hem dünyada hem haritada **belirgin şekilde parlar**. **Ana görevin tek işareti budur (6 Kasım 2026, Boğaç):** üstte "!" ve parlama; başka görev işareti ("?", mavi işaret, yeşil teslim işareti) yoktur. Görev alınınca "!" ve parlama kalkar (1. madde). Öğretici sürerken ünlem yoktur (Oyun akışı › Öğretici). Yan görevlerin işareti ayrıdır (ACT 1 › Yan görevler › Haritada yan görevler). Onunla konuştuğun anda "şunlara ihtiyacım var" der ve görev **doğrudan başlar** (Kabul et / Görev al düğmesi yok).
    - **"! olan kişiyle konuş" yazısı yalnızca ilk görevde:** üstteki kartta "Başında siyah ! olan kişiyle konuş: …" yazısı yalnızca **hiç görev bitirmemişken** (baltayı yaptıktan sonra ilk göreve giderken) çıkar. İlk görev bittikten sonra görevsizken kart bu yazıyı göstermez (yalnızca süren bir ders varsa onu gösterir, yoksa kart gizlenir); oyuncu parlayan kişiyi kendisi fark edip yanına gider. Kişilerin başındaki ! ve haritadaki parlama eskisi gibidir.
    - **Hikâyeli görev sahnesi:** bütün görevler (eski ve yeni) artık konuşma gibi değil, **gerçek bir sahneyle** verilir. Şeritler iner, karakterin kişinin yanına yürür ve göreve özel bir **sahne betiği** oynar: kişi bir şeyle uğraşırken bir sorun çıkar, bir anısı canlanır, bir şey kırılır… görev bu anın içinden doğar. Sahnenin adımları:
      - **Anlatım:** üstteki siyah şeridin içinde italik sinema yazısı (yeri, zamanı, havayı anlatır).
@@ -1602,7 +1609,7 @@ Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığ�
 3. **Görevdeyken başkası.** Görevi olan biriyle konuşursan "Şu an bir işin var; önce onu bitir" der. Kazan, örs, pazar, sipariş, bileme gibi bütün hizmetler görev sürerken de kullanılır. **Nazlı'nın görevi sürerken pazar:** Nazlı'yla konuşunca açılan görev durumu penceresinin ilk seçeneği **"Pazarı aç"**tır; görev sürerken de bir tıkla satış/alış yapılır (Pazar düğmesi ve P tuşu yok: pazar Nazlı'yla konuşunca açılır).
 4. **İptal.** Görev iki yoldan iptal edilir: üstteki görev kartında **×** (onay sorar; × görünürken kartın sağında ona yer ayrılır, telefonda görev yazısı çarpının altında kalmaz; telefonun yatay düzeninde de: orada ayrılan yer işlemiyordu. Telefonda kapalı kart görev yazısını artık **iki satıra** kadar gösterir, böylece görevin adı ve sayaçlar ("Papatya çayı 0/4 Papatya · 0/3 Nane") okunur), ya da **görevi veren kişiyle** konuşunca menüdeki "📜 Görev" satırından "Bu işten vazgeçiyorum" (Kemal ve Nazlı'da durum penceresi doğrudan açılır; Nazlı'nınkinde ilk seçenek "Pazarı aç"). İptal edilince görevin bütün ilerlemesi silinir (av sayacı, çember vb.), görev hiç alınmamış sayılır; kişi yeniden parlar ve başında ! çıkar.
 5. **Açılma koşulu.** Her görevin en az bir açılma koşulu vardır (bir önceki görev, seviye, bir alet, bir yer…). Ayrıca bir görevin istediği **her malzeme oyunda en az bir kez bulunmuş** olmalıdır ("Yeni malzeme bulundu" denmiş ya da tarif kitabında açık). Bulunmamış malzeme isteyen görev açılmaz. **"X keşfedildi"** koşulu, o biyoma ilk kez adım atılınca sağlanır (her biyoma bir kişinin "Ulaş" görevi ya da ana yol götürür). **Tarif kuralı:** bir şeyin **yapılmasını ya da dövülmesini** isteyen görev, o şeyin **tarifi öğrenilmeden açılmaz** (görev tarifi kendisi kitaba yazıyorsa hariç). Örneğin Dursun'un "Keskin işler" (Taş kazma) görevi Taş kazma tarifi öğrenilince açılır.
-   - **Tarif bilinmeden görev verilmez:** bir görev **tariften yapılan** bir eşya istiyorsa (getir, yap, dövdür ya da giy; yerden toplanan, kesilen, avlanan ya da tarlada yetişen değil) o eşyanın tarifini kazanda **öğrenmiş olmadan** görev açılmaz: kişinin başında ! çıkmaz, görev verilmez. Görevin kitaba tarif yazması yetmez. Birden fazla seçenekli görevde (ör. "Tunç balta, Tunç kazma ya da Tunç mızrak") birinin tarifini bilmek yeter. **Tuzakla av da sayılır:** "tuzakla av" isteyen görev (Nazlı N4 Kürk siparişi) **Tuzak tarifi kazanda öğrenilmeden** açılmaz; Nazlı'nın başında ! çıkmaz, görev verilmez (Kemal'in ayak işi seni tarife yönlendirir). 139 görevden 39'u bu kurala girer (Zümrüt Z3 Gelincik boyası, Dursun D2 Taş kazma, D3, D5, Durmuş M2/M3/M5, Sinan R4 (v3.39), Nazlı N5, Usta U4, Yakut K1/K4 ve kuzenlerin alet, zırh, merhem görevleri). ("zümrütün çadırında öğrenmeden ben neden atölye görevini alabiliyorum") kural bütün görev türlerine genişledi: **kur** (Atölye, Çit), **gece ateş başında** (Kamp ateşi), **balık tut** (Olta), **yatak koy** (yatak tariflerinden biri), **ev kur** (ev tariflerinden biri) görevleri de tarif öğrenilmeden (ya da eşya elde yoksa) verilmez; o zaman Kemal "X tarifini öğren" işini verir. **Eski kayıtlar:** kayıt açılınca aktif görevin gerektirdiği tarif öğrenilmemişse (ve görev henüz tamamlanmamışsa) görev geri bırakılır; veren kişi "Önce X tarifini öğren" der, Kemal tarif işini verir, tarif öğrenilince görev yeniden verilir.
+   - **Tarif bilinmeden görev verilmez:** bir görev **tariften yapılan** bir eşya istiyorsa (getir, yap, dövdür ya da giy; yerden toplanan, kesilen, avlanan ya da tarlada yetişen değil) o eşyanın tarifini kazanda **öğrenmiş olmadan** görev açılmaz: kişinin başında ! çıkmaz, görev verilmez. Görevin kitaba tarif yazması yetmez. Birden fazla seçenekli görevde (ör. "Tunç balta, Tunç kazma ya da Tunç mızrak") birinin tarifini bilmek yeter. **Tuzakla av da sayılır:** "tuzakla av" isteyen görev (Nazlı N4 Kürk siparişi) **Tuzak tarifi kazanda öğrenilmeden** açılmaz; Nazlı'nın başında ! çıkmaz, görev verilmez (Kemal'in ayak işi seni tarife yönlendirir). Bu kurala giren görevler (Zümrüt Z3 Gelincik boyası, Dursun D2 Taş kazma, D3, D5, Durmuş M2/M3/M5, Sinan R4 (v3.39), Nazlı N5, Usta U4, Yakut K1/K4 ve kuzenlerin alet, zırh, merhem görevleri). ("zümrütün çadırında öğrenmeden ben neden atölye görevini alabiliyorum") kural bütün görev türlerine genişledi: **kur** (Atölye, Çit), **gece ateş başında** (Kamp ateşi), **balık tut** (Olta), **yatak koy** (yatak tariflerinden biri), **ev kur** (ev tariflerinden biri) görevleri de tarif öğrenilmeden (ya da eşya elde yoksa) verilmez; o zaman Kemal "X tarifini öğren" işini verir. **Eski kayıtlar:** kayıt açılınca aktif görevin gerektirdiği tarif öğrenilmemişse (ve görev henüz tamamlanmamışsa) görev geri bırakılır; veren kişi "Önce X tarifini öğren" der, Kemal tarif işini verir, tarif öğrenilince görev yeniden verilir.
    - **Kişi bir şey söylemez:** görevi tarif yüzünden bekleyen kişi "önce şu tarifi öğren" demez; görevsiz kalmamak için yol gösteren Kemal'dir (aşağıdaki ayak işi, 7. madde).
    - **Görevsiz kalınmaz:** bütün görevler kilitliyse ve sıradaki görevin eksiği bir tarifse Kemal "**X tarifini öğren**" ayak işini verir (Zümrüt'ün kazanında öğrenince kendiliğinden biter, 15 sikke · 15 XP). Tarifin içindeki bir malzemeyi hiç görmediysen önce onu getirtir. Kemal'in "alet dövdür" ve "ışık yap" ayak işleri de tarif bilinmiyorsa önce tarifi öğretir.
    - **Doğu geçidi de bu kurala girer:** Kemal'in "Doğu geçidini aç" (E3) görevi **Kaya patlatıcı** tarifi Zümrüt'ün kazanında öğrenilmeden verilmez (önceden görev tarifi yalnızca kitaba yazıyordu; Kaya patlatıcının içindeki çömlek kazanda görünmüyordu). Kemal'in ayak işi zinciri adım adım götürür: önce görülmemiş malzemeler (ör. Yarasa gübresi), sonra tarifin içindeki ve henüz hiçbir türü öğrenilmemiş parça (Kaya patlatıcı için **Nehir çömleği** → Islak nehir kili → Nehir kili getir), en sonda Kaya patlatıcı. Her "tarifini öğren" ayak işi o tarifi kitaba da yazar, kazanda görünsün diye. Bu sürümden önce tarifsiz alınmış E3 açılışta geri bırakılır (kuralı).
@@ -1644,7 +1651,7 @@ Bir görev oyuncunun henüz bilmediği bir mekaniği istiyorsa, görev **önce k
 | Tuzak kurma | Nazlı 4 | Tuzağı eline al → çayırda E → ertesi kontrol |
 | Bileme | Dursun 4 | Demirciye "Aletimi bile" → körelmiş alet |
 | Satış | Nazlı 3 (öğreticiyi geçenlere) | Pazarı aç → malzeme seç → sat |
-| Barınak ve uyku | Sinan 1 | Barınak yaptır → yere koy → gece içinde E ile uyu |
+| Barınak ve uyku | Sinan 1 | Barınak yaptır → yere koy → gece içinde F ile uyu |
 | Kil ve kürek | Sinan 5 | Kürek yap → nehir kıyısında E → ıslak kil → kerpiç |
 | Ev ve yatak | Sinan 6 | Sinan'dan ev al → yere koy → içine gir → Sinan'dan yatak → evin içine koy |
 | Yapı kurma | Sinan 3 | Malzemeyi topla → Sinan'a E → kurar → yere yerleştir |
@@ -1715,7 +1722,7 @@ Kazanının başında, otları ve geceyi bilen sabırlı cadı.
 
 | # | Görev | İstenen | Açılma | Açar | Ders | Ödül |
 |---|---|---|---|---|---|---|
-| D1 | Ocağa odun | Getir: 8 Çam odunu (v3.39: Ağaç kesme dersiyle başlar) (Dursun: "Baltan var, değil mi? Örsün ateşi odun yer, 8 çam odunu kes getir"). Çam odunu daha önce bulunmamış olsa da açılır | E1 · **örste bir balta dövülmüş olmalı** (öğreticiyi yapan zaten Taş baltayı dövmüştür; öğreticiyi atlayan, balta tarifini öğrenip ilk baltasını bir demirciye dövdürünce açılır) | D2, Çınar 1 | – | 30 · 20 XP |
+| D1 | Ocağa odun | Getir: 8 Çam odunu (v3.39: Ağaç kesme dersiyle başlar) (Dursun: "Baltan var, değil mi? Örsün ateşi odun yer, 8 çam odunu kes getir"). Çam odunu daha önce bulunmamış olsa da açılır | E1 · **örste bir balta dövülmüş olmalı** (öğreticiyi yapan zaten Taş baltayı dövmüştür; öğreticiyi atlayan, balta tarifini öğrenip ilk baltasını bir demirciye dövdürünce açılır) | D2, Sinan 1 | – | 30 · 20 XP |
 | D2 | Keskin işler | Dövdür: Taş kazma (Taş kazma tarifi öğrenilmeden açılmaz) | D1 · Taş kazma tarifi | D3, Durmuş 1 | – | 30 · 20 XP |
 | D3 | Çakmaktaşı balta | Dövdür: Çakmaktaşı balta | D2 | D4 | – | 50 · 35 XP |
 | D4 | Ağzı köreldi | Körelmiş bir aletini Dursun'a biledir: konuş → **Aletimi bile** → aletin yanındaki **Bile** (görev kartı körelmiş aletin adını yazar, ör. "0/1 Taş balta bilet (Dursun · Aletimi bile)") | D3 · körelmiş bir alet | D5 | Bileme | 40 · 30 XP |
@@ -1730,7 +1737,7 @@ Neşeli, pazarlıkçı tüccar kızı.
 
 | # | Görev | İstenen | Açılma | Açar | Ders | Ödül |
 |---|---|---|---|---|---|---|
-| N1 | Tezgâha meyve | Getir: 5 Böğürtlen, 3 Yaban çileği | R1 | N2 | – | 30 · 20 XP |
+| N1 | Tezgâha meyve | Getir: 5 Böğürtlen, 3 Yaban çileği | D1 | N2 | – | 30 · 20 XP |
 | N2 | Taze balık | Yap: Olta; tut: 2 balık (Çayır nehri) | N1 | N3 | Balık tutma | 60 · 35 XP |
 | N3 | Bereketli satış | 150 sikkelik satış | N2 | N4 | Satış (öğreticiyi geçenlere) | 40 · 25 XP |
 | N4 | Kürk siparişi | Yap: Tuzak, kur; getir: 3 Tavşan derisi | N3 · **Tuzak tarifi öğrenilmiş** | N5, Börü 4 | Tuzak kurma | 70 · 45 XP |
@@ -1747,16 +1754,16 @@ Sert ama sıcak; kaçmayı da öğreten savaşçı. Oyuncuyu kuzeye, Orman'a ilk
 
 | # | Görev | İstenen | Açılma | Açar | Ders | Ödül |
 |---|---|---|---|---|---|---|
-| B1 | Ateş başında nöbet | Kamp ateşi kur, gece yanında 60 sn bekle | R1 · Seviye 2 | B2 | Kamp ateşi ve gece | 50 · 30 XP |
+| B1 | Ateş başında nöbet | Kamp ateşi kur, gece yanında 60 sn bekle | D1 · Seviye 2 | B2 | Kamp ateşi ve gece | 50 · 30 XP |
 | B2 | Kerevit avı | Avla: 2 Kerevit | B1 | B3 | Silah yuvası ve dövüş | 30 · 20 XP |
 | B3 | İlk silah | **Herhangi bir silah edin** (kılıç, savaş çekici, topuz, mızrak…; eskiden yalnızca Taş kılıç isterdi; silah yuvasına takmak gerekmez) | B2 | B4 | – | 40 · 30 XP |
 | B4 | Geyik sürüsü | Avla: 2 Geyik | B3 · N4 | B5 | – | 60 · 40 XP |
-
-**Börü belirli bir silah istemez:** Börü'nün dersleri ve görevleri kılıç, mızrak gibi belirli bir silah istemez; "İlk silah" (B3) **herhangi bir** silah çantana (ya da eline, silah yuvana) girdiği an biter (kılıç, savaş çekici, topuz, mızrak; kendi yaptığın, dövdürdüğün ya da bulduğun). **Silah yuvasına takmak gerekmez.** Görev kartında "Bir silah edin (kılıç, savaş çekici, topuz ya da mızrak)" yazar; silahın yoksa ok demirciyi gösterir.
 | B5 | Kuzeye keşif | Ulaş: Orman'a git (kimseyle tanıştırmaz) | B4 · Seviye 3 | B6, Sinan 1 | – | 80 · 50 XP |
 | B6 | Domuz avı | Avla: 2 Yaban domuzu (Orman) | B5 | B7, Durdu 2 | – | 120 · 80 XP |
 | B7 | Kurt gecesi | Avla: 3 Kurt | B6 · Seviye 7 | B8 | – | 130 · 85 XP |
 | B8 | Kaan'ın borusu | Getir: 2 Geyik boynuzu · Avla: 2 Yaban atı | B7 · Seviye 9 | – | – | 140 · 95 XP |
+
+**Börü belirli bir silah istemez:** Börü'nün dersleri ve görevleri kılıç, mızrak gibi belirli bir silah istemez; "İlk silah" (B3) **herhangi bir** silah çantana (ya da eline, silah yuvana) girdiği an biter (kılıç, savaş çekici, topuz, mızrak; kendi yaptığın, dövdürdüğün ya da bulduğun). **Silah yuvasına takmak gerekmez.** Görev kartında "Bir silah edin (kılıç, savaş çekici, topuz ya da mızrak)" yazar; silahın yoksa ok demirciyi gösterir.
 
 #### Zırhçı Durmuş · Çayır
 
@@ -2072,7 +2079,7 @@ Kızı Meltem'i arayan kaptan; ACT 1'in sonu onun gemisi.
 
 ### Toplam
 
-ACT 1'de 27 kişi, **139 görev** (Dursun, Nazlı, Börü ve Doğan 6'şar; Kemal dahil diğerleri 5'er) + Kemal'in ayak işleri. Gezginlerden (Yıldızsız Gezgin, Işıkçı, Balıkçı Rüstem) görev yok; isteğe göre eklenebilir.
+ACT 1'de 27 kişi, **216 görev** (her kişinin 8 görevi) + Kemal'in ayak işleri. Gezginlerden (Yıldızsız Gezgin, Işıkçı, Balıkçı Rüstem) görev yok; isteğe göre eklenebilir.
 
 
 ## Yan görevler
@@ -2090,15 +2097,15 @@ ACT 1'de 27 kişi, **139 görev** (Dursun, Nazlı, Börü ve Doğan 6'şar; Kema
    - **Görevler'den takip:** Görevler panelinde her alınmış yan görevin altında **📌 Takip et** (takip edilen görevde "📌 Takip ediliyor · Görevlere gönder") ve **Bırak** düğmesi vardır; Bırak iki kez basınca bırakır ("Emin misin? Bırak").
    - **Bekleyen görevin kişisiyle konuşmak** o görevi takibe alır (ör. Bekir'e dal götürünce teslim edilir).
    - **Bekleyen eskort, bekleme ve dövüş adımları baştan başlar:** takipten çıkan görev bir eskortta (Ela, Pamuk, Yahya), Kartal'ın yanında beklemede ya da bir dövüşteyse (ejder, kurtlar, mağara Reis'i) o adım durur: eşlik eden kişi yerine döner, görev için çıkan canavarlar silinir; görev yeniden takip edilince **o adım** baştan başlar (önceki adımlar korunur). Kovalamada Pamuk kaldığı yerde bekler.
-2. **Yan kişiler parlamaz.** Başlarında siyah ! yoktur, dünyada parlamazlar. Görevi olan yan kişinin başında küçük **açık mavi bir "?"** durur. Oyuncu gezerken onlara rastlar; haritada yalnızca çok yakınındayken sisli bir "?" belirir (aşağıda).
+2. **Yan kişiler parlamaz.** Başlarında siyah ! yoktur, dünyada parlamazlar. Görevi olan yan kişinin başında dünyada küçük bir **"?"** durur. Haritadaki işaretleri aşağıda "Haritada yan görevler"de.
 3. **Her yan kişi kendi saatinde görünür; hava etkilemez (v3.40, Boğaç: "her bir görev farklı bir zaman diliminde alınabilir olsun").** Her yan kişinin **kendine ait, ötekilerden farklı** bir saat aralığı vardır (kimi şafakta, kimi öğlen, kimi akşamüstü, kimi yalnızca gece; aralıklar ~4–6 saattir, tablolarda). O saatlerin dışında yerinde yoktur; oyuncu adayı farklı saatlerde dolaşarak onlara rastlar. Mağaradaki kişiler (13–18) mağarada her saat durur. Yağmur, fırtına, sis görünmelerini değiştirmez.
    - **Bir kez alınan görevin kişisi yerinde kalır (v3.40, Boğaç):** bir yan görevi bir kez aldıktan sonra (bıraksan, bayılıp yarıda kalsa ya da Görevler'de beklese de) o kişi görevi bitene kadar saat aralığına bakmadan **her saat** yerinde durur. Hayalet kız Işıl dışında (o yalnızca kendi gece saatinde belirir).
-   - **Sırayla açılırlar, bir biyomda en çok 2 (v3.40, Boğaç: "hepsi birden değil… ana görevler ilerledikçe arada alınabilir şeyler olmalı"):** yan görevler hepsi birden çıkmaz. Her biyomun yan görevlerinin bir **sırası** vardır ve her biri ana hikâyenin belli bir yerine kadar bekler: **bitirdiğin ana görev sayısı** (bütün kişilerin ana görevleri sayılır) ve bazılarında belli bir ana görev (ör. Kemal'in 3. görevi "Doğu geçidini aç"). Bir biyomda aynı anda **en çok 2 bitmemiş yan görev** açıktır (alınmış ama bitmemiş olanlar da sayılır); biri bitince sıradaki (koşulu tutuyorsa) açılır. Açılmamış yan kişi dünyada da haritada da yoktur. Mağaradaki yan görevler (13–18) bu sıraya girmez. Sıra ve koşullar aşağıda "Açılış sırası"nda.
+   - **Sırayla açılırlar, bir biyomda en çok 2 (v3.40, Boğaç: "hepsi birden değil… ana görevler ilerledikçe arada alınabilir şeyler olmalı"):** yan görevler hepsi birden çıkmaz. Her biyomun yan görevlerinin bir **sırası** vardır ve her biri ana hikâyenin belli bir yerine kadar bekler: **bitirdiğin ana görev sayısı** (bütün kişilerin ana görevleri sayılır) ve bazılarında belli bir ana görev (ör. Kemal'in 3. görevi "Doğu geçidini aç"). Bir biyomda aynı anda **en çok 2 bitmemiş yan görev** açıktır (alınmış ama bitmemiş olanlar da sayılır; bu sınıra **yalnızca yan görevler** sayılır, Çoban Davut (CB) ve Çiftçi Ekin (EK) gibi ana görevler sayılmaz); biri bitince sıradaki (koşulu tutuyorsa) açılır. Açılmamış yan kişi dünyada da haritada da yoktur. Mağaradaki yan görevler (13–18) bu sıraya girmez. Sıra ve koşullar aşağıda "Açılış sırası"nda.
 4. **Hiçbir yan görev kaçırılmaz.** Yan kişi görevi bitene kadar **her gün** kendi saatinde aynı yerde yeniden çıkar. Süre sınırı yoktur, zamanlı bir adım yoktur (bekleme adımı hariç; o da bayılmadıkça yarıda kalmaz). Tamamlamaya çalışan oyuncu hepsini bitirebilir.
 5. **Bayılınca yalnızca takip edilen yan görev iptal olur (Görevler'de bekleyenler kalır).** Yan görev sürerken bayılırsan (canavar, açlık ya da mor ışık) **yan görev** yarıda kalır, **ana görev** olduğu gibi durur. Yarıda kalan yan görev hiç alınmamış sayılır: yan kişi kendi yerine döner ve görevi **en baştan, aynı yerden** yeniden alırsın. Yan görev için doğan canavarlar bayılınca silinir.
 6. **Bırakmak.** Yan görev kartındaki **×** ile görev bırakılabilir ("Bu yan görevi bırakayım mı?" → Evet/Hayır). Bırakınca yan kişi yerine döner, görev yeniden alınabilir.
 7. **Görev sırasında kesilen canavarlar almanakta sayılmaz.** Yan görev için ortaya çıkan canavarlar (eskortta, beklemede, avda) almanağa eklenmez, av sayısını artırmaz, Reis sayacını doldurmaz ve **hiçbir zaman Reis çıkmaz**; yan görevin dövüş adımı sürerken Reis gelmez. Ganimet ve XP'leri normaldir.
-8. **Ödül (şimdilik):** her yan görev bitince **sikke + XP** verir (aşağıdaki tabloda). Başka ödüller ileride konuşulacak (bölümün sonundaki "İleride ödül fikirleri").
+8. **Ödül (şimdilik):** her yan görev bitince **sikke + XP** verir (aşağıdaki tabloda); yan görev ödülü belgedeki XP'dir (v3.44'teki hatalı XP'den etkilenen kayıtlar: Sistemler › Kayıt). Başka ödüller ileride konuşulacak (bölümün sonundaki "İleride ödül fikirleri").
 9. **Sonuç dünyada görünür.** Bitirdiğin her yan görev adada iz bırakır: kurtardığın çocuk (Ela) Kemal'in kampındaki ateşin başında oturur, çobanın keçisi yanında otlar, satıcının arabası onarılmış durur… Bu kişiler artık saat aralığına bakmadan **hep** yerlerindedir (hayalet kız dışında; onun yerinde bir mezar taşı ve yanan bir fener kalır). Onlarla konuşunca görevden sonraki hallerini anlatan kısa bir söz söylerler.
 10. **Görev kartı.** Süren yan görev, ana görev kartının altında ince **mavi kenarlı ayrı bir kartta** görünür: "Yan görev · Kişi" başlığı, görevin adı ve şu anki adımın kısa yazısı ("Kalan güvercin: 2/4" gibi), köşede **×**. Ana görev kartının başlığı artık "… · Ana görev" yazar. **Görevler penceresi** iki bölümdür: üstte **Ana görev**, altta **Yan görevler** (süren yan görev ve adımı; sonra "Bitirdiklerin: 3/12" ve biten yan görevlerin adları). **Yeri (telefonda kart ekranın ortasında kalıyordu):** yan görev kartı her zaman ana görev kartının **hemen altında, aynı genişlikte** durur (bilgisayarda üstte ortada, telefonda **sağ üstte**); ana görev kartı yoksa onun yerinde durur. Telefonda kart tek satırdır (kişi · görev · adım); dokununca açılıp bütün yazıyı gösterir, bir daha dokununca kapanır. Telefonda bir pencere (envanter, kazan, pazar…) ya da konuşma açıkken kart gizlenir.
 11. **Yol gösterilmez, keşfedilir (v3.40, Boğaç: "çok da kullanıcının elinden tutmayalım… biraz keşfe itsin").** Yan görevin hedefi (gidilecek yer, toplanacak şeyler, götürülecek yer) **haritada gösterilmez**: mavi halka, sarı bölge ve ekran kenarındaki mavi ok yoktur (v3.39'da vardı, kaldırıldı). Yol, kişinin konuşmasında ve görev kartındaki adım yazısında anlatılan ipuçlarıyla ("kıyıda", "ağaçta", "bataklığın içinde") bulunur. Haritada ana görevin sarı bölgesi yan görev sürerken de görünür. **Bulunca mavi parıltı:** takip edilen yan görevin aradığın şeyi (iz, eşya, kurbağa, kristal…) ekranda göründüğü anda üstünde **açık mavi bir halka** genişler ve çevresinde **küçük mavi kıvılcımlar** parıldar; böylece bulduğun şeyin görevle ilgili olduğunu anlarsın.
@@ -2107,8 +2114,10 @@ ACT 1'de 27 kişi, **139 görev** (Dursun, Nazlı, Börü ve Doğan 6'şar; Kema
 
 ### Haritada yan görevler
 
-- **Yalnızca çok yakındayken sisli "?" (v3.40, Boğaç):** görevi bekleyen bir yan kişiye (kendi saatinde, ya da bir kez alınmış görevin kişisi) **~10 kare (160 piksel)** ya da daha yakınsan haritada onun çevresinde **mor, hafifçe dönen küçük bir çember** ve ortasında koyu mor bir **"?"** belirir. Çemberin ortası kişinin tam yeri değildir (kişi çemberin içinde bir yerdedir). Uzaktayken hiçbir işaret yoktur; yerinin açılmış olması da işaret göstermez (eskiden açılmış yerde tam yerinde mavi "?" vardı, kaldırıldı).
-- **Saat gelince belirir:** harita açıkken kişinin saati gelirse ve yakınındaysan "?" o an belirir; oyuncu "bu soru işareti de ne?" diyerek gidip arar.
+- **Yan görev işaretleri (6 Kasım 2026, Boğaç):** yan kişiler haritanın belli yerlerinde, kendi saatlerinde belirir. İşaret, saati gelmiş ve görevi bekleyen kişi için çıkar (kendi saatindeki ya da bir kez alınmış görevin kişisi); renk önemli değildir (mavi ya da mor).
+  - **Keşfedilmiş (haritada açılmış) yerdeyse:** kişi büyük haritada **kendi yerinde bir "?"** ile görünür; bu "?" ana görevin "!" işaretiyle **aynı boyda** ve okunur büyüklüktedir. Harita açıkken kişinin saati gelirse "?" o an belirir.
+  - **Keşfedilmemiş yerdeyse:** "?" gösterilmez; yalnızca oyuncu kişiye **~10 kare (160 piksel)** ya da daha yakınken (harita kapalıyken de) kişinin çevresi haritada **sisli bir daire** ile gösterilir. Dairenin ortası kişinin tam yeri değildir: kişiden en çok **48 piksel** kayar (kişi dairenin içinde bir yerdedir).
+  - **En çok 2:** bir biyomda aynı anda en çok 2 bitmemiş yan görev açık olduğu için (kural 3, "Sırayla açılırlar") haritada da **biyom başına en çok 2** yan görev işareti görünür.
 - **Dünyada durmayan kişi için işaret yoktur:** Gece görünen kız Işıl için haritada işaret çıkmaz. Mağarada iken haritada yan görev işareti çıkmaz.
 - Süren (alınmış) görevin kişisi ve hedefleri için haritada işaret yoktur. Biten yan görevler işaret bırakmaz.
 - Hem küçük haritada hem büyük haritada (M) görünür; gece de görünür.
@@ -2141,7 +2150,7 @@ Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş an
 | 11 | Kayalık Dağ | Yolcu Yahya | Dağda kaybolan yolcu | 12:30–17:30 | yol hikâyesi | 170 sikke · 130 XP |
 | 12 | Kayalık Dağ | Işıl (hayalet kız) | Gece görünen kız | 22:00–04:00 | gizemli, hüzünlü | 160 sikke · 120 XP |
 
-**Yerleri:** her yan kişi kendi biyomunda, biyomun farklı bir köşesinde, başka kişilere, kuzenlerin evlerine, köprülere ve öbür yan kişilere en az ~220 piksel uzakta, ağaçsız düz bir yerde durur (ada her kurulduğunda aynı yer). Mavi İskele'nin hemen yanında durur. Görev noktaları (izler, enkaz, güvercinler…) kişinin çevresinde, kendi biyomunda, yürünebilir yerlere konur.
+**Yerleri:** her yan kişi kendi biyomunda, biyomun farklı bir köşesinde, başka kişilere, kuzenlerin evlerine, köprülere ve öbür yan kişilere en az ~220 piksel uzakta, ağaçsız düz bir yerde durur (ada her kurulduğunda aynı yer). **İstisna: Mavi** İskele'nin hemen yanında, Kemal'in kampının dibinde durur (Kemal'e ~45 px, Poyraz'a ~70 px); hikâyesi iskeleye bağlı olduğu için ~220 px kuralı ona uygulanmaz. Görev noktaları (izler, enkaz, güvercinler…) kişinin çevresinde, kendi biyomunda, yürünebilir yerlere konur.
 
 **Adım türleri** (görevlerde kullanılan):
 - **Konuş:** kişiyle konuşma penceresi (birkaç sayfa). İlk konuşmada "Yardım ederim" ya da "Şimdi olmaz" seçilir.
@@ -2181,7 +2190,7 @@ Pijamasının üstüne babasının ceketini giymiş, uykusu kaçmış küçük b
 Elinde boş bir kafes, gözleri kızarmış bir oğlan.
 
 - **Konuş:** "Kafesin kapısını açık unuttum, dört güvercinim de uçtu! Her birinin ayağında bir not var; adadakiler bana mektup verir, ben taşırım. Notlar kaybolursa herkes bana kızar. Yardım eder misin?"
-- **Topla (4 güvercin, herhangi bir sırayla; "net göstermeyelim, yaklaştıkça ses çıkarsın"):** güvercinler Bulut'un çevresinde dört ayrı yönde, Bulut'tan **250–650 piksel** uzakta, yürünebilir yerlerdedir (her oyunda aynı yer). **Görünmezler:** dünyada güvercin ancak **60 piksel** yakınına gelince görünür; haritada ve ekranın kenarında güvercinin yeri gösterilmez, haritada yalnızca Bulut'u merkez alan **büyük sarı arama alanı** (yarıçap 700 piksel) vardır. **Ses:** bir güvercinin **260 piksel** yakınına girince güvercin guruldaması duyulur; yaklaştıkça **daha sık** (yaklaşık 2,3 sn'den 0,45 sn'ye) ve **daha yüksek** çalar. Güvercinin **34 piksel** yakınına gelince eline konar ve ayağındaki not okunur (sıra yok; hangisine denk gelirsen). Not penceresi düğmesiz kapatılsa da (Esc, dışarıya dokunmak) görev takılmaz. Notlar:
+- **Topla (4 güvercin, herhangi bir sırayla; "net göstermeyelim, yaklaştıkça ses çıkarsın"):** güvercinler Bulut'un çevresinde dört ayrı yönde, Bulut'tan **250–650 piksel** uzakta, yürünebilir yerlerdedir (her oyunda aynı yer). **Görünmezler:** dünyada güvercin ancak **60 piksel** yakınına gelince görünür; haritada ve ekranın kenarında güvercinin yeri gösterilmez; yan görevlerde sarı bölge olmadığı için (kural 11) haritada arama alanı da çizilmez. **Ses:** bir güvercinin **260 piksel** yakınına girince güvercin guruldaması duyulur; yaklaştıkça **daha sık** (yaklaşık 2,3 sn'den 0,45 sn'ye) ve **daha yüksek** çalar. Güvercinin **34 piksel** yakınına gelince eline konar ve ayağındaki not okunur (sıra yok; hangisine denk gelirsen). Not penceresi düğmesiz kapatılsa da (Esc, dışarıya dokunmak) görev takılmaz. Notlar:
   - "Nazlı'dan Dursun'a: *Çekicinin sesi olmadan pazar sessiz. Akşam çay var.*"
   - "Ekin'den Zümrüt'e: *Domatesler kazanından daha kırmızı oldu, gelip bak.*"
   - "Sinan'dan Zeynep'e: *Sana söz verdiğim evin son çivisini çaktım. Kapıyı açık bırakıyorum.*" (v3.39; Marangoz Çınar kaldırılınca)
@@ -2867,7 +2876,7 @@ Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanınd
 - **Fark nerede:** cadıların **kazanındaki sıvının rengi** (adlarındaki değerli taşın rengi), demircilerin ise **çalışma yeri**: ocak, örs, çekiç ve askılar biyomdan biyoma daha iyi görünür (tablolar aşağıda). Renk farkı yalnız kazanda vardır; demircilerin hiçbir rengi değişmez.
 - **Yer:** orijinaldeki gibi **dip dibe değiller**. Her biyomda iki kardeş demirci (silahçı + zırhçı) Dursun ile Durmuş gibi **aynı ocakta yan yana** çalışır; cadı ve kazanı ise **aynı biyomun başka bir köşesinde**, demircilerden uzakta yaşar (aralarında en az 200 piksel, aranan noktalar 70–120 karo ayrı). Yerler oyun açılırken bulunur: tabloda yazan noktaya en yakın, tamamı o biyomun yürünebilir toprağı olan açık alan (demirciler için 15 × 7, cadı için 9 × 7 karo) ve başka kişilere, köprüye, kaya yığınına en az 200 piksel uzak. Oradaki ağaçlar ve toplanabilirler kaldırılır. Keşfedilince haritada simgeleriyle (Zümrüt, Dursun, Durmuş simgesi) ve adlarıyla görünürler; haritada dokununca ok onları gösterir.
 - **Ateş kuralı:** her kuzenin yanında **kendi kamp ateşi** yanar (cadının solunda, silahçının ve zırhçının sağ önünde). Kişilerin ateşleri gibi gece ışık verir ve çevresi (120 piksel) güvenlidir: saldırganlar uzaklaşır, mor ışık inmez. Kazanın altındaki ateş ve silahçının ocağı ayrıca ışık sayılır.
-- **İlk konuşma:** kuzene ilk kez E ile yaklaşınca sırtı dönük ona, **bir önceki biyomdaki kuzeninin adıyla seslenirsin** (ör. Orman'daki cadıya "Zümrüt? Senin burada ne işin var?"). O da "Zümrüt mü?! Çayır'daki kuzenim Zümrüt'le tanışmışsın demek. Ben o değilim…" diye **kendini tanıtır**, kuzen olduklarını söyler ve **biraz kibirle** önceki kuzenini küçümseyip kendisinin daha iyi bir cadı/silahçı/zırhçı olduğunu anlatır. Önceki biyomun kuzeniyle henüz tanışmadıysan, tanıdığın en yakın önceki kuzenin adıyla seslenirsin (hiçbiri değilse Çayır'dakinin). "Kuzen misiniz gerçekten?" sorusuna Elmas Nine'den söz ederler.
+- **İlk konuşma:** kuzene ilk kez F ile yaklaşınca sırtı dönük ona, **bir önceki biyomdaki kuzeninin adıyla seslenirsin** (ör. Orman'daki cadıya "Zümrüt? Senin burada ne işin var?"). O da "Zümrüt mü?! Çayır'daki kuzenim Zümrüt'le tanışmışsın demek. Ben o değilim…" diye **kendini tanıtır**, kuzen olduklarını söyler ve **biraz kibirle** önceki kuzenini küçümseyip kendisinin daha iyi bir cadı/silahçı/zırhçı olduğunu anlatır. Önceki biyomun kuzeniyle henüz tanışmadıysan, tanıdığın en yakın önceki kuzenin adıyla seslenirsin (hiçbiri değilse Çayır'dakinin). "Kuzen misiniz gerçekten?" sorusuna Elmas Nine'den söz ederler.
 - **İlk tanışmada** silahçı ve zırhçı kendine özel eşyaların tariflerini kitabına yazar ("Tarifi kitabında" bildirimi).
 - **Konuşma menüsü:** cadı: Tarif öğren · "Kazanın neden …?" · görev/hikâye satırları · Hoşça kal. Silahçı: Silah dök · Aletimi bile · Ne dövebilirsin? · … Zırhçı: Zırh döv · Ne dövebilirsin? · … Konuşmalarındaki rastgele satırlar hep bir önceki kuzene laf sokar. Zümrüt, Dursun ve Durmuş'a da "Kuzenlerin var mı?" diye sorulabilir; kuzenlerini adlarıyla ve biyomlarıyla sayarlar.
 
@@ -3075,7 +3084,7 @@ Ustaların görevleri bittikçe eşinin **ACT 2 anıları** sırayla geri gelir:
 
 ## Biyomlar
 
-> **Not:** ikinci adada da harita seyreltildi (kuralı ACT 1 › Adanın yerleşimi → Haritadaki miktarlar). Bu bölümdeki "Adadaki sayısı" sütunları **seyreltmeden önce** ölçüldü: temel malzemeler bugün yaklaşık yarısı, bitkiler yaklaşık %60'ı kadar.
+> **Not:** ikinci adada da harita seyreltilir (kuralı ACT 1 › Adanın yerleşimi › Haritadaki miktarlar). Bu bölümdeki "Adadaki sayısı" sütunları v3.45 yeni oyun ölçümüdür.
 
 ### Yüzen Kayalar — Güvenli
 
@@ -3090,26 +3099,26 @@ Ustaların görevleri bittikçe eşinin **ACT 2 anıları** sırayla geri gelir:
 | Bulut çamı | Bulut çamı odunu | 14 | – | 1. kademe (Taş balta) |
 | Bulut elması | Bulut elması odunu | 16 | Bulut elması | 1. kademe (Taş balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Bulut pamuğu | 12 | 68 | 45 sn sonra yeniden çıkar |
-| Gök kumu | 10 | 68 | 60 sn sonra yeniden çıkar |
-| Gök mantarı | 18 | 68 | 60 sn sonra yeniden çıkar, çiğ yenir (+25 tokluk) |
-| Gök otu | 14 | 68 | 50 sn sonra yeniden çıkar |
-| Rüzgâr çiçeği | 16 | 68 | 55 sn sonra yeniden çıkar |
-| Rüzgâr kristali | 40 | 68 | 110 sn sonra yeniden çıkar |
-| Tüy yosunu | 10 | 68 | 45 sn sonra yeniden çıkar |
+| Bulut pamuğu | 12 | 62 | 45 sn sonra yeniden çıkar |
+| Gök kumu | 10 | 65 | 60 sn sonra yeniden çıkar |
+| Gök mantarı | 18 | 57 | 60 sn sonra yeniden çıkar, çiğ yenir (+25 tokluk) |
+| Gök otu | 14 | 56 | 50 sn sonra yeniden çıkar |
+| Rüzgâr çiçeği | 16 | 62 | 55 sn sonra yeniden çıkar |
+| Rüzgâr kristali | 40 | 49 | 110 sn sonra yeniden çıkar |
+| Tüy yosunu | 10 | 63 | 45 sn sonra yeniden çıkar |
 | Yüzer taş | 30 | 68 | 90 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Bulut kuvarsı | 34 | 2. kademe (Çakmaktaşı/Granit kazma) | 22 | 300 sn sonra yeniden çıkar |
-| Gök demiri | 30 | 2. kademe (Çakmaktaşı/Granit kazma) | 22 | 300 sn sonra yeniden çıkar |
-| Hafif taş | 12 | 1. kademe (Taş kazma) | 22 | 300 sn sonra yeniden çıkar |
+| Bulut kuvarsı | 34 | 2. kademe (Çakmaktaşı/Granit kazma) | 33 | 300 sn sonra yeniden çıkar |
+| Gök demiri | 30 | 2. kademe (Çakmaktaşı/Granit kazma) | 33 | 300 sn sonra yeniden çıkar |
+| Hafif taş | 12 | 1. kademe (Taş kazma) | 33 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -3134,26 +3143,26 @@ Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzak
 | Dev mantar | Dev mantar odunu | 20 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Kök ağacı | Kök ağacı odunu | 20 | Goblin eriği | 2. kademe (Çakmaktaşı/Granit balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Büyü otu | 26 | 68 | 70 sn sonra yeniden çıkar |
-| Dev spor | 28 | 68 | 80 sn sonra yeniden çıkar |
-| Goblin otu | 12 | 68 | 50 sn sonra yeniden çıkar |
-| Işıldak mantarı | 20 | 68 | 60 sn sonra yeniden çıkar |
-| Kök yumrusu | 14 | 68 | 50 sn sonra yeniden çıkar, çiğ yenir (+29 tokluk) |
-| Mantar şapkası | 16 | 68 | 55 sn sonra yeniden çıkar, çiğ yenir (+28 tokluk) |
-| Spor tozu | 14 | 68 | 50 sn sonra yeniden çıkar |
-| Sümük yosunu | 14 | 68 | 55 sn sonra yeniden çıkar |
+| Büyü otu | 26 | 60 | 70 sn sonra yeniden çıkar |
+| Dev spor | 28 | 62 | 80 sn sonra yeniden çıkar |
+| Goblin otu | 12 | 60 | 50 sn sonra yeniden çıkar |
+| Işıldak mantarı | 20 | 64 | 60 sn sonra yeniden çıkar |
+| Kök yumrusu | 14 | 61 | 50 sn sonra yeniden çıkar, çiğ yenir (+29 tokluk) |
+| Mantar şapkası | 16 | 63 | 55 sn sonra yeniden çıkar, çiğ yenir (+28 tokluk) |
+| Spor tozu | 14 | 65 | 50 sn sonra yeniden çıkar |
+| Sümük yosunu | 14 | 57 | 55 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Goblin bakırı | 16 | 1. kademe (Taş kazma) | 22 | 300 sn sonra yeniden çıkar |
-| Kök taşı | 12 | 1. kademe (Taş kazma) | 22 | 300 sn sonra yeniden çıkar |
-| Spor kristali | 40 | 2. kademe (Çakmaktaşı/Granit kazma) | 22 | 300 sn sonra yeniden çıkar |
+| Goblin bakırı | 16 | 1. kademe (Taş kazma) | 33 | 300 sn sonra yeniden çıkar |
+| Kök taşı | 12 | 1. kademe (Taş kazma) | 33 | 300 sn sonra yeniden çıkar |
+| Spor kristali | 40 | 2. kademe (Çakmaktaşı/Granit kazma) | 33 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -3179,26 +3188,26 @@ Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dron
 | Kuru çınar | Kuru çınar odunu | 24 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Hurma | Hurma odunu | 22 | Hurma | 2. kademe (Çakmaktaşı/Granit balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Bakır tel | 14 | 68 | 55 sn sonra yeniden çıkar |
-| Çöl otu | 8 | 68 | 45 sn sonra yeniden çıkar |
-| Eski devre | 30 | 68 | 90 sn sonra yeniden çıkar |
-| Hurda parçası | 10 | 68 | 45 sn sonra yeniden çıkar |
-| Kaktüs meyvesi | 12 | 68 | 60 sn sonra yeniden çıkar |
-| Pas tozu | 8 | 68 | 45 sn sonra yeniden çıkar |
-| Vida | 8 | 68 | 50 sn sonra yeniden çıkar |
-| Yağ birikintisi | 14 | 68 | 70 sn sonra yeniden çıkar |
+| Bakır tel | 14 | 67 | 55 sn sonra yeniden çıkar |
+| Çöl otu | 8 | 67 | 45 sn sonra yeniden çıkar |
+| Eski devre | 30 | 57 | 90 sn sonra yeniden çıkar |
+| Hurda parçası | 10 | 60 | 45 sn sonra yeniden çıkar |
+| Kaktüs meyvesi | 12 | 52 | 60 sn sonra yeniden çıkar |
+| Pas tozu | 8 | 55 | 45 sn sonra yeniden çıkar |
+| Vida | 8 | 67 | 50 sn sonra yeniden çıkar |
+| Yağ birikintisi | 14 | 66 | 70 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Barut kayası | 22 | 2. kademe (Çakmaktaşı/Granit kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Hurda yığını | 10 | 1. kademe (Taş kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Pirinç cevheri | 24 | 2. kademe (Çakmaktaşı/Granit kazma) | 20 | 300 sn sonra yeniden çıkar |
+| Barut kayası | 22 | 2. kademe (Çakmaktaşı/Granit kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Hurda yığını | 10 | 1. kademe (Taş kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Pirinç cevheri | 24 | 2. kademe (Çakmaktaşı/Granit kazma) | 30 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -3224,26 +3233,26 @@ Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendi
 | Mavi sedir | Mavi sedir odunu | 32 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Kristal armut | Kristal armut odunu | 28 | Kristal armut | 2. kademe (Çakmaktaşı/Granit balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Buz kristali | 36 | 68 | 90 sn sonra yeniden çıkar |
-| Enerji taşı | 44 | 68 | 100 sn sonra yeniden çıkar |
-| Golem tozu | 14 | 68 | 50 sn sonra yeniden çıkar |
-| Gümüş kum | 14 | 68 | 60 sn sonra yeniden çıkar |
-| Kaya çiçeği | 20 | 68 | 60 sn sonra yeniden çıkar |
-| Kristal lifi | 18 | 68 | 60 sn sonra yeniden çıkar |
-| Kristal mantarı | 24 | 68 | 70 sn sonra yeniden çıkar |
-| Mavi yosun | 14 | 68 | 50 sn sonra yeniden çıkar |
+| Buz kristali | 36 | 59 | 90 sn sonra yeniden çıkar |
+| Enerji taşı | 44 | 65 | 100 sn sonra yeniden çıkar |
+| Golem tozu | 14 | 58 | 50 sn sonra yeniden çıkar |
+| Gümüş kum | 14 | 65 | 60 sn sonra yeniden çıkar |
+| Kaya çiçeği | 20 | 62 | 60 sn sonra yeniden çıkar |
+| Kristal lifi | 18 | 58 | 60 sn sonra yeniden çıkar |
+| Kristal mantarı | 24 | 73 | 70 sn sonra yeniden çıkar |
+| Mavi yosun | 14 | 60 | 50 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Kobalt cevheri | 44 | 3. kademe (Kuvars/Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Kristal cevheri | 34 | 2. kademe (Çakmaktaşı/Granit kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Titanyum cevheri | 52 | 3. kademe (Kuvars/Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
+| Kobalt cevheri | 44 | 3. kademe (Kuvars/Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Kristal cevheri | 34 | 2. kademe (Çakmaktaşı/Granit kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Titanyum cevheri | 52 | 3. kademe (Kuvars/Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -3269,26 +3278,26 @@ Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ej
 | Obsidyen dikeni | Obsidyen dikeni odunu | 38 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Ejder meyvesi | Ejder meyvesi odunu | 32 | Ejder meyvesi | 2. kademe (Çakmaktaşı/Granit balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ejder otu | 28 | 68 | 70 sn sonra yeniden çıkar |
-| Kor mantarı | 26 | 68 | 70 sn sonra yeniden çıkar |
-| Kükürt tozu | 18 | 68 | 55 sn sonra yeniden çıkar |
-| Lav çiçeği | 30 | 68 | 70 sn sonra yeniden çıkar |
-| Magma camı | 44 | 68 | 100 sn sonra yeniden çıkar |
-| Obsidyen kırığı | 30 | 68 | 80 sn sonra yeniden çıkar |
-| Plazma taşı | 60 | 68 | 120 sn sonra yeniden çıkar |
-| Volkan külü | 10 | 68 | 45 sn sonra yeniden çıkar |
+| Ejder otu | 28 | 67 | 70 sn sonra yeniden çıkar |
+| Kor mantarı | 26 | 61 | 70 sn sonra yeniden çıkar |
+| Kükürt tozu | 18 | 59 | 55 sn sonra yeniden çıkar |
+| Lav çiçeği | 30 | 63 | 70 sn sonra yeniden çıkar |
+| Magma camı | 44 | 62 | 100 sn sonra yeniden çıkar |
+| Obsidyen kırığı | 30 | 60 | 80 sn sonra yeniden çıkar |
+| Plazma taşı | 60 | 53 | 120 sn sonra yeniden çıkar |
+| Volkan külü | 10 | 62 | 45 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Ejder kristali | 70 | 3. kademe (Kuvars/Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Magma cevheri | 56 | 3. kademe (Kuvars/Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Volkan demiri | 40 | 2. kademe (Çakmaktaşı/Granit kazma) | 20 | 300 sn sonra yeniden çıkar |
+| Ejder kristali | 70 | 3. kademe (Kuvars/Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Magma cevheri | 56 | 3. kademe (Kuvars/Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Volkan demiri | 40 | 2. kademe (Çakmaktaşı/Granit kazma) | 30 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -3314,26 +3323,26 @@ Adanın en uzak ucu, roket rampası. Uzaylı dronları, gölge muhafızlar ve de
 | Yıldız akasyası | Yıldız akasyası odunu | 44 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Gök üzümü | Gök üzümü odunu | 38 | Gök üzümü | 2. kademe (Çakmaktaşı/Granit balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ay çiçeği | 28 | 68 | 70 sn sonra yeniden çıkar |
-| Bulut özü | 26 | 68 | 70 sn sonra yeniden çıkar |
-| Füzyon taşı | 80 | 68 | 140 sn sonra yeniden çıkar |
-| Göktaşı tozu | 24 | 68 | 60 sn sonra yeniden çıkar |
-| Gök camı parçası | 36 | 68 | 90 sn sonra yeniden çıkar |
-| Gök ipeği | 30 | 68 | 70 sn sonra yeniden çıkar |
-| Meteor parçası | 50 | 68 | 110 sn sonra yeniden çıkar |
-| Yıldız mantarı | 30 | 68 | 80 sn sonra yeniden çıkar |
+| Ay çiçeği | 28 | 62 | 70 sn sonra yeniden çıkar |
+| Bulut özü | 26 | 58 | 70 sn sonra yeniden çıkar |
+| Füzyon taşı | 80 | 61 | 140 sn sonra yeniden çıkar |
+| Göktaşı tozu | 24 | 48 | 60 sn sonra yeniden çıkar |
+| Gök camı parçası | 36 | 61 | 90 sn sonra yeniden çıkar |
+| Gök ipeği | 30 | 63 | 70 sn sonra yeniden çıkar |
+| Meteor parçası | 50 | 59 | 110 sn sonra yeniden çıkar |
+| Yıldız mantarı | 30 | 60 | 80 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Gök camı | 60 | 3. kademe (Kuvars/Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Meteor demiri | 70 | 3. kademe (Kuvars/Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Yıldız cevheri | 110 | 4. kademe (Bazalt/Demir kazma) | 20 | 300 sn sonra yeniden çıkar |
+| Gök camı | 60 | 3. kademe (Kuvars/Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Meteor demiri | 70 | 3. kademe (Kuvars/Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Yıldız cevheri | 110 | 4. kademe (Bazalt/Demir kazma) | 30 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -3562,7 +3571,7 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 ## Tarifler nasıl çalışır (kısa)
 
 - **Közlenmiş et ve balık:** ateşte közlenen et ve balık yenir; "pişmiş et/balık grubu" yoktur, tarifler belli bir pişmiş eti ister; "pişmiş et" isteyen tarif ve görevler (ör. Poyraz'ın "Kaptanın karnı") közlenmişi de kabul eder.
-- **Her ateşte közlenir:** bütün kişilerin ateşlerinde (Nazlı, Durmuş, Dursun, kuzenler, Kemal…) çiğ et ve balık közlenir: çantanda çiğ yiyecek varken ateşin yanında **"E · Ateşte közle"** yazar; ateşe tıklayınca (18 px) ya da 30 px yakınında E/F ile közleme penceresi açılır. Çiğ yiyecek yokken ateş hedef olmaz (yanındaki kişiyle konuşmayı engellemez).
+- **Her ateşte közlenir:** bütün kişilerin ateşlerinde (Nazlı, Durmuş, Dursun, kuzenler, Kemal…) çiğ et ve balık közlenir: çantanda çiğ yiyecek varken ateşin yanında **"[F] Ateşte közle"** yazar; ateşe tıklayınca (18 px) ya da 30 px yakınında E/F ile közleme penceresi açılır. Çiğ yiyecek yokken ateş hedef olmaz (yanındaki kişiyle konuşmayı engellemez).
 - **Hiçbir tarif bıçak istemez:** eskiden Taş bıçak ya da Çakmaktaşı bıçak isteyen 64 tarif (saplar, kaşıklar, kabuklar, zıpkın, kürek, havyar…) artık alet istemez. **Reçine ağaçtan düşer:** Çam kesilince her odunla birlikte 1 **Çam reçinesi** (ve 1 Çam kozalağı), Ladin kesilince 1 **Ladin reçinesi** düşer; Çam/Ladin kabuğu ve reçine tarifleri kalktı. Görev oku ve "nerede bulunur" bilgisi ağaçların ekstra düşürdüklerini o ağaçtan çıkar sayar. Reçine isteyen tarif belli bir reçineyi ister (Çam reçinesi, Ladin reçinesi ya da Huş katranı). Eski kayıtlardaki Çam/Ladin kabuğu kendi reçinesine dönüşür.
 - **Her biyomun seti kendi biyomunda yapılır:** bir biyomun silah ve zırh setleri (başlangıç, metal ve usta setleri) o biyomun (ya da önceki biyomların) malzemesiyle yapılabilir; hiçbir parça sonraki bir biyomdan malzeme istemez. Deri her biyomun hayvanından düşen Deri parçasıdır (aşağıda).
 - **Tabaklama yok, zırh deri parçasıyla yapılır:** Tanin, Meşe tanini ve bütün tabaklanmış deri tarifleri oyundan kalktı. Derisi ya da postu olan her hayvan avlanınca derisinin yanında **Deri parçası** da düşürür (büyük hayvanlar — canı 60 ve üstü — 1–2 tane). Zırhlar, deri isteyen silahlar ve eşyalar (çanta, tulum, çadır, yatak, ok kılıfı…) eskiden istedikleri tabaklanmış deri yerine aynı sayıda Deri parçası ister. Hayvanların kendi derileri (Kurt derisi, Geyik derisi…) satılır ve görevlerde istenir.
@@ -4914,11 +4923,11 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Işın kılıcı | sword | plazma kılıç | 1 | 999 | 0 | – | 60 |
 | Kaba meşale | torch | gece aydınlatır | 0 | 1.000.000 | 0 | – | – |
 | Meşale | torch | gece aydınlatır | 0 | 1.000.000 | 0 | – | – |
-| Bola | trap | küçük av (Tuzak: eline al, çayırda E ile kur) | 2,5 | 25 | 15 | – | – |
-| Dişbudak yayı | trap | küçük av (Tuzak: eline al, çayırda E ile kur) | 2 | 35 | 30 | – | – |
-| Porsuk yayı | trap | küçük av (Tuzak: eline al, çayırda E ile kur) | 2 | 40 | 40 | – | – |
-| Sapan | trap | küçük av (Tuzak: eline al, çayırda E ile kur) | 2,5 | 25 | 20 | – | – |
-| Tuzak | trap | küçük av (Tuzak: eline al, çayırda E ile kur) | 3 | 20 | 12 | – | – |
+| Bola | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2,5 | 25 | 15 | – | – |
+| Dişbudak yayı | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2 | 35 | 30 | – | – |
+| Porsuk yayı | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2 | 40 | 40 | – | – |
+| Sapan | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2,5 | 25 | 20 | – | – |
+| Tuzak | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 3 | 20 | 12 | – | – |
 | Huş kabuğu kabı | water | su taşır | 2 | 1.000.000 | 0 | – | – |
 | Yaprak kova | water | su taşır | 3 | 1.000.000 | 0 | – | – |
 
@@ -5064,7 +5073,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ardıç kalası | 18 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Ardıç sapı, Asma fener, Atölye, Dolap … (+15) |
 | Ardıç kaşığı | 80 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ardıç kömürü | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Altın külçesi, Bakır külçesi, Barut, Çömlek fırını, Demir halka, Demir külçesi … (+12) |
-| Ardıç meyvesi | 21 | yenir +14, zehirli | Meyve ağacı (Ardıç): eli boşken E ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Ardıç ağacından toplanır: Kayalık Dağ (ACT 1) | Ardıç meyvesi ezmesi, Ardıç meyvesi suyu, Kurutulmuş ardıç meyvesi |
+| Ardıç meyvesi | 21 | yenir +14, zehirli | Meyve ağacı (Ardıç): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Ardıç ağacından toplanır: Kayalık Dağ (ACT 1) | Ardıç meyvesi ezmesi, Ardıç meyvesi suyu, Kurutulmuş ardıç meyvesi |
 | Ardıç meyvesi ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ardıç meyvesi suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ardıç odunu | 22 | – | Balta ile Ardıç ağacından: Kayalık Dağ (ACT 1) | Ardıç kabuğu, Ardıç kalası, Ardıç kömürü, Kütük salı, Oyma kano |
@@ -5083,7 +5092,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ateş çiçeği balı | 20 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ateş çiçeği merhemi | 25 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ateş iksiri | 131 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Ateş narı | 39 | yenir +19 | Meyve ağacı (Ateş narı): eli boşken E ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Ateş narı ağacından toplanır: Kül Diyarı (ACT 1) | Ateş narı şerbeti, Kurutulmuş ateş narı |
+| Ateş narı | 39 | yenir +19 | Meyve ağacı (Ateş narı): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Ateş narı ağacından toplanır: Kül Diyarı (ACT 1) | Ateş narı şerbeti, Kurutulmuş ateş narı |
 | Ateş narı kalası | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Ateş narı sapı, Atölye, Dolap … (+15) |
 | Ateş narı kömürü | 79 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Altın külçesi, Bakır külçesi, Barut, Çömlek fırını, Demir halka, Demir külçesi … (+12) |
 | Ateş narı odunu | 40 | – | Balta ile Ateş narı ağacından: Kül Diyarı (ACT 1) | Ateş narı kalası, Ateş narı kömürü, Kütük salı, Oyma kano |
@@ -5097,7 +5106,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ayı pençesi | 22 | – | Av: Mağara ayısı düşürür %60 (ACT 1 · Kayalık Dağ) | Pençe kolye, Gümüş pullu zırh |
 | Ay çayı | 26 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ay çiçeği ² | 28 | – | Yerden toplanır: Gök Rıhtımı (ACT 2) | – |
-| Ay elması | 53 | yenir +24 | Meyve ağacı (Ay elması): eli boşken E ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Ay elması ağacından toplanır: Mor Kristal Vadisi (ACT 1) | Ay elması reçeli, Kurutulmuş ay elması |
+| Ay elması | 53 | yenir +24 | Meyve ağacı (Ay elması): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Ay elması ağacından toplanır: Mor Kristal Vadisi (ACT 1) | Ay elması reçeli, Kurutulmuş ay elması |
 | Ay elması kalası | 73 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Ay elması sapı, Dolap … (+15) |
 | Ay elması kömürü | 100 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Altın külçesi, Bakır külçesi, Barut, Çömlek fırını, Demir halka, Demir külçesi … (+12) |
 | Ay elması odunu | 54 | – | Balta ile Ay elması ağacından: Mor Kristal Vadisi (ACT 1) | Ay elması kalası, Ay elması kömürü, Kütük salı, Oyma kano |
@@ -5181,7 +5190,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Buz kürkü ² | 40 | – | Av: Buz tavşanı düşürür %80 (ACT 2 · Kristal Golem Ocağı) | – |
 | Buz tavşanı eti ² | 12 | – | Av: Buz tavşanı düşürür %100 (ACT 2 · Kristal Golem Ocağı) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş buz tavşanı eti, Turba ateşinde tütsü |
 | Büyü otu ² | 26 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) · Av: Goblin şamanı düşürür %80 (ACT 2 · Dev Mantar Ormanı) | Ateş asası, Buz asası, Mana iksiri, Yıldırım asası |
-| Ceviz | 8 | yenir +8 | Meyve ağacı (Ceviz): eli boşken E ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Ceviz ağacından toplanır: Orman (ACT 1) · Av: Sincap düşürür %35 (ACT 1 · Orman) | Ceviz içi, Ceviz kabuğu miğfer |
+| Ceviz | 8 | yenir +8 | Meyve ağacı (Ceviz): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Ceviz ağacından toplanır: Orman (ACT 1) · Av: Sincap düşürür %35 (ACT 1 · Orman) | Ceviz içi, Ceviz kabuğu miğfer |
 | Ceviz içi | 12 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ceviz yağı |
 | Ceviz kabuğu | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ceviz kabuğu miğfer | 280 | giyilir +15 savunma | Tarif: kazanda öğrenilir (Zümrüt ya da kuzen cadılar; tanışınca kitaba yazılır) → Örs · Zırhçı Duran (Orman) ve üstü döver | – |
@@ -5302,7 +5311,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Gece ağacı kömürü | 105 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Altın külçesi, Bakır külçesi, Barut, Çömlek fırını, Demir halka, Demir külçesi … (+12) |
 | Gece ağacı odunu | 55 | – | Balta ile Gece ağacı ağacından: Mor Kristal Vadisi (ACT 1) | Gece ağacı kalası, Gece ağacı kömürü, Kütük salı, Oyma kano |
 | Gece ağacı sapı | 114 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bazalt bıçak, Boynuz kazma, Çakmaktaşı balta, Çakmaktaşı bıçak … (+21) |
-| Gece sefası | 9 | yenir +5 | Yalnız gece, karanlık iyice çökünce karada (Çayır/Orman) beliren beyaz çiçek; E ile toplanır | Ay çayı, Ay ışığı iksiri |
+| Gece sefası | 9 | yenir +5 | Yalnız gece, karanlık iyice çökünce karada (Çayır/Orman) beliren beyaz çiçek; F ile toplanır | Ay çayı, Ay ışığı iksiri |
 | Gece zambağı | 72 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Gece zambağı yağı |
 | Gece zambağı yağı | 303 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Gelincik | 2 | – | Yerden toplanır: Çayır (ACT 1) | Gelincik boyası, Kurutulmuş gelincik |
@@ -5519,7 +5528,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kertenkele eti ² | 8 | – | Av: Kaya kertenkelesi düşürür %80 (ACT 2 · Yüzen Kayalar) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş kertenkele eti, Turba ateşinde tütsü |
 | Kertenkele pulu ² | 14 | – | Av: Kaya kertenkelesi düşürür %90 (ACT 2 · Yüzen Kayalar) | – |
 | Keskin taş | 3 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bağlı uç, Kemik olta iğnesi, Kürek, Mızrak, Sivri taş, Sopa … (+3) |
-| Kestane | 21 | yenir +15 | Meyve ağacı (Kestane): eli boşken E ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Kestane ağacından toplanır: Kayalık Dağ (ACT 1) | Kavrulmuş kestane |
+| Kestane | 21 | yenir +15 | Meyve ağacı (Kestane): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Kestane ağacından toplanır: Kayalık Dağ (ACT 1) | Kavrulmuş kestane |
 | Kestane kabuğu | 12 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kestane kalası | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+15) |
 | Kestane kaşığı | 69 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -5829,7 +5838,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Midye kabuğu kaşık | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Mor çekirdek ² | 360 | – | Av: Uzaylı dronu düşürür %40 (ACT 2 · Gök Rıhtımı) · Av: Gölge muhafız düşürür %50 (ACT 2 · Gök Rıhtımı) | – |
 | Mor ip | 200 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Mor kıymık | 30 | – | Gece balık tutarken %5 ihtimalle oltaya takılır · Yalnız gece, karanlıkta karada beliren mor parıltı (Çayır/Orman); E ile toplanır | Ay ışığı iksiri, Kıymık kolye |
+| Mor kıymık | 30 | – | Gece balık tutarken %5 ihtimalle oltaya takılır · Yalnız gece, karanlıkta karada beliren mor parıltı (Çayır/Orman); F ile toplanır | Ay ışığı iksiri, Kıymık kolye |
 | Mor kök | 70 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Mor kök boyası |
 | Mor kök boyası | 149 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Mor pusula | 250 | – | Eski Sisli Ada sonunun ödülü (kodda duruyor; güncel akışta ulaşılıp ulaşılmadığı test raporuna bakın) | – |
@@ -5845,7 +5854,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Muflon derisi | 7 | – | Av: Muflon düşürür %80 (ACT 1 · Kayalık Dağ) | – (satılır, görevlerde istenir) |
 | Muflon eti | 7 | – | Av: Muflon düşürür %100 (ACT 1 · Kayalık Dağ) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş muflon eti, Pişmiş muflon eti, Turba ateşinde tütsü … (+1) |
 | Muhafız zırhı parçası ² | 220 | – | Av: Gölge muhafız düşürür %80 (ACT 2 · Gök Rıhtımı) | Meka çizme |
-| Mürver | 14 | yenir +11, zehirli | Meyve ağacı (Mürver): eli boşken E ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Mürver ağacından toplanır: Bataklık (ACT 1) | Kurutulmuş mürver, Mürver boyası, Mürver ezmesi, Mürver suyu |
+| Mürver | 14 | yenir +11, zehirli | Meyve ağacı (Mürver): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Mürver ağacından toplanır: Bataklık (ACT 1) | Kurutulmuş mürver, Mürver boyası, Mürver ezmesi, Mürver suyu |
 | Mürver boyası | 16 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Mürver ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Mürver odunu | 14 | – | Balta ile Mürver ağacından: Bataklık (ACT 1) | – |
@@ -6154,7 +6163,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Vida ² | 8 | – | Yerden toplanır: Hurda Çölü (ACT 2) · Av: Hurda faresi düşürür %90 (ACT 2 · Hurda Çölü) | Hurda çizme, Pompalı, Tabanca |
 | Volkan demiri ² | 40 | – | Kazmayla kazılır: Ejder Volkanı (ACT 2) | – |
 | Volkan külü ² | 10 | – | Yerden toplanır: Ejder Volkanı (ACT 2) | – |
-| Yabani armut | 2 | yenir +7 | Meyve ağacı (Armut): eli boşken E ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Armut ağacından toplanır: Çayır (ACT 1) | Kurutulmuş yabani armut, Yabani armut ezmesi, Yabani armut suyu |
+| Yabani armut | 2 | yenir +7 | Meyve ağacı (Armut): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Armut ağacından toplanır: Çayır (ACT 1) | Kurutulmuş yabani armut, Yabani armut ezmesi, Yabani armut suyu |
 | Yabani armut ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani armut suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani arpa | 2 | – | Yerden toplanır: Çayır (ACT 1) | Kavrulmuş yabani arpa, Yabani arpa lapası, Yabani arpa unu |
@@ -6169,10 +6178,10 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yabani buğday lapası | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani buğday unu | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kurutulmuş meyve keki, Kül ekmeği, Yabani buğday hamuru |
 | Yabani buğday yassı ekmeği | 40 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ballı ekmek, Ziyafet sofrası |
-| Yabani elma | 2 | yenir +7 | Meyve ağacı (Elma): eli boşken E ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Elma ağacından toplanır: Çayır (ACT 1) | Kurutulmuş yabani elma, Yabani elma ezmesi, Yabani elma suyu |
+| Yabani elma | 2 | yenir +7 | Meyve ağacı (Elma): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Elma ağacından toplanır: Çayır (ACT 1) | Kurutulmuş yabani elma, Yabani elma ezmesi, Yabani elma suyu |
 | Yabani elma ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani elma suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Yabani erik | 2 | yenir +6 | Meyve ağacı (Erik): eli boşken E ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Erik ağacından toplanır: Çayır (ACT 1) | Kurutulmuş yabani erik, Yabani erik ezmesi, Yabani erik suyu |
+| Yabani erik | 2 | yenir +6 | Meyve ağacı (Erik): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Erik ağacından toplanır: Çayır (ACT 1) | Kurutulmuş yabani erik, Yabani erik ezmesi, Yabani erik suyu |
 | Yabani erik ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani erik suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani havuç | 2 | yenir +5 | Yerden toplanır: Çayır (ACT 1) | Kızarmış yabani havuç, Kurutulmuş yabani havuç |
@@ -6231,7 +6240,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yıldız cevheri ² | 110 | – | Kazmayla kazılır: Gök Rıhtımı (ACT 2) | Yıldız külçesi |
 | Yıldız çelengi | 388 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yıldız çiçeği | 74 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Yıldız çelengi |
-| Yıldız eriği | 53 | yenir +22 | Meyve ağacı (Yıldız eriği): eli boşken E ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Yıldız eriği ağacından toplanır: Mor Kristal Vadisi (ACT 1) | Kurutulmuş yıldız eriği |
+| Yıldız eriği | 53 | yenir +22 | Meyve ağacı (Yıldız eriği): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Yıldız eriği ağacından toplanır: Mor Kristal Vadisi (ACT 1) | Kurutulmuş yıldız eriği |
 | Yıldız eriği kalası | 73 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+15) |
 | Yıldız eriği kömürü | 100 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Altın külçesi, Bakır külçesi, Barut, Çömlek fırını, Demir halka, Demir külçesi … (+12) |
 | Yıldız eriği odunu | 54 | – | Balta ile Yıldız eriği ağacından: Mor Kristal Vadisi (ACT 1) | Kütük salı, Oyma kano, Yıldız eriği kalası, Yıldız eriği kömürü |
@@ -6361,7 +6370,7 @@ Yetenekler üç ağaçtadır: **Savaş** (kırmızı), **Ekonomi** (altın sarı
 | 8 | G6 | Taşçı | kazma | Taş, çakmaktaşı, çakıl, kum, kil %50 daha hızlı | Verimli toprak II | – | 5.000 | Sv 14 |
 | 8 | G7 | Su taşıyıcı | su damlası | Su %50 daha hızlı | Verimli toprak II | – | 5.000 | Sv 14 |
 | 8 | H5 | Keskin göz | göz | Çakmaktaşı ve böğürtlen haritada parlar | Usta işi II | – | 5.000 | Sv 14 |
-| 8 | H4 | Uzun kol | uzanan ok | E ile %50 daha uzaktan toplama | Usta işi II | – | 5.000 | Sv 14 |
+| 8 | H4 | Uzun kol | uzanan ok | F ile %50 daha uzaktan toplama | Usta işi II | – | 5.000 | Sv 14 |
 
 ## Dayanıklılık (yeşil)
 

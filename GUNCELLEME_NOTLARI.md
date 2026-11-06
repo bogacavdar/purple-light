@@ -8,6 +8,36 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.45 · 6 Kasım 2026
+
+### Oynanış
+
+- **Porsuk Çayır'da:** Çayır'da artık porsuk da dolaşır (tek başına, günün her saatinde).
+- Yerdeki yaprak sayısı artık her yeni oyunda aynı.
+
+### Düzeltmeler
+
+- **Yan görevler fazla XP veriyordu:** bir yan görev bitince, görevin XP ödülü yerine binlerce XP verilebiliyordu (ör. Güvercinci Bulut 50 yerine 3.000'den fazla XP; karakter birden çok seviye atlıyordu). Artık her yan görev tablodaki XP'yi verir.
+
+### Kayıtlar
+
+- Yan görevlerin fazla XP verdiği hatadan etkilenen kayıtlar (3.45'ten önce en az bir yan görevi bitmiş kayıtlar) açılışta silinir ve yeni oyun başlar. Yan görev bitirmemiş kayıtlar olduğu gibi kalır.
+- Bir kayıt silinince çıkan kısa bilgi artık 5 saniye ekranda kalır; harita değiştiği için silinen kayıtlarda "Ada değiştiği için yeni oyun başladı." yazar.
+
+### Arayüz
+
+- **Yan görevler haritada:** saati gelmiş, görevi bekleyen bir yan kişi keşfettiğin bir yerdeyse büyük haritada ve köşedeki haritada tam yerinde bir **"?"** ile görünür. Bu "?" ana görevin "!" işareti kadar büyük ve parlaktır. Henüz keşfetmediğin bir yerdeyse ancak yanına yaklaşınca haritada sisli bir daire belirir. Bir bölgede aynı anda en çok iki yan görev işareti olur.
+- Haritanın keşfedilmemiş yerlerinde gelip giden süs soru işaretleri kaldırıldı; artık haritadaki her "?" gerçekten bir yan kişidir.
+- **Harita açıkken yazılar üstüne binmez:** büyük harita açıkken "Yeni bir gün", yeni malzeme, seviye ve seviye puanı yazıları ve başarım kartı haritanın üstünde çıkmaz; harita kapanınca gösterilir.
+- Kamp ateşinin ilk ipucu artık doğru tuşu (F) yazar.
+- Orman'daki satıcı Bekir'in adı artık "Seyyar satıcı Bekir".
+
+### Tasarım belgesi
+
+- Çayır bölümü oyunla karşılaştırıldı: haritadaki miktarlar 3.44 ölçüsüne göre, Porsuk, Deri parçası ve Yaban atının çıkma seviyesi, yan görevlerin harita işaretleri, Mavi'nin yeri ve görev açılma koşulları güncellendi.
+
+---
+
 ## Versiyon 3.44 · 6 Kasım 2026
 
 ### Arayüz
@@ -356,18 +386,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Tasarım belgesi
 - Yeni bölüm **Gelecek planı: Godot'ya geçiş:** nedenler, işin büyüklüğü, aşamalar ve yalnızca yazılım süresi (yaklaşık 5–6 hafta), kredi notu.
 - Akış › Bilgisayara yükle (Firefox) ve Sistemler › Oyun kolu (kol kopuyorsa) güncellendi.
-
----
-
-## Versiyon 3.25 · 4 Kasım 2026
-
-### Oynanış
-- **Kolda nişan yardımı:** kolla Vur'a (X ya da RT) basınca vuruş önce yakınındaki saldırgan bir canlıya (150 piksel), yoksa önündeki en yakın canlıya (yakın dövüşte 110, yay, asa ve tabancada 240 piksel), o da yoksa sol çubuğun gösterdiği yöne gider; karakter vurduğu yöne döner. Telefondaki Vur düğmesiyle aynı kurallar. Basılı tutmak ağır vuruş, art arda basmak kombo; yayda ok hedefe gider. Fareyle oynarken nişan yardımı yok.
-
-### Düzeltmeler
-- **Kolda seçim yerinde kalır:** yiyecek listesinde "Ye"ye basınca seçim en başa atlıyordu, her yemekte yeniden aşağı inmek gerekiyordu. Artık aynı düğmede kalır; o yiyecek bittiyse yerindeki en yakın düğmeye geçer. Bütün pencerelerde böyle.
-- **Kolla ad yazmak:** ad kutusunda A rastgele ad veriyordu. Artık ekran klavyesi açılır: Türkçe harfler, Boşluk, Sil, Tamam. A yazar, X siler, B geri döner, Start bitirir. İlk harf ve boşluktan sonraki harf büyük yazılır. Rastgele ad için ekrandaki "Rastgele" düğmesi.
-- **Alt Gr + Enter:** tam ekran sol Alt'la çalışıyordu, Alt Gr'yle çalışmıyordu; artık ikisiyle de çalışır.
-
-### Tasarım belgesi
-- Oyun kolu bölümüne nişan yardımı, seçimin yerinde kalması ve ekran klavyesi; Kontroller'e Alt Gr eklendi.

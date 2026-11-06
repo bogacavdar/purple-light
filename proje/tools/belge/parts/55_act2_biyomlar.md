@@ -1,6 +1,6 @@
 ## Biyomlar
 
-> **Not:** ikinci adada da harita seyreltildi (kuralı ACT 1 › Adanın yerleşimi → Haritadaki miktarlar). Bu bölümdeki "Adadaki sayısı" sütunları **seyreltmeden önce** ölçüldü: temel malzemeler bugün yaklaşık yarısı, bitkiler yaklaşık %60'ı kadar.
+> **Not:** ikinci adada da harita seyreltilir (kuralı ACT 1 › Adanın yerleşimi › Haritadaki miktarlar). Bu bölümdeki "Adadaki sayısı" sütunları v3.45 yeni oyun ölçümüdür.
 
 ### Yüzen Kayalar — Güvenli
 
@@ -15,26 +15,26 @@
 | Bulut çamı | Bulut çamı odunu | 14 | – | 1. kademe (Taş balta) |
 | Bulut elması | Bulut elması odunu | 16 | Bulut elması | 1. kademe (Taş balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Bulut pamuğu | 12 | 68 | 45 sn sonra yeniden çıkar |
-| Gök kumu | 10 | 68 | 60 sn sonra yeniden çıkar |
-| Gök mantarı | 18 | 68 | 60 sn sonra yeniden çıkar, çiğ yenir (+25 tokluk) |
-| Gök otu | 14 | 68 | 50 sn sonra yeniden çıkar |
-| Rüzgâr çiçeği | 16 | 68 | 55 sn sonra yeniden çıkar |
-| Rüzgâr kristali | 40 | 68 | 110 sn sonra yeniden çıkar |
-| Tüy yosunu | 10 | 68 | 45 sn sonra yeniden çıkar |
+| Bulut pamuğu | 12 | 62 | 45 sn sonra yeniden çıkar |
+| Gök kumu | 10 | 65 | 60 sn sonra yeniden çıkar |
+| Gök mantarı | 18 | 57 | 60 sn sonra yeniden çıkar, çiğ yenir (+25 tokluk) |
+| Gök otu | 14 | 56 | 50 sn sonra yeniden çıkar |
+| Rüzgâr çiçeği | 16 | 62 | 55 sn sonra yeniden çıkar |
+| Rüzgâr kristali | 40 | 49 | 110 sn sonra yeniden çıkar |
+| Tüy yosunu | 10 | 63 | 45 sn sonra yeniden çıkar |
 | Yüzer taş | 30 | 68 | 90 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Bulut kuvarsı | 34 | 2. kademe (Çakmaktaşı/Granit kazma) | 22 | 300 sn sonra yeniden çıkar |
-| Gök demiri | 30 | 2. kademe (Çakmaktaşı/Granit kazma) | 22 | 300 sn sonra yeniden çıkar |
-| Hafif taş | 12 | 1. kademe (Taş kazma) | 22 | 300 sn sonra yeniden çıkar |
+| Bulut kuvarsı | 34 | 2. kademe (Çakmaktaşı/Granit kazma) | 33 | 300 sn sonra yeniden çıkar |
+| Gök demiri | 30 | 2. kademe (Çakmaktaşı/Granit kazma) | 33 | 300 sn sonra yeniden çıkar |
+| Hafif taş | 12 | 1. kademe (Taş kazma) | 33 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -59,26 +59,26 @@ Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzak
 | Dev mantar | Dev mantar odunu | 20 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Kök ağacı | Kök ağacı odunu | 20 | Goblin eriği | 2. kademe (Çakmaktaşı/Granit balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Büyü otu | 26 | 68 | 70 sn sonra yeniden çıkar |
-| Dev spor | 28 | 68 | 80 sn sonra yeniden çıkar |
-| Goblin otu | 12 | 68 | 50 sn sonra yeniden çıkar |
-| Işıldak mantarı | 20 | 68 | 60 sn sonra yeniden çıkar |
-| Kök yumrusu | 14 | 68 | 50 sn sonra yeniden çıkar, çiğ yenir (+29 tokluk) |
-| Mantar şapkası | 16 | 68 | 55 sn sonra yeniden çıkar, çiğ yenir (+28 tokluk) |
-| Spor tozu | 14 | 68 | 50 sn sonra yeniden çıkar |
-| Sümük yosunu | 14 | 68 | 55 sn sonra yeniden çıkar |
+| Büyü otu | 26 | 60 | 70 sn sonra yeniden çıkar |
+| Dev spor | 28 | 62 | 80 sn sonra yeniden çıkar |
+| Goblin otu | 12 | 60 | 50 sn sonra yeniden çıkar |
+| Işıldak mantarı | 20 | 64 | 60 sn sonra yeniden çıkar |
+| Kök yumrusu | 14 | 61 | 50 sn sonra yeniden çıkar, çiğ yenir (+29 tokluk) |
+| Mantar şapkası | 16 | 63 | 55 sn sonra yeniden çıkar, çiğ yenir (+28 tokluk) |
+| Spor tozu | 14 | 65 | 50 sn sonra yeniden çıkar |
+| Sümük yosunu | 14 | 57 | 55 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Goblin bakırı | 16 | 1. kademe (Taş kazma) | 22 | 300 sn sonra yeniden çıkar |
-| Kök taşı | 12 | 1. kademe (Taş kazma) | 22 | 300 sn sonra yeniden çıkar |
-| Spor kristali | 40 | 2. kademe (Çakmaktaşı/Granit kazma) | 22 | 300 sn sonra yeniden çıkar |
+| Goblin bakırı | 16 | 1. kademe (Taş kazma) | 33 | 300 sn sonra yeniden çıkar |
+| Kök taşı | 12 | 1. kademe (Taş kazma) | 33 | 300 sn sonra yeniden çıkar |
+| Spor kristali | 40 | 2. kademe (Çakmaktaşı/Granit kazma) | 33 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -104,26 +104,26 @@ Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dron
 | Kuru çınar | Kuru çınar odunu | 24 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Hurma | Hurma odunu | 22 | Hurma | 2. kademe (Çakmaktaşı/Granit balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Bakır tel | 14 | 68 | 55 sn sonra yeniden çıkar |
-| Çöl otu | 8 | 68 | 45 sn sonra yeniden çıkar |
-| Eski devre | 30 | 68 | 90 sn sonra yeniden çıkar |
-| Hurda parçası | 10 | 68 | 45 sn sonra yeniden çıkar |
-| Kaktüs meyvesi | 12 | 68 | 60 sn sonra yeniden çıkar |
-| Pas tozu | 8 | 68 | 45 sn sonra yeniden çıkar |
-| Vida | 8 | 68 | 50 sn sonra yeniden çıkar |
-| Yağ birikintisi | 14 | 68 | 70 sn sonra yeniden çıkar |
+| Bakır tel | 14 | 67 | 55 sn sonra yeniden çıkar |
+| Çöl otu | 8 | 67 | 45 sn sonra yeniden çıkar |
+| Eski devre | 30 | 57 | 90 sn sonra yeniden çıkar |
+| Hurda parçası | 10 | 60 | 45 sn sonra yeniden çıkar |
+| Kaktüs meyvesi | 12 | 52 | 60 sn sonra yeniden çıkar |
+| Pas tozu | 8 | 55 | 45 sn sonra yeniden çıkar |
+| Vida | 8 | 67 | 50 sn sonra yeniden çıkar |
+| Yağ birikintisi | 14 | 66 | 70 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Barut kayası | 22 | 2. kademe (Çakmaktaşı/Granit kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Hurda yığını | 10 | 1. kademe (Taş kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Pirinç cevheri | 24 | 2. kademe (Çakmaktaşı/Granit kazma) | 20 | 300 sn sonra yeniden çıkar |
+| Barut kayası | 22 | 2. kademe (Çakmaktaşı/Granit kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Hurda yığını | 10 | 1. kademe (Taş kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Pirinç cevheri | 24 | 2. kademe (Çakmaktaşı/Granit kazma) | 30 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -149,26 +149,26 @@ Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendi
 | Mavi sedir | Mavi sedir odunu | 32 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Kristal armut | Kristal armut odunu | 28 | Kristal armut | 2. kademe (Çakmaktaşı/Granit balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Buz kristali | 36 | 68 | 90 sn sonra yeniden çıkar |
-| Enerji taşı | 44 | 68 | 100 sn sonra yeniden çıkar |
-| Golem tozu | 14 | 68 | 50 sn sonra yeniden çıkar |
-| Gümüş kum | 14 | 68 | 60 sn sonra yeniden çıkar |
-| Kaya çiçeği | 20 | 68 | 60 sn sonra yeniden çıkar |
-| Kristal lifi | 18 | 68 | 60 sn sonra yeniden çıkar |
-| Kristal mantarı | 24 | 68 | 70 sn sonra yeniden çıkar |
-| Mavi yosun | 14 | 68 | 50 sn sonra yeniden çıkar |
+| Buz kristali | 36 | 59 | 90 sn sonra yeniden çıkar |
+| Enerji taşı | 44 | 65 | 100 sn sonra yeniden çıkar |
+| Golem tozu | 14 | 58 | 50 sn sonra yeniden çıkar |
+| Gümüş kum | 14 | 65 | 60 sn sonra yeniden çıkar |
+| Kaya çiçeği | 20 | 62 | 60 sn sonra yeniden çıkar |
+| Kristal lifi | 18 | 58 | 60 sn sonra yeniden çıkar |
+| Kristal mantarı | 24 | 73 | 70 sn sonra yeniden çıkar |
+| Mavi yosun | 14 | 60 | 50 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Kobalt cevheri | 44 | 3. kademe (Kuvars/Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Kristal cevheri | 34 | 2. kademe (Çakmaktaşı/Granit kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Titanyum cevheri | 52 | 3. kademe (Kuvars/Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
+| Kobalt cevheri | 44 | 3. kademe (Kuvars/Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Kristal cevheri | 34 | 2. kademe (Çakmaktaşı/Granit kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Titanyum cevheri | 52 | 3. kademe (Kuvars/Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -194,26 +194,26 @@ Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ej
 | Obsidyen dikeni | Obsidyen dikeni odunu | 38 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Ejder meyvesi | Ejder meyvesi odunu | 32 | Ejder meyvesi | 2. kademe (Çakmaktaşı/Granit balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ejder otu | 28 | 68 | 70 sn sonra yeniden çıkar |
-| Kor mantarı | 26 | 68 | 70 sn sonra yeniden çıkar |
-| Kükürt tozu | 18 | 68 | 55 sn sonra yeniden çıkar |
-| Lav çiçeği | 30 | 68 | 70 sn sonra yeniden çıkar |
-| Magma camı | 44 | 68 | 100 sn sonra yeniden çıkar |
-| Obsidyen kırığı | 30 | 68 | 80 sn sonra yeniden çıkar |
-| Plazma taşı | 60 | 68 | 120 sn sonra yeniden çıkar |
-| Volkan külü | 10 | 68 | 45 sn sonra yeniden çıkar |
+| Ejder otu | 28 | 67 | 70 sn sonra yeniden çıkar |
+| Kor mantarı | 26 | 61 | 70 sn sonra yeniden çıkar |
+| Kükürt tozu | 18 | 59 | 55 sn sonra yeniden çıkar |
+| Lav çiçeği | 30 | 63 | 70 sn sonra yeniden çıkar |
+| Magma camı | 44 | 62 | 100 sn sonra yeniden çıkar |
+| Obsidyen kırığı | 30 | 60 | 80 sn sonra yeniden çıkar |
+| Plazma taşı | 60 | 53 | 120 sn sonra yeniden çıkar |
+| Volkan külü | 10 | 62 | 45 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Ejder kristali | 70 | 3. kademe (Kuvars/Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Magma cevheri | 56 | 3. kademe (Kuvars/Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Volkan demiri | 40 | 2. kademe (Çakmaktaşı/Granit kazma) | 20 | 300 sn sonra yeniden çıkar |
+| Ejder kristali | 70 | 3. kademe (Kuvars/Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Magma cevheri | 56 | 3. kademe (Kuvars/Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Volkan demiri | 40 | 2. kademe (Çakmaktaşı/Granit kazma) | 30 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 
@@ -239,26 +239,26 @@ Adanın en uzak ucu, roket rampası. Uzaylı dronları, gölge muhafızlar ve de
 | Yıldız akasyası | Yıldız akasyası odunu | 44 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Gök üzümü | Gök üzümü odunu | 38 | Gök üzümü | 2. kademe (Çakmaktaşı/Granit balta) |
 
-**Toplanabilirler** (E ile, elde alet gerekmez)
+**Toplanabilirler** (F ile, elde alet gerekmez)
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ay çiçeği | 28 | 68 | 70 sn sonra yeniden çıkar |
-| Bulut özü | 26 | 68 | 70 sn sonra yeniden çıkar |
-| Füzyon taşı | 80 | 68 | 140 sn sonra yeniden çıkar |
-| Göktaşı tozu | 24 | 68 | 60 sn sonra yeniden çıkar |
-| Gök camı parçası | 36 | 68 | 90 sn sonra yeniden çıkar |
-| Gök ipeği | 30 | 68 | 70 sn sonra yeniden çıkar |
-| Meteor parçası | 50 | 68 | 110 sn sonra yeniden çıkar |
-| Yıldız mantarı | 30 | 68 | 80 sn sonra yeniden çıkar |
+| Ay çiçeği | 28 | 62 | 70 sn sonra yeniden çıkar |
+| Bulut özü | 26 | 58 | 70 sn sonra yeniden çıkar |
+| Füzyon taşı | 80 | 61 | 140 sn sonra yeniden çıkar |
+| Göktaşı tozu | 24 | 48 | 60 sn sonra yeniden çıkar |
+| Gök camı parçası | 36 | 61 | 90 sn sonra yeniden çıkar |
+| Gök ipeği | 30 | 63 | 70 sn sonra yeniden çıkar |
+| Meteor parçası | 50 | 59 | 110 sn sonra yeniden çıkar |
+| Yıldız mantarı | 30 | 60 | 80 sn sonra yeniden çıkar |
 
-**Madenler** (kazma elde, E)
+**Madenler** (kazma elde, F)
 
 | Maden | Fiyat | Gereken kazma | Adadaki sayısı | Not |
 |---|---|---|---|---|
-| Gök camı | 60 | 3. kademe (Kuvars/Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Meteor demiri | 70 | 3. kademe (Kuvars/Tunç kazma) | 20 | 300 sn sonra yeniden çıkar |
-| Yıldız cevheri | 110 | 4. kademe (Bazalt/Demir kazma) | 20 | 300 sn sonra yeniden çıkar |
+| Gök camı | 60 | 3. kademe (Kuvars/Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Meteor demiri | 70 | 3. kademe (Kuvars/Tunç kazma) | 30 | 300 sn sonra yeniden çıkar |
+| Yıldız cevheri | 110 | 4. kademe (Bazalt/Demir kazma) | 30 | 300 sn sonra yeniden çıkar |
 
 **Canlılar**
 

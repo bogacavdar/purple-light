@@ -422,11 +422,11 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Işın kılıcı | sword | plazma kılıç | 1 | 999 | 0 | – | 60 |
 | Kaba meşale | torch | gece aydınlatır | 0 | 1.000.000 | 0 | – | – |
 | Meşale | torch | gece aydınlatır | 0 | 1.000.000 | 0 | – | – |
-| Bola | trap | küçük av (Tuzak: eline al, çayırda E ile kur) | 2,5 | 25 | 15 | – | – |
-| Dişbudak yayı | trap | küçük av (Tuzak: eline al, çayırda E ile kur) | 2 | 35 | 30 | – | – |
-| Porsuk yayı | trap | küçük av (Tuzak: eline al, çayırda E ile kur) | 2 | 40 | 40 | – | – |
-| Sapan | trap | küçük av (Tuzak: eline al, çayırda E ile kur) | 2,5 | 25 | 20 | – | – |
-| Tuzak | trap | küçük av (Tuzak: eline al, çayırda E ile kur) | 3 | 20 | 12 | – | – |
+| Bola | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2,5 | 25 | 15 | – | – |
+| Dişbudak yayı | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2 | 35 | 30 | – | – |
+| Porsuk yayı | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2 | 40 | 40 | – | – |
+| Sapan | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2,5 | 25 | 20 | – | – |
+| Tuzak | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 3 | 20 | 12 | – | – |
 | Huş kabuğu kabı | water | su taşır | 2 | 1.000.000 | 0 | – | – |
 | Yaprak kova | water | su taşır | 3 | 1.000.000 | 0 | – | – |
 

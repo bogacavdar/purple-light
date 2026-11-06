@@ -94,7 +94,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 
 ### Konuşma penceresi
 
-- **Konuşma penceresi:** uzun konuşmalar (ör. görev anlatımları) ekranın üstünden taşmaz: pencere en çok **görünen ekran yüksekliği** kadar olur (iPhone'da adres çubuğu hesaba katılır), yazı kendi içinde kayar, **cevap düğmeleri hep altta görünür**; yazı harf harf gelirken pencere son satırı izler, bitince yukarı kaydırıp baştan okunabilir. Yazılar ve düğmeler telefona göre biraz küçüktür.
+- **Konuşma penceresi:** uzun konuşmalar (ör. görev anlatımları) ekranın üstünden taşmaz: pencere en çok **görünen ekran yüksekliği** kadar olur (iPhone'da adres çubuğu hesaba katılır), yazı kendi içinde kayar, **cevap düğmeleri hep altta görünür**; yazı harf harf gelirken pencere son satırı izler, bitince yukarı kaydırıp baştan okunabilir. **Yazı harf harf akarken ilk basış** (tık, dokunuş, tuş ya da seçenek numarası) **yazıyı tamamlar, ikinci basış seçer.** Yazılar ve düğmeler telefona göre biraz küçüktür.
 - **Pencere dışına basmak = "Anladım" (kalıcı kural):** konuşma penceresi seçim yapılmadan kapatılırsa (pencerenin dışına tıklama/dokunma, Esc, X) oyuncu pencereyi okumuş sayılır ve sade cevap seçilmiş olur: yalnızca kapatan bir seçenek varsa ("Sonra", "Hoşça kal") o, tek seçenek varsa o, yoksa ana (vurgulu) seçenek. Böylece "Hazırım" / "Anladım" bekleyen bir ders ya da görev hiçbir zaman takılı kalmaz. **Eklenen her yeni pencere bu kurala uyar.**
 
 ## Hayatta kalma
@@ -338,7 +338,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - Her toplama, isabet ya da balık aletin 1 kullanımını yer. Dayanıklılık rengi yeşilden kırmızıya döner; sıfırda alet çalışmaz, silah yumruk gibi vurur. **Bileme** (Dursun ve silahçı kuzenleri): aletin değerinin onda biri. Kova ve asalar/ateşli silahlar körelmez.
 - **Körelmiş aletle F (v3.36, Boğaç):** elindeki balta ya da kazma tamamen körelmişse (dayanıklılığı 0) **F** (topla) ağaca ya da madene yönelmez; aletin hiç yokmuş gibi yerdeki eşyaya, bitkiye ya da yakındaki başka bir şeye yönelir (eskiden körelmiş baltayla ağaca gidip boşuna "köreldi" diyordu).
 - **Alet yuvaları:** 5 (Alet kemeri dalıyla 6/7/8/10/12). Yuva doluysa yeni alet yere düşer; yerdeki eşya 180 sn sonra kaybolur.
-- **Mıknatıs:** yere düşen küçük eşyalar (yeni düşenler yarım saniye bekler) **21 px** yakına gelince sana doğru süzülür (%30 kısaltıldı). 10 px içinde hızla çekilir, 6 px'te toplanır; E ile 28 px içindekiler alınır.
+- **Mıknatıs:** yere düşen küçük eşyalar (yeni düşenler yarım saniye bekler) **21 px** yakına gelince sana doğru süzülür 10 px içinde hızla çekilir, 6 px'te toplanır; F ile 28 px içindekiler alınır.
 - **Ağaç kesince dal ve yaprak düşer:** baltayla her kesişte ağacın odununun yanında **1 Dal** ve **1 Yaprak** düşer (Söğüt'ün söğüt dalı ve meyve ağaçlarının meyvesi eskisi gibi ayrıca düşer).
 - **Yerdeki yaprak daha küçük:** dünyada yerde duran toplanabilir **Yaprak** eskisinin **%70'i** boyunda çizilir (gölgesiyle birlikte). Toplama mesafesi, envanter simgesi ve sayıları değişmez.
 - **İş çubuğunun yazısı:** balta ile ağaç keserken "**Kesiliyor: Çam ağacı**" (ağacın adı), kazma ile kazarken "**Kazılıyor: …**", öbür toplamalarda "Toplanıyor: …" yazar.
@@ -464,6 +464,9 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
 | Konak | 10 | 12×8 | |
 
 ### Harita, işaretler, defterler
+
+- **Görev dışı süs işaret yoktur:** haritanın keşfedilmemiş yerlerinde görevle ilgisi olmayan süs işaretleri (gelip giden "?" gibi) yoktur; haritadaki her "?" bir yan görev işaretidir.
+- **Harita açıkken ekran yazıları üstüne binmez:** büyük harita açıkken gün başı yazısı ("YENİ BİR GÜN · N. Gün") ve benzeri ekran ortası duyurular harita penceresinin üstüne çizilmez; harita kapanınca gösterilir. Haritadaki yan kişi işaretleri yalnızca yan görev kuralına göre çıkar (ACT 1 › Yan görevler › Haritada yan görevler: keşfedilmiş yerde kişinin yerinde "?", keşfedilmemiş yerde yakınken sisli daire; biyom başına en çok 2).
 
 - **Kazan, Demirhane ve Pazar düğmesiz:** sol menüde Kazan, Demirci ve Pazar düğmeleri, B / T / P kısayolları ve uzaktan basınca yol gösteren ok **yoktur**. Kazan Zümrüt'ün yanında kazana dokunarak, demirhane Dursun'la (ya da kuzen demircilerle) konuşarak, pazar Nazlı'yla konuşarak açılır; yerlerini oyuncu kendisi bulur (öğreticinin ve görevlerin kendi okları sürer).
 - Sağ altta küçük harita; **M** büyük harita (tekerlek, sürükleme ya da +/− ile yakınlaştır). Geçtiğin yerin çevresi açılır (Kâşif gözü ile iki kat). Gece harita kararır ama kişiler görünür.
@@ -736,6 +739,8 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 ### Kayıt
 
 - Otomatik kayıt + 3 elle kayıt yuvası (tarayıcıda).
+- **Yan görev XP hatasından etkilenen kayıtlar silinir (v3.45, 6 Kasım 2026, Boğaç):** v3.44'te yan görev bitince XP olarak kişinin x konumu veriliyordu. v3.45'ten önceki bir kayıtta **en az bir yan görev bitmişse** o kayıt açılışta silinir ve oyuncu yeni oyuna başlar; yan görev bitirmemiş kayıtlar korunur. Silinince yalnızca tek cümlelik bir bilgi çıkar: "Kaydın eski bir hatadan etkilendiği için yeni oyun başladı." (adım tarif edilmez; ekranda **5 sn** kalır).
+- **Ada değişince eski kayıtlar silinir:** harita değişikliğiyle (harita sürümü `MAPV` artınca) eski kayıt açılışta silinir ve yeni oyun başlar. Bildirim tek cümledir: "Ada değiştiği için yeni oyun başladı." (adım tarif edilmez; ekranda **5 sn** kalır).
 - **Anılar adıyla saklanır:** kayıt, görülen anıları **adıyla** saklar; bir anı eklenip çıkınca kayıtlar kaymaz.
 - **Üzerine yazma:** kaydetme menüsünde dolu bir yuvaya basınca bir soru çıkar: "Bu yuvada bir kayıt var (Seviye…, tarih). Yeni kaydı üzerine yazayım mı?" → **Üzerine yaz** / **Vazgeç**. (Önceden "bir kez daha bas" uyarısıydı.)
 - **Kaydı sil:** kaydetme ve yükleme menülerinde her dolu yuvanın yanında **Sil** düğmesi (yükleme menüsünde otomatik kayıt da silinebilir). Basınca sorar: "Kayıt 2 silinecek. Emin misiniz? Bu geri alınamaz." → **Eminim, sil** / **Vazgeç**. Silinince yuva boşalır.
