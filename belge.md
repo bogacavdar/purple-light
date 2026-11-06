@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.39** ile birebir (6 Kasım 2026). Bu sürümde: 24 yeni yan görev (toplam 42); Marangoz Çınar kaldırıldı, evleri Usta Sinan yapar, görevleri 8; biyoma göre mağaralar ve lükse giden evler; başarım kartı ortada; takip şeridi sabit ve sıralı; tam ekran yenilemede geri gelir.
+Sürüm: **Versiyon 3.40** ile birebir (6 Kasım 2026). Bu sürümde: biyomlar %50 büyüdü (968 × 696 karo, eski kayıtlar silinir); yan görevler haritada gösterilmez, keşfedilir; her yan kişinin kendi saati var ve yan görevler ana hikâyeyle sırayla açılır. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
