@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.40** ile birebir (6 Kasım 2026). Bu sürümde: biyomlar %50 büyüdü (968 × 696 karo, eski kayıtlar silinir); yan görevler haritada gösterilmez, keşfedilir; her yan kişinin kendi saati var ve yan görevler ana hikâyeyle sırayla açılır. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.41** ile birebir (6 Kasım 2026). Bu sürümde: özellikler seviyeyle değil seviye puanlarıyla artar (Karakter penceresinde +), 11 özellik (Güç, Zırh, Mana eklendi), en üst seviye 65. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -388,19 +388,32 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 
 ## Can, tokluk, enerji
 
-Değerler seviyeyle artar. 16. seviyeden sonra her seviye bu hesaplarda **iki seviye** sayılır.
+**Seviye puanları (v3.40, Boğaç: "otomatik level ile bunların artmasını oyundan kaldırıcaz… kullanıcı kendi kararı ile arttıracak"):** özellikler artık seviyeyle kendiliğinden artmaz. Her seviye atlayışta **seviye puanı** kazanılır ve oyuncu Karakter penceresinde (C) dilediği özelliğin yanındaki **+** düğmesine basıp puanı oraya verir. Verilen puan geri alınmaz.
 
-| Değer | Sv 1 | Sv 10 | Sv 16 | Sv 25 | Sv 50 | Not |
-|---|---|---|---|---|---|---|
-| En yüksek can | 100 | 145 | 175 | 265 | 515 | + Dayanıklılık ağacındaki can yetenekleri |
-| Zırh (temel) | 0 | 9 | 15 | 24 | 49 | **seviye − 1** (iki katına sayma kuralı burada yok) + Zırh I–IV yetenekleri (v1.81) |
-| Can yenilenmesi (/sn) | 0,10 | 0,19 | 0,25 | 0,43 | 0,93 | tokluk > 70 iken ×1,5; tokluk 0 iken yenilenmez; Hızlı iyileşme ×2/×3/×4 |
-| En yüksek enerji | 100 | 136 | 160 | 232 | 432 | + Derin nefes yetenekleri |
-| Enerji yenilenmesi (/sn) | 14 | 18,5 | 21,5 | 30,5 | 55,5 | harcamadan 0,6 sn sonra başlar; yürürken ×0,6 |
-| Vuruş hasarı çarpanı | 1,00 | 1,27 | 1,45 | 1,72 | 2,47 | her seviye +%3; Güçlü kol ×1,10/×1,25/×1,40 |
-| Satış çarpanı (seviyeden) | 1,00 | 1,09 | 1,15 | 1,33 | 1,83 | – |
+- **Puan:** 2–10. seviyeye çıkarken her seviye **1**, 11–30. seviyeye çıkarken her seviye **2**, 31. seviyeden sonra her seviye **3** puan. Toplam: 10. seviyede 9, 30. seviyede 49, 65. seviyede **154** puan.
+- **En üst seviye 65** (eskiden 50). 11 özelliğin her biri en çok **14 puan** alır; 11 × 14 = 154, yani **65. seviyede bütün özellikler tam dolar**. Daha önce hangi özelliklere ne kadar verileceği tamamen oyuncunun seçimidir.
+- **Açıklama:** her **+** düğmesinin üstüne gelince (telefonda özelliğin adının altında her zaman) o özelliğin ne işe yaradığı kısaca yazar (ör. Toplama hızı: "Dal, taş, bitki, odun ve maden toplarken daha hızlı olursun.").
+- **Bir puan, eski bir seviyeden fazlasını verir (v3.40, Boğaç):** eskiden her seviye kendiliğinden küçük bir artış veriyordu (can +5, enerji +4, toplama +0,03, hareket +0,02, satış +0,01, şans +%0,5, hasar +%3, zırh +1, mana +3…); şimdi bir puan o özelliğe bundan daha büyük bir artış verir (tabloda "Puan başına"). Tam dolu özellikler eskinin 50. seviyesindeki değerlere yakındır.
+- **Verilmemiş puan:** Karakter penceresinde tablonun sağ altında "Verilmemiş seviye puanı: N" yazar; verilmemiş puan varken Karakter düğmesinin köşesinde küçük sarı bir sayı durur.
+- **İlk seviye dersi:** ilk kez seviye atlayınca Karakter düğmesi ışıkla yanıp söner ve "Seviye puanı kazandın! Karakter penceresinde bir özelliğe ver." yazar; pencere açılınca **+** düğmeleri yanıp söner. İlk puan verilince ders biter (bir kez).
+- **Eski kayıtlar:** eski kayıttaki seviyenin bütün puanları verilmemiş olarak gelir (ör. 20. seviyede 29 puan); özellikler 0 puandan başlar.
+- **Arenada** seçilen seviyenin puanları bütün özelliklere eşit dağılmış sayılır (65. seviyede hepsi tam).
 
-- Toplama hızı her seviye +%3 (33. seviyede durur), yürüme hızı her seviye +%2 (21. seviyede, 1,5 katta durur), şans her seviye +%0,5 (23. seviyede durur).
+| Özellik | 0 puan | Puan başına | 14 puan (tam) | Not |
+|---|---|---|---|---|
+| Toplama hızı | 1,00 | +0,10 | 2,40 | toplama süresi bu sayıya bölünür |
+| Hareket hızı | 1,00 | +0,03 | 1,42 | |
+| Satış değeri | 1,00 | +0,06 | 1,84 | |
+| Şans (tüm ihtimallere) | +%0 | +%1 | +%14 | |
+| En yüksek can | 100 | +30 | 520 | + Dayanıklılık ağacındaki can yetenekleri |
+| Can yenilenmesi (/sn) | 0,10 | +0,06 | 0,94 | tokluk > 70 iken ×1,5; tokluk 0 iken yenilenmez; Hızlı iyileşme ×2/×3/×4 |
+| En yüksek enerji | 100 | +24 | 436 | + Derin nefes yetenekleri |
+| Enerji yenilenmesi (/sn) | 14 | +3 | 56 | harcamadan 0,6 sn sonra başlar; yürürken ×0,6 |
+| Güç (vuruş hasarı çarpanı) | 1,00 | +0,10 | 2,40 | bütün silahlar, oklar, asalar; Güçlü kol ×1,10/×1,25/×1,40 |
+| Zırh (temel) | 5 | +3 | 47 | çıplak karakterin de zırhı vardır (v3.40, Boğaç); + Zırh I–IV yetenekleri |
+| En yüksek mana | 100 | +10 | 240 | |
+
+- Kritik vuruş ihtimalinin seviye payı (aşağıda) seviyeye bağlı kalır.
 - **Tokluk** 100'den 0'a **12 dakikada** iner (Tok karın ile 16 dakikada) (ilk 2 gün yarı hızda, 3–4. gün ¾ hızda). 35'in altında uyarı, 25'in altında mide guruldar. **0 olunca saniyede 1,6 can** gider.
 - **Yemek** yiyince tokluk değerinin %80'i kadar (Doyurucu sofra ile %120'si) can 15 saniyeye yayılarak dolar. Tıka basa tokken de yemek yenir (v1.88): tokluk 100'ü geçmez ama yemeğin canı ve yan etkileri (güçlendirmeler, çiğ etin mide bulantısı) yine işler; tanrı modunda da yenir.
 - **Enerji**: koşu saniyede 18, atılma 14, savuşturma 5, her vuruş 4 (yumruk) – 10 (balta/kazma) yer. Enerji biterse "Yoruldun": %30'a dolana kadar koşamaz, vuramazsın. Enerji %35'in altındaysa vuruşlar yavaşlar.
@@ -498,7 +511,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 ## Seviye, XP ve yetenekler
 
-- En üst seviye **50**. Gereken XP 16. seviyeye kadar her seviye %35 artar (1→2: 40, 5: 133, 10: 596, 16: 3.606), sonra yavaş artar (25: 5.553, 49: 10.746). 1'den 50'ye toplam yaklaşık **254 bin XP**.
+- En üst seviye **65** (v3.40; eskiden 50). Gereken XP 16. seviyeye kadar her seviye %35 artar (1→2: 40, 5: 133, 10: 596, 16: 3.606), sonra yavaş artar (25: 5.553, 49: 10.746, 64: 13.991). Seviye atlayınca özellikler değil **seviye puanı** gelir (yukarıda "Seviye puanları").
 
 | Kaynak | XP |
 |---|---|
@@ -854,7 +867,7 @@ Her silahın kendi hamleleri vardır (parantezde hasar çarpanı ve enerji):
 
 - **Kritik vuruş (v3.12, Boğaç):** kritik vuruş normal hasarın **%50 fazlasını** vurur (Ölümcül vuruş yeteneğiyle **%80**); vuranın başında kırmızı "KRİTİK!" yazar, kısa tiz bir ses çıkar.
   - **Savuşturmayla sersemlettiğin canlıya ilk vuruşun her zaman kritiktir** (her silahla, yumrukla bile). Sersemlik vurmadan geçerse bu hak kalkar.
-  - **İhtimal** = (seviye: 2. seviyeden başlayarak her seviye **%0,2**, 50. seviyede %9,8 · Keskin göz I **%3** / II **%6** · silahın biyom kademesi **×%1**) × **silah türü**.
+  - **İhtimal** = (seviye: 2. seviyeden başlayarak her seviye **%0,2**, 50. seviyede %9,8, 65. seviyede %12,8 · Keskin göz I **%3** / II **%6** · silahın biyom kademesi **×%1**) × **silah türü**.
   - **Silahın kademesi:** yalnızca ilerleyen biyomların silahları kritik vurabilir. Başlangıç, Bakır, Kemik/Çakmaktaşı setleri ve Basit/Çam/Kemik yayı (kademe 0) **kritik vuramaz**; Tunç, Granit, Meşe ve Ihlamur yayı 1; Demir, Timsah, Kızılağaç ve Söğüt yayı 2; Çelik, Gümüş, Kuvars, Akçaağaç ve Huş yayı 3; Kara çelik, Ejder, Obsidyen, Kızıl sedir yayı 4; Mor kristal, Ametist, Gece ağacı ve Işık ağacı yayı 5; ACT 2 silahları (ateşli silahlar, asalar, Işın kılıcı) 6.
   - **Silah türü:** yay ve ateşli silah **×1,5**, mızrak **×1,2**, topuz **×1,1**, kılıç **×1**, asa **×0,8**, savaş çekici **×0,6**; balta, kazma, meşale ve yumruk **hiç kritik vuramaz** (savuşturma sonrası ilk vuruş hariç).
   - Örnek (50. seviye, yeteneksiz): Demir kılıç %11,8 · Mor kristal savaş çekici %8,9 · Mor kristal topuz %16,3 · Mor kristal mızrak %17,8 · Işık ağacı yayı %22,2 · Tabanca %23,7.
@@ -975,7 +988,7 @@ Belirli günlerde mor ışık, karakterin bulunduğu bölgeye **o dünyadan olma
 
 ## Arena
 
-Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır. Seviye (1/10/25/50), giyim ve silah seçilir; iki adanın bütün canlıları ve Reisleri ile dövüşülür. Arenada bütün yetenekler, **atılma** ve **savuşturma/gard** açıktır (v2.24; önceden savuşturma kapalıydı, telefonda Savuş düğmesi çıkmıyordu). Varsayılan olarak kimsenin canı gitmez (hasar ölçülür), enerji/mana/mermi sınırsızdır; "Gerçek dövüş" anahtarıyla gerçek olur. Arenada hiçbir şey kaydedilmez ve başarım işlemez. **Arena kayda asla dokunmaz (v2.24):** arenaya bir kez girildikten sonra sayfa yeniden açılana kadar hiçbir kayıt (otomatik ya da elle) yazılmaz; arenadan çıkarken de yazılmaz. (v2.23'e kadar arenadan çıkarken sayfa kapanırken çalışan otomatik kayıt, arena karakterini — ör. 50. seviye — gerçek oyunun otomatik kaydının üstüne yazıyordu; o kayıt geri gelmez, elle kayıtlar etkilenmedi.)
+Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır. Seviye (1/10/25/50/65; seçilen seviyenin puanları bütün özelliklere eşit dağılır), giyim ve silah seçilir; iki adanın bütün canlıları ve Reisleri ile dövüşülür. Arenada bütün yetenekler, **atılma** ve **savuşturma/gard** açıktır (v2.24; önceden savuşturma kapalıydı, telefonda Savuş düğmesi çıkmıyordu). Varsayılan olarak kimsenin canı gitmez (hasar ölçülür), enerji/mana/mermi sınırsızdır; "Gerçek dövüş" anahtarıyla gerçek olur. Arenada hiçbir şey kaydedilmez ve başarım işlemez. **Arena kayda asla dokunmaz (v2.24):** arenaya bir kez girildikten sonra sayfa yeniden açılana kadar hiçbir kayıt (otomatik ya da elle) yazılmaz; arenadan çıkarken de yazılmaz. (v2.23'e kadar arenadan çıkarken sayfa kapanırken çalışan otomatik kayıt, arena karakterini — ör. 50. seviye — gerçek oyunun otomatik kaydının üstüne yazıyordu; o kayıt geri gelmez, elle kayıtlar etkilenmedi.)
 - **Meşale yuvası arenada (v2.83):** silah seçicisinin altında **"Sol el · meşale yuvası"** satırı vardır: Meşalesiz, Kaba meşale ya da Meşale. Seçilen meşale yanar ve sol ele geçer; elde başka silah yoksa meşale vurur (7 hasar). Yuva arenada da tıklanınca söner/yanar.
 
 ## Hileler

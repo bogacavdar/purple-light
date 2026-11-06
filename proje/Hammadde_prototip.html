@@ -1343,7 +1343,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <canvas id="mini" class="hud" width="288" height="208" hidden aria-label="Ada haritası (M)" title="Ada haritası (M)"></canvas>
 </div>
 <div id="xpdock"><div class="lvbadge"><small>Seviye</small><b id="lvlval">1</b></div><div class="xpwrap"><div class="xpbar big"><i id="xpfill"></i><span id="xpval">0 / 20 XP</span></div></div></div>
-<div id="lvlup" hidden><small>Seviye atladın!</small><b id="lvlupn">Seviye 2</b><span>Toplama, hareket ve satış gücün arttı</span></div>
+<div id="lvlup" hidden><small>Seviye atladın!</small><b id="lvlupn">Seviye 2</b><span>Seviye puanı kazandın</span></div>
 <div id="prompt" class="hud" hidden></div>
 <div id="gather" hidden><span id="glabel">Toplanıyor</span><div class="gb"><div class="gf" id="gfill"></div></div></div>
 <div id="tut" hidden role="status"><div class="th"><span class="tpor" id="tutpor" aria-hidden="true"></span><b id="tutstep">Eğitim</b></div><p id="tuttext"></p><div class="tb"><button id="tutskip" type="button">Eğitimi geç</button><button id="tutok" type="button" hidden>Anladım</button></div></div>
@@ -1378,7 +1378,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.40</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.41</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1453,7 +1453,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.40 · 6 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Biyomlar %50 büyüdü:</strong> her biyom enden ve boydan 1,5 kat (alanı 2,25 kat). Adanın şekli aynı; göller, gölcükler, ağaçlar, bitkiler, dal-taş ve madenler aynı sıklıkta, yani hepsi çoğaldı. Kişiler, köprüler ve geçit yeni haritada kendi yerlerinde.</li><li><strong>Yan görevler artık keşfedilir:</strong> haritada yan görevin gideceğin yeri gösteren halka, sarı bölge ve ekran kenarındaki mavi ok kaldırıldı. Yeri kişinin anlattıklarından bulursun; aradığın şey ekrana girince üstünde mavi bir halka genişler ve küçük mavi kıvılcımlar parıldar.</li><li><strong>Yan kişiler yalnızca çok yakınken belli olur:</strong> görev bekleyen birine ~10 kare yaklaşınca haritada sisli mor bir "?" belirir (tam yerini göstermez). Harita açıkken kişinin saati gelirse "?" o an çıkar.</li><li><strong>Her yan kişinin kendi saati:</strong> 36 yan kişinin her biri günün farklı bir saatinde ortaya çıkar (şafak, öğle, akşamüstü, gece…). Bir kez aldığın görevin kişisi, görev bitene kadar her saat yerinde durur.</li><li><strong>Yan görevler sırayla açılır:</strong> hepsi birden çıkmaz; ana görevleri bitirdikçe sırayla açılırlar (kimi Kemal'in köprüsünü ya da Doğu geçidini bekler). Bir biyomda aynı anda en çok 2 bitmemiş yan görev olur; biri bitince sıradaki gelir. Ana görevin sarı bölgesi yan görev sürerken de görünür.</li></ul><h3>Kayıtlar</h3><ul><li><strong>Harita değiştiği için eski kayıtlar silinir;</strong> bu sürümde yeni oyuna başlanır.</li><li>Eski kayıtlarda alınmış yan görevlerin kişileri yerinde kalır; artık kullanılmayan "gezilen biyomlar" bilgisi okunup atlanır.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.41 · 6 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Seviye puanları:</strong> özellikler artık seviyeyle kendiliğinden artmıyor. Her seviye atlayışta seviye puanı kazanırsın (10. seviyeye kadar 1, 30. seviyeye kadar 2, sonra 3) ve Karakter penceresinde dilediğin özelliğin yanındaki <strong>+</strong> ile verirsin. Bir puan, eskiden bir seviyenin verdiğinden daha büyük bir artış verir.</li><li><strong>11 özellik:</strong> Toplama hızı, Hareket hızı, Satış değeri, Şans, En yüksek can, Can yenilenmesi, En yüksek enerji, Enerji yenilenmesi ve yeni olarak <strong>Güç</strong> (vuruş hasarı), <strong>Zırh</strong> ve <strong>En yüksek mana</strong>. Her biri en çok 14 puan alır.</li><li><strong>En üst seviye 65</strong> (eskiden 50): 65. seviyede 154 puanla bütün özellikler tam dolar.</li><li><strong>Çıplak karakterin de zırhı var:</strong> başlangıçta 5 zırh.</li><li><strong>İlk seviye dersi:</strong> ilk kez seviye atlayınca Karakter düğmesi yanıp söner, pencerede <strong>+</strong> düğmeleri parlar; ilk puanı verince ders biter.</li></ul><h3>Arayüz</h3><ul><li>Karakter penceresinde her özelliğin puan çubuğu (ör. 3/14), bir puan verince olacağı değer ve <strong>+</strong> düğmesi var; <strong>+</strong>'nın üstüne gelince (telefonda adın altında) özelliğin ne işe yaradığı yazar.</li><li>Tablonun sağ altında "Verilmemiş seviye puanı", Karakter düğmesinin köşesinde verilmemiş puan sayısı.</li><li>Arenada 65. seviye de seçilebilir; seçilen seviyenin puanları bütün özelliklere eşit dağılır.</li></ul><h3>Kayıtlar</h3><ul><li>Eski kayıtlarda seviyen kalır, o seviyenin bütün puanları verilmemiş olarak gelir.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -1783,10 +1783,10 @@ const BRCOL={'Ekonomi':'#e6b23a','Ticaret':'#f2b84b','Toplayıcılık':'#8fd46b'
 const skills=new Set();
 const sk=id=>skills.has(id);
 const skDmg=()=>sk('W4')?1.55:sk('W3')?1.4:sk('W2')?1.25:sk('W1')?1.1:1;   // v1.81 Güçlü kol
-const zirhOf=()=>Math.max(0,lvl-1)+(sk('D10')?30:sk('D7')?20:sk('D5')?12:sk('D2')?5:0);   // v1.81 Zırh: seviye − 1 + Zırh I–IV
+const zirhOf=()=>Math.round(STAT.zirh())+(sk('D10')?30:sk('D7')?20:sk('D5')?12:sk('D2')?5:0);   // v1.81 Zırh: seviye − 1 + Zırh I–IV
 const tradePct=()=>sk('E2')?.6:sk('E1')?.5:0;
 const SELL_CAP=2.3;   // all sell bonuses together never pay more than 2.3× the base price
-const sellMult=(n,bulk)=>Math.min(SELL_CAP,(1+tradePct()+(sk('Z6')&&RESULTS.has(n)?.3:sk('Z4')&&RESULTS.has(n)?.15:0)+(bulk&&sk('T4')?.05:0)+(REC.has(n)&&!CODEX_PERK[REC.get(n).c]&&perk(REC.get(n).c)?.15:0))*STAT.trade(lvl));
+const sellMult=(n,bulk)=>Math.min(SELL_CAP,(1+tradePct()+(sk('Z6')&&RESULTS.has(n)?.3:sk('Z4')&&RESULTS.has(n)?.15:0)+(bulk&&sk('T4')?.05:0)+(REC.has(n)&&!CODEX_PERK[REC.get(n).c]&&perk(REC.get(n).c)?.15:0))*STAT.trade());
 // anything bought from a person costs at least a bit more than the most it could ever be sold for (also a lucky double sale)
 const buyFloor=(n,p)=>Math.max(p,Math.ceil((PRICE_[n]||0)*SELL_CAP*1.1)+1);
 // how many of each thing came from a shop: the lucky customer never doubles those, so buying to sell never pays
@@ -1804,26 +1804,31 @@ PRICE_['Yaprak barınağı']=1;
   const rd=r=>{if(r in memo)return memo[r];if(busy[r])return 0;busy[r]=1;let t=0;for(const [n,q] of byR[r].i)t+=q*(byR[n]?rd(n):(delta[n]||0));busy[r]=0;return memo[r]=Math.round(t*1.3)};
   for(const x of DB.R){const d=rd(x.r);if(d&&PRICE_[x.r]!=null)PRICE_[x.r]=Math.max(1,PRICE_[x.r]+d)}})();   // v48c: a one-night shelter is worth next to nothing when sold, so Çınar can ask 5 sikke for it (the price floor stays low)
 const STONEISH=new Set(['Taş','Çakmaktaşı','Nehir çakılı','Kum','Nehir kili']);
-function gatherMult(name){let m=(1-(sk('G3')?.45:sk('G2')?.30:sk('G1')?.15:0))/STAT.gather(lvl);
+function gatherMult(name){let m=(1-(sk('G3')?.45:sk('G2')?.30:sk('G1')?.15:0))/STAT.gather();
   if((sk('G5')&&/ odunu$/.test(name))||(sk('G6')&&STONEISH.has(name))||(sk('G7')&&name==='Su'))m*=.5;return m}
 // ---------- experience & character ----------
 let xp=0, lvl=1;
-const MAXLV=50;try{window.MAXLV=MAXLV}catch(e){}   // v60: the level cap is 50 (was 100); every level after 16 counts double for the stats
-// v48: twice the XP of v47 up to level 16 (35% more per level), then a gentler polynomial so 100 stays reachable
-const need=L=>L>=MAXLV?Infinity:L<=16?Math.round(40*Math.pow(1.35,L-1)):Math.round(3606*(1+.06*(L-16)));   // v60: ≈245 000 XP from 1 to 50
-const effL=L=>L<=16?L:16+2*(L-16);   // v60: the cap went from 100 to 50, so the later levels weigh twice
-const STAT={gather:L=>1+.03*(effL(L)-1), move:L=>1+.02*(effL(L)-1), trade:L=>1+.01*(effL(L)-1), luck:L=>.005*(effL(L)-1),
-  hp:L=>100+5*(effL(L)-1), hpRe:L=>.1+.01*(effL(L)-1), st:L=>100+4*(effL(L)-1), stRe:L=>14+.5*(effL(L)-1)};
+const MAXLV=65;try{window.MAXLV=MAXLV}catch(e){}   // v3.40: the level cap is 65 (was 50): 154 level points fill all 11 stats (11 × 14)
+const need=L=>L>=MAXLV?Infinity:L<=16?Math.round(40*Math.pow(1.35,L-1)):Math.round(3606*(1+.06*(L-16)));
+// v3.40 (Boğaç): stats no longer grow with the level. Each level gives points (to Sv 10: 1, to Sv 30: 2, then 3) and the player spends them with "+".
+const PTL=L=>L<=1?0:L<=10?1:L<=30?2:3, ptsAt=L=>{let n=0;for(let i=2;i<=L;i++)n+=PTL(i);return n};
+const SPK=['gather','move','trade','luck','hp','hpRe','st','stRe','dmg','zirh','mana'],RMAX=14;
+const SPS={gather:[1,.1],move:[1,.03],trade:[1,.06],luck:[0,.01],hp:[100,30],hpRe:[.1,.06],st:[100,24],stRe:[14,3],dmg:[1,.1],zirh:[5,3],mana:[100,10]};   // [0 points, per point]
+let SPT={},SPTUT=0;   // points spent per stat · SPTUT: the first-level lesson (0 not yet, 1 showing, 2 done)
+const RK=k=>{try{if(window.__plArOn&&window.__plArOn())return Math.min(RMAX,Math.floor(RMAX*ptsAt(lvl)/ptsAt(MAXLV)))}catch(e){}return Math.max(0,Math.min(RMAX,SPT[k]|0))};   // the arena spreads the chosen level's points evenly
+const spFree=()=>Math.max(0,ptsAt(lvl)-SPK.reduce((t,k)=>t+Math.min(RMAX,SPT[k]|0),0));
+const sv=(k,r)=>SPS[k][0]+SPS[k][1]*nn(r,RK(k));
+const STAT={gather:r=>sv('gather',r), move:r=>sv('move',r), trade:r=>sv('trade',r), luck:r=>sv('luck',r), hp:r=>sv('hp',r), hpRe:r=>sv('hpRe',r), st:r=>sv('st',r), stRe:r=>sv('stRe',r), dmg:r=>sv('dmg',r), zirh:r=>sv('zirh',r), mana:r=>sv('mana',r)};
 // ---- health and energy (stamina) ----
 let hp=100, st=100, tired=false, stRest=0, runTut=0, runDist=0, runLow=false, runHintAt=0, hurtSeen=false, tiredAt=0;
-const maxHP=L=>Math.round(STAT.hp(nn(L,lvl))+(sk('C10')?350:sk('C8')?250:sk('C5')?175:sk('C3')?100:sk('D1')?50:0));
-const hpRegen=L=>STAT.hpRe(nn(L,lvl))*(sk('C11')?5:sk('C9')?4:sk('C6')?3:sk('C2')?2:1)*(food>70?1.5:food<=0?0:1)*(buffOn('ılık')?3:1)*(perk('Şifa')?1.5:1);
-const maxSt=L=>Math.round(STAT.st(nn(L,lvl))*(1+(sk('K7')?.75:sk('K5')?.5:sk('K2')?.25:0)));
-const stRegen=L=>STAT.stRe(nn(L,lvl))*(sk('K8')?2:sk('K3')?1.5:1)*(buffOn('enerji')?1.5:1);
+const maxHP=L=>Math.round(STAT.hp(L)+(sk('C10')?350:sk('C8')?250:sk('C5')?175:sk('C3')?100:sk('D1')?50:0));
+const hpRegen=L=>STAT.hpRe(L)*(sk('C11')?5:sk('C9')?4:sk('C6')?3:sk('C2')?2:1)*(food>70?1.5:food<=0?0:1)*(buffOn('ılık')?3:1)*(perk('Şifa')?1.5:1);
+const maxSt=L=>Math.round(STAT.st(L)*(1+(sk('K7')?.75:sk('K5')?.5:sk('K2')?.25:0)));
+const stRegen=L=>STAT.stRe(L)*(sk('K8')?2:sk('K3')?1.5:1)*(buffOn('enerji')?1.5:1);
 const runMult=()=>1.6;   // v3.11: Rüzgâr gibi (K4) became Keskin göz II
 const runDrain=()=>18*(sk('K9')?.5:sk('K6')?.7:1);
-const luck=()=>STAT.luck(lvl);
-const speedMult=()=>(1+(sk('H7')?.4:sk('H3')?.3:sk('H2')?.2:sk('H1')?.1:0))*STAT.move(lvl)*(buffOn('hız')?1.12:1);
+const luck=()=>STAT.luck();
+const speedMult=()=>(1+(sk('H7')?.4:sk('H3')?.3:sk('H2')?.2:sk('H1')?.1:0))*STAT.move()*(buffOn('hız')?1.12:1);
 // which undiscovered results each item still leads to
 const USES=new Map();
 for(const x of DB.R)for(const [n] of x.i)for(const m of expand(n)){if(!USES.has(m))USES.set(m,new Set());USES.get(m).add(x.r)}
@@ -2149,7 +2154,7 @@ function farmAct(f){
   const [k]=farmPrompt(f);if(!k){toast(farmPrompt(f)[1],true);return}
   const step=(f.st==='soil'||f.st==='tilled')?['Toprak hazırlanıyor',1.4,'rake']:f.st==='raked'?['Ekiliyor',.6,null]:(!f.wet?['Sulanıyor',1,'can']:['Biçiliyor',1,'scythe']);
   const tool=step[2]?useTool(step[2]):null;
-  gathering={tg:{kind:'farm',f},name:step[0],dur:step[1]/STAT.gather(lvl),t:0,tool,cb:()=>{
+  gathering={tg:{kind:'farm',f},name:step[0],dur:step[1]/STAT.gather(),t:0,tool,cb:()=>{
     if(f.st==='soil'||f.st==='tilled')f.st='raked';
     else if(f.st==='raked'){const s=curSeed();if(!s)return;inv[s]--;f.crop=SEED2CROP[s];f.st='planted';f.t=0;f.wet=false;renderInv()}
     else if(!f.wet){f.wet=true}
@@ -2572,7 +2577,7 @@ function interact(over){
   else if(tg.kind==='clay'){const sh=useTool('shovel');if(!sh){if(!needTool('shovel'))toast('Kil kazmak için kürek gerekli',true);return}name='Nehir kili';dur=GT[sh].time;tool=sh}
   else if(tg.kind==='tree'&&tg.t.type.fruit&&(tg.t.type.noCut||!heldKind('axe'))){const ty=tg.t.type;
     if(tg.t.fr>0){toast(`${ty.n} ağacında meyve kalmadı; ${Math.ceil(tg.t.fr/60)} dakika sonra yine olgunlaşır.`,true);return}
-    const tr=tg.t;gathering={tg,name:`${ty.n} ağacı silkeleniyor`,dur:1.4/STAT.gather(lvl),t:0,tool:null,cb:()=>{tr.fr=FRUIT_RE*(sk('G10')?.4:sk('G8')?.6:1);const k=2+Math.floor(Math.random()*2);for(let i=0;i<k;i++)dropItem(ty.fruit,tr.x+(Math.random()-.5)*16,tr.y-2);sfx('pick');burst(tr.x,tr.y-14);gainXP(1)}};
+    const tr=tg.t;gathering={tg,name:`${ty.n} ağacı silkeleniyor`,dur:1.4/STAT.gather(),t:0,tool:null,cb:()=>{tr.fr=FRUIT_RE*(sk('G10')?.4:sk('G8')?.6:1);const k=2+Math.floor(Math.random()*2);for(let i=0;i<k;i++)dropItem(ty.fruit,tr.x+(Math.random()-.5)*16,tr.y-2);sfx('pick');burst(tr.x,tr.y-14);gainXP(1)}};
     gLabel.textContent=gathering.name;gFill.style.width='0%';gEl.hidden=false;prompt.hidden=true;lastPrompt='#';return}
   else if(tg.kind==='tree'){
     if(tg.t.type.noCut){toast(`${tg.t.type.n} bir meyve ağacı: kesilmez, silkelenir. Elini boşalt.`,true);sfx('bad');return}
@@ -2673,7 +2678,7 @@ function updatePrompt(){
   else if(tg.kind==='balik')html=`<kbd>E</kbd>${balikci.name} ile konuş`;
   else if(tg.kind==='clue')html=`<kbd>E</kbd>Mor parıltıya bak`;
   else if(tg.kind==='grave')html=`<kbd>E</kbd>Eşyalarını geri al`;
-  else if(tg.kind==='animal'){const w=weapon();html=`<kbd>Q</kbd>${tg.a.k} <span style="color:${TEMPC[(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)]}">(${(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)})</span>: ${(()=>{const h=held(),k=h&&GT[h]&&GT[h].kind;return k==='staff'||k==='gun'?'ateş et · '+h:'vur · '+(w.n||'yumruk')+' '+Math.round(w.dmg*(1+.03*(lvl-1)))+' hasar'})()}`;warn=(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)==='saldırgan'}
+  else if(tg.kind==='animal'){const w=weapon();html=`<kbd>Q</kbd>${tg.a.k} <span style="color:${TEMPC[(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)]}">(${(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)})</span>: ${(()=>{const h=held(),k=h&&GT[h]&&GT[h].kind;return k==='staff'||k==='gun'?'ateş et · '+h:'vur · '+(w.n||'yumruk')+' '+Math.round(w.dmg*STAT.dmg())+' hasar'})()}`;warn=(tg.a.tut?'zararsız':ANIM[tg.a.k].temper)==='saldırgan'}
   else if(tg.kind==='placed'&&HOUSESET.has(tg.o.n)){html=houseHint(tg.o)}
   else if(tg.kind==='placed'){const o=tg.o;html=/yatak/i.test(o.n)?(isNight()?`<kbd>E</kbd>Yatakta uyu`:`Yatak · gece uyunur (şimdi ${hhmm()})`):o.n==='Atölye'?`<kbd>E</kbd>Atölyeyi aç${o.ws&&o.ws.out?` · ${o.ws.out} ürün hazır`:''}`:`${o.n} · taşımak için üstüne basılı tut`}
   else if(tg.kind==='node'&&tg.n.mine){const M=MINES[tg.n.name],pk=useTool('pick'),need=ORE_TIER[tg.n.name]||1;if(pk&&(PICK_TIER[pk]||1)<need){html=`${M.l} · ${PICK_FOR(need)} ya da daha iyisi gerekli`;warn=true}else if(pk)html=`<kbd>E</kbd>${M.l} · kaz (${tg.n.left} vuruş kaldı) · ${pk} ${nn(toolDur[pk],GT[pk].dur)}/${GT[pk].dur}`;else{html=(ownsKind('pick')?toolHint('pick'):'')||`${M.l} · kazma gerekli`;warn=true}}
@@ -3138,14 +3143,24 @@ function renderCraft(){
     cbody.innerHTML=`<p class="note">Köpekler senin seçtiğin malzemeyi kendi başına toplar; sırtlarında en çok ${DOG_CAP} eşya taşırlar. Sırtı dolan köpek sana gelip topladığını teslim eder; dolmadan <b>Yanıma çağır</b> dersen o ana kadar topladığını getirir. Senin ilk günkü hızının yarısıyla çalışırlar; yeteneklerinden ve seviyenden etkilenmezler. Bir köpeği yanına çağırıp sevebilirsin.</p><div class="dogs">${dogs.map((d,i)=>`<div class="dog"><div class="dh"><b>${esc(d.name)}</b><span>${d.state==='wait'?'<b style="color:#f2b84b">ne toplayacağını seç</b>':d.state==='called'?'sana koşuyor':d.state==='play'?'yanında oynuyor':d.state==='gather'?`${esc(d.mat)} topluyor`:d.state==='walk'?`${esc(d.mat)} arıyor`:d.state==='home'?'<b style="color:#7fe0ff">sırtı doldu, sana getiriyor</b>':'bekliyor'} · topladığı: ${d.n||0} · taşıdığı: ${bagN(d)}/${DOG_CAP}${bagN(d)?' · '+esc(bagTxt(d,4)):''}</span></div><div class="dact">${d.state==='called'||d.state==='play'?`<button type="button" data-work="${i}">İşine gönder</button>${d.state==='play'?`<button type="button" class="pet" data-pet="${i}">♥ Sev</button>`:''}`:`<button type="button" data-call="${i}">Yanıma çağır</button>`}</div><div class="dm">${DOG_MATS.filter(m=>seen.has(m)||d.mat===m||m==='Dal').map(m=>`<button type="button" class="${d.mat===m?'on':''}" data-dog="${i}" data-mat="${esc(m)}"><img src="${icon(m)}" alt="">${esc(m)}</button>`).join('')}</div></div>`).join('')||'<p class="note">Henüz robot köpeğin yok.</p>'}</div>
       ${wiz.sig?`<div class="sigbox"><div class="sigh">📡 <b>Mor sinyal</b> · Yıldızsız Gezgin</div><div class="sigm">${dogMsgs.slice(-6).map(([w,t])=>`<p class="${w==='sen'?'me':'him'}">${esc(t)}</p>`).join('')||'<p class="him">Bir köpek daha istersen yaz, dünyalı.</p>'}</div><div class="hintbox"><span>${dogs.length>=DOG_MAX?`En çok ${DOG_MAX} köpek: gemi daha fazlasını taşımaz.`:`Bir köpek daha iste · ${dogs.length}/${DOG_MAX}`}</span><button id="buydog" type="button"${dogs.length>=DOG_MAX||dogBeams.some(b=>!b.done)||(!plInf()&&coins<dogPrice())?' disabled':''}>Mesaj gönder · ${dogPrice().toLocaleString('tr-TR')} sikke</button></div></div>`:`<p class="note" style="margin-top:12px">Başka köpek almanın yolu yok… şimdilik.</p>`}`;
   }else if(mode==='char'){
-    const row=(nm,f,fmt)=>`<tr><td>${nm}</td><td class="v">${fmt(f(lvl))}</td><td class="n">${fmt(f(lvl+1))}</td></tr>`;
     const x=v=>v.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2}), pc=v=>'+%'+(v*100).toLocaleString('tr-TR',{maximumFractionDigits:1});
-    cbody.innerHTML=dollHTML()+`<div class="charv"><div class="av">${$('b-char').querySelector('svg').outerHTML}</div><div><h3>${heroName?esc(heroName)+' · ':''}Seviye ${lvl}</h3><span class="note" style="margin:0">${xp} / ${need(lvl)} XP · sonraki seviyeye ${need(lvl)-xp} XP</span><div class="xpbar"><i style="width:${xp/need(lvl)*100}%"></i></div></div></div>
-      <table class="stats"><thead><tr><th>Özellik</th><th>Şimdi</th><th>Sv. ${lvl+1}</th></tr></thead><tbody>
-      ${row('Toplama hızı',STAT.gather,x)}${row('Hareket hızı',STAT.move,x)}${row('Satış değeri',STAT.trade,x)}${row('Şans (tüm ihtimallere)',STAT.luck,pc)}${row('En yüksek can',maxHP,v=>v)}${row('Can yenilenmesi',hpRegen,v=>x(v)+'/sn')}${row('En yüksek enerji',maxSt,v=>v)}${row('Enerji yenilenmesi',stRegen,v=>x(v)+'/sn')}
-      </tbody></table>
+    // v3.40 (Boğaç): level points. "+" spends one; the description sits on the "+" (and under the name on touch screens)
+    const zb=zirhOf()-Math.round(STAT.zirh()),free=spFree();
+    const ROWS=[['gather','Toplama hızı',r=>STAT.gather(r),x,'Dal, taş, bitki, odun ve maden toplarken daha hızlı olursun.'],['move','Hareket hızı',r=>STAT.move(r),x,'Daha hızlı yürür ve koşarsın.'],
+      ['trade','Satış değeri',r=>STAT.trade(r),x,'Sattığın her şey daha çok sikke eder.'],['luck','Şans (tüm ihtimallere)',r=>STAT.luck(r),pc,'Ganimet, nadir düşüş ve bütün ihtimaller artar.'],
+      ['hp','En yüksek can',r=>maxHP(r),v=>v,'Bayılmadan önce dayanabileceğin hasar.'],['hpRe','Can yenilenmesi',r=>hpRegen(r),v=>x(v)+'/sn','Canın kendiliğinden daha hızlı dolar.'],
+      ['st','En yüksek enerji',r=>maxSt(r),v=>v,'Koşu, atılma, savuşturma ve vuruş için daha çok enerjin olur.'],['stRe','Enerji yenilenmesi',r=>stRegen(r),v=>x(v)+'/sn','Enerjin daha hızlı dolar.'],
+      ['dmg','Güç',r=>STAT.dmg(r),v=>x(v)+'×','Silahla, okla ve asayla vurduğun hasar artar.'],['zirh','Zırh',r=>Math.round(STAT.zirh(r))+zb,v=>v,'Aldığın hasar azalır; giysisiz de bir zırhın vardır.'],
+      ['mana','En yüksek mana',r=>Math.round(STAT.mana(r)),v=>v,'Asaların büyüleri için daha çok manan olur.']];
+    const rowS=([k,nm,f,fmt,ds])=>{const r=RK(k),full=r>=RMAX,can=free>0&&!full;
+      return `<tr><td>${nm}${TOUCH?`<small class="spds">${ds}</small>`:''}</td><td class="v">${fmt(f(r))}</td><td class="sppip" title="${r} / ${RMAX} puan"><i style="width:${Math.round(r/RMAX*100)}%"></i><small>${r}/${RMAX}</small></td><td class="n">${full?'tam':fmt(f(r+1))}</td>`+
+        `<td class="spb"><button type="button" class="spplus${can&&SPTUT===1?' pulse':''}" data-spk="${k}"${can?'':' disabled'} aria-label="${nm}: +1 puan. ${ds}"><span>+</span><em class="sptip">${ds}</em></button></td></tr>`};
+    cbody.innerHTML=dollHTML()+`<div class="charv"><div class="av">${$('b-char').querySelector('svg').outerHTML}</div><div><h3>${heroName?esc(heroName)+' · ':''}Seviye ${lvl}</h3><span class="note" style="margin:0">${lvl>=MAXLV?'En üst seviye':`${xp} / ${need(lvl)} XP · sonraki seviyeye ${need(lvl)-xp} XP`}</span><div class="xpbar"><i style="width:${lvl>=MAXLV?100:xp/need(lvl)*100}%"></i></div></div></div>
+      <table class="stats spst"><thead><tr><th>Özellik</th><th>Şimdi</th><th>Puan</th><th>+1 puanla</th><th></th></tr></thead><tbody>
+      ${ROWS.map(rowS).join('')}
+      </tbody></table><p class="spfree${free?' on':''}">Verilmemiş seviye puanı: <b>${free}</b></p>
       <p class="note" style="margin-top:12px">XP kazanma: </p><ul class="xprules"><li>Toplama +1 XP</li><li>Birleştirme +2 XP</li><li>Yeni tarif +12 XP (birleştirme dahil)</li></ul>
-      <p class="note" style="margin-top:10px">Can ve enerji seviyeyle birlikte büyür; Sağlık ve Savaş yetenekleri bunları ayrıca artırır. ${sk('K1')?`Koşu hızın ${String(runMult()).replace('.',',')} kat.`:'Koşmayı kırık köprüyü onarınca öğrenirsin.'} Her seviye bir öncekinden %35 daha fazla XP ister. Bazı yetenekler sikkenin yanında seviye de ister.</p>`;
+      <p class="note" style="margin-top:10px">Her seviye atlayışta <b>seviye puanı</b> kazanırsın (10. seviyeye kadar 1, 30. seviyeye kadar 2, sonra 3); dilediğin özelliğe <b>+</b> ile verirsin. Her özellik en çok ${RMAX} puan alır; ${MAXLV}. seviyede hepsi tam dolar. Dayanıklılık ve Savaş yetenekleri can, enerji ve zırhı ayrıca artırır. ${sk('K1')?`Koşu hızın ${String(runMult()).replace('.',',')} kat.`:'Koşmayı kırık köprüyü onarınca öğrenirsin.'} Bazı yetenekler sikkenin yanında seviye de ister.</p>`;
     drawDoll();
   }else if(mode==='shop'){
     const all=Object.keys(GT).filter(n=>GT[n].kind!=='water'&&GT[n].kind!=='torch'&&smithOf(n)===smith), known=all.filter(n=>(inv[n]||0)>0);
@@ -5797,7 +5812,7 @@ function attack(focus){
   {const h=held();if(dullTool(h)&&!w.n&&!attack.dullT){attack.dullT=1;setTimeout(()=>attack.dullT=0,4000);toast(`${h} kör: yumruk kadar vurur. Demirci Dursun'da bilet.`,true)}}
   if(focus){const dx=focus.x-player.x,dy=focus.y-player.y;player.face={x:Math.abs(dx)>=Math.abs(dy)?Math.sign(dx):0,y:Math.abs(dy)>Math.abs(dx)?Math.sign(dy):0}}
   const fx=player.face.x,fy=player.face.y;swing={t:0,fx,fy,w:w.reach};sfx('swing');
-  const dm=Math.round(w.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1));let hitAny=false;
+  const dm=Math.round(w.dmg*STAT.dmg()*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1));let hitAny=false;
   for(const a of animals.slice()){const ar=ANIM[a.k].r;let dx=a.x-player.x,dy=(a.y-Math.min(8,ar))-(player.y-6),d=Math.hypot(dx,dy);
     const M=visBox(a.k);
     if(M){   // v2.12: the whole drawing counts (claws, tail, horns, wings): distance from the chest to the nearest point of what is drawn
@@ -5904,7 +5919,7 @@ function dollHTML(){
   if(eqPick){const L=order.filter(n=>inv[n]>0&&slotOf(n)===eqPick);
     pick=`<div class="eqpick"><b>${SLOTS_EQ.find(x=>x[0]===eqPick)[1]} için</b>${L.map(n=>`<button type="button" data-wear="${esc(n)}"><img src="${icon(n)}" alt="">${esc(n)} <em>${EQUIP[n]?'+'+EQUIP[n].def:(WDMG[n]||10)+' hasar'}</em></button>`).join('')||'<span class="note" style="margin:0">Bu yuvaya uyan bir şeyin yok. Giysiler kazanda, silahlar örste yapılır.</span>'}${equip[eqPick]?`<button type="button" class="off" data-unwear="${eqPick}">Çıkar</button>`:''}</div>`}
   return `<div class="doll"><canvas id="dollc" width="96" height="120" aria-label="Karakter figürü"></canvas><div class="eqcol">${SLOTS_EQ.map(slot).join('')}</div></div>
-    <p class="note" style="margin:6px 0 4px">Zırh <b style="color:var(--accent)">${zirhOf()}</b> (seviye + yetenek) · Savunma <b style="color:var(--accent)">${def}</b> (giydiklerin) · hayvan ve canavar hasarı <b style="color:var(--accent)">%${cut}</b> azalır. Silah yuvasındaki silah, elin boşken vuruşlarda kullanılır.</p>${pick}`;
+    <p class="note" style="margin:6px 0 4px">Zırh <b style="color:var(--accent)">${zirhOf()}</b> (seviye puanı + yetenek) · Savunma <b style="color:var(--accent)">${def}</b> (giydiklerin) · hayvan ve canavar hasarı <b style="color:var(--accent)">%${cut}</b> azalır. Silah yuvasındaki silah, elin boşken vuruşlarda kullanılır.</p>${pick}`;
 }
 function drawDoll(){const c=$('dollc');if(!c)return;const g=c.getContext('2d');g.imageSmoothingEnabled=false;g.clearRect(0,0,96,120);
   g.fillStyle='#1c2419';g.fillRect(0,0,96,120);g.fillStyle='rgba(0,0,0,.25)';g.beginPath();g.ellipse(48,chibiFeet(eqLook(),eqOpts(),30)*4+5,26,6,0,0,Math.PI*2);g.fill();
@@ -8239,7 +8254,6 @@ babble=function(v){if(!v)return;const now=performance.now();if(now-voiceLast<55)
 const _renderXP=renderXP;
 renderXP=function(){if(lvl<MAXLV)return _renderXP();$('lvlval').textContent=lvl;$('xpval').textContent='MAKS';$('xpfill').style.width='100%'};
 const _gainXP=gainXP;gainXP=function(n){const r=_gainXP(n);if(lvl>=MAXLV){lvl=MAXLV;xp=0;renderXP()}return r};
-{const cap=(f,L0)=>L=>f(Math.min(L,L0));STAT.move=cap(STAT.move,21);STAT.gather=cap(STAT.gather,33);STAT.luck=cap(STAT.luck,23)}   // v60: the same ceilings in the new level scale   // ≤ +50% speed, ≤ 2.5× gathering, ≤ +15% luck
 renderXP();
 
 // ---------------------------------------------------------------- 19 · hedgehogs: bare hands get pricked; the Oklu kirpi shoots its quills
@@ -8841,7 +8855,7 @@ $('cheat').addEventListener('change',()=>{syncInf();try{renderInv();if(craftOpen
  const _hu=hurt;hurt=function(){if(window.__plGod&&!onTitle){full();return}return _hu.apply(this,arguments)};
  const _fa=faint;faint=function(){if(window.__plGod&&!onTitle){full();return}return _fa.apply(this,arguments)};
  const _fb=frameBody;frameBody=function(){full();const r=_fb.apply(this,arguments);full();return r}}
-const maxLv=()=>(typeof MAXLV!=='undefined'?MAXLV:50);
+const maxLv=()=>(typeof MAXLV!=='undefined'?MAXLV:65);
 function cheatMaxLevel(){if(onTitle){toast('Önce oyuna gir',true);return}const L=maxLv();if(lvl>=L){toast(`Zaten en üst seviyedesin (${L})`);return}
   const h0=maxHP(),s0=maxSt();lvl=L;xp=0;hp=Math.min(maxHP(),hp+maxHP()-h0);st=Math.min(maxSt(),st+maxSt()-s0);vitK='';renderVitals();renderXP();
   sfx('level');try{lvlFirst()}catch(e){}const el=$('lvlup');$('lvlupn').textContent=`Seviye ${lvl}`;el.hidden=true;void el.offsetWidth;el.hidden=false;setTimeout(()=>el.hidden=true,3000);
@@ -12049,7 +12063,7 @@ const _da=drawAnimal;drawAnimal=function(a,time){if(!I2A.has(a.k))return _da.app
     if(k==='Goblin'){P(5,-7,1,5,'#a8a8b0');P(5,-2,1,1,'#5a3a20')}else if(k==='Goblin okçusu'){P(5,-10,1,9,'#8a5a2a');P(6,-11,1,1,'#8a5a2a');P(6,-1,1,1,'#8a5a2a')}else{P(-6,-14,1,14,'#5a3a20');P(-7,-16,3,3,chase?'#c0ff70':'#80c040');P(-3,-14,7,2,'#3a1a4a')}}
   else P(-5,-6,10,6,'#8a8a8a')};
 // ---------------------------------------------------------------- mor mana
-let mana=0,manaOn=false;const maxMana=()=>100+3*(lvl-1);
+let mana=0,manaOn=false;const maxMana=()=>Math.round(STAT.mana());
 {const vit=$('vit');if(vit){const b=document.createElement('div');b.className='vb mana';b.id='mnbar';b.hidden=true;b.title='Mor mana';b.innerHTML='<i id="mnfill"></i><span id="mnval">Mana</span>';vit.appendChild(b)}
  const st=document.createElement('style');st.textContent='.vb.mana i{background:linear-gradient(#d8a8ff,#7a3ad8)}#vit .vb.mana{height:15px;border-width:2px}#vit .vb.mana span{font-size:10.5px}';document.head.appendChild(st)}
 const manaUnlocked=()=>manaOn||I2;
@@ -12066,7 +12080,7 @@ function aimAt(focus){if(focus)return{x:focus.x,y:focus.y-6};let best=null,bd=1e
 function cast(h,focus){const S=STAFF[h];if(scd>0)return true;manaOn=true;if(mana<S.cost){floatText('Mana yetmiyor','#c9a0ff');sfx('bad');scd=.4;return true}
   mana-=S.cost;scd=S.cd;renderMana();const t=aimAt(focus),sx=player.x,sy=player.y-10,dx=t.x-sx,dy=t.y-sy,d=Math.hypot(dx,dy)||1;
   if(Math.abs(dx)>=Math.abs(dy))player.face={x:Math.sign(dx)||1,y:0};else player.face={x:0,y:Math.sign(dy)};
-  fire(S,Math.round(S.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1)),t,0);
+  fire(S,Math.round(S.dmg*STAT.dmg()*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1)),t,0);
   try{audio.synth((ac,out)=>{const t0=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();o.type='sawtooth';o.frequency.setValueAtTime(320,t0);o.frequency.exponentialRampToValueAtTime(90,t0+.25);g.gain.setValueAtTime(.18,t0);g.gain.exponentialRampToValueAtTime(.001,t0+.3);o.connect(g);g.connect(out);o.start(t0);o.stop(t0+.32)})}catch(e){}
   return true}
 function fire(S,dm,t,da){const sx=player.x,sy=player.y-10,a=Math.atan2(t.y-sy,t.x-sx)+(da||0);
@@ -12148,7 +12162,7 @@ let gcd=0,gl=performance.now();setInterval(()=>{const now=performance.now();gcd=
 function bang(big){try{audio.synth((ac,out)=>{const t0=ac.currentTime,len=big?.32:.18,b=ac.createBuffer(1,Math.ceil(ac.sampleRate*len),ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,big?2:3);
   const s=ac.createBufferSource();s.buffer=b;const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=big?1400:2600;const g=ac.createGain();g.gain.value=big?.5:.38;s.connect(f);f.connect(g);g.connect(out);s.start(t0)})}catch(e){}}
 function shoot(h,focus){const G=GUNS[h];if(gcd>0)return;const n=inv[G.ammo]||0;if(n<=0){floatText(`${G.ammo} yok`,'#ffb060');sfx('bad');gcd=.5;return}
-  inv[G.ammo]=n-1;gcd=G.cd;const t=window.__plAim(focus),dm=Math.round(G.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1));
+  inv[G.ammo]=n-1;gcd=G.cd;const t=window.__plAim(focus),dm=Math.round(G.dmg*STAT.dmg()*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1));
   for(let i=0;i<G.n;i++)window.__plFire(G.S,dm,t,G.n>1?(i/(G.n-1)-.5)*2*G.spread:0);
   bang(G.n>1);shake=Math.max(shake,G.n>1?.18:.08);for(let k=0;k<5;k++)parts.push({x:player.x+player.face.x*10,y:player.y-10+player.face.y*8,vx:(Math.random()-.5)*40,vy:-10-Math.random()*20,life:.25,c:'#d8d0c0'});
   renderInv()}
@@ -12786,7 +12800,7 @@ body.arena #tut,body.arena #p-save,body.arena #p-load,body.arena #p-xfer,body.ar
 // =====================================================================================================
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
-const AR={on:false,open:false,real:false,over:false,sel:null,boss:false,n:1,keys:/^(Key[WASDQER]|Arrow(Up|Down|Left|Right)|Shift(Left|Right)|Space|Escape)$/,slot:'silah',lv:25,isle:1,held:null,dealt:0,last:0,recv:0,lastR:0,hits:[],center:null,R:9*16,pc:{},pq:[],nodesOff:[]};
+window.__plArOn=()=>!!(typeof AR!=='undefined'&&AR.on);const AR={on:false,open:false,real:false,over:false,sel:null,boss:false,n:1,keys:/^(Key[WASDQER]|Arrow(Up|Down|Left|Right)|Shift(Left|Right)|Space|Escape)$/,slot:'silah',lv:25,isle:1,held:null,dealt:0,last:0,recv:0,lastR:0,hits:[],center:null,R:9*16,pc:{},pq:[],nodesOff:[]};
 window.__plArena=false;window.__plArenaFree=false;window.__arena=AR;
 const R1=['Çayır','Orman','Bataklık','Kayalık Dağ','Kül Diyarı','Mor Kristal Vadisi'],R2=['Yüzen Kayalar','Dev Mantar Ormanı','Hurda Çölü','Kristal Golem Ocağı','Ejder Volkanı','Gök Rıhtımı'];
 const KINDS=[['sword','Kılıçlar'],['gurz','Savaş çekiçleri'],['topuz','Topuzlar'],['hunt','Mızraklar'],['bow','Yaylar'],['staff','Asalar'],['gun','Ateşli silahlar'],['axe','Baltalar'],['pick','Kazmalar'],['torch','Meşaleler']];
@@ -12904,7 +12918,7 @@ function pickerHTML(){const k=AR.slot;let h='';
   else{const lbl=(SLOTS_EQ.find(x=>x[0]===k)||[k,k])[1];const L=Object.keys(EQUIP).filter(n=>EQUIP[n].s===k).sort((a,b)=>EQUIP[a].def-EQUIP[b].def);
     h+=`<h4>${esc(lbl)} için</h4><div class="pgrid"><button type="button" class="pt${!equip[k]?' on':''}" data-ae=""><span class="no">∅</span><b>Boş</b><em>savunma yok</em></button>${L.map(n=>`<button type="button" class="pt${equip[k]===n?' on':''}" data-ae="${esc(n)}"><img src="${icon(n)}" alt=""><b>${esc(n)}</b><em>${aStat(n)}</em></button>`).join('')}</div>`}
   return h}
-function leftHTML(){const def=armorDef(),cut=Math.round((1-armorMul())*100);let mm=0;try{mm=window.__plMana.max()}catch(e){mm=100+3*(lvl-1)}
+function leftHTML(){const def=armorDef(),cut=Math.round((1-armorMul())*100);let mm=0;try{mm=window.__plMana.max()}catch(e){mm=Math.round(STAT.mana())}
   return `<h3>Karakterin</h3><div class="doll2"><div class="dcol">${slotBtn('bas','Baş')}${slotBtn('govde','Gövde')}${slotBtn('ayak','Ayaklar')}</div><canvas class="dcv" id="ardoll" width="96" height="120" aria-label="Karakter figürü: bir parçaya dokun"></canvas><div class="dcol">${slotBtn('silah','Elde')}${slotBtn('el','Eller')}</div></div>
     <p class="arstat">Seviye <b>${lvl}</b> · Can <b>${maxHP()}</b> · Enerji <b>${maxSt()}</b> · Mana <b>${mm}</b><br>Zırh <b>${zirhOf()}</b> · Savunma <b>${def}</b> · aldığın hasar <b>%${cut}</b> azalır · bütün yetenekler açık</p>${pickerHTML()}`}
 function drawDoll2(){const c=$('ardoll');if(!c)return;const g=c.getContext('2d');g.imageSmoothingEnabled=false;g.clearRect(0,0,96,120);g.fillStyle='#1c2419';g.fillRect(0,0,96,120);
@@ -12921,7 +12935,7 @@ function rightHTML(){const G=groups().filter(g=>g.isle===AR.isle);
   for(const g of G)h+=`<div class="rgn">${esc(g.name)}</div><div class="cgrid">${g.ks.map(foeCard).join('')}</div>`;
   if(!G.length)h+='<p class="note2">Bu adanın canlıları bulunamadı.</p>';return h}
 function renderOv(){const ov=$('arov');if(!ov)return;
-  ov.innerHTML=`<div class="arb" role="dialog" aria-modal="true" aria-label="Arena"><div class="arh"><h2>⚔ Arena</h2><span class="lv">Seviye ${[1,10,25,50].map(n=>`<button type="button" class="chip${lvl===n?' on':''}" data-al="${n}">${n}</button>`).join('')}</span><button type="button" class="chip${AR.real?' on':''}" data-ar2="real" title="Açıkken canlar gerçekten gider; rakip ölebilir, sen de yenilebilirsin. Enerji ve mana da gerçek.">Gerçek dövüş: ${AR.real?'Açık':'Kapalı'}</button><span class="sp"></span>${AR.sel?'<button type="button" class="abtn gh" data-ax="back">Arenaya dön (Tab)</button>':''}<button type="button" class="abtn x" data-ax="out">Arenadan çık</button></div>
+  ov.innerHTML=`<div class="arb" role="dialog" aria-modal="true" aria-label="Arena"><div class="arh"><h2>⚔ Arena</h2><span class="lv">Seviye ${[1,10,25,50,65].map(n=>`<button type="button" class="chip${lvl===n?' on':''}" data-al="${n}">${n}</button>`).join('')}</span><button type="button" class="chip${AR.real?' on':''}" data-ar2="real" title="Açıkken canlar gerçekten gider; rakip ölebilir, sen de yenilebilirsin. Enerji ve mana da gerçek.">Gerçek dövüş: ${AR.real?'Açık':'Kapalı'}</button><span class="sp"></span>${AR.sel?'<button type="button" class="abtn gh" data-ax="back">Arenaya dön (Tab)</button>':''}<button type="button" class="abtn x" data-ax="out">Arenadan çık</button></div>
     <div class="arg"><div class="arc1">${leftHTML()}</div><div class="arc2"><h3>Rakipler</h3><p class="note2" style="margin:0 0 8px">Bir canlıya ya da reisine dokun: arenada tek başına belirir (öncekinin yerini alır). Kimse hasar almaz, kimse ölmez; vuruşlar ve hasar sayıları görünür.</p>${rightHTML()}</div></div></div>`;
   drawDoll2();setTimeout(pump,0)}
 function refreshLeft(){const c=document.querySelector('#arov .arc1');if(!c)return;const st_=c.scrollTop;c.innerHTML=leftHTML();c.scrollTop=st_;drawDoll2()}
@@ -13425,7 +13439,7 @@ function kindOf(){const h=held();if(h&&GT[h]){const g=GT[h].kind;if(g==='staff')
   const w=weapon();if(!w.n)return torchHeld()?'torch':'fist';const g=GT[w.n]?GT[w.n].kind:'';if(g==='sword'&&GT[w.n].mace)return GT[w.n].mace;return g==='sword'?'sword':g==='hunt'?'spear':g==='axe'||g==='pick'?'axe':'fist'}
 function aim(){return Math.atan2(C.my-(player.y-6),C.mx-player.x)}
 function faceTo(a){const c=Math.cos(a),s=Math.sin(a);player.face=Math.abs(c)>=Math.abs(s)?{x:Math.sign(c)||1,y:0}:{x:0,y:Math.sign(s)||1}}
-function base(){const w=weapon();return{w,dm:w.dmg*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1)}}
+function base(){const w=weapon();return{w,dm:w.dmg*STAT.dmg()*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1)}}
 function pay(n){if(window.__plArenaFree)return true;if(tired||st<n){floatText('Nefesin kesildi!','#9ad8ff');try{sfx('bad')}catch(e){}return false}st-=n;stRest=0;vitK='';return true}
 function name(t,c){floats.push({x:player.x,y:player.y-30,t:0,text:t,color:c||'#ffe7a0',size:8})}
 function thump(dm){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005,o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.setValueAtTime(170,t);o.frequency.exponentialRampToValueAtTime(40,t+.18);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(Math.min(1,.5+dm/60),t+.006);g.gain.exponentialRampToValueAtTime(.0005,t+.22);o.connect(g);g.connect(out);o.start(t);o.stop(t+.24)})}catch(e){try{sfx('hit')}catch(_){}}}
@@ -13525,13 +13539,13 @@ const CB={
 function fire(a,n){for(let i=0;i<n;i++){const t=a+(Math.random()-.5)*1.4,s=60+Math.random()*80;parts.push({x:player.x+Math.cos(a)*10,y:player.y-6+Math.sin(a)*10,vx:Math.cos(t)*s,vy:Math.sin(t)*s-10,life:.35,c:i%2?'#ffd060':'#ff6a2a'})}}
 // staff and gun helpers
 function staffS(){const h=held(),S=window.__plStaff&&window.__plStaff[h];return S||null}
-function sdm(m){const S=staffS();return Math.round((S?S.dmg:20)*m*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1))}
+function sdm(m){const S=staffS();return Math.round((S?S.dmg:20)*m*STAT.dmg()*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1))}
 function tgt(a){return{x:player.x+Math.cos(a)*120,y:player.y-10+Math.sin(a)*120}}
 function cast3(L,m){const S=staffS();if(!S)return;for(const d of L)window.__plFire(S,sdm(m),tgt(aim()),d);try{sfx('magic')}catch(e){}}
 const GUN={'Tabanca':{dm:44,n:1,sp:0,ammo:'Tabanca mermisi'},'Pompalı':{dm:24,n:5,sp:.26,ammo:'Pompalı fişeği'}};
 const GS={c1:'#fff4b0',c2:'#ffb030',spd:640,range:340,line:1,trail:.08};
 function gshot(a,m,da,o){const h=held(),G=GUN[h];if(!G)return;if(!window.__plArenaFree&&!(o&&o.free)){const n=inv[G.ammo]||0;if(n<=0){floatText(`${G.ammo} yok`,'#ffb060');return}inv[G.ammo]=n-1}
-  const S=Object.assign({},GS,o||{}),dm=Math.round(G.dm*m*(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg());for(let i=0;i<G.n;i++)window.__plFire(S,dm,tgt(a),(da||0)+(G.n>1?(i/(G.n-1)-.5)*2*G.sp:0));
+  const S=Object.assign({},GS,o||{}),dm=Math.round(G.dm*m*STAT.dmg()*(buffOn('güç')?1.2:1)*skDmg());for(let i=0;i<G.n;i++)window.__plFire(S,dm,tgt(a),(da||0)+(G.n>1?(i/(G.n-1)-.5)*2*G.sp:0));
   shake=Math.max(shake,G.n>1?.18:.1);try{audio.synth((ac,out)=>{const t0=ac.currentTime,len=.2,b=ac.createBuffer(1,Math.ceil(ac.sampleRate*len),ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,3);const s=ac.createBufferSource();s.buffer=b;const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=2400;const g=ac.createGain();g.gain.value=.4;s.connect(f);f.connect(g);g.connect(out);s.start(t0)})}catch(e){}
   try{renderInv()}catch(e){}}
 function canPay(k,M){if(window.__plArenaFree)return true;if(M.mana){const S=staffS(),P=window.__plMana;if(!S||!P)return false;const c=S.cost*M.mana;if(P.get()<c){floatText('Mana yetmiyor','#c9a0ff');return false}P.set(P.get()-c);return true}
@@ -17760,7 +17774,7 @@ const free=()=>!!window.__plArenaFree;
 function pick(){const sel=window.__plArrSel;if(sel&&(inv[sel]||0)>0){const A=ARR.find(x=>x[0]===sel);if(A)return A}   // v2.50: the arrow you chose in the bag first
   for(const A of ARR)if((inv[A[0]]||0)>0)return A;return free()?ARR[ARR.length-1-V.old.length]:null}
 function count(){let c=0;for(const A of ARR)c+=inv[A[0]]||0;return c}
-const lv=()=>(1+.03*(lvl-1))*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1);
+const lv=()=>STAT.dmg()*(buffOn('güç')?1.2:1)*skDmg()*(buffOn('zayıf')?.8:1);
 function twang(){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005,o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(260,t);o.frequency.exponentialRampToValueAtTime(120,t+.18);g.gain.setValueAtTime(.16,t);g.gain.exponentialRampToValueAtTime(.001,t+.22);o.connect(g);g.connect(out);o.start(t);o.stop(t+.24)})}catch(e){}}
 let invT=0;
 function shot(a,m,da,o){o=o||{};const h=held(),B=BOW[h];if(!B)return false;
@@ -17873,7 +17887,7 @@ if(B)for(const [a,m,c] of B.arrows())for(const k in EF){const E=EF[k],n=E.pre+' 
 {const _hc=handCraft;handCraft=function(r){const ok=_hc.apply(this,arguments);try{if(ok&&YIELD[r]>1){gain(r,YIELD[r]-1);floatText(`+${YIELD[r]} ${r}`,'#ffd060');renderInv()}}catch(e){}return ok}}
 try{for(const k in CAT_N)delete CAT_N[k]}catch(e){}
 // ---------------------------------------------------------------- 4 · on the creature
-const lv=()=>(1+.03*(lvl-1));
+const lv=()=>STAT.dmg();
 function immune(a,k){const D=ANIM[a.k];if(!D||a.tut||a.ders||a.dl||a.ar)return true;
   if(k==='yanık')return !!(D.fx&&D.fx[0]==='yanık');if(k==='zehir')return !!(D.fx&&D.fx[0]==='zehir');
   return /golem|robot|dron|devi|kaplumbağa/i.test(a.k)}
@@ -20391,7 +20405,7 @@ function remove(c,puff){if(c.gone)return;c.gone=true;const i=CORPSES.indexOf(c);
   if(c.o&&gathering&&gathering.tg&&gathering.tg.o===c.o)stopGather();
   if(puff&&c.isl===ISLE)for(let k=0;k<10;k++)parts.push({x:c.x+(Math.random()-.5)*10,y:c.y-3-Math.random()*6,vx:(Math.random()-.5)*26,vy:-8-Math.random()*16,life:.5,c:c.ys?(k%2?'#c070ff':'#5a2a8a'):(k%2?'#8a7a6a':'#5a4a3a')})}
 function collect(c){if(gathering||c.gone)return;const D=ANIM[c.k]||{hp:20};
-  const dur=Math.min(3,.8+Math.sqrt(Math.max(1,D.hp||20))/12)/Math.max(.2,STAT.gather(lvl));
+  const dur=Math.min(3,.8+Math.sqrt(Math.max(1,D.hp||20))/12)/Math.max(.2,STAT.gather());
   gathering={tg:{kind:'xtra',o:c.o},name:`${c.k} leşi`,dur,t:0,tool:null,cb:()=>{if(c.gone)return;remove(c,false);
     for(const [n,q] of c.loot)dropItem(n,c.x,c.y,q);sfx('pick');burst(c.x,c.y-4);
     if(!c.loot.length)toast('Leşte işe yarar bir şey yok')}};
@@ -20807,6 +20821,34 @@ function hs(n){const key='H3:'+n;if(PSPR[key])return PSPR[key];const f=FOOT(n),w
 houseSprite=hs;
 for(const n of HOUSES.map(x=>x.n)){HOUSE_ART.add(n);try{delete PSPR[n];delete PSPR['H:'+n];delete ICON[n];delete ICONC[n]}catch(e){}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v339art: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v340sp">
+// v3.40 (Boğaç): level points: "+" in the character window, the free count on the button, the first-level lesson, saves
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+{const st=document.createElement('style');st.id='v340sp-css';st.textContent=
+ '.spst td{vertical-align:middle}.spst td.n{color:#9fd36a}.spst .spds{display:block;font-size:11px;color:var(--ink-dim);line-height:1.25;margin-top:2px;font-weight:400}'+
+ '.sppip{min-width:58px}.sppip i{display:block;height:6px;background:#f2b84b;box-shadow:inset 0 0 0 1px #11170f;max-width:100%}.sppip{position:relative}.sppip:before{content:"";position:absolute;left:6px;right:6px;top:11px;height:6px;background:#2a3424;z-index:0}.sppip i{position:relative;z-index:1}.sppip small{display:block;font-size:11px;color:var(--ink-dim);margin-top:2px}'+
+ '.spb{width:40px;text-align:right}.spplus{position:relative;width:30px;height:30px;padding:0;font:900 18px/1 Rubik,system-ui,sans-serif;background:#3a4a2a;color:#f2e8c8;border:2px solid #7a9a4a;cursor:pointer}'+
+ '.spplus:disabled{opacity:.3;cursor:default}.spplus .sptip{display:none;position:absolute;right:36px;top:50%;transform:translateY(-50%);width:220px;padding:6px 8px;background:#11170f;border:2px solid #7a9a4a;color:#e8f0d8;font:400 12.5px/1.3 Rubik,system-ui,sans-serif;font-style:normal;text-align:left;z-index:30;pointer-events:none}'+
+ '.spplus:hover .sptip,.spplus:focus-visible .sptip{display:block}.spfree{text-align:right;margin:6px 2px 0;font-size:13px;color:var(--ink-dim)}.spfree.on{color:#f2b84b}.spfree b{font-size:15px}'+
+ '#spbadge{position:absolute;right:-4px;top:-4px;min-width:16px;height:16px;padding:0 3px;box-sizing:border-box;background:#f2b84b;color:#11170f;font:900 11px/16px Rubik,system-ui,sans-serif;text-align:center;border:1px solid #11170f;pointer-events:none}#spbadge[hidden]{display:none}#b-char{position:relative}';
+ document.head.appendChild(st)}
+function spBadge(){const b=$('b-char');if(!b)return;let e=$('spbadge');if(!e){e=document.createElement('span');e.id='spbadge';b.appendChild(e)}const n=onTitle?0:spFree();e.hidden=!n;e.textContent=n;
+  b.classList.toggle('pulse',!onTitle&&SPTUT===1&&n>0)}
+{const _rx=renderXP;renderXP=function(){const r=_rx.apply(this,arguments);try{spBadge()}catch(e){}return r}}
+{const _gx=gainXP;gainXP=function(n){const L0=lvl,r=_gx.apply(this,arguments);try{if(lvl>L0){const g=ptsAt(lvl)-ptsAt(L0);
+    if(SPTUT===0){SPTUT=1;setTimeout(()=>{try{toast(`Seviye puanı kazandın! Karakter penceresinde (${TOUCH?'Karakter düğmesi':'C'}) bir özelliğe ver.`)}catch(e){}},3200)}
+    else setTimeout(()=>{try{toast(`+${g} seviye puanı`)}catch(e){}},3200);spBadge()}}catch(e){}return r}}
+cbody.addEventListener('click',e=>{if(mode!=='char')return;const b=e.target.closest('[data-spk]');if(!b||b.disabled)return;const k=b.dataset.spk;if(SPK.indexOf(k)<0||spFree()<=0||(SPT[k]|0)>=RMAX)return;
+  const h0=maxHP(),s0=maxSt();SPT[k]=(SPT[k]|0)+1;hp=Math.min(maxHP(),hp+Math.max(0,maxHP()-h0));st=Math.min(maxSt(),st+Math.max(0,maxSt()-s0));vitK='';try{renderVitals()}catch(_){}
+  if(SPTUT===1)SPTUT=2;try{sfx('pick')}catch(_){}renderCraft();spBadge()});
+{const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{if(s)s.v340={sp:Object.assign({},SPT),t:SPTUT}}catch(e){}return s}}
+{const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{const v=d&&d.v340;SPT={};if(v&&v.sp)for(const k of SPK)SPT[k]=Math.max(0,Math.min(RMAX,v.sp[k]|0));
+    SPTUT=v?(v.t|0):(spFree()>0?1:0);   // older saves: all their level's points come free, with the lesson
+    hp=Math.min(hp,maxHP());st=Math.min(st,maxSt());vitK='';try{renderVitals()}catch(e){}spBadge()}catch(e){}return r}}
+{const _rz=resetState;resetState=function(){const r=_rz.apply(this,arguments);try{SPT={};SPTUT=0;spBadge()}catch(e){}return r}}
+setInterval(()=>{try{spBadge()}catch(e){}},1500);
+}).toString()+')()')}catch(e){try{window.__hamErr('v340sp: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

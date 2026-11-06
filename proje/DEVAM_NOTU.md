@@ -10,6 +10,15 @@
 
 
 
+## v3.41 (6 Kasım 2026) · seviye puanları, en üst seviye 65, Güç/Zırh/Mana özellik oldu
+
+- Ana kod (~1812): `effL` ve seviye tabanlı `STAT` silindi; `PTL`, `ptsAt`, `SPK` (11 özellik), `RMAX=14`, `SPS` [0 puan, puan başına], `SPT` (verilen puanlar), `SPTUT` (ilk seviye dersi), `RK(k)`, `spFree()`, `sv(k,r)`. `STAT.x(r)`'nin argümanı artık **puan** (yoksa şimdiki puan); `maxHP(r)`, `maxSt(r)`, `hpRegen(r)`, `stRegen(r)` de öyle. `MAXLV=65`; 154 = 11 × 14.
+- Hasar: dokuz yerde `(1+.03*(lvl-1))` → `STAT.dmg()`. Mana: `maxMana` ve arena yedek değeri → `STAT.mana()`. `zirhOf`: `lvl-1` → `STAT.zirh()` (0 puanda 5). v60'ın `cap` satırı (hareket/toplama/şans tavanı) silindi. Kritik ihtimalinin seviye payı (`chanceFor`) seviyeye bağlı kaldı.
+- Arena: `window.__plArOn` (AR tanımından önce); arenada `RK` seçilen seviyenin puanlarını eşit dağıtır. Seviye düğmelerine 65 eklendi.
+- Karakter penceresi (`renderCraft` mode 'char') yeni tablo: puan çubuğu, +1 puanla değeri, `data-spk` + düğmesi, `.sptip` açıklama (dokunmatikte `.spds` adın altında), "Verilmemiş seviye puanı".
+- `v340sp` bloğu: CSS, `#spbadge` (Karakter düğmesinde sayı, ders sürerken `pulse`), `gainXP` sarması (ilk puan dersi / "+N seviye puanı"), + tıklaması (can/enerji artışı anında eklenir), kayıt `v340={sp,t}`; eski kayıtta puanlar boş, ders açık.
+- Kontrol: chk.js 0 hata; `/home/claude/scripts/sp_t.js`: Sv 2'de 1 puan, rozet + ders, + ile can 130, Sv 32'de 54 boş puan, kaydet/yükle aynı.
+
 ## v3.40 (6 Kasım 2026) · biyomlar %50 büyük (968×696), yan görevler keşifle bulunur, her yan kişinin kendi saati, sıralı açılış
 
 - **Harita:** `ada_uret.py` `GROW=1.5`: ızgara 645×464 → 968×696, deniz payı 10 → 15, göl yarıçapları ×1,5, Bataklık gölcükleri 20 → 45 (aralık 14 → 21). Kara: ada 1 138.742 → 312.690, ada 2 178.431 → 402.003 (×2,25). Biyomlar eşit, komşuluk zinciri aynı, doğuş puanı 10/11. `MAPV` 4 → 5: eski kayıtlar açılışta silinir (Boğaç seçti: "Eski kayıtlar silinsin").
