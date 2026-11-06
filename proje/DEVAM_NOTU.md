@@ -10,6 +10,15 @@
 
 
 
+## v3.40 (6 Kasım 2026) · yan görevler keşifle bulunur, her yan kişinin kendi saati, sıralı açılış (bekleyen paket)
+
+- `v230`: `targetOf`, kenar oku, `seenT`, `bioSeen` ve haritadaki hedef/sarı bölge/tam yer "?" silindi. `mapSQ` yalnızca ~10 kare (`NEAR=10*T`) yakındaki bekleyen kişi için sisli mor "?" çizer (ortası kişiden ≤48 px kaymış, `fogC`). `__plMapQ` sarmalayıcısı artık ana görevin sarısını hep çizer.
+- `met` kümesi: bir kez alınan görevin kişisi (`present`) bitene kadar her saat yerinde (Işıl hariç). Kayıtta `v230.m`; eski `v230.b` okunmaz.
+- `GATE`/`ORD`/`opened(q)`: biyom başına sıra; `[bitmiş ana görev sayısı, gereken ana görev]` (`window.__pl186.S.d`). Bir biyomda en çok 2 bitmemiş (alınmış dahil) yan görev açık; 500 ms önbellek. Mağara görevleri sınırsız. Test kancası `__plSide.opened`.
+- 36 yan kişinin `win` aralıkları hepsi farklı (belge tabloları).
+- Bulunan görev eşyasına mavi halkaya ek 4 kıvılcım (`curPts` çizimi).
+- Kontrol: chk.js 0 hata; `/home/claude/scripts/sq_t.js` 24 görev ok; `gate_t.js` sıra/2 sınırı doğru.
+
 ## v3.39 (6 Kasım 2026) · 24 yeni yan görev, tam ekran yenilemede kaybolmuyor, takip şeridi kıpırdamıyor ve sıralı, başarım kartı ortada, mağara ve ev görselleri, Marangoz Çınar kaldırıldı (Usta Sinan'da birleşti)
 - Belge: Godot planına "Neden Godot, neden Unity değil" bölümü (Unity ileride açık seçenek; Unreal düşünülmüyor).
 - Takip şeridi: `rows()` takip satırlarını `items.length`'e göre sıralar (görünüş; `B3.trk` sırası ve en eskinin çıkması aynı). `placeBar()` satır/parça adları + ekran + yan panel anahtarı (`bar._lk`) değişmedikçe eski sol/üst konumu (`bar._pos`) korur.

@@ -7,14 +7,16 @@
 ## Kurallar
 
 1. **Ana görevle birlikte yapılır; birden çok yan görev alınabilir (v3.07, Boğaç).** Yan görev ana görevi beklemez, ana görev yan görevi beklemez; ikisi ayrı yürür. Aynı anda **birden çok yan görev** alınabilir (eskiden tek yan görev vardı, ikinci yan kişi "Önce elindeki işi bitir" derdi; artık demez).
-   - **Takip edilen yan görev:** alınan yan görevlerden yalnızca **biri takip edilir**. Takip edilen görev ekranın üstündeki yan görev kartında yazar; dünyadaki mavi ok, haritadaki sarı yer ve görev eşyaları onu gösterir; adımları (bulma, toplama, kovalama, eskort, bekleme, dövüş) yalnızca o ilerler. Takip edilmeyenler **Görevler**'de bekler; kaldıkları adım ve topladıkları korunur.
+   - **Takip edilen yan görev:** alınan yan görevlerden yalnızca **biri takip edilir**. Takip edilen görev ekranın üstündeki yan görev kartında yazar; görev eşyalarının mavi parıltısı yalnızca onunkiler için çıkar; adımları (bulma, toplama, kovalama, eskort, bekleme, dövüş) yalnızca o ilerler. Takip edilmeyenler **Görevler**'de bekler; kaldıkları adım ve topladıkları korunur.
    - **Yeni alınan görev takibe girer:** yeni bir yan görev alınınca kartta o görünür; önceki takip edilen görev Görevler'e geçer.
-   - **Kartı Görevler'e göndermek:** kartın sağ üstündeki **▾** düğmesi takibi bırakır: kart kalkar, görev Görevler'de bekler (o sırada hiçbir yan görev takip edilmez, haritada ana görevin sarı yeri yeniden görünür).
+   - **Kartı Görevler'e göndermek:** kartın sağ üstündeki **▾** düğmesi takibi bırakır: kart kalkar, görev Görevler'de bekler (o sırada hiçbir yan görev takip edilmez).
    - **Görevler'den takip:** Görevler panelinde her alınmış yan görevin altında **📌 Takip et** (takip edilen görevde "📌 Takip ediliyor · Görevlere gönder") ve **Bırak** düğmesi vardır; Bırak iki kez basınca bırakır ("Emin misin? Bırak").
    - **Bekleyen görevin kişisiyle konuşmak** o görevi takibe alır (ör. Bekir'e dal götürünce teslim edilir).
    - **Bekleyen eskort, bekleme ve dövüş adımları baştan başlar:** takipten çıkan görev bir eskortta (Ela, Pamuk, Yahya), Kartal'ın yanında beklemede ya da bir dövüşteyse (ejder, kurtlar, mağara Reis'i) o adım durur: eşlik eden kişi yerine döner, görev için çıkan canavarlar silinir; görev yeniden takip edilince **o adım** baştan başlar (önceki adımlar korunur). Kovalamada Pamuk kaldığı yerde bekler.
-2. **Yan kişiler parlamaz.** Başlarında siyah ! yoktur, dünyada parlamazlar. Görevi olan yan kişinin başında küçük **açık mavi bir "?"** durur. Oyuncu gezerken onlara rastlar; ya da haritadaki işaretten bulur (aşağıda).
-3. **Belli saatlerde görünürler; hava etkilemez.** Her yan kişinin bir saat aralığı vardır (ör. 07:00–19:00, ya da yalnızca gece). O saatlerin dışında yerinde yoktur. Yağmur, fırtına, sis görünmelerini değiştirmez.
+2. **Yan kişiler parlamaz.** Başlarında siyah ! yoktur, dünyada parlamazlar. Görevi olan yan kişinin başında küçük **açık mavi bir "?"** durur. Oyuncu gezerken onlara rastlar; haritada yalnızca çok yakınındayken sisli bir "?" belirir (aşağıda).
+3. **Her yan kişi kendi saatinde görünür; hava etkilemez (v3.40, Boğaç: "her bir görev farklı bir zaman diliminde alınabilir olsun").** Her yan kişinin **kendine ait, ötekilerden farklı** bir saat aralığı vardır (kimi şafakta, kimi öğlen, kimi akşamüstü, kimi yalnızca gece; aralıklar ~4–6 saattir, tablolarda). O saatlerin dışında yerinde yoktur; oyuncu adayı farklı saatlerde dolaşarak onlara rastlar. Mağaradaki kişiler (13–18) mağarada her saat durur. Yağmur, fırtına, sis görünmelerini değiştirmez.
+   - **Bir kez alınan görevin kişisi yerinde kalır (v3.40, Boğaç):** bir yan görevi bir kez aldıktan sonra (bıraksan, bayılıp yarıda kalsa ya da Görevler'de beklese de) o kişi görevi bitene kadar saat aralığına bakmadan **her saat** yerinde durur. Hayalet kız Işıl dışında (o yalnızca kendi gece saatinde belirir).
+   - **Sırayla açılırlar, bir biyomda en çok 2 (v3.40, Boğaç: "hepsi birden değil… ana görevler ilerledikçe arada alınabilir şeyler olmalı"):** yan görevler hepsi birden çıkmaz. Her biyomun yan görevlerinin bir **sırası** vardır ve her biri ana hikâyenin belli bir yerine kadar bekler: **bitirdiğin ana görev sayısı** (bütün kişilerin ana görevleri sayılır) ve bazılarında belli bir ana görev (ör. Kemal'in 3. görevi "Doğu geçidini aç"). Bir biyomda aynı anda **en çok 2 bitmemiş yan görev** açıktır (alınmış ama bitmemiş olanlar da sayılır); biri bitince sıradaki (koşulu tutuyorsa) açılır. Açılmamış yan kişi dünyada da haritada da yoktur. Mağaradaki yan görevler (13–18) bu sıraya girmez. Sıra ve koşullar aşağıda "Açılış sırası"nda.
 4. **Hiçbir yan görev kaçırılmaz.** Yan kişi görevi bitene kadar **her gün** kendi saatinde aynı yerde yeniden çıkar. Süre sınırı yoktur, zamanlı bir adım yoktur (bekleme adımı hariç; o da bayılmadıkça yarıda kalmaz). Tamamlamaya çalışan oyuncu hepsini bitirebilir.
 5. **Bayılınca yalnızca takip edilen yan görev iptal olur (v3.07: Görevler'de bekleyenler kalır).** Yan görev sürerken bayılırsan (canavar, açlık ya da mor ışık) **yan görev** yarıda kalır, **ana görev** olduğu gibi durur. Yarıda kalan yan görev hiç alınmamış sayılır: yan kişi kendi yerine döner ve görevi **en baştan, aynı yerden** yeniden alırsın. Yan görev için doğan canavarlar bayılınca silinir.
 6. **Bırakmak.** Yan görev kartındaki **×** ile görev bırakılabilir ("Bu yan görevi bırakayım mı?" → Evet/Hayır). Bırakınca yan kişi yerine döner, görev yeniden alınabilir.
@@ -22,41 +24,51 @@
 8. **Ödül (şimdilik):** her yan görev bitince **sikke + XP** verir (aşağıdaki tabloda). Başka ödüller ileride konuşulacak (bölümün sonundaki "İleride ödül fikirleri").
 9. **Sonuç dünyada görünür.** Bitirdiğin her yan görev adada iz bırakır: kurtardığın çocuk (Ela) Kemal'in kampındaki ateşin başında oturur, çobanın keçisi yanında otlar, satıcının arabası onarılmış durur… Bu kişiler artık saat aralığına bakmadan **hep** yerlerindedir (hayalet kız dışında; onun yerinde bir mezar taşı ve yanan bir fener kalır). Onlarla konuşunca görevden sonraki hallerini anlatan kısa bir söz söylerler.
 10. **Görev kartı.** Süren yan görev, ana görev kartının altında ince **mavi kenarlı ayrı bir kartta** görünür: "Yan görev · Kişi" başlığı, görevin adı ve şu anki adımın kısa yazısı ("Kalan güvercin: 2/4" gibi), köşede **×**. Ana görev kartının başlığı artık "… · Ana görev" yazar. **Görevler penceresi** iki bölümdür: üstte **Ana görev**, altta **Yan görevler** (süren yan görev ve adımı; sonra "Bitirdiklerin: 3/12" ve biten yan görevlerin adları). **Yeri (v2.31, Boğaç — telefonda kart ekranın ortasında kalıyordu):** yan görev kartı her zaman ana görev kartının **hemen altında, aynı genişlikte** durur (bilgisayarda üstte ortada, telefonda **sağ üstte**); ana görev kartı yoksa onun yerinde durur. Telefonda kart tek satırdır (kişi · görev · adım); dokununca açılıp bütün yazıyı gösterir, bir daha dokununca kapanır. Telefonda bir pencere (envanter, kazan, pazar…) ya da konuşma açıkken kart gizlenir.
-11. **Yol gösterme.** Süren yan görevin hedefi (gidilecek yer, kalan noktalar, götürülecek yer ya da geri dönülecek kişi) haritada **açık mavi bir halka** ile gösterilir; hedef ekranın dışındaysa ekranın kenarında küçük mavi bir ok çıkar. **Sarı bölge (v2.31, Boğaç):** yan görev sürerken haritada **ana görevin sarı bölgesi gösterilmez**; onun yerine **yan görevin hedefinin çevresi** (~180 piksel) haritada **sarı** boyanır (ana görevdeki gibi nabız gibi atan sarı alan, ortasında mavi hedef işareti). Yan görev bitince ya da bırakılınca ana görevin sarı bölgesi geri gelir.
+11. **Yol gösterilmez, keşfedilir (v3.40, Boğaç: "çok da kullanıcının elinden tutmayalım… biraz keşfe itsin").** Yan görevin hedefi (gidilecek yer, toplanacak şeyler, götürülecek yer) **haritada gösterilmez**: mavi halka, sarı bölge ve ekran kenarındaki mavi ok yoktur (v2.31–v3.39'da vardı, kaldırıldı). Yol, kişinin konuşmasında ve görev kartındaki adım yazısında anlatılan ipuçlarıyla ("kıyıda", "ağaçta", "bataklığın içinde") bulunur. Haritada ana görevin sarı bölgesi yan görev sürerken de görünür. **Bulunca mavi parıltı:** takip edilen yan görevin aradığın şeyi (iz, eşya, kurbağa, kristal…) ekranda göründüğü anda üstünde **açık mavi bir halka** genişler ve çevresinde **küçük mavi kıvılcımlar** parıldar; böylece bulduğun şeyin görevle ilgili olduğunu anlarsın.
 12. **Konuşma resmi (v2.33, Boğaç):** yan kişilerle (mağaradaki Kaya ve Fidan dahil) konuşurken konuşma kutusunun solundaki küçük resim **o kişinin kendisi**dir: dünyadaki çizimiyle aynı saç, şapka, sakal, giysi renkleri (Poyraz ve ustalarda olduğu gibi). Eskiden hepsinde Gemici Poyraz'ın resmi görünüyordu.
     - **Hiçbir konuşmada varsayılan Poyraz resmi yoktur (v2.42, Boğaç):** konuşan her şeyin kendi resmi olur. "Sen" satırlarında **senin** (oyuncunun) yüzün; hikâye anlatan satırlarda (adı "—" olan) ilgili **şeyin kendisi** (güvercin, şişe, kayık, mal sandığı, oyuncak, ayakkabı, tebeşir, taş, ejder ini, mağara) ya da şey yoksa hikâyenin kişisi görünür. Resmi olmayan bir konuşucu için pencere **resimsiz** açılır (Poyraz'ın yüzü konmaz). **Yeni bir kişi ya da şey eklenirken konuşma resmi de eklenmek zorundadır** (CLAUDE.md kuralı).
 
 ## Haritada yan görevler
 
-- Görevi bekleyen bir yan kişi (kendi saatinde, görevi bitmemiş) haritada şöyle görünür; yalnızca **ayak bastığın biyomlarda** (henüz gitmediğin biyomdaki yan kişiler haritada görünmez):
-  - **Kişinin durduğu yer açılmışsa** (haritanın keşfedilmiş kısmındaysa): tam yerinde **açık mavi bir "?"**.
-  - **Kişinin yeri henüz kapalıysa ve ona yakınsan (v2.42, Boğaç):** yerinin çevresinde **mor (menekşe), hafifçe dönen bir çember** ve ortasında koyu mor bir **"?"** (çemberin yarıçapı ~220 piksel; çemberin ortası kişinin tam yeri değildir, kişi çemberin içinde bir yerdedir). Çember haritanın grisiyle ve mavi "?" ile karışmasın diye mordur (v2.41'e kadar soluk gri-maviydi; ilk denemede pembeydi, Boğaç beğenmedi). **Yakınsan** demek, kişiye ~600 piksel (yaklaşık 37 kare) ya da daha az mesafede olmandır; **uzaktayken sisli "?" hiç görünmez.** Kişinin durduğu yeri açınca çember yerini tam "?"ya bırakır.
-  - **Dünyada durmayan kişi için işaret yoktur (v2.42, Boğaç):** Gece görünen kız Işıl gibi dünyada yerinde durmayan (yalnızca geceleri belirip kaybolan) kişiler için haritada ne mavi "?" ne de sisli çember çıkar.
-- Hem küçük haritada (sağ alt) hem büyük haritada (M) görünür; gece de görünür. Büyük haritada üzerine gelince "Yan görev" yazar.
-- Biten yan görevler haritada işaret bırakmaz.
+- **Yalnızca çok yakındayken sisli "?" (v3.40, Boğaç):** görevi bekleyen bir yan kişiye (kendi saatinde, ya da bir kez alınmış görevin kişisi) **~10 kare (160 piksel)** ya da daha yakınsan haritada onun çevresinde **mor, hafifçe dönen küçük bir çember** ve ortasında koyu mor bir **"?"** belirir. Çemberin ortası kişinin tam yeri değildir (kişi çemberin içinde bir yerdedir). Uzaktayken hiçbir işaret yoktur; yerinin açılmış olması da işaret göstermez (eskiden açılmış yerde tam yerinde mavi "?" vardı, kaldırıldı).
+- **Saat gelince belirir:** harita açıkken kişinin saati gelirse ve yakınındaysan "?" o an belirir; oyuncu "bu soru işareti de ne?" diyerek gidip arar.
+- **Dünyada durmayan kişi için işaret yoktur (v2.42):** Gece görünen kız Işıl için haritada işaret çıkmaz. Mağarada iken haritada yan görev işareti çıkmaz.
+- Süren (alınmış) görevin kişisi ve hedefleri için haritada işaret yoktur. Biten yan görevler işaret bırakmaz.
+- Hem küçük haritada hem büyük haritada (M) görünür; gece de görünür.
+
+## Açılış sırası (v3.40)
+
+Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş ana görev sayısı** ve gerekiyorsa belli bir ana görev (E2 köprü, E3 Doğu geçidi, E4 izler, E5 Kıyıdaki duman, E6 Saliha'nın çorbası). Koşulu tutan ilk iki bitmemiş görev açıktır.
+
+- **Çayır:** Bulut (2) → Davut (4) → Gülsüm (6) → Ozan (9) → Rıfat (12) → Mavi (14 · E3)
+- **Orman:** Bekir (8) → Kahraman Dede (10) → Tarık (13) → Saadet (16) → Lale (19) → Ela (22)
+- **Bataklık:** Şifa (E2) → Cemile (18 · E2) → Kartal (21 · E2) → Hayali (23 · E3) → Remzi (26 · E3) → Kader (30 · E3)
+- **Kayalık Dağ:** Yahya (E3) → Zehra (24 · E3) → Bora (27 · E3) → Hatice Nine (30 · E3) → Sükûn (33 · E3) → Işıl (36 · E3)
+- **Kül Diyarı:** Çelik (28 · E3) → Ömer (31 · E3) → Kor Ali (34 · E3) → Hasret (37 · E3) → Nar (40 · E3) → Duman Dede (42 · E4)
+- **Mor Kristal Vadisi:** Melodi (E5) → Yaren (E5) → Asena (44 · E5) → Selim (46 · E5) → Rıza (48 · E5) → Fenerci Işık (50 · E6)
 
 ## 12 yan görev
 
 | # | Biyom | Kişi | Görev | Saat | Ton | Ödül |
 |---|---|---|---|---|---|---|
 | 1 | Çayır | Mavi (genç kız) | Denizden dönmeyen kardeş | 17:00–23:00 | hüzünlü, mor ışık | 120 sikke · 80 XP |
-| 2 | Çayır | Çoban Davut | Kaçan keçi Pamuk | 07:00–18:00 | komik | 60 sikke · 40 XP |
-| 3 | Çayır | Güvercinci Bulut (çocuk) | Kaçan güvercinler | 08:00–17:00 | tatlı, sırlar | 80 sikke · 50 XP |
+| 2 | Çayır | Çoban Davut | Kaçan keçi Pamuk | 06:00–11:00 | komik | 60 sikke · 40 XP |
+| 3 | Çayır | Güvercinci Bulut (çocuk) | Kaçan güvercinler | 10:00–15:00 | tatlı, sırlar | 80 sikke · 50 XP |
 | 4 | Orman | Ela (küçük kız) | Kampa giden yol | yalnızca gece (20:00–05:00) | gerilimli, sıcak son | 150 sikke · 120 XP |
-| 5 | Orman | Şövalye Kahraman Dede | Ejderin ini | 10:00–19:00 | komik | 90 sikke · 60 XP |
-| 6 | Orman | Seyyar satıcı Bekir | Kırık araba | 08:00–18:00 | hafif | 100 sikke · 60 XP |
-| 7 | Bataklık | Avcı Kartal | Yaralı avcı | 16:00–24:00 | gerilimli | 160 sikke · 120 XP |
+| 5 | Orman | Şövalye Kahraman Dede | Ejderin ini | 11:00–16:00 | komik | 90 sikke · 60 XP |
+| 6 | Orman | Seyyar satıcı Bekir | Kırık araba | 12:00–17:00 | hafif | 100 sikke · 60 XP |
+| 7 | Bataklık | Avcı Kartal | Yaralı avcı | 15:00–21:00 | gerilimli | 160 sikke · 120 XP |
 | 8 | Bataklık | Hayali | Işığı gören adam | 18:00–03:00 | gizemli, mor ışık | 140 sikke · 100 XP |
-| 9 | Bataklık | Falcı Kader | Kader satan kadın | 20:00–04:00 | gizemli | 150 sikke · 100 XP |
-| 10 | Kayalık Dağ | Hatice Nine | Torun Emir | 07:00–19:00 | acı son | 180 sikke · 140 XP |
-| 11 | Kayalık Dağ | Yolcu Yahya | Dağda kaybolan yolcu | 08:00–16:00 | yol hikâyesi | 170 sikke · 130 XP |
+| 9 | Bataklık | Falcı Kader | Kader satan kadın | 22:00–06:00 | gizemli | 150 sikke · 100 XP |
+| 10 | Kayalık Dağ | Hatice Nine | Torun Emir | 07:00–13:00 | acı son | 180 sikke · 140 XP |
+| 11 | Kayalık Dağ | Yolcu Yahya | Dağda kaybolan yolcu | 12:30–17:30 | yol hikâyesi | 170 sikke · 130 XP |
 | 12 | Kayalık Dağ | Işıl (hayalet kız) | Gece görünen kız | 22:00–04:00 | gizemli, hüzünlü | 160 sikke · 120 XP |
 
 **Yerleri:** her yan kişi kendi biyomunda, biyomun farklı bir köşesinde, başka kişilere, kuzenlerin evlerine, köprülere ve öbür yan kişilere en az ~220 piksel uzakta, ağaçsız düz bir yerde durur (ada her kurulduğunda aynı yer). Mavi İskele'nin hemen yanında durur. Görev noktaları (izler, enkaz, güvercinler…) kişinin çevresinde, kendi biyomunda, yürünebilir yerlere konur.
 
 **Adım türleri** (görevlerde kullanılan):
 - **Konuş:** kişiyle konuşma penceresi (birkaç sayfa). İlk konuşmada "Yardım ederim" ya da "Şimdi olmaz" seçilir.
-- **Git:** haritada mavi halkayla gösterilen yere git; oraya ~26 piksel yaklaşınca kendiliğinden bulunur (tuşa basmak gerekmez) ve kısa bir sahne yazısı çıkar.
+- **Git:** kişinin anlattığı yeri bul (haritada gösterilmez); oraya ~26 piksel yaklaşınca kendiliğinden bulunur (tuşa basmak gerekmez) ve kısa bir sahne yazısı çıkar.
 - **Topla:** birkaç noktadaki şeyleri **istediğin sırayla** bul; her biri yaklaşınca alınır.
 - **Kovala:** kaçan bir hayvana yaklaş; her yaklaşmada 100–180 piksel öteye kaçar; birkaç kez sonra yakalanır.
 - **Getir:** kişiye istenen eşyaları getir (yalnızca toplanan ham malzemeler istenir; tarif istemez). Konuşunca eşyalar envanterden alınır.
@@ -199,29 +211,29 @@ Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biy
 
 | # | Kişi · Görev | Biyom · saat | Adımlar | Ödül | İz |
 |---|---|---|---|---|---|
-| 19 | **Arıcı Gülsüm** · Kaçan arı oğulu | Çayır · 07:00–18:00 | Üç arı salkımını bul → Gülsüm'e dön | 80 · 60 XP | yanında arı kovanları |
-| 20 | **Ozan** (çocuk) · Ağaca takılan uçurtma | Çayır · 08:00–18:00 | Ağaçtaki uçurtmayı bul → 2 İp götür | 70 · 50 XP | başının üstünde uçan uçurtma |
-| 21 | **Değirmenci Rıfat** · Duran değirmen | Çayır · 07:00–19:00 | Değirmenin önündeki 2 kurdu kov → 6 Dal, 4 Lif götür | 100 · 70 XP | kanatları dönen değirmen (öncesi kırık) |
-| 22 | **Mantarcı Saadet** · Mantar sepeti | Orman · 06:00–17:00 | Dört kanlıca kümesini topla (sinek mantarına dokunma) → dön | 110 · 80 XP | mantar kurutma ipi |
-| 23 | **Oduncu Tarık** · Ağacın altında | Orman · 07:00–18:00 | 2 Sopa, 2 İp götür (koltuk değneği) → Tarık'ı Usta Sinan'ın tezgâhına götür (yolda domuz ve kurt) | 130 · 90 XP | Tarık artık Sinan'ın yanında |
-| 24 | **Ressam Lale** · Ormanın renkleri | Orman · 08:00–18:00 | 3 Gelincik, 4 Yaban mersini götür → ormanın en güzel açıklığını bul → dön | 120 · 90 XP | şövalesi (hep) |
-| 25 | **Kayıkçı Remzi** · Sisteki kayıkçı | Bataklık · yalnızca gece | Remzi'yi ışıkla Avcı Doğan'ın kulübesine götür (yolda kurtlar) | 160 · 120 XP | Remzi Doğan'ın ateşinin başında |
-| 26 | **Cemile** (çocuk) · Şarkı söyleyen kurbağalar | Bataklık · 18:00–23:00 | Vıraklamaları dinleyip dört kurbağayı bul (yakalamak yok) → dön | 150 · 110 XP | yanında iki kurbağa |
-| 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 07:00–18:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn, kurtlar) → dön | 170 · 130 XP | ilaç kazanı (hep) |
-| 28 | **Dağlı Zehra** · Uçurumdaki oğlak | Kayalık Dağ · 07:00–18:00 | Oğlak Boncuk'u 3 kez yakala → Zehra'ya götür | 180 · 140 XP | yanında Boncuk |
-| 29 | **Gözcü Bora** · Kartal yumurtası | Kayalık Dağ · 08:00–17:00 | Düşen yumurtayı bul → yuvanın dibindeki 2 kurdu kov, yumurtayı koy → dön | 190 · 150 XP | – |
-| 30 | **Keşiş Sükûn** · Dağın çanları | Kayalık Dağ · 05:00–20:00 | Rüzgârda çınlayan üç çanı bul → dön | 200 · 160 XP | yanında asılı rüzgâr çanı |
-| 31 | **Külcü Hasret** · Küllerin altındaki mektup | Kül Diyarı · 07:00–18:00 | Dumanı tüten dört mektup parçasını bul (her biri bir satır) → dön (acı son, sessiz) | 320 · 280 XP | mektup kutusu |
-| 32 | **Yangıncı Kor Ali** · Sönmeyen ağaçlar | Kül Diyarı · 07:00–19:00 | İçten yanan beş kül ağacını söndür (her biri 1 Su) → dön | 340 · 300 XP | diyarın ilk yeşil fidanı |
-| 33 | **Çırak Çelik** · Lava düşen çekiç | Kül Diyarı · 07:00–18:00 | Çelik'le lav tarlasına git (yolda kertenkeleler) → çekici kazmayla kabuktan çıkar (kazma gerekli) → dön | 360 · 320 XP | örsü (hep) |
-| 34 | **Nar** (çocuk) · Sıcak yumurta | Kül Diyarı · 18:00–23:00 | Saklanan yumurtayı bul → yumurta çatlarken ateşin başında bekle (60 sn, kurtlar) → dön | 380 · 330 XP | omzunda yavru ateş kertenkelesi Kıvılcım |
-| 35 | **Duman Dede** · Kükürtteki sesler | Kül Diyarı · yalnızca gece | 4 Kükürt kristali götür → üç sunakta yak; dumanlar Yıldızsızların adaya inişini, köpekleri ve şapkayı gösterir → dön | 380 · 340 XP | – |
-| 36 | **Katırcı Ömer** · Kül fırtınasında kaybolan | Kül Diyarı · 07:00–18:00 | Katır Kınalı'yı 3 kez yakala → Ömer'e götür | 400 · 360 XP | yanında Kınalı |
-| 37 | **Melodi** · Şarkı söyleyen kristaller | Mor Kristal Vadisi · 07:00–19:00 | Çınlamalarını dinleyip beş kristali bul → dön | 450 · 400 XP | yanında parlayan bir kristal |
-| 38 | **Balıkçı Selim** · Ayna Gölü'ndeki kız | Mor Kristal Vadisi · yalnızca gece | Dört ayna parçasını topla → kıyıda birleştir (kız mor ışığın içinde, kurtarılamaz; acı son, sessiz) → dön | 480 · 430 XP | göl kıyısında ayna |
-| 39 | **Kristalci Yaren** · Taşkalp | Mor Kristal Vadisi · 07:00–18:00 | Taşocağındaki 3 Kristal golemi yen (çekirdek taşları) → dön; golem Taşkalp uyanır | 520 · 470 XP | Taşkalp ayakta, gözleri mavi (öncesi yıkık) |
-| 40 | **Lostromo Rıza** · Tayfanın künyeleri | Mor Kristal Vadisi · yalnızca gece | Gölge kurtlarının yatağında 4 kurdu yen (künyeler) → kıyıda dört fener yak → dön | 560 · 500 XP | kıyıda dört fener |
-| 41 | **Asena** · Mor gözlü yavru | Mor Kristal Vadisi · 18:00–23:00 | 3 Geyik eti götür → gece yavruyu sürüsünden koru (60 sn) → dön; yavru Gece onunla kalır | 540 · 480 XP | yanında yavru Gece |
+| 19 | **Arıcı Gülsüm** · Kaçan arı oğulu | Çayır · 08:00–13:00 | Üç arı salkımını bul → Gülsüm'e dön | 80 · 60 XP | yanında arı kovanları |
+| 20 | **Ozan** (çocuk) · Ağaca takılan uçurtma | Çayır · 14:00–19:00 | Ağaçtaki uçurtmayı bul → 2 İp götür | 70 · 50 XP | başının üstünde uçan uçurtma |
+| 21 | **Değirmenci Rıfat** · Duran değirmen | Çayır · 05:00–10:00 | Değirmenin önündeki 2 kurdu kov → 6 Dal, 4 Lif götür | 100 · 70 XP | kanatları dönen değirmen (öncesi kırık) |
+| 22 | **Mantarcı Saadet** · Mantar sepeti | Orman · 05:30–10:30 | Dört kanlıca kümesini topla (sinek mantarına dokunma) → dön | 110 · 80 XP | mantar kurutma ipi |
+| 23 | **Oduncu Tarık** · Ağacın altında | Orman · 07:00–12:00 | 2 Sopa, 2 İp götür (koltuk değneği) → Tarık'ı Usta Sinan'ın tezgâhına götür (yolda domuz ve kurt) | 130 · 90 XP | Tarık artık Sinan'ın yanında |
+| 24 | **Ressam Lale** · Ormanın renkleri | Orman · 16:00–20:30 | 3 Gelincik, 4 Yaban mersini götür → ormanın en güzel açıklığını bul → dön | 120 · 90 XP | şövalesi (hep) |
+| 25 | **Kayıkçı Remzi** · Sisteki kayıkçı | Bataklık · yalnızca gece (00:00–05:00) | Remzi'yi ışıkla Avcı Doğan'ın kulübesine götür (yolda kurtlar) | 160 · 120 XP | Remzi Doğan'ın ateşinin başında |
+| 26 | **Cemile** (çocuk) · Şarkı söyleyen kurbağalar | Bataklık · 18:30–23:00 | Vıraklamaları dinleyip dört kurbağayı bul (yakalamak yok) → dön | 150 · 110 XP | yanında iki kurbağa |
+| 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 08:00–14:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn, kurtlar) → dön | 170 · 130 XP | ilaç kazanı (hep) |
+| 28 | **Dağlı Zehra** · Uçurumdaki oğlak | Kayalık Dağ · 06:00–12:00 | Oğlak Boncuk'u 3 kez yakala → Zehra'ya götür | 180 · 140 XP | yanında Boncuk |
+| 29 | **Gözcü Bora** · Kartal yumurtası | Kayalık Dağ · 09:00–15:00 | Düşen yumurtayı bul → yuvanın dibindeki 2 kurdu kov, yumurtayı koy → dön | 190 · 150 XP | – |
+| 30 | **Keşiş Sükûn** · Dağın çanları | Kayalık Dağ · 04:30–09:30 | Rüzgârda çınlayan üç çanı bul → dön | 200 · 160 XP | yanında asılı rüzgâr çanı |
+| 31 | **Külcü Hasret** · Küllerin altındaki mektup | Kül Diyarı · 09:00–14:00 | Dumanı tüten dört mektup parçasını bul (her biri bir satır) → dön (acı son, sessiz) | 320 · 280 XP | mektup kutusu |
+| 32 | **Yangıncı Kor Ali** · Sönmeyen ağaçlar | Kül Diyarı · 13:00–18:00 | İçten yanan beş kül ağacını söndür (her biri 1 Su) → dön | 340 · 300 XP | diyarın ilk yeşil fidanı |
+| 33 | **Çırak Çelik** · Lava düşen çekiç | Kül Diyarı · 07:00–11:30 | Çelik'le lav tarlasına git (yolda kertenkeleler) → çekici kazmayla kabuktan çıkar (kazma gerekli) → dön | 360 · 320 XP | örsü (hep) |
+| 34 | **Nar** (çocuk) · Sıcak yumurta | Kül Diyarı · 17:30–22:30 | Saklanan yumurtayı bul → yumurta çatlarken ateşin başında bekle (60 sn, kurtlar) → dön | 380 · 330 XP | omzunda yavru ateş kertenkelesi Kıvılcım |
+| 35 | **Duman Dede** · Kükürtteki sesler | Kül Diyarı · yalnızca gece (23:00–04:00) | 4 Kükürt kristali götür → üç sunakta yak; dumanlar Yıldızsızların adaya inişini, köpekleri ve şapkayı gösterir → dön | 380 · 340 XP | – |
+| 36 | **Katırcı Ömer** · Kül fırtınasında kaybolan | Kül Diyarı · 15:00–20:00 | Katır Kınalı'yı 3 kez yakala → Ömer'e götür | 400 · 360 XP | yanında Kınalı |
+| 37 | **Melodi** · Şarkı söyleyen kristaller | Mor Kristal Vadisi · 11:30–16:30 | Çınlamalarını dinleyip beş kristali bul → dön | 450 · 400 XP | yanında parlayan bir kristal |
+| 38 | **Balıkçı Selim** · Ayna Gölü'ndeki kız | Mor Kristal Vadisi · yalnızca gece (20:30–01:30) | Dört ayna parçasını topla → kıyıda birleştir (kız mor ışığın içinde, kurtarılamaz; acı son, sessiz) → dön | 480 · 430 XP | göl kıyısında ayna |
+| 39 | **Kristalci Yaren** · Taşkalp | Mor Kristal Vadisi · 08:00–13:30 | Taşocağındaki 3 Kristal golemi yen (çekirdek taşları) → dön; golem Taşkalp uyanır | 520 · 470 XP | Taşkalp ayakta, gözleri mavi (öncesi yıkık) |
+| 40 | **Lostromo Rıza** · Tayfanın künyeleri | Mor Kristal Vadisi · yalnızca gece (01:00–05:00) | Gölge kurtlarının yatağında 4 kurdu yen (künyeler) → kıyıda dört fener yak → dön | 560 · 500 XP | kıyıda dört fener |
+| 41 | **Asena** · Mor gözlü yavru | Mor Kristal Vadisi · 19:00–24:00 | 3 Geyik eti götür → gece yavruyu sürüsünden koru (60 sn) → dön; yavru Gece onunla kalır | 540 · 480 XP | yanında yavru Gece |
 | 42 | **Fenerci Işık** · Düşen ışığı toplamak | Mor Kristal Vadisi · yalnızca gece (21:00–04:30) | Mor ışığın düştüğü yerlerde üç mor damla topla (elinde ışık olmalı, yoksa ışık seni alır) → dön | 600 · 550 XP | **üç kalıcı fener ateşi:** yanlarında gece mor ışık gelmez (güvenli yer) |
 
 ## Ödüller
