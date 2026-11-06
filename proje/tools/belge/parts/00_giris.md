@@ -10,7 +10,7 @@ Sürüm: **Versiyon 3.44** ile birebir (6 Kasım 2026). Bu sürümde: biyomlar v
 
 > **KURAL: TÜREYEN SAYILAR BİRLİKTE DEĞİŞİR (Boğaç, 6 Kasım 2026):** belgede bir sayı değişince ondan hesaplanan bütün sayılar (biyom başına alan, adet, oran) aynı commit'te güncellenir.
 
-> **KURAL: BELGE YALNIZCA BUGÜNÜ ANLATIR (6 Kasım 2026, Boğaç):** son 20 sürümün değişiklikleri geri alınabilir (her sürüm ayrı commit ve `vX.YZ` etiketi; ayrıntılar DEVAM_NOTU'nda); daha eski sürümlerin geçmişi belgede, notlarda tutulmaz.
+> **KURAL: BELGE YALNIZCA BUGÜNÜ ANLATIR (6 Kasım 2026, Boğaç):** son 20 sürümün değişiklikleri geri alınabilir (her sürüm `main`'de `vX.YZ:` ile başlayan ayrı bir commit; ayrıntılar DEVAM_NOTU'nda); daha eski sürümlerin geçmişi belgede, notlarda tutulmaz.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
