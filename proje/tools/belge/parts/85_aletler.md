@@ -156,7 +156,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 - Ihlamur yayı: 3 Ihlamur odunu, 2 Sinir kirişi, 1 Granit
 - Timsah miğfer: 2 Timsah derisi, 1 Demir halka, 2 Sinir
 - Timsah eldiven: 1 Timsah derisi, 1 Demir halka, 2 İp
-- Kamış çizme: 6 Kamış, 1 Timsah derisi, 1 Demir halka, 3 İp
+- Kamış çizme: 6 Kamış, 3 İp, 2 Yosun (el yapımı; setin örste dövülmeyen tek parçası)
 - Timsah dişi savaş çekici: 3 Timsah dişi, 2 Demir külçesi, 1 Bataklık servisi sapı, 1 Zehir yağı
 - Timsah dişi topuz: 2 Timsah dişi, 1 Demir külçesi, 1 Bataklık servisi sapı, 1 Zehir yağı
 - Timsah dişi mızrak: 2 Timsah dişi, 1 Uzun sopa, 3 İp, 1 Zehir yağı
@@ -483,7 +483,7 @@ Beş yuva vardır: **baş, gövde, el, ayak, silah**. Özellikler penceresinden 
 | Tunç çizme | Ayak | 7 | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | metal |
 | Meşe kabuk çizme | Ayak | 8 | Örs · Zırhçı Duran (Orman) ve üstü döver | direnç: kanama %10 |
 | Demir çizme | Ayak | 12 | Örs · Zırhçı Veli (Bataklık) ve üstü döver | çamur, metal |
-| Kamış çizme | Ayak | 13 | Örs · Zırhçı Veli (Bataklık) ve üstü döver | direnç: zehir %15, çamur |
+| Kamış çizme | Ayak | 13 | El yapımı (Tab) | direnç: zehir %15, çamur |
 | Çelik çizme | Ayak | 16 | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | çamur, metal |
 | Gümüş çizme | Ayak | 18 | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | direnç: kanama %15, metal |
 | Kara çelik çizme | Ayak | 21 | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | çamur, metal |

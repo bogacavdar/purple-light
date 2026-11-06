@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.50** ile birebir (6 Kasım 2026). Bu sürümde: bekleyen duyurular sırayla, ev içinde oda alet çubuğunun üstünde, ev listesinde işçilik satırı, hile modu yenilenince kapanır. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.51** ile birebir (7 Kasım 2026). Bu sürümde: Avcı Doğan Kamış çizme ve Panzehir tariflerini yazar (Bataklık zinciri açılır), Kamış çizme el yapımı (6 Kamış, 3 İp, 2 Yosun), köprüye her tür odun. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -439,6 +439,8 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 
 ### Konuşma penceresi
 
+- **Adlara gelen ekler Türkçe ses uyumuna uyar:** bir kişi ya da eşya adına ek eklenirken (yönelme, belirtme, iyelik…) ekin ünlüsü adın son ünlüsüne, ünsüzü son sese göre seçilir ve özel adlarda kesme işareti konur: "Şifa'ya", "Kemal'e", "Börü'nün", "Dursun'a", "Kayhan'ı".
+
 - **Konuşma penceresi:** uzun konuşmalar (ör. görev anlatımları) ekranın üstünden taşmaz: pencere en çok **görünen ekran yüksekliği** kadar olur (iPhone'da adres çubuğu hesaba katılır), yazı kendi içinde kayar, **cevap düğmeleri hep altta görünür**; yazı harf harf gelirken pencere son satırı izler, bitince yukarı kaydırıp baştan okunabilir. **Yazı harf harf akarken ilk basış** (tık, dokunuş, tuş ya da seçenek numarası) **yazıyı tamamlar, ikinci basış seçer.** Yazılar ve düğmeler telefona göre biraz küçüktür.
 - **Pencere dışına basmak = "Anladım" (kalıcı kural):** konuşma penceresi seçim yapılmadan kapatılırsa (pencerenin dışına tıklama/dokunma, Esc, X) oyuncu pencereyi okumuş sayılır ve sade cevap seçilmiş olur: yalnızca kapatan bir seçenek varsa ("Sonra", "Hoşça kal") o, tek seçenek varsa o, yoksa ana (vurgulu) seçenek. Böylece "Hazırım" / "Anladım" bekleyen bir ders ya da görev hiçbir zaman takılı kalmaz. **Eklenen her yeni pencere bu kurala uyar.**
 
@@ -455,7 +457,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - **Bir puan, eski bir seviyeden fazlasını verir (v3.40, Boğaç):** eskiden her seviye kendiliğinden küçük bir artış veriyordu (can +5, enerji +4, toplama +0,03, hareket +0,02, satış +0,01, şans +%0,5, hasar +%3, zırh +1, mana +3…); şimdi bir puan o özelliğe bundan daha büyük bir artış verir (tabloda "Puan başına").
 - **Açıklama:** her **+** düğmesinin üstüne gelince (telefonda özelliğin adının altında her zaman) o özelliğin ne işe yaradığı kısaca yazar (ör. Toplama hızı: "Dal, taş, bitki, odun ve maden toplarken daha hızlı olursun.").
 - **Verilmemiş puan:** Karakter penceresinde tablonun sağ altında "Verilmemiş seviye puanı: N" yazar; verilmemiş puan varken Karakter düğmesinin köşesinde küçük sarı bir sayı durur.
-- **İlk seviye dersi:** ilk kez seviye atlayınca Karakter düğmesi ışıkla yanıp söner ve "Seviye puanı kazandın! Karakter penceresinde bir özelliğe ver." yazar; pencere açılınca **+** düğmeleri yanıp söner. İlk puan verilince ders biter (bir kez).
+- **İlk seviye dersi:** ilk kez seviye atlayınca Karakter düğmesi ışıkla yanıp söner ve kısa bir yazı çıkar: "**+N seviye puanı**" (adım tarif edilmez; Karakter düğmesinin köşesindeki sayaç yeterlidir); pencere açılınca **+** düğmeleri yanıp söner. İlk puan verilince ders biter (bir kez).
 - **Eski kayıtlar:** eski kayıttaki seviyenin bütün puanları verilmemiş olarak gelir (ör. 20. seviyede 48 puan); özellikler 0 puandan başlar.
 - **Arenada** seçilen seviyenin puanları bütün özelliklere eşit dağılmış sayılır (60. seviyede hepsi tam).
 
@@ -793,9 +795,9 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
   - **Ahşap ev** (1.500): kalas duvarlar, kiremit çatı, panjurlu pencereler, taş baca, çiçeklik, basamak.
   - **Taş ev** (2.500): yontma taş duvarlar, arduvaz çatı, dumanı tüten baca, kemerli kapı, ışığı yanan pencereler, köşede sarmaşık, taş basamaklar.
   - **Konak** (5.000): iki katlı, beyaz sıvalı ve ahşap kirişli duvarlar, kiremit kırma çatı ve iki çatı penceresi, iki sütunlu ve üçgen alınlıklı giriş, çift kanatlı kapı, ışığı yanan çok pencere, iki baca, fenerler ve çalılar.
-- Yaprak barınağı dışındaki her evde **F = içeri gir**. **Kapının önünde F önce kapıyı seçer** (içeri gir): yerdeki toplanabilir bir şeyden önce gelir. İçeride ada donar (canavarlar, oklar durur) ama saat, açlık ve hava sürer. **İçeride mor ışık gelmez.**
+- Yaprak barınağı dışındaki her evde **F = içeri gir**. **Kapının önünde F önce kapıyı seçer** (içeri gir): yerdeki toplanabilir bir şeyden önce gelir. Aynı öncelik kişiler için de geçerlidir: bir kişinin konuşma halkasının içinde **F önce kişiyi seçer** (konuş), yerdeki toplanabilirden önce. İçeride ada donar (canavarlar, oklar durur) ama saat, açlık ve hava sürer. **İçeride mor ışık gelmez.**
 - Üst çubukta **Döşe** / **Dışarı çık**. Döşe kipinde envanterdeki ev eşyasını seç, ızgarada bir kareye tıkla (R ya da seçili eşyanın yanındaki görünür **Döndür** düğmesi döndürür; Döndür düğmesi yalnızca kare olmayan eşyalarda, ör. 1×2, 2×3, görünür); konmuş eşyaya tıklayınca geri alırsın. Kapının önü boş kalmalı; duvar eşyaları (raf, asma fener, perde, duvar halısı, resimler) üstteki duvar şeridine, halı ve kilim zemine (üstünden yürünür), diğerleri zemine konur. Eşyalar üst üste konmaz. **Döşeme her saatte yapılabilir;** gece kısıtı yalnızca uyku içindir.
-- **Ev içinde ekran:** ev içindeyken (Döşe kipi dışında da) alet çubuğu ve uyarılar odayı, kapıyı ve duvar şeridini örtmez; oda bu alanların arasına sığdırılır.
+- **Ev içinde ekran:** ev içindeyken (Döşe kipi dışında da) alet çubuğu ve uyarılar odayı, kapıyı ve duvar şeridini örtmez; oda bu alanların arasına sığdırılır. Telefonda ev içinde **Vur** düğmesi gizlidir ve sol menü kapalı başlar.
 - **Döşe kipinin ekranı:** Döşe kipinde oda bütün ekranı kullanır. Eşya listesi odayı örtmez, ekranın altında **yatay bir şerit** olarak durur. Alet çubuğu, sol menü ve dövüş düğmeleri gizlenir; duyurular Döşe kipi bitene kadar bekler. Telefonda (yatay) eşya şeritten seçilip odadaki kareye **dokunarak** yerleştirilir.
 - **Yatak uyarısı:** "Yatağı yerleştir…" yazısı evin içine bir yatak konunca hemen kalkar.
 - Ev eşyaları: yataklar (Hasır yatak 1×2, Hasırotu yatak 1×2, Ahşap karyola 2×2), lambalar (Taş lamba, Kil lamba, Asma fener), Taş/Çömlek fırını 2×1, Tabure, Sandalye, Masa 2×1, Sandık, Dolap, Raf, Halı 3×2, Kilim 2×1, Perde, Duvar halısı, Saksı, Boyalı çömlek, Kil figürin, Ana tanrıça heykelciği, Taş totem, Su testisi, Mağara resmi, Av sahnesi duvar resmi, El izi resmi. Hepsi kazanda öğrenilir ve **Usta Sinan** yapar.
@@ -1086,6 +1088,7 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 - **Açınca Hile modu da açılır (telefonda hileler açılamıyordu):** eskiden 3 dokunuş (ya da `cheat`) yalnızca hile ayarlarını **görünür** yapıyordu; asıl **Hile modu** anahtarı ayrıca ana menünün Ayarlar'ından açılmalıydı ve oyunun içindeki Ayarlar'da bu anahtar gizli olduğu için oyuna girince hiçbir hile görünmüyordu. Artık: (1) hile ayarları açıldığı an **Hile modu da kendiliğinden açılır** (tek tek hileler yine kapalı başlar; oyun içindeki Ayarlar'da hepsi görünür). (2) **Hile modu anahtarı oyunun içindeki Ayarlar'da da görünür**; oradan açılıp kapatılabilir. (3) Dokunarak ya da tıklayarak (ana menüde 3 kez dokunma, Ayarlar başlığına 3 kez dokunma) hile ayarları yalnızca **açılır**, bir daha dokunmak onları **kapatmaz** (eskiden ana menüde hızlıca 3 kez dokunmak hepsini yanlışlıkla kapatıyordu). Kapatmak için Hile modu anahtarını kapat ya da klavyeyle yeniden `cheat` yaz.
 - **Kalıcı değildir:** Hile modu sekme/oturum boyunca açık kalır, sayfa yenilenince kapanır (cihazda kalıcı bayrak tutulmaz).
 - **Ekrandaki yazılar:** anahtarın adı yalnızca "Hile modu"dur ("test için" yazmaz); Tanrı modunun açıklaması mor ışıktan söz etmez (oyuncuya ipucu vermesin). **Eşya araması:** arama kutusuna yazarken oyunun tuşları (ör. F = topla) çalışmaz; "e" harfi yazılabilir.
+- **Sınırsız sikke açıkken de** görev ve satış sikkeleri hesaba yazılır (sikke sayısı tutarlı kalır; hile kapanınca kazanılmış sikkeler yerindedir).
 - **Tanrı modu:** can, tokluk, enerji, mana hep dolu; canavarla ve açlıkla bayılmazsın, ama **mor ışık seni yine bayıltır** (bilinçli). **Hile paneli:** +100 sikke, +100 XP, +2 saat, günü bitir, zamanı sar, eşya arama (miktar 1/10/50/100; ev eşyaları ve yapılar dahil oyundaki bütün eşyalar aramada çıkar). **Tek vuruşta öldür**, **Sınırsız dayanıklılık**, **Sınırsız sikke**, **Gece ışığı**, **Hile kısayolları** (Z +100 sikke, X +100 XP), **ACT 2'ye geç**, **Seviyeyi en üste çıkar**, **Haritayı tamamen aç**.
 
 - **Bütün sahneler (v3.32, Boğaç: hile modundan çıkarıldı):** ara sahneleri ve anıları istediğin zaman izleme artık hile modunda **yoktur** ("Bütün ara sahneler açık" anahtarı ve Keşif defterindeki liste kaldırıldı). Yalnızca **ana menüde klavyeyle `love` yazınca** açılır (yeniden yazınca kapanır; bu cihazda hatırlanır; ekranda "Bütün sahneler açıldı" / "kapandı" yazar). Bir başarımı yoktur, hile modu sayılmaz. Açıkken **Kitap › Anılar**'ın en üstünde **Bütün sahneler** bölümü çıkar: her sahne **küçük resmiyle** (anılarda sahnenin kendi çiziminden alınmış küçük resim; açılış sahnesi, deniz yolculuğu, roket ve kişilerin hikâyelerinde adıyla mor bir kart) bir kutudur; kutuya basınca sahne baştan oynar. Bütün anılar (henüz gelmemiş olanlar dahil) ve bütün ara sahneler buradadır.
@@ -1111,11 +1114,11 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 
 - **Yerleşim (hilal ada):** Yıldızsız Ada artık dikdörtgen değil, **hilal** biçiminde bir adadır (ızgara 790 × 568 karo; v3.40'ta biyomlar %50 büyüdü, v3.44'te alan olarak düzeltildi; kara ~208.000 karo). Altı biyom **eşit büyüklükte** (her biri ~34.700 karo) ve hilalin bir ucundan öbürüne **zincir halinde** sıralanır; her biyom yalnızca bir öncekine ve bir sonrakine değer: **Çayır** (batı ucu, başladığın yer) → **Orman** (kuzeybatı) → *büyük nehir, köprü* → **Bataklık** (kuzey) → **Kayalık Dağ** (doğu) → *sıradağ, kaya yığını* → **Kül Diyarı** (güneydoğu) → **Mor Kristal Vadisi** (güney ucu). Hilalin ortası denizdir (iç körfez).
 - Biyomlar üç ortak bölgede ikişer durur: **Yurt** (Çayır + Orman), **Orta Diyar** (Bataklık + Kayalık Dağ), **Doğu Diyarı** (Kül Diyarı + Mor Kristal Vadisi). Aynı bölgedeki iki biyom arasında engel yoktur, sınırları kıvrımlıdır. Bölgeler arasındaki iki sınır ise **keskindir**: biri büyük nehir, öbürü sıradağ.
-- **Büyük nehir** Orman ile Bataklık'ın arasından geçer, iki ucu da denize dökülür; etrafından dolaşılmaz. Nehrin üstünde **üç kırık köprü** vardır, her biri **ayrı ayrı** 20 odunla onarılır; üçü de Orman ↔ Bataklık arasındadır:
+- **Büyük nehir** Orman ile Bataklık'ın arasından geçer, iki ucu da denize dökülür; etrafından dolaşılmaz. Nehrin üstünde **üç kırık köprü** vardır, her biri **ayrı ayrı** 20 odunla (**her tür odun** sayılır: Çam, Meşe, Kayın, Ladin…) onarılır; üçü de Orman ↔ Bataklık arasındadır:
   - **Ana köprü** (nehrin ortası): yolu açan köprüdür. Kemal'in 2. görevi ("Bir köprüyü onar") bununla biter. Doğan'ın kulübesi bu köprünün Bataklık ucunun yakınındadır.
   - **İki kısayol köprüsü** (nehrin iki ucuna yakın, biri kuzey kıyısına, biri iç körfeze doğru): ana köprü onarılmadan onarılamaz ("Önce ana köprüyü onar"). Sonra istediğin zaman, istersen birini istersen ikisini onarırsın; nehrin öbür ucundaki yerlere yolu kısaltırlar. Ana köprü onarıldıktan sonra kısayollar iki yakadan da onarılabilir.
 - **Sıradağ** Kayalık Dağ ile Kül Diyarı'nın arasından geçer, kıyıdan kıyıya uzanır. Tek geçidi (Doğu geçidi) sıradağın ortasına yakındır ve bir **kaya yığını** kapatır. 2 Kaya patlatıcı ve 4. kademe (Kuvars ya da Çelik) ya da daha iyi bir kazmayla patlatılır. **Patlama bütün sıradağı çökertir:** o andan sonra sınır kalkar, sıradağın her yeri yürünebilir moloz olur ve Kayalık Dağ ile Kül Diyarı arasında her yerden geçilir. (Kayıtta yalnızca "patlatıldı" bilgisi tutulur; yüklenince sıradağ yeniden çöker.)
-- **Göller ve dereler:** Orman'da bir pınar gölü ve denize akan deresi, Çayır'da bir göl, Kayalık Dağ'da bir pınar gölü ve deresi, Bataklık'ta 30 küçük gölcük vardır (v3.44; önce 20) (su, kil, çakıl, su kenarı bitkileri ve tatlı su balıkları bunların başında).
+- **Göller ve dereler:** Orman'da bir pınar gölü ve denize akan deresi, Çayır'da bir göl, Kayalık Dağ'da bir pınar gölü ve deresi, Bataklık'ta bir göl (~560 karo) ve 30 küçük gölcük vardır (v3.44; önce 20) (su, kil, çakıl, su kenarı bitkileri ve tatlı su balıkları bunların başında).
 - **Haritadaki miktarlar:** yeni oyunda ada kurulurken her tür sabit sayıda rastgele yere konur; yerler her oyunda farklı, sayılar aynıdır.
   - **Temel malzemeler** bütün adaya serpilir (yaklaşık): Dal ~1.177, **Lif ~1.457, Taş ~1.071**, Yaprak 201, Nehir çakılı ~616, Kum ~530, Çakmaktaşı ~459 (v3.45 yeni oyun ölçümü; serpme v3.39'un 1,5 katı, Giriş › Adalar ve dünya ölçüsü). **Yaprak yerde seyrektir:** serpilen yaprakların, başlangıç kampının çevresi dışında kalanlarının **%72'si** ada kurulurken silinir; silme tohumludur: **her oyunda aynı karolarda olur**, böylece kalan yaprak sayısı her yeni oyunda aynıdır (sayılar aynıdır kuralı yaprakta da geçerli). Yaprak çoğunlukla ağaç kesince düşer. Daha az oldukları için **%30 daha çabuk** yeniden çıkarlar (ör. Dal 25 → 18 sn).
   - **Biyom bitkileri** her biyomun kendi 14 türü: tür başına kendi biyomunda yaklaşık **60**; Kuru ot ~135, Böğürtlen ~120, yalnızca su kenarında biten türler ~45 (v3.44: v3.39'un 1,5 katı).
@@ -1142,6 +1145,8 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 ## Biyomlar
 
 ### Biyomları okuma rehberi
+
+**Beklenen varış seviyesi (yaklaşık):** Çayır 1, Orman ~3 (Börü'nün "Kuzeye keşif" görevi Seviye 3), **Bataklık ~20** (7 Kasım 2026, Boğaç), Kayalık Dağ ~26, Kül Diyarı ~34, Mor Kristal Vadisi ~42 (son üçü biyomun mağarasının önerilen seviyesine göre). Bu bir denge beklentisidir, giriş şartı değildir.
 
 Aşağıdaki her biyom başlığında dört tablo var:
 
@@ -1405,6 +1410,8 @@ Adanın kuzeyi, büyük nehrin doğusu: Orman'dan ana köprüyü onarıp karşı
 | Bataklık kurdu | saldırgan | 600 | 57 | 100 | 77 | kanama etkisi, sürü 2–4 | Bataklık kurdu postu %80; Kurt dişi %50; Kemik %50 ×1–2 |
 | Timsah | saldırgan | 1.080 | 78 | 36 | 129 | kanama etkisi | Timsah derisi %90; Timsah dişi %60 ×1–2; Timsah eti %100 ×1–2 |
 
+**Deri parçası:** Su samuru %75 ×1–2, Bataklık kurdu %80 ×1–2, Timsah %90 ×1–2 (derisinin yanında). Bataklık canlılarının saat ya da seviye doğma şartı yoktur.
+
 ### Kayalık Dağ — Tehlikeli
 
 Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartallar, vaşaklar, mağara ayıları. Pirit, kuvars ve gümüş madenleri (altın Mor Kristal Vadisi'ne geçti). **Kuzenler:** Cadı Firuze (turkuaz kazan), Silahçı Kaya ve Zırhçı Kayhan. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
@@ -1605,7 +1612,7 @@ Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığ�
 > **Ana görevler:** bu bölümdeki görevler (adanın kişilerinin görevleri) artık **ana görev** adını taşır; görev kartının başlığı "… · Ana görev" yazar. Ayrıca yolda karşına çıkan yan kişilerin **yan görevleri** vardır; kuralları "ACT 1 › Yan görevler" bölümünde. "Tek aktif görev" kuralı ana görevler içindir; yanında bir yan görev de sürebilir.
 
 1. **Tek aktif görev.** Aynı anda yalnızca bir görev yapılır. Görev alınınca bütün kişilerin başındaki **!** ve haritadaki parlamaları kalkar (dünyada da, küçük ve büyük haritada da).
-2. **Görev almak.** Görevi olan kişinin başında **siyah bir !** vardır ve hem dünyada hem haritada **belirgin şekilde parlar**. **Ana görevin tek işareti budur (6 Kasım 2026, Boğaç):** üstte "!" ve parlama; başka görev işareti ("?", mavi işaret, yeşil teslim işareti) yoktur. Görev alınınca "!" ve parlama kalkar (1. madde). Öğretici sürerken ünlem yoktur (Oyun akışı › Öğretici). Yan görevlerin işareti ayrıdır (ACT 1 › Yan görevler › Haritada yan görevler). Onunla konuştuğun anda "şunlara ihtiyacım var" der ve görev **doğrudan başlar** (Kabul et / Görev al düğmesi yok).
+2. **Görev almak.** Görevi olan kişinin başında **siyah bir !** vardır ve hem dünyada hem haritada **belirgin şekilde parlar**. **Ana görevin tek işareti budur (6 Kasım 2026, Boğaç):** üstte "!" ve parlama; başka görev işareti ("?", mavi işaret, yeşil teslim işareti) yoktur. Görev alınınca "!" ve parlama kalkar (1. madde). Öğretici sürerken ünlem yoktur (Oyun akışı › Öğretici). Yan görevlerin işareti ayrıdır (ACT 1 › Yan görevler › Haritada yan görevler). Onunla konuştuğun anda "şunlara ihtiyacım var" der ve görev **doğrudan başlar** (Kabul et / Görev al düğmesi yok). **Görev alınınca açılan Görevler penceresi** yalnızca görevleri gösterir; El yapımı ya da başka bir pencerenin bölmeleri (ör. Birleştir) içinde görünmez.
    - **"! olan kişiyle konuş" yazısı yalnızca ilk görevde:** üstteki kartta "Başında siyah ! olan kişiyle konuş: …" yazısı yalnızca **hiç görev bitirmemişken** (baltayı yaptıktan sonra ilk göreve giderken) çıkar. İlk görev bittikten sonra görevsizken kart bu yazıyı göstermez (yalnızca süren bir ders varsa onu gösterir, yoksa kart gizlenir); oyuncu parlayan kişiyi kendisi fark edip yanına gider. Kişilerin başındaki ! ve haritadaki parlama eskisi gibidir.
    - **Hikâyeli görev sahnesi:** bütün görevler (eski ve yeni) artık konuşma gibi değil, **gerçek bir sahneyle** verilir. Şeritler iner, karakterin kişinin yanına yürür ve göreve özel bir **sahne betiği** oynar: kişi bir şeyle uğraşırken bir sorun çıkar, bir anısı canlanır, bir şey kırılır… görev bu anın içinden doğar. Sahnenin adımları:
      - **Anlatım:** üstteki siyah şeridin içinde italik sinema yazısı (yeri, zamanı, havayı anlatır).
@@ -1628,7 +1635,7 @@ Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığ�
 5. **Açılma koşulu.** Her görevin en az bir açılma koşulu vardır (bir önceki görev, seviye, bir alet, bir yer…). Ayrıca bir görevin istediği **her malzeme oyunda en az bir kez bulunmuş** olmalıdır ("Yeni malzeme bulundu" denmiş ya da tarif kitabında açık). Bulunmamış malzeme isteyen görev açılmaz. **"X keşfedildi"** koşulu, o biyoma ilk kez adım atılınca sağlanır (her biyoma bir kişinin "Ulaş" görevi ya da ana yol götürür). **Tarif kuralı:** bir şeyin **yapılmasını ya da dövülmesini** isteyen görev, o şeyin **tarifi öğrenilmeden açılmaz** (görev tarifi kendisi kitaba yazıyorsa hariç). Örneğin Dursun'un "Keskin işler" (Taş kazma) görevi Taş kazma tarifi öğrenilince açılır.
    - **Tarif bilinmeden görev verilmez:** bir görev **tariften yapılan** bir eşya istiyorsa (getir, yap, dövdür ya da giy; yerden toplanan, kesilen, avlanan ya da tarlada yetişen değil) o eşyanın tarifini kazanda **öğrenmiş olmadan** görev açılmaz: kişinin başında ! çıkmaz, görev verilmez. Görevin kitaba tarif yazması yetmez. Birden fazla seçenekli görevde (ör. "Tunç balta, Tunç kazma ya da Tunç mızrak") birinin tarifini bilmek yeter. **Tuzakla av da sayılır:** "tuzakla av" isteyen görev (Nazlı N4 Kürk siparişi) **Tuzak tarifi kazanda öğrenilmeden** açılmaz; Nazlı'nın başında ! çıkmaz, görev verilmez (Kemal'in ayak işi seni tarife yönlendirir). Bu kurala giren görevler (Zümrüt Z3 Gelincik boyası, Dursun D2 Taş kazma, D3, D5, Durmuş M2/M3/M5, Sinan R4 (v3.39), Nazlı N5, Usta U4, Yakut K1/K4 ve kuzenlerin alet, zırh, merhem görevleri). ("zümrütün çadırında öğrenmeden ben neden atölye görevini alabiliyorum") kural bütün görev türlerine genişledi: **kur** (Atölye, Çit), **gece ateş başında** (Kamp ateşi), **balık tut** (Olta), **yatak koy** (yatak tariflerinden biri), **ev kur** (ev tariflerinden biri) görevleri de tarif öğrenilmeden (ya da eşya elde yoksa) verilmez; o zaman Kemal "X tarifini öğren" işini verir. **Eski kayıtlar:** kayıt açılınca aktif görevin gerektirdiği tarif öğrenilmemişse (ve görev henüz tamamlanmamışsa) görev geri bırakılır; veren kişi "Önce X tarifini öğren" der, Kemal tarif işini verir, tarif öğrenilince görev yeniden verilir.
    - **Kişi bir şey söylemez:** görevi tarif yüzünden bekleyen kişi "önce şu tarifi öğren" demez; görevsiz kalmamak için yol gösteren Kemal'dir (aşağıdaki ayak işi, 7. madde).
-   - **Görevsiz kalınmaz:** bütün görevler kilitliyse ve sıradaki görevin eksiği bir tarifse Kemal "**X tarifini öğren**" ayak işini verir (Zümrüt'ün kazanında öğrenince kendiliğinden biter, 15 sikke · 15 XP). Tarifin içindeki bir malzemeyi hiç görmediysen önce onu getirtir. Kemal'in "alet dövdür" ve "ışık yap" ayak işleri de tarif bilinmiyorsa önce tarifi öğretir.
+   - **Görevsiz kalınmaz:** bütün görevler kilitliyse ve sıradaki görevin eksiği bir tarifse Kemal "**X tarifini öğren**" ayak işini verir (Zümrüt'ün kazanında öğrenince kendiliğinden biter, 15 sikke · 15 XP). Tarifin içindeki bir malzemeyi hiç görmediysen önce onu getirtir. Kemal'in "alet dövdür" ve "ışık yap" ayak işleri de tarif bilinmiyorsa önce tarifi öğretir. **Hangi görevin tarifine yönlendirileceği** 6. maddedeki "!" sırasıyla seçilir: önce oyuncunun bulunduğu biyomdaki görev, sonra erken biyom, sonra kişinin görev sırası.
    - **Doğu geçidi de bu kurala girer:** Kemal'in "Doğu geçidini aç" (E3) görevi **Kaya patlatıcı** tarifi Zümrüt'ün kazanında öğrenilmeden verilmez (önceden görev tarifi yalnızca kitaba yazıyordu; Kaya patlatıcının içindeki çömlek kazanda görünmüyordu). Kemal'in ayak işi zinciri adım adım götürür: önce görülmemiş malzemeler (ör. Yarasa gübresi), sonra tarifin içindeki ve henüz hiçbir türü öğrenilmemiş parça (Kaya patlatıcı için **Nehir çömleği** → Islak nehir kili → Nehir kili getir), en sonda Kaya patlatıcı. Her "tarifini öğren" ayak işi o tarifi kitaba da yazar, kazanda görünsün diye. Bu sürümden önce tarifsiz alınmış E3 açılışta geri bırakılır (kuralı).
    - Bu kural gelmeden önce alınmış ve sürmekte olan görevler (ör. tarifi bilinmeden alınmış Gelincik boyası) olduğu gibi kalır; istenirse iptal edilebilir.
 6. **En çok 2 "!".** Haritada aynı anda en fazla **2 kişide** görev bekler. Bir görev daha açılırsa sıraya girer; bekleyen iki görevden biri tamamlanınca görünür. Sıra (6 Kasım 2026, Boğaç): **önce oyuncunun bulunduğu biyomdaki görevler**, sonra erken biyom, sonra kişinin görev sırası (ör. Orman'a varınca Usta Sinan'ın R2 "!"si görünür). (Kemal'in ayak işleri bu sayıya girmez.)
@@ -1677,7 +1684,7 @@ Bir görev oyuncunun henüz bilmediği bir mekaniği istiyorsa, görev **önce k
 ### Köprü, kaya yığını ve gemi
 
 - Bu üç iş **görev alınmadan yapılamaz**: Kemal'in "Bir köprüyü onar" ve "Doğu geçidini aç" görevleri, Barbaros'un "Yeni bir gemi" görevi.
-- Köprüye, kaya yığınına ya da gemi enkazına **E ya da sol tıkla** basınca bir **onay penceresi** açılır (hiçbir kişinin portresi yok): "20 odun harcanacak. Onarılsın mı?" gibi. Onaylayınca malzeme gider ve karakter duruma göre tepki verir (konuşma balonu): köprüde "Aa, sandığımdan kolaymış!", patlamada önce "Kulaklarımı tıkasam iyi olur…" sonra sarsıntı ve "Vay be!", gemide "İşte ACT 1'in sonu… ya da başlangıcı."
+- Köprüye, kaya yığınına ya da gemi enkazına **F ya da sol tıkla** basınca bir **onay penceresi** açılır (hiçbir kişinin portresi yok): "20 odun harcanacak. Onarılsın mı?" gibi. Onaylayınca malzeme gider ve karakter duruma göre tepki verir (konuşma balonu): köprüde "Aa, sandığımdan kolaymış!", patlamada önce "Kulaklarımı tıkasam iyi olur…" sonra sarsıntı ve "Vay be!", gemide "İşte ACT 1'in sonu… ya da başlangıcı."
 - **Görev alınmamışken** gerekli malzemeyle oraya gelen kişi **yalnızca bir kez** kendi kendine konuşur: "Buradan nasıl geçebilirim acaba? Kemal bilir belki." Onay penceresi açılmaz.
 - Köprü onarılınca Kemal'in **koşu dersi** başlar (eskiden olduğu gibi).
 - Ana köprü (Orman ↔ Bataklık) onarıldıktan sonra iki kısayol köprüsü (Çayır ↔ Kayalık Dağ) görevsiz, istenen an onay penceresiyle onarılır. Patlama bütün sıradağı çökertir.
@@ -1708,7 +1715,7 @@ Kumsalda seni bulan yaşlı denizci; sakin, kollayıcı, öğretici. Kemal'de ya
 | # | Görev | İstenen | Açılma | Açar | Ders | Ödül |
 |---|---|---|---|---|---|---|
 | E1 | Ateşlik çalı | Getir: 6 Dal, 2 Kuru ot | Öğretici bitti ya da geçildi | Dursun 1, Zümrüt 1 | – | 20 · 15 XP |
-| E2 | Bir köprüyü onar | Ana köprü (Orman ↔ Bataklık): 20 odun, onay penceresiyle | Orman keşfedildi · Seviye 6 (Ekin şartı kalktı) | Doğan 1 ve Bataklık'taki görevler | Köprü onarımı | 150 · 120 XP |
+| E2 | Bir köprüyü onar | Ana köprü (Orman ↔ Bataklık): 20 odun (her tür odun sayılır), onay penceresiyle | Orman keşfedildi · Seviye 6 (Ekin şartı kalktı) | Doğan 1 ve Bataklık'taki görevler | Köprü onarımı | 150 · 120 XP |
 | E3 | Doğu geçidini aç | 2 Kaya patlatıcı + 4. kademe ya da daha iyi kazma (Kuvars ya da Çelik); kaya yığınına E, onay | Kayalık Dağ keşfedildi · Seviye 10 · **Kaya patlatıcı tarifi kazanda öğrenilmiş** | Kül Diyarı'ndaki görevler | Kaya patlatıcı | 300 · 400 XP |
 | E4 | Eşinden kalan izler | Bul: 6 iz (önceden bulunanlar sayılır) | Kül Diyarı keşfedildi | E5, Gemi tarifi | – | 300 · 600 XP |
 | E5 | Kıyıdaki duman | Ulaş: Mor Kristal Vadisi'ne git (Kemal dumanı merak eder; kimseyi söylemez) | E4 | E6, Barbaros 1 | – | 200 · 300 XP |
@@ -1908,7 +1915,7 @@ Yirmi yıldır bataklıkta oğlunu bekleyen avcı.
 
 | # | Görev | İstenen | Açılma | Açar | Ders | Ödül |
 |---|---|---|---|---|---|---|
-| T1 | Çamur yürüyüşü | Yaptır ve giy: Kamış çizme (Zırhçı Veli döver; 6 Kamış, 1 Timsah derisi, 1 Demir halka, 3 İp) | E2 | T2 | Çamur ve çizme | 120 · 100 XP |
+| T1 | Çamur yürüyüşü | Yap ve giy: Kamış çizme (el yapımı; 6 Kamış, 3 İp, 2 Yosun; tarifini Doğan ilk konuşmada yazar) | E2 | T2 | Çamur ve çizme | 120 · 100 XP |
 | T2 | Ördek avı | Avla: 3 Ördek | T1 | T3 | – | 120 · 110 XP |
 | T3 | Kurbağa zehri | Avla: 3 Zehirli kurbağa | T2 | T4, Safir 3 | – | 160 · 180 XP |
 | T4 | Bataklık kurdu | Avla: 2 Bataklık kurdu | T3 | T5 | – | 200 · 260 XP |
@@ -2324,7 +2331,7 @@ Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biy
 | 24 | **Ressam Lale** · Ormanın renkleri | Orman · 16:00–20:30 | 3 Gelincik, 4 Yaban mersini götür → ormanın en güzel açıklığını bul → dön | 120 · 90 XP | şövalesi (hep) |
 | 25 | **Kayıkçı Remzi** · Sisteki kayıkçı | Bataklık · yalnızca gece (00:00–05:00) | Remzi'yi ışıkla Avcı Doğan'ın kulübesine götür (yolda kurtlar) | 520 · 700 XP | Remzi Doğan'ın ateşinin başında |
 | 26 | **Cemile** (çocuk) · Şarkı söyleyen kurbağalar | Bataklık · 18:30–23:00 | Vıraklamaları dinleyip dört kurbağayı bul (yakalamak yok) → dön | 260 · 210 XP | yanında iki kurbağa |
-| 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 08:00–14:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn, kurtlar) → dön | 340 · 270 XP | ilaç kazanı (hep) |
+| 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 08:00–14:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn; ilk dalga yalnızca Engerek, sonraki iki dalgada birer Bataklık kurdu) → dön | 340 · 270 XP | ilaç kazanı (hep) |
 | 28 | **Dağlı Zehra** · Uçurumdaki oğlak | Kayalık Dağ · 06:00–12:00 | Oğlak Boncuk'u 3 kez yakala → Zehra'ya götür | 520 · 700 XP | yanında Boncuk |
 | 29 | **Gözcü Bora** · Kartal yumurtası | Kayalık Dağ · 09:00–15:00 | Düşen yumurtayı bul → yuvanın dibindeki 2 kurdu kov, yumurtayı koy → dön | 680 · 900 XP | – |
 | 30 | **Keşiş Sükûn** · Dağın çanları | Kayalık Dağ · 04:30–09:30 | Rüzgârda çınlayan üç çanı bul → dön | 520 · 700 XP | yanında asılı rüzgâr çanı |
@@ -2994,7 +3001,7 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 
 **Yer:** Bataklık'ta, köprünün doğu ucundan yaklaşık 26 karo doğuda, kulübesinin yanında. **Tanışma:** köprüyü onarıp karşıya geçince.
 
-- İlk konuşmada **Kamış çizme** (6 Kamış + 3 İp + 2 Yosun; bataklık çamurunda yavaşlamayı önler) ve **Panzehir** (3 Bataklık otu + 1 Zehir bezesi + 2 Su) tariflerini yazar.
+- İlk konuşmada **Kamış çizme** (6 Kamış + 3 İp + 2 Yosun, el yapımı; bataklık çamurunda yavaşlamayı önler) ve **Panzehir** (3 Bataklık otu + 1 Zehir bezesi + 2 Su) tariflerini yazar.
 - Demir madeni, Kara ejder ve mor ışık hakkında bilgi verir; eşinin kaçırılışını gördüğünü anlatır.
 - Hikâyesi: oğlu Ayaz.
 
@@ -4299,7 +4306,7 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (kuze
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Deri çarık | 1 Deri parçası, 2 Sinir, 3 Yaprak | – | El yapımı (Tab) | 276 |
-| Kamış çizme | 6 Kamış, 1 Timsah derisi, 1 Demir cevheri, 3 Yaprak | – | El yapımı (Tab) | 29 |
+| Kamış çizme | 6 Kamış, 3 İp, 2 Yosun | – | El yapımı (Tab) | 149 |
 | Kemik miğfer | 4 Kemik, 2 Sinir, 1 Deri parçası, 2 Taş | – | El yapımı (Tab) | 228 |
 | Kemik zırh | 8 Kemik, 3 Sinir, 2 Deri parçası | – | El yapımı (Tab) | 480 |
 | Kristal ipek kumaş | 4 Kristal ipek, 2 Lif | – | El yapımı (Tab) | 476 |
@@ -4674,7 +4681,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 - Ihlamur yayı: 3 Ihlamur odunu, 2 Sinir kirişi, 1 Granit
 - Timsah miğfer: 2 Timsah derisi, 1 Demir halka, 2 Sinir
 - Timsah eldiven: 1 Timsah derisi, 1 Demir halka, 2 İp
-- Kamış çizme: 6 Kamış, 1 Timsah derisi, 1 Demir halka, 3 İp
+- Kamış çizme: 6 Kamış, 3 İp, 2 Yosun (el yapımı; setin örste dövülmeyen tek parçası)
 - Timsah dişi savaş çekici: 3 Timsah dişi, 2 Demir külçesi, 1 Bataklık servisi sapı, 1 Zehir yağı
 - Timsah dişi topuz: 2 Timsah dişi, 1 Demir külçesi, 1 Bataklık servisi sapı, 1 Zehir yağı
 - Timsah dişi mızrak: 2 Timsah dişi, 1 Uzun sopa, 3 İp, 1 Zehir yağı
@@ -5001,7 +5008,7 @@ Beş yuva vardır: **baş, gövde, el, ayak, silah**. Özellikler penceresinden 
 | Tunç çizme | Ayak | 7 | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | metal |
 | Meşe kabuk çizme | Ayak | 8 | Örs · Zırhçı Duran (Orman) ve üstü döver | direnç: kanama %10 |
 | Demir çizme | Ayak | 12 | Örs · Zırhçı Veli (Bataklık) ve üstü döver | çamur, metal |
-| Kamış çizme | Ayak | 13 | Örs · Zırhçı Veli (Bataklık) ve üstü döver | direnç: zehir %15, çamur |
+| Kamış çizme | Ayak | 13 | El yapımı (Tab) | direnç: zehir %15, çamur |
 | Çelik çizme | Ayak | 16 | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | çamur, metal |
 | Gümüş çizme | Ayak | 18 | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | direnç: kanama %15, metal |
 | Kara çelik çizme | Ayak | 21 | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | çamur, metal |
@@ -5467,7 +5474,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kalay cevheri | 12 | – | Kazmayla kazılır: Orman (ACT 1) | Kalay külçesi |
 | Kalay külçesi | 32 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Tunç külçesi |
 | Kamış | 13 | – | Yerden toplanır: Bataklık (ACT 1) | Kamış çizme, Kamış flüt, Kamış hasır, Kamış ok gövdesi |
-| Kamış çizme | 29 | giyilir +4 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kamış çizme | 149 | giyilir +13 savunma | Tarif: Avcı Doğan ilk konuşmada yazar (Zümrüt'ün kazanında da öğrenilir) → El yapımı (Tab) | – |
 | Kamış flüt | 6 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kamış hasır | 5 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kamış kulübe çatısı |
 | Kamış kulübe | 229 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur · Usta Sinan yapar (650 sikke) | – |

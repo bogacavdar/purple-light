@@ -716,7 +716,7 @@ Toplam **840 tarif**: ACT 1 malzemeleriyle 775, ACT 2 malzemesi isteyen 65 (kuze
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Deri çarık | 1 Deri parçası, 2 Sinir, 3 Yaprak | – | El yapımı (Tab) | 276 |
-| Kamış çizme | 6 Kamış, 1 Timsah derisi, 1 Demir cevheri, 3 Yaprak | – | El yapımı (Tab) | 29 |
+| Kamış çizme | 6 Kamış, 3 İp, 2 Yosun | – | El yapımı (Tab) | 149 |
 | Kemik miğfer | 4 Kemik, 2 Sinir, 1 Deri parçası, 2 Taş | – | El yapımı (Tab) | 228 |
 | Kemik zırh | 8 Kemik, 3 Sinir, 2 Deri parçası | – | El yapımı (Tab) | 480 |
 | Kristal ipek kumaş | 4 Kristal ipek, 2 Lif | – | El yapımı (Tab) | 476 |

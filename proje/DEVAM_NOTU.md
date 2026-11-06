@@ -1,3 +1,21 @@
+## v3.51 (7 Kasım 2026) · ACİL (Boğaç "ciddi"): Avcı Doğan tarifleri yazar, Kamış çizme el yapımı, köprüye her odun, Şifa dalgaları, küçük düzeltmeler
+
+- **BTK-01 (kritik):** `talkToygar` (ana kod) ilk konuşmada yalnızca kitaba (`bought`) yazıyordu; `needRec` öğrenilmiş tarif (`foundSet`) istediği için T1'in "!"i hiç çıkmıyor, Bataklık zinciri kilitleniyordu (v2.26'dan beri, Doğan'ın ilk konuşması böyleydi). Yeni `dogTeach()`: Kamış çizme ve Panzehir `found`/`foundSet`/`bought`'a. Eski kayıt: Doğan'la tanışmış ama tarifsizse bir sonraki konuşmada (kısa bildirim) ve yüklemede (`v345` `restore` sarması, `window.__plDogTeach`) öğrenilir. Kemal'in "tarifi öğren" ayak işi (`pickFiller`) artık "!" sırasıyla seçer (bulunduğun biyom önce).
+- **Kamış çizme:** `V` (zırh seti verisi) satırı: 6 Kamış + 3 İp + 2 Yosun, `hand:true` (el yapımı, Giyim; örste dövülmez), savunma 13. Fiyat: genel kod `max(malzeme×1,3, Demir çizme×1,15)` ile 1.241 çıkıyordu (Demir çizme tabanı); `v311price` bant kaydırması da ekleniyordu. Şimdi `v345` en sonda belgedeki formülle: (6×13 + 3×5 + 2×13) × 1,25 = **149** (İp üzerinden iki adımlık zincir). T1 metni ("Zırhçı Veli döver") ve Veli'nin "bana özel … Kamış çizme" sözü düzeltildi.
+- **Köprü:** `woodCount` her `X odunu` türünü sayar, `spendWood` en ucuzdan harcar (önce yalnızca Çam odunu).
+- **Hekim Şifa:** `guard` adımına `seq`: 1. dalga Engerek, 2. ve 3. dalga birer Bataklık kurdu; 4. dalga yok (`A.wn`).
+- **BTK-04:** `renderCraft` `nobench`'i Görevler (`qlog`) dalından önce koyar; Birleştir bölmesi görünmez.
+- **BTK-05:** yeni `window.__plDat(ad)` (ses uyumlu yönelme eki, kesmeyle; sayılar okunuşuna göre: 6'ya, 9'a, 10'a; Kemal/Celal… istisna): yan görev "X'e götür" ve Kemal'in "Seviye N'e ulaş" ayak işi.
+- **BTK-07:** yan görev bitince sikke Sınırsız sikke açıkken de eklenir.
+- **BTK-09 / OYN-36:** seviye puanı bildirimi tek ve kısa: "+N seviye puanı" (aynı anda birden çok seviye toplanır), Karakter düğmesindeki sayaç zaten var. Dünyada da seviye yazısı gün yazısı bitene kadar bekler (`v345`, `DS.t`).
+- **BTK-10:** köprü istemi zaten atanan tuşu gösteriyordu; yalnız belge.
+- **OYN-37:** `v56` `target` sarması: hedef yerdeki bir toplanabilirse ve aynı yerde bir kişinin konuşma halkasındaysan kişi seçilir (`PEOPLE_K`, "Konuş" etiketli yan kişiler).
+- **OYN-38:** ev içinde `#atkbtn` (Vur) gizli, telefondaki sol menü (`__v50`) girişte kapanır.
+- **Deneme** (yeni oyun, hile modu; 20 Meşe odunu): E2 alındı, köprü "F Kırık köprüyü onar · 20 odun" ile onarıldı (Meşe 20 → 0), Doğan'la ilk konuşma: tarifler öğrenildi, "!" Doğan'da (`vis ["T1","Z2"]`), T1 alındı, Kamış çizme elle yapıldı (fiyat 149, savunma 13), giyilince T1 bitti (+120 sikke). Eski kayıt: Doğan'la tanışmış, tarifsiz → yüklemede ikisi de öğrenildi.
+- **Ölçüm** (`olcum.js` CPU×4, gl; 3.50 → 3.51; `target` sarması kare başına bir kez fazladan çağrılabilir): BOOT 17.429 → 17.774 ms; kumsal avg 179,7 → 175,5; yürürken 161,8 → 147,4; PLAY 10 sn js 3.856 → 3.969 ms (gürültü içinde).
+- **Geri almak için:** `talkToygar`/`dogTeach`, `v345` `restore` sarması ve Kamış çizme fiyat satırı, `pickFiller` sırası, `V` Kamış çizme satırı + T1 ve Veli metinleri, `woodCount`/`spendWood`, Şifa `seq`/`A.wn`, `renderCraft` `nobench`, `__plDat` ve iki kullanımı, yan görev `coins+=`, `v340sp` bildirimi (`SPN`), `v345` gün/seviye sırası, `v56` `PEOPLE_K`, ev içi Vur/menü. Kayıt alanı ve MAPV değişmedi.
+- Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
+
 ## v3.50 (6 Kasım 2026) · duyurular sırayla, oda alet çubuğunun üstünde, ev listesinde işçilik, hile modu oturumluk, arena yazısı
 
 - **EV-09 (20_sistemler: bekleyen duyurular sırayla):** `v345` engel kalkınca önce gün yazısı (`dayBannerShow`), 3,7 sn sonra seviye yazısı (`lvlUntil` ileri alınır), keşif/bölge duyuruları `annNext`'in `lvlUntil` beklemesiyle ardından; başarım kartı (`v339ach` `show`) `lvlUntil`, `annCur`, `annQ` boşalana kadar bekler. Denendi (Döşe'de +300 XP + bölge duyurusu + başarım, "Bitti"): gün 0–3,2 sn, seviye 4,0–6,4 sn, bölge 7,2–8,8 sn; üst üste binme yok.
@@ -197,9 +215,4 @@
 - `v332cur` (CSS): piksel imleçler (pointer:fine). `v332disc` (CSS): #discover geniş parıltısı kaldırıldı, plmodal'da yalnızca opaklık animasyonu. Siyah dikdörtgen deneme ortamında (yazılım çizimi) oluşmadı; ekran kartı katmanı olarak düşünüldü, Boğaç'ın denemesi bekleniyor.
 - v69c: `b5scn` kaldırıldı; sahneler `localStorage hammadde.love` (ana menüde "love"); `window.__plScn`. `v332scn`: Kitap › Anılar'da küçük resimli "Bütün sahneler" (anılar `memScene`'den).
 - Doğum günü anısı: masa/pasta küçüldü ve aranıza alındı, sevdiğin kişi masanın sağında.
-- Kontrol: chk.js 0 hata.
-
-## v3.31 (5 Kasım 2026) · saldırılar gece ve sabit günlerde
-- `v330ys`: günler `seqFrom` (6'dan başlar, aralar 5,7,4,9,6,3,8 tekrar), `free()` 1–3 ve 5/15/20. günleri atlar. 20:00'de başlar; ev/mağara/deniz/güvenli yer → `free(day+1)`; kaçırılırsa (uyku, geç yükleme) sıradaki olaysız gün. Kayıt `v330ys.f=2` (eski kayıtlar `seqFrom(day)`). Saldırıda bölge merkezi ve her Yıldızsız `lightSources`'a eklenir.
-- Biyom sınırı bloğu (`a.hb`): `a.ysA` muaf.
 - Kontrol: chk.js 0 hata.

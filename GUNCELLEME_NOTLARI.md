@@ -8,6 +8,30 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.51 · 7 Kasım 2026
+
+### Düzeltmeler
+
+- **Bataklık görevleri açılmıyordu:** Avcı Doğan ilk konuşmada Kamış çizme ve Panzehir tariflerini artık gerçekten öğretiyor; "Çamur yürüyüşü" görevi açılıyor ve Bataklık'taki görev zinciri sürüyor. Doğan'la daha önce tanışmış oyuncular da tarifleri kayıt yüklenince ya da Doğan'la bir sonraki konuşmada alır.
+- **Köprüye her odun:** kırık köprüler için her tür odun sayılır (Çam, Meşe, Kayın, Ladin…).
+- Görevler penceresinde artık eski birleştirme yuvaları görünmüyor.
+- Adlara gelen ekler doğru: "Hekim Şifa'ya götür", "Seviye 6'ya ulaş".
+- Sınırsız sikke açıkken de yan görevlerin sikkesi kesene eklenir.
+
+### Oynanış
+
+- **Kamış çizme elle yapılır:** 6 Kamış, 3 İp, 2 Yosun; savunma 13, değeri 149 sikke.
+- Hekim Şifa'nın kazanını beklerken önce bir Engerek, sonra iki kez birer Bataklık kurdu gelir.
+- Bir kişinin hemen yanındayken F önce o kişiyle konuşur, yerdeki bir şeyi toplamaz.
+
+### Arayüz
+
+- Seviye atlayınca kısa bir "+N seviye puanı" yazısı çıkar; birden çok seviye atlarsan tek yazıda toplanır.
+- Gün başı yazısı ile seviye yazısı artık dünyada da üst üste binmez, sırayla gelir.
+- Telefonda ev içinde Vur düğmesi gizlenir, sol menü kapalı açılır.
+
+---
+
 ## Versiyon 3.50 · 6 Kasım 2026
 
 ### Arayüz
@@ -393,18 +417,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Oyun kolu (sağ çubuk, ilk seçim, hile kodu), Zümrüt'ün ders kilidi, gösterme kuralı, ekrana gelen yazılar, fare imleci, doğum günü anısı ve sahnelerin yeni yeri güncellendi.
-
----
-
-## Versiyon 3.31 · 5 Kasım 2026
-
-### Oynanış
-- **Mor ışık saldırıları artık gece:** Yıldızsızlar gecenin başladığı an (20:00) gelir. Günleri belli: 6, 11, 18, 22, 31, 37, 40, 48, 53, 60… (aralar 3 ila 9 gün). Köpeğin geldiği gün gibi özel olaylı günlere denk gelmez.
-- O an evdeysen, mağaradaysan, denizdeysen ya da kamp ateşi gibi güvenli bir yerin yanındaysan saldırı bir sonraki olaysız güne kayar. Uyuyarak geçen gece de öyle.
-- Mor bölge geceyi aydınlatır: içinde meşale gerekmez, mor ışık seni orada bayıltmaz. Yıldızsızlar da kendi ışıklarıyla parlar.
-
-### Düzeltmeler
-- Yıldızsızlar bir biyomun sınırına gelince birden kovalamayı bırakıp gidiyordu; artık sınırı geçip peşinden gelirler.
-
-### Tasarım belgesi
-- Mor ışık saldırıları bölümü güncellendi (gece, sabit günler, erteleme, aydınlık bölge, kovalama).
