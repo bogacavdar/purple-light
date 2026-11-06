@@ -230,6 +230,8 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 ### Seviye, XP ve yetenekler
 
+- **Biyom XP çarpanları:** canlı XP'si biyomuna göre çarpılır: Çayır ve Orman ×1, **Bataklık ×1,5**, Kayalık Dağ ×2, Kül Diyarı ×1,5, Mor Kristal Vadisi ×1,5. Biyom tablolarındaki XP sütunu çarpan uygulanmış değerdir. Bataklık kurdunun temel XP'si 76'dır (sabit; çarpanla 114).
+
 - En üst seviye **60** (v3.41; eskiden 50). Gereken XP 16. seviyeye kadar her seviye %35 artar (1→2: 40, 5: 133, 10: 596, 16: 3.606), sonra yavaş artar (25: 5.553, 49: 10.746, 59: 12.909). Seviye atlayınca özellikler değil **seviye puanı** gelir (yukarıda "Seviye puanları").
 
 | Kaynak | XP |
@@ -353,7 +355,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 ### Zırh ve durum etkileri
 
 - Beş yuva: baş, gövde, eller, ayaklar, silah. Giyilen eşyaların toplamı **savunma**dır; Keşif defterinin Giyim ve Zırh ustalıkları +5'er savunma verir.
-- **Zırh** karakterin temel özelliğidir: **seviye − 1** (Sv 1'de 0, Sv 50'de 49) + Dayanıklılık ağacındaki Zırh I–IV yetenekleri (+5 / toplam +12 / +20 / +30). Eşyaya bağlı değildir, hiç çıkmaz.
+- **Zırh** karakterin temel özelliğidir: **5 + 2,5 × Zırh puanı** (seviye puanlarıyla artar; Sistemler › Gelişim) + Dayanıklılık ağacındaki Zırh I–IV yetenekleri (+5 / toplam +12 / +20 / +30). Eşyaya bağlı değildir, hiç çıkmaz.
 - Alınan **fiziksel hasar × 25 / (25 + savunma + zırh)**. Zehir, yanık ve kanama da bu oranın yarısı kadar yumuşar. Karakter ekranında "Zırh", "Savunma" ve toplam hasar azalması ayrı ayrı yazar. (Kemal'in "Savunmanı 60'a çıkar" görevi yalnızca eşya savunmasını sayar.)
 - **Çamur:** Bataklık çamurunda yavaşlarsın (×0,6); Kamış çizme, Demir çizme, Çelik çizme, Kara çelik çizme, Mor kristal çizme, Hurda çizme ve Meka çizme bunu önler.
 - **Durum etkileri** canavarlardan, alev/zehir gölünden ve zehirli yemekten gelir: **zehir**, **kanama**, **yanık** belirli süre saniyede can yakar; zırh bunu da yarı oranda yumuşatır. Dirençler: Demir zırh (kanama %30), Çelik zırh (kanama %35), Kara çelik zırh (yanık %40, kanama %30), Mor kristal zırh (kanama, yanık, zehir %30), Ejder zırhı (yanık %60), Mantar lifi eldiven (zehir %40), Kristal miğfer (kanama %30), Ejder pulu eldiven (yanık %40), Meka çizme (kanama %20), Meka zırh (üçü de %50); kuzenlerin zırhları: Meşe kabuk zırh (kanama %15), Timsah pulu zırh (kanama %40), Gümüş pullu zırh (kanama %35), Ejder zırhı (yanık %60), Kristal ipek zırh (üçü de %25), Işık pulu eldiven (zehir %35). Dayanıklılık ağacındaki Zehre/Ateşe/Kanamaya dayanıklı yetenekleri ilgili hasarı ayrıca %40 azaltır (çarpılarak birleşir); Çelik beden üçünün süresini yarıya indirir; Son nefes canın dörtte birinin altındayken fiziksel hasarı %25 azaltır.
@@ -573,7 +575,7 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda k
 - **Vuruş ne zaman değer:** vuruşun çizildiği yer (karakterin göğsü) ile canlının **gövdesi** arasındaki uzaklık, silahın menzili + canlının boyu + 3 pikseli geçmiyorsa ve canlı vuruş yönünün en çok ~95° yanındaysa (çaprazlar dahil, geniş bir koni) vuruş değer ve hasar verir. Vuruş efekti canlının görseline değdiği an hasar sayılır; çok yakındaki (gövdesine yapışık) canlı yönden bağımsız vurulur. Yumruk ve tek elli silahlar ilk değdiği canlıya vurur.
 - **Canlının her yeri sayılır:** uzaklık canlının gövde noktasına değil, **çiziminin kapladığı kutuya** (kıskaçlar, kuyruk, boynuz, kanat dahil; gölge ve can çubuğu hariç; her tür ilk vuruşta bir kez ölçülür, yöne göre aynalanır, büyük Reislerde boyla çarpılır) ölçülür: göğüsten kutunun en yakın noktasına uzaklık silahın menzili + 3 pikseli geçmiyorsa ve o nokta vuruş yönünün en çok ~95° yanındaysa vuruş değer. Böylece kerevitin kıskacına, geyiğin boynuzuna değen vuruş da hasar verir. **Bütün canlılarda** (iki adada da, Reisler dahil) geçerlidir; çizimi ölçülemeyen bir canlı olursa yukarıdaki eski kural kullanılır.
 
-- Gerçek hasar = silah × (1 + 0,03 × (seviye − 1)) × Güç etkisi 1,2 × Güçsüzlük 0,8. Silah yuvasındaki silah, elde silah yokken kullanılır. **Eldeki silah doğrudan kullanılır, "sırt" yoktur:** alet kemerinden bir silahı eline aldığında vuruşlar o silahla yapılır; silah kemerde ve çantada yerinde kalır, hiçbir yuvaya taşınmaz. Kemerde tekerlekle ya da 1–5 tuşlarıyla gezinmek yalnızca eldekini değiştirir, kemerdeki eşyaları yerinden oynatmaz. Kemerdeki bir yuvanın eşyasını değiştirmek için yuvaya sağ tıklanır ya da basılı tutulur.
+- Gerçek hasar = silah × Güç özelliği (1 + 0,08 × Güç puanı) × Güçlü kol yeteneği × Güç etkisi 1,2 × Güçsüzlük 0,8. **Seviye hasarı doğrudan artırmaz**; artış seviye puanlarından ve yeteneklerden gelir. Silah yuvasındaki silah, elde silah yokken kullanılır. **Eldeki silah doğrudan kullanılır, "sırt" yoktur:** alet kemerinden bir silahı eline aldığında vuruşlar o silahla yapılır; silah kemerde ve çantada yerinde kalır, hiçbir yuvaya taşınmaz. Kemerde tekerlekle ya da 1–5 tuşlarıyla gezinmek yalnızca eldekini değiştirir, kemerdeki eşyaları yerinden oynatmaz. Kemerdeki bir yuvanın eşyasını değiştirmek için yuvaya sağ tıklanır ya da basılı tutulur.
 - Vuruş üç evrelidir (hazırlık, darbe, takip); isabette kısa bir donma olur, ıskalarsan bir an açık kalırsın. Her isabet silahı 1 köreltir.
 - Reisler ve iri türler (Timsah, Yaban öküzü, Kara ejder, Mağara ayısı, golemler, ejderler, robotlar, muhafızlar) vuruşla geri itilmez.
 
@@ -656,7 +658,7 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 |---|---|---|---|---|---|---|
 | Takla vuruşu | 3 | Çayır (Atılma gerekli) | 150 | 40 | Kurt | Saldırırken takla at, 3 kez kurtul → takla vuruşuyla 4 isabet |
 | Çift vuruş | 6 | Orman | 300 | 60 | Yaban domuzu | Çift vuruşla 7 isabet (ders domuzu hiç ölmez, "bitir" adımı kalktı) |
-| Ritimli 2. vuruş | 10 | Bataklık | 600 | 100 | Bataklık kurdu | Ritimli 2. vuruşla 5 isabet |
+| Ritimli 2. vuruş | 12 | Bataklık | 600 | 100 | Bataklık kurdu | Ritimli 2. vuruşla 5 isabet |
 | Ritimli 3. vuruş | 15 | Kayalık Dağ | 1.000 | 160 | Muflon | Sırayla: 3 savuşturma → ritimli 3. vuruşla 3 isabet |
 | Güçlü vuruş | 17 | Kayalık Dağ | 1.200 | 180 | Yaban öküzü | Savuşturarak 3 canavarı sersemlet → sersem canavara 3 güçlü vuruş |
 | Bitirici | 21 | Kül Diyarı (Atılma gerekli) | 2.000 | 300 | Kül kurdu | Takla ile 3 kaçış → bitiriciyle 3 isabet |

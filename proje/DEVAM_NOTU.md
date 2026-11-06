@@ -1,3 +1,16 @@
+## v3.52 (7 Kasım 2026) · denge paketi: Bataklık kuşakları, kurt sürüsü kademesi, E2 Sv 12, Orman/Bataklık/Vaşak değerleri, Bataklık XP ×1,5, yan görev ödülleri
+
+- **Bataklık kuşakları** (belge `30_act1.md` Bataklık): `v345`'te yeni `window.__plSpawnOK(k,x,y)`; `spawnIn` ve `b4Spawn` yer arama döngüleri `nearCamp`'ten sonra çağırır. Uzaklık ana köprünün ortasından (`bridge.x0..x1`, `bridge.cy`) karo: Kıyı ≤ 85, Orta 86–150, Derin > 150. Kıyı: Zehirli kurbağa Sv 12+, Bataklık kurdu ve Timsah yok; Orta: kurt Sv 20+, Timsah Sv 22+; Derin: şart yok. Yalnızca `ISLE===1` ve Bataklık karosu (`bioAt===2`); yan görev canavarları (`spawnMob`) bu yoldan geçmez. Kural sürü üyelerine de uygulanır (`spawnIn` ve `b4Spawn` üye döngüsü): kuşağa uymayan üye doğmaz, sürü küçülür. Oyunda 25 tur doğma: Kıyı Sv 12 ve Orta Sv 12'de kurt/timsah 0; Orta Sv 20 kurt 50 (sürü ≤ 2), Sv 22 kurt 60 (≤ 3), Timsah 25; kuşak dışına taşan üye 0.
+- **Kurt sürüsü boyu:** `spawnIn` `lo/hi`: Bataklık kurdu en az 1, en çok Sv ≤ 21: 2, Sv 22–24: 3, Sv 25+: `PACK`'in üst sınırı.
+- **E2** `r: lv 12` (6'dan); Börü dersi `c2` (Ritimli 2. vuruş) `lv:12` (10'dan). Eski kayıtta açık ya da bitmiş E2'ye dokunulmaz (koşul yalnızca açılmada okunur).
+- **Oklu kirpi:** `BANIM[1]` ve `b4Spawn` Orman satırı Sv 10+; `__plSpawnOK`: Sv 10–13 köprüye ≤ 100 karo, Sv 14+ bütün Orman.
+- **v128 `SET`:** Engerek 120·20 (XP 26), Oklu kirpi 330·30 (XP 61), Bataklık kurdu 450·52, Vaşak 1.050·112. Bataklık kurdu temel XP 76 sabit (`MUL1` bloğunda `ANIM[...].xp=76`, √ ölçeklemeden sonra), `MUL1[2]=1.5` → oyunda 114. Vaşak XP koddan **252** (√ ölçekleme + çarpan); belge 252'ye uyduruluyor (Yönetici kararı, kod değişmedi).
+- **Yan görev ödülleri** (`36_yan_gorevler.md`): Ela (mina), Lale, Mor Kristal'in 6 görevi (melodi, selim, yaren, riza, asena, fener) belgeden. 42 görev belgeyle otomatik karşılaştırıldı: 0 fark.
+- **Karşılaştırma:** 30_act1.md'deki 43 ACT 1 canlı satırı (huy, can, hasar, hız, XP) oyundan okunup karşılaştırıldı: tek fark Vaşak XP 252 / 250 (belge 252 olacak). Kamış çizme oyunda 6 Kamış, 3 İp, 2 Yosun, 149 sikke.
+- **Denge modeli** (`/tmp/denge/` oyun değerleriyle): Orman Sv 19 Oklu kirpi vuruş 9 · ısırık 39; Bataklık Sv 20 Zehirli kurbağa 9 · 30 (oran vuruş ×1,00, ısırık ×1,30, raporun öneri sonrası değeri). Bataklık kurdu Sv 20 12·21, Sv 22 9·30, Sv 25 7·36; Timsah Sv 22 20·20; Vaşak Sv 26 17·17.
+- **Ölçüm** (`olcum.js` CPU×4, gl; 3.51 → 3.52; makine bu turda yavaş, iki sürüm de aynı oranda): BOOT 26.367 → 28.851 ms (js 13.981 → 14.386); kumsal avg 265,8 → 377,0; yürürken 341,5 → 351,4; PLAY 10 sn js 3.584 → 3.507 ms (gürültü içinde; doğma koşulu yalnızca yer aramada çağrılıyor).
+- **Geri almak için:** `git revert` (v3.52 commit'i) ya da `git checkout v3.51-commit -- proje/Hammadde_prototip.html index.html proje/tools/belge/parts`. Kayıt alanı ve MAPV değişmedi.
+
 ## v3.51 (7 Kasım 2026) · ACİL (Boğaç "ciddi"): Avcı Doğan tarifleri yazar, Kamış çizme el yapımı, köprüye her odun, Şifa dalgaları, küçük düzeltmeler
 
 - **BTK-01 (kritik):** `talkToygar` (ana kod) ilk konuşmada yalnızca kitaba (`bought`) yazıyordu; `needRec` öğrenilmiş tarif (`foundSet`) istediği için T1'in "!"i hiç çıkmıyor, Bataklık zinciri kilitleniyordu (v2.26'dan beri, Doğan'ın ilk konuşması böyleydi). Yeni `dogTeach()`: Kamış çizme ve Panzehir `found`/`foundSet`/`bought`'a. Eski kayıt: Doğan'la tanışmış ama tarifsizse bir sonraki konuşmada (kısa bildirim) ve yüklemede (`v345` `restore` sarması, `window.__plDogTeach`) öğrenilir. Kemal'in "tarifi öğren" ayak işi (`pickFiller`) artık "!" sırasıyla seçer (bulunduğun biyom önce).
@@ -208,11 +221,3 @@
 ## v3.33 (5 Kasım 2026) · üç toplu satış düğmesi
 - `v317spare` yeniden yazıldı: `needOf(n,ok)` öğrenilmemiş tariflerin istediği adetleri toplar; `sellsafe` = kazanda şimdi açık (`!found && (hard||isOpen)`), yeni `sellall3` = bütün öğrenilmemişler. Hariç: `bulkSellable`. Deneme: 305 Taş → bütün tariflere yeten 195 Taş kaldı.
 - "Yeni tarif öğrendin" yazısının arkasındaki siyah dikdörtgen (yalnızca Chrome masaüstü uygulamasında) bulunamadı; v3.32'deki parıltı kaldırma bir denemedir.
-
-## v3.32 (5 Kasım 2026) · kol nişanı, ders kilidi, sahneler, siyah dikdörtgen
-- `v320pad`: sağ çubuk (`RS`) nişan; `aimAt` RS'de yalnızca o yöndeki canlıyı seçer (`pick` maxDf); `C.mx/C.my` RS/sol çubuğa göre; `drawPlayer` RS yönüne bakar (klonda `__plKlonDraw` ile atlanır). Ana menüde hile kodu girilirken (`blockK`) odak ve A/B susar. `firstFocus`: yeni pencere/sekme ilk kullanılabilir öğede.
-- `v332lock`: tz 4/7 kazan, tz 5/8 el yapımı yalnızca ders tarifi. `v332glow` (CSS): #craft içinde `.p189` ölçeklenmez.
-- `v332cur` (CSS): piksel imleçler (pointer:fine). `v332disc` (CSS): #discover geniş parıltısı kaldırıldı, plmodal'da yalnızca opaklık animasyonu. Siyah dikdörtgen deneme ortamında (yazılım çizimi) oluşmadı; ekran kartı katmanı olarak düşünüldü, Boğaç'ın denemesi bekleniyor.
-- v69c: `b5scn` kaldırıldı; sahneler `localStorage hammadde.love` (ana menüde "love"); `window.__plScn`. `v332scn`: Kitap › Anılar'da küçük resimli "Bütün sahneler" (anılar `memScene`'den).
-- Doğum günü anısı: masa/pasta küçüldü ve aranıza alındı, sevdiğin kişi masanın sağında.
-- Kontrol: chk.js 0 hata.

@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.52 · 7 Kasım 2026
+
+### Denge
+
+- **Bataklık artık derinleştikçe zorlaşıyor:** köprüye yakın kıyıda yalnızca sakin hayvanlar ve (Seviye 12'den sonra) Zehirli kurbağa var. Biraz içeride Bataklık kurdu Seviye 20'den, Timsah Seviye 22'den sonra çıkar; en derinde ise her şey seni bekler.
+- **Kurt sürüleri seviyenle büyür:** Bataklık kurtları önce en çok ikili gezer, Seviye 22'den sonra üçlü, Seviye 25'ten sonra tam sürü.
+- **Bataklık köprüsü görevi Seviye 12'de açılır,** Börü'nün "Ritimli 2. vuruş" dersi de Seviye 12'de. Görevi zaten almış ya da bitirmiş olanlar etkilenmez.
+- **Orman'ın sonu daha zorlu:** Engerek (can 120, vuruş 20, 26 XP) ve Oklu kirpi (can 330, vuruş 30, 61 XP) güçlendi. Oklu kirpi Seviye 10'dan sonra önce köprüye yakın yerlerde, Seviye 14'ten sonra bütün Orman'da çıkar.
+- **Bataklık kurdu** biraz zayıfladı (can 450, vuruş 52, 114 XP). Bataklık'taki bütün canlılar 1,5 kat XP verir.
+- **Vaşak** daha çetin: can 1.050, vuruş 112.
+- **Yan görev ödülleri:** Lale, Ela ve Mor Kristal'in altı görevinin ödülleri yeniden ayarlandı.
+
 ## Versiyon 3.51 · 7 Kasım 2026
 
 ### Düzeltmeler
@@ -395,25 +407,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Ekonomi bölümüne üç toplu satış düğmesinin kuralı yazıldı.
 
 ---
-
-## Versiyon 3.32 · 5 Kasım 2026
-
-### Düzeltmeler
-- Bir tarif öğrenince ekranın altında çıkan "Yeni tarif öğrendin" yazısının arkasında siyah bir dikdörtgen yanıp sönüyordu. Yazının çevresindeki geniş parıltı kaldırıldı; pencere açıkken yazı yalnızca belirip kaybolur.
-- Kolla ana menüde hile kodunu girerken seçim Çıkış'a kayıp oyunu kapatıyordu; kod girilirken menü artık yerinden oynamaz.
-- Zümrüt'ün meşale ve keskin taş derslerinde başka tarife geçilebiliyor, meşalenin parıltısı kayboluyordu. Ders sürerken yalnızca ders tarifi seçilir ve yapılır.
-- Kazan gibi pencerelerin içinde parlayan şeyler artık büyüyüp küçülmez; kaydırma çubukları gelip gitmiyor.
-
-### Oynanış
-- **Oyun kolu:** sağ çubuk nişan alır. Sol çubukla yürürken sağ çubuğu çevirdiğin yöne döner ve vurursun; oklar ve atışlar da o yöne gider.
-- **Oyun kolu:** bir pencere açılınca seçim ilk kullanılabilir şeyde başlar: kazanda ilk tarif, yemekte ilk yiyecek.
-
-### Görsel
-- "Sınıfta bir doğum günü" anısında pasta artık sevdiğin kişiyi kapatmıyor; ikiniz de tam görünüyorsunuz.
-- Bilgisayarda fare imleci oyunun piksel tarzında: krem bir ok, basılabilen şeylerin üstünde mor ok, oynarken mor bir nişangâh.
-
-### Arayüz
-- Hile modundaki "Bütün ara sahneler açık" anahtarı kaldırıldı.
-
-### Tasarım belgesi
-- Oyun kolu (sağ çubuk, ilk seçim, hile kodu), Zümrüt'ün ders kilidi, gösterme kuralı, ekrana gelen yazılar, fare imleci, doğum günü anısı ve sahnelerin yeni yeri güncellendi.

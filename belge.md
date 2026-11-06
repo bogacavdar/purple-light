@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.51** ile birebir (7 Kasım 2026). Bu sürümde: Avcı Doğan Kamış çizme ve Panzehir tariflerini yazar (Bataklık zinciri açılır), Kamış çizme el yapımı (6 Kamış, 3 İp, 2 Yosun), köprüye her tür odun. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.52** ile birebir (7 Kasım 2026). Bu sürümde: denge paketi: Bataklık üç kuşak (Kıyı/Orta/Derin, köprüye uzaklıkla doğma şartları), kurt sürüsü seviyeyle büyür, Bataklık köprüsü (E2) Sv 12, Engerek, Oklu kirpi, Bataklık kurdu ve Vaşak yeniden ayarlandı, Bataklık XP ×1,5, Lale, Ela ve Mor Kristal yan görev ödülleri. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -575,6 +575,8 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 ### Seviye, XP ve yetenekler
 
+- **Biyom XP çarpanları:** canlı XP'si biyomuna göre çarpılır: Çayır ve Orman ×1, **Bataklık ×1,5**, Kayalık Dağ ×2, Kül Diyarı ×1,5, Mor Kristal Vadisi ×1,5. Biyom tablolarındaki XP sütunu çarpan uygulanmış değerdir. Bataklık kurdunun temel XP'si 76'dır (sabit; çarpanla 114).
+
 - En üst seviye **60** (v3.41; eskiden 50). Gereken XP 16. seviyeye kadar her seviye %35 artar (1→2: 40, 5: 133, 10: 596, 16: 3.606), sonra yavaş artar (25: 5.553, 49: 10.746, 59: 12.909). Seviye atlayınca özellikler değil **seviye puanı** gelir (yukarıda "Seviye puanları").
 
 | Kaynak | XP |
@@ -698,7 +700,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 ### Zırh ve durum etkileri
 
 - Beş yuva: baş, gövde, eller, ayaklar, silah. Giyilen eşyaların toplamı **savunma**dır; Keşif defterinin Giyim ve Zırh ustalıkları +5'er savunma verir.
-- **Zırh** karakterin temel özelliğidir: **seviye − 1** (Sv 1'de 0, Sv 50'de 49) + Dayanıklılık ağacındaki Zırh I–IV yetenekleri (+5 / toplam +12 / +20 / +30). Eşyaya bağlı değildir, hiç çıkmaz.
+- **Zırh** karakterin temel özelliğidir: **5 + 2,5 × Zırh puanı** (seviye puanlarıyla artar; Sistemler › Gelişim) + Dayanıklılık ağacındaki Zırh I–IV yetenekleri (+5 / toplam +12 / +20 / +30). Eşyaya bağlı değildir, hiç çıkmaz.
 - Alınan **fiziksel hasar × 25 / (25 + savunma + zırh)**. Zehir, yanık ve kanama da bu oranın yarısı kadar yumuşar. Karakter ekranında "Zırh", "Savunma" ve toplam hasar azalması ayrı ayrı yazar. (Kemal'in "Savunmanı 60'a çıkar" görevi yalnızca eşya savunmasını sayar.)
 - **Çamur:** Bataklık çamurunda yavaşlarsın (×0,6); Kamış çizme, Demir çizme, Çelik çizme, Kara çelik çizme, Mor kristal çizme, Hurda çizme ve Meka çizme bunu önler.
 - **Durum etkileri** canavarlardan, alev/zehir gölünden ve zehirli yemekten gelir: **zehir**, **kanama**, **yanık** belirli süre saniyede can yakar; zırh bunu da yarı oranda yumuşatır. Dirençler: Demir zırh (kanama %30), Çelik zırh (kanama %35), Kara çelik zırh (yanık %40, kanama %30), Mor kristal zırh (kanama, yanık, zehir %30), Ejder zırhı (yanık %60), Mantar lifi eldiven (zehir %40), Kristal miğfer (kanama %30), Ejder pulu eldiven (yanık %40), Meka çizme (kanama %20), Meka zırh (üçü de %50); kuzenlerin zırhları: Meşe kabuk zırh (kanama %15), Timsah pulu zırh (kanama %40), Gümüş pullu zırh (kanama %35), Ejder zırhı (yanık %60), Kristal ipek zırh (üçü de %25), Işık pulu eldiven (zehir %35). Dayanıklılık ağacındaki Zehre/Ateşe/Kanamaya dayanıklı yetenekleri ilgili hasarı ayrıca %40 azaltır (çarpılarak birleşir); Çelik beden üçünün süresini yarıya indirir; Son nefes canın dörtte birinin altındayken fiziksel hasarı %25 azaltır.
@@ -918,7 +920,7 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda k
 - **Vuruş ne zaman değer:** vuruşun çizildiği yer (karakterin göğsü) ile canlının **gövdesi** arasındaki uzaklık, silahın menzili + canlının boyu + 3 pikseli geçmiyorsa ve canlı vuruş yönünün en çok ~95° yanındaysa (çaprazlar dahil, geniş bir koni) vuruş değer ve hasar verir. Vuruş efekti canlının görseline değdiği an hasar sayılır; çok yakındaki (gövdesine yapışık) canlı yönden bağımsız vurulur. Yumruk ve tek elli silahlar ilk değdiği canlıya vurur.
 - **Canlının her yeri sayılır:** uzaklık canlının gövde noktasına değil, **çiziminin kapladığı kutuya** (kıskaçlar, kuyruk, boynuz, kanat dahil; gölge ve can çubuğu hariç; her tür ilk vuruşta bir kez ölçülür, yöne göre aynalanır, büyük Reislerde boyla çarpılır) ölçülür: göğüsten kutunun en yakın noktasına uzaklık silahın menzili + 3 pikseli geçmiyorsa ve o nokta vuruş yönünün en çok ~95° yanındaysa vuruş değer. Böylece kerevitin kıskacına, geyiğin boynuzuna değen vuruş da hasar verir. **Bütün canlılarda** (iki adada da, Reisler dahil) geçerlidir; çizimi ölçülemeyen bir canlı olursa yukarıdaki eski kural kullanılır.
 
-- Gerçek hasar = silah × (1 + 0,03 × (seviye − 1)) × Güç etkisi 1,2 × Güçsüzlük 0,8. Silah yuvasındaki silah, elde silah yokken kullanılır. **Eldeki silah doğrudan kullanılır, "sırt" yoktur:** alet kemerinden bir silahı eline aldığında vuruşlar o silahla yapılır; silah kemerde ve çantada yerinde kalır, hiçbir yuvaya taşınmaz. Kemerde tekerlekle ya da 1–5 tuşlarıyla gezinmek yalnızca eldekini değiştirir, kemerdeki eşyaları yerinden oynatmaz. Kemerdeki bir yuvanın eşyasını değiştirmek için yuvaya sağ tıklanır ya da basılı tutulur.
+- Gerçek hasar = silah × Güç özelliği (1 + 0,08 × Güç puanı) × Güçlü kol yeteneği × Güç etkisi 1,2 × Güçsüzlük 0,8. **Seviye hasarı doğrudan artırmaz**; artış seviye puanlarından ve yeteneklerden gelir. Silah yuvasındaki silah, elde silah yokken kullanılır. **Eldeki silah doğrudan kullanılır, "sırt" yoktur:** alet kemerinden bir silahı eline aldığında vuruşlar o silahla yapılır; silah kemerde ve çantada yerinde kalır, hiçbir yuvaya taşınmaz. Kemerde tekerlekle ya da 1–5 tuşlarıyla gezinmek yalnızca eldekini değiştirir, kemerdeki eşyaları yerinden oynatmaz. Kemerdeki bir yuvanın eşyasını değiştirmek için yuvaya sağ tıklanır ya da basılı tutulur.
 - Vuruş üç evrelidir (hazırlık, darbe, takip); isabette kısa bir donma olur, ıskalarsan bir an açık kalırsın. Her isabet silahı 1 köreltir.
 - Reisler ve iri türler (Timsah, Yaban öküzü, Kara ejder, Mağara ayısı, golemler, ejderler, robotlar, muhafızlar) vuruşla geri itilmez.
 
@@ -1001,7 +1003,7 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 |---|---|---|---|---|---|---|
 | Takla vuruşu | 3 | Çayır (Atılma gerekli) | 150 | 40 | Kurt | Saldırırken takla at, 3 kez kurtul → takla vuruşuyla 4 isabet |
 | Çift vuruş | 6 | Orman | 300 | 60 | Yaban domuzu | Çift vuruşla 7 isabet (ders domuzu hiç ölmez, "bitir" adımı kalktı) |
-| Ritimli 2. vuruş | 10 | Bataklık | 600 | 100 | Bataklık kurdu | Ritimli 2. vuruşla 5 isabet |
+| Ritimli 2. vuruş | 12 | Bataklık | 600 | 100 | Bataklık kurdu | Ritimli 2. vuruşla 5 isabet |
 | Ritimli 3. vuruş | 15 | Kayalık Dağ | 1.000 | 160 | Muflon | Sırayla: 3 savuşturma → ritimli 3. vuruşla 3 isabet |
 | Güçlü vuruş | 17 | Kayalık Dağ | 1.200 | 180 | Yaban öküzü | Savuşturarak 3 canavarı sersemlet → sersem canavara 3 güçlü vuruş |
 | Bitirici | 21 | Kül Diyarı (Atılma gerekli) | 2.000 | 300 | Kül kurdu | Takla ile 3 kaçış → bitiriciyle 3 isabet |
@@ -1146,7 +1148,7 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 
 ### Biyomları okuma rehberi
 
-**Beklenen varış seviyesi (yaklaşık):** Çayır 1, Orman ~3 (Börü'nün "Kuzeye keşif" görevi Seviye 3), **Bataklık ~20** (7 Kasım 2026, Boğaç), Kayalık Dağ ~26, Kül Diyarı ~34, Mor Kristal Vadisi ~42 (son üçü biyomun mağarasının önerilen seviyesine göre). Bu bir denge beklentisidir, giriş şartı değildir.
+**Beklenen varış seviyesi (yaklaşık):** Çayır 1, Orman ~3 (Börü'nün "Kuzeye keşif" görevi Seviye 3), **Bataklık 12–20** (köprü Seviye 12'de açılır, her şeyi yapan oyuncu ~18–20; 7 Kasım 2026, Boğaç), Kayalık Dağ ~26, Kül Diyarı ~34, Mor Kristal Vadisi ~42 (son üçü biyomun mağarasının önerilen seviyesine göre). Bu bir denge beklentisidir, giriş şartı değildir.
 
 Aşağıdaki her biyom başlığında dört tablo var:
 
@@ -1340,13 +1342,13 @@ Adanın kuzeybatısı (Çayır'dan doğuya, büyük nehre doğru yürü). Gölge
 | Kunduz | nötr | 55 | 12 | 40 | 10 | – | Kunduz eti %100; Kunduz derisi %75; Kemik %30 |
 | Yaban domuzu | saldırgan | 130 | 21 | 50 | 24 | gece, sürü 2–5 | Yaban domuzu eti %100 ×1–2; Yaban domuzu derisi %70; Yaban domuzu dişi %45; Kemik %50 ×1–2; Hayvan yağı %40 |
 | Dikenli kirpi | nötr | 60 | 12 | 30 | 16 | uzaktan atar (120 menzil, 3 atış), kanama etkisi | Kirpi dikeni %100 ×2–4; Kemik %30 |
-| Engerek | saldırgan | 75 | 14 | 40 | 20 | uzaktan atar (115 menzil, 1 atış), zehir etkisi | Zehir bezesi %60; Kemik %30 |
-| Oklu kirpi | saldırgan | 205 | 19 | 28 | 48 | uzaktan atar (150 menzil, 3 atış), kanama etkisi | İri diken %100 ×2–3; Kirpi dikeni %80 ×2–4; Kemik %40 |
+| Engerek | saldırgan | 120 | 20 | 40 | 26 | uzaktan atar (115 menzil, 1 atış), zehir etkisi | Zehir bezesi %60; Kemik %30 |
+| Oklu kirpi | saldırgan | 330 | 30 | 28 | 61 | uzaktan atar (150 menzil, 3 atış), kanama etkisi | İri diken %100 ×2–3; Kirpi dikeni %80 ×2–4; Kemik %40 |
 
 **Orman canlılarının ayrıntıları:**
 - **Deri parçası:** derisi olan canlılar avlanınca derisinin yanında Deri parçası da düşürür: Sincap %60, Karaca %80 ×1–2, Kunduz %75, Yaban domuzu %70 ×1–2.
-- **Doğma koşulları:** **Yaban domuzu yalnızca gece** çıkar (gündüz çıkmaz; 6 Kasım 2026, Boğaç) ve saldırgandır: oyuncuyu görünce saldırır. **Engerek** Seviye 6'dan ya da 3. günden sonra, **Oklu kirpi** Seviye 10'dan ya da Seviye 8 ve 5. günden sonra doğar.
-- **Saldırgan sürülerin boyu seviyeyle büyür:** sürü hâlinde gelen saldırgan bir canlı (Yaban domuzu, Kurt, Bataklık kurdu, Kül kurdu) Seviye 1–3'te **2**, Seviye 4–6'da **2–3**, Seviye 7'den sonra tablodaki aralıkta (ör. Yaban domuzu 2–5) gelir. Nötr sürüler (Geyik, Karaca…) her seviyede tablodaki aralıktadır.
+- **Doğma koşulları:** **Yaban domuzu yalnızca gece** çıkar (gündüz çıkmaz; 6 Kasım 2026, Boğaç) ve saldırgandır: oyuncuyu görünce saldırır. **Engerek** Seviye 6'dan ya da 3. günden sonra, **Oklu kirpi** Seviye 10'dan sonra yalnızca **köprüye yakın Orman'da** (ana köprüye ≤ 100 karo), Seviye 14'ten sonra bütün Orman'da doğar. Orman'da tehlike köprüye doğru artar.
+- **Saldırgan sürülerin boyu seviyeyle büyür:** sürü hâlinde gelen saldırgan bir canlı (Yaban domuzu, Kurt, Bataklık kurdu, Kül kurdu) Seviye 1–3'te **2**, Seviye 4–6'da **2–3**, Seviye 7'den sonra tablodaki aralıkta (ör. Yaban domuzu 2–5) gelir. Nötr sürüler (Geyik, Karaca…) her seviyede tablodaki aralıktadır. **Bataklık kurdu** bu kuralın kaydırılmış halini izler: Seviye 21'e kadar **2**, Seviye 22–24 **2–3**, Seviye 25'ten sonra **2–4**.
 
 ### Bataklık — Tehlikeli
 
@@ -1402,15 +1404,25 @@ Adanın kuzeyi, büyük nehrin doğusu: Orman'dan ana köprüyü onarıp karşı
 
 | Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri (ihtimal) |
 |---|---|---|---|---|---|---|---|
-| Ördek | zararsız | 8 | – | 44 | 3 | – | Ördek eti %100; Ördek tüyü %85 ×1–3; Ördek yumurtası %35 |
-| Yaban kazı | nötr | 150 | 20 | 46 | 16 | – | Yaban kazı eti %100; Yaban kazı tüyü %85 ×1–3; Yaban kazı yumurtası %35 |
-| Turna kuşu | nötr | 200 | 20 | 50 | 21 | – | Turna kuşu eti %100; Turna kuşu tüyü %85 ×1–3; Turna kuşu yumurtası %30 |
-| Su samuru | nötr | 240 | 23 | 56 | 23 | – | Su samuru eti %100; Su samuru derisi %75 |
-| Zehirli kurbağa | saldırgan | 350 | 36 | 40 | 59 | uzaktan atar (140 menzil, 3 atış), zehir etkisi | Zehir bezesi %80; Kurbağa %60 |
-| Bataklık kurdu | saldırgan | 600 | 57 | 100 | 77 | kanama etkisi, sürü 2–4 | Bataklık kurdu postu %80; Kurt dişi %50; Kemik %50 ×1–2 |
-| Timsah | saldırgan | 1.080 | 78 | 36 | 129 | kanama etkisi | Timsah derisi %90; Timsah dişi %60 ×1–2; Timsah eti %100 ×1–2 |
+| Ördek | zararsız | 8 | – | 44 | 5 | – | Ördek eti %100; Ördek tüyü %85 ×1–3; Ördek yumurtası %35 |
+| Yaban kazı | nötr | 150 | 20 | 46 | 24 | – | Yaban kazı eti %100; Yaban kazı tüyü %85 ×1–3; Yaban kazı yumurtası %35 |
+| Turna kuşu | nötr | 200 | 20 | 50 | 32 | – | Turna kuşu eti %100; Turna kuşu tüyü %85 ×1–3; Turna kuşu yumurtası %30 |
+| Su samuru | nötr | 240 | 23 | 56 | 35 | – | Su samuru eti %100; Su samuru derisi %75 |
+| Zehirli kurbağa | saldırgan | 350 | 36 | 40 | 89 | uzaktan atar (140 menzil, 3 atış), zehir etkisi | Zehir bezesi %80; Kurbağa %60 |
+| Bataklık kurdu | saldırgan | 450 | 52 | 100 | 114 | kanama etkisi, sürü 2–4 | Bataklık kurdu postu %80; Kurt dişi %50; Kemik %50 ×1–2 |
+| Timsah | saldırgan | 1.080 | 78 | 36 | 194 | kanama etkisi | Timsah derisi %90; Timsah dişi %60 ×1–2; Timsah eti %100 ×1–2 |
 
-**Deri parçası:** Su samuru %75 ×1–2, Bataklık kurdu %80 ×1–2, Timsah %90 ×1–2 (derisinin yanında). Bataklık canlılarının saat ya da seviye doğma şartı yoktur.
+**Deri parçası:** Su samuru %75 ×1–2, Bataklık kurdu %80 ×1–2, Timsah %90 ×1–2 (derisinin yanında).
+
+**Bataklık'ın üç kuşağı (7 Kasım 2026; "biyomlar arası geçişte keskin fark olmaz, yalnızca gelişim olur"):** Bataklık karoları **ana köprüye (Orman ↔ Bataklık) uzaklığa** göre üçe ayrılır; bir canlının doğup doğmayacağına, doğacağı karonun kuşağı bakılır. Kuşak şartı sürünün her üyesine ayrı ayrı uygulanır; uygun olmayan kuşağa düşen üye doğmaz.
+
+| Kuşak | Ana köprüye uzaklık | Doğan canlılar |
+|---|---|---|
+| **Kıyı** (köprü başı) | ≤ 85 karo | Ördek, Yaban kazı, Turna kuşu, Su samuru her zaman; Zehirli kurbağa Seviye 12'den sonra |
+| **Orta** | 86–150 karo | Kıyı'dakiler ve Zehirli kurbağa her seviyede; Bataklık kurdu Seviye 20'den sonra; Timsah Seviye 22'den sonra |
+| **Derin** | > 150 karo | hepsi her seviyede |
+
+Bataklık kurdu sürüsünün boyu: Orman notundaki sürü kuralına bakın. Yan görevlerin kendi çıkardığı canavarlar kuşak kuralına bağlı değildir. XP sütunu Bataklık'ın ×1,5 XP çarpanı uygulanmış değerdir (Sistemler › Gelişim).
 
 ### Kayalık Dağ — Tehlikeli
 
@@ -1466,13 +1478,15 @@ Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartalla
 
 | Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri (ihtimal) |
 |---|---|---|---|---|---|---|---|
-| Dağ keçisi | nötr | 365 | 42 | 62 | 33 | sürü 2–4 | Dağ keçisi eti %100 ×1–2; Dağ keçisi derisi %80; Kemik %50 |
-| Muflon | nötr | 430 | 43 | 58 | 36 | sürü 2–3 | Muflon eti %100 ×1–2; Muflon derisi %80; Kemik %50; Sinir %40 |
-| Yaban öküzü | nötr | 860 | 65 | 40 | 72 | sürü 2–3 | Yaban öküzü eti %100 ×2–3; Yaban öküzü derisi %100; Öküz boynuzu %50; Kemik %80 ×2–3; Sinir %60 ×1–2; Hayvan yağı %60 ×1–2 |
-| Ur kekliği | zararsız | 12 | – | 52 | 6 | sürü 2–4 | Ur kekliği eti %100; Ur kekliği tüyü %85 ×1–3; Ur kekliği yumurtası %35 |
-| Kartal | saldırgan | 970 | 112 | 96 | 131 | uçar, kanama etkisi | Kartal eti %100; Kartal tüyü %90 ×1–3; Kartal pençesi %50 ×1–2 |
-| Vaşak | saldırgan | 1.400 | 121 | 92 | 145 | kanama etkisi | Vaşak eti %100 ×1–2; Vaşak derisi %85; Kemik %50 ×1–2 |
-| Mağara ayısı | saldırgan | 2.520 | 137 | 44 | 218 | kanama etkisi | Mağara ayısı eti %100 ×2–3; Mağara ayısı derisi %90; Ayı pençesi %60 ×1–2; Hayvan yağı %60 ×1–2; Kemik %50 ×1–2 |
+| Dağ keçisi | nötr | 365 | 42 | 62 | 66 | sürü 2–4 | Dağ keçisi eti %100 ×1–2; Dağ keçisi derisi %80; Kemik %50 |
+| Muflon | nötr | 430 | 43 | 58 | 72 | sürü 2–3 | Muflon eti %100 ×1–2; Muflon derisi %80; Kemik %50; Sinir %40 |
+| Yaban öküzü | nötr | 860 | 65 | 40 | 144 | sürü 2–3 | Yaban öküzü eti %100 ×2–3; Yaban öküzü derisi %100; Öküz boynuzu %50; Kemik %80 ×2–3; Sinir %60 ×1–2; Hayvan yağı %60 ×1–2 |
+| Ur kekliği | zararsız | 12 | – | 52 | 12 | sürü 2–4 | Ur kekliği eti %100; Ur kekliği tüyü %85 ×1–3; Ur kekliği yumurtası %35 |
+| Kartal | saldırgan | 970 | 112 | 96 | 262 | uçar, kanama etkisi | Kartal eti %100; Kartal tüyü %90 ×1–3; Kartal pençesi %50 ×1–2 |
+| Vaşak | saldırgan | 1.050 | 112 | 92 | 252 | kanama etkisi | Vaşak eti %100 ×1–2; Vaşak derisi %85; Kemik %50 ×1–2 |
+| Mağara ayısı | saldırgan | 2.520 | 137 | 44 | 436 | kanama etkisi | Mağara ayısı eti %100 ×2–3; Mağara ayısı derisi %90; Ayı pençesi %60 ×1–2; Hayvan yağı %60 ×1–2; Kemik %50 ×1–2 |
+
+**Kayalık Dağ canlıları:** Yaban öküzü Seviye 4'ten önce doğmaz. XP sütunu Kayalık Dağ'ın ×2 XP çarpanı uygulanmış değerdir (Sistemler › Gelişim).
 
 ### Kül Diyarı — Ölümcül
 
@@ -1528,13 +1542,15 @@ Adanın güneydoğusu, sıradağın ardı: Kayalık Dağ'dan sıradağa yürü, 
 
 | Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri (ihtimal) |
 |---|---|---|---|---|---|---|---|
-| Kül böceği | nötr | 640 | 83 | 30 | 46 | – | Kül böceği kabuğu %90 ×1–2; Kül %100 ×1–3 |
-| Kül kurdu | saldırgan | 1.075 | 140 | 100 | 205 | kanama etkisi, sürü 2–4 | Kül kurdu postu %80; Kül dişi %50 |
-| Lav kertenkelesi | saldırgan | 940 | 123 | 46 | 227 | uzaktan atar (175 menzil, 3 atış), yanık etkisi | Lav pulu %80 ×1–2; Ateş bezesi %50 |
-| Kül cini | saldırgan | 810 | 99 | 46 | 251 | uzaktan atar (195 menzil, 3 atış), yanık etkisi | Ateş bezesi %60; Kül %100 ×2–4 |
-| Kor yarasası | saldırgan | 830 | 115 | 120 | 251 | uçar, yanık etkisi | Yarasa kanadı %80 ×1–2; Ateş bezesi %50 |
-| Ateş akrebi | saldırgan | 1.140 | 148 | 52 | 296 | zehir etkisi | Akrep iğnesi %70; Akrep kabuğu %80 ×1–2 |
-| Kara ejder | saldırgan | 2.880 | 164 | 34 | 738 | uzaktan atar (210 menzil, 5 atış), yanık etkisi | Kara pul %100 ×1–2; Ejder kemiği %80 ×1–2 |
+| Kül böceği | nötr | 640 | 83 | 30 | 69 | – | Kül böceği kabuğu %90 ×1–2; Kül %100 ×1–3 |
+| Kül kurdu | saldırgan | 1.075 | 140 | 100 | 308 | kanama etkisi, sürü 2–4 | Kül kurdu postu %80; Kül dişi %50 |
+| Lav kertenkelesi | saldırgan | 940 | 123 | 46 | 341 | uzaktan atar (175 menzil, 3 atış), yanık etkisi | Lav pulu %80 ×1–2; Ateş bezesi %50 |
+| Kül cini | saldırgan | 810 | 99 | 46 | 377 | uzaktan atar (195 menzil, 3 atış), yanık etkisi | Ateş bezesi %60; Kül %100 ×2–4 |
+| Kor yarasası | saldırgan | 830 | 115 | 120 | 377 | uçar, yanık etkisi | Yarasa kanadı %80 ×1–2; Ateş bezesi %50 |
+| Ateş akrebi | saldırgan | 1.140 | 148 | 52 | 444 | zehir etkisi | Akrep iğnesi %70; Akrep kabuğu %80 ×1–2 |
+| Kara ejder | saldırgan | 2.880 | 164 | 34 | 1.107 | uzaktan atar (210 menzil, 5 atış), yanık etkisi | Kara pul %100 ×1–2; Ejder kemiği %80 ×1–2 |
+
+XP sütunu bu biyomun ×1,5 XP çarpanı uygulanmış değerdir (Sistemler › Gelişim).
 
 ### Mor Kristal Vadisi — Çok ölümcül
 
@@ -1590,13 +1606,15 @@ Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığ�
 
 | Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri (ihtimal) |
 |---|---|---|---|---|---|---|---|
-| Mor güve | zararsız | 50 | – | 44 | 20 | uçar | Güve tozu %100 ×1–2 |
-| Işık tilkisi | nötr | 1.000 | 114 | 84 | 100 | – | Işık tilkisi eti %100; Işık tilkisi postu %80 |
-| Kristal geyik | nötr | 1.630 | 133 | 72 | 315 | sürü 1–2 | Kristal geyik eti %100 ×1–2; Kristal geyik derisi %80; Kristal boynuz %45 |
-| Gölge kurdu | saldırgan | 1.475 | 181 | 118 | 433 | kanama etkisi, sürü 2–3 | Gölge postu %80; Gölge dişi %60 ×1–2 |
-| Kristal örümcek | saldırgan | 1.320 | 157 | 60 | 414 | uzaktan atar (180 menzil, 3 atış), zehir etkisi | Kristal ipek %90 ×1–3; Örümcek gözü %50 |
-| Işık engereği | saldırgan | 1.085 | 169 | 64 | 394 | uzaktan atar (190 menzil, 3 atış), zehir etkisi | Mor zehir %70; Işık pulu %80 ×1–2 |
-| Kristal golem | saldırgan | 4.500 | 242 | 30 | 1.039 | – | Golem çekirdeği %60; Kristal %100 ×2–4; Ametist %80 ×1–3 |
+| Mor güve | zararsız | 50 | – | 44 | 30 | uçar | Güve tozu %100 ×1–2 |
+| Işık tilkisi | nötr | 1.000 | 114 | 84 | 150 | – | Işık tilkisi eti %100; Işık tilkisi postu %80 |
+| Kristal geyik | nötr | 1.630 | 133 | 72 | 473 | sürü 1–2 | Kristal geyik eti %100 ×1–2; Kristal geyik derisi %80; Kristal boynuz %45 |
+| Gölge kurdu | saldırgan | 1.475 | 181 | 118 | 650 | kanama etkisi, sürü 2–3 | Gölge postu %80; Gölge dişi %60 ×1–2 |
+| Kristal örümcek | saldırgan | 1.320 | 157 | 60 | 621 | uzaktan atar (180 menzil, 3 atış), zehir etkisi | Kristal ipek %90 ×1–3; Örümcek gözü %50 |
+| Işık engereği | saldırgan | 1.085 | 169 | 64 | 591 | uzaktan atar (190 menzil, 3 atış), zehir etkisi | Mor zehir %70; Işık pulu %80 ×1–2 |
+| Kristal golem | saldırgan | 4.500 | 242 | 30 | 1.559 | – | Golem çekirdeği %60; Kristal %100 ×2–4; Ametist %80 ×1–3 |
+
+XP sütunu bu biyomun ×1,5 XP çarpanı uygulanmış değerdir (Sistemler › Gelişim).
 
 
 
@@ -1715,7 +1733,7 @@ Kumsalda seni bulan yaşlı denizci; sakin, kollayıcı, öğretici. Kemal'de ya
 | # | Görev | İstenen | Açılma | Açar | Ders | Ödül |
 |---|---|---|---|---|---|---|
 | E1 | Ateşlik çalı | Getir: 6 Dal, 2 Kuru ot | Öğretici bitti ya da geçildi | Dursun 1, Zümrüt 1 | – | 20 · 15 XP |
-| E2 | Bir köprüyü onar | Ana köprü (Orman ↔ Bataklık): 20 odun (her tür odun sayılır), onay penceresiyle | Orman keşfedildi · Seviye 6 (Ekin şartı kalktı) | Doğan 1 ve Bataklık'taki görevler | Köprü onarımı | 150 · 120 XP |
+| E2 | Bir köprüyü onar | Ana köprü (Orman ↔ Bataklık): 20 odun (her tür odun sayılır), onay penceresiyle | Orman keşfedildi · Seviye 12 | Doğan 1 ve Bataklık'taki görevler | Köprü onarımı | 150 · 120 XP |
 | E3 | Doğu geçidini aç | 2 Kaya patlatıcı + 4. kademe ya da daha iyi kazma (Kuvars ya da Çelik); kaya yığınına E, onay | Kayalık Dağ keşfedildi · Seviye 10 · **Kaya patlatıcı tarifi kazanda öğrenilmiş** | Kül Diyarı'ndaki görevler | Kaya patlatıcı | 300 · 400 XP |
 | E4 | Eşinden kalan izler | Bul: 6 iz (önceden bulunanlar sayılır) | Kül Diyarı keşfedildi | E5, Gemi tarifi | – | 300 · 600 XP |
 | E5 | Kıyıdaki duman | Ulaş: Mor Kristal Vadisi'ne git (Kemal dumanı merak eder; kimseyi söylemez) | E4 | E6, Barbaros 1 | – | 200 · 300 XP |
@@ -2164,7 +2182,7 @@ Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş an
 | 1 | Çayır | Mavi (genç kız) | Denizden dönmeyen kardeş | 17:00–23:00 | hüzünlü, mor ışık | 640 sikke · 860 XP (Çayır'da ama geç açılır, E3 sonrası; ödülü buna göre) |
 | 2 | Çayır | Toprak (çocuk) | Gece öten kuş (v3.42; eskiden Davut'un "Kaçan keçi Pamuk"u, artık ana görev) | 21:00–01:00 | tatlı, sessiz | 70 sikke · 50 XP |
 | 3 | Çayır | Güvercinci Bulut (çocuk) | Kaçan güvercinler | 10:00–15:00 | tatlı, sırlar | 80 sikke · 50 XP |
-| 4 | Orman | Ela (küçük kız) | Kampa giden yol | yalnızca gece (20:00–05:00) | gerilimli, sıcak son | 150 sikke · 120 XP |
+| 4 | Orman | Ela (küçük kız) | Kampa giden yol | yalnızca gece (20:00–05:00) | gerilimli, sıcak son | 220 sikke · 200 XP |
 | 5 | Orman | Şövalye Kahraman Dede | Ejderin ini | 11:00–16:00 | komik | 90 sikke · 60 XP |
 | 6 | Orman | Seyyar satıcı Bekir | Kırık araba | 12:00–17:00 | hafif | 100 sikke · 60 XP |
 | 7 | Bataklık | Avcı Kartal | Yaralı avcı | 15:00–21:00 | gerilimli | 320 sikke · 260 XP |
@@ -2328,7 +2346,7 @@ Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biy
 | 21 | **Değirmenci Rıfat** · Duran değirmen | Çayır · 05:00–10:00 | Değirmenin önündeki 2 kurdu kov → 6 Dal, 4 Lif götür | 100 · 70 XP | kanatları dönen değirmen (öncesi kırık) |
 | 22 | **Mantarcı Saadet** · Mantar sepeti | Orman · 05:30–10:30 | Dört kanlıca kümesini topla (sinek mantarına dokunma) → dön | 110 · 80 XP | mantar kurutma ipi |
 | 23 | **Oduncu Tarık** · Ağacın altında | Orman · 07:00–12:00 | 2 Sopa, 2 İp götür (koltuk değneği) → Tarık'ı Usta Sinan'ın tezgâhına götür (yolda domuz ve kurt) | 130 · 90 XP | Tarık artık Sinan'ın yanında |
-| 24 | **Ressam Lale** · Ormanın renkleri | Orman · 16:00–20:30 | 3 Gelincik, 4 Yaban mersini götür → ormanın en güzel açıklığını bul → dön | 120 · 90 XP | şövalesi (hep) |
+| 24 | **Ressam Lale** · Ormanın renkleri | Orman · 16:00–20:30 | 3 Gelincik, 4 Yaban mersini götür → ormanın en güzel açıklığını bul → dön | 180 · 150 XP | şövalesi (hep) |
 | 25 | **Kayıkçı Remzi** · Sisteki kayıkçı | Bataklık · yalnızca gece (00:00–05:00) | Remzi'yi ışıkla Avcı Doğan'ın kulübesine götür (yolda kurtlar) | 520 · 700 XP | Remzi Doğan'ın ateşinin başında |
 | 26 | **Cemile** (çocuk) · Şarkı söyleyen kurbağalar | Bataklık · 18:30–23:00 | Vıraklamaları dinleyip dört kurbağayı bul (yakalamak yok) → dön | 260 · 210 XP | yanında iki kurbağa |
 | 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 08:00–14:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn; ilk dalga yalnızca Engerek, sonraki iki dalgada birer Bataklık kurdu) → dön | 340 · 270 XP | ilaç kazanı (hep) |
@@ -2341,16 +2359,16 @@ Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biy
 | 34 | **Nar** (çocuk) · Sıcak yumurta | Kül Diyarı · 17:30–22:30 | Saklanan yumurtayı bul → yumurta çatlarken ateşin başında bekle (60 sn, kurtlar) → dön | 680 · 900 XP | omzunda yavru ateş kertenkelesi Kıvılcım |
 | 35 | **Duman Dede** · Kükürtteki sesler | Kül Diyarı · yalnızca gece (23:00–04:00) | 4 Kükürt kristali götür → üç sunakta yak; dumanlar Yıldızsızların adaya inişini, köpekleri ve şapkayı gösterir → dön | 600 · 1.200 XP | – |
 | 36 | **Katırcı Ömer** · Kül fırtınasında kaybolan | Kül Diyarı · 15:00–20:00 | Katır Kınalı'yı 3 kez yakala → Ömer'e götür | 520 · 700 XP | yanında Kınalı |
-| 37 | **Melodi** · Şarkı söyleyen kristaller | Mor Kristal Vadisi · 11:30–16:30 | Çınlamalarını dinleyip beş kristali bul → dön | 450 · 520 XP | yanında parlayan bir kristal |
-| 38 | **Balıkçı Selim** · Ayna Gölü'ndeki kız | Mor Kristal Vadisi · yalnızca gece (20:30–01:30) | Dört ayna parçasını topla → kıyıda birleştir (kız mor ışığın içinde, kurtarılamaz; acı son, sessiz) → dön | 480 · 680 XP | göl kıyısında ayna |
-| 39 | **Kristalci Yaren** · Taşkalp | Mor Kristal Vadisi · 08:00–13:30 | Taşocağındaki 3 Kristal golemi yen (çekirdek taşları) → dön; golem Taşkalp uyanır | 520 · 600 XP | Taşkalp ayakta, gözleri mavi (öncesi yıkık) |
-| 40 | **Lostromo Rıza** · Tayfanın künyeleri | Mor Kristal Vadisi · yalnızca gece (01:00–05:00) | Gölge kurtlarının yatağında 4 kurdu yen (künyeler) → kıyıda dört fener yak → dön | 560 · 680 XP | kıyıda dört fener |
-| 41 | **Asena** · Mor gözlü yavru | Mor Kristal Vadisi · 19:00–24:00 | 3 Geyik eti götür → gece yavruyu sürüsünden koru (60 sn) → dön; yavru Gece onunla kalır | 540 · 680 XP | yanında yavru Gece |
-| 42 | **Fenerci Işık** · Düşen ışığı toplamak | Mor Kristal Vadisi · yalnızca gece (21:00–04:30) | Mor ışığın düştüğü yerlerde üç mor damla topla (elinde ışık olmalı, yoksa ışık seni alır) → dön | 600 · 550 XP | **üç kalıcı fener ateşi:** yanlarında gece mor ışık gelmez (güvenli yer) |
+| 37 | **Melodi** · Şarkı söyleyen kristaller | Mor Kristal Vadisi · 11:30–16:30 | Çınlamalarını dinleyip beş kristali bul → dön | 700 · 1.000 XP | yanında parlayan bir kristal |
+| 38 | **Balıkçı Selim** · Ayna Gölü'ndeki kız | Mor Kristal Vadisi · yalnızca gece (20:30–01:30) | Dört ayna parçasını topla → kıyıda birleştir (kız mor ışığın içinde, kurtarılamaz; acı son, sessiz) → dön | 780 · 1.150 XP | göl kıyısında ayna |
+| 39 | **Kristalci Yaren** · Taşkalp | Mor Kristal Vadisi · 08:00–13:30 | Taşocağındaki 3 Kristal golemi yen (çekirdek taşları) → dön; golem Taşkalp uyanır | 720 · 1.050 XP | Taşkalp ayakta, gözleri mavi (öncesi yıkık) |
+| 40 | **Lostromo Rıza** · Tayfanın künyeleri | Mor Kristal Vadisi · yalnızca gece (01:00–05:00) | Gölge kurtlarının yatağında 4 kurdu yen (künyeler) → kıyıda dört fener yak → dön | 820 · 1.200 XP | kıyıda dört fener |
+| 41 | **Asena** · Mor gözlü yavru | Mor Kristal Vadisi · 19:00–24:00 | 3 Geyik eti götür → gece yavruyu sürüsünden koru (60 sn) → dön; yavru Gece onunla kalır | 750 · 1.100 XP | yanında yavru Gece |
+| 42 | **Fenerci Işık** · Düşen ışığı toplamak | Mor Kristal Vadisi · yalnızca gece (21:00–04:30) | Mor ışığın düştüğü yerlerde üç mor damla topla (elinde ışık olmalı, yoksa ışık seni alır) → dön | 860 · 1.300 XP | **üç kalıcı fener ateşi:** yanlarında gece mor ışık gelmez (güvenli yer) |
 
 ### Ödüller
 
-Şimdilik her yan görev yalnızca **sikke + XP** verir (tablodaki değerler). **Ödül kuralı (geçici, 6 Kasım 2026, Boğaç: "görevi yaptığına değecek kadar XP ve altın ver"; yan görevler yeniden tasarlanacak):** her yan görevin sikkesi ve XP'si, **onu açan ana görevin ödülünün 1,5–2,5 katıdır** (emeğe göre: adım sayısı, dövüş, koruma, bekleme); değerler 10'a yuvarlanır. **Alt sınır:** yan görevin sikkesi ve XP'si (ayrı ayrı) v3.46'daki özgün değerinin altına düşmez. Açan ana görev, "Açılış sırası"ndaki koşulda adı geçen ana görevdir (E2, E3…); koşul yalnızca bir sayıysa (N bitmiş ana görev), ACT 1 ana görevleri ödüllerine göre küçükten büyüğe dizildiğinde N. sıradaki görev esas alınır; ikisi birlikteyse ödülü büyük olan. Mağara yan görevlerinin ödülü bu kuralın dışındadır (kendi tablolarında). Ödül yan görev bitince bir kez verilir; yarıda kalıp yeniden yapılan görev ödülü yine bir kez verir.
+Şimdilik her yan görev yalnızca **sikke + XP** verir (tablodaki değerler). **Ödül kuralı (geçici, 6 Kasım 2026, Boğaç: "görevi yaptığına değecek kadar XP ve altın ver"; yan görevler yeniden tasarlanacak):** her yan görevin sikkesi ve XP'si, **onu açan ana görevin ödülünün 1,5–2,5 katıdır** (emeğe göre: adım sayısı, dövüş, koruma, bekleme); değerler 10'a yuvarlanır. **Alt sınır:** yan görevin sikkesi ve XP'si (ayrı ayrı) v3.46'daki özgün değerinin altına düşmez. **İkinci alt sınır (7 Kasım 2026):** bir biyomun yan görevlerinin ödülü, önceki biyomun en yüksek yan görev ödülünün altına düşmez (biyomlar arası geçişte keskin fark olmaz, yalnızca gelişim olur); biyom içinde ödül açılış sırasıyla artar. Açan ana görev, "Açılış sırası"ndaki koşulda adı geçen ana görevdir (E2, E3…); koşul yalnızca bir sayıysa (N bitmiş ana görev), ACT 1 ana görevleri ödüllerine göre küçükten büyüğe dizildiğinde N. sıradaki görev esas alınır; ikisi birlikteyse ödülü büyük olan. Mağara yan görevlerinin ödülü bu kuralın dışındadır (kendi tablolarında). Ödül yan görev bitince bir kez verilir; yarıda kalıp yeniden yapılan görev ödülü yine bir kez verir.
 
 ### İleride ödül fikirleri (konuşulacak)
 

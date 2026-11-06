@@ -56,7 +56,7 @@ Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş an
 | 1 | Çayır | Mavi (genç kız) | Denizden dönmeyen kardeş | 17:00–23:00 | hüzünlü, mor ışık | 640 sikke · 860 XP (Çayır'da ama geç açılır, E3 sonrası; ödülü buna göre) |
 | 2 | Çayır | Toprak (çocuk) | Gece öten kuş (v3.42; eskiden Davut'un "Kaçan keçi Pamuk"u, artık ana görev) | 21:00–01:00 | tatlı, sessiz | 70 sikke · 50 XP |
 | 3 | Çayır | Güvercinci Bulut (çocuk) | Kaçan güvercinler | 10:00–15:00 | tatlı, sırlar | 80 sikke · 50 XP |
-| 4 | Orman | Ela (küçük kız) | Kampa giden yol | yalnızca gece (20:00–05:00) | gerilimli, sıcak son | 150 sikke · 120 XP |
+| 4 | Orman | Ela (küçük kız) | Kampa giden yol | yalnızca gece (20:00–05:00) | gerilimli, sıcak son | 220 sikke · 200 XP |
 | 5 | Orman | Şövalye Kahraman Dede | Ejderin ini | 11:00–16:00 | komik | 90 sikke · 60 XP |
 | 6 | Orman | Seyyar satıcı Bekir | Kırık araba | 12:00–17:00 | hafif | 100 sikke · 60 XP |
 | 7 | Bataklık | Avcı Kartal | Yaralı avcı | 15:00–21:00 | gerilimli | 320 sikke · 260 XP |
@@ -220,7 +220,7 @@ Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biy
 | 21 | **Değirmenci Rıfat** · Duran değirmen | Çayır · 05:00–10:00 | Değirmenin önündeki 2 kurdu kov → 6 Dal, 4 Lif götür | 100 · 70 XP | kanatları dönen değirmen (öncesi kırık) |
 | 22 | **Mantarcı Saadet** · Mantar sepeti | Orman · 05:30–10:30 | Dört kanlıca kümesini topla (sinek mantarına dokunma) → dön | 110 · 80 XP | mantar kurutma ipi |
 | 23 | **Oduncu Tarık** · Ağacın altında | Orman · 07:00–12:00 | 2 Sopa, 2 İp götür (koltuk değneği) → Tarık'ı Usta Sinan'ın tezgâhına götür (yolda domuz ve kurt) | 130 · 90 XP | Tarık artık Sinan'ın yanında |
-| 24 | **Ressam Lale** · Ormanın renkleri | Orman · 16:00–20:30 | 3 Gelincik, 4 Yaban mersini götür → ormanın en güzel açıklığını bul → dön | 120 · 90 XP | şövalesi (hep) |
+| 24 | **Ressam Lale** · Ormanın renkleri | Orman · 16:00–20:30 | 3 Gelincik, 4 Yaban mersini götür → ormanın en güzel açıklığını bul → dön | 180 · 150 XP | şövalesi (hep) |
 | 25 | **Kayıkçı Remzi** · Sisteki kayıkçı | Bataklık · yalnızca gece (00:00–05:00) | Remzi'yi ışıkla Avcı Doğan'ın kulübesine götür (yolda kurtlar) | 520 · 700 XP | Remzi Doğan'ın ateşinin başında |
 | 26 | **Cemile** (çocuk) · Şarkı söyleyen kurbağalar | Bataklık · 18:30–23:00 | Vıraklamaları dinleyip dört kurbağayı bul (yakalamak yok) → dön | 260 · 210 XP | yanında iki kurbağa |
 | 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 08:00–14:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn; ilk dalga yalnızca Engerek, sonraki iki dalgada birer Bataklık kurdu) → dön | 340 · 270 XP | ilaç kazanı (hep) |
@@ -233,16 +233,16 @@ Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biy
 | 34 | **Nar** (çocuk) · Sıcak yumurta | Kül Diyarı · 17:30–22:30 | Saklanan yumurtayı bul → yumurta çatlarken ateşin başında bekle (60 sn, kurtlar) → dön | 680 · 900 XP | omzunda yavru ateş kertenkelesi Kıvılcım |
 | 35 | **Duman Dede** · Kükürtteki sesler | Kül Diyarı · yalnızca gece (23:00–04:00) | 4 Kükürt kristali götür → üç sunakta yak; dumanlar Yıldızsızların adaya inişini, köpekleri ve şapkayı gösterir → dön | 600 · 1.200 XP | – |
 | 36 | **Katırcı Ömer** · Kül fırtınasında kaybolan | Kül Diyarı · 15:00–20:00 | Katır Kınalı'yı 3 kez yakala → Ömer'e götür | 520 · 700 XP | yanında Kınalı |
-| 37 | **Melodi** · Şarkı söyleyen kristaller | Mor Kristal Vadisi · 11:30–16:30 | Çınlamalarını dinleyip beş kristali bul → dön | 450 · 520 XP | yanında parlayan bir kristal |
-| 38 | **Balıkçı Selim** · Ayna Gölü'ndeki kız | Mor Kristal Vadisi · yalnızca gece (20:30–01:30) | Dört ayna parçasını topla → kıyıda birleştir (kız mor ışığın içinde, kurtarılamaz; acı son, sessiz) → dön | 480 · 680 XP | göl kıyısında ayna |
-| 39 | **Kristalci Yaren** · Taşkalp | Mor Kristal Vadisi · 08:00–13:30 | Taşocağındaki 3 Kristal golemi yen (çekirdek taşları) → dön; golem Taşkalp uyanır | 520 · 600 XP | Taşkalp ayakta, gözleri mavi (öncesi yıkık) |
-| 40 | **Lostromo Rıza** · Tayfanın künyeleri | Mor Kristal Vadisi · yalnızca gece (01:00–05:00) | Gölge kurtlarının yatağında 4 kurdu yen (künyeler) → kıyıda dört fener yak → dön | 560 · 680 XP | kıyıda dört fener |
-| 41 | **Asena** · Mor gözlü yavru | Mor Kristal Vadisi · 19:00–24:00 | 3 Geyik eti götür → gece yavruyu sürüsünden koru (60 sn) → dön; yavru Gece onunla kalır | 540 · 680 XP | yanında yavru Gece |
-| 42 | **Fenerci Işık** · Düşen ışığı toplamak | Mor Kristal Vadisi · yalnızca gece (21:00–04:30) | Mor ışığın düştüğü yerlerde üç mor damla topla (elinde ışık olmalı, yoksa ışık seni alır) → dön | 600 · 550 XP | **üç kalıcı fener ateşi:** yanlarında gece mor ışık gelmez (güvenli yer) |
+| 37 | **Melodi** · Şarkı söyleyen kristaller | Mor Kristal Vadisi · 11:30–16:30 | Çınlamalarını dinleyip beş kristali bul → dön | 700 · 1.000 XP | yanında parlayan bir kristal |
+| 38 | **Balıkçı Selim** · Ayna Gölü'ndeki kız | Mor Kristal Vadisi · yalnızca gece (20:30–01:30) | Dört ayna parçasını topla → kıyıda birleştir (kız mor ışığın içinde, kurtarılamaz; acı son, sessiz) → dön | 780 · 1.150 XP | göl kıyısında ayna |
+| 39 | **Kristalci Yaren** · Taşkalp | Mor Kristal Vadisi · 08:00–13:30 | Taşocağındaki 3 Kristal golemi yen (çekirdek taşları) → dön; golem Taşkalp uyanır | 720 · 1.050 XP | Taşkalp ayakta, gözleri mavi (öncesi yıkık) |
+| 40 | **Lostromo Rıza** · Tayfanın künyeleri | Mor Kristal Vadisi · yalnızca gece (01:00–05:00) | Gölge kurtlarının yatağında 4 kurdu yen (künyeler) → kıyıda dört fener yak → dön | 820 · 1.200 XP | kıyıda dört fener |
+| 41 | **Asena** · Mor gözlü yavru | Mor Kristal Vadisi · 19:00–24:00 | 3 Geyik eti götür → gece yavruyu sürüsünden koru (60 sn) → dön; yavru Gece onunla kalır | 750 · 1.100 XP | yanında yavru Gece |
+| 42 | **Fenerci Işık** · Düşen ışığı toplamak | Mor Kristal Vadisi · yalnızca gece (21:00–04:30) | Mor ışığın düştüğü yerlerde üç mor damla topla (elinde ışık olmalı, yoksa ışık seni alır) → dön | 860 · 1.300 XP | **üç kalıcı fener ateşi:** yanlarında gece mor ışık gelmez (güvenli yer) |
 
 ### Ödüller
 
-Şimdilik her yan görev yalnızca **sikke + XP** verir (tablodaki değerler). **Ödül kuralı (geçici, 6 Kasım 2026, Boğaç: "görevi yaptığına değecek kadar XP ve altın ver"; yan görevler yeniden tasarlanacak):** her yan görevin sikkesi ve XP'si, **onu açan ana görevin ödülünün 1,5–2,5 katıdır** (emeğe göre: adım sayısı, dövüş, koruma, bekleme); değerler 10'a yuvarlanır. **Alt sınır:** yan görevin sikkesi ve XP'si (ayrı ayrı) v3.46'daki özgün değerinin altına düşmez. Açan ana görev, "Açılış sırası"ndaki koşulda adı geçen ana görevdir (E2, E3…); koşul yalnızca bir sayıysa (N bitmiş ana görev), ACT 1 ana görevleri ödüllerine göre küçükten büyüğe dizildiğinde N. sıradaki görev esas alınır; ikisi birlikteyse ödülü büyük olan. Mağara yan görevlerinin ödülü bu kuralın dışındadır (kendi tablolarında). Ödül yan görev bitince bir kez verilir; yarıda kalıp yeniden yapılan görev ödülü yine bir kez verir.
+Şimdilik her yan görev yalnızca **sikke + XP** verir (tablodaki değerler). **Ödül kuralı (geçici, 6 Kasım 2026, Boğaç: "görevi yaptığına değecek kadar XP ve altın ver"; yan görevler yeniden tasarlanacak):** her yan görevin sikkesi ve XP'si, **onu açan ana görevin ödülünün 1,5–2,5 katıdır** (emeğe göre: adım sayısı, dövüş, koruma, bekleme); değerler 10'a yuvarlanır. **Alt sınır:** yan görevin sikkesi ve XP'si (ayrı ayrı) v3.46'daki özgün değerinin altına düşmez. **İkinci alt sınır (7 Kasım 2026):** bir biyomun yan görevlerinin ödülü, önceki biyomun en yüksek yan görev ödülünün altına düşmez (biyomlar arası geçişte keskin fark olmaz, yalnızca gelişim olur); biyom içinde ödül açılış sırasıyla artar. Açan ana görev, "Açılış sırası"ndaki koşulda adı geçen ana görevdir (E2, E3…); koşul yalnızca bir sayıysa (N bitmiş ana görev), ACT 1 ana görevleri ödüllerine göre küçükten büyüğe dizildiğinde N. sıradaki görev esas alınır; ikisi birlikteyse ödülü büyük olan. Mağara yan görevlerinin ödülü bu kuralın dışındadır (kendi tablolarında). Ödül yan görev bitince bir kez verilir; yarıda kalıp yeniden yapılan görev ödülü yine bir kez verir.
 
 ### İleride ödül fikirleri (konuşulacak)
 

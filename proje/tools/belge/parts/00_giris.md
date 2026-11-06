@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.51** ile birebir (7 Kasım 2026). Bu sürümde: Avcı Doğan Kamış çizme ve Panzehir tariflerini yazar (Bataklık zinciri açılır), Kamış çizme el yapımı (6 Kamış, 3 İp, 2 Yosun), köprüye her tür odun. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.52** ile birebir (7 Kasım 2026). Bu sürümde: denge paketi: Bataklık üç kuşak (Kıyı/Orta/Derin, köprüye uzaklıkla doğma şartları), kurt sürüsü seviyeyle büyür, Bataklık köprüsü (E2) Sv 12, Engerek, Oklu kirpi, Bataklık kurdu ve Vaşak yeniden ayarlandı, Bataklık XP ×1,5, Lale, Ela ve Mor Kristal yan görev ödülleri. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
