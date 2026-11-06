@@ -10,14 +10,14 @@
 
 
 
-## v3.41 (6 Kasım 2026) · seviye puanları, en üst seviye 65, Güç/Zırh/Mana özellik oldu
+## v3.41 (6 Kasım 2026) · seviye puanları, en üst seviye 60, Güç/Zırh/Mana özellik oldu
 
-- Ana kod (~1812): `effL` ve seviye tabanlı `STAT` silindi; `PTL`, `ptsAt`, `SPK` (11 özellik), `RMAX=14`, `SPS` [0 puan, puan başına], `SPT` (verilen puanlar), `SPTUT` (ilk seviye dersi), `RK(k)`, `spFree()`, `sv(k,r)`. `STAT.x(r)`'nin argümanı artık **puan** (yoksa şimdiki puan); `maxHP(r)`, `maxSt(r)`, `hpRegen(r)`, `stRegen(r)` de öyle. `MAXLV=65`; 154 = 11 × 14.
+- Ana kod (~1812): `effL` ve seviye tabanlı `STAT` silindi; `PTL`, `ptsAt`, `SPK` (11 özellik), `RMAX=18`, `capAt(L)=min(18,1+⌊L/3⌋)` (bir özelliğin tavanı), `SPS` [0 puan, puan başına], `SPT` (verilen puanlar), `SPTUT` (ilk seviye dersi), `RK(k)`, `spFree()`, `sv(k,r)`. `STAT.x(r)`'nin argümanı artık **puan** (yoksa şimdiki puan); `maxHP(r)`, `maxSt(r)`, `hpRegen(r)`, `stRegen(r)` de öyle. `MAXLV=60`; 198 = 11 × 18. `PTL`: Sv ≤10: 2, ≤30: 3, sonra 4 (Boğaç: tek özelliğe yığmak dengeyi bozmasın, gelişim geç kalmasın; eşit dağıtımda Sv 16'ya kadar eski hızla aynı).
 - Hasar: dokuz yerde `(1+.03*(lvl-1))` → `STAT.dmg()`. Mana: `maxMana` ve arena yedek değeri → `STAT.mana()`. `zirhOf`: `lvl-1` → `STAT.zirh()` (0 puanda 5). v60'ın `cap` satırı (hareket/toplama/şans tavanı) silindi. Kritik ihtimalinin seviye payı (`chanceFor`) seviyeye bağlı kaldı.
 - Arena: `window.__plArOn` (AR tanımından önce); arenada `RK` seçilen seviyenin puanlarını eşit dağıtır. Seviye düğmelerine 65 eklendi.
 - Karakter penceresi (`renderCraft` mode 'char') yeni tablo: puan çubuğu, +1 puanla değeri, `data-spk` + düğmesi, `.sptip` açıklama (dokunmatikte `.spds` adın altında), "Verilmemiş seviye puanı".
 - `v340sp` bloğu: CSS, `#spbadge` (Karakter düğmesinde sayı, ders sürerken `pulse`), `gainXP` sarması (ilk puan dersi / "+N seviye puanı"), + tıklaması (can/enerji artışı anında eklenir), kayıt `v340={sp,t}`; eski kayıtta puanlar boş, ders açık.
-- Kontrol: chk.js 0 hata; `/home/claude/scripts/sp_t.js`: Sv 2'de 1 puan, rozet + ders, + ile can 130, Sv 32'de 54 boş puan, kaydet/yükle aynı.
+- Kontrol: chk.js 0 hata; `/home/claude/scripts/sp_t.js`: Sv 2'de 2 puan, rozet + ders, + ile can 124, Sv 32'de 85 boş puan, kaydet/yükle aynı.
 
 ## v3.40 (6 Kasım 2026) · biyomlar %50 büyük (968×696), yan görevler keşifle bulunur, her yan kişinin kendi saati, sıralı açılış
 

@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.41** ile birebir (6 Kasım 2026). Bu sürümde: özellikler seviyeyle değil seviye puanlarıyla artar (Karakter penceresinde +), 11 özellik (Güç, Zırh, Mana eklendi), en üst seviye 65. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.41** ile birebir (6 Kasım 2026). Bu sürümde: özellikler seviyeyle değil seviye puanlarıyla artar (Karakter penceresinde +), 11 özellik (Güç, Zırh, Mana eklendi), en üst seviye 60; bir özelliğe verilebilecek puan seviyeyle açılır. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
