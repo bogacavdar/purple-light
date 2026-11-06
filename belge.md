@@ -1,6 +1,6 @@
 # Purple Light · Tasarım Belgesi
 
-Sürüm: **Versiyon 3.41** ile birebir (6 Kasım 2026). Bu sürümde: özellikler seviyeyle değil seviye puanlarıyla artar (Karakter penceresinde +), 11 özellik (Güç, Zırh, Mana eklendi), en üst seviye 60; bir özelliğe verilebilecek puan seviyeyle açılır. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.42** ile birebir (6 Kasım 2026). Bu sürümde: evcil hayvanlar (ağıl, güven çubuğu, binekler ve savaşçı yoldaşlar), Çoban Davut evcilleştirme hocası ve ana görev, yeni yan görev "Gece öten kuş". Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -536,6 +536,35 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - **Yetenek ağacı** (Y; v1.83): üç renkli ağaç — **Savaş** (kırmızı), **Ekonomi** (altın) ve **Dayanıklılık** (yeşil); her birinde 30 yetenek (toplam 90). Yetenekler sade, iki renkli ikonlu yuvarlaklardır; hepsi açılınca bir ağaç silüeti çizer. Başta yalnızca kök yetenek görünür; bir yetenek alınınca **yalnızca ona bağlı üstündekiler** açılır. Satın alma ikona tıklayarak. Fiyat ve seviye şartı kata göre: 100 (–), 250 (Sv 2), 400 (Sv 3), 600 (Sv 4), 1.000 (Sv 6), 1.800 (Sv 8), 3.000 (Sv 11), 5.000 (Sv 14). Tam liste "Yetenek ağacı" bölümünde.
 - **Koşu** Savaş ağacının ilk yeteneğidir: yalnızca 100 sikke; seviye, köprü ya da Atılma şartı yok.
 - **Atılma** yetenek ağacında değildir: öğreticide Börü ücretsiz öğretir (bkz. "Oyunun akışı").
+
+## Evcil hayvanlar (v3.42, 6 Kasım 2026, Boğaç)
+
+> Evcilleştirmeyi **Çoban Davut** öğretir (ACT 1 · "Çoban Davut"). Bir canlı ancak Davut'un o canlıyı anlatan görevi alınınca (ya da bitince) evcilleşir.
+
+**Her biyomda bir canlı evcilleşir** (3 binek, 3 savaşçı):
+
+| Biyom | Canlı | Türü | Nasıl | Sevdiği yiyecek | Özelliği |
+|---|---|---|---|---|---|
+| Çayır | Yaban atı | binek | yetişkin, doğrudan | Yabani elma | hız ×1,8; düz yolda en iyisi |
+| Orman | Kurt | savaşçı | yavru (in) | Tavşan eti | hızlı saldırır (can 260, hasar 14, 0,8 sn); gece canavar yaklaşınca hırlar |
+| Bataklık | Timsah | savaşçı | yavru (in) | Sazan | yavaş ama sağlam (can 520, hasar 22, 1,4 sn); ısırdığını 1,5 sn yavaşlatır |
+| Kayalık Dağ | Dağ keçisi | binek | yetişkin, doğrudan | Tuz kayası | hız ×1,5; Kayalık Dağ'da ×1,9 |
+| Kül Diyarı | Lav kertenkelesi | savaşçı | yavru (in) | Kül böceği kabuğu | can 380, hasar 18, 1 sn; vurduğuna yanık (3 sn); ateşe dayanıklı |
+| Mor Kristal Vadisi | Kristal geyik | binek | yetişkin, doğrudan | Ay otu | hız ×2,0; gece boynuzu hafif ışık verir (meşale sayılmaz) |
+
+- **Önce ağıl (Boğaç):** dünyada kurulmuş bir **ağıl** yoksa hiçbir canlı evcilleşmez (Davut'un ilk görevi dışında bütün evcilleştirme ağıldan sonra). Ağıl bir yapıdır (tarifi kazanda öğrenilir: 10 Çit); malzemesini götürünce **Usta Sinan** kurar, oyuncu istediği yere koyar (3 × 3 karo). Ağıla dokununca **ağıl penceresi** açılır: kimin yanında kimin ağılda kalacağı seçilir, baygın binek ayağa kaldırılır, ölen yoldaşların adları okunur. Pencerenin dışına basmak kapatır.
+- **Güven çubuğu:** sevdiği yiyecek çantandayken canlıya yaklaşınca "Yere bırak: …" çıkar; yiyeceği **yere bırakırsın** ve en az ~80 piksel geri çekilip beklersin. Canlı yanında biri varken yemez; gelir, 2 sn yer, başının üstündeki **güven çubuğu** (kalp) %25 dolar. Bir besleme ile sonraki arasında en az **1 oyun saati** geçmeli (evcilleştirme bir güne yayılır). Yakınında (~160 piksel) koşarsan, ona vurursan ya da üstüne yürürsen ürker, çubuk %30 iner; çubuk boşken kaçarsa o gün bir daha yanaşmaz. 4 beslemede (%100) evcilleşir.
+- **Yavru yolu (savaşçılar):** her savaşçı türünün kendi biyomunda bir **ini** vardır (yeri haritada gösterilmez; Davut anlatır). Anne inin yanındayken yaklaşılmaz (saldırır); anne avdayken (gündüz) yavruya yiyecek bırakılır. Yavru evcilleşince seninle gelir, **2 oyun günü** içinde büyür; büyüyene kadar savaşmaz ve canavarlar ona saldırmaz.
+- **İsim:** evcilleşince isim penceresi açılır (en çok 12 harf; bir öneriyle gelir). İsim konuşmalarda, yoldaşın başının üstünde ve ağılda görünür.
+- **Yanında en çok 1 binek ve 2 savaşçı** dolaşır; ötekiler ağılda bekler. Ağılda kimin yanına geleceği seçilir.
+- **Seviye yok (Boğaç):** yoldaşlar seviye atlamaz, güçlenmez; her türün değeri sabittir.
+- **Savaşçı:** 30–60 piksel arkanda yürür; **senin vurduğuna** ve **sana saldırana** (~160 piksel içinde) saldırır (bütün haritayı taramaz). Kendiliğinden yavaşça iyileşir; sevdiği yiyecekle beslersen canının %40'ı dolar.
+- **Savaşçı ölebilir (Boğaç):** canı biterse ölür ve geri gelmez. Adı ağıldaki küçük bir **taşa** yazılır; Davut bir sonraki konuşmada onun için tek bir söz söyler. Aynı türün ininde **3 oyun günü** sonra yeni bir yavru doğar; aynı yolla yeniden evcilleştirilir.
+- **Binek:** yanına gelip **Bin** (bilgisayarda **B** ya da yanındayken E; telefonda Bin/İn düğmesi bineğin yanındayken kendiliğinden çıkar). Binince binek biraz büyük çizilir, karakter sırtında oturur. Binerken koşu enerjisi harcanmaz; vurulmaz, toplanmaz (toplamaya ya da vurmaya basınca kendiliğinden inersin). Köprülerden geçer; mağaraya, eve ve suya giremez (kapıda kendiliğinden inersin).
+- **Binek ölmez, ağılda canlanır (Boğaç):** canavarlar bineğe de vurur; canı biterse yere düşersin, binek bayılıp ağıla döner. Ağılda sevdiği yiyecekten 3 tane verince yeniden ayağa kalkar.
+- **Performans:** yanında en çok 3 hayvan; yoldaşlar yalnızca kendi çevrelerine bakar (performans kuralı 5).
+- **Arena:** evcil hayvanlar arenada görünmez (arenada olup olmayacakları henüz konuşulmadı).
+- **Mağara ve ev:** mağaraya ya da evin içine girerken bineğinden inersin; yoldaşlar dışarıda bekler, çıkınca yanına gelir.
 
 ## Zorluk
 
@@ -1702,9 +1731,51 @@ Dursun'un küçük kardeşi; korumayı her şeyden önemli sayar.
 Eski Gemici Poyraz'ın U1–U8 görevleri v2.34'te kalktı. Poyraz'ın yeni görevleri (G1–G4 tekne tamiri, G5–G10 deniz balıkları): "ACT 1 · Gemici Poyraz ve deniz" bölümünde.
 
 
-### Çiftçi Ekin · Orman
+### Çoban Davut · Çayır → bütün biyomlar (evcilleştirme hocası; v3.42)
 
-> **v2.68, Boğaç: tarlacılık şimdilik oyunda yok.** Çiftçi Ekin, tarlası, ateşi, kapısı ve H1–H8 görevleri kaldırıldı (ikinci adadaki gibi haritadan çıkarıldı; v2.76: 2.68'de kaldırma kodu çalışmamıştı, Ekin ve tarla yerinde kalmıştı). Eski kayıtlarda alınmış ya da bitirilmiş her Ekin görevi ödülü kadar sikke verir; tohumlar, ürünler ve tarla yemekleri fiyatından sikkeye çevrilir. Tarlacılık ileride geri gelebilir (bkz. **Açıklar · İleride: Tarlacılık**).
+> **6 Kasım 2026, Boğaç:** Davut yan görev kişisi olmaktan çıkar, **ana görev** kişisi olur; "Kaçan keçi Pamuk" onun ilk ana görevidir. Bundan sonraki görevleri **yalnızca evcilleştirme** üzerinedir. Bir canlıyı evcilleştirince Davut **bir sonraki biyomda** yeniden karşına çıkar (bir önceki yerinden kalkar). Çayır'daki yan görev yerine "Gece öten kuş" geldi (Yan görevler). **İlk görevi dışındaki bütün görevleri ağıl kurulduktan sonra** (Boğaç).
+
+| # | Görev | İstenen | Açılma | Açar | Ders | Ödül |
+|---|---|---|---|---|---|---|
+| CB1 | Kaçan keçi Pamuk | Pamuk'u 3 kez yakala, Davut'a götür (eski yan görevin adımları aynı) | Seviye 2 | CB2 | – | 60 · 40 XP |
+| CB2 | Hayvanlara bir yuva | **Ağıl** (tarifi kazanda: 10 Çit) Usta Sinan'a kurdur ve istediğin yere koy; tarif bilinmiyorsa önce Kemal tarifi öğretir | CB1 · Orman keşfedildi | CB3 | Ağıl | 80 · 60 XP |
+| CB3 | Yaban atı | Çayır'da bir yaban atını evcilleştir (Yabani elma) ve adını koy | CB2 | CB4 | Evcilleştirme, binme | 120 · 90 XP |
+| CB4 | Kurdun ini | Orman'daki kurt inini bul, yavruyu evcilleştir (Tavşan eti) | CB3 | CB5 | Yavru yolu, savaşçı yoldaş | 160 · 120 XP |
+| CB5 | Bataklığın bekçisi | Bataklık'ta timsah yuvasındaki yavruyu evcilleştir (Sazan) | CB4 · E2 | CB6 | – | 220 · 170 XP |
+| CB6 | Sarp yolların dostu | Kayalık Dağ'da bir dağ keçisini evcilleştir (Tuz kayası) | CB5 · E3 | CB7 | Ağılda binek değiştirmek | 280 · 220 XP |
+| CB7 | Közün çocuğu | Kül Diyarı'nda lav kertenkelesi yavrusunu evcilleştir (Kül böceği kabuğu) | CB6 · Kül Diyarı keşfedildi | CB8 | – | 380 · 320 XP |
+| CB8 | Işıktan boynuzlar | Mor Kristal Vadisi'nde bir kristal geyiği evcilleştir (Ay otu) | CB7 · E5 | – | – | 500 · 450 XP |
+
+- **Ağıl kurulmadıysa Kemal hatırlatır (Boğaç):** CB1 bittikten sonra Orman keşfedilmiş ve hâlâ bir ağıl kurulmamışsa, Kemal "Görevsiz kalınmaz" kuralındaki ayak işleri gibi önce (bilinmiyorsa) **Ağıl tarifini öğren**, sonra **"Ağıl kur"** işini verir. Ağıl hangi yoldan kurulursa kurulsun Davut'un CB2'si de biter (aynı iş iki kez yapılmaz).
+- **Yeri:** her biyomda Davut'un durduğu yer haritada gösterilmez; ana görev kişisi olduğu için görevi varken başında **!** vardır.
+- Davut'un görev sahneleri: Pamuk'un yanında değneğiyle, sonraki biyomlarda hep bir hayvanı izlerken ("Bak şuna… korkmuyor, merak ediyor.").
+
+### Çiftçi Ekin · Çayır → Bereket Adası (tasarım, henüz oyunda yok)
+
+> **6 Kasım 2026, Boğaç:** tarlacılık geri geliyor, ama Orman'da değil, Ekin'in kendi küçük adasında: **Bereket Adası**. v2.68'de kaldırılan eski Ekin (Orman, H1–H8) yerine bu düzen geçer.
+
+- **Çayır'da ilk görev (H1 · Kaybolan korkuluk, ana görev):** genç çiftçi kız Ekin, Çayır'ın bir köşesinde küçük bir sebze köşesi kurmuş. Korkuluğu her gece başka bir yerde duruyor. Gece **üç saman izini** bulursun; korkuluğun yanında karnı aç bir **kirpi**: korkuluğu yürüten o (sırtındaki dikenlere takılmış). Kirpiye 2 Yabani elma bırakırsın, kirpi korkuluğu bırakıp gider; Ekin'e dönersin. Ödül 90 · 60 XP. Açılma: Seviye 3.
+- **Ekin gider (Boğaç):** görevi teslim ettikten sonra Ekin'le **ikinci kez** konuşunca: "Ben… adama dönmeliyim. Bir sal yaparım, olmazsa yüzerim." der ve **gider**; Çayır'dan kalkar.
+- **Barbaros'un yanında yeniden (Boğaç):** Barbaros'un **4. görevi (L4 · Yelken ipi)** teslim edildiğinde gemi yarı onarılmıştır; Barbaros kısa bir sefere çıkabileceğini söyler. O an Ekin enkazın yanında belirir: salı parçalanmış, akıntı onu Mor Kristal kıyısına atmış. Barbaros: "Kızım Meltem kadar inatçı… Seni adana bırakırım." Ekin adasına döner.
+  - **ACT 2'ye geçiş Ekin'den sonra (Boğaç):** Barbaros'un son görevi (L5 · Yeni bir gemi, ACT 2'ye geçiş) ancak Ekin olayı yaşandıktan sonra verilir. L8 bittiğinde Ekin'in ilk görevi hâlâ bitmemişse, "Görevsiz kalınmaz" kuralıyla Kemal o eksiği tamamlatan ayak işini verir (Ekin'in görevini al ve bitir).
+  - **Ekin'in ilk görevi bitmemişse bu olay olmaz.** L4 teslim edildiğinde H1 bitmemişse Ekin Çayır'da bekler; H1 bitince ve Ekin gidince, Barbaros'un yanına ilk gidişinde olay yaşanır.
+- **Bereket Adası'na gitmek:** olaydan sonra Barbaros'la konuşunca **"Ekin'in adasına gidelim"** seçeneği çıkar; kısa bir yükleme ekranıyla (mağara içleri gibi ayrı küçük harita) adaya geçilir, iskeledeki kayıktan **"Dön"** ile geri gelinir. Barbaros'un son görevi (gemi) bitip ACT 2'ye geçildiğinde ada yine Barbaros'un gemisiyle ziyaret edilir (ACT 2'de konuşulacak).
+- **Bereket Adası (küçük harita, ~48 × 36 karo):** kumsal ve iskele, Ekin'in kerpiç evi ve ahşap ambarı, **tarla** (başta 4 × 3, sonra 4 × 6 parsel), altı **fidan yeri** (meyve bahçesi), bir **kuyu** (Su), küçük bir dere, kenarda tavuklar (süs). Canavar çıkmaz, mor ışık inmez (güvenli yer); gece ve gündüz anakarayla aynı saatte akar.
+- **Tarla:** tırmıkla hazırla → tohum ek → **sula** (kuyudan Su ya da yağmur) → olgunlaşınca **tırpanla** biç. **Ürünler sen adada değilken de oyun saatine göre büyür**; sulanmamış tohum büyümez. Ürünler: Buğday, Havuç, Patates, Soğan, Kabak, Ayçiçeği. Hasatta %45 ihtimalle 1 tohum geri gelir; tohumları Ekin verir ve (ilk kez görüldükten sonra) satar.
+- **Fidan:** meyve ağaçlarının fidanı (Elma, Armut, Erik) fidan yerine dikilir; 3 oyun gününde büyür, sonra anakaradaki meyve ağaçları gibi silkelenir.
+- **Ekin'in adadaki görevleri (H2–H8, ana görev):**
+
+| # | Görev | İstenen | Açılma | Açar | Ders | Ödül |
+|---|---|---|---|---|---|---|
+| H2 | Dört alet | Getir: Tırmık, Sulama kabı, Tırpan, Taş kazma | H1 · ilk ada ziyareti | H3 | Tarla | 120 · 90 XP |
+| H3 | İlk başak | Buğday ek, sula, biç: 6 Buğday | H2 | H4 | Ekim ve hasat | 140 · 100 XP |
+| H4 | Yeni korkuluk | Yap ve tarlaya kur: Korkuluk | H3 | H5 | – | 150 · 110 XP |
+| H5 | İlk fidan | Bir Elma fidanı dik ve büyüt | H4 | H6 | Fidan | 170 · 130 XP |
+| H6 | Tarla büyüyor | Getir: 12 Kalas, 6 Taş (tarla 4 × 6 olur) | H5 | H7 | – | 200 · 150 XP |
+| H7 | Bereketli sepet | Yap: Hasat sepeti; getir: 4 Havuç, 4 Patates, 2 Kabak | H6 | H8 | – | 230 · 170 XP |
+| H8 | Ekmek kokusu | Yap: Buğday unu → Ekmek; Ekin'le birlikte ye | H7 | – | – | 260 · 200 XP |
+
+- Ürünlerden yapılan yemekler (Ekmek, Buğday unu, çorbalar, Çiftçi yahnisi, Patates püresi, Soğan halkası, Ayçiçek yağı…), Korkuluk ve Hasat sepeti eski tasarımdan geri gelir; tarifler kod yazılırken biyom kurallarıyla birlikte tablolara işlenir.
 
 ### Usta Sinan · Orman
 
@@ -1901,11 +1972,11 @@ Kızı Meltem'i arayan kaptan; ACT 1'in sonu onun gemisi.
 | L1 | Kazazedenin yarası | Getir: 3 Ay otu, 2 Işık mantarı | E5 | L2 | 400 · 600 XP |
 | L2 | Enkazın bekçileri | Avla: 2 Gölge kurdu | L1 | L3 | 600 · 1.000 XP |
 | L3 | Yıldızlarla yön | Getir: 2 Ay taşı, 4 Kristal (5. kademe kazmayla kazılır: Bazalt, Obsidyen ya da Kara çelik) | L2 · Kudret 2 | L4 | 500 · 800 XP |
-| L4 | Yelken ipi | Yap: 2 Mor ip | L3 | L6 | 500 · 800 XP |
+| L4 | Yelken ipi | Yap: 2 Mor ip · teslimde (Ekin'in ilk görevi bittiyse) **Ekin olayı**: Ekin enkazın yanında belirir, Barbaros onu Bereket Adası'na götürür (tasarım; "Çiftçi Ekin") | L3 | L6 | 500 · 800 XP |
 | L6 | Kara omurga | Getir: 8 Gece ağacı odunu | L4 · Seviye 28 | L7 | 530 · 848 XP |
 | L7 | Su almayan tekne | Getir: 6 Mor yosun, 3 Kehribar | L6 · Seviye 32 | L8 | 600 · 899 XP |
 | L8 | Pruvadaki fener | Getir: 4 Işık ağacı odunu, 3 Yankı taşı | L7 · Seviye 36 | L5 | 700 · 953 XP |
-| L5 | Yeni bir gemi | Gemi malzemeleri enkaza (Barbaros'la ya da enkazla konuşunca onay penceresi) | L8 | ACT 2 | 0 · 2.000 XP |
+| L5 | Yeni bir gemi | Gemi malzemeleri enkaza (Barbaros'la ya da enkazla konuşunca onay penceresi) | L8 · **Ekin olayı yaşandı** (Ekin bulunup adasına götürüldü; tasarım, Boğaç) | ACT 2 | 0 · 2.000 XP |
 
 ### Cadı İnci · Mor Kristal Vadisi
 
@@ -1999,7 +2070,7 @@ ACT 1'de 27 kişi, **139 görev** (Dursun, Nazlı, Börü ve Doğan 6'şar; Kema
 
 Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş ana görev sayısı** ve gerekiyorsa belli bir ana görev (E2 köprü, E3 Doğu geçidi, E4 izler, E5 Kıyıdaki duman, E6 Saliha'nın çorbası). Koşulu tutan ilk iki bitmemiş görev açıktır.
 
-- **Çayır:** Bulut (2) → Davut (4) → Gülsüm (6) → Ozan (9) → Rıfat (12) → Mavi (14 · E3)
+- **Çayır:** Bulut (2) → Toprak (4) → Gülsüm (6) → Ozan (9) → Rıfat (12) → Mavi (14 · E3)
 - **Orman:** Bekir (8) → Kahraman Dede (10) → Tarık (13) → Saadet (16) → Lale (19) → Ela (22)
 - **Bataklık:** Şifa (E2) → Cemile (18 · E2) → Kartal (21 · E2) → Hayali (23 · E3) → Remzi (26 · E3) → Kader (30 · E3)
 - **Kayalık Dağ:** Yahya (E3) → Zehra (24 · E3) → Bora (27 · E3) → Hatice Nine (30 · E3) → Sükûn (33 · E3) → Işıl (36 · E3)
@@ -2011,7 +2082,7 @@ Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş an
 | # | Biyom | Kişi | Görev | Saat | Ton | Ödül |
 |---|---|---|---|---|---|---|
 | 1 | Çayır | Mavi (genç kız) | Denizden dönmeyen kardeş | 17:00–23:00 | hüzünlü, mor ışık | 120 sikke · 80 XP |
-| 2 | Çayır | Çoban Davut | Kaçan keçi Pamuk | 06:00–11:00 | komik | 60 sikke · 40 XP |
+| 2 | Çayır | Toprak (çocuk) | Gece öten kuş (v3.42; eskiden Davut'un "Kaçan keçi Pamuk"u, artık ana görev) | 21:00–01:00 | tatlı, sessiz | 70 sikke · 50 XP |
 | 3 | Çayır | Güvercinci Bulut (çocuk) | Kaçan güvercinler | 10:00–15:00 | tatlı, sırlar | 80 sikke · 50 XP |
 | 4 | Orman | Ela (küçük kız) | Kampa giden yol | yalnızca gece (20:00–05:00) | gerilimli, sıcak son | 150 sikke · 120 XP |
 | 5 | Orman | Şövalye Kahraman Dede | Ejderin ini | 11:00–16:00 | komik | 90 sikke · 60 XP |
@@ -2045,16 +2116,18 @@ Akşamüstü İskele'nin ucunda, dizlerini kucaklamış bir kız oturur: **Mavi*
 - **Konuş (Mavi'ye dön):** Notu okur, uzun süre susar. "Korkmamış. Bu iyi bir şey… değil mi? Her akşam buraya gelip şarkısını söyleyeceğim." Görev biter.
 - **Sonra dünyada:** Mavi İskele'de, yanında suya bıraktığı kır çiçekleri. Konuşunca: "Bu akşam da söyledim. Deniz dinliyor gibi."
 
-### 2 · Çoban Davut — Kaçan keçi Pamuk (Çayır)
+### 2 · Toprak — Gece öten kuş (Çayır) (v3.42, Boğaç)
 
-Elinde değnek, terlemiş, nefes nefese bir çoban.
+> Çoban Davut'un "Kaçan keçi Pamuk" görevi **ana görev** oldu (ACT 1 · "Çoban Davut", CB1); Davut evcilleştirme hocası. Çayır'daki yan görev yerine bu geldi.
 
-- **Konuş:** "Pamuk! Pamuk kaçtı! Beyaz, tek boynuzu kırık, inatçı mı inatçı. Kırk yıldır keçi güderim, böylesini görmedim. Bir yakalasan… ben yetişemiyorum, dizlerim tutmuyor."
-- **Kovala (3 kez) (v2.42, Boğaç):** Pamuk Davut'tan **480–800 piksel** ötede otlar (eskiden 120–200, çok yakındı). Yanına varıp dokununca "Mee!" der ve **koşarak** öteye kaçar: kaçış **en az 420 piksel** (eskiden 100–180; ~4 kat) ve **çok hızlıdır (v2.55, Boğaç: eskiden saniyede 50 piksel, senden yavaştı):** kaçarken hızı **senin o anki koşu hızının 2,5 katıdır** (yürüme 72 × hız becerileri/seviye/hız iksiri × koşu çarpanı; en az saniyede 180 piksel), yani koşsan da yetişemezsin; durduğu yerde yakalanır. Kaçarken **görüşünde değil, gitmek istediği yere** kadar gider; yolunda ağaç, taş, kişi ya da eşya varsa **sağından ya da solundan dolanıp** geçer. Kaçış yeri her seferinde yeniden seçilir: senden **uzak** yönde, aynı biyomda, **deniz ve kıyıdan en az 2 kare uzak** ve araya su ya da kıyı girmeyen düz bir yoldur; Pamuk **suya girmez, kıyıya sıkışıp takılmaz**. Bir yerde takılırsa önce öbür yandan dener, olmazsa olduğu yerde durur (yine yakalanabilir). Koşarken yakalanmaz; durunca dokunmak gerekir (yeni yakalama için ~1,5 sn bekleme). Üçüncüde yorulur, yakalanır.
-- **Eşlik et:** Pamuk peşinden gelir; onu Davut'a götür (canavar çıkmaz). Yolda arada bir durup ot yer.
-- **Teslim (v2.42, Boğaç):** Pamuk Davut'un ~90 piksel yakınına gelince teslim konuşması açılır. Konuşma penceresi **Esc ile erken kapatılsa bile** adım yine biter (görev ödülünü verir); eskiden pencere kapatılınca görev takılıp kalıyordu: ne Pamuk ne Davut bir şey yapıyordu. Aynı koruma bütün yan görev konuşmaları için geçerlidir. Pamuk yakındayken Davut ile konuşmak da teslimi yapar.
-- **Konuş:** "Pamuk'um! Bir daha kaçarsan seni Nazlı'ya satarım! …Satmam ya. Al evlat, emeğine sağlık."
-- **Sonra dünyada:** Pamuk Davut'un yanında otlar, ara sıra zıplar. Konuşunca: "Bak, bugün hiç kaçmadı. Ama bana öyle bir bakıyor ki…"
+Pijamasının üstüne babasının ceketini giymiş, uykusu kaçmış küçük bir çocuk.
+
+- **Konuş:** "Her gece bir kuş ağlıyor. Hep aynı kuş. Annem 'rüyandır' diyor ama değil, sen de duy bak… Şşş."
+- **Topla (dinleyerek, 1 kuş):** Toprak'ın çevresinde, 250–600 piksel ötede, bir çalılığın dibinde **yuvası dağılmış bir bıldırcın**. Haritada ve dünyada gösterilmez; yaklaştıkça ötüşü (kısık, kesik bir "bıt-bıt") duyulur (Bulut'un güvercinleri gibi). Bulunca: "Yuvası rüzgârda dağılmış. Yumurtaları soğumuş ama biri hâlâ ılık."
+- **Kullan (yuva):** bıldırcının yanında **1 Kuru ot** ile yuvayı yeniden kur (yanına varınca kendiliğinden): kuş yuvaya oturur, ötüşü kesilir.
+- **Konuş (Toprak'a dön):** "Sustu! …Ağlamıyordu demek, çağırıyordu. Teşekkür ederim. Artık uyuyabilirim, değil mi?"
+- **Sonra dünyada:** Toprak'ın yanında, kenarda küçük bir yuva; gece yanından geçerken kısık bir ötüş duyulur. Konuşunca: "Yumurtadan bir yavru çıktı. Adını sen koy dedim ama sen yoktun, ben 'Fıstık' dedim."
+- **İz:** yanındaki yuva. **Konuşma resmi:** Toprak'ın kendisi; bıldırcın satırlarında bıldırcın (kod yazılırken eklenir).
 
 ### 3 · Güvercinci Bulut — Kaçan güvercinler (Çayır)
 
@@ -2972,7 +3045,7 @@ Toplam 45 görev, 14.570 sikke, 20.150 XP.
 
 ## Çiftçi Ekin
 
-> **v2.68, Boğaç: tarlacılık şimdilik oyunda yok.** Çiftçi Ekin, tarlası, kapısı ve H1–H8 görevleri kaldırıldı (ikinci adadaki gibi haritadan çıkarıldı). Eski kayıtlarda alınmış ya da bitirilmiş her Ekin görevi ödülü kadar sikke verir; tohumlar, ürünler ve tarla yemekleri fiyatından sikkeye çevrilir. Tarlacılık ileride geri gelebilir (bkz. **Açıklar · İleride: Tarlacılık**).
+**Tasarım (6 Kasım 2026, Boğaç; henüz oyunda yok):** genç bir çiftçi kız. Küçük **Bereket Adası**'nda doğup büyümüş; bir fırtınada salıyla Yıldızsız Ada'ya düşmüş, Çayır'da toprağı eşeleyip bir sebze köşesi kurmuş. Güler yüzlü, elleri hep toprak, konuşurken bitkilere "bebeğim" der. İlk görevinden sonra adasına dönmeye kalkar, akıntı onu Mor Kristal kıyısına atar; Barbaros onu adasına götürür, oradan sonra Ekin'in çiftliği ziyaret edilir. Görevleri: ACT 1 · "Çiftçi Ekin". Konuşma resmi kod yazılırken eklenir (CLAUDE.md kuralı).
 
 ## Usta Sinan
 

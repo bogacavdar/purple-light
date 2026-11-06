@@ -10,10 +10,13 @@
 
 
 
-## (bekleyen) Evcil hayvanlar, Çoban Davut, Çiftçi Ekin · yalnızca tasarım (6 Kasım 2026)
+## v3.42 (6 Kasım 2026) · evcil hayvanlar, Çoban Davut ana görev (CB1–CB8), Gece öten kuş
 
-- Belgeye yazıldı, kod yok: `20_sistemler.md` "Evcil hayvanlar"; `30_act1.md` "Çoban Davut" (CB1–CB8; CB1 = eski yan görev Pamuk), "Çiftçi Ekin · Çayır → Bereket Adası" (H1 Çayır, H2–H8 adada), Barbaros L4'te Ekin olayı, L5 Ekin olayına bağlı, Kemal'in "Ağıl kur" ayak işi; `36_yan_gorevler.md` #2 artık "Gece öten kuş" (Toprak, 21:00–01:00); `40_act1_kisiler.md` Ekin.
-- Sıradaki: Boğaç'a çizim önizlemesi (ata binmiş karakter, güven çubuğu, Bereket Adası haritası), onaydan sonra kod. Kodda: `v230` Q'dan `husnu` çıkar (GATE'te `toprak`), Davut ana görev kişisi olur.
+- `v342pet` bloğu: `SP` (6 tür; `m` binek, `pup` yavru yolu), `PT` (pets, tr güven, trT bekleme, ever, den yeniden doğma, dead taş, no, mom), `FD` yere bırakılan yiyecek (`f.a` hedefe bağlı; yürürken iç `tickAnimals`'ın kaçırmasını önlemek için konumu sabitlenir), `PUP` (gündüz inin çevresinde, gece içeride, gece yaklaşınca anne bir kez saldırır). `canTame`: ağıl var + Davut'un o tür görevi sürüyor ya da bitti. Binek: `STAT.move` çarpanı, `wantsRun` kapalı, `hurt` bineğe gider, `interact`/`attack` indirir, `drawPlayer` bineği 1,6 kat çizip karakteri 14 px yukarı koyar; B tuşu, dokunmatikte `#v342ride`. Savaşçı: `enemyFor` (oyuncuya 170 px içinde `mad`/`chase`), 0,7×hasar yer, ölüm → `PT.dead`, `PT.den[sp]=+3 gün`. Ağıl: `PSPR['Ağıl']` çizimi, `useplaced` → `#v342pen` penceresi (dışına basmak kapatır). İsim: `#v342nm` (dışı/Enter/Esc = Tamam). Kayıt `v342={pt,dm}`.
+- Davut: `window.__plGIVER.k_davut` (`k_` öneki `gidOfTg` için), `sqk:'husnu'` (v230 portresi). Yeri: CB3'e kadar `BY.husnu` (Çayır), sonra her CB ile bir biyom ileri (`spotIn`, deterministik, çevresindeki ağaç/düğüm temizlenir). Pamuk Davut'un yanında (`__plDrawGoat`).
+- `v186`: DATA'ya `GB.k_davut=0` ve CB1–CB8; yeni adım türleri `sq` (v230'un bitirdiği yan görev) ve `tame`; `pickFiller` başında ağıl ayak işi (önce tarif).
+- `v230`: `husnu` artık `main:1` (ödül 0, kart/liste/harita/sayaçta yok, `present` false); CB1 sürerken `petTick` husnu'yu başlatır ve takip ettirir. Yeni `toprak` (21:00–01:00, GATE Çayır 2.), `quail` çizimi/sesi.
+- Kontrol: chk 0 hata; `/home/claude/scripts/pet_t.js` (at: 4 beslemede evcil, CB3 ✓, binince hız ×1,8, hasar bineğe), `pet_t2.js` (kurt yavrusu, dövüş, ölüm → taş ve 3 gün), `cb1_t.js`, `sq_t5.js` (toprak ok).
 
 ## v3.41 (6 Kasım 2026) · seviye puanları, en üst seviye 60, Güç/Zırh/Mana özellik oldu
 

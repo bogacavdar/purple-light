@@ -52,7 +52,7 @@ Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş an
 | # | Biyom | Kişi | Görev | Saat | Ton | Ödül |
 |---|---|---|---|---|---|---|
 | 1 | Çayır | Mavi (genç kız) | Denizden dönmeyen kardeş | 17:00–23:00 | hüzünlü, mor ışık | 120 sikke · 80 XP |
-| 2 | Çayır | Toprak (çocuk) | Gece öten kuş (tasarım; eskiden Davut'un "Kaçan keçi Pamuk"u, artık ana görev) | 21:00–01:00 | tatlı, sessiz | 70 sikke · 50 XP |
+| 2 | Çayır | Toprak (çocuk) | Gece öten kuş (v3.42; eskiden Davut'un "Kaçan keçi Pamuk"u, artık ana görev) | 21:00–01:00 | tatlı, sessiz | 70 sikke · 50 XP |
 | 3 | Çayır | Güvercinci Bulut (çocuk) | Kaçan güvercinler | 10:00–15:00 | tatlı, sırlar | 80 sikke · 50 XP |
 | 4 | Orman | Ela (küçük kız) | Kampa giden yol | yalnızca gece (20:00–05:00) | gerilimli, sıcak son | 150 sikke · 120 XP |
 | 5 | Orman | Şövalye Kahraman Dede | Ejderin ini | 11:00–16:00 | komik | 90 sikke · 60 XP |
@@ -86,7 +86,7 @@ Akşamüstü İskele'nin ucunda, dizlerini kucaklamış bir kız oturur: **Mavi*
 - **Konuş (Mavi'ye dön):** Notu okur, uzun süre susar. "Korkmamış. Bu iyi bir şey… değil mi? Her akşam buraya gelip şarkısını söyleyeceğim." Görev biter.
 - **Sonra dünyada:** Mavi İskele'de, yanında suya bıraktığı kır çiçekleri. Konuşunca: "Bu akşam da söyledim. Deniz dinliyor gibi."
 
-### 2 · Toprak — Gece öten kuş (Çayır) (tasarım, 6 Kasım 2026, Boğaç · henüz oyunda yok)
+### 2 · Toprak — Gece öten kuş (Çayır) (v3.42, Boğaç)
 
 > Çoban Davut'un "Kaçan keçi Pamuk" görevi **ana görev** oldu (ACT 1 · "Çoban Davut", CB1); Davut evcilleştirme hocası. Çayır'daki yan görev yerine bu geldi.
 
@@ -94,8 +94,7 @@ Pijamasının üstüne babasının ceketini giymiş, uykusu kaçmış küçük b
 
 - **Konuş:** "Her gece bir kuş ağlıyor. Hep aynı kuş. Annem 'rüyandır' diyor ama değil, sen de duy bak… Şşş."
 - **Topla (dinleyerek, 1 kuş):** Toprak'ın çevresinde, 250–600 piksel ötede, bir çalılığın dibinde **yuvası dağılmış bir bıldırcın**. Haritada ve dünyada gösterilmez; yaklaştıkça ötüşü (kısık, kesik bir "bıt-bıt") duyulur (Bulut'un güvercinleri gibi). Bulunca: "Yuvası rüzgârda dağılmış. Yumurtaları soğumuş ama biri hâlâ ılık."
-- **Götür:** yuva için 4 Kuru ot, 2 Dal (çalılığa).
-- **Kullan (yuva):** bıldırcının yanında yuvayı kur (tuşa basınca): kuş yuvaya oturur, ötüşü kesilir.
+- **Kullan (yuva):** bıldırcının yanında **1 Kuru ot** ile yuvayı yeniden kur (yanına varınca kendiliğinden): kuş yuvaya oturur, ötüşü kesilir.
 - **Konuş (Toprak'a dön):** "Sustu! …Ağlamıyordu demek, çağırıyordu. Teşekkür ederim. Artık uyuyabilirim, değil mi?"
 - **Sonra dünyada:** Toprak'ın yanında, kenarda küçük bir yuva; gece yanından geçerken kısık bir ötüş duyulur. Konuşunca: "Yumurtadan bir yavru çıktı. Adını sen koy dedim ama sen yoktun, ben 'Fıstık' dedim."
 - **İz:** yanındaki yuva. **Konuşma resmi:** Toprak'ın kendisi; bıldırcın satırlarında bıldırcın (kod yazılırken eklenir).

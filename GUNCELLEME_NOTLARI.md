@@ -8,6 +8,26 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.42 · 6 Kasım 2026
+
+### Oynanış
+- **Evcil hayvanlar:** her biyomda bir canlı evcilleşir. Binekler: Yaban atı (Çayır), Dağ keçisi (Kayalık Dağ), Kristal geyik (Mor Kristal Vadisi). Savaşçılar: Kurt (Orman), Timsah (Bataklık), Lav kertenkelesi (Kül Diyarı).
+- **Nasıl:** canlının sevdiği yiyeceği yanına bırak, birkaç adım geri çekil ve bekle. Yerse başının üstündeki güven çubuğu dolar; koşarsan ya da vurursan ürker. Dört beslemede evcilleşir ve ona bir ad koyarsın. Savaşçılar inlerindeki yavrudan evcilleşir: gündüz yavru yalnızdır, gece anne inin başında bekler.
+- **Önce ağıl:** dünyada bir ağıl kurulmadan hiçbir canlı evcilleşmez. Ağılda kimin yanında kimin ağılda kalacağını seçersin.
+- **Yanında 1 binek ve 2 savaşçı** dolaşır. Bineğe **B** ile (telefonda Bin düğmesiyle) binersin; çok daha hızlı gidersin. Savaşçılar senin vurduğuna ve sana saldırana saldırır; kurt hızlı, timsah ısırdığını bırakmaz, kertenkele yakar.
+- **Ölüm:** savaşçı ölürse geri gelmez; adı ağıldaki taşa yazılır, 3 gün sonra ininde yeni bir yavru doğar. Binek ölmez: bayılıp ağıla döner, sevdiği yiyecekten 3 tane verince ayağa kalkar.
+- **Çoban Davut ana görev oldu:** Pamuk'un görevi artık onun ilk ana görevi. Sonraki görevleri evcilleştirme üzerine: ağıl, at, kurt, timsah, dağ keçisi, lav kertenkelesi, kristal geyik. Her evcilleştirmeden sonra bir sonraki biyomda karşına çıkar. Ağıl kurmadıysan Kemal hatırlatır.
+- **Yeni yan görev · Gece öten kuş (Çayır):** uykusu kaçmış Toprak her gece ağlayan bir kuşu duyuyor. Kuşu sesinden bul, yuvasını yeniden kur.
+
+### Görsel
+- Ağılın kendi çizimi (çit, yemlik, saman), kurt ini, timsah yuvası, kertenkele kaya çatlağı, binince bineğin sırtında oturan karakter, yoldaşların ad etiketleri.
+
+### Ses
+- Bıldırcının alçak, yumuşak ötüşü.
+
+### Tasarım belgesi
+- "Evcil hayvanlar", "Çoban Davut", "Gece öten kuş" bölümleri; Çiftçi Ekin ve Bereket Adası'nın tasarımı (henüz oyunda yok).
+
 ## Versiyon 3.41 · 6 Kasım 2026
 
 ### Oynanış

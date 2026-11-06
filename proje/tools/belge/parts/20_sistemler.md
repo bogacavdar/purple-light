@@ -218,9 +218,9 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 - **Koşu** Savaş ağacının ilk yeteneğidir: yalnızca 100 sikke; seviye, köprü ya da Atılma şartı yok.
 - **Atılma** yetenek ağacında değildir: öğreticide Börü ücretsiz öğretir (bkz. "Oyunun akışı").
 
-## Evcil hayvanlar (tasarım, 6 Kasım 2026, Boğaç · henüz oyunda yok)
+## Evcil hayvanlar (v3.42, 6 Kasım 2026, Boğaç)
 
-> Boğaç ile konuşularak kararlaştırıldı; kod yazılmadı. Sıra: belge → çizim önizlemesi (ata binmiş karakter, güven çubuğu) → kod. Evcilleştirmeyi **Çoban Davut** öğretir (ACT 1 · "Çoban Davut").
+> Evcilleştirmeyi **Çoban Davut** öğretir (ACT 1 · "Çoban Davut"). Bir canlı ancak Davut'un o canlıyı anlatan görevi alınınca (ya da bitince) evcilleşir.
 
 **Her biyomda bir canlı evcilleşir** (3 binek, 3 savaşçı):
 
@@ -233,18 +233,19 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 | Kül Diyarı | Lav kertenkelesi | savaşçı | yavru (in) | Kül böceği kabuğu | can 380, hasar 18, 1 sn; vurduğuna yanık (3 sn); ateşe dayanıklı |
 | Mor Kristal Vadisi | Kristal geyik | binek | yetişkin, doğrudan | Ay otu | hız ×2,0; gece boynuzu hafif ışık verir (meşale sayılmaz) |
 
-- **Önce ağıl (Boğaç):** dünyada kurulmuş bir **ağıl** yoksa hiçbir canlı evcilleşmez (Davut'un ilk görevi dışında bütün evcilleştirme ağıldan sonra). Ağıl Usta Sinan'dan ev gibi sipariş edilir ve oyuncunun istediği yere kurulur.
-- **Güven çubuğu:** canlının sevdiği yiyeceği yanına (~60 piksel) **yere bırakırsın** ve en az ~80 piksel geri çekilip beklersin. Canlı yanında biri varken yemez; gelir, 2 sn yer, başının üstündeki **güven çubuğu** (kalp) %25 dolar. Bir besleme ile sonraki arasında en az **1 oyun saati** geçmeli (evcilleştirme bir güne yayılır). Yakınında (~160 piksel) koşarsan, ona vurursan ya da üstüne yürürsen ürker, çubuk %30 iner; çubuk boşken kaçarsa o gün bir daha yanaşmaz. 4 beslemede (%100) evcilleşir.
+- **Önce ağıl (Boğaç):** dünyada kurulmuş bir **ağıl** yoksa hiçbir canlı evcilleşmez (Davut'un ilk görevi dışında bütün evcilleştirme ağıldan sonra). Ağıl bir yapıdır (tarifi kazanda öğrenilir: 10 Çit); malzemesini götürünce **Usta Sinan** kurar, oyuncu istediği yere koyar (3 × 3 karo). Ağıla dokununca **ağıl penceresi** açılır: kimin yanında kimin ağılda kalacağı seçilir, baygın binek ayağa kaldırılır, ölen yoldaşların adları okunur. Pencerenin dışına basmak kapatır.
+- **Güven çubuğu:** sevdiği yiyecek çantandayken canlıya yaklaşınca "Yere bırak: …" çıkar; yiyeceği **yere bırakırsın** ve en az ~80 piksel geri çekilip beklersin. Canlı yanında biri varken yemez; gelir, 2 sn yer, başının üstündeki **güven çubuğu** (kalp) %25 dolar. Bir besleme ile sonraki arasında en az **1 oyun saati** geçmeli (evcilleştirme bir güne yayılır). Yakınında (~160 piksel) koşarsan, ona vurursan ya da üstüne yürürsen ürker, çubuk %30 iner; çubuk boşken kaçarsa o gün bir daha yanaşmaz. 4 beslemede (%100) evcilleşir.
 - **Yavru yolu (savaşçılar):** her savaşçı türünün kendi biyomunda bir **ini** vardır (yeri haritada gösterilmez; Davut anlatır). Anne inin yanındayken yaklaşılmaz (saldırır); anne avdayken (gündüz) yavruya yiyecek bırakılır. Yavru evcilleşince seninle gelir, **2 oyun günü** içinde büyür; büyüyene kadar savaşmaz ve canavarlar ona saldırmaz.
 - **İsim:** evcilleşince isim penceresi açılır (en çok 12 harf; bir öneriyle gelir). İsim konuşmalarda, yoldaşın başının üstünde ve ağılda görünür.
 - **Yanında en çok 1 binek ve 2 savaşçı** dolaşır; ötekiler ağılda bekler. Ağılda kimin yanına geleceği seçilir.
 - **Seviye yok (Boğaç):** yoldaşlar seviye atlamaz, güçlenmez; her türün değeri sabittir.
 - **Savaşçı:** 30–60 piksel arkanda yürür; **senin vurduğuna** ve **sana saldırana** (~160 piksel içinde) saldırır (bütün haritayı taramaz). Kendiliğinden yavaşça iyileşir; sevdiği yiyecekle beslersen canının %40'ı dolar.
 - **Savaşçı ölebilir (Boğaç):** canı biterse ölür ve geri gelmez. Adı ağıldaki küçük bir **taşa** yazılır; Davut bir sonraki konuşmada onun için tek bir söz söyler. Aynı türün ininde **3 oyun günü** sonra yeni bir yavru doğar; aynı yolla yeniden evcilleştirilir.
-- **Binek:** yanına gelip **Bin** (bilgisayarda **B**, telefonda Bin/İn düğmesi kendiliğinden çıkar). Binerken koşu enerjisi harcanmaz; vurulmaz, toplanmaz (toplamaya ya da vurmaya basınca kendiliğinden inersin). Köprülerden geçer; mağaraya, eve ve suya giremez (kapıda kendiliğinden inersin).
+- **Binek:** yanına gelip **Bin** (bilgisayarda **B** ya da yanındayken E; telefonda Bin/İn düğmesi bineğin yanındayken kendiliğinden çıkar). Binince binek biraz büyük çizilir, karakter sırtında oturur. Binerken koşu enerjisi harcanmaz; vurulmaz, toplanmaz (toplamaya ya da vurmaya basınca kendiliğinden inersin). Köprülerden geçer; mağaraya, eve ve suya giremez (kapıda kendiliğinden inersin).
 - **Binek ölmez, ağılda canlanır (Boğaç):** canavarlar bineğe de vurur; canı biterse yere düşersin, binek bayılıp ağıla döner. Ağılda sevdiği yiyecekten 3 tane verince yeniden ayağa kalkar.
 - **Performans:** yanında en çok 3 hayvan; yoldaşlar yalnızca kendi çevrelerine bakar (performans kuralı 5).
-- **Arena:** evcil hayvanların arenada olup olmayacağı henüz konuşulmadı.
+- **Arena:** evcil hayvanlar arenada görünmez (arenada olup olmayacakları henüz konuşulmadı).
+- **Mağara ve ev:** mağaraya ya da evin içine girerken bineğinden inersin; yoldaşlar dışarıda bekler, çıkınca yanına gelir.
 
 ## Zorluk
 
