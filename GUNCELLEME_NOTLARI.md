@@ -8,6 +8,30 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.49 · 6 Kasım 2026
+
+### Oynanış
+
+- **Evini döşemek kolaylaştı:** Döşe'ye basınca oda bütün ekranı kaplar, eşyaların altta bir şeritte durur; alet çubuğu, menüler ve dövüş düğmeleri gizlenir. Telefonda eşyayı şeritten seçip odada yerine dokunarak koyarsın.
+- Seçtiğin eşyanın hemen yanında **Döndür** düğmesi var.
+- Konmuş bir eşyaya dokununca **Taşı / Geri al / Döndür** çıkar; eşyayı sürükleyerek de taşıyabilirsin. Uygun olmayan yere bırakırsan eşya yerinde kalır.
+- Çantanda ev eşyası varken bir eve ilk kez girdiğinde Döşe kendiliğinden açılır.
+- Evin kapısının önündeyken F önce kapıyı açar; yerdeki bir şeyi toplamaz.
+- Yatağı koyunca "Yatağı yerleştir" yazısı hemen kalkar.
+
+### Denge
+
+- **Ev fiyatları tablodaki gibi:** Deri çadır 300, Kulübe 450, Kamış kulübe 650, Kerpiç ev 950, Ahşap ev 1.500, Taş ev 2.500, Konak 5.000 sikke. Yaprak barınağı 25 sikke ve malzemesi. Tarifini öğrendiğin evleri kendi malzemenle Usta Sinan'a yalnızca işçilik ödeyerek yaptırabilirsin.
+
+### Arayüz
+
+- Döşe sırasında ve büyük harita açıkken duyurular beklemeye alınır, sonra gösterilir.
+- Ders kartlarında, yetenek açıklamalarında, boş envanter yazısında ve ev içindeki yazılarda doğru tuş (F) yazar.
+- Usta Sinan'ın sipariş penceresi evleri artık kendisinin yaptığını söyler.
+- Hile paneli aramasında evler ve ev eşyaları da çıkar; hile modu açıkken Arena açıktır.
+
+---
+
 ## Versiyon 3.48 · 6 Kasım 2026
 
 ### Oynanış
@@ -392,18 +416,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Yeni bölümler: Mor ışık saldırıları ve Yıldızsızlar, Öteki sen, Boğaç, Denizdeki gizli yol. Başarımlar tablosuna iki gizli başarım eklendi.
-
----
-
-## Versiyon 3.29 · 5 Kasım 2026
-
-### Arayüz
-- **Telefonda eşyanın tam adı:** kutucuklarda uzun adlar kısalıyordu ("Çam…"). Artık bir kutucuğa dokununca eşyanın tam adı kutucuğun üstünde küçük bir balonda birkaç saniye görünür (envanter, el yapımı, kazan, örs, yemek, pazar). Envanterde bir kutucuğa basılı tutunca da tam ad çıkar ve parmağını kaldırana kadar durur; bu basış eşyayı seçmez.
-
-### Düzeltmeler
-- Meşaleye reçine sürmek isteyip reçinen yokken çıkan uyarı artık yalnızca "Reçinen yok." diyor; eskiden artık olmayan bir kabuk tarifini gösteriyordu. (Reçine sürmek her seferinde 1 reçine harcar; bu değişmedi.)
-
-### Tasarım belgesi
-- Sistemler › Telefona göre sıkı düzen: eşyanın tam adı balonu.
-- Işık kaynakları: reçine sürünce 1 reçine harcandığı ve yeni uyarı yazıldı.
-- Giriş › Kural sadeleşti.

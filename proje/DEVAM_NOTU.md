@@ -1,3 +1,22 @@
+## v3.49 (6 Kasım 2026) · ev döşemesi yenilendi, ev fiyatları tablodan, kapıda F önce kapı, F yazıları, hile aramasında evler, arena hile moduyla
+
+- **Döşe ekranı (`v56`, 20_sistemler Ev):** `area()`: Döşe'de oda üst çubuk ile alttaki şerit arasındaki bütün alanı kullanır (`scale` kesirli olabilir, en az 0,8). `.rlist` ekranın altında sabit yatay şerit (`.rrow` yatay kayar); `body.roomedit` sınıfı alet çubuğu, XP kutusu, sol menü, menü çubuğu, dokunmatik dövüş düğmeleri, görev kartı ve ders kartını gizler; `#roomui` Döşe'de `transform:none` (yoksa `position:fixed` çocuklar çubuğa göre konuyordu). Duyurular: `v345` `mapOn` artık Döşe'yi de sayar (`window.__plQuiet`), gün yazısı Döşe/harita kapanınca (`dayBack`; önce `dayBannerShow` hemen yeniden açıyordu), başarım kartı da `__plQuiet` ile bekler.
+- **Döndür:** seçili eşyanın hemen yanında "↻ Döndür" (kare olmayan, duvar olmayan eşyalar); R de döndürür.
+- **Taşı / sürükle:** konmuş eşyaya kısa dokunuş → küçük menü (Taşı / Geri al / Döndür); Taşı sonra dokunulan kareye taşır; basılı tutup sürüklemek (`pointermove` >8 px) bırakılan kareye taşır; uygun değilse eşya yerinde kalır (`moveTo`, `cellFree(…, it)`). Yeni yardımcılar `gridFor`, `hitItem`, `pickUp`, `moveTo`.
+- **İlk giriş:** `o.room.seen` yoksa ve çantada ev eşyası varsa Döşe kendiliğinden açılır (`seen` kayıtta ev nesnesinde kalır).
+- **Yatak uyarısı:** yatak konunca "Yatağın envanterinde…" yazısı hemen kalkar.
+- **Kapıda F (EV-05):** `v56` sonunda `target` sarması: bir evin (Yaprak barınağı dahil) alt ortasının önündeysen (±14 px, -8…+20 px) hedef ev olur, yerdeki toplanabilirden önce.
+- **Deneme (gerçek dokunma, 844×390, `touchscreen.tap`):** ilk girişte Döşe açıldı; şeritten Hasır yatak, Tabure, Raf seçilip odaya dokunularak kondu; Tabure'ye dokununca menü, Taşı → yeni kare; bilgisayarda Taş lamba sürüklenerek taşındı. Ekran görüntüleri `/tmp/yz/room_m3.png`, `room_d2.png`.
+- **Ev fiyatları:** `houseCost=H=>H.c` (alt fiyat `buyFloor` evlerden kalktı; Kamış kulübe 2.172, Kerpiç ev 2.549, Deri çadır 1.039 gibi değerler bundandı); Yaprak barınağı `c:25`. 8 evin fiyatı oyunda okundu: 25 / 300 / 450 / 650 / 950 / 1.500 / 2.500 / 5.000 = belge. Tarifi öğrenilmiş evler Sinan'ın "Sipariş ver" listesinde de çıkar (kendi malzemenle, yalnız işçilik `ustaPrice`; önce `!HOUSESET` ile dışlanıyordu).
+- **ORM-13:** kod değişmedi: ders kartı açıkken F toplamayı yapıyor (denendi, `showLesson('forge')` açıkken F → Dal +1). Testçinin barınak önündeki boşa giden F'si büyük olasılıkla yanındaki toplanabilir (ör. Kum) içindi; kapı/barınak önceliği bunu çözer.
+- **ORM-12:** ders kartı metni (`showLesson`), yetenek açıklaması (`x.e` üç yer) `__plB5.kTxt` ile atanan tuşa çevrilir; boş envanter yazısı ve oda içi etiketler ("F · Dışarı çık / Uyu / Lamba") `__plKey('interact')`. Dünyadaki istem kutusu zaten çeviriyordu.
+- **ORM-14:** usta sipariş penceresi: "Evleri ve barınakları da Usta Sinan yapar".
+- **EV-06:** hile aramasına `HOUSES` eklendi (ev eşyaları zaten `DB.R`'den geliyordu; "lamba" → Kil lamba, Taş lamba; "kulübe" → Kulübe, Kamış kulübe). Arama kutusu hile paneli açıkken görünür.
+- **EV-07:** arena `unlocked()` artık "Hile modu" anahtarına (`settings.cheat`) bakar (belge: hile modu açıkken açılır); önce yalnızca hile seçeneklerinin açılmış olmasına (`hammadde.cheatok`) bakıyordu.
+- **Ölçüm** (`olcum.js` CPU×4, gl; 3.48 → 3.49): BOOT 18.593 → 18.292 ms; kumsal avg 203,9 → 195,3; yürürken 162,5 → 176,4; PLAY 10 sn js 4.080 → 4.010 ms (gürültü içinde).
+- **Geri almak için:** `v56` (area/scale/origin, renderUI, pointer olayları, CSS, `target` sarması; v3.48 hali), `v345` `mapOn`/`dayBack`, `v339ach` `show` koşulu, `houseCost` ve Yaprak barınağı `c`, `renderUsta` `pl` süzgeci ve metni, `showLesson`/yetenek metinleri, hile `ALL`, arena `unlocked`. Kayıtta yalnız ev nesnesine `room.seen` eklenir (eski kayıtta yoksa ilk girişte Döşe açılır); MAPV değişmedi.
+- Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
+
 ## v3.48 (6 Kasım 2026) · E2E Orman 2: yan görev ödülleri açan ana göreve göre, "!" büyük haritada ~16 px, Sinan ev listesi, ders kartı bekler
 
 - **Yan görev ödülleri:** 42 görevin `c`/`x` verisi belgeden (36_yan_gorevler tabloları v3.48 kuralı, 37_magaralar) yeniden yazıldı (36 değişti). Oyunda okunan `q.c`/`q.xp` belgeyle otomatik karşılaştırıldı: 0 fark.
@@ -180,9 +199,3 @@
 - `v330dev`: Boğaç, her gece 15 sn; konuşunca `exitToMenu()`; kayıtta `v330dev=1` olunca bir daha gelmez.
 - Tavla anısı: boynuzlar kafada (hy=80), mor. `closeTitle` içindeki iPhone ipucu toast'ı silindi.
 - Kontrol: chk.js 0 hata.
-
-## v3.29 (5 Kasım 2026) · telefonda eşyanın tam adı; reçine uyarısı
-- Yeni blok `v329name`: dokunmatikte `#craft .tile[data-n]` kutucuğuna dokununca (ad `.nm` kısalmışsa) `#nmtip` balonu 2,5 sn; envanterde (`mode==='inv'`) 0,4 sn basılı tutunca balon parmak kalkana kadar, ardından gelen click yutulur. Taşınabilir eşyanın `pointerup` yolunda (`invClick` çağrısı) yerinde kanca: `window.__plNmHeld()`. Fare değişmedi.
-- `feedTorch`: reçine yok uyarısı "Reçinen yok." (eski metin v2.70'te kalkan kabuk tarifini gösteriyordu).
-- CLAUDE.md ve belge Giriş › Kural: 80 yaş cümlesi silindi.
-- Kontrol: chk.js 0 hata. Eski kayıtlara etkisi yok.

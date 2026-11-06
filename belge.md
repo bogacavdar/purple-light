@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.48** ile birebir (6 Kasım 2026). Bu sürümde: yan görev ödülleri onları açan ana göreve göre, haritada "!" ve "?" aynı boyda, malzemeyle gelince Sinan ev listesini açar, ders kartı pencerelerin üstüne binmez. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.49** ile birebir (6 Kasım 2026). Bu sürümde: ev döşemesi yenilendi (bütün ekran, altta eşya şeridi, telefonda dokunarak, taşı/sürükle, Döndür), ev fiyatları tablodaki gibi, hile panelinde bütün eşyalar. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -785,7 +785,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
 
 - Ev **Usta Sinan**'dan (Orman; v3.39'a kadar Marangoz Çınar) sikkeyle alınır, envantere gelir; bir yuvaya koyup yere kurarsın (Boşluk döndürür, Esc iptal). Taş ev de diğer evler gibi istediğin yere kurulur (Kemal'in yanındaki "SATILIK" arsa kaldırıldı; haritada arsa, tabela ya da arsa ipucu yoktur).
 - **Evlerin görünüşü (v3.39, Boğaç: "ev eve benzesin, her ev farklı, pahalılaştıkça daha lüks"):** her ev kendine özgü çizilir ve fiyatı arttıkça daha görkemli görünür (envanterde, yerde ve kurulunca aynı resim):
-  - **Yaprak barınağı** (5): çapraz dallardan bir çatma, üstü kat kat yapraklı, önünde kütük.
+  - **Yaprak barınağı** (25): çapraz dallardan bir çatma, üstü kat kat yapraklı, önünde kütük.
   - **Deri çadır** (300): direkleri tepeden çıkan, dikişli deri parçalarından konik çadır; boyalı bir şerit, açık kapı kanadı, kazıklar.
   - **Kulübe** (450): taş temel, dal örgü duvarlar, sivri saman çatı, alçak kapı.
   - **Kamış kulübe** (650): kısa kazıklar üstünde, demet demet kamış duvarlar, dik kamış çatı, kamış perdeli kapı ve küçük merdiven.
@@ -793,20 +793,26 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
   - **Ahşap ev** (1.500): kalas duvarlar, kiremit çatı, panjurlu pencereler, taş baca, çiçeklik, basamak.
   - **Taş ev** (2.500): yontma taş duvarlar, arduvaz çatı, dumanı tüten baca, kemerli kapı, ışığı yanan pencereler, köşede sarmaşık, taş basamaklar.
   - **Konak** (5.000): iki katlı, beyaz sıvalı ve ahşap kirişli duvarlar, kiremit kırma çatı ve iki çatı penceresi, iki sütunlu ve üçgen alınlıklı giriş, çift kanatlı kapı, ışığı yanan çok pencere, iki baca, fenerler ve çalılar.
-- Yaprak barınağı dışındaki her evde **E = içeri gir**. İçeride ada donar (canavarlar, oklar durur) ama saat, açlık ve hava sürer. **İçeride mor ışık gelmez.**
-- Üst çubukta **Döşe** / **Dışarı çık**. Döşe kipinde envanterdeki ev eşyasını seç, ızgarada bir kareye tıkla (R döndürür); konmuş eşyaya tıklayınca geri alırsın. Kapının önü boş kalmalı; duvar eşyaları (raf, asma fener, perde, duvar halısı, resimler) üstteki duvar şeridine, halı ve kilim zemine (üstünden yürünür), diğerleri zemine konur. Eşyalar üst üste konmaz. **Döşeme her saatte yapılabilir;** gece kısıtı yalnızca uyku içindir.
+- Yaprak barınağı dışındaki her evde **F = içeri gir**. **Kapının önünde F önce kapıyı seçer** (içeri gir): yerdeki toplanabilir bir şeyden önce gelir. İçeride ada donar (canavarlar, oklar durur) ama saat, açlık ve hava sürer. **İçeride mor ışık gelmez.**
+- Üst çubukta **Döşe** / **Dışarı çık**. Döşe kipinde envanterdeki ev eşyasını seç, ızgarada bir kareye tıkla (R ya da seçili eşyanın yanındaki görünür **Döndür** düğmesi döndürür); konmuş eşyaya tıklayınca geri alırsın. Kapının önü boş kalmalı; duvar eşyaları (raf, asma fener, perde, duvar halısı, resimler) üstteki duvar şeridine, halı ve kilim zemine (üstünden yürünür), diğerleri zemine konur. Eşyalar üst üste konmaz. **Döşeme her saatte yapılabilir;** gece kısıtı yalnızca uyku içindir.
+- **Döşe kipinin ekranı:** Döşe kipinde oda bütün ekranı kullanır. Eşya listesi odayı örtmez, ekranın altında **yatay bir şerit** olarak durur. Alet çubuğu, sol menü ve dövüş düğmeleri gizlenir; duyurular Döşe kipi bitene kadar bekler. Telefonda (yatay) eşya şeritten seçilip odadaki kareye **dokunarak** yerleştirilir.
+- **Yatak uyarısı:** "Yatağı yerleştir…" yazısı evin içine bir yatak konunca hemen kalkar.
 - Ev eşyaları: yataklar (Hasır yatak 1×2, Hasırotu yatak 1×2, Ahşap karyola 2×2), lambalar (Taş lamba, Kil lamba, Asma fener), Taş/Çömlek fırını 2×1, Tabure, Sandalye, Masa 2×1, Sandık, Dolap, Raf, Halı 3×2, Kilim 2×1, Perde, Duvar halısı, Saksı, Boyalı çömlek, Kil figürin, Ana tanrıça heykelciği, Taş totem, Su testisi, Mağara resmi, Av sahnesi duvar resmi, El izi resmi. Hepsi kazanda öğrenilir ve **Usta Sinan** yapar.
 
-| Ev | Seviye | Oda | Not |
-|---|---|---|---|
-| Yaprak barınağı | 1 | yok | Bir gecelik, yatak istemez |
-| Deri çadır | 3 | 5×4 | |
-| Kulübe | 4 | 6×4 | |
-| Kamış kulübe | 5 | 7×5 | |
-| Kerpiç ev | 6 | 8×6 | |
-| Ahşap ev | 7 | 9×6 | |
-| Taş ev | 8 | 10×7 | İstediğin yere |
-| Konak | 10 | 12×8 | |
+- **Ev fiyatı (tek tanım, 6 Kasım 2026, Boğaç):** aşağıdaki tablodaki fiyat, evi Usta Sinan'dan sipariş edince ödenen **toplam sikkedir: malzeme ve işçilik dahil**, ayrıca malzeme istenmez. Fiyat seviyeyle artan bir merdivendir (Deri çadır 300 → Kulübe 450 → Kamış kulübe 650 → Kerpiç ev 950 → Ahşap ev 1.500 → Taş ev 2.500 → Konak 5.000); başka bir fiyat kuralı (alt fiyat vb.) evlere uygulanmaz. Tek istisna Yaprak barınağı: 25 sikke ve malzemesi (8 Dal, 12 Yaprak, 4 Lif). Tarifi kazanda öğrenilmiş evler (Deri çadır, Kulübe, Kamış kulübe, Kerpiç ev) kendi malzemenle de Sinan'a yaptırılabilir; o zaman yalnız işçilik ödenir (Sistemler › Ekonomi). Eşya dizinindeki fiyat, evin **satış** değeridir.
+- **Konmuş eşyayı taşımak:** Döşe kipinde konmuş bir eşyaya dokununca/tıklayınca küçük bir menü açılır: **Taşı / Geri al / Döndür**. Eşya sürüklenip başka uygun bir kareye bırakılabilir; bırakılan yer uygun değilse eşya eski yerine döner.
+- **İlk girişte Döşe kendiliğinden:** çantada ev eşyası varken bir eve **ilk kez** girince Döşe kipi kendiliğinden açılır (yalnızca ilk girişte).
+
+| Ev | Seviye | Fiyat (sikke) | Oda | Not |
+|---|---|---|---|---|
+| Yaprak barınağı | 1 | 25 + malzeme | yok | Bir gecelik, yatak istemez |
+| Deri çadır | 3 | 300 | 5×4 | |
+| Kulübe | 4 | 450 | 6×4 | |
+| Kamış kulübe | 5 | 650 | 7×5 | |
+| Kerpiç ev | 6 | 950 | 8×6 | |
+| Ahşap ev | 7 | 1.500 | 9×6 | |
+| Taş ev | 8 | 2.500 | 10×7 | İstediğin yere |
+| Konak | 10 | 5.000 | 12×8 | |
 
 ### Harita, işaretler, defterler
 
@@ -1076,8 +1082,8 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 
 - **Açmak:** ana menüde klavyeyle `cheat` yaz (tekrar yazınca kapanır) ya da telefonda Ayarlar başlığına art arda 3 kez dokun. **Oyun kolunda:** ana menüde **Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A** (yönler yön tuşlarıyla ya da sol çubukla; tuşlar arasında en çok 2 saniye) girilince hile ayarları açılır, yeniden girilince gizlenip kapanır (`cheat` yazmakla aynı). Son A'ya basış o anda seçili düğmeye basmaz. Kod oyunun içinde girilirse "Hile kodu ana menüde çalışır" yazar. Sayfa her açıldığında bütün hile anahtarları kapalı başlar.
 - **Açınca Hile modu da açılır (telefonda hileler açılamıyordu):** eskiden 3 dokunuş (ya da `cheat`) yalnızca hile ayarlarını **görünür** yapıyordu; asıl **Hile modu** anahtarı ayrıca ana menünün Ayarlar'ından açılmalıydı ve oyunun içindeki Ayarlar'da bu anahtar gizli olduğu için oyuna girince hiçbir hile görünmüyordu. Artık: (1) hile ayarları açıldığı an **Hile modu da kendiliğinden açılır** (tek tek hileler yine kapalı başlar; oyun içindeki Ayarlar'da hepsi görünür). (2) **Hile modu anahtarı oyunun içindeki Ayarlar'da da görünür**; oradan açılıp kapatılabilir. (3) Dokunarak ya da tıklayarak (ana menüde 3 kez dokunma, Ayarlar başlığına 3 kez dokunma) hile ayarları yalnızca **açılır**, bir daha dokunmak onları **kapatmaz** (eskiden ana menüde hızlıca 3 kez dokunmak hepsini yanlışlıkla kapatıyordu). Kapatmak için Hile modu anahtarını kapat ya da klavyeyle yeniden `cheat` yaz.
-- **Ekrandaki yazılar:** anahtarın adı yalnızca "Hile modu"dur ("test için" yazmaz); Tanrı modunun açıklaması mor ışıktan söz etmez (oyuncuya ipucu vermesin). **Eşya araması:** arama kutusuna yazarken oyunun tuşları (ör. E = topla) çalışmaz; "e" harfi yazılabilir.
-- **Tanrı modu:** can, tokluk, enerji, mana hep dolu; canavarla ve açlıkla bayılmazsın, ama **mor ışık seni yine bayıltır** (bilinçli). **Hile paneli:** +100 sikke, +100 XP, +2 saat, günü bitir, zamanı sar, eşya arama (miktar 1/10/50/100). **Tek vuruşta öldür**, **Sınırsız dayanıklılık**, **Sınırsız sikke**, **Gece ışığı**, **Hile kısayolları** (Z +100 sikke, X +100 XP), **ACT 2'ye geç**, **Seviyeyi en üste çıkar**, **Haritayı tamamen aç**.
+- **Ekrandaki yazılar:** anahtarın adı yalnızca "Hile modu"dur ("test için" yazmaz); Tanrı modunun açıklaması mor ışıktan söz etmez (oyuncuya ipucu vermesin). **Eşya araması:** arama kutusuna yazarken oyunun tuşları (ör. F = topla) çalışmaz; "e" harfi yazılabilir.
+- **Tanrı modu:** can, tokluk, enerji, mana hep dolu; canavarla ve açlıkla bayılmazsın, ama **mor ışık seni yine bayıltır** (bilinçli). **Hile paneli:** +100 sikke, +100 XP, +2 saat, günü bitir, zamanı sar, eşya arama (miktar 1/10/50/100; ev eşyaları ve yapılar dahil oyundaki bütün eşyalar aramada çıkar). **Tek vuruşta öldür**, **Sınırsız dayanıklılık**, **Sınırsız sikke**, **Gece ışığı**, **Hile kısayolları** (Z +100 sikke, X +100 XP), **ACT 2'ye geç**, **Seviyeyi en üste çıkar**, **Haritayı tamamen aç**.
 
 - **Bütün sahneler (v3.32, Boğaç: hile modundan çıkarıldı):** ara sahneleri ve anıları istediğin zaman izleme artık hile modunda **yoktur** ("Bütün ara sahneler açık" anahtarı ve Keşif defterindeki liste kaldırıldı). Yalnızca **ana menüde klavyeyle `love` yazınca** açılır (yeniden yazınca kapanır; bu cihazda hatırlanır; ekranda "Bütün sahneler açıldı" / "kapandı" yazar). Bir başarımı yoktur, hile modu sayılmaz. Açıkken **Kitap › Anılar**'ın en üstünde **Bütün sahneler** bölümü çıkar: her sahne **küçük resmiyle** (anılarda sahnenin kendi çiziminden alınmış küçük resim; açılış sahnesi, deniz yolculuğu, roket ve kişilerin hikâyelerinde adıyla mor bir kart) bir kutudur; kutuya basınca sahne baştan oynar. Bütün anılar (henüz gelmemiş olanlar dahil) ve bütün ara sahneler buradadır.
 
@@ -1643,7 +1649,7 @@ Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığ�
 
 ### Yeni mekanik dersleri
 
-Bir görev oyuncunun henüz bilmediği bir mekaniği istiyorsa, görev **önce kısa bir dersle** başlar: öğreticideki gibi kart + ok + vurgu, adım adım. Ders bitince asıl görev başlar. Her ders **bir kez** görülür; öğreticiyi yapmış olan bildiği dersleri görmez. **Ders kartı pencerenin üstüne binmez:** "Yeni ders" kartı başka bir pencere (konuşma, sipariş, pazar…) açıkken bekler, pencere kapanınca gösterilir.
+Bir görev oyuncunun henüz bilmediği bir mekaniği istiyorsa, görev **önce kısa bir dersle** başlar: öğreticideki gibi kart + ok + vurgu, adım adım. Ders bitince asıl görev başlar. Her ders **bir kez** görülür; öğreticiyi yapmış olan bildiği dersleri görmez. **Ders kartı açıkken F oyun eylemini yapar** (toplar, konuşur, keser); kart ekranda kalır. **Ders kartı pencerenin üstüne binmez:** "Yeni ders" kartı başka bir pencere (konuşma, sipariş, pazar…) açıkken bekler, pencere kapanınca gösterilir.
 
 | Ders | Hangi görevde | Adımlar (özet) |
 |---|---|---|
@@ -2145,7 +2151,7 @@ Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş an
 
 | # | Biyom | Kişi | Görev | Saat | Ton | Ödül |
 |---|---|---|---|---|---|---|
-| 1 | Çayır | Mavi (genç kız) | Denizden dönmeyen kardeş | 17:00–23:00 | hüzünlü, mor ışık | 640 sikke · 860 XP |
+| 1 | Çayır | Mavi (genç kız) | Denizden dönmeyen kardeş | 17:00–23:00 | hüzünlü, mor ışık | 640 sikke · 860 XP (Çayır'da ama geç açılır, E3 sonrası; ödülü buna göre) |
 | 2 | Çayır | Toprak (çocuk) | Gece öten kuş (v3.42; eskiden Davut'un "Kaçan keçi Pamuk"u, artık ana görev) | 21:00–01:00 | tatlı, sessiz | 70 sikke · 50 XP |
 | 3 | Çayır | Güvercinci Bulut (çocuk) | Kaçan güvercinler | 10:00–15:00 | tatlı, sırlar | 80 sikke · 50 XP |
 | 4 | Orman | Ela (küçük kız) | Kampa giden yol | yalnızca gece (20:00–05:00) | gerilimli, sıcak son | 150 sikke · 120 XP |
@@ -5010,16 +5016,18 @@ Beş yuva vardır: **baş, gövde, el, ayak, silah**. Özellikler penceresinden 
 
 ## Evler ve barınaklar (Usta Sinan; v3.39'a kadar Marangoz Çınar)
 
-| Yapı | Seviye | Sinan'ın aldığı ücret | Tasarımdaki liste fiyatı | Malzeme | Açıklama |
-|---|---|---|---|---|---|
-| Yaprak barınağı | Sv 1 | 5 | 5 | 8 Dal, 12 Yaprak, 4 Lif | Yatak gerekmez. Bir gecelik: uyanınca dağılır. |
-| Deri çadır | Sv 3 | 1.039 | 300 | – | Kalıcı bir çadır. İçinde uyumak için yatak koymalısın. |
-| Kulübe | Sv 4 | 510 | 450 | – | Dal ve taştan sağlam bir kulübe. Yatak ister. |
-| Kamış kulübe | Sv 5 | 650 | 650 | – | Kamış çatılı, serin bir kulübe. Yatak ister. |
-| Kerpiç ev | Sv 6 | 958 | 950 | – | Kalın kerpiç duvarlı ev. Yatak ister. |
-| Ahşap ev | Sv 7 | 2.278 | 1.500 | – | Kalas duvarlı, kiremit çatılı ev. Yatak ister. |
-| Taş ev | Sv 8 | 4.049 | 2.500 | – | Taştan sağlam bir ev. Yatak ister. |
-| Konak | Sv 10 | 8.097 | 5.000 | – | Adanın en görkemli evi. Yatak ister. |
+Fiyat: Sinan'a ödenen toplam sikke, malzeme ve işçilik dahil (tek tanım: Sistemler › Ev, ev içi ve döşeme).
+
+| Yapı | Seviye | Fiyat (sikke) | Malzeme | Açıklama |
+|---|---|---|---|---|
+| Yaprak barınağı | Sv 1 | 25 | 8 Dal, 12 Yaprak, 4 Lif | Yatak gerekmez. Bir gecelik: uyanınca dağılır. |
+| Deri çadır | Sv 3 | 300 | – | Kalıcı bir çadır. İçinde uyumak için yatak koymalısın. |
+| Kulübe | Sv 4 | 450 | – | Dal ve taştan sağlam bir kulübe. Yatak ister. |
+| Kamış kulübe | Sv 5 | 650 | – | Kamış çatılı, serin bir kulübe. Yatak ister. |
+| Kerpiç ev | Sv 6 | 950 | – | Kalın kerpiç duvarlı ev. Yatak ister. |
+| Ahşap ev | Sv 7 | 1.500 | – | Kalas duvarlı, kiremit çatılı ev. Yatak ister. |
+| Taş ev | Sv 8 | 2.500 | – | Taştan sağlam bir ev. Yatak ister. |
+| Konak | Sv 10 | 5.000 | – | Adanın en görkemli evi. Yatak ister. |
 
 
 # Eşyalar · Eşya dizini
@@ -6233,7 +6241,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yankı çanı | 239 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yankı taşı | 82 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Yankı çanı |
 | Yaprak | 1 | – | Yerden toplanır: Orman, Çayır, Bataklık, Kül Diyarı, Mor Kristal Vadisi, Kayalık Dağ (ACT 1) | Adaçayı çayı, Ahududu suyu, Akçaağaç kabuğu, Akçaağaç şurubu, Alıç suyu, Ardıç kabuğu … (+237) |
-| Yaprak barınağı | 1 | – | Usta Sinan yapar (5 sikke, malzeme: 8 Dal, 12 Yaprak, 4 Lif) | – |
+| Yaprak barınağı | 1 | – | Usta Sinan yapar (25 sikke, malzeme: 8 Dal, 12 Yaprak, 4 Lif) | – |
 | Yaprak kova | 8 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yarasa gübresi | 3 | – | Yerden toplanır: Mor Kristal Vadisi, Kayalık Dağ, Kül Diyarı, Çayır, Orman, Bataklık (ACT 1) | Gübre, Kaya patlatıcı |
 | Yarasa kanadı | 40 | – | Av: Kor yarasası düşürür %80 (ACT 1 · Kül Diyarı) | Yarasa kanadı yelpazesi |
@@ -6483,7 +6491,6 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 |---|---|---|---|
 | 2 | Kötü son | "Yalnız dönüş" başarımı ve dolayısıyla "Platin" kazanılamaz; kötü son yok. | Kötü son yazılana kadar başarımı gizle ya da Platin'den çıkar. |
 | 6 | Ekin'in tohumları | Tohum dükkânı açılmıyor; Ekin bir yerde "satarım" bir yerde "satmam" diyor. | Karar ver, metni düzelt. |
-| 7 | Ev fiyatları | Usta Sinan alt fiyat kuralıyla satıyor: Taş ev 4.049 (listedeki fiyat 2.500), Deri çadır (Sv 3) 1.039 ile Kulübe'den (Sv 4, 510) pahalı. | Ev fiyatlarını alt fiyat kuralından muaf tut. |
 | 8 | Gemi malzemesi | Gemi malzemeleri iki kez harcanıyor (kazanda öğrenirken ve Barbaros'un son görevinde). | Ya tarifi öğrenmeyi kaldır ya da görevi "gemiyi getir" yap. |
 | 9 | Küçük tutarsızlıklar | Öğreticinin 13. adımında örste her şey bedava; Ekin yalnızca adı "Taş kazma" olan kazmayı kabul ediyor; Kemal'in 3. görevi "100 sikke" diyor ama yalnızca yetenek alınmış mı bakıyor; Poyraz'ın ilk siparişi XP'yi iki kez veriyor. | — |
 | 10 | Ölü kod | Kaptan Poyraz, Balıkçı Rüstem, Sisli Ada ve sal sonu kodda duruyor ama çalışmıyor. Son Kemal görevinde iskelenin üstüne hâlâ sal oku çiziliyor; Rüstem'in kıyısında kimsesiz bir ateş yanıyor. | Temizlik. |
