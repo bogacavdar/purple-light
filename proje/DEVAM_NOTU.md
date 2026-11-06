@@ -1,3 +1,15 @@
+## v3.50 (6 Kasım 2026) · duyurular sırayla, oda alet çubuğunun üstünde, ev listesinde işçilik, hile modu oturumluk, arena yazısı
+
+- **EV-09 (20_sistemler: bekleyen duyurular sırayla):** `v345` engel kalkınca önce gün yazısı (`dayBannerShow`), 3,7 sn sonra seviye yazısı (`lvlUntil` ileri alınır), keşif/bölge duyuruları `annNext`'in `lvlUntil` beklemesiyle ardından; başarım kartı (`v339ach` `show`) `lvlUntil`, `annCur`, `annQ` boşalana kadar bekler. Denendi (Döşe'de +300 XP + bölge duyurusu + başarım, "Bitti"): gün 0–3,2 sn, seviye 4,0–6,4 sn, bölge 7,2–8,8 sn; üst üste binme yok.
+- **EV-11/12:** `v56` `area()` artık Döşe dışında da: oda `#roomui` (çubuk + not) altından alet çubuğu/XP kutusunun üstüne kadar sığdırılır; `scale`/`origin` tek yol (kesirli ölçek). Not yazısı ("Yatağın envanterinde…") duvar şeridinin üstünde kalır, alet çubuğu kapıyı örtmez (ekran görüntüleri `/tmp/yz/r350_d_room.png`, `r350_m_room.png`).
+- **Döndür:** zaten yalnızca kare olmayan eşyalarda (şerit ve menü `w!==h`); değişmedi.
+- **Ev listesi:** `renderCarp`: tarifi öğrenilmiş (`REC`+`foundSet`), malzemesiz evlerin altında "Kendi malzemenle: işçilik N sikke" (`ustaPrice`; Deri çadır 82, Kulübe 40, Kamış kulübe 172, Kerpiç ev 201).
+- **Hile modu oturumluk (belge Hileler › Kalıcı değildir):** önce `settings.cheat` cihazda kalıyordu. Şimdi açılışta (`settings` satırı) kapanır; yalnızca oyunun kendi yenilemeleri (yeni oyun, ada geçişi, arena çıkışı, ekran kartı…) `window.__plGR()` ile `sessionStorage['hammadde.gr']` işaretler ve hile modu açık kalır. Bütün 10 `location.reload()` çağrısı `(window.__plGR&&window.__plGR(),location.reload())` oldu. Denendi: oyun yenilemesinde açık, kullanıcı yenilemesinde kapalı.
+- **EV-10:** arena `syncBtn` `.arl` yazısını açıkken boşaltır, kilitliyken "Kilitli · …" yazar. Denendi.
+- Ölçüm: adanın kare döngüsü değişmedi (yalnız ev içi çizimi ve 200 ms denetim); ölçülmedi.
+- **Geri almak için:** `v345` sıralama dalı ve `v339ach` `show` koşulu, `v56` `area/scale/origin` (v3.49 hali), `renderCarp` işçilik satırı, `__plGR` + 10 `location.reload` sarması + `settings` satırındaki `gr` kontrolü, arena `syncBtn` `.arl`. Kayıt alanı ve MAPV değişmedi.
+- Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
+
 ## v3.49 (6 Kasım 2026) · ev döşemesi yenilendi, ev fiyatları tablodan, kapıda F önce kapı, F yazıları, hile aramasında evler, arena hile moduyla
 
 - **Döşe ekranı (`v56`, 20_sistemler Ev):** `area()`: Döşe'de oda üst çubuk ile alttaki şerit arasındaki bütün alanı kullanır (`scale` kesirli olabilir, en az 0,8). `.rlist` ekranın altında sabit yatay şerit (`.rrow` yatay kayar); `body.roomedit` sınıfı alet çubuğu, XP kutusu, sol menü, menü çubuğu, dokunmatik dövüş düğmeleri, görev kartı ve ders kartını gizler; `#roomui` Döşe'de `transform:none` (yoksa `position:fixed` çocuklar çubuğa göre konuyordu). Duyurular: `v345` `mapOn` artık Döşe'yi de sayar (`window.__plQuiet`), gün yazısı Döşe/harita kapanınca (`dayBack`; önce `dayBannerShow` hemen yeniden açıyordu), başarım kartı da `__plQuiet` ile bekler.
@@ -190,12 +202,4 @@
 ## v3.31 (5 Kasım 2026) · saldırılar gece ve sabit günlerde
 - `v330ys`: günler `seqFrom` (6'dan başlar, aralar 5,7,4,9,6,3,8 tekrar), `free()` 1–3 ve 5/15/20. günleri atlar. 20:00'de başlar; ev/mağara/deniz/güvenli yer → `free(day+1)`; kaçırılırsa (uyku, geç yükleme) sıradaki olaysız gün. Kayıt `v330ys.f=2` (eski kayıtlar `seqFrom(day)`). Saldırıda bölge merkezi ve her Yıldızsız `lightSources`'a eklenir.
 - Biyom sınırı bloğu (`a.hb`): `a.ysA` muaf.
-- Kontrol: chk.js 0 hata.
-
-## v3.30 (5 Kasım 2026) · mor ışık saldırıları, gizli yol, klon, Boğaç
-- `v330ys`: saldırılar. Kayıtta `v330ys={n:gün,a:dakika,c:sayı}`; 3–10 günde bir, 09:00–19:00. Türler `ANIM[...]` (ys:1, drops boş). Statlar saldırı başında `setStats(silah vuruşu, maxHP)`. `killAnimal` sarmalı sikke ekler. Almanakta b=99 sayfası (`window.__plYS`). Yerinde kancalar: `bossOk` (ys hariç), killAnimal toast (ys'de yok), v213 `lands`/`kindsOf`/ad/alt yazı/kart, arena `groups()`.
-- `v330sea`: ACT 1 gizli deniz yolu (kayıtta `v330sea`), `window.__plSeaPath` (blocked ve v149 kıyıya çıkarma). Sonunda kayıpsız bayılma, Kemal'in yanında uyanma, Kemal konuşması, başarım `deniz` (localStorage `hammadde.denizach`, Platin'e sayılmaz).
-- `v330klon`: gece klonu, `drawPlayer` oyuncunun yeri/yönü geçici değiştirilerek çizilir. localStorage `hammadde.klonN`, başarım `klon` (Platin'e sayılır).
-- `v330dev`: Boğaç, her gece 15 sn; konuşunca `exitToMenu()`; kayıtta `v330dev=1` olunca bir daha gelmez.
-- Tavla anısı: boynuzlar kafada (hy=80), mor. `closeTitle` içindeki iPhone ipucu toast'ı silindi.
 - Kontrol: chk.js 0 hata.
