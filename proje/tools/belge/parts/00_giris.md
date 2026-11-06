@@ -1,10 +1,16 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.43** ile birebir (6 Kasım 2026). Bu sürümde: Çiftçi Ekin ve Bereket Adası (Barbaros'un kayığıyla gidilen küçük ada), tarla ve fidanlar geri geldi, Ekin'in 8 ana görevi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.44** ile birebir (6 Kasım 2026). Bu sürümde: biyomlar v3.39'a göre alanca %50 büyük (790 × 568; v3.40–3.43'te yanlışlıkla 2,25 kat büyümüştü), eski kayıtlar silinir; tasarım belgesi bölümlere ayrıldı ve tekrarlar tekilleştirildi. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
 > **KURAL: HER EŞYANIN KENDİ RESMİ OLUR (Boğaç, 6 Kasım 2026):** oyundaki her eşyanın (malzeme, yemek, alet, yapı, ACT 2 eşyaları dahil) **adına ve gerçeğine uygun** bir resmi vardır; bu resim envanterde, tarif kitabında, elde, **yere düştüğünde** ve **kurulduğunda** (yapılarda) kullanılır. Adıyla ilgisi olmayan, adından renk alan "hediye paketi" kutusu **hiçbir eşyada görünmez**. Yeni bir eşya eklenirken resmi de aynı sürümde, ne olduğuna göre (yemek tabakta ya da tavada, iksir şişede, merhem kapta, taş taş gibi…) çizilir. Resmi olmayan bir eşya bulunursa bu bir hatadır. v3.37'de 194 eşyanın hediye paketi yerine gerçek resmi çizildi (Eşyalar › Eşya resimleri). Resmi unutulmuş bir eşya oyunda sade, nötr bir bez torba olarak görünür (renkli kutu değil) ve geliştirici araçları açıkken (`?debug`) konsola yazılır (kontrol önbelleği silmez, yalnızca karşılaştırır).
+
+> **KURAL: BÜYÜKLÜK YÜZDESİ ALAN İÇİNDİR (Boğaç, 6 Kasım 2026):** bir harita, biyom ya da bölge için "%X büyüt/küçült" denince **alanı** %X değişir; kenar katsayısı √(1+X) olur (ör. %50 büyütmek: kenar ×√1,5 ≈ ×1,2247). Şüphe varsa belgeye yazmadan önce Boğaç'a sorulur.
+
+> **KURAL: TÜREYEN SAYILAR BİRLİKTE DEĞİŞİR (Boğaç, 6 Kasım 2026):** belgede bir sayı değişince ondan hesaplanan bütün sayılar (biyom başına alan, adet, oran) aynı commit'te güncellenir.
+
+> **KURAL: BELGE YALNIZCA BUGÜNÜ ANLATIR (6 Kasım 2026, Boğaç):** son 20 sürümün değişiklikleri geri alınabilir (her sürüm ayrı commit ve `vX.YZ` etiketi; ayrıntılar DEVAM_NOTU'nda); daha eski sürümlerin geçmişi belgede, notlarda tutulmaz.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
@@ -25,11 +31,10 @@ Sürüm: **Versiyon 3.43** ile birebir (6 Kasım 2026). Bu sürümde: Çiftçi E
 - **Başarımlar.**
 - **Bilinen açıklar ve tutarsızlıklar.**
 - **Platformlar (Godot · PS5):** gelecekteki motor geçişi ve PS5 sürümü planları.
-- **Arşiv:** artık oyunda olmayan, yalnızca referans için tutulan eski bölümler.
 
 ## Bu belge nasıl okunur
 
-- **Bütün belgede ara (v2.42, Boğaç):** sayfanın en üstündeki **arama çubuğu** belgenin tamamını tarar: başlıklar, metinler, listeler ve **tablo satırları** (tarifler, eşyalar, canlılar, görevler). Birden çok sözcük yazarsan hepsini içeren yerler çıkar; Türkçe harfler önemsizdir ("kerevit" ile "Kerevit", "cadi" ile "Cadı" aynı). Sonuca tıklayınca belge o yere kayar ve sözcükler işaretlenir. **/** ya da **Ctrl+K** aramaya geçer, **↑ ↓** sonuçlar arasında gezer, **Enter** gider, **Esc** kapatır. Bir tablonun kendi süzgeci ("Bu tabloda ara") yalnızca o tabloyu süzer; genel arama hepsini kapsar.
+- **Bütün belgede ara:** sayfanın en üstündeki **arama çubuğu** belgenin tamamını tarar: başlıklar, metinler, listeler ve **tablo satırları** (tarifler, eşyalar, canlılar, görevler). Birden çok sözcük yazarsan hepsini içeren yerler çıkar; Türkçe harfler önemsizdir ("kerevit" ile "Kerevit", "cadi" ile "Cadı" aynı). Sonuca tıklayınca belge o yere kayar ve sözcükler işaretlenir. **/** ya da **Ctrl+K** aramaya geçer, **↑ ↓** sonuçlar arasında gezer, **Enter** gider, **Esc** kapatır. Bir tablonun kendi süzgeci ("Bu tabloda ara") yalnızca o tabloyu süzer; genel arama hepsini kapsar.
 
 - **Bir şeyin nasıl yapıldığını mı arıyorsun?** En alttaki **Eşya dizini**ne git, adını ara. Her eşyanın yanında nereden geldiği (hangi biyomda toplandığı, hangi canlıdan düştüğü, hangi tarifle yapıldığı) ve hangi tariflerde kullanıldığı yazar.
 - **Bir tarifin içeriği:** **Tarif ansiklopedisi**, kategori kategori. Her satırda malzemeler, gereken alet, *nerede yapıldığı* (el yapımı, örs, usta) ve fiyatı var.
@@ -50,7 +55,7 @@ Sürüm: **Versiyon 3.43** ile birebir (6 Kasım 2026). Bu sürümde: Çiftçi E
 
 ## Adalar ve dünya ölçüsü
 
-- İki ada da **968 × 696 karo** ızgaradadır (v3.40, Boğaç: "her bir biyomu %50 büyüt, haritanın genel şeklini bozmadan"; 2.39–3.39'da 645 × 464): Yıldızsız Ada hilal (kara ~313.000 karo), ikinci ada yonca (kara ~402.000 karo); bir karo 16 piksel. Şekil aynı, her şey enden ve boydan 1,5 kat (alan 2,25 kat); haritaya serpilen şeyler (dal, taş, bitki, maden, ağaç) aynı sıklıkta kalsın diye sayıları da 2,25 katına çıkar. Eski kayıtlar bu sürümde silinir (Boğaç'ın kararı). (2.35–2.38'de ızgara 804 × 785'ti ve oyun telefonda donuyordu.) Bir anda yalnızca bir ada bellekte durur; adalar arası geçiş bir yükleme ekranıyla yapılır.
+- İki ada da **790 × 568 karo** ızgaradadır (v3.40, Boğaç: "her bir biyomu %50 büyüt, haritanın genel şeklini bozmadan"; v3.39'a kadar 645 × 464). **Kararın açıklaması (v3.44, 6 Kasım 2026, Boğaç):** "%50 büyüt" **alanın** %50 artması demektir; kenar başına katsayı √1,5 ≈ 1,2247'dir (645 × 464 → 790 × 568). v3.40–3.43'te yanlışlıkla kenar ×1,5 yapılmıştı (968 × 696, alan ×2,25); bu bir hataydı ve v3.44'te düzeltildi. Yıldızsız Ada hilal (kara ~208.000 karo), ikinci ada yonca (kara ~268.000 karo); bir karo 16 piksel. Şekil aynı, alan v3.39'a göre 1,5 kat; haritaya serpilen şeyler (dal, taş, bitki, maden, ağaç) aynı sıklıkta kalsın diye sayıları da 1,5 katına çıkar (v3.39'a göre). Göl yarıçapları ve deniz payı kenar katsayısıyla (×1,2247) büyür (deniz payı 10 → 12 karo); Bataklık gölcükleri sayı olarak 20 → 30 olur. Eski kayıtlar bu sürümde (v3.44) silinir (Boğaç'ın kararı). Bir anda yalnızca bir ada bellekte durur; adalar arası geçiş bir yükleme ekranıyla yapılır.
 - Envanter, sikke, seviye, gün ve saat iki adada ortaktır.
-- Her adada 6 biyom vardır (**eşit büyüklükte**: Yıldızsız Ada'da her biri ~23.000, ikinci adada ~29.700 karo; v2.35'ten beri adanın şekli boyunca **zincir halinde** sıralanır, her biyom yalnızca öncekine ve sonrakine değer; 1-2, 3-4, 5-6 ortak bölgedir, 2→3 ve 4→5 arasında keskin bir sınır vardır); biyomun tehlike seviyesi canavarların gücünü belirler: **Güvenli** (ilk iki biyom), **Tehlikeli** (3. ve 4.), **Ölümcül** (5.), **Çok ölümcül** (6.).
+- Her adada 6 biyom vardır (**eşit büyüklükte**: Yıldızsız Ada'da her biri ~34.700, ikinci adada ~44.700 karo (v3.44); adanın şekli boyunca **zincir halinde** sıralanır, her biyom yalnızca öncekine ve sonrakine değer; 1-2, 3-4, 5-6 ortak bölgedir, 2→3 ve 4→5 arasında keskin bir sınır vardır); biyomun tehlike seviyesi canavarların gücünü belirler: **Güvenli** (ilk iki biyom), **Tehlikeli** (3. ve 4.), **Ölümcül** (5.), **Çok ölümcül** (6.).
 - Oyun içinde biyomlar 3 tehlike kuşağına ayrılır ve balık tabloları, tuzak ganimetleri bu kuşağa göre değişir: **Kuşak 0** = Çayır + Orman, **Kuşak 1** = Bataklık + Kayalık Dağ, **Kuşak 2** = Kül Diyarı + Mor Kristal Vadisi (ACT 2'de aynı sırayla).

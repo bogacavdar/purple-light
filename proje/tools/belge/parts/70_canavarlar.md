@@ -5,15 +5,15 @@
 Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yeterince avlayınca o türün Reisi **son av düştüğü anda, onun yanında** belirir; büyük, mor çerçeveli can çubuğu olan, daha hızlı ve daha sert vuran bir sürümdür.
 
 - **Kaç avdan sonra:** türün bolluğuna göre 5 ile 15 arası (çok can olan türlerde 2 eksik). Sayaç Almanak'ta görünür ("Reis: 3 / 7").
-- **Her Reis bir kez (v2.13):** bir türün Reisi yenilince o türün almanak kartı altına döner ve o türün Reisi **bir daha gelmez** (v2.12'ye kadar her seferinde %50 daha çok avla yeniden geliyordu).
-- **Reise yenilmek (v2.13):** Reis sahadayken ya da gelmek üzereyken bayılırsan Reis kaybolur, sayaç bir eksik kalır (ör. 6 / 7); o türden bir av daha Reisi yeniden getirir.
-- **Reis kendi biyomunda (v2.83, Boğaç):** Reis yalnızca türün kendi biyomunda, son avın düştüğü yerin çevresinde çıkar (önceden oyuncu o an neredeyse orada çıkıyordu; bataklıkta timsah avlayıp ormana yürüyünce Timsah Reisi ormanda çıkabiliyordu). Sayaç eski bir kayıttan dolu geldiyse Reis ancak oyuncu türün biyomuna girince gelir.
-- **Uzaklaşınca kaybolur (v2.83, Boğaç):** Reis sahadayken ya da gelmek üzereyken oyuncu **600 pikselden** fazla uzaklaşırsa Reis kaybolur, bildirim çıkar ve sayaç bir eksik kalır (ör. 6 / 7); o türden bir av daha Reisi yeniden getirir.
-- **Canlılar biyomlarından çıkmaz (v2.83, Boğaç):** her canlı ilk durduğu biyoma bağlıdır; sınıra gelince geri döner, kovalamayı sınırda bırakır (Reis kovalamayı bırakmaz ama sınırı geçmez). Geri itilmesi de onu sınırın ötesine atmaz. Mağaralarda, arenada ve derslerin alıştırma canavarlarında bu kural yoktur.
+- **Her Reis bir kez:** bir türün Reisi yenilince o türün almanak kartı altına döner ve o türün Reisi **bir daha gelmez**.
+- **Reise yenilmek:** Reis sahadayken ya da gelmek üzereyken bayılırsan Reis kaybolur, sayaç bir eksik kalır (ör. 6 / 7); o türden bir av daha Reisi yeniden getirir.
+- **Reis kendi biyomunda:** Reis yalnızca türün kendi biyomunda, son avın düştüğü yerin çevresinde çıkar (önceden oyuncu o an neredeyse orada çıkıyordu; bataklıkta timsah avlayıp ormana yürüyünce Timsah Reisi ormanda çıkabiliyordu). Sayaç eski bir kayıttan dolu geldiyse Reis ancak oyuncu türün biyomuna girince gelir.
+- **Uzaklaşınca kaybolur:** Reis sahadayken ya da gelmek üzereyken oyuncu **600 pikselden** fazla uzaklaşırsa Reis kaybolur, bildirim çıkar ve sayaç bir eksik kalır (ör. 6 / 7); o türden bir av daha Reisi yeniden getirir.
+- **Canlılar biyomlarından çıkmaz:** her canlı ilk durduğu biyoma bağlıdır; sınıra gelince geri döner, kovalamayı sınırda bırakır (Reis kovalamayı bırakmaz ama sınırı geçmez). Geri itilmesi de onu sınırın ötesine atmaz. Mağaralarda, arenada ve derslerin alıştırma canavarlarında bu kural yoktur.
 - **Güç:** canı türün 4 katı; hasarı 1,5 katı (Çayır türleri ve tehlikeli bölgeler) ya da 1,7 katı; XP = türün XP'si × 6 + 20.
 - **Davranış:** canı %40'ın altına inince **öfkelenir** (kırmızılaşır, daha sert saldırır). Sürü hayvanlarının Reisi canı yarıya inince yanına 2 sürü üyesi çağırır.
 - **Ödül:** türün düşürdükleri + 25 + (türün XP'si × 5) sikke. Reis öldürmek "İlk reis", "Reis avcısı" (5 farklı), "Reislerin korkusu" (10), "Reis yiyen" (20) ve "Bütün reisler" başarımlarını ilerletir.
-- Börü'nün derslerindeki alıştırma canavarı öldürülünce av sayılmaz; ders Reis çağırmaz (v1.70). Ders sürerken hiçbir Reis gelmez; o sırada dolan Reis ders bitince gelir (v1.79).
+- Börü'nün derslerindeki alıştırma canavarı öldürülünce av sayılmaz; ders Reis çağırmaz. Ders sürerken hiçbir Reis gelmez; o sırada dolan Reis ders bitince gelir.
 
 | Reis | Nerede | İlk çıkış için av | Can | Hasar | XP | Garanti ganimet |
 |---|---|---|---|---|---|---|

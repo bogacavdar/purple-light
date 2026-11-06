@@ -1,14 +1,14 @@
 # Aletler, silahlar ve zırhlar
 
-## Nerede yapılır: örs ya da el (v2.58, Boğaç)
+## Nerede yapılır: örs ya da el
 
 - **Örste (demirci ve zırhçılar) yalnızca silah, zırh, balta ve kazma dövülür:** kılıç, savaş çekici, topuz, mızrak, yay (ok atan yaylar), **bıçaklar**, asalar ve ateşli silahlar; baltalar ve kazmalar (Boynuz kazma dahil); efektli (alevli/zehirli/keskin) silahlar; bütün zırhlar.
 - **Geri kalan bütün aletler elle yapılır** (El yapımı: bilgisayarda **Tab**, telefonda el ikonu): Tuzak, Sapan, Bola, Dişbudak yayı ve Porsuk yayı (küçük av aletleri), Olta, Ağ, Kemik zıpkın, Balık kapanı ve deniz oltaları, Kürek, Tırmık, Tırpan, Sulama kabı, meşaleler, kazıyıcılar, Kemik iğne, Kirmen, Dokuma tezgâhı, Bileği taşı, Çekiç taşı, Öğütme taşı, Pişirme taşı, Taş havan, Pirit çakmağı. Tarifleri eskisi gibi **kazanda öğrenilir**; öğrenilince El yapımı listesinde çıkar, demircinin listesinde çıkmaz.
 - Elle yapılan bir aletten (dayanıklılığı olan) **aynı anda bir tane** taşınır: elindeyken yenisi yapılmaz ("zaten sende"), yeni yapılan tam keskinlikle gelir. Körelince Demirci Dursun eskisi gibi **bileyler**.
 
-## Silah bilgisi her yerde yazar (v2.58, Boğaç)
+## Silah bilgisi her yerde yazar
 
-**Ad (v3.13, Boğaç):** eski **gürz** artık **savaş çekici** (Taş savaş çekici … Ametist savaş çekici, Ejder savaş çekici); topuz aynı kaldı. Eski kayıtlardaki gürzler yüklenince kendiliğinden yeni adı alır (arenada da).
+**Ad:** eski **gürz** artık **savaş çekici** (Taş savaş çekici … Ametist savaş çekici, Ejder savaş çekici); topuz aynı kaldı. Eski kayıtlardaki gürzler yüklenince kendiliğinden yeni adı alır (arenada da).
 
 Bir silahın ya da vuran bir aletin (kılıç, savaş çekici, topuz, mızrak, balta, kazma; yay, asa ve silahlarda hasar) değerleri şu yerlerde yazar:
 - **Envanterde** eşyaya dokununca açılan kutuda ve eşyanın üstüne gelince (ipucu),
@@ -17,13 +17,13 @@ Bir silahın ya da vuran bir aletin (kılıç, savaş çekici, topuz, mızrak, b
 
 Yazılanlar: **Hasar** (temel; seviye ve güç iksiri ayrıca artırır), **hız** (saniyede vuruş), **menzil** (piksel), **keskinlik** (şu anki/en çok; tarif listesinde en çok) ve varsa **etkisi** (alevli: yakar, zehirli: zehirler, keskin: kanatır). Değerler oyunun vuruşta kullandığı değerlerle aynıdır.
 
-**Zırhlar da ne verdiğini gösterir (v2.64, Boğaç):** aynı yerlerde (tarif listeleri, El yapımı, envanter, kemer ipucu) zırh parçalarının altında "🛡 Savunma +X · yuvası (baş/gövde/el/ayak)" ve varsa **direnç** (kanama/zehir/yanık %), **çamurda yavaşlamazsın**, **karanlıkta ışık verir** yazar. Değerler oyunun hasar hesabında kullandığı değerlerle aynıdır.
+**Zırhlar da ne verdiğini gösterir:** aynı yerlerde (tarif listeleri, El yapımı, envanter, kemer ipucu) zırh parçalarının altında "🛡 Savunma +X · yuvası (baş/gövde/el/ayak)" ve varsa **direnç** (kanama/zehir/yanık %), **çamurda yavaşlamazsın**, **karanlıkta ışık verir** yazar. Değerler oyunun hasar hesabında kullandığı değerlerle aynıdır.
 
-**Her yerde kısa etiket (v2.65, Boğaç):** silah ya da zırh olan her eşya karesinin sol üst köşesinde kısa bir etiket durur: silahta **⚔hasar**, zırhta **🛡savunma** (envanter, envanterdeki kemer, tarif kitabı, kuşanma yuvaları, pazar ve diğer eşya kareleri). **v3.07 (Boğaç):** ekranın altındaki kemerde (H, 1, 2, 3… kutuları) etiket yoktur, üzerine gelince de hasar yazmaz; yalnızca eşyanın adı çıkar. Arenada da aynı kemer kullanılır, orada da yazmaz. Listelerde (giyme seçimi, kemer seçici, pazar satırları) adın altında tam satır yazar (pazarda her satırda **bir kez**, eşyanın adının altında; düğmelerin içine hiçbir şey yazılmaz — v2.73 düzeltmesi); **v2.74 (Boğaç: "üzerine gelince yazsın, default yazmasın"):** listelerdeki bu uzun satırlar varsayılan olarak gizlidir; satırın üzerine gelince (ya da klavyeyle seçince) açılır. Tarif kitabının bilgi kutusunda ve envanterde seçili eşyada her zaman görünür; karelerdeki kısa ⚔/🛡 etiketi durur. üzerine gelince ya da dokununca tam bilgi ipucu çıkar. Tarif kitabında tarifi henüz açılmamış silah ve zırhın da özellikleri görünür.
+**Her yerde kısa etiket:** silah ya da zırh olan her eşya karesinin sol üst köşesinde kısa bir etiket durur: silahta **⚔hasar**, zırhta **🛡savunma** (envanter, envanterdeki kemer, tarif kitabı, kuşanma yuvaları, pazar ve diğer eşya kareleri). ekranın altındaki kemerde (H, 1, 2, 3… kutuları) etiket yoktur, üzerine gelince de hasar yazmaz; yalnızca eşyanın adı çıkar. Arenada da aynı kemer kullanılır, orada da yazmaz. Listelerde (giyme seçimi, kemer seçici, pazar satırları) adın altında tam satır yazar (pazarda her satırda **bir kez**, eşyanın adının altında; düğmelerin içine hiçbir şey yazılmaz — düzeltmesi); ("üzerine gelince yazsın, default yazmasın") listelerdeki bu uzun satırlar varsayılan olarak gizlidir; satırın üzerine gelince (ya da klavyeyle seçince) açılır. Tarif kitabının bilgi kutusunda ve envanterde seçili eşyada her zaman görünür; karelerdeki kısa ⚔/🛡 etiketi durur. üzerine gelince ya da dokununca tam bilgi ipucu çıkar. Tarif kitabında tarifi henüz açılmamış silah ve zırhın da özellikleri görünür.
 
-## Madenler ve ekipman merdiveni (v2.48, Boğaç)
+## Madenler ve ekipman merdiveni
 
-- **Her maden taş da verir (v2.68, Boğaç):** kazmayla bir madene (cevher, kömür, kristal…) her vuruşta madenin kendisinin yanında **%50 ihtimalle 1 Taş** düşer (Taş madeni zaten taş verir).
+- **Her maden taş da verir:** kazmayla bir madene (cevher, kömür, kristal…) her vuruşta madenin kendisinin yanında **%50 ihtimalle 1 Taş** düşer (Taş madeni zaten taş verir).
 
 ACT 1'in madenleri ve metal ekipmanı tek bir merdivene göre dizildi. Amaç: **her biyomda o biyomun madenleriyle bir öncekinden daha güçlü ve daha pahalı tam bir set yapılabilsin, biyom değiştirdikçe satılan madenler de daha pahalı olsun.** ACT 2 bu sürümde değişmedi (sonra aynı kurallarla ele alınacak).
 
@@ -34,7 +34,7 @@ ACT 1'in madenleri ve metal ekipmanı tek bir merdivene göre dizildi. Amaç: **
 3. **Her biyomda en az bir set** vardır: miğfer, zırh, eldiven, çizme, kılıç, mızrak, savaş çekici, topuz, balta, kazma. Her set bir öncekinden güçlü ve pahalıdır.
 4. **Kademe = biyom numarası:** bir biyomun malzemesinden yapılan balta ve kazma o biyomun numarasını taşır (Çayır 1 … Mor Kristal Vadisi 6).
 5. **Biyom N'nin madenleri ve ağaçları N − 1. kademe ister** (Çayır'da ve Orman'da 1). Böylece bir alet en çok bir sonraki biyomu keser ve kazar; 2. biyomun aleti 4. biyomu, 3. biyomun aleti 5. biyomu açamaz.
-6. **Ergitilen metalde** kademe, tarifteki en geç biyomdan gelir (Tunç: Çayır'ın bakırı + Orman'ın kalayı → 2). **Dövüldüğü yer de buna uyar (v2.82, Boğaç: "ormanda neden set yok"):** Tunç seti Orman'ın setidir; Orman'ın demircisi Durdu ve zırhçısı Duran (ve sonraki biyomlarınkiler) döver, Çayır'ın Dursun ve Durmuş'u dövmez. (2.81'e kadar Tunç yanlışlıkla Çayır'a bağlıydı; Orman'ın örslerinde yalnızca usta seti çıkıyordu.)
+6. **Ergitilen metalde** kademe, tarifteki en geç biyomdan gelir (Tunç: Çayır'ın bakırı + Orman'ın kalayı → 2). **Dövüldüğü yer de buna uyar ("ormanda neden set yok"):** Tunç seti Orman'ın setidir; Orman'ın demircisi Durdu ve zırhçısı Duran (ve sonraki biyomlarınkiler) döver, Çayır'ın Dursun ve Durmuş'u dövmez. (Orman'ın örslerinde yalnızca usta seti çıkıyordu.)
 7. Her madenden alet yapılmaz: madenlerin bir kısmı yemek (Tuz), yakıt (Taş kömürü), yapı (Kireçtaşı, Kumtaşı, Arduvaz), ateş (Pirit), şifa (Kükürt) ya da süs ve değer (Gümüş, Altın) içindir.
 
 ### Biyomların madenleri
@@ -58,16 +58,16 @@ ACT 1'in madenleri ve metal ekipmanı tek bir merdivene göre dizildi. Amaç: **
 |---|---|---|
 | 1 | Taş, Çakmaktaşı, Bakır | Çayır, Orman |
 | 2 | Granit, Tunç | + Bataklık |
-| 3 | Demir, Timsah dişi (v2.51) | + Kayalık Dağ |
+| 3 | Demir, Timsah dişi | + Kayalık Dağ |
 | 4 | Kuvars, Çelik | + Kül Diyarı |
-| 5 | Kara çelik, Ejder (v2.51; Bazalt aletleri kalktı) | + Mor Kristal Vadisi |
-| 6 | Mor kristal, Obsidyen (v2.51) | hepsi (ACT 2'ye hazırlık) |
+| 5 | Kara çelik, Ejder (Bazalt aletleri kalktı) | + Mor Kristal Vadisi |
+| 6 | Mor kristal, Obsidyen | hepsi (ACT 2'ye hazırlık) |
 
 - Bir biyomdaki **bütün madenler ve ağaçlar aynı kademeyi ister** (biyom içindeki eski farklar kalktı; ör. Orman'daki Meşe, Kayın, Ihlamur, Ceviz artık taş baltayla kesilir, Kayalık Dağ'daki Porsuk ve Ardıç 3. kademe ister).
 - **Doğu geçidi** (Kayalık Dağ → Kül Diyarı) kaya yığını **4. kademe** kazma ister: Kuvars kazma ya da Çelik kazma ve üstü.
 - Aynı kademede taş ve metal alet birlikte durur: taş aletler daha hızlı körelir, metal aletler daha dayanıklıdır.
 
-> v2.51: usta setlerinin aletleri (Çakmaktaşı, Granit, Timsah dişi, Kuvars, Ejder, Obsidyen) yeni değerlerle **Bütün setler** bölümünde ve aşağıdaki alet tablosunda.
+> Usta setlerinin aletleri (Çakmaktaşı, Granit, Timsah dişi, Kuvars, Ejder, Obsidyen) yeni değerlerle **Bütün setler** bölümünde ve aşağıdaki alet tablosunda.
 
 | Alet malzemesi | Kademe | İş süresi (sn) | Dayanıklılık | Baltanın silah hasarı | Kazmanın silah hasarı |
 |---|---|---|---|---|---|
@@ -108,14 +108,14 @@ Her hücrede **savunma ya da hasar · satış fiyatı**. Zırhçılar zırhları
 - **Dirençler:** Demir zırh kanama %30; Çelik zırh kanama %35; Kara çelik zırh yanık %40, kanama %30; Mor kristal zırh kanama, yanık ve zehir %30. Demir, Çelik, Kara çelik ve Mor kristal çizmeler çamurda yavaşlatmaz. Bütün set parçaları metaldir.
 - **Tarifler** (I = setin malzemesi; Tunç ve Demir'in eski 8 parçası eski tarifiyle kalır, yalnızca savaş çekici ve topuz yeni):
   - Miğfer: 2 I, 1 Deri parçası, 2 Sinir · Zırh: 5 I, 2 Deri parçası, 1 Sinir kirişi · Eldiven: 2 I, 1 Deri parçası, 2 İp · Çizme: 2 I, 1 Deri parçası, 4 Lif
-  - Kılıç: 4 I, 1 sap (o biyomun ağacının sapı: Çayır Çam, Orman Meşe, Bataklık Bataklık servisi, Kayalık Dağ Huş, Kül Diyarı Kül ağacı, Mor Kristal Mor söğüt; v3.10), 1 Deri parçası · Mızrak: 2 I, 1 Uzun sopa, 3 İp · Savaş çekici: 5 I, 1 sap, 1 Sinir kirişi · Topuz: 3 I, 1 sap, 2 İp · Balta: 3 I, 1 sap, 2 İp · Kazma: 3 I, 1 sap, 2 İp, 2 Taş
+  - Kılıç: 4 I, 1 sap (o biyomun ağacının sapı: Çayır Çam, Orman Meşe, Bataklık Bataklık servisi, Kayalık Dağ Huş, Kül Diyarı Kül ağacı, Mor Kristal Mor söğüt), 1 Deri parçası · Mızrak: 2 I, 1 Uzun sopa, 3 İp · Savaş çekici: 5 I, 1 sap, 1 Sinir kirişi · Topuz: 3 I, 1 sap, 2 İp · Balta: 3 I, 1 sap, 2 İp · Kazma: 3 I, 1 sap, 2 İp, 2 Taş
 - **Fiyat kuralı:** parça fiyatı = en büyüğü (malzemelerin değeri × 1,3; parçanın taban değeri × kademe katsayısı; önceki setteki aynı parça × 1,25). Taban değerler: miğfer 100, zırh 260, eldiven 80, çizme 80, kılıç 180, mızrak 150, savaş çekici 210, topuz 140, balta 110, kazma 120; kademe katsayıları 1 · 2 · 3,5 · 5,5 · 8 · 12. Bu yüzden Tunç ve Demir parçalarının fiyatları da değişti (ör. Demir kılıç 1.086 → 1.278, artık Tunç kılıçtan pahalı).
-- **Taş silahlar** (v2.51): Taş kılıç başlangıç setinde; Çakmaktaşı, Kuvars ve Obsidyen mızrak usta setlerindedir (Bütün setler). Bazalt mızrak kalktı.
+- **Taş silahlar**: Taş kılıç başlangıç setinde; Çakmaktaşı, Kuvars ve Obsidyen mızrak usta setlerindedir (Bütün setler). Bazalt mızrak kalktı.
 - Sonraki adım (bu sürümde yok): aynı kademedeki farklı silahlara dövüşü etkileyen özellikler (kanatma, yakma, zehirleme, sersemletme).
 
-### Bütün setler: her türden 13 parça (v2.51, Boğaç)
+### Bütün setler: her türden 13 parça
 
-- **Savaş çekici ve topuz farklı oynanır (v3.11):** savaş çekici çarptığı yerin çevresine de vurur, isabetleri sersemletme biriktirir, geri iter, savururken az hasar alırsın ama yavaşlarsın; topuz hızlıdır, kombo sayacıyla hasarı %60'a kadar tırmanır, her 5. isabette kıvılcım sıçrar, taklası ucuzdur. Ayrıntı: Sistemler › Dövüş.
+- **Savaş çekici ve topuz farklı oynanır:** savaş çekici çarptığı yerin çevresine de vurur, isabetleri sersemletme biriktirir, geri iter, savururken az hasar alırsın ama yavaşlarsın; topuz hızlıdır, kombo sayacıyla hasarı %60'a kadar tırmanır, her 5. isabette kıvılcım sıçrar, taklası ucuzdur. Ayrıntı: Sistemler › Dövüş.
 - **Set mantığı:** ACT 1'deki her silah, alet ve zırh bir **sete** aittir; bundan sonra eklenen her şey de bir sete eklenir. Bir set 11 parçadır: miğfer, zırh, eldiven, çizme, kılıç, savaş çekici, topuz, mızrak, yay, balta, kazma. Her türden (5 silah, 2 alet, 4 zırh yuvası) **13** parça vardır.
 - **Tek istisna Kafa lambası:** baş yuvasına takılan, ışık veren özel bir eşyadır; hiçbir sete ait değildir ve sayıma girmez. Etkili biçimler (Alevli/Zehirli/Keskin X) ayrı parça sayılmaz. İkinci adanın (²) eşyaları ACT 2 düzenlenince ele alınacak.
 - **13 set:** 1 başlangıç seti (Çayır, elle yapılır) + 6 metal seti (Bakır, Tunç, Demir, Çelik, Kara çelik, Mor kristal; örste) + 6 usta seti (her biyomun silahçısı ve zırhçısı kendi biyomunun malzemesiyle döver).
@@ -197,21 +197,11 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 **Arena:** oyundaki her silah, alet ve zırh arenada da seçilebilir (aynı listeden gelir; kaldırılanlar arenadan da kalktı, yeni setler arenada).
 
 
-### Dengeleme: imza parçaları ve el yapımı giysiler (v2.49, Boğaç)
-
-> v2.51: bu bölümdeki değerlerin yerini yukarıdaki **Bütün setler** tablosu aldı (usta parçaları metal setin %12 üstünde; el yapımı post ve pelerinler kaldırıldı).
-
-
-- **Kural:** ustaların imza parçaları kendi biyomlarının setinin biraz üstündedir; el yapımı post, pelerin ve kabuk giysiler bir önceki biyomun seti kadar korur (örse gitmeden giyilebilen ucuz seçenek).
-- **Silahlar:** Gümüş kılıç 44 → **50**, Lav camı kılıcı 55 → **62**, Ejder kılıcı 52 → **66**, Ametist kılıcı 68 → **78**. (Granit savaş çekici 27 ve Timsah dişi kılıcı 38 zaten setin üstündeydi.)
-- **İmza zırhları:** Kartal tüyü miğfer 24 → **31**, Gümüş pullu zırh 52 → **58**, Ejder pulu zırh 60 → **76**, Kül böceği zırh 64 → **72**, Kristal ipek zırh 72 → **90**, Işık pulu eldiven 18 → **29**, Akrep kabuğu çizme 18 → **24**. (Ceviz kabuğu miğfer 15, Meşe kabuk zırh 30, Timsah pulu zırh 46, Bataklık çizmesi 14 zaten setin üstündeydi.) Dirençleri değişmedi.
-- **El yapımı:** Kamış çizme 4 → **7**, Bataklık postu pelerin 14 → **22**, Timsah derisi zırh 20 → **26**, Mağara ayısı postu giysi 12 → **32**, Ayı postu pelerin 15 → **36**, Kül postu pelerin 26 → **50**, Lav pulu eldiven 10 → **16**. Çayır ve Orman'ın post giysileri (5–11) ve başlıkları değişmedi.
-
-### Yaylar ve oklar (v2.49, Boğaç)
+### Yaylar ve oklar
 
 - **Yay** eldeyken vuruş (tık, Vur düğmesi) fare yönüne (telefonda en yakın düşmana) **bir ok atar**. Ok bir canlıya değince durur. Her atış yayı 1 köreltir (bilenince yenilenir); kör yay atmaz.
-- **Ok gerekir:** her atış bir ok harcar. Hangi oku atacağını **envanterde seçersin** (v2.50): okun üstüne dokun → **Yayla bunu at**; seçili okun kutusu altın çerçevelidir, yeniden dokunup **Seçimi kaldır** dersin. Seçim yoksa ya da seçili ok bittiyse yay çantadaki **en güçlü oku** atar (bitince bir kez "… bitti" yazar); aynı güçte etkili ok varsa önce onu. Ok hiç yoksa "Ok yok" yazar. Seçim kayda yazılır. Arenada ok harcanmaz.
-- **Eski oklar kaldırıldı (v2.50, Boğaç):** Ok, Tüylü ok, Zehirli ok ve Mor ok tarifleriyle birlikte oyundan çıktı. Eski kayıttaki bu okların hepsi tanesi tanesine **Basit ok** olur. Ok uçları ve Kamış ok gövdesi eşya olarak kalır.
+- **Ok gerekir:** her atış bir ok harcar. Hangi oku atacağını **envanterde seçersin**: okun üstüne dokun → **Yayla bunu at**; seçili okun kutusu altın çerçevelidir, yeniden dokunup **Seçimi kaldır** dersin. Seçim yoksa ya da seçili ok bittiyse yay çantadaki **en güçlü oku** atar (bitince bir kez "… bitti" yazar); aynı güçte etkili ok varsa önce onu. Ok hiç yoksa "Ok yok" yazar. Seçim kayda yazılır. Arenada ok harcanmaz.
+- **Eski oklar kaldırıldı:** Ok, Tüylü ok, Zehirli ok ve Mor ok tarifleriyle birlikte oyundan çıktı. Eski kayıttaki bu okların hepsi tanesi tanesine **Basit ok** olur. Ok uçları ve Kamış ok gövdesi eşya olarak kalır.
 - **Hasar** = yayın hasarı × okun çarpanı × (1 + 0,03 × (seviye − 1)) × Güç/Güçsüzlük. Okun hızı ve menzili yaydan gelir.
 - Yay silah yuvasına girmez; elde tutulur (balta ve kazma gibi alet yuvasında). Silahlar listesinde ayrı bir **Yaylar** grubu vardır.
 - Her biyomun yayı o biyomun ağacından ve setinin metalinden yapılır; o biyomun silahçısı ve ondan sonrakiler döver. Okları herkes elle yapar (bir yapımda 10 ok, Basit okta 5).
@@ -238,7 +228,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 
 - **Yayın özel vuruşları** (Dövüş · Özel vuruşlar tablosu): Hızlı atış, Delici ok, Çift ok, Gergin atış, Geri sıçrayıp atış, Ok yelpazesi; ultisi **Ok yağmuru**. Her ok atışı bir ok harcar (ulti harcamaz).
 
-### Alevli, zehirli, keskin silahlar (v2.50, Boğaç)
+### Alevli, zehirli, keskin silahlar
 
 - **Üç etki**, vuruşun kendi hasarının üstüne **ek hasar** olarak işler:
 
@@ -263,18 +253,18 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 
 - **Etkili silah:** ACT 1'in her kılıcı, savaş çekicini, topuzu ve mızrağı (imza silahları hariç) üç biçimde de yapılabilir: **Alevli X** = 1 X + 1 Ateş yağı, **Zehirli X** = 1 X + 1 Zehir yağı, **Keskin X** = 1 X + 1 Bileme macunu. Bunları her silahçı döver (silahı getirdiğin için usta sırası aranmaz). Hasar, menzil, dayanıklılık X ile aynı; fiyatı (X + yağ) × 1,1.
 - **Etkili ok:** her biyomun oku için 10 ok + 1 yağ → 10 etkili ok (Alevli Bakır ok, Zehirli Demir ok, Keskin Mor kristal ok…), elle yapılır; tanesinin fiyatı ok + yağın onda biri, × 1,1. Atılacak ok envanterde seçilir; seçim yoksa yay en güçlü oku atar (aynı güçte etkili ok varsa önce onu).
-- **İmza silahları** etkileriyle doğar ve tariflerine ilgili yağ eklendi: Granit savaş çekici **keskin** (+1 Bileme macunu), Timsah dişi kılıcı **zehirli** (+1 Zehir yağı), Gümüş kılıç **keskin** (+1 Bileme macunu), Lav camı kılıcı **alevli** (+1 Ateş yağı), Ejder kılıcı **alevli** (+1 Ateş yağı), Ametist kılıcı **zehirli** (+1 Zehir yağı). Bunların etkili biçimleri yoktur. (v2.51: bütün usta setlerinin silahları etkileriyle doğar; tam liste **Bütün setler** tablosunda.)
-- Baltalar, kazmalar ve yaylar etki almaz (yayda etkiyi ok taşır). Meşalenin kendi yakması (v2.28) değişmedi.
-- **Arena (v2.50):** silah listesinde kılıçlar, savaş çekiçleri ve topuzlar ayrı gruplardır; etkili biçimler listede ayrıca görünmez: elindeki silahın hemen altındaki **Etki** satırından Etkisiz / Alevli / Zehirli / Keskin seçilir (imza silahı için etkisi yazılır). Elinde yay varsa altında **Ok** satırı çıkar: "En güçlü" ya da her ok ve etkili ok seçilebilir. Bütün setler, imza parçaları, yaylar, baltalar ve kazmalar arenada seçilebilir.
+- **İmza silahları** etkileriyle doğar ve tariflerine ilgili yağ eklendi: Granit savaş çekici **keskin** (+1 Bileme macunu), Timsah dişi kılıcı **zehirli** (+1 Zehir yağı), Gümüş kılıç **keskin** (+1 Bileme macunu), Lav camı kılıcı **alevli** (+1 Ateş yağı), Ejder kılıcı **alevli** (+1 Ateş yağı), Ametist kılıcı **zehirli** (+1 Zehir yağı). Bunların etkili biçimleri yoktur. (bütün usta setlerinin silahları etkileriyle doğar; tam liste **Bütün setler** tablosunda.)
+- Baltalar, kazmalar ve yaylar etki almaz (yayda etkiyi ok taşır). Meşalenin kendi yakması değişmedi.
+- **Arena:** silah listesinde kılıçlar, savaş çekiçleri ve topuzlar ayrı gruplardır; etkili biçimler listede ayrıca görünmez: elindeki silahın hemen altındaki **Etki** satırından Etkisiz / Alevli / Zehirli / Keskin seçilir (imza silahı için etkisi yazılır). Elinde yay varsa altında **Ok** satırı çıkar: "En güçlü" ya da her ok ve etkili ok seçilebilir. Bütün setler, imza parçaları, yaylar, baltalar ve kazmalar arenada seçilebilir.
 - Simgeler: etkili silah ve okun simgesinin köşesinde etkinin işareti (alev, yeşil damla, kırmızı damla); yağlar küçük birer şişe.
 
-### Silahların kademe kimliği (v3.22, Boğaç)
+### Silahların kademe kimliği
 
 > Boğaç: "Bir sonraki seviyesi alındığında 'yeni bir şey aldım' hissini vermeli. Şu an aynı tip silahların tek farkı rengi. X yaydan Y yaya geçince bariz görsel fark göreyim; ok attığı da belli olsun, saldırılar kullanılan oka göre gitsin. Aynısı kılıç, mızrak, gürz, balta için de."
 
 - **Kural:** her silah ve alet türünün (kılıç, savaş çekici, topuz, mızrak, balta, kazma, yay) **7 kademesi** vardır. Her kademe bir öncekinden **biçimiyle** ayrılır (renk tek fark değildir): boyu, ağzı, siperi, başı, süsü değişir; elde daha büyük görünür; savururken kendi izi, isabette kendi kıvılcımı ve kendi sesi vardır. Görünüş, envanterdeki simgede, elde, sırtta, savururken ve arenada aynıdır.
 - **Usta parçaları** kendi kademesinin biçimini taşır ama kendi malzemesinin rengindedir ve üstünde doğduğu **etkinin rengiyle bir çizgi** vardır (keskin kırmızı, zehirli yeşil, alevli turuncu). Böylece aynı biyomun metal parçasıyla karışmaz.
-- **Etkili biçimler** (Alevli / Zehirli / Keskin X) X'in çizimini ve köşede etkinin işaretini taşır (v2.50 gibi).
+- **Etkili biçimler** (Alevli / Zehirli / Keskin X) X'in çizimini ve köşede etkinin işaretini taşır (gibi).
 - **Işın kılıcı** (ACT 2) bu merdivene girmez, kendi çizimiyle kalır.
 
 | Kademe | Parçalar | Görünüş | Savurma izi | İsabet | Ses |
@@ -297,7 +287,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
   - **Kazma:** tek kollu taş keser → kısa bakır kazma → uzun tunç kazma → uzun kıvrık demir kazma → parlak uçlu çelik kazma → kızgın uçlu, tepesi dikenli kara kazma → billur kollu parlayan kazma.
   - **Yay:** ince düz sopa yay → kalın yay, metal uçlar → uçları dışa kıvrık (kıvrık yay) → metal uçlar ve sargılı kabza → iki renkli bileşik yay, parlak → dikenli koyu yay, kızgın kiriş → billur kollu yay, ışıktan kiriş.
 
-**Ok ve yay (v3.22):**
+**Ok ve yay:**
 
 - **Ok gerçekten ok gibi uçar:** gövde, uç ve tüyleriyle, uçtuğu yöne dönük çizilir; ucu ve tüyü **atılan oka göre** değişir (Basit ok taş uç gri tüy; Bakır ve Tunç okta keklik tüyü; Demir okta ördek tüyü; Çelik, Kara çelik ve Mor kristal okta ur kekliği tüyü). Kara çelik ok kor, Mor kristal ok mor ışık izi bırakır; etkili oklar etkisinin rengiyle iz bırakır (alevli turuncu, zehirli yeşil, keskin kırmızı). İsabette okun malzemesinin kıvılcımı ve kademesinin isabet sesi çıkar.
 - **Elde yay:** yay nişan yönüne döner; atışa hazırken kirişte **atılacak ok** (seçili ya da en güçlü ok) takılı görünür. Atışta kiriş gerilip boşalır, yay hafifçe geri teper, ok çıkar; yay yeniden dolana kadar kiriş boştur. Kiriş sesi yayın kademesine göre: ince sopa yayın boğuk "tıng"ından kristal yayın çınlayan sesine.
@@ -317,7 +307,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 
 ## Aletler ve silahlar
 
-- **Tür:** axe = balta (odun), pick = kazma (maden), shovel = kürek (kil), rake/can/scythe = tırmık/sulama kabı/tırpan (tarla), fish = olta/ağ/zıpkın, water = su kabı, torch = meşale, sword/spear = kılıç/mızrak (savaş çekici ve topuz da sword türündedir), bow = yay (v2.49), staff = asa, gun = ateşli silah.
+- **Tür:** axe = balta (odun), pick = kazma (maden), shovel = kürek (kil), rake/can/scythe = tırmık/sulama kabı/tırpan (tarla), fish = olta/ağ/zıpkın, water = su kabı, torch = meşale, sword/spear = kılıç/mızrak (savaş çekici ve topuz da sword türündedir), bow = yay, staff = asa, gun = ateşli silah.
 - **Kademe:** balta ve kazmanın kademesi hangi ağacı kesip hangi madeni kazabileceğini belirler (biyom tablolarındaki "Gereken balta/kazma"). Daha yüksek kademe her zaman alttakileri de keser.
 - **Dayanıklılık:** her kullanımda 1 azalır; sıfırlanınca alet körelir ve çalışmaz. Demirci Dursun "Aletimi bile" ile bileme ücretine yeniler. Hile panelindeki "Sınırsız dayanıklılık" aletleri hiç köreltmez.
 - **İş süresi:** bir toplamanın kaç saniye sürdüğü (yetenekler ve seviye kısaltır).

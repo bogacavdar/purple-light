@@ -1,6 +1,6 @@
 # Yetenekler · Yetenek ağacı
 
-**v1.83'ten itibaren** yetenekler üç ağaçtadır: **Savaş** (kırmızı), **Ekonomi** (altın sarısı) ve **Dayanıklılık** (yeşil). Her ağaçta **30 yetenek**, toplam **90 yetenek**.
+Yetenekler üç ağaçtadır: **Savaş** (kırmızı), **Ekonomi** (altın sarısı) ve **Dayanıklılık** (yeşil). Her ağaçta **30 yetenek**, toplam **90 yetenek**.
 
 ## Görünüş
 
@@ -33,7 +33,7 @@
 - **Koşu** Savaş ağacının köküdür: yalnızca **100 sikke**; seviye, köprü ya da Atılma şartı yok.
 - **Atılma ağaçta değildir:** öğreticide Savaşçı Börü ücretsiz öğretir (öğreticiyi geçen, Börü'yle konuşunca aynı dersi ücretsiz alır). Ayrıntı: "Oyunun akışı → Börü'nün atılma dersi".
 - **Bilgelik dalı kaldırıldı.** Sezgi, Akıl yürütme ve İpucu ustası I-II Normal modda gereksizdi (tarifler Normal modda zaten açık). *Not: Zor mod tasarlanırken tarif ipucu yetenekleri yeniden düşünülecek.* Pazarlıkçı I-IV'ün yerine Usta tüccar I-II geldi; Sağlam yapı'nın eski +20'lik ilk basamağı ve Kemer V çıkarıldı (Kemer IV artık 12 yuva).
-- **v1.83'te yeni:** Derin nefes III, Çabuk toparlanma II, Hafif adım II, Çevik atılma II-III, Uzun atılma, Güçlü kol IV, Savuşturma ustası I-II, Sıyrılma ustası, Usta tüccar II, Bereket II, Verimli toprak II, Sağlam yapı IV, Hızlı iyileşme IV, Doyurucu sofra, Kamp ateşi ustası, Tok karın, Kalın deri II-III, Dirençli beden, Demir mide II. Geri gelenler: Toptancı, Kazan bilgesi, Keskin göz, Bilmece ustası, Hızlı öğrenen I ve III.
+- **Ek yetenekler:** Derin nefes III, Çabuk toparlanma II, Hafif adım II, Çevik atılma II-III, Uzun atılma, Güçlü kol IV, Savuşturma ustası I-II, Sıyrılma ustası, Usta tüccar II, Bereket II, Verimli toprak II, Sağlam yapı IV, Hızlı iyileşme IV, Doyurucu sofra, Kamp ateşi ustası, Tok karın, Kalın deri II-III, Dirençli beden, Demir mide II. Geri gelenler: Toptancı, Kazan bilgesi, Keskin göz, Bilmece ustası, Hızlı öğrenen I ve III.
 - **Eski kayıtlar:** kaldırılan bir yeteneğe sahip kayıt açılınca o yeteneğin eski parası sikke olarak iade edilir ve bir bildirim çıkar. Elde kalan yetenekler alınmış kalır; alınmış bir yeteneğin altındaki (ona giden yoldaki) yetenekler de görünür olur.
 
 ## Savaş (kırmızı)
@@ -58,7 +58,7 @@
 | 6 | A3 | Kemer III | kemer | Alet yuvası 10 | Kemer II | Kemer IV, Çabuk toparlanma II | 1.800 | Sv 8 |
 | 6 | S2 | Çevik atılma I | hız çizgili ok | Atılma 9 enerji (14 yerine), bekleme 0,45 sn | Kemer II | Çevik atılma II | 1.800 | Sv 8 |
 | 7 | H7 | Hızlı adımlar IV | ileri okları | Hareket hızı toplam +%40 | Hızlı adımlar III | – | 3.000 | Sv 11 |
-| 7 | H6 | **Keskin göz I** (v3.12; eskiden Kâşif gözü) | pusula | Kritik vuruş ihtimali +%3 (kritik vurabilen silahlarla) | Hızlı adımlar III | – | 3.000 | Sv 11 |
+| 7 | H6 | **Keskin göz I** (eskiden Kâşif gözü) | pusula | Kritik vuruş ihtimali +%3 (kritik vurabilen silahlarla) | Hızlı adımlar III | – | 3.000 | Sv 11 |
 | 7 | K9 | Hafif adım II | tüy | Koşarken toplam %50 daha az enerji harcarsın | Hafif adım I | Rüzgâr gibi, Baykuş gözü | 3.000 | Sv 11 |
 | 7 | K7 | Derin nefes III | nefes (ciğer) | En yüksek enerji toplam +%75 | Derin nefes II | – | 3.000 | Sv 11 |
 | 7 | W4 | Güçlü kol IV | kılıç | Hasar toplam +%55 | Güçlü kol III | – | 3.000 | Sv 11 |
@@ -66,8 +66,8 @@
 | 7 | A4 | Kemer IV | kemer | Alet yuvası 12 | Kemer III | – | 3.000 | Sv 11 |
 | 7 | K8 | Çabuk toparlanma II | şimşek | Enerji iki kat hızlı dolar | Kemer III | – | 3.000 | Sv 11 |
 | 7 | S3 | Çevik atılma II | hız çizgili ok | Atılma 7 enerji, bekleme 0,38 sn | Çevik atılma I | Çevik atılma III, Uzun atılma | 3.000 | Sv 11 |
-| 8 | K4 | **Keskin göz II** (v3.12; eskiden Rüzgâr gibi) | rüzgâr | Kritik vuruş ihtimali toplam +%6 | Keskin göz I | – | 5.000 | Sv 14 |
-| 8 | H8 | **Ölümcül vuruş** (v3.12; eskiden Baykuş gözü) | hilal | Kritik vuruş %50 yerine %80 fazla vurur | Keskin göz II | – | 5.000 | Sv 14 |
+| 8 | K4 | **Keskin göz II** (eskiden Rüzgâr gibi) | rüzgâr | Kritik vuruş ihtimali toplam +%6 | Keskin göz I | – | 5.000 | Sv 14 |
+| 8 | H8 | **Ölümcül vuruş** (eskiden Baykuş gözü) | hilal | Kritik vuruş %50 yerine %80 fazla vurur | Keskin göz II | – | 5.000 | Sv 14 |
 | 8 | S4 | Çevik atılma III | hız çizgili ok | Atılma 5 enerji, bekleme 0,30 sn | Çevik atılma II | – | 5.000 | Sv 14 |
 | 8 | S5 | Uzun atılma | uzun ok | Takla %25 daha uzağa götürür | Çevik atılma II | – | 5.000 | Sv 14 |
 

@@ -15,7 +15,7 @@ from scipy import ndimage as ndi
 from PIL import Image
 
 OUT = os.path.dirname(os.path.abspath(__file__))
-GROW = 1.5                    # v3.40 (Boğaç): her biyom enden ve boydan %50 büyük (alan 2,25 kat); şekil aynı, yalnızca ölçek
+GROW = 1.5 ** .5              # v3.44 (Boğaç): her biyomun ALANI %50 büyük (kenar ×√1,5 ≈ 1,2247); şekil aynı, yalnızca ölçek
 BASE = 128                    # şekiller 128'lik önizleme ızgarasında tanımlı
 
 ISLANDS = {
@@ -96,7 +96,7 @@ def build(isle):
         return m, rng, k
     # v2.39: the grid stays the old size (645 × 464); the shape is drawn large, cut to its land box and fitted into the grid
     # with a thin sea margin (the sea is never walked on, so it must not cost anything). It is stretched sideways to use the width.
-    GW, GH, M = round(645*GROW), round(464*GROW), round(10*GROW)   # v3.40: 968 × 696 (eskiden 645 × 464)
+    GW, GH, M = round(645*GROW), round(464*GROW), round(10*GROW)   # v3.44: 790 × 568, deniz payı 12 (3.39'da 645 × 464)
     N = 900
     mask0, rng, k0 = mask_at(N)
     rn0 = value_noise(rng, N, 2, 2); wn0 = value_noise(rng, N, 3, 4)
@@ -207,7 +207,7 @@ def build(isle):
     a = anchor(0, .6, .6, 20, 18); lake(a, 6*GROW)
     placed = []
     for i in range(200):
-        if len(placed) >= round(20*GROW*GROW): break   # v3.40: aynı sıklık (45 gölcük)
+        if len(placed) >= round(20*GROW*GROW): break   # v3.44: aynı sıklık (30 gölcük)
         a = anchor(2, rngL.random()*.9 + .05, rngL.random(), 10, 8)
         if any(np.hypot(a[0]-p[0], a[1]-p[1]) < 14*GROW for p in placed): continue
         placed.append(a); lake(a, 1.6 + rngL.random()*2.2)

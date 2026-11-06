@@ -1,6 +1,6 @@
 ## Biyomlar
 
-> **Not (v2.11):** ikinci adada da harita seyreltildi (kuralı ACT 1 › Adanın yerleşimi → Haritadaki miktarlar). Bu bölümdeki "Adadaki sayısı" sütunları **seyreltmeden önce** ölçüldü: temel malzemeler bugün yaklaşık yarısı, bitkiler yaklaşık %60'ı kadar.
+> **Not:** ikinci adada da harita seyreltildi (kuralı ACT 1 › Adanın yerleşimi → Haritadaki miktarlar). Bu bölümdeki "Adadaki sayısı" sütunları **seyreltmeden önce** ölçüldü: temel malzemeler bugün yaklaşık yarısı, bitkiler yaklaşık %60'ı kadar.
 
 ### Yüzen Kayalar — Güvenli
 

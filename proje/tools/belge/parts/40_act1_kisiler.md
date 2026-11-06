@@ -1,8 +1,7 @@
 ## Kişiler (tanıtımlar ve hikâyeler)
 
-> **v3.43 düzeni:** v1.85'e kadarki eski görev sisteminin kuralları ve görev tabloları **Arşiv › ACT 1 · eski görev tabloları** bölümüne taşındı (artık oyunda yok; geçerli görevler "ACT 1 › Ana görevler" bölümünde). Burada kalan kişi tanıtımları, çalışma yerleri, kuzenlere özel eşyalar ve hikâyeler geçerlidir.
 
-### İsimler (v2.45, Boğaç)
+### İsimler
 
 Kişilerin adları karakterlerine uysun diye 31 Ekim 2026'da değişti (Boğaç seçti). Pazarcı Nazlı, Savaşçı Börü ve Işıl aynı kaldı; cadılar, demirciler, zırhçılar ve kuzenleri kendi isimlendirme kurallarıyla durur; Yıldızsız Gezgin ve Işıkçı'nın adı yoktur. Belgenin her yerinde yeni adlar kullanılır. Eski kayıtlar etkilenmez (kayıtta kişi adı tutulmaz).
 
@@ -40,7 +39,6 @@ Kişilerin adları karakterlerine uysun diye 31 Ekim 2026'da değişti (Boğaç 
 
 Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanında, Çayır'ın güney kıyısında. Bir şey satmaz; ana görev zincirini verir. Bayılınca (gece mor ışıkla da) kampının hemen yanındaki kumsalda uyanırsın. Ana görevleri bitirdikçe kendi hikâyesini (kaybettiği eşi Saliha) anlatır. Her görev tesliminde %30 ihtimalle bir anın geri gelir.
 
-*(Eski görev tablosu: Arşiv › ACT 1 · eski görev tabloları.)*
 
 ### Cadı Zümrüt
 
@@ -50,9 +48,8 @@ Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanınd
 - **Bilmece:** bilinmeyen bir tarifi ipucuyla sorar; o tarifi öğrenince 30 + 2 × fiyat sikke (Bilmece yeteneğiyle iki katı) ve 20 XP. 2 günden eski bilmece yenilenir.
 - **Anı:** 2 Mor kıymık verirsen ACT 1'in sıradaki anısını geri getirir (gün şartı yok; 22 anı da geldiyse bu seçenek çıkmaz).
 - **Kuzenler:** "Kuzenlerin var mı?" diye sorulabilir; beş kuzen cadıyı (Yakut, Safir, Firuze, Mercan, İnci) sayar. Onların kazanları da bütün tarifleri öğretir, yalnızca rengi farklıdır.
-- Hikâyesi: kız kardeşi Ayşen. Hikâyesi bitince kendi sahnesi ("Ay otları") yerine ailenin ortak sahnesi bekler (v1.84; aşağıda "Zümrüt, Dursun ve Durmuş'un kuzenleri").
+- Hikâyesi: kız kardeşi Ayşen. Hikâyesi bitince kendi sahnesi ("Ay otları") yerine ailenin ortak sahnesi bekler (aşağıda "Zümrüt, Dursun ve Durmuş'un kuzenleri").
 
-*(Eski görev tablosu: Arşiv › ACT 1 · eski görev tabloları.)*
 
 
 ### Pazarcı Nazlı
@@ -60,11 +57,10 @@ Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanınd
 **Yer:** Kemal'in yaklaşık 30 karo doğusu, 51 karo kuzeyi, Çayır'da tezgâhının başında. **Tanışma:** öğreticinin 9. adımı.
 
 - **Her şeyi satın alır.** Fiyat sabittir, çok satmak düşürmez. "Aletler, zırhlar, eşyalar hariç hepsini sat" ve "Kazandaki açık tariflere yeteni bırak" ve "Bütün tariflere yeteni bırak" düğmeleri vardır (v3.33; Sistemler › Ekonomi).
-- **Doğal malzeme ve tarifini öğrendiğin eşyaları satar (v2.68, Boğaç):** doğal malzemeleri en az bir kez eline geçmişse; ayrıca **tarifini öğrendiğin her eşyayı** (Uzun sopa, İp, Sopa, yemekler…; yapılar, aletler, silahlar ve zırhlar hariç) değerinin **1,5 katına** satar (hiçbir zaman sana ödediği fiyatın altına inmez). Tohum ve tarla ürünü satmaz (tarlacılık şimdilik yok). Alış fiyatı malzemenin değerinin kabaca 2,6–5,6 katıdır (pahalı ve tehlikeli bölgelerin malzemesi daha pahalı). 1'li ya da 10'lu alınır.
+- **Doğal malzeme ve tarifini öğrendiğin eşyaları satar:** doğal malzemeleri en az bir kez eline geçmişse; ayrıca **tarifini öğrendiğin her eşyayı** (Uzun sopa, İp, Sopa, yemekler…; yapılar, aletler, silahlar ve zırhlar hariç) değerinin **1,5 katına** satar (hiçbir zaman sana ödediği fiyatın altına inmez). Tohum ve tarla ürünü satmaz (tarlacılık şimdilik yok). Alış fiyatı malzemenin değerinin kabaca 2,6–5,6 katıdır (pahalı ve tehlikeli bölgelerin malzemesi daha pahalı). 1'li ya da 10'lu alınır.
 - Satış fiyatın bütün yeteneklerle en çok temel fiyatın 2,3 katına çıkar.
 - Hikâyesi: kardeşi Cem.
 
-*(Eski görev tablosu: Arşiv › ACT 1 · eski görev tabloları.)*
 
 
 ### Savaşçı Börü
@@ -78,40 +74,37 @@ Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanınd
 - **Dövüş dersleri** (sikkeyle; ayrıntılar "Sistemler › Dövüş" bölümünde). Bir ders açılınca bir kez duyuru gelir. Öğrenilmiş dersler ücretsiz tekrar çalışılabilir. Ders sırasında Börü'den 280 pikselden uzağa gidersen oyun durur ve "Derse dön / Dersi bırak" diye sorar; "Derse dön" seni Börü'nün ~140 piksel yakınına koyar, bırakırsan ücret geri verilir.
 - Hikâyesi: ağabeyi Kaan.
 
-*(Eski görev tablosu: Arşiv › ACT 1 · eski görev tabloları.)*
 
 ### Demirci Dursun
 
 **Yer:** Kemal'in yaklaşık 70 karo doğusu, 71 karo kuzeyi; ocak ve örs. **Tanışma:** öğreticinin 13. adımı (Börü'nün selamıyla).
 
-- **Çekiç:** örse yaklaşık **1,1 saniyede bir** vurur (0,9 vuruş/sn; 1.89'a kadar 1,8 vuruş/sn idi). Her vuruşta kıvılcım çıkar; 110 px yakınındaysan ve menü/konuşma açık değilse çınlama sesi gelir. Silahçı kuzenleri de aynı hızda döver.
+- **Çekiç:** örse yaklaşık **1,1 saniyede bir** vurur (0,9 vuruş/sn). Her vuruşta kıvılcım çıkar; 110 px yakınındaysan ve menü/konuşma açık değilse çınlama sesi gelir. Silahçı kuzenleri de aynı hızda döver.
 
-- **Alet dök:** yalnızca **Çayır malzemesiyle** yapılan aletleri ve silahları döver (kademe 0): taş, çakmaktaşı ve tunç baltalar/kazmalar/mızraklar/kılıçlar, bıçaklar, meşale, tırmık, tırpan, sulama kabı, balık kapanı, tuzak, sapan, olta, ağ… Granit, demir, kuvars, bazalt, obsidyen ve o biyomların malzemesiyle yapılanları **silahçı kuzenleri** döver (v1.84). Tarif kazanda öğrenilmiş, parçalar çantanda olmalı. İşçilik fiyatın %15'i. Elinde olan bir aleti ikinci kez dövmez.
+- **Alet dök:** yalnızca **Çayır malzemesiyle** yapılan aletleri ve silahları döver (kademe 0): taş, çakmaktaşı ve tunç baltalar/kazmalar/mızraklar/kılıçlar, bıçaklar, meşale, tırmık, tırpan, sulama kabı, balık kapanı, tuzak, sapan, olta, ağ… Granit, demir, kuvars, bazalt, obsidyen ve o biyomların malzemesiyle yapılanları **silahçı kuzenleri** döver. Tarif kazanda öğrenilmiş, parçalar çantanda olmalı. İşçilik fiyatın %15'i. Elinde olan bir aleti ikinci kez dövmez.
 - **Aletimi bile:** körelen aleti yeniler (ücret: bkz. Sistemler › Aletler, dayanıklılık, kademe).
 - Alet satmaz. Zırh için kardeşi Durmuş'a yollar. "Kuzenlerin var mı?" diye sorulunca beş silahçı kuzenini (Durdu, Ali, Kaya, Turan, Kudret) ve hangisinin neyi dövdüğünü anlatır.
-- Hikâyesi: babası Demirhan Usta. Kendi sahnesi ("Gökten düşen taş") yerine ailenin ortak sahnesi oynar (v1.84).
+- Hikâyesi: babası Demirhan Usta. Kendi sahnesi ("Gökten düşen taş") yerine ailenin ortak sahnesi oynar.
 
-*(Eski görev tablosu: Arşiv › ACT 1 · eski görev tabloları.)*
 
 
 ### Zırhçı Durmuş
 
 **Yer:** Dursun'un hemen yanında, ikinci örs. **Tanışma:** öğretici bitince.
 
-- Kademe 0 zırhları döver (v1.84): Tunç miğfer, zırh, eldiven, çizme ve ACT 2 malzemeleriyle yapılan Fırtına tüyü başlık, Mantar lifi eldiven, Hurda çizme, Kristal miğfer, Ejder pulu eldiven, Meka çizme. Demir zırhları Bataklık'taki kuzeni **Zırhçı Veli**, Ejder zırhıı Kül Diyarı'ndaki **Zırhçı Tufan** (ya da üstü) döver. İşçilik %15.
+- Kademe 0 zırhları döver: Tunç miğfer, zırh, eldiven, çizme ve ACT 2 malzemeleriyle yapılan Fırtına tüyü başlık, Mantar lifi eldiven, Hurda çizme, Kristal miğfer, Ejder pulu eldiven, Meka çizme. Demir zırhları Bataklık'taki kuzeni **Zırhçı Veli**, Ejder zırhıı Kül Diyarı'ndaki **Zırhçı Tufan** (ya da üstü) döver. İşçilik %15.
 - "Kuzenlerin var mı?" diye sorulunca beş zırhçı kuzenini (Duran, Veli, Kayhan, Tufan, Kuvvet) sayar.
-- Hikâyesi: babası Demirhan Usta (Dursun'la aynı). Kendi sahnesi ("Kumsaldaki çekiç") yerine ailenin ortak sahnesi oynar (v1.84).
+- Hikâyesi: babası Demirhan Usta (Dursun'la aynı). Kendi sahnesi ("Kumsaldaki çekiç") yerine ailenin ortak sahnesi oynar.
 - Deri, kürk ve kemik zırhlar elle yapılır (Tab).
 
-*(Eski görev tablosu: Arşiv › ACT 1 · eski görev tabloları.)*
 
 
-### Zümrüt, Dursun ve Durmuş'un kuzenleri (v1.84)
+### Zümrüt, Dursun ve Durmuş'un kuzenleri
 
 Çayır dışındaki her ACT 1 biyomunda bir **aile ocağı** vardır: bir **cadı** (kazancı), bir **silahçı** ve bir **zırhçı**. On beşi de Cadı Zümrüt, Demirci Dursun ve Zırhçı Durmuş'un kuzenidir; hepsi **Elmas Nine**'nin torunlarıdır. ACT 2'de kuzen yoktur (mor ışığın ACT 2'de kaçırdığı bir akrabaları yok).
 
 - **Görünüş:** cadılar Zümrüt'le, silahçılar Dursun'la, zırhçılar Durmuş'la **birebir aynıdır** (ten, saç, sakal/bıyık, şapka, önlük, çekiç tutuşu, portre). Yalnızca **adları farklıdır**. Her biyomun silahçısıyla zırhçısı kardeştir (yan yana çalışırlar) ve Dursun/Durmuş gibi birbirine benzeyen adlar taşır.
-- **Örs sesi (v3.07, Boğaç):** Dursun'un ve kuzen demircilerin çekiç sesi yalnızca oyun sürerken, 110 piksel yakınlarındayken duyulur; ana menüye dönünce (arkada dünya çizilmeye devam etse de) susar. Önceden demircinin yanında ana menüye dönülünce örs sesi menüde de çalmaya devam ediyordu.
+- **Örs sesi:** Dursun'un ve kuzen demircilerin çekiç sesi yalnızca oyun sürerken, 110 piksel yakınlarındayken duyulur; ana menüye dönünce (arkada dünya çizilmeye devam etse de) susar. Önceden demircinin yanında ana menüye dönülünce örs sesi menüde de çalmaya devam ediyordu.
 - **Fark nerede:** cadıların **kazanındaki sıvının rengi** (adlarındaki değerli taşın rengi), demircilerin ise **çalışma yeri**: ocak, örs, çekiç ve askılar biyomdan biyoma daha iyi görünür (tablolar aşağıda). Renk farkı yalnız kazanda vardır; demircilerin hiçbir rengi değişmez.
 - **Yer:** orijinaldeki gibi **dip dibe değiller**. Her biyomda iki kardeş demirci (silahçı + zırhçı) Dursun ile Durmuş gibi **aynı ocakta yan yana** çalışır; cadı ve kazanı ise **aynı biyomun başka bir köşesinde**, demircilerden uzakta yaşar (aralarında en az 200 piksel, aranan noktalar 70–120 karo ayrı). Yerler oyun açılırken bulunur: tabloda yazan noktaya en yakın, tamamı o biyomun yürünebilir toprağı olan açık alan (demirciler için 15 × 7, cadı için 9 × 7 karo) ve başka kişilere, köprüye, kaya yığınına en az 200 piksel uzak. Oradaki ağaçlar ve toplanabilirler kaldırılır. Keşfedilince haritada simgeleriyle (Zümrüt, Dursun, Durmuş simgesi) ve adlarıyla görünürler; haritada dokununca ok onları gösterir.
 - **Ateş kuralı:** her kuzenin yanında **kendi kamp ateşi** yanar (cadının solunda, silahçının ve zırhçının sağ önünde). Kişilerin ateşleri gibi gece ışık verir ve çevresi (120 piksel) güvenlidir: saldırganlar uzaklaşır, mor ışık inmez. Kazanın altındaki ateş ve silahçının ocağı ayrıca ışık sayılır.
@@ -142,7 +135,7 @@ Kuzen cadıların kazanı **Zümrüt'ün kazanıyla aynı mantıkta** çalışı
 
 | Kademe | Silahçı | Zırhçı | Dövülen (o kademenin eşyaları; alttakiler de dövülür) |
 |---|---|---|---|
-| 0 · Çayır | Demirci Dursun | Zırhçı Durmuş | Silah/balta/kazma (v2.58: Ağ, Balık kapanı, Bola, Dokuma tezgâhı, Kemik zıpkın, Kürek, Meşale, Olta, Sapan, Sulama kabı, Tuzak, Tırmık, Tırpan, kazıyıcı, Çekiç taşı artık elle yapılır, bkz. Aletler · Nerede yapılır): Çam yayı, Boynuz kazma, Mızrak, Taş balta, Taş bıçak, Taş kazma, Taş kılıç, Tunç balta, Tunç savaş çekici, Tunç kazma, Tunç kılıç, Tunç mızrak, Tunç topuz, Bakır balta, Bakır savaş çekici, Bakır kazma, Bakır kılıç, Bakır mızrak, Bakır topuz, Tuzak, Tırmık, Tırpan, Çakmaktaşı balta, Çakmaktaşı bıçak, Çakmaktaşı kazma, Çakmaktaşı kazıyıcı, Çakmaktaşı mızrak, Çekiç taşı. Zırh: Bakır çizme, Bakır eldiven, Bakır miğfer, Bakır zırh, Ejder pulu eldiven, Fırtına tüyü başlık, Hurda çizme, Kristal miğfer, Mantar lifi eldiven, Meka çizme, Tunç eldiven, Tunç miğfer, Tunç zırh, Tunç çizme |
+| 0 · Çayır | Demirci Dursun | Zırhçı Durmuş | Silah/balta/kazma (Ağ, Balık kapanı, Bola, Dokuma tezgâhı, Kemik zıpkın, Kürek, Meşale, Olta, Sapan, Sulama kabı, Tuzak, Tırmık, Tırpan, kazıyıcı, Çekiç taşı artık elle yapılır, bkz. Aletler · Nerede yapılır): Çam yayı, Boynuz kazma, Mızrak, Taş balta, Taş bıçak, Taş kazma, Taş kılıç, Tunç balta, Tunç savaş çekici, Tunç kazma, Tunç kılıç, Tunç mızrak, Tunç topuz, Bakır balta, Bakır savaş çekici, Bakır kazma, Bakır kılıç, Bakır mızrak, Bakır topuz, Tuzak, Tırmık, Tırpan, Çakmaktaşı balta, Çakmaktaşı bıçak, Çakmaktaşı kazma, Çakmaktaşı kazıyıcı, Çakmaktaşı mızrak, Çekiç taşı. Zırh: Bakır çizme, Bakır eldiven, Bakır miğfer, Bakır zırh, Ejder pulu eldiven, Fırtına tüyü başlık, Hurda çizme, Kristal miğfer, Mantar lifi eldiven, Meka çizme, Tunç eldiven, Tunç miğfer, Tunç zırh, Tunç çizme |
 | 1 · Orman | Silahçı Durdu | Zırhçı Duran | Alet/silah: Meşe yayı, Bileği taşı, Granit balta, Granit savaş çekici, Granit kazma, Kemik iğne, Kirmen, Öğütme taşı. Zırh: Ceviz kabuğu miğfer, Meşe kabuk zırh |
 | 2 · Bataklık | Silahçı Ali | Zırhçı Veli | Alet/silah: Kızılağaç yayı, Demir balta, Demir savaş çekici, Demir kazma, Demir kılıç, Demir mızrak, Demir topuz, Dişbudak yayı, Pişirme taşı, Timsah dişi kılıcı. Zırh: Demir eldiven, Demir miğfer, Demir zırh, Demir çizme, Timsah pulu zırh |
 | 3 · Kayalık Dağ | Silahçı Kaya | Zırhçı Kayhan | Alet/silah: Akçaağaç yayı, Gümüş kılıç, Kuvars balta, Kuvars bıçak, Kuvars kazma, Kuvars kazıyıcı, Kuvars mızrak, Pirit çakmağı, Porsuk yayı, Çelik balta, Çelik savaş çekici, Çelik kazma, Çelik kılıç, Çelik mızrak, Çelik topuz. Zırh: Gümüş pullu zırh, Kartal tüyü miğfer, Çelik çizme, Çelik eldiven, Çelik miğfer, Çelik zırh |
@@ -180,10 +173,6 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 | Kristal ipek zırh | Zırh · Gövde | +72 savunma · direnç: kanama %25, yanık %25, zehir %25 | 5 Kristal ipek, 3 Ametist, 6 Demir cevheri, 2 Deri parçası | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 2.554 |
 | Işık pulu eldiven | Zırh · El | +18 savunma · direnç: zehir %35 | 4 Işık pulu, 2 Kristal, 1 Deri parçası, 3 Lif | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 1.000 |
 
-#### Kuzenlerin görevleri
-
-Eski (v1.85'e kadarki) kuzen görev tabloları: Arşiv › ACT 1 · eski görev tabloları › Kuzenlerin görevleri.
-
 #### Hikâyeler ve ailenin sahnesi
 
 - Her kuzenin hikâyesi 3 parçadır (her görev bir parça açar, "📖 Sen bu adaya nasıl geldin?"). Kitap › Ada halkı'nda "Ninesi Elmas" olarak görünürler. Parçalar Elmas Nine'yi, her kazanın ve örsün dibindeki **elmas mührü** ve "ateşin dumanını izleyen beni bulur" sözünü ipucu olarak verir.
@@ -214,7 +203,6 @@ Eski (v1.85'e kadarki) kuzen görev tabloları: Arşiv › ACT 1 · eski görev 
 - **Atölye:** yere kurulur, seçtiğin bir tarifi 25 saniyede bir kendiliğinden üretir (en çok 50 tane biriktirir).
 - Hikâyesi: kızı Zeynep (parçaları 8 görevine eşit aralıklarla dağılır).
 
-*(Eski görev tablosu: Arşiv › ACT 1 · eski görev tabloları.)*
 
 
 ### Avcı Doğan
@@ -225,29 +213,26 @@ Eski (v1.85'e kadarki) kuzen görev tabloları: Arşiv › ACT 1 · eski görev 
 - Demir madeni, Kara ejder ve mor ışık hakkında bilgi verir; eşinin kaçırılışını gördüğünü anlatır.
 - Hikâyesi: oğlu Ayaz.
 
-*(Eski görev tablosu: Arşiv › ACT 1 · eski görev tabloları.)*
 
 
 ### Yıldızsız Gezgin, Yıldızsız Işıkçı
 
 Takvime bağlı gezginler; ne zaman geldikleri ve ne yaptıkları "Oyun akışı › Gezginler ve takvim" tablosunda.
 
-*(Eski görev tablosu: Arşiv › ACT 1 · eski görev tabloları.)*
 
 
 ### Denizci Barbaros
 
 **Yer:** Gemi tarifini öğrenince Mor Kristal Vadisi kıyısına düşen enkazın başında. ACT 2'de seni indirdiği kıyıda bekler. Kızı Meltem'i kaybetmiştir; yeni gemiye onun adını verir.
 
-*(Eski görev tablosu: Arşiv › ACT 1 · eski görev tabloları.)*
 
 
 Son görev (Yeni bir gemi) bitince Barbaros'la konuş: hikâye sahnesi, ardından "Götür beni" → deniz yolculuğu (yaklaşık 14 sn) → **ACT 2**.
 
 
-> **v2.51 · usta setleri:** her biyomun silahçısı ve zırhçısı kendi biyomunun usta setini döver (Aletler · Bütün setler). Yukarıdaki listelere ek olarak: Orman — Granit kılıç, Granit topuz, Granit mızrak, Ihlamur yayı, Meşe kabuk eldiven ve çizme; Bataklık — Timsah dişi savaş çekici, topuz, mızrak, balta, kazma, Söğüt yayı, Timsah miğfer, Timsah eldiven, Kamış çizme; Kayalık Dağ — Kuvars savaş çekici ve topuz, Huş yayı, Gümüş eldiven ve çizme; Mor Kristal Vadisi — Ametist savaş çekici ve topuz, Işık ağacı yayı, Ametist miğfer, Kristal ipek çizme, Obsidyen balta, kazma ve mızrak (artık Kudret döver); Çayır — Çakmaktaşı kılıç, savaş çekici ve topuz, Kemik yay (Kemik eldiven ve çizme elle yapılır).
+> **usta setleri:** her biyomun silahçısı ve zırhçısı kendi biyomunun usta setini döver (Aletler · Bütün setler). Yukarıdaki listelere ek olarak: Orman — Granit kılıç, Granit topuz, Granit mızrak, Ihlamur yayı, Meşe kabuk eldiven ve çizme; Bataklık — Timsah dişi savaş çekici, topuz, mızrak, balta, kazma, Söğüt yayı, Timsah miğfer, Timsah eldiven, Kamış çizme; Kayalık Dağ — Kuvars savaş çekici ve topuz, Huş yayı, Gümüş eldiven ve çizme; Mor Kristal Vadisi — Ametist savaş çekici ve topuz, Işık ağacı yayı, Ametist miğfer, Kristal ipek çizme, Obsidyen balta, kazma ve mızrak (artık Kudret döver); Çayır — Çakmaktaşı kılıç, savaş çekici ve topuz, Kemik yay (Kemik eldiven ve çizme elle yapılır).
 
-### Nazlı'nın kuzenleri (v2.71, Boğaç)
+### Nazlı'nın kuzenleri
 
 Çayır'dan sonraki her biyomda Nazlı'nın bir kuzeni pazar kurar. **Nazlı'yla tıpatıp aynıdır**, yalnızca başındaki **yemeninin rengi** farklıdır; tezgâhının tentesi de o renktedir. Yeri: o biyomun demirci–zırhçı ocağının yanında (110–260 piksel ötede, kendi biyomunun kuru toprağında). Haritada pazar simgesiyle görünür.
 

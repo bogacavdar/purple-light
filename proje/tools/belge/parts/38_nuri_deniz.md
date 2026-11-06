@@ -1,4 +1,4 @@
-## Gemici Poyraz ve deniz (v2.34)
+## Gemici Poyraz ve deniz
 
 **Boğaç, 30 Ekim 2026:** Gemici Poyraz'ın eski işi tamamen kalktı. Kaçırılma hikâyesi yok; bu adayla bağı yok. Poyraz artık **gemisi olan bir gemici**: adaya kaza ile çarpar. Teknesini tamir edince seni denize, 6 farklı balık bölgesine götürür. Ana adanın **deniz kıyısında** balık tutulmaz (nehir ve göller eskisi gibi).
 
@@ -12,9 +12,9 @@
 ### Kaza
 
 - **Ne zaman:** **Olta**'yı ilk kez yaptıktan (ya da elinde Olta varken) sonraki **ilk sabah 06:00**'da. Saat 06:00'dan önce yaptıysan aynı sabah, sonra yaptıysan ertesi sabah. Eski kayıtta Olta zaten varsa ilk sabah.
-- **Ne olur:** uzaktan büyük bir çatırtı ve gümbürtü sesi gelir ("GÜMMM!"). Uyuyorsan bu ses seni uyandırır. Ekranın ortasında duyuru çıkar: **"Uzak bir kıyıdan gürültü geldi"** · "Bir tekne karaya oturmuş olmalı". Kısa bildirim: "Haritada sarı ? ile işaretlendi."
+- **Ne olur:** uzaktan büyük bir çatırtı ve gümbürtü sesi gelir ("GÜMMM!"). Uyuyorsan bu ses seni uyandırır. Ekranın ortasında duyuru çıkar: **"Uzak bir kıyıdan gürültü geldi"** · "Bir tekne karaya oturmuş olmalı". Kısa bildirim: "Haritada parlayan ! ile işaretlendi."
 - **Yer:** Kemal'in kampından **uzak**, başka bir kıyı. Çayır ya da Orman'ın deniz kıyısında, Kemal'in kampına en uzak kumsal (kişilerden, ateşlerden, mağara girişlerinden uzak). Teknenin burnu kumsala oturmuş, kıçı suda.
-- **Haritada:** Poyraz'la konuşana kadar o yerde **büyük sarı nabız gibi atan bir "?"** görünür (keşfedilmemiş yerde bile). Konuşunca "?" kalkar, yerine Poyraz'ın simgesi gelir (adı: **Gemici Poyraz**).
+- **Haritada:** Poyraz'la konuşana kadar o yerde **parlayan bir "!"** görünür (keşfedilmemiş yerde bile), dünyada da Poyraz'ın üstünde "!" yazar ve parlar. Konuşunca haritada Poyraz'ın simgesi belirir (adı: **Gemici Poyraz**); "!" ve parlama görev alınınca kalkar.
 
 ### Gemici Poyraz
 
@@ -31,7 +31,7 @@ Poyraz'ın görevleri ana görev sırasına girer (aynı anda tek ana görev). P
 | G1 | Çatlak omurga | Getir: 6 Çam odunu, 3 Uzun sopa | Poyraz karaya oturdu | 40 sikke · 25 XP |
 | G2 | Yırtık yelken | Getir: 2 Halat, 6 Lif | G1 | 55 sikke · 35 XP |
 | G3 | Su alan tekne | Getir: 3 Çam reçinesi, 4 Taş | G2 | 70 sikke · 45 XP |
-| G4 | Kaptanın karnı | Getir: 2 Közlenmiş tavşan eti, 4 Böğürtlen (v3.10: eskiden herhangi pişmiş et) | G3 | 90 sikke · 60 XP |
+| G4 | Kaptanın karnı | Getir: 2 Közlenmiş tavşan eti, 4 Böğürtlen (eskiden herhangi pişmiş et) | G3 | 90 sikke · 60 XP |
 
 - **G4 bitince:** tekne onarılır. Ekran kısa bir an kararıp açılır; tekne artık suyun üstünde, dik direği ve beyaz yelkeniyle durur. Poyraz: "Bak hele! Yüzüyor! Sana bir borcum var evlat. Balığa çıkmak istersen bana gel; bu sulara açılırız. Nereye istersen." Duyuru: **"Deniz açıldı"** · "Poyraz'la denize çıkabilirsin".
 
@@ -84,7 +84,7 @@ Satış fiyatı Nazlı'nın pazarında. Zorluk yeşil alanı böler (1 = kolay).
 | Fener balığı | 6 | 85 | 1,55 | 10 |
 | Işıl balığı | 6 | 110 | 1,75 | 12 |
 
-- Satılır ve yenir; v3.10'dan beri "herhangi balık" grubu yoktur. Yemek listesinde **Balıklar** sekmesinde.
+- Satılır ve yenir; "herhangi balık" grubu yoktur. Yemek listesinde **Balıklar** sekmesinde.
 
 #### Deniz oltaları (kazanda öğrenilir, kazanda yapılır)
 

@@ -21,7 +21,7 @@
 | Kurt avcısı | 10 kurt avla. | – |
 | Kâşif | Adanın yarısını keşfet. | Haritanın açılan kısmı; "Haritayı aç" hilesi de sayılır. |
 | İz sürücü 🔒 | Eşinden kalan bütün izleri bul. | 6 iz: ikisi yurtta (Çayır/Orman), ikisi köprünün karşısında (biri Bataklık'ta, biri Kayalık Dağ'da), ikisi doğuda. Gece mor parıltı. |
-| Hatırladım 🔒 | Bütün anılarını geri getir. | 32 anı (v3.19): ACT 1'in 22 anısı (tanışmadan evlenme teklifine), ikinci adada gelen 5 mor ışık anısı, 5 usta anısı (ACT 2 ustalarının son görevleri). |
+| Hatırladım 🔒 | Bütün anılarını geri getir. | 32 anı: ACT 1'in 22 anısı (tanışmadan evlenme teklifine), ikinci adada gelen 5 mor ışık anısı, 5 usta anısı (ACT 2 ustalarının son görevleri). |
 | Adada bir ay | 30. güne ulaş. | – |
 | Ejder avcısı 🔒 | Kül Diyarı'nın kara ejderini yen. | Kara ejder Kül Diyarı'nda. |
 | Ada efsanesi | Seviye 25 ol. | – |
@@ -29,8 +29,8 @@
 | Kazazede 🔒 | Denizci Barbaros'un yeni gemisini kur. | Barbaros'un son görevi "Yeni bir gemi" (dz4) bitince. |
 | Gökyüzüne 🔒 | Gökay ile roketi fırlat. | Gökay ile roket fırlatılınca. |
 | Açık deniz 🔒 | Barbaros'un gemisiyle adadan ayrıl: ACT 2. | Barbaros'un gemisiyle ikinci adaya geçince. |
-| İlk düşüş | Bir kez bayıl. | Her bayılma sayılır: canavar, açlık, zehir, mor ışık (v2.10). |
-| İnatçı | 5 kez bayıl, yine de devam et. | Her bayılma sayılır (v2.10). |
+| İlk düşüş | Bir kez bayıl. | Her bayılma sayılır: canavar, açlık, zehir, mor ışık. |
+| İnatçı | 5 kez bayıl, yine de devam et. | Her bayılma sayılır. |
 | İlk reis | Bir reis öldür. | – |
 | Reis avcısı | 5 farklı reis öldür. | – |
 | Reislerin korkusu | 10 farklı reis öldür. | – |
@@ -46,7 +46,7 @@
 | Avcıların avcısı | İki adadaki her canlı türünden en az birini öldür. | – |
 | Ganimet avcısı | Canlılardan düşebilecek her eşyayı en az bir kez elde et. | – |
 | Oyunlardaki gibi 🔒 | Ana menüde “cheat” yazdın: hile modu açıldı. | Ana menüde klavyeyle "cheat" yaz. Telefonda Ayarlar başlığına art arda 3 kez dokun (başarımın metni yanlışlıkla "ekrana 3 kez dokundun" diyor). |
-| Kehribar gözlüm 🔒 | Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1'i tamamla. | v3.20 (Boğaç): karakter yaratmada sevdiğin kişinin göz rengi **Kehribar** olmalı; ACT 1, Barbaros'un gemisiyle ikinci adaya geçince (ya da ikinci adadayken) tamamlanmış sayılır. Kazanılana kadar listede "???" ve "Gizli başarım" görünür, hiçbir ipucu verilmez. **Platin'e sayılmaz** (belli bir karakter seçimini istediği için). |
+| Kehribar gözlüm 🔒 | Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1'i tamamla. | karakter yaratmada sevdiğin kişinin göz rengi **Kehribar** olmalı; ACT 1, Barbaros'un gemisiyle ikinci adaya geçince (ya da ikinci adadayken) tamamlanmış sayılır. Kazanılana kadar listede "???" ve "Gizli başarım" görünür, hiçbir ipucu verilmez. **Platin'e sayılmaz** (belli bir karakter seçimini istediği için). |
 | Denizde yürüyen 🔒 | Denizin üstünde yürü. | v3.30 (Boğaç): ACT 1 haritasında **denize hiç yürünmez**; ama her yeni oyunda rastgele bir kıyıdan denize doğru düz, 1 kare genişliğinde, **8–10 kare uzunluğunda gizli bir yol** vardır (bkz. ACT 1 › Denizdeki gizli yol). Yolun sonuna yürüyünce bayılırsın ve **Kemal'in yanında** uyanırsın; bu bir hata değil, bu başarımı kazandırır. Kazanılana kadar listede "???" ve "Gizli başarım" görünür, ipucu verilmez. **Platin'e sayılmaz** (rastgele bir yeri bulmaya bağlı). |
 | Mor ışıkta o 🔒 | Gece beliren sevdiğin kişiyi 5 farklı gecede gör. | v3.30 (Boğaç), v3.34'te kendi kopyan yerine sevdiğin kişi (eski adı Öteki ben): bkz. Temel sistemler › Mor ışıkta o. Kazanılana kadar "???" görünür. Platin'e sayılır. |
 | Görünmezlik iksiri 🔒 | Zümrüt'ün sabrını üç kez taşır. | v3.34: kazana hiçbir tarifte kullanılmayan 5 farklı malzemeyi üç kez atınca Zümrüt'ün verdiği iksiri içersin (bkz. Temel sistemler › Gizli şeyler). Platin'e sayılır. |

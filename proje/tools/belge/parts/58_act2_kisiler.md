@@ -82,4 +82,4 @@ Adanın en uzak ucunda, yarım kalmış bir fırlatma rampasının başında. Se
 | 5 | Roket | Getir: 1 Roket | – | 0 | 5.000 |
 
 
-Açtığı tarifler: Meteor demiri külçesi ve Yıldız külçesi (1. görev), Roket gövdesi, Roket motoru ve Roket (4.). Son görevde roketi teslim edince Gökay'la konuşup **Fırlat!** de: fırlatma sahnesi → mor gemi → kavuşma → son kartı. "Gökyüzüne" ve "Yeniden birlikte" başarımları burada gelir. Kolla oynayana son kartta Gökay hile kodunu verir (v3.23; ACT 2'ye giriş › Gökay).
+Açtığı tarifler: Meteor demiri külçesi ve Yıldız külçesi (1. görev), Roket gövdesi, Roket motoru ve Roket (4.). Son görevde roketi teslim edince Gökay'la konuşup **Fırlat!** de: fırlatma sahnesi → mor gemi → kavuşma → son kartı. "Gökyüzüne" ve "Yeniden birlikte" başarımları burada gelir. Kolla oynayana son kartta Gökay hile kodunu verir (ACT 2'ye giriş › Gökay).
