@@ -10,6 +10,11 @@
 
 
 
+## (bekleyen) Evcil hayvanlar, Çoban Davut, Çiftçi Ekin · yalnızca tasarım (6 Kasım 2026)
+
+- Belgeye yazıldı, kod yok: `20_sistemler.md` "Evcil hayvanlar"; `30_act1.md` "Çoban Davut" (CB1–CB8; CB1 = eski yan görev Pamuk), "Çiftçi Ekin · Çayır → Bereket Adası" (H1 Çayır, H2–H8 adada), Barbaros L4'te Ekin olayı, L5 Ekin olayına bağlı, Kemal'in "Ağıl kur" ayak işi; `36_yan_gorevler.md` #2 artık "Gece öten kuş" (Toprak, 21:00–01:00); `40_act1_kisiler.md` Ekin.
+- Sıradaki: Boğaç'a çizim önizlemesi (ata binmiş karakter, güven çubuğu, Bereket Adası haritası), onaydan sonra kod. Kodda: `v230` Q'dan `husnu` çıkar (GATE'te `toprak`), Davut ana görev kişisi olur.
+
 ## v3.41 (6 Kasım 2026) · seviye puanları, en üst seviye 60, Güç/Zırh/Mana özellik oldu
 
 - Ana kod (~1812): `effL` ve seviye tabanlı `STAT` silindi; `PTL`, `ptsAt`, `SPK` (11 özellik), `RMAX=18`, `capAt(L)=min(18,1+⌊L/3⌋)` (bir özelliğin tavanı), `SPS` [0 puan, puan başına], `SPT` (verilen puanlar), `SPTUT` (ilk seviye dersi), `RK(k)`, `spFree()`, `sv(k,r)`. `STAT.x(r)`'nin argümanı artık **puan** (yoksa şimdiki puan); `maxHP(r)`, `maxSt(r)`, `hpRegen(r)`, `stRegen(r)` de öyle. `MAXLV=60`; 198 = 11 × 18. `PTL`: Sv ≤10: 2, ≤30: 3, sonra 4 (Boğaç: tek özelliğe yığmak dengeyi bozmasın, gelişim geç kalmasın; eşit dağıtımda Sv 16'ya kadar eski hızla aynı).

@@ -40,7 +40,7 @@
 
 Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş ana görev sayısı** ve gerekiyorsa belli bir ana görev (E2 köprü, E3 Doğu geçidi, E4 izler, E5 Kıyıdaki duman, E6 Saliha'nın çorbası). Koşulu tutan ilk iki bitmemiş görev açıktır.
 
-- **Çayır:** Bulut (2) → Davut (4) → Gülsüm (6) → Ozan (9) → Rıfat (12) → Mavi (14 · E3)
+- **Çayır:** Bulut (2) → Toprak (4) → Gülsüm (6) → Ozan (9) → Rıfat (12) → Mavi (14 · E3)
 - **Orman:** Bekir (8) → Kahraman Dede (10) → Tarık (13) → Saadet (16) → Lale (19) → Ela (22)
 - **Bataklık:** Şifa (E2) → Cemile (18 · E2) → Kartal (21 · E2) → Hayali (23 · E3) → Remzi (26 · E3) → Kader (30 · E3)
 - **Kayalık Dağ:** Yahya (E3) → Zehra (24 · E3) → Bora (27 · E3) → Hatice Nine (30 · E3) → Sükûn (33 · E3) → Işıl (36 · E3)
@@ -52,7 +52,7 @@ Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş an
 | # | Biyom | Kişi | Görev | Saat | Ton | Ödül |
 |---|---|---|---|---|---|---|
 | 1 | Çayır | Mavi (genç kız) | Denizden dönmeyen kardeş | 17:00–23:00 | hüzünlü, mor ışık | 120 sikke · 80 XP |
-| 2 | Çayır | Çoban Davut | Kaçan keçi Pamuk | 06:00–11:00 | komik | 60 sikke · 40 XP |
+| 2 | Çayır | Toprak (çocuk) | Gece öten kuş (tasarım; eskiden Davut'un "Kaçan keçi Pamuk"u, artık ana görev) | 21:00–01:00 | tatlı, sessiz | 70 sikke · 50 XP |
 | 3 | Çayır | Güvercinci Bulut (çocuk) | Kaçan güvercinler | 10:00–15:00 | tatlı, sırlar | 80 sikke · 50 XP |
 | 4 | Orman | Ela (küçük kız) | Kampa giden yol | yalnızca gece (20:00–05:00) | gerilimli, sıcak son | 150 sikke · 120 XP |
 | 5 | Orman | Şövalye Kahraman Dede | Ejderin ini | 11:00–16:00 | komik | 90 sikke · 60 XP |
@@ -86,16 +86,19 @@ Akşamüstü İskele'nin ucunda, dizlerini kucaklamış bir kız oturur: **Mavi*
 - **Konuş (Mavi'ye dön):** Notu okur, uzun süre susar. "Korkmamış. Bu iyi bir şey… değil mi? Her akşam buraya gelip şarkısını söyleyeceğim." Görev biter.
 - **Sonra dünyada:** Mavi İskele'de, yanında suya bıraktığı kır çiçekleri. Konuşunca: "Bu akşam da söyledim. Deniz dinliyor gibi."
 
-### 2 · Çoban Davut — Kaçan keçi Pamuk (Çayır)
+### 2 · Toprak — Gece öten kuş (Çayır) (tasarım, 6 Kasım 2026, Boğaç · henüz oyunda yok)
 
-Elinde değnek, terlemiş, nefes nefese bir çoban.
+> Çoban Davut'un "Kaçan keçi Pamuk" görevi **ana görev** oldu (ACT 1 · "Çoban Davut", CB1); Davut evcilleştirme hocası. Çayır'daki yan görev yerine bu geldi.
 
-- **Konuş:** "Pamuk! Pamuk kaçtı! Beyaz, tek boynuzu kırık, inatçı mı inatçı. Kırk yıldır keçi güderim, böylesini görmedim. Bir yakalasan… ben yetişemiyorum, dizlerim tutmuyor."
-- **Kovala (3 kez) (v2.42, Boğaç):** Pamuk Davut'tan **480–800 piksel** ötede otlar (eskiden 120–200, çok yakındı). Yanına varıp dokununca "Mee!" der ve **koşarak** öteye kaçar: kaçış **en az 420 piksel** (eskiden 100–180; ~4 kat) ve **çok hızlıdır (v2.55, Boğaç: eskiden saniyede 50 piksel, senden yavaştı):** kaçarken hızı **senin o anki koşu hızının 2,5 katıdır** (yürüme 72 × hız becerileri/seviye/hız iksiri × koşu çarpanı; en az saniyede 180 piksel), yani koşsan da yetişemezsin; durduğu yerde yakalanır. Kaçarken **görüşünde değil, gitmek istediği yere** kadar gider; yolunda ağaç, taş, kişi ya da eşya varsa **sağından ya da solundan dolanıp** geçer. Kaçış yeri her seferinde yeniden seçilir: senden **uzak** yönde, aynı biyomda, **deniz ve kıyıdan en az 2 kare uzak** ve araya su ya da kıyı girmeyen düz bir yoldur; Pamuk **suya girmez, kıyıya sıkışıp takılmaz**. Bir yerde takılırsa önce öbür yandan dener, olmazsa olduğu yerde durur (yine yakalanabilir). Koşarken yakalanmaz; durunca dokunmak gerekir (yeni yakalama için ~1,5 sn bekleme). Üçüncüde yorulur, yakalanır.
-- **Eşlik et:** Pamuk peşinden gelir; onu Davut'a götür (canavar çıkmaz). Yolda arada bir durup ot yer.
-- **Teslim (v2.42, Boğaç):** Pamuk Davut'un ~90 piksel yakınına gelince teslim konuşması açılır. Konuşma penceresi **Esc ile erken kapatılsa bile** adım yine biter (görev ödülünü verir); eskiden pencere kapatılınca görev takılıp kalıyordu: ne Pamuk ne Davut bir şey yapıyordu. Aynı koruma bütün yan görev konuşmaları için geçerlidir. Pamuk yakındayken Davut ile konuşmak da teslimi yapar.
-- **Konuş:** "Pamuk'um! Bir daha kaçarsan seni Nazlı'ya satarım! …Satmam ya. Al evlat, emeğine sağlık."
-- **Sonra dünyada:** Pamuk Davut'un yanında otlar, ara sıra zıplar. Konuşunca: "Bak, bugün hiç kaçmadı. Ama bana öyle bir bakıyor ki…"
+Pijamasının üstüne babasının ceketini giymiş, uykusu kaçmış küçük bir çocuk.
+
+- **Konuş:** "Her gece bir kuş ağlıyor. Hep aynı kuş. Annem 'rüyandır' diyor ama değil, sen de duy bak… Şşş."
+- **Topla (dinleyerek, 1 kuş):** Toprak'ın çevresinde, 250–600 piksel ötede, bir çalılığın dibinde **yuvası dağılmış bir bıldırcın**. Haritada ve dünyada gösterilmez; yaklaştıkça ötüşü (kısık, kesik bir "bıt-bıt") duyulur (Bulut'un güvercinleri gibi). Bulunca: "Yuvası rüzgârda dağılmış. Yumurtaları soğumuş ama biri hâlâ ılık."
+- **Götür:** yuva için 4 Kuru ot, 2 Dal (çalılığa).
+- **Kullan (yuva):** bıldırcının yanında yuvayı kur (tuşa basınca): kuş yuvaya oturur, ötüşü kesilir.
+- **Konuş (Toprak'a dön):** "Sustu! …Ağlamıyordu demek, çağırıyordu. Teşekkür ederim. Artık uyuyabilirim, değil mi?"
+- **Sonra dünyada:** Toprak'ın yanında, kenarda küçük bir yuva; gece yanından geçerken kısık bir ötüş duyulur. Konuşunca: "Yumurtadan bir yavru çıktı. Adını sen koy dedim ama sen yoktun, ben 'Fıstık' dedim."
+- **İz:** yanındaki yuva. **Konuşma resmi:** Toprak'ın kendisi; bıldırcın satırlarında bıldırcın (kod yazılırken eklenir).
 
 ### 3 · Güvercinci Bulut — Kaçan güvercinler (Çayır)
 

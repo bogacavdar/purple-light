@@ -333,7 +333,7 @@ Toplam 45 görev, 14.570 sikke, 20.150 XP.
 
 ## Çiftçi Ekin
 
-> **v2.68, Boğaç: tarlacılık şimdilik oyunda yok.** Çiftçi Ekin, tarlası, kapısı ve H1–H8 görevleri kaldırıldı (ikinci adadaki gibi haritadan çıkarıldı). Eski kayıtlarda alınmış ya da bitirilmiş her Ekin görevi ödülü kadar sikke verir; tohumlar, ürünler ve tarla yemekleri fiyatından sikkeye çevrilir. Tarlacılık ileride geri gelebilir (bkz. **Açıklar · İleride: Tarlacılık**).
+**Tasarım (6 Kasım 2026, Boğaç; henüz oyunda yok):** genç bir çiftçi kız. Küçük **Bereket Adası**'nda doğup büyümüş; bir fırtınada salıyla Yıldızsız Ada'ya düşmüş, Çayır'da toprağı eşeleyip bir sebze köşesi kurmuş. Güler yüzlü, elleri hep toprak, konuşurken bitkilere "bebeğim" der. İlk görevinden sonra adasına dönmeye kalkar, akıntı onu Mor Kristal kıyısına atar; Barbaros onu adasına götürür, oradan sonra Ekin'in çiftliği ziyaret edilir. Görevleri: ACT 1 · "Çiftçi Ekin". Konuşma resmi kod yazılırken eklenir (CLAUDE.md kuralı).
 
 ## Usta Sinan
 
