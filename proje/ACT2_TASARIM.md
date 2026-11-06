@@ -30,6 +30,11 @@ Boğaç ile 27 Ekim 2026'da konuşulanlar. Kararlar değiştikçe bu dosya günc
 - ACT 2'de yeni anılar: tamamlandıkça eşin **mor ışık yayan bir uzay gemisi** tarafından kaçırıldığını ve ilk adada bize **köpeği ve şapkayı veren** insanların (Yıldızsız Gezgin / uzaylı) da orada olduğunu hatırlarız.
 - İkinci adada eşe ait eşya/iz yok.
 
+## Ejdere binmek (6 Kasım 2026, Boğaç: "ACT 2'de düşünürüz")
+- Fikir: evcilleştirme zincirinin en büyük ödülü olarak ejdere binmek. ACT 2'de (Ejder Volkanı'nda) konuşulacak; ACT 1'de yok.
+- Claude'un önerileri (karar verilmedi): geç gelir (yumurta bulup kuluçkada büyütmek; Nar'ın "Sıcak yumurta" görevine bağlanabilir); serbest uçuş yerine yalnızca ayak basılmış yerlere "konma noktası" uçuşu (köprü/geçit kilitleri ve keşif hissi bozulmasın); gece uçmaz (mor ışık gökten gelir); yerde güçlü ama uzun beklemeli ateş nefesi; adalar arası yolculuk olabilir; Godot'da gerçek uçuş kamerası.
+- Çizim en pahalı iş: büyük ejder, üstünde karakter, yerde gölge. ACT 1'deki at binme sistemi üstüne kurulur.
+
 ## ACT 3 için notlar (şimdilik oyuna eklenmeyecek)
 - Verilen robot köpeklerin gözlerindeki kameralarla bizi baştan beri izliyorlarmış.
 - Şapka (27 Ekim, Boğaç): yıldızsızlar onu bedenimizden bilgi ve anı çalmak için kullanıyor; hafıza kaybımız buradan. Köpekler ise bizi izlemek için gönderilmiş. Oyuncu karakter yaratırken şapka seçtiyse yolcular onun içine metal bir şey yerleştiriyor; seçmediyse başına bir şapka geçiriyorlar (v104, "Şapka" anısı).
