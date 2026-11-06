@@ -11,16 +11,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ## Versiyon 3.40 · 6 Kasım 2026
 
 ### Oynanış
+- **Biyomlar %50 büyüdü:** her biyom enden ve boydan 1,5 kat (alanı 2,25 kat). Adanın şekli aynı; göller, gölcükler, ağaçlar, bitkiler, dal-taş ve madenler aynı sıklıkta, yani hepsi çoğaldı. Kişiler, köprüler ve geçit yeni haritada kendi yerlerinde.
 - **Yan görevler artık keşfedilir:** haritada yan görevin gideceğin yeri gösteren halka, sarı bölge ve ekran kenarındaki mavi ok kaldırıldı. Yeri kişinin anlattıklarından bulursun; aradığın şey ekrana girince üstünde mavi bir halka genişler ve küçük mavi kıvılcımlar parıldar.
 - **Yan kişiler yalnızca çok yakınken belli olur:** görev bekleyen birine ~10 kare yaklaşınca haritada sisli mor bir "?" belirir (tam yerini göstermez). Harita açıkken kişinin saati gelirse "?" o an çıkar.
 - **Her yan kişinin kendi saati:** 36 yan kişinin her biri günün farklı bir saatinde ortaya çıkar (şafak, öğle, akşamüstü, gece…). Bir kez aldığın görevin kişisi, görev bitene kadar her saat yerinde durur.
 - **Yan görevler sırayla açılır:** hepsi birden çıkmaz; ana görevleri bitirdikçe sırayla açılırlar (kimi Kemal'in köprüsünü ya da Doğu geçidini bekler). Bir biyomda aynı anda en çok 2 bitmemiş yan görev olur; biri bitince sıradaki gelir. Ana görevin sarı bölgesi yan görev sürerken de görünür.
 
 ### Kayıtlar
+- **Harita değiştiği için eski kayıtlar silinir;** bu sürümde yeni oyuna başlanır.
 - Eski kayıtlarda alınmış yan görevlerin kişileri yerinde kalır; artık kullanılmayan "gezilen biyomlar" bilgisi okunup atlanır.
 
 ### Tasarım belgesi
 - Yan görevler: yol gösterme kuralı, harita işaretleri, saatler ve yeni "Açılış sırası" bölümü.
+- Haritanın yeni boyutu (968 × 696 karo) ve ölçüm sonuçları.
+
+### Proje
+- Harita üreticisi `ada_uret.py` büyütme katsayısıyla (`GROW = 1.5`) çalışıyor.
 
 ## Versiyon 3.39 · 6 Kasım 2026
 

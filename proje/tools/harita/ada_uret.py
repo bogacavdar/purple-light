@@ -15,7 +15,7 @@ from scipy import ndimage as ndi
 from PIL import Image
 
 OUT = os.path.dirname(os.path.abspath(__file__))
-LAND_TARGET = 282000          # eski adaların kara karo sayısı (v2.34 ölçümü)
+GROW = 1.5                    # v3.40 (Boğaç): her biyom enden ve boydan %50 büyük (alan 2,25 kat); şekil aynı, yalnızca ölçek
 BASE = 128                    # şekiller 128'lik önizleme ızgarasında tanımlı
 
 ISLANDS = {
@@ -96,7 +96,7 @@ def build(isle):
         return m, rng, k
     # v2.39: the grid stays the old size (645 × 464); the shape is drawn large, cut to its land box and fitted into the grid
     # with a thin sea margin (the sea is never walked on, so it must not cost anything). It is stretched sideways to use the width.
-    GW, GH, M = 645, 464, 10
+    GW, GH, M = round(645*GROW), round(464*GROW), round(10*GROW)   # v3.40: 968 × 696 (eskiden 645 × 464)
     N = 900
     mask0, rng, k0 = mask_at(N)
     rn0 = value_noise(rng, N, 2, 2); wn0 = value_noise(rng, N, 3, 4)
@@ -202,14 +202,14 @@ def build(isle):
                     if 0 <= yy < H and 0 <= xx < W and mask[yy, xx] and not river[yy, xx] and not ridge[yy, xx] and (yy-y)**2 + (xx-x)**2 <= w*w + .3:
                         water[yy, xx] = True
     # yurt pınarı (2. biyom) + deresi, orta diyar pınarı (4. biyom) + deresi, ilk biyomda göl, 3. biyomda gölcükler
-    a = anchor(1, .55, .35, 22, 22); lake(a, 4); stream(a, 0, 1.2, 2.6)
-    a = anchor(3, .5, .55, 22, 22); lake(a, 5.5); stream(a, 1, 1.1, 2.4)
-    a = anchor(0, .6, .6, 20, 18); lake(a, 6)
+    a = anchor(1, .55, .35, 22, 22); lake(a, 4*GROW); stream(a, 0, 1.2, 2.6)
+    a = anchor(3, .5, .55, 22, 22); lake(a, 5.5*GROW); stream(a, 1, 1.1, 2.4)
+    a = anchor(0, .6, .6, 20, 18); lake(a, 6*GROW)
     placed = []
-    for i in range(80):
-        if len(placed) >= 20: break
+    for i in range(200):
+        if len(placed) >= round(20*GROW*GROW): break   # v3.40: aynı sıklık (45 gölcük)
         a = anchor(2, rngL.random()*.9 + .05, rngL.random(), 10, 8)
-        if any(np.hypot(a[0]-p[0], a[1]-p[1]) < 14 for p in placed): continue
+        if any(np.hypot(a[0]-p[0], a[1]-p[1]) < 14*GROW for p in placed): continue
         placed.append(a); lake(a, 1.6 + rngL.random()*2.2)
     # 7) karo sınıfları: 0 kara, 1 kum, 2 tatlı su, 3 deniz, 4 sıradağ, 5 büyük nehir
     cls = np.zeros((H, W), np.uint8)

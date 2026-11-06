@@ -10,7 +10,13 @@
 
 
 
-## v3.40 (6 Kasım 2026) · yan görevler keşifle bulunur, her yan kişinin kendi saati, sıralı açılış (bekleyen paket)
+## v3.40 (6 Kasım 2026) · biyomlar %50 büyük (968×696), yan görevler keşifle bulunur, her yan kişinin kendi saati, sıralı açılış
+
+- **Harita:** `ada_uret.py` `GROW=1.5`: ızgara 645×464 → 968×696, deniz payı 10 → 15, göl yarıçapları ×1,5, Bataklık gölcükleri 20 → 45 (aralık 14 → 21). Kara: ada 1 138.742 → 312.690, ada 2 178.431 → 402.003 (×2,25). Biyomlar eşit, komşuluk zinciri aynı, doğuş puanı 10/11. `MAPV` 4 → 5: eski kayıtlar açılışta silinir (Boğaç seçti: "Eski kayıtlar silinsin").
+- `AREA_K=W*H/(645*464)` (≈2,25): `place`, `MINES`, `ZPLANT`, `B4PLANT`, `putIn`, maden çevresi buluntuları (44 sınırı) bununla çarpılır. Ağaçlar karo başına olasılıkla zaten ölçekleniyor. Hayvanlar oyuncunun çevresinde doğduğu için değişmedi. Mini harita penceresi (`min(W,645)*.3`) aynı karo ölçeğinde kaldı.
+- Sonuç (ada 1, yeni oyun): ağaç 4.165 → 9.450, düğüm 7.542 → 16.876, maden 372 → 838.
+- **Ölçüm** (`olcum.js` /tmp kopyaları, CPU×4, gl açık, masaüstü 1280×720): BOOT 16.669 → 20.909 ms (js 9.425 → 13.723); kumsal kare avg 230,3 → 211,5 (p95 312 → 286); yürürken 248,0 → 188,9 (p95 325 → 275); PLAY 10 sn js 4.113 → 4.390 ms; PERF.lvl 2 → 2. `olcum_cizim.js`: drawImage 802 → 624, fillRect 644 → 621, görünür ağaç 19 → 8, düğüm 46 → 61, shore 3.845 → 6.110, GL 3 sn dr 296 → 367. Kare maliyeti aynı, açılış ~%25 uzun. Not: 2.35–2.38'deki 804×785 dönemindeki donma asıl olarak ekran kartı çiziminin kapanmasındandı (v2.40 dersi); yine de telefonda ilk açılış izlenmeli.
+- `tests/v48_bugs.js` hem eski hem yeni dosyada "Execution context was destroyed" ile düşüyor (bu sürümden önce de bozuktu).
 
 - `v230`: `targetOf`, kenar oku, `seenT`, `bioSeen` ve haritadaki hedef/sarı bölge/tam yer "?" silindi. `mapSQ` yalnızca ~10 kare (`NEAR=10*T`) yakındaki bekleyen kişi için sisli mor "?" çizer (ortası kişiden ≤48 px kaymış, `fogC`). `__plMapQ` sarmalayıcısı artık ana görevin sarısını hep çizer.
 - `met` kümesi: bir kez alınan görevin kişisi (`present`) bitene kadar her saat yerinde (Işıl hariç). Kayıtta `v230.m`; eski `v230.b` okunmaz.
