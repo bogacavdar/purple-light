@@ -8,6 +8,25 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.48 · 6 Kasım 2026
+
+### Oynanış
+
+- Yaprak barınağı görevinde malzemeleri çantana koyup Usta Sinan'a gidince doğrudan ev listesi açılır.
+- Usta Sinan'ın 3.47'de eklenen yönlendirme cümlesi kaldırıldı.
+
+### Denge
+
+- **Yan görev ödülleri yeniden ayarlandı:** her yan görev, onu açan ana görevin ödülünün 1,5–2,5 katı kadar sikke ve XP verir; hiçbiri 3.46'daki değerinin altına düşmez. 3.47'de erken yan görevler fazla XP verip seviye atlatıyordu.
+
+### Arayüz
+
+- Büyük haritada ana görevin "!"i de yan görevin "?"si kadar büyük ve okunur.
+- Fareyle bir kişinin üstüne gelince ipucu doğru tuşu (F) yazar.
+- "Yeni ders" kartı açık bir pencerenin (konuşma, sipariş, pazar, harita) üstüne binmez; pencere kapanınca çıkar.
+
+---
+
 ## Versiyon 3.47 · 6 Kasım 2026
 
 ### Oynanış
@@ -388,14 +407,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Sistemler › Telefona göre sıkı düzen: eşyanın tam adı balonu.
 - Işık kaynakları: reçine sürünce 1 reçine harcandığı ve yeni uyarı yazıldı.
 - Giriş › Kural sadeleşti.
-
----
-
-## Versiyon 3.28 · 5 Kasım 2026
-
-### Arayüz
-- **Oyuncuya iş tarif eden bütün pencereler ve yazılar kaldırıldı:** "Uygulama olarak indir"in iPhone/iPad ve Mac adım penceresi, iPhone tam ekran rehberi (Ayarlar'daki not ve telefonu çevir ekranındaki düğme), yükleme düğmesine kolla basınca çıkan "fareyle bas" yazısı.
-- **Yükleme düğmeleri** (bilgisayarda "Bilgisayara yükle", telefonda "Uygulama olarak indir") yalnızca oyunun tek tıkla yüklenebildiği yerde görünür; yüklenemiyorsa hiç çıkmaz.
-
-### Tasarım belgesi
-- Girişe yeni kural: oyun oyuncuya asla adım adım iş tarif etmez; yapabiliyorsa otomatik yapar, yapamıyorsa göstermez.

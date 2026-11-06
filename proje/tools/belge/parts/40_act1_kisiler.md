@@ -195,7 +195,7 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 
 ### Usta Sinan
 
-**Yer:** Orman'da (2. biyom), tezgâhı ve kereste yığınının başında. **Tanışma:** her zaman; ilk konuşmada **Hasır yatak** hediye eder. Görevi yokken (R2 açılmamışken) ilk sözü tek cümlelik bir yönlendirmedir: "Önce Börü'nün işini bitir evlat, sonra sana bir barınak çatarız."
+**Yer:** Orman'da (2. biyom), tezgâhı ve kereste yığınının başında. **Tanışma:** her zaman; ilk konuşmada **Hasır yatak** hediye eder.
 
 - **v3.39 (Boğaç): Marangoz Çınar ile birleşti.** Çınar oyundan kaldırıldı; onun işleri, ev ve barınak satışı dahil, Sinan'dadır. Görevleri 16'dan 8'e indi (ACT 1 › Ana görevler › Usta Sinan).
 - Yere kurulan yapıları (Yapılar kategorisi), yatakları ve **ev eşyalarını** (evin içine konur) yapar. Tarif kazanda öğrenilmiş, malzeme çantanda olmalı. İşçilik: bkz. Sistemler › Ekonomi.

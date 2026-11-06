@@ -1,3 +1,15 @@
+## v3.48 (6 Kasım 2026) · E2E Orman 2: yan görev ödülleri açan ana göreve göre, "!" büyük haritada ~16 px, Sinan ev listesi, ders kartı bekler
+
+- **Yan görev ödülleri:** 42 görevin `c`/`x` verisi belgeden (36_yan_gorevler tabloları v3.48 kuralı, 37_magaralar) yeniden yazıldı (36 değişti). Oyunda okunan `q.c`/`q.xp` belgeyle otomatik karşılaştırıldı: 0 fark.
+- **OYN-08 geri alındı:** `talkUsta` `lock`/`GO` ("Önce Börü'nün işini bitir…") ve iki kullanımı silindi (belgeden çıkarıldı).
+- **ORM-08:** `v186` `talkUsta` sarması R2 sürerken malzemeler (`H.mat`: 8 Dal, 12 Yaprak, 4 Lif) çantadaysa ev listesini (`openCarp`) doğrudan açar. Eskiden koşul `!carpOK(H)` idi; sikke ya da seviye eksikse ("5 sikke eksik") hiç tetiklenmiyordu. Denendi: F → `mode 'carp'`.
+- **ORM-09:** `drawMap` büyük haritada `QK = canvas.width/clientWidth`; tanışılmamış görev sahibinin "!"i `R0=max(16,9·QK)` (yan görev "?"siyle aynı), tanışılmış görev verenin "!" rozeti `u=max(2,round(1,8·QK))` (rozet ~18 ekran pikseli). Köşe haritası aynı.
+- **ORM-10:** fare ipucu (`v146` `what`) kişiler için "E ile konuş" → atanan tuş (`KE`); ayrıca Börü dersi kartı ve Yıldızsız'ın ilk bildirimi `__plKey('interact')`.
+- **ORM-11:** `v186` `showLesson` kartı (`#q2les`) `dlgOpen||craftOpen` iken gizli açılır; 250 ms denetim pencere kapanınca gösterir. Denendi: harita açıkken gizli, kapanınca görünür.
+- Ölçüm: kare döngüsüne yalnızca `drawMap`'te bir sabit hesap (büyük harita için) eklendi; ölçülmedi (etkisi yok sayıldı).
+- **Geri almak için:** yan görev `c`/`x` (v3.47 hali), `talkUsta` (v3.47 hali OYN-08 dahil), `v186` R2 sarmasında `H.mat` koşulu (`!carpOK(H)`), `drawMap` `QK` ve iki boy, üç "E/F" metni, `showLesson` `lesEl.hidden` ve 250 ms aralığı. Kayıt alanı ve MAPV değişmedi.
+- Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
+
 ## v3.47 (6 Kasım 2026) · E2E Orman: "!" önce bulunduğun biyomda, Börü dersi kilitlemez, gece domuzu, yeni yan görev ödülleri
 
 - **"!" sırası (30_act1 kural 6):** `v186` `refreshVis` yeniden yazıldı: uygun görevler (her kişiden ilki) önce verenin bulunduğu biyom = oyuncunun biyomu (`gObj` konumu, yoksa `GB`), sonra `PRI` (erken biyom, kişinin sırası); ilk 2. Eski "yapışkan" `S.vis` (açılmış "!" yerinde kalırdı) yok: biyom değişince "!" de değişir. Denendi: B5 bitmiş, Orman'da `["R2","B6"]`, Çayır'da `["B6","CB3"]`.
@@ -174,10 +186,3 @@
 - `feedTorch`: reçine yok uyarısı "Reçinen yok." (eski metin v2.70'te kalkan kabuk tarifini gösteriyordu).
 - CLAUDE.md ve belge Giriş › Kural: 80 yaş cümlesi silindi.
 - Kontrol: chk.js 0 hata. Eski kayıtlara etkisi yok.
-
-## v3.28 (5 Kasım 2026) · oyuncuya iş tarif eden her şey silindi
-- Yeni kural (CLAUDE.md en üstte, belge Giriş): oyuncuya adım adım iş yaptırılmaz; otomatikse yapılır, değilse gösterilmez.
-- `v253inst` yeniden yazıldı: yalnızca `beforeinstallprompt`. `#instov` penceresi ve CSS'i silindi; iOS/Mac Safari için `manual` dalı gitti.
-- iPhone tam ekran rehberi silindi: `#s-ios` notu, `#r-ios` düğmesi ve `#r-iosp`, `.iosg` ve `#r-iosp` CSS'i, `IOS&&!canLock` satırı.
-- `v253inst`/`v254inst`: kol basışında bildirim yok, sessizce bir şey yapmaz.
-- Kontrol: chk.js 0 hata.
