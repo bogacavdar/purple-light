@@ -1,6 +1,6 @@
 ## Biyomlar
 
-> **Not:** ikinci adada da harita seyreltilir (kuralı ACT 1 › Adanın yerleşimi › Haritadaki miktarlar). Bu bölümdeki "Adadaki sayısı" sütunları v3.45 yeni oyun ölçümüdür.
+> **Not:** ikinci adada da harita aynı kuralla seyreltilir (ACT 1 › Adanın yerleşimi › Haritadaki miktarlar); **ağaçlar da** iki adada ortak kuralla iki adımda seyreltilir: önce %50, sonra kalanın %25'i (toplam ~%62,5; 7 Kasım 2026, Boğaç: ağaçlar belirgin azalsın). Bu bölümdeki "Adadaki sayısı" sütunları v3.45 yeni oyun ölçümüdür.
 
 ### Yüzen Kayalar — Güvenli
 

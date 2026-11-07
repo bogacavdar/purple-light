@@ -33,6 +33,8 @@
 
 ## ACT 2 ustaları nasıl çalışır
 
+- **Liste düzeni:** ustaların listelerinde ad solda, düğmeler sağdadır (Sistemler › Arayüz ve pencereler › Tarif ve sipariş listelerinde satır düzeni).
+
 Bütün ACT 2 ustaları aynı kuralla çalışır:
 
 1. Ustanın görevini yaparsın → tarif **kitabına yazılır** (oyunda "Tarifi kitabında" bildirimi çıkar).

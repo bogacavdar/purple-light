@@ -8,6 +8,23 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.57 · 7 Kasım 2026
+
+### Oynanış
+
+- **"Doğu geçidini aç"** görevi Kaya patlatıcı tarifini bilmeden de alınır; Kayalık Dağ'a varınca Cadı Firuze'de "!" seni bekler. Görevi veren kişi tarifi nerede öğreneceğini söyler.
+- **Görev kartı hep sıradaki adımı gösterir:** hangi malzemeyi nerede bulacağın, hangi tarifi kazanda öğreneceğin, ne yapacağın ve nereye gideceğin; "şimdi ne yapacağım" demezsin.
+- Ağaçlar biraz daha seyrek; ada daha ferah.
+
+### Arayüz
+
+- Dikkat çeken düğmeler (Almanak ve kırmızı sayısı, ders ışıkları, menü düğmesi) artık hızlı yanıp sönmez; yavaş ve yumuşak bir nabız atar.
+- El yapımı listesinde resim ve ad solda, Yap · ×5 · Hepsi · Takip et düğmeleri sağda; bütün tarif ve sipariş listeleri aynı düzende.
+
+### Düzeltmeler
+
+- Kemal Kaya patlatıcının malzemelerini doğru söylüyor (kömür değil, turba).
+
 ## Versiyon 3.56 · 7 Kasım 2026
 
 ### Oynanış
@@ -352,36 +369,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - El yapımı listesi, takip şeridi ve canlı sesleri güncellendi.
-
----
-
-## Versiyon 3.37 · 6 Kasım 2026
-
-### Oynanış
-- **Ölüm pozu ve leş:** öldürdüğün her canlı olduğu yere yan yatarak düşer. Düşürdükleri artık hemen saçılmaz, leşin içindedir: leşin yanına gidip topla (E ya da toplama düğmesi), çubuk dolunca içindekiler yere dökülür. Büyük canlıların leşini toplamak biraz daha uzun sürer (en çok 3 saniye).
-- **Toplanmayan leş kaybolur:** leş oyun saatiyle 4 saat yerde kalır, son saatinde yanıp söner, sonra içindekilerle birlikte kaybolur. Reis leşleri ve içinde görev eşyası olan leşler toplanana kadar kalır. Yerdeki leşler kayda yazılır.
-- **Meşale:** yanan meşalen bitince elinde başka bir meşale varsa (önce aynı tür, yoksa öbür tür) kendiliğinden yuvaya geçer ve yanmaya devam eder.
-- **Gece beliren sevdiğin kişi:** göründüğü sürece kalp atışı duyulur; telefon ve oyun kolu da kalp atışıyla titrer.
-- **Gece beliren Boğaç** artık yalnızca gerçek saat gece 02:00 ile sabah 06:00 arasındayken çıkar ve sana gerçek saati söyler.
-- **Seni hatırlıyorum:** aynı görünüş ve aynı adla yeni bir oyuna başlarsan Kemal seni bulduğunda bir an duraklar…
-
-### Görsel
-- **194 eşyanın gerçek resmi:** adıyla ilgisi olmayan renk renk "hediye paketi" kutular kalktı. Pişmiş, tütsülenmiş, kurutulmuş ve taşta balıklar; tavada, ızgarada, tabakta deniz yemekleri; şişede yağlar ve iksirler, kapta merhemler, kavanozda reçeller; tohumlar, inciler, ipler, çanlar, tılsımlar, Sapan, Bola, Dokuma tezgâhı, Yelkenli sal ve daha birçoğu; bölge bitkileri, taşlar, kristaller ve canlı parçaları. Resimler envanterde, kitapta, elde, yerde ve kurulunca aynı.
-
-### Arayüz
-- **Tarif kitabı:** seçilen tarifin kutusu sayfayı aşağı kaydırınca da üstte sabit kalır; aşağıdaki bir tarife dokununca adı hemen görünür.
-- **Envanter:** "Alet yuvaları" sırasında, 1. yuvanın solunda meşale yuvası da görünür. Meşaleyi oraya koyabilir, dokunarak yakıp söndürebilirsin.
-
-### Ses
-- Gece beliren sevdiğin kişinin kalp atışı sesi.
-
-### Kayıtlar
-- Yerdeki leşler kayda yazılır. Aynı karakterle başlatılan oyunlar bu cihazda hatırlanır.
-
-### Tasarım belgesi
-- Ölüm pozu ve leş, meşale yuvası, tarif kitabı, Boğaç, kalp atışı, "Seni hatırlıyorum" ve eşya resimleri yazıldı; "Her eşyanın kendi resmi olur" kuralı eklendi; ACT 3 fikir notları eklendi.
-
-### Proje
-- Resmi unutulan eşya artık renkli kutu değil, sade bir bez torba olarak görünür; geliştirici araçlarında eksik resimler listelenir.
 
 ---

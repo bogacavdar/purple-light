@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.56** ile birebir (7 Kasım 2026). Bu sürümde: F her zaman önce yerdeki eşyayı alır (kişi, kapı ve diğerleri ancak yerde bir şey yokken); "Doğu geçidini aç" yine Kaya patlatıcı tarifi öğrenilince verilir. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.57** ile birebir (7 Kasım 2026). Bu sürümde: "Doğu geçidini aç" Kaya patlatıcı tarifi bilinmeden de alınır ve görev kartı her an sıradaki adımı gösterir; dikkat çeken düğmeler yavaş nabız atar; tarif ve sipariş listelerinde ad solda, düğmeler sağda; ağaçlar biraz daha seyrek. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
