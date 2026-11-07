@@ -1,3 +1,23 @@
+## v3.61 (7 Kasım 2026) · kol 5. adım: Döşe, harita, reçine, standart dışı kol, kerevit dersi yazıları, kolda bakılan yöndeki toplanacak şey, ölçüm
+
+- **Döşe (`v56` oda bloğu):** yerleştirme `placeSel()`'e alındı (fare tıklaması da onu çağırır). `R.pad={cur,start,move,a,rot,back}`, `R.pcur` imleç; `draw` imleç karesini çizer; "Bitti" `R.pcur`'u da sıfırlar. `v320pad`: `layer()` Döşe'de `#roomui`'yi pencere sayar (liste/menü odak gezinimi, `firstFocus` önce `.rmenu`, sonra `[data-d]`; anahtar menü açık/kapalıya göre). `R.pad.cur()` iken `tick` imleç dalı: yön (300/110 ms tekrar), A `a()`, Y `rot()`, B `back()`. Listede X imleç, B Bitti (menü açıksa kapatır).
+- **Harita:** `padMap()` (`craft` + `mode==='map'` + `!markOpen`): çubuk `mapC` kaydırır, LT/RT `mapZ` ×0,8/×1,25, Y oyuncuya döner, A ortada: `marks` içinde 16 px → sil; yoksa `mapTap()` (kişi hedefi, açıp kapar); yoksa `markGuess` adıyla `markCol` renginde işaret. Odak haritada düğmelere gitmez. `body.padmode #craft .mapwrap::after` orta artı.
+- **Reçine:** Kol menüsünde `p-resin` → `feedTorch()` (meşale varken görünür). Meşale durağında Y'ye bağlanmadı: Y orada da hızlı yemek.
+- **Standart dışı kol:** `g.mapping!=='standard'` ise `nsDpad()`: eksen 9 (hat: −1, −0,714 … 1; boşta 1,286) ya da ilk okunduğunda 0'da duran eksen 6/7 → `now[12..15]`.
+- **KOL-14:** Börü kartı (`tzCard` 11, ftut 2) kolda ayrı metin (`data-k` ile çeviriciye kapalı). `v2.15` kerevit donma uyarısı kolda "Atıl: B!" / "Savuştur: LT!". `kTxt` art arda "Sol çubuk" etiketlerini teke indirir.
+- **KOL-13 (CEO kuralı korunur):** `window.__plDirPick()` yalnız kolun A'sı boyunca (`dirPick`) nişan yönünü verir. `v2.05` E işleyicisinde adaylar `uzaklık + açı farkı×14` ile sıralanır (alet önceliği `rank` aynı; yerdeki eşya kontrolü önce, değişmedi). `gatherTarget` da aynı biçimde sarılı; `updatePrompt` kolda aynı bayrakla çalışır (istem A'nın alacağını yazar).
+- **Yardım:** `renderHelp` ve bağlanma bildirimi yeni düzen ve `bn()` adlarıyla. Fazladan `gamepadconnected` dinleyicisi kaldırıldı (PK artık bildirim dinleyicisinde).
+- **Denendi (sahte Xbox kolu):** Döşe (seç, kaydır, döndür, koy, ikinci koy, X → yerleşik eşya menüsü, Taşı → aşağı → A, B B çıkış). Harita (kaydır, RT×2 3→4,69, A işaret koy, A kaldır, Y, B). Hat ekseniyle duraklat menüsünde ↓/↑. Yüz sağdayken A Taş'ı (13 px), solda Lif'i (9 px) aldı. Kerevit kartı ve `kTxt` WASD birleştirme. Reçine ve kerevit donma uyarısı oyunda görülmedi (yalnız kod).
+- **Ölçüm** (`olcum.js` CPU×4, gl, üçer koşu, makine yüklü):
+  - BOOT js ort.: 3.59 14.140 → 3.61 14.315 ms.
+  - PLAY 10 sn js: 3.234 → 3.169 ms.
+  - Kumsal kare ort.: 309 → 327 ms.
+  - Yürürken: 304 → 278 ms.
+  - Gürültü içinde fark yok.
+  - Yerleştirme hayaleti açıkken (ayrı betik, CPU×4, 60 kare, ikişer koşu): 3.59 203/216 ms → 3.61 194/176 ms; sarmalayıcıların yükü ölçülemeyecek kadar küçük.
+  - Kol yokken `v320pad` döngüsü çalışmıyor.
+- **Geri almak için:** v3.61 commit'ini `git revert` (prototip, index.html, notlar). Kayıt alanı ve MAPV değişmedi (işaretler eskisi gibi `marks`'ta).
+
 ## v3.60 (7 Kasım 2026) · oyun kolu ile her şey: Kol menüsü, meşale, yerleştirme, kartlar, kola göre tuş yazıları, ana menü takılması
 
 - **Blok `v320pad`** (bütün kol işi burada; kol yokken döngü çalışmaz):
@@ -245,12 +265,3 @@
 - `v186`: DATA'ya `GB.k_davut=0` ve CB1–CB8; yeni adım türleri `sq` (v230'un bitirdiği yan görev) ve `tame`; `pickFiller` başında ağıl ayak işi (önce tarif).
 - `v230`: `husnu` artık `main:1` (ödül 0, kart/liste/harita/sayaçta yok, `present` false); CB1 sürerken `petTick` husnu'yu başlatır ve takip ettirir. Yeni `toprak` (21:00–01:00, GATE Çayır 2.), `quail` çizimi/sesi.
 - Kontrol: chk 0 hata; `/home/claude/scripts/pet_t.js` (at: 4 beslemede evcil, CB3 ✓, binince hız ×1,8, hasar bineğe), `pet_t2.js` (kurt yavrusu, dövüş, ölüm → taş ve 3 gün), `cb1_t.js`, `sq_t5.js` (toprak ok).
-
-## v3.41 (6 Kasım 2026) · seviye puanları, en üst seviye 60, Güç/Zırh/Mana özellik oldu
-
-- Ana kod (~1812): `effL` ve seviye tabanlı `STAT` silindi; `PTL`, `ptsAt`, `SPK` (11 özellik), `RMAX=18`, `capAt(L)=min(18,1+⌊L/3⌋)` (bir özelliğin tavanı), `SPS` [0 puan, puan başına], `SPT` (verilen puanlar), `SPTUT` (ilk seviye dersi), `RK(k)`, `spFree()`, `sv(k,r)`. `STAT.x(r)`'nin argümanı artık **puan** (yoksa şimdiki puan); `maxHP(r)`, `maxSt(r)`, `hpRegen(r)`, `stRegen(r)` de öyle. `MAXLV=60`; 198 = 11 × 18. `PTL`: Sv ≤10: 2, ≤30: 3, sonra 4 (Boğaç: tek özelliğe yığmak dengeyi bozmasın, gelişim geç kalmasın; eşit dağıtımda Sv 16'ya kadar eski hızla aynı).
-- Hasar: dokuz yerde `(1+.03*(lvl-1))` → `STAT.dmg()`. Mana: `maxMana` ve arena yedek değeri → `STAT.mana()`. `zirhOf`: `lvl-1` → `STAT.zirh()` (0 puanda 5). v60'ın `cap` satırı (hareket/toplama/şans tavanı) silindi. Kritik ihtimalinin seviye payı (`chanceFor`) seviyeye bağlı kaldı.
-- Arena: `window.__plArOn` (AR tanımından önce); arenada `RK` seçilen seviyenin puanlarını eşit dağıtır. Seviye düğmelerine 65 eklendi.
-- Karakter penceresi (`renderCraft` mode 'char') yeni tablo: puan çubuğu, +1 puanla değeri, `data-spk` + düğmesi, `.sptip` açıklama (dokunmatikte `.spds` adın altında), "Verilmemiş seviye puanı".
-- `v340sp` bloğu: CSS, `#spbadge` (Karakter düğmesinde sayı, ders sürerken `pulse`), `gainXP` sarması (ilk puan dersi / "+N seviye puanı"), + tıklaması (can/enerji artışı anında eklenir), kayıt `v340={sp,t}`; eski kayıtta puanlar boş, ders açık.
-- Kontrol: chk.js 0 hata; `/home/claude/scripts/sp_t.js`: Sv 2'de 2 puan, rozet + ders, + ile can 124, Sv 32'de 85 boş puan, kaydet/yükle aynı.

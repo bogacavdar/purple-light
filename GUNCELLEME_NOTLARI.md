@@ -8,6 +8,25 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.61 · 7 Kasım 2026
+
+### Oynanış
+
+- **Döşe kolla:** evde Kol menüsünden Döşe'yi aç. Eşya listesinde yön tuşlarıyla gezilir, A eşyayı seçer. Sonra odada bir kare imleç belirir: yön tuşları ya da çubuk onu kaydırır, A koyar, Y döndürür, B bırakır. Listede X'e basınca imleç seçim yapmadan çıkar. Yerleşik bir eşyanın üstünde A, Taşı / Geri al / Döndür menüsünü açar. B ile Döşe biter.
+- **Harita kolla:** sol (ya da sağ) çubuk haritayı kaydırır, LT / RT uzaklaştırır / yakınlaştırır, Y bulunduğun yere döner, B kapatır. Ortadaki artıyla A'ya basarsın: bir işaretin üstündeysen işaret kalkar, bir kişinin üstündeysen ok onu gösterir (yine basınca kalkar), başka yerde işaret konur.
+- **Meşaleye reçine sür** Kol menüsünde (meşalen varken).
+- **Kolla toplarken bakılan yön:** yanında birkaç toplanacak şey varken A, çubuğun (ya da yüzünün) gösterdiği şeyi alır, yalnızca en yakını değil. Yerde duran eşyalar yine önce alınır, kişiler sonra gelir. Klavyede F değişmedi.
+- Standart dışı kollarda (tarayıcının "standard" demediği) yön tuşları da çalışır.
+
+### Arayüz
+
+- Börü'nün kerevit dersinde kart ve büyük uyarı kol açıkken kolun tuşlarını yazar ("Sol çubuk", "X ya da RT", "Atıl: B!", "Savuştur: LT!"). Ayrı ayrı yazılmış W A S D tek bir "Sol çubuk" olur.
+- Ayarlar → Kontroller'deki kol düzeni ve kol bağlanınca çıkan bildirim yeni düzene göre ve bağlı kolun tuş adlarıyla yazılır.
+
+### Proje
+
+- Ölçüm: 3.59 ile 3.61 aynı ayarlarla ölçüldü; sayılar geliştirme notunda.
+
 ## Versiyon 3.60 · 7 Kasım 2026
 
 ### Oynanış
@@ -345,23 +364,3 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 
 ### Tasarım belgesi
 - "Evcil hayvanlar", "Çoban Davut", "Gece öten kuş" bölümleri; Çiftçi Ekin ve Bereket Adası'nın tasarımı (henüz oyunda yok).
-
-## Versiyon 3.41 · 6 Kasım 2026
-
-### Oynanış
-- **Seviye puanları:** özellikler artık seviyeyle kendiliğinden artmıyor. Her seviye atlayışta seviye puanı kazanırsın (10. seviyeye kadar 2, 30. seviyeye kadar 3, sonra 4) ve Karakter penceresinde dilediğin özelliğin yanındaki **+** ile verirsin. Bir puan, eskiden bir seviyenin verdiğinden daha büyük bir artış verir.
-- **11 özellik:** Toplama hızı, Hareket hızı, Satış değeri, Şans, En yüksek can, Can yenilenmesi, En yüksek enerji, Enerji yenilenmesi ve yeni olarak **Güç** (vuruş hasarı), **Zırh** ve **En yüksek mana**. Her biri en çok 18 puan alır; tek bir özelliğe verilebilecek puan seviyeyle açılır (her 3 seviyede 1), böylece hepsini tek yere yığmak dengeyi bozmaz.
-- **En üst seviye 60** (eskiden 50): 60. seviyede 198 puanla bütün özellikler tam dolar. Puanları eşit dağıtırsan ilk 16 seviyede gelişim eskisi kadar hızlı.
-- **Çıplak karakterin de zırhı var:** başlangıçta 5 zırh.
-- **İlk seviye dersi:** ilk kez seviye atlayınca Karakter düğmesi yanıp söner, pencerede **+** düğmeleri parlar; ilk puanı verince ders biter.
-
-### Arayüz
-- Karakter penceresinde her özelliğin puan çubuğu (ör. 3/14), bir puan verince olacağı değer ve **+** düğmesi var; **+**'nın üstüne gelince (telefonda adın altında) özelliğin ne işe yaradığı yazar.
-- Tablonun sağ altında "Verilmemiş seviye puanı", Karakter düğmesinin köşesinde verilmemiş puan sayısı.
-- Arenada 60. seviye de seçilebilir; seçilen seviyenin puanları bütün özelliklere eşit dağılır.
-
-### Kayıtlar
-- Eski kayıtlarda seviyen kalır, o seviyenin bütün puanları verilmemiş olarak gelir.
-
-### Tasarım belgesi
-- "Can, tokluk, enerji" bölümü seviye puanlarıyla yeniden yazıldı (puan tablosu, özellik tavanı, en üst seviye 60).

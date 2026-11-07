@@ -1378,7 +1378,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.60</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.61</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -7147,7 +7147,7 @@ function tzCard(){const h=n=>inv[n]||0,c=(n,q)=>`${n} ${Math.min(h(n),q)}/${q}`;
    8:['witch','Zümrüt · Keskin taş yap',`Kalan 2 taşla bir <b>keskin taş</b> yap: ${tzKey('tab')}. Kazandan bir tarif öğrendin mi, gerisi hep elinde.`],
    9:['witch','Pazarcı Nazlı',`Keskin taşı al ve kuzeydoğudaki <b>Pazarcı Nazlı</b>'ya git; ok yolu gösteriyor. Birleştirdiğin şeyleri o alır.`],
    10:['','Nazlı · Sat',`Satış listesinde <b>Keskin taş</b>'ın yanındaki <b>1 sat</b> düğmesine bas.`],
-   11:ftut===2?['','Börü · Kereviti vur',TOUCH?`<b>Kereviti</b> vur: <b>ona dokun</b>. Canı bitene kadar vur.`:`<b>Yürü:</b> <span class="kc">W</span><span class="kc">A</span><span class="kc">S</span><span class="kc">D</span> ya da <span class="kc">↑</span><span class="kc">←</span><span class="kc">↓</span><span class="kc">→</span> ile kerevite yaklaş. <b>Vur:</b> <span class="kc">Sol tık</span>: tıkladığın yöne vurursun. Canı bitene kadar vur.`]:['','Savaşçı Börü',`Nazlı seni doğudaki <b>Savaşçı Börü</b>'ye yolladı. Ok yolu gösteriyor; yanına git ve ${TOUCH?'ona dokun':'<span class="kc">E</span> ile konuş'}.`],
+   11:ftut===2?['','Börü · Kereviti vur',TOUCH?`<b>Kereviti</b> vur: <b>ona dokun</b>. Canı bitene kadar vur.`:window.__plPad&&window.__plPad.on()?`<b>Yürü:</b> <span class="kc" data-k="1">Sol çubuk</span> ile kerevite yaklaş. <b>Vur:</b> <span class="kc" data-k="1">${window.__plPad.bn(2)}</span> ya da <span class="kc" data-k="1">${window.__plPad.bn(7)}</span>: en yakın canlıya vurursun (sağ çubukla yön verirsin). Canı bitene kadar vur.`:`<b>Yürü:</b> <span class="kc">W</span><span class="kc">A</span><span class="kc">S</span><span class="kc">D</span> ya da <span class="kc">↑</span><span class="kc">←</span><span class="kc">↓</span><span class="kc">→</span> ile kerevite yaklaş. <b>Vur:</b> <span class="kc">Sol tık</span>: tıkladığın yöne vurursun. Canı bitene kadar vur.`]:['','Savaşçı Börü',`Nazlı seni doğudaki <b>Savaşçı Börü</b>'ye yolladı. Ok yolu gösteriyor; yanına git ve ${TOUCH?'ona dokun':'<span class="kc">E</span> ile konuş'}.`],
    12:axeCard()||['','Börü · Balta parçaları',`<b>Taş balta</b> = 1 Sopa + 2 Keskin taş + 2 İp + 2 Taş. Sopa, ip ve keskin taşı ${tzKey('tab')} ile yap (sopa için 3 dal ve 2 keskin taş, ip için 4 lif). Börü yakınına malzeme bıraktı. (${c('Sopa',1)} · ${c('Keskin taş',2)} · ${c('İp',2)} · ${c('Taş',2)})`],
    13:['','Demirci Dursun',`Parçalar hazır! Kuzeydeki <b>Demirci Dursun</b>'a git, Börü'nün selamını söyle; baltayı o döver. Ok yolu gösteriyor.`]}[tz]}
 function renderTz(){const C=tzCard();if(!C)return false;const [who,title,html]=C;tutEl.hidden=false;craftEl.classList.add('tutpad');$('tutstep').textContent=title;$('tuttext').innerHTML=html;
@@ -8785,7 +8785,7 @@ const KRE=/(<span class="kc">|<kbd>)([^<]{1,8})(<\/span>|<\/kbd>)|(^|[^A-Za-zÇ�
 function kTxt(s){const pd=padOn();if((!kOn()&&!pd)||typeof s!=='string'||!s)return s;return s.replace(KRE,(m,o,lab,cl,pre,lab2)=>{
   if(o){const id=LBL2ID[lab],pl=id&&padLab(id);if(pl)return o.replace('>',' data-k="1">')+esc(pl)+cl;if(!id||!BIND[id])return m;return o.replace('>',' data-k="1">')+esc(labOf(id))+cl}
   if(lab2==='WASD'){if(pd)return pre+'Sol çubuk';return ['up','left','down','right'].some(i=>BIND[i])?pre+['up','left','down','right'].map(labOf).join(''):m}
-  const id=LBL2ID[lab2],pl=id&&padLab(id);if(pl)return pre+pl;if(!id||!BIND[id])return m;return pre+labOf(id)})}
+  const id=LBL2ID[lab2],pl=id&&padLab(id);if(pl)return pre+pl;if(!id||!BIND[id])return m;return pre+labOf(id)}).replace(/(<span class="kc" data-k="1">Sol çubuk<\/span>)(\s*<span class="kc" data-k="1">Sol çubuk<\/span>)+/g,'$1')}
 B5.kTxt=kTxt;
 function kEl(el){if(!el||!kOn())return;const h=el.innerHTML;if(h===el.__b5)return;const o=kTxt(h);if(o!==h){el.innerHTML=o}el.__b5=el.innerHTML}
 {const _t=toast;toast=function(m,w){return _t.call(this,kTxt(m),w)}}
@@ -10420,6 +10420,7 @@ function draw(t){const vw_=innerWidth,vh_=innerHeight,dp=dpr||1;if(cv2.width!==M
   // furnishing: the grid and the ghost
   if(R.edit){g.save();g.globalAlpha=.25;g.strokeStyle='#ffffff';g.lineWidth=.5;for(let x=0;x<=R.w;x++){g.beginPath();g.moveTo(x*16,WALL);g.lineTo(x*16,WALL+H_);g.stroke()}for(let y=0;y<=R.h;y++){g.beginPath();g.moveTo(0,WALL+y*16);g.lineTo(W_,WALL+y*16);g.stroke()}g.restore();
     const mvIt=R.drag||R.mv;if(mvIt&&R.gx>-99){const D=DEC[mvIt.n],[w,h]=fp(mvIt),ok=cellFree(R.gx,R.gy,w,h,D.L,mvIt);const yy=D.L==='wall'?8:WALL+R.gy*16;g.save();g.globalAlpha=.6;D.d(g,R.gx*16,yy,t);g.globalAlpha=.35;g.fillStyle=ok?'#6ad06a':'#e05a4a';g.fillRect(R.gx*16,yy,w*16,D.L==='wall'?16:h*16);g.restore()}
+    if(R.pcur&&!R.sel&&!mvIt&&R.gx>-99){g.save();g.strokeStyle='#7fb8e0';g.lineWidth=1.5;g.strokeRect(R.gx*16+.5,R.gy<0?8.5:WALL+R.gy*16+.5,15,15);g.restore()}   // v3.61: the pad's cursor
     if(R.sel&&R.gx>-99){const D=DEC[R.sel],[w,h]=R.rot&&D.L!=='wall'?[D.h,D.w]:[D.w,D.h],ok=cellFree(R.gx,R.gy,w,h,D.L,null);const yy=D.L==='wall'?8:WALL+R.gy*16;g.save();g.globalAlpha=.6;D.d(g,R.gx*16,yy,t);g.globalAlpha=.35;g.fillStyle=ok?'#6ad06a':'#e05a4a';g.fillRect(R.gx*16,D.L==='wall'?8:WALL+R.gy*16,w*16,D.L==='wall'?16:h*16);g.restore()}}
   else{const n=nearThing();if(n){const KF=window.__plKey?window.__plKey('interact'):'F',lab=n.door?KF+' · Dışarı çık':DEC[n.n].k==='bed'?(isNight()?KF+' · Uyu':'Yatak · gece uyunur'):KF+' · Lamba';   /* v3.49: the bound key (ORM-12) */g.save();g.font='bold 6px Rubik, system-ui, sans-serif';g.textAlign='center';g.lineWidth=2;g.strokeStyle='rgba(10,8,6,.9)';g.strokeText(lab,R.x,R.y-26);g.fillStyle='#fff2c8';g.fillText(lab,R.x,R.y-26);g.restore()}}
   // inside, unlit, at night: the purple light finds you (the island's own dark rule counts the seconds)
@@ -10433,9 +10434,12 @@ function renderUI(){if(!R.on)return;const bag=decInBag();
    +(R.edit&&R.menu?`<div class="rmenu" style="left:${Math.round(Math.min(innerWidth-170,Math.max(6,R.menu.x-80)))}px;top:${Math.round(Math.max(6,R.menu.y-58))}px"><button type="button" data-m="move">Taşı</button><button type="button" data-m="back">Geri al</button>${DEC[R.menu.it.n].L!=='wall'&&DEC[R.menu.it.n].w!==DEC[R.menu.it.n].h?'<button type="button" data-m="rot">Döndür</button>':''}</div>`:'');
   document.body.classList.toggle('roomedit',!!R.edit)}
 ui.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;sfx('pick');
-  if(b.dataset.r==='edit'){R.edit=!R.edit;R.sel=null;R.gx=-99;R.menu=null;R.mv=null;renderUI();return}if(b.dataset.r==='out'){exitRoom();return}if(b.dataset.r==='rot'){R.rot=R.rot?0:1;renderUI();return}
+  if(b.dataset.r==='edit'){R.edit=!R.edit;R.sel=null;R.gx=-99;R.menu=null;R.mv=null;R.pcur=false;renderUI();return}if(b.dataset.r==='out'){exitRoom();return}if(b.dataset.r==='rot'){R.rot=R.rot?0:1;renderUI();return}
   if(b.dataset.m&&R.menu){const it=R.menu.it;R.menu=null;if(b.dataset.m==='back')pickUp(it);else if(b.dataset.m==='move'){R.mv=it;R.sel=null;R.gx=-99}else if(b.dataset.m==='rot'){const D=DEC[it.n],[w,h]=fp(it);if(cellFree(it.x,it.y,h,w,D.L,it)){it.r=it.r?0:1;sfx('craft')}else sfx('bad')}renderUI();return}
   if(b.dataset.d){R.sel=R.sel===b.dataset.d?null:b.dataset.d;R.rot=0;renderUI()}});
+// the chosen thing goes in at the ghost (R.gx, R.gy): the mouse's click and the pad's A (v3.60)
+function placeSel(){const D=DEC[R.sel],[w,h]=R.rot&&D.L!=='wall'?[D.h,D.w]:[D.w,D.h];if(D.L==='wall')R.gy=-1;
+  if(cellFree(R.gx,R.gy,w,h,D.L,null)){R.o.room.it.push({n:R.sel,x:R.gx,y:R.gy,r:R.rot&&D.L!=='wall'?1:0});inv[R.sel]--;if(D.k==='bed'){R.o.bed=R.o.bed||R.sel;if(/^Yatağın envanterinde/.test(R.msg)){R.msg='';R.msgT=0}}sfx('craft');if(!(inv[R.sel]>0))R.sel=null;renderInv();renderUI()}else sfx('bad')}
 function toRoom(cx,cy){const k=scale(),[ox,oy]=origin(k);return[(cx-ox)/k,(cy-oy)/k]}
 function gridAt(x,y){const D=R.sel&&DEC[R.sel];if(D&&D.L==='wall')return[Math.floor(x/16-(D.w-1)/2),-1];const [w,h]=D?(R.rot?[D.h,D.w]:[D.w,D.h]):[1,1];return[Math.round(x/16-w/2),Math.round((y-WALL)/16-h/2)]}
 function gridFor(n,r,x,y){const D=DEC[n];if(D.L==='wall')return[Math.floor(x/16-(D.w-1)/2),-1];const [w,h]=r?[D.h,D.w]:[D.w,D.h];return[Math.round(x/16-w/2),Math.round((y-WALL)/16-h/2)]}
@@ -10450,8 +10454,7 @@ cv2.addEventListener('pointerup',e=>{if(!R.edit||!R.press)return;const it=R.pres
   R.menu={it,x:e.clientX,y:e.clientY};renderUI()});
 cv2.addEventListener('pointercancel',()=>{R.press=null;R.drag=null;R.gx=-99})
 cv2.addEventListener('pointerdown',e=>{e.preventDefault();const [x,y]=toRoom(e.clientX,e.clientY);
-  if(R.edit){if(R.sel){[R.gx,R.gy]=gridAt(x,y);const D=DEC[R.sel],[w,h]=R.rot&&D.L!=='wall'?[D.h,D.w]:[D.w,D.h];
-      if(cellFree(R.gx,R.gy,w,h,D.L,null)){R.o.room.it.push({n:R.sel,x:R.gx,y:R.gy,r:R.rot&&D.L!=='wall'?1:0});inv[R.sel]--;if(D.k==='bed'){R.o.bed=R.o.bed||R.sel;if(/^Yatağın envanterinde/.test(R.msg)){R.msg='';R.msgT=0}}sfx('craft');if(!(inv[R.sel]>0))R.sel=null;renderInv();renderUI()}else sfx('bad');return}
+  if(R.edit){if(R.sel){[R.gx,R.gy]=gridAt(x,y);placeSel();return}
     // v3.49: a placed thing: moving it (Taşı), or press it: a short tap opens Taşı / Geri al / Döndür, a drag carries it
     if(R.mv){const it=R.mv;R.mv=null;const [gx,gy]=gridFor(it.n,it.r,x,y);moveTo(it,gx,gy);R.gx=-99;renderUI();return}
     if(R.menu){R.menu=null;renderUI()}
@@ -10470,6 +10473,17 @@ addEventListener('keydown',e=>{if(!R.on||paused)return;const tg=e.target;if(tg&&
   if(e.code==='KeyR'&&R.edit){R.rot=R.rot?0:1;e.preventDefault();e.stopImmediatePropagation();return}
   if(/^(KeyV|KeyN|KeyL|KeyQ|KeyH|KeyF)$/.test(e.code)){e.preventDefault();e.stopImmediatePropagation()}},true);
 addEventListener('keyup',e=>{if(KM[e.code])R.keys[KM[e.code]]=false},true);
+// v3.61 (CEO): Döşe with the pad (block v320pad calls these). The furniture list is walked like any window; A on a thing chooses it and the pad
+// moves a square cursor over the room: d-pad / stick a square, A puts it in (or on a placed thing: Taşı / Geri al / Döndür), Y turns, B lets go.
+// X in the list takes the cursor without a choice (to reach the placed things).
+R.pad={cur:()=>R.on&&R.edit&&!R.menu&&!!(R.sel||R.mv||R.pcur),
+  start(){R.pcur=true;if(R.gx<-90){R.gx=Math.floor(R.w/2);R.gy=Math.floor(R.h/2)}},
+  move(dx,dy){if(R.gx<-90)this.start();const it=R.sel?DEC[R.sel]:R.mv?DEC[R.mv.n]:null,wall=it&&it.L==='wall';R.gx=Math.max(0,Math.min(R.w-1,R.gx+dx));R.gy=wall?-1:Math.max(-1,Math.min(R.h-1,R.gy+dy))},
+  a(){if(R.gx<-90)this.start();if(R.sel){if(DEC[R.sel].L!=='wall'&&R.gy<0)R.gy=0;placeSel();return}
+    if(R.mv){const it=R.mv;R.mv=null;moveTo(it,R.gx,R.gy<0&&DEC[it.n].L!=='wall'?0:R.gy);renderUI();return}
+    const it=hitItem(R.gx*16+8,R.gy<0?16:WALL+R.gy*16+8);if(!it){sfx('bad');return}const k=scale(),[ox,oy]=origin(k);R.menu={it,x:ox+(R.gx*16+8)*k,y:oy+(R.gy<0?16:WALL+R.gy*16)*k};sfx('pick');renderUI()},
+  rot(){if(R.sel||R.mv){R.rot=R.rot?0:1;sfx('pick')}},
+  back(){if(R.sel)R.sel=null;else if(R.mv)R.mv=null;R.pcur=false;R.menu=null;R.gx=-99;renderUI()}};
 // houses: the leaf shelter still just sleeps; every other house has a door
 houseHint=function(o){if(o.n==='Yaprak barınağı')return isNight()?`<kbd>E</kbd>Barınakta uyu`:`Yaprak barınağı · gece uyunur (şimdi ${hhmm()})`;return `<kbd>E</kbd>${o.n}: içeri gir${bedOf(o)?'':' · yatak yok'}`};
 useHouse=function(o){if(o.n==='Yaprak barınağı')return sleepBed(o);if(RSZ[o.n])return enterRoom(o);return sleepBed(o)};
@@ -14431,7 +14445,8 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
      if(blocked(nx,ny)||isWater(tileAt(nx,ny))){nx=c.x;ny=c.y}c.x=nx;c.y=ny;DL.hx=nx;DL.hy=ny;
      const near=Math.hypot(player.x-c.x,player.y-c.y);
      if(DL.n===0&&!DL.free){if(near<=24){DL.frz=true;paused=true;for(const k2 in keys)keys[k2]=false;try{stopGather()}catch(e){}   // the first time the game stops just before the claw lands
-         hint(DL.mode==='parry'?`${TOUCH?'Savuş düğmesine dokun!':'Sağ tık\'a bas!'}${small(TOUCH?'Kerevit saldırıyor: savuştur!':'(ya da E) Kerevit saldırıyor: savuştur!')}`:`${TOUCH?'Atıl düğmesine dokun!':'Boşluk\'a bas!'}${small('Kerevit saldırıyor: yana atıl!')}`)}else if(DL.t<=0){DL.ph='idle';DL.t=.6}return}
+         {const PD=window.__plPad&&window.__plPad.on()?window.__plPad:null;   // v3.61 (KOL-14): with the pad the pad's button
+         hint(DL.mode==='parry'?`${TOUCH?'Savuş düğmesine dokun!':PD?'Savuştur: '+PD.bn(6)+'!':'Sağ tık\'a bas!'}${small(TOUCH||PD?'Kerevit saldırıyor: savuştur!':'(ya da E) Kerevit saldırıyor: savuştur!')}`:`${TOUCH?'Atıl düğmesine dokun!':PD?'Atıl: '+PD.bn(1)+'!':'Boşluk\'a bas!'}${small('Kerevit saldırıyor: yana atıl!')}`)}}else if(DL.t<=0){DL.ph='idle';DL.t=.6}return}
      if(DL.mode==='parry'){const P=window.__plParry;   // v2.15: the parry part: the window must be open when the claw reaches you
        if(near<=12){if(P&&P.t>0){try{window.__plParryHit(c)}catch(e){}strikeDone(true);return}strikeDone(false,dodge?'Takla değil, savuştur!':(P&&P.cd>0?'Erken!':'Değdi!'));return}
        if(DL.t<=0)strikeDone(false,'Kaçma, savuştur!');return}
@@ -15622,6 +15637,7 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
      if(!axe||(t.type&&t.type.noCut)||t.cd>0)continue;C.push([t,d,hAxe?0:2])}
    e.preventDefault();e.stopImmediatePropagation();
    if(!C.length)return;   // nothing right by you: nothing happens
+   {const pd=window.__plDirPick&&window.__plDirPick();if(pd){const fa=Math.atan2(pd.y,pd.x);for(const c of C){let df=Math.abs(Math.atan2(c[0].y-player.y,c[0].x-player.x)-fa);if(df>Math.PI)df=2*Math.PI-df;c[1]+=df*14}}}   // v3.61 (KOL-13): the pad's A: the one the stick / face points at
    C.sort((a,b)=>(a[2]-b[2])||(a[1]-b[1]));const o=C[0][0];startGoal(o.x,o.y)}catch(x){}},true);
  // v2.06: the tutorial axe: forged → straight to "take it into your hand", even if Dursun's window was closed without the button
  setInterval(()=>{try{if(tz===13&&!window.__axeHold&&(inv['Taş balta']||0)>0&&!onTitle){window.__axeHold=1;renderTut()}}catch(x){}},300);
@@ -19522,6 +19538,7 @@ function card(){if(onTitle||paused)return null;const l=$('q2les');if(l&&!l.hidde
 const cardKey=c=>c.id+'|'+(c.textContent||'').slice(0,80);
 function layer(){let best=null,bz=-1e9;for(const el of document.querySelectorAll(LAYERS)){if(!shown(el))continue;
   const z=parseInt(getComputedStyle(el).zIndex,10)||0;if(z>=bz){bz=z;best=el}}
+  if(!best){const RR=window.__v56,ru=$('roomui');if(RR&&RR.on&&RR.edit&&RR.pad&&!RR.pad.cur()&&shown(ru))return ru}   // v3.61: Döşe's list and menu
   if(!best){const c=card();if(c&&(cardKey(c)!==P.cardOff||performance.now()>P.cardOffT))best=c}return best}
 // v3.60 (KOL-11): search boxes are left out (A cannot type there; the lists are walked instead)
 const focusables=L=>Array.prototype.filter.call(L.querySelectorAll('button,input,select,a[href],[tabindex]'),b=>!b.disabled&&b.tabIndex!==-1&&b.type!=='search'&&b.getClientRects().length&&getComputedStyle(b).visibility!=='hidden');
@@ -19545,7 +19562,7 @@ function moveFocus(L,dx,dy){const list=focusables(L);if(!list.length)return;cons
 let lastC=null;
 // v3.32 (Boğaç): a window opened with the pad starts on the first thing you can use: the first recipe, the first thing you can make or eat, the first item
 function firstFocus(L){try{const list=focusables(L);if(!list.length)return;let sel=null;if(L.id==='craft')sel=mode==='craft'?'[data-rec]':mode==='hand'?'[data-hand]':mode==='eat'?'[data-eat]':mode==='inv'?'.itile':mode==='sell'?'[data-sell]':null;
-  let el=sel?list.find(b=>b.matches(sel)):null;if(L.id==='tut')el=$('tutok');else if(L.id==='q2les')el=L.querySelector('.pri');/* v3.60: a card starts on its Anladım / Devam */const cb=$('cbody');if(!el&&L.id==='craft'&&cb)el=list.find(b=>cb.contains(b)&&!b.closest('[role="tablist"],.pmode'));
+  let el=sel?list.find(b=>b.matches(sel)):null;if(L.id==='tut')el=$('tutok');else if(L.id==='q2les')el=L.querySelector('.pri');/* v3.60: a card starts on its Anladım / Devam */if(L.id==='roomui')el=L.querySelector('.rmenu button')||L.querySelector('[data-d]')||L.querySelector('[data-r="edit"]');const cb=$('cbody');if(!el&&L.id==='craft'&&cb)el=list.find(b=>cb.contains(b)&&!b.closest('[role="tablist"],.pmode'));
   if(el){el.focus();reveal(el)}}catch(e){}}
 function remember(a){try{const r=a.getBoundingClientRect();lastC={x:r.left+r.width/2,y:r.top+r.height/2,id:a.id||''}}catch(e){lastC=null}}
 function keepFocus(L){if(!lastC)return;const a=document.activeElement,list=focusables(L);if(!list.length||(a&&L.contains(a)&&a!==L&&list.indexOf(a)>=0))return;
@@ -19598,6 +19615,7 @@ function atkUp(){const d=adown;adown=null;if(d&&!d.plain)fakeP('pointerup',d.Q)}
 function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call(navigator.getGamepads()||[]))if(x&&x.connected){g=x;break}}catch(e){}
   if(!g){P.on=false;releaseAll();if(adown)atkUp();return}P.raf=requestAnimationFrame(tick);
   const btn=i=>!!(g.buttons[i]&&(g.buttons[i].pressed||g.buttons[i].value>.5)),now=Array.prototype.map.call(g.buttons,(b,i)=>btn(i)),was=P.prev;P.prev=now;
+  if(g.mapping!=='standard')nsDpad(g,now);
   const hit=i=>now[i]&&!was[i],rel=i=>!now[i]&&was[i];
   const ax=g.axes[0]||0,ay=g.axes[1]||0,mag=Math.hypot(ax,ay);
   stick=mag>.3?{x:ax/mag,y:ay/mag}:null;
@@ -19614,12 +19632,19 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
   if(mag>.3||now.some(v=>v))padUsed();
   if(typeof cine!=='undefined'&&cine.on){if(hit(0)||hit(1)||hit(9))tap('Escape');return}   // v3.60 (KOL-04): the opening scene: A, B or Start skips it (Esc)
   const L=layer();
+  // v3.61 (CEO): Döşe with the pad: a thing chosen (or X in the list): the cursor walks the room, A puts / opens the thing's menu, Y turns, B lets go
+  {const RR=window.__v56;if(!L&&RR&&RR.pad&&RR.pad.cur()){releaseAll();if(RR.gx<-90)RR.pad.start();
+    const d=mdx+','+mdy,t=performance.now();if(d!=='0,0'){if(d!==P.dir){P.dir=d;P.rep=t+300;RR.pad.move(mdx,mdy)}else if(t>=P.rep){P.rep=t+110;RR.pad.move(mdx,mdy)}}else P.dir='';
+    if(hit(0))RR.pad.a();if(hit(3))RR.pad.rot();if(hit(1)){RR.pad.back();P.lastL=null}if(hit(9))tap('Escape');return}}
   if(L){if(held.up||held.down||held.left||held.right||held.run||held.parry||held.eat)releaseAll();
     const dx=mdx,dy=mdy,d=dx+','+dy,t=performance.now();if(d!=='0,0'){if(d!==P.dir){P.dir=d;P.rep=t+380;moveFocus(L,dx,dy)}else if(t>=P.rep){P.rep=t+120;moveFocus(L,dx,dy)}}else P.dir='';RS=null;
     if(adown)atkUp();
-    {const key=(L.id||'')+'|'+(L.id==='craft'?mode:'');if(L!==P.lastL||key!==P.lastK){P.lastL=L;P.lastK=key;lastC=null;firstFocus(L)}else keepFocus(L)}   // v3.32: a window opens on its first usable thing
+    {const key=(L.id||'')+'|'+(L.id==='craft'?mode:L.id==='roomui'?(window.__v56.menu?'m':'l'):'');if(L!==P.lastL||key!==P.lastK){P.lastL=L;P.lastK=key;lastC=null;firstFocus(L)}else keepFocus(L)}   // v3.32: a window opens on its first usable thing
     if(L.id==='padkb'){if(hit(0))press(L);if(hit(1))kbHide();if(hit(2))kbKey('del');if(hit(9))kbKey('ok');return}
     if(L.id==='padqc'){if(hit(0))press(L);if(hit(1))L.hidden=true;return}
+    if(L.id==='craft'&&mode==='map'&&!markOpen){padMap(g,hit,now);return}
+    if(L.id==='roomui'){const RR=window.__v56;if(hit(0))press(L);if(hit(2)){RR.pad.start();try{document.activeElement.blur()}catch(e){}}   // X: the cursor without a choice
+      if(hit(1)){if(RR.menu)RR.pad.back();else{const b=L.querySelector('[data-r="edit"]');if(b)b.click()}}if(hit(9))tap('Escape');return}
     if(L.id==='tut'||L.id==='q2les'){if(hit(0))press(L);if(hit(1)){P.cardOff=cardKey(L);P.cardOffT=performance.now()+6000;try{document.activeElement.blur()}catch(e){}}if(hit(9))tap('Escape');return}   // v3.60: B leaves the card (it stays on screen)
     if(hit(0))press(L);
     if(hit(1)&&!codeB)tap('Escape');
@@ -19645,7 +19670,7 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
     if(hit(3))try{rotatePlace()}catch(e){}if(hit(1))try{cancelPlace();sfx('pick')}catch(e){}}
   else{P.pl=null;
     // v3.60 (CEO): A held half a second on a thing you built picks it up to move it (like holding the mouse or a finger on it); a short A uses it
-    if(hit(0)){let tg=null;try{tg=eTarget()}catch(e){}if(tg&&tg.kind==='placed'&&tg.o&&!tg.o.fixed)P.aHold={o:tg.o,t:performance.now()+500};else{P.aHold=null;down('interact')}}
+    if(hit(0)){let tg=null;try{tg=eTarget()}catch(e){}if(tg&&tg.kind==='placed'&&tg.o&&!tg.o.fixed)P.aHold={o:tg.o,t:performance.now()+500};else{P.aHold=null;dirPick=true;try{down('interact')}finally{dirPick=false}}}
     else if(now[0]&&P.aHold&&performance.now()>=P.aHold.t){const o=P.aHold.o;P.aHold=null;try{pickUp(o);sfx('pick');P.pl=placing;P.po={x:0,y:0};P.padP=true;toast(`${o.n} taşınıyor: ${bn(0)} koy · ${bn(3)} döndür · yön tuşları kaydır · ${bn(1)} vazgeç`)}catch(e){}}
     else if(rel(0)){if(P.aHold){P.aHold=null;tap('interact')}else up('interact')}}
   if(P.tsSel&&(hand!==-1||!tsOn()))P.tsSel=false;
@@ -19660,6 +19685,35 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
   markTS();
   if(hit(9))tap('Escape');if(hit(8))tap('map');
   if(!pl){if(hit(12))tap('handcraft');if(hit(13))tap('inv');if(hit(14))tap('book');if(hit(15))tap('quests')}}
+// v3.61 (CEO): the big map with the pad: a stick moves the map, LT / RT zoom, A at the cross in the middle: on a mark removes it, on a person
+// makes them the arrow's target (again: drops it), elsewhere puts a mark (named like the mouse's mark); Y back to where you are, B closes
+function padMap(g,hit,now){const bc=$('bigmap');if(!bc)return;try{if(document.activeElement&&document.activeElement!==document.body&&$('craft').contains(document.activeElement))document.activeElement.blur()}catch(e){}
+  const v=mapView(),sx=Math.abs(g.axes[0]||0)>.2?g.axes[0]:(Math.abs(g.axes[2]||0)>.2?g.axes[2]:0),sy=Math.abs(g.axes[1]||0)>.2?g.axes[1]:(Math.abs(g.axes[3]||0)>.2?g.axes[3]:0),
+    dx=sx+(now[15]?1:now[14]?-1:0),dy=sy+(now[13]?1:now[12]?-1:0);let ch=false;
+  if(dx||dy){mapC={x:mapC.x+dx*v.vwT*.018,y:mapC.y+dy*v.vhT*.018};ch=true}
+  if(hit(6)||hit(7)){mapZ=Math.max(1,Math.min(10,mapZ*(hit(7)?1.25:.8)));ch=true}
+  if(hit(3)){mapC={x:player.x/T,y:player.y/T};ch=true}
+  if(hit(0)){const v2=mapView(),wx=(v2.ox+v2.vwT/2)*T,wy=(v2.oy+v2.vhT/2)*T,r=bc.getBoundingClientRect(),near=v2.vwT*T/r.width*16;
+    const m=marks.find(q=>Math.hypot(q.x-wx,q.y-wy)<near);
+    if(m){marks.splice(marks.indexOf(m),1);if(window.__plPinK==='mark:'+m.x+','+m.y){gping=null;window.__plPinK=null}sfx('pick');toast(`İşaret kaldırıldı: ${m.t}`)}
+    else if(!mapTap(bc,{clientX:r.left+r.width/2,clientY:r.top+r.height/2})){if(marks.length>=40)marks.shift();const t=markGuess(wx,wy)||'İşaret';marks.push({x:Math.round(wx),y:Math.round(wy),t,c:markCol});sfx('pick');toast(`Haritaya işaret kondu: ${t} (${bn(0)} yine basarsan kalkar)`)}
+    ch=true}
+  if(hit(1))tap('Escape');if(hit(9))tap('Escape');
+  if(ch)drawMap(bc.getContext('2d'),bc.width,bc.height,true)}
+// v3.61 (KOL-13): with the pad, of the things to gather within reach A takes the one the stick (or your face) points at, not just the nearest;
+// what lies on the ground at your feet still comes first (E rule, v2.05) and people after; the keyboard's key is unchanged
+let dirPick=false;window.__plDirPick=()=>dirPick?aimDir():null;
+{const _gt=gatherTarget;gatherTarget=function(trees){const r=_gt.apply(this,arguments);if(!dirPick||!r||r.kind!=='node')return r;
+  try{const f=aimDir(),fa=Math.atan2(f.y,f.x),h=held(),pk=!!heldKind('pick')&&!(h&&typeof dullTool==='function'&&dullTool(h)),R0=REACH*(sk('H4')?1.5:1);let best=null,bs=1e9;
+    for(const n of PERF.vis){if(!n.alive||(n.mine&&!pk))continue;const dx=n.x-player.x,dy=n.y-player.y,d=Math.hypot(dx,dy)-(n.mine?13:0);if(d>=R0)continue;
+      let df=Math.abs(Math.atan2(dy,dx)-fa);if(df>Math.PI)df=2*Math.PI-df;const sc=d+df*14;if(sc<bs){bs=sc;best=n}}
+    return best?{kind:'node',n:best}:r}catch(e){return r}}}
+{const _up=updatePrompt;updatePrompt=function(){if(!P.used)return _up.apply(this,arguments);dirPick=true;try{return _up.apply(this,arguments)}finally{dirPick=false}}}   // the hint names what A will take
+// v3.61 (CEO): a pad with no standard layout: the d-pad from the hat axis (9) or from axes 6/7 when those rest at 0
+function nsDpad(g,now){const a=g.axes||[];let hx=0,hy=0;
+  if(a.length>9&&Math.abs(a[9])<=1.01){const v=a[9];for(const q of [[-1,0,-1],[-.714,1,-1],[-.428,1,0],[-.143,1,1],[.143,0,1],[.428,-1,1],[.714,-1,0],[1,-1,-1]])if(Math.abs(v-q[0])<.1){hx=q[1];hy=q[2]}}
+  else if(a.length>=8){if(P.ns67==null)P.ns67=Math.abs(a[6]||0)<.1&&Math.abs(a[7]||0)<.1;if(P.ns67){hx=Math.abs(a[6])>.5?Math.sign(a[6]):0;hy=Math.abs(a[7])>.5?Math.sign(a[7]):0}}
+  now[12]=!!now[12]||hy<0;now[13]=!!now[13]||hy>0;now[14]=!!now[14]||hx<0;now[15]=!!now[15]||hx>0}
 function hys(v,s){const a=Math.abs(v),g=Math.sign(v);if(a>.4)return g;if(s&&g===s&&a>.25)return s;return 0}
 // the torch slot (block v283): lit by its own button; a stop on the belt for the pad
 const tsOn=()=>{try{return !window.__plArena&&!!(window.__plTS&&window.__plTS())}catch(e){return false}};
@@ -19690,32 +19744,32 @@ addEventListener('pointermove',e=>{if(e.isTrusted&&P.used&&e.pointerType==='mous
 addEventListener('wheel',e=>{if(e.isTrusted&&P.used)padLeft()},{capture:true,passive:true});
 {const _dp=drawPlayer;drawPlayer=function(){if(RS&&!onTitle)player.face=Math.abs(RS.x)>=Math.abs(RS.y)?{x:Math.sign(RS.x)||1,y:0}:{x:0,y:Math.sign(RS.y)||1};return _dp.apply(this,arguments)}}   // v3.32: face where the right stick aims
 function start(){if(!P.raf)P.raf=requestAnimationFrame(tick)}
-addEventListener('gamepadconnected',()=>{P.on=true;start();toast('Oyun kolu bağlandı: sol çubuk yürü · A topla/konuş · X ya da RT vur · B atıl · LT gard · Y ye · R3 ulti · Start duraklat. Bütün düzen Ayarlar → Kontroller\'de.');renderHelp()});
+addEventListener('gamepadconnected',()=>{P.on=true;start();try{PK=padKind()}catch(e){}toast(`Oyun kolu bağlandı: sol çubuk yürü · ${bn(0)} topla/konuş · ${bn(2)} ya da ${bn(7)} vur · ${bn(1)} atıl · ${bn(6)} gard · ${bn(3)} ye · ${bn(4)}/${bn(5)} kemer ve meşale · ${bn(9)} Kol menüsü. Bütün düzen Ayarlar → Kontroller'de.`);renderHelp()});
 addEventListener('gamepaddisconnected',()=>{releaseAll();setTimeout(()=>{let any=false;try{any=Array.prototype.slice.call(navigator.getGamepads()||[]).some(x=>x&&x.connected)}catch(e){}if(!any){P.used=false;document.body.classList.remove('padmode');toast('Oyun kolu ayrıldı',true)}renderHelp()},50)});
 // the help in Ayarlar → Kontroller (the panel is built before this block; refreshed when a pad comes or goes)
 function renderHelp(){const box=$('b5keys');if(!box)return;let el=$('padhelp');
   if(!el){el=document.createElement('div');el.id='padhelp';el.className='note';const card=box.querySelector('.tcard')||box;const ref=$('b5kdesk');if(ref&&ref.parentNode)ref.parentNode.insertBefore(el,ref.nextSibling);else card.appendChild(el)}
   let any=false;try{any=Array.prototype.slice.call(navigator.getGamepads()||[]).some(x=>x&&x.connected)}catch(e){}
-  el.innerHTML='<b>Oyun kolu</b>'+(any?' (bağlı)':' (bağlı değil: kolu bağlayıp bir tuşuna bas)')+'<ul class="padl"><li><b>Sol çubuk</b> yürü · <b>L3</b> koş</li><li><b>A</b> topla / konuş · <b>X</b> ya da <b>RT</b> vur · <b>B</b> atıl · <b>Y</b> ye (basılı tut: liste)</li><li><b>LT</b> basılı tut: savuştur / gard · <b>R3</b> ulti · <b>LB / RB</b> alet kemeri</li><li><b>Yön tuşları:</b> yukarı El yapımı, aşağı Envanter, sol Tarif kitabı, sağ Görevler · <b>Select</b> harita · <b>Start</b> duraklat</li><li>Pencerelerde: çubuk ya da yön tuşlarıyla gez, <b>A</b> seç, <b>B</b> geri.</li></ul>'}
-try{renderHelp()}catch(e){}
+  const b=bn;   // v3.61: the help names the connected pad's buttons
+  el.innerHTML='<b>Oyun kolu</b>'+(any?' (bağlı)':' (bağlı değil: kolu bağlayıp bir tuşuna bas)')+`<ul class="padl"><li><b>Sol çubuk</b> yürü · <b>L3</b> koş · <b>sağ çubuk</b> nişan</li><li><b>${b(0)}</b> topla / konuş / kullan (kurduğun bir şeyde basılı tut: taşı) · <b>${b(2)}</b> ya da <b>${b(7)}</b> vur · <b>${b(1)}</b> atıl · <b>${b(3)}</b> ye (basılı tut: liste)</li><li><b>${b(6)}</b> basılı tut: savuştur / gard · <b>R3</b> ulti · <b>${b(4)} / ${b(5)}</b> kemerde gez (meşale yuvası da bir durak; orada <b>${b(2)}</b> basılı tut: meşaleyi yak / söndür)</li><li><b>Yön tuşları:</b> yukarı El yapımı, aşağı Çanta, sol Tarif kitabı, sağ Görevler · <b>${b(8)}</b> harita · <b>${b(9)}</b> Kol menüsü (bütün pencereler, kaydet, ayarlar)</li><li>Yerleştirirken: yön tuşları kaydır, <b>${b(0)}</b> koy, <b>${b(3)}</b> döndür, <b>${b(1)}</b> vazgeç. Haritada: çubuk kaydır, <b>${b(6)} / ${b(7)}</b> yakınlaştır, <b>${b(0)}</b> işaret koy / kaldır, <b>${b(3)}</b> bulunduğun yer.</li><li>Pencerelerde: çubuk ya da yön tuşlarıyla gez, <b>${b(0)}</b> seç, <b>${b(1)}</b> geri, <b>${b(4)} / ${b(5)}</b> sekme, <b>${b(6)} / ${b(7)}</b> önceki / sonraki pencere.</li></ul>`}
 // v3.60 (CEO): the pad's button names: Xbox (A, B, X, Y, LB…) or PlayStation (✕, ○, □, △, L1…), from the pad's name; unknown pads get the Xbox names
 const BNX=['A','B','X','Y','LB','RB','LT','RT','View','Menu','L3','R3','↑','↓','←','→'],BNP=['✕','○','□','△','L1','R1','L2','R2','Create','Options','L3','R3','↑','↓','←','→'];
 function padKind(){let id='';try{const g=Array.prototype.slice.call(navigator.getGamepads()||[]).find(x=>x&&x.connected);id=g?String(g.id||''):''}catch(e){}return /054c|dualsense|dualshock|playstation|wireless controller \(standard/i.test(id)&&!/xbox|xinput|045e/i.test(id)?'ps':'x'}
 let PK='x';const bn=i=>(PK==='ps'?BNP:BNX)[i]||'';
 window.__plPad={on:()=>P.used,bn:i=>bn(i),kind:()=>PK};
-addEventListener('gamepadconnected',()=>{PK=padKind()});try{PK=padKind()}catch(e){}
+try{PK=padKind()}catch(e){}try{renderHelp()}catch(e){}
 // v3.60 (CEO: "kola özel menü koy"): with the pad the pause menu (Start) is the pad menu: under Devam et every window of the game opens from here
 // (Çanta, El yapımı, Karakter, Yetenekler, Tarif kitabı, Almanak, Görevler, Harita; Döşe in a house; the tutorial card's skip), then Kaydet … Ana menü
 {const pm=$('pmain'),res=$('p-resume');if(pm&&res){const go=fn=>()=>{resume();try{fn()}catch(e){}};
   const mk=(id,t,fn)=>{const b=document.createElement('button');b.type='button';b.className='mb ghost padonly';b.id=id;b.textContent=t;b.addEventListener('click',go(fn));return b};
   const room=()=>{const R=window.__v56;return !!(R&&R.on)},roomBtn=()=>document.querySelector('[data-r="edit"]');
   const L=[mk('p-inv','Çanta',()=>openMenu('inv')),mk('p-hand','El yapımı',()=>openMenu('hand')),mk('p-char','Karakter',()=>openMenu('char')),mk('p-skills','Yetenekler',()=>openMenu('skills')),
-    mk('p-book','Tarif kitabı',()=>openMenu('book')),mk('p-alm','Almanak',()=>tap('almanac')),mk('p-qlog','Görevler',()=>toggleQuests()),mk('p-map','Harita',()=>openMenu('map')),mk('p-dogs','Robot köpekler',()=>openMenu('dogs')),
+    mk('p-book','Tarif kitabı',()=>openMenu('book')),mk('p-alm','Almanak',()=>tap('almanac')),mk('p-qlog','Görevler',()=>toggleQuests()),mk('p-map','Harita',()=>openMenu('map')),mk('p-dogs','Robot köpekler',()=>openMenu('dogs')),mk('p-resin','Meşaleye reçine sür',()=>feedTorch()),
     mk('p-dose','Döşe',()=>{const b=roomBtn();if(b)b.click()}),mk('p-tskip','Eğitimi geç',()=>{const t=$('tutskip');if(t&&!t.hidden)t.click()})];
   let ref=res;for(const b of L){ref.parentNode.insertBefore(b,ref.nextSibling);ref=b}
   const _op=openPause;openPause=function(){const r=_op.apply(this,arguments);try{const t=$('tutskip'),tu=$('tut'),sk=$('p-tskip'),ds=$('p-dose'),rb=roomBtn();
     sk.hidden=!(t&&!t.hidden&&tu&&!tu.hidden);if(t)sk.textContent=t.textContent;ds.hidden=!(room()&&rb);if(rb)ds.textContent=rb.textContent;
-    for(const id of ['p-inv','p-hand','p-char','p-skills','p-book','p-alm','p-qlog','p-map','p-dogs'])$(id).hidden=room()}catch(e){}return r}}}
+    for(const id of ['p-inv','p-hand','p-char','p-skills','p-book','p-alm','p-qlog','p-map','p-dogs'])$(id).hidden=room();$('p-resin').hidden=room()||!(window.__plTS&&window.__plTS())}catch(e){}return r}}}
 // texts that name the torch key / the placing keys speak the pad's words while the pad is in use
 {const _k=window.__plTSKey;if(_k)window.__plTSKey=function(){if(P.used)return `${bn(4)} / ${bn(5)} ile kemerde meşale yuvasına gel, ${bn(2)} basılı tut: yanar`;return _k.apply(this,arguments)}}
 {const _r=renderPlaceUI;renderPlaceUI=function(){const r=_r.apply(this,arguments);try{if(placing&&P.used){const el=$('pui-t');if(el)el.innerHTML=`<b>${esc(placing.n)}</b> ${placing.moving?'taşınıyor':'yerleştiriliyor'} · <b>${bn(0)}</b> koy · <b>${bn(3)}</b> döndür · yön tuşları kaydır · <b>${bn(1)}</b> vazgeç`}}catch(e){}return r}}
@@ -19729,7 +19783,7 @@ addEventListener('keydown',e=>{if(e.code==='AltRight'||e.key==='AltGraph')altGr=
 if(typeof hurt==='function'){const _h=hurt;hurt=function(n){const h0=hp,r=_h.apply(this,arguments);try{const d=h0-hp;if(d>0&&P.on){const g=Array.prototype.slice.call(navigator.getGamepads()||[]).find(x=>x&&x.connected),va=g&&g.vibrationActuator;if(va&&va.playEffect)va.playEffect('dual-rumble',{duration:Math.min(320,90+d*6),strongMagnitude:Math.min(1,.3+d/30),weakMagnitude:Math.min(1,.2+d/40)})}}catch(e){}return r}}
 // a pad already connected before the page opened shows up on its first press: look once
 try{if(Array.prototype.slice.call(navigator.getGamepads?navigator.getGamepads():[]).some(x=>x&&x.connected)){P.on=true;start()}}catch(e){}
-const st=document.createElement('style');st.textContent='#padkb{z-index:40}#padkb .tcard{text-align:center}#padkb .pkv{min-height:30px;margin:0 0 10px;padding:6px 10px;border:2px solid #5a6a4a;background:#11170f;font-size:20px;font-weight:700;color:#f3ecd8;text-align:left}#padkb .pkr{display:flex;justify-content:center;gap:5px;margin:0 0 5px}#padkb .pk{min-width:34px;height:36px;font:inherit;font-weight:700;font-size:16px;border:2px solid #5a6a4a;background:#1e2a1a;color:#f3ecd8;border-radius:5px;cursor:pointer}#padkb .pk.w{padding:0 12px}#padkb .pk.ok{background:#3a5a2a}#padkb .pkh{margin:8px 0 0;font-size:13px;opacity:.75}body.padmode :focus{outline:3px solid #7fb8e0!important;outline-offset:2px}body:not(.padmode) #pmain .padonly,#pmain .padonly[hidden]{display:none!important}body.padmode #pmain{display:grid;grid-template-columns:1fr 1fr;gap:8px}body.padmode #pmain>*{margin:0!important;width:auto!important}body.padmode #pmain>#p-resume{grid-column:1/3}#torchslot.padsel{outline:3px solid #7fb8e0;outline-offset:2px}#padqc{z-index:45}#padqc .tcard{text-align:center}.padl{margin:6px 0 0;padding-left:18px;text-align:left;font-size:13.5px;line-height:1.45}.padl li{margin:0 0 4px}';document.head.appendChild(st);
+const st=document.createElement('style');st.textContent='#padkb{z-index:40}#padkb .tcard{text-align:center}#padkb .pkv{min-height:30px;margin:0 0 10px;padding:6px 10px;border:2px solid #5a6a4a;background:#11170f;font-size:20px;font-weight:700;color:#f3ecd8;text-align:left}#padkb .pkr{display:flex;justify-content:center;gap:5px;margin:0 0 5px}#padkb .pk{min-width:34px;height:36px;font:inherit;font-weight:700;font-size:16px;border:2px solid #5a6a4a;background:#1e2a1a;color:#f3ecd8;border-radius:5px;cursor:pointer}#padkb .pk.w{padding:0 12px}#padkb .pk.ok{background:#3a5a2a}#padkb .pkh{margin:8px 0 0;font-size:13px;opacity:.75}body.padmode :focus{outline:3px solid #7fb8e0!important;outline-offset:2px}body.padmode #craft .mapwrap::after{content:"";position:absolute;left:50%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;pointer-events:none;background:linear-gradient(#fff,#fff) center/2px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 2px no-repeat;filter:drop-shadow(0 0 2px #000)}body:not(.padmode) #pmain .padonly,#pmain .padonly[hidden]{display:none!important}body.padmode #pmain{display:grid;grid-template-columns:1fr 1fr;gap:8px}body.padmode #pmain>*{margin:0!important;width:auto!important}body.padmode #pmain>#p-resume{grid-column:1/3}#torchslot.padsel{outline:3px solid #7fb8e0;outline-offset:2px}#padqc{z-index:45}#padqc .tcard{text-align:center}.padl{margin:6px 0 0;padding-left:18px;text-align:left;font-size:13.5px;line-height:1.45}.padl li{margin:0 0 4px}';document.head.appendChild(st);
 }).toString()+')()')}catch(e){try{window.__hamErr('v320pad: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v322tier">
