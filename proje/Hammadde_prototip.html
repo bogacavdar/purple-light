@@ -1378,7 +1378,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.62</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.63</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1453,7 +1453,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.62 · 7 Kasım 2026</h2><h3>Düzeltmeler</h3><ul><li><strong>Börü'nün atılma dersi artık takılmaz:</strong> kerevit bir yere sıkışır, itilir ya da oyun çok yavaş akarsa bile en geç 5 saniyede yeniden saldırır. Çok uzakta kalırsa yanına döner.</li><li><strong>Ders sırasında alınmış bir kayıt yüklenince öğretici kilitlenmez:</strong> Börü'nün kereviti geri gelir. Onu vurunca atılma dersi baştan başlar.</li><li>Kol menüsünden "Oyunu kaydet" ve "Kayıttan yükle" ilk boş yuvada (yoksa ilk yuvada) açılır, "Geri"de değil.</li><li>Kolla kazanda grup listesi sol / sağ ile artık değişmez (seçim yanındaki düğmeye geçer). Grup LB / RB ile değişir. Kazan boş bir grupla kalmışsa kolla açılınca bütün tarifler geri gelir.</li><li>Çantada meşaleyi A ile seçince seçim kendiliğinden meşale yuvasına geçer (bir daha A: yuvaya girer).</li></ul><h3>Arayüz</h3><ul><li>Meşale yazıları kolda doğru tarif eder: "LB / RB ile meşale yuvasını seç, sonra X'i basılı tut" (PlayStation'da L1 / R1, □).</li><li>Kol açıkken ders kartlarında ve ipuçlarında fare sözleri ("tıkla ya da", "… düğmesine tıkla") düşer, pencerelerdeki "(Esc)" görünmez, Zümrüt'ün "Tab'a bas"ı kolun tuşunu söyler.</li><li>Tuş adından sonraki ek, yeni adın okunuşuna uyar: "A'ya bas", "B'ye", "X'e", "LB'ye", "✕'ya".</li><li>Kol yazılarına kol tuşu harfi ikinci kez klavye tuşu sanılıp değiştirilmez (meşale yazısında "X basılı" "J basılı" oluyordu).</li><li>LB / RB kemerde boş eldeyken boş el kutusu da mavi çerçeveyle gösterilir.</li><li>Ad yazma ekran klavyesi DualSense'te ✕ / □ / ○ / Options yazar ve dar ekranda taşmaz.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.63 · 7 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Ateşte pişirme:</strong> ateş isteyen yemekler (kavrulmuş, kızarmış, haşlanmış, tütsülenmiş, ızgara, tava, şiş, buğulama, çorbalar, ekmekler, güveç, pişmiş et ve balık…; 129 tarif) artık El yapımı listesinde yok. Tarifi yine kazanda öğrenirsin, yemeği <strong>ateşte</strong> yaparsın.</li><li>Kamp ateşine ya da kişilerin ateşlerine F, tıklama, dokunma ya da kolda A ile <strong>pişirme menüsü</strong> açılır. Menüde çiğ et ve balık közleme ile öğrendiğin ateş yemekleri var; her satırda Yap · ×5 · Hepsi. Kamp ateşinde ayrıca "Odun at" düğmesi ve ateşin kaç dakika yanacağı görünür.</li><li>Ateşin başında <strong>Ateş ve Duman malzemesi harcanmaz</strong>, ateş sağlar. Öbür malzemeler harcanır.</li><li>Her yemek ateşte ~3 saniyede pişer. ×5 ve Hepsi sırayla pişer, ateşin üstünde ve menüde ilerleme çubuğu görünür. Pişen yemek kendiliğinden çantana gelir; bu arada uzaklaşabilirsin. Yemek yanmaz.</li><li>Kamp ateşinde her yemek ateşten biraz yer. Ateş pişirme bitmeden sönerse pişmeyen malzemeler çantana döner.</li><li>Çantanda çiğ yiyecek olmasa da yapabileceğin bir ateş yemeği varsa kişilerin ateşinde menü açılır.</li><li>Ateşte ilk kez yapılan yemek 12 XP, sonrakiler 2 XP verir (el yapımı gibi). Közleme parça başına 1 XP.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -5103,11 +5103,15 @@ const TORCHL={'Kaba meşale':80,'Meşale':115};
 // simple things you can make with your own hands anywhere: known (✓), no tools, at most two steps deep, at most three kinds
 const DEPTH={};function depthOf(r){if(r in DEPTH)return DEPTH[r];const y=REC.get(r);DEPTH[r]=0;if(!y)return 0;let d=0;for(const [n] of y.i){for(const m of expand(n))d=Math.max(d,depthOf(m))}return DEPTH[r]=d+1}
 const isTorch=n=>!!GT[n]&&GT[n].kind==='torch';
+// v3.63 (Boğaç, belge Sistemler › Yemek › Ateşte pişirme; Tarif ansiklopedisi "Ateşte"): the dishes made at a fire. They are learnt in the cauldron
+// as before but are not in El yapımı: any fire's cooking menu (block v363fire) makes them, and there Ateş and Duman cost nothing (the fire gives them)
+const FIRE_R=new Set(["Ahtapot salatası", "Akçaağaç şurubu", "Barbunya tava", "Çipura buğulama", "Dağ çayı demi", "Et şişi", "Hamsi tava", "Haşlanmış bıldırcın yumurtası", "Haşlanmış keklik yumurtası", "Haşlanmış ördek yumurtası", "Haşlanmış turna kuşu yumurtası", "Haşlanmış ur kekliği yumurtası", "Haşlanmış yaban kazı yumurtası", "Işık mantarı çorbası", "Işıl çorbası", "İstavrit ızgara", "İstiridye çorbası", "Kalamar tava", "Kalkan tava", "Kavrulmuş fındık", "Kavrulmuş kestane", "Kavrulmuş su kestanesi", "Kavrulmuş yabani arpa", "Kavrulmuş yabani buğday", "Kavrulmuş yabani mercimek", "Kavrulmuş yabani nohut", "Kavrulmuş yabani yulaf", "Kefal pilakisi", "Kılıç şiş", "Kızarmış çayır mantarı", "Kızarmış kanlıca", "Kızarmış kayın mantarı", "Kızarmış kuzugöbeği", "Kızarmış mağara mantarı", "Kızarmış tavuk mantarı", "Kızarmış yabani havuç", "Kök mantarlı güveç", "Közlenmiş şiş", "Kristal armut kompostosu", "Levrek şiş", "Lüfer ızgara", "Orkinos biftek", "Palamut buğulama", "Palamut ekmeği", "Pişmiş alabalık", "Pişmiş bıldırcın eti", "Pişmiş bulut koyunu eti", "Pişmiş buz tavşanı eti", "Pişmiş çapak", "Pişmiş dağ keçisi eti", "Pişmiş geyik eti", "Pişmiş işık tilkisi eti", "Pişmiş kadife balığı", "Pişmiş karaca eti", "Pişmiş kartal eti", "Pişmiş keklik eti", "Pişmiş kerevit", "Pişmiş kertenkele eti", "Pişmiş kızılkanat", "Pişmiş kor kertenkelesi eti", "Pişmiş kristal geyik eti", "Pişmiş kunduz eti", "Pişmiş kurbağa", "Pişmiş kurt eti", "Pişmiş mağara ayısı eti", "Pişmiş mersin balığı", "Pişmiş muflon eti", "Pişmiş ördek eti", "Pişmiş rüzgâr kuşu eti", "Pişmiş sazan", "Pişmiş sincap eti", "Pişmiş su samuru eti", "Pişmiş tatlısu kefali", "Pişmiş tatlısu levreği", "Pişmiş tatlısu midyesi", "Pişmiş tavşan eti", "Pişmiş timsah eti", "Pişmiş turna balığı", "Pişmiş turna kuşu eti", "Pişmiş ur kekliği eti", "Pişmiş vaşak eti", "Pişmiş yaban atı eti", "Pişmiş yaban domuzu eti", "Pişmiş yaban kazı eti", "Pişmiş yaban öküzü eti", "Pişmiş yayın", "Pişmiş yılan balığı", "Pişmiş yıldız tilkisi eti", "Spor ekmeği", "Tekir tava", "Turba ateşinde tütsü", "Tütsülenmiş alabalık", "Tütsülenmiş bıldırcın eti", "Tütsülenmiş çapak", "Tütsülenmiş dağ keçisi eti", "Tütsülenmiş geyik eti", "Tütsülenmiş işık tilkisi eti", "Tütsülenmiş kadife balığı", "Tütsülenmiş karaca eti", "Tütsülenmiş kartal eti", "Tütsülenmiş keklik eti", "Tütsülenmiş kerevit", "Tütsülenmiş kızılkanat", "Tütsülenmiş kristal geyik eti", "Tütsülenmiş kunduz eti", "Tütsülenmiş kurbağa", "Tütsülenmiş kurt eti", "Tütsülenmiş mağara ayısı eti", "Tütsülenmiş mersin balığı", "Tütsülenmiş muflon eti", "Tütsülenmiş ördek eti", "Tütsülenmiş sazan", "Tütsülenmiş sincap eti", "Tütsülenmiş su samuru eti", "Tütsülenmiş tatlısu kefali", "Tütsülenmiş tatlısu levreği", "Tütsülenmiş tatlısu midyesi", "Tütsülenmiş tavşan eti", "Tütsülenmiş turna balığı", "Tütsülenmiş turna kuşu eti", "Tütsülenmiş ur kekliği eti", "Tütsülenmiş vaşak eti", "Tütsülenmiş yaban atı eti", "Tütsülenmiş yaban domuzu eti", "Tütsülenmiş yaban kazı eti", "Tütsülenmiş yaban öküzü eti", "Tütsülenmiş yayın", "Tütsülenmiş yılan balığı", "Yankı çorbası"]);
+const FIRE_FREE=new Set(['Ateş','Duman']);
 const handSimple=y=>!!y&&!PLACEABLE.has(y.r)&&!FORGED.has(y.r)&&y.c!=='Ev eşyası';   // v56: furniture is Sinan's work
 const handKnown=r=>foundSet.has(r);
-const handSub=m=>{const y=REC.get(m);return !!y&&!TOOLS.has(m)&&handSimple(y)&&handKnown(m)};
+const handSub=m=>{const y=REC.get(m);return !!y&&!TOOLS.has(m)&&handSimple(y)&&handKnown(m)&&!FIRE_R.has(m)};
 const handN=y=>canMake(y)||(chainPlan(y.r,1,handSub)?1:0);
-function handList(){return DB.R.filter(y=>handSimple(y)&&handKnown(y.r))}
+function handList(){return DB.R.filter(y=>handSimple(y)&&handKnown(y.r)&&!FIRE_R.has(y.r))}
 function canMake(y){const own={...inv};let k=0;for(;k<99;k++){for(const [n,q] of y.i){let need=q;for(const m of expand(n)){const t=Math.min(need,own[m]||0);own[m]=(own[m]||0)-t;need-=t}if(need>0)return k}}return k}
 cbody.addEventListener('click',e=>{if(mode==='hand'&&e.target.id==='feedtorch'){feedTorch();renderCraft()}});
 function renderHand(){
@@ -7398,18 +7402,7 @@ for(let i=camps.length-1;i>=0;i--){const c=camps[i];
   // warmth: next to your own fire the body mends
   const c=campAt(player.x,player.y,64);if(c&&hp<maxHP()&&food>0)hp=Math.min(maxHP(),hp+dt*1.4*(sk('D11')?2:1))}
 function woodFor(){if((inv['Dal']||0)>=2)return['Dal',2,1];for(const n of order)if(/ odunu$/.test(n)&&inv[n]>0)return[n,1,2];if(inv['Kav']>0)return['Kav',1,3];return null}   // tinder (Kav) smoulders long: D10
-function talkCamp(c){
-  const L=[];const w=woodFor(),m=String(Math.round(c.t/60*10)/10).replace('.',',');
-  if(w)L.push({t:`Odun at (${w[1]} ${w[0]} · +${String(Math.round(CAMP_WOOD*w[2]/60*10)/10).replace('.',',')} dk)`,pri:1,f:()=>{inv[w[0]]-=w[1];c.t=Math.min(CAMP_MAX,c.t+CAMP_WOOD*w[2]);renderInv();sfx('craft');for(let k=0;k<8;k++)parts.push({x:c.x,y:c.y-5,vx:(Math.random()-.5)*24,vy:-24-Math.random()*20,life:.5,c:'#ffd27a'});talkCamp(c)}});
-  const raw=order.filter(n=>inv[n]>0&&KOZ[n]);
-  if(raw.length){const tot=raw.reduce((a,n)=>a+inv[n],0);L.push({t:`Hepsini közle (${tot} parça)`,pri:!w,f:()=>cookAll(c,raw)});
-    for(const n of raw.slice(0,4))L.push({t:`Közle: ${n} ×${inv[n]}`,f:()=>cookAll(c,[n])})}
-  L.push({t:'Isın ve dinlen',f:bye});
-  sayV(`Çıtır çıtır yanan küçük bir ateş. <b>${m} dk</b> daha yanar.${raw.length?' Çiğ eti ve balığı közleyebilirsin: közlenmiş yemek çiğinden kat kat doyurur.':' Çiğ et ya da balık getirirsen közleyebilirsin.'}<br><small>Ateşin yanında gece güvendesin, canın da hızlı dolar. Her közleme ateşten biraz yer.</small>`,L,'Kamp ateşi','Kamp ateşi','#ffb05a')}
-function cookAll(c,names){let n=0;for(const r of names){while(inv[r]>0&&c.t>4){inv[r]--;gain(KOZ[r]);c.t-=4;n++}}
-  renderInv();if(n){sfx('craft');gainXP(Math.min(30,n));dstat.cook+=n;for(let k=0;k<10;k++)parts.push({x:c.x+(Math.random()-.5)*8,y:c.y-6,vx:(Math.random()-.5)*12,vy:-18-Math.random()*16,life:.9,c:'rgba(220,220,220,.7)'});toast(`${n} parça közlendi. Afiyet olsun!`)}
-  if(c.t<=4)toast('Ateş közlemeye yetmiyor: odun at.',true);
-  talkCamp(c)}
+function talkCamp(c){if(window.__plOpenFire)window.__plOpenFire(c,'camp')}   // v3.63: the camp fire's window is the cooking menu (block v363fire)
 function drawCamp(c,time,i){if(c.t>0){drawFireAt(c.x,c.y,time,i*2.3+.7);
     if(Math.hypot(player.x-c.x,player.y-c.y)<46){const k=Math.max(0,Math.min(1,c.t/CAMP_BURN));px(c.x-7,c.y+6,14,2,'#11170f');px(c.x-7,c.y+6,Math.max(1,Math.round(14*Math.min(1,c.t/CAMP_MAX*2))),2,k<.2?'#e8775a':'#f2b84b')}}
   else{const a=Math.min(1,c.ash/30);ctx.globalAlpha=a;px(c.x-6,c.y+1,12,3,'#4a4a50');px(c.x-4,c.y,8,2,'#6a6a70');px(c.x-1,c.y-1,2,1,'#c84a2a');for(let k=0;k<5;k++)px(c.x-7+k*3,c.y+3,2,1,'#6a6a70');ctx.globalAlpha=1}}
@@ -7703,7 +7696,7 @@ function v46Target(top){
   if(heldKind('trap')==='Tuzak'&&tileAt(player.x,player.y)<=1&&reachAt(player.x,player.y)&&!traps.some(t=>Math.hypot(t.x-player.x,t.y-player.y)<34))return{kind:'v46',sub:'settrap'};
   return null}
 function v46Prompt(tg){const s=tg.sub;
-  if(s==='camp'){const c=tg.c;return[`<kbd>E</kbd>Kamp ateşi · ${Math.ceil(c.t/60)} dk · odun at / közle`,c.t<40]}
+  if(s==='camp'){const c=tg.c;return[`<kbd>E</kbd>Kamp ateşi · ${Math.ceil(c.t/60)} dk · odun at / pişir`,c.t<40]}
   if(s==='trap'){const t=tg.t;return t.got?[`<kbd>E</kbd>${t.k}: ${t.got.k?t.got.k+' yakalandı':'av var'} · al`,false]:[`<kbd>E</kbd>${t.k} kurulu · bekliyor`,false]}
   if(s==='fish'){const tl=heldKind('fish'),d=nn(toolDur[tl],GT[tl].dur);return d>0?[`<kbd>E</kbd>Balık tut · ${tl} ${d}/${GT[tl].dur}`,false]:[`${tl} köreldi · Demirci Dursun'da yenile`,true]}
   if(s==='kapan')return[`<kbd>E</kbd>Balık kapanını suya bırak (${traps.length}/${TRAP_MAX})`,false];
@@ -7988,7 +7981,7 @@ const bar=document.createElement('div');bar.id='b3trk';bar.hidden=true;bar.setAt
 {const st=document.createElement('style');st.textContent='#b3trk .b3plus{font:inherit;font-weight:700;font-size:13px;line-height:1;min-width:20px;height:20px;padding:0 4px;margin-left:-2px;background:#2f5a2a;color:#e8ffd8;border:2px solid #8fd46b;cursor:pointer;align-self:center}#b3trk .b3plus:hover,#b3trk .b3plus:focus{background:#3f7a36}';document.head.appendChild(st)}
 const tip=document.createElement('div');tip.id='b3tip';tip.hidden=true;document.body.appendChild(tip);
 // v3.36 (Boğaç): a missing part that is a hand recipe you know, and you can make now, gets a + (made at once, its own parts first)
-const b3subOK=m=>subOK(m)&&foundSet.has(m)&&!FORGED.has(m);
+const b3subOK=m=>subOK(m)&&foundSet.has(m)&&!FORGED.has(m)&&!FIRE_R.has(m);   // v3.63: not a fire dish (made at a fire)
 function b3plus(it){if(it.tool||it.have>=it.need)return '';const m=expand(it.n)[0];if(!b3subOK(m))return '';const k=chainMax(m,it.need-it.have,b3subOK);return k>0?`<button type="button" class="b3plus" data-b3sub="${esc(m)}" data-k="${k}" title="${k} ${esc(m)} yap" aria-label="${k} ${esc(m)} yap">+</button>`:''}
 function b3make(m,k){const plan=chainPlan(m,k,b3subOK);if(!plan){toast(`${m} için eksik: ${missingFor(REC.get(m))||'malzeme'}`,true);sfx('bad');return}const made=[];
   for(const z of plan){const x=REC.get(z);for(const [n,q] of x.i){let need=q;for(const mm of expand(n)){const c=Math.min(need,inv[mm]||0);inv[mm]=(inv[mm]||0)-c;need-=c}}gain(z);made.push(z)}
@@ -7996,7 +7989,7 @@ function b3make(m,k){const plan=chainPlan(m,k,b3subOK);if(!plan){toast(`${m} iç
 function chipHTML(it){const ok=it.have>=it.need,src=icon(expand(it.n)[0]);
   return `<span class="b3cell"><span class="b3c${ok?' ok':''}${it.tool?' tool':''}" data-n="${esc(it.n)}" tabindex="0" title="${esc(it.n)}"><img src="${src}" alt=""><span class="b3nm">${esc(it.n)}</span><b>${Math.min(it.have,it.need)}/${it.need}</b>${ok?'<i aria-hidden="true">✓</i>':''}</span>${b3plus(it)}</span>`}   // v3.38: a fixed cell, so rows line up
 // v2.83 (Boğaç): a tracked recipe made by hand gets a Yap button on the bar once everything is there (cauldron and anvil recipes do not)
-function b3HandOK(r){const y=REC.get(r);return !!y&&handSimple(y)&&handKnown(r)&&handN(y)>0}
+function b3HandOK(r){const y=REC.get(r);return !!y&&handSimple(y)&&handKnown(r)&&!FIRE_R.has(r)&&handN(y)>0}   // v3.63: a fire dish is made at a fire
 function rowHTML(r){const done=r.items.every(it=>it.have>=it.need);
   return `<div class="b3row${r.own?' own':''}${done?' done':''}"><span class="b3lab" title="${esc(r.t)}"><img src="${icon(r.ic||r.r)}" alt=""><span class="b3lt">${esc(r.t)}</span>${done?' <em>hazır</em>':''}</span>${r.items.map(chipHTML).join('')}${r.own&&done&&b3HandOK(r.r)?`<button type="button" class="b3mk" data-b3make="${esc(r.r)}" title="Şimdi elinle yap">Yap</button>`:''}${r.own?`<button type="button" class="b3x" data-untrack="${esc(r.r)}" aria-label="${esc(r.r)} takibini bırak" title="Takibi bırak">×</button>`:''}</div>`}
 const PHONE=()=>PHONE_MQ.matches||innerHeight<=520;
@@ -18273,25 +18266,84 @@ cv.addEventListener('pointerdown',e=>{try{if(e.pointerType!=='mouse'||e.button!=
   e.preventDefault();e.stopImmediatePropagation();startGoal(wx,wy)}catch(_){}},true);
 // (3) the people's fires
 const nearF=(x,y,r)=>{let b=null,bd=r;for(const f of FIRES){const d=Math.hypot(f.x-x,f.y-y);if(d<bd){bd=d;b=f}}return b};
-function cookAt(f){const raw=order.filter(n=>inv[n]>0&&KOZ[n]);
-  if(!raw.length){toast('Çiğ et ya da balık getirirsen bu ateşte közleyebilirsin.');return}
-  const go=names=>{let n=0;for(const r of names){while(inv[r]>0){inv[r]--;gain(KOZ[r]);n++}}renderInv();
-    if(n){sfx('craft');gainXP(Math.min(30,n));try{dstat.cook+=n}catch(_){}for(let k=0;k<10;k++)parts.push({x:f.x+(Math.random()-.5)*8,y:f.y-6,vx:(Math.random()-.5)*12,vy:-18-Math.random()*16,life:.9,c:'rgba(220,220,220,.7)'});toast(`${n} parça közlendi. Afiyet olsun!`)}
-    bye();setTimeout(()=>{if(order.some(m=>inv[m]>0&&KOZ[m]))cookAt(f)},80)};
-  const tot=raw.reduce((a,n)=>a+inv[n],0),L=[{t:`Hepsini közle (${tot} parça)`,pri:1,f:()=>go(raw)}];
-  for(const n of raw.slice(0,4))L.push({t:`Közle: ${n} ×${inv[n]}`,f:()=>go([n])});L.push({t:'Isın ve dinlen',f:bye});
-  sayV('Bu kampın ateşi harıl harıl yanıyor. Çiğ eti ve balığı burada da közleyebilirsin: közlenmiş yemek çiğinden kat kat doyurur.',L,'Ateş','Kamp ateşi','#ffb05a')}
+function cookAt(f){if(window.__plFireAny&&window.__plFireAny()){window.__plOpenFire(f,'npc');return}toast('Çiğ et ya da balık getirirsen bu ateşte közleyebilirsin.')}   // v3.63: the cooking menu (block v363fire)
+const cookAny=()=>window.__plFireAny?window.__plFireAny():order.some(n=>inv[n]>0&&KOZ[n]);
 let pendF=null;
-// v2.75 (Boğaç: "tüm ateşlerde yemek pişirilebilinsin"): every fire is a target while you carry raw meat or fish: "E · Ateşte közle"
-for(const f of FIRES)XTRA.push({x:f.x,y:f.y+4,r:24,on:()=>!window.__plArena&&!(window.__plCave&&window.__plCave.cur)&&f.x>-9e4&&order.some(n=>inv[n]>0&&KOZ[n]),label:()=>'Ateşte közle',act:()=>cookAt(f)});
+// v2.75 (Boğaç: "tüm ateşlerde yemek pişirilebilinsin"): every fire is a target while you can cook something there (v3.63: raw food or a fire dish): "E · Ateşte pişir"
+for(const f of FIRES)XTRA.push({x:f.x,y:f.y+4,r:24,on:()=>!window.__plArena&&!(window.__plCave&&window.__plCave.cur)&&f.x>-9e4&&cookAny(),label:()=>'Ateşte pişir',act:()=>cookAt(f)});
 cv.addEventListener('pointerdown',e=>{try{if((e.pointerType==='mouse'&&e.button!==0)||onTitle||dlgOpen||craftOpen||placing||!canTap())return;
-  const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S,f=nearF(wx,wy+3,18);if(!f||!order.some(n=>inv[n]>0&&KOZ[n]))return;   // v2.75: wider, and only when you carry something raw (so the person beside it can still be clicked)
+  const wx=cam.cx+e.clientX/S,wy=cam.cy+e.clientY/S,f=nearF(wx,wy+3,18);if(!f||!cookAny())return;   // v2.75: wider, and only when you carry something raw (so the person beside it can still be clicked)
   e.preventDefault();e.stopImmediatePropagation();
   if(Math.hypot(f.x-player.x,f.y-player.y)<34){pendF=null;cookAt(f);return}
   pendF=f;startGoal(f.x,f.y+12)}catch(_){}},true);
 setInterval(()=>{try{if(!pendF)return;if(onTitle||dlgOpen||craftOpen){pendF=null;return}if(Math.hypot(pendF.x-player.x,pendF.y-player.y)<34){const f=pendF;pendF=null;goal=null;cookAt(f)}else if(!goal)pendF=null}catch(_){pendF=null}},150);
-{const _int=interact;interact=function(over){try{if(!over&&!dlgOpen&&!craftOpen&&!gathering){const f=nearF(player.x,player.y,30);if(f&&order.some(n=>inv[n]>0&&KOZ[n])){cookAt(f);return}}}catch(_){}return _int.apply(this,arguments)}}
+{const _int=interact;interact=function(over){try{if(!over&&!dlgOpen&&!craftOpen&&!gathering){const f=nearF(player.x,player.y,30);if(f&&cookAny()){cookAt(f);return}}}catch(_){}return _int.apply(this,arguments)}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v258b: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v363fire">
+// v3.63 (Boğaç, belge Sistemler › Yemek › Ateşte pişirme): every fire (your camp fires and the people's fires) opens a cooking menu: the old "közle"
+// window grown. Raw meat and fish are roasted, and the fire dishes you learnt in the cauldron (FIRE_R) are made here; Ateş and Duman come from the fire
+// and cost nothing, the rest is taken from the bag when you ask. Each dish takes ~3 s on the fire, one queue per fire (×5 / Hepsi cook one after
+// another); a bar over the fire and in the menu shows it; what is done goes into the bag by itself, also when you walk away. Nothing burns.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const COOK=3,ACTIVE=new Set();let FO=null;   // FO = {F: the fire, kind: 'camp' | 'npc'}
+const fireIng=y=>y.i.filter(([n])=>!FIRE_FREE.has(n));
+const toolsOk=y=>(y.t||[]).every(t=>inv[t]>0);
+function fireN(y){if(!toolsOk(y))return 0;const own={};let k=0;for(;k<99;k++){for(const [n,q] of fireIng(y)){const h=(n in own?own[n]:(inv[n]||0));if(h<q)return k;own[n]=h-q}}return k}
+const fireRecs=()=>DB.R.filter(y=>FIRE_R.has(y.r)&&handKnown(y.r));
+const rawList=()=>order.filter(n=>inv[n]>0&&KOZ[n]);
+const anyCook=()=>rawList().length>0||fireRecs().some(y=>fireN(y)>0);
+window.__plFireAny=anyCook;
+const campLeft=F=>Math.max(0,F.t-4*(F.cq?F.cq.length:0));   // a camp fire: each dish eats 4 s of its fire
+function enqueue(F,kind,name,want){if(!F.cq)F.cq=[];if(F.ct==null)F.ct=0;let k=0;
+  for(let i=0;i<want;i++){if(F.t!=null&&camps.indexOf(F)>=0&&campLeft(F)<=4){if(!k)toast('Ateş pişirmeye yetmiyor: odun at.',true);break}
+    if(kind==='koz'){if(!(inv[name]>0))break;inv[name]--;F.cq.push({out:KOZ[name],used:[[name,1]]})}
+    else{const y=REC.get(name);if(!y||fireN(y)<1)break;const used=fireIng(y).map(([n,q])=>[n,q]);for(const [n,q] of used)inv[n]-=q;F.cq.push({out:name,used,y})}
+    k++}
+  if(k){ACTIVE.add(F);sfx('pick');renderInv()}return k}
+function finishOne(F){const it=F.cq.shift();F.ct=0;if(!it)return null;
+  if(it.y){const r=it.out,isNew=!foundSet.has(r);gain(r);qc('craft:'+r);try{v47Craft(r,{r,i:it.used,t:[]},true)}catch(e){}if(isNew){found.push(r);foundSet.add(r);try{checkCodex()}catch(e){}}gainXP(isNew?12:2);try{tzMade(r)}catch(e){}}
+  else{gain(it.out);gainXP(1)}
+  try{dstat.cook+=1}catch(e){}if(F.t!=null&&camps.indexOf(F)>=0)F.t=Math.max(0,F.t-4);
+  for(let k=0;k<6;k++)parts.push({x:F.x+(Math.random()-.5)*8,y:F.y-6,vx:(Math.random()-.5)*12,vy:-18-Math.random()*16,life:.8,c:'rgba(220,220,220,.7)'});
+  try{floats.push({x:F.x,y:F.y-16,t:0,text:'+1 '+it.out,color:'#f2d070'})}catch(e){}
+  return it}
+// a camp fire that went out gives back what was still waiting on it
+function refund(F){let n=0;for(const it of F.cq||[])for(const [m,q] of it.used){gain(m,q);n+=q}F.cq=[];F.ct=0;ACTIVE.delete(F);if(n){renderInv();toast('Ateş söndü: pişmeyen malzemeler çantana döndü.',true)}}
+let lastT=performance.now();
+setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-lastT)/1000);lastT=now;if(!ACTIVE.size||onTitle||paused)return;
+  for(const F of Array.from(ACTIVE)){if(F.t!=null&&(camps.indexOf(F)<0||!(F.t>0))){refund(F);continue}
+    if(!F.cq||!F.cq.length){ACTIVE.delete(F);continue}F.ct+=dt;
+    if(F.ct>=COOK){const it=finishOne(F);if(!F.cq.length){ACTIVE.delete(F);if(it)toast(`${it.out} pişti, çantanda.`)}if(FO&&FO.F===F&&craftOpen&&mode==='fire')renderCraft();else renderInv()}
+    else if(FO&&FO.F===F&&craftOpen&&mode==='fire'){const b=$('fireprog');if(b)b.style.width=Math.round(F.ct/COOK*100)+'%'}}},100);
+// the game is saved: what is on the fires is done (the queue is not saved)
+{const _s=snapshot;snapshot=function(){try{for(const F of Array.from(ACTIVE)){while(F.cq&&F.cq.length)finishOne(F);ACTIVE.delete(F)}}catch(e){}return _s.apply(this,arguments)}}
+// a small bar over a fire that is cooking
+{const _df=drawFireAt;drawFireAt=function(fx,fy){const r=_df.apply(this,arguments);if(ACTIVE.size)for(const F of ACTIVE)if(F.x===fx&&F.y===fy){const k=Math.min(1,(F.ct||0)/COOK);px(fx-8,fy-20,16,3,'#11170f');px(fx-7,fy-19,Math.max(1,Math.round(14*k)),1,'#f2b84b')}return r}}
+// the menu: the craft window in its own mode
+function openFire(F,kind){FO={F,kind};if(dlgOpen)bye();stopGather();mode='fire';filter='';craftOpen=true;document.body.classList.add('menuopen');for(const k in keys)keys[k]=false;craftEl.hidden=false;msg('');
+  $('crafttitle').textContent=kind==='camp'?'Kamp ateşi · Pişirme':'Ateş · Pişirme';renderTools();renderCraft();$('closecraft').focus();renderTut()}
+window.__plOpenFire=openFire;
+{const _rt=renderTools;renderTools=function(){if(mode==='fire'){ctools.innerHTML='';return}return _rt.apply(this,arguments)}}
+{const _rc=renderCraft;renderCraft=function(){if(!(craftOpen&&mode==='fire'))return _rc.apply(this,arguments);const cp=$('cpanel');cp.classList.add('nobench');for(const c of ['potmode','invm','forge','wide'])cp.classList.remove(c);renderFire()}}
+{const _cc=closeCraft;closeCraft=function(){const r=_cc.apply(this,arguments);if(!craftOpen)FO=null;return r}}
+const btns=(k,name,n)=>`<span class="rr hq"><button class="mk" data-fk="${k}" data-fr="${esc(name)}" data-q="1" type="button"${n?'':' disabled'}>Yap</button><button class="mk ghost" data-fk="${k}" data-fr="${esc(name)}" data-q="5" type="button"${n>=5?'':' disabled'}>×5</button><button class="mk ghost hall" data-fk="${k}" data-fr="${esc(name)}" data-q="${Math.max(2,n)}" type="button"${n>1?'':' disabled'}>Hepsi${n>1?` <small>(${n})</small>`:''}</button></span>`;
+function renderFire(){if(!FO){cbody.innerHTML='';return}const F=FO.F,camp=FO.kind==='camp';
+  if(camp&&!(F.t>0)){cbody.innerHTML='<p class="note">Ateş söndü.</p>';return}
+  const w=camp?woodFor():null,m=camp?String(Math.round(F.t/60*10)/10).replace('.',','):'';
+  const head=camp?`<div class="hintbox"><span>Ateş <b>${m} dk</b> daha yanar. Her yemek ateşten biraz yer.</span>${w?`<button id="firewood" type="button">Odun at (${w[1]} ${esc(w[0])})</button>`:''}</div>`:`<div class="hintbox"><span>Bu kampın ateşi harıl harıl yanıyor; sönmez, odun istemez.</span></div>`;
+  const q=F.cq||[],queue=q.length?`<div class="psel"><img src="${icon(q[0].out)}" alt=""><div><b>Pişiyor: ${esc(q[0].out)}</b><small>${q.length>1?`sırada ${q.length-1} yemek daha · `:''}her yemek ~${COOK} sn · pişen kendiliğinden çantana gelir, uzaklaşabilirsin</small></div></div><div class="xpbar" style="height:10px;margin:4px 0 10px"><i id="fireprog" style="width:${Math.round((F.ct||0)/COOK*100)}%;background:#f2b84b"></i></div>`:'';
+  const raw=rawList(),recs=fireRecs().map(y=>[y,fireN(y)]).sort((a,b)=>(b[1]>0)-(a[1]>0)||a[0].r.localeCompare(b[0].r,'tr'));
+  const rows=raw.map(n=>`<li><span class="bn"><img src="${icon(KOZ[n])}" alt=""><span><b>${esc(KOZ[n])}</b><br><small>1× ${esc(n)} (${inv[n]}) · közlenmiş yemek çiğinden kat kat doyurur</small></span></span>${btns('koz',n,inv[n])}</li>`)
+    .concat(recs.map(([y,n])=>`<li${n?'':' class="hno"'}><span class="bn"><img src="${icon(y.r)}" alt=""><span><b>${esc(y.r)}</b>${inv[y.r]>0?` <small style="color:var(--accent)">· sende ${inv[y.r]}</small>`:''}<br><small>${y.i.map(([mm,qq])=>FIRE_FREE.has(mm)?`<span style="color:#f2b84b">${esc(mm)} (ateş sağlar)</span>`:`<span style="color:${(inv[mm]||0)>=qq?'#8fd46b':'#ff8a6a'}">${qq}× ${esc(mm)} (${inv[mm]||0})</span>`).join(', ')}${(y.t||[]).length?` · alet: ${y.t.map(t=>`<span style="color:${inv[t]>0?'#8fd46b':'#ff8a6a'}">${esc(t)}</span>`).join(', ')}`:''}</small></span></span>${btns('rec',y.r,n)}</li>`));
+  cbody.innerHTML=head+queue+`<p class="note">Çiğ eti ve balığı közle; kazanda öğrendiğin <b>ateş yemekleri</b> de burada pişer. <b>Ateş</b> ve <b>Duman</b> ateşten gelir, harcanmaz.</p>`+
+    (rows.length?`<ul class="book hand">${rows.join('')}</ul>`:`<p class="note">Çiğ et ya da balık getirirsen közleyebilirsin. Kazanda bir ateş yemeği (kavrulmuş, kızarmış, haşlanmış, çorba…) öğrenince burada yaparsın.</p>`)}
+cbody.addEventListener('click',e=>{if(mode!=='fire'||!FO)return;const F=FO.F;
+  if(e.target.id==='firewood'){const w=woodFor();if(w&&F.t>0){inv[w[0]]-=w[1];F.t=Math.min(CAMP_MAX,F.t+CAMP_WOOD*w[2]);renderInv();sfx('craft');for(let k=0;k<8;k++)parts.push({x:F.x,y:F.y-5,vx:(Math.random()-.5)*24,vy:-24-Math.random()*20,life:.5,c:'#ffd27a'})}renderCraft();return}
+  const b=e.target.closest('[data-fk]');if(!b||b.disabled)return;const k=enqueue(F,b.dataset.fk,b.dataset.fr,Math.max(1,+b.dataset.q||1));
+  if(k>1)toast(`${k} yemek ateşte sıraya girdi`);renderCraft()});
+}).toString()+')()')}catch(e){try{window.__hamErr('v363fire: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <style id="v258-wst">
 .wst{display:block;font-size:11.5px;line-height:1.25;color:#ffb69a;font-weight:600;margin-top:1px}
@@ -19583,7 +19635,7 @@ let lastC=null;
 // v3.32 (Boğaç): a window opened with the pad starts on the first thing you can use: the first recipe, the first thing you can make or eat, the first item
 function firstFocus(L){try{
   if(L.id==='craft'&&mode==='craft'&&!cbody.querySelector('[data-rec]')&&(potCat!=='Tümü'||potBy!=='name')){potCat='Tümü';potBy='name';renderCraft()}   // v3.62 (KOL-23)
-  const list=focusables(L);if(!list.length)return;let sel=null;if(L.id==='craft')sel=mode==='craft'?'[data-rec]':mode==='hand'?'[data-hand]':mode==='eat'?'[data-eat]':mode==='inv'?'.itile':mode==='sell'?'[data-sell]':null;
+  const list=focusables(L);if(!list.length)return;let sel=null;if(L.id==='craft')sel=mode==='craft'?'[data-rec]':mode==='hand'?'[data-hand]':mode==='eat'?'[data-eat]':mode==='inv'?'.itile':mode==='sell'?'[data-sell]':mode==='fire'?'[data-fk]:not([disabled])':null;
   let el=sel?list.find(b=>b.matches(sel)):null;if(L.id==='tut')el=$('tutok');else if(L.id==='q2les')el=L.querySelector('.pri');/* v3.60: a card starts on its Anladım / Devam */if(L.id==='roomui')el=L.querySelector('.rmenu button')||L.querySelector('[data-d]')||L.querySelector('[data-r="edit"]');if(L.id==='pause'){const ps=$('pslots');if(ps&&!ps.hidden&&!ps.querySelector('.slot-ask'))el=ps.querySelector('.slot-btn.empty:not([disabled])')||ps.querySelector('.slot-btn:not([disabled])')}   /* v3.62 (KOL-30): Kaydet / Yükle open on the first empty slot (else the first one), never on Geri */const cb=$('cbody');if(!el&&L.id==='craft'&&cb)el=list.find(b=>cb.contains(b)&&!b.closest('[role="tablist"],.pmode'));
   if(el){el.focus();reveal(el)}}catch(e){}}
 function remember(a){try{const r=a.getBoundingClientRect();lastC={x:r.left+r.width/2,y:r.top+r.height/2,id:a.id||''}}catch(e){lastC=null}}
@@ -19654,7 +19706,7 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
     codeB=onTitle&&hit(1)&&/UUDDLRLRB$/.test(P.kq)}
   if(mag>.3||now.some(v=>v))padUsed();
   if(typeof cine!=='undefined'&&cine.on){if(hit(0)||hit(1)||hit(9))tap('Escape');return}   // v3.60 (KOL-04): the opening scene: A, B or Start skips it (Esc)
-  const L=layer();
+  const L=layer();if(!L)P.lastL=null;   // v3.63: a window opened again starts on its first usable thing again
   // v3.61 (CEO): Döşe with the pad: a thing chosen (or X in the list): the cursor walks the room, A puts / opens the thing's menu, Y turns, B lets go
   {const RR=window.__v56;if(!L&&RR&&RR.pad&&RR.pad.cur()){releaseAll();if(RR.gx<-90)RR.pad.start();
     const d=mdx+','+mdy,t=performance.now();if(d!=='0,0'){if(d!==P.dir){P.dir=d;P.rep=t+300;RR.pad.move(mdx,mdy)}else if(t>=P.rep){P.rep=t+110;RR.pad.move(mdx,mdy)}}else P.dir='';

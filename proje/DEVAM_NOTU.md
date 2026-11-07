@@ -1,3 +1,27 @@
+## v3.63 (7 Kasım 2026) · ateşte pişirme: 129 ateş yemeği El yapımından çıktı, her ateşte pişirme menüsü
+
+- **Liste:** ana betikte `FIRE_R` (belge `80_tarifler.md` "Ateşte (pişirme menüsü)" sütunundaki 129 ad; ² dipnot işaretleri atıldı; hepsi oyunda `REC`'te var) ve `FIRE_FREE` (Ateş, Duman).
+  - `handList`, `handSub`, `b3HandOK`, `b3subOK` ateş yemeklerini dışarıda bırakır: El yapımında görünmez, başka bir tarifin ara malzemesi olarak elle de yapılmaz, izlenen tarif çubuğunda "Yap" çıkmaz.
+  - Kazanda öğrenme değişmedi.
+- **Blok `v363fire`** (`v258b`'den sonra):
+  - `openFire(F,kind)`: `#craft` penceresinde `mode='fire'`. `renderCraft` ve `renderTools` sarılı; `closeCraft` `FO`'yu sıfırlar.
+  - `renderFire`: kamp ateşinde süre ve "Odun at", pişen yemek ve ilerleme çubuğu (`#fireprog`), közleme satırları (`KOZ`) ve öğrenilmiş ateş yemekleri. Liste `.book.hand` ve `.rr.hq` biçiminde (Yap · ×5 · Hepsi).
+  - `enqueue` malzemeyi istekte düşer (Ateş/Duman hariç), `F.cq`'ya yazar.
+  - 100 ms'lik `setInterval` (kare döngüsü değil; duraklatmada durur): 3 sn'de bir `finishOne`. Tarifte `gain`, `qc`, `v47Craft` (düşülen malzemeyle), `found/foundSet`, XP 12/2, `tzMade`; közlemede XP 1; `dstat.cook`; kamp ateşinden 4 sn. Kamp ateşi sönerse `refund`.
+  - `snapshot` sarılı: kayıtta ateşteki sıra hemen biter (sıra kaydedilmez).
+  - `drawFireAt` sarılı: pişen ateşin üstünde çubuk (`ACTIVE` boşken tek bir boyut denetimi).
+  - `window.__plFireAny` / `__plOpenFire`.
+- **Eski közleme pencereleri kaldırıldı:** ana betikte `talkCamp` artık menüyü açar, `cookAll` silindi. `v258b`'de `cookAt` menüyü açar (yapılacak bir şey yoksa eski "Çiğ et ya da balık getirirsen…" bildirimi). `XTRA` etiketi "Ateşte pişir"; `on`, tıklama ve `interact` koşulu `cookAny()` (çiğ yiyecek ya da yapılabilir ateş yemeği). F önceliği değişmedi.
+- **Kol:** `v320pad` `firstFocus` `mode==='fire'` → ilk açık `[data-fk]`. Pencere kapanınca `P.lastL` sıfırlanır (aynı pencere yeniden açılınca yine ilk kullanılabilir şeyde başlar; önceden Kapat'ta kalıyordu).
+- **Denendi** (Playwright, klavye F ve sahte Xbox kolu):
+  - Kamp ateşi + F → menü.
+  - Közlenmiş tavşan eti ×1 ve Kavrulmuş fındık ×5 sıraya girdi; oyuncu 200 px uzaklaştı; 19,5 sn sonra 1 + 5 çantada.
+  - Ateş 1 → 1 (harcanmadı); kamp ateşi süresi düştü.
+  - Kişi ateşinde (Kemal'in) kolla A → menü "Yap"ta açıldı. İstiridye çorbası (çiğ yiyecek yokken) 3,5 sn'de çantada.
+  - Ateş yemeklerinin hiçbiri El yapımında yok.
+- **Ölçüm** (`olcum.js` CPU×4, gl; 3.62 ↔ 3.63 ikişer koşu, makine yüklü): BOOT js ort. 14.865 → 14.270 ms; PLAY 10 sn js 3.203 → 3.171 ms; kumsal kare ort. 337 → 300 ms; yürürken 297 → 297 ms. Fark gürültü içinde (`drawFireAt` sarmalı yalnız pişen ateş varken bir döngü yapar).
+- **Geri almak için:** v3.63 commit'ini `git revert` (prototip, index.html, notlar). Kayıt alanı ve MAPV değişmedi (ateşteki sıra kaydedilmez, kayıtta tamamlanır).
+
 ## v3.62 (7 Kasım 2026) · Testçi v3.60 raporu: atılma dersi takılması, ders sırasında kayıt, kayıt odağı, meşale yazıları, ek uyumu, kazan seçici
 
 - **KOL-15 (`v181` DL):** testçinin ortamında yeniden üretilemedi (akşam, meşale uyarısı ve LT 0,9 sn ile de saldırılar sürdü). Takılma iki yoldan olabiliyor: `idle`'da sayaç yalnız 22–46 px aralığında azalıyordu (yakına itilen ya da sıkışan kerevit hiç saldırmaz), ya da `tickAnimals` çağrılmıyordu. Yapılanlar: `DL.atkT` son saldırı zamanı; `idle`'da 5 sn saldırı yoksa ve uzaklık ≤ 60 ise `DL.t=0`; 8 sn ve > 60 ise `spawn()`. `DL.tickT` ile 250 ms'lik bekçi: oyun duraklatılmamışken 2 sn `tickDL` çalışmadıysa kendisi `tickDL(.25)` çağırır. Denendi: kerevit 15 px'e yapıştırıldı → 3,9 sn'de saldırdı; `tickAnimals` boşaltıldı → saldırı sürdü.
@@ -266,13 +290,3 @@
 - `DEVAM_NOTU.md` ve `GUNCELLEME_NOTLARI.md` yalnızca v3.25–v3.44 (CLAUDE.md "son 20 sürüm"); eski sürüm bölümleri ve CLAUDE.md'de zaten olan eski kural kopyaları silindi; DEVAM_NOTU sürüm sırasına dizildi (v3.36 yerine).
 - **Geri almak için:** harita: `MAPV` 6 → 5, `<script id="v235-map">` satırı (1712) git HEAD'deki `adalar.js` ile, `ada_uret.py` `GROW = 1.5` (+ `adalar.js`/png yeniden üret) ve `AREA_K` yorumu; işaretler: yukarıdaki `mki`, `qMarkOf`/`v55Ents`, `drawNpc` Kemal işareti, `v234` Poyraz `__plMapQ` ve `crash()` bildirimi (git `v3.43` hali).
 - Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7 (artmadı).
-
-## v3.43 (6 Kasım 2026) · Çiftçi Ekin, Barbaros olayı, Bereket Adası, tarla geri geldi
-
-- `v343ciftlik` bloğu: ada `IS` (açık denizde 58×46'lık tamamen okyanus kutusu, Barbaros'a en yakını; elips RX 20, RY 14, kenarı kum): yüklemede `tiles/BIO/ZONE/reach/MUD/tvar/shoreM` yazılır, çevresindeki deniz sığ olur, `mapBase` boyanır. `onIs()`; ada `roomSafe` (gece ve mor ışık güvenli), ada üstündeki hayvanlar silinir. Yerler: ev (`houseSprite('Kerpiç ev')`), ambar, kuyu (Su), iskele, korkuluk (EK4), 6 fidan yeri (3 günde `trees`'e gerçek meyve ağacı; kayıtta yeniden eklenir), tavuklar.
-- Ekin: `k_ekin` giver (`sqk:'ekin1'`), durum `EK.st` cayir → gone (EK1 bitince ikinci konuşma) → atB (L4 + EK1, Barbaros'a 110 px) → home. Kayık `BOAT()` Barbaros'un yanında; geçiş kendi karartması (`#v343fade`). Dükkân: tohum 4'lü paket, EK4'ten sonra fidanlar. Ödüller `EK.got` ile bir kez (EK2 tohum, EK3 tohumlar, EK4 Elma fidanı, EK6 tarla 24 tarh).
-- Eski tarla kodu (`plots`, `farmAct`, `tickFarm`, `drawField`, `CROP`) adaya taşındı (`layField`: 12 tarh, EK6'dan sonra 24). `v268` sadeleşti: `settle` (tarla eşyalarını silen) ve `NOFARM` kaldırıldı; yalnızca eski çiftçi yeri ve Nazlı'nın öğrenilen tarifleri satması kaldı.
-- `v186`: `GB.k_ekin`, EK1–EK8 (eski H kimlikleri v2.68 dönüştürmesine takılmasın diye), `L5.r` + `['ekin']`, `reqOK` 'ekin', `prog` 'fidan'/'ekin', `mkFiller` 'ekin' (Kemal yönlendirir), `partTarget` 'ekin'.
-- `v230`: `ekin1` (main, saman izi `straw`, korkuluk+kirpi `scare` çizimleri).
-- İkonlar: kendi `icon()` katmanı, yalnızca kendi 20 adı için önbellek silinir.
-- Kontrol: chk 0 hata; `/home/claude/scripts/farm_t.js` (EK1 motorla, gidiş, Barbaros sahnesi → home, kayık, adada güvenli, tarh bulunuyor, EK2/EK4 ödülleri).

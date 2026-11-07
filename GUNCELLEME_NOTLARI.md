@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.63 · 7 Kasım 2026
+
+### Oynanış
+
+- **Ateşte pişirme:** ateş isteyen yemekler (kavrulmuş, kızarmış, haşlanmış, tütsülenmiş, ızgara, tava, şiş, buğulama, çorbalar, ekmekler, güveç, pişmiş et ve balık…; 129 tarif) artık El yapımı listesinde yok. Tarifi yine kazanda öğrenirsin, yemeği **ateşte** yaparsın.
+- Kamp ateşine ya da kişilerin ateşlerine F, tıklama, dokunma ya da kolda A ile **pişirme menüsü** açılır. Menüde çiğ et ve balık közleme ile öğrendiğin ateş yemekleri var; her satırda Yap · ×5 · Hepsi. Kamp ateşinde ayrıca "Odun at" düğmesi ve ateşin kaç dakika yanacağı görünür.
+- Ateşin başında **Ateş ve Duman malzemesi harcanmaz**, ateş sağlar. Öbür malzemeler harcanır.
+- Her yemek ateşte ~3 saniyede pişer. ×5 ve Hepsi sırayla pişer, ateşin üstünde ve menüde ilerleme çubuğu görünür. Pişen yemek kendiliğinden çantana gelir; bu arada uzaklaşabilirsin. Yemek yanmaz.
+- Kamp ateşinde her yemek ateşten biraz yer. Ateş pişirme bitmeden sönerse pişmeyen malzemeler çantana döner.
+- Çantanda çiğ yiyecek olmasa da yapabileceğin bir ateş yemeği varsa kişilerin ateşinde menü açılır.
+- Ateşte ilk kez yapılan yemek 12 XP, sonrakiler 2 XP verir (el yapımı gibi). Közleme parça başına 1 XP.
+
 ## Versiyon 3.62 · 7 Kasım 2026
 
 ### Düzeltmeler
@@ -347,19 +359,3 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 - Güncelleme notları artık son 20 sürümü (3.25–3.44) tutar.
 
 ---
-
-## Versiyon 3.43 · 6 Kasım 2026
-
-### Oynanış
-- **Çiftçi Ekin (Çayır, ana görev):** korkuluğu her gece kayboluyor. Saman izlerini takip et; korkuluğu yürüten aç kirpiye bir yabani elma bırak. Görevden sonra Ekin "adama döneceğim" deyip gider.
-- **Barbaros'un yanında Ekin:** Barbaros'un dördüncü görevini (Yelken ipi) teslim edince Ekin enkazın yanında belirir; akıntı onu oraya atmış. Barbaros onu adasına götürür. Barbaros'un son görevi (gemi, ACT 2'ye geçiş) bu olaydan sonra gelir.
-- **Bereket Adası:** Barbaros'un yanındaki kayıkla gidilen küçük bir ada. Ekin'in evi, ambarı, tarlası, kuyusu, tavukları, fidan yerleri var. Canavar çıkmaz, mor ışık inmez, gece güvenlidir.
-- **Tarla geri geldi:** tırmıkla hazırla, tohum ek, sulama kabıyla sula, tırpanla biç. Ürünler sen adada değilken de büyür. Ekin tohum ve fidan satar; fidan dikince üç günde gerçek bir meyve ağacı olur.
-- **Ekin'in 7 yeni görevi:** dört alet, ilk başak, yeni korkuluk, ilk fidan, tarlayı büyütmek, bereketli sepet ve ekmek kokusu.
-- **Yeni tarifler:** Korkuluk, Hasat sepeti, Buğday unu, Ekmek.
-
-### Görsel
-- Ekin, kirpi ve devrilmiş korkuluk, saman izleri, adanın kumsalı ve iskelesi, ambar, kuyu, tavuklar, fidanlar; tohum keseleri, başak, un çuvalı, ekmek, korkuluk, hasat sepeti ve fidan resimleri.
-
-### Tasarım belgesi
-- "Çiftçi Ekin · Çayır → Bereket Adası" bölümü oyundaki haliyle güncellendi.
