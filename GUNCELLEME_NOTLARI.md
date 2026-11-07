@@ -8,6 +8,25 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.54 · 7 Kasım 2026
+
+### Oynanış
+
+- **Yeni biyoma varınca orada da iş var:** "Doğu geçidini aç" görevini Kayalık Dağ'daki Cadı Firuze'den (ya da "Dağ yolu"ndan sonra Avcı Doğan'dan), "Eşinden kalan izler" görevini Kül Diyarı'ndaki Cadı Mercan'dan da alabilirsin; Kemal'e dönmen gerekmez. Ödül yine bir kez.
+- "Doğu geçidini aç" görevi Kaya patlatıcı tarifini bilmeden de alınır; görev kartı tarifi kazanda öğrenmeni hatırlatır.
+- **Elmas Nine'nin sahnesi** artık ailenin son görevini teslim ettiğin an oynar; sonradan, bir yere giderken ya da Kemal'le konuşurken birden açılmaz.
+
+### Düzeltmeler
+
+- Köprü onarımı ve kaya yığını patlatmak (iki adada da) görev ödülünün üstüne fazladan XP vermiyor (köprü 120, geçit 400 XP).
+- Bir kişinin hemen yanında F, yerde ya da elde ne olursa olsun önce o kişiyle konuşur.
+- Ara sahne sürerken başarım kartı ve duyurular üstüne binmez; sahne bitince sırayla gelir.
+- Kemal geçit için doğru kazmayı söylüyor: kuvars ya da çelik kazma.
+
+### Arayüz
+
+- Görev kartı, tarifi henüz öğrenilmemiş bir şey varsa yazar: "Tarif: Kaya patlatıcı (kazanda öğren)".
+
 ## Versiyon 3.53 · 7 Kasım 2026
 
 ### Düzeltmeler
@@ -387,23 +406,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Yemek bölümüne "Bütün yemeklerin etkisi var" kuralı (kademeler, etki türleri, süre, can, fiyat) eklendi; Gizli şeyler'de dans ve ayna güncellendi.
-
----
-
-## Versiyon 3.34 · 5 Kasım 2026
-
-### Oynanış
-- **Adada yeni sırlar var.** Neler olduklarını söylemiyoruz; kazanda, suyun kenarında, gece gökyüzünde ve hiç beklemediğin yerlerde bulacaksın.
-- Bazı gecelerde adada uzakta duran kişi artık sen değilsin: o, mor ışığın etkisinde.
-- Börü'nün eskiden kazandığı bir kemer var; gövdeye giyilir, arenada da seçilebilir.
-
-### Başarımlar
-- İki yeni gizli başarım; bir gizli başarımın adı değişti. Başarım sayısı 46 oldu.
-
-### Arayüz
-- Bir oyuna devam ederken ekranda kısa, tek satırlık bir söz belirir.
-
-### Tasarım belgesi
-- Temel sistemler'e "Gizli şeyler" bölümü; "Mor ışıkta o" bölümü ve Başarımlar güncellendi.
 
 ---

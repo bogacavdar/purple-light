@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.53** ile birebir (7 Kasım 2026). Bu sürümde: tarifi kendisi veren kişi (Avcı Doğan) tanışmadan "!" alır, açık dünyada duyurular gün yazısından sonra sırayla, görev açılmadan köprü yalnızca "Kırık köprü", köprü onayında bekleyen seviye puanı, özellik tavanında "Sv N'de açılır". Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.54** ile birebir (7 Kasım 2026). Bu sürümde: E3 Cadı Firuze'den ve (T6'dan sonra) Avcı Doğan'dan, E4 Cadı Mercan'dan da alınır (yeni biyomda "!"), görev kartında eksik tarif satırı, Elmas Nine sahnesi son kuzen görevi teslim edilince oynar ve sahne boyunca duyurular bekler, köprü ve patlatmada görev ödülü dışında XP yok, F konuşma halkasında her şeyden önce kişiyi seçer. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -598,6 +598,8 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 | Köprü onarımı / Doğu geçidi | 40 / 320 |
 | Görevler, Börü'nün dersleri | tablolarda |
 
+**Görev dışı ek XP yok:** köprü onarmak ve kaya yığını/sıradağ patlatmak (ACT 1 ve ACT 2) kendi başına XP vermez; bunların XP'si yalnızca ilgili görevin ödülüdür.
+
 - **Yetenek ağacı** (Y): üç renkli ağaç — **Savaş** (kırmızı), **Ekonomi** (altın) ve **Dayanıklılık** (yeşil); her birinde 30 yetenek (toplam 90). Yetenekler sade, iki renkli ikonlu yuvarlaklardır; hepsi açılınca bir ağaç silüeti çizer. Başta yalnızca kök yetenek görünür; bir yetenek alınınca **yalnızca ona bağlı üstündekiler** açılır. Satın alma ikona tıklayarak. Fiyat ve seviye şartı kata göre: 100 (–), 250 (Sv 2), 400 (Sv 3), 600 (Sv 4), 1.000 (Sv 6), 1.800 (Sv 8), 3.000 (Sv 11), 5.000 (Sv 14). Tam liste "Yetenekler · Yetenek ağacı" bölümünde.
 - **Koşu** Savaş ağacının ilk yeteneğidir: yalnızca 100 sikke; seviye, köprü ya da Atılma şartı yok.
 - **Atılma** yetenek ağacında değildir: öğreticide Börü ücretsiz öğretir (bkz. "Oyun akışı › Öğretici").
@@ -798,7 +800,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
   - **Ahşap ev** (1.500): kalas duvarlar, kiremit çatı, panjurlu pencereler, taş baca, çiçeklik, basamak.
   - **Taş ev** (2.500): yontma taş duvarlar, arduvaz çatı, dumanı tüten baca, kemerli kapı, ışığı yanan pencereler, köşede sarmaşık, taş basamaklar.
   - **Konak** (5.000): iki katlı, beyaz sıvalı ve ahşap kirişli duvarlar, kiremit kırma çatı ve iki çatı penceresi, iki sütunlu ve üçgen alınlıklı giriş, çift kanatlı kapı, ışığı yanan çok pencere, iki baca, fenerler ve çalılar.
-- Yaprak barınağı dışındaki her evde **F = içeri gir**. **Kapının önünde F önce kapıyı seçer** (içeri gir): yerdeki toplanabilir bir şeyden önce gelir. Aynı öncelik kişiler için de geçerlidir: bir kişinin konuşma halkasının içinde **F önce kişiyi seçer** (konuş), yerdeki toplanabilirden önce. İçeride ada donar (canavarlar, oklar durur) ama saat, açlık ve hava sürer. **İçeride mor ışık gelmez.**
+- Yaprak barınağı dışındaki her evde **F = içeri gir**. **Kapının önünde F önce kapıyı seçer** (içeri gir): yerdeki toplanabilir bir şeyden önce gelir. **F önceliği:** bir kişinin konuşma halkasının içinde **F önce kişiyi seçer** (konuş): yerdeki toplanabilirden, yere kurulu eşyalardan ve eldeki olta/kapan/tuzağın kullanımından önce gelir. Ev kapısı, kamp ateşi ve kurulu tuzak ise kendi halkasının içinde önce gelir. İçeride ada donar (canavarlar, oklar durur) ama saat, açlık ve hava sürer. **İçeride mor ışık gelmez.**
 - Üst çubukta **Döşe** / **Dışarı çık**. Döşe kipinde envanterdeki ev eşyasını seç, ızgarada bir kareye tıkla (R ya da seçili eşyanın yanındaki görünür **Döndür** düğmesi döndürür; Döndür düğmesi yalnızca kare olmayan eşyalarda, ör. 1×2, 2×3, görünür); konmuş eşyaya tıklayınca geri alırsın. Kapının önü boş kalmalı; duvar eşyaları (raf, asma fener, perde, duvar halısı, resimler) üstteki duvar şeridine, halı ve kilim zemine (üstünden yürünür), diğerleri zemine konur. Eşyalar üst üste konmaz. **Döşeme her saatte yapılabilir;** gece kısıtı yalnızca uyku içindir.
 - **Ev içinde ekran:** ev içindeyken (Döşe kipi dışında da) alet çubuğu ve uyarılar odayı, kapıyı ve duvar şeridini örtmez; oda bu alanların arasına sığdırılır. Telefonda ev içinde **Vur** düğmesi gizlidir ve sol menü kapalı başlar.
 - **Döşe kipinin ekranı:** Döşe kipinde oda bütün ekranı kullanır. Eşya listesi odayı örtmez, ekranın altında **yatay bir şerit** olarak durur. Alet çubuğu, sol menü ve dövüş düğmeleri gizlenir; duyurular Döşe kipi bitene kadar bekler. Telefonda (yatay) eşya şeritten seçilip odadaki kareye **dokunarak** yerleştirilir.
@@ -824,7 +826,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
 
 - **Görev dışı süs işaret yoktur:** haritanın keşfedilmemiş yerlerinde görevle ilgisi olmayan süs işaretleri (gelip giden "?" gibi) yoktur; haritadaki her "?" bir yan görev işaretidir.
 - **Harita açıkken ekran yazıları üstüne binmez:** büyük harita açıkken gün başı yazısı ("YENİ BİR GÜN · N. Gün") ve benzeri ekran ortası duyurular harita penceresinin üstüne çizilmez; harita kapanınca gösterilir. Haritadaki yan kişi işaretleri yalnızca yan görev kuralına göre çıkar (ACT 1 › Yan görevler › Haritada yan görevler: keşfedilmiş yerde kişinin yerinde "?", keşfedilmemiş yerde yakınken sisli daire; biyom başına en çok 2).
-- **Bekleyen duyurular sırayla gelir:** harita, Döşe kipi ya da bir pencere yüzünden bekleyen duyurular, engel kalkınca **sırayla** gösterilir; her biri kendi süresi kadar ekranda kalır, üst üste binmez. Açık dünyada aynı anda gelen duyurular da (ör. gün başı yazısıyla birlikte "Tarla genişledi" gibi küçük bildirimler) aynı kurala uyar: sırayla gösterilir, üst üste binmez.
+- **Bekleyen duyurular sırayla gelir:** harita, Döşe kipi, bir ara sahne ya da bir pencere yüzünden bekleyen duyurular, engel kalkınca **sırayla** gösterilir; her biri kendi süresi kadar ekranda kalır, üst üste binmez. Açık dünyada aynı anda gelen duyurular da (ör. gün başı yazısıyla birlikte "Tarla genişledi" gibi küçük bildirimler) aynı kurala uyar: sırayla gösterilir, üst üste binmez.
 
 - **Kazan, Demirhane ve Pazar düğmesiz:** sol menüde Kazan, Demirci ve Pazar düğmeleri, B / T / P kısayolları ve uzaktan basınca yol gösteren ok **yoktur**. Kazan Zümrüt'ün yanında kazana dokunarak, demirhane Dursun'la (ya da kuzen demircilerle) konuşarak, pazar Nazlı'yla konuşarak açılır; yerlerini oyuncu kendisi bulur (öğreticinin ve görevlerin kendi okları sürer).
 - Sağ altta küçük harita; **M** büyük harita (tekerlek, sürükleme ya da +/− ile yakınlaştır). Geçtiğin yerin çevresi açılır (Kâşif gözü ile iki kat). Gece harita kararır ama kişiler görünür.
@@ -1487,7 +1489,7 @@ Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartalla
 | Vaşak | saldırgan | 1.050 | 112 | 92 | 252 | kanama etkisi | Vaşak eti %100 ×1–2; Vaşak derisi %85; Kemik %50 ×1–2 |
 | Mağara ayısı | saldırgan | 2.520 | 137 | 44 | 436 | kanama etkisi | Mağara ayısı eti %100 ×2–3; Mağara ayısı derisi %90; Ayı pençesi %60 ×1–2; Hayvan yağı %60 ×1–2; Kemik %50 ×1–2 |
 
-**Kayalık Dağ canlıları:** Yaban öküzü Seviye 4'ten önce doğmaz. XP sütunu Kayalık Dağ'ın ×2 XP çarpanı uygulanmış değerdir (Sistemler › Gelişim).
+**Kayalık Dağ canlıları:** Yaban öküzü Seviye 4'ten önce doğmaz. **Deri parçası:** Dağ keçisi ve Muflon %80, Yaban öküzü %100, Vaşak %85, Mağara ayısı %90 (derisinin yanında). XP sütunu Kayalık Dağ'ın ×2 XP çarpanı uygulanmış değerdir (Sistemler › Gelişim).
 
 ### Kül Diyarı — Ölümcül
 
@@ -1656,12 +1658,18 @@ XP sütunu bu biyomun ×1,5 XP çarpanı uygulanmış değerdir (Sistemler › G
    - **Kişi bir şey söylemez:** görevi tarif yüzünden bekleyen kişi "önce şu tarifi öğren" demez; görevsiz kalmamak için yol gösteren Kemal'dir (aşağıdaki ayak işi, 7. madde).
    - **Tarifi aynı kişi veriyorsa "!" yanar:** görevin eksik tarifini **görevi veren kişinin kendisi** ilk konuşmada yazıyorsa (ör. Avcı Doğan: Kamış çizme ve Panzehir), o kişi henüz tanışılmamış olsa da başında "!" çıkar; tarif ilk konuşmada yazılır ve görev aynı konuşmada verilir.
    - **Görevsiz kalınmaz:** bütün görevler kilitliyse ve sıradaki görevin eksiği bir tarifse Kemal "**X tarifini öğren**" ayak işini verir (Zümrüt'ün kazanında öğrenince kendiliğinden biter, 15 sikke · 15 XP). Tarifin içindeki bir malzemeyi hiç görmediysen önce onu getirtir. Kemal'in "alet dövdür" ve "ışık yap" ayak işleri de tarif bilinmiyorsa önce tarifi öğretir. **Hangi görevin tarifine yönlendirileceği** 6. maddedeki "!" sırasıyla seçilir: önce oyuncunun bulunduğu biyomdaki görev, sonra erken biyom, sonra kişinin görev sırası.
-   - **Doğu geçidi de bu kurala girer:** Kemal'in "Doğu geçidini aç" (E3) görevi **Kaya patlatıcı** tarifi Zümrüt'ün kazanında öğrenilmeden verilmez (önceden görev tarifi yalnızca kitaba yazıyordu; Kaya patlatıcının içindeki çömlek kazanda görünmüyordu). Kemal'in ayak işi zinciri adım adım götürür: önce görülmemiş malzemeler (ör. Yarasa gübresi), sonra tarifin içindeki ve henüz hiçbir türü öğrenilmemiş parça (Kaya patlatıcı için **Nehir çömleği** → Islak nehir kili → Nehir kili getir), en sonda Kaya patlatıcı. Her "tarifini öğren" ayak işi o tarifi kitaba da yazar, kazanda görünsün diye. Bu sürümden önce tarifsiz alınmış E3 açılışta geri bırakılır (kuralı).
+   - **Varış görevleri tarif yüzünden kilitlenmez (7 Kasım 2026):** bir biyoma varış ya da geçiş görevi (Kemal'in "Doğu geçidini aç" E3'ü gibi) istediği eşyanın tarifi bilinmeden de verilir; görev kartında "Tarif: X (kazanda öğren)" satırı görünür. Böylece yeni biyoma varınca "!" hep bulunur (Kayalık'ta Firuze). Tarif bilinmiyorsa Kemal'in ayak işi zinciri yine adım adım götürür: önce görülmemiş malzemeler (ör. Yarasa gübresi), sonra tarifin içindeki ve henüz hiçbir türü öğrenilmemiş parça (Kaya patlatıcı için **Nehir çömleği** → Islak nehir kili → Nehir kili getir), en sonda Kaya patlatıcı. Her "tarifini öğren" ayak işi o tarifi kitaba da yazar, kazanda görünsün diye.
    - Bu kural gelmeden önce alınmış ve sürmekte olan görevler (ör. tarifi bilinmeden alınmış Gelincik boyası) olduğu gibi kalır; istenirse iptal edilebilir.
 6. **En çok 2 "!".** Haritada aynı anda en fazla **2 kişide** görev bekler. Bir görev daha açılırsa sıraya girer; bekleyen iki görevden biri tamamlanınca görünür. Sıra (6 Kasım 2026, Boğaç): **önce oyuncunun bulunduğu biyomdaki görevler**, sonra erken biyom, sonra kişinin görev sırası (ör. Orman'a varınca Usta Sinan'ın R2 "!"si görünür). (Kemal'in ayak işleri bu sayıya girmez.)
+
+    - **Yeni biyomda en az bir "!" (7 Kasım 2026):** oyuncu bir biyoma ilk kez vardığında o biyomda en az bir kişide "!" bulunur. Bunun için biyomun ilk ana görevi, Kemal'in yanında, o biyoma giden yolu açan ya da biyomda yaşayan bir kişiden de alınabilir: Kayalık Dağ'ın E3'ü Kayalık'taki Cadı Firuze'den (ayrıca T6 bitince Avcı Doğan'dan), Kül Diyarı'nın E4'ü Cadı Mercan'dan. Mor Kristal Vadisi'nde Barbaros'un L1'i E5 (varış) bitince kendiliğinden açılır. Bataklık'ta Doğan'ın görevleri E2 bitince açılır.
+
 7. **Görevsiz kalınmaz.** Hiç görev yoksa (bütün zincirler kilitliyse) **Kemal'in başında ! çıkar** ve bir sonraki kilitli görevin eksik koşulunu tamamlatan bir iş verir ("Kemal'in ayak işleri", aşağıda). Oyuncu bunun bir eksiklikten doğduğunu anlamaz: Kemal'in gerçekten bir işi varmış gibi konuşur.
 8. **İstenenler biyomdan.** Her kişi kendi biyomunun malzemesini ister; yalnızca **son görevleri** bir sonraki biyomun **bol ve kolay** (zararsız ya da toplanabilir) bir şeyini isteyebilir. Akış kolaydan zora, Çayır'dan Mor Kristal Vadisi'ne gider.
 9. **Kendiliğinden biten işler.** Bir yere gitmek, biriyle tanışmak, köprüyü onarmak, sıradağı patlatmak, izleri bulmak ve Barbaros'un gemisini kurmak: bunlar yapıldığı anda biter, ödül oracıkta gelir (geri dönüp teslim etmek gerekmez). Kemal'e bu yüzden yalnızca yeni iş almaya gidilir.
+
+    - **Görev kartında eksik tarif:** görevin istediği eşyanın tarifi henüz öğrenilmemişse görev kartında ayrı bir satır görünür: "Tarif: X (kazanda öğren)" (ör. "Tarif: Kaya patlatıcı (kazanda öğren)").
+
 10. **Ödül.** Sikke + XP; bazı görevler ayrıca tarif yazar. Kabaca biyoma göre: Çayır 20–120, Orman 40–180, Bataklık 120–300, Kayalık Dağ 200–420, Kül Diyarı 300–550, Mor Kristal Vadisi 450–800 sikke.
 
 ### Yol gösterme: ok ve sarı bölge
@@ -1737,12 +1745,18 @@ Kumsalda seni bulan yaşlı denizci; sakin, kollayıcı, öğretici. Kemal'de ya
 |---|---|---|---|---|---|---|
 | E1 | Ateşlik çalı | Getir: 6 Dal, 2 Kuru ot | Öğretici bitti ya da geçildi | Dursun 1, Zümrüt 1 | – | 20 · 15 XP |
 | E2 | Bir köprüyü onar | Ana köprü (Orman ↔ Bataklık): 20 odun (her tür odun sayılır), onay penceresiyle | Orman keşfedildi · Seviye 12 | Doğan 1 ve Bataklık'taki görevler | Köprü onarımı | 150 · 120 XP |
-| E3 | Doğu geçidini aç | 2 Kaya patlatıcı + 4. kademe ya da daha iyi kazma (Kuvars ya da Çelik); kaya yığınına E, onay | Kayalık Dağ keşfedildi · Seviye 10 · **Kaya patlatıcı tarifi kazanda öğrenilmiş** | Kül Diyarı'ndaki görevler | Kaya patlatıcı | 300 · 400 XP |
-| E4 | Eşinden kalan izler | Bul: 6 iz (önceden bulunanlar sayılır) | Kül Diyarı keşfedildi | E5, Gemi tarifi | – | 300 · 600 XP |
+| E3 | Doğu geçidini aç | 2 Kaya patlatıcı + 4. kademe ya da daha iyi kazma (Kuvars ya da Çelik); kaya yığınına F, onay | Kayalık Dağ keşfedildi · Seviye 10 (Kaya patlatıcı tarifi bilinmeden de alınır; görev kartında "Tarif: Kaya patlatıcı (kazanda öğren)" görünür). Kemal'den, T6 bitince **Avcı Doğan**'dan (Kemal'e dönmeden) ya da Kayalık Dağ'daki **Cadı Firuze**'den alınabilir (Firuze, kazanının buharında doğudaki kaya yığınının ardından tüten dumanı görür ve yolu açmanı ister) | Kül Diyarı'ndaki görevler | Kaya patlatıcı | 300 · 400 XP |
+| E4 | Eşinden kalan izler | Bul: 6 iz (önceden bulunanlar sayılır) | Kül Diyarı keşfedildi. Kemal'den ya da Kül Diyarı'ndaki **Cadı Mercan**'dan alınabilir (Mercan kazanının dumanında izleri görür) | E5, Gemi tarifi | – | 300 · 600 XP |
 | E5 | Kıyıdaki duman | Ulaş: Mor Kristal Vadisi'ne git (Kemal dumanı merak eder; kimseyi söylemez) | E4 | E6, Barbaros 1 | – | 200 · 300 XP |
 | E6 | Saliha'nın çorbası | Getir: 3 Yabani havuç, 2 Rezene, 2 Tavşan eti | E5 · Seviye 5 | E7 | – | 70 · 45 XP |
 | E7 | Bulut gibi yastık | Getir: 8 Keklik tüyü, 4 Bıldırcın tüyü | E6 · Seviye 7 | E8 | – | 100 · 60 XP |
 | E8 | Kurtların uluması | Avla: 3 Kurt · Getir: 2 Kurt dişi | E7 · Seviye 9 | – | – | 130 · 80 XP |
+
+**E3 ve E4 başka kişilerden alınınca sözleri:**
+
+- **Avcı Doğan (E3, T6 bitince):** "Dağ yolunu gördün. Kemal'in sözünü ettiği geçit orada: doğuda, sıradağın göğsünü kocaman bir kaya yığını kapatıyor; ardında Kül Diyarı. Kemal'e dönmene gerek yok. 2 kaya patlatıcı ve en az kuvars ya da çelik kazma ile yığını aç."
+- **Cadı Firuze (E3):** "Kazanımın buharına bak… Doğuda, sıradağın göğsündeki kaya yığınının ardından bir duman tütüyor. Orası Kül Diyarı. Yolu aç: 2 kaya patlatıcı ve en az kuvars ya da çelik kazma lazım."
+- **Cadı Mercan (E4):** "Kazanımın dumanında bir şey görüyorum… Mor parıltılar: kıyıda, ormanda, bataklıkta. Eşinden kalan izler bunlar. Altısını da bul; bulduklarını kitabının İzler sekmesinde okursun."
 
 Kemal'e gidiş sayısı: ACT 1 boyunca 5 görev + 5 teslim. Arada ayak işi ancak bütün zincirler kilitliyse çıkar (aşağıdaki zincirler birbirini açtığı için nadiren).
 
@@ -2041,7 +2055,7 @@ Yirmi yıldır bataklıkta oğlunu bekleyen avcı.
 | # | Görev | İstenen | Açılma | Açar | Ödül |
 |---|---|---|---|---|---|
 | TU1 | Bazalt ve kükürt | Getir: 6 Bazalt, 4 Kükürt | KA5 · Kül Diyarı keşfedildi | TU2 | 340 · 500 XP |
-| TU2 | Kara çelik kazma | Dövdür: Kara çelik kazma (eskiden Bazalt kazma) | TU1 | TU3 | 360 · 540 XP |
+| TU2 | Kara çelik kazma | Dövdür: Kara çelik kazma | TU1 | TU3 | 360 · 540 XP |
 | TU3 | Akrep ve kertenkele | Avla: 2 Ateş akrebi, 1 Lav kertenkelesi | TU2 | TU4 | 440 · 680 XP |
 | TU4 | Lavın kenarı | Dövdür: Kara çelik kılıç (eskiden Lav camı kılıcı) | TU3 | TU5 | 520 · 800 XP |
 | TU5 | Obsidyen | Getir: 4 Obsidyen (Kül Diyarı'nın lav kayaları; Turan bu görevde Kudret'ten de söz eder) | TU4 | TU6, Kudret 1 | 480 · 760 XP |
