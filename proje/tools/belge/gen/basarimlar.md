@@ -4,7 +4,7 @@
 | İlk gün | İlk günü ve geceyi hayatta atlat. | gece1 | ()=>day>=2 |
 | Meraklı çırak | 25 tarif bul. | tarif25 | ()=>found.length>=25 |
 | İlk av | Bir hayvan avla. | av1 | ()=>Object.keys(kills).some(k=>kills[k]>0) |
-| Köprücü | Kırık köprüyü onar. | kopru | ()=>!!bridge.fixed |
+| Köprücü | Bir köprüyü onar. | kopru | ()=>!!bridge.fixed |
 | Bir hafta | 7. güne ulaş. | hafta | ()=>day>=7 |
 | Sadık dost | Bir robot köpeğin olsun. | kopek | ()=>dogs.length>0 |
 | Balıkçı | 10 balık tut. | balik | ()=>fishTotal>=10 |
@@ -13,7 +13,7 @@
 | Kesesi dolu | Aynı anda 1000 sikken olsun. | zengin | ()=>coins>=1000&&!window.__plInf |
 | Kazan ustası | 100 tarif bul. | tarif100 | ()=>found.length>=100 |
 | Kurt avcısı | 10 kurt avla. | kurt | ()=>k_('Kurt')>=10 |
-| Kâşif | Adanın yarısını keşfet. | kesif | ()=>exploredCount>=W*H*.5 |
+| Kâşif | Adanın yarısını keşfet. | kesif | ()=>exploredCount>=MAPN*.5 |
 | İz sürücü | Eşinden kalan bütün izleri bul. | iz | ()=>clues.size>=CLUES.length |
 | Hatırladım | Bütün anılarını geri getir. | ani | ()=>mems.size>=MEMS.length |
 | Adada bir ay | 30. güne ulaş. | ay | ()=>day>=30 |
@@ -23,8 +23,8 @@
 | Kazazede | Denizci Barbaros'un yeni gemisini kur. | levent | ()=>!!(window.__v55&&window.__v55.d.indexOf('dz4')>=0) |
 | Gökyüzüne | Gökay ile roketi fırlat. | roket | ()=>!!(window.__tuna&&window.__tuna.launched) |
 | Açık deniz | Barbaros'un gemisiyle adadan ayrıl: ACT 2. | act2 | ()=>!!(window.__plDz&&window.__plDz.D.act2) |
-| İlk düşüş | Bir kez öl ya da bayıl. | olum1 | ()=>deaths>=1 |
-| İnatçı | 5 kez öl ya da bayıl, yine de devam et. | olum5 | ()=>deaths>=5 |
+| İlk düşüş | Bir kez bayıl. | olum1 | ()=>faintsAll()>=1 |
+| İnatçı | 5 kez bayıl, yine de devam et. | olum5 | ()=>faintsAll()>=5 |
 | İlk reis | Bir reis öldür. | reis1 | ()=>bossKinds()>=1 |
 | Reis avcısı | 5 farklı reis öldür. | reis5 | ()=>bossKinds()>=5 |
 | Reislerin korkusu | 10 farklı reis öldür. | reis10 | ()=>bossKinds()>=10 |
@@ -40,4 +40,9 @@
 | Avcıların avcısı | İki adadaki her canlı türünden en az birini öldür. | canlitum | ()=>{const L=allAnim();return L.length>0&&L.every(n=>KS.has(n))} |
 | Ganimet avcısı | Canlılardan düşebilecek her eşyayı en az bir kez elde et. | dusentum | ()=>{const L=allDrop();return L.length>0&&L.every(n=>IS.has(n))} |
 | Oyunlardaki gibi | Ana menüde “cheat” yazdın: hile modu açıldı. | hile | ()=>{try{return localStorage.getItem('hammadde.cheatach')==='1'\|\|localStorage.getItem('hammadde.cheatok')==='1 |
-| Platin | Bütün başarımları kazan. | platin | ()=>ACH.every(a=>a[0]==='platin'\|\|got[a[0]]) |
+| Mor ışıkta o | Gece beliren sevdiğin kişiyi 5 farklı gecede gördün. | klon | ()=>!!(window.__plKlonN&&window.__plKlonN()>=5) |
+| Görünmezlik iksiri | Zümrüt'ün sabrını üç kez taşırdın. | gorunmez | ()=>{try{return localStorage.getItem('hammadde.gorunmez')==='1'}catch(e){return false}} |
+| Konuk | Mor ışığın konuklarına dokunmadın. | konuk | ()=>{try{return localStorage.getItem('hammadde.konuk')==='1'}catch(e){return false}} |
+| Denizde yürüyen | Denizin üstünde yürüdün. | deniz | ()=>{try{return localStorage.getItem('hammadde.denizach')==='1'}catch(e){return false}} |
+| Kehribar gözlüm | Sevdiğin kişiyi kehribar gözlü yarat ve ACT 1'i tamamla. | kehribar | ()=>{try{const D=window.__plDz&&window.__plDz.D;return LOOK.love.eye==='#a6620c'&&(ISLE===2\|\|!!(D&&D.act2))}ca |
+| Platin | Bütün başarımları kazan. | platin | ()=>ACH.every(a=>NOPLAT.has(a[0])\|\|got[a[0]]) |

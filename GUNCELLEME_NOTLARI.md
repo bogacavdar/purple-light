@@ -8,6 +8,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.58 · 7 Kasım 2026
+
+Oyun aynı; bu sürüm tasarım belgesini tamamlar.
+
+### Tasarım belgesi
+
+- Tarif listesi tamamlandı: 971 tarif.
+- Eşya dizini tam: her eşyanın nereden geldiği yazıyor (mağara buluntuları ve mağara canlılarının düşürdükleri hangi mağarada, deniz balıkları hangi bölgede ve hangi oltayla, Börü'nün kemeri nasıl alınır).
+- Adadaki ağaç sayıları güncellendi.
+- Çelik kazma tarif tablosuna eklendi.
+
+### Proje
+
+- Belgeyi oyundan üreten araçlar artık mağaraların ve deniz avının verisini de okuyor.
+
 ## Versiyon 3.57 · 7 Kasım 2026
 
 ### Oynanış
@@ -354,20 +369,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - 24 yan görev, Usta Sinan'ın yeni görev listesi, mağara ve ev görünüşleri, tam ekran, başarım kartı, takip şeridi; Godot planına "Neden Godot, neden Unity değil" bölümü.
-
----
-
-## Versiyon 3.38 · 6 Kasım 2026
-
-### Arayüz
-- **El yapımı listesi sıkı:** her tarif tek satır; ekranda alt alta 12–15 tarif görünür. Malzemeler satırda yazmaz: bilgisayarda satırın üstüne gelince, telefonda tarifin adına dokununca küçük bir kutuda açılır.
-- **Takip şeridi düzenli:** takip edilen tariflerin kutucukları sütun sütun alt alta durur, satırlar aynı genişliktedir. Uzun adlar kısalır; üstüne gelince tam adı görünür.
-
-### Ses
-- **Canlı sesleri artık ıslık gibi değil:** "bip bip biiip" diye çınlayan ince sesler kalktı. Sesler daha kalın, nefesli ve hırıltılı; kuşlar tek bir ötüş, kemirgenler tek bir ciyak, kerevit ve böcekler kuru bir hışırtı çıkarır.
-- **Tavşan:** boğuk bir ayak sesi ve kısa, nefesli bir ciyak.
-
-### Tasarım belgesi
-- El yapımı listesi, takip şeridi ve canlı sesleri güncellendi.
 
 ---

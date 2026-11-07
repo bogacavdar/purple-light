@@ -101,7 +101,14 @@ for isle, A, names in ((1, A1, BN1), (2, A2, BN2)):
         SRC[tn + ' odunu'].append('Balta ile %s ağacından: %s (%s)' % (tn, biolist(v['b'], names), act))
         fr = v['type'].get('fruit')
         if fr: SRC[fr].append('%s ağacından toplanır: %s (%s)' % (tn, biolist(v['b'], names), act))
+# mağaralar ve deniz avı (q10.js → cave.json)
+CV = L('cave.json')
+CAVE_OF = {}
+for c in CV['caves']:
+    for k in c['kinds'] + [c['boss']]: CAVE_OF[k] = c
+def cave_where(c): return '%s, %s, giriş Sv %d' % (c['name'], BN1[c['b']], c['lv'])
 def anim_bio(k):
+    if k in CAVE_OF: return 'ACT 1 · ' + cave_where(CAVE_OF[k])
     for i, Lb in enumerate(I1B):
         if k in Lb: return 'ACT 1 · ' + BN1[i]
     for b, La in I2C['anim'].items():
@@ -125,6 +132,22 @@ for z, T in FISHT.items():
 for n in ['Gece sefası', 'Mor kıymık']:
     pass
 SRC['Mor kıymık'].append('Gece balık tutarken %5 ihtimalle oltaya takılır')
+for c in CV['caves']:
+    for n in c['raw']:
+        SRC[n].append('Mağarada yerden toplanır: %s (ACT 1)' % cave_where(c))
+for k, D in CV['anim'].items():
+    if k in ANIM: continue   # ANIM'de olanlar yukarıda (anim_bio mağarayı yazar)
+    for d in D.get('drops', []):
+        SRC[d[0]].append('%s %s düşürür %s (ACT 1 · %s)' % ('Mağara reisi' if D.get('boss') else 'Av:', k, pct(d[3]), cave_where(CAVE_OF[k])))
+for z in CV['sea'] or []:
+    for n, wt in z['fish']:
+        SRC[n].append("Deniz avı: %s (Gemici Poyraz'ın teknesiyle, Sv %d+, %s) %s" % (z['n'], z['lv'], z['rod'], pct(wt / 100)))
+_b = CV['belt']
+if _b.get('eq'):
+    SRC[_b['n']].append("Börü'yü silahsız 50 yumrukla yenince verir (gövde, +%d savunma)" % _b['eq'].get('def', 0))
+    P.setdefault(_b['n'], _b.get('price'))
+for _n, _v in (CV.get('price') or {}).items():
+    if P.get(_n) is None: P[_n] = _v
 for s, pr in DB['seeds'].items():
     SRC[s].append('Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar')
 for c, pr in DB['crops'].items():
