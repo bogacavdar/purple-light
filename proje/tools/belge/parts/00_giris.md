@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.58** ile birebir (7 Kasım 2026). Bu sürümde: yalnızca tasarım belgesi ve belge araçları (oyun aynı): 971 tarif, eşya dizini tam (her eşyanın nereden geldiği; mağara buluntuları, deniz balıkları, Börü'nün kemeri), ağaç sayıları, Çelik kazma. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.59** ile birebir (7 Kasım 2026). Bu sürümde: Kül Diyarı girişinde Kül cini Seviye 36'dan, Mor Kristal girişinde Kristal örümcek ve Işık engereği Seviye 44'ten; kişilerin ~2 karo çevresinde yerde toplanabilir olmaz; anı ve ada halkı sahneleri Esc ya da dışına basınca biter. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 

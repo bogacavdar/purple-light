@@ -1,5 +1,7 @@
 ## Kişiler (tanıtımlar ve hikâyeler)
 
+> **Kişilerin çevresi:** konuşulabilir her kişinin ~2 karo çevresinde yerde toplanabilir (taş, kum, çakıl, dal…) serpilmez ve yeniden çıkmaz; F önce yerdeki eşyayı aldığı için (Boğaç) kişiyle konuşma böyle engellenmez (ACT 1 › Adanın yerleşimi › Haritadaki miktarlar).
+
 
 ### İsimler
 

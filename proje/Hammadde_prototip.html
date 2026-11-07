@@ -1378,7 +1378,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.58</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.59</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1453,7 +1453,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.58 · 7 Kasım 2026</h2><p>Oyun aynı; bu sürüm tasarım belgesini tamamlar.</p><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.59 · 7 Kasım 2026</h2><h3>Denge</h3><ul><li>Kül Diyarı'nın girişinde Kül cini Seviye 36'dan önce çıkmaz; ilk adımlarda yalnızca Kül böcekleri var.</li><li>Mor Kristal Vadisi'nin girişinde Kristal örümcek ve Işık engereği Seviye 44'ten önce çıkmaz.</li></ul><h3>Düzeltmeler</h3><ul><li>Konuşabileceğin kişilerin dibinde artık yerde toplanacak bir şey (taş, kum, dal…) çıkmaz; F'ye basınca doğrudan kişiyle konuşursun (Barbaros'un yanındaki kum gibi).</li><li>"Bir anı geri geldi" ve ada halkı sahneleri Esc'e ya da dışına basınca biter (sonuna kadar okunmuş sayılır). Eskiden bayıldıktan sonra açılan anı Esc ile kapanmıyor, arkada ada donmuş bekliyordu.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -7535,6 +7535,10 @@ function memNext(){if(!memCur)return;const m=MEMS[memCur.i];if(memCur.line<m.L.l
   const i=memCur.i,again=memCur.again;memCur=null;memOv.hidden=true;
   if(!again){gainXP(25+i*15);toast(`Anı defterine yazıldı: "${MEMS[i].n}" (Kitap › Anılar)`);if(mems.size>=MEMS.length)setTimeout(()=>toast('Bütün anılar geri geldi. Sisli Ada seni bekliyor.'),1500)}}
 $('mem-go').addEventListener('click',memNext);
+// v3.59 (CLAUDE.md "pop up dışına basmak = anladım"; SON-03): Esc or a click outside the card ends the memory as if read to the end (it was the only way out: the island stood frozen behind it)
+function memSkip(){if(!memCur)return;memCur.line=MEMS[memCur.i].L.length-1;memNext()}
+addEventListener('keydown',e=>{if(memCur&&e.code==='Escape'){e.preventDefault();e.stopImmediatePropagation();memSkip()}},true);
+memOv.addEventListener('click',e=>{if(memCur&&e.target===memOv)memSkip()});
 let memLast=0;
 function memLoop(now){if(!memCur)return;const dt=Math.min(.05,Math.max(0,(now-(memLast||now))/1000));memLast=now;memCur.t+=dt;memScene(memC,memCur.i,memCur.t,memCur.line);requestAnimationFrame(memLoop)}
 function memUnlock(i){if(mems.has(i))return;mems.add(i);memQ.push(i)}
@@ -10820,7 +10824,10 @@ function line(){const S=scOf(cur.g);$('nsc-t').innerHTML=S.L[cur.line];$('nsc-go
 function next(){if(!cur)return;const S=scOf(cur.g);if(cur.line<S.L.length-1){cur.line++;line();if(S.bl!=null&&cur.line===S.bl)try{audio.play('hum',{vol:.6})}catch(e){}return}
   const g=cur.g,again=cur.again;cur=null;ov.hidden=true;if(!again&&isFam(g)){FAMX().mark();gainXP(FAMX().xp||300);toast('Elmas Nine: ailenin sırrı çözüldü (Kitap › Ada halkı)')}else if(!again){ST.s[g]=true;gainXP(40);toast(`${ST_[g].lost}: hikâye tamamlandı (Kitap › Ada halkı)`);try{if(window.__v57&&window.__v57.quest)window.__v57.quest({})}catch(e){}}}
 $('nsc-go').addEventListener('click',next);
-addEventListener('keydown',e=>{if(!cur)return;if(e.code==='Enter'||e.code==='Space'||e.code==='KeyE'){if(!e.repeat)next();e.preventDefault();e.stopImmediatePropagation()}},true);
+addEventListener('keydown',e=>{if(!cur)return;if(e.code==='Enter'||e.code==='Space'||e.code==='KeyE'){if(!e.repeat)next();e.preventDefault();e.stopImmediatePropagation()}else if(e.code==='Escape'){skipSc();e.preventDefault();e.stopImmediatePropagation()}},true);
+// v3.59 ("pop up dışına basmak = anladım"): Esc or a click outside the card ends the scene as if watched to the end
+function skipSc(){if(!cur)return;cur.line=scOf(cur.g).L.length-1;next()}
+ov.addEventListener('click',e=>{if(cur&&e.target===ov)skipSc()});
 function loop(now){if(!cur)return;requestAnimationFrame(loop);const dt=Math.min(.05,Math.max(0,(now-(lastT||now))/1000));lastT=now;cur.t+=dt;cur.lt+=dt;draw(sg,cur.g,cur.t,cur.line,cur.lt)}
 const BG={
  sky:(p,g,t,top,c1,c2)=>{const gr=g.createLinearGradient(0,0,0,top);gr.addColorStop(0,c1);gr.addColorStop(1,c2);g.fillStyle=gr;g.fillRect(0,0,240,top)},
@@ -21357,8 +21364,8 @@ try{const r=REC.get('Kamış çizme');if(r){let c=0;for(const [m,q] of r.i)c+=(P
 // spot is the one picked around the player, the map is never scanned). Side quests' creatures (spawnMob) do not ask.
 // v3.55 (belge ACT 1 › Kuşaklar: Kayalık, Kül, Mor Kristal): depth limits [Giriş, Orta] and, for the creatures with a rule, from which level they come in [Giriş, Orta] (null: not there); the rest always
 const BANDR={3:{b:[45,85],r:{'Yaban öküzü':[28,0],'Kartal':[30,28],'Vaşak':[null,30],'Mağara ayısı':[null,null]}},
-  4:{b:[30,60],r:{'Lav kertenkelesi':[36,36],'Kor yarasası':[36,36],'Ateş akrebi':[null,36],'Kül kurdu':[null,38],'Kara ejder':[null,null]}},
-  5:{b:[25,55],r:{'Gölge kurdu':[null,45],'Kristal golem':[null,null]}}};
+  4:{b:[30,60],r:{'Kül cini':[36,36],'Lav kertenkelesi':[36,36],'Kor yarasası':[36,36],'Ateş akrebi':[null,36],'Kül kurdu':[null,38],'Kara ejder':[null,null]}},
+  5:{b:[25,55],r:{'Kristal örümcek':[44,0],'Işık engereği':[44,0],'Gölge kurdu':[null,45],'Kristal golem':[null,null]}}};
 window.__plSpawnOK=(k,x,y)=>{try{if(ISLE!==1)return true;const bx=(bridge.x0+bridge.x1+1)/2*T,by=bridge.cy,d=Math.hypot(x-bx,y-by)/T;
   if(k==='Oklu kirpi')return lvl>=14||(lvl>=10&&d<=100);
   const bi=bioAt(x,y);if(bi>=3&&bi<=5){const R=BANDR[bi],r=R.r[k];if(!r)return true;const dp=LDEPTH[Math.floor(y/T)*W+Math.floor(x/T)],band=dp<=R.b[0]?0:dp<=R.b[1]?1:2;if(band===2)return true;const v=r[band];return v!=null&&lvl>=v}   // v3.55: [Giriş, Orta] = from which level (null: never), Derin: always
@@ -21370,6 +21377,21 @@ window.__plSpawnOK=(k,x,y)=>{try{if(ISLE!==1)return true;const bx=(bridge.x0+bri
 const scOn=()=>['npcsc','voyov','rkov'].some(id=>{const e=$(id);return !!(e&&!e.hidden)});   // v3.54 (KUL-01): a story scene holds the notes and cards too
 const mapOn=()=>(craftOpen&&mode==='map')||!!(window.__v56&&window.__v56.on&&window.__v56.edit)||scOn();   // v3.49: Döşe too
 window.__plQuiet=mapOn;
+// v3.59 (belge ACT 1 › Haritadaki miktarlar: "Kişilerin dibinde toplanabilir olmaz"): no gatherable lies within ~2 tiles of a person you can talk to
+// (F takes what is on the ground first, Boğaç). People are read once a second (their spots, so a person who moves counts where he stands now);
+// only the nodes in view are checked (no map scan while playing), a whole pass runs once when a game starts; a respawn never lands there.
+const PR=32;let PPL=[],pplAll=false;
+function pplNow(){const L=[];const add=o=>{if(o&&isFinite(o.x)&&o.x>-9e4)L.push(o.x,o.y)};
+  for(const f of [()=>npc,()=>farmer,()=>market,()=>smith,()=>durmus,()=>alp,()=>usta,()=>toygar,()=>witchShown&&witch,()=>trader.state==='here'&&trader,()=>denizci.state!=='away'&&denizci,()=>kaptan.state==='here'&&kaptan,()=>wiz.shown&&wiz,()=>lampman.shown&&lampman]){try{add(f())}catch(e){}}   // one by one: a name missing on this island does not drop the others
+  try{const G=window.__plGIVER||{};for(const g in G){try{add(G[g]())}catch(e){}}}catch(e){}
+  try{for(const o of XTRA){if(!o.on||!o.on())continue;let l='';try{l=String(typeof o.label==='function'?o.label():o.label||'')}catch(e){}if(/^Konuş/.test(l))add(o)}}catch(e){}
+  return L}
+const nearP=(x,y)=>{for(let i=0;i<PPL.length;i+=2){const dx=PPL[i]-x,dy=PPL[i+1]-y;if(dx<PR&&dx>-PR&&dy<PR&&dy>-PR&&dx*dx+dy*dy<PR*PR)return true}return false};
+const pplClear=L=>{for(const n of L){if(!n.alive||n.mine)continue;const R=RES[n.name];if(R&&R.cave)continue;if(nearP(n.x,n.y)){n.alive=false;n.t=Math.max(n.t||0,(R&&R.respawn)||30)}}};
+{const _fs=findSpot;findSpot=function(){let r=null;for(let k=0;k<6;k++){r=_fs.apply(this,arguments);if(!r||!nearP(r.x,r.y))return r}return r}}
+{const _rz=resetState;resetState=function(){pplAll=false;return _rz.apply(this,arguments)}}
+{const _rs=restore;restore=function(){pplAll=false;return _rs.apply(this,arguments)}}
+setInterval(()=>{try{if(onTitle)return;PPL=pplNow();if(!pplAll){pplAll=true;pplClear(nodes)}else pplClear(PERF.vis)}catch(e){}},1000);
 {const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);if(s)s.sv=345;return s}}   // the save's version: 345 = 3.45 (older saves have none)
 if(window.__v345wiped){try{saveNote('Kaydın eski bir hatadan etkilendiği için silindi.')}catch(e){}}
 const DS={t:-1e9};{const _dbs=dayBannerShow;dayBannerShow=function(){const r=_dbs.apply(this,arguments);try{if(!$('daybanner').hidden)DS.t=performance.now()}catch(e){}return r}}

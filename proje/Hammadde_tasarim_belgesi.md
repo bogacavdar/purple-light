@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.58** ile birebir (7 Kasım 2026). Bu sürümde: yalnızca tasarım belgesi ve belge araçları (oyun aynı): 971 tarif, eşya dizini tam (her eşyanın nereden geldiği; mağara buluntuları, deniz balıkları, Börü'nün kemeri), ağaç sayıları, Çelik kazma. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.59** ile birebir (7 Kasım 2026). Bu sürümde: Kül Diyarı girişinde Kül cini Seviye 36'dan, Mor Kristal girişinde Kristal örümcek ve Işık engereği Seviye 44'ten; kişilerin ~2 karo çevresinde yerde toplanabilir olmaz; anı ve ada halkı sahneleri Esc ya da dışına basınca biter. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -446,6 +446,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 
 - **Konuşma penceresi:** uzun konuşmalar (ör. görev anlatımları) ekranın üstünden taşmaz: pencere en çok **görünen ekran yüksekliği** kadar olur (iPhone'da adres çubuğu hesaba katılır), yazı kendi içinde kayar, **cevap düğmeleri hep altta görünür**; yazı harf harf gelirken pencere son satırı izler, bitince yukarı kaydırıp baştan okunabilir. **Yazı harf harf akarken ilk basış** (tık, dokunuş, tuş ya da seçenek numarası) **yazıyı tamamlar, ikinci basış seçer.** Yazılar ve düğmeler telefona göre biraz küçüktür.
 - **Pencere dışına basmak = "Anladım" (kalıcı kural):** konuşma penceresi seçim yapılmadan kapatılırsa (pencerenin dışına tıklama/dokunma, Esc, X) oyuncu pencereyi okumuş sayılır ve sade cevap seçilmiş olur: yalnızca kapatan bir seçenek varsa ("Sonra", "Hoşça kal") o, tek seçenek varsa o, yoksa ana (vurgulu) seçenek. Böylece "Hazırım" / "Anladım" bekleyen bir ders ya da görev hiçbir zaman takılı kalmaz. **Eklenen her yeni pencere bu kurala uyar.**
+- **Sahneler de aynı kurala uyar:** anı sahneleri ve ada halkı sahneleri (Elmas Nine dahil) Esc ya da dışına tıklama/dokunmayla kapanır ve **sonuna kadar okunmuş** sayılır: XP verilir, anı defterine yazılır (Boğaç'ın "pencere dışına basmak = Anladım" kuralının uygulaması).
 
 ## Hayatta kalma
 
@@ -867,7 +868,7 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda k
 
 - **İzler** (Kitap → İzler): eşinden kalan 6 mor parıltı. **Kelebekli kolye** (Çayır kumsalı; sevdiğin kişinin cinsiyeti ne olursa olsun kolyedir, ona senin aldığın kolye; üstünde **beş lacivert kelebek**, üçü altta, ikisi üstte; zinciri kopmuş; eskiden kadınsa "Kopmuş kolye", erkekse "Kopmuş bileklik"), Islak defter sayfası (Orman), Tuhaf metal parçası (Bataklık), Çamurdaki izler (Doğan'ın güneydoğusu; yanında kadınsa bir küpe, erkekse deri bir cüzdan), Yıldız haritası ve Mor kristal (doğu). Üstüne gidip E. Sonuncusu "Gerçek" sahnesini açar.
   - Kolyenin yazısı: "Kumun içinde bir şey parlıyor: ince bir zincir, üstünde beş **lacivert kelebek**, üçü altta, ikisi üstte. Bu, {L} için aldığın kolye! 'En sevdiğim kolye oldu' demişti. Zinciri kopmuş, ama kıyıya vurmuş. Demek ki o da bu sularda bir yerdeydi…"
-- **Anılar** (Kitap → Anılar,: "asıl hikâye"). **ACT 1'in anıları romantik ve güzel olan kısımdır; mor ışık ACT 2'de öğrenilir.** Anılarda "sen" oynadığın karakter, "o" sevdiğin kişidir (karakter yaratmada 2. adımda seçilen; cinsiyeti ne olursa olsun roller aynıdır). Her biri +25 + 15 × iç sıra XP (oyunun anı listesindeki yeri, 0'dan; 25 ile 505 arası).
+- **Anılar** (Kitap → Anılar,: "asıl hikâye"). **ACT 1'in anıları romantik ve güzel olan kısımdır; mor ışık ACT 2'de öğrenilir.** Anılarda "sen" oynadığın karakter, "o" sevdiğin kişidir (karakter yaratmada 2. adımda seçilen; cinsiyeti ne olursa olsun roller aynıdır). Her biri +25 + 15 × iç sıra XP (oyunun anı listesindeki yeri, 0'dan; 25 ile 505 arası). Anı sahnesi Esc ya da dışına tıklamayla kapanırsa sonuna kadar okunmuş sayılır (XP ve anı defteri aynı; Konuşma penceresi kuralı).
   - **ACT 1 · 22 anı, her zaman bu sırayla gelir** (sıra atlanmaz; bir anı gelmeden sonrakisi gelmez):
 
 | # | Anı | Ne oluyor | Resim |
@@ -1137,6 +1138,7 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
   - **Kuzen aileleri:** her ailenin demircileri ve cadısı kendi biyomunun içindeki sabit yerlerde durur (adanın verisinden); Orman'daki aile (Cadı Yakut) Çayır tarafına yakındır.
   - **Keşif yüzdesi:** haritanın keşfedilen payı (öğreticideki %30, Kâşif başarımındaki yarı, gün sonu özeti) karaya ve kıyıdan 7 karo içindeki denize göre hesaplanır; açık deniz sayılmaz.
   - Hayvanlar haritaya konmaz; bulunduğun biyomun listesine göre çevrende belirir.
+  - **Kişilerin dibinde toplanabilir olmaz (7 Kasım 2026):** yerdeki toplanabilirler (taş, kum, çakıl, dal…) konuşulabilir kişilerin **~2 karo** çevresinde ne serpilir ne yeniden çıkar; böylece "F önce yerdeki eşya" kuralı (Boğaç) kişiyle konuşmayı engellemez.
 - Büyük nehirde suya düşersen yarım saniyede bir en yakın kıyıya çıkarılırsın; nehrin 14 karo yakınında her zaman **yurt (Orman) kıyısına** çıkarsın, karşıya böyle geçilmez.
 - Haritada (M) kişilerin simgeleri görünür; bir simgeye dokununca oraya giden kalıcı bir yol oku konur. Küçük haritanın sol altında bulunduğun biyomun adı yazar.
 
@@ -1579,8 +1581,8 @@ XP sütunu bu biyomun ×1,5 XP çarpanı uygulanmış değerdir (Sistemler › G
 
 | Kuşak | Derinlik | Doğan canlılar |
 |---|---|---|
-| **Giriş** | ≤ 30 karo | Kül böceği, Kül cini her zaman; Lav kertenkelesi ve Kor yarasası Seviye 36'dan |
-| **Orta** | 31–60 karo | Kül böceği, Kül cini her zaman; Lav kertenkelesi, Kor yarasası ve Ateş akrebi Seviye 36'dan; Kül kurdu Seviye 38'den |
+| **Giriş** | ≤ 30 karo | Kül böceği her zaman (Seviye 34–35'te Giriş'te yalnızca o); Kül cini, Lav kertenkelesi ve Kor yarasası Seviye 36'dan |
+| **Orta** | 31–60 karo | Kül böceği her zaman; Kül cini, Lav kertenkelesi, Kor yarasası ve Ateş akrebi Seviye 36'dan; Kül kurdu Seviye 38'den |
 | **Derin** | > 60 karo | hepsi her seviyede (Kara ejder yalnızca burada) |
 
 ### Mor Kristal Vadisi — Çok ölümcül
@@ -1651,8 +1653,8 @@ XP sütunu bu biyomun ×1,5 XP çarpanı uygulanmış değerdir (Sistemler › G
 
 | Kuşak | Derinlik | Doğan canlılar |
 |---|---|---|
-| **Giriş** | ≤ 25 karo | Mor güve, Işık tilkisi, Kristal geyik, Işık engereği, Kristal örümcek her zaman |
-| **Orta** | 26–55 karo | Giriş'tekiler her zaman; Gölge kurdu Seviye 45'ten |
+| **Giriş** | ≤ 25 karo | Mor güve, Işık tilkisi, Kristal geyik her zaman; Işık engereği ve Kristal örümcek Seviye 44'ten |
+| **Orta** | 26–55 karo | Mor güve, Işık tilkisi, Kristal geyik, Işık engereği, Kristal örümcek her zaman; Gölge kurdu Seviye 45'ten |
 | **Derin** | > 55 karo | hepsi her seviyede (Kristal golem yalnızca burada) |
 
 
@@ -2877,6 +2879,8 @@ Tekne onarılınca Poyraz'ın görev sırası devam eder: her bölge için bir b
 
 
 ## Kişiler (tanıtımlar ve hikâyeler)
+
+> **Kişilerin çevresi:** konuşulabilir her kişinin ~2 karo çevresinde yerde toplanabilir (taş, kum, çakıl, dal…) serpilmez ve yeniden çıkmaz; F önce yerdeki eşyayı aldığı için (Boğaç) kişiyle konuşma böyle engellenmez (ACT 1 › Adanın yerleşimi › Haritadaki miktarlar).
 
 
 ### İsimler

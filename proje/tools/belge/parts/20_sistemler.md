@@ -99,6 +99,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 
 - **Konuşma penceresi:** uzun konuşmalar (ör. görev anlatımları) ekranın üstünden taşmaz: pencere en çok **görünen ekran yüksekliği** kadar olur (iPhone'da adres çubuğu hesaba katılır), yazı kendi içinde kayar, **cevap düğmeleri hep altta görünür**; yazı harf harf gelirken pencere son satırı izler, bitince yukarı kaydırıp baştan okunabilir. **Yazı harf harf akarken ilk basış** (tık, dokunuş, tuş ya da seçenek numarası) **yazıyı tamamlar, ikinci basış seçer.** Yazılar ve düğmeler telefona göre biraz küçüktür.
 - **Pencere dışına basmak = "Anladım" (kalıcı kural):** konuşma penceresi seçim yapılmadan kapatılırsa (pencerenin dışına tıklama/dokunma, Esc, X) oyuncu pencereyi okumuş sayılır ve sade cevap seçilmiş olur: yalnızca kapatan bir seçenek varsa ("Sonra", "Hoşça kal") o, tek seçenek varsa o, yoksa ana (vurgulu) seçenek. Böylece "Hazırım" / "Anladım" bekleyen bir ders ya da görev hiçbir zaman takılı kalmaz. **Eklenen her yeni pencere bu kurala uyar.**
+- **Sahneler de aynı kurala uyar:** anı sahneleri ve ada halkı sahneleri (Elmas Nine dahil) Esc ya da dışına tıklama/dokunmayla kapanır ve **sonuna kadar okunmuş** sayılır: XP verilir, anı defterine yazılır (Boğaç'ın "pencere dışına basmak = Anladım" kuralının uygulaması).
 
 ## Hayatta kalma
 
@@ -520,7 +521,7 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda k
 
 - **İzler** (Kitap → İzler): eşinden kalan 6 mor parıltı. **Kelebekli kolye** (Çayır kumsalı; sevdiğin kişinin cinsiyeti ne olursa olsun kolyedir, ona senin aldığın kolye; üstünde **beş lacivert kelebek**, üçü altta, ikisi üstte; zinciri kopmuş; eskiden kadınsa "Kopmuş kolye", erkekse "Kopmuş bileklik"), Islak defter sayfası (Orman), Tuhaf metal parçası (Bataklık), Çamurdaki izler (Doğan'ın güneydoğusu; yanında kadınsa bir küpe, erkekse deri bir cüzdan), Yıldız haritası ve Mor kristal (doğu). Üstüne gidip E. Sonuncusu "Gerçek" sahnesini açar.
   - Kolyenin yazısı: "Kumun içinde bir şey parlıyor: ince bir zincir, üstünde beş **lacivert kelebek**, üçü altta, ikisi üstte. Bu, {L} için aldığın kolye! 'En sevdiğim kolye oldu' demişti. Zinciri kopmuş, ama kıyıya vurmuş. Demek ki o da bu sularda bir yerdeydi…"
-- **Anılar** (Kitap → Anılar,: "asıl hikâye"). **ACT 1'in anıları romantik ve güzel olan kısımdır; mor ışık ACT 2'de öğrenilir.** Anılarda "sen" oynadığın karakter, "o" sevdiğin kişidir (karakter yaratmada 2. adımda seçilen; cinsiyeti ne olursa olsun roller aynıdır). Her biri +25 + 15 × iç sıra XP (oyunun anı listesindeki yeri, 0'dan; 25 ile 505 arası).
+- **Anılar** (Kitap → Anılar,: "asıl hikâye"). **ACT 1'in anıları romantik ve güzel olan kısımdır; mor ışık ACT 2'de öğrenilir.** Anılarda "sen" oynadığın karakter, "o" sevdiğin kişidir (karakter yaratmada 2. adımda seçilen; cinsiyeti ne olursa olsun roller aynıdır). Her biri +25 + 15 × iç sıra XP (oyunun anı listesindeki yeri, 0'dan; 25 ile 505 arası). Anı sahnesi Esc ya da dışına tıklamayla kapanırsa sonuna kadar okunmuş sayılır (XP ve anı defteri aynı; Konuşma penceresi kuralı).
   - **ACT 1 · 22 anı, her zaman bu sırayla gelir** (sıra atlanmaz; bir anı gelmeden sonrakisi gelmez):
 
 | # | Anı | Ne oluyor | Resim |
