@@ -29,7 +29,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ahşap ev | 900 | – | Usta Sinan yapar (1.500 sikke) | – |
 | Ahşap karyola | 475 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Ahtapot | 133 | – | Deniz avı: Mor Derinlik (Gemici Poyraz'ın teknesiyle, Sv 22+, Yıldız oltası) %50 | Ahtapot salatası |
-| Ahtapot salatası | 304 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Ahtapot salatası | 304 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Ahududu | 8 | yenir +9 | Yerden toplanır: Orman (ACT 1) | Ahududu ezmesi, Ahududu suyu, Kurutulmuş ahududu, Meyve karışımı |
 | Ahududu ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ahududu suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -40,7 +40,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Akçaağaç odunu | 22 | – | Balta ile Akçaağaç ağacından: Kayalık Dağ (ACT 1) | Akçaağaç kabuğu, Akçaağaç kalası, Akçaağaç kömürü, Akçaağaç yayı |
 | Akçaağaç özsuyu | 3 | yenir +8 | Akçaağaç ağacı kesilince 1 tane düşer | Akçaağaç şurubu |
 | Akçaağaç sapı | 31 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Akçaağaç kaşığı, Bazalt bıçak, Boynuz kazma, Çakmaktaşı balta … (+22) |
-| Akçaağaç şurubu | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Akçaağaç şurubu | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Akçaağaç yayı | 1.022 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | – |
 | Akrep iğnesi | 55 | – | Av: Ateş akrebi düşürür %70 (ACT 1 · Kül Diyarı) | Akrep ok ucu |
 | Akrep kabuğu | 45 | – | Av: Ateş akrebi düşürür %80 (ACT 1 · Kül Diyarı) | Akrep kabuğu kalkanı |
@@ -157,7 +157,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Bal şarabı | 100 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Bal şerbeti | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bal şarabı |
 | Barbunya | 26 | – | Deniz avı: Mercan Sığlığı (Gemici Poyraz'ın teknesiyle, Sv 10+, Makaralı olta) %50 | Barbunya tava |
-| Barbunya tava | 102 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Barbunya tava | 102 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Barut ² | 66 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Pompalı fişeği, Tabanca mermisi |
 | Barut kayası ² | 22 | – | Kazmayla kazılır: Hurda Çölü (ACT 2) | Barut |
 | Basit ok | 2 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Alevli Basit ok, Keskin Basit ok, Zehirli Basit ok |
@@ -276,12 +276,12 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Çelik topuz | 2.574 | alet, silah 39 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | – |
 | Çelik zırh | 3.499 | giyilir +54 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | – |
 | Çipura | 17 | – | Deniz avı: Rüzgârlı Körfez (Gemici Poyraz'ın teknesiyle, Sv 6+, Deniz oltası) %33 | Çipura buğulama |
-| Çipura buğulama | 59 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Çipura buğulama | 59 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Çit | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | Ağıl |
 | Çöl otu ² | 8 | – | Yerden toplanır: Hurda Çölü (ACT 2) | – |
 | Çömlek fırını | 331 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Dağ çayı | 23 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Dağ çayı demi |
-| Dağ çayı demi | 57 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Dağ çayı demi | 57 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Dağ keçisi derisi | 7 | – | Av: Dağ keçisi düşürür %80 (ACT 1 · Kayalık Dağ) | – (satılır, görevlerde istenir) |
 | Dağ keçisi eti | 7 | – | Av: Dağ keçisi düşürür %100 (ACT 1 · Kayalık Dağ) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş dağ keçisi eti, Pişmiş dağ keçisi eti, Turba ateşinde tütsü … (+1) |
 | Dağ kristali | 58 | – | Mağarada yerden toplanır: Rüzgâr Mağarası (Kayalık Dağ, giriş Sv 26) | Dev yüreği tılsımı, Kristal kolye |
@@ -377,7 +377,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Erik tohumu | 3 | – | Erik ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
 | Erzak çukuru | 22 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Eski devre ² | 30 | – | Yerden toplanır: Hurda Çölü (ACT 2) | – |
-| Et şişi | 28 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Közlenmiş şiş |
+| Et şişi | 28 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Közlenmiş şiş |
 | Fener balığı | 162 | – | Deniz avı: Mor Derinlik (Gemici Poyraz'ın teknesiyle, Sv 22+, Yıldız oltası) %33 | Işıl çorbası |
 | Fındık | 8 | yenir +8 | Ağaç: Fındık ağacı silkelenince (ACT 1 · Orman) · Av: Sincap düşürür %35 (ACT 1 · Orman) | Kavrulmuş fındık |
 | Fındık odunu | 8 | – | Balta ile Fındık ağacından: Orman (ACT 1) | – (satılır) |
@@ -466,7 +466,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Halat | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ağ, Asma fener, Bola, Deniz oltası, Dokuma tezgâhı, Dolap … (+8) |
 | Halı | 585 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Hamsi | 4 | – | Deniz avı: Kıyı Suları (Gemici Poyraz'ın teknesiyle, Sv 3+, Olta) %50 | Hamsi tava |
-| Hamsi tava | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Hamsi tava | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Hardal ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Hardal otu | 2 | – | Yerden toplanır: Çayır (ACT 1) | Ateş yağı, Hardal ezmesi, Kurutulmuş hardal otu |
 | Hasat sepeti | 144 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -475,12 +475,12 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Hasırotu meşalesi | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Hasırotu yatak | 240 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Hasır yatak | 83 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
-| Haşlanmış bıldırcın yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Haşlanmış keklik yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Haşlanmış ördek yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Haşlanmış turna kuşu yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Haşlanmış ur kekliği yumurtası | 47 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Haşlanmış yaban kazı yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Haşlanmış bıldırcın yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Haşlanmış keklik yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Haşlanmış ördek yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Haşlanmış turna kuşu yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Haşlanmış ur kekliği yumurtası | 47 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Haşlanmış yaban kazı yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Havuç | 13 | yenir +8 | Tarlada yetiştirilir (tohumunu ek, sula, tırpanla biç) | – |
 | Havuç tohumu | 4 | – | Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar · Hasatta %45 ihtimalle 1 tane (Havuç) | – |
 | Havyar | 26 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -526,7 +526,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Işık ağacı yayı | 2.097 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | – |
 | Işık fitili | 203 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Işık mantarı | 70 | yenir +21 | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Ay otu iksiri, Işık mantarı çorbası |
-| Işık mantarı çorbası | 248 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Işık mantarı çorbası | 248 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Işık pulu | 120 | – | Av: Işık engereği düşürür %80 (ACT 1 · Mor Kristal Vadisi) | Işık pulu eldiven, Kristal boynuz tılsımı, Kristal ipek çizme |
 | Işık pulu eldiven | 1.000 | giyilir +18 savunma | Tarif: kazanda öğrenilir (Zümrüt ya da kuzen cadılar; tanışınca kitaba yazılır) → Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | – |
 | Işık sporu | 80 | – | Mağarada yerden toplanır: Ayna Mağarası (Mor Kristal Vadisi, giriş Sv 42) | Yıldız tozu yemi |
@@ -538,16 +538,16 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Işıldak mantarı ² | 20 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) | – |
 | Işıltılı boya | 182 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Işıl balığı | 225 | – | Deniz avı: Mor Derinlik (Gemici Poyraz'ın teknesiyle, Sv 22+, Yıldız oltası) %17 | Işıl çorbası |
-| Işıl çorbası | 676 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Işıl çorbası | 676 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Işın kılıcı ² | 6.400 | alet, silah 60 hasar | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ejder Avcısı Tomris yapar (800 sikke işçilik) | – |
 | İnci kolye | 230 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | İp | 5 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ağ, Akçaağaç kaşığı, Akrep kabuğu kalkanı, Akrep ok ucu, Altın kolye, Ana tanrıça heykelciği … (+163) |
 | İri diken | 12 | – | Av: Oklu kirpi düşürür %100 (ACT 1 · Orman) | Diken ok ucu, Ceviz kabuğu miğfer |
 | İskele | 215 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | İstavrit | 5 | – | Deniz avı: Kıyı Suları (Gemici Poyraz'ın teknesiyle, Sv 3+, Olta) %33 | İstavrit ızgara |
-| İstavrit ızgara | 30 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| İstavrit ızgara | 30 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | İstiridye | 29 | – | Deniz avı: Mercan Sığlığı (Gemici Poyraz'ın teknesiyle, Sv 10+, Makaralı olta) %33 | İstiridye çorbası |
-| İstiridye çorbası | 109 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| İstiridye çorbası | 109 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kabak | 35 | yenir +10 | Tarlada yetiştirilir (tohumunu ek, sula, tırpanla biç) | – |
 | Kabak tohumu | 8 | – | Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar · Hasatta %45 ihtimalle 1 tane (Kabak) | – |
 | Kaba meşale | 7 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -555,11 +555,11 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kafa lambası | 300 | giyilir +3 savunma | Yıldızsız Işıkçı ile takas: 5 Mor kıymık + 3 Gece sefası + 1 Tunç külçesi (baş yuvasına takılır, gece kendiliğinden yanar) | – |
 | Kaktüs meyvesi ² | 12 | – | Yerden toplanır: Hurda Çölü (ACT 2) | – |
 | Kalamar | 61 | – | Deniz avı: Fırtına Denizi (Gemici Poyraz'ın teknesiyle, Sv 18+, Fırtına oltası) %50 | Kalamar tava |
-| Kalamar tava | 192 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kalamar tava | 192 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kalay cevheri | 12 | – | Kazmayla kazılır: Orman (ACT 1) | Kalay külçesi |
 | Kalay külçesi | 32 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Tunç külçesi |
 | Kalkan | 54 | – | Deniz avı: Derin Mavi (Gemici Poyraz'ın teknesiyle, Sv 14+, Derin su oltası) %17 | Kalkan tava |
-| Kalkan tava | 144 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kalkan tava | 144 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kamış | 13 | – | Yerden toplanır: Bataklık (ACT 1) | Kamış çizme, Kamış flüt, Kamış hasır, Kamış ok gövdesi |
 | Kamış çizme | 149 | giyilir +13 savunma | Tarif: Avcı Doğan ilk konuşmada yazar (Zümrüt'ün kazanında da öğrenilir) → El yapımı (Tab) | – |
 | Kamış flüt | 6 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -608,14 +608,14 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kavak kömürü | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Altın külçesi, Bakır külçesi, Barut, Çömlek fırını, Demir halka, Demir külçesi … (+12) |
 | Kavak odunu | 3 | – | Balta ile Kavak ağacından: Çayır (ACT 1) | Kavak kabuğu, Kavak kalası, Kavak kömürü, Kütük salı, Oyma kano |
 | Kavak sapı | 31 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bazalt bıçak, Boynuz kazma, Çakmaktaşı balta, Çakmaktaşı bıçak … (+22) |
-| Kavrulmuş fındık | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ballı fındık |
-| Kavrulmuş kestane | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ballı kestane |
-| Kavrulmuş su kestanesi | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kavrulmuş yabani arpa | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kavrulmuş yabani buğday | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kavrulmuş yabani mercimek | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kavrulmuş yabani nohut | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kavrulmuş yabani yulaf | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kavrulmuş fındık | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Ballı fındık |
+| Kavrulmuş kestane | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Ballı kestane |
+| Kavrulmuş su kestanesi | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Kavrulmuş yabani arpa | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Kavrulmuş yabani buğday | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Kavrulmuş yabani mercimek | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Kavrulmuş yabani nohut | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Kavrulmuş yabani yulaf | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kav mantarı | 21 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Kav |
 | Kaya çiçeği ² | 20 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) | – |
 | Kaya patlatıcı | 108 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -628,7 +628,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kayın odunu | 8 | – | Balta ile Kayın ağacından: Orman (ACT 1) | Kayın kabuğu, Kayın kalası, Kayın kömürü, Kütük salı, Oyma kano |
 | Kayın sapı | 31 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bazalt bıçak, Boynuz kazma, Çakmaktaşı balta, Çakmaktaşı bıçak … (+22) |
 | Kefal | 13 | – | Deniz avı: Rüzgârlı Körfez (Gemici Poyraz'ın teknesiyle, Sv 6+, Deniz oltası) %50 | Kefal pilakisi |
-| Kefal pilakisi | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kefal pilakisi | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kehribar | 40 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Altın kolye, Gümüş yüzük, Kehribar boncuk, Kül dişi muska |
 | Kehribar boncuk | 50 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kehribar kolye |
 | Kehribar kolye | 108 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -686,7 +686,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Keten kumaş | 101 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Duvar halısı, Halı, Perde |
 | Keten lifi | 16 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Keten ipliği |
 | Kılıç balığı | 91 | – | Deniz avı: Fırtına Denizi (Gemici Poyraz'ın teknesiyle, Sv 18+, Fırtına oltası) %33 | Kılıç şiş |
-| Kılıç şiş | 228 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kılıç şiş | 228 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kırmızı boncuk | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kırmızı boya | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ana tanrıça heykelciği, Av sahnesi duvar resmi, Boyalı çömlek, Dolap, Duvar halısı … (+3) |
 | Kırmızı çömlek | 54 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahududu suyu, Alıç suyu, Ardıç meyvesi suyu, Ateş narı şerbeti, Ay elması reçeli, Bal şarabı … (+22) |
@@ -699,13 +699,13 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kıvılcım | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ateş, Kav, Kozalak ateşi, Turba ateşinde tütsü |
 | Kıymık kolye | 88 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kızak | 41 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kızarmış çayır mantarı | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kızarmış kanlıca | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kızarmış kayın mantarı | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kızarmış kuzugöbeği | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kızarmış mağara mantarı | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kızarmış tavuk mantarı | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kızarmış yabani havuç | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kızarmış çayır mantarı | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Kızarmış kanlıca | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Kızarmış kayın mantarı | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Kızarmış kuzugöbeği | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Kızarmış mağara mantarı | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Kızarmış tavuk mantarı | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Kızarmış yabani havuç | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızılağaç kabuğu | 12 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kızılağaç kalası | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+15) |
 | Kızılağaç kaşığı | 69 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -753,7 +753,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kök böceği kabuğu | 28 | – | Mağara canlısı Kök böceği düşürür (Kök Mağarası, Orman) %80 ×1–2 | Böcek kabuğu boyası |
 | Kök flütü | 95 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kök mantarı | 20 | – | Mağarada yerden toplanır: Kök Mağarası (Orman, giriş Sv 10) | Kök mantarlı güveç, Kök özü iksiri |
-| Kök mantarlı güveç | 160 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kök mantarlı güveç | 160 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kök özü iksiri | 680 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kök reçinesi | 24 | – | Mağarada yerden toplanır: Kök Mağarası (Orman, giriş Sv 10) · Mağara reisi Yaşlı Kök düşürür (Kök Mağarası, Orman) %100 ×3–5 | Kök flütü |
 | Kök taşı ² | 12 | – | Kazmayla kazılır: Dev Mantar Ormanı (ACT 2) | – |
@@ -781,7 +781,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Közlenmiş sazan | 9 | – | Kamp ateşinde közlenir (çiğ hali: Sazan) | – |
 | Közlenmiş sincap eti | 6 | – | Kamp ateşinde közlenir (çiğ hali: Sincap eti) | – |
 | Közlenmiş su samuru eti | 11 | – | Kamp ateşinde közlenir (çiğ hali: Su samuru eti) | – |
-| Közlenmiş şiş | 108 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) · Kamp ateşinde közlenir (çiğ hali: şiş) | – |
+| Közlenmiş şiş | 108 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) · Kamp ateşinde közlenir (çiğ hali: şiş) | – |
 | Közlenmiş tatlısu kefali | 9 | – | Kamp ateşinde közlenir (çiğ hali: Tatlısu kefali) | – |
 | Közlenmiş tatlısu levreği | 11 | – | Kamp ateşinde közlenir (çiğ hali: Tatlısu levreği) | – |
 | Közlenmiş tavşan eti | 7 | – | Kamp ateşinde közlenir (çiğ hali: Tavşan eti) | – |
@@ -798,7 +798,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kristal | 62 | – | Kazmayla kazılır: Mor Kristal Vadisi (ACT 1) · Av: Kristal golem düşürür %100 (ACT 1 · Mor Kristal Vadisi) | Ametist kılıcı, Golem feneri, Işık pulu eldiven, Kristal parçası, Mor kristal çizme, Mor kristal eldiven … (+3) |
 | Kristal armut ² | 14 | – | Kristal armut ağacından toplanır: Kristal Golem Ocağı (ACT 2) | Kristal armut kompostosu |
 | Kristal armut kalası ² | 83 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+14) |
-| Kristal armut kompostosu ² | 88 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | – |
+| Kristal armut kompostosu ² | 88 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kristal armut odunu ² | 28 | – | Balta ile Kristal armut ağacından: Kristal Golem Ocağı (ACT 2) | Kristal armut kalası, Kütük salı, Oyma kano |
 | Kristal boynuz | 140 | – | Av: Kristal geyik düşürür %45 (ACT 1 · Mor Kristal Vadisi) | Kristal boynuz tılsımı |
 | Kristal boynuz tılsımı | 356 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -969,12 +969,12 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Lav yılanı pulu | 178 | – | Mağara canlısı Lav yılanı düşürür (Kor Mağarası, Kül Diyarı) %70 ×1 | Volkan camı muska |
 | Lens ² | 60 | – | Av: Lazer dronu düşürür %60 (ACT 2 · Hurda Çölü) | – |
 | Levrek | 20 | – | Deniz avı: Rüzgârlı Körfez (Gemici Poyraz'ın teknesiyle, Sv 6+, Deniz oltası) %17 | Levrek şiş |
-| Levrek şiş | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Levrek şiş | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Lif | 1 | – | Yerden toplanır: Çayır, Orman, Kül Diyarı, Bataklık, Mor Kristal Vadisi, Kayalık Dağ (ACT 1) | Ağ, Akçaağaç kalası, Akçaağaç kaşığı, Akçaağaç kömürü, Akçaağaç sapı, Ardıç kalası … (+165) |
 | Liken | 22 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Liken boyası |
 | Liken boyası | 26 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Lüfer | 32 | – | Deniz avı: Mercan Sığlığı (Gemici Poyraz'ın teknesiyle, Sv 10+, Makaralı olta) %17 | Lüfer ızgara |
-| Lüfer ızgara | 87 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Lüfer ızgara | 87 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Magma camı ² | 44 | – | Yerden toplanır: Ejder Volkanı (ACT 2) | – |
 | Magma cevheri ² | 56 | – | Kazmayla kazılır: Ejder Volkanı (ACT 2) · Av: Lav golemi düşürür %90 (ACT 2 · Ejder Volkanı) | – |
 | Magma çekirdeği ² | 160 | – | Av: Lav golemi düşürür %70 (ACT 2 · Ejder Volkanı) | – |
@@ -1086,7 +1086,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ok kılıfı | 240 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Olta | 69 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | Deniz oltası |
 | Orkinos | 124 | – | Deniz avı: Fırtına Denizi (Gemici Poyraz'ın teknesiyle, Sv 18+, Fırtına oltası) %17 | Orkinos biftek |
-| Orkinos biftek | 266 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Orkinos biftek | 266 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Ot salatası | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Oyma kano | 97 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Öğütme taşı | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | Ceviz yağı (alet), Nilüfer kökü unu (alet), Palamut unu (alet), Yabani arpa unu (alet), Yabani buğday unu (alet), Yabani mercimek unu (alet) … (+2) |
@@ -1096,8 +1096,8 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ördek yumurtası | 3 | – | Av: Ördek düşürür %35 (ACT 1 · Bataklık) | Haşlanmış ördek yumurtası |
 | Örümcek gözü | 100 | – | Av: Kristal örümcek düşürür %50 (ACT 1 · Mor Kristal Vadisi) | Gölge iksiri |
 | Palamut | 45 | – | Deniz avı: Derin Mavi (Gemici Poyraz'ın teknesiyle, Sv 14+, Derin su oltası) %50 | Palamut buğulama |
-| Palamut buğulama | 120 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Palamut ekmeği | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Palamut buğulama | 120 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Palamut ekmeği | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Palamut unu | 7 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kurutulmuş meyve keki, Kül ekmeği, Palamut ekmeği |
 | Panzehir | 35 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Papatya | 1 | – | Yerden toplanır: Çayır (ACT 1) | Kurutulmuş papatya, Papatya tacı, Saksı |
@@ -1118,51 +1118,51 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Pirit | 28 | – | Kazmayla kazılır: Kayalık Dağ (ACT 1) | Kükürt çakmağı, Pirit çakmağı |
 | Pirit çakmağı | 18 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | Ateş, Kozalak ateşi, Turba ateşinde tütsü |
 | Pişirme taşı | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | Kızarmış çayır mantarı (alet), Kızarmış kanlıca (alet), Kızarmış kayın mantarı (alet), Kızarmış kuzugöbeği (alet), Kızarmış mağara mantarı (alet), Kızarmış tavuk mantarı (alet) … (+20) |
-| Pişmiş alabalık | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
-| Pişmiş bıldırcın eti | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş bulut koyunu eti ² | 52 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş buz tavşanı eti ² | 54 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş çapak | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
-| Pişmiş dağ keçisi eti | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş geyik eti | 45 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş işık tilkisi eti | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş kadife balığı | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
-| Pişmiş karaca eti | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş kartal eti | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş keklik eti | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş kerevit | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
-| Pişmiş kertenkele eti ² | 49 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş kızılkanat | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
+| Pişmiş alabalık | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
+| Pişmiş bıldırcın eti | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş bulut koyunu eti ² | 52 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş buz tavşanı eti ² | 54 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş çapak | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
+| Pişmiş dağ keçisi eti | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş geyik eti | 45 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş işık tilkisi eti | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş kadife balığı | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
+| Pişmiş karaca eti | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş kartal eti | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş keklik eti | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş kerevit | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
+| Pişmiş kertenkele eti ² | 49 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş kızılkanat | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
 | Pişmiş kil düdük | 37 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Pişmiş kor kertenkelesi eti ² | 57 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş kristal geyik eti | 78 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş kunduz eti | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş kurbağa | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
-| Pişmiş kurt eti | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş mağara ayısı eti | 51 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş mersin balığı | 51 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
-| Pişmiş muflon eti | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş ördek eti | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş rüzgâr kuşu eti ² | 49 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş sazan | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
-| Pişmiş sincap eti | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş su samuru eti | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş tatlısu kefali | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
-| Pişmiş tatlısu levreği | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
-| Pişmiş tatlısu midyesi | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
-| Pişmiş tavşan eti | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş timsah eti | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Pişmiş turna balığı | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
-| Pişmiş turna kuşu eti | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş ur kekliği eti | 47 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş vaşak eti | 54 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş yaban atı eti | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş yaban domuzu eti | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş yaban kazı eti | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş yaban öküzü eti | 47 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarımsaklı et |
-| Pişmiş yayın | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
-| Pişmiş yılan balığı | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kekikli balık |
-| Pişmiş yıldız tilkisi eti ² | 60 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Sarımsaklı et |
+| Pişmiş kor kertenkelesi eti ² | 57 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş kristal geyik eti | 78 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş kunduz eti | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş kurbağa | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
+| Pişmiş kurt eti | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş mağara ayısı eti | 51 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş mersin balığı | 51 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
+| Pişmiş muflon eti | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş ördek eti | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş rüzgâr kuşu eti ² | 49 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş sazan | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
+| Pişmiş sincap eti | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş su samuru eti | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş tatlısu kefali | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
+| Pişmiş tatlısu levreği | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
+| Pişmiş tatlısu midyesi | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
+| Pişmiş tavşan eti | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş timsah eti | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Pişmiş turna balığı | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
+| Pişmiş turna kuşu eti | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş ur kekliği eti | 47 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş vaşak eti | 54 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş yaban atı eti | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş yaban domuzu eti | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş yaban kazı eti | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş yaban öküzü eti | 47 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş yayın | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
+| Pişmiş yılan balığı | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
+| Pişmiş yıldız tilkisi eti ² | 60 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
 | Plazma hücresi ² | 539 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Işın kılıcı, Roket motoru, Yıldız külçesi |
 | Plazma taşı ² | 60 | – | Yerden toplanır: Ejder Volkanı (ACT 2) | Plazma hücresi, Yıldırım asası |
 | Pompalı ² | 2.600 | alet | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Silahçı Tufan yapar (400 sikke işçilik) | – |
@@ -1237,7 +1237,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Sönmemiş kireç | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kireç harcı |
 | Spor ağacı kalası ² | 73 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+14) |
 | Spor ağacı odunu ² | 24 | – | Balta ile Spor ağacı ağacından: Dev Mantar Ormanı (ACT 2) | Kütük salı, Oyma kano, Spor ağacı kalası |
-| Spor ekmeği ² | 88 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | – |
+| Spor ekmeği ² | 88 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | – |
 | Spor kristali ² | 40 | – | Kazmayla kazılır: Dev Mantar Ormanı (ACT 2) | Ateş asası |
 | Spor tozu ² | 14 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) · Av: Mantar böceği düşürür %100 (ACT 2 · Dev Mantar Ormanı) | Mantar lifi eldiven, Spor ekmeği |
 | Su | 1 | – | Kap ile (Yaprak kova vb.) suyun kıyısında E | Adaçayı çayı, Ahtapot salatası, Ahududu ezmesi, Ahududu suyu, Akçaağaç kabuğu, Akçaağaç şurubu … (+329) |
@@ -1303,7 +1303,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Tavuk mantarı | 8 | yenir +8 | Yerden toplanır: Orman (ACT 1) | Kızarmış tavuk mantarı, Kurutulmuş tavuk mantarı |
 | Tazı dişi ² | 40 | – | Av: Gök tazısı düşürür %60 (ACT 2 · Yüzen Kayalar) | – |
 | Tekir | 8 | – | Deniz avı: Kıyı Suları (Gemici Poyraz'ın teknesiyle, Sv 3+, Olta) %17 | Tekir tava |
-| Tekir tava | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Tekir tava | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Tırmık | 50 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Tırpan | 153 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Timsah derisi | 45 | – | Av: Timsah düşürür %90 (ACT 1 · Bataklık) | Timsah eldiven, Timsah miğfer, Timsah pulu zırh |
@@ -1337,7 +1337,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Tunç topuz | 820 | alet, silah 19 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | – |
 | Tunç zırh | 2.452 | giyilir +24 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | – |
 | Turba | 14 | – | Yerden toplanır: Bataklık (ACT 1) | Altın külçesi, Bakır külçesi, Barut, Çömlek fırını, Demir halka, Demir külçesi … (+14) |
-| Turba ateşinde tütsü | 24 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Turba ateşinde tütsü | 24 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Turna balığı | 6 | – | Balık: Bataklık/Kayalık Dağ suları, olta/ağ/zıpkın ile %15; balık kapanına da girer · Balık: Kül Diyarı/Mor Kristal Vadisi suları, olta/ağ/zıpkın ile %25; balık kapanına da girer | Balık çorbası, Balık sepeti, Kurutulmuş turna balığı, Pişmiş turna balığı, Taşta turna balığı, Tütsülenmiş turna balığı |
 | Turna kuşu eti | 5 | – | Av: Turna kuşu düşürür %100 (ACT 1 · Bataklık) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş turna kuşu eti, Pişmiş turna kuşu eti, Turba ateşinde tütsü … (+1) |
 | Turna kuşu tüyü | 2 | – | Av: Turna kuşu düşürür %85 (ACT 1 · Bataklık) | – |
@@ -1347,43 +1347,43 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Tuz havuzu | 145 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Tuz kayası | 19 | – | Kazmayla kazılır: Bataklık (ACT 1) | Havyar, Tuz |
 | Tütsühane | 234 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
-| Tütsülenmiş alabalık | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş bıldırcın eti | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş çapak | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş dağ keçisi eti | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş geyik eti | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş işık tilkisi eti | 84 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş kadife balığı | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş karaca eti | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş kartal eti | 71 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş keklik eti | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş kerevit | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş kızılkanat | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş kristal geyik eti | 97 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş kunduz eti | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş kurbağa | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş kurt eti | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş mağara ayısı eti | 72 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş mersin balığı | 72 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş muflon eti | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş ördek eti | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş sazan | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş sincap eti | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş su samuru eti | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş tatlısu kefali | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş tatlısu levreği | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş tatlısu midyesi | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş tavşan eti | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş turna balığı | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş turna kuşu eti | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş ur kekliği eti | 66 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş vaşak eti | 74 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş yaban atı eti | 68 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş yaban domuzu eti | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş yaban kazı eti | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş yaban öküzü eti | 69 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş yayın | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Tütsülenmiş yılan balığı | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Tütsülenmiş alabalık | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş bıldırcın eti | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş çapak | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş dağ keçisi eti | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş geyik eti | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş işık tilkisi eti | 84 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş kadife balığı | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş karaca eti | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş kartal eti | 71 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş keklik eti | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş kerevit | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş kızılkanat | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş kristal geyik eti | 97 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş kunduz eti | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş kurbağa | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş kurt eti | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş mağara ayısı eti | 72 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş mersin balığı | 72 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş muflon eti | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş ördek eti | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş sazan | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş sincap eti | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş su samuru eti | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş tatlısu kefali | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş tatlısu levreği | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş tatlısu midyesi | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş tavşan eti | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş turna balığı | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş turna kuşu eti | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş ur kekliği eti | 66 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş vaşak eti | 74 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş yaban atı eti | 68 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş yaban domuzu eti | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş yaban kazı eti | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş yaban öküzü eti | 69 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş yayın | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Tütsülenmiş yılan balığı | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Tüy yosunu ² | 10 | – | Yerden toplanır: Yüzen Kayalar (ACT 2) | – |
 | Ur kekliği eti | 6 | – | Av: Ur kekliği düşürür %100 (ACT 1 · Kayalık Dağ) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş ur kekliği eti, Pişmiş ur kekliği eti, Turba ateşinde tütsü … (+1) |
 | Ur kekliği tüyü | 4 | – | Av: Ur kekliği düşürür %85 (ACT 1 · Kayalık Dağ) | Çelik ok, Kara çelik ok, Mor kristal ok |
@@ -1457,7 +1457,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yanık kök | 46 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Yanık kök çayı |
 | Yanık kök çayı | 106 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yankı çanı | 239 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Yankı çorbası | 91 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Yankı çorbası | 91 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Yankı mantarı | 14 | – | Mağarada yerden toplanır: Yankı Mağarası (Çayır, giriş Sv 5) | Kraliçe tılsımı, Yankı çorbası |
 | Yankı taşı | 82 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Yankı çanı |
 | Yaprak | 1 | – | Yerden toplanır: Orman, Çayır, Bataklık, Kül Diyarı, Mor Kristal Vadisi, Kayalık Dağ (ACT 1) | Adaçayı çayı, Ahududu suyu, Akçaağaç kabuğu, Akçaağaç şurubu, Alıç suyu, Ardıç kabuğu … (+247) |

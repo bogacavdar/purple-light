@@ -18,6 +18,7 @@
 - **"+" zincirleme yapar:** kazandaki ve örsteki malzeme satırlarının "+" düğmesi ile elle yapma listesindeki "Yap" düğmesi, eksik malzemeyi **çantandaki eşyalardan zincirleme** üretebiliyorsa açık olur. Kural tek: zincirdeki her tarifin **tarifini bilmen** (açık olması) ve **ham malzemenin çantada yetmesi** gerekir; aletler çantada olmalıdır. Örnek: sopa 2 keskin taş ister, her keskin taş 2 taş ister; çantada 4 taş ve iki tarif de açıksa "+" önce iki keskin taşı, sonra sopayı yapar. Eldeki hazır malzeme önce kullanılır; döngülü tarif zinciri (A için B, B için A) hiç denenmez; zincir en çok 6 basamaktır. Kazanda "+" satırın **eksik miktarı kadar** üretir (yetmiyorsa yetebildiği kadar). Zincir yetmiyorsa düğme gri kalır ve "Eksik: …" yazar.
 - **Kitapta açılması:** Tarif kitabında bir tarifin açık görünmesi için bütün malzemelerini daha önce görmüş (eline almış) olman gerekir. Bir kişinin "tarifini kitabına yazdım" demesi de tarifi açar (satın alınmış sayılır).
 - **Yapmak:** Öğrendikten sonra nerede yapıldığı tarifin türüne göre değişir (tablolardaki "Nerede yapılır" sütunu):
+  - **Ateşte (7 Kasım 2026, Boğaç):** ateş gerektiren yemekler (közlenmiş, kızarmış, kavrulmuş, haşlanmış, tütsülenmiş, ızgara, tava, şiş, buğulama, pişmiş et/balık, Kor isteyenler ve malzemesinde **Ateş** ya da **Duman** olan bütün yemekler: çorbalar, ekmekler, güveç, pilaki, biftek, komposto…; tabloda "Ateşte (pişirme menüsü)", toplam 129 tarif). Ateşin başında **Ateş ve Duman malzemesi harcanmaz, ateş sağlar** (tabloda "Ateş (ateş sağlar)" diye yazılı); öbür malzemeler aynen harcanır. Yapı ve eşya olan ateş tarifleri (Tütsühane, fırınlar, kano, tutkal, düdük, Duman tütsüsü) El yapımında kalır. El yapımı listesinde **görünmez**; herhangi bir ateşin pişirme menüsünde yapılır (Sistemler › Yemek › Ateşte pişirme). Tarif yine kazanda öğrenilir.
   - **El yapımı (Tab):** kendin yaparsın; dokunmatikte el ikonu. Tarif listesinde **+** ile tek dokunuşta yapılır.
   - **Örs · Demirci Dursun / silahçı kuzenleri:** aletler ve silahlar. **Örs · Zırhçı Durmuş / zırhçı kuzenleri:** metal ve özel zırhlar. "… ve bütün kuzenleri döver" yazan eşya kademe 0'dır; "Silahçı Ali (Bataklık) ve üstü döver" yazan eşyayı Ali ve ondan sonraki biyomların silahçıları döver.
   - **Usta Sinan:** ev eşyaları (evin içine konur). **Usta Sinan:** yere kurulan yapılar ve yataklar.
@@ -33,10 +34,10 @@ Toplam **971 tarif**: ACT 1 malzemeleriyle 904, ACT 2 malzemesi isteyen 67 (v3.5
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Acı biber ezmesi | 3 Ateş biberi, 1 Tuz | – | El yapımı (Tab) | 126 |
-| Ahtapot salatası | 1 Ahtapot, 1 Su, 1 Ateş | – | El yapımı (Tab) | 304 |
+| Ahtapot salatası | 1 Ahtapot, 1 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 304 |
 | Ahududu ezmesi | 3 Ahududu, 1 Su | Taş havan | El yapımı (Tab) | 14 |
 | Ahududu suyu | 3 Ahududu, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
-| Akçaağaç şurubu | 2 Akçaağaç özsuyu, 1 Ateş, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 39 |
+| Akçaağaç şurubu | 2 Akçaağaç özsuyu, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 39 |
 | Alıç ezmesi | 3 Alıç, 1 Su | Taş havan | El yapımı (Tab) | 14 |
 | Alıç suyu | 3 Alıç, 1 Kırmızı çömlek, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
 | Ardıç meyvesi ezmesi | 3 Ardıç meyvesi, 1 Su | Taş havan | El yapımı (Tab) | 14 |
@@ -51,60 +52,60 @@ Toplam **971 tarif**: ACT 1 malzemeleriyle 904, ACT 2 malzemesi isteyen 67 (v3.5
 | Ballı kestane | 1 Kavrulmuş kestane, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 72 |
 | Bal şarabı | 1 Bal şerbeti, 1 Nehir çömleği, 4 Su, 4 Yaprak | – | El yapımı (Tab) | 100 |
 | Bal şerbeti | 1 Yabani bal, 5 Su, 1 Yaprak | – | El yapımı (Tab) | 17 |
-| Barbunya tava | 2 Barbunya, 1 Yabani buğday unu, 1 Ateş | – | El yapımı (Tab) | 102 |
+| Barbunya tava | 2 Barbunya, 1 Yabani buğday unu, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 102 |
 | Böğürtlen ezmesi | 3 Böğürtlen, 1 Su | Taş havan | El yapımı (Tab) | 14 |
 | Böğürtlen suyu | 3 Böğürtlen, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
 | Ceviz içi | 2 Ceviz, 2 Su, 1 Yaprak | Çekiç taşı | El yapımı (Tab) | 12 |
 | Ceviz yağı | 1 Ceviz içi, 3 Su, 3 Yaprak | Öğütme taşı | El yapımı (Tab) | 25 |
-| Çipura buğulama | 1 Çipura, 1 Su, 1 Ateş | – | El yapımı (Tab) | 59 |
-| Dağ çayı demi | 3 Dağ çayı, 2 Su, 1 Ateş | – | El yapımı (Tab) | 57 |
+| Çipura buğulama | 1 Çipura, 1 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 59 |
+| Dağ çayı demi | 3 Dağ çayı, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 57 |
 | Ejder meyvesi şerbeti ² | 3 Ejder meyvesi, 2 Su, 1 Nehir çömleği | – | El yapımı (Tab) | 142 |
 | Ekmek | 2 Buğday unu, 1 Su | – | El yapımı (Tab) | 153 |
-| Et şişi | 3 Tavşan eti, 1 Sopa, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 28 |
+| Et şişi | 3 Tavşan eti, 1 Sopa, 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 28 |
 | Goblin eriği reçeli ² | 3 Goblin eriği, 1 Nehir çömleği | – | El yapımı (Tab) | 108 |
 | Gök üzümü suyu ² | 3 Gök üzümü, 2 Su | – | El yapımı (Tab) | 86 |
-| Hamsi tava | 4 Hamsi, 1 Yabani buğday unu, 1 Ateş | – | El yapımı (Tab) | 52 |
+| Hamsi tava | 4 Hamsi, 1 Yabani buğday unu, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 52 |
 | Hardal ezmesi | 3 Hardal otu, 1 Su | Taş havan | El yapımı (Tab) | 14 |
-| Haşlanmış bıldırcın yumurtası | 2 Bıldırcın yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
-| Haşlanmış keklik yumurtası | 2 Keklik yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
-| Haşlanmış ördek yumurtası | 2 Ördek yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
-| Haşlanmış turna kuşu yumurtası | 2 Turna kuşu yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
-| Haşlanmış ur kekliği yumurtası | 2 Ur kekliği yumurtası, 2 Su, 1 Ateş | – | El yapımı (Tab) | 47 |
-| Haşlanmış yaban kazı yumurtası | 2 Yaban kazı yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
+| Haşlanmış bıldırcın yumurtası | 2 Bıldırcın yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
+| Haşlanmış keklik yumurtası | 2 Keklik yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
+| Haşlanmış ördek yumurtası | 2 Ördek yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
+| Haşlanmış turna kuşu yumurtası | 2 Turna kuşu yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
+| Haşlanmış ur kekliği yumurtası | 2 Ur kekliği yumurtası, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 47 |
+| Haşlanmış yaban kazı yumurtası | 2 Yaban kazı yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
 | Havyar | 1 Mersin balığı, 1 Tuz kayası, 2 Yaprak | – | El yapımı (Tab) | 26 |
 | Hurma ezmesi ² | 3 Hurma, 1 Nehir çömleği | – | El yapımı (Tab) | 108 |
 | Isırgan çorbası | 3 Isırgan, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 56 |
-| Işık mantarı çorbası | 3 Işık mantarı, 2 Su, 1 Ateş | – | El yapımı (Tab) | 248 |
-| Işıl çorbası | 1 Işıl balığı, 1 Fener balığı, 2 Su, 1 Ateş | – | El yapımı (Tab) | 676 |
-| İstavrit ızgara | 2 İstavrit, 1 Ateş | – | El yapımı (Tab) | 30 |
-| İstiridye çorbası | 2 İstiridye, 2 Su, 1 Ateş | – | El yapımı (Tab) | 109 |
-| Kalamar tava | 2 Kalamar, 1 Yabani buğday unu, 1 Ateş | – | El yapımı (Tab) | 192 |
-| Kalkan tava | 1 Kalkan, 1 Yabani buğday unu, 1 Ateş | – | El yapımı (Tab) | 144 |
+| Işık mantarı çorbası | 3 Işık mantarı, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 248 |
+| Işıl çorbası | 1 Işıl balığı, 1 Fener balığı, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 676 |
+| İstavrit ızgara | 2 İstavrit, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 30 |
+| İstiridye çorbası | 2 İstiridye, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 109 |
+| Kalamar tava | 2 Kalamar, 1 Yabani buğday unu, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 192 |
+| Kalkan tava | 1 Kalkan, 1 Yabani buğday unu, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 144 |
 | Kara tuzlu et | 2 Ur kekliği eti, 1 Kara tuz | – | El yapımı (Tab) | 54 |
-| Kavrulmuş fındık | 3 Fındık, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
-| Kavrulmuş kestane | 3 Kestane, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
-| Kavrulmuş su kestanesi | 2 Su kestanesi, 1 Ateş, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 39 |
-| Kavrulmuş yabani arpa | 3 Yabani arpa, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
-| Kavrulmuş yabani buğday | 3 Yabani buğday, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
-| Kavrulmuş yabani mercimek | 3 Yabani mercimek, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
-| Kavrulmuş yabani nohut | 3 Yabani nohut, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
-| Kavrulmuş yabani yulaf | 3 Yabani yulaf, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
-| Kefal pilakisi | 2 Kefal, 1 Su, 1 Ateş | – | El yapımı (Tab) | 65 |
+| Kavrulmuş fındık | 3 Fındık, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
+| Kavrulmuş kestane | 3 Kestane, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
+| Kavrulmuş su kestanesi | 2 Su kestanesi, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 39 |
+| Kavrulmuş yabani arpa | 3 Yabani arpa, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
+| Kavrulmuş yabani buğday | 3 Yabani buğday, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
+| Kavrulmuş yabani mercimek | 3 Yabani mercimek, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
+| Kavrulmuş yabani nohut | 3 Yabani nohut, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
+| Kavrulmuş yabani yulaf | 3 Yabani yulaf, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
+| Kefal pilakisi | 2 Kefal, 1 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 65 |
 | Kekikli balık | 1 Pişmiş kurbağa, 3 Kekik, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 64 |
 | Kemik ilikli çorba | 3 Kemik, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
-| Kılıç şiş | 1 Kılıç balığı, 2 Dal, 1 Ateş | – | El yapımı (Tab) | 228 |
-| Kızarmış çayır mantarı | 3 Çayır mantarı, 1 Su | Pişirme taşı | El yapımı (Tab) | 15 |
-| Kızarmış kanlıca | 2 Kanlıca, 2 Su, 1 Yaprak | Pişirme taşı | El yapımı (Tab) | 17 |
-| Kızarmış kayın mantarı | 2 Kayın mantarı, 2 Su, 1 Yaprak | Pişirme taşı | El yapımı (Tab) | 17 |
-| Kızarmış kuzugöbeği | 1 Kuzugöbeği, 3 Su, 3 Yaprak | Pişirme taşı | El yapımı (Tab) | 21 |
-| Kızarmış mağara mantarı | 2 Mağara mantarı, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 21 |
-| Kızarmış tavuk mantarı | 2 Tavuk mantarı, 2 Su, 1 Yaprak | Pişirme taşı | El yapımı (Tab) | 17 |
-| Kızarmış yabani havuç | 3 Yabani havuç, 1 Su | Pişirme taşı | El yapımı (Tab) | 15 |
+| Kılıç şiş | 1 Kılıç balığı, 2 Dal, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 228 |
+| Kızarmış çayır mantarı | 3 Çayır mantarı, 1 Su | Pişirme taşı | Ateşte (pişirme menüsü) | 15 |
+| Kızarmış kanlıca | 2 Kanlıca, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 17 |
+| Kızarmış kayın mantarı | 2 Kayın mantarı, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 17 |
+| Kızarmış kuzugöbeği | 1 Kuzugöbeği, 3 Su, 3 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 21 |
+| Kızarmış mağara mantarı | 2 Mağara mantarı, 2 Su, 2 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 21 |
+| Kızarmış tavuk mantarı | 2 Tavuk mantarı, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 17 |
+| Kızarmış yabani havuç | 3 Yabani havuç, 1 Su | Pişirme taşı | Ateşte (pişirme menüsü) | 15 |
 | Kızılcık ezmesi | 3 Kızılcık, 1 Su | Taş havan | El yapımı (Tab) | 14 |
 | Kızılcık suyu | 3 Kızılcık, 1 Göl çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
-| Kök mantarlı güveç | 2 Kök mantarı, 1 Mağara kurdu eti, 2 Su, 1 Ateş | – | El yapımı (Tab) | 160 |
-| Közlenmiş şiş | 1 Et şişi, 1 Kor, 5 Su, 4 Yaprak | – | El yapımı (Tab) | 108 |
-| Kristal armut kompostosu ² | 3 Kristal armut, 2 Su, 1 Ateş | – | El yapımı (Tab) | 88 |
+| Kök mantarlı güveç | 2 Kök mantarı, 1 Mağara kurdu eti, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 160 |
+| Közlenmiş şiş | 1 Et şişi, 1 Kor, 5 Su, 4 Yaprak | – | Ateşte (pişirme menüsü) | 108 |
+| Kristal armut kompostosu ² | 3 Kristal armut, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 88 |
 | Kurutulmuş ahududu | 3 Ahududu, 3 Kuru ot | – | El yapımı (Tab) | 11 |
 | Kurutulmuş alabalık | 2 Alabalık, 1 Tuz, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 38 |
 | Kurutulmuş alıç | 3 Alıç, 3 Kuru ot | – | El yapımı (Tab) | 11 |
@@ -167,8 +168,8 @@ Toplam **971 tarif**: ACT 1 malzemeleriyle 904, ACT 2 malzemesi isteyen 67 (v3.5
 | Kuşburnu ezmesi | 3 Kuşburnu, 1 Su | Taş havan | El yapımı (Tab) | 14 |
 | Kuşburnu suyu | 3 Kuşburnu, 1 Kırmızı çömlek, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
 | Kül ekmeği | 1 Nilüfer kökü unu, 1 Kül, 1 Su | – | El yapımı (Tab) | 11 |
-| Levrek şiş | 1 Levrek, 2 Dal, 1 Ateş | – | El yapımı (Tab) | 65 |
-| Lüfer ızgara | 1 Lüfer, 1 Ateş | – | El yapımı (Tab) | 87 |
+| Levrek şiş | 1 Levrek, 2 Dal, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 65 |
+| Lüfer ızgara | 1 Lüfer, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 87 |
 | Mantar çorbası | 2 Kanlıca, 1 Sıcak su, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
 | Meyveli pemmikan | 1 Pemmikan, 1 Kurutulmuş böğürtlen, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 98 |
 | Meyve karışımı | 3 Böğürtlen, 3 Ahududu | – | El yapımı (Tab) | 15 |
@@ -176,58 +177,58 @@ Toplam **971 tarif**: ACT 1 malzemeleriyle 904, ACT 2 malzemesi isteyen 67 (v3.5
 | Mürver suyu | 3 Mürver, 1 Göl çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
 | Nilüfer çorbası | 2 Nilüfer, 1 Sıcak su, 1 Su teresi | – | El yapımı (Tab) | 57 |
 | Nilüfer kökü unu | 2 Nilüfer, 2 Su, 1 Yaprak | Öğütme taşı | El yapımı (Tab) | 13 |
-| Orkinos biftek | 1 Orkinos, 1 Ateş | – | El yapımı (Tab) | 266 |
+| Orkinos biftek | 1 Orkinos, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 266 |
 | Ot salatası | 3 Kuzukulağı, 3 Su teresi | – | El yapımı (Tab) | 11 |
-| Palamut buğulama | 1 Palamut, 1 Su, 1 Ateş | – | El yapımı (Tab) | 120 |
-| Palamut ekmeği | 1 Palamut unu, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 42 |
+| Palamut buğulama | 1 Palamut, 1 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 120 |
+| Palamut ekmeği | 1 Palamut unu, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 42 |
 | Palamut unu | 3 Meşe palamudu, 1 Su | Öğütme taşı | El yapımı (Tab) | 7 |
 | Pemmikan | 1 Kurutulmuş sincap eti, 2 Hayvan yağı, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 54 |
-| Pişmiş alabalık | 2 Alabalık, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 46 |
-| Pişmiş bıldırcın eti | 2 Bıldırcın eti, 1 Ateş, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 39 |
-| Pişmiş bulut koyunu eti ² | 1 Bulut koyunu eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 52 |
-| Pişmiş buz tavşanı eti ² | 1 Buz tavşanı eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 54 |
-| Pişmiş çapak | 2 Çapak, 1 Ateş, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 39 |
-| Pişmiş dağ keçisi eti | 1 Dağ keçisi eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 43 |
-| Pişmiş geyik eti | 1 Geyik eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 45 |
-| Pişmiş işık tilkisi eti | 1 Işık tilkisi eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 65 |
-| Pişmiş kadife balığı | 2 Kadife balığı, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 43 |
-| Pişmiş karaca eti | 1 Karaca eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 42 |
-| Pişmiş kartal eti | 1 Kartal eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 52 |
-| Pişmiş keklik eti | 2 Keklik eti, 1 Ateş, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 39 |
-| Pişmiş kerevit | 2 Kerevit, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 43 |
-| Pişmiş kertenkele eti ² | 1 Kertenkele eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 49 |
-| Pişmiş kızılkanat | 2 Kızılkanat, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 43 |
-| Pişmiş kor kertenkelesi eti ² | 1 Kor kertenkelesi eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 57 |
-| Pişmiş kristal geyik eti | 1 Kristal geyik eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 78 |
-| Pişmiş kunduz eti | 2 Kunduz eti, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 46 |
-| Pişmiş kurbağa | 3 Kurbağa, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
-| Pişmiş kurt eti | 1 Kurt eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 42 |
-| Pişmiş mağara ayısı eti | 1 Mağara ayısı eti, 1 Ateş, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 51 |
-| Pişmiş mersin balığı | 1 Mersin balığı, 1 Ateş, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 51 |
-| Pişmiş muflon eti | 1 Muflon eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 43 |
-| Pişmiş ördek eti | 2 Ördek eti, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 43 |
-| Pişmiş rüzgâr kuşu eti ² | 1 Rüzgâr kuşu eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 49 |
-| Pişmiş sazan | 2 Sazan, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 43 |
-| Pişmiş sincap eti | 3 Sincap eti, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
-| Pişmiş su samuru eti | 2 Su samuru eti, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 46 |
-| Pişmiş tatlısu kefali | 2 Tatlısu kefali, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 43 |
-| Pişmiş tatlısu levreği | 2 Tatlısu levreği, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 46 |
-| Pişmiş tatlısu midyesi | 3 Tatlısu midyesi, 1 Ateş, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 38 |
-| Pişmiş tavşan eti | 2 Tavşan eti, 1 Ateş, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 39 |
-| Pişmiş timsah eti | 1 Timsah eti, 1 Ateş, 1 Su, 1 Yaprak | – | El yapımı (Tab) | 42 |
-| Pişmiş turna balığı | 1 Turna balığı, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 42 |
-| Pişmiş turna kuşu eti | 2 Turna kuşu eti, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 46 |
-| Pişmiş ur kekliği eti | 1 Ur kekliği eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 47 |
-| Pişmiş vaşak eti | 1 Vaşak eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 54 |
-| Pişmiş yaban atı eti | 1 Yaban atı eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 46 |
-| Pişmiş yaban domuzu eti | 1 Yaban domuzu eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 43 |
-| Pişmiş yaban kazı eti | 2 Yaban kazı eti, 1 Ateş, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 46 |
-| Pişmiş yaban öküzü eti | 1 Yaban öküzü eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 47 |
-| Pişmiş yayın | 1 Yayın, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 43 |
-| Pişmiş yılan balığı | 1 Yılan balığı, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 42 |
-| Pişmiş yıldız tilkisi eti ² | 1 Yıldız tilkisi eti, 1 Ateş, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 60 |
+| Pişmiş alabalık | 2 Alabalık, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 46 |
+| Pişmiş bıldırcın eti | 2 Bıldırcın eti, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 39 |
+| Pişmiş bulut koyunu eti ² | 1 Bulut koyunu eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 52 |
+| Pişmiş buz tavşanı eti ² | 1 Buz tavşanı eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 54 |
+| Pişmiş çapak | 2 Çapak, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 39 |
+| Pişmiş dağ keçisi eti | 1 Dağ keçisi eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
+| Pişmiş geyik eti | 1 Geyik eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 45 |
+| Pişmiş işık tilkisi eti | 1 Işık tilkisi eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 65 |
+| Pişmiş kadife balığı | 2 Kadife balığı, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
+| Pişmiş karaca eti | 1 Karaca eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 42 |
+| Pişmiş kartal eti | 1 Kartal eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 52 |
+| Pişmiş keklik eti | 2 Keklik eti, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 39 |
+| Pişmiş kerevit | 2 Kerevit, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
+| Pişmiş kertenkele eti ² | 1 Kertenkele eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 49 |
+| Pişmiş kızılkanat | 2 Kızılkanat, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
+| Pişmiş kor kertenkelesi eti ² | 1 Kor kertenkelesi eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 57 |
+| Pişmiş kristal geyik eti | 1 Kristal geyik eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 78 |
+| Pişmiş kunduz eti | 2 Kunduz eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 46 |
+| Pişmiş kurbağa | 3 Kurbağa, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
+| Pişmiş kurt eti | 1 Kurt eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 42 |
+| Pişmiş mağara ayısı eti | 1 Mağara ayısı eti, Ateş (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 51 |
+| Pişmiş mersin balığı | 1 Mersin balığı, Ateş (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 51 |
+| Pişmiş muflon eti | 1 Muflon eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
+| Pişmiş ördek eti | 2 Ördek eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
+| Pişmiş rüzgâr kuşu eti ² | 1 Rüzgâr kuşu eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 49 |
+| Pişmiş sazan | 2 Sazan, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
+| Pişmiş sincap eti | 3 Sincap eti, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
+| Pişmiş su samuru eti | 2 Su samuru eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 46 |
+| Pişmiş tatlısu kefali | 2 Tatlısu kefali, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
+| Pişmiş tatlısu levreği | 2 Tatlısu levreği, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 46 |
+| Pişmiş tatlısu midyesi | 3 Tatlısu midyesi, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
+| Pişmiş tavşan eti | 2 Tavşan eti, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 39 |
+| Pişmiş timsah eti | 1 Timsah eti, Ateş (ateş sağlar), 1 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 42 |
+| Pişmiş turna balığı | 1 Turna balığı, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 42 |
+| Pişmiş turna kuşu eti | 2 Turna kuşu eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 46 |
+| Pişmiş ur kekliği eti | 1 Ur kekliği eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 47 |
+| Pişmiş vaşak eti | 1 Vaşak eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 54 |
+| Pişmiş yaban atı eti | 1 Yaban atı eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 46 |
+| Pişmiş yaban domuzu eti | 1 Yaban domuzu eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
+| Pişmiş yaban kazı eti | 2 Yaban kazı eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 46 |
+| Pişmiş yaban öküzü eti | 1 Yaban öküzü eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 47 |
+| Pişmiş yayın | 1 Yayın, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
+| Pişmiş yılan balığı | 1 Yılan balığı, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 42 |
+| Pişmiş yıldız tilkisi eti ² | 1 Yıldız tilkisi eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 60 |
 | Sarımsaklı et | 1 Pişmiş sincap eti, 3 Yaban sarımsağı, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 65 |
-| Spor ekmeği ² | 3 Spor tozu, 2 Su, 1 Ateş | – | El yapımı (Tab) | 88 |
+| Spor ekmeği ² | 3 Spor tozu, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 88 |
 | Taşta alabalık | 2 Alabalık, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 23 |
 | Taşta çapak | 2 Çapak, 2 Su, 1 Yaprak | Pişirme taşı | El yapımı (Tab) | 17 |
 | Taşta kadife balığı | 2 Kadife balığı, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 21 |
@@ -242,45 +243,45 @@ Toplam **971 tarif**: ACT 1 malzemeleriyle 904, ACT 2 malzemesi isteyen 67 (v3.5
 | Taşta turna balığı | 1 Turna balığı, 3 Su, 3 Yaprak | Pişirme taşı | El yapımı (Tab) | 21 |
 | Taşta yayın | 1 Yayın, 3 Su, 3 Yaprak | Pişirme taşı | El yapımı (Tab) | 22 |
 | Taşta yılan balığı | 1 Yılan balığı, 3 Su, 3 Yaprak | Pişirme taşı | El yapımı (Tab) | 21 |
-| Tekir tava | 2 Tekir, 1 Yabani buğday unu, 1 Ateş | – | El yapımı (Tab) | 52 |
-| Turba ateşinde tütsü | 1 Ördek eti, 2 Turba, 1 Kıvılcım | – | El yapımı (Tab) | 24 |
-| Tütsülenmiş alabalık | 2 Alabalık, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 67 |
-| Tütsülenmiş bıldırcın eti | 2 Bıldırcın eti, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
-| Tütsülenmiş çapak | 2 Çapak, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
-| Tütsülenmiş dağ keçisi eti | 1 Dağ keçisi eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 65 |
-| Tütsülenmiş geyik eti | 1 Geyik eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 67 |
-| Tütsülenmiş işık tilkisi eti | 1 Işık tilkisi eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 84 |
-| Tütsülenmiş kadife balığı | 2 Kadife balığı, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 64 |
-| Tütsülenmiş karaca eti | 1 Karaca eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 64 |
-| Tütsülenmiş kartal eti | 1 Kartal eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 71 |
-| Tütsülenmiş keklik eti | 2 Keklik eti, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
-| Tütsülenmiş kerevit | 2 Kerevit, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 64 |
-| Tütsülenmiş kızılkanat | 2 Kızılkanat, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 64 |
-| Tütsülenmiş kristal geyik eti | 1 Kristal geyik eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 97 |
-| Tütsülenmiş kunduz eti | 2 Kunduz eti, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 67 |
-| Tütsülenmiş kurbağa | 3 Kurbağa, 1 Duman, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
-| Tütsülenmiş kurt eti | 1 Kurt eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 64 |
-| Tütsülenmiş mağara ayısı eti | 1 Mağara ayısı eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 72 |
-| Tütsülenmiş mersin balığı | 1 Mersin balığı, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 72 |
-| Tütsülenmiş muflon eti | 1 Muflon eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 65 |
-| Tütsülenmiş ördek eti | 2 Ördek eti, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 64 |
-| Tütsülenmiş sazan | 2 Sazan, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 64 |
-| Tütsülenmiş sincap eti | 3 Sincap eti, 1 Duman, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
-| Tütsülenmiş su samuru eti | 2 Su samuru eti, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 67 |
-| Tütsülenmiş tatlısu kefali | 2 Tatlısu kefali, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 64 |
-| Tütsülenmiş tatlısu levreği | 2 Tatlısu levreği, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 67 |
-| Tütsülenmiş tatlısu midyesi | 3 Tatlısu midyesi, 1 Duman, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
-| Tütsülenmiş tavşan eti | 2 Tavşan eti, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 61 |
-| Tütsülenmiş turna balığı | 1 Turna balığı, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 64 |
-| Tütsülenmiş turna kuşu eti | 2 Turna kuşu eti, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 67 |
-| Tütsülenmiş ur kekliği eti | 1 Ur kekliği eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 66 |
-| Tütsülenmiş vaşak eti | 1 Vaşak eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 74 |
-| Tütsülenmiş yaban atı eti | 1 Yaban atı eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 68 |
-| Tütsülenmiş yaban domuzu eti | 1 Yaban domuzu eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 65 |
-| Tütsülenmiş yaban kazı eti | 2 Yaban kazı eti, 1 Duman, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 67 |
-| Tütsülenmiş yaban öküzü eti | 1 Yaban öküzü eti, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 69 |
-| Tütsülenmiş yayın | 1 Yayın, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 65 |
-| Tütsülenmiş yılan balığı | 1 Yılan balığı, 1 Duman, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 64 |
+| Tekir tava | 2 Tekir, 1 Yabani buğday unu, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 52 |
+| Turba ateşinde tütsü | 1 Ördek eti, 2 Turba, 1 Kıvılcım | – | Ateşte (pişirme menüsü) | 24 |
+| Tütsülenmiş alabalık | 2 Alabalık, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 67 |
+| Tütsülenmiş bıldırcın eti | 2 Bıldırcın eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
+| Tütsülenmiş çapak | 2 Çapak, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
+| Tütsülenmiş dağ keçisi eti | 1 Dağ keçisi eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 65 |
+| Tütsülenmiş geyik eti | 1 Geyik eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 67 |
+| Tütsülenmiş işık tilkisi eti | 1 Işık tilkisi eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 84 |
+| Tütsülenmiş kadife balığı | 2 Kadife balığı, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
+| Tütsülenmiş karaca eti | 1 Karaca eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
+| Tütsülenmiş kartal eti | 1 Kartal eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 71 |
+| Tütsülenmiş keklik eti | 2 Keklik eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
+| Tütsülenmiş kerevit | 2 Kerevit, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
+| Tütsülenmiş kızılkanat | 2 Kızılkanat, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
+| Tütsülenmiş kristal geyik eti | 1 Kristal geyik eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 97 |
+| Tütsülenmiş kunduz eti | 2 Kunduz eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 67 |
+| Tütsülenmiş kurbağa | 3 Kurbağa, Duman (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 60 |
+| Tütsülenmiş kurt eti | 1 Kurt eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
+| Tütsülenmiş mağara ayısı eti | 1 Mağara ayısı eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 72 |
+| Tütsülenmiş mersin balığı | 1 Mersin balığı, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 72 |
+| Tütsülenmiş muflon eti | 1 Muflon eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 65 |
+| Tütsülenmiş ördek eti | 2 Ördek eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
+| Tütsülenmiş sazan | 2 Sazan, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
+| Tütsülenmiş sincap eti | 3 Sincap eti, Duman (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 60 |
+| Tütsülenmiş su samuru eti | 2 Su samuru eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 67 |
+| Tütsülenmiş tatlısu kefali | 2 Tatlısu kefali, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
+| Tütsülenmiş tatlısu levreği | 2 Tatlısu levreği, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 67 |
+| Tütsülenmiş tatlısu midyesi | 3 Tatlısu midyesi, Duman (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 60 |
+| Tütsülenmiş tavşan eti | 2 Tavşan eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
+| Tütsülenmiş turna balığı | 1 Turna balığı, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
+| Tütsülenmiş turna kuşu eti | 2 Turna kuşu eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 67 |
+| Tütsülenmiş ur kekliği eti | 1 Ur kekliği eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 66 |
+| Tütsülenmiş vaşak eti | 1 Vaşak eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 74 |
+| Tütsülenmiş yaban atı eti | 1 Yaban atı eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 68 |
+| Tütsülenmiş yaban domuzu eti | 1 Yaban domuzu eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 65 |
+| Tütsülenmiş yaban kazı eti | 2 Yaban kazı eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 67 |
+| Tütsülenmiş yaban öküzü eti | 1 Yaban öküzü eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 69 |
+| Tütsülenmiş yayın | 1 Yayın, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 65 |
+| Tütsülenmiş yılan balığı | 1 Yılan balığı, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
 | Yabani armut ezmesi | 3 Yabani armut, 1 Su | Taş havan | El yapımı (Tab) | 14 |
 | Yabani armut suyu | 3 Yabani armut, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
 | Yabani arpa hamuru | 1 Yabani arpa unu, 4 Su, 1 Yaprak | – | El yapımı (Tab) | 20 |
@@ -312,7 +313,7 @@ Toplam **971 tarif**: ACT 1 malzemeleriyle 904, ACT 2 malzemesi isteyen 67 (v3.5
 | Yaban çileği suyu | 3 Yaban çileği, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
 | Yaban mersini ezmesi | 2 Yaban mersini, 2 Su, 1 Yaprak | Taş havan | El yapımı (Tab) | 16 |
 | Yaban mersini suyu | 2 Yaban mersini, 1 Nehir çömleği, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 83 |
-| Yankı çorbası | 2 Yankı mantarı, 1 Kör kertenkele eti, 2 Su, 1 Ateş | – | El yapımı (Tab) | 91 |
+| Yankı çorbası | 2 Yankı mantarı, 1 Kör kertenkele eti, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 91 |
 | Ziyafet sofrası | 1 Avcı yahnisi, 1 Yabani buğday yassı ekmeği, 4 Su, 4 Yaprak | – | El yapımı (Tab) | 152 |
 
 #### Ağaç (117)

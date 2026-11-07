@@ -8,6 +8,25 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.62 · 7 Kasım 2026
+
+### Düzeltmeler
+
+- **Börü'nün atılma dersi artık takılmaz:** kerevit bir yere sıkışır, itilir ya da oyun çok yavaş akarsa bile en geç 5 saniyede yeniden saldırır. Çok uzakta kalırsa yanına döner.
+- **Ders sırasında alınmış bir kayıt yüklenince öğretici kilitlenmez:** Börü'nün kereviti geri gelir. Onu vurunca atılma dersi baştan başlar.
+- Kol menüsünden "Oyunu kaydet" ve "Kayıttan yükle" ilk boş yuvada (yoksa ilk yuvada) açılır, "Geri"de değil.
+- Kolla kazanda grup listesi sol / sağ ile artık değişmez (seçim yanındaki düğmeye geçer). Grup LB / RB ile değişir. Kazan boş bir grupla kalmışsa kolla açılınca bütün tarifler geri gelir.
+- Çantada meşaleyi A ile seçince seçim kendiliğinden meşale yuvasına geçer (bir daha A: yuvaya girer).
+
+### Arayüz
+
+- Meşale yazıları kolda doğru tarif eder: "LB / RB ile meşale yuvasını seç, sonra X'i basılı tut" (PlayStation'da L1 / R1, □).
+- Kol açıkken ders kartlarında ve ipuçlarında fare sözleri ("tıkla ya da", "… düğmesine tıkla") düşer, pencerelerdeki "(Esc)" görünmez, Zümrüt'ün "Tab'a bas"ı kolun tuşunu söyler.
+- Tuş adından sonraki ek, yeni adın okunuşuna uyar: "A'ya bas", "B'ye", "X'e", "LB'ye", "✕'ya".
+- Kol yazılarına kol tuşu harfi ikinci kez klavye tuşu sanılıp değiştirilmez (meşale yazısında "X basılı" "J basılı" oluyordu).
+- LB / RB kemerde boş eldeyken boş el kutusu da mavi çerçeveyle gösterilir.
+- Ad yazma ekran klavyesi DualSense'te ✕ / □ / ○ / Options yazar ve dar ekranda taşmaz.
+
 ## Versiyon 3.61 · 7 Kasım 2026
 
 ### Oynanış
@@ -344,23 +363,3 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 
 ### Tasarım belgesi
 - "Çiftçi Ekin · Çayır → Bereket Adası" bölümü oyundaki haliyle güncellendi.
-
-## Versiyon 3.42 · 6 Kasım 2026
-
-### Oynanış
-- **Evcil hayvanlar:** her biyomda bir canlı evcilleşir. Binekler: Yaban atı (Çayır), Dağ keçisi (Kayalık Dağ), Kristal geyik (Mor Kristal Vadisi). Savaşçılar: Kurt (Orman), Timsah (Bataklık), Lav kertenkelesi (Kül Diyarı).
-- **Nasıl:** canlının sevdiği yiyeceği yanına bırak, birkaç adım geri çekil ve bekle. Yerse başının üstündeki güven çubuğu dolar; koşarsan ya da vurursan ürker. Dört beslemede evcilleşir ve ona bir ad koyarsın. Savaşçılar inlerindeki yavrudan evcilleşir: gündüz yavru yalnızdır, gece anne inin başında bekler.
-- **Önce ağıl:** dünyada bir ağıl kurulmadan hiçbir canlı evcilleşmez. Ağılda kimin yanında kimin ağılda kalacağını seçersin.
-- **Yanında 1 binek ve 2 savaşçı** dolaşır. Bineğe **B** ile (telefonda Bin düğmesiyle) binersin; çok daha hızlı gidersin. Savaşçılar senin vurduğuna ve sana saldırana saldırır; kurt hızlı, timsah ısırdığını bırakmaz, kertenkele yakar.
-- **Ölüm:** savaşçı ölürse geri gelmez; adı ağıldaki taşa yazılır, 3 gün sonra ininde yeni bir yavru doğar. Binek ölmez: bayılıp ağıla döner, sevdiği yiyecekten 3 tane verince ayağa kalkar.
-- **Çoban Davut ana görev oldu:** Pamuk'un görevi artık onun ilk ana görevi. Sonraki görevleri evcilleştirme üzerine: ağıl, at, kurt, timsah, dağ keçisi, lav kertenkelesi, kristal geyik. Her evcilleştirmeden sonra bir sonraki biyomda karşına çıkar. Ağıl kurmadıysan Kemal hatırlatır.
-- **Yeni yan görev · Gece öten kuş (Çayır):** uykusu kaçmış Toprak her gece ağlayan bir kuşu duyuyor. Kuşu sesinden bul, yuvasını yeniden kur.
-
-### Görsel
-- Ağılın kendi çizimi (çit, yemlik, saman), kurt ini, timsah yuvası, kertenkele kaya çatlağı, binince bineğin sırtında oturan karakter, yoldaşların ad etiketleri.
-
-### Ses
-- Bıldırcının alçak, yumuşak ötüşü.
-
-### Tasarım belgesi
-- "Evcil hayvanlar", "Çoban Davut", "Gece öten kuş" bölümleri; Çiftçi Ekin ve Bereket Adası'nın tasarımı (henüz oyunda yok).

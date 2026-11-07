@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.61</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.62</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.61 · 7 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Döşe kolla:</strong> evde Kol menüsünden Döşe'yi aç. Eşya listesinde yön tuşlarıyla gezilir, A eşyayı seçer. Sonra odada bir kare imleç belirir: yön tuşları ya da çubuk onu kaydırır, A koyar, Y döndürür, B bırakır. Listede X'e basınca imleç seçim yapmadan çıkar. Yerleşik bir eşyanın üstünde A, Taşı / Geri al / Döndür menüsünü açar. B ile Döşe biter.</li><li><strong>Harita kolla:</strong> sol (ya da sağ) çubuk haritayı kaydırır, LT / RT uzaklaştırır / yakınlaştırır, Y bulunduğun yere döner, B kapatır. Ortadaki artıyla A'ya basarsın: bir işaretin üstündeysen işaret kalkar, bir kişinin üstündeysen ok onu gösterir (yine basınca kalkar), başka yerde işaret konur.</li><li><strong>Meşaleye reçine sür</strong> Kol menüsünde (meşalen varken).</li><li><strong>Kolla toplarken bakılan yön:</strong> yanında birkaç toplanacak şey varken A, çubuğun (ya da yüzünün) gösterdiği şeyi alır, yalnızca en yakını değil. Yerde duran eşyalar yine önce alınır, kişiler sonra gelir. Klavyede F değişmedi.</li><li>Standart dışı kollarda (tarayıcının "standard" demediği) yön tuşları da çalışır.</li></ul><h3>Arayüz</h3><ul><li>Börü'nün kerevit dersinde kart ve büyük uyarı kol açıkken kolun tuşlarını yazar ("Sol çubuk", "X ya da RT", "Atıl: B!", "Savuştur: LT!"). Ayrı ayrı yazılmış W A S D tek bir "Sol çubuk" olur.</li><li>Ayarlar → Kontroller'deki kol düzeni ve kol bağlanınca çıkan bildirim yeni düzene göre ve bağlı kolun tuş adlarıyla yazılır.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.62 · 7 Kasım 2026</h2><h3>Düzeltmeler</h3><ul><li><strong>Börü'nün atılma dersi artık takılmaz:</strong> kerevit bir yere sıkışır, itilir ya da oyun çok yavaş akarsa bile en geç 5 saniyede yeniden saldırır. Çok uzakta kalırsa yanına döner.</li><li><strong>Ders sırasında alınmış bir kayıt yüklenince öğretici kilitlenmez:</strong> Börü'nün kereviti geri gelir. Onu vurunca atılma dersi baştan başlar.</li><li>Kol menüsünden "Oyunu kaydet" ve "Kayıttan yükle" ilk boş yuvada (yoksa ilk yuvada) açılır, "Geri"de değil.</li><li>Kolla kazanda grup listesi sol / sağ ile artık değişmez (seçim yanındaki düğmeye geçer). Grup LB / RB ile değişir. Kazan boş bir grupla kalmışsa kolla açılınca bütün tarifler geri gelir.</li><li>Çantada meşaleyi A ile seçince seçim kendiliğinden meşale yuvasına geçer (bir daha A: yuvaya girer).</li></ul><h3>Arayüz</h3><ul><li>Meşale yazıları kolda doğru tarif eder: "LB / RB ile meşale yuvasını seç, sonra X'i basılı tut" (PlayStation'da L1 / R1, □).</li><li>Kol açıkken ders kartlarında ve ipuçlarında fare sözleri ("tıkla ya da", "… düğmesine tıkla") düşer, pencerelerdeki "(Esc)" görünmez, Zümrüt'ün "Tab'a bas"ı kolun tuşunu söyler.</li><li>Tuş adından sonraki ek, yeni adın okunuşuna uyar: "A'ya bas", "B'ye", "X'e", "LB'ye", "✕'ya".</li><li>Kol yazılarına kol tuşu harfi ikinci kez klavye tuşu sanılıp değiştirilmez (meşale yazısında "X basılı" "J basılı" oluyordu).</li><li>LB / RB kemerde boş eldeyken boş el kutusu da mavi çerçeveyle gösterilir.</li><li>Ad yazma ekran klavyesi DualSense'te ✕ / □ / ○ / Options yazar ve dar ekranda taşmaz.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -8786,10 +8786,18 @@ addEventListener('keydown',translate,true);addEventListener('keyup',translate,tr
 // texts that name a key show the bound key
 const LBL2ID={};for(const [id] of KB)LBL2ID[KLAB[id]]=id;
 const KRE=/(<span class="kc">|<kbd>)([^<]{1,8})(<\/span>|<\/kbd>)|(^|[^A-Za-zÇĞİÖŞÜçğıöşü0-9_])(WASD|Tab|Shift|Boşluk|[A-Z])(?=( ile| tuşu| tuşuna| ya da| \(| \/|\)| bas| basılı|'[a-zçğıöşü]{1,4}\b|\.|,|$))/g;
-function kTxt(s){const pd=padOn();if((!kOn()&&!pd)||typeof s!=='string'||!s)return s;return s.replace(KRE,(m,o,lab,cl,pre,lab2)=>{
-  if(o){const id=LBL2ID[lab],pl=id&&padLab(id);if(pl)return o.replace('>',' data-k="1">')+esc(pl)+cl;if(!id||!BIND[id])return m;return o.replace('>',' data-k="1">')+esc(labOf(id))+cl}
-  if(lab2==='WASD'){if(pd)return pre+'Sol çubuk';return ['up','left','down','right'].some(i=>BIND[i])?pre+['up','left','down','right'].map(labOf).join(''):m}
-  const id=LBL2ID[lab2],pl=id&&padLab(id);if(pl)return pre+pl;if(!id||!BIND[id])return m;return pre+labOf(id)}).replace(/(<span class="kc" data-k="1">Sol çubuk<\/span>)(\s*<span class="kc" data-k="1">Sol çubuk<\/span>)+/g,'$1')}
+// v3.62: every changed key is marked while the text is written so the ending after it can follow the new name (E'ye → A'ya, F'ye); with the pad
+// a key that has no pad button stays as it is (it was read again as a keyboard key: "X basılı" became J), and mouse words go (tıkla ya da …)
+function kTxt(s){const pd=padOn();if((!kOn()&&!pd)||typeof s!=='string'||!s)return s;const M1='⁢',M2='⁡';
+  let out=s.replace(KRE,(m,o,lab,cl,pre,lab2)=>{
+  if(o){const id=LBL2ID[lab],pl=id&&padLab(id);if(pl)return o.replace('>',' data-k="1">')+M1+esc(pl)+M2+cl;if(pd||!id||!BIND[id])return m;return o.replace('>',' data-k="1">')+M1+esc(labOf(id))+M2+cl}
+  if(lab2==='WASD'){if(pd)return pre+M1+'Sol çubuk'+M2;return ['up','left','down','right'].some(i=>BIND[i])?pre+['up','left','down','right'].map(labOf).join(''):m}
+  const id=LBL2ID[lab2],pl=id&&padLab(id);if(pl)return pre+M1+pl+M2;if(pd||!id||!BIND[id])return m;return pre+M1+labOf(id)+M2});
+  out=out.replace(/⁢([^⁡]*)⁡((?:<\/span>|<\/kbd>)?)'(ye|ya|e|a)(?![a-zçğıöşü])/g,(m,l,c)=>l+c+"'"+(window.__plSuf?window.__plSuf(l,'dat'):'e')).replace(/[⁡⁢]/g,'');
+  if(pd)out=out.replace(/(<span class="kc" data-k="1">Sol çubuk<\/span>)(\s*<span class="kc" data-k="1">Sol çubuk<\/span>)+/g,'$1')
+    .replace(/\s*ya da (<span class="kc">[↑←↓→]<\/span>\s*){4}/g,'').replace(/\s*\(ya da [^)]{0,70}?(tıkla|dokun)\)/g,'')
+    .replace(/ ya da (?:[^.,;:()]{0,70}?)(tıkla|dokun)(?=[\s.,;:!)]|$)/g,'').replace(/(^|[\s>(:])tıkla ya da /g,'$1');
+  return out}
 B5.kTxt=kTxt;
 function kEl(el){if(!el||!kOn())return;const h=el.innerHTML;if(h===el.__b5)return;const o=kTxt(h);if(o!==h){el.innerHTML=o}el.__b5=el.innerHTML}
 {const _t=toast;toast=function(m,w){return _t.call(this,kTxt(m),w)}}
@@ -8798,7 +8806,7 @@ function kEl(el){if(!el||!kOn())return;const h=el.innerHTML;if(h===el.__b5)retur
 {const _u=updatePrompt;updatePrompt=function(){const r=_u.apply(this,arguments);try{if(kOn()&&lastPrompt&&lastPrompt!=='#'&&(lastPrompt!==B5.lp||prompt.innerHTML!==B5.lph)){B5.lp=lastPrompt;prompt.innerHTML=kTxt(lastPrompt);B5.lph=prompt.innerHTML}}catch(e){}return r}}   // v48c: also when the game wrote the same raw text again
 {const _f=renderFish;renderFish=function(){const r=_f.apply(this,arguments);try{kEl($('fu-t'))}catch(e){}return r}}
 {const _h=renderHot;renderHot=function(){const r=_h.apply(this,arguments);try{const k=document.querySelector('#handbtn kbd');if(k)k.textContent=labOf('hand')}catch(e){}return r}}
-{const _k=tzKey;tzKey=function(k){const s=_k.apply(this,arguments);return typeof s==='string'?s.replace(/<span class="kc">([^<]{1,8})<\/span>/g,(m,l)=>{const id=LBL2ID[l];return id?`<span class="kc" data-k="1">${esc(labOf(id))}</span>`:m}):s}}
+{const _k=tzKey;tzKey=function(k){const s=_k.apply(this,arguments);return typeof s==='string'?kTxt(s.replace(/<span class="kc">([^<]{1,8})<\/span>/g,(m,l)=>{const id=LBL2ID[l];return id&&!padOn()?`<span class="kc" data-k="1">${esc(labOf(id))}</span>`:m})):s}}   // v3.62 (KOL-20): with the pad the pad's button
 const HUDK={'b-inv':'inv','b-craft':'craft','b-hand':'handcraft','b-book':'book','b-sell':'sell','b-skill':'skills','b-dog':'dogs','b-shop':'smith','b-set':'settings','b-char':'char','b-quest':'quests'};
 function applyKeyTexts(){for(const id in HUDK){const b=$(id);if(!b)continue;const a=HUDK[id],k=b.querySelector('kbd');if(k)k.textContent=padLab(a)||labOf(a);
     for(const at of ['title','aria-label']){const v=b.getAttribute(at);if(!v)continue;if(b.dataset['b5'+at.charAt(0)]==null)b.dataset['b5'+at.charAt(0)]=v;b.setAttribute(at,b.dataset['b5'+at.charAt(0)].replace('('+KLAB[a]+')','('+labOf(a)+')'))}}
@@ -14412,7 +14420,7 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
    DL.crab={k:'Kerevit',x:p.x,y:p.y,hp:ANIM['Kerevit'].hp,st:'wander',t:0,dx:0,dy:0,face:1,atk:0,flash:0,kb:null,step:0,mad:false,tut:true,dl:true};Object.defineProperty(DL.crab,'hp',{get:()=>ANIM['Kerevit'].hp,set:()=>{},enumerable:true,configurable:true});animals.push(DL.crab);   // v3.14: the lesson's crab takes no harm and cannot die
   DL.hx=p.x;DL.hy=p.y};
  const count=()=>small(`${DL.mode==='parry'?'Savuşturma':'Sıyrılma'}: ${DL.n}/4`)+(DL.n===0&&!DL.frz?small('Kımıldama: kerevit saldıracak'):'');
- function startLesson(after,mode){if(DL.on)return;DL.on=true;DL.mode=mode==='parry'?'parry':'dodge';DL.n=0;DL.px=null;DL.ph='idle';DL.t=1.6;DL.after=after||null;DL.free=!tz;DL.hadS1=sk('S1');if(DL.mode==='dodge')skills.add('S1');   /* v3.47: free = begun outside the tutorial (it was skipped): it never holds you */st=maxSt();spawn();
+ function startLesson(after,mode){if(DL.on)return;DL.on=true;DL.atkT=null;DL.mode=mode==='parry'?'parry':'dodge';DL.n=0;DL.px=null;DL.ph='idle';DL.t=1.6;DL.after=after||null;DL.free=!tz;DL.hadS1=sk('S1');if(DL.mode==='dodge')skills.add('S1');   /* v3.47: free = begun outside the tutorial (it was skipped): it never holds you */st=maxSt();spawn();
    try{document.body.classList.remove('nododge')}catch(e){}hint(count());sfx('found')}
  window.__plDodgeLesson=startLesson;
  const strikeDone=(ok,why)=>{const c=DL.crab;if(ok){DL.n++;if(DL.mode!=='parry')floatText('Sıyrıldın!','#9fe07a');sfx('found')}else{floatText(why?why+' Bir daha!':'Bir daha!','#e8c860');sfx('bad')}
@@ -14428,7 +14436,7 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
  const walkTo=(c,tx,ty,sp,dt)=>{const dx=tx-DL.hx,dy=ty-DL.hy,d=Math.hypot(dx,dy);if(d<1){c.dx=0;c.dy=0;return true}const k=Math.min(d,sp*dt)/d,nx=DL.hx+dx*k,ny=DL.hy+dy*k;
    if(!blocked(nx,ny)&&!isWater(tileAt(nx,ny))){DL.hx=nx;DL.hy=ny}else if(!blocked(nx,DL.hy)&&!isWater(tileAt(nx,DL.hy)))DL.hx=nx;else if(!blocked(DL.hx,ny)&&!isWater(tileAt(DL.hx,ny)))DL.hy=ny;
    c.dx=dx/d;c.dy=dy/d;c.step=(c.step||0)+dt*8;return false};
- const tickDL=(dt)=>{const c=DL.crab;if(!DL.on||!c)return;if(DL.free&&!DL.frz&&Math.hypot(player.x-alp.x,player.y-alp.y)>280){quitLesson();return}if(animals.indexOf(c)<0){spawn();return}if(DL.ph==='talk'){c.x=DL.hx;c.y=DL.hy;c.dx=0;c.dy=0;
+ const tickDL=(dt)=>{const c=DL.crab;if(!DL.on||!c)return;DL.tickT=NOW();if(DL.atkT==null)DL.atkT=NOW();if(DL.free&&!DL.frz&&Math.hypot(player.x-alp.x,player.y-alp.y)>280){quitLesson();return}if(animals.indexOf(c)<0){spawn();return}if(DL.ph==='talk'){c.x=DL.hx;c.y=DL.hy;c.dx=0;c.dy=0;
      if(!dlgOpen&&NOW()-(DL.talkT||0)>1.5){DL.ph='idle';DL.t=1.4;st=maxSt();hint(count())}   // v3.14: Börü's parry words closed without "Hazırım" (a click outside, Esc): the lesson goes on anyway
      return}
    if(DL.n===0&&!DL.free){if(DL.px==null){DL.px=player.x;DL.py=player.y}player.x=DL.px;player.y=DL.py;goal=null;for(const k in keys)keys[k]=false}   // v2.15: the first time you stand still and wait for it
@@ -14439,8 +14447,12 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
      if(pd>46){walkTo(c,player.x+(DL.hx-player.x)/pd*36,player.y+(DL.hy-player.y)/pd*36,pd>90?70:42,dt)}
      else if(pd<22){walkTo(c,player.x+(DL.hx-player.x)/pd*30,player.y+(DL.hy-player.y)/pd*30,30,dt)}
      else{c.dx=0;c.dy=0;DL.t-=dt}
+     // v3.62 (KOL-15): the lesson never stalls: no attack for 5 s (the crab could not keep its distance, it was pushed, the frames were slow): it attacks
+     // from where it is; out of reach for 8 s: it comes back beside you
+     if(NOW()-DL.atkT>8&&pd>60){spawn();DL.atkT=NOW()-4;return}
+     if(NOW()-DL.atkT>5&&pd<=60&&!(DL.n===0&&!DL.free&&pd<26))DL.t=0;
      c.x=DL.hx;c.y=DL.hy;
-     if(DL.t<=0){DL.ph='wind';DL.t=.08;DL.wStart=NOW();floats.push({x:c.x,y:c.y-22,t:0,text:'!',color:'#ff3b30',size:16});sfx('bad')}}   // v2.15: the warning and the leap come together
+     if(DL.t<=0){DL.ph='wind';DL.t=.08;DL.wStart=NOW();DL.atkT=NOW();floats.push({x:c.x,y:c.y-22,t:0,text:'!',color:'#ff3b30',size:16});sfx('bad')}}   // v2.15: the warning and the leap come together
    else if(DL.ph==='wind'){c.x=DL.hx+(Math.random()-.5)*3;c.y=DL.hy+(Math.random()-.5)*2;DL.t-=dt;
      if(DL.t<=0){c.x=DL.hx;c.y=DL.hy;
        DL.ph='lunge';DL.t=.45;DL.ls=NOW();DL.hit=false;DL.lx=c.x;DL.ly=c.y;{const ex=player.x-c.x,ey=player.y-c.y,el=Math.hypot(ex,ey)||1;DL.tx=player.x+ex/el*8;DL.ty=player.y+ey/el*8}}}   // aimed at you (a little past)
@@ -14457,6 +14469,11 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
      if(near<=12){if(dodge&&DL.lastD>=DL.ls-.15){strikeDone(true);return}strikeDone(false,DL.lastD>=DL.wStart-.25&&DL.lastD<DL.ls-.05?'Erken!':'Değdi!');return}   // it reached you: escaped only if you are mid-roll (a roll begun as it leapt)
      if(DL.t<=0){const ok=DL.lastD>=DL.ls-.15;strikeDone(ok,ok?'':'Kaçmadın!')}}};
  {const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);try{tickDL(dt)}catch(e){}return r}}
+ // v3.62 (KOL-15): if the animals' step stops being called while the lesson runs (the island is not paused), the lesson steps on by itself
+ setInterval(()=>{try{if(DL.on&&!DL.frz&&DL.ph!=='talk'&&!paused&&!dlgOpen&&!onTitle&&DL.tickT&&NOW()-DL.tickT>2)tickDL(.25)}catch(e){}},250);
+ // v3.62 (KOL-32): a game saved in the middle of Börü's lessons (fight crab, dodge, parry: the crab is not saved) gets its crab back: the fight
+ // lesson goes on from the crab, and after it the dodge lesson starts again from 0
+ {let miss=0;setInterval(()=>{try{if(onTitle||paused||dlgOpen||DL.on||DL.done||DL.tree||!(tz===11&&ftut===2)||animals.some(a=>a.tut&&a.hp>0)){miss=0;return}if(++miss>=2){miss=0;spawnTutCrab();renderTut()}}catch(e){}},2000)}
  window.addEventListener('keydown',e=>{if(!DL.frz)return;e.preventDefault();e.stopImmediatePropagation();if(DL.mode==='parry'?(e.code==='KeyE'||e.code==='F13'):e.code==='Space')release()},true);
  window.addEventListener('pointerdown',e=>{if(DL.frz&&DL.mode==='parry'&&e.button===2){e.preventDefault();e.stopImmediatePropagation();release()}},true);
  window.addEventListener('contextmenu',e=>{if(DL.on&&DL.mode==='parry')e.preventDefault()},true);
@@ -18634,15 +18651,18 @@ setInterval(()=>{try{
 addEventListener('keydown',e=>{if(e.code!=='Backquote'||e.repeat)return;const tg=e.target;if(tg&&(tg.tagName==='INPUT'||tg.tagName==='TEXTAREA'))return;if(onTitle||paused||fading||wake||dlgOpen||craftOpen)return;tsToggle();e.preventDefault()});
 // texts the tutorials ask for
 window.__plTS=()=>tsHas();window.__plTSSet=n=>tsSet(n,true);window.__plTSLit=()=>torchHeld();
-window.__plTSKey=()=>{if(tsHas())return TOUCH?'kemerin solundaki meşale yuvasına dokun':`meşale yuvasına tıkla ya da ${keyTS()} tuşuna bas`;
+const PDT=()=>window.__plPad&&window.__plPad.on()?window.__plPad:null;   // v3.62 (KOL-25): with the pad: choose the slot with LB / RB, hold X
+const padTS=Q=>`${Q.bn(4)} / ${Q.bn(5)} ile <b>meşale yuvasını</b> seç, sonra ${Q.acc(2)} basılı tut`;
+window.__plTSKey=()=>{const Q=PDT();if(Q&&tsHas())return padTS(Q);if(tsHas())return TOUCH?'kemerin solundaki meşale yuvasına dokun':`meşale yuvasına tıkla ya da ${keyTS()} tuşuna bas`;
+  if(Q&&tsBest())return `önce çantada (${Q.bn(13)}) meşaleni seçip ${Q.dat(0)} bas, meşale yuvasına girer; sonra ${padTS(Q)}`;
   return tsBest()?(TOUCH?'önce meşaleni envanterden kemerin solundaki meşale yuvasına koy, sonra yuvaya dokun':`önce meşaleni envanterden kemerin solundaki meşale yuvasına koy, sonra yuvaya tıkla ya da ${keyTS()} tuşuna bas`):(TOUCH?'önce bir meşale yap (el ikonu)':'önce bir meşale yap (Tab)')};
-window.__plTSLesson=()=>tsHas()?`Meşalen <b>meşale yuvasında</b> (kemerin solunda). Şimdi onu yak: ${TOUCH?'yuvaya dokun':'yuvaya tıkla ya da <span class="kc">'+keyTS()+'</span> tuşuna bas'}. Bir daha basınca söner; sönükken tükenmez.`
-  :`Meşalen hazır ama <b>envanterinde</b>. Meşale yalnızca kemerin solundaki <b>meşale yuvasına</b> takılır: ${TOUCH?'çantayı aç, meşaleye dokun, sonra yanıp sönen meşale yuvasına dokun':'çantayı aç (<span class="kc">I</span>), meşaleyi yanıp sönen meşale yuvasına sürükle (ya da tıkla, sonra yuvaya tıkla)'}.`;
+window.__plTSLesson=()=>tsHas()?`Meşalen <b>meşale yuvasında</b> (kemerin solunda). Şimdi onu yak: ${PDT()?padTS(PDT()):TOUCH?'yuvaya dokun':'yuvaya tıkla ya da <span class="kc">'+keyTS()+'</span> tuşuna bas'}. Bir daha ${PDT()?'basılı tutunca':'basınca'} söner; sönükken tükenmez.`
+  :`Meşalen hazır ama <b>envanterinde</b>. Meşale yalnızca kemerin solundaki <b>meşale yuvasına</b> takılır: ${PDT()?`çantayı aç (${PDT().bn(13)}), meşaleyi seç ve ${PDT().dat(0)} bas: yuvaya girer`:TOUCH?'çantayı aç, meşaleye dokun, sonra yanıp sönen meşale yuvasına dokun':'çantayı aç (<span class="kc">I</span>), meşaleyi yanıp sönen meşale yuvasına sürükle (ya da tıkla, sonra yuvaya tıkla)'}.`;
 window.__plTSCard=low=>{const inInv=craftOpen&&mode==='inv';
-  if(low)return['witch','Zümrüt · Meşaleyi söndür',`Gündüz meşaleyi boşuna yakma; geceye sakla. ${TOUCH?'Yanıp sönen <b>meşale yuvasına</b> bir daha dokun':'Yanıp sönen <b>meşale yuvasına</b> bir daha tıkla ya da <span class="kc">'+keyTS()+'</span> tuşuna bas'}: meşale söner, yuvasında bekler.`];
-  if(!tsHas())return['witch','Zümrüt · Meşaleyi yuvasına koy',inInv?(TOUCH?'<b>Kaba meşale</b> simgesine dokun, sonra alttaki yanıp sönen <b>meşale yuvasına</b> (kemerin solunda) dokun. Meşale yalnızca o yuvaya takılır.':'<b>Kaba meşale</b> simgesini alttaki yanıp sönen <b>meşale yuvasına</b> (kemerin solunda) sürükle ya da tıkla, sonra yuvaya tıkla. Meşale yalnızca o yuvaya takılır.')
-    :`Meşalen <b>envanterinde</b>. Meşalenin kendi yuvası var: alttaki kemerin solundaki <b>meşale yuvası</b>. ${TOUCH?'Soldaki <b>çanta ikonuna</b> dokun':'<span class="kc">I</span> tuşuna bas (ya da soldaki çanta ikonuna tıkla)'} ve meşaleyi oraya koy.`];
-  return['witch','Zümrüt · Meşaleyi yak',`Meşale yuvasında! Şimdi ${TOUCH?'yanıp sönen <b>meşale yuvasına</b> dokun':'yanıp sönen <b>meşale yuvasına</b> tıkla ya da <span class="kc">'+keyTS()+'</span> tuşuna bas'}: meşale yanar ve sol eline geçer. Bir daha basınca söner.`]};
+  if(low)return['witch','Zümrüt · Meşaleyi söndür',`Gündüz meşaleyi boşuna yakma; geceye sakla. ${PDT()?padTS(PDT()):TOUCH?'Yanıp sönen <b>meşale yuvasına</b> bir daha dokun':'Yanıp sönen <b>meşale yuvasına</b> bir daha tıkla ya da <span class="kc">'+keyTS()+'</span> tuşuna bas'}: meşale söner, yuvasında bekler.`];
+  if(!tsHas())return['witch','Zümrüt · Meşaleyi yuvasına koy',inInv?(PDT()?`<b>Kaba meşale</b>yi seç ve ${PDT().dat(0)} bas: alttaki <b>meşale yuvasına</b> (kemerin solunda) girer. Meşale yalnızca o yuvaya takılır.`:TOUCH?'<b>Kaba meşale</b> simgesine dokun, sonra alttaki yanıp sönen <b>meşale yuvasına</b> (kemerin solunda) dokun. Meşale yalnızca o yuvaya takılır.':'<b>Kaba meşale</b> simgesini alttaki yanıp sönen <b>meşale yuvasına</b> (kemerin solunda) sürükle ya da tıkla, sonra yuvaya tıkla. Meşale yalnızca o yuvaya takılır.')
+    :`Meşalen <b>envanterinde</b>. Meşalenin kendi yuvası var: alttaki kemerin solundaki <b>meşale yuvası</b>. ${PDT()?`Çantayı aç (${PDT().bn(13)})`:TOUCH?'Soldaki <b>çanta ikonuna</b> dokun':'<span class="kc">I</span> tuşuna bas (ya da soldaki çanta ikonuna tıkla)'} ve meşaleyi oraya koy.`];
+  return['witch','Zümrüt · Meşaleyi yak',`Meşale yuvasında! Şimdi ${PDT()?padTS(PDT()):TOUCH?'yanıp sönen <b>meşale yuvasına</b> dokun':'yanıp sönen <b>meşale yuvasına</b> tıkla ya da <span class="kc">'+keyTS()+'</span> tuşuna bas'}: meşale yanar ve sol eline geçer. Bir daha basınca söner.`]};
 // the arena: the torch slot from the picker
 window.__plTSArena=n=>{if(!n){leftT=null;TS=null}else{inv[n]=Math.max(inv[n]||0,9);if(order.indexOf(n)<0)order.push(n);TS=n;leftT=n}hotK='';try{renderHot()}catch(e){}renderTS()};
 // save / load
@@ -19552,7 +19572,7 @@ function reveal(el){try{el.scrollIntoView({block:'nearest',inline:'nearest'})}ca
   if(sc&&!sc.contains(top))return;if(sc){const tr=top.getBoundingClientRect();sc.scrollTop+=Math.max(8,r.bottom-tr.top+10)}}catch(e){}}
 function moveFocus(L,dx,dy){const list=focusables(L);if(!list.length)return;const cur=document.activeElement;
   if(!cur||!L.contains(cur)||list.indexOf(cur)<0){list[0].focus();return}
-  if(cur.tagName==='SELECT'&&dx){const n=cur.options.length;if(n){cur.selectedIndex=(cur.selectedIndex+dx+n)%n;cur.dispatchEvent(new Event('input',{bubbles:true}));cur.dispatchEvent(new Event('change',{bubbles:true}));try{sfx('pick')}catch(e){}}return}   // v3.60 (KOL-11): a drop-down list changes with left / right
+  // v3.62 (KOL-23): a drop-down list is changed only with LB / RB (winStep); left / right move on like elsewhere
   if(cur.classList.contains('qi')&&dy){const row=cur.parentElement,b=row&&row.querySelector(`[data-qd="${dy<0?1:-1}"]`);if(b){remember(cur);b.click();try{sfx('pick')}catch(e){}}return}   // v3.60 (KOL-12): up / down change how many
   if(L.id==='title'&&dx>0&&cur.closest('#tmain,#tslots,#tdiff,#thard')){const ic=list.filter(b=>b.closest('#ttop'));if(ic.length){ic.sort((a,b)=>a.getBoundingClientRect().top-b.getBoundingClientRect().top);ic[0].focus();try{sfx('pick')}catch(e){}return}}   // v3.60 (KOL-02): right from the menu goes to the top icon, never straight to Çıkış
   if(cur.type==='range'&&dx){cur.value=Math.max(+cur.min||0,Math.min(+cur.max||100,+cur.value+dx*(+cur.step||1)*5));cur.dispatchEvent(new Event('input',{bubbles:true}));cur.dispatchEvent(new Event('change',{bubbles:true}));return}
@@ -19565,8 +19585,10 @@ function moveFocus(L,dx,dy){const list=focusables(L);if(!list.length)return;cons
 // v3.25: after a press the window may redraw (food list): the focus goes back to the same button or the nearest one where it was
 let lastC=null;
 // v3.32 (Boğaç): a window opened with the pad starts on the first thing you can use: the first recipe, the first thing you can make or eat, the first item
-function firstFocus(L){try{const list=focusables(L);if(!list.length)return;let sel=null;if(L.id==='craft')sel=mode==='craft'?'[data-rec]':mode==='hand'?'[data-hand]':mode==='eat'?'[data-eat]':mode==='inv'?'.itile':mode==='sell'?'[data-sell]':null;
-  let el=sel?list.find(b=>b.matches(sel)):null;if(L.id==='tut')el=$('tutok');else if(L.id==='q2les')el=L.querySelector('.pri');/* v3.60: a card starts on its Anladım / Devam */if(L.id==='roomui')el=L.querySelector('.rmenu button')||L.querySelector('[data-d]')||L.querySelector('[data-r="edit"]');const cb=$('cbody');if(!el&&L.id==='craft'&&cb)el=list.find(b=>cb.contains(b)&&!b.closest('[role="tablist"],.pmode'));
+function firstFocus(L){try{
+  if(L.id==='craft'&&mode==='craft'&&!cbody.querySelector('[data-rec]')&&(potCat!=='Tümü'||potBy!=='name')){potCat='Tümü';potBy='name';renderCraft()}   // v3.62 (KOL-23)
+  const list=focusables(L);if(!list.length)return;let sel=null;if(L.id==='craft')sel=mode==='craft'?'[data-rec]':mode==='hand'?'[data-hand]':mode==='eat'?'[data-eat]':mode==='inv'?'.itile':mode==='sell'?'[data-sell]':null;
+  let el=sel?list.find(b=>b.matches(sel)):null;if(L.id==='tut')el=$('tutok');else if(L.id==='q2les')el=L.querySelector('.pri');/* v3.60: a card starts on its Anladım / Devam */if(L.id==='roomui')el=L.querySelector('.rmenu button')||L.querySelector('[data-d]')||L.querySelector('[data-r="edit"]');if(L.id==='pause'){const ps=$('pslots');if(ps&&!ps.hidden&&!ps.querySelector('.slot-ask'))el=ps.querySelector('.slot-btn.empty:not([disabled])')||ps.querySelector('.slot-btn:not([disabled])')}   /* v3.62 (KOL-30): Kaydet / Yükle open on the first empty slot (else the first one), never on Geri */const cb=$('cbody');if(!el&&L.id==='craft'&&cb)el=list.find(b=>cb.contains(b)&&!b.closest('[role="tablist"],.pmode'));
   if(el){el.focus();reveal(el)}}catch(e){}}
 function remember(a){try{const r=a.getBoundingClientRect();lastC={x:r.left+r.width/2,y:r.top+r.height/2,id:a.id||''}}catch(e){lastC=null}}
 function keepFocus(L){if(!lastC)return;const a=document.activeElement,list=focusables(L);if(!list.length||(a&&L.contains(a)&&a!==L&&list.indexOf(a)>=0))return;
@@ -19576,10 +19598,10 @@ function keepFocus(L){if(!lastC)return;const a=document.activeElement,list=focus
 const KBR=['ABCÇDEFGĞH','IİJKLMNOÖP','RSŞTUÜVYZ'];let kbEl=null;
 function kbBuild(){kbEl=document.createElement('div');kbEl.id='padkb';kbEl.className='ov';kbEl.hidden=true;kbEl.setAttribute('role','dialog');kbEl.setAttribute('aria-label','Ekran klavyesi');
   kbEl.innerHTML='<div class="tcard small"><div class="pkv" id="pkv"></div>'+KBR.map(r=>'<div class="pkr">'+Array.from(r).map(c=>`<button type="button" class="pk" data-k="${c}">${c}</button>`).join('')+'</div>').join('')
-    +'<div class="pkr"><button type="button" class="pk w" data-k=" ">Boşluk</button><button type="button" class="pk w" data-k="del">⌫ Sil</button><button type="button" class="pk w ok" data-k="ok">Tamam</button></div><p class="pkh">A yaz · X sil · B geri · Start tamam</p></div>';
+    +'<div class="pkr"><button type="button" class="pk w" data-k=" ">Boşluk</button><button type="button" class="pk w" data-k="del">⌫ Sil</button><button type="button" class="pk w ok" data-k="ok">Tamam</button></div><p class="pkh"></p></div>';
   document.body.appendChild(kbEl);kbEl.addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(b)kbKey(b.dataset.k)});
   kbEl.addEventListener('pointerdown',e=>{if(e.target===kbEl)kbHide()})}   // outside the keyboard = back (popup rule)
-function kbShow(){if(!kbEl)kbBuild();kbEl.hidden=false;kbView();const f=kbEl.querySelector('.pk');if(f)f.focus();lastC=null}
+function kbShow(){if(!kbEl)kbBuild();kbEl.hidden=false;{const h=kbEl.querySelector('.pkh');if(h)h.textContent=`${bn(0)} yaz · ${bn(2)} sil · ${bn(1)} geri · ${bn(9)} tamam`}kbView();const f=kbEl.querySelector('.pk');if(f)f.focus();lastC=null}
 function kbHide(){if(kbEl)kbEl.hidden=true;const i=$('nmin');if(i)try{i.focus()}catch(e){}lastC=null}
 function kbView(){const i=$('nmin'),v=$('pkv');if(v)v.textContent=(i&&i.value||'')+'▏'}
 function kbKey(k){const i=$('nmin');if(!i)return;let v=i.value||'';
@@ -19595,6 +19617,7 @@ function askQuit(btn){if(!qcEl){qcEl=document.createElement('div');qcEl.id='padq
     qcEl.addEventListener('pointerdown',e=>{if(e.target===qcEl)qcEl.hidden=true})}
   qcEl.hidden=false;lastC=null;const f=qcEl.querySelector('[data-q="n"]');if(f)try{f.focus()}catch(e){}try{sfx('pick')}catch(e){}}
 function press(L){const a=document.activeElement;
+  if(a&&L.id==='craft'&&mode==='inv'&&a.classList.contains('itile'))setTimeout(()=>{try{const t=cbody.querySelector('.bs.tsinv.want')||cbody.querySelector('.ibelt .bs.pulse');if(t&&craftOpen&&mode==='inv'){t.focus();reveal(t);lastC=null}}catch(e){}},0);   // v3.62 (KOL-27)
   if(a&&L.contains(a)&&a!==L&&focusables(L).indexOf(a)>=0){if(a.tagName==='INPUT'&&L.id==='names'){kbShow();return}if(a.id==='t-exit'){askQuit(a);return}remember(a);if(a.tagName==='INPUT'&&a.type!=='checkbox'&&a.type!=='radio')return;a.click();return}
   tap('interact')}
 // v3.25 (Boğaç): aim assist for the gamepad only (the mouse has none): the same choice as the phone's Vur button (v132-dokun):
@@ -19643,7 +19666,7 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
   if(L){if(held.up||held.down||held.left||held.right||held.run||held.parry||held.eat)releaseAll();
     const dx=mdx,dy=mdy,d=dx+','+dy,t=performance.now();if(d!=='0,0'){if(d!==P.dir){P.dir=d;P.rep=t+380;moveFocus(L,dx,dy)}else if(t>=P.rep){P.rep=t+120;moveFocus(L,dx,dy)}}else P.dir='';RS=null;
     if(adown)atkUp();
-    {const key=(L.id||'')+'|'+(L.id==='craft'?mode:L.id==='roomui'?(window.__v56.menu?'m':'l'):'');if(L!==P.lastL||key!==P.lastK){P.lastL=L;P.lastK=key;lastC=null;firstFocus(L)}else keepFocus(L)}   // v3.32: a window opens on its first usable thing
+    {const ps=$('pslots'),key=(L.id||'')+'|'+(L.id==='craft'?mode:L.id==='roomui'?(window.__v56.menu?'m':'l'):L.id==='pause'&&ps&&!ps.hidden?'s'+ps.children.length+(ps.querySelector('.slot-ask')?'a':''):'');if(L!==P.lastL||key!==P.lastK){P.lastL=L;P.lastK=key;lastC=null;firstFocus(L)}else keepFocus(L)}   // v3.32: a window opens on its first usable thing
     if(L.id==='padkb'){if(hit(0))press(L);if(hit(1))kbHide();if(hit(2))kbKey('del');if(hit(9))kbKey('ok');return}
     if(L.id==='padqc'){if(hit(0))press(L);if(hit(1))L.hidden=true;return}
     if(L.id==='craft'&&mode==='map'&&!markOpen){padMap(g,hit,now);return}
@@ -19722,7 +19745,7 @@ function hys(v,s){const a=Math.abs(v),g=Math.sign(v);if(a>.4)return g;if(s&&g===
 // the torch slot (block v283): lit by its own button; a stop on the belt for the pad
 const tsOn=()=>{try{return !window.__plArena&&!!(window.__plTS&&window.__plTS())}catch(e){return false}};
 function torchToggle(){const el=$('torchslot');if(window.__plArena||!el||el.hidden)return;try{el.click()}catch(e){}}
-function markTS(){const on=!!P.tsSel;if(on===P.tsMk)return;P.tsMk=on;const el=$('torchslot');if(el)el.classList.toggle('padsel',on)}
+function markTS(){const on=!!P.tsSel,eh=!on&&hand===-1&&P.used;if(eh!==P.ehMk){P.ehMk=eh;document.body.classList.toggle('padhand',eh)}if(on===P.tsMk)return;P.tsMk=on;const el=$('torchslot');if(el)el.classList.toggle('padsel',on)}   // v3.62 (KOL-26): the empty hand stop is framed too
 function beltStep(d){try{const L=hotList(),n=hotN(),ar=!!window.__plArena,ts=tsOn();
   const ok=i=>i===-2?ts:i===-1?!ar:!!L[i];let i=P.tsSel?-2:hand;   // stops: -2 torch slot, -1 empty hand, 0…n-1 filled slots
   for(let k=0;k<=n+1;k++){i+=d;if(i>=n)i=-2;if(i<-2)i=n-1;if(ok(i))break}if(!ok(i))return;
@@ -19759,8 +19782,14 @@ function renderHelp(){const box=$('b5keys');if(!box)return;let el=$('padhelp');
 // v3.60 (CEO): the pad's button names: Xbox (A, B, X, Y, LB…) or PlayStation (✕, ○, □, △, L1…), from the pad's name; unknown pads get the Xbox names
 const BNX=['A','B','X','Y','LB','RB','LT','RT','View','Menu','L3','R3','↑','↓','←','→'],BNP=['✕','○','□','△','L1','R1','L2','R2','Create','Options','L3','R3','↑','↓','←','→'];
 function padKind(){let id='';try{const g=Array.prototype.slice.call(navigator.getGamepads()||[]).find(x=>x&&x.connected);id=g?String(g.id||''):''}catch(e){}return /054c|dualsense|dualshock|playstation|wireless controller \(standard/i.test(id)&&!/xbox|xinput|045e/i.test(id)?'ps':'x'}
-let PK='x';const bn=i=>(PK==='ps'?BNP:BNX)[i]||'';
-window.__plPad={on:()=>P.used,bn:i=>bn(i),kind:()=>PK};
+let PK='x';const bn=i=>((PK==='ps'?BNP:BNX)[i]||'')+'\u2060';   // v3.62: the word joiner (invisible) stops the key texts from reading "A ile" as the A key
+// v3.62 (KOL-22): Turkish case endings for a button's name, by how it is read (A "a" → A'ya, B "be" → B'ye, X "iks" → X'e, ✕ "çarpı", ○ "daire"…)
+const RD={A:'a',B:'be',C:'ce',D:'de',E:'e',F:'fe',G:'ge',H:'he',I:'ı',İ:'i',J:'je',K:'ke',L:'le',M:'me',N:'ne',O:'o',Ö:'ö',P:'pe',Q:'kü',R:'re',S:'se',Ş:'şe',T:'te',U:'u',Ü:'ü',V:'ve',W:'ve',X:'iks',Y:'ye',Z:'ze','✕':'çarpı','○':'daire','□':'kare','△':'üçgen','↑':'yukarı','↓':'aşağı','←':'sol','→':'sağ'};
+function readOf(lab){lab=String(lab).replace(/[\u2060\u2061\u2062]/g,'').trim();const c=lab.slice(-1);if(/\d/.test(c))return lab;if(RD[c]&&(lab.length===1||/^[A-ZÇĞİÖŞÜ]+$/.test(lab)||RD[c].length>2&&!/[a-z]/.test(c)))return RD[c];return lab}
+function suf(lab,k){const w=readOf(lab),d=window.__plDat?window.__plDat(w):w+"'e",ds=d.slice(d.lastIndexOf("'")+1);if(k==='dat')return ds;
+  const lw=w.toLocaleLowerCase('tr-TR'),v=(lw.match(/[aeıioöuü]/g)||['e']).pop(),endV=/[aeıioöuü]$/.test(lw),h={a:'ı',ı:'ı',o:'u',u:'u',e:'i',i:'i',ö:'ü',ü:'ü'}[v]||'i';return (endV?'y':'')+h}
+window.__plSuf=suf;
+window.__plPad={on:()=>P.used,bn:i=>bn(i),kind:()=>PK,dat:i=>bn(i)+"'"+suf(bn(i),'dat'),acc:i=>bn(i)+"'"+suf(bn(i),'acc')};
 try{PK=padKind()}catch(e){}try{renderHelp()}catch(e){}
 // v3.60 (CEO: "kola özel menü koy"): with the pad the pause menu (Start) is the pad menu: under Devam et every window of the game opens from here
 // (Çanta, El yapımı, Karakter, Yetenekler, Tarif kitabı, Almanak, Görevler, Harita; Döşe in a house; the tutorial card's skip), then Kaydet … Ana menü
@@ -19775,7 +19804,6 @@ try{PK=padKind()}catch(e){}try{renderHelp()}catch(e){}
     sk.hidden=!(t&&!t.hidden&&tu&&!tu.hidden);if(t)sk.textContent=t.textContent;ds.hidden=!(room()&&rb);if(rb)ds.textContent=rb.textContent;
     for(const id of ['p-inv','p-hand','p-char','p-skills','p-book','p-alm','p-qlog','p-map','p-dogs'])$(id).hidden=room();$('p-resin').hidden=room()||!(window.__plTS&&window.__plTS())}catch(e){}return r}}}
 // texts that name the torch key / the placing keys speak the pad's words while the pad is in use
-{const _k=window.__plTSKey;if(_k)window.__plTSKey=function(){if(P.used)return `${bn(4)} / ${bn(5)} ile kemerde meşale yuvasına gel, ${bn(2)} basılı tut: yanar`;return _k.apply(this,arguments)}}
 {const _r=renderPlaceUI;renderPlaceUI=function(){const r=_r.apply(this,arguments);try{if(placing&&P.used){const el=$('pui-t');if(el)el.innerHTML=`<b>${esc(placing.n)}</b> ${placing.moving?'taşınıyor':'yerleştiriliyor'} · <b>${bn(0)}</b> koy · <b>${bn(3)}</b> döndür · yön tuşları kaydır · <b>${bn(1)}</b> vazgeç`}}catch(e){}return r}}
 addEventListener('pl-device',()=>{try{puiK='';renderPlaceUI()}catch(e){}});
 // v3.24 (Boğaç): Alt + Enter toggles full screen everywhere; the press does nothing else
@@ -19787,7 +19815,7 @@ addEventListener('keydown',e=>{if(e.code==='AltRight'||e.key==='AltGraph')altGr=
 if(typeof hurt==='function'){const _h=hurt;hurt=function(n){const h0=hp,r=_h.apply(this,arguments);try{const d=h0-hp;if(d>0&&P.on){const g=Array.prototype.slice.call(navigator.getGamepads()||[]).find(x=>x&&x.connected),va=g&&g.vibrationActuator;if(va&&va.playEffect)va.playEffect('dual-rumble',{duration:Math.min(320,90+d*6),strongMagnitude:Math.min(1,.3+d/30),weakMagnitude:Math.min(1,.2+d/40)})}}catch(e){}return r}}
 // a pad already connected before the page opened shows up on its first press: look once
 try{if(Array.prototype.slice.call(navigator.getGamepads?navigator.getGamepads():[]).some(x=>x&&x.connected)){P.on=true;start()}}catch(e){}
-const st=document.createElement('style');st.textContent='#padkb{z-index:40}#padkb .tcard{text-align:center}#padkb .pkv{min-height:30px;margin:0 0 10px;padding:6px 10px;border:2px solid #5a6a4a;background:#11170f;font-size:20px;font-weight:700;color:#f3ecd8;text-align:left}#padkb .pkr{display:flex;justify-content:center;gap:5px;margin:0 0 5px}#padkb .pk{min-width:34px;height:36px;font:inherit;font-weight:700;font-size:16px;border:2px solid #5a6a4a;background:#1e2a1a;color:#f3ecd8;border-radius:5px;cursor:pointer}#padkb .pk.w{padding:0 12px}#padkb .pk.ok{background:#3a5a2a}#padkb .pkh{margin:8px 0 0;font-size:13px;opacity:.75}body.padmode :focus{outline:3px solid #7fb8e0!important;outline-offset:2px}body.padmode #craft .mapwrap::after{content:"";position:absolute;left:50%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;pointer-events:none;background:linear-gradient(#fff,#fff) center/2px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 2px no-repeat;filter:drop-shadow(0 0 2px #000)}body:not(.padmode) #pmain .padonly,#pmain .padonly[hidden]{display:none!important}body.padmode #pmain{display:grid;grid-template-columns:1fr 1fr;gap:8px}body.padmode #pmain>*{margin:0!important;width:auto!important}body.padmode #pmain>#p-resume{grid-column:1/3}#torchslot.padsel{outline:3px solid #7fb8e0;outline-offset:2px}#padqc{z-index:45}#padqc .tcard{text-align:center}.padl{margin:6px 0 0;padding-left:18px;text-align:left;font-size:13.5px;line-height:1.45}.padl li{margin:0 0 4px}';document.head.appendChild(st);
+const st=document.createElement('style');st.textContent='#padkb{z-index:40}#padkb .tcard{text-align:center}#padkb .pkv{min-height:30px;margin:0 0 10px;padding:6px 10px;border:2px solid #5a6a4a;background:#11170f;font-size:20px;font-weight:700;color:#f3ecd8;text-align:left}#padkb .pkr{display:flex;justify-content:center;gap:5px;margin:0 0 5px}#padkb .pk{min-width:34px;height:36px;font:inherit;font-weight:700;font-size:16px;border:2px solid #5a6a4a;background:#1e2a1a;color:#f3ecd8;border-radius:5px;cursor:pointer}#padkb .pk.w{padding:0 12px}#padkb .pk.ok{background:#3a5a2a}#padkb .pkh{margin:8px 0 0;font-size:13px;opacity:.75}body.padmode :focus{outline:3px solid #7fb8e0!important;outline-offset:2px}body.padmode .esc{display:none}body.padmode.padhand #handbtn{outline:3px solid #7fb8e0;outline-offset:2px}#padkb .tcard{width:auto!important;max-width:calc(100vw - 16px);box-sizing:border-box;padding-left:10px;padding-right:10px}#padkb .pk{min-width:0;width:clamp(26px,7.4vw,36px);padding:0}#padkb .pk.w{width:auto;padding:0 10px}#padkb .pkr{gap:clamp(2px,.6vw,5px)}body.padmode #craft .mapwrap::after{content:"";position:absolute;left:50%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;pointer-events:none;background:linear-gradient(#fff,#fff) center/2px 100% no-repeat,linear-gradient(#fff,#fff) center/100% 2px no-repeat;filter:drop-shadow(0 0 2px #000)}body:not(.padmode) #pmain .padonly,#pmain .padonly[hidden]{display:none!important}body.padmode #pmain{display:grid;grid-template-columns:1fr 1fr;gap:8px}body.padmode #pmain>*{margin:0!important;width:auto!important}body.padmode #pmain>#p-resume{grid-column:1/3}#torchslot.padsel{outline:3px solid #7fb8e0;outline-offset:2px}#padqc{z-index:45}#padqc .tcard{text-align:center}.padl{margin:6px 0 0;padding-left:18px;text-align:left;font-size:13.5px;line-height:1.45}.padl li{margin:0 0 4px}';document.head.appendChild(st);
 }).toString()+')()')}catch(e){try{window.__hamErr('v320pad: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v322tier">

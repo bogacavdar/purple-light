@@ -1,3 +1,22 @@
+## v3.62 (7 Kasım 2026) · Testçi v3.60 raporu: atılma dersi takılması, ders sırasında kayıt, kayıt odağı, meşale yazıları, ek uyumu, kazan seçici
+
+- **KOL-15 (`v181` DL):** testçinin ortamında yeniden üretilemedi (akşam, meşale uyarısı ve LT 0,9 sn ile de saldırılar sürdü). Takılma iki yoldan olabiliyor: `idle`'da sayaç yalnız 22–46 px aralığında azalıyordu (yakına itilen ya da sıkışan kerevit hiç saldırmaz), ya da `tickAnimals` çağrılmıyordu. Yapılanlar: `DL.atkT` son saldırı zamanı; `idle`'da 5 sn saldırı yoksa ve uzaklık ≤ 60 ise `DL.t=0`; 8 sn ve > 60 ise `spawn()`. `DL.tickT` ile 250 ms'lik bekçi: oyun duraklatılmamışken 2 sn `tickDL` çalışmadıysa kendisi `tickDL(.25)` çağırır. Denendi: kerevit 15 px'e yapıştırıldı → 3,9 sn'de saldırdı; `tickAnimals` boşaltıldı → saldırı sürdü.
+- **KOL-32:** `v181` 2 sn'lik bekçi: `tz===11&&ftut===2`, ders yok (`!DL.on&&!DL.done&&!DL.tree`), pencere yok ve öğretici kereviti yoksa (iki ardışık bakış) `spawnTutCrab()`. Kayıt `DL`'yi tutmaz; kerevit ölünce `fightLessonDone` → `tzAlpDone` sarmalı dersi baştan açar. Denendi: ders sırasında kaydet → sayfa yeniden → Devam et → kerevit 70 px'te geldi.
+- **KOL-30:** `v320pad` `firstFocus` duraklat penceresinde `#pslots` görünürken `.slot-btn.empty` ya da ilk açık `.slot-btn` (anahtar yuva listesine göre değişir). Denendi: "Kayıt 1 Boş Kaydet".
+- **KOL-25, 20, 21, 22:**
+  - `v283` meşale yazıları kolda `padTS()`.
+  - `bn()` adın sonuna görünmez U+2060 ekler (çeviricinin kol adını ikinci kez okumasını keser).
+  - `__plPad.dat/acc` ve `window.__plSuf` okunuşa göre ek (harf adları tablosu `RD`, sayılar ve sözcükler `__plDat`).
+  - `kTxt`: değiştirilen her tuş U+2062/U+2061 ile işaretlenir, ardındaki `'ye/'ya/'e/'a` yeniden hesaplanır. Kolda klavyeye özgü tuş olduğu gibi kalır. Kolda fare sözleri silinir (`tıkla ya da`, `(ya da … tıkla)`, ` ya da … tıkla/dokun`, `ya da ↑←↓→`).
+  - `tzKey` sarmalı kolda `kTxt`.
+  - `body.padmode .esc` gizli.
+- **KOL-23:** `moveFocus`'ta `select` sol/sağ değeri artık değiştirmez (yalnız `winStep` LB/RB). Kazan (`mode==='craft'`) tarifsiz açılırsa ve `potCat/potBy` varsayılan değilse sıfırlanır.
+- **KOL-26:** `markTS` boş el durağında `body.padhand` (`#handbtn` çerçeve).
+- **KOL-27:** çantada `.itile`'a A → `.bs.tsinv.want` ya da `.ibelt .bs.pulse` odaklanır.
+- **KOL-33:** `#padkb .pkh` `kbShow`'da `bn()` ile; tuşlar `clamp` ile daralır. Denendi: DualSense, 800 px'te sığıyor.
+- **Basılı tutma süresi:** kodda 400 ms (`P.xh`). Testçinin 0,7 sn'si 3–14 kare/sn ve 150 ms basışlardan; belge 0,4 kalır.
+- **Geri almak için:** v3.62 commit'ini `git revert` (prototip, index.html, notlar). Kayıt alanı ve MAPV değişmedi.
+
 ## v3.61 (7 Kasım 2026) · kol 5. adım: Döşe, harita, reçine, standart dışı kol, kerevit dersi yazıları, kolda bakılan yöndeki toplanacak şey, ölçüm
 
 - **Döşe (`v56` oda bloğu):** yerleştirme `placeSel()`'e alındı (fare tıklaması da onu çağırır). `R.pad={cur,start,move,a,rot,back}`, `R.pcur` imleç; `draw` imleç karesini çizer; "Bitti" `R.pcur`'u da sıfırlar. `v320pad`: `layer()` Döşe'de `#roomui`'yi pencere sayar (liste/menü odak gezinimi, `firstFocus` önce `.rmenu`, sonra `[data-d]`; anahtar menü açık/kapalıya göre). `R.pad.cur()` iken `tick` imleç dalı: yön (300/110 ms tekrar), A `a()`, Y `rot()`, B `back()`. Listede X imleç, B Bitti (menü açıksa kapatır).
@@ -257,11 +276,3 @@
 - `v230`: `ekin1` (main, saman izi `straw`, korkuluk+kirpi `scare` çizimleri).
 - İkonlar: kendi `icon()` katmanı, yalnızca kendi 20 adı için önbellek silinir.
 - Kontrol: chk 0 hata; `/home/claude/scripts/farm_t.js` (EK1 motorla, gidiş, Barbaros sahnesi → home, kayık, adada güvenli, tarh bulunuyor, EK2/EK4 ödülleri).
-
-## v3.42 (6 Kasım 2026) · evcil hayvanlar, Çoban Davut ana görev (CB1–CB8), Gece öten kuş
-
-- `v342pet` bloğu: `SP` (6 tür; `m` binek, `pup` yavru yolu), `PT` (pets, tr güven, trT bekleme, ever, den yeniden doğma, dead taş, no, mom), `FD` yere bırakılan yiyecek (`f.a` hedefe bağlı; yürürken iç `tickAnimals`'ın kaçırmasını önlemek için konumu sabitlenir), `PUP` (gündüz inin çevresinde, gece içeride, gece yaklaşınca anne bir kez saldırır). `canTame`: ağıl var + Davut'un o tür görevi sürüyor ya da bitti. Binek: `STAT.move` çarpanı, `wantsRun` kapalı, `hurt` bineğe gider, `interact`/`attack` indirir, `drawPlayer` bineği 1,6 kat çizip karakteri 14 px yukarı koyar; B tuşu, dokunmatikte `#v342ride`. Savaşçı: `enemyFor` (oyuncuya 170 px içinde `mad`/`chase`), 0,7×hasar yer, ölüm → `PT.dead`, `PT.den[sp]=+3 gün`. Ağıl: `PSPR['Ağıl']` çizimi, `useplaced` → `#v342pen` penceresi (dışına basmak kapatır). İsim: `#v342nm` (dışı/Enter/Esc = Tamam). Kayıt `v342={pt,dm}`.
-- Davut: `window.__plGIVER.k_davut` (`k_` öneki `gidOfTg` için), `sqk:'husnu'` (v230 portresi). Yeri: CB3'e kadar `BY.husnu` (Çayır), sonra her CB ile bir biyom ileri (`spotIn`, deterministik, çevresindeki ağaç/düğüm temizlenir). Pamuk Davut'un yanında (`__plDrawGoat`).
-- `v186`: DATA'ya `GB.k_davut=0` ve CB1–CB8; yeni adım türleri `sq` (v230'un bitirdiği yan görev) ve `tame`; `pickFiller` başında ağıl ayak işi (önce tarif).
-- `v230`: `husnu` artık `main:1` (ödül 0, kart/liste/harita/sayaçta yok, `present` false); CB1 sürerken `petTick` husnu'yu başlatır ve takip ettirir. Yeni `toprak` (21:00–01:00, GATE Çayır 2.), `quail` çizimi/sesi.
-- Kontrol: chk 0 hata; `/home/claude/scripts/pet_t.js` (at: 4 beslemede evcil, CB3 ✓, binince hız ×1,8, hasar bineğe), `pet_t2.js` (kurt yavrusu, dövüş, ölüm → taş ve 3 gün), `cb1_t.js`, `sq_t5.js` (toprak ok).
