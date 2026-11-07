@@ -14,6 +14,8 @@ Sürüm: **Versiyon 3.59** ile birebir (7 Kasım 2026). Bu sürümde: Kül Diyar
 
 > **KURAL: BOĞAÇ'IN KARARI YALNIZCA BOĞAÇ'A SORULARAK DEĞİŞİR (7 Kasım 2026, Boğaç: "bu kararı ben vermiştim"):** belgede ya da CLAUDE.md'de Boğaç'a ait bir kararı (Boğaç adıyla ya da tarihiyle yazılmış kural) değiştiren ya da daraltan her öneri **önce Boğaç'a sorulur**; Yönetici onaylayamaz. Analist her belge değişikliğinden önce belgede (ve sürüm etiketleri temizlenmiş eski kurallar için depo geçmişinde) ilgili Boğaç kararını arar.
 
+> **KURAL: HER EŞYANIN FİYATI, HER MALZEMENİN TARİFİ OLUR (8 Kasım 2026, Boğaç):** (1) oyundaki her eşyanın bir fiyatı olur; fiyatı 0 ya da tanımsız (`DB.p`/`PRICE_`, `priceOf` boş) eşya **kritik hatadır**. (2) Bir malzeme (ham madde ya da ara ürün; yenen, giyilen, kullanılan son ürün değil) hiçbir tarifin girdisinde yoksa **kritik hatadır**. (3) Bir tarif elde edilemeyen bir girdi istiyorsa (ne tarifi ne toplama/av/düşme/satıcı/görev kaynağı varsa) **büyük hatadır**. Yeni eşya, malzeme ya da tarif eklenince ve her pakette Analist bu üç denetimi oyunun çalışan verisinden yapar (`DB`, `PRICE_`, `addRec`, düşme ve satıcı tabloları); fiyat biyom eğrisine uygun verilir (keskin sıçrama yok). Belgedeki fiyat tablolarında da boş fiyat hücresi kalmaz.
+
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 
 ## Belge haritası

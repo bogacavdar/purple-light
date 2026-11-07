@@ -751,11 +751,11 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Ağıl | 10 Çit | – | Usta Sinan yapar, yere kurulur | ~250 |
+| Ağıl | 10 Çit | – | Usta Sinan yapar, yere kurulur | 1.107 |
 | Arı kovanı | 2 Söğüt sepeti, 1 Balmumu, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 144 |
 | Ateş yeri | 1 Ateş, 4 Taş, 1 Dal, 1 Kum | – | Usta Sinan yapar, yere kurulur | 34 |
 | Atölye | 4 Çam kalası, 4 Taş, 2 İp, 2 Sopa | – | Usta Sinan yapar, yere kurulur | 127 |
-| Çit | 1 Meşe sapı, 2 Sarmaşık ipi, 2 Dal (→ 2 Çit) | – | El yapımı (Tab), İnşa kipiyle kurulur | ~20 |
+| Çit | 1 Meşe sapı, 2 Sarmaşık ipi, 2 Dal (→ 2 Çit) | – | El yapımı (Tab), İnşa kipiyle kurulur | 82 |
 | Çömlek fırını | 1 Kerpiç duvar, 1 Çam kömürü, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 331 |
 | Deri çadır | 1 Kulübe iskeleti, 1 Deri parçası, 3 Taş, 3 Dal, 3 Kum | – | Usta Sinan yapar, yere kurulur | 410 |
 | Erzak çukuru | 1 Taş levha, 3 Kuru ot, 1 Taş, 1 Dal | – | Usta Sinan yapar, yere kurulur | 22 |
@@ -783,13 +783,13 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Ahşap parke | 1 Meşe kalası (→ 4) | – | El yapımı (Tab), İnşa kipiyle kurulur | ~6 |
-| Çakıl yol | 3 Nehir çakılı, 1 Kum (→ 4) | – | El yapımı (Tab), İnşa kipiyle kurulur | ~2 |
-| Dal çit | 4 Dal, 2 Lif (→ 2) | – | El yapımı (Tab), İnşa kipiyle kurulur | ~4 |
-| Direk feneri | 1 Sopa, 1 Kil lamba, 1 Hayvan yağı | – | Usta Sinan yapar, İnşa kipiyle kurulur | ~170 |
-| Tahta kapı | 2 Çit, 1 İp | – | El yapımı (Tab), İnşa kipiyle kurulur | ~54 |
-| Taş duvar | 4 Taş, 1 Kireçtaşı, 1 Kum | – | El yapımı (Tab), İnşa kipiyle kurulur | ~8 |
-| Toprak yol | 2 Taş, 1 Kum (→ 4) | – | El yapımı (Tab), İnşa kipiyle kurulur | ~1 |
+| Ahşap parke | 1 Meşe kalası (→ 4) | – | El yapımı (Tab), İnşa kipiyle kurulur | 10 |
+| Çakıl yol | 3 Nehir çakılı, 1 Kum (→ 4) | – | El yapımı (Tab), İnşa kipiyle kurulur | 2 |
+| Dal çit | 4 Dal, 2 Lif (→ 2) | – | El yapımı (Tab), İnşa kipiyle kurulur | 4 |
+| Direk feneri | 1 Sopa, 1 Kil lamba, 1 Hayvan yağı | – | Usta Sinan yapar, İnşa kipiyle kurulur | 209 |
+| Tahta kapı | 2 Çit, 1 İp | – | El yapımı (Tab), İnşa kipiyle kurulur | 228 |
+| Taş duvar | 4 Taş, 1 Kireçtaşı, 1 Kum | – | El yapımı (Tab), İnşa kipiyle kurulur | 8 |
+| Toprak yol | 2 Taş, 1 Kum (→ 4) | – | El yapımı (Tab), İnşa kipiyle kurulur | 1 |
 
 #### Giyim (10)
 

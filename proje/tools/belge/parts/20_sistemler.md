@@ -21,7 +21,8 @@
 
 **Telefonda Görevler ("telefonda görevleri açamadım"):** telefonda ☰ içindeki **Görevler** düğmesi her zaman Görevler panelini açar (eskiden bir ders sürerken yalnızca ders kartını katlayıp açıyordu, panel açılmıyordu). Ders sürerken panelin en üstünde **Ders** kartı (dersin adı ve ne yapılacağı) yazar.
 
-| M / N | Büyük harita / bulunduğun yere işaret koy | Küçük haritaya dokun |
+| M / T | Büyük harita / bulunduğun yere işaret koy | Küçük haritaya dokun |
+| N | İnşa kipi (dışarıda) | ☰ içinde **İnşa** düğmesi |
 | V | Kamp ateşi kur | – |
 | L | Elindeki meşaleye reçine sür | – |
 | O / Esc | Ayarlar / duraklat | Çark simgesi |
@@ -596,18 +597,18 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda k
 
 ### İnşa kipi
 
-- **Açma:** sol menüde / ☰ içinde **İnşa** düğmesi; klavyede **N** (Ayarlar → Kontroller'den değişir); kolda Kol menüsündeki satır dışarıdayken **İnşa**, evin içindeyken **Döşe** olur. Evin içinde ve mağarada İnşa açılmaz (evde Döşe vardır).
+- **Açma:** sol menüde / ☰ içinde **İnşa** düğmesi; klavyede **N** (Ayarlar → Kontroller'den değişir); kolda Kol menüsündeki satır dışarıdayken **İnşa**, evin içindeyken **Döşe** olur; kolda parça şeridinde **X** parçasız imleç verir. Evin içinde ve mağarada İnşa açılmaz (evde Döşe vardır).
 - **Ekran:** oyuncunun çevresinde karo çizgileri görünür; altta Döşe'deki gibi yatay bir şerit: zemin, çit, duvar, kapı, fener ve çantadaki sayıları. Şeritte sınır da yazar ("1.950 / 2.000").
 - **Koyma:** her parça **1 karo**dur ve ızgaraya oturur. Çit ve duvar komşularıyla kendiliğinden birleşir (uç, düz, köşe, T, haç).
 
   | Cihaz | Koy | Çizgi ya da dikdörtgen boya | Sil | Menü / döndür | Çık |
   |---|---|---|---|---|---|
   | Bilgisayar | tık | basılı tutup sürükle | sağ tık | R döndürür | Esc |
-  | Telefon | dokun | sürükle | – | uzun dokun: menü | İnşa düğmesi |
+  | Telefon | dokun | sürükle | – | uzun bas: menü | İnşa düğmesi |
   | Kol | A | A basılı + sağ çubuk | X | Y döndürür | B |
 
-- Konmuş parçaya dokununca (Döşe'deki gibi) **Taşı / Geri al / Döndür** menüsü açılır. **Geri al:** parça çantaya tam döner. Yıkık parça geri alınmaz: onarılır ya da kaldırılır, kaldırılınca 1 malzeme bırakır. Sürükleyerek boyanır, sürükleyerek silinir.
-- Uygun olmayan karoda hayalet kırmızıdır ve "Buraya konmaz" yazar (talimat vermez).
+- Konmuş parçaya dokununca (Döşe'deki gibi) **Taşı / Geri al / Döndür** menüsü açılır. **Geri al:** parça çantaya tam döner. Yıkık parçaya dokununca menü **Onar / Kaldır**dır; **Kaldır** parçayı siler ve yere 1 malzeme düşürür. Sürükleyerek boyanır, sürükleyerek silinir.
+- Uygun olmayan karoda hayalet kırmızıdır ve "Buraya konmaz" yazar (talimat vermez); kaya olan karoda "Burada kaya var" yazar.
 - **Dünya durmaz:** gece ve canavarlar sürer; inşa ederken vurulursan kip kapanır.
 
 ### Zemin ve yol
@@ -617,20 +618,20 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda k
 
 | Parça | Tür | Tarif (el yapımı, kazanda öğrenilir) | Karo fiyatı |
 |---|---|---|---|
-| Toprak yol | yol | 2 Taş, 1 Kum → 4 | ~1 |
-| Çakıl yol | yol | 3 Nehir çakılı, 1 Kum → 4 | ~2 |
-| Ahşap parke | zemin | 1 Meşe kalası → 4 | ~6 |
+| Toprak yol | yol | 2 Taş, 1 Kum → 4 | 1 |
+| Çakıl yol | yol | 3 Nehir çakılı, 1 Kum → 4 | 2 |
+| Ahşap parke | zemin | 1 Meşe kalası → 4 | 10 |
 
 ### Çit, duvar ve kapı
 
 Her parça **tahta** ya da **taş** sınıfındadır; kırma kuralı buna göre işler.
 
-| Parça | Sınıf | Tarif (el yapımı, kazanda öğrenilir) | Etki | Canı |
-|---|---|---|---|---|
-| Dal çit | tahta | 4 Dal, 2 Lif → 2 | **Yavaşlatır:** canlı ×0,35 hızla geçer | 60 |
-| Çit | tahta | 1 Meşe sapı, 2 Sarmaşık ipi, 2 Dal → 2 | Durdurur | 240 |
-| Taş duvar | taş | 4 Taş, 1 Kireçtaşı, 1 Kum → 1 | Durdurur | 800 |
-| Tahta kapı | tahta | 2 Çit, 1 İp → 1 | Oyuncu, evcil hayvan ve görev kişileri geçer | 240 |
+| Parça | Sınıf | Tarif (el yapımı, kazanda öğrenilir) | Etki | Canı | Fiyat |
+|---|---|---|---|---|---|
+| Dal çit | tahta | 4 Dal, 2 Lif → 2 | **Yavaşlatır:** canlı ×0,35 hızla geçer; oyuncuyu yavaşlatmaz | 60 | 4 |
+| Çit | tahta | 1 Meşe sapı, 2 Sarmaşık ipi, 2 Dal → 2 | Durdurur | 240 | 82 |
+| Taş duvar | taş | 4 Taş, 1 Kireçtaşı, 1 Kum → 1 | Durdurur | 800 | 8 |
+| Tahta kapı | tahta | 2 Çit, 1 İp → 1 | Oyuncu, evcil hayvan ve görev kişileri geçer | 240 | 228 |
 
 - **Kapı:** oyuncu 1 karo yakına gelince kendiliğinden açılır, uzaklaşınca kapanır; düğmesi yoktur.
 - **Taş duvar** Çayır malzemesiyle yapılır ama ağırdır: erken oyuncu birkaç duvar karosuyla kapısının çevresini korur; geniş bir avluyu taşla çevirmek ilerleyen biyomların işidir.
@@ -642,8 +643,8 @@ Her parça **tahta** ya da **taş** sınıfındadır; kırma kuralı buna göre 
 - Sınıfının kıramadığı parçaya canlı vurmaz: önünde bekler, sonra vazgeçer. Arada durduran bir parça varken üstünden ısıramaz.
 - Uzaktan atanlar parçalara vurmaz.
 - **Uçanlar** çitin ve duvarın **üstünden geçer**, kırmaz (Boğaç).
-- **Kırılınca** parça **yıkık** olur ve geçilir; kaybolmaz, resmi yıkık parçadır; yere 1 malzemesi düşer.
-- **Onarım:** hasarlı ya da yıkık parçaya F → **Onar** (tahta 1 Dal, taş 1 Taş); canı tam dolar. Hasarlı parça kendiliğinden onarılmaz; hasar resimde çatlakla görünür (3 kademe).
+- **Kırılınca** parça **yıkık** olur ve geçilir; kaybolmaz, resmi yıkık parçadır; yere 1 malzemesi düşer. Yıkık parçanın menüsü **Onar / Kaldır**; Kaldır 1 malzeme daha düşürür.
+- **Onarım:** hasarlı ya da yıkık parçanın yanında F etiketi "**Onar: X (1 Dal)**" ya da "**Onar: X (1 Taş)**" olur (tahta 1 Dal, taş 1 Taş); canı tam dolar. Hasarlı parça kendiliğinden onarılmaz; hasar resimde çatlakla görünür (3 kademe).
 
 **Kırma sınıfları:**
 
@@ -670,17 +671,17 @@ Her parça **tahta** ya da **taş** sınıfındadır; kırma kuralı buna göre 
 
 ### Avlu
 
-Durduran parçalarla (Çit, Taş duvar) ve kapılarla **tamamen çevrili** alanın içinde canlı **doğmaz** (Boğaç). Dal çit yavaşlattığı için saymaz; yıkık parça da saymaz. Çevrili olup olmadığına yalnızca bir parça konup kalkınca ya da kırılınca bakılır (en çok 64 × 64 karo).
+Durduran parçalarla (Çit, Taş duvar) ve kapılarla **tamamen çevrili** alanın içinde canlı **doğmaz** (Boğaç). Avluyu yalnızca çit, taş duvar ve kapı kapatır: Dal çit yavaşlattığı için saymaz; Direk feneri tek karelik katı bir parçadır ama avlu kapatmaz; yıkık parça da saymaz. Çevrili olup olmadığına yalnızca bir parça konup kalkınca ya da kırılınca bakılır (en çok 64 × 64 karo).
 
 ### Dış ışık: Direk feneri
 
-| Fener | Tarif (Usta Sinan yapar) | Yarıçap | Yakıt |
-|---|---|---|---|
-| Direk feneri | 1 Sopa, 1 Kil lamba, 1 Hayvan yağı | 90 px | bir gece; her gece 1 Hayvan yağı ya da 2 Reçine |
+| Fener | Tarif (Usta Sinan yapar) | Yarıçap | Yakıt | Fiyat |
+|---|---|---|---|---|
+| Direk feneri | 1 Sopa, 1 Kil lamba, 1 Hayvan yağı | 90 px | bir gece; her gece 1 Hayvan yağı ya da 2 Reçine; en çok 6 gecelik yakıt alır | 209 |
 
 - Fenerin ışığının içinde **mor ışık gelmez**; canavarlar ışıktan uzaklaşmaz, içine de girer (Boğaç: fenerler yalnızca mor ışıktan korur).
 - Fener 20:00'de kendiliğinden yanar, 06:00'da söner. Yakıtı biten fener o gece yanmaz.
-- Yakıt fenere **F** ile konur (yerde alınacak eşya yoksa; F önceliği).
+- Yakıt fenere **F** ile konur, etiket "**Fenere yakıt koy**" (yerde alınacak eşya yoksa; F önceliği). Direk feneri tek karelik katıdır: üstünden geçilmez.
 - Yanan fenerler haritada kamp ateşi gibi görünür.
 - **Gece:** güvenli olan fenerin ışığıdır, çit değil. Zifiri karanlık sayacı ışığın sınırından çıkınca başlar. Tanrı modu kuralı aynıdır (mor ışık tanrı modunda da bayıltır).
 
@@ -702,8 +703,10 @@ Durduran parçalarla (Çit, Taş duvar) ve kapılarla **tamamen çevrili** alan�
 ### Çit ve Ağıl
 
 - **Çit el yapımıdır** (Boğaç: çit ve zemini oyuncu elle yapar); adı aynı kaldığı için görevler ve Ağıl bozulmaz. Tarifi tahtadır: 1 Meşe sapı, 2 Sarmaşık ipi, 2 Dal → **2 Çit**; kazanda öğrenilir. Usta Sinan'ın sipariş listesinde Çit yoktur.
-- **Ağıl** aynı kalır: tarif 10 Çit, Usta Sinan kurar. Çit ucuzladığı için fiyatı malzemeyle düşer (~250).
+- **Ağıl** aynı kalır: tarif 10 Çit, Usta Sinan kurar. Fiyatı malzemesinden hesaplanır: 1.107.
 - **Eski kayıtlar:** çantadaki Çit'ler geçerlidir; dünyada kurulu Çit'ler açılışta İnşa ızgarasına aynı yerde Çit olarak taşınır; Sinan'a verilmiş ve bekleyen bir Çit siparişi varsa iade edilir (Çit çantaya, ücret geri).
+- **Çit'in resmi** çittir (dikmeler ve iki kat kalas); çantada, kitapta ve İnşa şeridinde aynı resim.
+- **Arena:** İnşa parçaları silah, zırh ya da etki olmadığı için arenaya etkisi yoktur.
 
 ## Dövüş
 
