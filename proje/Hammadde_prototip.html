@@ -1378,7 +1378,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.59</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.60</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1453,7 +1453,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.59 · 7 Kasım 2026</h2><h3>Denge</h3><ul><li>Kül Diyarı'nın girişinde Kül cini Seviye 36'dan önce çıkmaz; ilk adımlarda yalnızca Kül böcekleri var.</li><li>Mor Kristal Vadisi'nin girişinde Kristal örümcek ve Işık engereği Seviye 44'ten önce çıkmaz.</li></ul><h3>Düzeltmeler</h3><ul><li>Konuşabileceğin kişilerin dibinde artık yerde toplanacak bir şey (taş, kum, dal…) çıkmaz; F'ye basınca doğrudan kişiyle konuşursun (Barbaros'un yanındaki kum gibi).</li><li>"Bir anı geri geldi" ve ada halkı sahneleri Esc'e ya da dışına basınca biter (sonuna kadar okunmuş sayılır). Eskiden bayıldıktan sonra açılan anı Esc ile kapanmıyor, arkada ada donmuş bekliyordu.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.60 · 7 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Oyun kolu ile her şey:</strong> kol bağlıyken Start (PlayStation: Options) <strong>Kol menüsünü</strong> açar. Devam et'in altında Çanta, El yapımı, Karakter, Yetenekler, Tarif kitabı, Almanak, Görevler, Harita ve Robot köpekler var; evdeyken Döşe, öğreticide Eğitimi geç de buradan. Sonra her zamanki Kaydet, Yükle, Ayarlar, Kontroller, Ana menü gelir.</li><li>Pencerelerde <strong>LB / RB</strong> önceki / sonraki sekmeye geçer (Yetenekler'de Savaş, Ekonomi, Dayanıklılık; Çanta'da bölümler; kazanda grup listesi). <strong>LT / RT</strong> bir önceki / sonraki pencereyi açar (Çanta, El yapımı, Tarif kitabı, Görevler, Karakter, Yetenekler, Harita).</li><li><strong>Meşale kolla:</strong> LB / RB ile kemerde gezerken boş elden önce meşale yuvası da bir durak. Meşale yuvası seçiliyken X'e kısa basınca meşaleyle vurursun, X'i basılı tutunca meşale yanar ya da söner.</li><li><strong>Eşya yerleştirme kolla:</strong> yatak, barınak, atölye gibi bir şey elindeyken gölgesi önünde durur ve seninle yürür. Yön tuşları ya da sağ çubuk onu birer kare kaydırır, A koyar, Y döndürür, B vazgeçer. Kurduğun bir şeyin yanında A'yı yarım saniye basılı tutarsan onu yerinden alıp taşırsın; kısa A eskisi gibi kullanır (yatağa yat, eve gir).</li><li>R3 yalnızca ulti; ulti dolu değilken bir şey yapmaz (Robot köpekler Kol menüsünde).</li><li>Açılış sahnesi A, B ya da Start ile geçilir.</li></ul><h3>Arayüz</h3><ul><li><strong>Ekrandaki tuş yazıları en son kullandığın aygıta göre:</strong> kola dokunduğun an öğretici kartları, ipuçları, sol menüdeki tuş harfleri ve meşale yuvası kolun tuşlarını yazar ("yanında A", "Yemek için Y"); klavyeye basınca ya da fareyi oynatınca hemen klavye harflerine döner. Kolun adına göre Xbox (A, B, X, Y, LB, RB…) ya da PlayStation (✕, ○, □, △, L1, R1…) adları kullanılır.</li><li>Öğreticinin "Anladım" düğmesi ve "Yeni ders" kartı kol açıkken kendiliğinden seçili gelir; A basar. B kartı birkaç saniyeliğine bırakır, yürüyebilirsin.</li><li>Kolla ana menüde Çıkış'a basınca önce "Oyundan çıkılsın mı?" diye sorulur.</li><li>Kolla menülerde gezmek: sağa basınca ana menüden önce en üstteki simgeye gidilir (doğrudan Çıkış'a değil). Pazarda pencere Sat düğmesinde açılır, adet kutusunda yukarı / aşağı adedi değiştirir. Kazanın grup listesi sol / sağ ile değişir. Arama kutuları kol gezinmesinde atlanır. Seçili eşya alttaki alet şeridinin altında kalmaz.</li><li>Menülerde çubuğu hafif (yarıya kadar) itmek de yeter.</li></ul><h3>Düzeltmeler</h3><ul><li>Ana menüde kolla yukarı bir kez gidiyor, ikinci basışta gitmiyordu (hile kodunu yazıyorsun sanıyordu). Artık menü her basışta oynar. Hile kodu yine çalışır: kodun son B ve A'sı hiçbir düğmeye basmaz, kod bitince seçim kodu yazmaya başladığın yere döner.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -8755,7 +8755,11 @@ const DEFB={interact:{c:'KeyF',l:'F'},eat:{c:'KeyX',l:'X'},parry:{c:'KeyE',l:'E'
 const defB=()=>JSON.parse(JSON.stringify(DEFB));
 {const o=store.get(KEYSTORE);if(o&&typeof o==='object')for(const id in o){const v=o[id];if(KDEF[id]&&v&&typeof v.c==='string'&&(v.c!==KDEF[id]||DEFB[id]))BIND[id]={c:v.c,l:String(v.l||v.c).slice(0,10)}}
   if(!store.get('hammadde.v204.keys')){for(const id in DEFB)if(!BIND[id]){const taken=Object.keys(BIND).some(k=>BIND[k].c===DEFB[id].c);if(!taken)BIND[id]=Object.assign({},DEFB[id])}store.set(KEYSTORE,BIND);store.set('hammadde.v204.keys',1)}}
-const codeOf=id=>BIND[id]?BIND[id].c:KDEF[id],labOf=id=>BIND[id]?BIND[id].l:KLAB[id];window.__plKey=id=>labOf(id);   // v2.06: other blocks name the bound key
+const codeOf=id=>BIND[id]?BIND[id].c:KDEF[id],labOf=id=>BIND[id]?BIND[id].l:KLAB[id];window.__plKey=id=>padLab(id)||labOf(id);   // v2.06: other blocks name the bound key
+// v3.60 (CEO): while the pad is the last thing used (block v320pad: from its first press to the first key, click or mouse move) the texts name the pad's buttons
+const PADL={up:'s',left:'s',down:'s',right:'s',run:10,interact:0,attack:2,dodge:1,eat:3,hand:'lr',inv:13,handcraft:12,book:14,quests:15,map:8,parry:6,dogs:11,torchlit:'lr',char:9,skills:9,almanac:9,settings:9};
+const padOn=()=>{try{return !!(window.__plPad&&window.__plPad.on())}catch(e){return false}};
+function padLab(id){if(!padOn())return null;const v=PADL[id];if(v==null)return null;const b=window.__plPad.bn;return v==='s'?'Sol çubuk':v==='lr'?b(4)+' / '+b(5):b(v)}
 const kOn=()=>Object.keys(BIND).length>0;
 let C2A={},DEFA={};   // pressed code → action; default code → action
 function rebuildMaps(){C2A={};DEFA={};for(const [id] of KB){C2A[codeOf(id)]=id;DEFA[KDEF[id]]=id}if(!BIND.run)C2A.ShiftRight='run'}
@@ -8778,10 +8782,10 @@ addEventListener('keydown',translate,true);addEventListener('keyup',translate,tr
 // texts that name a key show the bound key
 const LBL2ID={};for(const [id] of KB)LBL2ID[KLAB[id]]=id;
 const KRE=/(<span class="kc">|<kbd>)([^<]{1,8})(<\/span>|<\/kbd>)|(^|[^A-Za-zÇĞİÖŞÜçğıöşü0-9_])(WASD|Tab|Shift|Boşluk|[A-Z])(?=( ile| tuşu| tuşuna| ya da| \(| \/|\)| bas| basılı|'[a-zçğıöşü]{1,4}\b|\.|,|$))/g;
-function kTxt(s){if(!kOn()||typeof s!=='string'||!s)return s;return s.replace(KRE,(m,o,lab,cl,pre,lab2)=>{
-  if(o){const id=LBL2ID[lab];if(!id||!BIND[id])return m;return o.replace('>',' data-k="1">')+esc(labOf(id))+cl}
-  if(lab2==='WASD'){return ['up','left','down','right'].some(i=>BIND[i])?pre+['up','left','down','right'].map(labOf).join(''):m}
-  const id=LBL2ID[lab2];if(!id||!BIND[id])return m;return pre+labOf(id)})}
+function kTxt(s){const pd=padOn();if((!kOn()&&!pd)||typeof s!=='string'||!s)return s;return s.replace(KRE,(m,o,lab,cl,pre,lab2)=>{
+  if(o){const id=LBL2ID[lab],pl=id&&padLab(id);if(pl)return o.replace('>',' data-k="1">')+esc(pl)+cl;if(!id||!BIND[id])return m;return o.replace('>',' data-k="1">')+esc(labOf(id))+cl}
+  if(lab2==='WASD'){if(pd)return pre+'Sol çubuk';return ['up','left','down','right'].some(i=>BIND[i])?pre+['up','left','down','right'].map(labOf).join(''):m}
+  const id=LBL2ID[lab2],pl=id&&padLab(id);if(pl)return pre+pl;if(!id||!BIND[id])return m;return pre+labOf(id)})}
 B5.kTxt=kTxt;
 function kEl(el){if(!el||!kOn())return;const h=el.innerHTML;if(h===el.__b5)return;const o=kTxt(h);if(o!==h){el.innerHTML=o}el.__b5=el.innerHTML}
 {const _t=toast;toast=function(m,w){return _t.call(this,kTxt(m),w)}}
@@ -8792,10 +8796,10 @@ function kEl(el){if(!el||!kOn())return;const h=el.innerHTML;if(h===el.__b5)retur
 {const _h=renderHot;renderHot=function(){const r=_h.apply(this,arguments);try{const k=document.querySelector('#handbtn kbd');if(k)k.textContent=labOf('hand')}catch(e){}return r}}
 {const _k=tzKey;tzKey=function(k){const s=_k.apply(this,arguments);return typeof s==='string'?s.replace(/<span class="kc">([^<]{1,8})<\/span>/g,(m,l)=>{const id=LBL2ID[l];return id?`<span class="kc" data-k="1">${esc(labOf(id))}</span>`:m}):s}}
 const HUDK={'b-inv':'inv','b-craft':'craft','b-hand':'handcraft','b-book':'book','b-sell':'sell','b-skill':'skills','b-dog':'dogs','b-shop':'smith','b-set':'settings','b-char':'char','b-quest':'quests'};
-function applyKeyTexts(){for(const id in HUDK){const b=$(id);if(!b)continue;const a=HUDK[id],k=b.querySelector('kbd');if(k)k.textContent=labOf(a);
+function applyKeyTexts(){for(const id in HUDK){const b=$(id);if(!b)continue;const a=HUDK[id],k=b.querySelector('kbd');if(k)k.textContent=padLab(a)||labOf(a);
     for(const at of ['title','aria-label']){const v=b.getAttribute(at);if(!v)continue;if(b.dataset['b5'+at.charAt(0)]==null)b.dataset['b5'+at.charAt(0)]=v;b.setAttribute(at,b.dataset['b5'+at.charAt(0)].replace('('+KLAB[a]+')','('+labOf(a)+')'))}}
   {const k=document.querySelector('#pui-rot kbd');if(k)k.textContent=labOf('dodge')}
-  {const k=document.querySelector('#handbtn kbd');if(k)k.textContent=labOf('hand')}
+  {const k=document.querySelector('#handbtn kbd');if(k)k.textContent=padLab('hand')||labOf('hand')}
   for(const x of SKILLS){if(x._b5e==null)x._b5e=x.e;x.e=kTxt(x._b5e)}
   {const c=$('cheat');const sm=c&&c.parentNode.querySelector('small');if(sm){if(sm.__b5o==null)sm.__b5o=sm.innerHTML;sm.innerHTML=sm.__b5o.replace('<b>Z</b>','<b>'+esc(labOf('cheatCoin'))+'</b>').replace('<b>X</b>','<b>'+esc(labOf('cheatXP'))+'</b>')}}
   lastPrompt='#';B5.lp=null;try{renderTut()}catch(e){}try{if(craftOpen)renderCraft()}catch(e){}}
@@ -8898,6 +8902,8 @@ B5.maxLevel=cheatMaxLevel;B5.revealMap=cheatRevealMap;
 {const _a=applyCheat;applyCheat=function(){const r=_a.apply(this,arguments);try{syncInf()}catch(e){}return r}}
 // Esc closes the controls menu before anything else (the capture listener above handles keys while it is open)
 syncInf();renderMusSeg();if(kOn())applyKeyTexts();
+// v3.60: the device changed (pad ↔ keyboard / mouse): the texts on screen are written again at once
+addEventListener('pl-device',()=>{try{applyKeyTexts();B5.lp='';B5.lph='';lastPrompt='';updatePrompt()}catch(e){}try{renderTut()}catch(e){}try{renderHot()}catch(e){}try{if(craftOpen)renderCraft()}catch(e){}});
 window.__plReady=1;   // from here on errors show as a small notice (v48c)
 }).toString()+')()')}catch(e){try{window.__hamErr('v48-b5: '+(e&&e.message||e))}catch(_){}}})();
 </script>
@@ -19498,7 +19504,7 @@ function scene318(g,i,t,line){const m=MEMS[i];if(!m)return;const lab=(x,y,tx,o)=
 // Open windows/menus: stick or d-pad moves a focus between buttons, A presses, B is Esc.
 (function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
 'use strict';
-const KDEF0={up:'KeyW',left:'KeyA',down:'KeyS',right:'KeyD',run:'ShiftLeft',interact:'KeyE',attack:'KeyQ',dodge:'Space',eat:'KeyF',inv:'KeyI',handcraft:'Tab',book:'KeyK',quests:'KeyG',map:'KeyM',parry:'F13',dogs:'KeyR'};
+const KDEF0={up:'KeyW',left:'KeyA',down:'KeyS',right:'KeyD',run:'ShiftLeft',interact:'KeyE',attack:'KeyQ',dodge:'Space',eat:'KeyF',inv:'KeyI',handcraft:'Tab',book:'KeyK',quests:'KeyG',map:'KeyM',parry:'F13',dogs:'KeyR',char:'KeyC',skills:'KeyY',almanac:'KeyU'};
 const codeFor=id=>{const b=store.get('hammadde.b5.keys.v1');return b&&b[id]&&typeof b[id].c==='string'?b[id].c:KDEF0[id]};
 const held={};   // action -> code currently held down by the pad
 function send(type,code){let ev;try{ev=new KeyboardEvent(type,{code,key:code==='Space'?' ':code==='Escape'?'Escape':code.replace(/^Key/,'').toLowerCase(),bubbles:true,cancelable:true})}catch(e){return}
@@ -19507,27 +19513,40 @@ function down(id){if(held[id])return;const c=id==='Escape'?'Escape':codeFor(id);
 function up(id){const c=held[id];if(!c)return;delete held[id];send('keyup',c)}
 function tap(id){down(id);setTimeout(()=>up(id),60)}
 function releaseAll(){for(const id in held)up(id)}
-const P={on:false,prev:[],dir:'',rep:0,raf:0,used:false,runOn:false,kq:'',kt:0,kdir:''};
+const P={on:false,prev:[],dir:'',rep:0,raf:0,used:false,runOn:false,kq:'',kt:0,kdir:'',kf:[],mx:0,my:0,pl:null,po:{x:0,y:0},pdir:'',prep:0,padP:false,aHold:null,lb:null,tsSel:false,tsMk:false,cardOff:'',cardOffT:0};
 // the window on top that has buttons to move between
-const LAYERS='.ov:not([hidden]),#dlg:not([hidden]),#craft:not([hidden]),#b5keys:not([hidden]),[role="dialog"]:not([hidden])';
-function layer(){let best=null,bz=-1e9;for(const el of document.querySelectorAll(LAYERS)){if(!el.getClientRects().length)continue;const cs=getComputedStyle(el);if(cs.display==='none'||cs.visibility==='hidden')continue;
-  const z=parseInt(cs.zIndex,10)||0;if(z>=bz){bz=z;best=el}}return best}
-const focusables=L=>Array.prototype.filter.call(L.querySelectorAll('button,input,select,a[href],[tabindex]'),b=>!b.disabled&&b.tabIndex!==-1&&b.getClientRects().length&&getComputedStyle(b).visibility!=='hidden');
+const LAYERS='.ov:not([hidden]),#dlg:not([hidden]),#craft:not([hidden]),#b5keys:not([hidden]),#q2cf:not([hidden]),[role="dialog"]:not([hidden])';
+const shown=el=>{if(!el||!el.getClientRects().length)return false;const cs=getComputedStyle(el);return cs.display!=='none'&&cs.visibility!=='hidden'};
+// v3.60 (CEO): a card that waits for a press (the tutorial's Anladım, the "Yeni ders" card) takes the pad when no window is open; B lets it go for 6 s (or until its text changes)
+function card(){if(onTitle||paused)return null;const l=$('q2les');if(l&&!l.hidden&&shown(l))return l;const t=$('tutok'),tu=$('tut');if(t&&!t.hidden&&tu&&!tu.hidden&&shown(t))return tu;return null}
+const cardKey=c=>c.id+'|'+(c.textContent||'').slice(0,80);
+function layer(){let best=null,bz=-1e9;for(const el of document.querySelectorAll(LAYERS)){if(!shown(el))continue;
+  const z=parseInt(getComputedStyle(el).zIndex,10)||0;if(z>=bz){bz=z;best=el}}
+  if(!best){const c=card();if(c&&(cardKey(c)!==P.cardOff||performance.now()>P.cardOffT))best=c}return best}
+// v3.60 (KOL-11): search boxes are left out (A cannot type there; the lists are walked instead)
+const focusables=L=>Array.prototype.filter.call(L.querySelectorAll('button,input,select,a[href],[tabindex]'),b=>!b.disabled&&b.tabIndex!==-1&&b.type!=='search'&&b.getClientRects().length&&getComputedStyle(b).visibility!=='hidden');
+// v3.60 (KOL-09): the focused thing is scrolled into sight, also when a strip fixed over the list (the belt in Çanta) would hide it
+function reveal(el){try{el.scrollIntoView({block:'nearest',inline:'nearest'})}catch(e){return}try{const r=el.getBoundingClientRect(),x=r.left+r.width/2,y=r.bottom-3,top=document.elementFromPoint(x,y);
+  if(!top||el.contains(top)||top.contains(el))return;let sc=el.parentElement;while(sc&&!(sc.scrollHeight>sc.clientHeight+2&&/(auto|scroll)/.test(getComputedStyle(sc).overflowY)))sc=sc.parentElement;
+  if(sc&&!sc.contains(top))return;if(sc){const tr=top.getBoundingClientRect();sc.scrollTop+=Math.max(8,r.bottom-tr.top+10)}}catch(e){}}
 function moveFocus(L,dx,dy){const list=focusables(L);if(!list.length)return;const cur=document.activeElement;
   if(!cur||!L.contains(cur)||list.indexOf(cur)<0){list[0].focus();return}
+  if(cur.tagName==='SELECT'&&dx){const n=cur.options.length;if(n){cur.selectedIndex=(cur.selectedIndex+dx+n)%n;cur.dispatchEvent(new Event('input',{bubbles:true}));cur.dispatchEvent(new Event('change',{bubbles:true}));try{sfx('pick')}catch(e){}}return}   // v3.60 (KOL-11): a drop-down list changes with left / right
+  if(cur.classList.contains('qi')&&dy){const row=cur.parentElement,b=row&&row.querySelector(`[data-qd="${dy<0?1:-1}"]`);if(b){remember(cur);b.click();try{sfx('pick')}catch(e){}}return}   // v3.60 (KOL-12): up / down change how many
+  if(L.id==='title'&&dx>0&&cur.closest('#tmain,#tslots,#tdiff,#thard')){const ic=list.filter(b=>b.closest('#ttop'));if(ic.length){ic.sort((a,b)=>a.getBoundingClientRect().top-b.getBoundingClientRect().top);ic[0].focus();try{sfx('pick')}catch(e){}return}}   // v3.60 (KOL-02): right from the menu goes to the top icon, never straight to Çıkış
   if(cur.type==='range'&&dx){cur.value=Math.max(+cur.min||0,Math.min(+cur.max||100,+cur.value+dx*(+cur.step||1)*5));cur.dispatchEvent(new Event('input',{bubbles:true}));cur.dispatchEvent(new Event('change',{bubbles:true}));return}
   // v3.21: first the same row (left/right) or column (up/down), then a 45° cone, otherwise stay
   const r=cur.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;let best=null,bs=1e9,bt=9;
   for(const b of list){if(b===cur)continue;const q=b.getBoundingClientRect(),ddx=q.left+q.width/2-cx,ddy=q.top+q.height/2-cy,along=ddx*dx+ddy*dy,perp=Math.abs(ddx*dy)+Math.abs(ddy*dx);if(along<=4)continue;
     const same=dx?(q.top<r.bottom-2&&q.bottom>r.top+2):(q.left<r.right-2&&q.right>r.left+2),tier=same?0:perp<=along?1:9;if(tier===9)continue;
     const sc=along+perp*(tier?2:.5);if(tier<bt||(tier===bt&&sc<bs)){bt=tier;bs=sc;best=b}}
-  if(best){best.focus();try{best.scrollIntoView({block:'nearest',inline:'nearest'})}catch(e){}try{sfx('pick')}catch(e){}}}
+  if(best){best.focus();reveal(best);try{sfx('pick')}catch(e){}}}
 // v3.25: after a press the window may redraw (food list): the focus goes back to the same button or the nearest one where it was
 let lastC=null;
 // v3.32 (Boğaç): a window opened with the pad starts on the first thing you can use: the first recipe, the first thing you can make or eat, the first item
-function firstFocus(L){try{const list=focusables(L);if(!list.length)return;let sel=null;if(L.id==='craft')sel=mode==='craft'?'[data-rec]':mode==='hand'?'[data-hand]':mode==='eat'?'[data-eat]':mode==='inv'?'.itile':null;
-  let el=sel?list.find(b=>b.matches(sel)):null;const cb=$('cbody');if(!el&&L.id==='craft'&&cb)el=list.find(b=>cb.contains(b)&&!b.closest('[role="tablist"],.pmode'));
-  if(el){el.focus();try{el.scrollIntoView({block:'nearest',inline:'nearest'})}catch(e){}}}catch(e){}}
+function firstFocus(L){try{const list=focusables(L);if(!list.length)return;let sel=null;if(L.id==='craft')sel=mode==='craft'?'[data-rec]':mode==='hand'?'[data-hand]':mode==='eat'?'[data-eat]':mode==='inv'?'.itile':mode==='sell'?'[data-sell]':null;
+  let el=sel?list.find(b=>b.matches(sel)):null;if(L.id==='tut')el=$('tutok');else if(L.id==='q2les')el=L.querySelector('.pri');/* v3.60: a card starts on its Anladım / Devam */const cb=$('cbody');if(!el&&L.id==='craft'&&cb)el=list.find(b=>cb.contains(b)&&!b.closest('[role="tablist"],.pmode'));
+  if(el){el.focus();reveal(el)}}catch(e){}}
 function remember(a){try{const r=a.getBoundingClientRect();lastC={x:r.left+r.width/2,y:r.top+r.height/2,id:a.id||''}}catch(e){lastC=null}}
 function keepFocus(L){if(!lastC)return;const a=document.activeElement,list=focusables(L);if(!list.length||(a&&L.contains(a)&&a!==L&&list.indexOf(a)>=0))return;
   let best=null,bd=1e9;for(const b of list){if(lastC.id&&b.id===lastC.id){best=b;break}const q=b.getBoundingClientRect(),d=Math.hypot(q.left+q.width/2-lastC.x,q.top+q.height/2-lastC.y);if(d<bd){bd=d;best=b}}
@@ -19547,8 +19566,15 @@ function kbKey(k){const i=$('nmin');if(!i)return;let v=i.value||'';
   if(k==='del')v=v.slice(0,-1);
   else{if(k===' '&&(!v||v.slice(-1)===' '))return;const up=!v||v.slice(-1)===' ';v=(v+(up?k.toLocaleUpperCase('tr'):k.toLocaleLowerCase('tr'))).slice(0,i.maxLength>0?i.maxLength:14)}
   i.value=v;i.dispatchEvent(new Event('input',{bubbles:true}));kbView()}
+// v3.60 (CEO): with the pad A never quits the game at once: Çıkış asks first (outside the box = Vazgeç)
+let qcEl=null;
+function askQuit(btn){if(!qcEl){qcEl=document.createElement('div');qcEl.id='padqc';qcEl.className='ov';qcEl.hidden=true;qcEl.setAttribute('role','dialog');qcEl.setAttribute('aria-label','Çıkış');
+    qcEl.innerHTML='<div class="tcard small"><h2>Oyundan çıkılsın mı?</h2><div class="tmenu row"><button type="button" class="mb ghost" data-q="n">Vazgeç</button><button type="button" class="mb danger" data-q="y">Çık</button></div></div>';document.body.appendChild(qcEl);
+    qcEl.addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(!b)return;qcEl.hidden=true;if(b.dataset.q==='y'){const x=$('t-exit');if(x)x.click()}});
+    qcEl.addEventListener('pointerdown',e=>{if(e.target===qcEl)qcEl.hidden=true})}
+  qcEl.hidden=false;lastC=null;const f=qcEl.querySelector('[data-q="n"]');if(f)try{f.focus()}catch(e){}try{sfx('pick')}catch(e){}}
 function press(L){const a=document.activeElement;
-  if(a&&L.contains(a)&&a!==L&&focusables(L).indexOf(a)>=0){if(a.tagName==='INPUT'&&L.id==='names'){kbShow();return}remember(a);if(a.tagName==='INPUT'&&a.type!=='checkbox'&&a.type!=='radio')return;a.click();return}
+  if(a&&L.contains(a)&&a!==L&&focusables(L).indexOf(a)>=0){if(a.tagName==='INPUT'&&L.id==='names'){kbShow();return}if(a.id==='t-exit'){askQuit(a);return}remember(a);if(a.tagName==='INPUT'&&a.type!=='checkbox'&&a.type!=='radio')return;a.click();return}
   tap('interact')}
 // v3.25 (Boğaç): aim assist for the gamepad only (the mouse has none): the same choice as the phone's Vur button (v132-dokun):
 // a hostile creature within 150 px (melee), else the nearest in front (110 px; bow, staff, gun 240), else where the stick points.
@@ -19575,23 +19601,30 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
   const hit=i=>now[i]&&!was[i],rel=i=>!now[i]&&was[i];
   const ax=g.axes[0]||0,ay=g.axes[1]||0,mag=Math.hypot(ax,ay);
   stick=mag>.3?{x:ax/mag,y:ay/mag}:null;
-  // v3.23: the cheat code ↑↑↓↓←→←→ B A (d-pad or stick; at most 2 s between presses); the last A does not press the chosen button
-  {const tn=performance.now();let kd=now[12]?'U':now[13]?'D':now[14]?'L':now[15]?'R':'';if(!kd&&mag>.55)kd=Math.abs(ax)>Math.abs(ay)?(ax>0?'R':'L'):(ay>0?'D':'U');
-    const push=c=>{if(tn-P.kt>2000)P.kq='';P.kt=tn;P.kq=(P.kq+c).slice(-10)};if(kd&&kd!==P.kdir)push(kd);P.kdir=kd;if(hit(1))push('B');if(hit(0))push('A');
-    if(P.kq==='UUDDLRLRBA'){P.kq='';try{window.__plCheatCode&&window.__plCheatCode()}catch(e){}return}
-    // v3.32 (Boğaç): while the code is being typed on the main menu (after ↑↑), the menu does not move and A/B press nothing (it used to land on Çıkış)
-    blockK=false;if(onTitle&&P.kq&&tn-P.kt<=2000)for(let n=Math.min(P.kq.length,10);n>=2;n--)if('UUDDLRLRBA'.indexOf(P.kq.slice(-n))===0){blockK=true;break}}
-  if(!P.used&&(mag>.3||now.some(v=>v))){P.used=true;document.body.classList.add('padmode')}
+  // v3.60 (CEO): the menu direction: d-pad first, else the stick (on past 0,40, off under 0,25: no flicker at the edge)
+  P.mx=hys(ax,P.mx);P.my=hys(ay,P.my);let mdx=now[15]?1:now[14]?-1:P.mx,mdy=now[13]?1:now[12]?-1:P.my;if(mdx&&mdy){if(Math.abs(ax)>Math.abs(ay))mdy=0;else mdx=0}
+  // v3.23: the cheat code ↑↑↓↓←→←→ B A (d-pad or stick; at most 2 s between presses). v3.60 (CEO: "yukarı bir kez gidiyor, sonra gitmiyor"): the menu moves
+  // freely while the code is typed; only the code's own B and A press nothing, and when the code is done the focus goes back where it was before the first ↑
+  let codeB=false;
+  {const tn=performance.now(),kd=mdy<0?'U':mdy>0?'D':mdx<0?'L':mdx>0?'R':'';
+    const push=c=>{if(tn-P.kt>2000){P.kq='';P.kf=[]}P.kt=tn;P.kq=(P.kq+c).slice(-10);P.kf.push(document.activeElement);if(P.kf.length>10)P.kf.shift()};
+    if(kd&&kd!==P.kdir)push(kd);P.kdir=kd;if(hit(1))push('B');if(hit(0))push('A');
+    if(P.kq==='UUDDLRLRBA'){const f=P.kf[0];P.kq='';P.kf=[];try{window.__plCheatCode&&window.__plCheatCode()}catch(e){}if(onTitle&&f&&f.focus&&document.contains(f))try{f.focus()}catch(e){}return}
+    codeB=onTitle&&hit(1)&&/UUDDLRLRB$/.test(P.kq)}
+  if(mag>.3||now.some(v=>v))padUsed();
+  if(typeof cine!=='undefined'&&cine.on){if(hit(0)||hit(1)||hit(9))tap('Escape');return}   // v3.60 (KOL-04): the opening scene: A, B or Start skips it (Esc)
   const L=layer();
   if(L){if(held.up||held.down||held.left||held.right||held.run||held.parry||held.eat)releaseAll();
-    let dx=now[15]?1:now[14]?-1:(ax>.55?1:ax<-.55?-1:0),dy=now[13]?1:now[12]?-1:(ay>.55?1:ay<-.55?-1:0);if(dx&&dy){if(Math.abs(ax)>Math.abs(ay))dy=0;else dx=0}
-    const d=dx+','+dy,t=performance.now();if(d!=='0,0'){if(d!==P.dir){P.dir=d;P.rep=t+380;if(!blockK)moveFocus(L,dx,dy)}else if(t>=P.rep){P.rep=t+120;if(!blockK)moveFocus(L,dx,dy)}}else P.dir='';RS=null;
+    const dx=mdx,dy=mdy,d=dx+','+dy,t=performance.now();if(d!=='0,0'){if(d!==P.dir){P.dir=d;P.rep=t+380;moveFocus(L,dx,dy)}else if(t>=P.rep){P.rep=t+120;moveFocus(L,dx,dy)}}else P.dir='';RS=null;
     if(adown)atkUp();
     {const key=(L.id||'')+'|'+(L.id==='craft'?mode:'');if(L!==P.lastL||key!==P.lastK){P.lastL=L;P.lastK=key;lastC=null;firstFocus(L)}else keepFocus(L)}   // v3.32: a window opens on its first usable thing
     if(L.id==='padkb'){if(hit(0))press(L);if(hit(1))kbHide();if(hit(2))kbKey('del');if(hit(9))kbKey('ok');return}
-    if(hit(0)&&!blockK)press(L);
-    if(hit(1)&&!blockK)tap('Escape');
+    if(L.id==='padqc'){if(hit(0))press(L);if(hit(1))L.hidden=true;return}
+    if(L.id==='tut'||L.id==='q2les'){if(hit(0))press(L);if(hit(1)){P.cardOff=cardKey(L);P.cardOffT=performance.now()+6000;try{document.activeElement.blur()}catch(e){}}if(hit(9))tap('Escape');return}   // v3.60: B leaves the card (it stays on screen)
+    if(hit(0))press(L);
+    if(hit(1)&&!codeB)tap('Escape');
     if(hit(9)&&paused)tap('Escape');
+    if(hit(4)||hit(5))winStep(L,hit(5)?1:-1);if(hit(6)||hit(7))menuStep(hit(7)?1:-1);   // v3.60: LB/RB tabs, LT/RT the next window
     return}
   // v3.32 (Boğaç): the right stick aims while the left one walks: the hero turns that way and blows, arrows and shots go there
   {const rx=g.axes[2]||0,ry=g.axes[3]||0,rm=Math.hypot(rx,ry);RS=rm>.35?{x:rx/rm,y:ry/rm}:null;
@@ -19601,13 +19634,60 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
   sx?down('right'):up('right');sxn?down('left'):up('left');sy?down('down'):up('down');syn?down('up'):up('up');
   if(hit(10))P.runOn=!P.runOn;if(!k)P.runOn=false;(P.runOn&&k)?down('run'):up('run');
   const hold=(i,id)=>{if(hit(i))down(id);else if(rel(i))up(id)};
-  hold(0,'interact');if(hit(2)||hit(7))atkDown();if((rel(2)&&!now[7])||(rel(7)&&!now[2]))atkUp();hold(1,'dodge');hold(3,'eat');hold(6,'parry');
-  if(hit(11))tap('dogs');
-  if(hit(4)||hit(5)){try{const L=hotList(),n=hotN(),d=hit(5)?1:-1,ar=!!window.__plArena;let i=hand;   // v3.24: only filled slots (and the empty hand, not in the arena)
-    for(let k=0;k<=n;k++){i+=d;if(i>=n)i=-1;if(i<-1)i=n-1;if(i<0?!ar:!!L[i])break}if(i!==hand&&(i<0?!ar:!!L[i])){setHand(i);sfx('pick')}}catch(e){}}
+  // v3.60 (CEO): placing a thing with the pad: the ghost stands in front of you and walks with you; the d-pad or the right stick moves it a square,
+  // A puts it down, Y turns it, B gives up
+  const pl=typeof placing!=='undefined'&&placing;
+  if(pl){if(P.pl!==pl){P.pl=pl;P.po={x:0,y:0};P.pdir=''}if(mag>.3||now.some(v=>v))P.padP=true;RS=null;
+    const t=performance.now(),rx=g.axes[2]||0,ry=g.axes[3]||0,nx=now[15]?1:now[14]?-1:(rx>.5?1:rx<-.5?-1:0),ny=now[13]?1:now[12]?-1:(ry>.5?1:ry<-.5?-1:0),nd=nx+','+ny;
+    const nudge=()=>{P.po.x=Math.max(-6,Math.min(6,P.po.x+nx));P.po.y=Math.max(-6,Math.min(6,P.po.y+ny))};
+    if(nd!=='0,0'){if(nd!==P.pdir){P.pdir=nd;P.prep=t+300;nudge();try{sfx('pick')}catch(e){}}else if(t>=P.prep){P.prep=t+110;nudge()}}else P.pdir='';
+    if(hit(0)){P.padP=true;try{ghostAtPlayer();doPlace(placing.tx,placing.ty)}catch(e){}}if(rel(0))up('interact');
+    if(hit(3))try{rotatePlace()}catch(e){}if(hit(1))try{cancelPlace();sfx('pick')}catch(e){}}
+  else{P.pl=null;
+    // v3.60 (CEO): A held half a second on a thing you built picks it up to move it (like holding the mouse or a finger on it); a short A uses it
+    if(hit(0)){let tg=null;try{tg=eTarget()}catch(e){}if(tg&&tg.kind==='placed'&&tg.o&&!tg.o.fixed)P.aHold={o:tg.o,t:performance.now()+500};else{P.aHold=null;down('interact')}}
+    else if(now[0]&&P.aHold&&performance.now()>=P.aHold.t){const o=P.aHold.o;P.aHold=null;try{pickUp(o);sfx('pick');P.pl=placing;P.po={x:0,y:0};P.padP=true;toast(`${o.n} taşınıyor: ${bn(0)} koy · ${bn(3)} döndür · yön tuşları kaydır · ${bn(1)} vazgeç`)}catch(e){}}
+    else if(rel(0)){if(P.aHold){P.aHold=null;tap('interact')}else up('interact')}}
+  if(P.tsSel&&(hand!==-1||!tsOn()))P.tsSel=false;
+  // v3.60 (CEO): on the torch stop a short X strikes (with the torch), X held 0,4 s lights or puts out the torch; RT always strikes
+  if(P.tsSel&&hit(2)&&!now[7])P.xh={t:performance.now()+400};
+  if(P.xh){if(!now[2]){P.xh=null;atkDown();setTimeout(atkUp,60)}else if(performance.now()>=P.xh.t){P.xh=null;P.xd=1;torchToggle()}}
+  else{if((hit(2)&&!P.xd)||hit(7))atkDown();if((rel(2)&&!now[7])||(rel(7)&&!now[2]))atkUp()}if(!now[2])P.xd=0;
+  if(!pl){hold(1,'dodge');hold(3,'eat')}hold(6,'parry');
+  if(hit(11)){P.r3=true;try{tap('dogs')}finally{P.r3=false}}   // v3.60 (CEO): R3 is the ulti only; the robot dogs are in the pad menu
+  // v3.60 (CEO): LB / RB step along the belt: the torch slot, the empty hand, the filled slots
+  if(hit(4)||hit(5))beltStep(hit(5)?1:-1);
+  markTS();
   if(hit(9))tap('Escape');if(hit(8))tap('map');
-  if(hit(12))tap('handcraft');if(hit(13))tap('inv');if(hit(14))tap('book');if(hit(15))tap('quests')}
-let blockK=false;
+  if(!pl){if(hit(12))tap('handcraft');if(hit(13))tap('inv');if(hit(14))tap('book');if(hit(15))tap('quests')}}
+function hys(v,s){const a=Math.abs(v),g=Math.sign(v);if(a>.4)return g;if(s&&g===s&&a>.25)return s;return 0}
+// the torch slot (block v283): lit by its own button; a stop on the belt for the pad
+const tsOn=()=>{try{return !window.__plArena&&!!(window.__plTS&&window.__plTS())}catch(e){return false}};
+function torchToggle(){const el=$('torchslot');if(window.__plArena||!el||el.hidden)return;try{el.click()}catch(e){}}
+function markTS(){const on=!!P.tsSel;if(on===P.tsMk)return;P.tsMk=on;const el=$('torchslot');if(el)el.classList.toggle('padsel',on)}
+function beltStep(d){try{const L=hotList(),n=hotN(),ar=!!window.__plArena,ts=tsOn();
+  const ok=i=>i===-2?ts:i===-1?!ar:!!L[i];let i=P.tsSel?-2:hand;   // stops: -2 torch slot, -1 empty hand, 0…n-1 filled slots
+  for(let k=0;k<=n+1;k++){i+=d;if(i>=n)i=-2;if(i<-2)i=n-1;if(ok(i))break}if(!ok(i))return;
+  if(i===-2){if(P.tsSel)return;P.tsSel=true;if(hand!==-1)setHand(-1);sfx('pick');if(!P.tsTold){P.tsTold=1;toast(`Meşale yuvası: ${bn(2)} basılı tut: yak / söndür`)}}
+  else{const was=P.tsSel;P.tsSel=false;if(i!==hand)setHand(i);if(i!==hand||was)sfx('pick')}markTS()}catch(e){}}
+// v3.60: in a window LB / RB pick the previous / next tab; LT / RT open the previous / next window (Envanter, El yapımı, Tarif kitabı, Görevler, Karakter, Yetenekler, Harita)
+function winStep(L,d){const tl=Array.prototype.find.call(L.querySelectorAll('[role="tablist"],.sktabs'),shown);
+  if(!tl){const se=Array.prototype.find.call(L.querySelectorAll('select'),shown),n=se&&se.options.length;if(n){se.selectedIndex=(se.selectedIndex+d+n)%n;se.dispatchEvent(new Event('change',{bubbles:true}));try{sfx('pick')}catch(e){}}return}const tabs=Array.prototype.filter.call(tl.querySelectorAll('[role="tab"],.sktab'),b=>!b.disabled&&shown(b));if(tabs.length<2)return;
+  let i=tabs.findIndex(b=>b.getAttribute('aria-selected')==='true'||b.classList.contains('on'));i=(i<0?0:i+d+tabs.length)%tabs.length;lastC=null;tabs[i].click();P.lastK='';try{sfx('pick')}catch(e){}
+  setTimeout(()=>{try{const t2=Array.prototype.find.call(L.querySelectorAll('[role="tablist"],.sktabs'),shown),on=t2&&Array.prototype.find.call(t2.querySelectorAll('[role="tab"],.sktab'),b=>b.getAttribute('aria-selected')==='true'||b.classList.contains('on'));if(on){on.focus();P.lastL=L;P.lastK=(L.id||'')+'|'+(L.id==='craft'?mode:'')}}catch(e){}},0)}
+const MENUS=['inv','hand','book','qlog','char','skills','map'];
+function menuStep(d){try{if(!craftOpen)return;let i=MENUS.indexOf(mode);if(i<0)return;i=(i+d+MENUS.length)%MENUS.length;openMenu(MENUS[i]);sfx('pick')}catch(e){}}
+// the ghost of a thing being placed follows the hero (and the pad's nudge) while the pad drives it; a mouse move gives it back to the mouse
+{const _g=ghostAtPlayer;ghostAtPlayer=function(){const r=_g.apply(this,arguments);try{if(P.pl&&placing===P.pl){placing.tx+=P.po.x;placing.ty+=P.po.y}}catch(e){}return r}}
+{const _m=ghostAtMouse;ghostAtMouse=function(){if(P.padP&&P.pl&&placing===P.pl)return false;return _m.apply(this,arguments)}}
+{const _om=openMenu;openMenu=function(m){if(m==='dogs'&&P.r3)return;return _om.apply(this,arguments)}}   // R3 with no ulti ready: nothing (the key's other half is the dogs)
+// v3.60 (CEO): the pad's words are on screen from the pad's first press (a stick inside its dead zone is no press) until the first key, click or mouse move
+function padUsed(){if(P.used)return;P.used=true;document.body.classList.add('padmode');try{window.dispatchEvent(new Event('pl-device'))}catch(e){}}
+function padLeft(){if(!P.used)return;P.used=false;P.padP=false;document.body.classList.remove('padmode');try{window.dispatchEvent(new Event('pl-device'))}catch(e){}}
+addEventListener('keydown',e=>{if(e.isTrusted&&P.used)padLeft()},true);
+addEventListener('pointerdown',e=>{if(e.isTrusted&&P.used&&e.pointerType==='mouse')padLeft()},true);
+addEventListener('pointermove',e=>{if(e.isTrusted&&P.used&&e.pointerType==='mouse'&&Math.abs(e.movementX||0)+Math.abs(e.movementY||0)>2)padLeft()},true);
+addEventListener('wheel',e=>{if(e.isTrusted&&P.used)padLeft()},{capture:true,passive:true});
 {const _dp=drawPlayer;drawPlayer=function(){if(RS&&!onTitle)player.face=Math.abs(RS.x)>=Math.abs(RS.y)?{x:Math.sign(RS.x)||1,y:0}:{x:0,y:Math.sign(RS.y)||1};return _dp.apply(this,arguments)}}   // v3.32: face where the right stick aims
 function start(){if(!P.raf)P.raf=requestAnimationFrame(tick)}
 addEventListener('gamepadconnected',()=>{P.on=true;start();toast('Oyun kolu bağlandı: sol çubuk yürü · A topla/konuş · X ya da RT vur · B atıl · LT gard · Y ye · R3 ulti · Start duraklat. Bütün düzen Ayarlar → Kontroller\'de.');renderHelp()});
@@ -19618,6 +19698,28 @@ function renderHelp(){const box=$('b5keys');if(!box)return;let el=$('padhelp');
   let any=false;try{any=Array.prototype.slice.call(navigator.getGamepads()||[]).some(x=>x&&x.connected)}catch(e){}
   el.innerHTML='<b>Oyun kolu</b>'+(any?' (bağlı)':' (bağlı değil: kolu bağlayıp bir tuşuna bas)')+'<ul class="padl"><li><b>Sol çubuk</b> yürü · <b>L3</b> koş</li><li><b>A</b> topla / konuş · <b>X</b> ya da <b>RT</b> vur · <b>B</b> atıl · <b>Y</b> ye (basılı tut: liste)</li><li><b>LT</b> basılı tut: savuştur / gard · <b>R3</b> ulti · <b>LB / RB</b> alet kemeri</li><li><b>Yön tuşları:</b> yukarı El yapımı, aşağı Envanter, sol Tarif kitabı, sağ Görevler · <b>Select</b> harita · <b>Start</b> duraklat</li><li>Pencerelerde: çubuk ya da yön tuşlarıyla gez, <b>A</b> seç, <b>B</b> geri.</li></ul>'}
 try{renderHelp()}catch(e){}
+// v3.60 (CEO): the pad's button names: Xbox (A, B, X, Y, LB…) or PlayStation (✕, ○, □, △, L1…), from the pad's name; unknown pads get the Xbox names
+const BNX=['A','B','X','Y','LB','RB','LT','RT','View','Menu','L3','R3','↑','↓','←','→'],BNP=['✕','○','□','△','L1','R1','L2','R2','Create','Options','L3','R3','↑','↓','←','→'];
+function padKind(){let id='';try{const g=Array.prototype.slice.call(navigator.getGamepads()||[]).find(x=>x&&x.connected);id=g?String(g.id||''):''}catch(e){}return /054c|dualsense|dualshock|playstation|wireless controller \(standard/i.test(id)&&!/xbox|xinput|045e/i.test(id)?'ps':'x'}
+let PK='x';const bn=i=>(PK==='ps'?BNP:BNX)[i]||'';
+window.__plPad={on:()=>P.used,bn:i=>bn(i),kind:()=>PK};
+addEventListener('gamepadconnected',()=>{PK=padKind()});try{PK=padKind()}catch(e){}
+// v3.60 (CEO: "kola özel menü koy"): with the pad the pause menu (Start) is the pad menu: under Devam et every window of the game opens from here
+// (Çanta, El yapımı, Karakter, Yetenekler, Tarif kitabı, Almanak, Görevler, Harita; Döşe in a house; the tutorial card's skip), then Kaydet … Ana menü
+{const pm=$('pmain'),res=$('p-resume');if(pm&&res){const go=fn=>()=>{resume();try{fn()}catch(e){}};
+  const mk=(id,t,fn)=>{const b=document.createElement('button');b.type='button';b.className='mb ghost padonly';b.id=id;b.textContent=t;b.addEventListener('click',go(fn));return b};
+  const room=()=>{const R=window.__v56;return !!(R&&R.on)},roomBtn=()=>document.querySelector('[data-r="edit"]');
+  const L=[mk('p-inv','Çanta',()=>openMenu('inv')),mk('p-hand','El yapımı',()=>openMenu('hand')),mk('p-char','Karakter',()=>openMenu('char')),mk('p-skills','Yetenekler',()=>openMenu('skills')),
+    mk('p-book','Tarif kitabı',()=>openMenu('book')),mk('p-alm','Almanak',()=>tap('almanac')),mk('p-qlog','Görevler',()=>toggleQuests()),mk('p-map','Harita',()=>openMenu('map')),mk('p-dogs','Robot köpekler',()=>openMenu('dogs')),
+    mk('p-dose','Döşe',()=>{const b=roomBtn();if(b)b.click()}),mk('p-tskip','Eğitimi geç',()=>{const t=$('tutskip');if(t&&!t.hidden)t.click()})];
+  let ref=res;for(const b of L){ref.parentNode.insertBefore(b,ref.nextSibling);ref=b}
+  const _op=openPause;openPause=function(){const r=_op.apply(this,arguments);try{const t=$('tutskip'),tu=$('tut'),sk=$('p-tskip'),ds=$('p-dose'),rb=roomBtn();
+    sk.hidden=!(t&&!t.hidden&&tu&&!tu.hidden);if(t)sk.textContent=t.textContent;ds.hidden=!(room()&&rb);if(rb)ds.textContent=rb.textContent;
+    for(const id of ['p-inv','p-hand','p-char','p-skills','p-book','p-alm','p-qlog','p-map','p-dogs'])$(id).hidden=room()}catch(e){}return r}}}
+// texts that name the torch key / the placing keys speak the pad's words while the pad is in use
+{const _k=window.__plTSKey;if(_k)window.__plTSKey=function(){if(P.used)return `${bn(4)} / ${bn(5)} ile kemerde meşale yuvasına gel, ${bn(2)} basılı tut: yanar`;return _k.apply(this,arguments)}}
+{const _r=renderPlaceUI;renderPlaceUI=function(){const r=_r.apply(this,arguments);try{if(placing&&P.used){const el=$('pui-t');if(el)el.innerHTML=`<b>${esc(placing.n)}</b> ${placing.moving?'taşınıyor':'yerleştiriliyor'} · <b>${bn(0)}</b> koy · <b>${bn(3)}</b> döndür · yön tuşları kaydır · <b>${bn(1)}</b> vazgeç`}}catch(e){}return r}}
+addEventListener('pl-device',()=>{try{puiK='';renderPlaceUI()}catch(e){}});
 // v3.24 (Boğaç): Alt + Enter toggles full screen everywhere; the press does nothing else
 let altGr=false;addEventListener('keyup',e=>{if(e.code==='AltRight'||e.key==='AltGraph')altGr=false},true);addEventListener('blur',()=>{altGr=false});   // v3.25: Alt Gr too (Chrome on Windows reports it as AltGraph, not altKey)
 addEventListener('keydown',e=>{if(e.code==='AltRight'||e.key==='AltGraph')altGr=true;const alt=e.altKey||altGr||(e.getModifierState&&e.getModifierState('AltGraph'));if(!alt||(e.code!=='Enter'&&e.code!=='NumpadEnter'))return;e.preventDefault();e.stopImmediatePropagation();if(e.repeat)return;
@@ -19627,7 +19729,7 @@ addEventListener('keydown',e=>{if(e.code==='AltRight'||e.key==='AltGraph')altGr=
 if(typeof hurt==='function'){const _h=hurt;hurt=function(n){const h0=hp,r=_h.apply(this,arguments);try{const d=h0-hp;if(d>0&&P.on){const g=Array.prototype.slice.call(navigator.getGamepads()||[]).find(x=>x&&x.connected),va=g&&g.vibrationActuator;if(va&&va.playEffect)va.playEffect('dual-rumble',{duration:Math.min(320,90+d*6),strongMagnitude:Math.min(1,.3+d/30),weakMagnitude:Math.min(1,.2+d/40)})}}catch(e){}return r}}
 // a pad already connected before the page opened shows up on its first press: look once
 try{if(Array.prototype.slice.call(navigator.getGamepads?navigator.getGamepads():[]).some(x=>x&&x.connected)){P.on=true;start()}}catch(e){}
-const st=document.createElement('style');st.textContent='#padkb{z-index:40}#padkb .tcard{text-align:center}#padkb .pkv{min-height:30px;margin:0 0 10px;padding:6px 10px;border:2px solid #5a6a4a;background:#11170f;font-size:20px;font-weight:700;color:#f3ecd8;text-align:left}#padkb .pkr{display:flex;justify-content:center;gap:5px;margin:0 0 5px}#padkb .pk{min-width:34px;height:36px;font:inherit;font-weight:700;font-size:16px;border:2px solid #5a6a4a;background:#1e2a1a;color:#f3ecd8;border-radius:5px;cursor:pointer}#padkb .pk.w{padding:0 12px}#padkb .pk.ok{background:#3a5a2a}#padkb .pkh{margin:8px 0 0;font-size:13px;opacity:.75}body.padmode :focus{outline:3px solid #7fb8e0!important;outline-offset:2px}.padl{margin:6px 0 0;padding-left:18px;text-align:left;font-size:13.5px;line-height:1.45}.padl li{margin:0 0 4px}';document.head.appendChild(st);
+const st=document.createElement('style');st.textContent='#padkb{z-index:40}#padkb .tcard{text-align:center}#padkb .pkv{min-height:30px;margin:0 0 10px;padding:6px 10px;border:2px solid #5a6a4a;background:#11170f;font-size:20px;font-weight:700;color:#f3ecd8;text-align:left}#padkb .pkr{display:flex;justify-content:center;gap:5px;margin:0 0 5px}#padkb .pk{min-width:34px;height:36px;font:inherit;font-weight:700;font-size:16px;border:2px solid #5a6a4a;background:#1e2a1a;color:#f3ecd8;border-radius:5px;cursor:pointer}#padkb .pk.w{padding:0 12px}#padkb .pk.ok{background:#3a5a2a}#padkb .pkh{margin:8px 0 0;font-size:13px;opacity:.75}body.padmode :focus{outline:3px solid #7fb8e0!important;outline-offset:2px}body:not(.padmode) #pmain .padonly,#pmain .padonly[hidden]{display:none!important}body.padmode #pmain{display:grid;grid-template-columns:1fr 1fr;gap:8px}body.padmode #pmain>*{margin:0!important;width:auto!important}body.padmode #pmain>#p-resume{grid-column:1/3}#torchslot.padsel{outline:3px solid #7fb8e0;outline-offset:2px}#padqc{z-index:45}#padqc .tcard{text-align:center}.padl{margin:6px 0 0;padding-left:18px;text-align:left;font-size:13.5px;line-height:1.45}.padl li{margin:0 0 4px}';document.head.appendChild(st);
 }).toString()+')()')}catch(e){try{window.__hamErr('v320pad: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 <script id="v322tier">

@@ -8,6 +8,33 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.60 · 7 Kasım 2026
+
+### Oynanış
+
+- **Oyun kolu ile her şey:** kol bağlıyken Start (PlayStation: Options) **Kol menüsünü** açar. Devam et'in altında Çanta, El yapımı, Karakter, Yetenekler, Tarif kitabı, Almanak, Görevler, Harita ve Robot köpekler var; evdeyken Döşe, öğreticide Eğitimi geç de buradan. Sonra her zamanki Kaydet, Yükle, Ayarlar, Kontroller, Ana menü gelir.
+- Pencerelerde **LB / RB** önceki / sonraki sekmeye geçer (Yetenekler'de Savaş, Ekonomi, Dayanıklılık; Çanta'da bölümler; kazanda grup listesi). **LT / RT** bir önceki / sonraki pencereyi açar (Çanta, El yapımı, Tarif kitabı, Görevler, Karakter, Yetenekler, Harita).
+- **Meşale kolla:** LB / RB ile kemerde gezerken boş elden önce meşale yuvası da bir durak. Meşale yuvası seçiliyken X'e kısa basınca meşaleyle vurursun, X'i basılı tutunca meşale yanar ya da söner.
+- **Eşya yerleştirme kolla:** yatak, barınak, atölye gibi bir şey elindeyken gölgesi önünde durur ve seninle yürür. Yön tuşları ya da sağ çubuk onu birer kare kaydırır, A koyar, Y döndürür, B vazgeçer. Kurduğun bir şeyin yanında A'yı yarım saniye basılı tutarsan onu yerinden alıp taşırsın; kısa A eskisi gibi kullanır (yatağa yat, eve gir).
+- R3 yalnızca ulti; ulti dolu değilken bir şey yapmaz (Robot köpekler Kol menüsünde).
+- Açılış sahnesi A, B ya da Start ile geçilir.
+
+### Arayüz
+
+- **Ekrandaki tuş yazıları en son kullandığın aygıta göre:** kola dokunduğun an öğretici kartları, ipuçları, sol menüdeki tuş harfleri ve meşale yuvası kolun tuşlarını yazar ("yanında A", "Yemek için Y"); klavyeye basınca ya da fareyi oynatınca hemen klavye harflerine döner. Kolun adına göre Xbox (A, B, X, Y, LB, RB…) ya da PlayStation (✕, ○, □, △, L1, R1…) adları kullanılır.
+- Öğreticinin "Anladım" düğmesi ve "Yeni ders" kartı kol açıkken kendiliğinden seçili gelir; A basar. B kartı birkaç saniyeliğine bırakır, yürüyebilirsin.
+- Kolla ana menüde Çıkış'a basınca önce "Oyundan çıkılsın mı?" diye sorulur.
+- Kolla menülerde gezmek: sağa basınca ana menüden önce en üstteki simgeye gidilir (doğrudan Çıkış'a değil). Pazarda pencere Sat düğmesinde açılır, adet kutusunda yukarı / aşağı adedi değiştirir. Kazanın grup listesi sol / sağ ile değişir. Arama kutuları kol gezinmesinde atlanır. Seçili eşya alttaki alet şeridinin altında kalmaz.
+- Menülerde çubuğu hafif (yarıya kadar) itmek de yeter.
+
+### Düzeltmeler
+
+- Ana menüde kolla yukarı bir kez gidiyor, ikinci basışta gitmiyordu (hile kodunu yazıyorsun sanıyordu). Artık menü her basışta oynar. Hile kodu yine çalışır: kodun son B ve A'sı hiçbir düğmeye basmaz, kod bitince seçim kodu yazmaya başladığın yere döner.
+
+### Tasarım belgesi
+
+- Sistemler › Oyun kolu bölümü yeni düzene göre yazıldı (Kol menüsü, meşale, yerleştirme, tuş yazıları).
+
 ## Versiyon 3.59 · 7 Kasım 2026
 
 ### Denge
@@ -338,23 +365,3 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 
 ### Tasarım belgesi
 - "Can, tokluk, enerji" bölümü seviye puanlarıyla yeniden yazıldı (puan tablosu, özellik tavanı, en üst seviye 60).
-
-## Versiyon 3.40 · 6 Kasım 2026
-
-### Oynanış
-- **Biyomlar %50 büyüdü:** her biyom enden ve boydan 1,5 kat (alanı 2,25 kat). Adanın şekli aynı; göller, gölcükler, ağaçlar, bitkiler, dal-taş ve madenler aynı sıklıkta, yani hepsi çoğaldı. Kişiler, köprüler ve geçit yeni haritada kendi yerlerinde.
-- **Yan görevler artık keşfedilir:** haritada yan görevin gideceğin yeri gösteren halka, sarı bölge ve ekran kenarındaki mavi ok kaldırıldı. Yeri kişinin anlattıklarından bulursun; aradığın şey ekrana girince üstünde mavi bir halka genişler ve küçük mavi kıvılcımlar parıldar.
-- **Yan kişiler yalnızca çok yakınken belli olur:** görev bekleyen birine ~10 kare yaklaşınca haritada sisli mor bir "?" belirir (tam yerini göstermez). Harita açıkken kişinin saati gelirse "?" o an çıkar.
-- **Her yan kişinin kendi saati:** 36 yan kişinin her biri günün farklı bir saatinde ortaya çıkar (şafak, öğle, akşamüstü, gece…). Bir kez aldığın görevin kişisi, görev bitene kadar her saat yerinde durur.
-- **Yan görevler sırayla açılır:** hepsi birden çıkmaz; ana görevleri bitirdikçe sırayla açılırlar (kimi Kemal'in köprüsünü ya da Doğu geçidini bekler). Bir biyomda aynı anda en çok 2 bitmemiş yan görev olur; biri bitince sıradaki gelir. Ana görevin sarı bölgesi yan görev sürerken de görünür.
-
-### Kayıtlar
-- **Harita değiştiği için eski kayıtlar silinir;** bu sürümde yeni oyuna başlanır.
-- Eski kayıtlarda alınmış yan görevlerin kişileri yerinde kalır; artık kullanılmayan "gezilen biyomlar" bilgisi okunup atlanır.
-
-### Tasarım belgesi
-- Yan görevler: yol gösterme kuralı, harita işaretleri, saatler ve yeni "Açılış sırası" bölümü.
-- Haritanın yeni boyutu (968 × 696 karo) ve ölçüm sonuçları.
-
-### Proje
-- Harita üreticisi `ada_uret.py` büyütme katsayısıyla (`GROW = 1.5`) çalışıyor.

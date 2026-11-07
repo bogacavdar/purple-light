@@ -1,3 +1,25 @@
+## v3.60 (7 Kasım 2026) · oyun kolu ile her şey: Kol menüsü, meşale, yerleştirme, kartlar, kola göre tuş yazıları, ana menü takılması
+
+- **Blok `v320pad`** (bütün kol işi burada; kol yokken döngü çalışmaz):
+  - **Ana menü takılması (KOL-01):** sebep v3.32 `blockK`. `^↑↑` hile kodunun başı sayılıp 2 sn boyunca gezinme ve A/B kesiliyordu, her basış süreyi yeniliyordu. `blockK` silindi; `P.kf` her kod harfinde odaklı öğeyi tutar. Kod tamamlanınca odak `P.kf[0]`'a döner; `codeB` yalnız `onTitle`'da `…UUDDLRLRB` B'sini yutar (A, kodun tamamlandığı karede `return` ile zaten yutulur). Menü yönü `hys()`: 0,40'ta açılır, 0,25'in altında kapanır; D-pad önce. Hile kodu sayacı da aynı yönü kullanır.
+  - **Çıkış onayı:** `press()` `#t-exit` için `askQuit()` → `#padqc` (`.ov`, Vazgeç seçili, dışına basmak = Vazgeç).
+  - **Katmanlar:** `LAYERS`'a `#q2cf` eklendi. `card()`: pencere yokken `#q2les` ya da `#tutok` görünürse `#tut`; `firstFocus` Anladım/Devam'a odaklanır, B `P.cardOff` ile 6 sn bırakır.
+  - **Kol menüsü:** `#pmain`'e `.padonly` düğmeler (`p-inv`, `p-hand`, `p-char`, `p-skills`, `p-book`, `p-alm`, `p-qlog`, `p-map`, `p-dogs`, `p-dose`, `p-tskip`), yalnız `body.padmode`'da ve iki sütun. `openPause` sarılı (görünürlük: evde yalnız Döşe, Eğitimi geç `#tutskip` görünürken).
+  - **Pencerede:** LB/RB `winStep()` (`[role=tablist]`/`.sktabs`, yoksa ilk `select`); LT/RT `menuStep()` (`MENUS`). `moveFocus`: `select` sol/sağ değer, `.qi` yukarı/aşağı ▲▼'ya basar, ana menüden sağ = `#ttop`'un en üstteki simgesi. `type=search` odak listesinden çıktı. `reveal()` sabit şeridin altında kalanı kaydırır. `firstFocus`: pazar `[data-sell]`.
+  - **Oyun içi:** `placing` dalı (A `doPlace`, Y `rotatePlace`, B `cancelPlace`, D-pad/sağ çubuk `P.po` kaydırma, ±6). `ghostAtPlayer`/`ghostAtMouse` sarılı (`P.padP` iken fare hayaleti almaz; fare hareketi geri verir). A basılı 0,5 sn `placed` hedefinde `pickUp`; kısa A `tap('interact')`. LB/RB `beltStep()`: durak −2 meşale yuvası, −1 boş el, dolu yuvalar; `P.tsSel` iken X kısa = vuruş, X 0,4 sn = `torchToggle()` (`#torchslot` tıklaması). R3 `P.r3` ile `openMenu('dogs')`'u yutar (yalnız ulti). `cine.on` iken A/B/Start = Esc.
+  - **Aygıt:** `padUsed()`/`padLeft()` `body.padmode`'u açar/kapar ve `pl-device` olayı yollar (kol: ölü bölge dışı ilk girdi; klavye: güvenilir keydown; fare: pointerdown, 2 px üstü hareket, tekerlek). `window.__plPad={on,bn,kind}`, `padKind()` `gamepad.id`'den (054c/DualSense/DualShock/PlayStation → PS, yoksa Xbox).
+- **Tuş bağlama bloğu (`KB`/`kTxt`):** `PADL` eylem → kol düğmesi; `padLab()`. `kTxt` kol açıkken etiketleri kol adına çevirir (WASD → Sol çubuk). `__plKey` önce `padLab`. `applyKeyTexts` HUD `kbd`'leri. `pl-device` → `applyKeyTexts`, istem, `renderTut`, `renderHot`, açık pencere yeniden yazılır. `v283` `__plTSKey` ve `renderPlaceUI` kol metni için `v320pad`'de sarılı.
+- **Denendi (Playwright, sahte Xbox kolu, `/tmp/kol_dev`):**
+  - Ana menü ↑×5 (60/120/300 ms), basılı tutma, %50 ve %42 çubuk: takılma yok.
+  - Hile kodu açılıyor, odak geri dönüyor, Çıkış'a basılmıyor. Çıkış'ta A → onay, B → kapanır.
+  - Açılış A ile geçiliyor. Kol menüsü → Yetenekler, LB/RB sekme, LT/RT pencere.
+  - Meşale durağı: kısa X yakmıyor, uzun X yakıyor/söndürüyor.
+  - Yaprak barınağı: kaydır, Y döndür, A koy; A basılı al, B vazgeç.
+  - Öğretici Anladım ve ders kartı A ile basılıyor. Kart metni kolda "yanında A / Y tuşuna", klavyeye dönünce "F / X".
+  - `select` ve `.qi` yapay pencerede denendi. Pazar/kazan gerçek oyunda denenmedi (öğretici kilidi).
+- **Ölçüm:** `olcum.js` çalıştırılmadı. Kare döngüsüne yalnız yerleştirme sırasında `ghostAtPlayer`/`ghostAtMouse` sarmalı giriyor, kol döngüsü yalnız kol bağlıyken. Gerekirse yayından önce ölçülmeli.
+- **Geri almak için:** v3.60 commit'ini `git revert` (prototip, index.html, parts, notlar). Kayıt alanı ve MAPV değişmedi.
+
 ## v3.59 (7 Kasım 2026) · ACT 1 son testi: Kül/Mor giriş şartları, kişilerin dibinde toplanabilir yok, anı sahnesi Esc ile biter
 
 - **Kuşak şartları** (`30_act1.md` Kül ve Mor tabloları): `v345` `BANDR` Kül `'Kül cini':[36,36]` (Giriş ve Orta Sv 36'dan; Sv 34–35'te Giriş'te yalnız Kül böceği), Mor `'Kristal örümcek':[44,0]`, `'Işık engereği':[44,0]` (Giriş Sv 44'ten, Orta her zaman). Doğma testi (20 tur, Giriş): Kül Sv 34 yalnız Kül böceği; Sv 36 + cin, kertenkele, yarasa. Mor Sv 42 Giriş'te örümcek ve engerek yok (yalnız Orta'dan gelen); Sv 44 Giriş'te var.
@@ -232,18 +254,3 @@
 - Karakter penceresi (`renderCraft` mode 'char') yeni tablo: puan çubuğu, +1 puanla değeri, `data-spk` + düğmesi, `.sptip` açıklama (dokunmatikte `.spds` adın altında), "Verilmemiş seviye puanı".
 - `v340sp` bloğu: CSS, `#spbadge` (Karakter düğmesinde sayı, ders sürerken `pulse`), `gainXP` sarması (ilk puan dersi / "+N seviye puanı"), + tıklaması (can/enerji artışı anında eklenir), kayıt `v340={sp,t}`; eski kayıtta puanlar boş, ders açık.
 - Kontrol: chk.js 0 hata; `/home/claude/scripts/sp_t.js`: Sv 2'de 2 puan, rozet + ders, + ile can 124, Sv 32'de 85 boş puan, kaydet/yükle aynı.
-
-## v3.40 (6 Kasım 2026) · biyomlar %50 büyük (968×696), yan görevler keşifle bulunur, her yan kişinin kendi saati, sıralı açılış
-
-- **Harita:** `ada_uret.py` `GROW=1.5`: ızgara 645×464 → 968×696, deniz payı 10 → 15, göl yarıçapları ×1,5, Bataklık gölcükleri 20 → 45 (aralık 14 → 21). Kara: ada 1 138.742 → 312.690, ada 2 178.431 → 402.003 (×2,25). Biyomlar eşit, komşuluk zinciri aynı, doğuş puanı 10/11. `MAPV` 4 → 5: eski kayıtlar açılışta silinir (Boğaç seçti: "Eski kayıtlar silinsin").
-- `AREA_K=W*H/(645*464)` (≈2,25): `place`, `MINES`, `ZPLANT`, `B4PLANT`, `putIn`, maden çevresi buluntuları (44 sınırı) bununla çarpılır. Ağaçlar karo başına olasılıkla zaten ölçekleniyor. Hayvanlar oyuncunun çevresinde doğduğu için değişmedi. Mini harita penceresi (`min(W,645)*.3`) aynı karo ölçeğinde kaldı.
-- Sonuç (ada 1, yeni oyun): ağaç 4.165 → 9.450, düğüm 7.542 → 16.876, maden 372 → 838.
-- **Ölçüm** (`olcum.js` /tmp kopyaları, CPU×4, gl açık, masaüstü 1280×720): BOOT 16.669 → 20.909 ms (js 9.425 → 13.723); kumsal kare avg 230,3 → 211,5 (p95 312 → 286); yürürken 248,0 → 188,9 (p95 325 → 275); PLAY 10 sn js 4.113 → 4.390 ms; PERF.lvl 2 → 2. `olcum_cizim.js`: drawImage 802 → 624, fillRect 644 → 621, görünür ağaç 19 → 8, düğüm 46 → 61, shore 3.845 → 6.110, GL 3 sn dr 296 → 367. Kare maliyeti aynı, açılış ~%25 uzun. Not: 2.35–2.38'deki 804×785 dönemindeki donma asıl olarak ekran kartı çiziminin kapanmasındandı (v2.40 dersi); yine de telefonda ilk açılış izlenmeli.
-- `tests/v48_bugs.js` hem eski hem yeni dosyada "Execution context was destroyed" ile düşüyor (bu sürümden önce de bozuktu).
-
-- `v230`: `targetOf`, kenar oku, `seenT`, `bioSeen` ve haritadaki hedef/sarı bölge/tam yer "?" silindi. `mapSQ` yalnızca ~10 kare (`NEAR=10*T`) yakındaki bekleyen kişi için sisli mor "?" çizer (ortası kişiden ≤48 px kaymış, `fogC`). `__plMapQ` sarmalayıcısı artık ana görevin sarısını hep çizer.
-- `met` kümesi: bir kez alınan görevin kişisi (`present`) bitene kadar her saat yerinde (Işıl hariç). Kayıtta `v230.m`; eski `v230.b` okunmaz.
-- `GATE`/`ORD`/`opened(q)`: biyom başına sıra; `[bitmiş ana görev sayısı, gereken ana görev]` (`window.__pl186.S.d`). Bir biyomda en çok 2 bitmemiş (alınmış dahil) yan görev açık; 500 ms önbellek. Mağara görevleri sınırsız. Test kancası `__plSide.opened`.
-- 36 yan kişinin `win` aralıkları hepsi farklı (belge tabloları).
-- Bulunan görev eşyasına mavi halkaya ek 4 kıvılcım (`curPts` çizimi).
-- Kontrol: chk.js 0 hata; `/home/claude/scripts/sq_t.js` 24 görev ok; `gate_t.js` sıra/2 sınırı doğru.
