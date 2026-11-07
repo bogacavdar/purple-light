@@ -423,15 +423,18 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - **Menüde çubuk eşiği:** pencerelerde ve menülerde sol çubuğun **yarım itişi** (~%40) seçimi taşır; çubuk eşiğin biraz altına inmeden ikinci adım atılmaz (histerezis), böylece titreme seçimi zıplatmaz.
 - **Standart olmayan kol düzeni:** tarayıcının standart düzeninde görünmeyen kollarda yön tuşları (D-pad) eksenden okunur.
 - **Kol menüsü (7 Kasım 2026, Boğaç: "kola özel menü koy, tuşları ayarla, ne gerekiyorsa"):** oyun içinde **Start** (PS: Options) oyunu duraklatır ve Kol menüsünü açar; kolla bütün pencerelere ve eylemlere giden **asıl yol** budur.
-  - Dikey liste: **Devam** (duraklatmayı kapatır; Start'ın eski işi ilk satırdadır), Çanta, El yapımı, Karakter, Yetenekler, Kitap/Almanak, Görevler, Harita, Döşe (yalnızca evdeyken), Binek, Köpekleri çağır, Kaydet, Ayarlar, Ana menü.
+  - Dikey liste: **Devam** (duraklatmayı kapatır; Start'ın eski işi ilk satırdadır), Çanta, El yapımı, Karakter, Yetenekler, Kitap/Almanak, Görevler, Harita, Döşe (yalnızca evdeyken), Binek, Köpekleri çağır, Meşaleye reçine sür (elde meşale varken), Kaydet, Ayarlar, Ana menü.
   - Yukarı/aşağı (yön tuşları ya da sol çubuk) seçer, **A** açar, **B** kapatır/geri döner; Start yeniden basılınca menü kapanır, oyun sürer.
-  - Açılan pencerelerde her zamanki odak gezinimi geçerlidir, **LB/RB** sekme değiştirir.
+  - Açılan pencerelerde her zamanki odak gezinimi geçerlidir; **LB/RB** sekme, **LT/RT** pencere değiştirir (oyun içinde LT savuşturma olarak kalır).
   - Oyun içi hızlı tuşlar (vur, atıl, savuştur, topla, meşale, LB/RB, yön tuşu kısayolları) aynen kalır; Select basılı tutunca açılan arayüz odak kipi de kalır, ama asıl yol Kol menüsüdür.
 - **Kolla her şey yapılır (7 Kasım 2026, Boğaç):** klavye ve fareyle yapılan her iş kolla da yapılır:
   - **Eşya/mobilya yerleştirme** (yapılar, Döşe kipinde ev eşyası): yerleştirilecek eşyanın hayaleti oyuncuyu izler; **sağ çubuk ya da yön tuşları** hayaleti kare kare kaydırır, **A** koyar, **Y** döndürür, **B** vazgeçer (B döndürmez). **Konmuş eşyayı geri almak:** üstündeyken **A basılı tut**.
+  - **Döşe kipi:** eşya şeridinde yön tuşları/çubuk gezer, **A** eşyayı seçer, **X** odadaki imlece geçer; imleci yön tuşları/çubuk taşır, **A** koyar (konmuş eşyanın üstündeyse Taşı / Geri al / Döndür menüsünü açar), **Y** döndürür, **B** seçili eşyayı bırakır; şeritteyken **B** = Bitti.
   - **Meşale:** LB/RB döngüsünde meşale yuvası da bir duraktır; seçiliyken **X'e kısa basmak vurur** (yanan meşale vurduğunu tutuşturur), **X'i basılı tutmak (~0,4 sn)** meşaleyi yakar/söndürür; A etkileşim olarak kalır, Y hızlı yemektir; meşaleyi elden yere koymak ve meşaleye reçine sürmek de kolla yapılır (hangi tuşa bağlanacağı Yazılımcının eşleme tablosundadır).
-  - **Öğretici kartı:** "Anladım" ve "Eğitimi geç" düğmeleri kol seçimine girer.
+  - **Öğretici kartı:** "Anladım" ve "Eğitimi geç" düğmeleri kol seçimine girer; kart açıkken **B** kartı 6 sn bırakır (sonra yeniden görünür).
   - **Pencereler:** Karakter, Yetenekler, Almanak, binek, büyük harita (işaret koyma, kaydırma, yakınlaştırma), Döşe düğmeleri ve eşya şeridi, açılır listeler kolla kullanılır; pencere içinde LB/RB sekme değiştirir.
+  - **Büyük harita:** çubuk kaydırır, **LT/RT** yakınlaştırır/uzaklaştırır, **A** ortadaki artının yerine işaret koyar ya da kaldırır, artı bir kişinin üstündeyse onu hedef yapar; **Y** haritayı kendi yerine döndürür, **B** kapatır.
+  - **A ile toplama/konuşma (kolda):** erişimde birden çok şey varsa A çubuğun/bakışın yönündekini seçer; ama **yerdeki eşya yine önce** alınır (Boğaç; Kontroller › F), kişiler ondan sonra gelir. Klavyedeki F'nin davranışı değişmez.
   - **Ekrandaki öbür düğmeler** (sol menü, köşe düğmeleri) Select basılı tutulunca açılan **arayüz odak kipi**yle seçilir.
 
 ## Arayüz ve pencereler

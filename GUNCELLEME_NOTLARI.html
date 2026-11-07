@@ -22,6 +22,24 @@ code{background:var(--card);padding:1px 5px;border-radius:4px}
 <li>Bu notlar: https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html · https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.pdf</li>
 </ul>
 <hr />
+<h2>Versiyon 3.61 · 7 Kasım 2026</h2>
+<h3>Oynanış</h3>
+<ul>
+<li><strong>Döşe kolla:</strong> evde Kol menüsünden Döşe'yi aç. Eşya listesinde yön tuşlarıyla gezilir, A eşyayı seçer. Sonra odada bir kare imleç belirir: yön tuşları ya da çubuk onu kaydırır, A koyar, Y döndürür, B bırakır. Listede X'e basınca imleç seçim yapmadan çıkar. Yerleşik bir eşyanın üstünde A, Taşı / Geri al / Döndür menüsünü açar. B ile Döşe biter.</li>
+<li><strong>Harita kolla:</strong> sol (ya da sağ) çubuk haritayı kaydırır, LT / RT uzaklaştırır / yakınlaştırır, Y bulunduğun yere döner, B kapatır. Ortadaki artıyla A'ya basarsın: bir işaretin üstündeysen işaret kalkar, bir kişinin üstündeysen ok onu gösterir (yine basınca kalkar), başka yerde işaret konur.</li>
+<li><strong>Meşaleye reçine sür</strong> Kol menüsünde (meşalen varken).</li>
+<li><strong>Kolla toplarken bakılan yön:</strong> yanında birkaç toplanacak şey varken A, çubuğun (ya da yüzünün) gösterdiği şeyi alır, yalnızca en yakını değil. Yerde duran eşyalar yine önce alınır, kişiler sonra gelir. Klavyede F değişmedi.</li>
+<li>Standart dışı kollarda (tarayıcının "standard" demediği) yön tuşları da çalışır.</li>
+</ul>
+<h3>Arayüz</h3>
+<ul>
+<li>Börü'nün kerevit dersinde kart ve büyük uyarı kol açıkken kolun tuşlarını yazar ("Sol çubuk", "X ya da RT", "Atıl: B!", "Savuştur: LT!"). Ayrı ayrı yazılmış W A S D tek bir "Sol çubuk" olur.</li>
+<li>Ayarlar → Kontroller'deki kol düzeni ve kol bağlanınca çıkan bildirim yeni düzene göre ve bağlı kolun tuş adlarıyla yazılır.</li>
+</ul>
+<h3>Proje</h3>
+<ul>
+<li>Ölçüm: 3.59 ile 3.61 aynı ayarlarla ölçüldü; sayılar geliştirme notunda.</li>
+</ul>
 <h2>Versiyon 3.60 · 7 Kasım 2026</h2>
 <h3>Oynanış</h3>
 <ul>
@@ -338,27 +356,4 @@ code{background:var(--card);padding:1px 5px;border-radius:4px}
 <h3>Tasarım belgesi</h3>
 <ul>
 <li>"Evcil hayvanlar", "Çoban Davut", "Gece öten kuş" bölümleri; Çiftçi Ekin ve Bereket Adası'nın tasarımı (henüz oyunda yok).</li>
-</ul>
-<h2>Versiyon 3.41 · 6 Kasım 2026</h2>
-<h3>Oynanış</h3>
-<ul>
-<li><strong>Seviye puanları:</strong> özellikler artık seviyeyle kendiliğinden artmıyor. Her seviye atlayışta seviye puanı kazanırsın (10. seviyeye kadar 2, 30. seviyeye kadar 3, sonra 4) ve Karakter penceresinde dilediğin özelliğin yanındaki <strong>+</strong> ile verirsin. Bir puan, eskiden bir seviyenin verdiğinden daha büyük bir artış verir.</li>
-<li><strong>11 özellik:</strong> Toplama hızı, Hareket hızı, Satış değeri, Şans, En yüksek can, Can yenilenmesi, En yüksek enerji, Enerji yenilenmesi ve yeni olarak <strong>Güç</strong> (vuruş hasarı), <strong>Zırh</strong> ve <strong>En yüksek mana</strong>. Her biri en çok 18 puan alır; tek bir özelliğe verilebilecek puan seviyeyle açılır (her 3 seviyede 1), böylece hepsini tek yere yığmak dengeyi bozmaz.</li>
-<li><strong>En üst seviye 60</strong> (eskiden 50): 60. seviyede 198 puanla bütün özellikler tam dolar. Puanları eşit dağıtırsan ilk 16 seviyede gelişim eskisi kadar hızlı.</li>
-<li><strong>Çıplak karakterin de zırhı var:</strong> başlangıçta 5 zırh.</li>
-<li><strong>İlk seviye dersi:</strong> ilk kez seviye atlayınca Karakter düğmesi yanıp söner, pencerede <strong>+</strong> düğmeleri parlar; ilk puanı verince ders biter.</li>
-</ul>
-<h3>Arayüz</h3>
-<ul>
-<li>Karakter penceresinde her özelliğin puan çubuğu (ör. 3/14), bir puan verince olacağı değer ve <strong>+</strong> düğmesi var; <strong>+</strong>'nın üstüne gelince (telefonda adın altında) özelliğin ne işe yaradığı yazar.</li>
-<li>Tablonun sağ altında "Verilmemiş seviye puanı", Karakter düğmesinin köşesinde verilmemiş puan sayısı.</li>
-<li>Arenada 60. seviye de seçilebilir; seçilen seviyenin puanları bütün özelliklere eşit dağılır.</li>
-</ul>
-<h3>Kayıtlar</h3>
-<ul>
-<li>Eski kayıtlarda seviyen kalır, o seviyenin bütün puanları verilmemiş olarak gelir.</li>
-</ul>
-<h3>Tasarım belgesi</h3>
-<ul>
-<li>"Can, tokluk, enerji" bölümü seviye puanlarıyla yeniden yazıldı (puan tablosu, özellik tavanı, en üst seviye 60).</li>
 </ul></main></body></html>
