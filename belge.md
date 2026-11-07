@@ -310,6 +310,10 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
    - **Sikke yetmezken Koşu'ya basılırsa:** satın alma olmaz, yetenek ağacı **kendiliğinden kapanır** ve Börü konuşma penceresinde söyler: "Önce sikke topla evlat! Koşu 100 sikke; sende X var, Y sikke daha lazım. Nazlı'nın pazarında bir şeyler sat. 100 sikken olunca **Y**'ye bas (telefonda yanıp sönen ağaç ikonuna dokun), yetenek ağacını aç: oradan istediğin geliştirmeleri alırsın. İlk işin Koşu olsun." ("Anladım" düğmesi). Bu, ders sırasında da sonradan da (Koşu alınana kadar) böyledir; ders sırasındaysa bu konuşma 8. maddedeki konuşmanın yerine geçer ve "Anladım"dan sonra öğretici sürer.
 8. Ağaç kapatılınca Börü önce **bilgilendirir** ("Anladım" düğmesi). 100 sikken yoksa ne kadar eksik olduğunu söyler, Nazlı'ya bir şeyler satıp sikke toplamanı, **100 sikken olunca Y'ye basıp** (telefonda ağaç ikonuna dokunup) yetenek ağacını açmanı ve oradan istediğin geliştirmeleri almanı söyler, ilk iş Koşu olsun der. 100 sikken varsa: "Gördün mü, en alttaki parlayan Koşu. Onu almak 100 sikke ister; Y'ye bas, ağacı aç, oradan istediğin geliştirmeleri alırsın." Sonra öğretici kaldığı yerden sürer: Börü Taş balta tarifini verir (12. adım).
 
+**Kart başlığında aşama:** Börü'nün dersi sürerken öğretici kartının başlığı dersin aşamasını gösterir: "Atılma n/4", "Savuşturma n/4", "Yetenek ağacı". Kolda yetenek ağacı ipucu "Start → Yetenekler" der.
+
+**Yarıda kalan ücretsiz ders:** Börü'nün ücretsiz dersi (atılma ya da savuşturma) yarıda bırakılırsa o kısım **öğrenilmez**; Börü'yle yeniden konuşunca ders yeniden teklif edilir.
+
 **Ders sırasında ayrılmak:** atılma ve savuşturma dersi (kerevit dersi) öğreticinin parçasıdır; öğreticiyi oynayan oyuncu ders bitene kadar Börü'nün yanından ayrılamaz. **"Eğitimi geç" seçilmişse** ders oyuncuyu kilitlemez: Börü'den uzaklaşınca (~280 piksel) ders sessizce biter, öğrenilmemiş kısım (atılma ya da savuşturma) öğrenilmemiş kalır ve aşağıdaki kurala göre Börü'yle yeniden konuşunca ücretsiz alınabilir.
 
 Öğreticiyi geçen ve atılmayı bilmeyen biri sonradan Börü'yle konuşursa Börü aynı dersi ücretsiz teklif eder ("Öğret" / "Sonra"). Atılmayı bilip savuşturmayı bilmeyen biri konuşursa Börü yalnızca **savuşturma dersini** (1 + 3) ücretsiz teklif eder.
@@ -412,7 +416,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - **Pencere açılınca ilk kullanılabilir şey seçili gelir (v3.32, Boğaç):** kolla bir pencere açılınca (ya da pencerenin bir sekmesine geçilince) seçim kapatma düğmesinde ya da sekmelerde değil, **listedeki ilk kullanılabilir şeyde** başlar: kazanda/örste ilk tarif, El yapımı'nda yapılabilen ilk eşya, yemekte ilk yenilebilir şey (Ye düğmesi), envanterde ilk eşya; başka pencerelerde içerikteki ilk düğme.
 - **Tuş yazıları son kullanılan aygıta göre (7 Kasım 2026, Boğaç):** öğretici kartları, istemler ("F Taş topla"), ders kartları, yetenek açıklamaları, ipuçları ve ekrandaki bütün tuş yazıları **en son kullanılan giriş aygıtına** göre yazılır ve aygıt değişince **hemen** değişir. Kol yazıları kolun ilk girdisiyle başlar, klavye ya da farenin ilk girdisiyle biter; kol bağlı ama dokunulmamışsa klavye yazıları kalır; çubuğun ölü bölge içindeki titremesi geçiş sayılmaz:
   - **Klavye/fare:** klavye tuşu (ayarlardaki atamaya göre; ör. "F'ye bas", "sol tık").
-  - **Kol:** kolun tuşu (ör. "A'ya bas"). Kolun türü adından anlaşılır: **Xbox** → A/B/X/Y, LB/RB, LT/RT, Start, View (Select); **PlayStation/DualSense** → ✕/○/□/△, L1/R1, L2/R2, Options, Create. Tür bilinmiyorsa Xbox adları kullanılır.
+  - **Kol:** kolun tuşu (ör. "A'ya bas"). Kolun türü adından anlaşılır: **Xbox** → A/B/X/Y, LB/RB, LT/RT, Start, View (Select); **PlayStation/DualSense** → ✕/○/□/△, L1/R1, L2/R2, Options, Create. Tür bilinmiyorsa Xbox adları kullanılır. Kola özel yazılar: sayı tuşlarıyla yuva seçimi "LB / RB ile"; "X'e tıkla ya da yanında F'ye bas" türü yazılar "X'e gidip A'ya bas"; kemer ipucu "çantada seç (A), yanıp sönen yuvada A".
   - **Telefon/tablet (dokunma):** dokunma düğmesinin adı (ör. "Atıl düğmesine dokun").
 - Kol klavye ya da fare kullanılınca susmaz; ikisi birlikte kullanılabilir. Kol ayrılınca basılı kalan tuşlar bırakılır.
 - **Titreşim:** hasar alınca kol titrer (alınan hasarla güçlenir); titreşimi desteklemeyen kolda bir şey olmaz.
@@ -423,7 +427,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - **Menüde çubuk eşiği:** pencerelerde ve menülerde sol çubuğun **yarım itişi** (~%40) seçimi taşır; çubuk eşiğin biraz altına inmeden ikinci adım atılmaz (histerezis), böylece titreme seçimi zıplatmaz.
 - **Standart olmayan kol düzeni:** tarayıcının standart düzeninde görünmeyen kollarda yön tuşları (D-pad) eksenden okunur.
 - **Kol menüsü (7 Kasım 2026, Boğaç: "kola özel menü koy, tuşları ayarla, ne gerekiyorsa"):** oyun içinde **Start** (PS: Options) oyunu duraklatır ve Kol menüsünü açar; kolla bütün pencerelere ve eylemlere giden **asıl yol** budur.
-  - Dikey liste: **Devam** (duraklatmayı kapatır; Start'ın eski işi ilk satırdadır), Çanta, El yapımı, Karakter, Yetenekler, Kitap/Almanak, Görevler, Harita, Döşe (yalnızca evdeyken), Binek, Köpekleri çağır, Meşaleye reçine sür (elde meşale varken), Kaydet, Ayarlar, Ana menü.
+  - Dikey liste: **Devam** (duraklatmayı kapatır; Start'ın eski işi ilk satırdadır), Çanta, El yapımı, Karakter, Yetenekler, Kitap/Almanak, Görevler, Harita, Döşe (yalnızca evdeyken), Binek, Köpekleri çağır, Meşaleye reçine sür (elde meşale varken), Kaydet, Ayarlar, Hile paneli (hile modu açıkken), Ana menüye dön. **Ana menüye dön** onay sorar. **Hile paneli:** arama kutusu ekran klavyesiyle yazılır, Options (Start) sonuçlara geçer, B çıkar.
   - Yukarı/aşağı (yön tuşları ya da sol çubuk) seçer, **A** açar, **B** kapatır/geri döner; Start yeniden basılınca menü kapanır, oyun sürer.
   - Açılan pencerelerde her zamanki odak gezinimi geçerlidir; **LB/RB** sekme, **LT/RT** pencere değiştirir (oyun içinde LT savuşturma olarak kalır).
   - Oyun içi hızlı tuşlar (vur, atıl, savuştur, topla, meşale, LB/RB, yön tuşu kısayolları) aynen kalır; Select basılı tutunca açılan arayüz odak kipi de kalır, ama asıl yol Kol menüsüdür.
@@ -433,6 +437,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
   - **Meşale:** LB/RB döngüsünde meşale yuvası da bir duraktır; seçiliyken **X'e kısa basmak vurur** (yanan meşale vurduğunu tutuşturur), **X'i basılı tutmak (~0,4 sn)** meşaleyi yakar/söndürür; A etkileşim olarak kalır, Y hızlı yemektir; meşaleyi elden yere koymak ve meşaleye reçine sürmek de kolla yapılır (hangi tuşa bağlanacağı Yazılımcının eşleme tablosundadır).
   - **Öğretici kartı:** "Anladım" ve "Eğitimi geç" düğmeleri kol seçimine girer; kart açıkken **B** kartı 6 sn bırakır (sonra yeniden görünür).
   - **Pencereler:** Karakter, Yetenekler, Almanak, binek, büyük harita (işaret koyma, kaydırma, yakınlaştırma), Döşe düğmeleri ve eşya şeridi, açılır listeler kolla kullanılır; pencere içinde LB/RB sekme değiştirir.
+  - **Pencerelerde odak:** pencere, öğreticinin yanıp sönen düğmesinde ya da eşyasında açılır (yanıp sönme pencere açıldıktan 0,7 sn içinde başlasa da). Basılan yöndeki koni içinde öğe yoksa seçim o yöndeki en yakın öğeye gider. Kazanda ve örste **X = Hepsini koy**. Kategori (sekme) değişince seçim o kategorinin ilk tarifine geçer.
   - **Büyük harita:** çubuk kaydırır, **LT/RT** yakınlaştırır/uzaklaştırır, **A** ortadaki artının yerine işaret koyar ya da kaldırır, artı bir kişinin üstündeyse onu hedef yapar; **Y** haritayı kendi yerine döndürür, **B** kapatır.
   - **A ile toplama/konuşma (kolda):** erişimde birden çok şey varsa A çubuğun/bakışın yönündekini seçer; ama **yerdeki eşya yine önce** alınır (Boğaç; Kontroller › F), kişiler ondan sonra gelir. Klavyedeki F'nin davranışı değişmez.
   - **Ekrandaki öbür düğmeler** (sol menü, köşe düğmeleri) Select basılı tutulunca açılan **arayüz odak kipi**yle seçilir.
@@ -1248,6 +1253,17 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 
 - **Bütün sahneler (v3.32, Boğaç: hile modundan çıkarıldı):** ara sahneleri ve anıları istediğin zaman izleme artık hile modunda **yoktur** ("Bütün ara sahneler açık" anahtarı ve Keşif defterindeki liste kaldırıldı). Yalnızca **ana menüde klavyeyle `love` yazınca** açılır (yeniden yazınca kapanır; bu cihazda hatırlanır; ekranda "Bütün sahneler açıldı" / "kapandı" yazar). Bir başarımı yoktur, hile modu sayılmaz. Açıkken **Kitap › Anılar**'ın en üstünde **Bütün sahneler** bölümü çıkar: her sahne **küçük resmiyle** (anılarda sahnenin kendi çiziminden alınmış küçük resim; açılış sahnesi, deniz yolculuğu, roket ve kişilerin hikâyelerinde adıyla mor bir kart) bir kutudur; kutuya basınca sahne baştan oynar. Bütün anılar (henüz gelmemiş olanlar dahil) ve bütün ara sahneler buradadır.
 
+### İstatistikler ve oyun süresi
+
+Karakter penceresinin (C) **İstatistikler** sekmesinde kartlar şöyle sıralanır: gün hayatta kaldın · **aktif oyun süresi** · **menüde geçen süre** · yürüdüğün yol · avlanan canlı · yenilen reis · tutulan balık · yapılan eşya · öğrenilen tarif · kazanılan sikke · harcanan sikke · bayılma · toplanan malzeme.
+
+**Oyun süresi iki ayrı sayılır (8 Kasım 2026, Boğaç):** iki sayaç da kayda yazılır ve gerçek saatle (saniye) sayılır; oyunun hızı, uyku ve zaman atlama bunları etkilemez.
+- **Aktif oyun süresi:** bir oyun açıkken ve dünya akarken geçen süre. Yürümek, dövüşmek, konuşmak, ara sahneler ve uyumak bu süreye girer.
+- **Menüde geçen süre:** bir oyun açıkken bir menü ya da pencere açık olduğunda geçen süre. Duraklatma, Ayarlar, büyük harita, envanter, kitap, Karakter, tezgâhlar, Ağıl, arena gibi ekranlar bu süreye girer. Konuşma penceresi menü sayılmaz, aktif süreye girer.
+- **Hiçbirine sayılmaz:** ana menü (kayıt seçme ekranı), karakter yaratma ve sekme arka plandayken geçen süre. Cihaz uykuya geçince ya da sekme durunca araya giren süre de sayılmaz; tek seferde en çok 2 sn eklenir.
+- **Eski kayıtlar:** bu sayaçlardan önce alınmış kayıtlarda aktif oyun süresi, kayıttaki eski oyun süresiyle başlar; menüde geçen süre 0'dan başlar.
+- Oyun bitince çıkan sonuç ekranındaki **Süre**, aktif oyun süresidir.
+
 ### Kayıt
 
 - Otomatik kayıt + 3 elle kayıt yuvası (tarayıcıda).
@@ -1809,7 +1825,7 @@ XP sütunu bu biyomun ×1,5 XP çarpanı uygulanmış değerdir (Sistemler › G
 
 > **oyunda** (Boğaç onayı, 28 Ekim 2026). Eski ACT 1 görevlerinin hepsi kaldırıldı (Kemal'in eski 14 görevi, yan görevler, kuzenlerin 45 görevi); aşağıdaki "ACT 1 › Kişiler (tanıtımlar ve hikâyeler)" bölümü yalnızca kişilerin tanıtımları ve hikâyeleri için **referans** olarak duruyor. Eski bir kayıt açılınca envanter, yapılar ve dünya (onarılmış köprü, çökmüş sıradağ…) kalır, **görev ilerlemesi sıfırlanır**. ACT 2 ustaları şimdilik eski sistemde; sonra aynı kalıpla yazılacak.
 
-**Fiyatlar biyom biyom artar:** bir biyomda toplanan her şey (bitki, meyve, odun, maden; her biyomda bulunan Dal, Taş, Lif, Kum, Yaprak, Nehir çakılı, Çakmaktaşı, Sarkıt ve Yarasa gübresi hariç) bir önceki biyomdakilerden daha pahalıdır: Çayır 1–6, Orman 7–12, Bataklık 13–20, Kayalık Dağ 21–32, Kül Diyarı 33–52, Mor Kristal Vadisi 53–90 sikke; biyomun içindeki sıra korunur. Bunları kullanan tariflerin fiyatı değişim × miktar × 1,3 kadar (zincir boyunca) kendiliğinden değişir. Mağaraların buluntuları kendi fiyatlarındadır.
+**Fiyatlar biyom biyom artar:** bir biyomda toplanan her şey (bitki, meyve, odun, maden; her biyomda bulunan Dal, Taş, Lif, Kum, Yaprak, Nehir çakılı, Çakmaktaşı, Sarkıt ve Yarasa gübresi hariç; ham eşyalar yemek kademesi çarpanından sonra da kendi biyomunun aralığında kalır) bir önceki biyomdakilerden daha pahalıdır: Çayır 1–6, Orman 7–12, Bataklık 13–20, Kayalık Dağ 21–32, Kül Diyarı 33–52, Mor Kristal Vadisi 53–90 sikke; biyomun içindeki sıra korunur. Bunları kullanan tariflerin fiyatı değişim × miktar × 1,3 kadar (zincir boyunca) kendiliğinden değişir. Mağaraların buluntuları kendi fiyatlarındadır.
 
 ### Temel kurallar
 
@@ -3861,7 +3877,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Acı biber ezmesi | 3 Ateş biberi, 1 Tuz | – | El yapımı (Tab) | 402 |
+| Acı biber ezmesi | 3 Ateş biberi, 1 Tuz | – | El yapımı (Tab) | 324 |
 | Ahtapot salatası | 1 Ahtapot, 1 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 304 |
 | Ahududu ezmesi | 3 Ahududu, 1 Su | Taş havan | El yapımı (Tab) | 43 |
 | Ahududu suyu | 3 Ahududu, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 120 |
@@ -3870,16 +3886,16 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Alıç suyu | 3 Alıç, 1 Kırmızı çömlek, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 339 |
 | Ardıç meyvesi ezmesi | 3 Ardıç meyvesi, 1 Su | Taş havan | El yapımı (Tab) | 128 |
 | Ardıç meyvesi suyu | 3 Ardıç meyvesi, 1 Kırmızı çömlek, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 339 |
-| Ateş çiçeği balı | 1 Ateş çiçeği, 1 Yabani bal, 1 Su | – | El yapımı (Tab) | 69 |
+| Ateş çiçeği balı | 1 Ateş çiçeği, 1 Yabani bal, 1 Su | – | El yapımı (Tab) | 68 |
 | Ateş narı şerbeti | 3 Ateş narı, 1 Kırmızı çömlek, 2 Su | – | El yapımı (Tab) | 485 |
 | Avcı yahnisi | 3 Tavşan eti, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
-| Ay elması reçeli | 3 Ay elması, 1 Yabani bal, 1 Beyaz çömlek | – | El yapımı (Tab) | 574 |
+| Ay elması reçeli | 3 Ay elması, 1 Yabani bal, 1 Beyaz çömlek | – | El yapımı (Tab) | 573 |
 | Balık çorbası | 3 Kerevit, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
-| Ballı ekmek | 1 Yabani mercimek yassı ekmeği, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 150 |
-| Ballı fındık | 1 Kavrulmuş fındık, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 122 |
-| Ballı kestane | 1 Kavrulmuş kestane, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 249 |
-| Bal şarabı | 1 Bal şerbeti, 1 Nehir çömleği, 4 Su, 4 Yaprak | – | El yapımı (Tab) | 121 |
-| Bal şerbeti | 1 Yabani bal, 5 Su, 1 Yaprak | – | El yapımı (Tab) | 24 |
+| Ballı ekmek | 1 Yabani mercimek yassı ekmeği, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 149 |
+| Ballı fındık | 1 Kavrulmuş fındık, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 121 |
+| Ballı kestane | 1 Kavrulmuş kestane, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 248 |
+| Bal şarabı | 1 Bal şerbeti, 1 Nehir çömleği, 4 Su, 4 Yaprak | – | El yapımı (Tab) | 120 |
+| Bal şerbeti | 1 Yabani bal, 5 Su, 1 Yaprak | – | El yapımı (Tab) | 23 |
 | Barbunya tava | 2 Barbunya, 1 Yabani buğday unu, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 102 |
 | Böğürtlen ezmesi | 3 Böğürtlen, 1 Su | Taş havan | El yapımı (Tab) | 14 |
 | Böğürtlen suyu | 3 Böğürtlen, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
@@ -3903,7 +3919,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Havyar | 1 Mersin balığı, 1 Tuz kayası, 2 Yaprak | – | El yapımı (Tab) | 59 |
 | Hurma ezmesi ² | 3 Hurma, 1 Nehir çömleği | – | El yapımı (Tab) | 221 |
 | Isırgan çorbası | 3 Isırgan, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 150 |
-| Işık mantarı çorbası | 3 Işık mantarı, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 537 |
+| Işık mantarı çorbası | 3 Işık mantarı, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 408 |
 | Işıl çorbası | 1 Işıl balığı, 1 Fener balığı, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 676 |
 | İstavrit ızgara | 2 İstavrit, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 30 |
 | İstiridye çorbası | 2 İstiridye, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 109 |
@@ -4276,7 +4292,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Ateş yağı | 2 Çam reçinesi, 1 Hardal otu, 1 Çam kömürü | – | El yapımı (Tab) | 124 |
 | Balık sepeti | 2 Söğüt sepeti, 3 Kerevit, 1 Lif | – | El yapımı (Tab) | 22 |
 | Balık tutkalı | 1 Mersin balığı, 1 Kor, 5 Lif, 4 İp | – | El yapımı (Tab) | 108 |
-| Balmumu | 1 Yabani bal, 1 Sıcak su, 4 Lif, 3 İp | – | El yapımı (Tab) | 87 |
+| Balmumu | 1 Yabani bal, 1 Sıcak su, 4 Lif, 3 İp | – | El yapımı (Tab) | 86 |
 | Barut ² | 2 Barut kayası, 1 Taş kömürü | – | El yapımı (Tab) | 75 |
 | Bileme macunu | 2 Kumtaşı, 1 Çam reçinesi | – | El yapımı (Tab) | 43 |
 | Boynuz kupa | 1 Öküz boynuzu, 3 Lif, 3 İp | – | El yapımı (Tab) | 48 |
@@ -4335,7 +4351,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Ateş iksiri | 1 Ateş bezesi, 3 Su, 2 Ateş çiçeği | – | El yapımı (Tab) | 449 |
 | Ay çayı | 2 Gece sefası, 2 Su, 1 Nane | – | El yapımı (Tab) | 30 |
 | Ay ışığı iksiri | 3 Gece sefası, 1 Mor kıymık, 2 Su | – | El yapımı (Tab) | 82 |
-| Ay otu iksiri | 3 Ay otu, 2 Su, 1 Işık mantarı | – | El yapımı (Tab) | 698 |
+| Ay otu iksiri | 3 Ay otu, 2 Su, 1 Işık mantarı | – | El yapımı (Tab) | 655 |
 | Bataklık otu çayı | 2 Bataklık otu, 1 Sıcak su, 1 Su | – | El yapımı (Tab) | 165 |
 | Civanperçemi çayı | 1 Kurutulmuş civanperçemi, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 239 |
 | Gelincik çayı | 1 Kurutulmuş gelincik, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 69 |
@@ -4580,7 +4596,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Ağıl | 10 Çit | – | Usta Sinan yapar, yere kurulur | ~250 |
-| Arı kovanı | 2 Söğüt sepeti, 1 Balmumu, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 145 |
+| Arı kovanı | 2 Söğüt sepeti, 1 Balmumu, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 144 |
 | Ateş yeri | 1 Ateş, 4 Taş, 1 Dal, 1 Kum | – | Usta Sinan yapar, yere kurulur | 34 |
 | Atölye | 4 Çam kalası, 4 Taş, 2 İp, 2 Sopa | – | Usta Sinan yapar, yere kurulur | 127 |
 | Çit | 1 Meşe sapı, 2 Sarmaşık ipi, 2 Dal (→ 2 Çit) | – | El yapımı (Tab), İnşa kipiyle kurulur | ~20 |
@@ -4650,7 +4666,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Ateş | 1 Kıvılcım, 4 Dal, 1 Yaprak | – | El yapımı (Tab) | 20 |
-| Balmumu mumu | 1 Balmumu, 3 Lif, 3 Dal, 3 Yaprak | – | El yapımı (Tab) | 134 |
+| Balmumu mumu | 1 Balmumu, 3 Lif, 3 Dal, 3 Yaprak | – | El yapımı (Tab) | 133 |
 | Don yağı mumu | 2 Hayvan yağı, 3 Lif | – | El yapımı (Tab) | 11 |
 | Duman | 1 Ateş, 4 Yaprak, 2 Dal | – | El yapımı (Tab) | 34 |
 | Golem feneri | 1 Golem çekirdeği, 2 Kristal, 2 Mor söğüt kalası | – | El yapımı (Tab) | 1.188 |
@@ -4728,7 +4744,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Ahşap karyola | 4 Çam kalası, 2 Deri parçası, 6 Kuru ot | – | Usta Sinan yapar (ev içine konur) | 475 |
-| Asma fener | 1 Balmumu mumu, 1 Meşe kalası, 1 Halat | – | Usta Sinan yapar (ev içine konur) | 269 |
+| Asma fener | 1 Balmumu mumu, 1 Meşe kalası, 1 Halat | – | Usta Sinan yapar (ev içine konur) | 268 |
 | Dolap | 5 Çam kalası, 1 Halat, 1 Gelincik boyası | – | Usta Sinan yapar (ev içine konur) | 174 |
 | Duvar halısı | 2 Keten kumaş, 2 Mürver boyası, 1 Sopa | – | Usta Sinan yapar (ev içine konur) | 582 |
 | Halı | 3 Keten kumaş, 2 Mürver boyası, 2 Keten ipliği | – | Usta Sinan yapar (ev içine konur) | 997 |
@@ -5508,7 +5524,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 
 | Eşya | Fiyat | Tür | Nereden gelir | Hangi tariflerde kullanılır |
 |---|---|---|---|---|
-| Acı biber ezmesi | 402 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Acı biber ezmesi | 324 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Adaçayı | 21 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Kurutulmuş adaçayı |
 | Adaçayı çayı | 239 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ağ | 63 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
@@ -5572,17 +5588,17 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ardıç sapı | 95 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ardıç kaşığı, Gümüş kılıç, Kuvars savaş çekici, Kuvars topuz |
 | Ardıç tohumu | 3 | – | Ardıç ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
 | Arduvaz | 18 | – | Kazmayla kazılır: Bataklık (ACT 1) | Taş levha |
-| Arı kovanı | 145 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
+| Arı kovanı | 144 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Armut fidanı | 45 | – | EK4'ten sonra Çiftçi Ekin satar (45 sikke) · Bereket Adası'nda fidan yerine dikilir, 3 günde Armut ağacı olur | – |
 | Armut odunu | – | – | Balta ile Armut ağacından: Çayır (ACT 1) | – |
 | Armut tohumu | 3 | – | Armut ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
-| Asma fener | 269 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
+| Asma fener | 268 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Ateş | 20 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahtapot salatası, Akçaağaç kömürü, Akçaağaç şurubu, Ardıç kömürü, Ateş narı kömürü, Ateş tuğlası … (+117) |
 | Ateş asası ² | 900 | alet | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Büyücü Efsun yapar (100 sikke işçilik) | – |
 | Ateş bezesi | 90 | – | Av: Lav kertenkelesi düşürür %50 (ACT 1 · Kül Diyarı) · Av: Kül cini düşürür %60 (ACT 1 · Kül Diyarı) · Av: Kor yarasası düşürür %50 (ACT 1 · Kül Diyarı) | Ateş iksiri |
 | Ateş biberi | 52 | yenir +17 | Yerden toplanır: Kül Diyarı (ACT 1) | Acı biber ezmesi |
 | Ateş çiçeği | 36 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Ateş çiçeği balı, Ateş çiçeği merhemi, Ateş iksiri |
-| Ateş çiçeği balı | 69 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Ateş çiçeği balı | 68 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ateş çiçeği merhemi | 398 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ateş iksiri | 449 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ateş narı | 62 | yenir +19 | Meyve ağacı (Ateş narı): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Ateş narı ağacından toplanır: Kül Diyarı (ACT 1) | Ateş narı şerbeti, Kurutulmuş ateş narı |
@@ -5609,12 +5625,12 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ay elması kalası | 151 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Ay elması sapı, Dolap … (+15) |
 | Ay elması kömürü | 178 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Altın külçesi, Bakır külçesi, Barut, Çömlek fırını, Demir halka, Demir külçesi … (+12) |
 | Ay elması odunu | 54 | – | Balta ile Ay elması ağacından: Mor Kristal Vadisi (ACT 1) | Ay elması kalası, Ay elması kömürü, Kütük salı, Oyma kano |
-| Ay elması reçeli | 574 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Ay elması reçeli | 573 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ay elması sapı | 209 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bazalt bıçak, Boynuz kazma, Çakmaktaşı balta, Çakmaktaşı bıçak … (+21) |
 | Ay elması tohumu | 18 | – | Ay elması ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
 | Ay ışığı iksiri | 82 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ay otu | 77 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Ay otu iksiri |
-| Ay otu iksiri | 698 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Ay otu iksiri | 655 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ay taşı | 87 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Ay taşı kolyesi |
 | Ay taşı kolyesi | 131 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Bağlı uç | 28 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -5639,13 +5655,13 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Balık sepeti | 22 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Balık tutkalı | 108 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Fırtına oltası |
 | Balık yağı | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Ballı ekmek | 150 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Ballı fındık | 122 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Ballı kestane | 249 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Balmumu | 87 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Arı kovanı, Balmumu mumu |
-| Balmumu mumu | 134 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Asma fener |
-| Bal şarabı | 121 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Bal şerbeti | 24 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bal şarabı |
+| Ballı ekmek | 149 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Ballı fındık | 121 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Ballı kestane | 248 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Balmumu | 86 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Arı kovanı, Balmumu mumu |
+| Balmumu mumu | 133 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Asma fener |
+| Bal şarabı | 120 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Bal şerbeti | 23 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bal şarabı |
 | Barbunya | 26 | – | Deniz avı: Mercan Sığlığı (Gemici Poyraz'ın teknesiyle, Sv 10+, Makaralı olta) %50 | Barbunya tava |
 | Barbunya tava | 102 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Barut ² | 75 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Pompalı fişeği, Tabanca mermisi |
@@ -6019,7 +6035,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Işık ağacı yayı | 2.097 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | – |
 | Işık fitili | 216 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Işık mantarı | 90 | yenir +21 | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Ay otu iksiri, Işık mantarı çorbası |
-| Işık mantarı çorbası | 537 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Işık mantarı çorbası | 408 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Işık pulu | 120 | – | Av: Işık engereği düşürür %80 (ACT 1 · Mor Kristal Vadisi) | Işık pulu eldiven, Kristal boynuz tılsımı, Kristal ipek çizme |
 | Işık pulu eldiven | 3.953 | giyilir +18 savunma | Tarif: kazanda öğrenilir (Zümrüt ya da kuzen cadılar; tanışınca kitaba yazılır) → Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | – |
 | Işık sporu | 80 | – | Mağarada yerden toplanır: Ayna Mağarası (Mor Kristal Vadisi, giriş Sv 42) | Yıldız tozu yemi |

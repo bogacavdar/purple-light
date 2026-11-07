@@ -900,6 +900,17 @@ Ana menüde **⚔ Arena**; iyi ya da kötü son başarımı kazanılınca ya da 
 
 - **Bütün sahneler (v3.32, Boğaç: hile modundan çıkarıldı):** ara sahneleri ve anıları istediğin zaman izleme artık hile modunda **yoktur** ("Bütün ara sahneler açık" anahtarı ve Keşif defterindeki liste kaldırıldı). Yalnızca **ana menüde klavyeyle `love` yazınca** açılır (yeniden yazınca kapanır; bu cihazda hatırlanır; ekranda "Bütün sahneler açıldı" / "kapandı" yazar). Bir başarımı yoktur, hile modu sayılmaz. Açıkken **Kitap › Anılar**'ın en üstünde **Bütün sahneler** bölümü çıkar: her sahne **küçük resmiyle** (anılarda sahnenin kendi çiziminden alınmış küçük resim; açılış sahnesi, deniz yolculuğu, roket ve kişilerin hikâyelerinde adıyla mor bir kart) bir kutudur; kutuya basınca sahne baştan oynar. Bütün anılar (henüz gelmemiş olanlar dahil) ve bütün ara sahneler buradadır.
 
+### İstatistikler ve oyun süresi
+
+Karakter penceresinin (C) **İstatistikler** sekmesinde kartlar şöyle sıralanır: gün hayatta kaldın · **aktif oyun süresi** · **menüde geçen süre** · yürüdüğün yol · avlanan canlı · yenilen reis · tutulan balık · yapılan eşya · öğrenilen tarif · kazanılan sikke · harcanan sikke · bayılma · toplanan malzeme.
+
+**Oyun süresi iki ayrı sayılır (8 Kasım 2026, Boğaç):** iki sayaç da kayda yazılır ve gerçek saatle (saniye) sayılır; oyunun hızı, uyku ve zaman atlama bunları etkilemez.
+- **Aktif oyun süresi:** bir oyun açıkken ve dünya akarken geçen süre. Yürümek, dövüşmek, konuşmak, ara sahneler ve uyumak bu süreye girer.
+- **Menüde geçen süre:** bir oyun açıkken bir menü ya da pencere açık olduğunda geçen süre. Duraklatma, Ayarlar, büyük harita, envanter, kitap, Karakter, tezgâhlar, Ağıl, arena gibi ekranlar bu süreye girer. Konuşma penceresi menü sayılmaz, aktif süreye girer.
+- **Hiçbirine sayılmaz:** ana menü (kayıt seçme ekranı), karakter yaratma ve sekme arka plandayken geçen süre. Cihaz uykuya geçince ya da sekme durunca araya giren süre de sayılmaz; tek seferde en çok 2 sn eklenir.
+- **Eski kayıtlar:** bu sayaçlardan önce alınmış kayıtlarda aktif oyun süresi, kayıttaki eski oyun süresiyle başlar; menüde geçen süre 0'dan başlar.
+- Oyun bitince çıkan sonuç ekranındaki **Süre**, aktif oyun süresidir.
+
 ### Kayıt
 
 - Otomatik kayıt + 3 elle kayıt yuvası (tarayıcıda).

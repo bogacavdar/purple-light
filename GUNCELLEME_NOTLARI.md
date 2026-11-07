@@ -8,6 +8,54 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.65 · 8 Kasım 2026
+
+### Oynanış
+
+- **Üs kurma geldi.** Evinin çevresinde, dışarıda kendine bir üs kurabilirsin. **N** tuşu (ya da alt çubuktaki İnşa düğmesi, kolda Kol menüsünde "İnşa") İnşa kipini açar; oyun bu sırada durmaz, bir canlı sana vurursa kip kapanır.
+- **Zemin ve yollar:** Toprak yol, Çakıl yol ve Ahşap parke El yapımı'nda yapılır (bir yapımda 4 karo), basılı tutup sürükleyerek boyanır. Üstlerinde ağaç, bitki ya da maden yeniden çıkmaz. Toprak ve Çakıl yolda %15 daha hızlı yürürsün (binekte de).
+- **Çit, duvar, kapı:**
+  - Dal çit kapanmaz ama canlıları üçte birine yakın yavaşlatır.
+  - Çit ve Taş duvar yolu keser. Çit artık El yapımı'nda yapılır, bir yapımda 2 Çit çıkar.
+  - Tahta kapı sana, evcil hayvanlarına ve sana eşlik edenlere açıktır, yabani canlılara kapalıdır. Döndürülebilir (R).
+- **Canlılar çiti kırabilir:** yalnızca seni kovalarken ve yakınındayken.
+  - Küçük canlılar hiçbir şey kırmaz.
+  - Kurt gibi orta güçteki canlılar yalnızca dal ve tahta parçaları kırar.
+  - Ayı, timsah gibi güçlüler taş duvarı da kırar; Reisler her şeyi kırar.
+  - Uçan canlılar üstünden geçer ama kırmaz. Çitin arkasından ısırılmazsın.
+  - Hasar alan parçada çatlaklar görünür. Kırılan parça yıkık kalır ve 1 malzeme düşürür; yanına gidip **F** ile 1 Dal (taş duvarda 1 Taş) vererek onarırsın.
+- **Avlu:** çit, taş duvar ve kapıyla tamamen çevirdiğin alanın (en çok 64×64 karo) içinde canlı doğmaz. Bir parça kırılınca avlu açılır, onarınca geri gelir.
+- **Direk feneri:** gece 20:00'de yanar, 06:00'da söner, her gece bir yakıt harcar. Yakıtı **F** ile koyarsın (1 Hayvan yağı ya da 2 Reçine). Işığının içine mor ışık gelmez; canavarları uzaklaştırmaz. Yanan fenerler haritada görünür. Usta Sinan yapar.
+- Kurulamayan yerde gölge kırmızı olur ve nedeni yazar (su, ağaç, kaya, kişilere ya da ateşe çok yakın, köprü ve mağara ağzının önü, sınır doldu gibi). Sınırlar: 2.000 zemin, 600 çit ve duvar, 24 fener.
+- Usta Sinan'ın K3 görevine İnşa dersi eklendi.
+
+### Arayüz
+
+- **Haritaya işaret koyma tuşu N'den T'ye taşındı** (N artık İnşa). Ayarlar › Kontroller'den değiştirilebilir.
+- İnşa kipinde altta parça şeridi ve sayaçlar görünür. Koymadan önce parçanın gölgesini görürsün. Kurulmuş bir parçaya tıklayınca (dokunmatikte basılı tutunca) Taşı / Geri al seçenekleri çıkar (kapıda Döndür, hasarlı ya da yıkık parçada Onar, yıkıkta Kaldır); sağ tıkla sürüklemek siler.
+- Kolda: şeritten parçayı seç, yön tuşları ya da sağ çubuk imleci kaydırır, A koyar (basılı tutup kaydırınca boyar), X siler, Y döndürür, B geri. Evin içinde Kol menüsündeki aynı yer Döşe olarak kalır.
+- **Oyun süresi ikiye ayrıldı:** Karakter › İstatistikler'de **aktif oyun süresi** (dünya akarken) ve **menüde geçen süre** (çanta, kitap, harita, Ayarlar, duraklatma gibi bir pencere açıkken) ayrı yazar. İkisi de gerçek saatle sayılır; ana menüde ve sekme arka plandayken geçen süre sayılmaz. Oyun sonu ekranındaki "Süre" aktif oyun süresidir.
+
+### Görsel
+
+- Yollar, parke, çitler, taş duvar, kapı (açık/kapalı), fener ve yıkık parçalar için yeni resimler. Çit simgesi gerçek bir çit gibi çizildi.
+
+### Fiyatlar
+
+- Toprak yol 1, Çakıl yol 2, Ahşap parke 10, Dal çit 4, Çit 82, Taş duvar 8, Tahta kapı 228, Direk feneri 209 sikke. Ağıl'ın tarifi aynı kaldı, Çit ucuzladığı için fiyatı 1.107'ye düştü.
+
+### Kayıtlar
+
+- Yapılar kayda girer. Eski kayıtlarda yere kurulmuş Çit'ler kendiliğinden yeni sisteme taşınır.
+- Eski kayıtlarda aktif oyun süresi kayıttaki oyun süresiyle başlar, menü süresi 0'dan başlar.
+
+### Tasarım belgesi
+
+- Sistemler › Üs kurma bölümü eklendi (1. aşama). Tariflere İnşa parçaları, Usta Sinan'a Direk feneri, K3'e İnşa dersi yazıldı.
+- Sistemler › İstatistikler ve oyun süresi bölümü eklendi.
+
+---
+
 ## Versiyon 3.64 · 8 Kasım 2026
 
 ### Arayüz
@@ -328,35 +376,3 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 ### Kayıtlar
 
 - Eski bir kayıt silindiğinde çıkan bilgi artık ana menüde her şeyin üstünde, okunur büyüklükte ve 5 saniye görünür: "Kaydın eski bir hatadan etkilendiği için silindi." ya da "Ada değiştiği için eski kayıt silindi."
-
----
-
-## Versiyon 3.45 · 6 Kasım 2026
-
-### Oynanış
-
-- **Porsuk Çayır'da:** Çayır'da artık porsuk da dolaşır (tek başına, günün her saatinde).
-- Yerdeki yaprak sayısı artık her yeni oyunda aynı.
-
-### Düzeltmeler
-
-- **Yan görevler fazla XP veriyordu:** bir yan görev bitince, görevin XP ödülü yerine binlerce XP verilebiliyordu (ör. Güvercinci Bulut 50 yerine 3.000'den fazla XP; karakter birden çok seviye atlıyordu). Artık her yan görev tablodaki XP'yi verir.
-
-### Kayıtlar
-
-- Yan görevlerin fazla XP verdiği hatadan etkilenen kayıtlar (3.45'ten önce en az bir yan görevi bitmiş kayıtlar) açılışta silinir ve yeni oyun başlar. Yan görev bitirmemiş kayıtlar olduğu gibi kalır.
-- Bir kayıt silinince çıkan kısa bilgi artık 5 saniye ekranda kalır; harita değiştiği için silinen kayıtlarda "Ada değiştiği için yeni oyun başladı." yazar.
-
-### Arayüz
-
-- **Yan görevler haritada:** saati gelmiş, görevi bekleyen bir yan kişi keşfettiğin bir yerdeyse büyük haritada ve köşedeki haritada tam yerinde bir **"?"** ile görünür. Bu "?" ana görevin "!" işareti kadar büyük ve parlaktır. Henüz keşfetmediğin bir yerdeyse ancak yanına yaklaşınca haritada sisli bir daire belirir. Bir bölgede aynı anda en çok iki yan görev işareti olur.
-- Haritanın keşfedilmemiş yerlerinde gelip giden süs soru işaretleri kaldırıldı; artık haritadaki her "?" gerçekten bir yan kişidir.
-- **Harita açıkken yazılar üstüne binmez:** büyük harita açıkken "Yeni bir gün", yeni malzeme, seviye ve seviye puanı yazıları ve başarım kartı haritanın üstünde çıkmaz; harita kapanınca gösterilir.
-- Kamp ateşinin ilk ipucu artık doğru tuşu (F) yazar.
-- Orman'daki satıcı Bekir'in adı artık "Seyyar satıcı Bekir".
-
-### Tasarım belgesi
-
-- Çayır bölümü oyunla karşılaştırıldı: haritadaki miktarlar 3.44 ölçüsüne göre, Porsuk, Deri parçası ve Yaban atının çıkma seviyesi, yan görevlerin harita işaretleri, Mavi'nin yeri ve görev açılma koşulları güncellendi.
-
----
