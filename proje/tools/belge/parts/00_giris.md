@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.54** ile birebir (7 Kasım 2026). Bu sürümde: E3 Cadı Firuze'den ve (T6'dan sonra) Avcı Doğan'dan, E4 Cadı Mercan'dan da alınır (yeni biyomda "!"), görev kartında eksik tarif satırı, Elmas Nine sahnesi son kuzen görevi teslim edilince oynar ve sahne boyunca duyurular bekler, köprü ve patlatmada görev ödülü dışında XP yok, F konuşma halkasında her şeyden önce kişiyi seçer. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.55** ile birebir (7 Kasım 2026). Bu sürümde: Kayalık Dağ, Kül Diyarı ve Mor Kristal'de de üç kuşak (Giriş/Orta/Derin, önceki biyomun sınırına yürüme uzaklığı); kuşak doğma şartları, Kül kurdu ve Gölge kurdu sürüleri seviyeyle büyür. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 

@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.55 · 7 Kasım 2026
+
+### Denge
+
+- **Kayalık Dağ, Kül Diyarı ve Mor Kristal Vadisi de derinleştikçe zorlaşıyor:** bir önceki bölgeden girdiğin yerde sakin ya da hafif canlılar var, içeri yürüdükçe tehlikeliler başlar, en derinde bölgenin bütün canlıları seni bekler.
+- **Kayalık Dağ:** girişte Kartal Seviye 30'dan, Yaban öküzü Seviye 28'den sonra çıkar; Vaşak yalnızca içeride, Mağara ayısı yalnızca en derinde.
+- **Kül Diyarı:** girişte önce yalnızca Kül böceği ve Kül cini var; Ateş akrebi ve Kül kurdu içeride, Kara ejder en derinde.
+- **Mor Kristal Vadisi:** Gölge kurdu içeride Seviye 45'ten sonra, Kristal golem en derinde.
+- **Kül kurtları ve Gölge kurtları** önce ikili gezer, seviyen yükseldikçe sürüleri büyür.
+
 ## Versiyon 3.54 · 7 Kasım 2026
 
 ### Oynanış
@@ -389,22 +399,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Kazan listesi, takip şeridi, toplu satış hesabı, el yapımı renkleri, körelmiş alet, dans ve canlı sesleri güncellendi.
-
----
-
-## Versiyon 3.35 · 5 Kasım 2026
-
-### Oynanış
-- **Bütün yemeklerin bir etkisi var.** Közlenmiş etler ve balıklar, çiğ et ve balık, deniz balıkları ve bütün yemek tarifleri artık yalnızca doyurmuyor; toplanan yiyecekler gibi bir iyi etki ve can da veriyor:
-  - et Güç verir; balık ve deniz ürünleri Gece gözü; yumurta Dayanıklılık; kuruyemiş ve tahıl Doygunluk; bal ve reçel Çeviklik; salata, meyve ve sebze Canlılık;
-  - ileriki biyomun yemeği daha güçlü: etki daha uzun sürer, daha çok can verir; Kayalık Dağ'dan sonra pişmiş yemekler ayrıca Şifa, Mor Kristal'den sonra Dayanıklılık da verir.
-- **Yemeklerin satış değeri biyomla artar:** Orman'ın yemeği %15, Mor Kristal'inki %75 daha pahalı; ikinci adada daha da fazla.
-
-### Düzeltmeler
-- Dans artık sol-sağ'a 3 kez basınca başlıyor, tuşu bırakınca da sürüyor ve başka bir tuşa basınca bitiyor; 20 saniye dans edince hayvanlar gerçekten yanına geliyor.
-- Sudaki yansıma yalnızca hiçbir şey yapmadan beklerken çıkar; su toplarken ya da olta atarken çıkmaz.
-
-### Tasarım belgesi
-- Yemek bölümüne "Bütün yemeklerin etkisi var" kuralı (kademeler, etki türleri, süre, can, fiyat) eklendi; Gizli şeyler'de dans ve ayna güncellendi.
 
 ---

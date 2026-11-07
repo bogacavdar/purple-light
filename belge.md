@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.54** ile birebir (7 Kasım 2026). Bu sürümde: E3 Cadı Firuze'den ve (T6'dan sonra) Avcı Doğan'dan, E4 Cadı Mercan'dan da alınır (yeni biyomda "!"), görev kartında eksik tarif satırı, Elmas Nine sahnesi son kuzen görevi teslim edilince oynar ve sahne boyunca duyurular bekler, köprü ve patlatmada görev ödülü dışında XP yok, F konuşma halkasında her şeyden önce kişiyi seçer. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.55** ile birebir (7 Kasım 2026). Bu sürümde: Kayalık Dağ, Kül Diyarı ve Mor Kristal'de de üç kuşak (Giriş/Orta/Derin, önceki biyomun sınırına yürüme uzaklığı); kuşak doğma şartları, Kül kurdu ve Gölge kurdu sürüleri seviyeyle büyür. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -1023,7 +1023,7 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 - **Önce başını çevirir, sonra başının doğrultusunda atılır:** canlılar yandan çizilir; eskiden karakter üstte ya da alttayken canavar yan durup dikine atılıyordu ("yan saldırı"). Artık üstüne atlayan **bütün canlılar** (Börü'nün alıştırma kereviti de) saldırı menziline girince (menzil + 24 piksel) gövdesini **başı sana bakacak şekilde döndürür** (saniyede ~14 radyan, en çok 90°: tam üstündeysen başı yukarı, tam altındaysan aşağı bakar), ! ile atılırken başının gösterdiği doğrultuda gider; atılış boyunca başı gittiği yöne bakar. Saldırı bitince ya da uzaklaşınca yavaşça (saniyede ~8 radyan) yeniden yatay durur. Can çubuğu, ! işareti ve hedef çizgisi dönmez, eski yerinde çizilir. Sersemken, geri savrulurken ve Reis'in özel hamlelerinde (sıçrama, hücum…) dönmez. Zamanlamalar (! 0,1 sn, atılış 0,3 sn; kerevitte 0,45 sn) değişmez. **Reis dönmez ("tek bir can barı olsun"):** Reis'lerin çizimi hiç döndürülmez; dönünce Reis'in mor can çubuğu ve adı yan yatıyor, üstüne ikinci küçük bir can çubuğu çıkıyordu. Reis'in tek can çubuğu taçlı uzun mor çubuktur.
 - **Sıkışan canlı yine saldırır:** bir canavar seni kovalarken bir engele (kaya, duvar, ağaç, su kenarı) takılıp sana yaklaşamazsa ve sen ona yakın dövüşle vurabiliyorsan, artık güvenle kesilemez. Kovalayan bir canlı **0,4 sn** yerinde sayar ve sen **44 piksel** içindeysen, bekleme süresi dolunca normal saldırısını yapar (başını çevirir, kırmızı/sarı/beyaz **!** ile atılır). Atılışı engele takılsa da kıskacı/dişi engelin üstünden yetişir: atılış sürerken 44 piksel içindeysen isabet eder (savuşturma ve atılmayla yine kaçınılır). Örnek: kumsalda iki kaya arasına sıkışan kerevit. Uzaktan silahlar (asa, tüfek) ve uzaktan saldıran canlılar etkilenmez.
 - **Canlılar canını yeniler:** hasar almış bir canlı (hayvan, canavar, Reis, boss) **6 saniye** hiç hasar almazsa ve **dövüşte değilse** canını yavaş yavaş yeniler: saniyede tam canının **%4**'ü (boştan doluya ~25 sn), tam cana kadar. Dövüşte sayılır: seni kovalarken 200 pikselden yakınsa, saldırıya hazırlanıyor ya da atılıyorsa. Yeni bir hasar 6 saniyeyi baştan başlatır. Yani kaçıp geri gelirsen ya da uzun ara verirsen yaraladığın canlı iyileşmiş olur; kesintisiz bir dövüşte iyileşmez. Yanma (meşale) da hasar sayılır.
-- **Doğma:** canlılar oyuncunun 330–470 piksel çevresinde doğar, 760 pikselden uzaklaşınca silinir. Gece canlıları gündüz uzaktaysa silinir.
+- **Doğma:** canlılar oyuncunun 330–470 piksel çevresinde doğar, 760 pikselden uzaklaşınca silinir. Bataklık, Kayalık Dağ, Kül Diyarı ve Mor Kristal'de doğacak noktanın **kuşağı** (Giriş/Orta/Derin) hangi canlının doğabileceğini belirler (kuşak kuralı: ACT 1 › Biyomlar › Bataklık). Gece canlıları gündüz uzaktaysa silinir.
 
 **Özel hamleler** (kovalarken arada bir):
 
@@ -1351,7 +1351,7 @@ Adanın kuzeybatısı (Çayır'dan doğuya, büyük nehre doğru yürü). Gölge
 **Orman canlılarının ayrıntıları:**
 - **Deri parçası:** derisi olan canlılar avlanınca derisinin yanında Deri parçası da düşürür: Sincap %60, Karaca %80 ×1–2, Kunduz %75, Yaban domuzu %70 ×1–2.
 - **Doğma koşulları:** **Yaban domuzu yalnızca gece** çıkar (gündüz çıkmaz; 6 Kasım 2026, Boğaç) ve saldırgandır: oyuncuyu görünce saldırır. **Engerek** Seviye 6'dan ya da 3. günden sonra, **Oklu kirpi** Seviye 10'dan sonra yalnızca **köprüye yakın Orman'da** (ana köprüye ≤ 100 karo), Seviye 14'ten sonra bütün Orman'da doğar. Orman'da tehlike köprüye doğru artar.
-- **Saldırgan sürülerin boyu seviyeyle büyür:** sürü hâlinde gelen saldırgan bir canlı (Yaban domuzu, Kurt, Bataklık kurdu, Kül kurdu) Seviye 1–3'te **2**, Seviye 4–6'da **2–3**, Seviye 7'den sonra tablodaki aralıkta (ör. Yaban domuzu 2–5) gelir. Nötr sürüler (Geyik, Karaca…) her seviyede tablodaki aralıktadır. **Bataklık kurdu** bu kuralın kaydırılmış halini izler: Seviye 21'e kadar **2**, Seviye 22–24 **2–3**, Seviye 25'ten sonra **2–4**.
+- **Saldırgan sürülerin boyu seviyeyle büyür:** sürü hâlinde gelen saldırgan bir canlı (Yaban domuzu, Kurt, Bataklık kurdu, Kül kurdu) Seviye 1–3'te **2**, Seviye 4–6'da **2–3**, Seviye 7'den sonra tablodaki aralıkta (ör. Yaban domuzu 2–5) gelir. Nötr sürüler (Geyik, Karaca…) her seviyede tablodaki aralıktadır. Kurtlar bu kuralın biyomlarına göre kaydırılmış halini izler: **Bataklık kurdu** Seviye 21'e kadar **2**, Seviye 22–24 **2–3**, Seviye 25'ten sonra **2–4**; **Kül kurdu** Seviye 40'a kadar **2**, Seviye 41–43 **2–3**, Seviye 44'ten sonra **2–4**; **Gölge kurdu** Seviye 47'ye kadar **2**, Seviye 48'den sonra **2–3**.
 
 ### Bataklık — Tehlikeli
 
@@ -1417,7 +1417,15 @@ Adanın kuzeyi, büyük nehrin doğusu: Orman'dan ana köprüyü onarıp karşı
 
 **Deri parçası:** Su samuru %75 ×1–2, Bataklık kurdu %80 ×1–2, Timsah %90 ×1–2 (derisinin yanında).
 
-**Bataklık'ın üç kuşağı (7 Kasım 2026; "biyomlar arası geçişte keskin fark olmaz, yalnızca gelişim olur"):** Bataklık karoları **ana köprüye (Orman ↔ Bataklık) uzaklığa** göre üçe ayrılır; bir canlının doğup doğmayacağına, doğacağı karonun kuşağı bakılır. Kuşak şartı sürünün her üyesine ayrı ayrı uygulanır; uygun olmayan kuşağa düşen üye doğmaz.
+**Kuşaklar: tehlikeli ve ölümcül biyomlar (7 Kasım 2026; "biyomlar arası geçişte keskin fark olmaz, yalnızca gelişim olur"):** Bataklık, Kayalık Dağ, Kül Diyarı ve Mor Kristal Vadisi'nin karoları **derinliğe** göre üç kuşağa ayrılır: **Giriş/Kıyı**, **Orta**, **Derin**. Bir canlının doğup doğmayacağına, doğacağı karonun kuşağı bakılır.
+
+- **Derinlik:** Bataklık'ta karonun **ana köprüye (Orman ↔ Bataklık)** uzaklığıdır. Kayalık Dağ, Kül Diyarı ve Mor Kristal'de karonun **önceki biyomlardan herhangi birinin en yakın sınırına karadan yürüme uzaklığıdır** (karo; aynı biyomun içinden, su geçilmez). Derinlik harita kurulurken **bir kez** hesaplanır; oyun sırasında harita taranmaz, doğma yalnızca seçilen noktanın değerine bakar.
+- Kuşak şartı **sürünün her üyesine** ayrı ayrı uygulanır; uygun olmayan kuşağa düşen üye doğmaz.
+- Yan görevlerin kendi çıkardığı canavarlar kuşak kuralına bağlı değildir.
+- **Derin** kuşakta her canlı her seviyede doğar (biyomun kimliği burada kalır).
+- Kuşak sınırları ve doğma şartları her biyomun canlı tablosunun altındadır. Canlıların değerleri kuşaktan bağımsızdır.
+
+**Bataklık'ın kuşakları:**
 
 | Kuşak | Ana köprüye uzaklık | Doğan canlılar |
 |---|---|---|
@@ -1425,7 +1433,7 @@ Adanın kuzeyi, büyük nehrin doğusu: Orman'dan ana köprüyü onarıp karşı
 | **Orta** | 86–150 karo | Kıyı'dakiler ve Zehirli kurbağa her seviyede; Bataklık kurdu Seviye 20'den sonra; Timsah Seviye 22'den sonra |
 | **Derin** | > 150 karo | hepsi her seviyede |
 
-Bataklık kurdu sürüsünün boyu: Orman notundaki sürü kuralına bakın. Yan görevlerin kendi çıkardığı canavarlar kuşak kuralına bağlı değildir. XP sütunu Bataklık'ın ×1,5 XP çarpanı uygulanmış değerdir (Sistemler › Gelişim).
+Bataklık kurdu sürüsünün boyu: Orman notundaki sürü kuralına bakın. XP sütunu Bataklık'ın ×1,5 XP çarpanı uygulanmış değerdir (Sistemler › Gelişim).
 
 ### Kayalık Dağ — Tehlikeli
 
@@ -1491,6 +1499,14 @@ Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartalla
 
 **Kayalık Dağ canlıları:** Yaban öküzü Seviye 4'ten önce doğmaz. **Deri parçası:** Dağ keçisi ve Muflon %80, Yaban öküzü %100, Vaşak %85, Mağara ayısı %90 (derisinin yanında). XP sütunu Kayalık Dağ'ın ×2 XP çarpanı uygulanmış değerdir (Sistemler › Gelişim).
 
+**Kayalık Dağ'ın kuşakları** (derinlik: Bataklık sınırına uzaklık):
+
+| Kuşak | Derinlik | Doğan canlılar |
+|---|---|---|
+| **Giriş** | ≤ 45 karo | Ur kekliği, Dağ keçisi, Muflon her zaman; Yaban öküzü Seviye 28'den; Kartal Seviye 30'dan |
+| **Orta** | 46–85 karo | Ur kekliği, Dağ keçisi, Muflon, Yaban öküzü her zaman; Kartal Seviye 28'den; Vaşak Seviye 30'dan |
+| **Derin** | > 85 karo | hepsi her seviyede (Mağara ayısı yalnızca burada) |
+
 ### Kül Diyarı — Ölümcül
 
 Adanın güneydoğusu, sıradağın ardı: Kayalık Dağ'dan sıradağa yürü, sıradağdaki **Doğu geçidi**ndeki kaya yığınını patlat (patlayınca bütün sıradağ çöker). Ateş ve kül her yerde; zırhsız gelme. Lav kertenkelesi ve Kara ejder burada. Bazalt, kükürt ve obsidyen madenleri (obsidyen buraya geldi). **Kuzenler:** Cadı Mercan (mercan kazan), Silahçı Turan ve Zırhçı Tufan. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
@@ -1555,6 +1571,14 @@ Adanın güneydoğusu, sıradağın ardı: Kayalık Dağ'dan sıradağa yürü, 
 
 XP sütunu bu biyomun ×1,5 XP çarpanı uygulanmış değerdir (Sistemler › Gelişim).
 
+**Kül Diyarı'nın kuşakları** (derinlik: Kayalık Dağ sınırına uzaklık; sıradağ patlayınca bütün sınır açılır):
+
+| Kuşak | Derinlik | Doğan canlılar |
+|---|---|---|
+| **Giriş** | ≤ 30 karo | Kül böceği, Kül cini her zaman; Lav kertenkelesi ve Kor yarasası Seviye 36'dan |
+| **Orta** | 31–60 karo | Kül böceği, Kül cini her zaman; Lav kertenkelesi, Kor yarasası ve Ateş akrebi Seviye 36'dan; Kül kurdu Seviye 38'den |
+| **Derin** | > 60 karo | hepsi her seviyede (Kara ejder yalnızca burada) |
+
 ### Mor Kristal Vadisi — Çok ölümcül
 
 Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığın en sık indiği yer; kristal golemler, gölge kurtları. Son iz ve Denizci Barbaros'un enkazı burada. Kristal, ametist ve altın madenleri. **Kuzenler:** Cadı İnci (inci beyazı kazan), Silahçı Kudret ve Zırhçı Kuvvet. Demirci kardeşler aynı ocakta yan yana, cadı ise biyomun başka bir köşesinde kendi kazanının başında; her birinin yanında kendi ateşi.
@@ -1618,6 +1642,14 @@ Hilalin güney ucu, Kül Diyarı'nın ardı; adanın en uzak yeri. Mor ışığ�
 | Kristal golem | saldırgan | 4.500 | 242 | 30 | 1.559 | – | Golem çekirdeği %60; Kristal %100 ×2–4; Ametist %80 ×1–3 |
 
 XP sütunu bu biyomun ×1,5 XP çarpanı uygulanmış değerdir (Sistemler › Gelişim).
+
+**Mor Kristal Vadisi'nin kuşakları** (derinlik: Kül Diyarı sınırına uzaklık):
+
+| Kuşak | Derinlik | Doğan canlılar |
+|---|---|---|
+| **Giriş** | ≤ 25 karo | Mor güve, Işık tilkisi, Kristal geyik, Işık engereği, Kristal örümcek her zaman |
+| **Orta** | 26–55 karo | Giriş'tekiler her zaman; Gölge kurdu Seviye 45'ten |
+| **Derin** | > 55 karo | hepsi her seviyede (Kristal golem yalnızca burada) |
 
 
 
