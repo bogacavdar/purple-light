@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.55** ile birebir (7 Kasım 2026). Bu sürümde: Kayalık Dağ, Kül Diyarı ve Mor Kristal'de de üç kuşak (Giriş/Orta/Derin, önceki biyomun sınırına yürüme uzaklığı); kuşak doğma şartları, Kül kurdu ve Gölge kurdu sürüleri seviyeyle büyür. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.56** ile birebir (7 Kasım 2026). Bu sürümde: F her zaman önce yerdeki eşyayı alır (kişi, kapı ve diğerleri ancak yerde bir şey yokken); "Doğu geçidini aç" yine Kaya patlatıcı tarifi öğrenilince verilir. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -11,6 +11,8 @@ Sürüm: **Versiyon 3.55** ile birebir (7 Kasım 2026). Bu sürümde: Kayalık D
 > **KURAL: TÜREYEN SAYILAR BİRLİKTE DEĞİŞİR (Boğaç, 6 Kasım 2026):** belgede bir sayı değişince ondan hesaplanan bütün sayılar (biyom başına alan, adet, oran) aynı commit'te güncellenir.
 
 > **KURAL: BELGE YALNIZCA BUGÜNÜ ANLATIR (6 Kasım 2026, Boğaç):** son 20 sürümün değişiklikleri geri alınabilir (her sürüm `main`'de `vX.YZ:` ile başlayan ayrı bir commit; ayrıntılar DEVAM_NOTU'nda); daha eski sürümlerin geçmişi belgede, notlarda tutulmaz.
+
+> **KURAL: BOĞAÇ'IN KARARI YALNIZCA BOĞAÇ'A SORULARAK DEĞİŞİR (7 Kasım 2026, Boğaç: "bu kararı ben vermiştim"):** belgede ya da CLAUDE.md'de Boğaç'a ait bir kararı (Boğaç adıyla ya da tarihiyle yazılmış kural) değiştiren ya da daraltan her öneri **önce Boğaç'a sorulur**; Yönetici onaylayamaz. Analist her belge değişikliğinden önce belgede (ve sürüm etiketleri temizlenmiş eski kurallar için depo geçmişinde) ilgili Boğaç kararını arar.
 
 > **Kural (Boğaç, 28 Ekim 2026):** Bu belge oyunun doğru kabul edilen tanımıdır. Geliştirme önce burada yazılır, sonra koda geçer; belge ile kod çelişirse belge doğrudur ve kod belgeye uydurulur.
 

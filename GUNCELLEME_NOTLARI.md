@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.56 · 7 Kasım 2026
+
+### Oynanış
+
+- **F her zaman önce yerdekini alır:** ayağının dibinde toplanacak bir şey varsa F önce onu toplar; kişiyle konuşmak, kapıdan girmek ve öbür işler yerde bir şey kalmayınca.
+- **"Doğu geçidini aç"** yine Kaya patlatıcı tarifini kazanda öğrendikten sonra verilir (Kemal, Doğan ya da Firuze); tarifi bilmiyorsan Kemal seni ona götürür. Tarifi öğrenmeden almış olduğun görev, oyunu açınca geri bırakılır ve tarifi öğrenince yeniden verilir.
+
 ## Versiyon 3.55 · 7 Kasım 2026
 
 ### Denge
@@ -376,28 +383,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - Resmi unutulan eşya artık renkli kutu değil, sade bir bez torba olarak görünür; geliştirici araçlarında eksik resimler listelenir.
-
----
-
-## Versiyon 3.36 · 6 Kasım 2026
-
-### Arayüz
-- **Cadının kazanı:** öğrendiğin tarifler listede her grubun en altına iner. Listenin üstündeki "Öğrenilenleri gösterme" kutusuyla hiç görünmezler; kutuyu kaldırınca geri gelirler.
-- **Cadının kazanı:** listenin aşağısından bir tarif seçince liste artık en başa kaymıyor.
-- **Takip şeridi:** takip ettiğin tarifin eksik bir parçasını (Sopa, İp gibi) şu an elinle yapabiliyorsan yanında **+** çıkar; basınca hemen yapılır.
-- **El yapımı:** eksik bir parçayı önce yapıp tarifi tamamlayabiliyorsan o parça kırmızı değil, sarı yazar ("yapılır").
-
-### Oynanış
-- **Dans:** yanına gelen hayvanlar çevrende bir çembere dizilir, durur ve seni izler. Dans ederken karakterin şarkı mırıldanır: erkekse kalın, kadınsa ince sesle.
-- Elindeki balta ya da kazma tamamen körelmişse F artık ağaca ya da madene değil, yerdeki eşyaya yönelir.
-
-### Düzeltmeler
-- Nazlı'nın "yeteni bırak" düğmeleri, bir tarifin istediği ara parçanın (ör. Sopa) malzemelerini saymıyordu; artık sayar, bu malzemeler satılmaz.
-
-### Ses
-- Canlıların acı ve ölüm sesleri türlerine göre yenilendi: kuşlar cıvıldar, ördekler vaklar, geyikler meler, atlar kişner, kurtlar inler, ayılar kükrer… Sesler daha uzun ve anlaşılır.
-
-### Tasarım belgesi
-- Kazan listesi, takip şeridi, toplu satış hesabı, el yapımı renkleri, körelmiş alet, dans ve canlı sesleri güncellendi.
 
 ---

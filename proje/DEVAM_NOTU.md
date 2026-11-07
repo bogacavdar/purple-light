@@ -1,3 +1,11 @@
+## v3.56 (7 Kasım 2026) · Boğaç kararlarına dönüş: F önce yerdeki eşya, E3 tarif kilidi
+
+- **F önceliği** (`20_sistemler.md` Kontroller ve Ev, Boğaç v2.05 + 7 Kasım 2026): `v56`'daki `target` sarması (v3.49 "kapıda önce kapı", v3.51/v3.54 "halkada önce kişi") ve `PEOPLE_K` silindi; ana `target()` sırası geçerli (yerdeki toplanabilir önce, kişi/kapı/öbürleri sonra). Oyunda: Kemal'in yanında Taş → "F Taş topla"; Deri çadır kapısında Eğrelti → "F Eğrelti topla", Eğrelti alınınca "F Deri çadır: içeri gir".
+- **E3 tarif kilidi** (`30_act1.md` kural 5, Boğaç v2.26/v2.83): v3.54'teki `arrQ` silindi; `matsOK` ve `parkLocked` yine `needRec`'e bakar. Kemal'in E3 sözü yine "tarifini zaten biliyorsun". Kart satırı (OYN-45) kalır. Oyunda: Kayalık'ta Firuze'nin yanında tarif yokken `vis` [CB1, EK1], Firuze'de "!" yok; tarif öğrenilince [E3, CB1], Firuze'de "!".
+- **Eski kayıt:** belgenin "Eski kayıtlar" kuralı (kayıt açılınca tarifi öğrenilmemiş aktif görev geri bırakılır) E3'e de uygulanır; v3.54/3.55'te tarifsiz alınmış E3 açılışta geri bırakılır, Kemal tarif işini verir. Oyunda: tarifsiz E3 etkinken kayıt yüklenince görev geri bırakıldı.
+- **Ölçüm:** kare döngüsüne/açılışa dokunulmadı (`target` sarmasının kalkması F/istem anında bir arama azaltır), ölçüm yapılmadı.
+- **Geri almak için:** v3.56 commit'ini `git revert` (prototip, index.html, parts). Kayıt alanı, MAPV değişmedi.
+
 ## v3.55 (7 Kasım 2026) · denge: Kayalık, Kül ve Mor Kristal'de üç kuşak, Kül kurdu ve Gölge kurdu sürü kademesi
 
 - **Derinlik alanı** (`30_act1.md` › Kuşaklar): `MUD`'un hemen ardından `LDEPTH` (`Uint16Array`, W×H; `DEPTH` adı başka yerde vardı). Kayalık (3), Kül (4), Mor (5) karolarında, bir önceki biyoma (BIO b−1) komşu ve su olmayan karolardan çok kaynaklı taşma araması, yalnızca aynı biyomun karolarından (denge modelinin aynısı). Harita kurulurken bir kez; kayda yazılmaz, oyun sırasında taranmaz. Ölçüm: tek başına ~25 ms, CPU×4 97 ms. Dağılım modelle aynı (bütün karolarda Kayalık %25 24 · %50 48 · %75 73 · en çok 133; Kül 22 · 44 · 66 · 147; Mor 38 · 82 · 161 · 461).
@@ -234,12 +242,3 @@
 - Yeni `v337art`: `window.__p1k` (v49-p1'den çizim araçları) ile kendi `icon()` katmanı; 194 eşya (165 + açılışta kutu olarak önbelleğe giren 29 bölge malzemesi/canlı parçası). Pişmiş/Tütsülenmiş/Kurutulmuş/Taşta balıklar çiğ resmin `ICONC`'sinden boyanır (ışık/kenar ikinci kez uygulanmaz, `RAWM`). `drawIcon` yedeği renkli kutu değil nötr bez torba; `?debug` 12 sn sonra yalnızca önbellekteki `ICON[n]===torba` olanları listeler (hiçbir şey silmez; ilk denemede toptan `delete ICON` 43 resmi bozdu, CLAUDE.md'ye ders yazıldı).
 - `v283` meşale yuvası bloğu: `invBelt` sarıldı (envanterde `data-tsinv` yuvası, `cbody` yakalayan tıklama), `onTSAt` envanter yuvasını da tanır; `tsLitN`: yanan meşale bitince `tsBest()` ile öbürü yakılır.
 - Belge: Sistemler › Boğaç / Mor ışıkta o / Seni hatırlıyorum; ACT 3 › ACT 3 fikir notları (köpek kamerası, kurallar hikâyeden, sahte not, duraklatmayan menü, sahte çökme, kötü son, uzun aradan dönüş). `yayinla.sh` paket çıkınca çalışacak.
-
-## v3.36 (6 Kasım 2026) · kazan listesi, takip +, pazar zinciri, dans çemberi ve şarkı, canlı sesleri
-- `v336learned`: kazan listesinde öğrenilenler sona (`open` sıralaması), `hammadde.hideLearned` kutusu; `renderCraft` sarmalı `.rlist/.pside/.tiles` kaydırmasını korur.
-- Takip şeridi (B3): `b3plus`/`b3make` (zincir `chainPlan(m,k,b3subOK)`; yalnızca öğrenilmiş el tarifleri).
-- `v317spare`: `reqMap(ok)` ara parçaların eksik kadarını kendi malzemelerine açar (6 kat).
-- `v334egg`: dans çemberi (`a.dnc`, yarıçap 50×34, `tickAnimals` sırasında yerleri sabit), şarkı (`hum`, kadın Re4 / erkek Re3, iki formant).
-- `gatherTarget`: körelmiş balta/kazma ağaç/maden hedeflemez. El yapımı: zincirle yapılacak eksik parça sarı.
-- `v336voice`: `window.__plVoice` (v309snd `hurtS`/`dieS` önce bunu dener): 13 ses türü, formantlı.
-- Kontrol: chk.js 0 hata; kazan sıralaması, liste kaydırması, takip + denendi.
