@@ -63,7 +63,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - **Pencere açılınca ilk kullanılabilir şey seçili gelir (v3.32, Boğaç):** kolla bir pencere açılınca (ya da pencerenin bir sekmesine geçilince) seçim kapatma düğmesinde ya da sekmelerde değil, **listedeki ilk kullanılabilir şeyde** başlar: kazanda/örste ilk tarif, El yapımı'nda yapılabilen ilk eşya, yemekte ilk yenilebilir şey (Ye düğmesi), envanterde ilk eşya; başka pencerelerde içerikteki ilk düğme.
 - **Tuş yazıları son kullanılan aygıta göre (7 Kasım 2026, Boğaç):** öğretici kartları, istemler ("F Taş topla"), ders kartları, yetenek açıklamaları, ipuçları ve ekrandaki bütün tuş yazıları **en son kullanılan giriş aygıtına** göre yazılır ve aygıt değişince **hemen** değişir. Kol yazıları kolun ilk girdisiyle başlar, klavye ya da farenin ilk girdisiyle biter; kol bağlı ama dokunulmamışsa klavye yazıları kalır; çubuğun ölü bölge içindeki titremesi geçiş sayılmaz:
   - **Klavye/fare:** klavye tuşu (ayarlardaki atamaya göre; ör. "F'ye bas", "sol tık").
-  - **Kol:** kolun tuşu (ör. "A'ya bas"). Kolun türü adından anlaşılır: **Xbox** → A/B/X/Y, LB/RB, LT/RT, Start, View (Select); **PlayStation/DualSense** → ✕/○/□/△, L1/R1, L2/R2, Options, Create. Tür bilinmiyorsa Xbox adları kullanılır.
+  - **Kol:** kolun tuşu (ör. "A'ya bas"). Kolun türü adından anlaşılır: **Xbox** → A/B/X/Y, LB/RB, LT/RT, Start, View (Select); **PlayStation/DualSense** → ✕/○/□/△, L1/R1, L2/R2, Options, Create. Tür bilinmiyorsa Xbox adları kullanılır. Kola özel yazılar: sayı tuşlarıyla yuva seçimi "LB / RB ile"; "X'e tıkla ya da yanında F'ye bas" türü yazılar "X'e gidip A'ya bas"; kemer ipucu "çantada seç (A), yanıp sönen yuvada A".
   - **Telefon/tablet (dokunma):** dokunma düğmesinin adı (ör. "Atıl düğmesine dokun").
 - Kol klavye ya da fare kullanılınca susmaz; ikisi birlikte kullanılabilir. Kol ayrılınca basılı kalan tuşlar bırakılır.
 - **Titreşim:** hasar alınca kol titrer (alınan hasarla güçlenir); titreşimi desteklemeyen kolda bir şey olmaz.
@@ -74,7 +74,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - **Menüde çubuk eşiği:** pencerelerde ve menülerde sol çubuğun **yarım itişi** (~%40) seçimi taşır; çubuk eşiğin biraz altına inmeden ikinci adım atılmaz (histerezis), böylece titreme seçimi zıplatmaz.
 - **Standart olmayan kol düzeni:** tarayıcının standart düzeninde görünmeyen kollarda yön tuşları (D-pad) eksenden okunur.
 - **Kol menüsü (7 Kasım 2026, Boğaç: "kola özel menü koy, tuşları ayarla, ne gerekiyorsa"):** oyun içinde **Start** (PS: Options) oyunu duraklatır ve Kol menüsünü açar; kolla bütün pencerelere ve eylemlere giden **asıl yol** budur.
-  - Dikey liste: **Devam** (duraklatmayı kapatır; Start'ın eski işi ilk satırdadır), Çanta, El yapımı, Karakter, Yetenekler, Kitap/Almanak, Görevler, Harita, Döşe (yalnızca evdeyken), Binek, Köpekleri çağır, Meşaleye reçine sür (elde meşale varken), Kaydet, Ayarlar, Ana menü.
+  - Dikey liste: **Devam** (duraklatmayı kapatır; Start'ın eski işi ilk satırdadır), Çanta, El yapımı, Karakter, Yetenekler, Kitap/Almanak, Görevler, Harita, Döşe (yalnızca evdeyken), Binek, Köpekleri çağır, Meşaleye reçine sür (elde meşale varken), Kaydet, Ayarlar, Hile paneli (hile modu açıkken), Ana menüye dön. **Ana menüye dön** onay sorar. **Hile paneli:** arama kutusu ekran klavyesiyle yazılır, Options (Start) sonuçlara geçer, B çıkar.
   - Yukarı/aşağı (yön tuşları ya da sol çubuk) seçer, **A** açar, **B** kapatır/geri döner; Start yeniden basılınca menü kapanır, oyun sürer.
   - Açılan pencerelerde her zamanki odak gezinimi geçerlidir; **LB/RB** sekme, **LT/RT** pencere değiştirir (oyun içinde LT savuşturma olarak kalır).
   - Oyun içi hızlı tuşlar (vur, atıl, savuştur, topla, meşale, LB/RB, yön tuşu kısayolları) aynen kalır; Select basılı tutunca açılan arayüz odak kipi de kalır, ama asıl yol Kol menüsüdür.
@@ -84,6 +84,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
   - **Meşale:** LB/RB döngüsünde meşale yuvası da bir duraktır; seçiliyken **X'e kısa basmak vurur** (yanan meşale vurduğunu tutuşturur), **X'i basılı tutmak (~0,4 sn)** meşaleyi yakar/söndürür; A etkileşim olarak kalır, Y hızlı yemektir; meşaleyi elden yere koymak ve meşaleye reçine sürmek de kolla yapılır (hangi tuşa bağlanacağı Yazılımcının eşleme tablosundadır).
   - **Öğretici kartı:** "Anladım" ve "Eğitimi geç" düğmeleri kol seçimine girer; kart açıkken **B** kartı 6 sn bırakır (sonra yeniden görünür).
   - **Pencereler:** Karakter, Yetenekler, Almanak, binek, büyük harita (işaret koyma, kaydırma, yakınlaştırma), Döşe düğmeleri ve eşya şeridi, açılır listeler kolla kullanılır; pencere içinde LB/RB sekme değiştirir.
+  - **Pencerelerde odak:** pencere, öğreticinin yanıp sönen düğmesinde ya da eşyasında açılır (yanıp sönme pencere açıldıktan 0,7 sn içinde başlasa da). Basılan yöndeki koni içinde öğe yoksa seçim o yöndeki en yakın öğeye gider. Kazanda ve örste **X = Hepsini koy**. Kategori (sekme) değişince seçim o kategorinin ilk tarifine geçer.
   - **Büyük harita:** çubuk kaydırır, **LT/RT** yakınlaştırır/uzaklaştırır, **A** ortadaki artının yerine işaret koyar ya da kaldırır, artı bir kişinin üstündeyse onu hedef yapar; **Y** haritayı kendi yerine döndürür, **B** kapatır.
   - **A ile toplama/konuşma (kolda):** erişimde birden çok şey varsa A çubuğun/bakışın yönündekini seçer; ama **yerdeki eşya yine önce** alınır (Boğaç; Kontroller › F), kişiler ondan sonra gelir. Klavyedeki F'nin davranışı değişmez.
   - **Ekrandaki öbür düğmeler** (sol menü, köşe düğmeleri) Select basılı tutulunca açılan **arayüz odak kipi**yle seçilir.
@@ -240,6 +241,9 @@ Oyunun hiçbir yerinde anlatılmaz; oyuncu kendisi bulur.
 - **Ateşte pişirme (7 Kasım 2026, Boğaç):** tarifler yine **kazanda öğrenilir**; ama ateş gerektiren yemekler (közlenmiş, kızarmış, kavrulmuş, haşlanmış, tütsülenmiş, ızgara, tava, şiş, buğulama, pişmiş et/balık, Kor isteyenler ve malzemesinde Ateş ya da Duman olan bütün yemekler; tam liste Tarif ansiklopedisinde "Ateşte" yazanlar, 129 tarif) **El yapımı listesinde görünmez**, **ateşte** yapılır. Ateşin başında **Ateş ve Duman malzemesi harcanmaz, ateş sağlar**; öbür malzemeler harcanır.
   - **Pişirme menüsü:** herhangi bir ateşe (kamp ateşi ya da kişilerin ateşleri) F, tıklama/dokunma ya da kolda A ile açılır; eski "Ateşte közle" penceresinin genişlemiş halidir. Çiğ et/balık közleme ve ateşte yapılabilen **öğrenilmiş** tarifler listelenir; her satırda ad solda, **Yap · ×5 · Hepsi** düğmeleri sağdadır (liste düzeni kuralı). Çantada çiğ yiyecek olmasa da ateşte yapılabilen bir tarif varsa menü açılır. F önceliği değişmez: önce yerdeki eşya, sonra kişi (Boğaç; böylece ateşin yanındaki kişiyle konuşmak engellenmez), sonra ateş.
   - **Pişme süresi:** her yemek ateşte kısa bir süre pişer (bir tanesi ~3 sn; ×5 ve Hepsi sırayla pişer). Ateşin üstünde ve menüde bir **ilerleme çubuğu** görünür. Pişen yemek bitince **kendiliğinden çantaya** gelir; oyuncu bu sırada uzaklaşabilir (pişirme ateşte sürer). Yanma yoktur. Bir ateşte aynı anda tek pişirme sırası vardır; yeni istek sıranın sonuna eklenir.
+  - **Sıra ve malzemeler:** malzemeler yemek sıraya alınınca harcanır. Ateş sıra sürerken sönerse pişmemiş yemeklerin malzemeleri çantaya döner. Oyun kaydedilince ateşte pişmekte olanlar **hemen pişmiş sayılır** ve çantaya gelir (pişirme sırası kayda yazılmaz).
+  - **Kamp ateşinde yakıt:** kamp ateşinde pişen her yemek ateşin yanma süresinden **4 sn** yer; kamp ateşinin menüsünde ateşin kalan süresi ve **Odun at** düğmesi görünür. Kişilerin ateşleri sönmez.
+  - **Ara malzeme olarak elde yapılmaz:** ateş yemekleri, bir tarifte ara malzeme olarak gerekse de El yapımı'nın "+" zincirinde elde yapılmaz; ateşte pişirilir.
 - **Önce yanındaki toplanır:** kamp ateşinin ya da bir tuzağın hemen yanında toplanabilir bir şey (lif, dal…) varsa **F** / Topla önce onu toplar; ateşin menüsü ancak yanında toplanacak bir şey kalmayınca açılır.
 - **Kişilerin ateşinde yemek:** Kemal'in ve öbür kişilerin kamplarındaki ateşlerde de çiğ et ve balık közlenir ve pişirme menüsü açılır: ateşin **üstüne tıkla / dokun** (uzaktaysan karakter yürür, varınca açılır) ya da ateşin hemen yanındayken (~16 piksel) ve çantanda çiğ et ya da balık varken **F**'ye bas. Pencerede "Hepsini közle" ve tek tek közleme vardır; kişilerin ateşi sönmez, odun istemez. Çiğ yemeğin yoksa "Çiğ et ya da balık getirirsen közleyebilirsin" der.
 - **Elde kazmayla madene sol tık:** elinde kazma varken bir madenin (taşın, cevherin) üstüne sol tıklayınca karakter madene yürür ve kazar; tıklama madenin bütün görüntüsünü tutar (eskiden yalnızca ortasındaki küçük nokta sayılıyordu, kenarına tıklayınca vuruş yapılıyordu). Yakında canavar olsa da kazmayla madene tıklamak kazar.
@@ -272,7 +276,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 | Toplamak (her düğüm, ağaç, meyve) | 1 |
 | Balık | 3 + fiyatın yarısı |
 | Tuzaktan av almak | 4 |
-| Közleme | közlenen parça sayısı (en çok 30) |
+| Közleme | parça başına 1 (bir seferde en çok 30) |
 | Ateşte yeni yemek / tekrar | 12 / 2 (el yapımı gibi) |
 | Keşif defterinde bir kategoriyi bitirmek | 100 |
 | Anı | 25 + 15 × anının sırası |
@@ -585,6 +589,121 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda k
   - Toplam **32 anı** (22 ACT 1 + 5 mor ışık + 5 usta). "Hatırladım" başarımı 32'yi ister.
 - **Telefonda anı tam ekran:** dokunmatik ekranda bir anı gelince resmi ekranı kaplar (en-boy oranı korunur, ekrana sığan en büyük boy). Başlık ("Bir anı geri geldi" ve anının adı) üstte, anlatım yazısı ve Devam düğmesi altta, küçük yazıyla ve yarı saydam koyu zemin üstünde resmin **üstüne** biner. Bilgisayarda değişiklik yok.
 - **Ada halkının hikâyeleri:** görev veren 8 kişinin her biri mor ışık yüzünden birini kaybetmiştir (Poyraz'ın hikâyesi yok); görevler hikâyeyi parça parça açar, sonunda bir sahne (+40 XP). Kitap → Ada halkı.
+
+## Üs kurma
+
+> **Üs kurma (7 Kasım 2026, Boğaç):** oyuncu dışarıda kendine bir üs kurar: yol ve zemin döşer, çit, duvar ve kapıyla bir avlu çevirir, mor ışığa karşı fener diker. Boğaç'ın kararları: fenerler **yalnızca mor ışıktan korur** (canavarı uzaklaştırmaz); Reis'ler tahtayı da taşı da kırar, orta güçteki hayvanlar yalnızca tahtayı, güçlü hayvanlar ikisini de; kırılan parça onarılır; çit ve zemini **oyuncu elle yapar**; **Derin kuşakta da** kurulur; yolda yürüme **%15 hızlı**; uçan canlılar çitin üstünden geçer ama kırmaz; tamamen çevrili avluda canlı doğmaz. Bu bölüm yalnızca oyunda olan parçaları anlatır.
+
+### İnşa kipi
+
+- **Açma:** sol menüde / ☰ içinde **İnşa** düğmesi; klavyede **N** (Ayarlar → Kontroller'den değişir); kolda Kol menüsündeki satır dışarıdayken **İnşa**, evin içindeyken **Döşe** olur. Evin içinde ve mağarada İnşa açılmaz (evde Döşe vardır).
+- **Ekran:** oyuncunun çevresinde karo çizgileri görünür; altta Döşe'deki gibi yatay bir şerit: zemin, çit, duvar, kapı, fener ve çantadaki sayıları. Şeritte sınır da yazar ("1.950 / 2.000").
+- **Koyma:** her parça **1 karo**dur ve ızgaraya oturur. Çit ve duvar komşularıyla kendiliğinden birleşir (uç, düz, köşe, T, haç).
+
+  | Cihaz | Koy | Çizgi ya da dikdörtgen boya | Sil | Menü / döndür | Çık |
+  |---|---|---|---|---|---|
+  | Bilgisayar | tık | basılı tutup sürükle | sağ tık | R döndürür | Esc |
+  | Telefon | dokun | sürükle | – | uzun dokun: menü | İnşa düğmesi |
+  | Kol | A | A basılı + sağ çubuk | X | Y döndürür | B |
+
+- Konmuş parçaya dokununca (Döşe'deki gibi) **Taşı / Geri al / Döndür** menüsü açılır. **Geri al:** parça çantaya tam döner. Yıkık parça geri alınmaz: onarılır ya da kaldırılır, kaldırılınca 1 malzeme bırakır. Sürükleyerek boyanır, sürükleyerek silinir.
+- Uygun olmayan karoda hayalet kırmızıdır ve "Buraya konmaz" yazar (talimat vermez).
+- **Dünya durmaz:** gece ve canavarlar sürer; inşa ederken vurulursan kip kapanır.
+
+### Zemin ve yol
+
+- Zemin ve yol karolarının üstünde ağaç, bitki, maden ve toplanabilir **çıkmaz**: ne ada kurulurken, ne yeniden doğarken, ne ağaç yeniden büyürken.
+- Üstünden herkes yürür. **Yol** türlerinde oyuncu **%15 hızlı** yürür (binekte de).
+
+| Parça | Tür | Tarif (el yapımı, kazanda öğrenilir) | Karo fiyatı |
+|---|---|---|---|
+| Toprak yol | yol | 2 Taş, 1 Kum → 4 | ~1 |
+| Çakıl yol | yol | 3 Nehir çakılı, 1 Kum → 4 | ~2 |
+| Ahşap parke | zemin | 1 Meşe kalası → 4 | ~6 |
+
+### Çit, duvar ve kapı
+
+Her parça **tahta** ya da **taş** sınıfındadır; kırma kuralı buna göre işler.
+
+| Parça | Sınıf | Tarif (el yapımı, kazanda öğrenilir) | Etki | Canı |
+|---|---|---|---|---|
+| Dal çit | tahta | 4 Dal, 2 Lif → 2 | **Yavaşlatır:** canlı ×0,35 hızla geçer | 60 |
+| Çit | tahta | 1 Meşe sapı, 2 Sarmaşık ipi, 2 Dal → 2 | Durdurur | 240 |
+| Taş duvar | taş | 4 Taş, 1 Kireçtaşı, 1 Kum → 1 | Durdurur | 800 |
+| Tahta kapı | tahta | 2 Çit, 1 İp → 1 | Oyuncu, evcil hayvan ve görev kişileri geçer | 240 |
+
+- **Kapı:** oyuncu 1 karo yakına gelince kendiliğinden açılır, uzaklaşınca kapanır; düğmesi yoktur.
+- **Taş duvar** Çayır malzemesiyle yapılır ama ağırdır: erken oyuncu birkaç duvar karosuyla kapısının çevresini korur; geniş bir avluyu taşla çevirmek ilerleyen biyomların işidir.
+
+### Kırma, yıkık parça ve onarım
+
+- Bir canlı bir parçaya yalnızca **oyuncunun yakınında, onu kovalarken** ve yolu o parçayla kesilmişken (ya da hücumla çarpınca) vurur. Uzaktaki çitlere kimse dokunmaz.
+- **Vuruş başına parçaya verilen hasar** canlının hasarının yarısıdır, en çok 1,2 sn'de bir; hücum çarpması ×2.
+- Sınıfının kıramadığı parçaya canlı vurmaz: önünde bekler, sonra vazgeçer. Arada durduran bir parça varken üstünden ısıramaz.
+- Uzaktan atanlar parçalara vurmaz.
+- **Uçanlar** çitin ve duvarın **üstünden geçer**, kırmaz (Boğaç).
+- **Kırılınca** parça **yıkık** olur ve geçilir; kaybolmaz, resmi yıkık parçadır; yere 1 malzemesi düşer.
+- **Onarım:** hasarlı ya da yıkık parçaya F → **Onar** (tahta 1 Dal, taş 1 Taş); canı tam dolar. Hasarlı parça kendiliğinden onarılmaz; hasar resimde çatlakla görünür (3 kademe).
+
+**Kırma sınıfları:**
+
+| Sınıf | Neyi kırar | Kimler |
+|---|---|---|
+| **Zayıf** | hiçbir şey | zararsızlar, küçük gövdeliler (kemirgen, kuş, kabuklu, böcek, sürüngen), uzaktan atanlar, uçanlar |
+| **Orta** | yalnızca tahta (çit, kapı) | yakın dövüşte saldıran ya da hücum eden dört ayaklılar (kurtlar, domuzlar, vaşak, geyikler, keçiler) |
+| **Güçlü** | tahta ve taş | iri türler (vuruşla geri itilmeyenler) |
+| **Reis** | tahta ve taş | her türün Reis'i (zayıf bir türünki de) ve mağara boss'ları |
+
+| Biyom | Zayıf | Orta | Güçlü |
+|---|---|---|---|
+| Çayır | Tavşan, Keklik, Bıldırcın, Kerevit, Porsuk | Geyik, Yaban atı, Kurt | – |
+| Orman | Sincap, Kunduz, Dikenli kirpi, Engerek, Oklu kirpi | Karaca, Yaban domuzu | – |
+| Bataklık | Ördek, Yaban kazı, Turna kuşu, Su samuru, Zehirli kurbağa | Bataklık kurdu | Timsah |
+| Kayalık Dağ | Ur kekliği, Kartal (uçar) | Dağ keçisi, Muflon, Vaşak | Yaban öküzü, Mağara ayısı |
+| Kül Diyarı | Kül böceği, Kül cini, Lav kertenkelesi, Kor yarasası (uçar) | Kül kurdu, Ateş akrebi | Kara ejder |
+| Mor Kristal Vadisi | Işık engereği, Kristal örümcek, Mor güve (uçar) | Işık tilkisi, Gölge kurdu, Kristal geyik | Kristal golem |
+| Mor ışık baskını | Yıldızsız gözcü, Yıldızsız sürüngen, Yıldızsız tükürücü | Yıldızsız dev | – |
+
+- Nötr canlılar yalnızca kızdırılınca kovalar; o zaman sınıfları işler.
+- **Yeni bir canlı eklenince sınıfı da yazılır**; listede olmayan canlı "zayıf" sayılır.
+- Mağaralarda inşa yoktur (mağara canlılarının sınıfı yalnızca tutarlılık için: Mağara kurdu ve Mağara vaşağı orta, öbürleri zayıf).
+
+### Avlu
+
+Durduran parçalarla (Çit, Taş duvar) ve kapılarla **tamamen çevrili** alanın içinde canlı **doğmaz** (Boğaç). Dal çit yavaşlattığı için saymaz; yıkık parça da saymaz. Çevrili olup olmadığına yalnızca bir parça konup kalkınca ya da kırılınca bakılır (en çok 64 × 64 karo).
+
+### Dış ışık: Direk feneri
+
+| Fener | Tarif (Usta Sinan yapar) | Yarıçap | Yakıt |
+|---|---|---|---|
+| Direk feneri | 1 Sopa, 1 Kil lamba, 1 Hayvan yağı | 90 px | bir gece; her gece 1 Hayvan yağı ya da 2 Reçine |
+
+- Fenerin ışığının içinde **mor ışık gelmez**; canavarlar ışıktan uzaklaşmaz, içine de girer (Boğaç: fenerler yalnızca mor ışıktan korur).
+- Fener 20:00'de kendiliğinden yanar, 06:00'da söner. Yakıtı biten fener o gece yanmaz.
+- Yakıt fenere **F** ile konur (yerde alınacak eşya yoksa; F önceliği).
+- Yanan fenerler haritada kamp ateşi gibi görünür.
+- **Gece:** güvenli olan fenerin ışığıdır, çit değil. Zifiri karanlık sayacı ışığın sınırından çıkınca başlar. Tanrı modu kuralı aynıdır (mor ışık tanrı modunda da bayıltır).
+
+### Nereye kurulur, sınırlar
+
+- **Her biyomda ve her kuşakta** kurulur, Derin dahil (Boğaç); kuşaklar yalnızca canlıların doğmasını belirler.
+- **Kurulmaz:** su ve ulaşılamaz karo; ağaç (önce kesilir); başka yapı; kişilerin ve ateşlerinin **6 karo** çevresi; görev yerlerinin **8 karo** çevresi (köprüler, Doğu geçidi, gemi enkazı, mağara ağızları, iz yerleri, kuzen ailelerinin ocak ve kazanları, yan kişilerin yeri); Kemal'in kampının güvenli alanı; Ekin'in tarlası.
+- **Çit, duvar ve kapı** köprü uçlarına ve geçide 4 karodan yakın kurulmaz; zemin ve yol oraya da konur.
+- Mağarada, evin içinde (orada Döşe var), Bereket Adası'nda ve ikinci adada kurulmaz.
+
+| Parça (kayıt başına) | Sınır |
+|---|---|
+| Zemin ve yol | 2.000 karo |
+| Çit, duvar, kapı | 600 parça |
+| Fener | 24 |
+
+- **Kayıt:** zemin ve çit/duvar ızgara olarak, sıkıştırılmış karo listesi şeklinde saklanır; parça canları yalnızca hasarlı parçalar için tutulur; fener yakıtları yapılarla birlikte saklanır.
+
+### Çit ve Ağıl
+
+- **Çit el yapımıdır** (Boğaç: çit ve zemini oyuncu elle yapar); adı aynı kaldığı için görevler ve Ağıl bozulmaz. Tarifi tahtadır: 1 Meşe sapı, 2 Sarmaşık ipi, 2 Dal → **2 Çit**; kazanda öğrenilir. Usta Sinan'ın sipariş listesinde Çit yoktur.
+- **Ağıl** aynı kalır: tarif 10 Çit, Usta Sinan kurar. Çit ucuzladığı için fiyatı malzemeyle düşer (~250).
+- **Eski kayıtlar:** çantadaki Çit'ler geçerlidir; dünyada kurulu Çit'ler açılışta İnşa ızgarasına aynı yerde Çit olarak taşınır; Sinan'a verilmiş ve bekleyen bir Çit siparişi varsa iade edilir (Çit çantaya, ücret geri).
 
 ## Dövüş
 

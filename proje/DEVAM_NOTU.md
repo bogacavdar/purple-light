@@ -1,3 +1,36 @@
+## v3.64 (8 Kasım 2026) · Testçi v3.62 raporu (KOL-40…52) ve üç ham fiyat
+
+- **`v320pad`:**
+  - `firstFocus` önce kendisi `.pulse` olan düğmeyi seçer. `keepFocus` açılıştan sonra 700 ms içinde gelen `.pulse`'a geçer (`P.ffT`/`P.ffL`; oyuncu yön verince biter).
+  - `moveFocus`: koni boşsa o yöndeki en yakın (`along+perp×3`).
+  - `reveal`: şerit listenin içinde olmasa da listeyi kaydırır.
+  - `winStep` (select) → `P.lastK=''`.
+  - Kazanda / örste X = `#pfill`.
+  - `askConfirm(q,yes,btn)` (`askQuit` buna dayanır); `#p-quit` onaylı.
+  - Ekran klavyesi `kbShow(inp)`/`kbIn` ile her kutuya yazar. Hile paneli `#cheatpad` içinde odak varken pencere sayılır (`focusables`'ta search kutusu orada var). Kol menüsünde `p-cheat`.
+- **`kTxt` (kolda):** ` tıkla ya da yanında ` → ` gidip `; `N tuşuna bas` → `LB / RB ile kemerde ona gel`; `N tuşuyla`, `1–0 tuşlarıyla` → `LB / RB ile`.
+- **`beltHow` kolda:** çanta, seç (A), yanıp sönen yuvada A.
+- **Ders yazıları:**
+  - El yapımı `(L)` kolda yok.
+  - Zümrüt'ün iki `<b>Tab</b>`'ı `kc`'ye çevrildi (`kTxt` görür).
+  - Meşale yak kartı kolda "basılı tutunca".
+- **`v181`:**
+  - `treeAsk` ve Börü konuşması kolda "Start → Yetenekler".
+  - `window.__plDLCard()` → `tzCard` 11 (Atılma / Savuşturma n/4 / Yetenek ağacı); `startLesson`, `strikeDone`, `treeAsk`, `done2` `renderTut` çağırır.
+  - `snapshot` sarmalı: süren atılma dersinde (`!DL.hadS1`) S1 kayda girmez (KOL-50).
+- **Fiyat (`v335food` sonu):** `CAP` Yabani bal 12, Ateş biberi 52, Işık mantarı 90 (yemek kademesi çarpanı ham fiyatı bant dışına itiyordu). Fark ×1,3 zincirle tariflere yayılır. Değişen tarifler (3.63 → 3.64):
+  - Balmumu 87→86, Balmumu mumu 134→133, Bal şerbeti 24→23, Ballı kestane 249→248, Ballı fındık 122→121.
+  - Arı kovanı 145→144, Ballı ekmek 150→149, Ateş çiçeği balı 69→68, Bal şarabı 121→120, Asma fener 269→268.
+  - Ay elması reçeli 574→573, Acı biber ezmesi 402→324, Ay otu iksiri 698→655, Işık mantarı çorbası 537→408.
+- **Denendi** (sahte Xbox kolu):
+  - Çanta ilk eşyada açılıyor; yanıp sönen eşyaya geçiyor (150 ms sonra yanıp sönse de).
+  - Ayaklar yuvasından ↓ ile eşyaya iniliyor.
+  - Kol menüsü → Ana menüye dön → onay (Vazgeç seçili), B kapatıyor.
+  - Hile paneli: arama → klavye "taş" → Options → ilk sonuç → A → Taş 3→13 → B ile çıkış.
+  - `kTxt` örnekleri.
+  - Kazanda X ve Börü kartı aşamaları oyunda görülmedi (öğretici kilidi; kod).
+- **Geri almak için:** v3.64 commit'ini `git revert` (prototip, index.html, notlar). Kayıt alanı ve MAPV değişmedi.
+
 ## v3.63 (7 Kasım 2026) · ateşte pişirme: 129 ateş yemeği El yapımından çıktı, her ateşte pişirme menüsü
 
 - **Liste:** ana betikte `FIRE_R` (belge `80_tarifler.md` "Ateşte (pişirme menüsü)" sütunundaki 129 ad; ² dipnot işaretleri atıldı; hepsi oyunda `REC`'te var) ve `FIRE_FREE` (Ateş, Duman).
@@ -277,16 +310,3 @@
 - **Geri almak için (ek):** `q.xp` satırı, `complete()` ve iki yazı (v3.44 hali; geri almak XP hatasını geri getirir); `v339ach` `show()` ilk satırı ve `__plAchBack`; `v345` `toast` sarması.
 - **Geri almak için:** `BANIM[0]`'dan `['Porsuk',1]` ve `v128` sarmalayıcısındaki `__plBANIM` koşulu; `v230` `mapSQ` + kart cümlesi (git v3.44 hali); `QM`/`placeQM`/`tickQM` ve iki çağrısı (v3.44 hali); `v345` bloğunu sil; `PIGR`; iki "E" metni. Kayıt alanı ve MAPV değişmedi.
 - Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
-
-## v3.44 (6 Kasım 2026) · biyomlar alanca %50 büyük (790×568), eski kayıtlar silinir, görevde yalnızca ! + parlama, belge yeniden sınıflandırıldı
-
-- **Düzeltme (Boğaç):** v3.40'taki "her biyomu %50 büyüt" kenar ×1,5 diye uygulanmıştı (968×696, alan ×2,25). Doğrusu alan ×1,5. `proje/tools/harita/ada_uret.py`: `GROW = 1.5 ** .5` (≈1,2247) → ızgara 790×568, deniz payı `round(10*GROW)` = 12, üç göl yarıçapı ×GROW, Bataklık gölcükleri `round(20*GROW*GROW)` = 30 (aralık `14*GROW`). Üretici yeniden çalıştırıldı (`adalar.js` 48.072 bayt, `ada1.png`/`ada2.png`); `adalar.js`'in içeriği prototipte `<script id="v235-map">` bloğundaki tek satıra (1712) aynen gömüldü.
-- Sonuç: ada 1 kara 312.690 → **208.524** (biyom başına 6 × 34.754), ada 2 kara 402.003 → **268.138** (biyomlar 44.680–44.700). Komşuluk zinciri 0-1-2-3-4-5 aynı, gölcük 30/30, doğuş puanı 10/11 (iki ada). Ada 1 köprüler [134,433–437], [75,410–413], [199,449–453], geçit [345,611–614], doğuş [74,253]; ada 2 köprüler [202,230–237], [158,174–181], [290,336–340], geçit [229,609–614], doğuş [86,496].
-- Ana kod: `AREA_K=W*H/(645*464)` değişmedi, kendiliğinden 1,4993 (≈1,5). Mini harita penceresi `min(W,645)*.3` aynı (W=790 > 645). `MAPV` 5 → **6**: eski kayıtlar açılışta silinir (Boğaç seçti).
-- Ada 1 yeni oyun (eski 968×696 → yeni): ağaç 9.450 → **6.570**, düğüm 16.873 → **11.306**, maden 838 → **555** (3.39'a göre ≈×1,5).
-- **Ölçüm** (`olcum.js` /tmp kopyaları, CPU×4, gl açık, masaüstü 1280×720, iki tur): BOOT 22.523 / 21.136 → 18.176 / 17.940 ms (js 14.586 / 13.817 → 10.840 / 11.047); kumsal kare avg 177,4 / 190,6 → 197,3 / 189,7 (p95 213 / 251 → 324 / 227); yürürken 185,2 / 169,3 → 157,4 / 193,7 (p95 250 / 235 → 223 / 252); PLAY 10 sn js 4.169 / 4.013 → 4.132 / 4.136 ms; PERF.lvl 2–3 her ikisinde. `olcum_cizim.js`: drawImage 624 → 658, fillRect 659 → 705, görünür ağaç 8 → 26, düğüm 61 → 50, shore 6.110 → 4.853, GL 3 sn dr 398 → 484 (iniş yerinin çevresi değiştiği için görünür nesneler farklı). Kare maliyeti aynı aralıkta (gürültü içinde), açılış ~3,5 sn kısa.
-- **Tasarım belgesi yeniden sınıflandırıldı (bu pakette):** başta Belge haritası, tekrarlar tekilleştirildi, atıflar güncellendi. Önce 16 üst bölüm ve `99z_arsiv.md` (Arşiv: eski görev tabloları) olarak sınıflandırıldı; sonra "eski kural tutulmaz" kuralıyla (CLAUDE.md) Arşiv silindi, belge şu an 15 üst bölüm. Yeni kurallar (Giriş, CLAUDE.md): büyüklük yüzdesi alan içindir; türeyen sayılar birlikte değişir; eski kural tutulmaz. Ada/biyom sayıları (00_giris, 05_teknoloji, 30_act1, 50_act2_giris) v3.44'e göre.
-- **Görev işaretleri (Boğaç: "görev sistemi parlama üzerine; ? yok, ! yazmalı"):** ana görevin tek işareti siyah "!" + parlama. `drawMap` `mki` (~6266–6272): tanışılmamış görev sahibi (`__plQUnmet`) "?" yerine parlayan "!" (MAPHITS etiketi "!"); büyük haritada `qm0` yalnızca "!" (yeşil `143,212,107` teslim ışığı silindi); simgenin üstündeki rozet her zaman sarı zemin + siyah "!" (mavi `#7fc8ff`/sarı `?` ve "?" piksel dalı silindi); ekin dalındaki `qState==='ready'?'?'` silindi (iki yer). Eski görev sistemi (`qMarkOf`, ~10210): `ready(g)` → "?" dalı silindi; dünyadaki işaret (`v55Ents`, ~10214) koyu kutu + mavi/sarı yerine v186 `drawTag`/`drawMark` gibi sarı kutu, siyah "!" ve parıltı. Kemal'in eski işareti (`drawNpc`, ~7200) "?" dalı silindi. Gemici Poyraz (`v234` `__plMapQ` sarması, ~17347): haritada "?" → "!"; bildirim "Haritada parlayan ! ile işaretlendi." (belge `38_nuri_deniz.md` aynı cümle). Değişmeyenler: yan görevlerin sisli mor "?"si (`mapSQ`), mağara haritasındaki yan görev kişisi işareti, ara sahne duygu simgeleri, keşfedilmemiş yerdeki dekoratif siyah "?"ler (`QM`, görev işareti değil).
-- `DEVAM_NOTU.md` ve `GUNCELLEME_NOTLARI.md` yalnızca v3.25–v3.44 (CLAUDE.md "son 20 sürüm"); eski sürüm bölümleri ve CLAUDE.md'de zaten olan eski kural kopyaları silindi; DEVAM_NOTU sürüm sırasına dizildi (v3.36 yerine).
-- **Geri almak için:** harita: `MAPV` 6 → 5, `<script id="v235-map">` satırı (1712) git HEAD'deki `adalar.js` ile, `ada_uret.py` `GROW = 1.5` (+ `adalar.js`/png yeniden üret) ve `AREA_K` yorumu; işaretler: yukarıdaki `mki`, `qMarkOf`/`v55Ents`, `drawNpc` Kemal işareti, `v234` Poyraz `__plMapQ` ve `crash()` bildirimi (git `v3.43` hali).
-- Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7 (artmadı).

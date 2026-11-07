@@ -64,7 +64,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 | Yankı mantarı | toplanır | 14 | Yankı çorbası, Kraliçe tılsımı |
 | Damla taşı | toplanır | 12 | Kertenkele merhemi, Damla akı boyası |
 | Yarasa zarı | Mağara yarasası | 16 | Yarasa zarı davul |
-| Kör kertenkele eti | Kör kertenkele | 14 | Yankı çorbası (çiğ de yenir) |
+| Kör kertenkele eti | Kör kertenkele | 18 | Yankı çorbası (çiğ de yenir) |
 | Kertenkele pulu | Kör kertenkele | 18 | Kertenkele merhemi |
 | Taş örümceği ipi | Taş örümceği | 22 | Yarasa zarı davul, Kraliçe tılsımı |
 | Kraliçe pençesi | Yankı Kraliçesi | 260 | Kraliçe tılsımı |
@@ -73,8 +73,8 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 
 | Tarif | Kategori | Malzemeler | Fiyat |
 |---|---|---|---|
-| Yankı çorbası | Yiyecek | 2 Yankı mantarı, 1 Kör kertenkele eti, 2 Su, 1 Ateş | 70 |
-| Kertenkele merhemi | Şifa | 2 Kertenkele pulu, 1 Damla taşı, 1 Su | 75 |
+| Yankı çorbası | Yiyecek | 2 Yankı mantarı, 1 Kör kertenkele eti, 2 Su, 1 Ateş | 91 |
+| Kertenkele merhemi | Şifa | 2 Kertenkele pulu, 1 Damla taşı, 1 Su | 143 |
 | Damla akı boyası | Boya | 2 Damla taşı, 1 Su | 40 |
 | Yarasa zarı davul | Müzik | 3 Yarasa zarı, 2 Taş örümceği ipi, 2 Dal | 130 |
 | Kraliçe tılsımı | Büyü | 1 Kraliçe pençesi, 2 Yankı mantarı, 1 Taş örümceği ipi | 420 |
@@ -111,7 +111,7 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 | Kök reçinesi | toplanır | 24 | Kök flütü |
 | Kök böceği kabuğu | Kök böceği | 28 | Böcek kabuğu boyası |
 | Kök yılanı derisi | Kök yılanı | 32 | Kök flütü |
-| Mağara kurdu eti | Mağara kurdu | 22 | Kök mantarlı güveç (çiğ de yenir) |
+| Mağara kurdu eti | Mağara kurdu | 32 | Kök mantarlı güveç (çiğ de yenir) |
 | Mağara kurdu postu | Mağara kurdu | 40 | – (satılır; Deri parçası da düşer) |
 | Yaşlı Kök özü | Yaşlı Kök | 480 | Kök özü iksiri |
 
@@ -119,7 +119,7 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 
 | Tarif | Kategori | Malzemeler | Fiyat |
 |---|---|---|---|
-| Kök mantarlı güveç | Yiyecek | 2 Kök mantarı, 1 Mağara kurdu eti, 2 Su, 1 Ateş | 110 |
+| Kök mantarlı güveç | Yiyecek | 2 Kök mantarı, 1 Mağara kurdu eti, 2 Su, 1 Ateş | 160 |
 | Böcek kabuğu boyası | Boya | 2 Kök böceği kabuğu, 1 Su | 75 |
 | Kök flütü | Müzik | 1 Kök yılanı derisi, 1 Kök reçinesi, 1 Dal | 95 |
 | Kök özü iksiri | Büyü | 1 Yaşlı Kök özü, 2 Kök mantarı, 1 Su | 680 |
@@ -258,7 +258,7 @@ Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara
 | Mor damar taşı | toplanır / Işık Yutan | 86 | Mor damar boyası, Işık Yutan kalbi tılsımı |
 | Işık sporu | toplanır | 80 | Yıldız tozu yemi |
 | Ayna taşı | toplanır | 90 | Kristal zil, Işık Yutan kalbi tılsımı |
-| Yıldız tozu | toplanır | 96 | Yıldız tozu yemi |
+| Yıldız tozu | toplanır | 90 | Yıldız tozu yemi |
 | Kristal kanat | Kristal yarasa | 230 | Kristal zil |
 | Ayna ipeği | Ayna örümceği | 250 | Gölge pulu muska |
 | Gölge pulu | Gölge semenderi | 290 | Gölge pulu muska |
@@ -269,7 +269,7 @@ Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara
 | Kristal zil | Müzik | 2 Kristal kanat, 1 Ayna taşı | 700 |
 | Mor damar boyası | Boya | 2 Mor damar taşı, 1 Su | 300 |
 | Gölge pulu muska | Süs | 2 Gölge pulu, 1 Ayna ipeği | 860 |
-| Yıldız tozu yemi | Av ve hayvan | 2 Yıldız tozu, 1 Işık sporu | 520 |
+| Yıldız tozu yemi | Av ve hayvan | 2 Yıldız tozu, 1 Işık sporu | 504 |
 | Işık Yutan kalbi tılsımı | Büyü | 1 Işık Yutan kalbi, 2 Mor damar taşı, 2 Ayna taşı | 4.200 |
 
 ### Teknik not (mağaranın yeri)

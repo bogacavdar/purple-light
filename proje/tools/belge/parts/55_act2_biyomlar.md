@@ -21,7 +21,7 @@
 |---|---|---|---|
 | Bulut pamuğu | 12 | 62 | 45 sn sonra yeniden çıkar |
 | Gök kumu | 10 | 65 | 60 sn sonra yeniden çıkar |
-| Gök mantarı | 18 | 57 | 60 sn sonra yeniden çıkar, çiğ yenir (+25 tokluk) |
+| Gök mantarı | 34 | 57 | 60 sn sonra yeniden çıkar, çiğ yenir (+25 tokluk) |
 | Gök otu | 14 | 56 | 50 sn sonra yeniden çıkar |
 | Rüzgâr çiçeği | 16 | 62 | 55 sn sonra yeniden çıkar |
 | Rüzgâr kristali | 40 | 49 | 110 sn sonra yeniden çıkar |
@@ -67,8 +67,8 @@ Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzak
 | Dev spor | 28 | 62 | 80 sn sonra yeniden çıkar |
 | Goblin otu | 12 | 60 | 50 sn sonra yeniden çıkar |
 | Işıldak mantarı | 20 | 64 | 60 sn sonra yeniden çıkar |
-| Kök yumrusu | 14 | 61 | 50 sn sonra yeniden çıkar, çiğ yenir (+29 tokluk) |
-| Mantar şapkası | 16 | 63 | 55 sn sonra yeniden çıkar, çiğ yenir (+28 tokluk) |
+| Kök yumrusu | 29 | 61 | 50 sn sonra yeniden çıkar, çiğ yenir (+29 tokluk) |
+| Mantar şapkası | 33 | 63 | 55 sn sonra yeniden çıkar, çiğ yenir (+28 tokluk) |
 | Spor tozu | 14 | 65 | 50 sn sonra yeniden çıkar |
 | Sümük yosunu | 14 | 57 | 55 sn sonra yeniden çıkar |
 

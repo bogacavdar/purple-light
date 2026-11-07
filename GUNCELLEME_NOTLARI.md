@@ -8,6 +8,32 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.64 · 8 Kasım 2026
+
+### Arayüz
+
+- **Kolla pencereler doğru yerde açılır:** öğretici bir düğmeyi ya da eşyayı yakıp söndürüyorsa pencere doğrudan onda açılır (El yapımı'nda yanıp sönen "Yap", Çanta'da yanıp sönen balta). Yanıp sönme pencere açıldıktan hemen sonra başlasa da seçim oraya geçer.
+- Çantada giysi yuvalarının her birinden aşağı basınca eşyalara inilir. Alttaki alet şeridinin altında kalan eşya görünür olacak kadar kaydırılır.
+- Kazanda ve örste kolun X'i "Hepsini koy"a basar. Kazanda grup LB / RB ile değişince seçim listenin ilk tarifine geçer.
+- Kol menüsünde "Ana menüye dön" önce sorar.
+- Hile paneline Kol menüsünden ("Hile paneli") gidilir. Arama kutusuna A ile ekran klavyesi açılır, Options / Start ile sonuçlara geçilir, B ile panelden çıkılır.
+- **Kolda doğru tuş yazıları:**
+  - Börü'nün "Yetenek ağacını aç" uyarısı "Start → Yetenekler" der (PlayStation'da Options).
+  - "2 tuşuna bas" gibi sayı tuşları "LB / RB ile kemerde ona gel" olur.
+  - "Kaba meşale simgesini yuvaya sürükle" yerine çantada seçip A'ya basmayı anlatır.
+  - "kazana tıkla ya da yanında A'ya bas" kolda "kazana gidip A'ya bas" olur.
+  - Meşale kartı "bir daha basılı tutunca söner" der, El yapımı'ndaki "(L)" kolda görünmez.
+  - Zümrüt'ün "Tab'a bas"ı klavyede bağlı tuşu, kolda ↑'yı söyler.
+- Börü'nün dersleri boyunca öğretici kartı aşamayı gösterir: "Börü · Atılma (n/4)", "Börü · Savuşturma (n/4)", "Börü · Yetenek ağacı". Önceden hep "Kereviti vur" yazıyordu.
+
+### Düzeltmeler
+
+- Öğretici geçilmişken Börü'nün ücretsiz atılma dersi yarıda bırakılıp oyun kaydedilince atılma öğrenilmiş sayılıyordu; artık sayılmaz (ders yeniden teklif edilir).
+
+### Denge
+
+- Üç ham eşya kendi biyomunun fiyat aralığına indi: Yabani bal 13 → 12, Ateş biberi 72 → 52, Işık mantarı 123 → 90. Bunları kullanan tarifler kuralla birlikte değişti (Acı biber ezmesi 402 → 324, Işık mantarı çorbası 537 → 408, Ay otu iksiri 698 → 655, ballı tarifler 1'er sikke).
+
 ## Versiyon 3.63 · 7 Kasım 2026
 
 ### Oynanış
@@ -332,30 +358,5 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 ### Tasarım belgesi
 
 - Çayır bölümü oyunla karşılaştırıldı: haritadaki miktarlar 3.44 ölçüsüne göre, Porsuk, Deri parçası ve Yaban atının çıkma seviyesi, yan görevlerin harita işaretleri, Mavi'nin yeri ve görev açılma koşulları güncellendi.
-
----
-
-## Versiyon 3.44 · 6 Kasım 2026
-
-### Arayüz
-
-- **Görev işaretleri sadeleşti:** ana görevlerin tek işareti artık görev veren kişinin üstündeki siyah **!** ve parlamadır; dünyada, köşedeki haritada ve büyük haritada aynı. İşi bitince çıkan yeşil "?" ve mavi işaretler kalktı. Henüz tanışmadığın görev sahibi ve karaya oturan Gemici Poyraz da haritada parlayan bir **!** ile görünür. Yan görevlerin sisli mor "?" işareti aynı kaldı.
-
-### Düzeltmeler
-
-- **Biyomlar doğru büyüklükte:** 3.40'ta "her biyomu %50 büyüt" kararı yanlış uygulanmış, biyomlar istenenden çok fazla büyümüştü (en ve boy 1,5 kat, alan 2,25 kat; 968 × 696 karo). Artık her biyom 3.39'a göre **alanca %50** büyük: iki ada da 790 × 568 karo. Adaların şekli, biyomların sırası, nehir, köprüler ve sıradağ aynı; göller de aynı oranda büyüdü, Bataklık'ta 30 gölcük var. Ağaçlar, taşlar, bitkiler ve madenler yine aynı sıklıkta; biyomlar arasında yürümek eskisinden kısa sürer.
-
-### Kayıtlar
-
-- Harita değiştiği için eski kayıtlar açılışta silinir; yeni bir oyunla başlanır.
-
-### Tasarım belgesi
-
-- Belge bölümlere ayrıldı: 15 üst bölüm ve en başta her konunun nerede yazdığını gösteren bir belge haritası.
-- Birden çok yerde yazan bilgiler tek yerde toplandı; oyunda artık olmayan eski görev tabloları belgeden çıkarıldı (belge yalnızca oyunun bugünkü halini anlatır).
-- Yeni kural: bir harita, biyom ya da bölge için "%X büyüt/küçült" denince alanı %X değişir.
-- Ada ve biyom büyüklükleri yeni sayılarla güncellendi.
-- Belge yalnızca oyunun bugünkü halini anlatır: eski sürüm izleri temizlendi, oyundan kalkmış kurallar çıkarıldı.
-- Güncelleme notları artık son 20 sürümü (3.25–3.44) tutar.
 
 ---

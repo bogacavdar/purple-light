@@ -67,22 +67,22 @@ Satış fiyatı Nazlı'nın pazarında. Zorluk yeşil alanı böler (1 = kolay).
 |---|---|---|---|---|
 | Hamsi | 1 | 4 | 1 | 3 |
 | İstavrit | 1 | 5 | 1,05 | 4 |
-| Tekir | 1 | 7 | 1,15 | 4 |
-| Kefal | 2 | 10 | 1,05 | 5 |
-| Çipura | 2 | 13 | 1,15 | 5 |
-| Levrek | 2 | 15 | 1,25 | 6 |
-| Barbunya | 3 | 18 | 1,1 | 6 |
-| İstiridye | 3 | 20 | 1,15 | 4 |
-| Lüfer | 3 | 22 | 1,35 | 7 |
-| Palamut | 4 | 28 | 1,2 | 7 |
+| Tekir | 1 | 8 | 1,15 | 4 |
+| Kefal | 2 | 13 | 1,05 | 5 |
+| Çipura | 2 | 17 | 1,15 | 5 |
+| Levrek | 2 | 20 | 1,25 | 6 |
+| Barbunya | 3 | 26 | 1,1 | 6 |
+| İstiridye | 3 | 29 | 1,15 | 4 |
+| Lüfer | 3 | 32 | 1,35 | 7 |
+| Palamut | 4 | 45 | 1,2 | 7 |
 | Mersin balığı | 4 | 12 (eski fiyatı) | 1,7 | 4 |
-| Kalkan | 4 | 34 | 1,4 | 8 |
-| Kalamar | 5 | 38 | 1,25 | 7 |
-| Kılıç balığı | 5 | 52 | 1,45 | 9 |
-| Orkinos | 5 | 65 | 1,6 | 10 |
-| Ahtapot | 6 | 70 | 1,35 | 9 |
-| Fener balığı | 6 | 85 | 1,55 | 10 |
-| Işıl balığı | 6 | 110 | 1,75 | 12 |
+| Kalkan | 4 | 54 | 1,4 | 8 |
+| Kalamar | 5 | 61 | 1,25 | 7 |
+| Kılıç balığı | 5 | 91 | 1,45 | 9 |
+| Orkinos | 5 | 124 | 1,6 | 10 |
+| Ahtapot | 6 | 133 | 1,35 | 9 |
+| Fener balığı | 6 | 162 | 1,55 | 10 |
+| Işıl balığı | 6 | 225 | 1,75 | 12 |
 
 - Satılır ve yenir; "herhangi balık" grubu yoktur. Yemek listesinde **Balıklar** sekmesinde.
 
@@ -103,22 +103,22 @@ Satış fiyatı Nazlı'nın pazarında. Zorluk yeşil alanı böler (1 = kolay).
 
 | Tarif | Malzeme | Tür | Fiyat |
 |---|---|---|---|
-| Hamsi tava | 4 Hamsi, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 40 |
-| Tekir tava | 2 Tekir, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 40 |
+| Hamsi tava | 4 Hamsi, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 52 |
+| Tekir tava | 2 Tekir, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 52 |
 | İstavrit ızgara | 2 İstavrit, 1 Ateş | Yiyecek | 30 |
-| Kefal pilakisi | 2 Kefal, 1 Su, 1 Ateş | Yiyecek | 50 |
-| Çipura buğulama | 1 Çipura, 1 Su, 1 Ateş | Yiyecek | 45 |
-| Levrek şiş | 1 Levrek, 2 Dal, 1 Ateş | Yiyecek | 50 |
-| Barbunya tava | 2 Barbunya, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 70 |
-| İstiridye çorbası | 2 İstiridye, 2 Su, 1 Ateş | Yiyecek | 75 |
-| Lüfer ızgara | 1 Lüfer, 1 Ateş | Yiyecek | 60 |
-| Palamut buğulama | 1 Palamut, 1 Su, 1 Ateş | Yiyecek | 75 |
-| Kalkan tava | 1 Kalkan, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 90 |
-| Kalamar tava | 2 Kalamar, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 120 |
-| Kılıç şiş | 1 Kılıç balığı, 2 Dal, 1 Ateş | Yiyecek | 130 |
-| Orkinos biftek | 1 Orkinos, 1 Ateş | Yiyecek | 140 |
-| Ahtapot salatası | 1 Ahtapot, 1 Su, 1 Ateş | Yiyecek | 160 |
-| Işıl çorbası | 1 Işıl balığı, 1 Fener balığı, 2 Su, 1 Ateş | Yiyecek | 330 |
+| Kefal pilakisi | 2 Kefal, 1 Su, 1 Ateş | Yiyecek | 65 |
+| Çipura buğulama | 1 Çipura, 1 Su, 1 Ateş | Yiyecek | 59 |
+| Levrek şiş | 1 Levrek, 2 Dal, 1 Ateş | Yiyecek | 65 |
+| Barbunya tava | 2 Barbunya, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 102 |
+| İstiridye çorbası | 2 İstiridye, 2 Su, 1 Ateş | Yiyecek | 109 |
+| Lüfer ızgara | 1 Lüfer, 1 Ateş | Yiyecek | 87 |
+| Palamut buğulama | 1 Palamut, 1 Su, 1 Ateş | Yiyecek | 120 |
+| Kalkan tava | 1 Kalkan, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 144 |
+| Kalamar tava | 2 Kalamar, 1 Yabani buğday unu, 1 Ateş | Yiyecek | 192 |
+| Kılıç şiş | 1 Kılıç balığı, 2 Dal, 1 Ateş | Yiyecek | 228 |
+| Orkinos biftek | 1 Orkinos, 1 Ateş | Yiyecek | 266 |
+| Ahtapot salatası | 1 Ahtapot, 1 Su, 1 Ateş | Yiyecek | 304 |
+| Işıl çorbası | 1 Işıl balığı, 1 Fener balığı, 2 Su, 1 Ateş | Yiyecek | 676 |
 
 ### Deniz görevleri (Poyraz'ın balık defteri)
 

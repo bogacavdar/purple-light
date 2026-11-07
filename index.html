@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.63</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.64</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.63 · 7 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Ateşte pişirme:</strong> ateş isteyen yemekler (kavrulmuş, kızarmış, haşlanmış, tütsülenmiş, ızgara, tava, şiş, buğulama, çorbalar, ekmekler, güveç, pişmiş et ve balık…; 129 tarif) artık El yapımı listesinde yok. Tarifi yine kazanda öğrenirsin, yemeği <strong>ateşte</strong> yaparsın.</li><li>Kamp ateşine ya da kişilerin ateşlerine F, tıklama, dokunma ya da kolda A ile <strong>pişirme menüsü</strong> açılır. Menüde çiğ et ve balık közleme ile öğrendiğin ateş yemekleri var; her satırda Yap · ×5 · Hepsi. Kamp ateşinde ayrıca "Odun at" düğmesi ve ateşin kaç dakika yanacağı görünür.</li><li>Ateşin başında <strong>Ateş ve Duman malzemesi harcanmaz</strong>, ateş sağlar. Öbür malzemeler harcanır.</li><li>Her yemek ateşte ~3 saniyede pişer. ×5 ve Hepsi sırayla pişer, ateşin üstünde ve menüde ilerleme çubuğu görünür. Pişen yemek kendiliğinden çantana gelir; bu arada uzaklaşabilirsin. Yemek yanmaz.</li><li>Kamp ateşinde her yemek ateşten biraz yer. Ateş pişirme bitmeden sönerse pişmeyen malzemeler çantana döner.</li><li>Çantanda çiğ yiyecek olmasa da yapabileceğin bir ateş yemeği varsa kişilerin ateşinde menü açılır.</li><li>Ateşte ilk kez yapılan yemek 12 XP, sonrakiler 2 XP verir (el yapımı gibi). Közleme parça başına 1 XP.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.64 · 8 Kasım 2026</h2><h3>Arayüz</h3><ul><li><strong>Kolla pencereler doğru yerde açılır:</strong> öğretici bir düğmeyi ya da eşyayı yakıp söndürüyorsa pencere doğrudan onda açılır (El yapımı'nda yanıp sönen "Yap", Çanta'da yanıp sönen balta). Yanıp sönme pencere açıldıktan hemen sonra başlasa da seçim oraya geçer.</li><li>Çantada giysi yuvalarının her birinden aşağı basınca eşyalara inilir. Alttaki alet şeridinin altında kalan eşya görünür olacak kadar kaydırılır.</li><li>Kazanda ve örste kolun X'i "Hepsini koy"a basar. Kazanda grup LB / RB ile değişince seçim listenin ilk tarifine geçer.</li><li>Kol menüsünde "Ana menüye dön" önce sorar.</li><li>Hile paneline Kol menüsünden ("Hile paneli") gidilir. Arama kutusuna A ile ekran klavyesi açılır, Options / Start ile sonuçlara geçilir, B ile panelden çıkılır.</li><li><strong>Kolda doğru tuş yazıları:</strong><ul><li>Börü'nün "Yetenek ağacını aç" uyarısı "Start → Yetenekler" der (PlayStation'da Options).</li><li>"2 tuşuna bas" gibi sayı tuşları "LB / RB ile kemerde ona gel" olur.</li><li>"Kaba meşale simgesini yuvaya sürükle" yerine çantada seçip A'ya basmayı anlatır.</li><li>"kazana tıkla ya da yanında A'ya bas" kolda "kazana gidip A'ya bas" olur.</li><li>Meşale kartı "bir daha basılı tutunca söner" der, El yapımı'ndaki "(L)" kolda görünmez.</li><li>Zümrüt'ün "Tab'a bas"ı klavyede bağlı tuşu, kolda ↑'yı söyler.</li></ul></li><li>Börü'nün dersleri boyunca öğretici kartı aşamayı gösterir: "Börü · Atılma (n/4)", "Börü · Savuşturma (n/4)", "Börü · Yetenek ağacı". Önceden hep "Kereviti vur" yazıyordu.</li></ul><h3>Düzeltmeler</h3><ul><li>Öğretici geçilmişken Börü'nün ücretsiz atılma dersi yarıda bırakılıp oyun kaydedilince atılma öğrenilmiş sayılıyordu; artık sayılmaz (ders yeniden teklif edilir).</li></ul><h3>Denge</h3><ul><li>Üç ham eşya kendi biyomunun fiyat aralığına indi: Yabani bal 13 → 12, Ateş biberi 72 → 52, Işık mantarı 123 → 90. Bunları kullanan tarifler kuralla birlikte değişti (Acı biber ezmesi 402 → 324, Işık mantarı çorbası 537 → 408, Ay otu iksiri 698 → 655, ballı tarifler 1'er sikke).</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -5123,7 +5123,7 @@ function renderHand(){
   L.sort((a,b)=>(handN(b)>0)-(handN(a)>0)||(isTorch(b.r)-isTorch(a.r))||a.r.localeCompare(b.r,'tr'));
   const have=n=>expand(n).reduce((t,m)=>t+(inv[m]||0),0);
   const tt=Object.keys(TORCHB).find(n=>inv[n]>0&&torchBurn[n]!=null)||Object.keys(TORCHB).find(n=>inv[n]>0);
-  cbody.innerHTML=(tt?`<div class="hintbox"><span><b>${esc(tt)}</b> · %${Math.round(torchPct(tt))} · ${resinFor()?`elindeki ${esc(resinFor())} ile tazele`:'tazelemek için reçine gerekir'}${TOUCH?'':' (L)'}</span><button id="feedtorch" type="button"${resinFor()&&torchPct(tt)<92?'':' disabled'}>Reçine sür</button></div>`:'')+`<p class="note"><b>Elinle her yerde</b> yaptıkların: Zümrüt'ün kazanında <b style="color:#8fd46b">öğrendiğin</b> bütün tarifler (aletler ve zırhlar hariç; onları Dursun döver, yapıları Usta Sinan kurar). Bazıları yanında bir alet ister.</p>`+
+  cbody.innerHTML=(tt?`<div class="hintbox"><span><b>${esc(tt)}</b> · %${Math.round(torchPct(tt))} · ${resinFor()?`elindeki ${esc(resinFor())} ile tazele`:'tazelemek için reçine gerekir'}${TOUCH||(window.__plPad&&window.__plPad.on())?'':' (L)'}</span><button id="feedtorch" type="button"${resinFor()&&torchPct(tt)<92?'':' disabled'}>Reçine sür</button></div>`:'')+`<p class="note"><b>Elinle her yerde</b> yaptıkların: Zümrüt'ün kazanında <b style="color:#8fd46b">öğrendiğin</b> bütün tarifler (aletler ve zırhlar hariç; onları Dursun döver, yapıları Usta Sinan kurar). Bazıları yanında bir alet ister.</p>`+
     (L.length?`<ul class="book hand">${L.map(y=>{const n=handN(y);return `<li${n?'':' class="hno"'} data-hrow=""${esc(y.r)}"><span class="bn"><img src="${icon(y.r)}" alt=""><span><b>${esc(y.r)}</b>${inv[y.r]>0?` <small style="color:var(--accent)">· sende ${inv[y.r]}</small>`:''}<br><small>${y.i.map(([m,q])=>{const h=have(m),mk=h<q&&n>0;return `<span style="color:${h>=q?'#8fd46b':mk?'#f2d070':'#ff8a6a'}">${q}× ${esc(m)} (${h}${mk?' · yapılır':''})</span>`}).join(', ')}${isTorch(y.r)?` · <span style="color:#f2b84b">${Math.round((TORCHB[y.r]||600)/60)} dk yanar</span>`:''}</small></span></span><span class="rr hq">${y.r==='Kamp ateşi'&&inv[y.r]>0?'<button class="mk" data-camp="1" type="button">Yak</button>':''}<button class="mk" data-hand="${esc(y.r)}" data-q="1" type="button"${n?'':' disabled'}>Yap</button><button class="mk ghost" data-hand="${esc(y.r)}" data-q="5" type="button"${n>=5?'':' disabled'}>×5</button><button class="mk ghost hall" data-hand="${esc(y.r)}" data-q="${Math.max(2,n)}" type="button"${n>1?'':' disabled'}>Hepsi${n>1?` <small>(${n})</small>`:''}</button></span></li>`}).join('')}</ul>`
     :`<p class="note">${f?'Aramana uyan tarif yok.':'Henüz bir tarif öğrenmedin. Zümrüt\'ün kazanında bir tarif öğren; sonra burada yaparsın.'}</p>`);
   if(htut===1){const q=cbody.querySelector('[data-hand="Keskin taş"]');if(q)q.classList.add('pulse')}
@@ -5323,7 +5323,7 @@ function beltRemove(n){const i=beltIndex(n);if(i>=0)beltClear(i)}
 // first free slot (a truly empty one before a slot whose item ran out); -1 when the belt is full
 function beltAuto(n){let i=beltIndex(n);if(i>=0)return i;for(let k=0;k<hotN();k++)if(!belt[k]){belt[k]=n;hotK='';return k}for(let k=0;k<hotN();k++)if(!hotItem(belt[k])){belt[k]=n;hotK='';return k}return -1}
 // how to put something on the belt, said for mouse and for touch
-const beltHow=n=>TOUCH?`çanta ikonuna dokun, <b>${n}</b> simgesine dokun, sonra alttaki bir yuvaya dokun`:`<span class="kc">I</span> ile envanteri aç ve <b>${n}</b> simgesini alttaki yuvalardan birine sürükle`;
+const beltHow=n=>TOUCH?`çanta ikonuna dokun, <b>${n}</b> simgesine dokun, sonra alttaki bir yuvaya dokun`:(window.__plPad&&window.__plPad.on()?window.__plPad:null)?`çantayı aç (${(window.__plPad&&window.__plPad.on()?window.__plPad:null).bn(13)}), <b>${n}</b> simgesini seç (${(window.__plPad&&window.__plPad.on()?window.__plPad:null).bn(0)}), sonra yanıp sönen yuvada yine ${(window.__plPad&&window.__plPad.on()?window.__plPad:null).bn(0)}`:`<span class="kc">I</span> ile envanteri aç ve <b>${n}</b> simgesini alttaki yuvalardan birine sürükle`;
 const beltHowTxt=n=>beltHow(n).replace(/<[^>]+>/g,'');
 const beltTold=new Set();
 // v2.84 (Boğaç): in Nazlı's "sell a sharp stone" lesson the sharp stone stands first in the sell list
@@ -7155,7 +7155,7 @@ function tzCard(){const h=n=>inv[n]||0,c=(n,q)=>`${n} ${Math.min(h(n),q)}/${q}`;
    8:['witch','Zümrüt · Keskin taş yap',`Kalan 2 taşla bir <b>keskin taş</b> yap: ${tzKey('tab')}. Kazandan bir tarif öğrendin mi, gerisi hep elinde.`],
    9:['witch','Pazarcı Nazlı',`Keskin taşı al ve kuzeydoğudaki <b>Pazarcı Nazlı</b>'ya git; ok yolu gösteriyor. Birleştirdiğin şeyleri o alır.`],
    10:['','Nazlı · Sat',`Satış listesinde <b>Keskin taş</b>'ın yanındaki <b>1 sat</b> düğmesine bas.`],
-   11:ftut===2?['','Börü · Kereviti vur',TOUCH?`<b>Kereviti</b> vur: <b>ona dokun</b>. Canı bitene kadar vur.`:window.__plPad&&window.__plPad.on()?`<b>Yürü:</b> <span class="kc" data-k="1">Sol çubuk</span> ile kerevite yaklaş. <b>Vur:</b> <span class="kc" data-k="1">${window.__plPad.bn(2)}</span> ya da <span class="kc" data-k="1">${window.__plPad.bn(7)}</span>: en yakın canlıya vurursun (sağ çubukla yön verirsin). Canı bitene kadar vur.`:`<b>Yürü:</b> <span class="kc">W</span><span class="kc">A</span><span class="kc">S</span><span class="kc">D</span> ya da <span class="kc">↑</span><span class="kc">←</span><span class="kc">↓</span><span class="kc">→</span> ile kerevite yaklaş. <b>Vur:</b> <span class="kc">Sol tık</span>: tıkladığın yöne vurursun. Canı bitene kadar vur.`]:['','Savaşçı Börü',`Nazlı seni doğudaki <b>Savaşçı Börü</b>'ye yolladı. Ok yolu gösteriyor; yanına git ve ${TOUCH?'ona dokun':'<span class="kc">E</span> ile konuş'}.`],
+   11:ftut===2&&window.__plDLCard&&window.__plDLCard()?window.__plDLCard():ftut===2?['','Börü · Kereviti vur',TOUCH?`<b>Kereviti</b> vur: <b>ona dokun</b>. Canı bitene kadar vur.`:window.__plPad&&window.__plPad.on()?`<b>Yürü:</b> <span class="kc" data-k="1">Sol çubuk</span> ile kerevite yaklaş. <b>Vur:</b> <span class="kc" data-k="1">${window.__plPad.bn(2)}</span> ya da <span class="kc" data-k="1">${window.__plPad.bn(7)}</span>: en yakın canlıya vurursun (sağ çubukla yön verirsin). Canı bitene kadar vur.`:`<b>Yürü:</b> <span class="kc">W</span><span class="kc">A</span><span class="kc">S</span><span class="kc">D</span> ya da <span class="kc">↑</span><span class="kc">←</span><span class="kc">↓</span><span class="kc">→</span> ile kerevite yaklaş. <b>Vur:</b> <span class="kc">Sol tık</span>: tıkladığın yöne vurursun. Canı bitene kadar vur.`]:['','Savaşçı Börü',`Nazlı seni doğudaki <b>Savaşçı Börü</b>'ye yolladı. Ok yolu gösteriyor; yanına git ve ${TOUCH?'ona dokun':'<span class="kc">E</span> ile konuş'}.`],
    12:axeCard()||['','Börü · Balta parçaları',`<b>Taş balta</b> = 1 Sopa + 2 Keskin taş + 2 İp + 2 Taş. Sopa, ip ve keskin taşı ${tzKey('tab')} ile yap (sopa için 3 dal ve 2 keskin taş, ip için 4 lif). Börü yakınına malzeme bıraktı. (${c('Sopa',1)} · ${c('Keskin taş',2)} · ${c('İp',2)} · ${c('Taş',2)})`],
    13:['','Demirci Dursun',`Parçalar hazır! Kuzeydeki <b>Demirci Dursun</b>'a git, Börü'nün selamını söyle; baltayı o döver. Ok yolu gösteriyor.`]}[tz]}
 function renderTz(){const C=tzCard();if(!C)return false;const [who,title,html]=C;tutEl.hidden=false;craftEl.classList.add('tutpad');$('tutstep').textContent=title;$('tuttext').innerHTML=html;
@@ -7179,8 +7179,8 @@ function tzAte(n){if(tz&&n==='Böğürtlen'){tzEat++;setTimeout(()=>{try{renderT
 function tzLearned(r){
   if(tz===4&&r==='Kaba meşale'){tz=5;closeCraft();tzPlace('Dal',2,cauldron.x,cauldron.y);tzPlace('Lif',2,cauldron.x,cauldron.y);tzPlace('Yaprak',2,cauldron.x,cauldron.y);   // v2.35: beside Zümrüt's cauldron
    
-    say(`İşte! <b>Kaba meşale</b> tarifini öğrendin; kitabında artık <b style="color:#8fd46b">yeşil</b>. Bundan sonra malzemelerin olduğunda ${TOUCH?'el ikonuna dokunarak':'<b>Tab</b>\'a basarak'} her yerde meşale yapabilirsin. Kazana koyduğun dal, lif ve yapraklar tarifi açmaya gitti; meşale için <b>aynılarını</b> yeniden topla. Yakına biraz bıraktım.`,[{t:'Topluyorum',pri:1,fresh:1,f:bye}],witch);return}
-  if(tz===7&&r==='Keskin taş'){tz=8;closeCraft();say(`Keskin taş da kitabında! Şimdi kalan iki taşla ${TOUCH?'el ikonuna dokun':'<b>Tab</b>\'a bas'} ve bir <b>keskin taş</b> yap.`,[{t:'Tamam',pri:1,fresh:1,f:bye}],witch)}}
+    say(`İşte! <b>Kaba meşale</b> tarifini öğrendin; kitabında artık <b style="color:#8fd46b">yeşil</b>. Bundan sonra malzemelerin olduğunda ${TOUCH?'el ikonuna dokunarak':'<span class="kc">Tab</span>\'a basarak'} her yerde meşale yapabilirsin. Kazana koyduğun dal, lif ve yapraklar tarifi açmaya gitti; meşale için <b>aynılarını</b> yeniden topla. Yakına biraz bıraktım.`,[{t:'Topluyorum',pri:1,fresh:1,f:bye}],witch);return}
+  if(tz===7&&r==='Keskin taş'){tz=8;closeCraft();say(`Keskin taş da kitabında! Şimdi kalan iki taşla ${TOUCH?'el ikonuna dokun':'<span class="kc">Tab</span>\'a bas'} ve bir <b>keskin taş</b> yap.`,[{t:'Tamam',pri:1,fresh:1,f:bye}],witch)}}
 function tzMade(r){
   if(tz===5&&r==='Kaba meşale'){tz=6;closeCraft();   // v2.11: the stones come only after the torch is in the hand and put away again (v49-p3 holdTick)
 
@@ -8789,7 +8789,10 @@ function kTxt(s){const pd=padOn();if((!kOn()&&!pd)||typeof s!=='string'||!s)retu
   out=out.replace(/⁢([^⁡]*)⁡((?:<\/span>|<\/kbd>)?)'(ye|ya|e|a)(?![a-zçğıöşü])/g,(m,l,c)=>l+c+"'"+(window.__plSuf?window.__plSuf(l,'dat'):'e')).replace(/[⁡⁢]/g,'');
   if(pd)out=out.replace(/(<span class="kc" data-k="1">Sol çubuk<\/span>)(\s*<span class="kc" data-k="1">Sol çubuk<\/span>)+/g,'$1')
     .replace(/\s*ya da (<span class="kc">[↑←↓→]<\/span>\s*){4}/g,'').replace(/\s*\(ya da [^)]{0,70}?(tıkla|dokun)\)/g,'')
-    .replace(/ ya da (?:[^.,;:()]{0,70}?)(tıkla|dokun)(?=[\s.,;:!)]|$)/g,'').replace(/(^|[\s>(:])tıkla ya da /g,'$1');
+    .replace(/ tıkla ya da yanında /g,' gidip ')
+    .replace(/ ya da (?:[^.,;:()]{0,70}?)(tıkla|dokun)(?=[\s.,;:!)]|$)/g,'').replace(/(^|[\s>(:])tıkla ya da /g,'$1')
+    .replace(/(?:<span class="kc"(?: data-k="1")?>)?\b[0-9](?:<\/span>)? tuşuna bas/g,()=>{const B=window.__plPad;return B?`${B.bn(4)} / ${B.bn(5)} ile kemerde ona gel`:'LB / RB ile kemerde ona gel'})
+    .replace(/\b(?:1–0|[0-9]) tuş(?:lar)?ıyla/g,()=>{const B=window.__plPad;return B?`${B.bn(4)} / ${B.bn(5)} ile`:'LB / RB ile'});   // v3.64 (KOL-48, KOL-41)
   return out}
 B5.kTxt=kTxt;
 function kEl(el){if(!el||!kOn())return;const h=el.innerHTML;if(h===el.__b5)return;const o=kTxt(h);if(o!==h){el.innerHTML=o}el.__b5=el.innerHTML}
@@ -14414,9 +14417,10 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
   DL.hx=p.x;DL.hy=p.y};
  const count=()=>small(`${DL.mode==='parry'?'Savuşturma':'Sıyrılma'}: ${DL.n}/4`)+(DL.n===0&&!DL.frz?small('Kımıldama: kerevit saldıracak'):'');
  function startLesson(after,mode){if(DL.on)return;DL.on=true;DL.atkT=null;DL.mode=mode==='parry'?'parry':'dodge';DL.n=0;DL.px=null;DL.ph='idle';DL.t=1.6;DL.after=after||null;DL.free=!tz;DL.hadS1=sk('S1');if(DL.mode==='dodge')skills.add('S1');   /* v3.47: free = begun outside the tutorial (it was skipped): it never holds you */st=maxSt();spawn();
-   try{document.body.classList.remove('nododge')}catch(e){}hint(count());sfx('found')}
+   try{document.body.classList.remove('nododge')}catch(e){}hint(count());sfx('found');try{renderTut()}catch(e){}}
  window.__plDodgeLesson=startLesson;
- const strikeDone=(ok,why)=>{const c=DL.crab;if(ok){DL.n++;if(DL.mode!=='parry')floatText('Sıyrıldın!','#9fe07a');sfx('found')}else{floatText(why?why+' Bir daha!':'Bir daha!','#e8c860');sfx('bad')}
+ {const _sn=snapshot;snapshot=function(){const tmp=DL.on&&DL.mode==='dodge'&&!DL.hadS1&&skills.has('S1');if(tmp)skills.delete('S1');try{return _sn.apply(this,arguments)}finally{if(tmp)skills.add('S1')}}}   // v3.64 (KOL-50)
+ const strikeDone=(ok,why)=>{const c=DL.crab;try{setTimeout(renderTut,0)}catch(e){}if(ok){DL.n++;if(DL.mode!=='parry')floatText('Sıyrıldın!','#9fe07a');sfx('found')}else{floatText(why?why+' Bir daha!':'Bir daha!','#e8c860');sfx('bad')}
    if(DL.n>=4){if(DL.mode==='dodge'&&!sk('P0')){DL.mode='parry';DL.n=0;DL.px=null;DL.ph='talk';DL.talkT=NOW();hint('');   // v2.15: straight on to the parry
        setTimeout(()=>say(`Güzel kaçtın! Ama her saldırıdan kaçamazsın evlat. Şimdi <b>savuşturmayı</b> öğren: kerevit atıldığında, sana değmeden hemen önce ${TOUCH?'<b>Savuş</b> düğmesine dokun':'<b>sağ tık</b>a (ya da <b>E</b>\'ye) bas'}. Doğru anda yaparsan darbeyi geri çevirirsin, kerevit sersemler. Beyaz ve sarı <b>!</b> savuşturulur; kırmızı olanı ancak taklayla atlatırsın.`,
          [{t:'Hazırım',pri:1,fresh:1,f:()=>{bye();DL.ph='idle';DL.t=1.4;st=maxSt();hint(count())}}],alp),500);return}
@@ -14473,15 +14477,21 @@ document.addEventListener('pointermove',e=>{const bc=e.target&&e.target.id==='bi
  {const pb=()=>$('parrybtn');setTimeout(()=>{const b=pb();if(b)b.addEventListener('pointerdown',e=>{if(!DL.frz||DL.mode!=='parry')return;e.preventDefault();e.stopImmediatePropagation();release()},true)},0)}
  {const db=$('dodgebtn');if(db)db.addEventListener('pointerdown',e=>{if(!DL.frz||DL.mode==='parry')return;e.preventDefault();e.stopImmediatePropagation();release()},true)}
  window.addEventListener('pointerdown',e=>{if(DL.frz&&TOUCH&&!(e.target&&e.target.closest&&e.target.closest(DL.mode==='parry'?'#parrybtn':'#dodgebtn'))){e.stopImmediatePropagation()}},true);
- function treeAsk(){if(sk('K1')){done2();return}DL.tree=1;$('b-skill').classList.add('pulse');hint(`Yetenek ağacını aç${small(TOUCH?'yanıp sönen ağaç ikonuna dokun':'Y tuşuna bas ya da ağaç ikonuna tıkla')}`)}
+ function treeAsk(){if(sk('K1')){done2();return}DL.tree=1;$('b-skill').classList.add('pulse');const PD=(window.__plPad&&window.__plPad.on()?window.__plPad:null);hint(`Yetenek ağacını aç${small(TOUCH?'yanıp sönen ağaç ikonuna dokun':PD?PD.bn(9)+' → Yetenekler':'Y tuşuna bas ya da ağaç ikonuna tıkla')}`);try{renderTut()}catch(e){}}   // v3.64 (KOL-42): the pad's way
  window.__plDLTreeAsk=treeAsk;
  // v3.47 (Boğaç): a player who skipped the tutorial walks off (~280 px from Börü): the lesson ends quietly; what was not learnt stays unlearnt
 function quitLesson(){if(DL.mode==='dodge'&&!DL.hadS1)skills.delete('S1');DL.on=false;DL.ph='';DL.free=false;hint('');const c=DL.crab;DL.crab=null;if(c){const i=animals.indexOf(c);if(i>=0)animals.splice(i,1)}DL.after=null;try{renderTut()}catch(e){}}
 function finishLesson(){if(DL.mode==='parry')skills.add('P0');DL.on=false;DL.done=true;DL.ph='';hint('');const c=DL.crab;DL.crab=null;if(c){const i=animals.indexOf(c);if(i>=0)animals.splice(i,1);appearFx(c.x,c.y,'#e8e0c8')}sfx('level');if(!sk('K1'))DL.tree=1;
    say((DL.mode==='parry'?'Hah! Dört kez sıyrıldın, dört kez de savuşturdun; kerevit hâlâ ne olduğunu anlamaya çalışıyor.':'Hah! Dört kez sıyrıldın, kerevit hâlâ ne olduğunu anlamaya çalışıyor.')+' <b>İlk ders tamam!</b> Ama kulağına küpe olsun: her kavgaya girmek akıllıca değildir evlat. Bazen en iyi hamle arkanı dönüp <b>tabanları yağlamaktır</b>. Kaçabilmek için de hızlı koşmayı bilmen gerek. Gel, sana yetenek ağacını göstereyim.',
     [{t:'Yetenek ağacını aç',pri:1,fresh:1,f:()=>{bye();treeAsk()}}],alp)}
- function done2(){DL.tree=0;hint('');$('b-skill').classList.remove('pulse');const f=DL.after;DL.after=null;if(f)setTimeout(f,250)}
+ function done2(){DL.tree=0;hint('');try{setTimeout(renderTut,0)}catch(e){}$('b-skill').classList.remove('pulse');const f=DL.after;DL.after=null;if(f)setTimeout(f,250)}
  window.__plDLTree=()=>DL.tree;
+ // v3.64 (KOL-43): while Börü's dodge / parry lesson or his skill tree step runs, the tutorial card says so (it said "Kereviti vur" all along)
+ window.__plDLCard=()=>{const PD=(window.__plPad&&window.__plPad.on()?window.__plPad:null);if(DL.on&&DL.ph==='talk')return null;
+   if(DL.on&&DL.mode==='parry')return['','Börü · Savuşturma',`Kerevit atıldığında, sana değmeden hemen önce <b>savuştur</b>: ${TOUCH?'<b>Savuş</b> düğmesi':PD?'<b>'+PD.bn(6)+'</b>':'<b>sağ tık</b>'}. Doğru anda yaparsan kerevit sersemler. (${DL.n}/4)`];
+   if(DL.on)return['','Börü · Atılma',`Kerevitin başında kırmızı <b>!</b> belirince yana <b>atıl</b>: ${TOUCH?'<b>Atıl</b> düğmesi':PD?'<b>'+PD.bn(1)+'</b>':'<span class="kc">Boşluk</span>'}. (${DL.n}/4)`];
+   if(DL.tree)return['','Börü · Yetenek ağacı',`Yetenek ağacını aç: ${TOUCH?'yanıp sönen ağaç ikonuna dokun':PD?PD.bn(9)+' → Yetenekler':'<span class="kc">Y</span> tuşuna bas ya da ağaç ikonuna tıkla'}. En alttaki yanıp sönen <b>Koşu</b>'ya bak; sonra pencereyi kapat.`];
+   return null};
  {const _gk=guideKey;guideKey=function(){if(DL.on||DL.tree||(DL.done&&DL.after))return null;return _gk.apply(this,arguments)}}   // v2.15: no arrow to Börü while the dodge lesson runs
  {const _rc=renderCraft;renderCraft=function(){const r=_rc.apply(this,arguments);try{if(DL.tree&&craftOpen&&mode==='skills'){if(DL.tree===1){DL.tree=2;skTab='Savaş';skSel['Savaş']='K1';hint('');$('b-skill').classList.remove('pulse');return renderCraft()}
     const b=cbody.querySelector('[data-skn="K1"]');if(b)b.classList.add('pulse');
@@ -14493,7 +14503,7 @@ function finishLesson(){if(DL.mode==='parry')skills.add('P0');DL.on=false;DL.don
     say('Yumruk fena değil! Şimdi daha önemlisi: <b>kaçmayı</b> öğren. Şu yeni kereviti görüyor musun? Bu ısırmaz ama saldırır. Üstünde kırmızı bir <b>!</b> belirince yana <b>atıl</b>. Bu dersim benden, ücretsiz.',[{t:'Hazırım',pri:1,fresh:1,f:()=>{bye();startLesson(()=>_ad.apply(t,a))}}],alp);return}
    return _ad.apply(this,arguments)}}
  {const _ta2=talkAlp;talkAlp=function(){try{if(DL.tree===3)return say('Koşu <b>100 sikke</b>: Nazlı\'ya bir şeyler sat, biriktir, ilk işin onu almak olsun.',[{t:'Anladım',pri:1,fresh:1,f:()=>{bye();done2()}}],alp);   // v2.09
-   if(DL.tree===1||(DL.done&&DL.after&&!DL.tree)){treeAsk();return say('Önce <b>yetenek ağacını</b> aç evlat! Soldaki yanıp sönen <b>ağaç ikonu</b>na '+(TOUCH?'dokun':'tıkla ya da <b>Y</b>\'ye bas')+'.',[{t:'Tamam',pri:1,f:bye}],alp)}
+   if(DL.tree===1||(DL.done&&DL.after&&!DL.tree)){treeAsk();return say('Önce <b>yetenek ağacını</b> aç evlat! Soldaki yanıp sönen <b>ağaç ikonu</b>na '+(TOUCH?'dokun':(window.__plPad&&window.__plPad.on()?window.__plPad:null)?'gerek yok: '+(window.__plPad&&window.__plPad.on()?window.__plPad:null).bn(9)+' → Yetenekler':'tıkla ya da <b>Y</b>\'ye bas')+'.',[{t:'Tamam',pri:1,f:bye}],alp)}
    if(DL.on)return say(DL.mode==='parry'?'Kerevite odaklan evlat! Atıldığında, değmeden hemen önce <b>savuştur</b>.':'Kerevite odaklan evlat! Üstünde kırmızı <b>!</b> görünce yana <b>atıl</b>.',[{t:'Tamam',pri:1,f:bye}],alp);if(!tz&&met&&!sk('S1')&&!DL.on&&!DL.tree&&!window.__plArena&&ftut>=3)
     return say('Hey evlat, sen hâlâ <b>atılmayı</b> bilmiyorsun! Saldırının içinden yana kaçamayan bu adada uzun yaşamaz. Gel, kısa bir ders; benden, ücretsiz.',[{t:'Öğret',pri:1,fresh:1,f:()=>{bye();startLesson(null)}},{t:'Sonra',f:bye}],alp)
    if(!tz&&met&&sk('S1')&&!sk('P0')&&!DL.on&&!DL.tree&&!window.__plArena)   // v2.15: dodging known, parrying not: the parry part alone
@@ -18714,7 +18724,7 @@ window.__plTSCard=low=>{const inInv=craftOpen&&mode==='inv';
   if(low)return['witch','Zümrüt · Meşaleyi söndür',`Gündüz meşaleyi boşuna yakma; geceye sakla. ${PDT()?padTS(PDT()):TOUCH?'Yanıp sönen <b>meşale yuvasına</b> bir daha dokun':'Yanıp sönen <b>meşale yuvasına</b> bir daha tıkla ya da <span class="kc">'+keyTS()+'</span> tuşuna bas'}: meşale söner, yuvasında bekler.`];
   if(!tsHas())return['witch','Zümrüt · Meşaleyi yuvasına koy',inInv?(PDT()?`<b>Kaba meşale</b>yi seç ve ${PDT().dat(0)} bas: alttaki <b>meşale yuvasına</b> (kemerin solunda) girer. Meşale yalnızca o yuvaya takılır.`:TOUCH?'<b>Kaba meşale</b> simgesine dokun, sonra alttaki yanıp sönen <b>meşale yuvasına</b> (kemerin solunda) dokun. Meşale yalnızca o yuvaya takılır.':'<b>Kaba meşale</b> simgesini alttaki yanıp sönen <b>meşale yuvasına</b> (kemerin solunda) sürükle ya da tıkla, sonra yuvaya tıkla. Meşale yalnızca o yuvaya takılır.')
     :`Meşalen <b>envanterinde</b>. Meşalenin kendi yuvası var: alttaki kemerin solundaki <b>meşale yuvası</b>. ${PDT()?`Çantayı aç (${PDT().bn(13)})`:TOUCH?'Soldaki <b>çanta ikonuna</b> dokun':'<span class="kc">I</span> tuşuna bas (ya da soldaki çanta ikonuna tıkla)'} ve meşaleyi oraya koy.`];
-  return['witch','Zümrüt · Meşaleyi yak',`Meşale yuvasında! Şimdi ${PDT()?padTS(PDT()):TOUCH?'yanıp sönen <b>meşale yuvasına</b> dokun':'yanıp sönen <b>meşale yuvasına</b> tıkla ya da <span class="kc">'+keyTS()+'</span> tuşuna bas'}: meşale yanar ve sol eline geçer. Bir daha basınca söner.`]};
+  return['witch','Zümrüt · Meşaleyi yak',`Meşale yuvasında! Şimdi ${PDT()?padTS(PDT()):TOUCH?'yanıp sönen <b>meşale yuvasına</b> dokun':'yanıp sönen <b>meşale yuvasına</b> tıkla ya da <span class="kc">'+keyTS()+'</span> tuşuna bas'}: meşale yanar ve sol eline geçer. Bir daha ${PDT()?'basılı tutunca':'basınca'} söner.`]};
 // the arena: the torch slot from the picker
 window.__plTSArena=n=>{if(!n){leftT=null;TS=null}else{inv[n]=Math.max(inv[n]||0,9);if(order.indexOf(n)<0)order.push(n);TS=n;leftT=n}hotK='';try{renderHot()}catch(e){}renderTS()};
 // save / load
@@ -19614,14 +19624,15 @@ function card(){if(onTitle||paused)return null;const l=$('q2les');if(l&&!l.hidde
 const cardKey=c=>c.id+'|'+(c.textContent||'').slice(0,80);
 function layer(){let best=null,bz=-1e9;for(const el of document.querySelectorAll(LAYERS)){if(!shown(el))continue;
   const z=parseInt(getComputedStyle(el).zIndex,10)||0;if(z>=bz){bz=z;best=el}}
+  if(!best){const cp=$('cheatpad');if(cp&&!cp.hidden&&cp.contains(document.activeElement))return cp}   // v3.64 (KOL-52)
   if(!best){const RR=window.__v56,ru=$('roomui');if(RR&&RR.on&&RR.edit&&RR.pad&&!RR.pad.cur()&&shown(ru))return ru}   // v3.61: Döşe's list and menu
   if(!best){const c=card();if(c&&(cardKey(c)!==P.cardOff||performance.now()>P.cardOffT))best=c}return best}
 // v3.60 (KOL-11): search boxes are left out (A cannot type there; the lists are walked instead)
-const focusables=L=>Array.prototype.filter.call(L.querySelectorAll('button,input,select,a[href],[tabindex]'),b=>!b.disabled&&b.tabIndex!==-1&&b.type!=='search'&&b.getClientRects().length&&getComputedStyle(b).visibility!=='hidden');
+const focusables=L=>Array.prototype.filter.call(L.querySelectorAll('button,input,select,a[href],[tabindex]'),b=>!b.disabled&&b.tabIndex!==-1&&(b.type!=='search'||L.id==='cheatpad')&&b.getClientRects().length&&getComputedStyle(b).visibility!=='hidden');
 // v3.60 (KOL-09): the focused thing is scrolled into sight, also when a strip fixed over the list (the belt in Çanta) would hide it
 function reveal(el){try{el.scrollIntoView({block:'nearest',inline:'nearest'})}catch(e){return}try{const r=el.getBoundingClientRect(),x=r.left+r.width/2,y=r.bottom-3,top=document.elementFromPoint(x,y);
   if(!top||el.contains(top)||top.contains(el))return;let sc=el.parentElement;while(sc&&!(sc.scrollHeight>sc.clientHeight+2&&/(auto|scroll)/.test(getComputedStyle(sc).overflowY)))sc=sc.parentElement;
-  if(sc&&!sc.contains(top))return;if(sc){const tr=top.getBoundingClientRect();sc.scrollTop+=Math.max(8,r.bottom-tr.top+10)}}catch(e){}}
+  if(sc){const tr=top.getBoundingClientRect();sc.scrollTop+=Math.max(8,r.bottom-tr.top+10)}}catch(e){}}
 function moveFocus(L,dx,dy){const list=focusables(L);if(!list.length)return;const cur=document.activeElement;
   if(!cur||!L.contains(cur)||list.indexOf(cur)<0){list[0].focus();return}
   // v3.62 (KOL-23): a drop-down list is changed only with LB / RB (winStep); left / right move on like elsewhere
@@ -19633,17 +19644,22 @@ function moveFocus(L,dx,dy){const list=focusables(L);if(!list.length)return;cons
   for(const b of list){if(b===cur)continue;const q=b.getBoundingClientRect(),ddx=q.left+q.width/2-cx,ddy=q.top+q.height/2-cy,along=ddx*dx+ddy*dy,perp=Math.abs(ddx*dy)+Math.abs(ddy*dx);if(along<=4)continue;
     const same=dx?(q.top<r.bottom-2&&q.bottom>r.top+2):(q.left<r.right-2&&q.right>r.left+2),tier=same?0:perp<=along?1:9;if(tier===9)continue;
     const sc=along+perp*(tier?2:.5);if(tier<bt||(tier===bt&&sc<bs)){bt=tier;bs=sc;best=b}}
-  if(best){best.focus();reveal(best);try{sfx('pick')}catch(e){}}}
+  if(!best){let bd=1e9;for(const b of list){if(b===cur)continue;const q=b.getBoundingClientRect(),ddx=q.left+q.width/2-cx,ddy=q.top+q.height/2-cy,along=ddx*dx+ddy*dy;if(along<=4)continue;const sc=along+(Math.abs(ddx*dy)+Math.abs(ddy*dx))*3;if(sc<bd){bd=sc;best=b}}}   // v3.64 (KOL-47): nothing in that cone: the nearest that way
+  P.ffL=null;if(best){best.focus();reveal(best);try{sfx('pick')}catch(e){}}}
 // v3.25: after a press the window may redraw (food list): the focus goes back to the same button or the nearest one where it was
 let lastC=null;
 // v3.32 (Boğaç): a window opened with the pad starts on the first thing you can use: the first recipe, the first thing you can make or eat, the first item
 function firstFocus(L){try{
   if(L.id==='craft'&&mode==='craft'&&!cbody.querySelector('[data-rec]')&&(potCat!=='Tümü'||potBy!=='name')){potCat='Tümü';potBy='name';renderCraft()}   // v3.62 (KOL-23)
-  const list=focusables(L);if(!list.length)return;let sel=null;if(L.id==='craft')sel=mode==='craft'?'[data-rec]':mode==='hand'?'[data-hand]':mode==='eat'?'[data-eat]':mode==='inv'?'.itile':mode==='sell'?'[data-sell]':mode==='fire'?'[data-fk]:not([disabled])':null;
+  const list=focusables(L);if(!list.length)return;let sel=null;P.ffT=performance.now();P.ffL=L;
+  {const pl=list.find(b=>b.classList.contains('pulse'));if(pl){pl.focus();reveal(pl);return}}   // v3.64 (KOL-44/46): the blinking one first
+  if(L.id==='craft')sel=mode==='craft'?'[data-rec]':mode==='hand'?'[data-hand]':mode==='eat'?'[data-eat]':mode==='inv'?'.itile':mode==='sell'?'[data-sell]':mode==='fire'?'[data-fk]:not([disabled])':null;
   let el=sel?list.find(b=>b.matches(sel)):null;if(L.id==='tut')el=$('tutok');else if(L.id==='q2les')el=L.querySelector('.pri');/* v3.60: a card starts on its Anladım / Devam */if(L.id==='roomui')el=L.querySelector('.rmenu button')||L.querySelector('[data-d]')||L.querySelector('[data-r="edit"]');if(L.id==='pause'){const ps=$('pslots');if(ps&&!ps.hidden&&!ps.querySelector('.slot-ask'))el=ps.querySelector('.slot-btn.empty:not([disabled])')||ps.querySelector('.slot-btn:not([disabled])')}   /* v3.62 (KOL-30): Kaydet / Yükle open on the first empty slot (else the first one), never on Geri */const cb=$('cbody');if(!el&&L.id==='craft'&&cb)el=list.find(b=>cb.contains(b)&&!b.closest('[role="tablist"],.pmode'));
   if(el){el.focus();reveal(el)}}catch(e){}}
 function remember(a){try{const r=a.getBoundingClientRect();lastC={x:r.left+r.width/2,y:r.top+r.height/2,id:a.id||''}}catch(e){lastC=null}}
-function keepFocus(L){if(!lastC)return;const a=document.activeElement,list=focusables(L);if(!list.length||(a&&L.contains(a)&&a!==L&&list.indexOf(a)>=0))return;
+function keepFocus(L){
+  if(P.ffL===L&&performance.now()-P.ffT<700){const a=document.activeElement;if(!(a&&a.classList&&a.classList.contains('pulse'))){const pl=focusables(L).find(b=>b.classList.contains('pulse'));if(pl){pl.focus();reveal(pl);P.ffL=null;return}}}
+  if(!lastC)return;const a=document.activeElement,list=focusables(L);if(!list.length||(a&&L.contains(a)&&a!==L&&list.indexOf(a)>=0))return;
   let best=null,bd=1e9;for(const b of list){if(lastC.id&&b.id===lastC.id){best=b;break}const q=b.getBoundingClientRect(),d=Math.hypot(q.left+q.width/2-lastC.x,q.top+q.height/2-lastC.y);if(d<bd){bd=d;best=b}}
   if(best)try{best.focus({preventScroll:true})}catch(e){}}
 // v3.25: an on-screen keyboard for the name box (A on the box)
@@ -19653,24 +19669,30 @@ function kbBuild(){kbEl=document.createElement('div');kbEl.id='padkb';kbEl.class
     +'<div class="pkr"><button type="button" class="pk w" data-k=" ">Boşluk</button><button type="button" class="pk w" data-k="del">⌫ Sil</button><button type="button" class="pk w ok" data-k="ok">Tamam</button></div><p class="pkh"></p></div>';
   document.body.appendChild(kbEl);kbEl.addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(b)kbKey(b.dataset.k)});
   kbEl.addEventListener('pointerdown',e=>{if(e.target===kbEl)kbHide()})}   // outside the keyboard = back (popup rule)
-function kbShow(){if(!kbEl)kbBuild();kbEl.hidden=false;{const h=kbEl.querySelector('.pkh');if(h)h.textContent=`${bn(0)} yaz · ${bn(2)} sil · ${bn(1)} geri · ${bn(9)} tamam`}kbView();const f=kbEl.querySelector('.pk');if(f)f.focus();lastC=null}
-function kbHide(){if(kbEl)kbEl.hidden=true;const i=$('nmin');if(i)try{i.focus()}catch(e){}lastC=null}
-function kbView(){const i=$('nmin'),v=$('pkv');if(v)v.textContent=(i&&i.value||'')+'▏'}
-function kbKey(k){const i=$('nmin');if(!i)return;let v=i.value||'';
-  if(k==='ok'){kbHide();const ok=$('nmok');if(ok)try{ok.focus()}catch(e){}return}
+let kbIn=null;   // v3.64: the box the on-screen keyboard writes into (the name box, the cheat panel's search)
+const kbBox=()=>kbIn||$('nmin');
+function kbShow(inp){kbIn=inp||null;if(!kbEl)kbBuild();kbEl.hidden=false;{const h=kbEl.querySelector('.pkh');if(h)h.textContent=`${bn(0)} yaz · ${bn(2)} sil · ${bn(1)} geri · ${bn(9)} tamam`}kbView();const f=kbEl.querySelector('.pk');if(f)f.focus();lastC=null}
+function kbHide(){if(kbEl)kbEl.hidden=true;const i=kbBox();if(i)try{i.focus()}catch(e){}lastC=null}
+function kbView(){const i=kbBox(),v=$('pkv');if(v)v.textContent=(i&&i.value||'')+'▏'}
+function kbKey(k){const i=kbBox();if(!i)return;let v=i.value||'';const nm=i.id==='nmin';
+  if(k==='ok'){kbHide();const ok=nm?$('nmok'):(i.closest('#cheatpad')&&document.querySelector('#cres [data-cr]'));if(ok)try{ok.focus()}catch(e){}return}
   if(k==='del')v=v.slice(0,-1);
-  else{if(k===' '&&(!v||v.slice(-1)===' '))return;const up=!v||v.slice(-1)===' ';v=(v+(up?k.toLocaleUpperCase('tr'):k.toLocaleLowerCase('tr'))).slice(0,i.maxLength>0?i.maxLength:14)}
+  else{if(k===' '&&(!v||v.slice(-1)===' '))return;const up=nm&&(!v||v.slice(-1)===' ');v=(v+(up?k.toLocaleUpperCase('tr'):k.toLocaleLowerCase('tr'))).slice(0,i.maxLength>0?i.maxLength:nm?14:40)}
   i.value=v;i.dispatchEvent(new Event('input',{bubbles:true}));kbView()}
 // v3.60 (CEO): with the pad A never quits the game at once: Çıkış asks first (outside the box = Vazgeç)
 let qcEl=null;
-function askQuit(btn){if(!qcEl){qcEl=document.createElement('div');qcEl.id='padqc';qcEl.className='ov';qcEl.hidden=true;qcEl.setAttribute('role','dialog');qcEl.setAttribute('aria-label','Çıkış');
-    qcEl.innerHTML='<div class="tcard small"><h2>Oyundan çıkılsın mı?</h2><div class="tmenu row"><button type="button" class="mb ghost" data-q="n">Vazgeç</button><button type="button" class="mb danger" data-q="y">Çık</button></div></div>';document.body.appendChild(qcEl);
-    qcEl.addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(!b)return;qcEl.hidden=true;if(b.dataset.q==='y'){const x=$('t-exit');if(x)x.click()}});
+function askQuit(){askConfirm('Oyundan çıkılsın mı?','Çık',$('t-exit'))}
+function askConfirm(q,yes,btn){if(!qcEl){qcEl=document.createElement('div');qcEl.id='padqc';qcEl.className='ov';qcEl.hidden=true;qcEl.setAttribute('role','dialog');
+    qcEl.innerHTML='<div class="tcard small"><h2></h2><div class="tmenu row"><button type="button" class="mb ghost" data-q="n">Vazgeç</button><button type="button" class="mb danger" data-q="y"></button></div></div>';document.body.appendChild(qcEl);
+    qcEl.addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(!b)return;qcEl.hidden=true;const t=qcEl._btn;qcEl._btn=null;if(b.dataset.q==='y'&&t)t.click()});
     qcEl.addEventListener('pointerdown',e=>{if(e.target===qcEl)qcEl.hidden=true})}
+  qcEl.querySelector('h2').textContent=q;qcEl.setAttribute('aria-label',q);qcEl.querySelector('[data-q="y"]').textContent=yes;qcEl._btn=btn;
   qcEl.hidden=false;lastC=null;const f=qcEl.querySelector('[data-q="n"]');if(f)try{f.focus()}catch(e){}try{sfx('pick')}catch(e){}}
 function press(L){const a=document.activeElement;
+  if(a&&L.id==='cheatpad'&&a.id==='csrch'){kbShow(a);return}   // v3.64 (KOL-52)
+  if(a&&L.contains(a)&&(a.id==='p-quit')){askConfirm('Ana menüye dönülsün mü?','Ana menüye dön',a);return}   // v3.64 (KOL-51): with the pad it asks first
   if(a&&L.id==='craft'&&mode==='inv'&&a.classList.contains('itile'))setTimeout(()=>{try{const t=cbody.querySelector('.bs.tsinv.want')||cbody.querySelector('.ibelt .bs.pulse');if(t&&craftOpen&&mode==='inv'){t.focus();reveal(t);lastC=null}}catch(e){}},0);   // v3.62 (KOL-27)
-  if(a&&L.contains(a)&&a!==L&&focusables(L).indexOf(a)>=0){if(a.tagName==='INPUT'&&L.id==='names'){kbShow();return}if(a.id==='t-exit'){askQuit(a);return}remember(a);if(a.tagName==='INPUT'&&a.type!=='checkbox'&&a.type!=='radio')return;a.click();return}
+  if(a&&L.contains(a)&&a!==L&&focusables(L).indexOf(a)>=0){if(a.tagName==='INPUT'&&L.id==='names'){kbShow($('nmin'));return}if(a.id==='t-exit'){askQuit(a);return}remember(a);if(a.tagName==='INPUT'&&a.type!=='checkbox'&&a.type!=='radio')return;a.click();return}
   tap('interact')}
 // v3.25 (Boğaç): aim assist for the gamepad only (the mouse has none): the same choice as the phone's Vur button (v132-dokun):
 // a hostile creature within 150 px (melee), else the nearest in front (110 px; bow, staff, gun 240), else where the stick points.
@@ -19721,6 +19743,8 @@ function tick(){P.raf=0;let g=null;try{for(const x of Array.prototype.slice.call
     {const ps=$('pslots'),key=(L.id||'')+'|'+(L.id==='craft'?mode:L.id==='roomui'?(window.__v56.menu?'m':'l'):L.id==='pause'&&ps&&!ps.hidden?'s'+ps.children.length+(ps.querySelector('.slot-ask')?'a':''):'');if(L!==P.lastL||key!==P.lastK){P.lastL=L;P.lastK=key;lastC=null;firstFocus(L)}else keepFocus(L)}   // v3.32: a window opens on its first usable thing
     if(L.id==='padkb'){if(hit(0))press(L);if(hit(1))kbHide();if(hit(2))kbKey('del');if(hit(9))kbKey('ok');return}
     if(L.id==='padqc'){if(hit(0))press(L);if(hit(1))L.hidden=true;return}
+    if(L.id==='cheatpad'){if(hit(0))press(L);if(hit(1)||hit(9))try{document.activeElement.blur()}catch(e){}return}
+    if(L.id==='craft'&&mode==='craft'&&hit(2)){const f=$('pfill');if(f&&!f.disabled){f.click();try{sfx('pick')}catch(e){}}}   // v3.64 (KOL-45): X puts everything in (kazan, örs)
     if(L.id==='craft'&&mode==='map'&&!markOpen){padMap(g,hit,now);return}
     if(L.id==='roomui'){const RR=window.__v56;if(hit(0))press(L);if(hit(2)){RR.pad.start();try{document.activeElement.blur()}catch(e){}}   // X: the cursor without a choice
       if(hit(1)){if(RR.menu)RR.pad.back();else{const b=L.querySelector('[data-r="edit"]');if(b)b.click()}}if(hit(9))tap('Escape');return}
@@ -19805,7 +19829,7 @@ function beltStep(d){try{const L=hotList(),n=hotN(),ar=!!window.__plArena,ts=tsO
   else{const was=P.tsSel;P.tsSel=false;if(i!==hand)setHand(i);if(i!==hand||was)sfx('pick')}markTS()}catch(e){}}
 // v3.60: in a window LB / RB pick the previous / next tab; LT / RT open the previous / next window (Envanter, El yapımı, Tarif kitabı, Görevler, Karakter, Yetenekler, Harita)
 function winStep(L,d){const tl=Array.prototype.find.call(L.querySelectorAll('[role="tablist"],.sktabs'),shown);
-  if(!tl){const se=Array.prototype.find.call(L.querySelectorAll('select'),shown),n=se&&se.options.length;if(n){se.selectedIndex=(se.selectedIndex+d+n)%n;se.dispatchEvent(new Event('change',{bubbles:true}));try{sfx('pick')}catch(e){}}return}const tabs=Array.prototype.filter.call(tl.querySelectorAll('[role="tab"],.sktab'),b=>!b.disabled&&shown(b));if(tabs.length<2)return;
+  if(!tl){const se=Array.prototype.find.call(L.querySelectorAll('select'),shown),n=se&&se.options.length;if(n){se.selectedIndex=(se.selectedIndex+d+n)%n;se.dispatchEvent(new Event('change',{bubbles:true}));P.lastK='';lastC=null;try{sfx('pick')}catch(e){}}return}const tabs=Array.prototype.filter.call(tl.querySelectorAll('[role="tab"],.sktab'),b=>!b.disabled&&shown(b));if(tabs.length<2)return;
   let i=tabs.findIndex(b=>b.getAttribute('aria-selected')==='true'||b.classList.contains('on'));i=(i<0?0:i+d+tabs.length)%tabs.length;lastC=null;tabs[i].click();P.lastK='';try{sfx('pick')}catch(e){}
   setTimeout(()=>{try{const t2=Array.prototype.find.call(L.querySelectorAll('[role="tablist"],.sktabs'),shown),on=t2&&Array.prototype.find.call(t2.querySelectorAll('[role="tab"],.sktab'),b=>b.getAttribute('aria-selected')==='true'||b.classList.contains('on'));if(on){on.focus();P.lastL=L;P.lastK=(L.id||'')+'|'+(L.id==='craft'?mode:'')}}catch(e){}},0)}
 const MENUS=['inv','hand','book','qlog','char','skills','map'];
@@ -19850,11 +19874,11 @@ try{PK=padKind()}catch(e){}try{renderHelp()}catch(e){}
   const room=()=>{const R=window.__v56;return !!(R&&R.on)},roomBtn=()=>document.querySelector('[data-r="edit"]');
   const L=[mk('p-inv','Çanta',()=>openMenu('inv')),mk('p-hand','El yapımı',()=>openMenu('hand')),mk('p-char','Karakter',()=>openMenu('char')),mk('p-skills','Yetenekler',()=>openMenu('skills')),
     mk('p-book','Tarif kitabı',()=>openMenu('book')),mk('p-alm','Almanak',()=>tap('almanac')),mk('p-qlog','Görevler',()=>toggleQuests()),mk('p-map','Harita',()=>openMenu('map')),mk('p-dogs','Robot köpekler',()=>openMenu('dogs')),mk('p-resin','Meşaleye reçine sür',()=>feedTorch()),
-    mk('p-dose','Döşe',()=>{const b=roomBtn();if(b)b.click()}),mk('p-tskip','Eğitimi geç',()=>{const t=$('tutskip');if(t&&!t.hidden)t.click()})];
+    mk('p-dose','Döşe',()=>{const b=roomBtn();if(b)b.click()}),mk('p-cheat','Hile paneli',()=>{const i=$('csrch')||document.querySelector('#cheatpad button');if(i)i.focus()}),mk('p-tskip','Eğitimi geç',()=>{const t=$('tutskip');if(t&&!t.hidden)t.click()})];
   let ref=res;for(const b of L){ref.parentNode.insertBefore(b,ref.nextSibling);ref=b}
   const _op=openPause;openPause=function(){const r=_op.apply(this,arguments);try{const t=$('tutskip'),tu=$('tut'),sk=$('p-tskip'),ds=$('p-dose'),rb=roomBtn();
     sk.hidden=!(t&&!t.hidden&&tu&&!tu.hidden);if(t)sk.textContent=t.textContent;ds.hidden=!(room()&&rb);if(rb)ds.textContent=rb.textContent;
-    for(const id of ['p-inv','p-hand','p-char','p-skills','p-book','p-alm','p-qlog','p-map','p-dogs'])$(id).hidden=room();$('p-resin').hidden=room()||!(window.__plTS&&window.__plTS())}catch(e){}return r}}}
+    for(const id of ['p-inv','p-hand','p-char','p-skills','p-book','p-alm','p-qlog','p-map','p-dogs'])$(id).hidden=room();$('p-resin').hidden=room()||!(window.__plTS&&window.__plTS());{const cp=$('cheatpad');$('p-cheat').hidden=!(cp&&!cp.hidden)}}catch(e){}return r}}}
 // texts that name the torch key / the placing keys speak the pad's words while the pad is in use
 {const _r=renderPlaceUI;renderPlaceUI=function(){const r=_r.apply(this,arguments);try{if(placing&&P.used){const el=$('pui-t');if(el)el.innerHTML=`<b>${esc(placing.n)}</b> ${placing.moving?'taşınıyor':'yerleştiriliyor'} · <b>${bn(0)}</b> koy · <b>${bn(3)}</b> döndür · yön tuşları kaydır · <b>${bn(1)}</b> vazgeç`}}catch(e){}return r}}
 addEventListener('pl-device',()=>{try{puiK='';renderPlaceUI()}catch(e){}});
@@ -20641,6 +20665,12 @@ window.__plFoodFix=function(n,P,cooked){if(!edible(n))return;const t=tierOf(n),c
 // tiers first (from the old prices), then the prices grow with them
 {const names=Object.keys(PRICE_).filter(edible);for(const n of names)tierOf(n);
  for(const n of names){const t=TIER.get(n)||0;if(t>0&&PRICE_[n]>0)PRICE_[n]=Math.max(1,Math.round(PRICE_[n]*(1+.15*t)))}
+ // v3.64 (belge ACT 1 › Fiyatlar biyom biyom artar): a raw thing of a land stays inside its land's band after the tiers too (Orman ≤ 12, Kül ≤ 52,
+ // Mor ≤ 90); the recipes that use it follow by change × amount × 1,3 (v51 rule)
+ {const CAP={'Yabani bal':12,'Ateş biberi':52,'Işık mantarı':90},delta={};for(const k in CAP)if(PRICE_[k]>CAP[k]){delta[k]=CAP[k]-PRICE_[k];PRICE_[k]=CAP[k]}
+  const byR={};for(const x of DB.R)byR[x.r]=x;const memo={},busy={};
+  const rd=r=>{if(r in memo)return memo[r];if(busy[r]||!byR[r])return 0;busy[r]=1;let t=0;for(const [n,q] of byR[r].i)t+=q*(byR[n]?rd(n):(delta[n]||0));busy[r]=0;return memo[r]=Math.round(t*1.3)};
+  for(const x of DB.R){const d=rd(x.r);if(d&&PRICE_[x.r]!=null)PRICE_[x.r]=Math.max(1,PRICE_[x.r]+d)}}
  try{for(const k in FOODC)delete FOODC[k]}catch(e){}}
 window.__plFoodTier=n=>tierOf(n);
 }).toString()+')()')}catch(e){try{window.__hamErr('v335food: '+(e&&e.message||e))}catch(_){}}})();
