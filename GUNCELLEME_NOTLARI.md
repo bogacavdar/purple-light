@@ -8,6 +8,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.53 · 7 Kasım 2026
+
+### Düzeltmeler
+
+- Avcı Doğan'ın başında, onunla tanışmadan önce de "!" çıkar; Bataklık'a gelince onu bulmak kolay.
+- Gün başındaki "YENİ BİR GÜN" yazısıyla aynı anda gelen küçük bildirimler artık üstüne binmez; yazı kapanınca birer birer gelir.
+- Kemal köprü işini vermeden kırık köprü artık "onar" demez, yalnızca "Kırık köprü" yazar.
+
+### Arayüz
+
+- Köprüyü onarırken verilmemiş seviye puanın varsa pencerede "N seviye puanın bekliyor." yazar.
+- Karakter penceresinde bir özellik bu seviyenin sınırına gelince + yerine "Sv N'de açılır" yazar.
+
 ## Versiyon 3.52 · 7 Kasım 2026
 
 ### Denge
@@ -392,18 +405,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Temel sistemler'e "Gizli şeyler" bölümü; "Mor ışıkta o" bölümü ve Başarımlar güncellendi.
-
----
-
-## Versiyon 3.33 · 5 Kasım 2026
-
-### Oynanış
-- **Nazlı'da üç toplu satış düğmesi.** Üçü de aletleri, silahları, zırhları ve alet kemerine konabilen eşyaları satmaz.
-  - **Aletler, zırhlar ve eşyalar hariç hepsini sat:** satılabilen her şeyi satar.
-  - **Kazandaki açık tariflere yeteni bırak:** kazanda şu an öğrenebileceğin tariflerin istediği kadarını ayırır, fazlasını satar (ör. bu tarifler 19 Sap istiyorsa 19 Sap sende kalır).
-  - **Bütün tariflere yeteni bırak:** henüz öğrenmediğin bütün tarifler için aynısını yapar (ör. bu tarifler 300 Taş istiyor, sende 305 varsa yalnızca 5 Taş satılır).
-
-### Tasarım belgesi
-- Ekonomi bölümüne üç toplu satış düğmesinin kuralı yazıldı.
 
 ---
