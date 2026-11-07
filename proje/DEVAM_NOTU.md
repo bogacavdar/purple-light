@@ -1,3 +1,12 @@
+## v3.66 (8 Kasım 2026) · her malzeme bir tarifte: 128 varyant tarif, ok uçları oklarda, boyalar ev eşyalarında
+
+- Boğaç kararları (8 Kasım): fiyatsız eşya ve kullanılmayan malzeme kritik, elde edilemeyen girdi büyük hata (CLAUDE.md + belge Giriş › Kural); 149 kullanılmayan malzemenin her birine ayrı tarif (grup değil); ok uçları oklara; boyalar ev eşyalarına. Denetim: /home/claude/FIYAT_TARIF_DENETIM_v3.65.md (fiyatsız 0, elde edilemeyen girdi 0, kullanılmayan 149 → 146 tarifte; Sülük yemi, Duman fişeği, Yıldız tozu yemi sınırda: av aracı/yem).
+- Bloklar (dosya sonu, sıra önemli): `v366ok` (Yazılımcı B: 7 ok tarifine kendi ucu, adetler Basit 11/Bakır 18/Mor kristal 11, ok ve etkili ok fiyatları PRICE_/DB.p; `window.__plOkVar` yalnız bilgi), `v366boya` (Yazılımcı C: 11 boya 11 tarifte, fiyat max(priceOf, eski), Usta işçiliği fiyattan), `v366tarif` (Yazılımcı A: varyant tarif düzeneği; kimlik "Çıktı (Malzeme ile)", gain/icon/PRICE_/qc/USES sarmalı; JSON `/*TARIF_EK*/…/*SON*/` arasında gömülü, kaynak /home/claude/TARIF_EK_v3.66.json; Yönetici: __plOkVar atlama koşulu kaldırıldı, Bazalt varyantı q=10).
+- Kayıt: yeni alan yok; öğrenilen varyantlar `found` içinde kimliğiyle. MAPV değişmedi.
+- Doğrulama: chk.js 0 hata; headless: JSON'daki 146 malzemenin hepsi DB.R girdisinde, fiyatsız eşya 0, konsolda v366 uyarısı yok; A: varyant yapılınca asıl çıktı geliyor, fiyat/resim aynı, kayıtta kalıyor; B: uçsuz ok yapılmıyor; C: Usta siparişiyle boya harcanıyor.
+- Açık (Boğaç'a, denge): etkili okların fiyatı normal okun ~10 katı (eski fark yayması); Basit ok artık Kemik ok ucu → Çekiç taşına (Dursun'un örsü) bağlı; Ahşap karyola 475'te tutuldu (priceOf 383).
+- Geri alma: üç bloğu silmek; belgede 80_tarifler (ok, ev eşyası satırları, Varyant tarifler bölümü), 85_aletler ok tablosu, 90_esyalar fiyatları, 00_giris kural satırı birlikte geri alınır.
+
 ## v3.65 (8 Kasım 2026) · üs kurma 1. aşama (İnşa kipi, ızgara, çit/duvar/kapı, kırma/onarım, avlu, Direk feneri) ve oyun süresi
 
 - **Yeni blok `v365build`** (dosya sonuna yakın; kaynak taslağı `/tmp/kol_dev/buildblock.js`):
@@ -306,10 +315,3 @@
 - **Geri almak için:** `refreshVis` (v3.46 hali), `v181` `DL.free`/`quitLesson` ve üç `!DL.free` koşulu, `BANIM[1]` domuz koşulu, `Sincap xp`, `spawnIn` sürü satırı, yan görev `c`/`x` değerleri (v3.46 hali), `mapSQ` `K`, `talkUsta` `lock`. Kayıt alanı ve MAPV değişmedi.
 - Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
 
-## v3.46 (6 Kasım 2026) · kayıt silme bildirimi ana menüde en üstte, 5 sn (ÇYR-15)
-
-- v3.45'teki `toastLong` silindi; yerine ana kodda `saveNote(msg)` (`toast`'un altında): kendi `#savenote` kutusu (`position:fixed`, `z-index:2147483000`, alt ortada, uyarı çerçeveli, 15–19 px kalın yazı, `pointer-events:none`). İki bildirim gelirse alt alta. 5 sn sayımı sayfa tam yüklenip (`readyState==='complete'`) ana menü (`#title`) görününce başlar, sonra 0,4 sn'de söner (v3.45'te toast 1,4 sn'lik `rise` animasyonuyla ~1,5 sn okunuyor, `#tcard` altında kalıyordu).
-- Metinler (belge Sistemler › Kayıt): MAPV silmesi (~11381) "Ada değiştiği için eski kayıt silindi.", yan görev XP silmesi (`v345`) "Kaydın eski bir hatadan etkilendiği için silindi."; ikisi de gecikmesiz çağrılır.
-- Deneme (Playwright, sayfa saatine göre): bitmiş yan görevli eski kayıtla açılış: sayım başladıktan 1 sn ve 4,5 sn sonra kutu görünür, opaklık 1, başlığın ve menü kartlarının üstünde (ekran görüntüsü); 6 sn'de kapanmış. MAPV 5 kayıtla aynı (1 sn ve 4,5 sn görünür). Kayıtlar doğru silindi.
-- Geri almak için: `saveNote` ve iki çağrısı (v3.45 hali `toastLong`). Kayıt alanı ve MAPV değişmedi.
-- Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.

@@ -8,6 +8,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.66 · 8 Kasım 2026
+
+### Oynanış
+- **Artık her malzemenin bir işi var.** Önceden yalnızca satılabilen 146 malzeme (ağaç kömürleri, kabuklar, saplar, kalaslar, deri ve postlar, tüyler, tuğlalar, camlar, Demir halka, Tunç levha, meyve ağacı odunları ve diğerleri) artık bir tarifte kullanılıyor.
+- **İkinci tarifler:** birçok eşyanın artık ikinci bir yapılış yolu var. Tarif kitabında "Kürk yelek (Sincap derisi ile)" gibi ayrı bir satır olarak görünür, kazanda ayrıca öğrenilir. Yapılınca aynı eşya çıkar; fiyatı ve görevlerdeki sayımı aynıdır. Örnekler: her hayvanın derisi deri parçası yerine, tuğlalar fırın ve kerpiç evde, camlar Kil lamba ve Golem fenerinde, Bazalt ok ucu Kara çelik okta.
+- **Oklar ok ucu istiyor:** her ok kendi ucuyla yapılır: Basit ok ← Kemik ok ucu, Bakır ok ← Diken, Tunç ok ← Lav camı, Demir ok ← Akrep, Çelik ok ← Çakmaktaşı, Mor kristal ok ← Kuvars, Kara çelik ok ← Obsidyen ya da Bazalt ok ucu. Bir yapımda çıkan ok sayısı arttı (Basit 11, Bakır 18, Mor kristal 11, diğerleri 10), ok başına fiyat en çok %25 arttı.
+- **Boyalar ev eşyalarında:** Kilim, Halı, Duvar halısı, Perde, Dolap, Sandık, Masa, Ahşap karyola, Asma fener ve Mor yosun yastığı birer boya ister, Boyalı çömlek Yıldız mürekkebi ister. Bu eşyaların değeri ve Usta Sinan'ın işçiliği buna göre arttı (ör. Kilim 437 → 615).
+
+### Tasarım belgesi
+- Yeni kural: her eşyanın fiyatı olur, her malzeme bir tarifte kullanılır, hiçbir tarif elde edilemeyen bir malzeme istemez.
+- Tarifler › Varyant tarifler bölümü eklendi; ok, etkili ok ve ev eşyası fiyatları yenilendi; Armut, Elma, Erik odununun eksik fiyatı (3) yazıldı.
+- Üs kurma bölümü oyunla eşitlendi: kesin parça fiyatları, İnşa N / harita T, Direk feneri avluyu kapatmaz, kayaya kurulmaz, Onar/Kaldır, fener 6 gecelik yakıt.
+
+---
+
 ## Versiyon 3.65 · 8 Kasım 2026
 
 ### Oynanış
@@ -370,9 +385,3 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 - Orman bölümü oyunla karşılaştırıldı: Deri parçası oranları, canlıların doğma koşulları, sürü boyunun seviyeyle büyümesi, Sarkıt ve yeni yan görev ödülleri eklendi.
 
 ---
-
-## Versiyon 3.46 · 6 Kasım 2026
-
-### Kayıtlar
-
-- Eski bir kayıt silindiğinde çıkan bilgi artık ana menüde her şeyin üstünde, okunur büyüklükte ve 5 saniye görünür: "Kaydın eski bir hatadan etkilendiği için silindi." ya da "Ada değiştiği için eski kayıt silindi."
