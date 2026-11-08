@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.69** ile birebir (8 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.70** ile birebir (8 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -623,26 +623,50 @@ Oyunun hiçbir yerinde anlatılmaz; oyuncu kendisi bulur.
 
 #### Hava
 
-Oranlar mevsime göre değişir (bkz. Mevsimler; yıl ortalaması kabaca açık %43, bulutlu %22, yağmur %20, fırtına %7, sis %9) (Bataklık ve Kayalık Dağ'da sis daha sık, yaklaşık %20; öbürleri o kadar azalır). Bataklık ve Kayalık Dağ'ın üstünde her zaman ince bir sis süzülür, sisli havada her yerde yoğun sis olur; ateşler, meşale ve fener sisin içinde ışık açar. Grafik kalitesi en düşük düzeydeyse (otomatik kalite) Orta Diyar'ın sürekli ince sisi çizilmez, sisli hava yine çizilir. Yağmur/fırtına: meşale ve kamp ateşi çabuk biter, **tarladaki tohumlar kendiliğinden sulanır**, balık %30 daha çabuk vurur; fırtınada şimşek çakar. Kül Diyarı'nda yağmur yerine **kül fırtınası** olur. Siste saldırganlar seni %40 daha geç fark eder.
+Havanın sırası, sıklığı ve süresi mevsime göre değişir (bkz. Hava, sıcaklık ve kar) (Bataklık ve Kayalık Dağ'da sis daha sık, yaklaşık %20; öbürleri o kadar azalır). Bataklık ve Kayalık Dağ'ın üstünde her zaman ince bir sis süzülür, sisli havada her yerde yoğun sis olur; ateşler, meşale ve fener sisin içinde ışık açar. Grafik kalitesi en düşük düzeydeyse (otomatik kalite) Orta Diyar'ın sürekli ince sisi çizilmez, sisli hava yine çizilir. Yağmur/fırtına: meşale ve kamp ateşi çabuk biter, **tarladaki tohumlar kendiliğinden sulanır**, balık %30 daha çabuk vurur; fırtınada şimşek çakar. Kül Diyarı'nda yağmur yerine **kül fırtınası** olur. Siste saldırganlar seni %40 daha geç fark eder.
 
 #### Mevsimler (v3.69, 8 Kasım 2026, Boğaç)
 
-Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. gün **İlkbahar**, 8–14 **Yaz**, 15–21 **Sonbahar**, 22–28 **Kış**; 29. gün yeniden İlkbahar. Mevsimler **iki adada da** aynıdır (gün iki adada ortak). Saatin yanında mevsim yazar ("9. gün · 06:00 · Yaz"). Yeni mevsim sabah 06:00'da büyük bir yazıyla duyurulur ("Yaz geldi" ve bir alt satır); oyunun ilk sabahı duyurulmaz. Mağarada, evin içinde ve arenada mevsim görüntüsü yoktur; kurallar sürer.
+Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. gün **İlkbahar**, 8–14 **Yaz**, 15–21 **Sonbahar**, 22–28 **Kış**; 29. gün yeniden İlkbahar. Mevsimler **iki adada da** aynıdır (gün iki adada ortak). Saat kutusunun ikinci satırında mevsim ve sıcaklık yazar ("Yaz · 18°"). Yeni mevsim sabah 06:00'da büyük bir yazıyla duyurulur ("Yaz geldi" ve bir alt satır); oyunun ilk sabahı duyurulmaz. Mağarada, evin içinde ve arenada mevsim görüntüsü yoktur; kurallar sürer.
 
 | | İlkbahar | Yaz | Sonbahar | Kış |
 |---|---|---|---|---|
-| Görünüş | uçuşan beyaz ve pembe çiçek yaprakları | ılık, aydınlık bir renk | sarı, turuncu, kızıl düşen yapraklar; sıcak bir renk | durmadan hafif kar yağar; ekran soğuk, beyazımsı bir renge bürünür |
+| Görünüş | uçuşan beyaz ve pembe çiçek yaprakları | ılık, aydınlık bir renk | sarı, turuncu, kızıl düşen yapraklar; sıcak bir renk | soğuk, beyazımsı bir renk; kar yağınca yer yavaş yavaş beyazlar (aşağıda "Hava, sıcaklık ve kar") |
 | Gece (20:00–06:00) | 2,5 dk | **1,8 dk** | 2,5 dk | **3,5 dk** |
-| Hava (açık / bulut / yağış / fırtına / sis) | 40 / 22 / 24 / 6 / 8 | 60 / 18 / 10 / 6 / 6 | 32 / 22 / 24 / 12 / 10 | 40 / 25 / 20 / 5 / 10 |
 | Toplarken | otlar (Otlar sınıfı) %50 ihtimalle +1 | meyveler %50 ihtimalle +1 | mantarlar %50 ihtimalle +1; ağaçtan düşen meyve (silkeleme, kesme, Sapan) **2 kat** | **meyve yok**: çalılardan, ağaçlardan (silkeleme, kesme, Sapan) meyve gelmez; "Kış: dallar çıplak, meyve baharda" yazar |
 | Mevsim balığı (vurma ihtimali 2 kat) | Alabalık | Sazan | Turna balığı | Mersin balığı |
 | Tokluk | – | – | – | **%25 daha hızlı** düşer |
 
 - **Gece uzunluğu:** saatler değişmez (gece yine 20:00–06:00, uyku 20:00–05:00); yalnızca gecenin gerçek süresi değişir. Gündüz her mevsim 8 dakikadır.
-- **Kışın yağış kardır:** yağmur ve fırtına kışın **Kar** ve **Tipi** adıyla görünür ve çizgi yerine kar taneleri yağar; etkileri (meşale, kamp ateşi, balık) yağmur ve fırtınayla aynıdır. Kül Diyarı'nda yine kül fırtınası olur.
+- **Hava mevsimden gelir:** yağışın sıklığı, süresi, türü (yağmur ya da kar) ve yerdeki kar aşağıdaki "Hava, sıcaklık ve kar" kurallarıyla belirlenir.
 - **Kışın meyve:** Pazarcı Nazlı'nın satın alma listesi (daha önce eline geçmiş doğal malzemeler) kışın da açıktır; meyve isteyen bir görev kışın oradan tamamlanabilir. Robot köpeklerin topladıklarına mevsim dokunmaz.
 - **Göller donmaz:** kışın da su olduğu gibidir, balık her mevsim tutulur.
 - **Mor gece:** her yılın son gecesi (28., 56., 84.… günün gecesi) **yılın en uzun gecesidir: 4 dakika** sürer. Gece başlarken (20:00) "Mor gece · Yılın en uzun gecesi" yazar, gökyüzü bütün gece hafifçe mora çalar ve **mor ışık saldırısı kesin gelir** (bkz. Mor ışık saldırıları ve Yıldızsızlar): 20:00'da evde, mağarada ya da güvenli bir yerdeysen saldırı ertelenmez, **dışarı çıktığın an** (gece bitene kadar) gelir. Uyuyarak geçirirsen gelmez. O gece normal sırasına denk gelen saldırı ayrıca gelmez. Mor gece anılara dokunmaz (anı tetikleri her gece nasılsa öyledir).
+
+#### Hava, sıcaklık ve kar (v3.70, 8 Kasım 2026, Boğaç: "mevsim mantığı ile hava durumu mantığı arasında bir mantık olması lazım")
+
+- **Sıcaklık:** adanın o anki sıcaklığı saat kutusunun ikinci satırında mevsimin yanında yazar ("Kış · −3°"); kar yağarken ilk satırda hava adı "Kar" ya da "Tipi"dir. Dört parçadan oluşur:
+  - **Yılın eğrisi:** 11,5 + 15 × cos(2π × (yılın günü − 11) / 28); en sıcak yaz ortası (11. gün, ~26,5°), en soğuk kış ortası (25. gün, ~−3,5°), ilkbahar ve sonbahar ortası ~11,5°. Mevsimler arasında sıcaklık sıçramaz, gün gün değişir: sonbaharın son günleri (~2°) ve ilkbaharın ilk günleri de soğuktur.
+  - **Günün farkı:** her gün kendi farkını taşır (−3° ile +3° arası; aynı gün hep aynı).
+  - **Gün içi:** en sıcak 14:00 (+4°), en soğuk 05:00 (−4°), arası yumuşak geçiş.
+  - **Yer:** Kayalık Dağ −6°, Mor Kristal Vadisi −2°, Bataklık +1°, Kül Diyarı +18°; ikinci adada Hurda Çölü +6°, Ejder Volkanı +18°, Gök Rıhtımı −4°; öbür biyomlar 0. Sıcaklık oyuncunun bulunduğu yere göre hesaplanır.
+- **Yağışın türü:** yağış başladığında sıcaklık **0,5°'nin altındaysa kar** (fırtınada **tipi**), üstündeyse yağmur (fırtına) yağar. Yağış sürerken hava ısınırsa kar yağmura, soğursa yağmur kara döner. Kar ve tipinin etkileri (meşale, kamp ateşi, balık) yağmur ve fırtınayla aynıdır; tipide şimşek çakmaz. Kül Diyarı'nda yağış yine kül fırtınasıdır.
+- **Hava zinciri:** hava rastgele zıplamaz, sırayla değişir: **açık → bulut → yağış → (fırtına) → bulut → açık**; sis sabahları (05:00–10:00) daha sık çıkar ve açık ya da bulutluya döner. Mevsim, bulutun yağışa dönme ihtimalini, fırtınanın payını ve her havanın ne kadar süreceğini belirler:
+
+| | İlkbahar | Yaz | Sonbahar | Kış |
+|---|---|---|---|---|
+| Bulut yağışa döner | %30 | %18 | %35 | %45 |
+| Yağışın fırtına payı | %15 | %40 (kısa yaz sağanakları) | %30 | %20 |
+| Açık hava sürer (sn) | 180–360 | 300–520 | 160–320 | 140–280 |
+| Yağış sürer (sn) | 100–200 | 50–100 | 120–240 | 150–300 |
+| Fırtına / tipi sürer (sn) | 60–120 | 50–90 | 90–160 | 90–180 |
+
+  Bulut ve sis her mevsim 90–180 sn sürer. Bataklık ve Kayalık Dağ'da sis iki kat sık. Oyunun ilk günü (Kemal'le tanışana kadar) hava açıktır.
+- **Kar örtüsü:** kar yağdıkça yer **yavaş yavaş beyazlar**: örtü kar yağarken saniyede %0,3 (tipide %0,6) artar; boş bir yer ~5,5 dakikalık karda tamamen beyazlar. Önce yer yer beyaz lekeler belirir, sonra birleşir. Sıcaklık 0,5°'nin altındayken örtü erimez.
+  - **Erime:** sıcaklık 0,5°'nin üstündeyken örtü saniyede (sıcaklık × %0,025) azalır; **yağmur yağarken 4 kat**, gündüz açık havada güneşte 1,5 kat hızlı. Örneğin ilkbaharda 10°'lik yağmurda kar ~1,5 dakikada, 5°'lik açık gecede ~13 dakikada erir. Erirken beyaz lekeler yavaş yavaş küçülür.
+  - Kar yalnızca karaya (çimen, orman zemini, kum) yağar; su, Kül Diyarı ve Ejder Volkanı karlanmaz. Göller donmaz. Yollar ve döşemeler de karla örtülür.
+  - Örtü bütün ada için tek bir değerdir ve kayda yazılır; ikinci adaya geçince aynı örtü sürer.
+- **Grafik:** kar yağarken çizgi yerine kar taneleri yağar (tipide yoğun ve yana savrulur). Kar örtüsü 16 × 16 karelik parçalar halinde önceden çizilir ve yalnızca örtü %1 değişince yenilenir (karede en çok 2 parça, bellekte en çok 24 parça); örtü yokken hiç çizim yapılmaz.
 
 #### Uyku
 

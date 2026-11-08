@@ -8,6 +8,32 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.70 · 8 Kasım 2026
+
+### Oynanış
+- **Hava artık mevsimden ve sıcaklıktan gelir.** Adanın bir sıcaklığı var: yıl boyunca yumuşak bir eğri (yaz ortası ~26°, kış ortası ~−3°), her günün kendi farkı, gün içinde 14:00'te en sıcak, 05:00'te en soğuk; Kayalık Dağ daha soğuk, Kül Diyarı ve Ejder Volkanı çok sıcak.
+- **Yağmur mu kar mı, sıcaklık belirler:** 0°'nin altında kar (fırtınada tipi), üstünde yağmur. Sonbaharın son günleri ve ilkbaharın ilk günleri de soğuk gecelerde kar görebilir; kışın ılık bir günde yağmur da yağabilir. Tipide şimşek çakmaz.
+- **Hava sırayla değişir:** açık → bulut → yağış → (fırtına) → bulut → açık; artık güneşli bir havadan birden fırtınaya geçilmez. Sis en çok sabahları çıkar.
+- **Mevsime göre yağış:** kışın bulut yağışa en sık döner (%45) ve yağış uzun sürer (2,5–5 dk); yazın seyrek (%18) ve kısa (1–1,5 dk), ama yaz sağanaklarının çoğu kısa fırtınadır; sonbahar yağmurlu ve fırtınalı, ilkbahar arası.
+- **Kar yerde birikir:** kar yağdıkça zemin önce yer yer, sonra her yer **yavaş yavaş beyazlar** (~5,5 dakikalık karda tamamen; tipide iki kat hızlı). Hava 0°'nin üstüne çıkınca **erir**; yağmur yağarsa 4 kat, güneşli gündüz 1,5 kat hızlı. Su, Kül Diyarı ve Ejder Volkanı karlanmaz; göller donmaz.
+
+### Görsel
+- Zeminde kar örtüsü: küçük beyaz öbekler belirip büyür ve birleşir, eriyince yine öbek öbek çekilir.
+
+### Arayüz
+- Saat kutusunun ikinci satırında mevsim ve sıcaklık ("Kış · −6°"); kar yağarken hava adı "Kar" ya da "Tipi". Kutu, satır sığsın diye kendi genişliğini ayarlar.
+
+### Düzeltmeler
+- Yağmur başladığında çıkan yazıda artık oyunda olmayan tarlalar anılmıyor.
+
+### Kayıtlar
+- Yerdeki kar örtüsü kayda yazılır; eski kayıtlar karsız açılır.
+
+### Tasarım belgesi
+- Sistemler › Gün, gece ve mor ışık: yeni **Hava, sıcaklık ve kar** bölümü (sıcaklık formülü, yağışın türü, hava zinciri ve mevsim tablosu, kar örtüsünün birikmesi ve erimesi, çizim). Mevsimler tablosundan eski hava oranı satırı kalktı; Hava maddesi buraya yönlendirir.
+
+---
+
 ## Versiyon 3.69 · 8 Kasım 2026
 
 ### Oynanış
@@ -377,18 +403,3 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 - Seviye atlayınca kısa bir "+N seviye puanı" yazısı çıkar; birden çok seviye atlarsan tek yazıda toplanır.
 - Gün başı yazısı ile seviye yazısı artık dünyada da üst üste binmez, sırayla gelir.
 - Telefonda ev içinde Vur düğmesi gizlenir, sol menü kapalı açılır.
-
----
-
-## Versiyon 3.50 · 6 Kasım 2026
-
-### Arayüz
-
-- Harita, Döşe ya da bir pencere yüzünden bekleyen duyurular artık sırayla gelir: önce gün, sonra seviye, sonra keşifler ve başarımlar; hiçbiri üst üste binmez.
-- Ev içinde oda, alttaki alet çubuğunun ve üstteki uyarının arasına sığar; kapı ve duvar şeridi örtülmez.
-- Usta Sinan'ın ev listesinde, tarifini öğrendiğin evlerin altında "Kendi malzemenle: işçilik N sikke" yazar.
-- Hile modu açıkken Arena düğmesinde "Kilitli" yazısı görünmez.
-
-### Düzeltmeler
-
-- Hile modu artık cihazda kalmıyor: sayfayı yenileyince kapanır; oyunun kendi açıp kapanmalarında (yeni oyun, ada değişimi, arena) açık kalır.

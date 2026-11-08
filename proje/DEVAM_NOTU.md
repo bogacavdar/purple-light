@@ -1,3 +1,16 @@
+## v3.70 (8 Kasım 2026) · hava–mevsim mantığı: sıcaklık, hava zinciri, yağmur/kar, yerde kar örtüsü
+
+**Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
+- Yeni `<script id="v370hava">`: `temp()` = 11,5 + 15·cos(2π(yılın günü−11)/28) + gün farkı (gün numarasından karma, −3…+3) + saat (05:00 −4°, 14:00 +4°, kosinüs) + biyom (`LAND`, ISLE'ye göre). `snowing()` = `raining()` && !`ashStorm()` && T ≤ 0,5 (karken 1°'ye kadar kar kalır). `nextWeather` yeniden yazıldı: zincir (`açık/bulut/yağmur/fırtına/sis`), mevsime göre `P` (bulut→yağış), `ST` (fırtına payı), `DUR` (süreler); sis sabah ×3, zone 1'de ×2. `tickWeather` sarılır: kar örtüsü `C` (kar +0,003/sn, tipi +0,006; T > 0,5'te −T·0,00025/sn, yağmurda ×4, gündüz açıkta ×1,5), tipide `thunderAt ≥ 3`. `drawGround` sarılır: 16×16 karelik parça tuvalleri (`SC`, en çok 24, LRU), örtü %1 değişince yeniden boyanır (karede en çok 2), GPU yolu için `canvas.__v++`; değerler `NF` (Float32, kare başına `vnoise/5`·0,8 + `vnH`·0,2) ve `NS` (Uint8, yarım kare başına + titreşim) önbellekte. Kayıt alanı `hava:{kar}`. `window.__plTemp/__plSnowing/__plTempStr/__plSnowCover`.
+- `v369mevsim` içinde: kendi `nextWeather`'ı silindi; `renderClock` ikinci satır `#clockms` (mevsim · sıcaklık; `#clock` `flex-wrap`, `width:max-content`), Kar/Tipi adı `__plSnowing`'e göre; `drawWeather` yağmur→kar değişimi ve kar tanesi çizimi mevsime değil `__plSnowing`'e bağlı.
+- Sürüm etiketi `Versiyon 3.70`.
+
+**Geri alma:** `v370hava` bloğunu sil ve `v369mevsim`'i v3.69 commit'indeki haline döndür (ya da `git checkout v3.69'un commit'i -- proje/Hammadde_prototip.html index.html`). Kayıttaki `hava` alanı eski sürümde okunmaz.
+
+**Ölçüm:** `tests/olcum.js` (CPU ×4, ekran kartı açık, ilkbahar 1. gün, kar yok) iki sıralı tur: eski (v3.69) 153,5/154,7 · 170,6/161,0; yeni 158,7/148,3 · 139,6/136,7 ms (kumsal/yürüme) — gürültü içinde. Sayfa içi: `drawGround` 60×36 kare, örtüsüz 0,13–0,22 ms; %36 örtü 0,40 ms; tam örtü 0,44 ms (parça önbelleğinden önce %36 örtüde 0,72 ms idi). Telefonda ölçülmedi ("deneme").
+
+**Kontrol:** chk.js 0 hata (176 script), `?.` 1 / `??` 7. Duman denemesi (sayfa hatası yok): sıcaklık eğrisi (1. gün 14:00 4,5° / 05:00 −3,5°; 11. gün 33,3°; 25. gün −3,3° / −11,3°), 25. gün yağmur → kar, saat "Kar" + "Kış · −7°", 100 sn karda örtü 0,30, 9,2°'lik yağmurda 30 sn'de 1,00 → 0,72; zincir 3000 adım: yazın yağış/fırtına 165/82 kez, ort. 76/68 sn; kışın 655/184 kez, ort. 227/133 sn. Ekran görüntüleri: %30 örtüde öbekler, tam örtüde beyaz zemin; saat masaüstünde ve telefonda (844×390) sığıyor.
+
 ## v3.69 (8 Kasım 2026) · mevsimler (28 günlük yıl, iki ada), Mor gece
 
 **Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
@@ -313,16 +326,4 @@
 - **Deneme** (yeni oyun, hile modu; 20 Meşe odunu): E2 alındı, köprü "F Kırık köprüyü onar · 20 odun" ile onarıldı (Meşe 20 → 0), Doğan'la ilk konuşma: tarifler öğrenildi, "!" Doğan'da (`vis ["T1","Z2"]`), T1 alındı, Kamış çizme elle yapıldı (fiyat 149, savunma 13), giyilince T1 bitti (+120 sikke). Eski kayıt: Doğan'la tanışmış, tarifsiz → yüklemede ikisi de öğrenildi.
 - **Ölçüm** (`olcum.js` CPU×4, gl; 3.50 → 3.51; `target` sarması kare başına bir kez fazladan çağrılabilir): BOOT 17.429 → 17.774 ms; kumsal avg 179,7 → 175,5; yürürken 161,8 → 147,4; PLAY 10 sn js 3.856 → 3.969 ms (gürültü içinde).
 - **Geri almak için:** `talkToygar`/`dogTeach`, `v345` `restore` sarması ve Kamış çizme fiyat satırı, `pickFiller` sırası, `V` Kamış çizme satırı + T1 ve Veli metinleri, `woodCount`/`spendWood`, Şifa `seq`/`A.wn`, `renderCraft` `nobench`, `__plDat` ve iki kullanımı, yan görev `coins+=`, `v340sp` bildirimi (`SPN`), `v345` gün/seviye sırası, `v56` `PEOPLE_K`, ev içi Vur/menü. Kayıt alanı ve MAPV değişmedi.
-- Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
-
-## v3.50 (6 Kasım 2026) · duyurular sırayla, oda alet çubuğunun üstünde, ev listesinde işçilik, hile modu oturumluk, arena yazısı
-
-- **EV-09 (20_sistemler: bekleyen duyurular sırayla):** `v345` engel kalkınca önce gün yazısı (`dayBannerShow`), 3,7 sn sonra seviye yazısı (`lvlUntil` ileri alınır), keşif/bölge duyuruları `annNext`'in `lvlUntil` beklemesiyle ardından; başarım kartı (`v339ach` `show`) `lvlUntil`, `annCur`, `annQ` boşalana kadar bekler. Denendi (Döşe'de +300 XP + bölge duyurusu + başarım, "Bitti"): gün 0–3,2 sn, seviye 4,0–6,4 sn, bölge 7,2–8,8 sn; üst üste binme yok.
-- **EV-11/12:** `v56` `area()` artık Döşe dışında da: oda `#roomui` (çubuk + not) altından alet çubuğu/XP kutusunun üstüne kadar sığdırılır; `scale`/`origin` tek yol (kesirli ölçek). Not yazısı ("Yatağın envanterinde…") duvar şeridinin üstünde kalır, alet çubuğu kapıyı örtmez (ekran görüntüleri `/tmp/yz/r350_d_room.png`, `r350_m_room.png`).
-- **Döndür:** zaten yalnızca kare olmayan eşyalarda (şerit ve menü `w!==h`); değişmedi.
-- **Ev listesi:** `renderCarp`: tarifi öğrenilmiş (`REC`+`foundSet`), malzemesiz evlerin altında "Kendi malzemenle: işçilik N sikke" (`ustaPrice`; Deri çadır 82, Kulübe 40, Kamış kulübe 172, Kerpiç ev 201).
-- **Hile modu oturumluk (belge Hileler › Kalıcı değildir):** önce `settings.cheat` cihazda kalıyordu. Şimdi açılışta (`settings` satırı) kapanır; yalnızca oyunun kendi yenilemeleri (yeni oyun, ada geçişi, arena çıkışı, ekran kartı…) `window.__plGR()` ile `sessionStorage['hammadde.gr']` işaretler ve hile modu açık kalır. Bütün 10 `location.reload()` çağrısı `(window.__plGR&&window.__plGR(),location.reload())` oldu. Denendi: oyun yenilemesinde açık, kullanıcı yenilemesinde kapalı.
-- **EV-10:** arena `syncBtn` `.arl` yazısını açıkken boşaltır, kilitliyken "Kilitli · …" yazar. Denendi.
-- Ölçüm: adanın kare döngüsü değişmedi (yalnız ev içi çizimi ve 200 ms denetim); ölçülmedi.
-- **Geri almak için:** `v345` sıralama dalı ve `v339ach` `show` koşulu, `v56` `area/scale/origin` (v3.49 hali), `renderCarp` işçilik satırı, `__plGR` + 10 `location.reload` sarması + `settings` satırındaki `gr` kontrolü, arena `syncBtn` `.arl`. Kayıt alanı ve MAPV değişmedi.
 - Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
