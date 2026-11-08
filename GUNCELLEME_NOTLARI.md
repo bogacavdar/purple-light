@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.78 · 8 Kasım 2026
+
+### Görsel
+- **Öbekler üst üste binmiyor:** bitkiler yine aynı türden 3–5'lik öbekler halinde biter ama artık iki bitki birbirine en az bir çalı boyu (18 px) uzaktır; yeniden çıkan bitki de başka bir toplanabilirin üstüne çıkmaz. Yeni oyunda birbirine 16 px'ten yakın bitki 2144'ten 13'e indi.
+
+### Tasarım belgesi
+- ACT 1 › Haritadaki miktarlar › Bitkiler öbek öbek: öbekte aralık 18–32 px, iki bitki arası en az 18 px.
+
+---
+
 ## Versiyon 3.77 · 8 Kasım 2026
 
 ### Oynanış
@@ -385,19 +395,4 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 - Konuşabileceğin kişilerin dibinde artık yerde toplanacak bir şey (taş, kum, dal…) çıkmaz; F'ye basınca doğrudan kişiyle konuşursun (Barbaros'un yanındaki kum gibi).
 - "Bir anı geri geldi" ve ada halkı sahneleri Esc'e ya da dışına basınca biter (sonuna kadar okunmuş sayılır). Eskiden bayıldıktan sonra açılan anı Esc ile kapanmıyor, arkada ada donmuş bekliyordu.
-
-## Versiyon 3.58 · 7 Kasım 2026
-
-Oyun aynı; bu sürüm tasarım belgesini tamamlar.
-
-### Tasarım belgesi
-
-- Tarif listesi tamamlandı: 971 tarif.
-- Eşya dizini tam: her eşyanın nereden geldiği yazıyor (mağara buluntuları ve mağara canlılarının düşürdükleri hangi mağarada, deniz balıkları hangi bölgede ve hangi oltayla, Börü'nün kemeri nasıl alınır).
-- Adadaki ağaç sayıları güncellendi.
-- Çelik kazma tarif tablosuna eklendi.
-
-### Proje
-
-- Belgeyi oyundan üreten araçlar artık mağaraların ve deniz avının verisini de okuyor.
 

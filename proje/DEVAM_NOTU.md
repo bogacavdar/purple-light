@@ -1,3 +1,11 @@
+## v3.78 (8 Kasım 2026) · öbeklerde bitkiler üst üste binmez
+
+**Değişen yerler:** `v372sade`: `GAP=18`; `spotOk` yerleştirilmiş bitkilere ızgarayla (`putP`, 18 px hücre) bakar ve `placed` artık bütün türler için tek (öbekler birbirine de binmez); öbek halkası `r=GAP+0..14` (18–32 px); yeniden çıkışta `nodeNear(x,y,GAP)`. Sürüm etiketi `Versiyon 3.78`.
+
+**Geri alma:** `GAP`'i 9, halkayı `10+…*18` yap ve `placed`'i grup başına diziye geri çevir (ya da `git revert`).
+
+**Kontrol:** chk.js 0 hata. Yeni oyun, bitki 3762 → 3702: en yakın komşusu 16 px'ten yakın olan 2144 → 13, 10 px'ten yakın 204 → 6 (öbeklenmeyen kamp çevresi); öbekte duran 2888. Kurulum 36 → 50 ms (bir kez).
+
 ## v3.77 (8 Kasım 2026) · biyom + mağara tek mantar, Keme, tekrarlayan görev malzemeleri
 
 **Değişen yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):** Çayır mantarı, Mağara mantarı, Kök mantarı kaynaktan silindi (ilk bitki tablosu, `DOG_MATS`, `RHINT`, `PLANTC`, `B4PLANT`, `RAWFOOD`, `P1I`/`P1W`, `BPLANT`, `MINEPL` ve döngüdeki istisna, `POISON`, `ODD`, mağara `RAW` ve `CAVES[].raw`, v372 `SKIP`, `FIRE_R`); `addR('Kök mantarlı güveç')` → `Kanlıcalı güveç` (2 Kanlıca, `PX_` resmi aynı), `Kök özü iksiri` 2 Kök reçinesi; Yankı mantarı çiziminden Kök dalı kalktı. Çizim kuralı: mantar dalına `(^| )[Kk]eme$`, çorba dalına `güveç$`. `__I2C.plants[2]`'ye Keme. Görev verisi: Y1, Y6, NF1, NF2, Z7, DU7, AL6, KA7, KA8 ("Pençe ve çakmak"), ME8, KU8. `v373sade` v3.77 satırları: 7 eşya `FOODX` + `OLDP` (sikke), `REPL['Kök mantarlı güveç']`, Keme fiyatı 22 / `RAWFOOD`, `Kızarmış keme` tarifi (66, ateş). Sürüm etiketi `Versiyon 3.77`.
@@ -299,11 +307,4 @@
 - **Bayıldıktan sonra doğma yok / Bataklık kıyısı boş (SON-03, SON-04):** sebep bayılınca %60 açılan "Bir anı geri geldi" sahnesi: açıkken ada durur (doğma sayacı, can yenilenmesi). Sahne yalnızca Devam/Enter ile ilerliyordu; Esc ve dışına tıklama kapatmıyordu, test botu Esc'e bastığı için ada 60–75 sn donuk kaldı. `v46` anı: Esc ya da kartın dışına tıklamak anıyı sonuna kadar okunmuş sayıp kapatır (XP ve anı defteri aynı). `v59` ada halkı sahnesi (Elmas Nine dahil) de Esc/dışına tıklama ile biter. Oyunda: bayılmadan sonra Esc → Bataklık kıyısında Sv 20'de Ördek, Turna kuşu, Yaban kazı, Su samuru, Zehirli kurbağa (5–7 canlı); bayılmadan önce de aynı. Reis kuralı (60 sn) değişmedi.
 - **Ölçüm** (`olcum.js` CPU×4, gl, /tmp kopyası `goto` 180 sn; 3.58 → 3.59): BOOT 20.348 → 18.321 ms (js 12.269 → 10.466); kumsal avg 197,8 → 179,1; yürürken 182,0 → 162,7; PLAY 10 sn js 4.165 → 4.114 ms (gürültü içinde; yeni saniyelik kişi denetimi ölçülemeyecek kadar küçük).
 - **Geri almak için:** v3.59 commit'ini `git revert` (prototip, index.html, parts). Kayıt alanı, MAPV değişmedi.
-
-## v3.58 (7 Kasım 2026) · yalnızca belge ve belge araçları: tarifler ve eşya dizini tam, mağara ve deniz verisi
-
-- **Oyun davranışı değişmedi;** prototipte yalnızca sürüm etiketi.
-- **Belge (Analist):** 971 tarif, eşya dizini tam (her eşyanın kaynağı), ağaç sayıları (v3.57 ölçümü: ada 1 5.145, ada 2 5.822), Çelik kazma satırı.
-- **Belge araçları** (`proje/tools/belge/x`): yeni `q10.js` → `cave.json` (ada 1): `window.__plCaves` (6 mağara: biyom, giriş seviyesi, reis, canlılar, buluntular), mağara canlılarının ve reislerinin düşürdükleri, deniz avı bölgeleri (`ZONES`, blok içinde olduğu için sayfanın kendi kaynak metninden okunur), Börü'nün kemeri (`EQUIP`, `PRICE`), bunların fiyatları (`PRICE`/`DB.p`). `gen.py` `cave.json`'u okur: mağara canlılarının kaynağında mağara, biyom ve giriş seviyesi; "Mağarada yerden toplanır"; "Deniz avı: bölge (Poyraz'ın teknesiyle, Sv, olta) %"; Börü'nün kemeri; eksik fiyatlar. Zincir v3.57 koduyla yeniden çalıştı (`q3`, `q5`, `q7`, `q8`, `q9` iki adada, `q10` ada 1; makine yavaş olduğu için `probe.js`'in süre sınırı /tmp kopyasında 240 sn). Sonuç: `gen/esyalar.md` 1.407 eşya, fiyatsız ya da biyomu boş satır yok; `gen/kaynaksiz.json` boş. Analist'e ayrıca `/home/claude/ham_esya_kaynak.md` verildi.
-- **Geri almak için:** v3.58 commit'ini `git revert` (parts, gen, x, sürüm etiketi). Kayıt alanı, MAPV değişmedi.
 
