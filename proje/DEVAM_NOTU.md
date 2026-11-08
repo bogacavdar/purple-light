@@ -1,3 +1,11 @@
+## v3.83 (8 Kasım 2026) · el yapımı malzeme kutusu, meşale yuvası yanıp sönmesi
+
+**Değişen yerler:** yeni `<style id="v383ui">` (`#craft .book.hand` son iki satırda `br+small` kutusu `bottom:100%`; bilgisayarda `#craft.cm-hand .cpanel{height:var(--plMaxH)}`: pencere hep aynı boyda) ve `<script id="v383meşale">` (`renderTut` sarmalı + 400 ms: kart metni "yanıp sönen … meşale yuvası" diyorsa `#torchslot.pulse`; tz yolu bunu hiç eklemiyordu, yalnız `torchTut===2` ekliyordu). Sürüm etiketi `Versiyon 3.83`.
+
+**Geri alma:** iki bloğu sil.
+
+**Kontrol:** chk.js 0 hata. 1920×1080'de yalnız Kaba meşale bilinirken üstüne gelince kutu tam görünüyor (ekran görüntüsü); tz=6 kartında `#torchslot` `pulse` animasyonunda.
+
 ## v3.82 (8 Kasım 2026) · ACT 2 çiğ yiyecekleri FOODT'ten
 
 **Değişen yerler:** v77 bloğundaki `Object.assign(RAWFOOD,{'Bulut elması':8,'Goblin eriği':6,'Gök mantarı':3,'Kök yumrusu':5})` silindi (FOODT'teki 26/29/25/29 eziliyordu; belge FOODT'i yazıyordu). `FOODT`'a `'Keme':[8,30,'doygun']`; `v373sade`'deki `RAWFOOD['Keme']=4` silindi. Sürüm etiketi `Versiyon 3.82`.
@@ -247,28 +255,4 @@
   - `kTxt` örnekleri.
   - Kazanda X ve Börü kartı aşamaları oyunda görülmedi (öğretici kilidi; kod).
 - **Geri almak için:** v3.64 commit'ini `git revert` (prototip, index.html, notlar). Kayıt alanı ve MAPV değişmedi.
-
-## v3.63 (7 Kasım 2026) · ateşte pişirme: 129 ateş yemeği El yapımından çıktı, her ateşte pişirme menüsü
-
-- **Liste:** ana betikte `FIRE_R` (belge `80_tarifler.md` "Ateşte (pişirme menüsü)" sütunundaki 129 ad; ² dipnot işaretleri atıldı; hepsi oyunda `REC`'te var) ve `FIRE_FREE` (Ateş, Duman).
-  - `handList`, `handSub`, `b3HandOK`, `b3subOK` ateş yemeklerini dışarıda bırakır: El yapımında görünmez, başka bir tarifin ara malzemesi olarak elle de yapılmaz, izlenen tarif çubuğunda "Yap" çıkmaz.
-  - Kazanda öğrenme değişmedi.
-- **Blok `v363fire`** (`v258b`'den sonra):
-  - `openFire(F,kind)`: `#craft` penceresinde `mode='fire'`. `renderCraft` ve `renderTools` sarılı; `closeCraft` `FO`'yu sıfırlar.
-  - `renderFire`: kamp ateşinde süre ve "Odun at", pişen yemek ve ilerleme çubuğu (`#fireprog`), közleme satırları (`KOZ`) ve öğrenilmiş ateş yemekleri. Liste `.book.hand` ve `.rr.hq` biçiminde (Yap · ×5 · Hepsi).
-  - `enqueue` malzemeyi istekte düşer (Ateş/Duman hariç), `F.cq`'ya yazar.
-  - 100 ms'lik `setInterval` (kare döngüsü değil; duraklatmada durur): 3 sn'de bir `finishOne`. Tarifte `gain`, `qc`, `v47Craft` (düşülen malzemeyle), `found/foundSet`, XP 12/2, `tzMade`; közlemede XP 1; `dstat.cook`; kamp ateşinden 4 sn. Kamp ateşi sönerse `refund`.
-  - `snapshot` sarılı: kayıtta ateşteki sıra hemen biter (sıra kaydedilmez).
-  - `drawFireAt` sarılı: pişen ateşin üstünde çubuk (`ACTIVE` boşken tek bir boyut denetimi).
-  - `window.__plFireAny` / `__plOpenFire`.
-- **Eski közleme pencereleri kaldırıldı:** ana betikte `talkCamp` artık menüyü açar, `cookAll` silindi. `v258b`'de `cookAt` menüyü açar (yapılacak bir şey yoksa eski "Çiğ et ya da balık getirirsen…" bildirimi). `XTRA` etiketi "Ateşte pişir"; `on`, tıklama ve `interact` koşulu `cookAny()` (çiğ yiyecek ya da yapılabilir ateş yemeği). F önceliği değişmedi.
-- **Kol:** `v320pad` `firstFocus` `mode==='fire'` → ilk açık `[data-fk]`. Pencere kapanınca `P.lastL` sıfırlanır (aynı pencere yeniden açılınca yine ilk kullanılabilir şeyde başlar; önceden Kapat'ta kalıyordu).
-- **Denendi** (Playwright, klavye F ve sahte Xbox kolu):
-  - Kamp ateşi + F → menü.
-  - Közlenmiş tavşan eti ×1 ve Kavrulmuş fındık ×5 sıraya girdi; oyuncu 200 px uzaklaştı; 19,5 sn sonra 1 + 5 çantada.
-  - Ateş 1 → 1 (harcanmadı); kamp ateşi süresi düştü.
-  - Kişi ateşinde (Kemal'in) kolla A → menü "Yap"ta açıldı. İstiridye çorbası (çiğ yiyecek yokken) 3,5 sn'de çantada.
-  - Ateş yemeklerinin hiçbiri El yapımında yok.
-- **Ölçüm** (`olcum.js` CPU×4, gl; 3.62 ↔ 3.63 ikişer koşu, makine yüklü): BOOT js ort. 14.865 → 14.270 ms; PLAY 10 sn js 3.203 → 3.171 ms; kumsal kare ort. 337 → 300 ms; yürürken 297 → 297 ms. Fark gürültü içinde (`drawFireAt` sarmalı yalnız pişen ateş varken bir döngü yapar).
-- **Geri almak için:** v3.63 commit'ini `git revert` (prototip, index.html, notlar). Kayıt alanı ve MAPV değişmedi (ateşteki sıra kaydedilmez, kayıtta tamamlanır).
 

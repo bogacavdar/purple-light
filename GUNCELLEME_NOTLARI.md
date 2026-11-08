@@ -8,6 +8,15 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.83 · 8 Kasım 2026
+
+### Düzeltmeler
+- **El yapımında tarifin malzemeleri kesilmiyor:** bir tarifin üstüne gelince açılan malzeme kutusu listenin son satırlarında pencerenin altında kesiliyordu (yalnız Kaba meşale varken bile yarım görünüyordu). Artık son satırlarda yukarı doğru açılıyor.
+- **El yapımı penceresi hep aynı boyda:** bilgisayarda pencere tarif sayısına göre büyüyüp küçülmüyor; her açılışta kemerin üstüne kadar uzanan aynı boyda açılıyor, liste içinde kayıyor.
+- **Meşale yuvası yanıp sönüyor:** Zümrüt'ün "Meşaleyi yak" ve "Meşaleyi söndür" kartları "yanıp sönen meşale yuvasına tıkla" derken yuva yanıp sönmüyordu; artık sönüyor.
+
+---
+
 ## Versiyon 3.82 · 8 Kasım 2026
 
 ### Düzeltmeler
@@ -363,16 +372,4 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Denge
 
 - Üç ham eşya kendi biyomunun fiyat aralığına indi: Yabani bal 13 → 12, Ateş biberi 72 → 52, Işık mantarı 123 → 90. Bunları kullanan tarifler kuralla birlikte değişti (Acı biber ezmesi 402 → 324, Işık mantarı çorbası 537 → 408, Ay otu iksiri 698 → 655, ballı tarifler 1'er sikke).
-
-## Versiyon 3.63 · 7 Kasım 2026
-
-### Oynanış
-
-- **Ateşte pişirme:** ateş isteyen yemekler (kavrulmuş, kızarmış, haşlanmış, tütsülenmiş, ızgara, tava, şiş, buğulama, çorbalar, ekmekler, güveç, pişmiş et ve balık…; 129 tarif) artık El yapımı listesinde yok. Tarifi yine kazanda öğrenirsin, yemeği **ateşte** yaparsın.
-- Kamp ateşine ya da kişilerin ateşlerine F, tıklama, dokunma ya da kolda A ile **pişirme menüsü** açılır. Menüde çiğ et ve balık közleme ile öğrendiğin ateş yemekleri var; her satırda Yap · ×5 · Hepsi. Kamp ateşinde ayrıca "Odun at" düğmesi ve ateşin kaç dakika yanacağı görünür.
-- Ateşin başında **Ateş ve Duman malzemesi harcanmaz**, ateş sağlar. Öbür malzemeler harcanır.
-- Her yemek ateşte ~3 saniyede pişer. ×5 ve Hepsi sırayla pişer, ateşin üstünde ve menüde ilerleme çubuğu görünür. Pişen yemek kendiliğinden çantana gelir; bu arada uzaklaşabilirsin. Yemek yanmaz.
-- Kamp ateşinde her yemek ateşten biraz yer. Ateş pişirme bitmeden sönerse pişmeyen malzemeler çantana döner.
-- Çantanda çiğ yiyecek olmasa da yapabileceğin bir ateş yemeği varsa kişilerin ateşinde menü açılır.
-- Ateşte ilk kez yapılan yemek 12 XP, sonrakiler 2 XP verir (el yapımı gibi). Közleme parça başına 1 XP.
 
