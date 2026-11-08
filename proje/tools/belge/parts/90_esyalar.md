@@ -262,7 +262,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Çöl inciri ezmesi | 72 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Çöl otu ² | 8 | – | Yerden toplanır: Hurda Çölü (ACT 2) | – |
 | Çömlek fırını | 331 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
-| Cüruf | 44 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Cüruf tuğlası |
 | Cüruf tuğlası | 263 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Taş fırın |
 | Dal | 1 | – | Yerden toplanır: Orman, Çayır, Bataklık, Kayalık Dağ, Kül Diyarı, Mor Kristal Vadisi (ACT 1) | Ağ, Huş kalası, Huş kömürü, Huş sapı, Huş kömürü … (+199) |
 | Dal çit | 4 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) (→ 2), İnşa kipiyle kurulur | – |
@@ -443,7 +442,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Hasat sepeti | 144 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Hasır | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Gemi, Hasır yatak, Kulübe, Kurutma rafı, Sepet, Yelkenli sal |
 | Hasır yatak | 83 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
-| Hasırotu | 13 | – | Yerden toplanır: Bataklık (ACT 1) | Hasırotu meşalesi, Hasırotu yatak |
 | Hasırotu meşalesi | 58 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Hasırotu yatak | 287 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Havuç | 13 | yenir +8 | Tarlada yetiştirilir (tohumunu ek, sula, tırpanla biç) | – |
@@ -508,7 +506,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Işık sporu | 80 | – | Mağarada yerden toplanır: Ayna Mağarası (Mor Kristal Vadisi, giriş Sv 42) | Yıldız tozu yemi |
 | Işık tilkisi eti | 35 | – | Av: Işık tilkisi düşürür %100 (ACT 1 · Mor Kristal Vadisi) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş işık tilkisi eti, Turba ateşinde tütsü … (+1) |
 | Işık tilkisi postu | 60 | – | Av: Işık tilkisi düşürür %80 (ACT 1 · Mor Kristal Vadisi) | – (satılır, görevlerde istenir) |
-| Işık tozu | 80 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Işık fitili |
 | Işık Yutan kalbi | 2.600 | – | Mağara reisi Işık Yutan düşürür (Ayna Mağarası, Mor Kristal Vadisi) %100 ×1 | Işık Yutan kalbi tılsımı |
 | Işık Yutan kalbi tılsımı | 4.200 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Işıl balığı | 225 | – | Deniz avı: Mor Derinlik (Gemici Poyraz'ın teknesiyle, Sv 22+, Yıldız oltası) %17 | Işıl çorbası |
@@ -571,11 +568,8 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kavrulmuş fındık | 70 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Ballı fındık |
 | Kavrulmuş kestane | 162 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Ballı kestane |
 | Kavrulmuş su kestanesi | 88 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
-| Kavrulmuş yabani arpa | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kavrulmuş yabani buğday | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
-| Kavrulmuş yabani mercimek | 70 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kavrulmuş yabani nohut | 70 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
-| Kavrulmuş yabani yulaf | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kaya patlatıcı | 236 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kaya yarasası kanadı | 104 | – | Mağara canlısı Kaya yarasası düşürür (Rüzgâr Mağarası, Kayalık Dağ) %80 ×1 | Kanat yelpazesi |
 | Kaya çiçeği ² | 20 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) | – |
@@ -678,7 +672,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kristal ipek çizme | 3.886 | giyilir +29 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | – |
 | Kristal kanat ² | 230 | – | Av: Kristal yarasası düşürür %80 (ACT 2 · Kristal Golem Ocağı) | Kristal miğfer, Kristal zil |
 | Kristal kolye | 360 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kristal kum | 67 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Kristal cam |
 | Kristal lifi ² | 18 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) | Işın kılıcı |
 | Kristal mantarı ² | 24 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) | – |
 | Kristal miğfer ² | 3.692 | giyilir +26 savunma | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | – |
@@ -822,7 +815,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kızarmış yabani havuç | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızıl cam | 199 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kızıl ejder pulu ² | 300 | – | Av: Kızıl ejder düşürür %100 (ACT 2 · Ejder Volkanı) | – |
-| Kızıl kum | 43 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Kızıl cam |
 | Kızıl sedir odunu | 41 | – | Balta ile Kızıl sedir ağacından: Kül Diyarı (ACT 1) | Kül ağacı kalası, Kül ağacı kömürü, Kızıl sedir yayı |
 | Kızıl sedir yayı | 2.961 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | – |
 | Kızılağaç kabuğu | 26 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -976,7 +968,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ördek tüyü | 2 | – | Av: Ördek düşürür %85 (ACT 1 · Bataklık) | Demir ok |
 | Ördek yumurtası | 3 | – | Av: Ördek düşürür %35 (ACT 1 · Bataklık) | Haşlanmış ördek yumurtası |
 | Örümcek gözü | 100 | – | Av: Kristal örümcek düşürür %50 (ACT 1 · Mor Kristal Vadisi) | Gölge iksiri |
-| Öğütme taşı | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | Ceviz yağı (alet), Nilüfer kökü unu (alet), Palamut unu (alet), Yabani arpa unu (alet), Yabani buğday unu (alet), Yabani mercimek unu (alet) … (+2) |
+| Öğütme taşı | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | Ceviz yağı (alet), Nilüfer kökü unu (alet), Palamut unu (alet), Yabani buğday unu (alet), Yabani nohut unu (alet) … (+2) |
 | Palamut | 45 | – | Deniz avı: Derin Mavi (Gemici Poyraz'ın teknesiyle, Sv 14+, Derin su oltası) %50 | Palamut buğulama |
 | Palamut buğulama | 120 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Palamut ekmeği | 48 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
@@ -1081,7 +1073,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Sarı okr | 35 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Sarı okr tozu |
 | Sarı okr tozu | 100 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sarı boya |
 | Sarımsaklı et | 101 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Saz | 13 | – | Yerden toplanır: Bataklık (ACT 1) | Saz örgüsü |
 | Saz sepet | 194 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Saz örgüsü | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Saz sepet |
 | Sazan | 4 | – | Balık: Çayır/Orman suları (deniz), olta/ağ/zıpkın ile %24; balık kapanına da girer · Balık: Çayır/Orman suları (nehir/göl), olta/ağ/zıpkın ile %12; balık kapanına da girer · Balık: Bataklık/Kayalık Dağ suları, olta/ağ/zıpkın ile %8; balık kapanına da girer | Balık çorbası, Balık pulu, Balık sepeti, Pişmiş sazan, Taşta sazan … (+1) |
@@ -1128,7 +1119,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Sülük | 62 | – | Mağara canlısı Mağara sülüğü düşürür (Batık Mağara, Bataklık) %80 ×1–2 | Sülük yemi |
 | Sülük yemi | 160 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Sümük yosunu ² | 14 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) | – |
-| Sünger taşı | 45 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Sünger taşı bileği |
 | Sünger taşı bileği | 123 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Sıcak su | 34 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Adaçayı çayı, Avcı yahnisi, Balık çorbası, Balmumu, Bataklık otu çayı, Buhar … (+26) |
 | Tabakhane | 663 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
@@ -1296,11 +1286,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yabani armut | 2 | yenir +7 | Meyve ağacı (Armut): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Armut ağacından toplanır: Çayır (ACT 1) | Yabani armut ezmesi, Yabani armut suyu |
 | Yabani armut ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani armut suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Yabani arpa | 2 | – | Yerden toplanır: Çayır (ACT 1) | Kavrulmuş yabani arpa, Yabani arpa lapası, Yabani arpa unu |
-| Yabani arpa hamuru | 26 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Yabani arpa yassı ekmeği |
-| Yabani arpa lapası | 114 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Yabani bira mayası |
-| Yabani arpa unu | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kurutulmuş meyve keki, Kül ekmeği, Yabani arpa hamuru |
-| Yabani arpa yassı ekmeği | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ballı ekmek, Ziyafet sofrası |
 | Yabani bal | 12 | yenir +12 | Yerden toplanır: Orman (ACT 1) | Ateş çiçeği balı, Ay elması reçeli, Ballı ekmek, Ballı fındık, Ballı kestane, Balmumu … (+1) |
 | Yabani bira mayası | 312 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani buğday | 2 | – | Yerden toplanır: Çayır (ACT 1) | Kavrulmuş yabani buğday, Yabani buğday lapası, Yabani buğday unu |
@@ -1312,21 +1297,11 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yabani elma ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani elma suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani havuç | 2 | yenir +5 | Yerden toplanır: Çayır (ACT 1) | Kızarmış yabani havuç |
-| Yabani mercimek | 9 | yenir +7 | Yerden toplanır: Orman (ACT 1) | Kavrulmuş yabani mercimek, Yabani mercimek lapası, Yabani mercimek unu |
-| Yabani mercimek hamuru | 57 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Yabani mercimek yassı ekmeği |
-| Yabani mercimek lapası | 95 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Yabani mercimek unu | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kurutulmuş meyve keki, Kül ekmeği, Yabani mercimek hamuru |
-| Yabani mercimek yassı ekmeği | 91 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ballı ekmek, Ziyafet sofrası |
 | Yabani nohut | 9 | yenir +7 | Yerden toplanır: Orman (ACT 1) | Kavrulmuş yabani nohut, Yabani nohut lapası, Yabani nohut unu |
 | Yabani nohut hamuru | 57 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Yabani nohut yassı ekmeği |
 | Yabani nohut lapası | 95 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani nohut unu | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kurutulmuş meyve keki, Kül ekmeği, Yabani nohut hamuru |
 | Yabani nohut yassı ekmeği | 91 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ballı ekmek, Ziyafet sofrası |
-| Yabani yulaf | 2 | – | Yerden toplanır: Çayır (ACT 1) | Kavrulmuş yabani yulaf, Yabani yulaf lapası, Yabani yulaf unu |
-| Yabani yulaf hamuru | 26 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Yabani yulaf yassı ekmeği |
-| Yabani yulaf lapası | 114 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Yabani yulaf unu | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kurutulmuş meyve keki, Kül ekmeği, Yabani yulaf hamuru |
-| Yabani yulaf yassı ekmeği | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ballı ekmek, Ziyafet sofrası |
 | Yakıt hücresi ² | 1.500 | – | Av: Gök bekçisi düşürür %100 (ACT 2 · Gök Rıhtımı) | Roket motoru |
 | Yankı mantarı | 14 | – | Mağarada yerden toplanır: Yankı Mağarası (Çayır, giriş Sv 5) | Kraliçe tılsımı, Yankı çorbası |
 | Yankı taşı | 82 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Yankı çanı |

@@ -466,7 +466,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 | Biyom | Yiyecek · tokluk · etki (anında can) |
 |---|---|
 | Çayır | Böğürtlen 5 (+4 can) · Yaban çileği 6 Çeviklik · Yabani armut 7 Doygunluk · Yabani elma 7 Canlılık (+2 can) · Yabani havuç 5 Gece gözü |
-| Orman | Ahududu 9 Şifa · Yaban mersini 9 Gece gözü · Fındık 8 Güç · Ceviz 8 Dayanıklılık · Yabani bal 12 Çeviklik (+7 can) · Akçaağaç özsuyu 8 Canlılık · Yabani mercimek 7 · Yabani nohut 7 (hepsi +3 can) · Kanlıca 8, Kuzukulağı 7, Meşe palamudu 6 (zehirli, can vermez) |
+| Orman | Ahududu 9 Şifa · Yaban mersini 9 Gece gözü · Fındık 8 Güç · Ceviz 8 Dayanıklılık · Yabani bal 12 Çeviklik (+7 can) · Akçaağaç özsuyu 8 Canlılık · Yabani nohut 7 · Yabani nohut 7 (hepsi +3 can) · Kanlıca 8, Kuzukulağı 7, Meşe palamudu 6 (zehirli, can vermez) |
 | Bataklık | Kızılcık 12 Pıhtı · Su kestanesi 12 (+14 can) (+6 can) · Dut 11 Çeviklik (+6 can) · Mürver 11, Sinek mantarı 11 (zehirli) |
 | Kayalık Dağ | Alıç 15 Şifa · Kestane 15 Doygunluk · Ur kekliği yumurtası 15 Güç · Kayın mantarı 14 (+9 can) · Kuşburnu 14 (+21 can) · Ardıç meyvesi 14 (zehirli) |
 | Kül Diyarı | Ateş narı 19 Ateş kalkanı (+18 can) · İncir 19 Doygunluk (+16 can) · Ateş biberi 17 Güç (+12 can) |

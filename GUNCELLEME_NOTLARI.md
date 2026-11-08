@@ -8,6 +8,23 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.80 · 8 Kasım 2026
+
+### Oynanış
+- **İkinci ada kendi bitkileriyle:** ACT 1'in bitkileri (Civanperçemi, Hardal otu, Keten, Sinirotu, Göl kili ve 15 tane daha) artık Yüzen Kayalar'da çıkmıyor. Yüzen Kayalar 789'dan 369'a, Dev Mantar Ormanı 765'ten 298'e indi; her biyomda yalnız kendi 7–9 bitkisi var.
+- **Sarkıt ve Yarasa gübresi mağara ağzında:** artık madenlerin yanında değil, ACT 1 mağaralarının ağzının önünde ve yanlarında çıkıyor (mağara başına 7'şer); toplanınca yine bir mağara ağzında biter. İkinci adada yoklar.
+- **Benzer bitkiler birleşti:** Yabani mercimek → Yabani nohut; Yabani yulaf ve Yabani arpa → Yabani buğday (unları, lapaları, ekmekleri de); Saz ve Hasırotu → Kamış (örgü, sepet, yatak ve meşale kamışla yapılır); Kızıl kum → Kırmızı okr, Cüruf → Kül, Sünger taşı → Lav camı; Işık tozu → Yıldız tozu, Kristal kum → Kristal. Kayalık Dağ olduğu gibi kaldı.
+- Görevler: Veli'nin "Tüy dolgusu" 6 kamış, Turan'ın "Kristal tozu" 6 kristal, İnci'nin "Mor sarmaşık" 3 mor sarmaşık ister.
+- Biyom başına bitki türü: Çayır 10, Orman 11, Bataklık 12, Kayalık Dağ 13, Kül Diyarı 11, Mor Kristal Vadisi 12.
+
+### Kayıtlar
+- Eski kayıtta birleşen bitkiler ve ürünleri yerine geçene çevrilir (ör. Yabani mercimek → Yabani nohut, Yabani arpa lapası → Yabani buğday lapası, Saz → Kamış).
+
+### Tasarım belgesi
+- ACT 1 › Haritadaki miktarlar: Sarkıt ve Yarasa gübresi mağara ağzında. Mağaralar: ağızdaki buluntular. Tarifler › Sade malzeme: "Benzer bitkiler birleşti" maddesi, sayılar (eşya 1326, tarif 968). Biyom tabloları, eşyalar, tarifler, görevler yenilendi.
+
+---
+
 ## Versiyon 3.79 · 8 Kasım 2026
 
 ### Oynanış
@@ -374,31 +391,4 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Proje
 
 - Ölçüm: 3.59 ile 3.61 aynı ayarlarla ölçüldü; sayılar geliştirme notunda.
-
-## Versiyon 3.60 · 7 Kasım 2026
-
-### Oynanış
-
-- **Oyun kolu ile her şey:** kol bağlıyken Start (PlayStation: Options) **Kol menüsünü** açar. Devam et'in altında Çanta, El yapımı, Karakter, Yetenekler, Tarif kitabı, Almanak, Görevler, Harita ve Robot köpekler var; evdeyken Döşe, öğreticide Eğitimi geç de buradan. Sonra her zamanki Kaydet, Yükle, Ayarlar, Kontroller, Ana menü gelir.
-- Pencerelerde **LB / RB** önceki / sonraki sekmeye geçer (Yetenekler'de Savaş, Ekonomi, Dayanıklılık; Çanta'da bölümler; kazanda grup listesi). **LT / RT** bir önceki / sonraki pencereyi açar (Çanta, El yapımı, Tarif kitabı, Görevler, Karakter, Yetenekler, Harita).
-- **Meşale kolla:** LB / RB ile kemerde gezerken boş elden önce meşale yuvası da bir durak. Meşale yuvası seçiliyken X'e kısa basınca meşaleyle vurursun, X'i basılı tutunca meşale yanar ya da söner.
-- **Eşya yerleştirme kolla:** yatak, barınak, atölye gibi bir şey elindeyken gölgesi önünde durur ve seninle yürür. Yön tuşları ya da sağ çubuk onu birer kare kaydırır, A koyar, Y döndürür, B vazgeçer. Kurduğun bir şeyin yanında A'yı yarım saniye basılı tutarsan onu yerinden alıp taşırsın; kısa A eskisi gibi kullanır (yatağa yat, eve gir).
-- R3 yalnızca ulti; ulti dolu değilken bir şey yapmaz (Robot köpekler Kol menüsünde).
-- Açılış sahnesi A, B ya da Start ile geçilir.
-
-### Arayüz
-
-- **Ekrandaki tuş yazıları en son kullandığın aygıta göre:** kola dokunduğun an öğretici kartları, ipuçları, sol menüdeki tuş harfleri ve meşale yuvası kolun tuşlarını yazar ("yanında A", "Yemek için Y"); klavyeye basınca ya da fareyi oynatınca hemen klavye harflerine döner. Kolun adına göre Xbox (A, B, X, Y, LB, RB…) ya da PlayStation (✕, ○, □, △, L1, R1…) adları kullanılır.
-- Öğreticinin "Anladım" düğmesi ve "Yeni ders" kartı kol açıkken kendiliğinden seçili gelir; A basar. B kartı birkaç saniyeliğine bırakır, yürüyebilirsin.
-- Kolla ana menüde Çıkış'a basınca önce "Oyundan çıkılsın mı?" diye sorulur.
-- Kolla menülerde gezmek: sağa basınca ana menüden önce en üstteki simgeye gidilir (doğrudan Çıkış'a değil). Pazarda pencere Sat düğmesinde açılır, adet kutusunda yukarı / aşağı adedi değiştirir. Kazanın grup listesi sol / sağ ile değişir. Arama kutuları kol gezinmesinde atlanır. Seçili eşya alttaki alet şeridinin altında kalmaz.
-- Menülerde çubuğu hafif (yarıya kadar) itmek de yeter.
-
-### Düzeltmeler
-
-- Ana menüde kolla yukarı bir kez gidiyor, ikinci basışta gitmiyordu (hile kodunu yazıyorsun sanıyordu). Artık menü her basışta oynar. Hile kodu yine çalışır: kodun son B ve A'sı hiçbir düğmeye basmaz, kod bitince seçim kodu yazmaya başladığın yere döner.
-
-### Tasarım belgesi
-
-- Sistemler › Oyun kolu bölümü yeni düzene göre yazıldı (Kol menüsü, meşale, yerleştirme, tuş yazıları).
 

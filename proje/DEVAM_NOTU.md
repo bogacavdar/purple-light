@@ -1,3 +1,11 @@
+## v3.80 (8 Kasım 2026) · ACT 2'de yalnız kendi bitkileri, mağara ağzında Sarkıt/Yarasa gübresi, benzer bitkiler birleşti
+
+**Değişen yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):** v77 yerleşim: ISLE 2'de `window.__I1G` (ACT 1 biyom bitkileri ve madenleri) adları da silinir; `MINEPL` maden çevresi yerleşimi silindi. Yabani mercimek, yulaf, arpa, Saz, Hasırotu, Kızıl kum, Cüruf, Sünger taşı, Işık tozu, Kristal kum kaynaktan silindi (`BPLANT`, `B4PLANT`/`ZPLANT`, `PLANTC`, `FOODT`, `ODD`, `NEWP`, ad açıklamaları, `P1I`/`P1W`, v337 bitki resim tablosu). Görevler: VE7, TU8, IN3 (+`ki3`). Yarasa gübresi ipuçları ("mağara ağızlarında"). `v373sade` v3.80 satırları: `REPL` (ham + ürünleri: unu/lapası/hamuru/yassı ekmeği/kavrulmuş; Saz/Hasırotu → Kamış; Kızıl kum → Kırmızı okr; Cüruf → Kül; Sünger taşı → Lav camı; Işık tozu → Yıldız tozu; Kristal kum → Kristal). Yeni `<script id="v380bitki">`: ACT 1 mağara kapılarına (`__plCaves[].door`) 7 Sarkıt + 7 Yarasa gübresi (34–80 px, ağzın önü ve yanları), `findSpot` sarmalı (kendi biyomunun bir mağara ağzında yeniden çıkar), ISLE 2'de yok. Sürüm etiketi `Versiyon 3.80`.
+
+**Geri alma:** `git revert` bu commit.
+
+**Kontrol:** chk.js 0 hata. Denetim (3.79 ↔ 3.80): eşya 1351 → 1326, tarif 983 → 968, bilinmeyen 0, fiyatsız 0, yeni kullanılmayan ham 0. Bitki türü/adet: ACT 1 Çayır 10/525, Orman 11/489, Bataklık 12/474, Kayalık 13/577, Kül 11/506, Mor 12/568; ACT 2 8/369, 7/298, 9/405, 8/369, 8/375, 8/353. Mağara ağzı: 6 mağara × 7 = 42 Sarkıt, 42 Yarasa gübresi (ekran görüntüsüyle bakıldı). Eski kayıt: 3 Yabani mercimek + 1 nohut → 4 nohut, Yabani arpa lapası → Yabani buğday lapası, 2 Saz + 2 Hasırotu → 4 Kamış, Kızıl kum → Kırmızı okr, Işık tozu → Yıldız tozu, Kristal kum → Kristal.
+
 ## v3.79 (8 Kasım 2026) · her biyomda iki meyve ağacı
 
 **Değişen yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):** Erik kaynaktan silindi (`TREE_TYPES`, `TREE_TIER`, `FRUITC`, `RAWFOOD`, `SEEDS`, `BTREE`, `FOODT`, almanak `trees`, `P1I['Yabani erik']`, `A['Erik tohumu']`, `SAPL`/`A['Erik fidanı']`, odun fiyat listesi; eski yeniden türlenen `TT[5+…]/TT[10]` satırı). `TREE_TYPES`'a Dut, İncir (`noCut`); `BTREE` Bataklık/Kül; `__I2C.trees` her biyoma bir yeni meyve ağacı (`noCut`). Biyoma göre türleme: `w = meyve ? .45/nF : 1` (meyve ağacı sayısı aynı). `FOODT`'a 8 yeni meyve. `v373sade` v3.79 satırları: `GONE379`, Erik `REPL`/`FOODX`, 8 meyveye fiyat, `FRUITC` rengi ve "X ezmesi" tarifi (3 meyve + 1 Su, Taş havan, fiyat `round(f×3×1,25+4)`); tarif silme kuralı (girdisi FOODX olan, Erik varyantı); `walk` fidan `k` alanı (`SPEC1` Erik → Armut); bildirim metni genel. Yeni `<script id="v379meyve">`: 8 meyve resmi (kendi `A` haritası + `icon` sarmalı, yalnız bu adların önbelleği silinir). Sürüm etiketi `Versiyon 3.79`.
@@ -284,26 +292,4 @@
   - Yerleştirme hayaleti açıkken (ayrı betik, CPU×4, 60 kare, ikişer koşu): 3.59 203/216 ms → 3.61 194/176 ms; sarmalayıcıların yükü ölçülemeyecek kadar küçük.
   - Kol yokken `v320pad` döngüsü çalışmıyor.
 - **Geri almak için:** v3.61 commit'ini `git revert` (prototip, index.html, notlar). Kayıt alanı ve MAPV değişmedi (işaretler eskisi gibi `marks`'ta).
-
-## v3.60 (7 Kasım 2026) · oyun kolu ile her şey: Kol menüsü, meşale, yerleştirme, kartlar, kola göre tuş yazıları, ana menü takılması
-
-- **Blok `v320pad`** (bütün kol işi burada; kol yokken döngü çalışmaz):
-  - **Ana menü takılması (KOL-01):** sebep v3.32 `blockK`. `^↑↑` hile kodunun başı sayılıp 2 sn boyunca gezinme ve A/B kesiliyordu, her basış süreyi yeniliyordu. `blockK` silindi; `P.kf` her kod harfinde odaklı öğeyi tutar. Kod tamamlanınca odak `P.kf[0]`'a döner; `codeB` yalnız `onTitle`'da `…UUDDLRLRB` B'sini yutar (A, kodun tamamlandığı karede `return` ile zaten yutulur). Menü yönü `hys()`: 0,40'ta açılır, 0,25'in altında kapanır; D-pad önce. Hile kodu sayacı da aynı yönü kullanır.
-  - **Çıkış onayı:** `press()` `#t-exit` için `askQuit()` → `#padqc` (`.ov`, Vazgeç seçili, dışına basmak = Vazgeç).
-  - **Katmanlar:** `LAYERS`'a `#q2cf` eklendi. `card()`: pencere yokken `#q2les` ya da `#tutok` görünürse `#tut`; `firstFocus` Anladım/Devam'a odaklanır, B `P.cardOff` ile 6 sn bırakır.
-  - **Kol menüsü:** `#pmain`'e `.padonly` düğmeler (`p-inv`, `p-hand`, `p-char`, `p-skills`, `p-book`, `p-alm`, `p-qlog`, `p-map`, `p-dogs`, `p-dose`, `p-tskip`), yalnız `body.padmode`'da ve iki sütun. `openPause` sarılı (görünürlük: evde yalnız Döşe, Eğitimi geç `#tutskip` görünürken).
-  - **Pencerede:** LB/RB `winStep()` (`[role=tablist]`/`.sktabs`, yoksa ilk `select`); LT/RT `menuStep()` (`MENUS`). `moveFocus`: `select` sol/sağ değer, `.qi` yukarı/aşağı ▲▼'ya basar, ana menüden sağ = `#ttop`'un en üstteki simgesi. `type=search` odak listesinden çıktı. `reveal()` sabit şeridin altında kalanı kaydırır. `firstFocus`: pazar `[data-sell]`.
-  - **Oyun içi:** `placing` dalı (A `doPlace`, Y `rotatePlace`, B `cancelPlace`, D-pad/sağ çubuk `P.po` kaydırma, ±6). `ghostAtPlayer`/`ghostAtMouse` sarılı (`P.padP` iken fare hayaleti almaz; fare hareketi geri verir). A basılı 0,5 sn `placed` hedefinde `pickUp`; kısa A `tap('interact')`. LB/RB `beltStep()`: durak −2 meşale yuvası, −1 boş el, dolu yuvalar; `P.tsSel` iken X kısa = vuruş, X 0,4 sn = `torchToggle()` (`#torchslot` tıklaması). R3 `P.r3` ile `openMenu('dogs')`'u yutar (yalnız ulti). `cine.on` iken A/B/Start = Esc.
-  - **Aygıt:** `padUsed()`/`padLeft()` `body.padmode`'u açar/kapar ve `pl-device` olayı yollar (kol: ölü bölge dışı ilk girdi; klavye: güvenilir keydown; fare: pointerdown, 2 px üstü hareket, tekerlek). `window.__plPad={on,bn,kind}`, `padKind()` `gamepad.id`'den (054c/DualSense/DualShock/PlayStation → PS, yoksa Xbox).
-- **Tuş bağlama bloğu (`KB`/`kTxt`):** `PADL` eylem → kol düğmesi; `padLab()`. `kTxt` kol açıkken etiketleri kol adına çevirir (WASD → Sol çubuk). `__plKey` önce `padLab`. `applyKeyTexts` HUD `kbd`'leri. `pl-device` → `applyKeyTexts`, istem, `renderTut`, `renderHot`, açık pencere yeniden yazılır. `v283` `__plTSKey` ve `renderPlaceUI` kol metni için `v320pad`'de sarılı.
-- **Denendi (Playwright, sahte Xbox kolu, `/tmp/kol_dev`):**
-  - Ana menü ↑×5 (60/120/300 ms), basılı tutma, %50 ve %42 çubuk: takılma yok.
-  - Hile kodu açılıyor, odak geri dönüyor, Çıkış'a basılmıyor. Çıkış'ta A → onay, B → kapanır.
-  - Açılış A ile geçiliyor. Kol menüsü → Yetenekler, LB/RB sekme, LT/RT pencere.
-  - Meşale durağı: kısa X yakmıyor, uzun X yakıyor/söndürüyor.
-  - Yaprak barınağı: kaydır, Y döndür, A koy; A basılı al, B vazgeç.
-  - Öğretici Anladım ve ders kartı A ile basılıyor. Kart metni kolda "yanında A / Y tuşuna", klavyeye dönünce "F / X".
-  - `select` ve `.qi` yapay pencerede denendi. Pazar/kazan gerçek oyunda denenmedi (öğretici kilidi).
-- **Ölçüm:** `olcum.js` çalıştırılmadı. Kare döngüsüne yalnız yerleştirme sırasında `ghostAtPlayer`/`ghostAtMouse` sarmalı giriyor, kol döngüsü yalnız kol bağlıyken. Gerekirse yayından önce ölçülmeli.
-- **Geri almak için:** v3.60 commit'ini `git revert` (prototip, index.html, parts, notlar). Kayıt alanı ve MAPV değişmedi.
 

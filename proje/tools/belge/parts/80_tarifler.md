@@ -50,14 +50,15 @@ Her biyomun ağaç zinciri **tek** kalas, sap, kömür ve kaşıkla yürür; ad�
 - **Kullanılmayan kurutulmuş yiyecekler yok:** hiçbir tarifte kullanılmayan 59 kurutulmuş et, balık, meyve ve mantar kalktı (çiği ve közlenmişi duruyor). Kalan kurutulmuşlar: sincap eti, böğürtlen, meyve keki, yabani elma (Neriman'ın N5 "Kış kurutmalığı" görevi ister) ve tek kullanıldığı tarif kurutulmuşu olan ebegümeci ve yıldız eriği (her malzeme bir tarifte kuralı).
 - **Her biyomda tek mantar, mağarasıyla birlikte (8 Kasım 2026, Boğaç: "biyom + mağara totalde 1 mantar olacak; bazen mağarada bazen dışarıda, atmosferi göz önünde bulundur"):** ACT 1'de Çayır **Yankı mantarı** (yalnız Yankı Mağarası'nda, mavi parlar), Orman **Kanlıca** (dışarıda), Bataklık **Sinek mantarı** (dışarıda), Kayalık Dağ **Kayın mantarı** (dışarıda), Kül Diyarı **Kül mantarı** (yalnız Kor Mağarası'nda), Mor Kristal Vadisi **Işık mantarı** (dışarıda; Ayna Mağarası'nda mantar yok). ACT 2'de Yüzen Kayalar **Gök mantarı**, Dev Mantar Ormanı **Işıldak mantarı**, Hurda Çölü **Keme** (çöl trüfü), Kristal Golem Ocağı **Kristal mantarı**, Ejder Volkanı **Kor mantarı**, Gök Rıhtımı **Yıldız mantarı**. Kalkanlar: Tavuk mantarı, Kuzugöbeği (Orman), Kav mantarı (Kayalık Dağ), Çayır mantarı, Mağara mantarı (her mağara), Kök mantarı (Kök Mağarası), Mantar şapkası (ACT 2); Kayın mantarı ACT 2'de çıkmaz. Tarifler: Kızarmış tavuk mantarı, Kızarmış kuzugöbeği, Kızarmış çayır mantarı, Kızarmış mağara mantarı silindi; **Kav** Kayın mantarıyla, **Kök özü iksiri** 2 Kök reçinesiyle yapılır; Kök mantarlı güveç **Kanlıcalı güveç** oldu (2 Kanlıca); yeni **Kızarmış keme**. Görevler: Yakut'un Y3 "Mantar sepeti" ve Fidan'ın NF1 "Mantar tezgâhı" (6) **Kanlıca**, Firuze'nin "Liken ve kav"ı **Kayın mantarı**, Zümrüt'ün Z7 "Güneş görmeyenler"i **Yankı mantarı** ister. Eski kayıtlarda Tavuk mantarı/Kuzugöbeği Kanlıca'ya, Kav mantarı Kayın mantarına, Mantar şapkası Işıldak mantarına, Kök mantarlı güveç Kanlıcalı güvece çevrilir; Çayır mantarı, Mağara mantarı, Kök mantarı ve kızarmışları eski fiyatından sikke olarak ödenir.
 - **Her biyomda iki meyve ağacı (8 Kasım 2026, Boğaç: "türlerini 2'ye çıkaralım; miktarlar aynı kalsın, mevcut meyve ağaçlarının yarısı farklı bir meyve ağacı olsun", "sadece elma değil armut da olsun"):** Çayır **Elma + Armut** (Erik kalktı), Orman **Ceviz + Fındık**, Bataklık **Mürver + Dut**, Kayalık Dağ **Ardıç + Kestane**, Kül Diyarı **Ateş narı + İncir**, Mor Kristal Vadisi **Ay elması + Yıldız eriği**; ACT 2'de Yüzen Kayalar **Bulut elması + Rüzgâr eriği**, Dev Mantar Ormanı **Kök ağacı (Goblin eriği) + Spor elması**, Hurda Çölü **Hurma + Çöl inciri**, Kristal Golem Ocağı **Kristal armut + Buz armudu**, Ejder Volkanı **Ejder meyvesi + Lav narı**, Gök Rıhtımı **Gök üzümü + Yıldız kirazı**. Bir biyomun meyve ağacı sayısı tek tür zamanındakiyle aynıdır (ağaç türlenirken meyve ağaçlarının payı aralarında bölünür; ör. Çayır'da ~184 meyve ağacı: ~88 Elma, ~96 Armut). Yeni ağaçlar (Dut, İncir ve ACT 2'nin altısı) kesilmez, yalnız silkelenir; meyvelerinin her biri çiğ yenir ve bir **ezmesi** vardır (3 meyve + 1 Su, Taş havan; ACT 1'de Zümrüt'ün, ACT 2'de Yıldız'ın kazanından). Eski kayıtta Erik odunu Çam odununa, Erik tohumu ve fidanı Armut'unkine (dikili Erik fidanı Armut olur) çevrilir; Yabani erik, ezmesi ve suyu eski fiyatından sikke olarak ödenir.
+- **Benzer bitkiler birleşti (8 Kasım 2026, Boğaç: "yabani nohut kalsın, mercimek gidebilir; çayır güzel, bataklık güzel, dağdaki kile dokunmayalım, kül diyarı güzel, mor kristal de güzel"):** Orman'da **Yabani mercimek → Yabani nohut**; Çayır'da **Yabani yulaf ve Yabani arpa → Yabani buğday** (unları, lapaları, hamurları, yassı ekmekleri ve kavrulmuşları da buğdayınkine); Bataklık'ta **Saz ve Hasırotu → Kamış** (Saz örgüsü, Saz sepet, Hasırotu yatak, Hasırotu meşalesi adlarıyla kalır, kamışla yapılır); Kül Diyarı'nda **Kızıl kum → Kırmızı okr** (Kızıl cam), **Cüruf → Kül** (Cüruf tuğlası 5 Kül), **Sünger taşı → Lav camı** (Sünger taşı bileği); iki okr da kalır (sarı ve kırmızı boya için); Mor Kristal Vadisi'nde **Işık tozu → Yıldız tozu** (Işık fitili), **Kristal kum → Kristal** (Kristal cam). Kayalık Dağ'a dokunulmadı. Görevler: Veli'nin VE7'si **6 Kamış**, Turan'ın TU8'i "Kristal tozu" **6 Kristal**, İnci'nin IN3'ü "Mor sarmaşık" **3 Mor sarmaşık** ister. Biyom başına tür: Çayır 10, Orman 11, Bataklık 12, Kayalık Dağ 13, Kül Diyarı 11, Mor Kristal Vadisi 12 (Sarkıt ve Yarasa gübresi artık mağara ağzında). ACT 1'in bitkileri ACT 2'de çıkmaz; ACT 2'nin biyomlarında yalnız kendi bitkileri var. Eski kayıtta kalkanlar yerine geçene çevrilir.
 - **Aynı kişi aynı malzemeyi iki kez istemez (8 Kasım 2026, Boğaç: "biyoma özel görevleri de mükerrer olmaktan çıkaralım"):** Yakut Y1 **4 Eğrelti** + 4 Isırgan, Y6 6 Sarmaşık + **4 Yaban sarımsağı**; Fidan NF2 6 Fındık + **4 Ceviz**; Durdu DU7 8 Kumtaşı + **5 Kayın odunu**; Ali AL6 3 Bataklık servisi odunu + **6 Arduvaz**; Kaya KA7 **6 Pirit**, KA8 "Pençe ve çakmak" 2 Kartal pençesi + **5 Çakmaktaşı**; Mercan ME8 3 Gece zambağı + **5 Kor taşı** (Kor Mağarası); Kudret KU8 **8 Ay taşı** + 3 Yankı taşı.
 - **Kalkan varyantlar:** kalkan bir malzemeyi isteyen ya da çevrilince başka bir tarifin aynısı olan varyantlar silindi.
-- **Sayılar:** eşya 1505 → 1351, tarif 1105 → 983 (tek mantar ve iki meyve ağacı dahil). Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
+- **Sayılar:** eşya 1505 → 1326, tarif 1105 → 968 (tek mantar, iki meyve ağacı ve bitki birleştirmeleri dahil). Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
 - **Eski kayıtlar:** kayıt açılınca kalkan her şey yerine geçene çevrilir (çantada, sandıkta, kemerde, köpek çantasında, yerde, kitapta): türe özgü kalas/sap/kömür/kaşık biyomunkine, kurutulmuş ot 3 taze ota; karşılığı olmayan kurutulmuş yiyecekler eski satış fiyatından sikke olarak ödenir. Bir kez bildirim çıkar.
 
-Toplam **983 tarif**: 826 asıl tarif ve 157 varyant (oyun verisiyle sayıldı).
+Toplam **968 tarif**: 811 asıl tarif ve 157 varyant (oyun verisiyle sayıldı).
 
-#### Yiyecek (231)
+#### Yiyecek (216)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
@@ -76,7 +77,7 @@ Toplam **983 tarif**: 826 asıl tarif ve 157 varyant (oyun verisiyle sayıldı).
 | Ay elması reçeli | 3 Ay elması, 1 Yabani bal, 1 Beyaz çömlek | – | El yapımı (Tab) | 573 |
 | Bal şarabı | 1 Bal şerbeti, 1 Nehir çömleği, 4 Su, 4 Yaprak | – | El yapımı (Tab) | 120 |
 | Bal şerbeti | 1 Yabani bal, 5 Su, 1 Yaprak | – | El yapımı (Tab) | 23 |
-| Ballı ekmek | 1 Yabani mercimek yassı ekmeği, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 149 |
+| Ballı ekmek | 1 Yabani nohut yassı ekmeği, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 149 |
 | Ballı fındık | 1 Kavrulmuş fındık, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 121 |
 | Ballı kestane | 1 Kavrulmuş kestane, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 248 |
 | Balık çorbası | 3 Kerevit, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
@@ -118,11 +119,8 @@ Toplam **983 tarif**: 826 asıl tarif ve 157 varyant (oyun verisiyle sayıldı).
 | Kavrulmuş fındık | 3 Fındık, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 70 |
 | Kavrulmuş kestane | 3 Kestane, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 162 |
 | Kavrulmuş su kestanesi | 2 Su kestanesi, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 88 |
-| Kavrulmuş yabani arpa | 3 Yabani arpa, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
 | Kavrulmuş yabani buğday | 3 Yabani buğday, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
-| Kavrulmuş yabani mercimek | 3 Yabani mercimek, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 70 |
 | Kavrulmuş yabani nohut | 3 Yabani nohut, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 70 |
-| Kavrulmuş yabani yulaf | 3 Yabani yulaf, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
 | Kefal pilakisi | 2 Kefal, 1 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 65 |
 | Kekikli balık | 1 Pişmiş kurbağa, 3 Kekik, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 138 |
 | Kemik ilikli çorba | 3 Kemik, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 114 |
@@ -266,29 +264,17 @@ Toplam **983 tarif**: 826 asıl tarif ve 157 varyant (oyun verisiyle sayıldı).
 | Yaban çileği suyu | 3 Yaban çileği, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
 | Yabani armut ezmesi | 3 Yabani armut, 1 Su | Taş havan | El yapımı (Tab) | 14 |
 | Yabani armut suyu | 3 Yabani armut, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
-| Yabani arpa hamuru | 1 Yabani arpa unu, 4 Su, 1 Yaprak | – | El yapımı (Tab) | 26 |
-| Yabani arpa lapası | 3 Yabani arpa, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 114 |
-| Yabani arpa unu | 3 Yabani arpa, 1 Su | Öğütme taşı | El yapımı (Tab) | 14 |
-| Yabani arpa yassı ekmeği | 1 Yabani arpa hamuru, 3 Su, 3 Yaprak | Pişirme taşı | El yapımı (Tab) | 52 |
-| Yabani bira mayası | 1 Yabani arpa lapası, 1 Nehir çömleği, 4 Su, 4 Yaprak | – | El yapımı (Tab) | 312 |
+| Yabani bira mayası | 1 Yabani buğday lapası, 1 Nehir çömleği, 4 Su, 4 Yaprak | – | El yapımı (Tab) | 312 |
 | Yabani buğday hamuru | 1 Yabani buğday unu, 4 Su, 1 Yaprak | – | El yapımı (Tab) | 26 |
 | Yabani buğday lapası | 3 Yabani buğday, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 114 |
 | Yabani buğday unu | 3 Yabani buğday, 1 Su | Öğütme taşı | El yapımı (Tab) | 14 |
 | Yabani buğday yassı ekmeği | 1 Yabani buğday hamuru, 3 Su, 3 Yaprak | Pişirme taşı | El yapımı (Tab) | 52 |
 | Yabani elma ezmesi | 3 Yabani elma, 1 Su | Taş havan | El yapımı (Tab) | 14 |
 | Yabani elma suyu | 3 Yabani elma, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
-| Yabani mercimek hamuru | 1 Yabani mercimek unu, 4 Su, 1 Yaprak | – | El yapımı (Tab) | 57 |
-| Yabani mercimek lapası | 3 Yabani mercimek, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 95 |
-| Yabani mercimek unu | 3 Yabani mercimek, 1 Su | Öğütme taşı | El yapımı (Tab) | 39 |
-| Yabani mercimek yassı ekmeği | 1 Yabani mercimek hamuru, 3 Su, 3 Yaprak | Pişirme taşı | El yapımı (Tab) | 91 |
 | Yabani nohut hamuru | 1 Yabani nohut unu, 4 Su, 1 Yaprak | – | El yapımı (Tab) | 57 |
 | Yabani nohut lapası | 3 Yabani nohut, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 95 |
 | Yabani nohut unu | 3 Yabani nohut, 1 Su | Öğütme taşı | El yapımı (Tab) | 39 |
 | Yabani nohut yassı ekmeği | 1 Yabani nohut hamuru, 3 Su, 3 Yaprak | Pişirme taşı | El yapımı (Tab) | 91 |
-| Yabani yulaf hamuru | 1 Yabani yulaf unu, 4 Su, 1 Yaprak | – | El yapımı (Tab) | 26 |
-| Yabani yulaf lapası | 3 Yabani yulaf, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 114 |
-| Yabani yulaf unu | 3 Yabani yulaf, 1 Su | Öğütme taşı | El yapımı (Tab) | 14 |
-| Yabani yulaf yassı ekmeği | 1 Yabani yulaf hamuru, 3 Su, 3 Yaprak | Pişirme taşı | El yapımı (Tab) | 52 |
 | Yankı çorbası | 2 Yankı mantarı, 1 Kör kertenkele eti, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 91 |
 | Yıldız kirazı ezmesi | 3 Yıldız kirazı, 1 Su | Taş havan | El yapımı (Tab) | 102 |
 | Ziyafet sofrası | 1 Avcı yahnisi, 1 Yabani buğday yassı ekmeği, 4 Su, 4 Yaprak | – | El yapımı (Tab) | 198 |
@@ -378,7 +364,7 @@ Toplam **983 tarif**: 826 asıl tarif ve 157 varyant (oyun verisiyle sayıldı).
 | Enerji hücresi ² | 2 Enerji taşı, 2 Bakır tel, 1 Pil | – | El yapımı (Tab) | 221 |
 | Gece zambağı yağı | 3 Gece zambağı, 1 Beyaz çömlek | – | El yapımı (Tab) | 388 |
 | Hasır | 3 Lif, 2 İp | – | El yapımı (Tab) | 17 |
-| Hasırotu yatak | 3 Hasırotu, 1 Deri parçası, 4 Lif, 3 İp | – | Usta Sinan yapar, yere kurulur | 287 |
+| Hasırotu yatak | 3 Kamış, 1 Deri parçası, 4 Lif, 3 İp | – | Usta Sinan yapar, yere kurulur | 287 |
 | Huş kabuğu kabı | 1 Huş kabuğu, 4 İp, 2 Lif | – | El yapımı (Tab) | 76 |
 | Huş kaşığı | 1 Huş sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 152 |
 | Kamış hasır | 4 Kamış | – | El yapımı (Tab) | 67 |
@@ -396,11 +382,11 @@ Toplam **983 tarif**: 826 asıl tarif ve 157 varyant (oyun verisiyle sayıldı).
 | Ok kılıfı | 1 Deri parçası, 4 İp, 2 Dal | – | El yapımı (Tab) | 240 |
 | Plazma hücresi ² | 2 Plazma taşı, 1 Enerji hücresi, 1 Ejder kristali | – | El yapımı (Tab) | 539 |
 | Sarmaşık ipi | 4 Sarmaşık | – | El yapımı (Tab) | 36 |
-| Saz örgüsü | 4 Saz | – | El yapımı (Tab) | 67 |
+| Saz örgüsü | 4 Kamış | – | El yapımı (Tab) | 67 |
 | Saz sepet | 2 Saz örgüsü, 3 İp, 1 Lif | – | El yapımı (Tab) | 194 |
 | Söğüt kaşığı | 1 Bataklık servisi sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 118 |
 | Söğüt sepeti | 4 Söğüt dalı | – | El yapımı (Tab) | 5 |
-| Sünger taşı bileği | 2 Sünger taşı, 1 Su | – | El yapımı (Tab) | 123 |
+| Sünger taşı bileği | 2 Lav camı, 1 Su | – | El yapımı (Tab) | 123 |
 | Taş kase | 2 Kireçtaşı, 2 Lif, 2 İp (eskiden 2 Bazalt) | Bileği taşı | El yapımı (Tab) | 24 |
 | Tohum yağı | 4 Elma tohumu, 1 Nehir çömleği | Taş havan | El yapımı (Tab) | 84 |
 | Yosun yastık | 3 Yosun, 1 Deri parçası, 4 Lif, 3 İp | – | El yapımı (Tab) | 287 |
@@ -620,7 +606,7 @@ Toplam **983 tarif**: 826 asıl tarif ve 157 varyant (oyun verisiyle sayıldı).
 | Beyaz kase | 1 Beyaz çömlek, 5 Kum, 4 Su | Bileği taşı | El yapımı (Tab) | 123 |
 | Beyaz kerpiç | 1 Islak beyaz kil, 3 Kuru ot, 2 Kum, 1 Su | – | El yapımı (Tab) | 54 |
 | Beyaz tuğla | 1 Beyaz kerpiç, 1 Ateş, 4 Kum, 3 Su | – | El yapımı (Tab) | 106 |
-| Cüruf tuğlası | 3 Cüruf, 2 Kül, 1 Su | – | El yapımı (Tab) | 263 |
+| Cüruf tuğlası | 5 Kül, 1 Su | – | El yapımı (Tab) | 263 |
 | Göl çömleği | 1 Islak göl kili, 1 Ateş, 3 Kum, 3 Su | – | El yapımı (Tab) | 87 |
 | Göl kasesi | 1 Göl çömleği, 4 Kum, 4 Su | Bileği taşı | El yapımı (Tab) | 128 |
 | Göl kerpici | 1 Islak göl kili, 3 Kuru ot, 1 Kum, 1 Su | – | El yapımı (Tab) | 58 |
@@ -633,9 +619,9 @@ Toplam **983 tarif**: 826 asıl tarif ve 157 varyant (oyun verisiyle sayıldı).
 | Kırmızı kase | 1 Kırmızı çömlek, 5 Kum, 4 Su | Bileği taşı | El yapımı (Tab) | 166 |
 | Kırmızı kerpiç | 1 Islak kırmızı kil, 3 Kuru ot, 2 Kum, 1 Su | – | El yapımı (Tab) | 88 |
 | Kırmızı tuğla | 1 Kırmızı kerpiç, 1 Ateş, 4 Kum, 3 Su | – | El yapımı (Tab) | 150 |
-| Kızıl cam | 3 Kızıl kum, 1 Ateş | – | El yapımı (Tab) | 199 |
+| Kızıl cam | 3 Kırmızı okr, 1 Ateş | – | El yapımı (Tab) | 199 |
 | Kireç harcı | 1 Sönmemiş kireç, 5 Su, 2 Kum | – | El yapımı (Tab) | 59 |
-| Kristal cam | 3 Kristal kum, 1 Ateş | – | El yapımı (Tab) | 292 |
+| Kristal cam | 3 Kristal, 1 Ateş | – | El yapımı (Tab) | 292 |
 | Nehir çömleği | 1 Islak nehir kili, 1 Ateş, 3 Kum, 3 Su | – | El yapımı (Tab) | 49 |
 | Nehir kasesi | 1 Nehir çömleği, 4 Kum, 4 Su | Bileği taşı | El yapımı (Tab) | 79 |
 | Nehir kerpici | 1 Islak nehir kili, 3 Kuru ot, 1 Kum, 1 Su | – | El yapımı (Tab) | 20 |
@@ -722,8 +708,8 @@ Toplam **983 tarif**: 826 asıl tarif ve 157 varyant (oyun verisiyle sayıldı).
 | Don yağı mumu | 2 Hayvan yağı, 3 Lif | – | El yapımı (Tab) | 11 |
 | Duman | 1 Ateş, 4 Yaprak, 2 Dal | – | El yapımı (Tab) | 34 |
 | Golem feneri | 1 Golem çekirdeği, 2 Kristal, 2 Mor söğüt kalası | – | El yapımı (Tab) | 1.188 |
-| Hasırotu meşalesi | 3 Hasırotu, 2 Hayvan yağı | – | El yapımı (Tab) | 58 |
-| Işık fitili | 2 Işık tozu, 2 Lif | – | El yapımı (Tab) | 216 |
+| Hasırotu meşalesi | 3 Kamış, 2 Hayvan yağı | – | El yapımı (Tab) | 58 |
+| Işık fitili | 2 Yıldız tozu, 2 Lif | – | El yapımı (Tab) | 216 |
 | Kaba meşale | 2 Dal, 2 Lif, 2 Yaprak | – | El yapımı (Tab) | 7 |
 | Kamp ateşi | 5 Dal, 3 Taş, 2 Kuru ot, 1 Çakmaktaşı | – | El yapımı (Tab) | 14 |
 | Kav | 3 Kayın mantarı, 1 Kıvılcım, 1 Dal, 1 Yaprak | – | El yapımı (Tab) | 98 |
@@ -1055,7 +1041,7 @@ Boğaç kararı: her malzeme en az bir tarifte girdi olur, her birine ayrı tari
 | Su samuru derisi | Kürk eldiven | 3 Su samuru derisi, 2 Sinir, 3 Lif | Deri parçası |  |
 | Yaban öküzü derisi | Deri çarık | 1 Yaban öküzü derisi, 2 Sinir, 3 Yaprak | Deri parçası |  |
 | Yaban atı derisi | Kürk başlık | 2 Yaban atı derisi, 2 Sinir, 2 Taş | Deri parçası |  |
-| Dağ keçisi derisi | Hasırotu yatak | 3 Hasırotu, 2 Dağ keçisi derisi, 4 Lif, 3 İp | Deri parçası |  |
+| Dağ keçisi derisi | Hasırotu yatak | 3 Kamış, 2 Dağ keçisi derisi, 4 Lif, 3 İp | Deri parçası |  |
 | Muflon derisi | Yosun yastık | 3 Yosun, 2 Muflon derisi, 4 Lif, 3 İp | Deri parçası |  |
 | Mağara ayısı derisi | Kemik çizme | 4 Kemik, 1 Mağara ayısı derisi, 3 Yaprak | Deri parçası |  |
 | Bıldırcın tüyü | Bakır ok (→ 18) | 1 Bakır külçesi, 4 Dal, 2 Bıldırcın tüyü, 1 Diken ok ucu | Keklik tüyü |  |
