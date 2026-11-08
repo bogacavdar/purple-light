@@ -8,6 +8,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.94 · 9 Kasım 2026
+
+### Arayüz
+- **Pazar penceresi yeniden:** Nazlı'nın pazarı artık ince ve uzun; ekrana iki kat fazla satır sığıyor. Arama çubuğu bütün genişlikte. Toplu satış düğmeleri kısa adlarla yan yana: **Hepsini sat**, **Fazlasını sat**, **Gerekmeyeni sat** (ne yaptıkları üstüne gelince yazıyor). Sat / Satın al ince bir anahtar. Her eşya tek satır: adı, küçük ipucu ("3 tarif"), fiyat, adet, Sat, Hepsi. Bütün düğmeler aynı boyda ve aynı renkte.
+- **Vio ve Kapat aynı boyda:** bütün pencerelerin başlığında Vio sayacı ile Kapat düğmesi artık aynı boyda; "(Esc)" yalnızca Kapat'ın üstüne gelince yazıyor.
+- **Öğretici kartında konuşanın yüzü:** sağ üstteki öğretici kartında her zaman o kartı söyleyen kişinin resmi var. Zümrüt'ün seni Nazlı'ya yolladığı kartın başlığı artık "Zümrüt · Pazarcı Nazlı'ya git" (önceden Zümrüt'ün yüzüyle "Pazarcı Nazlı" yazıyordu). "Nazlı · Sat" kartında Nazlı'nın, Börü'nün kartlarında Börü'nün yüzü var; Dursun'a yollayan kart "Börü · Demirci Dursun'a git".
+
+### Tasarım belgesi
+- Oyun akışı › "Öğretici kartında konuşanın resmi".
+- Sistemler › "Pazar penceresi derli toplu" (pazar en çok 600 piksel).
+
+---
+
 ## Versiyon 3.93 · 9 Kasım 2026
 
 ### Oynanış
@@ -264,16 +277,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - ACT 1 › Adanın yerleşimi › Haritadaki miktarlar: başlangıç kampı da çevresinin sıklığına iner (eski "kamp seyreltilmez" kuralının yerine).
-
----
-
-## Versiyon 3.74 · 8 Kasım 2026
-
-### Arayüz
-- **Kemal seni tanıyınca:** aynı karakterle yeni oyuna başladığında Kemal'in "seni daha önce görmüş müydüm" konuşmasındaki tek düğme artık yalnızca "…" değil, gerçek bir cevap: ikinci kez **"Hatırlamıyorum…"**, sonrasında **"Ne demek istiyorsun?"**.
-
-### Tasarım belgesi
-- Sistemler › Seni hatırlıyorum: iki cevap düğmesinin metni.
 
 ---
 

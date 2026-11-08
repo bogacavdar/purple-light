@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.93</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.94</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.93 · 9 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Ders malzemeleri yalnızca eksik kadar:</strong> Kemal, Zümrüt ve Börü derslerde yere malzeme bırakırken (böğürtlen; meşale için dal, lif, yaprak; taşlar; balta parçaları için dal, lif, taş) artık envanterindekileri ve yakında yerde duranları sayıyor, yalnızca eksik kalanı bırakıyor. Konuşmada da yalnızca bıraktıklarını söylüyorlar; hepsi zaten varsa hiçbir şey bırakmıyorlar.</li></ul><h3>Oynanış (Börü'nün balta dersi)</h3><ul><li><strong>Yalnızca mavi düğme:</strong> dersin 12. adımında El yapımı açıkken sıradaki parçanın (keskin taş, sopa, ip) mavi yanan <strong>Yap</strong> düğmesi ve ok görünür; penceredeki öbür her şey soluk ve tıklanamaz. Pencereyi kapatmak her zaman çalışır.</li><li><strong>Malzeme eksikse pencere kapanır:</strong> sıradaki parça için malzemen yoksa (ya da sıra iki taşı toplamaya geldiyse) El yapımı kendiliğinden kapanır, "Önce malzemeleri topla: …" der ve öğretici seni eksik malzemeye götürür.</li></ul><h3>Arayüz</h3><ul><li><strong>El yapımında yazılar üst üste binmiyor:</strong> yapamadığın bir tarifin malzeme kutusu saydamdı ve alttaki satırın altında kalıyordu. Artık bilgisayarda satırın ya da <strong>Yap</strong> düğmesinin üstüne gelince malzemeler, Yap düğmesinin hemen üstünde küçük, kenarlı bir kartta çıkıyor. Telefonda dokununca açılan kutu da artık opak.</li><li><strong>Yap düğmesi en sağda:</strong> el yapımı satırlarında düğme sırası Takip et · ×5 · Hepsi · Yap.</li><li><strong>"Vio" büyük harfle:</strong> paranın adı her yerde "Vio" yazıyor; ekleri kesme işaretiyle ayrılıyor (Vio’yu, Vio’ya, "50 Vio’luk").</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.94 · 9 Kasım 2026</h2><h3>Arayüz</h3><ul><li><strong>Pazar penceresi yeniden:</strong> Nazlı'nın pazarı artık ince ve uzun; ekrana iki kat fazla satır sığıyor. Arama çubuğu bütün genişlikte. Toplu satış düğmeleri kısa adlarla yan yana: <strong>Hepsini sat</strong>, <strong>Fazlasını sat</strong>, <strong>Gerekmeyeni sat</strong> (ne yaptıkları üstüne gelince yazıyor). Sat / Satın al ince bir anahtar. Her eşya tek satır: adı, küçük ipucu ("3 tarif"), fiyat, adet, Sat, Hepsi. Bütün düğmeler aynı boyda ve aynı renkte.</li><li><strong>Vio ve Kapat aynı boyda:</strong> bütün pencerelerin başlığında Vio sayacı ile Kapat düğmesi artık aynı boyda; "(Esc)" yalnızca Kapat'ın üstüne gelince yazıyor.</li><li><strong>Öğretici kartında konuşanın yüzü:</strong> sağ üstteki öğretici kartında her zaman o kartı söyleyen kişinin resmi var. Zümrüt'ün seni Nazlı'ya yolladığı kartın başlığı artık "Zümrüt · Pazarcı Nazlı'ya git" (önceden Zümrüt'ün yüzüyle "Pazarcı Nazlı" yazıyordu). "Nazlı · Sat" kartında Nazlı'nın, Börü'nün kartlarında Börü'nün yüzü var; Dursun'a yollayan kart "Börü · Demirci Dursun'a git".</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 Vio</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -7163,12 +7163,13 @@ function tzCard(){const h=n=>inv[n]||0,c=(n,q)=>`${n} ${Math.min(h(n),q)}/${q}`;
    6:['witch','Zümrüt · Taşlar',`Şimdi kazanın yanındaki <b>4 taşı</b> topla. (${c('Taş',4)})`],
    7:['witch','Zümrüt · Keskin taş tarifi',`Kazanı aç, <b>Keskin taş</b>'ı seç, 2 taşı koy ve <b>Tarifi öğren</b>. Öğrendiğin tarifler listede <b style="color:#8fd46b">yeşil</b> olur; bir tarifi iki kez öğrenemezsin.`],
    8:['witch','Zümrüt · Keskin taş yap',`Kalan 2 taşla bir <b>keskin taş</b> yap: ${tzKey('tab')}. Kazandan bir tarif öğrendin mi, gerisi hep elinde.`],
-   9:['witch','Pazarcı Nazlı',`Keskin taşı al ve kuzeydoğudaki <b>Pazarcı Nazlı</b>'ya git; ok yolu gösteriyor. Birleştirdiğin şeyleri o alır.`],
+   9:['witch','Zümrüt · Pazarcı Nazlı\'ya git',`Keskin taşı al ve kuzeydoğudaki <b>Pazarcı Nazlı</b>'ya git; ok yolu gösteriyor. Birleştirdiğin şeyleri o alır.`],
    10:['','Nazlı · Sat',`Satış listesinde <b>Keskin taş</b>'ın yanındaki <b>1 sat</b> düğmesine bas.`],
    11:ftut===2&&window.__plDLCard&&window.__plDLCard()?window.__plDLCard():ftut===2?['','Börü · Kereviti vur',TOUCH?`<b>Kereviti</b> vur: <b>ona dokun</b>. Canı bitene kadar vur.`:window.__plPad&&window.__plPad.on()?`<b>Yürü:</b> <span class="kc" data-k="1">Sol çubuk</span> ile kerevite yaklaş. <b>Vur:</b> <span class="kc" data-k="1">${window.__plPad.bn(2)}</span> ya da <span class="kc" data-k="1">${window.__plPad.bn(7)}</span>: en yakın canlıya vurursun (sağ çubukla yön verirsin). Canı bitene kadar vur.`:`<b>Yürü:</b> <span class="kc">W</span><span class="kc">A</span><span class="kc">S</span><span class="kc">D</span> ya da <span class="kc">↑</span><span class="kc">←</span><span class="kc">↓</span><span class="kc">→</span> ile kerevite yaklaş. <b>Vur:</b> <span class="kc">Sol tık</span>: tıkladığın yöne vurursun. Canı bitene kadar vur.`]:['','Savaşçı Börü',`Nazlı seni doğudaki <b>Savaşçı Börü</b>'ye yolladı. Ok yolu gösteriyor; yanına git ve ${TOUCH?'ona dokun':'<span class="kc">E</span> ile konuş'}.`],
    12:axeCard()||['','Börü · Balta parçaları',`<b>Taş balta</b> = 1 Sopa + 2 Keskin taş + 2 İp + 2 Taş. Sopa, ip ve keskin taşı ${tzKey('tab')} ile yap (sopa için 3 dal ve 2 keskin taş, ip için 4 lif). Börü yakınına malzeme bıraktı. (${c('Sopa',1)} · ${c('Keskin taş',2)} · ${c('İp',2)} · ${c('Taş',2)})`],
-   13:['','Demirci Dursun',`Parçalar hazır! Kuzeydeki <b>Demirci Dursun</b>'a git, Börü'nün selamını söyle; baltayı o döver. Ok yolu gösteriyor.`]}[tz]}
-function renderTz(){const C=tzCard();if(!C)return false;const [who,title,html]=C;tutEl.hidden=false;craftEl.classList.add('tutpad');$('tutstep').textContent=title;$('tuttext').innerHTML=html;
+   13:['alp','Börü · Demirci Dursun\'a git',`Parçalar hazır! Kuzeydeki <b>Demirci Dursun</b>'a git, Börü'nün selamını söyle; baltayı o döver. Ok yolu gösteriyor.`]}[tz]}
+function renderTz(){const C=tzCard();if(!C)return false;const [who0,title,html]=C,who=who0||({10:'market',11:'alp',12:'alp',13:'alp'})[tz]||'';   // v3.94: every tutorial card shows who says it
+ tutEl.hidden=false;craftEl.classList.add('tutpad');$('tutstep').textContent=title;$('tuttext').innerHTML=html;
   if(tutPor.k!==who){tutPor.k=who;$('tutpor').innerHTML=who&&tutPor[who]?tutPor[who]():''}$('tutok').hidden=true;$('tutskip').hidden=false;$('tutskip').textContent='Eğitimi geç';
   if(tz===2)$('fdbar').classList.add('pulse');
   const tzOk=!tzNeed().length;   // v2.24: nothing glows for crafting until the step's materials are gathered
@@ -11176,6 +11177,7 @@ const _say=say;say=function(text,choices,who){const r=_say.apply(this,arguments)
     const src=k&&porFor(k);dl.classList.toggle('v64',!!src);if(src&&im)im.src=src}catch(e){}return r};
 tutPor.ekin=()=>{const s=porFor('ekin');return s?`<img src="${s}" alt="">`:''};
 tutPor.witch=()=>{const s=porFor('witch');return s?`<img src="${s}" alt="">`:''};
+for(const k of ['market','alp','smith'])tutPor[k]=()=>{const s=porFor(k);return s?`<img src="${s}" alt="">`:''};   // v3.94: Nazlı, Börü, Dursun on the tutorial card
 tutPor.k=null;try{renderTut()}catch(e){}
 }).toString()+')()')}catch(e){try{window.__hamErr('v64: '+(e&&e.message||e))}catch(_){}}})();
 </script>
@@ -23182,6 +23184,56 @@ setInterval(()=>{try{check()}catch(e){}},250);
 $('craft').addEventListener('click',e=>{if(!document.body.classList.contains('v393lock'))return;const t=e.target;
   if(t.closest&&(t.closest('.p189')||t.closest('#closecraft')))return;if(t.closest&&t.closest('.cpanel')){e.stopImmediatePropagation();e.preventDefault()}},true);
 }).toString()+')()')}catch(e){try{window.__hamErr('v393lock: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<style id="v394pazar">
+/* v3.94 (Boğaç, 9 Kasım 2026): the market window is narrow, tall and tidy: one size and one colour for every button, one line a row,
+   short labels (the full text on hover). Belge: Sistemler › Pazar penceresi derli toplu. */
+/* every menu window: the Vio counter and Kapat are one size; "(Esc)" only on hover */
+html body:not(.v50m) #craft .chead .ccoins,html body:not(.v50m) #craft #closecraft{box-sizing:border-box;height:32px!important;min-height:0!important;padding:0 12px!important;font-size:15px!important;line-height:1!important;border-width:2px!important;outline:none!important;box-shadow:none!important;display:inline-flex!important;align-items:center;gap:7px}
+html body:not(.v50m) #craft .chead .ccoins i{width:15px!important;height:15px!important}
+html body:not(.v50m) #craft #closecraft .esc{display:none!important}
+html body:not(.v50m) #craft.cm-sell .cpanel{width:calc(min(600px,100vw - 260px) / 1.2)!important;height:var(--plMaxH,calc((100vh - 300px) / 1.2))!important}
+html body:not(.v50m) #craft.cm-sell .chead{padding:5px 8px!important;gap:6px}
+html body:not(.v50m) #craft.cm-sell .chead h2{font-size:16px!important}
+html body:not(.v50m) #craft.cm-sell .ctools{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px!important;padding:5px 8px!important}
+html body:not(.v50m) #craft.cm-sell .ctools #flt{grid-column:1/-1;width:100%!important;min-width:0;box-sizing:border-box;height:26px!important;font-size:13px!important;padding:0 8px!important}
+html body:not(.v50m) #craft.cm-sell .ctools .cnt{display:none}
+html body:not(.v50m) #craft.cm-sell .ctools [hidden]{display:none!important}
+html body:not(.v50m) #craft.cm-sell .cbody{padding:5px 8px!important}
+html body:not(.v50m) #craft.cm-sell .cbody>.note{display:none!important}
+html body:not(.v50m) #craft.cm-sell .cbody>.pmode.stabs{display:grid!important;grid-template-columns:1fr 1fr;gap:0!important;margin:0 0 4px!important;border:2px solid #4a5a3a}
+html body:not(.v50m) #craft.cm-sell .cbody>.pmode.stabs>button{height:26px!important;min-height:0!important;padding:0 8px!important;font-size:13px!important;gap:6px!important;flex-direction:row!important;justify-content:center;border:none!important;margin:0!important;background:#1c2419!important;color:var(--ink-dim)!important;box-shadow:none!important}
+html body:not(.v50m) #craft.cm-sell .cbody>.pmode.stabs>button[aria-selected="true"]{background:#3d4d2c!important;color:#fff!important}
+html body:not(.v50m) #craft.cm-sell .cbody>.pmode.stabs>button img{width:16px!important;height:16px!important}
+html body:not(.v50m) #craft.cm-sell ul.mkt{gap:0!important}
+html body:not(.v50m) #craft.cm-sell ul.mkt li{display:flex!important;min-height:0!important;padding:3px 0!important;gap:4px!important;align-items:center!important;border-bottom:1px solid #2e3a28!important;margin:0!important}
+html body:not(.v50m) #craft.cm-sell ul.mkt li .nm{flex:1 1 auto;min-width:0;font-size:13px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}
+html body:not(.v50m) #craft.cm-sell ul.mkt li .nm .kz,html body:not(.v50m) #craft.cm-sell ul.mkt li .nm small{display:inline!important;font-size:11px!important;margin-left:6px}
+html body:not(.v50m) #craft.cm-sell ul.mkt li .pr{flex:none;width:44px!important;font-size:12.5px!important;text-align:right;margin:0 2px}
+html body:not(.v50m) #craft.cm-sell ul.mkt li .sq{flex:none;display:flex;gap:2px!important;margin:0!important}
+/* one look for every button of the window */
+html body:not(.v50m) #craft.cm-sell .ctools button,html body:not(.v50m) #craft.cm-sell ul.mkt li button,html body:not(.v50m) #craft.cm-sell ul.mkt li .qi{box-sizing:border-box;height:24px!important;min-height:0!important;padding:0 6px!important;font-family:inherit;font-size:12px!important;font-weight:700;line-height:1!important;background:#1c2419!important;color:var(--ink)!important;border:2px solid #4a5a3a!important;box-shadow:none!important;outline:none;border-radius:0;margin:0!important;cursor:pointer}
+html body:not(.v50m) #craft.cm-sell .ctools button{width:100%!important;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html body:not(.v50m) #craft.cm-sell .ctools button:hover:not(:disabled),html body:not(.v50m) #craft.cm-sell ul.mkt li button:hover:not(:disabled){border-color:#7fd0ff!important}
+html body:not(.v50m) #craft.cm-sell .ctools button:disabled,html body:not(.v50m) #craft.cm-sell ul.mkt li button:disabled{opacity:.4;cursor:default}
+html body:not(.v50m) #craft.cm-sell ul.mkt li .qb{width:22px!important;padding:0!important;font-size:10px!important}
+html body:not(.v50m) #craft.cm-sell ul.mkt li .qi{width:30px!important;padding:0!important;text-align:center;cursor:text}
+html body:not(.v50m) #craft.cm-sell ul.mkt li .sq1{width:52px!important}html body:not(.v50m) #craft.cm-sell ul.mkt li [data-bq="1"]{width:44px!important}
+html body:not(.v50m) #craft.cm-sell ul.mkt li .all{width:72px!important}
+html body:not(.v50m) #craft.cm-sell ul.mkt li button,html body:not(.v50m) #craft.cm-sell ul.mkt li .pr,html body:not(.v50m) #craft.cm-sell ul.mkt li .qi{min-width:0!important;flex:none}
+</style>
+<script id="v394pazarjs">
+// short labels, the full text on hover
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+const SH={sellall:['Hepsini sat','Aletler, zırhlar ve eşyalar hariç her şeyi satar'],sellsafe:['Fazlasını sat','Kazanda şimdi öğrenebileceğin tariflerin istediği kadarı sende kalır, fazlası satılır'],sellall3:['Gerekmeyeni sat','Henüz öğrenmediğin bütün tariflerin istediği kadarı sende kalır, fazlası satılır']};
+function tidy(){if(!craftOpen||mode!=='sell'||document.body.classList.contains('v50m'))return;
+  for(const id in SH){const b=$(id);if(!b)continue;const m=b.textContent.match(/·\s*([\d.,]+)\s*$/),v=m?m[1]:'';const t=SH[id][0]+(v?' · '+v:'');if(b.textContent!==t)b.textContent=t;b.title=SH[id][1]}
+  cbody.querySelectorAll('ul.mkt li .nm').forEach(e=>{const k=e.querySelector('.kz');if(k&&!k.dataset.full){k.dataset.full=k.textContent;let m;
+      if((m=k.textContent.match(/Kazanda şimdi (\d+) tarifte/)))k.textContent=m[1]+' tarif';else if((m=k.textContent.match(/İleride (\d+) tarifte/)))k.textContent='ileride '+m[1]+' tarif'}
+    if(!e.title)e.title=(e.firstChild&&e.firstChild.textContent||'').trim()+(k?' · '+k.dataset.full:'')})}
+{const _rc=renderCraft;renderCraft=function(){const r=_rc.apply(this,arguments);try{tidy()}catch(e){}return r}}
+{const c=$('closecraft');if(c&&!c.title)c.title='Kapat (Esc)'}
+}).toString()+')()')}catch(e){try{window.__hamErr('v394pazarjs: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
