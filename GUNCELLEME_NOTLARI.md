@@ -8,6 +8,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.77 · 8 Kasım 2026
+
+### Oynanış
+- **Her biyomda, mağarasıyla birlikte tek mantar:** Çayır'ın mantarı artık yalnız Yankı Mağarası'nda mavi parlayan **Yankı mantarı**, Kül Diyarı'nınki Kor Mağarası'ndaki **Kül mantarı**; Orman'da Kanlıca, Bataklık'ta Sinek mantarı, Kayalık Dağ'da Kayın mantarı, Mor Kristal Vadisi'nde Işık mantarı dışarıda. Çayır mantarı, her mağaradaki Mağara mantarı ve Kök Mağarası'ndaki Kök mantarı kalktı.
+- **Hurda Çölü'ne Keme:** kumun altında biten çöl trüfü (çiğ yenir, ateşte **Kızarmış keme** olur). İkinci adanın her biyomunda artık bir mantar var.
+- Tarifler: Kök mantarlı güveç artık **Kanlıcalı güveç** (2 Kanlıca); **Kök özü iksiri** Kök mantarı yerine 2 Kök reçinesi ister; Kızarmış çayır mantarı ve Kızarmış mağara mantarı yok.
+- **Aynı kişi aynı malzemeyi iki kez istemez:** Yakut'un "Kırmızı demlik"i Eğrelti, "Taşan kazan"ı Yaban sarımsağı; Fidan'ın "Mantar tezgâhı" 6 Kanlıca, "Fındık zamanı" Ceviz; Zümrüt'ün "Güneş görmeyenler"i Yankı mantarı; Durdu'nun "Bileğinin taşı" Kayın odunu; Ali'nin "Servi sapı" Arduvaz; Kaya'nın "Altın damar"ı yalnız Pirit, "Pençe ve çakmak"ı Çakmaktaşı; Mercan'ın "Gece zambağı" Kor taşı; Kudret'in "Çınlayan çekiç"i Ay taşı ister (konuşmaları da buna göre).
+
+### Kayıtlar
+- Eski kayıtta Kök mantarlı güveç Kanlıcalı güvece çevrilir; Çayır mantarı, Mağara mantarı, Kök mantarı ve kızarmışları eski satış fiyatından sikke olarak ödenir.
+
+### Tasarım belgesi
+- Tarifler › Sade malzeme: tek mantar maddesi (biyom + mağara), "aynı kişi aynı malzemeyi iki kez istemez" maddesi, sayılar (eşya 1341, tarif 979). Mağaralar: toplanabilenler ve Kök Mağarası tarifleri; ACT 2 › Hurda Çölü: Keme; Eşyalar ve Tarifler: Keme, Kızarmış keme, Kanlıcalı güveç; görev tabloları.
+
+---
+
 ## Versiyon 3.76 · 8 Kasım 2026
 
 ### Oynanış
@@ -384,21 +400,4 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 ### Proje
 
 - Belgeyi oyundan üreten araçlar artık mağaraların ve deniz avının verisini de okuyor.
-
-## Versiyon 3.57 · 7 Kasım 2026
-
-### Oynanış
-
-- **"Doğu geçidini aç"** görevi Kaya patlatıcı tarifini bilmeden de alınır; Kayalık Dağ'a varınca Cadı Firuze'de "!" seni bekler. Görevi veren kişi tarifi nerede öğreneceğini söyler.
-- **Görev kartı hep sıradaki adımı gösterir:** hangi malzemeyi nerede bulacağın, hangi tarifi kazanda öğreneceğin, ne yapacağın ve nereye gideceğin; "şimdi ne yapacağım" demezsin.
-- Ağaçlar biraz daha seyrek; ada daha ferah.
-
-### Arayüz
-
-- Dikkat çeken düğmeler (Almanak ve kırmızı sayısı, ders ışıkları, menü düğmesi) artık hızlı yanıp sönmez; yavaş ve yumuşak bir nabız atar.
-- El yapımı listesinde resim ve ad solda, Yap · ×5 · Hepsi · Takip et düğmeleri sağda; bütün tarif ve sipariş listeleri aynı düzende.
-
-### Düzeltmeler
-
-- Kemal Kaya patlatıcının malzemelerini doğru söylüyor (kömür değil, turba).
 

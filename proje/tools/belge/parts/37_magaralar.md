@@ -1,6 +1,6 @@
 ## Mağaralar
 
-> Her biyomda bir mağara olacak; ilk pakette **Çayır** ve **Orman** mağaraları var. Bataklık, Kayalık Dağ, Kül Diyarı ve Mor Kristal Vadisi'ne de birer mağara eklendi; artık Act 1'in altı biyomunun her birinde bir mağara var. Yeni mağaraların her birinde 3 canlı türü, en dipte 1 yan görev kişisi ve bir boss, **4 yalnızca mağarada bulunan toplanabilir** ve Mağara mantarı, canlılardan düşen kendine özgü malzemeler ve az olan tarif türlerinden (Av ve hayvan, Müzik, Süs, Boya, Büyü; yemek yok) tarifler vardır. Mağaraya meşalesiz ve seviyesi yetmeyen giremez. İçeride kendi canlıları, Reis'leri, toplanan malzemeleri ve en dipte bir yan görev kişisi vardır; o kişinin görevi mağaranın **boss'una** götürür.
+> Her biyomda bir mağara olacak; ilk pakette **Çayır** ve **Orman** mağaraları var. Bataklık, Kayalık Dağ, Kül Diyarı ve Mor Kristal Vadisi'ne de birer mağara eklendi; artık Act 1'in altı biyomunun her birinde bir mağara var. Yeni mağaraların her birinde 3 canlı türü, en dipte 1 yan görev kişisi ve bir boss, **4 yalnızca mağarada bulunan toplanabilir**, canlılardan düşen kendine özgü malzemeler ve az olan tarif türlerinden (Av ve hayvan, Müzik, Süs, Boya, Büyü; yemek yok) tarifler vardır. Mağaraya meşalesiz ve seviyesi yetmeyen giremez. İçeride kendi canlıları, Reis'leri, toplanan malzemeleri ve en dipte bir yan görev kişisi vardır; o kişinin görevi mağaranın **boss'una** götürür.
 
 ### Mağara girişlerinin görünüşü (v3.39, Boğaç: "mağara mağaraya benzesin, her biyomdaki farklı olsun, biyomuna uygun")
 
@@ -31,7 +31,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
     - karşılaşıp yenemediysen (bayıldıysan): özellikleri açılır (can, hasar, hız, hamleler, düşürdükleri) ama kart **altın değildir** ("Karşılaştın, henüz yenemedin");
     - yendiysen kart kendiliğinden **altın** olur ("★ Yenildi").
 11. **Yan görev.** Her mağaranın en derin odasında bir **yan görev kişisi** vardır (yan görev kuralları geçerlidir: ana görevle birlikte yapılır, bayılınca yalnızca yan görev iptal olur). Kişi başında mavi "?" ile görünür; yalnızca mağaranın içinden ulaşılır (dış haritada işaret yoktur). Görev bir hikâyeyle başlar, mağarada toplanan bir malzemeyi ister, sonra boss'u çağırır. Boss'la karşılaşıp bayıldıysan ve kişiye **ikinci kez** gidersen, görev en baştan başlamaz: kişi doğrudan "Hazır mısın?" diye sorar ve boss hemen çağrılır. Boss yenilince kişiye dönülür; görev biter.
-12. **Malzemeler.** Her mağarada **Mağara mantarı** da toplanır (yalnızca mağaraların içinde çıkar, dışarıda yoktur; çiğ yenir, zehirli). Ayrıca mağarada **2 toplanabilir** malzeme (duvar diplerinde, her girişte yeniden dizilir; içerideyken yeniden çıkmaz) ve canlılardan düşen malzemeler vardır. **Hepsinin bir satış fiyatı vardır** (Nazlı'ya satılır) ve her biri **en az bir tarifte** kullanılır. Bu tarifler **kazandan öğrenilir** (malzemeler bir kez bulununca Normal modda açık görünür); çoğu tarif kitabında az tarif olan kategorilerdendir (Büyü, Müzik, Boya, Şifa, Av ve hayvan) ve iki tanesi yemektir.
+12. **Malzemeler.** Mağarada **2 toplanabilir** malzeme (duvar diplerinde, her girişte yeniden dizilir; içerideyken yeniden çıkmaz) ve canlılardan düşen malzemeler vardır. **Hepsinin bir satış fiyatı vardır** (Nazlı'ya satılır) ve her biri **en az bir tarifte** kullanılır. Bu tarifler **kazandan öğrenilir** (malzemeler bir kez bulununca Normal modda açık görünür); çoğu tarif kitabında az tarif olan kategorilerdendir (Büyü, Müzik, Boya, Şifa, Av ve hayvan) ve iki tanesi yemektir.
 
 ### 1 · Yankı Mağarası (Çayır · Sv 5)
 
@@ -93,7 +93,7 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 
 **Boss · Yaşlı Kök** (Reis biçiminde, köklerden örülmüş dev bir canlı): can 2000, hasar 38, hız 40, XP 900; düşürdükleri: Yaşlı Kök özü (her zaman), Kök reçinesi 3–5.
 
-**Toplanabilenler:** Kök mantarı (elle), Kök reçinesi (amber parlar; elle).
+**Toplanabilenler:** Kök reçinesi (amber parlar; elle). Orman'ın mantarı Kanlıca dışarıda, ağaçların dibinde çıkar.
 
 **Yan görev · Kökçü Fidan — "Yaşlı Kök"** (en dipteki odada, köklerin arasında diz çökmüş genç bir şifacı)
 - *Hikâye:* "Ninemin ıhlamuru bu mağaranın tam üstünde. Kökleri buraya kadar iner. Bir gece mor ışık köklere sızdı; kökler birbirine sarıldı, bir canlıya dönüştü: **Yaşlı Kök**. Ormanın suyunu içiyor, ağaçlar kuruyor, ninemin ıhlamuru da. Kalbini kabukla örtmüş; kabuğu yakmak için reçineden ateş macunu yapacağım. **3 Kök reçinesi** getir."
@@ -107,11 +107,10 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 
 | Malzeme | Nereden | Fiyat (sikke) | Kullanıldığı tarif |
 |---|---|---|---|
-| Kök mantarı | toplanır | 20 | Kök mantarlı güveç, Kök özü iksiri |
 | Kök reçinesi | toplanır | 24 | Kök flütü |
 | Kök böceği kabuğu | Kök böceği | 28 | Böcek kabuğu boyası |
 | Kök yılanı derisi | Kök yılanı | 32 | Kök flütü |
-| Mağara kurdu eti | Mağara kurdu | 32 | Kök mantarlı güveç (çiğ de yenir) |
+| Mağara kurdu eti | Mağara kurdu | 32 | Kanlıcalı güveç (çiğ de yenir) |
 | Mağara kurdu postu | Mağara kurdu | 40 | – (satılır; Deri parçası da düşer) |
 | Yaşlı Kök özü | Yaşlı Kök | 480 | Kök özü iksiri |
 
@@ -119,15 +118,15 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 
 | Tarif | Kategori | Malzemeler | Fiyat |
 |---|---|---|---|
-| Kök mantarlı güveç | Yiyecek | 2 Kök mantarı, 1 Mağara kurdu eti, 2 Su, 1 Ateş | 160 |
+| Kanlıcalı güveç | Yiyecek | 2 Kanlıca, 1 Mağara kurdu eti, 2 Su, 1 Ateş | 160 |
 | Böcek kabuğu boyası | Boya | 2 Kök böceği kabuğu, 1 Su | 75 |
 | Kök flütü | Müzik | 1 Kök yılanı derisi, 1 Kök reçinesi, 1 Dal | 95 |
-| Kök özü iksiri | Büyü | 1 Yaşlı Kök özü, 2 Kök mantarı, 1 Su | 680 |
+| Kök özü iksiri | Büyü | 1 Yaşlı Kök özü, 2 Kök reçinesi, 1 Su | 680 |
 
 ### Yeni mağaraların ortak kuralları
 
 - **Canlıların görünüşü:** yeni canlılar adadaki akrabalarının biçiminde, kendi renkleriyle çizilir (ör. Batak semenderi yeşil bir Lav kertenkelesi, Lav yılanı kızıl bir Engerek; Kaya yarasası, Kristal yarasa, Tavan örümceği, Ayna örümceği ve Kor böceği Yankı ve Kök mağaralarının canlılarının renk değiştirmiş halidir). Boss'lar Reis biçimindedir (mor parıltılı, iri, adı ve uzun can çubuğuyla).
-- **Toplanabilenler:** her yeni mağarada 4 toplanabilir yalnızca o mağarada çıkar, beşincisi Mağara mantarıdır. Parlayanlar (Parıltı yosunu, Gümüş filizi, Dağ kristali, Kükürt kristali, Kor taşı, Mor damar taşı, Işık sporu, Ayna taşı, Yıldız tozu) çevrelerini hafifçe aydınlatır. Mağara mantarı mağaraların içinde artık görünüyor (önceden toplanabildiği halde çizilmiyordu).
+- **Toplanabilenler:** her yeni mağarada 4 toplanabilir yalnızca o mağarada çıkar. Parlayanlar (Parıltı yosunu, Gümüş filizi, Dağ kristali, Kükürt kristali, Kor taşı, Mor damar taşı, Işık sporu, Ayna taşı, Yıldız tozu) çevrelerini hafifçe aydınlatır.
 - **Sesler:** bütün mağara canlılarının ve boss'larının kendi saldırı sesi vardır (bkz. ACT 1 › Canlı sesleri).
 - **Yan görev kalıbı:** dipteki kişi bir hikâye anlatır, mağarada toplanan bir malzemeden **4** tane ister, boss'u çağırır; boss yenilince kişiyle konuşulur. İkinci denemede boss doğrudan çağrılır.
 - **Mağaranın yeri:** mağaraların içi için seçilen alan artık mağara girişlerinden önce seçilir; altı giriş bu alana konmaz (altı mağarayla bir giriş bu alanı kapatabiliyordu).
@@ -144,7 +143,7 @@ Bataklığın altında, tavanından su sızan, yerleri balçıklı bir mağara. 
 
 **Boss · Çamur Ana** (dev kurbağa): can 3.600, hasar 75, hız 34, XP 1.500, zehirler; düşürdükleri: Çamur Ana gözü (her zaman), Balçık bezesi 3–5.
 
-**Toplanabilenler:** Parıltı yosunu (yeşil parlar), Siyah balçık, Batık kök, Sazlı inci, Mağara mantarı.
+**Toplanabilenler:** Parıltı yosunu (yeşil parlar), Siyah balçık, Batık kök, Sazlı inci.
 
 **Yan görev · Sazcı Nail — "Çamur Ana"** (yaşlı bir sazcı): köyün kuyusu mağaranın altından beslenir; mor ışıktan beri Çamur Ana suyu balçığa çeviriyor. **4 Parıltı yosunu** ister, ondan ışıklı bir yem yapar; Çamur Ana yeme gelir, yen. Ödül: **700 sikke · 680 XP**. Sonra: "Kuyudan yine tatlı su çıkıyor."
 
@@ -179,7 +178,7 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 
 **Boss · Dağ Devi** (mor ışığın taşları birbirine yapıştırdığı dev; Mağara ayısı biçiminde): can 6.000, hasar 125, hız 36, XP 2.400; düşürdükleri: Dev yüreği (her zaman), Gümüş filizi 3–5.
 
-**Toplanabilenler:** Gümüş filizi (parlar), Dağ kristali (parlar), Rüzgâr taşı, Kar likeni, Mağara mantarı.
+**Toplanabilenler:** Gümüş filizi (parlar), Dağ kristali (parlar), Rüzgâr taşı, Kar likeni.
 
 **Yan görev · Dağcı Tuncay — "Dağ Devi"** (ipi kopmuş bir dağcı): Dağ Devi uyandı, tavandan kaya yağıyor, yol kapandı. **4 Gümüş filizi** ister, bir çan döver; çanın sesiyle dev çıkar, yen. Ödül: **1.000 sikke · 1.060 XP**.
 
@@ -214,7 +213,7 @@ Kül Diyarı'nın altında, yarıklarından kor ışığı sızan sıcak bir ma�
 
 **Boss · Kor Kral** (ocakların ateşini yutan dev kertenkele): can 8.500, hasar 165, hız 38, XP 3.400, yakar; düşürdükleri: Kor Kral tacı (her zaman), Kor kabuğu 3–5.
 
-**Toplanabilenler:** Kükürt kristali (parlar), Kor taşı (parlar), Kül mantarı, Volkan camı, Mağara mantarı.
+**Toplanabilenler:** Kükürt kristali (parlar), Kor taşı (parlar), **Kül mantarı** (Kül Diyarı'nın tek mantarı), Volkan camı.
 
 **Yan görev · Ocakçı Alev — "Kor Kral"** (bir demircinin kızı): mor ışık babasının yüz yıllık ocağının ateşini mağaraya çekti, Kor Kral onu yuttu. **4 Kükürt kristali** ister, bir duman yakar; Kor Kral dumana gelir, yen. Ödül: **1.400 sikke · 1.800 XP**.
 
@@ -249,7 +248,7 @@ Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara
 
 **Boss · Işık Yutan** (ışıkla beslenen, Kara ejder biçiminde dev bir gölge): can 12.000, hasar 250, hız 32, XP 5.000; düşürdükleri: Işık Yutan kalbi (her zaman), Mor damar taşı 3–5.
 
-**Toplanabilenler:** Mor damar taşı (parlar), Işık sporu (parlar), Ayna taşı (parlar), Yıldız tozu (parlar), Mağara mantarı.
+**Toplanabilenler:** Mor damar taşı (parlar), Işık sporu (parlar), Ayna taşı (parlar), Yıldız tozu (parlar).
 
 **Yan görev · Gökbilimci Nur — "Işık Yutan"** (mor ışığı inceleyen bir bilgin): mağara ışığı içiyor, dipteki Işık Yutan büyüdükçe vadinin kristalleri sönüyor. **4 Işık sporu** ister, fenerini doldurur; Işık Yutan ışığa gelir, yen. Ödül: **2.000 sikke · 2.580 XP**. Sonra Nur bir ipucu verir: mor ışık düştüğü yerde bir şey doğuruyor.
 

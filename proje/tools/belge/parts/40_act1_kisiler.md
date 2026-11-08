@@ -240,7 +240,7 @@ Son görev (Yeni bir gemi) bitince Barbaros'la konuş: hikâye sahnesi, ardında
 
 | Biyom | Kuzen | Yemeni | Görevler (sırayla; ilki biyom keşfedilince açılır) |
 |---|---|---|---|
-| Orman | Pazarcı Fidan | yeşil | NF1 Mantar tezgâhı (4 Kanlıca, 3 Mağara mantarı · 90 sikke, 60 XP) → NF2 Fındık zamanı (6 Fındık, 4 Kanlıca · 120, 80) → NF3 Karaca kürkü (3 Karaca derisi, 4 Ahududu · 150, 110) |
+| Orman | Pazarcı Fidan | yeşil | NF1 Mantar tezgâhı (6 Kanlıca · 90 sikke, 60 XP) → NF2 Fındık zamanı (6 Fındık, 4 Ceviz · 120, 80) → NF3 Karaca kürkü (3 Karaca derisi, 4 Ahududu · 150, 110) |
 | Bataklık | Pazarcı Nilüfer | su yeşili | NN1 Nilüfer çiçeği (5 Nilüfer, 3 Su kestanesi · 140, 100) → NN2 Ördek pazarı (4 Ördek yumurtası, 6 Ördek tüyü · 170, 130) → NN3 Su samuru (2 Su samuru derisi, 6 Kızılcık · 200, 160) |
 | Kayalık Dağ | Pazarcı Kardelen | kar beyazı | NK1 Dağ çayı (4 Dağ çayı, 4 Kekik · 200, 150) → NK2 Kardelen buketi (3 Kardelen, 4 Lavanta · 240, 190) → NK3 Kartal tüyü (4 Kartal tüyü, 3 Dağ keçisi derisi · 280, 230) |
 | Kül Diyarı | Pazarcı Lale | kırmızı | NL1 Ateş biberi (4 Ateş biberi, 3 Ateş çiçeği · 300, 250) → NL2 Kehribar (5 Kehribar, 3 Kara tuz · 350, 300) → NL3 Kül kurdu (2 Kül kurdu postu, 3 Kül dişi · 420, 360) |

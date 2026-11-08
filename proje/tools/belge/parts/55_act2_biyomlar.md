@@ -108,6 +108,7 @@ Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dron
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
 | Bakır tel | 14 | 67 | 55 sn sonra yeniden çıkar |
+| Keme | 22 | 42 | Çöl trüfü: kumun altında biter, Hurda Çölü'nün tek mantarı; 70 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk) |
 | Çöl otu | 8 | 67 | 45 sn sonra yeniden çıkar |
 | Eski devre | 30 | 57 | 90 sn sonra yeniden çıkar |
 | Hurda parçası | 10 | 60 | 45 sn sonra yeniden çıkar |
