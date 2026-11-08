@@ -1,3 +1,11 @@
+## v3.82 (8 Kasım 2026) · ACT 2 çiğ yiyecekleri FOODT'ten
+
+**Değişen yerler:** v77 bloğundaki `Object.assign(RAWFOOD,{'Bulut elması':8,'Goblin eriği':6,'Gök mantarı':3,'Kök yumrusu':5})` silindi (FOODT'teki 26/29/25/29 eziliyordu; belge FOODT'i yazıyordu). `FOODT`'a `'Keme':[8,30,'doygun']`; `v373sade`'deki `RAWFOOD['Keme']=4` silindi. Sürüm etiketi `Versiyon 3.82`.
+
+**Geri alma:** satırı geri koy (ya da `git revert`).
+
+**Kontrol:** chk.js 0 hata. Yeni oyun ACT 2 çiğ tokluk: Gök mantarı 25, Bulut elması 26, Rüzgâr eriği 26, Kök yumrusu 29, Spor elması 29, Goblin eriği 29, Keme 30, Çöl inciri 31, Buz armudu 33, Lav narı 35, Yıldız kirazı 37.
+
 ## v3.81 (8 Kasım 2026) · ACT 2'nin kullanılmayan 36 malzemesine tarif
 
 **Değişen yerler:** `v373sade` v3.81 satırları: `dish()` (yeni yemek; fiyat = girdiler × 1,4 + 12, ateşliler `FIRE_R`) ve `vary()` (var olan tarifin bir malzemesi değişir; `VO`, fiyat asılınki, istasyon kümeleri kopyalanır); 11 yemek, 18 varyant; `window.__plA2New`. Sürüm etiketi `Versiyon 3.81`.
@@ -263,23 +271,4 @@
   - Ateş yemeklerinin hiçbiri El yapımında yok.
 - **Ölçüm** (`olcum.js` CPU×4, gl; 3.62 ↔ 3.63 ikişer koşu, makine yüklü): BOOT js ort. 14.865 → 14.270 ms; PLAY 10 sn js 3.203 → 3.171 ms; kumsal kare ort. 337 → 300 ms; yürürken 297 → 297 ms. Fark gürültü içinde (`drawFireAt` sarmalı yalnız pişen ateş varken bir döngü yapar).
 - **Geri almak için:** v3.63 commit'ini `git revert` (prototip, index.html, notlar). Kayıt alanı ve MAPV değişmedi (ateşteki sıra kaydedilmez, kayıtta tamamlanır).
-
-## v3.62 (7 Kasım 2026) · Testçi v3.60 raporu: atılma dersi takılması, ders sırasında kayıt, kayıt odağı, meşale yazıları, ek uyumu, kazan seçici
-
-- **KOL-15 (`v181` DL):** testçinin ortamında yeniden üretilemedi (akşam, meşale uyarısı ve LT 0,9 sn ile de saldırılar sürdü). Takılma iki yoldan olabiliyor: `idle`'da sayaç yalnız 22–46 px aralığında azalıyordu (yakına itilen ya da sıkışan kerevit hiç saldırmaz), ya da `tickAnimals` çağrılmıyordu. Yapılanlar: `DL.atkT` son saldırı zamanı; `idle`'da 5 sn saldırı yoksa ve uzaklık ≤ 60 ise `DL.t=0`; 8 sn ve > 60 ise `spawn()`. `DL.tickT` ile 250 ms'lik bekçi: oyun duraklatılmamışken 2 sn `tickDL` çalışmadıysa kendisi `tickDL(.25)` çağırır. Denendi: kerevit 15 px'e yapıştırıldı → 3,9 sn'de saldırdı; `tickAnimals` boşaltıldı → saldırı sürdü.
-- **KOL-32:** `v181` 2 sn'lik bekçi: `tz===11&&ftut===2`, ders yok (`!DL.on&&!DL.done&&!DL.tree`), pencere yok ve öğretici kereviti yoksa (iki ardışık bakış) `spawnTutCrab()`. Kayıt `DL`'yi tutmaz; kerevit ölünce `fightLessonDone` → `tzAlpDone` sarmalı dersi baştan açar. Denendi: ders sırasında kaydet → sayfa yeniden → Devam et → kerevit 70 px'te geldi.
-- **KOL-30:** `v320pad` `firstFocus` duraklat penceresinde `#pslots` görünürken `.slot-btn.empty` ya da ilk açık `.slot-btn` (anahtar yuva listesine göre değişir). Denendi: "Kayıt 1 Boş Kaydet".
-- **KOL-25, 20, 21, 22:**
-  - `v283` meşale yazıları kolda `padTS()`.
-  - `bn()` adın sonuna görünmez U+2060 ekler (çeviricinin kol adını ikinci kez okumasını keser).
-  - `__plPad.dat/acc` ve `window.__plSuf` okunuşa göre ek (harf adları tablosu `RD`, sayılar ve sözcükler `__plDat`).
-  - `kTxt`: değiştirilen her tuş U+2062/U+2061 ile işaretlenir, ardındaki `'ye/'ya/'e/'a` yeniden hesaplanır. Kolda klavyeye özgü tuş olduğu gibi kalır. Kolda fare sözleri silinir (`tıkla ya da`, `(ya da … tıkla)`, ` ya da … tıkla/dokun`, `ya da ↑←↓→`).
-  - `tzKey` sarmalı kolda `kTxt`.
-  - `body.padmode .esc` gizli.
-- **KOL-23:** `moveFocus`'ta `select` sol/sağ değeri artık değiştirmez (yalnız `winStep` LB/RB). Kazan (`mode==='craft'`) tarifsiz açılırsa ve `potCat/potBy` varsayılan değilse sıfırlanır.
-- **KOL-26:** `markTS` boş el durağında `body.padhand` (`#handbtn` çerçeve).
-- **KOL-27:** çantada `.itile`'a A → `.bs.tsinv.want` ya da `.ibelt .bs.pulse` odaklanır.
-- **KOL-33:** `#padkb .pkh` `kbShow`'da `bn()` ile; tuşlar `clamp` ile daralır. Denendi: DualSense, 800 px'te sığıyor.
-- **Basılı tutma süresi:** kodda 400 ms (`P.xh`). Testçinin 0,7 sn'si 3–14 kare/sn ve 150 ms basışlardan; belge 0,4 kalır.
-- **Geri almak için:** v3.62 commit'ini `git revert` (prototip, index.html, notlar). Kayıt alanı ve MAPV değişmedi.
 

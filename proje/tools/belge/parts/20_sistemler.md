@@ -473,7 +473,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 | Mor Kristal Vadisi | Ay elması 24 Dayanıklılık (+21 can) · Yıldız eriği 22 Çeviklik · Işık mantarı 21 Gece gözü (+15 can) |
 | Yüzen Kayalar (ACT 2) | Bulut elması 26 Canlılık (+22 can) · Rüzgâr eriği 26 Çeviklik (+18 can) · Gök mantarı 25 Gece gözü (+18 can) |
 | Dev Mantar Ormanı (ACT 2) | Goblin eriği 29 Çeviklik · Spor elması 29 Gece gözü (+21 can) · Kök yumrusu 29 Doygunluk |
-| Hurda Çölü (ACT 2) | Çöl inciri 31 Doygunluk (+24 can) |
+| Hurda Çölü (ACT 2) | Çöl inciri 31 Doygunluk (+24 can) · Keme 30 Doygunluk (+24 can) |
 | Kristal Golem Ocağı (ACT 2) | Buz armudu 33 Dayanıklılık (+27 can) |
 | Ejder Volkanı (ACT 2) | Lav narı 35 Ateş kalkanı (+30 can) |
 | Gök Rıhtımı (ACT 2) | Yıldız kirazı 37 Canlılık (+37 can) |

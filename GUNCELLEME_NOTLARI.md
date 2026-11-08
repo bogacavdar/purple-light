@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.82 · 8 Kasım 2026
+
+### Düzeltmeler
+- **İkinci adanın çiğ yiyecekleri belgedeki gibi doyuruyor:** Bulut elması, Goblin eriği, Gök mantarı ve Kök yumrusu eski bir ayar yüzünden 3–8 tokluk veriyordu (Mor Kristal Vadisi'nin meyveleri 21–24 verirken). Artık belgedeki gibi 25–29; Keme de 30. Biyomdan biyoma tokluk düzgün artıyor.
+
+### Tasarım belgesi
+- Yiyecek etkileri tablosuna Keme; Keme satırları.
+
+---
+
 ## Versiyon 3.81 · 8 Kasım 2026
 
 ### Oynanış
@@ -365,23 +375,4 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Kamp ateşinde her yemek ateşten biraz yer. Ateş pişirme bitmeden sönerse pişmeyen malzemeler çantana döner.
 - Çantanda çiğ yiyecek olmasa da yapabileceğin bir ateş yemeği varsa kişilerin ateşinde menü açılır.
 - Ateşte ilk kez yapılan yemek 12 XP, sonrakiler 2 XP verir (el yapımı gibi). Közleme parça başına 1 XP.
-
-## Versiyon 3.62 · 7 Kasım 2026
-
-### Düzeltmeler
-
-- **Börü'nün atılma dersi artık takılmaz:** kerevit bir yere sıkışır, itilir ya da oyun çok yavaş akarsa bile en geç 5 saniyede yeniden saldırır. Çok uzakta kalırsa yanına döner.
-- **Ders sırasında alınmış bir kayıt yüklenince öğretici kilitlenmez:** Börü'nün kereviti geri gelir. Onu vurunca atılma dersi baştan başlar.
-- Kol menüsünden "Oyunu kaydet" ve "Kayıttan yükle" ilk boş yuvada (yoksa ilk yuvada) açılır, "Geri"de değil.
-- Kolla kazanda grup listesi sol / sağ ile artık değişmez (seçim yanındaki düğmeye geçer). Grup LB / RB ile değişir. Kazan boş bir grupla kalmışsa kolla açılınca bütün tarifler geri gelir.
-- Çantada meşaleyi A ile seçince seçim kendiliğinden meşale yuvasına geçer (bir daha A: yuvaya girer).
-
-### Arayüz
-
-- Meşale yazıları kolda doğru tarif eder: "LB / RB ile meşale yuvasını seç, sonra X'i basılı tut" (PlayStation'da L1 / R1, □).
-- Kol açıkken ders kartlarında ve ipuçlarında fare sözleri ("tıkla ya da", "… düğmesine tıkla") düşer, pencerelerdeki "(Esc)" görünmez, Zümrüt'ün "Tab'a bas"ı kolun tuşunu söyler.
-- Tuş adından sonraki ek, yeni adın okunuşuna uyar: "A'ya bas", "B'ye", "X'e", "LB'ye", "✕'ya".
-- Kol yazılarına kol tuşu harfi ikinci kez klavye tuşu sanılıp değiştirilmez (meşale yazısında "X basılı" "J basılı" oluyordu).
-- LB / RB kemerde boş eldeyken boş el kutusu da mavi çerçeveyle gösterilir.
-- Ad yazma ekran klavyesi DualSense'te ✕ / □ / ○ / Options yazar ve dar ekranda taşmaz.
 
