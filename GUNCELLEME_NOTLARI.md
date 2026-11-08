@@ -8,6 +8,23 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.91 · 9 Kasım 2026
+
+### Arayüz
+- **Sol üst sade:** can çubuğunun üstünde kutusuz tek satır: gün ("10. gün"), dijital saat, hava durumu simgesi ve mevsim çemberi. Hava adı ve mevsim adı artık yazı olarak çıkmıyor.
+- **Dijital saat:** gündüz amber, gece mavi rakamlar. Üstüne gelince gündüz ve gecenin süresi kısaca yazıyor.
+- **Hava durumu simgesi:** ☀ / 🌙 / ☁ / 🌧 / ⛈ / 🌫 / ❄ / 🌋. Üstüne gelince adı ve sıcaklık yazıyor.
+- **Mevsim çemberi:** dört renk (İlkbahar yeşil, Yaz sarı, Sonbahar turuncu, Kış açık mavi), üstünde yılı saat gibi yavaşça dönen bir ok. Üstüne gelince mevsimler ve şu an hangisinde olduğun (kaçıncı gün, sonrakine kaç gün) görünüyor.
+- **Öğretici kartı yarı alan:** sağ üstteki kart eskisinin yarısı kadar yer kaplıyor (her kenarı ×0,71).
+- **Takip şeridi geniş:** yazı biraz küçük, tarif adı ve malzeme kutucukları daha geniş; adlar çoğunlukla kısalmadan sığıyor, sütun düzeni aynı.
+- Telefonda saat kutusu eskisi gibi.
+
+### Tasarım belgesi
+- Sistemler › Mevsimler: "Sol üstteki gün, saat, hava ve mevsim", Sıcaklık maddesi.
+- Sistemler › Takip şeridi geniş; Oyun akışı › Öğretici kartı küçük.
+
+---
+
 ## Versiyon 3.90 · 9 Kasım 2026
 
 ### Arayüz
@@ -254,21 +271,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - ACT 1 › Adanın yerleşimi › Haritadaki miktarlar: madenler arası mesafe kuralı; yeni "Sade harita" maddesi (temel malzemeler −%30, bitkiler −%25 ve öbek öbek, öbeklerin yeniden çıkışı).
-
----
-
-## Versiyon 3.71 · 8 Kasım 2026
-
-### Arayüz
-- **Yeni imleç:** oyun alanındaki mor nişangâhın yerine **mor ışıklı piksel el**: krem renkli, ince mor kenarlı, parmak ucu morla parlayan, çevresinde soluk mor bir ışık olan bir el. Toplanacak, konuşulacak ya da kullanılacak bir şeyin üstüne gelince **avucunu açar**, mor ışık belirginleşir ve kıvılcım çıkar. Menülerdeki krem/mor ok aynı kaldı. (Yalnızca fareyle oynayanlar için; telefonda imleç yok.)
-
-### Düzeltmeler
-- **Leşlerde çift gölge:** yere düşen canlının altında artık tek gölge var (ayaktaki gölgesi leşle birlikte dönüp ikinci bir gölge gibi görünüyordu).
-- **Kemal'in böğürtlenleri uygun yerde çıkar:** öğreticinin 5 böğürtleni (ve Zümrüt'ün, Börü'nün dersinde bırakılanlar, uzaktaki çalının yerine çıkan yeni çalı) artık en baştan kişilerden, ateşlerden (Kemal'in ateşi dahil), ağaçlardan uzak bir yere konur ve orada kalır; yanına gidince yer değiştirmez.
-- **Robot köpeğin yokken R hiçbir şey açmaz:** köpekler menüsü, Ayarlar › Kontroller'deki "Robot köpekler" satırı ve kol menüsündeki düğme ilk köpek gelene kadar görünmez (ileride gelen bir şeyi önceden göstermesin).
-
-### Tasarım belgesi
-- ACT 1 › Adanın yerleşimi: öğreticinin bıraktığı malzemelerin yeri kuralı. Sistemler › Ölüm pozu ve leş: tek gölge. Sistemler › Kontroller: R tuşu köpek yokken; Fare imleci: mor ışıklı piksel el.
 
 ---
 

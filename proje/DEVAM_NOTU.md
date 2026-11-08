@@ -1,3 +1,11 @@
+## v3.91 (9 Kasım 2026) · sol üst: gün, dijital saat, hava simgesi, mevsim çemberi; öğretici kartı yarı alan; takip şeridi geniş
+
+**Değişen yerler:** yeni blok `v391hud`: `body.v391` (yalnızca bilgisayar; `v50m`'de `.hd` gizli) `#clock` kutusuz, `#clockic/#clockv/#clockms` gizli, yeni çocuklar `#hdday`, `#hdtime` (dijital, `.hdpop` gündüz/gece süresi, `NIGHT=[150,108,150,210]`, Mor gece 240), `#hdwx` (simge + ad + `__plTempStr`), `#hdsea` (SVG dört yay + ok, açı = yılın 28 günündeki yeri, gün 06:00'da başlar). `renderClock` sarmalı + 1 sn'lik `upd()` (anahtar değişince DOM). CSS: `#tut{transform:scale(.7071);transform-origin:top right}` (bilgisayar), `#b3trk .b3lab` 16em / `.b3cell` 15em / 12 px. Belge: 20_sistemler.md, 10_akis.md. Sürüm etiketi `Versiyon 3.91`.
+
+**Geri alma:** `git revert` bu commit.
+
+**Kontrol:** chk.js 0 hata. 1920×1080: satır 255 px'e sığıyor (#left genişliği), şerit 458 px ve adlar kısalmadan; kart 540×283 → 382×200 (alan %50). 10. gün 21:00 (Yaz): saat mavi, ipucu "Gece 20:00–06:00 · 1,8 dk". Konsol hatası yok.
+
 ## v3.90 (9 Kasım 2026) · eldeki eşya figürde, sürükleyip eline al/giy, özellikler gruplu + kritik
 
 **Değişen yerler:** `v387env`: `handThing()` (elde tutulan, meşale hariç; `window.__plHandThing`), `figHTML` Silah yuvasında elindekini gösterir (`.inh`), `drawChar` eldekini çibiden sonra çizer. Yeni blok `v390el`: `holdIt(n)` (yuvada değilse `beltAuto`, dolu ise `pickFor` → `.pfpick` "hangisinin yerine?" `[data-pfrep]`), `invAct('hold')` sarmalı aynı soruyu sorar; `#cpanel` yakalayan tıklaması (v92'den önce) Silah yuvasında: seçili alet → eline al, elindeki → bırak (`setHand(-1)`); `pointerup` yakalayan dinleyicisi aleti Silah yuvasına bırakınca eline alır; giysi/silah için yeni fare sürüklemesi (`wd`) figür yuvasına giydirir. Karakter tablosu (satır ~3177): `ROWS` gruplu (Ekonomi · Savaş · Dayanıklılık, `tr.spgh`), Savaş'ta `__plCrit.pct()` ile kritik satırı (`tr.spcr`, puansız). Belge: 20_sistemler.md. Sürüm etiketi `Versiyon 3.90`.
@@ -157,17 +165,4 @@
 **Geri alma:** `v372maden` ve `v372sade` bloklarını sil, `__plFloorBusy` satırını kaldır (düğümler kayda yazılmadığı için ada bir sonraki açılışta eski haliyle kurulur).
 
 **Kontrol:** chk.js 0 hata (179 script). Yeni oyun (554 maden, 18 tür): önce aynı tür < 40 px 10, < 64 px 25, < 96 px 69; herhangi < 40 px 22 — sonra aynı tür < 96 px 0, herhangi < 48 px 0; tür sayıları aynı. Yerleşmiş haritada ikinci `spread` 0 taşıma, 48 ms. Sade harita: toplanabilir 11.317 → 8.505; ekran başına (27×15 karo) Çayır 38 → 33, Orman 39 → 34, Bataklık 27 → 23, Kayalık Dağ 34 → 26, Kül 24 → 21, Mor Kristal 25 → 20 (temel 10 → 8, bitki 12 → 9, ağaç aynı); bitkilerin %88'inin 2 karo içinde en az 2 türdaşı var; 200 yeniden çıkışın 200'ü bir türdaşının yanında. Ekran görüntüsünde 5'li papatya öbeği.
-
-## v3.71 (8 Kasım 2026) · leşte tek gölge, öğretici malzemeleri uygun yerde, köpek yokken R kapalı
-
-**Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
-- `v337les` (yerinde): leş çiziminde `noShadow(()=>drawAnimal(...))`: çizim sırasında `ctx.fill`/`ctx.fillRect` örnek düzeyinde sarılır, dolgu rengi `rgba(0,0,0,.22|.25)` olan çağrılar atlanır (bütün canlı çizicilerinin ayakta gölgesi), sonra `delete` ile prototipe dönülür.
-- `v345` (yerinde): `window.__plNearP(x,y)`; `pplClear` `n.tzN||n.tutN` olan düğümleri atlar.
-- Yeni `<script id="v371yer">`: `tzPlace` ve `bringBerry` yeniden yazıldı: yer seçiminde kişilerin 32 px'i (`__plNearP`), `FIRES`, `camps` ve `lightSources()` (Kemal'in ateşi, ocak, kazan; eldeki meşale hariç) 26 px'i, ağaç 14 px, düğüm 12 px dışı; konan düğümlere `tzN:1` / `tutN:1`. `openMenu('dogs')` köpek yokken hiçbir şey yapmaz; `body.nodogs` sınıfı (0,5 sn'de bir) kol menüsündeki `#p-dogs` ve Kontroller'deki `[data-kb="dogs"]` satırını gizler.
-- Yeni `<script id="v371el">` (yalnız `!TOUCH`): 16×16 iki şekil (`POINT`, `PALM`), kenar otomatik (dolgunun 4 komşusu, `#3a1c5c`), sağ/alt gölge, parmak ucu mor, çevresinde `rgba(160,80,255,.5/.78)` ışık (köşegende ×0,55), 2× çizilip PNG `dataURL`; CSS `body:not(.ontitle) #game` ve `body.plpalm` için `cursor:url(...) 13 2` (v3.32'nin nişangâh kuralını ezer; menü okları aynı). `cv` üstünde `mousemove` (80 ms'de bir) ve 250 ms'de bir `pickAt` → `tg` var ve su değilse `plpalm`. `window.__plHand`.
-- Sürüm etiketi `Versiyon 3.71`.
-
-**Geri alma:** `v371el` ve `v371yer` bloklarını sil; `v337les`'te `noShadow` sarmasını, `v345`'te `__plNearP` ve `pplClear`'daki `tzN/tutN` koşulunu geri al.
-
-**Kontrol:** chk.js 0 hata (177 script). Duman denemesi: 30 × 5 öğretici böğürtleni, kişilere en yakın 33 px, ateş/ışığa en yakın 26 px; köpeksiz R → pencere açılmadı, `nodogs` var; köpek gelince R → köpekler penceresi; Geyik leşinin ekran görüntüsünde tek gölge. İmleç: Kemal'in üstünde `plpalm` açık, boş zeminde kapalı; iki imleç büyütülmüş ve gerçek boyutta (yeşil ve koyu zeminde) görüntüyle bakıldı. Sayfa hatası yok.
 
