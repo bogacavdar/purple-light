@@ -1378,7 +1378,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.68</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.69</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1453,7 +1453,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.68 · 8 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Sapan işe yarıyor:</strong> eldeyken vuruş bir <strong>taş</strong> atar (her atış 1 Taş). Bir <strong>kuşa</strong> (keklik, ördek, ur kekliği…) değerse kuş 3 saniye sersemler. Nişanı bir <strong>meyve ağacının</strong> tacına alırsan ağacın dibine 1 meyvesi düşer (tohumu olan ağaçta %20 bir de tohum); her ağaç günde bir kez meyve verir. Hasar 5, menzil 200 px.</li><li><strong>Bola işe yarıyor:</strong> fırlatılır ama harcanmaz. Değdiği canlının ayaklarına dolanır, canlı <strong>5 saniye %35 hızla</strong> yürür. Kaçan tavşanı, geyiği yakalamak ya da saldırgan bir canlıdan uzaklaşmak için birebir. Reisler hasar alır ama sersemlemez, yavaşlamaz.</li><li><strong>Dişbudak yayı ve Porsuk yayı artık gerçek yay:</strong> ikisi de <strong>kısa yay</strong>. Biyomlarının asıl yayıyla saniyedeki hasarı aynı, ama daha sık atar, menzili kısa ve daha çok ok harcar (Dişbudak 20 hasar / 0,5 sn / 250 px; Porsuk 27 / 0,49 sn / 270 px). Bütün yaylar gibi örste dövülür.</li><li><strong>Kupa panosu:</strong> Usta Sinan'ın yaptığı, duvara asılan 3 kare genişliğinde bir pano (2 Çam kalası, 1 Tunç levha, 2 İp, 1 Sopa; 896 sikke). Yendiğin her Reis için üstünde altın bir kalkan belirir.</li><li><strong>Kıyıya vuran şişeler:</strong> fırtına dinince bazen kıyıya bir şişe vurur. İçinde ada halkından birinin mor ışığa kaybettiği kişiye yazdığı bir mektup var (Kemal, Zümrüt, Nazlı, Börü, Dursun ile Durmuş, Sinan, Doğan, Barbaros ve kuzenlerin Elmas Nine'ye mektubu; toplam 9). Okuduklarını Kitap › Ada halkı'nın altında bulursun.</li><li><strong>Üç yeni başarım (gizli değil):</strong> İlk anı (bir anı), Anılar dönüyor (ACT 1'in 11 anısı), Tanıştığımız günden beri (ACT 1'in 22 anısının hepsi). Toplam 49 başarım.</li></ul><h3>Arayüz</h3><ul><li><strong>Ayarlar › Renk körü modu:</strong> açınca tamam / eksik / yapılır renkleri mavi, turuncu ve açık sarıya döner (renk körlüğünün her türünde ayırt edilir). Malzeme satırlarında ✓ ✗ + işaretleri çıkar; takip şeridi, kazan listesi, Zor modun cevapları ve görev kartları da aynı paleti kullanır; inşa gölgesi mavi (konur) ya da turuncu (konmaz) olur.</li><li><strong>Ayarlar › Kalp atışını ekranda göster:</strong> açınca gece beliren sevdiğin kişi göründüğünde her kalp atışıyla ekranın kenarları da mor bir nabızla atar; sesi kapalı oynayan da kalp atışını görür.</li><li>Arenanın silah seçicisinde yeni <strong>Fırlatma</strong> grubu (Sapan, Bola); kısa yaylar Yaylar grubunda.</li></ul><h3>Kayıtlar</h3><ul><li>Her kayıt artık gizli bir <strong>köpek günlüğü</strong> tutar (bayılmalar, başarımlar, Reisler, anılar, kıyıya vuran mektuplar; gün ve saatiyle). Oyunda görünmez; ACT 3 için şimdiden yazılıyor. Bulunan mektuplar da kayda yazılır. Eski kayıtlar boş günlükle ve hiç mektup bulunmamış olarak açılır.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.69 · 8 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Mevsimler geldi.</strong> Yıl 28 gün: her mevsim 7 gün sürer ve sırayla döner (1–7 İlkbahar, 8–14 Yaz, 15–21 Sonbahar, 22–28 Kış). İki adada da aynı. Yeni mevsim sabah büyük bir yazıyla duyurulur.</li><li><strong>Geceler mevsime göre:</strong> yazın gece 1,8 dakika, kışın 3,5 dakika (İlkbahar ve Sonbaharda 2,5). Saatler aynı kalır: gece yine 20:00–06:00, uyku yine 20:00–05:00.</li><li><strong>Hava mevsime göre:</strong> yaz çoğunlukla açık, sonbahar yağmurlu ve fırtınalı (kıyıya şişe vurma şansı da artar), kışın yağmur <strong>Kar</strong>, fırtına <strong>Tipi</strong> olur.</li><li><strong>Toplarken:</strong> İlkbaharda otlar, Yazın meyveler, Sonbaharda mantarlar %50 ihtimalle bir tane fazla gelir; sonbaharda ağaçtan düşen meyve (silkeleme, kesme, Sapan) 2 kat. <strong>Kışın meyve yok:</strong> dallar çıplak, çalılardan ve ağaçlardan meyve gelmez. Kışın meyve gerekirse Nazlı'dan satın alınabilir.</li><li><strong>Mevsim balığı:</strong> her mevsim bir balık iki kat sık vurur: İlkbahar Alabalık, Yaz Sazan, Sonbahar Turna balığı, Kış Mersin balığı. Göller kışın donmaz; balık her mevsim tutulur.</li><li><strong>Kışın karın çabuk acıkır:</strong> tokluk %25 daha hızlı düşer.</li><li><strong>Mor gece:</strong> her yılın son gecesi (28., 56., 84.… gün) yılın en uzun gecesidir (4 dakika). Gökyüzü mora çalar ve <strong>mor ışık saldırısı kesin gelir</strong>; evde ya da ateşin başında beklesen de dışarı çıktığın an gelir. Uyuyarak geçirirsen gelmez. Anılara dokunmaz.</li></ul><h3>Görsel</h3><ul><li>İlkbaharda uçuşan çiçek yaprakları, yazın ılık bir ışık, sonbaharda düşen sarı-turuncu-kızıl yapraklar, kışın durmadan yağan kar ve soğuk bir renk; kar ve tipide yağmur çizgileri yerine kar taneleri. Mor gecede gökyüzü mor. Grafik kalitesi en düşükteyken yalnızca kar çizilir (yaprak, çiçek ve renk yok).</li></ul><h3>Arayüz</h3><ul><li>Saatin yanında mevsim yazar ("9. gün · 06:00 · Yaz"); kışın hava adı Kar ya da Tipi.</li></ul><h3>Kayıtlar</h3><ul><li>Mor gece saldırısının görüldüğü kayda yazılır (aynı gece yeniden gelmesin diye) ve köpek günlüğüne de girer. Mevsim günden hesaplanır; eski kayıtlar kendi günlerinin mevsiminde açılır.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -20351,7 +20351,7 @@ const free=d=>{while(d<=3||SPECIAL.has(d))d++;return d};
 function seqFrom(m){let d=6,i=0;while(d<m){d+=GAPS[i%GAPS.length];i++}return free(d)}
 function fresh(){S.next=6;S.at=1200;S.cnt=0}
 fresh();
-window.__plYS={kinds:KINDS,show:()=>S.cnt>0||KINDS.some(k=>(kills[k]||0)>0)};
+window.__plYS={kinds:KINDS,show:()=>S.cnt>0||KINDS.some(k=>(kills[k]||0)>0),S,busy:()=>!!ATK,go:()=>{if(!ATK&&!waitNow()&&!sheltered())start();return !!ATK}};   // v3.68 (go/busy/S): Mor gece
 {const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{s.v330ys={n:S.next,a:S.at,c:S.cnt,f:2}}catch(e){}return s}}
 try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}
 {const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{ATK=null;const v=d&&d.v330ys;S.cnt=v?(+v.c||0):0;S.at=1200;if(v&&v.f===2&&+v.n>0)S.next=+v.n;else S.next=seqFrom(dayT>=1260?day+1:day)}catch(e){}return r}}
@@ -22272,7 +22272,8 @@ function throwIt(h,focus){const S=SL[h];
       window.__plFire({c1:'#a8a49a',c2:'#5cba48',spd:S.spd,range:Math.max(8,d-4),line:1,trail:0,draw:pebble},0,{x:tx,y:ty},0);
       setTimeout(()=>{try{for(let k=0;k<8;k++)parts.push({x:tx+(Math.random()-.5)*14,y:ty+(Math.random()-.5)*8,vx:(Math.random()-.5)*40,vy:10+Math.random()*30,life:.6,c:k%2?'#5cba48':'#3d9a38'});
         if(tr._sapD===day){floatText('Bu ağaçta meyve kalmadı · yarın','#e8e0c8');return}
-        tr._sapD=day;const ty2=tr.type;dropItem(ty2.fruit,tr.x+(Math.random()<.5?-7:7),tr.y+2,1);if(ty2.seed&&Math.random()<.2)dropItem(ty2.seed,tr.x,tr.y+4,1);sfx('pick')}catch(e){}},Math.round(d/S.spd*1000));
+        const ss=window.__plSeason?window.__plSeason():0;if(ss===3){floatText('Kış: dallar çıplak, meyve baharda','#e8f0ff');return}   // v3.69: seasons
+        tr._sapD=day;const ty2=tr.type;dropItem(ty2.fruit,tr.x+(Math.random()<.5?-7:7),tr.y+2,ss===2?2:1);if(ty2.seed&&Math.random()<.2)dropItem(ty2.seed,tr.x,tr.y+4,1);sfx('pick')}catch(e){}},Math.round(d/S.spd*1000));
       try{renderInv()}catch(e){}return S.cd}}
   const dm=Math.max(1,Math.round(S.dmg*pw()));
   const shot={c1:h==='Sapan'?'#a8a49a':'#8a6a40',c2:'#c8c0b0',spd:S.spd,range:S.rng,line:1,trail:0,draw:h==='Sapan'?pebble:bolaDraw,
@@ -22351,6 +22352,79 @@ setInterval(()=>{try{if(onTitle||window.__plArena)return;
   return h+`<h3 style="margin:14px 0 6px">Kıyıya vuran mektuplar ${F.length}/${LET.length}</h3><ul class="book ppl">${F.map(l=>`<li><b>${esc(l[1])} → ${esc(l[2])}</b><div class="pplf">${l[3].map(s=>`<p>${esc(s)}</p>`).join('')}<p><i>— ${esc(l[4])}</i></p></div></li>`).join('')}</ul>`}}
 window.__plSise={wash,found:()=>Array.from(FOUND)};
 }).toString()+')()')}catch(e){try{window.__hamErr('v368sise: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v369mevsim">
+// v3.69 (Boğaç): seasons (belge Sistemler › Gün, gece ve mor ışık › Mevsimler). A year of 28 days, 7 per season, both islands.
+// Night length, weather odds, gathering, the season's fish, hunger in winter, a picture over the world, and the Mor gece
+// (the year's last night: 4 minutes, a purple light raid that is not put off). Nothing new is saved but the Mor gece already met.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const SN=['İlkbahar','Yaz','Sonbahar','Kış'];
+const season=()=>Math.floor((((Math.max(1,day)-1)%28)+28)%28/7);
+const mgKey=()=>day%28===0&&dayT>=1200?day:(day%28===1&&day>1&&dayT<360?day-1:0);   // the night of day 28, 56, 84…
+window.__plSeason=season;window.__plSeasonName=()=>SN[season()];window.__plMorGece=()=>mgKey()>0;
+const live=()=>!onTitle&&!window.__plArena;
+// ---- night length (the clock keeps its hours; only how long a night lasts changes)
+const NIGHT=[150,108,150,210],MG=240;
+{const _tc=tickClock;tickClock=function(dt){try{if(!(dayT>=360&&dayT<1200)&&live()){const L=mgKey()?MG:NIGHT[season()];dt=dt*150/L}}catch(e){}return _tc.call(this,dt)}}
+// ---- hunger: 25 % faster in winter
+{const _th=tickHunger;tickHunger=function(dt){const f0=food;const r=_th.apply(this,arguments);try{if(season()===3&&food<f0&&live())food=Math.max(0,food-(f0-food)*.25)}catch(e){}return r}}
+// ---- weather odds by season; in winter rain is snow and a storm a blizzard
+const WW=[[40,22,24,6,8],[60,18,10,6,6],[32,22,24,12,10],[40,25,20,5,10]];
+nextWeather=function(){const z=zoneAt(player.x,player.y),s=season(),A=WW[s],w=[['açık',A[0]],['bulut',A[1]],['yağmur',A[2]],['fırtına',A[3]],['sis',z===1?Math.round(A[4]*2.2):A[4]]];
+  let sum=0;for(const a of w)sum+=a[1];let r=Math.random()*sum,k='açık';for(const [n,v] of w){r-=v;if(r<=0){k=n;break}}
+  if(day<=1&&!met)k='açık';const was=weather.k;weather={k,t:k==='açık'?200+Math.random()*220:110+Math.random()*150};
+  if(k!==was&&met&&!wake){const tip=s===3?{yağmur:'Kar yağmaya başladı: meşaleler iki kat çabuk tükenir.',fırtına:'Tipi geliyor! Meşaleler çabuk tükenir.',sis:'Sis çöktü: uzağı göremezsin ama hayvanlar da seni zor fark eder.',bulut:'Bulutlar toplandı.',açık:'Hava açıldı.'}[k]
+    :{yağmur:'Yağmur başladı: meşaleler iki kat çabuk tükenir, tarlalar kendiliğinden sulanır.',fırtına:'Fırtına geliyor! Şimşekler çakar, meşaleler çabuk tükenir.',sis:'Sis çöktü: uzağı göremezsin ama hayvanlar da seni zor fark eder.',bulut:'Bulutlar toplandı.',açık:'Hava açıldı.'}[k];toast(tip)}
+  clockK=''};
+// ---- the clock shows the season
+let ck='';
+{const _rc=renderClock;renderClock=function(){const r=_rc.apply(this,arguments);try{const s=season(),el=$('clockv'),k=clockK+'|'+s;if(k!==ck||el.textContent.slice(-SN[s].length-3)!==' · '+SN[s]){ck=k;let tx=el.textContent.replace(/ · (İlkbahar|Yaz|Sonbahar|Kış)$/,'');
+  if(s===3&&!ashStorm())tx=tx.replace(/ · Yağmur$/,' · Kar').replace(/ · Fırtına$/,' · Tipi');el.textContent=tx+' · '+SN[s]}}catch(e){}return r}}
+// ---- a new season is announced at 06:00
+const SUB=['Çiçekler açtı; otlar bereketli.','Geceler kısa, meyveler bol.','Yapraklar dökülüyor; mantar ve meyve zamanı.','Geceler uzun, karnın çabuk acıkır; dallarda meyve yok.'];
+{const _db=dayBanner;dayBanner=function(){const r=_db.apply(this,arguments);try{if(day>1&&(day-1)%7===0&&live()){const s=season();setTimeout(()=>{try{announce(SN[s]+' geldi',SUB[s])}catch(e){}},3600)}}catch(e){}return r}}
+// ---- gathering: herbs in spring, fruit in summer, mushrooms and double tree fruit in autumn, no fruit in winter
+let G=null,wt=0;
+{const _tg=tickGather;tickGather=function(){G=gathering;try{return _tg.apply(this,arguments)}finally{G=null}}}
+{const _di=dropItem;dropItem=function(n,x,y,q){try{if(G&&live()){const c=window.__plEatCat?window.__plEatCat(n):'',s=season(),tree=!!(G.tg&&G.tg.kind==='tree');
+  if(c==='Meyveler'){if(s===3){const now=performance.now();if(now-wt>4000){wt=now;floatText('Kış: dallar çıplak, meyve baharda','#e8f0ff')}return}
+    if(s===2&&tree)q=(q||1)*2;else if(s===1&&Math.random()<.5)q=(q||1)+1}
+  else if(c==='Otlar'&&s===0&&Math.random()<.5)q=(q||1)+1;
+  else if(c==='Mantarlar'&&s===2&&Math.random()<.5)q=(q||1)+1}}catch(e){}return _di.call(this,n,x,y,q)}}
+// ---- the season's fish: twice the weight in every fresh-water table
+const FS=['Alabalık','Sazan','Turna balığı','Mersin balığı'];let fishS=-1;
+function fishSeason(){const s=season();if(s===fishS)return;fishS=s;const walk=o=>{if(!o||typeof o!=='object')return;if(Array.isArray(o)){if(o.length===2&&typeof o[0]==='string'&&typeof o[1]==='number'){if(o._b==null)o._b=o[1];o[1]=o._b*(o[0]===FS[s]?2:1);return}for(const x of o)walk(x);return}for(const k in o)walk(o[k])};try{walk(FISHT)}catch(e){}}
+// ---- Mor gece
+let mgDone=0,mgSaid=0;
+setInterval(()=>{try{if(!live())return;fishSeason();const k=mgKey();if(!k)return;
+  if(mgSaid!==k&&!wake&&!fading){mgSaid=k;try{announce('Mor gece','Yılın en uzun gecesi')}catch(e){}try{sfx('magic')}catch(e){}}
+  if(mgDone!==k){const Y=window.__plYS;if(Y&&!Y.busy()&&Y.go()){mgDone=k;try{if(window.__plDogLog)window.__plDogLog('morgece','saldırı')}catch(e){}}}}catch(e){}},1000);
+{const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{if(s)s.mevsim={mg:mgDone}}catch(e){}return s}}
+{const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{mgDone=d&&d.mevsim&&+d.mevsim.mg||0;mgSaid=mgDone;fishS=-1;ck=''}catch(e){mgDone=0}return r}}
+{const _st=startNew;startNew=function(){mgDone=0;mgSaid=0;fishS=-1;ck='';return _st.apply(this,arguments)}}
+// ---- the picture: petals, a warm summer light, falling leaves, snow; a purple sky on the Mor gece
+const PT=[];for(let i=0;i<160;i++)PT.push({x:Math.random(),y:Math.random(),v:.5+Math.random()*.8,p:Math.random()*6.283,c:i%3});
+const LEAF=['#e8a030','#d0602a','#b8382a'],PET=['#ffffff','#ffd0e0','#ffb0d0'];
+function fx(dt,s,snowing){const low=PERF.lvl>=3,pl=low?.5:PERF.lvl>=2?.75:1,mg=!!mgKey(),tint=low?null:[null,'255,214,120,.045','200,110,40,.07','225,238,255,.11'][s];
+  let n=0;if(s===3)n=snowing?(weather.k==='fırtına'?150:110):45;else if(!low&&s===2)n=22;else if(!low&&s===0)n=14;n=Math.round(n*pl);
+  if(!n&&!tint&&!mg)return;   // low quality: no petals, leaves or tint (belge Mevsimler)
+  const Wc=cv.width,Hc=cv.height,z=Math.max(1,Math.round(Wc/640)),dk=darkness();
+  ctx.save();ctx.setTransform(1,0,0,1,0,0);
+  if(tint){const p=tint.split(',');ctx.fillStyle=`rgba(${p[0]},${p[1]},${p[2]},${(+p[3]*(1-dk*.6)).toFixed(3)})`;ctx.fillRect(0,0,Wc,Hc)}
+  if(mg){ctx.fillStyle='rgba(120,40,200,.10)';ctx.fillRect(0,0,Wc,Hc)}
+  for(let i=0;i<n;i++){const q=PT[i];q.p+=dt*(s===3?1.2:2);
+    if(s===3){q.y+=q.v*dt*(snowing?.28:.12)*(weather.k==='fırtına'?1.8:1);q.x+=(Math.sin(q.p)*.02+(weather.k==='fırtına'?.12:.01))*dt}
+    else{q.y+=q.v*dt*.07;q.x+=(Math.sin(q.p)*.05+.015)*dt}
+    if(q.y>1){q.y-=1;q.x=Math.random()}if(q.x>1)q.x-=1;if(q.x<0)q.x+=1;const X=q.x*Wc,Y=q.y*Hc;
+    if(s===3){ctx.fillStyle=`rgba(255,255,255,${(.55+.35*q.v/1.3).toFixed(2)})`;const r=q.c?z:z*2;ctx.fillRect(X,Y,r,r)}
+    else{ctx.fillStyle=(s===2?LEAF:PET)[q.c];const w=z*(s===2?3:2),h=z*(s===2?2:2),f=Math.sin(q.p)>0;ctx.fillRect(X,Y,f?w:h,f?h:w)}}
+  ctx.restore()}
+{const _dw=drawWeather;drawWeather=function(dt){const s=season(),cave=!!(window.__plCave&&window.__plCave.cur);let sv=null;
+  if(s===3&&!cave&&(weather.k==='yağmur'||weather.k==='fırtına')&&!ashStorm()){sv=weather.k;weather.k='bulut'}
+  let r;try{r=_dw.apply(this,arguments)}finally{if(sv)weather.k=sv}
+  try{if(!cave&&!onTitle&&!window.__plArena)fx(dt||0,s,!!sv)}catch(e){}return r}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v369mevsim: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

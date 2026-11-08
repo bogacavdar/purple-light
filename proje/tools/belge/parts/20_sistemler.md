@@ -174,7 +174,7 @@ Ayarlar penceresinde Titreşim'in hemen üstünde iki seçenek vardır. İkisi d
 | En yüksek mana | 100 | +8 | 244 | |
 
 - Kritik vuruş ihtimalinin seviye payı (aşağıda) seviyeye bağlı kalır.
-- **Tokluk** 100'den 0'a **12 dakikada** iner (Tok karın ile 16 dakikada) (ilk 2 gün yarı hızda, 3–4. gün ¾ hızda). 35'in altında uyarı, 25'in altında mide guruldar. **0 olunca saniyede 1,6 can** gider.
+- **Tokluk** 100'den 0'a **12 dakikada** iner (Tok karın ile 16 dakikada; kışın %25 daha hızlı, bkz. Mevsimler) (ilk 2 gün yarı hızda, 3–4. gün ¾ hızda). 35'in altında uyarı, 25'in altında mide guruldar. **0 olunca saniyede 1,6 can** gider.
 - **Yemek** yiyince tokluk değerinin %80'i kadar (Doyurucu sofra ile %120'si) can 15 saniyeye yayılarak dolar. Tıka basa tokken de yemek yenir: tokluk 100'ü geçmez ama yemeğin canı ve yan etkileri (güçlendirmeler, çiğ etin mide bulantısı) yine işler; tanrı modunda da yenir.
 - **Enerji**: koşu saniyede 18, atılma 14, savuşturma 5, her vuruş 4 (yumruk) – 10 (balta/kazma) yer. Enerji biterse "Yoruldun": %30'a dolana kadar koşamaz, vuramazsın. Enerji %35'in altındaysa vuruşlar yavaşlar.
 - **Kamp ateşinin** 64 piksel yakınında saniyede +1,4 can (Kamp ateşi ustası ile +2,8).
@@ -268,7 +268,26 @@ Oyunun hiçbir yerinde anlatılmaz; oyuncu kendisi bulur.
 
 #### Hava
 
-Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve Kayalık Dağ'da sis daha sık, yaklaşık %20; öbürleri o kadar azalır). Bataklık ve Kayalık Dağ'ın üstünde her zaman ince bir sis süzülür, sisli havada her yerde yoğun sis olur; ateşler, meşale ve fener sisin içinde ışık açar. Grafik kalitesi en düşük düzeydeyse (otomatik kalite) Orta Diyar'ın sürekli ince sisi çizilmez, sisli hava yine çizilir. Yağmur/fırtına: meşale ve kamp ateşi çabuk biter, **tarladaki tohumlar kendiliğinden sulanır**, balık %30 daha çabuk vurur; fırtınada şimşek çakar. Kül Diyarı'nda yağmur yerine **kül fırtınası** olur. Siste saldırganlar seni %40 daha geç fark eder.
+Oranlar mevsime göre değişir (bkz. Mevsimler; yıl ortalaması kabaca açık %43, bulutlu %22, yağmur %20, fırtına %7, sis %9) (Bataklık ve Kayalık Dağ'da sis daha sık, yaklaşık %20; öbürleri o kadar azalır). Bataklık ve Kayalık Dağ'ın üstünde her zaman ince bir sis süzülür, sisli havada her yerde yoğun sis olur; ateşler, meşale ve fener sisin içinde ışık açar. Grafik kalitesi en düşük düzeydeyse (otomatik kalite) Orta Diyar'ın sürekli ince sisi çizilmez, sisli hava yine çizilir. Yağmur/fırtına: meşale ve kamp ateşi çabuk biter, **tarladaki tohumlar kendiliğinden sulanır**, balık %30 daha çabuk vurur; fırtınada şimşek çakar. Kül Diyarı'nda yağmur yerine **kül fırtınası** olur. Siste saldırganlar seni %40 daha geç fark eder.
+
+#### Mevsimler (v3.69, 8 Kasım 2026, Boğaç)
+
+Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. gün **İlkbahar**, 8–14 **Yaz**, 15–21 **Sonbahar**, 22–28 **Kış**; 29. gün yeniden İlkbahar. Mevsimler **iki adada da** aynıdır (gün iki adada ortak). Saatin yanında mevsim yazar ("9. gün · 06:00 · Yaz"). Yeni mevsim sabah 06:00'da büyük bir yazıyla duyurulur ("Yaz geldi" ve bir alt satır); oyunun ilk sabahı duyurulmaz. Mağarada, evin içinde ve arenada mevsim görüntüsü yoktur; kurallar sürer.
+
+| | İlkbahar | Yaz | Sonbahar | Kış |
+|---|---|---|---|---|
+| Görünüş | uçuşan beyaz ve pembe çiçek yaprakları | ılık, aydınlık bir renk | sarı, turuncu, kızıl düşen yapraklar; sıcak bir renk | durmadan hafif kar yağar; ekran soğuk, beyazımsı bir renge bürünür |
+| Gece (20:00–06:00) | 2,5 dk | **1,8 dk** | 2,5 dk | **3,5 dk** |
+| Hava (açık / bulut / yağış / fırtına / sis) | 40 / 22 / 24 / 6 / 8 | 60 / 18 / 10 / 6 / 6 | 32 / 22 / 24 / 12 / 10 | 40 / 25 / 20 / 5 / 10 |
+| Toplarken | otlar (Otlar sınıfı) %50 ihtimalle +1 | meyveler %50 ihtimalle +1 | mantarlar %50 ihtimalle +1; ağaçtan düşen meyve (silkeleme, kesme, Sapan) **2 kat** | **meyve yok**: çalılardan, ağaçlardan (silkeleme, kesme, Sapan) meyve gelmez; "Kış: dallar çıplak, meyve baharda" yazar |
+| Mevsim balığı (vurma ihtimali 2 kat) | Alabalık | Sazan | Turna balığı | Mersin balığı |
+| Tokluk | – | – | – | **%25 daha hızlı** düşer |
+
+- **Gece uzunluğu:** saatler değişmez (gece yine 20:00–06:00, uyku 20:00–05:00); yalnızca gecenin gerçek süresi değişir. Gündüz her mevsim 8 dakikadır.
+- **Kışın yağış kardır:** yağmur ve fırtına kışın **Kar** ve **Tipi** adıyla görünür ve çizgi yerine kar taneleri yağar; etkileri (meşale, kamp ateşi, balık) yağmur ve fırtınayla aynıdır. Kül Diyarı'nda yine kül fırtınası olur.
+- **Kışın meyve:** Pazarcı Nazlı'nın satın alma listesi (daha önce eline geçmiş doğal malzemeler) kışın da açıktır; meyve isteyen bir görev kışın oradan tamamlanabilir. Robot köpeklerin topladıklarına mevsim dokunmaz.
+- **Göller donmaz:** kışın da su olduğu gibidir, balık her mevsim tutulur.
+- **Mor gece:** her yılın son gecesi (28., 56., 84.… günün gecesi) **yılın en uzun gecesidir: 4 dakika** sürer. Gece başlarken (20:00) "Mor gece · Yılın en uzun gecesi" yazar, gökyüzü bütün gece hafifçe mora çalar ve **mor ışık saldırısı kesin gelir** (bkz. Mor ışık saldırıları ve Yıldızsızlar): 20:00'da evde, mağarada ya da güvenli bir yerdeysen saldırı ertelenmez, **dışarı çıktığın an** (gece bitene kadar) gelir. Uyuyarak geçirirsen gelmez. O gece normal sırasına denk gelen saldırı ayrıca gelmez. Mor gece anılara dokunmaz (anı tetikleri her gece nasılsa öyledir).
 
 #### Uyku
 
@@ -449,6 +468,7 @@ Kabaca açık %45, bulutlu %20, yağmur %18, fırtına %7, sis %10 (Bataklık ve
 
 - Alet: **Ağ** (en kolay), **Olta**, **Kemik zıpkın**. Eline al, suya dön, E. Şamandıra dalınca 1,05 sn içinde E (iki kez kaçırırsan balık gider), sonra gidip gelen ibre **yeşil alandayken** bir daha bas. Yürürsen ya da bir şey saldırırsa olta çekilir.
 - Zor balıklar (yeşil alan dar): Mersin balığı, Turna balığı, Yayın, Alabalık, Tatlısu levreği.
+- **Mevsim balığı:** her mevsimde bir türün ağırlığı aşağıdaki tablodakinin 2 katıdır (İlkbahar Alabalık, Yaz Sazan, Sonbahar Turna balığı, Kış Mersin balığı; bkz. Mevsimler).
 - Her atışta %5 çöp (Dal, Yosun, Kemik), gece ayrıca %5 **Mor kıymık**.
 
 | Sular | Ne çıkar (ağırlık) |
@@ -895,7 +915,7 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 
 Belirli günlerde mor ışık, karakterin bulunduğu bölgeye **o dünyadan olmayan, mor renkli uzaylı canlılar** indirir: **Yıldızsızlar**.
 
-- **Ne zaman (v3.31, Boğaç: gece, gecenin başladığı an, belli günler):** saldırı **gecenin başladığı an (20:00)** gelir. Günleri sabittir: **6, 11, 18, 22, 31, 37, 40, 48, 53, 60, 64, 73, 79, 82, 90, 95…** (aralar sırayla 5, 7, 4, 9, 6, 3, 8 gün ve bu sıra tekrar eder; aralar hep 3–9 gün; v3.31, Boğaç: 10 günlük ara çok uzun, kaldırıldı). **Özel olaylı günlere denk gelmez:** 5. gün (Yıldızsız Gezgin'in köpeği), 15. gün (Yıldızsız Işıkçı gelmeye başlar), 20. gün (mor sinyal) ve ilk 3 gün; sıradaki gün bunlardan biriyse bir sonraki olaysız güne kayar. Her iki adada da olur; arenada olmaz.
+- **Ne zaman (v3.31, Boğaç: gece, gecenin başladığı an, belli günler):** saldırı **gecenin başladığı an (20:00)** gelir. Günleri sabittir: **6, 11, 18, 22, 31, 37, 40, 48, 53, 60, 64, 73, 79, 82, 90, 95…** (aralar sırayla 5, 7, 4, 9, 6, 3, 8 gün ve bu sıra tekrar eder; aralar hep 3–9 gün; v3.31, Boğaç: 10 günlük ara çok uzun, kaldırıldı). **Özel olaylı günlere denk gelmez:** 5. gün (Yıldızsız Gezgin'in köpeği), 15. gün (Yıldızsız Işıkçı gelmeye başlar), 20. gün (mor sinyal) ve ilk 3 gün; sıradaki gün bunlardan biriyse bir sonraki olaysız güne kayar. Her iki adada da olur; arenada olmaz. **Mor gece**'de (her yılın son gecesi) bu sıradan bağımsız olarak saldırı kesin gelir ve ertelenmez (bkz. Mevsimler).
 - **Ertelenir:** gece başladığı an (20:00) **evin içindeysen, mağaradaysan, deniz yolculuğundaysan ya da güvenli bir yerin (kamp ateşi, Kemal'in kampı, kişilerin ateşleri) yanındaysan** saldırı o gün olmaz, **bir sonraki olaysız güne** kayar (ör. 11. günde evdeysen 12. gün). Uyuyarak geçen gece de ertesi olaysız güne kayar. O an bir konuşma ya da pencere açıksa, kapanınca gelir (20:00–21:00 arası). Bir saldırı olunca sıradaki, listedeki ilk en az 3 gün sonraki gündür. Sıradaki saldırının günü kayıtta saklanır.
 - **Gece aydınlıktır:** mor bölgenin içi mor ışıkla aydınlanır (meşale gerekmez, mor ışık seni bu bölgede bayıltmaz); her Yıldızsız da kendi soluk ışığıyla parlar.
 - **Başlarken:** ekranda "Mor ışık saldırısı! · Yıldızsızlar geliyor" yazar, uğultu ve gümbürtü duyulur. Karakterin bulunduğu yerin çevresi (yaklaşık 16 kare yarıçap) **mora döner**: yer mor bir örtüyle kaplanır, kenarında parlayan mor bir halka döner, havada mor zerreler yükselir. Yıldızsızlar bu bölgenin içine, gökten inen **mor ışık sütunlarıyla** (0,7 sn) iner.

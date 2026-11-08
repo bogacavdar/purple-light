@@ -1,3 +1,16 @@
+## v3.69 (8 Kasım 2026) · mevsimler (28 günlük yıl, iki ada), Mor gece
+
+**Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
+- Yeni `<script id="v369mevsim">` (dosya sonu): `season()` = ((gün−1) mod 28) / 7; `window.__plSeason/__plSeasonName/__plMorGece`. Sarılanlar: `tickClock` (gece 20:00–06:00 arasında dt × 150 / [150,108,150,210], Mor gecede 240), `tickHunger` (kışın düşüşe +%25), `renderClock` (sona " · Mevsim", kışın Yağmur→Kar, Fırtına→Tipi), `dayBanner` (her 7 günde bir 06:00'da `announce`), `tickGather` + `dropItem` (toplama sırasında `__plEatCat` sınıfına göre: kış Meyveler yok, sonbahar ağaç meyvesi ×2 ve Mantarlar %50 +1, yaz Meyveler %50 +1, ilkbahar Otlar %50 +1), `drawWeather` (kışın yağış sırasında `weather.k` geçici 'bulut' → yağmur çizgisi yok; sonra `fx`: renk, kar/yaprak/çiçek; PERF.lvl ≥ 3'te yalnız kar), `snapshot/restore/startNew` (kayıt alanı `mevsim:{mg}`). `nextWeather` yeniden yazıldı (mevsim ağırlıkları; ipucu metinleri aynı, kışta Kar/Tipi). Mevsim balığı: `FISHT` içindeki her `[ad,ağırlık]` çiftine `_b` (ilk ağırlık) yazılır, mevsim değişince ×2.
+- Yerinde: `v330`'daki `window.__plYS`'e `S`, `busy()`, `go()` (Mor gece saldırısı `waitNow`/`sheltered` değilse `start`). `v368alet` Sapan meyvesi: kışın yok, sonbaharda 2.
+- Sürüm etiketi `Versiyon 3.69`.
+
+**Geri alma:** `v369mevsim` bloğunu sil; `__plYS` satırındaki `S,busy,go` ve `v368alet`'teki iki mevsim ifadesini geri al. Kayıttaki `mevsim` alanı eski sürümde okunmaz.
+
+**Ölçüm (`tests/olcum.js`, CPU ×4, ekran kartı açık; kare süresi ms, eski = v3.68):** üç sıralı tur: eski 161,3/136,7 · 106,9/107,7 · 155,0/135,9; yeni 161,6/136,9 · 147,2/145,6 · 152,2/141,7 (kumsal/yürüme ortalaması). İki turda eşit, bir turda eskinin sıra dışı hızlı ölçümü; fark ölçüm gürültüsü içinde. Ayrıca sayfa içinde `fx` tek çağrısı 0,011 ms (ilkbahar), 0,079 ms (kar), `renderClock` 0,0005 ms. JS profilinde yeni fonksiyonlar ilk 40'ta yok. (Telefonda ölçülmedi; "deneme" sayılır.)
+
+**Kontrol:** chk.js prototip 0 hata (175 script), index 0 hata; `?.` 1 / `??` 7. `?debug` duman denemesi (sayfa hatası yok): 1/8/15/22. günde saat yazısı ve mevsim, kışta "Kar", gece hızı kış/yaz 2,86/5,56 (oran 1,94 = 210/108), tokluk kış/yaz 1,736/1,389 (×1,25), mevsim balığı ağırlıkları (ilkbahar Alabalık 56, kış Mersin 44), Mor gece tetiği (Kemal'in kampında güvenli yer olduğu için saldırı beklemede, belgedeki gibi). v3.68 duman denemesi yeniden temiz.
+
 ## v3.68 (8 Kasım 2026) · erişilebilirlik (renk körü modu, kalp atışı göstergesi), Sapan/Bola/kısa yaylar, Kupa panosu, kıyıya vuran mektuplar, anı başarımları, köpek günlüğü
 
 **Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
@@ -312,23 +325,4 @@
 - **EV-10:** arena `syncBtn` `.arl` yazısını açıkken boşaltır, kilitliyken "Kilitli · …" yazar. Denendi.
 - Ölçüm: adanın kare döngüsü değişmedi (yalnız ev içi çizimi ve 200 ms denetim); ölçülmedi.
 - **Geri almak için:** `v345` sıralama dalı ve `v339ach` `show` koşulu, `v56` `area/scale/origin` (v3.49 hali), `renderCarp` işçilik satırı, `__plGR` + 10 `location.reload` sarması + `settings` satırındaki `gr` kontrolü, arena `syncBtn` `.arl`. Kayıt alanı ve MAPV değişmedi.
-- Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
-
-## v3.49 (6 Kasım 2026) · ev döşemesi yenilendi, ev fiyatları tablodan, kapıda F önce kapı, F yazıları, hile aramasında evler, arena hile moduyla
-
-- **Döşe ekranı (`v56`, 20_sistemler Ev):** `area()`: Döşe'de oda üst çubuk ile alttaki şerit arasındaki bütün alanı kullanır (`scale` kesirli olabilir, en az 0,8). `.rlist` ekranın altında sabit yatay şerit (`.rrow` yatay kayar); `body.roomedit` sınıfı alet çubuğu, XP kutusu, sol menü, menü çubuğu, dokunmatik dövüş düğmeleri, görev kartı ve ders kartını gizler; `#roomui` Döşe'de `transform:none` (yoksa `position:fixed` çocuklar çubuğa göre konuyordu). Duyurular: `v345` `mapOn` artık Döşe'yi de sayar (`window.__plQuiet`), gün yazısı Döşe/harita kapanınca (`dayBack`; önce `dayBannerShow` hemen yeniden açıyordu), başarım kartı da `__plQuiet` ile bekler.
-- **Döndür:** seçili eşyanın hemen yanında "↻ Döndür" (kare olmayan, duvar olmayan eşyalar); R de döndürür.
-- **Taşı / sürükle:** konmuş eşyaya kısa dokunuş → küçük menü (Taşı / Geri al / Döndür); Taşı sonra dokunulan kareye taşır; basılı tutup sürüklemek (`pointermove` >8 px) bırakılan kareye taşır; uygun değilse eşya yerinde kalır (`moveTo`, `cellFree(…, it)`). Yeni yardımcılar `gridFor`, `hitItem`, `pickUp`, `moveTo`.
-- **İlk giriş:** `o.room.seen` yoksa ve çantada ev eşyası varsa Döşe kendiliğinden açılır (`seen` kayıtta ev nesnesinde kalır).
-- **Yatak uyarısı:** yatak konunca "Yatağın envanterinde…" yazısı hemen kalkar.
-- **Kapıda F (EV-05):** `v56` sonunda `target` sarması: bir evin (Yaprak barınağı dahil) alt ortasının önündeysen (±14 px, -8…+20 px) hedef ev olur, yerdeki toplanabilirden önce.
-- **Deneme (gerçek dokunma, 844×390, `touchscreen.tap`):** ilk girişte Döşe açıldı; şeritten Hasır yatak, Tabure, Raf seçilip odaya dokunularak kondu; Tabure'ye dokununca menü, Taşı → yeni kare; bilgisayarda Taş lamba sürüklenerek taşındı. Ekran görüntüleri `/tmp/yz/room_m3.png`, `room_d2.png`.
-- **Ev fiyatları:** `houseCost=H=>H.c` (alt fiyat `buyFloor` evlerden kalktı; Kamış kulübe 2.172, Kerpiç ev 2.549, Deri çadır 1.039 gibi değerler bundandı); Yaprak barınağı `c:25`. 8 evin fiyatı oyunda okundu: 25 / 300 / 450 / 650 / 950 / 1.500 / 2.500 / 5.000 = belge. Tarifi öğrenilmiş evler Sinan'ın "Sipariş ver" listesinde de çıkar (kendi malzemenle, yalnız işçilik `ustaPrice`; önce `!HOUSESET` ile dışlanıyordu).
-- **ORM-13:** kod değişmedi: ders kartı açıkken F toplamayı yapıyor (denendi, `showLesson('forge')` açıkken F → Dal +1). Testçinin barınak önündeki boşa giden F'si büyük olasılıkla yanındaki toplanabilir (ör. Kum) içindi; kapı/barınak önceliği bunu çözer.
-- **ORM-12:** ders kartı metni (`showLesson`), yetenek açıklaması (`x.e` üç yer) `__plB5.kTxt` ile atanan tuşa çevrilir; boş envanter yazısı ve oda içi etiketler ("F · Dışarı çık / Uyu / Lamba") `__plKey('interact')`. Dünyadaki istem kutusu zaten çeviriyordu.
-- **ORM-14:** usta sipariş penceresi: "Evleri ve barınakları da Usta Sinan yapar".
-- **EV-06:** hile aramasına `HOUSES` eklendi (ev eşyaları zaten `DB.R`'den geliyordu; "lamba" → Kil lamba, Taş lamba; "kulübe" → Kulübe, Kamış kulübe). Arama kutusu hile paneli açıkken görünür.
-- **EV-07:** arena `unlocked()` artık "Hile modu" anahtarına (`settings.cheat`) bakar (belge: hile modu açıkken açılır); önce yalnızca hile seçeneklerinin açılmış olmasına (`hammadde.cheatok`) bakıyordu.
-- **Ölçüm** (`olcum.js` CPU×4, gl; 3.48 → 3.49): BOOT 18.593 → 18.292 ms; kumsal avg 203,9 → 195,3; yürürken 162,5 → 176,4; PLAY 10 sn js 4.080 → 4.010 ms (gürültü içinde).
-- **Geri almak için:** `v56` (area/scale/origin, renderUI, pointer olayları, CSS, `target` sarması; v3.48 hali), `v345` `mapOn`/`dayBack`, `v339ach` `show` koşulu, `houseCost` ve Yaprak barınağı `c`, `renderUsta` `pl` süzgeci ve metni, `showLesson`/yetenek metinleri, hile `ALL`, arena `unlocked`. Kayıtta yalnız ev nesnesine `room.seen` eklenir (eski kayıtta yoksa ilk girişte Döşe açılır); MAPV değişmedi.
 - Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.

@@ -8,6 +8,31 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.69 · 8 Kasım 2026
+
+### Oynanış
+- **Mevsimler geldi.** Yıl 28 gün: her mevsim 7 gün sürer ve sırayla döner (1–7 İlkbahar, 8–14 Yaz, 15–21 Sonbahar, 22–28 Kış). İki adada da aynı. Yeni mevsim sabah büyük bir yazıyla duyurulur.
+- **Geceler mevsime göre:** yazın gece 1,8 dakika, kışın 3,5 dakika (İlkbahar ve Sonbaharda 2,5). Saatler aynı kalır: gece yine 20:00–06:00, uyku yine 20:00–05:00.
+- **Hava mevsime göre:** yaz çoğunlukla açık, sonbahar yağmurlu ve fırtınalı (kıyıya şişe vurma şansı da artar), kışın yağmur **Kar**, fırtına **Tipi** olur.
+- **Toplarken:** İlkbaharda otlar, Yazın meyveler, Sonbaharda mantarlar %50 ihtimalle bir tane fazla gelir; sonbaharda ağaçtan düşen meyve (silkeleme, kesme, Sapan) 2 kat. **Kışın meyve yok:** dallar çıplak, çalılardan ve ağaçlardan meyve gelmez. Kışın meyve gerekirse Nazlı'dan satın alınabilir.
+- **Mevsim balığı:** her mevsim bir balık iki kat sık vurur: İlkbahar Alabalık, Yaz Sazan, Sonbahar Turna balığı, Kış Mersin balığı. Göller kışın donmaz; balık her mevsim tutulur.
+- **Kışın karın çabuk acıkır:** tokluk %25 daha hızlı düşer.
+- **Mor gece:** her yılın son gecesi (28., 56., 84.… gün) yılın en uzun gecesidir (4 dakika). Gökyüzü mora çalar ve **mor ışık saldırısı kesin gelir**; evde ya da ateşin başında beklesen de dışarı çıktığın an gelir. Uyuyarak geçirirsen gelmez. Anılara dokunmaz.
+
+### Görsel
+- İlkbaharda uçuşan çiçek yaprakları, yazın ılık bir ışık, sonbaharda düşen sarı-turuncu-kızıl yapraklar, kışın durmadan yağan kar ve soğuk bir renk; kar ve tipide yağmur çizgileri yerine kar taneleri. Mor gecede gökyüzü mor. Grafik kalitesi en düşükteyken yalnızca kar çizilir (yaprak, çiçek ve renk yok).
+
+### Arayüz
+- Saatin yanında mevsim yazar ("9. gün · 06:00 · Yaz"); kışın hava adı Kar ya da Tipi.
+
+### Kayıtlar
+- Mor gece saldırısının görüldüğü kayda yazılır (aynı gece yeniden gelmesin diye) ve köpek günlüğüne de girer. Mevsim günden hesaplanır; eski kayıtlar kendi günlerinin mevsiminde açılır.
+
+### Tasarım belgesi
+- Sistemler › Gün, gece ve mor ışık: yeni **Mevsimler** bölümü (takvim, gece süreleri, hava oranları, toplama, mevsim balıkları, kışın tokluk, Mor gece). Hava, Tokluk, Balık tutma ve Mor ışık saldırıları maddelerine mevsim notları; Aletler › Sapan'a mevsim notu; ACT 3 › köpek günlüğüne Mor gece.
+
+---
+
 ## Versiyon 3.68 · 8 Kasım 2026
 
 ### Oynanış
@@ -367,27 +392,3 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 ### Düzeltmeler
 
 - Hile modu artık cihazda kalmıyor: sayfayı yenileyince kapanır; oyunun kendi açıp kapanmalarında (yeni oyun, ada değişimi, arena) açık kalır.
-
----
-
-## Versiyon 3.49 · 6 Kasım 2026
-
-### Oynanış
-
-- **Evini döşemek kolaylaştı:** Döşe'ye basınca oda bütün ekranı kaplar, eşyaların altta bir şeritte durur; alet çubuğu, menüler ve dövüş düğmeleri gizlenir. Telefonda eşyayı şeritten seçip odada yerine dokunarak koyarsın.
-- Seçtiğin eşyanın hemen yanında **Döndür** düğmesi var.
-- Konmuş bir eşyaya dokununca **Taşı / Geri al / Döndür** çıkar; eşyayı sürükleyerek de taşıyabilirsin. Uygun olmayan yere bırakırsan eşya yerinde kalır.
-- Çantanda ev eşyası varken bir eve ilk kez girdiğinde Döşe kendiliğinden açılır.
-- Evin kapısının önündeyken F önce kapıyı açar; yerdeki bir şeyi toplamaz.
-- Yatağı koyunca "Yatağı yerleştir" yazısı hemen kalkar.
-
-### Denge
-
-- **Ev fiyatları tablodaki gibi:** Deri çadır 300, Kulübe 450, Kamış kulübe 650, Kerpiç ev 950, Ahşap ev 1.500, Taş ev 2.500, Konak 5.000 sikke. Yaprak barınağı 25 sikke ve malzemesi. Tarifini öğrendiğin evleri kendi malzemenle Usta Sinan'a yalnızca işçilik ödeyerek yaptırabilirsin.
-
-### Arayüz
-
-- Döşe sırasında ve büyük harita açıkken duyurular beklemeye alınır, sonra gösterilir.
-- Ders kartlarında, yetenek açıklamalarında, boş envanter yazısında ve ev içindeki yazılarda doğru tuş (F) yazar.
-- Usta Sinan'ın sipariş penceresi evleri artık kendisinin yaptığını söyler.
-- Hile paneli aramasında evler ve ev eşyaları da çıkar; hile modu açıkken Arena açıktır.
