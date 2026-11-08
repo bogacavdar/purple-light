@@ -1,3 +1,11 @@
+## v3.90 (9 Kasım 2026) · eldeki eşya figürde, sürükleyip eline al/giy, özellikler gruplu + kritik
+
+**Değişen yerler:** `v387env`: `handThing()` (elde tutulan, meşale hariç; `window.__plHandThing`), `figHTML` Silah yuvasında elindekini gösterir (`.inh`), `drawChar` eldekini çibiden sonra çizer. Yeni blok `v390el`: `holdIt(n)` (yuvada değilse `beltAuto`, dolu ise `pickFor` → `.pfpick` "hangisinin yerine?" `[data-pfrep]`), `invAct('hold')` sarmalı aynı soruyu sorar; `#cpanel` yakalayan tıklaması (v92'den önce) Silah yuvasında: seçili alet → eline al, elindeki → bırak (`setHand(-1)`); `pointerup` yakalayan dinleyicisi aleti Silah yuvasına bırakınca eline alır; giysi/silah için yeni fare sürüklemesi (`wd`) figür yuvasına giydirir. Karakter tablosu (satır ~3177): `ROWS` gruplu (Ekonomi · Savaş · Dayanıklılık, `tr.spgh`), Savaş'ta `__plCrit.pct()` ile kritik satırı (`tr.spcr`, puansız). Belge: 20_sistemler.md. Sürüm etiketi `Versiyon 3.90`.
+
+**Geri alma:** `git revert` bu commit.
+
+**Kontrol:** chk.js 0 hata. Deneme: Taş balta Silah yuvasına sürüklendi → 1. yuvaya girdi, elde; 5 yuva doluyken Olta + Silah yuvası → soru çıktı, 3. yuva seçildi → Olta elde, Çakmaktaşı balta envanterde; yuvaya tekrar tıklama → el boş; Kürk eldiven Eller'e sürüklendi → giyildi. 12. seviye + Demir kılıç: kritik %4,2. Karakter canvas'ında eldeki alet çiziliyor. Konsol hatası yok.
+
 ## v3.89 (9 Kasım 2026) · yanıp sönmeler mavi, Kerevit → Kerevit eti
 
 **Değişen yerler:** yeni `<style id="v388mavi">` (dosyanın sonu): `.pulse`, `#coinbox.focus`, `.smc.qz`, `#achov li.new`, `.rb.mk::after`, `.ib.b3unl` (yeni `v388u`), `.b5k button.wait`, `.pfs.fit`/`.ieqb.fit`, `.v387want`, `.spcallin`, `.spplus.spwant`, `#spchip`, `#spcard` mavi (#7fd0ff, `p3tab`; pencere içinde `p332g`). Eşya adı `Kerevit` → `Kerevit eti`: `db` JSON (6 tarif girdisi + fiyat 4), `ANIM.Kerevit.drops` (Reis de buradan alır), `V46RAW`/`V46FOOD`, balık tablosu, `P1I['Kerevit eti']` (+ Közlenmiş kerevit), `a2` görev sayacı `trap:Kerevit eti`, pişmiş balık resimleri `RAW.kerevit`. Canlının adı `Kerevit` kaldı. Yeni blok `v388kerevit`: `restore` sarmalı eski kayıtta `Kerevit` eşyasını (inv, order/seen/found, [ad,adet], {n,q}, `trap:` sayacı) `Kerevit eti`ye çevirir; `kl`/`f`/`bc`/`bd` (canlı tabloları) dokunulmaz. Belge: 00_giris, 10_akis, 20_sistemler, 30_act1, 70_canavarlar, 80_tarifler, 90_esyalar. Sürüm etiketi `Versiyon 3.89`.
@@ -162,17 +170,4 @@
 **Geri alma:** `v371el` ve `v371yer` bloklarını sil; `v337les`'te `noShadow` sarmasını, `v345`'te `__plNearP` ve `pplClear`'daki `tzN/tutN` koşulunu geri al.
 
 **Kontrol:** chk.js 0 hata (177 script). Duman denemesi: 30 × 5 öğretici böğürtleni, kişilere en yakın 33 px, ateş/ışığa en yakın 26 px; köpeksiz R → pencere açılmadı, `nodogs` var; köpek gelince R → köpekler penceresi; Geyik leşinin ekran görüntüsünde tek gölge. İmleç: Kemal'in üstünde `plpalm` açık, boş zeminde kapalı; iki imleç büyütülmüş ve gerçek boyutta (yeşil ve koyu zeminde) görüntüyle bakıldı. Sayfa hatası yok.
-
-## v3.70 (8 Kasım 2026) · hava–mevsim mantığı: sıcaklık, hava zinciri, yağmur/kar, yerde kar örtüsü
-
-**Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
-- Yeni `<script id="v370hava">`: `temp()` = 11,5 + 15·cos(2π(yılın günü−11)/28) + gün farkı (gün numarasından karma, −3…+3) + saat (05:00 −4°, 14:00 +4°, kosinüs) + biyom (`LAND`, ISLE'ye göre). `snowing()` = `raining()` && !`ashStorm()` && T ≤ 0,5 (karken 1°'ye kadar kar kalır). `nextWeather` yeniden yazıldı: zincir (`açık/bulut/yağmur/fırtına/sis`), mevsime göre `P` (bulut→yağış), `ST` (fırtına payı), `DUR` (süreler); sis sabah ×3, zone 1'de ×2. `tickWeather` sarılır: kar örtüsü `C` (kar +0,003/sn, tipi +0,006; T > 0,5'te −T·0,00025/sn, yağmurda ×4, gündüz açıkta ×1,5), tipide `thunderAt ≥ 3`. `drawGround` sarılır: 16×16 karelik parça tuvalleri (`SC`, en çok 24, LRU), örtü %1 değişince yeniden boyanır (karede en çok 2), GPU yolu için `canvas.__v++`; değerler `NF` (Float32, kare başına `vnoise/5`·0,8 + `vnH`·0,2) ve `NS` (Uint8, yarım kare başına + titreşim) önbellekte. Kayıt alanı `hava:{kar}`. `window.__plTemp/__plSnowing/__plTempStr/__plSnowCover`.
-- `v369mevsim` içinde: kendi `nextWeather`'ı silindi; `renderClock` ikinci satır `#clockms` (mevsim · sıcaklık; `#clock` `flex-wrap`, `width:max-content`), Kar/Tipi adı `__plSnowing`'e göre; `drawWeather` yağmur→kar değişimi ve kar tanesi çizimi mevsime değil `__plSnowing`'e bağlı.
-- Sürüm etiketi `Versiyon 3.70`.
-
-**Geri alma:** `v370hava` bloğunu sil ve `v369mevsim`'i v3.69 commit'indeki haline döndür (ya da `git checkout v3.69'un commit'i -- proje/Hammadde_prototip.html index.html`). Kayıttaki `hava` alanı eski sürümde okunmaz.
-
-**Ölçüm:** `tests/olcum.js` (CPU ×4, ekran kartı açık, ilkbahar 1. gün, kar yok) iki sıralı tur: eski (v3.69) 153,5/154,7 · 170,6/161,0; yeni 158,7/148,3 · 139,6/136,7 ms (kumsal/yürüme) — gürültü içinde. Sayfa içi: `drawGround` 60×36 kare, örtüsüz 0,13–0,22 ms; %36 örtü 0,40 ms; tam örtü 0,44 ms (parça önbelleğinden önce %36 örtüde 0,72 ms idi). Telefonda ölçülmedi ("deneme").
-
-**Kontrol:** chk.js 0 hata (176 script), `?.` 1 / `??` 7. Duman denemesi (sayfa hatası yok): sıcaklık eğrisi (1. gün 14:00 4,5° / 05:00 −3,5°; 11. gün 33,3°; 25. gün −3,3° / −11,3°), 25. gün yağmur → kar, saat "Kar" + "Kış · −7°", 100 sn karda örtü 0,30, 9,2°'lik yağmurda 30 sn'de 1,00 → 0,72; zincir 3000 adım: yazın yağış/fırtına 165/82 kez, ort. 76/68 sn; kışın 655/184 kez, ort. 227/133 sn. Ekran görüntüleri: %30 örtüde öbekler, tam örtüde beyaz zemin; saat masaüstünde ve telefonda (844×390) sığıyor.
 

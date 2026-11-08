@@ -8,6 +8,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.90 · 9 Kasım 2026
+
+### Arayüz
+- **Elindeki eşya figürde:** envanterdeki figürün Silah yuvası o an elinde tuttuğun eşyayı (balta, kazma, olta…) gösteriyor, karakter de onu elinde tutuyor. Elin boşsa giydiğin silah görünüyor. Dolu Silah yuvasına tıklayınca elindekini bırakıyorsun (eşya yuvasında kalıyor).
+- **Sürükleyip eline al:** bir aleti listeden Silah yuvasına sürükleyince (ya da seçip yuvaya tıklayınca) alet boş bir alet yuvasına giriyor ve eline geliyor. Bütün alet yuvaları doluysa "Yuvaların dolu: hangisinin yerine?" diye soruluyor ve yuvalar resimleriyle sıralanıyor; seçtiğin yuvadaki eşya envantere dönüyor. "Eline al" düğmesi de aynı soruyu soruyor.
+- **Sürükleyip giy:** giysileri ve silahları da listeden figürdeki uyan yuvaya sürükleyerek giyebiliyorsun.
+- **Özellikler gruplu:** Karakter penceresindeki özellikler yetenek ağacının dallarıyla gruplu, alt alta: Ekonomi (toplama, satış, şans) · Savaş (güç, kritik vuruş, hareket, enerji, mana) · Dayanıklılık (can, can yenilenmesi, zırh).
+- **Kritik vuruş ihtimali tabloda:** Savaş grubunda o an elindeki silahla kritik vuruş ihtimalin yazıyor (balta, kazma ve yumrukta "yok"). Bu ihtimal seviyeyle ve yeteneklerle arttığı için ona puan verilmiyor.
+
+### Tasarım belgesi
+- Sistemler › Envanter: "Eldeki eşya figürde", "Sürükleyerek giy ve eline al".
+- Sistemler › Seviye puanları: "Gruplu tablo", "Kritik vuruş ihtimali tabloda".
+
+---
+
 ## Versiyon 3.89 · 9 Kasım 2026
 
 ### Arayüz
@@ -254,32 +269,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - ACT 1 › Adanın yerleşimi: öğreticinin bıraktığı malzemelerin yeri kuralı. Sistemler › Ölüm pozu ve leş: tek gölge. Sistemler › Kontroller: R tuşu köpek yokken; Fare imleci: mor ışıklı piksel el.
-
----
-
-## Versiyon 3.70 · 8 Kasım 2026
-
-### Oynanış
-- **Hava artık mevsimden ve sıcaklıktan gelir.** Adanın bir sıcaklığı var: yıl boyunca yumuşak bir eğri (yaz ortası ~26°, kış ortası ~−3°), her günün kendi farkı, gün içinde 14:00'te en sıcak, 05:00'te en soğuk; Kayalık Dağ daha soğuk, Kül Diyarı ve Ejder Volkanı çok sıcak.
-- **Yağmur mu kar mı, sıcaklık belirler:** 0°'nin altında kar (fırtınada tipi), üstünde yağmur. Sonbaharın son günleri ve ilkbaharın ilk günleri de soğuk gecelerde kar görebilir; kışın ılık bir günde yağmur da yağabilir. Tipide şimşek çakmaz.
-- **Hava sırayla değişir:** açık → bulut → yağış → (fırtına) → bulut → açık; artık güneşli bir havadan birden fırtınaya geçilmez. Sis en çok sabahları çıkar.
-- **Mevsime göre yağış:** kışın bulut yağışa en sık döner (%45) ve yağış uzun sürer (2,5–5 dk); yazın seyrek (%18) ve kısa (1–1,5 dk), ama yaz sağanaklarının çoğu kısa fırtınadır; sonbahar yağmurlu ve fırtınalı, ilkbahar arası.
-- **Kar yerde birikir:** kar yağdıkça zemin önce yer yer, sonra her yer **yavaş yavaş beyazlar** (~5,5 dakikalık karda tamamen; tipide iki kat hızlı). Hava 0°'nin üstüne çıkınca **erir**; yağmur yağarsa 4 kat, güneşli gündüz 1,5 kat hızlı. Su, Kül Diyarı ve Ejder Volkanı karlanmaz; göller donmaz.
-
-### Görsel
-- Zeminde kar örtüsü: küçük beyaz öbekler belirip büyür ve birleşir, eriyince yine öbek öbek çekilir.
-
-### Arayüz
-- Saat kutusunun ikinci satırında mevsim ve sıcaklık ("Kış · −6°"); kar yağarken hava adı "Kar" ya da "Tipi". Kutu, satır sığsın diye kendi genişliğini ayarlar.
-
-### Düzeltmeler
-- Yağmur başladığında çıkan yazıda artık oyunda olmayan tarlalar anılmıyor.
-
-### Kayıtlar
-- Yerdeki kar örtüsü kayda yazılır; eski kayıtlar karsız açılır.
-
-### Tasarım belgesi
-- Sistemler › Gün, gece ve mor ışık: yeni **Hava, sıcaklık ve kar** bölümü (sıcaklık formülü, yağışın türü, hava zinciri ve mevsim tablosu, kar örtüsünün birikmesi ve erimesi, çizim). Mevsimler tablosundan eski hava oranı satırı kalktı; Hava maddesi buraya yönlendirir.
 
 ---
 
