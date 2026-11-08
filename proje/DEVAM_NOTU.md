@@ -1,3 +1,11 @@
+## v3.88 (9 Kasım 2026) · envanter/karakter iki sütun, seviye puanı dersi ve hatırlatması
+
+**Değişen yerler:** `v387env`: envanterde `cbody` içeriği `.pfgrid` > `.pfl` (sekmeler + tek sütun liste) ve `.pfr` (sticky; `.pftop.pfi` figür + karakter + `.pfside` içinde `.iact`); Karakter sekmesinde `renderCraft` sarmalı `.pftop.pfc` ile zırh notunu sağa (`.pfr`), seviye/özellik tablosunu sola alır ve `cpanel.wide` ekler. Yeni blok `v388sp`: ilk seviye atlayışta (`SPTUT` 0→1) 2,6 sn sonra `#spcard` öğretici kartı (dışına basmak kapatır), puan kaldıkça `#spchip` ("N seviye puanı ver", XP çubuğunun sağ üstünde; telefonda çubuğun sağında), Karakter düğmesi `pulse`, pencerede `.spcallin` şeridi ve `.spplus.spwant`. Belge: 20_sistemler.md Envanter ve Seviye puanları maddeleri. Sürüm etiketi `Versiyon 3.88`.
+
+**Geri alma:** `git revert` bu commit (iki sütun düzeni ve `v388sp` gider; v3.87 düzeni kalır).
+
+**Kontrol:** chk.js 0 hata. 1920×1080: envanter (liste solda, figür sağda), Karakter (tablo solda). Tıklama denemesi v3.87'deki gibi geçti. `gainXP(45)` → 2. seviye: kart açıldı, "Puanımı vereyim" pencereyi açtı, şerit ve parlayan + göründü, + ile puan verildi (`SPTUT` 2). 844×390 telefonda kart ve düğme görünüyor. Konsol hatası yok.
+
 ## v3.87 (9 Kasım 2026) · envanter: figür, karakter, liste, alttaki yuvalar
 
 **Değişen yerler:** yeni blok `v387env` (dosyanın sonunda): bilgisayarda (`body:not(.v50m)`) `renderInvPanel` sarmalı v92'nin `.ieq` şeridini siler, yerine `.pftop` (renksiz figür `.pfig` + `.pfs[data-ieq]` yuvaları, `#pfchar` karakter tuvali, `.pfside` içine taşınan `.iact`) koyar; v92'nin `data-ieq` tıklaması aynen çalışır. `dollHTML`/`drawDoll` sarmalı: Özellikler penceresinde aynı figür (`data-eqs`, `.eqpick` korunur). CSS: `.cpanel.invm .tiles` liste (240 px satır), `.ibelt` gizli; envanter açıkken `body.v387inv` ile `#hotbar`/`#torchslot` z-index 7; `#hotbar` için yakalayan tıklama (seçili taşınabiliri yuvaya koyar / yuvadakini seçer) ve sürükleme başlangıcı (`idrag`, mevcut `bsAt` bırakmayı alır); seçili eşyanın gideceği yuva `.v387want`. Telefon (v50m) değişmedi. Belge: 20_sistemler.md Envanter maddesi. Sürüm etiketi `Versiyon 3.87`.
@@ -172,21 +180,4 @@
 **Ölçüm (`tests/olcum.js`, CPU ×4, ekran kartı açık; kare süresi ms, eski = v3.68):** üç sıralı tur: eski 161,3/136,7 · 106,9/107,7 · 155,0/135,9; yeni 161,6/136,9 · 147,2/145,6 · 152,2/141,7 (kumsal/yürüme ortalaması). İki turda eşit, bir turda eskinin sıra dışı hızlı ölçümü; fark ölçüm gürültüsü içinde. Ayrıca sayfa içinde `fx` tek çağrısı 0,011 ms (ilkbahar), 0,079 ms (kar), `renderClock` 0,0005 ms. JS profilinde yeni fonksiyonlar ilk 40'ta yok. (Telefonda ölçülmedi; "deneme" sayılır.)
 
 **Kontrol:** chk.js prototip 0 hata (175 script), index 0 hata; `?.` 1 / `??` 7. `?debug` duman denemesi (sayfa hatası yok): 1/8/15/22. günde saat yazısı ve mevsim, kışta "Kar", gece hızı kış/yaz 2,86/5,56 (oran 1,94 = 210/108), tokluk kış/yaz 1,736/1,389 (×1,25), mevsim balığı ağırlıkları (ilkbahar Alabalık 56, kış Mersin 44), Mor gece tetiği (Kemal'in kampında güvenli yer olduğu için saldırı beklemede, belgedeki gibi). v3.68 duman denemesi yeniden temiz.
-
-## v3.68 (8 Kasım 2026) · erişilebilirlik (renk körü modu, kalp atışı göstergesi), Sapan/Bola/kısa yaylar, Kupa panosu, kıyıya vuran mektuplar, anı başarımları, köpek günlüğü
-
-**Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
-- Yeni `<script id="v368erisim">`: Ayarlar'a `cbmon` (Renk körü modu, `settings.cbm`) ve `hbvon` (Kalp atışını ekranda göster, `settings.hbv`) satırları Titreşim'in üstüne; `body.cbm` CSS'i (inline `color:#8fd46b/#9fe08a/#ff8a6a/#ff6a5a/#f2d070` öznitelik seçicileri + ilgili sınıflar, `ul.book small span` önüne ✓ ✗ +); `#hbpulse` kenar nabzı (yalnız `opacity` animasyonu), `__plKlon` ile kalp atışının saatini izler.
-- Yerinde: inşa gölgesi renkleri `window.__cbG/__cbR/__cbGa/__cbRa` ile değişir (satır ~5479 dünyadaki gölge, ~10425/10427 ev içi, ~21941 zemin/duvar).
-- Yeni `<script id="v368kopek">`: `faint`, `nightDeath`, `snapshot`, `restore`, `startNew` sarılır; `#achcard` gözlenir; 2 sn'de bir Reis (`__p4.s.bd`), anı (`mems`) ve tanrı modu karşılaştırılır. Kayıt alanı `dlog:{e:[[gün,saat,tür,metin]…≤300],c:{tür:sayı}}`. `window.__plDogLog(k,x)`, `__plDogLogGet()`.
-- Başarımlar (`ACH`, `PROG` yerinde): `ani1`, `ani11`, `ani22` (gizli değil); `v318story`'de `window.__plA1I=A1I` (ACT 1 anı indeksleri).
-- Arena `KINDS`'a `['sling','Fırlatma']` (yerinde).
-- Yeni `<script id="v368alet">`: Sapan/Bola `GT.kind='sling'`; `attack` sarılır (taş/bola mermisi `__plFire` ile; Sapan + meyve ağacı: `treesNear`, ağaç başına `t._sapD=day`); `tickAnimals`/`drawAnimal` sarılır (`a._bola` 5 sn %35 hız, halka). Dişbudak/Porsuk yayı `__plBow.addBow` + `GT.kind='bow'` + `FORGED`.
-- `v56-room`'da `window.__plDEC=DEC;window.__plDECSET=DECSET` (yerinde). Yeni `<script id="v368kupa">`: `DEC['Kupa panosu']` (3×1 duvar, `k:'trophy'`), tarif (`c:'Ev eşyası'`, kazanda öğrenilir, Sinan yapar), fiyat tarif kuralıyla (`CM(depthOf)`) = 896, simge.
-- Yeni `<script id="v368sise">`: `Şişedeki mektup` (fiyat 5, simge); fırtına dinince %60 kıyıya `dropItem`; alınınca okunur; kayıt alanı `sise:{f:[id…],o:gün}`; `renderPpl` sarılır (Kitap › Ada halkı altında mektuplar). `window.__plSise={wash,found}`.
-- Sürüm etiketi `Versiyon 3.68`. Bekleyen-paket'teki `yayinla.sh` sürüm satırı değişikliği de bu pakette.
-
-**Geri alma:** beş yeni bloğu (`v368erisim`, `v368kopek`, `v368alet`, `v368kupa`, `v368sise`) sil; yerinde değişenler: `ACH`/`PROG` üç satırı, `__plA1I`, `__plDEC/__plDECSET`, `KINDS` Fırlatma, dört inşa gölgesi `window.__cb*` ifadesi. Kayıt alanları `dlog`, `sise` eski sürümde okunmaz ve zarar vermez. `settings.cbm/hbv` cihazda kalır, etkisizdir.
-
-**Kontrol:** chk.js prototip 0 hata (174 script), index 0 hata; `?.` 1 / `??` 7 (aynı). `?debug` duman denemesi (Playwright, sayfa hatası ve `__hamErr` yok): ayar satırları ve `body.cbm`, nabız sınıfı, Sapan taş harcar ve mermi çıkar, Bola harcanmaz, Dişbudak yayı ok atar (cd 0,5), `snapshot().dlog`, bayılma sayacı, 22 ACT 1 anı indeksi, Kupa panosu fiyat 896 + simge + Sinan tarifi, şişe kıyıya düşer → okunur → `sise.f` + Kitap bölümü + günlük. `tests/v48_bugs.js` eski sürümde de aynı yerde düşüyor (`recipes3.json` farkı, açılış akışı), çalıştırılamadı. Lamba değişikliği denendi ve Boğaç'ın isteğiyle geri alındı (lambalar süs).
 

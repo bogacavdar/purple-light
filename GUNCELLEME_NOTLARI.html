@@ -22,6 +22,23 @@ code{background:var(--card);padding:1px 5px;border-radius:4px}
 <li>Bu notlar: https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html · https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.pdf</li>
 </ul>
 <hr />
+<h2>Versiyon 3.88 · 9 Kasım 2026</h2>
+<h3>Arayüz</h3>
+<ul>
+<li><strong>Envanter:</strong> eşya listesi solda ve alt alta (her satırda bir eşya); figür, karakter ve seçili eşya listeden bağımsız olarak sağda duruyor, liste kaydırılınca yerinde kalıyor.</li>
+<li><strong>Karakter penceresi:</strong> seviye ve özellik puanları solda, figür ve karakter sağda; özellikler artık aşağıda kalmıyor. Pencere envanter kadar geniş.</li>
+</ul>
+<h3>Oynanış</h3>
+<ul>
+<li><strong>Seviye puanı dersi:</strong> 2. seviyeye çıkınca ekranın ortasında bir öğretici kartı açılıyor: seviye puanının ne olduğunu ve Karakter penceresinde bir özelliğin yanındaki + ile verildiğini anlatıyor; "Puanımı vereyim" düğmesi pencereyi açıyor.</li>
+<li><strong>Verilmemiş puan hatırlatması:</strong> puanın kaldıkça seviye çubuğunun yanında parlayan "N seviye puanı ver" düğmesi duruyor (basınca Karakter penceresi açılıyor), Karakter düğmesi yanıp sönüyor, pencerede de listenin üstünde sarı bir şerit çıkıyor ve + düğmeleri parlıyor.</li>
+</ul>
+<h3>Tasarım belgesi</h3>
+<ul>
+<li>Sistemler › Envanter: yerleşim (liste solda, figür sağda), Özellikler penceresi yerleşimi.</li>
+<li>Sistemler › Seviye puanları: "İlk seviye dersi" ve "Verilmemiş puan" maddeleri yenilendi.</li>
+</ul>
+<hr />
 <h2>Versiyon 3.87 · 9 Kasım 2026</h2>
 <h3>Arayüz</h3>
 <ul>
@@ -303,36 +320,5 @@ code{background:var(--card);padding:1px 5px;border-radius:4px}
 <h3>Tasarım belgesi</h3>
 <ul>
 <li>Sistemler › Gün, gece ve mor ışık: yeni <strong>Mevsimler</strong> bölümü (takvim, gece süreleri, hava oranları, toplama, mevsim balıkları, kışın tokluk, Mor gece). Hava, Tokluk, Balık tutma ve Mor ışık saldırıları maddelerine mevsim notları; Aletler › Sapan'a mevsim notu; ACT 3 › köpek günlüğüne Mor gece.</li>
-</ul>
-<hr />
-<h2>Versiyon 3.68 · 8 Kasım 2026</h2>
-<h3>Oynanış</h3>
-<ul>
-<li><strong>Sapan işe yarıyor:</strong> eldeyken vuruş bir <strong>taş</strong> atar (her atış 1 Taş). Bir <strong>kuşa</strong> (keklik, ördek, ur kekliği…) değerse kuş 3 saniye sersemler. Nişanı bir <strong>meyve ağacının</strong> tacına alırsan ağacın dibine 1 meyvesi düşer (tohumu olan ağaçta %20 bir de tohum); her ağaç günde bir kez meyve verir. Hasar 5, menzil 200 px.</li>
-<li><strong>Bola işe yarıyor:</strong> fırlatılır ama harcanmaz. Değdiği canlının ayaklarına dolanır, canlı <strong>5 saniye %35 hızla</strong> yürür. Kaçan tavşanı, geyiği yakalamak ya da saldırgan bir canlıdan uzaklaşmak için birebir. Reisler hasar alır ama sersemlemez, yavaşlamaz.</li>
-<li><strong>Dişbudak yayı ve Porsuk yayı artık gerçek yay:</strong> ikisi de <strong>kısa yay</strong>. Biyomlarının asıl yayıyla saniyedeki hasarı aynı, ama daha sık atar, menzili kısa ve daha çok ok harcar (Dişbudak 20 hasar / 0,5 sn / 250 px; Porsuk 27 / 0,49 sn / 270 px). Bütün yaylar gibi örste dövülür.</li>
-<li><strong>Kupa panosu:</strong> Usta Sinan'ın yaptığı, duvara asılan 3 kare genişliğinde bir pano (2 Çam kalası, 1 Tunç levha, 2 İp, 1 Sopa; 896 sikke). Yendiğin her Reis için üstünde altın bir kalkan belirir.</li>
-<li><strong>Kıyıya vuran şişeler:</strong> fırtına dinince bazen kıyıya bir şişe vurur. İçinde ada halkından birinin mor ışığa kaybettiği kişiye yazdığı bir mektup var (Kemal, Zümrüt, Nazlı, Börü, Dursun ile Durmuş, Sinan, Doğan, Barbaros ve kuzenlerin Elmas Nine'ye mektubu; toplam 9). Okuduklarını Kitap › Ada halkı'nın altında bulursun.</li>
-<li><strong>Üç yeni başarım (gizli değil):</strong> İlk anı (bir anı), Anılar dönüyor (ACT 1'in 11 anısı), Tanıştığımız günden beri (ACT 1'in 22 anısının hepsi). Toplam 49 başarım.</li>
-</ul>
-<h3>Arayüz</h3>
-<ul>
-<li><strong>Ayarlar › Renk körü modu:</strong> açınca tamam / eksik / yapılır renkleri mavi, turuncu ve açık sarıya döner (renk körlüğünün her türünde ayırt edilir). Malzeme satırlarında ✓ ✗ + işaretleri çıkar; takip şeridi, kazan listesi, Zor modun cevapları ve görev kartları da aynı paleti kullanır; inşa gölgesi mavi (konur) ya da turuncu (konmaz) olur.</li>
-<li><strong>Ayarlar › Kalp atışını ekranda göster:</strong> açınca gece beliren sevdiğin kişi göründüğünde her kalp atışıyla ekranın kenarları da mor bir nabızla atar; sesi kapalı oynayan da kalp atışını görür.</li>
-<li>Arenanın silah seçicisinde yeni <strong>Fırlatma</strong> grubu (Sapan, Bola); kısa yaylar Yaylar grubunda.</li>
-</ul>
-<h3>Kayıtlar</h3>
-<ul>
-<li>Her kayıt artık gizli bir <strong>köpek günlüğü</strong> tutar (bayılmalar, başarımlar, Reisler, anılar, kıyıya vuran mektuplar; gün ve saatiyle). Oyunda görünmez; ACT 3 için şimdiden yazılıyor. Bulunan mektuplar da kayda yazılır. Eski kayıtlar boş günlükle ve hiç mektup bulunmamış olarak açılır.</li>
-</ul>
-<h3>Tasarım belgesi</h3>
-<ul>
-<li>Sistemler › Arayüz: yeni <strong>Erişilebilirlik</strong> başlığı (renk körü paleti tablosu, kalp atışı göstergesi); Mor ışıkta o maddesine gösterge eklendi.</li>
-<li>Sistemler › Ev: Kupa panosu. Sistemler › İzler ve anılar: Kıyıya vuran şişeler (9 mektubun kimden kime olduğu).</li>
-<li>Aletler: Sapan ve Bola bölümü, kısa yaylar (yaylar tablosuna iki satır), aletler tablosunda Sapan/Bola yeni tür; Sapan ve Bola'nın "Nerede yapılır"ı El yapımı olarak düzeltildi (oyunda zaten elle yapılıyordu).</li>
-<li>Başarımlar: 3 anı başarımı, 46 → 49 (PS5 bölümündeki sayı da).</li>
-<li>ACT 3: köpek günlüğünün şimdiden tutulduğu ve neleri yazdığı.</li>
-<li>Bilinen açıklar: #18 (işlevsiz aletler) kapandı.</li>
-<li>Belgenin başındaki sürüm satırı artık her yayında oyunun sürümünden yazılır (3.59'da kalmıştı).</li>
 </ul>
 <hr /></main></body></html>
