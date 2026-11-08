@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.74 · 8 Kasım 2026
+
+### Arayüz
+- **Kemal seni tanıyınca:** aynı karakterle yeni oyuna başladığında Kemal'in "seni daha önce görmüş müydüm" konuşmasındaki tek düğme artık yalnızca "…" değil, gerçek bir cevap: ikinci kez **"Hatırlamıyorum…"**, sonrasında **"Ne demek istiyorsun?"**.
+
+### Tasarım belgesi
+- Sistemler › Seni hatırlıyorum: iki cevap düğmesinin metni.
+
+---
+
 ## Versiyon 3.73 · 8 Kasım 2026
 
 ### Oynanış
@@ -383,23 +393,4 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 - **Kül Diyarı:** girişte önce yalnızca Kül böceği ve Kül cini var; Ateş akrebi ve Kül kurdu içeride, Kara ejder en derinde.
 - **Mor Kristal Vadisi:** Gölge kurdu içeride Seviye 45'ten sonra, Kristal golem en derinde.
 - **Kül kurtları ve Gölge kurtları** önce ikili gezer, seviyen yükseldikçe sürüleri büyür.
-
-## Versiyon 3.54 · 7 Kasım 2026
-
-### Oynanış
-
-- **Yeni biyoma varınca orada da iş var:** "Doğu geçidini aç" görevini Kayalık Dağ'daki Cadı Firuze'den (ya da "Dağ yolu"ndan sonra Avcı Doğan'dan), "Eşinden kalan izler" görevini Kül Diyarı'ndaki Cadı Mercan'dan da alabilirsin; Kemal'e dönmen gerekmez. Ödül yine bir kez.
-- "Doğu geçidini aç" görevi Kaya patlatıcı tarifini bilmeden de alınır; görev kartı tarifi kazanda öğrenmeni hatırlatır.
-- **Elmas Nine'nin sahnesi** artık ailenin son görevini teslim ettiğin an oynar; sonradan, bir yere giderken ya da Kemal'le konuşurken birden açılmaz.
-
-### Düzeltmeler
-
-- Köprü onarımı ve kaya yığını patlatmak (iki adada da) görev ödülünün üstüne fazladan XP vermiyor (köprü 120, geçit 400 XP).
-- Bir kişinin hemen yanında F, yerde ya da elde ne olursa olsun önce o kişiyle konuşur.
-- Ara sahne sürerken başarım kartı ve duyurular üstüne binmez; sahne bitince sırayla gelir.
-- Kemal geçit için doğru kazmayı söylüyor: kuvars ya da çelik kazma.
-
-### Arayüz
-
-- Görev kartı, tarifi henüz öğrenilmemiş bir şey varsa yazar: "Tarif: Kaya patlatıcı (kazanda öğren)".
 

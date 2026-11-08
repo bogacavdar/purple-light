@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.73** ile birebir (8 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.74** ile birebir (8 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -572,8 +572,8 @@ Ayarlar penceresinde Titreşim'in hemen üstünde iki seçenek vardır. İkisi d
 #### Seni hatırlıyorum: aynı karakterle yeni oyun (v3.37, Boğaç)
 
 - Bu cihazda **yeni bir oyuna** başlayıp Kemal adını sorduğunda, karakterinin **görünüşü** (karakter yaratmadaki bütün seçimler: cinsiyet, ten, göz, saç, sakal, kıyafet ve renkleri, gözlük, şapka) **ve adı** bu cihazda daha önce başlatılmış bir oyundakiyle **birebir aynıysa** (adda büyük/küçük harf önemsiz), Kemal adını duyunca bir an durur. Görünüş ya da ad farklıysa hiçbir şey olmaz.
-  - **İkinci kez** (aynı karakter daha önce bir kez başlatılmış): Kemal: "<i>(Kemal bir an durur, yüzüne uzun uzun bakar.)</i> {Ad}… Seni daha önce de bu kumsalda bulmuş muydum? Aynı yüz, aynı ad… <i>(Başını sallar.)</i> Yaşlandım evlat, aldırma." · "…"
-  - **Üçüncü kez ve sonrası:** Kemal: "<i>(Kemal geri çekilir.)</i> {Ad}. Yine sen. Bu kaçıncı oluyor evlat? Her seferinde aynı kumsal, aynı yüz, aynı ad… ve her seferinde hiçbir şey hatırlamıyorsun. <i>(Gözü denize kayar.)</i> Neyse. Unut gitsin, ben de unuturum." · "…"
+  - **İkinci kez** (aynı karakter daha önce bir kez başlatılmış): Kemal: "<i>(Kemal bir an durur, yüzüne uzun uzun bakar.)</i> {Ad}… Seni daha önce de bu kumsalda bulmuş muydum? Aynı yüz, aynı ad… <i>(Başını sallar.)</i> Yaşlandım evlat, aldırma." · "Hatırlamıyorum…"
+  - **Üçüncü kez ve sonrası:** Kemal: "<i>(Kemal geri çekilir.)</i> {Ad}. Yine sen. Bu kaçıncı oluyor evlat? Her seferinde aynı kumsal, aynı yüz, aynı ad… ve her seferinde hiçbir şey hatırlamıyorsun. <i>(Gözü denize kayar.)</i> Neyse. Unut gitsin, ben de unuturum." · "Ne demek istiyorsun?"
   - Ardından konuşma her zamanki gibi sürer (Kemal sevdiğin kişinin adını sorar).
 - Hangi karakterlerin başlatıldığı **cihazda** saklanır (başarımlar gibi, bütün kayıtlar için ortak; en çok son 30 karakter). Bir karakter Kemal ona adını söylediği an kaydedilir; kayıt yüklemek ya da Devam et sayılmaz, yalnızca Yeni oyun. Oyunun hiçbir yerinde anlatılmaz.
 

@@ -1,3 +1,11 @@
+## v3.74 (8 Kasım 2026) · Kemal'in "seni hatırlıyorum" düğmesi
+
+**Değişen yerler:** `v337meta` bloğunda `askName` sarmalı: `say(t,[{t:'…'}])` → `cnt===1?'Hatırlamıyorum…':'Ne demek istiyorsun?'`. Sürüm etiketi `Versiyon 3.74`. Belge: 20_sistemler "Seni hatırlıyorum".
+
+**Geri alma:** düğme metnini `'…'` yap (belge satırıyla birlikte).
+
+**Kontrol:** chk.js 0 hata.
+
 ## v3.73 (8 Kasım 2026) · sade malzeme: biyom başına tek kalas/sap/kömür/kaşık, kurutulmuş otlar ve kullanılmayan kurutulmuşlar kalktı
 
 **Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
@@ -306,17 +314,4 @@
 - **Devriye** (denge uzmanının `patrol.js`, ayrı kopyada `/tmp/yz/dm2`, oyunun kendi kuralları, Giriş, 150 sn): Kayalık Sv 26 hasar 0; Kül Sv 34 497/dk (en yüksek can 388 → 1,28/dk), 3 bayılma, saldıranlar Kül cini, Kor yarasası, Lav kertenkelesi (son ikisi Orta'dan gelip kovaladı); Mor Sv 42 625/dk (460 → 1,36/dk), 3 bayılma, Işık engereği, Kristal örümcek, Kristal geyik. Raporun beklentisi Kül ~1,04, Mor 0,86–1,05 (tek örnek, ±%40).
 - **Ölçüm** (`olcum.js` CPU×4, gl; 3.54 → 3.55): BOOT 16.392 → 18.253 ms (js 9.684 → 10.888; derinlik araması CPU×4'te ~97 ms, gerisi gürültü); kumsal avg 182,0 → 187,4; yürürken 164,9 → 169,0; PLAY 10 sn js 4.085 → 3.875 ms.
 - **Geri almak için:** v3.55 commit'ini `git revert` (prototip, index.html, parts). Kayıt alanı, MAPV değişmedi.
-
-## v3.54 (7 Kasım 2026) · Kayalık/Kül/Mor Kristal E2E: yeni biyomda "!" (E3/E4 başka kişilerden), kartta eksik tarif, Elmas Nine sahnesi teslimde, sahnede duyurular bekler, fazla XP kalktı, F önce kişi
-
-- **Yeni biyomda "!"** (`30_act1.md` kural 6, E3/E4): `v186`'da `ALTG` (E3: `toygar` T6 bitince, `k_firuze`; E4: `k_mercan`) ve `ALTSAY` (kişinin kendi sözü). `refreshVis` adayları `{q,g}`: kişinin kendi sıradaki görevi yerine (varsa) bu ana görev konur; sıralama aynı (bulunduğun biyom önce), en çok 2 "!" ve aynı görev iki kişide birden yanmaz. Yeni `S.vg` (görev → işaretli kişi, kaydedilmez, 300 ms'de yeniden kurulur), `markQ(g)`, `giveQ(g)` (başka kişiden verilen görev: `Object.create(q)` + `g`, `say`, `sc:null`; `S.a.id` aynı, ödül bir kez, bitince Kemal'in teşekkürü). `hasMark`, `markGivers`, konuşma/`pend`/Kemal yolları `giveQ` ile. Oyunda: Kayalık'ta Firuze'nin yanında, E2 bitmiş, Sv 14, Kaya patlatıcı öğrenilmiş → `vis` [E3, CB1], `vg.E3=k_firuze`, Kemal'de "!" yok; Firuze'ye F → görev sahnesi → `S.a.id=E3`.
-- **Kemal'in E3 sözü** belgeye uyduruldu: "tunç ya da kuvars kazma" → "kuvars ya da çelik kazma" (`say` ve sahne satırı; kod 4. kademe istiyordu).
-- **E3 tarifsiz verilir** (`30_act1.md` kural 5 "Varış görevleri tarif yüzünden kilitlenmez"): yeni `arrQ(q)` (`rock` adımı olan görev); `matsOK` ve `parkLocked` bu görevde `needRec`'e bakmaz, kart "Tarif: Kaya patlatıcı (kazanda öğren)" der. Kemal'in E3 sözü "tarifini zaten biliyorsun" → "tarifini kitabına yazdım, kazanda öğrenirsin". Oyunda: Kayalık'ta Firuze'nin yanında, tarif bilinmiyor → `vis` [E3, CB1] (E3 Firuze'de), F → E3 alındı, kartta tarif satırı, görev geri bırakılmadı.
-- **OYN-45:** görev kartında (`myCard`) `needRec(q)` varsa "Tarif: X (kazanda öğren)" satırı. Oyunda: E3 etkin, tarif yok → "Tarif: Kaya patlatıcı (kazanda öğren)".
-- **KUL-01 / MOR-01 / OYN-51:** Elmas Nine sahnesi (`v184` saat) yalnızca oyun sırasında `famDone()` hayırdan evete dönünce (son görev teslim) oynar; kayıt yüklenince ya da sıfırlanınca `famPrev` yeniden okunur, eski kayıtta kendiliğinden oynamaz ("📖 O geceyi anlat" ve Kitap yolu duruyor). Oyunda: 58 görev bitince 6 sn içinde oynadı; kayıt yeniden yüklenince oynamadı. `v345` `mapOn` artık ara sahneleri de sayar (`npcsc`, `voyov`, `rkov`): gün yazısı, seviye, keşif ve başarım kartı sahne bitince sırayla gelir. Oyunda: sahne sırasında verilen başarım kartı sahne + ders duyurusundan sonra çıktı. F sahnede "Devam" der (oyunda denendi; sahne sırasında toplama/konuşma yok, sahne penceresi kapanınca).
-- **KAY-01 / MOR-03:** köprü onarımındaki +40 XP (`fixBridge`) ve sıradağ patlamasındaki +320 XP (`rockUse`) belgede yok (`20_sistemler.md`: görev dışı ek XP yok); ACT 1 ve ACT 2'de kaldırıldı. Oyunda: E2 yalnız 120, E3 yalnız 400. E5'in fazla 300 XP'si E5'ten değil: E5 yalnız 300 veriyor; testte aynı bekleme sırasında Elmas Nine sahnesi oynadı (belge +300 XP).
-- **KUL-04:** E4 zaten `remote`: 6. iz bulunup pencere kapanınca biter (oyunda: 600 XP, `S.d` E4). Kod değişmedi.
-- **MOR-02:** F önceliği (`v56` `target` sarması) node'un yanında artık yere kurulu şeyler ve eldeki olta/kapan/tuzak için de kişiyi seçer (`gatherTarget`, `placedNear`, `v46Target` geçici susturulur; kamp ateşi, tuzak ve ev kapısı önce). Barbaros'la oyunda 10 konumda (9 px yanında Kum) hep "Denizci Barbaros ile konuş"; testteki durumda Barbaros yoktu (`denizci.state` "away": Gemi tarifi E4 ödülüyle gelir, test E4'ü atlayıp görevleri işaretlemiş).
-- **Ölçüm:** kare döngüsüne/harita verisine dokunulmadı (`target` sarması yalnızca istem/F anında ikinci arama), ölçüm yapılmadı.
-- **Geri almak için:** v3.54 commit'ini `git revert` (prototip, index.html, parts). Kayıt alanı, MAPV değişmedi.
 
