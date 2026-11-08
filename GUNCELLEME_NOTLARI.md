@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.84 · 8 Kasım 2026
+
+### Oynanış
+- **Daha seyrek orman:** meyve ağaçlarına dokunmadan öbür ağaçların (Çam, Kavak, Meşe, Huş…) yarısı kalktı. Yıldızsız Ada'da ağaç sayısı yaklaşık 4.950'den 2.811'e, ikinci adada 5.800'den 3.343'e indi; meyve ağaçları aynı (ACT 1'de 645). Başlangıç kampında en az 12 çam kalıyor.
+
+### Tasarım belgesi
+- ACT 1 › Haritadaki miktarlar: üçüncü seyreltme adımı (meyvesiz ağaçların %50'si) ve yeni ağaç sayıları.
+
+---
+
 ## Versiyon 3.83 · 8 Kasım 2026
 
 ### Düzeltmeler
@@ -346,30 +356,4 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Sistemler › İstatistikler ve oyun süresi bölümü eklendi.
 
 ---
-
-## Versiyon 3.64 · 8 Kasım 2026
-
-### Arayüz
-
-- **Kolla pencereler doğru yerde açılır:** öğretici bir düğmeyi ya da eşyayı yakıp söndürüyorsa pencere doğrudan onda açılır (El yapımı'nda yanıp sönen "Yap", Çanta'da yanıp sönen balta). Yanıp sönme pencere açıldıktan hemen sonra başlasa da seçim oraya geçer.
-- Çantada giysi yuvalarının her birinden aşağı basınca eşyalara inilir. Alttaki alet şeridinin altında kalan eşya görünür olacak kadar kaydırılır.
-- Kazanda ve örste kolun X'i "Hepsini koy"a basar. Kazanda grup LB / RB ile değişince seçim listenin ilk tarifine geçer.
-- Kol menüsünde "Ana menüye dön" önce sorar.
-- Hile paneline Kol menüsünden ("Hile paneli") gidilir. Arama kutusuna A ile ekran klavyesi açılır, Options / Start ile sonuçlara geçilir, B ile panelden çıkılır.
-- **Kolda doğru tuş yazıları:**
-  - Börü'nün "Yetenek ağacını aç" uyarısı "Start → Yetenekler" der (PlayStation'da Options).
-  - "2 tuşuna bas" gibi sayı tuşları "LB / RB ile kemerde ona gel" olur.
-  - "Kaba meşale simgesini yuvaya sürükle" yerine çantada seçip A'ya basmayı anlatır.
-  - "kazana tıkla ya da yanında A'ya bas" kolda "kazana gidip A'ya bas" olur.
-  - Meşale kartı "bir daha basılı tutunca söner" der, El yapımı'ndaki "(L)" kolda görünmez.
-  - Zümrüt'ün "Tab'a bas"ı klavyede bağlı tuşu, kolda ↑'yı söyler.
-- Börü'nün dersleri boyunca öğretici kartı aşamayı gösterir: "Börü · Atılma (n/4)", "Börü · Savuşturma (n/4)", "Börü · Yetenek ağacı". Önceden hep "Kereviti vur" yazıyordu.
-
-### Düzeltmeler
-
-- Öğretici geçilmişken Börü'nün ücretsiz atılma dersi yarıda bırakılıp oyun kaydedilince atılma öğrenilmiş sayılıyordu; artık sayılmaz (ders yeniden teklif edilir).
-
-### Denge
-
-- Üç ham eşya kendi biyomunun fiyat aralığına indi: Yabani bal 13 → 12, Ateş biberi 72 → 52, Işık mantarı 123 → 90. Bunları kullanan tarifler kuralla birlikte değişti (Acı biber ezmesi 402 → 324, Işık mantarı çorbası 537 → 408, Ay otu iksiri 698 → 655, ballı tarifler 1'er sikke).
 

@@ -1,3 +1,11 @@
+## v3.84 (8 Kasım 2026) · meyvesiz ağaçlar %50 seyrek
+
+**Değişen yerler:** v77 ağaç türleme döngüsü: tür atandıktan sonra `!tr.type.fruit&&!nearSp&&hash(tx,ty,653)<.5` olan ağaç alınmaz (kamp sonra `v375kamp` ile halkasının sıklığına iner). Sürüm etiketi `Versiyon 3.84`.
+
+**Geri alma:** o satırı sil.
+
+**Kontrol:** chk.js 0 hata. Yeni oyun ağaç: ACT 1 2.811 (Çayır 675: Elma 88, Armut 96, Çam 255, Kavak 236; meyve ağaçları değişmedi), ACT 2 3.343. Kamp: ekran başına 9,3 ağaç, 12 Çam. Ölçüm (`olcum.js`, 4): açılış js 11124 → 10292 ms, oyun 10 sn js 4205 → 4437 ms (gürültü içinde).
+
 ## v3.83 (8 Kasım 2026) · el yapımı malzeme kutusu, meşale yuvası yanıp sönmesi
 
 **Değişen yerler:** yeni `<style id="v383ui">` (`#craft .book.hand` son iki satırda `br+small` kutusu `bottom:100%`; bilgisayarda `#craft.cm-hand .cpanel{height:var(--plMaxH)}`: pencere hep aynı boyda) ve `<script id="v383meşale">` (`renderTut` sarmalı + 400 ms: kart metni "yanıp sönen … meşale yuvası" diyorsa `#torchslot.pulse`; tz yolu bunu hiç eklemiyordu, yalnız `torchTut===2` ekliyordu). Sürüm etiketi `Versiyon 3.83`.
@@ -222,37 +230,4 @@
   - Fener: gece yandı, ışık `litAt` doğru, sabah söndü; F ile yakıt (Hayvan yağı 40→39). Yol: `speedMult` 1 → 1,15.
   - Kol: Kol menüsü "İnşa" → şerit → Çit → A + RS boyama (4), X sil, B geri, B kapat. Dokunmatik: dokun koy, sürükle boya, basılı tut menü.
 - **Geri almak için:** v3.65 commit'ini `git revert` (prototip, index.html, belge parçaları, notlar). Yeni kayıt alanları `bld` ve `pt`; eski sürüm bunları yok sayar (kurulu yapılar ve İnşa ile yapılan eşyalar kaybolur, eski Çit'ler taşındığı için geri gelmez). MAPV değişmedi.
-
-## v3.64 (8 Kasım 2026) · Testçi v3.62 raporu (KOL-40…52) ve üç ham fiyat
-
-- **`v320pad`:**
-  - `firstFocus` önce kendisi `.pulse` olan düğmeyi seçer. `keepFocus` açılıştan sonra 700 ms içinde gelen `.pulse`'a geçer (`P.ffT`/`P.ffL`; oyuncu yön verince biter).
-  - `moveFocus`: koni boşsa o yöndeki en yakın (`along+perp×3`).
-  - `reveal`: şerit listenin içinde olmasa da listeyi kaydırır.
-  - `winStep` (select) → `P.lastK=''`.
-  - Kazanda / örste X = `#pfill`.
-  - `askConfirm(q,yes,btn)` (`askQuit` buna dayanır); `#p-quit` onaylı.
-  - Ekran klavyesi `kbShow(inp)`/`kbIn` ile her kutuya yazar. Hile paneli `#cheatpad` içinde odak varken pencere sayılır (`focusables`'ta search kutusu orada var). Kol menüsünde `p-cheat`.
-- **`kTxt` (kolda):** ` tıkla ya da yanında ` → ` gidip `; `N tuşuna bas` → `LB / RB ile kemerde ona gel`; `N tuşuyla`, `1–0 tuşlarıyla` → `LB / RB ile`.
-- **`beltHow` kolda:** çanta, seç (A), yanıp sönen yuvada A.
-- **Ders yazıları:**
-  - El yapımı `(L)` kolda yok.
-  - Zümrüt'ün iki `<b>Tab</b>`'ı `kc`'ye çevrildi (`kTxt` görür).
-  - Meşale yak kartı kolda "basılı tutunca".
-- **`v181`:**
-  - `treeAsk` ve Börü konuşması kolda "Start → Yetenekler".
-  - `window.__plDLCard()` → `tzCard` 11 (Atılma / Savuşturma n/4 / Yetenek ağacı); `startLesson`, `strikeDone`, `treeAsk`, `done2` `renderTut` çağırır.
-  - `snapshot` sarmalı: süren atılma dersinde (`!DL.hadS1`) S1 kayda girmez (KOL-50).
-- **Fiyat (`v335food` sonu):** `CAP` Yabani bal 12, Ateş biberi 52, Işık mantarı 90 (yemek kademesi çarpanı ham fiyatı bant dışına itiyordu). Fark ×1,3 zincirle tariflere yayılır. Değişen tarifler (3.63 → 3.64):
-  - Balmumu 87→86, Balmumu mumu 134→133, Bal şerbeti 24→23, Ballı kestane 249→248, Ballı fındık 122→121.
-  - Arı kovanı 145→144, Ballı ekmek 150→149, Ateş çiçeği balı 69→68, Bal şarabı 121→120, Asma fener 269→268.
-  - Ay elması reçeli 574→573, Acı biber ezmesi 402→324, Ay otu iksiri 698→655, Işık mantarı çorbası 537→408.
-- **Denendi** (sahte Xbox kolu):
-  - Çanta ilk eşyada açılıyor; yanıp sönen eşyaya geçiyor (150 ms sonra yanıp sönse de).
-  - Ayaklar yuvasından ↓ ile eşyaya iniliyor.
-  - Kol menüsü → Ana menüye dön → onay (Vazgeç seçili), B kapatıyor.
-  - Hile paneli: arama → klavye "taş" → Options → ilk sonuç → A → Taş 3→13 → B ile çıkış.
-  - `kTxt` örnekleri.
-  - Kazanda X ve Börü kartı aşamaları oyunda görülmedi (öğretici kilidi; kod).
-- **Geri almak için:** v3.64 commit'ini `git revert` (prototip, index.html, notlar). Kayıt alanı ve MAPV değişmedi.
 
