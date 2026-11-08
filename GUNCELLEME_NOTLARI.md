@@ -8,6 +8,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.72 · 8 Kasım 2026
+
+### Oynanış
+- **Daha sade bir ada:** başlangıç kampının çevresi dışında dal, lif, taş, nehir çakılı, kum ve çakmaktaşı **%30 daha az**; biyom bitkileri **%25 daha az** ve artık tek tek serpilmiyor, **aynı türden 3–5'lik öbekler** halinde bitiyor (bir öbeğe gidince birkaç tane birden toplarsın). Toplanan bitki yine kendi türünün yanında yeniden çıkar, öbekler dağılmaz. Çayır ve Orman'da bir ekrandaki nesne sayısı ~38'den ~33'e indi; ekran benek benek görünmüyor. Ağaçlar ve madenlerin sayısı aynı.
+
+### Düzeltmeler
+- **Madenler yan yana yığılmaz:** aynı türden iki maden en az 6 kare, herhangi iki maden en az 3 kare arayla durur. Tükenen bir maden yeniden çıkarken de buna uyar (önceden yalnızca çok küçük bir boşluk aranıyordu, zamanla aynı kayalar üst üste yığılıyordu). Eski kayıtlarda kümelenmiş madenler oyun açılınca kendi biyomlarının içinde dağıtılır; maden sayıları değişmedi.
+
+### Tasarım belgesi
+- ACT 1 › Adanın yerleşimi › Haritadaki miktarlar: madenler arası mesafe kuralı; yeni "Sade harita" maddesi (temel malzemeler −%30, bitkiler −%25 ve öbek öbek, öbeklerin yeniden çıkışı).
+
+---
+
 ## Versiyon 3.71 · 8 Kasım 2026
 
 ### Arayüz
@@ -384,15 +397,3 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 
 - Köprüyü onarırken verilmemiş seviye puanın varsa pencerede "N seviye puanın bekliyor." yazar.
 - Karakter penceresinde bir özellik bu seviyenin sınırına gelince + yerine "Sv N'de açılır" yazar.
-
-## Versiyon 3.52 · 7 Kasım 2026
-
-### Denge
-
-- **Bataklık artık derinleştikçe zorlaşıyor:** köprüye yakın kıyıda yalnızca sakin hayvanlar ve (Seviye 12'den sonra) Zehirli kurbağa var. Biraz içeride Bataklık kurdu Seviye 20'den, Timsah Seviye 22'den sonra çıkar; en derinde ise her şey seni bekler.
-- **Kurt sürüleri seviyenle büyür:** Bataklık kurtları önce en çok ikili gezer, Seviye 22'den sonra üçlü, Seviye 25'ten sonra tam sürü.
-- **Bataklık köprüsü görevi Seviye 12'de açılır,** Börü'nün "Ritimli 2. vuruş" dersi de Seviye 12'de. Görevi zaten almış ya da bitirmiş olanlar etkilenmez.
-- **Orman'ın sonu daha zorlu:** Engerek (can 120, vuruş 20, 26 XP) ve Oklu kirpi (can 330, vuruş 30, 61 XP) güçlendi. Oklu kirpi Seviye 10'dan sonra önce köprüye yakın yerlerde, Seviye 14'ten sonra bütün Orman'da çıkar.
-- **Bataklık kurdu** biraz zayıfladı (can 450, vuruş 52, 114 XP). Bataklık'taki bütün canlılar 1,5 kat XP verir.
-- **Vaşak** daha çetin: can 1.050, vuruş 112.
-- **Yan görev ödülleri:** Lale, Ela ve Mor Kristal'in altı görevinin ödülleri yeniden ayarlandı.

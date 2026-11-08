@@ -1,3 +1,14 @@
+## v3.72 (8 Kasım 2026) · madenler arası mesafe
+
+**Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
+- Yeni `<script id="v372maden">`: `findSpot` maden adları (`MINES`) için sarılır: en çok 25 aday, `ok()` = aynı tür ≥ 96 px, herhangi maden ≥ 48 px (canlı madenler, kendisi hariç); bulunamazsa `null` (yeniden çıkış döngüsü 3 sn sonra yeniden dener). `spread()`: kurala uymayan canlı madenleri `findSpot(name,null,n)` ile taşır (biyom korunur, eski yerden ≥ 60 px), sonra `NGR` ızgarası sıfırlanır, `PERF.visT=0`, `__plRockDirty`. `startNew` ve `restore` sonrasında bir kez çalışır. `window.__plSpread`.
+- Yeni `<script id="v372sade">` (sayfa açılınca bir kez, `built` korumalı; 44 ms): başlangıç kampının 20 karosu dışında, konumdan karma (`hz`, rnd yok): temel malzemelerin (Dal, Lif, Taş, Nehir çakılı, Kum, Çakmaktaşı) %30'u silinir; bitkiler (maden, gece, mağara, öğretici, Yaprak ve temel dışındaki `RULE`'u olan düğümler) tür+biyom grubunda %75'e iner ve 3–5'lik öbeklere taşınır (öbek merkezi mevcut bir bitki; üyeler 10–28 px, `spotOk`: kural karosu, `reachAt`, aynı biyom, ağaç 9 px, maden 24 px, kişiler 34 px, `__plFloorBusy`). `KIN` (tür → düğümler); `findSpot` sarılır: bitki yeniden çıkarken 20 denemede yaşayan bir türdaşının 10–28 px yakını, olmazsa eskisi. `v365build`'de `window.__plFloorBusy` (yerinde).
+- Sürüm etiketi `Versiyon 3.72`.
+
+**Geri alma:** `v372maden` ve `v372sade` bloklarını sil, `__plFloorBusy` satırını kaldır (düğümler kayda yazılmadığı için ada bir sonraki açılışta eski haliyle kurulur).
+
+**Kontrol:** chk.js 0 hata (179 script). Yeni oyun (554 maden, 18 tür): önce aynı tür < 40 px 10, < 64 px 25, < 96 px 69; herhangi < 40 px 22 — sonra aynı tür < 96 px 0, herhangi < 48 px 0; tür sayıları aynı. Yerleşmiş haritada ikinci `spread` 0 taşıma, 48 ms. Sade harita: toplanabilir 11.317 → 8.505; ekran başına (27×15 karo) Çayır 38 → 33, Orman 39 → 34, Bataklık 27 → 23, Kayalık Dağ 34 → 26, Kül 24 → 21, Mor Kristal 25 → 20 (temel 10 → 8, bitki 12 → 9, ağaç aynı); bitkilerin %88'inin 2 karo içinde en az 2 türdaşı var; 200 yeniden çıkışın 200'ü bir türdaşının yanında. Ekran görüntüsünde 5'li papatya öbeği.
+
 ## v3.71 (8 Kasım 2026) · leşte tek gölge, öğretici malzemeleri uygun yerde, köpek yokken R kapalı
 
 **Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
@@ -309,16 +320,3 @@
 - **Ders metinleri "E":** koddaki ders metinlerinde (`DATA` `les`) "E'ye bas", "E ile" var, ama ekrana `kTxt` ile atanmış tuş (varsayılan F) olarak yazılıyor (oyunda "E'ye bas" → "F'ye bas"). Metne "F" yazmak yanlış olur: "F", eski "Ye" tuşunun etiketi olduğu için `kTxt` onu X'e çevirir ("X'ye bas"). Kod değişmedi; belge tablosu F.
 - **Ölçüm:** kare döngüsüne, doğmaya, harita verisine dokunulmadı (yalnızca bildirim kuyruğu 200 ms'lik `v345` aralığında), ölçüm yapılmadı.
 - **Geri almak için:** v3.53 commit'ini `git revert` (prototip, index.html, parts). Kayıt alanı, MAPV değişmedi.
-
-## v3.52 (7 Kasım 2026) · denge paketi: Bataklık kuşakları, kurt sürüsü kademesi, E2 Sv 12, Orman/Bataklık/Vaşak değerleri, Bataklık XP ×1,5, yan görev ödülleri
-
-- **Bataklık kuşakları** (belge `30_act1.md` Bataklık): `v345`'te yeni `window.__plSpawnOK(k,x,y)`; `spawnIn` ve `b4Spawn` yer arama döngüleri `nearCamp`'ten sonra çağırır. Uzaklık ana köprünün ortasından (`bridge.x0..x1`, `bridge.cy`) karo: Kıyı ≤ 85, Orta 86–150, Derin > 150. Kıyı: Zehirli kurbağa Sv 12+, Bataklık kurdu ve Timsah yok; Orta: kurt Sv 20+, Timsah Sv 22+; Derin: şart yok. Yalnızca `ISLE===1` ve Bataklık karosu (`bioAt===2`); yan görev canavarları (`spawnMob`) bu yoldan geçmez. Kural sürü üyelerine de uygulanır (`spawnIn` ve `b4Spawn` üye döngüsü): kuşağa uymayan üye doğmaz, sürü küçülür. Oyunda 25 tur doğma: Kıyı Sv 12 ve Orta Sv 12'de kurt/timsah 0; Orta Sv 20 kurt 50 (sürü ≤ 2), Sv 22 kurt 60 (≤ 3), Timsah 25; kuşak dışına taşan üye 0.
-- **Kurt sürüsü boyu:** `spawnIn` `lo/hi`: Bataklık kurdu en az 1, en çok Sv ≤ 21: 2, Sv 22–24: 3, Sv 25+: `PACK`'in üst sınırı.
-- **E2** `r: lv 12` (6'dan); Börü dersi `c2` (Ritimli 2. vuruş) `lv:12` (10'dan). Eski kayıtta açık ya da bitmiş E2'ye dokunulmaz (koşul yalnızca açılmada okunur).
-- **Oklu kirpi:** `BANIM[1]` ve `b4Spawn` Orman satırı Sv 10+; `__plSpawnOK`: Sv 10–13 köprüye ≤ 100 karo, Sv 14+ bütün Orman.
-- **v128 `SET`:** Engerek 120·20 (XP 26), Oklu kirpi 330·30 (XP 61), Bataklık kurdu 450·52, Vaşak 1.050·112. Bataklık kurdu temel XP 76 sabit (`MUL1` bloğunda `ANIM[...].xp=76`, √ ölçeklemeden sonra), `MUL1[2]=1.5` → oyunda 114. Vaşak XP koddan **252** (√ ölçekleme + çarpan); belge 252'ye uyduruluyor (Yönetici kararı, kod değişmedi).
-- **Yan görev ödülleri** (`36_yan_gorevler.md`): Ela (mina), Lale, Mor Kristal'in 6 görevi (melodi, selim, yaren, riza, asena, fener) belgeden. 42 görev belgeyle otomatik karşılaştırıldı: 0 fark.
-- **Karşılaştırma:** 30_act1.md'deki 43 ACT 1 canlı satırı (huy, can, hasar, hız, XP) oyundan okunup karşılaştırıldı: tek fark Vaşak XP 252 / 250 (belge 252 olacak). Kamış çizme oyunda 6 Kamış, 3 İp, 2 Yosun, 149 sikke.
-- **Denge modeli** (`/tmp/denge/` oyun değerleriyle): Orman Sv 19 Oklu kirpi vuruş 9 · ısırık 39; Bataklık Sv 20 Zehirli kurbağa 9 · 30 (oran vuruş ×1,00, ısırık ×1,30, raporun öneri sonrası değeri). Bataklık kurdu Sv 20 12·21, Sv 22 9·30, Sv 25 7·36; Timsah Sv 22 20·20; Vaşak Sv 26 17·17.
-- **Ölçüm** (`olcum.js` CPU×4, gl; 3.51 → 3.52; makine bu turda yavaş, iki sürüm de aynı oranda): BOOT 26.367 → 28.851 ms (js 13.981 → 14.386); kumsal avg 265,8 → 377,0; yürürken 341,5 → 351,4; PLAY 10 sn js 3.584 → 3.507 ms (gürültü içinde; doğma koşulu yalnızca yer aramada çağrılıyor).
-- **Geri almak için:** `git revert` (v3.52 commit'i) ya da `git checkout v3.51-commit -- proje/Hammadde_prototip.html index.html proje/tools/belge/parts`. Kayıt alanı ve MAPV değişmedi.
