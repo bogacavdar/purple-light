@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.85 · 9 Kasım 2026
+
+### Oynanış
+- **Başlangıç bölgesi de seyrek:** kampın çevresinde tutulan çamlar artık çevresindeki ağaç sıklığına dahil (önceden onun üstüne ekleniyordu) ve en az 12 yerine 6 çam kalıyor. Kampta ekran başına ağaç 9'dan 5'e indi (çevresinde 7).
+
+### Tasarım belgesi
+- ACT 1 › Haritadaki miktarlar: kampta en az 6 çam.
+
+---
+
 ## Versiyon 3.84 · 8 Kasım 2026
 
 ### Oynanış
@@ -306,54 +316,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Yeni kural: her eşyanın fiyatı olur, her malzeme bir tarifte kullanılır, hiçbir tarif elde edilemeyen bir malzeme istemez.
 - Tarifler › Varyant tarifler bölümü eklendi; ok, etkili ok ve ev eşyası fiyatları yenilendi; Armut, Elma, Erik odununun eksik fiyatı (3) yazıldı.
 - Üs kurma bölümü oyunla eşitlendi: kesin parça fiyatları, İnşa N / harita T, Direk feneri avluyu kapatmaz, kayaya kurulmaz, Onar/Kaldır, fener 6 gecelik yakıt.
-
----
-
-## Versiyon 3.65 · 8 Kasım 2026
-
-### Oynanış
-
-- **Üs kurma geldi.** Evinin çevresinde, dışarıda kendine bir üs kurabilirsin. **N** tuşu (ya da alt çubuktaki İnşa düğmesi, kolda Kol menüsünde "İnşa") İnşa kipini açar; oyun bu sırada durmaz, bir canlı sana vurursa kip kapanır.
-- **Zemin ve yollar:** Toprak yol, Çakıl yol ve Ahşap parke El yapımı'nda yapılır (bir yapımda 4 karo), basılı tutup sürükleyerek boyanır. Üstlerinde ağaç, bitki ya da maden yeniden çıkmaz. Toprak ve Çakıl yolda %15 daha hızlı yürürsün (binekte de).
-- **Çit, duvar, kapı:**
-  - Dal çit kapanmaz ama canlıları üçte birine yakın yavaşlatır.
-  - Çit ve Taş duvar yolu keser. Çit artık El yapımı'nda yapılır, bir yapımda 2 Çit çıkar.
-  - Tahta kapı sana, evcil hayvanlarına ve sana eşlik edenlere açıktır, yabani canlılara kapalıdır. Döndürülebilir (R).
-- **Canlılar çiti kırabilir:** yalnızca seni kovalarken ve yakınındayken.
-  - Küçük canlılar hiçbir şey kırmaz.
-  - Kurt gibi orta güçteki canlılar yalnızca dal ve tahta parçaları kırar.
-  - Ayı, timsah gibi güçlüler taş duvarı da kırar; Reisler her şeyi kırar.
-  - Uçan canlılar üstünden geçer ama kırmaz. Çitin arkasından ısırılmazsın.
-  - Hasar alan parçada çatlaklar görünür. Kırılan parça yıkık kalır ve 1 malzeme düşürür; yanına gidip **F** ile 1 Dal (taş duvarda 1 Taş) vererek onarırsın.
-- **Avlu:** çit, taş duvar ve kapıyla tamamen çevirdiğin alanın (en çok 64×64 karo) içinde canlı doğmaz. Bir parça kırılınca avlu açılır, onarınca geri gelir.
-- **Direk feneri:** gece 20:00'de yanar, 06:00'da söner, her gece bir yakıt harcar. Yakıtı **F** ile koyarsın (1 Hayvan yağı ya da 2 Reçine). Işığının içine mor ışık gelmez; canavarları uzaklaştırmaz. Yanan fenerler haritada görünür. Usta Sinan yapar.
-- Kurulamayan yerde gölge kırmızı olur ve nedeni yazar (su, ağaç, kaya, kişilere ya da ateşe çok yakın, köprü ve mağara ağzının önü, sınır doldu gibi). Sınırlar: 2.000 zemin, 600 çit ve duvar, 24 fener.
-- Usta Sinan'ın K3 görevine İnşa dersi eklendi.
-
-### Arayüz
-
-- **Haritaya işaret koyma tuşu N'den T'ye taşındı** (N artık İnşa). Ayarlar › Kontroller'den değiştirilebilir.
-- İnşa kipinde altta parça şeridi ve sayaçlar görünür. Koymadan önce parçanın gölgesini görürsün. Kurulmuş bir parçaya tıklayınca (dokunmatikte basılı tutunca) Taşı / Geri al seçenekleri çıkar (kapıda Döndür, hasarlı ya da yıkık parçada Onar, yıkıkta Kaldır); sağ tıkla sürüklemek siler.
-- Kolda: şeritten parçayı seç, yön tuşları ya da sağ çubuk imleci kaydırır, A koyar (basılı tutup kaydırınca boyar), X siler, Y döndürür, B geri. Evin içinde Kol menüsündeki aynı yer Döşe olarak kalır.
-- **Oyun süresi ikiye ayrıldı:** Karakter › İstatistikler'de **aktif oyun süresi** (dünya akarken) ve **menüde geçen süre** (çanta, kitap, harita, Ayarlar, duraklatma gibi bir pencere açıkken) ayrı yazar. İkisi de gerçek saatle sayılır; ana menüde ve sekme arka plandayken geçen süre sayılmaz. Oyun sonu ekranındaki "Süre" aktif oyun süresidir.
-
-### Görsel
-
-- Yollar, parke, çitler, taş duvar, kapı (açık/kapalı), fener ve yıkık parçalar için yeni resimler. Çit simgesi gerçek bir çit gibi çizildi.
-
-### Fiyatlar
-
-- Toprak yol 1, Çakıl yol 2, Ahşap parke 10, Dal çit 4, Çit 82, Taş duvar 8, Tahta kapı 228, Direk feneri 209 sikke. Ağıl'ın tarifi aynı kaldı, Çit ucuzladığı için fiyatı 1.107'ye düştü.
-
-### Kayıtlar
-
-- Yapılar kayda girer. Eski kayıtlarda yere kurulmuş Çit'ler kendiliğinden yeni sisteme taşınır.
-- Eski kayıtlarda aktif oyun süresi kayıttaki oyun süresiyle başlar, menü süresi 0'dan başlar.
-
-### Tasarım belgesi
-
-- Sistemler › Üs kurma bölümü eklendi (1. aşama). Tariflere İnşa parçaları, Usta Sinan'a Direk feneri, K3'e İnşa dersi yazıldı.
-- Sistemler › İstatistikler ve oyun süresi bölümü eklendi.
 
 ---
 

@@ -1,3 +1,11 @@
+## v3.85 (9 Kasım 2026) · kamp ağaçları halkadan seyrek
+
+**Değişen yerler:** `v375kamp`: `MINPINE` 12 → 6; korunan çamlar halkanın payına sayılır (`keep2=(keep×n−safe)/(n−safe)`). Sürüm etiketi `Versiyon 3.85`.
+
+**Geri alma:** `MINPINE=12`, `keep` ile seyreltme.
+
+**Kontrol:** chk.js 0 hata. Yeni oyun: kampta ekran başına ağaç 9,3 → 5,0 (halka 6,9), 6 Çam; Zümrüt'ün kazanı çevresi ekran görüntüsüyle bakıldı.
+
 ## v3.84 (8 Kasım 2026) · meyvesiz ağaçlar %50 seyrek
 
 **Değişen yerler:** v77 ağaç türleme döngüsü: tür atandıktan sonra `!tr.type.fruit&&!nearSp&&hash(tx,ty,653)<.5` olan ağaç alınmaz (kamp sonra `v375kamp` ile halkasının sıklığına iner). Sürüm etiketi `Versiyon 3.84`.
@@ -201,33 +209,4 @@
 - Doğrulama: chk.js 0 hata; headless: JSON'daki 146 malzemenin hepsi DB.R girdisinde, fiyatsız eşya 0, konsolda v366 uyarısı yok; A: varyant yapılınca asıl çıktı geliyor, fiyat/resim aynı, kayıtta kalıyor; B: uçsuz ok yapılmıyor; C: Usta siparişiyle boya harcanıyor.
 - Açık (Boğaç'a, denge): etkili okların fiyatı normal okun ~10 katı (eski fark yayması); Basit ok artık Kemik ok ucu → Çekiç taşına (Dursun'un örsü) bağlı; Ahşap karyola 475'te tutuldu (priceOf 383).
 - Geri alma: üç bloğu silmek; belgede 80_tarifler (ok, ev eşyası satırları, Varyant tarifler bölümü), 85_aletler ok tablosu, 90_esyalar fiyatları, 00_giris kural satırı birlikte geri alınır.
-
-## v3.65 (8 Kasım 2026) · üs kurma 1. aşama (İnşa kipi, ızgara, çit/duvar/kapı, kırma/onarım, avlu, Direk feneri) ve oyun süresi
-
-- **Yeni blok `v365build`** (dosya sonuna yakın; kaynak taslağı `/tmp/kol_dev/buildblock.js`):
-  - `BP` parça tablosu (g: 0 zemin / 1 çit katmanı, k: tür, cls: kırılma sınıfı, hp, mat), `G0`/`G1`/`YARD` `Uint8Array(W*H)`, `HP` Map (yalnız hasarlı), `LAMPS` Map `{f,on}`; sınırlar `LIM0` 2000 / `LIM1` 600 / `LIML` 24. `G1` bitleri: tür (alt), `BROKE` 64, `TURN` 128.
-  - Tarifler `addRec` (İnşa; Direk feneri Yapılar, Sinan), `YLD` (yol/parke 4, Dal çit/Çit 2) `handCraft` sarmalı; `PLACEABLE`'dan Çit çıktı, Direk feneri girdi. Fiyat `priceOf` sarmalı (zincir ×1,3, verim bölünür) → `window.__plBuildPrices`.
-  - Hareket: `blocked` sarmalı (duvar katı, kapı yalnız yabani canlıya), `moveA` sarmalı (Dal çit ×0,35, kovalarken itme → `hitPart`), `tickAnimals` sarmalı (duvardan geçen her hareketi `crosses()` ile geri alır — atılma/çekme yollarını da kapatır; avlu içinde yeni doğanı siler), `biteHit` sarmalı (duvar arkasından ısırma yok).
-  - Kırma: `MID`/`STRONG` setleri, `clsOf`, `hitPart` (1,2 sn bekleme, hasar /2, kırılınca `BROKE`, malzeme düşer, `yardCalc`). Onarım `repair(i)` (XTRA "Onar: …", 1 Dal/Taş), yakıt XTRA "Fenere yakıt koy".
-  - `yardCalc`: 2–4 türlerinin 8 komşulu bileşenleri, kutu ≤64, taşma doldurma.
-  - `findSpot` sarmalı (dolu karo yok), `clearTile` (düğüm silinir, kütük `cd=1e9`), `STAT.move` sarmalı (yol ×1,15), `lightSources` / `drawV46Map` sarmalları (yanan fener).
-  - `why(i,p)` yasakları, `put/take/paint`, İnşa kipi `B` (`#buildui` şerit, `.bmenu`), fare/dokunmatik pointer yakalayıcıları, N/Esc/R, kol API'si `B.padMove/padPut/padDel/padRot/padBack`.
-  - Çizim: `drawGround` (zemin), `v46Ents` (duvar/fener varlıkları), `drawV46World` (ızgara + gölge, GL'de `px()` dolgu).
-  - Resimler: yerel `P1I` + `icon` sarmalı (`window.__p1k`); önbellek yalnız kendi adlarımız için silinir. Çit simgesi çit olarak yeniden çizildi.
-  - Kayıt: `s.bld={f,w,hp,l}` (base36 farklı sıkıştırma); `applyState` sarmalı `load()` + `migrate()` (eski kurulu Çit → ızgara); `resetState` temizler.
-  - Test kancaları: `window.__plBuild` (`count/at/ti/spr/hit/put`), `window.__plBuilt(n)`, `window.__plBreakClass`.
-- **Başka bloklardaki değişiklikler:** `v345` `window.__plPpl`; `KB`'ye `build` (N), harita işareti `mark` N → T; K3 `les:"insa"` + `LES.insa` (3 adım); görev `place` denetimi `__plBuilt`; `PADL.build`; `v320pad`: Kol menüsünde dışarıda "İnşa" (evde Döşe), `layer()` `#buildui`, `firstFocus`, imleç dalı (D-pad/RS, A/X/Y/B, Start); kol yardım satırı.
-- **Oyun süresi (Yönetici, blok `v365sure`, dosya sonu):** kayıt alanı `pt:{a,m}` (sn). Sayaç `setInterval` 1 sn, adım ≤2 sn; menü = `paused||craftOpen||` görünen `.ov/#craft/[role=dialog]` (dlg, title, creator hariç); `onTitle`, `document.hidden`, `#ldscr` görünürken sayılmaz. İstatistik kartı `renderCraft` sarmalıyla, oyun sonu "Süre" MutationObserver ile. Denendi: `__plTime()` → aktif 5/menü 6 sn, kayıt/yükleme, eski kayıt (`playTime` 500 → aktif 500).
-- **Fiyatlar (belgedeki "~" kesinleşti):** Toprak yol 1, Çakıl yol 2, Ahşap parke 10, Dal çit 4, Çit 82, Taş duvar 8, Tahta kapı 228, Direk feneri 209, Ağıl 1.107.
-- **Ölçüm** (`/tmp/olcum364/olcum.js`, CPU×4, ekran kartı açık, iki koşu; v3.64 tabanı Yönetici):
-  - v3.64: BOOT JS 12.571 / 15.597 ms · PLAY 10 sn JS 3.228 / 3.711 ms.
-  - v3.65: BOOT JS 14.233 / 14.432 ms · PLAY 10 sn JS 3.078 / 3.474 ms. Hata yok. Fark gürültü içinde.
-  - Dolu kayıt (2.000 zemin + 600 çit, kısmasız): kare süresi boş haline göre artmadı; kayıt 86 ms, `bld` 5.293 karakter.
-- **Denendi** (klavye/fare, sahte Xbox kolu, dokunmatik PointerEvent):
-  - Koyma, boyama, menü (Taşı/Geri al/Döndür), halka avlu (12 karo), kayıt/yükleme, eski Çit taşıma.
-  - Kurt: çit önünde kalıyor, çite vuruyor (5,5/vuruş), oyuncuya değmiyor; hasar 110 ile kırdı → avlu açıldı, Dal düştü; F onarım → Dal −1, avlu geri.
-  - Tahta kapı: kurt kapının önünde kaldı (2,9 karo), oyuncu kapıdan geçti. Dal çit: kurt 1,4 karo/sn (açıkta 3,6 → ×0,39).
-  - Fener: gece yandı, ışık `litAt` doğru, sabah söndü; F ile yakıt (Hayvan yağı 40→39). Yol: `speedMult` 1 → 1,15.
-  - Kol: Kol menüsü "İnşa" → şerit → Çit → A + RS boyama (4), X sil, B geri, B kapat. Dokunmatik: dokun koy, sürükle boya, basılı tut menü.
-- **Geri almak için:** v3.65 commit'ini `git revert` (prototip, index.html, belge parçaları, notlar). Yeni kayıt alanları `bld` ve `pt`; eski sürüm bunları yok sayar (kurulu yapılar ve İnşa ile yapılan eşyalar kaybolur, eski Çit'ler taşındığı için geri gelmez). MAPV değişmedi.
 

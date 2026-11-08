@@ -22,6 +22,16 @@ code{background:var(--card);padding:1px 5px;border-radius:4px}
 <li>Bu notlar: https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html · https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.pdf</li>
 </ul>
 <hr />
+<h2>Versiyon 3.85 · 9 Kasım 2026</h2>
+<h3>Oynanış</h3>
+<ul>
+<li><strong>Başlangıç bölgesi de seyrek:</strong> kampın çevresinde tutulan çamlar artık çevresindeki ağaç sıklığına dahil (önceden onun üstüne ekleniyordu) ve en az 12 yerine 6 çam kalıyor. Kampta ekran başına ağaç 9'dan 5'e indi (çevresinde 7).</li>
+</ul>
+<h3>Tasarım belgesi</h3>
+<ul>
+<li>ACT 1 › Haritadaki miktarlar: kampta en az 6 çam.</li>
+</ul>
+<hr />
 <h2>Versiyon 3.84 · 8 Kasım 2026</h2>
 <h3>Oynanış</h3>
 <ul>
@@ -338,55 +348,5 @@ code{background:var(--card);padding:1px 5px;border-radius:4px}
 <li>Yeni kural: her eşyanın fiyatı olur, her malzeme bir tarifte kullanılır, hiçbir tarif elde edilemeyen bir malzeme istemez.</li>
 <li>Tarifler › Varyant tarifler bölümü eklendi; ok, etkili ok ve ev eşyası fiyatları yenilendi; Armut, Elma, Erik odununun eksik fiyatı (3) yazıldı.</li>
 <li>Üs kurma bölümü oyunla eşitlendi: kesin parça fiyatları, İnşa N / harita T, Direk feneri avluyu kapatmaz, kayaya kurulmaz, Onar/Kaldır, fener 6 gecelik yakıt.</li>
-</ul>
-<hr />
-<h2>Versiyon 3.65 · 8 Kasım 2026</h2>
-<h3>Oynanış</h3>
-<ul>
-<li><strong>Üs kurma geldi.</strong> Evinin çevresinde, dışarıda kendine bir üs kurabilirsin. <strong>N</strong> tuşu (ya da alt çubuktaki İnşa düğmesi, kolda Kol menüsünde "İnşa") İnşa kipini açar; oyun bu sırada durmaz, bir canlı sana vurursa kip kapanır.</li>
-<li><strong>Zemin ve yollar:</strong> Toprak yol, Çakıl yol ve Ahşap parke El yapımı'nda yapılır (bir yapımda 4 karo), basılı tutup sürükleyerek boyanır. Üstlerinde ağaç, bitki ya da maden yeniden çıkmaz. Toprak ve Çakıl yolda %15 daha hızlı yürürsün (binekte de).</li>
-<li><strong>Çit, duvar, kapı:</strong><ul>
-<li>Dal çit kapanmaz ama canlıları üçte birine yakın yavaşlatır.</li>
-<li>Çit ve Taş duvar yolu keser. Çit artık El yapımı'nda yapılır, bir yapımda 2 Çit çıkar.</li>
-<li>Tahta kapı sana, evcil hayvanlarına ve sana eşlik edenlere açıktır, yabani canlılara kapalıdır. Döndürülebilir (R).</li>
-</ul>
-</li>
-<li><strong>Canlılar çiti kırabilir:</strong> yalnızca seni kovalarken ve yakınındayken.<ul>
-<li>Küçük canlılar hiçbir şey kırmaz.</li>
-<li>Kurt gibi orta güçteki canlılar yalnızca dal ve tahta parçaları kırar.</li>
-<li>Ayı, timsah gibi güçlüler taş duvarı da kırar; Reisler her şeyi kırar.</li>
-<li>Uçan canlılar üstünden geçer ama kırmaz. Çitin arkasından ısırılmazsın.</li>
-<li>Hasar alan parçada çatlaklar görünür. Kırılan parça yıkık kalır ve 1 malzeme düşürür; yanına gidip <strong>F</strong> ile 1 Dal (taş duvarda 1 Taş) vererek onarırsın.</li>
-</ul>
-</li>
-<li><strong>Avlu:</strong> çit, taş duvar ve kapıyla tamamen çevirdiğin alanın (en çok 64×64 karo) içinde canlı doğmaz. Bir parça kırılınca avlu açılır, onarınca geri gelir.</li>
-<li><strong>Direk feneri:</strong> gece 20:00'de yanar, 06:00'da söner, her gece bir yakıt harcar. Yakıtı <strong>F</strong> ile koyarsın (1 Hayvan yağı ya da 2 Reçine). Işığının içine mor ışık gelmez; canavarları uzaklaştırmaz. Yanan fenerler haritada görünür. Usta Sinan yapar.</li>
-<li>Kurulamayan yerde gölge kırmızı olur ve nedeni yazar (su, ağaç, kaya, kişilere ya da ateşe çok yakın, köprü ve mağara ağzının önü, sınır doldu gibi). Sınırlar: 2.000 zemin, 600 çit ve duvar, 24 fener.</li>
-<li>Usta Sinan'ın K3 görevine İnşa dersi eklendi.</li>
-</ul>
-<h3>Arayüz</h3>
-<ul>
-<li><strong>Haritaya işaret koyma tuşu N'den T'ye taşındı</strong> (N artık İnşa). Ayarlar › Kontroller'den değiştirilebilir.</li>
-<li>İnşa kipinde altta parça şeridi ve sayaçlar görünür. Koymadan önce parçanın gölgesini görürsün. Kurulmuş bir parçaya tıklayınca (dokunmatikte basılı tutunca) Taşı / Geri al seçenekleri çıkar (kapıda Döndür, hasarlı ya da yıkık parçada Onar, yıkıkta Kaldır); sağ tıkla sürüklemek siler.</li>
-<li>Kolda: şeritten parçayı seç, yön tuşları ya da sağ çubuk imleci kaydırır, A koyar (basılı tutup kaydırınca boyar), X siler, Y döndürür, B geri. Evin içinde Kol menüsündeki aynı yer Döşe olarak kalır.</li>
-<li><strong>Oyun süresi ikiye ayrıldı:</strong> Karakter › İstatistikler'de <strong>aktif oyun süresi</strong> (dünya akarken) ve <strong>menüde geçen süre</strong> (çanta, kitap, harita, Ayarlar, duraklatma gibi bir pencere açıkken) ayrı yazar. İkisi de gerçek saatle sayılır; ana menüde ve sekme arka plandayken geçen süre sayılmaz. Oyun sonu ekranındaki "Süre" aktif oyun süresidir.</li>
-</ul>
-<h3>Görsel</h3>
-<ul>
-<li>Yollar, parke, çitler, taş duvar, kapı (açık/kapalı), fener ve yıkık parçalar için yeni resimler. Çit simgesi gerçek bir çit gibi çizildi.</li>
-</ul>
-<h3>Fiyatlar</h3>
-<ul>
-<li>Toprak yol 1, Çakıl yol 2, Ahşap parke 10, Dal çit 4, Çit 82, Taş duvar 8, Tahta kapı 228, Direk feneri 209 sikke. Ağıl'ın tarifi aynı kaldı, Çit ucuzladığı için fiyatı 1.107'ye düştü.</li>
-</ul>
-<h3>Kayıtlar</h3>
-<ul>
-<li>Yapılar kayda girer. Eski kayıtlarda yere kurulmuş Çit'ler kendiliğinden yeni sisteme taşınır.</li>
-<li>Eski kayıtlarda aktif oyun süresi kayıttaki oyun süresiyle başlar, menü süresi 0'dan başlar.</li>
-</ul>
-<h3>Tasarım belgesi</h3>
-<ul>
-<li>Sistemler › Üs kurma bölümü eklendi (1. aşama). Tariflere İnşa parçaları, Usta Sinan'a Direk feneri, K3'e İnşa dersi yazıldı.</li>
-<li>Sistemler › İstatistikler ve oyun süresi bölümü eklendi.</li>
 </ul>
 <hr /></main></body></html>
