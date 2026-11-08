@@ -1,3 +1,11 @@
+## v3.86 (9 Kasım 2026) · öbekler kalktı, toplanacaklar %20 az
+
+**Değişen yerler:** `v372sade` yeniden yazıldı: öbek kurma, `GAP`/`spotOk`/`putP`, `KIN` ve `findSpot` sarmalı (öbeğe yeniden çıkış) silindi; bitkiler yerinde kalır, `hz(x,y,3.1)≥.6` silinir (%40); temel malzemeler `hz(x,y,91.7)<.44` (%44), Yaprak `<.2` (%20). `window.__plSade` kalktı. Sürüm etiketi `Versiyon 3.86`.
+
+**Geri alma:** `git revert` bu commit (v3.78'in öbekli hali geri gelir).
+
+**Kontrol:** chk.js 0 hata. Yeni oyun: öbekte duran bitki 2888 → 40, 16 px'ten yakın 80; biyom başına toplanabilir ACT 1 429/394/427/494/417/489, ACT 2 303/253/318/302/304/297 (önceden 525/489/474/577/506/568 ve 369/298/405/369/375/353). Kurulum 12 ms.
+
 ## v3.85 (9 Kasım 2026) · kamp ağaçları halkadan seyrek
 
 **Değişen yerler:** `v375kamp`: `MINPINE` 12 → 6; korunan çamlar halkanın payına sayılır (`keep2=(keep×n−safe)/(n−safe)`). Sürüm etiketi `Versiyon 3.85`.
@@ -200,13 +208,4 @@
 - Eski kayıt çevirisi: dönüşüm fonksiyonu ayrıca node'da sınandı (çanta 4 gövde + 1 Kamış → 13 Kamış + 4 İp; sandık, yer `{n,q}`, köpek sırtı, found/order listeleri). Oyun içinde `applyState` ile yükleme sınanamadı: headless'ta `applyState(snapshot)` HEAD (v3.66) dahil envanteri hiç yüklemiyor (test ortamı sorunu, bu sürümle ilgisiz).
 - chk.js: prototip 0 hata (169 script), index 0 hata; `?.` 1 / `??` 7 (eskisiyle aynı). Sayfa hatası yok.
 - Not: `proje/recipes3.json` v2.73'ten beri `db` ile eşit değil (dokunulmadı; v48_bugs'ın "in-file DB equals recipes3.json" denetimi bu yüzden zaten düşüyor).
-
-## v3.66 (8 Kasım 2026) · her malzeme bir tarifte: 128 varyant tarif, ok uçları oklarda, boyalar ev eşyalarında
-
-- Boğaç kararları (8 Kasım): fiyatsız eşya ve kullanılmayan malzeme kritik, elde edilemeyen girdi büyük hata (CLAUDE.md + belge Giriş › Kural); 149 kullanılmayan malzemenin her birine ayrı tarif (grup değil); ok uçları oklara; boyalar ev eşyalarına. Denetim: /home/claude/FIYAT_TARIF_DENETIM_v3.65.md (fiyatsız 0, elde edilemeyen girdi 0, kullanılmayan 149 → 146 tarifte; Sülük yemi, Duman fişeği, Yıldız tozu yemi sınırda: av aracı/yem).
-- Bloklar (dosya sonu, sıra önemli): `v366ok` (Yazılımcı B: 7 ok tarifine kendi ucu, adetler Basit 11/Bakır 18/Mor kristal 11, ok ve etkili ok fiyatları PRICE_/DB.p; `window.__plOkVar` yalnız bilgi), `v366boya` (Yazılımcı C: 11 boya 11 tarifte, fiyat max(priceOf, eski), Usta işçiliği fiyattan), `v366tarif` (Yazılımcı A: varyant tarif düzeneği; kimlik "Çıktı (Malzeme ile)", gain/icon/PRICE_/qc/USES sarmalı; JSON `/*TARIF_EK*/…/*SON*/` arasında gömülü, kaynak /home/claude/TARIF_EK_v3.66.json; Yönetici: __plOkVar atlama koşulu kaldırıldı, Bazalt varyantı q=10).
-- Kayıt: yeni alan yok; öğrenilen varyantlar `found` içinde kimliğiyle. MAPV değişmedi.
-- Doğrulama: chk.js 0 hata; headless: JSON'daki 146 malzemenin hepsi DB.R girdisinde, fiyatsız eşya 0, konsolda v366 uyarısı yok; A: varyant yapılınca asıl çıktı geliyor, fiyat/resim aynı, kayıtta kalıyor; B: uçsuz ok yapılmıyor; C: Usta siparişiyle boya harcanıyor.
-- Açık (Boğaç'a, denge): etkili okların fiyatı normal okun ~10 katı (eski fark yayması); Basit ok artık Kemik ok ucu → Çekiç taşına (Dursun'un örsü) bağlı; Ahşap karyola 475'te tutuldu (priceOf 383).
-- Geri alma: üç bloğu silmek; belgede 80_tarifler (ok, ev eşyası satırları, Varyant tarifler bölümü), 85_aletler ok tablosu, 90_esyalar fiyatları, 00_giris kural satırı birlikte geri alınır.
 

@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.86 · 9 Kasım 2026
+
+### Oynanış
+- **Toplanacaklar yine dağınık ve %20 daha az:** bitkiler artık aynı türden öbekler halinde yan yana çıkmıyor; eskisi gibi biyoma tek tek dağılıyor ve toplanınca biyomun herhangi bir yerinde yeniden çıkıyor. Bütün toplanacaklar (bitkiler, Dal, Lif, Taş, Nehir çakılı, Kum, Çakmaktaşı, Yaprak) %20 azaldı. Yeni oyunda ACT 1'de biyom başına 394–494, ikinci adada 253–318 toplanabilir var.
+
+### Tasarım belgesi
+- ACT 1 › Haritadaki miktarlar › Sade harita: öbek kuralları kalktı, "Bitkiler dağınık" ve yeni oranlar.
+
+---
+
 ## Versiyon 3.85 · 9 Kasım 2026
 
 ### Oynanış
@@ -301,21 +311,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Sistemler › Zorluk: Deneyerek bul 7 malzeme, adet artırma, aynı türlü tariflerde adet kuralı, birebir aynı tarifler birlikte bulunur.
 - Eşyalar: Çekiç taşının kullanıldığı yerlerden Kemik ok ucu çıktı.
 - (Yönetici/Analist yazdı: CB2 300, Kemik ok ucu alet istemez, Kamış ok gövdesi kalktı, etkili ok fiyatları.)
-
----
-
-## Versiyon 3.66 · 8 Kasım 2026
-
-### Oynanış
-- **Artık her malzemenin bir işi var.** Önceden yalnızca satılabilen 146 malzeme (ağaç kömürleri, kabuklar, saplar, kalaslar, deri ve postlar, tüyler, tuğlalar, camlar, Demir halka, Tunç levha, meyve ağacı odunları ve diğerleri) artık bir tarifte kullanılıyor.
-- **İkinci tarifler:** birçok eşyanın artık ikinci bir yapılış yolu var. Tarif kitabında "Kürk yelek (Sincap derisi ile)" gibi ayrı bir satır olarak görünür, kazanda ayrıca öğrenilir. Yapılınca aynı eşya çıkar; fiyatı ve görevlerdeki sayımı aynıdır. Örnekler: her hayvanın derisi deri parçası yerine, tuğlalar fırın ve kerpiç evde, camlar Kil lamba ve Golem fenerinde, Bazalt ok ucu Kara çelik okta.
-- **Oklar ok ucu istiyor:** her ok kendi ucuyla yapılır: Basit ok ← Kemik ok ucu, Bakır ok ← Diken, Tunç ok ← Lav camı, Demir ok ← Akrep, Çelik ok ← Çakmaktaşı, Mor kristal ok ← Kuvars, Kara çelik ok ← Obsidyen ya da Bazalt ok ucu. Bir yapımda çıkan ok sayısı arttı (Basit 11, Bakır 18, Mor kristal 11, diğerleri 10), ok başına fiyat en çok %25 arttı.
-- **Boyalar ev eşyalarında:** Kilim, Halı, Duvar halısı, Perde, Dolap, Sandık, Masa, Ahşap karyola, Asma fener ve Mor yosun yastığı birer boya ister, Boyalı çömlek Yıldız mürekkebi ister. Bu eşyaların değeri ve Usta Sinan'ın işçiliği buna göre arttı (ör. Kilim 437 → 615).
-
-### Tasarım belgesi
-- Yeni kural: her eşyanın fiyatı olur, her malzeme bir tarifte kullanılır, hiçbir tarif elde edilemeyen bir malzeme istemez.
-- Tarifler › Varyant tarifler bölümü eklendi; ok, etkili ok ve ev eşyası fiyatları yenilendi; Armut, Elma, Erik odununun eksik fiyatı (3) yazıldı.
-- Üs kurma bölümü oyunla eşitlendi: kesin parça fiyatları, İnşa N / harita T, Direk feneri avluyu kapatmaz, kayaya kurulmaz, Onar/Kaldır, fener 6 gecelik yakıt.
 
 ---
 
