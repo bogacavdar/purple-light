@@ -510,7 +510,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 |---|---|
 | Çayır/Orman · deniz | **kıyıdan tutulmaz**; deniz balıkları Poyraz'la denize açılınca ("ACT 1 › Gemici Poyraz ve deniz") |
 | Çayır/Orman · nehir ve göl | Alabalık 28, Kızılkanat 20, Tatlısu levreği 20, Çapak 16, Sazan 14, **Tatlısu kefali 12**, Tatlısu midyesi 10, Yılan balığı 9 |
-| Bataklık / Kayalık Dağ (nehir ve göl; deniz kıyısında tutulmaz) | Yayın 24, Kadife balığı 24, **Kerevit 22**, Turna balığı 18, Yılan balığı 12, Tatlısu midyesi 12, Sazan 10 |
+| Bataklık / Kayalık Dağ (nehir ve göl; deniz kıyısında tutulmaz) | Yayın 24, Kadife balığı 24, **Kerevit eti 22**, Turna balığı 18, Yılan balığı 12, Tatlısu midyesi 12, Sazan 10 |
 | Kül Diyarı / Mor Kristal Vadisi (nehir ve göl) | Yayın 30, Mersin balığı 22, Turna balığı 22, Kadife balığı 14 |
 
 ### Tuzaklar ve balık kapanı

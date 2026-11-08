@@ -610,7 +610,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kenevir halatı | 404 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Derin su oltası, Deri çanta, Fırtına oltası, İskele, Makaralı olta, Megalit |
 | Kenevir lifi | 45 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kenevir halatı, Kenevir torba |
 | Kenevir torba | 82 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kerevit | 4 | – | Av: Kerevit düşürür %100 (ACT 1 · Çayır) · Balık: Bataklık/Kayalık Dağ suları, olta/ağ/zıpkın ile %18; balık kapanına da girer | Balık çorbası, Balık sepeti, Pişmiş kerevit, Taşta kerevit, Tütsülenmiş kerevit |
+| Kerevit eti | 4 | – | Av: Kerevit düşürür %100 (ACT 1 · Çayır) · Balık: Bataklık/Kayalık Dağ suları, olta/ağ/zıpkın ile %18; balık kapanına da girer | Balık çorbası, Balık sepeti, Pişmiş kerevit, Taşta kerevit, Tütsülenmiş kerevit |
 | Kerpiç duvar | 234 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | Çömlek fırını, Kerpiç ev |
 | Kerpiç ev | 1.007 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur · Usta Sinan yapar (950 sikke) | – |
 | Kertenkele eti ² | 9 | – | Av: Kaya kertenkelesi düşürür %80 (ACT 2 · Yüzen Kayalar) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş kertenkele eti, Turba ateşinde tütsü |
@@ -756,7 +756,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Közlenmiş kadife balığı | 9 | – | Kamp ateşinde közlenir (çiğ hali: Kadife balığı) | – |
 | Közlenmiş karaca eti | 15 | – | Kamp ateşinde közlenir (çiğ hali: Karaca eti) | – |
 | Közlenmiş keklik eti | 7 | – | Kamp ateşinde közlenir (çiğ hali: Keklik eti) | – |
-| Közlenmiş kerevit | 9 | – | Kamp ateşinde közlenir (çiğ hali: Kerevit) | – |
+| Közlenmiş kerevit | 9 | – | Kamp ateşinde közlenir (çiğ hali: Kerevit eti) | – |
 | Közlenmiş kunduz eti | 13 | – | Kamp ateşinde közlenir (çiğ hali: Kunduz eti) | – |
 | Közlenmiş kurt eti | 13 | – | Kamp ateşinde közlenir (çiğ hali: Kurt eti) | – |
 | Közlenmiş kızılkanat | 9 | – | Kamp ateşinde közlenir (çiğ hali: Kızılkanat) | – |

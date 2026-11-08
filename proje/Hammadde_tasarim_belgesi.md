@@ -1,10 +1,12 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.88** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.89** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
 > **KURAL: HER EŞYANIN KENDİ RESMİ OLUR (Boğaç, 6 Kasım 2026):** oyundaki her eşyanın (malzeme, yemek, alet, yapı, ACT 2 eşyaları dahil) **adına ve gerçeğine uygun** bir resmi vardır; bu resim envanterde, tarif kitabında, elde, **yere düştüğünde** ve **kurulduğunda** (yapılarda) kullanılır. Adıyla ilgisi olmayan, adından renk alan "hediye paketi" kutusu **hiçbir eşyada görünmez**. Yeni bir eşya eklenirken resmi de aynı sürümde, ne olduğuna göre (yemek tabakta ya da tavada, iksir şişede, merhem kapta, taş taş gibi…) çizilir. Resmi olmayan bir eşya bulunursa bu bir hatadır. v3.37'de 194 eşyanın hediye paketi yerine gerçek resmi çizildi (Eşyalar › Eşya resimleri). Resmi unutulmuş bir eşya oyunda sade, nötr bir bez torba olarak görünür (renkli kutu değil) ve geliştirici araçları açıkken (`?debug`) konsola yazılır (kontrol önbelleği silmez, yalnızca karşılaştırır).
+
+> **KURAL: CANLI KENDİ ADINDA EŞYA DÜŞÜRMEZ (Boğaç, 9 Kasım 2026: "kerevitten kerevit düşmesi gibi durumlar olmamalı, kerevit eti düşüyor olmalı"):** bir canlı avlanınca kendi adını taşıyan bir eşya düşürmez; ondan çıkan eşya ne olduğunu söyler (ör. Kerevit → **Kerevit eti**). Yeni canlı ya da düşme eklenince, her pakette eşya denetiminde bakılır: hiçbir canlının düşürdüğü eşyanın adı bir canlının adıyla aynı olamaz.
 
 > **KURAL: BÜYÜKLÜK YÜZDESİ ALAN İÇİNDİR (Boğaç, 6 Kasım 2026):** bir harita, biyom ya da bölge için "%X büyüt/küçült" denince **alanı** %X değişir; kenar katsayısı √(1+X) olur (ör. %50 büyütmek: kenar ×√1,5 ≈ ×1,2247). Şüphe varsa belgeye yazmadan önce Boğaç'a sorulur.
 
@@ -288,6 +290,8 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 **"Yeni tarif öğrendin" yazısı (v3.32, Boğaç: arkasında siyah bir dikdörtgen yanıp sönüyordu):** ekrana gelen büyük yazıların (yeni tarif, yeni malzeme, almanak, Börü'nün dersi) çerçevesinin çevresindeki geniş sarı parıltı kaldırıldı (ekran kartı o parıltının alanını bazen siyah çiziyordu); yazı yalnızca ince koyu çerçevesiyle görünür. Bir pencere açıkken alttaki yazı büyüyüp küçülmeden yalnızca belirip kaybolur.
 
 **Tuş yazıları:** öğreticideki bütün "…'e bas" yazıları (ör. "Boşluk'a bas!", "Sağ tık'a bas!") en son kullanılan aygıta göre yazılır: klavyede tuşun adı, kolda kolun tuşu (Xbox ya da PlayStation adlarıyla), telefonda dokunma düğmesinin adı; aygıt değişince hemen değişir (Sistemler › Kontroller › Oyun kolu › Tuş yazıları, 7 Kasım 2026, Boğaç).
+
+**Yanıp sönen her şey mavi kenarla yanar (9 Kasım 2026, Boğaç: "yanıp sönme dediğimiz her şeyi mavi kenar ile yakıp söndürmeliyiz"):** oyunda oyuncunun dikkatini bir yere çekmek için yanıp sönen her şey (öğreticinin gösterdiği düğme ve eşya, alet ve meşale yuvası, envanterde giysiye uyan yuva, sikke kutusu, verilmemiş seviye puanı düğmesi ve + düğmeleri, yeni başarım, yeni açılan menü düğmesi, tuş atama penceresinde basılmayı bekleyen tuş, haritadaki seçim) aynı biçimde yanar: **mavi kenar (#7fd0ff) ve mavi ışık**, yavaş nabız (~1,8 sn). Sarı, yeşil ya da mor yanıp sönme kullanılmaz. Tehlike ve durum işaretleri bu kuralın dışındadır: azalan tokluk/can çubuğunun kırmızı yanıp sönmesi, ultinin dolunca sarı parlaması, kaybolmak üzere olan leşin yanıp sönmesi.
 
 **Gösterme kuralı:** öğretici bir düğmeye basmanı istediğinde o düğme (sol menüdeki ikonlar, menülerin içindeki Ye/Yap/Hepsini koy/Döv düğmeleri, envanterdeki eşya, alet yuvası) **mavi parlar** (parlama yalnızca büyüyüp küçülür, çevresindeki ışık sabittir; ekranı yormaz; telefonda da büyüyüp küçülür, biraz daha yavaş) ve yanında yanıp sönen bir **ok** olur. Sıra gerekiyorsa düğmeler sırayla parlar. Adım biter bitmez parlama ve ok söner (örneğin 5 böğürtlen yenince yemek düğmesi artık parlamaz). **Sürüklerken de gösterilir:** envanterde bir eşyaya tıklayınca nereye gideceği yanıp sönerek gösterilir; eşyaya basılı tutup sürüklemeye başlayınca da aynı yuva (boş yuva, yoksa ilk yuva) sürükleme boyunca yanıp söner. Örneğin Zümrüt'ün meşale dersinde meşale tıklansa da sürüklense de doğru yuva gösterilir. Bırakınca yanıp sönme biter. **Pencerelerin içinde büyümez (v3.32, Boğaç: kazan alanı büyüyüp küçülünce kaydırma çubukları bir görünüp bir kayboluyordu):** El yapımı, kazan, örs, envanter gibi pencerelerin içinde parlayan şey (kazan alanı, Yap/Hepsini koy düğmesi, tarif satırı, eşya) büyüyüp küçülmez; yalnızca mavi ışığı güçlenip zayıflar. Pencereler dışındaki düğmeler (sol menü, alet kemeri) eskisi gibi hafifçe büyüyüp küçülür.
 
@@ -865,7 +869,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 |---|---|
 | Çayır/Orman · deniz | **kıyıdan tutulmaz**; deniz balıkları Poyraz'la denize açılınca ("ACT 1 › Gemici Poyraz ve deniz") |
 | Çayır/Orman · nehir ve göl | Alabalık 28, Kızılkanat 20, Tatlısu levreği 20, Çapak 16, Sazan 14, **Tatlısu kefali 12**, Tatlısu midyesi 10, Yılan balığı 9 |
-| Bataklık / Kayalık Dağ (nehir ve göl; deniz kıyısında tutulmaz) | Yayın 24, Kadife balığı 24, **Kerevit 22**, Turna balığı 18, Yılan balığı 12, Tatlısu midyesi 12, Sazan 10 |
+| Bataklık / Kayalık Dağ (nehir ve göl; deniz kıyısında tutulmaz) | Yayın 24, Kadife balığı 24, **Kerevit eti 22**, Turna balığı 18, Yılan balığı 12, Tatlısu midyesi 12, Sazan 10 |
 | Kül Diyarı / Mor Kristal Vadisi (nehir ve göl) | Yayın 30, Mersin balığı 22, Turna balığı 22, Kadife balığı 14 |
 
 ### Tuzaklar ve balık kapanı
@@ -1483,7 +1487,7 @@ Başladığın yer: hilalin batı ucunda, Çayır'ın Orman'a en uzak yerinde, g
 | Bıldırcın | zararsız | 5 | – | 52 | 3 | – | Bıldırcın eti %100; Bıldırcın tüyü %80 ×1–2; Bıldırcın yumurtası %40 ×1–2 |
 | Geyik | nötr | 55 | 15 | 62 | 11 | sürü 2–5 | Geyik eti %100 ×1–2; Geyik derisi %80; Geyik boynuzu %40; Sinir %50 ×1–2; Kemik %50 ×1–2; Hayvan yağı %30 |
 | Yaban atı | nötr | 80 | 17 | 72 | 16 | sürü 2–4 | Yaban atı eti %100 ×1–2; Yaban atı derisi %80; Kemik %50 ×1–2; Sinir %50 ×1–2 |
-| Kerevit | nötr | 40 | 11 | 14 | 11 | – | Kerevit %100 ×1–2 |
+| Kerevit | nötr | 40 | 11 | 14 | 11 | – | Kerevit eti %100 ×1–2 |
 | Kurt | saldırgan | 70 | 12 | 66 | 23 | gece, sürü 2–5 | Kurt eti %100; Kurt derisi %75; Kurt dişi %50; Kemik %50 ×1–2; Sinir %40 |
 | Porsuk | nötr | 50 | 14 | 40 | 21 | – | Kunduz eti %100; Kunduz derisi %75; Kemik %30 |
 
@@ -3865,7 +3869,7 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 | Bıldırcın Reisi | ACT 1 · Çayır | 9 | 20 | 5 | 38 | Bıldırcın eti ×2; Bıldırcın tüyü ×2; Bıldırcın yumurtası ×2 |
 | Geyik Reisi | ACT 1 · Çayır | 15 | 220 | 15 | 86 | Geyik eti ×2; Geyik derisi ×2; Geyik boynuzu ×2; Sinir ×2; Kemik ×2; Hayvan yağı ×2 |
 | Keklik Reisi | ACT 1 · Çayır | 9 | 24 | 5 | 38 | Keklik eti ×2; Keklik tüyü ×2; Keklik yumurtası ×2 |
-| Kerevit Reisi | ACT 1 · Çayır | 10 | 160 | 11 | 86 | Kerevit ×2 |
+| Kerevit Reisi | ACT 1 · Çayır | 10 | 160 | 11 | 86 | Kerevit eti ×2 |
 | Kurt Reisi | ACT 1 · Çayır | 15 | 280 | 18 | 158 | Kurt eti ×2; Kurt derisi ×2; Kurt dişi ×2; Kemik ×2; Sinir ×2 |
 | Tavşan Reisi | ACT 1 · Çayır | 12 | 40 | 5 | 44 | Tavşan eti ×2; Tavşan derisi ×2; Kemik ×2; Sinir ×2 |
 | Yaban Atı Reisi | ACT 1 · Çayır | 12 | 320 | 17 | 116 | Yaban atı eti ×2; Yaban atı derisi ×2; Kemik ×2; Sinir ×2 |
@@ -4061,7 +4065,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Ballı ekmek | 1 Yabani nohut yassı ekmeği, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 149 |
 | Ballı fındık | 1 Kavrulmuş fındık, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 121 |
 | Ballı kestane | 1 Kavrulmuş kestane, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 248 |
-| Balık çorbası | 3 Kerevit, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
+| Balık çorbası | 3 Kerevit eti, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
 | Barbunya tava | 2 Barbunya, 1 Yabani buğday unu, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 102 |
 | Buz armudu ezmesi | 3 Buz armudu, 1 Su | Taş havan | El yapımı (Tab) | 79 |
 | Böğürtlen ezmesi | 3 Böğürtlen, 1 Su | Taş havan | El yapımı (Tab) | 14 |
@@ -4149,7 +4153,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Pişmiş karaca eti | 1 Karaca eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 48 |
 | Pişmiş kartal eti | 1 Kartal eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 75 |
 | Pişmiş keklik eti | 2 Keklik eti, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 39 |
-| Pişmiş kerevit | 2 Kerevit, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
+| Pişmiş kerevit | 2 Kerevit eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
 | Pişmiş kertenkele eti ² | 1 Kertenkele eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 56 |
 | Pişmiş kor kertenkelesi eti ² | 1 Kor kertenkelesi eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 143 |
 | Pişmiş kristal geyik eti | 1 Kristal geyik eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 137 |
@@ -4188,7 +4192,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Spor elması ezmesi | 3 Spor elması, 1 Su | Taş havan | El yapımı (Tab) | 83 |
 | Taşta alabalık | 2 Alabalık, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 23 |
 | Taşta kadife balığı | 2 Kadife balığı, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 21 |
-| Taşta kerevit | 2 Kerevit, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 21 |
+| Taşta kerevit | 2 Kerevit eti, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 21 |
 | Taşta kurbağa | 3 Kurbağa, 1 Su | Pişirme taşı | El yapımı (Tab) | 15 |
 | Taşta kızılkanat | 2 Kızılkanat, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 21 |
 | Taşta mersin balığı | 1 Mersin balığı, 4 Su, 3 Yaprak | Pişirme taşı | El yapımı (Tab) | 38 |
@@ -4211,7 +4215,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Tütsülenmiş karaca eti | 1 Karaca eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 74 |
 | Tütsülenmiş kartal eti | 1 Kartal eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 103 |
 | Tütsülenmiş keklik eti | 2 Keklik eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
-| Tütsülenmiş kerevit | 2 Kerevit, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
+| Tütsülenmiş kerevit | 2 Kerevit eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
 | Tütsülenmiş kristal geyik eti | 1 Kristal geyik eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 170 |
 | Tütsülenmiş kunduz eti | 2 Kunduz eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 77 |
 | Tütsülenmiş kurbağa | 3 Kurbağa, Duman (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 60 |
@@ -4328,7 +4332,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 |---|---|---|---|---|
 | Akrep kabuğu kalkanı | 3 Akrep kabuğu, 1 Kül ağacı kalası, 2 İp | – | El yapımı (Tab) | 298 |
 | Ateş yağı | 2 Çam reçinesi, 1 Hardal otu, 1 Çam kömürü | – | El yapımı (Tab) | 124 |
-| Balık sepeti | 2 Söğüt sepeti, 3 Kerevit, 1 Lif | – | El yapımı (Tab) | 22 |
+| Balık sepeti | 2 Söğüt sepeti, 3 Kerevit eti, 1 Lif | – | El yapımı (Tab) | 22 |
 | Balık tutkalı | 1 Mersin balığı, 1 Kor, 5 Lif, 4 İp | – | El yapımı (Tab) | 108 |
 | Balmumu | 1 Yabani bal, 1 Sıcak su, 4 Lif, 3 İp | – | El yapımı (Tab) | 86 |
 | Barut ² | 2 Barut kayası, 1 Taş kömürü | – | El yapımı (Tab) | 75 |
@@ -6233,7 +6237,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kenevir halatı | 404 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Derin su oltası, Deri çanta, Fırtına oltası, İskele, Makaralı olta, Megalit |
 | Kenevir lifi | 45 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kenevir halatı, Kenevir torba |
 | Kenevir torba | 82 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kerevit | 4 | – | Av: Kerevit düşürür %100 (ACT 1 · Çayır) · Balık: Bataklık/Kayalık Dağ suları, olta/ağ/zıpkın ile %18; balık kapanına da girer | Balık çorbası, Balık sepeti, Pişmiş kerevit, Taşta kerevit, Tütsülenmiş kerevit |
+| Kerevit eti | 4 | – | Av: Kerevit düşürür %100 (ACT 1 · Çayır) · Balık: Bataklık/Kayalık Dağ suları, olta/ağ/zıpkın ile %18; balık kapanına da girer | Balık çorbası, Balık sepeti, Pişmiş kerevit, Taşta kerevit, Tütsülenmiş kerevit |
 | Kerpiç duvar | 234 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | Çömlek fırını, Kerpiç ev |
 | Kerpiç ev | 1.007 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur · Usta Sinan yapar (950 sikke) | – |
 | Kertenkele eti ² | 9 | – | Av: Kaya kertenkelesi düşürür %80 (ACT 2 · Yüzen Kayalar) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş kertenkele eti, Turba ateşinde tütsü |
@@ -6379,7 +6383,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Közlenmiş kadife balığı | 9 | – | Kamp ateşinde közlenir (çiğ hali: Kadife balığı) | – |
 | Közlenmiş karaca eti | 15 | – | Kamp ateşinde közlenir (çiğ hali: Karaca eti) | – |
 | Közlenmiş keklik eti | 7 | – | Kamp ateşinde közlenir (çiğ hali: Keklik eti) | – |
-| Közlenmiş kerevit | 9 | – | Kamp ateşinde közlenir (çiğ hali: Kerevit) | – |
+| Közlenmiş kerevit | 9 | – | Kamp ateşinde közlenir (çiğ hali: Kerevit eti) | – |
 | Közlenmiş kunduz eti | 13 | – | Kamp ateşinde közlenir (çiğ hali: Kunduz eti) | – |
 | Közlenmiş kurt eti | 13 | – | Kamp ateşinde közlenir (çiğ hali: Kurt eti) | – |
 | Közlenmiş kızılkanat | 9 | – | Kamp ateşinde közlenir (çiğ hali: Kızılkanat) | – |

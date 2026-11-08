@@ -1,3 +1,11 @@
+## v3.89 (9 Kasım 2026) · yanıp sönmeler mavi, Kerevit → Kerevit eti
+
+**Değişen yerler:** yeni `<style id="v388mavi">` (dosyanın sonu): `.pulse`, `#coinbox.focus`, `.smc.qz`, `#achov li.new`, `.rb.mk::after`, `.ib.b3unl` (yeni `v388u`), `.b5k button.wait`, `.pfs.fit`/`.ieqb.fit`, `.v387want`, `.spcallin`, `.spplus.spwant`, `#spchip`, `#spcard` mavi (#7fd0ff, `p3tab`; pencere içinde `p332g`). Eşya adı `Kerevit` → `Kerevit eti`: `db` JSON (6 tarif girdisi + fiyat 4), `ANIM.Kerevit.drops` (Reis de buradan alır), `V46RAW`/`V46FOOD`, balık tablosu, `P1I['Kerevit eti']` (+ Közlenmiş kerevit), `a2` görev sayacı `trap:Kerevit eti`, pişmiş balık resimleri `RAW.kerevit`. Canlının adı `Kerevit` kaldı. Yeni blok `v388kerevit`: `restore` sarmalı eski kayıtta `Kerevit` eşyasını (inv, order/seen/found, [ad,adet], {n,q}, `trap:` sayacı) `Kerevit eti`ye çevirir; `kl`/`f`/`bc`/`bd` (canlı tabloları) dokunulmaz. Belge: 00_giris, 10_akis, 20_sistemler, 30_act1, 70_canavarlar, 80_tarifler, 90_esyalar. Sürüm etiketi `Versiyon 3.89`.
+
+**Geri alma:** `git revert` bu commit (eski kayıt çevrimi `Kerevit eti`yi geri çevirmez; geri alınırsa `REPL` ile `Kerevit eti`→`Kerevit` eklenmeli).
+
+**Kontrol:** chk.js 0 hata. Eşya denetimi: 1337 eşya / 997 tarif, bilinmeyen girdi 0, fiyatsız 0, kullanılmayan ham madde 69 → 69. Kendi adında düşme: 0. Eski kayıt (inv Kerevit 4, kl Kerevit 3) → Kerevit eti 4, kl aynı. Ekran görüntüsü: envanterde alttaki yuva, Özellikler düğmesi, seviye puanı düğmesi mavi. Konsol hatası yok.
+
 ## v3.88 (9 Kasım 2026) · envanter/karakter iki sütun, seviye puanı dersi ve hatırlatması
 
 **Değişen yerler:** `v387env`: envanterde `cbody` içeriği `.pfgrid` > `.pfl` (sekmeler + tek sütun liste) ve `.pfr` (sticky; `.pftop.pfi` figür + karakter + `.pfside` içinde `.iact`); Karakter sekmesinde `renderCraft` sarmalı `.pftop.pfc` ile zırh notunu sağa (`.pfr`), seviye/özellik tablosunu sola alır ve `cpanel.wide` ekler. Yeni blok `v388sp`: ilk seviye atlayışta (`SPTUT` 0→1) 2,6 sn sonra `#spcard` öğretici kartı (dışına basmak kapatır), puan kaldıkça `#spchip` ("N seviye puanı ver", XP çubuğunun sağ üstünde; telefonda çubuğun sağında), Karakter düğmesi `pulse`, pencerede `.spcallin` şeridi ve `.spplus.spwant`. Belge: 20_sistemler.md Envanter ve Seviye puanları maddeleri. Sürüm etiketi `Versiyon 3.88`.
@@ -167,17 +175,4 @@
 **Ölçüm:** `tests/olcum.js` (CPU ×4, ekran kartı açık, ilkbahar 1. gün, kar yok) iki sıralı tur: eski (v3.69) 153,5/154,7 · 170,6/161,0; yeni 158,7/148,3 · 139,6/136,7 ms (kumsal/yürüme) — gürültü içinde. Sayfa içi: `drawGround` 60×36 kare, örtüsüz 0,13–0,22 ms; %36 örtü 0,40 ms; tam örtü 0,44 ms (parça önbelleğinden önce %36 örtüde 0,72 ms idi). Telefonda ölçülmedi ("deneme").
 
 **Kontrol:** chk.js 0 hata (176 script), `?.` 1 / `??` 7. Duman denemesi (sayfa hatası yok): sıcaklık eğrisi (1. gün 14:00 4,5° / 05:00 −3,5°; 11. gün 33,3°; 25. gün −3,3° / −11,3°), 25. gün yağmur → kar, saat "Kar" + "Kış · −7°", 100 sn karda örtü 0,30, 9,2°'lik yağmurda 30 sn'de 1,00 → 0,72; zincir 3000 adım: yazın yağış/fırtına 165/82 kez, ort. 76/68 sn; kışın 655/184 kez, ort. 227/133 sn. Ekran görüntüleri: %30 örtüde öbekler, tam örtüde beyaz zemin; saat masaüstünde ve telefonda (844×390) sığıyor.
-
-## v3.69 (8 Kasım 2026) · mevsimler (28 günlük yıl, iki ada), Mor gece
-
-**Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
-- Yeni `<script id="v369mevsim">` (dosya sonu): `season()` = ((gün−1) mod 28) / 7; `window.__plSeason/__plSeasonName/__plMorGece`. Sarılanlar: `tickClock` (gece 20:00–06:00 arasında dt × 150 / [150,108,150,210], Mor gecede 240), `tickHunger` (kışın düşüşe +%25), `renderClock` (sona " · Mevsim", kışın Yağmur→Kar, Fırtına→Tipi), `dayBanner` (her 7 günde bir 06:00'da `announce`), `tickGather` + `dropItem` (toplama sırasında `__plEatCat` sınıfına göre: kış Meyveler yok, sonbahar ağaç meyvesi ×2 ve Mantarlar %50 +1, yaz Meyveler %50 +1, ilkbahar Otlar %50 +1), `drawWeather` (kışın yağış sırasında `weather.k` geçici 'bulut' → yağmur çizgisi yok; sonra `fx`: renk, kar/yaprak/çiçek; PERF.lvl ≥ 3'te yalnız kar), `snapshot/restore/startNew` (kayıt alanı `mevsim:{mg}`). `nextWeather` yeniden yazıldı (mevsim ağırlıkları; ipucu metinleri aynı, kışta Kar/Tipi). Mevsim balığı: `FISHT` içindeki her `[ad,ağırlık]` çiftine `_b` (ilk ağırlık) yazılır, mevsim değişince ×2.
-- Yerinde: `v330`'daki `window.__plYS`'e `S`, `busy()`, `go()` (Mor gece saldırısı `waitNow`/`sheltered` değilse `start`). `v368alet` Sapan meyvesi: kışın yok, sonbaharda 2.
-- Sürüm etiketi `Versiyon 3.69`.
-
-**Geri alma:** `v369mevsim` bloğunu sil; `__plYS` satırındaki `S,busy,go` ve `v368alet`'teki iki mevsim ifadesini geri al. Kayıttaki `mevsim` alanı eski sürümde okunmaz.
-
-**Ölçüm (`tests/olcum.js`, CPU ×4, ekran kartı açık; kare süresi ms, eski = v3.68):** üç sıralı tur: eski 161,3/136,7 · 106,9/107,7 · 155,0/135,9; yeni 161,6/136,9 · 147,2/145,6 · 152,2/141,7 (kumsal/yürüme ortalaması). İki turda eşit, bir turda eskinin sıra dışı hızlı ölçümü; fark ölçüm gürültüsü içinde. Ayrıca sayfa içinde `fx` tek çağrısı 0,011 ms (ilkbahar), 0,079 ms (kar), `renderClock` 0,0005 ms. JS profilinde yeni fonksiyonlar ilk 40'ta yok. (Telefonda ölçülmedi; "deneme" sayılır.)
-
-**Kontrol:** chk.js prototip 0 hata (175 script), index 0 hata; `?.` 1 / `??` 7. `?debug` duman denemesi (sayfa hatası yok): 1/8/15/22. günde saat yazısı ve mevsim, kışta "Kar", gece hızı kış/yaz 2,86/5,56 (oran 1,94 = 210/108), tokluk kış/yaz 1,736/1,389 (×1,25), mevsim balığı ağırlıkları (ilkbahar Alabalık 56, kış Mersin 44), Mor gece tetiği (Kemal'in kampında güvenli yer olduğu için saldırı beklemede, belgedeki gibi). v3.68 duman denemesi yeniden temiz.
 

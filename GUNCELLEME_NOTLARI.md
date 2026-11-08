@@ -8,6 +8,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.89 · 9 Kasım 2026
+
+### Arayüz
+- **Yanıp sönen her şey mavi:** dikkat çekmek için yanıp sönen her şey artık öğreticinin mavi kenarı ve mavi ışığıyla, yavaş bir nabızla yanıyor: öğreticinin gösterdiği düğmeler, alet ve meşale yuvaları, envanterde giysiye uyan yuva, sikke kutusu, "seviye puanı ver" düğmesi ve + düğmeleri, yeni başarımlar, yeni açılan menü düğmeleri, tuş atamada basılmayı bekleyen tuş, haritada görev bölgesi. Sarı, yeşil ve mor yanıp sönmeler kalktı. Tehlike işaretleri (kırmızı yanıp sönen tokluk ve can) ve ultinin dolunca parlaması aynı kaldı.
+
+### Oynanış
+- **Kerevitten artık "Kerevit eti" düşüyor:** canlılar kendi adını taşıyan eşya düşürmüyor. Kerevit ve Kerevit Reisi Kerevit eti düşürüyor; oltayla ve kapanla tutulan da Kerevit eti. Kerevitli bütün tarifler Kerevit eti istiyor. Eski kayıtlardaki kerevitler kendiliğinden Kerevit etine dönüyor.
+
+### Tasarım belgesi
+- Giriş › Kural: "Canlı kendi adında eşya düşürmez".
+- Oyun akışı › Gösterme kuralı: "Yanıp sönen her şey mavi kenarla yanar".
+- Balıkçılık, Çayır canlıları, Kerevit Reisi, tarifler ve eşya dizininde Kerevit → Kerevit eti.
+
+---
+
 ## Versiyon 3.88 · 9 Kasım 2026
 
 ### Arayüz
@@ -265,31 +280,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Sistemler › Gün, gece ve mor ışık: yeni **Hava, sıcaklık ve kar** bölümü (sıcaklık formülü, yağışın türü, hava zinciri ve mevsim tablosu, kar örtüsünün birikmesi ve erimesi, çizim). Mevsimler tablosundan eski hava oranı satırı kalktı; Hava maddesi buraya yönlendirir.
-
----
-
-## Versiyon 3.69 · 8 Kasım 2026
-
-### Oynanış
-- **Mevsimler geldi.** Yıl 28 gün: her mevsim 7 gün sürer ve sırayla döner (1–7 İlkbahar, 8–14 Yaz, 15–21 Sonbahar, 22–28 Kış). İki adada da aynı. Yeni mevsim sabah büyük bir yazıyla duyurulur.
-- **Geceler mevsime göre:** yazın gece 1,8 dakika, kışın 3,5 dakika (İlkbahar ve Sonbaharda 2,5). Saatler aynı kalır: gece yine 20:00–06:00, uyku yine 20:00–05:00.
-- **Hava mevsime göre:** yaz çoğunlukla açık, sonbahar yağmurlu ve fırtınalı (kıyıya şişe vurma şansı da artar), kışın yağmur **Kar**, fırtına **Tipi** olur.
-- **Toplarken:** İlkbaharda otlar, Yazın meyveler, Sonbaharda mantarlar %50 ihtimalle bir tane fazla gelir; sonbaharda ağaçtan düşen meyve (silkeleme, kesme, Sapan) 2 kat. **Kışın meyve yok:** dallar çıplak, çalılardan ve ağaçlardan meyve gelmez. Kışın meyve gerekirse Nazlı'dan satın alınabilir.
-- **Mevsim balığı:** her mevsim bir balık iki kat sık vurur: İlkbahar Alabalık, Yaz Sazan, Sonbahar Turna balığı, Kış Mersin balığı. Göller kışın donmaz; balık her mevsim tutulur.
-- **Kışın karın çabuk acıkır:** tokluk %25 daha hızlı düşer.
-- **Mor gece:** her yılın son gecesi (28., 56., 84.… gün) yılın en uzun gecesidir (4 dakika). Gökyüzü mora çalar ve **mor ışık saldırısı kesin gelir**; evde ya da ateşin başında beklesen de dışarı çıktığın an gelir. Uyuyarak geçirirsen gelmez. Anılara dokunmaz.
-
-### Görsel
-- İlkbaharda uçuşan çiçek yaprakları, yazın ılık bir ışık, sonbaharda düşen sarı-turuncu-kızıl yapraklar, kışın durmadan yağan kar ve soğuk bir renk; kar ve tipide yağmur çizgileri yerine kar taneleri. Mor gecede gökyüzü mor. Grafik kalitesi en düşükteyken yalnızca kar çizilir (yaprak, çiçek ve renk yok).
-
-### Arayüz
-- Saatin yanında mevsim yazar ("9. gün · 06:00 · Yaz"); kışın hava adı Kar ya da Tipi.
-
-### Kayıtlar
-- Mor gece saldırısının görüldüğü kayda yazılır (aynı gece yeniden gelmesin diye) ve köpek günlüğüne de girer. Mevsim günden hesaplanır; eski kayıtlar kendi günlerinin mevsiminde açılır.
-
-### Tasarım belgesi
-- Sistemler › Gün, gece ve mor ışık: yeni **Mevsimler** bölümü (takvim, gece süreleri, hava oranları, toplama, mevsim balıkları, kışın tokluk, Mor gece). Hava, Tokluk, Balık tutma ve Mor ışık saldırıları maddelerine mevsim notları; Aletler › Sapan'a mevsim notu; ACT 3 › köpek günlüğüne Mor gece.
 
 ---
 

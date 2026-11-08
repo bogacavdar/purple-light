@@ -20,7 +20,7 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 | Bıldırcın Reisi | ACT 1 · Çayır | 9 | 20 | 5 | 38 | Bıldırcın eti ×2; Bıldırcın tüyü ×2; Bıldırcın yumurtası ×2 |
 | Geyik Reisi | ACT 1 · Çayır | 15 | 220 | 15 | 86 | Geyik eti ×2; Geyik derisi ×2; Geyik boynuzu ×2; Sinir ×2; Kemik ×2; Hayvan yağı ×2 |
 | Keklik Reisi | ACT 1 · Çayır | 9 | 24 | 5 | 38 | Keklik eti ×2; Keklik tüyü ×2; Keklik yumurtası ×2 |
-| Kerevit Reisi | ACT 1 · Çayır | 10 | 160 | 11 | 86 | Kerevit ×2 |
+| Kerevit Reisi | ACT 1 · Çayır | 10 | 160 | 11 | 86 | Kerevit eti ×2 |
 | Kurt Reisi | ACT 1 · Çayır | 15 | 280 | 18 | 158 | Kurt eti ×2; Kurt derisi ×2; Kurt dişi ×2; Kemik ×2; Sinir ×2 |
 | Tavşan Reisi | ACT 1 · Çayır | 12 | 40 | 5 | 44 | Tavşan eti ×2; Tavşan derisi ×2; Kemik ×2; Sinir ×2 |
 | Yaban Atı Reisi | ACT 1 · Çayır | 12 | 320 | 17 | 116 | Yaban atı eti ×2; Yaban atı derisi ×2; Kemik ×2; Sinir ×2 |

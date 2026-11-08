@@ -1,10 +1,12 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.88** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.89** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
 > **KURAL: HER EŞYANIN KENDİ RESMİ OLUR (Boğaç, 6 Kasım 2026):** oyundaki her eşyanın (malzeme, yemek, alet, yapı, ACT 2 eşyaları dahil) **adına ve gerçeğine uygun** bir resmi vardır; bu resim envanterde, tarif kitabında, elde, **yere düştüğünde** ve **kurulduğunda** (yapılarda) kullanılır. Adıyla ilgisi olmayan, adından renk alan "hediye paketi" kutusu **hiçbir eşyada görünmez**. Yeni bir eşya eklenirken resmi de aynı sürümde, ne olduğuna göre (yemek tabakta ya da tavada, iksir şişede, merhem kapta, taş taş gibi…) çizilir. Resmi olmayan bir eşya bulunursa bu bir hatadır. v3.37'de 194 eşyanın hediye paketi yerine gerçek resmi çizildi (Eşyalar › Eşya resimleri). Resmi unutulmuş bir eşya oyunda sade, nötr bir bez torba olarak görünür (renkli kutu değil) ve geliştirici araçları açıkken (`?debug`) konsola yazılır (kontrol önbelleği silmez, yalnızca karşılaştırır).
+
+> **KURAL: CANLI KENDİ ADINDA EŞYA DÜŞÜRMEZ (Boğaç, 9 Kasım 2026: "kerevitten kerevit düşmesi gibi durumlar olmamalı, kerevit eti düşüyor olmalı"):** bir canlı avlanınca kendi adını taşıyan bir eşya düşürmez; ondan çıkan eşya ne olduğunu söyler (ör. Kerevit → **Kerevit eti**). Yeni canlı ya da düşme eklenince, her pakette eşya denetiminde bakılır: hiçbir canlının düşürdüğü eşyanın adı bir canlının adıyla aynı olamaz.
 
 > **KURAL: BÜYÜKLÜK YÜZDESİ ALAN İÇİNDİR (Boğaç, 6 Kasım 2026):** bir harita, biyom ya da bölge için "%X büyüt/küçült" denince **alanı** %X değişir; kenar katsayısı √(1+X) olur (ör. %50 büyütmek: kenar ×√1,5 ≈ ×1,2247). Şüphe varsa belgeye yazmadan önce Boğaç'a sorulur.
 
