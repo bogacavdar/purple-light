@@ -14,6 +14,7 @@
 | Rüzgâr meşesi | Rüzgâr meşesi odunu | 18 | – | 1. kademe (Taş balta) |
 | Bulut çamı | Bulut çamı odunu | 14 | – | 1. kademe (Taş balta) |
 | Bulut elması | Bulut elması odunu | 16 | Bulut elması | 1. kademe (Taş balta) |
+| Rüzgâr eriği | – (kesilmez) | – | Rüzgâr eriği | – |
 
 **Toplanabilirler** (F ile, elde alet gerekmez)
 
@@ -58,6 +59,7 @@ Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzak
 | Spor ağacı | Spor ağacı odunu | 24 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Dev mantar | Dev mantar odunu | 20 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Kök ağacı | Kök ağacı odunu | 20 | Goblin eriği | 2. kademe (Çakmaktaşı/Granit balta) |
+| Spor elması | – (kesilmez) | – | Spor elması | – |
 
 **Toplanabilirler** (F ile, elde alet gerekmez)
 
@@ -102,6 +104,7 @@ Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dron
 | Hurda palmiyesi | Hurda palmiyesi odunu | 22 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Kuru çınar | Kuru çınar odunu | 24 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Hurma | Hurma odunu | 22 | Hurma | 2. kademe (Çakmaktaşı/Granit balta) |
+| Çöl inciri | – (kesilmez) | – | Çöl inciri | – |
 
 **Toplanabilirler** (F ile, elde alet gerekmez)
 
@@ -148,6 +151,7 @@ Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendi
 | Taş ağacı | Taş ağacı odunu | 30 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Mavi sedir | Mavi sedir odunu | 32 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Kristal armut | Kristal armut odunu | 28 | Kristal armut | 2. kademe (Çakmaktaşı/Granit balta) |
+| Buz armudu | – (kesilmez) | – | Buz armudu | – |
 
 **Toplanabilirler** (F ile, elde alet gerekmez)
 
@@ -193,6 +197,7 @@ Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ej
 | Lav palmiyesi | Lav palmiyesi odunu | 34 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Obsidyen dikeni | Obsidyen dikeni odunu | 38 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Ejder meyvesi | Ejder meyvesi odunu | 32 | Ejder meyvesi | 2. kademe (Çakmaktaşı/Granit balta) |
+| Lav narı | – (kesilmez) | – | Lav narı | – |
 
 **Toplanabilirler** (F ile, elde alet gerekmez)
 
@@ -238,6 +243,7 @@ Adanın en uzak ucu, roket rampası. Uzaylı dronları, gölge muhafızlar ve de
 | Bulut kavağı | Bulut kavağı odunu | 40 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Yıldız akasyası | Yıldız akasyası odunu | 44 | – | 2. kademe (Çakmaktaşı/Granit balta) |
 | Gök üzümü | Gök üzümü odunu | 38 | Gök üzümü | 2. kademe (Çakmaktaşı/Granit balta) |
+| Yıldız kirazı | – (kesilmez) | – | Yıldız kirazı | – |
 
 **Toplanabilirler** (F ile, elde alet gerekmez)
 

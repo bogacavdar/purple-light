@@ -8,6 +8,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.79 · 8 Kasım 2026
+
+### Oynanış
+- **Her biyomda iki meyve ağacı:** Çayır Elma + Armut, Orman Ceviz + Fındık, Bataklık Mürver + **Dut**, Kayalık Dağ Ardıç + Kestane, Kül Diyarı Ateş narı + **İncir**, Mor Kristal Vadisi Ay elması + Yıldız eriği. İkinci adada her biyoma yeni bir meyve ağacı geldi: **Rüzgâr eriği** (Yüzen Kayalar), **Spor elması** (Dev Mantar Ormanı), **Çöl inciri** (Hurda Çölü), **Buz armudu** (Kristal Golem Ocağı), **Lav narı** (Ejder Volkanı), **Yıldız kirazı** (Gök Rıhtımı).
+- Meyve ağacı sayısı değişmedi: bir biyomun meyve ağaçlarının yarısı artık öbür tür. Erik ağacı kalktı (Çayır'da Elma ve Armut kaldı).
+- Yeni ağaçlar kesilmez, eli boşken silkelenir. Yeni meyvelerin hepsi çiğ yenir (biyomuna göre tokluk, etki ve can) ve her birinin Taş havanla yapılan bir **ezmesi** var (ACT 1'de Zümrüt'ün, ACT 2'de Yıldız'ın kazanından öğrenilir).
+
+### Görsel
+- Sekiz yeni meyvenin kendi resmi: salkım dut, mor incir, buz mavisi erik, sarı-yeşil spor elması, kahverengi çöl inciri, buz armudu, kor kırmızısı lav narı, çift sarı yıldız kirazı.
+
+### Kayıtlar
+- Eski kayıtta Erik odunu Çam odununa, Erik tohumu ve fidanı Armut'unkine çevrilir (Bereket Adası'nda dikili Erik fidanı Armut ağacı olur); Yabani erik, ezmesi ve suyu eski satış fiyatından sikke olarak ödenir.
+
+### Tasarım belgesi
+- Tarifler › Sade malzeme: "Her biyomda iki meyve ağacı" maddesi, sayılar (eşya 1351, tarif 983). ACT 1 ve ACT 2 ağaç tabloları, eşyalar, ezmeler ve yiyecek etkileri tablosu yenilendi.
+
+---
+
 ## Versiyon 3.78 · 8 Kasım 2026
 
 ### Görsel
@@ -383,16 +401,4 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Tasarım belgesi
 
 - Sistemler › Oyun kolu bölümü yeni düzene göre yazıldı (Kol menüsü, meşale, yerleştirme, tuş yazıları).
-
-## Versiyon 3.59 · 7 Kasım 2026
-
-### Denge
-
-- Kül Diyarı'nın girişinde Kül cini Seviye 36'dan önce çıkmaz; ilk adımlarda yalnızca Kül böcekleri var.
-- Mor Kristal Vadisi'nin girişinde Kristal örümcek ve Işık engereği Seviye 44'ten önce çıkmaz.
-
-### Düzeltmeler
-
-- Konuşabileceğin kişilerin dibinde artık yerde toplanacak bir şey (taş, kum, dal…) çıkmaz; F'ye basınca doğrudan kişiyle konuşursun (Barbaros'un yanındaki kum gibi).
-- "Bir anı geri geldi" ve ada halkı sahneleri Esc'e ya da dışına basınca biter (sonuna kadar okunmuş sayılır). Eskiden bayıldıktan sonra açılan anı Esc ile kapanmıyor, arkada ada donmuş bekliyordu.
 
