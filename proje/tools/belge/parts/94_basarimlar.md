@@ -16,7 +16,7 @@
 | Balıkçı | 10 balık tut. | Yalnız balıklar sayılır (oltaya takılan dal/yosun/kemik sayılmaz). |
 | Tecrübeli | Seviye 10 ol. | – |
 | Yardımsever | 10 yan görev bitir. | – |
-| Kesesi dolu | Aynı anda 1000 sikken olsun. | ∞ sikke hilesi açıkken sayılmaz. |
+| Kesesi dolu | Aynı anda 1000 vion olsun. | ∞ vio hilesi açıkken sayılmaz. |
 | Kazan ustası | 100 tarif bul. | – |
 | Kurt avcısı | 10 kurt avla. | – |
 | Kâşif | Adanın yarısını keşfet. | Haritanın açılan kısmı; "Haritayı aç" hilesi de sayılır. |

@@ -6,7 +6,7 @@ ACT 2'nin bütün kişileri ikinci adaya vardığın andan itibaren yerindedir v
 
 Yüzen Kayalar'da, inişin kuzeyindeki yüksek bir kayada, teleskobunun başında; ACT 2 kazanı yanındadır. Kırk yıldır gökyüzünü ve mor ışığı izler; portalı o icat etmiştir. Son görevi portalları açar ve ilk ACT 2 anısını (Sahildeki ışık) getirir.
 
-| # | Görev | İstenen | Açılma şartı | Sikke | XP |
+| # | Görev | İstenen | Açılma şartı | Vio | XP |
 |---|---|---|---|---|---|
 | 1 | Teleskobun ayağı | Getir: 4 Mavi mantar kalası, 2 Halat | – | 300 | 300 |
 | 2 | Bir gece gözlem | Bir gece bekle (gün değişsin) | – | 250 | 350 |
@@ -17,7 +17,7 @@ Yüzen Kayalar'da, inişin kuzeyindeki yüksek bir kayada, teleskobunun başınd
 
 İnişe en yakın mantar ormanı köşesinde, havada asılı mor bir ateşin başında. Onunla tanışınca **mor mana** çubuğu açılır. Asaları ve mana iksirini yapar (ücretler ve değerler ACT 2 girişindeki tabloda). Goblinler gruplar halinde gezer; şamanları zehir atar.
 
-| # | Görev | İstenen | Açılma şartı | Sikke | XP |
+| # | Görev | İstenen | Açılma şartı | Vio | XP |
 |---|---|---|---|---|---|
 | 1 | Büyü otları | Getir: 5 Büyü otu, 3 Işıldak mantarı | – | 350 | 375 |
 | 2 | Goblin baskını | Avla: 4 Goblin | – | 500 | 550 |
@@ -30,9 +30,9 @@ Açtığı tarifler: Mana iksiri (1. görev), Ateş asası (3.), Buz asası (4.)
 
 ### Silahçı Tufan · Hurda Çölü
 
-Geminin düşürdüğü dronların (robotların) dolaştığı hurda çölünde. Tabanca (200 sikke) ve Pompalı (400 sikke) yapar; mermiyi sen elle yaparsın.
+Geminin düşürdüğü dronların (robotların) dolaştığı hurda çölünde. Tabanca (200 vio) ve Pompalı (400 vio) yapar; mermiyi sen elle yaparsın.
 
-| # | Görev | İstenen | Açılma şartı | Sikke | XP |
+| # | Görev | İstenen | Açılma şartı | Vio | XP |
 |---|---|---|---|---|---|
 | 1 | Hurda toplama | Getir: 8 Hurda parçası, 4 Bakır tel | – | 400 | 450 |
 | 2 | Devriye | Avla: 3 Devriye robotu | – | 600 | 650 |
@@ -44,9 +44,9 @@ Açtığı tarifler: Pirinç külçesi ve Barut (1. görev), Tabanca ve Tabanca 
 
 ### Mühendis Işın · Kristal Golem Ocağı
 
-Adanın güney ortasındaki kayalıklarda. **Meka zırh** yapar (600 sikke): gövde yuvası, +90 savunma, canı %25 artırır, hareketi %12 hızlandırır, zehir/yanık/kanama hasarının yarısını tutar.
+Adanın güney ortasındaki kayalıklarda. **Meka zırh** yapar (600 vio): gövde yuvası, +90 savunma, canı %25 artırır, hareketi %12 hızlandırır, zehir/yanık/kanama hasarının yarısını tutar.
 
-| # | Görev | İstenen | Açılma şartı | Sikke | XP |
+| # | Görev | İstenen | Açılma şartı | Vio | XP |
 |---|---|---|---|---|---|
 | 1 | Enerji taşları | Getir: 3 Enerji taşı, 4 Kristal cevheri | – | 600 | 650 |
 | 2 | Golemcikler | Avla: 3 Kristal golemcik | – | 800 | 850 |
@@ -57,9 +57,9 @@ Açtığı tarifler: Kobalt külçesi, Titanyum külçesi, Enerji hücresi (1. g
 
 ### Ejder Avcısı Tomris · Ejder Volkanı
 
-Adanın doğusundaki volkanda. Ejderhalar geminin volkana döktüğü plazmayla büyümüş. **Işın kılıcı** yapar (800 sikke).
+Adanın doğusundaki volkanda. Ejderhalar geminin volkana döktüğü plazmayla büyümüş. **Işın kılıcı** yapar (800 vio).
 
-| # | Görev | İstenen | Açılma şartı | Sikke | XP |
+| # | Görev | İstenen | Açılma şartı | Vio | XP |
 |---|---|---|---|---|---|
 | 1 | Lav çiçekleri | Getir: 5 Lav çiçeği, 3 Magma cevheri | – | 800 | 900 |
 | 2 | Yavrular | Avla: 3 Yavru ejder | – | 1.000 | 1.100 |
@@ -71,9 +71,9 @@ Açtığı tarifler: Plazma hücresi (1. görev), Işın kılıcı (3.). Son gö
 
 ### Astronot Gökay · Gök Rıhtımı
 
-Adanın en uzak ucunda, yarım kalmış bir fırlatma rampasının başında. Sevdiği Nehir'i uzaylılarla savaşırken kaybetmiş, onu gemiden geri almak istiyor. Roketin parçalarını o yapar: Roket gövdesi 1.000, Roket motoru 1.500, Roket 2.000 sikke.
+Adanın en uzak ucunda, yarım kalmış bir fırlatma rampasının başında. Sevdiği Nehir'i uzaylılarla savaşırken kaybetmiş, onu gemiden geri almak istiyor. Roketin parçalarını o yapar: Roket gövdesi 1.000, Roket motoru 1.500, Roket 2.000 vio.
 
-| # | Görev | İstenen | Açılma şartı | Sikke | XP |
+| # | Görev | İstenen | Açılma şartı | Vio | XP |
 |---|---|---|---|---|---|
 | 1 | Göktaşları | Getir: 4 Meteor parçası, 3 Gök camı | – | 1.000 | 1.250 |
 | 2 | Dronlar | Avla: 4 Uzaylı dronu | – | 1.200 | 1.500 |

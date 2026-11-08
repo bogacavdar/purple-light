@@ -21,7 +21,7 @@
 5. **Bayılınca yalnızca takip edilen yan görev iptal olur (Görevler'de bekleyenler kalır).** Yan görev sürerken bayılırsan (canavar, açlık ya da mor ışık) **yan görev** yarıda kalır, **ana görev** olduğu gibi durur. Yarıda kalan yan görev hiç alınmamış sayılır: yan kişi kendi yerine döner ve görevi **en baştan, aynı yerden** yeniden alırsın. Yan görev için doğan canavarlar bayılınca silinir.
 6. **Bırakmak.** Yan görev kartındaki **×** ile görev bırakılabilir ("Bu yan görevi bırakayım mı?" → Evet/Hayır). Bırakınca yan kişi yerine döner, görev yeniden alınabilir.
 7. **Görev sırasında kesilen canavarlar almanakta sayılmaz.** Bir yan görevin kendi çıkardığı canavarlar biyomun gece/gündüz doğma kurallarına bağlı değildir. Yan görev için ortaya çıkan canavarlar (eskortta, beklemede, avda) almanağa eklenmez, av sayısını artırmaz, Reis sayacını doldurmaz ve **hiçbir zaman Reis çıkmaz**; yan görevin dövüş adımı sürerken Reis gelmez. Ganimet ve XP'leri normaldir.
-8. **Ödül (şimdilik):** her yan görev bitince **sikke + XP** verir (aşağıdaki tabloda); yan görev ödülü belgedeki XP'dir (v3.44'teki hatalı XP'den etkilenen kayıtlar: Sistemler › Kayıt). Başka ödüller ileride konuşulacak (bölümün sonundaki "İleride ödül fikirleri").
+8. **Ödül (şimdilik):** her yan görev bitince **vio + XP** verir (aşağıdaki tabloda); yan görev ödülü belgedeki XP'dir (v3.44'teki hatalı XP'den etkilenen kayıtlar: Sistemler › Kayıt). Başka ödüller ileride konuşulacak (bölümün sonundaki "İleride ödül fikirleri").
 9. **Sonuç dünyada görünür.** Bitirdiğin her yan görev adada iz bırakır: kurtardığın çocuk (Ela) Kemal'in kampındaki ateşin başında oturur, çobanın keçisi yanında otlar, satıcının arabası onarılmış durur… Bu kişiler artık saat aralığına bakmadan **hep** yerlerindedir (hayalet kız dışında; onun yerinde bir mezar taşı ve yanan bir fener kalır). Onlarla konuşunca görevden sonraki hallerini anlatan kısa bir söz söylerler.
 10. **Görev kartı.** Süren yan görev, ana görev kartının altında ince **mavi kenarlı ayrı bir kartta** görünür: "Yan görev · Kişi" başlığı, görevin adı ve şu anki adımın kısa yazısı ("Kalan güvercin: 2/4" gibi), köşede **×**. Ana görev kartının başlığı artık "… · Ana görev" yazar. **Görevler penceresi** iki bölümdür: üstte **Ana görev**, altta **Yan görevler** (süren yan görev ve adımı; sonra "Bitirdiklerin: 3/12" ve biten yan görevlerin adları). **Yeri (telefonda kart ekranın ortasında kalıyordu):** yan görev kartı her zaman ana görev kartının **hemen altında, aynı genişlikte** durur (bilgisayarda üstte ortada, telefonda **sağ üstte**); ana görev kartı yoksa onun yerinde durur. Telefonda kart tek satırdır (kişi · görev · adım); dokununca açılıp bütün yazıyı gösterir, bir daha dokununca kapanır. Telefonda bir pencere (envanter, kazan, pazar…) ya da konuşma açıkken kart gizlenir.
 11. **Yol gösterilmez, keşfedilir (v3.40, Boğaç: "çok da kullanıcının elinden tutmayalım… biraz keşfe itsin").** Yan görevin hedefi (gidilecek yer, toplanacak şeyler, götürülecek yer) **haritada gösterilmez**: mavi halka, sarı bölge ve ekran kenarındaki mavi ok yoktur (v3.39'da vardı, kaldırıldı). Yol, kişinin konuşmasında ve görev kartındaki adım yazısında anlatılan ipuçlarıyla ("kıyıda", "ağaçta", "bataklığın içinde") bulunur. Haritada ana görevin sarı bölgesi yan görev sürerken de görünür. **Bulunca mavi parıltı:** takip edilen yan görevin aradığın şeyi (iz, eşya, kurbağa, kristal…) ekranda göründüğü anda üstünde **açık mavi bir halka** genişler ve çevresinde **küçük mavi kıvılcımlar** parıldar; böylece bulduğun şeyin görevle ilgili olduğunu anlarsın.
@@ -53,18 +53,18 @@ Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş an
 
 | # | Biyom | Kişi | Görev | Saat | Ton | Ödül |
 |---|---|---|---|---|---|---|
-| 1 | Çayır | Mavi (genç kız) | Denizden dönmeyen kardeş | 17:00–23:00 | hüzünlü, mor ışık | 640 sikke · 860 XP (Çayır'da ama geç açılır, E3 sonrası; ödülü buna göre) |
-| 2 | Çayır | Toprak (çocuk) | Gece öten kuş (v3.42; eskiden Davut'un "Kaçan keçi Pamuk"u, artık ana görev) | 21:00–01:00 | tatlı, sessiz | 70 sikke · 50 XP |
-| 3 | Çayır | Güvercinci Bulut (çocuk) | Kaçan güvercinler | 10:00–15:00 | tatlı, sırlar | 80 sikke · 50 XP |
-| 4 | Orman | Ela (küçük kız) | Kampa giden yol | yalnızca gece (20:00–05:00) | gerilimli, sıcak son | 220 sikke · 200 XP |
-| 5 | Orman | Şövalye Kahraman Dede | Ejderin ini | 11:00–16:00 | komik | 90 sikke · 60 XP |
-| 6 | Orman | Seyyar satıcı Bekir | Kırık araba | 12:00–17:00 | hafif | 100 sikke · 60 XP |
-| 7 | Bataklık | Avcı Kartal | Yaralı avcı | 15:00–21:00 | gerilimli | 320 sikke · 260 XP |
-| 8 | Bataklık | Hayali | Işığı gören adam | 18:00–03:00 | gizemli, mor ışık | 580 sikke · 780 XP |
-| 9 | Bataklık | Falcı Kader | Kader satan kadın | 22:00–06:00 | gizemli | 640 sikke · 860 XP |
-| 10 | Kayalık Dağ | Hatice Nine | Torun Emir | 07:00–13:00 | acı son | 750 sikke · 1.000 XP |
-| 11 | Kayalık Dağ | Yolcu Yahya | Dağda kaybolan yolcu | 12:30–17:30 | yol hikâyesi | 520 sikke · 700 XP |
-| 12 | Kayalık Dağ | Işıl (hayalet kız) | Gece görünen kız | 22:00–04:00 | gizemli, hüzünlü | 570 sikke · 760 XP |
+| 1 | Çayır | Mavi (genç kız) | Denizden dönmeyen kardeş | 17:00–23:00 | hüzünlü, mor ışık | 640 vio · 860 XP (Çayır'da ama geç açılır, E3 sonrası; ödülü buna göre) |
+| 2 | Çayır | Toprak (çocuk) | Gece öten kuş (v3.42; eskiden Davut'un "Kaçan keçi Pamuk"u, artık ana görev) | 21:00–01:00 | tatlı, sessiz | 70 vio · 50 XP |
+| 3 | Çayır | Güvercinci Bulut (çocuk) | Kaçan güvercinler | 10:00–15:00 | tatlı, sırlar | 80 vio · 50 XP |
+| 4 | Orman | Ela (küçük kız) | Kampa giden yol | yalnızca gece (20:00–05:00) | gerilimli, sıcak son | 220 vio · 200 XP |
+| 5 | Orman | Şövalye Kahraman Dede | Ejderin ini | 11:00–16:00 | komik | 90 vio · 60 XP |
+| 6 | Orman | Seyyar satıcı Bekir | Kırık araba | 12:00–17:00 | hafif | 100 vio · 60 XP |
+| 7 | Bataklık | Avcı Kartal | Yaralı avcı | 15:00–21:00 | gerilimli | 320 vio · 260 XP |
+| 8 | Bataklık | Hayali | Işığı gören adam | 18:00–03:00 | gizemli, mor ışık | 580 vio · 780 XP |
+| 9 | Bataklık | Falcı Kader | Kader satan kadın | 22:00–06:00 | gizemli | 640 vio · 860 XP |
+| 10 | Kayalık Dağ | Hatice Nine | Torun Emir | 07:00–13:00 | acı son | 750 vio · 1.000 XP |
+| 11 | Kayalık Dağ | Yolcu Yahya | Dağda kaybolan yolcu | 12:30–17:30 | yol hikâyesi | 520 vio · 700 XP |
+| 12 | Kayalık Dağ | Işıl (hayalet kız) | Gece görünen kız | 22:00–04:00 | gizemli, hüzünlü | 570 vio · 760 XP |
 
 **Yerleri:** her yan kişi kendi biyomunda, biyomun farklı bir köşesinde, başka kişilere, kuzenlerin evlerine, köprülere ve öbür yan kişilere en az ~220 piksel uzakta, ağaçsız düz bir yerde durur (ada her kurulduğunda aynı yer). **İstisna: Mavi** İskele'nin hemen yanında, Kemal'in kampının dibinde durur (Kemal'e ~45 px, Poyraz'a ~70 px); hikâyesi iskeleye bağlı olduğu için ~220 px kuralı ona uygulanmaz. Görev noktaları (izler, enkaz, güvercinler…) kişinin çevresinde, kendi biyomunda, yürünebilir yerlere konur.
 
@@ -139,7 +139,7 @@ Tekerleği kırılmış, yan yatmış bir el arabası; çevresinde dökülmüş 
 - **Konuş:** "Tekerlek bir köke çarptı, araba devrildi, ne var ne yok saçıldı! Düğmeler, iğneler, boncuklar, bir de kızımın oyuncağı. Toplar mısın? Bir de tekerleği yapacak malzeme lazım."
 - **Topla (5 mal, istediğin sırayla):** arabanın çevresine 80–220 piksel saçılmış: bir kutu düğme, iğne yastığı, boncuk ipi, bakır çaydanlık, tahta at.
 - **Getir:** **6 Dal** (tekerleğin parmakları) ve **4 Lif** (bağlamak için).
-- **Konuş:** Bekir tekerleği bağlar, arabayı doğrultur. "Tıkır tıkır! Al bakalım, bu sikkeler senin. Tahta atı da kızım sana selam diye gönderdi… yok yok, onu ben götüreyim, ağlar sonra." Görev biter.
+- **Konuş:** Bekir tekerleği bağlar, arabayı doğrultur. "Tıkır tıkır! Al bakalım, bu violar senin. Tahta atı da kızım sana selam diye gönderdi… yok yok, onu ben götüreyim, ağlar sonra." Görev biter.
 - **Sonra dünyada:** Bekir onarılmış arabasının yanında durur. Konuşunca: "Bu yol kökten geçilmiyor, ben de artık burada mal satıyorum. Şaka şaka, satmıyorum. Henüz."
 
 #### 7 · Avcı Kartal — Yaralı avcı (Bataklık)
@@ -169,7 +169,7 @@ Rengârenk şallara sarınmış, elinde kemikten zarlar olan bir kadın.
 - **Getir:** 3 Turba. Kader ateşine atar, zarları sallar: "Bu gece kuzeyde, suyun kıyısında **kara bir kurt** seni bekliyor. Gitme dersem gidersin, git dersem gidersin. Git."
 - **Git ve avla:** Kader'in gösterdiği yerde 2 **Bataklık kurdu** çıkar; yen.
 - **Konuş:** "Gördün mü? Zarlar yalan söylemez. Şimdi sana bir kader daha: mor ışık bir gün **senin** de adını söyleyecek. O gün cevap verme." Görev biter.
-- **Sonra dünyada:** Kader her konuşmada başka bir kehanet söyler ("Yarın bir tüccar gelecek… belki", "Cebindeki sikkeler azalacak, harcarsan").
+- **Sonra dünyada:** Kader her konuşmada başka bir kehanet söyler ("Yarın bir tüccar gelecek… belki", "Cebindeki violar azalacak, harcarsan").
 
 #### 10 · Hatice Nine — Torun Emir (Kayalık Dağ, acı son)
 
@@ -242,7 +242,7 @@ Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biy
 
 ### Ödüller
 
-Şimdilik her yan görev yalnızca **sikke + XP** verir (tablodaki değerler). **Ödül kuralı (geçici, 6 Kasım 2026, Boğaç: "görevi yaptığına değecek kadar XP ve altın ver"; yan görevler yeniden tasarlanacak):** her yan görevin sikkesi ve XP'si, **onu açan ana görevin ödülünün 1,5–2,5 katıdır** (emeğe göre: adım sayısı, dövüş, koruma, bekleme); değerler 10'a yuvarlanır. **Alt sınır:** yan görevin sikkesi ve XP'si (ayrı ayrı) v3.46'daki özgün değerinin altına düşmez. **İkinci alt sınır (7 Kasım 2026):** bir biyomun yan görevlerinin ödülü, önceki biyomun en yüksek yan görev ödülünün altına düşmez (biyomlar arası geçişte keskin fark olmaz, yalnızca gelişim olur); biyom içinde ödül açılış sırasıyla artar. Açan ana görev, "Açılış sırası"ndaki koşulda adı geçen ana görevdir (E2, E3…); koşul yalnızca bir sayıysa (N bitmiş ana görev), ACT 1 ana görevleri ödüllerine göre küçükten büyüğe dizildiğinde N. sıradaki görev esas alınır; ikisi birlikteyse ödülü büyük olan. Mağara yan görevlerinin ödülü bu kuralın dışındadır (kendi tablolarında). Ödül yan görev bitince bir kez verilir; yarıda kalıp yeniden yapılan görev ödülü yine bir kez verir.
+Şimdilik her yan görev yalnızca **vio + XP** verir (tablodaki değerler). **Ödül kuralı (geçici, 6 Kasım 2026, Boğaç: "görevi yaptığına değecek kadar XP ve altın ver"; yan görevler yeniden tasarlanacak):** her yan görevin viosu ve XP'si, **onu açan ana görevin ödülünün 1,5–2,5 katıdır** (emeğe göre: adım sayısı, dövüş, koruma, bekleme); değerler 10'a yuvarlanır. **Alt sınır:** yan görevin viosu ve XP'si (ayrı ayrı) v3.46'daki özgün değerinin altına düşmez. **İkinci alt sınır (7 Kasım 2026):** bir biyomun yan görevlerinin ödülü, önceki biyomun en yüksek yan görev ödülünün altına düşmez (biyomlar arası geçişte keskin fark olmaz, yalnızca gelişim olur); biyom içinde ödül açılış sırasıyla artar. Açan ana görev, "Açılış sırası"ndaki koşulda adı geçen ana görevdir (E2, E3…); koşul yalnızca bir sayıysa (N bitmiş ana görev), ACT 1 ana görevleri ödüllerine göre küçükten büyüğe dizildiğinde N. sıradaki görev esas alınır; ikisi birlikteyse ödülü büyük olan. Mağara yan görevlerinin ödülü bu kuralın dışındadır (kendi tablolarında). Ödül yan görev bitince bir kez verilir; yarıda kalıp yeniden yapılan görev ödülü yine bir kez verir.
 
 ### İleride ödül fikirleri (konuşulacak)
 

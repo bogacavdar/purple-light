@@ -28,10 +28,10 @@ Poyraz'ın görevleri ana görev sırasına girer (aynı anda tek ana görev). P
 
 | # | Görev | İstenen | Açılma | Ödül |
 |---|---|---|---|---|
-| G1 | Çatlak omurga | Getir: 6 Çam odunu, 3 Uzun sopa | Poyraz karaya oturdu | 40 sikke · 25 XP |
-| G2 | Yırtık yelken | Getir: 2 Halat, 6 Lif | G1 | 55 sikke · 35 XP |
-| G3 | Su alan tekne | Getir: 3 Çam reçinesi, 4 Taş | G2 | 70 sikke · 45 XP |
-| G4 | Kaptanın karnı | Getir: 2 Közlenmiş tavşan eti, 4 Böğürtlen (eskiden herhangi pişmiş et) | G3 | 90 sikke · 60 XP |
+| G1 | Çatlak omurga | Getir: 6 Çam odunu, 3 Uzun sopa | Poyraz karaya oturdu | 40 vio · 25 XP |
+| G2 | Yırtık yelken | Getir: 2 Halat, 6 Lif | G1 | 55 vio · 35 XP |
+| G3 | Su alan tekne | Getir: 3 Çam reçinesi, 4 Taş | G2 | 70 vio · 45 XP |
+| G4 | Kaptanın karnı | Getir: 2 Közlenmiş tavşan eti, 4 Böğürtlen (eskiden herhangi pişmiş et) | G3 | 90 vio · 60 XP |
 
 - **G4 bitince:** tekne onarılır. Ekran kısa bir an kararıp açılır; tekne artık suyun üstünde, dik direği ve beyaz yelkeniyle durur. Poyraz: "Bak hele! Yüzüyor! Sana bir borcum var evlat. Balığa çıkmak istersen bana gel; bu sulara açılırız. Nereye istersen." Duyuru: **"Deniz açıldı"** · "Poyraz'la denize çıkabilirsin".
 
@@ -126,12 +126,12 @@ Tekne onarılınca Poyraz'ın görev sırası devam eder: her bölge için bir b
 
 | # | Görev | İstenen | Açılma | Ödül |
 |---|---|---|---|---|
-| G5 | Kıyıdan ilk av | Getir: 4 Hamsi, 2 İstavrit | G4 · 1. bölgeye gidebilmek | 60 sikke · 40 XP |
-| G6 | Körfezin çipurası | Getir: 2 Çipura, 2 Levrek | G5 · 2. bölge | 110 sikke · 70 XP |
-| G7 | Mercan dibi | Getir: 2 Barbunya, 1 Lüfer | G6 · 3. bölge | 170 sikke · 110 XP |
-| G8 | Derin mavinin kalkanı | Getir: 2 Palamut, 1 Kalkan | G7 · 4. bölge | 250 sikke · 160 XP |
-| G9 | Fırtına avcısı | Getir: 2 Kalamar, 1 Kılıç balığı | G8 · 5. bölge | 360 sikke · 230 XP |
-| G10 | Mor derinliğin ışığı | Getir: 1 Fener balığı, 1 Işıl balığı | G9 · 6. bölge | 520 sikke · 330 XP |
+| G5 | Kıyıdan ilk av | Getir: 4 Hamsi, 2 İstavrit | G4 · 1. bölgeye gidebilmek | 60 vio · 40 XP |
+| G6 | Körfezin çipurası | Getir: 2 Çipura, 2 Levrek | G5 · 2. bölge | 110 vio · 70 XP |
+| G7 | Mercan dibi | Getir: 2 Barbunya, 1 Lüfer | G6 · 3. bölge | 170 vio · 110 XP |
+| G8 | Derin mavinin kalkanı | Getir: 2 Palamut, 1 Kalkan | G7 · 4. bölge | 250 vio · 160 XP |
+| G9 | Fırtına avcısı | Getir: 2 Kalamar, 1 Kılıç balığı | G8 · 5. bölge | 360 vio · 230 XP |
+| G10 | Mor derinliğin ışığı | Getir: 1 Fener balığı, 1 Işıl balığı | G9 · 6. bölge | 520 vio · 330 XP |
 
 - **Genel kural (ileride eklenecek balık görevleri için de):** bir görev denizden çıkan bir canlı isterse, o canlının bölgesine gidebilene kadar görev açılmaz; alınınca yol Poyraz'ı gösterir, Poyraz'ın haritasında bölge sarıdır. Nehir balığı isteyen görevler (Nazlı'nın "Taze balık"ı) eskisi gibi nehirde yapılır.
 

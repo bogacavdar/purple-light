@@ -1,3 +1,11 @@
+## v3.92 (9 Kasım 2026) · para birimi sikke → vio, mor para resmi
+
+**Değişen yerler:** oyun dosyasında ve `parts/*.md`'de bütün "sikke" çekimleri sözlükle çevrildi (sikke→vio, sikken→vion, sikkelik→violuk, sikkeler→violar, sikkeye→vioya, sikkeyi→vioyu, sikkesi→viosu, sikkenin→vionun, sikkeni→vionu, sikkeyle→vioyla…; büyük harf korunur), yorumlar ve `/vio/i` (∞ para), `/^100 vio/` (Koşu görevi) düzenli ifadeleri dahil; kayıtlarda "sikke" adlı alan yok (`coins` sayı), çevrim gerekmez. Yeni `<style id="v392vio">`: `#coinbox i`, `.ccoins i`, `#coins i`, `.gcoin` mor para; para kutusu ve sayaç mor. GUNCELLEME_NOTLARI'nın eski sürüm notları olduğu gibi kaldı (geçmiş). Sürüm etiketi `Versiyon 3.92`.
+
+**Geri alma:** `git revert` bu commit.
+
+**Kontrol:** chk.js 0 hata; oyun dosyasında ve belgede "sikke" 0. Ekran: sol altta mor para + "0 vio", pencere sayacı mor. Konsol hatası yok.
+
 ## v3.91 (9 Kasım 2026) · sol üst: gün, dijital saat, hava simgesi, mevsim çemberi; öğretici kartı yarı alan; takip şeridi geniş
 
 **Değişen yerler:** yeni blok `v391hud`: `body.v391` (yalnızca bilgisayar; `v50m`'de `.hd` gizli) `#clock` kutusuz, `#clockic/#clockv/#clockms` gizli, yeni çocuklar `#hdday`, `#hdtime` (dijital, `.hdpop` gündüz/gece süresi, `NIGHT=[150,108,150,210]`, Mor gece 240), `#hdwx` (simge + ad + `__plTempStr`), `#hdsea` (SVG dört yay + ok, açı = yılın 28 günündeki yeri, gün 06:00'da başlar). `renderClock` sarmalı + 1 sn'lik `upd()` (anahtar değişince DOM). CSS: `#tut{transform:scale(.7071);transform-origin:top right}` (bilgisayar), `#b3trk .b3lab` 16em / `.b3cell` 15em / 12 px. Belge: 20_sistemler.md, 10_akis.md. Sürüm etiketi `Versiyon 3.91`.
@@ -154,15 +162,4 @@
 **Geri alma:** `git revert` bu commit (blok + kaynak isimleri + belge birlikte). Kayıtlar: çevrilmiş kayıtlar geri çevrilmez (eski adlar yeniden eklenirse çantada yalnızca asıl kalaslar kalır), oyun bozulmaz.
 
 **Kontrol:** chk.js 0 hata (183 script). Denetim (eski 3.71 ↔ yeni): eşya 1505 → 1350, tarif 1105 → 982 (159 varyant), bilinmeyen girdi 0, fiyatsız 0, yeni kullanılmayan ham malzeme 0. Eski kayıt (gerçek kaydet/yükle, yeniden yükleme dahil): 3 Ladin + 1 Meşe kalası → 4 Meşe kalası, 2 Kurutulmuş kekik → 6 Kekik, Kurutulmuş geyik eti → 87 sikke, Ardıç kaşığı → Huş kaşığı, Işık ağacı sapı → Mor söğüt sapı, kitaptan Ladin kalası silindi. `Çam kalası (Kavak odunu ile)` el yapımı: 1 Çam kalası verir.
-
-## v3.72 (8 Kasım 2026) · madenler arası mesafe
-
-**Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
-- Yeni `<script id="v372maden">`: `findSpot` maden adları (`MINES`) için sarılır: en çok 25 aday, `ok()` = aynı tür ≥ 96 px, herhangi maden ≥ 48 px (canlı madenler, kendisi hariç); bulunamazsa `null` (yeniden çıkış döngüsü 3 sn sonra yeniden dener). `spread()`: kurala uymayan canlı madenleri `findSpot(name,null,n)` ile taşır (biyom korunur, eski yerden ≥ 60 px), sonra `NGR` ızgarası sıfırlanır, `PERF.visT=0`, `__plRockDirty`. `startNew` ve `restore` sonrasında bir kez çalışır. `window.__plSpread`.
-- Yeni `<script id="v372sade">` (sayfa açılınca bir kez, `built` korumalı; 44 ms): başlangıç kampının 20 karosu dışında, konumdan karma (`hz`, rnd yok): temel malzemelerin (Dal, Lif, Taş, Nehir çakılı, Kum, Çakmaktaşı) %30'u silinir; bitkiler (maden, gece, mağara, öğretici, Yaprak ve temel dışındaki `RULE`'u olan düğümler) tür+biyom grubunda %75'e iner ve 3–5'lik öbeklere taşınır (öbek merkezi mevcut bir bitki; üyeler 10–28 px, `spotOk`: kural karosu, `reachAt`, aynı biyom, ağaç 9 px, maden 24 px, kişiler 34 px, `__plFloorBusy`). `KIN` (tür → düğümler); `findSpot` sarılır: bitki yeniden çıkarken 20 denemede yaşayan bir türdaşının 10–28 px yakını, olmazsa eskisi. `v365build`'de `window.__plFloorBusy` (yerinde).
-- Sürüm etiketi `Versiyon 3.72`.
-
-**Geri alma:** `v372maden` ve `v372sade` bloklarını sil, `__plFloorBusy` satırını kaldır (düğümler kayda yazılmadığı için ada bir sonraki açılışta eski haliyle kurulur).
-
-**Kontrol:** chk.js 0 hata (179 script). Yeni oyun (554 maden, 18 tür): önce aynı tür < 40 px 10, < 64 px 25, < 96 px 69; herhangi < 40 px 22 — sonra aynı tür < 96 px 0, herhangi < 48 px 0; tür sayıları aynı. Yerleşmiş haritada ikinci `spread` 0 taşıma, 48 ms. Sade harita: toplanabilir 11.317 → 8.505; ekran başına (27×15 karo) Çayır 38 → 33, Orman 39 → 34, Bataklık 27 → 23, Kayalık Dağ 34 → 26, Kül 24 → 21, Mor Kristal 25 → 20 (temel 10 → 8, bitki 12 → 9, ağaç aynı); bitkilerin %88'inin 2 karo içinde en az 2 türdaşı var; 200 yeniden çıkışın 200'ü bir türdaşının yanında. Ekran görüntüsünde 5'li papatya öbeği.
 

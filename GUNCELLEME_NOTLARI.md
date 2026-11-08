@@ -8,6 +8,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.92 · 9 Kasım 2026
+
+### Oynanış
+- **Paranın adı artık "vio":** "sikke" her yerde "vio" oldu (menekşe morundan, violet): sol alttaki para kutusu, pencerelerin üstündeki sayaç, fiyatlar, görevler, konuşmalar, yetenek ağacı, hileler.
+
+### Görsel
+- **Mor para:** paranın küçük resmi artık açık mor parıltılı, koyu mor kenarlı bir para; para kutusunun çerçevesi ve sayacı da mor. Para kazanınca saçılan küçük paralar da mor.
+
+### Tasarım belgesi
+- Giriş › Kural: "Para birimi: vio"; belgenin her yerinde sikke → vio.
+
+---
+
 ## Versiyon 3.91 · 9 Kasım 2026
 
 ### Arayüz
@@ -258,19 +271,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Tarifler › yeni "Sade malzeme" bölümü (biyom başına asıl ağaç tablosu, varyant kalaslar, kurutulmuş kuralları, eski kayıt çevirisi); kalkan tarif ve eşya satırları silindi, kategori sayıları ve toplam yenilendi. Eşyalar, Aletler, ACT 1 kişileri, ACT 2 kişileri ve görev tablolarında kalkan isimler yerine geçenle değişti.
-
----
-
-## Versiyon 3.72 · 8 Kasım 2026
-
-### Oynanış
-- **Daha sade bir ada:** başlangıç kampının çevresi dışında dal, lif, taş, nehir çakılı, kum ve çakmaktaşı **%30 daha az**; biyom bitkileri **%25 daha az** ve artık tek tek serpilmiyor, **aynı türden 3–5'lik öbekler** halinde bitiyor (bir öbeğe gidince birkaç tane birden toplarsın). Toplanan bitki yine kendi türünün yanında yeniden çıkar, öbekler dağılmaz. Çayır ve Orman'da bir ekrandaki nesne sayısı ~38'den ~33'e indi; ekran benek benek görünmüyor. Ağaçlar ve madenlerin sayısı aynı.
-
-### Düzeltmeler
-- **Madenler yan yana yığılmaz:** aynı türden iki maden en az 6 kare, herhangi iki maden en az 3 kare arayla durur. Tükenen bir maden yeniden çıkarken de buna uyar (önceden yalnızca çok küçük bir boşluk aranıyordu, zamanla aynı kayalar üst üste yığılıyordu). Eski kayıtlarda kümelenmiş madenler oyun açılınca kendi biyomlarının içinde dağıtılır; maden sayıları değişmedi.
-
-### Tasarım belgesi
-- ACT 1 › Adanın yerleşimi › Haritadaki miktarlar: madenler arası mesafe kuralı; yeni "Sade harita" maddesi (temel malzemeler −%30, bitkiler −%25 ve öbek öbek, öbeklerin yeniden çıkışı).
 
 ---
 

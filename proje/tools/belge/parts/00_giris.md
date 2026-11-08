@@ -1,12 +1,14 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.91** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.92** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
 > **KURAL: HER EŞYANIN KENDİ RESMİ OLUR (Boğaç, 6 Kasım 2026):** oyundaki her eşyanın (malzeme, yemek, alet, yapı, ACT 2 eşyaları dahil) **adına ve gerçeğine uygun** bir resmi vardır; bu resim envanterde, tarif kitabında, elde, **yere düştüğünde** ve **kurulduğunda** (yapılarda) kullanılır. Adıyla ilgisi olmayan, adından renk alan "hediye paketi" kutusu **hiçbir eşyada görünmez**. Yeni bir eşya eklenirken resmi de aynı sürümde, ne olduğuna göre (yemek tabakta ya da tavada, iksir şişede, merhem kapta, taş taş gibi…) çizilir. Resmi olmayan bir eşya bulunursa bu bir hatadır. v3.37'de 194 eşyanın hediye paketi yerine gerçek resmi çizildi (Eşyalar › Eşya resimleri). Resmi unutulmuş bir eşya oyunda sade, nötr bir bez torba olarak görünür (renkli kutu değil) ve geliştirici araçları açıkken (`?debug`) konsola yazılır (kontrol önbelleği silmez, yalnızca karşılaştırır).
 
 > **KURAL: CANLI KENDİ ADINDA EŞYA DÜŞÜRMEZ (Boğaç, 9 Kasım 2026: "kerevitten kerevit düşmesi gibi durumlar olmamalı, kerevit eti düşüyor olmalı"):** bir canlı avlanınca kendi adını taşıyan bir eşya düşürmez; ondan çıkan eşya ne olduğunu söyler (ör. Kerevit → **Kerevit eti**). Yeni canlı ya da düşme eklenince, her pakette eşya denetiminde bakılır: hiçbir canlının düşürdüğü eşyanın adı bir canlının adıyla aynı olamaz.
+
+> **PARA BİRİMİ: VİO (Boğaç, 9 Kasım 2026: "Vio yap gitsin, morun bir tonundan esinlendik"):** oyunun parası **vio**dur (violet, menekşe moru). Küçük resmi mor bir paradır (açık mor parıltılı, koyu mor kenarlı). Belgede ve oyunda her yerde "vio" yazılır; çekimleri: vioyu, vioya, vionun, vioda, violar, violuk ("50 violuk"), vion ("vionu say").
 
 > **KURAL: BÜYÜKLÜK YÜZDESİ ALAN İÇİNDİR (Boğaç, 6 Kasım 2026):** bir harita, biyom ya da bölge için "%X büyüt/küçült" denince **alanı** %X değişir; kenar katsayısı √(1+X) olur (ör. %50 büyütmek: kenar ×√1,5 ≈ ×1,2247). Şüphe varsa belgeye yazmadan önce Boğaç'a sorulur.
 
@@ -62,6 +64,6 @@ Sürüm: **Versiyon 3.91** ile birebir (9 Kasım 2026). Bu sürümün ve önceki
 ## Adalar ve dünya ölçüsü
 
 - İki ada da **790 × 568 karo** ızgaradadır (v3.40, Boğaç: "her bir biyomu %50 büyüt, haritanın genel şeklini bozmadan"; v3.39'a kadar 645 × 464). **Kararın açıklaması (v3.44, 6 Kasım 2026, Boğaç):** "%50 büyüt" **alanın** %50 artması demektir; kenar başına katsayı √1,5 ≈ 1,2247'dir (645 × 464 → 790 × 568). v3.40–3.43'te yanlışlıkla kenar ×1,5 yapılmıştı (968 × 696, alan ×2,25); bu bir hataydı ve v3.44'te düzeltildi. Yıldızsız Ada hilal (kara ~208.000 karo), ikinci ada yonca (kara ~268.000 karo); bir karo 16 piksel. Şekil aynı, alan v3.39'a göre 1,5 kat; haritaya serpilen şeyler (dal, taş, bitki, maden, ağaç) aynı sıklıkta kalsın diye sayıları da 1,5 katına çıkar (v3.39'a göre). Göl yarıçapları ve deniz payı kenar katsayısıyla (×1,2247) büyür (deniz payı 10 → 12 karo); Bataklık gölcükleri sayı olarak 20 → 30 olur. Eski kayıtlar bu sürümde (v3.44) silinir (Boğaç'ın kararı). Bir anda yalnızca bir ada bellekte durur; adalar arası geçiş bir yükleme ekranıyla yapılır.
-- Envanter, sikke, seviye, gün ve saat iki adada ortaktır.
+- Envanter, vio, seviye, gün ve saat iki adada ortaktır.
 - Her adada 6 biyom vardır (**eşit büyüklükte**: Yıldızsız Ada'da her biri ~34.700, ikinci adada ~44.700 karo (v3.44); adanın şekli boyunca **zincir halinde** sıralanır, her biyom yalnızca öncekine ve sonrakine değer; 1-2, 3-4, 5-6 ortak bölgedir, 2→3 ve 4→5 arasında keskin bir sınır vardır); biyomun tehlike seviyesi canavarların gücünü belirler: **Güvenli** (ilk iki biyom), **Tehlikeli** (3. ve 4.), **Ölümcül** (5.), **Çok ölümcül** (6.).
 - Oyun içinde biyomlar 3 tehlike kuşağına ayrılır ve balık tabloları, tuzak ganimetleri bu kuşağa göre değişir: **Kuşak 0** = Çayır + Orman, **Kuşak 1** = Bataklık + Kayalık Dağ, **Kuşak 2** = Kül Diyarı + Mor Kristal Vadisi (ACT 2'de aynı sırayla).
