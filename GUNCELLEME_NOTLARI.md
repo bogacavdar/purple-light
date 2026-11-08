@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.75 · 8 Kasım 2026
+
+### Oynanış
+- **Başlangıç bölgesi artık kalabalık değil:** başladığın kampın çevresi (20 kare) şimdiye kadar hiç seyreltilmemişti; çevresindeki araziye göre 3,5 kat ağaç ve neredeyse 3 kat toplanacak şey vardı. Artık hemen dışındaki araziyle aynı sıklıkta: ekran başına ağaç 43'ten 12'ye, toplanacak şey 68'den 24'e indi. Öğreticinin malzemeleri ve görev eşyaları yerinde; kampta en az 12 çam kalır (balta dersi ve Dursun'un ilk odunu için).
+
+### Tasarım belgesi
+- ACT 1 › Adanın yerleşimi › Haritadaki miktarlar: başlangıç kampı da çevresinin sıklığına iner (eski "kamp seyreltilmez" kuralının yerine).
+
+---
+
 ## Versiyon 3.74 · 8 Kasım 2026
 
 ### Arayüz
@@ -383,14 +393,4 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 
 - **F her zaman önce yerdekini alır:** ayağının dibinde toplanacak bir şey varsa F önce onu toplar; kişiyle konuşmak, kapıdan girmek ve öbür işler yerde bir şey kalmayınca.
 - **"Doğu geçidini aç"** yine Kaya patlatıcı tarifini kazanda öğrendikten sonra verilir (Kemal, Doğan ya da Firuze); tarifi bilmiyorsan Kemal seni ona götürür. Tarifi öğrenmeden almış olduğun görev, oyunu açınca geri bırakılır ve tarifi öğrenince yeniden verilir.
-
-## Versiyon 3.55 · 7 Kasım 2026
-
-### Denge
-
-- **Kayalık Dağ, Kül Diyarı ve Mor Kristal Vadisi de derinleştikçe zorlaşıyor:** bir önceki bölgeden girdiğin yerde sakin ya da hafif canlılar var, içeri yürüdükçe tehlikeliler başlar, en derinde bölgenin bütün canlıları seni bekler.
-- **Kayalık Dağ:** girişte Kartal Seviye 30'dan, Yaban öküzü Seviye 28'den sonra çıkar; Vaşak yalnızca içeride, Mağara ayısı yalnızca en derinde.
-- **Kül Diyarı:** girişte önce yalnızca Kül böceği ve Kül cini var; Ateş akrebi ve Kül kurdu içeride, Kara ejder en derinde.
-- **Mor Kristal Vadisi:** Gölge kurdu içeride Seviye 45'ten sonra, Kristal golem en derinde.
-- **Kül kurtları ve Gölge kurtları** önce ikili gezer, seviyen yükseldikçe sürüleri büyür.
 

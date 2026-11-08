@@ -1,3 +1,11 @@
+## v3.75 (8 Kasım 2026) · başlangıç kampı da seyrelir
+
+**Değişen yerler:** yeni `<script id="v375kamp">` (en sonda; sayfa açılınca bir kez, `built` korumalı, 11 ms): kamp (spawn'dan < 20 karo) halkanın (20–40 karo) sıklığına iner. Ağaçlar: `keep = halka yoğunluğu / kamp yoğunluğu`, `hz(x,y,4.4) ≥ keep` silinir; `hz` sırasıyla ilk 12 Çam, `v343` ve `keep` ağaçları korunur. Düğümler: tür başına aynı oran (`hz(x,y,6.6)`); `mine/night/tzN/tutN/sq/keep/q/quest` dokunulmaz. `window.__plKamp={trees,nodes,ms}`. Sürüm etiketi `Versiyon 3.75`.
+
+**Geri alma:** `v375kamp` bloğunu sil (ada bir sonraki açılışta eski haliyle kurulur; kayıtta ağaç/düğüm tutulmaz) ve belgedeki satırı geri al.
+
+**Kontrol:** chk.js 0 hata. Yeni oyun: kampta ekran (900 karo) başına ağaç 43 → 12,2 (halka 12,4), toplanan şey 68 → 24,4 (halka 18,1), kampta 12 Çam, öğretici düğümleri 5 → 5; 43 ağaç, 62 düğüm silindi. Ölçüm (`olcum.js`, 4): frame 3668 → 3599 (gürültü içinde ya da biraz hafif).
+
 ## v3.74 (8 Kasım 2026) · Kemal'in "seni hatırlıyorum" düğmesi
 
 **Değişen yerler:** `v337meta` bloğunda `askName` sarmalı: `say(t,[{t:'…'}])` → `cnt===1?'Hatırlamıyorum…':'Ne demek istiyorsun?'`. Sürüm etiketi `Versiyon 3.74`. Belge: 20_sistemler "Seni hatırlıyorum".
@@ -303,15 +311,4 @@
 - **Eski kayıt:** belgenin "Eski kayıtlar" kuralı (kayıt açılınca tarifi öğrenilmemiş aktif görev geri bırakılır) E3'e de uygulanır; v3.54/3.55'te tarifsiz alınmış E3 açılışta geri bırakılır, Kemal tarif işini verir. Oyunda: tarifsiz E3 etkinken kayıt yüklenince görev geri bırakıldı.
 - **Ölçüm:** kare döngüsüne/açılışa dokunulmadı (`target` sarmasının kalkması F/istem anında bir arama azaltır), ölçüm yapılmadı.
 - **Geri almak için:** v3.56 commit'ini `git revert` (prototip, index.html, parts). Kayıt alanı, MAPV değişmedi.
-
-## v3.55 (7 Kasım 2026) · denge: Kayalık, Kül ve Mor Kristal'de üç kuşak, Kül kurdu ve Gölge kurdu sürü kademesi
-
-- **Derinlik alanı** (`30_act1.md` › Kuşaklar): `MUD`'un hemen ardından `LDEPTH` (`Uint16Array`, W×H; `DEPTH` adı başka yerde vardı). Kayalık (3), Kül (4), Mor (5) karolarında, bir önceki biyoma (BIO b−1) komşu ve su olmayan karolardan çok kaynaklı taşma araması, yalnızca aynı biyomun karolarından (denge modelinin aynısı). Harita kurulurken bir kez; kayda yazılmaz, oyun sırasında taranmaz. Ölçüm: tek başına ~25 ms, CPU×4 97 ms. Dağılım modelle aynı (bütün karolarda Kayalık %25 24 · %50 48 · %75 73 · en çok 133; Kül 22 · 44 · 66 · 147; Mor 38 · 82 · 161 · 461).
-- **Doğma şartları:** `v345` `BANDR` (biyom → `b`: [Giriş, Orta] üst sınırı; `r`: canlı → [Giriş seviyesi, Orta seviyesi], `null` = yok, 0 = her zaman; tabloda olmayan her yerde doğar; Derin'de her şey). `__plSpawnOK` Bataklık dışındaki üç biyomda `LDEPTH`'e bakar; sürü üyeleri de (v3.52 yolu), yan görev canavarları muaf (`spawnMob` bu yoldan geçmez).
-- **Sürü boyu:** `spawnIn` `WK` tablosu: Bataklık kurdu [21, 24], Kül kurdu [40, 43], Gölge kurdu [47, 47] (≤ ilk: 2; ≤ ikinci: en çok 3; sonra `PACK`).
-- **Doğma testi** (ilk eşiklerle; 25 tur, her satırda o kuşağın içinde bir nokta; canlılar kendi doğdukları karonun kuşağıyla sayıldı): Kayalık Giriş Sv 26 yalnızca keklik/keçi/muflon; Sv 28 + öküz; Sv 30 + Kartal; Orta Sv 26 öküz var, Kartal yok; Sv 28 + Kartal; Sv 30 + Vaşak; Ayı yalnızca Derin. Kül Giriş Sv 34 yalnızca böcek ve cin; Sv 36 + kertenkele ve yarasa; Orta Sv 34 akrep ve kurt yok; Sv 36 + akrep; Sv 38 + kurt. Mor Giriş Sv 42 beş canlı, kurt yok; Orta Sv 42 kurt yok; Sv 45 + Gölge kurdu. Kural dışı doğma yok. Sürü (25 tur toplamı): Kül kurdu Sv 38 50, Sv 41 57, Sv 44 67; Gölge kurdu Sv 45 48, Sv 48 61.
-- **Kül ve Mor eşikleri (denge raporu v3.55):** belgenin ilk eşikleri denizi de sayan dağılımdan alınmıştı; yürünebilir karada en derin nokta Kül 95, Mor 97 karo olduğundan Mor'da Derin hiç yoktu (Kristal golem doğmaz, KU4 ilerlemezdi), Kül'de 62 karo. `BANDR` Kül [30, 60] (Lav kertenkelesi ve Kor yarasası Giriş ve Orta'da Sv 36'dan), Mor [25, 55]. Kayalık [45, 85] aynı. Doğma testi (25 tur): Kül Giriş Sv 34 yalnızca böcek ve cin, Sv 36 + kertenkele, yarasa; Orta Sv 34 kertenkele/yarasa/akrep/kurt yok, Sv 38 + kurt; Derin Sv 34 ve 44'te Kara ejder 21 ve 23. Mor Giriş/Orta Sv 42 Gölge kurdu yok, Sv 45 Orta'da var; Derin Sv 42 ve 48'de Kristal golem 19 ve 21. Kural dışı doğma yok.
-- **Devriye** (denge uzmanının `patrol.js`, ayrı kopyada `/tmp/yz/dm2`, oyunun kendi kuralları, Giriş, 150 sn): Kayalık Sv 26 hasar 0; Kül Sv 34 497/dk (en yüksek can 388 → 1,28/dk), 3 bayılma, saldıranlar Kül cini, Kor yarasası, Lav kertenkelesi (son ikisi Orta'dan gelip kovaladı); Mor Sv 42 625/dk (460 → 1,36/dk), 3 bayılma, Işık engereği, Kristal örümcek, Kristal geyik. Raporun beklentisi Kül ~1,04, Mor 0,86–1,05 (tek örnek, ±%40).
-- **Ölçüm** (`olcum.js` CPU×4, gl; 3.54 → 3.55): BOOT 16.392 → 18.253 ms (js 9.684 → 10.888; derinlik araması CPU×4'te ~97 ms, gerisi gürültü); kumsal avg 182,0 → 187,4; yürürken 164,9 → 169,0; PLAY 10 sn js 4.085 → 3.875 ms.
-- **Geri almak için:** v3.55 commit'ini `git revert` (prototip, index.html, parts). Kayıt alanı, MAPV değişmedi.
 

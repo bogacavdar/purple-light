@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.74</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.75</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.74 · 8 Kasım 2026</h2><h3>Arayüz</h3><ul><li><strong>Kemal seni tanıyınca:</strong> aynı karakterle yeni oyuna başladığında Kemal'in "seni daha önce görmüş müydüm" konuşmasındaki tek düğme artık yalnızca "…" değil, gerçek bir cevap: ikinci kez <strong>"Hatırlamıyorum…"</strong>, sonrasında <strong>"Ne demek istiyorsun?"</strong>.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.75 · 8 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Başlangıç bölgesi artık kalabalık değil:</strong> başladığın kampın çevresi (20 kare) şimdiye kadar hiç seyreltilmemişti; çevresindeki araziye göre 3,5 kat ağaç ve neredeyse 3 kat toplanacak şey vardı. Artık hemen dışındaki araziyle aynı sıklıkta: ekran başına ağaç 43'ten 12'ye, toplanacak şey 68'den 24'e indi. Öğreticinin malzemeleri ve görev eşyaları yerinde; kampta en az 12 çam kalır (balta dersi ve Dursun'un ilk odunu için).</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -22694,6 +22694,37 @@ const _as=applyState;applyState=function(s){paid=0;moved=0;try{if(s&&typeof s===
     if(s.v373t&&!dirtyNow()){const m=s.v373t;setTimeout(()=>{try{toast(m)}catch(e){}},2500)}}}catch(e){try{window.__hamSoft&&window.__hamSoft('v373 kayıt: '+(e&&e.message||e))}catch(_){}}
   return _as.call(this,s)};
 }).toString()+')()')}catch(e){try{window.__hamErr('v373sade: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v375kamp">
+// v3.75 (Boğaç: "başlangıç bölgesi diye inanılmaz çok spamleniyor, bunu istemiyorum"): belge ACT 1 › Adanın yerleşimi › Haritadaki miktarlar.
+// The first camp (20 tiles round the start) was never thinned, so it held ~3.5× the trees and far more basics/plants than the land
+// around it. Now it is thinned to the same density as the ring just outside it (20–40 tiles), kind by kind; the tutorial's own things
+// (tzN/tutN/quest/sq/keep), mines and night things stay. At least 12 pines stay inside it (the axe lesson and Dursun's first wood).
+// By a hash of the spot (no rnd()), so every load builds the same island; once per page.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const hz=(x,y,s)=>{const v=Math.sin(x*12.9898+y*78.233+s)*43758.5453;return v-Math.floor(v)};
+const R1=20*T,R2=40*T,dS=(x,y)=>Math.hypot(x-spawn.x,y-spawn.y);
+const AIN=Math.PI*R1*R1,ARING=Math.PI*(R2*R2-R1*R1);
+const MINPINE=12;
+let built=false;
+function build(){if(built)return;built=true;const t0=performance.now();let cutT=0,cutN=0;
+  // trees: the camp keeps ring density (same share for every kind)
+  {const inn=trees.filter(t=>dS(t.x,t.y)<R1),ring=trees.filter(t=>{const d=dS(t.x,t.y);return d>=R1&&d<R2});
+   const keep=Math.min(1,(ring.length/ARING)/Math.max(1e-9,inn.length/AIN));
+   const pines=inn.filter(t=>t.type&&t.type.n==='Çam').sort((a,b)=>hz(a.x,a.y,4.4)-hz(b.x,b.y,4.4));const safe=new Set(pines.slice(0,MINPINE));
+   const drop=new Set();for(const t of inn){if(safe.has(t)||t.v343!=null||t.keep)continue;if(hz(t.x,t.y,4.4)>=keep)drop.add(t)}
+   for(let i=trees.length-1;i>=0;i--)if(drop.has(trees[i])){trees.splice(i,1);cutT++}
+   rebuildTG()}
+  // gathered things: kind by kind to the ring's density
+  {const free=n=>!n.mine&&!n.night&&!n.tzN&&!n.tutN&&!n.sq&&!n.keep&&!n.q&&!n.quest;
+   const cin=new Map(),cring=new Map();for(const n of nodes){if(!free(n))continue;const d=dS(n.x,n.y);if(d<R1)cin.set(n.name,(cin.get(n.name)||0)+1);else if(d<R2)cring.set(n.name,(cring.get(n.name)||0)+1)}
+   const KEEP={};for(const [k,c] of cin){const ri=(cring.get(k)||0)/ARING,ii=c/AIN;KEEP[k]=Math.min(1,ri/ii)}
+   for(let i=nodes.length-1;i>=0;i--){const n=nodes[i];if(!free(n)||dS(n.x,n.y)>=R1)continue;const k=KEEP[n.name];if(k!=null&&hz(n.x,n.y,6.6)>=k){nodes.splice(i,1);cutN++}}
+   NGR.m.clear();NGR.n=0;NGR.len=0;try{PERF.visT=0}catch(e){}window.__plRockDirty=1}
+  window.__plKamp={trees:cutT,nodes:cutN,ms:Math.round(performance.now()-t0)}}
+build();
+}).toString()+')()')}catch(e){try{window.__hamErr('v375kamp: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
