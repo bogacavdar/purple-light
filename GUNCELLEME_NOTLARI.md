@@ -8,6 +8,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.87 · 9 Kasım 2026
+
+### Arayüz
+- **Yeni envanter ekranı (bilgisayar):** sol üstte renksiz bir insan figürü var; giyim yuvaları figürün üstünde: miğfer kafada, zırh göğüste, eldiven bir elde, silah öbür elde, çizme ayakta. Yanında karakterin kendisi duruyor ve giydiğin her şeyi üstünde görüyorsun. Bir giysi ya da silah seçince uyan yuva parlıyor; yuvaya tıklayınca giyiliyor, dolu yuvaya tıklayınca çıkıyor.
+- **Seçili eşya sağda:** eşyanın bilgisi ve düğmeleri (Ye, Giy, Yuvaya koy, Eline al, Yere bırak…) figürün sağında.
+- **Eşyalar liste halinde:** kare kutucuklar yerine her satırda küçük resim, ad ve adet (aletlerde keskinlik).
+- **Alet yuvaları pencerede ikinci kez çizilmiyor:** ekranın altındaki asıl alet yuvaları ve meşale yuvası envanter açıkken de görünüyor; eşyayı oraya sürükle ya da seçip yuvaya tıkla. Seçtiğin eşyanın gideceği yuva yanıp sönüyor; dolu yuvaya tıklayınca o eşya seçiliyor.
+- **Özellikler penceresi** aynı figürü ve karakteri gösteriyor; yuvaya tıklayınca o yuvaya uyan eşyalar açılıyor.
+- Telefonda envanter eskisi gibi (pencere bütün ekranı kapladığı için alet yuvaları pencerede kalıyor).
+
+### Tasarım belgesi
+- Sistemler › Envanter: "Envanter ve Özellikler penceresi" maddesi (figür, karakter, liste, alttaki alet yuvaları).
+
+---
+
 ## Versiyon 3.86 · 9 Kasım 2026
 
 ### Oynanış
@@ -288,29 +303,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - ACT 3: köpek günlüğünün şimdiden tutulduğu ve neleri yazdığı.
 - Bilinen açıklar: #18 (işlevsiz aletler) kapandı.
 - Belgenin başındaki sürüm satırı artık her yayında oyunun sürümünden yazılır (3.59'da kalmıştı).
-
----
-
-## Versiyon 3.67 · 8 Kasım 2026
-
-### Oynanış
-- **Kamış ok gövdesi oyundan kalktı:** hiçbir ok gövde istemiyordu. Elindeki gövdeler kendi malzemelerine döner: her biri 3 Kamış + 1 İp (çanta, sandık, köpek sırtı, yer; hepsi). Tarif kitabından da düştü. Kamış hâlâ Kamış hasır, Kamış flüt ve Kamış çizmede kullanılıyor.
-- **Kemik ok ucu artık alet istemiyor:** elle yapılıyor, Çekiç taşı gerekmiyor (fiyatı 11 sikke kalıyor).
-- **Davut'un "Hayvanlara bir yuva" (CB2) görevi:** ödül 80 → **300 sikke** (XP 60 aynı).
-- **Ahşap karyola 738 sikke** (önce 475'te kalmıştı; boya eklenince fiyatı boyanın payı kadar arttı). Usta Sinan'ın işçiliği 95 → 148.
-- **Zor modda "Deneyerek bul":** kazana en çok **7** farklı malzeme atılır (6'ydı; Obsidyen mızrak 7 malzemeli). Kazandaki bir malzemeye yeniden dokununca **adedi artar** (çipte "×N"). Aynı malzemelerle birden çok tarif varsa (ör. Tabure/Sandalye/Raf, aynı metalin baltası ve savaş çekici) kazan adetlere de bakar; tutmuyorsa "birden çok tarif var; adetleri değiştirerek dene" der ve en yakın tarife kaç adet fark olduğunu söyler. Malzemesi, adedi ve yeri birebir aynı olan tarifler (Öğütme taşı ile Bileği taşı; Bakır, Çelik, Kara çelik, Mor kristal balta ile topuzu) birlikte bulunur: "İki tarif buldun: Bakır balta ve Bakır topuz", ikisi de öğrenilir, ikisine de XP.
-
-### Düzeltmeler
-- **Etkili okların fiyatı düzeldi:** Keskin/Alevli/Zehirli oklar normal okun ~10 katına satılıyordu (Keskin Tunç ok 680). Artık belgedeki kural: tanesi ok + yağın onda biri, × 1,1 (Keskin Tunç ok 98, Alevli Kara çelik ok 2.033; 21 okun hepsi). Pazar ve tarif ekranları yeni fiyatı gösterir.
-- **Kazanda görünmeyen 40 tarif:** Usta Sinan'ın kurduğu 33 yapı (Ağıl, Kulübe, Kerpiç ev, Çömlek fırını, Hasır yatak…) ve 7 inşa parçası (Toprak yol, Çakıl yol, Ahşap parke, Dal çit, Çit, Taş duvar, Tahta kapı) kazanın tarif listesinde yoktu; inşa parçaları tarif kitabında da görünmüyordu. Artık hepsi kazanda öğrenilir (Davut'un Ağıl görevi takılmaz).
-- **İkinci tarifler (varyantlar) asıl tarifle aynı:** "Bakır ok (Bıldırcın tüyü ile)", "Tunç ok (Yaban kazı tüyü ile)", "Demir ok (Turna kuşu tüyü ile)" artık asıl tarif gibi ok ucunu da ister ve asıl tarif kadar ok verir (Tunç/Demir 3 yerine 10, Bakır 14 yerine 18; Goblin oklu Basit ok 7 yerine 11). "Ahşap karyola (Gölge postu ile)" artık Kükürt sarısı boyayı da ister.
-
-### Tasarım belgesi
-- Tarifler › Ev eşyası: boyalı ev eşyası fiyat kuralı (kural eski fiyatın altında kalırsa eski fiyat + boya × zincir çarpanı; karyola 738).
-- Tarifler › Varyant tarifler: "varyant, asıl tarifin bugünkü girdileriyle aynıdır" cümlesi; 3 ok satırına uç ve adet, karyola satırına boya; Goblin oku satırı → 11.
-- Sistemler › Zorluk: Deneyerek bul 7 malzeme, adet artırma, aynı türlü tariflerde adet kuralı, birebir aynı tarifler birlikte bulunur.
-- Eşyalar: Çekiç taşının kullanıldığı yerlerden Kemik ok ucu çıktı.
-- (Yönetici/Analist yazdı: CB2 300, Kemik ok ucu alet istemez, Kamış ok gövdesi kalktı, etkili ok fiyatları.)
 
 ---
 

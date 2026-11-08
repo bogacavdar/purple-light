@@ -1,3 +1,11 @@
+## v3.87 (9 Kasım 2026) · envanter: figür, karakter, liste, alttaki yuvalar
+
+**Değişen yerler:** yeni blok `v387env` (dosyanın sonunda): bilgisayarda (`body:not(.v50m)`) `renderInvPanel` sarmalı v92'nin `.ieq` şeridini siler, yerine `.pftop` (renksiz figür `.pfig` + `.pfs[data-ieq]` yuvaları, `#pfchar` karakter tuvali, `.pfside` içine taşınan `.iact`) koyar; v92'nin `data-ieq` tıklaması aynen çalışır. `dollHTML`/`drawDoll` sarmalı: Özellikler penceresinde aynı figür (`data-eqs`, `.eqpick` korunur). CSS: `.cpanel.invm .tiles` liste (240 px satır), `.ibelt` gizli; envanter açıkken `body.v387inv` ile `#hotbar`/`#torchslot` z-index 7; `#hotbar` için yakalayan tıklama (seçili taşınabiliri yuvaya koyar / yuvadakini seçer) ve sürükleme başlangıcı (`idrag`, mevcut `bsAt` bırakmayı alır); seçili eşyanın gideceği yuva `.v387want`. Telefon (v50m) değişmedi. Belge: 20_sistemler.md Envanter maddesi. Sürüm etiketi `Versiyon 3.87`.
+
+**Geri alma:** `git revert` bu commit (`v387env` bloğu ve belge maddesi gider; eski kutucuklu envanter ve pencere içi alet yuvaları geri gelir).
+
+**Kontrol:** chk.js 0 hata. 1920×1080 ekran görüntüsü: envanter ve Özellikler. Tıklama denemesi: Eller yuvasına tıkla → Kürk eldiven giyildi, tekrar → çıktı; Taş balta seçili + alttaki 3. yuvaya tıkla → yuvaya girdi, pencere açık kaldı; Özellikler'de Eller → liste açıldı → giyildi. Konsol hatası yok.
+
 ## v3.86 (9 Kasım 2026) · öbekler kalktı, toplanacaklar %20 az
 
 **Değişen yerler:** `v372sade` yeniden yazıldı: öbek kurma, `GAP`/`spotOk`/`putP`, `KIN` ve `findSpot` sarmalı (öbeğe yeniden çıkış) silindi; bitkiler yerinde kalır, `hz(x,y,3.1)≥.6` silinir (%40); temel malzemeler `hz(x,y,91.7)<.44` (%44), Yaprak `<.2` (%20). `window.__plSade` kalktı. Sürüm etiketi `Versiyon 3.86`.
@@ -181,31 +189,4 @@
 **Geri alma:** beş yeni bloğu (`v368erisim`, `v368kopek`, `v368alet`, `v368kupa`, `v368sise`) sil; yerinde değişenler: `ACH`/`PROG` üç satırı, `__plA1I`, `__plDEC/__plDECSET`, `KINDS` Fırlatma, dört inşa gölgesi `window.__cb*` ifadesi. Kayıt alanları `dlog`, `sise` eski sürümde okunmaz ve zarar vermez. `settings.cbm/hbv` cihazda kalır, etkisizdir.
 
 **Kontrol:** chk.js prototip 0 hata (174 script), index 0 hata; `?.` 1 / `??` 7 (aynı). `?debug` duman denemesi (Playwright, sayfa hatası ve `__hamErr` yok): ayar satırları ve `body.cbm`, nabız sınıfı, Sapan taş harcar ve mermi çıkar, Bola harcanmaz, Dişbudak yayı ok atar (cd 0,5), `snapshot().dlog`, bayılma sayacı, 22 ACT 1 anı indeksi, Kupa panosu fiyat 896 + simge + Sinan tarifi, şişe kıyıya düşer → okunur → `sise.f` + Kitap bölümü + günlük. `tests/v48_bugs.js` eski sürümde de aynı yerde düşüyor (`recipes3.json` farkı, açılış akışı), çalıştırılamadı. Lamba değişikliği denendi ve Boğaç'ın isteğiyle geri alındı (lambalar süs).
-
-## v3.67 (8 Kasım 2026) · etkili ok fiyatı, karyola 738, CB2 300, varyantlarda uç/boya, kazanda her tarif, Kamış ok gövdesi kalktı, Deneyerek bul adetli
-
-**Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
-- `v366ok`: etkili okları "ok başı fark kadar kaydır" satırı silindi; yerine 21 etkili ok belge kuralıyla (ok + yağ/10) × 1,1 bugünkü ok ve yağ fiyatından yeniden hesaplanır (`PRICE_`=`DB.p`). Kök sebep: v311price ve v335food'daki fark yayma (rd) "10 Ok + yağ → 10 etkili ok" tarifinde okun farkını 10 ile çarpıp çıktının 10 adedine bölmüyordu; rd'den sonraki tek yerde formülle kurulduğu için o farklar artık sonuca girmiyor.
-- `v366boya`: kural fiyatı eski fiyatın altındaysa yeni fiyat = eski + boya × CM(derinlik) (karyola 475 + 210 × 1,25 = 738; ustaPrice 148). Öbür 10 eşya değişmedi.
-- `v366tarif` TARIF_EK JSON (ve `/home/claude/TARIF_EK_v3.66.json`): Bakır/Tunç/Demir ok varyantlarına uç, karyola varyantına boya; ok satırlarının `q`'su asıl adetle eşit (11/18/10/10/10/11/10); "Bazalt pulu (Kamış ok gövdesi ile)" satırı silindi → 145 satır, 127 varyant.
-- `db` JSON: `Kamış ok gövdesi` tarifi ve fiyatı silindi; `Kemik ok ucu` `t:[]`. CB2 (`DATA.Q`) `c:80 → 300`.
-- `drawIcon`: `Kamış ok gövdesi` dalı silindi.
-- `renderPot` (satır ~3679): kazan listesindeki `!PLACEABLE.has(x.r)` → `!(FG&&PLACEABLE.has(x.r))` (yapılar kazanda listelenir, örste değil).
-- `v365build`: `CATS`'a 'İnşa' eklenir (CATS oyun açılırken DB'den kurulduğu için 'İnşa' grubu kazanda ve kitapta hiç çizilmiyordu).
-- `TRIAL_MAX` 6 → 7.
-- Yeni `<script id="v367fix">` (dosya sonu): (1) eski kayıt çevirisi: `applyState` sarılır, kayıttaki her `Kamış ok gövdesi` sayısı (herhangi bir sayı haritası, `{n,q}` eşyası) 3 Kamış + 1 İp olur, ad listelerinden (found/seen/order…) düşer; (2) Deneyerek bul adetleri: `trialAdd`/`renderTrial`/`judgeTrial` sarılır, kazandaki malzemeye dokunmak adedi artırır (capture dinleyicisi), aynı tür kümeli tariflerde yer (kazan/örs) + adet ile seçilir, yoksa `multi:N` ("Birden çok") cevabı; birebir aynı tarifler `twin:A|B` ile birlikte öğrenilir (`TRIAL_TXT.twin` öğretir, XP verir, kazanı boşaltır); `window.__plTrialQ` (adetler, denetim için).
-- Sürüm etiketi `Versiyon 3.67`.
-
-**Geri alma:** `v367fix` bloğunu sil; `v366ok`/`v366boya` satırlarını, TARIF_EK JSON'u, `db` JSON'daki Kamış ok gövdesi + Kemik ok ucu alet + CB2 `c`'yi, `renderPot` filtresini, `CATS` satırını, `TRIAL_MAX`'ı ve ikon dalını v3.66 commit'inden geri al (`git checkout <v3.66> -- proje/Hammadde_prototip.html index.html` + belge parts). Kayıt alanı eklenmedi, MAPV değişmedi. Not: geri alınırsa eski kayda çevrilmiş gövdeler Kamış + İp olarak kalır (zararsız).
-
-**Denetim (headless, `?debug`, `__ham.ev`):**
-- Kazan: 1104/1104 tarif kazan listesinde (ACT 1 ve ACT 2 kazanları aynı `renderPot`'u kullanıyor; kazan tarifi bir sette süzmüyor, ACT 2 tarifleri ve varyantları Yıldız'ın kazanında da listede). Önce 40 eksikti (33 yapı + 7 İnşa). Ağıl, Kerpiç ev (Beyaz tuğla ile), Toprak yol kazanda öğrenildi.
-- Deneyerek bul (zor mod, her tarif kendi adetleriyle ve kendi yerinde denendi, aletler var sayıldı): **1104/1104 bulunuyor**. Malzeme türü, adedi ve yeri birebir aynı 5 çift (Öğütme taşı = Bileği taşı; Bakır/Çelik/Kara çelik/Mor kristal balta = topuz) `twin:` cevabıyla birlikte bulunur, ikisi de `learned`'e girer, her biri +5 XP (Bakır çifti sınandı: +10 XP, ikisi öğrenildi). Tarifler değişmedi. Not: belge Bileği taşını Örs'te gösteriyor, kod ikisini de örs dışı sayıyor (ayrı uyumsuzluk, dokunulmadı).
-- Varyantların malzeme türü kümesi çakışması: 0. Eski tariflerde tür kümesi çakışan 14 grup adetle ayrılıyor (yukarıdaki 5 çift hariç).
-- Fiyatsız eşya 0 · elde edilemeyen girdi 0 · kullanılmayan malzeme: v3.66 ile aynı sayı (aynı ölçümle 69 yenmez + 38 yenir ham; Analist'in 78 + 3 yem listesini ben üretmedim, fark yok); Kamış 3 tarifte (Kamış hasır, Kamış flüt, Kamış çizme).
-- Etkili ok fiyatları 21/21 `etkili_fiyat.json` ile eşit (`PRICE_` ve `DB.p`); Ahşap karyola 738, işçilik 148; Kemik ok ucu `t:[]`, fiyat 11 (db `p` statik, alet payı yoktu).
-- Varyant ok yapımı: Tunç ok (Yaban kazı tüyü ile) 10 ok, Bakır ok (Bıldırcın tüyü ile) 18 ok, uç harcanıyor.
-- Eski kayıt çevirisi: dönüşüm fonksiyonu ayrıca node'da sınandı (çanta 4 gövde + 1 Kamış → 13 Kamış + 4 İp; sandık, yer `{n,q}`, köpek sırtı, found/order listeleri). Oyun içinde `applyState` ile yükleme sınanamadı: headless'ta `applyState(snapshot)` HEAD (v3.66) dahil envanteri hiç yüklemiyor (test ortamı sorunu, bu sürümle ilgisiz).
-- chk.js: prototip 0 hata (169 script), index 0 hata; `?.` 1 / `??` 7 (eskisiyle aynı). Sayfa hatası yok.
-- Not: `proje/recipes3.json` v2.73'ten beri `db` ile eşit değil (dokunulmadı; v48_bugs'ın "in-file DB equals recipes3.json" denetimi bu yüzden zaten düşüyor).
 
