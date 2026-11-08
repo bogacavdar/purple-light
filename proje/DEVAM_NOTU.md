@@ -1,3 +1,30 @@
+## v3.67 (8 Kasım 2026) · etkili ok fiyatı, karyola 738, CB2 300, varyantlarda uç/boya, kazanda her tarif, Kamış ok gövdesi kalktı, Deneyerek bul adetli
+
+**Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
+- `v366ok`: etkili okları "ok başı fark kadar kaydır" satırı silindi; yerine 21 etkili ok belge kuralıyla (ok + yağ/10) × 1,1 bugünkü ok ve yağ fiyatından yeniden hesaplanır (`PRICE_`=`DB.p`). Kök sebep: v311price ve v335food'daki fark yayma (rd) "10 Ok + yağ → 10 etkili ok" tarifinde okun farkını 10 ile çarpıp çıktının 10 adedine bölmüyordu; rd'den sonraki tek yerde formülle kurulduğu için o farklar artık sonuca girmiyor.
+- `v366boya`: kural fiyatı eski fiyatın altındaysa yeni fiyat = eski + boya × CM(derinlik) (karyola 475 + 210 × 1,25 = 738; ustaPrice 148). Öbür 10 eşya değişmedi.
+- `v366tarif` TARIF_EK JSON (ve `/home/claude/TARIF_EK_v3.66.json`): Bakır/Tunç/Demir ok varyantlarına uç, karyola varyantına boya; ok satırlarının `q`'su asıl adetle eşit (11/18/10/10/10/11/10); "Bazalt pulu (Kamış ok gövdesi ile)" satırı silindi → 145 satır, 127 varyant.
+- `db` JSON: `Kamış ok gövdesi` tarifi ve fiyatı silindi; `Kemik ok ucu` `t:[]`. CB2 (`DATA.Q`) `c:80 → 300`.
+- `drawIcon`: `Kamış ok gövdesi` dalı silindi.
+- `renderPot` (satır ~3679): kazan listesindeki `!PLACEABLE.has(x.r)` → `!(FG&&PLACEABLE.has(x.r))` (yapılar kazanda listelenir, örste değil).
+- `v365build`: `CATS`'a 'İnşa' eklenir (CATS oyun açılırken DB'den kurulduğu için 'İnşa' grubu kazanda ve kitapta hiç çizilmiyordu).
+- `TRIAL_MAX` 6 → 7.
+- Yeni `<script id="v367fix">` (dosya sonu): (1) eski kayıt çevirisi: `applyState` sarılır, kayıttaki her `Kamış ok gövdesi` sayısı (herhangi bir sayı haritası, `{n,q}` eşyası) 3 Kamış + 1 İp olur, ad listelerinden (found/seen/order…) düşer; (2) Deneyerek bul adetleri: `trialAdd`/`renderTrial`/`judgeTrial` sarılır, kazandaki malzemeye dokunmak adedi artırır (capture dinleyicisi), aynı tür kümeli tariflerde yer (kazan/örs) + adet ile seçilir, yoksa `multi:N` ("Birden çok") cevabı; birebir aynı tarifler `twin:A|B` ile birlikte öğrenilir (`TRIAL_TXT.twin` öğretir, XP verir, kazanı boşaltır); `window.__plTrialQ` (adetler, denetim için).
+- Sürüm etiketi `Versiyon 3.67`.
+
+**Geri alma:** `v367fix` bloğunu sil; `v366ok`/`v366boya` satırlarını, TARIF_EK JSON'u, `db` JSON'daki Kamış ok gövdesi + Kemik ok ucu alet + CB2 `c`'yi, `renderPot` filtresini, `CATS` satırını, `TRIAL_MAX`'ı ve ikon dalını v3.66 commit'inden geri al (`git checkout <v3.66> -- proje/Hammadde_prototip.html index.html` + belge parts). Kayıt alanı eklenmedi, MAPV değişmedi. Not: geri alınırsa eski kayda çevrilmiş gövdeler Kamış + İp olarak kalır (zararsız).
+
+**Denetim (headless, `?debug`, `__ham.ev`):**
+- Kazan: 1104/1104 tarif kazan listesinde (ACT 1 ve ACT 2 kazanları aynı `renderPot`'u kullanıyor; kazan tarifi bir sette süzmüyor, ACT 2 tarifleri ve varyantları Yıldız'ın kazanında da listede). Önce 40 eksikti (33 yapı + 7 İnşa). Ağıl, Kerpiç ev (Beyaz tuğla ile), Toprak yol kazanda öğrenildi.
+- Deneyerek bul (zor mod, her tarif kendi adetleriyle ve kendi yerinde denendi, aletler var sayıldı): **1104/1104 bulunuyor**. Malzeme türü, adedi ve yeri birebir aynı 5 çift (Öğütme taşı = Bileği taşı; Bakır/Çelik/Kara çelik/Mor kristal balta = topuz) `twin:` cevabıyla birlikte bulunur, ikisi de `learned`'e girer, her biri +5 XP (Bakır çifti sınandı: +10 XP, ikisi öğrenildi). Tarifler değişmedi. Not: belge Bileği taşını Örs'te gösteriyor, kod ikisini de örs dışı sayıyor (ayrı uyumsuzluk, dokunulmadı).
+- Varyantların malzeme türü kümesi çakışması: 0. Eski tariflerde tür kümesi çakışan 14 grup adetle ayrılıyor (yukarıdaki 5 çift hariç).
+- Fiyatsız eşya 0 · elde edilemeyen girdi 0 · kullanılmayan malzeme: v3.66 ile aynı sayı (aynı ölçümle 69 yenmez + 38 yenir ham; Analist'in 78 + 3 yem listesini ben üretmedim, fark yok); Kamış 3 tarifte (Kamış hasır, Kamış flüt, Kamış çizme).
+- Etkili ok fiyatları 21/21 `etkili_fiyat.json` ile eşit (`PRICE_` ve `DB.p`); Ahşap karyola 738, işçilik 148; Kemik ok ucu `t:[]`, fiyat 11 (db `p` statik, alet payı yoktu).
+- Varyant ok yapımı: Tunç ok (Yaban kazı tüyü ile) 10 ok, Bakır ok (Bıldırcın tüyü ile) 18 ok, uç harcanıyor.
+- Eski kayıt çevirisi: dönüşüm fonksiyonu ayrıca node'da sınandı (çanta 4 gövde + 1 Kamış → 13 Kamış + 4 İp; sandık, yer `{n,q}`, köpek sırtı, found/order listeleri). Oyun içinde `applyState` ile yükleme sınanamadı: headless'ta `applyState(snapshot)` HEAD (v3.66) dahil envanteri hiç yüklemiyor (test ortamı sorunu, bu sürümle ilgisiz).
+- chk.js: prototip 0 hata (169 script), index 0 hata; `?.` 1 / `??` 7 (eskisiyle aynı). Sayfa hatası yok.
+- Not: `proje/recipes3.json` v2.73'ten beri `db` ile eşit değil (dokunulmadı; v48_bugs'ın "in-file DB equals recipes3.json" denetimi bu yüzden zaten düşüyor).
+
 ## v3.66 (8 Kasım 2026) · her malzeme bir tarifte: 128 varyant tarif, ok uçları oklarda, boyalar ev eşyalarında
 
 - Boğaç kararları (8 Kasım): fiyatsız eşya ve kullanılmayan malzeme kritik, elde edilemeyen girdi büyük hata (CLAUDE.md + belge Giriş › Kural); 149 kullanılmayan malzemenin her birine ayrı tarif (grup değil); ok uçları oklara; boyalar ev eşyalarına. Denetim: /home/claude/FIYAT_TARIF_DENETIM_v3.65.md (fiyatsız 0, elde edilemeyen girdi 0, kullanılmayan 149 → 146 tarifte; Sülük yemi, Duman fişeği, Yıldız tozu yemi sınırda: av aracı/yem).
@@ -299,19 +326,5 @@
 - **ORM-11:** `v186` `showLesson` kartı (`#q2les`) `dlgOpen||craftOpen` iken gizli açılır; 250 ms denetim pencere kapanınca gösterir. Denendi: harita açıkken gizli, kapanınca görünür.
 - Ölçüm: kare döngüsüne yalnızca `drawMap`'te bir sabit hesap (büyük harita için) eklendi; ölçülmedi (etkisi yok sayıldı).
 - **Geri almak için:** yan görev `c`/`x` (v3.47 hali), `talkUsta` (v3.47 hali OYN-08 dahil), `v186` R2 sarmasında `H.mat` koşulu (`!carpOK(H)`), `drawMap` `QK` ve iki boy, üç "E/F" metni, `showLesson` `lesEl.hidden` ve 250 ms aralığı. Kayıt alanı ve MAPV değişmedi.
-- Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
-
-## v3.47 (6 Kasım 2026) · E2E Orman: "!" önce bulunduğun biyomda, Börü dersi kilitlemez, gece domuzu, yeni yan görev ödülleri
-
-- **"!" sırası (30_act1 kural 6):** `v186` `refreshVis` yeniden yazıldı: uygun görevler (her kişiden ilki) önce verenin bulunduğu biyom = oyuncunun biyomu (`gObj` konumu, yoksa `GB`), sonra `PRI` (erken biyom, kişinin sırası); ilk 2. Eski "yapışkan" `S.vis` (açılmış "!" yerinde kalırdı) yok: biyom değişince "!" de değişir. Denendi: B5 bitmiş, Orman'da `["R2","B6"]`, Çayır'da `["B6","CB3"]`.
-- **Börü dersi (10_akis):** `v181` `startLesson` `DL.free=!tz` (öğretici dışında başladı) ve `DL.hadS1`. Serbestse ilk saldırıda yerinde tutma, oyun durdurma ve atılma engeli yok; `tickDL` başında Börü'ye (`alp`) >280 px → yeni `quitLesson()` (kerevit silinir, yazı kalkar, ders başında verilen `S1` önceden yoksa geri alınır, `DL.after` boşalır; `DL.done` değişmez, Börü'den yeniden alınır). Öğretici içinde (`tz`) eskisi gibi. Denendi: 400 px uzaklaşınca ders bitti, S1 yok.
-- **Yaban domuzu yalnızca gece:** `BANIM[1]` koşulu `w&&isNight()` (önce `!isNight()`). Yan görev canavarları `v230` `spawnMob` ile doğduğu için etkilenmez (Tarık, Kahraman Dede).
-- **Sincap XP 5** (ANIM, önce 3). **Sürü boyu (30_act1 Orman notu):** `spawnIn` saldırgan sürüler Sv 1–3: 2, Sv 4–6: 2–3, sonra tablo; önceki kod `!D.z` ile bu kuralı yalnız Çayır/Orman canlılarına uyguluyordu (Bataklık kurdu, Kül kurdu Sv 1'de de 2–4 gelebiliyordu), artık her biyomda. Orman Deri parçası oranları (Sincap %60, Karaca %80 ×1–2, Kunduz %75, Domuz %70 ×1–2) kodla zaten aynıydı.
-- **Yan görev ödülleri:** 42 görevin `c`/`x` verisi belgeden (36_yan_gorevler tabloları, 37_magaralar) güncellendi (41 değişti; Kökçü Fidan aynı). Oyunda dökülen `q.c`/`q.xp` belgeyle otomatik karşılaştırıldı: 0 fark.
-- **OYN-07:** `v230` `mapSQ` büyük haritada tuvalin ekran ölçeğini (`canvas.width/clientWidth`) hesaba katar: "?" ve sisli daire en az ~18 ekran pikseli.
-- **OYN-08:** `talkUsta` (ana kod): R2 açılmamışsa (`__pl186.unlocked(R2)` değil, bitmemiş, sürmüyor) ilk sözü "Önce Börü'nün işini bitir evlat, sonra sana bir barınak çatarız." (ilk tanışmada hediye metninden önce).
-- **ORM-07:** belgede "konuşma açıkken uzaklaşınca pencere kapanır" kuralı yok; dokunulmadı (normalde konuşma sırasında yürünmüyor, yalnızca ışınlamayla görülür).
-- **Ölçüm** (`olcum.js` CPU×4, gl; 3.46 → 3.47): BOOT 18.467 → 18.794 ms; kumsal avg 185,4 → 188,2; yürürken 167,8 → 158,1; PLAY 10 sn js 3.992 → 4.349 ms (gürültü içinde).
-- **Geri almak için:** `refreshVis` (v3.46 hali), `v181` `DL.free`/`quitLesson` ve üç `!DL.free` koşulu, `BANIM[1]` domuz koşulu, `Sincap xp`, `spawnIn` sürü satırı, yan görev `c`/`x` değerleri (v3.46 hali), `mapSQ` `K`, `talkUsta` `lock`. Kayıt alanı ve MAPV değişmedi.
 - Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
 

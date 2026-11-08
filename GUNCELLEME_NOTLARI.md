@@ -8,6 +8,29 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.67 · 8 Kasım 2026
+
+### Oynanış
+- **Kamış ok gövdesi oyundan kalktı:** hiçbir ok gövde istemiyordu. Elindeki gövdeler kendi malzemelerine döner: her biri 3 Kamış + 1 İp (çanta, sandık, köpek sırtı, yer; hepsi). Tarif kitabından da düştü. Kamış hâlâ Kamış hasır, Kamış flüt ve Kamış çizmede kullanılıyor.
+- **Kemik ok ucu artık alet istemiyor:** elle yapılıyor, Çekiç taşı gerekmiyor (fiyatı 11 sikke kalıyor).
+- **Davut'un "Hayvanlara bir yuva" (CB2) görevi:** ödül 80 → **300 sikke** (XP 60 aynı).
+- **Ahşap karyola 738 sikke** (önce 475'te kalmıştı; boya eklenince fiyatı boyanın payı kadar arttı). Usta Sinan'ın işçiliği 95 → 148.
+- **Zor modda "Deneyerek bul":** kazana en çok **7** farklı malzeme atılır (6'ydı; Obsidyen mızrak 7 malzemeli). Kazandaki bir malzemeye yeniden dokununca **adedi artar** (çipte "×N"). Aynı malzemelerle birden çok tarif varsa (ör. Tabure/Sandalye/Raf, aynı metalin baltası ve savaş çekici) kazan adetlere de bakar; tutmuyorsa "birden çok tarif var; adetleri değiştirerek dene" der ve en yakın tarife kaç adet fark olduğunu söyler. Malzemesi, adedi ve yeri birebir aynı olan tarifler (Öğütme taşı ile Bileği taşı; Bakır, Çelik, Kara çelik, Mor kristal balta ile topuzu) birlikte bulunur: "İki tarif buldun: Bakır balta ve Bakır topuz", ikisi de öğrenilir, ikisine de XP.
+
+### Düzeltmeler
+- **Etkili okların fiyatı düzeldi:** Keskin/Alevli/Zehirli oklar normal okun ~10 katına satılıyordu (Keskin Tunç ok 680). Artık belgedeki kural: tanesi ok + yağın onda biri, × 1,1 (Keskin Tunç ok 98, Alevli Kara çelik ok 2.033; 21 okun hepsi). Pazar ve tarif ekranları yeni fiyatı gösterir.
+- **Kazanda görünmeyen 40 tarif:** Usta Sinan'ın kurduğu 33 yapı (Ağıl, Kulübe, Kerpiç ev, Çömlek fırını, Hasır yatak…) ve 7 inşa parçası (Toprak yol, Çakıl yol, Ahşap parke, Dal çit, Çit, Taş duvar, Tahta kapı) kazanın tarif listesinde yoktu; inşa parçaları tarif kitabında da görünmüyordu. Artık hepsi kazanda öğrenilir (Davut'un Ağıl görevi takılmaz).
+- **İkinci tarifler (varyantlar) asıl tarifle aynı:** "Bakır ok (Bıldırcın tüyü ile)", "Tunç ok (Yaban kazı tüyü ile)", "Demir ok (Turna kuşu tüyü ile)" artık asıl tarif gibi ok ucunu da ister ve asıl tarif kadar ok verir (Tunç/Demir 3 yerine 10, Bakır 14 yerine 18; Goblin oklu Basit ok 7 yerine 11). "Ahşap karyola (Gölge postu ile)" artık Kükürt sarısı boyayı da ister.
+
+### Tasarım belgesi
+- Tarifler › Ev eşyası: boyalı ev eşyası fiyat kuralı (kural eski fiyatın altında kalırsa eski fiyat + boya × zincir çarpanı; karyola 738).
+- Tarifler › Varyant tarifler: "varyant, asıl tarifin bugünkü girdileriyle aynıdır" cümlesi; 3 ok satırına uç ve adet, karyola satırına boya; Goblin oku satırı → 11.
+- Sistemler › Zorluk: Deneyerek bul 7 malzeme, adet artırma, aynı türlü tariflerde adet kuralı, birebir aynı tarifler birlikte bulunur.
+- Eşyalar: Çekiç taşının kullanıldığı yerlerden Kemik ok ucu çıktı.
+- (Yönetici/Analist yazdı: CB2 300, Kemik ok ucu alet istemez, Kamış ok gövdesi kalktı, etkili ok fiyatları.)
+
+---
+
 ## Versiyon 3.66 · 8 Kasım 2026
 
 ### Oynanış
@@ -358,30 +381,5 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 - Büyük haritada ana görevin "!"i de yan görevin "?"si kadar büyük ve okunur.
 - Fareyle bir kişinin üstüne gelince ipucu doğru tuşu (F) yazar.
 - "Yeni ders" kartı açık bir pencerenin (konuşma, sipariş, pazar, harita) üstüne binmez; pencere kapanınca çıkar.
-
----
-
-## Versiyon 3.47 · 6 Kasım 2026
-
-### Oynanış
-
-- **Görev işaretleri bulunduğun yere göre:** iki "!" önce bulunduğun bölgedeki kişilerde çıkar. Orman'a varınca Usta Sinan'ın ilk görevi hemen görünür.
-- **Börü'nün kaçma dersi:** öğreticiyi geçtiysen ders seni Börü'nün yanında tutmaz; uzaklaşırsan ders biter, istediğin zaman Börü'den yeniden alabilirsin.
-- **Yaban domuzları geceleri:** Orman'da yaban domuzu artık yalnızca gece çıkar ve gördüğü an saldırır.
-- Usta Sinan'ın sana henüz işi yokken ilk sözü seni nereye gideceğine yönlendirir.
-
-### Denge
-
-- **Yan görev ödülleri yükseldi:** bütün yan görevler artık aynı bölgenin ana görevlerinden belirgin biçimde fazla sikke ve XP verir (ör. Güvercinci Bulut 210 sikke · 170 XP, Kristalci Yaren 1.240 sikke · 2.070 XP).
-- Sincap avı 5 XP verir.
-- Sürü hâlinde gelen saldırgan canlılar düşük seviyede her bölgede küçük gelir: Seviye 1–3'te 2, Seviye 4–6'da 2–3.
-
-### Arayüz
-
-- Büyük haritada yan görev "?"si ve sisli daire, haritayı ne kadar uzaklaştırırsan uzaklaştır okunur büyüklükte kalır.
-
-### Tasarım belgesi
-
-- Orman bölümü oyunla karşılaştırıldı: Deri parçası oranları, canlıların doğma koşulları, sürü boyunun seviyeyle büyümesi, Sarkıt ve yeni yan görev ödülleri eklendi.
 
 ---
