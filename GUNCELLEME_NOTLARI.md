@@ -8,6 +8,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.71 · 8 Kasım 2026
+
+### Arayüz
+- **Yeni imleç:** oyun alanındaki mor nişangâhın yerine **mor ışıklı piksel el**: krem renkli, ince mor kenarlı, parmak ucu morla parlayan, çevresinde soluk mor bir ışık olan bir el. Toplanacak, konuşulacak ya da kullanılacak bir şeyin üstüne gelince **avucunu açar**, mor ışık belirginleşir ve kıvılcım çıkar. Menülerdeki krem/mor ok aynı kaldı. (Yalnızca fareyle oynayanlar için; telefonda imleç yok.)
+
+### Düzeltmeler
+- **Leşlerde çift gölge:** yere düşen canlının altında artık tek gölge var (ayaktaki gölgesi leşle birlikte dönüp ikinci bir gölge gibi görünüyordu).
+- **Kemal'in böğürtlenleri uygun yerde çıkar:** öğreticinin 5 böğürtleni (ve Zümrüt'ün, Börü'nün dersinde bırakılanlar, uzaktaki çalının yerine çıkan yeni çalı) artık en baştan kişilerden, ateşlerden (Kemal'in ateşi dahil), ağaçlardan uzak bir yere konur ve orada kalır; yanına gidince yer değiştirmez.
+- **Robot köpeğin yokken R hiçbir şey açmaz:** köpekler menüsü, Ayarlar › Kontroller'deki "Robot köpekler" satırı ve kol menüsündeki düğme ilk köpek gelene kadar görünmez (ileride gelen bir şeyi önceden göstermesin).
+
+### Tasarım belgesi
+- ACT 1 › Adanın yerleşimi: öğreticinin bıraktığı malzemelerin yeri kuralı. Sistemler › Ölüm pozu ve leş: tek gölge. Sistemler › Kontroller: R tuşu köpek yokken; Fare imleci: mor ışıklı piksel el.
+
+---
+
 ## Versiyon 3.70 · 8 Kasım 2026
 
 ### Oynanış
@@ -381,25 +396,3 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 - **Bataklık kurdu** biraz zayıfladı (can 450, vuruş 52, 114 XP). Bataklık'taki bütün canlılar 1,5 kat XP verir.
 - **Vaşak** daha çetin: can 1.050, vuruş 112.
 - **Yan görev ödülleri:** Lale, Ela ve Mor Kristal'in altı görevinin ödülleri yeniden ayarlandı.
-
-## Versiyon 3.51 · 7 Kasım 2026
-
-### Düzeltmeler
-
-- **Bataklık görevleri açılmıyordu:** Avcı Doğan ilk konuşmada Kamış çizme ve Panzehir tariflerini artık gerçekten öğretiyor; "Çamur yürüyüşü" görevi açılıyor ve Bataklık'taki görev zinciri sürüyor. Doğan'la daha önce tanışmış oyuncular da tarifleri kayıt yüklenince ya da Doğan'la bir sonraki konuşmada alır.
-- **Köprüye her odun:** kırık köprüler için her tür odun sayılır (Çam, Meşe, Kayın, Ladin…).
-- Görevler penceresinde artık eski birleştirme yuvaları görünmüyor.
-- Adlara gelen ekler doğru: "Hekim Şifa'ya götür", "Seviye 6'ya ulaş".
-- Sınırsız sikke açıkken de yan görevlerin sikkesi kesene eklenir.
-
-### Oynanış
-
-- **Kamış çizme elle yapılır:** 6 Kamış, 3 İp, 2 Yosun; savunma 13, değeri 149 sikke.
-- Hekim Şifa'nın kazanını beklerken önce bir Engerek, sonra iki kez birer Bataklık kurdu gelir.
-- Bir kişinin hemen yanındayken F önce o kişiyle konuşur, yerdeki bir şeyi toplamaz.
-
-### Arayüz
-
-- Seviye atlayınca kısa bir "+N seviye puanı" yazısı çıkar; birden çok seviye atlarsan tek yazıda toplanır.
-- Gün başı yazısı ile seviye yazısı artık dünyada da üst üste binmez, sırayla gelir.
-- Telefonda ev içinde Vur düğmesi gizlenir, sol menü kapalı açılır.

@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.70</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.71</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.70 · 8 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Hava artık mevsimden ve sıcaklıktan gelir.</strong> Adanın bir sıcaklığı var: yıl boyunca yumuşak bir eğri (yaz ortası ~26°, kış ortası ~−3°), her günün kendi farkı, gün içinde 14:00'te en sıcak, 05:00'te en soğuk; Kayalık Dağ daha soğuk, Kül Diyarı ve Ejder Volkanı çok sıcak.</li><li><strong>Yağmur mu kar mı, sıcaklık belirler:</strong> 0°'nin altında kar (fırtınada tipi), üstünde yağmur. Sonbaharın son günleri ve ilkbaharın ilk günleri de soğuk gecelerde kar görebilir; kışın ılık bir günde yağmur da yağabilir. Tipide şimşek çakmaz.</li><li><strong>Hava sırayla değişir:</strong> açık → bulut → yağış → (fırtına) → bulut → açık; artık güneşli bir havadan birden fırtınaya geçilmez. Sis en çok sabahları çıkar.</li><li><strong>Mevsime göre yağış:</strong> kışın bulut yağışa en sık döner (%45) ve yağış uzun sürer (2,5–5 dk); yazın seyrek (%18) ve kısa (1–1,5 dk), ama yaz sağanaklarının çoğu kısa fırtınadır; sonbahar yağmurlu ve fırtınalı, ilkbahar arası.</li><li><strong>Kar yerde birikir:</strong> kar yağdıkça zemin önce yer yer, sonra her yer <strong>yavaş yavaş beyazlar</strong> (~5,5 dakikalık karda tamamen; tipide iki kat hızlı). Hava 0°'nin üstüne çıkınca <strong>erir</strong>; yağmur yağarsa 4 kat, güneşli gündüz 1,5 kat hızlı. Su, Kül Diyarı ve Ejder Volkanı karlanmaz; göller donmaz.</li></ul><h3>Görsel</h3><ul><li>Zeminde kar örtüsü: küçük beyaz öbekler belirip büyür ve birleşir, eriyince yine öbek öbek çekilir.</li></ul><h3>Arayüz</h3><ul><li>Saat kutusunun ikinci satırında mevsim ve sıcaklık ("Kış · −6°"); kar yağarken hava adı "Kar" ya da "Tipi". Kutu, satır sığsın diye kendi genişliğini ayarlar.</li></ul><h3>Düzeltmeler</h3><ul><li>Yağmur başladığında çıkan yazıda artık oyunda olmayan tarlalar anılmıyor.</li></ul><h3>Kayıtlar</h3><ul><li>Yerdeki kar örtüsü kayda yazılır; eski kayıtlar karsız açılır.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.71 · 8 Kasım 2026</h2><h3>Arayüz</h3><ul><li><strong>Yeni imleç:</strong> oyun alanındaki mor nişangâhın yerine <strong>mor ışıklı piksel el</strong>: krem renkli, ince mor kenarlı, parmak ucu morla parlayan, çevresinde soluk mor bir ışık olan bir el. Toplanacak, konuşulacak ya da kullanılacak bir şeyin üstüne gelince <strong>avucunu açar</strong>, mor ışık belirginleşir ve kıvılcım çıkar. Menülerdeki krem/mor ok aynı kaldı. (Yalnızca fareyle oynayanlar için; telefonda imleç yok.)</li></ul><h3>Düzeltmeler</h3><ul><li><strong>Leşlerde çift gölge:</strong> yere düşen canlının altında artık tek gölge var (ayaktaki gölgesi leşle birlikte dönüp ikinci bir gölge gibi görünüyordu).</li><li><strong>Kemal'in böğürtlenleri uygun yerde çıkar:</strong> öğreticinin 5 böğürtleni (ve Zümrüt'ün, Börü'nün dersinde bırakılanlar, uzaktaki çalının yerine çıkan yeni çalı) artık en baştan kişilerden, ateşlerden (Kemal'in ateşi dahil), ağaçlardan uzak bir yere konur ve orada kalır; yanına gidince yer değiştirmez.</li><li><strong>Robot köpeğin yokken R hiçbir şey açmaz:</strong> köpekler menüsü, Ayarlar › Kontroller'deki "Robot köpekler" satırı ve kol menüsündeki düğme ilk köpek gelene kadar görünmez (ileride gelen bir şeyi önceden göstermesin).</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 sikke</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -20847,12 +20847,15 @@ setInterval(()=>{try{if(onTitle)return;const now=performance.now(),t=gm();
   for(const c of CORPSES.slice()){if(c.vis){if(now-c.t0>VIS*1000)remove(c,true);continue}
     if(!c.keep&&t-c.born>=LIFE)remove(c,c.isl===ISLE)}}catch(e){}},250);
 // drawing: under the drops, on its side, a short fall first
+// v3.71 (Boğaç: "2 farklı gölge çıkıyor"): a carcass has one shadow; the standing creature's own (black, 22–25 %) is left out
+const isSh=v=>typeof v==='string'&&/^rgba\(0,\s*0,\s*0,\s*0?\.2[25]\)$/.test(v);
+function noShadow(f){const c=ctx;c.fill=function(){if(isSh(c.fillStyle))return;return Object.getPrototypeOf(c).fill.apply(c,arguments)};c.fillRect=function(){if(isSh(c.fillStyle))return;return Object.getPrototypeOf(c).fillRect.apply(c,arguments)};try{f()}finally{delete c.fill;delete c.fillRect}}
 const _dd=drawDrops;drawDrops=function(time,inView){try{const now=performance.now(),t=gm();for(const c of CORPSES){if(c.gone||c.isl!==ISLE||!inView(c.x,c.y,40))continue;
   let al=1;if(c.vis){const a=(now-c.t0)/1000;if(a>VIS-1)al=Math.max(0,VIS-a)}else if(!c.keep&&t-c.born>=LIFE-BLINK&&Math.floor(now/220)%2)continue;
   const k=Math.min(1,(now-c.t0)/350),ang=c.side*Math.PI/2*(k<1?k*k:1),R=(ANIM[c.k]&&ANIM[c.k].r)||6,bump=k<1?0:0;
   const x=Math.round(c.x),y=Math.round(c.y);
   ctx.save();ctx.globalAlpha=.3*al;ctx.fillStyle='#000';ctx.beginPath();ctx.ellipse(x-c.side*R*.6*k,y+1,R*1.3+3,2.6,0,0,Math.PI*2);ctx.fill();ctx.restore();
-  ctx.save();ctx.globalAlpha=al;ctx.translate(x,y+1+bump);ctx.rotate(ang);ctx.translate(-x,-y);try{c.g.x=c.x;c.g.y=c.y;drawAnimal(c.g,0)}catch(e){}ctx.restore()}}catch(e){}
+  ctx.save();ctx.globalAlpha=al;ctx.translate(x,y+1+bump);ctx.rotate(ang);ctx.translate(-x,-y);try{c.g.x=c.x;c.g.y=c.y;noShadow(()=>drawAnimal(c.g,0))}catch(e){}ctx.restore()}}catch(e){}
   return _dd.apply(this,arguments)};
 // the save keeps them (kind, place, loot, age)
 {const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{const t=gm();s.v337c=CORPSES.filter(c=>!c.vis&&!c.gone).map(c=>[c.k,Math.round(c.x),Math.round(c.y),c.loot,t-c.born,c.keep?1:0,c.g.face||1,c.isl,c.g.boss?1:0,c.g.base||null])}catch(e){}return s}}
@@ -21666,9 +21669,9 @@ function pplNow(){const L=[];const add=o=>{if(o&&isFinite(o.x)&&o.x>-9e4)L.push(
   try{const G=window.__plGIVER||{};for(const g in G){try{add(G[g]())}catch(e){}}}catch(e){}
   try{for(const o of XTRA){if(!o.on||!o.on())continue;let l='';try{l=String(typeof o.label==='function'?o.label():o.label||'')}catch(e){}if(/^Konuş/.test(l))add(o)}}catch(e){}
   return L}
-window.__plPpl=pplNow;   // v3.65: İnşa's "too near a person" rule reads the same list
+window.__plPpl=pplNow;window.__plNearP=(x,y)=>{PPL=pplNow();return nearP(x,y)};   // v3.71: the lesson's things are placed away from people   // v3.65: İnşa's "too near a person" rule reads the same list
 const nearP=(x,y)=>{for(let i=0;i<PPL.length;i+=2){const dx=PPL[i]-x,dy=PPL[i+1]-y;if(dx<PR&&dx>-PR&&dy<PR&&dy>-PR&&dx*dx+dy*dy<PR*PR)return true}return false};
-const pplClear=L=>{for(const n of L){if(!n.alive||n.mine)continue;const R=RES[n.name];if(R&&R.cave)continue;if(nearP(n.x,n.y)){n.alive=false;n.t=Math.max(n.t||0,(R&&R.respawn)||30)}}};
+const pplClear=L=>{for(const n of L){if(!n.alive||n.mine||n.tzN||n.tutN)continue;const R=RES[n.name];if(R&&R.cave)continue;if(nearP(n.x,n.y)){n.alive=false;n.t=Math.max(n.t||0,(R&&R.respawn)||30)}}};
 {const _fs=findSpot;findSpot=function(){let r=null;for(let k=0;k<6;k++){r=_fs.apply(this,arguments);if(!r||!nearP(r.x,r.y))return r}return r}}
 {const _rz=resetState;resetState=function(){pplAll=false;return _rz.apply(this,arguments)}}
 {const _rs=restore;restore=function(){pplAll=false;return _rs.apply(this,arguments)}}
@@ -22493,6 +22496,61 @@ function paint(e,bx,by,lv){const g=e.g,hT=T/2,L=Math.round((lv/100*1.15-.08)*250
       if(e.lv>0)ctx.drawImage(e.c,bx*CPX,by*CPX)}
   }catch(e){}return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v370hava: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v371yer">
+// v3.71 (Boğaç: "her zaman böğürtlenler uygun olan yerde belirmeli"): the lesson's things (Kemal's berries, Zümrüt's sticks and stones,
+// Börü's, the new berry bush) are put where they may stay: not within ~2 tiles of a person, ~1,5 tiles of a fire, nor by a tree or a rock;
+// they carry tzN / tutN, so the people rule (v345) never moves them later (belge ACT 1 › Adanın yerleşimi).
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const nearP=(x,y)=>{try{return !!(window.__plNearP&&window.__plNearP(x,y))}catch(e){return false}};
+const nearFire=(x,y)=>{for(const f of FIRES)if(Math.hypot(f.x-x,f.y-y)<26)return true;try{for(const c of camps)if(Math.hypot(c.x-x,c.y-y)<26)return true}catch(e){}
+  try{for(const L of lightSources())if(L&&Math.hypot(L[0]-x,L[1]-y)<26&&Math.hypot(L[0]-player.x,L[1]-(player.y-10))>8)return true}catch(e){}return false};   // Kemal's fire, the furnace, the cauldron… (not the torch in your hand)
+const free=(x,y,name)=>reachAt(x,y)&&!blocked(x,y)&&tileAt(x,y)<=(name==='Kum'?2:1)&&!nodes.some(o=>o.alive&&Math.hypot(o.x-x,o.y-y)<12)&&!treesNear(x,y,o=>Math.hypot(o.x-x,o.y-y)<14)&&!nearP(x,y)&&!nearFire(x,y);
+tzPlace=function(name,n,cx,cy){let k=0;for(let t=0;t<600&&k<n;t++){const a=Math.random()*6.28,d=40+Math.random()*(t<300?70:120),x=cx+Math.cos(a)*d,y=cy+Math.sin(a)*d;
+  if(!free(x,y,name))continue;nodes.push({name,x,y,alive:true,t:0,v:Math.random(),pop:.35,tzN:1});k++}};
+bringBerry=function(){let b=null,bd=1e9;for(const n of nodes)if(n.alive&&n.name==='Böğürtlen'){const d=Math.hypot(n.x-player.x,n.y-player.y);if(d<bd){bd=d;b=n}}if(!b||bd<170)return;
+  for(let k=0;k<120;k++){const an=Math.random()*6.28,d=60+Math.random()*50,x=player.x+Math.cos(an)*d,y=player.y+Math.sin(an)*d;if(!free(x,y,'Böğürtlen'))continue;nodes.push({name:'Böğürtlen',x,y,alive:true,t:0,v:Math.random(),pop:.35,tutN:1});return}};
+// v3.71 (Boğaç: "daha robot köpeğim yokken R'ye bastığımda menüsü açılmamalı"): until the first dog nothing tells of them:
+// R (and any other way) does not open the dogs' window, the key row in Kontroller and the pad menu's button are hidden
+{const _om=openMenu;openMenu=function(m){if(m==='dogs'&&!dogs.length)return;return _om.apply(this,arguments)}}
+{const st=document.createElement('style');st.textContent='body.nodogs #p-dogs{display:none!important}body.nodogs #b5kd .b5k:has([data-kb="dogs"]){display:none!important}';document.head.appendChild(st)}
+setInterval(()=>{try{document.body.classList.toggle('nodogs',!dogs.length)}catch(e){}},500);
+}).toString()+')()')}catch(e){try{window.__hamErr('v371yer: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v371el">
+// v3.71 (Boğaç: "nişana benzemesin, mor ile eli birleştir; kenarları ince, mor ışığa uygun, şık pixel art"): the cursor over the game is a
+// pixel hand in the purple light (belge Sistemler › Kontroller › Fare imleci). 16 × 16 shapes drawn at 2×: cream hand, a thin deep purple edge,
+// a purple fingertip, a faint purple light around it; over something you can gather, talk to or use (pickAt) the hand opens and the light grows.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+if(TOUCH)return;
+const POINT=["................","......XX........","......XX........","......XX........","......XX........","......XX........","......XXXXX.....","......XXXXXXX...","...XX.XXXXXXXX..","...XXXXXXXXXXX..","....XXXXXXXXXX..",".....XXXXXXXXX..","......XXXXXXX...","......XXXXXXX...","................","................"];
+const PALM =["................","....X.X.X.......","....X.X.X.X.....","....X.X.X.X.....","....X.X.X.X.....","....XXXXXXX.....",".X..XXXXXXX.....",".XX.XXXXXXX.....","..XXXXXXXXX.....","...XXXXXXXX.....","....XXXXXXX.....",".....XXXXX......",".....XXXXX......","................","................","................"];
+const KNUCK=[[8,7],[10,7],[12,8]];   // creases between the curled fingers (pointing hand)
+const SC=2,N=16;
+function make(mask,open){const c=document.createElement('canvas');c.width=c.height=N*SC;const g=c.getContext('2d');
+  const F=(x,y)=>x>=0&&y>=0&&x<N&&y<N&&mask[y][x]==='X';
+  const E=(x,y)=>!F(x,y)&&(F(x+1,y)||F(x-1,y)||F(x,y+1)||F(x,y-1));
+  const px=(x,y,col)=>{g.fillStyle=col;g.fillRect(x*SC,y*SC,SC,SC)};
+  const glowA=open?.78:.5;
+  for(let y=0;y<N;y++)for(let x=0;x<N;x++){if(F(x,y)||E(x,y))continue;let near=false,diag=true;for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++)if(E(x+dx,y+dy)){near=true;if(!dx||!dy)diag=false}if(near)px(x,y,`rgba(160,80,255,${(diag?glowA*.55:glowA).toFixed(2)})`)}
+  for(let y=0;y<N;y++)for(let x=0;x<N;x++){if(E(x,y))px(x,y,'#3a1c5c');else if(F(x,y)){const shade=!F(x+1,y)||!F(x,y+1);px(x,y,shade?'#dccbf0':'#f6eedc')}}
+  if(!open){for(const [x,y] of KNUCK)if(F(x,y))px(x,y,'#a98ed4');px(6,1,'#c9a0ff');px(7,1,'#e8d8ff')}
+  else{for(const x of [4,6,8,10]){const y=x===10?2:1;if(F(x,y))px(x,y,'#d4b4ff')}px(6,8,'#e8d8ff');px(13,2,'#ffffff');px(2,3,'#e8d8ff');px(14,6,'#c9a0ff')}
+  return c.toDataURL('image/png')}
+const URL_P=make(POINT,false),URL_O=make(PALM,true),HX=13,HY=2;
+const st=document.createElement('style');st.id='v371el-css';
+st.textContent=`@media (pointer:fine){body:not(.ontitle) #game{cursor:url("${URL_P}") ${HX} ${HY},pointer!important}body.plpalm:not(.ontitle) #game{cursor:url("${URL_O}") ${HX} ${HY},pointer!important}}`;
+document.head.appendChild(st);
+let last=0,mx=-1,my=-1,on=false;
+const set=v=>{if(v!==on){on=v;document.body.classList.toggle('plpalm',v)}};
+cv.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;const now=performance.now();if(now-last<80)return;last=now;check()},{passive:true});
+cv.addEventListener('mouseleave',()=>set(false));
+function check(){try{if(onTitle||paused||dlgOpen||craftOpen||placing||mx<0){set(false);return}const wx=cam.cx+mx/S,wy=cam.cy+my/S;const p=pickAt(wx,wy),tg=p&&p.tg;set(!!tg&&tg.kind!=='water')}catch(e){set(false)}}
+setInterval(()=>{if(mx>=0)check()},250);   // the world moves under a still mouse too
+window.__plHand={point:URL_P,palm:URL_O};
+}).toString()+')()')}catch(e){try{window.__hamErr('v371el: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
