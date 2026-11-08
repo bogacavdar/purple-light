@@ -165,27 +165,27 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 - Timsah dişi kazma: 2 Timsah dişi, 2 Demir külçesi, 1 Bataklık servisi sapı, 2 Taş
 - Gümüş eldiven: 1 Gümüş külçesi, 1 Demir halka, 1 Deri parçası
 - Gümüş çizme: 1 Gümüş külçesi, 1 Demir halka, 1 Deri parçası, 4 Lif
-- Kuvars savaş çekici: 3 Yontulmuş kuvars, 1 Ardıç sapı, 1 Sinir kirişi, 1 Bileme macunu
-- Kuvars topuz: 2 Yontulmuş kuvars, 1 Ardıç sapı, 2 İp, 1 Bileme macunu
+- Kuvars savaş çekici: 3 Yontulmuş kuvars, 1 Huş sapı, 1 Sinir kirişi, 1 Bileme macunu
+- Kuvars topuz: 2 Yontulmuş kuvars, 1 Huş sapı, 2 İp, 1 Bileme macunu
 - Huş yayı: 3 Huş odunu, 2 Sinir kirişi, 1 Gümüş külçesi
 - Ejder miğferi: 1 Kara pul, 1 Demir levha, 1 Deri parçası
 - Ejder eldiveni: 1 Kara pul, 2 Lav pulu, 1 Deri parçası
 - Ejder çizmesi: 1 Kara pul, 2 Kül kurdu postu, 4 Lif
 - Ejder kılıcı: 2 Ejder kemiği, 1 Kara çelik külçesi, 1 Deri parçası, 1 Ateş yağı
-- Ejder savaş çekici: 2 Ejder kemiği, 2 Kara çelik külçesi, 1 Kızıl sedir sapı, 1 Ateş yağı
-- Ejder topuzu: 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kızıl sedir sapı, 1 Ateş yağı
+- Ejder savaş çekici: 2 Ejder kemiği, 2 Kara çelik külçesi, 1 Kül ağacı sapı, 1 Ateş yağı
+- Ejder topuzu: 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kül ağacı sapı, 1 Ateş yağı
 - Ejder mızrağı: 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Uzun sopa, 3 İp, 1 Ateş yağı
 - Ejder yayı: 3 Kül ağacı odunu, 1 Ejder kemiği, 2 Sinir kirişi
 - Ejder baltası: 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kül ağacı sapı, 2 İp
 - Ejder kazması: 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Kara çelik külçesi, 1 Kül ağacı sapı
 - Ametist miğfer: 2 Ametist, 1 Kristal ipek, 1 Deri parçası
 - Kristal ipek çizme: 2 Kristal ipek, 1 Işık pulu, 1 Deri parçası
-- Ametist savaş çekici: 4 Ametist, 2 Obsidyen, 1 Işık ağacı sapı, 1 Zehir yağı
-- Ametist topuz: 2 Ametist, 1 Obsidyen, 1 Işık ağacı sapı, 1 Zehir yağı
+- Ametist savaş çekici: 4 Ametist, 2 Obsidyen, 1 Mor söğüt sapı, 1 Zehir yağı
+- Ametist topuz: 2 Ametist, 1 Obsidyen, 1 Mor söğüt sapı, 1 Zehir yağı
 - Işık ağacı yayı: 3 Işık ağacı odunu, 2 Sinir kirişi, 1 Ametist
 - Kürk yelek: 2 Deri parçası, 1 Sinir kirişi, 5 Lif, 4 İp · Taş savaş çekici: 1 Sopa, 4 Taş, 3 İp · Taş topuz: 1 Sopa, 2 Taş, 2 İp (elle)
 - Obsidyen balta, Obsidyen kazma ve Obsidyen mızrağa 1 Ametist eklendi; balta ve kazma **6. kademe** (Mor Kristal Vadisi usta seti, Kudret döver). Çakmaktaşı, Kuvars ve Obsidyen mızrağa etkinin yağı eklendi.
-- Boşta kalan malzemeler setlere geçti: **Lav pulu** Ejder eldiveninde, **Kül kurdu postu** Ejder çizmesinde, **Bazalt sivri ucu** Ejder mızrağı ve Ejder kazmasında, **Kızıl sedir sapı** Ejder savaş çekici ve topuzunda.
+- Boşta kalan malzemeler setlere geçti: **Lav pulu** Ejder eldiveninde, **Kül kurdu postu** Ejder çizmesinde, **Bazalt sivri ucu** Ejder mızrağı ve Ejder kazmasında, **Kül ağacı sapı** Ejder savaş çekici ve topuzunda.
 - **Yeni usta zırhlarının direnci:** Meşe kabuk eldiven ve çizme kanama %10; Timsah miğfer ve eldiven zehir %15; Gümüş eldiven ve çizme kanama %15; Ametist miğfer ve Kristal ipek çizme zehir %20. Kamış çizme çamurda yavaşlatmaz.
 
 **Kaldırılanlar** (eski kayıtta eski fiyatıyla **sikkeye** çevrilir; çantada, giyilende ve yuvalarda olanlar; yüklenince "sikkeye çevrildi" yazar): Tavşan postu giysi (255), Geyik postu giysi (262), Karaca postu giysi (257), Kunduz postu giysi (262), Dağ keçisi postu giysi (258), Muflon postu giysi (258), Yaban domuzu postu giysi (258), Kurt postu giysi (257), Yaban öküzü postu giysi (267), Mağara ayısı postu giysi (270), Keten tunik (170), Boyalı tunik (296), Bataklık postu pelerin (100), Ayı postu pelerin (451), Kül postu pelerin (325), Timsah derisi zırh (158), Tüylü başlık (244), Bataklık çizmesi (479), Lav camı kılıcı (955), Kül böceği zırh (1736), Akrep kabuğu çizme (620), Lav pulu eldiven (550), Bazalt balta (92), Bazalt kazma (441), Bazalt mızrak (431); Alevli/Zehirli/Keskin Bazalt mızrak (431). Eski Alevli/Zehirli/Keskin Çakmaktaşı, Kuvars ve Obsidyen mızrak etkisiz mızrağa döner (artık etkileriyle doğarlar).
@@ -212,9 +212,9 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Çam yayı | Çayır | 12 | 0,7 sn | 260 | 80 | 3 Çam odunu, 1 Sinir kirişi, 1 Bakır külçesi | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 112 |
 | Meşe yayı | Orman | 17 | 0,68 sn | 280 | 110 | 3 Meşe odunu, 1 Sinir kirişi, 1 Tunç külçesi | Örs · Silahçı Durdu (Orman) ve üstü döver | 304 |
 | Kızılağaç yayı | Bataklık | 26 | 0,66 sn | 300 | 150 | 3 Kızılağaç odunu, 2 Sinir kirişi, 1 Demir külçesi | Örs · Silahçı Ali (Bataklık) ve üstü döver | 426 |
-| Dişbudak yayı (kısa) | Bataklık | 20 | 0,5 sn | 250 | 130 | 1 Dişbudak sapı, 1 Sinir kirişi, 2 İp, 2 Dal, 2 Taş | Örs · Silahçı Ali (Bataklık) ve üstü döver | 128 |
+| Dişbudak yayı (kısa) | Bataklık | 20 | 0,5 sn | 250 | 130 | 1 Bataklık servisi sapı, 1 Sinir kirişi, 2 İp, 2 Dal, 2 Taş | Örs · Silahçı Ali (Bataklık) ve üstü döver | 128 |
 | Akçaağaç yayı | Kayalık Dağ | 35 | 0,64 sn | 320 | 190 | 3 Akçaağaç odunu, 2 Sinir kirişi, 1 Çelik külçesi | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.022 |
-| Porsuk yayı (kısa) | Kayalık Dağ | 27 | 0,49 sn | 270 | 170 | 1 Porsuk sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 130 |
+| Porsuk yayı (kısa) | Kayalık Dağ | 27 | 0,49 sn | 270 | 170 | 1 Huş sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 130 |
 | Kızıl sedir yayı | Kül Diyarı | 45 | 0,62 sn | 340 | 230 | 3 Kızıl sedir odunu, 2 Sinir kirişi, 1 Kara çelik külçesi | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 2.961 |
 | Gece ağacı yayı | Mor Kristal Vadisi | 56 | 0,6 sn | 360 | 280 | 3 Gece ağacı odunu, 2 Sinir kirişi, 1 Mor kristal levhası | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 2.211 |
 

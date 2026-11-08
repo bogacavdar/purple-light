@@ -27,9 +27,34 @@
 - **"Herhangi" yok ("herhangi kafa karıştırıyor"):** hiçbir tarif ve görev "Herhangi sap", "Herhangi kalas" gibi bir grup istemez; her biri belli bir malzeme ister. Hangisi olduğu tarifin öbür malzemelerinin en çok hangi biyomdan geldiğine göre seçildi (eşitlikte ilerideki biyom; her biyomda bulunan Dal, Taş, Su, Ateş gibi malzemeler sayılmaz; hiçbiri belli bir biyoma ait değilse Çayır). Ağaçtan gelenler o biyomun ağacı: Çayır Çam, Orman Meşe, Bataklık Bataklık servisi, Kayalık Dağ Huş, Kül Diyarı Kül ağacı, Mor Kristal Vadisi Mor söğüt (ör. Çayır tarifleri Çam sapı, Orman tarifleri Meşe kalası ister). Kil: Çayır ve Orman Nehir, Bataklık Göl, Kayalık Dağ ve Kül Diyarı Kırmızı (tuğlada Kül Diyarı Cüruf tuğlası), Mor Kristal Beyaz. Reçine: Çayır Çam reçinesi, Orman Ladin reçinesi, Kayalık Dağ Huş katranı. Çakmak: Kıvılcım (Kayalık Dağ Pirit çakmağı, Kül Diyarı Kükürt çakmağı). Un: Çayır Yabani buğday unu, Orman Palamut unu, Bataklık Nilüfer kökü unu. ACT 2 metal külçeleri Taş kömürü ister. Tabloda her tarifin istediği yazar.
 - **Fiyat:** temel satış fiyatı = malzemelerin toplam değeri × zincir çarpanı (tarifin kaç adımlık bir zincirin ucunda olduğuna göre ×1,20'den ×1,45'e kadar) + gereken aletin değerinin %10'u.
 
-Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.57 oyun verisiyle sayıldı; üs kurmanın 7 yeni parçası dahil).
+## Sade malzeme (8 Kasım 2026, Boğaç: "çok fazla birbirine benzer malzeme var; yap bu sadeleştirmeyi")
 
-#### Yiyecek (282)
+Her biyomun ağaç zinciri **tek** kalas, sap, kömür ve kaşıkla yürür; adını biyomun asıl ağacından alır. Biyomun öbür ağaçlarının odunu atılmaz: her biri o biyomun kalasına çevrilir (aşağıdaki varyantlar). Odunlar, kabuklar, meyveler ve ağaçların kendisi olduğu gibi kalır; yalnızca aradaki türe özgü kalas/sap/kömür/kaşık kalktı.
+
+| Biyom | Asıl ağaç (kalas, sap, kömür, kaşık) | Odunu bu kalasa dönen öbür ağaçlar |
+|---|---|---|
+| Çayır | Çam | Kavak, Elma, Armut, Erik |
+| Orman | Meşe | Kayın, Ladin, Ihlamur, Fındık, Ceviz |
+| Bataklık | Bataklık servisi | Dişbudak, Mürver, Kızılağaç, Söğüt |
+| Kayalık Dağ | Huş | Porsuk, Akçaağaç, Kestane, Ardıç |
+| Kül Diyarı | Kül ağacı | Kara çam, Kızıl sedir, Ateş narı, Dikenli akasya |
+| Mor Kristal Vadisi | Mor söğüt | Gece ağacı, Işık ağacı, Yıldız eriği, Ay elması |
+| Yüzen Kayalar ve Dev Mantar Ormanı (ACT 2) | Mavi mantar (yalnız kalas) | Bulut çamı, Gök söğüdü, Rüzgâr meşesi, Bulut elması, Dev mantar, Spor ağacı, Kök ağacı |
+| Hurda Çölü (ACT 2) | Hurda palmiyesi (yalnız kalas) | Pas ağacı, Kuru çınar, Hurma |
+| Kristal Golem Ocağı (ACT 2) | Kristal çam (yalnız kalas) | Mavi sedir, Kristal armut, Taş ağacı |
+| ACT 2 son biyomlar | Kömür ağacı (yalnız kalas) | Obsidyen dikeni, Lav palmiyesi, Ejder meyvesi, Gök kamışı, Bulut kavağı, Yıldız akasyası, Gök üzümü |
+
+- **Varyant kalaslar:** her öbür ağaç için "Asıl kalas (X odunu ile)" tarifi vardır (ör. **Çam kalası (Kavak odunu ile)**): asıl kalas tarifinin aynısı, yalnız odunu o ağacınki; yapılınca çantaya asıl kalas girer. Kazanda öbür varyantlar gibi öğrenilir. 44 tane.
+- **Kalan isimler:** silah ve aletlerin sapları biyomun sapını ister (ör. Gümüş kılıç **Huş sapı**, Ametist kılıcı **Mor söğüt sapı**, Dişbudak yayı **Bataklık servisi sapı**, Porsuk yayı **Huş sapı**). Görevler: Usta Sinan'ın K1'i **6 Meşe kalası**, Ekin'in EK6'sı **8 Meşe kalası**, Yıldız'ın teleskop ayağı **4 Mavi mantar kalası** ister.
+- **Kurutulmuş otlar yok:** kurutulmuş kuşburnu, kekik, papatya, lavanta, nane, civanperçemi ve gelincik kalktı; onları isteyen tarifler (çaylar, merhemler) yerine **3 katı taze otu** ister (ör. 1 Kurutulmuş kekik → 3 Kekik).
+- **Kullanılmayan kurutulmuş yiyecekler yok:** hiçbir tarifte kullanılmayan 59 kurutulmuş et, balık, meyve ve mantar kalktı (çiği ve közlenmişi duruyor). Kalan kurutulmuşlar: sincap eti, böğürtlen, meyve keki, yabani elma (Neriman'ın N5 "Kış kurutmalığı" görevi ister) ve tek kullanıldığı tarif kurutulmuşu olan ebegümeci ve yıldız eriği (her malzeme bir tarifte kuralı).
+- **Kalkan varyantlar:** kalkan bir malzemeyi isteyen ya da çevrilince başka bir tarifin aynısı olan varyantlar silindi.
+- **Sayılar:** eşya 1505 → 1350, tarif 1105 → 982. Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
+- **Eski kayıtlar:** kayıt açılınca kalkan her şey yerine geçene çevrilir (çantada, sandıkta, kemerde, köpek çantasında, yerde, kitapta): türe özgü kalas/sap/kömür/kaşık biyomunkine, kurutulmuş ot 3 taze ota; karşılığı olmayan kurutulmuş yiyecekler eski satış fiyatından sikke olarak ödenir. Bir kez bildirim çıkar.
+
+Toplam **982 tarif**: 823 asıl tarif ve 159 varyant (oyun verisiyle sayıldı).
+
+#### Yiyecek (228)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
@@ -106,64 +131,10 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Kök mantarlı güveç | 2 Kök mantarı, 1 Mağara kurdu eti, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 160 |
 | Közlenmiş şiş | 1 Et şişi, 1 Kor, 5 Su, 4 Yaprak | – | Ateşte (pişirme menüsü) | 108 |
 | Kristal armut kompostosu ² | 3 Kristal armut, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 167 |
-| Kurutulmuş ahududu | 3 Ahududu, 3 Kuru ot | – | El yapımı (Tab) | 39 |
-| Kurutulmuş alabalık | 2 Alabalık, 1 Tuz, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 88 |
-| Kurutulmuş alıç | 3 Alıç, 3 Kuru ot | – | El yapımı (Tab) | 123 |
-| Kurutulmuş ardıç meyvesi | 3 Ardıç meyvesi, 3 Kuru ot | – | El yapımı (Tab) | 123 |
-| Kurutulmuş ateş narı | 3 Ateş narı, 3 Kuru ot | – | El yapımı (Tab) | 259 |
-| Kurutulmuş ay elması | 3 Ay elması, 3 Kuru ot | – | El yapımı (Tab) | 378 |
-| Kurutulmuş bıldırcın eti | 2 Bıldırcın eti, 1 Tuz, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 82 |
 | Kurutulmuş böğürtlen | 3 Böğürtlen, 3 Kuru ot | – | El yapımı (Tab) | 11 |
-| Kurutulmuş çapak | 2 Çapak, 1 Tuz, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 82 |
-| Kurutulmuş çayır mantarı | 3 Çayır mantarı, 3 Kuru ot | – | El yapımı (Tab) | 11 |
-| Kurutulmuş dağ keçisi eti | 1 Dağ keçisi eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 123 |
-| Kurutulmuş geyik eti | 1 Geyik eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 87 |
-| Kurutulmuş işık tilkisi eti | 1 Işık tilkisi eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 189 |
-| Kurutulmuş kadife balığı | 2 Kadife balığı, 1 Tuz, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 84 |
-| Kurutulmuş kanlıca | 2 Kanlıca, 3 Kuru ot | – | El yapımı (Tab) | 28 |
-| Kurutulmuş karaca eti | 1 Karaca eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 97 |
-| Kurutulmuş kartal eti | 1 Kartal eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 138 |
-| Kurutulmuş kayın mantarı | 2 Kayın mantarı, 3 Kuru ot | – | El yapımı (Tab) | 87 |
-| Kurutulmuş keklik eti | 2 Keklik eti, 1 Tuz, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 82 |
-| Kurutulmuş kerevit | 2 Kerevit, 1 Tuz, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 84 |
-| Kurutulmuş kızılcık | 3 Kızılcık, 3 Kuru ot | – | El yapımı (Tab) | 75 |
-| Kurutulmuş kızılkanat | 2 Kızılkanat, 1 Tuz, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 84 |
-| Kurutulmuş kristal geyik eti | 1 Kristal geyik eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 212 |
-| Kurutulmuş kunduz eti | 2 Kunduz eti, 1 Tuz, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 101 |
-| Kurutulmuş kurbağa | 3 Kurbağa, 1 Tuz, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 80 |
-| Kurutulmuş kurt eti | 1 Kurt eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 84 |
-| Kurutulmuş kuşburnu | 3 Kuşburnu, 3 Kuru ot | – | El yapımı (Tab) | 123 |
-| Kurutulmuş kuzugöbeği | 1 Kuzugöbeği, 3 Kuru ot, 1 Su, 1 Yaprak | – | El yapımı (Tab) | 22 |
-| Kurutulmuş mağara ayısı eti | 1 Mağara ayısı eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 133 |
-| Kurutulmuş mağara mantarı | 2 Mağara mantarı, 3 Kuru ot, 1 Su | – | El yapımı (Tab) | 15 |
-| Kurutulmuş mersin balığı | 1 Mersin balığı, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 120 |
 | Kurutulmuş meyve keki | 1 Yabani buğday unu, 1 Kurutulmuş böğürtlen, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 36 |
-| Kurutulmuş muflon eti | 1 Muflon eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 123 |
-| Kurutulmuş mürver | 3 Mürver, 3 Kuru ot | – | El yapımı (Tab) | 75 |
-| Kurutulmuş ördek eti | 2 Ördek eti, 1 Tuz, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 109 |
-| Kurutulmuş sazan | 2 Sazan, 1 Tuz, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 84 |
 | Kurutulmuş sincap eti | 3 Sincap eti, 1 Tuz, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 92 |
-| Kurutulmuş su samuru eti | 2 Su samuru eti, 1 Tuz, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 114 |
-| Kurutulmuş tatlısu kefali | 2 Tatlısu kefali, 1 Tuz, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 84 |
-| Kurutulmuş tatlısu levreği | 2 Tatlısu levreği, 1 Tuz, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 88 |
-| Kurutulmuş tatlısu midyesi | 3 Tatlısu midyesi, 1 Tuz, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 120 |
-| Kurutulmuş tavşan eti | 2 Tavşan eti, 1 Tuz, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 82 |
-| Kurutulmuş tavuk mantarı | 2 Tavuk mantarı, 3 Kuru ot | – | El yapımı (Tab) | 28 |
-| Kurutulmuş turna balığı | 1 Turna balığı, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 97 |
-| Kurutulmuş turna kuşu eti | 2 Turna kuşu eti, 1 Tuz, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 114 |
-| Kurutulmuş ur kekliği eti | 1 Ur kekliği eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 131 |
-| Kurutulmuş vaşak eti | 1 Vaşak eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 142 |
-| Kurutulmuş yabani armut | 3 Yabani armut, 3 Kuru ot | – | El yapımı (Tab) | 11 |
 | Kurutulmuş yabani elma | 3 Yabani elma, 3 Kuru ot | – | El yapımı (Tab) | 11 |
-| Kurutulmuş yabani erik | 3 Yabani erik, 3 Kuru ot | – | El yapımı (Tab) | 11 |
-| Kurutulmuş yaban atı eti | 1 Yaban atı eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 88 |
-| Kurutulmuş yaban çileği | 3 Yaban çileği, 3 Kuru ot | – | El yapımı (Tab) | 11 |
-| Kurutulmuş yaban domuzu eti | 1 Yaban domuzu eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 98 |
-| Kurutulmuş yaban kazı eti | 2 Yaban kazı eti, 1 Tuz, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 114 |
-| Kurutulmuş yaban mersini | 2 Yaban mersini, 3 Kuru ot | – | El yapımı (Tab) | 28 |
-| Kurutulmuş yaban öküzü eti | 1 Yaban öküzü eti, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 129 |
-| Kurutulmuş yayın | 1 Yayın, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 98 |
-| Kurutulmuş yılan balığı | 1 Yılan balığı, 1 Tuz, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 97 |
 | Kurutulmuş yıldız eriği | 3 Yıldız eriği, 3 Kuru ot | – | El yapımı (Tab) | 378 |
 | Kuşburnu ezmesi | 3 Kuşburnu, 1 Su | Taş havan | El yapımı (Tab) | 128 |
 | Kuşburnu suyu | 3 Kuşburnu, 1 Kırmızı çömlek, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 339 |
@@ -316,102 +287,51 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Yankı çorbası | 2 Yankı mantarı, 1 Kör kertenkele eti, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 91 |
 | Ziyafet sofrası | 1 Avcı yahnisi, 1 Yabani buğday yassı ekmeği, 4 Su, 4 Yaprak | – | El yapımı (Tab) | 198 |
 
-#### Ağaç (117)
+#### Ağaç (57)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Akçaağaç kabuğu | 1 Akçaağaç odunu, 2 Yaprak, 1 Su | – | El yapımı (Tab) | 37 |
-| Akçaağaç kalası | 2 Akçaağaç odunu, 2 Dal, 1 Lif | Taş balta | El yapımı (Tab) | 64 |
-| Akçaağaç kömürü | 2 Akçaağaç odunu, 1 Ateş, 2 Dal, 2 Lif | – | El yapımı (Tab) | 88 |
-| Akçaağaç sapı | 1 Akçaağaç kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 95 |
 | Ardıç kabuğu | 1 Ardıç odunu, 2 Yaprak, 1 Su | – | El yapımı (Tab) | 36 |
-| Ardıç kalası | 2 Ardıç odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 65 |
-| Ardıç kömürü | 2 Ardıç odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 90 |
-| Ardıç sapı | 1 Ardıç kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 95 |
-| Ateş narı kalası | 2 Ateş narı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 114 |
-| Ateş narı kömürü | 2 Ateş narı odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 141 |
-| Ateş narı sapı | 1 Ateş narı kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 161 |
-| Ay elması kalası | 2 Ay elması odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 151 |
-| Ay elması kömürü | 2 Ay elması odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 178 |
-| Ay elması sapı | 1 Ay elması kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 209 |
 | Bataklık servisi kalası | 2 Bataklık servisi odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 54 |
 | Bataklık servisi kömürü | 2 Bataklık servisi odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 81 |
 | Bataklık servisi sapı | 1 Bataklık servisi kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 83 |
-| Bulut çamı kalası ² | 2 Bulut çamı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 47 |
-| Bulut elması kalası ² | 2 Bulut elması odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 52 |
-| Bulut kavağı kalası ² | 2 Bulut kavağı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 114 |
+| Mavi mantar kalası ² | 2 Bulut çamı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 47 |
+| Mavi mantar kalası ² | 2 Bulut elması odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 52 |
+| Kömür ağacı kalası ² | 2 Bulut kavağı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 114 |
 | Ceviz kabuğu | 1 Ceviz odunu, 2 Yaprak, 1 Su | – | El yapımı (Tab) | 21 |
-| Ceviz kalası | 2 Ceviz odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 34 |
-| Ceviz kömürü | 2 Ceviz odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 59 |
-| Ceviz sapı | 1 Ceviz kalası, 4 Dal, 3 Lif | – | El yapımı (Tab) | 56 |
 | Çam kalası | 2 Çam odunu, 2 Dal, 1 Lif | Taş balta | El yapımı (Tab) | 15 |
 | Çam kömürü | 2 Çam odunu, 1 Ateş, 2 Dal, 2 Lif | – | El yapımı (Tab) | 39 |
 | Çam sapı | 1 Çam kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 31 |
-| Dev mantar kalası ² | 2 Dev mantar odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 62 |
-| Dikenli akasya kalası | 2 Dikenli akasya odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 114 |
-| Dikenli akasya kömürü | 2 Dikenli akasya odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 141 |
-| Dikenli akasya sapı | 1 Dikenli akasya kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 161 |
+| Mavi mantar kalası ² | 2 Dev mantar odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 62 |
 | Dişbudak kabuğu | 1 Dişbudak odunu, 2 Yaprak, 1 Su | – | El yapımı (Tab) | 26 |
-| Dişbudak kalası | 2 Dişbudak odunu, 2 Dal, 1 Lif | Taş balta | El yapımı (Tab) | 44 |
-| Dişbudak kömürü | 2 Dişbudak odunu, 1 Ateş, 2 Dal, 2 Lif | – | El yapımı (Tab) | 68 |
-| Dişbudak sapı | 1 Dişbudak kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 69 |
-| Ejder meyvesi kalası ² | 2 Ejder meyvesi odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 93 |
-| Gece ağacı kalası | 2 Gece ağacı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 153 |
-| Gece ağacı kömürü | 2 Gece ağacı odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 180 |
-| Gece ağacı sapı | 1 Gece ağacı kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 212 |
-| Gök kamışı kalası ² | 2 Gök kamışı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 114 |
-| Gök söğüdü kalası ² | 2 Gök söğüdü odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 52 |
-| Gök üzümü kalası ² | 2 Gök üzümü odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 109 |
+| Kömür ağacı kalası ² | 2 Ejder meyvesi odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 93 |
+| Kömür ağacı kalası ² | 2 Gök kamışı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 114 |
+| Mavi mantar kalası ² | 2 Gök söğüdü odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 52 |
+| Kömür ağacı kalası ² | 2 Gök üzümü odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 109 |
 | Hurda palmiyesi kalası ² | 2 Hurda palmiyesi odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 67 |
-| Hurma kalası ² | 2 Hurma odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 67 |
+| Hurda palmiyesi kalası ² | 2 Hurma odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 67 |
 | Huş kabuğu | 1 Huş odunu, 2 Yaprak, 1 Su | – | El yapımı (Tab) | 37 |
 | Huş kalası | 2 Huş odunu, 2 Dal, 1 Lif | Taş balta | El yapımı (Tab) | 64 |
 | Huş katranı | 1 Huş kabuğu, 1 Ateş, 3 Dal, 3 Lif | – | El yapımı (Tab) | 83 |
 | Huş kömürü | 2 Huş odunu, 1 Ateş, 2 Dal, 2 Lif | – | El yapımı (Tab) | 88 |
 | Huş sapı | 1 Huş kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 95 |
 | Ihlamur kabuğu | 1 Ihlamur odunu, 2 Yaprak, 1 Su | – | El yapımı (Tab) | 19 |
-| Ihlamur kalası | 2 Ihlamur odunu, 2 Dal, 1 Lif | Taş balta | El yapımı (Tab) | 28 |
-| Ihlamur kömürü | 2 Ihlamur odunu, 1 Ateş, 2 Dal, 2 Lif | – | El yapımı (Tab) | 52 |
-| Ihlamur sapı | 1 Ihlamur kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 48 |
-| Işık ağacı kalası | 2 Işık ağacı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 156 |
-| Işık ağacı kömürü | 2 Işık ağacı odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 183 |
-| Işık ağacı sapı | 1 Işık ağacı kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 216 |
-| Kara çam kalası | 2 Kara çam odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 112 |
-| Kara çam kömürü | 2 Kara çam odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 139 |
-| Kara çam sapı | 1 Kara çam kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 159 |
 | Kavak kabuğu | 1 Kavak odunu, 2 Yaprak, 1 Su | – | El yapımı (Tab) | 12 |
-| Kavak kalası | 2 Kavak odunu, 2 Dal, 1 Lif | Taş balta | El yapımı (Tab) | 15 |
-| Kavak kömürü | 2 Kavak odunu, 1 Ateş, 2 Dal, 2 Lif | – | El yapımı (Tab) | 39 |
-| Kavak sapı | 1 Kavak kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 31 |
 | Kayın kabuğu | 1 Kayın odunu, 2 Yaprak, 1 Su | – | El yapımı (Tab) | 19 |
-| Kayın kalası | 2 Kayın odunu, 2 Dal, 1 Lif | Taş balta | El yapımı (Tab) | 28 |
-| Kayın kömürü | 2 Kayın odunu, 1 Ateş, 2 Dal, 2 Lif | – | El yapımı (Tab) | 52 |
-| Kayın sapı | 1 Kayın kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 48 |
 | Kestane kabuğu | 1 Kestane odunu, 2 Yaprak, 1 Su | – | El yapımı (Tab) | 37 |
-| Kestane kalası | 2 Kestane odunu, 2 Dal, 1 Lif | Taş balta | El yapımı (Tab) | 64 |
-| Kestane kömürü | 2 Kestane odunu, 1 Ateş, 2 Dal, 2 Lif | – | El yapımı (Tab) | 88 |
-| Kestane sapı | 1 Kestane kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 95 |
 | Kızılağaç kabuğu | 1 Kızılağaç odunu, 2 Yaprak, 1 Su | – | El yapımı (Tab) | 26 |
-| Kızılağaç kalası | 2 Kızılağaç odunu, 2 Dal, 1 Lif | Taş balta | El yapımı (Tab) | 44 |
-| Kızılağaç kömürü | 2 Kızılağaç odunu, 1 Ateş, 2 Dal, 2 Lif | – | El yapımı (Tab) | 68 |
-| Kızılağaç sapı | 1 Kızılağaç kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 69 |
-| Kızıl sedir kalası | 2 Kızıl sedir odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 117 |
-| Kızıl sedir kömürü | 2 Kızıl sedir odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 144 |
-| Kızıl sedir sapı | 1 Kızıl sedir kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 165 |
-| Kök ağacı kalası ² | 2 Kök ağacı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 62 |
+| Mavi mantar kalası ² | 2 Kök ağacı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 62 |
 | Kömür ağacı kalası ² | 2 Kömür ağacı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 99 |
-| Kristal armut kalası ² | 2 Kristal armut odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 83 |
+| Kristal çam kalası ² | 2 Kristal armut odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 83 |
 | Kristal çam kalası ² | 2 Kristal çam odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 88 |
-| Kuru çınar kalası ² | 2 Kuru çınar odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 73 |
+| Hurda palmiyesi kalası ² | 2 Kuru çınar odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 73 |
 | Kül ağacı kalası | 2 Kül ağacı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 112 |
 | Kül ağacı kömürü | 2 Kül ağacı odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 139 |
 | Kül ağacı sapı | 1 Kül ağacı kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 159 |
-| Ladin kalası | 2 Ladin odunu, 2 Dal, 1 Lif | Taş balta | El yapımı (Tab) | 28 |
-| Ladin kömürü | 2 Ladin odunu, 1 Ateş, 2 Dal, 2 Lif | – | El yapımı (Tab) | 52 |
-| Ladin sapı | 1 Ladin kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 48 |
-| Lav palmiyesi kalası ² | 2 Lav palmiyesi odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 99 |
+| Kömür ağacı kalası ² | 2 Lav palmiyesi odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 99 |
 | Mavi mantar kalası ² | 2 Mavi mantar odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 67 |
-| Mavi sedir kalası ² | 2 Mavi sedir odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 93 |
+| Kristal çam kalası ² | 2 Mavi sedir odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 93 |
 | Meşe kabuğu | 1 Meşe odunu, 2 Yaprak, 1 Su | – | El yapımı (Tab) | 20 |
 | Meşe kalası | 2 Meşe odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 31 |
 | Meşe kömürü | 2 Meşe odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 56 |
@@ -420,31 +340,20 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Mor söğüt kalası | 2 Mor söğüt odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 151 |
 | Mor söğüt kömürü | 2 Mor söğüt odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 178 |
 | Mor söğüt sapı | 1 Mor söğüt kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 209 |
-| Obsidyen dikeni kalası ² | 2 Obsidyen dikeni odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 109 |
-| Pas ağacı kalası ² | 2 Pas ağacı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 73 |
+| Kömür ağacı kalası ² | 2 Obsidyen dikeni odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 109 |
+| Hurda palmiyesi kalası ² | 2 Pas ağacı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 73 |
 | Porsuk kabuğu | 1 Porsuk odunu, 2 Yaprak, 1 Su | – | El yapımı (Tab) | 38 |
-| Porsuk kalası | 1 Porsuk odunu, 3 Dal, 3 Lif | Taş balta | El yapımı (Tab) | 40 |
-| Porsuk kömürü | 1 Porsuk odunu, 1 Ateş, 3 Dal, 3 Lif | – | El yapımı (Tab) | 64 |
-| Porsuk sapı | 1 Porsuk kalası, 4 Dal, 3 Lif | – | El yapımı (Tab) | 65 |
-| Rüzgâr meşesi kalası ² | 2 Rüzgâr meşesi odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 57 |
+| Mavi mantar kalası ² | 2 Rüzgâr meşesi odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 57 |
 | Söğüt kabuğu | 1 Söğüt odunu, 2 Yaprak, 1 Su | – | El yapımı (Tab) | 26 |
-| Söğüt kalası | 2 Söğüt odunu, 2 Dal, 1 Lif | Taş balta | El yapımı (Tab) | 44 |
-| Söğüt kömürü | 2 Söğüt odunu, 1 Ateş, 2 Dal, 2 Lif | – | El yapımı (Tab) | 68 |
-| Söğüt sapı | 1 Söğüt kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 69 |
-| Spor ağacı kalası ² | 2 Spor ağacı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 73 |
-| Taş ağacı kalası ² | 2 Taş ağacı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 88 |
-| Yıldız akasyası kalası ² | 2 Yıldız akasyası odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 125 |
-| Yıldız eriği kalası | 2 Yıldız eriği odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 151 |
-| Yıldız eriği kömürü | 2 Yıldız eriği odunu, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 178 |
-| Yıldız eriği sapı | 1 Yıldız eriği kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 209 |
+| Mavi mantar kalası ² | 2 Spor ağacı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 73 |
+| Kristal çam kalası ² | 2 Taş ağacı odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 88 |
+| Kömür ağacı kalası ² | 2 Yıldız akasyası odunu, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 125 |
 
-#### Zanaat (55)
+#### Zanaat (46)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Akçaağaç kaşığı | 1 Akçaağaç sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 152 |
 | Akrep kabuğu kalkanı | 3 Akrep kabuğu, 1 Kül ağacı kalası, 2 İp | – | El yapımı (Tab) | 298 |
-| Ardıç kaşığı | 1 Ardıç sapı, 4 Lif, 4 İp | – | El yapımı (Tab) | 159 |
 | Ateş yağı | 2 Çam reçinesi, 1 Hardal otu, 1 Çam kömürü | – | El yapımı (Tab) | 124 |
 | Balık sepeti | 2 Söğüt sepeti, 3 Kerevit, 1 Lif | – | El yapımı (Tab) | 22 |
 | Balık tutkalı | 1 Mersin balığı, 1 Kor, 5 Lif, 4 İp | – | El yapımı (Tab) | 108 |
@@ -453,12 +362,11 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Bileme macunu | 2 Kumtaşı, 1 Çam reçinesi | – | El yapımı (Tab) | 43 |
 | Boynuz kupa | 1 Öküz boynuzu, 3 Lif, 3 İp | – | El yapımı (Tab) | 48 |
 | Bulut yünü ip ² | 3 Bulut yünü | – | El yapımı (Tab) | 67 |
-| Ceviz kaşığı | 1 Ceviz sapı, 4 Lif, 4 İp | – | El yapımı (Tab) | 108 |
 | Çam kaşığı | 1 Çam sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 69 |
 | Deri çanta | 1 Deri parçası, 1 Kenevir halatı, 5 Lif, 4 İp | – | El yapımı (Tab) | 790 |
 | Deri tulum | 1 Deri parçası, 1 Huş katranı, 5 Lif, 4 İp | – | El yapımı (Tab) | 360 |
 | Diken iğnesi | 3 Kirpi dikeni, 1 Kemik | – | El yapımı (Tab) | 17 |
-| Dişbudak kaşığı | 1 Dişbudak sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 118 |
+| Dişbudak kaşığı | 1 Bataklık servisi sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 118 |
 | Duman tütsüsü | 2 Duman çiçeği, 2 Kuru ot | – | El yapımı (Tab) | 127 |
 | Eğrelti yatağı | 3 Eğrelti, 3 Kuru ot | – | El yapımı (Tab) | 31 |
 | Enerji hücresi ² | 2 Enerji taşı, 2 Bakır tel, 1 Pil | – | El yapımı (Tab) | 221 |
@@ -467,30 +375,24 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Hasırotu yatak | 3 Hasırotu, 1 Deri parçası, 4 Lif, 3 İp | – | Usta Sinan yapar, yere kurulur | 287 |
 | Huş kabuğu kabı | 1 Huş kabuğu, 4 İp, 2 Lif | – | El yapımı (Tab) | 76 |
 | Huş kaşığı | 1 Huş sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 152 |
-| Ihlamur kaşığı | 1 Ihlamur sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 91 |
 | Kamış hasır | 4 Kamış | – | El yapımı (Tab) | 67 |
 | Kara cila | 3 Kül böceği kabuğu, 1 Çam reçinesi | – | El yapımı (Tab) | 157 |
-| Kavak kaşığı | 1 Kavak sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 69 |
 | Kaya patlatıcı | 3 Yarasa gübresi, 2 Turba, 1 Tuz, 1 Göl çömleği | – | El yapımı (Tab) | 236 |
-| Kayın kaşığı | 1 Kayın sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 91 |
 | Kenevir halatı | 7 Kenevir lifi | – | El yapımı (Tab) | 404 |
 | Kenevir torba | 1 Kenevir lifi, 3 Lif, 3 İp | Kemik iğne | El yapımı (Tab) | 82 |
-| Kestane kaşığı | 1 Kestane sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 152 |
 | Keten ipliği | 1 Keten lifi, 3 Lif, 3 İp | Kirmen | El yapımı (Tab) | 87 |
 | Keten kumaş | 1 Keten ipliği, 4 Lif, 3 İp | Dokuma tezgâhı | El yapımı (Tab) | 150 |
-| Kızılağaç kaşığı | 1 Kızılağaç sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 118 |
+| Kızılağaç kaşığı | 1 Bataklık servisi sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 118 |
 | Kum torbası | 3 Kum, 1 Deri parçası, 4 Lif, 3 İp | – | El yapımı (Tab) | 240 |
-| Ladin kaşığı | 1 Ladin sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 91 |
 | Meşe kaşığı | 1 Meşe sapı, 4 Lif, 4 İp | – | El yapımı (Tab) | 102 |
 | Midye kabuğu kaşık | 3 Tatlısu midyesi, 1 Lif | Bileği taşı | El yapımı (Tab) | 34 |
 | Mor ip | 3 Mor sarmaşık | – | El yapımı (Tab) | 266 |
 | Ok kılıfı | 1 Deri parçası, 4 İp, 2 Dal | – | El yapımı (Tab) | 240 |
 | Plazma hücresi ² | 2 Plazma taşı, 1 Enerji hücresi, 1 Ejder kristali | – | El yapımı (Tab) | 539 |
-| Porsuk kaşığı | 1 Porsuk sapı, 4 Lif, 4 İp | – | El yapımı (Tab) | 120 |
 | Sarmaşık ipi | 4 Sarmaşık | – | El yapımı (Tab) | 36 |
 | Saz örgüsü | 4 Saz | – | El yapımı (Tab) | 67 |
 | Saz sepet | 2 Saz örgüsü, 3 İp, 1 Lif | – | El yapımı (Tab) | 194 |
-| Söğüt kaşığı | 1 Söğüt sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 118 |
+| Söğüt kaşığı | 1 Bataklık servisi sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 118 |
 | Söğüt sepeti | 4 Söğüt dalı | – | El yapımı (Tab) | 5 |
 | Sünger taşı bileği | 2 Sünger taşı, 1 Su | – | El yapımı (Tab) | 123 |
 | Taş kase | 2 Kireçtaşı, 2 Lif, 2 İp (eskiden 2 Bazalt) | Bileği taşı | El yapımı (Tab) | 24 |
@@ -498,7 +400,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Yosun yastık | 3 Yosun, 1 Deri parçası, 4 Lif, 3 İp | – | El yapımı (Tab) | 287 |
 | Zehir yağı | 2 Sinek mantarı, 1 Çam reçinesi | – | El yapımı (Tab) | 75 |
 
-#### Şifa (44)
+#### Şifa (32)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
@@ -509,38 +411,26 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Ay ışığı iksiri | 3 Gece sefası, 1 Mor kıymık, 2 Su | – | El yapımı (Tab) | 82 |
 | Ay otu iksiri | 3 Ay otu, 2 Su, 1 Işık mantarı | – | El yapımı (Tab) | 655 |
 | Bataklık otu çayı | 2 Bataklık otu, 1 Sıcak su, 1 Su | – | El yapımı (Tab) | 165 |
-| Civanperçemi çayı | 1 Kurutulmuş civanperçemi, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 239 |
-| Gelincik çayı | 1 Kurutulmuş gelincik, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 69 |
+| Civanperçemi çayı | 3 Civanperçemi, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 239 |
+| Gelincik çayı | 3 Gelincik, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 69 |
 | Gölge iksiri | 2 Gölge otu, 1 Örümcek gözü, 2 Su | – | El yapımı (Tab) | 744 |
 | Ihlamur çayı | 3 Ihlamur çiçeği, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 114 |
 | Kardelen merhemi | 2 Kardelen, 1 Hayvan yağı | – | El yapımı (Tab) | 137 |
-| Kekik çayı | 1 Kurutulmuş kekik, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 239 |
+| Kekik çayı | 3 Kekik, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 239 |
 | Kertenkele merhemi ² | 2 Kertenkele pulu, 1 Damla taşı, 1 Su | – | El yapımı (Tab) | 143 |
 | Kor merhemi | 2 Kor otu, 1 Hayvan yağı | – | El yapımı (Tab) | 288 |
 | Kurutulmuş adaçayı | 3 Adaçayı, 3 Kuru ot | – | El yapımı (Tab) | 123 |
-| Kurutulmuş civanperçemi | 3 Civanperçemi, 3 Kuru ot | – | El yapımı (Tab) | 123 |
 | Kurutulmuş ebegümeci | 3 Ebegümeci, 3 Kuru ot | – | El yapımı (Tab) | 8 |
-| Kurutulmuş gelincik | 3 Gelincik, 3 Kuru ot | – | El yapımı (Tab) | 11 |
-| Kurutulmuş hardal otu | 3 Hardal otu, 3 Kuru ot | – | El yapımı (Tab) | 11 |
-| Kurutulmuş isırgan | 3 Isırgan, 3 Kuru ot | – | El yapımı (Tab) | 50 |
-| Kurutulmuş kekik | 3 Kekik, 3 Kuru ot | – | El yapımı (Tab) | 123 |
-| Kurutulmuş kuzukulağı | 3 Kuzukulağı, 3 Kuru ot | – | El yapımı (Tab) | 36 |
-| Kurutulmuş lavanta | 2 Lavanta, 3 Kuru ot | – | El yapımı (Tab) | 87 |
-| Kurutulmuş nane | 3 Nane, 3 Kuru ot | – | El yapımı (Tab) | 11 |
-| Kurutulmuş papatya | 3 Papatya, 3 Kuru ot | – | El yapımı (Tab) | 8 |
 | Kurutulmuş rezene | 3 Rezene, 3 Kuru ot | – | El yapımı (Tab) | 11 |
 | Kurutulmuş sinirotu | 3 Sinirotu, 3 Kuru ot | – | El yapımı (Tab) | 123 |
-| Kurutulmuş su teresi | 3 Su teresi, 3 Kuru ot | – | El yapımı (Tab) | 75 |
-| Kurutulmuş yabani havuç | 3 Yabani havuç, 3 Kuru ot | – | El yapımı (Tab) | 11 |
-| Kurutulmuş yaban sarımsağı | 3 Yaban sarımsağı, 3 Kuru ot | – | El yapımı (Tab) | 39 |
-| Kuşburnu çayı | 1 Kurutulmuş kuşburnu, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 239 |
+| Kuşburnu çayı | 3 Kuşburnu, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 239 |
 | Kükürtlü merhem | 1 Kükürt, 2 Hayvan yağı, 2 Yosun | – | El yapımı (Tab) | 207 |
-| Lavanta çayı | 1 Kurutulmuş lavanta, 1 Sıcak su, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 196 |
+| Lavanta çayı | 3 Lavanta, 1 Sıcak su, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 196 |
 | Lavanta yağı | 2 Lavanta, 2 Hayvan yağı, 1 Su, 1 Yaprak | – | El yapımı (Tab) | 125 |
 | Mana iksiri ² | 2 Büyü otu, 2 Su, 1 Nehir çömleği | – | Büyücü Efsun yapar (10 sikke işçilik) | 306 |
-| Nane çayı | 1 Kurutulmuş nane, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 69 |
+| Nane çayı | 3 Nane, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 69 |
 | Panzehir | 3 Bataklık otu, 1 Zehir bezesi, 2 Su | – | El yapımı (Tab) | 148 |
-| Papatya çayı | 1 Kurutulmuş papatya, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 65 |
+| Papatya çayı | 3 Papatya, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 65 |
 | Rezene çayı | 1 Kurutulmuş rezene, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 69 |
 | Sinirotu çayı | 1 Kurutulmuş sinirotu, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 239 |
 | Söğüt kabuğu çayı | 1 Söğüt kabuğu, 1 Sıcak su, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 184 |
@@ -616,7 +506,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Demir ok | 1 Demir külçesi, 4 Dal, 2 Ördek tüyü, 1 Akrep ok ucu (→ 10) | – | El yapımı (Tab) | 110 |
 | Deniz oltası | 1 Olta, 1 Halat, 2 Bakır külçesi, 1 Uzun sopa | – | El yapımı (Tab) | 210 |
 | Derin su oltası | 1 Makaralı olta, 3 Demir külçesi, 2 Kenevir halatı, 2 Huş katranı | – | El yapımı (Tab) | 2.227 |
-| Dişbudak yayı | 1 Dişbudak sapı, 1 Sinir kirişi, 2 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 128 |
+| Dişbudak yayı | 1 Bataklık servisi sapı, 1 Sinir kirişi, 2 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 128 |
 | Dokuma tezgâhı | 1 Çam sapı, 1 Halat, 3 İp, 2 Dal, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 114 |
 | Fırtına oltası | 1 Derin su oltası, 3 Gümüş külçesi, 2 Kenevir halatı, 2 Balık tutkalı | – | El yapımı (Tab) | 4.464 |
 | Halat | 6 İp | – | El yapımı (Tab) | 38 |
@@ -642,7 +532,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Olta | 1 Uzun sopa, 4 İp, 2 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 69 |
 | Öğütme taşı | 2 Kumtaşı, 1 İp, 1 Dal, 1 Taş (eskiden 2 Granit) | Çekiç taşı | El yapımı (Tab) | 17 |
 | Pişirme taşı | 1 Taş levha, 1 Ateş, 2 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 60 |
-| Porsuk yayı | 1 Porsuk sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 130 |
+| Porsuk yayı | 1 Huş sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 130 |
 | Sapan | 1 Deri parçası, 1 Halat, 3 İp, 3 Dal, 3 Taş | – | El yapımı (Tab) | 293 |
 | Sepet | 1 Hasır, 4 İp, 1 Dal, 1 Taş | – | El yapımı (Tab) | 51 |
 | Sivri taş | 6 Keskin taş | – | El yapımı (Tab) | 23 |
@@ -895,7 +785,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Tunç miğfer | 4 Bakır cevheri, 2 Kalay cevheri, 1 Deri parçası, 2 Sinir, 2 Taş | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 783 |
 | Tunç zırh | 10 Bakır cevheri, 5 Kalay cevheri, 2 Deri parçası, 2 Sinir | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 2.160 |
 
-#### Ev eşyası (14)
+#### Ev eşyası (15)
 
 Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malzeme toplamı × zincir çarpanı) yeniden hesaplanır; kuralın verdiği fiyat eski fiyatın altında kalırsa eski fiyata boyanın katkısı (boya fiyatı × zincir çarpanı) eklenir: Ahşap karyola 475 + 210 × 1,25 = 738. Usta Sinan'ın işçiliği fiyatın %20'sidir.
 
@@ -981,9 +871,9 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Alevli Taş kılıç | 1 Taş kılıç, 1 Ateş yağı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 188 |
 | Alevli Taş savaş çekici | 1 Taş savaş çekici, 1 Ateş yağı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 180 |
 | Alevli Taş topuz | 1 Taş topuz, 1 Ateş yağı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 171 |
-| Ametist kılıcı | 5 Ametist, 3 Obsidyen, 2 Kristal, 1 Işık ağacı sapı, 2 Gölge dişi | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 7.978 |
-| Ametist savaş çekici | 4 Ametist, 2 Obsidyen, 1 Işık ağacı sapı, 1 Zehir yağı | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 9.403 |
-| Ametist topuz | 2 Ametist, 1 Obsidyen, 1 Işık ağacı sapı, 1 Zehir yağı | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 5.717 |
+| Ametist kılıcı | 5 Ametist, 3 Obsidyen, 2 Kristal, 1 Mor söğüt sapı, 2 Gölge dişi | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 7.978 |
+| Ametist savaş çekici | 4 Ametist, 2 Obsidyen, 1 Mor söğüt sapı, 1 Zehir yağı | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 9.403 |
+| Ametist topuz | 2 Ametist, 1 Obsidyen, 1 Mor söğüt sapı, 1 Zehir yağı | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 5.717 |
 | Bakır balta | 3 Bakır külçesi, 1 Çam sapı, 2 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 143 |
 | Bakır kazma | 3 Bakır külçesi, 1 Çam sapı, 2 İp, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 146 |
 | Bakır kılıç | 4 Bakır külçesi, 1 Çam sapı, 1 Deri parçası | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 346 |
@@ -1010,15 +900,15 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Ejder kazması | 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Kara çelik külçesi, 1 Kül ağacı sapı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 6.672 |
 | Ejder kılıcı | 2 Ejder kemiği, 1 Kara çelik külçesi, 1 Deri parçası, 1 Ateş yağı (eski tarif Mor Kristal Vadisi'nin altınını istiyordu) | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 7.539 |
 | Ejder mızrağı | 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Uzun sopa, 3 İp, 1 Ateş yağı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 3.616 |
-| Ejder savaş çekici | 2 Ejder kemiği, 2 Kara çelik külçesi, 1 Kızıl sedir sapı, 1 Ateş yağı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 10.398 |
-| Ejder topuzu | 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kızıl sedir sapı, 1 Ateş yağı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 5.998 |
+| Ejder savaş çekici | 2 Ejder kemiği, 2 Kara çelik külçesi, 1 Kül ağacı sapı, 1 Ateş yağı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 10.398 |
+| Ejder topuzu | 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kül ağacı sapı, 1 Ateş yağı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 5.998 |
 | Ejder yayı | 3 Kül ağacı odunu, 1 Ejder kemiği, 2 Sinir kirişi | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 1.671 |
 | Gece ağacı yayı | 3 Gece ağacı odunu, 2 Sinir kirişi, 1 Mor kristal levhası | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 2.211 |
 | Granit kılıç | 3 Granit, 1 Meşe sapı, 1 Sinir kirişi, 1 Bileme macunu | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 1.213 |
 | Granit mızrak | 2 Granit, 1 Uzun sopa, 3 İp, 1 Bileme macunu | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 532 |
 | Granit savaş çekici | 4 Granit, 1 Meşe sapı, 3 Yaban domuzu dişi, 1 Sinir kirişi | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 1.300 |
 | Granit topuz | 2 Granit, 1 Meşe sapı, 2 İp, 1 Bileme macunu | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 780 |
-| Gümüş kılıç | 4 Gümüş külçesi, 3 Kuvars, 1 Ardıç sapı, 2 Kartal pençesi | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.576 |
+| Gümüş kılıç | 4 Gümüş külçesi, 3 Kuvars, 1 Huş sapı, 2 Kartal pençesi | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.576 |
 | Huş yayı | 3 Huş odunu, 2 Sinir kirişi, 1 Gümüş külçesi | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 767 |
 | Ihlamur yayı | 3 Ihlamur odunu, 2 Sinir kirişi, 1 Granit | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 295 |
 | Işık ağacı yayı | 3 Işık ağacı odunu, 2 Sinir kirişi, 1 Ametist | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 2.097 |
@@ -1035,8 +925,8 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Keskin Taş topuz | 1 Taş topuz, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 81 |
 | Kızılağaç yayı | 3 Kızılağaç odunu, 2 Sinir kirişi, 1 Demir külçesi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 426 |
 | Kızıl sedir yayı | 3 Kızıl sedir odunu, 2 Sinir kirişi, 1 Kara çelik külçesi | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 2.961 |
-| Kuvars savaş çekici | 3 Yontulmuş kuvars, 1 Ardıç sapı, 1 Sinir kirişi, 1 Bileme macunu | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.333 |
-| Kuvars topuz | 2 Yontulmuş kuvars, 1 Ardıç sapı, 2 İp, 1 Bileme macunu | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.459 |
+| Kuvars savaş çekici | 3 Yontulmuş kuvars, 1 Huş sapı, 1 Sinir kirişi, 1 Bileme macunu | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.333 |
+| Kuvars topuz | 2 Yontulmuş kuvars, 1 Huş sapı, 2 İp, 1 Bileme macunu | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.459 |
 | Meşe yayı | 3 Meşe odunu, 1 Sinir kirişi, 1 Tunç külçesi | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 304 |
 | Mor kristal balta | 3 Mor kristal levhası, 1 Mor söğüt sapı, 2 İp | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 6.070 |
 | Mor kristal kazma | 3 Mor kristal levhası, 1 Mor söğüt sapı, 2 İp, 2 Taş | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 6.073 |
@@ -1167,76 +1057,30 @@ Boğaç kararı: her malzeme en az bir tarifte girdi olur, her birine ayrı tari
 | Turna kuşu tüyü | Demir ok (→ 10) | 1 Demir külçesi, 4 Dal, 2 Turna kuşu tüyü, 1 Akrep ok ucu | Ördek tüyü |  |
 | Meşe kabuğu | Huş kabuğu kabı | 2 Meşe kabuğu, 4 İp, 2 Lif | Huş kabuğu |  |
 | Kayın kabuğu | Huş katranı | 2 Kayın kabuğu, 1 Ateş, 3 Dal, 3 Lif | Huş kabuğu |  |
-| Kayın kömürü | Ateş yağı | 2 Çam reçinesi, 1 Hardal otu, 1 Kayın kömürü | Çam kömürü |  |
-| Ladin kömürü | Gümüş külçesi | 3 Gümüş cevheri, 2 Ladin kömürü | Huş kömürü |  |
 | Ihlamur kabuğu | Söğüt kabuğu çayı | 1 Ihlamur kabuğu, 1 Sıcak su, 4 Su, 3 Yaprak | Söğüt kabuğu |  |
-| Ihlamur kömürü | Kalay külçesi | 3 Kalay cevheri, 1 Ihlamur kömürü | Meşe kömürü |  |
 | Akçaağaç kabuğu | Akrep kabuğu kalkanı | 4 Akçaağaç kabuğu, 1 Kül ağacı kalası, 2 İp | Akrep kabuğu |  |
-| Akçaağaç kömürü | Çömlek fırını | 1 Kerpiç duvar, 1 Akçaağaç kömürü, 3 Taş, 3 Dal, 2 Kum | Çam kömürü |  |
 | Kestane kabuğu | Kor zurnası | 9 Kestane kabuğu, 1 Kor taşı | Kor kabuğu |  |
-| Kestane kömürü | Altın külçesi | 3 Altın cevheri, 2 Kestane kömürü | Mor söğüt kömürü |  |
 | Ceviz kabuğu | Huş kabuğu kabı | 2 Ceviz kabuğu, 4 İp, 2 Lif | Huş kabuğu |  |
-| Ceviz kömürü | Kor | 1 Ateş, 1 Ceviz kömürü, 4 Dal, 3 Yaprak | Çam kömürü |  |
 | Dişbudak kabuğu | Huş katranı | 1 Dişbudak kabuğu, 1 Ateş, 3 Dal, 3 Lif | Huş kabuğu |  |
-| Dişbudak kömürü | Bakır külçesi | 3 Bakır cevheri, 1 Dişbudak kömürü | Çam kömürü |  |
 | Porsuk kabuğu | Söğüt kabuğu çayı | 1 Porsuk kabuğu, 1 Sıcak su, 4 Su, 3 Yaprak | Söğüt kabuğu |  |
-| Porsuk kömürü | Kara boya | 1 Porsuk kömürü, 2 Hayvan yağı, 3 Su, 3 Kum | Çam kömürü |  |
-| Söğüt kömürü | Çelik külçesi | 2 Demir külçesi, 3 Söğüt kömürü, 1 Ateş tuğlası | Huş kömürü |  |
 | Kavak kabuğu | Akrep kabuğu kalkanı | 11 Kavak kabuğu, 1 Kül ağacı kalası, 2 İp | Akrep kabuğu |  |
-| Kavak kömürü | Çelik çizme | 6 Demir cevheri, 1 Kavak kömürü, 1 Deri parçası, 3 Yaprak | Taş kömürü |  |
 | Kızılağaç kabuğu | Kor zurnası | 12 Kızılağaç kabuğu, 1 Kor taşı | Kor kabuğu |  |
-| Kızılağaç kömürü | Çelik miğfer | 6 Demir cevheri, 1 Kızılağaç kömürü, 1 Deri parçası, 2 Sinir, 2 Taş | Taş kömürü |  |
 | Ardıç kabuğu | Huş katranı | 1 Ardıç kabuğu, 1 Ateş, 3 Dal, 3 Lif | Huş kabuğu |  |
-| Ardıç kömürü | Çelik eldiven | 6 Demir cevheri, 1 Ardıç kömürü, 1 Deri parçası, 3 Lif | Taş kömürü |  |
 | Bataklık servisi kömürü | Kara çelik külçesi | 2 Çelik külçesi, 3 Obsidyen, 1 Kükürt, 3 Bataklık servisi kömürü | Kül ağacı kömürü |  |
-| Kara çam sapı | Bazalt bıçak | 1 Bazalt pulu, 1 Kara çam sapı, 3 İp, 2 Dal, 2 Taş | Kül ağacı sapı |  |
-| Kara çam kömürü | Çelik zırh | 15 Demir cevheri, 1 Kara çam kömürü, 2 Deri parçası, 2 Sinir | Taş kömürü |  |
-| Dikenli akasya sapı | Granit balta | 2 Granit, 1 Dikenli akasya sapı, 2 İp, 1 Taş | Meşe sapı |  |
-| Dikenli akasya kömürü | Altın külçesi | 3 Altın cevheri, 1 Dikenli akasya kömürü | Mor söğüt kömürü |  |
-| Kızıl sedir kömürü | Çömlek fırını | 1 Kerpiç duvar, 1 Kızıl sedir kömürü, 3 Taş, 3 Dal, 2 Kum | Çam kömürü |  |
-| Ateş narı sapı | Çakmaktaşı kılıç | 3 Yontulmuş çakmaktaşı, 1 Ateş narı sapı, 2 İp, 1 Bileme macunu | Çam sapı |  |
-| Ateş narı kömürü | Çelik külçesi | 2 Demir külçesi, 1 Ateş narı kömürü, 1 Ateş tuğlası | Huş kömürü |  |
-| Gece ağacı sapı | Tunç balta | 2 Tunç külçesi, 1 Gece ağacı sapı, 2 İp | Meşe sapı |  |
-| Gece ağacı kömürü | Gümüş külçesi | 3 Gümüş cevheri, 1 Gece ağacı kömürü | Huş kömürü |  |
-| Işık ağacı kömürü | Ateş yağı | 2 Çam reçinesi, 1 Hardal otu, 1 Işık ağacı kömürü | Çam kömürü |  |
-| Yıldız eriği sapı | Timsah dişi balta | 2 Timsah dişi, 1 Demir külçesi, 1 Yıldız eriği sapı, 2 İp | Bataklık servisi sapı |  |
-| Yıldız eriği kömürü | Kalay külçesi | 3 Kalay cevheri, 1 Yıldız eriği kömürü | Meşe kömürü |  |
-| Ay elması sapı | Granit topuz | 2 Granit, 1 Ay elması sapı, 2 İp, 1 Bileme macunu | Meşe sapı |  |
-| Ay elması kömürü | Kor | 1 Ateş, 1 Ay elması kömürü, 4 Dal, 3 Yaprak | Çam kömürü |  |
 | Vaşak derisi | Kemik miğfer | 4 Kemik, 2 Sinir, 1 Vaşak derisi, 2 Taş | Deri parçası |  |
 | Işık tilkisi postu | Sapan | 1 Işık tilkisi postu, 1 Halat, 3 İp, 3 Dal, 3 Taş | Deri parçası |  |
 | Kristal geyik derisi | Kemik eldiven | 4 Kemik, 2 Sinir, 1 Kristal geyik derisi, 3 Lif | Deri parçası |  |
 | Gölge postu | Ahşap karyola | 4 Çam kalası, 1 Gölge postu, 6 Kuru ot, 1 Kükürt sarısı boya | Deri parçası |  |
-| Bulut çamı kalası | Ateş asası | 1 Bulut çamı kalası, 2 Spor kristali, 3 Büyü otu, 1 Yüzer taş | Mavi mantar kalası |  |
-| Gök söğüdü kalası | Buz asası | 2 Gök söğüdü kalası, 3 Buz kristali, 1 Enerji taşı, 2 Büyü otu | Kristal çam kalası |  |
-| Rüzgâr meşesi kalası | Pompalı | 1 Ağır plaka, 4 Dişli, 2 Rüzgâr meşesi kalası, 6 Vida, 1 Motor | Hurda palmiyesi kalası |  |
-| Bulut elması kalası | Yıldırım asası | 2 Bulut elması kalası, 3 Plazma taşı, 2 Ejder kristali, 3 Büyü otu | Kömür ağacı kalası |  |
-| Dev mantar kalası | Ateş asası | 1 Dev mantar kalası, 2 Spor kristali, 3 Büyü otu, 1 Yüzer taş | Mavi mantar kalası |  |
-| Spor ağacı kalası | Buz asası | 1 Spor ağacı kalası, 3 Buz kristali, 1 Enerji taşı, 2 Büyü otu | Kristal çam kalası |  |
-| Kök ağacı kalası | Pompalı | 1 Ağır plaka, 4 Dişli, 2 Kök ağacı kalası, 6 Vida, 1 Motor | Hurda palmiyesi kalası |  |
 | Rüzgâr tüyü | Fırtına tüyü başlık | 13 Rüzgâr tüyü, 2 Gök tazısı postu, 1 Demir miğfer | Fırtına tüyü |  |
 | Şaman tüyü | Fırtına tüyü başlık | 2 Şaman tüyü, 2 Gök tazısı postu, 1 Demir miğfer | Fırtına tüyü |  |
-| Pas ağacı kalası | Yıldırım asası | 1 Pas ağacı kalası, 3 Plazma taşı, 2 Ejder kristali, 3 Büyü otu | Kömür ağacı kalası |  |
-| Kuru çınar kalası | Ateş asası | 1 Kuru çınar kalası, 2 Spor kristali, 3 Büyü otu, 1 Yüzer taş | Mavi mantar kalası |  |
-| Hurma kalası | Buz asası | 1 Hurma kalası, 3 Buz kristali, 1 Enerji taşı, 2 Büyü otu | Kristal çam kalası |  |
-| Taş ağacı kalası | Pompalı | 1 Ağır plaka, 4 Dişli, 2 Taş ağacı kalası, 6 Vida, 1 Motor | Hurda palmiyesi kalası |  |
-| Mavi sedir kalası | Yıldırım asası | 1 Mavi sedir kalası, 3 Plazma taşı, 2 Ejder kristali, 3 Büyü otu | Kömür ağacı kalası |  |
-| Kristal armut kalası | Ateş asası | 1 Kristal armut kalası, 2 Spor kristali, 3 Büyü otu, 1 Yüzer taş | Mavi mantar kalası |  |
 | Buz kürkü | Fırtına tüyü başlık | 4 Fırtına tüyü, 3 Buz kürkü, 1 Demir miğfer | Gök tazısı postu |  |
-| Lav palmiyesi kalası | Buz asası | 1 Lav palmiyesi kalası, 3 Buz kristali, 1 Enerji taşı, 2 Büyü otu | Kristal çam kalası |  |
-| Obsidyen dikeni kalası | Pompalı | 1 Ağır plaka, 4 Dişli, 1 Obsidyen dikeni kalası, 6 Vida, 1 Motor | Hurda palmiyesi kalası |  |
-| Ejder meyvesi kalası | Yıldırım asası | 1 Ejder meyvesi kalası, 3 Plazma taşı, 2 Ejder kristali, 3 Büyü otu | Kömür ağacı kalası |  |
 | Magma kabuğu | Mantar lifi eldiven | 1 Magma kabuğu, 4 Spor tozu, 2 Goblin kulağı, 1 Demir eldiven | Böcek kabuğu |  |
-| Gök kamışı kalası | Ateş asası | 1 Gök kamışı kalası, 2 Spor kristali, 3 Büyü otu, 1 Yüzer taş | Mavi mantar kalası |  |
-| Bulut kavağı kalası | Buz asası | 1 Bulut kavağı kalası, 3 Buz kristali, 1 Enerji taşı, 2 Büyü otu | Kristal çam kalası |  |
-| Yıldız akasyası kalası | Pompalı | 1 Ağır plaka, 4 Dişli, 1 Yıldız akasyası kalası, 6 Vida, 1 Motor | Hurda palmiyesi kalası |  |
-| Gök üzümü kalası | Yıldırım asası | 1 Gök üzümü kalası, 3 Plazma taşı, 2 Ejder kristali, 3 Büyü otu | Kömür ağacı kalası |  |
 | Yıldız tilkisi postu | Fırtına tüyü başlık | 4 Fırtına tüyü, 2 Yıldız tilkisi postu, 1 Demir miğfer | Gök tazısı postu |  |
 | Elma odunu | Çam kalası | 2 Elma odunu, 2 Dal, 1 Lif | Çam odunu |  |
-| Armut odunu | Kavak kalası | 2 Armut odunu, 2 Dal, 1 Lif | Kavak odunu |  |
+| Armut odunu | Çam kalası | 2 Armut odunu, 2 Dal, 1 Lif | Kavak odunu |  |
 | Erik odunu | Söğüt kabuğu | 5 Erik odunu, 2 Yaprak, 1 Su | Söğüt odunu |  |
-| Mürver odunu | Dişbudak kalası | 2 Mürver odunu, 2 Dal, 1 Lif | Dişbudak odunu |  |
-| Fındık odunu | Kayın kalası | 2 Fındık odunu, 2 Dal, 1 Lif | Kayın odunu |  |
+| Mürver odunu | Bataklık servisi kalası | 2 Mürver odunu, 2 Dal, 1 Lif | Dişbudak odunu |  |
+| Fındık odunu | Meşe kalası | 2 Fındık odunu, 2 Dal, 1 Lif | Kayın odunu |  |
 | Mağara kurdu postu | Deri tulum | 1 Mağara kurdu postu, 1 Huş katranı, 5 Lif, 4 İp | Deri parçası |  |
 | Gri vaşak postu | Deri çadır | 1 Kulübe iskeleti, 1 Gri vaşak postu, 3 Taş, 3 Dal, 3 Kum | Deri parçası |  |
 | Arduvaz | Kurutma rafı | 1 Çam sapı, 1 Hasır, 1 Arduvaz, 2 Dal, 2 Kum | Taş |  |

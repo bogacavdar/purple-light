@@ -1,3 +1,14 @@
+## v3.73 (8 Kasım 2026) · sade malzeme: biyom başına tek kalas/sap/kömür/kaşık, kurutulmuş otlar ve kullanılmayan kurutulmuşlar kalktı
+
+**Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
+- Yeni `<script id="v373sade">` (en sonda, `v366tarif`ten sonra çalışır): `LAND1`/`LAND2` (asıl ağaç → öbür ağaçlar), `REPL` (türe özgü kalas/sap/kömür/kaşık → asıl; ACT 2'de yalnız kalas), `HERB` (kullanılan kurutulmuş ot → taze, ×3), `FOODX` (hiçbir tarifte kullanılmayan kurutulmuşlar; `KEEPDRY` ve "tabanının tek kullanımı" koruması hariç). `DB.R`'den kalkanlar silinir, girdiler eşlenip birleşir, aynılaşan varyantlar silinir, her öbür ağaç için `C kalası (S odunu ile)` varyantı eklenir (`VO`, `PRICE_`); `REC`/`RESULTS`/`USES`/`FORGED`/`FIRE_R`/`PLACEABLE`/`ARMORSET`/`PRICE_`/`DEPTH`/`CAT_N`/`CHEAT_RES` yeniden kurulur. `window.__plSadeInfo`, `window.__plSadeMap`.
+- `applyState` sarmalı: kayıt JSON'unda kalkan bir ad varsa derin yürür (sayı haritası anahtarları, dizideki adlar/[ad,...] demetleri, `{n,q}` nesneleri), FOODX eski fiyattan (`OLDP`) sikkeye; bildirim metni `s.v373t` ile sayfa yeniden yüklense de taşınır.
+- Kaynakta: `v184`/`v251` usta silah sapları (Huş, Mor söğüt, Kül ağacı sapı), `v186` K1/EK6 Meşe kalası (metinler), `v55-q` gk1 Mavi mantar kalası. Sürüm etiketi `Versiyon 3.73`.
+
+**Geri alma:** `git revert` bu commit (blok + kaynak isimleri + belge birlikte). Kayıtlar: çevrilmiş kayıtlar geri çevrilmez (eski adlar yeniden eklenirse çantada yalnızca asıl kalaslar kalır), oyun bozulmaz.
+
+**Kontrol:** chk.js 0 hata (183 script). Denetim (eski 3.71 ↔ yeni): eşya 1505 → 1350, tarif 1105 → 982 (159 varyant), bilinmeyen girdi 0, fiyatsız 0, yeni kullanılmayan ham malzeme 0. Eski kayıt (gerçek kaydet/yükle, yeniden yükleme dahil): 3 Ladin + 1 Meşe kalası → 4 Meşe kalası, 2 Kurutulmuş kekik → 6 Kekik, Kurutulmuş geyik eti → 87 sikke, Ardıç kaşığı → Huş kaşığı, Işık ağacı sapı → Mor söğüt sapı, kitaptan Ladin kalası silindi. `Çam kalası (Kavak odunu ile)` el yapımı: 1 Çam kalası verir.
+
 ## v3.72 (8 Kasım 2026) · madenler arası mesafe
 
 **Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
@@ -309,14 +320,3 @@
 - **Ölçüm:** kare döngüsüne/harita verisine dokunulmadı (`target` sarması yalnızca istem/F anında ikinci arama), ölçüm yapılmadı.
 - **Geri almak için:** v3.54 commit'ini `git revert` (prototip, index.html, parts). Kayıt alanı, MAPV değişmedi.
 
-## v3.53 (7 Kasım 2026) · Bataklık E2E: Doğan tanışmadan "!", gün yazısıyla gelen bildirimler sırayla, köprü istemi, bekleyen puan, "Sv N'de açılır"
-
-- **BTK-11** (`30_act1.md` kural 5): `needRec` sonunda `FIRSTREC` (`toygar: Kamış çizme, Panzehir`): görev veren kişi henüz tanışılmamışsa onun ilk konuşmada yazdığı tarifler eksik sayılmaz. Oyunda: Bataklık'ta, E2 bitmiş, Doğan tanışılmamış → `hasMark('toygar')` true, `S.vis` [T1, E1]. Görev, tanışma konuşması kapanınca mevcut `pend` yoluyla verilir.
-- **BTK-12** (`20_sistemler.md` duyurular): `v345` `toast` sarması açık dünyada gün başı yazısı görünürken her bildirimi `TQ`'ya alır; yazı kapanınca `TQ` 450 ms arayla birer birer çıkar (önceden yalnızca haritada seviye puanı bekliyordu, hepsi bir anda çıkıyordu). Oyunda: yazı açıkken 2 bildirim → yazı kapanınca A1, 0,4 sn sonra A2.
-- **BTK-13** (`30_act1.md` köprü): `window.__plBridgeIdle` (`v186`, `!I2 && S.a.id!=='E2'`); istem (`2687`) ana köprüde E2 yokken yalnızca "Kırık köprü". F'de `toast` yerine oyuncunun balonu "Kırık bir köprü… Kemal bir şey biliyordur." (ilk kez odun yetiyorsa eski "Buradan nasıl geçebilirim…" balonu). Kemal uzakta olduğu için "Kemal'in ipucu balonu" oyuncunun balonu olarak yapıldı.
-- **OYN-40:** köprü onay penceresinde `spFree()>0` ise küçük satır "N seviye puanın bekliyor."
-- **OYN-41** (`20_sistemler.md:111`): Karakter penceresinde `r>=capAt(lvl)` ve tam değilse + yerine `<small class="spat">Sv ${3r}'de açılır</small>` (bir sonraki puan `capAt(3r)=r+1`); ek `spLoc` (sayının okunuşuna göre de/da/te/ta). Oyunda: Sv 20, Güç 7 → "Sv 21'de açılır".
-- **BTK-14:** kod doğru, değişmedi. Oyunda: 25 sikke, kampın 600 px ötesinde bayılma → sikke 0, çanta 20 sikke; çantaya yürüyünce 20 geri geldi (5 = %20 kayıp). Testteki "25 → 0" çanta alınmadan bakılmış.
-- **Ders metinleri "E":** koddaki ders metinlerinde (`DATA` `les`) "E'ye bas", "E ile" var, ama ekrana `kTxt` ile atanmış tuş (varsayılan F) olarak yazılıyor (oyunda "E'ye bas" → "F'ye bas"). Metne "F" yazmak yanlış olur: "F", eski "Ye" tuşunun etiketi olduğu için `kTxt` onu X'e çevirir ("X'ye bas"). Kod değişmedi; belge tablosu F.
-- **Ölçüm:** kare döngüsüne, doğmaya, harita verisine dokunulmadı (yalnızca bildirim kuyruğu 200 ms'lik `v345` aralığında), ölçüm yapılmadı.
-- **Geri almak için:** v3.53 commit'ini `git revert` (prototip, index.html, parts). Kayıt alanı, MAPV değişmedi.
