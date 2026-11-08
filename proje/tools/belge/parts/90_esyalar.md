@@ -505,7 +505,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Işık tozu | 80 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Işık fitili |
 | Işık Yutan kalbi | 2.600 | – | Mağara reisi Işık Yutan düşürür (Ayna Mağarası, Mor Kristal Vadisi) %100 ×1 | Işık Yutan kalbi tılsımı |
 | Işık Yutan kalbi tılsımı | 4.200 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Işıldak mantarı ² | 20 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) | – |
 | Işıltılı boya | 182 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Işıl balığı | 225 | – | Deniz avı: Mor Derinlik (Gemici Poyraz'ın teknesiyle, Sv 22+, Yıldız oltası) %17 | Işıl çorbası |
 | Işıl çorbası | 676 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
@@ -578,7 +577,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kavrulmuş yabani mercimek | 70 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kavrulmuş yabani nohut | 70 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kavrulmuş yabani yulaf | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
-| Kav mantarı | 21 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Kav |
 | Kaya çiçeği ² | 20 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) | – |
 | Kaya patlatıcı | 236 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kaya yarasası kanadı | 104 | – | Mağara canlısı Kaya yarasası düşürür (Rüzgâr Mağarası, Kayalık Dağ) %80 ×1 | Kanat yelpazesi |
@@ -656,9 +654,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kızarmış çayır mantarı | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızarmış kanlıca | 35 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızarmış kayın mantarı | 96 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
-| Kızarmış kuzugöbeği | 30 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızarmış mağara mantarı | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
-| Kızarmış tavuk mantarı | 35 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızarmış yabani havuç | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızılağaç kabuğu | 26 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kızılağaç kaşığı | 118 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -810,7 +806,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kuvars savaş çekici | 2.333 | alet, silah 59 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | – |
 | Kuvars sivri ucu | 948 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kuvars kazma, Kuvars mızrak |
 | Kuvars topuz | 1.459 | alet, silah 44 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | – |
-| Kuzugöbeği | 12 | yenir +8, zehirli | Yerden toplanır: Orman (ACT 1) | Kızarmış kuzugöbeği |
 | Kuzukulağı | 8 | yenir +7, zehirli | Yerden toplanır: Orman (ACT 1) | Ot salatası |
 | Kükürt | 46 | – | Kazmayla kazılır: Kül Diyarı (ACT 1) | Kara çelik külçesi, Kükürtlü merhem, Kükürt çakmağı |
 | Kükürtlü merhem | 207 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -868,7 +863,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Mana iksiri ² | 306 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Büyücü Efsun yapar (10 sikke işçilik) | – |
 | Mantar çorbası | 141 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Mantar lifi eldiven ² | 1.486 | giyilir +14 savunma | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | Ejder pulu eldiven |
-| Mantar şapkası ² | 33 | yenir +3 | Yerden toplanır: Dev Mantar Ormanı (ACT 2) | – |
 | Masa | 186 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Mavi mantar kalası ² | 67 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Ateş asası, Atölye, Dolap … (+15) |
 | Mavi mantar odunu ² | 22 | – | Balta ile Mavi mantar ağacından: Dev Mantar Ormanı (ACT 2) | Kütük salı, Mavi mantar kalası, Oyma kano |
@@ -996,7 +990,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Pirinç külçesi ² | 111 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Pompalı fişeği, Tabanca mermisi |
 | Pirit | 28 | – | Kazmayla kazılır: Kayalık Dağ (ACT 1) | Kükürt çakmağı, Pirit çakmağı |
 | Pirit çakmağı | 47 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | Ateş, Kozalak ateşi, Turba ateşinde tütsü |
-| Pişirme taşı | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | Kızarmış çayır mantarı (alet), Kızarmış kanlıca (alet), Kızarmış kayın mantarı (alet), Kızarmış kuzugöbeği (alet), Kızarmış mağara mantarı (alet), Kızarmış tavuk mantarı (alet) … (+20) |
+| Pişirme taşı | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | Kızarmış çayır mantarı (alet), Kızarmış kanlıca (alet), Kızarmış kayın mantarı (alet), Kızarmış mağara mantarı (alet), Kızarmış kanlıca (alet) … (+20) |
 | Pişmiş alabalık | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
 | Pişmiş bıldırcın eti | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
 | Pişmiş bulut koyunu eti ² | 99 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
@@ -1175,7 +1169,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Tavan ağı | 112 | – | Mağara canlısı Tavan örümceği düşürür (Rüzgâr Mağarası, Kayalık Dağ) %80 ×1–2 | Ağ kapanı, Gümüş çan, Kristal kolye |
 | Tavşan derisi | 3 | – | Av: Tavşan düşürür %70 (ACT 1 · Çayır) | – (satılır, görevlerde istenir) |
 | Tavşan eti | 3 | – | Av: Tavşan düşürür %100 (ACT 1 · Çayır) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş tavşan eti, Turba ateşinde tütsü … (+1) |
-| Tavuk mantarı | 9 | yenir +8 | Yerden toplanır: Orman (ACT 1) | Kızarmış tavuk mantarı |
 | Tazı dişi ² | 40 | – | Av: Gök tazısı düşürür %60 (ACT 2 · Yüzen Kayalar) | – |
 | Tekir | 8 | – | Deniz avı: Kıyı Suları (Gemici Poyraz'ın teknesiyle, Sv 3+, Olta) %17 | Tekir tava |
 | Tekir tava | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |

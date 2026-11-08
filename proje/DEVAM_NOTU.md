@@ -1,3 +1,11 @@
+## v3.76 (8 Kasım 2026) · her biyomda tek mantar
+
+**Değişen yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):** Tavuk mantarı, Kuzugöbeği, Kav mantarı kaynaktan silindi: ilk bitki tablosu (Kav), `PLANTC`, `B4PLANT`, `RAWFOOD`, `P1I`/`P1W` resimleri, `BPLANT`, `POISON`, `ODD`, yiyecek etkisi tablosu, `NEWP`; Mantar şapkası: `__I2C.plants[1]`, ACT 2 `RAWFOOD` ve etki tablosu. `B4PLANT` döngüsünde `ISLE===2&&k==='Kayın mantarı'` atlanır. `FIRE_R` listesinden iki kızarmış; tür regex'lerinden kuzugöbeği. Görev verisi (Y3, Y6, NF1, FI2/kf2) Kanlıca / Kayın mantarı ve metinleri. `v373sade`: `REPL`'e 6 eşleme (tarifler ve eski kayıt çevirisi bu yolla), Kurutulmuş tavuk mantarı/kuzugöbeği `FOODX`. Sürüm etiketi `Versiyon 3.76`. `DB` JSON'a dokunulmadı (kalkan tarifler `v373sade`'de düşer).
+
+**Geri alma:** `git revert` bu commit (belge ve kod birlikte).
+
+**Kontrol:** chk.js 0 hata. Denetim (3.75 ↔ 3.76): eşya 1350 → 1344, tarif 982 → 980, bilinmeyen girdi 0, fiyatsız 0, yeni kullanılmayan ham 0. Mantar sayımı: ACT 1 Çayır mantarı 41, Kanlıca 49, Sinek 44, Kayın 38, Işık 50; ACT 2 Gök 47, Işıldak 50, Kristal 50, Kor 48, Yıldız 41. Eski kayıt: 3 Tavuk + 1 Kanlıca + 2 Kuzugöbeği → 6 Kanlıca, 4 Kav mantarı → 4 Kayın mantarı, Kızarmış kuzugöbeği → Kızarmış kanlıca.
+
 ## v3.75 (8 Kasım 2026) · başlangıç kampı da seyrelir
 
 **Değişen yerler:** yeni `<script id="v375kamp">` (en sonda; sayfa açılınca bir kez, `built` korumalı, 11 ms): kamp (spawn'dan < 20 karo) halkanın (20–40 karo) sıklığına iner. Ağaçlar: `keep = halka yoğunluğu / kamp yoğunluğu`, `hz(x,y,4.4) ≥ keep` silinir; `hz` sırasıyla ilk 12 Çam, `v343` ve `keep` ağaçları korunur. Düğümler: tür başına aynı oran (`hz(x,y,6.6)`); `mine/night/tzN/tutN/sq/keep/q/quest` dokunulmaz. `window.__plKamp={trees,nodes,ms}`. Sürüm etiketi `Versiyon 3.75`.
@@ -303,12 +311,4 @@
 - **Ağaçlar** (`v67` blok, ilk seyreltme): `h<.35` → `h<.5`; ikinci seyreltme (kalanın %25'i) aynı; iki ada da aynı koddan. Yeni oyunda sayım (Çayır, Orman, Bataklık, Kayalık, Kül, Mor): ada 1 6.570 → **5.145** (1.166, 1.382, 687, 996, 444, 470); ada 2 7.555 → **5.822** (1.185, 1.670, 1.007, 980, 495, 485).
 - **Ölçüm** (`olcum.js` CPU×4, gl; 3.56 → 3.57; makine bu turda çok yavaştı, `goto` süresini /tmp kopyasında 180 sn yaptım): BOOT 34.254 → 34.514 ms (js 17.841 → 17.566); kumsal avg 384,1 → 376,6; yürürken 362,0 → 355,4; PLAY 10 sn js 3.612 → 3.519 ms (gürültü içinde).
 - **Geri almak için:** v3.57 commit'ini `git revert` (prototip, index.html, parts). Kayıt alanı, MAPV değişmedi (ağaçlar yüklemede hash'le seçilir, kayda yazılmaz).
-
-## v3.56 (7 Kasım 2026) · Boğaç kararlarına dönüş: F önce yerdeki eşya, E3 tarif kilidi
-
-- **F önceliği** (`20_sistemler.md` Kontroller ve Ev, Boğaç v2.05 + 7 Kasım 2026): `v56`'daki `target` sarması (v3.49 "kapıda önce kapı", v3.51/v3.54 "halkada önce kişi") ve `PEOPLE_K` silindi; ana `target()` sırası geçerli (yerdeki toplanabilir önce, kişi/kapı/öbürleri sonra). Oyunda: Kemal'in yanında Taş → "F Taş topla"; Deri çadır kapısında Eğrelti → "F Eğrelti topla", Eğrelti alınınca "F Deri çadır: içeri gir".
-- **E3 tarif kilidi** (`30_act1.md` kural 5, Boğaç v2.26/v2.83): v3.54'teki `arrQ` silindi; `matsOK` ve `parkLocked` yine `needRec`'e bakar. Kemal'in E3 sözü yine "tarifini zaten biliyorsun". Kart satırı (OYN-45) kalır. Oyunda: Kayalık'ta Firuze'nin yanında tarif yokken `vis` [CB1, EK1], Firuze'de "!" yok; tarif öğrenilince [E3, CB1], Firuze'de "!".
-- **Eski kayıt:** belgenin "Eski kayıtlar" kuralı (kayıt açılınca tarifi öğrenilmemiş aktif görev geri bırakılır) E3'e de uygulanır; v3.54/3.55'te tarifsiz alınmış E3 açılışta geri bırakılır, Kemal tarif işini verir. Oyunda: tarifsiz E3 etkinken kayıt yüklenince görev geri bırakıldı.
-- **Ölçüm:** kare döngüsüne/açılışa dokunulmadı (`target` sarmasının kalkması F/istem anında bir arama azaltır), ölçüm yapılmadı.
-- **Geri almak için:** v3.56 commit'ini `git revert` (prototip, index.html, parts). Kayıt alanı, MAPV değişmedi.
 

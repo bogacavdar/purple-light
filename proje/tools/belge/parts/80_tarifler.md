@@ -48,13 +48,14 @@ Her biyomun ağaç zinciri **tek** kalas, sap, kömür ve kaşıkla yürür; ad�
 - **Kalan isimler:** silah ve aletlerin sapları biyomun sapını ister (ör. Gümüş kılıç **Huş sapı**, Ametist kılıcı **Mor söğüt sapı**, Dişbudak yayı **Bataklık servisi sapı**, Porsuk yayı **Huş sapı**). Görevler: Usta Sinan'ın K1'i **6 Meşe kalası**, Ekin'in EK6'sı **8 Meşe kalası**, Yıldız'ın teleskop ayağı **4 Mavi mantar kalası** ister.
 - **Kurutulmuş otlar yok:** kurutulmuş kuşburnu, kekik, papatya, lavanta, nane, civanperçemi ve gelincik kalktı; onları isteyen tarifler (çaylar, merhemler) yerine **3 katı taze otu** ister (ör. 1 Kurutulmuş kekik → 3 Kekik).
 - **Kullanılmayan kurutulmuş yiyecekler yok:** hiçbir tarifte kullanılmayan 59 kurutulmuş et, balık, meyve ve mantar kalktı (çiği ve közlenmişi duruyor). Kalan kurutulmuşlar: sincap eti, böğürtlen, meyve keki, yabani elma (Neriman'ın N5 "Kış kurutmalığı" görevi ister) ve tek kullanıldığı tarif kurutulmuşu olan ebegümeci ve yıldız eriği (her malzeme bir tarifte kuralı).
+- **Her biyomda tek mantar (8 Kasım 2026, Boğaç: "her bölgede 1 mantar kalsın, kalabalığı önler; kalanlar en popüler mantarlar olsun"):** ACT 1'de Çayır **Çayır mantarı**, Orman **Kanlıca**, Bataklık **Sinek mantarı**, Kayalık Dağ **Kayın mantarı**, Mor Kristal Vadisi **Işık mantarı** (Kül Diyarı'nda mantar yok; mağaralarda **Mağara mantarı**). ACT 2'de Yüzen Kayalar **Gök mantarı**, Dev Mantar Ormanı **Işıldak mantarı**, Kristal Golem Ocağı **Kristal mantarı**, Ejder Volkanı **Kor mantarı**, Gök Rıhtımı **Yıldız mantarı** (Hurda Çölü'nde mantar yok). Kalkanlar: Tavuk mantarı ve Kuzugöbeği (Orman; yerlerine Kanlıca), Kav mantarı (Kayalık Dağ; yerine Kayın mantarı), Mantar şapkası (ACT 2), Kayın mantarı ACT 2'de çıkmaz. Kızarmış tavuk mantarı ve Kızarmış kuzugöbeği tarifleri silindi; **Kav** Kayın mantarıyla yapılır. Görevler: Yakut'un Y3 "Mantar sepeti" ve Y6 "Taşan kazan" ile Fidan'ın NF1 "Mantar tezgâhı" **Kanlıca**, Firuze'nin "Liken ve kav"ı **Kayın mantarı** ister. Eski kayıtlarda kalkan mantarlar yerine geçene çevrilir.
 - **Kalkan varyantlar:** kalkan bir malzemeyi isteyen ya da çevrilince başka bir tarifin aynısı olan varyantlar silindi.
-- **Sayılar:** eşya 1505 → 1350, tarif 1105 → 982. Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
+- **Sayılar:** eşya 1505 → 1344, tarif 1105 → 980 (tek mantar dahil). Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
 - **Eski kayıtlar:** kayıt açılınca kalkan her şey yerine geçene çevrilir (çantada, sandıkta, kemerde, köpek çantasında, yerde, kitapta): türe özgü kalas/sap/kömür/kaşık biyomunkine, kurutulmuş ot 3 taze ota; karşılığı olmayan kurutulmuş yiyecekler eski satış fiyatından sikke olarak ödenir. Bir kez bildirim çıkar.
 
-Toplam **982 tarif**: 823 asıl tarif ve 159 varyant (oyun verisiyle sayıldı).
+Toplam **980 tarif**: 821 asıl tarif ve 159 varyant (oyun verisiyle sayıldı).
 
-#### Yiyecek (228)
+#### Yiyecek (226)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
@@ -122,9 +123,7 @@ Toplam **982 tarif**: 823 asıl tarif ve 159 varyant (oyun verisiyle sayıldı).
 | Kızarmış çayır mantarı | 3 Çayır mantarı, 1 Su | Pişirme taşı | Ateşte (pişirme menüsü) | 15 |
 | Kızarmış kanlıca | 2 Kanlıca, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 35 |
 | Kızarmış kayın mantarı | 2 Kayın mantarı, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 96 |
-| Kızarmış kuzugöbeği | 1 Kuzugöbeği, 3 Su, 3 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 30 |
 | Kızarmış mağara mantarı | 2 Mağara mantarı, 2 Su, 2 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 21 |
-| Kızarmış tavuk mantarı | 2 Tavuk mantarı, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 35 |
 | Kızarmış yabani havuç | 3 Yabani havuç, 1 Su | Pişirme taşı | Ateşte (pişirme menüsü) | 15 |
 | Kızılcık ezmesi | 3 Kızılcık, 1 Su | Taş havan | El yapımı (Tab) | 79 |
 | Kızılcık suyu | 3 Kızılcık, 1 Göl çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 230 |
@@ -720,7 +719,7 @@ Toplam **982 tarif**: 823 asıl tarif ve 159 varyant (oyun verisiyle sayıldı).
 | Işık fitili | 2 Işık tozu, 2 Lif | – | El yapımı (Tab) | 216 |
 | Kaba meşale | 2 Dal, 2 Lif, 2 Yaprak | – | El yapımı (Tab) | 7 |
 | Kamp ateşi | 5 Dal, 3 Taş, 2 Kuru ot, 1 Çakmaktaşı | – | El yapımı (Tab) | 14 |
-| Kav | 3 Kav mantarı, 1 Kıvılcım, 1 Dal, 1 Yaprak | – | El yapımı (Tab) | 98 |
+| Kav | 3 Kayın mantarı, 1 Kıvılcım, 1 Dal, 1 Yaprak | – | El yapımı (Tab) | 98 |
 | Kıvılcım | 3 Çakmaktaşı, 3 Taş | – | El yapımı (Tab) | 11 |
 | Kil lamba | 1 Nehir kasesi, 2 Hayvan yağı, 4 Dal, 3 Yaprak | – | El yapımı (Tab) | 129 |
 | Kor | 1 Ateş, 1 Çam kömürü, 4 Dal, 3 Yaprak | – | El yapımı (Tab) | 40 |

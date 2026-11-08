@@ -8,6 +8,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.76 · 8 Kasım 2026
+
+### Oynanış
+- **Her biyomda tek mantar:** Çayır'da Çayır mantarı, Orman'da Kanlıca, Bataklık'ta Sinek mantarı, Kayalık Dağ'da Kayın mantarı, Mor Kristal Vadisi'nde Işık mantarı, mağaralarda Mağara mantarı. Yüzen Kayalar'da Gök mantarı, Dev Mantar Ormanı'nda Işıldak mantarı, Kristal Golem Ocağı'nda Kristal mantarı, Ejder Volkanı'nda Kor mantarı, Gök Rıhtımı'nda Yıldız mantarı.
+- Tavuk mantarı, Kuzugöbeği, Kav mantarı ve Mantar şapkası kalktı; Kayın mantarı artık ikinci adada çıkmaz. Kızarmış tavuk mantarı ve Kızarmış kuzugöbeği tarifleri yok; **Kav** artık Kayın mantarıyla yapılır.
+- Görevler: Yakut'un "Mantar sepeti" ve "Taşan kazan"ı ile Pazarcı Fidan'ın "Mantar tezgâhı" **Kanlıca**, Firuze'nin "Liken ve kav"ı **Kayın mantarı** ister (konuşmaları da buna göre).
+
+### Kayıtlar
+- Eski kayıtlarda Tavuk mantarı ve Kuzugöbeği Kanlıca'ya, kızarmışları Kızarmış kanlıca'ya, Kav mantarı Kayın mantarına, Mantar şapkası Işıldak mantarına çevrilir.
+
+### Tasarım belgesi
+- Tarifler › Sade malzeme: "Her biyomda tek mantar" maddesi, sayılar (eşya 1344, tarif 980). Kalkan mantar ve tarif satırları silindi; görev tabloları, yiyecek etkileri tablosu ve Kav tarifi yenilendi.
+
+---
+
 ## Versiyon 3.75 · 8 Kasım 2026
 
 ### Oynanış
@@ -386,11 +401,4 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 ### Düzeltmeler
 
 - Kemal Kaya patlatıcının malzemelerini doğru söylüyor (kömür değil, turba).
-
-## Versiyon 3.56 · 7 Kasım 2026
-
-### Oynanış
-
-- **F her zaman önce yerdekini alır:** ayağının dibinde toplanacak bir şey varsa F önce onu toplar; kişiyle konuşmak, kapıdan girmek ve öbür işler yerde bir şey kalmayınca.
-- **"Doğu geçidini aç"** yine Kaya patlatıcı tarifini kazanda öğrendikten sonra verilir (Kemal, Doğan ya da Firuze); tarifi bilmiyorsan Kemal seni ona götürür. Tarifi öğrenmeden almış olduğun görev, oyunu açınca geri bırakılır ve tarifi öğrenince yeniden verilir.
 

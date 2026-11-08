@@ -68,7 +68,6 @@ Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzak
 | Goblin otu | 12 | 60 | 50 sn sonra yeniden çıkar |
 | Işıldak mantarı | 20 | 64 | 60 sn sonra yeniden çıkar |
 | Kök yumrusu | 29 | 61 | 50 sn sonra yeniden çıkar, çiğ yenir (+29 tokluk) |
-| Mantar şapkası | 33 | 63 | 55 sn sonra yeniden çıkar, çiğ yenir (+28 tokluk) |
 | Spor tozu | 14 | 65 | 50 sn sonra yeniden çıkar |
 | Sümük yosunu | 14 | 57 | 55 sn sonra yeniden çıkar |
 

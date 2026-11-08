@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.75** ile birebir (8 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.76** ile birebir (8 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -821,13 +821,13 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 | Biyom | Yiyecek · tokluk · etki (anında can) |
 |---|---|
 | Çayır | Böğürtlen 5 (+4 can) · Yaban çileği 6 Çeviklik · Yabani erik 6 Çeviklik · Yabani armut 7 Doygunluk · Yabani elma 7 Canlılık (+2 can) · Yabani havuç 5 Gece gözü |
-| Orman | Ahududu 9 Şifa · Yaban mersini 9 Gece gözü · Fındık 8 Güç · Ceviz 8 Dayanıklılık · Yabani bal 12 Çeviklik (+7 can) · Akçaağaç özsuyu 8 Canlılık · Tavuk mantarı 8 · Yabani mercimek 7 · Yabani nohut 7 (hepsi +3 can) · Kuzugöbeği 8, Kuzukulağı 7, Meşe palamudu 6 (zehirli, can vermez) |
+| Orman | Ahududu 9 Şifa · Yaban mersini 9 Gece gözü · Fındık 8 Güç · Ceviz 8 Dayanıklılık · Yabani bal 12 Çeviklik (+7 can) · Akçaağaç özsuyu 8 Canlılık · Yabani mercimek 7 · Yabani nohut 7 (hepsi +3 can) · Kanlıca 8, Kuzukulağı 7, Meşe palamudu 6 (zehirli, can vermez) |
 | Bataklık | Kızılcık 12 Pıhtı · Su kestanesi 12 (+14 can) (+6 can) · Mürver 11, Sinek mantarı 11 (zehirli) |
 | Kayalık Dağ | Alıç 15 Şifa · Kestane 15 Doygunluk · Ur kekliği yumurtası 15 Güç · Kayın mantarı 14 (+9 can) · Kuşburnu 14 (+21 can) · Ardıç meyvesi 14 (zehirli) |
 | Kül Diyarı | Ateş narı 19 Ateş kalkanı (+18 can) · Ateş biberi 17 Güç (+12 can) |
 | Mor Kristal Vadisi | Ay elması 24 Dayanıklılık (+21 can) · Yıldız eriği 22 Çeviklik · Işık mantarı 21 Gece gözü (+15 can) |
 | Yüzen Kayalar (ACT 2) | Bulut elması 26 Canlılık (+22 can) · Gök mantarı 25 Gece gözü (+18 can) |
-| Dev Mantar Ormanı (ACT 2) | Goblin eriği 29 Çeviklik · Kök yumrusu 29 Doygunluk · Mantar şapkası 28 Şifa (+21 can) |
+| Dev Mantar Ormanı (ACT 2) | Goblin eriği 29 Çeviklik · Kök yumrusu 29 Doygunluk |
 
   Ekili ürünler (Havuç Gece gözü, Kabak ve Patates Doygunluk, Soğan Panzehir, Ayçiçeği Güç) ve Gece sefası (Gece gözü) bir biyoma ait değildir, eski değerlerindedir. Pişmiş yemeklerin tokluğu malzemelerinden hesaplandığı için ileriki biyomun meyvesiyle yapılan yemek de daha doyurucu olur. Arenada yemek yoktur; etkiler arenanın etki seçicisinde aynen vardır.
 - **Bütün yemeklerin etkisi var (v3.35, Boğaç: "közlenmiş şeyler yalnızca tokluk veriyor; bütün yemekler toplanabilirler gibi ek özellik versin, fiyatına uygun, her biyomda daha kaliteli etkiler ve satış değerleri"):** yenebilen **her şey** (çiğ et ve balık, közlenmiş/pişmiş/kızarmış/kavrulmuş/haşlanmış/kurutulmuş/tütsülenmiş her şey, bütün yemek tarifleri, deniz balıkları ve yemekleri, ekili ürünler) tokluğun yanında **en az bir iyi etki** ve **can** verir. Kural:
@@ -837,7 +837,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
   - **Can:** çiğ yiyecek kademe × 3 (zehirliler hariç; eskisi gibi); pişmiş yemek 4 + kademe × 5 (tariflerin eski can bonusundan hangisi büyükse).
   - **Satış değeri:** her yiyeceğin fiyatı kademesiyle artar: fiyat × (1 + 0,15 × kademe) (Çayır aynı, Orman +%15 … Mor Kristal +%75, Gök Rıhtımı +%165). Pişmiş yemeklerin tokluğu fiyatlarından hesaplandığı için ileriki biyomun yemeği biraz daha da doyurur.
 - **Kötü etkiler** ucuz ve garip yiyeceklerde (ihtimal ucuzda %90, pahalıda %20): Ağırlık (−%20 hız), Halsizlik (enerji yarı hızda), Bulantı (can yenilenmez), Güçsüzlük (−%20 vuruş). Çiğ et ayrıca %35 ihtimalle 4 can yakar.
-- **Zehirli yiyecekler:** Mürver, Meşe palamudu, Sinek mantarı, Kurt eti, Kurbağa (çiğ), Kuzukulağı, Kuzugöbeği, Mağara mantarı, Ardıç meyvesi. Bir kez yiyince listede "zehirli!" yazar.
+- **Zehirli yiyecekler:** Mürver, Meşe palamudu, Sinek mantarı, Kurt eti, Kurbağa (çiğ), Kuzukulağı, Kanlıca, Mağara mantarı, Ardıç meyvesi. Bir kez yiyince listede "zehirli!" yazar.
 - Bir yemeği ilk kez yiyene kadar listede etkisi "Bilgim yok" görünür.
 - **Yemek listesi kategorili:** yemek listesi (yemek düğmesine basılı tut / sağ tık, bilgisayarda X'i basılı tut) artık tek uzun liste değildir. Üstte **kategori sekmeleri** vardır; yalnızca elinde o türden yiyecek olan sekmeler görünür ve her sekmenin yanında kaç çeşit olduğu yazar. Önce sekme seçilir, sonra o sekmedeki yiyeceğin **Ye** düğmesine basılır. Sekmeler (bu sırayla): **Meyveler** (çalı meyveleri, ağaç meyveleri, yemişler), **Sebze ve tahıl**, **Otlar**, **Mantarlar**, **Etler** (çiğ ve pişmiş), **Balıklar** (balık, kerevit, midye…; çiğ ve pişmiş), **Yemekler** (kazanda öğrenilen yemek tarifleri: çorba, güveç, reçel, kurutulmuş…), **Şifa** (merhem, çay gibi can veren tarifler), **Diğer**. Liste son seçtiğin sekmeyle açılır (o sekmede yiyecek kalmadıysa ilk dolu sekmeyle). Yemek düğmesine kısa basınca en uygun yiyeceği doğrudan yeme eskisi gibidir.
 
@@ -1565,14 +1565,12 @@ Adanın kuzeybatısı (Çayır'dan doğuya, büyük nehre doğru yürü). Gölge
 | Isırgan | 7 | 61 | 35 sn sonra yeniden çıkar |
 | Kanlıca | 8 | 64 | 55 sn sonra yeniden çıkar |
 | Kum | 1 | 83 | 14 sn sonra yeniden çıkar |
-| Kuzugöbeği | 12 | 61 | 70 sn sonra yeniden çıkar, çiğ yenir (+8 tokluk), zehirli! |
 | Kuzukulağı | 8 | 57 | 40 sn sonra yeniden çıkar, çiğ yenir (+7 tokluk), zehirli! |
 | Lif | 1 | 239 | 14 sn sonra yeniden çıkar |
 | Nehir çakılı | 1 | 112 | 18 sn sonra yeniden çıkar |
 | Sarmaşık | 7 | 63 | 45 sn sonra yeniden çıkar |
 | Taş | 1 | 156 | 21 sn sonra yeniden çıkar |
 | Tatlısu midyesi | 9 | 45 | 50 sn sonra yeniden çıkar |
-| Tavuk mantarı | 9 | 66 | 70 sn sonra yeniden çıkar, çiğ yenir (+8 tokluk) |
 | Yabani bal | 12 | 64 | 90 sn sonra yeniden çıkar, çiğ yenir (+12 tokluk) |
 | Yabani mercimek | 9 | 65 | 45 sn sonra yeniden çıkar, çiğ yenir (+7 tokluk) |
 | Yabani nohut | 9 | 55 | 45 sn sonra yeniden çıkar, çiğ yenir (+7 tokluk) |
@@ -1715,7 +1713,6 @@ Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartalla
 | Dağ çayı | 23 | 54 | 50 sn sonra yeniden çıkar |
 | Dal | 1 | 219 | 18 sn sonra yeniden çıkar |
 | Kardelen | 24 | 59 | 60 sn sonra yeniden çıkar |
-| Kav mantarı | 21 | 59 | 60 sn sonra yeniden çıkar |
 | Kayın mantarı | 32 | 57 | 60 sn sonra yeniden çıkar, çiğ yenir (+14 tokluk) |
 | Kekik | 21 | 60 | 40 sn sonra yeniden çıkar |
 | Kırmızı kil | 22 | 67 | 70 sn sonra yeniden çıkar |
@@ -2213,10 +2210,10 @@ Kızı Zeynep'le ada ada ev yapan usta. **v3.39 (Boğaç):** Marangoz Çınar oy
 |---|---|---|---|---|---|
 | Y1 | Kırmızı demlik | Getir: 4 Kanlıca, 4 Isırgan | Z5 | Y2 | 70 · 50 XP |
 | Y2 | Ormanın tatlısı | Getir: 2 Yabani bal, 5 Yaban mersini | Y1 | Y3 | 90 · 60 XP |
-| Y3 | Mantar sepeti | Getir: 4 Tavuk mantarı | Y2 | Y4 | 100 · 70 XP |
+| Y3 | Mantar sepeti | Getir: 4 Kanlıca | Y2 | Y4 | 100 · 70 XP |
 | Y4 | Engerek dili | Avla: 3 Engerek | Y3 | Y5 | 140 · 100 XP |
 | Y5 | Bataklık otu | Getir: 3 Bataklık otu (Bataklık) | Y4 · E2 | Y6, Safir 1 | 160 · 120 XP |
-| Y6 | Taşan kazan | Getir: 6 Sarmaşık, 4 Kuzugöbeği | Y5 · Seviye 8 | Y7 | 170 · 127 XP |
+| Y6 | Taşan kazan | Getir: 6 Sarmaşık, 4 Kanlıca | Y5 · Seviye 8 | Y7 | 170 · 127 XP |
 | Y7 | Dikenli kepçe | Avla: 3 Dikenli kirpi · Getir: 6 Ahududu | Y6 · Seviye 10 | Y8 | 185 · 135 XP |
 | Y8 | Kırmızıların kırmızısı | Getir: 8 Kızılcık, 5 Kuzukulağı | Y7 · Seviye 12 | – | 200 · 143 XP |
 
@@ -2305,7 +2302,7 @@ Yirmi yıldır bataklıkta oğlunu bekleyen avcı.
 | # | Görev | İstenen | Açılma | Açar | Ödül |
 |---|---|---|---|---|---|
 | FI1 | Turkuaz demlik | Getir: 3 Kardelen, 4 Lavanta | SA5 | FI2 | 220 · 260 XP |
-| FI2 | Liken ve kav | Getir: 5 Liken, 4 Kav mantarı | FI1 | FI3 | 260 · 320 XP |
+| FI2 | Liken ve kav | Getir: 5 Liken, 4 Kayın mantarı | FI1 | FI3 | 260 · 320 XP |
 | FI3 | Kardelen merhemi | Yap: 2 Kardelen merhemi | FI2 | FI4 | 280 · 360 XP |
 | FI4 | Kartalın tüyü | Getir: 4 Kartal tüyü | FI3 | FI5 | 320 · 420 XP |
 | FI5 | Ateş çiçeği | Getir: 4 Ateş çiçeği (Kül Diyarı) | FI4 · E3 | FI6, Mercan 1 | 300 · 420 XP |
@@ -3369,7 +3366,7 @@ Son görev (Yeni bir gemi) bitince Barbaros'la konuş: hikâye sahnesi, ardında
 
 | Biyom | Kuzen | Yemeni | Görevler (sırayla; ilki biyom keşfedilince açılır) |
 |---|---|---|---|
-| Orman | Pazarcı Fidan | yeşil | NF1 Mantar tezgâhı (4 Tavuk mantarı, 3 Mağara mantarı · 90 sikke, 60 XP) → NF2 Fındık zamanı (6 Fındık, 4 Kanlıca · 120, 80) → NF3 Karaca kürkü (3 Karaca derisi, 4 Ahududu · 150, 110) |
+| Orman | Pazarcı Fidan | yeşil | NF1 Mantar tezgâhı (4 Kanlıca, 3 Mağara mantarı · 90 sikke, 60 XP) → NF2 Fındık zamanı (6 Fındık, 4 Kanlıca · 120, 80) → NF3 Karaca kürkü (3 Karaca derisi, 4 Ahududu · 150, 110) |
 | Bataklık | Pazarcı Nilüfer | su yeşili | NN1 Nilüfer çiçeği (5 Nilüfer, 3 Su kestanesi · 140, 100) → NN2 Ördek pazarı (4 Ördek yumurtası, 6 Ördek tüyü · 170, 130) → NN3 Su samuru (2 Su samuru derisi, 6 Kızılcık · 200, 160) |
 | Kayalık Dağ | Pazarcı Kardelen | kar beyazı | NK1 Dağ çayı (4 Dağ çayı, 4 Kekik · 200, 150) → NK2 Kardelen buketi (3 Kardelen, 4 Lavanta · 240, 190) → NK3 Kartal tüyü (4 Kartal tüyü, 3 Dağ keçisi derisi · 280, 230) |
 | Kül Diyarı | Pazarcı Lale | kırmızı | NL1 Ateş biberi (4 Ateş biberi, 3 Ateş çiçeği · 300, 250) → NL2 Kehribar (5 Kehribar, 3 Kara tuz · 350, 300) → NL3 Kül kurdu (2 Kül kurdu postu, 3 Kül dişi · 420, 360) |
@@ -3517,7 +3514,6 @@ Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzak
 | Goblin otu | 12 | 60 | 50 sn sonra yeniden çıkar |
 | Işıldak mantarı | 20 | 64 | 60 sn sonra yeniden çıkar |
 | Kök yumrusu | 29 | 61 | 50 sn sonra yeniden çıkar, çiğ yenir (+29 tokluk) |
-| Mantar şapkası | 33 | 63 | 55 sn sonra yeniden çıkar, çiğ yenir (+28 tokluk) |
 | Spor tozu | 14 | 65 | 50 sn sonra yeniden çıkar |
 | Sümük yosunu | 14 | 57 | 55 sn sonra yeniden çıkar |
 
@@ -3988,13 +3984,14 @@ Her biyomun ağaç zinciri **tek** kalas, sap, kömür ve kaşıkla yürür; ad�
 - **Kalan isimler:** silah ve aletlerin sapları biyomun sapını ister (ör. Gümüş kılıç **Huş sapı**, Ametist kılıcı **Mor söğüt sapı**, Dişbudak yayı **Bataklık servisi sapı**, Porsuk yayı **Huş sapı**). Görevler: Usta Sinan'ın K1'i **6 Meşe kalası**, Ekin'in EK6'sı **8 Meşe kalası**, Yıldız'ın teleskop ayağı **4 Mavi mantar kalası** ister.
 - **Kurutulmuş otlar yok:** kurutulmuş kuşburnu, kekik, papatya, lavanta, nane, civanperçemi ve gelincik kalktı; onları isteyen tarifler (çaylar, merhemler) yerine **3 katı taze otu** ister (ör. 1 Kurutulmuş kekik → 3 Kekik).
 - **Kullanılmayan kurutulmuş yiyecekler yok:** hiçbir tarifte kullanılmayan 59 kurutulmuş et, balık, meyve ve mantar kalktı (çiği ve közlenmişi duruyor). Kalan kurutulmuşlar: sincap eti, böğürtlen, meyve keki, yabani elma (Neriman'ın N5 "Kış kurutmalığı" görevi ister) ve tek kullanıldığı tarif kurutulmuşu olan ebegümeci ve yıldız eriği (her malzeme bir tarifte kuralı).
+- **Her biyomda tek mantar (8 Kasım 2026, Boğaç: "her bölgede 1 mantar kalsın, kalabalığı önler; kalanlar en popüler mantarlar olsun"):** ACT 1'de Çayır **Çayır mantarı**, Orman **Kanlıca**, Bataklık **Sinek mantarı**, Kayalık Dağ **Kayın mantarı**, Mor Kristal Vadisi **Işık mantarı** (Kül Diyarı'nda mantar yok; mağaralarda **Mağara mantarı**). ACT 2'de Yüzen Kayalar **Gök mantarı**, Dev Mantar Ormanı **Işıldak mantarı**, Kristal Golem Ocağı **Kristal mantarı**, Ejder Volkanı **Kor mantarı**, Gök Rıhtımı **Yıldız mantarı** (Hurda Çölü'nde mantar yok). Kalkanlar: Tavuk mantarı ve Kuzugöbeği (Orman; yerlerine Kanlıca), Kav mantarı (Kayalık Dağ; yerine Kayın mantarı), Mantar şapkası (ACT 2), Kayın mantarı ACT 2'de çıkmaz. Kızarmış tavuk mantarı ve Kızarmış kuzugöbeği tarifleri silindi; **Kav** Kayın mantarıyla yapılır. Görevler: Yakut'un Y3 "Mantar sepeti" ve Y6 "Taşan kazan" ile Fidan'ın NF1 "Mantar tezgâhı" **Kanlıca**, Firuze'nin "Liken ve kav"ı **Kayın mantarı** ister. Eski kayıtlarda kalkan mantarlar yerine geçene çevrilir.
 - **Kalkan varyantlar:** kalkan bir malzemeyi isteyen ya da çevrilince başka bir tarifin aynısı olan varyantlar silindi.
-- **Sayılar:** eşya 1505 → 1350, tarif 1105 → 982. Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
+- **Sayılar:** eşya 1505 → 1344, tarif 1105 → 980 (tek mantar dahil). Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
 - **Eski kayıtlar:** kayıt açılınca kalkan her şey yerine geçene çevrilir (çantada, sandıkta, kemerde, köpek çantasında, yerde, kitapta): türe özgü kalas/sap/kömür/kaşık biyomunkine, kurutulmuş ot 3 taze ota; karşılığı olmayan kurutulmuş yiyecekler eski satış fiyatından sikke olarak ödenir. Bir kez bildirim çıkar.
 
-Toplam **982 tarif**: 823 asıl tarif ve 159 varyant (oyun verisiyle sayıldı).
+Toplam **980 tarif**: 821 asıl tarif ve 159 varyant (oyun verisiyle sayıldı).
 
-#### Yiyecek (228)
+#### Yiyecek (226)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
@@ -4062,9 +4059,7 @@ Toplam **982 tarif**: 823 asıl tarif ve 159 varyant (oyun verisiyle sayıldı).
 | Kızarmış çayır mantarı | 3 Çayır mantarı, 1 Su | Pişirme taşı | Ateşte (pişirme menüsü) | 15 |
 | Kızarmış kanlıca | 2 Kanlıca, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 35 |
 | Kızarmış kayın mantarı | 2 Kayın mantarı, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 96 |
-| Kızarmış kuzugöbeği | 1 Kuzugöbeği, 3 Su, 3 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 30 |
 | Kızarmış mağara mantarı | 2 Mağara mantarı, 2 Su, 2 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 21 |
-| Kızarmış tavuk mantarı | 2 Tavuk mantarı, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 35 |
 | Kızarmış yabani havuç | 3 Yabani havuç, 1 Su | Pişirme taşı | Ateşte (pişirme menüsü) | 15 |
 | Kızılcık ezmesi | 3 Kızılcık, 1 Su | Taş havan | El yapımı (Tab) | 79 |
 | Kızılcık suyu | 3 Kızılcık, 1 Göl çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 230 |
@@ -4660,7 +4655,7 @@ Toplam **982 tarif**: 823 asıl tarif ve 159 varyant (oyun verisiyle sayıldı).
 | Işık fitili | 2 Işık tozu, 2 Lif | – | El yapımı (Tab) | 216 |
 | Kaba meşale | 2 Dal, 2 Lif, 2 Yaprak | – | El yapımı (Tab) | 7 |
 | Kamp ateşi | 5 Dal, 3 Taş, 2 Kuru ot, 1 Çakmaktaşı | – | El yapımı (Tab) | 14 |
-| Kav | 3 Kav mantarı, 1 Kıvılcım, 1 Dal, 1 Yaprak | – | El yapımı (Tab) | 98 |
+| Kav | 3 Kayın mantarı, 1 Kıvılcım, 1 Dal, 1 Yaprak | – | El yapımı (Tab) | 98 |
 | Kıvılcım | 3 Çakmaktaşı, 3 Taş | – | El yapımı (Tab) | 11 |
 | Kil lamba | 1 Nehir kasesi, 2 Hayvan yağı, 4 Dal, 3 Yaprak | – | El yapımı (Tab) | 129 |
 | Kor | 1 Ateş, 1 Çam kömürü, 4 Dal, 3 Yaprak | – | El yapımı (Tab) | 40 |
@@ -6096,7 +6091,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Işık tozu | 80 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Işık fitili |
 | Işık Yutan kalbi | 2.600 | – | Mağara reisi Işık Yutan düşürür (Ayna Mağarası, Mor Kristal Vadisi) %100 ×1 | Işık Yutan kalbi tılsımı |
 | Işık Yutan kalbi tılsımı | 4.200 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Işıldak mantarı ² | 20 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) | – |
 | Işıltılı boya | 182 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Işıl balığı | 225 | – | Deniz avı: Mor Derinlik (Gemici Poyraz'ın teknesiyle, Sv 22+, Yıldız oltası) %17 | Işıl çorbası |
 | Işıl çorbası | 676 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
@@ -6169,7 +6163,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kavrulmuş yabani mercimek | 70 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kavrulmuş yabani nohut | 70 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kavrulmuş yabani yulaf | 38 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
-| Kav mantarı | 21 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Kav |
 | Kaya çiçeği ² | 20 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) | – |
 | Kaya patlatıcı | 236 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kaya yarasası kanadı | 104 | – | Mağara canlısı Kaya yarasası düşürür (Rüzgâr Mağarası, Kayalık Dağ) %80 ×1 | Kanat yelpazesi |
@@ -6247,9 +6240,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kızarmış çayır mantarı | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızarmış kanlıca | 35 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızarmış kayın mantarı | 96 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
-| Kızarmış kuzugöbeği | 30 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızarmış mağara mantarı | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
-| Kızarmış tavuk mantarı | 35 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızarmış yabani havuç | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızılağaç kabuğu | 26 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kızılağaç kaşığı | 118 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6401,7 +6392,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kuvars savaş çekici | 2.333 | alet, silah 59 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | – |
 | Kuvars sivri ucu | 948 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kuvars kazma, Kuvars mızrak |
 | Kuvars topuz | 1.459 | alet, silah 44 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | – |
-| Kuzugöbeği | 12 | yenir +8, zehirli | Yerden toplanır: Orman (ACT 1) | Kızarmış kuzugöbeği |
 | Kuzukulağı | 8 | yenir +7, zehirli | Yerden toplanır: Orman (ACT 1) | Ot salatası |
 | Kükürt | 46 | – | Kazmayla kazılır: Kül Diyarı (ACT 1) | Kara çelik külçesi, Kükürtlü merhem, Kükürt çakmağı |
 | Kükürtlü merhem | 207 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6459,7 +6449,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Mana iksiri ² | 306 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Büyücü Efsun yapar (10 sikke işçilik) | – |
 | Mantar çorbası | 141 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Mantar lifi eldiven ² | 1.486 | giyilir +14 savunma | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | Ejder pulu eldiven |
-| Mantar şapkası ² | 33 | yenir +3 | Yerden toplanır: Dev Mantar Ormanı (ACT 2) | – |
 | Masa | 186 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Mavi mantar kalası ² | 67 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Ateş asası, Atölye, Dolap … (+15) |
 | Mavi mantar odunu ² | 22 | – | Balta ile Mavi mantar ağacından: Dev Mantar Ormanı (ACT 2) | Kütük salı, Mavi mantar kalası, Oyma kano |
@@ -6587,7 +6576,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Pirinç külçesi ² | 111 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Pompalı fişeği, Tabanca mermisi |
 | Pirit | 28 | – | Kazmayla kazılır: Kayalık Dağ (ACT 1) | Kükürt çakmağı, Pirit çakmağı |
 | Pirit çakmağı | 47 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | Ateş, Kozalak ateşi, Turba ateşinde tütsü |
-| Pişirme taşı | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | Kızarmış çayır mantarı (alet), Kızarmış kanlıca (alet), Kızarmış kayın mantarı (alet), Kızarmış kuzugöbeği (alet), Kızarmış mağara mantarı (alet), Kızarmış tavuk mantarı (alet) … (+20) |
+| Pişirme taşı | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | Kızarmış çayır mantarı (alet), Kızarmış kanlıca (alet), Kızarmış kayın mantarı (alet), Kızarmış mağara mantarı (alet), Kızarmış kanlıca (alet) … (+20) |
 | Pişmiş alabalık | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
 | Pişmiş bıldırcın eti | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
 | Pişmiş bulut koyunu eti ² | 99 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
@@ -6766,7 +6755,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Tavan ağı | 112 | – | Mağara canlısı Tavan örümceği düşürür (Rüzgâr Mağarası, Kayalık Dağ) %80 ×1–2 | Ağ kapanı, Gümüş çan, Kristal kolye |
 | Tavşan derisi | 3 | – | Av: Tavşan düşürür %70 (ACT 1 · Çayır) | – (satılır, görevlerde istenir) |
 | Tavşan eti | 3 | – | Av: Tavşan düşürür %100 (ACT 1 · Çayır) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş tavşan eti, Turba ateşinde tütsü … (+1) |
-| Tavuk mantarı | 9 | yenir +8 | Yerden toplanır: Orman (ACT 1) | Kızarmış tavuk mantarı |
 | Tazı dişi ² | 40 | – | Av: Gök tazısı düşürür %60 (ACT 2 · Yüzen Kayalar) | – |
 | Tekir | 8 | – | Deniz avı: Kıyı Suları (Gemici Poyraz'ın teknesiyle, Sv 3+, Olta) %17 | Tekir tava |
 | Tekir tava | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
