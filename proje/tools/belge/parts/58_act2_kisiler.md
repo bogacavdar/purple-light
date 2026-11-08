@@ -30,7 +30,7 @@ Açtığı tarifler: Mana iksiri (1. görev), Ateş asası (3.), Buz asası (4.)
 
 ### Silahçı Tufan · Hurda Çölü
 
-Geminin düşürdüğü dronların (robotların) dolaştığı hurda çölünde. Tabanca (200 vio) ve Pompalı (400 vio) yapar; mermiyi sen elle yaparsın.
+Geminin düşürdüğü dronların (robotların) dolaştığı hurda çölünde. Tabanca (200 Vio) ve Pompalı (400 Vio) yapar; mermiyi sen elle yaparsın.
 
 | # | Görev | İstenen | Açılma şartı | Vio | XP |
 |---|---|---|---|---|---|
@@ -44,7 +44,7 @@ Açtığı tarifler: Pirinç külçesi ve Barut (1. görev), Tabanca ve Tabanca 
 
 ### Mühendis Işın · Kristal Golem Ocağı
 
-Adanın güney ortasındaki kayalıklarda. **Meka zırh** yapar (600 vio): gövde yuvası, +90 savunma, canı %25 artırır, hareketi %12 hızlandırır, zehir/yanık/kanama hasarının yarısını tutar.
+Adanın güney ortasındaki kayalıklarda. **Meka zırh** yapar (600 Vio): gövde yuvası, +90 savunma, canı %25 artırır, hareketi %12 hızlandırır, zehir/yanık/kanama hasarının yarısını tutar.
 
 | # | Görev | İstenen | Açılma şartı | Vio | XP |
 |---|---|---|---|---|---|
@@ -57,7 +57,7 @@ Açtığı tarifler: Kobalt külçesi, Titanyum külçesi, Enerji hücresi (1. g
 
 ### Ejder Avcısı Tomris · Ejder Volkanı
 
-Adanın doğusundaki volkanda. Ejderhalar geminin volkana döktüğü plazmayla büyümüş. **Işın kılıcı** yapar (800 vio).
+Adanın doğusundaki volkanda. Ejderhalar geminin volkana döktüğü plazmayla büyümüş. **Işın kılıcı** yapar (800 Vio).
 
 | # | Görev | İstenen | Açılma şartı | Vio | XP |
 |---|---|---|---|---|---|
@@ -71,7 +71,7 @@ Açtığı tarifler: Plazma hücresi (1. görev), Işın kılıcı (3.). Son gö
 
 ### Astronot Gökay · Gök Rıhtımı
 
-Adanın en uzak ucunda, yarım kalmış bir fırlatma rampasının başında. Sevdiği Nehir'i uzaylılarla savaşırken kaybetmiş, onu gemiden geri almak istiyor. Roketin parçalarını o yapar: Roket gövdesi 1.000, Roket motoru 1.500, Roket 2.000 vio.
+Adanın en uzak ucunda, yarım kalmış bir fırlatma rampasının başında. Sevdiği Nehir'i uzaylılarla savaşırken kaybetmiş, onu gemiden geri almak istiyor. Roketin parçalarını o yapar: Roket gövdesi 1.000, Roket motoru 1.500, Roket 2.000 Vio.
 
 | # | Görev | İstenen | Açılma şartı | Vio | XP |
 |---|---|---|---|---|---|

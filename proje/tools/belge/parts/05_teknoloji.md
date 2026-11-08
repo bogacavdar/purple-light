@@ -127,7 +127,7 @@ Oyun şu an **tek oyunculu**dur ve öyle kalacaktır. İleride **4 kişiye kadar
 - Başlamadan önce bu belgeye ayrı bir "Çok oyunculu mod" bölümü yazılır (öğretici, uyku, Reis ödülleri, durma, kayıt kuralları); kod ondan sonra gelir.
 
 **Bulgular (29 Ekim 2026 incelemesi):** oyun baştan tek oyunculu kurulmuş; çok oyuncu için şunlar değişmeli:
-- **Tek oyuncu → oyuncu listesi:** kodda tek bir `player` var; her oyuncunun canı, tokluğu, envanteri, viosu, yetenekleri, elindeki alet ve kamerası ayrı olmalı.
+- **Tek oyuncu → oyuncu listesi:** kodda tek bir `player` var; her oyuncunun canı, tokluğu, envanteri, Vio’su, yetenekleri, elindeki alet ve kamerası ayrı olmalı.
 - **Ortak dünya:** ağaçlar, madenler, canavarlar, yerdeki eşyalar, gün/gece herkeste aynı olmalı; canavar yapay zekâsı yalnızca ev sahibinde döner, diğerlerine saniyede 10–20 kez dünyanın son hali gider.
 - **Durma kalkar:** şu an menü ya da konuşma açılınca oyun duruyor; çok oyunculuda dünya kimse için durmaz.
 - **Tasarım kararları gerekir:** öğretici ve görevler kişiye mi özel ortak mı; uyku (herkes yatağa mı girmeli); Reis kimin avıyla gelir, ödül kime; bayılma; kayıt (dünya ev sahibinde, karakter herkeste mi).

@@ -188,7 +188,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 - Boşta kalan malzemeler setlere geçti: **Lav pulu** Ejder eldiveninde, **Kül kurdu postu** Ejder çizmesinde, **Bazalt sivri ucu** Ejder mızrağı ve Ejder kazmasında, **Kül ağacı sapı** Ejder savaş çekici ve topuzunda.
 - **Yeni usta zırhlarının direnci:** Meşe kabuk eldiven ve çizme kanama %10; Timsah miğfer ve eldiven zehir %15; Gümüş eldiven ve çizme kanama %15; Ametist miğfer ve Kristal ipek çizme zehir %20. Kamış çizme çamurda yavaşlatmaz.
 
-**Kaldırılanlar** (eski kayıtta eski fiyatıyla **vioya** çevrilir; çantada, giyilende ve yuvalarda olanlar; yüklenince "vioya çevrildi" yazar): Tavşan postu giysi (255), Geyik postu giysi (262), Karaca postu giysi (257), Kunduz postu giysi (262), Dağ keçisi postu giysi (258), Muflon postu giysi (258), Yaban domuzu postu giysi (258), Kurt postu giysi (257), Yaban öküzü postu giysi (267), Mağara ayısı postu giysi (270), Keten tunik (170), Boyalı tunik (296), Bataklık postu pelerin (100), Ayı postu pelerin (451), Kül postu pelerin (325), Timsah derisi zırh (158), Tüylü başlık (244), Bataklık çizmesi (479), Lav camı kılıcı (955), Kül böceği zırh (1736), Akrep kabuğu çizme (620), Lav pulu eldiven (550), Bazalt balta (92), Bazalt kazma (441), Bazalt mızrak (431); Alevli/Zehirli/Keskin Bazalt mızrak (431). Eski Alevli/Zehirli/Keskin Çakmaktaşı, Kuvars ve Obsidyen mızrak etkisiz mızrağa döner (artık etkileriyle doğarlar).
+**Kaldırılanlar** (eski kayıtta eski fiyatıyla **Vio’ya** çevrilir; çantada, giyilende ve yuvalarda olanlar; yüklenince "Vio’ya çevrildi" yazar): Tavşan postu giysi (255), Geyik postu giysi (262), Karaca postu giysi (257), Kunduz postu giysi (262), Dağ keçisi postu giysi (258), Muflon postu giysi (258), Yaban domuzu postu giysi (258), Kurt postu giysi (257), Yaban öküzü postu giysi (267), Mağara ayısı postu giysi (270), Keten tunik (170), Boyalı tunik (296), Bataklık postu pelerin (100), Ayı postu pelerin (451), Kül postu pelerin (325), Timsah derisi zırh (158), Tüylü başlık (244), Bataklık çizmesi (479), Lav camı kılıcı (955), Kül böceği zırh (1736), Akrep kabuğu çizme (620), Lav pulu eldiven (550), Bazalt balta (92), Bazalt kazma (441), Bazalt mızrak (431); Alevli/Zehirli/Keskin Bazalt mızrak (431). Eski Alevli/Zehirli/Keskin Çakmaktaşı, Kuvars ve Obsidyen mızrak etkisiz mızrağa döner (artık etkileriyle doğarlar).
 
 **Ad değişen:** Ejder pulu zırh → **Ejder zırhı** (eski kayıtta kendiliğinden). Ejder kılıcının tarifinde Altın külçesi yerine Kara çelik külçesi var (altın artık Mor Kristal Vadisi'nde, Turan'ın ejder görevi Kül Diyarı'nda).
 
@@ -506,14 +506,14 @@ Beş yuva vardır: **baş, gövde, el, ayak, silah**. Özellikler penceresinden 
 | Kristal miğfer ² | Baş | 26 | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | direnç: kanama %30, metal |
 | Mantar lifi eldiven ² | El | 14 | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | direnç: zehir %40 |
 | Ejder pulu eldiven ² | El | 16 | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | direnç: yanık %40 |
-| Meka zırh ² | Gövde | 90 | Mühendis Işın yapar (600 vio işçilik) | direnç: kanama %50, yanık %50, zehir %50, metal |
+| Meka zırh ² | Gövde | 90 | Mühendis Işın yapar (600 Vio işçilik) | direnç: kanama %50, yanık %50, zehir %50, metal |
 
 
 ## Evler ve barınaklar (Usta Sinan; v3.39'a kadar Marangoz Çınar)
 
-Fiyat: Sinan'a ödenen toplam vio, malzeme ve işçilik dahil (tek tanım: Sistemler › Ev, ev içi ve döşeme).
+Fiyat: Sinan'a ödenen toplam Vio, malzeme ve işçilik dahil (tek tanım: Sistemler › Ev, ev içi ve döşeme).
 
-| Yapı | Seviye | Fiyat (vio) | Malzeme | Açıklama |
+| Yapı | Seviye | Fiyat (Vio) | Malzeme | Açıklama |
 |---|---|---|---|---|
 | Yaprak barınağı | Sv 1 | 25 | 8 Dal, 12 Yaprak, 4 Lif | Yatak gerekmez. Bir gecelik: uyanınca dağılır. |
 | Deri çadır | Sv 3 | 300 | – | Kalıcı bir çadır. İçinde uyumak için yatak koymalısın. |

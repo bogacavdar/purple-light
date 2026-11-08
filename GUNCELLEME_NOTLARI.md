@@ -8,6 +8,27 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.93 · 9 Kasım 2026
+
+### Oynanış
+- **Ders malzemeleri yalnızca eksik kadar:** Kemal, Zümrüt ve Börü derslerde yere malzeme bırakırken (böğürtlen; meşale için dal, lif, yaprak; taşlar; balta parçaları için dal, lif, taş) artık envanterindekileri ve yakında yerde duranları sayıyor, yalnızca eksik kalanı bırakıyor. Konuşmada da yalnızca bıraktıklarını söylüyorlar; hepsi zaten varsa hiçbir şey bırakmıyorlar.
+
+### Oynanış (Börü'nün balta dersi)
+- **Yalnızca mavi düğme:** dersin 12. adımında El yapımı açıkken sıradaki parçanın (keskin taş, sopa, ip) mavi yanan **Yap** düğmesi ve ok görünür; penceredeki öbür her şey soluk ve tıklanamaz. Pencereyi kapatmak her zaman çalışır.
+- **Malzeme eksikse pencere kapanır:** sıradaki parça için malzemen yoksa (ya da sıra iki taşı toplamaya geldiyse) El yapımı kendiliğinden kapanır, "Önce malzemeleri topla: …" der ve öğretici seni eksik malzemeye götürür.
+
+### Arayüz
+- **El yapımında yazılar üst üste binmiyor:** yapamadığın bir tarifin malzeme kutusu saydamdı ve alttaki satırın altında kalıyordu. Artık bilgisayarda satırın ya da **Yap** düğmesinin üstüne gelince malzemeler, Yap düğmesinin hemen üstünde küçük, kenarlı bir kartta çıkıyor. Telefonda dokununca açılan kutu da artık opak.
+- **Yap düğmesi en sağda:** el yapımı satırlarında düğme sırası Takip et · ×5 · Hepsi · Yap.
+- **"Vio" büyük harfle:** paranın adı her yerde "Vio" yazıyor; ekleri kesme işaretiyle ayrılıyor (Vio’yu, Vio’ya, "50 Vio’luk").
+
+### Tasarım belgesi
+- Oyun akışı › "Ders malzemesi yalnızca eksik kadar konur"; Giriş › Para birimi: büyük harfle "Vio".
+- Sistemler › El yapımı listesi ve düğmeleri: malzeme kartı, Yap en sağda.
+- Oyun akışı › "Börü'nün balta dersinde El yapımı yalnızca gösterilen düğmeye izin verir".
+
+---
+
 ## Versiyon 3.92 · 9 Kasım 2026
 
 ### Oynanış
@@ -253,24 +274,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Sistemler › Seni hatırlıyorum: iki cevap düğmesinin metni.
-
----
-
-## Versiyon 3.73 · 8 Kasım 2026
-
-### Oynanış
-- **Sade malzeme:** her biyomun ağaç zinciri artık tek kalas, sap, kömür ve kaşıkla yürür ve adını biyomun asıl ağacından alır: Çayır **Çam**, Orman **Meşe**, Bataklık **Bataklık servisi**, Kayalık Dağ **Huş**, Kül Diyarı **Kül ağacı**, Mor Kristal Vadisi **Mor söğüt**; ACT 2'de Mavi mantar, Hurda palmiyesi, Kristal çam, Kömür ağacı kalası. Öbür ağaçların odunu boşa gitmez: her biri kendi biyomunun kalasına çevrilir (ör. **Çam kalası (Kavak odunu ile)**, 44 yeni varyant).
-- **Kurutulmuş otlar kalktı:** çaylar ve merhemler kurutulmuş ot yerine **3 katı taze ot** ister (ör. 1 Kurutulmuş kekik yerine 3 Kekik).
-- **Kullanılmayan kurutulmuş yiyecekler kalktı:** hiçbir tarifte işe yaramayan 59 kurutulmuş et, balık, meyve ve mantar yok. Kalanlar: sincap eti, böğürtlen, meyve keki, yabani elma (Neriman'ın görevi), ebegümeci, yıldız eriği.
-- Silah ve aletlerin sapları biyomun sapını ister (Gümüş kılıç Huş sapı, Ametist kılıcı Mor söğüt sapı, Dişbudak yayı Bataklık servisi sapı, Porsuk yayı Huş sapı).
-- Görevler: Usta Sinan'ın ilk görevi **6 Meşe kalası**, Ekin'in "Tarla büyüyor"u **8 Meşe kalası**, Yıldız'ın teleskop ayağı **4 Mavi mantar kalası** ister.
-- Toplam: eşya 1505 → 1350, tarif 1105 → 982. Her eşyanın fiyatı var, her tarifin malzemesi bulunabiliyor.
-
-### Kayıtlar
-- Eski kayıt açılınca kalkan her şey kendiliğinden çevrilir (çanta, sandık, kemer, köpek çantası, yerdekiler, tarif kitabı): türe özgü kalas/sap/kömür/kaşık biyomunkine, kurutulmuş ot 3 taze ota; karşılığı olmayan kurutulmuş yiyecekler eski satış fiyatından sikke olarak ödenir. Bir kez bildirim çıkar.
-
-### Tasarım belgesi
-- Tarifler › yeni "Sade malzeme" bölümü (biyom başına asıl ağaç tablosu, varyant kalaslar, kurutulmuş kuralları, eski kayıt çevirisi); kalkan tarif ve eşya satırları silindi, kategori sayıları ve toplam yenilendi. Eşyalar, Aletler, ACT 1 kişileri, ACT 2 kişileri ve görev tablolarında kalkan isimler yerine geçenle değişti.
 
 ---
 

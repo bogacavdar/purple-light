@@ -1,3 +1,11 @@
+## v3.93 (9 Kasım 2026) · ders malzemesi yalnızca eksik kadar; "Vio" büyük harf
+
+**Değişen yerler:** `tzPlace` (satır ~7130 ve `v3.7x` bloğundaki üzerine yazan sürümü, ~22492) artık `tzMiss(ad,toplam,cx,cy)` = toplam − envanter − `tzNear` (yerde, merkezden ya da oyuncudan 200 px içinde) kadar koyar ve koyduğu sayıyı döndürür; `tzList` sayı kelimeleriyle liste kurar. Çağrılar: Zümrüt ilk tarif metni ve tarif öğrenilince (Dal/Lif/Yaprak 2), `stonesNow` (Taş 4), `tzAlpDone` (Sopa yoksa Dal 3, Lif (2−İp)×4, Taş 2+(eksik keskin taş)×2; Börü'nün 6 taşı önce verilir). Metinler bırakılan sayıyı söyler. Para: oyun dosyası ve `parts/*.md`'de "vio" → "Vio", ekler ’ ile (Vio’yu…); düzenli ifadeler `/Vio/i`, `/^100 Vio/`. Yeni `<style id="v393hand">` + `<script id="v393handjs">`: yapılamayan satırın `.bn{opacity}` katmanı malzeme kutusunu saydam yapıp alttaki satırın altına itiyordu → soluklaştırma yalnızca resim/ad/"sende"ye, açık satır `z-index:7`; düğme sırası CSS `order` ile Takip et · ×5 · Hepsi · Yap (Yak); bilgisayarda (hover) satır kutusu gizli, `#hcard` sabit kart Yap düğmesinin üstünde (yer yoksa altında). Yeni `v393lock` (+ `v393lock-css`): `tz===12 && mode==="hand"` iken sıradaki parçanın `[data-hand][data-q=1]` düğmesi basılabiliyorsa `body.v393lock` (pencere içi her şey `pointer-events:none`, yalnızca `.p189` ve Kapat), değilse (ya da adım Taş) 0,7 sn sonra `closeCraft()` + `tzNeed()` ile "Önce malzemeleri topla". Sürüm etiketi `Versiyon 3.93`.
+
+**Geri alma:** `git revert` bu commit.
+
+**Kontrol:** chk.js 0 hata. Deneme: envanterde 3 taş → kazan yanına 1 taş kondu; Dal 2/Lif 1 + yakında Dal 3, Lif 5, Yaprak 3 → hiçbir şey konmuyor. Konsol hatası yok.
+
 ## v3.92 (9 Kasım 2026) · para birimi sikke → vio, mor para resmi
 
 **Değişen yerler:** oyun dosyasında ve `parts/*.md`'de bütün "sikke" çekimleri sözlükle çevrildi (sikke→vio, sikken→vion, sikkelik→violuk, sikkeler→violar, sikkeye→vioya, sikkeyi→vioyu, sikkesi→viosu, sikkenin→vionun, sikkeni→vionu, sikkeyle→vioyla…; büyük harf korunur), yorumlar ve `/vio/i` (∞ para), `/^100 vio/` (Koşu görevi) düzenli ifadeleri dahil; kayıtlarda "sikke" adlı alan yok (`coins` sayı), çevrim gerekmez. Yeni `<style id="v392vio">`: `#coinbox i`, `.ccoins i`, `#coins i`, `.gcoin` mor para; para kutusu ve sayaç mor. GUNCELLEME_NOTLARI'nın eski sürüm notları olduğu gibi kaldı (geçmiş). Sürüm etiketi `Versiyon 3.92`.
@@ -151,15 +159,4 @@
 **Geri alma:** düğme metnini `'…'` yap (belge satırıyla birlikte).
 
 **Kontrol:** chk.js 0 hata.
-
-## v3.73 (8 Kasım 2026) · sade malzeme: biyom başına tek kalas/sap/kömür/kaşık, kurutulmuş otlar ve kullanılmayan kurutulmuşlar kalktı
-
-**Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
-- Yeni `<script id="v373sade">` (en sonda, `v366tarif`ten sonra çalışır): `LAND1`/`LAND2` (asıl ağaç → öbür ağaçlar), `REPL` (türe özgü kalas/sap/kömür/kaşık → asıl; ACT 2'de yalnız kalas), `HERB` (kullanılan kurutulmuş ot → taze, ×3), `FOODX` (hiçbir tarifte kullanılmayan kurutulmuşlar; `KEEPDRY` ve "tabanının tek kullanımı" koruması hariç). `DB.R`'den kalkanlar silinir, girdiler eşlenip birleşir, aynılaşan varyantlar silinir, her öbür ağaç için `C kalası (S odunu ile)` varyantı eklenir (`VO`, `PRICE_`); `REC`/`RESULTS`/`USES`/`FORGED`/`FIRE_R`/`PLACEABLE`/`ARMORSET`/`PRICE_`/`DEPTH`/`CAT_N`/`CHEAT_RES` yeniden kurulur. `window.__plSadeInfo`, `window.__plSadeMap`.
-- `applyState` sarmalı: kayıt JSON'unda kalkan bir ad varsa derin yürür (sayı haritası anahtarları, dizideki adlar/[ad,...] demetleri, `{n,q}` nesneleri), FOODX eski fiyattan (`OLDP`) sikkeye; bildirim metni `s.v373t` ile sayfa yeniden yüklense de taşınır.
-- Kaynakta: `v184`/`v251` usta silah sapları (Huş, Mor söğüt, Kül ağacı sapı), `v186` K1/EK6 Meşe kalası (metinler), `v55-q` gk1 Mavi mantar kalası. Sürüm etiketi `Versiyon 3.73`.
-
-**Geri alma:** `git revert` bu commit (blok + kaynak isimleri + belge birlikte). Kayıtlar: çevrilmiş kayıtlar geri çevrilmez (eski adlar yeniden eklenirse çantada yalnızca asıl kalaslar kalır), oyun bozulmaz.
-
-**Kontrol:** chk.js 0 hata (183 script). Denetim (eski 3.71 ↔ yeni): eşya 1505 → 1350, tarif 1105 → 982 (159 varyant), bilinmeyen girdi 0, fiyatsız 0, yeni kullanılmayan ham malzeme 0. Eski kayıt (gerçek kaydet/yükle, yeniden yükleme dahil): 3 Ladin + 1 Meşe kalası → 4 Meşe kalası, 2 Kurutulmuş kekik → 6 Kekik, Kurutulmuş geyik eti → 87 sikke, Ardıç kaşığı → Huş kaşığı, Işık ağacı sapı → Mor söğüt sapı, kitaptan Ladin kalası silindi. `Çam kalası (Kavak odunu ile)` el yapımı: 1 Çam kalası verir.
 

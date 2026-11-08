@@ -7,16 +7,16 @@ Yetenekler üç ağaçtadır: **Savaş** (kırmızı), **Ekonomi** (altın sarı
 - Yetenek ekranının (Y) üstünde **üç eşit sekme** vardır; pencerenin genişliğini tam üçe böler. Bir sekmeye basınca o ağaç gösterilir ve ağacın **rengi, arka planı ve kenarlığı kategoriye göre değişir** (Savaş koyu kırmızı, Ekonomi koyu altın/kahve, Dayanıklılık koyu yeşil).
 - **Ağacın şeklini yeteneklerin kendisi çizer.** Toprak, kök ya da gövde resmi yoktur. Yetenekler (yuvarlaklar) ince dallarla birbirine bağlanır. Hepsi açıldığında bir ağaç silüeti ortaya çıkar: altta üst üste üç yetenekten oluşan **gövde**, üstünde üç ana dala ayrılıp sola, ortaya ve sağa yayılan, yukarıda yuvarlak bir **taç**. Ağaç alttan yukarı açılır.
 - **Pencerenin boyutu sabittir;** yeni yetenek görünse de ekran büyümez, kaymaz. Her yeteneğin ağaçtaki yeri baştan bellidir. Üç ağacın alanı aynı büyüklüktedir.
-- **Her yeteneğin sade bir ikonu vardır:** yuvarlağın içinde, yeteneğin ne işe yaradığını anlatan basit bir çizgi resim (kalp, kalkan, kılıç, vio…). İkonlar **iki renklidir:** koyu zemin üstünde ağacın renginde çizgi; alınan yetenekte tersi (ağaç renginde zemin, koyu çizgi). **Aynı yeteneğin seviyeleri aynı ikonu kullanır** (Zırh I–IV hep aynı zırh resmi); seviye, ikonun altındaki küçük noktalarla (I = 1 nokta, II = 2 …) gösterilir. Ağaçta yazı yoktur.
-- **Dış çeper rengi durumu söyler:** satın alınabilir yetenek **parlak sarı** çeperlidir (hafif parlar); satın alınamayan (vio ya da seviye yetmiyor) **gri** çeperlidir ve soluktur; alınmış yetenek ağaç renginde dolu ve açık renk çeperlidir.
+- **Her yeteneğin sade bir ikonu vardır:** yuvarlağın içinde, yeteneğin ne işe yaradığını anlatan basit bir çizgi resim (kalp, kalkan, kılıç, Vio…). İkonlar **iki renklidir:** koyu zemin üstünde ağacın renginde çizgi; alınan yetenekte tersi (ağaç renginde zemin, koyu çizgi). **Aynı yeteneğin seviyeleri aynı ikonu kullanır** (Zırh I–IV hep aynı zırh resmi); seviye, ikonun altındaki küçük noktalarla (I = 1 nokta, II = 2 …) gösterilir. Ağaçta yazı yoktur.
+- **Dış çeper rengi durumu söyler:** satın alınabilir yetenek **parlak sarı** çeperlidir (hafif parlar); satın alınamayan (Vio ya da seviye yetmiyor) **gri** çeperlidir ve soluktur; alınmış yetenek ağaç renginde dolu ve açık renk çeperlidir.
 - **Fare üzerine gelince** küçük bir kutuda yeteneğin **adı, ne işe yaradığı** ve fiyatı/durumu yazar.
-- **Satın alma ikona tıklayarak yapılır** (altta düğme yok). Satın alınabiliyorsa tıklayınca hemen alınır ve ne değiştiğini anlatan pencere çıkar; alınamıyorsa nedeni bildirim olarak yazar (ör. "Seviye 6 gerekli", "250 vio daha gerekli"). **Telefonda** (fare yok) ilk dokunuş bilgi kutusunu açar, aynı ikona ikinci dokunuş satın alır.
+- **Satın alma ikona tıklayarak yapılır** (altta düğme yok). Satın alınabiliyorsa tıklayınca hemen alınır ve ne değiştiğini anlatan pencere çıkar; alınamıyorsa nedeni bildirim olarak yazar (ör. "Seviye 6 gerekli", "250 Vio daha gerekli"). **Telefonda** (fare yok) ilk dokunuş bilgi kutusunu açar, aynı ikona ikinci dokunuş satın alır.
 
 ## Kurallar
 
 - **Başta her ağacın yalnızca kök yeteneği görünür** (Koşu, Usta tüccar I, Güçlü beden).
 - **Bir yetenek alınınca yalnızca ona bağlı, hemen üstündeki yetenekler** görünür olur (tablodaki "Alınınca açılanlar"). Başka hiçbir yetenek açılmaz; alınmayan bir yeteneğin üstündekiler **görünmez** (dalı da çizilmez).
-- Bu kural **sınırsız vio (tanrı modu) açıkken de** aynıdır.
+- Bu kural **sınırsız Vio (tanrı modu) açıkken de** aynıdır.
 - Fiyat ve seviye şartı yeteneğin **katına** (kökten kaçıncı basamak olduğuna) göredir; yukarı çıktıkça pahalı ve güçlü:
 
 | Kat | Fiyat | Seviye şartı |
@@ -30,11 +30,11 @@ Yetenekler üç ağaçtadır: **Savaş** (kırmızı), **Ekonomi** (altın sarı
 | 7 | 3.000 | Sv 11 |
 | 8 | 5.000 | Sv 14 |
 
-- **Koşu** Savaş ağacının köküdür: yalnızca **100 vio**; seviye, köprü ya da Atılma şartı yok.
+- **Koşu** Savaş ağacının köküdür: yalnızca **100 Vio**; seviye, köprü ya da Atılma şartı yok.
 - **Atılma ağaçta değildir:** öğreticide Savaşçı Börü ücretsiz öğretir (öğreticiyi geçen, Börü'yle konuşunca aynı dersi ücretsiz alır). Ayrıntı: "Oyunun akışı → Börü'nün atılma dersi".
 - **Bilgelik dalı kaldırıldı.** Sezgi, Akıl yürütme ve İpucu ustası I-II Normal modda gereksizdi (tarifler Normal modda zaten açık). *Not: Zor mod tasarlanırken tarif ipucu yetenekleri yeniden düşünülecek.* Pazarlıkçı I-IV'ün yerine Usta tüccar I-II geldi; Sağlam yapı'nın eski +20'lik ilk basamağı ve Kemer V çıkarıldı (Kemer IV artık 12 yuva).
 - **Ek yetenekler:** Derin nefes III, Çabuk toparlanma II, Hafif adım II, Çevik atılma II-III, Uzun atılma, Güçlü kol IV, Savuşturma ustası I-II, Sıyrılma ustası, Usta tüccar II, Bereket II, Verimli toprak II, Sağlam yapı IV, Hızlı iyileşme IV, Doyurucu sofra, Kamp ateşi ustası, Tok karın, Kalın deri II-III, Dirençli beden, Demir mide II. Geri gelenler: Toptancı, Kazan bilgesi, Keskin göz, Bilmece ustası, Hızlı öğrenen I ve III.
-- **Eski kayıtlar:** kaldırılan bir yeteneğe sahip kayıt açılınca o yeteneğin eski parası vio olarak iade edilir ve bir bildirim çıkar. Elde kalan yetenekler alınmış kalır; alınmış bir yeteneğin altındaki (ona giden yoldaki) yetenekler de görünür olur.
+- **Eski kayıtlar:** kaldırılan bir yeteneğe sahip kayıt açılınca o yeteneğin eski parası Vio olarak iade edilir ve bir bildirim çıkar. Elde kalan yetenekler alınmış kalır; alınmış bir yeteneğin altındaki (ona giden yoldaki) yetenekler de görünür olur.
 
 ## Savaş (kırmızı)
 
@@ -75,7 +75,7 @@ Yetenekler üç ağaçtadır: **Savaş** (kırmızı), **Ekonomi** (altın sarı
 
 | Kat | Kimlik | Yetenek | İkon | Etki | Bağlı olduğu | Alınınca açılanlar | Fiyat | Seviye |
 |---|---|---|---|---|---|---|---|---|
-| 1 | E1 | Usta tüccar I | vio | Pazarda satış fiyatları +%50 | kök (baştan görünür) | Çevik eller I | 100 | – |
+| 1 | E1 | Usta tüccar I | Vio | Pazarda satış fiyatları +%50 | kök (baştan görünür) | Çevik eller I | 100 | – |
 | 2 | G1 | Çevik eller I | el | Toplama süresi −%15 | Usta tüccar I | Tutumlu usta I | 250 | Sv 2 |
 | 3 | Z1 | Tutumlu usta I | kutu | Yaparken %10 ihtimalle bir malzeme elde kalır | Çevik eller I | Çevik eller II, Şanslı müşteri I, Tutumlu usta II | 400 | Sv 3 |
 | 4 | G2 | Çevik eller II | el | Toplama süresi toplam −%30 | Tutumlu usta I | Çevik eller III | 600 | Sv 4 |
@@ -89,14 +89,14 @@ Yetenekler üç ağaçtadır: **Savaş** (kırmızı), **Ekonomi** (altın sarı
 | 6 | G8 | Verimli toprak I | filiz | Malzemeler %40 daha çabuk yeniden çıkar | Çevik eller III | Verimli toprak II | 1.800 | Sv 8 |
 | 6 | B5 | Hızlı öğrenen II | kitap | Bütün XP toplam +%20 | Hızlı öğrenen I | Hızlı öğrenen III | 1.800 | Sv 8 |
 | 6 | T4 | Toptancı | sandık | "Hepsini sat" ile ek +%5 | Şanslı müşteri II | Usta tüccar II | 1.800 | Sv 8 |
-| 6 | T6 | İlk keşif ödülü | yıldız | Yeni malzeme ilk bulunduğunda fiyatının 5 katı vio | Hızlı öğrenen I | Bilmece ustası | 1.800 | Sv 8 |
+| 6 | T6 | İlk keşif ödülü | yıldız | Yeni malzeme ilk bulunduğunda fiyatının 5 katı Vio | Hızlı öğrenen I | Bilmece ustası | 1.800 | Sv 8 |
 | 6 | Z4 | Değerli işçilik I | mücevher | Birleştirilerek yapılan eşyalar +%15 değerli | Tutumlu usta III | Değerli işçilik II, Kazan bilgesi | 1.800 | Sv 8 |
 | 6 | Z3 | Usta işi I | çekiç | Elle yaparken %5 ihtimalle iki ürün | Tutumlu usta III | Usta işi II | 1.800 | Sv 8 |
 | 7 | G9 | Bereket II | başak | İki malzeme ihtimali toplam %20 | Bereket I | – | 3.000 | Sv 11 |
 | 7 | G5 | Oduncu | balta | Odun %50 daha hızlı | Bereket I | – | 3.000 | Sv 11 |
 | 7 | G10 | Verimli toprak II | filiz | Malzemeler toplam %60 daha çabuk yeniden çıkar | Verimli toprak I | Taşçı, Su taşıyıcı | 3.000 | Sv 11 |
 | 7 | B6 | Hızlı öğrenen III | kitap | Bütün XP toplam +%35 | Hızlı öğrenen II | – | 3.000 | Sv 11 |
-| 7 | E2 | Usta tüccar II | vio | Satış fiyatları toplam +%60 (en çok 2,3 kat sınırı sürer) | Toptancı | – | 3.000 | Sv 11 |
+| 7 | E2 | Usta tüccar II | Vio | Satış fiyatları toplam +%60 (en çok 2,3 kat sınırı sürer) | Toptancı | – | 3.000 | Sv 11 |
 | 7 | B8 | Bilmece ustası | soru işareti | Zümrüt'ün bilmece ödülleri iki katı | İlk keşif ödülü | – | 3.000 | Sv 11 |
 | 7 | Z6 | Değerli işçilik II | mücevher | Yapılan eşyalar toplam +%30 değerli | Değerli işçilik I | – | 3.000 | Sv 11 |
 | 7 | Z8 | Kazan bilgesi | kazan | Kazanda tarif öğrenince +10 XP daha | Değerli işçilik I | – | 3.000 | Sv 11 |

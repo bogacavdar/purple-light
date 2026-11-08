@@ -47,7 +47,7 @@ Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanınd
 **Yer:** Kemal'in kampının yaklaşık 29 karo kuzeyinde, ormanın kıyısında, kazanının başında. **Tanışma:** öğreticinin 3. adımı.
 
 - **Kazan:** bütün ACT 1 tariflerini kazanda öğrenirsin. Kazan eşya yapmaz; malzemeyi alır, tarifi öğretir (Zor modda "Dene").
-- **Bilmece:** bilinmeyen bir tarifi ipucuyla sorar; o tarifi öğrenince 30 + 2 × fiyat vio (Bilmece yeteneğiyle iki katı) ve 20 XP. 2 günden eski bilmece yenilenir.
+- **Bilmece:** bilinmeyen bir tarifi ipucuyla sorar; o tarifi öğrenince 30 + 2 × fiyat Vio (Bilmece yeteneğiyle iki katı) ve 20 XP. 2 günden eski bilmece yenilenir.
 - **Anı:** 2 Mor kıymık verirsen ACT 1'in sıradaki anısını geri getirir (gün şartı yok; 22 anı da geldiyse bu seçenek çıkmaz).
 - **Kuzenler:** "Kuzenlerin var mı?" diye sorulabilir; beş kuzen cadıyı (Yakut, Safir, Firuze, Mercan, İnci) sayar. Onların kazanları da bütün tarifleri öğretir, yalnızca rengi farklıdır.
 - Hikâyesi: kız kardeşi Ayşen. Hikâyesi bitince kendi sahnesi ("Ay otları") yerine ailenin ortak sahnesi bekler (aşağıda "Zümrüt, Dursun ve Durmuş'un kuzenleri").
@@ -70,10 +70,10 @@ Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanınd
 **Yer:** Kemal'in yaklaşık 62 karo doğusu, 36 karo kuzeyi. **Tanışma:** öğreticinin 11. adımı (yumruk dersi, kerevit; ardından ücretsiz **atılma dersi** ve yetenek ağacında Koşu'yu gösterir — ayrıntı "Oyunun akışı → Börü'nün atılma dersi").
 
 - Atılmayı bilmeyen (öğreticiyi geçmiş) biri konuşunca atılma dersini ücretsiz teklif eder.
-- 100 vioyu ilk kez bulunca "Börü: Koşu'yu alma vakti" bildirimi gelir (Koşu henüz alınmadıysa).
+- 100 Vio’yu ilk kez bulunca "Börü: Koşu'yu alma vakti" bildirimi gelir (Koşu henüz alınmadıysa).
 
 - "Kılıç nasıl yapılır?" → **Taş kılıç** tarifini yazar (1 Sopa + 4 Keskin taş + 2 İp + 1 Çakmaktaşı; Dursun döver).
-- **Dövüş dersleri** (vioyla; ayrıntılar "Sistemler › Dövüş" bölümünde). Bir ders açılınca bir kez duyuru gelir. Öğrenilmiş dersler ücretsiz tekrar çalışılabilir. Ders sırasında Börü'den 280 pikselden uzağa gidersen oyun durur ve "Derse dön / Dersi bırak" diye sorar; "Derse dön" seni Börü'nün ~140 piksel yakınına koyar, bırakırsan ücret geri verilir.
+- **Dövüş dersleri** (Vio’yla; ayrıntılar "Sistemler › Dövüş" bölümünde). Bir ders açılınca bir kez duyuru gelir. Öğrenilmiş dersler ücretsiz tekrar çalışılabilir. Ders sırasında Börü'den 280 pikselden uzağa gidersen oyun durur ve "Derse dön / Dersi bırak" diye sorar; "Derse dön" seni Börü'nün ~140 piksel yakınına koyar, bırakırsan ücret geri verilir.
 - Hikâyesi: ağabeyi Kaan.
 
 
@@ -201,7 +201,7 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 
 - **v3.39 (Boğaç): Marangoz Çınar ile birleşti.** Çınar oyundan kaldırıldı; onun işleri, ev ve barınak satışı dahil, Sinan'dadır. Görevleri 16'dan 8'e indi (ACT 1 › Ana görevler › Usta Sinan).
 - Yere kurulan yapıları (Yapılar kategorisi; **Çit** artık el yapımıdır, Sinan yapmaz; üs kurmanın **Direk feneri**ni Sinan yapar: Sistemler › Üs kurma), yatakları ve **ev eşyalarını** (evin içine konur) yapar. Tarif kazanda öğrenilmiş, malzeme çantanda olmalı. İşçilik: bkz. Sistemler › Ekonomi. (Satır düzeni: Sistemler › Arayüz ve pencereler › Tarif ve sipariş listelerinde satır düzeni.)
-- **Ev ve barınak yapar** (vioyla; konuşmada "Ev ve barınak siparişi"): Yaprak barınağından Konak'a 8 ev. Yaprak barınağı dışındaki evlerde uyumak için içine yatak konmalıdır. Fiyatlar için "Evler ve barınaklar" tablosuna bak. Yaprak barınağı görevi açıkken malzemeler (8 Dal, 12 Yaprak, 4 Lif) çantandaysa konuşma doğrudan ev listesini açar. (Satır düzeni: Sistemler › Arayüz ve pencereler › Tarif ve sipariş listelerinde satır düzeni.)
+- **Ev ve barınak yapar** (Vio’yla; konuşmada "Ev ve barınak siparişi"): Yaprak barınağından Konak'a 8 ev. Yaprak barınağı dışındaki evlerde uyumak için içine yatak konmalıdır. Fiyatlar için "Evler ve barınaklar" tablosuna bak. Yaprak barınağı görevi açıkken malzemeler (8 Dal, 12 Yaprak, 4 Lif) çantandaysa konuşma doğrudan ev listesini açar. (Satır düzeni: Sistemler › Arayüz ve pencereler › Tarif ve sipariş listelerinde satır düzeni.)
 - **Atölye:** yere kurulur, seçtiğin bir tarifi 25 saniyede bir kendiliğinden üretir (en çok 50 tane biriktirir).
 - Hikâyesi: kızı Zeynep (parçaları 8 görevine eşit aralıklarla dağılır).
 
@@ -240,7 +240,7 @@ Son görev (Yeni bir gemi) bitince Barbaros'la konuş: hikâye sahnesi, ardında
 
 | Biyom | Kuzen | Yemeni | Görevler (sırayla; ilki biyom keşfedilince açılır) |
 |---|---|---|---|
-| Orman | Pazarcı Fidan | yeşil | NF1 Mantar tezgâhı (6 Kanlıca · 90 vio, 60 XP) → NF2 Fındık zamanı (6 Fındık, 4 Ceviz · 120, 80) → NF3 Karaca kürkü (3 Karaca derisi, 4 Ahududu · 150, 110) |
+| Orman | Pazarcı Fidan | yeşil | NF1 Mantar tezgâhı (6 Kanlıca · 90 Vio, 60 XP) → NF2 Fındık zamanı (6 Fındık, 4 Ceviz · 120, 80) → NF3 Karaca kürkü (3 Karaca derisi, 4 Ahududu · 150, 110) |
 | Bataklık | Pazarcı Nilüfer | su yeşili | NN1 Nilüfer çiçeği (5 Nilüfer, 3 Su kestanesi · 140, 100) → NN2 Ördek pazarı (4 Ördek yumurtası, 6 Ördek tüyü · 170, 130) → NN3 Su samuru (2 Su samuru derisi, 6 Kızılcık · 200, 160) |
 | Kayalık Dağ | Pazarcı Kardelen | kar beyazı | NK1 Dağ çayı (4 Dağ çayı, 4 Kekik · 200, 150) → NK2 Kardelen buketi (3 Kardelen, 4 Lavanta · 240, 190) → NK3 Kartal tüyü (4 Kartal tüyü, 3 Dağ keçisi derisi · 280, 230) |
 | Kül Diyarı | Pazarcı Lale | kırmızı | NL1 Ateş biberi (4 Ateş biberi, 3 Ateş çiçeği · 300, 250) → NL2 Kehribar (5 Kehribar, 3 Kara tuz · 350, 300) → NL3 Kül kurdu (2 Kül kurdu postu, 3 Kül dişi · 420, 360) |
