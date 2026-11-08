@@ -116,6 +116,23 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
   - **Ana menü:** "PURPLE LIGHT" yazısı küçülüp sağa kayar; soldaki düğmeler (Yeni oyun, Yükle…) yazının üstüne binmez.
 - **Telefonda kazan ve örs ekranı:** telefon yatay tutulunca kazan (ve örs) penceresi **bütün ekranı** kaplar; ekranın üstünde boşluk bırakılmaz (yalnızca öğretici kartı varsa onun yüksekliği kadar, ~40 piksel). Başlık satırı ince (başlık solda, Kapat sağda), arama satırı tek ve ince satır. Altta iki sütun: solda **tarif listesi** (ekranın ~%38'i), sağda seçilen tarif, malzemeler, kazan, düğmeler ve envanter; ikisi de **kendi içinde kayar**. Kazan alanı alçalır, yazılar ve kareler küçülür. Bilgisayar ve tablet görünümü değişmez.
 
+### Erişilebilirlik (v3.68, 8 Kasım 2026, Boğaç)
+
+Ayarlar penceresinde Titreşim'in hemen üstünde iki seçenek vardır. İkisi de başta **kapalıdır**; seçim bu cihazda hatırlanır (oyuncunun kendi seçimi, bütün kayıtlar için ortak).
+
+- **Renk körü modu:** açıkken oyunun "var / yok / yapılabilir" anlamı taşıyan renkleri, renk körlüğünün her türünde (kırmızı-yeşil ve mavi-sarı) ayırt edilebilen bir palete geçer ve her duruma renkten bağımsız bir **işaret** eklenir. Palet (Okabe–Ito paletinden, koyu zemine göre açılmış):
+
+| Anlam | Normal renk | Renk körü modunda | İşaret |
+|---|---|---|---|
+| Yeterli / tamam / öğrenildi / yapılabilir tarif | yeşil #8FD46B | **mavi** #56B4E9 | ✓ |
+| Eksik / olmaz / yanlış | kırmızı #FF8A6A, #FF6A5A | **turuncu** #E8743A | ✗ |
+| Eksik ama elindekilerden yapılır | sarı #F2D070 | **açık sarı** #F0E442 | + |
+
+  - **Nerede:** el yapımı listesi, ateşin pişirme menüsü ve Usta Sinan'ın ev listesindeki malzeme satırları (her malzemenin önünde ✓, ✗ ya da +); takip şeridi (tamam olan kutu ve "hazır" mavi; kutudaki ✓ zaten vardır); kazandaki tarif listesi ("öğrenildi" ve yapılabilir tarifler), Zor moddaki "Dene" cevapları; görev ve ders kartlarındaki "tamam" işaretleri; yan görev ve keşif defteri kartlarının "bitti" çerçeveleri.
+  - **İnşa kipi:** yapının, döşemenin, zeminin ya da duvarın konacağı yeri gösteren gölge, konabiliyorsa **mavi**, konamıyorsa **turuncu** olur (normalde yeşil / kırmızı).
+  - Almanaktaki huy rengi (zararsız / nötr / saldırgan) yazıyla da yazdığı için değişmez; can, tokluk ve enerji çubuklarının üstünde adları yazar, onlar da değişmez. Eşya resimleri, biyom renkleri ve mor ışık değişmez (oyunun adı Mor Işık; mor her modda mor kalır).
+- **Kalp atışını ekranda göster:** açıkken, gece beliren sevdiğin kişi göründüğü sürece (bkz. Mor ışıkta o) her kalp atışında ekranın kenarları da **iki kez** ("güm-güm", sesle aynı anda) yumuşak bir mor ışıkla nabız gibi atar. Sesi kapalı oynayan ya da duyamayan oyuncu da kalp atışını görür. O kaybolunca, oyun duraklatılınca ya da bir pencere açılınca durur.
+
 ### Konuşma penceresi
 
 - **Adlara gelen ekler Türkçe ses uyumuna uyar:** bir kişi ya da eşya adına ek eklenirken (yönelme, belirtme, iyelik…) ekin ünlüsü adın son ünlüsüne, ünsüzü son sese göre seçilir ve özel adlarda kesme işareti konur: "Şifa'ya", "Kemal'e", "Börü'nün", "Dursun'a", "Kayhan'ı".
@@ -194,7 +211,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - Bazı gecelerde (her gece **%40** ihtimalle, tam karanlıkta 21:00–04:30 arasında rastgele bir anda) adada **sevdiğin kişi** belirir, ama **mor ışığın etkisi altındaymış gibi**: gözleri mor parlar, başının çevresinde soluk mor bir hale vardır, çevresinde mor zerreler yükselir; başının üstünde onun adı yazar. Karakter yaratmadaki görünüşüyle çizilir. Ekranın içinde, senden yaklaşık 100–140 piksel uzakta, yürünebilen bir yerde durur, yüzü sana dönüktür, konuşmaz. Çevresinde soluk mor bir ışık vardır (karanlıkta görünsün diye). (v3.30–3.33'te burada karakterinin kendi kopyası çıkıyordu.)
 - Ona doğru yürümeye başladığın an (aradaki uzaklık ~14 piksel azalınca) **birden kaybolur** (küçük bir mor duman). Yaklaşmazsan 25 saniye sonra kendiliğinden kaybolur. Bir gecede en çok bir kez çıkar.
 - Evin içinde, mağarada, denizde yolculukta, konuşma ya da pencere açıkken, ara sahnede ve arenada çıkmaz.
-- **Kalp atışı (v3.37, Boğaç):** o göründüğü sürece **kalp atışı** duyulur: iki vuruşlu ("güm-güm"), derin ve boğuk bir ses, yaklaşık **0,9 saniyede bir**. Her vuruşla birlikte **telefon** (Ayarlar'da Titreşim açıksa, titreşimi destekleyen telefonlarda) ve bağlı **oyun kolu** (titreşimi olan kollarda) iki kısa, hafif titreşimle atar. O kaybolunca kalp atışı ve titreşim hemen durur. Oyun duraklatılınca ya da bir pencere açılınca da durur.
+- **Kalp atışı (v3.37, Boğaç):** o göründüğü sürece **kalp atışı** duyulur: iki vuruşlu ("güm-güm"), derin ve boğuk bir ses, yaklaşık **0,9 saniyede bir**. Her vuruşla birlikte **telefon** (Ayarlar'da Titreşim açıksa, titreşimi destekleyen telefonlarda) ve bağlı **oyun kolu** (titreşimi olan kollarda) iki kısa, hafif titreşimle atar. O kaybolunca kalp atışı ve titreşim hemen durur. Oyun duraklatılınca ya da bir pencere açılınca da durur. Ayarlar'da **Kalp atışını ekranda göster** açıksa her vuruşta ekranın kenarları da mor bir nabızla atar (bkz. Arayüz › Erişilebilirlik).
 - **5 farklı gecede** onu gören (ekranda en az 0,6 saniye kalmış olması yeter) gizli **Mor ışıkta o** başarımını kazanır (eski adı Öteki ben; eski sayaç sürer). Görülen geceler cihazda sayılır (başarımlar gibi, bütün kayıtlar için ortak).
 
 #### Seni hatırlıyorum: aynı karakterle yeni oyun (v3.37, Boğaç)
@@ -493,6 +510,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
 - **Döşe kipinin ekranı:** Döşe kipinde oda bütün ekranı kullanır. Eşya listesi odayı örtmez, ekranın altında **yatay bir şerit** olarak durur. Alet çubuğu, sol menü ve dövüş düğmeleri gizlenir; duyurular Döşe kipi bitene kadar bekler. Telefonda (yatay) eşya şeritten seçilip odadaki kareye **dokunarak** yerleştirilir.
 - **Yatak uyarısı:** "Yatağı yerleştir…" yazısı evin içine bir yatak konunca hemen kalkar.
 - Ev eşyaları: yataklar (Hasır yatak 1×2, Hasırotu yatak 1×2, Ahşap karyola 2×2), lambalar (Taş lamba, Kil lamba, Asma fener), Taş/Çömlek fırını 2×1, Tabure, Sandalye, Masa 2×1, Sandık, Dolap, Raf, Halı 3×2, Kilim 2×1, Perde, Duvar halısı, Saksı, Boyalı çömlek, Kil figürin, Ana tanrıça heykelciği, Taş totem, Su testisi, Mağara resmi, Av sahnesi duvar resmi, El izi resmi. Hepsi kazanda öğrenilir ve **Usta Sinan** yapar.
+- **Kupa panosu (v3.68, 8 Kasım 2026, Boğaç: Reis kupaları):** duvara asılan, **3 kare genişliğinde** ahşap bir pano (tarifi kazanda öğrenilir: 2 Çam kalası, 1 Tunç levha, 2 İp, 1 Sopa; Usta Sinan yapar; 896 sikke). Bu kayıtta yenilen **her Reis için** panoda küçük **altın bir kalkan** belirir (iki sıra, en çok 14 kalkan görünür; 14'ten fazla Reis yenilince sağ üst köşede bir yıldız parlar). Kalkanlar kendiliğinden gelir; bir Reis yenince her evdeki pano hemen güncellenir. Süstür; başka bir işlevi yoktur.
 
 - **Ev fiyatı (tek tanım, 6 Kasım 2026, Boğaç):** aşağıdaki tablodaki fiyat, evi Usta Sinan'dan sipariş edince ödenen **toplam sikkedir: malzeme ve işçilik dahil**, ayrıca malzeme istenmez. Fiyat seviyeyle artan bir merdivendir (Deri çadır 300 → Kulübe 450 → Kamış kulübe 650 → Kerpiç ev 950 → Ahşap ev 1.500 → Taş ev 2.500 → Konak 5.000); başka bir fiyat kuralı (alt fiyat vb.) evlere uygulanmaz. Tek istisna Yaprak barınağı: 25 sikke ve malzemesi (8 Dal, 12 Yaprak, 4 Lif). Tarifi kazanda öğrenilmiş evler (Deri çadır, Kulübe, Kamış kulübe, Kerpiç ev) kendi malzemenle de Sinan'a yaptırılabilir; o zaman yalnız işçilik ödenir (Sistemler › Ekonomi); Sinan'ın ev listesinde bu evlerin altında "Kendi malzemenle: işçilik N sikke" satırı görünür. Eşya dizinindeki fiyat, evin **satış** değeridir.
 - **Konmuş eşyayı taşımak:** Döşe kipinde konmuş bir eşyaya dokununca/tıklayınca küçük bir menü açılır: **Taşı / Geri al / Döndür**. Eşya sürüklenip başka uygun bir kareye bırakılabilir; bırakılan yer uygun değilse eşya eski yerine döner.
@@ -590,6 +608,21 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda k
   - Toplam **32 anı** (22 ACT 1 + 5 mor ışık + 5 usta). "Hatırladım" başarımı 32'yi ister.
 - **Telefonda anı tam ekran:** dokunmatik ekranda bir anı gelince resmi ekranı kaplar (en-boy oranı korunur, ekrana sığan en büyük boy). Başlık ("Bir anı geri geldi" ve anının adı) üstte, anlatım yazısı ve Devam düğmesi altta, küçük yazıyla ve yarı saydam koyu zemin üstünde resmin **üstüne** biner. Bilgisayarda değişiklik yok.
 - **Ada halkının hikâyeleri:** görev veren 8 kişinin her biri mor ışık yüzünden birini kaybetmiştir (Poyraz'ın hikâyesi yok); görevler hikâyeyi parça parça açar, sonunda bir sahne (+40 XP). Kitap → Ada halkı.
+- **Kıyıya vuran şişeler (v3.68, 8 Kasım 2026, Boğaç):** bir **fırtına dinince** %60 ihtimalle, oyuncunun 10–32 kare çevresinde denize değen bir kumsal karesine bir **Şişedeki mektup** vurur ve ekranda "Fırtına dindi. Dalgalar kıyıya bir şeyler bırakmış olabilir." yazar (yeri gösterilmez). Kıyıda bir şişe dururken (en çok 2 gün) yenisi gelmez. Şişe yerden alınınca mektup hemen okunur (konuşma penceresinde, okuyanın resmiyle), eşya çantada kalmaz. Oyuncu mektup yazmaz; mektuplar ada halkının mor ışığa kaybettiği kişilere yazdıklarıdır, rastgele sırayla gelir, her biri bir kez:
+
+| Kimden | Kime |
+|---|---|
+| Yaşlı Kemal | eşi Saliha |
+| Cadı Zümrüt | kız kardeşi Ayşen |
+| Pazarcı Nazlı | kardeşi Cem |
+| Savaşçı Börü | ağabeyi Kaan |
+| Demirci Dursun ve Zırhçı Durmuş | babaları Demirhan Usta |
+| Usta Sinan | kızı Zeynep |
+| Avcı Doğan | oğlu Ayaz |
+| Denizci Barbaros | kızı Meltem |
+| Zümrüt, Dursun, Durmuş ve kuzenleri | Elmas Nine |
+
+  Okunan mektuplar **Kitap › Ada halkı**'nın altında "Kıyıya vuran mektuplar x / 9" başlığıyla tam metinleriyle durur. Dokuzu da bulununca "Kıyıya vuran bütün mektupları buldun." yazar ve bir daha şişe gelmez. Her bulunan mektup köpek günlüğüne de yazılır (bkz. ACT 3 › Köpek kamerası kayıtları). Arenada şişe gelmez.
 
 ## Üs kurma
 

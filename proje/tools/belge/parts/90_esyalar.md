@@ -189,7 +189,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Bıldırcın yumurtası | 3 | – | Av: Bıldırcın düşürür %40 (ACT 1 · Çayır) | Haşlanmış bıldırcın yumurtası |
 | Bileği taşı | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | Beyaz kase (alet), Boynuz borazan (alet), Cilalı kristal (alet), Göl kasesi (alet), Kehribar boncuk (alet), Kemik iğne (alet) … (+5) |
 | Bileme macunu | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Çakmaktaşı kılıç, Çakmaktaşı mızrak, Çakmaktaşı savaş çekici, Çakmaktaşı topuz, Granit kılıç, Granit mızrak … (+17) |
-| Bola | 63 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
+| Bola | 63 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Boyalı çömlek | 404 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Boynuz borazan | 30 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Boynuz kazma | 70 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
@@ -832,6 +832,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kum torbası | 240 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kunduz derisi | 5 | – | Av: Kunduz düşürür %75 (ACT 1 · Orman) · Av: Porsuk düşürür %75 (ACT 1 · Çayır) | – (satılır, görevlerde istenir) |
 | Kunduz eti | 6 | – | Av: Kunduz düşürür %100 (ACT 1 · Orman) · Av: Porsuk düşürür %100 (ACT 1 · Çayır) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş kunduz eti, Pişmiş kunduz eti, Turba ateşinde tütsü … (+1) |
+| Kupa panosu | 896 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Kurbağa | 2 | yenir +3, zehirli | Av: Zehirli kurbağa düşürür %60 (ACT 1 · Bataklık) | Balık çorbası, Balık sepeti, Kurutulmuş kurbağa, Pişmiş kurbağa, Taşta kurbağa, Tütsülenmiş kurbağa |
 | Kurt derisi | 9 | – | Av: Kurt düşürür %75 (ACT 1 · Çayır) | – (satılır, görevlerde istenir) |
 | Kurt dişi | 10 | – | Av: Kurt düşürür %50 (ACT 1 · Çayır) · Av: Bataklık kurdu düşürür %50 (ACT 1 · Bataklık) | Diş kolye |
@@ -1197,7 +1198,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Sandalye | 86 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Sandal küreği | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Yelkenli sal |
 | Sandık | 228 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
-| Sapan | 293 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
+| Sapan | 293 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Sarımsaklı et | 101 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Sarı boya | 143 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Sarı okr | 35 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Sarı okr tozu |
@@ -1256,6 +1257,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Sünger taşı | 45 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Sünger taşı bileği |
 | Sünger taşı bileği | 123 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Şaman tüyü ² | 70 | – | Av: Goblin şamanı düşürür %60 (ACT 2 · Dev Mantar Ormanı) | – |
+| Şişedeki mektup | 5 | okunur (çantada kalmaz) | Fırtına dinince kıyıya vurur (bkz. Sistemler › İzler ve anılar › Kıyıya vuran şişeler) | – |
 | Şifalı merhem | 184 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Tabakhane | 663 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Tabanca ² | 1.447 | alet | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Silahçı Tufan yapar (200 sikke işçilik) | – |

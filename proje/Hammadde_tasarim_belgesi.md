@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.59** ile birebir (7 Kasım 2026). Bu sürümde: Kül Diyarı girişinde Kül cini Seviye 36'dan, Mor Kristal girişinde Kristal örümcek ve Işık engereği Seviye 44'ten; kişilerin ~2 karo çevresinde yerde toplanabilir olmaz; anı ve ada halkı sahneleri Esc ya da dışına basınca biter. Bütün sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.68** ile birebir (8 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -471,6 +471,23 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
   - **Ana menü:** "PURPLE LIGHT" yazısı küçülüp sağa kayar; soldaki düğmeler (Yeni oyun, Yükle…) yazının üstüne binmez.
 - **Telefonda kazan ve örs ekranı:** telefon yatay tutulunca kazan (ve örs) penceresi **bütün ekranı** kaplar; ekranın üstünde boşluk bırakılmaz (yalnızca öğretici kartı varsa onun yüksekliği kadar, ~40 piksel). Başlık satırı ince (başlık solda, Kapat sağda), arama satırı tek ve ince satır. Altta iki sütun: solda **tarif listesi** (ekranın ~%38'i), sağda seçilen tarif, malzemeler, kazan, düğmeler ve envanter; ikisi de **kendi içinde kayar**. Kazan alanı alçalır, yazılar ve kareler küçülür. Bilgisayar ve tablet görünümü değişmez.
 
+### Erişilebilirlik (v3.68, 8 Kasım 2026, Boğaç)
+
+Ayarlar penceresinde Titreşim'in hemen üstünde iki seçenek vardır. İkisi de başta **kapalıdır**; seçim bu cihazda hatırlanır (oyuncunun kendi seçimi, bütün kayıtlar için ortak).
+
+- **Renk körü modu:** açıkken oyunun "var / yok / yapılabilir" anlamı taşıyan renkleri, renk körlüğünün her türünde (kırmızı-yeşil ve mavi-sarı) ayırt edilebilen bir palete geçer ve her duruma renkten bağımsız bir **işaret** eklenir. Palet (Okabe–Ito paletinden, koyu zemine göre açılmış):
+
+| Anlam | Normal renk | Renk körü modunda | İşaret |
+|---|---|---|---|
+| Yeterli / tamam / öğrenildi / yapılabilir tarif | yeşil #8FD46B | **mavi** #56B4E9 | ✓ |
+| Eksik / olmaz / yanlış | kırmızı #FF8A6A, #FF6A5A | **turuncu** #E8743A | ✗ |
+| Eksik ama elindekilerden yapılır | sarı #F2D070 | **açık sarı** #F0E442 | + |
+
+  - **Nerede:** el yapımı listesi, ateşin pişirme menüsü ve Usta Sinan'ın ev listesindeki malzeme satırları (her malzemenin önünde ✓, ✗ ya da +); takip şeridi (tamam olan kutu ve "hazır" mavi; kutudaki ✓ zaten vardır); kazandaki tarif listesi ("öğrenildi" ve yapılabilir tarifler), Zor moddaki "Dene" cevapları; görev ve ders kartlarındaki "tamam" işaretleri; yan görev ve keşif defteri kartlarının "bitti" çerçeveleri.
+  - **İnşa kipi:** yapının, döşemenin, zeminin ya da duvarın konacağı yeri gösteren gölge, konabiliyorsa **mavi**, konamıyorsa **turuncu** olur (normalde yeşil / kırmızı).
+  - Almanaktaki huy rengi (zararsız / nötr / saldırgan) yazıyla da yazdığı için değişmez; can, tokluk ve enerji çubuklarının üstünde adları yazar, onlar da değişmez. Eşya resimleri, biyom renkleri ve mor ışık değişmez (oyunun adı Mor Işık; mor her modda mor kalır).
+- **Kalp atışını ekranda göster:** açıkken, gece beliren sevdiğin kişi göründüğü sürece (bkz. Mor ışıkta o) her kalp atışında ekranın kenarları da **iki kez** ("güm-güm", sesle aynı anda) yumuşak bir mor ışıkla nabız gibi atar. Sesi kapalı oynayan ya da duyamayan oyuncu da kalp atışını görür. O kaybolunca, oyun duraklatılınca ya da bir pencere açılınca durur.
+
 ### Konuşma penceresi
 
 - **Adlara gelen ekler Türkçe ses uyumuna uyar:** bir kişi ya da eşya adına ek eklenirken (yönelme, belirtme, iyelik…) ekin ünlüsü adın son ünlüsüne, ünsüzü son sese göre seçilir ve özel adlarda kesme işareti konur: "Şifa'ya", "Kemal'e", "Börü'nün", "Dursun'a", "Kayhan'ı".
@@ -549,7 +566,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - Bazı gecelerde (her gece **%40** ihtimalle, tam karanlıkta 21:00–04:30 arasında rastgele bir anda) adada **sevdiğin kişi** belirir, ama **mor ışığın etkisi altındaymış gibi**: gözleri mor parlar, başının çevresinde soluk mor bir hale vardır, çevresinde mor zerreler yükselir; başının üstünde onun adı yazar. Karakter yaratmadaki görünüşüyle çizilir. Ekranın içinde, senden yaklaşık 100–140 piksel uzakta, yürünebilen bir yerde durur, yüzü sana dönüktür, konuşmaz. Çevresinde soluk mor bir ışık vardır (karanlıkta görünsün diye). (v3.30–3.33'te burada karakterinin kendi kopyası çıkıyordu.)
 - Ona doğru yürümeye başladığın an (aradaki uzaklık ~14 piksel azalınca) **birden kaybolur** (küçük bir mor duman). Yaklaşmazsan 25 saniye sonra kendiliğinden kaybolur. Bir gecede en çok bir kez çıkar.
 - Evin içinde, mağarada, denizde yolculukta, konuşma ya da pencere açıkken, ara sahnede ve arenada çıkmaz.
-- **Kalp atışı (v3.37, Boğaç):** o göründüğü sürece **kalp atışı** duyulur: iki vuruşlu ("güm-güm"), derin ve boğuk bir ses, yaklaşık **0,9 saniyede bir**. Her vuruşla birlikte **telefon** (Ayarlar'da Titreşim açıksa, titreşimi destekleyen telefonlarda) ve bağlı **oyun kolu** (titreşimi olan kollarda) iki kısa, hafif titreşimle atar. O kaybolunca kalp atışı ve titreşim hemen durur. Oyun duraklatılınca ya da bir pencere açılınca da durur.
+- **Kalp atışı (v3.37, Boğaç):** o göründüğü sürece **kalp atışı** duyulur: iki vuruşlu ("güm-güm"), derin ve boğuk bir ses, yaklaşık **0,9 saniyede bir**. Her vuruşla birlikte **telefon** (Ayarlar'da Titreşim açıksa, titreşimi destekleyen telefonlarda) ve bağlı **oyun kolu** (titreşimi olan kollarda) iki kısa, hafif titreşimle atar. O kaybolunca kalp atışı ve titreşim hemen durur. Oyun duraklatılınca ya da bir pencere açılınca da durur. Ayarlar'da **Kalp atışını ekranda göster** açıksa her vuruşta ekranın kenarları da mor bir nabızla atar (bkz. Arayüz › Erişilebilirlik).
 - **5 farklı gecede** onu gören (ekranda en az 0,6 saniye kalmış olması yeter) gizli **Mor ışıkta o** başarımını kazanır (eski adı Öteki ben; eski sayaç sürer). Görülen geceler cihazda sayılır (başarımlar gibi, bütün kayıtlar için ortak).
 
 #### Seni hatırlıyorum: aynı karakterle yeni oyun (v3.37, Boğaç)
@@ -848,6 +865,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
 - **Döşe kipinin ekranı:** Döşe kipinde oda bütün ekranı kullanır. Eşya listesi odayı örtmez, ekranın altında **yatay bir şerit** olarak durur. Alet çubuğu, sol menü ve dövüş düğmeleri gizlenir; duyurular Döşe kipi bitene kadar bekler. Telefonda (yatay) eşya şeritten seçilip odadaki kareye **dokunarak** yerleştirilir.
 - **Yatak uyarısı:** "Yatağı yerleştir…" yazısı evin içine bir yatak konunca hemen kalkar.
 - Ev eşyaları: yataklar (Hasır yatak 1×2, Hasırotu yatak 1×2, Ahşap karyola 2×2), lambalar (Taş lamba, Kil lamba, Asma fener), Taş/Çömlek fırını 2×1, Tabure, Sandalye, Masa 2×1, Sandık, Dolap, Raf, Halı 3×2, Kilim 2×1, Perde, Duvar halısı, Saksı, Boyalı çömlek, Kil figürin, Ana tanrıça heykelciği, Taş totem, Su testisi, Mağara resmi, Av sahnesi duvar resmi, El izi resmi. Hepsi kazanda öğrenilir ve **Usta Sinan** yapar.
+- **Kupa panosu (v3.68, 8 Kasım 2026, Boğaç: Reis kupaları):** duvara asılan, **3 kare genişliğinde** ahşap bir pano (tarifi kazanda öğrenilir: 2 Çam kalası, 1 Tunç levha, 2 İp, 1 Sopa; Usta Sinan yapar; 896 sikke). Bu kayıtta yenilen **her Reis için** panoda küçük **altın bir kalkan** belirir (iki sıra, en çok 14 kalkan görünür; 14'ten fazla Reis yenilince sağ üst köşede bir yıldız parlar). Kalkanlar kendiliğinden gelir; bir Reis yenince her evdeki pano hemen güncellenir. Süstür; başka bir işlevi yoktur.
 
 - **Ev fiyatı (tek tanım, 6 Kasım 2026, Boğaç):** aşağıdaki tablodaki fiyat, evi Usta Sinan'dan sipariş edince ödenen **toplam sikkedir: malzeme ve işçilik dahil**, ayrıca malzeme istenmez. Fiyat seviyeyle artan bir merdivendir (Deri çadır 300 → Kulübe 450 → Kamış kulübe 650 → Kerpiç ev 950 → Ahşap ev 1.500 → Taş ev 2.500 → Konak 5.000); başka bir fiyat kuralı (alt fiyat vb.) evlere uygulanmaz. Tek istisna Yaprak barınağı: 25 sikke ve malzemesi (8 Dal, 12 Yaprak, 4 Lif). Tarifi kazanda öğrenilmiş evler (Deri çadır, Kulübe, Kamış kulübe, Kerpiç ev) kendi malzemenle de Sinan'a yaptırılabilir; o zaman yalnız işçilik ödenir (Sistemler › Ekonomi); Sinan'ın ev listesinde bu evlerin altında "Kendi malzemenle: işçilik N sikke" satırı görünür. Eşya dizinindeki fiyat, evin **satış** değeridir.
 - **Konmuş eşyayı taşımak:** Döşe kipinde konmuş bir eşyaya dokununca/tıklayınca küçük bir menü açılır: **Taşı / Geri al / Döndür**. Eşya sürüklenip başka uygun bir kareye bırakılabilir; bırakılan yer uygun değilse eşya eski yerine döner.
@@ -945,6 +963,21 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda k
   - Toplam **32 anı** (22 ACT 1 + 5 mor ışık + 5 usta). "Hatırladım" başarımı 32'yi ister.
 - **Telefonda anı tam ekran:** dokunmatik ekranda bir anı gelince resmi ekranı kaplar (en-boy oranı korunur, ekrana sığan en büyük boy). Başlık ("Bir anı geri geldi" ve anının adı) üstte, anlatım yazısı ve Devam düğmesi altta, küçük yazıyla ve yarı saydam koyu zemin üstünde resmin **üstüne** biner. Bilgisayarda değişiklik yok.
 - **Ada halkının hikâyeleri:** görev veren 8 kişinin her biri mor ışık yüzünden birini kaybetmiştir (Poyraz'ın hikâyesi yok); görevler hikâyeyi parça parça açar, sonunda bir sahne (+40 XP). Kitap → Ada halkı.
+- **Kıyıya vuran şişeler (v3.68, 8 Kasım 2026, Boğaç):** bir **fırtına dinince** %60 ihtimalle, oyuncunun 10–32 kare çevresinde denize değen bir kumsal karesine bir **Şişedeki mektup** vurur ve ekranda "Fırtına dindi. Dalgalar kıyıya bir şeyler bırakmış olabilir." yazar (yeri gösterilmez). Kıyıda bir şişe dururken (en çok 2 gün) yenisi gelmez. Şişe yerden alınınca mektup hemen okunur (konuşma penceresinde, okuyanın resmiyle), eşya çantada kalmaz. Oyuncu mektup yazmaz; mektuplar ada halkının mor ışığa kaybettiği kişilere yazdıklarıdır, rastgele sırayla gelir, her biri bir kez:
+
+| Kimden | Kime |
+|---|---|
+| Yaşlı Kemal | eşi Saliha |
+| Cadı Zümrüt | kız kardeşi Ayşen |
+| Pazarcı Nazlı | kardeşi Cem |
+| Savaşçı Börü | ağabeyi Kaan |
+| Demirci Dursun ve Zırhçı Durmuş | babaları Demirhan Usta |
+| Usta Sinan | kızı Zeynep |
+| Avcı Doğan | oğlu Ayaz |
+| Denizci Barbaros | kızı Meltem |
+| Zümrüt, Dursun, Durmuş ve kuzenleri | Elmas Nine |
+
+  Okunan mektuplar **Kitap › Ada halkı**'nın altında "Kıyıya vuran mektuplar x / 9" başlığıyla tam metinleriyle durur. Dokuzu da bulununca "Kıyıya vuran bütün mektupları buldun." yazar ve bir daha şişe gelmez. Her bulunan mektup köpek günlüğüne de yazılır (bkz. ACT 3 › Köpek kamerası kayıtları). Arenada şişe gelmez.
 
 ## Üs kurma
 
@@ -3742,6 +3775,14 @@ Bunlar Boğaç'la konuşulmuş kararlar; oyuna eklenmedi.
 Bunlar karar değil, not: ACT 3 tasarlanırken Boğaç'la yeniden ele alınacak. Hiçbiri şimdilik oyuna eklenmez.
 
 - **Köpek kamerası kayıtları (Boğaç: "kesin eklicez"):** yıldızsızların gemisinde bir oda; duvarda robot köpeklerin "kayıtları" oynar. Uydurma değil, kayıttaki **gerçek verilerden** kurulur: ör. "Gün 12, 03:14 · KÖPEK-02 · Denek Zümrüt'ün kazanına 5 kez çöp attı.", "Gün 23 · Denek 50 kez yumrukla Börü'ye saldırdı. Sebep anlaşılamadı.", "Denek 14 kez karanlıkta bayıldı. Her seferinde onu kumsala biz bıraktık." Bunun için ACT 1–2'de oyuncunun yaptıkları (bayılmalar, gizli şeyler, önemli anlar, gün ve saatleriyle) şimdiden kayda yazılmaya başlanabilir. **Ön hazırlık fikri:** ACT 1–2'de çok nadiren, yarım saniye ekran köpeğin gözünden görünür (balık gözü, köşede "● REC KÖPEK-03"), hiç açıklanmaz.
+  - **Kayıt şimdiden tutuluyor (v3.68, 8 Kasım 2026, Boğaç: "hemen yapabiliyorsak yapalım"):** ACT 3 henüz yok ama oyun her kayda gizli bir **köpek günlüğü** yazar; oyunun hiçbir yerinde görünmez, oyuncuya anlatılmaz. Her satırda gün, saat (oyun saati) ve olay vardır. Yazılan olaylar:
+    - **Bayılma:** sebebiyle (canavarın adı, açlık, zehir…); karanlıkta ışıksız kalıp mor ışıkla bayılma ayrı yazılır.
+    - **Başarım:** kazanıldığı an (gizli şeyler de böyle yakalanır: Görünmezlik iksiri, Konuk, Mor ışıkta o, Denizde yürüyen…). Başarımlar cihaza kaydedildiği için bir başarım aynı cihazda ikinci kez yazılmaz.
+    - **Reis:** yenilen her Reis'in türü.
+    - **Anı:** geri gelen her anının adı.
+    - **Hile:** Tanrı modu açıkken oyuna girildiği ilk an (kayıt başına bir kez).
+    - **Kıyıya vuran şişe:** bulunan her mektubun kimden kime olduğu.
+  - **Sınır:** en yeni **300 satır** tutulur (eskiler düşer), ama her olay türünün **toplam sayısı** ayrıca hep saklanır (ör. "karanlıkta bayıldı: 14"); ACT 3'teki odada "Denek 14 kez karanlıkta bayıldı" gibi satırlar bu sayılardan kurulur. Arenada ve ana menüde hiçbir şey yazılmaz. Eski kayıtlar boş günlükle başlar.
 - **Oyunun kuralları hikâyeden gelir (Boğaç: "güzel ama daha derin düşünmek lazım, güzel bir hikâye sonuyla"):** oyunun mekanikleri yıldızsızların işi olarak açıklanır. Ham fikirler: "oyunda ölüm yok" → her bayılmada seni kumsala onlar taşıyor; bayılınca anı gelmesi → şapka bayıldığın an çalışıyor, anılar okunurken sızıyor; tanrı modunda bile mor ışığın bayıltması → hile kullanılmış kayıtta "Tanrı modunu açtın. Bizim üzerimizde işe yaramaz."; arenanın kayda hiç dokunmaması → arena gemideki simülasyon odası. Bu haliyle kullanılmaz; ACT 3'ün hikâye sonuyla birlikte yeniden yazılacak.
 - **Sahte güncelleme notu:** ACT 3'teki büyük açıklamadan sonra ana menüdeki "Güncelleme notları" penceresinde gerçek not yerine yıldızsızların notu (ör. "Versiyon 3.∞ · Deneğin anıları başarıyla okundu. Düzeltmeler: {L} artık hatırlanmıyor."); sürüm etiketi geceleri "· izleniyor".
 - **Duraklatma durdurmuyor:** ACT 3 gemisinin içinde Esc menüsü açılınca dünya durmaz; arkada bir Yıldızsız yürümeye devam eder, menünün üstünde "Biz durmayız." yazar.
@@ -4459,7 +4500,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Basit ok | 2 Dal, 1 Keskin taş, 1 Lif, 1 Kemik ok ucu (→ 11) | – | El yapımı (Tab) | 2 |
 | Basit yay | 1 Uzun sopa, 3 İp, 2 Lif | – | El yapımı (Tab) | 90 |
 | Bileği taşı | 2 Kumtaşı, 1 İp, 1 Dal, 1 Taş | Çekiç taşı | Örs · Silahçı Durdu (Orman) ve üstü döver | 17 |
-| Bola | 1 Halat, 3 Nehir çakılı, 1 İp, 1 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 63 |
+| Bola | 1 Halat, 3 Nehir çakılı, 1 İp, 1 Dal, 1 Taş | – | El yapımı (Tab) | 63 |
 | Çekiç taşı | 4 Nehir çakılı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 5 |
 | Çelik ok | 1 Çelik külçesi, 4 Dal, 2 Ur kekliği tüyü, 1 Çakmaktaşı ok ucu (→ 10) | – | El yapımı (Tab) | 529 |
 | Demir ok | 1 Demir külçesi, 4 Dal, 2 Ördek tüyü, 1 Akrep ok ucu (→ 10) | – | El yapımı (Tab) | 110 |
@@ -4492,7 +4533,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Öğütme taşı | 2 Kumtaşı, 1 İp, 1 Dal, 1 Taş (eskiden 2 Granit) | Çekiç taşı | El yapımı (Tab) | 17 |
 | Pişirme taşı | 1 Taş levha, 1 Ateş, 2 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 60 |
 | Porsuk yayı | 1 Porsuk sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 130 |
-| Sapan | 1 Deri parçası, 1 Halat, 3 İp, 3 Dal, 3 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 293 |
+| Sapan | 1 Deri parçası, 1 Halat, 3 İp, 3 Dal, 3 Taş | – | El yapımı (Tab) | 293 |
 | Sepet | 1 Hasır, 4 İp, 1 Dal, 1 Taş | – | El yapımı (Tab) | 51 |
 | Sivri taş | 6 Keskin taş | – | El yapımı (Tab) | 23 |
 | Sopa | 3 Dal, 2 Keskin taş | – | El yapımı (Tab) | 12 |
@@ -4759,6 +4800,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Masa | 3 Çam kalası, 4 Sopa, 2 İp, 1 Damla akı boyası | – | Usta Sinan yapar (ev içine konur) | 186 |
 | Mor yosun yastığı | 4 Mor yosun, 3 Lif, 1 Mor damar boyası | – | Usta Sinan yapar (ev içine konur) | 699 |
 | Perde | 2 Keten kumaş, 1 Sopa, 2 İp, 1 Beyaz boya | – | Usta Sinan yapar (ev içine konur) | 491 |
+| Kupa panosu | 2 Çam kalası, 1 Tunç levha, 2 İp, 1 Sopa | – | Usta Sinan yapar (ev içine konur) | 896 |
 | Raf | 2 Çam kalası, 2 İp, 1 Sopa | – | Usta Sinan yapar (ev içine konur) | 70 |
 | Saksı | 1 Nehir çömleği, 2 Kum, 2 Papatya | – | Usta Sinan yapar (ev içine konur) | 72 |
 | Sandalye | 2 Çam kalası, 2 Sopa, 2 İp | – | Usta Sinan yapar (ev içine konur) | 86 |
@@ -5131,7 +5173,7 @@ Boğaç kararı: her malzeme en az bir tarifte girdi olur, her birine ayrı tari
 ## Nerede yapılır: örs ya da el
 
 - **Örste (demirci ve zırhçılar) yalnızca silah, zırh, balta ve kazma dövülür:** kılıç, savaş çekici, topuz, mızrak, yay (ok atan yaylar), **bıçaklar**, asalar ve ateşli silahlar; baltalar ve kazmalar (Boynuz kazma dahil); efektli (alevli/zehirli/keskin) silahlar; bütün zırhlar.
-- **Geri kalan bütün aletler elle yapılır** (El yapımı: bilgisayarda **Tab**, telefonda el ikonu): Tuzak, Sapan, Bola, Dişbudak yayı ve Porsuk yayı (küçük av aletleri), Olta, Ağ, Kemik zıpkın, Balık kapanı ve deniz oltaları, Kürek, Tırmık, Tırpan, Sulama kabı, meşaleler, kazıyıcılar, Kemik iğne, Kirmen, Dokuma tezgâhı, Bileği taşı, Çekiç taşı, Öğütme taşı, Pişirme taşı, Taş havan, Pirit çakmağı. Tarifleri eskisi gibi **kazanda öğrenilir**; öğrenilince El yapımı listesinde çıkar, demircinin listesinde çıkmaz.
+- **Geri kalan bütün aletler elle yapılır** (El yapımı: bilgisayarda **Tab**, telefonda el ikonu): Tuzak, Sapan ve Bola (fırlatılan av aletleri; aşağıda "Sapan ve Bola"), Olta, Ağ, Kemik zıpkın, Balık kapanı ve deniz oltaları, Kürek, Tırmık, Tırpan, Sulama kabı, meşaleler, kazıyıcılar, Kemik iğne, Kirmen, Dokuma tezgâhı, Bileği taşı, Çekiç taşı, Öğütme taşı, Pişirme taşı, Taş havan, Pirit çakmağı. Tarifleri eskisi gibi **kazanda öğrenilir**; öğrenilince El yapımı listesinde çıkar, demircinin listesinde çıkmaz.
 - Elle yapılan bir aletten (dayanıklılığı olan) **aynı anda bir tane** taşınır: elindeyken yenisi yapılmaz ("zaten sende"), yeni yapılan tam keskinlikle gelir. Körelince Demirci Dursun eskisi gibi **bileyler**.
 
 ## Silah bilgisi her yerde yazar
@@ -5340,7 +5382,9 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Çam yayı | Çayır | 12 | 0,7 sn | 260 | 80 | 3 Çam odunu, 1 Sinir kirişi, 1 Bakır külçesi | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 112 |
 | Meşe yayı | Orman | 17 | 0,68 sn | 280 | 110 | 3 Meşe odunu, 1 Sinir kirişi, 1 Tunç külçesi | Örs · Silahçı Durdu (Orman) ve üstü döver | 304 |
 | Kızılağaç yayı | Bataklık | 26 | 0,66 sn | 300 | 150 | 3 Kızılağaç odunu, 2 Sinir kirişi, 1 Demir külçesi | Örs · Silahçı Ali (Bataklık) ve üstü döver | 426 |
+| Dişbudak yayı (kısa) | Bataklık | 20 | 0,5 sn | 250 | 130 | 1 Dişbudak sapı, 1 Sinir kirişi, 2 İp, 2 Dal, 2 Taş | Örs · Silahçı Ali (Bataklık) ve üstü döver | 128 |
 | Akçaağaç yayı | Kayalık Dağ | 35 | 0,64 sn | 320 | 190 | 3 Akçaağaç odunu, 2 Sinir kirişi, 1 Çelik külçesi | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.022 |
+| Porsuk yayı (kısa) | Kayalık Dağ | 27 | 0,49 sn | 270 | 170 | 1 Porsuk sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 130 |
 | Kızıl sedir yayı | Kül Diyarı | 45 | 0,62 sn | 340 | 230 | 3 Kızıl sedir odunu, 2 Sinir kirişi, 1 Kara çelik külçesi | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 2.961 |
 | Gece ağacı yayı | Mor Kristal Vadisi | 56 | 0,6 sn | 360 | 280 | 3 Gece ağacı odunu, 2 Sinir kirişi, 1 Mor kristal levhası | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 2.211 |
 
@@ -5355,6 +5399,16 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Mor kristal ok | Mor Kristal Vadisi | ×1,8 | 1 Mor kristal levhası, 4 Dal, 2 Ur kekliği tüyü, 1 Kuvars ok ucu → 11 ok | 670 |
 
 - **Yayın özel vuruşları** (Dövüş · Özel vuruşlar tablosu): Hızlı atış, Delici ok, Çift ok, Gergin atış, Geri sıçrayıp atış, Ok yelpazesi; ultisi **Ok yağmuru**. Her ok atışı bir ok harcar (ulti harcamaz).
+- **Kısa yaylar (v3.68, 8 Kasım 2026, Boğaç: "işe yarayanlar işe yarasın"):** Dişbudak yayı (Bataklık) ve Porsuk yayı (Kayalık Dağ) **kısa yay**dır: biyomunun asıl yayıyla saniyedeki hasarı aynıdır (Kızılağaç 26 / 0,66 ≈ 39, Dişbudak 20 / 0,5 = 40; Akçaağaç 35 / 0,64 ≈ 55, Porsuk 27 / 0,49 ≈ 55) ama **daha sık atar, menzili kısadır** ve aynı hasar için **daha çok ok harcar**. Okun hızı 380 + 30 × (kademe + 1). Silahlar listesinde ve arenada **Yaylar** grubundadır.
+
+### Sapan ve Bola (v3.68, 8 Kasım 2026, Boğaç)
+
+İkisi de elle yapılır (El yapımı), alet kemerine takılır, **eldeyken vuruş** (tık, Vur düğmesi) onları kullanır; nişan yay gibidir (fare yönü; telefonda en yakın canlı). Her atış aletin dayanıklılığından 1 yer; körelince atmaz (bilenir). Güç ve seviye hasarı yay gibi artırır. Reislere hasar verir ama sersemletme ve yavaşlatma işlemez. Arenada da seçilir (silahlar listesinde **Fırlatma** grubu).
+
+- **Sapan:** her atış çantadan **1 Taş** harcar (Taş yoksa "Taş yok"). Hasar 5, bekleme 0,8 sn, menzil 200 px.
+  - **Kuşları sersemletir:** taş bir kuşa (Keklik, Ördek, Ur kekliği; tüyü düşen ya da uçan bütün canlılar) değince kuş **3 sn sersemler** (yerinde kalır, başında yıldızlar döner); yakalamak ya da vurmak kolaylaşır.
+  - **Meyve düşürür:** nişan bir **meyve ağacının** (Yabani elma, Yabani armut, Yabani erik, Ceviz, Fındık, Kestane, Mürver, Ardıç, Ay elması, Ateş narı, Yıldız eriği…) tacına denk gelirse (ağacın 26 px yakını, 200 px menzil içinde) taş ağaca gider ve ağacın dibine **1 meyvesi düşer** (ağacın tohumu varsa %20 ihtimalle bir de tohum). Ağaç kesilmez, odun gelmez. **Her ağaç günde bir kez** meyve verir; aynı gün yeniden atınca "Bu ağaçta meyve kalmadı · yarın" yazar. Telefonda menzilde canlı yoksa sapan en yakın meyveli ağaca atar.
+- **Bola:** fırlatılır ama **harcanmaz** (yalnızca dayanıklılık). Hasar 3, bekleme 1,2 sn, menzil 180 px. Değdiği canlının bacaklarına dolanır: **5 sn %35 hızla** yürür (ayağında halat halkası görünür). Kaçan av hayvanları (tavşan, geyik, keklik…) böylece yakalanır; saldırgan bir canlıyı yavaşlatıp ondan uzaklaşmak için de işe yarar.
 
 ### Alevli, zehirli, keskin silahlar
 
@@ -5550,10 +5604,8 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Işın kılıcı | sword | plazma kılıç | 1 | 999 | 0 | – | 60 |
 | Kaba meşale | torch | gece aydınlatır | 0 | 1.000.000 | 0 | – | – |
 | Meşale | torch | gece aydınlatır | 0 | 1.000.000 | 0 | – | – |
-| Bola | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2,5 | 25 | 15 | – | – |
-| Dişbudak yayı | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2 | 35 | 30 | – | – |
-| Porsuk yayı | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2 | 40 | 40 | – | – |
-| Sapan | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2,5 | 25 | 20 | – | – |
+| Bola | sling | fırlatılır: vurduğu canlıyı 5 sn yavaşlatır | 1,2 | 25 | 15 | – | – |
+| Sapan | sling | taş atar: kuşu sersemletir, ağaçtan meyve düşürür | 0,8 | 25 | 20 | – | – |
 | Tuzak | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 3 | 20 | 12 | – | – |
 | Huş kabuğu kabı | water | su taşır | 2 | 1.000.000 | 0 | – | – |
 | Yaprak kova | water | su taşır | 3 | 1.000.000 | 0 | – | – |
@@ -5834,7 +5886,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Bıldırcın yumurtası | 3 | – | Av: Bıldırcın düşürür %40 (ACT 1 · Çayır) | Haşlanmış bıldırcın yumurtası |
 | Bileği taşı | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | Beyaz kase (alet), Boynuz borazan (alet), Cilalı kristal (alet), Göl kasesi (alet), Kehribar boncuk (alet), Kemik iğne (alet) … (+5) |
 | Bileme macunu | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Çakmaktaşı kılıç, Çakmaktaşı mızrak, Çakmaktaşı savaş çekici, Çakmaktaşı topuz, Granit kılıç, Granit mızrak … (+17) |
-| Bola | 63 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
+| Bola | 63 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Boyalı çömlek | 404 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Boynuz borazan | 30 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Boynuz kazma | 70 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
@@ -6477,6 +6529,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kum torbası | 240 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kunduz derisi | 5 | – | Av: Kunduz düşürür %75 (ACT 1 · Orman) · Av: Porsuk düşürür %75 (ACT 1 · Çayır) | – (satılır, görevlerde istenir) |
 | Kunduz eti | 6 | – | Av: Kunduz düşürür %100 (ACT 1 · Orman) · Av: Porsuk düşürür %100 (ACT 1 · Çayır) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş kunduz eti, Pişmiş kunduz eti, Turba ateşinde tütsü … (+1) |
+| Kupa panosu | 896 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Kurbağa | 2 | yenir +3, zehirli | Av: Zehirli kurbağa düşürür %60 (ACT 1 · Bataklık) | Balık çorbası, Balık sepeti, Kurutulmuş kurbağa, Pişmiş kurbağa, Taşta kurbağa, Tütsülenmiş kurbağa |
 | Kurt derisi | 9 | – | Av: Kurt düşürür %75 (ACT 1 · Çayır) | – (satılır, görevlerde istenir) |
 | Kurt dişi | 10 | – | Av: Kurt düşürür %50 (ACT 1 · Çayır) · Av: Bataklık kurdu düşürür %50 (ACT 1 · Bataklık) | Diş kolye |
@@ -6842,7 +6895,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Sandalye | 86 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Sandal küreği | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Yelkenli sal |
 | Sandık | 228 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
-| Sapan | 293 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
+| Sapan | 293 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Sarımsaklı et | 101 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Sarı boya | 143 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Sarı okr | 35 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Sarı okr tozu |
@@ -6901,6 +6954,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Sünger taşı | 45 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Sünger taşı bileği |
 | Sünger taşı bileği | 123 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Şaman tüyü ² | 70 | – | Av: Goblin şamanı düşürür %60 (ACT 2 · Dev Mantar Ormanı) | – |
+| Şişedeki mektup | 5 | okunur (çantada kalmaz) | Fırtına dinince kıyıya vurur (bkz. Sistemler › İzler ve anılar › Kıyıya vuran şişeler) | – |
 | Şifalı merhem | 184 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Tabakhane | 663 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Tabanca ² | 1.447 | alet | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Silahçı Tufan yapar (200 sikke işçilik) | – |
@@ -7318,7 +7372,7 @@ Direnç yetenekleri eşya dirençleriyle; Dirençli beden ayrı yeteneklerin yer
 
 # Başarımlar
 
-46 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
+49 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
 
 **Başarım kartı ekranın ortasında (v3.39, Boğaç: "sağ altta haritanın üzerinde değil, ortada göster; tıklarsa direk kaybolsun"):** bir başarım kazanılınca kartı (simgesi, "BAŞARIM KAZANILDI" ve adı) **ekranın ortasında**, biraz büyük, hafifçe büyüyerek belirir ve **3,6 saniye** kalır, sonra söner. Karta **tıklanınca (dokununca) hemen kaybolur**; sırada başka başarım varsa o gelir. Kart oyunu durdurmaz, kartın dışına tıklamak oyunu etkilemez. (v3.38'e kadar kart sağ altta, haritanın üstünde çıkıyordu.)
 
@@ -7340,6 +7394,9 @@ Direnç yetenekleri eşya dirençleriyle; Dirençli beden ayrı yeteneklerin yer
 | Kâşif | Adanın yarısını keşfet. | Haritanın açılan kısmı; "Haritayı aç" hilesi de sayılır. |
 | İz sürücü 🔒 | Eşinden kalan bütün izleri bul. | 6 iz: ikisi yurtta (Çayır/Orman), ikisi köprünün karşısında (biri Bataklık'ta, biri Kayalık Dağ'da), ikisi doğuda. Gece mor parıltı. |
 | Hatırladım 🔒 | Bütün anılarını geri getir. | 32 anı: ACT 1'in 22 anısı (tanışmadan evlenme teklifine), ikinci adada gelen 5 mor ışık anısı, 5 usta anısı (ACT 2 ustalarının son görevleri). |
+| İlk anı | Bir anını geri getir. | v3.68 (Boğaç): gizli değil. Herhangi bir anı (ACT 1, mor ışık ya da usta anısı) sayılır. |
+| Anılar dönüyor | ACT 1'in 11 anısını geri getir. | v3.68 (Boğaç): gizli değil. Yalnızca ACT 1'in 22 anısı sayılır; sırayla geldikleri için ilk 11'i. Listede ilerleme (x / 11) görünür. |
+| Tanıştığımız günden beri | ACT 1'in 22 anısının hepsini geri getir. | v3.68 (Boğaç): gizli değil. Sonuncusu evlenme teklifidir ("Çay kıyısında söz"), yani ACT 1'in sonunda kazanılır. |
 | Adada bir ay | 30. güne ulaş. | – |
 | Ejder avcısı 🔒 | Kül Diyarı'nın kara ejderini yen. | Kara ejder Kül Diyarı'nda. |
 | Ada efsanesi | Seviye 25 ol. | – |
@@ -7388,7 +7445,6 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 | 15 | Balık ve tuzak bölgeleri | Tablolar 6 biyoma değil 3 kuşağa göre: Kayalık Dağ'da bataklık balıkları, Mor Kristal Vadisi'nde Kül Diyarı balıkları çıkıyor; ACT 2'ye özel balık yok. | Biyom başına tablo. |
 | 16 | Şanslı müşteri II | "Hepsini sat"ta hesaba katılmıyor. | – |
 | 17 | Ev lambaları | Evin içi her zaman güvenli olduğu için lambaların işlevi yok, ama metinleri "mor ışık içeri giremez" diyor. | Lambaya başka bir işlev ver ya da metni değiştir. |
-| 18 | İşlevsiz aletler | Sapan, Bola, Porsuk yayı, Dişbudak yayı "tuzak" türünde ama kurulamıyor ve silah olarak da kullanılmıyor. | Bir işlev ver ya da tariflerden çıkar. |
 | 19 | Metinler | Zor modda "Dene" sonrası metin eski akışı anlatıyor; "Oyunlardaki gibi" başarımı telefonda yanlış hareketi tarif ediyor. | Metin düzeltmesi. |
 | 20 | Yol oku (ACT 1 sonu) | Barbaros'un görevleri sürerken görev kartı "Barbaros ile konuş" diyor ama yol oku hâlâ Yaşlı Kemal'i gösteriyor. | Ok Barbaros'u göstermeli. |
 | 21 | Arayüz | Oyun içi Ayarlar açıkken saat akıyor; Ayarlar düğme yazıları kesik ("Derinli", "Otoma"); ana menüde logo "Devam et"e biniyor; karakter yaratmada alt çubuk son satırları örtüyor; seviye 50'de "0 / Infinity XP · SV. 51". | Düzeltme. |
@@ -7522,7 +7578,7 @@ Sony'nin yayımladığı rehbere göre ayrıntılı sunumda olması gerekenler, 
 | Sony'nin istediği | Purple Light için |
 |---|---|
 | Kısa tanıtım ve oyunu farklı kılan şey | Hayatta kalma + üretim + hikâye; kayıp sevgilinin anıları, mor ışık gizemi, el yapımı piksel dünya. |
-| Neden PlayStation'a uygun | Kolla oynanacak biçimde tasarlandı (oyun kolu düzeni), DualSense titreşimi, 46 başarımın kupaya dönüşmesi. |
+| Neden PlayStation'a uygun | Kolla oynanacak biçimde tasarlandı (oyun kolu düzeni), DualSense titreşimi, 49 başarımın kupaya dönüşmesi. |
 | Ekip ve geçmiş | Boğaç (tasarım, yönetim), stüdyo bilgileri. |
 | Çalışan sürüm ya da oynanış videosu | Yayındaki oyun (https://bogacavdar.github.io/purple-light/), PC sürümü, fragman. Sony çalışan sürümü en iyi sunum sayıyor. |
 | İş soruları | Diğer platformlar (PC/Steam), hedef pazarlar, diller (Türkçe, İngilizce), iş modeli (tek seferlik satış), istenen destek, geliştirme ve pazarlama bütçesi, çıkış sonrası güncelleme planı (ACT 3). |
@@ -7540,7 +7596,7 @@ Taşırken yeniden kullanılacaklar: bu tasarım belgesi (oyunun tam tanımı), 
 
 ### PS5 için oyunda değişecekler
 
-- **Kupalar (Trophies):** 46 başarım PS5 kupalarına eşlenir; Platin zaten oyunda var. Sony'nin kupa kuralları (sayı, dağılım) DevNet'te.
+- **Kupalar (Trophies):** 49 başarım PS5 kupalarına eşlenir; Platin zaten oyunda var. Sony'nin kupa kuralları (sayı, dağılım) DevNet'te.
 - **Kontroller:** oyun kolu düzeni (**Sistemler › Oyun kolu**) temel alınır; DualSense'in dokunmatik yüzeyi, hoparlörü, tetik direnci isteğe bağlı eklenir. Klavye/fare ekranları ve dokunmatik düğmeler kaldırılır.
 - **Kayıt:** tarayıcı kaydı yerine PS5'in kayıt sistemi; bulut kaydı.
 - **Arayüz:** televizyonda uzaktan okunabilir yazı boyları; bütün menüler kolla gezilir; ekranda tuş simgeleri PlayStation'ınki (✕ ○ □ △).

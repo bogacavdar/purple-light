@@ -1,3 +1,20 @@
+## v3.68 (8 Kasım 2026) · erişilebilirlik (renk körü modu, kalp atışı göstergesi), Sapan/Bola/kısa yaylar, Kupa panosu, kıyıya vuran mektuplar, anı başarımları, köpek günlüğü
+
+**Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
+- Yeni `<script id="v368erisim">`: Ayarlar'a `cbmon` (Renk körü modu, `settings.cbm`) ve `hbvon` (Kalp atışını ekranda göster, `settings.hbv`) satırları Titreşim'in üstüne; `body.cbm` CSS'i (inline `color:#8fd46b/#9fe08a/#ff8a6a/#ff6a5a/#f2d070` öznitelik seçicileri + ilgili sınıflar, `ul.book small span` önüne ✓ ✗ +); `#hbpulse` kenar nabzı (yalnız `opacity` animasyonu), `__plKlon` ile kalp atışının saatini izler.
+- Yerinde: inşa gölgesi renkleri `window.__cbG/__cbR/__cbGa/__cbRa` ile değişir (satır ~5479 dünyadaki gölge, ~10425/10427 ev içi, ~21941 zemin/duvar).
+- Yeni `<script id="v368kopek">`: `faint`, `nightDeath`, `snapshot`, `restore`, `startNew` sarılır; `#achcard` gözlenir; 2 sn'de bir Reis (`__p4.s.bd`), anı (`mems`) ve tanrı modu karşılaştırılır. Kayıt alanı `dlog:{e:[[gün,saat,tür,metin]…≤300],c:{tür:sayı}}`. `window.__plDogLog(k,x)`, `__plDogLogGet()`.
+- Başarımlar (`ACH`, `PROG` yerinde): `ani1`, `ani11`, `ani22` (gizli değil); `v318story`'de `window.__plA1I=A1I` (ACT 1 anı indeksleri).
+- Arena `KINDS`'a `['sling','Fırlatma']` (yerinde).
+- Yeni `<script id="v368alet">`: Sapan/Bola `GT.kind='sling'`; `attack` sarılır (taş/bola mermisi `__plFire` ile; Sapan + meyve ağacı: `treesNear`, ağaç başına `t._sapD=day`); `tickAnimals`/`drawAnimal` sarılır (`a._bola` 5 sn %35 hız, halka). Dişbudak/Porsuk yayı `__plBow.addBow` + `GT.kind='bow'` + `FORGED`.
+- `v56-room`'da `window.__plDEC=DEC;window.__plDECSET=DECSET` (yerinde). Yeni `<script id="v368kupa">`: `DEC['Kupa panosu']` (3×1 duvar, `k:'trophy'`), tarif (`c:'Ev eşyası'`, kazanda öğrenilir, Sinan yapar), fiyat tarif kuralıyla (`CM(depthOf)`) = 896, simge.
+- Yeni `<script id="v368sise">`: `Şişedeki mektup` (fiyat 5, simge); fırtına dinince %60 kıyıya `dropItem`; alınınca okunur; kayıt alanı `sise:{f:[id…],o:gün}`; `renderPpl` sarılır (Kitap › Ada halkı altında mektuplar). `window.__plSise={wash,found}`.
+- Sürüm etiketi `Versiyon 3.68`. Bekleyen-paket'teki `yayinla.sh` sürüm satırı değişikliği de bu pakette.
+
+**Geri alma:** beş yeni bloğu (`v368erisim`, `v368kopek`, `v368alet`, `v368kupa`, `v368sise`) sil; yerinde değişenler: `ACH`/`PROG` üç satırı, `__plA1I`, `__plDEC/__plDECSET`, `KINDS` Fırlatma, dört inşa gölgesi `window.__cb*` ifadesi. Kayıt alanları `dlog`, `sise` eski sürümde okunmaz ve zarar vermez. `settings.cbm/hbv` cihazda kalır, etkisizdir.
+
+**Kontrol:** chk.js prototip 0 hata (174 script), index 0 hata; `?.` 1 / `??` 7 (aynı). `?debug` duman denemesi (Playwright, sayfa hatası ve `__hamErr` yok): ayar satırları ve `body.cbm`, nabız sınıfı, Sapan taş harcar ve mermi çıkar, Bola harcanmaz, Dişbudak yayı ok atar (cd 0,5), `snapshot().dlog`, bayılma sayacı, 22 ACT 1 anı indeksi, Kupa panosu fiyat 896 + simge + Sinan tarifi, şişe kıyıya düşer → okunur → `sise.f` + Kitap bölümü + günlük. `tests/v48_bugs.js` eski sürümde de aynı yerde düşüyor (`recipes3.json` farkı, açılış akışı), çalıştırılamadı. Lamba değişikliği denendi ve Boğaç'ın isteğiyle geri alındı (lambalar süs).
+
 ## v3.67 (8 Kasım 2026) · etkili ok fiyatı, karyola 738, CB2 300, varyantlarda uç/boya, kazanda her tarif, Kamış ok gövdesi kalktı, Deneyerek bul adetli
 
 **Değişen bloklar / yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):**
@@ -315,16 +332,3 @@
 - **Ölçüm** (`olcum.js` CPU×4, gl; 3.48 → 3.49): BOOT 18.593 → 18.292 ms; kumsal avg 203,9 → 195,3; yürürken 162,5 → 176,4; PLAY 10 sn js 4.080 → 4.010 ms (gürültü içinde).
 - **Geri almak için:** `v56` (area/scale/origin, renderUI, pointer olayları, CSS, `target` sarması; v3.48 hali), `v345` `mapOn`/`dayBack`, `v339ach` `show` koşulu, `houseCost` ve Yaprak barınağı `c`, `renderUsta` `pl` süzgeci ve metni, `showLesson`/yetenek metinleri, hile `ALL`, arena `unlocked`. Kayıtta yalnız ev nesnesine `room.seen` eklenir (eski kayıtta yoksa ilk girişte Döşe açılır); MAPV değişmedi.
 - Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
-
-## v3.48 (6 Kasım 2026) · E2E Orman 2: yan görev ödülleri açan ana göreve göre, "!" büyük haritada ~16 px, Sinan ev listesi, ders kartı bekler
-
-- **Yan görev ödülleri:** 42 görevin `c`/`x` verisi belgeden (36_yan_gorevler tabloları v3.48 kuralı, 37_magaralar) yeniden yazıldı (36 değişti). Oyunda okunan `q.c`/`q.xp` belgeyle otomatik karşılaştırıldı: 0 fark.
-- **OYN-08 geri alındı:** `talkUsta` `lock`/`GO` ("Önce Börü'nün işini bitir…") ve iki kullanımı silindi (belgeden çıkarıldı).
-- **ORM-08:** `v186` `talkUsta` sarması R2 sürerken malzemeler (`H.mat`: 8 Dal, 12 Yaprak, 4 Lif) çantadaysa ev listesini (`openCarp`) doğrudan açar. Eskiden koşul `!carpOK(H)` idi; sikke ya da seviye eksikse ("5 sikke eksik") hiç tetiklenmiyordu. Denendi: F → `mode 'carp'`.
-- **ORM-09:** `drawMap` büyük haritada `QK = canvas.width/clientWidth`; tanışılmamış görev sahibinin "!"i `R0=max(16,9·QK)` (yan görev "?"siyle aynı), tanışılmış görev verenin "!" rozeti `u=max(2,round(1,8·QK))` (rozet ~18 ekran pikseli). Köşe haritası aynı.
-- **ORM-10:** fare ipucu (`v146` `what`) kişiler için "E ile konuş" → atanan tuş (`KE`); ayrıca Börü dersi kartı ve Yıldızsız'ın ilk bildirimi `__plKey('interact')`.
-- **ORM-11:** `v186` `showLesson` kartı (`#q2les`) `dlgOpen||craftOpen` iken gizli açılır; 250 ms denetim pencere kapanınca gösterir. Denendi: harita açıkken gizli, kapanınca görünür.
-- Ölçüm: kare döngüsüne yalnızca `drawMap`'te bir sabit hesap (büyük harita için) eklendi; ölçülmedi (etkisi yok sayıldı).
-- **Geri almak için:** yan görev `c`/`x` (v3.47 hali), `talkUsta` (v3.47 hali OYN-08 dahil), `v186` R2 sarmasında `H.mat` koşulu (`!carpOK(H)`), `drawMap` `QK` ve iki boy, üç "E/F" metni, `showLesson` `lesEl.hidden` ve 250 ms aralığı. Kayıt alanı ve MAPV değişmedi.
-- Kontrol: chk.js prototip ve index.html errors 0, `?.` 1 / `??` 7.
-

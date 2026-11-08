@@ -3,7 +3,7 @@
 ## Nerede yapılır: örs ya da el
 
 - **Örste (demirci ve zırhçılar) yalnızca silah, zırh, balta ve kazma dövülür:** kılıç, savaş çekici, topuz, mızrak, yay (ok atan yaylar), **bıçaklar**, asalar ve ateşli silahlar; baltalar ve kazmalar (Boynuz kazma dahil); efektli (alevli/zehirli/keskin) silahlar; bütün zırhlar.
-- **Geri kalan bütün aletler elle yapılır** (El yapımı: bilgisayarda **Tab**, telefonda el ikonu): Tuzak, Sapan, Bola, Dişbudak yayı ve Porsuk yayı (küçük av aletleri), Olta, Ağ, Kemik zıpkın, Balık kapanı ve deniz oltaları, Kürek, Tırmık, Tırpan, Sulama kabı, meşaleler, kazıyıcılar, Kemik iğne, Kirmen, Dokuma tezgâhı, Bileği taşı, Çekiç taşı, Öğütme taşı, Pişirme taşı, Taş havan, Pirit çakmağı. Tarifleri eskisi gibi **kazanda öğrenilir**; öğrenilince El yapımı listesinde çıkar, demircinin listesinde çıkmaz.
+- **Geri kalan bütün aletler elle yapılır** (El yapımı: bilgisayarda **Tab**, telefonda el ikonu): Tuzak, Sapan ve Bola (fırlatılan av aletleri; aşağıda "Sapan ve Bola"), Olta, Ağ, Kemik zıpkın, Balık kapanı ve deniz oltaları, Kürek, Tırmık, Tırpan, Sulama kabı, meşaleler, kazıyıcılar, Kemik iğne, Kirmen, Dokuma tezgâhı, Bileği taşı, Çekiç taşı, Öğütme taşı, Pişirme taşı, Taş havan, Pirit çakmağı. Tarifleri eskisi gibi **kazanda öğrenilir**; öğrenilince El yapımı listesinde çıkar, demircinin listesinde çıkmaz.
 - Elle yapılan bir aletten (dayanıklılığı olan) **aynı anda bir tane** taşınır: elindeyken yenisi yapılmaz ("zaten sende"), yeni yapılan tam keskinlikle gelir. Körelince Demirci Dursun eskisi gibi **bileyler**.
 
 ## Silah bilgisi her yerde yazar
@@ -212,7 +212,9 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Çam yayı | Çayır | 12 | 0,7 sn | 260 | 80 | 3 Çam odunu, 1 Sinir kirişi, 1 Bakır külçesi | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 112 |
 | Meşe yayı | Orman | 17 | 0,68 sn | 280 | 110 | 3 Meşe odunu, 1 Sinir kirişi, 1 Tunç külçesi | Örs · Silahçı Durdu (Orman) ve üstü döver | 304 |
 | Kızılağaç yayı | Bataklık | 26 | 0,66 sn | 300 | 150 | 3 Kızılağaç odunu, 2 Sinir kirişi, 1 Demir külçesi | Örs · Silahçı Ali (Bataklık) ve üstü döver | 426 |
+| Dişbudak yayı (kısa) | Bataklık | 20 | 0,5 sn | 250 | 130 | 1 Dişbudak sapı, 1 Sinir kirişi, 2 İp, 2 Dal, 2 Taş | Örs · Silahçı Ali (Bataklık) ve üstü döver | 128 |
 | Akçaağaç yayı | Kayalık Dağ | 35 | 0,64 sn | 320 | 190 | 3 Akçaağaç odunu, 2 Sinir kirişi, 1 Çelik külçesi | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.022 |
+| Porsuk yayı (kısa) | Kayalık Dağ | 27 | 0,49 sn | 270 | 170 | 1 Porsuk sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 130 |
 | Kızıl sedir yayı | Kül Diyarı | 45 | 0,62 sn | 340 | 230 | 3 Kızıl sedir odunu, 2 Sinir kirişi, 1 Kara çelik külçesi | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 2.961 |
 | Gece ağacı yayı | Mor Kristal Vadisi | 56 | 0,6 sn | 360 | 280 | 3 Gece ağacı odunu, 2 Sinir kirişi, 1 Mor kristal levhası | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 2.211 |
 
@@ -227,6 +229,16 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Mor kristal ok | Mor Kristal Vadisi | ×1,8 | 1 Mor kristal levhası, 4 Dal, 2 Ur kekliği tüyü, 1 Kuvars ok ucu → 11 ok | 670 |
 
 - **Yayın özel vuruşları** (Dövüş · Özel vuruşlar tablosu): Hızlı atış, Delici ok, Çift ok, Gergin atış, Geri sıçrayıp atış, Ok yelpazesi; ultisi **Ok yağmuru**. Her ok atışı bir ok harcar (ulti harcamaz).
+- **Kısa yaylar (v3.68, 8 Kasım 2026, Boğaç: "işe yarayanlar işe yarasın"):** Dişbudak yayı (Bataklık) ve Porsuk yayı (Kayalık Dağ) **kısa yay**dır: biyomunun asıl yayıyla saniyedeki hasarı aynıdır (Kızılağaç 26 / 0,66 ≈ 39, Dişbudak 20 / 0,5 = 40; Akçaağaç 35 / 0,64 ≈ 55, Porsuk 27 / 0,49 ≈ 55) ama **daha sık atar, menzili kısadır** ve aynı hasar için **daha çok ok harcar**. Okun hızı 380 + 30 × (kademe + 1). Silahlar listesinde ve arenada **Yaylar** grubundadır.
+
+### Sapan ve Bola (v3.68, 8 Kasım 2026, Boğaç)
+
+İkisi de elle yapılır (El yapımı), alet kemerine takılır, **eldeyken vuruş** (tık, Vur düğmesi) onları kullanır; nişan yay gibidir (fare yönü; telefonda en yakın canlı). Her atış aletin dayanıklılığından 1 yer; körelince atmaz (bilenir). Güç ve seviye hasarı yay gibi artırır. Reislere hasar verir ama sersemletme ve yavaşlatma işlemez. Arenada da seçilir (silahlar listesinde **Fırlatma** grubu).
+
+- **Sapan:** her atış çantadan **1 Taş** harcar (Taş yoksa "Taş yok"). Hasar 5, bekleme 0,8 sn, menzil 200 px.
+  - **Kuşları sersemletir:** taş bir kuşa (Keklik, Ördek, Ur kekliği; tüyü düşen ya da uçan bütün canlılar) değince kuş **3 sn sersemler** (yerinde kalır, başında yıldızlar döner); yakalamak ya da vurmak kolaylaşır.
+  - **Meyve düşürür:** nişan bir **meyve ağacının** (Yabani elma, Yabani armut, Yabani erik, Ceviz, Fındık, Kestane, Mürver, Ardıç, Ay elması, Ateş narı, Yıldız eriği…) tacına denk gelirse (ağacın 26 px yakını, 200 px menzil içinde) taş ağaca gider ve ağacın dibine **1 meyvesi düşer** (ağacın tohumu varsa %20 ihtimalle bir de tohum). Ağaç kesilmez, odun gelmez. **Her ağaç günde bir kez** meyve verir; aynı gün yeniden atınca "Bu ağaçta meyve kalmadı · yarın" yazar. Telefonda menzilde canlı yoksa sapan en yakın meyveli ağaca atar.
+- **Bola:** fırlatılır ama **harcanmaz** (yalnızca dayanıklılık). Hasar 3, bekleme 1,2 sn, menzil 180 px. Değdiği canlının bacaklarına dolanır: **5 sn %35 hızla** yürür (ayağında halat halkası görünür). Kaçan av hayvanları (tavşan, geyik, keklik…) böylece yakalanır; saldırgan bir canlıyı yavaşlatıp ondan uzaklaşmak için de işe yarar.
 
 ### Alevli, zehirli, keskin silahlar
 
@@ -422,10 +434,8 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Işın kılıcı | sword | plazma kılıç | 1 | 999 | 0 | – | 60 |
 | Kaba meşale | torch | gece aydınlatır | 0 | 1.000.000 | 0 | – | – |
 | Meşale | torch | gece aydınlatır | 0 | 1.000.000 | 0 | – | – |
-| Bola | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2,5 | 25 | 15 | – | – |
-| Dişbudak yayı | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2 | 35 | 30 | – | – |
-| Porsuk yayı | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2 | 40 | 40 | – | – |
-| Sapan | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 2,5 | 25 | 20 | – | – |
+| Bola | sling | fırlatılır: vurduğu canlıyı 5 sn yavaşlatır | 1,2 | 25 | 15 | – | – |
+| Sapan | sling | taş atar: kuşu sersemletir, ağaçtan meyve düşürür | 0,8 | 25 | 20 | – | – |
 | Tuzak | trap | küçük av (Tuzak: eline al, çayırda F ile kur) | 3 | 20 | 12 | – | – |
 | Huş kabuğu kabı | water | su taşır | 2 | 1.000.000 | 0 | – | – |
 | Yaprak kova | water | su taşır | 3 | 1.000.000 | 0 | – | – |

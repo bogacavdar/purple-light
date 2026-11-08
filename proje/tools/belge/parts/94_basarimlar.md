@@ -1,6 +1,6 @@
 # Başarımlar
 
-46 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
+49 başarım vardır. Başarımlar **cihaza** kaydedilir (bütün kayıt yuvaları için ortak). 🔒 işaretliler kazanılana kadar gizlidir. Başarımı kazanınca simgesindeki eşya da görünür. Arena (ana menü) iyi son ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır.
 
 **Başarım kartı ekranın ortasında (v3.39, Boğaç: "sağ altta haritanın üzerinde değil, ortada göster; tıklarsa direk kaybolsun"):** bir başarım kazanılınca kartı (simgesi, "BAŞARIM KAZANILDI" ve adı) **ekranın ortasında**, biraz büyük, hafifçe büyüyerek belirir ve **3,6 saniye** kalır, sonra söner. Karta **tıklanınca (dokununca) hemen kaybolur**; sırada başka başarım varsa o gelir. Kart oyunu durdurmaz, kartın dışına tıklamak oyunu etkilemez. (v3.38'e kadar kart sağ altta, haritanın üstünde çıkıyordu.)
 
@@ -22,6 +22,9 @@
 | Kâşif | Adanın yarısını keşfet. | Haritanın açılan kısmı; "Haritayı aç" hilesi de sayılır. |
 | İz sürücü 🔒 | Eşinden kalan bütün izleri bul. | 6 iz: ikisi yurtta (Çayır/Orman), ikisi köprünün karşısında (biri Bataklık'ta, biri Kayalık Dağ'da), ikisi doğuda. Gece mor parıltı. |
 | Hatırladım 🔒 | Bütün anılarını geri getir. | 32 anı: ACT 1'in 22 anısı (tanışmadan evlenme teklifine), ikinci adada gelen 5 mor ışık anısı, 5 usta anısı (ACT 2 ustalarının son görevleri). |
+| İlk anı | Bir anını geri getir. | v3.68 (Boğaç): gizli değil. Herhangi bir anı (ACT 1, mor ışık ya da usta anısı) sayılır. |
+| Anılar dönüyor | ACT 1'in 11 anısını geri getir. | v3.68 (Boğaç): gizli değil. Yalnızca ACT 1'in 22 anısı sayılır; sırayla geldikleri için ilk 11'i. Listede ilerleme (x / 11) görünür. |
+| Tanıştığımız günden beri | ACT 1'in 22 anısının hepsini geri getir. | v3.68 (Boğaç): gizli değil. Sonuncusu evlenme teklifidir ("Çay kıyısında söz"), yani ACT 1'in sonunda kazanılır. |
 | Adada bir ay | 30. güne ulaş. | – |
 | Ejder avcısı 🔒 | Kül Diyarı'nın kara ejderini yen. | Kara ejder Kül Diyarı'nda. |
 | Ada efsanesi | Seviye 25 ol. | – |

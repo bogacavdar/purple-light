@@ -8,6 +8,35 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.68 · 8 Kasım 2026
+
+### Oynanış
+- **Sapan işe yarıyor:** eldeyken vuruş bir **taş** atar (her atış 1 Taş). Bir **kuşa** (keklik, ördek, ur kekliği…) değerse kuş 3 saniye sersemler. Nişanı bir **meyve ağacının** tacına alırsan ağacın dibine 1 meyvesi düşer (tohumu olan ağaçta %20 bir de tohum); her ağaç günde bir kez meyve verir. Hasar 5, menzil 200 px.
+- **Bola işe yarıyor:** fırlatılır ama harcanmaz. Değdiği canlının ayaklarına dolanır, canlı **5 saniye %35 hızla** yürür. Kaçan tavşanı, geyiği yakalamak ya da saldırgan bir canlıdan uzaklaşmak için birebir. Reisler hasar alır ama sersemlemez, yavaşlamaz.
+- **Dişbudak yayı ve Porsuk yayı artık gerçek yay:** ikisi de **kısa yay**. Biyomlarının asıl yayıyla saniyedeki hasarı aynı, ama daha sık atar, menzili kısa ve daha çok ok harcar (Dişbudak 20 hasar / 0,5 sn / 250 px; Porsuk 27 / 0,49 sn / 270 px). Bütün yaylar gibi örste dövülür.
+- **Kupa panosu:** Usta Sinan'ın yaptığı, duvara asılan 3 kare genişliğinde bir pano (2 Çam kalası, 1 Tunç levha, 2 İp, 1 Sopa; 896 sikke). Yendiğin her Reis için üstünde altın bir kalkan belirir.
+- **Kıyıya vuran şişeler:** fırtına dinince bazen kıyıya bir şişe vurur. İçinde ada halkından birinin mor ışığa kaybettiği kişiye yazdığı bir mektup var (Kemal, Zümrüt, Nazlı, Börü, Dursun ile Durmuş, Sinan, Doğan, Barbaros ve kuzenlerin Elmas Nine'ye mektubu; toplam 9). Okuduklarını Kitap › Ada halkı'nın altında bulursun.
+- **Üç yeni başarım (gizli değil):** İlk anı (bir anı), Anılar dönüyor (ACT 1'in 11 anısı), Tanıştığımız günden beri (ACT 1'in 22 anısının hepsi). Toplam 49 başarım.
+
+### Arayüz
+- **Ayarlar › Renk körü modu:** açınca tamam / eksik / yapılır renkleri mavi, turuncu ve açık sarıya döner (renk körlüğünün her türünde ayırt edilir). Malzeme satırlarında ✓ ✗ + işaretleri çıkar; takip şeridi, kazan listesi, Zor modun cevapları ve görev kartları da aynı paleti kullanır; inşa gölgesi mavi (konur) ya da turuncu (konmaz) olur.
+- **Ayarlar › Kalp atışını ekranda göster:** açınca gece beliren sevdiğin kişi göründüğünde her kalp atışıyla ekranın kenarları da mor bir nabızla atar; sesi kapalı oynayan da kalp atışını görür.
+- Arenanın silah seçicisinde yeni **Fırlatma** grubu (Sapan, Bola); kısa yaylar Yaylar grubunda.
+
+### Kayıtlar
+- Her kayıt artık gizli bir **köpek günlüğü** tutar (bayılmalar, başarımlar, Reisler, anılar, kıyıya vuran mektuplar; gün ve saatiyle). Oyunda görünmez; ACT 3 için şimdiden yazılıyor. Bulunan mektuplar da kayda yazılır. Eski kayıtlar boş günlükle ve hiç mektup bulunmamış olarak açılır.
+
+### Tasarım belgesi
+- Sistemler › Arayüz: yeni **Erişilebilirlik** başlığı (renk körü paleti tablosu, kalp atışı göstergesi); Mor ışıkta o maddesine gösterge eklendi.
+- Sistemler › Ev: Kupa panosu. Sistemler › İzler ve anılar: Kıyıya vuran şişeler (9 mektubun kimden kime olduğu).
+- Aletler: Sapan ve Bola bölümü, kısa yaylar (yaylar tablosuna iki satır), aletler tablosunda Sapan/Bola yeni tür; Sapan ve Bola'nın "Nerede yapılır"ı El yapımı olarak düzeltildi (oyunda zaten elle yapılıyordu).
+- Başarımlar: 3 anı başarımı, 46 → 49 (PS5 bölümündeki sayı da).
+- ACT 3: köpek günlüğünün şimdiden tutulduğu ve neleri yazdığı.
+- Bilinen açıklar: #18 (işlevsiz aletler) kapandı.
+- Belgenin başındaki sürüm satırı artık her yayında oyunun sürümünden yazılır (3.59'da kalmıştı).
+
+---
+
 ## Versiyon 3.67 · 8 Kasım 2026
 
 ### Oynanış
@@ -362,24 +391,3 @@ Oyun aynı; bu sürüm tasarım belgesini tamamlar.
 - Ders kartlarında, yetenek açıklamalarında, boş envanter yazısında ve ev içindeki yazılarda doğru tuş (F) yazar.
 - Usta Sinan'ın sipariş penceresi evleri artık kendisinin yaptığını söyler.
 - Hile paneli aramasında evler ve ev eşyaları da çıkar; hile modu açıkken Arena açıktır.
-
----
-
-## Versiyon 3.48 · 6 Kasım 2026
-
-### Oynanış
-
-- Yaprak barınağı görevinde malzemeleri çantana koyup Usta Sinan'a gidince doğrudan ev listesi açılır.
-- Usta Sinan'ın 3.47'de eklenen yönlendirme cümlesi kaldırıldı.
-
-### Denge
-
-- **Yan görev ödülleri yeniden ayarlandı:** her yan görev, onu açan ana görevin ödülünün 1,5–2,5 katı kadar sikke ve XP verir; hiçbiri 3.46'daki değerinin altına düşmez. 3.47'de erken yan görevler fazla XP verip seviye atlatıyordu.
-
-### Arayüz
-
-- Büyük haritada ana görevin "!"i de yan görevin "?"si kadar büyük ve okunur.
-- Fareyle bir kişinin üstüne gelince ipucu doğru tuşu (F) yazar.
-- "Yeni ders" kartı açık bir pencerenin (konuşma, sipariş, pazar, harita) üstüne binmez; pencere kapanınca çıkar.
-
----

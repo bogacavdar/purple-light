@@ -14,7 +14,6 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 | 15 | Balık ve tuzak bölgeleri | Tablolar 6 biyoma değil 3 kuşağa göre: Kayalık Dağ'da bataklık balıkları, Mor Kristal Vadisi'nde Kül Diyarı balıkları çıkıyor; ACT 2'ye özel balık yok. | Biyom başına tablo. |
 | 16 | Şanslı müşteri II | "Hepsini sat"ta hesaba katılmıyor. | – |
 | 17 | Ev lambaları | Evin içi her zaman güvenli olduğu için lambaların işlevi yok, ama metinleri "mor ışık içeri giremez" diyor. | Lambaya başka bir işlev ver ya da metni değiştir. |
-| 18 | İşlevsiz aletler | Sapan, Bola, Porsuk yayı, Dişbudak yayı "tuzak" türünde ama kurulamıyor ve silah olarak da kullanılmıyor. | Bir işlev ver ya da tariflerden çıkar. |
 | 19 | Metinler | Zor modda "Dene" sonrası metin eski akışı anlatıyor; "Oyunlardaki gibi" başarımı telefonda yanlış hareketi tarif ediyor. | Metin düzeltmesi. |
 | 20 | Yol oku (ACT 1 sonu) | Barbaros'un görevleri sürerken görev kartı "Barbaros ile konuş" diyor ama yol oku hâlâ Yaşlı Kemal'i gösteriyor. | Ok Barbaros'u göstermeli. |
 | 21 | Arayüz | Oyun içi Ayarlar açıkken saat akıyor; Ayarlar düğme yazıları kesik ("Derinli", "Otoma"); ana menüde logo "Devam et"e biniyor; karakter yaratmada alt çubuk son satırları örtüyor; seviye 50'de "0 / Infinity XP · SV. 51". | Düzeltme. |

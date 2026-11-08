@@ -610,7 +610,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Basit ok | 2 Dal, 1 Keskin taş, 1 Lif, 1 Kemik ok ucu (→ 11) | – | El yapımı (Tab) | 2 |
 | Basit yay | 1 Uzun sopa, 3 İp, 2 Lif | – | El yapımı (Tab) | 90 |
 | Bileği taşı | 2 Kumtaşı, 1 İp, 1 Dal, 1 Taş | Çekiç taşı | Örs · Silahçı Durdu (Orman) ve üstü döver | 17 |
-| Bola | 1 Halat, 3 Nehir çakılı, 1 İp, 1 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 63 |
+| Bola | 1 Halat, 3 Nehir çakılı, 1 İp, 1 Dal, 1 Taş | – | El yapımı (Tab) | 63 |
 | Çekiç taşı | 4 Nehir çakılı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 5 |
 | Çelik ok | 1 Çelik külçesi, 4 Dal, 2 Ur kekliği tüyü, 1 Çakmaktaşı ok ucu (→ 10) | – | El yapımı (Tab) | 529 |
 | Demir ok | 1 Demir külçesi, 4 Dal, 2 Ördek tüyü, 1 Akrep ok ucu (→ 10) | – | El yapımı (Tab) | 110 |
@@ -643,7 +643,7 @@ Toplam **978 tarif**: ACT 1 malzemeleriyle 911, ACT 2 malzemesi isteyen 67 (v3.5
 | Öğütme taşı | 2 Kumtaşı, 1 İp, 1 Dal, 1 Taş (eskiden 2 Granit) | Çekiç taşı | El yapımı (Tab) | 17 |
 | Pişirme taşı | 1 Taş levha, 1 Ateş, 2 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 60 |
 | Porsuk yayı | 1 Porsuk sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 130 |
-| Sapan | 1 Deri parçası, 1 Halat, 3 İp, 3 Dal, 3 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 293 |
+| Sapan | 1 Deri parçası, 1 Halat, 3 İp, 3 Dal, 3 Taş | – | El yapımı (Tab) | 293 |
 | Sepet | 1 Hasır, 4 İp, 1 Dal, 1 Taş | – | El yapımı (Tab) | 51 |
 | Sivri taş | 6 Keskin taş | – | El yapımı (Tab) | 23 |
 | Sopa | 3 Dal, 2 Keskin taş | – | El yapımı (Tab) | 12 |
@@ -910,6 +910,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Masa | 3 Çam kalası, 4 Sopa, 2 İp, 1 Damla akı boyası | – | Usta Sinan yapar (ev içine konur) | 186 |
 | Mor yosun yastığı | 4 Mor yosun, 3 Lif, 1 Mor damar boyası | – | Usta Sinan yapar (ev içine konur) | 699 |
 | Perde | 2 Keten kumaş, 1 Sopa, 2 İp, 1 Beyaz boya | – | Usta Sinan yapar (ev içine konur) | 491 |
+| Kupa panosu | 2 Çam kalası, 1 Tunç levha, 2 İp, 1 Sopa | – | Usta Sinan yapar (ev içine konur) | 896 |
 | Raf | 2 Çam kalası, 2 İp, 1 Sopa | – | Usta Sinan yapar (ev içine konur) | 70 |
 | Saksı | 1 Nehir çömleği, 2 Kum, 2 Papatya | – | Usta Sinan yapar (ev içine konur) | 72 |
 | Sandalye | 2 Çam kalası, 2 Sopa, 2 İp | – | Usta Sinan yapar (ev içine konur) | 86 |
