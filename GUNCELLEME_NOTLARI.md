@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.81 · 8 Kasım 2026
+
+### Oynanış
+- **İkinci adanın bütün malzemeleri bir işe yarıyor:** hiçbir tarifte kullanılmayan 36 malzeme artık tariflerde. Her biyoma yemek ve içecekler geldi: **Gök çorbası** ve **Rüzgâr çiçeği çayı** (Yüzen Kayalar), **Spor yahnisi** ve **Goblin otu çayı** (Dev Mantar Ormanı), **Kaktüs meyvesi suyu** (Hurda Çölü), **Kristal çorbası** ve **Kaya çiçeği çayı** (Kristal Golem Ocağı), **Kor yahnisi** ve **Lav çiçeği çayı** (Ejder Volkanı), **Yıldız çorbası** ve **Bulut özü şerbeti** (Gök Rıhtımı).
+- Var olan tariflerin 18 yeni varyantı: ör. Bulut pamuğundan ip, kükürt tozundan barut, yağ birikintisiyle kil lamba, pas tozundan kırmızı boya, hurda parçasıyla hurda çizme, meteor parçası ya da göktaşı tozuyla meteor demiri külçesi, gök camı parçasıyla roket gövdesi.
+- Hepsi Yıldız'ın kazanında öğrenilir.
+
+### Tasarım belgesi
+- Tarifler › "ACT 2'nin yeni tarifleri" bölümü (11 yemek, 18 varyant), sayılar (eşya 1337, tarif 997). ACT 2 biyom tablolarında her malzemenin kullanıldığı tarifler yazılı.
+
+---
+
 ## Versiyon 3.80 · 8 Kasım 2026
 
 ### Oynanış
@@ -372,23 +384,4 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Kol yazılarına kol tuşu harfi ikinci kez klavye tuşu sanılıp değiştirilmez (meşale yazısında "X basılı" "J basılı" oluyordu).
 - LB / RB kemerde boş eldeyken boş el kutusu da mavi çerçeveyle gösterilir.
 - Ad yazma ekran klavyesi DualSense'te ✕ / □ / ○ / Options yazar ve dar ekranda taşmaz.
-
-## Versiyon 3.61 · 7 Kasım 2026
-
-### Oynanış
-
-- **Döşe kolla:** evde Kol menüsünden Döşe'yi aç. Eşya listesinde yön tuşlarıyla gezilir, A eşyayı seçer. Sonra odada bir kare imleç belirir: yön tuşları ya da çubuk onu kaydırır, A koyar, Y döndürür, B bırakır. Listede X'e basınca imleç seçim yapmadan çıkar. Yerleşik bir eşyanın üstünde A, Taşı / Geri al / Döndür menüsünü açar. B ile Döşe biter.
-- **Harita kolla:** sol (ya da sağ) çubuk haritayı kaydırır, LT / RT uzaklaştırır / yakınlaştırır, Y bulunduğun yere döner, B kapatır. Ortadaki artıyla A'ya basarsın: bir işaretin üstündeysen işaret kalkar, bir kişinin üstündeysen ok onu gösterir (yine basınca kalkar), başka yerde işaret konur.
-- **Meşaleye reçine sür** Kol menüsünde (meşalen varken).
-- **Kolla toplarken bakılan yön:** yanında birkaç toplanacak şey varken A, çubuğun (ya da yüzünün) gösterdiği şeyi alır, yalnızca en yakını değil. Yerde duran eşyalar yine önce alınır, kişiler sonra gelir. Klavyede F değişmedi.
-- Standart dışı kollarda (tarayıcının "standard" demediği) yön tuşları da çalışır.
-
-### Arayüz
-
-- Börü'nün kerevit dersinde kart ve büyük uyarı kol açıkken kolun tuşlarını yazar ("Sol çubuk", "X ya da RT", "Atıl: B!", "Savuştur: LT!"). Ayrı ayrı yazılmış W A S D tek bir "Sol çubuk" olur.
-- Ayarlar → Kontroller'deki kol düzeni ve kol bağlanınca çıkan bildirim yeni düzene göre ve bağlı kolun tuş adlarıyla yazılır.
-
-### Proje
-
-- Ölçüm: 3.59 ile 3.61 aynı ayarlarla ölçüldü; sayılar geliştirme notunda.
 

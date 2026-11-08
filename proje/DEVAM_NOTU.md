@@ -1,3 +1,13 @@
+## v3.81 (8 Kasım 2026) · ACT 2'nin kullanılmayan 36 malzemesine tarif
+
+**Değişen yerler:** `v373sade` v3.81 satırları: `dish()` (yeni yemek; fiyat = girdiler × 1,4 + 12, ateşliler `FIRE_R`) ve `vary()` (var olan tarifin bir malzemesi değişir; `VO`, fiyat asılınki, istasyon kümeleri kopyalanır); 11 yemek, 18 varyant; `window.__plA2New`. Sürüm etiketi `Versiyon 3.81`.
+
+**Geri alma:** `git revert` bu commit (yalnız `v373sade`'deki v3.81 bloğu).
+
+**Kontrol:** chk.js 0 hata. Denetim (3.80 ↔ 3.81): tarif 968 → 997 (varyant 157 → 175), eşya 1326 → 1337, bilinmeyen 0, fiyatsız 0, kullanılmayan ham 105 → 69 (ACT 2'nin 36'sı tarifte). Yemeklerin hepsi yenir (tokluk 36–60), resimleri torba değil (çorba/çay kabı, renkleri farklı).
+
+**Ayrıca:** `v380bitki` yerleştirmesi düğüm ızgarasını her eklemede değil sonda bir kez kuruyor (açılışta 488 ms → ölçülmeyecek kadar az). Ölçüm (`olcum.js`, 4; 3.75 ↔ 3.81): açılış js 10712 → 11124 ms, oyun 10 sn js 4006 → 4205 ms (ölçüm gürültüsü içinde; telefonda denenmeli).
+
 ## v3.80 (8 Kasım 2026) · ACT 2'de yalnız kendi bitkileri, mağara ağzında Sarkıt/Yarasa gübresi, benzer bitkiler birleşti
 
 **Değişen yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):** v77 yerleşim: ISLE 2'de `window.__I1G` (ACT 1 biyom bitkileri ve madenleri) adları da silinir; `MINEPL` maden çevresi yerleşimi silindi. Yabani mercimek, yulaf, arpa, Saz, Hasırotu, Kızıl kum, Cüruf, Sünger taşı, Işık tozu, Kristal kum kaynaktan silindi (`BPLANT`, `B4PLANT`/`ZPLANT`, `PLANTC`, `FOODT`, `ODD`, `NEWP`, ad açıklamaları, `P1I`/`P1W`, v337 bitki resim tablosu). Görevler: VE7, TU8, IN3 (+`ki3`). Yarasa gübresi ipuçları ("mağara ağızlarında"). `v373sade` v3.80 satırları: `REPL` (ham + ürünleri: unu/lapası/hamuru/yassı ekmeği/kavrulmuş; Saz/Hasırotu → Kamış; Kızıl kum → Kırmızı okr; Cüruf → Kül; Sünger taşı → Lav camı; Işık tozu → Yıldız tozu; Kristal kum → Kristal). Yeni `<script id="v380bitki">`: ACT 1 mağara kapılarına (`__plCaves[].door`) 7 Sarkıt + 7 Yarasa gübresi (34–80 px, ağzın önü ve yanları), `findSpot` sarmalı (kendi biyomunun bir mağara ağzında yeniden çıkar), ISLE 2'de yok. Sürüm etiketi `Versiyon 3.80`.
@@ -272,24 +282,4 @@
 - **KOL-33:** `#padkb .pkh` `kbShow`'da `bn()` ile; tuşlar `clamp` ile daralır. Denendi: DualSense, 800 px'te sığıyor.
 - **Basılı tutma süresi:** kodda 400 ms (`P.xh`). Testçinin 0,7 sn'si 3–14 kare/sn ve 150 ms basışlardan; belge 0,4 kalır.
 - **Geri almak için:** v3.62 commit'ini `git revert` (prototip, index.html, notlar). Kayıt alanı ve MAPV değişmedi.
-
-## v3.61 (7 Kasım 2026) · kol 5. adım: Döşe, harita, reçine, standart dışı kol, kerevit dersi yazıları, kolda bakılan yöndeki toplanacak şey, ölçüm
-
-- **Döşe (`v56` oda bloğu):** yerleştirme `placeSel()`'e alındı (fare tıklaması da onu çağırır). `R.pad={cur,start,move,a,rot,back}`, `R.pcur` imleç; `draw` imleç karesini çizer; "Bitti" `R.pcur`'u da sıfırlar. `v320pad`: `layer()` Döşe'de `#roomui`'yi pencere sayar (liste/menü odak gezinimi, `firstFocus` önce `.rmenu`, sonra `[data-d]`; anahtar menü açık/kapalıya göre). `R.pad.cur()` iken `tick` imleç dalı: yön (300/110 ms tekrar), A `a()`, Y `rot()`, B `back()`. Listede X imleç, B Bitti (menü açıksa kapatır).
-- **Harita:** `padMap()` (`craft` + `mode==='map'` + `!markOpen`): çubuk `mapC` kaydırır, LT/RT `mapZ` ×0,8/×1,25, Y oyuncuya döner, A ortada: `marks` içinde 16 px → sil; yoksa `mapTap()` (kişi hedefi, açıp kapar); yoksa `markGuess` adıyla `markCol` renginde işaret. Odak haritada düğmelere gitmez. `body.padmode #craft .mapwrap::after` orta artı.
-- **Reçine:** Kol menüsünde `p-resin` → `feedTorch()` (meşale varken görünür). Meşale durağında Y'ye bağlanmadı: Y orada da hızlı yemek.
-- **Standart dışı kol:** `g.mapping!=='standard'` ise `nsDpad()`: eksen 9 (hat: −1, −0,714 … 1; boşta 1,286) ya da ilk okunduğunda 0'da duran eksen 6/7 → `now[12..15]`.
-- **KOL-14:** Börü kartı (`tzCard` 11, ftut 2) kolda ayrı metin (`data-k` ile çeviriciye kapalı). `v2.15` kerevit donma uyarısı kolda "Atıl: B!" / "Savuştur: LT!". `kTxt` art arda "Sol çubuk" etiketlerini teke indirir.
-- **KOL-13 (CEO kuralı korunur):** `window.__plDirPick()` yalnız kolun A'sı boyunca (`dirPick`) nişan yönünü verir. `v2.05` E işleyicisinde adaylar `uzaklık + açı farkı×14` ile sıralanır (alet önceliği `rank` aynı; yerdeki eşya kontrolü önce, değişmedi). `gatherTarget` da aynı biçimde sarılı; `updatePrompt` kolda aynı bayrakla çalışır (istem A'nın alacağını yazar).
-- **Yardım:** `renderHelp` ve bağlanma bildirimi yeni düzen ve `bn()` adlarıyla. Fazladan `gamepadconnected` dinleyicisi kaldırıldı (PK artık bildirim dinleyicisinde).
-- **Denendi (sahte Xbox kolu):** Döşe (seç, kaydır, döndür, koy, ikinci koy, X → yerleşik eşya menüsü, Taşı → aşağı → A, B B çıkış). Harita (kaydır, RT×2 3→4,69, A işaret koy, A kaldır, Y, B). Hat ekseniyle duraklat menüsünde ↓/↑. Yüz sağdayken A Taş'ı (13 px), solda Lif'i (9 px) aldı. Kerevit kartı ve `kTxt` WASD birleştirme. Reçine ve kerevit donma uyarısı oyunda görülmedi (yalnız kod).
-- **Ölçüm** (`olcum.js` CPU×4, gl, üçer koşu, makine yüklü):
-  - BOOT js ort.: 3.59 14.140 → 3.61 14.315 ms.
-  - PLAY 10 sn js: 3.234 → 3.169 ms.
-  - Kumsal kare ort.: 309 → 327 ms.
-  - Yürürken: 304 → 278 ms.
-  - Gürültü içinde fark yok.
-  - Yerleştirme hayaleti açıkken (ayrı betik, CPU×4, 60 kare, ikişer koşu): 3.59 203/216 ms → 3.61 194/176 ms; sarmalayıcıların yükü ölçülemeyecek kadar küçük.
-  - Kol yokken `v320pad` döngüsü çalışmıyor.
-- **Geri almak için:** v3.61 commit'ini `git revert` (prototip, index.html, notlar). Kayıt alanı ve MAPV değişmedi (işaretler eskisi gibi `marks`'ta).
 

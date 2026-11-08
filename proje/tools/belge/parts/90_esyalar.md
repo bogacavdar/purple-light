@@ -189,6 +189,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Bulut yünü ² | 16 | – | Av: Bulut koyunu düşürür %90 (ACT 2 · Yüzen Kayalar) | Bulut yünü ip |
 | Bulut çamı odunu ² | 14 | – | Balta ile Bulut çamı ağacından: Yüzen Kayalar (ACT 2) | Mavi mantar kalası, Kütük salı, Oyma kano |
 | Bulut özü ² | 26 | – | Yerden toplanır: Gök Rıhtımı (ACT 2) | – |
+| Bulut özü şerbeti | 156 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Buz armudu | 20 | yenir +33 | Meyve ağacı (Buz armudu): eli boşken F ile silkele, 2–3 tane düşer · Buz armudu ağacından toplanır: Kristal Golem Ocağı (ACT 2) | Buz armudu ezmesi |
 | Buz armudu ezmesi | 79 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Buz asası ² | 1.600 | alet | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Büyücü Efsun yapar (200 sikke işçilik) | – |
@@ -380,6 +381,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Goblin kulağı ² | 30 | – | Av: Goblin düşürür %80 (ACT 2 · Dev Mantar Ormanı) · Av: Goblin okçusu düşürür %60 (ACT 2 · Dev Mantar Ormanı) | Mantar lifi eldiven |
 | Goblin oku ² | 20 | – | Av: Goblin okçusu düşürür %80 (ACT 2 · Dev Mantar Ormanı) | – |
 | Goblin otu ² | 12 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) | – |
+| Goblin otu çayı | 65 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Golem feneri | 1.188 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Golem parçası ² | 36 | – | Av: Kristal golemcik düşürür %90 (ACT 2 · Kristal Golem Ocağı) | Kristal miğfer |
 | Golem tozu ² | 14 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) | – |
@@ -403,6 +405,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Gök otu ² | 14 | – | Yerden toplanır: Yüzen Kayalar (ACT 2) | – |
 | Gök söğüdü odunu ² | 16 | – | Balta ile Gök söğüdü ağacından: Yüzen Kayalar (ACT 2) | Mavi mantar kalası, Kütük salı, Oyma kano |
 | Gök tazısı postu ² | 60 | – | Av: Gök tazısı düşürür %85 (ACT 2 · Yüzen Kayalar) | Fırtına tüyü başlık |
+| Gök çorbası | 177 | – | Tarif: Yıldız'ın kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Gök üzümü odunu ² | 38 | – | Balta ile Gök üzümü ağacından: Gök Rıhtımı (ACT 2) | Kömür ağacı kalası, Kütük salı, Oyma kano |
 | Gök üzümü suyu ² | 163 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | – |
 | Gök üzümü ² | 20 | – | Gök üzümü ağacından toplanır: Gök Rıhtımı (ACT 2) | Gök üzümü suyu |
@@ -517,6 +520,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kabak tohumu | 8 | – | Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar · Hasatta %45 ihtimalle 1 tane (Kabak) | – |
 | Kadife balığı | 4 | – | Balık: Bataklık/Kayalık Dağ suları, olta/ağ/zıpkın ile %20; balık kapanına da girer · Balık: Kül Diyarı/Mor Kristal Vadisi suları, olta/ağ/zıpkın ile %16; balık kapanına da girer | Balık çorbası, Balık sepeti, Pişmiş kadife balığı, Taşta kadife balığı, Tütsülenmiş kadife balığı |
 | Kafa lambası | 300 | giyilir +3 savunma | Yıldızsız Işıkçı ile takas: 5 Mor kıymık + 3 Gece sefası + 1 Tunç külçesi (baş yuvasına takılır, gece kendiliğinden yanar) | – |
+| Kaktüs meyvesi suyu | 76 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Kaktüs meyvesi ² | 12 | – | Yerden toplanır: Hurda Çölü (ACT 2) | – |
 | Kalamar | 61 | – | Deniz avı: Fırtına Denizi (Gemici Poyraz'ın teknesiyle, Sv 18+, Fırtına oltası) %50 | Kalamar tava |
 | Kalamar tava | 192 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
@@ -573,6 +577,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kaya patlatıcı | 236 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kaya yarasası kanadı | 104 | – | Mağara canlısı Kaya yarasası düşürür (Rüzgâr Mağarası, Kayalık Dağ) %80 ×1 | Kanat yelpazesi |
 | Kaya çiçeği ² | 20 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) | – |
+| Kaya çiçeği çayı | 99 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Kayın kabuğu | 19 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kayın mantarı | 32 | yenir +14 | Yerden toplanır: Kayalık Dağ (ACT 1) | Kızarmış kayın mantarı |
 | Kayın odunu | 8 | – | Balta ile Kayın ağacından: Orman (ACT 1) | Kayın kabuğu, Meşe kalası, Meşe kömürü, Kütük salı, Oyma kano |
@@ -651,6 +656,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kor pulu ² | 40 | – | Av: Kor kertenkelesi düşürür %80 (ACT 2 · Ejder Volkanı) | – |
 | Kor tacı tılsımı | 2.800 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kor taşı | 60 | – | Mağarada yerden toplanır: Kor Mağarası (Kül Diyarı, giriş Sv 34) | Kor tacı tılsımı, Kor zurnası |
+| Kor yahnisi | 194 | – | Tarif: Yıldız'ın kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kor zurnası | 500 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Korkuluk | 74 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kozalak ateşi | 20 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -684,6 +690,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kristal çam odunu ² | 30 | – | Balta ile Kristal çam ağacından: Kristal Golem Ocağı (ACT 2) | Kristal çam kalası, Kütük salı, Oyma kano |
 | Kristal çiçeği | 82 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Kristal çiçeği tacı |
 | Kristal çiçeği tacı | 412 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kristal çorbası | 149 | – | Tarif: Yıldız'ın kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kulübe | 201 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur · Usta Sinan yapar (450 sikke) | – |
 | Kulübe iskeleti | 131 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | Deri çadır, Kamış kulübe, Kulübe, Tütsühane |
 | Kum | 1 | – | Yerden toplanır: Mor Kristal Vadisi, Orman, Çayır, Bataklık, Kayalık Dağ, Kül Diyarı (ACT 1) | Ana tanrıça heykelciği, Arı kovanı, Ateş tuğlası, Ateş yeri, Av sahnesi duvar resmi, Balık pulu … (+64) |
@@ -835,6 +842,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Lav pulu | 110 | – | Av: Lav kertenkelesi düşürür %80 (ACT 1 · Kül Diyarı) | Ejder eldiveni |
 | Lav yılanı pulu | 178 | – | Mağara canlısı Lav yılanı düşürür (Kor Mağarası, Kül Diyarı) %70 ×1 | Volkan camı muska |
 | Lav çiçeği ² | 30 | – | Yerden toplanır: Ejder Volkanı (ACT 2) | – |
+| Lav çiçeği çayı | 141 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Lavanta | 22 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Lavanta, Lavanta yağı |
 | Lavanta yağı | 125 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Lavanta çayı | 196 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -1058,6 +1066,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Rüzgâr taşı | 42 | – | Mağarada yerden toplanır: Rüzgâr Mağarası (Kayalık Dağ, giriş Sv 26) | Ağ kapanı |
 | Rüzgâr tüyü ² | 12 | – | Av: Rüzgâr kuşu düşürür %100 (ACT 2 · Yüzen Kayalar) | – |
 | Rüzgâr çiçeği ² | 16 | – | Yerden toplanır: Yüzen Kayalar (ACT 2) | – |
+| Rüzgâr çiçeği çayı | 82 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Saksı | 72 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Sal | 92 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Yelkenli sal |
 | Salyangoz sümüğü ² | 16 | – | Av: Spor salyangozu düşürür %90 (ACT 2 · Dev Mantar Ormanı) | – |
@@ -1098,6 +1107,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Spor elması ezmesi | 83 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Spor kristali ² | 40 | – | Kazmayla kazılır: Dev Mantar Ormanı (ACT 2) | Ateş asası |
 | Spor tozu ² | 14 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) · Av: Mantar böceği düşürür %100 (ACT 2 · Dev Mantar Ormanı) | Mantar lifi eldiven, Spor ekmeği |
+| Spor yahnisi | 219 | – | Tarif: Yıldız'ın kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Su | 1 | – | Kap ile (Yaprak kova vb.) suyun kıyısında E | Adaçayı çayı, Ahtapot salatası, Ahududu ezmesi, Ahududu suyu, Akçaağaç kabuğu, Akçaağaç şurubu … (+329) |
 | Su kestanesi | 18 | yenir +12 | Yerden toplanır: Bataklık (ACT 1) | Kavrulmuş su kestanesi |
 | Su samuru derisi | 5 | – | Av: Su samuru düşürür %75 (ACT 1 · Bataklık) | – (satılır, görevlerde istenir) |
@@ -1350,6 +1360,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yıldız tozu yemi | 504 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yıldız çelengi | 467 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yıldız çiçeği | 74 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Yıldız çelengi |
+| Yıldız çorbası | 205 | – | Tarif: Yıldız'ın kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Zehir bezesi | 16 | – | Av: Zehirli kurbağa düşürür %80 (ACT 1 · Bataklık) · Av: Engerek düşürür %60 (ACT 1 · Orman) | Panzehir |
 | Zehir yağı | 75 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ametist kılıcı, Ametist savaş çekici, Ametist topuz, Obsidyen mızrak, Timsah dişi kılıcı, Timsah dişi mızrak … (+13) |
 | Zehirli Bakır ok | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |

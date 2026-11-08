@@ -20,13 +20,13 @@
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Bulut pamuğu | 12 | 62 | 45 sn sonra yeniden çıkar |
-| Gök kumu | 10 | 65 | 60 sn sonra yeniden çıkar |
-| Gök mantarı | 34 | 57 | 60 sn sonra yeniden çıkar, çiğ yenir (+25 tokluk) |
-| Gök otu | 14 | 56 | 50 sn sonra yeniden çıkar |
-| Rüzgâr çiçeği | 16 | 62 | 55 sn sonra yeniden çıkar |
-| Rüzgâr kristali | 40 | 49 | 110 sn sonra yeniden çıkar |
-| Tüy yosunu | 10 | 63 | 45 sn sonra yeniden çıkar |
+| Bulut pamuğu | 12 | 62 | 45 sn sonra yeniden çıkar · Tarifte: İp (Bulut pamuğu ile) |
+| Gök kumu | 10 | 65 | 60 sn sonra yeniden çıkar · Tarifte: Gök demiri külçesi (Gök kumu ile) |
+| Gök mantarı | 34 | 57 | 60 sn sonra yeniden çıkar, çiğ yenir (+25 tokluk) · Tarifte: Gök çorbası |
+| Gök otu | 14 | 56 | 50 sn sonra yeniden çıkar · Tarifte: Gök çorbası |
+| Rüzgâr çiçeği | 16 | 62 | 55 sn sonra yeniden çıkar · Tarifte: Rüzgâr çiçeği çayı |
+| Rüzgâr kristali | 40 | 49 | 110 sn sonra yeniden çıkar · Tarifte: Ateş asası (Rüzgâr kristali ile) |
+| Tüy yosunu | 10 | 63 | 45 sn sonra yeniden çıkar · Tarifte: Şifalı merhem (Tüy yosunu ile) |
 | Yüzer taş | 30 | 68 | 90 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, F)
@@ -66,12 +66,12 @@ Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzak
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
 | Büyü otu | 26 | 60 | 70 sn sonra yeniden çıkar |
-| Dev spor | 28 | 62 | 80 sn sonra yeniden çıkar |
-| Goblin otu | 12 | 60 | 50 sn sonra yeniden çıkar |
-| Işıldak mantarı | 20 | 64 | 60 sn sonra yeniden çıkar |
-| Kök yumrusu | 29 | 61 | 50 sn sonra yeniden çıkar, çiğ yenir (+29 tokluk) |
+| Dev spor | 28 | 62 | 80 sn sonra yeniden çıkar · Tarifte: Spor yahnisi |
+| Goblin otu | 12 | 60 | 50 sn sonra yeniden çıkar · Tarifte: Goblin otu çayı |
+| Işıldak mantarı | 20 | 64 | 60 sn sonra yeniden çıkar · Tarifte: Spor yahnisi |
+| Kök yumrusu | 29 | 61 | 50 sn sonra yeniden çıkar, çiğ yenir (+29 tokluk) · Tarifte: Spor yahnisi |
 | Spor tozu | 14 | 65 | 50 sn sonra yeniden çıkar |
-| Sümük yosunu | 14 | 57 | 55 sn sonra yeniden çıkar |
+| Sümük yosunu | 14 | 57 | 55 sn sonra yeniden çıkar · Tarifte: Mana iksiri (Sümük yosunu ile) |
 
 **Madenler** (kazma elde, F)
 
@@ -112,13 +112,13 @@ Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dron
 |---|---|---|---|
 | Bakır tel | 14 | 67 | 55 sn sonra yeniden çıkar |
 | Keme | 22 | 42 | Çöl trüfü: kumun altında biter, Hurda Çölü'nün tek mantarı; 70 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk) |
-| Çöl otu | 8 | 67 | 45 sn sonra yeniden çıkar |
-| Eski devre | 30 | 57 | 90 sn sonra yeniden çıkar |
-| Hurda parçası | 10 | 60 | 45 sn sonra yeniden çıkar |
-| Kaktüs meyvesi | 12 | 52 | 60 sn sonra yeniden çıkar |
-| Pas tozu | 8 | 55 | 45 sn sonra yeniden çıkar |
+| Çöl otu | 8 | 67 | 45 sn sonra yeniden çıkar · Tarifte: Kaktüs meyvesi suyu |
+| Eski devre | 30 | 57 | 90 sn sonra yeniden çıkar · Tarifte: Enerji hücresi (Eski devre ile) |
+| Hurda parçası | 10 | 60 | 45 sn sonra yeniden çıkar · Tarifte: Hurda çizme (Hurda parçası ile) |
+| Kaktüs meyvesi | 12 | 52 | 60 sn sonra yeniden çıkar · Tarifte: Kaktüs meyvesi suyu |
+| Pas tozu | 8 | 55 | 45 sn sonra yeniden çıkar · Tarifte: Kırmızı boya (Pas tozu ile) |
 | Vida | 8 | 67 | 50 sn sonra yeniden çıkar |
-| Yağ birikintisi | 14 | 66 | 70 sn sonra yeniden çıkar |
+| Yağ birikintisi | 14 | 66 | 70 sn sonra yeniden çıkar · Tarifte: Kil lamba (Yağ birikintisi ile) |
 
 **Madenler** (kazma elde, F)
 
@@ -159,12 +159,12 @@ Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendi
 |---|---|---|---|
 | Buz kristali | 36 | 59 | 90 sn sonra yeniden çıkar |
 | Enerji taşı | 44 | 65 | 100 sn sonra yeniden çıkar |
-| Golem tozu | 14 | 58 | 50 sn sonra yeniden çıkar |
-| Gümüş kum | 14 | 65 | 60 sn sonra yeniden çıkar |
-| Kaya çiçeği | 20 | 62 | 60 sn sonra yeniden çıkar |
+| Golem tozu | 14 | 58 | 50 sn sonra yeniden çıkar · Tarifte: Buz asası (Golem tozu ile) |
+| Gümüş kum | 14 | 65 | 60 sn sonra yeniden çıkar · Tarifte: Titanyum külçesi (Gümüş kum ile) |
+| Kaya çiçeği | 20 | 62 | 60 sn sonra yeniden çıkar · Tarifte: Kaya çiçeği çayı |
 | Kristal lifi | 18 | 58 | 60 sn sonra yeniden çıkar |
-| Kristal mantarı | 24 | 73 | 70 sn sonra yeniden çıkar |
-| Mavi yosun | 14 | 60 | 50 sn sonra yeniden çıkar |
+| Kristal mantarı | 24 | 73 | 70 sn sonra yeniden çıkar · Tarifte: Kristal çorbası |
+| Mavi yosun | 14 | 60 | 50 sn sonra yeniden çıkar · Tarifte: Kristal çorbası |
 
 **Madenler** (kazma elde, F)
 
@@ -203,14 +203,14 @@ Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ej
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ejder otu | 28 | 67 | 70 sn sonra yeniden çıkar |
-| Kor mantarı | 26 | 61 | 70 sn sonra yeniden çıkar |
-| Kükürt tozu | 18 | 59 | 55 sn sonra yeniden çıkar |
-| Lav çiçeği | 30 | 63 | 70 sn sonra yeniden çıkar |
-| Magma camı | 44 | 62 | 100 sn sonra yeniden çıkar |
-| Obsidyen kırığı | 30 | 60 | 80 sn sonra yeniden çıkar |
+| Ejder otu | 28 | 67 | 70 sn sonra yeniden çıkar · Tarifte: Kor yahnisi |
+| Kor mantarı | 26 | 61 | 70 sn sonra yeniden çıkar · Tarifte: Kor yahnisi |
+| Kükürt tozu | 18 | 59 | 55 sn sonra yeniden çıkar · Tarifte: Barut (Kükürt tozu ile) |
+| Lav çiçeği | 30 | 63 | 70 sn sonra yeniden çıkar · Tarifte: Lav çiçeği çayı |
+| Magma camı | 44 | 62 | 100 sn sonra yeniden çıkar · Tarifte: Plazma hücresi (Magma camı ile) |
+| Obsidyen kırığı | 30 | 60 | 80 sn sonra yeniden çıkar · Tarifte: Yıldırım asası (Obsidyen kırığı ile) |
 | Plazma taşı | 60 | 53 | 120 sn sonra yeniden çıkar |
-| Volkan külü | 10 | 62 | 45 sn sonra yeniden çıkar |
+| Volkan külü | 10 | 62 | 45 sn sonra yeniden çıkar · Tarifte: Cüruf tuğlası (Volkan külü ile) |
 
 **Madenler** (kazma elde, F)
 
@@ -249,14 +249,14 @@ Adanın en uzak ucu, roket rampası. Uzaylı dronları, gölge muhafızlar ve de
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ay çiçeği | 28 | 62 | 70 sn sonra yeniden çıkar |
-| Bulut özü | 26 | 58 | 70 sn sonra yeniden çıkar |
+| Ay çiçeği | 28 | 62 | 70 sn sonra yeniden çıkar · Tarifte: Yıldız çorbası |
+| Bulut özü | 26 | 58 | 70 sn sonra yeniden çıkar · Tarifte: Bulut özü şerbeti |
 | Füzyon taşı | 80 | 61 | 140 sn sonra yeniden çıkar |
-| Göktaşı tozu | 24 | 48 | 60 sn sonra yeniden çıkar |
-| Gök camı parçası | 36 | 61 | 90 sn sonra yeniden çıkar |
+| Göktaşı tozu | 24 | 48 | 60 sn sonra yeniden çıkar · Tarifte: Meteor demiri külçesi (Göktaşı tozu ile) |
+| Gök camı parçası | 36 | 61 | 90 sn sonra yeniden çıkar · Tarifte: Roket gövdesi (Gök camı parçası ile) |
 | Gök ipeği | 30 | 63 | 70 sn sonra yeniden çıkar |
-| Meteor parçası | 50 | 59 | 110 sn sonra yeniden çıkar |
-| Yıldız mantarı | 30 | 60 | 80 sn sonra yeniden çıkar |
+| Meteor parçası | 50 | 59 | 110 sn sonra yeniden çıkar · Tarifte: Meteor demiri külçesi (Meteor parçası ile) |
+| Yıldız mantarı | 30 | 60 | 80 sn sonra yeniden çıkar · Tarifte: Yıldız çorbası |
 
 **Madenler** (kazma elde, F)
 

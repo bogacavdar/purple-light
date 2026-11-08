@@ -53,10 +53,49 @@ Her biyomun ağaç zinciri **tek** kalas, sap, kömür ve kaşıkla yürür; ad�
 - **Benzer bitkiler birleşti (8 Kasım 2026, Boğaç: "yabani nohut kalsın, mercimek gidebilir; çayır güzel, bataklık güzel, dağdaki kile dokunmayalım, kül diyarı güzel, mor kristal de güzel"):** Orman'da **Yabani mercimek → Yabani nohut**; Çayır'da **Yabani yulaf ve Yabani arpa → Yabani buğday** (unları, lapaları, hamurları, yassı ekmekleri ve kavrulmuşları da buğdayınkine); Bataklık'ta **Saz ve Hasırotu → Kamış** (Saz örgüsü, Saz sepet, Hasırotu yatak, Hasırotu meşalesi adlarıyla kalır, kamışla yapılır); Kül Diyarı'nda **Kızıl kum → Kırmızı okr** (Kızıl cam), **Cüruf → Kül** (Cüruf tuğlası 5 Kül), **Sünger taşı → Lav camı** (Sünger taşı bileği); iki okr da kalır (sarı ve kırmızı boya için); Mor Kristal Vadisi'nde **Işık tozu → Yıldız tozu** (Işık fitili), **Kristal kum → Kristal** (Kristal cam). Kayalık Dağ'a dokunulmadı. Görevler: Veli'nin VE7'si **6 Kamış**, Turan'ın TU8'i "Kristal tozu" **6 Kristal**, İnci'nin IN3'ü "Mor sarmaşık" **3 Mor sarmaşık** ister. Biyom başına tür: Çayır 10, Orman 11, Bataklık 12, Kayalık Dağ 13, Kül Diyarı 11, Mor Kristal Vadisi 12 (Sarkıt ve Yarasa gübresi artık mağara ağzında). ACT 1'in bitkileri ACT 2'de çıkmaz; ACT 2'nin biyomlarında yalnız kendi bitkileri var. Eski kayıtta kalkanlar yerine geçene çevrilir.
 - **Aynı kişi aynı malzemeyi iki kez istemez (8 Kasım 2026, Boğaç: "biyoma özel görevleri de mükerrer olmaktan çıkaralım"):** Yakut Y1 **4 Eğrelti** + 4 Isırgan, Y6 6 Sarmaşık + **4 Yaban sarımsağı**; Fidan NF2 6 Fındık + **4 Ceviz**; Durdu DU7 8 Kumtaşı + **5 Kayın odunu**; Ali AL6 3 Bataklık servisi odunu + **6 Arduvaz**; Kaya KA7 **6 Pirit**, KA8 "Pençe ve çakmak" 2 Kartal pençesi + **5 Çakmaktaşı**; Mercan ME8 3 Gece zambağı + **5 Kor taşı** (Kor Mağarası); Kudret KU8 **8 Ay taşı** + 3 Yankı taşı.
 - **Kalkan varyantlar:** kalkan bir malzemeyi isteyen ya da çevrilince başka bir tarifin aynısı olan varyantlar silindi.
-- **Sayılar:** eşya 1505 → 1326, tarif 1105 → 968 (tek mantar, iki meyve ağacı ve bitki birleştirmeleri dahil). Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
+- **Sayılar:** eşya 1505 → 1337, tarif 1105 → 997 (tek mantar, iki meyve ağacı, bitki birleştirmeleri ve ACT 2'nin yeni tarifleri dahil). Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
 - **Eski kayıtlar:** kayıt açılınca kalkan her şey yerine geçene çevrilir (çantada, sandıkta, kemerde, köpek çantasında, yerde, kitapta): türe özgü kalas/sap/kömür/kaşık biyomunkine, kurutulmuş ot 3 taze ota; karşılığı olmayan kurutulmuş yiyecekler eski satış fiyatından sikke olarak ödenir. Bir kez bildirim çıkar.
 
-Toplam **968 tarif**: 811 asıl tarif ve 157 varyant (oyun verisiyle sayıldı).
+## ACT 2'nin yeni tarifleri (8 Kasım 2026, Boğaç: "b yeni tarif ekleyi seçiyorum")
+
+ACT 2'de hiçbir tarifte kullanılmayan 36 malzemenin hepsi artık bir tarifte: her biyoma bir-iki yemek ya da içecek ve var olan ACT 2 tariflerinin malzemesi değişen varyantları. Hepsi Yıldız'ın kazanında öğrenilir (malzemeler kazana konunca); yemekler çiğ malzemelerinden daha doyurucudur ve kademelerine göre etki verir.
+
+| Ürün | Malzemeler | Yer | Fiyat |
+|---|---|---|---|
+| Gök çorbası | 2 Gök mantarı, 2 Gök otu, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 177 |
+| Rüzgâr çiçeği çayı | 3 Rüzgâr çiçeği, 2 Su | El yapımı (Tab) | 82 |
+| Spor yahnisi | 2 Işıldak mantarı, 2 Kök yumrusu, 1 Dev spor, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 219 |
+| Goblin otu çayı | 3 Goblin otu, 2 Su | El yapımı (Tab) | 65 |
+| Kaktüs meyvesi suyu | 3 Kaktüs meyvesi, 1 Çöl otu, 2 Su | El yapımı (Tab) | 76 |
+| Kristal çorbası | 2 Kristal mantarı, 2 Mavi yosun, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 149 |
+| Kaya çiçeği çayı | 3 Kaya çiçeği, 2 Su | El yapımı (Tab) | 99 |
+| Kor yahnisi | 2 Kor mantarı, 2 Ejder otu, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 194 |
+| Lav çiçeği çayı | 3 Lav çiçeği, 2 Su | El yapımı (Tab) | 141 |
+| Yıldız çorbası | 2 Yıldız mantarı, 2 Ay çiçeği, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 205 |
+| Bulut özü şerbeti | 2 Bulut özü, 2 Su, 1 Nehir çömleği | El yapımı (Tab) | 156 |
+
+| Varyant | Asıl tarif | Malzemeler | Fiyat |
+|---|---|---|---|
+| İp (Bulut pamuğu ile) | İp | 3 Bulut pamuğu | 5 |
+| Şifalı merhem (Tüy yosunu ile) | Şifalı merhem | 3 Tüy yosunu, 2 Hayvan yağı, 1 Su | 184 |
+| Gök demiri külçesi (Gök kumu ile) | Gök demiri külçesi | 3 Gök demiri, 2 Taş kömürü, 2 Gök kumu | 149 |
+| Ateş asası (Rüzgâr kristali ile) | Ateş asası | 1 Mavi mantar kalası, 2 Spor kristali, 3 Büyü otu, 1 Rüzgâr kristali | 900 |
+| Mana iksiri (Sümük yosunu ile) | Mana iksiri | 2 Büyü otu, 2 Su, 2 Sümük yosunu | 306 |
+| Hurda çizme (Hurda parçası ile) | Hurda çizme | 4 Hurda parçası, 6 Vida, 4 Dişli, 1 Demir çizme | 1597 |
+| Kırmızı boya (Pas tozu ile) | Kırmızı boya | 2 Pas tozu, 2 Hayvan yağı, 3 Su, 2 Kum | 143 |
+| Enerji hücresi (Eski devre ile) | Enerji hücresi | 2 Enerji taşı, 1 Eski devre, 1 Pil | 221 |
+| Kil lamba (Yağ birikintisi ile) | Kil lamba | 1 Nehir kasesi, 1 Yağ birikintisi, 4 Dal, 3 Yaprak | 129 |
+| Buz asası (Golem tozu ile) | Buz asası | 1 Kristal çam kalası, 3 Buz kristali, 3 Golem tozu, 2 Büyü otu | 1600 |
+| Titanyum külçesi (Gümüş kum ile) | Titanyum külçesi | 3 Titanyum cevheri, 3 Gümüş kum, 1 Enerji taşı | 291 |
+| Barut (Kükürt tozu ile) | Barut | 2 Kükürt tozu, 1 Taş kömürü | 75 |
+| Cüruf tuğlası (Volkan külü ile) | Cüruf tuğlası | 3 Volkan külü, 2 Kül, 1 Su | 185 |
+| Yıldırım asası (Obsidyen kırığı ile) | Yıldırım asası | 1 Kömür ağacı kalası, 3 Plazma taşı, 4 Obsidyen kırığı, 3 Büyü otu | 3200 |
+| Plazma hücresi (Magma camı ile) | Plazma hücresi | 2 Plazma taşı, 1 Enerji hücresi, 2 Magma camı | 539 |
+| Meteor demiri külçesi (Meteor parçası ile) | Meteor demiri külçesi | 5 Meteor parçası, 2 Taş kömürü, 1 Füzyon taşı | 408 |
+| Meteor demiri külçesi (Göktaşı tozu ile) | Meteor demiri külçesi | 3 Meteor demiri, 2 Taş kömürü, 3 Göktaşı tozu | 408 |
+| Roket gövdesi (Gök camı parçası ile) | Roket gövdesi | 4 Meteor demiri külçesi, 4 Titanyum külçesi, 6 Gök camı parçası | 9187 |
+
+Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 
 #### Yiyecek (216)
 

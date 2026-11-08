@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.80** ile birebir (8 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.81** ile birebir (8 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -3459,13 +3459,13 @@ Ustaların görevleri bittikçe eşinin **ACT 2 anıları** sırayla geri gelir:
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Bulut pamuğu | 12 | 62 | 45 sn sonra yeniden çıkar |
-| Gök kumu | 10 | 65 | 60 sn sonra yeniden çıkar |
-| Gök mantarı | 34 | 57 | 60 sn sonra yeniden çıkar, çiğ yenir (+25 tokluk) |
-| Gök otu | 14 | 56 | 50 sn sonra yeniden çıkar |
-| Rüzgâr çiçeği | 16 | 62 | 55 sn sonra yeniden çıkar |
-| Rüzgâr kristali | 40 | 49 | 110 sn sonra yeniden çıkar |
-| Tüy yosunu | 10 | 63 | 45 sn sonra yeniden çıkar |
+| Bulut pamuğu | 12 | 62 | 45 sn sonra yeniden çıkar · Tarifte: İp (Bulut pamuğu ile) |
+| Gök kumu | 10 | 65 | 60 sn sonra yeniden çıkar · Tarifte: Gök demiri külçesi (Gök kumu ile) |
+| Gök mantarı | 34 | 57 | 60 sn sonra yeniden çıkar, çiğ yenir (+25 tokluk) · Tarifte: Gök çorbası |
+| Gök otu | 14 | 56 | 50 sn sonra yeniden çıkar · Tarifte: Gök çorbası |
+| Rüzgâr çiçeği | 16 | 62 | 55 sn sonra yeniden çıkar · Tarifte: Rüzgâr çiçeği çayı |
+| Rüzgâr kristali | 40 | 49 | 110 sn sonra yeniden çıkar · Tarifte: Ateş asası (Rüzgâr kristali ile) |
+| Tüy yosunu | 10 | 63 | 45 sn sonra yeniden çıkar · Tarifte: Şifalı merhem (Tüy yosunu ile) |
 | Yüzer taş | 30 | 68 | 90 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, F)
@@ -3505,12 +3505,12 @@ Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzak
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
 | Büyü otu | 26 | 60 | 70 sn sonra yeniden çıkar |
-| Dev spor | 28 | 62 | 80 sn sonra yeniden çıkar |
-| Goblin otu | 12 | 60 | 50 sn sonra yeniden çıkar |
-| Işıldak mantarı | 20 | 64 | 60 sn sonra yeniden çıkar |
-| Kök yumrusu | 29 | 61 | 50 sn sonra yeniden çıkar, çiğ yenir (+29 tokluk) |
+| Dev spor | 28 | 62 | 80 sn sonra yeniden çıkar · Tarifte: Spor yahnisi |
+| Goblin otu | 12 | 60 | 50 sn sonra yeniden çıkar · Tarifte: Goblin otu çayı |
+| Işıldak mantarı | 20 | 64 | 60 sn sonra yeniden çıkar · Tarifte: Spor yahnisi |
+| Kök yumrusu | 29 | 61 | 50 sn sonra yeniden çıkar, çiğ yenir (+29 tokluk) · Tarifte: Spor yahnisi |
 | Spor tozu | 14 | 65 | 50 sn sonra yeniden çıkar |
-| Sümük yosunu | 14 | 57 | 55 sn sonra yeniden çıkar |
+| Sümük yosunu | 14 | 57 | 55 sn sonra yeniden çıkar · Tarifte: Mana iksiri (Sümük yosunu ile) |
 
 **Madenler** (kazma elde, F)
 
@@ -3551,13 +3551,13 @@ Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dron
 |---|---|---|---|
 | Bakır tel | 14 | 67 | 55 sn sonra yeniden çıkar |
 | Keme | 22 | 42 | Çöl trüfü: kumun altında biter, Hurda Çölü'nün tek mantarı; 70 sn sonra yeniden çıkar, çiğ yenir (+4 tokluk) |
-| Çöl otu | 8 | 67 | 45 sn sonra yeniden çıkar |
-| Eski devre | 30 | 57 | 90 sn sonra yeniden çıkar |
-| Hurda parçası | 10 | 60 | 45 sn sonra yeniden çıkar |
-| Kaktüs meyvesi | 12 | 52 | 60 sn sonra yeniden çıkar |
-| Pas tozu | 8 | 55 | 45 sn sonra yeniden çıkar |
+| Çöl otu | 8 | 67 | 45 sn sonra yeniden çıkar · Tarifte: Kaktüs meyvesi suyu |
+| Eski devre | 30 | 57 | 90 sn sonra yeniden çıkar · Tarifte: Enerji hücresi (Eski devre ile) |
+| Hurda parçası | 10 | 60 | 45 sn sonra yeniden çıkar · Tarifte: Hurda çizme (Hurda parçası ile) |
+| Kaktüs meyvesi | 12 | 52 | 60 sn sonra yeniden çıkar · Tarifte: Kaktüs meyvesi suyu |
+| Pas tozu | 8 | 55 | 45 sn sonra yeniden çıkar · Tarifte: Kırmızı boya (Pas tozu ile) |
 | Vida | 8 | 67 | 50 sn sonra yeniden çıkar |
-| Yağ birikintisi | 14 | 66 | 70 sn sonra yeniden çıkar |
+| Yağ birikintisi | 14 | 66 | 70 sn sonra yeniden çıkar · Tarifte: Kil lamba (Yağ birikintisi ile) |
 
 **Madenler** (kazma elde, F)
 
@@ -3598,12 +3598,12 @@ Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendi
 |---|---|---|---|
 | Buz kristali | 36 | 59 | 90 sn sonra yeniden çıkar |
 | Enerji taşı | 44 | 65 | 100 sn sonra yeniden çıkar |
-| Golem tozu | 14 | 58 | 50 sn sonra yeniden çıkar |
-| Gümüş kum | 14 | 65 | 60 sn sonra yeniden çıkar |
-| Kaya çiçeği | 20 | 62 | 60 sn sonra yeniden çıkar |
+| Golem tozu | 14 | 58 | 50 sn sonra yeniden çıkar · Tarifte: Buz asası (Golem tozu ile) |
+| Gümüş kum | 14 | 65 | 60 sn sonra yeniden çıkar · Tarifte: Titanyum külçesi (Gümüş kum ile) |
+| Kaya çiçeği | 20 | 62 | 60 sn sonra yeniden çıkar · Tarifte: Kaya çiçeği çayı |
 | Kristal lifi | 18 | 58 | 60 sn sonra yeniden çıkar |
-| Kristal mantarı | 24 | 73 | 70 sn sonra yeniden çıkar |
-| Mavi yosun | 14 | 60 | 50 sn sonra yeniden çıkar |
+| Kristal mantarı | 24 | 73 | 70 sn sonra yeniden çıkar · Tarifte: Kristal çorbası |
+| Mavi yosun | 14 | 60 | 50 sn sonra yeniden çıkar · Tarifte: Kristal çorbası |
 
 **Madenler** (kazma elde, F)
 
@@ -3642,14 +3642,14 @@ Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ej
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ejder otu | 28 | 67 | 70 sn sonra yeniden çıkar |
-| Kor mantarı | 26 | 61 | 70 sn sonra yeniden çıkar |
-| Kükürt tozu | 18 | 59 | 55 sn sonra yeniden çıkar |
-| Lav çiçeği | 30 | 63 | 70 sn sonra yeniden çıkar |
-| Magma camı | 44 | 62 | 100 sn sonra yeniden çıkar |
-| Obsidyen kırığı | 30 | 60 | 80 sn sonra yeniden çıkar |
+| Ejder otu | 28 | 67 | 70 sn sonra yeniden çıkar · Tarifte: Kor yahnisi |
+| Kor mantarı | 26 | 61 | 70 sn sonra yeniden çıkar · Tarifte: Kor yahnisi |
+| Kükürt tozu | 18 | 59 | 55 sn sonra yeniden çıkar · Tarifte: Barut (Kükürt tozu ile) |
+| Lav çiçeği | 30 | 63 | 70 sn sonra yeniden çıkar · Tarifte: Lav çiçeği çayı |
+| Magma camı | 44 | 62 | 100 sn sonra yeniden çıkar · Tarifte: Plazma hücresi (Magma camı ile) |
+| Obsidyen kırığı | 30 | 60 | 80 sn sonra yeniden çıkar · Tarifte: Yıldırım asası (Obsidyen kırığı ile) |
 | Plazma taşı | 60 | 53 | 120 sn sonra yeniden çıkar |
-| Volkan külü | 10 | 62 | 45 sn sonra yeniden çıkar |
+| Volkan külü | 10 | 62 | 45 sn sonra yeniden çıkar · Tarifte: Cüruf tuğlası (Volkan külü ile) |
 
 **Madenler** (kazma elde, F)
 
@@ -3688,14 +3688,14 @@ Adanın en uzak ucu, roket rampası. Uzaylı dronları, gölge muhafızlar ve de
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Ay çiçeği | 28 | 62 | 70 sn sonra yeniden çıkar |
-| Bulut özü | 26 | 58 | 70 sn sonra yeniden çıkar |
+| Ay çiçeği | 28 | 62 | 70 sn sonra yeniden çıkar · Tarifte: Yıldız çorbası |
+| Bulut özü | 26 | 58 | 70 sn sonra yeniden çıkar · Tarifte: Bulut özü şerbeti |
 | Füzyon taşı | 80 | 61 | 140 sn sonra yeniden çıkar |
-| Göktaşı tozu | 24 | 48 | 60 sn sonra yeniden çıkar |
-| Gök camı parçası | 36 | 61 | 90 sn sonra yeniden çıkar |
+| Göktaşı tozu | 24 | 48 | 60 sn sonra yeniden çıkar · Tarifte: Meteor demiri külçesi (Göktaşı tozu ile) |
+| Gök camı parçası | 36 | 61 | 90 sn sonra yeniden çıkar · Tarifte: Roket gövdesi (Gök camı parçası ile) |
 | Gök ipeği | 30 | 63 | 70 sn sonra yeniden çıkar |
-| Meteor parçası | 50 | 59 | 110 sn sonra yeniden çıkar |
-| Yıldız mantarı | 30 | 60 | 80 sn sonra yeniden çıkar |
+| Meteor parçası | 50 | 59 | 110 sn sonra yeniden çıkar · Tarifte: Meteor demiri külçesi (Meteor parçası ile) |
+| Yıldız mantarı | 30 | 60 | 80 sn sonra yeniden çıkar · Tarifte: Yıldız çorbası |
 
 **Madenler** (kazma elde, F)
 
@@ -3989,10 +3989,49 @@ Her biyomun ağaç zinciri **tek** kalas, sap, kömür ve kaşıkla yürür; ad�
 - **Benzer bitkiler birleşti (8 Kasım 2026, Boğaç: "yabani nohut kalsın, mercimek gidebilir; çayır güzel, bataklık güzel, dağdaki kile dokunmayalım, kül diyarı güzel, mor kristal de güzel"):** Orman'da **Yabani mercimek → Yabani nohut**; Çayır'da **Yabani yulaf ve Yabani arpa → Yabani buğday** (unları, lapaları, hamurları, yassı ekmekleri ve kavrulmuşları da buğdayınkine); Bataklık'ta **Saz ve Hasırotu → Kamış** (Saz örgüsü, Saz sepet, Hasırotu yatak, Hasırotu meşalesi adlarıyla kalır, kamışla yapılır); Kül Diyarı'nda **Kızıl kum → Kırmızı okr** (Kızıl cam), **Cüruf → Kül** (Cüruf tuğlası 5 Kül), **Sünger taşı → Lav camı** (Sünger taşı bileği); iki okr da kalır (sarı ve kırmızı boya için); Mor Kristal Vadisi'nde **Işık tozu → Yıldız tozu** (Işık fitili), **Kristal kum → Kristal** (Kristal cam). Kayalık Dağ'a dokunulmadı. Görevler: Veli'nin VE7'si **6 Kamış**, Turan'ın TU8'i "Kristal tozu" **6 Kristal**, İnci'nin IN3'ü "Mor sarmaşık" **3 Mor sarmaşık** ister. Biyom başına tür: Çayır 10, Orman 11, Bataklık 12, Kayalık Dağ 13, Kül Diyarı 11, Mor Kristal Vadisi 12 (Sarkıt ve Yarasa gübresi artık mağara ağzında). ACT 1'in bitkileri ACT 2'de çıkmaz; ACT 2'nin biyomlarında yalnız kendi bitkileri var. Eski kayıtta kalkanlar yerine geçene çevrilir.
 - **Aynı kişi aynı malzemeyi iki kez istemez (8 Kasım 2026, Boğaç: "biyoma özel görevleri de mükerrer olmaktan çıkaralım"):** Yakut Y1 **4 Eğrelti** + 4 Isırgan, Y6 6 Sarmaşık + **4 Yaban sarımsağı**; Fidan NF2 6 Fındık + **4 Ceviz**; Durdu DU7 8 Kumtaşı + **5 Kayın odunu**; Ali AL6 3 Bataklık servisi odunu + **6 Arduvaz**; Kaya KA7 **6 Pirit**, KA8 "Pençe ve çakmak" 2 Kartal pençesi + **5 Çakmaktaşı**; Mercan ME8 3 Gece zambağı + **5 Kor taşı** (Kor Mağarası); Kudret KU8 **8 Ay taşı** + 3 Yankı taşı.
 - **Kalkan varyantlar:** kalkan bir malzemeyi isteyen ya da çevrilince başka bir tarifin aynısı olan varyantlar silindi.
-- **Sayılar:** eşya 1505 → 1326, tarif 1105 → 968 (tek mantar, iki meyve ağacı ve bitki birleştirmeleri dahil). Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
+- **Sayılar:** eşya 1505 → 1337, tarif 1105 → 997 (tek mantar, iki meyve ağacı, bitki birleştirmeleri ve ACT 2'nin yeni tarifleri dahil). Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
 - **Eski kayıtlar:** kayıt açılınca kalkan her şey yerine geçene çevrilir (çantada, sandıkta, kemerde, köpek çantasında, yerde, kitapta): türe özgü kalas/sap/kömür/kaşık biyomunkine, kurutulmuş ot 3 taze ota; karşılığı olmayan kurutulmuş yiyecekler eski satış fiyatından sikke olarak ödenir. Bir kez bildirim çıkar.
 
-Toplam **968 tarif**: 811 asıl tarif ve 157 varyant (oyun verisiyle sayıldı).
+## ACT 2'nin yeni tarifleri (8 Kasım 2026, Boğaç: "b yeni tarif ekleyi seçiyorum")
+
+ACT 2'de hiçbir tarifte kullanılmayan 36 malzemenin hepsi artık bir tarifte: her biyoma bir-iki yemek ya da içecek ve var olan ACT 2 tariflerinin malzemesi değişen varyantları. Hepsi Yıldız'ın kazanında öğrenilir (malzemeler kazana konunca); yemekler çiğ malzemelerinden daha doyurucudur ve kademelerine göre etki verir.
+
+| Ürün | Malzemeler | Yer | Fiyat |
+|---|---|---|---|
+| Gök çorbası | 2 Gök mantarı, 2 Gök otu, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 177 |
+| Rüzgâr çiçeği çayı | 3 Rüzgâr çiçeği, 2 Su | El yapımı (Tab) | 82 |
+| Spor yahnisi | 2 Işıldak mantarı, 2 Kök yumrusu, 1 Dev spor, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 219 |
+| Goblin otu çayı | 3 Goblin otu, 2 Su | El yapımı (Tab) | 65 |
+| Kaktüs meyvesi suyu | 3 Kaktüs meyvesi, 1 Çöl otu, 2 Su | El yapımı (Tab) | 76 |
+| Kristal çorbası | 2 Kristal mantarı, 2 Mavi yosun, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 149 |
+| Kaya çiçeği çayı | 3 Kaya çiçeği, 2 Su | El yapımı (Tab) | 99 |
+| Kor yahnisi | 2 Kor mantarı, 2 Ejder otu, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 194 |
+| Lav çiçeği çayı | 3 Lav çiçeği, 2 Su | El yapımı (Tab) | 141 |
+| Yıldız çorbası | 2 Yıldız mantarı, 2 Ay çiçeği, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 205 |
+| Bulut özü şerbeti | 2 Bulut özü, 2 Su, 1 Nehir çömleği | El yapımı (Tab) | 156 |
+
+| Varyant | Asıl tarif | Malzemeler | Fiyat |
+|---|---|---|---|
+| İp (Bulut pamuğu ile) | İp | 3 Bulut pamuğu | 5 |
+| Şifalı merhem (Tüy yosunu ile) | Şifalı merhem | 3 Tüy yosunu, 2 Hayvan yağı, 1 Su | 184 |
+| Gök demiri külçesi (Gök kumu ile) | Gök demiri külçesi | 3 Gök demiri, 2 Taş kömürü, 2 Gök kumu | 149 |
+| Ateş asası (Rüzgâr kristali ile) | Ateş asası | 1 Mavi mantar kalası, 2 Spor kristali, 3 Büyü otu, 1 Rüzgâr kristali | 900 |
+| Mana iksiri (Sümük yosunu ile) | Mana iksiri | 2 Büyü otu, 2 Su, 2 Sümük yosunu | 306 |
+| Hurda çizme (Hurda parçası ile) | Hurda çizme | 4 Hurda parçası, 6 Vida, 4 Dişli, 1 Demir çizme | 1597 |
+| Kırmızı boya (Pas tozu ile) | Kırmızı boya | 2 Pas tozu, 2 Hayvan yağı, 3 Su, 2 Kum | 143 |
+| Enerji hücresi (Eski devre ile) | Enerji hücresi | 2 Enerji taşı, 1 Eski devre, 1 Pil | 221 |
+| Kil lamba (Yağ birikintisi ile) | Kil lamba | 1 Nehir kasesi, 1 Yağ birikintisi, 4 Dal, 3 Yaprak | 129 |
+| Buz asası (Golem tozu ile) | Buz asası | 1 Kristal çam kalası, 3 Buz kristali, 3 Golem tozu, 2 Büyü otu | 1600 |
+| Titanyum külçesi (Gümüş kum ile) | Titanyum külçesi | 3 Titanyum cevheri, 3 Gümüş kum, 1 Enerji taşı | 291 |
+| Barut (Kükürt tozu ile) | Barut | 2 Kükürt tozu, 1 Taş kömürü | 75 |
+| Cüruf tuğlası (Volkan külü ile) | Cüruf tuğlası | 3 Volkan külü, 2 Kül, 1 Su | 185 |
+| Yıldırım asası (Obsidyen kırığı ile) | Yıldırım asası | 1 Kömür ağacı kalası, 3 Plazma taşı, 4 Obsidyen kırığı, 3 Büyü otu | 3200 |
+| Plazma hücresi (Magma camı ile) | Plazma hücresi | 2 Plazma taşı, 1 Enerji hücresi, 2 Magma camı | 539 |
+| Meteor demiri külçesi (Meteor parçası ile) | Meteor demiri külçesi | 5 Meteor parçası, 2 Taş kömürü, 1 Füzyon taşı | 408 |
+| Meteor demiri külçesi (Göktaşı tozu ile) | Meteor demiri külçesi | 3 Meteor demiri, 2 Taş kömürü, 3 Göktaşı tozu | 408 |
+| Roket gövdesi (Gök camı parçası ile) | Roket gövdesi | 4 Meteor demiri külçesi, 4 Titanyum külçesi, 6 Gök camı parçası | 9187 |
+
+Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 
 #### Yiyecek (216)
 
@@ -5767,6 +5806,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Bulut yünü ² | 16 | – | Av: Bulut koyunu düşürür %90 (ACT 2 · Yüzen Kayalar) | Bulut yünü ip |
 | Bulut çamı odunu ² | 14 | – | Balta ile Bulut çamı ağacından: Yüzen Kayalar (ACT 2) | Mavi mantar kalası, Kütük salı, Oyma kano |
 | Bulut özü ² | 26 | – | Yerden toplanır: Gök Rıhtımı (ACT 2) | – |
+| Bulut özü şerbeti | 156 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Buz armudu | 20 | yenir +33 | Meyve ağacı (Buz armudu): eli boşken F ile silkele, 2–3 tane düşer · Buz armudu ağacından toplanır: Kristal Golem Ocağı (ACT 2) | Buz armudu ezmesi |
 | Buz armudu ezmesi | 79 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Buz asası ² | 1.600 | alet | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Büyücü Efsun yapar (200 sikke işçilik) | – |
@@ -5958,6 +5998,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Goblin kulağı ² | 30 | – | Av: Goblin düşürür %80 (ACT 2 · Dev Mantar Ormanı) · Av: Goblin okçusu düşürür %60 (ACT 2 · Dev Mantar Ormanı) | Mantar lifi eldiven |
 | Goblin oku ² | 20 | – | Av: Goblin okçusu düşürür %80 (ACT 2 · Dev Mantar Ormanı) | – |
 | Goblin otu ² | 12 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) | – |
+| Goblin otu çayı | 65 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Golem feneri | 1.188 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Golem parçası ² | 36 | – | Av: Kristal golemcik düşürür %90 (ACT 2 · Kristal Golem Ocağı) | Kristal miğfer |
 | Golem tozu ² | 14 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) | – |
@@ -5981,6 +6022,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Gök otu ² | 14 | – | Yerden toplanır: Yüzen Kayalar (ACT 2) | – |
 | Gök söğüdü odunu ² | 16 | – | Balta ile Gök söğüdü ağacından: Yüzen Kayalar (ACT 2) | Mavi mantar kalası, Kütük salı, Oyma kano |
 | Gök tazısı postu ² | 60 | – | Av: Gök tazısı düşürür %85 (ACT 2 · Yüzen Kayalar) | Fırtına tüyü başlık |
+| Gök çorbası | 177 | – | Tarif: Yıldız'ın kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Gök üzümü odunu ² | 38 | – | Balta ile Gök üzümü ağacından: Gök Rıhtımı (ACT 2) | Kömür ağacı kalası, Kütük salı, Oyma kano |
 | Gök üzümü suyu ² | 163 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | – |
 | Gök üzümü ² | 20 | – | Gök üzümü ağacından toplanır: Gök Rıhtımı (ACT 2) | Gök üzümü suyu |
@@ -6095,6 +6137,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kabak tohumu | 8 | – | Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar · Hasatta %45 ihtimalle 1 tane (Kabak) | – |
 | Kadife balığı | 4 | – | Balık: Bataklık/Kayalık Dağ suları, olta/ağ/zıpkın ile %20; balık kapanına da girer · Balık: Kül Diyarı/Mor Kristal Vadisi suları, olta/ağ/zıpkın ile %16; balık kapanına da girer | Balık çorbası, Balık sepeti, Pişmiş kadife balığı, Taşta kadife balığı, Tütsülenmiş kadife balığı |
 | Kafa lambası | 300 | giyilir +3 savunma | Yıldızsız Işıkçı ile takas: 5 Mor kıymık + 3 Gece sefası + 1 Tunç külçesi (baş yuvasına takılır, gece kendiliğinden yanar) | – |
+| Kaktüs meyvesi suyu | 76 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Kaktüs meyvesi ² | 12 | – | Yerden toplanır: Hurda Çölü (ACT 2) | – |
 | Kalamar | 61 | – | Deniz avı: Fırtına Denizi (Gemici Poyraz'ın teknesiyle, Sv 18+, Fırtına oltası) %50 | Kalamar tava |
 | Kalamar tava | 192 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
@@ -6151,6 +6194,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kaya patlatıcı | 236 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kaya yarasası kanadı | 104 | – | Mağara canlısı Kaya yarasası düşürür (Rüzgâr Mağarası, Kayalık Dağ) %80 ×1 | Kanat yelpazesi |
 | Kaya çiçeği ² | 20 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) | – |
+| Kaya çiçeği çayı | 99 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Kayın kabuğu | 19 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kayın mantarı | 32 | yenir +14 | Yerden toplanır: Kayalık Dağ (ACT 1) | Kızarmış kayın mantarı |
 | Kayın odunu | 8 | – | Balta ile Kayın ağacından: Orman (ACT 1) | Kayın kabuğu, Meşe kalası, Meşe kömürü, Kütük salı, Oyma kano |
@@ -6229,6 +6273,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kor pulu ² | 40 | – | Av: Kor kertenkelesi düşürür %80 (ACT 2 · Ejder Volkanı) | – |
 | Kor tacı tılsımı | 2.800 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kor taşı | 60 | – | Mağarada yerden toplanır: Kor Mağarası (Kül Diyarı, giriş Sv 34) | Kor tacı tılsımı, Kor zurnası |
+| Kor yahnisi | 194 | – | Tarif: Yıldız'ın kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kor zurnası | 500 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Korkuluk | 74 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kozalak ateşi | 20 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6262,6 +6307,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kristal çam odunu ² | 30 | – | Balta ile Kristal çam ağacından: Kristal Golem Ocağı (ACT 2) | Kristal çam kalası, Kütük salı, Oyma kano |
 | Kristal çiçeği | 82 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Kristal çiçeği tacı |
 | Kristal çiçeği tacı | 412 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kristal çorbası | 149 | – | Tarif: Yıldız'ın kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kulübe | 201 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur · Usta Sinan yapar (450 sikke) | – |
 | Kulübe iskeleti | 131 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | Deri çadır, Kamış kulübe, Kulübe, Tütsühane |
 | Kum | 1 | – | Yerden toplanır: Mor Kristal Vadisi, Orman, Çayır, Bataklık, Kayalık Dağ, Kül Diyarı (ACT 1) | Ana tanrıça heykelciği, Arı kovanı, Ateş tuğlası, Ateş yeri, Av sahnesi duvar resmi, Balık pulu … (+64) |
@@ -6413,6 +6459,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Lav pulu | 110 | – | Av: Lav kertenkelesi düşürür %80 (ACT 1 · Kül Diyarı) | Ejder eldiveni |
 | Lav yılanı pulu | 178 | – | Mağara canlısı Lav yılanı düşürür (Kor Mağarası, Kül Diyarı) %70 ×1 | Volkan camı muska |
 | Lav çiçeği ² | 30 | – | Yerden toplanır: Ejder Volkanı (ACT 2) | – |
+| Lav çiçeği çayı | 141 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Lavanta | 22 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Lavanta, Lavanta yağı |
 | Lavanta yağı | 125 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Lavanta çayı | 196 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6636,6 +6683,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Rüzgâr taşı | 42 | – | Mağarada yerden toplanır: Rüzgâr Mağarası (Kayalık Dağ, giriş Sv 26) | Ağ kapanı |
 | Rüzgâr tüyü ² | 12 | – | Av: Rüzgâr kuşu düşürür %100 (ACT 2 · Yüzen Kayalar) | – |
 | Rüzgâr çiçeği ² | 16 | – | Yerden toplanır: Yüzen Kayalar (ACT 2) | – |
+| Rüzgâr çiçeği çayı | 82 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Saksı | 72 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Sal | 92 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Yelkenli sal |
 | Salyangoz sümüğü ² | 16 | – | Av: Spor salyangozu düşürür %90 (ACT 2 · Dev Mantar Ormanı) | – |
@@ -6676,6 +6724,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Spor elması ezmesi | 83 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Spor kristali ² | 40 | – | Kazmayla kazılır: Dev Mantar Ormanı (ACT 2) | Ateş asası |
 | Spor tozu ² | 14 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) · Av: Mantar böceği düşürür %100 (ACT 2 · Dev Mantar Ormanı) | Mantar lifi eldiven, Spor ekmeği |
+| Spor yahnisi | 219 | – | Tarif: Yıldız'ın kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Su | 1 | – | Kap ile (Yaprak kova vb.) suyun kıyısında E | Adaçayı çayı, Ahtapot salatası, Ahududu ezmesi, Ahududu suyu, Akçaağaç kabuğu, Akçaağaç şurubu … (+329) |
 | Su kestanesi | 18 | yenir +12 | Yerden toplanır: Bataklık (ACT 1) | Kavrulmuş su kestanesi |
 | Su samuru derisi | 5 | – | Av: Su samuru düşürür %75 (ACT 1 · Bataklık) | – (satılır, görevlerde istenir) |
@@ -6928,6 +6977,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yıldız tozu yemi | 504 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yıldız çelengi | 467 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yıldız çiçeği | 74 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Yıldız çelengi |
+| Yıldız çorbası | 205 | – | Tarif: Yıldız'ın kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Zehir bezesi | 16 | – | Av: Zehirli kurbağa düşürür %80 (ACT 1 · Bataklık) · Av: Engerek düşürür %60 (ACT 1 · Orman) | Panzehir |
 | Zehir yağı | 75 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ametist kılıcı, Ametist savaş çekici, Ametist topuz, Obsidyen mızrak, Timsah dişi kılıcı, Timsah dişi mızrak … (+13) |
 | Zehirli Bakır ok | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
