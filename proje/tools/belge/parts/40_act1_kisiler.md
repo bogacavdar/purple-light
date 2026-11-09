@@ -236,7 +236,7 @@ Son görev (Yeni bir gemi) bitince Barbaros'la konuş: hikâye sahnesi, ardında
 
 ### Nazlı'nın kuzenleri
 
-Çayır'dan sonraki her biyomda Nazlı'nın bir kuzeni pazar kurar. **Nazlı'yla tıpatıp aynıdır**, yalnızca başındaki **yemeninin rengi** farklıdır; tezgâhının tentesi de o renktedir. Yeri: o biyomun demirci–zırhçı ocağının yanında (110–260 piksel ötede, kendi biyomunun kuru toprağında). Haritada pazar simgesiyle görünür.
+Çayır'dan sonraki her biyomda Nazlı'nın bir kuzeni pazar kurar. **Nazlı'yla tıpatıp aynıdır**, yalnızca başındaki **yemeninin rengi** farklıdır; tezgâhının tentesi de o renktedir. Yeri (9 Kasım 2026, Boğaç: "Nazlı neden demircilerin dibinde, koskoca ormanda başka yer mi kalmadı"): o biyomun demirci–zırhçı ocağından **uzakta**, kendi başına: ocaktan 30–56 kare ötede, öbür kişilerden en az 15 kare uzakta, kendi biyomunun kuru toprağında. Orada yer yoksa 19–30 kareye, o da yoksa eskisi gibi ocağın yakınına (7–16 kare) kurar. Haritada pazar simgesiyle görünür.
 
 | Biyom | Kuzen | Yemeni | Görevler (sırayla; ilki biyom keşfedilince açılır) |
 |---|---|---|---|

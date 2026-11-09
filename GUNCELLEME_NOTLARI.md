@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.04 · 9 Kasım 2026
+
+### Oynanış
+- **Sarı bölgeli işlerde ok yok:** bir şey toplamak, avlamak ya da aramak gereken ana görevlerde (ör. Kanlıca, Pamuk) artık ok ve "Kanlıca 8 m" gibi yazı çıkmıyor; yer haritada sarı gösteriliyor, aradığını sen buluyorsun. Ok yalnızca bir kişiye ya da belli bir yere gidilecekken çıkıyor.
+- **Silah değdiği yere vuruyor:** meşale (ve bütün silahlar) bir canlının herhangi bir yerine değince artık hasar veriyor; vuruş, silahın savrulduğu yayın tamamına bakıyor (önceden dört yöne bakan dar bir alana bakıyordu, kurtların başına ya da üstüne değen meşale boşa gidiyordu).
+- **Robot köpekler elle topladığın her şeyi toplar:** köpek menüsünde artık yalnızca 23 malzeme değil, yerden elle toplayabildiğin ve daha önce eline geçmiş her şey var (Havuç, mantarlar, öbür biyomların bitkileri…); yalnızca kazma isteyen madenler ve mağaradakiler yok.
+- **Pazarcılar demircilerin dibinde değil:** Orman, Bataklık, Kayalık Dağ, Kül Diyarı ve Mor Kristal Vadisi'ndeki pazarcılar (Fidan, Nilüfer, Kardelen, Lale, Menekşe) artık demirci ve zırhçının ocağından uzakta, 30 kare kadar ötede kendi tezgâhını kuruyor.
+- **Canavarlar içinde dolanmıyor:** yürüyen canavar önünde, kendi boyu kadar uzakta duruyor; atılışı sana değince duruyor, arkana geçip gitmiyor.
+- **Börü'nün alıştırma canavarları (Kerevit dersi hariç) öğretiyor:** ritimli 3. vuruş, güçlü vuruş, ulti gibi derslerdeki canavarlar artık Kerevit dersindeki gibi dövüşüyor: senden bir adım uzakta duruyor, üstünde **!** çıkıp bir an bekliyor, sonra bir kez atılıyor ve geri çekiliyor; ne zaman vuracağı belli. Kırmızı (savuşturulamaz) vuruş ve yer sarsması yapmıyorlar, canının yalnızca %5'i kadar vuruyorlar ve seni canının dörtte birinin altına indirmiyorlar.
+
+---
+
 ## Versiyon 4.03 · 9 Kasım 2026
 
 ### Arayüz
@@ -269,16 +281,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - ACT 1 › Haritadaki miktarlar: kampta en az 6 çam.
-
----
-
-## Versiyon 3.84 · 8 Kasım 2026
-
-### Oynanış
-- **Daha seyrek orman:** meyve ağaçlarına dokunmadan öbür ağaçların (Çam, Kavak, Meşe, Huş…) yarısı kalktı. Yıldızsız Ada'da ağaç sayısı yaklaşık 4.950'den 2.811'e, ikinci adada 5.800'den 3.343'e indi; meyve ağaçları aynı (ACT 1'de 645). Başlangıç kampında en az 12 çam kalıyor.
-
-### Tasarım belgesi
-- ACT 1 › Haritadaki miktarlar: üçüncü seyreltme adımı (meyvesiz ağaçların %50'si) ve yeni ağaç sayıları.
 
 ---
 

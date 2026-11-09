@@ -1,3 +1,18 @@
+## v4.04 (9 Kasım 2026) · sarı bölgeli işlerde ok yok
+
+**Değişen yerler:** Ana görev `guideKey` sarmalı (~15114) hedef bölge (`zKey`) ya da daire (`t.r`) ise ok vermiyor. Önceden bölgenin en yakın noktasına ok ve "Ad N m" yazısı çıkıyordu. Görev günlüğündeki açıklama da değişti.
+- Savuşturma (`v110-parry`): `roll`, `a.ders`/`a.tut` için kırmızı vermiyor (pencere değişmedi; Kerevit dersi aynı kaldı).
+- Canavar dövüşü (~5767): atılış değince duruyor, yaklaşma `r+10`'da duruyor. Yeni `v404ara` bloğu canavarları oyuncunun `r+6` dışına itiyor.
+- Yeni `v404ders` bloğu: alıştırma canavarı (`a.ders`) kendi durum makinesiyle dövüşüyor (`a._dz`: keep → 0,6 sn ! → 0,34 sn atılış → back). Taban yapay zekâ her karede bastırılıp konum geri alınıyor. Isırık canın %5'i, can ¼'ün altına inmiyor.
+- `attack` (~5853): `visBox` en yakın nokta + koni yerine yay örneklemesi (açı `__p4.sw.ang` ya da yön, ±1,35 rad, yarıçap menzil+8). Meşale-kurt: 10 açıdan 6 → 9 isabet.
+- Köpek menüsü (`mode==='dogs'`, ~3158): `DOG_MATS`'a dünyadaki bütün maden olmayan, mağara dışı düğüm adları ekleniyor.
+- Kuzen pazarcıların yeri (`place`, ~18551): ocaktan 480–900 px (öbür kişilere en az 240 px), olmazsa 300–480 px, olmazsa eskisi gibi 110–260 px. Kayıt etkilenmiyor, yer her açılışta hesaplanıyor.
+- Sürüm etiketi `Versiyon 4.04`.
+
+**Geri alma:** `git revert` bu commit.
+
+**Kontrol:** chk.js 0 hata. Ritimli 3. vuruş ve ulti derslerinde canavar keep → wind → leap → back döngüsünde dövüşüyor; atılış başında savuşturunca vuruş geçmedi. Yaban domuzu en yakın 7 → 15 px, ısırığı yine geliyor. Alıştırma mağara ayısı ısırığı 137 → 4. Kuzen pazarcılar ocaktan 5 → 27–30 kare.
+
 ## v4.03 (9 Kasım 2026) · onay kutusu oyunun görünüşünde
 
 **Değişen yerler:** Yeni `v403cf` stili (dosya sonu) `#q2cf`'yi (`confirmBox`) koyu panel, altın çerçeve ve altın ana düğmeyle çiziyor. Köprü onayındaki `spFree` satırı kaldırıldı (v3.53 OYN-40). Sürüm etiketi `Versiyon 4.03`.
@@ -155,12 +170,4 @@
 **Geri alma:** `MINPINE=12`, `keep` ile seyreltme.
 
 **Kontrol:** chk.js 0 hata. Yeni oyun: kampta ekran başına ağaç 9,3 → 5,0 (halka 6,9), 6 Çam; Zümrüt'ün kazanı çevresi ekran görüntüsüyle bakıldı.
-
-## v3.84 (8 Kasım 2026) · meyvesiz ağaçlar %50 seyrek
-
-**Değişen yerler:** v77 ağaç türleme döngüsü: tür atandıktan sonra `!tr.type.fruit&&!nearSp&&hash(tx,ty,653)<.5` olan ağaç alınmaz (kamp sonra `v375kamp` ile halkasının sıklığına iner). Sürüm etiketi `Versiyon 3.84`.
-
-**Geri alma:** o satırı sil.
-
-**Kontrol:** chk.js 0 hata. Yeni oyun ağaç: ACT 1 2.811 (Çayır 675: Elma 88, Armut 96, Çam 255, Kavak 236; meyve ağaçları değişmedi), ACT 2 3.343. Kamp: ekran başına 9,3 ağaç, 12 Çam. Ölçüm (`olcum.js`, 4): açılış js 11124 → 10292 ms, oyun 10 sn js 4205 → 4437 ms (gürültü içinde).
 
