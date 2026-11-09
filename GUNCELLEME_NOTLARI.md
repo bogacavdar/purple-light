@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.98 · 9 Kasım 2026
+
+### Düzeltmeler
+- **Henüz tanışmadığın görev verenler haritada:** Çoban Davut ya da Çiftçi Ekin gibi daha tanışmadığın biri sana görev verecekken haritada hiç görünmüyordu; görev listesi "seni bekliyor" dese de nerede olduğunu bulamıyordun. Artık haritada (keşfetmediğin yerde de) parlayan bir **!** ile görünüyorlar.
+
+---
+
 ## Versiyon 3.97 · 9 Kasım 2026
 
 ### Oynanış
@@ -273,16 +280,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Tarifler › Sade malzeme: "Her biyomda iki meyve ağacı" maddesi, sayılar (eşya 1351, tarif 983). ACT 1 ve ACT 2 ağaç tabloları, eşyalar, ezmeler ve yiyecek etkileri tablosu yenilendi.
-
----
-
-## Versiyon 3.78 · 8 Kasım 2026
-
-### Görsel
-- **Öbekler üst üste binmiyor:** bitkiler yine aynı türden 3–5'lik öbekler halinde biter ama artık iki bitki birbirine en az bir çalı boyu (18 px) uzaktır; yeniden çıkan bitki de başka bir toplanabilirin üstüne çıkmaz. Yeni oyunda birbirine 16 px'ten yakın bitki 2144'ten 13'e indi.
-
-### Tasarım belgesi
-- ACT 1 › Haritadaki miktarlar › Bitkiler öbek öbek: öbekte aralık 18–32 px, iki bitki arası en az 18 px.
 
 ---
 

@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.97** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.98** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -1001,7 +1001,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
 - **Haritada kendi işaretin sabittir:** haritadaki (küçük ve büyük) kendi yüzünün çevresindeki sarı hale **yanıp sönmez**, hep açık durur (eskiden saniyede üç kez açılıp kapanıyordu).
 - **Haritada deniz baştan açıktır:** küçük ve büyük haritada **bütün deniz karoları** (adayı çevreleyen deniz) keşfedilmemiş gri dumanla örtülmez; baştan görünür. Yalnızca kara, nehir ve göl keşfedilince açılır. Bu yalnızca **çizimdir**: deniz karoları "keşfedilmiş" sayılmaz, bu yüzden keşif yüzdesi, "Adayı tanı" adımı ve Kâşif başarımı eskisi gibi karadan hesaplanır.
 - **Duraklatınca hava ve ortam durur:** Esc menüsü (ya da oyunu durduran herhangi bir pencere: harita, yetenek ekranı vb.) açıkken arkadaki oyun **tamamen donar**: yağmur damlaları, sis kayması, ateşböcekleri, havadaki toz/yaprak gibi ortam hareketleri ve yağmurun su halkaları da durur; menü kapanınca kaldığı yerden sürer (eskiden menüde yağmur ve sis akmaya devam ediyordu). Çizim yine yapılır, yalnızca zaman ilerlemez.
-- **Görevi olan kişiler büyük haritada parlar:** görev veren her kişinin simgesinin üstünde **!** yazar ve simge parlar (arkasında sarı bir ışık ve dışa doğru açılan iki sarı halka); haritayı açan nereye gideceğini hemen görür. Başka görev işareti yoktur (kural: ACT 1 › Ana görevler › Temel kurallar, 2. madde). Şu an üstünde çalıştığın görevin kişisi ayrıca sarı zeminli işaretle gösterilir.
+- **Görevi olan kişiler büyük haritada parlar:** görev veren her kişinin simgesinin üstünde **!** yazar ve simge parlar (henüz tanışmadığın kişi de: görevi varsa haritada yeri görünür; 9 Kasım 2026, Boğaç: "Çoban Davut'un görevi varsa haritada işaretlenmeli") (arkasında sarı bir ışık ve dışa doğru açılan iki sarı halka); haritayı açan nereye gideceğini hemen görür. Başka görev işareti yoktur (kural: ACT 1 › Ana görevler › Temel kurallar, 2. madde). Şu an üstünde çalıştığın görevin kişisi ayrıca sarı zeminli işaretle gösterilir.
 - **Keşif defteri** (Kitap): her tarif kategorisinde yaptığın tariflerin oranı. **%25** → Vio, **%50** → kalıcı **ustalık**, **%100** → Vio + 100 XP. Ustalıklar: Yiyecek (tokluk %20 yavaş iner), Şifa (can 1,5 kat hızlı), alet kategorileri (%20 körelmeme), Giyim ve Zırh (+5 savunma), Ateş (meşale %30 uzun), Ağaç (odun %20 hızlı), Taş ve kil (%20 hızlı), Av ve hayvan (ganimet +%10); diğerleri o kategorinin eşyalarını %15 pahalı sattırır.
 
 ### Almanak

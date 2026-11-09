@@ -1,3 +1,11 @@
+## v3.98 (9 Kasım 2026) · tanışılmamış görev verenler haritada
+
+**Değişen yerler:** `__plQMk` (satır ~15310) artık yalnızca kuzenleri (`BYG`) değil, sonradan eklenen `__plGIVER` anahtarlarını da (`k_davut`, `k_ekin`) tanıyor. Davut (~21305) ve Ekin (~21513) harita sarmalları `met` yerine `met || __plQMk(k)==='!'` ile çiziyor. Tanışılmamış kişide mevcut v2.09 çizimi (yalnızca parlayan !) çalışıyor. Sürüm etiketi `Versiyon 3.98`.
+
+**Geri alma:** `git revert` bu commit.
+
+**Kontrol:** chk.js 0 hata. E1–E5 bitmiş, 2. seviye kayıtta CB1 açık. Davut tanışılmamışken büyük haritada sisin içinde parlayan ! görünüyor.
+
 ## v3.97 (9 Kasım 2026) · üşüme, buzlanma, kar yalnızca kışın
 
 **Değişen yerler:** `v370hava` `snowing()` artık `season()!==3` iken yanlış döner (kar yalnızca kışın). Yeni blok `v397soguk` (dosyanın sonunda): üşüme 0–100 (`tickHunger` sarmalında, yalnızca `hold` yokken), ısı kaynakları `camps`/`FIRES`/Kemal'in ateşi/ocak/kazan 64 px, ev `roomSafe()`, meşale `torchHeld()`; can kaybı üşüme > 75; `#frost` (z 2) dört köşe tuvali bir kez çizilir, büyüme yalnızca `transform`+`opacity` (250 ms'de bir, değişince). Kayıtta `usume` alanı. Hata ayıklama: `__plCold()`, `__plColdSet(v)`. Sürüm etiketi `Versiyon 3.97`.
@@ -151,12 +159,4 @@
 **Geri alma:** `git revert` bu commit.
 
 **Kontrol:** chk.js 0 hata. Denetim (3.78 ↔ 3.79): eşya 1341 → 1351, tarif 979 → 983 (varyant 159 → 157), bilinmeyen 0, fiyatsız 0, yeni kullanılmayan ham 0. Meyve ağaçları: Çayır Elma 88 + Armut 96 (önce 184 Elma), Orman Ceviz 78 + Fındık 56, Bataklık Mürver 41 + Dut 34, Kayalık Ardıç 65 + Kestane 54, Kül Ateş narı 21 + İncir 24, Mor Ay elması 30 + Yıldız eriği 28; ACT 2 Bulut elması 83 + Rüzgâr eriği 93, Goblin eriği 110 + Spor elması 114, Hurma 64 + Çöl inciri 69, Kristal armut 72 + Buz armudu 56, Ejder meyvesi 28 + Lav narı 37, Gök üzümü 38 + Yıldız kirazı 32. Resimler torba değil (görüntüyle bakıldı). Eski kayıt: 3 Erik odunu + 1 Çam odunu → 4 Çam odunu, Erik fidanı/tohumu → Armut, dikili Erik → Armut, 2 Yabani erik → 4 sikke.
-
-## v3.78 (8 Kasım 2026) · öbeklerde bitkiler üst üste binmez
-
-**Değişen yerler:** `v372sade`: `GAP=18`; `spotOk` yerleştirilmiş bitkilere ızgarayla (`putP`, 18 px hücre) bakar ve `placed` artık bütün türler için tek (öbekler birbirine de binmez); öbek halkası `r=GAP+0..14` (18–32 px); yeniden çıkışta `nodeNear(x,y,GAP)`. Sürüm etiketi `Versiyon 3.78`.
-
-**Geri alma:** `GAP`'i 9, halkayı `10+…*18` yap ve `placed`'i grup başına diziye geri çevir (ya da `git revert`).
-
-**Kontrol:** chk.js 0 hata. Yeni oyun, bitki 3762 → 3702: en yakın komşusu 16 px'ten yakın olan 2144 → 13, 10 px'ten yakın 204 → 6 (öbeklenmeyen kamp çevresi); öbekte duran 2888. Kurulum 36 → 50 ms (bir kez).
 
