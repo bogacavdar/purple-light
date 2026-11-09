@@ -246,7 +246,7 @@ Son görev (Yeni bir gemi) bitince Barbaros'la konuş: hikâye sahnesi, ardında
 | Kül Diyarı | Pazarcı Lale | kırmızı | NL1 Ateş biberi (4 Ateş biberi, 3 Ateş çiçeği · 300, 250) → NL2 Kehribar (5 Kehribar, 3 Kara tuz · 350, 300) → NL3 Kül kurdu (2 Kül kurdu postu, 3 Kül dişi · 420, 360) |
 | Mor Kristal Vadisi | Pazarcı Menekşe | pembe | NM1 Ay otu (3 Ay otu, 3 Mor yosun · 450, 400) → NM2 Işık mantarı (4 Işık mantarı, 3 Gece zambağı · 520, 460) → NM3 Işık tilkisi (2 Işık tilkisi postu, 3 Kristal · 600, 540) |
 
-- **Satış aynı:** kuzenin yanında Nazlı'nın pazarı açılır (aynı satış ve satın alma listeleri, aynı fiyatlar, toplu satış düğmeleri, envanterde "1 sat"). Pencere başlığında kuzenin adı yazar.
+- **Satış aynı:** kuzenin yanında Nazlı'nın pazarı açılır (aynı satış ve satın alma listeleri, aynı fiyatlar, toplu satış düğmeleri, envanterde "Sat"). Pencere başlığında kuzenin adı yazar.
 - **Tanışma:** ilk konuşmada "tıpatıp Nazlı, yalnızca yemenisi …" der, kendini tanıtır; tanışmadan önce başında yemeni renginde ünlem durur.
 - **Görevler basittir:** hepsi o biyomun doğal malzemesini getirmektir (toplanan ya da avlanan); görev sistemi diğer kuzenlerinkiyle aynıdır (bir anda tek görev).
 - **Konuşma resmi:** Nazlı'nın yüzü, kuzenin yemenisiyle.

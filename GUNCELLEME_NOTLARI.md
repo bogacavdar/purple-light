@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.96 · 9 Kasım 2026
+
+### Düzeltmeler
+- **Öğreticide yeni çizimler de mavi parlıyor:** Çayır'ın yeni çizimli toplanabilirleri (yaprak, dal, kum, havuç…) öğreticinin ya da görevin istediği malzemeyken etrafında mavi ışık yanmıyordu; artık yanıyor.
+- **Nazlı'nın dersinde Sat düğmesi yine parlıyor:** Pazar penceresi yenilenince öğreticinin Keskin taş satırındaki *Sat* düğmesinin mavi parlaması kaybolmuştu; geri geldi.
+- **Börü'nün "yetenek ağacını aç" adımında tıklayınca yürüme:** bu adımda yerdeki bir eşyaya tıklayınca karakter oraya gitmiyor, olduğu yerde yumruk atıyordu (yumruk dersinin kuralı uzun kalmıştı). Artık yürüyor.
+
+### Arayüz
+- **Pazarda satış düğmeleri sade:** *Sat* ve *Hepsi* düğmelerinde artık tutar yazmıyor; fiyat zaten satırın solunda.
+
+---
+
 ## Versiyon 3.95 · 9 Kasım 2026
 
 ### Görsel
@@ -24,7 +36,7 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Aynı eşyalar başka bölgelerde de çıkıyorsa orada da yeni görünüşleriyle çıkıyor; envanter resimleri değişmedi.
 
 ### Oynanış
-- **"Yabani havuç" artık düz "Havuç":** Çayır'da yerden toplanan da tarladaki Havuç ile aynı eşya. Kızarmış yabani havuç → **Kızarmış havuç**, Kurutulmuş yabani havuç → **Kurutulmuş havuç**; Saliha'nın çorbası görevi 3 Havuç istiyor. Eski kayıtlardaki yabani havuçlar kendiliğinden Havuç'a dönüyor.
+- **"Yabani havuç" artık düz "Havuç":** Çayır'da yerden toplanan da tarladaki Havuç ile aynı eşya. Kızarmış yabani havuç → **Kızarmış havuç**; Saliha'nın çorbası görevi 3 Havuç istiyor. Eski kayıtlardaki yabani havuçlar kendiliğinden Havuç'a dönüyor.
 
 ### Tasarım belgesi
 - Sistemler › "Çayır'da yerdeki toplanabilirlerin görünüşü"; Çayır bitkileri, tarifler, eşya dizini ve E6 görevinde Yabani havuç → Havuç.
@@ -275,21 +287,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Tarifler › Sade malzeme: tek mantar maddesi (biyom + mağara), "aynı kişi aynı malzemeyi iki kez istemez" maddesi, sayılar (eşya 1341, tarif 979). Mağaralar: toplanabilenler ve Kök Mağarası tarifleri; ACT 2 › Hurda Çölü: Keme; Eşyalar ve Tarifler: Keme, Kızarmış keme, Kanlıcalı güveç; görev tabloları.
-
----
-
-## Versiyon 3.76 · 8 Kasım 2026
-
-### Oynanış
-- **Her biyomda tek mantar:** Çayır'da Çayır mantarı, Orman'da Kanlıca, Bataklık'ta Sinek mantarı, Kayalık Dağ'da Kayın mantarı, Mor Kristal Vadisi'nde Işık mantarı, mağaralarda Mağara mantarı. Yüzen Kayalar'da Gök mantarı, Dev Mantar Ormanı'nda Işıldak mantarı, Kristal Golem Ocağı'nda Kristal mantarı, Ejder Volkanı'nda Kor mantarı, Gök Rıhtımı'nda Yıldız mantarı.
-- Tavuk mantarı, Kuzugöbeği, Kav mantarı ve Mantar şapkası kalktı; Kayın mantarı artık ikinci adada çıkmaz. Kızarmış tavuk mantarı ve Kızarmış kuzugöbeği tarifleri yok; **Kav** artık Kayın mantarıyla yapılır.
-- Görevler: Yakut'un "Mantar sepeti" ve "Taşan kazan"ı ile Pazarcı Fidan'ın "Mantar tezgâhı" **Kanlıca**, Firuze'nin "Liken ve kav"ı **Kayın mantarı** ister (konuşmaları da buna göre).
-
-### Kayıtlar
-- Eski kayıtlarda Tavuk mantarı ve Kuzugöbeği Kanlıca'ya, kızarmışları Kızarmış kanlıca'ya, Kav mantarı Kayın mantarına, Mantar şapkası Işıldak mantarına çevrilir.
-
-### Tasarım belgesi
-- Tarifler › Sade malzeme: "Her biyomda tek mantar" maddesi, sayılar (eşya 1344, tarif 980). Kalkan mantar ve tarif satırları silindi; görev tabloları, yiyecek etkileri tablosu ve Kav tarifi yenilendi.
 
 ---
 

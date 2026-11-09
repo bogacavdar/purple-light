@@ -1,3 +1,11 @@
+## v3.96 (9 Kasım 2026) · yeni çizimler parlama sarmalının içinde
+
+**Değişen yerler:** `v395cayir` artık `drawNode`'u sarmıyor (en dışta durup öğretici/görev parlamasını, `gl()`, atlıyordu); çizimleri `window.__plCayirL`'e koyuyor, ana `drawNode` (satır ~4266) en başta onu okur. Yaprak'ın ×0,7 küçültme sarmalı yeni yaprakta atlanır. Pazar: `v394pazar` stilinin `box-shadow:none!important`'ı `.pulse`'u eziyordu; aynı blokta `ul.mkt li button.pulse` / `.ctools button.pulse` kuralı eklendi. Satış satırında `.sq1` (Sat) ve `[data-sell=all]` (Hepsi) düğmeleri tutarsız (satır ~3155, adet değişince ~3436). `v189` bloğundaki yumruk dersi tıklama yakalayıcısı (`tz===11&&ftut===2`) artık `__plDL.done||__plDL.tree` iken (ders bitti, ağaç adımı) devre dışı. Sürüm etiketi `Versiyon 3.96`.
+
+**Geri alma:** `git revert` bu commit.
+
+**Kontrol:** chk.js 0 hata. Zümrüt'ün meşale dersinde (tz 4) yaprak ve dal mavi parlıyor. Konsol hatası yok.
+
 ## v3.95 (9 Kasım 2026) · Çayır yer toplanabilirleri yeni görünüş; Yabani havuç → Havuç
 
 **Değişen yerler:** yeni blok `v395cayir` (dosyanın sonu): `drawNode` sarmalı, `L[ad]` olan düğümleri (mağara/maden düğümü değilse) kendi sprite'ıyla çizer: Dal, Yaprak (Boğaç'ın gönderdiği yaprak + kahverengi sap, `LEAF`), Kum, Ebegümeci, Hardal otu, Nane (`__p1.spr` yeşilleri ×0,8), Yaban çileği, Havuç (yarısı gömülü), Yarasa gübresi; çizim oyunun yoluyla (`__p1k` kit, `lightCanvas`, `outlineCanvas`, önbellek, `drawSprite`). Seçim araçları: `/home/claude/spr` (cap.js, comp.py). Ad: kaynakta "Yabani havuç" → "Havuç" (RES, bitki listeleri, tarifler, E6 görevi metni ve isteği, `P1W`), fiyat tablosundaki `"Yabani havuç":2` silindi (Havuç 10), `P1I['Yabani havuç']` → `P1I['__eski yabani havuç']` (Havuç'un kendi resmi kalır); `v373sade` `REPL`'e Yabani/Kızarmış/Kurutulmuş yabani havuç → Havuç karşılıkları (eski kayıt). Belge: 20_sistemler, 30_act1, 80_tarifler, 90_esyalar. Sürüm etiketi `Versiyon 3.95`.
@@ -151,12 +159,4 @@
 **Geri alma:** `git revert` bu commit.
 
 **Kontrol:** chk.js 0 hata. Denetim (3.76 ↔ 3.77): eşya 1344 → 1341, tarif 980 → 979, bilinmeyen 0, fiyatsız 0, yeni kullanılmayan ham 0 (Mağara kurdu eti Kanlıcalı güveçte). Mantar sayımı: ACT 1 Kanlıca 49, Sinek 43, Kayın 37, Işık 43 (dışarıda; Yankı ve Kül mağarada); ACT 2 Gök 41, Işıldak 50, Keme 42, Kristal 43, Kor 44, Yıldız 41. Resim: Keme, Kızarmış keme, Kanlıcalı güveç iki adada da torba değil. Eski kayıt: 3 Çayır + 2 Kök + 2 Mağara mantarı → 54 sikke, Kök mantarlı güveç → Kanlıcalı güveç.
-
-## v3.76 (8 Kasım 2026) · her biyomda tek mantar
-
-**Değişen yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):** Tavuk mantarı, Kuzugöbeği, Kav mantarı kaynaktan silindi: ilk bitki tablosu (Kav), `PLANTC`, `B4PLANT`, `RAWFOOD`, `P1I`/`P1W` resimleri, `BPLANT`, `POISON`, `ODD`, yiyecek etkisi tablosu, `NEWP`; Mantar şapkası: `__I2C.plants[1]`, ACT 2 `RAWFOOD` ve etki tablosu. `B4PLANT` döngüsünde `ISLE===2&&k==='Kayın mantarı'` atlanır. `FIRE_R` listesinden iki kızarmış; tür regex'lerinden kuzugöbeği. Görev verisi (Y3, Y6, NF1, FI2/kf2) Kanlıca / Kayın mantarı ve metinleri. `v373sade`: `REPL`'e 6 eşleme (tarifler ve eski kayıt çevirisi bu yolla), Kurutulmuş tavuk mantarı/kuzugöbeği `FOODX`. Sürüm etiketi `Versiyon 3.76`. `DB` JSON'a dokunulmadı (kalkan tarifler `v373sade`'de düşer).
-
-**Geri alma:** `git revert` bu commit (belge ve kod birlikte).
-
-**Kontrol:** chk.js 0 hata. Denetim (3.75 ↔ 3.76): eşya 1350 → 1344, tarif 982 → 980, bilinmeyen girdi 0, fiyatsız 0, yeni kullanılmayan ham 0. Mantar sayımı: ACT 1 Çayır mantarı 41, Kanlıca 49, Sinek 44, Kayın 38, Işık 50; ACT 2 Gök 47, Işıldak 50, Kristal 50, Kor 48, Yıldız 41. Eski kayıt: 3 Tavuk + 1 Kanlıca + 2 Kuzugöbeği → 6 Kanlıca, 4 Kav mantarı → 4 Kayın mantarı, Kızarmış kuzugöbeği → Kızarmış kanlıca.
 
