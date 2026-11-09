@@ -44,8 +44,8 @@ ACT 1'in madenleri ve metal ekipmanı tek bir merdivene göre dizildi. Amaç: **
 | 1 | Çayır | Kireçtaşı **2** · Kumtaşı **3** · Bakır cevheri **5** | 1. kademe | Bakır | Bakır külçesi (Çayır ağaçlarının kömürüyle ergir) |
 | 2 | Orman | Granit **10** · Taş kömürü **11** · Kalay cevheri **12** | 1. kademe | Tunç | Tunç külçesi (3 Bakır külçesi + 1 Kalay külçesi) |
 | 3 | Bataklık | Arduvaz **18** · Tuz kayası **19** · Demir cevheri **20** | 2. kademe | Demir | Demir külçesi |
-| 4 | Kayalık Dağ | Pirit **28** · Kuvars **29** · Gümüş cevheri **32** | 3. kademe | Çelik | Çelik külçesi (2 Demir külçesi + 2 Huş kömürü + 1 Ateş tuğlası; Ateş tuğlası = 3 Beyaz kil + 2 Kum + 1 Ateş, Beyaz kil Kayalık Dağ'da toplanır) |
-| 5 | Kül Diyarı | Bazalt **45** · Kükürt **46** · Obsidyen **49** | 4. kademe | Kara çelik (obsidyen çeliği) | Kara çelik külçesi (2 Çelik külçesi + 3 Obsidyen + 1 Kükürt + 2 Kül ağacı kömürü) |
+| 4 | Kayalık Dağ | Pirit **28** · Kuvars **29** · Gümüş cevheri **32** | 3. kademe | Çelik | Çelik külçesi (2 Demir külçesi + 2 Güçlü odun kömürü + 1 Ateş tuğlası; Ateş tuğlası = 3 Beyaz kil + 2 Kum + 1 Ateş, Beyaz kil Kayalık Dağ'da toplanır) |
+| 5 | Kül Diyarı | Bazalt **45** · Kükürt **46** · Obsidyen **49** | 4. kademe | Kara çelik (obsidyen çeliği) | Kara çelik külçesi (2 Çelik külçesi + 3 Obsidyen + 1 Kükürt + 2 Kor odun kömürü) |
 | 6 | Mor Kristal Vadisi | Kristal **62** · Ametist **67** · Altın cevheri **77** | 5. kademe | Mor kristal | Mor kristal levhası (3 Kristal + 2 Ametist + 1 Altın külçesi) |
 
 - **Yer değiştiren madenler:** Kalay (Çayır → Orman), Kumtaşı (Orman → Çayır), Pirit (Kül Diyarı → Kayalık Dağ), Altın (Kayalık Dağ → Mor Kristal Vadisi), Obsidyen (Mor Kristal Vadisi → Kül Diyarı). Bataklık değişmedi. Yatak sayıları aynı (ilk iki biyomda 22, diğerlerinde 20), yatak 300 sn sonra yeniden dolar.
@@ -125,18 +125,18 @@ Her hücrede **savunma ya da hasar · satış fiyatı**. Zırhçılar zırhları
 | Set | Biyom · kim yapar | Etki | Miğfer · Zırh · Eldiven · Çizme (savunma) | Kılıç · Savaş çekici · Topuz · Mızrak · Yay (hasar) | Balta / Kazma (kademe) |
 |---|---|---|---|---|---|
 | Başlangıç | Çayır · elle | – | Kürk başlık 4 · **Kürk yelek** 8 · Kürk eldiven 3 · Deri çarık 3 | Taş kılıç 12 · **Taş savaş çekici** 13 · **Taş topuz** 10 · Mızrak 10 · Basit yay 8 | Taş balta / Taş kazma (1) |
-| Bakır | Çayır · örs | – | Bakır miğfer 8 · Bakır zırh 16 · Bakır eldiven 5 · Bakır çizme 5 | Bakır kılıç 16 · Bakır savaş çekici 18 · Bakır topuz 14 · Bakır mızrak 15 · Çam yayı 12 | Bakır balta / Bakır kazma (1) |
+| Bakır | Çayır · örs | – | Bakır miğfer 8 · Bakır zırh 16 · Bakır eldiven 5 · Bakır çizme 5 | Bakır kılıç 16 · Bakır savaş çekici 18 · Bakır topuz 14 · Bakır mızrak 15 · Odun yayı 12 | Bakır balta / Bakır kazma (1) |
 | Usta: Kemik | Çayır · Dursun ve Durmuş | keskin | Kemik miğfer 9 · Kemik zırh 18 · **Kemik eldiven** 6 · **Kemik çizme** 6 | **Çakmaktaşı kılıç** 18 · **Çakmaktaşı savaş çekici** 20 · **Çakmaktaşı topuz** 16 · Çakmaktaşı mızrak 17 · **Kemik yay** 13 | Çakmaktaşı balta / Çakmaktaşı kazma (1) |
-| Tunç | Orman · örs | – | Tunç miğfer 12 · Tunç zırh 24 · Tunç eldiven 7 · Tunç çizme 7 | Tunç kılıç 22 · Tunç savaş çekici 25 · Tunç topuz 19 · Tunç mızrak 20 · Meşe yayı 17 | Tunç balta / Tunç kazma (2) |
-| Usta: Meşe ve granit | Orman · Durdu ve Duran | keskin | Ceviz kabuğu miğfer 13 · Meşe kabuk zırh 27 · **Meşe kabuk eldiven** 8 · **Meşe kabuk çizme** 8 | **Granit kılıç** 25 · Granit savaş çekici 28 · **Granit topuz** 21 · **Granit mızrak** 22 · **Ihlamur yayı** 19 | Granit balta / Granit kazma (2) |
-| Demir | Bataklık · örs | – | Demir miğfer 20 · Demir zırh 40 · Demir eldiven 12 · Demir çizme 12 | Demir kılıç 34 · Demir savaş çekici 39 · Demir topuz 29 · Demir mızrak 30 · Kızılağaç yayı 26 | Demir balta / Demir kazma (3) |
-| Usta: Timsah | Bataklık · Ali ve Veli | zehirli | **Timsah miğfer** 22 · Timsah pulu zırh 45 · **Timsah eldiven** 13 · Kamış çizme 13 | Timsah dişi kılıcı 38 · **Timsah dişi savaş çekici** 44 · **Timsah dişi topuz** 32 · **Timsah dişi mızrak** 34 · **Söğüt yayı** 29 | **Timsah dişi balta** / **Timsah dişi kazma** (3) |
-| Çelik | Kayalık Dağ · örs | – | Çelik miğfer 28 · Çelik zırh 54 · Çelik eldiven 16 · Çelik çizme 16 | Çelik kılıç 46 · Çelik savaş çekici 53 · Çelik topuz 39 · Çelik mızrak 41 · Akçaağaç yayı 35 | Çelik balta / Çelik kazma (4) |
-| Usta: Gümüş ve kuvars | Kayalık Dağ · Kaya ve Kayhan | keskin | Kartal tüyü miğfer 31 · Gümüş pullu zırh 60 · **Gümüş eldiven** 18 · **Gümüş çizme** 18 | Gümüş kılıç 52 · **Kuvars savaş çekici** 59 · **Kuvars topuz** 44 · Kuvars mızrak 46 · **Huş yayı** 39 | Kuvars balta / Kuvars kazma (4) |
-| Kara çelik | Kül Diyarı · örs | – | Kara çelik miğfer 36 · Kara çelik zırh 68 · Kara çelik eldiven 21 · Kara çelik çizme 21 | Kara çelik kılıç 58 · Kara çelik savaş çekici 67 · Kara çelik topuz 49 · Kara çelik mızrak 52 · Kızıl sedir yayı 45 | Kara çelik balta / Kara çelik kazma (5) |
+| Tunç | Orman · örs | – | Tunç miğfer 12 · Tunç zırh 24 · Tunç eldiven 7 · Tunç çizme 7 | Tunç kılıç 22 · Tunç savaş çekici 25 · Tunç topuz 19 · Tunç mızrak 20 · Sert odun yayı 17 | Tunç balta / Tunç kazma (2) |
+| Usta: Meşe ve granit | Orman · Durdu ve Duran | keskin | Ceviz kabuğu miğfer 13 · Meşe kabuk zırh 27 · **Meşe kabuk eldiven** 8 · **Meşe kabuk çizme** 8 | **Granit kılıç** 25 · Granit savaş çekici 28 · **Granit topuz** 21 · **Granit mızrak** 22 · **Granit yayı** 19 | Granit balta / Granit kazma (2) |
+| Demir | Bataklık · örs | – | Demir miğfer 20 · Demir zırh 40 · Demir eldiven 12 · Demir çizme 12 | Demir kılıç 34 · Demir savaş çekici 39 · Demir topuz 29 · Demir mızrak 30 · Sağlam odun yayı 26 | Demir balta / Demir kazma (3) |
+| Usta: Timsah | Bataklık · Ali ve Veli | zehirli | **Timsah miğfer** 22 · Timsah pulu zırh 45 · **Timsah eldiven** 13 · Kamış çizme 13 | Timsah dişi kılıcı 38 · **Timsah dişi savaş çekici** 44 · **Timsah dişi topuz** 32 · **Timsah dişi mızrak** 34 · **Timsah dişi yayı** 29 | **Timsah dişi balta** / **Timsah dişi kazma** (3) |
+| Çelik | Kayalık Dağ · örs | – | Çelik miğfer 28 · Çelik zırh 54 · Çelik eldiven 16 · Çelik çizme 16 | Çelik kılıç 46 · Çelik savaş çekici 53 · Çelik topuz 39 · Çelik mızrak 41 · Güçlü odun yayı 35 | Çelik balta / Çelik kazma (4) |
+| Usta: Gümüş ve kuvars | Kayalık Dağ · Kaya ve Kayhan | keskin | Kartal tüyü miğfer 31 · Gümüş pullu zırh 60 · **Gümüş eldiven** 18 · **Gümüş çizme** 18 | Gümüş kılıç 52 · **Kuvars savaş çekici** 59 · **Kuvars topuz** 44 · Kuvars mızrak 46 · **Gümüş yayı** 39 | Kuvars balta / Kuvars kazma (4) |
+| Kara çelik | Kül Diyarı · örs | – | Kara çelik miğfer 36 · Kara çelik zırh 68 · Kara çelik eldiven 21 · Kara çelik çizme 21 | Kara çelik kılıç 58 · Kara çelik savaş çekici 67 · Kara çelik topuz 49 · Kara çelik mızrak 52 · Kor odun yayı 45 | Kara çelik balta / Kara çelik kazma (5) |
 | Usta: Ejder | Kül Diyarı · Turan ve Tufan | alevli | **Ejder miğferi** 40 · Ejder zırhı 76 · **Ejder eldiveni** 24 · **Ejder çizmesi** 24 | Ejder kılıcı 65 · **Ejder savaş çekici** 75 · **Ejder topuzu** 55 · **Ejder mızrağı** 58 · **Ejder yayı** 50 | **Ejder baltası** / **Ejder kazması** (5) |
-| Mor kristal | Mor Kristal Vadisi · örs | – | Mor kristal miğfer 45 · Mor kristal zırh 84 · Mor kristal eldiven 26 · Mor kristal çizme 26 | Mor kristal kılıç 72 · Mor kristal savaş çekici 83 · Mor kristal topuz 61 · Mor kristal mızrak 64 · Gece ağacı yayı 56 | Mor kristal balta / Mor kristal kazma (6) |
-| Usta: Ametist ve obsidyen | Mor Kristal Vadisi · Kudret ve Kuvvet | zehirli | **Ametist miğfer** 50 · Kristal ipek zırh 94 · Işık pulu eldiven 29 · **Kristal ipek çizme** 29 | Ametist kılıcı 81 · **Ametist savaş çekici** 93 · **Ametist topuz** 68 · Obsidyen mızrak 72 · **Işık ağacı yayı** 63 | Obsidyen balta / Obsidyen kazma (6) |
+| Mor kristal | Mor Kristal Vadisi · örs | – | Mor kristal miğfer 45 · Mor kristal zırh 84 · Mor kristal eldiven 26 · Mor kristal çizme 26 | Mor kristal kılıç 72 · Mor kristal savaş çekici 83 · Mor kristal topuz 61 · Mor kristal mızrak 64 · Kadim odun yayı 56 | Mor kristal balta / Mor kristal kazma (6) |
+| Usta: Ametist ve obsidyen | Mor Kristal Vadisi · Kudret ve Kuvvet | zehirli | **Ametist miğfer** 50 · Kristal ipek zırh 94 · Işık pulu eldiven 29 · **Kristal ipek çizme** 29 | Ametist kılıcı 81 · **Ametist savaş çekici** 93 · **Ametist topuz** 68 · Obsidyen mızrak 72 · **Ametist yayı** 63 | Obsidyen balta / Obsidyen kazma (6) |
 
 Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve başlangıç seti elle yapılır; usta setinin geri kalanını o biyomun silahçısı ve zırhçısı döver.
 
@@ -144,48 +144,48 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 
 - Kemik eldiven: 4 Kemik, 2 Sinir, 1 Deri parçası
 - Kemik çizme: 4 Kemik, 1 Deri parçası, 4 Lif
-- Çakmaktaşı kılıç: 3 Yontulmuş çakmaktaşı, 1 Çam sapı, 2 İp, 1 Bileme macunu
-- Çakmaktaşı savaş çekici: 4 Yontulmuş çakmaktaşı, 1 Çam sapı, 1 Sinir kirişi, 1 Bileme macunu
-- Çakmaktaşı topuz: 2 Yontulmuş çakmaktaşı, 1 Çam sapı, 2 İp, 1 Bileme macunu
+- Çakmaktaşı kılıç: 3 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp, 1 Bileme macunu
+- Çakmaktaşı savaş çekici: 4 Yontulmuş çakmaktaşı, 1 Odun sapı, 1 Sinir kirişi, 1 Bileme macunu
+- Çakmaktaşı topuz: 2 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp, 1 Bileme macunu
 - Kemik yay: 3 Kemik, 1 Uzun sopa, 1 Sinir kirişi
-- Meşe kabuk eldiven: 1 Meşe kalası, 1 Deri parçası, 3 Kirpi dikeni
-- Meşe kabuk çizme: 1 Meşe kalası, 1 Deri parçası, 4 Lif
-- Granit kılıç: 3 Granit, 1 Meşe sapı, 1 Sinir kirişi, 1 Bileme macunu
-- Granit topuz: 2 Granit, 1 Meşe sapı, 2 İp, 1 Bileme macunu
+- Meşe kabuk eldiven: 2 Meşe kabuğu, 1 Deri parçası, 3 Kirpi dikeni, 3 Lif
+- Meşe kabuk çizme: 2 Meşe kabuğu, 1 Deri parçası, 3 Yaprak
+- Granit kılıç: 3 Granit, 1 Sert odun sapı, 1 Sinir kirişi, 1 Bileme macunu
+- Granit topuz: 2 Granit, 1 Sert odun sapı, 2 İp, 1 Bileme macunu
 - Granit mızrak: 2 Granit, 1 Uzun sopa, 3 İp, 1 Bileme macunu
-- Ihlamur yayı: 3 Ihlamur odunu, 2 Sinir kirişi, 1 Granit
+- Granit yayı: 3 Sert odun, 2 Sinir kirişi, 1 Granit
 - Timsah miğfer: 2 Timsah derisi, 1 Demir halka, 2 Sinir
 - Timsah eldiven: 1 Timsah derisi, 1 Demir halka, 2 İp
 - Kamış çizme: 6 Kamış, 3 İp, 2 Yosun (el yapımı; setin örste dövülmeyen tek parçası)
-- Timsah dişi savaş çekici: 3 Timsah dişi, 2 Demir külçesi, 1 Bataklık servisi sapı, 1 Zehir yağı
-- Timsah dişi topuz: 2 Timsah dişi, 1 Demir külçesi, 1 Bataklık servisi sapı, 1 Zehir yağı
+- Timsah dişi savaş çekici: 3 Timsah dişi, 2 Demir külçesi, 1 Sağlam odun sapı, 1 Zehir yağı
+- Timsah dişi topuz: 2 Timsah dişi, 1 Demir külçesi, 1 Sağlam odun sapı, 1 Zehir yağı
 - Timsah dişi mızrak: 2 Timsah dişi, 1 Uzun sopa, 3 İp, 1 Zehir yağı
-- Söğüt yayı: 3 Söğüt odunu, 2 Sinir kirişi, 1 Timsah dişi
-- Timsah dişi balta: 2 Timsah dişi, 1 Demir külçesi, 1 Bataklık servisi sapı, 2 İp
-- Timsah dişi kazma: 2 Timsah dişi, 2 Demir külçesi, 1 Bataklık servisi sapı, 2 Taş
+- Timsah dişi yayı: 3 Sağlam odun, 2 Sinir kirişi, 1 Timsah dişi
+- Timsah dişi balta: 2 Timsah dişi, 1 Demir külçesi, 1 Sağlam odun sapı, 2 İp
+- Timsah dişi kazma: 2 Timsah dişi, 2 Demir külçesi, 1 Sağlam odun sapı, 2 Taş
 - Gümüş eldiven: 1 Gümüş külçesi, 1 Demir halka, 1 Deri parçası
 - Gümüş çizme: 1 Gümüş külçesi, 1 Demir halka, 1 Deri parçası, 4 Lif
-- Kuvars savaş çekici: 3 Yontulmuş kuvars, 1 Huş sapı, 1 Sinir kirişi, 1 Bileme macunu
-- Kuvars topuz: 2 Yontulmuş kuvars, 1 Huş sapı, 2 İp, 1 Bileme macunu
-- Huş yayı: 3 Huş odunu, 2 Sinir kirişi, 1 Gümüş külçesi
+- Kuvars savaş çekici: 3 Yontulmuş kuvars, 1 Güçlü odun sapı, 1 Sinir kirişi, 1 Bileme macunu
+- Kuvars topuz: 2 Yontulmuş kuvars, 1 Güçlü odun sapı, 2 İp, 1 Bileme macunu
+- Gümüş yayı: 3 Güçlü odun, 2 Sinir kirişi, 1 Gümüş külçesi
 - Ejder miğferi: 1 Kara pul, 1 Demir levha, 1 Deri parçası
 - Ejder eldiveni: 1 Kara pul, 2 Lav pulu, 1 Deri parçası
 - Ejder çizmesi: 1 Kara pul, 2 Kül kurdu postu, 4 Lif
 - Ejder kılıcı: 2 Ejder kemiği, 1 Kara çelik külçesi, 1 Deri parçası, 1 Ateş yağı
-- Ejder savaş çekici: 2 Ejder kemiği, 2 Kara çelik külçesi, 1 Kül ağacı sapı, 1 Ateş yağı
-- Ejder topuzu: 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kül ağacı sapı, 1 Ateş yağı
+- Ejder savaş çekici: 2 Ejder kemiği, 2 Kara çelik külçesi, 1 Kor odun sapı, 1 Ateş yağı
+- Ejder topuzu: 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kor odun sapı, 1 Ateş yağı
 - Ejder mızrağı: 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Uzun sopa, 3 İp, 1 Ateş yağı
-- Ejder yayı: 3 Kül ağacı odunu, 1 Ejder kemiği, 2 Sinir kirişi
-- Ejder baltası: 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kül ağacı sapı, 2 İp
-- Ejder kazması: 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Kara çelik külçesi, 1 Kül ağacı sapı
+- Ejder yayı: 3 Kor odun, 1 Ejder kemiği, 2 Sinir kirişi
+- Ejder baltası: 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kor odun sapı, 2 İp
+- Ejder kazması: 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Kara çelik külçesi, 1 Kor odun sapı
 - Ametist miğfer: 2 Ametist, 1 Kristal ipek, 1 Deri parçası
 - Kristal ipek çizme: 2 Kristal ipek, 1 Işık pulu, 1 Deri parçası
-- Ametist savaş çekici: 4 Ametist, 2 Obsidyen, 1 Mor söğüt sapı, 1 Zehir yağı
-- Ametist topuz: 2 Ametist, 1 Obsidyen, 1 Mor söğüt sapı, 1 Zehir yağı
-- Işık ağacı yayı: 3 Işık ağacı odunu, 2 Sinir kirişi, 1 Ametist
+- Ametist savaş çekici: 4 Ametist, 2 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı
+- Ametist topuz: 2 Ametist, 1 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı
+- Ametist yayı: 3 Kadim odun, 2 Sinir kirişi, 1 Ametist
 - Kürk yelek: 2 Deri parçası, 1 Sinir kirişi, 5 Lif, 4 İp · Taş savaş çekici: 1 Sopa, 4 Taş, 3 İp · Taş topuz: 1 Sopa, 2 Taş, 2 İp (elle)
 - Obsidyen balta, Obsidyen kazma ve Obsidyen mızrağa 1 Ametist eklendi; balta ve kazma **6. kademe** (Mor Kristal Vadisi usta seti, Kudret döver). Çakmaktaşı, Kuvars ve Obsidyen mızrağa etkinin yağı eklendi.
-- Boşta kalan malzemeler setlere geçti: **Lav pulu** Ejder eldiveninde, **Kül kurdu postu** Ejder çizmesinde, **Bazalt sivri ucu** Ejder mızrağı ve Ejder kazmasında, **Kül ağacı sapı** Ejder savaş çekici ve topuzunda.
+- Boşta kalan malzemeler setlere geçti: **Lav pulu** Ejder eldiveninde, **Kül kurdu postu** Ejder çizmesinde, **Bazalt sivri ucu** Ejder mızrağı ve Ejder kazmasında, **Kor odun sapı** Ejder savaş çekici ve topuzunda.
 - **Yeni usta zırhlarının direnci:** Meşe kabuk eldiven ve çizme kanama %10; Timsah miğfer ve eldiven zehir %15; Gümüş eldiven ve çizme kanama %15; Ametist miğfer ve Kristal ipek çizme zehir %20. Kamış çizme çamurda yavaşlatmaz.
 
 **Kaldırılanlar** (eski kayıtta eski fiyatıyla **Vio’ya** çevrilir; çantada, giyilende ve yuvalarda olanlar; yüklenince "Vio’ya çevrildi" yazar): Tavşan postu giysi (255), Geyik postu giysi (262), Karaca postu giysi (257), Kunduz postu giysi (262), Dağ keçisi postu giysi (258), Muflon postu giysi (258), Yaban domuzu postu giysi (258), Kurt postu giysi (257), Yaban öküzü postu giysi (267), Mağara ayısı postu giysi (270), Keten tunik (170), Boyalı tunik (296), Bataklık postu pelerin (100), Ayı postu pelerin (451), Kül postu pelerin (325), Timsah derisi zırh (158), Tüylü başlık (244), Bataklık çizmesi (479), Lav camı kılıcı (955), Kül böceği zırh (1736), Akrep kabuğu çizme (620), Lav pulu eldiven (550), Bazalt balta (92), Bazalt kazma (441), Bazalt mızrak (431); Alevli/Zehirli/Keskin Bazalt mızrak (431). Eski Alevli/Zehirli/Keskin Çakmaktaşı, Kuvars ve Obsidyen mızrak etkisiz mızrağa döner (artık etkileriyle doğarlar).
@@ -209,14 +209,14 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Yay | Biyom | Hasar | Bekleme | Menzil | Dayanıklılık | Tarif | Nerede yapılır | Fiyat |
 |---|---|---|---|---|---|---|---|---|
 | Basit yay | El yapımı (herkes) | 8 | 0,75 sn | 240 | 60 | 1 Uzun sopa, 3 İp, 2 Lif | El yapımı (Tab) | 90 |
-| Çam yayı | Çayır | 12 | 0,7 sn | 260 | 80 | 3 Çam odunu, 1 Sinir kirişi, 1 Bakır külçesi | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 112 |
-| Meşe yayı | Orman | 17 | 0,68 sn | 280 | 110 | 3 Meşe odunu, 1 Sinir kirişi, 1 Tunç külçesi | Örs · Silahçı Durdu (Orman) ve üstü döver | 304 |
-| Kızılağaç yayı | Bataklık | 26 | 0,66 sn | 300 | 150 | 3 Kızılağaç odunu, 2 Sinir kirişi, 1 Demir külçesi | Örs · Silahçı Ali (Bataklık) ve üstü döver | 426 |
-| Dişbudak yayı (kısa) | Bataklık | 20 | 0,5 sn | 250 | 130 | 1 Bataklık servisi sapı, 1 Sinir kirişi, 2 İp, 2 Dal, 2 Taş | Örs · Silahçı Ali (Bataklık) ve üstü döver | 128 |
-| Akçaağaç yayı | Kayalık Dağ | 35 | 0,64 sn | 320 | 190 | 3 Akçaağaç odunu, 2 Sinir kirişi, 1 Çelik külçesi | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.022 |
-| Porsuk yayı (kısa) | Kayalık Dağ | 27 | 0,49 sn | 270 | 170 | 1 Huş sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 130 |
-| Kızıl sedir yayı | Kül Diyarı | 45 | 0,62 sn | 340 | 230 | 3 Kızıl sedir odunu, 2 Sinir kirişi, 1 Kara çelik külçesi | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 2.961 |
-| Gece ağacı yayı | Mor Kristal Vadisi | 56 | 0,6 sn | 360 | 280 | 3 Gece ağacı odunu, 2 Sinir kirişi, 1 Mor kristal levhası | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 2.211 |
+| Odun yayı | Çayır | 12 | 0,7 sn | 260 | 80 | 3 Odun, 1 Sinir kirişi, 1 Bakır külçesi | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 112 |
+| Sert odun yayı | Orman | 17 | 0,68 sn | 280 | 110 | 3 Sert odun, 1 Sinir kirişi, 1 Tunç külçesi | Örs · Silahçı Durdu (Orman) ve üstü döver | 304 |
+| Sağlam odun yayı | Bataklık | 26 | 0,66 sn | 300 | 150 | 3 Sağlam odun, 2 Sinir kirişi, 1 Demir külçesi | Örs · Silahçı Ali (Bataklık) ve üstü döver | 418 |
+| Sağlam kısa yay (kısa) | Bataklık | 20 | 0,5 sn | 250 | 130 | 1 Sağlam odun sapı, 1 Sinir kirişi, 2 İp, 2 Dal, 2 Taş | Örs · Silahçı Ali (Bataklık) ve üstü döver | 128 |
+| Güçlü odun yayı | Kayalık Dağ | 35 | 0,64 sn | 320 | 190 | 3 Güçlü odun, 2 Sinir kirişi, 1 Çelik külçesi | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.022 |
+| Güçlü kısa yay (kısa) | Kayalık Dağ | 27 | 0,49 sn | 270 | 170 | 1 Güçlü odun sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 130 |
+| Kor odun yayı | Kül Diyarı | 45 | 0,62 sn | 340 | 230 | 3 Kor odun, 2 Sinir kirişi, 1 Kara çelik külçesi | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 2.968 |
+| Kadim odun yayı | Mor Kristal Vadisi | 56 | 0,6 sn | 360 | 280 | 3 Kadim odun, 2 Sinir kirişi, 1 Mor kristal levhası | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 2.214 |
 
 | Ok | Biyom | Hasar çarpanı | Tarif | Tanesinin fiyatı |
 |---|---|---|---|---|
@@ -229,7 +229,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Mor kristal ok | Mor Kristal Vadisi | ×1,8 | 1 Mor kristal levhası, 4 Dal, 2 Ur kekliği tüyü, 1 Kuvars ok ucu → 11 ok | 670 |
 
 - **Yayın özel vuruşları** (Dövüş · Özel vuruşlar tablosu): Hızlı atış, Delici ok, Çift ok, Gergin atış, Geri sıçrayıp atış, Ok yelpazesi; ultisi **Ok yağmuru**. Her ok atışı bir ok harcar (ulti harcamaz).
-- **Kısa yaylar (v3.68, 8 Kasım 2026, Boğaç: "işe yarayanlar işe yarasın"):** Dişbudak yayı (Bataklık) ve Porsuk yayı (Kayalık Dağ) **kısa yay**dır: biyomunun asıl yayıyla saniyedeki hasarı aynıdır (Kızılağaç 26 / 0,66 ≈ 39, Dişbudak 20 / 0,5 = 40; Akçaağaç 35 / 0,64 ≈ 55, Porsuk 27 / 0,49 ≈ 55) ama **daha sık atar, menzili kısadır** ve aynı hasar için **daha çok ok harcar**. Okun hızı 380 + 30 × (kademe + 1). Silahlar listesinde ve arenada **Yaylar** grubundadır.
+- **Kısa yaylar (v3.68, 8 Kasım 2026, Boğaç: "işe yarayanlar işe yarasın"):** Sağlam kısa yay (Bataklık) ve Güçlü kısa yay (Kayalık Dağ) **kısa yay**dır: biyomunun asıl yayıyla saniyedeki hasarı aynıdır (Kızılağaç 26 / 0,66 ≈ 39, Dişbudak 20 / 0,5 = 40; Akçaağaç 35 / 0,64 ≈ 55, Porsuk 27 / 0,49 ≈ 55) ama **daha sık atar, menzili kısadır** ve aynı hasar için **daha çok ok harcar**. Okun hızı 380 + 30 × (kademe + 1). Silahlar listesinde ve arenada **Yaylar** grubundadır.
 
 ### Sapan ve Bola (v3.68, 8 Kasım 2026, Boğaç)
 
@@ -259,7 +259,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 
 | Yağ | Tarif | Verdiği etki |
 |---|---|---|
-| Ateş yağı | 2 Çam reçinesi, 1 Hardal otu, 1 Çam kömürü | Alevli (yanık) |
+| Ateş yağı | 2 Çam reçinesi, 1 Hardal otu, 1 Odun kömürü | Alevli (yanık) |
 | Zehir yağı | 2 Sinek mantarı, 1 Çam reçinesi | Zehirli (zehir) |
 | Bileme macunu | 2 Kumtaşı, 1 Çam reçinesi | Keskin (kanama) |
 
@@ -282,12 +282,12 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Kademe | Parçalar | Görünüş | Savurma izi | İsabet | Ses |
 |---|---|---|---|---|---|
 | 0 · Başlangıç | Taş kılıç, Taş savaş çekici, Taş topuz, Mızrak, Taş balta, Taş kazma, Basit yay | kaba yontulmuş taş, iple sarılı sap, kısa ve küçük | ince, gri toz izi | taş kırıntısı | boğuk, tok |
-| 1 · Bakır | Bakır seti, Çam yayı · usta: Çakmaktaşı, Kemik yay | sade metal, düz ağız, küçük siper | sıcak bakır rengi ince iz | bakır kıvılcımı | kısa, tok bir metal "tınk" |
-| 2 · Tunç | Tunç seti, Meşe yayı · usta: Granit, Ihlamur yayı | yaprak biçimli ağız, yuvarlak siper ve topuz düğmesi, bantlar | altın sarısı iz | altın kıvılcım | daha dolgun "çınk" |
-| 3 · Demir | Demir seti, Kızılağaç yayı · usta: Timsah dişi, Söğüt yayı | daha uzun ve geniş, ortada oluk, geniş siper, sapta metal halkalar | kalın, beyaz çelik izi | beyaz kıvılcım ve küçük halka | metalik çınlama |
-| 4 · Çelik | Çelik seti, Akçaağaç yayı · usta: Gümüş, Kuvars, Huş yayı | uzun, parlak keskin kenar, kıvrık siper, kabzada taş; elde ara sıra parıltı | mavi-beyaz parlak iz, ucunda parıltı yıldızı | bol kıvılcım, parlak halka | uzun, keskin "şiing" |
-| 5 · Kara çelik | Kara çelik seti, Kızıl sedir yayı · usta: Ejder, Ejder yayı | koyu metal, dişli ya da dikenli, kızgın turuncu kenar; elde kor tüter | koyu kırmızı-turuncu iz, kor parçacıkları | kor patlaması, biraz daha sarsıntı | ağır gürleme ve kor çıtırtısı |
-| 6 · Mor kristal | Mor kristal seti, Gece ağacı yayı · usta: Ametist, Obsidyen, Işık ağacı yayı | billur, parlayan çekirdek, kanatlı siper, çevresinde süzülen kristal kıymıkları; elde mor ışık | mor-beyaz ışık izi, kristal kıymıkları | kristal patlaması ve mor halka | kristal çan sesi |
+| 1 · Bakır | Bakır seti, Odun yayı · usta: Çakmaktaşı, Kemik yay | sade metal, düz ağız, küçük siper | sıcak bakır rengi ince iz | bakır kıvılcımı | kısa, tok bir metal "tınk" |
+| 2 · Tunç | Tunç seti, Sert odun yayı · usta: Granit, Granit yayı | yaprak biçimli ağız, yuvarlak siper ve topuz düğmesi, bantlar | altın sarısı iz | altın kıvılcım | daha dolgun "çınk" |
+| 3 · Demir | Demir seti, Sağlam odun yayı · usta: Timsah dişi, Timsah dişi yayı | daha uzun ve geniş, ortada oluk, geniş siper, sapta metal halkalar | kalın, beyaz çelik izi | beyaz kıvılcım ve küçük halka | metalik çınlama |
+| 4 · Çelik | Çelik seti, Güçlü odun yayı · usta: Gümüş, Kuvars, Gümüş yayı | uzun, parlak keskin kenar, kıvrık siper, kabzada taş; elde ara sıra parıltı | mavi-beyaz parlak iz, ucunda parıltı yıldızı | bol kıvılcım, parlak halka | uzun, keskin "şiing" |
+| 5 · Kara çelik | Kara çelik seti, Kor odun yayı · usta: Ejder, Ejder yayı | koyu metal, dişli ya da dikenli, kızgın turuncu kenar; elde kor tüter | koyu kırmızı-turuncu iz, kor parçacıkları | kor patlaması, biraz daha sarsıntı | ağır gürleme ve kor çıtırtısı |
+| 6 · Mor kristal | Mor kristal seti, Kadim odun yayı · usta: Ametist, Obsidyen, Ametist yayı | billur, parlayan çekirdek, kanatlı siper, çevresinde süzülen kristal kıymıkları; elde mor ışık | mor-beyaz ışık izi, kristal kıymıkları | kristal patlaması ve mor halka | kristal çan sesi |
 
 - **Elde boyu** (piksel): kademe 0–1: 11 · 2–3: 12 · 4: 13 · 5: 14 · 6: 15.
 - **Türlere göre biçim** (kademe 0 → 6):
@@ -405,18 +405,18 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Mor kristal mızrak | hunt | av ve savaş: uzaktan vurur | 1 | 520 | 1412 | – | 64 |
 | Obsidyen mızrak | hunt | av ve savaş: uzaktan vurur · zehirli: zehirler | 1,2 | 520 | 1624 | – | 72 |
 | Basit yay | bow | ok atar (ok harcar) | 0,75 | 120 | 40 | – | 8 |
-| Çam yayı | bow | ok atar (ok harcar) | 0,7 | 160 | 50 | – | 12 |
+| Odun yayı | bow | ok atar (ok harcar) | 0,7 | 160 | 50 | – | 12 |
 | Kemik yay | bow | ok atar (ok harcar) | 0,66 | 112 | 56 | – | 13 |
-| Meşe yayı | bow | ok atar (ok harcar) | 0,68 | 220 | 104 | – | 17 |
-| Ihlamur yayı | bow | ok atar (ok harcar) | 0,65 | 154 | 118 | – | 19 |
-| Kızılağaç yayı | bow | ok atar (ok harcar) | 0,66 | 300 | 138 | – | 26 |
-| Söğüt yayı | bow | ok atar (ok harcar) | 0,63 | 210 | 160 | – | 29 |
-| Akçaağaç yayı | bow | ok atar (ok harcar) | 0,64 | 380 | 218 | – | 35 |
-| Huş yayı | bow | ok atar (ok harcar) | 0,61 | 266 | 250 | – | 39 |
-| Kızıl sedir yayı | bow | ok atar (ok harcar) | 0,62 | 460 | 602 | – | 45 |
+| Sert odun yayı | bow | ok atar (ok harcar) | 0,68 | 220 | 104 | – | 17 |
+| Granit yayı | bow | ok atar (ok harcar) | 0,65 | 154 | 118 | – | 19 |
+| Sağlam odun yayı | bow | ok atar (ok harcar) | 0,66 | 300 | 138 | – | 26 |
+| Timsah dişi yayı | bow | ok atar (ok harcar) | 0,63 | 210 | 160 | – | 29 |
+| Güçlü odun yayı | bow | ok atar (ok harcar) | 0,64 | 380 | 218 | – | 35 |
+| Gümüş yayı | bow | ok atar (ok harcar) | 0,61 | 266 | 250 | – | 39 |
+| Kor odun yayı | bow | ok atar (ok harcar) | 0,62 | 460 | 602 | – | 45 |
 | Ejder yayı | bow | ok atar (ok harcar) | 0,59 | 322 | 692 | – | 50 |
-| Gece ağacı yayı | bow | ok atar (ok harcar) | 0,6 | 560 | 752 | – | 56 |
-| Işık ağacı yayı | bow | ok atar (ok harcar) | 0,57 | 392 | 866 | – | 63 |
+| Kadim odun yayı | bow | ok atar (ok harcar) | 0,6 | 560 | 752 | – | 56 |
+| Ametist yayı | bow | ok atar (ok harcar) | 0,57 | 392 | 866 | – | 63 |
 | Sulama kabı | can | tarlayı sular | 1 | 25 | 10 | – | – |
 | Ağ | fish | balık tutar (eline al, suya dön, E) | 3 | 25 | 15 | – | – |
 | Balık kapanı | fish | balık tutar (eline al, suya dön, E) | 4 | 40 | 25 | – | – |

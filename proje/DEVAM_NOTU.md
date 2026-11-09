@@ -1,3 +1,12 @@
+## v4.07 (10 Kasım 2026) · biyom başına tek odun
+
+**Değişen yerler:** ad eşlemesi `/home/claude/w/odun/map.json` (327 ad; 10 odun: Odun, Sert, Sağlam, Güçlü, Kor, Kadim; ACT 2 Ulu, Yüce, Efsane, Ölümsüz). Dosyada ağaç adlı odun/kalas/sap/kömür/kaşık/yay adları metin olarak değiştirildi (büyük ve küçük harfli düzyazı dahil). `DB` (1716): adlar çevrildi, aynı ada düşen tarif ve fiyatlardan biyomun asıl ağacınınki kaldı, kabuk tarifleri silindi. `DATA` görevleri: K8, DU6, DU7, AL6, L8 değişti (aynı kişi aynı şeyi istemesin). `NEWP` (v3.11): asıl olmayan odunlar silindi; kabuklar biyom bandında (5/11/19/27) ve `Yüce odun` 26 eklendi, kullananlar ×1,3 kuralıyla izliyor. `TARIF_EK`: malzemesi yerine geçtiğiyle aynı olan, kabuk ve çift varyantlar silindi (145 → 130). Meşe kabuk zırh/eldiven/çizme ve Ceviz kabuğu miğfer (V items) kabuk istiyor.
+- Kod: `TREE_EXTRA` tanımının üstünde `WOOD_OF` (ağaç → odun), `woodOf(n)`, `isWood(n)`; `t.n+' odunu'` ve `/ odunu$/` kullanan her yer bunlara geçti (kesme, ipucu, kaynak listeleri, köprü/ateş odunu, Oduncu yeteneği, resim). v2.74 `TREE_EXTRA` satırının altında 13 ağaca `[ağaç+' kabuğu',1]`. `WOODC`'ye 10 odunun rengi. v373: `LAND1/LAND2`, `WOOD` ve varyant kalas döngüsü silindi; Erik odunu satırları kalktı. `drawIcon` yay dalı `kısa yay` adlarını da alır. Yeni `v406odun` bloğu (dosya sonu): eski kayıtta eski adları yeni adlara çevirir (sayılar toplanır, string dizilerinde çift silinir), bir kez bildirim.
+- Geri alma: bu commit `git revert` (kod + belge birlikte). Eski kayıt dönüşümü geri alınmaz: dönüşmüş kayıt eski sürümde yeni adları tanımaz.
+- Ölçüm (cpu4): BOOT 21145 → 21592 ms, js 12235 → 12423 ms; PLAY js 3966 → 4037 ms (gürültü sınırında).
+- Kontrol: eşya 1336 → 1290, tarif 997 → 937; fiyatsız eşya yok, bilinmeyen malzeme yok, kullanılmayan malzeme sayısı aynı (68). Kesme: her ağaç biyomunun odununu ve kabuğunu düşürüyor (ACT 1 ve 2). Eski kayıt: 5 Kayın + 3 Meşe + 1 Sert odun → 9 Sert odun; Çam + Kavak kalası → 3 Odun kalası; Ihlamur yayı → Granit yayı. Resimler: 10 odun kütük, kalaslar/saplar/kömürler/kaşıklar/yaylar biyom renginde; torba yok.
+- Sürüm etiketi `Versiyon 4.07`.
+
 ## v4.06 (10 Kasım 2026) · Sivri taş, Sopa, İp ucuz; fiyatlar ona göre; güvercinler dünyada görünür
 
 **Değişen yerler:** `DB` (satır 1716): `R` içinde Sivri taş `[Keskin taş,4]`, Sopa `[Dal,2],[Keskin taş,1],[Lif,1]`, İp `[Lif,3]`; `p` içinde 168 değer. Fiyat yayılımı oyunun v51 kuralıyla: İp −1, Sopa −4, Sivri taş −8; kullanan tarif `round(1,3 × Σ adet × fark)`, ama fiyatı malzemesinin altında kalan tarifte en az eski fiyat × yeni maliyet / eski maliyet (Balık kapanı 33 → 27). Çalışırken hesaplananlar (oklar, yağlı silahlar, boyalılar) kendiliğinden izliyor: toplam 198 fiyat değişti; metal set fiyatlı aletler, oltalar değişmedi. Araç: `/home/claude/w/` (old.json/new2.json dökümü, `docfix.py` belge tablolarında Fiyat ve Bileme sütunlarını değiştirdi: 352 satır).
@@ -180,11 +189,3 @@
 **Geri alma:** `git revert` bu commit (iki sütun düzeni ve `v388sp` gider; v3.87 düzeni kalır).
 
 **Kontrol:** chk.js 0 hata. 1920×1080: envanter (liste solda, figür sağda), Karakter (tablo solda). Tıklama denemesi v3.87'deki gibi geçti. `gainXP(45)` → 2. seviye: kart açıldı, "Puanımı vereyim" pencereyi açtı, şerit ve parlayan + göründü, + ile puan verildi (`SPTUT` 2). 844×390 telefonda kart ve düğme görünüyor. Konsol hatası yok.
-
-## v3.87 (9 Kasım 2026) · envanter: figür, karakter, liste, alttaki yuvalar
-
-**Değişen yerler:** yeni blok `v387env` (dosyanın sonunda): bilgisayarda (`body:not(.v50m)`) `renderInvPanel` sarmalı v92'nin `.ieq` şeridini siler, yerine `.pftop` (renksiz figür `.pfig` + `.pfs[data-ieq]` yuvaları, `#pfchar` karakter tuvali, `.pfside` içine taşınan `.iact`) koyar; v92'nin `data-ieq` tıklaması aynen çalışır. `dollHTML`/`drawDoll` sarmalı: Özellikler penceresinde aynı figür (`data-eqs`, `.eqpick` korunur). CSS: `.cpanel.invm .tiles` liste (240 px satır), `.ibelt` gizli; envanter açıkken `body.v387inv` ile `#hotbar`/`#torchslot` z-index 7; `#hotbar` için yakalayan tıklama (seçili taşınabiliri yuvaya koyar / yuvadakini seçer) ve sürükleme başlangıcı (`idrag`, mevcut `bsAt` bırakmayı alır); seçili eşyanın gideceği yuva `.v387want`. Telefon (v50m) değişmedi. Belge: 20_sistemler.md Envanter maddesi. Sürüm etiketi `Versiyon 3.87`.
-
-**Geri alma:** `git revert` bu commit (`v387env` bloğu ve belge maddesi gider; eski kutucuklu envanter ve pencere içi alet yuvaları geri gelir).
-
-**Kontrol:** chk.js 0 hata. 1920×1080 ekran görüntüsü: envanter ve Özellikler. Tıklama denemesi: Eller yuvasına tıkla → Kürk eldiven giyildi, tekrar → çıktı; Taş balta seçili + alttaki 3. yuvaya tıkla → yuvaya girdi, pencere açık kaldı; Özellikler'de Eller → liste açıldı → giyildi. Konsol hatası yok.

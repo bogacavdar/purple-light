@@ -610,7 +610,7 @@ Hasatta %45 ihtimalle 1 tohum geri gelir. Tohum Ekin'in ödüllerinden, hasattan
 - **Döşe kipinin ekranı:** Döşe kipinde oda bütün ekranı kullanır. Eşya listesi odayı örtmez, ekranın altında **yatay bir şerit** olarak durur. Alet çubuğu, sol menü ve dövüş düğmeleri gizlenir; duyurular Döşe kipi bitene kadar bekler. Telefonda (yatay) eşya şeritten seçilip odadaki kareye **dokunarak** yerleştirilir.
 - **Yatak uyarısı:** "Yatağı yerleştir…" yazısı evin içine bir yatak konunca hemen kalkar.
 - Ev eşyaları: yataklar (Hasır yatak 1×2, Hasırotu yatak 1×2, Ahşap karyola 2×2), lambalar (Taş lamba, Kil lamba, Asma fener), Taş/Çömlek fırını 2×1, Tabure, Sandalye, Masa 2×1, Sandık, Dolap, Raf, Halı 3×2, Kilim 2×1, Perde, Duvar halısı, Saksı, Boyalı çömlek, Kil figürin, Ana tanrıça heykelciği, Taş totem, Su testisi, Mağara resmi, Av sahnesi duvar resmi, El izi resmi. Hepsi kazanda öğrenilir ve **Usta Sinan** yapar.
-- **Kupa panosu (v3.68, 8 Kasım 2026, Boğaç: Reis kupaları):** duvara asılan, **3 kare genişliğinde** ahşap bir pano (tarifi kazanda öğrenilir: 2 Çam kalası, 1 Tunç levha, 2 İp, 1 Sopa; Usta Sinan yapar; 887 Vio). Bu kayıtta yenilen **her Reis için** panoda küçük **altın bir kalkan** belirir (iki sıra, en çok 14 kalkan görünür; 14'ten fazla Reis yenilince sağ üst köşede bir yıldız parlar). Kalkanlar kendiliğinden gelir; bir Reis yenince her evdeki pano hemen güncellenir. Süstür; başka bir işlevi yoktur.
+- **Kupa panosu (v3.68, 8 Kasım 2026, Boğaç: Reis kupaları):** duvara asılan, **3 kare genişliğinde** ahşap bir pano (tarifi kazanda öğrenilir: 2 Odun kalası, 1 Tunç levha, 2 İp, 1 Sopa; Usta Sinan yapar; 887 Vio). Bu kayıtta yenilen **her Reis için** panoda küçük **altın bir kalkan** belirir (iki sıra, en çok 14 kalkan görünür; 14'ten fazla Reis yenilince sağ üst köşede bir yıldız parlar). Kalkanlar kendiliğinden gelir; bir Reis yenince her evdeki pano hemen güncellenir. Süstür; başka bir işlevi yoktur.
 
 - **Ev fiyatı (tek tanım, 6 Kasım 2026, Boğaç):** aşağıdaki tablodaki fiyat, evi Usta Sinan'dan sipariş edince ödenen **toplam Vio’dur: malzeme ve işçilik dahil**, ayrıca malzeme istenmez. Fiyat seviyeyle artan bir merdivendir (Deri çadır 300 → Kulübe 450 → Kamış kulübe 650 → Kerpiç ev 950 → Ahşap ev 1.500 → Taş ev 2.500 → Konak 5.000); başka bir fiyat kuralı (alt fiyat vb.) evlere uygulanmaz. Tek istisna Yaprak barınağı: 25 Vio ve malzemesi (8 Dal, 12 Yaprak, 4 Lif). Tarifi kazanda öğrenilmiş evler (Deri çadır, Kulübe, Kamış kulübe, Kerpiç ev) kendi malzemenle de Sinan'a yaptırılabilir; o zaman yalnız işçilik ödenir (Sistemler › Ekonomi); Sinan'ın ev listesinde bu evlerin altında "Kendi malzemenle: işçilik N Vio" satırı görünür. Eşya dizinindeki fiyat, evin **satış** değeridir.
 - **Konmuş eşyayı taşımak:** Döşe kipinde konmuş bir eşyaya dokununca/tıklayınca küçük bir menü açılır: **Taşı / Geri al / Döndür**. Eşya sürüklenip başka uygun bir kareye bırakılabilir; bırakılan yer uygun değilse eşya eski yerine döner.
@@ -753,7 +753,7 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda k
 |---|---|---|---|
 | Toprak yol | yol | 2 Taş, 1 Kum → 4 | 1 |
 | Çakıl yol | yol | 3 Nehir çakılı, 1 Kum → 4 | 2 |
-| Ahşap parke | zemin | 1 Meşe kalası → 4 | 10 |
+| Ahşap parke | zemin | 1 Sert odun kalası → 4 | 10 |
 
 ### Çit, duvar ve kapı
 
@@ -762,7 +762,7 @@ Her parça **tahta** ya da **taş** sınıfındadır; kırma kuralı buna göre 
 | Parça | Sınıf | Tarif (el yapımı, kazanda öğrenilir) | Etki | Canı | Fiyat |
 |---|---|---|---|---|---|
 | Dal çit | tahta | 4 Dal, 2 Lif → 2 | **Yavaşlatır:** canlı ×0,35 hızla geçer; oyuncuyu yavaşlatmaz | 60 | 4 |
-| Çit | tahta | 1 Meşe sapı, 2 Sarmaşık ipi, 2 Dal → 2 | Durdurur | 240 | 82 |
+| Çit | tahta | 1 Sert odun sapı, 2 Sarmaşık ipi, 2 Dal → 2 | Durdurur | 240 | 82 |
 | Taş duvar | taş | 4 Taş, 1 Kireçtaşı, 1 Kum → 1 | Durdurur | 800 | 8 |
 | Tahta kapı | tahta | 2 Çit, 1 İp → 1 | Oyuncu, evcil hayvan ve görev kişileri geçer | 240 | 227 |
 
@@ -835,7 +835,7 @@ Durduran parçalarla (Çit, Taş duvar) ve kapılarla **tamamen çevrili** alan�
 
 ### Çit ve Ağıl
 
-- **Çit el yapımıdır** (Boğaç: çit ve zemini oyuncu elle yapar); adı aynı kaldığı için görevler ve Ağıl bozulmaz. Tarifi tahtadır: 1 Meşe sapı, 2 Sarmaşık ipi, 2 Dal → **2 Çit**; kazanda öğrenilir. Usta Sinan'ın sipariş listesinde Çit yoktur.
+- **Çit el yapımıdır** (Boğaç: çit ve zemini oyuncu elle yapar); adı aynı kaldığı için görevler ve Ağıl bozulmaz. Tarifi tahtadır: 1 Sert odun sapı, 2 Sarmaşık ipi, 2 Dal → **2 Çit**; kazanda öğrenilir. Usta Sinan'ın sipariş listesinde Çit yoktur.
 - **Ağıl** aynı kalır: tarif 10 Çit, Usta Sinan kurar. Fiyatı malzemesinden hesaplanır: 1.107.
 - **Eski kayıtlar:** çantadaki Çit'ler geçerlidir; dünyada kurulu Çit'ler açılışta İnşa ızgarasına aynı yerde Çit olarak taşınır; Sinan'a verilmiş ve bekleyen bir Çit siparişi varsa iade edilir (Çit çantaya, ücret geri).
 - **Çit'in resmi** çittir (dikmeler ve iki kat kalas); çantada, kitapta ve İnşa şeridinde aynı resim.
@@ -905,9 +905,9 @@ Her silahın kendi hamleleri vardır (parantezde hasar çarpanı ve enerji):
 - **Kritik vuruş:** kritik vuruş normal hasarın **%50 fazlasını** vurur (Ölümcül vuruş yeteneğiyle **%80**); vuranın başında kırmızı "KRİTİK!" yazar, kısa tiz bir ses çıkar.
   - **Savuşturmayla sersemlettiğin canlıya ilk vuruşun her zaman kritiktir** (her silahla, yumrukla bile). Sersemlik vurmadan geçerse bu hak kalkar.
   - **İhtimal** = (seviye: 2. seviyeden başlayarak her seviye **%0,2**, 50. seviyede %9,8, 60. seviyede %11,8 · Keskin göz I **%3** / II **%6** · silahın biyom kademesi **×%1**) × **silah türü**.
-  - **Silahın kademesi:** yalnızca ilerleyen biyomların silahları kritik vurabilir. Başlangıç, Bakır, Kemik/Çakmaktaşı setleri ve Basit/Çam/Kemik yayı (kademe 0) **kritik vuramaz**; Tunç, Granit, Meşe ve Ihlamur yayı 1; Demir, Timsah, Kızılağaç ve Söğüt yayı 2; Çelik, Gümüş, Kuvars, Akçaağaç ve Huş yayı 3; Kara çelik, Ejder, Obsidyen, Kızıl sedir yayı 4; Mor kristal, Ametist, Gece ağacı ve Işık ağacı yayı 5; ACT 2 silahları (ateşli silahlar, asalar, Işın kılıcı) 6.
+  - **Silahın kademesi:** yalnızca ilerleyen biyomların silahları kritik vurabilir. Başlangıç, Bakır, Kemik/Çakmaktaşı setleri ve Basit yay, Odun yayı ve Kemik yay (kademe 0) **kritik vuramaz**; Tunç, Granit, Meşe ve Granit yayı 1; Demir, Timsah, Kızılağaç ve Timsah dişi yayı 2; Çelik, Gümüş, Kuvars, Akçaağaç ve Gümüş yayı 3; Kara çelik, Ejder, Obsidyen, Kor odun yayı 4; Mor kristal, Ametist, Gece ağacı ve Ametist yayı 5; ACT 2 silahları (ateşli silahlar, asalar, Işın kılıcı) 6.
   - **Silah türü:** yay ve ateşli silah **×1,5**, mızrak **×1,2**, topuz **×1,1**, kılıç **×1**, asa **×0,8**, savaş çekici **×0,6**; balta, kazma, meşale ve yumruk **hiç kritik vuramaz** (savuşturma sonrası ilk vuruş hariç).
-  - Örnek (50. seviye, yeteneksiz): Demir kılıç %11,8 · Mor kristal savaş çekici %8,9 · Mor kristal topuz %16,3 · Mor kristal mızrak %17,8 · Işık ağacı yayı %22,2 · Tabanca %23,7.
+  - Örnek (50. seviye, yeteneksiz): Demir kılıç %11,8 · Mor kristal savaş çekici %8,9 · Mor kristal topuz %16,3 · Mor kristal mızrak %17,8 · Ametist yayı %22,2 · Tabanca %23,7.
   - Silahın bilgi satırında kritik ihtimali yazar ("kritik %11,8" ya da "kritik vuramaz"). Arenada da aynen geçerlidir.
   - **Yetenek ağacı (Savaş):** üç yetenek değişti: Kâşif gözü → **Keskin göz I** (+%3), Rüzgâr gibi → **Keskin göz II** (toplam +%6, Keskin göz I'den sonra), Baykuş gözü → **Ölümcül vuruş** (kritik %80, Keskin göz II'den sonra). Bunları önceden almış olanlar yeni hallerine sahip olur; harita açılma alanı ve koşu hızı herkes için eski temel değerindedir (7 karo, 1,6 kat), karanlıkta çevreni görme yalnızca meşale, lamba ya da Gece gözü etkisiyle olur.
 - **Silahların karakteri ("kılıç, savaş çekici ve topuz kullanış olarak da efekt olarak da farklı olmalı"):** kılıç dengeli silahtır (orta hız, geniş yay; değişmedi). Savaş çekici ve topuzun kendi kuralları vardır; arenada da aynen geçerlidir:

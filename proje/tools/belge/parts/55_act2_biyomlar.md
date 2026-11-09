@@ -10,10 +10,10 @@
 
 | Ağaç | Verdiği odun | Odun fiyatı | Meyve | Gereken balta |
 |---|---|---|---|---|
-| Gök söğüdü | Gök söğüdü odunu | 16 | – | 1. kademe (Taş balta) |
-| Rüzgâr meşesi | Rüzgâr meşesi odunu | 18 | – | 1. kademe (Taş balta) |
-| Bulut çamı | Bulut çamı odunu | 14 | – | 1. kademe (Taş balta) |
-| Bulut elması | Bulut elması odunu | 16 | Bulut elması | 1. kademe (Taş balta) |
+| Gök söğüdü | Ulu odun | 22 | – | 1. kademe (Taş balta) |
+| Rüzgâr meşesi | Ulu odun | 22 | – | 1. kademe (Taş balta) |
+| Bulut çamı | Ulu odun | 22 | – | 1. kademe (Taş balta) |
+| Bulut elması | Ulu odun | 22 | Bulut elması | 1. kademe (Taş balta) |
 | Rüzgâr eriği | – (kesilmez) | – | Rüzgâr eriği | – |
 
 **Toplanabilirler** (F ile, elde alet gerekmez)
@@ -55,10 +55,10 @@ Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzak
 
 | Ağaç | Verdiği odun | Odun fiyatı | Meyve | Gereken balta |
 |---|---|---|---|---|
-| Mavi mantar | Mavi mantar odunu | 22 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Spor ağacı | Spor ağacı odunu | 24 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Dev mantar | Dev mantar odunu | 20 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Kök ağacı | Kök ağacı odunu | 20 | Goblin eriği | 2. kademe (Çakmaktaşı/Granit balta) |
+| Mavi mantar | Ulu odun | 22 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Spor ağacı | Ulu odun | 22 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Dev mantar | Ulu odun | 22 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Kök ağacı | Ulu odun | 22 | Goblin eriği | 2. kademe (Çakmaktaşı/Granit balta) |
 | Spor elması | – (kesilmez) | – | Spor elması | – |
 
 **Toplanabilirler** (F ile, elde alet gerekmez)
@@ -100,10 +100,10 @@ Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dron
 
 | Ağaç | Verdiği odun | Odun fiyatı | Meyve | Gereken balta |
 |---|---|---|---|---|
-| Pas ağacı | Pas ağacı odunu | 24 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Hurda palmiyesi | Hurda palmiyesi odunu | 22 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Kuru çınar | Kuru çınar odunu | 24 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Hurma | Hurma odunu | 22 | Hurma | 2. kademe (Çakmaktaşı/Granit balta) |
+| Pas ağacı | Yüce odun | 26 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Hurda palmiyesi | Yüce odun | 26 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Kuru çınar | Yüce odun | 26 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Hurma | Yüce odun | 26 | Hurma | 2. kademe (Çakmaktaşı/Granit balta) |
 | Çöl inciri | – (kesilmez) | – | Çöl inciri | – |
 
 **Toplanabilirler** (F ile, elde alet gerekmez)
@@ -147,10 +147,10 @@ Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendi
 
 | Ağaç | Verdiği odun | Odun fiyatı | Meyve | Gereken balta |
 |---|---|---|---|---|
-| Kristal çam | Kristal çam odunu | 30 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Taş ağacı | Taş ağacı odunu | 30 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Mavi sedir | Mavi sedir odunu | 32 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Kristal armut | Kristal armut odunu | 28 | Kristal armut | 2. kademe (Çakmaktaşı/Granit balta) |
+| Kristal çam | Efsane odun | 30 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Taş ağacı | Efsane odun | 30 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Mavi sedir | Efsane odun | 30 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Kristal armut | Efsane odun | 30 | Kristal armut | 2. kademe (Çakmaktaşı/Granit balta) |
 | Buz armudu | – (kesilmez) | – | Buz armudu | – |
 
 **Toplanabilirler** (F ile, elde alet gerekmez)
@@ -193,10 +193,10 @@ Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ej
 
 | Ağaç | Verdiği odun | Odun fiyatı | Meyve | Gereken balta |
 |---|---|---|---|---|
-| Kömür ağacı | Kömür ağacı odunu | 34 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Lav palmiyesi | Lav palmiyesi odunu | 34 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Obsidyen dikeni | Obsidyen dikeni odunu | 38 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Ejder meyvesi | Ejder meyvesi odunu | 32 | Ejder meyvesi | 2. kademe (Çakmaktaşı/Granit balta) |
+| Kömür ağacı | Ölümsüz odun | 34 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Lav palmiyesi | Ölümsüz odun | 34 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Obsidyen dikeni | Ölümsüz odun | 34 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Ejder meyvesi | Ölümsüz odun | 34 | Ejder meyvesi | 2. kademe (Çakmaktaşı/Granit balta) |
 | Lav narı | – (kesilmez) | – | Lav narı | – |
 
 **Toplanabilirler** (F ile, elde alet gerekmez)
@@ -239,10 +239,10 @@ Adanın en uzak ucu, roket rampası. Uzaylı dronları, gölge muhafızlar ve de
 
 | Ağaç | Verdiği odun | Odun fiyatı | Meyve | Gereken balta |
 |---|---|---|---|---|
-| Gök kamışı | Gök kamışı odunu | 40 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Bulut kavağı | Bulut kavağı odunu | 40 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Yıldız akasyası | Yıldız akasyası odunu | 44 | – | 2. kademe (Çakmaktaşı/Granit balta) |
-| Gök üzümü | Gök üzümü odunu | 38 | Gök üzümü | 2. kademe (Çakmaktaşı/Granit balta) |
+| Gök kamışı | Ölümsüz odun | 34 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Bulut kavağı | Ölümsüz odun | 34 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Yıldız akasyası | Ölümsüz odun | 34 | – | 2. kademe (Çakmaktaşı/Granit balta) |
+| Gök üzümü | Ölümsüz odun | 34 | Gök üzümü | 2. kademe (Çakmaktaşı/Granit balta) |
 | Yıldız kirazı | – (kesilmez) | – | Yıldız kirazı | – |
 
 **Toplanabilirler** (F ile, elde alet gerekmez)

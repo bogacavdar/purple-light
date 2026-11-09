@@ -28,7 +28,7 @@ Poyraz'ın görevleri ana görev sırasına girer (aynı anda tek ana görev). P
 
 | # | Görev | İstenen | Açılma | Ödül |
 |---|---|---|---|---|
-| G1 | Çatlak omurga | Getir: 6 Çam odunu, 3 Uzun sopa | Poyraz karaya oturdu | 40 Vio · 25 XP |
+| G1 | Çatlak omurga | Getir: 6 Odun, 3 Uzun sopa | Poyraz karaya oturdu | 40 Vio · 25 XP |
 | G2 | Yırtık yelken | Getir: 2 Halat, 6 Lif | G1 | 55 Vio · 35 XP |
 | G3 | Su alan tekne | Getir: 3 Çam reçinesi, 4 Taş | G2 | 70 Vio · 45 XP |
 | G4 | Kaptanın karnı | Getir: 2 Közlenmiş tavşan eti, 4 Böğürtlen (eskiden herhangi pişmiş et) | G3 | 90 Vio · 60 XP |
@@ -92,7 +92,7 @@ Satış fiyatı Nazlı'nın pazarında. Zorluk yeşil alanı böler (1 = kolay).
 |---|---|---|---|---|
 | Olta (eski) | – | 1 | %27 | 25 |
 | Deniz oltası | 1 Olta, 1 Halat, 2 Bakır külçesi, 1 Uzun sopa | 1–2 | %29 | 30 |
-| Makaralı olta | 1 Deniz oltası, 2 Tunç külçesi, 1 Kenevir halatı, 2 Bataklık servisi kalası | 1–3 | %31 | 35 |
+| Makaralı olta | 1 Deniz oltası, 2 Tunç külçesi, 1 Kenevir halatı, 2 Sağlam odun kalası | 1–3 | %31 | 35 |
 | Derin su oltası | 1 Makaralı olta, 3 Demir külçesi, 2 Kenevir halatı, 2 Huş katranı | 1–4 | %33 | 40 |
 | Fırtına oltası | 1 Derin su oltası, 3 Gümüş külçesi, 2 Kenevir halatı, 2 Balık tutkalı | 1–5 | %35 | 45 |
 | Yıldız oltası | 1 Fırtına oltası, 4 Ametist, 1 Kristal ipek kumaş, 2 Gümüş külçesi | 1–6 | %37 | 50 |
