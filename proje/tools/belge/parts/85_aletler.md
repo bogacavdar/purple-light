@@ -341,7 +341,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Obsidyen balta | axe | odun keser | 0,81 | 165 | 1.208 | 6 | 65 |
 | Taş kazma | pick | maden kazar | 3 | 25 | 15 | 1 | 8 |
 | Bakır kazma | pick | maden kazar | 2,6 | 45 | 32 | 1 | 11 |
-| Çakmaktaşı kazma | pick | maden kazar | 2,34 | 25 | 55 | 1 | 12 |
+| Çakmaktaşı kazma | pick | maden kazar | 2,34 | 25 | 52 | 1 | 12 |
 | Tunç kazma | pick | maden kazar | 2,1 | 90 | 100 | 2 | 18 |
 | Granit kazma | pick | maden kazar | 1,89 | 50 | 165 | 2 | 20 |
 | Demir kazma | pick | maden kazar | 1,8 | 140 | 200 | 3 | 26 |

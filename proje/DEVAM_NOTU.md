@@ -1,3 +1,15 @@
+## v4.06 (10 Kasım 2026) · Sivri taş, Sopa, İp ucuz; fiyatlar ona göre; güvercinler dünyada görünür
+
+**Değişen yerler:** `DB` (satır 1716): `R` içinde Sivri taş `[Keskin taş,4]`, Sopa `[Dal,2],[Keskin taş,1],[Lif,1]`, İp `[Lif,3]`; `p` içinde 168 değer. Fiyat yayılımı oyunun v51 kuralıyla: İp −1, Sopa −4, Sivri taş −8; kullanan tarif `round(1,3 × Σ adet × fark)`, ama fiyatı malzemesinin altında kalan tarifte en az eski fiyat × yeni maliyet / eski maliyet (Balık kapanı 33 → 27). Çalışırken hesaplananlar (oklar, yağlı silahlar, boyalılar) kendiliğinden izliyor: toplam 198 fiyat değişti; metal set fiyatlı aletler, oltalar değişmedi. Araç: `/home/claude/w/` (old.json/new2.json dökümü, `docfix.py` belge tablolarında Fiyat ve Bileme sütunlarını değiştirdi: 352 satır).
+- Öğretici (balta): `AXE_STEPS[0]` 1 Keskin taş, sopa/ip yazıları, `AXE_DONE[0]`, `axeNeedStep` (Sopa yoksa Keskin taş <1), `tzAlpDone` bırakma: Dal 2, Lif (2−ip)×3 + (sopa yoksa 1), Taş 2 + eksik keskin taş × 2 (gereken 3). Kart 12 yazısı ve Börü'nün konuşması.
+- Yan görev gizli toplama (`hide:1`): `curPts` artık yakınlık şartı koymuyor (`PIGS` silindi), üçüncü öğe `plain`; çizimde `plain` olanda mavi halka ve pırıltı yok. Haritada (`sqZone`) eskisi gibi yok.
+- Liste kayması: `v258-wst` stiline `.book li>.bn{flex:1 1 0;min-width:0}`, `.book .bn>span{min-width:0}`, `.book .wst{white-space:normal}` (özellik satırı ad sütununda kırılıyor). 1280×800'de üstüne gelince düğmeler 622 → 622 (önce 806'ya kayıyordu).
+- Sürüm etiketi `Versiyon 4.06`.
+
+**Geri alma:** `git revert` bu commit (belge ve kod birlikte).
+
+**Kontrol:** chk.js 0 hata. Fiyat denetimi: fiyatsız eşya yok, kullanılmayan malzeme sayısı aynı (68). Balta dersi: boş çantada Börü 2 dal, 7 lif ister; adımlar 0→1→2→3→5 doğru sırayla.
+
 ## v4.05 (10 Kasım 2026) · eylem yazısı kemerin üstünde
 
 **Değişen yerler:** Yeni `v405prompt` bloğu (dosya sonu). `#prompt` kemerin (`#hotbar`) üstüne binerse 120 ms'de bir `bottom`'u kemerin üstü + 8 px yapılıyor (satır içi, `!important`). `.act` ve `v50m` (telefon) değişmedi.
@@ -176,12 +188,3 @@
 **Geri alma:** `git revert` bu commit (`v387env` bloğu ve belge maddesi gider; eski kutucuklu envanter ve pencere içi alet yuvaları geri gelir).
 
 **Kontrol:** chk.js 0 hata. 1920×1080 ekran görüntüsü: envanter ve Özellikler. Tıklama denemesi: Eller yuvasına tıkla → Kürk eldiven giyildi, tekrar → çıktı; Taş balta seçili + alttaki 3. yuvaya tıkla → yuvaya girdi, pencere açık kaldı; Özellikler'de Eller → liste açıldı → giyildi. Konsol hatası yok.
-
-## v3.86 (9 Kasım 2026) · öbekler kalktı, toplanacaklar %20 az
-
-**Değişen yerler:** `v372sade` yeniden yazıldı: öbek kurma, `GAP`/`spotOk`/`putP`, `KIN` ve `findSpot` sarmalı (öbeğe yeniden çıkış) silindi; bitkiler yerinde kalır, `hz(x,y,3.1)≥.6` silinir (%40); temel malzemeler `hz(x,y,91.7)<.44` (%44), Yaprak `<.2` (%20). `window.__plSade` kalktı. Sürüm etiketi `Versiyon 3.86`.
-
-**Geri alma:** `git revert` bu commit (v3.78'in öbekli hali geri gelir).
-
-**Kontrol:** chk.js 0 hata. Yeni oyun: öbekte duran bitki 2888 → 40, 16 px'ten yakın 80; biyom başına toplanabilir ACT 1 429/394/427/494/417/489, ACT 2 303/253/318/302/304/297 (önceden 525/489/474/577/506/568 ve 369/298/405/369/375/353). Kurulum 12 ms.
-

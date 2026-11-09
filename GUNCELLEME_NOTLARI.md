@@ -8,6 +8,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.06 · 10 Kasım 2026
+
+### Oynanış
+- **Temel parçalar ucuzladı:** Sivri taş artık 4 Keskin taş (6 yerine), Sopa 2 Dal + 1 Keskin taş + 1 Lif (3 Dal + 2 Keskin taş yerine), İp 3 Lif (4 yerine). Örneğin bir Taş kazma sıfırdan 16 Taş, 5 Dal, 8 Lif yerine artık 12 Taş, 4 Dal, 7 Lif istiyor.
+- **Fiyatlar yeni malzemelere göre:** İp 5 → 4, Sopa 12 → 8, Sivri taş 23 → 15 Vio. Bunları kullanan bütün tariflerin fiyatı da düştü (198 eşya; ör. Taş kazma 64 → 46, Uzun sopa 28 → 22, Halat 38 → 30, Taş balta 39 → 31). Fiyatı kendi metal setine göre belirlenen silah ve aletler (tunç, demir, kuvars…) ile oltalar değişmedi.
+- **Börü'nün balta dersi yeni tariflere göre:** önce 1 Keskin taş, sonra Sopa (2 dal, 1 keskin taş, 1 lif), sonra baltanın ağzı için 2 Keskin taş, en son 2 İp (her biri 3 lif). Börü yanına da buna göre bırakıyor (ör. çantan boşsa 2 dal ve 7 lif).
+- **Güvercinler yeniden görünüyor:** Bulut'un kaçan güvercinleri (ve aynı şekilde sesle bulunan bıldırcın, kurbağalar, çanlar, kristaller) artık dünyada hep görünüyor; yalnızca haritada ve mini haritada gösterilmiyor. Önceden ancak dibine gelince beliriyorlardı.
+
+### Arayüz
+- **El yapımı listesi yana kaymıyor:** bir silahın (ör. Taş savaş çekici) üstüne gelince adının altında çıkan özellik satırı listeyi genişletip Takip et / ×5 / Hepsi / Yap düğmelerini sağa itiyordu; artık yazı alt satıra geçiyor, düğmeler yerinde kalıyor.
+
+### Tasarım belgesi
+- Tarif ve eşya tablolarındaki fiyatlar, Börü'nün balta dersi, yan görevlerde sesle bulunan şeylerin görünmesi ve listede özellik satırının kaydırmaması güncellendi.
+
+---
+
 ## Versiyon 4.05 · 10 Kasım 2026
 
 ### Oynanış
@@ -284,14 +300,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Sistemler › Envanter: "Envanter ve Özellikler penceresi" maddesi (figür, karakter, liste, alttaki alet yuvaları).
 
 ---
-
-## Versiyon 3.86 · 9 Kasım 2026
-
-### Oynanış
-- **Toplanacaklar yine dağınık ve %20 daha az:** bitkiler artık aynı türden öbekler halinde yan yana çıkmıyor; eskisi gibi biyoma tek tek dağılıyor ve toplanınca biyomun herhangi bir yerinde yeniden çıkıyor. Bütün toplanacaklar (bitkiler, Dal, Lif, Taş, Nehir çakılı, Kum, Çakmaktaşı, Yaprak) %20 azaldı. Yeni oyunda ACT 1'de biyom başına 394–494, ikinci adada 253–318 toplanabilir var.
-
-### Tasarım belgesi
-- ACT 1 › Haritadaki miktarlar › Sade harita: öbek kuralları kalktı, "Bitkiler dağınık" ve yeni oranlar.
-
----
-
