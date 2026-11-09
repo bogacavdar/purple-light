@@ -326,7 +326,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
   - **Günün farkı:** her gün kendi farkını taşır (−3° ile +3° arası; aynı gün hep aynı).
   - **Gün içi:** en sıcak 14:00 (+4°), en soğuk 05:00 (−4°), arası yumuşak geçiş.
   - **Yer:** Kayalık Dağ −6°, Mor Kristal Vadisi −2°, Bataklık +1°, Kül Diyarı +18°; ikinci adada Hurda Çölü +6°, Ejder Volkanı +18°, Gök Rıhtımı −4°; öbür biyomlar 0. Sıcaklık oyuncunun bulunduğu yere göre hesaplanır.
-- **Yağışın türü:** yağış başladığında sıcaklık **0,5°'nin altındaysa kar** (fırtınada **tipi**), üstündeyse yağmur (fırtına) yağar. Yağış sürerken hava ısınırsa kar yağmura, soğursa yağmur kara döner. Kar ve tipinin etkileri (meşale, kamp ateşi, balık) yağmur ve fırtınayla aynıdır; tipide şimşek çakmaz. Kül Diyarı'nda yağış yine kül fırtınasıdır.
+- **Yağışın türü:** kar **yalnızca kışın** yağar (9 Kasım 2026, Boğaç: "ilkbaharda kar yağmasın, kışın yağsın"): kışın yağış başladığında sıcaklık **0,5°'nin altındaysa kar** (fırtınada **tipi**), üstündeyse yağmur (fırtına) yağar; öbür mevsimlerde sıcaklık ne olursa olsun yağmur yağar (ilkbaharın soğuk gecelerinde de). Yağış sürerken hava ısınırsa kar yağmura, soğursa yağmur kara döner. Kar ve tipinin etkileri (meşale, kamp ateşi, balık) yağmur ve fırtınayla aynıdır; tipide şimşek çakmaz. Kül Diyarı'nda yağış yine kül fırtınasıdır.
 - **Hava zinciri:** hava rastgele zıplamaz, sırayla değişir: **açık → bulut → yağış → (fırtına) → bulut → açık**; sis sabahları (05:00–10:00) daha sık çıkar ve açık ya da bulutluya döner. Mevsim, bulutun yağışa dönme ihtimalini, fırtınanın payını ve her havanın ne kadar süreceğini belirler:
 
 | | İlkbahar | Yaz | Sonbahar | Kış |
@@ -342,6 +342,14 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
   - **Erime:** sıcaklık 0,5°'nin üstündeyken örtü saniyede (sıcaklık × %0,025) azalır; **yağmur yağarken 4 kat**, gündüz açık havada güneşte 1,5 kat hızlı. Örneğin ilkbaharda 10°'lik yağmurda kar ~1,5 dakikada, 5°'lik açık gecede ~13 dakikada erir. Erirken beyaz lekeler yavaş yavaş küçülür.
   - Kar yalnızca karaya (çimen, orman zemini, kum) yağar; su, Kül Diyarı ve Ejder Volkanı karlanmaz. Göller donmaz. Yollar ve döşemeler de karla örtülür.
   - Örtü bütün ada için tek bir değerdir ve kayda yazılır; ikinci adaya geçince aynı örtü sürer.
+- **Üşüme (9 Kasım 2026, Boğaç: "kışın 0 derece ve altında karakter üşüsün, ya meşale ya da bir ateş bulması gereksin; köşelerden başlayan ve gitgide şiddetlenen buzlanma; çok üşürsek can hızlı düşsün"):** karakterin bir **üşüme** değeri vardır (0–100, ekranda sayı olarak yazmaz; buzlanmadan görülür).
+  - **Ne zaman üşür:** **kışın** (22–28. günler) ve bulunduğu yerin sıcaklığı **0° ya da altındayken**, gece de gündüz de. Öbür mevsimlerde üşümez. Mağarada, evin içinde ve deniz yolculuğunda üşümez; arenada ve konuşma/pencere açıkken üşüme durur.
+  - **Ne kadar hızlı:** 0°'de üşüme ~3 dakikada dolar; her 6° daha soğukta bir kat daha hızlı (−6°'de ~1,5 dakika, −12°'de 1 dakika).
+  - **Isınmak:** elinde **yanan bir meşale** varken üşüme artmaz, yavaşça azalır (~2 dakikada sıfırlanır). Bir **ateşin yanında** (yaklaşık 4 kare: kamp ateşi, kişilerin ateşleri, Kemal'in ateşi, ocak/fırın, Zümrüt'ün kazanı) ya da evin içinde hızla ısınır (~20 sn'de sıfırlanır). Soğuk geçince (kış bitince ya da sıcaklık 0°'nin üstüne çıkınca) üşüme ~1 dakikada geçer.
+  - **Buzlanma:** üşüdükçe ekranın **dört köşesinden buz kristalleri** başlar, üşüme arttıkça büyüyüp ekranın ortasına doğru ilerler ve koyulaşır; ısınınca geri çekilir. Buzlanma oyun dünyasının üstünde, sol üstteki çubukların ve düğmelerin altında durur (onları kapatmaz).
+  - **Can kaybı:** üşüme **75**'i geçince can düşmeye başlar: 75'te saniyede 1 can, 100'de saniyede en yüksek canın **%2**'si (en az 4 can); bu sırada ekran kırmızı yanıp söner ve karakterin üstünde "Donuyorsun!" yazar. Bu yüzden bayılırsan sebep "soğuk" yazar.
+  - **Uyarılar:** üşüme ilk kez 15'i geçince bir kez "Üşüyorsun: elinde yanan bir meşale ya da bir ateşin yanı seni ısıtır." yazar (her kış bir kez); 75'i geçince "Donuyorsun! Hemen bir ateş bul." yazar.
+  - Üşüme kayda yazılır.
 - **Grafik:** kar yağarken çizgi yerine kar taneleri yağar (tipide yoğun ve yana savrulur). Kar örtüsü 16 × 16 karelik parçalar halinde önceden çizilir ve yalnızca örtü %1 değişince yenilenir (karede en çok 2 parça, bellekte en çok 24 parça); örtü yokken hiç çizim yapılmaz.
 
 #### Uyku

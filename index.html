@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.96</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 3.97</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.96 · 9 Kasım 2026</h2><h3>Düzeltmeler</h3><ul><li><strong>Öğreticide yeni çizimler de mavi parlıyor:</strong> Çayır'ın yeni çizimli toplanabilirleri (yaprak, dal, kum, havuç…) öğreticinin ya da görevin istediği malzemeyken etrafında mavi ışık yanmıyordu; artık yanıyor.</li><li><strong>Nazlı'nın dersinde Sat düğmesi yine parlıyor:</strong> Pazar penceresi yenilenince öğreticinin Keskin taş satırındaki <em>Sat</em> düğmesinin mavi parlaması kaybolmuştu; geri geldi.</li><li><strong>Börü'nün "yetenek ağacını aç" adımında tıklayınca yürüme:</strong> bu adımda yerdeki bir eşyaya tıklayınca karakter oraya gitmiyor, olduğu yerde yumruk atıyordu (yumruk dersinin kuralı uzun kalmıştı). Artık yürüyor.</li></ul><h3>Arayüz</h3><ul><li><strong>Pazarda satış düğmeleri sade:</strong> <em>Sat</em> ve <em>Hepsi</em> düğmelerinde artık tutar yazmıyor; fiyat zaten satırın solunda.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 3.97 · 9 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Kar yalnızca kışın yağar:</strong> ilkbaharın soğuk gecelerinde artık kar değil yağmur yağar. Kış (22–28. günler) 0,5°'nin altında yağış kar ya da tipi olur.</li><li><strong>Üşüme:</strong> kışın sıcaklık 0° ya da altındayken (gece de gündüz de) karakter üşür. Elinde yanan bir <strong>meşale</strong> varken üşüme artmaz, yavaşça geçer; bir <strong>ateşin yanında</strong> (kamp ateşi, kişilerin ateşleri, ocak, kazan) ya da evin içinde hızla ısınırsın. Mağarada ve deniz yolculuğunda üşümezsin. 0°'de üşüme ~3 dakikada dolar, hava soğudukça daha hızlı.</li><li><strong>Donmak can yakar:</strong> çok üşüyünce (üşüme ¾'ü geçince) can düşmeye başlar, en kötüsünde saniyede canının %2'si; ekran kırmızı yanıp söner, "Donuyorsun!" yazar.</li></ul><h3>Görsel</h3><ul><li><strong>Buzlanma:</strong> üşüdükçe ekranın dört köşesinden buz kristalleri başlar, üşüme arttıkça büyüyüp koyulaşır; ısınınca geri çekilir. Çubukları ve düğmeleri kapatmaz.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 Vio</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -22432,7 +22432,7 @@ function hourLean(){const h=dayT/60;if(h>=5&&h<=14)return -4*Math.cos(Math.PI*(h
 const LAND=ISLE===2?{2:6,4:18,5:-4}:{3:-6,5:-2,2:1,4:18};
 function temp(){let b=0;try{b=bioAt(player.x,player.y)}catch(e){}return 11.5+15*Math.cos(2*Math.PI*(yDay()-11)/28)+dayLean(day)+hourLean()+(LAND[b]||0)}
 let snowNow=false;
-function snowing(){if(!raining()||ashStorm())return(snowNow=false);const T=temp();snowNow=snowNow?T<=1:T<=0.5;return snowNow}   // a little give either way, so it does not flicker at 0,5°
+function snowing(){if(!raining()||ashStorm()||season()!==3)return(snowNow=false);   /* v3.97: snow only in winter */const T=temp();snowNow=snowNow?T<=1:T<=0.5;return snowNow}   // a little give either way, so it does not flicker at 0,5°
 window.__plTemp=temp;window.__plSnowing=snowing;
 window.__plTempStr=()=>{const v=Math.round(temp());return (v<0?'−'+(-v):String(v))+'°'};
 // ---- the weather chain
@@ -23329,6 +23329,71 @@ L['Havuç']=(x,y)=>{SH(x,y,6);W(x,y,'car1',14,16,k=>{for(const [x1,y1] of [[3,2]
 L['Nane']=(x,y)=>{SH(x,y,6);drawSprite(recol('Nane','nane1',(r,g,b)=>[Math.round(r*.62),Math.round(g*.8),Math.round(b*.62)]),x,y+3)};
 window.__plCayirL=L;   // read at the start of drawNode (v3.96), inside the glow wrappers
 }).toString()+')()')}catch(e){try{window.__hamErr('v395cayir: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v397soguk">
+// v3.97 (Boğaç, 9 Kasım 2026: "kışın 0 derece ve altında karakter üşüsün, ya meşale ya da bir ateş bulması gereksin; köşelerden başlayan
+// ve gitgide şiddetlenen buzlanma; çok üşürsek can hızlı düşsün"): belge Sistemler › Hava, sıcaklık ve kar › Üşüme.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+let cold=0,told15=-1,told75=false,shown=-1;
+const season=()=>window.__plSeason?window.__plSeason():0,temp=()=>window.__plTemp?window.__plTemp():10;
+const inCave=()=>!!(window.__plCave&&window.__plCave.cur);
+function nearHeat(x,y){const R=64;
+  try{if(camps.some(c=>c.t>0&&Math.hypot(c.x-x,c.y-y)<R))return true}catch(e){}
+  try{if(FIRES.some(f=>Math.hypot(f.x-x,f.y-y)<R))return true}catch(e){}
+  try{if(Math.hypot(npc.home.x+16-x,npc.home.y+2-y)<R)return true}catch(e){}
+  try{if(Math.hypot(furnace.x-x,furnace.y-6-y)<R)return true}catch(e){}
+  try{if(witchShown&&Math.hypot(cauldron.x-x,cauldron.y-y)<R)return true}catch(e){}
+  return false}
+function tickCold(dt){if(!dt||window.__plArena||onTitle)return;
+  const T=temp(),freezing=season()===3&&T<=0&&!inCave()&&!sailing,warmRoom=roomSafe();
+  let d;
+  if(warmRoom||nearHeat(player.x,player.y))d=-100/20;
+  else if(!freezing)d=-100/60;
+  else if(torchHeld())d=-100/120;
+  else d=100/180*(1+(-T)/6);
+  const was=cold;cold=Math.max(0,Math.min(100,cold+d*dt));
+  if(cold>15&&was<=15&&told15!==Math.floor((Math.max(1,day)-1)/28)){told15=Math.floor((Math.max(1,day)-1)/28);toast('Üşüyorsun: elinde yanan bir meşale ya da bir ateşin yanı seni ısıtır.',true)}
+  if(cold>75&&!told75){told75=true;toast('Donuyorsun! Hemen bir ateş bul.',true);try{sfx('bad')}catch(e){}}
+  if(cold<60)told75=false;
+  if(cold>75){const mH=maxHP(),k=(cold-75)/25,dps=1+(Math.max(4,mH*.02)-1)*k;hp-=dps*dt;lastHurt='soğuk';
+    if(Math.random()<dt*.3)floatText('Donuyorsun!','#bfe6ff');
+    {const f=$('hurtfx');if(f&&Math.random()<dt*.5){f.style.setProperty('--hi','.45');f.classList.remove('on');void f.offsetWidth;f.classList.add('on')}}
+    if(hp<=0){hp=0;faint()}}}
+{const _th=tickHunger;tickHunger=function(dt){const r=_th.apply(this,arguments);try{if(hungerOn()&&!fading)tickCold(dt)}catch(e){}return r}}
+{const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{if(s)s.usume=Math.round(cold)}catch(e){}return s}}
+{const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{cold=d&&+d.usume>0?Math.min(100,+d.usume):0}catch(e){cold=0}told75=false;return r}}
+{const _st=startNew;startNew=function(){cold=0;told15=-1;told75=false;return _st.apply(this,arguments)}}
+{const _f=faint;faint=function(){const r=_f.apply(this,arguments);cold=0;return r}}
+window.__plCold=()=>cold;window.__plColdSet=v=>{cold=Math.max(0,Math.min(100,+v||0))};
+// ---- the frost: four corner pieces drawn once (pixel ice crystals), grown with transform and opacity only
+const N=160;
+function frostTex(){const c=document.createElement('canvas');c.width=c.height=N;const g=c.getContext('2d');
+  let sd=7;const rnd=()=>{sd=(sd*16807)%2147483647;return sd/2147483647};
+  const G=12,GR=[];for(let i=0;i<(G+1)*(G+1);i++)GR.push(rnd());   // smooth value noise: frost grows in soft tongues, not in salt
+  const vn=(x,y)=>{const fx=x/N*G,fy=y/N*G,ix=Math.floor(fx),iy=Math.floor(fy),tx=fx-ix,ty=fy-iy,a=GR[iy*(G+1)+ix],b=GR[iy*(G+1)+ix+1],c2=GR[(iy+1)*(G+1)+ix],d=GR[(iy+1)*(G+1)+ix+1],sx=tx*tx*(3-2*tx),sy=ty*ty*(3-2*ty);return (a+(b-a)*sx)+((c2+(d-c2)*sx)-(a+(b-a)*sx))*sy};
+  const C=['#f6fcff','#e2f4ff','#c4e6fb','#a2d4f2'];
+  for(let y=0;y<N;y++)for(let x=0;x<N;x++){const d=Math.hypot(x,y)/N,v=Math.pow(Math.max(0,1-d),1.6)*1.35+(vn(x,y)-.5)*.5+(rnd()-.5)*.06;
+    if(v>.12){g.globalAlpha=Math.min(.82,(v-.12)*1.5);g.fillStyle=C[v>.75?0:v>.5?1:v>.3?2:3];g.fillRect(x,y,1,1)}}
+  g.globalAlpha=.9;
+  const arm=(x,y,a,len,dep)=>{for(let i=0;i<len;i++){x+=Math.cos(a);y+=Math.sin(a);g.fillStyle=dep?'#e8f7ff':'#ffffff';g.fillRect(Math.round(x),Math.round(y),1,1);
+      if(dep<2&&i>4&&i%7===0){arm(x,y,a+.75,len*.35,dep+1);arm(x,y,a-.75,len*.35,dep+1)}}};
+  for(let k=0;k<9;k++){const a=(k+.5)/9*Math.PI/2+(rnd()-.5)*.12;arm(rnd()*4,rnd()*4,a,60+rnd()*40,0)}
+  return c}
+const st=document.createElement('style');st.textContent=
+  '#frost{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}#frost[hidden]{display:none}'
+ +'#frost canvas{position:absolute;width:42vmax;height:42vmax;image-rendering:pixelated;opacity:0;will-change:transform,opacity;transition:transform .5s linear,opacity .5s linear}'
+ +'#frost .tl{left:0;top:0;transform-origin:0 0}#frost .tr{right:0;top:0;transform-origin:100% 0}#frost .bl{left:0;bottom:0;transform-origin:0 100%}#frost .br{right:0;bottom:0;transform-origin:100% 100%}';
+document.head.appendChild(st);
+const box=document.createElement('div');box.id='frost';box.hidden=true;box.setAttribute('aria-hidden','true');
+{const T0=frostTex();for(const [cl,fx,fy] of [['tl',1,1],['tr',-1,1],['bl',1,-1],['br',-1,-1]]){const c=document.createElement('canvas');c.width=c.height=N;c.className=cl;const g=c.getContext('2d');
+  g.translate(fx<0?N:0,fy<0?N:0);g.scale(fx,fy);g.drawImage(T0,0,0);box.appendChild(c)}}
+{const cv0=$('game');if(cv0&&cv0.parentNode===document.body)cv0.insertAdjacentElement('afterend',box);else document.body.appendChild(box)}
+function paintFrost(){const v=onTitle||window.__plArena?0:Math.round(cold);if(v===shown)return;shown=v;
+  if(v<=0){box.hidden=true;return}box.hidden=false;const k=.22+.78*v/100,o=Math.min(1,v/20)*(.7+.25*v/100);
+  for(const c of box.children){c.style.transform=`scale(${k.toFixed(3)})`;c.style.opacity=o.toFixed(3)}}
+setInterval(()=>{try{paintFrost()}catch(e){}},250);
+}).toString()+')()')}catch(e){try{window.__hamErr('v397soguk: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

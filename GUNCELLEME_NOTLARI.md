@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.97 · 9 Kasım 2026
+
+### Oynanış
+- **Kar yalnızca kışın yağar:** ilkbaharın soğuk gecelerinde artık kar değil yağmur yağar. Kış (22–28. günler) 0,5°'nin altında yağış kar ya da tipi olur.
+- **Üşüme:** kışın sıcaklık 0° ya da altındayken (gece de gündüz de) karakter üşür. Elinde yanan bir **meşale** varken üşüme artmaz, yavaşça geçer; bir **ateşin yanında** (kamp ateşi, kişilerin ateşleri, ocak, kazan) ya da evin içinde hızla ısınırsın. Mağarada ve deniz yolculuğunda üşümezsin. 0°'de üşüme ~3 dakikada dolar, hava soğudukça daha hızlı.
+- **Donmak can yakar:** çok üşüyünce (üşüme ¾'ü geçince) can düşmeye başlar, en kötüsünde saniyede canının %2'si; ekran kırmızı yanıp söner, "Donuyorsun!" yazar.
+
+### Görsel
+- **Buzlanma:** üşüdükçe ekranın dört köşesinden buz kristalleri başlar, üşüme arttıkça büyüyüp koyulaşır; ısınınca geri çekilir. Çubukları ve düğmeleri kapatmaz.
+
+---
+
 ## Versiyon 3.96 · 9 Kasım 2026
 
 ### Düzeltmeler
@@ -271,22 +283,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - ACT 1 › Haritadaki miktarlar › Bitkiler öbek öbek: öbekte aralık 18–32 px, iki bitki arası en az 18 px.
-
----
-
-## Versiyon 3.77 · 8 Kasım 2026
-
-### Oynanış
-- **Her biyomda, mağarasıyla birlikte tek mantar:** Çayır'ın mantarı artık yalnız Yankı Mağarası'nda mavi parlayan **Yankı mantarı**, Kül Diyarı'nınki Kor Mağarası'ndaki **Kül mantarı**; Orman'da Kanlıca, Bataklık'ta Sinek mantarı, Kayalık Dağ'da Kayın mantarı, Mor Kristal Vadisi'nde Işık mantarı dışarıda. Çayır mantarı, her mağaradaki Mağara mantarı ve Kök Mağarası'ndaki Kök mantarı kalktı.
-- **Hurda Çölü'ne Keme:** kumun altında biten çöl trüfü (çiğ yenir, ateşte **Kızarmış keme** olur). İkinci adanın her biyomunda artık bir mantar var.
-- Tarifler: Kök mantarlı güveç artık **Kanlıcalı güveç** (2 Kanlıca); **Kök özü iksiri** Kök mantarı yerine 2 Kök reçinesi ister; Kızarmış çayır mantarı ve Kızarmış mağara mantarı yok.
-- **Aynı kişi aynı malzemeyi iki kez istemez:** Yakut'un "Kırmızı demlik"i Eğrelti, "Taşan kazan"ı Yaban sarımsağı; Fidan'ın "Mantar tezgâhı" 6 Kanlıca, "Fındık zamanı" Ceviz; Zümrüt'ün "Güneş görmeyenler"i Yankı mantarı; Durdu'nun "Bileğinin taşı" Kayın odunu; Ali'nin "Servi sapı" Arduvaz; Kaya'nın "Altın damar"ı yalnız Pirit, "Pençe ve çakmak"ı Çakmaktaşı; Mercan'ın "Gece zambağı" Kor taşı; Kudret'in "Çınlayan çekiç"i Ay taşı ister (konuşmaları da buna göre).
-
-### Kayıtlar
-- Eski kayıtta Kök mantarlı güveç Kanlıcalı güvece çevrilir; Çayır mantarı, Mağara mantarı, Kök mantarı ve kızarmışları eski satış fiyatından sikke olarak ödenir.
-
-### Tasarım belgesi
-- Tarifler › Sade malzeme: tek mantar maddesi (biyom + mağara), "aynı kişi aynı malzemeyi iki kez istemez" maddesi, sayılar (eşya 1341, tarif 979). Mağaralar: toplanabilenler ve Kök Mağarası tarifleri; ACT 2 › Hurda Çölü: Keme; Eşyalar ve Tarifler: Keme, Kızarmış keme, Kanlıcalı güveç; görev tabloları.
 
 ---
 

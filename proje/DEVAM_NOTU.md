@@ -1,3 +1,11 @@
+## v3.97 (9 Kasım 2026) · üşüme, buzlanma, kar yalnızca kışın
+
+**Değişen yerler:** `v370hava` `snowing()` artık `season()!==3` iken yanlış döner (kar yalnızca kışın). Yeni blok `v397soguk` (dosyanın sonunda): üşüme 0–100 (`tickHunger` sarmalında, yalnızca `hold` yokken), ısı kaynakları `camps`/`FIRES`/Kemal'in ateşi/ocak/kazan 64 px, ev `roomSafe()`, meşale `torchHeld()`; can kaybı üşüme > 75; `#frost` (z 2) dört köşe tuvali bir kez çizilir, büyüme yalnızca `transform`+`opacity` (250 ms'de bir, değişince). Kayıtta `usume` alanı. Hata ayıklama: `__plCold()`, `__plColdSet(v)`. Sürüm etiketi `Versiyon 3.97`.
+
+**Geri alma:** `git revert` bu commit (kayıtlardaki `usume` alanı eski sürümde okunmaz, zararsız).
+
+**Kontrol:** chk.js 0 hata. 25. günde −11°'de üşüme artıyor, Kemal'in ateşinde azalıyor, 95'te can düşüyor. 3. günde (ilkbahar) yağış kar değil. Buzlanma 20/55/95'te ekran görüntüsüyle bakıldı.
+
 ## v3.96 (9 Kasım 2026) · yeni çizimler parlama sarmalının içinde
 
 **Değişen yerler:** `v395cayir` artık `drawNode`'u sarmıyor (en dışta durup öğretici/görev parlamasını, `gl()`, atlıyordu); çizimleri `window.__plCayirL`'e koyuyor, ana `drawNode` (satır ~4266) en başta onu okur. Yaprak'ın ×0,7 küçültme sarmalı yeni yaprakta atlanır. Pazar: `v394pazar` stilinin `box-shadow:none!important`'ı `.pulse`'u eziyordu; aynı blokta `ul.mkt li button.pulse` / `.ctools button.pulse` kuralı eklendi. Satış satırında `.sq1` (Sat) ve `[data-sell=all]` (Hepsi) düğmeleri tutarsız (satır ~3155, adet değişince ~3436). `v189` bloğundaki yumruk dersi tıklama yakalayıcısı (`tz===11&&ftut===2`) artık `__plDL.done||__plDL.tree` iken (ders bitti, ağaç adımı) devre dışı. Sürüm etiketi `Versiyon 3.96`.
@@ -151,12 +159,4 @@
 **Geri alma:** `GAP`'i 9, halkayı `10+…*18` yap ve `placed`'i grup başına diziye geri çevir (ya da `git revert`).
 
 **Kontrol:** chk.js 0 hata. Yeni oyun, bitki 3762 → 3702: en yakın komşusu 16 px'ten yakın olan 2144 → 13, 10 px'ten yakın 204 → 6 (öbeklenmeyen kamp çevresi); öbekte duran 2888. Kurulum 36 → 50 ms (bir kez).
-
-## v3.77 (8 Kasım 2026) · biyom + mağara tek mantar, Keme, tekrarlayan görev malzemeleri
-
-**Değişen yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):** Çayır mantarı, Mağara mantarı, Kök mantarı kaynaktan silindi (ilk bitki tablosu, `DOG_MATS`, `RHINT`, `PLANTC`, `B4PLANT`, `RAWFOOD`, `P1I`/`P1W`, `BPLANT`, `MINEPL` ve döngüdeki istisna, `POISON`, `ODD`, mağara `RAW` ve `CAVES[].raw`, v372 `SKIP`, `FIRE_R`); `addR('Kök mantarlı güveç')` → `Kanlıcalı güveç` (2 Kanlıca, `PX_` resmi aynı), `Kök özü iksiri` 2 Kök reçinesi; Yankı mantarı çiziminden Kök dalı kalktı. Çizim kuralı: mantar dalına `(^| )[Kk]eme$`, çorba dalına `güveç$`. `__I2C.plants[2]`'ye Keme. Görev verisi: Y1, Y6, NF1, NF2, Z7, DU7, AL6, KA7, KA8 ("Pençe ve çakmak"), ME8, KU8. `v373sade` v3.77 satırları: 7 eşya `FOODX` + `OLDP` (sikke), `REPL['Kök mantarlı güveç']`, Keme fiyatı 22 / `RAWFOOD`, `Kızarmış keme` tarifi (66, ateş). Sürüm etiketi `Versiyon 3.77`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. Denetim (3.76 ↔ 3.77): eşya 1344 → 1341, tarif 980 → 979, bilinmeyen 0, fiyatsız 0, yeni kullanılmayan ham 0 (Mağara kurdu eti Kanlıcalı güveçte). Mantar sayımı: ACT 1 Kanlıca 49, Sinek 43, Kayın 37, Işık 43 (dışarıda; Yankı ve Kül mağarada); ACT 2 Gök 41, Işıldak 50, Keme 42, Kristal 43, Kor 44, Yıldız 41. Resim: Keme, Kızarmış keme, Kanlıcalı güveç iki adada da torba değil. Eski kayıt: 3 Çayır + 2 Kök + 2 Mağara mantarı → 54 sikke, Kök mantarlı güveç → Kanlıcalı güveç.
 
