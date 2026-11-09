@@ -1,3 +1,17 @@
+## v4.02 (9 Kasım 2026) · mor ışık: daha hafif, kamplara girer, kişiler yardım eder
+
+**Değişen yerler:**
+- `ownCamp`/`campFor` (satır ~5712): Yıldızsızlar (`a.ysA`) için güvenli yer yalnızca oyuncunun kamp ateşi. Saldırganlık (~5750), geri çekilme (~5772) ve kamp sınırı (`moveA`/`tickAnimals` sarmalları ~15725) bunu kullanıyor.
+- `v330ys`: `sheltered` ve `spot` yalnızca `ownCamp` ile çalışıyor; sayı ×0,75 (3–9), can/hasar ×0,75, başlangıç değerleri ×0,75; `ATK.P` ve `__plYS.atk()` dışa açıldı.
+- Yeni `v402yard` bloğu (dosya sonu): Börü `alp`'i hareket ettirip saldırı bitince yerine döndürüyor (kayıtta evdeki yeri). Zümrüt ışın yolluyor; Kemal iyileştiriyor.
+- `hitIn` (~13530): daire tutmazsa `visBox` üzerinde 5×4 nokta deniyor.
+- `moveA` (~5743): geçilemez yerde duran canlı en yakın geçilebilir yere yürüyor.
+- Sürüm etiketi `Versiyon 4.02`.
+
+**Geri alma:** `git revert` bu commit (Börü'nün yeri kayda hep evdeki yeriyle yazılır).
+
+**Kontrol:** chk.js 0 hata. 11. gün Börü'nün yanında saldırı: Börü bir gözcü öldürdü. Kemal'in yanında can 50 → 66. Zümrüt'ün yanında tükürücü 22 → 6. Suda kalan Kerevit Reisi 3,5 sn'de karaya çıktı.
+
 ## v4.01 (9 Kasım 2026) · üzerine gelme etiketi: yeni görünüş, dövüşte gizli
 
 **Değişen yerler:** Yeni `v401tip` (stil) ve `v401tipjs` bloğu (dosya sonu). `#hovtip` (v146) yeni görünüşte. `data-k` (red/amber/green) yazıdan çıkarılıyor; kenara taşarsa `flipx`/`flipy`. `attack` sarılıp son vuruş zamanı tutuluyor. `body.plfight` 120 ms'de bir hesaplanıyor: vuruştan sonra 3 sn, `inFight()`, `underAttack()` ya da 260 px içinde kızgın/kovalayan canlı. `body.plfight` iken etiket `display:none`. B1 (DATA) parçaları `[['campup'],['c','cook',1,…]]`, sözü, sahnesi ve `LES.camp` 3. adımı değişti; yeni parça `campup` (yanan kamp ateşi ya da kabulden sonra kurulan ateş, sayaç `campset` 7407), `cook` sayacı `finishOne`'da (ateşte her pişen). `partTarget` `c/cook` en yakın yanan ateşi gösterir. El yapımı satırında `data-hrow=""${…}"` yazım hatası (v3.35'ten beri Takip et boş adla çağrılıyordu) düzeltildi. Takip şeridi: `v401trk`/`v401trkjs` (dosya sonu) simgeli satırlar, `title`lar kaldırılıp kendi kartımız (`#b3tip`) tarif etiketinde de açılıyor. `ePick` ve E/F ağaç önceliği: havadaki düşenler (`age>=0`) iniş noktasına göre alınıyor. Sürüm etiketi `Versiyon 4.01`.
@@ -149,12 +163,4 @@
 **Geri alma:** iki bloğu sil.
 
 **Kontrol:** chk.js 0 hata. 1920×1080'de yalnız Kaba meşale bilinirken üstüne gelince kutu tam görünüyor (ekran görüntüsü); tz=6 kartında `#torchslot` `pulse` animasyonunda.
-
-## v3.82 (8 Kasım 2026) · ACT 2 çiğ yiyecekleri FOODT'ten
-
-**Değişen yerler:** v77 bloğundaki `Object.assign(RAWFOOD,{'Bulut elması':8,'Goblin eriği':6,'Gök mantarı':3,'Kök yumrusu':5})` silindi (FOODT'teki 26/29/25/29 eziliyordu; belge FOODT'i yazıyordu). `FOODT`'a `'Keme':[8,30,'doygun']`; `v373sade`'deki `RAWFOOD['Keme']=4` silindi. Sürüm etiketi `Versiyon 3.82`.
-
-**Geri alma:** satırı geri koy (ya da `git revert`).
-
-**Kontrol:** chk.js 0 hata. Yeni oyun ACT 2 çiğ tokluk: Gök mantarı 25, Bulut elması 26, Rüzgâr eriği 26, Kök yumrusu 29, Spor elması 29, Goblin eriği 29, Keme 30, Çöl inciri 31, Buz armudu 33, Lav narı 35, Yıldız kirazı 37.
 

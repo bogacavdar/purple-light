@@ -8,6 +8,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.02 · 9 Kasım 2026
+
+### Oynanış
+- **Mor ışık saldırıları %25 daha hafif:** Yıldızsızların sayısı (en çok 9) ve canları ile vuruşları %25 azaldı.
+- **Yıldızsızlar kişilerin kamplarına da giriyor:** Kemal'in kampı, Zümrüt'ün kazanı, Dursun'un ocağı ve kişilerin ateşleri artık seni korumuyor; saldırıyı da ertelemiyor. Yalnızca kendi yaktığın kamp ateşi ve evin içi güvenli.
+- **Kişiler yardım ediyor:** mor ışık onların yanına gelirse savaşa katılıyorlar:
+  - **Savaşçı Börü** Yıldızsızlara koşup kılıç sallıyor, bitince yerine dönüyor.
+  - **Cadı Zümrüt** birkaç saniyede bir büyü ışını yolluyor.
+  - **Yaşlı Kemal** yanındaysan birkaç saniyede bir yaralarını sarıyor (canının %8'i).
+
+### Düzeltmeler
+- **Silahlar değdiği yere vuruyor:** mızrakla (ve öbür silahların özel vuruşlarıyla) atların kafasına ya da bir canlının uzun yerlerine değince hasar gitmiyordu; artık canlının çizildiği her yer sayılıyor.
+- **Suda takılan canlılar:** Kerevit Reisi gibi suya ya da duvara sıkışan bir canlı olduğu yerde donup kalıyordu; artık en yakın kuru yere çıkıp savaşa devam ediyor.
+
+---
+
 ## Versiyon 4.01 · 9 Kasım 2026
 
 ### Oynanış
@@ -265,16 +281,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **El yapımında tarifin malzemeleri kesilmiyor:** bir tarifin üstüne gelince açılan malzeme kutusu listenin son satırlarında pencerenin altında kesiliyordu (yalnız Kaba meşale varken bile yarım görünüyordu). Artık son satırlarda yukarı doğru açılıyor.
 - **El yapımı penceresi hep aynı boyda:** bilgisayarda pencere tarif sayısına göre büyüyüp küçülmüyor; her açılışta kemerin üstüne kadar uzanan aynı boyda açılıyor, liste içinde kayıyor.
 - **Meşale yuvası yanıp sönüyor:** Zümrüt'ün "Meşaleyi yak" ve "Meşaleyi söndür" kartları "yanıp sönen meşale yuvasına tıkla" derken yuva yanıp sönmüyordu; artık sönüyor.
-
----
-
-## Versiyon 3.82 · 8 Kasım 2026
-
-### Düzeltmeler
-- **İkinci adanın çiğ yiyecekleri belgedeki gibi doyuruyor:** Bulut elması, Goblin eriği, Gök mantarı ve Kök yumrusu eski bir ayar yüzünden 3–8 tokluk veriyordu (Mor Kristal Vadisi'nin meyveleri 21–24 verirken). Artık belgedeki gibi 25–29; Keme de 30. Biyomdan biyoma tokluk düzgün artıyor.
-
-### Tasarım belgesi
-- Yiyecek etkileri tablosuna Keme; Keme satırları.
 
 ---
 

@@ -1378,7 +1378,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 4.01</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 4.02</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1453,7 +1453,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 4.01 · 9 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Börü'nün "Ateş başında nöbet" görevi yenilendi:</strong> artık gece ateşin başında bir dakika beklemiyorsun; <strong>kamp ateşi kur ve başında bir şey pişir</strong> (ateşin yanında F → pişirme menüsü). Görev kartında iki satır var: "Kamp ateşi kur" ve "0/1 kamp ateşinde yemek pişir"; ok önce ateşin malzemelerini, sonra ateşini gösteriyor. Görev sende açıksa ve bir ateşin yanıyorsa ilk satır hemen tamam sayılır.</li><li><strong>Düşenleri F ile hemen topla:</strong> bir hayvanı öldürünce düşenler daha yere inerken bile F ile hemen toplanıyor; beklemene gerek yok.</li></ul><h3>Düzeltmeler</h3><ul><li><strong>El yapımında "Takip et" çalışıyor:</strong> El yapımı penceresindeki Takip et düğmelerine basınca hiçbir şey olmuyordu; artık tarifi takip şeridine ekliyor.</li></ul><h3>Arayüz</h3><ul><li><strong>Takip şeridi küçük simgeler:</strong> ekranın üstündeki takip şeridinde artık yazı yok; her tarif bir satır, malzemeleri küçük kare resimler ve köşelerinde sayıları (tamam olanlar yeşil). Bir resmin üstüne gelince şık bir kartta adı, sende kaç tane olduğu ve nereden geldiği yazıyor. Şerit küçüldüğü için görev kartının üstüne binmiyor.</li><li><strong>Üzerine gelme etiketleri yenilendi:</strong> farenle bir canlının, ağacın ya da eşyanın üstüne gelince çıkan etiket artık koyu, küçük bir kart; solundaki renkli şerit canlının huyunu gösteriyor (saldırgan kırmızı, kızdırırsan saldırır turuncu, zararsız yeşil). Ekranın kenarından taşmıyor.</li><li><strong>Dövüşte etiket çıkmıyor:</strong> bir hayvana vurduktan sonra 3 saniye, seni kovalayan ya da sana kızmış bir hayvan yakındayken ve ısırıldıktan sonra etiketler görünmüyor; savaşırken önünü kapatmıyorlar.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 4.02 · 9 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Mor ışık saldırıları %25 daha hafif:</strong> Yıldızsızların sayısı (en çok 9) ve canları ile vuruşları %25 azaldı.</li><li><strong>Yıldızsızlar kişilerin kamplarına da giriyor:</strong> Kemal'in kampı, Zümrüt'ün kazanı, Dursun'un ocağı ve kişilerin ateşleri artık seni korumuyor; saldırıyı da ertelemiyor. Yalnızca kendi yaktığın kamp ateşi ve evin içi güvenli.</li><li><strong>Kişiler yardım ediyor:</strong> mor ışık onların yanına gelirse savaşa katılıyorlar:<ul><li><strong>Savaşçı Börü</strong> Yıldızsızlara koşup kılıç sallıyor, bitince yerine dönüyor.</li><li><strong>Cadı Zümrüt</strong> birkaç saniyede bir büyü ışını yolluyor.</li><li><strong>Yaşlı Kemal</strong> yanındaysan birkaç saniyede bir yaralarını sarıyor (canının %8'i).</li></ul></li></ul><h3>Düzeltmeler</h3><ul><li><strong>Silahlar değdiği yere vuruyor:</strong> mızrakla (ve öbür silahların özel vuruşlarıyla) atların kafasına ya da bir canlının uzun yerlerine değince hasar gitmiyordu; artık canlının çizildiği her yer sayılıyor.</li><li><strong>Suda takılan canlılar:</strong> Kerevit Reisi gibi suya ya da duvara sıkışan bir canlı olduğu yerde donup kalıyordu; artık en yakın kuru yere çıkıp savaşa devam ediyor.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 Vio</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -5709,6 +5709,8 @@ const TEMPC={'zararsız':'#8fd46b','nötr':'#f2d070','saldırgan':'#ff6a5a'};
 const animals=[];let animT=0,pInv=0,fightSeen=false;
 const SAFE_R=22*T;   // nothing dangerous near Kemal's fire
 const nearCamp=(x,y)=>!(window.__plLessonAt&&window.__plLessonAt(x,y))&&(camps.some(c=>c.t>0&&Math.hypot(x-c.x,y-c.y)<100)||Math.hypot(x-npc.home.x,y-npc.home.y)<SAFE_R||FIRES.some(f=>Math.hypot(x-f.x,y-f.y)<120)||Math.hypot(x-furnace.x,y-furnace.y)<120||(witchShown&&Math.hypot(x-cauldron.x,y-cauldron.y)<120));   // v1.73: a campfire does not calm Börü's practice foe during a lesson
+const ownCamp=(x,y)=>camps.some(c=>c.t>0&&Math.hypot(x-c.x,y-c.y)<100);   // v4.02 (Boğaç): only your own fire keeps the Yıldızsızlar out
+const campFor=(a,x,y)=>a&&a.ysA?ownCamp(x,y):nearCamp(x,y);   // v4.02: the Yıldızsızlar walk into the people's camps
 // animals that can fight back roam in herds and packs: hit one (or get too close to a pack) and they all come
 const PACK={'Geyik':[2,5],'Karaca':[2,4],'Yaban öküzü':[2,3],'Yaban domuzu':[2,5],'Kurt':[2,5],'Bataklık kurdu':[2,4],'Kül kurdu':[2,4]};
 let packId=0;
@@ -5738,19 +5740,24 @@ function spawnAnimals(){
       break}}
   for(let i=animals.length-1;i>=0;i--){const a=animals[i],d=Math.hypot(a.x-player.x,a.y-player.y);if(!a.tut&&(d>760||(ANIM[a.k].night&&!isNight()&&d>360)))animals.splice(i,1)}
 }
-function moveA(a,vx,vy,dt){const nx=a.x+vx*dt,ny=a.y+vy*dt;if(!blocked(nx,a.y)&&reachAt(nx,a.y))a.x=nx;else a.t=0;if(!blocked(a.x,ny)&&reachAt(a.x,ny))a.y=ny;else a.t=0;if(vx)a.face=vx>0?1:-1}
+function moveA(a,vx,vy,dt){
+  if(blocked(a.x,a.y)||!reachAt(a.x,a.y)){   // v4.02 (Boğaç: "reis suda takıldı, hiçbir şey yapmıyor"): one that stands where it may not stand (water, a wall) steps out to the nearest place it may
+    for(let r=6;r<=200;r+=6){let bx=0,by=0,bd=1e9;for(let k=0;k<16;k++){const an=k/16*6.283,x=a.x+Math.cos(an)*r,y=a.y+Math.sin(an)*r;if(blocked(x,y)||!reachAt(x,y))continue;const d=Math.hypot(x-player.x,y-player.y);if(d<bd){bd=d;bx=x;by=y}}
+      if(bd<1e9){const d=Math.hypot(bx-a.x,by-a.y),v=Math.min(d,Math.max(60,Math.hypot(vx,vy))*dt*1.5);a.x+=(bx-a.x)/d*v;a.y+=(by-a.y)/d*v;if(bx!==a.x)a.face=bx>a.x?1:-1;return}}
+    return}
+  const nx=a.x+vx*dt,ny=a.y+vy*dt;if(!blocked(nx,a.y)&&reachAt(nx,a.y))a.x=nx;else a.t=0;if(!blocked(a.x,ny)&&reachAt(a.x,ny))a.y=ny;else a.t=0;if(vx)a.face=vx>0?1:-1}
 function tickAnimals(dt){
   if(!hungerOn()&&!met)return;
   animT-=dt;if(animT<=0){animT=1.5;spawnAnimals()}
   pInv-=dt;
   const PC={};for(const a of animals)if(a.pk){const c=PC[a.pk]||(PC[a.pk]={x:0,y:0,n:0});c.x+=a.x;c.y+=a.y;c.n++}
   for(const a of animals){const D=ANIM[a.k],dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;
-    if(D.temper==='saldırgan'&&!a.mad&&d<D.aggro*(weather.k==='sis'?.6:1)*(boarSoft(a)?.6:1)&&!nearCamp(a.x,a.y)&&!nearCamp(player.x,player.y)&&!fading&&!sailing)madPack(a);
+    if(D.temper==='saldırgan'&&!a.mad&&d<D.aggro*(weather.k==='sis'?.6:1)*(boarSoft(a)?.6:1)&&!campFor(a,a.x,a.y)&&!campFor(a,player.x,player.y)&&!fading&&!sailing)madPack(a);
     a.flash-=dt;a.atk-=dt;a.step+=dt;
     if(a.kb){a.kb.t-=dt;moveA(a,a.kb.vx,a.kb.vy,dt);if(a.kb.t<=0)a.kb=null;continue}
     if(D.temper==='nötr'&&a.mad&&d>220)a.mad=false;
     if(D.temper==='saldırgan'&&a.mad&&d>D.aggro*2&&!a.lunge&&!(a.wind>0))a.mad=false;   // they give up a long chase
-    const angry=(D.temper==='saldırgan'&&(a.mad||d<D.aggro*(boarSoft(a)?.6:1))||D.temper==='nötr'&&a.mad)&&!beam&&!nearCamp(a.x,a.y)&&!nearCamp(player.x,player.y)&&!fading&&!sailing;
+    const angry=(D.temper==='saldırgan'&&(a.mad||d<D.aggro*(boarSoft(a)?.6:1))||D.temper==='nötr'&&a.mad)&&!beam&&!campFor(a,a.x,a.y)&&!campFor(a,player.x,player.y)&&!fading&&!sailing;
     if(D.temper==='zararsız'&&!D.still&&(d<70||a.mad)){a.st='flee';moveA(a,-dx/d*D.spd,-dy/d*D.spd,dt);if(d>200)a.mad=false}
     else if(angry){a.st='chase';
       if(D.ranged){const Rg=D.ranged;
@@ -5767,7 +5774,7 @@ function tickAnimals(dt){
     else{a.st='wander';a.t-=dt;if(a.t<=0){a.t=1.5+Math.random()*2.5;const an=Math.random()*Math.PI*2,go=Math.random()<.6;a.dx=go?Math.cos(an):0;a.dy=go?Math.sin(an):0}
       const c=a.pk&&PC[a.pk];if(c&&c.n>1){const gx=c.x/c.n-a.x,gy=c.y/c.n-a.y,gd=Math.hypot(gx,gy);if(gd>34){a.dx=gx/gd;a.dy=gy/gd}}   // the herd keeps together
       if(a.dx||a.dy)moveA(a,a.dx*D.spd*.3,a.dy*D.spd*.3,dt)}
-    if(nearCamp(a.x,a.y)&&D.aggro){a.mad=false;moveA(a,-dx/d*D.spd*.6,-dy/d*D.spd*.6,dt)}
+    if(campFor(a,a.x,a.y)&&D.aggro){a.mad=false;moveA(a,-dx/d*D.spd*.6,-dy/d*D.spd*.6,dt)}
   }
 }
 // a bite or a claw that landed: armour softens it; dodging makes you untouchable
@@ -13526,7 +13533,11 @@ function whoosh(){try{sfx('swing')}catch(e){}}
 function sparks(a,c){const cs=c||['#ffffff','#fff2b0','#e86a4a'];for(let i=0;i<12;i++){const t=Math.atan2(a.y-player.y,a.x-player.x)+(Math.random()-.5)*2.4,s=50+Math.random()*90;parts.push({x:a.x,y:a.y-6,vx:Math.cos(t)*s,vy:Math.sin(t)*s-30,life:.2+Math.random()*.25,c:cs[i%cs.length]})}}
 // damage every creature inside a shape: test(dx,dy,d,r)
 function hitIn(test,m,o){o=o||{};let n=0,big=0;const B=base();
-  for(const a of animals.slice()){const D=ANIM[a.k];if(!D)continue;const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy),R=(D.r||6)*(a.scale||1);if(!test(dx,dy,d,R))continue;
+  for(const a of animals.slice()){const D=ANIM[a.k];if(!D)continue;let dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy);const R=(D.r||6)*(a.scale||1);
+    if(!test(dx,dy,d,R)){   // v4.02 (Boğaç: "mızrak değmesine rağmen atların kafasına hasar yemedi"): the whole drawing counts, not only a circle round the feet: head, neck, tail
+      let ok=false;try{const M=visBox(a.k);if(M){const s=Math.max(.25,+(a.scale||1)||1),f=a.face<0?-1:1,l0=f>0?a.x+M.l*s:a.x-M.r*s,r0=f>0?a.x+M.r*s:a.x-M.l*s,t0=a.y+M.t*s,b0=a.y+M.b*s;
+        for(let i=0;i<=4&&!ok;i++)for(let j=0;j<=3&&!ok;j++){const px_=l0+(r0-l0)*i/4,py_=t0+(b0-t0)*j/3,ex=px_-player.x,ey=py_-player.y,e=Math.hypot(ex,ey);if(test(ex,ey,e,2)){ok=true;dx=ex;dy=ey;d=e}}}}catch(e){}
+      if(!ok)continue}
     if(o.once){if(o.once.has(a))continue;o.once.add(a)}
     const dm=Math.max(1,Math.round(B.dm*m));a.hp-=dm;a.flash=.15;try{madPack(a)}catch(e){}const k=(o.kb||140)*(a.boss?.3:1);a.kb={vx:dx/(d||1)*k,vy:dy/(d||1)*k,t:.12};
     if(o.stun)a.stun=Math.max(a.stun||0,a.boss?o.stun*.6:o.stun);if(o.stun&&a.mv)a.mv=null;
@@ -15720,13 +15731,13 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  // cauldron, your campfire): a step that would cross the edge is not taken. One that is inside anyway (a charge, a leap) walks out
  // by the nearest way. Harmless ones wander as before; Börü's lesson creatures and the arena are left alone.
  const fighter=a=>{if(!a||a.tut||a.ders||window.__plArena)return false;const D=ANIM[a.k];return !!D&&(D.temper==='saldırgan'||D.temper==='nötr'||!!a.boss)};
- {const _ma=moveA;moveA=function(a,vx,vy,dt){try{if(fighter(a)&&!nearCamp(a.x,a.y)){const nx=a.x+vx*dt,ny=a.y+vy*dt;
-     if(nearCamp(nx,ny)){const okx=!nearCamp(nx,a.y),oky=!nearCamp(a.x,ny);if(!okx&&!oky){a.t=0;if(vx)a.face=vx>0?1:-1;return}
+ {const _ma=moveA;moveA=function(a,vx,vy,dt){try{if(fighter(a)&&!campFor(a,a.x,a.y)){const nx=a.x+vx*dt,ny=a.y+vy*dt;
+     if(campFor(a,nx,ny)){const okx=!campFor(a,nx,a.y),oky=!campFor(a,a.x,ny);if(!okx&&!oky){a.t=0;if(vx)a.face=vx>0?1:-1;return}
        return _ma.call(this,a,okx?vx:0,oky&&!okx?vy:(okx?0:vy),dt)}}}catch(e){}
    return _ma.apply(this,arguments)}}
  const DIRS8=[[1,0],[-1,0],[0,1],[0,-1],[.707,.707],[-.707,.707],[.707,-.707],[-.707,-.707]];
- {const _ta2=tickAnimals;tickAnimals=function(dt){const r=_ta2.apply(this,arguments);try{if(!dt)return r;for(const a of animals){if(!fighter(a)||a.mv||a.lunge||!nearCamp(a.x,a.y))continue;
-     let best=null;for(let k=40;k<=400&&!best;k+=60)for(const d of DIRS8){const x=a.x+d[0]*k,y=a.y+d[1]*k;if(!nearCamp(x,y)&&!blocked(x,y)){best=d;break}}
+ {const _ta2=tickAnimals;tickAnimals=function(dt){const r=_ta2.apply(this,arguments);try{if(!dt)return r;for(const a of animals){if(!fighter(a)||a.mv||a.lunge||!campFor(a,a.x,a.y))continue;
+     let best=null;for(let k=40;k<=400&&!best;k+=60)for(const d of DIRS8){const x=a.x+d[0]*k,y=a.y+d[1]*k;if(!campFor(a,x,y)&&!blocked(x,y)){best=d;break}}
      if(best){const sp=(ANIM[a.k].spd||30)*.9,nx=a.x+best[0]*sp*dt,ny=a.y+best[1]*sp*dt;if(!blocked(nx,ny)){a.x=nx;a.y=ny}if(best[0])a.face=best[0]>0?1:-1;a.st='wander'}}}catch(e){}return r}}
  // v2.22: the almanac card tells what a creature can do: its attacks, the effect each hit leaves, its special moves (each with a short
  // line), its traits (immunity, agile, big) and what its Reis adds. All from the creature's real numbers.
@@ -20348,8 +20359,8 @@ const YD={
  'Yıldızsız dev':{hits:14,pc:.14,spd:38,r:10,coin:[40,60],reach:40,wind:.7}};
 const KINDS=Object.keys(YD);
 function setStats(P,H){const dk=1+Math.min(.8,day*.02);
-  for(const k of KINDS){const d=YD[k],D=ANIM[k];D.hp=Math.max(4,Math.round(d.hits*P*dk));D.dmg=Math.max(2,Math.round(d.pc*H*dk));D.xp=Math.round(d.hits*3*(1+lvl*.15))}}
-for(const k of KINDS){const d=YD[k];ANIM[k]={ys:1,temper:'saldırgan',hp:d.hits*10,dmg:Math.round(d.pc*100),spd:d.spd,r:d.r,xp:d.hits*3,aggro:520,land:t=>t<=2,drops:[]};
+  for(const k of KINDS){const d=YD[k],D=ANIM[k];D.hp=Math.max(3,Math.round(d.hits*P*dk*.75));D.dmg=Math.max(2,Math.round(d.pc*H*dk*.75));   /* v4.02 (Boğaç): 25 % weaker */D.xp=Math.round(d.hits*3*(1+lvl*.15))}}
+for(const k of KINDS){const d=YD[k];ANIM[k]={ys:1,temper:'saldırgan',hp:Math.round(d.hits*10*.75),dmg:Math.round(d.pc*100*.75),spd:d.spd,r:d.r,xp:d.hits*3,aggro:520,land:t=>t<=2,drops:[]};
   if(d.ranged)ANIM[k].ranged=Object.assign({},d.ranged);if(d.reach){ANIM[k].reach=d.reach;ANIM[k].wind=d.wind}}
 const S={next:6,at:1200,cnt:0};
 // v3.31 (Boğaç): fixed days (6, 11, 18, 22, 31…; gaps 5,7,4,9,6,3,8 repeating), never on a day with its own event, at the very start of the night
@@ -20358,23 +20369,23 @@ const free=d=>{while(d<=3||SPECIAL.has(d))d++;return d};
 function seqFrom(m){let d=6,i=0;while(d<m){d+=GAPS[i%GAPS.length];i++}return free(d)}
 function fresh(){S.next=6;S.at=1200;S.cnt=0}
 fresh();
-window.__plYS={kinds:KINDS,show:()=>S.cnt>0||KINDS.some(k=>(kills[k]||0)>0),S,busy:()=>!!ATK,go:()=>{if(!ATK&&!waitNow()&&!sheltered())start();return !!ATK}};   // v3.68 (go/busy/S): Mor gece
+window.__plYS={atk:()=>ATK,kinds:KINDS,show:()=>S.cnt>0||KINDS.some(k=>(kills[k]||0)>0),S,busy:()=>!!ATK,go:()=>{if(!ATK&&!waitNow()&&!sheltered())start();return !!ATK}};   // v3.68 (go/busy/S): Mor gece
 {const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{s.v330ys={n:S.next,a:S.at,c:S.cnt,f:2}}catch(e){}return s}}
 try{if(hot&&hot.snapshot)hot.snapshot(snapshot)}catch(e){}
 {const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{ATK=null;const v=d&&d.v330ys;S.cnt=v?(+v.c||0):0;S.at=1200;if(v&&v.f===2&&+v.n>0)S.next=+v.n;else S.next=seqFrom(dayT>=1260?day+1:day)}catch(e){}return r}}
 {const _rz=resetState;resetState=function(){const r=_rz.apply(this,arguments);try{ATK=null;fresh()}catch(e){}return r}}
 let ATK=null,FADE=null;
 const alive=()=>animals.filter(a=>a.ysA);
-const sheltered=()=>roomSafe()||!!(window.__plCave&&window.__plCave.cur)||!!sailing||nearCamp(player.x,player.y);   // at 20:00 here → the next day without an event
+const sheltered=()=>roomSafe()||!!(window.__plCave&&window.__plCave.cur)||!!sailing||ownCamp(player.x,player.y);   /* v4.02 (Boğaç): the people's camps no longer put a raid off; your own fire still does */   // at 20:00 here → the next day without an event
 const waitNow=()=>onTitle||!!window.__plArena||!met||!!wake||fading||dlgOpen||craftOpen||paused||!!(cine&&cine.on)||!!beam;
 function spot(C){for(let k=0;k<80;k++){const a=Math.random()*6.283,r=60+Math.random()*(C.R-80),x=C.x+Math.cos(a)*r,y=C.y+Math.sin(a)*r;
-  if(Math.hypot(x-player.x,y-player.y)<90)continue;if(!reachAt(x,y)||isWater(tileAt(x,y))||nearCamp(x,y))continue;try{if(blocked(x,y))continue}catch(e){continue}return{x,y}}return null}
+  if(Math.hypot(x-player.x,y-player.y)<90)continue;if(!reachAt(x,y)||isWater(tileAt(x,y))||ownCamp(x,y))continue;try{if(blocked(x,y))continue}catch(e){continue}return{x,y}}return null}
 function pickKinds(n){const L=['Yıldızsız gözcü','Yıldızsız sürüngen'];if(lvl>=5||day>=8)L.push('Yıldızsız tükürücü');const big=lvl>=12||day>=18;let devs=0;const out=[];
   for(let i=0;i<n;i++){if(big&&devs<2&&Math.random()<.18){out.push('Yıldızsız dev');devs++;continue}out.push(L[(Math.random()*L.length)|0])}return out}
 function queue(C,list){let i=0;for(const k of list){const s=spot(C);if(!s)continue;C.pend.push({k,x:s.x,y:s.y,t:.7+i*.18});i++}}
 function start(){const w=weapon(),P=Math.max(6,w&&w.dmg||0,WDMG[equip.silah]||0);setStats(P,maxHP());
-  const n=Math.max(4,Math.min(12,4+Math.floor(day/5)+Math.floor(lvl/6))),list=pickKinds(n);
-  ATK={x:player.x,y:player.y,R:256,t:0,pend:[],w2:list.slice(Math.ceil(n/2)),w2done:false,a:0};queue(ATK,list.slice(0,Math.ceil(n/2)));
+  const n=Math.max(3,Math.min(9,Math.round((4+Math.floor(day/5)+Math.floor(lvl/6))*.75))),list=pickKinds(n);   /* v4.02 (Boğaç): 25 % fewer */
+  ATK={x:player.x,y:player.y,R:256,t:0,pend:[],w2:list.slice(Math.ceil(n/2)),w2done:false,a:0,P};queue(ATK,list.slice(0,Math.ceil(n/2)));
   S.cnt++;try{announce('Mor ışık saldırısı!','Yıldızsızlar geliyor')}catch(e){}try{sfx('bad');sfx('growl')}catch(e){}shake=Math.max(shake||0,.45);shakeP=Math.max(shakeP||0,3)}
 function end(win,timeUp){if(!ATK)return;const C=ATK;ATK=null;FADE={x:C.x,y:C.y,R:C.R,t:1};
   // v3.34 (Boğaç): nobody hurt, nobody fainted, the whole raid through: they wave and go (secret "Konuk")
@@ -23515,6 +23526,47 @@ bar.addEventListener('pointerover',e=>{if(e.pointerType!=='mouse')return;
     tip.innerHTML=`<b>${n.replace(/[<>&]/g,'')}</b><span class="b3n${ok===cs.length?' ok':''}">${ok===cs.length?'✓ Hazır':'Takip edilen tarif'} · malzeme ${ok}/${cs.length}</span>`;tip.hidden=false;place(l)}});
 bar.addEventListener('pointerout',e=>{if(e.pointerType!=='mouse')return;const l=e.target.closest('.b3lab');if(l&&!l.contains(e.relatedTarget))tip.hidden=true});
 }catch(e){try{window.__hamErr('v401trk: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v402yard">
+// v4.02 (Boğaç, 9 Kasım 2026: "mor ışık canlıları NPC kamplarına girebilsin; bazı NPC'ler yardım etsin: Börü savaşsın, Zümrüt büyü yapsın,
+// Kemal can takviyesi versin"). A raid whose purple ground reaches one of them brings that one in.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const Y=()=>window.__plYS&&window.__plYS.atk?window.__plYS.atk():null;
+const ys=()=>animals.filter(a=>a.ysA&&a.hp>0);
+const isle1=()=>typeof ISLE==='undefined'||ISLE===1;
+const inZone=(C,o)=>!!o&&o.x>-9e4&&Math.hypot(o.x-C.x,o.y-C.y)<C.R+60;
+let H={raid:null,said:{},home:null,bT:0,zT:0,kT:0};
+function hit(a,dm,c){a.hp-=dm;a.flash=Math.max(a.flash||0,.15);floats.push({x:a.x,y:a.y-12,t:0,text:`-${dm}`,color:c});if(a.hp<=0&&animals.indexOf(a)>=0)killAnimal(a)}
+function say1(k,o,txt,toastTxt){if(H.said[k])return;H.said[k]=1;floats.push({x:o.x,y:o.y-30,t:0,text:txt,color:'#ffe08a',size:12});try{toast(toastTxt)}catch(e){}}
+function nearest(o,R){let b=null,bd=R;for(const a of ys()){const d=Math.hypot(a.x-o.x,a.y-o.y);if(d<bd){bd=d;b=a}}return b}
+let last=performance.now();
+setInterval(()=>{const now=performance.now(),dt=Math.min(.25,(now-last)/1000);last=now;try{
+  if(onTitle||window.__plArena||paused||dlgOpen||craftOpen)return;
+  const C=Y();
+  // Börü walks home when it is over
+  if(!C||!isle1()){if(H.home){const h=H.home,d=Math.hypot(h.x-alp.x,h.y-alp.y);if(d<3){alp.x=h.x;alp.y=h.y;H.home=null}else{const v=Math.min(d,60*dt);alp.x+=(h.x-alp.x)/d*v;alp.y+=(h.y-alp.y)/d*v}}
+    if(!C)H.raid=null;return}
+  if(H.raid!==C){H.raid=C;H.said={};H.bT=0;H.zT=1.5;H.kT=2}
+  const P=C.P||6;
+  // Börü fights: runs at the nearest one within his reach of home and strikes like you do
+  if(inZone(C,H.home||alp)&&!(window.__plDLTree&&(window.__plDLTree()===1||window.__plDLTree()===2))){if(!H.home)H.home={x:alp.x,y:alp.y};
+    const t=nearest(H.home,260);H.bT-=dt;
+    if(t){const d=Math.hypot(t.x-alp.x,t.y-alp.y);say1('b',alp,'Arkandayım!','Savaşçı Börü Yıldızsızlarla savaşıyor!');
+      if(d>14){const v=Math.min(d-12,95*dt);alp.x+=(t.x-alp.x)/d*v;alp.y+=(t.y-alp.y)/d*v}
+      else if(H.bT<=0){H.bT=1;hit(t,Math.max(2,Math.round(P*1.1)),'#ffd27a');try{sfx('hit')}catch(e){}for(let k=0;k<6;k++)parts.push({x:t.x,y:t.y-8,vx:(Math.random()-.5)*60,vy:-20-Math.random()*30,life:.35,c:k%2?'#fff2c0':'#ffb060'})}}
+    else{const h=H.home,d=Math.hypot(h.x-alp.x,h.y-alp.y);if(d>3){const v=Math.min(d,60*dt);alp.x+=(h.x-alp.x)/d*v;alp.y+=(h.y-alp.y)/d*v}}}
+  // Zümrüt casts: a bolt at one within her sight, every few seconds
+  if(witchShown&&inZone(C,witch)){H.zT-=dt;if(H.zT<=0){const t=nearest(witch,280);if(t){H.zT=3.5;say1('z',witch,'Defolun!','Cadı Zümrüt büyü yapıyor!');
+      const n=12;for(let k=0;k<=n;k++){const f=k/n;parts.push({x:witch.x+(t.x-witch.x)*f,y:witch.y-14+(t.y-8-(witch.y-14))*f,vx:(Math.random()-.5)*8,vy:-6-Math.random()*6,life:.45,c:k%2?'#9fff7a':'#d080ff'})}
+      hit(t,Math.max(2,Math.round(P*1.4)),'#b8ff9a');try{sfx('found')}catch(e){}}else H.zT=.5}}
+  // Kemal mends you: near him your wounds close a little every few seconds
+  if(inZone(C,npc)&&Math.hypot(player.x-npc.x,player.y-npc.y)<170){H.kT-=dt;if(H.kT<=0){H.kT=5;const mh=maxHP();if(hp<mh&&hp>0){const n=Math.max(1,Math.round(mh*.08));hp=Math.min(mh,hp+n);
+      say1('k',npc,'Dayan evlat!','Yaşlı Kemal yaralarını sarıyor!');floats.push({x:player.x,y:player.y-20,t:0,text:`+${n}`,color:'#7dff9a'});for(let k=0;k<8;k++)parts.push({x:player.x+(Math.random()-.5)*14,y:player.y-6,vx:0,vy:-18-Math.random()*20,life:.6,c:k%2?'#7dff9a':'#e8ffe8'})}}}
+}catch(e){}},50);
+{const _rs=restore;restore=function(){const r=_rs.apply(this,arguments);try{if(H.home){alp.x=H.home.x;alp.y=H.home.y}H={raid:null,said:{},home:null,bT:0,zT:0,kT:0}}catch(e){}return r}}
+{const _sn=snapshot;snapshot=function(){if(H.home){const x=alp.x,y=alp.y;alp.x=H.home.x;alp.y=H.home.y;try{return _sn.apply(this,arguments)}finally{alp.x=x;alp.y=y}}return _sn.apply(this,arguments)}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v402yard: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
