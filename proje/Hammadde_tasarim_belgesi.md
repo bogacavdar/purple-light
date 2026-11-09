@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.94** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.95** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -655,6 +655,18 @@ Havanın sırası, sıklığı ve süresi mevsime göre değişir (bkz. Hava, s�
 
 #### Mevsimler (v3.69, 8 Kasım 2026, Boğaç)
 
+**Çayır'da yerdeki toplanabilirlerin görünüşü (9 Kasım 2026, Boğaç teker teker seçti):** Çayır'da yerde duran toplanabilirler için Boğaç'a şimdiki hali ve iki yeni çizim gösterildi; seçilenler oyundaki görünüştür (eşya bir başka biyomda da çıkıyorsa orada da aynı görünür; envanter resimleri değişmedi):
+- **Dal:** ince, yatay bir çubuk; yukarı çıkan küçük bir çatal ve ucunda yeşil tomurcuk.
+- **Yaprak:** dik duran, iki tonlu yeşil yaprak; koyu orta damar ve yan damarlar, altında kahverengi sap.
+- **Kum:** üstünde dalga izleri olan kum tepeciği.
+- **Ebegümeci:** saplar üstünde üç pembe-mor çiçek, altta yuvarlak yapraklar.
+- **Hardal otu:** dallanan sap üstünde sarı çiçek kümeleri.
+- **Nane:** eski çizimin aynısı, yeşilleri biraz koyu.
+- **Yaban çileği:** üçlü yapraklar, altında kırmızı meyveler.
+- **Havuç:** yarısı toprağa gömülü turuncu havuç, toprak tümseği ve yeşil filizler ("Yabani havuç" kalktı, yerden toplanan da tarladaki **Havuç**'tur).
+- **Yarasa gübresi:** içinde açık renkli kırıntılar olan koyu yığın.
+- Taş, Lif, Kuru ot, Nehir çakılı, Çakmaktaşı, Böğürtlen, Gelincik, Papatya, Rezene, Yabani buğday, Kireçtaşı, Kumtaşı, Bakır cevheri ve Sarkıt olduğu gibi kaldı.
+
 **Sol üstteki gün, saat, hava ve mevsim (9 Kasım 2026, Boğaç):** bilgisayarda can çubuğunun hemen üstünde, kutusuz, tek satır:
 - **Gün:** yalnızca yazı ("12. gün"); hava adı ve mevsim adı burada yazmaz.
 - **Saat:** dijital saat gibi koyu bir kutuda büyük rakamlarla ("19:50"); gece mavimsi yanar. Üstüne gelince gündüz ve gecenin süresi kısaca yazar: "Gündüz 06:00–20:00 · 8 dk", "Gece 20:00–06:00 · 2,5 dk" (gecenin süresi o mevsiminki).
@@ -856,7 +868,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 
 | Biyom | Yiyecek · tokluk · etki (anında can) |
 |---|---|
-| Çayır | Böğürtlen 5 (+4 can) · Yaban çileği 6 Çeviklik · Yabani armut 7 Doygunluk · Yabani elma 7 Canlılık (+2 can) · Yabani havuç 5 Gece gözü |
+| Çayır | Böğürtlen 5 (+4 can) · Yaban çileği 6 Çeviklik · Yabani armut 7 Doygunluk · Yabani elma 7 Canlılık (+2 can) · Havuç 5 Gece gözü |
 | Orman | Ahududu 9 Şifa · Yaban mersini 9 Gece gözü · Fındık 8 Güç · Ceviz 8 Dayanıklılık · Yabani bal 12 Çeviklik (+7 can) · Akçaağaç özsuyu 8 Canlılık · Yabani nohut 7 · Yabani nohut 7 (hepsi +3 can) · Kanlıca 8, Kuzukulağı 7, Meşe palamudu 6 (zehirli, can vermez) |
 | Bataklık | Kızılcık 12 Pıhtı · Su kestanesi 12 (+14 can) (+6 can) · Dut 11 Çeviklik (+6 can) · Mürver 11, Sinek mantarı 11 (zehirli) |
 | Kayalık Dağ | Alıç 15 Şifa · Kestane 15 Doygunluk · Ur kekliği yumurtası 15 Güç · Kayın mantarı 14 (+9 can) · Kuşburnu 14 (+21 can) · Ardıç meyvesi 14 (zehirli) |
@@ -1490,7 +1502,7 @@ Başladığın yer: hilalin batı ucunda, Çayır'ın Orman'a en uzak yerinde, g
 | Sarkıt | 6 | 7 | 120 sn sonra yeniden çıkar (mağara ağzında) |
 | Taş | 1 | 176 | 21 sn sonra yeniden çıkar |
 | Yabani buğday | 2 | 64 | 40 sn sonra yeniden çıkar |
-| Yabani havuç | 2 | 57 | 45 sn sonra yeniden çıkar, çiğ yenir (+5 tokluk) |
+| Havuç | 2 | 57 | 45 sn sonra yeniden çıkar, çiğ yenir; yarısı toprağa gömülü turuncu havuç olarak görünür (9 Kasım 2026, Boğaç: "yabani değil dümdüz havuç olsun") |
 | Yaban çileği | 2 | 60 | 45 sn sonra yeniden çıkar, çiğ yenir (+6 tokluk) |
 | Yaprak | 1 | 51 | 63 sn sonra yeniden çıkar |
 | Yarasa gübresi | 3 | 7 | 90 sn sonra yeniden çıkar (mağara ağzında) |
@@ -2063,7 +2075,7 @@ Kumsalda seni bulan yaşlı denizci; sakin, kollayıcı, öğretici. Kemal'de ya
 | E3 | Doğu geçidini aç | 2 Kaya patlatıcı + 4. kademe ya da daha iyi kazma (Kuvars ya da Çelik); kaya yığınına F, onay | Kayalık Dağ keşfedildi · Seviye 10 (Kaya patlatıcı tarifi bilinmeden de alınır, 7 Kasım 2026, Boğaç; görev kartında "Tarif: Kaya patlatıcı (kazanda öğren)" görünür). Kemal'den, T6 bitince **Avcı Doğan**'dan (Kemal'e dönmeden) ya da Kayalık Dağ'daki **Cadı Firuze**'den alınabilir (Firuze, kazanının buharında doğudaki kaya yığınının ardından tüten dumanı görür ve yolu açmanı ister) | Kül Diyarı'ndaki görevler | Kaya patlatıcı | 300 · 400 XP |
 | E4 | Eşinden kalan izler | Bul: 6 iz (önceden bulunanlar sayılır) | Kül Diyarı keşfedildi. Kemal'den ya da Kül Diyarı'ndaki **Cadı Mercan**'dan alınabilir (Mercan kazanının dumanında izleri görür) | E5, Gemi tarifi | – | 300 · 600 XP |
 | E5 | Kıyıdaki duman | Ulaş: Mor Kristal Vadisi'ne git (Kemal dumanı merak eder; kimseyi söylemez) | E4 | E6, Barbaros 1 | – | 200 · 300 XP |
-| E6 | Saliha'nın çorbası | Getir: 3 Yabani havuç, 2 Rezene, 2 Tavşan eti | E5 · Seviye 5 | E7 | – | 70 · 45 XP |
+| E6 | Saliha'nın çorbası | Getir: 3 Havuç, 2 Rezene, 2 Tavşan eti | E5 · Seviye 5 | E7 | – | 70 · 45 XP |
 | E7 | Bulut gibi yastık | Getir: 8 Keklik tüyü, 4 Bıldırcın tüyü | E6 · Seviye 7 | E8 | – | 100 · 60 XP |
 | E8 | Kurtların uluması | Avla: 3 Kurt · Getir: 2 Kurt dişi | E7 · Seviye 9 | – | – | 130 · 80 XP |
 
@@ -4148,7 +4160,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Kızarmış kanlıca | 2 Kanlıca, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 35 |
 | Kızarmış kayın mantarı | 2 Kayın mantarı, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 96 |
 | Kızarmış keme | 2 Keme, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 66 |
-| Kızarmış yabani havuç | 3 Yabani havuç, 1 Su | Pişirme taşı | Ateşte (pişirme menüsü) | 15 |
+| Kızarmış havuç | 3 Havuç, 1 Su | Pişirme taşı | Ateşte (pişirme menüsü) | 15 |
 | Kızılcık ezmesi | 3 Kızılcık, 1 Su | Taş havan | El yapımı (Tab) | 79 |
 | Kızılcık suyu | 3 Kızılcık, 1 Göl çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 230 |
 | Lav narı ezmesi | 3 Lav narı, 1 Su | Taş havan | El yapımı (Tab) | 94 |
@@ -6099,7 +6111,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Hasır yatak | 83 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Hasırotu meşalesi | 58 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Hasırotu yatak | 287 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
-| Havuç | 13 | yenir +8 | Tarlada yetiştirilir (tohumunu ek, sula, tırpanla biç) | – |
+| Havuç | 13 | yenir +8 | Yerden toplanır: Çayır (ACT 1); tarlada da yetiştirilir (tohumunu ek, sula, tırpanla biç) | Kızarmış havuç, Kurutulmuş havuç |
 | Havuç tohumu | 4 | – | Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar · Hasatta %45 ihtimalle 1 tane (Havuç) | – |
 | Havyar | 59 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Hayvan yağı | 3 | – | Av: Geyik düşürür %30 (ACT 1 · Çayır) · Av: Yaban öküzü düşürür %60 (ACT 1 · Kayalık Dağ) · Av: Yaban domuzu düşürür %40 (ACT 1 · Orman) · Av: Mağara ayısı düşürür %60 (ACT 1 · Kayalık Dağ) · Av: Mantar geyiği düşürür %30 (ACT 2 · Dev Mantar Ormanı) · Av: Kor domuzu düşürür %40 (ACT 2 · Ejder Volkanı) · Av: Yıldız geyiği düşürür %30 (ACT 2 · Gök Rıhtımı) | Ateş çiçeği merhemi, Beyaz boya, Don yağı mumu, Gelincik boyası, Hasırotu meşalesi, Kara boya … (+13) |
@@ -6471,7 +6483,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kızarmış kanlıca | 35 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızarmış kayın mantarı | 96 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızarmış keme | 66 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | – |
-| Kızarmış yabani havuç | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Kızarmış havuç | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızıl cam | 199 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kızıl ejder pulu ² | 300 | – | Av: Kızıl ejder düşürür %100 (ACT 2 · Ejder Volkanı) | – |
 | Kızıl sedir odunu | 41 | – | Balta ile Kızıl sedir ağacından: Kül Diyarı (ACT 1) | Kül ağacı kalası, Kül ağacı kömürü, Kızıl sedir yayı |
@@ -6958,7 +6970,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yabani elma | 2 | yenir +7 | Meyve ağacı (Elma): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Elma ağacından toplanır: Çayır (ACT 1) | Kurutulmuş yabani elma, Yabani elma ezmesi, Yabani elma suyu |
 | Yabani elma ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani elma suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Yabani havuç | 2 | yenir +5 | Yerden toplanır: Çayır (ACT 1) | Kızarmış yabani havuç |
 | Yabani nohut | 9 | yenir +7 | Yerden toplanır: Orman (ACT 1) | Kavrulmuş yabani nohut, Yabani nohut lapası, Yabani nohut unu |
 | Yabani nohut hamuru | 57 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Yabani nohut yassı ekmeği |
 | Yabani nohut lapası | 95 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |

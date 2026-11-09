@@ -8,6 +8,29 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.95 · 9 Kasım 2026
+
+### Görsel
+- **Çayır'da yerdeki toplanabilirler yenilendi** (Boğaç teker teker seçti):
+  - **Dal:** ince, yatay çubuk; küçük çatal ve tomurcuk.
+  - **Yaprak:** iki tonlu yeşil yaprak; koyu orta damar ve yan damarlar, kahverengi sap.
+  - **Kum:** dalga izli kum tepeciği.
+  - **Ebegümeci:** saplar üstünde üç pembe-mor çiçek.
+  - **Hardal otu:** dallanan sap üstünde sarı çiçek kümeleri.
+  - **Nane:** aynı çizim, yeşilleri biraz koyu.
+  - **Yaban çileği:** üçlü yapraklar, altında kırmızı meyveler.
+  - **Havuç:** yarısı toprağa gömülü turuncu havuç ve yeşil filizler.
+  - **Yarasa gübresi:** açık renkli kırıntılı koyu yığın.
+  - Aynı eşyalar başka bölgelerde de çıkıyorsa orada da yeni görünüşleriyle çıkıyor; envanter resimleri değişmedi.
+
+### Oynanış
+- **"Yabani havuç" artık düz "Havuç":** Çayır'da yerden toplanan da tarladaki Havuç ile aynı eşya. Kızarmış yabani havuç → **Kızarmış havuç**, Kurutulmuş yabani havuç → **Kurutulmuş havuç**; Saliha'nın çorbası görevi 3 Havuç istiyor. Eski kayıtlardaki yabani havuçlar kendiliğinden Havuç'a dönüyor.
+
+### Tasarım belgesi
+- Sistemler › "Çayır'da yerdeki toplanabilirlerin görünüşü"; Çayır bitkileri, tarifler, eşya dizini ve E6 görevinde Yabani havuç → Havuç.
+
+---
+
 ## Versiyon 3.94 · 9 Kasım 2026
 
 ### Arayüz
@@ -267,16 +290,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Tarifler › Sade malzeme: "Her biyomda tek mantar" maddesi, sayılar (eşya 1344, tarif 980). Kalkan mantar ve tarif satırları silindi; görev tabloları, yiyecek etkileri tablosu ve Kav tarifi yenilendi.
-
----
-
-## Versiyon 3.75 · 8 Kasım 2026
-
-### Oynanış
-- **Başlangıç bölgesi artık kalabalık değil:** başladığın kampın çevresi (20 kare) şimdiye kadar hiç seyreltilmemişti; çevresindeki araziye göre 3,5 kat ağaç ve neredeyse 3 kat toplanacak şey vardı. Artık hemen dışındaki araziyle aynı sıklıkta: ekran başına ağaç 43'ten 12'ye, toplanacak şey 68'den 24'e indi. Öğreticinin malzemeleri ve görev eşyaları yerinde; kampta en az 12 çam kalır (balta dersi ve Dursun'un ilk odunu için).
-
-### Tasarım belgesi
-- ACT 1 › Adanın yerleşimi › Haritadaki miktarlar: başlangıç kampı da çevresinin sıklığına iner (eski "kamp seyreltilmez" kuralının yerine).
 
 ---
 

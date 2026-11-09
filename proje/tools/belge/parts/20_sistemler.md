@@ -284,6 +284,18 @@ Havanın sırası, sıklığı ve süresi mevsime göre değişir (bkz. Hava, s�
 
 #### Mevsimler (v3.69, 8 Kasım 2026, Boğaç)
 
+**Çayır'da yerdeki toplanabilirlerin görünüşü (9 Kasım 2026, Boğaç teker teker seçti):** Çayır'da yerde duran toplanabilirler için Boğaç'a şimdiki hali ve iki yeni çizim gösterildi; seçilenler oyundaki görünüştür (eşya bir başka biyomda da çıkıyorsa orada da aynı görünür; envanter resimleri değişmedi):
+- **Dal:** ince, yatay bir çubuk; yukarı çıkan küçük bir çatal ve ucunda yeşil tomurcuk.
+- **Yaprak:** dik duran, iki tonlu yeşil yaprak; koyu orta damar ve yan damarlar, altında kahverengi sap.
+- **Kum:** üstünde dalga izleri olan kum tepeciği.
+- **Ebegümeci:** saplar üstünde üç pembe-mor çiçek, altta yuvarlak yapraklar.
+- **Hardal otu:** dallanan sap üstünde sarı çiçek kümeleri.
+- **Nane:** eski çizimin aynısı, yeşilleri biraz koyu.
+- **Yaban çileği:** üçlü yapraklar, altında kırmızı meyveler.
+- **Havuç:** yarısı toprağa gömülü turuncu havuç, toprak tümseği ve yeşil filizler ("Yabani havuç" kalktı, yerden toplanan da tarladaki **Havuç**'tur).
+- **Yarasa gübresi:** içinde açık renkli kırıntılar olan koyu yığın.
+- Taş, Lif, Kuru ot, Nehir çakılı, Çakmaktaşı, Böğürtlen, Gelincik, Papatya, Rezene, Yabani buğday, Kireçtaşı, Kumtaşı, Bakır cevheri ve Sarkıt olduğu gibi kaldı.
+
 **Sol üstteki gün, saat, hava ve mevsim (9 Kasım 2026, Boğaç):** bilgisayarda can çubuğunun hemen üstünde, kutusuz, tek satır:
 - **Gün:** yalnızca yazı ("12. gün"); hava adı ve mevsim adı burada yazmaz.
 - **Saat:** dijital saat gibi koyu bir kutuda büyük rakamlarla ("19:50"); gece mavimsi yanar. Üstüne gelince gündüz ve gecenin süresi kısaca yazar: "Gündüz 06:00–20:00 · 8 dk", "Gece 20:00–06:00 · 2,5 dk" (gecenin süresi o mevsiminki).
@@ -485,7 +497,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 
 | Biyom | Yiyecek · tokluk · etki (anında can) |
 |---|---|
-| Çayır | Böğürtlen 5 (+4 can) · Yaban çileği 6 Çeviklik · Yabani armut 7 Doygunluk · Yabani elma 7 Canlılık (+2 can) · Yabani havuç 5 Gece gözü |
+| Çayır | Böğürtlen 5 (+4 can) · Yaban çileği 6 Çeviklik · Yabani armut 7 Doygunluk · Yabani elma 7 Canlılık (+2 can) · Havuç 5 Gece gözü |
 | Orman | Ahududu 9 Şifa · Yaban mersini 9 Gece gözü · Fındık 8 Güç · Ceviz 8 Dayanıklılık · Yabani bal 12 Çeviklik (+7 can) · Akçaağaç özsuyu 8 Canlılık · Yabani nohut 7 · Yabani nohut 7 (hepsi +3 can) · Kanlıca 8, Kuzukulağı 7, Meşe palamudu 6 (zehirli, can vermez) |
 | Bataklık | Kızılcık 12 Pıhtı · Su kestanesi 12 (+14 can) (+6 can) · Dut 11 Çeviklik (+6 can) · Mürver 11, Sinek mantarı 11 (zehirli) |
 | Kayalık Dağ | Alıç 15 Şifa · Kestane 15 Doygunluk · Ur kekliği yumurtası 15 Güç · Kayın mantarı 14 (+9 can) · Kuşburnu 14 (+21 can) · Ardıç meyvesi 14 (zehirli) |

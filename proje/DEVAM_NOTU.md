@@ -1,3 +1,11 @@
+## v3.95 (9 Kasım 2026) · Çayır yer toplanabilirleri yeni görünüş; Yabani havuç → Havuç
+
+**Değişen yerler:** yeni blok `v395cayir` (dosyanın sonu): `drawNode` sarmalı, `L[ad]` olan düğümleri (mağara/maden düğümü değilse) kendi sprite'ıyla çizer: Dal, Yaprak (Boğaç'ın gönderdiği yaprak + kahverengi sap, `LEAF`), Kum, Ebegümeci, Hardal otu, Nane (`__p1.spr` yeşilleri ×0,8), Yaban çileği, Havuç (yarısı gömülü), Yarasa gübresi; çizim oyunun yoluyla (`__p1k` kit, `lightCanvas`, `outlineCanvas`, önbellek, `drawSprite`). Seçim araçları: `/home/claude/spr` (cap.js, comp.py). Ad: kaynakta "Yabani havuç" → "Havuç" (RES, bitki listeleri, tarifler, E6 görevi metni ve isteği, `P1W`), fiyat tablosundaki `"Yabani havuç":2` silindi (Havuç 10), `P1I['Yabani havuç']` → `P1I['__eski yabani havuç']` (Havuç'un kendi resmi kalır); `v373sade` `REPL`'e Yabani/Kızarmış/Kurutulmuş yabani havuç → Havuç karşılıkları (eski kayıt). Belge: 20_sistemler, 30_act1, 80_tarifler, 90_esyalar. Sürüm etiketi `Versiyon 3.95`.
+
+**Geri alma:** `git revert` bu commit (eski kayıtlarda Havuç'a dönen yabani havuçlar geri dönmez).
+
+**Kontrol:** chk.js 0 hata. Eşya denetimi: 1336 eşya (−1) / 997 tarif, bilinmeyen 0, fiyatsız 0, kullanılmayan ham 68. Çayır'da 35 Havuç düğümü. Eski kayıt (Yabani havuç 4, Kızarmış yabani havuç 1) → Havuç 4, Kızarmış havuç 1. Oyun içi ekran görüntüsünde seçilen dokuz çizim. Konsol hatası yok.
+
 ## v3.94 (9 Kasım 2026) · öğretici kartında konuşanın resmi
 
 **Değişen yerler:** `tzCard` 9. adım başlığı "Zümrüt · Pazarcı Nazlı'ya git", 13. adım `['alp','Börü · Demirci Dursun'a git',…]`; `renderTz` boş konuşanı adımdan tamamlar (10 market, 11–13 alp); `v64` bloğunda `tutPor.market/alp/smith` (`porFor`). Yeni `<style id="v394pazar">` + `v394pazarjs`: bütün pencerelerde `.ccoins` ve `#closecraft` 32 px, `.esc` gizli (title "Kapat (Esc)"); `#craft.cm-sell` en çok 600 px, boyu `--plMaxH`; araç satırı 3 sütun ızgara, satırlar `display:flex` tek satır, `.note` gizli, Sat/Satın al iki parçalı anahtar, bütün düğmeler tek stil; JS toplu satış düğmelerini kısaltır (title tam açıklama) ve `.kz` ipucunu "N tarif" yapar. Belge: 10_akis.md, 20_sistemler.md. Sürüm etiketi `Versiyon 3.94`.
@@ -151,12 +159,4 @@
 **Geri alma:** `git revert` bu commit (belge ve kod birlikte).
 
 **Kontrol:** chk.js 0 hata. Denetim (3.75 ↔ 3.76): eşya 1350 → 1344, tarif 982 → 980, bilinmeyen girdi 0, fiyatsız 0, yeni kullanılmayan ham 0. Mantar sayımı: ACT 1 Çayır mantarı 41, Kanlıca 49, Sinek 44, Kayın 38, Işık 50; ACT 2 Gök 47, Işıldak 50, Kristal 50, Kor 48, Yıldız 41. Eski kayıt: 3 Tavuk + 1 Kanlıca + 2 Kuzugöbeği → 6 Kanlıca, 4 Kav mantarı → 4 Kayın mantarı, Kızarmış kuzugöbeği → Kızarmış kanlıca.
-
-## v3.75 (8 Kasım 2026) · başlangıç kampı da seyrelir
-
-**Değişen yerler:** yeni `<script id="v375kamp">` (en sonda; sayfa açılınca bir kez, `built` korumalı, 11 ms): kamp (spawn'dan < 20 karo) halkanın (20–40 karo) sıklığına iner. Ağaçlar: `keep = halka yoğunluğu / kamp yoğunluğu`, `hz(x,y,4.4) ≥ keep` silinir; `hz` sırasıyla ilk 12 Çam, `v343` ve `keep` ağaçları korunur. Düğümler: tür başına aynı oran (`hz(x,y,6.6)`); `mine/night/tzN/tutN/sq/keep/q/quest` dokunulmaz. `window.__plKamp={trees,nodes,ms}`. Sürüm etiketi `Versiyon 3.75`.
-
-**Geri alma:** `v375kamp` bloğunu sil (ada bir sonraki açılışta eski haliyle kurulur; kayıtta ağaç/düğüm tutulmaz) ve belgedeki satırı geri al.
-
-**Kontrol:** chk.js 0 hata. Yeni oyun: kampta ekran (900 karo) başına ağaç 43 → 12,2 (halka 12,4), toplanan şey 68 → 24,4 (halka 18,1), kampta 12 Çam, öğretici düğümleri 5 → 5; 43 ağaç, 62 düğüm silindi. Ölçüm (`olcum.js`, 4): frame 3668 → 3599 (gürültü içinde ya da biraz hafif).
 
