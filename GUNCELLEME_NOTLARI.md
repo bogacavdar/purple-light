@@ -8,6 +8,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.01 · 9 Kasım 2026
+
+### Oynanış
+- **Börü'nün "Ateş başında nöbet" görevi yenilendi:** artık gece ateşin başında bir dakika beklemiyorsun; **kamp ateşi kur ve başında bir şey pişir** (ateşin yanında F → pişirme menüsü). Görev kartında iki satır var: "Kamp ateşi kur" ve "0/1 kamp ateşinde yemek pişir"; ok önce ateşin malzemelerini, sonra ateşini gösteriyor. Görev sende açıksa ve bir ateşin yanıyorsa ilk satır hemen tamam sayılır.
+- **Düşenleri F ile hemen topla:** bir hayvanı öldürünce düşenler daha yere inerken bile F ile hemen toplanıyor; beklemene gerek yok.
+
+### Düzeltmeler
+- **El yapımında "Takip et" çalışıyor:** El yapımı penceresindeki Takip et düğmelerine basınca hiçbir şey olmuyordu; artık tarifi takip şeridine ekliyor.
+
+### Arayüz
+- **Takip şeridi küçük simgeler:** ekranın üstündeki takip şeridinde artık yazı yok; her tarif bir satır, malzemeleri küçük kare resimler ve köşelerinde sayıları (tamam olanlar yeşil). Bir resmin üstüne gelince şık bir kartta adı, sende kaç tane olduğu ve nereden geldiği yazıyor. Şerit küçüldüğü için görev kartının üstüne binmiyor.
+- **Üzerine gelme etiketleri yenilendi:** farenle bir canlının, ağacın ya da eşyanın üstüne gelince çıkan etiket artık koyu, küçük bir kart; solundaki renkli şerit canlının huyunu gösteriyor (saldırgan kırmızı, kızdırırsan saldırır turuncu, zararsız yeşil). Ekranın kenarından taşmıyor.
+- **Dövüşte etiket çıkmıyor:** bir hayvana vurduktan sonra 3 saniye, seni kovalayan ya da sana kızmış bir hayvan yakındayken ve ısırıldıktan sonra etiketler görünmüyor; savaşırken önünü kapatmıyorlar.
+
+---
+
 ## Versiyon 4.00 · 9 Kasım 2026
 
 ### Oynanış
@@ -259,18 +275,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Yiyecek etkileri tablosuna Keme; Keme satırları.
-
----
-
-## Versiyon 3.81 · 8 Kasım 2026
-
-### Oynanış
-- **İkinci adanın bütün malzemeleri bir işe yarıyor:** hiçbir tarifte kullanılmayan 36 malzeme artık tariflerde. Her biyoma yemek ve içecekler geldi: **Gök çorbası** ve **Rüzgâr çiçeği çayı** (Yüzen Kayalar), **Spor yahnisi** ve **Goblin otu çayı** (Dev Mantar Ormanı), **Kaktüs meyvesi suyu** (Hurda Çölü), **Kristal çorbası** ve **Kaya çiçeği çayı** (Kristal Golem Ocağı), **Kor yahnisi** ve **Lav çiçeği çayı** (Ejder Volkanı), **Yıldız çorbası** ve **Bulut özü şerbeti** (Gök Rıhtımı).
-- Var olan tariflerin 18 yeni varyantı: ör. Bulut pamuğundan ip, kükürt tozundan barut, yağ birikintisiyle kil lamba, pas tozundan kırmızı boya, hurda parçasıyla hurda çizme, meteor parçası ya da göktaşı tozuyla meteor demiri külçesi, gök camı parçasıyla roket gövdesi.
-- Hepsi Yıldız'ın kazanında öğrenilir.
-
-### Tasarım belgesi
-- Tarifler › "ACT 2'nin yeni tarifleri" bölümü (11 yemek, 18 varyant), sayılar (eşya 1337, tarif 997). ACT 2 biyom tablolarında her malzemenin kullanıldığı tarifler yazılı.
 
 ---
 

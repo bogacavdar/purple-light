@@ -1,3 +1,11 @@
+## v4.01 (9 Kasım 2026) · üzerine gelme etiketi: yeni görünüş, dövüşte gizli
+
+**Değişen yerler:** Yeni `v401tip` (stil) ve `v401tipjs` bloğu (dosya sonu). `#hovtip` (v146) yeni görünüşte. `data-k` (red/amber/green) yazıdan çıkarılıyor; kenara taşarsa `flipx`/`flipy`. `attack` sarılıp son vuruş zamanı tutuluyor. `body.plfight` 120 ms'de bir hesaplanıyor: vuruştan sonra 3 sn, `inFight()`, `underAttack()` ya da 260 px içinde kızgın/kovalayan canlı. `body.plfight` iken etiket `display:none`. B1 (DATA) parçaları `[['campup'],['c','cook',1,…]]`, sözü, sahnesi ve `LES.camp` 3. adımı değişti; yeni parça `campup` (yanan kamp ateşi ya da kabulden sonra kurulan ateş, sayaç `campset` 7407), `cook` sayacı `finishOne`'da (ateşte her pişen). `partTarget` `c/cook` en yakın yanan ateşi gösterir. El yapımı satırında `data-hrow=""${…}"` yazım hatası (v3.35'ten beri Takip et boş adla çağrılıyordu) düzeltildi. Takip şeridi: `v401trk`/`v401trkjs` (dosya sonu) simgeli satırlar, `title`lar kaldırılıp kendi kartımız (`#b3tip`) tarif etiketinde de açılıyor. `ePick` ve E/F ağaç önceliği: havadaki düşenler (`age>=0`) iniş noktasına göre alınıyor. Sürüm etiketi `Versiyon 4.01`.
+
+**Geri alma:** `git revert` bu commit.
+
+**Kontrol:** chk.js 0 hata. Eski B1 kaydıyla (b.camp) kart iki satır gösteriyor; ateş + bir pişirme → Börü'de tamamlanıyor. Geyiğin üstünde turuncu şeritli kart çıkıyor; `attack()` sonrası gizli, 3,5 sn sonra yeniden açık.
+
 ## v4.00 (9 Kasım 2026) · yetenek ağacı pencereye sığıyor
 
 **Değişen yerler:** `v399rz` stilinde `cm-skills` için `#cbody` sütun flex, `.sktree` `flex:1` (sabit `--th` yüksekliği yerine), panel yüksekliği `--plMaxH`. `skTip` (satır ~3381) zoom'u (1,2) hesaba katıyor ve kartı ağacın `#cbody` içinde görünen kısmına sığdırıyor. `sqZone` daire yarıçapı 22 → 29 kare; `collect`/`use` adımlarında (gizli olmayan) sıradaki noktayı, `back` adımında görev vereni de veriyor (EK1 `ekin1`). EK1'in son adımı (`back`): `talkEkin` ve `statusDlg`, yan görev motoru `back` adımındaysa (`__plSide.backAt`) onun `talk`'ını çağırıyor (önceden Ekin'in ana görev konuşması araya girip adım hiç bitmiyordu). Sürüm etiketi `Versiyon 4.00`.
@@ -149,14 +157,4 @@
 **Geri alma:** satırı geri koy (ya da `git revert`).
 
 **Kontrol:** chk.js 0 hata. Yeni oyun ACT 2 çiğ tokluk: Gök mantarı 25, Bulut elması 26, Rüzgâr eriği 26, Kök yumrusu 29, Spor elması 29, Goblin eriği 29, Keme 30, Çöl inciri 31, Buz armudu 33, Lav narı 35, Yıldız kirazı 37.
-
-## v3.81 (8 Kasım 2026) · ACT 2'nin kullanılmayan 36 malzemesine tarif
-
-**Değişen yerler:** `v373sade` v3.81 satırları: `dish()` (yeni yemek; fiyat = girdiler × 1,4 + 12, ateşliler `FIRE_R`) ve `vary()` (var olan tarifin bir malzemesi değişir; `VO`, fiyat asılınki, istasyon kümeleri kopyalanır); 11 yemek, 18 varyant; `window.__plA2New`. Sürüm etiketi `Versiyon 3.81`.
-
-**Geri alma:** `git revert` bu commit (yalnız `v373sade`'deki v3.81 bloğu).
-
-**Kontrol:** chk.js 0 hata. Denetim (3.80 ↔ 3.81): tarif 968 → 997 (varyant 157 → 175), eşya 1326 → 1337, bilinmeyen 0, fiyatsız 0, kullanılmayan ham 105 → 69 (ACT 2'nin 36'sı tarifte). Yemeklerin hepsi yenir (tokluk 36–60), resimleri torba değil (çorba/çay kabı, renkleri farklı).
-
-**Ayrıca:** `v380bitki` yerleştirmesi düğüm ızgarasını her eklemede değil sonda bir kez kuruyor (açılışta 488 ms → ölçülmeyecek kadar az). Ölçüm (`olcum.js`, 4; 3.75 ↔ 3.81): açılış js 10712 → 11124 ms, oyun 10 sn js 4006 → 4205 ms (ölçüm gürültüsü içinde; telefonda denenmeli).
 
