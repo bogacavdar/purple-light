@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 4.07** ile birebir (10 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 4.08** ile birebir (10 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -367,7 +367,7 @@ ACT 2 bölümündeki "ACT 2'nin akışı"na bak: Yıldız (portallar) → Efsun 
 | Yıldızsız Gezgin | 5. gün | Bir robot köpek hediye eder (köpek seçtiğin malzemeyi senin için toplar). |
 | Yıldızsız Gezgin | 20. gün | **Mor sinyal** verir: köpekler menüsünden Vio’yla köpek ısmarlanır. Fiyat 500 × 1,6^(sahip olunan köpek), 10'a yuvarlanır: 800 → 1.280 → 2.050 → 3.280. En çok 5 köpek. |
 | Gemici Poyraz | Olta yaptıktan sonraki ilk sabah 06:00 | Kemal'den uzak bir kıyıya teknesiyle çarpar; Poyraz'ın üstünde **!** yazar ve parlar (haritada da aynı işaret). 4 görevle teknesi onarılınca seni denize, 6 balık bölgesine götürür. Ayrıntı: "ACT 1 › Gemici Poyraz ve deniz". |
-| Yıldızsız Işıkçı | 15. günden sonra her akşam 18:00–05:30 | Yurtta sabit bir yerde (haritada mavi nokta). 5 Mor kıymık + 3 Gece sefası + 1 Tunç külçesi karşılığında **Kafa lambası** verir, sonra bir daha gelmez. |
+| Yıldızsız Işıkçı | 15. günden sonra her akşam 18:00–05:30 | Yurtta sabit bir yerde (haritada mavi nokta). 5 Mor kıymık + 3 Gece sefası + 1 Tunç külçesi karşılığında **Kafa lambası** verir, sonra bir daha gelmez. Onunla konuşunca bu takas **yan görev** olarak alınır ("Hiç bitmeyen ışık"; biyomun 2 yan görev sınırına sayılmaz, bkz. ACT 1 › Yan görevler). |
 
 
 # Sistemler
@@ -520,6 +520,7 @@ Ayarlar penceresinde Titreşim'in hemen üstünde iki seçenek vardır. İkisi d
 
 - **Bilgisayarda pencereler kenarından büyütülür (9 Kasım 2026, Boğaç):** çanta, el yapımı, kazan, pazar, kitap gibi açılır pencereler farenin olduğu bilgisayarda **sol, sağ ve alt kenarından** (ve alt köşelerinden) tutulup çekilerek büyütülür ya da küçültülür; kenara gelince imleç çift ok olur. Pencere ekranın ortasında kalır, iki yana eşit büyür. **Yazılar, resimler, düğmeler büyümez:** yalnızca pencere genişler; aşağı büyütülünce listede kaydırmadan daha çok satır görünür. En küçük ~360 × 260, en büyük ekran kadar. Her pencere türünün boyutu oyun açık kaldığı sürece hatırlanır (kapatıp açınca aynı boyutta gelir); sayfa yenilenince varsayılana döner. Dokunmatik ekranda yoktur.
 - **Yetenek ağacı pencereyi doldurur (9 Kasım 2026, Boğaç: "yazı ekrana sığmıyor"):** bilgisayarda yetenek ağacının yüksekliği sabit değil, pencerenin gövdesi kadardır; pencere büyütülünce ağaç da büyür. Bir yeteneğin üstüne gelince çıkan açıklama kartı her zaman ağacın görünen kısmının içinde kalır.
+- **Yetenek alınca pencere yerinde kalır (10 Kasım 2026, Boğaç: "skill verdiğimde aşağıya doğru kayıyor, aynı yerde kalmalı ekran"):** bir yetenek alınınca ağaç yeniden çizilir ama pencere ve ağaç **olduğu yerde** kalır; basılan düğüm ve açılan "Yetenek açıldı" kutusunun Tamam düğmesi pencereyi kaydırmaz.
 - **El yapımı penceresi biraz daha geniştir (9 Kasım 2026, Boğaç: "yap butonları pencerenin tam yanında kalmış"):** genişliği 560'tan **620**'ye çıktı; satırın en sağındaki Yap düğmesiyle pencere kenarı arasında boşluk kalır.
 
 - **Evet/Hayır kutusu oyunun görünüşünde (9 Kasım 2026, Boğaç: "bu yazı hiç oyuna olmamış"):** köprü onarma, görevi bırakma gibi onay kutuları öbür pencereler gibi koyu yeşil zeminli, altın çerçeveli; başlık altın renkte ve kalın, ana düğme altın, öbürü koyu.
@@ -836,11 +837,14 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 - **Kazanda öğrenilenler aşağıda (v3.36, Boğaç):** kazanın tarif listesinde her grubun içinde **öğrenilmiş** (yeşil, "öğrenildi") tarifler en alta iner; henüz öğrenilmemişler üstte kalır. Listenin en üstünde **"Öğrenilenleri gösterme"** kutusu vardır: işaretlenince öğrenilmiş tarifler listede hiç görünmez; kaldırılınca geri gelir. Seçim bu cihazda hatırlanır. (Örsteki listeye dokunmaz; orada yalnızca dövebildiklerin görünür.) **Liste yerinde kalır (v3.36, Boğaç):** listenin aşağısından bir tarif seçince (ya da malzeme koyunca, pencere yenilenince) sol liste en başa kaymaz, olduğu yerde kalır; aynısı örs ve sağdaki malzeme kutuları için de geçerlidir. (Satır düzeni: Sistemler › Arayüz ve pencereler › Tarif ve sipariş listelerinde satır düzeni.)
 - **Tarif kitabı** (K): bir tarif öğrenilmiş, bir kişi tarafından kitaba yazılmış ya da (Normal modda) bütün malzemeleri ve aletleri en az bir kez görülmüşse **açık** görünür. Kapalı tariflerin adı titreşen harflerle, bilinmeyen malzemeler "?" ile görünür. **Seçilen tarifin kutusu hep görünür (v3.37, Boğaç):** kitabın en üstündeki, seçilen tarifin adını, malzemelerini ve nerede yapıldığını gösteren kutu sayfa aşağı kaydırılınca da yukarıda sabit kalır; aşağıdaki bir tarife dokunduğunda ya da üstüne geldiğinde adı yerinden kaymadan görünür. Kitapta bir tarife **Takip et** dersen malzemeleri ve elindeki sayıları ekranın üstünde görürsün (aynı anda 1 tarif).
   - **Bilgi kutusundaki silah/zırh özellikleri (9 Kasım 2026, Boğaç: "ekranın yarısını silahın özellikleri kapatmış"):** silah ya da zırh tarifinin üstüne gelince özellikleri (hasar, vuruş/sn, menzil, kritik, keskinlik; zırhta savunma, yuva, direnç) malzemelerin altında **tek sıra küçük kartlar** olarak yazar; resmin altına sığdırılmaz, kutu kısa kalır.
+  - **Tarif kitabının bilgi kutusu hep aynı boyda (10 Kasım 2026, Boğaç: "hepsi benzer şekilde gözükmeli, aşağı yukarı kaymamalı"):** tarif kitabında hangi karenin üstüne gelinirse gelinsin bilgi kutusu **aynı yükseklikte** durur; altındaki kareler yukarı aşağı kaymaz. Kapalı tarifte de silahın özellikleri açık tarifteki gibi malzemelerin altında küçük kartlarla yazar (resmin altına sıkışmaz).
   - **Listede düğmeler kaymaz (10 Kasım 2026, Boğaç: "bunlar böyle sağa kaymamalı"):** El yapımı ve kazan listelerinde bir silah ya da zırh satırının üstüne gelince adının altında çıkan özellik satırı, adın sütununa sığacak şekilde alt satıra geçer; satır genişlemez, Takip et / ×5 / Hepsi / Yap düğmeleri yerinde kalır ve liste yana kaymaz.
+  - **El yapımında özellikler kartta (10 Kasım 2026, Boğaç: "el yapımındaki bu hasar şeylerini de açılan karta taşı, alta satır olarak ekleme"):** El yapımı listesinde silah ya da zırh satırının altına özellik satırı **eklenmez**; özellikler (hasar, vuruş/sn, menzil, kritik, keskinlik; zırhta savunma, yuva, direnç) üstüne gelince açılan **malzeme kartında**, malzemelerin altında yazar (telefonda dokununca açılan malzeme kutusunda). Satır yüksekliği değişmez, liste oynamaz.
 - **El yapımı (Tab):** öğrenilmiş ve örste dövülmeyen, yapı ya da ev eşyası olmayan her tarif. Yap / ×5 / Hepsi. Düğme düzeni: aşağıda "El yapımı düğmeleri".
 - **Tarifteki alet yerine daha iyisi:** bir tarif alet olarak "Taş balta" istiyorsa **her balta** (aynı ya da daha yüksek kademeli) yeter; kazma için de aynısı. Tarif ekranında "Alet: Taş balta ya da daha iyisi · Demir balta" gibi görünür. Alet tarifte harcanmaz. (52 tarif Taş balta istiyor: kalaslar, saplar ve benzerleri.)
 - **"Herhangi" parçalar kalktı:** hiçbir tarif grup istemez; kazan ve örsteki **+** düğmesi tarifin istediği parçayı yapar (bkz. Tarifler › "Herhangi" yok).
 - **El yapımı listesi sıkı (v3.37, Boğaç: "koskoca ekranda 3 tarifi görmemeliyim"):** her tarif **tek satırdır**: **solda** küçük resim ve tarifin adı ("· sende 5" ile), **sağda** küçük düğmeler (Takip et · ×5 · Hepsi (n) · Yap; Kamp ateşinde Yak; 7 Kasım 2026, Boğaç: "tariflerin ismini sola, yap butonunu sağa alalım"), satırın yüksekliği yaklaşık bir düğme kadar; ekranda alt alta 12–15 tarif görünür. **Malzemeler** satırda yazmaz (yeşil: yeterli, sarı: eksik parça elle yapılabilir, kırmızı: eksik; meşalelerde "x dk yanar"). **Bilgisayarda (9 Kasım 2026, Boğaç: "yazılar üst üste binmemeli, yapın üzerine gelince ufak bir kart ile gösterilebilir"):** satırın ya da **Yap** düğmesinin üstüne gelince malzemeler, Yap düğmesinin hemen üstünde (yer yoksa altında) duran, kenarlı ve gölgeli **küçük bir kartta** görünür; kart satırların yazılarıyla karışmaz (opak, en üstte). **Telefonda** tarifin adına dokununca satırın hemen altında küçük, opak bir kutuda açılır. Yapılamayan tarifin adı soluktur.
+- **El yapımı kategorili (10 Kasım 2026, Boğaç: "el yapımı şeyleri de kategorize eder misin, silahlar, zırhlar vs."):** liste başlıklara ayrılır, sırası: **Silahlar** (yay, sapan, bola, asa, ateşli silah ve mermisi, el yapımı savaş çekici ve topuz), **Zırh ve giyim**, **Aletler** (olta, ağ, kova, tuzak, kürek, tırmık…), **Ateş ve ışık** (ateş, kamp ateşi, meşale, mum, kav), **Yiyecek ve şifa**, **Büyü ve tılsım**, **Yapılar ve ev eşyası** (çit, yol, zemin, korkuluk), **Taşıtlar** (sal, kano, kızak, gemi), **Süs, boya ve müzik**, **Zanaat** (kaşık, kase, sepet, tulum…), **Malzemeler** (keskin taş, ip, sopa, kalas, sap, kömür, külçe, kil işleri ve öbür ara parçalar). Bir varyant tarif ("… ile") yaptığı eşyanın başlığında durur. Boş başlık gösterilmez. Her başlığın içinde önce şu an yapabildiklerin, sonra öbürleri (adlarına göre) gelir; arama yapınca da başlıklar kalır.
 - **El yapımı düğmeleri:** Her satırda aynı düğmeler **aynı sırada ve aynı genişlikte** durur, böylece alt alta tek sütun olurlar: satırın sağında **Takip et · ×5 · Hepsi (n) · Yap**; **Yap en sağdadır** (9 Kasım 2026, Boğaç: "yap butonu en sağa alınabilir"; Kamp ateşinin **Yak** düğmesi de en sağda); **solda** resim, tarifin adı ve "sende N". Basılabilen düğme renkli, basılamayan (malzeme yetmiyor, 5'e yetmiyor, birden fazla yapılamıyor) soluk ama yerinde durur; düğmeler satırdan satıra kaymaz. Yapılamayan tarifin yalnızca adı ve malzemesi soluk görünür. (Satır düzeni: Sistemler › Arayüz ve pencereler › Tarif ve sipariş listelerinde satır düzeni.)
 - **El yapımında renkler (v3.36, Boğaç):** tarif satırındaki her malzeme yeterliyse **yeşil**, yetmiyorsa **kırmızı** yazar; ama eksik bir parçayı (ör. Sopa) elindekilerden önce yapıp tarifi tamamlayabiliyorsan (Yap düğmesi açık) o parça kırmızı değil **sarı** yazar ve yanında "yapılır" der: Yap'a basınca önce o parça yapılır.
 - **Takip:** en çok **3 tarif** birlikte takip edilir; ekranın üstündeki şeritte en yenisi en üstte durur (telefonda 2 satır görünür). 4. tarif takibe alınınca en eskisi bırakılır ve bildirim çıkar. **Şeritte Yap:** takip edilen tarif **elle yapılabiliyorsa** (öğrenilmiş, örste dövülmeyen, yapı ya da ev eşyası olmayan) ve bütün malzemeleri tamamsa satırda yeşil **Yap** düğmesi çıkar; basınca el yapımı ekranı açılmadan yapılır. Kazanda öğrenilecek ya da örste dövülecek tariflerde Yap çıkmaz. (Satır düzeni: Sistemler › Arayüz ve pencereler › Tarif ve sipariş listelerinde satır düzeni.)
@@ -1034,6 +1038,7 @@ Sağ altta, küçük haritanın hemen üstünde **Tarif kitabı**'nın solunda k
 - **Kartlar aynı boyutta:** almanaktaki her canlı kartı aynı yüksekliktedir (300 px, telefonda 270 px); uzun yazı (hareketler, tarifler) kartın içinde kaydırılır, satırları uzatmaz. Ad tek satırdır; sığmazsa "…" ile kısalır, üzerine gelince tamamı görünür.
 - **Başka bölgenin canlısı:** her canlının kartı kendi bölgesinin sayfasındadır (Engerek → Orman). Yan görevde başka bölgenin canlısı çıkar (Bataklık'taki görevde Engerek, Kayalık Dağ'da Kurt, Çayır'da Yaban domuzu); onu avlayınca kartı **görevin bölgesinin sayfasında da** en sonda görünür, altında "Başka bölgenin canlısı · yan görevde karşına çıktı" yazar. Bu konuk kartlar o sayfanın sayısına (x / y canlı) katılmaz. Eskiden "Almanağa eklendi" yazıp avladığın bölgenin sayfasında görünmüyordu. Ayrıca henüz gitmediğin bir bölgenin canlısını avlarsan (ör. Orman'ın kenarından seni kovalayıp Çayır'a giren bir Engerek) o bölgenin sayfası almanakta açılır; sayfada yalnızca avladıkların görünür, gerisi ??? kalır.
 - **Reise yenilirsen:** Reis sahadayken (ya da gelmek üzereyken) bayılırsan Reis kaybolur ve sayaç **bir eksik** kalır (ör. 6 / 7), sanki onu çağıran son av hiç yapılmamış gibi. O türden bir tane daha avlayınca Reis yeniden gelir; yenene kadar böyle sürer. (Bayıldıktan sonra 60 sn hiçbir Reis gelmez kuralı geçerli.)
+- **Tatlı su balıkları sayfası (10 Kasım 2026, Boğaç: "almanakta tutulan balıklar da yazmalı; gölden kefal falan bir şeyler yakaladım ama almanakta bir şey olmadı"):** biyomların altında **🎣 Tatlı su balıkları** sayfası vardır (Deniz canlıları sayfasının üstünde). Nehirde ve gölde tutulabilen her balık sularına göre üç başlık altında (Çayır/Orman · Bataklık/Kayalık Dağ · Kül Diyarı/Mor Kristal Vadisi; bkz. Balık tutma) bir kart olarak durur. Tutulana kadar karanlık ve **???** ("Henüz tutmadın", nerede tutulduğu yazar); **ilk kez tutunca açılır**: resmi, adı, nerede tutulduğu, fiyatı, zorluğu (zor balıklarda yeşil alan dar), hangi tariflerde kullanıldığı ve kaç tane tuttuğun. İlk kez tutulan her balık için ekranın ortasında "**Almanağa eklendi** · U ile bak" yazar. Sayılar zaten kayıtta olan balık sayaçlarından gelir: eski kayıtlarda bugüne kadar tuttukların açık gelir.
 - **Yıldızsızlar sayfası (v3.30):** ilk mor ışık saldırısından sonra biyomların altında ayrı bir **Yıldızsızlar** sayfası çıkar (bkz. Mor ışık saldırıları).
 - Almanak açıkken oyun durur. Kaydedilecek yeni bir şey yok: biyomlar, avlar ve Reisler zaten kayıtta; eski kayıtlarda bugüne kadar avladıkların açık gelir.
 
@@ -1365,6 +1370,7 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 - **Ölüm pozu:** öldürdüğün her canlı (Reisler, mağara canlıları, ACT 2 canlıları dahil) olduğu yerde **yan yatarak yere düşer** (yaklaşık 0,35 saniyelik bir devrilme), sonra hareketsiz yatar; altında **tek** koyu bir gölge olur (canlının ayaktayken altında duran gölgesi leşte çizilmez; v3.71), can çubuğu görünmez.
 - **Düşürdükleri leşin içindedir:** bir canlıyı öldürünce düşürdükleri artık hemen yere saçılmaz. Ekranda "{Canlı} avlandı · leşini topla" yazar. **Leşin yanına gidip topla** (bilgisayarda **E**, telefonda toplama düğmesi; üstünde "{Canlı} leşini topla" yazar): eşya toplar gibi çubuk dolar. Süre canlının büyüklüğüne göredir: **0,8 + √can / 12 saniye, en çok 3 saniye** (Toplayıcılık yetenekleri hızlandırır). Yürürsen ya da bir canavar sana saldırıyorsa toplama yarıda kalır. Çubuk dolunca leş kaybolur ve içindekiler leşin yerinde **yere saçılır** (yerdeki eşya kuralları geçerlidir: 180 sn sonra kaybolur, görev eşyaları kaybolmaz). İçinde bir şey yoksa "Leşte işe yarar bir şey yok" yazar.
 - **Toplanmayan leş kaybolur (oyun saatiyle):** leş yerde **4 oyun saati** kalır; son **1 oyun saati** boyunca yanıp söner, sonra içindekilerle birlikte kaybolur (gündüz 4 oyun saati gerçekte yaklaşık 2,3 dakikadır; uyuyunca geçen saatler de sayılır).
+  - **Gün dönümünde kaybolmaz (10 Kasım 2026, Boğaç: "geyikler öldürmüştüm, 16. gün yazısıyla yeni öldürdüğüm cesetler bir anda kayboldular"):** 4 saat kesintisiz oyun saatiyle sayılır; gece yarısı ve sabah 06:00'daki "N. Gün" geçişi süreyi atlatmaz. (Gece 00:00–06:00 arasında öldürülen leş, gün sayısı sabah arttığı için 24 saat yaşlanmış sayılıp siliniyordu.) Aynı kesintisiz saat evcil hayvanların büyüme ve yeniden gelme sürelerinde ve tarladaki fidanlarda da kullanılır.
 - **Kaybolmayan leşler:** Reis leşleri ve içinde görev eşyası (Kaya patlatıcı, Ejder kalbi, Yakıt hücresi, roket parçaları) olan leşler toplanana kadar kalır, yanıp sönmez.
 - **Kayıt:** yerdeki leşler (yeri, türü ve içindekiler) kayda yazılır; kayıt yüklenince yerlerinde durur.
 - **İstisnalar:** Kemal'in ilk dövüş dersindeki ve Börü'nün dövüş derslerindeki canlıların düşürdükleri eskisi gibi hemen yere düşer; leşleri yalnızca görüntüdür, 3 saniye sonra söner. **Yıldızsızlar** Vio’yu eskisi gibi doğrudan keseye bırakır; leşleri 3 saniye içinde mor bir dumanla kaybolur. **Arenada** ölen canlının leşi 3 saniye yatıp söner, toplanmaz.
@@ -1385,14 +1391,15 @@ Belirli günlerde mor ışık, karakterin bulunduğu bölgeye **o dünyadan olma
   - **Yaşlı Kemal** yaralarını sarar: onun ~10 kare yakınındaysan 5 saniyede bir tam canının **%8**'i kadar can verir.
   - Yardımcıların öldürdükleri de Vio düşürür (sana yazılır).
 - **Bitiş:** bütün Yıldızsızlar ölünce "Mor ışık çekildi" yazar ve ada eski rengine döner. Bayılırsan ya da 4 dakika (gerçek) geçerse saldırı yarıda biter, kalan Yıldızsızlar ışıkla geri çekilir. Uzaklaşmak saldırıyı bitirmez.
+- **Görünüşleri (10 Kasım 2026, Boğaç: "daha uzaylı gibi mor canlılar olmalılar, mor ışıkları daha parlak olmalı"):** dört tür de koyu mor gövdeli, bu dünyaya benzemeyen uzaylı biçimlerdedir (aşağıdaki tabloda); gözleri yeşil yanar, kovalarken kırmızıya döner. Her birinin çevresinde nabız gibi atan **parlak mor bir ışık** vardır; gözleri, çekirdekleri, benekleri ve anten uçları ayrıca parlar. Saldırıda her Yıldızsız çevresini (48 px) aydınlatır. Kıpırdarlar: gözcünün dokunaçları ve antenleri, sürüngenin bacakları, tükürücünün gövdesi, devin bacakları; dev ağır vuruştan önce kollarını kaldırır.
 - **Türler (gücüne ve güne göre):** saldırıya hangi türlerin geleceği seviyene ve güne göre belirlenir:
 
 | Tür | Ne zaman gelir | Nasıl savaşır | Can (silahının kaç vuruşu) | Hasar (tam canının) | Vio |
 |---|---|---|---|---|---|
-| Yıldızsız gözcü | her saldırıda | yerden biraz yukarıda süzülen tek gözlü, dokunaçlı küçük canlı; hızlı, ısırır | 3 vuruş × 0,75 | %5 × 0,75 | 6–10 |
-| Yıldızsız sürüngen | her saldırıda | yerde sürünen, sırtında parlayan benekler olan, çok bacaklı canlı | 6 vuruş × 0,75 | %8 × 0,75 | 12–20 |
-| Yıldızsız tükürücü | seviye 5 ya da 8. gün | uzun, yarı saydam, saplı gözlü canlı; uzaktan mor top tükürür (kenara çekil) | 4 vuruş × 0,75 | %6 × 0,75 | 10–16 |
-| Yıldızsız dev | seviye 12 ya da 18. gün (saldırıda en çok 2) | iri, üç gözlü, göğsünde parlayan çekirdek; ağır vuruşundan önce durup kollarını kaldırır (kaç!) | 14 vuruş × 0,75 | %14 × 0,75 | 40–60 |
+| Yıldızsız gözcü | her saldırıda | yerden biraz yukarıda süzülen, saydam kubbeli başında tek dev gözü, uçları parlayan iki anteni ve dört dokunacı olan küçük canlı; hızlı, ısırır | 3 vuruş × 0,75 | %5 × 0,75 | 6–10 |
+| Yıldızsız sürüngen | her saldırıda | yerde sürünen, uzun başlı, sırtı dikenli ve parlayan benekli, sekiz bacaklı, kuyruğunun ucu parlayan canlı | 6 vuruş × 0,75 | %8 × 0,75 | 12–20 |
+| Yıldızsız tükürücü | seviye 5 ya da 8. gün | sümüklü böcek gövdeli, saplı iki gözlü, karnında parlayan bir kesesi olan canlı; uzaktan mor top tükürür (kenara çekil) | 4 vuruş × 0,75 | %6 × 0,75 | 10–16 |
+| Yıldızsız dev | seviye 12 ya da 18. gün (saldırıda en çok 2) | iri kafalı, üç çekik kara gözlü, uzun pençeli kollu, göğsünde parlayan çekirdek; ağır vuruşundan önce durup kollarını kaldırır (kaç!) | 14 vuruş × 0,75 | %14 × 0,75 | 40–60 |
 
   - **Can**, elindeki (ya da silah yuvandaki) silahın bir vuruşunun hasarıyla ölçülür (en az 6 sayılır) ve günle artar: her gün +%2, en çok +%80. **Hasar** tam canının yüzdesidir ve günle aynı oranda artar; zırhın bunu da azaltır. Yani güçlendikçe Yıldızsızlar da güçlenir. Hepsi saldırgandır, seni uzaktan görür ve kovalar. Bütün can ve hasarlar tablodaki değerin **0,75** katıdır (9 Kasım 2026, Boğaç).
   - **XP:** türün vuruş sayısının 3 katı × (1 + seviye × 0,15).
@@ -2520,7 +2527,7 @@ ACT 1'de 27 kişi, **216 görev** (her kişinin 8 görevi) + Kemal'in ayak işle
 
 > Görevler artık ikiye ayrılır. **Ana görevler:** adanın kişilerinin (Kemal, Zümrüt, Dursun, kuzenler…) verdiği görevler; yukarıdaki "ACT 1 › Ana görevler" bölümündeki bütün kurallar onlar içindir. **Yan görevler:** adada kendi yerinde duran, yolda karşına çıkan **yan kişilerin** (bir teyze, kaybolmuş bir çocuk, bir çoban…) görevleri. İlk pakette **12 yan görev** var; ACT 1'in ilk dört biyomuna **üçer** tane, tonları karışık (hüzünlü, gizemli, komik).
 
-> **Mağara yan görevleri:** Yankı Mağarası'nda **Madenci Kaya**, Kök Mağarası'nda **Kökçü Fidan**; bu bölümdeki kurallar onlar için de geçerlidir (ayrıntı "ACT 1 › Mağaralar" bölümünde). Böylece yan görev sayısı 14'tür (mağaraların hepsiyle 18; v3.39'da 24 yeni yan görevle **42**); Görevler penceresi "Bitirdiklerin: x/42" yazar.
+> **Mağara yan görevleri:** Yankı Mağarası'nda **Madenci Kaya**, Kök Mağarası'nda **Kökçü Fidan**; bu bölümdeki kurallar onlar için de geçerlidir (ayrıntı "ACT 1 › Mağaralar" bölümünde). Böylece yan görev sayısı 14'tür (mağaraların hepsiyle 18; v3.39'da 24 yeni yan görevle **42**); Yurt'ta akşamları gelen **Yıldızsız Işıkçı**'nın kafa lambası takası da bir yan görevdir, toplam **43**; Görevler penceresi "Bitirdiklerin: x/43" yazar.
 
 ### Kurallar
 
@@ -2535,6 +2542,7 @@ ACT 1'de 27 kişi, **216 görev** (her kişinin 8 görevi) + Kemal'in ayak işle
 3. **Her yan kişi kendi saatinde görünür; hava etkilemez (v3.40, Boğaç: "her bir görev farklı bir zaman diliminde alınabilir olsun").** Her yan kişinin **kendine ait, ötekilerden farklı** bir saat aralığı vardır (kimi şafakta, kimi öğlen, kimi akşamüstü, kimi yalnızca gece; aralıklar ~4–6 saattir, tablolarda). O saatlerin dışında yerinde yoktur; oyuncu adayı farklı saatlerde dolaşarak onlara rastlar. Mağaradaki kişiler (13–18) mağarada her saat durur. Yağmur, fırtına, sis görünmelerini değiştirmez.
    - **Bir kez alınan görevin kişisi yerinde kalır (v3.40, Boğaç):** bir yan görevi bir kez aldıktan sonra (bıraksan, bayılıp yarıda kalsa ya da Görevler'de beklese de) o kişi görevi bitene kadar saat aralığına bakmadan **her saat** yerinde durur. Hayalet kız Işıl dışında (o yalnızca kendi gece saatinde belirir).
    - **Sırayla açılırlar, bir biyomda en çok 2 (v3.40, Boğaç: "hepsi birden değil… ana görevler ilerledikçe arada alınabilir şeyler olmalı"):** yan görevler hepsi birden çıkmaz. Her biyomun yan görevlerinin bir **sırası** vardır ve her biri ana hikâyenin belli bir yerine kadar bekler: **bitirdiğin ana görev sayısı** (bütün kişilerin ana görevleri sayılır) ve bazılarında belli bir ana görev (ör. Kemal'in 3. görevi "Doğu geçidini aç"). Bir biyomda aynı anda **en çok 2 bitmemiş yan görev** açıktır (alınmış ama bitmemiş olanlar da sayılır; bu sınıra **yalnızca yan görevler** sayılır, Çoban Davut (CB) ve Çiftçi Ekin (EK) gibi ana görevler sayılmaz); biri bitince sıradaki (koşulu tutuyorsa) açılır. Açılmamış yan kişi dünyada da haritada da yoktur. Mağaradaki yan görevler (13–18) bu sıraya girmez. Sıra ve koşullar aşağıda "Açılış sırası"nda.
+   - **İstisna: Yıldızsız Işıkçı (10 Kasım 2026, Boğaç: "kafa lambası isteyen NPC ile konuşunca onu bir yan görev olarak al; normalde 2 yan görev alınabilir ama bunun istisna durumu olsun, 3. yan görevi alabil"):** Işıkçı ile konuşup **"Bunları bulacağım"** deyince **"Hiç bitmeyen ışık"** yan görevi alınır (adım: Işıkçı'ya 5 Mor kıymık, 3 Gece sefası, 1 Tunç külçesi götür). Bu görev biyomun **2 yan görev sınırına sayılmaz**: Yurt'ta 2 yan görev açıkken de alınır, onu alınca Yurt'un sıradaki yan görevleri kapanmaz. Işıkçı yan kişiler gibi yerleştirilmez; yine 15. günden sonra her akşam 18:00–05:30 kendi yerinde (haritada mavi nokta) durur, başında "?" çıkmaz. Takas edilince ("Takas et") görev biter ("Yan görev bitti · Kafa lambası"; ödülü lambadır, Vio ve XP vermez); görev alınmadan da takas edilebilir, o zaman da bitmiş sayılır. Eski kayıtta lamba önceden alınmışsa görev bitmiş sayılır.
 4. **Hiçbir yan görev kaçırılmaz.** Yan kişi görevi bitene kadar **her gün** kendi saatinde aynı yerde yeniden çıkar. Süre sınırı yoktur, zamanlı bir adım yoktur (bekleme adımı hariç; o da bayılmadıkça yarıda kalmaz). Tamamlamaya çalışan oyuncu hepsini bitirebilir.
 5. **Bayılınca yalnızca takip edilen yan görev iptal olur (Görevler'de bekleyenler kalır).** Yan görev sürerken bayılırsan (canavar, açlık ya da mor ışık) **yan görev** yarıda kalır, **ana görev** olduğu gibi durur. Yarıda kalan yan görev hiç alınmamış sayılır: yan kişi kendi yerine döner ve görevi **en baştan, aynı yerden** yeniden alırsın. Yan görev için doğan canavarlar bayılınca silinir.
 6. **Bırakmak.** Yan görev kartındaki **×** ile görev bırakılabilir ("Bu yan görevi bırakayım mı?" → Evet/Hayır). Bırakınca yan kişi yerine döner, görev yeniden alınabilir.
@@ -2801,7 +2809,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 7. **Kayıt.** Mağaradayken kaydedilirse oyun, kayıt açılınca seni **mağaranın girişinin önünde** başlatır. Mağarada açtığın yerler (harita) kaydedilir.
 8. **Harita.** Dışarıda mağaranın girişi küçük ve büyük haritada **mağara simgesiyle** görünür (o biyoma ayak basmışsan); büyük haritada üzerine gelince adı ve şartı yazar ("Yankı Mağarası · Sv 5 · meşale"). Mağaranın içindeyken harita **mağaranın kendi haritasını** gösterir: yürüdükçe açılan tüneller, giriş ve en dipteki kişi.
 9. **Canlılar.** Her mağarada **3 canlı türü** yaşar; yalnızca o mağarada çıkarlar (dışarıda yoktur). Mağarada dolaşırken çevrende (200–420 px) karanlıkta doğarlar. Her tür adanın öbür canlıları gibi **Reis** sayacına sahiptir: yeteri kadar avlayınca o türün Reisi gelir. Almanakta biyomun canlılarının altında ayrı bir **"Mağara: …"** bölümünde görünürler (mağaraya bir kez girmiş olmak yeter).
-10. **Mağara boss'u.** Her mağaranın bir boss'u vardır; doğrudan **Reis biçimindedir** (mor parıltılı, iri). Yalnızca en dipteki kişinin görevinde çağrılır. Almanakta mağara bölümünün sonunda durur:
+10. **Mağara boss'u.** Her mağaranın bir boss'u vardır; kendi büyük resmiyle çizilir (mor parıltılı, iri; bkz. Boss'ların görünüşü). Yalnızca en dipteki kişinin görevinde çağrılır. Almanakta mağara bölümünün sonunda durur:
     - hiç karşılaşılmadıysa: kapalı kart ("???", "Henüz karşılaşmadın");
     - karşılaşıp yenemediysen (bayıldıysan): özellikleri açılır (can, hasar, hız, hamleler, düşürdükleri) ama kart **altın değildir** ("Karşılaştın, henüz yenemedin");
     - yendiysen kart kendiliğinden **altın** olur ("★ Yenildi").
@@ -2820,7 +2828,22 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 | Kör kertenkele | nötr | 40 | 9 | 40 | 12 | vurulunca saldırır | Kör kertenkele eti (her zaman), Kertenkele pulu 1–2 (%60) |
 | Taş örümceği | saldırgan | 55 | 12 | 56 | 16 | ısırığı kanatır | Taş örümceği ipi 1–2 (%80) |
 
-**Boss · Yankı Kraliçesi** (Reis biçiminde dev yarasa): can 900, hasar 22, hız 62, uçar, XP 400; düşürdükleri: Kraliçe pençesi (her zaman), Yarasa zarı 3–5.
+**Yarasaların görünüşü (10 Kasım 2026, Boğaç: "mağara yarasaları ve leşleri çok kötü olmuş; yerde gözükmüyorlar, leşleri ayrı gölgeleri ayrı yere düşüyor, yarasaya da benzemiyorlar"):** Mağara yarasası (ve onun çizimini kullanan Kaya yarasası, Kristal yarasa, Yankı Kraliçesi) önden görülen bir yarasadır: sivri iki kulak, iri parlak gözler (kovalarken kırmızı), iki küçük beyaz diş, açık gövde göğsü ve iki yana açılan, kemikleri belli, alt kenarı tırtıklı zar kanatlar. Kanatlarını **üç kareyle** çırparak (yukarı, düz, aşağı) yerden biraz yüksekte uçar; gölgesi tam altında yerdedir. **Leşi:** vurulunca dönmeden **yere süzülüp düşer**, kanatları iki yana açık, gözleri kapalı (✕) **gölgesinin tam üstünde** yatar. Yankı Kraliçesi aynı yarasanın büyüğüdür (mor tonlu, altın taçlı).
+
+**Kör kertenkele ve Taş örümceği (10 Kasım 2026, Boğaç: "kör kertenkele de kertenkeleye benzer bir canlı olsun", "taş örümceği de örümceğe benzemiyor"):** ikisi de üstten görünür, başı yürüdüğü yöne bakar ve iki kareyle yürür. **Kör kertenkele:** soluk pembe, uzun gövde, yanlara açılan dört pençeli bacak, sırtında açık bir şerit, uzun ve sallanan kuyruk, süt beyazı kör gözler. **Taş örümceği:** gri, iri karın (sırtında koyu bir haç işareti) ve küçük baş, iki yana dörder **eklemli bacak**, kırmızı gözler (kovalarken daha parlak) ve iki beyaz diş. Leşleri yuvarlanmaz; durdukları gibi yere yatar, gözleri söner.
+
+**Boss'ların görünüşü (10 Kasım 2026, Boğaç: "boss da hiç bossa benzememiş"):** mağara boss'ları başka bir canlının resmini ödünç almaz; her birinin kendi büyük resmi vardır, ekranda oyuncunun yaklaşık üç katı boydadır, iki kareyle kıpırdar, çevresinde mor parıltı ve başının üstünde uzun can çubuğu durur. Leşleri de aynı resmin yana yatmış halidir; Almanak'ta da bu resim görünür.
+
+| Boss | Görünüşü |
+| --- | --- |
+| Yankı Kraliçesi | Mor tüylü, iri bir yarasa; başında altın taç, kanatları açık |
+| Yaşlı Kök | Yürüyen yaşlı bir ağaç kütüğü: tepesinde yosun ve mor çiçekli taç, dal kolları, mor yanan kızgın gözler, kök ayaklar, gövdede amber reçine damlaları |
+| Çamur Ana | Dev bir balçık kurbağası: şişen gırtlak, sarı yarık gözler, sırtında kamış tacı, sırtında mor parlayan kabarcıklar, ağzından damlayan balçık |
+| Dağ Devi | Taştan bir dev: karla örtülü omuzlar ve baş, buz mavisi gözler, göğsünde mor ışıklı çatlak, omuzlarından çıkan gümüş kristaller, iri taş yumruklar (biri kalkıp iner) |
+| Kor Kral | Kara bazalttan bir kral: gövdesinde akan lav damarları, başında alevleri titreyen altın taç, elinde ateşli asa, kor gibi yanan gözler |
+| Işık Yutan | Havada süzülen kapkara bir yaratık: altı göz, ışığı yutan dişli dev ağız (içinde mor girdap), sırtında mor ayna kristalleri, altında kıpırdayan dokunaçlar |
+
+**Boss · Yankı Kraliçesi** (taçlı dev yarasa): can 900, hasar 22, hız 62, uçar, XP 400; düşürdükleri: Kraliçe pençesi (her zaman), Yarasa zarı 3–5.
 
 **Toplanabilenler:** Yankı mantarı (mavi parlar; elle), Damla taşı (elle).
 
@@ -2866,7 +2889,7 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 | Kök yılanı | saldırgan | 70 | 16 | 58 | 22 | ısırığı zehirler | Kök yılanı derisi (%70) |
 | Mağara kurdu | saldırgan | 120 | 22 | 66 | 30 | 2–3'lü sürü | Mağara kurdu eti (her zaman), Mağara kurdu postu (%60) |
 
-**Boss · Yaşlı Kök** (Reis biçiminde, köklerden örülmüş dev bir canlı): can 2000, hasar 38, hız 40, XP 900; düşürdükleri: Yaşlı Kök özü (her zaman), Kök reçinesi 3–5.
+**Boss · Yaşlı Kök** (yürüyen yaşlı ağaç kütüğü): can 2000, hasar 38, hız 40, XP 900; düşürdükleri: Yaşlı Kök özü (her zaman), Kök reçinesi 3–5.
 
 **Toplanabilenler:** Kök reçinesi (amber parlar; elle). Orman'ın mantarı Kanlıca dışarıda, ağaçların dibinde çıkar.
 
@@ -2900,7 +2923,7 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 
 ### Yeni mağaraların ortak kuralları
 
-- **Canlıların görünüşü:** yeni canlılar adadaki akrabalarının biçiminde, kendi renkleriyle çizilir (ör. Batak semenderi yeşil bir Lav kertenkelesi, Lav yılanı kızıl bir Engerek; Kaya yarasası, Kristal yarasa, Tavan örümceği, Ayna örümceği ve Kor böceği Yankı ve Kök mağaralarının canlılarının renk değiştirmiş halidir). Boss'lar Reis biçimindedir (mor parıltılı, iri, adı ve uzun can çubuğuyla).
+- **Canlıların görünüşü:** yeni canlılar adadaki akrabalarının biçiminde, kendi renkleriyle çizilir (ör. Batak semenderi yeşil bir Lav kertenkelesi, Lav yılanı kızıl bir Engerek; Kaya yarasası, Kristal yarasa, Tavan örümceği, Ayna örümceği ve Kor böceği Yankı ve Kök mağaralarının canlılarının renk değiştirmiş halidir). Boss'lar başka bir canlının büyütülmüşü değildir, her birinin kendine ait büyük resmi vardır (bkz. Boss'ların görünüşü).
 - **Toplanabilenler:** her yeni mağarada 4 toplanabilir yalnızca o mağarada çıkar. Parlayanlar (Parıltı yosunu, Gümüş filizi, Dağ kristali, Kükürt kristali, Kor taşı, Mor damar taşı, Işık sporu, Ayna taşı, Yıldız tozu) çevrelerini hafifçe aydınlatır.
 - **Sesler:** bütün mağara canlılarının ve boss'larının kendi saldırı sesi vardır (bkz. ACT 1 › Canlı sesleri).
 - **Yan görev kalıbı:** dipteki kişi bir hikâye anlatır, mağarada toplanan bir malzemeden **4** tane ister, boss'u çağırır; boss yenilince kişiyle konuşulur. İkinci denemede boss doğrudan çağrılır.
@@ -3049,6 +3072,10 @@ Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara
 ### Teknik not (mağaranın yeri)
 
 Mağaranın içi adanın üstünde, kişilerden, ateşlerden ve yerlerden en az ~360 piksel uzak, ulaşılabilir kuru bir alana kurulur (bütün mağaralar aynı alanı paylaşır; aynı anda yalnızca birinin içinde olunur). İçerideyken o alanın ağaçları, toplanabilirleri, zemini ve havası gizlenir; altındaki su ya da ulaşılamayan yerler mağarada kaya duvar olur. Mağaradayken o alanın biyomu "keşfedilmiş" sayılmaz.
+
+**Mağarada su yoktur (10 Kasım 2026, Boğaç: "mağaranın etrafından su toplanabiliyor; orası bir ada değil, mağara"):** mağaranın içindeyken adanın o köşesindeki göl, nehir ya da deniz yok sayılır: "Su al" damlası çıkmaz, su doldurulamaz, olta atılamaz, kil kazılamaz.
+
+**Duvarın ardına vurulmaz (10 Kasım 2026, Boğaç: "mağara duvarlarından geçmemeli saldırılarım; ben hasar almadan buradan vurabiliyorum"):** mağarada senin vuruşların (yakın dövüş ve hamleler) ile canlı arasında duvar varsa vuruş ona değmez; köşenin ardındaki canlıya ancak duvarın etrafından dolaşıp yüz yüze gelince vurulur.
 
 
 ## Gemici Poyraz ve deniz
@@ -4560,7 +4587,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Taş balta | 1 Sopa, 2 Keskin taş, 2 İp, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 31 |
 | Taş bıçak | 1 Sivri taş, 4 Dal, 1 İp, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 31 |
 | Taş havan | 1 Taş kase, 3 Nehir çakılı, 1 İp, 1 Dal, 1 Taş | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 40 |
-| Taş kazma | 1 Sivri taş, 1 Sopa, 2 İp, 2 Dal, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 46 |
+| Taş kazma | 1 Sivri taş, 1 Sopa, 2 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 41 |
 | Taş kılıç | 1 Sopa, 4 Keskin taş, 2 İp, 1 Çakmaktaşı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 39 |
 | Taş savaş çekici | 1 Sopa, 4 Taş, 3 İp | – | El yapımı (Tab) | 31 |
 | Taş topuz | 1 Sopa, 2 Taş, 2 İp | – | El yapımı (Tab) | 23 |
@@ -5668,6 +5695,28 @@ Fiyat: Sinan'a ödenen toplam Vio, malzeme ve işçilik dahil (tek tanım: Siste
 
 ## Eşya resimleri (v3.37, Boğaç)
 
+### Silah ve alet resimleri (10 Kasım 2026, Boğaç: "hangisi kılıç hangisi mızrak hangisi balta hangisi kazma belli olmuyor; aletler alete benzemeli ama git gide daha güçlü ve görkemli gözükmeliler")
+
+Bütün baltalar, kazmalar, mızraklar, kılıçlar, savaş çekiçleri ve topuzlar tek bir kurala göre çizilir. Hepsi çapraz durur: sap sol altta, baş sağ üstte (elde ve vuruşta da böyle görünür). **Türü başının şeklinden**, **seti renginden**, **gücü süsünden** belli olur:
+
+| Tür | Şekil |
+|---|---|
+| Balta | Sapın tepesinde bir yana açılan geniş ağız: sapa yakın dar, kesen kenarı uzun ve hafif yuvarlak |
+| Kazma | Sapın tepesinde iki yana uzanan, uçları aşağı kıvrılan sivri kollar |
+| Mızrak | Uzun sap, ucunda yaprak biçimli sivri uç |
+| Kılıç | Uzun namlu, kabza ve balçak |
+| Savaş çekici | Sapın tepesinde iri, köşeli bir baş |
+| Topuz | Sapın tepesinde yuvarlak, çıkıntılı bir baş |
+
+| Güç | Setler | Görünüş |
+|---|---|---|
+| 1 | Taş, Kemik | Açık renk tahta sap, kaba taş baş, başın altında ip bağı |
+| 2 | Bakır, Çakmaktaşı, Granit, Tunç | Metal ya da yontulmuş taş baş, metal bilezik; topuzda 4 çıkıntı |
+| 3 | Timsah dişi, Demir, Kuvars, Çelik, Gümüş, Bazalt | Daha büyük baş, koyu sap, deri sargılı tutamak; balta **çift ağızlı**, mızrakta çapraz kanat, savaş çekicinde arka diken, topuzda 8 çıkıntı, kılıçta geniş balçak |
+| 4 | Ejder, Kara çelik, Obsidyen, Mor kristal, Ametist | En büyük baş, kara sap, **altın** bilezik ve sargı, tepede sivri uç; kılıcın balçağı altın ve uçları değerli taşlı, topuzun ortasında parlayan taş |
+
+Setin rengi başın rengidir (taş gri, bakır kızıl, tunç sarı, demir çelik grisi, timsah dişi fildişi, ejder kızıl, kara çelik koyu, obsidyen mor-kara, mor kristal ve ametist mor). **Keskin / Zehirli / Alevli** silahların sol üst köşesinde yağının rengi (kırmızı, yeşil, turuncu) küçük bir damla olarak durur. Yaylar, bıçaklar, Işın kılıcı ve öbür aletler (kürek, olta, tırmık…) kendi resimleriyle kalır.
+
 Her eşyanın adına uygun bir resmi vardır (Giriş › Kural). v3.37'ye kadar **194 eşya** resimsizdi ve adından renk alan bir "hediye paketi" kutusu olarak görünüyordu; hepsine gerçek resim çizildi. Resim envanterde, kitapta, elde, yere düşünce ve kurulunca aynıdır.
 - **v3.43 tarla eşyaları:** altı tohum kesesi (her biri içindeki tohumun renginde), Buğday (başak demeti), Patates, Soğan, Kabak, Ayçiçeği, Buğday unu (çuval), Ekmek (somun), Korkuluk, Hasat sepeti (dolu sepet), Elma / Armut / Armut fidanı (saksıda fidan, meyvesinin renginde bir tomurcuk).
 
@@ -6693,7 +6742,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Taş havan | 40 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | Ahududu ezmesi (alet), Alıç ezmesi (alet), Ardıç meyvesi ezmesi (alet), Balık yağı (alet), Böğürtlen ezmesi (alet), Hardal ezmesi (alet) … (+14) |
 | Taş kabuk ² | 40 | – | Av: Taş kaplumbağası düşürür %90 (ACT 2 · Kristal Golem Ocağı) | – |
 | Taş kase | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Taş havan, Taş lamba |
-| Taş kazma | 46 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
+| Taş kazma | 41 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Taş kömürü | 11 | – | Kazmayla kazılır: Orman (ACT 1) | Barut, Çelik çizme, Çelik eldiven, Çelik miğfer, Çelik zırh, Gök demiri külçesi … (+4) |
 | Taş kılıç | 39 | alet, silah 12 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | Alevli Taş kılıç, Keskin Taş kılıç, Zehirli Taş kılıç |
 | Taş lamba | 41 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |

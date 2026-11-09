@@ -1,3 +1,25 @@
+## v4.08 (10 Kasım 2026) · Taş kazma: 1 Sivri taş, 1 Sopa, 2 İp
+
+**Değişen yerler:** `DB` (satır 1716) `R`'de Taş kazma `i` = Sivri taş 1, Sopa 1, İp 2 (Dal 2 ve Taş 2 silindi); `p`'de Taş kazma 46 → 41 (v51 kuralı: 46 + round(1,3 × −4)). Taş kazmayı malzeme olarak kullanan tarif yok, başka fiyat değişmez. Belge: 80_tarifler ve 90_esyalar satırı. Sürüm etiketi `Versiyon 4.08`.
+- El yapımı özellik satırı: `v258-wst` bloğundaki `deco` [data-hrow] için `.wst`'yi `.bn>span>br+small` (malzeme kutusu) içine koyuyor; `#hcard` bu kutunun içeriğini kopyaladığı için kartta da çıkıyor; `#hcard .wst{display:block}`. Satırda artık özellik yok (kazan listesi eskisi gibi).
+- Tarif kitabı: v4.05 `bookInfo` sarmalı (~18434) kapalı tarife de `.bkst` yongaları koyuyor (`REC.has(r)`), işaret `indexOf('🛡')===0` (charAt yarım emoji veriyordu); v2.65'in kapalı tarife `.wst` ekleyen satırı silindi. `v405bk` stiline `#bkinfo .bkinfo` en az 108 px (700–1199 px genişlikte 130), telefonda sabit 150 px ve kaydırmalı. Ölçüm: 937 tarifin hepsi 1024/1280/412 px'te aynı yükseklik.
+- Leş: v337les `gm` ve iki `nowM` (evcil hayvan, tarla) `day*1440+dayT+(dayT<360?1440:0)`; gün sayısı 06:00'da artıp saat gece yarısı döndüğü için 00:00–06:00 arası leşler 06:00'da 24 saat yaşlanmış sayılıyordu. Kontrol: 05:00'te avlanan tavşanın leşi 08:30'da duruyor.
+- Yetenek ağacı: `explainSkill` `skok.focus({preventScroll:true})`; yeni `v408sk` bloğu (dosya sonu): yetenek düğümüne ve Tamam'a mousedown odak almaz, `buySkill` öncesi cpanel içindeki ve sayfanın kaydırma konumları saklanıp çizimden sonra (hemen, rAF, 200 ve 450 ms) geri konur. Kayma testte üretilemedi (1280×560/800, 412×860); önlem iki yoldan.
+- Almanak tatlı su balıkları: yeni `v408fw` bloğu (dosya sonu); deniz sayfası gibi `alm-l`'ye düğme, kartlar `FISHT` (0 river, 1–2 any) gruplarından, sayılar `QC['fish:'+ad]` (zaten kayıtta). İlk tutuş `announce`. Almanak ızgarası: `grid-auto-rows:auto`, kartlar 300 px (telefonda 270) yüksekliğini kendisi taşıyor (başlık satırı 300 px yer kaplıyordu).
+- El yapımı başlıkları: `renderHand` üstünde `H_GRP` (11 başlık) ve `hGrp(r)` (varyant → yaptığı eşya; GT türü, EQUIP, tarif kategorisi `c`); sıralama önce başlık; `<li class="hgrp">` başlık satırı (stil `#hcard` satırının altında). `.book.hand{grid-template-columns:minmax(0,1fr)}` ve ad `ellipsis`: uzun varyant adı ızgarayı genişletip Yap düğmesini dışarı itiyordu.
+- Mağara canlıları (v232 `art`): yarasa `BATG` ızgaraları (UP/MID/DOWN/DEAD, 25 sütun; Kraliçe ×1,6 ve taç), kertenkele/örümcek `CRIT` ızgaraları (üstten, 2 yürüme karesi). v337les leş: `BATK` dönmez, `g.lie=k` ile yere süzülür, gölge ortada; `FLATK` (kertenkele, örümcek) dönmez, `lie=1` gözler sönük.
+- Almanak: `caveKinds(b)` görülen mağaraların canlılarını biyom sayısına katar (sol liste ve başlık); mağaradayken açılınca `A.b` mağaranın biyomu ve `.cvh`'ye kayar; `__plCave.seen(id)` eklendi.
+- Mağarada duvar: `wallBetween(a)` (caveNow yanında; oyuncunun göğsünden canlıya 3 px'te bir `__plCave.wall`) `attack` ve `hitIn` (hamleler) vuruştan önce bakar; `__plCave.wall(x,y)` eklendi (v232 `cell`).
+- Mağarada su: `caveNow()` (findWaterSpot üstünde); `findWaterSpot`, `target` su/kil, dokunma hedefi su, `waterAhead` mağarada kapalı.
+- Silah/alet resimleri: yeni `v409ikon` bloğu (dosya sonu). `paint(n)` tür (`GT.kind`/`mace`) ve malzemeden (`MAT` tablosu: renkler + güç 0–6) 16×16 çizer; çizim "alet uzayında" (u sap boyunca, v enine; `OFF` kısa aletleri aşağı alır), sonra `outlineCanvas`. `icon` sarılır: bu adlarda önce `paint`. Yüklenirken yalnızca bu silahların `ICON/ICONC/PSPR` önbelleği silinir. Işın kılıcı, yaylar, bıçaklar dışarıda. Geri alma: bloğu sil.
+
+- Mağara boss resimleri: v232 `art()` önüne `BOSSG` ({G: ad → [kare0, kare1] ızgaraları, P: renkler}; üretici `/home/claude/w/boss/b.py` + `kit.py`), `bossSpr(k,fr,beyaz)` küçük canvas önbelleği, `BOSSH(k)`; `art` başında BOSSG'li boss 1,5× çizilir (ölçek `1.5/a.scale`, `imageSmoothingEnabled=false`, f<0 aynalı); eski Yaşlı Kök dalı silindi. `MYK`'ya `BK2` eklendi, `__plCaveArt`'tan BK2 çıktı (artık akraba resmi ödünç alınmıyor). Can çubuğu: BOSSG'li boss'ta `y-BOSSH-6`, Kraliçe'de yükseltildi.
+- Işıkçı yan görevi: v230 bloğunda `Q`'ya `isikci` (`ext:1`, `prize`, adım `bring` LAMP_WANT) eklenir; yerleşim `lampSpot`, `present` ext'te false (Işıkçı kendi çizilir/konuşur), `GATE`'te yok (2 sınırına sayılmaz). `complete` ext'te "Yan görev bitti · Kafa lambası". `__plSide.extStart/extDone/extOn`; `talkLamp` "Bunları bulacağım" → extStart, "Takas et" → extDone. Eski kayıt: `lampman.gone` ise `done`'a eklenir.
+
+- Yıldızsız resimleri: v330ys `drawYS` yeniden yazıldı: `YSG` ızgaraları (üretici `/home/claude/w/ys/y.py`; dev 3 kare, 3. kare `a.wind`), `ysSpr` (göz rengi `E` kovalamada kırmızı), `ysGlowSpr` (parlayan noktalar `lighter` ile), arkada mor radyal ışık; can çubuğu `YSH`; saldırıdaki ışık yarıçapı 30 → 48.
+
+**Geri alma:** `git revert` bu commit.
+
 ## v4.07 (10 Kasım 2026) · biyom başına tek odun
 
 **Değişen yerler:** ad eşlemesi `/home/claude/w/odun/map.json` (327 ad; 10 odun: Odun, Sert, Sağlam, Güçlü, Kor, Kadim; ACT 2 Ulu, Yüce, Efsane, Ölümsüz). Dosyada ağaç adlı odun/kalas/sap/kömür/kaşık/yay adları metin olarak değiştirildi (büyük ve küçük harfli düzyazı dahil). `DB` (1716): adlar çevrildi, aynı ada düşen tarif ve fiyatlardan biyomun asıl ağacınınki kaldı, kabuk tarifleri silindi. `DATA` görevleri: K8, DU6, DU7, AL6, L8 değişti (aynı kişi aynı şeyi istemesin). `NEWP` (v3.11): asıl olmayan odunlar silindi; kabuklar biyom bandında (5/11/19/27) ve `Yüce odun` 26 eklendi, kullananlar ×1,3 kuralıyla izliyor. `TARIF_EK`: malzemesi yerine geçtiğiyle aynı olan, kabuk ve çift varyantlar silindi (145 → 130). Meşe kabuk zırh/eldiven/çizme ve Ceviz kabuğu miğfer (V items) kabuk istiyor.
@@ -181,11 +203,3 @@
 **Geri alma:** `git revert` bu commit (eski kayıt çevrimi `Kerevit eti`yi geri çevirmez; geri alınırsa `REPL` ile `Kerevit eti`→`Kerevit` eklenmeli).
 
 **Kontrol:** chk.js 0 hata. Eşya denetimi: 1337 eşya / 997 tarif, bilinmeyen girdi 0, fiyatsız 0, kullanılmayan ham madde 69 → 69. Kendi adında düşme: 0. Eski kayıt (inv Kerevit 4, kl Kerevit 3) → Kerevit eti 4, kl aynı. Ekran görüntüsü: envanterde alttaki yuva, Özellikler düğmesi, seviye puanı düğmesi mavi. Konsol hatası yok.
-
-## v3.88 (9 Kasım 2026) · envanter/karakter iki sütun, seviye puanı dersi ve hatırlatması
-
-**Değişen yerler:** `v387env`: envanterde `cbody` içeriği `.pfgrid` > `.pfl` (sekmeler + tek sütun liste) ve `.pfr` (sticky; `.pftop.pfi` figür + karakter + `.pfside` içinde `.iact`); Karakter sekmesinde `renderCraft` sarmalı `.pftop.pfc` ile zırh notunu sağa (`.pfr`), seviye/özellik tablosunu sola alır ve `cpanel.wide` ekler. Yeni blok `v388sp`: ilk seviye atlayışta (`SPTUT` 0→1) 2,6 sn sonra `#spcard` öğretici kartı (dışına basmak kapatır), puan kaldıkça `#spchip` ("N seviye puanı ver", XP çubuğunun sağ üstünde; telefonda çubuğun sağında), Karakter düğmesi `pulse`, pencerede `.spcallin` şeridi ve `.spplus.spwant`. Belge: 20_sistemler.md Envanter ve Seviye puanları maddeleri. Sürüm etiketi `Versiyon 3.88`.
-
-**Geri alma:** `git revert` bu commit (iki sütun düzeni ve `v388sp` gider; v3.87 düzeni kalır).
-
-**Kontrol:** chk.js 0 hata. 1920×1080: envanter (liste solda, figür sağda), Karakter (tablo solda). Tıklama denemesi v3.87'deki gibi geçti. `gainXP(45)` → 2. seviye: kart açıldı, "Puanımı vereyim" pencereyi açtı, şerit ve parlayan + göründü, + ile puan verildi (`SPTUT` 2). 844×390 telefonda kart ve düğme görünüyor. Konsol hatası yok.

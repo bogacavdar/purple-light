@@ -26,7 +26,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 7. **Kayıt.** Mağaradayken kaydedilirse oyun, kayıt açılınca seni **mağaranın girişinin önünde** başlatır. Mağarada açtığın yerler (harita) kaydedilir.
 8. **Harita.** Dışarıda mağaranın girişi küçük ve büyük haritada **mağara simgesiyle** görünür (o biyoma ayak basmışsan); büyük haritada üzerine gelince adı ve şartı yazar ("Yankı Mağarası · Sv 5 · meşale"). Mağaranın içindeyken harita **mağaranın kendi haritasını** gösterir: yürüdükçe açılan tüneller, giriş ve en dipteki kişi.
 9. **Canlılar.** Her mağarada **3 canlı türü** yaşar; yalnızca o mağarada çıkarlar (dışarıda yoktur). Mağarada dolaşırken çevrende (200–420 px) karanlıkta doğarlar. Her tür adanın öbür canlıları gibi **Reis** sayacına sahiptir: yeteri kadar avlayınca o türün Reisi gelir. Almanakta biyomun canlılarının altında ayrı bir **"Mağara: …"** bölümünde görünürler (mağaraya bir kez girmiş olmak yeter).
-10. **Mağara boss'u.** Her mağaranın bir boss'u vardır; doğrudan **Reis biçimindedir** (mor parıltılı, iri). Yalnızca en dipteki kişinin görevinde çağrılır. Almanakta mağara bölümünün sonunda durur:
+10. **Mağara boss'u.** Her mağaranın bir boss'u vardır; kendi büyük resmiyle çizilir (mor parıltılı, iri; bkz. Boss'ların görünüşü). Yalnızca en dipteki kişinin görevinde çağrılır. Almanakta mağara bölümünün sonunda durur:
     - hiç karşılaşılmadıysa: kapalı kart ("???", "Henüz karşılaşmadın");
     - karşılaşıp yenemediysen (bayıldıysan): özellikleri açılır (can, hasar, hız, hamleler, düşürdükleri) ama kart **altın değildir** ("Karşılaştın, henüz yenemedin");
     - yendiysen kart kendiliğinden **altın** olur ("★ Yenildi").
@@ -45,7 +45,22 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 | Kör kertenkele | nötr | 40 | 9 | 40 | 12 | vurulunca saldırır | Kör kertenkele eti (her zaman), Kertenkele pulu 1–2 (%60) |
 | Taş örümceği | saldırgan | 55 | 12 | 56 | 16 | ısırığı kanatır | Taş örümceği ipi 1–2 (%80) |
 
-**Boss · Yankı Kraliçesi** (Reis biçiminde dev yarasa): can 900, hasar 22, hız 62, uçar, XP 400; düşürdükleri: Kraliçe pençesi (her zaman), Yarasa zarı 3–5.
+**Yarasaların görünüşü (10 Kasım 2026, Boğaç: "mağara yarasaları ve leşleri çok kötü olmuş; yerde gözükmüyorlar, leşleri ayrı gölgeleri ayrı yere düşüyor, yarasaya da benzemiyorlar"):** Mağara yarasası (ve onun çizimini kullanan Kaya yarasası, Kristal yarasa, Yankı Kraliçesi) önden görülen bir yarasadır: sivri iki kulak, iri parlak gözler (kovalarken kırmızı), iki küçük beyaz diş, açık gövde göğsü ve iki yana açılan, kemikleri belli, alt kenarı tırtıklı zar kanatlar. Kanatlarını **üç kareyle** çırparak (yukarı, düz, aşağı) yerden biraz yüksekte uçar; gölgesi tam altında yerdedir. **Leşi:** vurulunca dönmeden **yere süzülüp düşer**, kanatları iki yana açık, gözleri kapalı (✕) **gölgesinin tam üstünde** yatar. Yankı Kraliçesi aynı yarasanın büyüğüdür (mor tonlu, altın taçlı).
+
+**Kör kertenkele ve Taş örümceği (10 Kasım 2026, Boğaç: "kör kertenkele de kertenkeleye benzer bir canlı olsun", "taş örümceği de örümceğe benzemiyor"):** ikisi de üstten görünür, başı yürüdüğü yöne bakar ve iki kareyle yürür. **Kör kertenkele:** soluk pembe, uzun gövde, yanlara açılan dört pençeli bacak, sırtında açık bir şerit, uzun ve sallanan kuyruk, süt beyazı kör gözler. **Taş örümceği:** gri, iri karın (sırtında koyu bir haç işareti) ve küçük baş, iki yana dörder **eklemli bacak**, kırmızı gözler (kovalarken daha parlak) ve iki beyaz diş. Leşleri yuvarlanmaz; durdukları gibi yere yatar, gözleri söner.
+
+**Boss'ların görünüşü (10 Kasım 2026, Boğaç: "boss da hiç bossa benzememiş"):** mağara boss'ları başka bir canlının resmini ödünç almaz; her birinin kendi büyük resmi vardır, ekranda oyuncunun yaklaşık üç katı boydadır, iki kareyle kıpırdar, çevresinde mor parıltı ve başının üstünde uzun can çubuğu durur. Leşleri de aynı resmin yana yatmış halidir; Almanak'ta da bu resim görünür.
+
+| Boss | Görünüşü |
+| --- | --- |
+| Yankı Kraliçesi | Mor tüylü, iri bir yarasa; başında altın taç, kanatları açık |
+| Yaşlı Kök | Yürüyen yaşlı bir ağaç kütüğü: tepesinde yosun ve mor çiçekli taç, dal kolları, mor yanan kızgın gözler, kök ayaklar, gövdede amber reçine damlaları |
+| Çamur Ana | Dev bir balçık kurbağası: şişen gırtlak, sarı yarık gözler, sırtında kamış tacı, sırtında mor parlayan kabarcıklar, ağzından damlayan balçık |
+| Dağ Devi | Taştan bir dev: karla örtülü omuzlar ve baş, buz mavisi gözler, göğsünde mor ışıklı çatlak, omuzlarından çıkan gümüş kristaller, iri taş yumruklar (biri kalkıp iner) |
+| Kor Kral | Kara bazalttan bir kral: gövdesinde akan lav damarları, başında alevleri titreyen altın taç, elinde ateşli asa, kor gibi yanan gözler |
+| Işık Yutan | Havada süzülen kapkara bir yaratık: altı göz, ışığı yutan dişli dev ağız (içinde mor girdap), sırtında mor ayna kristalleri, altında kıpırdayan dokunaçlar |
+
+**Boss · Yankı Kraliçesi** (taçlı dev yarasa): can 900, hasar 22, hız 62, uçar, XP 400; düşürdükleri: Kraliçe pençesi (her zaman), Yarasa zarı 3–5.
 
 **Toplanabilenler:** Yankı mantarı (mavi parlar; elle), Damla taşı (elle).
 
@@ -91,7 +106,7 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 | Kök yılanı | saldırgan | 70 | 16 | 58 | 22 | ısırığı zehirler | Kök yılanı derisi (%70) |
 | Mağara kurdu | saldırgan | 120 | 22 | 66 | 30 | 2–3'lü sürü | Mağara kurdu eti (her zaman), Mağara kurdu postu (%60) |
 
-**Boss · Yaşlı Kök** (Reis biçiminde, köklerden örülmüş dev bir canlı): can 2000, hasar 38, hız 40, XP 900; düşürdükleri: Yaşlı Kök özü (her zaman), Kök reçinesi 3–5.
+**Boss · Yaşlı Kök** (yürüyen yaşlı ağaç kütüğü): can 2000, hasar 38, hız 40, XP 900; düşürdükleri: Yaşlı Kök özü (her zaman), Kök reçinesi 3–5.
 
 **Toplanabilenler:** Kök reçinesi (amber parlar; elle). Orman'ın mantarı Kanlıca dışarıda, ağaçların dibinde çıkar.
 
@@ -125,7 +140,7 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 
 ### Yeni mağaraların ortak kuralları
 
-- **Canlıların görünüşü:** yeni canlılar adadaki akrabalarının biçiminde, kendi renkleriyle çizilir (ör. Batak semenderi yeşil bir Lav kertenkelesi, Lav yılanı kızıl bir Engerek; Kaya yarasası, Kristal yarasa, Tavan örümceği, Ayna örümceği ve Kor böceği Yankı ve Kök mağaralarının canlılarının renk değiştirmiş halidir). Boss'lar Reis biçimindedir (mor parıltılı, iri, adı ve uzun can çubuğuyla).
+- **Canlıların görünüşü:** yeni canlılar adadaki akrabalarının biçiminde, kendi renkleriyle çizilir (ör. Batak semenderi yeşil bir Lav kertenkelesi, Lav yılanı kızıl bir Engerek; Kaya yarasası, Kristal yarasa, Tavan örümceği, Ayna örümceği ve Kor böceği Yankı ve Kök mağaralarının canlılarının renk değiştirmiş halidir). Boss'lar başka bir canlının büyütülmüşü değildir, her birinin kendine ait büyük resmi vardır (bkz. Boss'ların görünüşü).
 - **Toplanabilenler:** her yeni mağarada 4 toplanabilir yalnızca o mağarada çıkar. Parlayanlar (Parıltı yosunu, Gümüş filizi, Dağ kristali, Kükürt kristali, Kor taşı, Mor damar taşı, Işık sporu, Ayna taşı, Yıldız tozu) çevrelerini hafifçe aydınlatır.
 - **Sesler:** bütün mağara canlılarının ve boss'larının kendi saldırı sesi vardır (bkz. ACT 1 › Canlı sesleri).
 - **Yan görev kalıbı:** dipteki kişi bir hikâye anlatır, mağarada toplanan bir malzemeden **4** tane ister, boss'u çağırır; boss yenilince kişiyle konuşulur. İkinci denemede boss doğrudan çağrılır.
@@ -274,3 +289,7 @@ Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara
 ### Teknik not (mağaranın yeri)
 
 Mağaranın içi adanın üstünde, kişilerden, ateşlerden ve yerlerden en az ~360 piksel uzak, ulaşılabilir kuru bir alana kurulur (bütün mağaralar aynı alanı paylaşır; aynı anda yalnızca birinin içinde olunur). İçerideyken o alanın ağaçları, toplanabilirleri, zemini ve havası gizlenir; altındaki su ya da ulaşılamayan yerler mağarada kaya duvar olur. Mağaradayken o alanın biyomu "keşfedilmiş" sayılmaz.
+
+**Mağarada su yoktur (10 Kasım 2026, Boğaç: "mağaranın etrafından su toplanabiliyor; orası bir ada değil, mağara"):** mağaranın içindeyken adanın o köşesindeki göl, nehir ya da deniz yok sayılır: "Su al" damlası çıkmaz, su doldurulamaz, olta atılamaz, kil kazılamaz.
+
+**Duvarın ardına vurulmaz (10 Kasım 2026, Boğaç: "mağara duvarlarından geçmemeli saldırılarım; ben hasar almadan buradan vurabiliyorum"):** mağarada senin vuruşların (yakın dövüş ve hamleler) ile canlı arasında duvar varsa vuruş ona değmez; köşenin ardındaki canlıya ancak duvarın etrafından dolaşıp yüz yüze gelince vurulur.

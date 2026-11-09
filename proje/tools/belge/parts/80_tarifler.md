@@ -542,7 +542,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Taş balta | 1 Sopa, 2 Keskin taş, 2 İp, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 31 |
 | Taş bıçak | 1 Sivri taş, 4 Dal, 1 İp, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 31 |
 | Taş havan | 1 Taş kase, 3 Nehir çakılı, 1 İp, 1 Dal, 1 Taş | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 40 |
-| Taş kazma | 1 Sivri taş, 1 Sopa, 2 İp, 2 Dal, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 46 |
+| Taş kazma | 1 Sivri taş, 1 Sopa, 2 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 41 |
 | Taş kılıç | 1 Sopa, 4 Keskin taş, 2 İp, 1 Çakmaktaşı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 39 |
 | Taş savaş çekici | 1 Sopa, 4 Taş, 3 İp | – | El yapımı (Tab) | 31 |
 | Taş topuz | 1 Sopa, 2 Taş, 2 İp | – | El yapımı (Tab) | 23 |

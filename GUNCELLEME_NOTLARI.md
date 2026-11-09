@@ -8,6 +8,41 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.08 · 10 Kasım 2026
+
+### Oynanış
+- **Taş kazma daha ucuz:** tarifi artık yalnızca 1 Sivri taş, 1 Sopa ve 2 İp (2 Dal ve 2 Taş kalktı). Fiyatı 46 → 41 Vio. Sıfırdan yapılınca 10 Taş, 2 Dal ve 7 Lif gidiyor.
+
+- **Işıkçı'nın lambası artık bir yan görev:** Yıldızsız Işıkçı ile konuşup "Bunları bulacağım" deyince **"Hiç bitmeyen ışık"** yan görevi alınıyor; kartta ne kadar Mor kıymık, Gece sefası ve Tunç külçesi topladığın yazıyor. Bu görev biyomun 2 yan görev sınırına sayılmıyor: Yurt'ta iki yan görevin açıkken de üçüncü olarak alınabiliyor. Takas edince görev bitiyor; lambayı önceden almışsan görev bitmiş sayılıyor. Yan görev sayısı 43 oldu.
+
+### Görsel
+- **Yıldızsızlar uzaylıya benziyor:** mor ışık saldırısında gelen canlılar baştan çizildi. **Gözcü** saydam kubbeli tek dev gözlü, antenli, dokunaçlı; **sürüngen** uzun başlı, dikenli, sekiz bacaklı; **tükürücü** saplı gözlü, karnında parlayan keseli; **dev** iri kafalı, üç çekik kara gözlü, pençeli. Gözleri yeşil yanıyor (kovalarken kırmızı), çevrelerinde nabız gibi atan parlak mor bir ışık var ve çevrelerini daha geniş aydınlatıyorlar.
+- **Mağara boss'ları kendi resimleriyle:** boss'lar artık başka bir canlının büyütülmüş hali değil, her birinin kendine özgü büyük resmi var: **Yaşlı Kök** mor gözlü, yosun taçlı, yürüyen yaşlı bir ağaç; **Çamur Ana** kamış taçlı, gırtlağı şişen dev bir balçık kurbağası; **Dağ Devi** karlı omuzlu, gümüş kristalli, göğsünde mor çatlak olan taştan bir dev; **Kor Kral** lav damarlı, alev taçlı, ateşli asalı bir bazalt kral; **Işık Yutan** altı gözlü, ışığı yutan dişli ağzı ve mor kristalleriyle havada süzülen kapkara bir yaratık. Hepsi kıpırdıyor, can çubukları başlarının üstünde; almanakta ve leşlerinde de aynı resim var.
+- **Mağara yarasaları gerçek yarasa:** sivri kulaklı, iri gözlü, dişli, kemikleri belli zar kanatlı; kanatlarını üç kareyle çırparak uçuyor, gölgesi tam altında. Leşi dönmeden yere süzülüp kanatları açık halde **gölgesinin üstüne** düşüyor (önceden havada, gölgesinden ayrı yerde kalıyordu). Yankı Kraliçesi aynı yarasanın büyük, mor ve taçlı hali.
+- **Kör kertenkele ve Taş örümceği:** kertenkele artık uzun gövdeli, dört pençeli bacaklı, sallanan kuyruklu, soluk pembe ve kör gözlü; örümcek iri karınlı, sekiz eklemli bacaklı, kırmızı gözlü. İkisi de yürürken bacak oynatıyor, leşleri yuvarlanmadan yere yatıyor.
+- **Silah ve alet resimleri baştan çizildi:** balta, kazma, mızrak, kılıç, savaş çekici ve topuz artık başının şeklinden hemen ayırt ediliyor (balta yana açılan ağız, kazma iki yana kıvrılan kollar, mızrak yaprak uçlu uzun sap, kılıç namlu ve balçak, savaş çekici iri köşeli baş, topuz yuvarlak çıkıntılı baş). Setin rengi başında; güç arttıkça büyüyor ve süsleniyor: taş setler ip bağlı tahta saplı, ortadakiler metal bilezikli, üst setler çift ağızlı ve sargılı, en güçlüler kara saplı, altın süslü ve değerli taşlı.
+
+### Düzeltmeler
+- **Mağarada duvarın ardına vurulmuyor:** mağara duvarının köşesinden, canlı sana ulaşamazken ona vurabiliyordun; artık aranızda duvar varsa vuruşun (yakın dövüş ve hamleler) değmiyor.
+- **Mağarada su alınmıyor:** mağaranın içindeyken dışarıdaki göl ya da denizden su alınabiliyor, olta atılabiliyordu; artık mağarada su yok.
+- **Mağara canlıları almanakta sayılıyor:** mağarada avladığın canlılar biyomun sayfasının altında duruyordu ama soldaki sayıya eklenmiyordu ("Çayır 0/8"); artık sayılıyorlar. Mağaradayken almanak o mağaranın bölümünde açılıyor.
+- **Leşler gün dönümünde kaybolmuyor:** gece yarısından sonra avladığın canlıların leşleri sabah "N. Gün" yazısı çıkınca bir anda kayboluyordu; artık yine 4 oyun saati yerde kalıyor. Evcil hayvanların büyümesi ve tarladaki fidanlar da aynı saatle sayılıyor.
+
+### Oynanış
+- **Almanakta tatlı su balıkları:** almanakta yeni bir **🎣 Tatlı su balıkları** sayfası var. Nehirde ve gölde tutulabilen 13 balık sularına göre dizili; tuttuğun balığın kartı açılıyor (nerede tutulur, fiyatı, zorluğu, tarifleri, kaç tane tuttuğun), ilk tuttuğunda "Almanağa eklendi" yazıyor. Eski kayıtlarda bugüne kadar tuttukların açık geliyor.
+
+### Arayüz
+- **El yapımı başlık başlık:** liste artık türlere ayrılıyor: Silahlar, Zırh ve giyim, Aletler, Ateş ve ışık, Yiyecek ve şifa, Büyü ve tılsım, Yapılar ve ev eşyası, Taşıtlar, Süs, boya ve müzik, Zanaat, Malzemeler. Her başlıkta önce yapabildiklerin geliyor. Uzun adlar artık düğmeleri dışarı itmiyor.
+- **Yetenek alınca ekran kaymıyor:** yetenek ağacında bir yetenek alınca pencere aşağı kayıyordu; artık olduğu yerde kalıyor.
+- **Tarif kitabının bilgi kutusu hep aynı boyda:** hangi tarifin üstüne gelirsen gel kutu aynı yükseklikte duruyor, altındaki kareler kaymıyor. Kapalı tariflerde de silahın özellikleri resmin altına sıkışmak yerine küçük kartlarla malzemelerin altında yazıyor; zırhta 🛡 işareti çıkıyor.
+- **El yapımında silah özellikleri kartta:** bir silahın ya da zırhın üstüne gelince hasar, vuruş hızı, menzil, kritik ve keskinlik artık satırın altına eklenmiyor; açılan malzeme kartında, malzemelerin altında yazıyor (telefonda dokununca açılan kutuda). Liste oynamıyor.
+
+### Tasarım belgesi
+- Sistemler › Mor ışık saldırıları'na Yıldızsızların görünüşü; ACT 1 › Mağaralar'a "Boss'ların görünüşü" tablosu; Yan görevler'e Işıkçı istisnası (2 sınırına sayılmayan yan görev, toplam 43); Akış'ta Işıkçı satırı.
+- Tarifler ve Eşya dizininde Taş kazmanın tarifi ve fiyatı güncellendi; Sistemler › El yapımı'na "özellikler kartta" ve "tarif kitabının bilgi kutusu hep aynı boyda" kuralları, Dövüş › Ölüm pozu ve leş'e "gün dönümünde kaybolmaz" eklendi; Eşyalar › Eşya resimleri'ne "Silah ve alet resimleri" bölümü eklendi; Sistemler'e "El yapımı kategorili", "Yetenek alınca pencere yerinde kalır" ve Almanak'a "Tatlı su balıkları sayfası" eklendi; Mağaralar'a yarasa, kertenkele ve örümcek görünüşü ile "mağarada su yoktur" ve "duvarın ardına vurulmaz" eklendi.
+
+---
+
 ## Versiyon 4.07 · 10 Kasım 2026
 
 ### Oynanış
@@ -284,21 +319,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Giriş › Kural: "Canlı kendi adında eşya düşürmez".
 - Oyun akışı › Gösterme kuralı: "Yanıp sönen her şey mavi kenarla yanar".
 - Balıkçılık, Çayır canlıları, Kerevit Reisi, tarifler ve eşya dizininde Kerevit → Kerevit eti.
-
----
-
-## Versiyon 3.88 · 9 Kasım 2026
-
-### Arayüz
-- **Envanter:** eşya listesi solda ve alt alta (her satırda bir eşya); figür, karakter ve seçili eşya listeden bağımsız olarak sağda duruyor, liste kaydırılınca yerinde kalıyor.
-- **Karakter penceresi:** seviye ve özellik puanları solda, figür ve karakter sağda; özellikler artık aşağıda kalmıyor. Pencere envanter kadar geniş.
-
-### Oynanış
-- **Seviye puanı dersi:** 2. seviyeye çıkınca ekranın ortasında bir öğretici kartı açılıyor: seviye puanının ne olduğunu ve Karakter penceresinde bir özelliğin yanındaki + ile verildiğini anlatıyor; "Puanımı vereyim" düğmesi pencereyi açıyor.
-- **Verilmemiş puan hatırlatması:** puanın kaldıkça seviye çubuğunun yanında parlayan "N seviye puanı ver" düğmesi duruyor (basınca Karakter penceresi açılıyor), Karakter düğmesi yanıp sönüyor, pencerede de listenin üstünde sarı bir şerit çıkıyor ve + düğmeleri parlıyor.
-
-### Tasarım belgesi
-- Sistemler › Envanter: yerleşim (liste solda, figür sağda), Özellikler penceresi yerleşimi.
-- Sistemler › Seviye puanları: "İlk seviye dersi" ve "Verilmemiş puan" maddeleri yenilendi.
 
 ---

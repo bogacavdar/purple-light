@@ -2,6 +2,28 @@
 
 ## Eşya resimleri (v3.37, Boğaç)
 
+### Silah ve alet resimleri (10 Kasım 2026, Boğaç: "hangisi kılıç hangisi mızrak hangisi balta hangisi kazma belli olmuyor; aletler alete benzemeli ama git gide daha güçlü ve görkemli gözükmeliler")
+
+Bütün baltalar, kazmalar, mızraklar, kılıçlar, savaş çekiçleri ve topuzlar tek bir kurala göre çizilir. Hepsi çapraz durur: sap sol altta, baş sağ üstte (elde ve vuruşta da böyle görünür). **Türü başının şeklinden**, **seti renginden**, **gücü süsünden** belli olur:
+
+| Tür | Şekil |
+|---|---|
+| Balta | Sapın tepesinde bir yana açılan geniş ağız: sapa yakın dar, kesen kenarı uzun ve hafif yuvarlak |
+| Kazma | Sapın tepesinde iki yana uzanan, uçları aşağı kıvrılan sivri kollar |
+| Mızrak | Uzun sap, ucunda yaprak biçimli sivri uç |
+| Kılıç | Uzun namlu, kabza ve balçak |
+| Savaş çekici | Sapın tepesinde iri, köşeli bir baş |
+| Topuz | Sapın tepesinde yuvarlak, çıkıntılı bir baş |
+
+| Güç | Setler | Görünüş |
+|---|---|---|
+| 1 | Taş, Kemik | Açık renk tahta sap, kaba taş baş, başın altında ip bağı |
+| 2 | Bakır, Çakmaktaşı, Granit, Tunç | Metal ya da yontulmuş taş baş, metal bilezik; topuzda 4 çıkıntı |
+| 3 | Timsah dişi, Demir, Kuvars, Çelik, Gümüş, Bazalt | Daha büyük baş, koyu sap, deri sargılı tutamak; balta **çift ağızlı**, mızrakta çapraz kanat, savaş çekicinde arka diken, topuzda 8 çıkıntı, kılıçta geniş balçak |
+| 4 | Ejder, Kara çelik, Obsidyen, Mor kristal, Ametist | En büyük baş, kara sap, **altın** bilezik ve sargı, tepede sivri uç; kılıcın balçağı altın ve uçları değerli taşlı, topuzun ortasında parlayan taş |
+
+Setin rengi başın rengidir (taş gri, bakır kızıl, tunç sarı, demir çelik grisi, timsah dişi fildişi, ejder kızıl, kara çelik koyu, obsidyen mor-kara, mor kristal ve ametist mor). **Keskin / Zehirli / Alevli** silahların sol üst köşesinde yağının rengi (kırmızı, yeşil, turuncu) küçük bir damla olarak durur. Yaylar, bıçaklar, Işın kılıcı ve öbür aletler (kürek, olta, tırmık…) kendi resimleriyle kalır.
+
 Her eşyanın adına uygun bir resmi vardır (Giriş › Kural). v3.37'ye kadar **194 eşya** resimsizdi ve adından renk alan bir "hediye paketi" kutusu olarak görünüyordu; hepsine gerçek resim çizildi. Resim envanterde, kitapta, elde, yere düşünce ve kurulunca aynıdır.
 - **v3.43 tarla eşyaları:** altı tohum kesesi (her biri içindeki tohumun renginde), Buğday (başak demeti), Patates, Soğan, Kabak, Ayçiçeği, Buğday unu (çuval), Ekmek (somun), Korkuluk, Hasat sepeti (dolu sepet), Elma / Armut / Armut fidanı (saksıda fidan, meyvesinin renginde bir tomurcuk).
 
@@ -1027,7 +1049,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Taş havan | 40 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | Ahududu ezmesi (alet), Alıç ezmesi (alet), Ardıç meyvesi ezmesi (alet), Balık yağı (alet), Böğürtlen ezmesi (alet), Hardal ezmesi (alet) … (+14) |
 | Taş kabuk ² | 40 | – | Av: Taş kaplumbağası düşürür %90 (ACT 2 · Kristal Golem Ocağı) | – |
 | Taş kase | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Taş havan, Taş lamba |
-| Taş kazma | 46 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
+| Taş kazma | 41 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Taş kömürü | 11 | – | Kazmayla kazılır: Orman (ACT 1) | Barut, Çelik çizme, Çelik eldiven, Çelik miğfer, Çelik zırh, Gök demiri külçesi … (+4) |
 | Taş kılıç | 39 | alet, silah 12 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | Alevli Taş kılıç, Keskin Taş kılıç, Zehirli Taş kılıç |
 | Taş lamba | 41 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
