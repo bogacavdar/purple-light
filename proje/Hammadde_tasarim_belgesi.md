@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 3.98** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 3.99** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -514,6 +514,11 @@ Ayarlar penceresinde Titreşim'in hemen üstünde iki seçenek vardır. İkisi d
   - **İnşa kipi:** yapının, döşemenin, zeminin ya da duvarın konacağı yeri gösteren gölge, konabiliyorsa **mavi**, konamıyorsa **turuncu** olur (normalde yeşil / kırmızı).
   - Almanaktaki huy rengi (zararsız / nötr / saldırgan) yazıyla da yazdığı için değişmez; can, tokluk ve enerji çubuklarının üstünde adları yazar, onlar da değişmez. Eşya resimleri, biyom renkleri ve mor ışık değişmez (oyunun adı Mor Işık; mor her modda mor kalır).
 - **Kalp atışını ekranda göster:** açıkken, gece beliren sevdiğin kişi göründüğü sürece (bkz. Mor ışıkta o) her kalp atışında ekranın kenarları da **iki kez** ("güm-güm", sesle aynı anda) yumuşak bir mor ışıkla nabız gibi atar. Sesi kapalı oynayan ya da duyamayan oyuncu da kalp atışını görür. O kaybolunca, oyun duraklatılınca ya da bir pencere açılınca durur.
+
+### Pencerelerin boyutu
+
+- **Bilgisayarda pencereler kenarından büyütülür (9 Kasım 2026, Boğaç):** çanta, el yapımı, kazan, pazar, kitap gibi açılır pencereler farenin olduğu bilgisayarda **sol, sağ ve alt kenarından** (ve alt köşelerinden) tutulup çekilerek büyütülür ya da küçültülür; kenara gelince imleç çift ok olur. Pencere ekranın ortasında kalır, iki yana eşit büyür. **Yazılar, resimler, düğmeler büyümez:** yalnızca pencere genişler; aşağı büyütülünce listede kaydırmadan daha çok satır görünür. En küçük ~360 × 260, en büyük ekran kadar. Her pencere türünün boyutu oyun açık kaldığı sürece hatırlanır (kapatıp açınca aynı boyutta gelir); sayfa yenilenince varsayılana döner. Dokunmatik ekranda yoktur.
+- **El yapımı penceresi biraz daha geniştir (9 Kasım 2026, Boğaç: "yap butonları pencerenin tam yanında kalmış"):** genişliği 560'tan **620**'ye çıktı; satırın en sağındaki Yap düğmesiyle pencere kenarı arasında boşluk kalır.
 
 ### Konuşma penceresi
 
@@ -2208,6 +2213,7 @@ Poyraz'ın yeni görevleri (G1–G4 tekne tamiri, G5–G10 deniz balıkları): "
 | CB7 | Közün çocuğu | Kül Diyarı'nda lav kertenkelesi yavrusunu evcilleştir (Kül böceği kabuğu) | CB6 · Kül Diyarı keşfedildi | CB8 | – | 380 · 320 XP |
 | CB8 | Işıktan boynuzlar | Mor Kristal Vadisi'nde bir kristal geyiği evcilleştir (Ay otu) | CB7 · E5 | – | – | 500 · 450 XP |
 
+- **Pamuk'u ararken sarı daire (9 Kasım 2026, Boğaç: "yan görevlerde oyuncunun elinden tutmuyoruz ama ana görevlerde ufak yardımlar verebiliyoruz"):** CB1'de Pamuk'u ararken haritada **büyük bir sarı daire** (yarıçapı ~22 kare, bir ekrandan geniş) görünür; Pamuk dairenin **rastgele bir yerindedir** (ortasında değil), aramak gerekir. Dairenin dışındaysan ok daireyi gösterir; görev kartında "Pamuk: Çayır · haritada sarı bölge" yazar. Pamuk her yakalanışta kaçınca daire onun yeni yerine göre yeniden çizilir (yine rastgele kaydırılmış). Pamuk'u Davut'a götürürken ok Davut'u gösterir.
 - **Ağıl kurulmadıysa Kemal hatırlatır (Boğaç):** CB1 bittikten sonra Orman keşfedilmiş ve hâlâ bir ağıl kurulmamışsa, Kemal "Görevsiz kalınmaz" kuralındaki ayak işleri gibi önce (bilinmiyorsa) **Ağıl tarifini öğren**, sonra **"Ağıl kur"** işini verir. Ağıl hangi yoldan kurulursa kurulsun Davut'un CB2'si de biter (aynı iş iki kez yapılmaz).
 - **Yeri:** her biyomda Davut'un durduğu yer haritada gösterilmez; ana görev kişisi olduğu için görevi varken başında **!** vardır.
 - Davut'un görev sahneleri: Pamuk'un yanında değneğiyle, sonraki biyomlarda hep bir hayvanı izlerken ("Bak şuna… korkmuyor, merak ediyor.").

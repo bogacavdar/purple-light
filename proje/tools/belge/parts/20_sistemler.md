@@ -143,6 +143,11 @@ Ayarlar penceresinde Titreşim'in hemen üstünde iki seçenek vardır. İkisi d
   - Almanaktaki huy rengi (zararsız / nötr / saldırgan) yazıyla da yazdığı için değişmez; can, tokluk ve enerji çubuklarının üstünde adları yazar, onlar da değişmez. Eşya resimleri, biyom renkleri ve mor ışık değişmez (oyunun adı Mor Işık; mor her modda mor kalır).
 - **Kalp atışını ekranda göster:** açıkken, gece beliren sevdiğin kişi göründüğü sürece (bkz. Mor ışıkta o) her kalp atışında ekranın kenarları da **iki kez** ("güm-güm", sesle aynı anda) yumuşak bir mor ışıkla nabız gibi atar. Sesi kapalı oynayan ya da duyamayan oyuncu da kalp atışını görür. O kaybolunca, oyun duraklatılınca ya da bir pencere açılınca durur.
 
+### Pencerelerin boyutu
+
+- **Bilgisayarda pencereler kenarından büyütülür (9 Kasım 2026, Boğaç):** çanta, el yapımı, kazan, pazar, kitap gibi açılır pencereler farenin olduğu bilgisayarda **sol, sağ ve alt kenarından** (ve alt köşelerinden) tutulup çekilerek büyütülür ya da küçültülür; kenara gelince imleç çift ok olur. Pencere ekranın ortasında kalır, iki yana eşit büyür. **Yazılar, resimler, düğmeler büyümez:** yalnızca pencere genişler; aşağı büyütülünce listede kaydırmadan daha çok satır görünür. En küçük ~360 × 260, en büyük ekran kadar. Her pencere türünün boyutu oyun açık kaldığı sürece hatırlanır (kapatıp açınca aynı boyutta gelir); sayfa yenilenince varsayılana döner. Dokunmatik ekranda yoktur.
+- **El yapımı penceresi biraz daha geniştir (9 Kasım 2026, Boğaç: "yap butonları pencerenin tam yanında kalmış"):** genişliği 560'tan **620**'ye çıktı; satırın en sağındaki Yap düğmesiyle pencere kenarı arasında boşluk kalır.
+
 ### Konuşma penceresi
 
 - **Adlara gelen ekler Türkçe ses uyumuna uyar:** bir kişi ya da eşya adına ek eklenirken (yönelme, belirtme, iyelik…) ekin ünlüsü adın son ünlüsüne, ünsüzü son sese göre seçilir ve özel adlarda kesme işareti konur: "Şifa'ya", "Kemal'e", "Börü'nün", "Dursun'a", "Kayhan'ı".

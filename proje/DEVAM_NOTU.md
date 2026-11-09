@@ -1,3 +1,11 @@
+## v3.99 (9 Kasım 2026) · Pamuk'un sarı dairesi
+
+**Değişen yerler:** Yan görev motorunda `sqZone(id)` (~16748, `__plSide.zone`). Kovalamada, Pamuk'un durduğu ya da kaçtığı yerden 0,25–0,85 yarıçap uzağa kaydırılmış 22 karelik bir daire döner (`A.zc`, Pamuk 2 kareden çok yer değişince yenilenir). Götürmede Davut'un yerini verir. Ana görev `partTarget` artık `'sq'` parçasını tanıyor; `target2` anahtarına daire sayacı (`z.k`) eklendi. Pencereler: `v399rz`/`v399rzjs` (dosya sonu) — `#craft` içinde 5 tutamaç (`.rzh` l/r/b/bl/br, yalnızca `hover:hover`+`pointer:fine`, `v50m` değil), `#cpanel`'e satır içi `width/height !important` (zoom'a bölünerek), mod başına (`cm-*`) boyut bellekte; el yapımı genişliği 620 ve sağ boşluk 18 px. Sürüm etiketi `Versiyon 3.99`.
+
+**Geri alma:** `git revert` bu commit.
+
+**Kontrol:** chk.js 0 hata. El yapımı: Yap'ın kenara uzaklığı 20 → 40 px; sağ kenar +80 → genişlik 744 → 904, alt +60 → 11 → 13 satır, yazı 14 px sabit, kapatıp açınca boyut kalıyor. CB1 etkin kayıtta kart "Pamuk: Çayır · haritada sarı bölge" yazıyor, büyük haritada daire görünüyor, Pamuk merkezden 0,66 R uzakta.
+
 ## v3.98 (9 Kasım 2026) · tanışılmamış görev verenler haritada
 
 **Değişen yerler:** `__plQMk` (satır ~15310) artık yalnızca kuzenleri (`BYG`) değil, sonradan eklenen `__plGIVER` anahtarlarını da (`k_davut`, `k_ekin`) tanıyor. Davut (~21305) ve Ekin (~21513) harita sarmalları `met` yerine `met || __plQMk(k)==='!'` ile çiziyor. Tanışılmamış kişide mevcut v2.09 çizimi (yalnızca parlayan !) çalışıyor. Sürüm etiketi `Versiyon 3.98`.
@@ -151,12 +159,4 @@
 **Geri alma:** `git revert` bu commit.
 
 **Kontrol:** chk.js 0 hata. Denetim (3.79 ↔ 3.80): eşya 1351 → 1326, tarif 983 → 968, bilinmeyen 0, fiyatsız 0, yeni kullanılmayan ham 0. Bitki türü/adet: ACT 1 Çayır 10/525, Orman 11/489, Bataklık 12/474, Kayalık 13/577, Kül 11/506, Mor 12/568; ACT 2 8/369, 7/298, 9/405, 8/369, 8/375, 8/353. Mağara ağzı: 6 mağara × 7 = 42 Sarkıt, 42 Yarasa gübresi (ekran görüntüsüyle bakıldı). Eski kayıt: 3 Yabani mercimek + 1 nohut → 4 nohut, Yabani arpa lapası → Yabani buğday lapası, 2 Saz + 2 Hasırotu → 4 Kamış, Kızıl kum → Kırmızı okr, Işık tozu → Yıldız tozu, Kristal kum → Kristal.
-
-## v3.79 (8 Kasım 2026) · her biyomda iki meyve ağacı
-
-**Değişen yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):** Erik kaynaktan silindi (`TREE_TYPES`, `TREE_TIER`, `FRUITC`, `RAWFOOD`, `SEEDS`, `BTREE`, `FOODT`, almanak `trees`, `P1I['Yabani erik']`, `A['Erik tohumu']`, `SAPL`/`A['Erik fidanı']`, odun fiyat listesi; eski yeniden türlenen `TT[5+…]/TT[10]` satırı). `TREE_TYPES`'a Dut, İncir (`noCut`); `BTREE` Bataklık/Kül; `__I2C.trees` her biyoma bir yeni meyve ağacı (`noCut`). Biyoma göre türleme: `w = meyve ? .45/nF : 1` (meyve ağacı sayısı aynı). `FOODT`'a 8 yeni meyve. `v373sade` v3.79 satırları: `GONE379`, Erik `REPL`/`FOODX`, 8 meyveye fiyat, `FRUITC` rengi ve "X ezmesi" tarifi (3 meyve + 1 Su, Taş havan, fiyat `round(f×3×1,25+4)`); tarif silme kuralı (girdisi FOODX olan, Erik varyantı); `walk` fidan `k` alanı (`SPEC1` Erik → Armut); bildirim metni genel. Yeni `<script id="v379meyve">`: 8 meyve resmi (kendi `A` haritası + `icon` sarmalı, yalnız bu adların önbelleği silinir). Sürüm etiketi `Versiyon 3.79`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. Denetim (3.78 ↔ 3.79): eşya 1341 → 1351, tarif 979 → 983 (varyant 159 → 157), bilinmeyen 0, fiyatsız 0, yeni kullanılmayan ham 0. Meyve ağaçları: Çayır Elma 88 + Armut 96 (önce 184 Elma), Orman Ceviz 78 + Fındık 56, Bataklık Mürver 41 + Dut 34, Kayalık Ardıç 65 + Kestane 54, Kül Ateş narı 21 + İncir 24, Mor Ay elması 30 + Yıldız eriği 28; ACT 2 Bulut elması 83 + Rüzgâr eriği 93, Goblin eriği 110 + Spor elması 114, Hurma 64 + Çöl inciri 69, Kristal armut 72 + Buz armudu 56, Ejder meyvesi 28 + Lav narı 37, Gök üzümü 38 + Yıldız kirazı 32. Resimler torba değil (görüntüyle bakıldı). Eski kayıt: 3 Erik odunu + 1 Çam odunu → 4 Çam odunu, Erik fidanı/tohumu → Armut, dikili Erik → Armut, 2 Yabani erik → 4 sikke.
 

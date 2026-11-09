@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 3.99 · 9 Kasım 2026
+
+### Oynanış
+- **Pamuk'u ararken sarı daire:** "Kaçan keçi Pamuk" ana görevinde haritada büyük bir sarı daire çıkıyor; Pamuk bu dairenin içinde rastgele bir yerde, aramak gerekiyor. Dairenin dışındaysan ok daireyi gösteriyor. Pamuk her kaçışında daire yeni yerine taşınıyor; Pamuk'u yakalayınca ok seni Davut'a götürüyor.
+
+### Arayüz
+- **Pencereleri kenarından büyüt:** bilgisayarda çanta, el yapımı, pazar, kazan gibi pencereleri sol, sağ ve alt kenarından tutup çekerek büyütebilir ya da küçültebilirsin. Yazılar ve düğmeler aynı boyutta kalır; pencere büyüyünce listede kaydırmadan daha çok şey görünür. Boyut, oyun açık kaldıkça her pencere için hatırlanır.
+- **El yapımı biraz daha geniş:** Yap düğmeleri artık pencerenin kenarına yapışık durmuyor.
+
+---
+
 ## Versiyon 3.98 · 9 Kasım 2026
 
 ### Düzeltmeler
@@ -262,24 +273,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - ACT 1 › Haritadaki miktarlar: Sarkıt ve Yarasa gübresi mağara ağzında. Mağaralar: ağızdaki buluntular. Tarifler › Sade malzeme: "Benzer bitkiler birleşti" maddesi, sayılar (eşya 1326, tarif 968). Biyom tabloları, eşyalar, tarifler, görevler yenilendi.
-
----
-
-## Versiyon 3.79 · 8 Kasım 2026
-
-### Oynanış
-- **Her biyomda iki meyve ağacı:** Çayır Elma + Armut, Orman Ceviz + Fındık, Bataklık Mürver + **Dut**, Kayalık Dağ Ardıç + Kestane, Kül Diyarı Ateş narı + **İncir**, Mor Kristal Vadisi Ay elması + Yıldız eriği. İkinci adada her biyoma yeni bir meyve ağacı geldi: **Rüzgâr eriği** (Yüzen Kayalar), **Spor elması** (Dev Mantar Ormanı), **Çöl inciri** (Hurda Çölü), **Buz armudu** (Kristal Golem Ocağı), **Lav narı** (Ejder Volkanı), **Yıldız kirazı** (Gök Rıhtımı).
-- Meyve ağacı sayısı değişmedi: bir biyomun meyve ağaçlarının yarısı artık öbür tür. Erik ağacı kalktı (Çayır'da Elma ve Armut kaldı).
-- Yeni ağaçlar kesilmez, eli boşken silkelenir. Yeni meyvelerin hepsi çiğ yenir (biyomuna göre tokluk, etki ve can) ve her birinin Taş havanla yapılan bir **ezmesi** var (ACT 1'de Zümrüt'ün, ACT 2'de Yıldız'ın kazanından öğrenilir).
-
-### Görsel
-- Sekiz yeni meyvenin kendi resmi: salkım dut, mor incir, buz mavisi erik, sarı-yeşil spor elması, kahverengi çöl inciri, buz armudu, kor kırmızısı lav narı, çift sarı yıldız kirazı.
-
-### Kayıtlar
-- Eski kayıtta Erik odunu Çam odununa, Erik tohumu ve fidanı Armut'unkine çevrilir (Bereket Adası'nda dikili Erik fidanı Armut ağacı olur); Yabani erik, ezmesi ve suyu eski satış fiyatından sikke olarak ödenir.
-
-### Tasarım belgesi
-- Tarifler › Sade malzeme: "Her biyomda iki meyve ağacı" maddesi, sayılar (eşya 1351, tarif 983). ACT 1 ve ACT 2 ağaç tabloları, eşyalar, ezmeler ve yiyecek etkileri tablosu yenilendi.
 
 ---
 
