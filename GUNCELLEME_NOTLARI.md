@@ -8,6 +8,21 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.00 · 9 Kasım 2026
+
+### Oynanış
+- **Pamuk'un dairesi daha büyük:** çapı %30 arttı, Pamuk'u aramak biraz daha uzun sürüyor.
+- **Ekin'in kaybolan korkuluğunda da sarı daire:** sıradaki saman izi ve sonra korkuluk, Pamuk'taki gibi haritada büyük bir sarı dairenin içinde rastgele bir yerde. Korkuluğu Ekin'e götürürken ok Ekin'i gösteriyor.
+
+### Düzeltmeler
+- **Ekin'in "Kaybolan korkuluk" görevi bitiyor:** korkuluğu bulup Ekin'e götürünce Ekin onu almıyor, hep "Korkuluğum yine yerinde değil" diyordu; görev bitirilemiyordu. Artık Ekin'le konuşunca korkuluğu alıyor ve görev tamamlanıyor.
+- **Yetenek ağacında açıklama yazısı sığıyor:** alttaki yeteneklerin üstüne gelince çıkan açıklama pencerenin altına taşıp kesiliyordu. Artık her zaman görünen yerde.
+
+### Arayüz
+- **Yetenek ağacı pencereyle büyüyor:** ağaç pencerenin içini dolduruyor; pencereyi kenarından büyütünce ağaç da büyüyor.
+
+---
+
 ## Versiyon 3.99 · 9 Kasım 2026
 
 ### Oynanış
@@ -256,23 +271,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Tarifler › "ACT 2'nin yeni tarifleri" bölümü (11 yemek, 18 varyant), sayılar (eşya 1337, tarif 997). ACT 2 biyom tablolarında her malzemenin kullanıldığı tarifler yazılı.
-
----
-
-## Versiyon 3.80 · 8 Kasım 2026
-
-### Oynanış
-- **İkinci ada kendi bitkileriyle:** ACT 1'in bitkileri (Civanperçemi, Hardal otu, Keten, Sinirotu, Göl kili ve 15 tane daha) artık Yüzen Kayalar'da çıkmıyor. Yüzen Kayalar 789'dan 369'a, Dev Mantar Ormanı 765'ten 298'e indi; her biyomda yalnız kendi 7–9 bitkisi var.
-- **Sarkıt ve Yarasa gübresi mağara ağzında:** artık madenlerin yanında değil, ACT 1 mağaralarının ağzının önünde ve yanlarında çıkıyor (mağara başına 7'şer); toplanınca yine bir mağara ağzında biter. İkinci adada yoklar.
-- **Benzer bitkiler birleşti:** Yabani mercimek → Yabani nohut; Yabani yulaf ve Yabani arpa → Yabani buğday (unları, lapaları, ekmekleri de); Saz ve Hasırotu → Kamış (örgü, sepet, yatak ve meşale kamışla yapılır); Kızıl kum → Kırmızı okr, Cüruf → Kül, Sünger taşı → Lav camı; Işık tozu → Yıldız tozu, Kristal kum → Kristal. Kayalık Dağ olduğu gibi kaldı.
-- Görevler: Veli'nin "Tüy dolgusu" 6 kamış, Turan'ın "Kristal tozu" 6 kristal, İnci'nin "Mor sarmaşık" 3 mor sarmaşık ister.
-- Biyom başına bitki türü: Çayır 10, Orman 11, Bataklık 12, Kayalık Dağ 13, Kül Diyarı 11, Mor Kristal Vadisi 12.
-
-### Kayıtlar
-- Eski kayıtta birleşen bitkiler ve ürünleri yerine geçene çevrilir (ör. Yabani mercimek → Yabani nohut, Yabani arpa lapası → Yabani buğday lapası, Saz → Kamış).
-
-### Tasarım belgesi
-- ACT 1 › Haritadaki miktarlar: Sarkıt ve Yarasa gübresi mağara ağzında. Mağaralar: ağızdaki buluntular. Tarifler › Sade malzeme: "Benzer bitkiler birleşti" maddesi, sayılar (eşya 1326, tarif 968). Biyom tabloları, eşyalar, tarifler, görevler yenilendi.
 
 ---
 

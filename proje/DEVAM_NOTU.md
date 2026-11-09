@@ -1,3 +1,11 @@
+## v4.00 (9 Kasım 2026) · yetenek ağacı pencereye sığıyor
+
+**Değişen yerler:** `v399rz` stilinde `cm-skills` için `#cbody` sütun flex, `.sktree` `flex:1` (sabit `--th` yüksekliği yerine), panel yüksekliği `--plMaxH`. `skTip` (satır ~3381) zoom'u (1,2) hesaba katıyor ve kartı ağacın `#cbody` içinde görünen kısmına sığdırıyor. `sqZone` daire yarıçapı 22 → 29 kare; `collect`/`use` adımlarında (gizli olmayan) sıradaki noktayı, `back` adımında görev vereni de veriyor (EK1 `ekin1`). EK1'in son adımı (`back`): `talkEkin` ve `statusDlg`, yan görev motoru `back` adımındaysa (`__plSide.backAt`) onun `talk`'ını çağırıyor (önceden Ekin'in ana görev konuşması araya girip adım hiç bitmiyordu). Sürüm etiketi `Versiyon 4.00`.
+
+**Geri alma:** `git revert` bu commit.
+
+**Kontrol:** chk.js 0 hata. EK1 `back` adımında F → Ekin korkuluğu alıyor, EK1 tamamlanıyor (+90 Vio). 1600×900 ve 1366×700'de en alttaki yeteneğin kartı gövdenin içinde (önceden 1600×900'de ağaç gövdeden 119 px taşıyordu).
+
 ## v3.99 (9 Kasım 2026) · Pamuk'un sarı dairesi
 
 **Değişen yerler:** Yan görev motorunda `sqZone(id)` (~16748, `__plSide.zone`). Kovalamada, Pamuk'un durduğu ya da kaçtığı yerden 0,25–0,85 yarıçap uzağa kaydırılmış 22 karelik bir daire döner (`A.zc`, Pamuk 2 kareden çok yer değişince yenilenir). Götürmede Davut'un yerini verir. Ana görev `partTarget` artık `'sq'` parçasını tanıyor; `target2` anahtarına daire sayacı (`z.k`) eklendi. Pencereler: `v399rz`/`v399rzjs` (dosya sonu) — `#craft` içinde 5 tutamaç (`.rzh` l/r/b/bl/br, yalnızca `hover:hover`+`pointer:fine`, `v50m` değil), `#cpanel`'e satır içi `width/height !important` (zoom'a bölünerek), mod başına (`cm-*`) boyut bellekte; el yapımı genişliği 620 ve sağ boşluk 18 px. Sürüm etiketi `Versiyon 3.99`.
@@ -151,12 +159,4 @@
 **Kontrol:** chk.js 0 hata. Denetim (3.80 ↔ 3.81): tarif 968 → 997 (varyant 157 → 175), eşya 1326 → 1337, bilinmeyen 0, fiyatsız 0, kullanılmayan ham 105 → 69 (ACT 2'nin 36'sı tarifte). Yemeklerin hepsi yenir (tokluk 36–60), resimleri torba değil (çorba/çay kabı, renkleri farklı).
 
 **Ayrıca:** `v380bitki` yerleştirmesi düğüm ızgarasını her eklemede değil sonda bir kez kuruyor (açılışta 488 ms → ölçülmeyecek kadar az). Ölçüm (`olcum.js`, 4; 3.75 ↔ 3.81): açılış js 10712 → 11124 ms, oyun 10 sn js 4006 → 4205 ms (ölçüm gürültüsü içinde; telefonda denenmeli).
-
-## v3.80 (8 Kasım 2026) · ACT 2'de yalnız kendi bitkileri, mağara ağzında Sarkıt/Yarasa gübresi, benzer bitkiler birleşti
-
-**Değişen yerler (`proje/Hammadde_prototip.html`, `index.html` eşit):** v77 yerleşim: ISLE 2'de `window.__I1G` (ACT 1 biyom bitkileri ve madenleri) adları da silinir; `MINEPL` maden çevresi yerleşimi silindi. Yabani mercimek, yulaf, arpa, Saz, Hasırotu, Kızıl kum, Cüruf, Sünger taşı, Işık tozu, Kristal kum kaynaktan silindi (`BPLANT`, `B4PLANT`/`ZPLANT`, `PLANTC`, `FOODT`, `ODD`, `NEWP`, ad açıklamaları, `P1I`/`P1W`, v337 bitki resim tablosu). Görevler: VE7, TU8, IN3 (+`ki3`). Yarasa gübresi ipuçları ("mağara ağızlarında"). `v373sade` v3.80 satırları: `REPL` (ham + ürünleri: unu/lapası/hamuru/yassı ekmeği/kavrulmuş; Saz/Hasırotu → Kamış; Kızıl kum → Kırmızı okr; Cüruf → Kül; Sünger taşı → Lav camı; Işık tozu → Yıldız tozu; Kristal kum → Kristal). Yeni `<script id="v380bitki">`: ACT 1 mağara kapılarına (`__plCaves[].door`) 7 Sarkıt + 7 Yarasa gübresi (34–80 px, ağzın önü ve yanları), `findSpot` sarmalı (kendi biyomunun bir mağara ağzında yeniden çıkar), ISLE 2'de yok. Sürüm etiketi `Versiyon 3.80`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. Denetim (3.79 ↔ 3.80): eşya 1351 → 1326, tarif 983 → 968, bilinmeyen 0, fiyatsız 0, yeni kullanılmayan ham 0. Bitki türü/adet: ACT 1 Çayır 10/525, Orman 11/489, Bataklık 12/474, Kayalık 13/577, Kül 11/506, Mor 12/568; ACT 2 8/369, 7/298, 9/405, 8/369, 8/375, 8/353. Mağara ağzı: 6 mağara × 7 = 42 Sarkıt, 42 Yarasa gübresi (ekran görüntüsüyle bakıldı). Eski kayıt: 3 Yabani mercimek + 1 nohut → 4 nohut, Yabani arpa lapası → Yabani buğday lapası, 2 Saz + 2 Hasırotu → 4 Kamış, Kızıl kum → Kırmızı okr, Işık tozu → Yıldız tozu, Kristal kum → Kristal.
 
