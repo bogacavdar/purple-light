@@ -321,7 +321,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 
 - **Tür:** axe = balta (odun), pick = kazma (maden), shovel = kürek (kil), rake/can/scythe = tırmık/sulama kabı/tırpan (tarla), fish = olta/ağ/zıpkın, water = su kabı, torch = meşale, sword/spear = kılıç/mızrak (savaş çekici ve topuz da sword türündedir), bow = yay, staff = asa, gun = ateşli silah.
 - **Kademe:** balta ve kazmanın kademesi hangi ağacı kesip hangi madeni kazabileceğini belirler (biyom tablolarındaki "Gereken balta/kazma"). Daha yüksek kademe her zaman alttakileri de keser.
-- **Dayanıklılık:** her kullanımda 1 azalır; sıfırlanınca alet körelir ve çalışmaz. Demirci Dursun "Aletimi bile" ile bileme ücretine yeniler. Hile panelindeki "Sınırsız dayanıklılık" aletleri hiç köreltmez.
+- **Dayanıklılık:** her kullanımda 1 azalır; sıfırlanınca alet körelir ve çalışmaz. Demirci Dursun "Aletimi bile" ile yeniler. **Bileme ücreti aşınmaya göredir (9 Kasım 2026, Boğaç: "ne kadar hasarlıysa ona göre; komple körse en çok, az hasarlıysa en az"):** ücret = tablodaki tam ücret × (kaybedilen keskinlik / en yüksek keskinlik), yukarı yuvarlanır, en az 1 Vio. Silahların tam bileme ücreti (tablodaki) eskisinin **iki katıdır** (aynı gün, Boğaç: "tamir ücretini de 2 katına çıkaralım"). Hile panelindeki "Sınırsız dayanıklılık" aletleri hiç köreltmez. **Silahlar iki kat dayanır (9 Kasım 2026, Boğaç: "en ufak bir savaşta mızrağım köreliyor; meşale aynı kalsın, diğer silahlar 2 katı dayansın"):** kılıç, savaş çekici, topuz, mızrak ve yayın dayanıklılığı (tablodaki değerler) iki katıdır; meşaleler ve aletler (balta, kazma, kürek…) aynıdır. Eski kayıtlarda silahın kalan keskinliği de iki katına çıkar.
 - **İş süresi:** bir toplamanın kaç saniye sürdüğü (yetenekler ve seviye kısaltır).
 
 | Alet | Tür | Ne yapar | İş süresi (sn) | Dayanıklılık | Bileme ücreti | Kademe | Silah hasarı |
@@ -352,71 +352,71 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Ejder kazması | pick | maden kazar | 0,99 | 132 | 967 | 5 | 50 |
 | Mor kristal kazma | pick | maden kazar | 0,9 | 300 | 1.051 | 6 | 52 |
 | Obsidyen kazma | pick | maden kazar | 0,81 | 165 | 1.209 | 6 | 58 |
-| Taş kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 45 | 15 | – | 12 |
-| Bakır kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 60 | 76 | – | 16 |
-| Çakmaktaşı kılıç | sword | savaşır: hızlı ve güçlü vuruş · keskin: kanatır | 1 | 60 | 88 | – | 18 |
-| Tunç kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 80 | 120 | – | 22 |
-| Granit kılıç | sword | savaşır: hızlı ve güçlü vuruş · keskin: kanatır | 1 | 80 | 259 | – | 25 |
-| Demir kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 120 | 240 | – | 34 |
-| Timsah dişi kılıcı | sword | savaşır: hızlı ve güçlü vuruş · zehirli: zehirler | 1 | 120 | 323 | – | 38 |
-| Çelik kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 160 | 367 | – | 46 |
-| Gümüş kılıç | sword | savaşır: hızlı ve güçlü vuruş · keskin: kanatır | 1 | 160 | 422 | – | 52 |
-| Kara çelik kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 200 | 1.155 | – | 58 |
-| Ejder kılıcı | sword | savaşır: hızlı ve güçlü vuruş · alevli: yakar | 1 | 200 | 1.328 | – | 65 |
-| Mor kristal kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 260 | 1.443 | – | 72 |
-| Ametist kılıcı | sword | savaşır: hızlı ve güçlü vuruş · zehirli: zehirler | 1 | 260 | 1.660 | – | 81 |
-| Taş savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 55 | 9 | – | 13 |
-| Bakır savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 70 | 46 | – | 18 |
-| Çakmaktaşı savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · keskin: kanatır | 1 | 70 | 54 | – | 20 |
-| Tunç savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 95 | 232 | – | 25 |
-| Granit savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · keskin: kanatır | 1 | 95 | 267 | – | 28 |
-| Demir savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 140 | 290 | – | 39 |
-| Timsah dişi savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · zehirli: zehirler | 1 | 140 | 334 | – | 44 |
-| Çelik savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 180 | 410 | – | 53 |
-| Kuvars savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · keskin: kanatır | 1 | 180 | 471 | – | 59 |
-| Kara çelik savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 220 | 1.395 | – | 67 |
-| Ejder savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · alevli: yakar | 1 | 220 | 1.604 | – | 75 |
-| Mor kristal savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 280 | 1.744 | – | 83 |
-| Ametist savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · zehirli: zehirler | 1 | 280 | 2.005 | – | 93 |
-| Taş topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 45 | 7 | – | 10 |
-| Bakır topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 60 | 32 | – | 14 |
-| Çakmaktaşı topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 60 | 36 | – | 16 |
-| Tunç topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 85 | 143 | – | 19 |
-| Granit topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 85 | 164 | – | 21 |
-| Demir topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 125 | 179 | – | 29 |
-| Timsah dişi topuz | topuz | topuz: hızlı, art arda vuruş · zehirli: zehirler | 1 | 125 | 206 | – | 32 |
-| Çelik topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 165 | 250 | – | 39 |
-| Kuvars topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 165 | 287 | – | 44 |
-| Kara çelik topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 205 | 841 | – | 49 |
-| Ejder topuzu | topuz | topuz: hızlı, art arda vuruş · alevli: yakar | 1 | 205 | 967 | – | 55 |
-| Mor kristal topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 265 | 1.051 | – | 61 |
-| Ametist topuz | topuz | topuz: hızlı, art arda vuruş · zehirli: zehirler | 1 | 265 | 1.208 | – | 68 |
-| Mızrak | hunt | av ve savaş: uzaktan vurur | 3 | 20 | 12 | – | 10 |
-| Bakır mızrak | hunt | av ve savaş: uzaktan vurur | 2,4 | 50 | 33 | – | 15 |
-| Çakmaktaşı mızrak | hunt | av ve savaş: uzaktan vurur · keskin: kanatır | 2,5 | 50 | 55 | – | 17 |
-| Tunç mızrak | hunt | av ve savaş: uzaktan vurur | 2 | 80 | 100 | – | 20 |
-| Granit mızrak | hunt | av ve savaş: uzaktan vurur · keskin: kanatır | 1 | 80 | 115 | – | 22 |
-| Demir mızrak | hunt | av ve savaş: uzaktan vurur | 1,6 | 120 | 200 | – | 30 |
-| Timsah dişi mızrak | hunt | av ve savaş: uzaktan vurur · zehirli: zehirler | 1 | 120 | 144 | – | 34 |
-| Çelik mızrak | hunt | av ve savaş: uzaktan vurur | 1,4 | 160 | 182 | – | 41 |
-| Kuvars mızrak | hunt | av ve savaş: uzaktan vurur · keskin: kanatır | 1,6 | 160 | 209 | – | 46 |
-| Kara çelik mızrak | hunt | av ve savaş: uzaktan vurur | 1,2 | 200 | 565 | – | 52 |
-| Ejder mızrağı | hunt | av ve savaş: uzaktan vurur · alevli: yakar | 1 | 200 | 650 | – | 58 |
-| Mor kristal mızrak | hunt | av ve savaş: uzaktan vurur | 1 | 260 | 706 | – | 64 |
-| Obsidyen mızrak | hunt | av ve savaş: uzaktan vurur · zehirli: zehirler | 1,2 | 260 | 812 | – | 72 |
-| Basit yay | bow | ok atar (ok harcar) | 0,75 | 60 | 20 | – | 8 |
-| Çam yayı | bow | ok atar (ok harcar) | 0,7 | 80 | 25 | – | 12 |
-| Kemik yay | bow | ok atar (ok harcar) | 0,66 | 56 | 28 | – | 13 |
-| Meşe yayı | bow | ok atar (ok harcar) | 0,68 | 110 | 52 | – | 17 |
-| Ihlamur yayı | bow | ok atar (ok harcar) | 0,65 | 77 | 59 | – | 19 |
-| Kızılağaç yayı | bow | ok atar (ok harcar) | 0,66 | 150 | 69 | – | 26 |
-| Söğüt yayı | bow | ok atar (ok harcar) | 0,63 | 105 | 80 | – | 29 |
-| Akçaağaç yayı | bow | ok atar (ok harcar) | 0,64 | 190 | 109 | – | 35 |
-| Huş yayı | bow | ok atar (ok harcar) | 0,61 | 133 | 125 | – | 39 |
-| Kızıl sedir yayı | bow | ok atar (ok harcar) | 0,62 | 230 | 301 | – | 45 |
-| Ejder yayı | bow | ok atar (ok harcar) | 0,59 | 161 | 346 | – | 50 |
-| Gece ağacı yayı | bow | ok atar (ok harcar) | 0,6 | 280 | 376 | – | 56 |
-| Işık ağacı yayı | bow | ok atar (ok harcar) | 0,57 | 196 | 433 | – | 63 |
+| Taş kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 90 | 30 | – | 12 |
+| Bakır kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 120 | 152 | – | 16 |
+| Çakmaktaşı kılıç | sword | savaşır: hızlı ve güçlü vuruş · keskin: kanatır | 1 | 120 | 176 | – | 18 |
+| Tunç kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 160 | 240 | – | 22 |
+| Granit kılıç | sword | savaşır: hızlı ve güçlü vuruş · keskin: kanatır | 1 | 160 | 518 | – | 25 |
+| Demir kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 240 | 480 | – | 34 |
+| Timsah dişi kılıcı | sword | savaşır: hızlı ve güçlü vuruş · zehirli: zehirler | 1 | 240 | 646 | – | 38 |
+| Çelik kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 320 | 734 | – | 46 |
+| Gümüş kılıç | sword | savaşır: hızlı ve güçlü vuruş · keskin: kanatır | 1 | 320 | 844 | – | 52 |
+| Kara çelik kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 400 | 1.155 | – | 58 |
+| Ejder kılıcı | sword | savaşır: hızlı ve güçlü vuruş · alevli: yakar | 1 | 400 | 1.328 | – | 65 |
+| Mor kristal kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 520 | 1.443 | – | 72 |
+| Ametist kılıcı | sword | savaşır: hızlı ve güçlü vuruş · zehirli: zehirler | 1 | 520 | 1.660 | – | 81 |
+| Taş savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 110 | 18 | – | 13 |
+| Bakır savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 140 | 92 | – | 18 |
+| Çakmaktaşı savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · keskin: kanatır | 1 | 140 | 108 | – | 20 |
+| Tunç savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 190 | 464 | – | 25 |
+| Granit savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · keskin: kanatır | 1 | 190 | 534 | – | 28 |
+| Demir savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 280 | 580 | – | 39 |
+| Timsah dişi savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · zehirli: zehirler | 1 | 280 | 668 | – | 44 |
+| Çelik savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 360 | 820 | – | 53 |
+| Kuvars savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · keskin: kanatır | 1 | 360 | 942 | – | 59 |
+| Kara çelik savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 440 | 1.395 | – | 67 |
+| Ejder savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · alevli: yakar | 1 | 440 | 1.604 | – | 75 |
+| Mor kristal savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 560 | 1.744 | – | 83 |
+| Ametist savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · zehirli: zehirler | 1 | 560 | 2.005 | – | 93 |
+| Taş topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 90 | 14 | – | 10 |
+| Bakır topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 120 | 64 | – | 14 |
+| Çakmaktaşı topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 120 | 72 | – | 16 |
+| Tunç topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 170 | 286 | – | 19 |
+| Granit topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 170 | 328 | – | 21 |
+| Demir topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 250 | 358 | – | 29 |
+| Timsah dişi topuz | topuz | topuz: hızlı, art arda vuruş · zehirli: zehirler | 1 | 250 | 412 | – | 32 |
+| Çelik topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 330 | 500 | – | 39 |
+| Kuvars topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 330 | 574 | – | 44 |
+| Kara çelik topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 410 | 1682 | – | 49 |
+| Ejder topuzu | topuz | topuz: hızlı, art arda vuruş · alevli: yakar | 1 | 410 | 1934 | – | 55 |
+| Mor kristal topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 530 | 1.051 | – | 61 |
+| Ametist topuz | topuz | topuz: hızlı, art arda vuruş · zehirli: zehirler | 1 | 530 | 1.208 | – | 68 |
+| Mızrak | hunt | av ve savaş: uzaktan vurur | 3 | 40 | 24 | – | 10 |
+| Bakır mızrak | hunt | av ve savaş: uzaktan vurur | 2,4 | 100 | 66 | – | 15 |
+| Çakmaktaşı mızrak | hunt | av ve savaş: uzaktan vurur · keskin: kanatır | 2,5 | 100 | 110 | – | 17 |
+| Tunç mızrak | hunt | av ve savaş: uzaktan vurur | 2 | 160 | 200 | – | 20 |
+| Granit mızrak | hunt | av ve savaş: uzaktan vurur · keskin: kanatır | 1 | 160 | 230 | – | 22 |
+| Demir mızrak | hunt | av ve savaş: uzaktan vurur | 1,6 | 240 | 400 | – | 30 |
+| Timsah dişi mızrak | hunt | av ve savaş: uzaktan vurur · zehirli: zehirler | 1 | 240 | 288 | – | 34 |
+| Çelik mızrak | hunt | av ve savaş: uzaktan vurur | 1,4 | 320 | 364 | – | 41 |
+| Kuvars mızrak | hunt | av ve savaş: uzaktan vurur · keskin: kanatır | 1,6 | 320 | 418 | – | 46 |
+| Kara çelik mızrak | hunt | av ve savaş: uzaktan vurur | 1,2 | 400 | 1130 | – | 52 |
+| Ejder mızrağı | hunt | av ve savaş: uzaktan vurur · alevli: yakar | 1 | 400 | 1300 | – | 58 |
+| Mor kristal mızrak | hunt | av ve savaş: uzaktan vurur | 1 | 520 | 1412 | – | 64 |
+| Obsidyen mızrak | hunt | av ve savaş: uzaktan vurur · zehirli: zehirler | 1,2 | 520 | 1624 | – | 72 |
+| Basit yay | bow | ok atar (ok harcar) | 0,75 | 120 | 40 | – | 8 |
+| Çam yayı | bow | ok atar (ok harcar) | 0,7 | 160 | 50 | – | 12 |
+| Kemik yay | bow | ok atar (ok harcar) | 0,66 | 112 | 56 | – | 13 |
+| Meşe yayı | bow | ok atar (ok harcar) | 0,68 | 220 | 104 | – | 17 |
+| Ihlamur yayı | bow | ok atar (ok harcar) | 0,65 | 154 | 118 | – | 19 |
+| Kızılağaç yayı | bow | ok atar (ok harcar) | 0,66 | 300 | 138 | – | 26 |
+| Söğüt yayı | bow | ok atar (ok harcar) | 0,63 | 210 | 160 | – | 29 |
+| Akçaağaç yayı | bow | ok atar (ok harcar) | 0,64 | 380 | 218 | – | 35 |
+| Huş yayı | bow | ok atar (ok harcar) | 0,61 | 266 | 250 | – | 39 |
+| Kızıl sedir yayı | bow | ok atar (ok harcar) | 0,62 | 460 | 602 | – | 45 |
+| Ejder yayı | bow | ok atar (ok harcar) | 0,59 | 322 | 692 | – | 50 |
+| Gece ağacı yayı | bow | ok atar (ok harcar) | 0,6 | 560 | 752 | – | 56 |
+| Işık ağacı yayı | bow | ok atar (ok harcar) | 0,57 | 392 | 866 | – | 63 |
 | Sulama kabı | can | tarlayı sular | 1 | 25 | 10 | – | – |
 | Ağ | fish | balık tutar (eline al, suya dön, E) | 3 | 25 | 15 | – | – |
 | Balık kapanı | fish | balık tutar (eline al, suya dön, E) | 4 | 40 | 25 | – | – |
@@ -431,7 +431,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Ateş asası | staff | ateş topu atar (mana) | 1 | 999 | 0 | – | – |
 | Buz asası | staff | buz oku atar (mana) | 1 | 999 | 0 | – | – |
 | Yıldırım asası | staff | zincirleme yıldırım (mana) | 1 | 999 | 0 | – | – |
-| Işın kılıcı | sword | plazma kılıç | 1 | 999 | 0 | – | 60 |
+| Işın kılıcı | sword | plazma kılıç | 1 | 1998 | 0 | – | 60 |
 | Kaba meşale | torch | gece aydınlatır | 0 | 1.000.000 | 0 | – | – |
 | Meşale | torch | gece aydınlatır | 0 | 1.000.000 | 0 | – | – |
 | Bola | sling | fırlatılır: vurduğu canlıyı 5 sn yavaşlatır | 1,2 | 25 | 15 | – | – |

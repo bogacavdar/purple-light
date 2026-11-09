@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 4.04** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 4.05** ile birebir (10 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -470,6 +470,7 @@ Oyun bir **oyun kolu** ile de oynanır (Xbox, PlayStation ve çoğu Bluetooth ko
 - **Bilgisayarda görev kartı büyük, konuşma yazısı küçük:** genişliği 900 pikselden fazla ve fareyle oynanan ekranda sağ üstteki görev kartı daha geniştir (en çok 540 px; yazı 17 px, başlık 13,5 px, düğmeler 15 px); kişilerin konuşma kutusunda metin 16,5 px, ad 15,5 px, seçenek düğmeleri 15 px'tir (önce 19 / 17 / 17 px). Bir menü açıkken görev kartı eskisi gibi daralır. Telefon düzeni değişmedi.
 - **Bilgisayarda kart yazıları daha büyük:** fareyle oynanan ve 720 pikselden geniş ekranda (telefon görünümü değilken) öğretici/ana görev kartı 18 px (bir menü açıkken 16 px, 3 satır), yan görev kartı 16 px (alt satırı 15 px, genişliği 480 px) ve takip çipleri 17 px yazıyla gösterilir. Alttaki **1-2-3-4-5 alet kemeri** iki kat büyür: kutular 92 px, simgeler 64 px, tuş numarası 18 px. Telefon görünümü değişmez.
 - **Bilgisayarda sol üst iki kat büyük:** saat, Can / Enerji / Tokluk çubukları ve etki çipleri (Canlılık, Gece gözü, Bulantı…) iki kat büyüktür (çubuklar 46 px, yazılar sütun genişliğine göre en çok 24 px). Sol menünün kare düğmeleri sütunu **Vio kutusuna kadar** doldurur: solda yalnızca **Envanter, El yapımı, Yetenek ağacı, Yemek** ve (gelince) **Robot köpekler** durur. ("çok büyük olmuş, oyunu kapatıyor") kareler **yan yana üçlü, iki sıra** dizilir ve küçüktür: kenarı ekran genişliğinin %4,2'si, en az 48, en çok 84 px (1920 px ekranda 81 px); sıra genişliği üç kare kadardır. Robot köpeklerin yeri baştan ayrılır, gelince kareler değişmez. **Başarımlar** sağ üstte Çıkış ve Ayarlar'ın altına, onlarla aynı boyda taşındı; **Tarif kitabı** sağ altta Başarımlar'ın eski yerine, Almanak'la aynı boyda geçti (telefonda ☰ menüsünde kalır); **Görevler ve etkiler en az Tokluk boyunda:** bilgisayarda Görevler/Gizle düğmesi sütunun bütün genişliğini kaplar ve en az Tokluk çubuğu kadar yüksektir (46 px); etki çipleri (Canlılık, Gece gözü, Bulantı…) da her biri sütun genişliğinde ve en az 46 px yüksekliktedir, alt alta dizilir. **Kemer küçüldü:** bilgisayarda alttaki 1–5 kemer yuvaları ve meşale yuvası 92 px'ten **64 px**'e küçüldü (simgeler 44 px). **İnce Menü çubuğu:** **Menü ▾** artık Görevler'in yanında değil, kare düğmelerin **altında** sütun genişliğinde ince bir çubuktur (22 px); basınca kare düğmeler gizlenir/açılır (katlıyken çubuk Görevler'in altında kalır). **Menü katlanır:** Menü düğmesine basınca kare düğmeler gizlenir (kısayol tuşları çalışmaya devam eder), bir daha basınca açılır. Seçim bu tarayıcıda hatırlanır (oyuncunun kendi seçimi; otomatik ayar değil). Katlıyken kare boyu değişmez. Telefon görünümünde bu düğme yoktur (orada menü zaten açılır kapanır).
+- **Eylem yazısı kemerin üstünde (9 Kasım 2026, Boğaç: "su al yazısı kemerin arkasında yarım gözüküyor"):** "F Su al…", "E Konuş" gibi eylem yazısı her zaman alet kemerinin (1–5) 8 px üstünde durur, kemerin arkasında kalmaz.
 - **Envanter ve Özellikler penceresi (9 Kasım 2026, Boğaç: "bu envanter ekranını değiştirelim, çok çirkin duruyor"):** bilgisayarda:
   - **Yerleşim:** pencerenin solunda eşya listesi, sağında listeden bağımsız duran giyim figürü ile karakter; liste kaydırılınca sağ taraf yerinde kalır.
   - **Giyim figürü:** renksiz bir insan figürü çizilidir; giyim yuvaları figürün üstündedir: **Baş** kafada, **Gövde** göğüste, **Eller** sol elde, **Silah** sağ elde, **Ayaklar** ayakta. Figürün yanında **karakterin kendisi** durur ve giydiği her şeyle (miğfer, gövde zırhının rengi, eldiven, çizme, elindeki silah) çizilir. Altında Savunma ve Zırh yazar. Envanterde bir giysi ya da silah seçilince uyan yuva parlar; yuvaya tıklayınca giyilir, dolu yuvaya tıklayınca çıkar. Aynı figür **Özellikler** (karakter) penceresinde de vardır: Karakter sekmesinde seviye ve özellik puanları solda, figür ve karakter sağdadır (pencere envanter kadar geniştir); yuvaya tıklayınca o yuvaya uyan eşyaların listesi figürün altında açılır.
@@ -645,8 +646,8 @@ Oyunun hiçbir yerinde anlatılmaz; oyuncu kendisi bulur.
 
 - Meşale sol elde taşınır; sağ elde silah olabilir. Yağmurda 2 kat, fırtınada 2,7 kat hızlı biter. **Elde iki silah olmaz:** iki el yalnızca meşale için vardır (sol elde meşale, sağ elde bir silah ya da alet). Silah yuvasındaki silah sırtta durur ve **yalnızca sağ el boşken** (ya da elde silah/alet olmayan bir şey varken) görünür; sağ elde balta, kazma, kılıç ya da mızrak varken sırttaki silah çizilmez, böylece elde iki silah varmış gibi görünmez. Dövüşte yine yalnızca tek silah kullanılır (eldeki; elde yoksa yuvadaki).
 - **Çapraz yürürken meşale titremez:** çapraz yürürken meşale ve eldeki eşya, karakterin çapraz pozunun gidilen yönüne göre çizilir; karakterin yönü de iki yön arasında kararsızken (çubukla çapraza yakın yürürken) her karede değişmez, ancak öbür yön açıkça baskın olunca döner. Eskiden meşale her karede sağ ve sol el arasında gidip gelip yanıp sönüyordu.
-- **Meşale silahtır da:** elinde yanan bir meşale varken yakın dövüşte vurduğun her canavar (normal vuruş, kombolar, güçlü vuruş, ulti; senden en çok 60 piksel uzaktaki) **tutuşur**: **4 sn** boyunca yanar ve yavaş yavaş can kaybeder: Kaba meşalede ~1,5 saniyede **1**, Meşalede saniyede **1** (her saniye bir turuncu hasar sayısı; bir yanık toplam Kaba meşalede 2–3, Meşalede 4 can). Yanan canavarın üstünde **turuncu bir parıltı** ve yukarı uçan alevler görünür. Yanarken yeniden vurursan süre baştan başlar (yanık üst üste binmez). Yanıkla ölen canavar normal avlanmış sayılır (XP ve ganimet). Kendisi yakan canavarlar (Lav kertenkelesi, Kül cini gibi saldırısı yanık bırakanlar) tutuşmaz; Börü'nün ders canavarları ve arenanın canavarları da tutuşmaz. Uzaktan atışlar (asa, fırlatılan mızrak) tutuşturmaz.
-- **Her saldırı meşaleden yer:** meşale elindeyken yaptığın her saldırı (isabet etsin etmesin) meşalenin tam süresinin **%4,5'ini** yer (Kaba meşalede ~10 sn, Meşalede ~15 sn); bu, zamanla yanmaya ektir. Bir meşale yalnızca vuruşla ~22 saldırıda biter. Aynı vuruşun birden çok canavara değmesi tek saldırı sayılır (0,25 sn içinde en çok bir kez). Sınırsız dayanıklılık hilesi açıkken yemez. **Reçine** (L): Meşale +%65, Kaba meşale +%50 süre. Her sürüşte 1 reçine harcanır (sıra: Çam reçinesi, Ladin reçinesi, Huş katranı); reçine yoksa yalnızca "Reçinen yok." yazar (v3.29, eski uyarı kalkan kabuk tarifini gösteriyordu). Biten meşale yığından 1 eksilir, varsa yenisi yanar.
+- **Meşale silahtır da:** **meşalenin kendisiyle** vurduğun her canavar (10 Kasım 2026, Boğaç: meşale yanarken mızrak, kılıç, balta gibi başka bir silahla vurmak tutuşturmaz; yalnızca gerçek bir vuruş tutuşturur, canavarın seni fark etmesi tutuşturmaz) (normal vuruş, kombolar, güçlü vuruş, ulti; senden en çok 60 piksel uzaktaki) **tutuşur**: **4 sn** boyunca yanar ve yavaş yavaş can kaybeder: Kaba meşalede ~1,5 saniyede **1**, Meşalede saniyede **1** (her saniye bir turuncu hasar sayısı; bir yanık toplam Kaba meşalede 2–3, Meşalede 4 can). Yanan canavarın üstünde **turuncu bir parıltı** ve yukarı uçan alevler görünür. Yanarken yeniden vurursan süre baştan başlar (yanık üst üste binmez). Yanıkla ölen canavar normal avlanmış sayılır (XP ve ganimet). Kendisi yakan canavarlar (Lav kertenkelesi, Kül cini gibi saldırısı yanık bırakanlar) tutuşmaz; Börü'nün ders canavarları ve arenanın canavarları da tutuşmaz. Uzaktan atışlar (asa, fırlatılan mızrak) tutuşturmaz.
+- **Her saldırı meşaleden yer:** meşaleyle yaptığın her saldırı (başka silahla vururken meşale yalnızca zamanla yanar) (isabet etsin etmesin) meşalenin tam süresinin **%4,5'ini** yer (Kaba meşalede ~10 sn, Meşalede ~15 sn); bu, zamanla yanmaya ektir. Bir meşale yalnızca vuruşla ~22 saldırıda biter. Aynı vuruşun birden çok canavara değmesi tek saldırı sayılır (0,25 sn içinde en çok bir kez). Sınırsız dayanıklılık hilesi açıkken yemez. **Reçine** (L): Meşale +%65, Kaba meşale +%50 süre. Her sürüşte 1 reçine harcanır (sıra: Çam reçinesi, Ladin reçinesi, Huş katranı); reçine yoksa yalnızca "Reçinen yok." yazar (v3.29, eski uyarı kalkan kabuk tarifini gösteriyordu). Biten meşale yığından 1 eksilir, varsa yenisi yanar.
 - Kamp ateşinin başında **F** (toplama/konuşma tuşu): odun at ya da **pişirme menüsünü** aç.
 - **Ateşte pişirme (7 Kasım 2026, Boğaç):** tarifler yine **kazanda öğrenilir**; ama ateş gerektiren yemekler (közlenmiş, kızarmış, kavrulmuş, haşlanmış, tütsülenmiş, ızgara, tava, şiş, buğulama, pişmiş et/balık, Kor isteyenler ve malzemesinde Ateş ya da Duman olan bütün yemekler; tam liste Tarif ansiklopedisinde "Ateşte" yazanlar, 129 tarif) **El yapımı listesinde görünmez**, **ateşte** yapılır. Ateşin başında **Ateş ve Duman malzemesi harcanmaz, ateş sağlar**; öbür malzemeler harcanır.
   - **Pişirme menüsü:** herhangi bir ateşe (kamp ateşi ya da kişilerin ateşleri) F, tıklama/dokunma ya da kolda A ile açılır; eski "Ateşte közle" penceresinin genişlemiş halidir. Çiğ et/balık közleme ve ateşte yapılabilen **öğrenilmiş** tarifler listelenir; her satırda ad solda, **Yap · ×5 · Hepsi** düğmeleri sağdadır (liste düzeni kuralı). Çantada çiğ yiyecek olmasa da ateşte yapılabilen bir tarif varsa menü açılır. F önceliği değişmez: önce yerdeki eşya, sonra kişi (Boğaç; böylece ateşin yanındaki kişiyle konuşmak engellenmez), sonra ateş.
@@ -824,7 +825,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
   - Hesap: bir tarif bir malzemeyi "şunlardan biri" diye istiyorsa (ör. herhangi bir odun) o adet o gruptaki her malzeme için ayrılır (fazla değil, eksik satılsın diye). Öğrendiğin tarifler sayılmaz. Satıştan sonra "N çeşidin fazlası satıldı · +X Vio" yazar; satılacak fazla yoksa "Tariflerin ihtiyacından fazla satılık bir şeyin yok." 
 - **Şanslı müşteri** satışta %5 (II ile toplam %12) + şans ihtimalle iki kat öder.
 - **Satın alma:** yalnızca Nazlı, yalnızca daha önce eline geçmiş **doğal** malzemeler (tohumlar dahil). Alış fiyatı temel fiyatın 2,6 ile 5,6 katı arası (pahalı ve tehlikeli bölge malzemesi daha pahalı).
-- Başka hiçbir kişi Vio’yla eşya satmaz; ustalar malzemeyi senden alıp **işçilik** ister: Dursun, Durmuş ve silahçı/zırhçı kuzenleri eşya fiyatının %15'i (en az 2), Sinan %20'si (en az 3), ACT 2 ustaları sabit ücret. Alet bileme aletin değerinin onda biri (bkz. Aletler, dayanıklılık, kademe). Usta Sinan evleri de Vio’yla yapar.
+- Başka hiçbir kişi Vio’yla eşya satmaz; ustalar malzemeyi senden alıp **işçilik** ister: Dursun, Durmuş ve silahçı/zırhçı kuzenleri eşya fiyatının %15'i (en az 2), Sinan %20'si (en az 3), ACT 2 ustaları sabit ücret. Alet bilemenin tam ücreti aletin değerinin onda biri, silahlarda beşte biri; ödenen, aletin ne kadar körelmiş olduğuna göre o kadarı (bkz. Aletler, dayanıklılık, kademe). Usta Sinan evleri de Vio’yla yapar.
 - **Robot köpekler ne toplar (9 Kasım 2026, Boğaç: "robota neden havuç toplatamıyorum; benim yerden toplayabildiğim şeyleri taşıması gerekmiyor mu"):** elle yerden toplayabildiğin **her şeyi** (dal, taş, bitkiler, meyveler, Havuç, mantarlar, kil… hangi biyomda olursa olsun); yalnızca kazma isteyen madenleri ve mağaradakileri toplamaz. Köpek menüsünde yalnızca daha önce eline geçmiş olanlar seçilebilir (Dal her zaman).
 - **Robot köpeklerin taşıma kapasitesi:** köpekler topladıklarını artık hemen envanterine koymaz; **sırtlarında en çok 20 eşya** taşırlar. Sırtı dolan köpek işi bırakıp **sana koşar**, yanına gelince taşıdıklarını teslim eder: köpeğin üstünde küçük "+8 Dal", "+12 Taş" gibi satırlar belirir, ekranda "Karabaş getirdi: +8 Dal, +12 Taş" bildirimi çıkar ve eşyalar ancak o anda envantere geçer; sonra köpek işine döner. Köpekler menüsünde her köpeğin **taşıdığı** (ör. "taşıdığı: 7/20 · 4 Dal, 3 Taş") görünür. Sırtı dolmadan **Yanıma çağır** dersen köpek gelir ve o ana kadar topladığını yine aynı şekilde teslim eder. Taşınan eşyalar kayda yazılır; eski kayıtta köpeklerin sırtı boş başlar.
 - **Temel fiyat** formülü: malzemelerin toplam değeri × (1,15 + 0,05 × zincir adımı, en çok 6) + gereken aletin değerinin %10'u.
@@ -834,6 +835,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 - **Kazan yalnızca öğretir:** malzemeleri koyup kaynatırsın, malzemeler gider, tarif öğrenilir (+12 XP); ürün çıkmaz. ACT 1'de Zümrüt'ün ve beş kuzen cadının (Yakut, Safir, Firuze, Mercan, İnci) kazanları, ACT 2'de Yıldız'ın kazanı. Bütün ACT 1 kazanları aynı tarifleri öğretir.
 - **Kazanda öğrenilenler aşağıda (v3.36, Boğaç):** kazanın tarif listesinde her grubun içinde **öğrenilmiş** (yeşil, "öğrenildi") tarifler en alta iner; henüz öğrenilmemişler üstte kalır. Listenin en üstünde **"Öğrenilenleri gösterme"** kutusu vardır: işaretlenince öğrenilmiş tarifler listede hiç görünmez; kaldırılınca geri gelir. Seçim bu cihazda hatırlanır. (Örsteki listeye dokunmaz; orada yalnızca dövebildiklerin görünür.) **Liste yerinde kalır (v3.36, Boğaç):** listenin aşağısından bir tarif seçince (ya da malzeme koyunca, pencere yenilenince) sol liste en başa kaymaz, olduğu yerde kalır; aynısı örs ve sağdaki malzeme kutuları için de geçerlidir. (Satır düzeni: Sistemler › Arayüz ve pencereler › Tarif ve sipariş listelerinde satır düzeni.)
 - **Tarif kitabı** (K): bir tarif öğrenilmiş, bir kişi tarafından kitaba yazılmış ya da (Normal modda) bütün malzemeleri ve aletleri en az bir kez görülmüşse **açık** görünür. Kapalı tariflerin adı titreşen harflerle, bilinmeyen malzemeler "?" ile görünür. **Seçilen tarifin kutusu hep görünür (v3.37, Boğaç):** kitabın en üstündeki, seçilen tarifin adını, malzemelerini ve nerede yapıldığını gösteren kutu sayfa aşağı kaydırılınca da yukarıda sabit kalır; aşağıdaki bir tarife dokunduğunda ya da üstüne geldiğinde adı yerinden kaymadan görünür. Kitapta bir tarife **Takip et** dersen malzemeleri ve elindeki sayıları ekranın üstünde görürsün (aynı anda 1 tarif).
+  - **Bilgi kutusundaki silah/zırh özellikleri (9 Kasım 2026, Boğaç: "ekranın yarısını silahın özellikleri kapatmış"):** silah ya da zırh tarifinin üstüne gelince özellikleri (hasar, vuruş/sn, menzil, kritik, keskinlik; zırhta savunma, yuva, direnç) malzemelerin altında **tek sıra küçük kartlar** olarak yazar; resmin altına sığdırılmaz, kutu kısa kalır.
 - **El yapımı (Tab):** öğrenilmiş ve örste dövülmeyen, yapı ya da ev eşyası olmayan her tarif. Yap / ×5 / Hepsi. Düğme düzeni: aşağıda "El yapımı düğmeleri".
 - **Tarifteki alet yerine daha iyisi:** bir tarif alet olarak "Taş balta" istiyorsa **her balta** (aynı ya da daha yüksek kademeli) yeter; kazma için de aynısı. Tarif ekranında "Alet: Taş balta ya da daha iyisi · Demir balta" gibi görünür. Alet tarifte harcanmaz. (52 tarif Taş balta istiyor: kalaslar, saplar ve benzerleri.)
 - **"Herhangi" parçalar kalktı:** hiçbir tarif grup istemez; kazan ve örsteki **+** düğmesi tarifin istediği parçayı yapar (bkz. Tarifler › "Herhangi" yok).
@@ -1252,7 +1254,7 @@ Durduran parçalarla (Çit, Taş duvar) ve kapılarla **tamamen çevrili** alan�
 |---|---|
 | Çift tık (0,18 sn içinde) | **Çift vuruş** |
 | Basılı tut (0,55 sn halka dolar), bırak | **Güçlü vuruş** |
-| Takla sırasında ya da hemen sonra tık | **Takla vuruşu** |
+| Takla sırasında ya da hemen sonra tık | **Takla vuruşu** (en çok **3,5 sn**'de bir; arada aynı giriş normal vuruş olur ve karakterin üstünde gri "… N sn" yazar. 10 Kasım 2026, Boğaç: "ard arda spamleyince çok güçlü oluyor") |
 | Tık → takla (0,9 sn içinde) → tık | **Bitirici** |
 | Vuruşun hareketi bittiği an tık (0,26 sn pencere) | **Ritimli 2. vuruş**; onun bitişinde yine tık: **Ritimli 3. vuruş** |
 
@@ -1372,16 +1374,16 @@ Belirli günlerde mor ışık, karakterin bulunduğu bölgeye **o dünyadan olma
 
 - **Ne zaman (v3.31, Boğaç: gece, gecenin başladığı an, belli günler):** saldırı **gecenin başladığı an (20:00)** gelir. Günleri sabittir: **6, 11, 18, 22, 31, 37, 40, 48, 53, 60, 64, 73, 79, 82, 90, 95…** (aralar sırayla 5, 7, 4, 9, 6, 3, 8 gün ve bu sıra tekrar eder; aralar hep 3–9 gün; v3.31, Boğaç: 10 günlük ara çok uzun, kaldırıldı). **Özel olaylı günlere denk gelmez:** 5. gün (Yıldızsız Gezgin'in köpeği), 15. gün (Yıldızsız Işıkçı gelmeye başlar), 20. gün (mor sinyal) ve ilk 3 gün; sıradaki gün bunlardan biriyse bir sonraki olaysız güne kayar. Her iki adada da olur; arenada olmaz. **Mor gece**'de (her yılın son gecesi) bu sıradan bağımsız olarak saldırı kesin gelir ve ertelenmez (bkz. Mevsimler).
 - **Ertelenir:** gece başladığı an (20:00) **evin içindeysen, mağaradaysan, deniz yolculuğundaysan ya da kendi yaktığın bir kamp ateşinin yanındaysan** saldırı o gün olmaz (kişilerin kampları ve ateşleri artık saldırıyı ertelemez; 9 Kasım 2026, Boğaç), **bir sonraki olaysız güne** kayar (ör. 11. günde evdeysen 12. gün). Uyuyarak geçen gece de ertesi olaysız güne kayar. O an bir konuşma ya da pencere açıksa, kapanınca gelir (20:00–21:00 arası). Bir saldırı olunca sıradaki, listedeki ilk en az 3 gün sonraki gündür. Sıradaki saldırının günü kayıtta saklanır.
-- **Gece aydınlıktır:** mor bölgenin içi mor ışıkla aydınlanır (meşale gerekmez, mor ışık seni bu bölgede bayıltmaz); her Yıldızsız da kendi soluk ışığıyla parlar.
-- **Başlarken:** ekranda "Mor ışık saldırısı! · Yıldızsızlar geliyor" yazar, uğultu ve gümbürtü duyulur. Karakterin bulunduğu yerin çevresi (yaklaşık 16 kare yarıçap) **mora döner**: yer mor bir örtüyle kaplanır, kenarında parlayan mor bir halka döner, havada mor zerreler yükselir. Yıldızsızlar bu bölgenin içine, gökten inen **mor ışık sütunlarıyla** (0,7 sn) iner.
+- **Gece aydınlıktır:** saldırı sürerken bütün ada mor ışıkla aydınlanır (meşale gerekmez, mor ışık seni bayıltmaz); her Yıldızsız da kendi soluk ışığıyla parlar.
+- **Başlarken (9 Kasım 2026, Boğaç: "belirli bir bölgede değil tüm adada mora döndürmeli aurayı, her yere gelebilmeliler, NPC'ler dahil; mor bir halka içerisinde değil"):** ekranda "Mor ışık saldırısı! · Yıldızsızlar geliyor" yazar, uğultu ve gümbürtü duyulur. **Bütün ada mora bürünür** (ekranın her yerinde mor bir örtü, çevrende yükselen mor zerreler); halka yoktur. Yıldızsızlar, gökten inen **mor ışık sütunlarıyla** (0,7 sn) **o an bulunduğun yerin çevresine** (7–16 kare) iner; sen nereye gidersen gelirler (kişilerin kampları dahil).
 - **İki dalga:** önce yarısı iner; ilk dalgadan en çok 1 tane kalınca ya da 20 sn geçince kalanı iner. Sayı: (4 + (gün / 5) + (seviye / 6)) × 0,75 (yuvarlanır), en az 3, en çok 9 (9 Kasım 2026, Boğaç: "sayıları ve güçleri %25 azalt").
 - **Peşini bırakmazlar (v3.31, Boğaç: "birden ben yokmuşum gibi bırakıp gidiyorlar"):** öbür canlılar kendi biyomlarının sınırında kovalamayı bırakıp geri döner; Yıldızsızlar bu kurala uymaz, biyom sınırını geçip seni kovalamaya devam eder. **Kişilerin kamplarına da girerler** (Kemal'in kampı, Zümrüt'ün kazanı, Dursun'un ocağı, kişilerin ateşleri; 9 Kasım 2026, Boğaç); yalnızca **senin yaktığın kamp ateşinin** yanına ve evin içine girmezler.
-- **Kişiler yardım eder (9 Kasım 2026, Boğaç: "Börü savaşsın, Zümrüt büyü yapsın, Kemal can takviyesi versin"):** mor bölge (halka ve ~4 kare dışı) şu kişilerin yerine ulaşırsa o kişi savaşa katılır; ilk katıldığında başının üstünde bir söz ve ekranda bir bildirim çıkar. Yıldızsızlar onlara saldırmaz, yalnızca sana saldırır.
+- **Kişiler yardım eder (9 Kasım 2026, Boğaç: "Börü savaşsın, Zümrüt büyü yapsın, Kemal can takviyesi versin"):** dövüş bir kişinin yanına gelirse (sen ~22 kare yakınındaysan ya da bir Yıldızsız ~20 kare yakınındaysa) o kişi savaşa katılır; ilk katıldığında başının üstünde bir söz ve ekranda bir bildirim çıkar. Yıldızsızlar onlara saldırmaz, yalnızca sana saldırır.
   - **Savaşçı Börü** savaşır: yerinin ~16 kare çevresindeki en yakın Yıldızsız'a koşar, saniyede bir vurur (senin silahının bir vuruşunun 1,1 katı). Saldırı bitince yerine yürüyerek döner.
   - **Cadı Zümrüt** büyü yapar: ~17 kare içindeki bir Yıldızsız'a 3,5 saniyede bir yeşil-mor bir ışın yollar (senin vuruşunun 1,4 katı).
   - **Yaşlı Kemal** yaralarını sarar: onun ~10 kare yakınındaysan 5 saniyede bir tam canının **%8**'i kadar can verir.
   - Yardımcıların öldürdükleri de Vio düşürür (sana yazılır).
-- **Bitiş:** bütün Yıldızsızlar ölünce "Mor ışık çekildi" yazar ve bölge eski rengine döner. Bölgeden çok uzaklaşırsan (halkanın ~5 kare dışına), bayılırsan ya da 4 dakika (gerçek) geçerse saldırı yarıda biter, kalan Yıldızsızlar ışıkla geri çekilir.
+- **Bitiş:** bütün Yıldızsızlar ölünce "Mor ışık çekildi" yazar ve ada eski rengine döner. Bayılırsan ya da 4 dakika (gerçek) geçerse saldırı yarıda biter, kalan Yıldızsızlar ışıkla geri çekilir. Uzaklaşmak saldırıyı bitirmez.
 - **Türler (gücüne ve güne göre):** saldırıya hangi türlerin geleceği seviyene ve güne göre belirlenir:
 
 | Tür | Ne zaman gelir | Nasıl savaşır | Can (silahının kaç vuruşu) | Hasar (tam canının) | Vio |
@@ -1461,6 +1463,7 @@ Karakter penceresinin (C) **İstatistikler** sekmesinde kartlar şöyle sıralan
     - **Temel malzemeler %44 daha az:** Dal, Lif, Taş, Nehir çakılı, Kum ve Çakmaktaşı'nın önce %30'u, sonra kalanın %20'si (9 Kasım 2026, Boğaç: "%20 oranında azaltalım") konmaz; **Yaprak %20** azalır. Yerin konumundan hesaplanan sabit bir değerle seçilir, her açılışta aynı ada kurulur.
     - **Bitkiler dağınık (9 Kasım 2026, Boğaç: "toplanılabilir her şeyin böyle yan yana olması hoşuma gitmedi, onları eskisi gibi dağıtıp %20 azaltalım"):** biyom bitkileri (her biyomun türleri, Kuru ot ve Böğürtlen dahil; mağara buluntuları, gece bitkileri ve mağara ağzındakiler hariç) önce %25, sonra kalanın %20'si azalır (toplam **%40**); öbeklenmez, her biri biyomda konduğu yerde tek tek durur ve toplanınca biyomunun herhangi bir yerinde yeniden çıkar.
     - Böylece Çayır ve Orman'da bir ekrandaki toplanabilir + ağaç sayısı ~38'den ~30'a iner (v3.72 ölçümü aşağıda güncel).
+  - **Tek başına kalan zemin karosu olmaz (10 Kasım 2026, Boğaç: "tek karo neden farklı açık yeşil"):** çimen ile orman zemini gürültüyle ayrıldığı için arada tek karoluk adacıklar ve bir karo kalınlığında şeritler kalıyordu (orman içinde tek açık yeşil çimen karosu gibi). Bir çimen/orman zemini karosunun 8 komşusundan en çok ikisi kendi türündeyse ve en az beşi öbür türdeyse, o karo **çevresinin görünüşüyle çizilir** (iki tur uygulanır, şeritlerin uçları da gider). Yalnız görünüş değişir: ağaç olasılığı, toplanabilirler ve kar gibi kurallar karonun kendi türüne göre kalır.
   - **Ağaçlar** sayıyla değil olasılıkla çıkar: orman zemininde her karede %20, çimende %4 (Kül Diyarı'nda bunların %45'i). Sonra **iki adımda seyreltilir** (7 Kasım 2026, Boğaç: ağaçlar belirgin azalsın): **1)** ağaçların **%50'si** silinir; **2)** kalanların **%25'i** daha silinir. Toplam ~%62,5 seyreltme. **3)** Ağaçlar biyomlarına göre türlendikten sonra **meyve ağaçları dışındaki ağaçların %50'si** daha silinir (8 Kasım 2026, Boğaç: "meyve ağaçlarının miktarı güzel; çam vs gibi diğer ağaçlar fazla, meyve ağaçlarına dokunmadan diğer ağaçları %50 seyrelt"); meyve ağaçları aynı kalır. **Ağaç sayıları (v3.84 yeni oyun ölçümü):** Yıldızsız Ada **2.811** (Çayır 675, Orman 764, Bataklık 360, Kayalık Dağ 530, Kül Diyarı 223, Mor Kristal Vadisi 259; meyve ağaçları 645); ikinci ada **3.343** (Yüzen Kayalar 689, Dev Mantar Ormanı 948, Hurda Çölü 610, Kristal Golem Ocağı 538, Ejder Volkanı 279, Gök Rıhtımı 279). Başlangıç kampının 20 karo çevresi bu adımlarda seyreltilmez, sonra çevresinin sıklığına indirilir (en az 6 Çam kalır). Tür biyomun 5 ağacından seçilir; meyve ağaçlarının payı 0,45, diğerlerinin 1.
   - **Başlangıç kampının çevresi (20 karo) da aynı sıklıktadır (8 Kasım 2026, Boğaç: "başlangıç bölgesi diye inanılmaz çok spamleniyor, bunu istemiyorum"):** ada kurulduktan sonra kampın içi, hemen dışındaki halkanın (20–40 karo) sıklığına seyreltilir: ağaçlar topluca, toplanan şeyler tür tür (karo başına halkadaki kadar). Öğreticinin kendi malzemeleri, görev eşyaları, madenler ve gece şeyleri kalır; kampta en az **6 Çam** kalır ve bunlar halkanın sıklığına dahildir (balta dersi ve Dursun'un ilk odunu için; 8 Kasım 2026, Boğaç: "burası yine kalabalık"). Ölçüm: kampta ekran başına ağaç 43 → 12, toplanan şey 68 → 24 (halka: 12 ağaç, 18 şey).
   - **Kuzen aileleri:** her ailenin demircileri ve cadısı kendi biyomunun içindeki sabit yerlerde durur (adanın verisinden); Orman'daki aile (Cadı Yakut) Çayır tarafına yakındır.
@@ -4027,7 +4030,7 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 - **Her biyomun aletleri de o biyomda ya da öncekilerde bulunur:** bir aletin (ve aletin istediği aletin) malzemesi, o aleti gerektiren tariflerin biyomundan sonra gelmez. Çayır yemeklerinin ve ezmelerinin istediği taş aletler artık Çayır taşından yapılır: **Pişirme taşı** (Taş levha: Kumtaşı), **Öğütme taşı** (Kumtaşı), **Taş havan** (Taş kase: Kireçtaşı), **Kirmen** (Taş halka: Kireçtaşı). Kül Diyarı'nın **Ejder kılıcı** Mor Kristal Vadisi'nin altınını istemez (2 Ejder kemiği, 1 Kara çelik külçesi, 1 tabaklanmış deri, 1 Ateş yağı; Aletler bölümündeki tarif).
 
 - **Öğrenmek:** Bir tarifi kullanmak için önce kazanda öğrenirsin. ACT 1'de **Cadı Zümrüt'ün kazanı** (ya da kuzen cadıların kazanları), ACT 2'de **Gökbilimci Yıldız'ın kazanı**. Malzemeleri kazana koyup öğrenirsin; malzemeler bu sırada harcanır.
-- **Kazan listesinde yapılabilirler üstte parlar:** kazandaki tarif listesinde, malzemelerin (ve gereken aletin) şu an çantanda olduğu ve henüz öğrenmediğin tarifler listenin **en üstünde**, **"Şimdi yapılabilir"** başlığı altında toplanır ve **altın sarısı bir çerçeveyle yavaşça parlar** (yalnızca saydamlık oynar, ekranı yormaz). Başlık yalnızca "Tümü" sekmesinde ve arama yokken görünür; bir kategori ya da arama seçiliyken yapılabilirler o listenin başına çıkar ve yine parlar. Kategori başlıkları altında yalnızca yapılamayanlar kalır. Seçili tarife malzeme koymaya başlayınca (malzemeler kazana geçse bile) o tarif yapılabilir sayılmaya devam eder, yerinden oynamaz. Örs listesinde bu yoktur.
+- **Kazan listesinde yapılabilirler üstte parlar:** kazandaki tarif listesinde, malzemelerin (ve gereken aletin) şu an çantanda (ve kazanda) olduğu **ya da eksik parçaları çantandakilerle "+" ile yapılabildiği** (alt tarifi açık, hammaddesi yetiyor; kazandaki "+" düğmesiyle aynı hesap) ve henüz öğrenmediğin tarifler listenin **en üstünde**, **"Şimdi yapılabilir"** başlığı altında toplanır ve **altın sarısı bir çerçeveyle yavaşça parlar** (yalnızca saydamlık oynar, ekranı yormaz). Başlık yalnızca "Tümü" sekmesinde ve arama yokken görünür; bir kategori ya da arama seçiliyken yapılabilirler o listenin başına çıkar ve yine parlar. Kategori başlıkları altında yalnızca yapılamayanlar kalır. Seçili tarife malzeme koymaya başlayınca (malzemeler kazana geçse bile) o tarif yapılabilir sayılmaya devam eder, yerinden oynamaz. Örs listesinde bu yoktur.
 - **Öğreticide yalnızca istenen parlar:** öğretici kazanda belirli bir şey istiyorsa (ör. "Kaba meşale yap", "Keskin taş yap", "Sopa yap": parlayan satır, + düğmesi ya da Kaynat) yapılabilir tariflerin altın parlaması **gösterilmez**; yalnızca öğreticinin istediği şey parlar. Öğretici bir şey istemiyorsa yapılabilirler yine parlar.
 - **"+" zincirleme yapar:** kazandaki ve örsteki malzeme satırlarının "+" düğmesi ile elle yapma listesindeki "Yap" düğmesi, eksik malzemeyi **çantandaki eşyalardan zincirleme** üretebiliyorsa açık olur. Kural tek: zincirdeki her tarifin **tarifini bilmen** (açık olması) ve **ham malzemenin çantada yetmesi** gerekir; aletler çantada olmalıdır. Örnek: sopa 2 keskin taş ister, her keskin taş 2 taş ister; çantada 4 taş ve iki tarif de açıksa "+" önce iki keskin taşı, sonra sopayı yapar. Eldeki hazır malzeme önce kullanılır; döngülü tarif zinciri (A için B, B için A) hiç denenmez; zincir en çok 6 basamaktır. Kazanda "+" satırın **eksik miktarı kadar** üretir (yetmiyorsa yetebildiği kadar). Zincir yetmiyorsa düğme gri kalır ve "Eksik: …" yazar.
 - **Kitapta açılması:** Tarif kitabında bir tarifin açık görünmesi için bütün malzemelerini daha önce görmüş (eline almış) olman gerekir. Bir kişinin "tarifini kitabına yazdım" demesi de tarifi açar (satın alınmış sayılır).
@@ -5489,7 +5492,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 
 - **Tür:** axe = balta (odun), pick = kazma (maden), shovel = kürek (kil), rake/can/scythe = tırmık/sulama kabı/tırpan (tarla), fish = olta/ağ/zıpkın, water = su kabı, torch = meşale, sword/spear = kılıç/mızrak (savaş çekici ve topuz da sword türündedir), bow = yay, staff = asa, gun = ateşli silah.
 - **Kademe:** balta ve kazmanın kademesi hangi ağacı kesip hangi madeni kazabileceğini belirler (biyom tablolarındaki "Gereken balta/kazma"). Daha yüksek kademe her zaman alttakileri de keser.
-- **Dayanıklılık:** her kullanımda 1 azalır; sıfırlanınca alet körelir ve çalışmaz. Demirci Dursun "Aletimi bile" ile bileme ücretine yeniler. Hile panelindeki "Sınırsız dayanıklılık" aletleri hiç köreltmez.
+- **Dayanıklılık:** her kullanımda 1 azalır; sıfırlanınca alet körelir ve çalışmaz. Demirci Dursun "Aletimi bile" ile yeniler. **Bileme ücreti aşınmaya göredir (9 Kasım 2026, Boğaç: "ne kadar hasarlıysa ona göre; komple körse en çok, az hasarlıysa en az"):** ücret = tablodaki tam ücret × (kaybedilen keskinlik / en yüksek keskinlik), yukarı yuvarlanır, en az 1 Vio. Silahların tam bileme ücreti (tablodaki) eskisinin **iki katıdır** (aynı gün, Boğaç: "tamir ücretini de 2 katına çıkaralım"). Hile panelindeki "Sınırsız dayanıklılık" aletleri hiç köreltmez. **Silahlar iki kat dayanır (9 Kasım 2026, Boğaç: "en ufak bir savaşta mızrağım köreliyor; meşale aynı kalsın, diğer silahlar 2 katı dayansın"):** kılıç, savaş çekici, topuz, mızrak ve yayın dayanıklılığı (tablodaki değerler) iki katıdır; meşaleler ve aletler (balta, kazma, kürek…) aynıdır. Eski kayıtlarda silahın kalan keskinliği de iki katına çıkar.
 - **İş süresi:** bir toplamanın kaç saniye sürdüğü (yetenekler ve seviye kısaltır).
 
 | Alet | Tür | Ne yapar | İş süresi (sn) | Dayanıklılık | Bileme ücreti | Kademe | Silah hasarı |
@@ -5520,71 +5523,71 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Ejder kazması | pick | maden kazar | 0,99 | 132 | 967 | 5 | 50 |
 | Mor kristal kazma | pick | maden kazar | 0,9 | 300 | 1.051 | 6 | 52 |
 | Obsidyen kazma | pick | maden kazar | 0,81 | 165 | 1.209 | 6 | 58 |
-| Taş kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 45 | 15 | – | 12 |
-| Bakır kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 60 | 76 | – | 16 |
-| Çakmaktaşı kılıç | sword | savaşır: hızlı ve güçlü vuruş · keskin: kanatır | 1 | 60 | 88 | – | 18 |
-| Tunç kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 80 | 120 | – | 22 |
-| Granit kılıç | sword | savaşır: hızlı ve güçlü vuruş · keskin: kanatır | 1 | 80 | 259 | – | 25 |
-| Demir kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 120 | 240 | – | 34 |
-| Timsah dişi kılıcı | sword | savaşır: hızlı ve güçlü vuruş · zehirli: zehirler | 1 | 120 | 323 | – | 38 |
-| Çelik kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 160 | 367 | – | 46 |
-| Gümüş kılıç | sword | savaşır: hızlı ve güçlü vuruş · keskin: kanatır | 1 | 160 | 422 | – | 52 |
-| Kara çelik kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 200 | 1.155 | – | 58 |
-| Ejder kılıcı | sword | savaşır: hızlı ve güçlü vuruş · alevli: yakar | 1 | 200 | 1.328 | – | 65 |
-| Mor kristal kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 260 | 1.443 | – | 72 |
-| Ametist kılıcı | sword | savaşır: hızlı ve güçlü vuruş · zehirli: zehirler | 1 | 260 | 1.660 | – | 81 |
-| Taş savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 55 | 9 | – | 13 |
-| Bakır savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 70 | 46 | – | 18 |
-| Çakmaktaşı savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · keskin: kanatır | 1 | 70 | 54 | – | 20 |
-| Tunç savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 95 | 232 | – | 25 |
-| Granit savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · keskin: kanatır | 1 | 95 | 267 | – | 28 |
-| Demir savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 140 | 290 | – | 39 |
-| Timsah dişi savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · zehirli: zehirler | 1 | 140 | 334 | – | 44 |
-| Çelik savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 180 | 410 | – | 53 |
-| Kuvars savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · keskin: kanatır | 1 | 180 | 471 | – | 59 |
-| Kara çelik savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 220 | 1.395 | – | 67 |
-| Ejder savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · alevli: yakar | 1 | 220 | 1.604 | – | 75 |
-| Mor kristal savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 280 | 1.744 | – | 83 |
-| Ametist savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · zehirli: zehirler | 1 | 280 | 2.005 | – | 93 |
-| Taş topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 45 | 7 | – | 10 |
-| Bakır topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 60 | 32 | – | 14 |
-| Çakmaktaşı topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 60 | 36 | – | 16 |
-| Tunç topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 85 | 143 | – | 19 |
-| Granit topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 85 | 164 | – | 21 |
-| Demir topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 125 | 179 | – | 29 |
-| Timsah dişi topuz | topuz | topuz: hızlı, art arda vuruş · zehirli: zehirler | 1 | 125 | 206 | – | 32 |
-| Çelik topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 165 | 250 | – | 39 |
-| Kuvars topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 165 | 287 | – | 44 |
-| Kara çelik topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 205 | 841 | – | 49 |
-| Ejder topuzu | topuz | topuz: hızlı, art arda vuruş · alevli: yakar | 1 | 205 | 967 | – | 55 |
-| Mor kristal topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 265 | 1.051 | – | 61 |
-| Ametist topuz | topuz | topuz: hızlı, art arda vuruş · zehirli: zehirler | 1 | 265 | 1.208 | – | 68 |
-| Mızrak | hunt | av ve savaş: uzaktan vurur | 3 | 20 | 12 | – | 10 |
-| Bakır mızrak | hunt | av ve savaş: uzaktan vurur | 2,4 | 50 | 33 | – | 15 |
-| Çakmaktaşı mızrak | hunt | av ve savaş: uzaktan vurur · keskin: kanatır | 2,5 | 50 | 55 | – | 17 |
-| Tunç mızrak | hunt | av ve savaş: uzaktan vurur | 2 | 80 | 100 | – | 20 |
-| Granit mızrak | hunt | av ve savaş: uzaktan vurur · keskin: kanatır | 1 | 80 | 115 | – | 22 |
-| Demir mızrak | hunt | av ve savaş: uzaktan vurur | 1,6 | 120 | 200 | – | 30 |
-| Timsah dişi mızrak | hunt | av ve savaş: uzaktan vurur · zehirli: zehirler | 1 | 120 | 144 | – | 34 |
-| Çelik mızrak | hunt | av ve savaş: uzaktan vurur | 1,4 | 160 | 182 | – | 41 |
-| Kuvars mızrak | hunt | av ve savaş: uzaktan vurur · keskin: kanatır | 1,6 | 160 | 209 | – | 46 |
-| Kara çelik mızrak | hunt | av ve savaş: uzaktan vurur | 1,2 | 200 | 565 | – | 52 |
-| Ejder mızrağı | hunt | av ve savaş: uzaktan vurur · alevli: yakar | 1 | 200 | 650 | – | 58 |
-| Mor kristal mızrak | hunt | av ve savaş: uzaktan vurur | 1 | 260 | 706 | – | 64 |
-| Obsidyen mızrak | hunt | av ve savaş: uzaktan vurur · zehirli: zehirler | 1,2 | 260 | 812 | – | 72 |
-| Basit yay | bow | ok atar (ok harcar) | 0,75 | 60 | 20 | – | 8 |
-| Çam yayı | bow | ok atar (ok harcar) | 0,7 | 80 | 25 | – | 12 |
-| Kemik yay | bow | ok atar (ok harcar) | 0,66 | 56 | 28 | – | 13 |
-| Meşe yayı | bow | ok atar (ok harcar) | 0,68 | 110 | 52 | – | 17 |
-| Ihlamur yayı | bow | ok atar (ok harcar) | 0,65 | 77 | 59 | – | 19 |
-| Kızılağaç yayı | bow | ok atar (ok harcar) | 0,66 | 150 | 69 | – | 26 |
-| Söğüt yayı | bow | ok atar (ok harcar) | 0,63 | 105 | 80 | – | 29 |
-| Akçaağaç yayı | bow | ok atar (ok harcar) | 0,64 | 190 | 109 | – | 35 |
-| Huş yayı | bow | ok atar (ok harcar) | 0,61 | 133 | 125 | – | 39 |
-| Kızıl sedir yayı | bow | ok atar (ok harcar) | 0,62 | 230 | 301 | – | 45 |
-| Ejder yayı | bow | ok atar (ok harcar) | 0,59 | 161 | 346 | – | 50 |
-| Gece ağacı yayı | bow | ok atar (ok harcar) | 0,6 | 280 | 376 | – | 56 |
-| Işık ağacı yayı | bow | ok atar (ok harcar) | 0,57 | 196 | 433 | – | 63 |
+| Taş kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 90 | 30 | – | 12 |
+| Bakır kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 120 | 152 | – | 16 |
+| Çakmaktaşı kılıç | sword | savaşır: hızlı ve güçlü vuruş · keskin: kanatır | 1 | 120 | 176 | – | 18 |
+| Tunç kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 160 | 240 | – | 22 |
+| Granit kılıç | sword | savaşır: hızlı ve güçlü vuruş · keskin: kanatır | 1 | 160 | 518 | – | 25 |
+| Demir kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 240 | 480 | – | 34 |
+| Timsah dişi kılıcı | sword | savaşır: hızlı ve güçlü vuruş · zehirli: zehirler | 1 | 240 | 646 | – | 38 |
+| Çelik kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 320 | 734 | – | 46 |
+| Gümüş kılıç | sword | savaşır: hızlı ve güçlü vuruş · keskin: kanatır | 1 | 320 | 844 | – | 52 |
+| Kara çelik kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 400 | 1.155 | – | 58 |
+| Ejder kılıcı | sword | savaşır: hızlı ve güçlü vuruş · alevli: yakar | 1 | 400 | 1.328 | – | 65 |
+| Mor kristal kılıç | sword | savaşır: hızlı ve güçlü vuruş | 1 | 520 | 1.443 | – | 72 |
+| Ametist kılıcı | sword | savaşır: hızlı ve güçlü vuruş · zehirli: zehirler | 1 | 520 | 1.660 | – | 81 |
+| Taş savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 110 | 18 | – | 13 |
+| Bakır savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 140 | 92 | – | 18 |
+| Çakmaktaşı savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · keskin: kanatır | 1 | 140 | 108 | – | 20 |
+| Tunç savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 190 | 464 | – | 25 |
+| Granit savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · keskin: kanatır | 1 | 190 | 534 | – | 28 |
+| Demir savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 280 | 580 | – | 39 |
+| Timsah dişi savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · zehirli: zehirler | 1 | 280 | 668 | – | 44 |
+| Çelik savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 360 | 820 | – | 53 |
+| Kuvars savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · keskin: kanatır | 1 | 360 | 942 | – | 59 |
+| Kara çelik savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 440 | 1.395 | – | 67 |
+| Ejder savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · alevli: yakar | 1 | 440 | 1.604 | – | 75 |
+| Mor kristal savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 560 | 1.744 | – | 83 |
+| Ametist savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · zehirli: zehirler | 1 | 560 | 2.005 | – | 93 |
+| Taş topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 90 | 14 | – | 10 |
+| Bakır topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 120 | 64 | – | 14 |
+| Çakmaktaşı topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 120 | 72 | – | 16 |
+| Tunç topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 170 | 286 | – | 19 |
+| Granit topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 170 | 328 | – | 21 |
+| Demir topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 250 | 358 | – | 29 |
+| Timsah dişi topuz | topuz | topuz: hızlı, art arda vuruş · zehirli: zehirler | 1 | 250 | 412 | – | 32 |
+| Çelik topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 330 | 500 | – | 39 |
+| Kuvars topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 330 | 574 | – | 44 |
+| Kara çelik topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 410 | 1682 | – | 49 |
+| Ejder topuzu | topuz | topuz: hızlı, art arda vuruş · alevli: yakar | 1 | 410 | 1934 | – | 55 |
+| Mor kristal topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 530 | 1.051 | – | 61 |
+| Ametist topuz | topuz | topuz: hızlı, art arda vuruş · zehirli: zehirler | 1 | 530 | 1.208 | – | 68 |
+| Mızrak | hunt | av ve savaş: uzaktan vurur | 3 | 40 | 24 | – | 10 |
+| Bakır mızrak | hunt | av ve savaş: uzaktan vurur | 2,4 | 100 | 66 | – | 15 |
+| Çakmaktaşı mızrak | hunt | av ve savaş: uzaktan vurur · keskin: kanatır | 2,5 | 100 | 110 | – | 17 |
+| Tunç mızrak | hunt | av ve savaş: uzaktan vurur | 2 | 160 | 200 | – | 20 |
+| Granit mızrak | hunt | av ve savaş: uzaktan vurur · keskin: kanatır | 1 | 160 | 230 | – | 22 |
+| Demir mızrak | hunt | av ve savaş: uzaktan vurur | 1,6 | 240 | 400 | – | 30 |
+| Timsah dişi mızrak | hunt | av ve savaş: uzaktan vurur · zehirli: zehirler | 1 | 240 | 288 | – | 34 |
+| Çelik mızrak | hunt | av ve savaş: uzaktan vurur | 1,4 | 320 | 364 | – | 41 |
+| Kuvars mızrak | hunt | av ve savaş: uzaktan vurur · keskin: kanatır | 1,6 | 320 | 418 | – | 46 |
+| Kara çelik mızrak | hunt | av ve savaş: uzaktan vurur | 1,2 | 400 | 1130 | – | 52 |
+| Ejder mızrağı | hunt | av ve savaş: uzaktan vurur · alevli: yakar | 1 | 400 | 1300 | – | 58 |
+| Mor kristal mızrak | hunt | av ve savaş: uzaktan vurur | 1 | 520 | 1412 | – | 64 |
+| Obsidyen mızrak | hunt | av ve savaş: uzaktan vurur · zehirli: zehirler | 1,2 | 520 | 1624 | – | 72 |
+| Basit yay | bow | ok atar (ok harcar) | 0,75 | 120 | 40 | – | 8 |
+| Çam yayı | bow | ok atar (ok harcar) | 0,7 | 160 | 50 | – | 12 |
+| Kemik yay | bow | ok atar (ok harcar) | 0,66 | 112 | 56 | – | 13 |
+| Meşe yayı | bow | ok atar (ok harcar) | 0,68 | 220 | 104 | – | 17 |
+| Ihlamur yayı | bow | ok atar (ok harcar) | 0,65 | 154 | 118 | – | 19 |
+| Kızılağaç yayı | bow | ok atar (ok harcar) | 0,66 | 300 | 138 | – | 26 |
+| Söğüt yayı | bow | ok atar (ok harcar) | 0,63 | 210 | 160 | – | 29 |
+| Akçaağaç yayı | bow | ok atar (ok harcar) | 0,64 | 380 | 218 | – | 35 |
+| Huş yayı | bow | ok atar (ok harcar) | 0,61 | 266 | 250 | – | 39 |
+| Kızıl sedir yayı | bow | ok atar (ok harcar) | 0,62 | 460 | 602 | – | 45 |
+| Ejder yayı | bow | ok atar (ok harcar) | 0,59 | 322 | 692 | – | 50 |
+| Gece ağacı yayı | bow | ok atar (ok harcar) | 0,6 | 560 | 752 | – | 56 |
+| Işık ağacı yayı | bow | ok atar (ok harcar) | 0,57 | 392 | 866 | – | 63 |
 | Sulama kabı | can | tarlayı sular | 1 | 25 | 10 | – | – |
 | Ağ | fish | balık tutar (eline al, suya dön, E) | 3 | 25 | 15 | – | – |
 | Balık kapanı | fish | balık tutar (eline al, suya dön, E) | 4 | 40 | 25 | – | – |
@@ -5599,7 +5602,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Ateş asası | staff | ateş topu atar (mana) | 1 | 999 | 0 | – | – |
 | Buz asası | staff | buz oku atar (mana) | 1 | 999 | 0 | – | – |
 | Yıldırım asası | staff | zincirleme yıldırım (mana) | 1 | 999 | 0 | – | – |
-| Işın kılıcı | sword | plazma kılıç | 1 | 999 | 0 | – | 60 |
+| Işın kılıcı | sword | plazma kılıç | 1 | 1998 | 0 | – | 60 |
 | Kaba meşale | torch | gece aydınlatır | 0 | 1.000.000 | 0 | – | – |
 | Meşale | torch | gece aydınlatır | 0 | 1.000.000 | 0 | – | – |
 | Bola | sling | fırlatılır: vurduğu canlıyı 5 sn yavaşlatır | 1,2 | 25 | 15 | – | – |

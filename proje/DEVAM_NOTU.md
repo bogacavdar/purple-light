@@ -1,3 +1,25 @@
+## v4.05 (10 Kasım 2026) · eylem yazısı kemerin üstünde
+
+**Değişen yerler:** Yeni `v405prompt` bloğu (dosya sonu). `#prompt` kemerin (`#hotbar`) üstüne binerse 120 ms'de bir `bottom`'u kemerin üstü + 8 px yapılıyor (satır içi, `!important`). `.act` ve `v50m` (telefon) değişmedi.
+- Mor ışık (`v330ys`): `spot` oyuncunun o anki yerine göre çalışıyor; halkadan uzaklaşınca bitme kuralı kalktı. Işık oyuncunun çevresinde 900 px. Zemin halkası yerine `#ysveil` (z 1, sabit mor örtü, opaklıkla yumuşak geçiş) ve oyuncunun çevresinde zerreler var.
+- Yardımcılar (`v402yard` `inZone`): oyuncu 360 px ya da bir Yıldızsız 320 px yakınındaysa yardım ediyorlar.
+- Tarif kitabı `bookInfo` sarmalı (~18419): silah/zırh yazısı ikon sütunu yerine metin sütununda `.bkst` yongaları olarak çıkıyor (`v405bk` stili).
+- Yeni `v405dur` bloğu: `GT[n].dur` ×2 (`sword`/`hunt`/`bow`). Kayıtta `dw2`; eski kayıtta `toolDur` ×2. Belgede (85_aletler) 66 satırın dayanıklılığı ×2.
+- `sharpCost(n)` (giveTool yanında): tam ücret `g.sharp` (silahta ×2) × kaybedilen/en çok, yukarı yuvarlanıyor, en az 1. Dursun menüsünde (~3194, ~3413) kullanılıyor. Belgede 66 silahın bileme ücreti ×2.
+- Sürüm etiketi `Versiyon 4.05`.
+
+**Geri alma:** `git revert` bu commit.
+
+**Kontrol:** chk.js 0 hata. Saldırıda 400 px uzaklaşınca saldırı sürüyor, örtü açık. 1500×800'de yazının altı 652 → 634, kemerin üstü 642.
+
+- Kazan listesi: `canChain(x)` (canWith'in hemen önünde) eksik parçaları `chainTry`+`subOK` ile çantadan (kazandaki kendi tarifinde kazan içeriği dahil) yapabiliyorsa true; `mk` = `canWith||canChain`, `.can` sınıfı da mkOn'u kapsar. Geri alma: `canChain` silinir, `mk` eski haline. Belge 80_tarifler "Kazan listesinde yapılabilirler".
+
+- Zemin: tvar döngüsünden önce `VT` (tiles kopyası) iki tur yumuşatılır: 0/1 karo, 8 komşudan ≤2 kendi türü ve ≥5 öbür tür ise görünüşte öbür tür (`lone`). `tiles` değişmez (ağaç, düğüm, kar kuralları aynı). Geri alma: `VT`/`lone` satırı silinir, döngüde `t=tiles[i]`. Ölçüm olcum.js cpu 4: v4.05 öncesi BOOT 19768 ms / PLAY js 4105 ms, sonrası BOOT 19078 ms / PLAY js 4187 ms (fark gürültü düzeyinde). Belge 30_act1.
+
+- Meşale yanığı (v2.33 bloğu, madPack sarmalayıcı): `torchStrikes()` = `weapon().torch` ve elde yay yok; ayrıca `a.flash>=.12` (gerçek vuruş; saldırgan hayvanın fark etmesi madPack'i flash'sız çağırıyordu). Vuruş aşınması da `torchStrikes()` ister. Geri alma: bu üç koşul silinir. Belge 20_sistemler "Meşale silahtır da".
+
+- Takla vuruşu bekleme süresi: kombo bloğunda `doMove`'un hemen üstünde `DASH_CD=3.5`, `dashCdT`; süre dolmadıysa gri float + `attack()`. Geri alma: o satır ve doMove başındaki `if(type==='dash')` silinir. Belge 20_sistemler kombo tablosu.
+
 ## v4.04 (9 Kasım 2026) · sarı bölgeli işlerde ok yok
 
 **Değişen yerler:** Ana görev `guideKey` sarmalı (~15114) hedef bölge (`zKey`) ya da daire (`t.r`) ise ok vermiyor. Önceden bölgenin en yakın noktasına ok ve "Ad N m" yazısı çıkıyordu. Görev günlüğündeki açıklama da değişti.
@@ -162,12 +184,4 @@
 **Geri alma:** `git revert` bu commit (v3.78'in öbekli hali geri gelir).
 
 **Kontrol:** chk.js 0 hata. Yeni oyun: öbekte duran bitki 2888 → 40, 16 px'ten yakın 80; biyom başına toplanabilir ACT 1 429/394/427/494/417/489, ACT 2 303/253/318/302/304/297 (önceden 525/489/474/577/506/568 ve 369/298/405/369/375/353). Kurulum 12 ms.
-
-## v3.85 (9 Kasım 2026) · kamp ağaçları halkadan seyrek
-
-**Değişen yerler:** `v375kamp`: `MINPINE` 12 → 6; korunan çamlar halkanın payına sayılır (`keep2=(keep×n−safe)/(n−safe)`). Sürüm etiketi `Versiyon 3.85`.
-
-**Geri alma:** `MINPINE=12`, `keep` ile seyreltme.
-
-**Kontrol:** chk.js 0 hata. Yeni oyun: kampta ekran başına ağaç 9,3 → 5,0 (halka 6,9), 6 Çam; Zümrüt'ün kazanı çevresi ekran görüntüsüyle bakıldı.
 

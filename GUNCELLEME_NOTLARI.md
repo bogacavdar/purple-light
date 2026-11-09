@@ -8,6 +8,27 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.05 · 10 Kasım 2026
+
+### Oynanış
+- **Takla vuruşu 3,5 saniyede bir:** taklanın içinde ya da hemen sonunda yapılan takla vuruşu (Hamle, Koşarak saplama, Zikzak…) ard arda yapılınca çok güçlüydü; artık 3,5 saniyede bir yapılabiliyor. Arada aynı tık normal vuruş oluyor, karakterin üstünde gri "Koşarak saplama 3 sn" gibi kalan süre yazıyor. Hasarı aynı.
+- **Bileme ücreti aşınmaya göre:** Dursun'a bileterken ücret artık aletin ne kadar körelmiş olduğuna göre: tamamen körse tam ücret, biraz körse az. Silahların tam bileme ücreti iki katına çıktı (iki kat dayandıkları için).
+- **Silahlar iki kat dayanıyor:** kılıç, savaş çekici, topuz, mızrak ve yaylar artık iki kat geç köreliyor (ör. Mızrak 20 → 40 vuruş). Meşaleler ve aletler (balta, kazma…) aynı. Eski kayıtta elindeki silahın kalan keskinliği de iki katına çıkıyor.
+- **Mor ışık bütün adayı sarıyor:** saldırıda artık mor bir halka yok; bütün ada mora bürünüyor ve aydınlanıyor. Yıldızsızlar sen nereye gidersen çevrene iniyor; kaçmak saldırıyı bitirmiyor. Kişiler (Börü, Zümrüt, Kemal) dövüş yanlarına gelince yardıma katılıyor.
+
+### Düzeltmeler
+- **Mızrak artık yakmıyor:** meşale yanarken mızrakla (ya da başka bir silahla) vurunca canavar tutuşuyordu; artık yalnızca meşalenin kendisiyle vurunca tutuşuyor. Başka silahla vururken meşale de vuruş başına aşınmıyor, yalnızca zamanla yanıyor. Bir canavarın seni fark etmesi de (vurmadan) artık onu tutuşturmuyor.
+
+### Görsel
+- **Tek başına açık yeşil karolar gitti:** ormanın içinde tek kalmış açık yeşil çimen karoları ve bir karo kalınlığındaki şeritler (ya da çimende tek orman karosu) artık çevreleriyle aynı görünüyor. Yalnızca görünüş değişti; ağaçlar ve toplanabilirler aynı yerde.
+
+### Arayüz
+- **Kazanda "+" ile yapılabilenler de parlıyor:** Zümrüt'ün kazanında "Şimdi yapılabilir" listesine artık eksik parçası çantandakilerle "+" düğmesiyle yapılabilen tarifler de giriyor (ör. Kıvılcım'ın malzemesi varsa Ateş). Önceden yalnızca bütün parçası hazır olanlar parlıyordu.
+- **Tarif kitabında silah özellikleri düzgün:** bir silaha ya da zırha gelince özellikleri (hasar, vuruş hızı, menzil, kritik, keskinlik) resmin altında dar bir sütuna sıkışıp yarım ekranı kaplıyordu; artık malzemelerin altında tek sıra küçük kartlarda.
+- **Eylem yazısı kemerin üstünde:** "Su al", "Konuş" gibi eylem yazıları alet kemerinin arkasında yarım kalıyordu; artık hep kemerin biraz üstünde.
+
+---
+
 ## Versiyon 4.04 · 9 Kasım 2026
 
 ### Oynanış
@@ -271,16 +292,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - ACT 1 › Haritadaki miktarlar › Sade harita: öbek kuralları kalktı, "Bitkiler dağınık" ve yeni oranlar.
-
----
-
-## Versiyon 3.85 · 9 Kasım 2026
-
-### Oynanış
-- **Başlangıç bölgesi de seyrek:** kampın çevresinde tutulan çamlar artık çevresindeki ağaç sıklığına dahil (önceden onun üstüne ekleniyordu) ve en az 12 yerine 6 çam kalıyor. Kampta ekran başına ağaç 9'dan 5'e indi (çevresinde 7).
-
-### Tasarım belgesi
-- ACT 1 › Haritadaki miktarlar: kampta en az 6 çam.
 
 ---
 

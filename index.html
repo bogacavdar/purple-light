@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 4.04</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 4.05</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 4.04 · 9 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Sarı bölgeli işlerde ok yok:</strong> bir şey toplamak, avlamak ya da aramak gereken ana görevlerde (ör. Kanlıca, Pamuk) artık ok ve "Kanlıca 8 m" gibi yazı çıkmıyor; yer haritada sarı gösteriliyor, aradığını sen buluyorsun. Ok yalnızca bir kişiye ya da belli bir yere gidilecekken çıkıyor.</li><li><strong>Silah değdiği yere vuruyor:</strong> meşale (ve bütün silahlar) bir canlının herhangi bir yerine değince artık hasar veriyor; vuruş, silahın savrulduğu yayın tamamına bakıyor (önceden dört yöne bakan dar bir alana bakıyordu, kurtların başına ya da üstüne değen meşale boşa gidiyordu).</li><li><strong>Robot köpekler elle topladığın her şeyi toplar:</strong> köpek menüsünde artık yalnızca 23 malzeme değil, yerden elle toplayabildiğin ve daha önce eline geçmiş her şey var (Havuç, mantarlar, öbür biyomların bitkileri…); yalnızca kazma isteyen madenler ve mağaradakiler yok.</li><li><strong>Pazarcılar demircilerin dibinde değil:</strong> Orman, Bataklık, Kayalık Dağ, Kül Diyarı ve Mor Kristal Vadisi'ndeki pazarcılar (Fidan, Nilüfer, Kardelen, Lale, Menekşe) artık demirci ve zırhçının ocağından uzakta, 30 kare kadar ötede kendi tezgâhını kuruyor.</li><li><strong>Canavarlar içinde dolanmıyor:</strong> yürüyen canavar önünde, kendi boyu kadar uzakta duruyor; atılışı sana değince duruyor, arkana geçip gitmiyor.</li><li><strong>Börü'nün alıştırma canavarları (Kerevit dersi hariç) öğretiyor:</strong> ritimli 3. vuruş, güçlü vuruş, ulti gibi derslerdeki canavarlar artık Kerevit dersindeki gibi dövüşüyor: senden bir adım uzakta duruyor, üstünde <strong>!</strong> çıkıp bir an bekliyor, sonra bir kez atılıyor ve geri çekiliyor; ne zaman vuracağı belli. Kırmızı (savuşturulamaz) vuruş ve yer sarsması yapmıyorlar, canının yalnızca %5'i kadar vuruyorlar ve seni canının dörtte birinin altına indirmiyorlar.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 4.05 · 10 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Takla vuruşu 3,5 saniyede bir:</strong> taklanın içinde ya da hemen sonunda yapılan takla vuruşu (Hamle, Koşarak saplama, Zikzak…) ard arda yapılınca çok güçlüydü; artık 3,5 saniyede bir yapılabiliyor. Arada aynı tık normal vuruş oluyor, karakterin üstünde gri "Koşarak saplama 3 sn" gibi kalan süre yazıyor. Hasarı aynı.</li><li><strong>Bileme ücreti aşınmaya göre:</strong> Dursun'a bileterken ücret artık aletin ne kadar körelmiş olduğuna göre: tamamen körse tam ücret, biraz körse az. Silahların tam bileme ücreti iki katına çıktı (iki kat dayandıkları için).</li><li><strong>Silahlar iki kat dayanıyor:</strong> kılıç, savaş çekici, topuz, mızrak ve yaylar artık iki kat geç köreliyor (ör. Mızrak 20 → 40 vuruş). Meşaleler ve aletler (balta, kazma…) aynı. Eski kayıtta elindeki silahın kalan keskinliği de iki katına çıkıyor.</li><li><strong>Mor ışık bütün adayı sarıyor:</strong> saldırıda artık mor bir halka yok; bütün ada mora bürünüyor ve aydınlanıyor. Yıldızsızlar sen nereye gidersen çevrene iniyor; kaçmak saldırıyı bitirmiyor. Kişiler (Börü, Zümrüt, Kemal) dövüş yanlarına gelince yardıma katılıyor.</li></ul><h3>Düzeltmeler</h3><ul><li><strong>Mızrak artık yakmıyor:</strong> meşale yanarken mızrakla (ya da başka bir silahla) vurunca canavar tutuşuyordu; artık yalnızca meşalenin kendisiyle vurunca tutuşuyor. Başka silahla vururken meşale de vuruş başına aşınmıyor, yalnızca zamanla yanıyor. Bir canavarın seni fark etmesi de (vurmadan) artık onu tutuşturmuyor.</li></ul><h3>Görsel</h3><ul><li><strong>Tek başına açık yeşil karolar gitti:</strong> ormanın içinde tek kalmış açık yeşil çimen karoları ve bir karo kalınlığındaki şeritler (ya da çimende tek orman karosu) artık çevreleriyle aynı görünüyor. Yalnızca görünüş değişti; ağaçlar ve toplanabilirler aynı yerde.</li></ul><h3>Arayüz</h3><ul><li><strong>Kazanda "+" ile yapılabilenler de parlıyor:</strong> Zümrüt'ün kazanında "Şimdi yapılabilir" listesine artık eksik parçası çantandakilerle "+" düğmesiyle yapılabilen tarifler de giriyor (ör. Kıvılcım'ın malzemesi varsa Ateş). Önceden yalnızca bütün parçası hazır olanlar parlıyordu.</li><li><strong>Tarif kitabında silah özellikleri düzgün:</strong> bir silaha ya da zırha gelince özellikleri (hasar, vuruş hızı, menzil, kritik, keskinlik) resmin altında dar bir sütuna sıkışıp yarım ekranı kaplıyordu; artık malzemelerin altında tek sıra küçük kartlarda.</li><li><strong>Eylem yazısı kemerin üstünde:</strong> "Su al", "Konuş" gibi eylem yazıları alet kemerinin arkasında yarım kalıyordu; artık hep kemerin biraz üstünde.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 Vio</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -1769,6 +1769,8 @@ const durCol=n=>{const k=Math.max(0,Math.min(1,nn(toolDur[n],GT[n].dur)/GT[n].du
 const toolDur={};                 // remaining uses per owned gathering tool
 const bestTool=kind=>Object.keys(GT).filter(n=>GT[n].kind===kind&&(inv[n]||0)>0&&(nn(toolDur[n],GT[n].dur))>0).sort((a,b)=>GT[a].time-GT[b].time)[0];
 const ownsKind=kind=>Object.keys(GT).some(n=>GT[n].kind===kind&&(inv[n]||0)>0);
+// v4.05 (Boğaç: "tamir ücretini 2 katına çıkaralım; ne kadar hasarlıysa ona göre: komple körse en çok, az hasarlıysa en az"): the fee follows the wear; a weapon's full fee is twice the old one
+function sharpCost(n){const g=GT[n];if(!g)return 0;const full=(g.sharp||0)*(/^(sword|hunt|bow)$/.test(g.kind)?2:1),dur=g.dur||1,cur=Math.max(0,Math.min(dur,nn(toolDur[n],dur)));return Math.max(1,Math.ceil(full*(1-cur/dur)))}
 function giveTool(n){if(!(n in inv)){inv[n]=0;order.push(n)}inv[n]=1;toolDur[n]=GT[n].dur}
 // v1.83: three trees (Savaş, Ekonomi, Dayanıklılık), 30 skills each, placed so that the fully opened tree draws a tree
 // (a trunk of three, then three main branches and a round crown). Every skill hangs on one parent (p): buying it shows
@@ -1959,7 +1961,9 @@ const TILEC=[];
     if(t===0&&v>=6){g.fillStyle=['#ffe45c','#ffffff','#ff8fc8','#9fd4ff','#ffb35c'][Math.floor(r2()*5)];g.fillRect(Math.floor(r2()*13),Math.floor(r2()*13),2,2)}}
   TILEC[k*8+v]=c}
  const shallow=(x,y)=>{for(let dy=-2;dy<=2;dy++)for(let dx=-2;dx<=2;dx++){const xx=x+dx,yy=y+dy;if(xx>=0&&yy>=0&&xx<W&&yy<H&&tiles[yy*W+xx]<=2)return true}return false};
- for(let y=0;y<H;y++)for(let x=0;x<W;x++){const i=y*W+x,t=tiles[i],z=ZONE[i];let k=t===4&&shallow(x,y)?5:t;
+ const VT=Uint8Array.from(tiles);for(let pass=0;pass<2;pass++){const src=Uint8Array.from(VT);for(let y=1;y<H-1;y++)for(let x=1;x<W-1;x++){const i=y*W+x,t=src[i];if(t>1)continue;let same=0,oth=0;for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){if(!dx&&!dy)continue;const u=src[(y+dy)*W+x+dx];if(u===t)same++;else if(u===1-t)oth++}if(same<=2&&oth>=5)VT[i]=1-t}}
+ const lone=(x,y,t)=>t>1?t:VT[y*W+x];   /* v4.05 (Boğaç): lone / one-tile-thin grass or forest-floor bits take their neighbours' look; only the look */
+ for(let y=0;y<H;y++)for(let x=0;x<W;x++){const i=y*W+x,t=lone(x,y,tiles[i]),z=ZONE[i];let k=t===4&&shallow(x,y)?5:t;
    const bi=BIO[i];if(t===5)k=13;else if(bi===2){if(MUD[i])k=12;else if(t===0)k=6;else if(t===1)k=7;else if(t===3)k=10}else if(bi===4){if(t===0)k=8;else if(t===1)k=9;else if(t===2)k=11;else if(t===3)k=10}
    else if(bi===1){if(t===0)k=18}else if(bi===3){if(t===0)k=14;else if(t===1)k=15;else if(t===2)k=20}else if(bi===5){if(t===0)k=16;else if(t===1)k=17;else if(t===2)k=19;else if(t===3)k=10}
    tvar[i]=k*8+(vnH(x,y,77)*8|0);
@@ -3195,7 +3199,7 @@ function renderCraft(){
     if(cnt)cnt.textContent=`Elindeki aletler: ${known.length}`;
     cbody.innerHTML=smithTabs()+`<p class="note">Dursun alet satmaz; parçalarını getirirsen <b>Alet dök</b> sekmesinde döver, işçiliğini alır. Aletler kullandıkça körelir; körelince burada bileyebilirsin.${known.length?'':' Şu an elinde bilenecek bir alet yok.'}</p><div class="shop">${known.map(n=>{
       const g=GT[n],d=nn(toolDur[n],g.dur),dull=d<=0,pct=Math.max(0,d/g.dur*100);
-      const act=`<button data-sharp="${esc(n)}" type="button"${d>=g.dur||(!plInf()&&coins<g.sharp)?' disabled':''}>${d>=g.dur?'Keskin':'Bile · '+g.sharp.toLocaleString('tr-TR')}</button>`;
+      const sc=sharpCost(n);const act=`<button data-sharp="${esc(n)}" type="button"${d>=g.dur||(!plInf()&&coins<sc)?' disabled':''}>${d>=g.dur?'Keskin':'Bile · '+sc.toLocaleString('tr-TR')}</button>`;
       return `<div class="tool${dull?' dull':''}">${glyph(n)}<div class="ti"><b>${esc(n)}</b><span>${g.use} · ${String(g.time).replace('.',',')} sn · ${g.dur} kullanım</span><div class="dbar" title="Keskinlik"><i style="width:${pct}%"></i></div><small>${dull?'Körelmiş':'Keskinlik '+d+'/'+g.dur}</small></div>${act}</div>`}).join('')}</div>`;
   }else if(mode==='map'){
     renderMapPanel();
@@ -3414,7 +3418,7 @@ cbody.addEventListener('click',e=>{
   if(mode==='inv'){invClick(e);return}
   const sbb=e.target.closest('[data-sub]');if(sbb){{const sn=sbb.dataset.sub;if(pot.r&&(inv[sn]||0)>0&&REC.get(pot.r).i.some(([m],k)=>expand(m).includes(sn)&&needLeft(k)>0)){deposit(sn);return}}if(sbb.classList.contains('no')){const li=sbb.closest('li');if(li)li.classList.toggle('tipon');sfx('bad');return}quickBrew(sbb.dataset.sub,+sbb.dataset.k||1);return}
   const bb=e.target.closest('[data-buy]');if(bb){const n=bb.dataset.buy,g=GT[n];if((plInf()||coins>=toolPrice(n))&&!(inv[n]>0)){if(!plInf())coins-=toolPrice(n);giveTool(n);shopBuy(n);toast(`${n} satın alındı · envanterinde`);if(beltIndex(n)<0)setTimeout(()=>beltTip(n),700);renderInv();renderCraft()}return}
-  const sh=e.target.closest('[data-sharp]');if(sh){const n=sh.dataset.sharp,g=GT[n];if(plInf()||coins>=g.sharp){if(!plInf())coins-=g.sharp;toolDur[n]=g.dur;qc('sharp');toast(`${n} bilendi`);renderInv();renderCraft()}return}
+  const sh=e.target.closest('[data-sharp]');if(sh){const n=sh.dataset.sharp,g=GT[n],sc=sharpCost(n);if(plInf()||coins>=sc){if(!plInf())coins-=sc;toolDur[n]=g.dur;qc('sharp');toast(`${n} bilendi`);renderInv();renderCraft()}return}
   const stb=e.target.closest('[data-sktab]');if(stb){skTab=stb.dataset.sktab;renderCraft();return}
   const skn=e.target.closest('[data-skn]');if(skn){const id=skn.dataset.skn;if(skPT==='touch'&&skTipFor!==id){skTip(skn);return}skTipFor='';buySkill(id);return}
   const skb=e.target.closest('[data-sk]');if(skb){buySkill(skb.dataset.sk);return}
@@ -3678,6 +3682,7 @@ function potSwitch(){
   if(diff!=='hard')return '';
   return `<div class="pmode" role="tablist" aria-label="Kazan kipi"><button type="button" role="tab" data-pm="tarif" aria-selected="${potMode==='tarif'}">${glyph('Ateş')}<span>${station==='forge'?'Tarifle döv':'Tarifle kaynat'}</span></button><button type="button" role="tab" data-pm="dene" aria-selected="${potMode==='dene'}">${glyph('Duman')}<span>Deneyerek bul</span></button></div>`;
 }
+function canChain(x){if(!x.t.every(toolHas))return false;const own={...inv};if(x.r===pot.r)for(const o of pot.put)for(const n in o)own[n]=(own[n]||0)+o[n];for(const [n,q] of x.i){let need=q;for(const m of expand(n)){const k=Math.min(need,own[m]||0);own[m]=(own[m]||0)-k;need-=k}while(need>0){let ok=false;for(const m of expand(n)){if(!subOK(m))continue;const o2={...own},p2=[];if(chainTry(m,o2,p2,[x.r],subOK)){for(const k in o2)own[k]=o2[k];ok=true;break}}if(!ok)return false;need--}}return true}   /* v4.05: missing parts made with + count as makeable */
 function canWith(x){if(x.r!==pot.r)return canBrew(x);const own={...inv};for(const o of pot.put)for(const n in o)own[n]=(own[n]||0)+o[n];return x.i.every(([n,q])=>{let need=q;for(const m of expand(n)){const k=Math.min(need,own[m]||0);own[m]=(own[m]||0)-k;need-=k}return need<=0})&&x.t.every(toolHas)}   // v2.42: what is already in the pot counts
 function renderPot(list){
   if(diff!=='hard'&&potMode!=='tarif')potMode='tarif';
@@ -3689,7 +3694,7 @@ function renderPot(list){
   const match=x=>!f||(potBy==='ing'?x.i.some(([n])=>lc(n).includes(f)||expand(n).some(m=>lc(m).includes(f))):lc(x.r).includes(f));
   syncSeq();
   const open=DB.R.filter(x=>isOpen(x.r)&&stOK(x)&&!(FG&&PLACEABLE.has(x.r))&&(potCat==='Tümü'||x.c===potCat)&&match(x)).filter(x=>FG||!(window.__plHideL&&window.__plHideL())||!foundSet.has(x.r)).sort((a,b)=>(FG?0:(foundSet.has(a.r)?1:0)-(foundSet.has(b.r)?1:0))||openSeq.get(a.r)-openSeq.get(b.r));   // v3.36: learned ones last (or hidden)
-  const mk=y=>!FG&&!foundSet.has(y.r)&&canWith(y),mkOn=new Set(open.filter(mk).map(y=>y.r)),mkL=open.filter(y=>mkOn.has(y.r)),rest=open.filter(y=>!mkOn.has(y.r));   // v2.42: what can be made now goes to the top and glows
+  const mk=y=>!FG&&!foundSet.has(y.r)&&(canWith(y)||canChain(y)),mkOn=new Set(open.filter(mk).map(y=>y.r)),mkL=open.filter(y=>mkOn.has(y.r)),rest=open.filter(y=>!mkOn.has(y.r));   // v2.42: what can be made now goes to the top and glows
   const groups=potCat==='Tümü'&&!f&&!FG?[['Şimdi yapılabilir',mkL]].concat(CATS.map(c=>[c,rest.filter(x=>x.c===c)])).filter(g=>g[1].length):[[null,mkL.concat(rest)]];
   const newest=openN-3;
   const cnt=$('cnt');if(cnt)cnt.textContent=`${DB.R.filter(x=>isOpen(x.r)&&stOK(x)).length} açık ${FG?'alet':'tarif'}`;
@@ -3704,7 +3709,7 @@ function renderPot(list){
   const tiles=list.filter(n=>!need||need.has(n)||!sk('B2'));
   const wantOf=n=>{if(!x||potMode==='dene'||(!FG&&foundSet.has(x.r)))return 0;let w=0;x.i.forEach(([m],i)=>{if(expand(m).includes(n))w+=Math.max(0,needLeft(i))});return w};
   cbody.innerHTML=(FG?smithTabs():'')+potSwitch()+`<div class="cauldron">
-    <div class="rlist" role="list">${FG?'':`<label class="hlrn"><input type="checkbox" id="hlrn"${window.__plHideL&&window.__plHideL()?' checked':''}> Öğrenilenleri gösterme</label>`}${open.length?groups.map(([c,L])=>(c?`<div class="rgrp"><span>${esc(c)}</span><span>${L.length}</span></div>`:'')+L.map(y=>`<button type="button" class="rb${pot.r===y.r?' on':''}${canBrew(y)?' can':''}${mkOn.has(y.r)?' mk':''}${!FG&&foundSet.has(y.r)?' learned':''}" data-rec="${esc(y.r)}"><img src="${icon(y.r)}" alt=""><span>${esc(y.r)}${foundSet.has(y.r)?(FG?' <small>✓</small>':' <small>öğrenildi</small>'):''}${openSeq.get(y.r)>newest&&!foundSet.has(y.r)?' <small style="color:#ffd27a">yeni</small>':''}</span><em class="${inv[y.r]>0?'own':''}" title="Sende kaç tane var">${inv[y.r]>0?'×'+inv[y.r]:'0'}</em></button>`).join('')).join(''):(f?'<p class="note">Aramana uyan tarif yok.</p>':'')+FG?'<p class="note">Henüz açık bir alet tarifi yok. Alet tarifleri parçalarını (sopa, ip, keskin taş…) elde edince açılır; parçaları Zümrüt\'ün kazanında yaparsın.</p>':'<p class="note">Açık tarif yok. Malzeme topladıkça tarifler açılır.</p>'}</div>
+    <div class="rlist" role="list">${FG?'':`<label class="hlrn"><input type="checkbox" id="hlrn"${window.__plHideL&&window.__plHideL()?' checked':''}> Öğrenilenleri gösterme</label>`}${open.length?groups.map(([c,L])=>(c?`<div class="rgrp"><span>${esc(c)}</span><span>${L.length}</span></div>`:'')+L.map(y=>`<button type="button" class="rb${pot.r===y.r?' on':''}${canBrew(y)||mkOn.has(y.r)?' can':''}${mkOn.has(y.r)?' mk':''}${!FG&&foundSet.has(y.r)?' learned':''}" data-rec="${esc(y.r)}"><img src="${icon(y.r)}" alt=""><span>${esc(y.r)}${foundSet.has(y.r)?(FG?' <small>✓</small>':' <small>öğrenildi</small>'):''}${openSeq.get(y.r)>newest&&!foundSet.has(y.r)?' <small style="color:#ffd27a">yeni</small>':''}</span><em class="${inv[y.r]>0?'own':''}" title="Sende kaç tane var">${inv[y.r]>0?'×'+inv[y.r]:'0'}</em></button>`).join('')).join(''):(f?'<p class="note">Aramana uyan tarif yok.</p>':'')+FG?'<p class="note">Henüz açık bir alet tarifi yok. Alet tarifleri parçalarını (sopa, ip, keskin taş…) elde edince açılır; parçaları Zümrüt\'ün kazanında yaparsın.</p>':'<p class="note">Açık tarif yok. Malzeme topladıkça tarifler açılır.</p>'}</div>
     <div class="pside">
       ${x?`<div class="psel"><img src="${icon(x.r)}" alt=""><div><b>${esc(x.r)}</b><small>sende ${inv[x.r]||0} · satış ${Math.round(unitPrice(x.r))} Vio</small></div></div><ul class="ping">${rows}</ul>`:FG?'<p class="note">Listeden bir alet seç. Parçaları örse sürükle ya da dokun, sonra <b>Döv</b>. Kılıç dövmek mi? Dursun hâlâ umutlu.</p>':'<p class="note">Kazan eşya yapmaz, <b>tarif öğretir</b>. Listeden bir tarif seç, malzemeleri koy, <b>Tarifi öğren</b>\'e bas: malzemeler tarifi açmaya gider. Öğrendiklerin <b style="color:#8fd46b">yeşil</b> olur; onları sonra '+(TOUCH?'el ikonuyla':'Tab ile')+' her yerde yaparsın, aletleri Demirci Dursun döver.</p>'}
       <div id="pot" class="potz${potReady()?' ready':''}${performance.now()<potFx?' fx':''}" aria-label="${FG?'Örs':'Kazan'}"><div class="liq"></div><span>${x?(!FG&&foundSet.has(x.r)?'Bu tarifi zaten öğrendin':potReady()?(FG?'Hazır! Döv':'Hazır! Tarifi öğren'):(FG?'Parçaları örse sürükle':'Malzemeleri buraya sürükle')):(FG?'Örs boş':'Kazan boş')}</span></div>
@@ -13657,7 +13662,8 @@ function tapDur(){const k=kindOf();if(k==='staff'){const S=staffS();return S?S.c
 function chime(i){try{audio.synth((ac,out)=>{const t=ac.currentTime+.005;for(const f of [660*(1+i*.25),990*(1+i*.25)]){const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(f,t);g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.09,t+.01);g.gain.exponentialRampToValueAtTime(.0005,t+.25);o.connect(g);g.connect(out);o.start(t);o.stop(t+.27)}})}catch(e){}}
 function rhythm(ty){const k=kindOf(),M=CB[k]&&CB[k][ty];if(!M||(window.__plMoveOK&&!window.__plMoveOK(ty))||!canPay(k,M))return 0;const a=aim();faceTo(a);let rec=.4;try{rec=M.f(a)||.4}catch(e){}
   try{if(window.__plMoveEv)window.__plMoveEv(ty)}catch(e){}C.cd=rec*.9;atkCd=Math.max(atkCd,rec*.9);chime(ty==='c2'?1:2);try{if(window.__plUlt)window.__plUlt.gain(ty==='c2'?5:10)}catch(e){}name(M.n,ty==='c3'?'#ffb040':'#ffe7a0');return rec}
-function doMove(type){const k=kindOf(),M=CB[k]&&CB[k][type];if(!M)return false;if(window.__plMoveOK&&!window.__plMoveOK(type)){if(type!=='charged'){C.rh=null;attack({x:C.mx,y:C.my+6})}return true}C.rh=null;if(!canPay(k,M))return true;try{if(window.__plUlt)window.__plUlt.gain(4)}catch(e){}const a=aim();faceTo(a);let rec=.4;try{rec=M.f(a)||.4}catch(e){}
+const DASH_CD=3.5;let dashCdT=-1e9,dashCdMsg=0;   /* v4.05 (Boğaç): the dash move once every 3.5 s; inside that it is a plain blow */
+function doMove(type){const k=kindOf(),M=CB[k]&&CB[k][type];if(!M)return false;if(type==='dash'){const t=now();if(t-dashCdT<DASH_CD){if(t-dashCdMsg>.8){dashCdMsg=t;floats.push({x:player.x,y:player.y-26,t:0,text:`${M.n} ${Math.ceil(DASH_CD-(t-dashCdT))} sn`,color:'#b8c0b0'})}attack({x:C.mx,y:C.my+6});return true}dashCdT=t}if(window.__plMoveOK&&!window.__plMoveOK(type)){if(type!=='charged'){C.rh=null;attack({x:C.mx,y:C.my+6})}return true}C.rh=null;if(!canPay(k,M))return true;try{if(window.__plUlt)window.__plUlt.gain(4)}catch(e){}const a=aim();faceTo(a);let rec=.4;try{rec=M.f(a)||.4}catch(e){}
   try{if(window.__plMoveEv)window.__plMoveEv(type)}catch(e){}C.cd=rec;atkCd=Math.max(atkCd,rec*.8);name(M.n,type==='cdc'?'#ffd040':type==='charged'?'#ffb0ff':'#ffe7a0');return true}
 
 // ------------------------------------------------------------------ input
@@ -15953,13 +15959,14 @@ body.qscene::before{top:0}body.qscene::after{bottom:0;animation-name:qbar2}
  const nowS=()=>performance.now()/1000;
  const wearTorch=()=>{if(window.__plDur)return;const t=torchHeld();if(!t)return;const n=nowS();if(n-lastWear<.25)return;lastWear=n;
    const mx=TORCHB[t]||170;torchBurn[t]=Math.max(.01,nn(torchBurn[t],mx)-mx*WEAR*(window.__plCave&&window.__plCave.cur?1/3:1))};   /* v2.66: a third of the wear inside a cave */   // tickTorch puts it out when it reaches 0
+ const torchStrikes=()=>{try{const h=held();if(h&&GT[h]&&GT[h].kind==='bow')return false;const w=weapon();return !!(w&&w.torch)}catch(e){return false}};
  const fireProof=a=>{const D=ANIM[a.k];return !D||a.tut||a.ders||a.dl||a.ar||!!(D.fx&&D.fx[0]==='yanık')};
  const _mp=madPack;madPack=function(a){const r=_mp.apply(this,arguments);
-   try{const t=torchHeld();if(t&&a&&!fireProof(a)&&Math.hypot(a.x-player.x,a.y-player.y)<=60){
+   try{const t=torchHeld();if(t&&a&&!fireProof(a)&&torchStrikes()&&(a.flash||0)>=.12&&Math.hypot(a.x-player.x,a.y-player.y)<=60){   /* v4.05 (Boğaç): only a blow struck with the torch itself sets it alight (not a spear swung while the torch is lit), and only a real hit */
        const was=a._burn&&a._burn.t>0;a._burn={t:BURN_T,dps:BURN_DPS[t]||.67,acc:0,tick:BURN_TICK};wearTorch();
        if(!was)for(let k=0;k<8;k++)parts.push({x:a.x+(Math.random()-.5)*10,y:a.y-6,vx:(Math.random()-.5)*30,vy:-20-Math.random()*25,life:.5,c:k%2?'#ffb040':'#ff6a1a'})}}catch(e){}
    return r};
- {const _at=attack;attack=function(){const s0=swing;const r=_at.apply(this,arguments);try{if(swing&&swing!==s0&&torchHeld())wearTorch()}catch(e){}return r}}
+ {const _at=attack;attack=function(){const s0=swing;const r=_at.apply(this,arguments);try{if(swing&&swing!==s0&&torchHeld()&&torchStrikes())wearTorch()}catch(e){}return r}}
  {const _ta=tickAnimals;tickAnimals=function(dt){const r=_ta.apply(this,arguments);
    try{if(dt>0)for(const a of animals.slice()){const B=a._burn;if(!B||!(B.t>0))continue;
        B.t-=dt;B.acc+=B.dps*dt;B.tick-=dt;
@@ -18421,7 +18428,10 @@ function deco(root){try{root=root||cbody;
   root.querySelectorAll('[data-n],[data-isel]').forEach(el=>{const n=el.dataset.isel||el.dataset.n,t=wInfo(n,1);if(t&&el.title.indexOf(t)<0)el.title=(el.title||n)+'\n'+t})}catch(e){}}
 {const _rc=renderCraft;renderCraft=function(){const r=_rc.apply(this,arguments);deco();return r}}
 {const _ri=renderInv;renderInv=function(){const r=_ri.apply(this,arguments);if(craftOpen)deco();return r}}
-{const _bi=bookInfo;bookInfo=function(r){const h=_bi.apply(this,arguments);try{const t=r&&isOpen(r)&&wInfo(r);if(t)return h.replace(/<\/div>\s*$/,tag(t)+'</div>')}catch(e){}return h}}
+{const _bi=bookInfo;bookInfo=function(r){const h=_bi.apply(this,arguments);try{const t=r&&isOpen(r)&&wInfo(r);if(t){   // v4.05 (Boğaç: "ekranın yarısını silahın özellikleri kapatmış, satırlar birbirini tutmamış"): the numbers sit in the text column, one small chip each
+    const ic=t.charAt(0)==='🛡'?'🛡':'⚔',L=t.replace(/^[^ ]+ /,'').split(' · ').filter(Boolean);
+    const row=`<div class="bkst" title="${esc(t)}"><span class="bkic">${ic}</span>${L.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`;
+    const i=h.lastIndexOf('</div></div>');if(i>=0)return h.slice(0,i)+row+h.slice(i)}}catch(e){}return h}}
 try{const hl=$('hp-l');if(hl&&window.MutationObserver)new MutationObserver(()=>{hl.querySelectorAll('[data-hp]').forEach(el=>{const t=wInfo(el.dataset.hp,1);if(t&&el.title.indexOf(t)<0)el.title+='\n'+t})}).observe(hl,{childList:true})}catch(e){}
 hotK='';try{renderHot()}catch(e){}
 }).toString()+')()')}catch(e){try{window.__hamErr('v258c: '+(e&&e.message||e))}catch(_){}}})();
@@ -20388,7 +20398,7 @@ let ATK=null,FADE=null;
 const alive=()=>animals.filter(a=>a.ysA);
 const sheltered=()=>roomSafe()||!!(window.__plCave&&window.__plCave.cur)||!!sailing||ownCamp(player.x,player.y);   /* v4.02 (Boğaç): the people's camps no longer put a raid off; your own fire still does */   // at 20:00 here → the next day without an event
 const waitNow=()=>onTitle||!!window.__plArena||!met||!!wake||fading||dlgOpen||craftOpen||paused||!!(cine&&cine.on)||!!beam;
-function spot(C){for(let k=0;k<80;k++){const a=Math.random()*6.283,r=60+Math.random()*(C.R-80),x=C.x+Math.cos(a)*r,y=C.y+Math.sin(a)*r;
+function spot(C){for(let k=0;k<80;k++){const a=Math.random()*6.283,r=110+Math.random()*(C.R-110),x=player.x+Math.cos(a)*r   /* v4.05 (Boğaç): the whole island is purple: they come down round you, wherever you are */,y=C.y+Math.sin(a)*r;
   if(Math.hypot(x-player.x,y-player.y)<90)continue;if(!reachAt(x,y)||isWater(tileAt(x,y))||ownCamp(x,y))continue;try{if(blocked(x,y))continue}catch(e){continue}return{x,y}}return null}
 function pickKinds(n){const L=['Yıldızsız gözcü','Yıldızsız sürüngen'];if(lvl>=5||day>=8)L.push('Yıldızsız tükürücü');const big=lvl>=12||day>=18;let devs=0;const out=[];
   for(let i=0;i<n;i++){if(big&&devs<2&&Math.random()<.18){out.push('Yıldızsız dev');devs++;continue}out.push(L[(Math.random()*L.length)|0])}return out}
@@ -20418,7 +20428,6 @@ setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);las
     animals.push({k:q.k,x:q.x,y:q.y,hp:D.hp,st:'chase',t:0,dx:0,dy:0,face:player.x>q.x?1:-1,atk:0,flash:0,kb:null,step:Math.random()*6,mad:true,pk:0,ysA:1});
     for(let k=0;k<10;k++)parts.push({x:q.x,y:q.y-4,vx:(Math.random()-.5)*50,vy:-10-Math.random()*30,life:.5,c:k%2?'#c070ff':'#ffe0ff'})}
   if(!C.w2done&&((alive().length<=1&&!C.pend.length)||C.t>20)){C.w2done=true;queue(C,C.w2)}
-  if(Math.hypot(player.x-C.x,player.y-C.y)>C.R+80){end(false);return}
   if(C.t>240){end(false,true);return}
   if(C.w2done&&!C.pend.length&&!alive().length)end(true)}catch(e){}},100);
 // a Yıldızsız falling drops Vio straight into your purse
@@ -20427,13 +20436,15 @@ setInterval(()=>{const now=performance.now(),dt=Math.min(.5,(now-last)/1000);las
     if(!window.__plInf)coins+=n;for(let k=0;k<12;k++)parts.push({x:x,y:y-6,vx:(Math.random()-.5)*50,vy:-30-Math.random()*40,life:.7,c:k%3?'#ffd84a':'#fff4b0'});
     sfx('coin');toast(`${a.k} yenildi · +${n.toLocaleString('tr-TR')} Vio`);renderInv()}catch(e){}}
   return r}}
-{const _ls0=lightSources;lightSources=function(){const L=_ls0.apply(this,arguments);try{if(ATK&&!onTitle){const o=L.concat([[ATK.x,ATK.y,ATK.R]]);for(const q of animals)if(q.ysA)o.push([q.x,q.y-6,30]);return o}}catch(e){}return L}}   // v3.31: the purple ground lights the night
+{const _ls0=lightSources;lightSources=function(){const L=_ls0.apply(this,arguments);try{if(ATK&&!onTitle){const o=L.concat([[player.x,player.y-6,900]]);for(const q of animals)if(q.ysA)o.push([q.x,q.y-6,30]);return o}}catch(e){}return L}}   // v4.05 (Boğaç): the whole island glows purple, not a ring: you see wherever you go
 // the purple ground, its ring and the beams
-{const _db=drawBridge;drawBridge=function(time_,inView){_db.apply(this,arguments);try{const C=ATK||FADE;if(!C||onTitle)return;const al=ATK?ATK.a:FADE.t;
-  ctx.save();ctx.globalAlpha=Math.max(0,al);ctx.fillStyle='rgba(130,40,210,.24)';ctx.beginPath();ctx.arc(C.x,C.y,C.R,0,6.283);ctx.fill();
-  ctx.strokeStyle='rgba(205,130,255,.75)';ctx.lineWidth=2;ctx.setLineDash([10,6]);ctx.lineDashOffset=-time_*20;ctx.beginPath();ctx.arc(C.x,C.y,C.R,0,6.283);ctx.stroke();ctx.setLineDash([]);
-  for(let k=0;k<26;k++){const an=k*2.4,rr=(k*53%100)/100*C.R,yy=((time_*14+k*37)%40);px(C.x+Math.cos(an)*rr,C.y+Math.sin(an)*rr-yy,1,1,k%2?'#e0b0ff':'#a050ff')}
+{const _db=drawBridge;drawBridge=function(time_,inView){_db.apply(this,arguments);try{const C=ATK||FADE;if(!C||onTitle)return;const al=ATK?ATK.a:FADE.t;   // v4.05: purple motes rise all round you
+  ctx.save();ctx.globalAlpha=Math.max(0,al);const cx=player.x,cy=player.y;for(let k=0;k<60;k++){const an=k*2.4,rr=(k*53%100)/100*360,yy=((time_*14+k*37)%40);px(Math.round(cx+Math.cos(an)*rr),Math.round(cy+Math.sin(an)*rr*.7-yy),1,1,k%2?'#e0b0ff':'#a050ff')}
   ctx.restore()}catch(e){}}}
+// v4.05 (Boğaç: "tüm adada mora döndürmeli aurayı, mor bir halka içerisinde değil"): a purple veil over the whole world while they are here
+{const veil=document.createElement('div');veil.id='ysveil';veil.setAttribute('aria-hidden','true');veil.style.cssText='position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 50% 55%,rgba(150,60,230,.10),rgba(110,30,200,.30) 75%,rgba(70,10,150,.42));mix-blend-mode:normal;opacity:0;transition:opacity 1.2s ease';
+ {const cv0=document.getElementById('game');if(cv0&&cv0.parentNode===document.body)cv0.insertAdjacentElement('afterend',veil);else document.body.appendChild(veil)}
+ setInterval(()=>{try{const on=!!ATK&&!onTitle&&!window.__plArena;const o=on?'1':FADE&&!onTitle?String(Math.max(0,FADE.t)):'0';if(veil.style.opacity!==o)veil.style.opacity=o}catch(e){}},150)}
 {const _dg=drawGoal;drawGoal=function(time_){const r=_dg.apply(this,arguments);try{if(ATK&&!onTitle)for(const q of ATK.pend){if(q.t>.7)continue;const k=1-q.t/.7;
   ctx.save();ctx.globalAlpha=.35+.5*k;ctx.fillStyle='#c070ff';ctx.fillRect(Math.round(q.x)-3,Math.round(q.y)-220,6,220);ctx.fillStyle='#f4e0ff';ctx.fillRect(Math.round(q.x)-1,Math.round(q.y)-220,2,220);
   ctx.globalAlpha=.6*k;ctx.strokeStyle='#e0b0ff';ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(q.x,q.y+1,4+k*8,2+k*3,0,0,6.283);ctx.stroke();ctx.restore()}}catch(e){}return r}}
@@ -23545,7 +23556,7 @@ bar.addEventListener('pointerout',e=>{if(e.pointerType!=='mouse')return;const l=
 const Y=()=>window.__plYS&&window.__plYS.atk?window.__plYS.atk():null;
 const ys=()=>animals.filter(a=>a.ysA&&a.hp>0);
 const isle1=()=>typeof ISLE==='undefined'||ISLE===1;
-const inZone=(C,o)=>!!o&&o.x>-9e4&&Math.hypot(o.x-C.x,o.y-C.y)<C.R+60;
+const inZone=(C,o)=>!!o&&o.x>-9e4&&(Math.hypot(o.x-player.x,o.y-player.y)<360||animals.some(a=>a.ysA&&a.hp>0&&Math.hypot(a.x-o.x,a.y-o.y)<320));   // v4.05: no ring any more: one helps when the fight (you or a Yıldızsız) comes near
 let H={raid:null,said:{},home:null,bT:0,zT:0,kT:0};
 function hit(a,dm,c){a.hp-=dm;a.flash=Math.max(a.flash||0,.15);floats.push({x:a.x,y:a.y-12,t:0,text:`-${dm}`,color:c});if(a.hp<=0&&animals.indexOf(a)>=0)killAnimal(a)}
 function say1(k,o,txt,toastTxt){if(H.said[k])return;H.said[k]=1;floats.push({x:o.x,y:o.y-30,t:0,text:txt,color:'#ffe08a',size:12});try{toast(toastTxt)}catch(e){}}
@@ -23625,6 +23636,30 @@ setInterval(()=>{const now=performance.now(),dt=Math.min(.25,(now-last)/1000);la
       else if(Z.t<=0)a._dz={st:'back',t:rnd(1.4,2.2)}}}}catch(e){}
   return r}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v404ders: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v405prompt">
+// v4.05 (Boğaç: "su al yazısı kemerin arkasında yarım gözüküyor, yukarı taşınmalı"): the action hint (E/F …) always sits above the belt
+(function(){try{const pr=document.getElementById('prompt'),hb=document.getElementById('hotbar');if(!pr||!hb)return;
+ let last='';setInterval(()=>{try{if(pr.hidden||getComputedStyle(pr).display==='none'||pr.classList.contains('act')||document.body.classList.contains('v50m')){if(last){pr.style.removeProperty('bottom');last=''}return}
+   const h=hb.getBoundingClientRect();if(!h.height||getComputedStyle(hb).display==='none'){if(last){pr.style.removeProperty('bottom');last=''}return}
+   const want=Math.round(innerHeight-h.top+8)+'px';const r=pr.getBoundingClientRect();
+   if(last!==want&&(r.bottom>h.top-4||last)){pr.style.setProperty('bottom',want,'important');last=want}}catch(e){}},120)}catch(e){}})();
+</script>
+<style id="v405bk">
+/* v4.05: the weapon / armour numbers in the recipe book: a tidy row of chips under the ingredients */
+.bkinfo .bkst{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin-top:6px}
+.bkinfo .bkst span{display:inline-flex;align-items:center;background:#1a2230;border:1px solid #3f5a7a;color:#cfe0f4;padding:1px 7px;font-size:12.5px;line-height:1.4;white-space:nowrap}
+.bkinfo .bkst .bkic{background:none;border:0;padding:0 2px 0 0;font-size:14px}
+</style>
+<script id="v405dur">
+// v4.05 (Boğaç, 9 Kasım 2026: "en ufak bir savaşta mızrağım köreliyor; meşale aynı kalsın, diğer silahlar 2 katı dayansın"): every weapon
+// (sword, war hammer, mace, spear, bow) lasts twice as long; torches and tools (axe, pick…) are as before
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+const WK=new Set(['sword','hunt','bow']);
+for(const n in GT){const g=GT[n];if(g&&WK.has(g.kind)&&g.dur>0&&!g._dw2){g.dur=g.dur*2;g._dw2=1}}
+{const _sn=snapshot;snapshot=function(){const s=_sn.apply(this,arguments);try{if(s)s.dw2=1}catch(e){}return s}}
+{const _rs=restore;restore=function(d){const r=_rs.apply(this,arguments);try{if(d&&!d.dw2)for(const n in toolDur){const g=GT[n];if(g&&WK.has(g.kind)&&g.dur>0)toolDur[n]=Math.min(g.dur,Math.round((+toolDur[n]||0)*2))}}catch(e){}return r}}   // an old save: what was left is doubled too
+}).toString()+')()')}catch(e){try{window.__hamErr('v405dur: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
