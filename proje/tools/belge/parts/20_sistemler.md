@@ -149,6 +149,8 @@ Ayarlar penceresinde Titreşim'in hemen üstünde iki seçenek vardır. İkisi d
 - **Yetenek ağacı pencereyi doldurur (9 Kasım 2026, Boğaç: "yazı ekrana sığmıyor"):** bilgisayarda yetenek ağacının yüksekliği sabit değil, pencerenin gövdesi kadardır; pencere büyütülünce ağaç da büyür. Bir yeteneğin üstüne gelince çıkan açıklama kartı her zaman ağacın görünen kısmının içinde kalır.
 - **El yapımı penceresi biraz daha geniştir (9 Kasım 2026, Boğaç: "yap butonları pencerenin tam yanında kalmış"):** genişliği 560'tan **620**'ye çıktı; satırın en sağındaki Yap düğmesiyle pencere kenarı arasında boşluk kalır.
 
+- **Evet/Hayır kutusu oyunun görünüşünde (9 Kasım 2026, Boğaç: "bu yazı hiç oyuna olmamış"):** köprü onarma, görevi bırakma gibi onay kutuları öbür pencereler gibi koyu yeşil zeminli, altın çerçeveli; başlık altın renkte ve kalın, ana düğme altın, öbürü koyu.
+
 ### Konuşma penceresi
 
 - **Adlara gelen ekler Türkçe ses uyumuna uyar:** bir kişi ya da eşya adına ek eklenirken (yönelme, belirtme, iyelik…) ekin ünlüsü adın son ünlüsüne, ünsüzü son sese göre seçilir ve özel adlarda kesme işareti konur: "Şifa'ya", "Kemal'e", "Börü'nün", "Dursun'a", "Kayhan'ı".

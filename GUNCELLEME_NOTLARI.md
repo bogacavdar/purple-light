@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.03 · 9 Kasım 2026
+
+### Arayüz
+- **Onay kutuları oyunun görünüşünde:** köprü onarma, görevi bırakma gibi "Evet / Vazgeç" kutuları açık renkli, oyuna uymayan bir kutuydu; artık öbür pencereler gibi koyu zeminli, altın çerçeveli. Köprü kutusundaki ilgisiz "seviye puanın bekliyor" satırı kaldırıldı.
+
+---
+
 ## Versiyon 4.02 · 9 Kasım 2026
 
 ### Oynanış
@@ -272,15 +279,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - ACT 1 › Haritadaki miktarlar: üçüncü seyreltme adımı (meyvesiz ağaçların %50'si) ve yeni ağaç sayıları.
-
----
-
-## Versiyon 3.83 · 8 Kasım 2026
-
-### Düzeltmeler
-- **El yapımında tarifin malzemeleri kesilmiyor:** bir tarifin üstüne gelince açılan malzeme kutusu listenin son satırlarında pencerenin altında kesiliyordu (yalnız Kaba meşale varken bile yarım görünüyordu). Artık son satırlarda yukarı doğru açılıyor.
-- **El yapımı penceresi hep aynı boyda:** bilgisayarda pencere tarif sayısına göre büyüyüp küçülmüyor; her açılışta kemerin üstüne kadar uzanan aynı boyda açılıyor, liste içinde kayıyor.
-- **Meşale yuvası yanıp sönüyor:** Zümrüt'ün "Meşaleyi yak" ve "Meşaleyi söndür" kartları "yanıp sönen meşale yuvasına tıkla" derken yuva yanıp sönmüyordu; artık sönüyor.
 
 ---
 

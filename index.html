@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 4.02</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 4.03</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 4.02 · 9 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Mor ışık saldırıları %25 daha hafif:</strong> Yıldızsızların sayısı (en çok 9) ve canları ile vuruşları %25 azaldı.</li><li><strong>Yıldızsızlar kişilerin kamplarına da giriyor:</strong> Kemal'in kampı, Zümrüt'ün kazanı, Dursun'un ocağı ve kişilerin ateşleri artık seni korumuyor; saldırıyı da ertelemiyor. Yalnızca kendi yaktığın kamp ateşi ve evin içi güvenli.</li><li><strong>Kişiler yardım ediyor:</strong> mor ışık onların yanına gelirse savaşa katılıyorlar:<ul><li><strong>Savaşçı Börü</strong> Yıldızsızlara koşup kılıç sallıyor, bitince yerine dönüyor.</li><li><strong>Cadı Zümrüt</strong> birkaç saniyede bir büyü ışını yolluyor.</li><li><strong>Yaşlı Kemal</strong> yanındaysan birkaç saniyede bir yaralarını sarıyor (canının %8'i).</li></ul></li></ul><h3>Düzeltmeler</h3><ul><li><strong>Silahlar değdiği yere vuruyor:</strong> mızrakla (ve öbür silahların özel vuruşlarıyla) atların kafasına ya da bir canlının uzun yerlerine değince hasar gitmiyordu; artık canlının çizildiği her yer sayılıyor.</li><li><strong>Suda takılan canlılar:</strong> Kerevit Reisi gibi suya ya da duvara sıkışan bir canlı olduğu yerde donup kalıyordu; artık en yakın kuru yere çıkıp savaşa devam ediyor.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 4.03 · 9 Kasım 2026</h2><h3>Arayüz</h3><ul><li><strong>Onay kutuları oyunun görünüşünde:</strong> köprü onarma, görevi bırakma gibi "Evet / Vazgeç" kutuları açık renkli, oyuna uymayan bir kutuydu; artık öbür pencereler gibi koyu zeminli, altın çerçeveli. Köprü kutusundaki ilgisiz "seviye puanın bekliyor" satırı kaldırıldı.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 Vio</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -15267,8 +15267,7 @@ window.__plBridgeIdle=()=>!I2&&!(S.a&&S.a.id==='E2');   // v3.53 (BTK-13): befor
   if(B.main){if(!(S.a&&S.a.id==='E2')){if(woodCount()>=BRIDGE_WOOD&&!S.said.bridge){S.said.bridge=1;bubble('Buradan nasıl geçebilirim acaba? Kemal bilir belki.')}else bubble('Kırık bir köprü… Kemal bir şey biliyordur.');return}}
   else if(!bridge.fixed)return _fb.call(this,B);
   if(woodCount()<BRIDGE_WOOD)return _fb.call(this,B);
-  const sp=spFree();   // v3.53 (OYN-40): unspent level points are named, no steps
-  confirmBox(`<b>${B.main?'Ana köprü':'Kısayol köprüsü'}</b><br>${BRIDGE_WOOD} odun harcanacak. Köprü onarılsın mı?${sp>0?`<br><small>${sp} seviye puanın bekliyor.</small>`:''}`,()=>{_fb.call(null,B);bubble(B.main?'Aa, sandığımdan kolaymış!':'Bir kısayol daha. Ayaklarım teşekkür eder.')},'Onar')}}
+  confirmBox(`<b>${B.main?'Ana köprü':'Kısayol köprüsü'}</b><br>${BRIDGE_WOOD} odun harcanacak. Köprü onarılsın mı?`,()=>{_fb.call(null,B);bubble(B.main?'Aa, sandığımdan kolaymış!':'Bir kısayol daha. Ayaklarım teşekkür eder.')},'Onar')}}
 {const _ru=rockUse;rockUse=function(){if(I2||rockfall.cleared)return _ru.apply(this,arguments);
   if(!(S.a&&S.a.id==='E3')){if((inv['Kaya patlatıcı']||0)>=2&&!S.said.rock){S.said.rock=1;bubble('Bu kayaları nasıl açarım ki? Kemal bir şey bilir.')}else toast('Geçidi kapatan dev bir kaya yığını. Kemal bunu bilir mi acaba?');return}
   if((inv['Kaya patlatıcı']||0)<2||bestTool('pick')<4)return _ru.apply(this,arguments);
@@ -23572,5 +23571,18 @@ setInterval(()=>{const now=performance.now(),dt=Math.min(.25,(now-last)/1000);la
 {const _sn=snapshot;snapshot=function(){if(H.home){const x=alp.x,y=alp.y;alp.x=H.home.x;alp.y=H.home.y;try{return _sn.apply(this,arguments)}finally{alp.x=x;alp.y=y}}return _sn.apply(this,arguments)}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v402yard: '+(e&&e.message||e))}catch(_){}}})();
 </script>
+<style id="v403cf">
+/* v4.03 (Boğaç: "bu yazı hiç oyuna olmamış"): the yes/no box looks like the game's own windows: dark panel, gold edge, the same buttons */
+#q2cf{background:rgba(10,14,9,.55)!important}
+#q2cf>div{background:#232d1f!important;color:var(--ink)!important;border:3px solid var(--accent)!important;box-shadow:0 0 0 3px #11170f,0 12px 30px rgba(0,0,0,.55)!important;padding:14px 16px 12px!important;width:min(420px,calc(100vw - 32px))!important}
+#q2cf p{color:var(--ink);font-size:15px!important;line-height:1.5!important}
+#q2cf p b{display:block;color:var(--accent);font-size:17px;margin-bottom:4px}#q2cf p b+br{display:none}
+#q2cf p small{color:var(--ink-dim)}
+#q2cf span{gap:8px!important}
+#q2cf button{background:rgba(0,0,0,.25)!important;color:var(--ink)!important;border:2px solid var(--panel-edge)!important;min-width:96px}
+#q2cf button.pri{background:var(--accent)!important;border-color:var(--accent)!important;color:#1a1408!important}
+#q2cf button:hover{filter:brightness(1.12)}
+#q2cf button:focus-visible{outline:2px solid #7fd0ff;outline-offset:2px}
+</style>
 </body>
 </html>

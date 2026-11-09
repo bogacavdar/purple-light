@@ -1,3 +1,11 @@
+## v4.03 (9 Kasım 2026) · onay kutusu oyunun görünüşünde
+
+**Değişen yerler:** Yeni `v403cf` stili (dosya sonu) `#q2cf`'yi (`confirmBox`) koyu panel, altın çerçeve ve altın ana düğmeyle çiziyor. Köprü onayındaki `spFree` satırı kaldırıldı (v3.53 OYN-40). Sürüm etiketi `Versiyon 4.03`.
+
+**Geri alma:** `git revert` bu commit.
+
+**Kontrol:** chk.js 0 hata. Köprü kutusu ekran görüntüsüyle bakıldı.
+
 ## v4.02 (9 Kasım 2026) · mor ışık: daha hafif, kamplara girer, kişiler yardım eder
 
 **Değişen yerler:**
@@ -155,12 +163,4 @@
 **Geri alma:** o satırı sil.
 
 **Kontrol:** chk.js 0 hata. Yeni oyun ağaç: ACT 1 2.811 (Çayır 675: Elma 88, Armut 96, Çam 255, Kavak 236; meyve ağaçları değişmedi), ACT 2 3.343. Kamp: ekran başına 9,3 ağaç, 12 Çam. Ölçüm (`olcum.js`, 4): açılış js 11124 → 10292 ms, oyun 10 sn js 4205 → 4437 ms (gürültü içinde).
-
-## v3.83 (8 Kasım 2026) · el yapımı malzeme kutusu, meşale yuvası yanıp sönmesi
-
-**Değişen yerler:** yeni `<style id="v383ui">` (`#craft .book.hand` son iki satırda `br+small` kutusu `bottom:100%`; bilgisayarda `#craft.cm-hand .cpanel{height:var(--plMaxH)}`: pencere hep aynı boyda) ve `<script id="v383meşale">` (`renderTut` sarmalı + 400 ms: kart metni "yanıp sönen … meşale yuvası" diyorsa `#torchslot.pulse`; tz yolu bunu hiç eklemiyordu, yalnız `torchTut===2` ekliyordu). Sürüm etiketi `Versiyon 3.83`.
-
-**Geri alma:** iki bloğu sil.
-
-**Kontrol:** chk.js 0 hata. 1920×1080'de yalnız Kaba meşale bilinirken üstüne gelince kutu tam görünüyor (ekran görüntüsü); tz=6 kartında `#torchslot` `pulse` animasyonunda.
 

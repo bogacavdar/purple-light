@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 4.02** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 4.03** ile birebir (9 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -520,6 +520,8 @@ Ayarlar penceresinde Titreşim'in hemen üstünde iki seçenek vardır. İkisi d
 - **Bilgisayarda pencereler kenarından büyütülür (9 Kasım 2026, Boğaç):** çanta, el yapımı, kazan, pazar, kitap gibi açılır pencereler farenin olduğu bilgisayarda **sol, sağ ve alt kenarından** (ve alt köşelerinden) tutulup çekilerek büyütülür ya da küçültülür; kenara gelince imleç çift ok olur. Pencere ekranın ortasında kalır, iki yana eşit büyür. **Yazılar, resimler, düğmeler büyümez:** yalnızca pencere genişler; aşağı büyütülünce listede kaydırmadan daha çok satır görünür. En küçük ~360 × 260, en büyük ekran kadar. Her pencere türünün boyutu oyun açık kaldığı sürece hatırlanır (kapatıp açınca aynı boyutta gelir); sayfa yenilenince varsayılana döner. Dokunmatik ekranda yoktur.
 - **Yetenek ağacı pencereyi doldurur (9 Kasım 2026, Boğaç: "yazı ekrana sığmıyor"):** bilgisayarda yetenek ağacının yüksekliği sabit değil, pencerenin gövdesi kadardır; pencere büyütülünce ağaç da büyür. Bir yeteneğin üstüne gelince çıkan açıklama kartı her zaman ağacın görünen kısmının içinde kalır.
 - **El yapımı penceresi biraz daha geniştir (9 Kasım 2026, Boğaç: "yap butonları pencerenin tam yanında kalmış"):** genişliği 560'tan **620**'ye çıktı; satırın en sağındaki Yap düğmesiyle pencere kenarı arasında boşluk kalır.
+
+- **Evet/Hayır kutusu oyunun görünüşünde (9 Kasım 2026, Boğaç: "bu yazı hiç oyuna olmamış"):** köprü onarma, görevi bırakma gibi onay kutuları öbür pencereler gibi koyu yeşil zeminli, altın çerçeveli; başlık altın renkte ve kalın, ana düğme altın, öbürü koyu.
 
 ### Konuşma penceresi
 
@@ -2063,7 +2065,7 @@ Bir görev oyuncunun henüz bilmediği bir mekaniği istiyorsa, görev **önce k
 ### Köprü, kaya yığını ve gemi
 
 - Bu üç iş **görev alınmadan yapılamaz**: Kemal'in "Bir köprüyü onar" ve "Doğu geçidini aç" görevleri, Barbaros'un "Yeni bir gemi" görevi.
-- **Görev açılmadan köprü iş vaat etmez:** onarım görevi (E2) açılmadan köprünün istemi yalnızca "**Kırık köprü**" der; F'ye basınca **oyuncunun** kısa bir düşünce balonu çıkar ("Kırık bir köprü… Kemal bir şey biliyordur."), onay penceresi açılmaz. **Onay penceresinde bekleyen seviye puanı:** verilmemiş seviye puanı varken köprü onay penceresinde bir bilgi satırı görünür: "N seviye puanın bekliyor." (adım tarif edilmez).
+- **Görev açılmadan köprü iş vaat etmez:** onarım görevi (E2) açılmadan köprünün istemi yalnızca "**Kırık köprü**" der; F'ye basınca **oyuncunun** kısa bir düşünce balonu çıkar ("Kırık bir köprü… Kemal bir şey biliyordur."), onay penceresi açılmaz.
 - Köprüye, kaya yığınına ya da gemi enkazına **F ya da sol tıkla** basınca bir **onay penceresi** açılır (hiçbir kişinin portresi yok): "20 odun harcanacak. Onarılsın mı?" gibi. Onaylayınca malzeme gider ve karakter duruma göre tepki verir (konuşma balonu): köprüde "Aa, sandığımdan kolaymış!", patlamada önce "Kulaklarımı tıkasam iyi olur…" sonra sarsıntı ve "Vay be!", gemide "İşte ACT 1'in sonu… ya da başlangıcı."
 - **Görev alınmamışken** gerekli malzemeyle oraya gelen kişi **yalnızca bir kez** kendi kendine konuşur: "Buradan nasıl geçebilirim acaba? Kemal bilir belki." Onay penceresi açılmaz.
 - Köprü onarılınca Kemal'in **koşu dersi** başlar (eskiden olduğu gibi).
