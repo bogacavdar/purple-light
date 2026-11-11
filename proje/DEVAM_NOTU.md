@@ -1,3 +1,12 @@
+## v4.09 (11 Kasım 2026) · her eşyanın tek tarifi
+- Boğaç: "bu 130 tarifi tekilleştirerek başlayalım; tekilleştiği halde kullanılmayan malzemeler varsa mantıklı bir şekilde, az olan sınıfı gözeterek ya yeni tarif bulalım ya da kaldıralım komple". Belge: Tarifler › Tek tarif.
+- Kaynakta kalkanlar: `EK` (TARIF_EK) JSON'undan 112 varyant satırı ve sonra boşalan `v366tarif` bloğu (VO, gain/giveTool/icon sarmalayıcıları, `__plVarCheck`, `__plVarSt`) tamamen; v3.81 bloğundaki `vary()` ve 18 çağrısı; `v366ok`'taki `__plOkVar` (Bazalt uçlu Kara çelik ok); `hGrp` sadeleşti. DB JSON'dan Bazalt ok ucu, Meyve fidanı, Cüruf tuğlası tarifi ve kalkan eşyaların fiyatları; `addR('Ağ kapanı')` ve resmi; ACT 2 JSON'unda goblin okçusunun Goblin oku düşmesi, iconk/iconc; v4.06 kabuk listesi Meşe, Ceviz, Söğüt, Huş'a indi; NEWP'ten kabuklar. DU7 görevi (DATA) 5 Meşe kabuğu.
+- Yeni `v409tek` bloğu (v409ikon'dan önce): `SW` (tarif, eski girdi, kalan adet, yeni girdi, adet; değer tutan adetler) çalışırken tarife ve USES'a uygulanır; `NEW` (Gök camı, Meteor demiri, Maden); `NP` fiyat artışları (fark × 1,3; bir adım yayılır; evler hariç); eski kayıt: `VAR` varyant → tek tarif, `GONE` kalkan eşya → Vio (applyState sarmalayıcısı v373'ten önce çalışır). `window.__plTek`.
+- Plan ve araçlar: `/home/claude/w/tek/plan.py` (SW listesi, kalan malzeme kontrolü, fiyatlar), `docsync.py` (tablolar), `sec.py` (Tek tarif bölümü), `manual.py`.
+- Kontrol: 1.276 eşya, 805 tarif, 0 varyant, kullanılmayan malzeme yok, fiyatsız yok, bilinmeyen girdi yok; eski kayıt (varyant bilinen, Kavak kabuğu ve Goblin oku çantada) → tek tarif ve +Vio; chk 0 hata.
+
+**Geri alma:** `git revert` bu commit (belge ve kod birlikte).
+
 ## v4.08 (10 Kasım 2026) · Taş kazma: 1 Sivri taş, 1 Sopa, 2 İp
 
 **Değişen yerler:** `DB` (satır 1716) `R`'de Taş kazma `i` = Sivri taş 1, Sopa 1, İp 2 (Dal 2 ve Taş 2 silindi); `p`'de Taş kazma 46 → 41 (v51 kuralı: 46 + round(1,3 × −4)). Taş kazmayı malzeme olarak kullanan tarif yok, başka fiyat değişmez. Belge: 80_tarifler ve 90_esyalar satırı. Sürüm etiketi `Versiyon 4.08`.
@@ -196,10 +205,3 @@
 
 **Kontrol:** chk.js 0 hata. Deneme: Taş balta Silah yuvasına sürüklendi → 1. yuvaya girdi, elde; 5 yuva doluyken Olta + Silah yuvası → soru çıktı, 3. yuva seçildi → Olta elde, Çakmaktaşı balta envanterde; yuvaya tekrar tıklama → el boş; Kürk eldiven Eller'e sürüklendi → giyildi. 12. seviye + Demir kılıç: kritik %4,2. Karakter canvas'ında eldeki alet çiziliyor. Konsol hatası yok.
 
-## v3.89 (9 Kasım 2026) · yanıp sönmeler mavi, Kerevit → Kerevit eti
-
-**Değişen yerler:** yeni `<style id="v388mavi">` (dosyanın sonu): `.pulse`, `#coinbox.focus`, `.smc.qz`, `#achov li.new`, `.rb.mk::after`, `.ib.b3unl` (yeni `v388u`), `.b5k button.wait`, `.pfs.fit`/`.ieqb.fit`, `.v387want`, `.spcallin`, `.spplus.spwant`, `#spchip`, `#spcard` mavi (#7fd0ff, `p3tab`; pencere içinde `p332g`). Eşya adı `Kerevit` → `Kerevit eti`: `db` JSON (6 tarif girdisi + fiyat 4), `ANIM.Kerevit.drops` (Reis de buradan alır), `V46RAW`/`V46FOOD`, balık tablosu, `P1I['Kerevit eti']` (+ Közlenmiş kerevit), `a2` görev sayacı `trap:Kerevit eti`, pişmiş balık resimleri `RAW.kerevit`. Canlının adı `Kerevit` kaldı. Yeni blok `v388kerevit`: `restore` sarmalı eski kayıtta `Kerevit` eşyasını (inv, order/seen/found, [ad,adet], {n,q}, `trap:` sayacı) `Kerevit eti`ye çevirir; `kl`/`f`/`bc`/`bd` (canlı tabloları) dokunulmaz. Belge: 00_giris, 10_akis, 20_sistemler, 30_act1, 70_canavarlar, 80_tarifler, 90_esyalar. Sürüm etiketi `Versiyon 3.89`.
-
-**Geri alma:** `git revert` bu commit (eski kayıt çevrimi `Kerevit eti`yi geri çevirmez; geri alınırsa `REPL` ile `Kerevit eti`→`Kerevit` eklenmeli).
-
-**Kontrol:** chk.js 0 hata. Eşya denetimi: 1337 eşya / 997 tarif, bilinmeyen girdi 0, fiyatsız 0, kullanılmayan ham madde 69 → 69. Kendi adında düşme: 0. Eski kayıt (inv Kerevit 4, kl Kerevit 3) → Kerevit eti 4, kl aynı. Ekran görüntüsü: envanterde alttaki yuva, Özellikler düğmesi, seviye puanı düğmesi mavi. Konsol hatası yok.

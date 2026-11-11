@@ -63,7 +63,7 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 | Gök Tazısı Reisi | ACT 2 · Yüzen Kayalar | 6 | 11.760 | 641 | 2.720 | Gök tazısı postu ×2; Tazı dişi ×2 |
 | Kaya Kertenkelesi Reisi | ACT 2 · Yüzen Kayalar | 6 | 4.800 | 367 | 704 | Kertenkele pulu ×2; Kertenkele eti ×2 |
 | Rüzgâr Kuşu Reisi | ACT 2 · Yüzen Kayalar | 8 | 80 | 5 | 110 | Rüzgâr tüyü ×2; Rüzgâr kuşu eti ×2 |
-| Goblin Okçusu Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 8.020 | 429 | 2.474 | Goblin oku ×2; Goblin kulağı ×2 |
+| Goblin Okçusu Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 8.020 | 429 | 2.474 | Goblin kulağı ×2 |
 | Goblin Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 10.320 | 515 | 2.204 | Goblin kulağı ×2; Goblin bıçağı ×2 |
 | Goblin Şamanı Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 14.900 | 716 | 4.382 | Şaman tüyü ×2; Büyü otu ×2 |
 | Mantar Böceği Reisi | ACT 2 · Dev Mantar Ormanı | 8 | 160 | 5 | 122 | Böcek kabuğu ×2; Spor tozu ×2 |

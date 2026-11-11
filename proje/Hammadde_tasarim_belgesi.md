@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 4.08** ile birebir (10 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 4.09** ile birebir (11 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -844,7 +844,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 - **Tarifteki alet yerine daha iyisi:** bir tarif alet olarak "Taş balta" istiyorsa **her balta** (aynı ya da daha yüksek kademeli) yeter; kazma için de aynısı. Tarif ekranında "Alet: Taş balta ya da daha iyisi · Demir balta" gibi görünür. Alet tarifte harcanmaz. (52 tarif Taş balta istiyor: kalaslar, saplar ve benzerleri.)
 - **"Herhangi" parçalar kalktı:** hiçbir tarif grup istemez; kazan ve örsteki **+** düğmesi tarifin istediği parçayı yapar (bkz. Tarifler › "Herhangi" yok).
 - **El yapımı listesi sıkı (v3.37, Boğaç: "koskoca ekranda 3 tarifi görmemeliyim"):** her tarif **tek satırdır**: **solda** küçük resim ve tarifin adı ("· sende 5" ile), **sağda** küçük düğmeler (Takip et · ×5 · Hepsi (n) · Yap; Kamp ateşinde Yak; 7 Kasım 2026, Boğaç: "tariflerin ismini sola, yap butonunu sağa alalım"), satırın yüksekliği yaklaşık bir düğme kadar; ekranda alt alta 12–15 tarif görünür. **Malzemeler** satırda yazmaz (yeşil: yeterli, sarı: eksik parça elle yapılabilir, kırmızı: eksik; meşalelerde "x dk yanar"). **Bilgisayarda (9 Kasım 2026, Boğaç: "yazılar üst üste binmemeli, yapın üzerine gelince ufak bir kart ile gösterilebilir"):** satırın ya da **Yap** düğmesinin üstüne gelince malzemeler, Yap düğmesinin hemen üstünde (yer yoksa altında) duran, kenarlı ve gölgeli **küçük bir kartta** görünür; kart satırların yazılarıyla karışmaz (opak, en üstte). **Telefonda** tarifin adına dokununca satırın hemen altında küçük, opak bir kutuda açılır. Yapılamayan tarifin adı soluktur.
-- **El yapımı kategorili (10 Kasım 2026, Boğaç: "el yapımı şeyleri de kategorize eder misin, silahlar, zırhlar vs."):** liste başlıklara ayrılır, sırası: **Silahlar** (yay, sapan, bola, asa, ateşli silah ve mermisi, el yapımı savaş çekici ve topuz), **Zırh ve giyim**, **Aletler** (olta, ağ, kova, tuzak, kürek, tırmık…), **Ateş ve ışık** (ateş, kamp ateşi, meşale, mum, kav), **Yiyecek ve şifa**, **Büyü ve tılsım**, **Yapılar ve ev eşyası** (çit, yol, zemin, korkuluk), **Taşıtlar** (sal, kano, kızak, gemi), **Süs, boya ve müzik**, **Zanaat** (kaşık, kase, sepet, tulum…), **Malzemeler** (keskin taş, ip, sopa, kalas, sap, kömür, külçe, kil işleri ve öbür ara parçalar). Bir varyant tarif ("… ile") yaptığı eşyanın başlığında durur. Boş başlık gösterilmez. Her başlığın içinde önce şu an yapabildiklerin, sonra öbürleri (adlarına göre) gelir; arama yapınca da başlıklar kalır.
+- **El yapımı kategorili (10 Kasım 2026, Boğaç: "el yapımı şeyleri de kategorize eder misin, silahlar, zırhlar vs."):** liste başlıklara ayrılır, sırası: **Silahlar** (yay, sapan, bola, asa, ateşli silah ve mermisi, el yapımı savaş çekici ve topuz), **Zırh ve giyim**, **Aletler** (olta, ağ, kova, tuzak, kürek, tırmık…), **Ateş ve ışık** (ateş, kamp ateşi, meşale, mum, kav), **Yiyecek ve şifa**, **Büyü ve tılsım**, **Yapılar ve ev eşyası** (çit, yol, zemin, korkuluk), **Taşıtlar** (sal, kano, kızak, gemi), **Süs, boya ve müzik**, **Zanaat** (kaşık, kase, sepet, tulum…), **Malzemeler** (keskin taş, ip, sopa, kalas, sap, kömür, külçe, kil işleri ve öbür ara parçalar). Boş başlık gösterilmez. Her başlığın içinde önce şu an yapabildiklerin, sonra öbürleri (adlarına göre) gelir; arama yapınca da başlıklar kalır.
 - **El yapımı düğmeleri:** Her satırda aynı düğmeler **aynı sırada ve aynı genişlikte** durur, böylece alt alta tek sütun olurlar: satırın sağında **Takip et · ×5 · Hepsi (n) · Yap**; **Yap en sağdadır** (9 Kasım 2026, Boğaç: "yap butonu en sağa alınabilir"; Kamp ateşinin **Yak** düğmesi de en sağda); **solda** resim, tarifin adı ve "sende N". Basılabilen düğme renkli, basılamayan (malzeme yetmiyor, 5'e yetmiyor, birden fazla yapılamıyor) soluk ama yerinde durur; düğmeler satırdan satıra kaymaz. Yapılamayan tarifin yalnızca adı ve malzemesi soluk görünür. (Satır düzeni: Sistemler › Arayüz ve pencereler › Tarif ve sipariş listelerinde satır düzeni.)
 - **El yapımında renkler (v3.36, Boğaç):** tarif satırındaki her malzeme yeterliyse **yeşil**, yetmiyorsa **kırmızı** yazar; ama eksik bir parçayı (ör. Sopa) elindekilerden önce yapıp tarifi tamamlayabiliyorsan (Yap düğmesi açık) o parça kırmızı değil **sarı** yazar ve yanında "yapılır" der: Yap'a basınca önce o parça yapılır.
 - **Takip:** en çok **3 tarif** birlikte takip edilir; ekranın üstündeki şeritte en yenisi en üstte durur (telefonda 2 satır görünür). 4. tarif takibe alınınca en eskisi bırakılır ve bildirim çıkar. **Şeritte Yap:** takip edilen tarif **elle yapılabiliyorsa** (öğrenilmiş, örste dövülmeyen, yapı ya da ev eşyası olmayan) ve bütün malzemeleri tamamsa satırda yeşil **Yap** düğmesi çıkar; basınca el yapımı ekranı açılmadan yapılır. Kazanda öğrenilecek ya da örste dövülecek tariflerde Yap çıkmaz. (Satır düzeni: Sistemler › Arayüz ve pencereler › Tarif ve sipariş listelerinde satır düzeni.)
@@ -1187,7 +1187,7 @@ Durduran parçalarla (Çit, Taş duvar) ve kapılarla **tamamen çevrili** alan�
 
 | Fener | Tarif (Usta Sinan yapar) | Yarıçap | Yakıt | Fiyat |
 |---|---|---|---|---|
-| Direk feneri | 1 Sopa, 1 Kil lamba, 1 Hayvan yağı | 90 px | bir gece; her gece 1 Hayvan yağı ya da 2 Reçine; en çok 6 gecelik yakıt alır | 203 |
+| Direk feneri | 1 Sopa, 1 Kil lamba, 1 Balçık bezesi | 90 px | bir gece; her gece 1 Hayvan yağı ya da 2 Reçine; en çok 6 gecelik yakıt alır | 301 |
 
 - Fenerin ışığının içinde **mor ışık gelmez**; canavarlar ışıktan uzaklaşmaz, içine de girer (Boğaç: fenerler yalnızca mor ışıktan korur).
 - Fener 20:00'de kendiliğinden yanar, 06:00'da söner. Yakıtı biten fener o gece yanmaz.
@@ -1501,7 +1501,7 @@ Karakter penceresinin (C) **İstatistikler** sekmesinde kartlar şöyle sıralan
 Aşağıdaki her biyom başlığında dört tablo var:
 
 - **Ağaç sayısı:** ada kurulurken ağaçlar iki adımda seyreltilir: önce **%50**, sonra kalanın **%25'i** (toplam ~%62,5), türlendikten sonra meyvesizlerin **%50'si** daha (kural: yukarıda Haritadaki miktarlar; başlangıç kampının 20 karo çevresi de çevresinin sıklığına iner). Kayıtlar etkilenmez, harita her açılışta aynı kurulur. **Ekonomiye etkisi:** ağaç azalınca kesilebilen odun, düşen Dal/Yaprak ve meyve ağaçlarından gelen meyve de azalır; bir bölgede daha az ağaç olur. Odun ve meyve **fiyatları değişmez**.
-- **Her kesişte:** biyomun odunu (bkz. Tarifler › Biyom başına tek odun) + **1 Dal** + **1 Yaprak** düşer; kabuğu olan ağaçlarda **1 kabuğu** da düşer (önceden yaprak 1–2'ydi, dal yoktu).
+- **Her kesişte:** biyomun odunu (bkz. Tarifler › Biyom başına tek odun) + **1 Dal** + **1 Yaprak** düşer; Meşe, Ceviz, Söğüt ve Huş'ta **1 kabuğu** da düşer (yalnız bir tarifin istediği kabuklar; bkz. Tarifler › Tek tarif).
 - **Ağaçlar:** balta ile kesilir (F). "Gereken balta" kademesinin altındaki balta o ağacı kesemez. Meyve ağaçları eli boşken F ile **silkelenir** (2–3 meyve); baltayla kesilirlerse de odun, 1–2 meyve ve %35 ihtimalle tohum verirler. Bazı ağaçlar kesilince yan ürün de düşürür: Çam → 1 Çam kozalağı, Meşe → 1 Meşe palamudu, Akçaağaç → 1 Akçaağaç özsuyu, Ihlamur → 2 Ihlamur çiçeği, Söğüt → 2 Söğüt dalı.
 - **Toplanabilirler:** yerde durur, elde alet gerekmez. Toplanınca belirtilen süre sonra aynı yerde yeniden çıkar. "Adadaki sayısı" haritanın o bölgesindeki toplam yerdir (v3.45 yeni oyun ölçümü).
 - **Madenler:** kazma elde E. Gereken kazma kademesi tabloda. Maden 300 sn sonra yeniden dolar.
@@ -2309,8 +2309,8 @@ Kızı Zeynep'le ada ada ev yapan usta. **v3.39 (Boğaç):** Marangoz Çınar oy
 | DU3 | Granit balta | Dövdür: Granit balta | DU2 | DU4 | 120 · 90 XP |
 | DU4 | Savaş çekicinin ağırlığı | Dövdür: Granit savaş çekici | DU3 | DU5 | 180 · 140 XP |
 | DU5 | Demir damarı | Getir: 3 Demir cevheri (Bataklık) | DU4 · E2 | DU6, Ali 1 | 180 · 150 XP |
-| DU6 | Çatlak sap | Getir: 4 Sert odun, 4 Sinir | DU5 · Seviye 8 | DU7 | 191 · 159 XP |
-| DU7 | Bileğinin taşı | Getir: 8 Kumtaşı, 5 Sert odun | DU6 · Seviye 10 | DU8 | 202 · 169 XP |
+| DU6 | Çatlak sap | Getir: 2 Sert odun sapı, 4 Sinir | DU5 · Seviye 8 | DU7 | 191 · 159 XP |
+| DU7 | Bileğinin taşı | Getir: 8 Kumtaşı, 5 Meşe kabuğu | DU6 · Seviye 10 | DU8 | 202 · 169 XP |
 | DU8 | Ustalık işi | Getir: 6 İri diken, 5 Sert odun | DU7 · Seviye 12 | – | 214 · 179 XP |
 
 #### Zırhçı Duran · Orman
@@ -2872,7 +2872,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 | Tarif | Kategori | Malzemeler | Fiyat |
 |---|---|---|---|
 | Yankı çorbası | Yiyecek | 2 Yankı mantarı, 1 Kör kertenkele eti, 2 Su, 1 Ateş | 91 |
-| Kertenkele merhemi | Şifa | 2 Kertenkele pulu, 1 Damla taşı, 1 Su | 143 |
+| Kertenkele merhemi | Şifa | 2 Kertenkele pulu, 1 Damla taşı, 1 Tüy yosunu | 155 |
 | Damla akı boyası | Boya | 2 Damla taşı, 1 Su | 40 |
 | Yarasa zarı davul | Müzik | 3 Yarasa zarı, 2 Taş örümceği ipi, 2 Dal | 130 |
 | Kraliçe tılsımı | Büyü | 1 Kraliçe pençesi, 2 Yankı mantarı, 1 Taş örümceği ipi | 420 |
@@ -2984,17 +2984,16 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 |---|---|---|---|
 | Gümüş filizi | toplanır / Dağ Devi | 52 | Gümüş çan |
 | Dağ kristali | toplanır | 58 | Kristal kolye, Dev yüreği tılsımı |
-| Rüzgâr taşı | toplanır | 42 | Ağ kapanı |
+| Rüzgâr taşı | toplanır | 42 | Kartal tüyü miğfer |
 | Kar likeni | toplanır | 40 | Dev yüreği tılsımı |
 | Kaya yarasası kanadı | Kaya yarasası | 104 | Kanat yelpazesi |
-| Tavan ağı | Tavan örümceği | 112 | Gümüş çan, Ağ kapanı, Kristal kolye |
+| Tavan ağı | Tavan örümceği | 112 | Gümüş çan, Kristal kolye |
 | Gri vaşak postu | Mağara vaşağı | 150 | – (satılır) |
 | Dev yüreği | Dağ Devi | 1.300 | Dev yüreği tılsımı |
 
 | Tarif | Kategori | Malzemeler | Fiyat |
 |---|---|---|---|
 | Gümüş çan | Müzik | 3 Gümüş filizi, 1 Tavan ağı | 440 |
-| Ağ kapanı | Av ve hayvan | 3 Tavan ağı, 1 Rüzgâr taşı | 420 |
 | Kristal kolye | Süs | 2 Dağ kristali, 1 Tavan ağı | 360 |
 | Kanat yelpazesi | Süs | 3 Kaya yarasası kanadı, 2 Dal | 380 |
 | Dev yüreği tılsımı | Büyü | 1 Dev yüreği, 2 Dağ kristali, 2 Kar likeni | 2.000 |
@@ -3398,8 +3397,8 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 | Timsah pulu zırh | Zırh · Gövde | +46 savunma · direnç: kanama %40, metal | 6 Demir cevheri, 3 Timsah derisi, 2 Bataklık kurdu postu, 2 Sinir | Zırhçı Veli (Bataklık) ve üstü | 1.177 |
 | Gümüş kılıç | Kılıç (silah) | 44 hasar · 160 kullanım | 4 Gümüş külçesi, 3 Kuvars, 1 Güçlü odun sapı, 2 Kartal pençesi | Silahçı Kaya (Kayalık Dağ) ve üstü | 472 |
 | Gümüş pullu zırh | Zırh · Gövde | +52 savunma · direnç: kanama %35, metal | 6 Gümüş cevheri, 3 Demir cevheri, 2 Deri parçası, 2 Ayı pençesi | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 1.396 |
-| Kartal tüyü miğfer | Zırh · Baş | +24 savunma · metal | 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Deri parçası, 2 Taş | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 435 |
-| Ametist kılıcı | Kılıç (silah) | 58 hasar · 240 kullanım | 5 Ametist, 3 Obsidyen, 2 Kristal, 1 Kadim odun sapı, 2 Gölge dişi | Silahçı Kudret (Mor Kristal Vadisi) ve üstü | 763 |
+| Kartal tüyü miğfer | Zırh · Baş | +24 savunma · metal | 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Deri parçası, 2 Taş | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 1.650 |
+| Ametist kılıcı | Kılıç (silah) | 58 hasar · 240 kullanım | 5 Ametist, 3 Obsidyen, 2 Kristal, 1 Kadim odun sapı, 2 Gölge dişi, 1 Mor zehir | Silahçı Kudret (Mor Kristal Vadisi) ve üstü | 763 |
 | Kristal ipek zırh | Zırh · Gövde | +72 savunma · direnç: kanama %25, yanık %25, zehir %25 | 5 Kristal ipek, 3 Ametist, 6 Demir cevheri, 2 Deri parçası | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 2.554 |
 | Işık pulu eldiven | Zırh · El | +18 savunma · direnç: zehir %35 | 4 Işık pulu, 2 Kristal, 1 Deri parçası, 3 Lif | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 1.000 |
 
@@ -3568,13 +3567,13 @@ Ustaların görevleri bittikçe eşinin **ACT 2 anıları** sırayla geri gelir:
 
 | Eşya | Fiyat | Adadaki sayısı | Not |
 |---|---|---|---|
-| Bulut pamuğu | 12 | 62 | 45 sn sonra yeniden çıkar · Tarifte: İp (Bulut pamuğu ile) |
-| Gök kumu | 10 | 65 | 60 sn sonra yeniden çıkar · Tarifte: Gök demiri külçesi (Gök kumu ile) |
+| Bulut pamuğu | 12 | 62 | 45 sn sonra yeniden çıkar · Tarifte: Bulut yünü ip |
+| Gök kumu | 10 | 65 | 60 sn sonra yeniden çıkar · Tarifte: Gök demiri külçesi |
 | Gök mantarı | 34 | 57 | 60 sn sonra yeniden çıkar, çiğ yenir (+25 tokluk) · Tarifte: Gök çorbası |
 | Gök otu | 14 | 56 | 50 sn sonra yeniden çıkar · Tarifte: Gök çorbası |
 | Rüzgâr çiçeği | 16 | 62 | 55 sn sonra yeniden çıkar · Tarifte: Rüzgâr çiçeği çayı |
-| Rüzgâr kristali | 40 | 49 | 110 sn sonra yeniden çıkar · Tarifte: Ateş asası (Rüzgâr kristali ile) |
-| Tüy yosunu | 10 | 63 | 45 sn sonra yeniden çıkar · Tarifte: Şifalı merhem (Tüy yosunu ile) |
+| Rüzgâr kristali | 40 | 49 | 110 sn sonra yeniden çıkar · Tarifte: Gök demiri külçesi |
+| Tüy yosunu | 10 | 63 | 45 sn sonra yeniden çıkar · Tarifte: Kertenkele merhemi |
 | Yüzer taş | 30 | 68 | 90 sn sonra yeniden çıkar |
 
 **Madenler** (kazma elde, F)
@@ -3619,7 +3618,7 @@ Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzak
 | Işıldak mantarı | 20 | 64 | 60 sn sonra yeniden çıkar · Tarifte: Spor yahnisi |
 | Kök yumrusu | 29 | 61 | 50 sn sonra yeniden çıkar, çiğ yenir (+29 tokluk) · Tarifte: Spor yahnisi |
 | Spor tozu | 14 | 65 | 50 sn sonra yeniden çıkar |
-| Sümük yosunu | 14 | 57 | 55 sn sonra yeniden çıkar · Tarifte: Mana iksiri (Sümük yosunu ile) |
+| Sümük yosunu | 14 | 57 | 55 sn sonra yeniden çıkar · Tarifte: Mana iksiri |
 
 **Madenler** (kazma elde, F)
 
@@ -3636,7 +3635,7 @@ Dev mantarlar ve spor ağaçları. Goblinler grup halinde gezer, okçuları uzak
 | Mantar böceği | zararsız | 40 | – | 30 | 17 | – | Böcek kabuğu %90 ×1–2; Spor tozu %100 ×1–2 |
 | Spor salyangozu | nötr | 1.280 | 232 | 18 | 97 | – | Salyangoz sümüğü %90 ×1–2 |
 | Goblin | saldırgan | 2.580 | 343 | 80 | 364 | sürü 2–4 | Goblin kulağı %80; Goblin bıçağı %40 |
-| Goblin okçusu | saldırgan | 2.005 | 286 | 70 | 409 | uzaktan atar (200 menzil, 1 atış) | Goblin oku %80 ×1–3; Goblin kulağı %60 |
+| Goblin okçusu | saldırgan | 2.005 | 286 | 70 | 409 | uzaktan atar (200 menzil, 1 atış) | Goblin kulağı %60 |
 | Goblin şamanı | saldırgan | 3.725 | 477 | 60 | 727 | uzaktan atar (210 menzil, 3 atış), zehir etkisi | Şaman tüyü %60 ×1–2; Büyü otu %80 ×1–2 |
 | Mantar geyiği | nötr | 1.800 | 330 | 62 | 152 | – | Geyik eti %100 ×1–2; Geyik derisi %80; Geyik boynuzu %40; Sinir %50 ×1–2; Kemik %50 ×1–2; Hayvan yağı %30 |
 
@@ -3661,12 +3660,12 @@ Geminin düşürdüğü dronların hurda çölü. Devriye robotları, lazer dron
 | Bakır tel | 14 | 67 | 55 sn sonra yeniden çıkar |
 | Keme | 22 | 42 | Çöl trüfü: kumun altında biter, Hurda Çölü'nün tek mantarı; 70 sn sonra yeniden çıkar, çiğ yenir (+30 tokluk, Doygunluk) |
 | Çöl otu | 8 | 67 | 45 sn sonra yeniden çıkar · Tarifte: Kaktüs meyvesi suyu |
-| Eski devre | 30 | 57 | 90 sn sonra yeniden çıkar · Tarifte: Enerji hücresi (Eski devre ile) |
-| Hurda parçası | 10 | 60 | 45 sn sonra yeniden çıkar · Tarifte: Hurda çizme (Hurda parçası ile) |
+| Eski devre | 30 | 57 | 90 sn sonra yeniden çıkar · Tarifte: Meka çizme |
+| Hurda parçası | 10 | 60 | 45 sn sonra yeniden çıkar · Tarifte: Hurda çizme |
 | Kaktüs meyvesi | 12 | 52 | 60 sn sonra yeniden çıkar · Tarifte: Kaktüs meyvesi suyu |
-| Pas tozu | 8 | 55 | 45 sn sonra yeniden çıkar · Tarifte: Kırmızı boya (Pas tozu ile) |
+| Pas tozu | 8 | 55 | 45 sn sonra yeniden çıkar · Tarifte: Pirinç külçesi |
 | Vida | 8 | 67 | 50 sn sonra yeniden çıkar |
-| Yağ birikintisi | 14 | 66 | 70 sn sonra yeniden çıkar · Tarifte: Kil lamba (Yağ birikintisi ile) |
+| Yağ birikintisi | 14 | 66 | 70 sn sonra yeniden çıkar · Tarifte: Tabanca |
 
 **Madenler** (kazma elde, F)
 
@@ -3707,8 +3706,8 @@ Kristal kayalıklar. Golemcikler, kristal yarasaları ve büyük golem. Mühendi
 |---|---|---|---|
 | Buz kristali | 36 | 59 | 90 sn sonra yeniden çıkar |
 | Enerji taşı | 44 | 65 | 100 sn sonra yeniden çıkar |
-| Golem tozu | 14 | 58 | 50 sn sonra yeniden çıkar · Tarifte: Buz asası (Golem tozu ile) |
-| Gümüş kum | 14 | 65 | 60 sn sonra yeniden çıkar · Tarifte: Titanyum külçesi (Gümüş kum ile) |
+| Golem tozu | 14 | 58 | 50 sn sonra yeniden çıkar · Tarifte: Buz asası |
+| Gümüş kum | 14 | 65 | 60 sn sonra yeniden çıkar · Tarifte: Titanyum külçesi |
 | Kaya çiçeği | 20 | 62 | 60 sn sonra yeniden çıkar · Tarifte: Kaya çiçeği çayı |
 | Kristal lifi | 18 | 58 | 60 sn sonra yeniden çıkar |
 | Kristal mantarı | 24 | 73 | 70 sn sonra yeniden çıkar · Tarifte: Kristal çorbası |
@@ -3753,12 +3752,12 @@ Kızıl volkan. Yavru ejderler ateş tükürür, lav golemleri yakar; kızıl ej
 |---|---|---|---|
 | Ejder otu | 28 | 67 | 70 sn sonra yeniden çıkar · Tarifte: Kor yahnisi |
 | Kor mantarı | 26 | 61 | 70 sn sonra yeniden çıkar · Tarifte: Kor yahnisi |
-| Kükürt tozu | 18 | 59 | 55 sn sonra yeniden çıkar · Tarifte: Barut (Kükürt tozu ile) |
+| Kükürt tozu | 18 | 59 | 55 sn sonra yeniden çıkar · Tarifte: Barut |
 | Lav çiçeği | 30 | 63 | 70 sn sonra yeniden çıkar · Tarifte: Lav çiçeği çayı |
-| Magma camı | 44 | 62 | 100 sn sonra yeniden çıkar · Tarifte: Plazma hücresi (Magma camı ile) |
-| Obsidyen kırığı | 30 | 60 | 80 sn sonra yeniden çıkar · Tarifte: Yıldırım asası (Obsidyen kırığı ile) |
+| Magma camı | 44 | 62 | 100 sn sonra yeniden çıkar · Tarifte: Plazma hücresi |
+| Obsidyen kırığı | 30 | 60 | 80 sn sonra yeniden çıkar · Tarifte: Yıldırım asası |
 | Plazma taşı | 60 | 53 | 120 sn sonra yeniden çıkar |
-| Volkan külü | 10 | 62 | 45 sn sonra yeniden çıkar · Tarifte: Cüruf tuğlası (Volkan külü ile) |
+| Volkan külü | 10 | 62 | 45 sn sonra yeniden çıkar · Tarifte: Pişmiş kor kertenkelesi eti |
 
 **Madenler** (kazma elde, F)
 
@@ -3800,10 +3799,10 @@ Adanın en uzak ucu, roket rampası. Uzaylı dronları, gölge muhafızlar ve de
 | Ay çiçeği | 28 | 62 | 70 sn sonra yeniden çıkar · Tarifte: Yıldız çorbası |
 | Bulut özü | 26 | 58 | 70 sn sonra yeniden çıkar · Tarifte: Bulut özü şerbeti |
 | Füzyon taşı | 80 | 61 | 140 sn sonra yeniden çıkar |
-| Göktaşı tozu | 24 | 48 | 60 sn sonra yeniden çıkar · Tarifte: Meteor demiri külçesi (Göktaşı tozu ile) |
-| Gök camı parçası | 36 | 61 | 90 sn sonra yeniden çıkar · Tarifte: Roket gövdesi (Gök camı parçası ile) |
+| Göktaşı tozu | 24 | 48 | 60 sn sonra yeniden çıkar · Tarifte: Meteor demiri külçesi |
+| Gök camı parçası | 36 | 61 | 90 sn sonra yeniden çıkar · Tarifte: Gök camı |
 | Gök ipeği | 30 | 63 | 70 sn sonra yeniden çıkar |
-| Meteor parçası | 50 | 59 | 110 sn sonra yeniden çıkar · Tarifte: Meteor demiri külçesi (Meteor parçası ile) |
+| Meteor parçası | 50 | 59 | 110 sn sonra yeniden çıkar · Tarifte: Meteor demiri |
 | Yıldız mantarı | 30 | 60 | 80 sn sonra yeniden çıkar · Tarifte: Yıldız çorbası |
 
 **Madenler** (kazma elde, F)
@@ -4011,7 +4010,7 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 | Gök Tazısı Reisi | ACT 2 · Yüzen Kayalar | 6 | 11.760 | 641 | 2.720 | Gök tazısı postu ×2; Tazı dişi ×2 |
 | Kaya Kertenkelesi Reisi | ACT 2 · Yüzen Kayalar | 6 | 4.800 | 367 | 704 | Kertenkele pulu ×2; Kertenkele eti ×2 |
 | Rüzgâr Kuşu Reisi | ACT 2 · Yüzen Kayalar | 8 | 80 | 5 | 110 | Rüzgâr tüyü ×2; Rüzgâr kuşu eti ×2 |
-| Goblin Okçusu Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 8.020 | 429 | 2.474 | Goblin oku ×2; Goblin kulağı ×2 |
+| Goblin Okçusu Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 8.020 | 429 | 2.474 | Goblin kulağı ×2 |
 | Goblin Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 10.320 | 515 | 2.204 | Goblin kulağı ×2; Goblin bıçağı ×2 |
 | Goblin Şamanı Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 14.900 | 716 | 4.382 | Şaman tüyü ×2; Büyü otu ×2 |
 | Mantar Böceği Reisi | ACT 2 · Dev Mantar Ormanı | 8 | 160 | 5 | 122 | Böcek kabuğu ×2; Spor tozu ×2 |
@@ -4054,7 +4053,7 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 - **Hiçbir tarif bıçak istemez:** eskiden Taş bıçak ya da Çakmaktaşı bıçak isteyen 64 tarif (saplar, kaşıklar, kabuklar, zıpkın, kürek, havyar…) artık alet istemez. **Reçine ağaçtan düşer:** Çam kesilince her odunla birlikte 1 **Çam reçinesi** (ve 1 Çam kozalağı), Ladin kesilince 1 **Ladin reçinesi** düşer; Çam/Ladin kabuğu ve reçine tarifleri kalktı. Görev oku ve "nerede bulunur" bilgisi ağaçların ekstra düşürdüklerini o ağaçtan çıkar sayar. Reçine isteyen tarif belli bir reçineyi ister (Çam reçinesi, Ladin reçinesi ya da Huş katranı). Eski kayıtlardaki Çam/Ladin kabuğu kendi reçinesine dönüşür.
 - **Her biyomun seti kendi biyomunda yapılır:** bir biyomun silah ve zırh setleri (başlangıç, metal ve usta setleri) o biyomun (ya da önceki biyomların) malzemesiyle yapılabilir; hiçbir parça sonraki bir biyomdan malzeme istemez. Deri her biyomun hayvanından düşen Deri parçasıdır (aşağıda).
 - **Tabaklama yok, zırh deri parçasıyla yapılır:** Tanin, Meşe tanini ve bütün tabaklanmış deri tarifleri oyundan kalktı. Derisi ya da postu olan her hayvan avlanınca derisinin yanında **Deri parçası** da düşürür (büyük hayvanlar — canı 60 ve üstü — 1–2 tane). Zırhlar, deri isteyen silahlar ve eşyalar (çanta, tulum, çadır, yatak, ok kılıfı…) eskiden istedikleri tabaklanmış deri yerine aynı sayıda Deri parçası ister. Hayvanların kendi derileri (Kurt derisi, Geyik derisi…) satılır ve görevlerde istenir.
-- **Zırhlar doğadan düşenle, aletsiz yapılır:** bütün zırhlar ve setlerin zırh parçaları yalnızca doğadan toplanan ya da hayvandan düşen malzemeyle yapılır: Deri parçası, Sinir, Kemik, cevher, odun, pul, post. Külçe, levha, halka, kalas ve Sinir kirişi gibi ara ürünler istenmez; hiçbir zırh alet (Taş bıçak vb.) istemez. Dönüşüm: 1 külçe → 2 cevher (Tunç: 2 Bakır + 1 Kalay cevheri; Çelik: 3 Demir cevheri + 1 Taş kömürü; Kara çelik: 3 Demir cevheri + 2 Obsidyen), 1 Demir levha → 3, 1 Demir halka → 1 Demir cevheri, 1 Mor kristal levhası → 2 Kristal + 1 Ametist, 1 Sert odun kalası → 2 Sert odun, 1 Sinir kirişi → 2 Sinir; İp ve Lif çıkarıldı. Metal setleri yine zırhçının örsünde dövülür. **Her parçanın tarifi farklıdır:** kazan tarifi malzemelerin cinsine bakarak bulduğu için aynı setin parçaları ayırt edici bir doğal malzeme alır: gövde zırhı yalın, miğfer/başlık +2 Taş, eldiven +3 Lif, çizme/çarık +3 Yaprak.
+- **Zırhlar doğadan düşenle, aletsiz yapılır:** bütün zırhlar ve setlerin zırh parçaları yalnızca doğadan toplanan ya da hayvandan düşen malzemeyle yapılır: Deri parçası (ya da o biyomun hayvan derisi, bkz. Tek tarif), Sinir, Kemik, cevher, odun, pul, post. Külçe, levha, halka, kalas ve Sinir kirişi gibi ara ürünler istenmez; hiçbir zırh alet (Taş bıçak vb.) istemez. Dönüşüm: 1 külçe → 2 cevher (Tunç: 2 Bakır + 1 Kalay cevheri; Çelik: 3 Demir cevheri + 1 Taş kömürü; Kara çelik: 3 Demir cevheri + 2 Obsidyen), 1 Demir levha → 3, 1 Demir halka → 1 Demir cevheri, 1 Mor kristal levhası → 2 Kristal + 1 Ametist, 1 Sert odun kalası → 2 Sert odun, 1 Sinir kirişi → 2 Sinir; İp ve Lif çıkarıldı. Metal setleri yine zırhçının örsünde dövülür. **Her parçanın tarifi farklıdır:** kazan tarifi malzemelerin cinsine bakarak bulduğu için aynı setin parçaları ayırt edici bir doğal malzeme alır: gövde zırhı yalın, miğfer/başlık +2 Taş, eldiven +3 Lif, çizme/çarık +3 Yaprak.
 - **Her biyomun aletleri de o biyomda ya da öncekilerde bulunur:** bir aletin (ve aletin istediği aletin) malzemesi, o aleti gerektiren tariflerin biyomundan sonra gelmez. Çayır yemeklerinin ve ezmelerinin istediği taş aletler artık Çayır taşından yapılır: **Pişirme taşı** (Taş levha: Kumtaşı), **Öğütme taşı** (Kumtaşı), **Taş havan** (Taş kase: Kireçtaşı), **Kirmen** (Taş halka: Kireçtaşı). Kül Diyarı'nın **Ejder kılıcı** Mor Kristal Vadisi'nin altınını istemez (2 Ejder kemiği, 1 Kara çelik külçesi, 1 tabaklanmış deri, 1 Ateş yağı; Aletler bölümündeki tarif).
 
 - **Öğrenmek:** Bir tarifi kullanmak için önce kazanda öğrenirsin. ACT 1'de **Cadı Zümrüt'ün kazanı** (ya da kuzen cadıların kazanları), ACT 2'de **Gökbilimci Yıldız'ın kazanı**. Malzemeleri kazana koyup öğrenirsin; malzemeler bu sırada harcanır.
@@ -4069,7 +4068,7 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
   - **Usta Sinan:** ev eşyaları (evin içine konur). **Usta Sinan:** yere kurulan yapılar ve yataklar.
   - **ACT 2 ustaları:** asalar (Efsun), ateşli silahlar (Tufan), meka zırh (Işın), ışın kılıcı (Tomris), roket (Gökay); işçilik ücreti alırlar.
 - **Alet sütunu:** tarifte adı geçen alet çantanda olmalıdır ama harcanmaz.
-- **"Herhangi" yok ("herhangi kafa karıştırıyor"):** hiçbir tarif ve görev "Herhangi sap", "Herhangi kalas" gibi bir grup istemez; her biri belli bir malzeme ister. Hangisi olduğu tarifin öbür malzemelerinin en çok hangi biyomdan geldiğine göre seçildi (eşitlikte ilerideki biyom; her biyomda bulunan Dal, Taş, Su, Ateş gibi malzemeler sayılmaz; hiçbiri belli bir biyoma ait değilse Çayır). Ağaçtan gelenler o biyomun ağacı: Çayır Çam, Orman Meşe, Bataklık Bataklık servisi, Kayalık Dağ Huş, Kül Diyarı Kül ağacı, Mor Kristal Vadisi Mor söğüt (ör. Çayır tarifleri Odun sapı, Orman tarifleri Sert odun kalası ister). Kil: Çayır ve Orman Nehir, Bataklık Göl, Kayalık Dağ ve Kül Diyarı Kırmızı (tuğlada Kül Diyarı Cüruf tuğlası), Mor Kristal Beyaz. Reçine: Çayır Çam reçinesi, Orman Ladin reçinesi, Kayalık Dağ Huş katranı. Çakmak: Kıvılcım (Kayalık Dağ Pirit çakmağı, Kül Diyarı Kükürt çakmağı). Un: Çayır Yabani buğday unu, Orman Palamut unu, Bataklık Nilüfer kökü unu. ACT 2 metal külçeleri Taş kömürü ister. Tabloda her tarifin istediği yazar.
+- **"Herhangi" yok ("herhangi kafa karıştırıyor"):** hiçbir tarif ve görev "Herhangi sap", "Herhangi kalas" gibi bir grup istemez; her biri belli bir malzeme ister. Hangisi olduğu tarifin öbür malzemelerinin en çok hangi biyomdan geldiğine göre seçildi (eşitlikte ilerideki biyom; her biyomda bulunan Dal, Taş, Su, Ateş gibi malzemeler sayılmaz; hiçbiri belli bir biyoma ait değilse Çayır). Ağaçtan gelenler o biyomun ağacı: Çayır Çam, Orman Meşe, Bataklık Bataklık servisi, Kayalık Dağ Huş, Kül Diyarı Kül ağacı, Mor Kristal Vadisi Mor söğüt (ör. Çayır tarifleri Odun sapı, Orman tarifleri Sert odun kalası ister). Kil: Çayır ve Orman Nehir, Bataklık Göl, Kayalık Dağ ve Kül Diyarı Kırmızı, Mor Kristal Beyaz. Reçine: Çayır Çam reçinesi, Orman Ladin reçinesi, Kayalık Dağ Huş katranı. Çakmak: Kıvılcım (Kayalık Dağ Pirit çakmağı, Kül Diyarı Kükürt çakmağı). Un: Çayır Yabani buğday unu, Orman Palamut unu, Bataklık Nilüfer kökü unu. ACT 2 metal külçeleri Taş kömürü ister. Tabloda her tarifin istediği yazar.
 - **Fiyat:** temel satış fiyatı = malzemelerin toplam değeri × zincir çarpanı (tarifin kaç adımlık bir zincirin ucunda olduğuna göre ×1,20'den ×1,45'e kadar) + gereken aletin değerinin %10'u.
 
 ## Sade malzeme (8 Kasım 2026, Boğaç: "çok fazla birbirine benzer malzeme var; yap bu sadeleştirmeyi")
@@ -4089,11 +4088,11 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 | Kristal Golem Ocağı (ACT 2) | **Efsane odun** | 30 | Kristal çam, Taş ağacı, Mavi sedir, Kristal armut, Buz armudu |
 | Ejder Volkanı ve Gök Rıhtımı (ACT 2) | **Ölümsüz odun** | 34 | Kömür ağacı, Lav palmiyesi, Obsidyen dikeni, Ejder meyvesi, Lav narı, Gök kamışı, Bulut kavağı, Yıldız akasyası, Gök üzümü, Yıldız kirazı |
 
-- **Odundan yapılanlar odunun adını taşır:** her ACT 1 odununun bir **kalası, sapı, kömürü ve kaşığı** vardır (ör. **Sert odun kalası**, **Güçlü odun sapı**, **Odun kömürü**, **Kadim odun kaşığı**); ACT 2 odunlarının yalnızca **kalası** vardır (ör. **Efsane odun kalası**). Tarifleri biyomun asıl ağacının eski tarifidir (Meşe kalası → Sert odun kalası), yalnız odunu yeni odun. Her biri kazanda öğrenilir. Ağaca göre ayrılan varyant kalaslar ("Çam kalası (Kavak odunu ile)" gibi 43 tarif) **yok**: odun zaten tek. Bir kalasın, sapın ya da kömürün yerine başka biyomunkini kullanan varyantlar (ör. **Gümüş külçesi (Sert odun kömürü ile)**) durur.
+- **Odundan yapılanlar odunun adını taşır:** her ACT 1 odununun bir **kalası, sapı, kömürü ve kaşığı** vardır (ör. **Sert odun kalası**, **Güçlü odun sapı**, **Odun kömürü**, **Kadim odun kaşığı**); ACT 2 odunlarının yalnızca **kalası** vardır (ör. **Efsane odun kalası**). Tarifleri biyomun asıl ağacının eski tarifidir (Meşe kalası → Sert odun kalası), yalnız odunu yeni odun. Her biri kazanda öğrenilir. Her eşyanın tek tarifi vardır (bkz. Tek tarif); başka bir odunun kalasını, sapını ya da kömürünü isteyen ikinci tarif yoktur.
 - **Yaylar:** her biyomun yayı odununun adını taşır: **Odun yayı** (Çayır), **Sert odun yayı** (Orman), **Sağlam odun yayı** (Bataklık), **Güçlü odun yayı** (Kayalık Dağ), **Kor odun yayı** (Kül Diyarı), **Kadim odun yayı** (Mor Kristal Vadisi); sapla yapılan küçük yaylar **Sağlam kısa yay** ve **Güçlü kısa yay**. Usta yayları ağaç adı yerine eklenen malzemenin adını taşır: **Granit yayı**, **Timsah dişi yayı**, **Gümüş yayı**, **Ejder yayı**, **Ametist yayı**. Güçleri ve öbür malzemeleri değişmedi; arenada da yeni adlarıyla seçilir.
-- **Ağaca özel şeyler o ağaçtan düşer:** kabuklar artık tarifle yapılmaz; ağacı kesince odunla birlikte **1 kabuğu** düşer: Kavak (Çayır, 5 Vio), Meşe, Kayın, Ihlamur, Ceviz (Orman, 11), Dişbudak, Kızılağaç, Söğüt (Bataklık, 19), Huş, Porsuk, Akçaağaç, Kestane ve Ardıç kabuğu (Kayalık Dağ, 27). Fiyatları biyomun bandındadır; onları kullanan tarifler (Huş katranı, Söğüt kabuğu çayı…) farkla birlikte değişti. Öbür ağaca özel düşmeler aynı kalır (Çam reçinesi ve kozalağı, Ladin reçinesi, Söğüt dalı, Akçaağaç özsuyu, Ihlamur çiçeği, Meşe palamudu, meyveler). **Meşe kabuk** zırh, eldiven ve çizme ile **Ceviz kabuğu miğfer** odun yerine o ağacın kabuğunu ister (aynı sayıda).
+- **Ağaca özel şeyler o ağaçtan düşer:** kabuklar artık tarifle yapılmaz; ağacı kesince odunla birlikte **1 kabuğu** düşer; yalnız bir tarifin istediği kabuklar kalır (bkz. Tek tarif): Meşe ve Ceviz kabuğu (Orman, 11), Söğüt kabuğu (Bataklık, 19), Huş kabuğu (Kayalık Dağ, 27). Fiyatları biyomun bandındadır; onları kullanan tarifler (Huş katranı, Söğüt kabuğu çayı…) farkla birlikte değişti. Öbür ağaca özel düşmeler aynı kalır (Çam reçinesi ve kozalağı, Ladin reçinesi, Söğüt dalı, Akçaağaç özsuyu, Ihlamur çiçeği, Meşe palamudu, meyveler). **Meşe kabuk** zırh, eldiven ve çizme ile **Ceviz kabuğu miğfer** odun yerine o ağacın kabuğunu ister (aynı sayıda).
 - **Ağacı kesmek için gereken balta** değişmedi: her ağacın kendi kademesi vardır (bkz. Aletler).
-- **Görevler:** belirli bir ağacın odununu isteyen görevler o biyomun odununu ister. Aynı kişi aynı şeyi iki kez istemesin diye: Usta Sinan K8 **2 Sert odun kalası**, Durdu DU6 **2 Sert odun sapı**, DU7 **5 Kayın kabuğu**, Ali AL6 **2 Sağlam odun sapı**, Barbaros L8 **2 Kadim odun kalası** ister.
+- **Görevler:** belirli bir ağacın odununu isteyen görevler o biyomun odununu ister. Aynı kişi aynı şeyi iki kez istemesin diye: Usta Sinan K8 **2 Sert odun kalası**, Durdu DU6 **2 Sert odun sapı**, DU7 **5 Meşe kabuğu**, Ali AL6 **2 Sağlam odun sapı**, Barbaros L8 **2 Kadim odun kalası** ister.
 - **Silah ve aletlerin sapları** biyomun sapını ister (ör. Gümüş kılıç **Güçlü odun sapı**, Ametist kılıcı **Kadim odun sapı**, Sağlam kısa yay **Sağlam odun sapı**). Usta Sinan'ın K1'i **6 Sert odun kalası**, Ekin'in EK6'sı **8 Sert odun kalası**, Yıldız'ın teleskop ayağı **4 Ulu odun kalası** ister.
 - **Sayılar:** eşya 1336 → 1290, tarif 997 → 937 (ACT 1). Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
 - **Eski kayıtlar:** kayıt açılınca ağaç adlı her odun, kalas, sap, kömür, kaşık ve yay yeni adına çevrilir (çantada, sandıkta, kemerde, köpek çantasında, yerde, kitapta); aynı yeni ada düşen sayılar toplanır; bir kez bildirim çıkar.
@@ -4101,21 +4100,20 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 - **Kullanılmayan kurutulmuş yiyecekler yok:** hiçbir tarifte kullanılmayan 59 kurutulmuş et, balık, meyve ve mantar kalktı (çiği ve közlenmişi duruyor). Kalan kurutulmuşlar: sincap eti, böğürtlen, meyve keki, yabani elma (Neriman'ın N5 "Kış kurutmalığı" görevi ister) ve tek kullanıldığı tarif kurutulmuşu olan ebegümeci ve yıldız eriği (her malzeme bir tarifte kuralı).
 - **Her biyomda tek mantar, mağarasıyla birlikte (8 Kasım 2026, Boğaç: "biyom + mağara totalde 1 mantar olacak; bazen mağarada bazen dışarıda, atmosferi göz önünde bulundur"):** ACT 1'de Çayır **Yankı mantarı** (yalnız Yankı Mağarası'nda, mavi parlar), Orman **Kanlıca** (dışarıda), Bataklık **Sinek mantarı** (dışarıda), Kayalık Dağ **Kayın mantarı** (dışarıda), Kül Diyarı **Kül mantarı** (yalnız Kor Mağarası'nda), Mor Kristal Vadisi **Işık mantarı** (dışarıda; Ayna Mağarası'nda mantar yok). ACT 2'de Yüzen Kayalar **Gök mantarı**, Dev Mantar Ormanı **Işıldak mantarı**, Hurda Çölü **Keme** (çöl trüfü), Kristal Golem Ocağı **Kristal mantarı**, Ejder Volkanı **Kor mantarı**, Gök Rıhtımı **Yıldız mantarı**. Kalkanlar: Tavuk mantarı, Kuzugöbeği (Orman), Kav mantarı (Kayalık Dağ), Çayır mantarı, Mağara mantarı (her mağara), Kök mantarı (Kök Mağarası), Mantar şapkası (ACT 2); Kayın mantarı ACT 2'de çıkmaz. Tarifler: Kızarmış tavuk mantarı, Kızarmış kuzugöbeği, Kızarmış çayır mantarı, Kızarmış mağara mantarı silindi; **Kav** Kayın mantarıyla, **Kök özü iksiri** 2 Kök reçinesiyle yapılır; Kök mantarlı güveç **Kanlıcalı güveç** oldu (2 Kanlıca); yeni **Kızarmış keme**. Görevler: Yakut'un Y3 "Mantar sepeti" ve Fidan'ın NF1 "Mantar tezgâhı" (6) **Kanlıca**, Firuze'nin "Liken ve kav"ı **Kayın mantarı**, Zümrüt'ün Z7 "Güneş görmeyenler"i **Yankı mantarı** ister. Eski kayıtlarda Tavuk mantarı/Kuzugöbeği Kanlıca'ya, Kav mantarı Kayın mantarına, Mantar şapkası Işıldak mantarına, Kök mantarlı güveç Kanlıcalı güvece çevrilir; Çayır mantarı, Mağara mantarı, Kök mantarı ve kızarmışları eski fiyatından Vio olarak ödenir.
 - **Her biyomda iki meyve ağacı (8 Kasım 2026, Boğaç: "türlerini 2'ye çıkaralım; miktarlar aynı kalsın, mevcut meyve ağaçlarının yarısı farklı bir meyve ağacı olsun", "sadece elma değil armut da olsun"):** Çayır **Elma + Armut** (Erik kalktı), Orman **Ceviz + Fındık**, Bataklık **Mürver + Dut**, Kayalık Dağ **Ardıç + Kestane**, Kül Diyarı **Ateş narı + İncir**, Mor Kristal Vadisi **Ay elması + Yıldız eriği**; ACT 2'de Yüzen Kayalar **Bulut elması + Rüzgâr eriği**, Dev Mantar Ormanı **Kök ağacı (Goblin eriği) + Spor elması**, Hurda Çölü **Hurma + Çöl inciri**, Kristal Golem Ocağı **Kristal armut + Buz armudu**, Ejder Volkanı **Ejder meyvesi + Lav narı**, Gök Rıhtımı **Gök üzümü + Yıldız kirazı**. Bir biyomun meyve ağacı sayısı tek tür zamanındakiyle aynıdır (ağaç türlenirken meyve ağaçlarının payı aralarında bölünür; ör. Çayır'da ~184 meyve ağacı: ~88 Elma, ~96 Armut). Yeni ağaçlar (Dut, İncir ve ACT 2'nin altısı) kesilmez, yalnız silkelenir; meyvelerinin her biri çiğ yenir ve bir **ezmesi** vardır (3 meyve + 1 Su, Taş havan; ACT 1'de Zümrüt'ün, ACT 2'de Yıldız'ın kazanından). Eski kayıtta Odun Odunna, Erik tohumu ve fidanı Armut'unkine (dikili Erik fidanı Armut olur) çevrilir; Yabani erik, ezmesi ve suyu eski fiyatından Vio olarak ödenir.
-- **Benzer bitkiler birleşti (8 Kasım 2026, Boğaç: "yabani nohut kalsın, mercimek gidebilir; çayır güzel, bataklık güzel, dağdaki kile dokunmayalım, kül diyarı güzel, mor kristal de güzel"):** Orman'da **Yabani mercimek → Yabani nohut**; Çayır'da **Yabani yulaf ve Yabani arpa → Yabani buğday** (unları, lapaları, hamurları, yassı ekmekleri ve kavrulmuşları da buğdayınkine); Bataklık'ta **Saz ve Hasırotu → Kamış** (Saz örgüsü, Saz sepet, Hasırotu yatak, Hasırotu meşalesi adlarıyla kalır, kamışla yapılır); Kül Diyarı'nda **Kızıl kum → Kırmızı okr** (Kızıl cam), **Cüruf → Kül** (Cüruf tuğlası 5 Kül), **Sünger taşı → Lav camı** (Sünger taşı bileği); iki okr da kalır (sarı ve kırmızı boya için); Mor Kristal Vadisi'nde **Işık tozu → Yıldız tozu** (Işık fitili), **Kristal kum → Kristal** (Kristal cam). Kayalık Dağ'a dokunulmadı. Görevler: Veli'nin VE7'si **6 Kamış**, Turan'ın TU8'i "Kristal tozu" **6 Kristal**, İnci'nin IN3'ü "Mor sarmaşık" **3 Mor sarmaşık** ister. Biyom başına tür: Çayır 10, Orman 11, Bataklık 12, Kayalık Dağ 13, Kül Diyarı 11, Mor Kristal Vadisi 12 (Sarkıt ve Yarasa gübresi artık mağara ağzında). ACT 1'in bitkileri ACT 2'de çıkmaz; ACT 2'nin biyomlarında yalnız kendi bitkileri var. Eski kayıtta kalkanlar yerine geçene çevrilir.
+- **Benzer bitkiler birleşti (8 Kasım 2026, Boğaç: "yabani nohut kalsın, mercimek gidebilir; çayır güzel, bataklık güzel, dağdaki kile dokunmayalım, kül diyarı güzel, mor kristal de güzel"):** Orman'da **Yabani mercimek → Yabani nohut**; Çayır'da **Yabani yulaf ve Yabani arpa → Yabani buğday** (unları, lapaları, hamurları, yassı ekmekleri ve kavrulmuşları da buğdayınkine); Bataklık'ta **Saz ve Hasırotu → Kamış** (Saz örgüsü, Saz sepet, Hasırotu yatak, Hasırotu meşalesi adlarıyla kalır, kamışla yapılır); Kül Diyarı'nda **Kızıl kum → Kırmızı okr** (Kızıl cam), **Cüruf → Kül**, **Sünger taşı → Lav camı** (Sünger taşı bileği); iki okr da kalır (sarı ve kırmızı boya için); Mor Kristal Vadisi'nde **Işık tozu → Yıldız tozu** (Işık fitili), **Kristal kum → Kristal** (Kristal cam). Kayalık Dağ'a dokunulmadı. Görevler: Veli'nin VE7'si **6 Kamış**, Turan'ın TU8'i "Kristal tozu" **6 Kristal**, İnci'nin IN3'ü "Mor sarmaşık" **3 Mor sarmaşık** ister. Biyom başına tür: Çayır 10, Orman 11, Bataklık 12, Kayalık Dağ 13, Kül Diyarı 11, Mor Kristal Vadisi 12 (Sarkıt ve Yarasa gübresi artık mağara ağzında). ACT 1'in bitkileri ACT 2'de çıkmaz; ACT 2'nin biyomlarında yalnız kendi bitkileri var. Eski kayıtta kalkanlar yerine geçene çevrilir.
 - **Aynı kişi aynı malzemeyi iki kez istemez (8 Kasım 2026, Boğaç: "biyoma özel görevleri de mükerrer olmaktan çıkaralım"):** Yakut Y1 **4 Eğrelti** + 4 Isırgan, Y6 6 Sarmaşık + **4 Yaban sarımsağı**; Fidan NF2 6 Fındık + **4 Ceviz**; Durdu DU7 8 Kumtaşı + **5 Sert odun**; Ali AL6 3 Sağlam odun + **6 Arduvaz**; Kaya KA7 **6 Pirit**, KA8 "Pençe ve çakmak" 2 Kartal pençesi + **5 Çakmaktaşı**; Mercan ME8 3 Gece zambağı + **5 Kor taşı** (Kor Mağarası); Kudret KU8 **8 Ay taşı** + 3 Yankı taşı.
-- **Kalkan varyantlar:** kalkan bir malzemeyi isteyen ya da çevrilince başka bir tarifin aynısı olan varyantlar silindi.
 - **Sayılar:** eşya 1505 → 1337, tarif 1105 → 997 (tek mantar, iki meyve ağacı, bitki birleştirmeleri ve ACT 2'nin yeni tarifleri dahil). Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
 - **Eski kayıtlar:** kayıt açılınca kalkan her şey yerine geçene çevrilir (çantada, sandıkta, kemerde, köpek çantasında, yerde, kitapta): türe özgü kalas/sap/kömür/kaşık biyomunkine, kurutulmuş ot 3 taze ota; karşılığı olmayan kurutulmuş yiyecekler eski satış fiyatından Vio olarak ödenir. Bir kez bildirim çıkar.
 
 ## ACT 2'nin yeni tarifleri (8 Kasım 2026, Boğaç: "b yeni tarif ekleyi seçiyorum")
 
-ACT 2'de hiçbir tarifte kullanılmayan 36 malzemenin hepsi artık bir tarifte: her biyoma bir-iki yemek ya da içecek ve var olan ACT 2 tariflerinin malzemesi değişen varyantları. Hepsi Yıldız'ın kazanında öğrenilir (malzemeler kazana konunca); yemekler çiğ malzemelerinden daha doyurucudur ve kademelerine göre etki verir.
+ACT 2'de hiçbir tarifte kullanılmayan 36 malzemenin hepsi bir tarifte: her biyoma bir-iki yemek ya da içecek; kalanlar var olan ACT 2 tariflerinin tek tarifine girdi (bkz. Tek tarif). Hepsi Yıldız'ın kazanında öğrenilir (malzemeler kazana konunca); yemekler çiğ malzemelerinden daha doyurucudur ve kademelerine göre etki verir.
 
 | Ürün | Malzemeler | Yer | Fiyat |
 |---|---|---|---|
 | Gök çorbası | 2 Gök mantarı, 2 Gök otu, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 177 |
 | Rüzgâr çiçeği çayı | 3 Rüzgâr çiçeği, 2 Su | El yapımı (Tab) | 82 |
-| Spor yahnisi | 2 Işıldak mantarı, 2 Kök yumrusu, 1 Dev spor, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 219 |
+| Spor yahnisi | 2 Işıldak mantarı, 2 Kök yumrusu, 1 Dev spor, Ateş (ateş sağlar), 1 Salyangoz sümüğü | Ateşte (pişirme menüsü) | 237 |
 | Goblin otu çayı | 3 Goblin otu, 2 Su | El yapımı (Tab) | 65 |
 | Kaktüs meyvesi suyu | 3 Kaktüs meyvesi, 1 Çöl otu, 2 Su | El yapımı (Tab) | 76 |
 | Kristal çorbası | 2 Kristal mantarı, 2 Mavi yosun, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 149 |
@@ -4125,28 +4123,8 @@ ACT 2'de hiçbir tarifte kullanılmayan 36 malzemenin hepsi artık bir tarifte: 
 | Yıldız çorbası | 2 Yıldız mantarı, 2 Ay çiçeği, 2 Su, Ateş (ateş sağlar) | Ateşte (pişirme menüsü) | 205 |
 | Bulut özü şerbeti | 2 Bulut özü, 2 Su, 1 Nehir çömleği | El yapımı (Tab) | 156 |
 
-| Varyant | Asıl tarif | Malzemeler | Fiyat |
-|---|---|---|---|
-| İp (Bulut pamuğu ile) | İp | 3 Bulut pamuğu | 4 |
-| Şifalı merhem (Tüy yosunu ile) | Şifalı merhem | 3 Tüy yosunu, 2 Hayvan yağı, 1 Su | 184 |
-| Gök demiri külçesi (Gök kumu ile) | Gök demiri külçesi | 3 Gök demiri, 2 Taş kömürü, 2 Gök kumu | 149 |
-| Ateş asası (Rüzgâr kristali ile) | Ateş asası | 1 Ulu odun kalası, 2 Spor kristali, 3 Büyü otu, 1 Rüzgâr kristali | 900 |
-| Mana iksiri (Sümük yosunu ile) | Mana iksiri | 2 Büyü otu, 2 Su, 2 Sümük yosunu | 306 |
-| Hurda çizme (Hurda parçası ile) | Hurda çizme | 4 Hurda parçası, 6 Vida, 4 Dişli, 1 Demir çizme | 1597 |
-| Kırmızı boya (Pas tozu ile) | Kırmızı boya | 2 Pas tozu, 2 Hayvan yağı, 3 Su, 2 Kum | 143 |
-| Enerji hücresi (Eski devre ile) | Enerji hücresi | 2 Enerji taşı, 1 Eski devre, 1 Pil | 221 |
-| Kil lamba (Yağ birikintisi ile) | Kil lamba | 1 Nehir kasesi, 1 Yağ birikintisi, 4 Dal, 3 Yaprak | 129 |
-| Buz asası (Golem tozu ile) | Buz asası | 1 Efsane odun kalası, 3 Buz kristali, 3 Golem tozu, 2 Büyü otu | 1600 |
-| Titanyum külçesi (Gümüş kum ile) | Titanyum külçesi | 3 Titanyum cevheri, 3 Gümüş kum, 1 Enerji taşı | 291 |
-| Barut (Kükürt tozu ile) | Barut | 2 Kükürt tozu, 1 Taş kömürü | 75 |
-| Cüruf tuğlası (Volkan külü ile) | Cüruf tuğlası | 3 Volkan külü, 2 Kül, 1 Su | 185 |
-| Yıldırım asası (Obsidyen kırığı ile) | Yıldırım asası | 1 Ölümsüz odun kalası, 3 Plazma taşı, 4 Obsidyen kırığı, 3 Büyü otu | 3200 |
-| Plazma hücresi (Magma camı ile) | Plazma hücresi | 2 Plazma taşı, 1 Enerji hücresi, 2 Magma camı | 539 |
-| Meteor demiri külçesi (Meteor parçası ile) | Meteor demiri külçesi | 5 Meteor parçası, 2 Taş kömürü, 1 Füzyon taşı | 408 |
-| Meteor demiri külçesi (Göktaşı tozu ile) | Meteor demiri külçesi | 3 Meteor demiri, 2 Taş kömürü, 3 Göktaşı tozu | 408 |
-| Roket gövdesi (Gök camı parçası ile) | Roket gövdesi | 4 Meteor demiri külçesi, 4 Titanyum külçesi, 6 Gök camı parçası | 9187 |
 
-Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
+Toplam **805 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 
 #### Yiyecek (216)
 
@@ -4169,7 +4147,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Bal şerbeti | 1 Yabani bal, 5 Su, 1 Yaprak | – | El yapımı (Tab) | 23 |
 | Ballı ekmek | 1 Yabani nohut yassı ekmeği, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 149 |
 | Ballı fındık | 1 Kavrulmuş fındık, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 121 |
-| Ballı kestane | 1 Kavrulmuş kestane, 1 Yabani bal, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 248 |
+| Ballı kestane | 1 Kavrulmuş kestane, 1 Yabani bal, 3 Yaprak, 1 Buhar | – | El yapımı (Tab) | 351 |
 | Balık çorbası | 3 Kerevit eti, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 60 |
 | Barbunya tava | 2 Barbunya, 1 Yabani buğday unu, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 102 |
 | Buz armudu ezmesi | 3 Buz armudu, 1 Su | Taş havan | El yapımı (Tab) | 79 |
@@ -4248,7 +4226,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Palamut unu | 3 Meşe palamudu, 1 Su | Öğütme taşı | El yapımı (Tab) | 8 |
 | Pemmikan | 1 Kurutulmuş sincap eti, 2 Hayvan yağı, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 137 |
 | Pişmiş alabalık | 2 Alabalık, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 46 |
-| Pişmiş bulut koyunu eti ² | 1 Bulut koyunu eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 99 |
+| Pişmiş bulut koyunu eti ² | 1 Bulut koyunu eti, Ateş (ateş sağlar), 3 Su, 1 Bulut elması | – | Ateşte (pişirme menüsü) | 125 |
 | Pişmiş buz tavşanı eti ² | 1 Buz tavşanı eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 127 |
 | Pişmiş bıldırcın eti | 2 Bıldırcın eti, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 39 |
 | Pişmiş dağ keçisi eti | 1 Dağ keçisi eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 62 |
@@ -4260,7 +4238,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Pişmiş keklik eti | 2 Keklik eti, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 39 |
 | Pişmiş kerevit | 2 Kerevit eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
 | Pişmiş kertenkele eti ² | 1 Kertenkele eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 56 |
-| Pişmiş kor kertenkelesi eti ² | 1 Kor kertenkelesi eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 143 |
+| Pişmiş kor kertenkelesi eti ² | 1 Kor kertenkelesi eti, Ateş (ateş sağlar), 3 Su, 1 Volkan külü | – | Ateşte (pişirme menüsü) | 143 |
 | Pişmiş kristal geyik eti | 1 Kristal geyik eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 137 |
 | Pişmiş kunduz eti | 2 Kunduz eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 53 |
 | Pişmiş kurbağa | 3 Kurbağa, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
@@ -4369,7 +4347,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Yıldız kirazı ezmesi | 3 Yıldız kirazı, 1 Su | Taş havan | El yapımı (Tab) | 102 |
 | Ziyafet sofrası | 1 Avcı yahnisi, 1 Yabani buğday yassı ekmeği, 4 Su, 4 Yaprak | – | El yapımı (Tab) | 198 |
 
-#### Ağaç (57)
+#### Ağaç (23)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
@@ -4393,12 +4371,11 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Sert odun kalası | 2 Sert odun, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 31 |
 | Sert odun kömürü | 2 Sert odun, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 56 |
 | Sert odun sapı | 1 Sert odun kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 51 |
-| Meyve fidanı | 2 Elma tohumu, 2 Kuru ot, 2 Su | – | El yapımı (Tab) | 18 |
 | Kadim odun kalası | 2 Kadim odun, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 151 |
 | Kadim odun kömürü | 2 Kadim odun, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 178 |
 | Kadim odun sapı | 1 Kadim odun kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 209 |
 
-#### Zanaat (46)
+#### Zanaat (44)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
@@ -4407,13 +4384,13 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Balık sepeti | 2 Söğüt sepeti, 3 Kerevit eti, 1 Lif | – | El yapımı (Tab) | 22 |
 | Balık tutkalı | 1 Mersin balığı, 1 Kor, 5 Lif, 4 İp | – | El yapımı (Tab) | 103 |
 | Balmumu | 1 Yabani bal, 1 Sıcak su, 4 Lif, 3 İp | – | El yapımı (Tab) | 82 |
-| Barut ² | 2 Barut kayası, 1 Taş kömürü | – | El yapımı (Tab) | 75 |
+| Barut ² | 2 Barut kayası, 1 Kükürt tozu | – | El yapımı (Tab) | 84 |
 | Bileme macunu | 2 Kumtaşı, 1 Çam reçinesi | – | El yapımı (Tab) | 43 |
 | Boynuz kupa | 1 Öküz boynuzu, 3 Lif, 3 İp | – | El yapımı (Tab) | 44 |
-| Bulut yünü ip ² | 3 Bulut yünü | – | El yapımı (Tab) | 67 |
+| Bulut yünü ip ² | 2 Bulut yünü, 1 Bulut pamuğu | – | El yapımı (Tab) | 67 |
 | Odun kaşığı | 1 Odun sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 65 |
-| Deri çanta | 1 Deri parçası, 1 Kenevir halatı, 5 Lif, 4 İp | – | El yapımı (Tab) | 785 |
-| Deri tulum | 1 Deri parçası, 1 Huş katranı, 5 Lif, 4 İp | – | El yapımı (Tab) | 338 |
+| Deri çanta | 1 Deri parçası, 1 Kenevir halatı, 5 Lif, 1 Mor ip | – | El yapımı (Tab) | 1.110 |
+| Deri tulum | 1 Huş katranı, 5 Lif, 4 İp, 1 Mağara kurdu postu | – | El yapımı (Tab) | 370 |
 | Diken iğnesi | 3 Kirpi dikeni, 1 Kemik | – | El yapımı (Tab) | 17 |
 | Sağlam odun kaşığı | 1 Sağlam odun sapı, 4 Lif, 3 İp | – | El yapımı (Tab) | 104 |
 | Duman tütsüsü | 2 Duman çiçeği, 2 Kuru ot | – | El yapımı (Tab) | 127 |
@@ -4432,11 +4409,11 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Keten ipliği | 1 Keten lifi, 3 Lif, 3 İp | Kirmen | El yapımı (Tab) | 83 |
 | Keten kumaş | 1 Keten ipliği, 4 Lif, 3 İp | Dokuma tezgâhı | El yapımı (Tab) | 141 |
 | Kum torbası | 3 Kum, 1 Deri parçası, 4 Lif, 3 İp | – | El yapımı (Tab) | 236 |
-| Sert odun kaşığı | 1 Sert odun sapı, 4 Lif, 4 İp | – | El yapımı (Tab) | 97 |
+| Sert odun kaşığı | 1 Sert odun sapı, 4 İp, 1 Isırgan lifi | – | El yapımı (Tab) | 135 |
 | Midye kabuğu kaşık | 3 Tatlısu midyesi, 1 Lif | Bileği taşı | El yapımı (Tab) | 34 |
 | Mor ip | 3 Mor sarmaşık | – | El yapımı (Tab) | 266 |
 | Ok kılıfı | 1 Deri parçası, 4 İp, 2 Dal | – | El yapımı (Tab) | 235 |
-| Plazma hücresi ² | 2 Plazma taşı, 1 Enerji hücresi, 1 Ejder kristali | – | El yapımı (Tab) | 539 |
+| Plazma hücresi ² | 2 Plazma taşı, 1 Enerji hücresi, 2 Magma camı | – | El yapımı (Tab) | 539 |
 | Sarmaşık ipi | 4 Sarmaşık | – | El yapımı (Tab) | 36 |
 | Saz örgüsü | 4 Kamış | – | El yapımı (Tab) | 67 |
 | Saz sepet | 2 Saz örgüsü, 3 İp, 1 Lif | – | El yapımı (Tab) | 194 |
@@ -4445,14 +4422,14 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Taş kase | 2 Kireçtaşı, 2 Lif, 2 İp (eskiden 2 Bazalt) | Bileği taşı | El yapımı (Tab) | 21 |
 | Tohum yağı | 4 Elma tohumu, 1 Nehir çömleği | Taş havan | El yapımı (Tab) | 84 |
 | Yosun yastık | 3 Yosun, 1 Deri parçası, 4 Lif, 3 İp | – | El yapımı (Tab) | 283 |
-| Zehir yağı | 2 Sinek mantarı, 1 Çam reçinesi | – | El yapımı (Tab) | 75 |
+| Zehir yağı | 2 Sinek mantarı, 1 Ladin reçinesi | – | El yapımı (Tab) | 75 |
 
 #### Şifa (32)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Adaçayı çayı | 1 Kurutulmuş adaçayı, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 239 |
-| Ateş çiçeği merhemi | 2 Ateş çiçeği, 1 Hayvan yağı, 2 Kül | – | El yapımı (Tab) | 398 |
+| Ateş çiçeği merhemi | 2 Ateş çiçeği, 2 Kül, 1 Gece zambağı yağı | – | El yapımı (Tab) | 898 |
 | Ateş iksiri | 1 Ateş bezesi, 3 Su, 2 Ateş çiçeği | – | El yapımı (Tab) | 449 |
 | Ay çayı | 2 Gece sefası, 2 Su, 1 Nane | – | El yapımı (Tab) | 30 |
 | Ay ışığı iksiri | 3 Gece sefası, 1 Mor kıymık, 2 Su | – | El yapımı (Tab) | 82 |
@@ -4464,8 +4441,8 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Ihlamur çayı | 3 Ihlamur çiçeği, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 114 |
 | Kardelen merhemi | 2 Kardelen, 1 Hayvan yağı | – | El yapımı (Tab) | 137 |
 | Kekik çayı | 3 Kekik, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 239 |
-| Kertenkele merhemi ² | 2 Kertenkele pulu, 1 Damla taşı, 1 Su | – | El yapımı (Tab) | 143 |
-| Kor merhemi | 2 Kor otu, 1 Hayvan yağı | – | El yapımı (Tab) | 288 |
+| Kertenkele merhemi ² | 2 Kertenkele pulu, 1 Damla taşı, 1 Tüy yosunu | – | El yapımı (Tab) | 155 |
+| Kor merhemi | 2 Kor otu, 1 Tohum yağı | – | El yapımı (Tab) | 393 |
 | Kurutulmuş adaçayı | 3 Adaçayı, 3 Kuru ot | – | El yapımı (Tab) | 123 |
 | Kurutulmuş ebegümeci | 3 Ebegümeci, 3 Kuru ot | – | El yapımı (Tab) | 8 |
 | Kurutulmuş rezene | 3 Rezene, 3 Kuru ot | – | El yapımı (Tab) | 11 |
@@ -4474,7 +4451,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Kükürtlü merhem | 1 Kükürt, 2 Hayvan yağı, 2 Yosun | – | El yapımı (Tab) | 207 |
 | Lavanta çayı | 3 Lavanta, 1 Sıcak su, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 196 |
 | Lavanta yağı | 2 Lavanta, 2 Hayvan yağı, 1 Su, 1 Yaprak | – | El yapımı (Tab) | 125 |
-| Mana iksiri ² | 2 Büyü otu, 2 Su, 1 Nehir çömleği | – | Büyücü Efsun yapar (10 Vio işçilik) | 306 |
+| Mana iksiri ² | 2 Büyü otu, 2 Su, 4 Sümük yosunu | – | Büyücü Efsun yapar (10 Vio işçilik) | 306 |
 | Nane çayı | 3 Nane, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 69 |
 | Panzehir | 3 Bataklık otu, 1 Zehir bezesi, 2 Su | – | El yapımı (Tab) | 148 |
 | Papatya çayı | 3 Papatya, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 65 |
@@ -4484,14 +4461,13 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Şifalı merhem | 3 Civanperçemi, 2 Hayvan yağı, 1 Su | – | El yapımı (Tab) | 184 |
 | Yanık kök çayı | 2 Yanık kök, 2 Su, 1 Ateş | – | El yapımı (Tab) | 337 |
 
-#### Alet kademeleri (40)
+#### Alet kademeleri (39)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Akrep ok ucu | 2 Akrep iğnesi, 1 İp | – | El yapımı (Tab) | 153 |
 | Bazalt bıçak | 1 Bazalt pulu, 1 Kor odun sapı, 3 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 420 |
 | Bazalt kazıyıcı | 1 Bazalt pulu, 3 Kemik, 2 İp, 1 Dal, 1 Taş | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 265 |
-| Bazalt ok ucu | 9 Bazalt pulu | – | El yapımı (Tab) | 2.189 |
 | Bazalt pulu | 1 Yontulmuş bazalt, 2 İp, 2 Dal, 2 Taş | Çekiç taşı | El yapımı (Tab) | 185 |
 | Bazalt sivri ucu | 8 Yontulmuş bazalt | – | El yapımı (Tab) | 1.343 |
 | Boynuz kazma | 1 Geyik boynuzu, 1 Odun sapı, 2 İp, 2 Dal, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 67 |
@@ -4529,7 +4505,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Yontulmuş kuvars | 2 Kuvars, 2 İp, 1 Dal, 1 Taş | Çekiç taşı | El yapımı (Tab) | 88 |
 | Yontulmuş obsidyen | 1 Obsidyen, 3 İp, 2 Dal, 2 Taş | Çekiç taşı | El yapımı (Tab) | 84 |
 
-#### Temel aletler (70)
+#### Temel aletler (69)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
@@ -4549,7 +4525,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Bileği taşı | 2 Kumtaşı, 1 İp, 1 Dal, 1 Taş | Çekiç taşı | Örs · Silahçı Durdu (Orman) ve üstü döver | 16 |
 | Bola | 1 Halat, 3 Nehir çakılı, 1 İp, 1 Dal, 1 Taş | – | El yapımı (Tab) | 51 |
 | Çekiç taşı | 4 Nehir çakılı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 5 |
-| Çelik ok | 1 Çelik külçesi, 4 Dal, 2 Ur kekliği tüyü, 1 Çakmaktaşı ok ucu (→ 10) | – | El yapımı (Tab) | 525 |
+| Çelik ok | 1 Çelik külçesi, 4 Dal, 1 Çakmaktaşı ok ucu, 4 Turna kuşu tüyü (→ 10) | – | El yapımı (Tab) | 525 |
 | Demir ok | 1 Demir külçesi, 4 Dal, 2 Ördek tüyü, 1 Akrep ok ucu (→ 10) | – | El yapımı (Tab) | 110 |
 | Deniz oltası | 1 Olta, 1 Halat, 2 Bakır külçesi, 1 Uzun sopa | – | El yapımı (Tab) | 210 |
 | Derin su oltası | 1 Makaralı olta, 3 Demir külçesi, 2 Kenevir halatı, 2 Huş katranı | – | El yapımı (Tab) | 2.193 |
@@ -4558,11 +4534,10 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Fırtına oltası | 1 Derin su oltası, 3 Gümüş külçesi, 2 Kenevir halatı, 2 Balık tutkalı | – | El yapımı (Tab) | 4.420 |
 | Halat | 6 İp | – | El yapımı (Tab) | 30 |
 | İp | 3 Lif | – | El yapımı (Tab) | 4 |
-| Kara çelik ok | 1 Kara çelik külçesi, 4 Dal, 2 Ur kekliği tüyü, 1 Obsidyen ok ucu (→ 10) | – | El yapımı (Tab) | 1.823 |
-| Kara çelik ok (Bazalt uçlu, varyant) | 1 Kara çelik külçesi, 4 Dal, 2 Ur kekliği tüyü, 1 Bazalt ok ucu (→ 10) | – | El yapımı (Tab); aynı Kara çelik ok'u verir | Kara çelik ok ile aynı |
+| Kara çelik ok | 1 Kara çelik külçesi, 4 Dal, 1 Obsidyen ok ucu, 4 Yaban kazı tüyü (→ 10) | – | El yapımı (Tab) | 1.823 |
 | Kemik iğne | 2 Kemik, 2 Kum | Bileği taşı | Örs · Silahçı Durdu (Orman) ve üstü döver | 9 |
 | Kemik olta iğnesi | 1 Kemik, 1 Keskin taş, 2 Lif | Kemik iğne | El yapımı (Tab) | 10 |
-| Kemik zıpkın | 3 Kemik, 1 İp, 1 Uzun sopa | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 48 |
+| Kemik zıpkın | 1 İp, 1 Uzun sopa, 1 Diken iğnesi | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 62 |
 | Keskin Bakır ok | 10 Bakır ok, 1 Bileme macunu | – | El yapımı (Tab) | 10 |
 | Keskin Basit ok | 10 Basit ok, 1 Bileme macunu | – | El yapımı (Tab) | 7 |
 | Keskin Çelik ok | 10 Çelik ok, 1 Bileme macunu | – | El yapımı (Tab) | 582 |
@@ -4591,7 +4566,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Taş kılıç | 1 Sopa, 4 Keskin taş, 2 İp, 1 Çakmaktaşı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 39 |
 | Taş savaş çekici | 1 Sopa, 4 Taş, 3 İp | – | El yapımı (Tab) | 31 |
 | Taş topuz | 1 Sopa, 2 Taş, 2 İp | – | El yapımı (Tab) | 23 |
-| Tunç ok | 1 Tunç külçesi, 4 Dal, 2 Keklik tüyü, 1 Lav camı ok ucu (→ 10) | – | El yapımı (Tab) | 85 |
+| Tunç ok | 1 Tunç külçesi, 4 Dal, 1 Lav camı ok ucu, 2 Bıldırcın tüyü (→ 10) | – | El yapımı (Tab) | 85 |
 | Tuzak | 1 Halat, 1 Sopa, 2 İp, 2 Dal, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 66 |
 | Uzun sopa | 1 Sopa, 4 Dal, 1 İp | – | El yapımı (Tab) | 22 |
 | Yaprak kova | 4 Yaprak, 3 Lif | – | El yapımı (Tab) | 8 |
@@ -4630,7 +4605,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Kartal pençesi kolyesi | 2 Kartal pençesi, 2 İp | – | El yapımı (Tab) | 72 |
 | Kehribar boncuk | 1 Kehribar, 4 İp, 3 Kum | Bileği taşı | El yapımı (Tab) | 78 |
 | Kehribar kolye | 1 Kehribar boncuk, 6 İp, 3 Kum | – | El yapımı (Tab) | 137 |
-| Kemik kolye | 3 Kemik, 3 İp | – | El yapımı (Tab) | 23 |
+| Kemik kolye | 3 İp, 1 Kemik olta iğnesi | – | El yapımı (Tab) | 28 |
 | Kırmızı boncuk | 1 Islak kırmızı kil, 3 İp, 3 Kum | Kemik iğne | El yapımı (Tab) | 100 |
 | Kıymık kolye | 2 Mor kıymık, 2 İp | – | El yapımı (Tab) | 85 |
 | Kil figürin | 1 Islak beyaz kil, 2 Su, 1 Dal | – | El yapımı (Tab) | 55 |
@@ -4652,7 +4627,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Yarasa kanadı yelpazesi | 2 Yarasa kanadı, 1 Kor odun sapı, 2 İp | – | El yapımı (Tab) | 271 |
 | Yıldız çelengi | 3 Yıldız çiçeği, 2 Mor sarmaşık | – | El yapımı (Tab) | 467 |
 
-#### Taş ve kil (27)
+#### Taş ve kil (26)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
@@ -4661,7 +4636,6 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Beyaz kase | 1 Beyaz çömlek, 5 Kum, 4 Su | Bileği taşı | El yapımı (Tab) | 123 |
 | Beyaz kerpiç | 1 Islak beyaz kil, 3 Kuru ot, 2 Kum, 1 Su | – | El yapımı (Tab) | 54 |
 | Beyaz tuğla | 1 Beyaz kerpiç, 1 Ateş, 4 Kum, 3 Su | – | El yapımı (Tab) | 106 |
-| Cüruf tuğlası | 5 Kül, 1 Su | – | El yapımı (Tab) | 263 |
 | Göl çömleği | 1 Islak göl kili, 1 Ateş, 3 Kum, 3 Su | – | El yapımı (Tab) | 87 |
 | Göl kasesi | 1 Göl çömleği, 4 Kum, 4 Su | Bileği taşı | El yapımı (Tab) | 128 |
 | Göl kerpici | 1 Islak göl kili, 3 Kuru ot, 1 Kum, 1 Su | – | El yapımı (Tab) | 58 |
@@ -4693,7 +4667,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Ateş yeri | 1 Ateş, 4 Taş, 1 Dal, 1 Kum | – | Usta Sinan yapar, yere kurulur | 34 |
 | Atölye | 4 Odun kalası, 4 Taş, 2 İp, 2 Sopa | – | Usta Sinan yapar, yere kurulur | 114 |
 | Çit | 1 Sert odun sapı, 2 Sarmaşık ipi, 2 Dal (→ 2 Çit) | – | El yapımı (Tab), İnşa kipiyle kurulur | 82 |
-| Çömlek fırını | 1 Kerpiç duvar, 1 Odun kömürü, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 331 |
+| Çömlek fırını | 1 Odun kömürü, 3 Taş, 3 Dal, 2 Kum, 2 Kırmızı tuğla | – | Usta Sinan yapar, yere kurulur | 417 |
 | Deri çadır | 1 Kulübe iskeleti, 1 Deri parçası, 3 Taş, 3 Dal, 3 Kum | – | Usta Sinan yapar, yere kurulur | 410 |
 | Erzak çukuru | 1 Taş levha, 3 Kuru ot, 1 Taş, 1 Dal | – | Usta Sinan yapar, yere kurulur | 22 |
 | Hasır yatak | 2 Hasır, 6 Yaprak, 2 Sopa | – | Usta Sinan yapar, yere kurulur | 65 |
@@ -4704,14 +4678,14 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Kerpiç ev | 1 Kerpiç duvar, 1 Kamış kulübe çatısı, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 1.007 |
 | Kulübe | 1 Kulübe iskeleti, 1 Hasır, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 197 |
 | Kulübe iskeleti | 7 Odun kalası | – | Usta Sinan yapar, yere kurulur | 131 |
-| Kurutma rafı | 1 Odun sapı, 1 Hasır, 2 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 66 |
+| Kurutma rafı | 1 Odun sapı, 1 Hasır, 2 Dal, 2 Kum, 1 Arduvaz | – | Usta Sinan yapar, yere kurulur | 87 |
 | Megalit | 2 Granit, 1 Kenevir halatı, 2 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 560 |
 | Su testisi | 1 Nehir çömleği, 3 Su, 2 Taş, 2 Dal, 1 Kum | – | Usta Sinan yapar, yere kurulur | 77 |
-| Tabakhane | 1 Deri tulum, 4 Taş, 4 Dal, 3 Kum | – | Usta Sinan yapar, yere kurulur | 635 |
+| Tabakhane | 1 Deri tulum, 4 Dal, 3 Kum, 1 Beyaz tuğla | – | Usta Sinan yapar, yere kurulur | 768 |
 | Taş çember | 11 Megalit | – | Usta Sinan yapar, yere kurulur | 8.117 |
 | Taş fırın | 1 Nehir tuğlası, 1 Ateş yeri, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 138 |
-| Tuz havuzu | 1 Tuz, 1 Göl kasesi, 3 Taş, 3 Dal, 3 Kum | – | Usta Sinan yapar, yere kurulur | 259 |
-| Tütsühane | 1 Kulübe iskeleti, 1 Duman, 3 Taş, 3 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 234 |
+| Tuz havuzu | 1 Tuz, 1 Göl kasesi, 3 Dal, 3 Kum, 1 Göl tuğlası | – | Usta Sinan yapar, yere kurulur | 397 |
+| Tütsühane | 1 Kulübe iskeleti, 1 Duman, 3 Dal, 2 Kum, 1 Kireç harcı | – | Usta Sinan yapar, yere kurulur | 307 |
 | Yosun yalıtım | 3 Yosun, 1 Islak nehir kili, 1 Taş, 1 Dal | – | Usta Sinan yapar, yere kurulur | 67 |
 
 #### İnşa parçaları (7)
@@ -4723,7 +4697,7 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Ahşap parke | 1 Sert odun kalası (→ 4) | – | El yapımı (Tab), İnşa kipiyle kurulur | 10 |
 | Çakıl yol | 3 Nehir çakılı, 1 Kum (→ 4) | – | El yapımı (Tab), İnşa kipiyle kurulur | 2 |
 | Dal çit | 4 Dal, 2 Lif (→ 2) | – | El yapımı (Tab), İnşa kipiyle kurulur | 4 |
-| Direk feneri | 1 Sopa, 1 Kil lamba, 1 Hayvan yağı | – | Usta Sinan yapar, İnşa kipiyle kurulur | 203 |
+| Direk feneri | 1 Sopa, 1 Kil lamba, 1 Balçık bezesi | – | Usta Sinan yapar, İnşa kipiyle kurulur | 301 |
 | Tahta kapı | 2 Çit, 1 İp | – | El yapımı (Tab), İnşa kipiyle kurulur | 227 |
 | Taş duvar | 4 Taş, 1 Kireçtaşı, 1 Kum | – | El yapımı (Tab), İnşa kipiyle kurulur | 8 |
 | Toprak yol | 2 Taş, 1 Kum (→ 4) | – | El yapımı (Tab), İnşa kipiyle kurulur | 1 |
@@ -4739,15 +4713,14 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Kemik miğfer | 4 Kemik, 2 Sinir, 1 Deri parçası, 2 Taş | – | El yapımı (Tab) | 292 |
 | Kemik zırh | 8 Kemik, 3 Sinir, 2 Deri parçası | – | El yapımı (Tab) | 623 |
 | Kristal ipek kumaş | 4 Kristal ipek, 2 Lif | – | El yapımı (Tab) | 476 |
-| Kürk başlık | 1 Deri parçası, 2 Sinir, 2 Taş | – | El yapımı (Tab) | 277 |
+| Kürk başlık | 2 Sinir, 2 Taş, 2 Yaban atı derisi | – | El yapımı (Tab) | 277 |
 | Kürk eldiven | 1 Deri parçası, 2 Sinir, 3 Lif | – | El yapımı (Tab) | 270 |
-| Kürk yelek | 2 Deri parçası, 2 Sinir | – | El yapımı (Tab) | 47 |
+| Kürk yelek | 2 Sinir, 4 Geyik derisi | – | El yapımı (Tab) | 47 |
 
-#### Av ve hayvan (6)
+#### Av ve hayvan (5)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Ağ kapanı | 3 Tavan ağı, 1 Rüzgâr taşı | – | El yapımı (Tab) | 420 |
 | Balık yağı | 1 Yayın, 3 Su, 3 Lif | Taş havan | El yapımı (Tab) | 21 |
 | Duman fişeği | 1 Duman özü, 1 Kükürt kristali, 1 Kül mantarı | – | El yapımı (Tab) | 420 |
 | Sinir kirişi | 2 Sinir (su, lif ve Taş bıçak istemez) | – | El yapımı (Tab) | 16 |
@@ -4762,14 +4735,14 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 | Balmumu mumu | 1 Balmumu, 3 Lif, 3 Dal, 3 Yaprak | – | El yapımı (Tab) | 128 |
 | Don yağı mumu | 2 Hayvan yağı, 3 Lif | – | El yapımı (Tab) | 11 |
 | Duman | 1 Ateş, 4 Yaprak, 2 Dal | – | El yapımı (Tab) | 34 |
-| Golem feneri | 1 Golem çekirdeği, 2 Kristal, 2 Kadim odun kalası | – | El yapımı (Tab) | 1.188 |
+| Golem feneri | 1 Golem çekirdeği, 2 Kadim odun kalası, 1 Kristal cam | – | El yapımı (Tab) | 1.321 |
 | Hasırotu meşalesi | 3 Kamış, 2 Hayvan yağı | – | El yapımı (Tab) | 58 |
 | Işık fitili | 2 Yıldız tozu, 2 Lif | – | El yapımı (Tab) | 216 |
 | Kaba meşale | 2 Dal, 2 Lif, 2 Yaprak | – | El yapımı (Tab) | 7 |
 | Kamp ateşi | 5 Dal, 3 Taş, 2 Kuru ot, 1 Çakmaktaşı | – | El yapımı (Tab) | 14 |
 | Kav | 3 Kayın mantarı, 1 Kıvılcım, 1 Dal, 1 Yaprak | – | El yapımı (Tab) | 98 |
 | Kıvılcım | 3 Çakmaktaşı, 3 Taş | – | El yapımı (Tab) | 11 |
-| Kil lamba | 1 Nehir kasesi, 2 Hayvan yağı, 4 Dal, 3 Yaprak | – | El yapımı (Tab) | 129 |
+| Kil lamba | 2 Hayvan yağı, 4 Dal, 3 Yaprak, 1 Kızıl cam | – | El yapımı (Tab) | 178 |
 | Kor | 1 Ateş, 1 Odun kömürü, 4 Dal, 3 Yaprak | – | El yapımı (Tab) | 40 |
 | Kozalak ateşi | 3 Çam kozalağı, 1 Kıvılcım, 1 Dal, 1 Yaprak | – | El yapımı (Tab) | 20 |
 | Kükürt çakmağı | 2 Kükürt, 1 Pirit, 2 Kuru ot | – | El yapımı (Tab) | 156 |
@@ -4783,53 +4756,53 @@ Toplam **997 tarif**: 822 asıl tarif ve 175 varyant (oyun verisiyle sayıldı).
 |---|---|---|---|---|
 | Ametist miğfer | 2 Ametist, 1 Kristal ipek, 1 Deri parçası, 2 Taş | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.932 |
 | Bakır çizme | 4 Bakır cevheri, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 251 |
-| Bakır eldiven | 4 Bakır cevheri, 1 Deri parçası, 3 Lif | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 259 |
-| Bakır miğfer | 4 Bakır cevheri, 1 Deri parçası, 2 Sinir, 2 Taş | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 254 |
+| Bakır eldiven | 4 Bakır cevheri, 3 Lif, 3 Kunduz derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 259 |
+| Bakır miğfer | 4 Bakır cevheri, 2 Sinir, 2 Taş, 2 Kurt derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 254 |
 | Bakır zırh | 10 Bakır cevheri, 2 Deri parçası, 2 Sinir | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 542 |
 | Ceviz kabuğu miğfer | 6 Ceviz, 2 Ceviz kabuğu, 1 Deri parçası, 2 İri diken, 2 Taş | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 927 |
-| Çelik çizme | 6 Demir cevheri, 2 Taş kömürü, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.269 |
-| Çelik eldiven | 6 Demir cevheri, 2 Taş kömürü, 1 Deri parçası, 3 Lif | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.282 |
-| Çelik miğfer | 6 Demir cevheri, 2 Taş kömürü, 1 Deri parçası, 2 Sinir, 2 Taş | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.275 |
-| Çelik zırh | 15 Demir cevheri, 5 Taş kömürü, 2 Deri parçası, 2 Sinir | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 3.499 |
+| Çelik çizme | 6 Demir cevheri, 2 Taş kömürü, 3 Yaprak, 2 Dağ keçisi derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.269 |
+| Çelik eldiven | 6 Demir cevheri, 2 Taş kömürü, 3 Lif, 2 Muflon derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.282 |
+| Çelik miğfer | 6 Demir cevheri, 2 Taş kömürü, 2 Sinir, 2 Taş, 1 Vaşak derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.275 |
+| Çelik zırh | 15 Demir cevheri, 5 Taş kömürü, 2 Sinir, 2 Yaban öküzü derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 3.499 |
 | Demir çizme | 4 Demir cevheri, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.001 |
-| Demir eldiven | 4 Demir cevheri, 1 Deri parçası, 3 Lif | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.011 |
+| Demir eldiven | 4 Demir cevheri, 3 Lif, 3 Su samuru derisi | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.011 |
 | Demir miğfer | 4 Demir cevheri, 1 Deri parçası, 2 Sinir, 2 Taş | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.013 |
 | Demir zırh | 10 Demir cevheri, 2 Deri parçası, 2 Sinir | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 2.786 |
 | Ejder çizmesi | 1 Kara pul, 2 Kül kurdu postu, 3 Yaprak | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 3.108 |
 | Ejder eldiveni | 1 Kara pul, 2 Lav pulu, 1 Deri parçası, 3 Lif | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 3.116 |
 | Ejder miğferi | 1 Kara pul, 3 Demir cevheri, 1 Deri parçası, 2 Taş | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 3.134 |
-| Ejder pulu eldiven ² | 4 Yavru ejder pulu, 2 Ejder dişi, 1 Mantar lifi eldiven | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 2.924 |
+| Ejder pulu eldiven ² | 2 Yavru ejder pulu, 1 Mantar lifi eldiven, 6 Tazı dişi, 4 Kor pulu | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 2.924 |
 | Ejder zırhı | 2 Kara pul, 6 Demir cevheri, 2 Deri parçası | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 7.720 |
-| Fırtına tüyü başlık ² | 4 Fırtına tüyü, 2 Gök tazısı postu, 1 Demir miğfer | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 1.939 |
+| Fırtına tüyü başlık ² | 2 Fırtına tüyü, 2 Gök tazısı postu, 1 Demir miğfer, 7 Rüzgâr tüyü | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 1.939 |
 | Gümüş çizme | 2 Gümüş cevheri, 1 Demir cevheri, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.423 |
 | Gümüş eldiven | 2 Gümüş cevheri, 1 Demir cevheri, 1 Deri parçası, 3 Lif | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.438 |
-| Gümüş pullu zırh | 6 Gümüş cevheri, 3 Demir cevheri, 2 Deri parçası, 2 Ayı pençesi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 3.945 |
-| Hurda çizme ² | 2 Ağır plaka, 6 Vida, 4 Dişli, 1 Demir çizme | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 1.597 |
+| Gümüş pullu zırh | 6 Gümüş cevheri, 3 Demir cevheri, 2 Ayı pençesi, 1 Mağara ayısı derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 3.945 |
+| Hurda çizme ² | 4 Dişli, 1 Demir çizme, 1 Goblin bıçağı, 14 Hurda parçası | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 1.597 |
 | Işık pulu eldiven | 4 Işık pulu, 2 Kristal, 1 Deri parçası, 3 Lif | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.953 |
 | Kara çelik çizme | 6 Demir cevheri, 4 Obsidyen, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 2.828 |
 | Kara çelik eldiven | 6 Demir cevheri, 4 Obsidyen, 1 Deri parçası, 3 Lif | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 2.835 |
 | Kara çelik miğfer | 6 Demir cevheri, 4 Obsidyen, 1 Deri parçası, 2 Sinir, 2 Taş | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 2.830 |
 | Kara çelik zırh | 15 Demir cevheri, 10 Obsidyen, 2 Deri parçası, 2 Sinir | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 6.984 |
-| Kartal tüyü miğfer | 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Deri parçası, 2 Taş | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.422 |
+| Kartal tüyü miğfer | 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Gri vaşak postu, 1 Rüzgâr taşı | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.650 |
 | Kristal ipek çizme | 2 Kristal ipek, 1 Işık pulu, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.886 |
 | Kristal ipek zırh | 5 Kristal ipek, 3 Ametist, 6 Demir cevheri, 2 Deri parçası | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 9.704 |
 | Kristal miğfer ² | 3 Kristal kanat, 4 Golem parçası, 2 Kobalt külçesi, 1 Fırtına tüyü başlık | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 3.692 |
-| Mantar lifi eldiven ² | 4 Böcek kabuğu, 4 Spor tozu, 2 Goblin kulağı, 1 Demir eldiven | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 1.486 |
-| Meka çizme ² | 3 Titanyum külçesi, 2 Uzaylı devresi, 1 Muhafız zırhı parçası, 1 Hurda çizme | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 4.324 |
-| Meka zırh ² | 4 Titanyum külçesi, 3 Kobalt külçesi, 2 Enerji hücresi, 1 Motor, 1 Golem çekirdeği | – | Mühendis Işın yapar (600 Vio işçilik) | 5.364 |
+| Mantar lifi eldiven ² | 2 Böcek kabuğu, 4 Spor tozu, 2 Goblin kulağı, 1 Demir eldiven, 1 Magma kabuğu | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 1.486 |
+| Meka çizme ² | 2 Titanyum külçesi, 1 Muhafız zırhı parçası, 1 Hurda çizme, 13 Eski devre, 4 Yıldız tilkisi postu | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 4.324 |
+| Meka zırh ² | 4 Titanyum külçesi, 3 Kobalt külçesi, 1 Enerji hücresi, 1 Motor, 2 Mor çekirdek, 6 Buz kürkü | – | Mühendis Işın yapar (600 Vio işçilik) | 5.364 |
 | Meşe kabuk çizme | 2 Meşe kabuğu, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 887 |
 | Meşe kabuk eldiven | 2 Meşe kabuğu, 1 Deri parçası, 3 Kirpi dikeni, 3 Lif | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 897 |
 | Meşe kabuk zırh | 6 Meşe kabuğu, 2 Deri parçası, 6 Kirpi dikeni, 2 Sinir | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 2.454 |
 | Mor kristal çizme | 4 Kristal, 2 Ametist, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.538 |
-| Mor kristal eldiven | 4 Kristal, 2 Ametist, 1 Deri parçası, 3 Lif | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.547 |
-| Mor kristal miğfer | 4 Kristal, 2 Ametist, 1 Deri parçası, 2 Sinir, 2 Taş | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.540 |
-| Mor kristal zırh | 10 Kristal, 5 Ametist, 2 Deri parçası, 2 Sinir | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 8.737 |
+| Mor kristal eldiven | 4 Kristal, 2 Ametist, 3 Lif, 1 Işık tilkisi postu | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.547 |
+| Mor kristal miğfer | 4 Kristal, 2 Ametist, 2 Sinir, 2 Taş, 1 Gölge postu | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.540 |
+| Mor kristal zırh | 10 Kristal, 5 Ametist, 2 Sinir, 1 Kristal geyik derisi | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 8.737 |
 | Timsah eldiven | 1 Timsah derisi, 1 Demir cevheri, 3 Lif | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.135 |
 | Timsah miğfer | 2 Timsah derisi, 1 Demir cevheri, 2 Sinir, 2 Taş | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.128 |
 | Timsah pulu zırh | 6 Demir cevheri, 3 Timsah derisi, 2 Bataklık kurdu postu, 2 Sinir | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 3.135 |
-| Tunç çizme | 4 Bakır cevheri, 2 Kalay cevheri, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 780 |
-| Tunç eldiven | 4 Bakır cevheri, 2 Kalay cevheri, 1 Deri parçası, 3 Lif | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 788 |
-| Tunç miğfer | 4 Bakır cevheri, 2 Kalay cevheri, 1 Deri parçası, 2 Sinir, 2 Taş | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 783 |
+| Tunç çizme | 4 Bakır cevheri, 2 Kalay cevheri, 3 Yaprak, 2 Yaban domuzu derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 780 |
+| Tunç eldiven | 4 Bakır cevheri, 2 Kalay cevheri, 3 Lif, 8 Sincap derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 788 |
+| Tunç miğfer | 4 Bakır cevheri, 2 Kalay cevheri, 2 Sinir, 2 Taş, 2 Karaca derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 783 |
 | Tunç zırh | 10 Bakır cevheri, 5 Kalay cevheri, 2 Deri parçası, 2 Sinir | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 2.160 |
 
 #### Ev eşyası (15)
@@ -4841,7 +4814,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Ahşap karyola | 4 Odun kalası, 2 Deri parçası, 6 Kuru ot, 1 Kükürt sarısı boya | – | Usta Sinan yapar (ev içine konur) | 738 |
 | Asma fener | 1 Balmumu mumu, 1 Sert odun kalası, 1 Halat, 1 Işıltılı boya | – | Usta Sinan yapar (ev içine konur) | 538 |
 | Dolap | 5 Odun kalası, 1 Halat, 1 Gelincik boyası, 1 Liken boyası | – | Usta Sinan yapar (ev içine konur) | 277 |
-| Duvar halısı | 2 Keten kumaş, 2 Mürver boyası, 1 Sopa, 1 Yosun yeşili boya | – | Usta Sinan yapar (ev içine konur) | 690 |
+| Duvar halısı | 2 Keten kumaş, 2 Mürver boyası, 1 Sopa, 1 Yosun yeşili boya | – | Usta Sinan yapar (ev içine konur) | 742 |
 | Halı | 3 Keten kumaş, 2 Mürver boyası, 2 Keten ipliği, 1 Mor kök boyası | – | Usta Sinan yapar (ev içine konur) | 1.219 |
 | Kilim | 3 Keten ipliği, 1 Mürver boyası, 6 Lif, 1 Sarı boya | – | Usta Sinan yapar (ev içine konur) | 599 |
 | Masa | 3 Odun kalası, 4 Sopa, 2 İp, 1 Damla akı boyası | – | Usta Sinan yapar (ev içine konur) | 163 |
@@ -4870,7 +4843,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Liken boyası | 3 Liken, 1 Su | – | El yapımı (Tab) | 92 |
 | Mor damar boyası | 2 Mor damar taşı, 1 Su | – | El yapımı (Tab) | 300 |
 | Mor kök boyası | 2 Mor kök, 1 Su | – | El yapımı (Tab) | 188 |
-| Mürver boyası | 3 Mürver, 2 Hayvan yağı, 1 Su | – | El yapımı (Tab) | 63 |
+| Mürver boyası | 3 Mürver, 1 Su, 1 Balık yağı | – | El yapımı (Tab) | 83 |
 | Sarı boya | 1 Sarı okr tozu, 2 Hayvan yağı, 3 Su, 2 Kum | – | El yapımı (Tab) | 143 |
 | Sarı okr tozu | 2 Sarı okr, 2 Su, 2 Kum | Taş havan | El yapımı (Tab) | 100 |
 | Yaban mersini boyası | 2 Yaban mersini, 2 Hayvan yağı, 1 Su, 1 Kum | – | El yapımı (Tab) | 30 |
@@ -4898,7 +4871,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 |---|---|---|---|---|
 | Altın külçesi | 3 Altın cevheri, 1 Kadim odun kömürü | – | El yapımı (Tab) | 409 |
 | Bakır külçesi | 3 Bakır cevheri, 1 Odun kömürü | – | El yapımı (Tab) | 23 |
-| Çelik külçesi | 2 Demir külçesi, 2 Güçlü odun kömürü, 1 Ateş tuğlası | – | El yapımı (Tab) | 625 |
+| Çelik külçesi | 2 Demir külçesi, 1 Ateş tuğlası, 2 Sağlam odun kömürü | – | El yapımı (Tab) | 625 |
 | Demir halka | 1 Demir külçesi, 1 Turba, 2 Kum | – | El yapımı (Tab) | 188 |
 | Demir külçesi | 3 Demir cevheri, 2 Turba, 1 Taş | – | El yapımı (Tab) | 120 |
 | Demir levha | 2 Demir külçesi, 1 Turba | – | El yapımı (Tab) | 353 |
@@ -4918,7 +4891,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Alevli Taş kılıç | 1 Taş kılıç, 1 Ateş yağı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 179 |
 | Alevli Taş savaş çekici | 1 Taş savaş çekici, 1 Ateş yağı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 171 |
 | Alevli Taş topuz | 1 Taş topuz, 1 Ateş yağı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 162 |
-| Ametist kılıcı | 5 Ametist, 3 Obsidyen, 2 Kristal, 1 Kadim odun sapı, 2 Gölge dişi | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 7.978 |
+| Ametist kılıcı | 5 Ametist, 3 Obsidyen, 2 Kristal, 1 Kadim odun sapı, 2 Gölge dişi, 1 Mor zehir | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 7.978 |
 | Ametist savaş çekici | 4 Ametist, 2 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 9.403 |
 | Ametist topuz | 2 Ametist, 1 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 5.717 |
 | Bakır balta | 3 Bakır külçesi, 1 Odun sapı, 2 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 143 |
@@ -4940,7 +4913,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Demir kazma | 4 Demir külçesi, 1 Sağlam odun sapı, 1 Sinir kirişi, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.125 |
 | Çelik kazma | 3 Çelik külçesi, 1 Güçlü odun sapı, 2 İp, 2 Taş | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.576 |
 | Demir kılıç | 5 Demir külçesi, 1 Sağlam odun sapı, 1 Deri parçası, 1 Sinir kirişi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.655 |
-| Demir mızrak | 3 Demir külçesi, 1 Uzun sopa, 1 Sinir kirişi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 771 |
+| Demir mızrak | 3 Demir külçesi, 1 Uzun sopa, 1 Demir halka | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 995 |
 | Demir savaş çekici | 5 Demir külçesi, 1 Sağlam odun sapı, 1 Sinir kirişi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.697 |
 | Demir topuz | 3 Demir külçesi, 1 Sağlam odun sapı, 2 İp | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.054 |
 | Ejder baltası | 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kor odun sapı, 2 İp | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 6.007 |
@@ -4971,7 +4944,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Keskin Taş savaş çekici | 1 Taş savaş çekici, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 81 |
 | Keskin Taş topuz | 1 Taş topuz, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 73 |
 | Sağlam odun yayı | 3 Sağlam odun, 2 Sinir kirişi, 1 Demir külçesi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 418 |
-| Kor odun yayı | 3 Kor odun, 2 Sinir kirişi, 1 Kara çelik külçesi | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 2.968 |
+| Kor odun yayı | 3 Kor odun, 1 Sinir kirişi, 1 Kara çelik külçesi, 1 Kara cila | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 2.968 |
 | Kuvars savaş çekici | 3 Yontulmuş kuvars, 1 Güçlü odun sapı, 1 Sinir kirişi, 1 Bileme macunu | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.333 |
 | Kuvars topuz | 2 Yontulmuş kuvars, 1 Güçlü odun sapı, 2 İp, 1 Bileme macunu | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.459 |
 | Sert odun yayı | 3 Sert odun, 1 Sinir kirişi, 1 Tunç külçesi | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 304 |
@@ -5016,15 +4989,17 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Yankı çanı | 2 Yankı taşı, 1 Kadim odun kalası, 1 İp | – | El yapımı (Tab) | 345 |
 | Yarasa zarı davul | 3 Yarasa zarı, 2 Taş örümceği ipi, 2 Dal | – | El yapımı (Tab) | 130 |
 
-#### Maden (6)
+#### Maden (8)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Gök demiri külçesi ² | 3 Gök demiri, 2 Taş kömürü, 1 Taş | – | El yapımı (Tab) | 149 |
-| Kobalt külçesi ² | 3 Kobalt cevheri, 2 Taş kömürü | – | El yapımı (Tab) | 202 |
-| Meteor demiri külçesi ² | 3 Meteor demiri, 2 Taş kömürü, 1 Füzyon taşı | – | El yapımı (Tab) | 408 |
-| Pirinç külçesi ² | 3 Pirinç cevheri, 1 Taş kömürü | – | El yapımı (Tab) | 111 |
-| Titanyum külçesi ² | 3 Titanyum cevheri, 2 Taş kömürü, 1 Enerji taşı | – | El yapımı (Tab) | 291 |
+| Gök demiri külçesi ² | 3 Gök demiri, 1 Gök kumu, 1 Rüzgâr kristali | – | El yapımı (Tab) | 184 |
+| Gök camı ² | 2 Gök camı parçası | – | El yapımı (Tab) | 60 |
+| Kobalt külçesi ² | 3 Kobalt cevheri, 1 Taş kabuk | – | El yapımı (Tab) | 225 |
+| Meteor demiri külçesi ² | 3 Meteor demiri, 1 Füzyon taşı, 1 Göktaşı tozu | – | El yapımı (Tab) | 408 |
+| Meteor demiri ² | 1 Meteor parçası | – | El yapımı (Tab) | 70 |
+| Pirinç külçesi ² | 3 Pirinç cevheri, 1 Pas tozu | – | El yapımı (Tab) | 111 |
+| Titanyum külçesi ² | 3 Titanyum cevheri, 1 Enerji taşı, 2 Gümüş kum | – | El yapımı (Tab) | 291 |
 | Yıldız külçesi ² | 3 Yıldız cevheri, 1 Plazma hücresi | – | El yapımı (Tab) | 1.135 |
 
 #### Tarım (6)
@@ -5035,18 +5010,18 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Hasat sepeti | 6 Lif, 2 Söğüt dalı | – | El yapımı (Tab) | 144 |
 | Korkuluk | 2 Sopa, 4 Kuru ot, 1 İp | – | El yapımı (Tab) | 74 |
 | Sulama kabı | 1 Nehir çömleği, 2 İp, 1 Sopa | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 88 |
-| Tırmık | 2 Sopa, 3 Keskin taş, 1 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 38 |
+| Tırmık | 2 Sopa, 1 İp, 1 Bağlı uç | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 58 |
 | Tırpan | 1 Uzun sopa, 2 Çakmaktaşı pulu, 2 İp, 1 Dal | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 132 |
 
 #### Silah (5)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Işın kılıcı ² | 2 Titanyum külçesi, 2 Plazma hücresi, 2 Ejder dişi, 3 Kristal lifi | – | Ejder Avcısı Tomris yapar (800 Vio işçilik) | 6.447 |
+| Işın kılıcı ² | 1 Titanyum külçesi, 2 Plazma hücresi, 2 Ejder dişi, 2 Kristal lifi, 1 Bulut yünü ip, 1 Kızıl ejder pulu | – | Ejder Avcısı Tomris yapar (800 Vio işçilik) | 6.447 |
 | Pompalı ² | 1 Ağır plaka, 4 Dişli, 2 Yüce odun kalası, 6 Vida, 1 Motor | – | Silahçı Tufan yapar (400 Vio işçilik) | 2.626 |
-| Pompalı fişeği ² | 1 Pirinç külçesi, 2 Barut | – | El yapımı (Tab) | 126 |
-| Tabanca ² | 2 Gök demiri külçesi, 3 Dişli, 1 Odun sapı, 4 Vida | – | Silahçı Tufan yapar (200 Vio işçilik) | 1.447 |
-| Tabanca mermisi ² | 1 Pirinç külçesi, 1 Barut | – | El yapımı (Tab) | 83 |
+| Pompalı fişeği ² | 1 Pirinç külçesi, 4 Medüz jölesi | – | El yapımı (Tab) | 139 |
+| Tabanca ² | 2 Gök demiri külçesi, 2 Dişli, 1 Odun sapı, 1 Lens, 1 Yağ birikintisi | – | Silahçı Tufan yapar (200 Vio işçilik) | 1.447 |
+| Tabanca mermisi ² | 1 Pirinç külçesi, 1 Barut | – | El yapımı (Tab) | 95 |
 
 #### Temel (4)
 
@@ -5069,99 +5044,106 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Ateş asası ² | 1 Ulu odun kalası, 2 Spor kristali, 3 Büyü otu, 1 Yüzer taş | – | Büyücü Efsun yapar (100 Vio işçilik) | 900 |
-| Buz asası ² | 1 Efsane odun kalası, 3 Buz kristali, 1 Enerji taşı, 2 Büyü otu | – | Büyücü Efsun yapar (200 Vio işçilik) | 1.600 |
+| Ateş asası ² | 1 Ulu odun kalası, 2 Spor kristali, 2 Büyü otu, 1 Yüzer taş, 1 Şaman tüyü | – | Büyücü Efsun yapar (100 Vio işçilik) | 900 |
+| Buz asası ² | 1 Efsane odun kalası, 3 Buz kristali, 2 Büyü otu, 3 Golem tozu | – | Büyücü Efsun yapar (200 Vio işçilik) | 1.600 |
 | Çamur Ana muskası | 1 Çamur Ana gözü, 2 Sazlı inci, 1 Semender derisi | – | El yapımı (Tab) | 1.400 |
 | Dev yüreği tılsımı | 1 Dev yüreği, 2 Dağ kristali, 2 Kar likeni | – | El yapımı (Tab) | 2.000 |
 | Işık Yutan kalbi tılsımı | 1 Işık Yutan kalbi, 2 Mor damar taşı, 2 Ayna taşı | – | El yapımı (Tab) | 4.200 |
 | Kor tacı tılsımı | 1 Kor Kral tacı, 2 Kor taşı, 1 Volkan camı | – | El yapımı (Tab) | 2.800 |
 | Kök özü iksiri | 1 Yaşlı Kök özü, 1 Su | – | El yapımı (Tab) | 680 |
 | Kraliçe tılsımı | 1 Kraliçe pençesi, 2 Yankı mantarı, 1 Taş örümceği ipi | – | El yapımı (Tab) | 420 |
-| Yıldırım asası ² | 1 Ölümsüz odun kalası, 3 Plazma taşı, 2 Ejder kristali, 3 Büyü otu | – | Büyücü Efsun yapar (300 Vio işçilik) | 3.200 |
+| Yıldırım asası ² | 1 Ölümsüz odun kalası, 3 Plazma taşı, 2 Ejder kristali, 3 Obsidyen kırığı | – | Büyücü Efsun yapar (300 Vio işçilik) | 3.200 |
 
-## Varyant tarifler: kullanılmayan malzemeler (v3.66, Boğaç 8 Kasım 2026)
+## Tek tarif (11 Kasım 2026, Boğaç: "bu 130 tarifi tekilleştirerek başlayalım; tekilleştiği halde kullanılmayan malzemeler varsa mantıklı bir şekilde, az olan sınıfı gözetecek şekilde ya yeni tarif bulalım ya da kaldıralım komple")
 
-**Oyunda nasıl görünür:** varyant, tarif kitabında **"Çıktı (Malzeme ile)"** adıyla ayrı bir satırdır (ör. "Kürk yelek (Sincap derisi ile)"). Kazanda ayrıca öğrenilir ve tablodaki yerde yapılır (El yapımı (Tab) ya da Usta Sinan). Yapılınca çantaya her zaman **asıl çıktı** girer, varyant adıyla bir eşya girmez. Çıktının resmi, fiyatı, Usta işçiliği ve görev sayımı (görev "X yap" diyorsa varyantla yapılan X de sayılır) aynıdır. Toplam 127 varyant vardır (Kara çelik ok'un Bazalt uçlu ikinci tarifi dahil).
+- **Her eşyanın tek tarifi vardır.** Aynı eşyayı başka malzemeyle veren ikinci tarifler ("Çıktı (Malzeme ile)" diye görünen 130 varyant) kalktı; tarif kitabında, kazanda ve El yapımı listesinde her eşya bir kez görünür.
+- **Yalnız bir varyantın kullandığı malzeme** kendi biyomundaki bir eşyanın **tek tarifine** girdi: ortak bir girdinin (çoğu kez Deri parçası, Taş, Su, Yaprak, Hayvan yağı, Taş kömürü) yerine geçer, adedi değeri tutacak kadardır. Hayvan derileri ve postları kendi biyomunun setine girer: Çayır'ınkiler Bakır ve başlangıç setine (Kurt → Bakır miğfer, Kunduz → Bakır eldiven, Yaban atı → Kürk başlık, Geyik → Kürk yelek), Orman'ınkiler Tunç setine (Karaca, Sincap, Yaban domuzu), Bataklık'ınki Demir eldivene, Kayalık Dağ'ınkiler Çelik setine (Vaşak, Yaban öküzü, Muflon, Dağ keçisi) ve Gümüş pullu zırha, Mor Kristal Vadisi'ninkiler Mor kristal setine. Tüyler okların tüyü olur (Bıldırcın → Tunç ok, Turna kuşu → Çelik ok, Yaban kazı → Kara çelik ok). Zırhlar yine yalnız doğadan düşenle yapılır; Demir halka (Veli'nin VE2 görevi ister) zırha değil Demir mızrağa girer.
+- **Yeni tarif, az olan sınıfta:** ACT 2'nin iki parça malzemesi **Maden**'de bütününe döner: **Gök camı** (2 Gök camı parçası) ve **Meteor demiri** (1 Meteor parçası).
+- **Kalkanlar** (hiçbir tarifte yeri olmayan): Kavak, Kayın, Ihlamur, Dişbudak, Kızılağaç, Porsuk, Akçaağaç, Kestane ve Ardıç **kabuğu** (bu ağaçlar artık kabuk düşürmez; kabuk yalnız Meşe, Ceviz, Söğüt ve Huş'tan düşer), **Bazalt ok ucu**, **Meyve fidanı**, **Ağ kapanı** , **Goblin oku** (goblin okçusu artık yalnız Goblin kulağı düşürür) ve **Cüruf tuğlası**. Durdu'nun DU7 görevi Kayın kabuğu yerine **5 Meşe kabuğu** ister.
+- **Fiyatlar:** girdisi pahalılaşan eşyanın fiyatı farkın 1,3 katı arttı (fark fiyatın %5'inden azsa değişmedi); onu kullananlar da bir adım: Ateş çiçeği merhemi 398 → 898, Ballı kestane 248 → 351, Barut 75 → 84, Demir mızrak 771 → 995, Deri tulum 338 → 370, Deri çanta 785 → 1.110, Direk feneri 203 → 301, Duvar halısı 690 → 742, Golem feneri 1.188 → 1.321, Gök demiri külçesi 149 → 184, Kartal tüyü miğfer 1.422 → 1.650, Kemik kolye 23 → 28, Kemik zıpkın 48 → 62, Kertenkele merhemi 143 → 155, Kil lamba 129 → 178, Kobalt külçesi 202 → 225, Kor merhemi 288 → 393, Kurutma rafı 66 → 87, Mürver boyası 63 → 83, Pişmiş bulut koyunu eti 99 → 125, Pompalı fişeği 126 → 139, Sert odun kaşığı 97 → 135, Spor yahnisi 219 → 237, Tabakhane 635 → 768, Tabanca mermisi 83 → 95, Tuz havuzu 259 → 397, Tütsühane 234 → 307, Tırmık 38 → 58, Çömlek fırını 331 → 417.
+- **Eski kayıtlar:** kayıt açılınca bilinen bir varyant eşyanın tek tarifine döner (zaten biliniyorsa silinir); kalkan eşyalar çantadan, sandıktan ve yerden kalkar, son fiyatlarıyla Vio olarak ödenir; bir kez bildirim çıkar.
+- **Sayılar:** 1.276 eşya, 805 tarif; her tarif kazanda öğrenilir, her eşyanın fiyatı var, kullanılmayan malzeme yok (oyun verisiyle sayıldı).
 
-Boğaç kararı: her malzeme en az bir tarifte girdi olur, her birine ayrı tarif verilir (grup girdisi yok). Bir **varyant** var olan bir tarifin aynı çıktıyı veren ikinci yoludur: tarifte bir girdinin yerine kendi ailesinden kullanılmayan malzeme girer (ör. Deri parçası yerine Kurt derisi). Adet, değeri tutsun diye `girdi adedi × girdi fiyatı ÷ yeni malzemenin fiyatı` (en az 1); çıktı ve fiyatı değişmez, kayıt bozulmaz. Varyant kazanda ayrıca öğrenilir. Varyant, asıl tarifin **bugünkü** girdileriyle aynıdır, yalnız yerine geçtiği girdi değişir: asıl tarifteki ok ucu ve boya varyantta da istenir, ok varyantı asıl tarifle aynı sayıda ok verir. Ok uçları ve boyalar bu tabloda değil, kendi tariflerinin girdisine eklendi (yukarıda).
-
-| Malzeme | Çıktı (aynı tarif) | Varyantın girdileri | Yerine geçtiği | Not |
-|---|---|---|---|---|
-| Sincap derisi | Kürk yelek | 15 Sincap derisi, 2 Sinir | Deri parçası |  |
-| Geyik derisi | Ok kılıfı | 2 Geyik derisi, 4 İp, 2 Dal | Deri parçası |  |
-| Karaca derisi | Kum torbası | 3 Kum, 2 Karaca derisi, 4 Lif, 3 İp | Deri parçası |  |
-| Yaban domuzu derisi | Bakır çizme | 4 Bakır cevheri, 2 Yaban domuzu derisi, 3 Yaprak | Deri parçası |  |
-| Kurt derisi | Bakır miğfer | 4 Bakır cevheri, 2 Kurt derisi, 2 Sinir, 2 Taş | Deri parçası |  |
-| Kunduz derisi | Bakır eldiven | 4 Bakır cevheri, 3 Kunduz derisi, 3 Lif | Deri parçası |  |
-| Su samuru derisi | Kürk eldiven | 3 Su samuru derisi, 2 Sinir, 3 Lif | Deri parçası |  |
-| Yaban öküzü derisi | Deri çarık | 1 Yaban öküzü derisi, 2 Sinir, 3 Yaprak | Deri parçası |  |
-| Yaban atı derisi | Kürk başlık | 2 Yaban atı derisi, 2 Sinir, 2 Taş | Deri parçası |  |
-| Dağ keçisi derisi | Hasırotu yatak | 3 Kamış, 2 Dağ keçisi derisi, 4 Lif, 3 İp | Deri parçası |  |
-| Muflon derisi | Yosun yastık | 3 Yosun, 2 Muflon derisi, 4 Lif, 3 İp | Deri parçası |  |
-| Mağara ayısı derisi | Kemik çizme | 4 Kemik, 1 Mağara ayısı derisi, 3 Yaprak | Deri parçası |  |
-| Bıldırcın tüyü | Bakır ok (→ 18) | 1 Bakır külçesi, 4 Dal, 2 Bıldırcın tüyü, 1 Diken ok ucu | Keklik tüyü |  |
-| Yaban kazı tüyü | Tunç ok (→ 10) | 1 Tunç külçesi, 4 Dal, 2 Yaban kazı tüyü, 1 Lav camı ok ucu | Keklik tüyü |  |
-| Turna kuşu tüyü | Demir ok (→ 10) | 1 Demir külçesi, 4 Dal, 2 Turna kuşu tüyü, 1 Akrep ok ucu | Ördek tüyü |  |
-| Meşe kabuğu | Huş kabuğu kabı | 2 Meşe kabuğu, 4 İp, 2 Lif | Huş kabuğu |  |
-| Kayın kabuğu | Huş katranı | 2 Kayın kabuğu, 1 Ateş, 3 Dal, 3 Lif | Huş kabuğu |  |
-| Ihlamur kabuğu | Söğüt kabuğu çayı | 1 Ihlamur kabuğu, 1 Sıcak su, 4 Su, 3 Yaprak | Söğüt kabuğu |  |
-| Akçaağaç kabuğu | Akrep kabuğu kalkanı | 4 Akçaağaç kabuğu, 1 Kor odun kalası, 2 İp | Akrep kabuğu |  |
-| Kestane kabuğu | Kor zurnası | 9 Kestane kabuğu, 1 Kor taşı | Kor kabuğu |  |
-| Ceviz kabuğu | Huş kabuğu kabı | 2 Ceviz kabuğu, 4 İp, 2 Lif | Huş kabuğu |  |
-| Dişbudak kabuğu | Huş katranı | 1 Dişbudak kabuğu, 1 Ateş, 3 Dal, 3 Lif | Huş kabuğu |  |
-| Porsuk kabuğu | Söğüt kabuğu çayı | 1 Porsuk kabuğu, 1 Sıcak su, 4 Su, 3 Yaprak | Söğüt kabuğu |  |
-| Kavak kabuğu | Akrep kabuğu kalkanı | 11 Kavak kabuğu, 1 Kor odun kalası, 2 İp | Akrep kabuğu |  |
-| Kızılağaç kabuğu | Kor zurnası | 12 Kızılağaç kabuğu, 1 Kor taşı | Kor kabuğu |  |
-| Ardıç kabuğu | Huş katranı | 1 Ardıç kabuğu, 1 Ateş, 3 Dal, 3 Lif | Huş kabuğu |  |
-| Sağlam odun kömürü | Kara çelik külçesi | 2 Çelik külçesi, 3 Obsidyen, 1 Kükürt, 3 Sağlam odun kömürü | Kor odun kömürü |  |
-| Vaşak derisi | Kemik miğfer | 4 Kemik, 2 Sinir, 1 Vaşak derisi, 2 Taş | Deri parçası |  |
-| Işık tilkisi postu | Sapan | 1 Işık tilkisi postu, 1 Halat, 3 İp, 3 Dal, 3 Taş | Deri parçası |  |
-| Kristal geyik derisi | Kemik eldiven | 4 Kemik, 2 Sinir, 1 Kristal geyik derisi, 3 Lif | Deri parçası |  |
-| Gölge postu | Ahşap karyola | 4 Odun kalası, 1 Gölge postu, 6 Kuru ot, 1 Kükürt sarısı boya | Deri parçası |  |
-| Rüzgâr tüyü | Fırtına tüyü başlık | 13 Rüzgâr tüyü, 2 Gök tazısı postu, 1 Demir miğfer | Fırtına tüyü |  |
-| Şaman tüyü | Fırtına tüyü başlık | 2 Şaman tüyü, 2 Gök tazısı postu, 1 Demir miğfer | Fırtına tüyü |  |
-| Buz kürkü | Fırtına tüyü başlık | 4 Fırtına tüyü, 3 Buz kürkü, 1 Demir miğfer | Gök tazısı postu |  |
-| Magma kabuğu | Mantar lifi eldiven | 1 Magma kabuğu, 4 Spor tozu, 2 Goblin kulağı, 1 Demir eldiven | Böcek kabuğu |  |
-| Yıldız tilkisi postu | Fırtına tüyü başlık | 4 Fırtına tüyü, 2 Yıldız tilkisi postu, 1 Demir miğfer | Gök tazısı postu |  |
-| Mağara kurdu postu | Deri tulum | 1 Mağara kurdu postu, 1 Huş katranı, 5 Lif, 4 İp | Deri parçası |  |
-| Gri vaşak postu | Deri çadır | 1 Kulübe iskeleti, 1 Gri vaşak postu, 3 Taş, 3 Dal, 3 Kum | Deri parçası |  |
-| Arduvaz | Kurutma rafı | 1 Odun sapı, 1 Hasır, 1 Arduvaz, 2 Dal, 2 Kum | Taş |  |
-| Bağlı uç | Tırmık | 2 Sopa, 1 Bağlı uç, 1 İp | Keskin taş |  |
-| Buhar | Ballı kestane | 1 Kavrulmuş kestane, 1 Yabani bal, 1 Buhar, 3 Yaprak | Su |  |
-| Ladin reçinesi | Zehir yağı | 2 Sinek mantarı, 1 Ladin reçinesi | Çam reçinesi |  |
-| Kireç harcı | Tütsühane | 1 Kulübe iskeleti, 1 Duman, 1 Kireç harcı, 3 Dal, 2 Kum | Taş |  |
-| Kemik olta iğnesi | Kemik kolye | 1 Kemik olta iğnesi, 3 İp | Kemik |  |
-| Göl tuğlası | Taş fırın | 1 Göl tuğlası, 1 Ateş yeri, 3 Taş, 3 Dal, 2 Kum | Nehir tuğlası |  |
-| Kırmızı tuğla | Çömlek fırını | 2 Kırmızı tuğla, 1 Odun kömürü, 3 Taş, 3 Dal, 2 Kum | Kerpiç duvar |  |
-| Beyaz tuğla | Kerpiç ev | 2 Beyaz tuğla, 1 Kamış kulübe çatısı, 3 Taş, 3 Dal, 2 Kum | Kerpiç duvar |  |
-| Cüruf tuğlası | Kerpiç ev | 1 Cüruf tuğlası, 1 Kamış kulübe çatısı, 3 Taş, 3 Dal, 2 Kum | Kerpiç duvar |  |
-| Balık yağı | Mürver boyası | 3 Mürver, 1 Balık yağı, 1 Su | Hayvan yağı |  |
-| Isırgan lifi | Sert odun kaşığı | 1 Sert odun sapı, 1 Isırgan lifi, 4 İp | Lif |  |
-| Tunç levha | Tunç savaş çekici | 2 Tunç levha, 1 Sert odun sapı, 1 Sinir kirişi | Tunç külçesi |  |
-| Demir halka | Tuzak | 1 Demir halka, 1 Sopa, 2 İp, 2 Dal, 2 Taş | Halat |  |
-| Diken iğnesi | Kemik zıpkın | 1 Diken iğnesi, 1 İp, 1 Uzun sopa | Kemik |  |
-| Meyve fidanı | Sağlam odun kalası | 2 Sağlam odun, 1 Meyve fidanı, 2 Lif | Dal |  |
-| Tohum yağı | Kor merhemi | 2 Kor otu, 1 Tohum yağı | Hayvan yağı |  |
-| Kara cila | Meşale | 1 Sopa, 1 Kara cila, 3 Dal, 3 Yaprak | Çam reçinesi |  |
-| Mor zehir | Panzehir | 3 Bataklık otu, 1 Mor zehir, 2 Su | Zehir bezesi |  |
-| Kızıl cam | Kil lamba | 1 Kızıl cam, 2 Hayvan yağı, 4 Dal, 3 Yaprak | Nehir kasesi |  |
-| Kristal cam | Golem feneri | 1 Golem çekirdeği, 1 Kristal cam, 2 Kadim odun kalası | Kristal |  |
-| Gece zambağı yağı | Ateş çiçeği merhemi | 2 Ateş çiçeği, 1 Gece zambağı yağı, 2 Kül | Hayvan yağı |  |
-| Mor ip | Deri çanta | 1 Deri parçası, 1 Kenevir halatı, 5 Lif, 1 Mor ip | İp |  |
-| Tazı dişi | Ejder pulu eldiven | 4 Yavru ejder pulu, 6 Tazı dişi, 1 Mantar lifi eldiven | Ejder dişi |  |
-| Salyangoz sümüğü | Pişmiş kertenkele eti | 1 Salyangoz sümüğü, 1 Ateş, 3 Su, 3 Yaprak | Kertenkele eti |  |
-| Goblin bıçağı | Hurda çizme | 2 Ağır plaka, 1 Goblin bıçağı, 4 Dişli, 1 Demir çizme | Vida |  |
-| Goblin oku | Basit ok (→ 11) | 2 Dal, 1 Goblin oku, 1 Lif, 1 Kemik ok ucu | Keskin taş |  |
-| Bulut elması | Kristal armut kompostosu | 2 Bulut elması, 2 Su, 1 Ateş | Kristal armut |  |
-| Bulut yünü ip | Işın kılıcı | 2 Titanyum külçesi, 2 Plazma hücresi, 2 Ejder dişi, 1 Bulut yünü ip | Kristal lifi |  |
-| Lens | Roket gövdesi | 4 Meteor demiri külçesi, 4 Titanyum külçesi, 3 Lens | Gök camı |  |
-| Taş kabuk | Gök demiri külçesi | 3 Gök demiri, 2 Taş kömürü, 1 Taş kabuk | Taş |  |
-| Kor pulu | Ejder pulu eldiven | 9 Kor pulu, 2 Ejder dişi, 1 Mantar lifi eldiven | Yavru ejder pulu |  |
-| Kızıl ejder pulu | Ejder pulu eldiven | 1 Kızıl ejder pulu, 2 Ejder dişi, 1 Mantar lifi eldiven | Yavru ejder pulu |  |
-| Medüz jölesi | Pompalı fişeği | 1 Pirinç külçesi, 4 Medüz jölesi | Barut |  |
-| Mor çekirdek | Meka zırh | 4 Titanyum külçesi, 3 Kobalt külçesi, 2 Enerji hücresi, 1 Motor, 2 Mor çekirdek | Golem çekirdeği |  |
-| Balçık bezesi | Direk feneri | 1 Sopa, 1 Kil lamba, 1 Balçık bezesi | Hayvan yağı |  |
-| Ağ kapanı | Yelkenli sal | 1 Sal, 3 Hasır, 1 Ağ kapanı, 2 Uzun sopa, 1 Sandal küreği | Halat |  |
+| Malzeme | Girdiği tarif | Tarif (bugün) | Ne yerine |
+|---|---|---|---|
+| Arduvaz | Kurutma rafı | 1 Odun sapı, 1 Hasır, 2 Dal, 2 Kum, 1 Arduvaz | 2 Taş yerine |
+| Balçık bezesi | Direk feneri | 1 Sopa, 1 Kil lamba, 1 Balçık bezesi | 1 Hayvan yağı yerine |
+| Balık yağı | Mürver boyası | 3 Mürver, 1 Su, 1 Balık yağı | 2 Hayvan yağı yerine |
+| Bağlı uç | Tırmık | 2 Sopa, 1 İp, 1 Bağlı uç | 3 Keskin taş yerine |
+| Beyaz tuğla | Tabakhane | 1 Deri tulum, 4 Dal, 3 Kum, 1 Beyaz tuğla | 4 Taş yerine |
+| Buhar | Ballı kestane | 1 Kavrulmuş kestane, 1 Yabani bal, 3 Yaprak, 1 Buhar | 4 Su yerine |
+| Bulut elması | Pişmiş bulut koyunu eti | 1 Bulut koyunu eti, 1 Ateş, 3 Su, 1 Bulut elması | 3 Yaprak yerine |
+| Bulut pamuğu | Bulut yünü ip | 2 Bulut yünü, 1 Bulut pamuğu | 1 Bulut yünü yerine (2 Bulut yünü kalır) |
+| Bulut yünü ip | Işın kılıcı | 1 Titanyum külçesi, 2 Plazma hücresi, 2 Ejder dişi, 2 Kristal lifi, 1 Bulut yünü ip, 1 Kızıl ejder pulu | 1 Kristal lifi yerine (2 Kristal lifi kalır) |
+| Buz kürkü | Meka zırh | 4 Titanyum külçesi, 3 Kobalt külçesi, 1 Enerji hücresi, 1 Motor, 2 Mor çekirdek, 6 Buz kürkü | 1 Enerji hücresi yerine (1 Enerji hücresi kalır) |
+| Bıldırcın tüyü | Tunç ok | 1 Tunç külçesi, 4 Dal, 1 Lav camı ok ucu, 2 Bıldırcın tüyü | 2 Keklik tüyü yerine |
+| Dağ keçisi derisi | Çelik çizme | 6 Demir cevheri, 2 Taş kömürü, 3 Yaprak, 2 Dağ keçisi derisi | 1 Deri parçası yerine |
+| Demir halka | Demir mızrak | 3 Demir külçesi, 1 Uzun sopa, 1 Demir halka | 1 Sinir kirişi yerine |
+| Diken iğnesi | Kemik zıpkın | 1 İp, 1 Uzun sopa, 1 Diken iğnesi | 3 Kemik yerine |
+| Eski devre | Meka çizme | 2 Titanyum külçesi, 1 Muhafız zırhı parçası, 1 Hurda çizme, 13 Eski devre, 4 Yıldız tilkisi postu | 2 Uzaylı devresi yerine |
+| Gece zambağı yağı | Ateş çiçeği merhemi | 2 Ateş çiçeği, 2 Kül, 1 Gece zambağı yağı | 1 Hayvan yağı yerine |
+| Geyik derisi | Kürk yelek | 2 Sinir, 4 Geyik derisi | 2 Deri parçası yerine |
+| Goblin bıçağı | Hurda çizme | 4 Dişli, 1 Demir çizme, 1 Goblin bıçağı, 14 Hurda parçası | 6 Vida yerine |
+| Golem tozu | Buz asası | 1 Efsane odun kalası, 3 Buz kristali, 2 Büyü otu, 3 Golem tozu | 1 Enerji taşı yerine |
+| Gri vaşak postu | Kartal tüyü miğfer | 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Gri vaşak postu, 1 Rüzgâr taşı | 1 Deri parçası yerine |
+| Gök camı parçası | Gök camı | 2 Gök camı parçası | yeni tarif (parçalar bütüne) |
+| Gök kumu | Gök demiri külçesi | 3 Gök demiri, 1 Gök kumu, 1 Rüzgâr kristali | 1 Taş yerine |
+| Göktaşı tozu | Meteor demiri külçesi | 3 Meteor demiri, 1 Füzyon taşı, 1 Göktaşı tozu | 2 Taş kömürü yerine |
+| Göl tuğlası | Tuz havuzu | 1 Tuz, 1 Göl kasesi, 3 Dal, 3 Kum, 1 Göl tuğlası | 3 Taş yerine |
+| Gölge postu | Mor kristal miğfer | 4 Kristal, 2 Ametist, 2 Sinir, 2 Taş, 1 Gölge postu | 1 Deri parçası yerine |
+| Gümüş kum | Titanyum külçesi | 3 Titanyum cevheri, 1 Enerji taşı, 2 Gümüş kum | 2 Taş kömürü yerine |
+| Hurda parçası | Hurda çizme | 4 Dişli, 1 Demir çizme, 1 Goblin bıçağı, 14 Hurda parçası | 2 Ağır plaka yerine |
+| Isırgan lifi | Sert odun kaşığı | 1 Sert odun sapı, 4 İp, 1 Isırgan lifi | 4 Lif yerine |
+| Işık tilkisi postu | Mor kristal eldiven | 4 Kristal, 2 Ametist, 3 Lif, 1 Işık tilkisi postu | 1 Deri parçası yerine |
+| Kara cila | Kor odun yayı | 3 Kor odun, 1 Sinir kirişi, 1 Kara çelik külçesi, 1 Kara cila | 1 Sinir kirişi yerine (1 Sinir kirişi kalır) |
+| Karaca derisi | Tunç miğfer | 4 Bakır cevheri, 1 Kalay cevheri, 2 Sinir, 2 Taş, 2 Karaca derisi | 1 Deri parçası yerine |
+| Kemik olta iğnesi | Kemik kolye | 3 İp, 1 Kemik olta iğnesi | 3 Kemik yerine |
+| Kireç harcı | Tütsühane | 1 Kulübe iskeleti, 1 Duman, 3 Dal, 2 Kum, 1 Kireç harcı | 3 Taş yerine |
+| Kor pulu | Ejder pulu eldiven | 2 Yavru ejder pulu, 1 Mantar lifi eldiven, 6 Tazı dişi, 4 Kor pulu | 2 Yavru ejder pulu yerine (2 Yavru ejder pulu kalır) |
+| Kristal cam | Golem feneri | 1 Golem çekirdeği, 2 Kadim odun kalası, 1 Kristal cam | 2 Kristal yerine |
+| Kristal geyik derisi | Mor kristal zırh | 10 Kristal, 5 Ametist, 2 Sinir, 1 Kristal geyik derisi | 2 Deri parçası yerine |
+| Kunduz derisi | Bakır eldiven | 4 Bakır cevheri, 3 Lif, 3 Kunduz derisi | 1 Deri parçası yerine |
+| Kurt derisi | Bakır miğfer | 4 Bakır cevheri, 2 Sinir, 2 Taş, 2 Kurt derisi | 1 Deri parçası yerine |
+| Kükürt tozu | Barut | 2 Barut kayası, 1 Kükürt tozu | 1 Taş kömürü yerine |
+| Kırmızı tuğla | Çömlek fırını | 1 Odun kömürü, 3 Taş, 3 Dal, 2 Kum, 2 Kırmızı tuğla | 1 Kerpiç duvar yerine |
+| Kızıl cam | Kil lamba | 2 Hayvan yağı, 4 Dal, 3 Yaprak, 1 Kızıl cam | 1 Nehir kasesi yerine |
+| Kızıl ejder pulu | Işın kılıcı | 1 Titanyum külçesi, 2 Plazma hücresi, 2 Ejder dişi, 2 Kristal lifi, 1 Bulut yünü ip, 1 Kızıl ejder pulu | 1 Titanyum külçesi yerine (1 Titanyum külçesi kalır) |
+| Ladin reçinesi | Zehir yağı | 2 Sinek mantarı, 1 Ladin reçinesi | 1 Çam reçinesi yerine |
+| Lens | Tabanca | 2 Gök demiri külçesi, 2 Dişli, 1 Odun sapı, 1 Lens, 1 Yağ birikintisi | 4 Vida yerine |
+| Magma camı | Plazma hücresi | 2 Plazma taşı, 1 Enerji hücresi, 2 Magma camı | 1 Ejder kristali yerine |
+| Magma kabuğu | Mantar lifi eldiven | 2 Böcek kabuğu, 4 Spor tozu, 2 Goblin kulağı, 1 Demir eldiven, 1 Magma kabuğu | 2 Böcek kabuğu yerine (2 Böcek kabuğu kalır) |
+| Mağara ayısı derisi | Gümüş pullu zırh | 6 Gümüş cevheri, 3 Demir cevheri, 2 Ayı pençesi, 1 Mağara ayısı derisi | 2 Deri parçası yerine |
+| Mağara kurdu postu | Deri tulum | 1 Huş katranı, 5 Lif, 4 İp, 1 Mağara kurdu postu | 1 Deri parçası yerine |
+| Medüz jölesi | Pompalı fişeği | 1 Pirinç külçesi, 4 Medüz jölesi | 2 Barut yerine |
+| Meteor parçası | Meteor demiri | 1 Meteor parçası | yeni tarif (parçalar bütüne) |
+| Mor ip | Deri çanta | 1 Deri parçası, 1 Kenevir halatı, 5 Lif, 1 Mor ip | 4 İp yerine |
+| Mor zehir | Ametist kılıcı | 5 Ametist, 3 Obsidyen, 2 Kristal, 1 Kadim odun sapı, 2 Gölge dişi, 1 Mor zehir | 1 Zehir yağı yerine |
+| Mor çekirdek | Meka zırh | 4 Titanyum külçesi, 3 Kobalt külçesi, 1 Enerji hücresi, 1 Motor, 2 Mor çekirdek, 6 Buz kürkü | 1 Golem çekirdeği yerine |
+| Muflon derisi | Çelik eldiven | 6 Demir cevheri, 2 Taş kömürü, 3 Lif, 2 Muflon derisi | 1 Deri parçası yerine |
+| Obsidyen kırığı | Yıldırım asası | 1 Ölümsüz odun kalası, 3 Plazma taşı, 2 Ejder kristali, 3 Obsidyen kırığı | 3 Büyü otu yerine |
+| Pas tozu | Pirinç külçesi | 3 Pirinç cevheri, 1 Pas tozu | 1 Taş kömürü yerine |
+| Rüzgâr kristali | Gök demiri külçesi | 3 Gök demiri, 1 Gök kumu, 1 Rüzgâr kristali | 2 Taş kömürü yerine |
+| Rüzgâr taşı | Kartal tüyü miğfer | 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Gri vaşak postu, 1 Rüzgâr taşı | 2 Taş yerine |
+| Rüzgâr tüyü | Fırtına tüyü başlık | 2 Fırtına tüyü, 2 Gök tazısı postu, 1 Demir miğfer, 7 Rüzgâr tüyü | 2 Fırtına tüyü yerine (2 Fırtına tüyü kalır) |
+| Salyangoz sümüğü | Spor yahnisi | 2 Işıldak mantarı, 2 Kök yumrusu, 1 Dev spor, 1 Ateş, 1 Salyangoz sümüğü | 2 Su yerine |
+| Sağlam odun kömürü | Çelik külçesi | 2 Demir külçesi, 1 Ateş tuğlası, 2 Sağlam odun kömürü | 2 Güçlü odun kömürü yerine |
+| Sincap derisi | Tunç eldiven | 4 Bakır cevheri, 1 Kalay cevheri, 3 Lif, 8 Sincap derisi | 1 Deri parçası yerine |
+| Su samuru derisi | Demir eldiven | 4 Demir cevheri, 3 Lif, 3 Su samuru derisi | 1 Deri parçası yerine |
+| Sümük yosunu | Mana iksiri | 2 Büyü otu, 2 Su, 4 Sümük yosunu | 1 Nehir çömleği yerine |
+| Tazı dişi | Ejder pulu eldiven | 2 Yavru ejder pulu, 1 Mantar lifi eldiven, 6 Tazı dişi, 4 Kor pulu | 2 Ejder dişi yerine |
+| Taş kabuk | Kobalt külçesi | 3 Kobalt cevheri, 1 Taş kabuk | 2 Taş kömürü yerine |
+| Tohum yağı | Kor merhemi | 2 Kor otu, 1 Tohum yağı | 1 Hayvan yağı yerine |
+| Turna kuşu tüyü | Çelik ok | 1 Çelik külçesi, 4 Dal, 1 Çakmaktaşı ok ucu, 4 Turna kuşu tüyü | 2 Ur kekliği tüyü yerine |
+| Tüy yosunu | Kertenkele merhemi | 2 Kertenkele pulu, 1 Damla taşı, 1 Tüy yosunu | 1 Su yerine |
+| Vaşak derisi | Çelik miğfer | 6 Demir cevheri, 2 Taş kömürü, 2 Sinir, 2 Taş, 1 Vaşak derisi | 1 Deri parçası yerine |
+| Volkan külü | Pişmiş kor kertenkelesi eti | 1 Kor kertenkelesi eti, 1 Ateş, 3 Su, 1 Volkan külü | 3 Yaprak yerine |
+| Yaban atı derisi | Kürk başlık | 2 Sinir, 2 Taş, 2 Yaban atı derisi | 1 Deri parçası yerine |
+| Yaban domuzu derisi | Tunç çizme | 4 Bakır cevheri, 1 Kalay cevheri, 3 Yaprak, 2 Yaban domuzu derisi | 1 Deri parçası yerine |
+| Yaban kazı tüyü | Kara çelik ok | 1 Kara çelik külçesi, 4 Dal, 1 Obsidyen ok ucu, 4 Yaban kazı tüyü | 2 Ur kekliği tüyü yerine |
+| Yaban öküzü derisi | Çelik zırh | 15 Demir cevheri, 5 Taş kömürü, 2 Sinir, 2 Yaban öküzü derisi | 2 Deri parçası yerine |
+| Yağ birikintisi | Tabanca | 2 Gök demiri külçesi, 2 Dişli, 1 Odun sapı, 1 Lens, 1 Yağ birikintisi | 1 Dişli yerine (2 Dişli kalır) |
+| Yıldız tilkisi postu | Meka çizme | 2 Titanyum külçesi, 1 Muhafız zırhı parçası, 1 Hurda çizme, 13 Eski devre, 4 Yıldız tilkisi postu | 1 Titanyum külçesi yerine (2 Titanyum külçesi kalır) |
+| Şaman tüyü | Ateş asası | 1 Ulu odun kalası, 2 Spor kristali, 2 Büyü otu, 1 Yüzer taş, 1 Şaman tüyü | 1 Büyü otu yerine (2 Büyü otu kalır) |
 
 
 # Aletler, silahlar ve zırhlar
@@ -5273,7 +5255,7 @@ Her hücrede **savunma ya da hasar · satış fiyatı**. Zırhçılar zırhları
 
 - **Dirençler:** Demir zırh kanama %30; Çelik zırh kanama %35; Kara çelik zırh yanık %40, kanama %30; Mor kristal zırh kanama, yanık ve zehir %30. Demir, Çelik, Kara çelik ve Mor kristal çizmeler çamurda yavaşlatmaz. Bütün set parçaları metaldir.
 - **Tarifler** (I = setin malzemesi; Tunç ve Demir'in eski 8 parçası eski tarifiyle kalır, yalnızca savaş çekici ve topuz yeni):
-  - Miğfer: 2 I, 1 Deri parçası, 2 Sinir · Zırh: 5 I, 2 Deri parçası, 1 Sinir kirişi · Eldiven: 2 I, 1 Deri parçası, 2 İp · Çizme: 2 I, 1 Deri parçası, 4 Lif
+  - Miğfer: 2 I, 1 Deri parçası, 2 Sinir · Zırh: 5 I, 2 Deri parçası, 1 Sinir kirişi · Eldiven: 2 I, 1 Deri parçası, 2 İp · Çizme: 2 I, 1 Deri parçası, 4 Lif. Bazı parçalarda Deri parçası yerine o biyomun hayvan derisi ya da postu istenir (değeri tutan adette; 11 Kasım 2026, Boğaç: Tarifler › Tek tarif): Bakır miğfer Kurt, Bakır eldiven Kunduz, Tunç miğfer Karaca, Tunç eldiven Sincap, Tunç çizme Yaban domuzu, Demir eldiven Su samuru, Çelik miğfer Vaşak, Çelik zırh Yaban öküzü, Çelik eldiven Muflon, Çelik çizme Dağ keçisi, Mor kristal miğfer Gölge postu, Mor kristal zırh Kristal geyik, Mor kristal eldiven Işık tilkisi; Demir mızrak Sinir kirişi yerine Demir halka ister
   - Kılıç: 4 I, 1 sap (o biyomun ağacının sapı: Çayır Çam, Orman Meşe, Bataklık Bataklık servisi, Kayalık Dağ Huş, Kül Diyarı Kül ağacı, Mor Kristal Mor söğüt), 1 Deri parçası · Mızrak: 2 I, 1 Uzun sopa, 3 İp · Savaş çekici: 5 I, 1 sap, 1 Sinir kirişi · Topuz: 3 I, 1 sap, 2 İp · Balta: 3 I, 1 sap, 2 İp · Kazma: 3 I, 1 sap, 2 İp, 2 Taş
 - **Fiyat kuralı:** parça fiyatı = en büyüğü (malzemelerin değeri × 1,3; parçanın taban değeri × kademe katsayısı; önceki setteki aynı parça × 1,25). Taban değerler: miğfer 100, zırh 260, eldiven 80, çizme 80, kılıç 180, mızrak 150, savaş çekici 210, topuz 140, balta 110, kazma 120; kademe katsayıları 1 · 2 · 3,5 · 5,5 · 8 · 12. Bu yüzden Tunç ve Demir parçalarının fiyatları da değişti (ör. Demir kılıç 1.086 → 1.278, artık Tunç kılıçtan pahalı).
 - **Taş silahlar**: Taş kılıç başlangıç setinde; Çakmaktaşı, Kuvars ve Obsidyen mızrak usta setlerindedir (Bütün setler). Bazalt mızrak kalktı.
@@ -5370,7 +5352,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 - **Eski oklar kaldırıldı:** Ok, Tüylü ok, Zehirli ok ve Mor ok tarifleriyle birlikte oyundan çıktı. Eski kayıttaki bu okların hepsi tanesi tanesine **Basit ok** olur. Ok uçları eşya olarak kalır. **Kamış ok gövdesi oyundan kalktı (8 Kasım 2026, Boğaç: hiçbir ok gövde istemiyor):** eski kayıttaki her gövde malzemesine döner (tanesi 3 Kamış + 1 İp), öğrenilmiş tarifi listeden düşer.
 - **Hasar** = yayın hasarı × okun çarpanı × (1 + 0,03 × (seviye − 1)) × Güç/Güçsüzlük. Okun hızı ve menzili yaydan gelir.
 - Yay silah yuvasına girmez; elde tutulur (balta ve kazma gibi alet yuvasında). Silahlar listesinde ayrı bir **Yaylar** grubu vardır.
-- Her biyomun yayı o biyomun ağacından ve setinin metalinden yapılır; o biyomun silahçısı ve ondan sonrakiler döver. Okları herkes elle yapar; her ok kendi ok ucunu ister (bir yapımda 10 ok; Basit okta 11, Bakır okta 18, Mor kristal okta 11). Kara çelik ok Obsidyen ya da Bazalt ok ucuyla yapılır.
+- Her biyomun yayı o biyomun ağacından ve setinin metalinden yapılır; o biyomun silahçısı ve ondan sonrakiler döver. Okları herkes elle yapar; her ok kendi ok ucunu ister (bir yapımda 10 ok; Basit okta 11, Bakır okta 18, Mor kristal okta 11). Kara çelik ok Obsidyen ok ucuyla yapılır.
 
 | Yay | Biyom | Hasar | Bekleme | Menzil | Dayanıklılık | Tarif | Nerede yapılır | Fiyat |
 |---|---|---|---|---|---|---|---|---|
@@ -5749,7 +5731,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Akrep kabuğu | 45 | – | Av: Ateş akrebi düşürür %80 (ACT 1 · Kül Diyarı) | Akrep kabuğu kalkanı |
 | Akrep kabuğu kalkanı | 296 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Akrep ok ucu | 153 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ok |
-| Akçaağaç kabuğu | 27 | – | Balta ile Akçaağaç ağacı kesilince 1 tane düşer: Kayalık Dağ (ACT 1) | – |
 | Akçaağaç özsuyu | 3 | yenir +8 | Akçaağaç ağacı kesilince 1 tane düşer | Akçaağaç şurubu |
 | Akçaağaç şurubu | 45 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Alabalık | 5 | – | Balık: Çayır/Orman suları (nehir/göl), olta/ağ/zıpkın ile %24; balık kapanına da girer | Balık çorbası, Balık sepeti, Pişmiş alabalık, Taşta alabalık, Tütsülenmiş alabalık |
@@ -5778,14 +5759,13 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ametist yayı | 2.105 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | – |
 | Ametist yüzük | 433 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ana tanrıça heykelciği | 284 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Arduvaz | 18 | – | Kazmayla kazılır: Bataklık (ACT 1) | Taş levha |
-| Ardıç kabuğu | 27 | – | Balta ile Ardıç ağacı kesilince 1 tane düşer: Kayalık Dağ (ACT 1) | – |
+| Arduvaz | 18 | – | Kazmayla kazılır: Bataklık (ACT 1) | Kurutma rafı |
 | Ardıç meyvesi | 30 | yenir +14, zehirli | Meyve ağacı (Ardıç): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Ardıç ağacından toplanır: Kayalık Dağ (ACT 1) | Ardıç meyvesi ezmesi, Ardıç meyvesi suyu |
 | Ardıç meyvesi ezmesi | 128 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ardıç meyvesi suyu | 339 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Ardıç tohumu | 3 | – | Ardıç ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
+| Ardıç tohumu | 3 | – | Ardıç ağacı baltayla kesilince %35 ihtimalle düşer | Tohum yağı |
 | Armut fidanı | 45 | – | EK4'ten sonra Çiftçi Ekin satar (45 Vio) · Bereket Adası'nda fidan yerine dikilir, 3 günde Armut ağacı olur | – |
-| Armut tohumu | 3 | – | Armut ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
+| Armut tohumu | 3 | – | Armut ağacı baltayla kesilince %35 ihtimalle düşer | Tohum yağı |
 | Arı kovanı | 139 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Asma fener | 538 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Ateş | 20 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahtapot salatası, Güçlü odun kömürü, Akçaağaç şurubu, Kor odun kömürü, Ateş tuğlası … (+117) |
@@ -5794,20 +5774,20 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ateş biberi | 52 | yenir +17 | Yerden toplanır: Kül Diyarı (ACT 1) | Acı biber ezmesi |
 | Ateş iksiri | 449 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ateş narı | 62 | yenir +19 | Meyve ağacı (Ateş narı): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Ateş narı ağacından toplanır: Kül Diyarı (ACT 1) | Ateş narı şerbeti |
-| Ateş narı tohumu | 12 | – | Ateş narı ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
+| Ateş narı tohumu | 12 | – | Ateş narı ağacı baltayla kesilince %35 ihtimalle düşer | Tohum yağı |
 | Ateş narı şerbeti | 485 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ateş tuğlası | 122 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Çelik külçesi |
 | Ateş yağı | 124 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Alevli Bakır ok, Alevli Basit ok, Alevli Çelik ok, Alevli Demir ok, Alevli Kara çelik ok, Alevli Mızrak … (+9) |
 | Ateş yeri | 34 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | Taş fırın |
 | Ateş çiçeği | 36 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Ateş çiçeği balı, Ateş çiçeği merhemi, Ateş iksiri |
 | Ateş çiçeği balı | 68 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Ateş çiçeği merhemi | 398 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Ateş çiçeği merhemi | 898 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Atölye | 114 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Av sahnesi duvar resmi | 334 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Avcı yahnisi | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ziyafet sofrası |
 | Ay elması | 93 | yenir +24 | Meyve ağacı (Ay elması): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Ay elması ağacından toplanır: Mor Kristal Vadisi (ACT 1) | Ay elması reçeli |
 | Ay elması reçeli | 573 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Ay elması tohumu | 18 | – | Ay elması ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
+| Ay elması tohumu | 18 | – | Ay elması ağacı baltayla kesilince %35 ihtimalle düşer | Tohum yağı |
 | Ay otu | 77 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Ay otu iksiri |
 | Ay otu iksiri | 655 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ay taşı | 87 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Ay taşı kolyesi |
@@ -5821,7 +5801,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ayçiçeği tohumu | 6 | – | Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar · Hasatta %45 ihtimalle 1 tane (Ayçiçeği) | – |
 | Ayı pençesi | 22 | – | Av: Mağara ayısı düşürür %60 (ACT 1 · Kayalık Dağ) | Pençe kolye, Gümüş pullu zırh |
 | Ağ | 51 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
-| Ağ kapanı | 420 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ağıl | 1.107 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Ağır plaka ² | 70 | – | Av: Hurda devi düşürür %90 (ACT 2 · Hurda Çölü) | Hurda çizme, Pompalı |
 | Bakır balta | 143 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
@@ -5842,20 +5821,20 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Bal şerbeti | 23 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bal şarabı |
 | Ballı ekmek | 149 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ballı fındık | 121 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Ballı kestane | 248 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Ballı kestane | 351 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Balmumu | 82 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Arı kovanı, Balmumu mumu |
 | Balmumu mumu | 128 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Asma fener |
-| Balçık bezesi | 78 | – | Mağara canlısı Balçık kurbağası düşürür (Batık Mağara, Bataklık) %70 ×1 · Mağara reisi Çamur Ana düşürür (Batık Mağara, Bataklık) %100 ×3–5 | – |
+| Balçık bezesi | 78 | – | Mağara canlısı Balçık kurbağası düşürür (Batık Mağara, Bataklık) %70 ×1 · Mağara reisi Çamur Ana düşürür (Batık Mağara, Bataklık) %100 ×3–5 | Direk feneri |
 | Balık kapanı | 27 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Balık pulu | 27 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Balık sepeti | 22 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Balık tutkalı | 103 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Fırtına oltası |
-| Balık yağı | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Balık yağı | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Mürver boyası |
 | Balık çorbası | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Barbunya | 26 | – | Deniz avı: Mercan Sığlığı (Gemici Poyraz'ın teknesiyle, Sv 10+, Makaralı olta) %50 | Barbunya tava |
 | Barbunya tava | 102 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Barut kayası ² | 22 | – | Kazmayla kazılır: Hurda Çölü (ACT 2) | Barut |
-| Barut ² | 75 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Pompalı fişeği, Tabanca mermisi |
+| Barut ² | 84 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Pompalı fişeği, Tabanca mermisi |
 | Basit ok | 2 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Alevli Basit ok, Keskin Basit ok, Zehirli Basit ok |
 | Basit yay | 90 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Bataklık kurdu postu | 30 | – | Av: Bataklık kurdu düşürür %80 (ACT 1 · Bataklık) | Timsah pulu zırh |
@@ -5865,16 +5844,15 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Bazalt | 45 | – | Kazmayla kazılır: Kül Diyarı (ACT 1) | Taş kase, Yontulmuş bazalt |
 | Bazalt bıçak | 420 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | – |
 | Bazalt kazıyıcı | 265 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | – |
-| Bazalt ok ucu | 2.189 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ok |
-| Bazalt pulu | 185 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bazalt bıçak, Bazalt kazıyıcı, Bazalt ok ucu |
+| Bazalt pulu | 185 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bazalt bıçak, Bazalt kazıyıcı |
 | Bazalt sivri ucu | 1.343 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ejder kazması, Ejder mızrağı |
-| Bağlı uç | 24 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Bağlı uç | 24 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Tırmık |
 | Beyaz boncuk | 72 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Beyaz boya | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Beyaz kase | 123 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Deri davul, Kil lamba, Tuz havuzu |
 | Beyaz kerpiç | 54 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Beyaz tuğla, Kerpiç duvar |
 | Beyaz kil | 23 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Ateş tuğlası, Beyaz boya, Islak beyaz kil |
-| Beyaz tuğla | 106 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Taş fırın |
+| Beyaz tuğla | 106 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Tabakhane |
 | Beyaz çömlek | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahududu suyu, Alıç suyu, Ardıç meyvesi suyu, Ateş narı şerbeti, Ay elması reçeli, Bal şarabı … (+22) |
 | Bileme macunu | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Çakmaktaşı kılıç, Çakmaktaşı mızrak, Çakmaktaşı savaş çekici, Çakmaktaşı topuz, Granit kılıç, Granit mızrak … (+17) |
 | Bileği taşı | 16 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | Beyaz kase (alet), Boynuz borazan (alet), Cilalı kristal (alet), Göl kasesi (alet), Kehribar boncuk (alet), Kemik iğne (alet) … (+5) |
@@ -5884,7 +5862,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Boynuz kazma | 67 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Boynuz kupa | 44 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Boynuz tarak | 35 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Buhar | 83 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Buhar | 83 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ballı kestane |
 | Bulut elması ² | 23 | yenir +8 | Bulut elması ağacından toplanır: Yüzen Kayalar (ACT 2) | – |
 | Bulut koyunu eti ² | 19 | – | Av: Bulut koyunu düşürür %100 (ACT 2 · Yüzen Kayalar) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş bulut koyunu eti, Turba ateşinde tütsü |
 | Bulut kuvarsı ² | 34 | – | Kazmayla kazılır: Yüzen Kayalar (ACT 2) | – |
@@ -5910,23 +5888,22 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Böğürtlen suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Büyü otu ² | 26 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) · Av: Goblin şamanı düşürür %80 (ACT 2 · Dev Mantar Ormanı) | Ateş asası, Buz asası, Mana iksiri, Yıldırım asası |
 | Bıldırcın eti | 3 | – | Av: Bıldırcın düşürür %100 (ACT 1 · Çayır) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş bıldırcın eti, Turba ateşinde tütsü … (+1) |
-| Bıldırcın tüyü | 2 | – | Av: Bıldırcın düşürür %80 (ACT 1 · Çayır) | – |
+| Bıldırcın tüyü | 2 | – | Av: Bıldırcın düşürür %80 (ACT 1 · Çayır) | Tunç ok |
 | Bıldırcın yumurtası | 3 | – | Av: Bıldırcın düşürür %40 (ACT 1 · Çayır) | Haşlanmış bıldırcın yumurtası |
 | Ceviz | 9 | yenir +8 | Meyve ağacı (Ceviz): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Ceviz ağacından toplanır: Orman (ACT 1) · Av: Sincap düşürür %35 (ACT 1 · Orman) | Ceviz içi, Ceviz kabuğu miğfer |
 | Ceviz içi | 29 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ceviz yağı |
 | Ceviz kabuğu | 11 | – | Balta ile Ceviz ağacı kesilince 1 tane düşer: Orman (ACT 1) | Ceviz kabuğu miğfer |
 | Ceviz kabuğu miğfer | 927 | giyilir +15 savunma | Tarif: kazanda öğrenilir (Zümrüt ya da kuzen cadılar; tanışınca kitaba yazılır) → Örs · Zırhçı Duran (Orman) ve üstü döver | – |
-| Ceviz tohumu | 3 | – | Ceviz ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
+| Ceviz tohumu | 3 | – | Ceviz ağacı baltayla kesilince %35 ihtimalle düşer | Tohum yağı |
 | Ceviz yağı | 48 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Cilalı kristal | 165 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Civanperçemi | 21 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Civanperçemi, Şifalı merhem |
 | Civanperçemi çayı | 239 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Cüruf tuğlası | 263 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Taş fırın |
 | Dal | 1 | – | Yerden toplanır: Orman, Çayır, Bataklık, Kayalık Dağ, Kül Diyarı, Mor Kristal Vadisi (ACT 1) | Ağ, Güçlü odun kalası, Güçlü odun kömürü, Güçlü odun sapı, Güçlü odun kömürü … (+199) |
 | Dal çit | 4 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) (→ 2), İnşa kipiyle kurulur | – |
 | Damla akı boyası | 40 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Damla taşı | 12 | – | Mağarada yerden toplanır: Yankı Mağarası (Çayır, giriş Sv 5) | Damla akı boyası, Kertenkele merhemi |
-| Dağ keçisi derisi | 7 | – | Av: Dağ keçisi düşürür %80 (ACT 1 · Kayalık Dağ) | – (satılır, görevlerde istenir) |
+| Dağ keçisi derisi | 7 | – | Av: Dağ keçisi düşürür %80 (ACT 1 · Kayalık Dağ) | Çelik çizme |
 | Dağ keçisi eti | 10 | – | Av: Dağ keçisi düşürür %100 (ACT 1 · Kayalık Dağ) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş dağ keçisi eti, Turba ateşinde tütsü … (+1) |
 | Dağ kristali | 58 | – | Mağarada yerden toplanır: Rüzgâr Mağarası (Kayalık Dağ, giriş Sv 26) | Dev yüreği tılsımı, Kristal kolye |
 | Dağ çayı | 23 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Dağ çayı demi |
@@ -5934,13 +5911,13 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Demir balta | 806 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | – |
 | Demir cevheri | 20 | – | Kazmayla kazılır: Bataklık (ACT 1) | Çelik çizme, Çelik eldiven, Çelik miğfer, Çelik zırh, Demir çizme, Demir eldiven … (+16) |
 | Demir eldiven | 1.011 | giyilir +12 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Veli (Bataklık) ve üstü döver | Mantar lifi eldiven |
-| Demir halka | 188 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Demir çizme, Demir eldiven, Demir miğfer, Demir zırh, Gümüş pullu zırh |
+| Demir halka | 188 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Demir mızrak |
 | Demir kazma | 1.125 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | – |
 | Demir külçesi | 120 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Çelik külçesi, Demir balta, Demir halka, Demir kazma, Demir kılıç, Demir levha … (+11) |
 | Demir kılıç | 1.655 | alet, silah 34 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | – |
 | Demir levha | 353 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Demir çizme, Demir eldiven, Demir miğfer, Demir zırh, Ejder zırhı, Gemi … (+4) |
 | Demir miğfer | 1.013 | giyilir +20 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Veli (Bataklık) ve üstü döver | Fırtına tüyü başlık |
-| Demir mızrak | 771 | alet, silah 30 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | – |
+| Demir mızrak | 995 | alet, silah 30 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | – |
 | Demir ok | 110 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Alevli Demir ok, Keskin Demir ok, Zehirli Demir ok |
 | Demir savaş çekici | 1.697 | alet, silah 39 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | – |
 | Demir topuz | 1.054 | alet, silah 29 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | – |
@@ -5948,20 +5925,19 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Demir çizme | 1.001 | giyilir +12 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Veli (Bataklık) ve üstü döver | Hurda çizme |
 | Deniz oltası | 210 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Makaralı olta |
 | Deri davul | 337 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Deri parçası | 15 | – | Av: derisi ya da postu olan her hayvan düşürür (büyükler 1–2; tabaklamanın yerine) | Ahşap karyola, Ametist miğfer, Bakır çizme, Bakır eldiven, Bakır kılıç, Bakır miğfer … (+59) |
-| Deri tulum | 338 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Tabakhane |
+| Deri parçası | 15 | – | Av: derisi ya da postu olan her hayvan düşürür (büyükler 1–2; tabaklamanın yerine) | Ahşap karyola, Ametist miğfer, Bakır kılıç, Bakır zırh, Bakır çizme, Ceviz kabuğu miğfer … (+41) |
+| Deri tulum | 370 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Tabakhane |
 | Deri çadır | 410 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur · Usta Sinan yapar (300 Vio) | – |
-| Deri çanta | 785 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Deri çanta | 1.110 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Deri çarık | 276 | giyilir +3 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Derin su oltası | 2.193 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Fırtına oltası |
 | Dev spor ² | 28 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) | – |
 | Dev yüreği | 1.300 | – | Mağara reisi Dağ Devi düşürür (Rüzgâr Mağarası, Kayalık Dağ) %100 ×1 | Dev yüreği tılsımı |
 | Dev yüreği tılsımı | 2.000 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Diken iğnesi | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Diken iğnesi | 17 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kemik zıpkın |
 | Diken ok ucu | 49 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ok |
-| Direk feneri | 203 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, İnşa kipiyle kurulur | – |
+| Direk feneri | 301 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, İnşa kipiyle kurulur | – |
 | Diş kolye | 35 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Dişbudak kabuğu | 19 | – | Balta ile Dişbudak ağacı kesilince 1 tane düşer: Bataklık (ACT 1) | – |
 | Dişli ² | 18 | – | Av: Pas böceği düşürür %90 (ACT 2 · Hurda Çölü) · Av: Devriye robotu düşürür %90 (ACT 2 · Hurda Çölü) | Hurda çizme, Pompalı, Tabanca |
 | Dokuma tezgâhı | 100 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | Keten kumaş (alet) |
 | Dolap | 277 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
@@ -5974,7 +5950,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Duman özü | 196 | – | Mağara canlısı Duman cini düşürür (Kor Mağarası, Kül Diyarı) %60 ×1 | Duman fişeği |
 | Dut | 18 | yenir +11 | Meyve ağacı (Dut): eli boşken F ile silkele, 2–3 tane düşer · Dut ağacından toplanır: Bataklık (ACT 1) | Dut ezmesi |
 | Dut ezmesi | 72 | – | Tarif: Zümrüt'ın kazanı öğrenilir → El yapımı (Tab) | – |
-| Duvar halısı | 690 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
+| Duvar halısı | 742 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Ebegümeci | 1 | – | Yerden toplanır: Çayır (ACT 1) | Kurutulmuş ebegümeci |
 | Efsane odun kalası ² | 88 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+14) |
 | Efsane odun ² | 30 | – | Balta ile Kristal çam, Mavi sedir, Kristal armut, Taş ağacı, Buz armudu ağaçlarından: Kristal Golem Ocağı (ACT 2) | Efsane odun kalası |
@@ -6000,7 +5976,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ekmek | 153 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | El izi resmi | 144 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Elma fidanı | 40 | – | Çiftçi Ekin'in EK4 ödülü (1 tane) · EK4'ten sonra Ekin satar (40 Vio) · Bereket Adası'nda fidan yerine dikilir, 3 günde Elma ağacı olur | – |
-| Elma tohumu | 3 | – | Elma ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
+| Elma tohumu | 3 | – | Elma ağacı baltayla kesilince %35 ihtimalle düşer | Tohum yağı |
 | Enerji hücresi ² | 221 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Meka zırh, Plazma hücresi |
 | Enerji taşı ² | 44 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) · Av: Kristal golemcik düşürür %40 (ACT 2 · Kristal Golem Ocağı) | Buz asası, Enerji hücresi, Titanyum külçesi |
 | Erzak çukuru | 22 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
@@ -6016,26 +5992,25 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Fırtına tüyü ² | 40 | – | Av: Fırtına kartalı düşürür %90 (ACT 2 · Yüzen Kayalar) | Fırtına tüyü başlık |
 | Gece sefası | 10 | yenir +5 | Yalnız gece, karanlık iyice çökünce karada (Çayır/Orman) beliren beyaz çiçek; F ile toplanır | Ay çayı, Ay ışığı iksiri |
 | Gece zambağı | 72 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Gece zambağı yağı |
-| Gece zambağı yağı | 388 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Gece zambağı yağı | 388 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ateş çiçeği merhemi |
 | Gelincik | 2 | – | Yerden toplanır: Çayır (ACT 1) | Gelincik boyası, Gelincik |
 | Gelincik boyası | 16 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Gelincik çayı | 69 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Gemi | 2.863 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Geyik boynuzu | 9 | – | Av: Geyik düşürür %40 (ACT 1 · Çayır) · Av: Mantar geyiği düşürür %40 (ACT 2 · Dev Mantar Ormanı) · Av: Yıldız geyiği düşürür %40 (ACT 2 · Gök Rıhtımı) | Boynuz kazma, Boynuz tarak |
-| Geyik derisi | 8 | – | Av: Geyik düşürür %80 (ACT 1 · Çayır) · Av: Mantar geyiği düşürür %80 (ACT 2 · Dev Mantar Ormanı) · Av: Yıldız geyiği düşürür %80 (ACT 2 · Gök Rıhtımı) | – (satılır, görevlerde istenir) |
+| Geyik derisi | 8 | – | Av: Geyik düşürür %80 (ACT 1 · Çayır) · Av: Mantar geyiği düşürür %80 (ACT 2 · Dev Mantar Ormanı) · Av: Yıldız geyiği düşürür %80 (ACT 2 · Gök Rıhtımı) | Kürk yelek |
 | Geyik eti | 8 | – | Av: Geyik düşürür %100 (ACT 1 · Çayır) · Av: Mantar geyiği düşürür %100 (ACT 2 · Dev Mantar Ormanı) · Av: Yıldız geyiği düşürür %100 (ACT 2 · Gök Rıhtımı) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş geyik eti, Turba ateşinde tütsü … (+1) |
 | Goblin bakırı ² | 16 | – | Kazmayla kazılır: Dev Mantar Ormanı (ACT 2) | – |
 | Goblin bıçağı ² | 60 | – | Av: Goblin düşürür %40 (ACT 2 · Dev Mantar Ormanı) | – |
 | Goblin eriği reçeli ² | 221 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | – |
 | Goblin eriği ² | 21 | yenir +6 | Kök ağacı ağacından toplanır: Dev Mantar Ormanı (ACT 2) | Goblin eriği reçeli |
 | Goblin kulağı ² | 30 | – | Av: Goblin düşürür %80 (ACT 2 · Dev Mantar Ormanı) · Av: Goblin okçusu düşürür %60 (ACT 2 · Dev Mantar Ormanı) | Mantar lifi eldiven |
-| Goblin oku ² | 20 | – | Av: Goblin okçusu düşürür %80 (ACT 2 · Dev Mantar Ormanı) | – |
 | Goblin otu ² | 12 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) | – |
 | Goblin otu çayı | 65 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
-| Golem feneri | 1.188 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Golem feneri | 1.321 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Golem parçası ² | 36 | – | Av: Kristal golemcik düşürür %90 (ACT 2 · Kristal Golem Ocağı) | Kristal miğfer |
 | Golem tozu ² | 14 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) | – |
-| Golem çekirdeği | 600 | – | Av: Kristal golem düşürür %60 (ACT 1 · Mor Kristal Vadisi) · Av: Büyük golem düşürür %70 (ACT 2 · Kristal Golem Ocağı) | Golem feneri, Meka zırh |
+| Golem çekirdeği | 600 | – | Av: Kristal golem düşürür %60 (ACT 1 · Mor Kristal Vadisi) · Av: Büyük golem düşürür %70 (ACT 2 · Kristal Golem Ocağı) | Golem feneri |
 | Granit | 10 | – | Kazmayla kazılır: Orman (ACT 1) | Granit balta, Granit kazma, Granit kılıç, Granit mızrak, Granit savaş çekici, Granit topuz … (+3) |
 | Granit balta | 552 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | – |
 | Granit kazma | 789 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | – |
@@ -6044,10 +6019,10 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Granit savaş çekici | 1.300 | alet, silah 27 hasar | Tarif: kazanda öğrenilir (Zümrüt ya da kuzen cadılar; tanışınca kitaba yazılır) → Örs · Silahçı Durdu (Orman) ve üstü döver | – |
 | Granit topuz | 780 | alet, silah 21 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | – |
 | Granit yayı | 295 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | – |
-| Gri vaşak postu | 150 | – | Mağara canlısı Mağara vaşağı düşürür (Rüzgâr Mağarası, Kayalık Dağ) %70 ×1 | – |
+| Gri vaşak postu | 150 | – | Mağara canlısı Mağara vaşağı düşürür (Rüzgâr Mağarası, Kayalık Dağ) %70 ×1 | Kartal tüyü miğfer |
 | Gök camı parçası ² | 36 | – | Yerden toplanır: Gök Rıhtımı (ACT 2) | – |
 | Gök camı ² | 60 | – | Kazmayla kazılır: Gök Rıhtımı (ACT 2) | Roket gövdesi |
-| Gök demiri külçesi ² | 149 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Tabanca |
+| Gök demiri külçesi ² | 184 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Tabanca |
 | Gök demiri ² | 30 | – | Kazmayla kazılır: Yüzen Kayalar (ACT 2) | Gök demiri külçesi |
 | Gök ipeği ² | 30 | – | Yerden toplanır: Gök Rıhtımı (ACT 2) | Roket |
 | Gök kumu ² | 10 | – | Yerden toplanır: Yüzen Kayalar (ACT 2) | – |
@@ -6062,13 +6037,13 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Göl kasesi | 128 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Deri davul, Kil lamba, Tuz havuzu |
 | Göl kerpici | 58 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Göl tuğlası, Kerpiç duvar |
 | Göl kili | 14 | – | Yerden toplanır: Bataklık (ACT 1) | Islak göl kili |
-| Göl tuğlası | 109 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Taş fırın |
+| Göl tuğlası | 109 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Tuz havuzu |
 | Göl çömleği | 87 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahududu suyu, Alıç suyu, Ardıç meyvesi suyu, Ateş narı şerbeti, Ay elması reçeli, Bal şarabı … (+22) |
 | Gölge dişi | 110 | – | Av: Gölge kurdu düşürür %60 (ACT 1 · Mor Kristal Vadisi) | Gölge dişi kolyesi, Ametist kılıcı |
 | Gölge dişi kolyesi | 551 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Gölge iksiri | 744 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Gölge otu | 77 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Gölge iksiri |
-| Gölge postu | 150 | – | Av: Gölge kurdu düşürür %80 (ACT 1 · Mor Kristal Vadisi) | – (satılır, görevlerde istenir) |
+| Gölge postu | 150 | – | Av: Gölge kurdu düşürür %80 (ACT 1 · Mor Kristal Vadisi) | Mor kristal miğfer |
 | Gölge pulu | 290 | – | Mağara canlısı Gölge semenderi düşürür (Ayna Mağarası, Mor Kristal Vadisi) %70 ×1 | Gölge pulu muska |
 | Gölge pulu muska | 860 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Gübre | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6088,7 +6063,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Güçlü odun | 22 | – | Balta ile Huş, Porsuk, Akçaağaç, Kestane, Ardıç ağaçlarından: Kayalık Dağ (ACT 1) | Gümüş yayı, Güçlü odun kalası, Güçlü odun kömürü, Güçlü odun yayı |
 | Güçlü odun kalası | 64 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+15) |
 | Güçlü odun kaşığı | 148 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Güçlü odun kömürü | 88 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Çelik külçesi, Gümüş külçesi |
+| Güçlü odun kömürü | 88 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Gümüş külçesi |
 | Güçlü odun sapı | 95 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Çelik balta, Çelik kazma, Çelik kılıç, Çelik savaş çekici, Çelik topuz, Güçlü odun kaşığı … (+3) |
 | Güçlü odun yayı | 1.022 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | – |
 | Hafif taş ² | 12 | – | Kazmayla kazılır: Yüzen Kayalar (ACT 2) | – |
@@ -6106,7 +6081,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Havuç | 13 | yenir +8 | Yerden toplanır: Çayır (ACT 1); tarlada da yetiştirilir (tohumunu ek, sula, tırpanla biç) | Kızarmış havuç |
 | Havuç tohumu | 4 | – | Çiftçi Ekin alet getirdikçe verir; bir kez görüldükten sonra Nazlı satar · Hasatta %45 ihtimalle 1 tane (Havuç) | – |
 | Havyar | 59 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Hayvan yağı | 3 | – | Av: Geyik düşürür %30 (ACT 1 · Çayır) · Av: Yaban öküzü düşürür %60 (ACT 1 · Kayalık Dağ) · Av: Yaban domuzu düşürür %40 (ACT 1 · Orman) · Av: Mağara ayısı düşürür %60 (ACT 1 · Kayalık Dağ) · Av: Mantar geyiği düşürür %30 (ACT 2 · Dev Mantar Ormanı) · Av: Kor domuzu düşürür %40 (ACT 2 · Ejder Volkanı) · Av: Yıldız geyiği düşürür %30 (ACT 2 · Gök Rıhtımı) | Ateş çiçeği merhemi, Beyaz boya, Don yağı mumu, Gelincik boyası, Hasırotu meşalesi, Kara boya … (+13) |
+| Hayvan yağı | 3 | – | Av: Geyik düşürür %30 (ACT 1 · Çayır) · Av: Yaban öküzü düşürür %60 (ACT 1 · Kayalık Dağ) · Av: Yaban domuzu düşürür %40 (ACT 1 · Orman) · Av: Mağara ayısı düşürür %60 (ACT 1 · Kayalık Dağ) · Av: Mantar geyiği düşürür %30 (ACT 2 · Dev Mantar Ormanı) · Av: Kor domuzu düşürür %40 (ACT 2 · Ejder Volkanı) · Av: Yıldız geyiği düşürür %30 (ACT 2 · Gök Rıhtımı) | Beyaz boya, Don yağı mumu, Gelincik boyası, Hasırotu meşalesi, Kara boya, Kardelen merhemi … (+10) |
 | Haşlanmış bıldırcın yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Haşlanmış keklik yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Haşlanmış turna kuşu yumurtası | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
@@ -6121,7 +6096,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Huş kabuğu | 27 | – | Balta ile Huş ağacı kesilince 1 tane düşer: Kayalık Dağ (ACT 1) | Huş kabuğu kabı, Huş katranı |
 | Huş kabuğu kabı | 58 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Huş katranı | 70 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Derin su oltası, Deri tulum |
-| Ihlamur kabuğu | 11 | – | Balta ile Ihlamur ağacı kesilince 1 tane düşer: Orman (ACT 1) | – |
 | Ihlamur çayı | 114 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ihlamur çiçeği | 2 | – | Ihlamur ağacı kesilince 2 tane düşer | Ihlamur çayı |
 | Islak beyaz kil | 36 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Beyaz boncuk, Beyaz çömlek, Beyaz kerpiç, Kil figürin |
@@ -6129,7 +6103,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Islak kırmızı kil | 62 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kırmızı boncuk, Kırmızı çömlek, Kırmızı kerpiç |
 | Islak nehir kili | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Nehir boncuğu, Nehir çömleği, Nehir kerpici, Pişmiş kil düdük, Yosun yalıtım |
 | Isırgan | 7 | – | Yerden toplanır: Orman (ACT 1) | Isırgan çorbası, Isırgan lifi |
-| Isırgan lifi | 33 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Isırgan lifi | 33 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sert odun kaşığı |
 | Isırgan çorbası | 150 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Işık Yutan kalbi | 2.600 | – | Mağara reisi Işık Yutan düşürür (Ayna Mağarası, Mor Kristal Vadisi) %100 ×1 | Işık Yutan kalbi tılsımı |
 | Işık Yutan kalbi tılsımı | 4.200 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6140,7 +6114,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Işık pulu eldiven | 3.953 | giyilir +18 savunma | Tarif: kazanda öğrenilir (Zümrüt ya da kuzen cadılar; tanışınca kitaba yazılır) → Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | – |
 | Işık sporu | 80 | – | Mağarada yerden toplanır: Ayna Mağarası (Mor Kristal Vadisi, giriş Sv 42) | Yıldız tozu yemi |
 | Işık tilkisi eti | 35 | – | Av: Işık tilkisi düşürür %100 (ACT 1 · Mor Kristal Vadisi) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş işık tilkisi eti, Turba ateşinde tütsü … (+1) |
-| Işık tilkisi postu | 60 | – | Av: Işık tilkisi düşürür %80 (ACT 1 · Mor Kristal Vadisi) | – (satılır, görevlerde istenir) |
+| Işık tilkisi postu | 60 | – | Av: Işık tilkisi düşürür %80 (ACT 1 · Mor Kristal Vadisi) | Mor kristal eldiven |
 | Işıl balığı | 225 | – | Deniz avı: Mor Derinlik (Gemici Poyraz'ın teknesiyle, Sv 22+, Yıldız oltası) %17 | Işıl çorbası |
 | Işıl çorbası | 676 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Işıltılı boya | 182 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
@@ -6175,7 +6149,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kanlıcalı güveç | 160 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kar likeni | 40 | – | Mağarada yerden toplanır: Rüzgâr Mağarası (Kayalık Dağ, giriş Sv 26) | Dev yüreği tılsımı |
 | Kara boya | 20 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+2) |
-| Kara cila | 157 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kara cila | 157 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kor odun yayı |
 | Kara pul | 400 | – | Av: Kara ejder düşürür %100 (ACT 1 · Kül Diyarı) | Ejder çizmesi, Ejder eldiveni, Ejder miğferi, Ejder zırhı |
 | Kara tuz | 49 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Kara tuzlu et |
 | Kara tuzlu et | 107 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6191,7 +6165,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kara çelik topuz | 8.440 | alet, silah 49 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | – |
 | Kara çelik zırh | 6.984 | giyilir +68 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | – |
 | Kara çelik çizme | 2.828 | giyilir +21 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | – |
-| Karaca derisi | 6 | – | Av: Karaca düşürür %80 (ACT 1 · Orman) · Av: Buz karacası düşürür %80 (ACT 2 · Kristal Golem Ocağı) | – (satılır, görevlerde istenir) |
+| Karaca derisi | 6 | – | Av: Karaca düşürür %80 (ACT 1 · Orman) · Av: Buz karacası düşürür %80 (ACT 2 · Kristal Golem Ocağı) | Tunç miğfer |
 | Karaca eti | 7 | – | Av: Karaca düşürür %100 (ACT 1 · Orman) · Av: Buz karacası düşürür %100 (ACT 2 · Kristal Golem Ocağı) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş karaca eti, Turba ateşinde tütsü … (+1) |
 | Kardelen | 24 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Kardelen merhemi |
 | Kardelen merhemi | 137 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6199,9 +6173,8 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kartal pençesi | 22 | – | Av: Kartal düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Fırtına kartalı düşürür %50 (ACT 2 · Yüzen Kayalar) | Kartal pençesi kolyesi, Gümüş kılıç |
 | Kartal pençesi kolyesi | 72 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kartal tüyü | 14 | – | Av: Kartal düşürür %90 (ACT 1 · Kayalık Dağ) | Kartal tüyü miğfer |
-| Kartal tüyü miğfer | 1.422 | giyilir +24 savunma | Tarif: kazanda öğrenilir (Zümrüt ya da kuzen cadılar; tanışınca kitaba yazılır) → Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | – |
+| Kartal tüyü miğfer | 1.650 | giyilir +24 savunma | Tarif: kazanda öğrenilir (Zümrüt ya da kuzen cadılar; tanışınca kitaba yazılır) → Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | – |
 | Kav | 98 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ateş, Kozalak ateşi, Turba ateşinde tütsü |
-| Kavak kabuğu | 5 | – | Balta ile Kavak ağacı kesilince 1 tane düşer: Çayır (ACT 1) | – |
 | Kavrulmuş fındık | 70 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Ballı fındık |
 | Kavrulmuş kestane | 162 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Ballı kestane |
 | Kavrulmuş su kestanesi | 88 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
@@ -6211,7 +6184,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kaya yarasası kanadı | 104 | – | Mağara canlısı Kaya yarasası düşürür (Rüzgâr Mağarası, Kayalık Dağ) %80 ×1 | Kanat yelpazesi |
 | Kaya çiçeği ² | 20 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) | – |
 | Kaya çiçeği çayı | 99 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
-| Kayın kabuğu | 11 | – | Balta ile Kayın ağacı kesilince 1 tane düşer: Orman (ACT 1) | – |
 | Kayın mantarı | 32 | yenir +14 | Yerden toplanır: Kayalık Dağ (ACT 1) | Kızarmış kayın mantarı |
 | Kefal | 13 | – | Deniz avı: Rüzgârlı Körfez (Gemici Poyraz'ın teknesiyle, Sv 6+, Deniz oltası) %50 | Kefal pilakisi |
 | Kefal pilakisi | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
@@ -6222,20 +6194,20 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kekik çayı | 239 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kekikli balık | 138 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Keklik eti | 3 | – | Av: Keklik düşürür %100 (ACT 1 · Çayır) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş keklik eti, Turba ateşinde tütsü … (+1) |
-| Keklik tüyü | 2 | – | Av: Keklik düşürür %85 (ACT 1 · Çayır) | Bakır ok, Tunç ok |
+| Keklik tüyü | 2 | – | Av: Keklik düşürür %85 (ACT 1 · Çayır) | Bakır ok |
 | Keklik yumurtası | 3 | – | Av: Keklik düşürür %30 (ACT 1 · Çayır) | Haşlanmış keklik yumurtası |
 | Keme | 22 | yenir +30 | Yerden toplanır: Hurda Çölü (ACT 2) | Kızarmış keme |
-| Kemik | 2 | – | Av: Tavşan düşürür %30 (ACT 1 · Çayır) · Av: Geyik düşürür %50 (ACT 1 · Çayır) · Av: Karaca düşürür %50 (ACT 1 · Orman) · Av: Yaban öküzü düşürür %80 (ACT 1 · Kayalık Dağ) · Av: Yaban domuzu düşürür %50 (ACT 1 · Orman) · Av: Kurt düşürür %50 (ACT 1 · Çayır) · Av: Dikenli kirpi düşürür %30 (ACT 1 · Orman) · Av: Bataklık kurdu düşürür %50 (ACT 1 · Bataklık) · Av: Engerek düşürür %30 (ACT 1 · Orman) · Av: Oklu kirpi düşürür %40 (ACT 1 · Orman) · Av: Kunduz düşürür %30 (ACT 1 · Orman) · Av: Yaban atı düşürür %50 (ACT 1 · Çayır) · Av: Dağ keçisi düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Muflon düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Mağara ayısı düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Vaşak düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Porsuk düşürür %30 (ACT 1 · Çayır) · Av: Mantar geyiği düşürür %50 (ACT 2 · Dev Mantar Ormanı) · Av: Pas kirpisi düşürür %30 (ACT 2 · Hurda Çölü) · Av: Buz karacası düşürür %50 (ACT 2 · Kristal Golem Ocağı) · Av: Kor domuzu düşürür %50 (ACT 2 · Ejder Volkanı) · Av: Yıldız geyiği düşürür %50 (ACT 2 · Gök Rıhtımı) | Bazalt kazıyıcı, Çakmaktaşı kazıyıcı, Diken iğnesi, Kemik çizme, Kemik eldiven, Kemik flüt … (+12) |
+| Kemik | 2 | – | Av: Tavşan düşürür %30 (ACT 1 · Çayır) · Av: Geyik düşürür %50 (ACT 1 · Çayır) · Av: Karaca düşürür %50 (ACT 1 · Orman) · Av: Yaban öküzü düşürür %80 (ACT 1 · Kayalık Dağ) · Av: Yaban domuzu düşürür %50 (ACT 1 · Orman) · Av: Kurt düşürür %50 (ACT 1 · Çayır) · Av: Dikenli kirpi düşürür %30 (ACT 1 · Orman) · Av: Bataklık kurdu düşürür %50 (ACT 1 · Bataklık) · Av: Engerek düşürür %30 (ACT 1 · Orman) · Av: Oklu kirpi düşürür %40 (ACT 1 · Orman) · Av: Kunduz düşürür %30 (ACT 1 · Orman) · Av: Yaban atı düşürür %50 (ACT 1 · Çayır) · Av: Dağ keçisi düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Muflon düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Mağara ayısı düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Vaşak düşürür %50 (ACT 1 · Kayalık Dağ) · Av: Porsuk düşürür %30 (ACT 1 · Çayır) · Av: Mantar geyiği düşürür %50 (ACT 2 · Dev Mantar Ormanı) · Av: Pas kirpisi düşürür %30 (ACT 2 · Hurda Çölü) · Av: Buz karacası düşürür %50 (ACT 2 · Kristal Golem Ocağı) · Av: Kor domuzu düşürür %50 (ACT 2 · Ejder Volkanı) · Av: Yıldız geyiği düşürür %50 (ACT 2 · Gök Rıhtımı) | Bazalt kazıyıcı, Diken iğnesi, Kemik eldiven, Kemik flüt, Kemik ilikli çorba, Kemik iğne … (+10) |
 | Kemik eldiven | 298 | giyilir +6 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kemik flüt | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kemik ilikli çorba | 114 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kemik iğne | 9 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | Beyaz boncuk (alet), Dağ keçisi postu giysi (alet), Geyik postu giysi (alet), Göl boncuğu (alet), Kamış flüt (alet), Karaca postu giysi (alet) … (+12) |
-| Kemik kolye | 23 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kemik kolye | 28 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kemik miğfer | 292 | giyilir +6 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kemik ok ucu | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ok |
-| Kemik olta iğnesi | 10 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kemik olta iğnesi | 10 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kemik kolye |
 | Kemik yay | 129 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
-| Kemik zıpkın | 48 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
+| Kemik zıpkın | 62 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Kemik zırh | 623 | giyilir +11 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kemik çizme | 289 | giyilir +6 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kenevir | 14 | – | Yerden toplanır: Bataklık (ACT 1) | Kenevir lifi |
@@ -6243,10 +6215,10 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kenevir lifi | 45 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kenevir halatı, Kenevir torba |
 | Kenevir torba | 78 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kerevit eti | 4 | – | Av: Kerevit düşürür %100 (ACT 1 · Çayır) · Balık: Bataklık/Kayalık Dağ suları, olta/ağ/zıpkın ile %18; balık kapanına da girer | Balık çorbası, Balık sepeti, Pişmiş kerevit, Taşta kerevit, Tütsülenmiş kerevit |
-| Kerpiç duvar | 234 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | Çömlek fırını, Kerpiç ev |
+| Kerpiç duvar | 234 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | Kerpiç ev |
 | Kerpiç ev | 1.007 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur · Usta Sinan yapar (950 Vio) | – |
 | Kertenkele eti ² | 9 | – | Av: Kaya kertenkelesi düşürür %80 (ACT 2 · Yüzen Kayalar) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş kertenkele eti, Turba ateşinde tütsü |
-| Kertenkele merhemi ² | 143 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | – |
+| Kertenkele merhemi ² | 155 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | – |
 | Kertenkele pulu ² | 18 | – | Av: Kaya kertenkelesi düşürür %90 (ACT 2 · Yüzen Kayalar) | Kertenkele merhemi |
 | Keskin Bakır ok | 10 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Keskin Basit ok | 7 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6258,31 +6230,30 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Keskin Taş savaş çekici | 81 | alet, silah 13 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Keskin Taş topuz | 73 | alet, silah 10 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Keskin Tunç ok | 98 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Keskin taş | 3 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bağlı uç, Basit ok, Kemik olta iğnesi, Kürek, Mızrak, Sivri taş … (+4) |
+| Keskin taş | 3 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Basit ok, Bağlı uç, Kemik olta iğnesi, Kürek, Mızrak, Sivri taş … (+3) |
 | Keskin Çelik ok | 582 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kestane | 30 | yenir +15 | Meyve ağacı (Kestane): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Kestane ağacından toplanır: Kayalık Dağ (ACT 1) | Kavrulmuş kestane |
-| Kestane kabuğu | 27 | – | Balta ile Kestane ağacı kesilince 1 tane düşer: Kayalık Dağ (ACT 1) | – |
-| Kestane tohumu | 3 | – | Kestane ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
+| Kestane tohumu | 3 | – | Kestane ağacı baltayla kesilince %35 ihtimalle düşer | Tohum yağı |
 | Keten | 14 | – | Yerden toplanır: Bataklık (ACT 1) | Keten lifi |
 | Keten ipliği | 83 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Halı, Keten kumaş, Kilim |
 | Keten kumaş | 141 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Duvar halısı, Halı, Perde |
 | Keten lifi | 45 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Keten ipliği |
 | Kil figürin | 55 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ana tanrıça heykelciği |
-| Kil lamba | 129 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kil lamba | 178 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kilim | 599 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
-| Kireç harcı | 59 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kireç harcı | 59 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Tütsühane |
 | Kireçtaşı | 2 | – | Kazmayla kazılır: Çayır (ACT 1) | Sönmemiş kireç |
 | Kirmen | 47 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | Keten ipliği (alet) |
 | Kirpi dikeni | 4 | – | Av: Dikenli kirpi düşürür %100 (ACT 1 · Orman) · Av: Oklu kirpi düşürür %80 (ACT 1 · Orman) · Av: Pas kirpisi düşürür %100 (ACT 2 · Hurda Çölü) | Diken iğnesi, Meşe kabuk eldiven, Meşe kabuk zırh |
 | Kobalt cevheri ² | 44 | – | Kazmayla kazılır: Kristal Golem Ocağı (ACT 2) | Kobalt külçesi |
-| Kobalt külçesi ² | 202 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Kristal miğfer, Meka zırh |
+| Kobalt külçesi ² | 225 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Kristal miğfer, Meka zırh |
 | Konak | 3.200 | – | Usta Sinan yapar (5.000 Vio) | – |
 | Kor | 40 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Balık tutkalı, Közlenmiş şiş, Oyma kano |
 | Kor Kral tacı | 1.800 | – | Mağara reisi Kor Kral düşürür (Kor Mağarası, Kül Diyarı) %100 ×1 | Kor tacı tılsımı |
 | Kor kabuğu | 160 | – | Mağara canlısı Kor böceği düşürür (Kor Mağarası, Kül Diyarı) %80 ×1–2 · Mağara reisi Kor Kral düşürür (Kor Mağarası, Kül Diyarı) %100 ×3–5 | Kor zurnası |
 | Kor kertenkelesi eti ² | 35 | – | Av: Kor kertenkelesi düşürür %100 (ACT 2 · Ejder Volkanı) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş kor kertenkelesi eti, Turba ateşinde tütsü |
 | Kor mantarı ² | 26 | – | Yerden toplanır: Ejder Volkanı (ACT 2) | – |
-| Kor merhemi | 288 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kor merhemi | 393 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kor odun | 39 | – | Balta ile Kül ağacı, Kara çam, Kızıl sedir, Ateş narı, Dikenli akasya, İncir ağaçlarından: Kül Diyarı (ACT 1) | Ejder yayı, Kor odun kalası, Kor odun kömürü, Kor odun yayı |
 | Kor odun kalası | 112 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+15) |
 | Kor odun kömürü | 139 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kara çelik külçesi |
@@ -6298,14 +6269,14 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kozalak ateşi | 20 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kraliçe pençesi | 260 | – | Mağara reisi Yankı Kraliçesi düşürür (Yankı Mağarası, Çayır) %100 ×1 | Kraliçe tılsımı |
 | Kraliçe tılsımı | 420 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kristal | 62 | – | Kazmayla kazılır: Mor Kristal Vadisi (ACT 1) · Av: Kristal golem düşürür %100 (ACT 1 · Mor Kristal Vadisi) | Ametist kılıcı, Golem feneri, Işık pulu eldiven, Kristal parçası, Mor kristal çizme, Mor kristal eldiven … (+3) |
+| Kristal | 62 | – | Kazmayla kazılır: Mor Kristal Vadisi (ACT 1) · Av: Kristal golem düşürür %100 (ACT 1 · Mor Kristal Vadisi) | Ametist kılıcı, Işık pulu eldiven, Kristal cam, Kristal parçası, Mor kristal eldiven, Mor kristal levhası … (+3) |
 | Kristal armut kompostosu ² | 167 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kristal armut ² | 14 | – | Kristal armut ağacından toplanır: Kristal Golem Ocağı (ACT 2) | Kristal armut kompostosu |
 | Kristal boynuz | 140 | – | Av: Kristal geyik düşürür %45 (ACT 1 · Mor Kristal Vadisi) | Kristal boynuz tılsımı |
 | Kristal boynuz tılsımı | 353 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kristal cam | 292 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kristal cam | 292 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Golem feneri |
 | Kristal cevheri ² | 34 | – | Kazmayla kazılır: Kristal Golem Ocağı (ACT 2) | – |
-| Kristal geyik derisi | 80 | – | Av: Kristal geyik düşürür %80 (ACT 1 · Mor Kristal Vadisi) | – (satılır, görevlerde istenir) |
+| Kristal geyik derisi | 80 | – | Av: Kristal geyik düşürür %80 (ACT 1 · Mor Kristal Vadisi) | Mor kristal zırh |
 | Kristal geyik eti | 53 | – | Av: Kristal geyik düşürür %100 (ACT 1 · Mor Kristal Vadisi) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş kristal geyik eti, Turba ateşinde tütsü … (+1) |
 | Kristal ipek | 90 | – | Av: Kristal örümcek düşürür %90 (ACT 1 · Mor Kristal Vadisi) | Ametist miğfer, Gemi, Gölge dişi kolyesi, Kristal ipek çizme, Kristal ipek kumaş, Kristal ipek zırh |
 | Kristal ipek kumaş | 476 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Yıldız oltası |
@@ -6326,15 +6297,15 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kum | 1 | – | Yerden toplanır: Mor Kristal Vadisi, Orman, Çayır, Bataklık, Kayalık Dağ, Kül Diyarı (ACT 1) | Ana tanrıça heykelciği, Arı kovanı, Ateş tuğlası, Ateş yeri, Av sahnesi duvar resmi, Balık pulu … (+64) |
 | Kum torbası | 236 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kumtaşı | 3 | – | Kazmayla kazılır: Çayır (ACT 1) | Bileği taşı, Bileme macunu, Öğütme taşı, Taş levha |
-| Kunduz derisi | 5 | – | Av: Kunduz düşürür %75 (ACT 1 · Orman) · Av: Porsuk düşürür %75 (ACT 1 · Çayır) | – (satılır, görevlerde istenir) |
+| Kunduz derisi | 5 | – | Av: Kunduz düşürür %75 (ACT 1 · Orman) · Av: Porsuk düşürür %75 (ACT 1 · Çayır) | Bakır eldiven |
 | Kunduz eti | 6 | – | Av: Kunduz düşürür %100 (ACT 1 · Orman) · Av: Porsuk düşürür %100 (ACT 1 · Çayır) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş kunduz eti, Turba ateşinde tütsü … (+1) |
 | Kupa panosu | 887 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Kurbağa | 2 | yenir +3, zehirli | Av: Zehirli kurbağa düşürür %60 (ACT 1 · Bataklık) | Balık çorbası, Balık sepeti, Pişmiş kurbağa, Taşta kurbağa, Tütsülenmiş kurbağa |
-| Kurt derisi | 9 | – | Av: Kurt düşürür %75 (ACT 1 · Çayır) | – (satılır, görevlerde istenir) |
+| Kurt derisi | 9 | – | Av: Kurt düşürür %75 (ACT 1 · Çayır) | Bakır miğfer |
 | Kurt dişi | 10 | – | Av: Kurt düşürür %50 (ACT 1 · Çayır) · Av: Bataklık kurdu düşürür %50 (ACT 1 · Bataklık) | Diş kolye |
 | Kurt eti | 6 | zehirli | Av: Kurt düşürür %100 (ACT 1 · Çayır) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş kurt eti, Turba ateşinde tütsü … (+1) |
-| Kuru ot | 1 | – | Yerden toplanır: Çayır (ACT 1) | Ahşap karyola, Beyaz kerpiç, Duman tütsüsü, Eğrelti yatağı, Erzak çukuru, Göl kerpici … (+44) |
-| Kurutma rafı | 66 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
+| Kuru ot | 1 | – | Yerden toplanır: Çayır (ACT 1) | Ahşap karyola, Beyaz kerpiç, Duman tütsüsü, Erzak çukuru, Eğrelti yatağı, Göl kerpici … (+13) |
+| Kurutma rafı | 87 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Kurutulmuş adaçayı | 123 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Adaçayı çayı |
 | Kurutulmuş böğürtlen | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kurutulmuş meyve keki, Meyveli pemmikan |
 | Kurutulmuş ebegümeci | 8 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6405,7 +6376,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kükürt tozu ² | 18 | – | Yerden toplanır: Ejder Volkanı (ACT 2) | – |
 | Kükürt çakmağı | 156 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ateş, Kozalak ateşi, Turba ateşinde tütsü |
 | Kükürtlü merhem | 207 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kül | 33 | – | Yerden toplanır: Kül Diyarı (ACT 1) · Av: Kül cini düşürür %100 (ACT 1 · Kül Diyarı) · Av: Kül böceği düşürür %100 (ACT 1 · Kül Diyarı) | Ateş çiçeği merhemi, Cüruf tuğlası, Kül ekmeği |
+| Kül | 33 | – | Yerden toplanır: Kül Diyarı (ACT 1) · Av: Kül cini düşürür %100 (ACT 1 · Kül Diyarı) · Av: Kül böceği düşürür %100 (ACT 1 · Kül Diyarı) | Ateş çiçeği merhemi, Kül ekmeği |
 | Kül böceği kabuğu | 30 | – | Av: Kül böceği düşürür %90 (ACT 1 · Kül Diyarı) | Kara cila |
 | Kül dişi | 80 | – | Av: Kül kurdu düşürür %50 (ACT 1 · Kül Diyarı) | Kül dişi muska |
 | Kül dişi muska | 300 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6426,7 +6397,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kırmızı kil | 22 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Islak kırmızı kil |
 | Kırmızı okr | 35 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Kırmızı okr tozu |
 | Kırmızı okr tozu | 100 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | El izi resmi, Kırmızı boya |
-| Kırmızı tuğla | 150 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Taş fırın |
+| Kırmızı tuğla | 150 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Çömlek fırını |
 | Kırmızı çömlek | 115 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahududu suyu, Alıç suyu, Ardıç meyvesi suyu, Ateş narı şerbeti, Ay elması reçeli, Bal şarabı … (+22) |
 | Kıvılcım | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ateş, Kav, Kozalak ateşi, Turba ateşinde tütsü |
 | Kıymık kolye | 85 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6435,14 +6406,13 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kızarmış kanlıca | 35 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızarmış kayın mantarı | 96 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızarmış keme | 66 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | – |
-| Kızıl cam | 199 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Kızıl cam | 199 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kil lamba |
 | Kızıl ejder pulu ² | 300 | – | Av: Kızıl ejder düşürür %100 (ACT 2 · Ejder Volkanı) | – |
-| Kızılağaç kabuğu | 19 | – | Balta ile Kızılağaç ağacı kesilince 1 tane düşer: Bataklık (ACT 1) | – |
 | Kızılcık | 18 | yenir +12 | Yerden toplanır: Bataklık (ACT 1) | Kızılcık ezmesi, Kızılcık suyu |
 | Kızılcık ezmesi | 79 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kızılcık suyu | 230 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kızılkanat | 4 | – | Balık: Çayır/Orman suları (deniz), olta/ağ/zıpkın ile %13; balık kapanına da girer · Balık: Çayır/Orman suları (nehir/göl), olta/ağ/zıpkın ile %17; balık kapanına da girer | Balık çorbası, Balık sepeti, Pişmiş kızılkanat, Taşta kızılkanat, Tütsülenmiş kızılkanat |
-| Ladin reçinesi | 27 | – | Ağaç: Ladin kesilince her odunla 1 tane (Orman) | Kara cila, Meşale |
+| Ladin reçinesi | 27 | – | Ağaç: Ladin kesilince her odunla 1 tane (Orman) | Zehir yağı |
 | Lav camı | 52 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Lav camı ok ucu |
 | Lav camı ok ucu | 146 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ok |
 | Lav narı | 24 | yenir +35 | Meyve ağacı (Lav narı): eli boşken F ile silkele, 2–3 tane düşer · Lav narı ağacından toplanır: Ejder Volkanı (ACT 2) | Lav narı ezmesi |
@@ -6457,7 +6427,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Lens ² | 60 | – | Av: Lazer dronu düşürür %60 (ACT 2 · Hurda Çölü) | – |
 | Levrek | 20 | – | Deniz avı: Rüzgârlı Körfez (Gemici Poyraz'ın teknesiyle, Sv 6+, Deniz oltası) %17 | Levrek şiş |
 | Levrek şiş | 65 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
-| Lif | 1 | – | Yerden toplanır: Çayır, Orman, Kül Diyarı, Bataklık, Mor Kristal Vadisi, Kayalık Dağ (ACT 1) | Ağ, Güçlü odun kalası, Güçlü odun kaşığı, Güçlü odun kömürü, Güçlü odun sapı, Güçlü odun kalası … (+165) |
+| Lif | 1 | – | Yerden toplanır: Çayır, Orman, Kül Diyarı, Bataklık, Mor Kristal Vadisi, Kayalık Dağ (ACT 1) | Ağ, Bakır eldiven, Balmumu, Balmumu mumu, Balık sepeti, Balık tutkalı … (+75) |
 | Liken | 22 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Liken boyası |
 | Liken boyası | 92 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Lüfer | 32 | – | Deniz avı: Mercan Sığlığı (Gemici Poyraz'ın teknesiyle, Sv 10+, Makaralı olta) %17 | Lüfer ızgara |
@@ -6472,10 +6442,10 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Mantar çorbası | 141 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Masa | 163 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Mavi yosun ² | 14 | – | Yerden toplanır: Kristal Golem Ocağı (ACT 2) | – |
-| Mağara ayısı derisi | 24 | – | Av: Mağara ayısı düşürür %90 (ACT 1 · Kayalık Dağ) | – (satılır, görevlerde istenir) |
+| Mağara ayısı derisi | 24 | – | Av: Mağara ayısı düşürür %90 (ACT 1 · Kayalık Dağ) | Gümüş pullu zırh |
 | Mağara ayısı eti | 17 | – | Av: Mağara ayısı düşürür %100 (ACT 1 · Kayalık Dağ) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş mağara ayısı eti, Turba ateşinde tütsü … (+1) |
 | Mağara kurdu eti | 32 | – | Mağara canlısı Mağara kurdu düşürür (Kök Mağarası, Orman) %100 ×1 | Kanlıcalı güveç |
-| Mağara kurdu postu | 40 | – | Mağara canlısı Mağara kurdu düşürür (Kök Mağarası, Orman) %60 ×1 | – |
+| Mağara kurdu postu | 40 | – | Mağara canlısı Mağara kurdu düşürür (Kök Mağarası, Orman) %60 ×1 | Deri tulum |
 | Mağara resmi | 73 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Av sahnesi duvar resmi |
 | Medüz jölesi ² | 40 | – | Av: Gök medüzü düşürür %90 (ACT 2 · Gök Rıhtımı) | – |
 | Megalit | 560 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | Taş çember |
@@ -6485,7 +6455,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Meteor demiri külçesi ² | 408 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Roket gövdesi |
 | Meteor demiri ² | 70 | – | Kazmayla kazılır: Gök Rıhtımı (ACT 2) | Meteor demiri külçesi |
 | Meteor parçası ² | 50 | – | Yerden toplanır: Gök Rıhtımı (ACT 2) | – |
-| Meyve fidanı | 18 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Meyve karışımı | 44 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Meyveli pemmikan | 210 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Meşale | 56 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
@@ -6497,7 +6466,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Midye kabuğu kaşık | 34 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Mor damar boyası | 300 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Mor damar taşı | 86 | – | Mağarada yerden toplanır: Ayna Mağarası (Mor Kristal Vadisi, giriş Sv 42) · Mağara reisi Işık Yutan düşürür (Ayna Mağarası, Mor Kristal Vadisi) %100 ×3–5 | Işık Yutan kalbi tılsımı, Mor damar boyası |
-| Mor ip | 266 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Mor ip | 266 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Deri çanta |
 | Mor kristal balta | 6.070 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | – |
 | Mor kristal eldiven | 3.547 | giyilir +26 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | – |
 | Mor kristal kazma | 6.073 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | – |
@@ -6517,27 +6486,27 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Mor sarmaşık | 67 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Kristal çiçeği tacı, Mor ip, Yıldız çelengi |
 | Mor yosun | 64 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Mor yosun yastığı |
 | Mor yosun yastığı | 699 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
-| Mor zehir | 130 | – | Av: Işık engereği düşürür %70 (ACT 1 · Mor Kristal Vadisi) | – |
+| Mor zehir | 130 | – | Av: Işık engereği düşürür %70 (ACT 1 · Mor Kristal Vadisi) | Ametist kılıcı |
 | Mor çekirdek ² | 360 | – | Av: Uzaylı dronu düşürür %40 (ACT 2 · Gök Rıhtımı) · Av: Gölge muhafız düşürür %50 (ACT 2 · Gök Rıhtımı) | – |
 | Motor ² | 180 | – | Av: Hurda devi düşürür %80 (ACT 2 · Hurda Çölü) | Meka zırh, Pompalı |
-| Muflon derisi | 7 | – | Av: Muflon düşürür %80 (ACT 1 · Kayalık Dağ) | – (satılır, görevlerde istenir) |
+| Muflon derisi | 7 | – | Av: Muflon düşürür %80 (ACT 1 · Kayalık Dağ) | Çelik eldiven |
 | Muflon eti | 10 | – | Av: Muflon düşürür %100 (ACT 1 · Kayalık Dağ) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş muflon eti, Turba ateşinde tütsü … (+1) |
 | Muhafız zırhı parçası ² | 220 | – | Av: Gölge muhafız düşürür %80 (ACT 2 · Gök Rıhtımı) | Meka çizme |
 | Mürver | 18 | yenir +11, zehirli | Meyve ağacı (Mürver): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Mürver ağacından toplanır: Bataklık (ACT 1) | Mürver boyası, Mürver ezmesi, Mürver suyu |
-| Mürver boyası | 63 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
+| Mürver boyası | 83 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Mürver ezmesi | 79 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Mürver suyu | 230 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Mürver tohumu | 3 | – | Mürver ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
+| Mürver tohumu | 3 | – | Mürver ağacı baltayla kesilince %35 ihtimalle düşer | Tohum yağı |
 | Mızrak | 31 | alet, silah 10 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | Alevli Mızrak, Keskin Mızrak, Zehirli Mızrak |
 | Nane | 2 | – | Yerden toplanır: Çayır (ACT 1) | Ay çayı, Nane |
 | Nane çayı | 69 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Nehir boncuğu | 34 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Nehir kasesi | 79 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Deri davul, Kil lamba, Tuz havuzu |
+| Nehir kasesi | 79 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Deri davul |
 | Nehir kerpici | 20 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kerpiç duvar, Nehir tuğlası |
 | Nehir kili | 3 | – | Kürek ile nehir kıyısındaki kilden kazılır | Islak nehir kili |
 | Nehir tuğlası | 60 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Taş fırın |
 | Nehir çakılı | 1 | – | Yerden toplanır: Çayır, Orman, Mor Kristal Vadisi, Bataklık, Kayalık Dağ, Kül Diyarı (ACT 1) | Bola, Çekiç taşı, Taş havan |
-| Nehir çömleği | 49 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahududu suyu, Alıç suyu, Ardıç meyvesi suyu, Ateş narı şerbeti, Ay elması reçeli, Bal şarabı … (+22) |
+| Nehir çömleği | 49 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahududu suyu, Bal şarabı, Boyalı çömlek, Bulut özü şerbeti, Böğürtlen suyu, Ejder meyvesi şerbeti … (+12) |
 | Nilüfer | 14 | – | Yerden toplanır: Bataklık (ACT 1) | Nilüfer çorbası, Nilüfer kökü unu |
 | Nilüfer kökü unu | 74 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kurutulmuş meyve keki, Kül ekmeği |
 | Nilüfer çorbası | 207 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6585,7 +6554,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Pirit çakmağı | 47 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | Ateş, Kozalak ateşi, Turba ateşinde tütsü |
 | Pişirme taşı | 57 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | Kızarmış çayır mantarı (alet), Kızarmış kanlıca (alet), Kızarmış kayın mantarı (alet), Kızarmış mağara mantarı (alet), Kızarmış kanlıca (alet) … (+20) |
 | Pişmiş alabalık | 46 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Kekikli balık |
-| Pişmiş bulut koyunu eti ² | 99 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
+| Pişmiş bulut koyunu eti ² | 125 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
 | Pişmiş buz tavşanı eti ² | 127 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
 | Pişmiş bıldırcın eti | 39 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
 | Pişmiş dağ keçisi eti | 62 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
@@ -6631,9 +6600,8 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Pişmiş ördek eti | 56 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | Sarımsaklı et |
 | Plazma hücresi ² | 539 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Işın kılıcı, Roket motoru, Yıldız külçesi |
 | Plazma taşı ² | 60 | – | Yerden toplanır: Ejder Volkanı (ACT 2) | Plazma hücresi, Yıldırım asası |
-| Pompalı fişeği ² | 126 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | – |
+| Pompalı fişeği ² | 139 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | – |
 | Pompalı ² | 2.626 | alet | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Silahçı Tufan yapar (400 Vio işçilik) | – |
-| Porsuk kabuğu | 27 | – | Balta ile Porsuk ağacı kesilince 1 tane düşer: Kayalık Dağ (ACT 1) | – |
 | Raf | 62 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Rezene | 2 | – | Yerden toplanır: Çayır (ACT 1) | Kurutulmuş rezene |
 | Rezene çayı | 69 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6645,7 +6613,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Rüzgâr eriği ezmesi | 90 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Rüzgâr kristali ² | 40 | – | Yerden toplanır: Yüzen Kayalar (ACT 2) | – |
 | Rüzgâr kuşu eti ² | 15 | – | Av: Rüzgâr kuşu düşürür %80 (ACT 2 · Yüzen Kayalar) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş rüzgâr kuşu eti, Turba ateşinde tütsü |
-| Rüzgâr taşı | 42 | – | Mağarada yerden toplanır: Rüzgâr Mağarası (Kayalık Dağ, giriş Sv 26) | Ağ kapanı |
+| Rüzgâr taşı | 42 | – | Mağarada yerden toplanır: Rüzgâr Mağarası (Kayalık Dağ, giriş Sv 26) | Kartal tüyü miğfer |
 | Rüzgâr tüyü ² | 12 | – | Av: Rüzgâr kuşu düşürür %100 (ACT 2 · Yüzen Kayalar) | – |
 | Rüzgâr çiçeği ² | 16 | – | Yerden toplanır: Yüzen Kayalar (ACT 2) | – |
 | Rüzgâr çiçeği çayı | 82 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6672,7 +6640,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Sağlam odun | 17 | – | Balta ile Bataklık servisi, Dişbudak, Mürver, Kızılağaç, Söğüt, Dut ağaçlarından: Bataklık (ACT 1) | Sağlam odun kalası, Sağlam odun kömürü, Sağlam odun yayı, Timsah dişi yayı |
 | Sağlam odun kalası | 54 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sağlam odun sapı, İskele, Makaralı olta |
 | Sağlam odun kaşığı | 104 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Sağlam odun kömürü | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Altın külçesi, Bakır külçesi, Barut, Çömlek fırını, Demir halka, Demir külçesi … (+12) |
+| Sağlam odun kömürü | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Çelik külçesi |
 | Sağlam odun sapı | 83 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Demir balta, Demir kazma, Demir kılıç, Demir savaş çekici, Demir topuz, Timsah dişi balta … (+4) |
 | Sağlam odun yayı | 418 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Ali (Bataklık) ve üstü döver | – |
 | Semender derisi | 86 | – | Mağara canlısı Batak semenderi düşürür (Batık Mağara, Bataklık) %70 ×1 | Çamur Ana muskası, Semender derisi tef |
@@ -6680,15 +6648,15 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Sepet | 42 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Balık kapanı |
 | Sert odun | 9 | – | Balta ile Meşe, Kayın, Ladin, Ihlamur, Fındık, Ceviz ağaçlarından: Orman (ACT 1) | Granit yayı, Sert odun kalası, Sert odun kömürü, Sert odun yayı |
 | Sert odun kalası | 31 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+17) |
-| Sert odun kaşığı | 97 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Sert odun kaşığı | 135 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Sert odun kömürü | 56 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Altın külçesi, Bakır külçesi, Barut, Çömlek fırını, Demir halka, Demir külçesi … (+12) |
 | Sert odun sapı | 51 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Çit, Granit balta, Granit kazma, Granit kılıç, Granit savaş çekici, Granit topuz … (+6) |
 | Sert odun yayı | 304 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Durdu (Orman) ve üstü döver | – |
-| Sincap derisi | 2 | – | Av: Sincap düşürür %60 (ACT 1 · Orman) | – (satılır, görevlerde istenir) |
+| Sincap derisi | 2 | – | Av: Sincap düşürür %60 (ACT 1 · Orman) | Tunç eldiven |
 | Sincap eti | 2 | – | Av: Sincap düşürür %100 (ACT 1 · Orman) | Avcı yahnisi, Et şişi, Kara tuzlu et, Kurutulmuş sincap eti, Pişmiş sincap eti, Turba ateşinde tütsü … (+1) |
 | Sinek mantarı | 20 | yenir +11, zehirli | Yerden toplanır: Bataklık (ACT 1) | Zehir yağı |
 | Sinir | 3 | – | Av: Tavşan düşürür %15 (ACT 1 · Çayır) · Av: Geyik düşürür %50 (ACT 1 · Çayır) · Av: Karaca düşürür %40 (ACT 1 · Orman) · Av: Yaban öküzü düşürür %60 (ACT 1 · Kayalık Dağ) · Av: Kurt düşürür %40 (ACT 1 · Çayır) · Av: Yaban atı düşürür %50 (ACT 1 · Çayır) · Av: Muflon düşürür %40 (ACT 1 · Kayalık Dağ) · Av: Mantar geyiği düşürür %50 (ACT 2 · Dev Mantar Ormanı) · Av: Buz karacası düşürür %40 (ACT 2 · Kristal Golem Ocağı) · Av: Yıldız geyiği düşürür %50 (ACT 2 · Gök Rıhtımı) | Bakır miğfer, Bakır zırh, Çelik miğfer, Çelik zırh, Demir zırh, Deri çarık … (+16) |
-| Sinir kirişi | 16 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Güçlü odun yayı, Bakır savaş çekici, Çakmaktaşı savaş çekici, Odun yayı, Çelik savaş çekici, Demir balta … (+22) |
+| Sinir kirişi | 16 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ametist yayı, Bakır savaş çekici, Demir balta, Demir kazma, Demir kılıç, Demir savaş çekici … (+21) |
 | Sinirotu | 21 | – | Yerden toplanır: Kayalık Dağ (ACT 1) | Kurutulmuş sinirotu |
 | Sinirotu çayı | 239 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Sivri taş | 15 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Taş bıçak, Taş kazma |
@@ -6701,10 +6669,10 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Spor elması ezmesi | 83 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Spor kristali ² | 40 | – | Kazmayla kazılır: Dev Mantar Ormanı (ACT 2) | Ateş asası |
 | Spor tozu ² | 14 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) · Av: Mantar böceği düşürür %100 (ACT 2 · Dev Mantar Ormanı) | Mantar lifi eldiven, Spor ekmeği |
-| Spor yahnisi | 219 | – | Tarif: Yıldız'ın kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
-| Su | 1 | – | Kap ile (Yaprak kova vb.) suyun kıyısında E | Adaçayı çayı, Ahtapot salatası, Ahududu ezmesi, Ahududu suyu, Akçaağaç kabuğu, Akçaağaç şurubu … (+329) |
+| Spor yahnisi | 237 | – | Tarif: Yıldız'ın kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
+| Su | 1 | – | Kap ile (Yaprak kova vb.) suyun kıyısında E | Adaçayı çayı, Ahtapot salatası, Ahududu ezmesi, Ahududu suyu, Akçaağaç şurubu, Alıç ezmesi … (+272) |
 | Su kestanesi | 18 | yenir +12 | Yerden toplanır: Bataklık (ACT 1) | Kavrulmuş su kestanesi |
-| Su samuru derisi | 5 | – | Av: Su samuru düşürür %75 (ACT 1 · Bataklık) | – (satılır, görevlerde istenir) |
+| Su samuru derisi | 5 | – | Av: Su samuru düşürür %75 (ACT 1 · Bataklık) | Demir eldiven |
 | Su samuru eti | 7 | – | Av: Su samuru düşürür %100 (ACT 1 · Bataklık) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş su samuru eti, Turba ateşinde tütsü … (+1) |
 | Su teresi | 14 | – | Yerden toplanır: Bataklık (ACT 1) | Nilüfer çorbası, Ot salatası |
 | Su testisi | 77 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
@@ -6719,8 +6687,8 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Sümük yosunu ² | 14 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) | – |
 | Sünger taşı bileği | 123 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Sıcak su | 34 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Adaçayı çayı, Avcı yahnisi, Balık çorbası, Balmumu, Bataklık otu çayı, Buhar … (+26) |
-| Tabakhane | 635 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
-| Tabanca mermisi ² | 83 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | – |
+| Tabakhane | 768 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
+| Tabanca mermisi ² | 95 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | – |
 | Tabanca ² | 1.447 | alet | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Silahçı Tufan yapar (200 Vio işçilik) | – |
 | Tabure | 59 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
 | Tahta kapı | 227 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab), İnşa kipiyle kurulur | – |
@@ -6728,11 +6696,11 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Tatlısu kefali | 4 | – | Balık: Çayır/Orman suları (deniz), olta/ağ/zıpkın ile %32; balık kapanına da girer | Balık çorbası, Balık sepeti, Pişmiş tatlısu kefali, Taşta tatlısu kefali, Tütsülenmiş tatlısu kefali |
 | Tatlısu levreği | 5 | – | Balık: Çayır/Orman suları (nehir/göl), olta/ağ/zıpkın ile %17; balık kapanına da girer | Balık çorbası, Balık sepeti, Pişmiş tatlısu levreği, Taşta tatlısu levreği, Tütsülenmiş tatlısu levreği |
 | Tatlısu midyesi | 9 | – | Yerden toplanır: Orman (ACT 1) · Balık: Çayır/Orman suları (nehir/göl), olta/ağ/zıpkın ile %9; balık kapanına da girer · Balık: Bataklık/Kayalık Dağ suları, olta/ağ/zıpkın ile %10; balık kapanına da girer | Balık çorbası, Balık sepeti, Midye kabuğu kaşık, Pişmiş tatlısu midyesi, Taşta tatlısu midyesi … (+2) |
-| Tavan ağı | 112 | – | Mağara canlısı Tavan örümceği düşürür (Rüzgâr Mağarası, Kayalık Dağ) %80 ×1–2 | Ağ kapanı, Gümüş çan, Kristal kolye |
+| Tavan ağı | 112 | – | Mağara canlısı Tavan örümceği düşürür (Rüzgâr Mağarası, Kayalık Dağ) %80 ×1–2 | Gümüş çan, Kristal kolye |
 | Tavşan derisi | 3 | – | Av: Tavşan düşürür %70 (ACT 1 · Çayır) | – (satılır, görevlerde istenir) |
 | Tavşan eti | 3 | – | Av: Tavşan düşürür %100 (ACT 1 · Çayır) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş tavşan eti, Turba ateşinde tütsü … (+1) |
 | Tazı dişi ² | 40 | – | Av: Gök tazısı düşürür %60 (ACT 2 · Yüzen Kayalar) | – |
-| Taş | 1 | – | Yerden toplanır: Çayır, Orman, Mor Kristal Vadisi, Kül Diyarı, Bataklık, Kayalık Dağ (ACT 1) | Ağ, Ametist miğfer, Arı kovanı, Ateş yeri, Atölye, Bakır kazma … (+90) |
+| Taş | 1 | – | Yerden toplanır: Çayır, Orman, Mor Kristal Vadisi, Kül Diyarı, Bataklık, Kayalık Dağ (ACT 1) | Ametist miğfer, Arı kovanı, Ateş yeri, Atölye, Ağ, Bakır kazma … (+84) |
 | Taş balta | 31 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | Güçlü odun kalası (alet), Kor odun kalası (alet), Kadim odun kalası (alet), Sağlam odun kalası (alet), Ulu odun kalası (alet) … (+46) |
 | Taş bıçak | 31 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | Silah olarak (hiçbir tarif alet olarak istemez) |
 | Taş duvar | 8 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab), İnşa kipiyle kurulur | – |
@@ -6743,7 +6711,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Taş kabuk ² | 40 | – | Av: Taş kaplumbağası düşürür %90 (ACT 2 · Kristal Golem Ocağı) | – |
 | Taş kase | 21 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Taş havan, Taş lamba |
 | Taş kazma | 41 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
-| Taş kömürü | 11 | – | Kazmayla kazılır: Orman (ACT 1) | Barut, Çelik çizme, Çelik eldiven, Çelik miğfer, Çelik zırh, Gök demiri külçesi … (+4) |
+| Taş kömürü | 11 | – | Kazmayla kazılır: Orman (ACT 1) | Çelik eldiven, Çelik miğfer, Çelik zırh, Çelik çizme |
 | Taş kılıç | 39 | alet, silah 12 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | Alevli Taş kılıç, Keskin Taş kılıç, Zehirli Taş kılıç |
 | Taş lamba | 41 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Taş levha | 12 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Erzak çukuru, Mağara resmi, Pişirme taşı |
@@ -6785,7 +6753,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Titanyum cevheri ² | 52 | – | Kazmayla kazılır: Kristal Golem Ocağı (ACT 2) | Titanyum külçesi |
 | Titanyum külçesi ² | 291 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Işın kılıcı, Meka çizme, Meka zırh, Roket gövdesi |
 | Titanyum plaka ² | 120 | – | Av: Büyük golem düşürür %90 (ACT 2 · Kristal Golem Ocağı) | – |
-| Tohum yağı | 84 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Tohum yağı | 84 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kor merhemi |
 | Toprak yol | 1 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) (→ 4), İnşa kipiyle kurulur | – |
 | Tunç balta | 572 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Tunç eldiven | 788 | giyilir +7 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | – |
@@ -6804,13 +6772,13 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Turba ateşinde tütsü | 69 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Turna balığı | 7 | – | Balık: Bataklık/Kayalık Dağ suları, olta/ağ/zıpkın ile %15; balık kapanına da girer · Balık: Kül Diyarı/Mor Kristal Vadisi suları, olta/ağ/zıpkın ile %25; balık kapanına da girer | Balık çorbası, Balık sepeti, Pişmiş turna balığı, Taşta turna balığı, Tütsülenmiş turna balığı |
 | Turna kuşu eti | 7 | – | Av: Turna kuşu düşürür %100 (ACT 1 · Bataklık) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş turna kuşu eti, Turba ateşinde tütsü … (+1) |
-| Turna kuşu tüyü | 2 | – | Av: Turna kuşu düşürür %85 (ACT 1 · Bataklık) | – |
+| Turna kuşu tüyü | 2 | – | Av: Turna kuşu düşürür %85 (ACT 1 · Bataklık) | Çelik ok |
 | Turna kuşu yumurtası | 3 | – | Av: Turna kuşu düşürür %30 (ACT 1 · Bataklık) | Haşlanmış turna kuşu yumurtası |
 | Tuz | 54 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Acı biber ezmesi, Kaya patlatıcı … (+34) |
-| Tuz havuzu | 259 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
+| Tuz havuzu | 397 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Tuz kayası | 19 | – | Kazmayla kazılır: Bataklık (ACT 1) | Havyar, Tuz |
 | Tuzak | 66 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
-| Tütsühane | 234 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
+| Tütsühane | 307 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Tütsülenmiş alabalık | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Tütsülenmiş bıldırcın eti | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Tütsülenmiş dağ keçisi eti | 94 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
@@ -6849,29 +6817,29 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Tütsülenmiş çapak | 61 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Tütsülenmiş ördek eti | 83 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Tüy yosunu ² | 10 | – | Yerden toplanır: Yüzen Kayalar (ACT 2) | – |
-| Tırmık | 38 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
+| Tırmık | 58 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Tırpan | 132 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Ulu odun kalası ² | 67 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+14) |
 | Ulu odun ² | 22 | – | Balta ile Mavi mantar, Bulut çamı, Gök söğüdü, Rüzgâr meşesi, Bulut elması, Dev mantar, Spor ağacı, Kök ağacı, Rüzgâr eriği, Spor elması ağaçlarından: Yüzen Kayalar ve Dev Mantar Ormanı (ACT 2) | Ulu odun kalası |
 | Ur kekliği eti | 9 | – | Av: Ur kekliği düşürür %100 (ACT 1 · Kayalık Dağ) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş ur kekliği eti, Turba ateşinde tütsü … (+1) |
-| Ur kekliği tüyü | 4 | – | Av: Ur kekliği düşürür %85 (ACT 1 · Kayalık Dağ) | Çelik ok, Kara çelik ok, Mor kristal ok |
+| Ur kekliği tüyü | 4 | – | Av: Ur kekliği düşürür %85 (ACT 1 · Kayalık Dağ) | Mor kristal ok |
 | Ur kekliği yumurtası | 7 | yenir +15 | Av: Ur kekliği düşürür %35 (ACT 1 · Kayalık Dağ) | Haşlanmış ur kekliği yumurtası |
 | Uzaylı devresi ² | 200 | – | Av: Uzaylı dronu düşürür %70 (ACT 2 · Gök Rıhtımı) · Av: Gök bekçisi düşürür %100 (ACT 2 · Gök Rıhtımı) | Meka çizme, Roket |
 | Uzun sopa | 22 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Bakır mızrak, Basit yay, Çakmaktaşı mızrak, Çelik mızrak, Demir mızrak, Deniz oltası … (+13) |
-| Vaşak derisi | 24 | – | Av: Vaşak düşürür %85 (ACT 1 · Kayalık Dağ) | – (satılır, görevlerde istenir) |
+| Vaşak derisi | 24 | – | Av: Vaşak düşürür %85 (ACT 1 · Kayalık Dağ) | Çelik miğfer |
 | Vaşak eti | 17 | – | Av: Vaşak düşürür %100 (ACT 1 · Kayalık Dağ) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş vaşak eti, Turba ateşinde tütsü … (+1) |
 | Vida ² | 8 | – | Yerden toplanır: Hurda Çölü (ACT 2) · Av: Hurda faresi düşürür %90 (ACT 2 · Hurda Çölü) | Hurda çizme, Pompalı, Tabanca |
 | Volkan camı | 74 | – | Mağarada yerden toplanır: Kor Mağarası (Kül Diyarı, giriş Sv 34) | Kor tacı tılsımı, Volkan camı muska |
 | Volkan camı muska | 540 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Volkan demiri ² | 40 | – | Kazmayla kazılır: Ejder Volkanı (ACT 2) | – |
 | Volkan külü ² | 10 | – | Yerden toplanır: Ejder Volkanı (ACT 2) | – |
-| Yaban atı derisi | 10 | – | Av: Yaban atı düşürür %80 (ACT 1 · Çayır) | – (satılır, görevlerde istenir) |
+| Yaban atı derisi | 10 | – | Av: Yaban atı düşürür %80 (ACT 1 · Çayır) | Kürk başlık |
 | Yaban atı eti | 9 | – | Av: Yaban atı düşürür %100 (ACT 1 · Çayır) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş yaban atı eti, Turba ateşinde tütsü … (+1) |
-| Yaban domuzu derisi | 9 | – | Av: Yaban domuzu düşürür %70 (ACT 1 · Orman) · Av: Kor domuzu düşürür %70 (ACT 2 · Ejder Volkanı) | – (satılır, görevlerde istenir) |
+| Yaban domuzu derisi | 9 | – | Av: Yaban domuzu düşürür %70 (ACT 1 · Orman) · Av: Kor domuzu düşürür %70 (ACT 2 · Ejder Volkanı) | Tunç çizme |
 | Yaban domuzu dişi | 11 | – | Av: Yaban domuzu düşürür %45 (ACT 1 · Orman) · Av: Kor domuzu düşürür %45 (ACT 2 · Ejder Volkanı) | Domuz dişi muska, Granit savaş çekici |
 | Yaban domuzu eti | 8 | – | Av: Yaban domuzu düşürür %100 (ACT 1 · Orman) · Av: Kor domuzu düşürür %100 (ACT 2 · Ejder Volkanı) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş yaban domuzu eti, Turba ateşinde tütsü … (+1) |
 | Yaban kazı eti | 7 | – | Av: Yaban kazı düşürür %100 (ACT 1 · Bataklık) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş yaban kazı eti, Turba ateşinde tütsü … (+1) |
-| Yaban kazı tüyü | 2 | – | Av: Yaban kazı düşürür %85 (ACT 1 · Bataklık) | – |
+| Yaban kazı tüyü | 2 | – | Av: Yaban kazı düşürür %85 (ACT 1 · Bataklık) | Kara çelik ok |
 | Yaban kazı yumurtası | 3 | – | Av: Yaban kazı düşürür %35 (ACT 1 · Bataklık) | Haşlanmış yaban kazı yumurtası |
 | Yaban mersini | 9 | yenir +9 | Yerden toplanır: Orman (ACT 1) | Yaban mersini boyası, Yaban mersini ezmesi, Yaban mersini suyu |
 | Yaban mersini boyası | 30 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
@@ -6881,7 +6849,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yaban çileği | 2 | yenir +6 | Yerden toplanır: Çayır (ACT 1) | Yaban çileği ezmesi, Yaban çileği suyu |
 | Yaban çileği ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yaban çileği suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Yaban öküzü derisi | 14 | – | Av: Yaban öküzü düşürür %100 (ACT 1 · Kayalık Dağ) | – (satılır, görevlerde istenir) |
+| Yaban öküzü derisi | 14 | – | Av: Yaban öküzü düşürür %100 (ACT 1 · Kayalık Dağ) | Çelik zırh |
 | Yaban öküzü eti | 15 | – | Av: Yaban öküzü düşürür %100 (ACT 1 · Kayalık Dağ) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş yaban öküzü eti, Turba ateşinde tütsü … (+1) |
 | Yabani armut | 2 | yenir +7 | Meyve ağacı (Armut): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Armut ağacından toplanır: Çayır (ACT 1) | Yabani armut ezmesi, Yabani armut suyu |
 | Yabani armut ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6908,7 +6876,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yankı çorbası | 91 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Yanık kök | 46 | – | Yerden toplanır: Kül Diyarı (ACT 1) | Yanık kök çayı |
 | Yanık kök çayı | 337 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Yaprak | 1 | – | Yerden toplanır: Orman, Çayır, Bataklık, Kül Diyarı, Mor Kristal Vadisi, Kayalık Dağ (ACT 1) | Adaçayı çayı, Ahududu suyu, Akçaağaç kabuğu, Akçaağaç şurubu, Alıç suyu, Ardıç kabuğu … (+247) |
+| Yaprak | 1 | – | Yerden toplanır: Orman, Çayır, Bataklık, Kül Diyarı, Mor Kristal Vadisi, Kayalık Dağ (ACT 1) | Adaçayı çayı, Ahududu suyu, Akçaağaç şurubu, Alıç suyu, Ardıç meyvesi suyu, Ateş … (+180) |
 | Yaprak barınağı | 1 | – | Usta Sinan yapar (25 Vio, malzeme: 8 Dal, 12 Yaprak, 4 Lif) | – |
 | Yaprak kova | 8 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yarasa gübresi | 3 | – | Yerden toplanır: Mor Kristal Vadisi, Kayalık Dağ, Kül Diyarı, Çayır, Orman, Bataklık (ACT 1) | Gübre, Kaya patlatıcı |
@@ -6936,7 +6904,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yıldırım asası ² | 3.200 | alet | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Büyücü Efsun yapar (300 Vio işçilik) | – |
 | Yıldız cevheri ² | 110 | – | Kazmayla kazılır: Gök Rıhtımı (ACT 2) | Yıldız külçesi |
 | Yıldız eriği | 93 | yenir +22 | Meyve ağacı (Yıldız eriği): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Yıldız eriği ağacından toplanır: Mor Kristal Vadisi (ACT 1) | Kurutulmuş yıldız eriği |
-| Yıldız eriği tohumu | 18 | – | Yıldız eriği ağacı baltayla kesilince %35 ihtimalle düşer | Meyve fidanı, Tohum yağı |
+| Yıldız eriği tohumu | 18 | – | Yıldız eriği ağacı baltayla kesilince %35 ihtimalle düşer | Tohum yağı |
 | Yıldız kirazı | 26 | yenir +37 | Meyve ağacı (Yıldız kirazı): eli boşken F ile silkele, 2–3 tane düşer · Yıldız kirazı ağacından toplanır: Gök Rıhtımı (ACT 2) | Yıldız kirazı ezmesi |
 | Yıldız kirazı ezmesi | 102 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Yıldız külçesi ² | 1.135 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Roket motoru |
@@ -6951,7 +6919,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yıldız çiçeği | 74 | – | Yerden toplanır: Mor Kristal Vadisi (ACT 1) | Yıldız çelengi |
 | Yıldız çorbası | 205 | – | Tarif: Yıldız'ın kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Zehir bezesi | 16 | – | Av: Zehirli kurbağa düşürür %80 (ACT 1 · Bataklık) · Av: Engerek düşürür %60 (ACT 1 · Orman) | Panzehir |
-| Zehir yağı | 75 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ametist kılıcı, Ametist savaş çekici, Ametist topuz, Obsidyen mızrak, Timsah dişi kılıcı, Timsah dişi mızrak … (+13) |
+| Zehir yağı | 75 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ametist savaş çekici, Ametist topuz, Obsidyen mızrak, Timsah dişi kılıcı, Timsah dişi mızrak, Timsah dişi savaş çekici … (+12) |
 | Zehirli Bakır ok | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Zehirli Basit ok | 10 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Zehirli Demir ok | 129 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6978,7 +6946,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Çakmaktaşı topuz | 164 | alet, silah 16 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | – |
 | Çakıl yol | 2 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) (→ 4), İnşa kipiyle kurulur | – |
 | Çam kozalağı | 1 | – | Çam ağacı kesilince 1 tane düşer | Kozalak ateşi |
-| Çam reçinesi | 27 | – | Ağaç: Çam kesilince her odunla 1 tane (Çayır) | Ateş yağı, Bileme macunu, Kara cila, Meşale, Zehir yağı |
+| Çam reçinesi | 27 | – | Ağaç: Çam kesilince her odunla 1 tane (Çayır) | Ateş yağı, Bileme macunu, Kara cila, Meşale |
 | Çamur Ana gözü | 900 | – | Mağara reisi Çamur Ana düşürür (Batık Mağara, Bataklık) %100 ×1 | Çamur Ana muskası |
 | Çamur Ana muskası | 1.400 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Çapak | 3 | – | Balık: Çayır/Orman suları (deniz), olta/ağ/zıpkın ile %28; balık kapanına da girer · Balık: Çayır/Orman suları (nehir/göl), olta/ağ/zıpkın ile %14; balık kapanına da girer | Balık çorbası, Balık sepeti, Pişmiş çapak, Taşta çapak, Tütsülenmiş çapak |
@@ -7001,7 +6969,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Çöl inciri | 18 | yenir +31 | Meyve ağacı (Çöl inciri): eli boşken F ile silkele, 2–3 tane düşer · Çöl inciri ağacından toplanır: Hurda Çölü (ACT 2) | Çöl inciri ezmesi |
 | Çöl inciri ezmesi | 72 | – | Tarif: Yıldız'ın kazanı öğrenilir → El yapımı (Tab) | – |
 | Çöl otu ² | 8 | – | Yerden toplanır: Hurda Çölü (ACT 2) | – |
-| Çömlek fırını | 331 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
+| Çömlek fırını | 417 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | Öküz boynuzu | 16 | – | Av: Yaban öküzü düşürür %50 (ACT 1 · Kayalık Dağ) | Boynuz borazan, Boynuz kupa, Kartal tüyü miğfer |
 | Ölümsüz odun kalası ² | 99 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Ahşap karyola, Akrep kabuğu kalkanı, Asma fener, Atölye, Dolap, Gemi … (+14) |
 | Ölümsüz odun ² | 34 | – | Balta ile Kömür ağacı, Obsidyen dikeni, Lav palmiyesi, Ejder meyvesi, Gök kamışı, Bulut kavağı, Yıldız akasyası, Gök üzümü, Lav narı, Yıldız kirazı ağaçlarından: Ejder Volkanı ve Gök Rıhtımı (ACT 2) | Ölümsüz odun kalası |
@@ -7013,7 +6981,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | İnci kolye | 230 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | İncir | 62 | yenir +19 | Meyve ağacı (İncir): eli boşken F ile silkele, 2–3 tane düşer · İncir ağacından toplanır: Kül Diyarı (ACT 1) | İncir ezmesi |
 | İncir ezmesi | 236 | – | Tarif: Zümrüt'ın kazanı öğrenilir → El yapımı (Tab) | – |
-| İp | 4 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ağ, Güçlü odun kaşığı, Akrep kabuğu kalkanı, Akrep ok ucu, Altın kolye, Ana tanrıça heykelciği … (+163) |
+| İp | 4 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Akrep kabuğu kalkanı, Akrep ok ucu, Altın kolye, Ana tanrıça heykelciği, Atölye, Av sahnesi duvar resmi … (+152) |
 | İri diken | 12 | – | Av: Oklu kirpi düşürür %100 (ACT 1 · Orman) | Diken ok ucu, Ceviz kabuğu miğfer |
 | İskele | 588 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
 | İstavrit | 5 | – | Deniz avı: Kıyı Suları (Gemici Poyraz'ın teknesiyle, Sv 3+, Olta) %33 | İstavrit ızgara |

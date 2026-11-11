@@ -89,7 +89,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 | Tarif | Kategori | Malzemeler | Fiyat |
 |---|---|---|---|
 | Yankı çorbası | Yiyecek | 2 Yankı mantarı, 1 Kör kertenkele eti, 2 Su, 1 Ateş | 91 |
-| Kertenkele merhemi | Şifa | 2 Kertenkele pulu, 1 Damla taşı, 1 Su | 143 |
+| Kertenkele merhemi | Şifa | 2 Kertenkele pulu, 1 Damla taşı, 1 Tüy yosunu | 155 |
 | Damla akı boyası | Boya | 2 Damla taşı, 1 Su | 40 |
 | Yarasa zarı davul | Müzik | 3 Yarasa zarı, 2 Taş örümceği ipi, 2 Dal | 130 |
 | Kraliçe tılsımı | Büyü | 1 Kraliçe pençesi, 2 Yankı mantarı, 1 Taş örümceği ipi | 420 |
@@ -201,17 +201,16 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 |---|---|---|---|
 | Gümüş filizi | toplanır / Dağ Devi | 52 | Gümüş çan |
 | Dağ kristali | toplanır | 58 | Kristal kolye, Dev yüreği tılsımı |
-| Rüzgâr taşı | toplanır | 42 | Ağ kapanı |
+| Rüzgâr taşı | toplanır | 42 | Kartal tüyü miğfer |
 | Kar likeni | toplanır | 40 | Dev yüreği tılsımı |
 | Kaya yarasası kanadı | Kaya yarasası | 104 | Kanat yelpazesi |
-| Tavan ağı | Tavan örümceği | 112 | Gümüş çan, Ağ kapanı, Kristal kolye |
+| Tavan ağı | Tavan örümceği | 112 | Gümüş çan, Kristal kolye |
 | Gri vaşak postu | Mağara vaşağı | 150 | – (satılır) |
 | Dev yüreği | Dağ Devi | 1.300 | Dev yüreği tılsımı |
 
 | Tarif | Kategori | Malzemeler | Fiyat |
 |---|---|---|---|
 | Gümüş çan | Müzik | 3 Gümüş filizi, 1 Tavan ağı | 440 |
-| Ağ kapanı | Av ve hayvan | 3 Tavan ağı, 1 Rüzgâr taşı | 420 |
 | Kristal kolye | Süs | 2 Dağ kristali, 1 Tavan ağı | 360 |
 | Kanat yelpazesi | Süs | 3 Kaya yarasası kanadı, 2 Dal | 380 |
 | Dev yüreği tılsımı | Büyü | 1 Dev yüreği, 2 Dağ kristali, 2 Kar likeni | 2.000 |
