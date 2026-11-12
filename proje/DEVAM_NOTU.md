@@ -1,3 +1,11 @@
+## v4.13 (12 Kasım 2026) · 47 eşya geri; 21 işe yaramayan eşyaya iş
+- Boğaç: "şimdilik kaldırma bir şeyi, bir konuşalım sonra kaldırırsın; önerilerini uygula". **Kural:** bir eşyayı oyundan kaldırmadan önce Boğaç'la listeyi konuş.
+- `proje/Hammadde_prototip.html` ve `parts/` v4.11 halinden (v4.12 öncesi) geri alındı (`git checkout bb27934`); `v412ayik` bloğu yok, kaynaktaki silmeler geri geldi. 4.12'yi açan kayıtlarda o eşyalar Vio'ya çevrildi; geri dönmez.
+- Yeni `v413isle` bloğu (v411muzik'ten sonra): KOZ kerevit düzeltmesi + Kürk eldiven (Deri parçası → 5 Tavşan derisi); TL (5 tılsım, `useHouse` sarmalayıcısı, Kupa panosu `DEC.d` alt kenar taşları, STAT sarmalayıcısı, kayıt `s.tlsm`); BAIT (`fishRoll`), KNF (`dropRoll`), BAG (`deathDrop`), Golem feneri (GT torch, TORCHL 140, TORCHB 1e6, `tickTorch` doldurur, `madPack` tutuşturmayı geri alır), RESINS+Işık fitili, Gübre (`tickFarm`, `f.gub`/`f.gt`), Kök özü iksiri (c='Şifa', V46BUFF ılık 600, `eat` → enerji 600), Duman fişeği/tütsüsü (GT smoke/incense, `attack` ve `tickAnimals` sarmalayıcıları). Çekirdekte yay `bcd=BOW[h].cd*(Ok kılıfı?.85:1)`.
+- Kontrol: chk 0 hata; deneme betiğiyle her biri çalıştı (Dev yüreği asılınca can 100 → 180 Kor tacıyla birlikte; Bazalt bıçakla Geyik deri+et 400 avda 790 → 996; Deri çantayla 100 Dal'dan 10 kayıp).
+
+**Geri alma:** `git revert` bu commit (geri gelen 47 eşya da gider; 4.12'ye dönülür).
+
 ## v4.12 (12 Kasım 2026) · ayıklama: 47 işe yaramayan eşya kalktı, Tavşan derisi Kürk eldivende, Közlenmiş kerevit
 - Boğaç: "tavşan derisini bir zırh setine yedirelim; közlenmiş kerevit kerevit etinin pişirilmesinden oluşsun ve belli statlar vererek yenilebilsin; kaldırılabilir dediklerini kaldırabiliriz". Belge: Tarifler › Ayıklama.
 - Kaynakta silindi (çekirdek `db` JSON: R/p/t, `tiers` haritası, `addR`, `A['…']` ikonları, `drawIcon` dalları: kazıyıcı, kaşık, Kükürt çakmağı, kano/kızak/kütük salı; RAWM'dan Cilalı kristal; v48 RENAMED'den 'İnci (tatlısu)'; v406odun OLD'dan 22 "X kaşığı"; v409tek SW'den Sert odun kaşığı satırı, VAR'dan 5 varyant, NP'den kalkanlar).
@@ -196,12 +204,4 @@
 **Geri alma:** `git revert` bu commit.
 
 **Kontrol:** chk.js 0 hata. 8–13. adımlarda kart resmi: Zümrüt, Zümrüt, Nazlı, Börü, Börü. Konsol hatası yok.
-
-## v3.93 (9 Kasım 2026) · ders malzemesi yalnızca eksik kadar; "Vio" büyük harf
-
-**Değişen yerler:** `tzPlace` (satır ~7130 ve `v3.7x` bloğundaki üzerine yazan sürümü, ~22492) artık `tzMiss(ad,toplam,cx,cy)` = toplam − envanter − `tzNear` (yerde, merkezden ya da oyuncudan 200 px içinde) kadar koyar ve koyduğu sayıyı döndürür; `tzList` sayı kelimeleriyle liste kurar. Çağrılar: Zümrüt ilk tarif metni ve tarif öğrenilince (Dal/Lif/Yaprak 2), `stonesNow` (Taş 4), `tzAlpDone` (Sopa yoksa Dal 3, Lif (2−İp)×4, Taş 2+(eksik keskin taş)×2; Börü'nün 6 taşı önce verilir). Metinler bırakılan sayıyı söyler. Para: oyun dosyası ve `parts/*.md`'de "vio" → "Vio", ekler ’ ile (Vio’yu…); düzenli ifadeler `/Vio/i`, `/^100 Vio/`. Yeni `<style id="v393hand">` + `<script id="v393handjs">`: yapılamayan satırın `.bn{opacity}` katmanı malzeme kutusunu saydam yapıp alttaki satırın altına itiyordu → soluklaştırma yalnızca resim/ad/"sende"ye, açık satır `z-index:7`; düğme sırası CSS `order` ile Takip et · ×5 · Hepsi · Yap (Yak); bilgisayarda (hover) satır kutusu gizli, `#hcard` sabit kart Yap düğmesinin üstünde (yer yoksa altında). Yeni `v393lock` (+ `v393lock-css`): `tz===12 && mode==="hand"` iken sıradaki parçanın `[data-hand][data-q=1]` düğmesi basılabiliyorsa `body.v393lock` (pencere içi her şey `pointer-events:none`, yalnızca `.p189` ve Kapat), değilse (ya da adım Taş) 0,7 sn sonra `closeCraft()` + `tzNeed()` ile "Önce malzemeleri topla". Sürüm etiketi `Versiyon 3.93`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. Deneme: envanterde 3 taş → kazan yanına 1 taş kondu; Dal 2/Lif 1 + yakında Dal 3, Lif 5, Yaprak 3 → hiçbir şey konmuyor. Konsol hatası yok.
 

@@ -8,6 +8,34 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.13 · 12 Kasım 2026
+
+### Oynanış
+- **Kaldırılan 47 eşya geri geldi:** 4.12'de kaldırılan boncuklar, taçlar, yelpazeler, kazıyıcılar, çakmaklar, kaşıklar, taşıtlar, sepetler, kaseler ve diğerleri eski tarifleriyle yerinde. Hangilerinin kalkacağına birlikte karar verilecek. (4.12'de bunlar için ödenen Vio sende kalır.)
+- **İşe yaramayan eşyalara iş:**
+  - **Mağara boss tılsımları Kupa panosuna asılıyor:** Kupa panosu olan bir eve girince çantandaki tılsımlar panoya asılır ve kalıcı etki verir:
+    - Kraliçe: +%4 hasar.
+    - Çamur Ana: +%25 can yenilenmesi.
+    - Dev yüreği: +80 can.
+    - Kor tacı: +%6 hasar ve +4 zırh.
+    - Işık Yutan kalbi: +40 mana ve +%3 şans.
+  - **Olta yemleri:** çantada Sülük yemi ya da Yıldız tozu yemi varken nadir balık gelme şansı artar; her atışta bir yem gider.
+  - **Duman fişeği:** elde vur tuşuyla atılır; yakındaki canavarlar 3,5 saniye sersemler.
+  - **Duman tütsüsü:** elde vur tuşuyla yakılır; saldırgan canavarlar 2 dakika yaklaşamaz.
+  - **Kök özü iksiri:** içilir; +60 can, 10 dakika Şifa ve Canlılık.
+  - **Bıçaklar:** çantadaki en iyi bıçak avdan düşen deri, post ve etin bir fazla gelme şansını artırır (%15–35).
+  - **Golem feneri:** meşale yuvasına giren, hiç sönmeyen ve tutuşturmayan fener.
+  - **Işık fitili:** meşaleyi reçine gibi tazeler.
+  - **Ok kılıfı:** çantadayken yay %15 hızlı çekilir.
+  - **Deri çanta ve Kenevir torba:** bayılınca kaybedilen pay %20 yerine %10 ya da %15 olur.
+  - **Gübre:** ekili tarlayı sularken bir tane gider; o ürün %50 hızlı büyür.
+- **Tavşan derisi Kürk eldivende** (5 Tavşan derisi) ve **Közlenmiş kerevit** (+16 tokluk, 2 dakika Çeviklik) 4.12'deki gibi kalıyor.
+
+### Tasarım belgesi
+- Tarifler'e "İşe yarayan eşyalar" bölümü; Işık kaynakları tablosuna Golem feneri; Kupa panosuna tılsımlar; eşya dizininde bu eşyaların ne işe yaradığı; tarif ve eşya sayıları (815 tarif, 1.286 eşya) düzeltildi. 4.12'nin "Ayıklama" bölümü kalktı.
+
+---
+
 ## Versiyon 4.12 · 12 Kasım 2026
 
 ### Oynanış
@@ -315,26 +343,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Tasarım belgesi
 - Oyun akışı › "Öğretici kartında konuşanın resmi".
 - Sistemler › "Pazar penceresi derli toplu" (pazar en çok 600 piksel).
-
----
-
-## Versiyon 3.93 · 9 Kasım 2026
-
-### Oynanış
-- **Ders malzemeleri yalnızca eksik kadar:** Kemal, Zümrüt ve Börü derslerde yere malzeme bırakırken (böğürtlen; meşale için dal, lif, yaprak; taşlar; balta parçaları için dal, lif, taş) artık envanterindekileri ve yakında yerde duranları sayıyor, yalnızca eksik kalanı bırakıyor. Konuşmada da yalnızca bıraktıklarını söylüyorlar; hepsi zaten varsa hiçbir şey bırakmıyorlar.
-
-### Oynanış (Börü'nün balta dersi)
-- **Yalnızca mavi düğme:** dersin 12. adımında El yapımı açıkken sıradaki parçanın (keskin taş, sopa, ip) mavi yanan **Yap** düğmesi ve ok görünür; penceredeki öbür her şey soluk ve tıklanamaz. Pencereyi kapatmak her zaman çalışır.
-- **Malzeme eksikse pencere kapanır:** sıradaki parça için malzemen yoksa (ya da sıra iki taşı toplamaya geldiyse) El yapımı kendiliğinden kapanır, "Önce malzemeleri topla: …" der ve öğretici seni eksik malzemeye götürür.
-
-### Arayüz
-- **El yapımında yazılar üst üste binmiyor:** yapamadığın bir tarifin malzeme kutusu saydamdı ve alttaki satırın altında kalıyordu. Artık bilgisayarda satırın ya da **Yap** düğmesinin üstüne gelince malzemeler, Yap düğmesinin hemen üstünde küçük, kenarlı bir kartta çıkıyor. Telefonda dokununca açılan kutu da artık opak.
-- **Yap düğmesi en sağda:** el yapımı satırlarında düğme sırası Takip et · ×5 · Hepsi · Yap.
-- **"Vio" büyük harfle:** paranın adı her yerde "Vio" yazıyor; ekleri kesme işaretiyle ayrılıyor (Vio’yu, Vio’ya, "50 Vio’luk").
-
-### Tasarım belgesi
-- Oyun akışı › "Ders malzemesi yalnızca eksik kadar konur"; Giriş › Para birimi: büyük harfle "Vio".
-- Sistemler › El yapımı listesi ve düğmeleri: malzeme kartı, Yap en sağda.
-- Oyun akışı › "Börü'nün balta dersinde El yapımı yalnızca gösterilen düğmeye izin verir".
 
 ---
