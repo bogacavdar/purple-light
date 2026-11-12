@@ -1,3 +1,9 @@
+## v4.23 (14 Kasım 2026) · Gelincik yeni resmiyle; Dal yan yatık, Yaprak dönük, yerdeki gölgeler resmin altında
+- Boğaç: "dalı yan çevir", "yaprağı da çevir biraz", "gölge çok aşağıda kalmış" → `v420cali` `GZ`/`box` ile resmin alt kenarı gölgeye oturur, Dal −π/2, Yaprak −0.55 rad. "gelinciği koy" → yeni blok `v423ikon` (v420cali'den hemen sonra): tek satırlık 32 px sayfa, `N` adları, `GZ` yerdeki boy; ICON/ICONC yalnız bu adlar için sabitlenir, yerde `__plCayirL[ad]`. Resim Boğaç'ın ComfyUI (Z-Image Turbo + piksel LoRA) çıktısından 32×32'ye indirilip çerçevelendi. Belge: Eşyalar › Yeni ikonlar; Sistemler › Çayır görünüşü.
+- Kontrol: chk 0 hata; ekran görüntüsünde Gelincik yerde ve envanterde yeni resimle.
+
+**Geri alma:** `git revert` bu commit (kayıt alanı yok).
+
 ## v4.22 (13 Kasım 2026) · Kemal "Üçü de tamam"; 5 malzeme yerde de yeni resimle
 - Boğaç: "3 böğürtlen topladım neden 5'i de tamam diyor?" → `CALLS` `e2` metni. "river pebbles neden böyle" → `v420cali` içinde `__plCayirL` Nehir çakılı/Kum/Dal/Kuru ot/Yaprak (13–16 px, sayfanın 7. satırı). Belge: Eşyalar. (4.21 başka bir oturumda uygulama kimliği düzeltmesi olarak çıktı.)
 - Kontrol: chk 0 hata; ekran görüntüsünde beşi de yerde yeni resimle.
@@ -184,12 +190,3 @@
 **Geri alma:** `git revert` bu commit.
 
 **Kontrol:** chk.js 0 hata. Ritimli 3. vuruş ve ulti derslerinde canavar keep → wind → leap → back döngüsünde dövüşüyor; atılış başında savuşturunca vuruş geçmedi. Yaban domuzu en yakın 7 → 15 px, ısırığı yine geliyor. Alıştırma mağara ayısı ısırığı 137 → 4. Kuzen pazarcılar ocaktan 5 → 27–30 kare.
-
-## v4.03 (9 Kasım 2026) · onay kutusu oyunun görünüşünde
-
-**Değişen yerler:** Yeni `v403cf` stili (dosya sonu) `#q2cf`'yi (`confirmBox`) koyu panel, altın çerçeve ve altın ana düğmeyle çiziyor. Köprü onayındaki `spFree` satırı kaldırıldı (v3.53 OYN-40). Sürüm etiketi `Versiyon 4.03`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. Köprü kutusu ekran görüntüsüyle bakıldı.
-

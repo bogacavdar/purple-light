@@ -305,7 +305,8 @@ Havanın sırası, sıklığı ve süresi mevsime göre değişir (bkz. Hava, s�
 - **Yaban çileği:** üçlü yapraklar, altında kırmızı meyveler.
 - **Havuç:** yarısı toprağa gömülü turuncu havuç, toprak tümseği ve yeşil filizler ("Yabani havuç" kalktı, yerden toplanan da tarladaki **Havuç**'tur).
 - **Yarasa gübresi:** içinde açık renkli kırıntılar olan koyu yığın.
-- Taş, Lif, Kuru ot, Nehir çakılı, Çakmaktaşı, Böğürtlen, Gelincik, Papatya, Rezene, Yabani buğday, Kireçtaşı, Kumtaşı, Bakır cevheri ve Sarkıt olduğu gibi kaldı.
+- **Gelincik (13 Kasım 2026, Boğaç):** iki kırmızı gelincik; sağdaki daha yukarıda, sapı hafifçe sola kıvrık; dipte ince, koyu yeşil çimen. Yerde ve envanterde aynı resim (Eşyalar › Yeni ikonlar).
+- Taş, Lif, Kuru ot, Nehir çakılı, Çakmaktaşı, Böğürtlen, Papatya, Rezene, Yabani buğday, Kireçtaşı, Kumtaşı, Bakır cevheri ve Sarkıt olduğu gibi kaldı.
 
 **Sol üstteki gün, saat, hava ve mevsim (9 Kasım 2026, Boğaç):** bilgisayarda can çubuğunun hemen üstünde, kutusuz, tek satır:
 - **Gün:** yalnızca yazı ("12. gün"); hava adı ve mevsim adı burada yazmaz.

@@ -8,6 +8,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.23 · 14 Kasım 2026
+
+### Görsel
+- **Gelincik yeni resmiyle:** iki kırmızı gelincik, sağdaki daha yukarıda ve sapı hafifçe kıvrık; dipte ince koyu yeşil çimen. Envanterde, kitapta ve yerde aynı resim.
+- Dal yerde yan yatıyor, Yaprak biraz dönük duruyor.
+- Yerdeki Nehir çakılı, Kum, Dal, Kuru ot ve Yaprak'ın gölgesi artık resmin tam altında (Kum'un gölgesi aşağıda kalıyordu).
+
+### Tasarım belgesi
+- Eşyalar › Yeni ikonlar: Boğaç'ın ComfyUI ile çizdirip seçtiği ikonlar için yeni bölüm (şimdilik Gelincik).
+- Sistemler › Çayır'da yerdeki toplanabilirlerin görünüşü: Gelincik'in yeni görünüşü yazıldı.
+
+---
+
 ## Versiyon 4.22 · 13 Kasım 2026
 
 ### Düzeltmeler
@@ -388,12 +401,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Pazarcılar demircilerin dibinde değil:** Orman, Bataklık, Kayalık Dağ, Kül Diyarı ve Mor Kristal Vadisi'ndeki pazarcılar (Fidan, Nilüfer, Kardelen, Lale, Menekşe) artık demirci ve zırhçının ocağından uzakta, 30 kare kadar ötede kendi tezgâhını kuruyor.
 - **Canavarlar içinde dolanmıyor:** yürüyen canavar önünde, kendi boyu kadar uzakta duruyor; atılışı sana değince duruyor, arkana geçip gitmiyor.
 - **Börü'nün alıştırma canavarları (Kerevit dersi hariç) öğretiyor:** ritimli 3. vuruş, güçlü vuruş, ulti gibi derslerdeki canavarlar artık Kerevit dersindeki gibi dövüşüyor: senden bir adım uzakta duruyor, üstünde **!** çıkıp bir an bekliyor, sonra bir kez atılıyor ve geri çekiliyor; ne zaman vuracağı belli. Kırmızı (savuşturulamaz) vuruş ve yer sarsması yapmıyorlar, canının yalnızca %5'i kadar vuruyorlar ve seni canının dörtte birinin altına indirmiyorlar.
-
----
-
-## Versiyon 4.03 · 9 Kasım 2026
-
-### Arayüz
-- **Onay kutuları oyunun görünüşünde:** köprü onarma, görevi bırakma gibi "Evet / Vazgeç" kutuları açık renkli, oyuna uymayan bir kutuydu; artık öbür pencereler gibi koyu zeminli, altın çerçeveli. Köprü kutusundaki ilgisiz "seviye puanın bekliyor" satırı kaldırıldı.
 
 ---
