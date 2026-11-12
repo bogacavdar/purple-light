@@ -1,3 +1,9 @@
+## v4.21 (13 Kasım 2026) · uygulama kimliği /purple-light/ (CoffeBean ile karışmasın)
+- Boğaç: Purple Light kısayolu CoffeBean açıyordu; CoffeBean yüklenince pencerede adı CoffeBean, içi Purple Light. Sebep: iki oyunun `manifest.webmanifest` `"id": "./"`; Chrome bunu start_url kökenine (`https://bogacavdar.github.io/`) çözüyor → aynı uygulama kimliği. Boğaç: "ikisini de hemen yayınla".
+- Değişen: `manifest.webmanifest` `"id": "/purple-light/"`; belge `parts/05_teknoloji.md` PWA satırı; verlab 4.21. Kod bloğu yok, kayıt alanı yok. CoffeBean tarafı v0.47'de `/coffeBean/`.
+- Kontrol: yalnız sözdizimi (chk.js).
+- **Geri alma:** `git revert` bu commit (yüklü uygulamalar yine birbirine karışır).
+
 ## v4.20 (13 Kasım 2026) · meyve çalıları (3 kez toplanır), Kemal'in dersi 3 böğürtlen, yeni ikonlar
 - Boğaç: "bush üzerinde yetişen gıdaları ... 3 kereye mahsus ... düşüp kaybolacaklar ve yeniden generate olabilecekler; kemalin öğreticisi de 3 tane böğürtlen isteyecek" + resimler (çalı, böğürtlen, çakıl, kuru ot, kum, dal, yaprak). Belge: Toplama › Meyve çalıları; Akış › öğretici 1–2; Eşyalar.
 - Çekirdek: toplama bitişinde `window.__plBush(n)` ise `n.left` 3→0 (çalı kalır, sonra normal respawn, `left=null`); köpek toplaması aynı; istem ve üzerine gelme etiketi "X çalısı… N kaldı"; `drawNode` başındaki `__plCayirL` çağrısına `n` eklendi; öğretici 5→3 (`tzBush()` yakın çalıyı 3'e doldurur ya da `tzPlace` ile bir çalı koyar), Kemal'in ilk sözü "üç tane".
@@ -194,12 +200,3 @@
 **Geri alma:** `git revert` bu commit (Börü'nün yeri kayda hep evdeki yeriyle yazılır).
 
 **Kontrol:** chk.js 0 hata. 11. gün Börü'nün yanında saldırı: Börü bir gözcü öldürdü. Kemal'in yanında can 50 → 66. Zümrüt'ün yanında tükürücü 22 → 6. Suda kalan Kerevit Reisi 3,5 sn'de karaya çıktı.
-
-## v4.01 (9 Kasım 2026) · üzerine gelme etiketi: yeni görünüş, dövüşte gizli
-
-**Değişen yerler:** Yeni `v401tip` (stil) ve `v401tipjs` bloğu (dosya sonu). `#hovtip` (v146) yeni görünüşte. `data-k` (red/amber/green) yazıdan çıkarılıyor; kenara taşarsa `flipx`/`flipy`. `attack` sarılıp son vuruş zamanı tutuluyor. `body.plfight` 120 ms'de bir hesaplanıyor: vuruştan sonra 3 sn, `inFight()`, `underAttack()` ya da 260 px içinde kızgın/kovalayan canlı. `body.plfight` iken etiket `display:none`. B1 (DATA) parçaları `[['campup'],['c','cook',1,…]]`, sözü, sahnesi ve `LES.camp` 3. adımı değişti; yeni parça `campup` (yanan kamp ateşi ya da kabulden sonra kurulan ateş, sayaç `campset` 7407), `cook` sayacı `finishOne`'da (ateşte her pişen). `partTarget` `c/cook` en yakın yanan ateşi gösterir. El yapımı satırında `data-hrow=""${…}"` yazım hatası (v3.35'ten beri Takip et boş adla çağrılıyordu) düzeltildi. Takip şeridi: `v401trk`/`v401trkjs` (dosya sonu) simgeli satırlar, `title`lar kaldırılıp kendi kartımız (`#b3tip`) tarif etiketinde de açılıyor. `ePick` ve E/F ağaç önceliği: havadaki düşenler (`age>=0`) iniş noktasına göre alınıyor. Sürüm etiketi `Versiyon 4.01`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. Eski B1 kaydıyla (b.camp) kart iki satır gösteriyor; ateş + bir pişirme → Börü'de tamamlanıyor. Geyiğin üstünde turuncu şeritli kart çıkıyor; `attack()` sonrası gizli, 3,5 sn sonra yeniden açık.
-

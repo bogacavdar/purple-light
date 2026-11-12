@@ -82,7 +82,7 @@ Oyun telefonda da akıcı olsun diye (Boğaç'ın telefonu: Honor 600) şu kural
 
 ## Uygulama olarak yükleme (PWA)
 
-- `manifest.webmanifest`: uygulama adı, simgeleri (`icon-192.png`, `icon-512.png`), tam ekran ve yatay açılma.
+- `manifest.webmanifest`: uygulama adı, simgeleri (`icon-192.png`, `icon-512.png`), tam ekran ve yatay açılma. Uygulama kimliği (`id`) oyunun kendi klasörüdür: `/purple-light/`. Aynı sitede başka oyunlar da (ör. CoffeBean) olduğu için kimlik asla `./` ya da sitenin kökü olmaz; Chrome `./` kimliğini sitenin köküne çevirir ve aynı sitedeki iki oyunu tek uygulama sayar (biri yüklenince diğerinin yerine geçer).
 - `sw.js` (**Service Worker**): oyunu cihaza kopyalar; internet varken her zaman en yeni sürümü alır, yokken kayıtlı kopyayı açar.
 
 ## Dosya düzeni

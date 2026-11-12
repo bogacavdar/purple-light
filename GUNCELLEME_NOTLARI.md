@@ -8,6 +8,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.21 · 13 Kasım 2026
+
+### Düzeltmeler
+- **Purple Light ve CoffeBean artık ayrı uygulama olarak yüklenebiliyor.** İki oyunun uygulama kimliği aynı çıkıyordu; Chrome ikisini tek uygulama sanıyor, biri yüklenince diğerinin yerine geçiyordu (pencerede adı CoffeBean, içinde Purple Light). Purple Light'ın kimliği artık kendi klasörü. Eski karışık uygulama kaldırılıp oyun kendi adresinden yeniden yüklenmeli.
+
+### Tasarım belgesi
+- Teknoloji › Uygulama olarak yükleme: uygulama kimliği `/purple-light/` olarak yazıldı.
+
 ## Versiyon 4.20 · 13 Kasım 2026
 
 ### Oynanış
@@ -388,21 +396,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Düzeltmeler
 - **Silahlar değdiği yere vuruyor:** mızrakla (ve öbür silahların özel vuruşlarıyla) atların kafasına ya da bir canlının uzun yerlerine değince hasar gitmiyordu; artık canlının çizildiği her yer sayılıyor.
 - **Suda takılan canlılar:** Kerevit Reisi gibi suya ya da duvara sıkışan bir canlı olduğu yerde donup kalıyordu; artık en yakın kuru yere çıkıp savaşa devam ediyor.
-
----
-
-## Versiyon 4.01 · 9 Kasım 2026
-
-### Oynanış
-- **Börü'nün "Ateş başında nöbet" görevi yenilendi:** artık gece ateşin başında bir dakika beklemiyorsun; **kamp ateşi kur ve başında bir şey pişir** (ateşin yanında F → pişirme menüsü). Görev kartında iki satır var: "Kamp ateşi kur" ve "0/1 kamp ateşinde yemek pişir"; ok önce ateşin malzemelerini, sonra ateşini gösteriyor. Görev sende açıksa ve bir ateşin yanıyorsa ilk satır hemen tamam sayılır.
-- **Düşenleri F ile hemen topla:** bir hayvanı öldürünce düşenler daha yere inerken bile F ile hemen toplanıyor; beklemene gerek yok.
-
-### Düzeltmeler
-- **El yapımında "Takip et" çalışıyor:** El yapımı penceresindeki Takip et düğmelerine basınca hiçbir şey olmuyordu; artık tarifi takip şeridine ekliyor.
-
-### Arayüz
-- **Takip şeridi küçük simgeler:** ekranın üstündeki takip şeridinde artık yazı yok; her tarif bir satır, malzemeleri küçük kare resimler ve köşelerinde sayıları (tamam olanlar yeşil). Bir resmin üstüne gelince şık bir kartta adı, sende kaç tane olduğu ve nereden geldiği yazıyor. Şerit küçüldüğü için görev kartının üstüne binmiyor.
-- **Üzerine gelme etiketleri yenilendi:** farenle bir canlının, ağacın ya da eşyanın üstüne gelince çıkan etiket artık koyu, küçük bir kart; solundaki renkli şerit canlının huyunu gösteriyor (saldırgan kırmızı, kızdırırsan saldırır turuncu, zararsız yeşil). Ekranın kenarından taşmıyor.
-- **Dövüşte etiket çıkmıyor:** bir hayvana vurduktan sonra 3 saniye, seni kovalayan ya da sana kızmış bir hayvan yakındayken ve ısırıldıktan sonra etiketler görünmüyor; savaşırken önünü kapatmıyorlar.
-
----
