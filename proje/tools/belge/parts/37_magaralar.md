@@ -177,7 +177,7 @@ Bataklığın altında, tavanından su sızan, yerleri balçıklı bir mağara. 
 |---|---|---|---|
 | Sülük yemi | Av ve hayvan | 2 Sülük, 1 Siyah balçık | 160 |
 | Semender derisi tef | Müzik | 2 Semender derisi, 2 Batık kök, 1 Dal | 270 |
-| İnci kolye | Süs | 3 Sazlı inci, 1 Batık kök | 78 |
+| İnci kolye | Süs | 1 Sazlı inci, 1 Batık kök | 105 |
 | Yosun yeşili boya | Boya | 2 Parıltı yosunu, 1 Su | 95 |
 | Çamur Ana muskası | Büyü | 1 Çamur Ana gözü, 2 Sazlı inci, 1 Semender derisi | 1.400 |
 
@@ -199,7 +199,7 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 
 | Malzeme | Nereden | Fiyat | Tarif |
 |---|---|---|---|
-| Gümüş filizi | toplanır / Dağ Devi | 52 | Gümüş çan |
+| Gümüş filizi | toplanır / Dağ Devi | 75 | Gümüş çan |
 | Dağ kristali | toplanır | 58 | Kristal yüzük, Dev yüreği tılsımı |
 | Rüzgâr taşı | toplanır | 42 | Kartal tüyü miğfer |
 | Kar likeni | toplanır | 40 | Dev yüreği tılsımı |
@@ -210,8 +210,8 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 
 | Tarif | Kategori | Malzemeler | Fiyat |
 |---|---|---|---|
-| Gümüş çan | Müzik | 3 Gümüş filizi, 1 Tavan ağı | 440 |
-| Kristal yüzük | Süs | 2 Dağ kristali, 1 Tavan ağı | 245 |
+| Gümüş çan | Müzik | 3 Gümüş filizi, 1 Tavan ağı | 553 |
+| Kristal yüzük | Süs | 3 Dağ kristali, 1 Tavan ağı | 452 |
 | Dev yüreği tılsımı | Büyü | 1 Dev yüreği, 2 Dağ kristali, 2 Kar likeni | 2.000 |
 
 ### 5 · Kor Mağarası (Kül Diyarı · Sv 34)
@@ -266,7 +266,7 @@ Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara
 
 | Malzeme | Nereden | Fiyat | Tarif |
 |---|---|---|---|
-| Mor damar taşı | toplanır / Işık Yutan | 86 | Mor damar boyası, Işık Yutan kalbi tılsımı |
+| Mor damar taşı | toplanır / Işık Yutan | 126 | Mor damar boyası, Işık Yutan kalbi tılsımı |
 | Işık sporu | toplanır | 80 | Yıldız tozu yemi |
 | Ayna taşı | toplanır | 90 | Kristal zil, Işık Yutan kalbi tılsımı |
 | Yıldız tozu | toplanır | 90 | Yıldız tozu yemi |
@@ -278,9 +278,9 @@ Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara
 | Tarif | Kategori | Malzemeler | Fiyat |
 |---|---|---|---|
 | Kristal zil | Müzik | 2 Kristal kanat, 1 Ayna taşı | 700 |
-| Mor damar boyası | Boya | 2 Mor damar taşı, 1 Su | 300 |
+| Mor damar boyası | Boya | 2 Mor damar taşı, 1 Su | 329 |
 | Yıldız tozu yemi | Av ve hayvan | 2 Yıldız tozu, 1 Işık sporu | 504 |
-| Işık Yutan kalbi tılsımı | Büyü | 1 Işık Yutan kalbi, 2 Mor damar taşı, 2 Ayna taşı | 4.200 |
+| Işık Yutan kalbi tılsımı | Büyü | 1 Işık Yutan kalbi, 2 Mor damar taşı, 2 Ayna taşı | 4.314 |
 
 ### Teknik not (mağaranın yeri)
 

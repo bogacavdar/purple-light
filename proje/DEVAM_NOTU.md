@@ -1,3 +1,10 @@
+## v4.17 (12 Kasım 2026) · fiyat düzeni: malzeme biyom tabanı + malzemeden hesap + fazla isteyen tarifler azaldı
+- Boğaç: "öncelikle malzemelerin fiyatlarını biyomdan biyoma daha değerli hale getir, bu olursa zaten hesap doğru olur… sorun ya malzeme fiyatlarında ya da … tarifin kendisindedir". Belge: Aletler › Fiyat düzeni.
+- `v416fiyat` bloğu silindi, yerine `v417fiyat` (v415torpu'dan sonra): `ED` 16 tarif (külçeler, ok uçları, 8 takı) REC/USES; `PR` 227 fiyat. Hesap (`w/rawcat.py`, `w/rawnew.py`, `w/model3.py`): ham malzeme türüne göre biyom tabanı (önceki biyomun %30'luk dilimi × 1,2, yalnız yükseltir); yapılan eşya = eski fiyat × yeni maliyet / eski maliyet (markup ≤ 1,7; üstündekiler, zırhlar: max(eski, maliyet × 1,3)); usta (takı dahil) = max(maliyet × 1,3, metal parça × 1,15); başlangıç ≤ Bakır × 0,8; oklar maliyet / çıkan × 1,3, etkili oklar (ok + yağ/10) × 1,1.
+- Kontrol: chk 0 hata; 227 fiyat oyunda; 13 türde ters fiyat yok; boşta malzeme ve fiyatsız eşya yok (ACT 2'nin bekleyen 11'i hariç).
+
+**Geri alma:** `git revert` bu commit (4.16'nın eğrisi geri gelir).
+
 ## v4.16 (12 Kasım 2026) · fiyat basamağı: biyom sırasıyla pahalanan set parçaları
 - Boğaç: "her biyom atladığımda daha iyi şeyler ile karşılaşmalıyım… bir adaletsizlik var". Belge: Aletler › Fiyat basamağı.
 - Yeni `v416fiyat` bloğu (v415torpu'dan sonra): `PR` 198 eşyanın yeni `PRICE_`/`DB.p` değeri. Hesap (`w/ladder.py`): Bütün setler tablosunun 13 set sırasıyla her türe log-doğrusal eğri (Başlangıç hariç oturtulur, Başlangıç ilk adımın altında); oklar tane fiyatı (2·4·7·13·25·48·90, etkili oklar + yağ/10); külçeler biyom sırasıyla eğri; kısa yaylar uzun yayın %60'ı. GT.price/sharp (dükkân, bileme) değişmedi.
@@ -196,12 +203,4 @@
 **Geri alma:** `git revert` bu commit.
 
 **Kontrol:** chk.js 0 hata. E1–E5 bitmiş, 2. seviye kayıtta CB1 açık. Davut tanışılmamışken büyük haritada sisin içinde parlayan ! görünüyor.
-
-## v3.97 (9 Kasım 2026) · üşüme, buzlanma, kar yalnızca kışın
-
-**Değişen yerler:** `v370hava` `snowing()` artık `season()!==3` iken yanlış döner (kar yalnızca kışın). Yeni blok `v397soguk` (dosyanın sonunda): üşüme 0–100 (`tickHunger` sarmalında, yalnızca `hold` yokken), ısı kaynakları `camps`/`FIRES`/Kemal'in ateşi/ocak/kazan 64 px, ev `roomSafe()`, meşale `torchHeld()`; can kaybı üşüme > 75; `#frost` (z 2) dört köşe tuvali bir kez çizilir, büyüme yalnızca `transform`+`opacity` (250 ms'de bir, değişince). Kayıtta `usume` alanı. Hata ayıklama: `__plCold()`, `__plColdSet(v)`. Sürüm etiketi `Versiyon 3.97`.
-
-**Geri alma:** `git revert` bu commit (kayıtlardaki `usume` alanı eski sürümde okunmaz, zararsız).
-
-**Kontrol:** chk.js 0 hata. 25. günde −11°'de üşüme artıyor, Kemal'in ateşinde azalıyor, 95'te can düşüyor. 3. günde (ilkbahar) yağış kar değil. Buzlanma 20/55/95'te ekran görüntüsüyle bakıldı.
 

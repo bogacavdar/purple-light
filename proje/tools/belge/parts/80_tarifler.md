@@ -90,7 +90,7 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Ahtapot salatası | 1 Ahtapot, 1 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 304 |
 | Ahududu ezmesi | 3 Ahududu, 1 Su | Taş havan | El yapımı (Tab) | 43 |
 | Ahududu suyu | 3 Ahududu, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 120 |
-| Akçaağaç şurubu | 2 Akçaağaç özsuyu, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 45 |
+| Akçaağaç şurubu | 2 Akçaağaç özsuyu, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 87 |
 | Alıç ezmesi | 3 Alıç, 1 Su | Taş havan | El yapımı (Tab) | 128 |
 | Alıç suyu | 3 Alıç, 1 Kırmızı çömlek, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 339 |
 | Ardıç meyvesi ezmesi | 3 Ardıç meyvesi, 1 Su | Taş havan | El yapımı (Tab) | 128 |
@@ -125,10 +125,10 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Havyar | 1 Mersin balığı, 1 Tuz kayası, 2 Yaprak | – | El yapımı (Tab) | 59 |
 | Haşlanmış bıldırcın yumurtası | 2 Bıldırcın yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
 | Haşlanmış keklik yumurtası | 2 Keklik yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
-| Haşlanmış turna kuşu yumurtası | 2 Turna kuşu yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
+| Haşlanmış turna kuşu yumurtası | 2 Turna kuşu yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
 | Haşlanmış ur kekliği yumurtası | 2 Ur kekliği yumurtası, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 68 |
-| Haşlanmış yaban kazı yumurtası | 2 Yaban kazı yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
-| Haşlanmış ördek yumurtası | 2 Ördek yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
+| Haşlanmış yaban kazı yumurtası | 2 Yaban kazı yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
+| Haşlanmış ördek yumurtası | 2 Ördek yumurtası, 1 Sıcak su, 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
 | Hurma ezmesi ² | 3 Hurma, 1 Nehir çömleği | – | El yapımı (Tab) | 221 |
 | Isırgan çorbası | 3 Isırgan, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 150 |
 | İncir ezmesi | 3 İncir, 1 Su | Taş havan | El yapımı (Tab) | 236 |
@@ -139,25 +139,25 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Kalamar tava | 2 Kalamar, 1 Yabani buğday unu, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 192 |
 | Kalkan tava | 1 Kalkan, 1 Yabani buğday unu, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 144 |
 | Kanlıcalı güveç | 1 Mağara kurdu eti, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 160 |
-| Kara tuzlu et | 2 Ur kekliği eti, 1 Kara tuz | – | El yapımı (Tab) | 107 |
+| Kara tuzlu et | 2 Ur kekliği eti, 1 Kara tuz | – | El yapımı (Tab) | 113 |
 | Kavrulmuş fındık | 3 Fındık, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 70 |
 | Kavrulmuş kestane | 3 Kestane, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 162 |
 | Kavrulmuş su kestanesi | 2 Su kestanesi, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 88 |
 | Kavrulmuş yabani buğday | 3 Yabani buğday, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
 | Kavrulmuş yabani nohut | 3 Yabani nohut, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 70 |
 | Kefal pilakisi | 2 Kefal, 1 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 65 |
-| Kekikli balık | 1 Pişmiş kurbağa, 3 Kekik, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 138 |
+| Kekikli balık | 1 Pişmiş kurbağa, 3 Kekik, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 175 |
 | Kemik ilikli çorba | 3 Kemik, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 114 |
 | Kristal armut kompostosu ² | 3 Kristal armut, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 167 |
 | Kurutulmuş böğürtlen | 3 Böğürtlen, 3 Kuru ot | – | El yapımı (Tab) | 11 |
 | Kurutulmuş meyve keki | 1 Yabani buğday unu, 1 Kurutulmuş böğürtlen, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 36 |
-| Kurutulmuş sincap eti | 3 Sincap eti, 1 Tuz, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 92 |
+| Kurutulmuş sincap eti | 3 Sincap eti, 1 Tuz, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 101 |
 | Kurutulmuş yabani elma | 3 Yabani elma, 3 Kuru ot | – | El yapımı (Tab) | 11 |
 | Kurutulmuş yıldız eriği | 3 Yıldız eriği, 3 Kuru ot | – | El yapımı (Tab) | 378 |
 | Kuşburnu ezmesi | 3 Kuşburnu, 1 Su | Taş havan | El yapımı (Tab) | 128 |
 | Kuşburnu suyu | 3 Kuşburnu, 1 Kırmızı çömlek, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 339 |
 | Közlenmiş şiş | 1 Et şişi, 1 Kor, 5 Su, 4 Yaprak | – | Ateşte (pişirme menüsü) | 102 |
-| Kül ekmeği | 1 Nilüfer kökü unu, 1 Kül, 1 Su | – | El yapımı (Tab) | 158 |
+| Kül ekmeği | 1 Nilüfer kökü unu, 1 Kül, 1 Su | – | El yapımı (Tab) | 252 |
 | Kılıç şiş | 1 Kılıç balığı, 2 Dal, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 228 |
 | Kızarmış kanlıca | 2 Kanlıca, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 35 |
 | Kızarmış kayın mantarı | 2 Kayın mantarı, 2 Su, 1 Yaprak | Pişirme taşı | Ateşte (pişirme menüsü) | 96 |
@@ -170,7 +170,7 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Lüfer ızgara | 1 Lüfer, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 87 |
 | Mantar çorbası | 2 Kanlıca, 1 Sıcak su, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 141 |
 | Meyve karışımı | 3 Böğürtlen, 3 Ahududu | – | El yapımı (Tab) | 44 |
-| Meyveli pemmikan | 1 Pemmikan, 1 Kurutulmuş böğürtlen, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 210 |
+| Meyveli pemmikan | 1 Pemmikan, 1 Kurutulmuş böğürtlen, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 226 |
 | Mürver ezmesi | 3 Mürver, 1 Su | Taş havan | El yapımı (Tab) | 79 |
 | Mürver suyu | 3 Mürver, 1 Göl çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 230 |
 | Nilüfer kökü unu | 2 Nilüfer, 2 Su, 1 Yaprak | Öğütme taşı | El yapımı (Tab) | 74 |
@@ -178,9 +178,9 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Orkinos biftek | 1 Orkinos, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 266 |
 | Ot salatası | 3 Kuzukulağı, 3 Su teresi | – | El yapımı (Tab) | 93 |
 | Palamut buğulama | 1 Palamut, 1 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 120 |
-| Palamut ekmeği | 1 Palamut unu, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 48 |
-| Palamut unu | 3 Meşe palamudu, 1 Su | Öğütme taşı | El yapımı (Tab) | 8 |
-| Pemmikan | 1 Kurutulmuş sincap eti, 2 Hayvan yağı, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 137 |
+| Palamut ekmeği | 1 Palamut unu, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 55 |
+| Palamut unu | 3 Meşe palamudu, 1 Su | Öğütme taşı | El yapımı (Tab) | 13 |
+| Pemmikan | 1 Kurutulmuş sincap eti, 2 Hayvan yağı, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 149 |
 | Pişmiş alabalık | 2 Alabalık, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 46 |
 | Pişmiş bulut koyunu eti ² | 1 Bulut koyunu eti, Ateş (ateş sağlar), 3 Su, 1 Bulut elması | – | Ateşte (pişirme menüsü) | 125 |
 | Pişmiş buz tavşanı eti ² | 1 Buz tavşanı eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 127 |
@@ -188,7 +188,7 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Pişmiş dağ keçisi eti | 1 Dağ keçisi eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 62 |
 | Pişmiş geyik eti | 1 Geyik eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 45 |
 | Pişmiş işık tilkisi eti | 1 Işık tilkisi eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 114 |
-| Pişmiş kadife balığı | 2 Kadife balığı, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
+| Pişmiş kadife balığı | 2 Kadife balığı, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 46 |
 | Pişmiş karaca eti | 1 Karaca eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 48 |
 | Pişmiş kartal eti | 1 Kartal eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 75 |
 | Pişmiş keklik eti | 2 Keklik eti, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 39 |
@@ -197,7 +197,7 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Pişmiş kor kertenkelesi eti ² | 1 Kor kertenkelesi eti, Ateş (ateş sağlar), 3 Su, 1 Volkan külü | – | Ateşte (pişirme menüsü) | 143 |
 | Pişmiş kristal geyik eti | 1 Kristal geyik eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 137 |
 | Pişmiş kunduz eti | 2 Kunduz eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 53 |
-| Pişmiş kurbağa | 3 Kurbağa, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 38 |
+| Pişmiş kurbağa | 3 Kurbağa, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 66 |
 | Pişmiş kurt eti | 1 Kurt eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 42 |
 | Pişmiş kızılkanat | 2 Kızılkanat, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
 | Pişmiş mağara ayısı eti | 1 Mağara ayısı eti, Ateş (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 74 |
@@ -205,34 +205,34 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Pişmiş muflon eti | 1 Muflon eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 62 |
 | Pişmiş rüzgâr kuşu eti ² | 1 Rüzgâr kuşu eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 93 |
 | Pişmiş sazan | 2 Sazan, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
-| Pişmiş sincap eti | 3 Sincap eti, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 44 |
-| Pişmiş su samuru eti | 2 Su samuru eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 60 |
+| Pişmiş sincap eti | 3 Sincap eti, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 53 |
+| Pişmiş su samuru eti | 2 Su samuru eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 66 |
 | Pişmiş tatlısu kefali | 2 Tatlısu kefali, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 43 |
 | Pişmiş tatlısu levreği | 2 Tatlısu levreği, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 46 |
 | Pişmiş tatlısu midyesi | 3 Tatlısu midyesi, Ateş (ateş sağlar), 2 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 70 |
 | Pişmiş tavşan eti | 2 Tavşan eti, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 39 |
 | Pişmiş timsah eti | 1 Timsah eti, Ateş (ateş sağlar), 1 Su, 1 Yaprak | – | Ateşte (pişirme menüsü) | 55 |
 | Pişmiş turna balığı | 1 Turna balığı, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 48 |
-| Pişmiş turna kuşu eti | 2 Turna kuşu eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 60 |
+| Pişmiş turna kuşu eti | 2 Turna kuşu eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 66 |
 | Pişmiş ur kekliği eti | 1 Ur kekliği eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 68 |
 | Pişmiş vaşak eti | 1 Vaşak eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 78 |
 | Pişmiş yaban atı eti | 1 Yaban atı eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 46 |
 | Pişmiş yaban domuzu eti | 1 Yaban domuzu eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 49 |
-| Pişmiş yaban kazı eti | 2 Yaban kazı eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 60 |
+| Pişmiş yaban kazı eti | 2 Yaban kazı eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 66 |
 | Pişmiş yaban öküzü eti | 1 Yaban öküzü eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 68 |
 | Pişmiş yayın | 1 Yayın, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 49 |
 | Pişmiş yılan balığı | 1 Yılan balığı, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 48 |
 | Pişmiş yıldız tilkisi eti ² | 1 Yıldız tilkisi eti, Ateş (ateş sağlar), 3 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 159 |
 | Pişmiş çapak | 2 Çapak, Ateş (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 39 |
-| Pişmiş ördek eti | 2 Ördek eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 56 |
+| Pişmiş ördek eti | 2 Ördek eti, Ateş (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 69 |
 | Rüzgâr eriği ezmesi | 3 Rüzgâr eriği, 1 Su | Taş havan | El yapımı (Tab) | 90 |
-| Sarımsaklı et | 1 Pişmiş sincap eti, 3 Yaban sarımsağı, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 101 |
+| Sarımsaklı et | 1 Pişmiş sincap eti, 3 Yaban sarımsağı, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 114 |
 | Spor ekmeği ² | 3 Spor tozu, 2 Su, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 167 |
 | Spor elması ezmesi | 3 Spor elması, 1 Su | Taş havan | El yapımı (Tab) | 83 |
 | Taşta alabalık | 2 Alabalık, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 23 |
 | Taşta kadife balığı | 2 Kadife balığı, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 21 |
 | Taşta kerevit | 2 Kerevit eti, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 21 |
-| Taşta kurbağa | 3 Kurbağa, 1 Su | Pişirme taşı | El yapımı (Tab) | 15 |
+| Taşta kurbağa | 3 Kurbağa, 1 Su | Pişirme taşı | El yapımı (Tab) | 36 |
 | Taşta kızılkanat | 2 Kızılkanat, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 21 |
 | Taşta mersin balığı | 1 Mersin balığı, 4 Su, 3 Yaprak | Pişirme taşı | El yapımı (Tab) | 38 |
 | Taşta sazan | 2 Sazan, 2 Su, 2 Yaprak | Pişirme taşı | El yapımı (Tab) | 21 |
@@ -244,44 +244,44 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Taşta yılan balığı | 1 Yılan balığı, 3 Su, 3 Yaprak | Pişirme taşı | El yapımı (Tab) | 24 |
 | Taşta çapak | 2 Çapak, 2 Su, 1 Yaprak | Pişirme taşı | El yapımı (Tab) | 17 |
 | Tekir tava | 2 Tekir, 1 Yabani buğday unu, Ateş (ateş sağlar) | – | Ateşte (pişirme menüsü) | 52 |
-| Turba ateşinde tütsü | 1 Ördek eti, 2 Turba, 1 Kıvılcım | – | Ateşte (pişirme menüsü) | 69 |
+| Turba ateşinde tütsü | 1 Ördek eti, 2 Turba, 1 Kıvılcım | – | Ateşte (pişirme menüsü) | 75 |
 | Tütsülenmiş alabalık | 2 Alabalık, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 67 |
 | Tütsülenmiş bıldırcın eti | 2 Bıldırcın eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
 | Tütsülenmiş dağ keçisi eti | 1 Dağ keçisi eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 94 |
 | Tütsülenmiş geyik eti | 1 Geyik eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 67 |
 | Tütsülenmiş işık tilkisi eti | 1 Işık tilkisi eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 147 |
-| Tütsülenmiş kadife balığı | 2 Kadife balığı, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
+| Tütsülenmiş kadife balığı | 2 Kadife balığı, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 67 |
 | Tütsülenmiş karaca eti | 1 Karaca eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 74 |
 | Tütsülenmiş kartal eti | 1 Kartal eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 103 |
 | Tütsülenmiş keklik eti | 2 Keklik eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
 | Tütsülenmiş kerevit | 2 Kerevit eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
 | Tütsülenmiş kristal geyik eti | 1 Kristal geyik eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 170 |
 | Tütsülenmiş kunduz eti | 2 Kunduz eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 77 |
-| Tütsülenmiş kurbağa | 3 Kurbağa, Duman (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 60 |
+| Tütsülenmiş kurbağa | 3 Kurbağa, Duman (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 89 |
 | Tütsülenmiş kurt eti | 1 Kurt eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
 | Tütsülenmiş kızılkanat | 2 Kızılkanat, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
 | Tütsülenmiş mağara ayısı eti | 1 Mağara ayısı eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 104 |
 | Tütsülenmiş mersin balığı | 1 Mersin balığı, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 94 |
 | Tütsülenmiş muflon eti | 1 Muflon eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 94 |
 | Tütsülenmiş sazan | 2 Sazan, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
-| Tütsülenmiş sincap eti | 3 Sincap eti, Duman (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 69 |
-| Tütsülenmiş su samuru eti | 2 Su samuru eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 87 |
+| Tütsülenmiş sincap eti | 3 Sincap eti, Duman (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 78 |
+| Tütsülenmiş su samuru eti | 2 Su samuru eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 94 |
 | Tütsülenmiş tatlısu kefali | 2 Tatlısu kefali, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 64 |
 | Tütsülenmiş tatlısu levreği | 2 Tatlısu levreği, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 67 |
 | Tütsülenmiş tatlısu midyesi | 3 Tatlısu midyesi, Duman (ateş sağlar), 2 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 95 |
 | Tütsülenmiş tavşan eti | 2 Tavşan eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
 | Tütsülenmiş turna balığı | 1 Turna balığı, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 74 |
-| Tütsülenmiş turna kuşu eti | 2 Turna kuşu eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 87 |
+| Tütsülenmiş turna kuşu eti | 2 Turna kuşu eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 94 |
 | Tütsülenmiş ur kekliği eti | 1 Ur kekliği eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 96 |
 | Tütsülenmiş vaşak eti | 1 Vaşak eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 107 |
 | Tütsülenmiş yaban atı eti | 1 Yaban atı eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 68 |
 | Tütsülenmiş yaban domuzu eti | 1 Yaban domuzu eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 75 |
-| Tütsülenmiş yaban kazı eti | 2 Yaban kazı eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 87 |
+| Tütsülenmiş yaban kazı eti | 2 Yaban kazı eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 94 |
 | Tütsülenmiş yaban öküzü eti | 1 Yaban öküzü eti, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 100 |
 | Tütsülenmiş yayın | 1 Yayın, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 75 |
 | Tütsülenmiş yılan balığı | 1 Yılan balığı, Duman (ateş sağlar), 4 Su, 3 Yaprak | – | Ateşte (pişirme menüsü) | 74 |
 | Tütsülenmiş çapak | 2 Çapak, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 61 |
-| Tütsülenmiş ördek eti | 2 Ördek eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 83 |
+| Tütsülenmiş ördek eti | 2 Ördek eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 97 |
 | Yaban mersini ezmesi | 2 Yaban mersini, 2 Su, 1 Yaprak | Taş havan | El yapımı (Tab) | 33 |
 | Yaban mersini suyu | 2 Yaban mersini, 1 Nehir çömleği, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 110 |
 | Yaban çileği ezmesi | 3 Yaban çileği, 1 Su | Taş havan | El yapımı (Tab) | 14 |
@@ -351,7 +351,7 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Hasırotu yatak | 3 Kamış, 1 Deri parçası, 4 Lif, 3 İp | – | Usta Sinan yapar, yere kurulur | 287 |
 | Huş kabuğu kabı | 1 Huş kabuğu, 4 İp, 2 Lif | – | El yapımı (Tab) | 58 |
 | Kamış hasır | 4 Kamış | – | El yapımı (Tab) | 67 |
-| Kara cila | 3 Kül böceği kabuğu, 1 Çam reçinesi | – | El yapımı (Tab) | 157 |
+| Kara cila | 3 Kül böceği kabuğu, 1 Çam reçinesi | – | El yapımı (Tab) | 173 |
 | Kaya patlatıcı | 3 Yarasa gübresi, 2 Turba, 1 Tuz, 1 Göl çömleği | – | El yapımı (Tab) | 236 |
 | Kenevir halatı | 7 Kenevir lifi | – | El yapımı (Tab) | 404 |
 | Kenevir torba | 1 Kenevir lifi, 3 Lif, 3 İp | Kemik iğne | El yapımı (Tab) | 78 |
@@ -361,7 +361,7 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Ok kılıfı | 1 Deri parçası, 4 İp, 2 Dal | – | El yapımı (Tab) | 235 |
 | Plazma hücresi ² | 2 Plazma taşı, 1 Enerji hücresi, 2 Magma camı | – | El yapımı (Tab) | 539 |
 | Sarmaşık ipi | 4 Sarmaşık | – | El yapımı (Tab) | 36 |
-| Söğüt sepeti | 4 Söğüt dalı | – | El yapımı (Tab) | 5 |
+| Söğüt sepeti | 4 Söğüt dalı | – | El yapımı (Tab) | 50 |
 | Taş kase | 2 Lif, 2 İp, 1 Sarkıt | Bileği taşı | El yapımı (Tab) | 21 |
 | Tohum yağı | 4 Elma tohumu, 1 Nehir çömleği | Taş havan | El yapımı (Tab) | 84 |
 | Zehir yağı | 2 Sinek mantarı, 1 Ladin reçinesi | – | El yapımı (Tab) | 75 |
@@ -412,30 +412,30 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Bazalt pulu | 1 Yontulmuş bazalt, 2 İp, 2 Dal, 2 Taş | Çekiç taşı | El yapımı (Tab) | 185 |
 | Bazalt sivri ucu | 8 Yontulmuş bazalt | – | El yapımı (Tab) | 1.343 |
 | Boynuz kazma | 1 Geyik boynuzu, 1 Odun sapı, 2 İp, 2 Dal, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 67 |
-| Çakmaktaşı balta | 1 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 250 |
+| Çakmaktaşı balta | 1 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 164 |
 | Çakmaktaşı bıçak | 1 Çakmaktaşı pulu, 1 Odun sapı, 2 İp, 2 Dal, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 103 |
-| Çakmaktaşı kazma | 1 Çakmaktaşı sivri ucu, 1 Odun sapı, 3 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 335 |
-| Çakmaktaşı mızrak | 1 Çakmaktaşı sivri ucu, 1 Uzun sopa, 3 İp, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 295 |
-| Çakmaktaşı ok ucu | 8 Çakmaktaşı pulu | – | El yapımı (Tab) | 358 |
+| Çakmaktaşı kazma | 1 Çakmaktaşı sivri ucu, 1 Odun sapı, 3 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 222 |
+| Çakmaktaşı mızrak | 1 Çakmaktaşı sivri ucu, 1 Uzun sopa, 3 İp, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 266 |
+| Çakmaktaşı ok ucu | 2 Çakmaktaşı pulu | – | El yapımı (Tab) | 90 |
 | Çakmaktaşı pulu | 1 Yontulmuş çakmaktaşı, 2 İp, 2 Dal, 1 Taş | Çekiç taşı | El yapımı (Tab) | 33 |
 | Çakmaktaşı sivri ucu | 7 Yontulmuş çakmaktaşı | – | El yapımı (Tab) | 128 |
 | Diken ok ucu | 3 İri diken, 1 İp | – | El yapımı (Tab) | 49 |
-| Granit balta | 2 Granit, 1 Sert odun sapı, 2 İp, 1 Taş | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 525 |
-| Granit kazma | 3 Granit, 1 Sert odun sapı, 2 İp, 2 Dal | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 670 |
+| Granit balta | 2 Granit, 1 Sert odun sapı, 2 İp, 1 Taş | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 431 |
+| Granit kazma | 3 Granit, 1 Sert odun sapı, 2 İp, 2 Dal | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 606 |
 | Kemik ok ucu | 3 Kemik, 2 Taş | – (alet istemez, elle yapılır) | El yapımı (Tab) | 11 |
-| Kuvars balta | 1 Yontulmuş kuvars, 1 Güçlü odun sapı, 3 İp | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.310 |
+| Kuvars balta | 1 Yontulmuş kuvars, 1 Güçlü odun sapı, 3 İp | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.156 |
 | Kuvars bıçak | 1 Kuvars pulu, 1 Güçlü odun sapı, 3 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 327 |
-| Kuvars kazma | 1 Kuvars sivri ucu, 1 Güçlü odun sapı, 3 İp | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.670 |
-| Kuvars mızrak | 1 Kuvars sivri ucu, 1 Uzun sopa, 3 İp, 1 Bileme macunu | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.850 |
-| Kuvars ok ucu | 10 Kuvars pulu | – | El yapımı (Tab) | 1.799 |
+| Kuvars kazma | 1 Kuvars sivri ucu, 1 Güçlü odun sapı, 3 İp | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.159 |
+| Kuvars mızrak | 1 Kuvars sivri ucu, 1 Uzun sopa, 3 İp, 1 Bileme macunu | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.435 |
+| Kuvars ok ucu | 3 Kuvars pulu | – | El yapımı (Tab) | 540 |
 | Kuvars pulu | 1 Yontulmuş kuvars, 3 İp, 2 Dal, 2 Taş | Çekiç taşı | El yapımı (Tab) | 136 |
 | Kuvars sivri ucu | 8 Yontulmuş kuvars | – | El yapımı (Tab) | 917 |
 | Lav camı ok ucu | 2 Lav camı, 1 İp | – | El yapımı (Tab) | 146 |
-| Obsidyen balta | 1 Yontulmuş obsidyen, 1 Kadim odun sapı, 3 İp, 1 Ametist | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 10.150 |
+| Obsidyen balta | 1 Yontulmuş obsidyen, 1 Kadim odun sapı, 3 İp, 1 Ametist | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 6.980 |
 | Obsidyen bıçak | 1 Obsidyen pulu, 1 Kor odun sapı, 3 İp, 3 Dal, 2 Taş | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 354 |
-| Obsidyen kazma | 1 Obsidyen sivri ucu, 1 Kadim odun sapı, 3 İp, 1 Ametist | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 10.650 |
-| Obsidyen mızrak | 1 Obsidyen sivri ucu, 1 Uzun sopa, 3 İp, 1 Zehir yağı | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 6.290 |
-| Obsidyen ok ucu | 11 Obsidyen pulu | – | El yapımı (Tab) | 1.929 |
+| Obsidyen kazma | 1 Obsidyen sivri ucu, 1 Kadim odun sapı, 3 İp, 1 Ametist | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 6.984 |
+| Obsidyen mızrak | 1 Obsidyen sivri ucu, 1 Uzun sopa, 3 İp, 1 Zehir yağı | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 4.583 |
+| Obsidyen ok ucu | 2 Obsidyen pulu | – | El yapımı (Tab) | 351 |
 | Obsidyen pulu | 1 Yontulmuş obsidyen, 3 İp, 3 Dal, 2 Taş | Çekiç taşı | El yapımı (Tab) | 132 |
 | Obsidyen sivri ucu | 10 Yontulmuş obsidyen | – | El yapımı (Tab) | 1.092 |
 | Yontulmuş bazalt | 2 Bazalt, 2 İp, 1 Dal, 1 Taş | Çekiç taşı | El yapımı (Tab) | 129 |
@@ -448,51 +448,51 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Ağ | 3 Lif, 1 Halat, 1 İp, 1 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 51 |
-| Alevli Bakır ok | 10 Bakır ok, 1 Ateş yağı | – | El yapımı (Tab) | 16 |
-| Alevli Basit ok | 10 Basit ok, 1 Ateş yağı | – | El yapımı (Tab) | 14 |
-| Alevli Çelik ok | 10 Çelik ok, 1 Ateş yağı | – | El yapımı (Tab) | 37 |
-| Alevli Demir ok | 10 Demir ok, 1 Ateş yağı | – | El yapımı (Tab) | 25 |
-| Alevli Kara çelik ok | 10 Kara çelik ok, 1 Ateş yağı | – | El yapımı (Tab) | 60 |
-| Alevli Mor kristal ok | 10 Mor kristal ok, 1 Ateş yağı | – | El yapımı (Tab) | 102 |
-| Alevli Tunç ok | 10 Tunç ok, 1 Ateş yağı | – | El yapımı (Tab) | 19 |
+| Alevli Bakır ok | 10 Bakır ok, 1 Ateş yağı | – | El yapımı (Tab) | 20 |
+| Alevli Basit ok | 10 Basit ok, 1 Ateş yağı | – | El yapımı (Tab) | 16 |
+| Alevli Çelik ok | 10 Çelik ok, 1 Ateş yağı | – | El yapımı (Tab) | 93 |
+| Alevli Demir ok | 10 Demir ok, 1 Ateş yağı | – | El yapımı (Tab) | 61 |
+| Alevli Kara çelik ok | 10 Kara çelik ok, 1 Ateş yağı | – | El yapımı (Tab) | 195 |
+| Alevli Mor kristal ok | 10 Mor kristal ok, 1 Ateş yağı | – | El yapımı (Tab) | 229 |
+| Alevli Tunç ok | 10 Tunç ok, 1 Ateş yağı | – | El yapımı (Tab) | 52 |
 | Bağlı uç | 2 Keskin taş, 3 İp, 1 Dal | – | El yapımı (Tab) | 24 |
-| Bakır ok | 1 Bakır külçesi, 4 Dal, 2 Keklik tüyü, 1 Diken ok ucu (→ 18) | – | El yapımı (Tab) | 4 |
+| Bakır ok | 1 Bakır külçesi, 4 Dal, 2 Keklik tüyü, 1 Diken ok ucu (→ 18) | – | El yapımı (Tab) | 6 |
 | Balık kapanı | 2 Sepet, 3 İp, 1 Dal | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 27 |
 | Basit ok | 2 Dal, 1 Keskin taş, 1 Lif, 1 Kemik ok ucu (→ 11) | – | El yapımı (Tab) | 2 |
 | Basit yay | 1 Uzun sopa, 3 İp, 2 Lif | – | El yapımı (Tab) | 90 |
 | Bileği taşı | 2 Kumtaşı, 1 İp, 1 Dal, 1 Taş | Çekiç taşı | Örs · Silahçı Durdu (Orman) ve üstü döver | 16 |
 | Bola | 1 Halat, 3 Nehir çakılı, 1 İp, 1 Dal, 1 Taş | – | El yapımı (Tab) | 51 |
 | Çekiç taşı | 4 Nehir çakılı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 5 |
-| Çelik ok | 1 Çelik külçesi, 4 Dal, 1 Çakmaktaşı ok ucu, 4 Turna kuşu tüyü (→ 10) | – | El yapımı (Tab) | 25 |
-| Demir ok | 1 Demir külçesi, 4 Dal, 2 Ördek tüyü, 1 Akrep ok ucu (→ 10) | – | El yapımı (Tab) | 13 |
+| Çelik ok | 1 Çelik külçesi, 4 Dal, 1 Çakmaktaşı ok ucu, 4 Turna kuşu tüyü (→ 10) | – | El yapımı (Tab) | 72 |
+| Demir ok | 1 Demir külçesi, 4 Dal, 2 Ördek tüyü, 1 Akrep ok ucu (→ 10) | – | El yapımı (Tab) | 43 |
 | Deniz oltası | 1 Olta, 1 Halat, 2 Bakır külçesi, 1 Uzun sopa | – | El yapımı (Tab) | 210 |
-| Derin su oltası | 1 Makaralı olta, 3 Demir külçesi, 2 Kenevir halatı, 2 Huş katranı | – | El yapımı (Tab) | 2.193 |
-| Sağlam kısa yay | 1 Sağlam odun sapı, 1 Sinir kirişi, 2 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 245 |
+| Derin su oltası | 1 Makaralı olta, 3 Demir külçesi, 2 Kenevir halatı, 2 Huş katranı | – | El yapımı (Tab) | 2.223 |
+| Sağlam kısa yay | 1 Sağlam odun sapı, 1 Sinir kirişi, 2 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 115 |
 | Dokuma tezgâhı | 1 Odun sapı, 1 Halat, 3 İp, 2 Dal, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 100 |
-| Fırtına oltası | 1 Derin su oltası, 3 Gümüş külçesi, 2 Kenevir halatı, 2 Balık tutkalı | – | El yapımı (Tab) | 4.420 |
+| Fırtına oltası | 1 Derin su oltası, 3 Gümüş külçesi, 2 Kenevir halatı, 2 Balık tutkalı | – | El yapımı (Tab) | 4.455 |
 | Halat | 6 İp | – | El yapımı (Tab) | 30 |
 | İp | 3 Lif | – | El yapımı (Tab) | 4 |
-| Kara çelik ok | 1 Kara çelik külçesi, 4 Dal, 1 Obsidyen ok ucu, 4 Yaban kazı tüyü (→ 10) | – | El yapımı (Tab) | 48 |
+| Kara çelik ok | 1 Kara çelik külçesi, 4 Dal, 1 Obsidyen ok ucu, 4 Yaban kazı tüyü (→ 10) | – | El yapımı (Tab) | 165 |
 | Kemik iğne | 2 Kemik, 2 Kum | Bileği taşı | Örs · Silahçı Durdu (Orman) ve üstü döver | 9 |
 | Kemik olta iğnesi | 1 Kemik, 1 Keskin taş, 2 Lif | Kemik iğne | El yapımı (Tab) | 10 |
 | Kemik zıpkın | 1 İp, 1 Uzun sopa, 1 Diken iğnesi | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 62 |
-| Keskin Bakır ok | 10 Bakır ok, 1 Bileme macunu | – | El yapımı (Tab) | 8 |
-| Keskin Basit ok | 10 Basit ok, 1 Bileme macunu | – | El yapımı (Tab) | 6 |
-| Keskin Çelik ok | 10 Çelik ok, 1 Bileme macunu | – | El yapımı (Tab) | 29 |
-| Keskin Demir ok | 10 Demir ok, 1 Bileme macunu | – | El yapımı (Tab) | 17 |
-| Keskin Kara çelik ok | 10 Kara çelik ok, 1 Bileme macunu | – | El yapımı (Tab) | 52 |
-| Keskin Mor kristal ok | 10 Mor kristal ok, 1 Bileme macunu | – | El yapımı (Tab) | 94 |
+| Keskin Bakır ok | 10 Bakır ok, 1 Bileme macunu | – | El yapımı (Tab) | 11 |
+| Keskin Basit ok | 10 Basit ok, 1 Bileme macunu | – | El yapımı (Tab) | 7 |
+| Keskin Çelik ok | 10 Çelik ok, 1 Bileme macunu | – | El yapımı (Tab) | 84 |
+| Keskin Demir ok | 10 Demir ok, 1 Bileme macunu | – | El yapımı (Tab) | 52 |
+| Keskin Kara çelik ok | 10 Kara çelik ok, 1 Bileme macunu | – | El yapımı (Tab) | 186 |
+| Keskin Mor kristal ok | 10 Mor kristal ok, 1 Bileme macunu | – | El yapımı (Tab) | 220 |
 | Keskin taş | 2 Taş | – | El yapımı (Tab) | 3 |
-| Keskin Tunç ok | 10 Tunç ok, 1 Bileme macunu | – | El yapımı (Tab) | 11 |
+| Keskin Tunç ok | 10 Tunç ok, 1 Bileme macunu | – | El yapımı (Tab) | 43 |
 | Kirmen | 1 Sopa, 1 Taş halka, 2 İp, 2 Dal, 1 Taş | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 47 |
 | Kürek | 1 Odun kalası, 2 Keskin taş, 2 İp, 1 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 39 |
-| Makaralı olta | 1 Deniz oltası, 2 Tunç külçesi, 1 Kenevir halatı, 2 Sağlam odun kalası | – | El yapımı (Tab) | 896 |
+| Makaralı olta | 1 Deniz oltası, 2 Tunç külçesi, 1 Kenevir halatı, 2 Sağlam odun kalası | – | El yapımı (Tab) | 773 |
 | Mızrak | 1 Sopa, 2 Keskin taş, 2 İp, 1 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 31 |
-| Mor kristal ok | 1 Mor kristal levhası, 4 Dal, 2 Ur kekliği tüyü, 1 Kuvars ok ucu (→ 11) | – | El yapımı (Tab) | 90 |
+| Mor kristal ok | 1 Mor kristal levhası, 4 Dal, 2 Ur kekliği tüyü, 1 Kuvars ok ucu (→ 11) | – | El yapımı (Tab) | 196 |
 | Olta | 1 Uzun sopa, 4 İp, 2 Dal, 1 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 56 |
 | Öğütme taşı | 2 Kumtaşı, 1 İp, 1 Dal, 1 Taş (eskiden 2 Granit) | Çekiç taşı | El yapımı (Tab) | 16 |
 | Pişirme taşı | 1 Taş levha, 1 Ateş, 2 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 57 |
-| Güçlü kısa yay | 1 Güçlü odun sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 440 |
+| Güçlü kısa yay | 1 Güçlü odun sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 171 |
 | Sapan | 1 Deri parçası, 1 Halat, 3 İp, 3 Dal, 3 Taş | – | El yapımı (Tab) | 279 |
 | Sepet | 1 Hasır, 4 İp, 1 Dal, 1 Taş | – | El yapımı (Tab) | 42 |
 | Sivri taş | 4 Keskin taş | – | El yapımı (Tab) | 15 |
@@ -504,58 +504,58 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Taş kılıç | 1 Sopa, 4 Keskin taş, 2 İp, 1 Çakmaktaşı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 39 |
 | Taş savaş çekici | 1 Sopa, 4 Taş, 3 İp | – | El yapımı (Tab) | 31 |
 | Taş topuz | 1 Sopa, 2 Taş, 2 İp | – | El yapımı (Tab) | 23 |
-| Tunç ok | 1 Tunç külçesi, 4 Dal, 1 Lav camı ok ucu, 2 Bıldırcın tüyü (→ 10) | – | El yapımı (Tab) | 7 |
+| Tunç ok | 1 Tunç külçesi, 4 Dal, 1 Lav camı ok ucu, 2 Bıldırcın tüyü (→ 10) | – | El yapımı (Tab) | 35 |
 | Tuzak | 1 Halat, 1 Sopa, 2 İp, 2 Dal, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 66 |
 | Uzun sopa | 1 Sopa, 4 Dal, 1 İp | – | El yapımı (Tab) | 22 |
 | Yaprak kova | 4 Yaprak, 3 Lif | – | El yapımı (Tab) | 8 |
-| Yıldız oltası | 1 Fırtına oltası, 4 Ametist, 1 Kristal ipek kumaş, 2 Gümüş külçesi | – | El yapımı (Tab) | 6.667 |
-| Zehirli Bakır ok | 10 Bakır ok, 1 Zehir yağı | – | El yapımı (Tab) | 12 |
+| Yıldız oltası | 1 Fırtına oltası, 4 Ametist, 1 Kristal ipek kumaş, 2 Gümüş külçesi | – | El yapımı (Tab) | 6.936 |
+| Zehirli Bakır ok | 10 Bakır ok, 1 Zehir yağı | – | El yapımı (Tab) | 15 |
 | Zehirli Basit ok | 10 Basit ok, 1 Zehir yağı | – | El yapımı (Tab) | 10 |
-| Zehirli Çelik ok | 10 Çelik ok, 1 Zehir yağı | – | El yapımı (Tab) | 33 |
-| Zehirli Demir ok | 10 Demir ok, 1 Zehir yağı | – | El yapımı (Tab) | 21 |
-| Zehirli Kara çelik ok | 10 Kara çelik ok, 1 Zehir yağı | – | El yapımı (Tab) | 56 |
-| Zehirli Mor kristal ok | 10 Mor kristal ok, 1 Zehir yağı | – | El yapımı (Tab) | 98 |
-| Zehirli Tunç ok | 10 Tunç ok, 1 Zehir yağı | – | El yapımı (Tab) | 15 |
+| Zehirli Çelik ok | 10 Çelik ok, 1 Zehir yağı | – | El yapımı (Tab) | 87 |
+| Zehirli Demir ok | 10 Demir ok, 1 Zehir yağı | – | El yapımı (Tab) | 56 |
+| Zehirli Kara çelik ok | 10 Kara çelik ok, 1 Zehir yağı | – | El yapımı (Tab) | 190 |
+| Zehirli Mor kristal ok | 10 Mor kristal ok, 1 Zehir yağı | – | El yapımı (Tab) | 224 |
+| Zehirli Tunç ok | 10 Tunç ok, 1 Zehir yağı | – | El yapımı (Tab) | 47 |
 
 #### Süs (53)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Altın yüzük | 2 Altın külçesi, 1 Kehribar | – | El yapımı (Tab) | 775 |
-| Ametist yüzük | 2 Ametist, 1 Gümüş külçesi | – | El yapımı (Tab) | 1.030 |
+| Altın yüzük | 2 Altın külçesi, 1 Kehribar | – | El yapımı (Tab) | 1.315 |
+| Ametist yüzük | 2 Ametist, 1 Gümüş külçesi | – | El yapımı (Tab) | 1.512 |
 | Ana tanrıça heykelciği | 1 Kil figürin, 1 Kırmızı boya, 4 İp, 4 Kum | – | El yapımı (Tab) | 284 |
 | Av sahnesi duvar resmi | 1 Mağara resmi, 1 Kırmızı boya, 5 İp, 4 Kum | – | El yapımı (Tab) | 334 |
-| Ay taşı kolyesi | 1 Ay taşı, 2 İp | – | El yapımı (Tab) | 235 |
+| Ay taşı kolyesi | 3 Ay taşı, 2 İp | – | El yapımı (Tab) | 362 |
 | Boyalı çömlek | 1 Nehir çömleği, 1 Gelincik boyası, 4 İp, 3 Kum, 1 Yıldız mürekkebi | – | El yapımı (Tab) | 398 |
-| Diş kolye | 1 Kurt dişi, 4 İp, 2 Kum | – | El yapımı (Tab) | 31 |
-| Domuz dişi muska | 1 Yaban domuzu dişi, 4 İp, 2 Kum | – | El yapımı (Tab) | 54 |
+| Diş kolye | 1 Kurt dişi, 4 İp, 2 Kum | – | El yapımı (Tab) | 35 |
+| Domuz dişi muska | 3 Yaban domuzu dişi, 4 İp, 2 Kum | – | El yapımı (Tab) | 65 |
 | El izi resmi | 1 Kırmızı okr tozu, 3 Su, 2 İp, 1 Kum | – | El yapımı (Tab) | 144 |
-| Gölge dişi kolyesi | 3 Gölge dişi, 1 Kristal ipek | – | El yapımı (Tab) | 280 |
-| Gümüş yüzük | 1 Gümüş külçesi, 1 Yontulmuş kuvars | – | El yapımı (Tab) | 330 |
-| İnci kolye | 3 Sazlı inci, 1 Batık kök | – | El yapımı (Tab) | 78 |
-| Kartal pençesi kolyesi | 2 Kartal pençesi, 2 İp | – | El yapımı (Tab) | 135 |
+| Gölge dişi kolyesi | 3 Gölge dişi, 1 Kristal ipek | – | El yapımı (Tab) | 598 |
+| Gümüş yüzük | 1 Gümüş külçesi, 1 Yontulmuş kuvars | – | El yapımı (Tab) | 520 |
+| İnci kolye | 1 Sazlı inci, 1 Batık kök | – | El yapımı (Tab) | 105 |
+| Kartal pençesi kolyesi | 2 Kartal pençesi, 2 İp | – | El yapımı (Tab) | 198 |
 | Kehribar boncuk | 1 Kehribar, 4 İp, 3 Kum | Bileği taşı | El yapımı (Tab) | 78 |
-| Kehribar kolye | 1 Kehribar boncuk, 6 İp, 3 Kum | – | El yapımı (Tab) | 160 |
-| Kemik kolye | 3 İp, 1 Kemik olta iğnesi | – | El yapımı (Tab) | 45 |
-| Kıymık kolye | 2 Mor kıymık, 2 İp | – | El yapımı (Tab) | 37 |
+| Kehribar kolye | 2 Kehribar boncuk, 2 İp | – | El yapımı (Tab) | 214 |
+| Kemik kolye | 3 İp, 1 Kemik olta iğnesi | – | El yapımı (Tab) | 55 |
+| Kıymık kolye | 1 Mor kıymık, 2 İp | – | El yapımı (Tab) | 48 |
 | Kil figürin | 1 Islak beyaz kil, 2 Su, 1 Dal | – | El yapımı (Tab) | 55 |
-| Kristal yüzük | 2 Dağ kristali, 1 Tavan ağı | – | El yapımı (Tab) | 245 |
-| Kül dişi muska | 2 Kül dişi, 1 Halat, 1 Kehribar | – | El yapımı (Tab) | 195 |
+| Kristal yüzük | 3 Dağ kristali, 1 Tavan ağı | – | El yapımı (Tab) | 452 |
+| Kül dişi muska | 2 Kül dişi, 1 Halat, 1 Kehribar | – | El yapımı (Tab) | 300 |
 | Mağara resmi | 1 Kara boya, 1 Taş levha, 4 İp, 4 Kum | – | El yapımı (Tab) | 73 |
-| Pençe kolye | 1 Ayı pençesi, 5 İp, 1 Pirit | – | El yapımı (Tab) | 110 |
+| Pençe kolye | 2 Ayı pençesi, 5 İp, 1 Pirit | – | El yapımı (Tab) | 172 |
 | Taş halka | 2 Kireçtaşı, 2 İp, 1 Kum (eskiden 2 Granit) | Bileği taşı | El yapımı (Tab) | 17 |
 | Taş totem | 2 Granit, 1 Yaban mersini boyası, 2 İp, 2 Kum | – | El yapımı (Tab) | 80 |
-| Timsah dişi kolye | 2 Timsah dişi, 2 İp, 1 Kemik | – | El yapımı (Tab) | 93 |
-| Palamut kolyesi | 6 Meşe palamudu, 2 İp, 1 Meşe kabuğu | – | El yapımı (Tab) | 65 |
+| Timsah dişi kolye | 2 Timsah dişi, 2 İp, 1 Kemik | – | El yapımı (Tab) | 121 |
+| Palamut kolyesi | 6 Meşe palamudu, 2 İp, 1 Meşe kabuğu | – | El yapımı (Tab) | 75 |
 | Taş yüzük | 2 Nehir çakılı, 1 Lif | – | El yapımı (Tab) | 25 |
-| Bakır yüzük | 1 Bakır külçesi | – | El yapımı (Tab) | 44 |
-| Kemik yüzük | 2 Kemik, 1 Sinir | – | El yapımı (Tab) | 59 |
-| Tunç yüzük | 1 Tunç külçesi | – | El yapımı (Tab) | 79 |
-| Granit yüzük | 3 Granit, 1 Kumtaşı | – | El yapımı (Tab) | 105 |
-| Demir yüzük | 1 Demir halka | – | El yapımı (Tab) | 140 |
-| Timsah yüzüğü | 2 Timsah derisi, 1 Demir külçesi | – | El yapımı (Tab) | 185 |
-| Kehribar yüzük | 2 Kehribar, 1 Demir halka | – | El yapımı (Tab) | 435 |
-| Ejder yüzüğü | 1 Kara pul, 1 Lav pulu | – | El yapımı (Tab) | 580 |
+| Bakır yüzük | 1 Bakır külçesi | – | El yapımı (Tab) | 30 |
+| Kemik yüzük | 2 Kemik, 1 Sinir | – | El yapımı (Tab) | 34 |
+| Tunç yüzük | 1 Tunç külçesi | – | El yapımı (Tab) | 149 |
+| Granit yüzük | 3 Granit, 1 Kumtaşı | – | El yapımı (Tab) | 171 |
+| Demir yüzük | 1 Demir halka | – | El yapımı (Tab) | 335 |
+| Timsah yüzüğü | 2 Timsah derisi, 1 Demir külçesi | – | El yapımı (Tab) | 385 |
+| Kehribar yüzük | 4 Kehribar, 1 Demir halka | – | El yapımı (Tab) | 543 |
+| Ejder yüzüğü | 1 Kara pul, 1 Lav pulu | – | El yapımı (Tab) | 663 |
 
 #### Taş ve kil (26)
 
@@ -591,7 +591,7 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Ağıl | 10 Çit | – | Usta Sinan yapar, yere kurulur | 1.107 |
-| Arı kovanı | 2 Söğüt sepeti, 1 Balmumu, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 139 |
+| Arı kovanı | 2 Söğüt sepeti, 1 Balmumu, 3 Taş, 2 Dal, 2 Kum | – | Usta Sinan yapar, yere kurulur | 265 |
 | Ateş yeri | 1 Ateş, 4 Taş, 1 Dal, 1 Kum | – | Usta Sinan yapar, yere kurulur | 34 |
 | Atölye | 4 Odun kalası, 4 Taş, 2 İp, 2 Sopa | – | Usta Sinan yapar, yere kurulur | 114 |
 | Çit | 1 Sert odun sapı, 2 Sarmaşık ipi, 2 Dal (→ 2 Çit) | – | El yapımı (Tab), İnşa kipiyle kurulur | 82 |
@@ -623,7 +623,7 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Ahşap parke | 1 Sert odun kalası (→ 4) | – | El yapımı (Tab), İnşa kipiyle kurulur | 10 |
-| Çakıl yol | 3 Nehir çakılı, 1 Kum (→ 4) | – | El yapımı (Tab), İnşa kipiyle kurulur | 2 |
+| Çakıl yol | 3 Nehir çakılı, 1 Kum (→ 4) | – | El yapımı (Tab), İnşa kipiyle kurulur | 1 |
 | Dal çit | 4 Dal, 2 Lif (→ 2) | – | El yapımı (Tab), İnşa kipiyle kurulur | 4 |
 | Direk feneri | 1 Sopa, 1 Kil lamba, 1 Balçık bezesi | – | Usta Sinan yapar, İnşa kipiyle kurulur | 301 |
 | Tahta kapı | 2 Çit, 1 İp | – | El yapımı (Tab), İnşa kipiyle kurulur | 227 |
@@ -634,15 +634,15 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Deri çarık | 1 Deri parçası, 2 Sinir, 3 Yaprak | – | El yapımı (Tab) | 205 |
-| Kamış çizme | 6 Kamış, 3 İp, 2 Yosun | – | El yapımı (Tab) | 915 |
-| Kemik çizme | 4 Kemik, 1 Deri parçası, 3 Yaprak | – | El yapımı (Tab) | 340 |
-| Kemik eldiven | 4 Kemik, 2 Sinir, 1 Deri parçası, 3 Lif | – | El yapımı (Tab) | 425 |
-| Kemik miğfer | 4 Kemik, 2 Sinir, 1 Deri parçası, 2 Taş | – | El yapımı (Tab) | 420 |
-| Kemik zırh | 4 Kemik, 2 Sinir, 1 Deri parçası | – | El yapımı (Tab) | 1.040 |
-| Kristal ipek kumaş | 4 Kristal ipek, 2 Lif | – | El yapımı (Tab) | 476 |
-| Kürk başlık | 2 Sinir, 2 Taş, 2 Yaban atı derisi | – | El yapımı (Tab) | 260 |
-| Kürk eldiven | 2 Sinir, 3 Lif, 5 Tavşan derisi | – | El yapımı (Tab) | 260 |
+| Deri çarık | 1 Deri parçası, 2 Sinir, 3 Yaprak | – | El yapımı (Tab) | 201 |
+| Kamış çizme | 6 Kamış, 3 İp, 2 Yosun | – | El yapımı (Tab) | 1.151 |
+| Kemik çizme | 4 Kemik, 1 Deri parçası, 3 Yaprak | – | El yapımı (Tab) | 289 |
+| Kemik eldiven | 4 Kemik, 2 Sinir, 1 Deri parçası, 3 Lif | – | El yapımı (Tab) | 298 |
+| Kemik miğfer | 4 Kemik, 2 Sinir, 1 Deri parçası, 2 Taş | – | El yapımı (Tab) | 292 |
+| Kemik zırh | 4 Kemik, 2 Sinir, 1 Deri parçası | – | El yapımı (Tab) | 623 |
+| Kristal ipek kumaş | 4 Kristal ipek, 2 Lif | – | El yapımı (Tab) | 665 |
+| Kürk başlık | 2 Sinir, 2 Taş, 2 Yaban atı derisi | – | El yapımı (Tab) | 203 |
+| Kürk eldiven | 2 Sinir, 3 Lif, 5 Tavşan derisi | – | El yapımı (Tab) | 207 |
 | Kürk yelek | 2 Sinir, 4 Geyik derisi | – | El yapımı (Tab) | 47 |
 
 #### Av ve hayvan (5)
@@ -677,56 +677,56 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Ametist miğfer | 2 Ametist, 1 Kristal ipek, 1 Deri parçası, 1 Kristal boynuz | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 4.790 |
-| Bakır çizme | 4 Bakır cevheri, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 265 |
-| Bakır eldiven | 4 Bakır cevheri, 3 Lif, 3 Kunduz derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 330 |
-| Bakır miğfer | 4 Bakır cevheri, 2 Sinir, 2 Taş, 2 Kurt derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 330 |
-| Bakır zırh | 5 Bakır cevheri, 1 Deri parçası, 1 Sinir | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 810 |
-| Ceviz kabuğu miğfer | 6 Ceviz, 2 Ceviz kabuğu, 1 Deri parçası, 2 İri diken, 2 Taş | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 685 |
-| Çelik çizme | 6 Demir cevheri, 2 Taş kömürü, 3 Yaprak, 2 Dağ keçisi derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.180 |
-| Çelik eldiven | 6 Demir cevheri, 2 Taş kömürü, 3 Lif, 2 Muflon derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.410 |
-| Çelik miğfer | 6 Demir cevheri, 2 Taş kömürü, 2 Sinir, 2 Taş, 1 Vaşak derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.420 |
-| Çelik zırh | 8 Demir cevheri, 3 Taş kömürü, 1 Sinir, 1 Yaban öküzü derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 3.570 |
-| Demir çizme | 4 Demir cevheri, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 715 |
-| Demir eldiven | 4 Demir cevheri, 3 Lif, 3 Su samuru derisi | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 870 |
-| Demir miğfer | 4 Demir cevheri, 1 Deri parçası, 2 Sinir, 2 Taş | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 875 |
-| Demir zırh | 7 Demir cevheri, 1 Deri parçası, 1 Sinir | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 2.180 |
-| Ejder çizmesi | 1 Kara pul, 2 Kül kurdu postu, 3 Yaprak | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 2.490 |
-| Ejder eldiveni | 1 Kara pul, 2 Lav pulu, 1 Deri parçası, 3 Lif | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 2.900 |
-| Ejder miğferi | 1 Kara pul, 3 Demir cevheri, 2 Taş, 1 Yarasa kanadı | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 2.950 |
+| Ametist miğfer | 2 Ametist, 1 Kristal ipek, 1 Deri parçası, 1 Kristal boynuz | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 4.071 |
+| Bakır çizme | 4 Bakır cevheri, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 251 |
+| Bakır eldiven | 4 Bakır cevheri, 3 Lif, 3 Kunduz derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 259 |
+| Bakır miğfer | 4 Bakır cevheri, 2 Sinir, 2 Taş, 2 Kurt derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 254 |
+| Bakır zırh | 5 Bakır cevheri, 1 Deri parçası, 1 Sinir | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 542 |
+| Ceviz kabuğu miğfer | 6 Ceviz, 2 Ceviz kabuğu, 1 Deri parçası, 2 İri diken, 2 Taş | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 900 |
+| Çelik çizme | 6 Demir cevheri, 2 Taş kömürü, 3 Yaprak, 2 Dağ keçisi derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.269 |
+| Çelik eldiven | 6 Demir cevheri, 2 Taş kömürü, 3 Lif, 2 Muflon derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.282 |
+| Çelik miğfer | 6 Demir cevheri, 2 Taş kömürü, 2 Sinir, 2 Taş, 1 Vaşak derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.275 |
+| Çelik zırh | 8 Demir cevheri, 3 Taş kömürü, 1 Sinir, 1 Yaban öküzü derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 3.499 |
+| Demir çizme | 4 Demir cevheri, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.001 |
+| Demir eldiven | 4 Demir cevheri, 3 Lif, 3 Su samuru derisi | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.011 |
+| Demir miğfer | 4 Demir cevheri, 1 Deri parçası, 2 Sinir, 2 Taş | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.013 |
+| Demir zırh | 7 Demir cevheri, 1 Deri parçası, 1 Sinir | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 2.786 |
+| Ejder çizmesi | 1 Kara pul, 2 Kül kurdu postu, 3 Yaprak | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 3.252 |
+| Ejder eldiveni | 1 Kara pul, 2 Lav pulu, 1 Deri parçası, 3 Lif | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 3.260 |
+| Ejder miğferi | 1 Kara pul, 3 Demir cevheri, 2 Taş, 1 Yarasa kanadı | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 3.254 |
 | Ejder pulu eldiven ² | 2 Yavru ejder pulu, 1 Mantar lifi eldiven, 6 Tazı dişi, 4 Kor pulu | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 2.924 |
-| Ejder zırhı | 1 Kara pul, 3 Demir cevheri, 1 Deri parçası | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 7.510 |
+| Ejder zırhı | 1 Kara pul, 3 Demir cevheri, 1 Deri parçası | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 8.032 |
 | Fırtına tüyü başlık ² | 2 Fırtına tüyü, 2 Gök tazısı postu, 1 Demir miğfer, 7 Rüzgâr tüyü | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 1.939 |
-| Gümüş çizme | 2 Gümüş cevheri, 1 Demir cevheri, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.510 |
-| Gümüş eldiven | 2 Gümüş cevheri, 1 Demir cevheri, 3 Lif, 1 Kaya yarasası kanadı | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.790 |
-| Gümüş pullu zırh | 3 Gümüş cevheri, 2 Demir cevheri, 1 Ayı pençesi, 1 Mağara ayısı derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 4.580 |
+| Gümüş çizme | 2 Gümüş cevheri, 1 Demir cevheri, 1 Deri parçası, 3 Yaprak | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.459 |
+| Gümüş eldiven | 2 Gümüş cevheri, 1 Demir cevheri, 3 Lif, 1 Kaya yarasası kanadı | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.474 |
+| Gümüş pullu zırh | 3 Gümüş cevheri, 2 Demir cevheri, 1 Ayı pençesi, 1 Mağara ayısı derisi | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 4.024 |
 | Hurda çizme ² | 4 Dişli, 1 Demir çizme, 1 Goblin bıçağı, 14 Hurda parçası | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 1.597 |
-| Işık pulu eldiven | 4 Işık pulu, 2 Kristal, 1 Deri parçası, 3 Lif | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 4.690 |
-| Kara çelik çizme | 6 Demir cevheri, 4 Obsidyen, 3 Yaprak, 1 Lav yılanı pulu | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 1.940 |
-| Kara çelik eldiven | 6 Demir cevheri, 4 Obsidyen, 3 Lif, 1 Akrep kabuğu | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 2.280 |
-| Kara çelik miğfer | 6 Demir cevheri, 4 Obsidyen, 1 Deri parçası, 2 Sinir, 2 Taş | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 2.310 |
-| Kara çelik zırh | 8 Demir cevheri, 5 Obsidyen, 1 Deri parçası, 1 Sinir | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 5.870 |
-| Kartal tüyü miğfer | 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Gri vaşak postu, 1 Rüzgâr taşı | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.810 |
-| Kristal ipek çizme | 2 Kristal ipek, 1 Işık pulu, 3 Yaprak, 1 Ayna ipeği | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 4.100 |
-| Kristal ipek zırh | 3 Kristal ipek, 2 Ametist, 3 Demir cevheri, 1 Deri parçası | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 12.350 |
+| Işık pulu eldiven | 4 Işık pulu, 2 Kristal, 1 Deri parçası, 3 Lif | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 4.079 |
+| Kara çelik çizme | 6 Demir cevheri, 4 Obsidyen, 3 Yaprak, 1 Lav yılanı pulu | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 2.828 |
+| Kara çelik eldiven | 6 Demir cevheri, 4 Obsidyen, 3 Lif, 1 Akrep kabuğu | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 2.835 |
+| Kara çelik miğfer | 6 Demir cevheri, 4 Obsidyen, 1 Deri parçası, 2 Sinir, 2 Taş | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 2.830 |
+| Kara çelik zırh | 8 Demir cevheri, 5 Obsidyen, 1 Deri parçası, 1 Sinir | – | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | 6.984 |
+| Kartal tüyü miğfer | 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Gri vaşak postu, 1 Rüzgâr taşı | – | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | 1.466 |
+| Kristal ipek çizme | 2 Kristal ipek, 1 Işık pulu, 3 Yaprak, 1 Ayna ipeği | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 4.069 |
+| Kristal ipek zırh | 3 Kristal ipek, 2 Ametist, 3 Demir cevheri, 1 Deri parçası | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 10.048 |
 | Kristal miğfer ² | 3 Kristal kanat, 4 Golem parçası, 2 Kobalt külçesi, 1 Fırtına tüyü başlık | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 3.692 |
 | Mantar lifi eldiven ² | 2 Böcek kabuğu, 4 Spor tozu, 2 Goblin kulağı, 1 Demir eldiven, 1 Magma kabuğu | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 1.486 |
 | Meka çizme ² | 2 Titanyum külçesi, 1 Muhafız zırhı parçası, 1 Hurda çizme, 13 Eski devre, 4 Yıldız tilkisi postu | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 4.324 |
 | Meka zırh ² | 4 Titanyum külçesi, 3 Kobalt külçesi, 1 Enerji hücresi, 1 Motor, 2 Mor çekirdek, 6 Buz kürkü | – | Mühendis Işın yapar (600 Vio işçilik) | 5.364 |
-| Meşe kabuk çizme | 2 Meşe kabuğu, 1 Deri parçası, 3 Eğrelti | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 555 |
-| Meşe kabuk eldiven | 2 Meşe kabuğu, 1 Deri parçası, 3 Kirpi dikeni, 3 Lif | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 685 |
-| Meşe kabuk zırh | 3 Meşe kabuğu, 1 Deri parçası, 3 Kirpi dikeni, 1 Sinir | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 1.700 |
-| Mor kristal çizme | 4 Kristal, 2 Ametist, 3 Yaprak, 1 Gölge pulu | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.200 |
-| Mor kristal eldiven | 4 Kristal, 2 Ametist, 3 Lif, 1 Işık tilkisi postu | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.690 |
-| Mor kristal miğfer | 4 Kristal, 2 Ametist, 2 Sinir, 2 Taş, 1 Gölge postu | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.760 |
-| Mor kristal zırh | 5 Kristal, 3 Ametist, 1 Sinir, 1 Kristal geyik derisi | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 9.620 |
-| Timsah eldiven | 1 Timsah derisi, 1 Demir cevheri, 3 Lif | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.110 |
-| Timsah miğfer | 2 Timsah derisi, 1 Demir cevheri, 2 Sinir, 2 Taş | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.120 |
-| Timsah pulu zırh | 3 Demir cevheri, 2 Timsah derisi, 1 Bataklık kurdu postu, 1 Sinir | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 2.790 |
-| Tunç çizme | 4 Bakır cevheri, 2 Kalay cevheri, 3 Yaprak, 2 Yaban domuzu derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 435 |
-| Tunç eldiven | 4 Bakır cevheri, 2 Kalay cevheri, 3 Lif, 8 Sincap derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 540 |
-| Tunç miğfer | 4 Bakır cevheri, 2 Kalay cevheri, 2 Sinir, 2 Taş, 2 Karaca derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 540 |
-| Tunç zırh | 6 Bakır cevheri, 2 Kalay cevheri, 1 Deri parçası, 1 Sinir | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 1.330 |
+| Meşe kabuk çizme | 2 Meşe kabuğu, 1 Deri parçası, 3 Eğrelti | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 897 |
+| Meşe kabuk eldiven | 2 Meşe kabuğu, 1 Deri parçası, 3 Kirpi dikeni, 3 Lif | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 906 |
+| Meşe kabuk zırh | 3 Meşe kabuğu, 1 Deri parçası, 3 Kirpi dikeni, 1 Sinir | – | Örs · Zırhçı Duran (Orman) ve üstü döver | 2.484 |
+| Mor kristal çizme | 4 Kristal, 2 Ametist, 3 Yaprak, 1 Gölge pulu | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.538 |
+| Mor kristal eldiven | 4 Kristal, 2 Ametist, 3 Lif, 1 Işık tilkisi postu | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.547 |
+| Mor kristal miğfer | 4 Kristal, 2 Ametist, 2 Sinir, 2 Taş, 1 Gölge postu | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 3.540 |
+| Mor kristal zırh | 5 Kristal, 3 Ametist, 1 Sinir, 1 Kristal geyik derisi | – | Örs · Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü döver | 8.737 |
+| Timsah eldiven | 1 Timsah derisi, 1 Demir cevheri, 3 Lif | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.163 |
+| Timsah miğfer | 2 Timsah derisi, 1 Demir cevheri, 2 Sinir, 2 Taş | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 1.165 |
+| Timsah pulu zırh | 3 Demir cevheri, 2 Timsah derisi, 1 Bataklık kurdu postu, 1 Sinir | – | Örs · Zırhçı Veli (Bataklık) ve üstü döver | 3.204 |
+| Tunç çizme | 4 Bakır cevheri, 2 Kalay cevheri, 3 Yaprak, 2 Yaban domuzu derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 780 |
+| Tunç eldiven | 4 Bakır cevheri, 2 Kalay cevheri, 3 Lif, 8 Sincap derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 788 |
+| Tunç miğfer | 4 Bakır cevheri, 2 Kalay cevheri, 2 Sinir, 2 Taş, 2 Karaca derisi | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 783 |
+| Tunç zırh | 6 Bakır cevheri, 2 Kalay cevheri, 1 Deri parçası, 1 Sinir | – | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | 2.160 |
 
 #### Ev eşyası (15)
 
@@ -735,15 +735,15 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Ahşap karyola | 4 Odun kalası, 2 Deri parçası, 6 Kuru ot, 1 Kükürt sarısı boya | – | Usta Sinan yapar (ev içine konur) | 738 |
-| Asma fener | 1 Balmumu mumu, 1 Sert odun kalası, 1 Halat, 1 Işıltılı boya | – | Usta Sinan yapar (ev içine konur) | 538 |
+| Asma fener | 1 Balmumu mumu, 1 Sert odun kalası, 1 Halat, 1 Işıltılı boya | – | Usta Sinan yapar (ev içine konur) | 1.009 |
 | Dolap | 5 Odun kalası, 1 Halat, 1 Gelincik boyası, 1 Liken boyası | – | Usta Sinan yapar (ev içine konur) | 277 |
 | Duvar halısı | 2 Keten kumaş, 2 Mürver boyası, 1 Sopa, 1 Yosun yeşili boya | – | Usta Sinan yapar (ev içine konur) | 742 |
 | Halı | 3 Keten kumaş, 2 Mürver boyası, 2 Keten ipliği, 1 Mor kök boyası | – | Usta Sinan yapar (ev içine konur) | 1.219 |
 | Kilim | 3 Keten ipliği, 1 Mürver boyası, 6 Lif, 1 Sarı boya | – | Usta Sinan yapar (ev içine konur) | 599 |
 | Masa | 3 Odun kalası, 4 Sopa, 2 İp, 1 Damla akı boyası | – | Usta Sinan yapar (ev içine konur) | 163 |
-| Mor yosun yastığı | 4 Mor yosun, 3 Lif, 1 Mor damar boyası | – | Usta Sinan yapar (ev içine konur) | 699 |
+| Mor yosun yastığı | 4 Mor yosun, 3 Lif, 1 Mor damar boyası | – | Usta Sinan yapar (ev içine konur) | 735 |
 | Perde | 2 Keten kumaş, 1 Sopa, 2 İp, 1 Beyaz boya | – | Usta Sinan yapar (ev içine konur) | 459 |
-| Kupa panosu | 2 Odun kalası, 1 Tunç levha, 2 İp, 1 Sopa | – | Usta Sinan yapar (ev içine konur) | 887 |
+| Kupa panosu | 2 Odun kalası, 1 Tunç levha, 2 İp, 1 Sopa | – | Usta Sinan yapar (ev içine konur) | 603 |
 | Raf | 2 Odun kalası, 2 İp, 1 Sopa | – | Usta Sinan yapar (ev içine konur) | 62 |
 | Saksı | 1 Nehir çömleği, 2 Kum, 2 Papatya | – | Usta Sinan yapar (ev içine konur) | 72 |
 | Sandalye | 2 Odun kalası, 2 Sopa, 2 İp | – | Usta Sinan yapar (ev içine konur) | 73 |
@@ -758,13 +758,13 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Böcek kabuğu boyası | 2 Kök böceği kabuğu, 1 Su | – | El yapımı (Tab) | 75 |
 | Damla akı boyası | 2 Damla taşı, 1 Su | – | El yapımı (Tab) | 40 |
 | Gelincik boyası | 3 Gelincik, 2 Hayvan yağı, 1 Su | – | El yapımı (Tab) | 16 |
-| Işıltılı boya | 3 Güve tozu, 1 Su | – | El yapımı (Tab) | 182 |
+| Işıltılı boya | 3 Güve tozu, 1 Su | – | El yapımı (Tab) | 507 |
 | Kara boya | 1 Odun kömürü, 2 Hayvan yağı, 3 Su, 3 Kum | – | El yapımı (Tab) | 20 |
 | Kırmızı boya | 1 Kırmızı okr tozu, 2 Hayvan yağı, 3 Su, 2 Kum | – | El yapımı (Tab) | 143 |
 | Kırmızı okr tozu | 2 Kırmızı okr, 2 Su, 2 Kum | Taş havan | El yapımı (Tab) | 100 |
 | Kükürt sarısı boya | 2 Kükürt kristali, 1 Su | – | El yapımı (Tab) | 210 |
 | Liken boyası | 3 Liken, 1 Su | – | El yapımı (Tab) | 92 |
-| Mor damar boyası | 2 Mor damar taşı, 1 Su | – | El yapımı (Tab) | 300 |
+| Mor damar boyası | 2 Mor damar taşı, 1 Su | – | El yapımı (Tab) | 329 |
 | Mor kök boyası | 2 Mor kök, 1 Su | – | El yapımı (Tab) | 188 |
 | Mürver boyası | 3 Mürver, 1 Su, 1 Balık yağı | – | El yapımı (Tab) | 83 |
 | Sarı boya | 1 Sarı okr tozu, 2 Hayvan yağı, 3 Su, 2 Kum | – | El yapımı (Tab) | 143 |
@@ -777,7 +777,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Gemi | 8 Kadim odun kalası, 4 Halat, 3 Demir levha, 6 Hasır, 2 Kristal ipek | Taş balta | El yapımı (Tab) | 2.863 |
+| Gemi | 8 Kadim odun kalası, 4 Halat, 3 Demir levha, 6 Hasır, 2 Kristal ipek | Taş balta | El yapımı (Tab) | 3.401 |
 | Roket ² | 1 Roket gövdesi, 1 Roket motoru, 4 Uzaylı devresi, 6 Gök ipeği | – | Astronot Gökay yapar (2000 Vio işçilik) | 30.243 |
 | Roket gövdesi ² | 4 Meteor demiri külçesi, 4 Titanyum külçesi, 3 Gök camı | – | Astronot Gökay yapar (1000 Vio işçilik) | 9.187 |
 | Roket motoru ² | 2 Yıldız külçesi, 3 Plazma hücresi, 1 Ejder kalbi, 1 Yakıt hücresi | – | Astronot Gökay yapar (1500 Vio işçilik) | 14.000 |
@@ -789,104 +789,104 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Altın külçesi | 3 Altın cevheri, 1 Kadim odun kömürü | – | El yapımı (Tab) | 1.180 |
-| Bakır külçesi | 3 Bakır cevheri, 1 Odun kömürü | – | El yapımı (Tab) | 38 |
-| Çelik külçesi | 2 Demir külçesi, 1 Ateş tuğlası, 2 Sağlam odun kömürü | – | El yapımı (Tab) | 440 |
-| Demir halka | 1 Demir külçesi, 1 Turba, 2 Kum | – | El yapımı (Tab) | 188 |
-| Demir külçesi | 3 Demir cevheri, 2 Turba, 1 Taş | – | El yapımı (Tab) | 165 |
-| Demir levha | 2 Demir külçesi, 1 Turba | – | El yapımı (Tab) | 353 |
-| Gümüş külçesi | 3 Gümüş cevheri, 1 Güçlü odun kömürü | – | El yapımı (Tab) | 270 |
-| Kalay külçesi | 3 Kalay cevheri, 1 Sert odun kömürü | – | El yapımı (Tab) | 62 |
-| Kara çelik külçesi | 2 Çelik külçesi, 3 Obsidyen, 1 Kükürt, 2 Kor odun kömürü | – | El yapımı (Tab) | 720 |
-| Mor kristal levhası | 3 Kristal, 2 Ametist, 1 Altın külçesi | – | El yapımı (Tab) | 998 |
-| Tunç külçesi | 3 Bakır külçesi, 1 Kalay külçesi | – | El yapımı (Tab) | 100 |
-| Tunç levha | 2 Tunç külçesi, 1 Sert odun kömürü | – | El yapımı (Tab) | 566 |
+| Altın külçesi | 4 Altın cevheri, 1 Kadim odun kömürü | – | El yapımı (Tab) | 486 |
+| Bakır külçesi | 3 Bakır cevheri, 1 Odun kömürü | – | El yapımı (Tab) | 23 |
+| Çelik külçesi | 1 Demir külçesi, 1 Ateş tuğlası, 1 Sağlam odun kömürü | – | El yapımı (Tab) | 446 |
+| Demir halka | 1 Demir külçesi, 1 Turba, 2 Kum | – | El yapımı (Tab) | 258 |
+| Demir külçesi | 3 Demir cevheri, 2 Turba, 1 Odun kömürü | – | El yapımı (Tab) | 171 |
+| Demir levha | 2 Demir külçesi, 1 Turba | – | El yapımı (Tab) | 495 |
+| Gümüş külçesi | 3 Gümüş cevheri, 1 Güçlü odun kömürü | – | El yapımı (Tab) | 195 |
+| Kalay külçesi | 2 Kalay cevheri, 1 Sert odun kömürü | – | El yapımı (Tab) | 60 |
+| Kara çelik külçesi | 1 Çelik külçesi, 2 Obsidyen, 1 Kükürt, 1 Kor odun kömürü | – | El yapımı (Tab) | 899 |
+| Mor kristal levhası | 3 Kristal, 2 Ametist, 1 Altın külçesi | – | El yapımı (Tab) | 1.103 |
+| Tunç külçesi | 1 Bakır külçesi, 1 Kalay külçesi | – | El yapımı (Tab) | 115 |
+| Tunç levha | 2 Tunç külçesi, 1 Sert odun kömürü | – | El yapımı (Tab) | 370 |
 
 #### Metal aletler (85)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Güçlü odun yayı | 3 Güçlü odun, 2 Sinir kirişi, 1 Çelik külçesi | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 730 |
+| Güçlü odun yayı | 3 Güçlü odun, 2 Sinir kirişi, 1 Çelik külçesi | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 769 |
 | Alevli Mızrak | 1 Mızrak, 1 Ateş yağı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 171 |
 | Alevli Taş kılıç | 1 Taş kılıç, 1 Ateş yağı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 179 |
 | Alevli Taş savaş çekici | 1 Taş savaş çekici, 1 Ateş yağı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 171 |
 | Alevli Taş topuz | 1 Taş topuz, 1 Ateş yağı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 162 |
-| Ametist kılıcı | 5 Ametist, 1 Kadim odun sapı, 2 Gölge dişi, 1 Mor zehir | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 12.850 |
-| Ametist savaş çekici | 4 Ametist, 2 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 17.450 |
-| Ametist topuz | 2 Ametist, 1 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 10.300 |
-| Bakır balta | 3 Bakır külçesi, 1 Odun sapı, 2 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 170 |
-| Bakır kazma | 3 Bakır külçesi, 1 Odun sapı, 2 İp, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 240 |
-| Bakır kılıç | 4 Bakır külçesi, 1 Odun sapı, 1 Deri parçası | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 440 |
-| Bakır mızrak | 2 Bakır külçesi, 1 Uzun sopa, 3 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 215 |
-| Bakır savaş çekici | 5 Bakır külçesi, 1 Odun sapı, 1 Sinir kirişi | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 325 |
-| Bakır topuz | 3 Bakır külçesi, 1 Odun sapı, 2 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 215 |
-| Çakmaktaşı kılıç | 3 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 600 |
-| Çakmaktaşı savaş çekici | 4 Yontulmuş çakmaktaşı, 1 Odun sapı, 1 Sinir kirişi, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 470 |
-| Çakmaktaşı topuz | 2 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 305 |
-| Odun yayı | 3 Odun, 1 Sinir kirişi, 1 Bakır külçesi | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 125 |
-| Çelik balta | 3 Çelik külçesi, 1 Güçlü odun sapı, 2 İp | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.590 |
-| Çelik kılıç | 4 Çelik külçesi, 1 Güçlü odun sapı, 1 Deri parçası | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.770 |
-| Çelik mızrak | 2 Çelik külçesi, 1 Uzun sopa, 3 İp | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.360 |
-| Çelik savaş çekici | 5 Çelik külçesi, 1 Güçlü odun sapı, 1 Sinir kirişi | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.860 |
-| Çelik topuz | 3 Çelik külçesi, 1 Güçlü odun sapı, 2 İp | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.770 |
-| Demir balta | 3 Demir külçesi, 1 Sağlam odun sapı, 1 Sinir kirişi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 760 |
-| Demir kazma | 4 Demir külçesi, 1 Sağlam odun sapı, 1 Sinir kirişi, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 950 |
-| Çelik kazma | 3 Çelik külçesi, 1 Güçlü odun sapı, 2 İp, 2 Taş | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.890 |
-| Demir kılıç | 5 Demir külçesi, 1 Sağlam odun sapı, 1 Deri parçası, 1 Sinir kirişi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.500 |
-| Demir mızrak | 3 Demir külçesi, 1 Uzun sopa, 1 Demir halka | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 740 |
-| Demir savaş çekici | 5 Demir külçesi, 1 Sağlam odun sapı, 1 Sinir kirişi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.390 |
-| Demir topuz | 3 Demir külçesi, 1 Sağlam odun sapı, 2 İp | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 875 |
-| Ejder baltası | 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kor odun sapı, 2 İp | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 4.840 |
-| Ejder kazması | 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Kara çelik külçesi, 1 Kor odun sapı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 5.330 |
-| Ejder kılıcı | 2 Ejder kemiği, 1 Kara çelik külçesi, 1 Deri parçası, 1 Ateş yağı (eski tarif Mor Kristal Vadisi'nin altınını istiyordu) | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 6.950 |
-| Ejder mızrağı | 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Uzun sopa, 3 İp, 1 Ateş yağı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 3.410 |
-| Ejder savaş çekici | 2 Ejder kemiği, 2 Kara çelik külçesi, 1 Kor odun sapı, 1 Ateş yağı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 8.470 |
-| Ejder topuzu | 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kor odun sapı, 1 Ateş yağı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 5.090 |
-| Ejder yayı | 3 Kor odun, 1 Ejder kemiği, 2 Sinir kirişi | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 1.760 |
-| Kadim odun yayı | 3 Kadim odun, 2 Sinir kirişi, 1 Mor kristal levhası | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 2.370 |
-| Granit kılıç | 3 Granit, 1 Sert odun sapı, 1 Sinir kirişi, 1 Bileme macunu | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 1.110 |
-| Granit mızrak | 2 Granit, 1 Uzun sopa, 3 İp, 1 Bileme macunu | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 545 |
-| Granit savaş çekici | 4 Granit, 1 Sert odun sapı, 3 Yaban domuzu dişi, 1 Sinir kirişi | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 970 |
-| Granit topuz | 2 Granit, 1 Sert odun sapı, 2 İp, 1 Bileme macunu | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 615 |
-| Gümüş kılıç | 4 Gümüş külçesi, 3 Kuvars, 1 Güçlü odun sapı, 2 Kartal pençesi | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 3.770 |
-| Gümüş yayı | 3 Güçlü odun, 2 Sinir kirişi, 1 Gümüş külçesi | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 980 |
-| Granit yayı | 3 Sert odun, 2 Sinir kirişi, 1 Granit | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 300 |
-| Ametist yayı | 3 Kadim odun, 2 Sinir kirişi, 1 Ametist | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 3.170 |
-| Kara çelik balta | 3 Kara çelik külçesi, 1 Kor odun sapı, 2 İp | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 3.340 |
-| Kara çelik kazma | 3 Kara çelik külçesi, 1 Kor odun sapı, 2 İp, 2 Taş | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 3.770 |
-| Kara çelik kılıç | 4 Kara çelik külçesi, 1 Kor odun sapı, 1 Deri parçası | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 5.120 |
-| Kara çelik mızrak | 2 Kara çelik külçesi, 1 Uzun sopa, 3 İp | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 2.510 |
-| Kara çelik savaş çekici | 5 Kara çelik külçesi, 1 Kor odun sapı, 1 Sinir kirişi | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 5.900 |
-| Kara çelik topuz | 3 Kara çelik külçesi, 1 Kor odun sapı, 2 İp | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 3.580 |
-| Kemik yay | 3 Kemik, 1 Uzun sopa, 1 Sinir kirişi | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 170 |
+| Ametist kılıcı | 5 Ametist, 1 Kadim odun sapı, 2 Gölge dişi, 1 Mor zehir | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 9.478 |
+| Ametist savaş çekici | 4 Ametist, 2 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 11.492 |
+| Ametist topuz | 2 Ametist, 1 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 6.980 |
+| Bakır balta | 3 Bakır külçesi, 1 Odun sapı, 2 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 143 |
+| Bakır kazma | 3 Bakır külçesi, 1 Odun sapı, 2 İp, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 146 |
+| Bakır kılıç | 4 Bakır külçesi, 1 Odun sapı, 1 Deri parçası | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 346 |
+| Bakır mızrak | 2 Bakır külçesi, 1 Uzun sopa, 3 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 150 |
+| Bakır savaş çekici | 5 Bakır külçesi, 1 Odun sapı, 1 Sinir kirişi | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 211 |
+| Bakır topuz | 3 Bakır külçesi, 1 Odun sapı, 2 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 143 |
+| Çakmaktaşı kılıç | 3 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 398 |
+| Çakmaktaşı savaş çekici | 4 Yontulmuş çakmaktaşı, 1 Odun sapı, 1 Sinir kirişi, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 243 |
+| Çakmaktaşı topuz | 2 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 164 |
+| Odun yayı | 3 Odun, 1 Sinir kirişi, 1 Bakır külçesi | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 112 |
+| Çelik balta | 3 Çelik külçesi, 1 Güçlü odun sapı, 2 İp | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.875 |
+| Çelik kılıç | 4 Çelik külçesi, 1 Güçlü odun sapı, 1 Deri parçası | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.583 |
+| Çelik mızrak | 2 Çelik külçesi, 1 Uzun sopa, 3 İp | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.248 |
+| Çelik savaş çekici | 5 Çelik külçesi, 1 Güçlü odun sapı, 1 Sinir kirişi | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 3.043 |
+| Çelik topuz | 3 Çelik külçesi, 1 Güçlü odun sapı, 2 İp | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.875 |
+| Demir balta | 3 Demir külçesi, 1 Sağlam odun sapı, 1 Sinir kirişi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 806 |
+| Demir kazma | 4 Demir külçesi, 1 Sağlam odun sapı, 1 Sinir kirişi, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.125 |
+| Çelik kazma | 3 Çelik külçesi, 1 Güçlü odun sapı, 2 İp, 2 Taş | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 1.877 |
+| Demir kılıç | 5 Demir külçesi, 1 Sağlam odun sapı, 1 Deri parçası, 1 Sinir kirişi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.655 |
+| Demir mızrak | 3 Demir külçesi, 1 Uzun sopa, 1 Demir halka | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.031 |
+| Demir savaş çekici | 5 Demir külçesi, 1 Sağlam odun sapı, 1 Sinir kirişi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.697 |
+| Demir topuz | 3 Demir külçesi, 1 Sağlam odun sapı, 2 İp | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.054 |
+| Ejder baltası | 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kor odun sapı, 2 İp | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 4.255 |
+| Ejder kazması | 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Kara çelik külçesi, 1 Kor odun sapı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 4.257 |
+| Ejder kılıcı | 2 Ejder kemiği, 1 Kara çelik külçesi, 1 Deri parçası, 1 Ateş yağı (eski tarif Mor Kristal Vadisi'nin altınını istiyordu) | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 5.691 |
+| Ejder mızrağı | 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Uzun sopa, 3 İp, 1 Ateş yağı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 2.745 |
+| Ejder savaş çekici | 2 Ejder kemiği, 2 Kara çelik külçesi, 1 Kor odun sapı, 1 Ateş yağı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 6.954 |
+| Ejder topuzu | 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kor odun sapı, 1 Ateş yağı | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 4.255 |
+| Ejder yayı | 3 Kor odun, 1 Ejder kemiği, 2 Sinir kirişi | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 1.705 |
+| Kadim odun yayı | 3 Kadim odun, 2 Sinir kirişi, 1 Mor kristal levhası | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 2.214 |
+| Granit kılıç | 3 Granit, 1 Sert odun sapı, 1 Sinir kirişi, 1 Bileme macunu | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 905 |
+| Granit mızrak | 2 Granit, 1 Uzun sopa, 3 İp, 1 Bileme macunu | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 404 |
+| Granit savaş çekici | 4 Granit, 1 Sert odun sapı, 3 Yaban domuzu dişi, 1 Sinir kirişi | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 957 |
+| Granit topuz | 2 Granit, 1 Sert odun sapı, 2 İp, 1 Bileme macunu | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 603 |
+| Gümüş kılıç | 4 Gümüş külçesi, 3 Kuvars, 1 Güçlü odun sapı, 2 Kartal pençesi | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.970 |
+| Gümüş yayı | 3 Güçlü odun, 2 Sinir kirişi, 1 Gümüş külçesi | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 884 |
+| Granit yayı | 3 Sert odun, 2 Sinir kirişi, 1 Granit | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 236 |
+| Ametist yayı | 3 Kadim odun, 2 Sinir kirişi, 1 Ametist | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 2.546 |
+| Kara çelik balta | 3 Kara çelik külçesi, 1 Kor odun sapı, 2 İp | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 3.700 |
+| Kara çelik kazma | 3 Kara çelik külçesi, 1 Kor odun sapı, 2 İp, 2 Taş | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 3.702 |
+| Kara çelik kılıç | 4 Kara çelik külçesi, 1 Kor odun sapı, 1 Deri parçası | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 4.949 |
+| Kara çelik mızrak | 2 Kara çelik külçesi, 1 Uzun sopa, 3 İp | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 2.387 |
+| Kara çelik savaş çekici | 5 Kara çelik külçesi, 1 Kor odun sapı, 1 Sinir kirişi | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 6.047 |
+| Kara çelik topuz | 3 Kara çelik külçesi, 1 Kor odun sapı, 2 İp | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 3.700 |
+| Kemik yay | 3 Kemik, 1 Uzun sopa, 1 Sinir kirişi | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 129 |
 | Keskin Mızrak | 1 Mızrak, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 81 |
 | Keskin Taş kılıç | 1 Taş kılıç, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 90 |
 | Keskin Taş savaş çekici | 1 Taş savaş çekici, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 81 |
 | Keskin Taş topuz | 1 Taş topuz, 1 Bileme macunu | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 73 |
-| Sağlam odun yayı | 3 Sağlam odun, 2 Sinir kirişi, 1 Demir külçesi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 405 |
-| Kor odun yayı | 3 Kor odun, 1 Sinir kirişi, 1 Kara çelik külçesi, 1 Kara cila | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 1.310 |
-| Kuvars savaş çekici | 3 Yontulmuş kuvars, 1 Güçlü odun sapı, 1 Sinir kirişi, 1 Bileme macunu | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 4.110 |
-| Kuvars topuz | 2 Yontulmuş kuvars, 1 Güçlü odun sapı, 2 İp, 1 Bileme macunu | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.520 |
-| Sert odun yayı | 3 Sert odun, 1 Sinir kirişi, 1 Tunç külçesi | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 225 |
-| Mor kristal balta | 3 Mor kristal levhası, 1 Kadim odun sapı, 2 İp | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 7.020 |
-| Mor kristal kazma | 3 Mor kristal levhası, 1 Kadim odun sapı, 2 İp, 2 Taş | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 7.530 |
-| Mor kristal kılıç | 4 Mor kristal levhası, 1 Kadim odun sapı, 1 Deri parçası | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 9.450 |
-| Mor kristal mızrak | 2 Mor kristal levhası, 1 Uzun sopa, 3 İp | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 4.630 |
-| Mor kristal savaş çekici | 5 Mor kristal levhası, 1 Kadim odun sapı, 1 Sinir kirişi | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 12.150 |
-| Mor kristal topuz | 3 Mor kristal levhası, 1 Kadim odun sapı, 2 İp | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 7.240 |
-| Timsah dişi yayı | 3 Sağlam odun, 2 Sinir kirişi, 1 Timsah dişi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 545 |
-| Timsah dişi balta | 2 Timsah dişi, 1 Demir külçesi, 1 Sağlam odun sapı, 2 İp | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.100 |
-| Timsah dişi kazma | 2 Timsah dişi, 2 Demir külçesi, 1 Sağlam odun sapı, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.340 |
-| Timsah dişi kılıcı | 4 Demir külçesi, 3 Timsah dişi, 1 Sağlam odun sapı, 1 Deri parçası | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 2.040 |
-| Timsah dişi mızrak | 2 Timsah dişi, 1 Uzun sopa, 3 İp, 1 Zehir yağı | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.000 |
-| Timsah dişi savaş çekici | 3 Timsah dişi, 2 Demir külçesi, 1 Sağlam odun sapı, 1 Zehir yağı | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 2.000 |
-| Timsah dişi topuz | 2 Timsah dişi, 1 Demir külçesi, 1 Sağlam odun sapı, 1 Zehir yağı | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.240 |
-| Tunç balta | 2 Tunç külçesi, 1 Sert odun sapı, 2 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 360 |
-| Tunç kazma | 3 Tunç külçesi, 1 Sert odun sapı, 2 İp, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 475 |
-| Tunç kılıç | 4 Tunç külçesi, 1 Sert odun sapı, 1 Deri parçası | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 815 |
-| Tunç mızrak | 2 Tunç külçesi, 1 Uzun sopa, 3 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 400 |
-| Tunç savaş çekici | 5 Tunç külçesi, 1 Sert odun sapı, 1 Sinir kirişi | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 675 |
-| Tunç topuz | 3 Tunç külçesi, 1 Sert odun sapı, 2 İp | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 430 |
+| Sağlam odun yayı | 3 Sağlam odun, 2 Sinir kirişi, 1 Demir külçesi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 418 |
+| Kor odun yayı | 3 Kor odun, 1 Sinir kirişi, 1 Kara çelik külçesi, 1 Kara cila | – | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 1.483 |
+| Kuvars savaş çekici | 3 Yontulmuş kuvars, 1 Güçlü odun sapı, 1 Sinir kirişi, 1 Bileme macunu | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 3.499 |
+| Kuvars topuz | 2 Yontulmuş kuvars, 1 Güçlü odun sapı, 2 İp, 1 Bileme macunu | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.156 |
+| Sert odun yayı | 3 Sert odun, 1 Sinir kirişi, 1 Tunç külçesi | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 205 |
+| Mor kristal balta | 3 Mor kristal levhası, 1 Kadim odun sapı, 2 İp | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 6.070 |
+| Mor kristal kazma | 3 Mor kristal levhası, 1 Kadim odun sapı, 2 İp, 2 Taş | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 6.073 |
+| Mor kristal kılıç | 4 Mor kristal levhası, 1 Kadim odun sapı, 1 Deri parçası | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 8.242 |
+| Mor kristal mızrak | 2 Mor kristal levhası, 1 Uzun sopa, 3 İp | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 3.985 |
+| Mor kristal savaş çekici | 5 Mor kristal levhası, 1 Kadim odun sapı, 1 Sinir kirişi | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 9.993 |
+| Mor kristal topuz | 3 Mor kristal levhası, 1 Kadim odun sapı, 2 İp | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 6.070 |
+| Timsah dişi yayı | 3 Sağlam odun, 2 Sinir kirişi, 1 Timsah dişi | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 481 |
+| Timsah dişi balta | 2 Timsah dişi, 1 Demir külçesi, 1 Sağlam odun sapı, 2 İp | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 927 |
+| Timsah dişi kazma | 2 Timsah dişi, 2 Demir külçesi, 1 Sağlam odun sapı, 2 Taş | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.294 |
+| Timsah dişi kılıcı | 4 Demir külçesi, 3 Timsah dişi, 1 Sağlam odun sapı, 1 Deri parçası | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.903 |
+| Timsah dişi mızrak | 2 Timsah dişi, 1 Uzun sopa, 3 İp, 1 Zehir yağı | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.186 |
+| Timsah dişi savaş çekici | 3 Timsah dişi, 2 Demir külçesi, 1 Sağlam odun sapı, 1 Zehir yağı | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.952 |
+| Timsah dişi topuz | 2 Timsah dişi, 1 Demir külçesi, 1 Sağlam odun sapı, 1 Zehir yağı | – | Örs · Silahçı Ali (Bataklık) ve üstü döver | 1.212 |
+| Tunç balta | 2 Tunç külçesi, 1 Sert odun sapı, 2 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 375 |
+| Tunç kazma | 3 Tunç külçesi, 1 Sert odun sapı, 2 İp, 2 Taş | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 527 |
+| Tunç kılıç | 4 Tunç külçesi, 1 Sert odun sapı, 1 Deri parçası | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 787 |
+| Tunç mızrak | 2 Tunç külçesi, 1 Uzun sopa, 3 İp | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 351 |
+| Tunç savaş çekici | 5 Tunç külçesi, 1 Sert odun sapı, 1 Sinir kirişi | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 832 |
+| Tunç topuz | 3 Tunç külçesi, 1 Sert odun sapı, 2 İp | – | Örs · Silahçı Durdu (Orman) ve üstü döver | 524 |
 | Zehirli Mızrak | 1 Mızrak, 1 Zehir yağı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 123 |
 | Zehirli Taş kılıç | 1 Taş kılıç, 1 Zehir yağı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 132 |
 | Zehirli Taş savaş çekici | 1 Taş savaş çekici, 1 Zehir yağı | – | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 123 |
@@ -896,9 +896,9 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Boynuz borazan | 1 Öküz boynuzu, 3 Lif, 3 Dal | Bileği taşı | El yapımı (Tab) | 30 |
+| Boynuz borazan | 1 Öküz boynuzu, 3 Lif, 3 Dal | Bileği taşı | El yapımı (Tab) | 65 |
 | Deri davul | 1 Deri parçası, 1 Nehir kasesi, 5 Lif, 5 Dal | – | El yapımı (Tab) | 337 |
-| Gümüş çan | 3 Gümüş filizi, 1 Tavan ağı | – | El yapımı (Tab) | 440 |
+| Gümüş çan | 3 Gümüş filizi, 1 Tavan ağı | – | El yapımı (Tab) | 553 |
 | Kamış flüt | 3 Kamış, 1 Lif | Kemik iğne | El yapımı (Tab) | 53 |
 | Kemik flüt | 3 Kemik, 1 Lif | – | El yapımı (Tab) | 21 |
 | Kor zurnası | 2 Kor kabuğu, 1 Kor taşı | – | El yapımı (Tab) | 500 |
@@ -967,7 +967,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Buz asası ² | 1 Efsane odun kalası, 3 Buz kristali, 2 Büyü otu, 3 Golem tozu | – | Büyücü Efsun yapar (200 Vio işçilik) | 1.600 |
 | Çamur Ana muskası | 1 Çamur Ana gözü, 2 Sazlı inci, 1 Semender derisi | – | El yapımı (Tab) | 1.400 |
 | Dev yüreği tılsımı | 1 Dev yüreği, 2 Dağ kristali, 2 Kar likeni | – | El yapımı (Tab) | 2.000 |
-| Işık Yutan kalbi tılsımı | 1 Işık Yutan kalbi, 2 Mor damar taşı, 2 Ayna taşı | – | El yapımı (Tab) | 4.200 |
+| Işık Yutan kalbi tılsımı | 1 Işık Yutan kalbi, 2 Mor damar taşı, 2 Ayna taşı | – | El yapımı (Tab) | 4.314 |
 | Kor tacı tılsımı | 1 Kor Kral tacı, 2 Kor taşı, 1 Volkan camı | – | El yapımı (Tab) | 2.800 |
 | Kök özü iksiri | 1 Yaşlı Kök özü, 2 Kök reçinesi, 1 Su | – | El yapımı (Tab) | 680 |
 | Kraliçe tılsımı | 1 Kraliçe pençesi, 2 Yankı mantarı, 1 Taş örümceği ipi | – | El yapımı (Tab) | 420 |
@@ -1044,7 +1044,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 | Rüzgâr taşı | Kartal tüyü miğfer | 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Gri vaşak postu, 1 Rüzgâr taşı | 2 Taş yerine |
 | Rüzgâr tüyü | Fırtına tüyü başlık | 2 Fırtına tüyü, 2 Gök tazısı postu, 1 Demir miğfer, 7 Rüzgâr tüyü | 2 Fırtına tüyü yerine (2 Fırtına tüyü kalır) |
 | Salyangoz sümüğü | Spor yahnisi | 2 Işıldak mantarı, 2 Kök yumrusu, 1 Dev spor, 1 Ateş, 1 Salyangoz sümüğü | 2 Su yerine |
-| Sağlam odun kömürü | Çelik külçesi | 2 Demir külçesi, 1 Ateş tuğlası, 2 Sağlam odun kömürü | 2 Güçlü odun kömürü yerine |
+| Sağlam odun kömürü | Çelik külçesi | 1 Demir külçesi, 1 Ateş tuğlası, 1 Sağlam odun kömürü | 2 Güçlü odun kömürü yerine |
 | Sincap derisi | Tunç eldiven | 4 Bakır cevheri, 1 Kalay cevheri, 3 Lif, 8 Sincap derisi | 1 Deri parçası yerine |
 | Su samuru derisi | Demir eldiven | 4 Demir cevheri, 3 Lif, 3 Su samuru derisi | 1 Deri parçası yerine |
 | Sümük yosunu | Mana iksiri | 2 Büyü otu, 2 Su, 4 Sümük yosunu | 1 Nehir çömleği yerine |
@@ -1073,7 +1073,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
   - **Zanaat:** Balık sepeti, Saz sepet, Midye kabuğu kaşık, Boynuz kupa, Odun, Sağlam odun, Sert odun ve Güçlü odun kaşığı, Kum torbası, Sünger taşı bileği, Eğrelti yatağı, Yosun yastık, Akrep kabuğu kalkanı.
   - **Diğer:** Beyaz kase, Kırmızı kase.
 - **Her toplanan malzeme işe yarar bir tarifte:** yalnız kalkanlarda kullanılan 13 malzeme, kendi biyomunda işe yarayan bir eşyanın tarifine anlamlı bir yerden girer (tablo); her biri biyomuna uygun sette ya da iksirde. Geri kalan girdiler (Deri parçası, İp, Kum, Hayvan yağı, killer, kemikler…) başka tariflerde kullanılmaya devam eder. Hiçbir malzemenin kendisini değiştirmek gerekmedi: hepsine mantıklı bir yer bulundu. ACT 2'nin 8 cevheri ve 3 düşmesi sonra ele alınacak.
-- **Fiyat:** Pençe kolyenin fiyatı Aletler › Fiyat basamağından gelir.
+- **Fiyat:** Pençe kolyenin fiyatı Aletler › Fiyat düzeninden gelir.
 - **Eski kayıtlar:** kalkan eşyalar çantadan, sandıktan, kemerden ve yerden kalkar; elindekiler son fiyatlarıyla Vio olarak ödenir (bir kez bildirim). Kalkan eşyaların tarifleri kitaptan silinir.
 - **Sayılar:** 1.239 eşya, 768 tarif.
 
@@ -1128,5 +1128,5 @@ En karışık ACT 1 tarifleri sadeleşti (sıralama: biyom biyom bileşen sayıs
 - **Taş uçlu balta, kazma ve mızraklar** (Çakmaktaşı, Kuvars, Obsidyen): hazır **uç + sap + İp** ve en çok **bir ek** malzeme; Dal ve Taş istemez. Mızrakların eki etkisinin yağıdır (Çakmaktaşı ve Kuvars mızrak **Bileme macunu**: keskin; Obsidyen mızrak **Zehir yağı**: zehirli), Obsidyen balta ve kazmanın eki **Ametist**. 5–7 bileşenden 3–4'e indi.
 - **Gövde zırhları** (ACT 1'in 12 gövde zırhı): her malzemenin adedi **yarıya** iner (yukarı yuvarlanır). Örnek: Kara çelik zırh 8 Demir cevheri, 5 Obsidyen, 1 Deri parçası, 1 Sinir (toplam 15); Çelik zırh 13; Tunç zırh 10.
 - **Ametist kılıcı:** 5 Ametist, 1 Kadim odun sapı, 2 Gölge dişi, 1 Mor zehir (4 bileşen). Mor zehir başka hiçbir tarifte olmadığı için kılıçta kalır (zehirli etkisini o verir); çıkan Obsidyen ve Kristal başka tariflerde kullanılır.
-- **Fiyatlar değişmedi:** silah ve zırh fiyatları setin fiyat basamağından gelir.
+- **Fiyatlar:** Aletler › Fiyat düzeni.
 - Çıkan hiçbir malzeme boşta kalmadı (Dal, Taş, Ametist, Obsidyen, Kristal başka tariflerde de kullanılır).

@@ -42,11 +42,11 @@ ACT 1'in madenleri ve metal ekipmanı tek bir merdivene göre dizildi. Amaç: **
 | # | Biyom | Madenler (satış fiyatı) | Kazmak ve kesmek için | Set | Setin malzemesi |
 |---|---|---|---|---|---|
 | 1 | Çayır | Kireçtaşı **2** · Kumtaşı **3** · Bakır cevheri **5** | 1. kademe | Bakır | Bakır külçesi (Çayır ağaçlarının kömürüyle ergir) |
-| 2 | Orman | Granit **10** · Taş kömürü **11** · Kalay cevheri **12** | 1. kademe | Tunç | Tunç külçesi (3 Bakır külçesi + 1 Kalay külçesi) |
-| 3 | Bataklık | Arduvaz **18** · Tuz kayası **19** · Demir cevheri **20** | 2. kademe | Demir | Demir külçesi |
-| 4 | Kayalık Dağ | Pirit **28** · Kuvars **29** · Gümüş cevheri **32** | 3. kademe | Çelik | Çelik külçesi (2 Demir külçesi + 2 Güçlü odun kömürü + 1 Ateş tuğlası; Ateş tuğlası = 3 Beyaz kil + 2 Kum + 1 Ateş, Beyaz kil Kayalık Dağ'da toplanır) |
-| 5 | Kül Diyarı | Bazalt **45** · Kükürt **46** · Obsidyen **49** | 4. kademe | Kara çelik (obsidyen çeliği) | Kara çelik külçesi (2 Çelik külçesi + 3 Obsidyen + 1 Kükürt + 2 Kor odun kömürü) |
-| 6 | Mor Kristal Vadisi | Kristal **62** · Ametist **67** · Altın cevheri **77** | 5. kademe | Mor kristal | Mor kristal levhası (3 Kristal + 2 Ametist + 1 Altın külçesi) |
+| 2 | Orman | Granit **10** · Taş kömürü **11** · Kalay cevheri **12** | 1. kademe | Tunç | Tunç külçesi (1 Bakır külçesi + 1 Kalay külçesi; Kalay külçesi = 2 Kalay cevheri + 1 Sert odun kömürü) |
+| 3 | Bataklık | Arduvaz **18** · Tuz kayası **19** · Demir cevheri **20** | 2. kademe | Demir | Demir külçesi (3 Demir cevheri + 2 Turba + 1 Odun kömürü) |
+| 4 | Kayalık Dağ | Pirit **28** · Kuvars **29** · Gümüş cevheri **32** | 3. kademe | Çelik | Çelik külçesi (1 Demir külçesi + 1 Sağlam odun kömürü + 1 Ateş tuğlası; Ateş tuğlası = 3 Beyaz kil + 2 Kum + 1 Ateş, Beyaz kil Kayalık Dağ'da toplanır) |
+| 5 | Kül Diyarı | Bazalt **45** · Kükürt **46** · Obsidyen **49** | 4. kademe | Kara çelik (obsidyen çeliği) | Kara çelik külçesi (1 Çelik külçesi + 2 Obsidyen + 1 Kükürt + 1 Kor odun kömürü) |
+| 6 | Mor Kristal Vadisi | Kristal **62** · Ametist **67** · Altın cevheri **77** | 5. kademe | Mor kristal | Mor kristal levhası (3 Kristal + 2 Ametist + 1 Altın külçesi; Altın külçesi = 4 Altın cevheri + 1 Kadim odun kömürü) |
 
 - **Yer değiştiren madenler:** Kalay (Çayır → Orman), Kumtaşı (Orman → Çayır), Pirit (Kül Diyarı → Kayalık Dağ), Altın (Kayalık Dağ → Mor Kristal Vadisi), Obsidyen (Mor Kristal Vadisi → Kül Diyarı). Bataklık değişmedi. Yatak sayıları aynı (ilk iki biyomda 22, diğerlerinde 20), yatak 300 sn sonra yeniden dolar.
 - **Fiyatın yayılması:** bir madenin fiyatı değişince, onu kullanan her tarifin fiyatı da değişim × miktar × 1,3 kadar değişir (zincir boyunca; v51'deki kural). Örnek: Demir külçesi 111 → 68, Altın külçesi 93 → 280, Gümüş külçesi 61 → 100.
@@ -197,14 +197,15 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 **Arena:** oyundaki her silah, alet, zırh, kolye ve yüzük arenada da seçilebilir (aynı listeden gelir; kaldırılanlar arenadan da kalktı, yeni setler arenada).
 
 
-### Fiyat basamağı (12 Kasım 2026, Boğaç: "bataklıkta yapılan bir tarif daha erken bir biyom olmasına rağmen daha ileride yapılan tariflerden pahalı; kül diyarı eşyalar mor kristal eşyalardan pahalı… her biyom atladığımda daha iyi şeyler ile karşılaşmalıyım")
+### Fiyat düzeni (12 Kasım 2026, Boğaç: "her biyom atladığımda daha iyi şeyler ile karşılaşmalıyım"; "öncelikle malzemelerin fiyatlarını biyomdan biyoma daha değerli hale getir, bu olursa zaten hesap doğru olur… sorun ya malzeme fiyatlarında ya da bir önceki biyomda gereksiz aynı maddeden çok fazla kullandığımız için tarifin kendisindedir")
 
-- **Kural:** her türün (miğfer, gövde zırhı, eldiven, çizme, kılıç, savaş çekici, topuz, mızrak, yay, balta, kazma, kolye, yüzük) 13 parçası yukarıdaki set sırasıyla (Başlangıç, Bakır, Usta: Kemik, Tunç, Usta: Meşe ve granit, Demir, Usta: Timsah, Çelik, Usta: Gümüş ve kuvars, Kara çelik, Usta: Ejder, Mor kristal, Usta: Ametist ve obsidyen) **her adımda pahalanır**: bir sonraki biyomun parçası öncekinden, aynı biyomun usta parçası metal parçasından her zaman daha değerlidir. Malzemeden hesaplanan eski fiyatlar bu sırayı bozuyordu (ör. Kara çelik kılıç 11.371, Mor kristal kılıç 8.242).
-- **Eğri:** her tür tek, düzgün bir eğri üzerindedir (eski fiyatlara oturtuldu, genel seviye aynı kalır); bir adımdaki artış türüne göre ×1,2 (kolye) ile ×1,45 (balta) arasıdır, biyom geçişlerinde sıçrama olmaz. Başlangıç parçaları ilk adımın altında kalır.
-- **Oklar** tane fiyatıyla: Basit 2 · Bakır 4 · Tunç 7 · Demir 13 · Çelik 25 · Kara çelik 48 · Mor kristal 90; alevli, zehirli ve keskin oklar yağın onda biri kadar pahalıdır. (Eski fiyatlar 10 okluk tarifin bütününe göreydi; bir ok 1.823 Vio'ya satılabiliyordu.)
-- **Külçeler** biyom sırasıyla: Bakır 38 · Kalay 62 · Tunç 100 · Demir 165 · Gümüş 270 · Çelik 440 · Kara çelik 720 · Altın 1.180.
-- **Kısa yaylar** aynı biyomun uzun yayının %60'ı (Sağlam kısa yay 245, Güçlü kısa yay 440).
-- Yalnızca eşyanın **değeri** (satış ve kitap fiyatı) değişir; bileme ücretleri, dükkân fiyatları, hasar ve savunma aynı kalır. Fiyatlar tablolarda (Bütün setler, Tarifler, Eşya dizini) yazılıdır.
+- **Malzemeler biyomdan biyoma değerlenir:** toplanan, kazılan, avlanan ve tutulan her ACT 1 malzemesi, türüne göre (et, deri ve post, tüy, yumurta, kemik ve diş, pul ve kabuk, özel av parçası, tatlısu balığı, deniz avı, meyve, ağaç ürünü, mantar, toplama, maden) bir önceki biyomun aynı türündeki sıradan malzemeden (o biyomun en ucuz üçte birinin sınırı) en az %20 daha değerlidir; daha ucuz olanların fiyatı bu sınıra çıkar (ör. Sincap derisi 2 → 6, Dağ keçisi derisi 7 → 36, Kurbağa 2 → 9). Nadir malzemeler fiyatını korur; hiçbir malzeme ucuzlamaz.
+- **Yapılan eşyanın fiyatı malzemesinden hesaplanır:** fiyat malzemelerin fiyatıyla birlikte değişir (eski oranıyla); zırhlar setin kendi fiyatını korur, malzemesi daha pahalıysa ona çıkar.
+- **Usta parçaları** (kolye ve yüzük dahil): malzeme × 1,3 ya da aynı biyomun metal setindeki aynı parçanın 1,15 katı, hangisi büyükse. **Başlangıç parçaları** Bakır parçasından ucuzdur (en çok %80'i).
+- **Oklar** tane fiyatıyla: (malzemeler ÷ çıkan ok) × 1,3; alevli, zehirli ve keskin oklar (ok + yağ / 10) × 1,1.
+- **Fazla malzeme isteyen tarifler azaltıldı** (sırayı bozuyorlardı): Tunç külçesi 1 Bakır külçesi + 1 Kalay külçesi (3 + 1 yerine); Kalay külçesi 2 Kalay cevheri (3 yerine); Demir külçesi Taş yerine Odun kömürüyle ergir; Çelik külçesi 1 Demir külçesi + 1 Sağlam odun kömürü (2 + 2 yerine); Kara çelik külçesi 1 Çelik külçesi, 2 Obsidyen, 1 Kor odun kömürü (2, 3, 2 yerine); Çakmaktaşı ve Obsidyen ok ucu 2 pul, Kuvars ok ucu 3 pul (8, 11, 10 yerine). Takılar: Kıymık kolye 1 Mor kıymık; İnci kolye 1 Sazlı inci; Domuz dişi muska 3 Yaban domuzu dişi; Pençe kolye 2 Ayı pençesi; Kehribar kolye 2 Kehribar boncuk, 2 İp; Ay taşı kolyesi 3 Ay taşı; Kristal yüzük 3 Dağ kristali; Kehribar yüzük 4 Kehribar. Altın külçesi 4 Altın cevheri (3 yerine).
+- **Külçeler:** Bakır 23 · Kalay 60 · Tunç 115 · Demir 171 · Gümüş 195 · Çelik 446 · Kara çelik 899 · Altın 486 · Mor kristal levhası 1.103. Kara çelik, çeliği bir kez daha arıttığı için Altın külçesinden pahalıdır.
+- **Sonuç:** 13 türün (miğfer, gövde zırhı, eldiven, çizme, kılıç, savaş çekici, topuz, mızrak, yay, balta, kazma, kolye, yüzük) her biri set sırasıyla (Başlangıç … Usta: Ametist ve obsidyen) her adımda pahalanır; oklar da: Basit 2 · Bakır 6 · Tunç 35 · Demir 43 · Çelik 72 · Kara çelik 165 · Mor kristal 196. Bileme ücretleri ve dükkân fiyatları değişmedi.
 
 ### Yaylar ve oklar
 
@@ -218,24 +219,24 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Yay | Biyom | Hasar | Bekleme | Menzil | Dayanıklılık | Tarif | Nerede yapılır | Fiyat |
 |---|---|---|---|---|---|---|---|---|
 | Basit yay | El yapımı (herkes) | 8 | 0,75 sn | 240 | 60 | 1 Uzun sopa, 3 İp, 2 Lif | El yapımı (Tab) | 90 |
-| Odun yayı | Çayır | 12 | 0,7 sn | 260 | 80 | 3 Odun, 1 Sinir kirişi, 1 Bakır külçesi | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 125 |
-| Sert odun yayı | Orman | 17 | 0,68 sn | 280 | 110 | 3 Sert odun, 1 Sinir kirişi, 1 Tunç külçesi | Örs · Silahçı Durdu (Orman) ve üstü döver | 225 |
-| Sağlam odun yayı | Bataklık | 26 | 0,66 sn | 300 | 150 | 3 Sağlam odun, 2 Sinir kirişi, 1 Demir külçesi | Örs · Silahçı Ali (Bataklık) ve üstü döver | 405 |
+| Odun yayı | Çayır | 12 | 0,7 sn | 260 | 80 | 3 Odun, 1 Sinir kirişi, 1 Bakır külçesi | Örs · Demirci Dursun ve bütün silahçı kuzenleri döver | 112 |
+| Sert odun yayı | Orman | 17 | 0,68 sn | 280 | 110 | 3 Sert odun, 1 Sinir kirişi, 1 Tunç külçesi | Örs · Silahçı Durdu (Orman) ve üstü döver | 205 |
+| Sağlam odun yayı | Bataklık | 26 | 0,66 sn | 300 | 150 | 3 Sağlam odun, 2 Sinir kirişi, 1 Demir külçesi | Örs · Silahçı Ali (Bataklık) ve üstü döver | 418 |
 | Sağlam kısa yay (kısa) | Bataklık | 20 | 0,5 sn | 250 | 130 | 1 Sağlam odun sapı, 1 Sinir kirişi, 2 İp, 2 Dal, 2 Taş | Örs · Silahçı Ali (Bataklık) ve üstü döver | 128 |
-| Güçlü odun yayı | Kayalık Dağ | 35 | 0,64 sn | 320 | 190 | 3 Güçlü odun, 2 Sinir kirişi, 1 Çelik külçesi | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 730 |
+| Güçlü odun yayı | Kayalık Dağ | 35 | 0,64 sn | 320 | 190 | 3 Güçlü odun, 2 Sinir kirişi, 1 Çelik külçesi | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 769 |
 | Güçlü kısa yay (kısa) | Kayalık Dağ | 27 | 0,49 sn | 270 | 170 | 1 Güçlü odun sapı, 1 Sinir kirişi, 3 İp, 2 Dal, 2 Taş | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 130 |
-| Kor odun yayı | Kül Diyarı | 45 | 0,62 sn | 340 | 230 | 3 Kor odun, 2 Sinir kirişi, 1 Kara çelik külçesi | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 1.310 |
-| Kadim odun yayı | Mor Kristal Vadisi | 56 | 0,6 sn | 360 | 280 | 3 Kadim odun, 2 Sinir kirişi, 1 Mor kristal levhası | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 2.370 |
+| Kor odun yayı | Kül Diyarı | 45 | 0,62 sn | 340 | 230 | 3 Kor odun, 2 Sinir kirişi, 1 Kara çelik külçesi | Örs · Silahçı Turan (Kül Diyarı) ve üstü döver | 1.483 |
+| Kadim odun yayı | Mor Kristal Vadisi | 56 | 0,6 sn | 360 | 280 | 3 Kadim odun, 2 Sinir kirişi, 1 Mor kristal levhası | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 2.214 |
 
 | Ok | Biyom | Hasar çarpanı | Tarif | Tanesinin fiyatı |
 |---|---|---|---|---|
 | Basit ok | El yapımı (herkes) | ×0,8 | 2 Dal, 1 Keskin taş, 1 Lif, 1 Kemik ok ucu → 11 ok | 2 |
-| Bakır ok | Çayır | ×1,0 | 1 Bakır külçesi, 4 Dal, 2 Keklik tüyü, 1 Diken ok ucu → 18 ok | 4 |
-| Tunç ok | Orman | ×1,15 | 1 Tunç külçesi, 4 Dal, 2 Keklik tüyü, 1 Lav camı ok ucu → 10 ok | 7 |
-| Demir ok | Bataklık | ×1,3 | 1 Demir külçesi, 4 Dal, 2 Ördek tüyü, 1 Akrep ok ucu → 10 ok | 13 |
-| Çelik ok | Kayalık Dağ | ×1,45 | 1 Çelik külçesi, 4 Dal, 2 Ur kekliği tüyü, 1 Çakmaktaşı ok ucu → 10 ok | 25 |
-| Kara çelik ok | Kül Diyarı | ×1,6 | 1 Kara çelik külçesi, 4 Dal, 2 Ur kekliği tüyü, 1 Obsidyen ok ucu → 10 ok | 48 |
-| Mor kristal ok | Mor Kristal Vadisi | ×1,8 | 1 Mor kristal levhası, 4 Dal, 2 Ur kekliği tüyü, 1 Kuvars ok ucu → 11 ok | 90 |
+| Bakır ok | Çayır | ×1,0 | 1 Bakır külçesi, 4 Dal, 2 Keklik tüyü, 1 Diken ok ucu → 18 ok | 6 |
+| Tunç ok | Orman | ×1,15 | 1 Tunç külçesi, 4 Dal, 2 Keklik tüyü, 1 Lav camı ok ucu → 10 ok | 35 |
+| Demir ok | Bataklık | ×1,3 | 1 Demir külçesi, 4 Dal, 2 Ördek tüyü, 1 Akrep ok ucu → 10 ok | 43 |
+| Çelik ok | Kayalık Dağ | ×1,45 | 1 Çelik külçesi, 4 Dal, 2 Ur kekliği tüyü, 1 Çakmaktaşı ok ucu → 10 ok | 72 |
+| Kara çelik ok | Kül Diyarı | ×1,6 | 1 Kara çelik külçesi, 4 Dal, 2 Ur kekliği tüyü, 1 Obsidyen ok ucu → 10 ok | 165 |
+| Mor kristal ok | Mor Kristal Vadisi | ×1,8 | 1 Mor kristal levhası, 4 Dal, 2 Ur kekliği tüyü, 1 Kuvars ok ucu → 11 ok | 196 |
 
 - **Yayın özel vuruşları** (Dövüş · Özel vuruşlar tablosu): Hızlı atış, Delici ok, Çift ok, Gergin atış, Geri sıçrayıp atış, Ok yelpazesi; ultisi **Ok yağmuru**. Her ok atışı bir ok harcar (ulti harcamaz).
 - **Kısa yaylar (v3.68, 8 Kasım 2026, Boğaç: "işe yarayanlar işe yarasın"):** Sağlam kısa yay (Bataklık) ve Güçlü kısa yay (Kayalık Dağ) **kısa yay**dır: biyomunun asıl yayıyla saniyedeki hasarı aynıdır (Kızılağaç 26 / 0,66 ≈ 39, Dişbudak 20 / 0,5 = 40; Akçaağaç 35 / 0,64 ≈ 55, Porsuk 27 / 0,49 ≈ 55) ama **daha sık atar, menzili kısadır** ve aynı hasar için **daha çok ok harcar**. Okun hızı 380 + 30 × (kademe + 1). Silahlar listesinde ve arenada **Yaylar** grubundadır.
@@ -528,19 +529,19 @@ Yedi yuva vardır: **baş, gövde, el, ayak, silah, boyun (kolye), yüzük**. Ö
 
 | Set | Biyom | Kolye · etki · tarif · fiyat | Yüzük · etki · tarif · fiyat |
 |---|---|---|---|
-| Başlangıç | Çayır | **Diş kolye** · +20 can · 1 Kurt dişi, 4 İp, 2 Kum · 31 | **Taş yüzük** · +%6 toplama hızı · 2 Nehir çakılı, 1 Lif · 25 |
-| Bakır | Çayır | **Kıymık kolye** · +20 enerji · +10 mana · 2 Mor kıymık, 2 İp · 37 | **Bakır yüzük** · +%4 satış fiyatı · 1 Bakır külçesi · 44 |
-| Usta: Kemik | Çayır | **Kemik kolye** · +10 can · kanama direnci %8 · 3 İp, 1 Kemik olta iğnesi · 45 | **Kemik yüzük** · +%3 hasar · 2 Kemik, 1 Sinir · 59 |
-| Tunç | Orman | **Domuz dişi muska** · +40 can · +2 savunma · 1 Yaban domuzu dişi, 4 İp, 2 Kum · 54 | **Tunç yüzük** · +%5 hasar · +15 enerji · 1 Tunç külçesi · 79 |
-| Usta: Meşe ve granit | Orman | **Palamut kolyesi** · +%20 can yenilenmesi · +%10 enerji yenilenmesi · 6 Meşe palamudu, 2 İp, 1 Meşe kabuğu · 65 | **Granit yüzük** · +%10 toplama hızı · +2 savunma · 3 Granit, 1 Kumtaşı · 105 |
-| Demir | Bataklık | **İnci kolye** · zehir direnci %12 · çamurda yavaşlamaz · 3 Sazlı inci, 1 Batık kök · 78 | **Demir yüzük** · +5 savunma · kanama direnci %5 · 1 Demir halka · 140 |
-| Usta: Timsah | Bataklık | **Timsah dişi kolye** · +%4 hasar · zehir direnci %15 · 2 Timsah dişi, 2 İp, 1 Kemik · 93 | **Timsah yüzüğü** · +%2 şans · zehir direnci %8 · 2 Timsah derisi, 1 Demir külçesi · 185 |
-| Çelik | Kayalık Dağ | **Pençe kolye** · +90 can · +4 zırh · 1 Ayı pençesi, 5 İp, 1 Pirit · 110 | **Kristal yüzük** · +30 mana · +%20 enerji yenilenmesi · 2 Dağ kristali, 1 Tavan ağı · 245 |
-| Usta: Gümüş ve kuvars | Kayalık Dağ | **Kartal pençesi kolyesi** · +60 enerji · +%3 hız · 2 Kartal pençesi, 2 İp · 135 | **Gümüş yüzük** · +%8 satış fiyatı · +%2 şans · 1 Gümüş külçesi, 1 Yontulmuş kuvars · 330 |
-| Kara çelik | Kül Diyarı | **Kehribar kolye** · +%30 can yenilenmesi · yanık direnci %15 · 1 Kehribar boncuk, 6 İp, 3 Kum · 160 | **Kehribar yüzük** · +%8 hasar · +6 zırh · 2 Kehribar, 1 Demir halka · 435 |
-| Usta: Ejder | Kül Diyarı | **Kül dişi muska** · +%6 hasar · yanık direnci %20 · 2 Kül dişi, 1 Halat, 1 Kehribar · 195 | **Ejder yüzüğü** · +%8 hasar · yanık direnci %12 · 1 Kara pul, 1 Lav pulu · 580 |
-| Mor kristal | Mor Kristal Vadisi | **Ay taşı kolyesi** · +120 can · +50 mana · 1 Ay taşı, 2 İp · 235 | **Altın yüzük** · +%12 satış fiyatı · +%4 şans · 2 Altın külçesi, 1 Kehribar · 775 |
-| Usta: Ametist ve obsidyen | Mor Kristal Vadisi | **Gölge dişi kolyesi** · +6 savunma · kanama, yanık ve zehir direnci %8 · 3 Gölge dişi, 1 Kristal ipek · 280 | **Ametist yüzük** · +%10 hasar · +%4 hız · 2 Ametist, 1 Gümüş külçesi · 1.030 |
+| Başlangıç | Çayır | **Diş kolye** · +20 can · 1 Kurt dişi, 4 İp, 2 Kum · 35 | **Taş yüzük** · +%6 toplama hızı · 2 Nehir çakılı, 1 Lif · 25 |
+| Bakır | Çayır | **Kıymık kolye** · +20 enerji · +10 mana · 1 Mor kıymık, 2 İp · 48 | **Bakır yüzük** · +%4 satış fiyatı · 1 Bakır külçesi · 30 |
+| Usta: Kemik | Çayır | **Kemik kolye** · +10 can · kanama direnci %8 · 3 İp, 1 Kemik olta iğnesi · 55 | **Kemik yüzük** · +%3 hasar · 2 Kemik, 1 Sinir · 34 |
+| Tunç | Orman | **Domuz dişi muska** · +40 can · +2 savunma · 3 Yaban domuzu dişi, 4 İp, 2 Kum · 65 | **Tunç yüzük** · +%5 hasar · +15 enerji · 1 Tunç külçesi · 149 |
+| Usta: Meşe ve granit | Orman | **Palamut kolyesi** · +%20 can yenilenmesi · +%10 enerji yenilenmesi · 6 Meşe palamudu, 2 İp, 1 Meşe kabuğu · 75 | **Granit yüzük** · +%10 toplama hızı · +2 savunma · 3 Granit, 1 Kumtaşı · 171 |
+| Demir | Bataklık | **İnci kolye** · zehir direnci %12 · çamurda yavaşlamaz · 1 Sazlı inci, 1 Batık kök · 105 | **Demir yüzük** · +5 savunma · kanama direnci %5 · 1 Demir halka · 335 |
+| Usta: Timsah | Bataklık | **Timsah dişi kolye** · +%4 hasar · zehir direnci %15 · 2 Timsah dişi, 2 İp, 1 Kemik · 121 | **Timsah yüzüğü** · +%2 şans · zehir direnci %8 · 2 Timsah derisi, 1 Demir külçesi · 385 |
+| Çelik | Kayalık Dağ | **Pençe kolye** · +90 can · +4 zırh · 2 Ayı pençesi, 5 İp, 1 Pirit · 172 | **Kristal yüzük** · +30 mana · +%20 enerji yenilenmesi · 3 Dağ kristali, 1 Tavan ağı · 452 |
+| Usta: Gümüş ve kuvars | Kayalık Dağ | **Kartal pençesi kolyesi** · +60 enerji · +%3 hız · 2 Kartal pençesi, 2 İp · 198 | **Gümüş yüzük** · +%8 satış fiyatı · +%2 şans · 1 Gümüş külçesi, 1 Yontulmuş kuvars · 520 |
+| Kara çelik | Kül Diyarı | **Kehribar kolye** · +%30 can yenilenmesi · yanık direnci %15 · 2 Kehribar boncuk, 2 İp · 214 | **Kehribar yüzük** · +%8 hasar · +6 zırh · 4 Kehribar, 1 Demir halka · 543 |
+| Usta: Ejder | Kül Diyarı | **Kül dişi muska** · +%6 hasar · yanık direnci %20 · 2 Kül dişi, 1 Halat, 1 Kehribar · 300 | **Ejder yüzüğü** · +%8 hasar · yanık direnci %12 · 1 Kara pul, 1 Lav pulu · 663 |
+| Mor kristal | Mor Kristal Vadisi | **Ay taşı kolyesi** · +120 can · +50 mana · 3 Ay taşı, 2 İp · 362 | **Altın yüzük** · +%12 satış fiyatı · +%4 şans · 2 Altın külçesi, 1 Kehribar · 1.315 |
+| Usta: Ametist ve obsidyen | Mor Kristal Vadisi | **Gölge dişi kolyesi** · +6 savunma · kanama, yanık ve zehir direnci %8 · 3 Gölge dişi, 1 Kristal ipek · 598 | **Ametist yüzük** · +%10 hasar · +%4 hız · 2 Ametist, 1 Gümüş külçesi · 1.512 |
 
 ## Evler ve barınaklar (Usta Sinan; v3.39'a kadar Marangoz Çınar)
 

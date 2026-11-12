@@ -163,17 +163,17 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 
 | Eşya | Tür | Değer | Malzemeler | Döven | Fiyat |
 |---|---|---|---|---|---|
-| Granit savaş çekici | Kılıç (silah) | 27 hasar · 100 kullanım | 4 Granit, 1 Sert odun sapı, 3 Yaban domuzu dişi, 1 Sinir kirişi | Silahçı Durdu (Orman) ve üstü | 970 |
-| Meşe kabuk zırh | Zırh · Gövde | +30 savunma · direnç: kanama %15 | 6 Sert odun, 2 Deri parçası, 6 Kirpi dikeni, 2 Sinir | Zırhçı Duran (Orman) ve üstü | 1.700 |
-| Ceviz kabuğu miğfer | Zırh · Baş | +15 savunma | 6 Ceviz, 2 Sert odun, 1 Deri parçası, 2 İri diken, 2 Taş | Zırhçı Duran (Orman) ve üstü | 685 |
-| Timsah dişi kılıcı | Kılıç (silah) | 38 hasar · 140 kullanım | 4 Demir külçesi, 3 Timsah dişi, 1 Sağlam odun sapı, 1 Deri parçası | Silahçı Ali (Bataklık) ve üstü | 2.040 |
-| Timsah pulu zırh | Zırh · Gövde | +46 savunma · direnç: kanama %40, metal | 3 Demir cevheri, 2 Timsah derisi, 1 Bataklık kurdu postu, 1 Sinir | Zırhçı Veli (Bataklık) ve üstü | 2.790 |
-| Gümüş kılıç | Kılıç (silah) | 44 hasar · 160 kullanım | 4 Gümüş külçesi, 3 Kuvars, 1 Güçlü odun sapı, 2 Kartal pençesi | Silahçı Kaya (Kayalık Dağ) ve üstü | 3.770 |
-| Gümüş pullu zırh | Zırh · Gövde | +52 savunma · direnç: kanama %35, metal | 6 Gümüş cevheri, 3 Demir cevheri, 2 Deri parçası, 2 Ayı pençesi | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 4.580 |
-| Kartal tüyü miğfer | Zırh · Baş | +24 savunma · metal | 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Deri parçası, 2 Taş | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 1.810 |
-| Ametist kılıcı | Kılıç (silah) | 58 hasar · 240 kullanım | 5 Ametist, 1 Kadim odun sapı, 2 Gölge dişi, 1 Mor zehir | Silahçı Kudret (Mor Kristal Vadisi) ve üstü | 12.850 |
-| Kristal ipek zırh | Zırh · Gövde | +72 savunma · direnç: kanama %25, yanık %25, zehir %25 | 3 Kristal ipek, 2 Ametist, 3 Demir cevheri, 1 Deri parçası | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 12.350 |
-| Işık pulu eldiven | Zırh · El | +18 savunma · direnç: zehir %35 | 4 Işık pulu, 2 Kristal, 1 Deri parçası, 3 Lif | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 4.690 |
+| Granit savaş çekici | Kılıç (silah) | 27 hasar · 100 kullanım | 4 Granit, 1 Sert odun sapı, 3 Yaban domuzu dişi, 1 Sinir kirişi | Silahçı Durdu (Orman) ve üstü | 957 |
+| Meşe kabuk zırh | Zırh · Gövde | +30 savunma · direnç: kanama %15 | 6 Sert odun, 2 Deri parçası, 6 Kirpi dikeni, 2 Sinir | Zırhçı Duran (Orman) ve üstü | 2.484 |
+| Ceviz kabuğu miğfer | Zırh · Baş | +15 savunma | 6 Ceviz, 2 Sert odun, 1 Deri parçası, 2 İri diken, 2 Taş | Zırhçı Duran (Orman) ve üstü | 900 |
+| Timsah dişi kılıcı | Kılıç (silah) | 38 hasar · 140 kullanım | 4 Demir külçesi, 3 Timsah dişi, 1 Sağlam odun sapı, 1 Deri parçası | Silahçı Ali (Bataklık) ve üstü | 1.903 |
+| Timsah pulu zırh | Zırh · Gövde | +46 savunma · direnç: kanama %40, metal | 3 Demir cevheri, 2 Timsah derisi, 1 Bataklık kurdu postu, 1 Sinir | Zırhçı Veli (Bataklık) ve üstü | 3.204 |
+| Gümüş kılıç | Kılıç (silah) | 44 hasar · 160 kullanım | 4 Gümüş külçesi, 3 Kuvars, 1 Güçlü odun sapı, 2 Kartal pençesi | Silahçı Kaya (Kayalık Dağ) ve üstü | 2.970 |
+| Gümüş pullu zırh | Zırh · Gövde | +52 savunma · direnç: kanama %35, metal | 6 Gümüş cevheri, 3 Demir cevheri, 2 Deri parçası, 2 Ayı pençesi | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 4.024 |
+| Kartal tüyü miğfer | Zırh · Baş | +24 savunma · metal | 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Deri parçası, 2 Taş | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 1.466 |
+| Ametist kılıcı | Kılıç (silah) | 58 hasar · 240 kullanım | 5 Ametist, 1 Kadim odun sapı, 2 Gölge dişi, 1 Mor zehir | Silahçı Kudret (Mor Kristal Vadisi) ve üstü | 9.478 |
+| Kristal ipek zırh | Zırh · Gövde | +72 savunma · direnç: kanama %25, yanık %25, zehir %25 | 3 Kristal ipek, 2 Ametist, 3 Demir cevheri, 1 Deri parçası | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 10.048 |
+| Işık pulu eldiven | Zırh · El | +18 savunma · direnç: zehir %35 | 4 Işık pulu, 2 Kristal, 1 Deri parçası, 3 Lif | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 4.079 |
 
 #### Hikâyeler ve ailenin sahnesi
 

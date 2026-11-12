@@ -8,6 +8,27 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.17 · 12 Kasım 2026
+
+### Oynanış
+- **Malzemeler biyomdan biyoma değerleniyor:** bir biyomun eti, derisi, tüyü, yumurtası, dişi, balığı, meyvesi ya da otu artık önceki biyomun sıradan malzemesinden en az %20 daha değerli. Örnekler: Sincap derisi 2 → 6, Dağ keçisi derisi 7 → 36, Kurbağa 2 → 9, Söğüt dalı 1 → 10. Hiçbir malzeme ucuzlamadı.
+- **Yaptığın eşyaların fiyatı yine malzemelerinden hesaplanıyor.** 4.16'daki sabit fiyat eğrisi kalktı.
+- **Fazla malzeme isteyen tarifler azaldı:** fiyat sırasını bunlar bozuyordu.
+  - Tunç külçesi 1 Bakır külçesi ve 1 Kalay külçesi ister (3 Bakır külçesi yerine).
+  - Çelik külçesi 1 Demir külçesi ister (2 yerine), Kara çelik külçesi 1 Çelik külçesi ister (2 yerine). Kara çelik külçesi 2.122 → 899.
+  - Demir külçesi Taş yerine Odun kömürüyle, Altın külçesi 4 Altın cevheriyle eritiliyor.
+  - Çakmaktaşı ve Obsidyen ok ucu 2 pul, Kuvars ok ucu 3 pul ister (8, 11 ve 10 yerine).
+  - Bazı kolye ve yüzükler daha az ya da daha çok taş istiyor.
+- **Sonuç:** her biyomda karşına çıkan miğfer, zırh, eldiven, çizme, kılıç, savaş çekici, topuz, mızrak, yay, balta, kazma, kolye ve yüzük bir öncekinden pahalı. Aynı biyomda usta parçası metal parçasından pahalı, başlangıç parçaları Bakırdan ucuz.
+  - Kılıç: Bakır 346 · Tunç 787 · Demir 1.655 · Çelik 2.583 · Kara çelik 4.949 · Mor kristal 8.242.
+  - Oklar tane fiyatıyla: Basit 2, Kara çelik 165, Mor kristal 196.
+- Hasar, savunma, bileme ücretleri ve dükkân fiyatları değişmedi.
+
+### Tasarım belgesi
+- Aletler'deki "Fiyat basamağı" bölümünün yerine "Fiyat düzeni" geldi; madenler tablosundaki külçe tarifleri ve bütün fiyatlar güncellendi.
+
+---
+
 ## Versiyon 4.16 · 12 Kasım 2026
 
 ### Oynanış
@@ -353,17 +374,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Düzeltmeler
 - **Henüz tanışmadığın görev verenler haritada:** Çoban Davut ya da Çiftçi Ekin gibi daha tanışmadığın biri sana görev verecekken haritada hiç görünmüyordu; görev listesi "seni bekliyor" dese de nerede olduğunu bulamıyordun. Artık haritada (keşfetmediğin yerde de) parlayan bir **!** ile görünüyorlar.
-
----
-
-## Versiyon 3.97 · 9 Kasım 2026
-
-### Oynanış
-- **Kar yalnızca kışın yağar:** ilkbaharın soğuk gecelerinde artık kar değil yağmur yağar. Kış (22–28. günler) 0,5°'nin altında yağış kar ya da tipi olur.
-- **Üşüme:** kışın sıcaklık 0° ya da altındayken (gece de gündüz de) karakter üşür. Elinde yanan bir **meşale** varken üşüme artmaz, yavaşça geçer; bir **ateşin yanında** (kamp ateşi, kişilerin ateşleri, ocak, kazan) ya da evin içinde hızla ısınırsın. Mağarada ve deniz yolculuğunda üşümezsin. 0°'de üşüme ~3 dakikada dolar, hava soğudukça daha hızlı.
-- **Donmak can yakar:** çok üşüyünce (üşüme ¾'ü geçince) can düşmeye başlar, en kötüsünde saniyede canının %2'si; ekran kırmızı yanıp söner, "Donuyorsun!" yazar.
-
-### Görsel
-- **Buzlanma:** üşüdükçe ekranın dört köşesinden buz kristalleri başlar, üşüme arttıkça büyüyüp koyulaşır; ısınınca geri çekilir. Çubukları ve düğmeleri kapatmaz.
 
 ---
