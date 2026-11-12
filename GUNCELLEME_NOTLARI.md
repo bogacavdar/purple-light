@@ -8,6 +8,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.20 · 13 Kasım 2026
+
+### Oynanış
+- **Meyve çalıları:** Böğürtlen, Ahududu, Yaban mersini, Kızılcık, Kuşburnu ve Alıç artık dünyada çalı olarak duruyor.
+  - Her çalıdan 3 kez toplarsın: her seferinde yere bir meyve düşer, çalı yerinde kalır ve meyvesi azalmış görünür.
+  - Üçüncü toplayışta çalı kaybolur, bir süre sonra kendi biyomunda başka bir yerde yeniden çıkar.
+  - Çalının yanına gelince kaç meyve kaldığı yazar ("Böğürtlen çalısından topla (2 kaldı)").
+- **Kemal'in ilk dersi:** artık 5 değil **3 böğürtlen** topla ve üçünü de ye; üçü de aynı çalıdan alınabilir.
+
+### Görsel
+- Yeni resimler: böğürtlen çalısı ve böğürtlen; diğer beş çalı ve meyveleri aynı resmin kendi rengine boyanmış hali.
+- Nehir çakılı, Kuru ot, Kum, Dal ve Yaprak'ın ikonları yenilendi.
+
+### Tasarım belgesi
+- Toplama bölümüne "Meyve çalıları" eklendi; öğretici adımları 3 böğürtlene göre, eşya tablosundaki "nereden gelir" satırları çalıya göre güncellendi.
+
+---
+
 ## Versiyon 4.19 · 13 Kasım 2026
 
 ### Oynanış
@@ -386,20 +404,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Takip şeridi küçük simgeler:** ekranın üstündeki takip şeridinde artık yazı yok; her tarif bir satır, malzemeleri küçük kare resimler ve köşelerinde sayıları (tamam olanlar yeşil). Bir resmin üstüne gelince şık bir kartta adı, sende kaç tane olduğu ve nereden geldiği yazıyor. Şerit küçüldüğü için görev kartının üstüne binmiyor.
 - **Üzerine gelme etiketleri yenilendi:** farenle bir canlının, ağacın ya da eşyanın üstüne gelince çıkan etiket artık koyu, küçük bir kart; solundaki renkli şerit canlının huyunu gösteriyor (saldırgan kırmızı, kızdırırsan saldırır turuncu, zararsız yeşil). Ekranın kenarından taşmıyor.
 - **Dövüşte etiket çıkmıyor:** bir hayvana vurduktan sonra 3 saniye, seni kovalayan ya da sana kızmış bir hayvan yakındayken ve ısırıldıktan sonra etiketler görünmüyor; savaşırken önünü kapatmıyorlar.
-
----
-
-## Versiyon 4.00 · 9 Kasım 2026
-
-### Oynanış
-- **Pamuk'un dairesi daha büyük:** çapı %30 arttı, Pamuk'u aramak biraz daha uzun sürüyor.
-- **Ekin'in kaybolan korkuluğunda da sarı daire:** sıradaki saman izi ve sonra korkuluk, Pamuk'taki gibi haritada büyük bir sarı dairenin içinde rastgele bir yerde. Korkuluğu Ekin'e götürürken ok Ekin'i gösteriyor.
-
-### Düzeltmeler
-- **Ekin'in "Kaybolan korkuluk" görevi bitiyor:** korkuluğu bulup Ekin'e götürünce Ekin onu almıyor, hep "Korkuluğum yine yerinde değil" diyordu; görev bitirilemiyordu. Artık Ekin'le konuşunca korkuluğu alıyor ve görev tamamlanıyor.
-- **Yetenek ağacında açıklama yazısı sığıyor:** alttaki yeteneklerin üstüne gelince çıkan açıklama pencerenin altına taşıp kesiliyordu. Artık her zaman görünen yerde.
-
-### Arayüz
-- **Yetenek ağacı pencereyle büyüyor:** ağaç pencerenin içini dolduruyor; pencereyi kenarından büyütünce ağaç da büyüyor.
 
 ---

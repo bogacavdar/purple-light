@@ -33,7 +33,7 @@ Her eşyanın adına uygun bir resmi vardır (Giriş › Kural). v3.37'ye kadar 
 - **Merhemler kapta, yağlar şişede, iksirler cam şişede, reçeller kavanozda, tohumlar çekirdek olarak, inciler sedefle.**
 - **Yapılan şeyler:** Sapan, Bola, Kirmen, Dokuma tezgâhı, Ok kılıfı, Deri çanta, Deri tulum, Yelkenli sal, Atölye, çanlar, ipler (kangal), yelpazeler, tılsımlar, Golem feneri, Kaya patlatıcı, Semender derisi tef, Ağ kapanı, Kor zurnası, yemler…
 - **Toplananlar ve canlı parçaları:** bölge bitkileri (Kardelen, Ay otu, Gece zambağı…), taşlar ve kristaller (Kükürt kristali, Volkan camı, Ayna taşı, Ametist…), tozlar, yosunlar, kökler, Sülük, Dev yüreği, Çamur Ana gözü, Kartal pençesi, Örümcek gözü…
-- **PixelLab ikonları (12 Kasım 2026, Boğaç: "sen bunları ekle oyuna"):** Boğaç'ın PixelLab'da 32×32 çizdirdiği 64 ikonluk sayfadan, oyunda karşılığı olan **58 eşya** bu resimleri kullanır; envanterde ve kitapta 32×32 olarak, elde ve yerde küçültülerek. Eşyalar: bütün baltalar (Taş, Bakır, Çakmaktaşı, Tunç, Granit, Demir, Timsah dişi, Çelik, Kuvars, Kara çelik, Ejder, Mor kristal, Obsidyen); Taş, Bakır, Demir, Çelik, Mor kristal ve Obsidyen kazma; Bakır, Demir, Çelik, Kara çelik ve Mor kristal kılıç, Ejder kılıcı; Demir savaş çekici; Basit yay; Odun, Taş, Çakmaktaşı, Bakır cevheri, Demir cevheri, Taş kömürü, Kuvars, Ametist, Obsidyen, Kızıl ejder pulu; Bakır, Tunç, Demir, Gümüş, Kara çelik ve Altın külçesi; Lif, Halat, Deri parçası, Timsah derisi, Kemik, Keklik tüyü, Kurt dişi, Deri çanta; Ateş iksiri, Mana iksiri, Kök özü iksiri, Ekmek, Pişmiş keklik eti, Kızılcık, Meşale. Sayfadaki 3 kürek, tokmak, ikinci yay ve anahtarın oyunda karşılığı yok, kullanılmaz. Kurulan eşyaların kurulmuş hali (Meşale) eski çizimiyle kalır.
+- **PixelLab ikonları (12 Kasım 2026, Boğaç: "sen bunları ekle oyuna"):** Boğaç'ın PixelLab'da 32×32 çizdirdiği 64 ikonluk sayfadan, oyunda karşılığı olan **58 eşya** bu resimleri kullanır; envanterde ve kitapta 32×32 olarak, elde ve yerde küçültülerek. Eşyalar: bütün baltalar (Taş, Bakır, Çakmaktaşı, Tunç, Granit, Demir, Timsah dişi, Çelik, Kuvars, Kara çelik, Ejder, Mor kristal, Obsidyen); Taş, Bakır, Demir, Çelik, Mor kristal ve Obsidyen kazma; Bakır, Demir, Çelik, Kara çelik ve Mor kristal kılıç, Ejder kılıcı; Demir savaş çekici; Basit yay; Odun, Taş, Çakmaktaşı, Bakır cevheri, Demir cevheri, Taş kömürü, Kuvars, Ametist, Obsidyen, Kızıl ejder pulu; Bakır, Tunç, Demir, Gümüş, Kara çelik ve Altın külçesi; Lif, Halat, Deri parçası, Timsah derisi, Kemik, Keklik tüyü, Kurt dişi, Deri çanta; Ateş iksiri, Mana iksiri, Kök özü iksiri, Ekmek, Pişmiş keklik eti, Kızılcık, Meşale. Sayfadaki 3 kürek, tokmak, ikinci yay ve anahtarın oyunda karşılığı yok, kullanılmaz. **13 Kasım 2026 (Boğaç):** Böğürtlen, Nehir çakılı, Kuru ot, Kum, Dal ve Yaprak da Boğaç'ın verdiği yeni resimleri kullanır; Ahududu, Yaban mersini, Kızılcık, Kuşburnu ve Alıç böğürtlen resminin kendi rengine boyanmış halidir. Kurulan eşyaların kurulmuş hali (Meşale) eski çizimiyle kalır.
 - **Unutulan resim:** resmi olmayan bir eşya renkli kutu değil, sade bir bez torba olarak görünür; geliştirici araçları açıkken (`?debug`) oyun açıldıktan 12 saniye sonra konsola "resmi yok" listesi yazılır.
 
 > ACT 1 madenlerinin fiyatları ve yerleri değişti (**Aletler · Madenler ve ekipman merdiveni**). Bir madeni kullanan tariflerin fiyatı, maden fiyatındaki değişim × miktar × 1,3 kadar (zincir boyunca) kendiliğinden değişir; bu tablodaki türetilmiş fiyatlar henüz yeniden üretilmedi (değerleri). Yeni setlerin, ara ürünlerin ve Tunç/Demir set parçalarının fiyatları o bölümdeki tablolardadır.
@@ -47,7 +47,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Adaçayı çayı | 239 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ahtapot | 133 | – | Deniz avı: Mor Derinlik (Gemici Poyraz'ın teknesiyle, Sv 22+, Yıldız oltası) %50 | Ahtapot salatası |
 | Ahtapot salatası | 304 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
-| Ahududu | 9 | yenir +9 | Yerden toplanır: Orman (ACT 1) | Ahududu ezmesi, Ahududu suyu, Meyve karışımı |
+| Ahududu | 9 | yenir +9 | Ahududu çalısından toplanır (3 kez): Orman (ACT 1) | Ahududu ezmesi, Ahududu suyu, Meyve karışımı |
 | Ahududu ezmesi | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ahududu suyu | 120 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ahşap ev | 900 | – | Usta Sinan yapar (1.500 Vio) | – |
@@ -73,7 +73,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Altın cevheri | 77 | – | Kazmayla kazılır: Mor Kristal Vadisi (ACT 1) | Altın külçesi |
 | Altın yüzük | 1.315 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Altın külçesi | 486 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Altın yüzük, Mor kristal levhası |
-| Alıç | 30 | yenir +15 | Yerden toplanır: Kayalık Dağ (ACT 1) | Alıç ezmesi, Alıç suyu |
+| Alıç | 30 | yenir +15 | Alıç çalısından toplanır (3 kez): Kayalık Dağ (ACT 1) | Alıç ezmesi, Alıç suyu |
 | Alıç ezmesi | 128 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Alıç suyu | 339 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ametist | 67 | – | Kazmayla kazılır: Mor Kristal Vadisi (ACT 1) · Av: Kristal golem düşürür %80 (ACT 1 · Mor Kristal Vadisi) | Ametist kılıcı, Ametist miğfer, Ametist savaş çekici, Ametist topuz, Ametist yüzük, Ametist yayı … (+9) |
@@ -202,7 +202,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Böcek kabuğu boyası | 75 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Böcek kabuğu ² | 14 | – | Av: Mantar böceği düşürür %90 (ACT 2 · Dev Mantar Ormanı) | Mantar lifi eldiven |
 | Börü'nün kemeri | 140 | giyilir +26 savunma | Börü'yü silahsız 50 yumrukla yenince verir (gövde zırhı +26 savunma, kanama direnci %20; değeri 140) | – |
-| Böğürtlen | 2 | yenir +5 | Yerden toplanır: Çayır (ACT 1) | Böğürtlen ezmesi, Böğürtlen suyu, Kurutulmuş böğürtlen, Meyve karışımı |
+| Böğürtlen | 2 | yenir +5 | Böğürtlen çalısından toplanır (3 kez): Çayır (ACT 1) | Böğürtlen ezmesi, Böğürtlen suyu, Kurutulmuş böğürtlen, Meyve karışımı |
 | Böğürtlen ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Böğürtlen suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Büyü otu ² | 26 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) · Av: Goblin şamanı düşürür %80 (ACT 2 · Dev Mantar Ormanı) | Ateş asası, Buz asası, Mana iksiri, Yıldırım asası |
@@ -636,7 +636,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kuvars sivri ucu | 917 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kuvars kazma, Kuvars mızrak |
 | Kuvars topuz | 2.156 | alet, silah 44 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | – |
 | Kuzukulağı | 8 | yenir +7, zehirli | Yerden toplanır: Orman (ACT 1) | Ot salatası |
-| Kuşburnu | 30 | yenir +14 | Yerden toplanır: Kayalık Dağ (ACT 1) | Kuşburnu, Kuşburnu ezmesi, Kuşburnu suyu |
+| Kuşburnu | 30 | yenir +14 | Kuşburnu çalısından toplanır (3 kez): Kayalık Dağ (ACT 1) | Kuşburnu, Kuşburnu ezmesi, Kuşburnu suyu |
 | Kuşburnu ezmesi | 128 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kuşburnu suyu | 339 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kuşburnu çayı | 239 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -712,7 +712,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kızarmış keme | 66 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızıl cam | 199 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kil lamba |
 | Kızıl ejder pulu ² | 300 | – | Av: Kızıl ejder düşürür %100 (ACT 2 · Ejder Volkanı) | – |
-| Kızılcık | 18 | yenir +12 | Yerden toplanır: Bataklık (ACT 1) | Kızılcık ezmesi, Kızılcık suyu |
+| Kızılcık | 18 | yenir +12 | Kızılcık çalısından toplanır (3 kez): Bataklık (ACT 1) | Kızılcık ezmesi, Kızılcık suyu |
 | Kızılcık ezmesi | 79 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kızılcık suyu | 230 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kızılkanat | 4 | – | Balık: Çayır/Orman suları (deniz), olta/ağ/zıpkın ile %13; balık kapanına da girer · Balık: Çayır/Orman suları (nehir/göl), olta/ağ/zıpkın ile %17; balık kapanına da girer | Balık çorbası, Pişmiş kızılkanat, Taşta kızılkanat, Tütsülenmiş kızılkanat |
@@ -1134,7 +1134,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yaban kazı eti | 9 | – | Av: Yaban kazı düşürür %100 (ACT 1 · Bataklık) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş yaban kazı eti, Turba ateşinde tütsü … (+1) |
 | Yaban kazı tüyü | 3 | – | Av: Yaban kazı düşürür %85 (ACT 1 · Bataklık) | Kara çelik ok |
 | Yaban kazı yumurtası | 4 | – | Av: Yaban kazı düşürür %35 (ACT 1 · Bataklık) | Haşlanmış yaban kazı yumurtası |
-| Yaban mersini | 9 | yenir +9 | Yerden toplanır: Orman (ACT 1) | Yaban mersini boyası, Yaban mersini ezmesi, Yaban mersini suyu |
+| Yaban mersini | 9 | yenir +9 | Yaban mersini çalısından toplanır (3 kez): Orman (ACT 1) | Yaban mersini boyası, Yaban mersini ezmesi, Yaban mersini suyu |
 | Yaban mersini boyası | 30 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Yaban mersini ezmesi | 33 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yaban mersini suyu | 110 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |

@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 4.19** ile birebir (13 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 4.20** ile birebir (13 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -271,14 +271,14 @@ Bu bölüm oyunu baştan sona, oyuncunun yapacağı sırayla anlatır. Ayrıntı
 
 **Öğretici malzemeleri yer değiştirmez:** öğreticinin istediği malzeme (böğürtlen, dal, taş…) yakında yoksa ya da telefonda parmağın kolay ulaşacağı yerde değilse, haritadaki mevcut bir çalı/malzeme **taşınmaz**: yakındaki **boş bir yerde yeni bir tane** biter ve ok ona bağlı kalır. Haritada duran bir malzeme, sen ona yürürken hiçbir zaman başka bir yere ışınlanmaz (eskiden en yakın böğürtlen oyuncunun yanına çekiliyor, telefonda da kamera kaydıkça yeniden taşınıyordu).
 
-**Öğretici malzemelerinin yeri:** 5 böğürtlen **Kemal'in kampının** çevresine; meşale malzemeleri (iki tur da), taşlar ve keskin taş için taşlar **Zümrüt'ün kazanının** çevresine; balta malzemeleri **Börü'nün** çevresine konur. Kişiler kampın kuzeyine/kuzeydoğusuna sırayla dizilir ve her biri bir öncekine kısa bir yürüyüş uzaklığındadır: Kemal → Zümrüt (~29 karo) → Nazlı (~37) → Börü (~35) → Dursun ve Durmuş (~36). Başlangıç yeri Çayır'ın **Orman'a en uzak** ucundaki (hilalin batı ucu) güneye bakan kumsaldır (Orman'a ~161 karo).
+**Öğretici malzemelerinin yeri:** 3 böğürtlen veren bir böğürtlen çalısı **Kemal'in kampının** çevresine (böğürtlenler kaybolursa aynı çalı yeniden dolar); meşale malzemeleri (iki tur da), taşlar ve keskin taş için taşlar **Zümrüt'ün kazanının** çevresine; balta malzemeleri **Börü'nün** çevresine konur. Kişiler kampın kuzeyine/kuzeydoğusuna sırayla dizilir ve her biri bir öncekine kısa bir yürüyüş uzaklığındadır: Kemal → Zümrüt (~29 karo) → Nazlı (~37) → Börü (~35) → Dursun ve Durmuş (~36). Başlangıç yeri Çayır'ın **Orman'a en uzak** ucundaki (hilalin batı ucu) güneye bakan kumsaldır (Orman'a ~161 karo).
 
 **Başlangıçta kampın yanına malzeme konmaz:** oyun başlarken kampın hemen yanına önceden fazladan konan 1 dal, 4 taş, 1 lif ve 1 yaprak artık yok; başlangıç bölgesinde yalnızca haritanın normal malzemeleri ve öğreticinin kendi adımlarında koyduğu malzemeler (böğürtlenler, Zümrüt'ün meşale malzemeleri ve 4 taşı) vardır.
 
 | Adım | Kim | Ne yaparsın | Sonuç |
 |---|---|---|---|
-| 1 | Kemal | Kampın çevresine konan 5 böğürtleni topla (telefonda önce sürükleyerek ve dokunarak yürüme). **Bilgisayarda** Kemal böğürtleni nasıl toplayacağını da söyler: "Böğürtlen çalısının **yanına git** ve **F**'ye bas; böğürtlen yere düşer, üstünden yürüyünce alırsın." (Toplama tuşu değiştirildiyse o tuşu söyler.) | — |
-| 2 | Kemal | **5 böğürtlenin beşini de yemek zorunlu:** 1. adımın kartı "5 böğürtlen topla ve beşini de ye" der ve iki sayaç gösterir (**Toplanan x/5 · Yenen y/5**, altında yenenlerin çubuğu); 2. adımın başlığı "Kemal · 5 böğürtlen ye", kartta **Yenen y/5** sayacı ve çubuğu. Yemek düğmesi, çantada böğürtlen olduğu andan beşi de yenene kadar (liste açıkken de) yanıp söner. Yemek düğmesiyle (F) 5 böğürtlen ye (soldaki yemek düğmesi mavi parlar ve ok onu gösterir; yemek listesi açılınca önce üstteki **Meyveler** sekmesi parlar ve ok onu gösterir; Meyveler seçilince Böğürtlen'in **Ye** düğmesi parlar. Kartta da "listeyi açarsan önce Meyveler sekmesini seç" yazar) | Cadı Zümrüt görünür; Kemal seni kuzeye, ormanın kıyısına yollar |
+| 1 | Kemal | Kampın çevresine konan **tek böğürtlen çalısından 3 böğürtlen** topla (13 Kasım 2026, Boğaç) (telefonda önce sürükleyerek ve dokunarak yürüme). **Bilgisayarda** Kemal böğürtleni nasıl toplayacağını da söyler: "Böğürtlen çalısının **yanına git** ve **F**'ye bas; böğürtlen yere düşer, üstünden yürüyünce alırsın." (Toplama tuşu değiştirildiyse o tuşu söyler.) | — |
+| 2 | Kemal | **3 böğürtlenin üçünü de yemek zorunlu:** 1. adımın kartı "3 böğürtlen topla ve üçünü de ye" der ve iki sayaç gösterir (**Toplanan x/3 · Yenen y/3**, altında yenenlerin çubuğu); 2. adımın başlığı "Kemal · 3 böğürtlen ye", kartta **Yenen y/3** sayacı ve çubuğu. Yemek düğmesi, çantada böğürtlen olduğu andan üçü de yenene kadar (liste açıkken de) yanıp söner. Yemek düğmesiyle (F) 3 böğürtlen ye (soldaki yemek düğmesi mavi parlar ve ok onu gösterir; yemek listesi açılınca önce üstteki **Meyveler** sekmesi parlar ve ok onu gösterir; Meyveler seçilince Böğürtlen'in **Ye** düğmesi parlar. Kartta da "listeyi açarsan önce Meyveler sekmesini seç" yazar) | Cadı Zümrüt görünür; Kemal seni kuzeye, ormanın kıyısına yollar |
 | 3 | Zümrüt | Zümrüt'e git ve konuş | Kazanın yanına 2 Dal, 2 Lif, 2 Yaprak konur |
 | 4 | Zümrüt | Kazanda **Kaba meşale** tarifini öğren. Tarif seçilince, malzemeler konana kadar **kazan alanı da mavi parlar**, malzemelerin nereye gideceği görünsün. | Malzemeler yeniden konur (**Zümrüt'ün kazanının yanına**, oyuncu nerede durursa dursun) |
 | 5 | Zümrüt | El yapımı ekranında (Tab) meşaleyi yap, **meşale yuvasına** (kemerin solundaki tek yuva; meşale yalnızca oraya takılır) koy ve yuvaya basıp yak. Kart sırayla "Meşaleyi yuvasına koy", "Meşaleyi yak", "Meşaleyi söndür" der; meşale yuvası yanıp söner, yuvaya konunca envanter kendiliğinden kapanır. **Malzemeler (2 dal, 2 lif, 2 yaprak) toplanmadan** el yapımı düğmesi, meşale satırı ve Yap düğmesi **parlamaz**; önce malzemeler toplanır, sonra parlar. Aynı kural kazan adımlarında (4, 7) ve balta adımında (12) da geçerlidir. | Meşale yapılınca Zümrüt yalnızca meşaleyi anlatır (taşlardan söz etmez). Meşale ele gelince Zümrüt **meşaleyi anlatır**: gündüz işe yaramaz, gece içindir; yalnızca eldeyken yanar ve Kaba meşale yaklaşık **110 saniye** yanınca biter (yağmurda daha çabuk); gündüz elinden indir, akşam karanlığında eline al, yedeğin olsun. **Envanter kendiliğinden kapanır:** meşale envanterden alttaki alet yuvasına konunca (öğretici bu adımdayken) envanter yarım saniye sonra kendi kapanır; oyuncu Esc/Kapat'a basmak zorunda kalmaz, kart hemen "yuvaya dokun / tuşa bas" der ve öğretici devam eder. Sonra kart **"Meşaleyi elinden indir"** der, meşalenin yuvası (hotbar kutusu) oku ile parlar; meşale inene kadar taş adımına geçilmez (taşlar ve taş konuşması da meşale inince gelir; üstteki takip satırı da o ana kadar taş istemez, haritadaki taşlar mavi parlamaz) |
@@ -920,6 +920,15 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 - **Yemek listesi kategorili:** yemek listesi (yemek düğmesine basılı tut / sağ tık, bilgisayarda X'i basılı tut) artık tek uzun liste değildir. Üstte **kategori sekmeleri** vardır; yalnızca elinde o türden yiyecek olan sekmeler görünür ve her sekmenin yanında kaç çeşit olduğu yazar. Önce sekme seçilir, sonra o sekmedeki yiyeceğin **Ye** düğmesine basılır. Sekmeler (bu sırayla): **Meyveler** (çalı meyveleri, ağaç meyveleri, yemişler), **Sebze ve tahıl**, **Otlar**, **Mantarlar**, **Etler** (çiğ ve pişmiş), **Balıklar** (balık, kerevit, midye…; çiğ ve pişmiş), **Yemekler** (kazanda öğrenilen yemek tarifleri: çorba, güveç, reçel, kurutulmuş…), **Şifa** (merhem, çay gibi can veren tarifler), **Diğer**. Liste son seçtiğin sekmeyle açılır (o sekmede yiyecek kalmadıysa ilk dolu sekmeyle). Yemek düğmesine kısa basınca en uygun yiyeceği doğrudan yeme eskisi gibidir.
 
 ## Toplama ve tarım
+
+### Meyve çalıları (13 Kasım 2026, Boğaç)
+
+Çalıda yetişen yemişler dünyada **çalı** olarak durur: **Böğürtlen çalısı** (Çayır), **Ahududu çalısı** ve **Yaban mersini çalısı** (Orman), **Kızılcık çalısı** (Bataklık), **Kuşburnu çalısı** ve **Alıç çalısı** (Kayalık Dağ). Yerde biten Yaban çileği çalı değildir.
+
+- **Her çalıdan 3 kez toplanır:** her toplayışta yere 1 meyve düşer (üstünden yürüyünce alırsın), çalı yerinde kalır. Üçüncüde çalı kaybolur ve süresi dolunca kendi biyomunda başka bir yerde **yeniden çıkar** (Böğürtlen 40 sn, öbürleri 45–50 sn).
+- Böğürtlen çalısının dikenleri eskisi gibi batar (eldivenle batmaz). Köpeğin toplaması da bir meyve sayılır, çalı kalır.
+- Üzerine gelince ya da yanındayken "Böğürtlen çalısı" gibi çalının adı yazar.
+- **Resimler:** Böğürtlen çalısı ve böğürtlen Boğaç'ın verdiği resimlerdir; öbür çalılar ve meyveleri aynı resimlerin kendi meyve rengine boyanmış halidir (ahududu kırmızı, yaban mersini mavi, kızılcık koyu kırmızı, kuşburnu turuncu-kırmızı, alıç koyu kırmızı-kahve).
 
 ### Balık tutma
 
@@ -5808,7 +5817,7 @@ Her eşyanın adına uygun bir resmi vardır (Giriş › Kural). v3.37'ye kadar 
 - **Merhemler kapta, yağlar şişede, iksirler cam şişede, reçeller kavanozda, tohumlar çekirdek olarak, inciler sedefle.**
 - **Yapılan şeyler:** Sapan, Bola, Kirmen, Dokuma tezgâhı, Ok kılıfı, Deri çanta, Deri tulum, Yelkenli sal, Atölye, çanlar, ipler (kangal), yelpazeler, tılsımlar, Golem feneri, Kaya patlatıcı, Semender derisi tef, Ağ kapanı, Kor zurnası, yemler…
 - **Toplananlar ve canlı parçaları:** bölge bitkileri (Kardelen, Ay otu, Gece zambağı…), taşlar ve kristaller (Kükürt kristali, Volkan camı, Ayna taşı, Ametist…), tozlar, yosunlar, kökler, Sülük, Dev yüreği, Çamur Ana gözü, Kartal pençesi, Örümcek gözü…
-- **PixelLab ikonları (12 Kasım 2026, Boğaç: "sen bunları ekle oyuna"):** Boğaç'ın PixelLab'da 32×32 çizdirdiği 64 ikonluk sayfadan, oyunda karşılığı olan **58 eşya** bu resimleri kullanır; envanterde ve kitapta 32×32 olarak, elde ve yerde küçültülerek. Eşyalar: bütün baltalar (Taş, Bakır, Çakmaktaşı, Tunç, Granit, Demir, Timsah dişi, Çelik, Kuvars, Kara çelik, Ejder, Mor kristal, Obsidyen); Taş, Bakır, Demir, Çelik, Mor kristal ve Obsidyen kazma; Bakır, Demir, Çelik, Kara çelik ve Mor kristal kılıç, Ejder kılıcı; Demir savaş çekici; Basit yay; Odun, Taş, Çakmaktaşı, Bakır cevheri, Demir cevheri, Taş kömürü, Kuvars, Ametist, Obsidyen, Kızıl ejder pulu; Bakır, Tunç, Demir, Gümüş, Kara çelik ve Altın külçesi; Lif, Halat, Deri parçası, Timsah derisi, Kemik, Keklik tüyü, Kurt dişi, Deri çanta; Ateş iksiri, Mana iksiri, Kök özü iksiri, Ekmek, Pişmiş keklik eti, Kızılcık, Meşale. Sayfadaki 3 kürek, tokmak, ikinci yay ve anahtarın oyunda karşılığı yok, kullanılmaz. Kurulan eşyaların kurulmuş hali (Meşale) eski çizimiyle kalır.
+- **PixelLab ikonları (12 Kasım 2026, Boğaç: "sen bunları ekle oyuna"):** Boğaç'ın PixelLab'da 32×32 çizdirdiği 64 ikonluk sayfadan, oyunda karşılığı olan **58 eşya** bu resimleri kullanır; envanterde ve kitapta 32×32 olarak, elde ve yerde küçültülerek. Eşyalar: bütün baltalar (Taş, Bakır, Çakmaktaşı, Tunç, Granit, Demir, Timsah dişi, Çelik, Kuvars, Kara çelik, Ejder, Mor kristal, Obsidyen); Taş, Bakır, Demir, Çelik, Mor kristal ve Obsidyen kazma; Bakır, Demir, Çelik, Kara çelik ve Mor kristal kılıç, Ejder kılıcı; Demir savaş çekici; Basit yay; Odun, Taş, Çakmaktaşı, Bakır cevheri, Demir cevheri, Taş kömürü, Kuvars, Ametist, Obsidyen, Kızıl ejder pulu; Bakır, Tunç, Demir, Gümüş, Kara çelik ve Altın külçesi; Lif, Halat, Deri parçası, Timsah derisi, Kemik, Keklik tüyü, Kurt dişi, Deri çanta; Ateş iksiri, Mana iksiri, Kök özü iksiri, Ekmek, Pişmiş keklik eti, Kızılcık, Meşale. Sayfadaki 3 kürek, tokmak, ikinci yay ve anahtarın oyunda karşılığı yok, kullanılmaz. **13 Kasım 2026 (Boğaç):** Böğürtlen, Nehir çakılı, Kuru ot, Kum, Dal ve Yaprak da Boğaç'ın verdiği yeni resimleri kullanır; Ahududu, Yaban mersini, Kızılcık, Kuşburnu ve Alıç böğürtlen resminin kendi rengine boyanmış halidir. Kurulan eşyaların kurulmuş hali (Meşale) eski çizimiyle kalır.
 - **Unutulan resim:** resmi olmayan bir eşya renkli kutu değil, sade bir bez torba olarak görünür; geliştirici araçları açıkken (`?debug`) oyun açıldıktan 12 saniye sonra konsola "resmi yok" listesi yazılır.
 
 > ACT 1 madenlerinin fiyatları ve yerleri değişti (**Aletler · Madenler ve ekipman merdiveni**). Bir madeni kullanan tariflerin fiyatı, maden fiyatındaki değişim × miktar × 1,3 kadar (zincir boyunca) kendiliğinden değişir; bu tablodaki türetilmiş fiyatlar henüz yeniden üretilmedi (değerleri). Yeni setlerin, ara ürünlerin ve Tunç/Demir set parçalarının fiyatları o bölümdeki tablolardadır.
@@ -5822,7 +5831,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Adaçayı çayı | 239 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ahtapot | 133 | – | Deniz avı: Mor Derinlik (Gemici Poyraz'ın teknesiyle, Sv 22+, Yıldız oltası) %50 | Ahtapot salatası |
 | Ahtapot salatası | 304 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
-| Ahududu | 9 | yenir +9 | Yerden toplanır: Orman (ACT 1) | Ahududu ezmesi, Ahududu suyu, Meyve karışımı |
+| Ahududu | 9 | yenir +9 | Ahududu çalısından toplanır (3 kez): Orman (ACT 1) | Ahududu ezmesi, Ahududu suyu, Meyve karışımı |
 | Ahududu ezmesi | 43 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ahududu suyu | 120 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ahşap ev | 900 | – | Usta Sinan yapar (1.500 Vio) | – |
@@ -5848,7 +5857,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Altın cevheri | 77 | – | Kazmayla kazılır: Mor Kristal Vadisi (ACT 1) | Altın külçesi |
 | Altın yüzük | 1.315 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Altın külçesi | 486 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Altın yüzük, Mor kristal levhası |
-| Alıç | 30 | yenir +15 | Yerden toplanır: Kayalık Dağ (ACT 1) | Alıç ezmesi, Alıç suyu |
+| Alıç | 30 | yenir +15 | Alıç çalısından toplanır (3 kez): Kayalık Dağ (ACT 1) | Alıç ezmesi, Alıç suyu |
 | Alıç ezmesi | 128 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Alıç suyu | 339 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ametist | 67 | – | Kazmayla kazılır: Mor Kristal Vadisi (ACT 1) · Av: Kristal golem düşürür %80 (ACT 1 · Mor Kristal Vadisi) | Ametist kılıcı, Ametist miğfer, Ametist savaş çekici, Ametist topuz, Ametist yüzük, Ametist yayı … (+9) |
@@ -5977,7 +5986,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Böcek kabuğu boyası | 75 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Böcek kabuğu ² | 14 | – | Av: Mantar böceği düşürür %90 (ACT 2 · Dev Mantar Ormanı) | Mantar lifi eldiven |
 | Börü'nün kemeri | 140 | giyilir +26 savunma | Börü'yü silahsız 50 yumrukla yenince verir (gövde zırhı +26 savunma, kanama direnci %20; değeri 140) | – |
-| Böğürtlen | 2 | yenir +5 | Yerden toplanır: Çayır (ACT 1) | Böğürtlen ezmesi, Böğürtlen suyu, Kurutulmuş böğürtlen, Meyve karışımı |
+| Böğürtlen | 2 | yenir +5 | Böğürtlen çalısından toplanır (3 kez): Çayır (ACT 1) | Böğürtlen ezmesi, Böğürtlen suyu, Kurutulmuş böğürtlen, Meyve karışımı |
 | Böğürtlen ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Böğürtlen suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Büyü otu ² | 26 | – | Yerden toplanır: Dev Mantar Ormanı (ACT 2) · Av: Goblin şamanı düşürür %80 (ACT 2 · Dev Mantar Ormanı) | Ateş asası, Buz asası, Mana iksiri, Yıldırım asası |
@@ -6411,7 +6420,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kuvars sivri ucu | 917 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kuvars kazma, Kuvars mızrak |
 | Kuvars topuz | 2.156 | alet, silah 44 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | – |
 | Kuzukulağı | 8 | yenir +7, zehirli | Yerden toplanır: Orman (ACT 1) | Ot salatası |
-| Kuşburnu | 30 | yenir +14 | Yerden toplanır: Kayalık Dağ (ACT 1) | Kuşburnu, Kuşburnu ezmesi, Kuşburnu suyu |
+| Kuşburnu | 30 | yenir +14 | Kuşburnu çalısından toplanır (3 kez): Kayalık Dağ (ACT 1) | Kuşburnu, Kuşburnu ezmesi, Kuşburnu suyu |
 | Kuşburnu ezmesi | 128 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kuşburnu suyu | 339 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kuşburnu çayı | 239 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -6487,7 +6496,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kızarmış keme | 66 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kızıl cam | 199 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kil lamba |
 | Kızıl ejder pulu ² | 300 | – | Av: Kızıl ejder düşürür %100 (ACT 2 · Ejder Volkanı) | – |
-| Kızılcık | 18 | yenir +12 | Yerden toplanır: Bataklık (ACT 1) | Kızılcık ezmesi, Kızılcık suyu |
+| Kızılcık | 18 | yenir +12 | Kızılcık çalısından toplanır (3 kez): Bataklık (ACT 1) | Kızılcık ezmesi, Kızılcık suyu |
 | Kızılcık ezmesi | 79 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kızılcık suyu | 230 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kızılkanat | 4 | – | Balık: Çayır/Orman suları (deniz), olta/ağ/zıpkın ile %13; balık kapanına da girer · Balık: Çayır/Orman suları (nehir/göl), olta/ağ/zıpkın ile %17; balık kapanına da girer | Balık çorbası, Pişmiş kızılkanat, Taşta kızılkanat, Tütsülenmiş kızılkanat |
@@ -6909,7 +6918,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yaban kazı eti | 9 | – | Av: Yaban kazı düşürür %100 (ACT 1 · Bataklık) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş yaban kazı eti, Turba ateşinde tütsü … (+1) |
 | Yaban kazı tüyü | 3 | – | Av: Yaban kazı düşürür %85 (ACT 1 · Bataklık) | Kara çelik ok |
 | Yaban kazı yumurtası | 4 | – | Av: Yaban kazı düşürür %35 (ACT 1 · Bataklık) | Haşlanmış yaban kazı yumurtası |
-| Yaban mersini | 9 | yenir +9 | Yerden toplanır: Orman (ACT 1) | Yaban mersini boyası, Yaban mersini ezmesi, Yaban mersini suyu |
+| Yaban mersini | 9 | yenir +9 | Yaban mersini çalısından toplanır (3 kez): Orman (ACT 1) | Yaban mersini boyası, Yaban mersini ezmesi, Yaban mersini suyu |
 | Yaban mersini boyası | 30 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Boyalı çömlek, Dolap, Duvar halısı, Halı, Kilim … (+1) |
 | Yaban mersini ezmesi | 33 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yaban mersini suyu | 110 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |

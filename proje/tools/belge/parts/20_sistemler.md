@@ -549,6 +549,15 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 
 ## Toplama ve tarım
 
+### Meyve çalıları (13 Kasım 2026, Boğaç)
+
+Çalıda yetişen yemişler dünyada **çalı** olarak durur: **Böğürtlen çalısı** (Çayır), **Ahududu çalısı** ve **Yaban mersini çalısı** (Orman), **Kızılcık çalısı** (Bataklık), **Kuşburnu çalısı** ve **Alıç çalısı** (Kayalık Dağ). Yerde biten Yaban çileği çalı değildir.
+
+- **Her çalıdan 3 kez toplanır:** her toplayışta yere 1 meyve düşer (üstünden yürüyünce alırsın), çalı yerinde kalır. Üçüncüde çalı kaybolur ve süresi dolunca kendi biyomunda başka bir yerde **yeniden çıkar** (Böğürtlen 40 sn, öbürleri 45–50 sn).
+- Böğürtlen çalısının dikenleri eskisi gibi batar (eldivenle batmaz). Köpeğin toplaması da bir meyve sayılır, çalı kalır.
+- Üzerine gelince ya da yanındayken "Böğürtlen çalısı" gibi çalının adı yazar.
+- **Resimler:** Böğürtlen çalısı ve böğürtlen Boğaç'ın verdiği resimlerdir; öbür çalılar ve meyveleri aynı resimlerin kendi meyve rengine boyanmış halidir (ahududu kırmızı, yaban mersini mavi, kızılcık koyu kırmızı, kuşburnu turuncu-kırmızı, alıç koyu kırmızı-kahve).
+
 ### Balık tutma
 
 - Alet: **Ağ** (en kolay), **Olta**, **Kemik zıpkın**. Eline al, suya dön, E. Şamandıra dalınca 1,05 sn içinde E (iki kez kaçırırsan balık gider), sonra gidip gelen ibre **yeşil alandayken** bir daha bas. Yürürsen ya da bir şey saldırırsa olta çekilir.

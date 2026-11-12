@@ -1,3 +1,11 @@
+## v4.20 (13 Kasım 2026) · meyve çalıları (3 kez toplanır), Kemal'in dersi 3 böğürtlen, yeni ikonlar
+- Boğaç: "bush üzerinde yetişen gıdaları ... 3 kereye mahsus ... düşüp kaybolacaklar ve yeniden generate olabilecekler; kemalin öğreticisi de 3 tane böğürtlen isteyecek" + resimler (çalı, böğürtlen, çakıl, kuru ot, kum, dal, yaprak). Belge: Toplama › Meyve çalıları; Akış › öğretici 1–2; Eşyalar.
+- Çekirdek: toplama bitişinde `window.__plBush(n)` ise `n.left` 3→0 (çalı kalır, sonra normal respawn, `left=null`); köpek toplaması aynı; istem ve üzerine gelme etiketi "X çalısı… N kaldı"; `drawNode` başındaki `__plCayirL` çağrısına `n` eklendi; öğretici 5→3 (`tzBush()` yakın çalıyı 3'e doldurur ya da `tzPlace` ile bir çalı koyar), Kemal'in ilk sözü "üç tane".
+- `v420cali` bloğu: 160×224 PNG (~19 KB): 6 çalı × 3 durum + meyve ikonu, alt satır 5 malzeme ikonu; `__plCayirL[çalı]` 20×20 dünya resmi; ikonlar v418pxl gibi sabit (yalnız bu 11 ad).
+- Kontrol: chk 0 hata; bir çalıdan 3 toplama: left 2 → 1 → kayboldu, yerde 3 böğürtlen; öğretici kartı "3 böğürtlen"; ekran görüntüsünde çalılar görünüyor; sayfa hatası yok.
+
+**Geri alma:** `git revert` bu commit (çekirdek satırlar + blok birlikte; kayıt alanı yok, `n.left` kaydedilmez).
+
 ## v4.19 (13 Kasım 2026) · hayvanların tutumu, imza hamleleri, sürü kuşatması, Kayalık Dağ dengesi
 - Boğaç: "1 kayalık dağı dengele 2 hayvanların tutumunda beğenmediğim 2 şey hariç yap 3 dövüşte hepsini yap" (ateş/meşale ve gece-gündüz önerileri istenmedi). Belge: Dövüş › Hayvanların tutumu, İmza hamleleri ve sürü taktiği; ACT 1 › Kayalık Dağ dengesi; Canavarlar › Reis tablosu.
 - `v419tutum` bloğu (son script, en dıştaki `tickAnimals` sarmalayıcısı): `BAL` Kartal/Vaşak/Mağara ayısı + Reisleri oranla; fark etme (`a.aw`, `a.ntc`, oyuncu hızı `pv`: dur .55 / yürü .8 / koş 1), zararsız kaçma yarıçapı 35/55/100, nötr uyarı (`a.wT` 1,5 sn → `madPack`), yaralı kaçma (`a.flee`, %20 can, %60), güçlüden çekinme (`shy`, varış +15), avcı-av (`PREY`, WeakMap `HUNT`/`CHASED`, leş `window.__plMkCorpse` — v337les'e eklendi), imza hamleleri (`SIG`, `a.sg`, `stepSig`, `imp`; dalış ve gömülmede vurulamaz: hp geri + `killAnimal` korumalı), kurt kuşatması (`flank`), oyuncunun çevresinde ok (`drawPlayer` sarmalayıcı).
@@ -194,12 +202,4 @@
 **Geri alma:** `git revert` bu commit.
 
 **Kontrol:** chk.js 0 hata. Eski B1 kaydıyla (b.camp) kart iki satır gösteriyor; ateş + bir pişirme → Börü'de tamamlanıyor. Geyiğin üstünde turuncu şeritli kart çıkıyor; `attack()` sonrası gizli, 3,5 sn sonra yeniden açık.
-
-## v4.00 (9 Kasım 2026) · yetenek ağacı pencereye sığıyor
-
-**Değişen yerler:** `v399rz` stilinde `cm-skills` için `#cbody` sütun flex, `.sktree` `flex:1` (sabit `--th` yüksekliği yerine), panel yüksekliği `--plMaxH`. `skTip` (satır ~3381) zoom'u (1,2) hesaba katıyor ve kartı ağacın `#cbody` içinde görünen kısmına sığdırıyor. `sqZone` daire yarıçapı 22 → 29 kare; `collect`/`use` adımlarında (gizli olmayan) sıradaki noktayı, `back` adımında görev vereni de veriyor (EK1 `ekin1`). EK1'in son adımı (`back`): `talkEkin` ve `statusDlg`, yan görev motoru `back` adımındaysa (`__plSide.backAt`) onun `talk`'ını çağırıyor (önceden Ekin'in ana görev konuşması araya girip adım hiç bitmiyordu). Sürüm etiketi `Versiyon 4.00`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. EK1 `back` adımında F → Ekin korkuluğu alıyor, EK1 tamamlanıyor (+90 Vio). 1600×900 ve 1366×700'de en alttaki yeteneğin kartı gövdenin içinde (önceden 1600×900'de ağaç gövdeden 119 px taşıyordu).
 
