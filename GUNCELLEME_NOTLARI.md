@@ -8,6 +8,33 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.12 · 12 Kasım 2026
+
+### Oynanış
+- **İşe yaramayan 47 eşya oyundan kalktı:** yapılabilen ama hiçbir işe yaramayan eşyalar (takılmayan, kullanılmayan, yenmeyen, kurulmayan) gitti:
+  - Süsler: boncuklar, taçlar, yelpazeler, üç muska/tılsım, Boynuz tarak, Tatlısu incisi, Cilalı kristal, Sarkıt parçası, Balık pulu.
+  - Dört kazıyıcı, iki çakmak.
+  - Don yağı mumu, Hasırotu meşalesi, Kozalak ateşi.
+  - Kızak, Kütük salı, Oyma kano.
+  - Dört odun kaşığı, Midye kabuğu kaşık, Boynuz kupa, sepetler, Kum torbası, Sünger taşı bileği, Eğrelti yatağı, Yosun yastık, Akrep kabuğu kalkanı, iki kase.
+  - Onlar için yapılan Kristal parçası, Saz örgüsü ve Isırgan lifi.
+- **Boşta kalan malzemeler işe yarıyor:** yalnız bu eşyalarda kullanılan malzemeler kendi biyomlarındaki zırh, iksir ve aletlerin tarifine girdi:
+  - Kürk eldiven artık 5 Tavşan derisiyle yapılıyor.
+  - Akrep kabuğu Kara çelik eldivende, Lav yılanı pulu Kara çelik çizmede, Yarasa kanadı Ejder miğferinde.
+  - Gölge pulu Mor kristal çizmede, Ayna ipeği Kristal ipek çizmede, Kristal boynuz Ametist miğferde.
+  - Kaya yarasası kanadı Gümüş eldivende, Pirit Gümüş çizmede.
+  - Kristal çiçeği Ay otu iksirinde, Yıldız çiçeği Gölge iksirinde.
+  - Sarkıt Taş kasede, Çam kozalağı Meşalede, Eğrelti Meşe kabuk çizmede.
+- **Közlenmiş kerevit:** kerevit eti artık kamp ateşinde közlenebiliyor; yiyince +16 tokluk ve 2 dakika Çeviklik (hareket +%12) veriyor.
+
+### Kayıtlar
+- Eski kayıtlarda kalkan eşyalar çantadan, sandıktan, kemerden ve yerden kalkar; elinde olanlar son fiyatlarıyla Vio olarak ödenir.
+
+### Tasarım belgesi
+- Tarifler'e "Ayıklama" bölümü; tarif ve eşya tabloları, sayılar (1.239 eşya, 768 tarif) güncellendi.
+
+---
+
 ## Versiyon 4.11 · 12 Kasım 2026
 
 ### Oynanış
@@ -309,18 +336,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Oyun akışı › "Ders malzemesi yalnızca eksik kadar konur"; Giriş › Para birimi: büyük harfle "Vio".
 - Sistemler › El yapımı listesi ve düğmeleri: malzeme kartı, Yap en sağda.
 - Oyun akışı › "Börü'nün balta dersinde El yapımı yalnızca gösterilen düğmeye izin verir".
-
----
-
-## Versiyon 3.92 · 9 Kasım 2026
-
-### Oynanış
-- **Paranın adı artık "vio":** "sikke" her yerde "vio" oldu (menekşe morundan, violet): sol alttaki para kutusu, pencerelerin üstündeki sayaç, fiyatlar, görevler, konuşmalar, yetenek ağacı, hileler.
-
-### Görsel
-- **Mor para:** paranın küçük resmi artık açık mor parıltılı, koyu mor kenarlı bir para; para kutusunun çerçevesi ve sayacı da mor. Para kazanınca saçılan küçük paralar da mor.
-
-### Tasarım belgesi
-- Giriş › Kural: "Para birimi: vio"; belgenin her yerinde sikke → vio.
 
 ---

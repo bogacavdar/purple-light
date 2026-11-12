@@ -1,3 +1,11 @@
+## v4.12 (12 Kasım 2026) · ayıklama: 47 işe yaramayan eşya kalktı, Tavşan derisi Kürk eldivende, Közlenmiş kerevit
+- Boğaç: "tavşan derisini bir zırh setine yedirelim; közlenmiş kerevit kerevit etinin pişirilmesinden oluşsun ve belli statlar vererek yenilebilsin; kaldırılabilir dediklerini kaldırabiliriz". Belge: Tarifler › Ayıklama.
+- Kaynakta silindi (çekirdek `db` JSON: R/p/t, `tiers` haritası, `addR`, `A['…']` ikonları, `drawIcon` dalları: kazıyıcı, kaşık, Kükürt çakmağı, kano/kızak/kütük salı; RAWM'dan Cilalı kristal; v48 RENAMED'den 'İnci (tatlısu)'; v406odun OLD'dan 22 "X kaşığı"; v409tek SW'den Sert odun kaşığı satırı, VAR'dan 5 varyant, NP'den kalkanlar).
+- Yeni `v412ayik` bloğu (v411muzik'ten sonra): `KOZ['Kerevit eti']='Közlenmiş kerevit'` (çekirdek "Közlenmiş kerevit eti" arıyordu), V46FOOD (16) ve V46BUFF ['hız',120]; `SW2` (14 satır, v409 biçimi); `GONE` (75 ad: kalkanlar + eski ağaç kaşıkları + varyantlar, fiyatlarıyla) eski kayıtta silinir/ödenir.
+- Kontrol: chk 0 hata; fiyatsız eşya yok; ACT 1'de tarifsiz/boşta malzeme yok (ACT 2'nin 8 cevheri ve 3 düşmesi bekliyor: Boğaç "ACT 2'ye sonra bakacağız"); eski kayıtta 2 Odun kaşığı + 1 Çam kaşığı + 1 Kızak → +234 Vio.
+
+**Geri alma:** `git revert` bu commit (kaynaktaki silmeler ve belge birlikte döner).
+
 ## v4.11 (12 Kasım 2026) · müzik aletleri çalınır
 - Boğaç: "müzik aletlerini de çalınabilir yap, uygun seslerde, eline alındığında çalınsın". Belge: Sistemler › Müzik aletleri.
 - Yeni `v411muzik` bloğu (v410taki'den sonra): `INS` (ad → ses, ezgi MIDI, ♪ rengi); her alete `GT` girdisi (kind 'music', dur 1e6: kemere takılır); `attack` sarmalayıcısı: eldeki alet çalınır (atkCd 0,18/0,24/0,3), `audio.synth` ile yerinde ses (flüt/kamış/kök/okarina: `blow`; borazan, zurna, davul, tef, çan, yankı, zil); `qc('play:'+ad)`. `hGrp`'ta music → 8. `window.__plMusic`.
@@ -196,12 +204,4 @@
 **Geri alma:** `git revert` bu commit.
 
 **Kontrol:** chk.js 0 hata. Deneme: envanterde 3 taş → kazan yanına 1 taş kondu; Dal 2/Lif 1 + yakında Dal 3, Lif 5, Yaprak 3 → hiçbir şey konmuyor. Konsol hatası yok.
-
-## v3.92 (9 Kasım 2026) · para birimi sikke → vio, mor para resmi
-
-**Değişen yerler:** oyun dosyasında ve `parts/*.md`'de bütün "sikke" çekimleri sözlükle çevrildi (sikke→vio, sikken→vion, sikkelik→violuk, sikkeler→violar, sikkeye→vioya, sikkeyi→vioyu, sikkesi→viosu, sikkenin→vionun, sikkeni→vionu, sikkeyle→vioyla…; büyük harf korunur), yorumlar ve `/vio/i` (∞ para), `/^100 vio/` (Koşu görevi) düzenli ifadeleri dahil; kayıtlarda "sikke" adlı alan yok (`coins` sayı), çevrim gerekmez. Yeni `<style id="v392vio">`: `#coinbox i`, `.ccoins i`, `#coins i`, `.gcoin` mor para; para kutusu ve sayaç mor. GUNCELLEME_NOTLARI'nın eski sürüm notları olduğu gibi kaldı (geçmiş). Sürüm etiketi `Versiyon 3.92`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata; oyun dosyasında ve belgede "sikke" 0. Ekran: sol altta mor para + "0 vio", pencere sayacı mor. Konsol hatası yok.
 
