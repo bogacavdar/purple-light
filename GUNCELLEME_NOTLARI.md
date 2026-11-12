@@ -8,6 +8,33 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.19 · 13 Kasım 2026
+
+### Oynanış
+- **Hayvanlar seni fark ediyor:** saldırgan bir hayvan seni görünce başında sarı "?" çıkar, bir an durup bakar, sonra saldırır.
+  - Dururken çok daha yakına, yürürken biraz daha yakına sokulabilirsin; koşarsan her zamanki uzaklıktan fark edilirsin.
+  - Tavşan, keklik gibi zararsız hayvanlar da dururken ve yürürken daha geç kaçar, koşunca daha erken.
+- **Nötr hayvanlar uyarıyor:** geyik, karaca, yaban atı, porsuk, öküz gibi bir hayvanın dibine girersen turuncu "!" çıkar, homurdanıp başını sallar. 1,5 saniye içinde uzaklaşmazsan saldırır.
+- **Yaralı hayvanlar kaçıyor:** canı çok azalan hayvanların çoğu kan izi bırakarak kaçmaya çalışır; sıkışırsa ya da yetişirsen döner ve dövüşür. İri hayvanlar ve Reisler kaçmaz.
+- **Güçlüden çekiniyorlar:** bir biyomun saldırgan hayvanları, o biyoma varış seviyesinin 15 seviye üstündeyken sana kendiliğinden saldırmaz, uzak durur. Vurursan dövüşür.
+- **Hayvanlar birbirini avlıyor:** kurtlar tavşan, keklik, bıldırcın ve sincabı; Bataklık kurdu ve Timsah ördeği; Vaşak ve Kartal Ur kekliğini; Gölge kurdu Mor güveyi avlar. Avın leşi yerde kalır: eti yenmiştir, derisini ve tüyünü sen toplayabilirsin.
+- **Her hayvanın kendi hamlesi var:**
+  - Geyik, Karaca, Yaban atı, Kristal geyik: tekme ve geri sıçrama. Yaban kazı ve Turna kuşu: kanat çırpma.
+  - Engerek, Kunduz, Su samuru, Işık tilkisi, Işık engereği: vur-kaç.
+  - Yaban domuzu, Muflon, Dağ keçisi, Yaban öküzü: geri geri gidip hücum.
+  - Mağara ayısı, Porsuk: ayağa kalkıp iki pençe (ilki sarı, ikincisi kırmızı).
+  - Kartal, Kor yarasası: havaya yükselip dalış. Timsah: çamura gömülüp altından saldırı.
+  - Kirpiler, Kül böceği: top olup yuvarlanma. Lav kertenkelesi, Kara ejder, Kristal örümcek: kuyruk süpürmesi. Ateş akrebi: zehirli iğne.
+- **Kurtlar sürü halinde kuşatıyor:** en yakındaki önünden oyalar, öbürleri yanına ve arkana dolaşıp oradan saldırır.
+- **Arkadan uyarı:** arkanda ya da uzakta biri saldırıya hazırlanırken karakterinin çevresinde o yöne bakan renkli bir ok yanıp söner.
+- **Kayalık Dağ dengelendi:** Kartal (can 820, hasar 90), Vaşak (880, 95) ve Mağara ayısı (2.100, 115) artık Bataklık ile Kül Diyarı arasında. Reisleri de aynı oranda değişti.
+- **Arena:** yeni hamleler ve kurtların kuşatması arenada da var.
+
+### Tasarım belgesi
+- Dövüş bölümüne "Hayvanların tutumu" ve "İmza hamleleri ve sürü taktiği" eklendi; Kayalık Dağ canlı tablosu ve Reis tablosu güncellendi.
+
+---
+
 ## Versiyon 4.18 · 13 Kasım 2026
 
 ### Görsel
@@ -374,16 +401,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Arayüz
 - **Yetenek ağacı pencereyle büyüyor:** ağaç pencerenin içini dolduruyor; pencereyi kenarından büyütünce ağaç da büyüyor.
-
----
-
-## Versiyon 3.99 · 9 Kasım 2026
-
-### Oynanış
-- **Pamuk'u ararken sarı daire:** "Kaçan keçi Pamuk" ana görevinde haritada büyük bir sarı daire çıkıyor; Pamuk bu dairenin içinde rastgele bir yerde, aramak gerekiyor. Dairenin dışındaysan ok daireyi gösteriyor. Pamuk her kaçışında daire yeni yerine taşınıyor; Pamuk'u yakalayınca ok seni Davut'a götürüyor.
-
-### Arayüz
-- **Pencereleri kenarından büyüt:** bilgisayarda çanta, el yapımı, pazar, kazan gibi pencereleri sol, sağ ve alt kenarından tutup çekerek büyütebilir ya da küçültebilirsin. Yazılar ve düğmeler aynı boyutta kalır; pencere büyüyünce listede kaydırmadan daha çok şey görünür. Boyut, oyun açık kaldıkça her pencere için hatırlanır.
-- **El yapımı biraz daha geniş:** Yap düğmeleri artık pencerenin kenarına yapışık durmuyor.
 
 ---

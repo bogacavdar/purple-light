@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 4.18</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 4.19</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 4.18 · 13 Kasım 2026</h2><h3>Görsel</h3><ul><li><strong>58 eşyanın yeni resmi var:</strong> PixelLab'da 32×32 çizilmiş yeni ikonlar. Envanterde ve kitapta tam boyda, elde ve yerde küçük görünürler.<ul><li>Bütün baltalar (Taş'tan Obsidyen'e 13 balta).</li><li>Taş, Bakır, Demir, Çelik, Mor kristal ve Obsidyen kazma.</li><li>Bakır, Demir, Çelik, Kara çelik ve Mor kristal kılıç, Ejder kılıcı, Demir savaş çekici, Basit yay.</li><li>Odun, Taş, Çakmaktaşı, Bakır ve Demir cevheri, Taş kömürü, Kuvars, Ametist, Obsidyen, Kızıl ejder pulu.</li><li>Bakır, Tunç, Demir, Gümüş, Kara çelik ve Altın külçesi.</li><li>Lif, Halat, Deri parçası, Timsah derisi, Kemik, Keklik tüyü, Kurt dişi, Deri çanta.</li><li>Ateş, Mana ve Kök özü iksiri, Ekmek, Pişmiş keklik eti, Kızılcık, Meşale.</li></ul></li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 4.19 · 13 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Hayvanlar seni fark ediyor:</strong> saldırgan bir hayvan seni görünce başında sarı "?" çıkar, bir an durup bakar, sonra saldırır.<ul><li>Dururken çok daha yakına, yürürken biraz daha yakına sokulabilirsin; koşarsan her zamanki uzaklıktan fark edilirsin.</li><li>Tavşan, keklik gibi zararsız hayvanlar da dururken ve yürürken daha geç kaçar, koşunca daha erken.</li></ul></li><li><strong>Nötr hayvanlar uyarıyor:</strong> geyik, karaca, yaban atı, porsuk, öküz gibi bir hayvanın dibine girersen turuncu "!" çıkar, homurdanıp başını sallar. 1,5 saniye içinde uzaklaşmazsan saldırır.</li><li><strong>Yaralı hayvanlar kaçıyor:</strong> canı çok azalan hayvanların çoğu kan izi bırakarak kaçmaya çalışır; sıkışırsa ya da yetişirsen döner ve dövüşür. İri hayvanlar ve Reisler kaçmaz.</li><li><strong>Güçlüden çekiniyorlar:</strong> bir biyomun saldırgan hayvanları, o biyoma varış seviyesinin 15 seviye üstündeyken sana kendiliğinden saldırmaz, uzak durur. Vurursan dövüşür.</li><li><strong>Hayvanlar birbirini avlıyor:</strong> kurtlar tavşan, keklik, bıldırcın ve sincabı; Bataklık kurdu ve Timsah ördeği; Vaşak ve Kartal Ur kekliğini; Gölge kurdu Mor güveyi avlar. Avın leşi yerde kalır: eti yenmiştir, derisini ve tüyünü sen toplayabilirsin.</li><li><strong>Her hayvanın kendi hamlesi var:</strong><ul><li>Geyik, Karaca, Yaban atı, Kristal geyik: tekme ve geri sıçrama. Yaban kazı ve Turna kuşu: kanat çırpma.</li><li>Engerek, Kunduz, Su samuru, Işık tilkisi, Işık engereği: vur-kaç.</li><li>Yaban domuzu, Muflon, Dağ keçisi, Yaban öküzü: geri geri gidip hücum.</li><li>Mağara ayısı, Porsuk: ayağa kalkıp iki pençe (ilki sarı, ikincisi kırmızı).</li><li>Kartal, Kor yarasası: havaya yükselip dalış. Timsah: çamura gömülüp altından saldırı.</li><li>Kirpiler, Kül böceği: top olup yuvarlanma. Lav kertenkelesi, Kara ejder, Kristal örümcek: kuyruk süpürmesi. Ateş akrebi: zehirli iğne.</li></ul></li><li><strong>Kurtlar sürü halinde kuşatıyor:</strong> en yakındaki önünden oyalar, öbürleri yanına ve arkana dolaşıp oradan saldırır.</li><li><strong>Arkadan uyarı:</strong> arkanda ya da uzakta biri saldırıya hazırlanırken karakterinin çevresinde o yöne bakan renkli bir ok yanıp söner.</li><li><strong>Kayalık Dağ dengelendi:</strong> Kartal (can 820, hasar 90), Vaşak (880, 95) ve Mağara ayısı (2.100, 115) artık Bataklık ile Kül Diyarı arasında. Reisleri de aynı oranda değişti.</li><li><strong>Arena:</strong> yeni hamleler ve kurtların kuşatması arenada da var.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 Vio</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -20889,6 +20889,7 @@ function addCorpse(o){const c=Object.assign({gone:false,t0:performance.now(),fal
   // never more than 40 lying around: the oldest that may vanish goes first
   if(CORPSES.length>40){const old=CORPSES.find(x=>!x.keep);if(old)remove(old,false)}
   return c}
+window.__plMkCorpse=(a,loot)=>addCorpse({k:a.k,g:ghostOf(a),x:a.x,y:a.y,loot:merge(loot),vis:false,ys:false,born:gm(),side:((a.face||1)>0?-1:1),keep:false});   // v4.19: a predator's kill (belge Dövüş › Hayvanların tutumu)
 function remove(c,puff){if(c.gone)return;c.gone=true;const i=CORPSES.indexOf(c);if(i>=0)CORPSES.splice(i,1);const j=XTRA.indexOf(c.o);if(j>=0)XTRA.splice(j,1);
   if(c.o&&gathering&&gathering.tg&&gathering.tg.o===c.o)stopGather();
   if(puff&&c.isl===ISLE)for(let k=0;k<10;k++)parts.push({x:c.x+(Math.random()-.5)*10,y:c.y-3-Math.random()*6,vx:(Math.random()-.5)*26,vy:-8-Math.random()*16,life:.5,c:c.ys?(k%2?'#c070ff':'#5a2a8a'):(k%2?'#8a7a6a':'#5a4a3a')})}
@@ -24123,6 +24124,190 @@ setInterval(()=>{try{if(onTitle){seen=null;return}const A=all();if(!seen){seen=n
   for(const n of A)if(cnt(n)>0&&!seen.has(n)){seen.add(n);try{announce(n,`Almanağa eklendi · ${key()} ile bak`)}catch(e){}}}catch(e){}},500);
 {const _as=applyState;applyState=function(){seen=null;return _as.apply(this,arguments)}}
 }).toString()+')()')}catch(e){try{window.__hamErr('v408fw: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v419tutum">
+// v4.19 (13 Kasım 2026, Boğaç: "1 kayalık dağı dengele 2 hayvanların tutumunda beğenmediğim 2 şey hariç yap 3 dövüşte hepsini yap"):
+// belge Dövüş › Hayvanların tutumu, İmza hamleleri ve sürü taktiği; ACT 1 › Kayalık Dağ dengesi. The outermost tickAnimals wrapper:
+// (1) Kartal, Vaşak, Mağara ayısı (and their Reis) on the curve; (2) noticing ("?"), sneaking, the neutral warning, fleeing when wounded,
+// shying away from a much stronger player, predators hunting prey (a carcass without its meat); (3) a signature move per kind (a.sg),
+// wolves flanking, an arrow round the player for a blow being readied behind or off screen. Not for Reis/boss (except signatures),
+// Yıldızsızlar, lesson and tutorial creatures; in the arena only signatures and flanking (game and arena are shared).
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+// ---- (1) Kayalık Dağ: new value / old value, base and Reis alike
+const BAL={'Kartal':[820,90],'Vaşak':[880,95],'Mağara ayısı':[2100,115]};
+for(const k in BAL){const D=ANIM[k];if(!D)continue;const fh=BAL[k][0]/D.hp,fd=BAL[k][1]/D.dmg;D.hp=BAL[k][0];D.dmg=BAL[k][1];
+  for(const r in ANIM){const R=ANIM[r];if(!/Reisi$/.test(r)||!R)continue;if((R.base||'')===k||r.toLowerCase()===(k+' reisi').toLowerCase()){R.hp=Math.round(R.hp*fh/10)*10;R.dmg=Math.round(R.dmg*fd)}}}
+window.__plBal419=BAL;
+// ---- helpers
+const I1=window.__I1B||[],ARR=[1,3,18,26,34,42],BIO={};I1.forEach((L,i)=>L.forEach(k=>{if(BIO[k]==null)BIO[k]=i}));
+let TIER=null;function tierOf(a){if(!TIER){TIER={};I1.forEach((L,i)=>L.forEach(k=>{if(TIER[k]==null)TIER[k]=i}));const C=window.__I2C;if(C&&C.anim)for(const b in C.anim)for(const x of C.anim[b])if(TIER[x.n]==null)TIER[x.n]=6+(+b)}
+  const i=TIER[a.base||a.k];let t=i==null?.3:i/11;if(a.boss)t+=.25;return Math.min(1,Math.max(0,t))}
+const BIG=new Set(['Mağara ayısı','Timsah','Yaban öküzü','Kara ejder','Kızıl ejder','Yavru ejder','Büyük golem','Lav golemi','Hurda devi','Gök bekçisi','Kristal golem','Kristal golemcik','Gölge muhafız','Devriye robotu']);
+const arena=()=>!!window.__plArena;
+const kind=a=>a.base||a.k;
+const bossy=a=>!!(a.boss||(ANIM[a.k]||{}).boss||/Reisi$/.test(a.k));
+const skip=a=>{const D=ANIM[a.k]||{};return !!(a.tut||a.ders||D.ys||a.ysA)};
+const exT=a=>skip(a)||bossy(a)||arena();          // the attitudes
+const rad=a=>((ANIM[a.k]||{}).r||6)*(a.scale||1);
+const fl=(a,text,color,size)=>{try{floats.push({x:a.x,y:a.y-rad(a)*2-14,t:0,text,color,size:size||13})}catch(e){}};
+const blood=(x,y)=>{try{parts.push({x:x+(Math.random()-.5)*4,y:y+(Math.random()-.5)*2,vx:0,vy:0,life:1.2,c:'#9a1c1c'})}catch(e){}};
+const away=(a,sp,dt)=>{const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy)||1;moveA(a,dx/d*sp,dy/d*sp,dt)};
+const quiet=a=>{a.wind=0;a.lunge=null;a.mv=null;a.p4slam=null;a.atk=Math.max(a.atk||0,.3)};
+const busy=a=>a.mv||a.wind>0||a.lunge||a.kb||a.stun>0||a.frz>0||a.p4slam;
+const camp=a=>{try{return campFor(a,a.x,a.y)||campFor(a,player.x,player.y)}catch(e){return false}};
+// ---- (2) prey of the ACT 1 hunters
+const PREY={'Kurt':['Tavşan','Keklik','Bıldırcın','Sincap'],'Bataklık kurdu':['Ördek'],'Timsah':['Ördek'],'Vaşak':['Ur kekliği'],'Kartal':['Ur kekliği'],'Gölge kurdu':['Mor güve']};
+const HUNT=new WeakMap(),CHASED=new WeakMap();
+// ---- (3) signature moves
+const SIG={'Geyik':'tekme','Karaca':'tekme','Yaban atı':'tekme','Kristal geyik':'tekme','Yaban kazı':'kanat','Turna kuşu':'kanat',
+  'Engerek':'vurkac','Kunduz':'vurkac','Su samuru':'vurkac','Işık tilkisi':'vurkac','Işık engereği':'vurkac',
+  'Yaban domuzu':'gerihucum','Muflon':'gerihucum','Dağ keçisi':'gerihucum','Yaban öküzü':'gerihucum',
+  'Mağara ayısı':'pence','Porsuk':'pence','Kartal':'dalis','Kor yarasası':'dalis','Timsah':'gomul',
+  'Dikenli kirpi':'yuvarlan','Oklu kirpi':'yuvarlan','Kül böceği':'yuvarlan','Lav kertenkelesi':'kuyruk','Kara ejder':'kuyruk','Kristal örümcek':'kuyruk','Ateş akrebi':'igne'};
+const SN={tekme:'Tekme',kanat:'Kanat çırpma',vurkac:'Vur-kaç',gerihucum:'Hücum',pence:'Pençe',dalis:'Dalış',gomul:'Çamurdan saldırı',yuvarlan:'Yuvarlanma',kuyruk:'Kuyruk süpürmesi',igne:'Zehirli iğne'};
+const RNG={tekme:a=>[0,rad(a)+24],kanat:a=>[0,rad(a)+24],gerihucum:()=>[50,200],pence:a=>[0,rad(a)+30],dalis:()=>[40,200],gomul:()=>[40,220],yuvarlan:()=>[40,200],kuyruk:a=>[0,rad(a)+34],igne:a=>[0,rad(a)+50]};
+const COL={tekme:'y',kanat:'y',gerihucum:'y',pence:'y',dalis:'r',gomul:'r',yuvarlan:'y',kuyruk:'y',igne:'r'};
+const CC={n:'255,255,255',y:'255,206,40',r:'255,48,30'};
+const WOLF=new Set(['Kurt','Bataklık kurdu','Kül kurdu','Gölge kurdu','Gök tazısı']);
+window.__plSig419=k=>SIG[k]?SN[SIG[k]]:null;
+function imp(a,col,dmg,why,kb){if(dodge){try{if(window.__plEvade)window.__plEvade(a)}catch(e){}return false}if(pInv>0)return false;
+  const P=window.__plParry;if(P&&P.t>0&&col!=='r'){try{window.__plParryHit&&window.__plParryHit(a)}catch(e){}a.sg=null;a.sgCd=3;return false}
+  pInv=.3;lastBitten=performance.now();try{stopGather()}catch(e){}window.__plHitCol=col;hurt(Math.max(1,Math.round(dmg)),why,true);
+  if(kb){const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;for(let s=0;s<6;s++){const nx=player.x+dx/d*kb/6,ny=player.y+dy/d*kb/6;if(!blocked(nx,player.y))player.x=nx;if(!blocked(player.x,ny))player.y=ny}}return true}
+function dust(x,y,n){for(let i=0;i<n;i++){const t=i/n*6.283;parts.push({x:x+Math.cos(t)*4,y,vx:Math.cos(t)*(40+Math.random()*40),vy:Math.sin(t)*16-8,life:.4,c:i%2?'#c8b898':'#8a7a60'})}}
+function startSig(a,k){const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;
+  let col=COL[k];if(k==='gerihucum'&&(BIG.has(kind(a))||a.boss))col='r';
+  a.sg={k,t:0,ph:k==='gerihucum'?'back':k==='dalis'?'up':k==='gomul'?'sink':k==='yuvarlan'?'curl':'w',col,ux:dx/d,uy:dy/d,tx:player.x,ty:player.y,h:0,hit:false,hp:a.hp};
+  a.face=dx>0?1:-1;quiet(a);fl(a,'!','rgb('+CC[col]+')',14);try{sfx('growl')}catch(e){}}
+function endSig(a){a.sg=null;const T=tierOf(a);a.sgCd=(4+Math.random()*2)*(1-.4*T)*(a.boss?.8:1);a.atk=Math.max(a.atk||0,.5)}
+function lockDir(m,a){const dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;m.ux=dx/d;m.uy=dy/d;a.face=dx>0?1:-1}
+function stepSig(a,dt){const m=a.sg,D=ANIM[a.k]||{},R=rad(a),dm=D.dmg||8,why=`${kind(a)}: ${SN[m.k]}`,d=Math.hypot(player.x-a.x,player.y-a.y);m.t+=dt;
+  const go=(vx,vy)=>moveA(a,vx,vy,dt);
+  if(m.k==='tekme'||m.k==='kanat'){if(m.ph==='w'){lockDir(m,a);if(m.t>=.45){m.ph='hop';m.t=0;if(d<R+26)imp(a,m.col,dm*1.1,why,30);dust(a.x,a.y,8)}}
+    else{go(-m.ux*143,-m.uy*143);if(m.t>=.35)endSig(a)}}
+  else if(m.k==='geri'){go(-m.ux*175,-m.uy*175);if(m.t>=.4)endSig(a)}
+  else if(m.k==='gerihucum'){if(m.ph==='back'){lockDir(m,a);go(-m.ux*90,-m.uy*90);if(Math.random()<.4)dust(a.x,a.y,2);if(m.t>=.5){m.ph='run';m.t=0}}
+    else if(m.ph==='run'){const sp=a.boss?230:260,nx=a.x+m.ux*sp*dt,ny=a.y+m.uy*sp*dt;if(blocked(nx,ny)){m.ph='rest';m.t=0;dust(a.x,a.y,10);shake=Math.max(shake,.12)}else{a.x=nx;a.y=ny;a.face=m.ux>0?1:-1}
+      if(!m.hit&&Math.hypot(player.x-a.x,player.y-a.y)<R+10){m.hit=true;imp(a,m.col,dm*1.3,why,30)}if(m.ph==='run'&&m.t>=1){m.ph='rest';m.t=0}}
+    else if(m.t>=.5)endSig(a)}
+  else if(m.k==='pence'){if(m.t<.6)lockDir(m,a);
+    const cone=(L,h)=>{const dx=player.x-a.x,dy=player.y-a.y,dd=Math.hypot(dx,dy)||1;return dd<R+8||dd<L&&(dx*m.ux+dy*m.uy)/dd>Math.cos(h)};
+    if(!m.s1&&m.t>=.6){m.s1=true;m.col='y';if(cone(R+30,.6))imp(a,'y',dm,why,14);try{sfx('swing')}catch(e){}m.col='r'}
+    if(!m.s2&&m.t>=1){m.s2=true;if(cone(R+30,.6))imp(a,'r',dm*1.4,why,24);try{sfx('swing')}catch(e){}shake=Math.max(shake,.12)}
+    if(m.t>=1.2)endSig(a)}
+  else if(m.k==='dalis'){if(m.ph==='up'){m.h=34*Math.min(1,m.t/.5);if(m.t<.45){m.tx=player.x;m.ty=player.y}if(m.t>=.5){m.ph='dive';m.t=0;m.sx=a.x;m.sy=a.y}}
+    else if(m.ph==='dive'){const k=Math.min(1,m.t/.3);if(!blocked(m.sx+(m.tx-m.sx)*k,m.sy+(m.ty-m.sy)*k)){a.x=m.sx+(m.tx-m.sx)*k;a.y=m.sy+(m.ty-m.sy)*k}m.h=34*(1-k);a.face=m.tx>m.sx?1:-1;
+      if(k>=1){m.h=0;dust(a.x,a.y,12);if(Math.hypot(player.x-a.x,player.y-a.y)<16+R)imp(a,'r',dm*1.5,why,18);m.ph='rise';m.t=0;lockDir(m,a)}}
+    else{m.h=20*Math.sin(Math.PI*Math.min(1,m.t/.4));go(-m.ux*100,-m.uy*100);if(m.t>=.4){m.h=0;endSig(a)}}}
+  else if(m.k==='gomul'){if(m.ph==='sink'){m.al=1-.7*Math.min(1,m.t/.3);if(m.t>=.3){m.ph='move';m.t=0}}
+    else if(m.ph==='move'){m.al=.3;lockDir(m,a);if(d>R+14)go(m.ux*120,m.uy*120);if(m.t>=1.2||d<=R+14){m.ph='up';m.t=0}}
+    else{m.al=.3+.7*Math.min(1,m.t/.35);if(m.t>=.35){if(Math.hypot(player.x-a.x,player.y-a.y)<R+20)imp(a,'r',dm*1.5,why,20);dust(a.x,a.y,10);endSig(a)}}}
+  else if(m.k==='yuvarlan'){if(m.ph==='curl'){if(m.t<.3)lockDir(m,a);if(m.t>=.4){m.ph='roll';m.t=0}}
+    else if(m.ph==='roll'){const nx=a.x+m.ux*200*dt,ny=a.y+m.uy*200*dt;if(blocked(nx,ny)){m.ph='rest';m.t=0;dust(a.x,a.y,6)}else{a.x=nx;a.y=ny}
+      if(!m.hit&&Math.hypot(player.x-a.x,player.y-a.y)<R+9){m.hit=true;if(imp(a,'y',dm*1.2,why,22))try{addFx('kanama',Math.max(1,dm*.04),3)}catch(e){}}if(m.ph==='roll'&&m.t>=.7){m.ph='rest';m.t=0}}
+    else if(m.t>=.3)endSig(a)}
+  else if(m.k==='kuyruk'){if(m.t>=.55&&!m.hit){m.hit=true;if(d<R+30)imp(a,'y',dm*1.2,why,24);try{sfx('swing')}catch(e){}}if(m.t>=.85)endSig(a)}
+  else if(m.k==='igne'){if(m.t<.35)lockDir(m,a);if(m.t>=.5&&!m.hit){m.hit=true;const dx=player.x-a.x,dy=player.y-a.y,al=dx*m.ux+dy*m.uy,pe=Math.abs(dx*m.uy-dy*m.ux);
+      if(al>-4&&al<R+50&&pe<9){if(imp(a,'r',dm*1.4,why,16))try{addFx('zehir',Math.max(1.5,dm*.05),4)}catch(e){}}try{sfx('swing')}catch(e){}}if(m.t>=.8)endSig(a)}
+  else endSig(a)}
+const untouch=a=>a.sg&&((a.sg.k==='gomul'&&a.sg.ph!=='up')||(a.sg.k==='dalis'&&a.sg.h>20));
+{const _ka=killAnimal;killAnimal=function(a){if(a&&untouch(a)){a.hp=Math.max(1,a.sg.hp||1);return}return _ka.apply(this,arguments)}}
+// ---- the player: still, walking or running
+let lpx=null,lpy=null,pv=0;
+const pFac=()=>pv<6?.55:(typeof wantsRun==='function'&&wantsRun())?1:.8;
+const fleeR=()=>pv<6?35:(typeof wantsRun==='function'&&wantsRun())?100:55;
+// ---- the turn
+{const _ta=tickAnimals;tickAnimals=function(dt){
+  if(lpx!=null&&dt>0){const v=Math.hypot(player.x-lpx,player.y-lpy)/dt;pv=pv*.8+v*.2}lpx=player.x;lpy=player.y;
+  const pre=new Map();for(const a of animals)pre.set(a,{x:a.x,y:a.y,mad:a.mad,lu:!!a.lunge,hp:a.hp,wind:a.wind||0});
+  const r=_ta.apply(this,arguments);
+  if(!dt||(typeof frozenNow==='function'&&frozenNow()))return r;
+  try{turn(dt,pre)}catch(e){try{window.__hamSoft&&window.__hamSoft('v419 tutum: '+(e&&e.message||e))}catch(_){}}
+  return r}}
+function turn(dt,pre){const now=performance.now(),off=(typeof fading!=='undefined'&&fading)||(typeof sailing!=='undefined'&&sailing);
+  // packs: who is newly mad for a good reason
+  const legit={};
+  for(const a of animals){const P=pre.get(a);if(!P)continue;const D=ANIM[a.k]||{};a.hpMax=Math.max(a.hpMax||0,a.hp,D.hp||0);
+    a._hit=a.lastHp!=null&&a.hp<a.lastHp;if(a._hit)a.prov=now+20000;
+    if(D.temper==='saldırgan'&&D.aggro&&!exT(a)){const d=Math.hypot(player.x-a.x,player.y-a.y);if(d<D.aggro*pFac()&&!camp(a)&&!off&&!shy(a))legit[a.pk||('s'+animals.indexOf(a))]=true}}
+  for(const a of animals){const P=pre.get(a);if(!P)continue;const D=ANIM[a.k]||{},dx=player.x-a.x,dy=player.y-a.y,d=Math.hypot(dx,dy)||1;
+    const back=()=>{a.x=P.x;a.y=P.y};
+    // signature move in progress: it does only that
+    if(a.sg){if(a.stun>0||a.frz>0||skip(a)){a.sg=null;a.sgCd=2}else{back();quiet(a);if(untouch(a)&&a.hp<a.sg.hp)a.hp=a.sg.hp;stepSig(a,dt);a.lastHp=a.hp;continue}}
+    // fleeing when wounded
+    if(!exT(a)&&D.temper!=='zararsız'&&!BIG.has(kind(a))&&a.hp<a.hpMax*.2&&a.hp>0){if(a.flee==null)a.flee=Math.random()<.6?{t:4,el:0,sx:a.x,sy:a.y,st:0}:false}
+    if(a.flee&&a.flee.t>0){const F=a.flee;F.t-=dt;F.el+=dt;back();quiet(a);a.st='flee';const ox=a.x,oy=a.y;away(a,D.spd*1.15,dt);
+      if(Math.hypot(a.x-ox,a.y-oy)<.5)F.st+=dt;else F.st=0;F.bl=(F.bl||0)-dt;if(F.bl<=0){F.bl=.15;blood(a.x,a.y)}
+      if((F.el>1&&d<26+rad(a))||F.st>.4){F.t=0;a.mad=true}a.lastHp=a.hp;continue}
+    if(D.temper==='zararsız'){if(!D.still&&!exT(a)&&!CHASED.has(a)){const R=fleeR();if(a.st==='flee'&&!a.mad&&d>R)back(),a.st='wander';else if(d<=R)a.mad=true}}
+    else if(D.temper==='nötr'){if(!exT(a)&&!a.mad&&!D.still&&a.k!=='Kerevit'){const wr=rad(a)+40;
+        if(d<wr&&!camp(a)&&!off){a.wT=(a.wT||0)+dt;a.face=dx>0?1:-1;a.wJ=.25;if(!a.wS||now-a.wS>1500){a.wS=now;fl(a,'!','#ffa040',12);try{sfx('growl')}catch(e){}}if(a.wT>=1.5){a.wT=0;madPack(a)}}
+        else a.wT=Math.max(0,(a.wT||0)-dt*2)}}
+    else if(D.temper==='saldırgan'&&!exT(a)){
+      if(a._hit){a.aw=true;a.ntc=0}
+      if(shy(a)&&!(a.prov>now)){a.aw=false;if(a.st==='chase'||a.mad){back();a.mad=false;a.st='wander';quiet(a)}if(d<70)away(a,D.spd*.5,dt)}
+      else{const key=a.pk||('s'+animals.indexOf(a));
+        if(!a.aw&&legit[key]&&a.mad){a.aw=true;a.ntc=Math.max(.35,.7-.35*tierOf(a));fl(a,'?','#ffd040',13)}
+        if(a.aw&&d>D.aggro*2&&!a.lunge&&!(a.wind>0)){a.aw=false;a.ntc=0}
+        if(!a.aw&&(a.st==='chase'||a.mad)){back();a.mad=false;a.st='wander';quiet(a)}
+        else if(a.ntc>0){a.ntc-=dt;back();quiet(a);a.face=dx>0?1:-1;if(d>D.aggro*1.2){a.aw=false;a.mad=false;a.ntc=0}}}}
+    // vur-kaç: after a leap ends it backs off
+    if(SIG[kind(a)]==='vurkac'&&!skip(a)&&P.lu&&!a.lunge&&!a.sg){const ux=dx/d,uy=dy/d;a.sg={k:'geri',t:0,ph:'b',col:'n',ux,uy,h:0,hp:a.hp}}
+    // start a signature move
+    const sk=SIG[kind(a)];
+    if(sk&&sk!=='vurkac'&&!skip(a)&&!a.sg&&a.mad&&a.st==='chase'&&!busy(a)&&!(a.ntc>0)){if(a.sgCd==null)a.sgCd=1.5+Math.random()*2;a.sgCd-=dt;
+      const g=RNG[sk](a);if(a.sgCd<=0&&d>=g[0]&&d<=g[1]&&Math.random()<dt*(1+tierOf(a)))startSig(a,sk)}
+    a.lastHp=a.hp}
+  hunt(dt,pre);flank(dt,pre)}
+function shy(a){const b=BIO[kind(a)];if(b==null||bossy(a))return false;return lvl>=ARR[b]+15}
+// predators and prey (ACT 1)
+function hunt(dt,pre){if(arena())return;for(const p of animals){const L=PREY[kind(p)];if(!L||exT(p)||BIO[kind(p)]==null)continue;const P=pre.get(p);if(!P)continue;
+    if(p.mad||p.aw||p.sg||(p.flee&&p.flee.t>0)){const q=HUNT.get(p);if(q)CHASED.delete(q);HUNT.delete(p);p.eat=0;continue}
+    if(p.eat>0){p.eat-=dt;p.x=P.x;p.y=P.y;p.st='wander';continue}
+    let q=HUNT.get(p);
+    if(q&&(animals.indexOf(q)<0||p.huntT>8)){CHASED.delete(q);HUNT.delete(p);q=null}
+    if(!q){p.hT=(p.hT==null?Math.random()*2:p.hT)-dt;if(p.hT>0)continue;p.hT=2;if(Math.random()>.35)continue;
+      let best=null,bd=160;for(const c of animals){if(L.indexOf(c.k)<0||CHASED.has(c)||skip(c))continue;const dd=Math.hypot(c.x-p.x,c.y-p.y);if(dd<bd){bd=dd;best=c}}
+      if(!best)continue;q=best;HUNT.set(p,q);CHASED.set(q,p);p.huntT=0}
+    p.huntT+=dt;const Q=pre.get(q);p.x=P.x;p.y=P.y;const dx=q.x-p.x,dy=q.y-p.y,dd=Math.hypot(dx,dy)||1,D=ANIM[p.k]||{};moveA(p,dx/dd*(D.spd||60)*.95,dy/dd*(D.spd||60)*.95,dt);p.face=dx>0?1:-1;p.st='wander';
+    if(Q){q.x=Q.x;q.y=Q.y}const E=ANIM[q.k]||{};moveA(q,dx/dd*(E.spd||50),dy/dd*(E.spd||50),dt);q.face=dx>0?1:-1;q.st='flee';
+    if(Math.hypot(q.x-p.x,q.y-p.y)<rad(p)+rad(q)+4){const i=animals.indexOf(q);if(i>=0)animals.splice(i,1);CHASED.delete(q);HUNT.delete(p);p.eat=6;
+      for(let k=0;k<8;k++)blood(q.x,q.y);
+      try{const loot=dropRoll(E).filter(l=>!/ eti$/.test(l[0]));if(window.__plMkCorpse)window.__plMkCorpse(q,loot)}catch(e){}}}}
+// wolves: the nearest holds you, the rest go round
+function flank(dt,pre){const G={};for(const a of animals){if(!WOLF.has(kind(a))||!a.pk||skip(a)||!a.mad||a.st!=='chase')continue;(G[a.pk]=G[a.pk]||[]).push(a)}
+  for(const k in G){const L=G[k];if(L.length<2)continue;L.sort((a,b)=>Math.hypot(player.x-a.x,player.y-a.y)-Math.hypot(player.x-b.x,player.y-b.y));const ld=L[0];
+    const lx=player.x-ld.x,ly=player.y-ld.y,ll=Math.hypot(lx,ly)||1;
+    for(let i=1;i<L.length;i++){const a=L[i],P=pre.get(a);if(!P||busy(a)&&!(a.wind>0)||a.sg||(a.flee&&a.flee.t>0)||a.ntc>0)continue;
+      const an=Math.atan2(ly,lx)+(i%2?-1:1)*Math.max(.3,.9-.3*Math.floor((i-1)/2)),R=46+rad(a),fx=player.x+Math.cos(an)*R,fy=player.y+Math.sin(an)*R;
+      const ex=fx-a.x,ey=fy-a.y,ed=Math.hypot(ex,ey);
+      if(ed>16){if(a.wind>0&&!(P.wind>0)){a.wind=0;a.atk=.2}a.x=P.x;a.y=P.y;const D=ANIM[a.k]||{},sp=(D.cs||D.spd||60)*1.1;moveA(a,ex/ed*sp,ey/ed*sp,dt);a.face=player.x>a.x?1:-1}}}}
+// ---- drawing: the creature in its move, its marks, the warning shake; the arrow round the player
+const ell=(x,y,rx,ry,fill,stroke,lw)=>{ctx.beginPath();ctx.ellipse(x,y,Math.max(.1,rx),Math.max(.1,ry),0,0,Math.PI*2);if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=lw||1;ctx.stroke()}};
+function marks(a,time){const m=a.sg,C=CC[m.col]||CC.y,R=rad(a),pul=(.55+.4*Math.sin(time*30)).toFixed(2);
+  if(m.k==='dalis'&&m.ph!=='rise'){const k=m.ph==='up'?Math.min(1,m.t/.5):1;ell(m.tx,m.ty+2,(16+R)*k,(16+R)*.5*k,`rgba(${C},${(.12+.25*k).toFixed(2)})`,`rgba(${C},${pul})`,1.6)}
+  else if(m.k==='gomul'&&m.ph==='up'){const k=Math.min(1,m.t/.35);ell(a.x,a.y,(R+20)*k,(R+20)*.55*k,`rgba(${C},${(.15+.25*k).toFixed(2)})`,`rgba(${C},${pul})`,1.6)}
+  else if(m.k==='gomul'&&m.ph==='move'){for(let i=0;i<2;i++)parts.push({x:a.x+(Math.random()-.5)*R*2,y:a.y,vx:0,vy:-6,life:.3,c:'rgba(90,70,40,.8)'})}
+  else if(m.k==='kuyruk'&&m.t<.55){const k=m.t/.55;ell(a.x,a.y,(R+30)*k,(R+30)*.55*k,`rgba(${C},${(.1+.22*k).toFixed(2)})`);ell(a.x,a.y,R+30,(R+30)*.55,null,`rgba(${C},${pul})`,1.4)}
+  else if((m.k==='tekme'||m.k==='kanat')&&m.ph==='w'){const k=m.t/.45;ell(a.x,a.y,(R+26)*k,(R+26)*.55*k,`rgba(${C},${(.1+.2*k).toFixed(2)})`,`rgba(${C},${pul})`,1)}
+  else if(m.k==='gerihucum'&&m.ph==='back'){const L=150,w=R+5,px_=-m.uy*w,py_=m.ux*w,k=m.t/.5;ctx.fillStyle=`rgba(${C},${(.1+.2*k).toFixed(2)})`;ctx.beginPath();ctx.moveTo(a.x+px_,a.y+py_);ctx.lineTo(a.x+m.ux*L+px_,a.y+m.uy*L+py_);ctx.lineTo(a.x+m.ux*L-px_,a.y+m.uy*L-py_);ctx.lineTo(a.x-px_,a.y-py_);ctx.closePath();ctx.fill()}
+  else if(m.k==='yuvarlan'&&m.ph==='curl'){const L=140,w=R+3,px_=-m.uy*w,py_=m.ux*w;ctx.fillStyle=`rgba(${C},.18)`;ctx.beginPath();ctx.moveTo(a.x+px_,a.y+py_);ctx.lineTo(a.x+m.ux*L+px_,a.y+m.uy*L+py_);ctx.lineTo(a.x+m.ux*L-px_,a.y+m.uy*L-py_);ctx.lineTo(a.x-px_,a.y-py_);ctx.closePath();ctx.fill()}
+  else if(m.k==='pence'&&m.t<1){const an=Math.atan2(m.uy,m.ux),L=R+30,c2=CC[m.t<.6?'y':'r'];ctx.beginPath();ctx.moveTo(a.x,a.y-2);ctx.arc(a.x,a.y-2,L,an-.6,an+.6);ctx.closePath();ctx.fillStyle=`rgba(${c2},.2)`;ctx.fill();ctx.strokeStyle=`rgba(${c2},${pul})`;ctx.lineWidth=1.4;ctx.stroke()}
+  else if(m.k==='igne'&&m.t<.5){const L=R+50;ctx.strokeStyle=`rgba(${C},${pul})`;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(a.x,a.y-4);ctx.lineTo(a.x+m.ux*L,a.y-4+m.uy*L);ctx.stroke()}}
+{const _da=drawAnimal;drawAnimal=function(a,time){const m=a&&a.sg,j=a&&a.wJ>0;if(!m&&!j)return _da.apply(this,arguments);
+  try{if(m)marks(a,time)}catch(e){}
+  ctx.save();try{if(j){a.wJ-=1/60;ctx.translate(Math.sin(time*40)*1.2,0)}
+    if(m){if(m.h)ctx.translate(0,-m.h);if(m.al!=null&&m.al<1)ctx.globalAlpha*=m.al;
+      if(m.k==='pence'&&m.t<1.2){const k=Math.min(1,m.t/.6)*(m.t>1?(1.2-m.t)/.2:1);ctx.translate(a.x,a.y);ctx.scale(1,1+.25*k);ctx.translate(-a.x,-a.y)}
+      if(m.k==='yuvarlan'&&m.ph!=='curl'){ctx.translate(a.x,a.y-rad(a));ctx.rotate(m.t*14*(m.ux>0?1:-1));ctx.translate(-a.x,-(a.y-rad(a)))}}
+    return _da.apply(this,arguments)}finally{ctx.restore()}}}
+{const _dp=drawPlayer;drawPlayer=function(){const r=_dp.apply(this,arguments);try{const f=player.face||{x:0,y:1},fl_=Math.hypot(f.x,f.y)||1,t=performance.now()/1000;
+    for(const a of animals){const w=a.wind>0||a.lunge&&!a.lunge.hit||a.mv&&a.mv.ph==='w'||a.sg&&a.sg.k!=='geri'&&(a.sg.ph==='w'||a.sg.ph==='back'||a.sg.ph==='up'||a.sg.ph==='curl'||a.sg.ph==='move'||a.sg.k==='pence'&&a.sg.t<1);if(!w)continue;
+      const dx=a.x-player.x,dy=a.y-player.y,d=Math.hypot(dx,dy)||1;if(d>320||d<10)continue;const behind=(dx*f.x+dy*f.y)/(d*fl_)<-.2,far=d>170;if(!behind&&!far)continue;
+      const col=(a.sg&&a.sg.col)||(a.mv&&a.mv.col)||a.atkT||'n',C=CC[col]||CC.n,al=(.55+.45*Math.sin(t*18)).toFixed(2),ux=dx/d,uy=dy/d,cx=player.x+ux*20,cy=player.y-8+uy*14;
+      ctx.save();ctx.translate(cx,cy);ctx.rotate(Math.atan2(uy,ux));ctx.fillStyle=`rgba(${C},${al})`;ctx.strokeStyle='rgba(0,0,0,.6)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(6,0);ctx.lineTo(-3,-5);ctx.lineTo(-1,0);ctx.lineTo(-3,5);ctx.closePath();ctx.fill();ctx.stroke();ctx.restore()}}catch(e){}return r}}
+}).toString()+')()')}catch(e){try{window.__hamErr('v419tutum: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>

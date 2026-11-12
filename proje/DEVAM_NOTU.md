@@ -1,3 +1,11 @@
+## v4.19 (13 Kasım 2026) · hayvanların tutumu, imza hamleleri, sürü kuşatması, Kayalık Dağ dengesi
+- Boğaç: "1 kayalık dağı dengele 2 hayvanların tutumunda beğenmediğim 2 şey hariç yap 3 dövüşte hepsini yap" (ateş/meşale ve gece-gündüz önerileri istenmedi). Belge: Dövüş › Hayvanların tutumu, İmza hamleleri ve sürü taktiği; ACT 1 › Kayalık Dağ dengesi; Canavarlar › Reis tablosu.
+- `v419tutum` bloğu (son script, en dıştaki `tickAnimals` sarmalayıcısı): `BAL` Kartal/Vaşak/Mağara ayısı + Reisleri oranla; fark etme (`a.aw`, `a.ntc`, oyuncu hızı `pv`: dur .55 / yürü .8 / koş 1), zararsız kaçma yarıçapı 35/55/100, nötr uyarı (`a.wT` 1,5 sn → `madPack`), yaralı kaçma (`a.flee`, %20 can, %60), güçlüden çekinme (`shy`, varış +15), avcı-av (`PREY`, WeakMap `HUNT`/`CHASED`, leş `window.__plMkCorpse` — v337les'e eklendi), imza hamleleri (`SIG`, `a.sg`, `stepSig`, `imp`; dalış ve gömülmede vurulamaz: hp geri + `killAnimal` korumalı), kurt kuşatması (`flank`), oyuncunun çevresinde ok (`drawPlayer` sarmalayıcı).
+- Ölçüm: varış seviyesinde önceki biyomun setiyle ısırık/can: Bataklık (Sv 18 Tunç ×0,31) %11–24, Kayalık (Sv 26 Demir ×0,22) %25–30 → %20–25, Kül (Sv 34 Çelik ×0,17) %17–28.
+- Kontrol: chk 0 hata; oyun açılıyor; senaryolar: fark etme, Geyik uyarısı 1,5 sn'de saldırı, Yaban domuzu geri-hücum, yaralı kaçma, Bataklık kurdu ördeği avlayıp leş (Ördek tüyü), Sv 40'ta Yaban domuzu çekiniyor, 3 kurt kuşatıyor; sayfa hatası yok.
+
+**Geri alma:** `git revert` bu commit (blok + v337les'teki tek satır; kayıt alanı yok).
+
 ## v4.18 (13 Kasım 2026) · PixelLab ikonları (58 eşya); Godot planına görseller
 - Boğaç: "sen bunları ekle oyuna" (PixelLab'da 32×32 çizdirdiği 64'lü sayfa). Belge: Eşyalar › PixelLab ikonları; Godot'ya geçiş › Görseller.
 - `v418pxl` bloğu (v417fiyat'tan sonra): 256×256 PNG base64 (~78 KB), 8×8 hücre; 58 hücre eşya adına bağlı. `ICON[n]` 32×32 data URL, `ICONC[n]` 16×16 canvas (`__v343` işaretli); ikisi de `Object.defineProperty` getter/boş setter ile sabit (yalnız bu 58 ad; önbellek kuralı). 3 kürek, tokmak, 2. yay, anahtar kullanılmıyor.
@@ -194,12 +202,4 @@
 **Geri alma:** `git revert` bu commit.
 
 **Kontrol:** chk.js 0 hata. EK1 `back` adımında F → Ekin korkuluğu alıyor, EK1 tamamlanıyor (+90 Vio). 1600×900 ve 1366×700'de en alttaki yeteneğin kartı gövdenin içinde (önceden 1600×900'de ağaç gövdeden 119 px taşıyordu).
-
-## v3.99 (9 Kasım 2026) · Pamuk'un sarı dairesi
-
-**Değişen yerler:** Yan görev motorunda `sqZone(id)` (~16748, `__plSide.zone`). Kovalamada, Pamuk'un durduğu ya da kaçtığı yerden 0,25–0,85 yarıçap uzağa kaydırılmış 22 karelik bir daire döner (`A.zc`, Pamuk 2 kareden çok yer değişince yenilenir). Götürmede Davut'un yerini verir. Ana görev `partTarget` artık `'sq'` parçasını tanıyor; `target2` anahtarına daire sayacı (`z.k`) eklendi. Pencereler: `v399rz`/`v399rzjs` (dosya sonu) — `#craft` içinde 5 tutamaç (`.rzh` l/r/b/bl/br, yalnızca `hover:hover`+`pointer:fine`, `v50m` değil), `#cpanel`'e satır içi `width/height !important` (zoom'a bölünerek), mod başına (`cm-*`) boyut bellekte; el yapımı genişliği 620 ve sağ boşluk 18 px. Sürüm etiketi `Versiyon 3.99`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. El yapımı: Yap'ın kenara uzaklığı 20 → 40 px; sağ kenar +80 → genişlik 744 → 904, alt +60 → 11 → 13 satır, yazı 14 px sabit, kapatıp açınca boyut kalıyor. CB1 etkin kayıtta kart "Pamuk: Çayır · haritada sarı bölge" yazıyor, büyük haritada daire görünüyor, Pamuk merkezden 0,66 R uzakta.
 

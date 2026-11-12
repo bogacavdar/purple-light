@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 4.18** ile birebir (13 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 4.19** ile birebir (13 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -1333,7 +1333,7 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 
 ### Canavarlar nasıl savaşır
 
-- **Mizaç:** *zararsız* kaçar; *nötr* vurulunca karşılık verir, 220 piksel uzaklaşınca sakinleşir; **ilk vuruşta hemen sana döner ve saldırır:** yakınındayken (110 piksel içinde) vurulduğu an sana bakar, kırmızı "!" ile sana atılır (vurmayı sürdürmen gerekmez); uzaktan (ok, büyü) vurulduysa seni kovalar. Eskiden vurulan nötr canlı yavaş kalkıyordu, sen art arda vurdukça geri savruluyor, uzun süre karşılık veremiyordu. **Kıyıdaki Kerevit (nötr)** artık kızınca saniyede 46 piksel koşar (eskiden 14); *saldırgan* fark etme menziline girince saldırır, menzilin iki katı uzaklaşınca bırakır. Güvenli bölgede saldırgan canavar saldırmaz. Aynı anda en çok 4 canavar kovalar.
+- **Mizaç:** *zararsız* kaçar; *nötr* vurulunca ya da dibinde uyarısına rağmen kalırsan karşılık verir (bkz. Hayvanların tutumu), 220 piksel uzaklaşınca sakinleşir; **ilk vuruşta hemen sana döner ve saldırır:** yakınındayken (110 piksel içinde) vurulduğu an sana bakar, kırmızı "!" ile sana atılır (vurmayı sürdürmen gerekmez); uzaktan (ok, büyü) vurulduysa seni kovalar. Eskiden vurulan nötr canlı yavaş kalkıyordu, sen art arda vurdukça geri savruluyor, uzun süre karşılık veremiyordu. **Kıyıdaki Kerevit (nötr)** artık kızınca saniyede 46 piksel koşar (eskiden 14); *saldırgan* fark etme menziline girince saldırır, menzilin iki katı uzaklaşınca bırakır. Güvenli bölgede saldırgan canavar saldırmaz. Aynı anda en çok 4 canavar kovalar.
 - **Fareyle canlının üstüne gelince:** yalnızca **kısa tek etiket** çıkar: canlının adı ve altında ne yaptığı (zararsız / kızdırırsan saldırır / saldırgan · vur). İmlecin yanında can, huy ve düşürdüklerini sayan ikinci kutu artık çıkmaz (bunlar Almanak'ta).
   - **Etiketin görünüşü (9 Kasım 2026, Boğaç: "daha şık bir tasarımda olsun"):** koyu yarı saydam, köşeleri hafif yuvarlak küçük bir kart; solunda ince renkli bir şerit (canlıda huyuna göre: saldırgan kırmızı, kızdırırsan saldırır turuncu, zararsız yeşil; ağaç, maden, kişi ve yerdeki eşyada oyunun altın rengi). Ad kalın, altındaki satır küçük ve soluk. İmlecin sağ üstünde durur, ekranın kenarından taşmaz.
   - **Dövüşte çıkmaz (9 Kasım 2026, Boğaç: "bir hayvana vurduğumda ya da saldırı altındayken yazmasınlar"):** bir canlıya vurduktan sonraki **3 saniye**, seni kovalayan ya da sana kızmış bir canlı ekrandayken ve ısırıldıktan sonraki 3 saniye boyunca hiçbir üzerine gelme etiketi (canlı, ağaç, eşya) görünmez.
@@ -1365,6 +1365,36 @@ Savaşçı Börü ile konuşup "Dövüş dersleri" (yalnızca ACT 1'de, öğreti
 - **Kim ne yapar:** kurtlar, Gök tazısı, Vaşak, Goblin, Ateş akrebi, Kartal: sıçrama · Zehirli kurbağa: sıçrama + zehir gölü · Yaban domuzu, Geyik, Muflon, Dağ keçisi, Yaban atı: hücum · Yaban öküzü, Timsah, Hurda devi: hücum + kükreme · Kristal geyik: hücum + buz · Devriye robotu: hücum + şok · Mağara ayısı: kükreme + sıçrama · Kristal golem, Büyük golem: kükreme + buz · Lav golemi: kükreme + alev · Gölge muhafız: sıçrama + kükreme · Gök bekçisi: kükreme + şok + buz · Kara ejder: alev + kükreme · Kızıl ejder: alev + sıçrama + kükreme · Yavru ejder: alev + sıçrama · Lav kertenkelesi, Kül cini, Kor yarasası: alev · Kristal golemcik, Kristal yarasası: buz · Kristal örümcek: ağ + sıçrama · Engerek, Goblin şamanı: zehir gölü · Işık engereği: zehir gölü + ağ · Lazer ve Uzaylı dronu: şok · Fırtına kartalı: şok + sıçrama.
 - **Yakalama** yapanlar: Mağara ayısı, golemler, Lav golemi, Hurda devi, Gölge muhafız, Timsah, Yaban öküzü, Kızıl ejder, Gök bekçisi, Kristal golemcik, Devriye robotu. **Üçlü saldırı:** kurtlar, Gök tazısı, Vaşak, Goblin, Yaban domuzu, Mağara ayısı, Gölge muhafız, Devriye robotu, Kristal golemcik, Yavru ejder, Timsah, Ateş akrebi ve bütün Reisler.
 - Daha doğudaki (ve ACT 2'deki) canavarlar hamleleri daha sık yapar, mermilerden yana sıçrayabilir, ara sıra mavi parıltıyla kısa süre **bağışık** olur ("Etkisiz").
+
+### Hayvanların tutumu (13 Kasım 2026, Boğaç)
+
+Hayvanlar artık yalnızca "kaçar / vurulunca saldırır / görünce saldırır" diye davranmaz. Aşağıdakiler iki adada da geçerlidir; **Reisler, boss'lar, Yıldızsızlar, Börü'nün alıştırma canavarları, öğretici hayvanları ve arena** bunların dışındadır (arenada yalnızca imza hamleleri ve sürü taktiği vardır). Gece ve gündüz davranışı değişmedi (kurtlar zaten yalnızca gece çıkar), ateş ve meşale hayvanları uzak tutmaz (Boğaç: "gece meşale yakmak zorunlu, yaklaşmazlarsa gecenin anlamı kalmaz").
+
+- **Fark etme:** saldırgan bir hayvan seni görünce hemen saldırmaz: başında sarı **"?"** çıkar, **0,7 sn** durup sana bakar (Mor Kristal'de ve ACT 2'de daha çabuk, en az 0,35 sn), sonra kovalamaya başlar. Bu arada fark etme alanının dışına çıkarsan seni unutur. Sürü birlikte fark eder. Vurduğun hayvan beklemez, hemen döner.
+- **Gizlice yaklaşma:** fark edilme uzaklığı nasıl hareket ettiğine bağlıdır: **dururken** saldırganın fark etme alanının **%55**'i, **yürürken %80**'i, **koşarken** tamamı. Zararsız hayvanlar (tavşan, keklik…) dururken **35**, yürürken **55**, koşarken **100** piksel içine girince kaçar (önce her zaman 70). Avlanmak için yürüyerek, son adımlarda durarak yaklaşmak işe yarar.
+- **Uyarı (nötr hayvanlar):** geyik, karaca, yaban atı, porsuk, öküz, keçi gibi nötr bir hayvanın dibine (gövdesi + 40 piksel) girersen önce **uyarır**: başında turuncu **"!"** çıkar, homurdanır, başını sallar. **1,5 sn** içinde uzaklaşırsan bir şey olmaz; dibinde kalırsan sana saldırır (vurduğunda olduğu gibi). Kerevit uyarmaz. Kampta ve güvenli yerlerde uyarı da saldırı da yoktur.
+- **Yaralanınca kaçma:** canı **%20**'nin altına düşen hayvanların çoğu (her hayvan için %60 ihtimal, bir kez belirlenir) **4 sn** kaçmaya çalışır: senden uzağa, biraz daha hızlı koşar, arkasında kan damlaları kalır; kaçarken saldırmaz. Sıkışırsa ya da 1 sn'den sonra yanına kadar gelirsen döner ve dövüşür. İri hayvanlar (Timsah, Yaban öküzü, Mağara ayısı, ejderler, golemler ve öbür iriler) kaçmaz.
+- **Güçlüden çekinme:** ACT 1'de bir saldırgan hayvan, sen onun biyomunun varış seviyesinden **15 seviye** yüksekken sana kendiliğinden saldırmaz: dolaşır, 70 pikselden yakına gelirsen uzaklaşır. Varış seviyeleri: Çayır 1, Orman 3, Bataklık 18, Kayalık Dağ 26, Kül Diyarı 34, Mor Kristal 42 (ör. Çayır kurdu Seviye 16'dan, Bataklık kurdu Seviye 33'ten sonra çekinir). Ona vurursan 20 sn boyunca normal dövüşür.
+- **Avcı ve av:** ACT 1'de yırtıcılar seni kovalamıyorken yakınlarındaki (160 piksel) küçük hayvanları avlar: **Kurt** → Tavşan, Keklik, Bıldırcın, Sincap · **Bataklık kurdu** ve **Timsah** → Ördek · **Vaşak** ve **Kartal** → Ur kekliği · **Gölge kurdu** → Mor güve. Av avcısından kaçar. Yakalanan av ölür, yerinde **leşi** kalır: eti avcı yemiştir, derisi, tüyü, yumurtası leşin içindedir ve sen toplayabilirsin (XP vermez, av sayısına ve Reis sayacına girmez). Avcı leşin başında 6 sn yer, sonra dolaşır. 8 sn'de yakalayamazsa bırakır. Sen fark edilince avcı avı bırakır.
+
+### İmza hamleleri ve sürü taktiği (13 Kasım 2026, Boğaç)
+
+Her hayvan yalnızca ısırıp çekilmez; çoğunun **kendine özgü bir hamlesi** vardır (özel hamlelerin yanında, kovalarken 4–6 sn'de bir; zor biyomlarda daha sık). Renk kuralı aynıdır: beyaz ve sarı savuşturulur, kırmızı yalnızca taklayla kaçılır. Arenada da aynıdır.
+
+| Hamle | Kim | Ne yapar, nasıl karşılanır |
+|---|---|---|
+| **Tekme** (sarı) | Geyik, Karaca, Yaban atı, Kristal geyik; Yaban kazı ve Turna kuşu **kanat çırpma** olarak | 0,45 sn hazırlanır, çevresine tekme atar (hasar ×1,1, 30 px iter), sonra 50 px geri sıçrar. Savuştur ya da uzak dur. |
+| **Vur-kaç** | Engerek, Kunduz, Su samuru, Işık tilkisi, Işık engereği | Her ısırıktan sonra 70 px hızla geri çekilir, sonra yeniden gelir. Çekilirken peşinden git ya da yay/mızrakla vur. |
+| **Geri çekilip hücum** (sarı; Yaban öküzünde kırmızı) | Yaban domuzu, Muflon, Dağ keçisi, Yaban öküzü | 0,5 sn geri geri gider, toynağıyla toz kaldırır, sonra kilitlediği çizgi boyunca 1 sn koşar (hasar ×1,3, uzağa iter). Çizginin dışına çık. |
+| **Ayağa kalkıp iki pençe** | Mağara ayısı, Porsuk | 0,6 sn şahlanır (uzar), önce **sarı** (×1,0), 0,4 sn sonra **kırmızı** (×1,4) pençe önündeki koniye. İlkini savuştur, ikincisinden takla at. |
+| **Dalış** (kırmızı) | Kartal, Kor yarasası | 0,5 sn yükselir; yerde senin olduğun yerde kırmızı halka çıkar; 0,3 sn'de dalar (çevreye ×1,5), sonra yükselip uzaklaşır. Halkadan takla ile çık. |
+| **Çamura gömülme** (kırmızı) | Timsah | Çamura gömülür (soluklaşır, vurulamaz), 1,2 sn içinde altından sana yaklaşır, kırmızı halkayla çıkıp kapar (×1,5). Halka görününce takla at. |
+| **Yuvarlanma** (sarı) | Dikenli kirpi, Oklu kirpi, Kül böceği | 0,4 sn top olur, sonra sana doğru 0,7 sn yuvarlanır (×1,2, kanama). Yana çekil ya da savuştur. |
+| **Kuyruk süpürmesi** (sarı) | Lav kertenkelesi, Kara ejder, Kristal örümcek | 0,55 sn hazırlanır, çevresine (gövdesi + 30 px) kuyruğunu savurur (×1,2). Savuştur ya da çemberden çık. |
+| **Zehirli iğne** (kırmızı) | Ateş akrebi | 0,5 sn kuyruğunu kaldırır, önüne uzun bir iğne saplar (×1,4, zehir). Takla ile kaç. |
+
+- **Sürü taktiği:** kurtlar (Kurt, Bataklık kurdu, Kül kurdu, Gölge kurdu, Gök tazısı) artık sırayla önüne gelmez: sana en yakın kurt önünden oyalar, öbürleri **yanına ve arkana dolaşır** (sana 46 px + gövdesi kadar uzakta, öndekinin karşı tarafında) ve oradan saldırır. Aynı anda saldıranların sayısı değişmedi (6. seviyeden önce 1, sonra 2).
+- **Arkadan uyarı:** bir canlı saldırmaya hazırlanırken (! ya da hamle hazırlığı) **arkandaysa** (baktığın yönün tersinde) ya da ekranın dışındaysa, karakterinin çevresinde o yöne bakan küçük bir **ok** yanıp söner: rengi saldırının rengidir (beyaz, sarı, kırmızı).
 
 ### Ölüm pozu ve leş (v3.37, Boğaç)
 
@@ -1828,6 +1858,8 @@ Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartalla
 | Kuvars | 29 | 3. kademe (Demir kazma) | 29 | 300 sn sonra yeniden çıkar |
 | Gümüş cevheri | 32 | 3. kademe (Demir kazma) | 30 | 300 sn sonra yeniden çıkar |
 
+**Kayalık Dağ dengesi (13 Kasım 2026, Boğaç: "kayalık dağı dengele"):** Kartal, Vaşak ve Mağara ayısı Bataklık ile Kül Diyarı arasındaki eğriye oturtuldu. Ölçüm: oyuncu varış seviyesinde ve bir önceki biyomun zırh setiyle (Bataklık Seviye 18 Tunç, Kayalık Dağ Seviye 26 Demir, Kül Diyarı Seviye 34 Çelik) saldırgan bir canlının tek ısırığı canın yüzde kaçını götürüyor: Bataklık %11–24, **Kayalık Dağ önce %25–30, şimdi %20–25**, Kül Diyarı %17–28. Canları da varış silahıyla (Demir kılıç) gereken vuruş sayısı Bataklık ve Kül Diyarı'nınkiyle aynı aralığa indi (Kartal 29 → 24, Vaşak 31 → 26, Mağara ayısı 74 → 62 vuruş). Reisleri aynı oranda değişti.
+
 **Canlılar**
 
 | Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri (ihtimal) |
@@ -1836,9 +1868,9 @@ Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartalla
 | Muflon | nötr | 430 | 43 | 58 | 72 | sürü 2–3 | Muflon eti %100 ×1–2; Muflon derisi %80; Kemik %50; Sinir %40 |
 | Yaban öküzü | nötr | 860 | 65 | 40 | 144 | sürü 2–3 | Yaban öküzü eti %100 ×2–3; Yaban öküzü derisi %100; Öküz boynuzu %50; Kemik %80 ×2–3; Sinir %60 ×1–2; Hayvan yağı %60 ×1–2 |
 | Ur kekliği | zararsız | 12 | – | 52 | 12 | sürü 2–4 | Ur kekliği eti %100; Ur kekliği tüyü %85 ×1–3; Ur kekliği yumurtası %35 |
-| Kartal | saldırgan | 970 | 112 | 96 | 262 | uçar, kanama etkisi | Kartal eti %100; Kartal tüyü %90 ×1–3; Kartal pençesi %50 ×1–2 |
-| Vaşak | saldırgan | 1.050 | 112 | 92 | 252 | kanama etkisi | Vaşak eti %100 ×1–2; Vaşak derisi %85; Kemik %50 ×1–2 |
-| Mağara ayısı | saldırgan | 2.520 | 137 | 44 | 436 | kanama etkisi | Mağara ayısı eti %100 ×2–3; Mağara ayısı derisi %90; Ayı pençesi %60 ×1–2; Hayvan yağı %60 ×1–2; Kemik %50 ×1–2 |
+| Kartal | saldırgan | 820 | 90 | 96 | 262 | uçar, kanama etkisi | Kartal eti %100; Kartal tüyü %90 ×1–3; Kartal pençesi %50 ×1–2 |
+| Vaşak | saldırgan | 880 | 95 | 92 | 252 | kanama etkisi | Vaşak eti %100 ×1–2; Vaşak derisi %85; Kemik %50 ×1–2 |
+| Mağara ayısı | saldırgan | 2.100 | 115 | 44 | 436 | kanama etkisi | Mağara ayısı eti %100 ×2–3; Mağara ayısı derisi %90; Ayı pençesi %60 ×1–2; Hayvan yağı %60 ×1–2; Kemik %50 ×1–2 |
 
 **Kayalık Dağ canlıları:** Yaban öküzü Seviye 4'ten önce doğmaz. **Deri parçası:** Dağ keçisi ve Muflon %80, Yaban öküzü %100, Vaşak %85, Mağara ayısı %90 (derisinin yanında). XP sütunu Kayalık Dağ'ın ×2 XP çarpanı uygulanmış değerdir (Sistemler › Gelişim).
 
@@ -3990,11 +4022,11 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 | Yaban Kazı Reisi | ACT 1 · Bataklık | 7 | 600 | 34 | 116 | Yaban kazı eti ×2; Yaban kazı tüyü ×2; Yaban kazı yumurtası ×2 |
 | Zehirli Kurbağa Reisi | ACT 1 · Bataklık | 10 | 1.400 | 54 | 374 | Zehir bezesi ×2; Kurbağa ×2 |
 | Dağ Keçisi Reisi | ACT 1 · Kayalık Dağ | 10 | 1.460 | 71 | 218 | Dağ keçisi eti ×2; Dağ keçisi derisi ×2; Kemik ×2 |
-| Kartal Reisi | ACT 1 · Kayalık Dağ | 6 | 3.880 | 168 | 806 | Kartal eti ×2; Kartal tüyü ×2; Kartal pençesi ×2 |
-| Mağara Ayısı Reisi | ACT 1 · Kayalık Dağ | 5 | 10.080 | 206 | 1.328 | Mağara ayısı eti ×2; Mağara ayısı derisi ×2; Ayı pençesi ×2; Hayvan yağı ×2; Kemik ×2 |
+| Kartal Reisi | ACT 1 · Kayalık Dağ | 6 | 3.280 | 135 | 806 | Kartal eti ×2; Kartal tüyü ×2; Kartal pençesi ×2 |
+| Mağara Ayısı Reisi | ACT 1 · Kayalık Dağ | 5 | 8.400 | 173 | 1.328 | Mağara ayısı eti ×2; Mağara ayısı derisi ×2; Ayı pençesi ×2; Hayvan yağı ×2; Kemik ×2 |
 | Muflon Reisi | ACT 1 · Kayalık Dağ | 9 | 1.720 | 73 | 236 | Muflon eti ×2; Muflon derisi ×2; Kemik ×2; Sinir ×2 |
 | Ur Kekliği Reisi | ACT 1 · Kayalık Dağ | 8 | 48 | 5 | 56 | Ur kekliği eti ×2; Ur kekliği tüyü ×2; Ur kekliği yumurtası ×2 |
-| Vaşak Reisi | ACT 1 · Kayalık Dağ | 6 | 5.600 | 182 | 890 | Vaşak eti ×2; Vaşak derisi ×2; Kemik ×2 |
+| Vaşak Reisi | ACT 1 · Kayalık Dağ | 6 | 4.690 | 154 | 890 | Vaşak eti ×2; Vaşak derisi ×2; Kemik ×2 |
 | Yaban Öküzü Reisi | ACT 1 · Kayalık Dağ | 9 | 3.440 | 111 | 452 | Yaban öküzü eti ×2; Yaban öküzü derisi ×2; Öküz boynuzu ×2; Kemik ×2; Sinir ×2; Hayvan yağı ×2 |
 | Ateş Akrebi Reisi | ACT 1 · Kül Diyarı | 6 | 4.560 | 222 | 1.796 | Akrep iğnesi ×2; Akrep kabuğu ×2 |
 | Kor Yarasası Reisi | ACT 1 · Kül Diyarı | 6 | 3.320 | 173 | 1.526 | Yarasa kanadı ×2; Ateş bezesi ×2 |

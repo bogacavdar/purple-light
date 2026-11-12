@@ -39,11 +39,11 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 | Yaban Kazı Reisi | ACT 1 · Bataklık | 7 | 600 | 34 | 116 | Yaban kazı eti ×2; Yaban kazı tüyü ×2; Yaban kazı yumurtası ×2 |
 | Zehirli Kurbağa Reisi | ACT 1 · Bataklık | 10 | 1.400 | 54 | 374 | Zehir bezesi ×2; Kurbağa ×2 |
 | Dağ Keçisi Reisi | ACT 1 · Kayalık Dağ | 10 | 1.460 | 71 | 218 | Dağ keçisi eti ×2; Dağ keçisi derisi ×2; Kemik ×2 |
-| Kartal Reisi | ACT 1 · Kayalık Dağ | 6 | 3.880 | 168 | 806 | Kartal eti ×2; Kartal tüyü ×2; Kartal pençesi ×2 |
-| Mağara Ayısı Reisi | ACT 1 · Kayalık Dağ | 5 | 10.080 | 206 | 1.328 | Mağara ayısı eti ×2; Mağara ayısı derisi ×2; Ayı pençesi ×2; Hayvan yağı ×2; Kemik ×2 |
+| Kartal Reisi | ACT 1 · Kayalık Dağ | 6 | 3.280 | 135 | 806 | Kartal eti ×2; Kartal tüyü ×2; Kartal pençesi ×2 |
+| Mağara Ayısı Reisi | ACT 1 · Kayalık Dağ | 5 | 8.400 | 173 | 1.328 | Mağara ayısı eti ×2; Mağara ayısı derisi ×2; Ayı pençesi ×2; Hayvan yağı ×2; Kemik ×2 |
 | Muflon Reisi | ACT 1 · Kayalık Dağ | 9 | 1.720 | 73 | 236 | Muflon eti ×2; Muflon derisi ×2; Kemik ×2; Sinir ×2 |
 | Ur Kekliği Reisi | ACT 1 · Kayalık Dağ | 8 | 48 | 5 | 56 | Ur kekliği eti ×2; Ur kekliği tüyü ×2; Ur kekliği yumurtası ×2 |
-| Vaşak Reisi | ACT 1 · Kayalık Dağ | 6 | 5.600 | 182 | 890 | Vaşak eti ×2; Vaşak derisi ×2; Kemik ×2 |
+| Vaşak Reisi | ACT 1 · Kayalık Dağ | 6 | 4.690 | 154 | 890 | Vaşak eti ×2; Vaşak derisi ×2; Kemik ×2 |
 | Yaban Öküzü Reisi | ACT 1 · Kayalık Dağ | 9 | 3.440 | 111 | 452 | Yaban öküzü eti ×2; Yaban öküzü derisi ×2; Öküz boynuzu ×2; Kemik ×2; Sinir ×2; Hayvan yağı ×2 |
 | Ateş Akrebi Reisi | ACT 1 · Kül Diyarı | 6 | 4.560 | 222 | 1.796 | Akrep iğnesi ×2; Akrep kabuğu ×2 |
 | Kor Yarasası Reisi | ACT 1 · Kül Diyarı | 6 | 3.320 | 173 | 1.526 | Yarasa kanadı ×2; Ateş bezesi ×2 |
