@@ -1,3 +1,10 @@
+## v4.18 (13 Kasım 2026) · PixelLab ikonları (58 eşya); Godot planına görseller
+- Boğaç: "sen bunları ekle oyuna" (PixelLab'da 32×32 çizdirdiği 64'lü sayfa). Belge: Eşyalar › PixelLab ikonları; Godot'ya geçiş › Görseller.
+- `v418pxl` bloğu (v417fiyat'tan sonra): 256×256 PNG base64 (~78 KB), 8×8 hücre; 58 hücre eşya adına bağlı. `ICON[n]` 32×32 data URL, `ICONC[n]` 16×16 canvas (`__v343` işaretli); ikisi de `Object.defineProperty` getter/boş setter ile sabit (yalnız bu 58 ad; önbellek kuralı). 3 kürek, tokmak, 2. yay, anahtar kullanılmıyor.
+- Kontrol: chk 0 hata; oyun açılıyor, `__plPxl` 58, ICONC 16 px, yeni oyunda hata yok; eski/yeni karşılaştırma sayfası Boğaç'a gönderildi.
+
+**Geri alma:** `git revert` bu commit (eski çizimler geri gelir; kayıt alanı yok).
+
 ## v4.17 (12 Kasım 2026) · fiyat düzeni: malzeme biyom tabanı + malzemeden hesap + fazla isteyen tarifler azaldı
 - Boğaç: "öncelikle malzemelerin fiyatlarını biyomdan biyoma daha değerli hale getir, bu olursa zaten hesap doğru olur… sorun ya malzeme fiyatlarında ya da … tarifin kendisindedir". Belge: Aletler › Fiyat düzeni.
 - `v416fiyat` bloğu silindi, yerine `v417fiyat` (v415torpu'dan sonra): `ED` 16 tarif (külçeler, ok uçları, 8 takı) REC/USES; `PR` 227 fiyat. Hesap (`w/rawcat.py`, `w/rawnew.py`, `w/model3.py`): ham malzeme türüne göre biyom tabanı (önceki biyomun %30'luk dilimi × 1,2, yalnız yükseltir); yapılan eşya = eski fiyat × yeni maliyet / eski maliyet (markup ≤ 1,7; üstündekiler, zırhlar: max(eski, maliyet × 1,3)); usta (takı dahil) = max(maliyet × 1,3, metal parça × 1,15); başlangıç ≤ Bakır × 0,8; oklar maliyet / çıkan × 1,3, etkili oklar (ok + yağ/10) × 1,1.
@@ -195,12 +202,4 @@
 **Geri alma:** `git revert` bu commit.
 
 **Kontrol:** chk.js 0 hata. El yapımı: Yap'ın kenara uzaklığı 20 → 40 px; sağ kenar +80 → genişlik 744 → 904, alt +60 → 11 → 13 satır, yazı 14 px sabit, kapatıp açınca boyut kalıyor. CB1 etkin kayıtta kart "Pamuk: Çayır · haritada sarı bölge" yazıyor, büyük haritada daire görünüyor, Pamuk merkezden 0,66 R uzakta.
-
-## v3.98 (9 Kasım 2026) · tanışılmamış görev verenler haritada
-
-**Değişen yerler:** `__plQMk` (satır ~15310) artık yalnızca kuzenleri (`BYG`) değil, sonradan eklenen `__plGIVER` anahtarlarını da (`k_davut`, `k_ekin`) tanıyor. Davut (~21305) ve Ekin (~21513) harita sarmalları `met` yerine `met || __plQMk(k)==='!'` ile çiziyor. Tanışılmamış kişide mevcut v2.09 çizimi (yalnızca parlayan !) çalışıyor. Sürüm etiketi `Versiyon 3.98`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. E1–E5 bitmiş, 2. seviye kayıtta CB1 açık. Davut tanışılmamışken büyük haritada sisin içinde parlayan ! görünüyor.
 

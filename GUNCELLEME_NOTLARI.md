@@ -8,6 +8,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.18 · 13 Kasım 2026
+
+### Görsel
+- **58 eşyanın yeni resmi var:** PixelLab'da 32×32 çizilmiş yeni ikonlar. Envanterde ve kitapta tam boyda, elde ve yerde küçük görünürler.
+  - Bütün baltalar (Taş'tan Obsidyen'e 13 balta).
+  - Taş, Bakır, Demir, Çelik, Mor kristal ve Obsidyen kazma.
+  - Bakır, Demir, Çelik, Kara çelik ve Mor kristal kılıç, Ejder kılıcı, Demir savaş çekici, Basit yay.
+  - Odun, Taş, Çakmaktaşı, Bakır ve Demir cevheri, Taş kömürü, Kuvars, Ametist, Obsidyen, Kızıl ejder pulu.
+  - Bakır, Tunç, Demir, Gümüş, Kara çelik ve Altın külçesi.
+  - Lif, Halat, Deri parçası, Timsah derisi, Kemik, Keklik tüyü, Kurt dişi, Deri çanta.
+  - Ateş, Mana ve Kök özü iksiri, Ekmek, Pişmiş keklik eti, Kızılcık, Meşale.
+
+### Tasarım belgesi
+- Eşyalar bölümüne yeni resimli eşyaların listesi eklendi.
+- Godot'ya geçiş planına görseller yazıldı: sıra (oyun biter → Godot denemesi yeni görsellerle → taşıma ve görseller birlikte), araç (Retro Diffusion ya da PixelLab; ilk PixelLab sayfası tarz örneği), tahmini maliyet (~205 $, yalnız ACT 1 ~100 $).
+
+---
+
 ## Versiyon 4.17 · 12 Kasım 2026
 
 ### Oynanış
@@ -367,12 +385,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Arayüz
 - **Pencereleri kenarından büyüt:** bilgisayarda çanta, el yapımı, pazar, kazan gibi pencereleri sol, sağ ve alt kenarından tutup çekerek büyütebilir ya da küçültebilirsin. Yazılar ve düğmeler aynı boyutta kalır; pencere büyüyünce listede kaydırmadan daha çok şey görünür. Boyut, oyun açık kaldıkça her pencere için hatırlanır.
 - **El yapımı biraz daha geniş:** Yap düğmeleri artık pencerenin kenarına yapışık durmuyor.
-
----
-
-## Versiyon 3.98 · 9 Kasım 2026
-
-### Düzeltmeler
-- **Henüz tanışmadığın görev verenler haritada:** Çoban Davut ya da Çiftçi Ekin gibi daha tanışmadığın biri sana görev verecekken haritada hiç görünmüyordu; görev listesi "seni bekliyor" dese de nerede olduğunu bulamıyordun. Artık haritada (keşfetmediğin yerde de) parlayan bir **!** ile görünüyorlar.
 
 ---

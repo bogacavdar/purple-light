@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 4.17** ile birebir (12 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 4.18** ile birebir (13 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -5776,6 +5776,7 @@ Her eşyanın adına uygun bir resmi vardır (Giriş › Kural). v3.37'ye kadar 
 - **Merhemler kapta, yağlar şişede, iksirler cam şişede, reçeller kavanozda, tohumlar çekirdek olarak, inciler sedefle.**
 - **Yapılan şeyler:** Sapan, Bola, Kirmen, Dokuma tezgâhı, Ok kılıfı, Deri çanta, Deri tulum, Yelkenli sal, Atölye, çanlar, ipler (kangal), yelpazeler, tılsımlar, Golem feneri, Kaya patlatıcı, Semender derisi tef, Ağ kapanı, Kor zurnası, yemler…
 - **Toplananlar ve canlı parçaları:** bölge bitkileri (Kardelen, Ay otu, Gece zambağı…), taşlar ve kristaller (Kükürt kristali, Volkan camı, Ayna taşı, Ametist…), tozlar, yosunlar, kökler, Sülük, Dev yüreği, Çamur Ana gözü, Kartal pençesi, Örümcek gözü…
+- **PixelLab ikonları (12 Kasım 2026, Boğaç: "sen bunları ekle oyuna"):** Boğaç'ın PixelLab'da 32×32 çizdirdiği 64 ikonluk sayfadan, oyunda karşılığı olan **58 eşya** bu resimleri kullanır; envanterde ve kitapta 32×32 olarak, elde ve yerde küçültülerek. Eşyalar: bütün baltalar (Taş, Bakır, Çakmaktaşı, Tunç, Granit, Demir, Timsah dişi, Çelik, Kuvars, Kara çelik, Ejder, Mor kristal, Obsidyen); Taş, Bakır, Demir, Çelik, Mor kristal ve Obsidyen kazma; Bakır, Demir, Çelik, Kara çelik ve Mor kristal kılıç, Ejder kılıcı; Demir savaş çekici; Basit yay; Odun, Taş, Çakmaktaşı, Bakır cevheri, Demir cevheri, Taş kömürü, Kuvars, Ametist, Obsidyen, Kızıl ejder pulu; Bakır, Tunç, Demir, Gümüş, Kara çelik ve Altın külçesi; Lif, Halat, Deri parçası, Timsah derisi, Kemik, Keklik tüyü, Kurt dişi, Deri çanta; Ateş iksiri, Mana iksiri, Kök özü iksiri, Ekmek, Pişmiş keklik eti, Kızılcık, Meşale. Sayfadaki 3 kürek, tokmak, ikinci yay ve anahtarın oyunda karşılığı yok, kullanılmaz. Kurulan eşyaların kurulmuş hali (Meşale) eski çizimiyle kalır.
 - **Unutulan resim:** resmi olmayan bir eşya renkli kutu değil, sade bir bez torba olarak görünür; geliştirici araçları açıkken (`?debug`) oyun açıldıktan 12 saniye sonra konsola "resmi yok" listesi yazılır.
 
 > ACT 1 madenlerinin fiyatları ve yerleri değişti (**Aletler · Madenler ve ekipman merdiveni**). Bir madeni kullanan tariflerin fiyatı, maden fiyatındaki değişim × miktar × 1,3 kadar (zincir boyunca) kendiliğinden değişir; bu tablodaki türetilmiş fiyatlar henüz yeniden üretilmedi (değerleri). Yeni setlerin, ara ürünlerin ve Tunç/Demir set parçalarının fiyatları o bölümdeki tablolardadır.
@@ -7305,7 +7306,7 @@ Fiyatlar 2026 listeleridir; geçişten önce yeniden bakılır.
 | Ne | Bugün | Godot'da |
 |---|---|---|
 | Kod | Tek dosya, ~19.500 satır, 144 kod bloğu, JavaScript | GDScript ile baştan yazılır (otomatik çeviri yok) |
-| Çizimler | Neredeyse hepsi kodla çiziliyor | Oyundan otomatik olarak PNG'ye dökülür, Godot'ya resim olarak girer |
+| Çizimler | Neredeyse hepsi kodla çiziliyor | Retro Diffusion ile yeniden üretilir, Godot'ya PNG olarak girer; yeni resmi olmayan ya da yenisi beğenilmeyen çizim oyundan otomatik PNG'ye dökülür (bkz. Görseller: Retro Diffusion) |
 | Sesler | Kodla üretiliyor | WAV dosyası olarak kaydedilip taşınır |
 | Menüler, pencereler | Tarayıcı sayfa öğeleri | Godot arayüz sistemiyle baştan |
 | Veriler (eşyalar, tarifler, canlılar, görevler, yetenekler) | Kodun içinde tablolar | Otomatik çıkarılıp Godot veri dosyalarına dönüştürülür |
@@ -7317,8 +7318,8 @@ Fiyatlar 2026 listeleridir; geçişten önce yeniden bakılır.
 
 | Aşama | İçerik | Yazılım süresi |
 |---|---|---|
-| 0 · Deneme | İlk ada haritası, karakter, yürüme, oyun kolu, bir canlı ve vuruş. Karar noktası: devam mı? | 1–2 gün |
-| 1 · Hazırlık | Bütün çizimlerin ve seslerin dökülmesi, verilerin çıkarılması, Godot projesinin iskeleti, otomatik derleme (Windows ve web) | 2–3 gün |
+| 0 · Deneme | İlk ada haritası, karakter, yürüme, oyun kolu, bir canlı ve vuruş; tek biyom Retro Diffusion resimleriyle, yanında koddan dökülmüş eski resimler. Karar noktası: Godot'ya geçilsin mi, yeni görseller kullanılsın mı? | 1–2 gün |
+| 1 · Hazırlık | Bütün çizimlerin (yeni görsel kararı verildiyse yalnız yenisi gelmeyenlerin) ve seslerin dökülmesi, verilerin çıkarılması, Godot projesinin iskeleti, otomatik derleme (Windows ve web) | 2–3 gün |
 | 2 · Çekirdek | Harita ve biyomlar, hareket, çarpışma, kamera, gün-gece, karanlık ve ışık, toplama, envanter, alet kemeri, el yapımı, kayıt | 1 hafta |
 | 3 · Dövüş | Silahlar ve kademeleri, kombolar, savaş çekici ve topuz, yay ve oklar, asalar, etkiler, savuşturma, takla, ulti, canlıların yapay zekâsı, reisler, arena | 1 hafta |
 | 4 · İçerik ve hikâye | Kişiler ve konuşmalar, ana ve yan görevler, mağaralar, anılar ve ara sahneler, ACT 1 ve ACT 2 adaları, deniz yolculuğu, pazar ve ekonomi, 90 yetenek, 42 başarım | 2 hafta |
@@ -7336,9 +7337,40 @@ Fiyatlar 2026 listeleridir; geçişten önce yeniden bakılır.
 - Ölçü olarak: taşıma, **bugünkü yoğunlukta 5–6 haftalık kullanım** kadardır (son haftalardaki gibi her gün uzun oturumlar). Oturum başına iş miktarı, bir büyük web güncellemesi kadardır.
 - Kredinin bir kısmı kod yazmaya değil, Godot'da görülmeden yapılan işin doğrulanmasına gider (derleme, ekran görüntüsüyle kontrol). Boğaç'ın erken ve sık denemesi bu kısmı küçültür.
 
+### Görseller: Retro Diffusion (12 Kasım 2026, Boğaç)
+
+Oyunun görselleri Godot'ya geçişle birlikte **Retro Diffusion** (piksel sanatına özel yapay zekâ, abonelik yok, resim başına ödeme, lisanslı verilerle eğitilmiş) ile yenilenir. Sıra: **oyun web'de biter → Godot denemesi (Aşama 0) yeni görsellerle → taşıma ve görseller birlikte**. Web sürümüne yapay zekâ resimleri yalnız Boğaç istediğinde ve küçük sayfalar halinde eklenir (bkz. Eşyalar › PixelLab ikonları); bütün oyunu web'de yenilemek yapılmaz: tek dosyalı web oyununa yüzlerce PNG gömmek dosyayı şişirir, telefonda açılışı yavaşlatır ve Godot'da iş iki kez yapılmış olur. Web'e eklenen sayfalar Godot'da aynen kullanılır.
+
+- **Araç:** Retro Diffusion ya da PixelLab; Boğaç'ın PixelLab'da ürettiği ilk 64 ikonluk sayfa (12 Kasım 2026) tarz örneğidir, sonraki her istekte referans olarak verilir. Aşama 0'da ikisi aynı eşyalarla karşılaştırılır.
+- **Aşama 0:** tek biyomun eşya ikonları, bir canlı ve zemin karoları Retro Diffusion ile üretilir, koddan dökülmüş eski resimlerle yan yana gösterilir. Boğaç hem Godot'ya geçişe hem yeni görsellere aynı denemede karar verir.
+- **Taşıma:** "evet" denirse çizimler Godot'ya girerken biyom biyom yenileriyle değiştirilir; eskiler önce taşınıp sonra ayrıca değiştirilmez.
+- **Kim üretir:** Claude'un çalıştığı ortam Retro Diffusion'a erişemez; resimleri Boğaç üretir, Claude PNG'leri Godot'ya yerleştirir, boyut ve paleti düzeltir, karşılaştırma sayfası hazırlar.
+- **Birlik:** bütün resimler tek palet ve tek tarz kuralıyla üretilir (aynı ışık yönü, aynı çizgi kalınlığı, tepeden bakış). Uymayan resim kullanılmaz.
+- **Oyuncunun üstündeki eşyalar:** zırh, kask ve silah oyuncunun üstüne bugünkü gibi katman katman çizilir; oyuncunun her hareketi her eşya için yeniden üretilmez.
+- **Steam:** oyunda yapay zekâyla üretilmiş içerik varsa Steam mağaza sayfasında beyan istenir; Steam'e çıkmadan önce kuralın güncel hali kontrol edilir.
+
+**Tahmini maliyet** (Versiyon 4.17 sayılarıyla, ortalama 2,5 deneme; tek denemede yaklaşık 85 $, bol denemeyle 350–400 $):
+
+| Görsel | Adet | Beklenen |
+|---|---|---|
+| Eşya ikonları (32×32) | 1.239 | 62 $ |
+| Yetenek ve başarım ikonları | ~150 | 7,5 $ |
+| Canlılar (resim, 4 yönlü yürüme, saldırı; reisler aynı resmi büyütüp renklendirir) | 76 | 46 $ |
+| Kişiler (resim, yürüme, konuşma yüzü) | ~55 | 14 $ |
+| Oyuncu hareketleri | ~15 | 11 $ |
+| Reisler ve uzaylılar (büyük) | ~10 | 28 $ |
+| Ağaçlar (normal ve kesilmiş) | ~60 | 9 $ |
+| Bitki ve maden kaynakları | ~130 | 6,5 $ |
+| Yerleştirilen eşyalar, evler, yapılar | ~100 | 7,5 $ |
+| Zemin karoları (12 biyom, mağaralar, geçişler) | ~30 set | 9 $ |
+| Efektler | ~30 | 5 $ |
+| **Toplam** | | **~205 $** |
+
+Yalnız ACT 1 yapılırsa yaklaşık 100 $. Reislere ayrı resim +14 $, arka plan temizleme +18 $.
+
 ### Önerilen başlangıç
 
-1. **Aşama 0 (deneme)** web sürümünü durdurmadan yapılır; sonucuna göre karar verilir.
+1. **Aşama 0 (deneme)** web sürümünü durdurmadan, tek biyom Retro Diffusion görselleriyle yapılır; sonucuna göre hem geçişe hem görsellere karar verilir.
 2. Tam taşımaya ACT 3'ün tasarımı belgede netleşince geçilir. Web sürümü dondurulur, yalnızca hata düzeltmesi alır.
 3. **Steam'e erken çıkmak** istenirse, beklemeden bugünkü oyun bir kabukla (Electron) Steam'e konabilir; Godot sürümü hazır olunca güncelleme olarak onun yerini alır.
 
