@@ -535,11 +535,11 @@ Toplam **805 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Zehirli Mor kristal ok | 10 Mor kristal ok, 1 Zehir yağı | – | El yapımı (Tab) | 734 |
 | Zehirli Tunç ok | 10 Tunç ok, 1 Zehir yağı | – | El yapımı (Tab) | 102 |
 
-#### Süs (43)
+#### Süs (53)
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Altın kolye | 2 Altın külçesi, 1 Kehribar, 1 İp | – | El yapımı (Tab) | 1.141 |
+| Altın yüzük | 2 Altın külçesi, 1 Kehribar | – | El yapımı (Tab) | 1.115 |
 | Ametist yüzük | 2 Ametist, 1 Gümüş külçesi | – | El yapımı (Tab) | 433 |
 | Ana tanrıça heykelciği | 1 Kil figürin, 1 Kırmızı boya, 4 İp, 4 Kum | – | El yapımı (Tab) | 284 |
 | Av sahnesi duvar resmi | 1 Mağara resmi, 1 Kırmızı boya, 5 İp, 4 Kum | – | El yapımı (Tab) | 334 |
@@ -555,7 +555,7 @@ Toplam **805 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Gölge dişi kolyesi | 3 Gölge dişi, 1 Kristal ipek | – | El yapımı (Tab) | 551 |
 | Gölge pulu muska | 2 Gölge pulu, 1 Ayna ipeği | – | El yapımı (Tab) | 860 |
 | Göl boncuğu | 1 Islak göl kili, 3 İp, 3 Kum | Kemik iğne | El yapımı (Tab) | 72 |
-| Gümüş yüzük | 1 Gümüş külçesi, 1 Kehribar | – | El yapımı (Tab) | 313 |
+| Gümüş yüzük | 1 Gümüş külçesi, 1 Yontulmuş kuvars | – | El yapımı (Tab) | 368 |
 | İnci kolye | 3 Sazlı inci, 1 Batık kök | – | El yapımı (Tab) | 230 |
 | Kanat yelpazesi | 3 Kaya yarasası kanadı, 2 Dal | – | El yapımı (Tab) | 380 |
 | Kartal pençesi kolyesi | 2 Kartal pençesi, 2 İp | – | El yapımı (Tab) | 72 |
@@ -567,7 +567,7 @@ Toplam **805 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Kil figürin | 1 Islak beyaz kil, 2 Su, 1 Dal | – | El yapımı (Tab) | 55 |
 | Kristal boynuz tılsımı | 1 Kristal boynuz, 1 Işık pulu, 2 İp | – | El yapımı (Tab) | 353 |
 | Kristal çiçeği tacı | 3 Kristal çiçeği, 1 Mor sarmaşık | – | El yapımı (Tab) | 412 |
-| Kristal kolye | 2 Dağ kristali, 1 Tavan ağı | – | El yapımı (Tab) | 360 |
+| Kristal yüzük | 2 Dağ kristali, 1 Tavan ağı | – | El yapımı (Tab) | 360 |
 | Kristal parçası | 1 Kristal, 4 İp, 3 Kum | Çekiç taşı | El yapımı (Tab) | 105 |
 | Kül dişi muska | 2 Kül dişi, 1 Halat, 1 Kehribar | – | El yapımı (Tab) | 300 |
 | Mağara resmi | 1 Kara boya, 1 Taş levha, 4 İp, 4 Kum | – | El yapımı (Tab) | 73 |
@@ -582,6 +582,16 @@ Toplam **805 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Volkan camı muska | 2 Volkan camı, 1 Lav yılanı pulu | – | El yapımı (Tab) | 540 |
 | Yarasa kanadı yelpazesi | 2 Yarasa kanadı, 1 Kor odun sapı, 2 İp | – | El yapımı (Tab) | 271 |
 | Yıldız çelengi | 3 Yıldız çiçeği, 2 Mor sarmaşık | – | El yapımı (Tab) | 467 |
+| Palamut kolyesi | 6 Meşe palamudu, 2 İp, 1 Meşe kabuğu | – | El yapımı (Tab) | 33 |
+| Taş yüzük | 2 Nehir çakılı, 1 Lif | – | El yapımı (Tab) | 25 |
+| Bakır yüzük | 1 Bakır külçesi | – | El yapımı (Tab) | 30 |
+| Kemik yüzük | 2 Kemik, 1 Sinir | – | El yapımı (Tab) | 25 |
+| Tunç yüzük | 1 Tunç külçesi | – | El yapımı (Tab) | 248 |
+| Granit yüzük | 3 Granit, 1 Kumtaşı | – | El yapımı (Tab) | 50 |
+| Demir yüzük | 1 Demir halka | – | El yapımı (Tab) | 244 |
+| Timsah yüzüğü | 2 Timsah derisi, 1 Demir külçesi | – | El yapımı (Tab) | 273 |
+| Kehribar yüzük | 2 Kehribar, 1 Demir halka | – | El yapımı (Tab) | 348 |
+| Ejder yüzüğü | 1 Kara pul, 1 Lav pulu | – | El yapımı (Tab) | 663 |
 
 #### Taş ve kil (26)
 

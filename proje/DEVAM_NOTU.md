@@ -1,3 +1,12 @@
+## v4.10 (12 Kasım 2026) · kolye ve yüzük yuvaları
+- Boğaç: "kolye ve yüzükleri giyilebilir yap, figürden takılabilir olsunlar; her biri ayrı etkili ve bir zırh setine dahil; 5 → 7 giyilebilir". Belge: Aletler › Kolye ve yüzükler.
+- Çekirdek: `SLOTS_EQ` + `['kolye','Boyun'],['yuzuk','Yüzük']`; `equip`'e iki anahtar; applyState'te `Object.assign(equip,…)` iki anahtarla; `FXL` ve `eqTxt(n)` (giyilenin yazısı) — 3071 bilgi, dollHTML, figür ipucu (v387env `figHTML`, `POS` kolye [144,52], yüzük [4,208]), arena `aStat` ve `leftHTML` iki yuva düğmesi, v258c `aInfo` (💍 satırı; 18470'te 💍 simgesi); `.ieqs` 7 sütun.
+- Kaynakta: DB JSON'da Altın kolye → Altın yüzük (2 Altın külçesi, 1 Kehribar), Gümüş yüzük (1 Gümüş külçesi, 1 Yontulmuş kuvars); `addR('Kristal yüzük')`.
+- Yeni `v410taki` bloğu (v409ikon'dan sonra): `JW` (ad, yuva, set, renk, fx, res, mud, def, yeni tarif, fiyat) → EQUIP girdileri, 10 yeni tarif (Süs, elle), fiyatlar; `STAT`'ın bütün anahtarları sarıldı (yalnız r verilmediğinde: can/enerji/mana/zırh düz, şans +p/100, kalanı ×(1+p/100)); 26 takı resmi (`A` → `__p1k`, yalnız bu adların önbelleği silinir); eski kayıt adları `REN`. `window.__plJW`.
+- Kontrol: chk 0 hata; 1.286 eşya, 815 tarif, fiyatsız yok; takınca can/enerji/hasar/savunma/direnç/satış/şans değişiyor; Karakter ve envanter figüründe yeni yuvalar (ekran görüntüsü).
+
+**Geri alma:** `git revert` bu commit (belge ve kod birlikte).
+
 ## v4.09 (11 Kasım 2026) · her eşyanın tek tarifi
 - Boğaç: "bu 130 tarifi tekilleştirerek başlayalım; tekilleştiği halde kullanılmayan malzemeler varsa mantıklı bir şekilde, az olan sınıfı gözeterek ya yeni tarif bulalım ya da kaldıralım komple". Belge: Tarifler › Tek tarif.
 - Kaynakta kalkanlar: `EK` (TARIF_EK) JSON'undan 112 varyant satırı ve sonra boşalan `v366tarif` bloğu (VO, gain/giveTool/icon sarmalayıcıları, `__plVarCheck`, `__plVarSt`) tamamen; v3.81 bloğundaki `vary()` ve 18 çağrısı; `v366ok`'taki `__plOkVar` (Bazalt uçlu Kara çelik ok); `hGrp` sadeleşti. DB JSON'dan Bazalt ok ucu, Meyve fidanı, Cüruf tuğlası tarifi ve kalkan eşyaların fiyatları; `addR('Ağ kapanı')` ve resmi; ACT 2 JSON'unda goblin okçusunun Goblin oku düşmesi, iconk/iconc; v4.06 kabuk listesi Meşe, Ceviz, Söğüt, Huş'a indi; NEWP'ten kabuklar. DU7 görevi (DATA) 5 Meşe kabuğu.
@@ -196,12 +205,4 @@
 **Geri alma:** `git revert` bu commit.
 
 **Kontrol:** chk.js 0 hata. 1920×1080: satır 255 px'e sığıyor (#left genişliği), şerit 458 px ve adlar kısalmadan; kart 540×283 → 382×200 (alan %50). 10. gün 21:00 (Yaz): saat mavi, ipucu "Gece 20:00–06:00 · 1,8 dk". Konsol hatası yok.
-
-## v3.90 (9 Kasım 2026) · eldeki eşya figürde, sürükleyip eline al/giy, özellikler gruplu + kritik
-
-**Değişen yerler:** `v387env`: `handThing()` (elde tutulan, meşale hariç; `window.__plHandThing`), `figHTML` Silah yuvasında elindekini gösterir (`.inh`), `drawChar` eldekini çibiden sonra çizer. Yeni blok `v390el`: `holdIt(n)` (yuvada değilse `beltAuto`, dolu ise `pickFor` → `.pfpick` "hangisinin yerine?" `[data-pfrep]`), `invAct('hold')` sarmalı aynı soruyu sorar; `#cpanel` yakalayan tıklaması (v92'den önce) Silah yuvasında: seçili alet → eline al, elindeki → bırak (`setHand(-1)`); `pointerup` yakalayan dinleyicisi aleti Silah yuvasına bırakınca eline alır; giysi/silah için yeni fare sürüklemesi (`wd`) figür yuvasına giydirir. Karakter tablosu (satır ~3177): `ROWS` gruplu (Ekonomi · Savaş · Dayanıklılık, `tr.spgh`), Savaş'ta `__plCrit.pct()` ile kritik satırı (`tr.spcr`, puansız). Belge: 20_sistemler.md. Sürüm etiketi `Versiyon 3.90`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. Deneme: Taş balta Silah yuvasına sürüklendi → 1. yuvaya girdi, elde; 5 yuva doluyken Olta + Silah yuvası → soru çıktı, 3. yuva seçildi → Olta elde, Çakmaktaşı balta envanterde; yuvaya tekrar tıklama → el boş; Kürk eldiven Eller'e sürüklendi → giyildi. 12. seviye + Demir kılıç: kritik %4,2. Karakter canvas'ında eldeki alet çiziliyor. Konsol hatası yok.
 

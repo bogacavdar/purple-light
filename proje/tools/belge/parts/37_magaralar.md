@@ -200,18 +200,18 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 | Malzeme | Nereden | Fiyat | Tarif |
 |---|---|---|---|
 | Gümüş filizi | toplanır / Dağ Devi | 52 | Gümüş çan |
-| Dağ kristali | toplanır | 58 | Kristal kolye, Dev yüreği tılsımı |
+| Dağ kristali | toplanır | 58 | Kristal yüzük, Dev yüreği tılsımı |
 | Rüzgâr taşı | toplanır | 42 | Kartal tüyü miğfer |
 | Kar likeni | toplanır | 40 | Dev yüreği tılsımı |
 | Kaya yarasası kanadı | Kaya yarasası | 104 | Kanat yelpazesi |
-| Tavan ağı | Tavan örümceği | 112 | Gümüş çan, Kristal kolye |
+| Tavan ağı | Tavan örümceği | 112 | Gümüş çan, Kristal yüzük |
 | Gri vaşak postu | Mağara vaşağı | 150 | – (satılır) |
 | Dev yüreği | Dağ Devi | 1.300 | Dev yüreği tılsımı |
 
 | Tarif | Kategori | Malzemeler | Fiyat |
 |---|---|---|---|
 | Gümüş çan | Müzik | 3 Gümüş filizi, 1 Tavan ağı | 440 |
-| Kristal kolye | Süs | 2 Dağ kristali, 1 Tavan ağı | 360 |
+| Kristal yüzük | Süs | 2 Dağ kristali, 1 Tavan ağı | 360 |
 | Kanat yelpazesi | Süs | 3 Kaya yarasası kanadı, 2 Dal | 380 |
 | Dev yüreği tılsımı | Büyü | 1 Dev yüreği, 2 Dağ kristali, 2 Kar likeni | 2.000 |
 

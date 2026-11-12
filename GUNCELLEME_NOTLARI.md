@@ -8,6 +8,25 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.10 · 12 Kasım 2026
+
+### Oynanış
+- **Kolye ve yüzük takılıyor:** giyilecek yuva sayısı 5'ten 7'ye çıktı; Özellikler penceresindeki ve envanterdeki figürde yeni **Boyun** ve **Yüzük** yuvaları var. Arenada da seçilebiliyorlar.
+- **Her setin bir kolyesi ve bir yüzüğü var:** 13 setin her birinde bir kolye ve bir yüzük, her birinin kendi etkisi var (can, enerji, mana, zırh, savunma, hasar, hız, toplama hızı, satış fiyatı, şans, can ve enerji yenilenmesi, kanama/yanık/zehir direnci, çamurda yavaşlamamak). Etkiler biyomdan biyoma büyüyor: örneğin Diş kolye +20 can, Ay taşı kolyesi +120 can ve +50 mana; Bakır yüzük satışa +%4, Altın yüzük +%12 satış ve +%4 şans; Ametist yüzük +%10 hasar ve +%4 hız. Hangi parçanın hangi sete ait olduğu ve etkileri tasarım belgesinde (Aletler › Kolye ve yüzükler).
+- **Yeni takılar (elle yapılır, kazanda öğrenilir):** Palamut kolyesi, Taş yüzük, Bakır yüzük, Kemik yüzük, Tunç yüzük, Granit yüzük, Demir yüzük, Timsah yüzüğü, Kehribar yüzük, Ejder yüzüğü.
+- **Değişen takılar:** Altın kolye artık **Altın yüzük** (2 Altın külçesi, 1 Kehribar), Kristal kolye artık **Kristal yüzük**; Gümüş yüzük Kehribar yerine Yontulmuş kuvars istiyor. Domuz dişi muska ve Kül dişi muska boyna takılıyor.
+
+### Görsel
+- Bütün kolye ve yüzüklerin resimleri yeniden çizildi: her kolyenin kendi sarkacı (diş, pençe, inci, kehribar, ay taşı…), her yüzüğün kendi metali ve taşı var.
+
+### Kayıtlar
+- Eski kayıttaki Altın kolye ve Kristal kolye kendiliğinden Altın yüzük ve Kristal yüzük oluyor.
+
+### Tasarım belgesi
+- Aletler'e "Kolye ve yüzükler" bölümü (yuvalar, etkiler, 13 setin kolye ve yüzüğü, tarifleri, fiyatları); Zırhlar ve Sistemler'de yedi yuva; set 13 parça; Tarifler ve Eşya dizininde yeni ve değişen takılar.
+
+---
+
 ## Versiyon 4.09 · 11 Kasım 2026
 
 ### Oynanış
@@ -307,20 +326,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Tasarım belgesi
 - Sistemler › Mevsimler: "Sol üstteki gün, saat, hava ve mevsim", Sıcaklık maddesi.
 - Sistemler › Takip şeridi geniş; Oyun akışı › Öğretici kartı küçük.
-
----
-
-## Versiyon 3.90 · 9 Kasım 2026
-
-### Arayüz
-- **Elindeki eşya figürde:** envanterdeki figürün Silah yuvası o an elinde tuttuğun eşyayı (balta, kazma, olta…) gösteriyor, karakter de onu elinde tutuyor. Elin boşsa giydiğin silah görünüyor. Dolu Silah yuvasına tıklayınca elindekini bırakıyorsun (eşya yuvasında kalıyor).
-- **Sürükleyip eline al:** bir aleti listeden Silah yuvasına sürükleyince (ya da seçip yuvaya tıklayınca) alet boş bir alet yuvasına giriyor ve eline geliyor. Bütün alet yuvaları doluysa "Yuvaların dolu: hangisinin yerine?" diye soruluyor ve yuvalar resimleriyle sıralanıyor; seçtiğin yuvadaki eşya envantere dönüyor. "Eline al" düğmesi de aynı soruyu soruyor.
-- **Sürükleyip giy:** giysileri ve silahları da listeden figürdeki uyan yuvaya sürükleyerek giyebiliyorsun.
-- **Özellikler gruplu:** Karakter penceresindeki özellikler yetenek ağacının dallarıyla gruplu, alt alta: Ekonomi (toplama, satış, şans) · Savaş (güç, kritik vuruş, hareket, enerji, mana) · Dayanıklılık (can, can yenilenmesi, zırh).
-- **Kritik vuruş ihtimali tabloda:** Savaş grubunda o an elindeki silahla kritik vuruş ihtimalin yazıyor (balta, kazma ve yumrukta "yok"). Bu ihtimal seviyeyle ve yeteneklerle arttığı için ona puan verilmiyor.
-
-### Tasarım belgesi
-- Sistemler › Envanter: "Eldeki eşya figürde", "Sürükleyerek giy ve eline al".
-- Sistemler › Seviye puanları: "Gruplu tablo", "Kritik vuruş ihtimali tabloda".
 
 ---

@@ -19,7 +19,7 @@ Yazılanlar: **Hasar** (temel; seviye ve güç iksiri ayrıca artırır), **hız
 
 **Zırhlar da ne verdiğini gösterir:** aynı yerlerde (tarif listeleri, El yapımı, envanter, kemer ipucu) zırh parçalarının altında "🛡 Savunma +X · yuvası (baş/gövde/el/ayak)" ve varsa **direnç** (kanama/zehir/yanık %), **çamurda yavaşlamazsın**, **karanlıkta ışık verir** yazar. Değerler oyunun hasar hesabında kullandığı değerlerle aynıdır.
 
-**Her yerde kısa etiket:** silah ya da zırh olan her eşya karesinin sol üst köşesinde kısa bir etiket durur: silahta **⚔hasar**, zırhta **🛡savunma** (envanter, envanterdeki kemer, tarif kitabı, kuşanma yuvaları, pazar ve diğer eşya kareleri). ekranın altındaki kemerde (H, 1, 2, 3… kutuları) etiket yoktur, üzerine gelince de hasar yazmaz; yalnızca eşyanın adı çıkar. Arenada da aynı kemer kullanılır, orada da yazmaz. Listelerde (giyme seçimi, kemer seçici, pazar satırları) adın altında tam satır yazar (pazarda her satırda **bir kez**, eşyanın adının altında; düğmelerin içine hiçbir şey yazılmaz — düzeltmesi); ("üzerine gelince yazsın, default yazmasın") listelerdeki bu uzun satırlar varsayılan olarak gizlidir; satırın üzerine gelince (ya da klavyeyle seçince) açılır. Tarif kitabının bilgi kutusunda ve envanterde seçili eşyada her zaman görünür; karelerdeki kısa ⚔/🛡 etiketi durur. üzerine gelince ya da dokununca tam bilgi ipucu çıkar. Tarif kitabında tarifi henüz açılmamış silah ve zırhın da özellikleri görünür.
+**Her yerde kısa etiket:** silah ya da zırh olan her eşya karesinin sol üst köşesinde kısa bir etiket durur: silahta **⚔hasar**, zırhta **🛡savunma** (kolye ve yüzükte etiket yoktur; üstüne gelince 💍 satırında etkileri yazar) (envanter, envanterdeki kemer, tarif kitabı, kuşanma yuvaları, pazar ve diğer eşya kareleri). ekranın altındaki kemerde (H, 1, 2, 3… kutuları) etiket yoktur, üzerine gelince de hasar yazmaz; yalnızca eşyanın adı çıkar. Arenada da aynı kemer kullanılır, orada da yazmaz. Listelerde (giyme seçimi, kemer seçici, pazar satırları) adın altında tam satır yazar (pazarda her satırda **bir kez**, eşyanın adının altında; düğmelerin içine hiçbir şey yazılmaz — düzeltmesi); ("üzerine gelince yazsın, default yazmasın") listelerdeki bu uzun satırlar varsayılan olarak gizlidir; satırın üzerine gelince (ya da klavyeyle seçince) açılır. Tarif kitabının bilgi kutusunda ve envanterde seçili eşyada her zaman görünür; karelerdeki kısa ⚔/🛡 etiketi durur. üzerine gelince ya da dokununca tam bilgi ipucu çıkar. Tarif kitabında tarifi henüz açılmamış silah ve zırhın da özellikleri görünür.
 
 ## Madenler ve ekipman merdiveni
 
@@ -116,7 +116,7 @@ Her hücrede **savunma ya da hasar · satış fiyatı**. Zırhçılar zırhları
 ### Bütün setler: her türden 13 parça
 
 - **Savaş çekici ve topuz farklı oynanır:** savaş çekici çarptığı yerin çevresine de vurur, isabetleri sersemletme biriktirir, geri iter, savururken az hasar alırsın ama yavaşlarsın; topuz hızlıdır, kombo sayacıyla hasarı %60'a kadar tırmanır, her 5. isabette kıvılcım sıçrar, taklası ucuzdur. Ayrıntı: Sistemler › Dövüş.
-- **Set mantığı:** ACT 1'deki her silah, alet ve zırh bir **sete** aittir; bundan sonra eklenen her şey de bir sete eklenir. Bir set 11 parçadır: miğfer, zırh, eldiven, çizme, kılıç, savaş çekici, topuz, mızrak, yay, balta, kazma. Her türden (5 silah, 2 alet, 4 zırh yuvası) **13** parça vardır.
+- **Set mantığı:** ACT 1'deki her silah, alet ve zırh bir **sete** aittir; bundan sonra eklenen her şey de bir sete eklenir. Bir set 13 parçadır: miğfer, zırh, eldiven, çizme, kılıç, savaş çekici, topuz, mızrak, yay, balta, kazma, kolye, yüzük. Her türden (5 silah, 2 alet, 4 zırh yuvası, kolye, yüzük) **13** parça vardır (kolye ve yüzükler: Kolye ve yüzükler).
 - **Tek istisna Kafa lambası:** baş yuvasına takılan, ışık veren özel bir eşyadır; hiçbir sete ait değildir ve sayıma girmez. Etkili biçimler (Alevli/Zehirli/Keskin X) ayrı parça sayılmaz. İkinci adanın (²) eşyaları ACT 2 düzenlenince ele alınacak.
 - **13 set:** 1 başlangıç seti (Çayır, elle yapılır) + 6 metal seti (Bakır, Tunç, Demir, Çelik, Kara çelik, Mor kristal; örste) + 6 usta seti (her biyomun silahçısı ve zırhçısı kendi biyomunun malzemesiyle döver).
 - **Usta seti** aynı biyomun metal setinden **%12 güçlüdür** (savunma ve hasar; dayanıklılık aynı). Silahları (kılıç, savaş çekici, topuz, mızrak) biyomun **etkisiyle doğar** ve tariflerinde o etkinin yağı vardır. Baltası ve kazması o biyomun metal setiyle **aynı kademededir**, %10 hızlı çalışır ama dayanıklılığı %55'tir. Yayları etki almaz (etkiyi ok taşır): metal yayından %12 güçlü, %5 hızlı, 10 px uzun menzilli, %30 az dayanıklı.
@@ -194,7 +194,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 
 **Görev değişiklikleri:** Turan'ın "Bazalt kazma" (TU2) → **Kara çelik kazma**, "Lavın kenarı" (TU4) ve kuzen görevi (kt3) → **Kara çelik kılıç** dövdür; Tufan'ın "Kül zırhı" (TF4) ve kuzen görevi (ku3) → **Kara çelik zırh** dövdür; Kaya'nın "Altın damar" (KA7) → 4 Altın cevheri yerine **4 Pirit** (altın artık Mor Kristal Vadisi'nde); KA8 piriti "dağın yamaçlarından" ister; Toygar'ın "Çamur yürüyüşü" (T1) Kamış çizmeyi Zırhçı Veli'ye yaptırmanı söyler. Turan ve Tufan'ın kendilerini anlatan sözleri Ejder setini anar.
 
-**Arena:** oyundaki her silah, alet ve zırh arenada da seçilebilir (aynı listeden gelir; kaldırılanlar arenadan da kalktı, yeni setler arenada).
+**Arena:** oyundaki her silah, alet, zırh, kolye ve yüzük arenada da seçilebilir (aynı listeden gelir; kaldırılanlar arenadan da kalktı, yeni setler arenada).
 
 
 ### Yaylar ve oklar
@@ -443,7 +443,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 
 ## Zırhlar
 
-Beş yuva vardır: **baş, gövde, el, ayak, silah**. Özellikler penceresinden (C) giyilir. Canavar hasarı **25 / (25 + toplam savunma)** katına iner: 25 savunma hasarı yarıya, 75 savunma dörtte bire indirir.
+Yedi yuva vardır: **baş, gövde, el, ayak, silah, boyun (kolye), yüzük**. Özellikler penceresinden (C) ve envanterdeki figürden giyilir; kolye ve yüzükler için bkz. Kolye ve yüzükler. Canavar hasarı **25 / (25 + toplam savunma)** katına iner: 25 savunma hasarı yarıya, 75 savunma dörtte bire indirir.
 
 | Zırh | Yuva | Savunma | Nerede yapılır | Not |
 |---|---|---|---|---|
@@ -508,6 +508,30 @@ Beş yuva vardır: **baş, gövde, el, ayak, silah**. Özellikler penceresinden 
 | Ejder pulu eldiven ² | El | 16 | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | direnç: yanık %40 |
 | Meka zırh ² | Gövde | 90 | Mühendis Işın yapar (600 Vio işçilik) | direnç: kanama %50, yanık %50, zehir %50, metal |
 
+
+## Kolye ve yüzükler (12 Kasım 2026, Boğaç: "kolye ve yüzükleri giyilebilir yap, özellikler ve envanter ekranlarındaki insan figüründen takılabilir olsunlar; her bir kolye ve her bir yüzük ayrı etkilere sahip olmalı ve bir zırh setine dahil olmalılar; 5 eşya giyilebilirken şimdi 7")
+
+- **İki yeni yuva:** **boyun** (kolye) ve **yüzük**. Özellikler penceresindeki ve envanterdeki figürde boyun yuvası başın sağında, yüzük yuvası sol elin altındadır; figürde yuvaya tıklayınca o yuvaya uyanlar açılır, eşya seçip parlayan yuvaya tıklayınca giyilir, dolu yuvaya tıklayınca çıkar (öbür yuvalar gibi). Telefonda envanterin üstündeki yuva şeridi yedi yuvalıdır. Arenada da iki yuva vardır, her kolye ve yüzük seçilebilir.
+- **Her setin bir kolyesi ve bir yüzüğü vardır** (13 set × 2 = 26 parça); her parçanın kendi etkisi vardır, iki parçanın etkisi aynı değildir. Etkiler setin biyomuyla birlikte büyür (keskin fark yok). Kolyeler çoğunlukla canı, enerjiyi ve dirençleri; yüzükler hasarı, toplamayı, satışı ve şansı artırır.
+- **Etkiler** giyilenlere eklenir: can, enerji, mana ve zırh düz eklenir; can ve enerji yenilenmesi, hasar, hız, toplama hızı ve satış fiyatı yüzde olarak çarpılır; şans yüzde puanı olarak eklenir; dirençler, savunma ve "çamurda yavaşlamaz" zırhlarınkiyle toplanır (direnç toplamı en çok %85). Özellikler sekmesindeki puan tablosu yalnız puanları gösterir; takıların katkısı can, enerji ve mana çubuklarında, savunmada ve vuruşta görünür.
+- **Hepsi elle yapılır** (El yapımı, kazanda öğrenilir); muskalar (Domuz dişi muska, Kül dişi muska) boyun yuvasına takılır.
+- **Değişenler:** Altın kolye **Altın yüzük** (2 Altın külçesi, 1 Kehribar), Kristal kolye **Kristal yüzük** oldu (eski kayıtta kendiliğinden); Gümüş yüzük Kehribar yerine **Yontulmuş kuvars** ister (Kayalık Dağ'ın malzemesi). Yeni: Palamut kolyesi, Taş, Bakır, Kemik, Tunç, Granit, Demir, Kehribar yüzük, Timsah yüzüğü, Ejder yüzüğü. Yeni parçaların fiyatı = en büyüğü (malzeme × 1,3; tabanı 25 × kademe katsayısı).
+
+| Set | Biyom | Kolye · etki · tarif · fiyat | Yüzük · etki · tarif · fiyat |
+|---|---|---|---|
+| Başlangıç | Çayır | **Diş kolye** · +20 can · 1 Kurt dişi, 4 İp, 2 Kum · 35 | **Taş yüzük** · +%6 toplama hızı · 2 Nehir çakılı, 1 Lif · 25 |
+| Bakır | Çayır | **Kıymık kolye** · +20 enerji · +10 mana · 2 Mor kıymık, 2 İp · 85 | **Bakır yüzük** · +%4 satış fiyatı · 1 Bakır külçesi · 30 |
+| Usta: Kemik | Çayır | **Kemik kolye** · +10 can · kanama direnci %8 · 3 İp, 1 Kemik olta iğnesi · 28 | **Kemik yüzük** · +%3 hasar · 2 Kemik, 1 Sinir · 25 |
+| Tunç | Orman | **Domuz dişi muska** · +40 can · +2 savunma · 1 Yaban domuzu dişi, 4 İp, 2 Kum · 37 | **Tunç yüzük** · +%5 hasar · +15 enerji · 1 Tunç külçesi · 248 |
+| Usta: Meşe ve granit | Orman | **Palamut kolyesi** · +%20 can yenilenmesi · +%10 enerji yenilenmesi · 6 Meşe palamudu, 2 İp, 1 Meşe kabuğu · 33 | **Granit yüzük** · +%10 toplama hızı · +2 savunma · 3 Granit, 1 Kumtaşı · 50 |
+| Demir | Bataklık | **İnci kolye** · zehir direnci %12 · çamurda yavaşlamaz · 3 Sazlı inci, 1 Batık kök · 230 | **Demir yüzük** · +5 savunma · kanama direnci %5 · 1 Demir halka · 244 |
+| Usta: Timsah | Bataklık | **Timsah dişi kolye** · +%4 hasar · zehir direnci %15 · 2 Timsah dişi, 2 İp, 1 Kemik · 101 | **Timsah yüzüğü** · +%2 şans · zehir direnci %8 · 2 Timsah derisi, 1 Demir külçesi · 273 |
+| Çelik | Kayalık Dağ | **Pençe kolye** · +90 can · +4 zırh · 1 Ayı pençesi, 5 İp, 2 Kum · 57 | **Kristal yüzük** · +30 mana · +%20 enerji yenilenmesi · 2 Dağ kristali, 1 Tavan ağı · 360 |
+| Usta: Gümüş ve kuvars | Kayalık Dağ | **Kartal pençesi kolyesi** · +60 enerji · +%3 hız · 2 Kartal pençesi, 2 İp · 72 | **Gümüş yüzük** · +%8 satış fiyatı · +%2 şans · 1 Gümüş külçesi, 1 Yontulmuş kuvars · 368 |
+| Kara çelik | Kül Diyarı | **Kehribar kolye** · +%30 can yenilenmesi · yanık direnci %15 · 1 Kehribar boncuk, 6 İp, 3 Kum · 137 | **Kehribar yüzük** · +%8 hasar · +6 zırh · 2 Kehribar, 1 Demir halka · 348 |
+| Usta: Ejder | Kül Diyarı | **Kül dişi muska** · +%6 hasar · yanık direnci %20 · 2 Kül dişi, 1 Halat, 1 Kehribar · 300 | **Ejder yüzüğü** · +%8 hasar · yanık direnci %12 · 1 Kara pul, 1 Lav pulu · 663 |
+| Mor kristal | Mor Kristal Vadisi | **Ay taşı kolyesi** · +120 can · +50 mana · 1 Ay taşı, 2 İp · 128 | **Altın yüzük** · +%12 satış fiyatı · +%4 şans · 2 Altın külçesi, 1 Kehribar · 1.115 |
+| Usta: Ametist ve obsidyen | Mor Kristal Vadisi | **Gölge dişi kolyesi** · +6 savunma · kanama, yanık ve zehir direnci %8 · 3 Gölge dişi, 1 Kristal ipek · 551 | **Ametist yüzük** · +%10 hasar · +%4 hız · 2 Ametist, 1 Gümüş külçesi · 433 |
 
 ## Evler ve barınaklar (Usta Sinan; v3.39'a kadar Marangoz Çınar)
 
