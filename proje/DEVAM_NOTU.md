@@ -1,3 +1,9 @@
+## v4.22 (13 Kasım 2026) · Kemal "Üçü de tamam"; 5 malzeme yerde de yeni resimle
+- Boğaç: "3 böğürtlen topladım neden 5'i de tamam diyor?" → `CALLS` `e2` metni. "river pebbles neden böyle" → `v420cali` içinde `__plCayirL` Nehir çakılı/Kum/Dal/Kuru ot/Yaprak (13–16 px, sayfanın 7. satırı). Belge: Eşyalar. (4.21 başka bir oturumda uygulama kimliği düzeltmesi olarak çıktı.)
+- Kontrol: chk 0 hata; ekran görüntüsünde beşi de yerde yeni resimle.
+
+**Geri alma:** `git revert` bu commit.
+
 ## v4.21 (13 Kasım 2026) · uygulama kimliği /purple-light/ (CoffeBean ile karışmasın)
 - Boğaç: Purple Light kısayolu CoffeBean açıyordu; CoffeBean yüklenince pencerede adı CoffeBean, içi Purple Light. Sebep: iki oyunun `manifest.webmanifest` `"id": "./"`; Chrome bunu start_url kökenine (`https://bogacavdar.github.io/`) çözüyor → aynı uygulama kimliği. Boğaç: "ikisini de hemen yayınla".
 - Değişen: `manifest.webmanifest` `"id": "/purple-light/"`; belge `parts/05_teknoloji.md` PWA satırı; verlab 4.21. Kod bloğu yok, kayıt alanı yok. CoffeBean tarafı v0.47'de `/coffeBean/`.
@@ -187,16 +193,3 @@
 
 **Kontrol:** chk.js 0 hata. Köprü kutusu ekran görüntüsüyle bakıldı.
 
-## v4.02 (9 Kasım 2026) · mor ışık: daha hafif, kamplara girer, kişiler yardım eder
-
-**Değişen yerler:**
-- `ownCamp`/`campFor` (satır ~5712): Yıldızsızlar (`a.ysA`) için güvenli yer yalnızca oyuncunun kamp ateşi. Saldırganlık (~5750), geri çekilme (~5772) ve kamp sınırı (`moveA`/`tickAnimals` sarmalları ~15725) bunu kullanıyor.
-- `v330ys`: `sheltered` ve `spot` yalnızca `ownCamp` ile çalışıyor; sayı ×0,75 (3–9), can/hasar ×0,75, başlangıç değerleri ×0,75; `ATK.P` ve `__plYS.atk()` dışa açıldı.
-- Yeni `v402yard` bloğu (dosya sonu): Börü `alp`'i hareket ettirip saldırı bitince yerine döndürüyor (kayıtta evdeki yeri). Zümrüt ışın yolluyor; Kemal iyileştiriyor.
-- `hitIn` (~13530): daire tutmazsa `visBox` üzerinde 5×4 nokta deniyor.
-- `moveA` (~5743): geçilemez yerde duran canlı en yakın geçilebilir yere yürüyor.
-- Sürüm etiketi `Versiyon 4.02`.
-
-**Geri alma:** `git revert` bu commit (Börü'nün yeri kayda hep evdeki yeriyle yazılır).
-
-**Kontrol:** chk.js 0 hata. 11. gün Börü'nün yanında saldırı: Börü bir gözcü öldürdü. Kemal'in yanında can 50 → 66. Zümrüt'ün yanında tükürücü 22 → 6. Suda kalan Kerevit Reisi 3,5 sn'de karaya çıktı.

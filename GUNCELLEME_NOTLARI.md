@@ -8,6 +8,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.22 · 13 Kasım 2026
+
+### Düzeltmeler
+- Kemal, 3 böğürtlen toplanınca artık "Üçü de tamam evlat!" diyor ("Beşi de tamam" değil).
+
+### Görsel
+- Nehir çakılı, Kum, Dal, Kuru ot ve Yaprak yerde toplanmayı beklerken de yeni resimleriyle görünüyor (önce yalnızca envanterde değişmişti).
+
+### Tasarım belgesi
+- Eşyalar bölümüne bu beş malzemenin yerdeki resminin de yeni olduğu yazıldı.
+
+---
+
 ## Versiyon 4.21 · 13 Kasım 2026
 
 ### Düzeltmeler
@@ -15,6 +28,8 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Teknoloji › Uygulama olarak yükleme: uygulama kimliği `/purple-light/` olarak yazıldı.
+
+---
 
 ## Versiyon 4.20 · 13 Kasım 2026
 
@@ -382,17 +397,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Onay kutuları oyunun görünüşünde:** köprü onarma, görevi bırakma gibi "Evet / Vazgeç" kutuları açık renkli, oyuna uymayan bir kutuydu; artık öbür pencereler gibi koyu zeminli, altın çerçeveli. Köprü kutusundaki ilgisiz "seviye puanın bekliyor" satırı kaldırıldı.
 
 ---
-
-## Versiyon 4.02 · 9 Kasım 2026
-
-### Oynanış
-- **Mor ışık saldırıları %25 daha hafif:** Yıldızsızların sayısı (en çok 9) ve canları ile vuruşları %25 azaldı.
-- **Yıldızsızlar kişilerin kamplarına da giriyor:** Kemal'in kampı, Zümrüt'ün kazanı, Dursun'un ocağı ve kişilerin ateşleri artık seni korumuyor; saldırıyı da ertelemiyor. Yalnızca kendi yaktığın kamp ateşi ve evin içi güvenli.
-- **Kişiler yardım ediyor:** mor ışık onların yanına gelirse savaşa katılıyorlar:
-  - **Savaşçı Börü** Yıldızsızlara koşup kılıç sallıyor, bitince yerine dönüyor.
-  - **Cadı Zümrüt** birkaç saniyede bir büyü ışını yolluyor.
-  - **Yaşlı Kemal** yanındaysan birkaç saniyede bir yaralarını sarıyor (canının %8'i).
-
-### Düzeltmeler
-- **Silahlar değdiği yere vuruyor:** mızrakla (ve öbür silahların özel vuruşlarıyla) atların kafasına ya da bir canlının uzun yerlerine değince hasar gitmiyordu; artık canlının çizildiği her yer sayılıyor.
-- **Suda takılan canlılar:** Kerevit Reisi gibi suya ya da duvara sıkışan bir canlı olduğu yerde donup kalıyordu; artık en yakın kuru yere çıkıp savaşa devam ediyor.
