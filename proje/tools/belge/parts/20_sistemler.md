@@ -1078,3 +1078,9 @@ Karakter penceresinin (C) **İstatistikler** sekmesinde kartlar şöyle sıralan
 - **Dışa aktar:** bütün kayıtlar tek bir kod (`HAMMADDE1:` ile başlar) ya da dosya. **İçe aktar:** kodu yapıştır ya da dosyayı seç. Kayıtlar her adreste ayrıdır (claude.ai sürümü ile GitHub sürümü arasında bu yolla taşınır).
 - Başarımlar, toplama/av listeleri ve tuş atamaları cihaza ayrı kaydedilir.
 - Adresin sonuna `?debug` eklenince geliştirici araçları açılır (`window.__ham`).
+
+## Müzik aletleri (12 Kasım 2026, Boğaç: "müzik aletlerini de çalınabilir yap, uygun seslerde, eline alındığında çalınsın")
+
+- Bütün müzik aletleri **elde tutulur**: kemere takılır, kemerden seçilince eline alınır. Eldeyken **vuruş** (fare tıkı, Vur düğmesi, Boşluk) silah sallamaz, aletin **sıradaki notasını** çalar ve başının üstünde aletin renginde bir ♪ çıkar. Art arda basınca aletin kendi ezgisi çalınır; 2,5 saniye basmazsan ezgi baştan başlar. Ses, oyunun ses ayarındaki **efekt** düzeyine bağlıdır.
+- Her aletin kendi sesi vardır: **Kemik flüt** ince ve tiz bir flüt; **Kamış flüt** nefesli bir kamış; **Kök flütü** pes, tahtamsı bir flüt; **Pişmiş kil düdük** yumuşak bir okarina; **Boynuz borazan** pes bir boru çağrısı; **Kor zurnası** genizden, titrek bir zurna (hicaz tınısında); **Deri davul** tok bir "düm-tek"; **Yarasa zarı davul** daha ince, kuru bir davul; **Semender derisi tef** zilli bir tef; **Yankı çanı** yankılanan bir çan; **Gümüş çan** berrak bir çan; **Kristal zil** cam gibi parlayan bir zil.
+- Davul ve tef daha sık (0,18 sn), çan ve zil daha seyrek (0,3 sn), öbürleri 0,24 sn arayla çalınabilir. Çalmak hasar vermez, canlıları ürkütmez; alet aşınmaz. Alet El yapımı listesinde ve envanterde "Süs, boya ve müzik" başlığındadır.

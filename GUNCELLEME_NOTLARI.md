@@ -8,6 +8,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.11 · 12 Kasım 2026
+
+### Oynanış
+- **Müzik aletleri çalınıyor:** 12 müzik aletinin hepsi eline alınabiliyor (kemere tak, kemerden seç). Eldeyken vuruş tuşu (tık, Vur, Boşluk) aletin sıradaki notasını çalıyor, başının üstünde bir ♪ çıkıyor; art arda basınca aletin kendi ezgisi çalınıyor.
+
+### Ses
+- Her aletin kendi sesi var: Kemik flüt tiz bir flüt, Kamış flüt nefesli bir kamış, Kök flütü pes ve tahtamsı, Pişmiş kil düdük okarina gibi, Boynuz borazan pes bir boru, Kor zurnası genizden ve titrek bir zurna, Deri davul tok bir "düm-tek", Yarasa zarı davul daha kuru, Semender derisi tef zilli, Yankı çanı yankılanan, Gümüş çan berrak bir çan, Kristal zil cam gibi parlıyor.
+
+### Tasarım belgesi
+- Sistemler'e "Müzik aletleri" bölümü; Eşya dizininde aletlerin türü "çalınır".
+
+---
+
 ## Versiyon 4.10 · 12 Kasım 2026
 
 ### Oynanış
@@ -309,22 +322,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Giriş › Kural: "Para birimi: vio"; belgenin her yerinde sikke → vio.
-
----
-
-## Versiyon 3.91 · 9 Kasım 2026
-
-### Arayüz
-- **Sol üst sade:** can çubuğunun üstünde kutusuz tek satır: gün ("10. gün"), dijital saat, hava durumu simgesi ve mevsim çemberi. Hava adı ve mevsim adı artık yazı olarak çıkmıyor.
-- **Dijital saat:** gündüz amber, gece mavi rakamlar. Üstüne gelince gündüz ve gecenin süresi kısaca yazıyor.
-- **Hava durumu simgesi:** ☀ / 🌙 / ☁ / 🌧 / ⛈ / 🌫 / ❄ / 🌋. Üstüne gelince adı ve sıcaklık yazıyor.
-- **Mevsim çemberi:** dört renk (İlkbahar yeşil, Yaz sarı, Sonbahar turuncu, Kış açık mavi), üstünde yılı saat gibi yavaşça dönen bir ok. Üstüne gelince mevsimler ve şu an hangisinde olduğun (kaçıncı gün, sonrakine kaç gün) görünüyor.
-- **Öğretici kartı yarı alan:** sağ üstteki kart eskisinin yarısı kadar yer kaplıyor (her kenarı ×0,71).
-- **Takip şeridi geniş:** yazı biraz küçük, tarif adı ve malzeme kutucukları daha geniş; adlar çoğunlukla kısalmadan sığıyor, sütun düzeni aynı.
-- Telefonda saat kutusu eskisi gibi.
-
-### Tasarım belgesi
-- Sistemler › Mevsimler: "Sol üstteki gün, saat, hava ve mevsim", Sıcaklık maddesi.
-- Sistemler › Takip şeridi geniş; Oyun akışı › Öğretici kartı küçük.
 
 ---

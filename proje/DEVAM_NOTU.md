@@ -1,3 +1,10 @@
+## v4.11 (12 Kasım 2026) · müzik aletleri çalınır
+- Boğaç: "müzik aletlerini de çalınabilir yap, uygun seslerde, eline alındığında çalınsın". Belge: Sistemler › Müzik aletleri.
+- Yeni `v411muzik` bloğu (v410taki'den sonra): `INS` (ad → ses, ezgi MIDI, ♪ rengi); her alete `GT` girdisi (kind 'music', dur 1e6: kemere takılır); `attack` sarmalayıcısı: eldeki alet çalınır (atkCd 0,18/0,24/0,3), `audio.synth` ile yerinde ses (flüt/kamış/kök/okarina: `blow`; borazan, zurna, davul, tef, çan, yankı, zil); `qc('play:'+ad)`. `hGrp`'ta music → 8. `window.__plMusic`.
+- Kontrol: chk 0 hata; 12 alet OfflineAudioContext'te sesli (hatasız); eldeyken vuruş çalıyor, sallamıyor.
+
+**Geri alma:** `git revert` bu commit.
+
 ## v4.10 (12 Kasım 2026) · kolye ve yüzük yuvaları
 - Boğaç: "kolye ve yüzükleri giyilebilir yap, figürden takılabilir olsunlar; her biri ayrı etkili ve bir zırh setine dahil; 5 → 7 giyilebilir". Belge: Aletler › Kolye ve yüzükler.
 - Çekirdek: `SLOTS_EQ` + `['kolye','Boyun'],['yuzuk','Yüzük']`; `equip`'e iki anahtar; applyState'te `Object.assign(equip,…)` iki anahtarla; `FXL` ve `eqTxt(n)` (giyilenin yazısı) — 3071 bilgi, dollHTML, figür ipucu (v387env `figHTML`, `POS` kolye [144,52], yüzük [4,208]), arena `aStat` ve `leftHTML` iki yuva düğmesi, v258c `aInfo` (💍 satırı; 18470'te 💍 simgesi); `.ieqs` 7 sütun.
@@ -197,12 +204,4 @@
 **Geri alma:** `git revert` bu commit.
 
 **Kontrol:** chk.js 0 hata; oyun dosyasında ve belgede "sikke" 0. Ekran: sol altta mor para + "0 vio", pencere sayacı mor. Konsol hatası yok.
-
-## v3.91 (9 Kasım 2026) · sol üst: gün, dijital saat, hava simgesi, mevsim çemberi; öğretici kartı yarı alan; takip şeridi geniş
-
-**Değişen yerler:** yeni blok `v391hud`: `body.v391` (yalnızca bilgisayar; `v50m`'de `.hd` gizli) `#clock` kutusuz, `#clockic/#clockv/#clockms` gizli, yeni çocuklar `#hdday`, `#hdtime` (dijital, `.hdpop` gündüz/gece süresi, `NIGHT=[150,108,150,210]`, Mor gece 240), `#hdwx` (simge + ad + `__plTempStr`), `#hdsea` (SVG dört yay + ok, açı = yılın 28 günündeki yeri, gün 06:00'da başlar). `renderClock` sarmalı + 1 sn'lik `upd()` (anahtar değişince DOM). CSS: `#tut{transform:scale(.7071);transform-origin:top right}` (bilgisayar), `#b3trk .b3lab` 16em / `.b3cell` 15em / 12 px. Belge: 20_sistemler.md, 10_akis.md. Sürüm etiketi `Versiyon 3.91`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. 1920×1080: satır 255 px'e sığıyor (#left genişliği), şerit 458 px ve adlar kısalmadan; kart 540×283 → 382×200 (alan %50). 10. gün 21:00 (Yaz): saat mavi, ipucu "Gece 20:00–06:00 · 1,8 dk". Konsol hatası yok.
 
