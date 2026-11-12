@@ -1,3 +1,12 @@
+## v4.15 (12 Kasım 2026) · törpüleme: taş uçlu aletler, gövde zırhları, Ametist kılıcı
+- Boğaç: "1'i kesin uygulayalım, 2'deki miktarları %50 azaltalım; ametist kılıcını da azaltalım ama bu malzemeler başka bir eşyada yoksa anlamsız bırakmayalım". Belge: Tarifler › Törpüleme.
+- Yeni `v415torpu` bloğu (v414tek'ten sonra): `NEW` (22 tarif: 9 taş uçlu balta/kazma/mızrak, 12 gövde zırhı yarı adet yukarı yuvarlanır, Ametist kılıcı) REC'e yazılır, USES güncellenir. Fiyatlar aynı (set basamağı).
+- Kontrol: chk 0 hata; boşta malzeme yok (Mor zehir Ametist kılıcında kalır).
+- El yapımı başlıkları (çekirdek `H_GRP`/`hGrp`, v4.08 bloğu yerinde): "Zanaat" başlığı kalktı (Malzemeler indeksi 10 → 9); `hTool` (çanta, torba, ok kılıfı, bıçaklar, yemler, Gübre, Kaya patlatıcı + `DB.R` tarif aletleri) → Aletler; ` ok$`/`mermisi$` → Silahlar; Hasırotu yatak → Yapılar; Giyim türünde olup giyilmeyen (Kristal ipek kumaş) → Malzemeler. Keşif defteri türleri (`REC.c`, CODEX_PERK) değişmedi.
+- Not: gövde zırhı artık aynı setin miğferiyle aşağı yukarı aynı malzemeyi istiyor (Kara çelik miğfer 15, zırh 15).
+
+**Geri alma:** `git revert` bu commit.
+
 ## v4.14 (12 Kasım 2026) · ayıklama: listesi konuşulan 44 eşya kalktı, 13 malzeme işe yarayan tariflere
 - Boğaç: "bu işlevsiz tarifleri kaldıralım ama bileşenlerinden işlevli farklı tarifler yaptıralım… her topladığımız şeyin mantıklı bir tarifte kullanılması lazım"; "mantıklı bir şey bulamıyorsak materyalleri değiştirmeliyiz" (gerek kalmadı: 13'üne de yer bulundu). Belge: Tarifler › Ayıklama.
 - Kaynakta silindi (v4.12'deki gibi, aynı betik `w/v412/rm.py`): çekirdek `db` JSON R/p/t, `tiers`, `addR`, `A['…']` ikonları, `drawIcon` dalları (kazıyıcı, kaşık, Kükürt çakmağı, kano/kızak/kütük salı), RAWM, v48 'İnci (tatlısu)', v406odun OLD kaşıkları, v409tek SW/VAR/NP satırları.
@@ -196,12 +205,4 @@
 **Geri alma:** `git revert` bu commit.
 
 **Kontrol:** chk.js 0 hata. Zümrüt'ün meşale dersinde (tz 4) yaprak ve dal mavi parlıyor. Konsol hatası yok.
-
-## v3.95 (9 Kasım 2026) · Çayır yer toplanabilirleri yeni görünüş; Yabani havuç → Havuç
-
-**Değişen yerler:** yeni blok `v395cayir` (dosyanın sonu): `drawNode` sarmalı, `L[ad]` olan düğümleri (mağara/maden düğümü değilse) kendi sprite'ıyla çizer: Dal, Yaprak (Boğaç'ın gönderdiği yaprak + kahverengi sap, `LEAF`), Kum, Ebegümeci, Hardal otu, Nane (`__p1.spr` yeşilleri ×0,8), Yaban çileği, Havuç (yarısı gömülü), Yarasa gübresi; çizim oyunun yoluyla (`__p1k` kit, `lightCanvas`, `outlineCanvas`, önbellek, `drawSprite`). Seçim araçları: `/home/claude/spr` (cap.js, comp.py). Ad: kaynakta "Yabani havuç" → "Havuç" (RES, bitki listeleri, tarifler, E6 görevi metni ve isteği, `P1W`), fiyat tablosundaki `"Yabani havuç":2` silindi (Havuç 10), `P1I['Yabani havuç']` → `P1I['__eski yabani havuç']` (Havuç'un kendi resmi kalır); `v373sade` `REPL`'e Yabani/Kızarmış/Kurutulmuş yabani havuç → Havuç karşılıkları (eski kayıt). Belge: 20_sistemler, 30_act1, 80_tarifler, 90_esyalar. Sürüm etiketi `Versiyon 3.95`.
-
-**Geri alma:** `git revert` bu commit (eski kayıtlarda Havuç'a dönen yabani havuçlar geri dönmez).
-
-**Kontrol:** chk.js 0 hata. Eşya denetimi: 1336 eşya (−1) / 997 tarif, bilinmeyen 0, fiyatsız 0, kullanılmayan ham 68. Çayır'da 35 Havuç düğümü. Eski kayıt (Yabani havuç 4, Kızarmış yabani havuç 1) → Havuç 4, Kızarmış havuç 1. Oyun içi ekran görüntüsünde seçilen dokuz çizim. Konsol hatası yok.
 

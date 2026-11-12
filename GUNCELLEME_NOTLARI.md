@@ -8,6 +8,28 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.15 · 12 Kasım 2026
+
+### Oynanış
+- **Karışık tarifler sadeleşti:**
+  - **Taş uçlu balta, kazma ve mızraklar** (Çakmaktaşı, Kuvars, Obsidyen) artık yalnız uç, sap, İp ve en çok bir ek malzeme istiyor; Dal ve Taş istemiyor. Mızraklar etkilerini veren yağı (Bileme macunu, Zehir yağı), Obsidyen balta ve kazma bir Ametist istiyor.
+  - **Bütün gövde zırhları** yarı malzemeyle yapılıyor. Örneğin Kara çelik zırh 29 yerine 15 malzeme, Çelik zırh 24 yerine 13 malzeme istiyor.
+  - **Ametist kılıcı** 6 yerine 4 malzeme istiyor: Ametist, Kadim odun sapı, Gölge dişi, Mor zehir.
+- Fiyatlar ve özellikler değişmedi.
+
+### Arayüz
+- **El yapımı listesinin başlıkları eşyanın ne işe yaradığına göre:** "Zanaat" başlığı kalktı.
+  - Oklar "Silahlar"da.
+  - Çanta, torba, ok kılıfı, bıçaklar, olta yemleri, Gübre, Kaya patlatıcı ve tariflerde alet olarak kullanılanlar (iğne, bileği taşı, havan…) "Aletler"de.
+  - Hasırotu yatak "Yapılar ve ev eşyası"nda.
+  - İp, hasır, kumaş ve yağ gibi ara parçalar "Malzemeler"de.
+  - Kitap'taki Keşif defteri ve ödülleri aynı.
+
+### Tasarım belgesi
+- Tarifler'e "Törpüleme" bölümü; değişen tarifler ve malzemelerin kullanıldığı yerler güncellendi. Sistemler › El yapımı kategorili: yeni başlıklar.
+
+---
+
 ## Versiyon 4.14 · 12 Kasım 2026
 
 ### Oynanış
@@ -333,28 +355,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Arayüz
 - **Pazarda satış düğmeleri sade:** *Sat* ve *Hepsi* düğmelerinde artık tutar yazmıyor; fiyat zaten satırın solunda.
-
----
-
-## Versiyon 3.95 · 9 Kasım 2026
-
-### Görsel
-- **Çayır'da yerdeki toplanabilirler yenilendi** (Boğaç teker teker seçti):
-  - **Dal:** ince, yatay çubuk; küçük çatal ve tomurcuk.
-  - **Yaprak:** iki tonlu yeşil yaprak; koyu orta damar ve yan damarlar, kahverengi sap.
-  - **Kum:** dalga izli kum tepeciği.
-  - **Ebegümeci:** saplar üstünde üç pembe-mor çiçek.
-  - **Hardal otu:** dallanan sap üstünde sarı çiçek kümeleri.
-  - **Nane:** aynı çizim, yeşilleri biraz koyu.
-  - **Yaban çileği:** üçlü yapraklar, altında kırmızı meyveler.
-  - **Havuç:** yarısı toprağa gömülü turuncu havuç ve yeşil filizler.
-  - **Yarasa gübresi:** açık renkli kırıntılı koyu yığın.
-  - Aynı eşyalar başka bölgelerde de çıkıyorsa orada da yeni görünüşleriyle çıkıyor; envanter resimleri değişmedi.
-
-### Oynanış
-- **"Yabani havuç" artık düz "Havuç":** Çayır'da yerden toplanan da tarladaki Havuç ile aynı eşya. Kızarmış yabani havuç → **Kızarmış havuç**; Saliha'nın çorbası görevi 3 Havuç istiyor. Eski kayıtlardaki yabani havuçlar kendiliğinden Havuç'a dönüyor.
-
-### Tasarım belgesi
-- Sistemler › "Çayır'da yerdeki toplanabilirlerin görünüşü"; Çayır bitkileri, tarifler, eşya dizini ve E6 görevinde Yabani havuç → Havuç.
 
 ---
