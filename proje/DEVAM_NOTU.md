@@ -1,3 +1,11 @@
+## v4.14 (12 Kasım 2026) · ayıklama: listesi konuşulan 44 eşya kalktı, 13 malzeme işe yarayan tariflere
+- Boğaç: "bu işlevsiz tarifleri kaldıralım ama bileşenlerinden işlevli farklı tarifler yaptıralım… her topladığımız şeyin mantıklı bir tarifte kullanılması lazım"; "mantıklı bir şey bulamıyorsak materyalleri değiştirmeliyiz" (gerek kalmadı: 13'üne de yer bulundu). Belge: Tarifler › Ayıklama.
+- Kaynakta silindi (v4.12'deki gibi, aynı betik `w/v412/rm.py`): çekirdek `db` JSON R/p/t, `tiers`, `addR`, `A['…']` ikonları, `drawIcon` dalları (kazıyıcı, kaşık, Kükürt çakmağı, kano/kızak/kütük salı), RAWM, v48 'İnci (tatlısu)', v406odun OLD kaşıkları, v409tek SW/VAR/NP satırları.
+- Yeni `v414tek` bloğu (v413isle'den sonra): `SW2` 13 satır (Pirit → Pençe kolye, Kum yerine), `NP` Pençe kolye 91, `GONE` 75 ad (eski kayıtta ödenir).
+- Kontrol: chk 0 hata; ACT 1'de tarifsiz/boşta malzeme yok (yalnız ACT 2'nin 8 cevheri + 3 düşmesi); eski kayıtta 2 Odun kaşığı + 1 Çam kaşığı + 1 Kızak → +234 Vio.
+
+**Geri alma:** `git revert` bu commit.
+
 ## v4.13 (12 Kasım 2026) · 47 eşya geri; 21 işe yaramayan eşyaya iş
 - Boğaç: "şimdilik kaldırma bir şeyi, bir konuşalım sonra kaldırırsın; önerilerini uygula". **Kural:** bir eşyayı oyundan kaldırmadan önce Boğaç'la listeyi konuş.
 - `proje/Hammadde_prototip.html` ve `parts/` v4.11 halinden (v4.12 öncesi) geri alındı (`git checkout bb27934`); `v412ayik` bloğu yok, kaynaktaki silmeler geri geldi. 4.12'yi açan kayıtlarda o eşyalar Vio'ya çevrildi; geri dönmez.
@@ -196,12 +204,4 @@
 **Geri alma:** `git revert` bu commit (eski kayıtlarda Havuç'a dönen yabani havuçlar geri dönmez).
 
 **Kontrol:** chk.js 0 hata. Eşya denetimi: 1336 eşya (−1) / 997 tarif, bilinmeyen 0, fiyatsız 0, kullanılmayan ham 68. Çayır'da 35 Havuç düğümü. Eski kayıt (Yabani havuç 4, Kızarmış yabani havuç 1) → Havuç 4, Kızarmış havuç 1. Oyun içi ekran görüntüsünde seçilen dokuz çizim. Konsol hatası yok.
-
-## v3.94 (9 Kasım 2026) · öğretici kartında konuşanın resmi
-
-**Değişen yerler:** `tzCard` 9. adım başlığı "Zümrüt · Pazarcı Nazlı'ya git", 13. adım `['alp','Börü · Demirci Dursun'a git',…]`; `renderTz` boş konuşanı adımdan tamamlar (10 market, 11–13 alp); `v64` bloğunda `tutPor.market/alp/smith` (`porFor`). Yeni `<style id="v394pazar">` + `v394pazarjs`: bütün pencerelerde `.ccoins` ve `#closecraft` 32 px, `.esc` gizli (title "Kapat (Esc)"); `#craft.cm-sell` en çok 600 px, boyu `--plMaxH`; araç satırı 3 sütun ızgara, satırlar `display:flex` tek satır, `.note` gizli, Sat/Satın al iki parçalı anahtar, bütün düğmeler tek stil; JS toplu satış düğmelerini kısaltır (title tam açıklama) ve `.kz` ipucunu "N tarif" yapar. Belge: 10_akis.md, 20_sistemler.md. Sürüm etiketi `Versiyon 3.94`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. 8–13. adımlarda kart resmi: Zümrüt, Zümrüt, Nazlı, Börü, Börü. Konsol hatası yok.
 

@@ -8,6 +8,32 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.14 · 12 Kasım 2026
+
+### Oynanış
+- **İşe yaramayan 44 eşya oyundan kalktı** (listesi konuşuldu):
+  - Süs: boncuklar, taçlar, yelpazeler, muskalar.
+  - Aletler: kazıyıcılar, çakmaklar, odun kaşıkları.
+  - Ateş: Don yağı mumu, Hasırotu meşalesi, Kozalak ateşi.
+  - Taşıtlar: Kızak, Kütük salı, Oyma kano.
+  - Kap ve eşyalar: sepetler, kaseler, Kum torbası, Eğrelti yatağı, Yosun yastık, Akrep kabuğu kalkanı ve diğerleri.
+  - Yalnız bunlar için yapılan Kristal parçası, Saz örgüsü ve Isırgan lifi de kalktı.
+- **Topladığın her malzeme işe yarıyor:** yalnız bu eşyalarda kullanılan 13 malzeme, kendi biyomlarında işe yarayan bir tarife girdi:
+  - Akrep kabuğu Kara çelik eldivende, Lav yılanı pulu Kara çelik çizmede, Yarasa kanadı Ejder miğferinde.
+  - Gölge pulu Mor kristal çizmede, Ayna ipeği Kristal ipek çizmede, Kristal boynuz Ametist miğferde.
+  - Kaya yarasası kanadı Gümüş eldivende, Pirit Pençe kolyede.
+  - Kristal çiçeği Ay otu iksirinde, Yıldız çiçeği Gölge iksirinde.
+  - Sarkıt Taş kasede, Çam kozalağı Meşalede, Eğrelti Meşe kabuk çizmede.
+- Pençe kolyenin fiyatı 57'den 91'e çıktı (Pirit girdi).
+
+### Kayıtlar
+- Eski kayıtlarda kalkan eşyalar çantadan, sandıktan, kemerden ve yerden kalkar; elindekiler son fiyatlarıyla Vio olarak ödenir.
+
+### Tasarım belgesi
+- Tarifler'e "Ayıklama" bölümü; tarif ve eşya tabloları, sayılar (1.239 eşya, 768 tarif) güncellendi.
+
+---
+
 ## Versiyon 4.13 · 12 Kasım 2026
 
 ### Oynanış
@@ -330,18 +356,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Sistemler › "Çayır'da yerdeki toplanabilirlerin görünüşü"; Çayır bitkileri, tarifler, eşya dizini ve E6 görevinde Yabani havuç → Havuç.
-
----
-
-## Versiyon 3.94 · 9 Kasım 2026
-
-### Arayüz
-- **Pazar penceresi yeniden:** Nazlı'nın pazarı artık ince ve uzun; ekrana iki kat fazla satır sığıyor. Arama çubuğu bütün genişlikte. Toplu satış düğmeleri kısa adlarla yan yana: **Hepsini sat**, **Fazlasını sat**, **Gerekmeyeni sat** (ne yaptıkları üstüne gelince yazıyor). Sat / Satın al ince bir anahtar. Her eşya tek satır: adı, küçük ipucu ("3 tarif"), fiyat, adet, Sat, Hepsi. Bütün düğmeler aynı boyda ve aynı renkte.
-- **Vio ve Kapat aynı boyda:** bütün pencerelerin başlığında Vio sayacı ile Kapat düğmesi artık aynı boyda; "(Esc)" yalnızca Kapat'ın üstüne gelince yazıyor.
-- **Öğretici kartında konuşanın yüzü:** sağ üstteki öğretici kartında her zaman o kartı söyleyen kişinin resmi var. Zümrüt'ün seni Nazlı'ya yolladığı kartın başlığı artık "Zümrüt · Pazarcı Nazlı'ya git" (önceden Zümrüt'ün yüzüyle "Pazarcı Nazlı" yazıyordu). "Nazlı · Sat" kartında Nazlı'nın, Börü'nün kartlarında Börü'nün yüzü var; Dursun'a yollayan kart "Börü · Demirci Dursun'a git".
-
-### Tasarım belgesi
-- Oyun akışı › "Öğretici kartında konuşanın resmi".
-- Sistemler › "Pazar penceresi derli toplu" (pazar en çok 600 piksel).
 
 ---

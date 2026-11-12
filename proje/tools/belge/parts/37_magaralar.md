@@ -203,7 +203,7 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 | Dağ kristali | toplanır | 58 | Kristal yüzük, Dev yüreği tılsımı |
 | Rüzgâr taşı | toplanır | 42 | Kartal tüyü miğfer |
 | Kar likeni | toplanır | 40 | Dev yüreği tılsımı |
-| Kaya yarasası kanadı | Kaya yarasası | 104 | Kanat yelpazesi |
+| Kaya yarasası kanadı | Kaya yarasası | 104 | Gümüş eldiven |
 | Tavan ağı | Tavan örümceği | 112 | Gümüş çan, Kristal yüzük |
 | Gri vaşak postu | Mağara vaşağı | 150 | – (satılır) |
 | Dev yüreği | Dağ Devi | 1.300 | Dev yüreği tılsımı |
@@ -212,7 +212,6 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 |---|---|---|---|
 | Gümüş çan | Müzik | 3 Gümüş filizi, 1 Tavan ağı | 440 |
 | Kristal yüzük | Süs | 2 Dağ kristali, 1 Tavan ağı | 360 |
-| Kanat yelpazesi | Süs | 3 Kaya yarasası kanadı, 2 Dal | 380 |
 | Dev yüreği tılsımı | Büyü | 1 Dev yüreği, 2 Dağ kristali, 2 Kar likeni | 2.000 |
 
 ### 5 · Kor Mağarası (Kül Diyarı · Sv 34)
@@ -236,9 +235,9 @@ Kül Diyarı'nın altında, yarıklarından kor ışığı sızan sıcak bir ma�
 | Kükürt kristali | toplanır | 66 | Kükürt sarısı boya, Duman fişeği |
 | Kor taşı | toplanır | 60 | Kor zurnası, Kor tacı tılsımı |
 | Kül mantarı | toplanır | 54 | Duman fişeği |
-| Volkan camı | toplanır | 74 | Volkan camı muska, Kor tacı tılsımı |
+| Volkan camı | toplanır | 74 | Kor tacı tılsımı |
 | Kor kabuğu | Kor böceği / Kor Kral | 160 | Kor zurnası |
-| Lav yılanı pulu | Lav yılanı | 178 | Volkan camı muska |
+| Lav yılanı pulu | Lav yılanı | 178 | Kara çelik çizme |
 | Duman özü | Duman cini | 196 | Duman fişeği |
 | Kor Kral tacı | Kor Kral | 1.800 | Kor tacı tılsımı |
 
@@ -247,7 +246,6 @@ Kül Diyarı'nın altında, yarıklarından kor ışığı sızan sıcak bir ma�
 | Kükürt sarısı boya | Boya | 2 Kükürt kristali, 1 Su | 210 |
 | Duman fişeği | Av ve hayvan | 1 Duman özü, 1 Kükürt kristali, 1 Kül mantarı | 420 |
 | Kor zurnası | Müzik | 2 Kor kabuğu, 1 Kor taşı | 500 |
-| Volkan camı muska | Süs | 2 Volkan camı, 1 Lav yılanı pulu | 540 |
 | Kor tacı tılsımı | Büyü | 1 Kor Kral tacı, 2 Kor taşı, 1 Volkan camı | 2.800 |
 
 ### 6 · Ayna Mağarası (Mor Kristal Vadisi · Sv 42)
@@ -273,15 +271,14 @@ Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara
 | Ayna taşı | toplanır | 90 | Kristal zil, Işık Yutan kalbi tılsımı |
 | Yıldız tozu | toplanır | 90 | Yıldız tozu yemi |
 | Kristal kanat | Kristal yarasa | 230 | Kristal zil |
-| Ayna ipeği | Ayna örümceği | 250 | Gölge pulu muska |
-| Gölge pulu | Gölge semenderi | 290 | Gölge pulu muska |
+| Ayna ipeği | Ayna örümceği | 250 | Kristal ipek çizme |
+| Gölge pulu | Gölge semenderi | 290 | Mor kristal çizme |
 | Işık Yutan kalbi | Işık Yutan | 2.600 | Işık Yutan kalbi tılsımı |
 
 | Tarif | Kategori | Malzemeler | Fiyat |
 |---|---|---|---|
 | Kristal zil | Müzik | 2 Kristal kanat, 1 Ayna taşı | 700 |
 | Mor damar boyası | Boya | 2 Mor damar taşı, 1 Su | 300 |
-| Gölge pulu muska | Süs | 2 Gölge pulu, 1 Ayna ipeği | 860 |
 | Yıldız tozu yemi | Av ve hayvan | 2 Yıldız tozu, 1 Işık sporu | 504 |
 | Işık Yutan kalbi tılsımı | Büyü | 1 Işık Yutan kalbi, 2 Mor damar taşı, 2 Ayna taşı | 4.200 |
 

@@ -3,7 +3,7 @@
 ## Nerede yapılır: örs ya da el
 
 - **Örste (demirci ve zırhçılar) yalnızca silah, zırh, balta ve kazma dövülür:** kılıç, savaş çekici, topuz, mızrak, yay (ok atan yaylar), **bıçaklar**, asalar ve ateşli silahlar; baltalar ve kazmalar (Boynuz kazma dahil); efektli (alevli/zehirli/keskin) silahlar; bütün zırhlar.
-- **Geri kalan bütün aletler elle yapılır** (El yapımı: bilgisayarda **Tab**, telefonda el ikonu): Tuzak, Sapan ve Bola (fırlatılan av aletleri; aşağıda "Sapan ve Bola"), Olta, Ağ, Kemik zıpkın, Balık kapanı ve deniz oltaları, Kürek, Tırmık, Tırpan, Sulama kabı, meşaleler, kazıyıcılar, Kemik iğne, Kirmen, Dokuma tezgâhı, Bileği taşı, Çekiç taşı, Öğütme taşı, Pişirme taşı, Taş havan, Pirit çakmağı. Tarifleri eskisi gibi **kazanda öğrenilir**; öğrenilince El yapımı listesinde çıkar, demircinin listesinde çıkmaz.
+- **Geri kalan bütün aletler elle yapılır** (El yapımı: bilgisayarda **Tab**, telefonda el ikonu): Tuzak, Sapan ve Bola (fırlatılan av aletleri; aşağıda "Sapan ve Bola"), Olta, Ağ, Kemik zıpkın, Balık kapanı ve deniz oltaları, Kürek, Tırmık, Tırpan, Sulama kabı, meşaleler, Kemik iğne, Kirmen, Dokuma tezgâhı, Bileği taşı, Çekiç taşı, Öğütme taşı, Pişirme taşı, Taş havan. Tarifleri eskisi gibi **kazanda öğrenilir**; öğrenilince El yapımı listesinde çıkar, demircinin listesinde çıkmaz.
 - Elle yapılan bir aletten (dayanıklılığı olan) **aynı anda bir tane** taşınır: elindeyken yenisi yapılmaz ("zaten sende"), yeni yapılan tam keskinlikle gelir. Körelince Demirci Dursun eskisi gibi **bileyler**.
 
 ## Silah bilgisi her yerde yazar
@@ -526,7 +526,7 @@ Yedi yuva vardır: **baş, gövde, el, ayak, silah, boyun (kolye), yüzük**. Ö
 | Usta: Meşe ve granit | Orman | **Palamut kolyesi** · +%20 can yenilenmesi · +%10 enerji yenilenmesi · 6 Meşe palamudu, 2 İp, 1 Meşe kabuğu · 33 | **Granit yüzük** · +%10 toplama hızı · +2 savunma · 3 Granit, 1 Kumtaşı · 50 |
 | Demir | Bataklık | **İnci kolye** · zehir direnci %12 · çamurda yavaşlamaz · 3 Sazlı inci, 1 Batık kök · 230 | **Demir yüzük** · +5 savunma · kanama direnci %5 · 1 Demir halka · 244 |
 | Usta: Timsah | Bataklık | **Timsah dişi kolye** · +%4 hasar · zehir direnci %15 · 2 Timsah dişi, 2 İp, 1 Kemik · 101 | **Timsah yüzüğü** · +%2 şans · zehir direnci %8 · 2 Timsah derisi, 1 Demir külçesi · 273 |
-| Çelik | Kayalık Dağ | **Pençe kolye** · +90 can · +4 zırh · 1 Ayı pençesi, 5 İp, 2 Kum · 57 | **Kristal yüzük** · +30 mana · +%20 enerji yenilenmesi · 2 Dağ kristali, 1 Tavan ağı · 360 |
+| Çelik | Kayalık Dağ | **Pençe kolye** · +90 can · +4 zırh · 1 Ayı pençesi, 5 İp, 1 Pirit · 91 | **Kristal yüzük** · +30 mana · +%20 enerji yenilenmesi · 2 Dağ kristali, 1 Tavan ağı · 360 |
 | Usta: Gümüş ve kuvars | Kayalık Dağ | **Kartal pençesi kolyesi** · +60 enerji · +%3 hız · 2 Kartal pençesi, 2 İp · 72 | **Gümüş yüzük** · +%8 satış fiyatı · +%2 şans · 1 Gümüş külçesi, 1 Yontulmuş kuvars · 368 |
 | Kara çelik | Kül Diyarı | **Kehribar kolye** · +%30 can yenilenmesi · yanık direnci %15 · 1 Kehribar boncuk, 6 İp, 3 Kum · 137 | **Kehribar yüzük** · +%8 hasar · +6 zırh · 2 Kehribar, 1 Demir halka · 348 |
 | Usta: Ejder | Kül Diyarı | **Kül dişi muska** · +%6 hasar · yanık direnci %20 · 2 Kül dişi, 1 Halat, 1 Kehribar · 300 | **Ejder yüzüğü** · +%8 hasar · yanık direnci %12 · 1 Kara pul, 1 Lav pulu · 663 |
