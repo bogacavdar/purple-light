@@ -8,6 +8,28 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.16 · 12 Kasım 2026
+
+### Oynanış
+- **Fiyatlar biyom sırasına oturdu:** her biyomda karşına çıkan eşya bir öncekinden daha değerli.
+  - 13 türün her biri set sırasıyla tek bir düzgün fiyat eğrisine oturdu: miğfer, gövde zırhı, eldiven, çizme, kılıç, savaş çekici, topuz, mızrak, yay, balta, kazma, kolye, yüzük.
+  - Sonraki biyomun parçası, öncekinin her parçasından pahalı.
+  - Aynı biyomda usta parçası, metal parçasından pahalı.
+- **Örnekler:**
+  - Kara çelik kılıç 11.371 → 5.120, Mor kristal kılıç 8.242 → 9.450, Ametist kılıcı 7.986 → 12.850.
+  - Kara çelik savaş çekici 13.965 → 5.900.
+  - Kamış çizme 145 → 915.
+  - Gölge dişi kolyesi 551 → 280, Ametist yüzük 433 → 1.030.
+- **Oklar tane fiyatıyla:** eskiden bir Kara çelik oku 1.823 Vio'ya satılabiliyordu. Artık Basit 2, Bakır 4, Tunç 7, Demir 13, Çelik 25, Kara çelik 48, Mor kristal 90.
+- **Külçeler biyom sırasıyla:** Bakır 38 → Altın 1.180.
+- **Kısa yaylar** aynı biyomun uzun yayının %60'ı.
+- Hasar, savunma, bileme ücretleri ve dükkân fiyatları değişmedi.
+
+### Tasarım belgesi
+- Aletler'e "Fiyat basamağı" bölümü; bütün tablolardaki fiyatlar güncellendi.
+
+---
+
 ## Versiyon 4.15 · 12 Kasım 2026
 
 ### Oynanış
@@ -343,17 +365,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Görsel
 - **Buzlanma:** üşüdükçe ekranın dört köşesinden buz kristalleri başlar, üşüme arttıkça büyüyüp koyulaşır; ısınınca geri çekilir. Çubukları ve düğmeleri kapatmaz.
-
----
-
-## Versiyon 3.96 · 9 Kasım 2026
-
-### Düzeltmeler
-- **Öğreticide yeni çizimler de mavi parlıyor:** Çayır'ın yeni çizimli toplanabilirleri (yaprak, dal, kum, havuç…) öğreticinin ya da görevin istediği malzemeyken etrafında mavi ışık yanmıyordu; artık yanıyor.
-- **Nazlı'nın dersinde Sat düğmesi yine parlıyor:** Pazar penceresi yenilenince öğreticinin Keskin taş satırındaki *Sat* düğmesinin mavi parlaması kaybolmuştu; geri geldi.
-- **Börü'nün "yetenek ağacını aç" adımında tıklayınca yürüme:** bu adımda yerdeki bir eşyaya tıklayınca karakter oraya gitmiyor, olduğu yerde yumruk atıyordu (yumruk dersinin kuralı uzun kalmıştı). Artık yürüyor.
-
-### Arayüz
-- **Pazarda satış düğmeleri sade:** *Sat* ve *Hepsi* düğmelerinde artık tutar yazmıyor; fiyat zaten satırın solunda.
 
 ---

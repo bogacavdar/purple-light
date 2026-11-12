@@ -1,3 +1,10 @@
+## v4.16 (12 Kasım 2026) · fiyat basamağı: biyom sırasıyla pahalanan set parçaları
+- Boğaç: "her biyom atladığımda daha iyi şeyler ile karşılaşmalıyım… bir adaletsizlik var". Belge: Aletler › Fiyat basamağı.
+- Yeni `v416fiyat` bloğu (v415torpu'dan sonra): `PR` 198 eşyanın yeni `PRICE_`/`DB.p` değeri. Hesap (`w/ladder.py`): Bütün setler tablosunun 13 set sırasıyla her türe log-doğrusal eğri (Başlangıç hariç oturtulur, Başlangıç ilk adımın altında); oklar tane fiyatı (2·4·7·13·25·48·90, etkili oklar + yağ/10); külçeler biyom sırasıyla eğri; kısa yaylar uzun yayın %60'ı. GT.price/sharp (dükkân, bileme) değişmedi.
+- Kontrol: chk 0 hata; 198 fiyat oyunda yeni değerinde; 13 türde biyom sırasıyla ters fiyat kalmadı.
+
+**Geri alma:** `git revert` bu commit.
+
 ## v4.15 (12 Kasım 2026) · törpüleme: taş uçlu aletler, gövde zırhları, Ametist kılıcı
 - Boğaç: "1'i kesin uygulayalım, 2'deki miktarları %50 azaltalım; ametist kılıcını da azaltalım ama bu malzemeler başka bir eşyada yoksa anlamsız bırakmayalım". Belge: Tarifler › Törpüleme.
 - Yeni `v415torpu` bloğu (v414tek'ten sonra): `NEW` (22 tarif: 9 taş uçlu balta/kazma/mızrak, 12 gövde zırhı yarı adet yukarı yuvarlanır, Ametist kılıcı) REC'e yazılır, USES güncellenir. Fiyatlar aynı (set basamağı).
@@ -197,12 +204,4 @@
 **Geri alma:** `git revert` bu commit (kayıtlardaki `usume` alanı eski sürümde okunmaz, zararsız).
 
 **Kontrol:** chk.js 0 hata. 25. günde −11°'de üşüme artıyor, Kemal'in ateşinde azalıyor, 95'te can düşüyor. 3. günde (ilkbahar) yağış kar değil. Buzlanma 20/55/95'te ekran görüntüsüyle bakıldı.
-
-## v3.96 (9 Kasım 2026) · yeni çizimler parlama sarmalının içinde
-
-**Değişen yerler:** `v395cayir` artık `drawNode`'u sarmıyor (en dışta durup öğretici/görev parlamasını, `gl()`, atlıyordu); çizimleri `window.__plCayirL`'e koyuyor, ana `drawNode` (satır ~4266) en başta onu okur. Yaprak'ın ×0,7 küçültme sarmalı yeni yaprakta atlanır. Pazar: `v394pazar` stilinin `box-shadow:none!important`'ı `.pulse`'u eziyordu; aynı blokta `ul.mkt li button.pulse` / `.ctools button.pulse` kuralı eklendi. Satış satırında `.sq1` (Sat) ve `[data-sell=all]` (Hepsi) düğmeleri tutarsız (satır ~3155, adet değişince ~3436). `v189` bloğundaki yumruk dersi tıklama yakalayıcısı (`tz===11&&ftut===2`) artık `__plDL.done||__plDL.tree` iken (ders bitti, ağaç adımı) devre dışı. Sürüm etiketi `Versiyon 3.96`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. Zümrüt'ün meşale dersinde (tz 4) yaprak ve dal mavi parlıyor. Konsol hatası yok.
 

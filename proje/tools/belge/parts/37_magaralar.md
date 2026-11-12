@@ -177,7 +177,7 @@ Bataklığın altında, tavanından su sızan, yerleri balçıklı bir mağara. 
 |---|---|---|---|
 | Sülük yemi | Av ve hayvan | 2 Sülük, 1 Siyah balçık | 160 |
 | Semender derisi tef | Müzik | 2 Semender derisi, 2 Batık kök, 1 Dal | 270 |
-| İnci kolye | Süs | 3 Sazlı inci, 1 Batık kök | 230 |
+| İnci kolye | Süs | 3 Sazlı inci, 1 Batık kök | 78 |
 | Yosun yeşili boya | Boya | 2 Parıltı yosunu, 1 Su | 95 |
 | Çamur Ana muskası | Büyü | 1 Çamur Ana gözü, 2 Sazlı inci, 1 Semender derisi | 1.400 |
 
@@ -211,7 +211,7 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 | Tarif | Kategori | Malzemeler | Fiyat |
 |---|---|---|---|
 | Gümüş çan | Müzik | 3 Gümüş filizi, 1 Tavan ağı | 440 |
-| Kristal yüzük | Süs | 2 Dağ kristali, 1 Tavan ağı | 360 |
+| Kristal yüzük | Süs | 2 Dağ kristali, 1 Tavan ağı | 245 |
 | Dev yüreği tılsımı | Büyü | 1 Dev yüreği, 2 Dağ kristali, 2 Kar likeni | 2.000 |
 
 ### 5 · Kor Mağarası (Kül Diyarı · Sv 34)
