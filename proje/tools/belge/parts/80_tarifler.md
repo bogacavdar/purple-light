@@ -53,7 +53,7 @@
 - **Sayılar:** eşya 1336 → 1290, tarif 997 → 937 (ACT 1). Her eşyanın fiyatı var, her tarifin malzemesi elde edilebilir, kullanılmayan yeni malzeme çıkmadı (oyun verisiyle denetlendi).
 - **Eski kayıtlar:** kayıt açılınca ağaç adlı her odun, kalas, sap, kömür, kaşık ve yay yeni adına çevrilir (çantada, sandıkta, kemerde, köpek çantasında, yerde, kitapta); aynı yeni ada düşen sayılar toplanır; bir kez bildirim çıkar.
 - **Kurutulmuş otlar yok:** kurutulmuş kuşburnu, kekik, papatya, lavanta, nane, civanperçemi ve gelincik kalktı; onları isteyen tarifler (çaylar, merhemler) yerine **3 katı taze otu** ister (ör. 1 Kurutulmuş kekik → 3 Kekik).
-- **Kullanılmayan kurutulmuş yiyecekler yok:** hiçbir tarifte kullanılmayan 59 kurutulmuş et, balık, meyve ve mantar kalktı (çiği ve közlenmişi duruyor). Kalan kurutulmuşlar: sincap eti, böğürtlen, meyve keki, yabani elma (Neriman'ın N5 "Kış kurutmalığı" görevi ister) ve tek kullanıldığı tarif kurutulmuşu olan ebegümeci ve yıldız eriği (her malzeme bir tarifte kuralı).
+- **Kullanılmayan kurutulmuş yiyecekler yok:** hiçbir tarifte kullanılmayan 59 kurutulmuş et, balık, meyve ve mantar kalktı (çiği ve közlenmişi duruyor). Kalan kurutulmuşlar: sincap eti, böğürtlen, meyve keki, elma (Neriman'ın N5 "Kış kurutmalığı" görevi ister) ve tek kullanıldığı tarif kurutulmuşu olan ebegümeci ve yıldız eriği (her malzeme bir tarifte kuralı).
 - **Her biyomda tek mantar, mağarasıyla birlikte (8 Kasım 2026, Boğaç: "biyom + mağara totalde 1 mantar olacak; bazen mağarada bazen dışarıda, atmosferi göz önünde bulundur"):** ACT 1'de Çayır **Yankı mantarı** (yalnız Yankı Mağarası'nda, mavi parlar), Orman **Kanlıca** (dışarıda), Bataklık **Sinek mantarı** (dışarıda), Kayalık Dağ **Kayın mantarı** (dışarıda), Kül Diyarı **Kül mantarı** (yalnız Kor Mağarası'nda), Mor Kristal Vadisi **Işık mantarı** (dışarıda; Ayna Mağarası'nda mantar yok). ACT 2'de Yüzen Kayalar **Gök mantarı**, Dev Mantar Ormanı **Işıldak mantarı**, Hurda Çölü **Keme** (çöl trüfü), Kristal Golem Ocağı **Kristal mantarı**, Ejder Volkanı **Kor mantarı**, Gök Rıhtımı **Yıldız mantarı**. Kalkanlar: Tavuk mantarı, Kuzugöbeği (Orman), Kav mantarı (Kayalık Dağ), Çayır mantarı, Mağara mantarı (her mağara), Kök mantarı (Kök Mağarası), Mantar şapkası (ACT 2); Kayın mantarı ACT 2'de çıkmaz. Tarifler: Kızarmış tavuk mantarı, Kızarmış kuzugöbeği, Kızarmış çayır mantarı, Kızarmış mağara mantarı silindi; **Kav** Kayın mantarıyla, **Kök özü iksiri** 2 Kök reçinesiyle yapılır; Kök mantarlı güveç **Kanlıcalı güveç** oldu (2 Kanlıca); yeni **Kızarmış keme**. Görevler: Yakut'un Y3 "Mantar sepeti" ve Fidan'ın NF1 "Mantar tezgâhı" (6) **Kanlıca**, Firuze'nin "Liken ve kav"ı **Kayın mantarı**, Zümrüt'ün Z7 "Güneş görmeyenler"i **Yankı mantarı** ister. Eski kayıtlarda Tavuk mantarı/Kuzugöbeği Kanlıca'ya, Kav mantarı Kayın mantarına, Mantar şapkası Işıldak mantarına, Kök mantarlı güveç Kanlıcalı güvece çevrilir; Çayır mantarı, Mağara mantarı, Kök mantarı ve kızarmışları eski fiyatından Vio olarak ödenir.
 - **Her biyomda iki meyve ağacı (8 Kasım 2026, Boğaç: "türlerini 2'ye çıkaralım; miktarlar aynı kalsın, mevcut meyve ağaçlarının yarısı farklı bir meyve ağacı olsun", "sadece elma değil armut da olsun"):** Çayır **Elma + Armut** (Erik kalktı), Orman **Ceviz + Fındık**, Bataklık **Mürver + Dut**, Kayalık Dağ **Ardıç + Kestane**, Kül Diyarı **Ateş narı + İncir**, Mor Kristal Vadisi **Ay elması + Yıldız eriği**; ACT 2'de Yüzen Kayalar **Bulut elması + Rüzgâr eriği**, Dev Mantar Ormanı **Kök ağacı (Goblin eriği) + Spor elması**, Hurda Çölü **Hurma + Çöl inciri**, Kristal Golem Ocağı **Kristal armut + Buz armudu**, Ejder Volkanı **Ejder meyvesi + Lav narı**, Gök Rıhtımı **Gök üzümü + Yıldız kirazı**. Bir biyomun meyve ağacı sayısı tek tür zamanındakiyle aynıdır (ağaç türlenirken meyve ağaçlarının payı aralarında bölünür; ör. Çayır'da ~184 meyve ağacı: ~88 Elma, ~96 Armut). Yeni ağaçlar (Dut, İncir ve ACT 2'nin altısı) kesilmez, yalnız silkelenir; meyvelerinin her biri çiğ yenir ve bir **ezmesi** vardır (3 meyve + 1 Su, Taş havan; ACT 1'de Zümrüt'ün, ACT 2'de Yıldız'ın kazanından). Eski kayıtta Odun Odunna, Erik tohumu ve fidanı Armut'unkine (dikili Erik fidanı Armut olur) çevrilir; Yabani erik, ezmesi ve suyu eski fiyatından Vio olarak ödenir.
 - **Benzer bitkiler birleşti (8 Kasım 2026, Boğaç: "yabani nohut kalsın, mercimek gidebilir; çayır güzel, bataklık güzel, dağdaki kile dokunmayalım, kül diyarı güzel, mor kristal de güzel"):** Orman'da **Yabani mercimek → Yabani nohut**; Çayır'da **Yabani yulaf ve Yabani arpa → Yabani buğday** (unları, lapaları, hamurları, yassı ekmekleri ve kavrulmuşları da buğdayınkine); Bataklık'ta **Saz ve Hasırotu → Kamış** (Hasırotu yatak adıyla kalır, kamışla yapılır); Kül Diyarı'nda **Kızıl kum → Kırmızı okr** (Kızıl cam), **Cüruf → Kül**, **Sünger taşı → Lav camı**; iki okr da kalır (sarı ve kırmızı boya için); Mor Kristal Vadisi'nde **Işık tozu → Yıldız tozu** (Işık fitili), **Kristal kum → Kristal** (Kristal cam). Kayalık Dağ'a dokunulmadı. Görevler: Veli'nin VE7'si **6 Kamış**, Turan'ın TU8'i "Kristal tozu" **6 Kristal**, İnci'nin IN3'ü "Mor sarmaşık" **3 Mor sarmaşık** ister. Biyom başına tür: Çayır 10, Orman 11, Bataklık 12, Kayalık Dağ 13, Kül Diyarı 11, Mor Kristal Vadisi 12 (Sarkıt ve Yarasa gübresi artık mağara ağzında). ACT 1'in bitkileri ACT 2'de çıkmaz; ACT 2'nin biyomlarında yalnız kendi bitkileri var. Eski kayıtta kalkanlar yerine geçene çevrilir.
@@ -80,7 +80,7 @@ ACT 2'de hiçbir tarifte kullanılmayan 36 malzemenin hepsi bir tarifte: her biy
 | Bulut özü şerbeti | 2 Bulut özü, 2 Su, 1 Nehir çömleği | El yapımı (Tab) | 156 |
 
 
-Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
+Toplam **766 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 
 #### Yiyecek (216)
 
@@ -152,7 +152,7 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Kurutulmuş böğürtlen | 3 Böğürtlen, 3 Kuru ot | – | El yapımı (Tab) | 11 |
 | Kurutulmuş meyve keki | 1 Yabani buğday unu, 1 Kurutulmuş böğürtlen, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 36 |
 | Kurutulmuş sincap eti | 3 Sincap eti, 1 Tuz, 2 Su, 1 Yaprak | – | El yapımı (Tab) | 101 |
-| Kurutulmuş yabani elma | 3 Yabani elma, 3 Kuru ot | – | El yapımı (Tab) | 11 |
+| Kurutulmuş elma | 3 Elma, 3 Kuru ot | – | El yapımı (Tab) | 11 |
 | Kurutulmuş yıldız eriği | 3 Yıldız eriği, 3 Kuru ot | – | El yapımı (Tab) | 378 |
 | Kuşburnu ezmesi | 3 Kuşburnu, 1 Su | Taş havan | El yapımı (Tab) | 128 |
 | Kuşburnu suyu | 3 Kuşburnu, 1 Kırmızı çömlek, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 339 |
@@ -284,17 +284,17 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Tütsülenmiş ördek eti | 2 Ördek eti, Duman (ateş sağlar), 3 Su, 2 Yaprak | – | Ateşte (pişirme menüsü) | 97 |
 | Yaban mersini ezmesi | 2 Yaban mersini, 2 Su, 1 Yaprak | Taş havan | El yapımı (Tab) | 33 |
 | Yaban mersini suyu | 2 Yaban mersini, 1 Nehir çömleği, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 110 |
-| Yaban çileği ezmesi | 3 Yaban çileği, 1 Su | Taş havan | El yapımı (Tab) | 14 |
-| Yaban çileği suyu | 3 Yaban çileği, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
-| Yabani armut ezmesi | 3 Yabani armut, 1 Su | Taş havan | El yapımı (Tab) | 14 |
-| Yabani armut suyu | 3 Yabani armut, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
+| Çilek ezmesi | 3 Çilek, 1 Su | Taş havan | El yapımı (Tab) | 14 |
+| Çilek suyu | 3 Çilek, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
+| Armut ezmesi | 3 Armut, 1 Su | Taş havan | El yapımı (Tab) | 14 |
+| Armut suyu | 3 Armut, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
 | Yabani bira mayası | 1 Yabani buğday lapası, 1 Nehir çömleği, 4 Su, 4 Yaprak | – | El yapımı (Tab) | 312 |
 | Yabani buğday hamuru | 1 Yabani buğday unu, 4 Su, 1 Yaprak | – | El yapımı (Tab) | 26 |
 | Yabani buğday lapası | 3 Yabani buğday, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 114 |
 | Yabani buğday unu | 3 Yabani buğday, 1 Su | Öğütme taşı | El yapımı (Tab) | 14 |
 | Yabani buğday yassı ekmeği | 1 Yabani buğday hamuru, 3 Su, 3 Yaprak | Pişirme taşı | El yapımı (Tab) | 52 |
-| Yabani elma ezmesi | 3 Yabani elma, 1 Su | Taş havan | El yapımı (Tab) | 14 |
-| Yabani elma suyu | 3 Yabani elma, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
+| Elma ezmesi | 3 Elma, 1 Su | Taş havan | El yapımı (Tab) | 14 |
+| Elma suyu | 3 Elma, 1 Nehir çömleği, 3 Su, 2 Yaprak | – | El yapımı (Tab) | 81 |
 | Yabani nohut hamuru | 1 Yabani nohut unu, 4 Su, 1 Yaprak | – | El yapımı (Tab) | 57 |
 | Yabani nohut lapası | 3 Yabani nohut, 1 Sıcak su, 2 Su, 2 Yaprak | – | El yapımı (Tab) | 95 |
 | Yabani nohut unu | 3 Yabani nohut, 1 Su | Öğütme taşı | El yapımı (Tab) | 39 |
@@ -387,7 +387,6 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Kor merhemi | 2 Kor otu, 1 Tohum yağı | – | El yapımı (Tab) | 393 |
 | Kurutulmuş adaçayı | 3 Adaçayı, 3 Kuru ot | – | El yapımı (Tab) | 123 |
 | Kurutulmuş ebegümeci | 3 Ebegümeci, 3 Kuru ot | – | El yapımı (Tab) | 8 |
-| Kurutulmuş rezene | 3 Rezene, 3 Kuru ot | – | El yapımı (Tab) | 11 |
 | Kurutulmuş sinirotu | 3 Sinirotu, 3 Kuru ot | – | El yapımı (Tab) | 123 |
 | Kuşburnu çayı | 3 Kuşburnu, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 239 |
 | Kükürtlü merhem | 1 Kükürt, 2 Hayvan yağı, 2 Yosun | – | El yapımı (Tab) | 207 |
@@ -397,7 +396,6 @@ Toplam **768 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Nane çayı | 3 Nane, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 69 |
 | Panzehir | 3 Bataklık otu, 1 Zehir bezesi, 2 Su | – | El yapımı (Tab) | 148 |
 | Papatya çayı | 3 Papatya, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 65 |
-| Rezene çayı | 1 Kurutulmuş rezene, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 69 |
 | Sinirotu çayı | 1 Kurutulmuş sinirotu, 1 Sıcak su, 3 Su, 3 Yaprak | – | El yapımı (Tab) | 239 |
 | Söğüt kabuğu çayı | 1 Söğüt kabuğu, 1 Sıcak su, 4 Su, 3 Yaprak | – | El yapımı (Tab) | 154 |
 | Şifalı merhem | 3 Civanperçemi, 2 Hayvan yağı, 1 Su | – | El yapımı (Tab) | 184 |
@@ -981,7 +979,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 - **Kalkanlar** (hiçbir tarifte yeri olmayan): Kavak, Kayın, Ihlamur, Dişbudak, Kızılağaç, Porsuk, Akçaağaç, Kestane ve Ardıç **kabuğu** (bu ağaçlar artık kabuk düşürmez; kabuk yalnız Meşe, Ceviz, Söğüt ve Huş'tan düşer), **Bazalt ok ucu**, **Meyve fidanı**, **Ağ kapanı** , **Goblin oku** (goblin okçusu artık yalnız Goblin kulağı düşürür) ve **Cüruf tuğlası**. Durdu'nun DU7 görevi Kayın kabuğu yerine **5 Meşe kabuğu** ister.
 - **Fiyatlar:** girdisi pahalılaşan eşyanın fiyatı farkın 1,3 katı arttı (fark fiyatın %5'inden azsa değişmedi); onu kullananlar da bir adım: Ateş çiçeği merhemi 398 → 898, Ballı kestane 248 → 351, Barut 75 → 84, Deri tulum 338 → 370, Deri çanta 785 → 1.110, Direk feneri 203 → 301, Duvar halısı 690 → 742, Golem feneri 1.188 → 1.321, Gök demiri külçesi 149 → 184, Kemik zıpkın 48 → 62, Kertenkele merhemi 143 → 155, Kil lamba 129 → 178, Kobalt külçesi 202 → 225, Kor merhemi 288 → 393, Kurutma rafı 66 → 87, Mürver boyası 63 → 83, Pişmiş bulut koyunu eti 99 → 125, Pompalı fişeği 126 → 139, Spor yahnisi 219 → 237, Tabakhane 635 → 768, Tabanca mermisi 83 → 95, Tuz havuzu 259 → 397, Tütsühane 234 → 307, Tırmık 38 → 58, Çömlek fırını 331 → 417.
 - **Eski kayıtlar:** kayıt açılınca bilinen bir varyant eşyanın tek tarifine döner (zaten biliniyorsa silinir); kalkan eşyalar çantadan, sandıktan ve yerden kalkar, son fiyatlarıyla Vio olarak ödenir; bir kez bildirim çıkar.
-- **Sayılar:** 1.239 eşya, 768 tarif; her tarif kazanda öğrenilir, her eşyanın fiyatı var, kullanılmayan malzeme yok (oyun verisiyle sayıldı).
+- **Sayılar:** 1.236 eşya, 766 tarif; her tarif kazanda öğrenilir, her eşyanın fiyatı var, kullanılmayan malzeme yok (oyun verisiyle sayıldı).
 
 | Malzeme | Girdiği tarif | Tarif (bugün) | Ne yerine |
 |---|---|---|---|
@@ -1075,7 +1073,7 @@ Boyalı ev eşyalarında (her birinde 1 boya) fiyat tarif fiyat kuralıyla (malz
 - **Her toplanan malzeme işe yarar bir tarifte:** yalnız kalkanlarda kullanılan 13 malzeme, kendi biyomunda işe yarayan bir eşyanın tarifine anlamlı bir yerden girer (tablo); her biri biyomuna uygun sette ya da iksirde. Geri kalan girdiler (Deri parçası, İp, Kum, Hayvan yağı, killer, kemikler…) başka tariflerde kullanılmaya devam eder. Hiçbir malzemenin kendisini değiştirmek gerekmedi: hepsine mantıklı bir yer bulundu. ACT 2'nin 8 cevheri ve 3 düşmesi sonra ele alınacak.
 - **Fiyat:** Pençe kolyenin fiyatı Aletler › Fiyat düzeninden gelir.
 - **Eski kayıtlar:** kalkan eşyalar çantadan, sandıktan, kemerden ve yerden kalkar; elindekiler son fiyatlarıyla Vio olarak ödenir (bir kez bildirim). Kalkan eşyaların tarifleri kitaptan silinir.
-- **Sayılar:** 1.239 eşya, 768 tarif.
+- **Sayılar:** 1.236 eşya, 766 tarif.
 
 | Malzeme | Girdiği tarif | Tarif (bugün) | Ne yerine | Neden |
 |---|---|---|---|---|

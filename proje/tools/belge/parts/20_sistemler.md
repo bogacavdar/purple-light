@@ -296,17 +296,16 @@ Havanın sırası, sıklığı ve süresi mevsime göre değişir (bkz. Hava, s�
 #### Mevsimler (v3.69, 8 Kasım 2026, Boğaç)
 
 **Çayır'da yerdeki toplanabilirlerin görünüşü (9 Kasım 2026, Boğaç teker teker seçti):** Çayır'da yerde duran toplanabilirler için Boğaç'a şimdiki hali ve iki yeni çizim gösterildi; seçilenler oyundaki görünüştür (eşya bir başka biyomda da çıkıyorsa orada da aynı görünür; envanter resimleri değişmedi):
-- **Dal:** ince, yatay bir çubuk; yukarı çıkan küçük bir çatal ve ucunda yeşil tomurcuk.
-- **Yaprak:** dik duran, iki tonlu yeşil yaprak; koyu orta damar ve yan damarlar, altında kahverengi sap.
-- **Kum:** üstünde dalga izleri olan kum tepeciği.
-- **Ebegümeci:** saplar üstünde üç pembe-mor çiçek, altta yuvarlak yapraklar.
-- **Hardal otu:** dallanan sap üstünde sarı çiçek kümeleri.
-- **Nane:** eski çizimin aynısı, yeşilleri biraz koyu.
-- **Yaban çileği:** üçlü yapraklar, altında kırmızı meyveler.
+- **Yeni ikonlarla (14 Kasım 2026, Boğaç):** Taş, Çakmaktaşı, Dal, Lif, Kum, Kuru ot, Nehir çakılı, Yaprak, Sarkıt, Yarasa gübresi, Ebegümeci, Gelincik, Hardal otu, Nane, Papatya, Yabani buğday ve Çilek yerde de envanterdeki resimleriyle durur (Eşyalar › Yeni ikonlar); resmin altı gölgesine oturur. Taş: gri, alçak, köşeli kaya. Çakmaktaşı: kahverengi, yontulmuş kama. Dal: çapraz, ince, yan çatallı dal. Lif: soluk haki, dik lifli ot öbeği. Kum: alçak bej kum yığını. Kuru ot: alçak, yayvan, altın-kahve kuru ot. Nehir çakılı: üç yuvarlak çakıl (bej, koyu gri, yeşilimsi gri). Yaprak: çapraz, damarlı, saplı koyu yeşil yaprak. Sarkıt: çapraz, gri, kırık uçlu sivri taş. Yarasa gübresi: kahverengi topaklı yığın. Ebegümeci: yuvarlak yapraklar, mor-pembe çiçekler. Gelincik: iki kırmızı gelincik, sağdaki daha yukarıda, sapı hafifçe sola kıvrık. Hardal otu: gür sarı çiçek kümeleri. Nane: büyük tırtıklı açık yeşil yapraklar. Papatya: tek büyük beyaz papatya, iki koyu yeşil yaprak. Yabani buğday: üç turuncu-altın başak. Havuç'un envanter ikonu da yeni (tek çapraz havuç), yerde aşağıdaki görünüşü kalır.
+- **Elma** (eski adı Yabani elma; 14 Kasım 2026, Boğaç: "yabani elmayı elma yap"): Elma ağacında yetişir; Kurutulmuş elma, Elma ezmesi, Elma suyu da yeni adlarıyla.
+- **Armut** (eski adı Yabani armut; 14 Kasım 2026, Boğaç: "onu da armut yap"): Armut ağacında yetişir; Kurutulmuş armut, Armut ezmesi, Armut suyu da yeni adlarıyla.
+- **Çilek** (eski adı Yaban çileği; 14 Kasım 2026, Boğaç: "yabani deme, çilek de"; "olur yapalım"): yerde de envanterdeki resmiyle durur, yaprak taçlı dört gerçekçi kırmızı çilek.
 - **Havuç:** yarısı toprağa gömülü turuncu havuç, toprak tümseği ve yeşil filizler ("Yabani havuç" kalktı, yerden toplanan da tarladaki **Havuç**'tur).
-- **Yarasa gübresi:** içinde açık renkli kırıntılar olan koyu yığın.
-- **Gelincik (13 Kasım 2026, Boğaç):** iki kırmızı gelincik; sağdaki daha yukarıda, sapı hafifçe sola kıvrık; dipte ince, koyu yeşil çimen. Yerde ve envanterde aynı resim (Eşyalar › Yeni ikonlar).
-- Taş, Lif, Kuru ot, Nehir çakılı, Çakmaktaşı, Böğürtlen, Papatya, Rezene, Yabani buğday, Kireçtaşı, Kumtaşı, Bakır cevheri ve Sarkıt olduğu gibi kaldı.
+- Böğürtlen çalı olarak durur (Toplama ve tarım › Meyve çalıları).
+- **Maden kayaları ve ağaçlar (14 Kasım 2026, Boğaç: "madenleri de yaptır sonra ağaç görsellerini de çizdir çam vs"):** Boğaç'ın ComfyUI'sinden, çerçeveli resimler; boyları eskisi kadar, yarısı aynalı durur. **Kireçtaşı** kayası: çatlaklı, krem-beyaz blok. **Kumtaşı**: katmanlı, ılık kahve-turuncu kaya yığını. **Bakır cevheri**: koyu gri kaya, turuncu bakır topakları ve damarı. **Çam**: katmanlı, koyu yeşil konik çam. **Kavak**: uzun, ince, sivri yeşil taç. **Elma** ve **Armut**: yuvarlak, öbek öbek yapraklı taç (Armut biraz daha dik); meyve olgunken tacın üstünde kırmızı elmalar / sarı armutlar görünür, silkeleyince kaybolur. Rüzgârda sallanma, arkasından geçince saydamlaşma, görev parıltısı ve kesilme eskisi gibi.
+- **Zemin karoları (14 Kasım 2026, Boğaç: "yerde kullandığın karoları deniz kum çayır vs için onları da yaptırabilir miyiz"):** ACT 1 adasında Çayır çimi (açık ve koyu çim), kum ve su (göl/ırmak, derin deniz, sığ kıyı) Boğaç'ın ComfyUI'sinden çizilmiş dokularla döşenir. Her tür için 128 px dikişsiz bir doku vardır; bir karo, dünyadaki yerine göre bu dokunun bir parçasından alınır, böylece yan yana karolar kesintisiz birleşir ve desen 8 karoda bir tekrarlar. Çim: rastgele serpilmiş küçük ot öbekleri; kum: rüzgâr dalgacıkları; su: ince dalga çizgileri (hareketli dalgalar, parıltı ve kıyı köpüğü eskisi gibi üstüne çizilir). Renkler eski karoların renkleridir. Öbür biyomların zeminleri ve ACT 2 eski karolarla çizilir.
+- **Kişiler (14 Kasım 2026, Boğaç: "Ana NPC lerimizi ve efectlerini de comfy ile çizelim"; karakterlerin kendisi de; "diğerlerine geç"):** ana kişiler Boğaç'ın ComfyUI'sinden çizilmiştir: **Yaşlı Kemal, Cadı Zümrüt, Pazarcı Nazlı, Demirci Dursun, Zırhçı Durmuş, Savaşçı Börü, Çiftçi Ekin, Usta Sinan, Avcı Doğan**. Her biri dört kare: önden duruş, yarım yandan (ya da yandan) duruş, yandan duruş ve yürüyüş adımı; sola bakar çizilir, sağa bakarken aynalanır. Uzaktayken önden durur, oyuncu yanına gelince ona döner; işini yaparken (kazan, örs, kılıç) işine döner; yürürken yan duruş ile adım karesi sırayla gelir ve hafifçe sekerek yürür. Boyları 27–32 piksel (şapka dahil). Çevrelerindeki her şey eskisi gibi: Kemal'in kampı ve ateşi, kazan ve alevi, ocak, örs ve kıvılcımlar, Nazlı'nın tezgâhı, Sinan'ın tezgâhı, Doğan'ın kulübesi, kılıç savurma, pipo dumanı, "!" işareti. Eski çizimin gövdenin üstüne koyduğu şapka, önlük, kalkan, alet gibi küçük parçalar çizilmez (yeni çizimde zaten var). Konuşma kutusundaki resimleri de aynı çizimden (yüzü). Kuzenler (Yakut, Safir, Firuze, Mercan, İnci; Durdu, Ali, Kaya, Turan, Kudret; Duran, Veli, Kayhan, Tufan, Kuvvet; "hepsi bana benzer") Zümrüt, Dursun ve Durmuş'un çizimiyle görünür, konuşma resimleri de onlarınki. Ara sahnelerde eski çizim kalır.
+- **Kişilerin eşyaları (14 Kasım 2026, Boğaç: "NPC lerin etrafındaki eşyaları da çizdir kazan örs vs"):** Boğaç'ın ComfyUI'sinden: Zümrüt'ün **kazanı** (yeşil iksirli, üç ayaklı), Dursun'un **ocağı** (taş, bacalı) ve **örsü** (kütük üstünde), Durmuş'un örsü ve **zırh askısı** (zincir zırh ve miğfer), Nazlı'nın **tezgâhı** (kırmızı-beyaz tenteli, mallı), Sinan'ın **tezgâhı** ve **kereste yığını**, Doğan'ın **kulübesi** (saz damlı kütük ev), Börü'nün **talim kuklası** (kılıç değince sarsılır), Kemal'in kamp ateşinin **taş halkası ve odunları**. Hareketli olanlar eskisi gibi kodla çizilir: kazanın altındaki ateş ve kabarcıklar, ocağın titreyen ışığı ve dumanı, örsün kızgın çizgisi ve kıvılcımlar, Sinan'ın testeresi ve talaşı, Kemal'in ateşinin alevleri, Doğan'ın kurutma ipi. Kuzen cadıların kazanı aynı çizim, iksiri her kuzenin kendi renginde; kuzen demircilerin ve zırhçıların biyoma göre değişen ocak ve örsleri eski çizimle kalır.
 
 **Sol üstteki gün, saat, hava ve mevsim (9 Kasım 2026, Boğaç):** bilgisayarda can çubuğunun hemen üstünde, kutusuz, tek satır:
 - **Gün:** yalnızca yazı ("12. gün"); hava adı ve mevsim adı burada yazmaz.
@@ -410,7 +409,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 
 | Biyom | Canlı | Türü | Nasıl | Sevdiği yiyecek | Özelliği |
 |---|---|---|---|---|---|
-| Çayır | Yaban atı | binek | yetişkin, doğrudan | Yabani elma | hız ×1,8; düz yolda en iyisi |
+| Çayır | Yaban atı | binek | yetişkin, doğrudan | Elma | hız ×1,8; düz yolda en iyisi |
 | Orman | Kurt | savaşçı | yavru (in) | Tavşan eti | hızlı saldırır (can 260, hasar 14, 0,8 sn); gece canavar yaklaşınca hırlar |
 | Bataklık | Timsah | savaşçı | yavru (in) | Sazan | yavaş ama sağlam (can 520, hasar 22, 1,4 sn); ısırdığını 1,5 sn yavaşlatır |
 | Kayalık Dağ | Dağ keçisi | binek | yetişkin, doğrudan | Tuz kayası | hız ×1,5; Kayalık Dağ'da ×1,9 |
@@ -523,7 +522,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 
 | Biyom | Yiyecek · tokluk · etki (anında can) |
 |---|---|
-| Çayır | Böğürtlen 5 (+4 can) · Yaban çileği 6 Çeviklik · Yabani armut 7 Doygunluk · Yabani elma 7 Canlılık (+2 can) · Havuç 5 Gece gözü |
+| Çayır | Böğürtlen 5 (+4 can) · Çilek 6 Çeviklik · Armut 7 Doygunluk · Elma 7 Canlılık (+2 can) · Havuç 5 Gece gözü |
 | Orman | Ahududu 9 Şifa · Yaban mersini 9 Gece gözü · Fındık 8 Güç · Ceviz 8 Dayanıklılık · Yabani bal 12 Çeviklik (+7 can) · Akçaağaç özsuyu 8 Canlılık · Yabani nohut 7 · Yabani nohut 7 (hepsi +3 can) · Kanlıca 8, Kuzukulağı 7, Meşe palamudu 6 (zehirli, can vermez) |
 | Bataklık | Kızılcık 12 Pıhtı · Su kestanesi 12 (+14 can) (+6 can) · Dut 11 Çeviklik (+6 can) · Mürver 11, Sinek mantarı 11 (zehirli) |
 | Kayalık Dağ | Alıç 15 Şifa · Kestane 15 Doygunluk · Ur kekliği yumurtası 15 Güç · Kayın mantarı 14 (+9 can) · Kuşburnu 14 (+21 can) · Ardıç meyvesi 14 (zehirli) |
@@ -552,12 +551,12 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
 
 ### Meyve çalıları (13 Kasım 2026, Boğaç)
 
-Çalıda yetişen yemişler dünyada **çalı** olarak durur: **Böğürtlen çalısı** (Çayır), **Ahududu çalısı** ve **Yaban mersini çalısı** (Orman), **Kızılcık çalısı** (Bataklık), **Kuşburnu çalısı** ve **Alıç çalısı** (Kayalık Dağ). Yerde biten Yaban çileği çalı değildir.
+Çalıda yetişen yemişler dünyada **çalı** olarak durur: **Böğürtlen çalısı** (Çayır), **Ahududu çalısı** ve **Yaban mersini çalısı** (Orman), **Kızılcık çalısı** (Bataklık), **Kuşburnu çalısı** ve **Alıç çalısı** (Kayalık Dağ). Yerde biten Çilek çalı değildir.
 
 - **Her çalıdan 3 kez toplanır:** her toplayışta yere 1 meyve düşer (üstünden yürüyünce alırsın), çalı yerinde kalır. Üçüncüde çalı kaybolur ve süresi dolunca kendi biyomunda başka bir yerde **yeniden çıkar** (Böğürtlen 40 sn, öbürleri 45–50 sn).
 - Böğürtlen çalısının dikenleri eskisi gibi batar (eldivenle batmaz). Köpeğin toplaması da bir meyve sayılır, çalı kalır.
 - Üzerine gelince ya da yanındayken "Böğürtlen çalısı" gibi çalının adı yazar.
-- **Resimler:** Böğürtlen çalısı ve böğürtlen Boğaç'ın verdiği resimlerdir; öbür çalılar ve meyveleri aynı resimlerin kendi meyve rengine boyanmış halidir (ahududu kırmızı, yaban mersini mavi, kızılcık koyu kırmızı, kuşburnu turuncu-kırmızı, alıç koyu kırmızı-kahve).
+- **Resimler:** Böğürtlen çalısı (14 Kasım 2026, Boğaç) Boğaç'ın ComfyUI ile çizdirdiği yuvarlak, gövdesiz, çimene oturan yapraklı çalı; mor meyveleri 3 halde azalır (dolu 11, 2 hakkı kalmış 7, 1 hakkı kalmış 3 meyve). Böğürtlen'in ikonu Eşyalar › Yeni ikonlar'da. Öbür çalılar ve meyveleri, kendi çizimleri gelene kadar, Boğaç'ın 13 Kasım'da verdiği eski böğürtlen resimlerinin kendi meyve rengine boyanmış halidir (ahududu kırmızı, yaban mersini mavi, kızılcık koyu kırmızı, kuşburnu turuncu-kırmızı, alıç koyu kırmızı-kahve).
 
 ### Balık tutma
 

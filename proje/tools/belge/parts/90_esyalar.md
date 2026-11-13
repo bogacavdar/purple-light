@@ -33,8 +33,8 @@ Her eşyanın adına uygun bir resmi vardır (Giriş › Kural). v3.37'ye kadar 
 - **Merhemler kapta, yağlar şişede, iksirler cam şişede, reçeller kavanozda, tohumlar çekirdek olarak, inciler sedefle.**
 - **Yapılan şeyler:** Sapan, Bola, Kirmen, Dokuma tezgâhı, Ok kılıfı, Deri çanta, Deri tulum, Yelkenli sal, Atölye, çanlar, ipler (kangal), yelpazeler, tılsımlar, Golem feneri, Kaya patlatıcı, Semender derisi tef, Ağ kapanı, Kor zurnası, yemler…
 - **Toplananlar ve canlı parçaları:** bölge bitkileri (Kardelen, Ay otu, Gece zambağı…), taşlar ve kristaller (Kükürt kristali, Volkan camı, Ayna taşı, Ametist…), tozlar, yosunlar, kökler, Sülük, Dev yüreği, Çamur Ana gözü, Kartal pençesi, Örümcek gözü…
-- **PixelLab ikonları (12 Kasım 2026, Boğaç: "sen bunları ekle oyuna"):** Boğaç'ın PixelLab'da 32×32 çizdirdiği 64 ikonluk sayfadan, oyunda karşılığı olan **58 eşya** bu resimleri kullanır; envanterde ve kitapta 32×32 olarak, elde ve yerde küçültülerek. Eşyalar: bütün baltalar (Taş, Bakır, Çakmaktaşı, Tunç, Granit, Demir, Timsah dişi, Çelik, Kuvars, Kara çelik, Ejder, Mor kristal, Obsidyen); Taş, Bakır, Demir, Çelik, Mor kristal ve Obsidyen kazma; Bakır, Demir, Çelik, Kara çelik ve Mor kristal kılıç, Ejder kılıcı; Demir savaş çekici; Basit yay; Odun, Taş, Çakmaktaşı, Bakır cevheri, Demir cevheri, Taş kömürü, Kuvars, Ametist, Obsidyen, Kızıl ejder pulu; Bakır, Tunç, Demir, Gümüş, Kara çelik ve Altın külçesi; Lif, Halat, Deri parçası, Timsah derisi, Kemik, Keklik tüyü, Kurt dişi, Deri çanta; Ateş iksiri, Mana iksiri, Kök özü iksiri, Ekmek, Pişmiş keklik eti, Kızılcık, Meşale. Sayfadaki 3 kürek, tokmak, ikinci yay ve anahtarın oyunda karşılığı yok, kullanılmaz. **13 Kasım 2026 (Boğaç):** Böğürtlen, Nehir çakılı, Kuru ot, Kum, Dal ve Yaprak da Boğaç'ın verdiği yeni resimleri kullanır; Ahududu, Yaban mersini, Kızılcık, Kuşburnu ve Alıç böğürtlen resminin kendi rengine boyanmış halidir. Nehir çakılı, Kum, Dal, Kuru ot ve Yaprak **yerde toplanmayı beklerken de** aynı yeni resimle görünür (Dal yerde yan yatar, Yaprak biraz yana dönük durur; gölgeleri resmin tam altındadır). Kurulan eşyaların kurulmuş hali (Meşale) eski çizimiyle kalır.
-- **Yeni ikonlar (13 Kasım 2026, Boğaç):** Boğaç'ın yerel ComfyUI (Z-Image Turbo + piksel LoRA) ile çizdirip tek tek seçtiği resimler; 32×32'ye indirilip koyu çerçeve eklenir. Envanterde ve kitapta 32×32, yerde aynı resim küçültülerek (altı gölgesine oturur). Şimdilik: **Gelincik**.
+- **PixelLab ikonları (12 Kasım 2026, Boğaç: "sen bunları ekle oyuna"):** Boğaç'ın PixelLab'da 32×32 çizdirdiği 64 ikonluk sayfadan, oyunda karşılığı olan **54 eşya** bu resimleri kullanır; envanterde ve kitapta 32×32 olarak, elde ve yerde küçültülerek. Eşyalar: bütün baltalar (Taş, Bakır, Çakmaktaşı, Tunç, Granit, Demir, Timsah dişi, Çelik, Kuvars, Kara çelik, Ejder, Mor kristal, Obsidyen); Taş, Bakır, Demir, Çelik, Mor kristal ve Obsidyen kazma; Bakır, Demir, Çelik, Kara çelik ve Mor kristal kılıç, Ejder kılıcı; Demir savaş çekici; Basit yay; Odun, Demir cevheri, Taş kömürü, Kuvars, Ametist, Obsidyen, Kızıl ejder pulu; Bakır, Tunç, Demir, Gümüş, Kara çelik ve Altın külçesi; Halat, Deri parçası, Timsah derisi, Kemik, Keklik tüyü, Kurt dişi, Deri çanta; Ateş iksiri, Mana iksiri, Kök özü iksiri, Ekmek, Pişmiş keklik eti, Kızılcık, Meşale. Sayfadaki 3 kürek, tokmak, ikinci yay ve anahtarın oyunda karşılığı yok, kullanılmaz. **13 Kasım 2026 (Boğaç):** Ahududu, Yaban mersini, Kızılcık, Kuşburnu ve Alıç (meyve ve çalı) Boğaç'ın verdiği eski böğürtlen resminin kendi rengine boyanmış halidir; Böğürtlen çalısının yeni resmi Sistemler › Meyve çalıları'nda. Sayfadaki Taş, Çakmaktaşı ve Lif hücreleri artık kullanılmaz (yerlerine Yeni ikonlar). Kurulan eşyaların kurulmuş hali (Meşale) eski çizimiyle kalır.
+- **Yeni ikonlar (13–14 Kasım 2026, Boğaç):** Boğaç'ın yerel ComfyUI (Z-Image Turbo + piksel LoRA) ile çizdirip tek tek seçtiği resimler; 32×32'ye indirilip koyu çerçeve eklenir. Envanterde ve kitapta 32×32, yerde aynı resim küçültülerek (altı gölgesine oturur). Eşyalar (14 Kasım 2026): Taş, Çakmaktaşı, Dal, Lif, Kum, Kuru ot, Nehir çakılı, Yaprak, Sarkıt, Yarasa gübresi (her biyomda); Ebegümeci, Gelincik, Hardal otu, Nane, Papatya, Yabani buğday (Çayır); Çilek (yerde de); Havuç ve Böğürtlen yalnız ikon olarak (yerde Havuç 9 Kasım'da seçilen görünüşüyle, Böğürtlen çalı olarak durur); Kireçtaşı, Kumtaşı, Bakır cevheri (yerde kendi yeni maden kayalarıyla durur, Sistemler › Çayır), Armut ve Elma (ağaçta yetişir) da yalnız ikon olarak. Taş Taş'ın grisine, Sarkıt griye, Çakmaktaşı kömürden ayrılsın diye kahveye çekildi; bitkilerin dibindeki çimen koyu yeşil.
 - **Unutulan resim:** resmi olmayan bir eşya renkli kutu değil, sade bir bez torba olarak görünür; geliştirici araçları açıkken (`?debug`) oyun açıldıktan 12 saniye sonra konsola "resmi yok" listesi yazılır.
 
 > ACT 1 madenlerinin fiyatları ve yerleri değişti (**Aletler · Madenler ve ekipman merdiveni**). Bir madeni kullanan tariflerin fiyatı, maden fiyatındaki değişim × miktar × 1,3 kadar (zincir boyunca) kendiliğinden değişir; bu tablodaki türetilmiş fiyatlar henüz yeniden üretilmedi (değerleri). Yeni setlerin, ara ürünlerin ve Tunç/Demir set parçalarının fiyatları o bölümdeki tablolardadır.
@@ -90,6 +90,9 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ardıç meyvesi ezmesi | 128 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ardıç meyvesi suyu | 339 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Ardıç tohumu | 3 | – | Ardıç ağacı baltayla kesilince %35 ihtimalle düşer | Tohum yağı |
+| Armut | 2 | yenir +7 | Meyve ağacı (Armut): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Armut ağacından toplanır: Çayır (ACT 1) | Armut ezmesi, Armut suyu |
+| Armut ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Armut suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Armut fidanı | 45 | – | EK4'ten sonra Çiftçi Ekin satar (45 Vio) · Bereket Adası'nda fidan yerine dikilir, 3 günde Armut ağacı olur | – |
 | Armut tohumu | 3 | – | Armut ağacı baltayla kesilince %35 ihtimalle düşer | Tohum yağı |
 | Arı kovanı | 265 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | – |
@@ -295,6 +298,9 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Ejder çizmesi | 3.252 | giyilir +24 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | – |
 | Ekmek | 153 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | El izi resmi | 144 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Elma | 2 | yenir +7 | Meyve ağacı (Elma): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Elma ağacından toplanır: Çayır (ACT 1) | Kurutulmuş elma, Elma ezmesi, Elma suyu |
+| Elma ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Elma suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Elma fidanı | 40 | – | Çiftçi Ekin'in EK4 ödülü (1 tane) · EK4'ten sonra Ekin satar (40 Vio) · Bereket Adası'nda fidan yerine dikilir, 3 günde Elma ağacı olur | – |
 | Elma tohumu | 3 | – | Elma ağacı baltayla kesilince %35 ihtimalle düşer | Tohum yağı |
 | Enerji hücresi ² | 221 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | Meka zırh, Plazma hücresi |
@@ -621,10 +627,9 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kurutulmuş böğürtlen | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kurutulmuş meyve keki, Meyveli pemmikan |
 | Kurutulmuş ebegümeci | 8 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Kurutulmuş meyve keki | 36 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Kurutulmuş rezene | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Rezene çayı |
 | Kurutulmuş sincap eti | 101 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Pemmikan |
 | Kurutulmuş sinirotu | 123 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Sinirotu çayı |
-| Kurutulmuş yabani elma | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kurutulmuş meyve keki, Meyveli pemmikan |
+| Kurutulmuş elma | 11 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kurutulmuş meyve keki, Meyveli pemmikan |
 | Kurutulmuş yıldız eriği | 378 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kurutulmuş meyve keki, Meyveli pemmikan |
 | Kuvars | 29 | – | Kazmayla kazılır: Kayalık Dağ (ACT 1) | Yontulmuş kuvars, Gümüş kılıç |
 | Kuvars balta | 2.156 | alet | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | – |
@@ -902,8 +907,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Pompalı fişeği ² | 139 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → El yapımı (Tab) | – |
 | Pompalı ² | 2.626 | alet | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Silahçı Tufan yapar (400 Vio işçilik) | – |
 | Raf | 62 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar (ev içine konur) | – |
-| Rezene | 2 | – | Yerden toplanır: Çayır (ACT 1) | Kurutulmuş rezene |
-| Rezene çayı | 69 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Robot çekirdeği ² | 90 | – | Av: Devriye robotu düşürür %70 (ACT 2 · Hurda Çölü) | – |
 | Roket gövdesi ² | 9.187 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Astronot Gökay yapar (1000 Vio işçilik) | Roket |
 | Roket motoru ² | 14.000 | – | Tarif: Yıldız'ın kazanı (ACT 2) öğrenilir → Astronot Gökay yapar (1500 Vio işçilik) | Roket |
@@ -1140,14 +1143,8 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yaban mersini ezmesi | 33 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yaban mersini suyu | 110 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yaban sarımsağı | 8 | – | Yerden toplanır: Orman (ACT 1) | Sarımsaklı et |
-| Yaban çileği | 2 | yenir +6 | Yerden toplanır: Çayır (ACT 1) | Yaban çileği ezmesi, Yaban çileği suyu |
-| Yaban çileği ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Yaban çileği suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yaban öküzü derisi | 36 | – | Av: Yaban öküzü düşürür %100 (ACT 1 · Kayalık Dağ) | Çelik zırh |
 | Yaban öküzü eti | 15 | – | Av: Yaban öküzü düşürür %100 (ACT 1 · Kayalık Dağ) | Avcı yahnisi, Et şişi, Kara tuzlu et, Pişmiş yaban öküzü eti, Turba ateşinde tütsü … (+1) |
-| Yabani armut | 2 | yenir +7 | Meyve ağacı (Armut): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Armut ağacından toplanır: Çayır (ACT 1) | Yabani armut ezmesi, Yabani armut suyu |
-| Yabani armut ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Yabani armut suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani bal | 12 | yenir +12 | Yerden toplanır: Orman (ACT 1) | Ateş çiçeği balı, Ay elması reçeli, Ballı ekmek, Ballı fındık, Ballı kestane, Balmumu … (+1) |
 | Yabani bira mayası | 312 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani buğday | 2 | – | Yerden toplanır: Çayır (ACT 1) | Kavrulmuş yabani buğday, Yabani buğday lapası, Yabani buğday unu |
@@ -1155,9 +1152,6 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Yabani buğday lapası | 114 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani buğday unu | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Barbunya tava, Hamsi tava, Kalamar tava, Kalkan tava, Kurutulmuş meyve keki, Tekir tava … (+1) |
 | Yabani buğday yassı ekmeği | 52 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Ballı ekmek, Ziyafet sofrası |
-| Yabani elma | 2 | yenir +7 | Meyve ağacı (Elma): eli boşken F ile silkele, 2–3 tane düşer; ağaç kesilince de 1–2 tane · Elma ağacından toplanır: Çayır (ACT 1) | Kurutulmuş yabani elma, Yabani elma ezmesi, Yabani elma suyu |
-| Yabani elma ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
-| Yabani elma suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Yabani nohut | 9 | yenir +7 | Yerden toplanır: Orman (ACT 1) | Kavrulmuş yabani nohut, Yabani nohut lapası, Yabani nohut unu |
 | Yabani nohut hamuru | 57 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Yabani nohut yassı ekmeği |
 | Yabani nohut lapası | 95 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
@@ -1253,6 +1247,9 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Çelik topuz | 1.875 | alet, silah 39 hasar | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | – |
 | Çelik zırh | 3.499 | giyilir +54 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | – |
 | Çelik çizme | 1.269 | giyilir +16 savunma | Tarif: Zümrüt'ün kazanı öğrenilir → Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | – |
+| Çilek | 2 | yenir +6 | Yerden toplanır: Çayır (ACT 1) | Çilek ezmesi, Çilek suyu |
+| Çilek ezmesi | 14 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
+| Çilek suyu | 81 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | – |
 | Çipura | 17 | – | Deniz avı: Rüzgârlı Körfez (Gemici Poyraz'ın teknesiyle, Sv 6+, Deniz oltası) %33 | Çipura buğulama |
 | Çipura buğulama | 59 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Çit | 82 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) (→ 2), İnşa kipiyle kurulur | Ağıl, Tahta kapı |

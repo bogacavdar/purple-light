@@ -40,7 +40,7 @@
 | Reis yiyen | 20 farklı reis öldür. | – |
 | Bütün reisler | Oyunda öldürülebilecek bütün reisleri öldür. | Her türün Reisi o türden yeterince avlayınca çıkar. |
 | Yol açıcı 🔒 | Doğu geçidindeki kayaları patlat. | Doğu geçidindeki kaya yığını Kül Diyarı yolunu kapatır. |
-| Her şeyi bilen | Bütün tarifleri bul. | 825 tarifin hepsi; ACT 2 tarifleri dahil. |
+| Her şeyi bilen | Bütün tarifleri bul. | 766 tarifin hepsi; ACT 2 tarifleri dahil. |
 | Toplayıcı | İki adada yerden toplanabilen her çeşitten en az birini topla. | İki adadaki bütün toplanabilir çeşitleri. |
 | Yeniden birlikte 🔒 | Oyunu iyi sonla bitir. | Roket fırlatılıp kavuşma sahnesi bitince verilir (koşulu kendi kendine değil, sahnenin sonunda elle verilir). |
 | Yalnız dönüş 🔒 | Oyunu kötü sonla bitir. | **Şu an kazanılamaz:** oyunda kötü son yok; koşul hiçbir yerde gerçekleşmiyor. |

@@ -8,6 +8,30 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.24 · 14 Kasım 2026
+
+### Oynanış
+- **Rezene kalktı:** Çayır'daki yeri öbür otlara (Ebegümeci, Gelincik, Hardal otu, Nane, Papatya, Yabani buğday) dağıldı; tarifleri de kalktı. E6 görevi artık 2 **Nane** istiyor. Eski kayıtlarda Rezene Nane'ye, Rezene çayı Nane çayına döner.
+- **Yeni adlar:** Yaban çileği → **Çilek**, Yabani elma → **Elma**, Yabani armut → **Armut** (ezmeleri, suları ve kurutulmuşları da). Eski kayıtlardaki eşyalar kendiliğinden yeni adına geçer.
+
+### Görsel
+- **Yeni ikonlar:** Taş, Çakmaktaşı, Dal, Lif, Kum, Kuru ot, Nehir çakılı, Yaprak, Sarkıt, Yarasa gübresi, Ebegümeci, Hardal otu, Nane, Papatya, Yabani buğday, Havuç, Çilek, Böğürtlen, Kireçtaşı, Kumtaşı, Bakır cevheri, Elma ve Armut yeni resimleriyle (envanterde, kitapta, elde, yerde). Çilek yerde de yeni resmiyle duruyor.
+- **Böğürtlen çalısı** yeni çizimiyle (olgun, yarım, toplanmış hali).
+- **Maden kayaları:** Kireçtaşı (çatlaklı krem-beyaz blok), Kumtaşı (katmanlı kahve-turuncu kaya), Bakır cevheri (turuncu bakır topaklı koyu kaya) yeni çizimleriyle.
+- **Ağaçlar:** Çam, Kavak, Elma ve Armut yeni çizimleriyle; olgun Elma ve Armut ağaçlarının tacında meyveler görünür, silkeleyince kaybolur.
+- **Zemin:** Çayır'ın çimi (açık ve koyu), kum ve su (göl, derin deniz, sığ kıyı) yeni dokularla; yan yana karolar dikişsiz birleşir. Dalgalar, parıltı ve kıyı köpüğü eskisi gibi.
+- **Kişiler:** Yaşlı Kemal, Cadı Zümrüt, Pazarcı Nazlı, Demirci Dursun, Zırhçı Durmuş, Savaşçı Börü, Çiftçi Ekin, Usta Sinan ve Avcı Doğan yeni çizimleriyle: uzaktayken önden durur, yanına gelince sana döner, işini yaparken işine bakar, yürürken adım atar. Konuşma kutusundaki resimleri de yeni çizimden.
+- **Kuzenler:** 15 kuzen (cadılar, demirciler, zırhçılar) Zümrüt, Dursun ve Durmuş'un yeni çizimiyle; konuşma resimleri de.
+- **Kişilerin eşyaları:** Zümrüt'ün kazanı, Dursun'un ocağı ve örsü, Durmuş'un örsü ve zırh askısı, Nazlı'nın tezgâhı, Sinan'ın tezgâhı ve kereste yığını, Doğan'ın kulübesi, Börü'nün talim kuklası ve Kemal'in kamp ateşinin taş halkası yeni çizimleriyle. Alevler, kabarcıklar, kıvılcımlar, duman ve testere eskisi gibi hareketli. Kuzen cadıların kazanı da yeni çizimde, iksiri her kuzenin kendi renginde.
+
+### Tasarım belgesi
+- Sistemler › Yeni ikonlarla: maden kayaları ve ağaçlar, zemin karoları, kişiler ve kişilerin eşyaları bölümleri; Çilek, Elma, Armut adları; Meyve çalılarının resimleri.
+- Eşyalar: yeni ikonlu eşyaların listesi, yeni adlar; Rezene kalktı.
+- ACT 1: Çayır otlarının sayıları Rezene'nin yerini alacak biçimde güncellendi; E6 2 Nane istiyor.
+- Tarifler ve başarımlar: tarif sayısı 766, eşya sayısı 1.236.
+
+---
+
 ## Versiyon 4.23 · 14 Kasım 2026
 
 ### Görsel
@@ -389,17 +413,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Kazanda "+" ile yapılabilenler de parlıyor:** Zümrüt'ün kazanında "Şimdi yapılabilir" listesine artık eksik parçası çantandakilerle "+" düğmesiyle yapılabilen tarifler de giriyor (ör. Kıvılcım'ın malzemesi varsa Ateş). Önceden yalnızca bütün parçası hazır olanlar parlıyordu.
 - **Tarif kitabında silah özellikleri düzgün:** bir silaha ya da zırha gelince özellikleri (hasar, vuruş hızı, menzil, kritik, keskinlik) resmin altında dar bir sütuna sıkışıp yarım ekranı kaplıyordu; artık malzemelerin altında tek sıra küçük kartlarda.
 - **Eylem yazısı kemerin üstünde:** "Su al", "Konuş" gibi eylem yazıları alet kemerinin arkasında yarım kalıyordu; artık hep kemerin biraz üstünde.
-
----
-
-## Versiyon 4.04 · 9 Kasım 2026
-
-### Oynanış
-- **Sarı bölgeli işlerde ok yok:** bir şey toplamak, avlamak ya da aramak gereken ana görevlerde (ör. Kanlıca, Pamuk) artık ok ve "Kanlıca 8 m" gibi yazı çıkmıyor; yer haritada sarı gösteriliyor, aradığını sen buluyorsun. Ok yalnızca bir kişiye ya da belli bir yere gidilecekken çıkıyor.
-- **Silah değdiği yere vuruyor:** meşale (ve bütün silahlar) bir canlının herhangi bir yerine değince artık hasar veriyor; vuruş, silahın savrulduğu yayın tamamına bakıyor (önceden dört yöne bakan dar bir alana bakıyordu, kurtların başına ya da üstüne değen meşale boşa gidiyordu).
-- **Robot köpekler elle topladığın her şeyi toplar:** köpek menüsünde artık yalnızca 23 malzeme değil, yerden elle toplayabildiğin ve daha önce eline geçmiş her şey var (Havuç, mantarlar, öbür biyomların bitkileri…); yalnızca kazma isteyen madenler ve mağaradakiler yok.
-- **Pazarcılar demircilerin dibinde değil:** Orman, Bataklık, Kayalık Dağ, Kül Diyarı ve Mor Kristal Vadisi'ndeki pazarcılar (Fidan, Nilüfer, Kardelen, Lale, Menekşe) artık demirci ve zırhçının ocağından uzakta, 30 kare kadar ötede kendi tezgâhını kuruyor.
-- **Canavarlar içinde dolanmıyor:** yürüyen canavar önünde, kendi boyu kadar uzakta duruyor; atılışı sana değince duruyor, arkana geçip gitmiyor.
-- **Börü'nün alıştırma canavarları (Kerevit dersi hariç) öğretiyor:** ritimli 3. vuruş, güçlü vuruş, ulti gibi derslerdeki canavarlar artık Kerevit dersindeki gibi dövüşüyor: senden bir adım uzakta duruyor, üstünde **!** çıkıp bir an bekliyor, sonra bir kez atılıyor ve geri çekiliyor; ne zaman vuracağı belli. Kırmızı (savuşturulamaz) vuruş ve yer sarsması yapmıyorlar, canının yalnızca %5'i kadar vuruyorlar ve seni canının dörtte birinin altına indirmiyorlar.
 
 ---

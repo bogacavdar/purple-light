@@ -1,3 +1,11 @@
+## v4.24 (14 Kasım 2026) · Çayır eşyaları, maden, ağaç, zemin, kişiler ve eşyaları ComfyUI çizimiyle; Çilek/Elma/Armut; Rezene kalktı
+- Boğaç'ın ComfyUI'si (Z-Image Turbo + pixel LoRA) ile çizildi, `/home/claude/w/` araçlarıyla 32 px ikon ve dünya resmine çevrildi.
+- Bloklar: `v423ikon` (23 ikon, yerde çizim `__plCayirL`), `v420cali` (Böğürtlen çalısı), `v424dunya` (Kireçtaşı/Kumtaşı/Bakır cevheri kayaları `drawNode`, Çam/Kavak/Elma/Armut `treeSprite`/`drawTree`), `v425karo` (Çayır çim k0/k1, kum k2, su k3–5; `__v58.bake` ve `drawGround` yerine konumdan doku; `n` işaretsiz parçalar yeniden pişirilir), `v425npc` (Kemal), `v425esya` (kazan, ocak, örs, askı, tezgâhlar, kereste, kulübe, kukla, kamp ateşi; `__plKazanOf` kuzen kazanları), `v425kisi` (8 kişi + kuzenler `npcDraw` üzerinden; `px` maskesi eski şapka/önlük parçalarını atlar; `drawX` sarmalayıcıları maskeyi temizler). `v64`'e `window.__plPOR`, `v184`'e `porOf` → `__plPORn` ve `drawWitchC/SmithC/ArmC` sarmalayıcıları, `drawPotC` kazan çizimi eklendi.
+- Kaldırılan: Rezene (tarifler, fiyat, `P1I/P1W`, `PLANTC`); `B4PLANT` Rezene yuvası `*Çayır otu` ile öbür otlara dağıtılır. `v395cayir` yalnız Havuç.
+- Eski kayıtlar: `RENAMED` (Çilek, Elma, Armut ve türevleri), `REPL` Rezene→Nane, Rezene çayı→Nane çayı; `HERB` Kurutulmuş rezene→Nane.
+- Geri almak: `v425*`, `v424dunya`, `v423ikon` blokları silinir, `v64`/`v184` eklemeleri geri alınır (`git revert` bu commit).
+- Kontrol: chk 0 hata (`?.` 1, `??` 7); Playwright ile ikonlar, yerdekiler, ağaçlar, kayalar, zemin, kişiler, kuzenler, eşyalar ve konuşma resimleri görüldü, hata yok.
+
 ## v4.23 (14 Kasım 2026) · Gelincik yeni resmiyle; Dal yan yatık, Yaprak dönük, yerdeki gölgeler resmin altında
 - Boğaç: "dalı yan çevir", "yaprağı da çevir biraz", "gölge çok aşağıda kalmış" → `v420cali` `GZ`/`box` ile resmin alt kenarı gölgeye oturur, Dal −π/2, Yaprak −0.55 rad. "gelinciği koy" → yeni blok `v423ikon` (v420cali'den hemen sonra): tek satırlık 32 px sayfa, `N` adları, `GZ` yerdeki boy; ICON/ICONC yalnız bu adlar için sabitlenir, yerde `__plCayirL[ad]`. Resim Boğaç'ın ComfyUI (Z-Image Turbo + piksel LoRA) çıktısından 32×32'ye indirilip çerçevelendi. Belge: Eşyalar › Yeni ikonlar; Sistemler › Çayır görünüşü.
 - Kontrol: chk 0 hata; ekran görüntüsünde Gelincik yerde ve envanterde yeni resimle.
@@ -175,18 +183,3 @@
 - Meşale yanığı (v2.33 bloğu, madPack sarmalayıcı): `torchStrikes()` = `weapon().torch` ve elde yay yok; ayrıca `a.flash>=.12` (gerçek vuruş; saldırgan hayvanın fark etmesi madPack'i flash'sız çağırıyordu). Vuruş aşınması da `torchStrikes()` ister. Geri alma: bu üç koşul silinir. Belge 20_sistemler "Meşale silahtır da".
 
 - Takla vuruşu bekleme süresi: kombo bloğunda `doMove`'un hemen üstünde `DASH_CD=3.5`, `dashCdT`; süre dolmadıysa gri float + `attack()`. Geri alma: o satır ve doMove başındaki `if(type==='dash')` silinir. Belge 20_sistemler kombo tablosu.
-
-## v4.04 (9 Kasım 2026) · sarı bölgeli işlerde ok yok
-
-**Değişen yerler:** Ana görev `guideKey` sarmalı (~15114) hedef bölge (`zKey`) ya da daire (`t.r`) ise ok vermiyor. Önceden bölgenin en yakın noktasına ok ve "Ad N m" yazısı çıkıyordu. Görev günlüğündeki açıklama da değişti.
-- Savuşturma (`v110-parry`): `roll`, `a.ders`/`a.tut` için kırmızı vermiyor (pencere değişmedi; Kerevit dersi aynı kaldı).
-- Canavar dövüşü (~5767): atılış değince duruyor, yaklaşma `r+10`'da duruyor. Yeni `v404ara` bloğu canavarları oyuncunun `r+6` dışına itiyor.
-- Yeni `v404ders` bloğu: alıştırma canavarı (`a.ders`) kendi durum makinesiyle dövüşüyor (`a._dz`: keep → 0,6 sn ! → 0,34 sn atılış → back). Taban yapay zekâ her karede bastırılıp konum geri alınıyor. Isırık canın %5'i, can ¼'ün altına inmiyor.
-- `attack` (~5853): `visBox` en yakın nokta + koni yerine yay örneklemesi (açı `__p4.sw.ang` ya da yön, ±1,35 rad, yarıçap menzil+8). Meşale-kurt: 10 açıdan 6 → 9 isabet.
-- Köpek menüsü (`mode==='dogs'`, ~3158): `DOG_MATS`'a dünyadaki bütün maden olmayan, mağara dışı düğüm adları ekleniyor.
-- Kuzen pazarcıların yeri (`place`, ~18551): ocaktan 480–900 px (öbür kişilere en az 240 px), olmazsa 300–480 px, olmazsa eskisi gibi 110–260 px. Kayıt etkilenmiyor, yer her açılışta hesaplanıyor.
-- Sürüm etiketi `Versiyon 4.04`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. Ritimli 3. vuruş ve ulti derslerinde canavar keep → wind → leap → back döngüsünde dövüşüyor; atılış başında savuşturunca vuruş geçmedi. Yaban domuzu en yakın 7 → 15 px, ısırığı yine geliyor. Alıştırma mağara ayısı ısırığı 137 → 4. Kuzen pazarcılar ocaktan 5 → 27–30 kare.
