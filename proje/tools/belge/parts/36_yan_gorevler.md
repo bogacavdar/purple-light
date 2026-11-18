@@ -75,7 +75,7 @@ Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş an
 - **Topla:** birkaç noktadaki şeyleri **istediğin sırayla** bul; her biri yaklaşınca alınır.
 - **Kovala:** kaçan bir hayvana yaklaş; her yaklaşmada 100–180 piksel öteye kaçar; birkaç kez sonra yakalanır.
 - **Getir:** kişiye istenen eşyaları getir (yalnızca toplanan ham malzemeler istenir; tarif istemez). Konuşunca eşyalar envanterden alınır.
-- **Eşlik et:** kişi (ya da hayvan) peşinden gelir; onu gösterilen yere götür. Çok uzaklaşırsan (160 piksel) durup "Bekle!" der; 400 pikselden çok kopunca yanına gelir. Yol boyunca belli yerlerde canavarlar çıkar (aşağıda).
+- **Eşlik et:** kişi (ya da hayvan) peşinden gelir; onu gösterilen yere götür. Çok uzaklaşırsan (160 piksel) durup "Bekle!" der; 400 pikselden çok kopunca yanına gelir. Bir engele **1,5 sn** takılı kalırsa da yanına gelir ve önünde boş bir yön arar. Yol boyunca belli yerlerde canavarlar çıkar (aşağıda).
 - **Avla:** gösterilen yerde çıkan canavarları yen.
 - **Bekle:** kişinin yanında (90 piksel içinde) belli bir süre kal; bu sürede canavar dalgaları gelir. Uzaklaşırsan sayaç durur.
 
@@ -97,7 +97,7 @@ Pijamasının üstüne babasının ceketini giymiş, uykusu kaçmış küçük b
 
 - **Konuş:** "Her gece bir kuş ağlıyor. Hep aynı kuş. Annem 'rüyandır' diyor ama değil, sen de duy bak… Şşş."
 - **Topla (dinleyerek, 1 kuş):** Toprak'ın çevresinde, 250–600 piksel ötede, bir çalılığın dibinde **yuvası dağılmış bir bıldırcın**. Güvercinler gibi yalnızca dünyada görünür (mavi halka ve pırıltı olmadan), haritada ve mini haritada gösterilmez; yaklaştıkça ötüşü (kısık, kesik bir "bıt-bıt") duyulur (Bulut'un güvercinleri gibi). Bulunca: "Yuvası rüzgârda dağılmış. Yumurtaları soğumuş ama biri hâlâ ılık."
-- **Kullan (yuva):** bıldırcının yanında **1 Kuru ot** ile yuvayı yeniden kur (yanına varınca kendiliğinden): kuş yuvaya oturur, ötüşü kesilir.
+- **Kullan (yuva):** bıldırcının yanında **1 Kuru ot** ile yuvayı yeniden kur (yuvaya ~40 piksel yaklaşınca kendiliğinden; yuva çalının dibinde olduğu için daha yakına girilemez): kuş yuvaya oturur, ötüşü kesilir. Çantada Kuru ot yoksa yuvanın yanında "**1 Kuru ot gerekli**" yazar; bu adımdayken Toprak'a dönülürse Toprak "Yuvasını bulmuşsun! Bir tutam **kuru ot** götür, yuvayı yeniden yaparız." der ("çalılıkların orada" ipucu yalnız kuş bulunmadan önce).
 - **Konuş (Toprak'a dön):** "Sustu! …Ağlamıyordu demek, çağırıyordu. Teşekkür ederim. Artık uyuyabilirim, değil mi?"
 - **Sonra dünyada:** Toprak'ın yanında, kenarda küçük bir yuva; gece yanından geçerken kısık bir ötüş duyulur. Konuşunca: "Yumurtadan bir yavru çıktı. Adını sen koy dedim ama sen yoktun, ben 'Fıstık' dedim."
 - **İz:** yanındaki yuva. **Konuşma resmi:** Toprak'ın kendisi; bıldırcın satırlarında bıldırcın (kod yazılırken eklenir).

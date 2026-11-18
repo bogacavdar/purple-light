@@ -1,3 +1,31 @@
+## v4.26 (18 Kasım 2026) · E2E Çayır+Orman: canlı gücü, Reis kuralı, yükseltme zinciri, tek parça eşyalar satılmaz, ayak işleri, B5
+- Boğaç kararları: 04:30 canlı gücü; S1 silah ve zırh satılmaz, DR4 450; S3-A Y1 Orman'a varınca; 04:55 tarif ayak işi kazancıda; Reisler A; Eşya yolu A (B5); yükseltme zinciri ve fiyatı (DNG-15…18); "upgrade gibi olur". Belge: ANALIZ §6, §8, §9, §10 (Y-01…Y-45; Y-17 iptal).
+- Yeni bloklar (son scriptler, sırayla):
+  - `v426zincir`: `CH`, `PREV`, `__plOwnP`, `__plChainPrev`, `__plChainP`; `takeChainPrev`/`chainSettle` ile `gain`, `handCraft`, `selectRecipe`, `closeCraft` ve Usta tıklaması sarmalayıcıları; `missingFor` yazısı; kemerde boş kalan zincir parçasını temizleme.
+  - `v426b5`: B5 `p`.
+  - `v426topuz`: topuz `WDMG`.
+- Çekirdek değişiklikler:
+  - `SET`/`apply` `xp` alanı; `NEWN.Porsuk`, `newDef`.
+  - `makeBoss`/`fixBoss` Reis formülü (`ORMAN`, çok atışlı ×1, `wind`), Çayır ve Orman'da sürü çağrısı yok (`PACKB`).
+  - Mağara `NK`/`BK`, `PACK['Mağara yarasası']`.
+  - Silah satırı topuz `.4`, mızrak `.5`; `ANIM.Engerek.drops`; `ARR[1]=10`.
+  - `spawnIn` Kurt (Sv1–5 tek, sahada en çok 1).
+  - `dropRoll` bağımsız çekim (`dropOdds`/`dropRolls` silindi); `faintLoss` ve `deathDrop`/BAG; `trapCatch`.
+  - `noSell` ile `sell`/`bulkSellable`/liste/"1 sat".
+  - `laborFee`/`ustaPrice` `__plOwnP`; `subOK` zincir; `mkFiller` derinlik 13; `nextStep` walk 13 ve "Önceki kademe".
+  - v186: `fillQ`/`fillG`/`fillFor`/`WITCH`, `fillerNeeded` (<2 "!"), `pickFiller(onlyMR)`, `partTarget 'kn'`, `progText 'any'` etiketi, kart tarif satırı kısaltma, `__plUstaQ`.
+  - `talkUsta` ilk tanışma; DATA.Q K8/DU6/AL6/L8/DR4/Y1/B5 metin ve değerleri.
+  - Eşlik `hop`/`f.stk`; Toprak `remindUse` ve `use` 40 px.
+  - Mağara kapısı meşale satırı; v2.28 `qDone` `__pl186.S.d`; Dursun `tz===13` ve `AXE_INFO` metinleri.
+- Kayıt alanı yok.
+  - Eski kayıtta sürmekte olan bir "Dövdür" görevi zincir yüzünden uzayabilir; kart ve ayak işi önceki kademeleri sırayla gösterir.
+  - Alınmış eski `F-rec-*` işi `g:'npc'` ile kalır ve öğrenilince biter.
+- Geri almak: `git revert` bu commit (belge ve kod birlikte). Yalnız zinciri geri almak için `v426zincir` bloğu ve `laborFee`/`ustaPrice`/`subOK` satırları; topuz için `v426topuz`; B5 için `v426b5` ve DATA'daki B5 satırı.
+- Kontrol: chk 0 hata; headless denetimler yukarıda.
+- Son düzeltmeler: OR-16 (örste takılı parçayla yapımda çift parça; `gain` sarmalayıcısı kaldırıldı, takma yapım bitince `brew`/`handCraft`/Usta sarmalayıcılarında), `spawnIn`'de yorumun yuttuğu `const P=PACK[k]` (bcd9129–29b21cf arası hiç hayvan doğmuyordu; yalnız bekleyen-paket, yayına gitmedi), Yankı Kraliçesi 350·18. Duman testi: köprü önü kaydıyla 8 hayvan, sayfa hatası yok.
+- Yönetici: v2.51'den beri bir yorumun yuttuğu ölü `MATS.forEach` kodu silindi (BASES satırı); belge 36_yan_gorevler Toprak yuvası 40 px.
+
+
 ## v4.24 (14 Kasım 2026) · Çayır eşyaları, maden, ağaç, zemin, kişiler ve eşyaları ComfyUI çizimiyle; Çilek/Elma/Armut; Rezene kalktı
 - Boğaç'ın ComfyUI'si (Z-Image Turbo + pixel LoRA) ile çizildi, `/home/claude/w/` araçlarıyla 32 px ikon ve dünya resmine çevrildi.
 - Bloklar: `v423ikon` (23 ikon, yerde çizim `__plCayirL`), `v420cali` (Böğürtlen çalısı), `v424dunya` (Kireçtaşı/Kumtaşı/Bakır cevheri kayaları `drawNode`, Çam/Kavak/Elma/Armut `treeSprite`/`drawTree`), `v425karo` (Çayır çim k0/k1, kum k2, su k3–5; `__v58.bake` ve `drawGround` yerine konumdan doku; `n` işaretsiz parçalar yeniden pişirilir), `v425npc` (Kemal), `v425esya` (kazan, ocak, örs, askı, tezgâhlar, kereste, kulübe, kukla, kamp ateşi; `__plKazanOf` kuzen kazanları), `v425kisi` (8 kişi + kuzenler `npcDraw` üzerinden; `px` maskesi eski şapka/önlük parçalarını atlar; `drawX` sarmalayıcıları maskeyi temizler). `v64`'e `window.__plPOR`, `v184`'e `porOf` → `__plPORn` ve `drawWitchC/SmithC/ArmC` sarmalayıcıları, `drawPotC` kazan çizimi eklendi.
@@ -161,25 +189,3 @@
 **Geri alma:** `git revert` bu commit (belge ve kod birlikte).
 
 **Kontrol:** chk.js 0 hata. Fiyat denetimi: fiyatsız eşya yok, kullanılmayan malzeme sayısı aynı (68). Balta dersi: boş çantada Börü 2 dal, 7 lif ister; adımlar 0→1→2→3→5 doğru sırayla.
-
-## v4.05 (10 Kasım 2026) · eylem yazısı kemerin üstünde
-
-**Değişen yerler:** Yeni `v405prompt` bloğu (dosya sonu). `#prompt` kemerin (`#hotbar`) üstüne binerse 120 ms'de bir `bottom`'u kemerin üstü + 8 px yapılıyor (satır içi, `!important`). `.act` ve `v50m` (telefon) değişmedi.
-- Mor ışık (`v330ys`): `spot` oyuncunun o anki yerine göre çalışıyor; halkadan uzaklaşınca bitme kuralı kalktı. Işık oyuncunun çevresinde 900 px. Zemin halkası yerine `#ysveil` (z 1, sabit mor örtü, opaklıkla yumuşak geçiş) ve oyuncunun çevresinde zerreler var.
-- Yardımcılar (`v402yard` `inZone`): oyuncu 360 px ya da bir Yıldızsız 320 px yakınındaysa yardım ediyorlar.
-- Tarif kitabı `bookInfo` sarmalı (~18419): silah/zırh yazısı ikon sütunu yerine metin sütununda `.bkst` yongaları olarak çıkıyor (`v405bk` stili).
-- Yeni `v405dur` bloğu: `GT[n].dur` ×2 (`sword`/`hunt`/`bow`). Kayıtta `dw2`; eski kayıtta `toolDur` ×2. Belgede (85_aletler) 66 satırın dayanıklılığı ×2.
-- `sharpCost(n)` (giveTool yanında): tam ücret `g.sharp` (silahta ×2) × kaybedilen/en çok, yukarı yuvarlanıyor, en az 1. Dursun menüsünde (~3194, ~3413) kullanılıyor. Belgede 66 silahın bileme ücreti ×2.
-- Sürüm etiketi `Versiyon 4.05`.
-
-**Geri alma:** `git revert` bu commit.
-
-**Kontrol:** chk.js 0 hata. Saldırıda 400 px uzaklaşınca saldırı sürüyor, örtü açık. 1500×800'de yazının altı 652 → 634, kemerin üstü 642.
-
-- Kazan listesi: `canChain(x)` (canWith'in hemen önünde) eksik parçaları `chainTry`+`subOK` ile çantadan (kazandaki kendi tarifinde kazan içeriği dahil) yapabiliyorsa true; `mk` = `canWith||canChain`, `.can` sınıfı da mkOn'u kapsar. Geri alma: `canChain` silinir, `mk` eski haline. Belge 80_tarifler "Kazan listesinde yapılabilirler".
-
-- Zemin: tvar döngüsünden önce `VT` (tiles kopyası) iki tur yumuşatılır: 0/1 karo, 8 komşudan ≤2 kendi türü ve ≥5 öbür tür ise görünüşte öbür tür (`lone`). `tiles` değişmez (ağaç, düğüm, kar kuralları aynı). Geri alma: `VT`/`lone` satırı silinir, döngüde `t=tiles[i]`. Ölçüm olcum.js cpu 4: v4.05 öncesi BOOT 19768 ms / PLAY js 4105 ms, sonrası BOOT 19078 ms / PLAY js 4187 ms (fark gürültü düzeyinde). Belge 30_act1.
-
-- Meşale yanığı (v2.33 bloğu, madPack sarmalayıcı): `torchStrikes()` = `weapon().torch` ve elde yay yok; ayrıca `a.flash>=.12` (gerçek vuruş; saldırgan hayvanın fark etmesi madPack'i flash'sız çağırıyordu). Vuruş aşınması da `torchStrikes()` ister. Geri alma: bu üç koşul silinir. Belge 20_sistemler "Meşale silahtır da".
-
-- Takla vuruşu bekleme süresi: kombo bloğunda `doMove`'un hemen üstünde `DASH_CD=3.5`, `dashCdT`; süre dolmadıysa gri float + `attack()`. Geri alma: o satır ve doMove başındaki `if(type==='dash')` silinir. Belge 20_sistemler kombo tablosu.

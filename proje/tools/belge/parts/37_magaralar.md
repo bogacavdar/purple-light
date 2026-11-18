@@ -18,7 +18,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 ### Genel kurallar
 
 1. **Giriş.** Mağaranın girişi büyüktür (genişliği ~4–5 ağaç, ~100 × 76 piksel kayalık bir tepe ve ortasında karanlık bir ağız). Ana kişilerden ve ateşlerden en az ~400 piksel uzakta, kendi biyomunda, ağaçsız bir yerdedir (ada her kurulduğunda aynı yer). Ağzın önünde ahşap bir tabela durur: mağaranın adı ve **seviye şartı** ("Yankı Mağarası · Sv 5").
-2. **Şartlar.** **Girişe tıklayınca** karakter mağaranın ağzına yürür ve bir pencere açılır: "Mağaraya girmek ister misin?", altında iki şart işaretiyle (✓/✗ en az X. seviye, ✓/✗ elinde yanan bir meşale). **Mağaraya gir** düğmesi yalnızca iki şart da tamamsa basılır; **Vazgeç** (ya da Esc) kapatır, Enter girer. Ağzın önünde **F** de aynı pencereyi açar. Eski davranış (şart tutmazsa karakterin söylediği): seviye yetmiyorsa karakter "Bu mağara bana göre değil… en az **5. seviye** olmalıyım (şimdi 3)." der. Seviye yetiyor ama **elinde yanan bir meşale yoksa** "Meşalesiz giremem; içerisi zifiri karanlık." der (kafa lambası yetmez). İkisi de tamamsa girer.
+2. **Şartlar.** **Girişe tıklayınca** karakter mağaranın ağzına yürür ve bir pencere açılır: "Mağaraya girmek ister misin?", altında iki şart işaretiyle (✓/✗ en az X. seviye, ✓/✗ elinde yanan bir meşale). Meşale şartı tutmuyorsa satır nedenini söyler: meşalen varsa "Meşalen yanmıyor: meşale yuvasından yak" (bilgisayarda yakma tuşu, telefonda yuvaya dokunarak; meşale alet kemerinde değil, kemerin solundaki meşale yuvasındadır), hiç meşalen yoksa "Meşalen yok". **Mağaraya gir** düğmesi yalnızca iki şart da tamamsa basılır; **Vazgeç** (ya da Esc) kapatır, Enter girer. Ağzın önünde **F** de aynı pencereyi açar. Eski davranış (şart tutmazsa karakterin söylediği): seviye yetmiyorsa karakter "Bu mağara bana göre değil… en az **5. seviye** olmalıyım (şimdi 3)." der. Seviye yetiyor ama **elinde yanan bir meşale yoksa** "Meşalesiz giremem; içerisi zifiri karanlık." der (kafa lambası yetmez). İkisi de tamamsa girer.
 3. **Yükleme.** Girerken kısa bir yükleme ekranı (~0,9 sn): mağaranın adı ve "Mağaraya giriliyor…". Çıkarken "Gün ışığına çıkılıyor…".
 4. **İç alan.** Her mağara ayrı bir alandır: istenen boyut biyomun dörtte biriydi (~107 × 107 karo); adada kişilerden, ateşlerden ve yerlerden uzak, buna sığan en büyük kuru alan **~89 × 89 karo** (biyomun yaklaşık beşte biri) olduğu için mağaralar bu boyuttadır. İçinde kıvrımlı tüneller, ~18 yan kol ve oda, en dipte büyük bir oda vardır. Giriş en alttadır; en derin oda en uzak uçtadır. İçeride **hava yoktur** (yağmur, sis, rüzgâr, şimşek ve gök gürültüsü yok; dışarının hava ve ortam sesleri de içeri gelmez —: "mağarada yağmur yağıyor"), mor ışık gelmez, gün ışığı yoktur: her yer gece gibi karanlıktır.
 5. **Meşale.** **Mağarada hava meşaleyi etkilemez ("mağarada meşale çok hızlı tükeniyor"):** dışarıda yağmur ya da fırtına varken meşale 2–2,7 kat hızlı yanar; içeride hava olmadığı için mağarada her zaman normal hızda yanar. Meşale sol eldeyken her saldırıda harcanan pay da mağarada **üçte birdir** (dışarıda %4,5, içeride %1,5). Mağarada meşalenin aydınlattığı alan **2 katıdır** (Kaba meşale 160 px, Meşale 230 px; ışığın dışı karanlıktır). Meşale içeride biterse (ya da elinden indirilirse) her yer **zifiri karanlık** olur; karakter "Meşalem bitti! Hiçbir şey göremiyorum…" der ve 1,5 sn sonra kendini mağaranın dışında, girişin önünde bulur (eldeki meşaleyi indirdiysen 3 sn içinde yeniden eline alırsan kalırsın). Mağaranın ağzından içeri vuran soluk bir ışık ve parlayan mantarlar ya da reçineler küçük ışık halkaları yapar ama yolu göstermeye yetmez.
@@ -41,9 +41,9 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 
 | Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri |
 |---|---|---|---|---|---|---|---|
-| Mağara yarasası | saldırgan | 22 | 7 | 78 | 10 | uçar, 2–4'lü sürü | Yarasa zarı (%80) |
+| Mağara yarasası | saldırgan | 22 | 7 | 78 | 10 | uçar, 1–2'li sürü | Yarasa zarı (%80) |
 | Kör kertenkele | nötr | 40 | 9 | 40 | 12 | vurulunca saldırır | Kör kertenkele eti (her zaman), Kertenkele pulu 1–2 (%60) |
-| Taş örümceği | saldırgan | 55 | 12 | 56 | 16 | ısırığı kanatır | Taş örümceği ipi 1–2 (%80) |
+| Taş örümceği | saldırgan | 120 | 14 | 56 | 16 | ısırığı kanatır | Taş örümceği ipi 1–2 (%80) |
 
 **Yarasaların görünüşü (10 Kasım 2026, Boğaç: "mağara yarasaları ve leşleri çok kötü olmuş; yerde gözükmüyorlar, leşleri ayrı gölgeleri ayrı yere düşüyor, yarasaya da benzemiyorlar"):** Mağara yarasası (ve onun çizimini kullanan Kaya yarasası, Kristal yarasa, Yankı Kraliçesi) önden görülen bir yarasadır: sivri iki kulak, iri parlak gözler (kovalarken kırmızı), iki küçük beyaz diş, açık gövde göğsü ve iki yana açılan, kemikleri belli, alt kenarı tırtıklı zar kanatlar. Kanatlarını **üç kareyle** çırparak (yukarı, düz, aşağı) yerden biraz yüksekte uçar; gölgesi tam altında yerdedir. **Leşi:** vurulunca dönmeden **yere süzülüp düşer**, kanatları iki yana açık, gözleri kapalı (✕) **gölgesinin tam üstünde** yatar. Yankı Kraliçesi aynı yarasanın büyüğüdür (mor tonlu, altın taçlı).
 
@@ -60,7 +60,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 | Kor Kral | Kara bazalttan bir kral: gövdesinde akan lav damarları, başında alevleri titreyen altın taç, elinde ateşli asa, kor gibi yanan gözler |
 | Işık Yutan | Havada süzülen kapkara bir yaratık: altı göz, ışığı yutan dişli dev ağız (içinde mor girdap), sırtında mor ayna kristalleri, altında kıpırdayan dokunaçlar |
 
-**Boss · Yankı Kraliçesi** (taçlı dev yarasa): can 900, hasar 22, hız 62, uçar, XP 400; düşürdükleri: Kraliçe pençesi (her zaman), Yarasa zarı 3–5.
+**Boss · Yankı Kraliçesi** (taçlı dev yarasa): can 350 (uçup daldığı için vuruşların çoğu boşa gider; Sv10'da Çakmaktaşı kılıç ve Kürk takımıyla yenilebilsin diye; E2E v4.26), hasar 18, hız 62, uçar, XP 400; düşürdükleri: Kraliçe pençesi (her zaman), Yarasa zarı 3–5.
 
 **Toplanabilenler:** Yankı mantarı (mavi parlar; elle), Damla taşı (elle).
 
@@ -102,11 +102,11 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 
 | Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri |
 |---|---|---|---|---|---|---|---|
-| Kök böceği | saldırgan | 90 | 18 | 44 | 24 | sert kabuk | Kök böceği kabuğu 1–2 (%80) |
-| Kök yılanı | saldırgan | 70 | 16 | 58 | 22 | ısırığı zehirler | Kök yılanı derisi (%70) |
-| Mağara kurdu | saldırgan | 120 | 22 | 66 | 30 | 2–3'lü sürü | Mağara kurdu eti (her zaman), Mağara kurdu postu (%60) |
+| Kök böceği | saldırgan | 160 | 22 | 44 | 24 | sert kabuk | Kök böceği kabuğu 1–2 (%80) |
+| Kök yılanı | saldırgan | 130 | 20 | 58 | 22 | ısırığı zehirler | Kök yılanı derisi (%70) |
+| Mağara kurdu | saldırgan | 200 | 26 | 66 | 30 | 2–3'lü sürü | Mağara kurdu eti (her zaman), Mağara kurdu postu (%60) |
 
-**Boss · Yaşlı Kök** (yürüyen yaşlı ağaç kütüğü): can 2000, hasar 38, hız 40, XP 900; düşürdükleri: Yaşlı Kök özü (her zaman), Kök reçinesi 3–5.
+**Boss · Yaşlı Kök** (yürüyen yaşlı ağaç kütüğü): can 1.200, hasar 24, hız 40, XP 900; düşürdükleri: Yaşlı Kök özü (her zaman), Kök reçinesi 3–5.
 
 **Toplanabilenler:** Kök reçinesi (amber parlar; elle). Orman'ın mantarı Kanlıca dışarıda, ağaçların dibinde çıkar.
 
@@ -126,7 +126,7 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 | Kök böceği kabuğu | Kök böceği | 28 | Böcek kabuğu boyası |
 | Kök yılanı derisi | Kök yılanı | 32 | Kök flütü |
 | Mağara kurdu eti | Mağara kurdu | 32 | Kanlıcalı güveç (çiğ de yenir) |
-| Mağara kurdu postu | Mağara kurdu | 40 | – (satılır; Deri parçası da düşer) |
+| Mağara kurdu postu | Mağara kurdu | 40 | Deri tulum (Deri parçası da düşer) |
 | Yaşlı Kök özü | Yaşlı Kök | 480 | Kök özü iksiri |
 
 **Tarifler (kazanda öğrenilir)**

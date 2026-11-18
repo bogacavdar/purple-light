@@ -58,7 +58,7 @@ Kumsalda seni bulan yaşlı denizci. Kampı uyandığın kumsalın hemen yanınd
 
 **Yer:** Kemal'in yaklaşık 30 karo doğusu, 51 karo kuzeyi, Çayır'da tezgâhının başında. **Tanışma:** öğreticinin 9. adımı.
 
-- **Her şeyi satın alır.** Fiyat sabittir, çok satmak düşürmez. "Aletler, zırhlar, eşyalar hariç hepsini sat" ve "Kazandaki açık tariflere yeteni bırak" ve "Bütün tariflere yeteni bırak" düğmeleri vardır (v3.33; Sistemler › Ekonomi).
+- **Silah, zırh, takı ve aletler dışında her şeyi satın alır** (tek parça eşyalar satılmaz; Sistemler › Ekonomi). Fiyat sabittir, çok satmak düşürmez. "Aletler, zırhlar, eşyalar hariç hepsini sat" ve "Kazandaki açık tariflere yeteni bırak" ve "Bütün tariflere yeteni bırak" düğmeleri vardır (v3.33; Sistemler › Ekonomi).
 - **Doğal malzeme ve tarifini öğrendiğin eşyaları satar:** doğal malzemeleri en az bir kez eline geçmişse; ayrıca **tarifini öğrendiğin her eşyayı** (Uzun sopa, İp, Sopa, yemekler…; yapılar, aletler, silahlar ve zırhlar hariç) değerinin **1,5 katına** satar (hiçbir zaman sana ödediği fiyatın altına inmez). Tohum ve tarla ürünü satmaz (tarlacılık şimdilik yok). Alış fiyatı malzemenin değerinin kabaca 2,6–5,6 katıdır (pahalı ve tehlikeli bölgelerin malzemesi daha pahalı). 1'li ya da 10'lu alınır.
 - Satış fiyatın bütün yeteneklerle en çok temel fiyatın 2,3 katına çıkar.
 - Hikâyesi: kardeşi Cem.
@@ -163,17 +163,17 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 
 | Eşya | Tür | Değer | Malzemeler | Döven | Fiyat |
 |---|---|---|---|---|---|
-| Granit savaş çekici | Kılıç (silah) | 27 hasar · 100 kullanım | 4 Granit, 1 Sert odun sapı, 3 Yaban domuzu dişi, 1 Sinir kirişi | Silahçı Durdu (Orman) ve üstü | 957 |
-| Meşe kabuk zırh | Zırh · Gövde | +30 savunma · direnç: kanama %15 | 6 Sert odun, 2 Deri parçası, 6 Kirpi dikeni, 2 Sinir | Zırhçı Duran (Orman) ve üstü | 2.484 |
-| Ceviz kabuğu miğfer | Zırh · Baş | +15 savunma | 6 Ceviz, 2 Sert odun, 1 Deri parçası, 2 İri diken, 2 Taş | Zırhçı Duran (Orman) ve üstü | 900 |
-| Timsah dişi kılıcı | Kılıç (silah) | 38 hasar · 140 kullanım | 4 Demir külçesi, 3 Timsah dişi, 1 Sağlam odun sapı, 1 Deri parçası | Silahçı Ali (Bataklık) ve üstü | 1.903 |
-| Timsah pulu zırh | Zırh · Gövde | +46 savunma · direnç: kanama %40, metal | 3 Demir cevheri, 2 Timsah derisi, 1 Bataklık kurdu postu, 1 Sinir | Zırhçı Veli (Bataklık) ve üstü | 3.204 |
-| Gümüş kılıç | Kılıç (silah) | 44 hasar · 160 kullanım | 4 Gümüş külçesi, 3 Kuvars, 1 Güçlü odun sapı, 2 Kartal pençesi | Silahçı Kaya (Kayalık Dağ) ve üstü | 2.970 |
-| Gümüş pullu zırh | Zırh · Gövde | +52 savunma · direnç: kanama %35, metal | 6 Gümüş cevheri, 3 Demir cevheri, 2 Deri parçası, 2 Ayı pençesi | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 4.024 |
-| Kartal tüyü miğfer | Zırh · Baş | +24 savunma · metal | 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Deri parçası, 2 Taş | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 1.466 |
-| Ametist kılıcı | Kılıç (silah) | 58 hasar · 240 kullanım | 5 Ametist, 1 Kadim odun sapı, 2 Gölge dişi, 1 Mor zehir | Silahçı Kudret (Mor Kristal Vadisi) ve üstü | 9.478 |
-| Kristal ipek zırh | Zırh · Gövde | +72 savunma · direnç: kanama %25, yanık %25, zehir %25 | 3 Kristal ipek, 2 Ametist, 3 Demir cevheri, 1 Deri parçası | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 10.048 |
-| Işık pulu eldiven | Zırh · El | +18 savunma · direnç: zehir %35 | 4 Işık pulu, 2 Kristal, 1 Deri parçası, 3 Lif | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 4.079 |
+| Granit savaş çekici | Kılıç (silah) | 28 hasar · 190 kullanım | 1 Tunç savaş çekici, 4 Granit, 1 Sert odun sapı, 3 Yaban domuzu dişi, 1 Sinir kirişi, 1 Bileme macunu | Silahçı Durdu (Orman) ve üstü | 1.463 |
+| Meşe kabuk zırh | Zırh · Gövde | +27 savunma · direnç: kanama %15 | 1 Tunç zırh, 3 Meşe kabuğu, 1 Deri parçası, 3 Kirpi dikeni, 1 Sinir | Zırhçı Duran (Orman) ve üstü | 3.791 |
+| Ceviz kabuğu miğfer | Zırh · Baş | +13 savunma | 1 Tunç miğfer, 6 Ceviz, 2 Ceviz kabuğu, 1 Deri parçası, 2 İri diken, 2 Taş | Zırhçı Duran (Orman) ve üstü | 1.409 |
+| Timsah dişi kılıcı | Kılıç (silah) | 38 hasar · 140 kullanım | 1 Demir kılıç, 4 Demir külçesi, 3 Timsah dişi, 1 Sağlam odun sapı, 1 Deri parçası, 1 Zehir yağı | Silahçı Ali (Bataklık) ve üstü | 3.092 |
+| Timsah pulu zırh | Zırh · Gövde | +45 savunma · direnç: kanama %40, metal | 1 Demir zırh, 3 Demir cevheri, 2 Timsah derisi, 1 Bataklık kurdu postu, 1 Sinir | Zırhçı Veli (Bataklık) ve üstü | 5.545 |
+| Gümüş kılıç | Kılıç (silah) | 52 hasar · 160 kullanım | 1 Çelik kılıç, 4 Gümüş külçesi, 3 Kuvars, 1 Güçlü odun sapı, 2 Kartal pençesi, 1 Bileme macunu | Silahçı Kaya (Kayalık Dağ) ve üstü | 5.035 |
+| Gümüş pullu zırh | Zırh · Gövde | +60 savunma · direnç: kanama %35, metal | 1 Çelik zırh, 3 Gümüş cevheri, 2 Demir cevheri, 1 Ayı pençesi, 1 Mağara ayısı derisi | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 7.160 |
+| Kartal tüyü miğfer | Zırh · Baş | +31 savunma · metal | 1 Çelik miğfer, 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Gri vaşak postu, 1 Rüzgâr taşı | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 2.610 |
+| Ametist kılıcı | Kılıç (silah) | 81 hasar · 240 kullanım | 1 Mor kristal kılıç, 5 Ametist, 1 Kadim odun sapı, 2 Gölge dişi, 1 Mor zehir | Silahçı Kudret (Mor Kristal Vadisi) ve üstü | 15.956 |
+| Kristal ipek zırh | Zırh · Gövde | +94 savunma · direnç: kanama %25, yanık %25, zehir %25 | 1 Mor kristal zırh, 3 Kristal ipek, 2 Ametist, 3 Demir cevheri, 1 Deri parçası | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 17.745 |
+| Işık pulu eldiven | Zırh · El | +18 savunma · direnç: zehir %35 | 1 Mor kristal eldiven, 4 Işık pulu, 2 Kristal, 1 Deri parçası, 3 Lif | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 7.186 |
 
 #### Hikâyeler ve ailenin sahnesi
 
@@ -197,7 +197,7 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 
 ### Usta Sinan
 
-**Yer:** Orman'da (2. biyom), tezgâhı ve kereste yığınının başında. **Tanışma:** her zaman; ilk konuşmada **Hasır yatak** hediye eder.
+**Yer:** Orman'da (2. biyom), tezgâhı ve kereste yığınının başında. **Tanışma:** her zaman; ilk konuşmada **Hasır yatak** hediye eder ve aynı konuşmada, hediyenin ardından ilk görevini (R2 Yaprak barınağı) verir; başında "!" yanan Sinan'la ikinci kez konuşmak gerekmez.
 
 - **v3.39 (Boğaç): Marangoz Çınar ile birleşti.** Çınar oyundan kaldırıldı; onun işleri, ev ve barınak satışı dahil, Sinan'dadır. Görevleri 16'dan 8'e indi (ACT 1 › Ana görevler › Usta Sinan).
 - Yere kurulan yapıları (Yapılar kategorisi; **Çit** artık el yapımıdır, Sinan yapmaz; üs kurmanın **Direk feneri**ni Sinan yapar: Sistemler › Üs kurma), yatakları ve **ev eşyalarını** (evin içine konur) yapar. Tarif kazanda öğrenilmiş, malzeme çantanda olmalı. İşçilik: bkz. Sistemler › Ekonomi. (Satır düzeni: Sistemler › Arayüz ve pencereler › Tarif ve sipariş listelerinde satır düzeni.)

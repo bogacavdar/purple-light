@@ -8,6 +8,45 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.26 · 18 Kasım 2026
+
+### Oynanış
+- **Yükseltme zinciri:** her silah, alet ve zırh bir öncekinin yükseltmesidir. Bakır kılıç bir Taş kılıç, Tunç kılıç bir Çakmaktaşı kılıç ister; kılıç, savaş çekici, topuz, mızrak, balta, kazma, yay, miğfer, gövde zırhı, eldiven ve çizmede hep böyle. Üstündeki ya da elindeki parça da kullanılır: yenisi aynı yere kendiliğinden takılır (çantada aynısı varsa önce o kullanılır). Körelmiş parça da olur, yenisi tam keskin gelir. Satırda ve görev kartında "Önceki kademe" yazar. Kamış çizme zincirin dışında kalır.
+- **Fiyatlar:** zincirdeki parçanın değeri kendi değerine önceki parçanın yarısı eklenerek bulunur (ör. Granit kılıç 1.444, Ametist kılıcı 15.956). Ustanın işçiliği yalnız parçanın kendi değerinden alınır.
+- **Silah, zırh, takı ve aletler satılmaz:** hiçbir pazarcıya satılmazlar ve satış listesinde görünmezler. Oklar, meşaleler, malzemeler ve yemekler eskisi gibi satılır.
+- **Canlılar:** Çayır canlıları güçlendi (Kurt 125 can · 16 hasar, Geyik 110 · 15, Yaban atı 150 · 17). Orman ve mağaralar yeniden dengelendi; Yankı Mağarası kolaylaştı (yarasalar 1–2'li gelir, Yankı Kraliçesi 350 can). Verdikleri XP değişmedi.
+- **Reisler:** her Reis en az 100 can ve 10 hasarla gelir. Çayır ve Orman Reisleri artık sürü çağırmaz ve türleri kadar hızlı vurur.
+- **Düşen eşyalar:** her eşya kendi ihtimaliyle düşer; Tavşan derisi gerçekten %70 düşer. Avdan biraz daha çok eşya çıkar.
+- **İlk gece bayılmak kayıpsız:** oyunun ilk gecesinde neyle bayılırsan bayıl hiçbir şey kaybolmaz.
+- **Kurt:** Seviye 1–5'te gece sahada en çok bir Kurt olur.
+- **Topuz:** hasarı kılıcın dörtte üçü (Taş 9, Bakır 12, Çakmaktaşı 14…) ve biraz yavaş (0,40 sn). Mızrak hızlandı (0,5 sn).
+- **Tuzak:** Çayır'da Tavşan, Keklik ve Bıldırcın; Orman'da Sincap ve Tavşan yakalar.
+- **Engerek** artık %90 ihtimalle Zehir bezesi düşürür.
+- **Görevler:**
+  - Börü'nün "Kuzeye keşif" görevi Orman'dan önce bir çakmaktaşı silahı ve bir zırh parçası ister, 120 Vio verir.
+  - Duran'ın "Kabuk zırh" görevi 450 Vio verir.
+  - "Ocak başı" ve "Çatlak sap" 4 sert odun, "Servi sapı" 3 sağlam odun, "Pruvadaki fener" 4 kadim odun ister.
+  - Cadı Yakut'un ilk görevi Orman'a varınca açılır.
+  - Usta Sinan ilk tanışmada hediyesinin ardından ilk görevini de verir.
+- **Ayak işleri:**
+  - "Tarif öğren" işini artık bulunduğun biyomun cadısı verir: Çayır'da Zümrüt, Orman'da Yakut.
+  - Yalnızca bir kişi görev bekliyorsa, sıradaki görevin eksik malzemesi ya da tarifi için bir ayak işi de çıkar.
+- **Pamuk** bir engele takılırsa ya da çok geride kalırsa yanına gelir.
+- **Toprak'ın kuşu:** yuvanın yanında "1 Kuru ot gerekli" yazar; Toprak da kuru ot götürmeni söyler.
+- **Mağara kapısı** meşalen yanmıyorsa onu meşale yuvasından nasıl yakacağını söyler.
+- "Başında siyah ! olan kişiyle konuş" yazısı ilk görev bitince artık görünmez.
+- Dursun "Taş balta Çayır'ın ve Orman'ın ağaçlarını keser" der.
+- Orman canlıları seni Seviye 25'ten sonra güçlü görüp çekinir.
+
+### Tasarım belgesi
+- Yükseltme zinciri ve üstündeki parçanın yükseltilmesi; canlı ve Reis tabloları; silah tablosu; "Tek parça eşyalar satılmaz"; Kemal'in ayak işleri ve kazancılar; B5; düşme yüzdeleri; bayılma; tuzak; sürülerin boyu; Pamuk; Toprak; mağara kapısının meşale satırı.
+
+### Tasarım belgesi
+- Oyuncunun Orman'a varış seviyesi ölçüme göre ~10 olarak yazıldı; köprü Seviye 12'de açılır. Canlı, Reis ve mağara tabloları, yükseltme zinciri (tür tür kademe tablosu ve özel parçalar), satış kuralı, ayak işleri ve görev satırları güncellendi.
+
+
+---
+
 ## Versiyon 4.24 · 14 Kasım 2026
 
 ### Oynanış
@@ -392,26 +431,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Tarif ve eşya tablolarındaki fiyatlar, Börü'nün balta dersi, yan görevlerde sesle bulunan şeylerin görünmesi ve listede özellik satırının kaydırmaması güncellendi.
-
----
-
-## Versiyon 4.05 · 10 Kasım 2026
-
-### Oynanış
-- **Takla vuruşu 3,5 saniyede bir:** taklanın içinde ya da hemen sonunda yapılan takla vuruşu (Hamle, Koşarak saplama, Zikzak…) ard arda yapılınca çok güçlüydü; artık 3,5 saniyede bir yapılabiliyor. Arada aynı tık normal vuruş oluyor, karakterin üstünde gri "Koşarak saplama 3 sn" gibi kalan süre yazıyor. Hasarı aynı.
-- **Bileme ücreti aşınmaya göre:** Dursun'a bileterken ücret artık aletin ne kadar körelmiş olduğuna göre: tamamen körse tam ücret, biraz körse az. Silahların tam bileme ücreti iki katına çıktı (iki kat dayandıkları için).
-- **Silahlar iki kat dayanıyor:** kılıç, savaş çekici, topuz, mızrak ve yaylar artık iki kat geç köreliyor (ör. Mızrak 20 → 40 vuruş). Meşaleler ve aletler (balta, kazma…) aynı. Eski kayıtta elindeki silahın kalan keskinliği de iki katına çıkıyor.
-- **Mor ışık bütün adayı sarıyor:** saldırıda artık mor bir halka yok; bütün ada mora bürünüyor ve aydınlanıyor. Yıldızsızlar sen nereye gidersen çevrene iniyor; kaçmak saldırıyı bitirmiyor. Kişiler (Börü, Zümrüt, Kemal) dövüş yanlarına gelince yardıma katılıyor.
-
-### Düzeltmeler
-- **Mızrak artık yakmıyor:** meşale yanarken mızrakla (ya da başka bir silahla) vurunca canavar tutuşuyordu; artık yalnızca meşalenin kendisiyle vurunca tutuşuyor. Başka silahla vururken meşale de vuruş başına aşınmıyor, yalnızca zamanla yanıyor. Bir canavarın seni fark etmesi de (vurmadan) artık onu tutuşturmuyor.
-
-### Görsel
-- **Tek başına açık yeşil karolar gitti:** ormanın içinde tek kalmış açık yeşil çimen karoları ve bir karo kalınlığındaki şeritler (ya da çimende tek orman karosu) artık çevreleriyle aynı görünüyor. Yalnızca görünüş değişti; ağaçlar ve toplanabilirler aynı yerde.
-
-### Arayüz
-- **Kazanda "+" ile yapılabilenler de parlıyor:** Zümrüt'ün kazanında "Şimdi yapılabilir" listesine artık eksik parçası çantandakilerle "+" düğmesiyle yapılabilen tarifler de giriyor (ör. Kıvılcım'ın malzemesi varsa Ateş). Önceden yalnızca bütün parçası hazır olanlar parlıyordu.
-- **Tarif kitabında silah özellikleri düzgün:** bir silaha ya da zırha gelince özellikleri (hasar, vuruş hızı, menzil, kritik, keskinlik) resmin altında dar bir sütuna sıkışıp yarım ekranı kaplıyordu; artık malzemelerin altında tek sıra küçük kartlarda.
-- **Eylem yazısı kemerin üstünde:** "Su al", "Konuş" gibi eylem yazıları alet kemerinin arkasında yarım kalıyordu; artık hep kemerin biraz üstünde.
 
 ---

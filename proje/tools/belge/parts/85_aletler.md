@@ -89,27 +89,27 @@ Her hücrede **savunma ya da hasar · satış fiyatı**. Zırhçılar zırhları
 
 | Set | Miğfer | Zırh | Eldiven | Çizme |
 |---|---|---|---|---|
-| 1 · Bakır | 8 · 254 | 16 · 542 | 5 · 259 | 5 · 251 |
-| 2 · Tunç | 12 · 779 | 24 · 2.148 | 7 · 784 | 7 · 776 |
-| 3 · Demir | 20 · 974 | 40 · 2.685 | 12 · 980 | 12 · 970 |
-| 4 · Çelik | 28 · 1.218 | 54 · 3.356 | 16 · 1.225 | 16 · 1.212 |
-| 5 · Kara çelik | 36 · 2.705 | 68 · 6.672 | 21 · 2.710 | 21 · 2.703 |
-| 6 · Mor kristal | 45 · 3.381 | 84 · 8.340 | 26 · 3.388 | 26 · 3.379 |
+| 1 · Bakır | 8 · 356 | 16 · 566 | 5 · 363 | 5 · 352 |
+| 2 · Tunç | 12 · 1.018 | 24 · 2.613 | 7 · 1.028 | 7 · 1.013 |
+| 3 · Demir | 20 · 1.718 | 40 · 4.682 | 12 · 1.721 | 12 · 1.703 |
+| 4 · Çelik | 28 · 2.287 | 54 · 6.272 | 16 · 2.294 | 16 · 2.121 |
+| 5 · Kara çelik | 36 · 4.135 | 68 · 10.564 | 21 · 4.146 | 21 · 4.088 |
+| 6 · Mor kristal | 45 · 6.201 | 84 · 15.394 | 26 · 6.214 | 26 · 6.186 |
 
 | Set | Kılıç | Mızrak | Savaş çekici | Topuz | Balta | Kazma |
 |---|---|---|---|---|---|---|
-| 1 · Bakır | 16 · 346 | 15 · 150 | 18 · 211 | 14 · 143 | 12 · 143 | 11 · 146 |
-| 2 · Tunç | 22 · 1.022 | 20 · 454 | 25 · 1.056 | 19 · 650 | 20 · 451 | 18 · 653 |
-| 3 · Demir | 34 · 1.278 | 30 · 568 | 39 · 1.320 | 29 · 812 | 30 · 564 | 26 · 816 |
-| 4 · Çelik | 46 · 1.667 | 41 · 825 | 53 · 1.862 | 39 · 1.134 | 38 · 1.134 | 34 · 1.136 |
-| 5 · Kara çelik | 58 · 5.249 | 52 · 2.568 | 67 · 6.340 | 49 · 3.821 | 50 · 3.821 | 45 · 3.823 |
-| 6 · Mor kristal | 72 · 6.561 | 64 · 3.210 | 83 · 7.925 | 61 · 4.776 | 58 · 4.776 | 52 · 4.779 |
+| 1 · Bakır | 16 · 366 | 15 · 166 | 18 · 227 | 12 · 155 | 12 · 159 | 11 · 167 |
+| 2 · Tunç | 22 · 1.078 | 20 · 526 | 25 · 1.011 | 17 · 645 | 20 · 497 | 18 · 680 |
+| 3 · Demir | 34 · 2.377 | 30 · 1.365 | 39 · 2.429 | 26 · 1.517 | 30 · 1.146 | 26 · 1.598 |
+| 4 · Çelik | 46 · 4.129 | 41 · 2.183 | 53 · 4.627 | 35 · 2.861 | 38 · 2.625 | 34 · 2.924 |
+| 5 · Kara çelik | 58 · 7.467 | 52 · 3.651 | 67 · 8.954 | 44 · 5.494 | 50 · 5.435 | 45 · 5.513 |
+| 6 · Mor kristal | 72 · 12.955 | 64 · 6.271 | 83 · 15.709 | 54 · 9.571 | 58 · 9.557 | 52 · 9.580 |
 
 - **Dirençler:** Demir zırh kanama %30; Çelik zırh kanama %35; Kara çelik zırh yanık %40, kanama %30; Mor kristal zırh kanama, yanık ve zehir %30. Demir, Çelik, Kara çelik ve Mor kristal çizmeler çamurda yavaşlatmaz. Bütün set parçaları metaldir.
 - **Tarifler** (I = setin malzemesi; Tunç ve Demir'in eski 8 parçası eski tarifiyle kalır, yalnızca savaş çekici ve topuz yeni):
   - Miğfer: 2 I, 1 Deri parçası, 2 Sinir · Zırh: 5 I, 2 Deri parçası, 1 Sinir kirişi · Eldiven: 2 I, 1 Deri parçası, 2 İp · Çizme: 2 I, 1 Deri parçası, 4 Lif. Bazı parçalarda Deri parçası yerine o biyomun hayvan derisi ya da postu istenir (değeri tutan adette; 11 Kasım 2026, Boğaç: Tarifler › Tek tarif): Bakır miğfer Kurt, Bakır eldiven Kunduz, Tunç miğfer Karaca, Tunç eldiven Sincap, Tunç çizme Yaban domuzu, Demir eldiven Su samuru, Çelik miğfer Vaşak, Çelik zırh Yaban öküzü, Çelik eldiven Muflon, Çelik çizme Dağ keçisi, Mor kristal miğfer Gölge postu, Mor kristal zırh Kristal geyik, Mor kristal eldiven Işık tilkisi; Demir mızrak Sinir kirişi yerine Demir halka ister
   - Kılıç: 4 I, 1 sap (o biyomun ağacının sapı: Çayır Çam, Orman Meşe, Bataklık Bataklık servisi, Kayalık Dağ Huş, Kül Diyarı Kül ağacı, Mor Kristal Mor söğüt), 1 Deri parçası · Mızrak: 2 I, 1 Uzun sopa, 3 İp · Savaş çekici: 5 I, 1 sap, 1 Sinir kirişi · Topuz: 3 I, 1 sap, 2 İp · Balta: 3 I, 1 sap, 2 İp · Kazma: 3 I, 1 sap, 2 İp, 2 Taş
-- **Fiyat kuralı:** parça fiyatı = en büyüğü (malzemelerin değeri × 1,3; parçanın taban değeri × kademe katsayısı; önceki setteki aynı parça × 1,25). Taban değerler: miğfer 100, zırh 260, eldiven 80, çizme 80, kılıç 180, mızrak 150, savaş çekici 210, topuz 140, balta 110, kazma 120; kademe katsayıları 1 · 2 · 3,5 · 5,5 · 8 · 12. Bu yüzden Tunç ve Demir parçalarının fiyatları da değişti (ör. Demir kılıç 1.086 → 1.278, artık Tunç kılıçtan pahalı).
+- **Fiyat:** tablolardaki satış fiyatları **Fiyat düzeni**ne göre malzemeden hesaplanır (aşağıda; usta parçaları ve zırhlar için ayrı satırlar oradadır).
 - **Taş silahlar**: Taş kılıç başlangıç setinde; Çakmaktaşı, Kuvars ve Obsidyen mızrak usta setlerindedir (Bütün setler). Bazalt mızrak kalktı.
 - Sonraki adım (bu sürümde yok): aynı kademedeki farklı silahlara dövüşü etkileyen özellikler (kanatma, yakma, zehirleme, sersemletme).
 
@@ -119,70 +119,70 @@ Her hücrede **savunma ya da hasar · satış fiyatı**. Zırhçılar zırhları
 - **Set mantığı:** ACT 1'deki her silah, alet ve zırh bir **sete** aittir; bundan sonra eklenen her şey de bir sete eklenir. Bir set 13 parçadır: miğfer, zırh, eldiven, çizme, kılıç, savaş çekici, topuz, mızrak, yay, balta, kazma, kolye, yüzük. Her türden (5 silah, 2 alet, 4 zırh yuvası, kolye, yüzük) **13** parça vardır (kolye ve yüzükler: Kolye ve yüzükler).
 - **Tek istisna Kafa lambası:** baş yuvasına takılan, ışık veren özel bir eşyadır; hiçbir sete ait değildir ve sayıma girmez. Etkili biçimler (Alevli/Zehirli/Keskin X) ayrı parça sayılmaz. İkinci adanın (²) eşyaları ACT 2 düzenlenince ele alınacak.
 - **13 set:** 1 başlangıç seti (Çayır, elle yapılır) + 6 metal seti (Bakır, Tunç, Demir, Çelik, Kara çelik, Mor kristal; örste) + 6 usta seti (her biyomun silahçısı ve zırhçısı kendi biyomunun malzemesiyle döver).
-- **Usta seti** aynı biyomun metal setinden **%12 güçlüdür** (savunma ve hasar; dayanıklılık aynı). Silahları (kılıç, savaş çekici, topuz, mızrak) biyomun **etkisiyle doğar** ve tariflerinde o etkinin yağı vardır. Baltası ve kazması o biyomun metal setiyle **aynı kademededir**, %10 hızlı çalışır ama dayanıklılığı %55'tir. Yayları etki almaz (etkiyi ok taşır): metal yayından %12 güçlü, %5 hızlı, 10 px uzun menzilli, %30 az dayanıklı.
+- **Usta seti** aynı biyomun metal setinden **%12 güçlüdür** (savunma ve hasar; dayanıklılık aynı). **Daha güçlü olan daha zor yapılır:** usta parçası, Yükseltme zinciri gereği aynı biyomun metal setindeki aynı parçayı ister (ör. Granit kılıç = 1 Tunç kılıç + kendi malzemesi); böylece usta parçası metal parçadan hem güçlü hem emekli olur. Silahları (kılıç, savaş çekici, topuz, mızrak) biyomun **etkisiyle doğar** ve tariflerinde o etkinin yağı vardır. Baltası ve kazması o biyomun metal setiyle **aynı kademededir**, %10 hızlı çalışır ama dayanıklılığı %55'tir. Yayları etki almaz (etkiyi ok taşır): metal yayından %12 güçlü, %5 hızlı, 10 px uzun menzilli, %30 az dayanıklı.
 - **Fiyat:** usta parçası = en büyüğü (malzeme × 1,3; aynı biyomun metal setindeki parça × 1,15). Yeni başlangıç parçaları malzeme × 1,3.
 
 | Set | Biyom · kim yapar | Etki | Miğfer · Zırh · Eldiven · Çizme (savunma) | Kılıç · Savaş çekici · Topuz · Mızrak · Yay (hasar) | Balta / Kazma (kademe) |
 |---|---|---|---|---|---|
-| Başlangıç | Çayır · elle | – | Kürk başlık 4 · **Kürk yelek** 8 · Kürk eldiven 3 · Deri çarık 3 | Taş kılıç 12 · **Taş savaş çekici** 13 · **Taş topuz** 10 · Mızrak 10 · Basit yay 8 | Taş balta / Taş kazma (1) |
-| Bakır | Çayır · örs | – | Bakır miğfer 8 · Bakır zırh 16 · Bakır eldiven 5 · Bakır çizme 5 | Bakır kılıç 16 · Bakır savaş çekici 18 · Bakır topuz 14 · Bakır mızrak 15 · Odun yayı 12 | Bakır balta / Bakır kazma (1) |
-| Usta: Kemik | Çayır · Dursun ve Durmuş | keskin | Kemik miğfer 9 · Kemik zırh 18 · **Kemik eldiven** 6 · **Kemik çizme** 6 | **Çakmaktaşı kılıç** 18 · **Çakmaktaşı savaş çekici** 20 · **Çakmaktaşı topuz** 16 · Çakmaktaşı mızrak 17 · **Kemik yay** 13 | Çakmaktaşı balta / Çakmaktaşı kazma (1) |
-| Tunç | Orman · örs | – | Tunç miğfer 12 · Tunç zırh 24 · Tunç eldiven 7 · Tunç çizme 7 | Tunç kılıç 22 · Tunç savaş çekici 25 · Tunç topuz 19 · Tunç mızrak 20 · Sert odun yayı 17 | Tunç balta / Tunç kazma (2) |
-| Usta: Meşe ve granit | Orman · Durdu ve Duran | keskin | Ceviz kabuğu miğfer 13 · Meşe kabuk zırh 27 · **Meşe kabuk eldiven** 8 · **Meşe kabuk çizme** 8 | **Granit kılıç** 25 · Granit savaş çekici 28 · **Granit topuz** 21 · **Granit mızrak** 22 · **Granit yayı** 19 | Granit balta / Granit kazma (2) |
-| Demir | Bataklık · örs | – | Demir miğfer 20 · Demir zırh 40 · Demir eldiven 12 · Demir çizme 12 | Demir kılıç 34 · Demir savaş çekici 39 · Demir topuz 29 · Demir mızrak 30 · Sağlam odun yayı 26 | Demir balta / Demir kazma (3) |
-| Usta: Timsah | Bataklık · Ali ve Veli | zehirli | **Timsah miğfer** 22 · Timsah pulu zırh 45 · **Timsah eldiven** 13 · Kamış çizme 13 | Timsah dişi kılıcı 38 · **Timsah dişi savaş çekici** 44 · **Timsah dişi topuz** 32 · **Timsah dişi mızrak** 34 · **Timsah dişi yayı** 29 | **Timsah dişi balta** / **Timsah dişi kazma** (3) |
-| Çelik | Kayalık Dağ · örs | – | Çelik miğfer 28 · Çelik zırh 54 · Çelik eldiven 16 · Çelik çizme 16 | Çelik kılıç 46 · Çelik savaş çekici 53 · Çelik topuz 39 · Çelik mızrak 41 · Güçlü odun yayı 35 | Çelik balta / Çelik kazma (4) |
-| Usta: Gümüş ve kuvars | Kayalık Dağ · Kaya ve Kayhan | keskin | Kartal tüyü miğfer 31 · Gümüş pullu zırh 60 · **Gümüş eldiven** 18 · **Gümüş çizme** 18 | Gümüş kılıç 52 · **Kuvars savaş çekici** 59 · **Kuvars topuz** 44 · Kuvars mızrak 46 · **Gümüş yayı** 39 | Kuvars balta / Kuvars kazma (4) |
-| Kara çelik | Kül Diyarı · örs | – | Kara çelik miğfer 36 · Kara çelik zırh 68 · Kara çelik eldiven 21 · Kara çelik çizme 21 | Kara çelik kılıç 58 · Kara çelik savaş çekici 67 · Kara çelik topuz 49 · Kara çelik mızrak 52 · Kor odun yayı 45 | Kara çelik balta / Kara çelik kazma (5) |
-| Usta: Ejder | Kül Diyarı · Turan ve Tufan | alevli | **Ejder miğferi** 40 · Ejder zırhı 76 · **Ejder eldiveni** 24 · **Ejder çizmesi** 24 | Ejder kılıcı 65 · **Ejder savaş çekici** 75 · **Ejder topuzu** 55 · **Ejder mızrağı** 58 · **Ejder yayı** 50 | **Ejder baltası** / **Ejder kazması** (5) |
-| Mor kristal | Mor Kristal Vadisi · örs | – | Mor kristal miğfer 45 · Mor kristal zırh 84 · Mor kristal eldiven 26 · Mor kristal çizme 26 | Mor kristal kılıç 72 · Mor kristal savaş çekici 83 · Mor kristal topuz 61 · Mor kristal mızrak 64 · Kadim odun yayı 56 | Mor kristal balta / Mor kristal kazma (6) |
-| Usta: Ametist ve obsidyen | Mor Kristal Vadisi · Kudret ve Kuvvet | zehirli | **Ametist miğfer** 50 · Kristal ipek zırh 94 · Işık pulu eldiven 29 · **Kristal ipek çizme** 29 | Ametist kılıcı 81 · **Ametist savaş çekici** 93 · **Ametist topuz** 68 · Obsidyen mızrak 72 · **Ametist yayı** 63 | Obsidyen balta / Obsidyen kazma (6) |
+| Başlangıç | Çayır · elle | – | Kürk başlık 4 · **Kürk yelek** 8 · Kürk eldiven 3 · Deri çarık 3 | Taş kılıç 12 · **Taş savaş çekici** 13 · **Taş topuz** 9 · Mızrak 10 · Basit yay 8 | Taş balta / Taş kazma (1) |
+| Bakır | Çayır · örs | – | Bakır miğfer 8 · Bakır zırh 16 · Bakır eldiven 5 · Bakır çizme 5 | Bakır kılıç 16 · Bakır savaş çekici 18 · Bakır topuz 12 · Bakır mızrak 15 · Odun yayı 12 | Bakır balta / Bakır kazma (1) |
+| Usta: Kemik | Çayır · Dursun ve Durmuş | keskin | Kemik miğfer 9 · Kemik zırh 18 · **Kemik eldiven** 6 · **Kemik çizme** 6 | **Çakmaktaşı kılıç** 18 · **Çakmaktaşı savaş çekici** 20 · **Çakmaktaşı topuz** 14 · Çakmaktaşı mızrak 17 · **Kemik yay** 13 | Çakmaktaşı balta / Çakmaktaşı kazma (1) |
+| Tunç | Orman · örs | – | Tunç miğfer 12 · Tunç zırh 24 · Tunç eldiven 7 · Tunç çizme 7 | Tunç kılıç 22 · Tunç savaş çekici 25 · Tunç topuz 17 · Tunç mızrak 20 · Sert odun yayı 17 | Tunç balta / Tunç kazma (2) |
+| Usta: Meşe ve granit | Orman · Durdu ve Duran | keskin | Ceviz kabuğu miğfer 13 · Meşe kabuk zırh 27 · **Meşe kabuk eldiven** 8 · **Meşe kabuk çizme** 8 | **Granit kılıç** 25 · Granit savaş çekici 28 · **Granit topuz** 19 · **Granit mızrak** 22 · **Granit yayı** 19 | Granit balta / Granit kazma (2) |
+| Demir | Bataklık · örs | – | Demir miğfer 20 · Demir zırh 40 · Demir eldiven 12 · Demir çizme 12 | Demir kılıç 34 · Demir savaş çekici 39 · Demir topuz 26 · Demir mızrak 30 · Sağlam odun yayı 26 | Demir balta / Demir kazma (3) |
+| Usta: Timsah | Bataklık · Ali ve Veli | zehirli | **Timsah miğfer** 22 · Timsah pulu zırh 45 · **Timsah eldiven** 13 · Kamış çizme 13 | Timsah dişi kılıcı 38 · **Timsah dişi savaş çekici** 44 · **Timsah dişi topuz** 29 · **Timsah dişi mızrak** 34 · **Timsah dişi yayı** 29 | **Timsah dişi balta** / **Timsah dişi kazma** (3) |
+| Çelik | Kayalık Dağ · örs | – | Çelik miğfer 28 · Çelik zırh 54 · Çelik eldiven 16 · Çelik çizme 16 | Çelik kılıç 46 · Çelik savaş çekici 53 · Çelik topuz 35 · Çelik mızrak 41 · Güçlü odun yayı 35 | Çelik balta / Çelik kazma (4) |
+| Usta: Gümüş ve kuvars | Kayalık Dağ · Kaya ve Kayhan | keskin | Kartal tüyü miğfer 31 · Gümüş pullu zırh 60 · **Gümüş eldiven** 18 · **Gümüş çizme** 18 | Gümüş kılıç 52 · **Kuvars savaş çekici** 59 · **Kuvars topuz** 39 · Kuvars mızrak 46 · **Gümüş yayı** 39 | Kuvars balta / Kuvars kazma (4) |
+| Kara çelik | Kül Diyarı · örs | – | Kara çelik miğfer 36 · Kara çelik zırh 68 · Kara çelik eldiven 21 · Kara çelik çizme 21 | Kara çelik kılıç 58 · Kara çelik savaş çekici 67 · Kara çelik topuz 44 · Kara çelik mızrak 52 · Kor odun yayı 45 | Kara çelik balta / Kara çelik kazma (5) |
+| Usta: Ejder | Kül Diyarı · Turan ve Tufan | alevli | **Ejder miğferi** 40 · Ejder zırhı 76 · **Ejder eldiveni** 24 · **Ejder çizmesi** 24 | Ejder kılıcı 65 · **Ejder savaş çekici** 75 · **Ejder topuzu** 49 · **Ejder mızrağı** 58 · **Ejder yayı** 50 | **Ejder baltası** / **Ejder kazması** (5) |
+| Mor kristal | Mor Kristal Vadisi · örs | – | Mor kristal miğfer 45 · Mor kristal zırh 84 · Mor kristal eldiven 26 · Mor kristal çizme 26 | Mor kristal kılıç 72 · Mor kristal savaş çekici 83 · Mor kristal topuz 54 · Mor kristal mızrak 64 · Kadim odun yayı 56 | Mor kristal balta / Mor kristal kazma (6) |
+| Usta: Ametist ve obsidyen | Mor Kristal Vadisi · Kudret ve Kuvvet | zehirli | **Ametist miğfer** 50 · Kristal ipek zırh 94 · Işık pulu eldiven 29 · **Kristal ipek çizme** 29 | Ametist kılıcı 81 · **Ametist savaş çekici** 93 · **Ametist topuz** 61 · Obsidyen mızrak 72 · **Ametist yayı** 63 | Obsidyen balta / Obsidyen kazma (6) |
 
 Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve başlangıç seti elle yapılır; usta setinin geri kalanını o biyomun silahçısı ve zırhçısı döver.
 
 **Yeni ve değişen tarifler** (usta silahlarına etkinin yağı eklenir: Bileme macunu, Zehir yağı ya da Ateş yağı):
 
-- Kemik eldiven: 4 Kemik, 2 Sinir, 1 Deri parçası
-- Kemik çizme: 4 Kemik, 1 Deri parçası, 4 Lif
-- Çakmaktaşı kılıç: 3 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp, 1 Bileme macunu
-- Çakmaktaşı savaş çekici: 4 Yontulmuş çakmaktaşı, 1 Odun sapı, 1 Sinir kirişi, 1 Bileme macunu
-- Çakmaktaşı topuz: 2 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp, 1 Bileme macunu
-- Kemik yay: 3 Kemik, 1 Uzun sopa, 1 Sinir kirişi
-- Meşe kabuk eldiven: 2 Meşe kabuğu, 1 Deri parçası, 3 Kirpi dikeni, 3 Lif
-- Meşe kabuk çizme: 2 Meşe kabuğu, 1 Deri parçası, 3 Yaprak
-- Granit kılıç: 3 Granit, 1 Sert odun sapı, 1 Sinir kirişi, 1 Bileme macunu
-- Granit topuz: 2 Granit, 1 Sert odun sapı, 2 İp, 1 Bileme macunu
-- Granit mızrak: 2 Granit, 1 Uzun sopa, 3 İp, 1 Bileme macunu
-- Granit yayı: 3 Sert odun, 2 Sinir kirişi, 1 Granit
-- Timsah miğfer: 2 Timsah derisi, 1 Demir halka, 2 Sinir
-- Timsah eldiven: 1 Timsah derisi, 1 Demir halka, 2 İp
+- Kemik eldiven: 1 Bakır eldiven, 4 Kemik, 2 Sinir, 1 Deri parçası
+- Kemik çizme: 1 Bakır çizme, 4 Kemik, 1 Deri parçası, 4 Lif
+- Çakmaktaşı kılıç: 1 Bakır kılıç, 3 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp, 1 Bileme macunu
+- Çakmaktaşı savaş çekici: 1 Bakır savaş çekici, 4 Yontulmuş çakmaktaşı, 1 Odun sapı, 1 Sinir kirişi, 1 Bileme macunu
+- Çakmaktaşı topuz: 1 Bakır topuz, 2 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp, 1 Bileme macunu
+- Kemik yay: 1 Odun yayı, 3 Kemik, 1 Uzun sopa, 1 Sinir kirişi
+- Meşe kabuk eldiven: 1 Tunç eldiven, 2 Meşe kabuğu, 1 Deri parçası, 3 Kirpi dikeni, 3 Lif
+- Meşe kabuk çizme: 1 Tunç çizme, 2 Meşe kabuğu, 1 Deri parçası, 3 Yaprak
+- Granit kılıç: 1 Tunç kılıç, 3 Granit, 1 Sert odun sapı, 1 Sinir kirişi, 1 Bileme macunu
+- Granit topuz: 1 Tunç topuz, 2 Granit, 1 Sert odun sapı, 2 İp, 1 Bileme macunu
+- Granit mızrak: 1 Tunç mızrak, 2 Granit, 1 Uzun sopa, 3 İp, 1 Bileme macunu
+- Granit yayı: 1 Sert odun yayı, 3 Sert odun, 2 Sinir kirişi, 1 Granit
+- Timsah miğfer: 1 Demir miğfer, 2 Timsah derisi, 1 Demir halka, 2 Sinir
+- Timsah eldiven: 1 Demir eldiven, 1 Timsah derisi, 1 Demir halka, 2 İp
 - Kamış çizme: 6 Kamış, 3 İp, 2 Yosun (el yapımı; setin örste dövülmeyen tek parçası)
-- Timsah dişi savaş çekici: 3 Timsah dişi, 2 Demir külçesi, 1 Sağlam odun sapı, 1 Zehir yağı
-- Timsah dişi topuz: 2 Timsah dişi, 1 Demir külçesi, 1 Sağlam odun sapı, 1 Zehir yağı
-- Timsah dişi mızrak: 2 Timsah dişi, 1 Uzun sopa, 3 İp, 1 Zehir yağı
-- Timsah dişi yayı: 3 Sağlam odun, 2 Sinir kirişi, 1 Timsah dişi
-- Timsah dişi balta: 2 Timsah dişi, 1 Demir külçesi, 1 Sağlam odun sapı, 2 İp
-- Timsah dişi kazma: 2 Timsah dişi, 2 Demir külçesi, 1 Sağlam odun sapı, 2 Taş
-- Gümüş eldiven: 1 Gümüş külçesi, 1 Demir halka, 1 Deri parçası
-- Gümüş çizme: 1 Gümüş külçesi, 1 Demir halka, 1 Deri parçası, 4 Lif
-- Kuvars savaş çekici: 3 Yontulmuş kuvars, 1 Güçlü odun sapı, 1 Sinir kirişi, 1 Bileme macunu
-- Kuvars topuz: 2 Yontulmuş kuvars, 1 Güçlü odun sapı, 2 İp, 1 Bileme macunu
-- Gümüş yayı: 3 Güçlü odun, 2 Sinir kirişi, 1 Gümüş külçesi
-- Ejder miğferi: 1 Kara pul, 1 Demir levha, 1 Deri parçası
-- Ejder eldiveni: 1 Kara pul, 2 Lav pulu, 1 Deri parçası
-- Ejder çizmesi: 1 Kara pul, 2 Kül kurdu postu, 4 Lif
-- Ejder kılıcı: 2 Ejder kemiği, 1 Kara çelik külçesi, 1 Deri parçası, 1 Ateş yağı
-- Ejder savaş çekici: 2 Ejder kemiği, 2 Kara çelik külçesi, 1 Kor odun sapı, 1 Ateş yağı
-- Ejder topuzu: 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kor odun sapı, 1 Ateş yağı
-- Ejder mızrağı: 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Uzun sopa, 3 İp, 1 Ateş yağı
-- Ejder yayı: 3 Kor odun, 1 Ejder kemiği, 2 Sinir kirişi
-- Ejder baltası: 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kor odun sapı, 2 İp
-- Ejder kazması: 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Kara çelik külçesi, 1 Kor odun sapı
-- Ametist miğfer: 2 Ametist, 1 Kristal ipek, 1 Deri parçası
-- Kristal ipek çizme: 2 Kristal ipek, 1 Işık pulu, 1 Deri parçası
-- Ametist savaş çekici: 4 Ametist, 2 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı
-- Ametist topuz: 2 Ametist, 1 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı
-- Ametist yayı: 3 Kadim odun, 2 Sinir kirişi, 1 Ametist
+- Timsah dişi savaş çekici: 1 Demir savaş çekici, 3 Timsah dişi, 2 Demir külçesi, 1 Sağlam odun sapı, 1 Zehir yağı
+- Timsah dişi topuz: 1 Demir topuz, 2 Timsah dişi, 1 Demir külçesi, 1 Sağlam odun sapı, 1 Zehir yağı
+- Timsah dişi mızrak: 1 Demir mızrak, 2 Timsah dişi, 1 Uzun sopa, 3 İp, 1 Zehir yağı
+- Timsah dişi yayı: 1 Sağlam odun yayı, 3 Sağlam odun, 2 Sinir kirişi, 1 Timsah dişi
+- Timsah dişi balta: 1 Demir balta, 2 Timsah dişi, 1 Demir külçesi, 1 Sağlam odun sapı, 2 İp
+- Timsah dişi kazma: 1 Demir kazma, 2 Timsah dişi, 2 Demir külçesi, 1 Sağlam odun sapı, 2 Taş
+- Gümüş eldiven: 1 Çelik eldiven, 1 Gümüş külçesi, 1 Demir halka, 1 Deri parçası
+- Gümüş çizme: 1 Çelik çizme, 1 Gümüş külçesi, 1 Demir halka, 1 Deri parçası, 4 Lif
+- Kuvars savaş çekici: 1 Çelik savaş çekici, 3 Yontulmuş kuvars, 1 Güçlü odun sapı, 1 Sinir kirişi, 1 Bileme macunu
+- Kuvars topuz: 1 Çelik topuz, 2 Yontulmuş kuvars, 1 Güçlü odun sapı, 2 İp, 1 Bileme macunu
+- Gümüş yayı: 1 Güçlü odun yayı, 3 Güçlü odun, 2 Sinir kirişi, 1 Gümüş külçesi
+- Ejder miğferi: 1 Kara çelik miğfer, 1 Kara pul, 1 Demir levha, 1 Deri parçası
+- Ejder eldiveni: 1 Kara çelik eldiven, 1 Kara pul, 2 Lav pulu, 1 Deri parçası
+- Ejder çizmesi: 1 Kara çelik çizme, 1 Kara pul, 2 Kül kurdu postu, 4 Lif
+- Ejder kılıcı: 1 Kara çelik kılıç, 2 Ejder kemiği, 1 Kara çelik külçesi, 1 Deri parçası, 1 Ateş yağı
+- Ejder savaş çekici: 1 Kara çelik savaş çekici, 2 Ejder kemiği, 2 Kara çelik külçesi, 1 Kor odun sapı, 1 Ateş yağı
+- Ejder topuzu: 1 Kara çelik topuz, 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kor odun sapı, 1 Ateş yağı
+- Ejder mızrağı: 1 Kara çelik mızrak, 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Uzun sopa, 3 İp, 1 Ateş yağı
+- Ejder yayı: 1 Kor odun yayı, 3 Kor odun, 1 Ejder kemiği, 2 Sinir kirişi
+- Ejder baltası: 1 Kara çelik balta, 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kor odun sapı, 2 İp
+- Ejder kazması: 1 Kara çelik kazma, 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Kara çelik külçesi, 1 Kor odun sapı
+- Ametist miğfer: 1 Mor kristal miğfer, 2 Ametist, 1 Kristal ipek, 1 Deri parçası
+- Kristal ipek çizme: 1 Mor kristal çizme, 2 Kristal ipek, 1 Işık pulu, 1 Deri parçası
+- Ametist savaş çekici: 1 Mor kristal savaş çekici, 4 Ametist, 2 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı
+- Ametist topuz: 1 Mor kristal topuz, 2 Ametist, 1 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı
+- Ametist yayı: 1 Kadim odun yayı, 3 Kadim odun, 2 Sinir kirişi, 1 Ametist
 - Kürk yelek: 2 Deri parçası, 1 Sinir kirişi, 5 Lif, 4 İp · Taş savaş çekici: 1 Sopa, 4 Taş, 3 İp · Taş topuz: 1 Sopa, 2 Taş, 2 İp (elle)
 - Obsidyen balta, Obsidyen kazma ve Obsidyen mızrağa 1 Ametist eklendi; balta ve kazma **6. kademe** (Mor Kristal Vadisi usta seti, Kudret döver). Çakmaktaşı, Kuvars ve Obsidyen mızrağa etkinin yağı eklendi.
 - Boşta kalan malzemeler setlere geçti: **Lav pulu** Ejder eldiveninde, **Kül kurdu postu** Ejder çizmesinde, **Bazalt sivri ucu** Ejder mızrağı ve Ejder kazmasında, **Kor odun sapı** Ejder savaş çekici ve topuzunda.
@@ -197,9 +197,52 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 **Arena:** oyundaki her silah, alet, zırh, kolye ve yüzük arenada da seçilebilir (aynı listeden gelir; kaldırılanlar arenadan da kalktı, yeni setler arenada).
 
 
+### Yükseltme zinciri
+
+Her silah, alet ve zırh türünde **düz set parçası** (13 setin her birinin o türdeki parçası), aynı türün **bir önceki kademesinden 1 tane** ister; kendi malzemesi (törpülenmiş tarifiyle) bunun üstüne gelir. Örnek: Bakır kılıç = 1 Taş kılıç + 4 Bakır külçesi, 1 Odun sapı, 1 Deri parçası; Granit kılıç = 1 Tunç kılıç + 3 Granit, 1 Sert odun sapı, 1 Sinir kirişi, 1 Bileme macunu; Tunç zırh = 1 Bakır zırh + kendi malzemesi. Böylece her yeni parça bir öncekinin **yükseltmesi** olur: önceki parça tarifte harcanır. Sıra setlerin sırasıdır (her biyomda önce metal, sonra usta seti): Başlangıç → Bakır → Usta: Kemik → Tunç → Usta: Meşe ve granit → Demir → Usta: Timsah → Çelik → Usta: Gümüş ve kuvars → Kara çelik → Usta: Ejder → Mor kristal → Usta: Ametist ve obsidyen.
+
+- **İlk kademe** (Başlangıç setinin parçası) eskisi gibi yapılır, önceki parça istemez.
+- **Kazanda öğrenme ve görev kuralları aynen geçerlidir:** tarif kazanda öğrenilir; normal modda bir tarifin açık görünmesi için önceki parça da en az bir kez eline geçmiş olmalıdır. "Tarif bilinmeden görev verilmez" kuralı zincirin tamamına bakar: bir görev Tunç balta istiyorsa ve önceki baltaların tarifi bilinmiyorsa, biyomun kazancısının "tarif öğren" ayak işi zinciri baştan sırayla öğretir.
+- **Balta ve kazma kademeleri kopmaz:** her biyomun madenleri ve ağaçları bir önceki biyomun aletiyle kesilir ve kazılır (Madenler ve ekipman merdiveni), zincirdeki her parçanın malzemesi önceki parçayla elde edilir.
+- **Fiyat:** zincirli parçanın fiyatı = kendi fiyatı (Fiyat düzeni'ne göre, kendi malzemesinden) + **önceki parçanın fiyatının yarısı** (önceki parçaya kademe çarpanı uygulanmaz). Böylece son kademe bugünkü kendi fiyatının ~1,5–1,8 katıdır (ör. Ametist kılıcı 15.956, Kristal ipek zırh 17.745) ve adımlar ×1,2–1,9'da kalır. Tablolardaki fiyatlar zincirli fiyattır.
+- **İşçilik:** usta yalnız **yeni eklenen malzemenin** (parçanın kendi fiyatının) işçiliğini alır: silahçı ve zırhçı %15, Usta Sinan %20; önceki parça için ikinci kez işçilik alınmaz (ör. Granit kılıç: kendi fiyatı 905 × %15 = 136 Vio; zincirli fiyatı daha yüksektir).
+- **Körelmiş parça da olur:** önceki parça dayanıklılığı ne olursa olsun (körelmiş olsa da) kabul edilir; yükseltmek için önce biledirmek gerekmez.
+- **Üstündeki parça da yükseltilir (18 Kasım 2026, Boğaç: "upgrade gibi olur"):** önceki parça çantada yoksa, üstünde giydiğin ya da elinde/sırtında taşıdığın aynı parça kullanılır ve yeni parça aynı yuvaya kendiliğinden takılır; çıkarıp takmak gerekmez. Çantada aynı parça varsa önce o kullanılır. Bileme ve körelme yeni parçaya taşınmaz (yeni parça tam keskin gelir). Satırda ve görev kartında "Önceki kademe: X (üstündeki kullanılır)" yazar. El yapımı, örs ve Usta siparişi aynı kuralla çalışır.
+- **Zincirli parça "+" ile yapılmaz:** zincirli parça kazanda ya da örste "+" ile (eksik parçasını kendiliğinden yaparak) yapılmaz; önceki parça ne çantada ne üstünde varsa satırda ve görev kartında "Önceki kademe: X (sende 0)" yazar.
+
+| Tür / yuva | Zincir (kademe sırası) |
+|---|---|
+| Kılıç | Taş kılıç → Bakır kılıç → Çakmaktaşı kılıç → Tunç kılıç → Granit kılıç → Demir kılıç → Timsah dişi kılıcı → Çelik kılıç → Gümüş kılıç → Kara çelik kılıç → Ejder kılıcı → Mor kristal kılıç → Ametist kılıcı |
+| Savaş çekici | Taş savaş çekici → Bakır savaş çekici → Çakmaktaşı savaş çekici → Tunç savaş çekici → Granit savaş çekici → Demir savaş çekici → Timsah dişi savaş çekici → Çelik savaş çekici → Kuvars savaş çekici → Kara çelik savaş çekici → Ejder savaş çekici → Mor kristal savaş çekici → Ametist savaş çekici |
+| Topuz | Taş topuz → Bakır topuz → Çakmaktaşı topuz → Tunç topuz → Granit topuz → Demir topuz → Timsah dişi topuz → Çelik topuz → Kuvars topuz → Kara çelik topuz → Ejder topuzu → Mor kristal topuz → Ametist topuz |
+| Mızrak | Mızrak → Bakır mızrak → Çakmaktaşı mızrak → Tunç mızrak → Granit mızrak → Demir mızrak → Timsah dişi mızrak → Çelik mızrak → Kuvars mızrak → Kara çelik mızrak → Ejder mızrağı → Mor kristal mızrak → Obsidyen mızrak |
+| Balta | Taş balta → Bakır balta → Çakmaktaşı balta → Tunç balta → Granit balta → Demir balta → Timsah dişi balta → Çelik balta → Kuvars balta → Kara çelik balta → Ejder baltası → Mor kristal balta → Obsidyen balta |
+| Kazma | Taş kazma → Bakır kazma → Çakmaktaşı kazma → Tunç kazma → Granit kazma → Demir kazma → Timsah dişi kazma → Çelik kazma → Kuvars kazma → Kara çelik kazma → Ejder kazması → Mor kristal kazma → Obsidyen kazma |
+| Yay | Basit yay → Odun yayı → Kemik yay → Sert odun yayı → Granit yayı → Sağlam odun yayı → Timsah dişi yayı → Güçlü odun yayı → Gümüş yayı → Kor odun yayı → Ejder yayı → Kadim odun yayı → Ametist yayı |
+| Miğfer | Kürk başlık → Bakır miğfer → Kemik miğfer → Tunç miğfer → Ceviz kabuğu miğfer → Demir miğfer → Timsah miğfer → Çelik miğfer → Kartal tüyü miğfer → Kara çelik miğfer → Ejder miğferi → Mor kristal miğfer → Ametist miğfer |
+| Gövde zırhı | Kürk yelek → Bakır zırh → Kemik zırh → Tunç zırh → Meşe kabuk zırh → Demir zırh → Timsah pulu zırh → Çelik zırh → Gümüş pullu zırh → Kara çelik zırh → Ejder zırhı → Mor kristal zırh → Kristal ipek zırh |
+| Eldiven | Kürk eldiven → Bakır eldiven → Kemik eldiven → Tunç eldiven → Meşe kabuk eldiven → Demir eldiven → Timsah eldiven → Çelik eldiven → Gümüş eldiven → Kara çelik eldiven → Ejder eldiveni → Mor kristal eldiven → Işık pulu eldiven |
+| Çizme | Deri çarık → Bakır çizme → Kemik çizme → Tunç çizme → Meşe kabuk çizme → Demir çizme → Çelik çizme → Gümüş çizme → Kara çelik çizme → Ejder çizmesi → Mor kristal çizme → Kristal ipek çizme |
+| Olta | Olta → Deniz oltası → Makaralı olta → Derin su oltası → Fırtına oltası → Yıldız oltası (zaten böyleydi) |
+
+**Zincir dışında kalan özel parçalar** (tarifleri değişmez):
+
+| Parça | Neden |
+|---|---|
+| Keskin, Zehirli, Alevli Taş kılıç / savaş çekici / topuz; Keskin, Zehirli, Alevli Mızrak | etkili (başlangıç parçasına yağ sürülerek yapılır) |
+| Işın kılıcı | ACT 2, adı özel |
+| Ateş, Buz, Yıldırım asası; Tabanca, Pompalı | ACT 2; her biri ayrı oynanış (yanık, dondurma, zincir; düz atış, yelpaze), birbirinin kademesi değil |
+| Güçlü kısa yay, Sağlam kısa yay | set dışı kısa yaylar |
+| Kamış çizme | özel: çamurda yavaşlamayı önleyen el yapımı çizme (Timsah setinin çizmesi ama zincire girmez). Çizme zincirinde Bataklık'ın yerini **Demir çizme** tutar: Demir çizme → Çelik çizme |
+| Boynuz kazma, Kürek, Tırpan, Tırmık, Sulama kabı, Yaprak kova, Huş kabuğu kabı, Ağ, Kemik zıpkın, Balık kapanı, Tuzak, Sapan, Bola, müzik aletleri | tek parça ya da kademesiz alet |
+| Kolye ve yüzükler | takı; zırh ve alet zincirine girmez |
+| Meşale, Kaba meşale, Golem feneri | sarf (yığılır) ya da özel ışık |
+
 ### Fiyat düzeni (12 Kasım 2026, Boğaç: "her biyom atladığımda daha iyi şeyler ile karşılaşmalıyım"; "öncelikle malzemelerin fiyatlarını biyomdan biyoma daha değerli hale getir, bu olursa zaten hesap doğru olur… sorun ya malzeme fiyatlarında ya da bir önceki biyomda gereksiz aynı maddeden çok fazla kullandığımız için tarifin kendisindedir")
 
 - **Malzemeler biyomdan biyoma değerlenir:** toplanan, kazılan, avlanan ve tutulan her ACT 1 malzemesi, türüne göre (et, deri ve post, tüy, yumurta, kemik ve diş, pul ve kabuk, özel av parçası, tatlısu balığı, deniz avı, meyve, ağaç ürünü, mantar, toplama, maden) bir önceki biyomun aynı türündeki sıradan malzemeden (o biyomun en ucuz üçte birinin sınırı) en az %20 daha değerlidir; daha ucuz olanların fiyatı bu sınıra çıkar (ör. Sincap derisi 2 → 6, Dağ keçisi derisi 7 → 36, Kurbağa 2 → 9). Nadir malzemeler fiyatını korur; hiçbir malzeme ucuzlamaz.
+- **Silah, zırh, takı ve aletin fiyatı satış için değildir:** bunlar hiçbir satıcıya satılmaz (Sistemler › Ekonomi); fiyatları işçilik (%15), bileme ve eşyanın değeri için vardır.
+- **Yükseltme zincirindeki parçalar:** önceki kademe parçası fiyata yarı değeriyle girer (Yükseltme zinciri).
 - **Yapılan eşyanın fiyatı malzemesinden hesaplanır:** fiyat malzemelerin fiyatıyla birlikte değişir (eski oranıyla); zırhlar setin kendi fiyatını korur, malzemesi daha pahalıysa ona çıkar.
 - **Usta parçaları** (kolye ve yüzük dahil): malzeme × 1,3 ya da aynı biyomun metal setindeki aynı parçanın 1,15 katı, hangisi büyükse. **Başlangıç parçaları** Bakır parçasından ucuzdur (en çok %80'i).
 - **Oklar** tane fiyatıyla: (malzemeler ÷ çıkan ok) × 1,3; alevli, zehirli ve keskin oklar (ok + yağ / 10) × 1,1.
@@ -324,7 +367,7 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 ### Savaş çekici ve topuz
 
 - **Savaş çekici:** iki elle sallanan ağır silah. Vuruşu yavaş (0,62 sn), menzili 24, hasarı aynı setin kılıcından %15 fazla. Kombo ve ultileri sersemletir ve geri savurur.
-- **Topuz:** tek elle hızlı silah. Vuruşu hızlı (0,36 sn), menzili 20, hasarı kılıçtan %15 az. Komboları art arda vuruşlardır.
+- **Topuz:** tek elle hızlı silah. Vuruşu hızlı (0,40 sn; kılıç 0,42), menzili 20, hasarı aynı setin kılıcından **%25 az** (daha ucuz yapıldığı için): saniyedeki hasarı kombosuz kılıcın ~%80'i, gerçek bir dövüşteki ortalama komboyla (+%20) ~%95'i; kılıcı ancak vurulmadan art arda 4'ten çok isabetle geçer. Komboları art arda vuruşlardır.
 - İkisi de silah yuvasına girer, kılıçlarla aynı yerde (Silahlar) listelenir, sallanırken baltanın yukarıdan inen vuruşuyla çizilir. Hareketleri ve ultileri **Dövüş · Özel vuruşlar** ve **Ulti** bölümlerinde.
 
 ## Aletler ve silahlar
@@ -388,19 +431,19 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 | Ejder savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · alevli: yakar | 1 | 440 | 1.604 | – | 75 |
 | Mor kristal savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir | 1 | 560 | 1.744 | – | 83 |
 | Ametist savaş çekici | savaş çekici | savaş çekici: ağır, yavaş, sersemletir · zehirli: zehirler | 1 | 560 | 2.005 | – | 93 |
-| Taş topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 90 | 14 | – | 10 |
-| Bakır topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 120 | 64 | – | 14 |
-| Çakmaktaşı topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 120 | 72 | – | 16 |
-| Tunç topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 170 | 286 | – | 19 |
-| Granit topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 170 | 328 | – | 21 |
-| Demir topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 250 | 358 | – | 29 |
-| Timsah dişi topuz | topuz | topuz: hızlı, art arda vuruş · zehirli: zehirler | 1 | 250 | 412 | – | 32 |
-| Çelik topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 330 | 500 | – | 39 |
-| Kuvars topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 330 | 574 | – | 44 |
-| Kara çelik topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 410 | 1682 | – | 49 |
-| Ejder topuzu | topuz | topuz: hızlı, art arda vuruş · alevli: yakar | 1 | 410 | 1934 | – | 55 |
-| Mor kristal topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 530 | 1.051 | – | 61 |
-| Ametist topuz | topuz | topuz: hızlı, art arda vuruş · zehirli: zehirler | 1 | 530 | 1.208 | – | 68 |
+| Taş topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 90 | 14 | – | 9 |
+| Bakır topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 120 | 64 | – | 12 |
+| Çakmaktaşı topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 120 | 72 | – | 14 |
+| Tunç topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 170 | 286 | – | 17 |
+| Granit topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 170 | 328 | – | 19 |
+| Demir topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 250 | 358 | – | 26 |
+| Timsah dişi topuz | topuz | topuz: hızlı, art arda vuruş · zehirli: zehirler | 1 | 250 | 412 | – | 29 |
+| Çelik topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 330 | 500 | – | 35 |
+| Kuvars topuz | topuz | topuz: hızlı, art arda vuruş · keskin: kanatır | 1 | 330 | 574 | – | 39 |
+| Kara çelik topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 410 | 1682 | – | 44 |
+| Ejder topuzu | topuz | topuz: hızlı, art arda vuruş · alevli: yakar | 1 | 410 | 1934 | – | 49 |
+| Mor kristal topuz | topuz | topuz: hızlı, art arda vuruş | 1 | 530 | 1.051 | – | 54 |
+| Ametist topuz | topuz | topuz: hızlı, art arda vuruş · zehirli: zehirler | 1 | 530 | 1.208 | – | 61 |
 | Mızrak | hunt | av ve savaş: uzaktan vurur | 3 | 40 | 24 | – | 10 |
 | Bakır mızrak | hunt | av ve savaş: uzaktan vurur | 2,4 | 100 | 66 | – | 15 |
 | Çakmaktaşı mızrak | hunt | av ve savaş: uzaktan vurur · keskin: kanatır | 2,5 | 100 | 110 | – | 17 |

@@ -10,29 +10,29 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 - **Reis kendi biyomunda:** Reis yalnızca türün kendi biyomunda, son avın düştüğü yerin çevresinde çıkar (önceden oyuncu o an neredeyse orada çıkıyordu; bataklıkta timsah avlayıp ormana yürüyünce Timsah Reisi ormanda çıkabiliyordu). Sayaç eski bir kayıttan dolu geldiyse Reis ancak oyuncu türün biyomuna girince gelir.
 - **Uzaklaşınca kaybolur:** Reis sahadayken ya da gelmek üzereyken oyuncu **600 pikselden** fazla uzaklaşırsa Reis kaybolur, bildirim çıkar ve sayaç bir eksik kalır (ör. 6 / 7); o türden bir av daha Reisi yeniden getirir.
 - **Canlılar biyomlarından çıkmaz:** her canlı ilk durduğu biyoma bağlıdır; sınıra gelince geri döner, kovalamayı sınırda bırakır (Reis kovalamayı bırakmaz ama sınırı geçmez). Geri itilmesi de onu sınırın ötesine atmaz. Mağaralarda, arenada ve derslerin alıştırma canavarlarında bu kural yoktur.
-- **Güç:** canı türün 4 katı; hasarı 1,5 katı (Çayır türleri ve tehlikeli bölgeler) ya da 1,7 katı; XP = türün XP'si × 6 + 20.
-- **Davranış:** canı %40'ın altına inince **öfkelenir** (kırmızılaşır, daha sert saldırır). Sürü hayvanlarının Reisi canı yarıya inince yanına 2 sürü üyesi çağırır.
+- **Güç:** canı türün 4 katı (ACT 1'de **en az 100**). Hasarı Çayır türlerinde türüyle **aynı** (×1,0), Orman türlerinde **×1,5**; çok atışlı uzaktan atan türlerin Reisi (Dikenli kirpi, Oklu kirpi; 3 diken) ×1,0; Bataklık ve sonrasında 1,5 katı (tehlikeli bölgeler) ya da 1,7 katı; ACT 1'de hasar **en az 10**. **Saldırı hızı türüyle aynıdır** (Reis daha sık vurmaz). XP = türün XP'si × 6 + 20. Reis bilerek zor tasarlanır: türünün karşılaşma seviyesinde canın %20–40'ını ve birkaç yemeği alır, atılma ve savuşturma gerekir. Zararsız küçük türlerin Reisi (Tavşan, Keklik, Bıldırcın, Sincap, Ördek) alt sınırla 100 can, 10 hasardır.
+- **Davranış:** canı %40'ın altına inince **öfkelenir** (kırmızılaşır, daha sert saldırır). Sürü hayvanlarının Reisi canı yarıya inince yanına 2 sürü üyesi çağırır; **Çayır ve Orman Reisleri sürü çağırmaz.**
 - **Ödül:** türün düşürdükleri + 25 + (türün XP'si × 5) Vio. Reis öldürmek "İlk reis", "Reis avcısı" (5 farklı), "Reislerin korkusu" (10), "Reis yiyen" (20) ve "Bütün reisler" başarımlarını ilerletir.
 - Börü'nün derslerindeki alıştırma canavarı öldürülünce av sayılmaz; ders Reis çağırmaz. Ders sürerken hiçbir Reis gelmez; o sırada dolan Reis ders bitince gelir.
 
 | Reis | Nerede | İlk çıkış için av | Can | Hasar | XP | Garanti ganimet |
 |---|---|---|---|---|---|---|
-| Bıldırcın Reisi | ACT 1 · Çayır | 9 | 20 | 5 | 38 | Bıldırcın eti ×2; Bıldırcın tüyü ×2; Bıldırcın yumurtası ×2 |
-| Geyik Reisi | ACT 1 · Çayır | 15 | 220 | 15 | 86 | Geyik eti ×2; Geyik derisi ×2; Geyik boynuzu ×2; Sinir ×2; Kemik ×2; Hayvan yağı ×2 |
-| Keklik Reisi | ACT 1 · Çayır | 9 | 24 | 5 | 38 | Keklik eti ×2; Keklik tüyü ×2; Keklik yumurtası ×2 |
-| Kerevit Reisi | ACT 1 · Çayır | 10 | 160 | 11 | 86 | Kerevit eti ×2 |
-| Kurt Reisi | ACT 1 · Çayır | 15 | 280 | 18 | 158 | Kurt eti ×2; Kurt derisi ×2; Kurt dişi ×2; Kemik ×2; Sinir ×2 |
-| Tavşan Reisi | ACT 1 · Çayır | 12 | 40 | 5 | 44 | Tavşan eti ×2; Tavşan derisi ×2; Kemik ×2; Sinir ×2 |
-| Yaban Atı Reisi | ACT 1 · Çayır | 12 | 320 | 17 | 116 | Yaban atı eti ×2; Yaban atı derisi ×2; Kemik ×2; Sinir ×2 |
-| Dikenli Kirpi Reisi | ACT 1 · Orman | 7 | 240 | 20 | 116 | Kirpi dikeni ×2; Kemik ×2 |
-| Engerek Reisi | ACT 1 · Orman | 7 | 300 | 24 | 140 | Zehir bezesi ×2; Kemik ×2 |
-| Karaca Reisi | ACT 1 · Orman | 12 | 280 | 24 | 92 | Karaca eti ×2; Karaca derisi ×2; Kemik ×2; Sinir ×2 |
-| Kunduz Reisi | ACT 1 · Orman | 7 | 220 | 20 | 80 | Kunduz eti ×2; Kunduz derisi ×2; Kemik ×2 |
-| Oklu Kirpi Reisi | ACT 1 · Orman | 5 | 820 | 32 | 308 | İri diken ×2; Kirpi dikeni ×2; Kemik ×2 |
-| Sincap Reisi | ACT 1 · Orman | 9 | 24 | 5 | 38 | Sincap eti ×2; Sincap derisi ×2; Ceviz ×2; Fındık ×2 |
-| Yaban Domuzu Reisi | ACT 1 · Orman | 12 | 520 | 36 | 164 | Yaban domuzu eti ×2; Yaban domuzu derisi ×2; Yaban domuzu dişi ×2; Kemik ×2; Hayvan yağı ×2 |
-| Bataklık Kurdu Reisi | ACT 1 · Bataklık | 10 | 2.400 | 86 | 482 | Bataklık kurdu postu ×2; Kurt dişi ×2; Kemik ×2 |
-| Ördek Reisi | ACT 1 · Bataklık | 12 | 32 | 5 | 38 | Ördek eti ×2; Ördek tüyü ×2; Ördek yumurtası ×2 |
+| Bıldırcın Reisi | ACT 1 · Çayır | 9 | 100 | 10 | 38 | Bıldırcın eti ×2; Bıldırcın tüyü ×2; Bıldırcın yumurtası ×2 |
+| Geyik Reisi | ACT 1 · Çayır | 15 | 440 | 15 | 86 | Geyik eti ×2; Geyik derisi ×2; Geyik boynuzu ×2; Sinir ×2; Kemik ×2; Hayvan yağı ×2 |
+| Keklik Reisi | ACT 1 · Çayır | 9 | 100 | 10 | 38 | Keklik eti ×2; Keklik tüyü ×2; Keklik yumurtası ×2 |
+| Kerevit Reisi | ACT 1 · Çayır | 10 | 240 | 11 | 86 | Kerevit eti ×2 |
+| Kurt Reisi | ACT 1 · Çayır | 15 | 500 | 16 | 158 | Kurt eti ×2; Kurt derisi ×2; Kurt dişi ×2; Kemik ×2; Sinir ×2 |
+| Tavşan Reisi | ACT 1 · Çayır | 12 | 100 | 10 | 44 | Tavşan eti ×2; Tavşan derisi ×2; Kemik ×2; Sinir ×2 |
+| Yaban Atı Reisi | ACT 1 · Çayır | 12 | 600 | 17 | 116 | Yaban atı eti ×2; Yaban atı derisi ×2; Kemik ×2; Sinir ×2 |
+| Dikenli Kirpi Reisi | ACT 1 · Orman | 7 | 520 | 15 | 116 | Kirpi dikeni ×2; Kemik ×2 |
+| Engerek Reisi | ACT 1 · Orman | 7 | 640 | 36 | 176 | Zehir bezesi ×2; Kemik ×2 |
+| Karaca Reisi | ACT 1 · Orman | 12 | 600 | 29 | 92 | Karaca eti ×2; Karaca derisi ×2; Kemik ×2; Sinir ×2 |
+| Kunduz Reisi | ACT 1 · Orman | 7 | 480 | 23 | 80 | Kunduz eti ×2; Kunduz derisi ×2; Kemik ×2 |
+| Oklu Kirpi Reisi | ACT 1 · Orman | 5 | 1.320 | 30 | 386 | İri diken ×2; Kirpi dikeni ×2; Kemik ×2 |
+| Sincap Reisi | ACT 1 · Orman | 9 | 100 | 10 | 50 | Sincap eti ×2; Sincap derisi ×2; Ceviz ×2; Fındık ×2 |
+| Yaban Domuzu Reisi | ACT 1 · Orman | 12 | 560 | 32 | 164 | Yaban domuzu eti ×2; Yaban domuzu derisi ×2; Yaban domuzu dişi ×2; Kemik ×2; Hayvan yağı ×2 |
+| Bataklık Kurdu Reisi | ACT 1 · Bataklık | 10 | 1.800 | 78 | 422 | Bataklık kurdu postu ×2; Kurt dişi ×2; Kemik ×2 |
+| Ördek Reisi | ACT 1 · Bataklık | 12 | 100 | 10 | 38 | Ördek eti ×2; Ördek tüyü ×2; Ördek yumurtası ×2 |
 | Su Samuru Reisi | ACT 1 · Bataklık | 5 | 960 | 35 | 158 | Su samuru eti ×2; Su samuru derisi ×2 |
 | Timsah Reisi | ACT 1 · Bataklık | 7 | 4.320 | 117 | 794 | Timsah derisi ×2; Timsah dişi ×2; Timsah eti ×2 |
 | Turna Kuşu Reisi | ACT 1 · Bataklık | 7 | 800 | 30 | 146 | Turna kuşu eti ×2; Turna kuşu tüyü ×2; Turna kuşu yumurtası ×2 |
@@ -42,7 +42,7 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 | Kartal Reisi | ACT 1 · Kayalık Dağ | 6 | 3.280 | 135 | 806 | Kartal eti ×2; Kartal tüyü ×2; Kartal pençesi ×2 |
 | Mağara Ayısı Reisi | ACT 1 · Kayalık Dağ | 5 | 8.400 | 173 | 1.328 | Mağara ayısı eti ×2; Mağara ayısı derisi ×2; Ayı pençesi ×2; Hayvan yağı ×2; Kemik ×2 |
 | Muflon Reisi | ACT 1 · Kayalık Dağ | 9 | 1.720 | 73 | 236 | Muflon eti ×2; Muflon derisi ×2; Kemik ×2; Sinir ×2 |
-| Ur Kekliği Reisi | ACT 1 · Kayalık Dağ | 8 | 48 | 5 | 56 | Ur kekliği eti ×2; Ur kekliği tüyü ×2; Ur kekliği yumurtası ×2 |
+| Ur Kekliği Reisi | ACT 1 · Kayalık Dağ | 8 | 100 | 10 | 56 | Ur kekliği eti ×2; Ur kekliği tüyü ×2; Ur kekliği yumurtası ×2 |
 | Vaşak Reisi | ACT 1 · Kayalık Dağ | 6 | 4.690 | 154 | 890 | Vaşak eti ×2; Vaşak derisi ×2; Kemik ×2 |
 | Yaban Öküzü Reisi | ACT 1 · Kayalık Dağ | 9 | 3.440 | 111 | 452 | Yaban öküzü eti ×2; Yaban öküzü derisi ×2; Öküz boynuzu ×2; Kemik ×2; Sinir ×2; Hayvan yağı ×2 |
 | Ateş Akrebi Reisi | ACT 1 · Kül Diyarı | 6 | 4.560 | 222 | 1.796 | Akrep iğnesi ×2; Akrep kabuğu ×2 |
@@ -57,7 +57,7 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 | Kristal Geyik Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 6.520 | 200 | 1.910 | Kristal geyik eti ×2; Kristal geyik derisi ×2; Kristal boynuz ×2 |
 | Kristal Golem Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 18.000 | 363 | 6.254 | Golem çekirdeği ×2; Kristal ×2; Ametist ×2 |
 | Kristal Örümcek Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 5.280 | 236 | 2.504 | Kristal ipek ×2; Örümcek gözü ×2 |
-| Mor Güve Reisi | ACT 1 · Mor Kristal Vadisi | 8 | 200 | 5 | 140 | Güve tozu ×2 |
+| Mor Güve Reisi | ACT 1 · Mor Kristal Vadisi | 8 | 200 | 10 | 140 | Güve tozu ×2 |
 | Bulut Koyunu Reisi | ACT 2 · Yüzen Kayalar | 6 | 4.800 | 367 | 716 | Bulut koyunu eti ×2; Bulut yünü ×2 |
 | Fırtına Kartalı Reisi | ACT 2 · Yüzen Kayalar | 6 | 10.280 | 716 | 3.110 | Fırtına tüyü ×2; Kartal pençesi ×2 |
 | Gök Tazısı Reisi | ACT 2 · Yüzen Kayalar | 6 | 11.760 | 641 | 2.720 | Gök tazısı postu ×2; Tazı dişi ×2 |
