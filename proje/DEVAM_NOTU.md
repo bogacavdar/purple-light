@@ -1,3 +1,46 @@
+## v4.27 (19 Kasım 2026) · E2E Bataklık: tek Reis kuralı (hızlı tür ×3), mağara boss'u görev Vio'su, Bataklık ve Batık dengesi, balta/kazma hasarı, kuşaklar, av sarı bölgesi, mağarada biyom
+- Kaynak: /home/claude/E2E_v426_bataklik/ANALIZ_BATAKLIK.md §5–§10 (YB-01…33). YB-23'te E3 kodu doğruydu, yalnız YB-21 satırı düzeltildi. Boğaç kararları: S1=A (tek Reis kuralı), hızlı türlerin Reisi ×3, mağara boss'u görev Vio'su (A).
+
+**Reis**
+- `makeBoss` (çekirdek): `hpM` = `spd>=90?3:4`, `dmM=1`; ACT 2'de can sınırı yok, hasar sınırı 5.
+- `fixBoss` (v128): aynı kural, `I2` sınırları, XP `xp0`'dan.
+- v128: `xp0` yazımı (v129'un biyom XP çarpanından önce).
+- `P4` ödül satırı: Reis Vio'su `xp0`'dan; mağara boss'u için `caveBossVio` (mağara görevinin `c`'si).
+- Silinenler: sürü çağrısı dalı, `PACKB`, `CAYIR`/`ORMAN`, `mul`.
+
+**Canlılar**
+- v128 `SET`: Ördek, Yaban kazı, Turna, Su samuru, Timsah, Bataklık kurdu. `xp` çarpansız değerdir; Bataklık kurdunda `fx` kanama 2.
+- Mağara: `NK2` Çamur Ana; `PACK['Mağara sülüğü']=[1,2]`; mağara `spawnAnimals` sarmalayıcısı `c2` için `C._sT` (3 sn).
+
+**Aletler, eşyalar, kuşaklar**
+- `AXE` 14 alet.
+- `V.usta` Kamış çizme `def:9`; `PR` Kamış çizme 151; v3.51'in Kamış fiyat satırı silindi.
+- `BANDR[3]`; `__plSpawnOK` Timsah Orta 20; çekinme `ARR[3]=21`.
+- `NOCUT` (Dut, İncir).
+
+**Görevler**
+- DATA.Q: AL2, AL4, VE4 ödülü; AL1 metni.
+- Yan görevler: Şifa `guard` `n:1` ve son söz; Kartal `guard` `seq`.
+
+**v186**
+- Sarı bölge: `animalCircle` `ak`, `zKey`, `bandOK`, `zoneMask` `cut`, `whereTxt`.
+- `cardUp` (ders kartı kuyruğu).
+- `nextStep` kazma kademesi adımı (`bestTool` v186'da kademe sayısıdır).
+- `hereBio` (mağarada mağaranın biyomu); `refreshVis`, `pickFiller` ve `fillQ` onu kullanır.
+
+**Kayıt ve geri alma**
+- Kayıt alanı yok.
+- Geri almak: `git revert` (c12c622, cd681f5 ve son commit; belge ve kod birlikte).
+
+**Kontrol**
+- chk 0 hata, yorum taraması temiz.
+- Headless (port 9433):
+  - Reis tablosunun ACT 1'deki 41 satırında can ve hasar birebir, XP 40 satırda (Vaşak Reisi 776, belgenin kendi canlı tablosuna göre bu doğru).
+  - 11 hızlı Reis tutuyor.
+  - Mağara boss'larının Vio'su 310, 500 ve 700 (öldürerek); 1.000, 1.400 ve 2.000 (koddan).
+  - YB-14/24/26 değerleri tutuyor.
+  - Batık'ta "!" Bataklık'tan.
+
 ## v4.26 (18 Kasım 2026) · E2E Çayır+Orman: canlı gücü, Reis kuralı, yükseltme zinciri, tek parça eşyalar satılmaz, ayak işleri, B5
 - Boğaç kararları: 04:30 canlı gücü; S1 silah ve zırh satılmaz, DR4 450; S3-A Y1 Orman'a varınca; 04:55 tarif ayak işi kazancıda; Reisler A; Eşya yolu A (B5); yükseltme zinciri ve fiyatı (DNG-15…18); "upgrade gibi olur". Belge: ANALIZ §6, §8, §9, §10 (Y-01…Y-45; Y-17 iptal).
 - Yeni bloklar (son scriptler, sırayla):
@@ -177,15 +220,3 @@
 - Ölçüm (cpu4): BOOT 21145 → 21592 ms, js 12235 → 12423 ms; PLAY js 3966 → 4037 ms (gürültü sınırında).
 - Kontrol: eşya 1336 → 1290, tarif 997 → 937; fiyatsız eşya yok, bilinmeyen malzeme yok, kullanılmayan malzeme sayısı aynı (68). Kesme: her ağaç biyomunun odununu ve kabuğunu düşürüyor (ACT 1 ve 2). Eski kayıt: 5 Kayın + 3 Meşe + 1 Sert odun → 9 Sert odun; Çam + Kavak kalası → 3 Odun kalası; Ihlamur yayı → Granit yayı. Resimler: 10 odun kütük, kalaslar/saplar/kömürler/kaşıklar/yaylar biyom renginde; torba yok.
 - Sürüm etiketi `Versiyon 4.07`.
-
-## v4.06 (10 Kasım 2026) · Sivri taş, Sopa, İp ucuz; fiyatlar ona göre; güvercinler dünyada görünür
-
-**Değişen yerler:** `DB` (satır 1716): `R` içinde Sivri taş `[Keskin taş,4]`, Sopa `[Dal,2],[Keskin taş,1],[Lif,1]`, İp `[Lif,3]`; `p` içinde 168 değer. Fiyat yayılımı oyunun v51 kuralıyla: İp −1, Sopa −4, Sivri taş −8; kullanan tarif `round(1,3 × Σ adet × fark)`, ama fiyatı malzemesinin altında kalan tarifte en az eski fiyat × yeni maliyet / eski maliyet (Balık kapanı 33 → 27). Çalışırken hesaplananlar (oklar, yağlı silahlar, boyalılar) kendiliğinden izliyor: toplam 198 fiyat değişti; metal set fiyatlı aletler, oltalar değişmedi. Araç: `/home/claude/w/` (old.json/new2.json dökümü, `docfix.py` belge tablolarında Fiyat ve Bileme sütunlarını değiştirdi: 352 satır).
-- Öğretici (balta): `AXE_STEPS[0]` 1 Keskin taş, sopa/ip yazıları, `AXE_DONE[0]`, `axeNeedStep` (Sopa yoksa Keskin taş <1), `tzAlpDone` bırakma: Dal 2, Lif (2−ip)×3 + (sopa yoksa 1), Taş 2 + eksik keskin taş × 2 (gereken 3). Kart 12 yazısı ve Börü'nün konuşması.
-- Yan görev gizli toplama (`hide:1`): `curPts` artık yakınlık şartı koymuyor (`PIGS` silindi), üçüncü öğe `plain`; çizimde `plain` olanda mavi halka ve pırıltı yok. Haritada (`sqZone`) eskisi gibi yok.
-- Liste kayması: `v258-wst` stiline `.book li>.bn{flex:1 1 0;min-width:0}`, `.book .bn>span{min-width:0}`, `.book .wst{white-space:normal}` (özellik satırı ad sütununda kırılıyor). 1280×800'de üstüne gelince düğmeler 622 → 622 (önce 806'ya kayıyordu).
-- Sürüm etiketi `Versiyon 4.06`.
-
-**Geri alma:** `git revert` bu commit (belge ve kod birlikte).
-
-**Kontrol:** chk.js 0 hata. Fiyat denetimi: fiyatsız eşya yok, kullanılmayan malzeme sayısı aynı (68). Balta dersi: boş çantada Börü 2 dal, 7 lif ister; adımlar 0→1→2→3→5 doğru sırayla.

@@ -8,6 +8,43 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.27 · 19 Kasım 2026
+
+### Oynanış
+- **Reisler tek kurala bağlandı:**
+  - Bir Reis türünün 4 katı canla gelir; hızlı türlerin (Bataklık kurdu, Kartal, Vaşak, Kül kurdu, Kor yarasası, Gölge kurdu…) Reisi 3 katıyla.
+  - Türüyle aynı hasarla vurur. Etkisi 1,5 kat; uzaktan atanlar bir atış fazla ve biraz daha sık atar.
+  - Hiçbir Reis yardıma sürü çağırmaz.
+  - ACT 1'de bir Reis en az 100 can ve 10 hasarla gelir.
+  - Verdiği XP ve Vio türün temel XP'sinden hesaplanır.
+  - Ör. Bataklık Kurdu Reisi 1.200 can · 46 hasar, Timsah Reisi 4.000 · 66.
+- **Mağara boss'ları** yenilince Reis ödülü yerine o mağaranın görev ödülü kadar Vio verir: Yankı Kraliçesi 310, Yaşlı Kök 500, Çamur Ana 700, Dağ Devi 1.000, Kor Kral 1.400, Işık Yutan 2.000. Görevi veren kişinin ödülü yine ayrıca gelir. Boss'un düşürdükleri leşinde kalır, leşe F ile alınır.
+- **Bataklık canlıları:**
+  - Ördek 30 can; Yaban kazı 260 · 30; Turna kuşu 300 · 32; Su samuru 340 · 36.
+  - Bataklık kurdu 400 · 46, kanaması daha hafif. Timsah 1.000 · 66.
+  - Verdikleri XP değişmedi.
+- **Kuşaklar:** Timsah Bataklık'ın orta kuşağına Seviye 20'den itibaren gelir. Kayalık Dağ canlıları daha erken seviyede gelir (Yaban öküzü 23, Kartal 25/23, Vaşak 25); Kayalık Dağ canlıları seni Seviye 36'dan sonra güçlü görüp çekinir.
+- **Batık Mağara:** Çamur Ana 2.000 can · 32 hasar, zehri daha hafif. Sülükler 1–2'li gelir, mağara daha yavaş dolar.
+- **Balta ve kazma** bir canlıya aynı kademenin topuzundan sert vurmaz (ör. Demir balta 26, Granit kazma 19). Ağaç kesme ve kazma hızı aynı.
+- **Kamış çizme:** savunma 9, değeri 151 Vio.
+- **Görevler:**
+  - Ali'nin 2. görevi 250, 4. görevi 300 Vio; Veli'nin 4. görevi 500 Vio.
+  - Ali'nin ilk görevinde Demir cevheri için doğru kazma yazar (granit ya da tunç). Görev kartı, elindeki kazma bir madeni kazamıyorsa hangi kazmanın gerektiğini söyler.
+- **Yan görevler:**
+  - Hekim Şifa'nın kazanında her dalgada tek canavar gelir; Şifa'nın son sözü yenilendi.
+  - Avcı Kartal'ın yanında beklerken her dalgada bir Bataklık kurdu ve bir Engerek gelir.
+- **Av yeri:** Bataklık ve sonrasında bir canlıyı avlama görevinde haritadaki sarı bölge, o canlının senin seviyende gerçekten çıktığı yerleri gösterir (ör. "Bataklık'ın derinleri, köprüden uzakta"). Seviye atlayınca bölge güncellenir.
+- **Mağaradayken** görev sırası ve tarif ayak işi o mağaranın biyomuna göre seçilir (Batık Mağara'da Bataklık kişileri ve Safir).
+- **Dut ve İncir** ağaçları kesilmez, yalnız silkelenir.
+- **"Yeni ders" kartı** başka bir ders kartının üstüne açılmaz; önceki kapanınca gelir.
+
+### Tasarım belgesi
+- Reis kuralı ve hızlı tür; mağara boss'unun ödülü; Bataklık ve Batık canlı tabloları; Kayalık kuşakları; balta ve kazma hasarı; Kamış çizme; ödüller; Şifa ve Kartal; av sarı bölgesi; kazancı ve mağara.
+
+=====================================================================
+
+---
+
 ## Versiyon 4.26 · 18 Kasım 2026
 
 ### Oynanış
@@ -415,21 +452,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Yeni bölüm: Tarifler › Sade malzeme › **Biyom başına tek odun** (odunlar, fiyatları, ağaçları, kalas/sap/kömür/kaşık, yaylar, kabuklar, görevler). Biyom tablolarında, tarif ve eşya dizinlerinde ağaç adlı odunlar ve türeyenleri yeni adlarıyla, fiyatları oyundakiyle aynı.
-
----
-
-## Versiyon 4.06 · 10 Kasım 2026
-
-### Oynanış
-- **Temel parçalar ucuzladı:** Sivri taş artık 4 Keskin taş (6 yerine), Sopa 2 Dal + 1 Keskin taş + 1 Lif (3 Dal + 2 Keskin taş yerine), İp 3 Lif (4 yerine). Örneğin bir Taş kazma sıfırdan 16 Taş, 5 Dal, 8 Lif yerine artık 12 Taş, 4 Dal, 7 Lif istiyor.
-- **Fiyatlar yeni malzemelere göre:** İp 5 → 4, Sopa 12 → 8, Sivri taş 23 → 15 Vio. Bunları kullanan bütün tariflerin fiyatı da düştü (198 eşya; ör. Taş kazma 64 → 46, Uzun sopa 28 → 22, Halat 38 → 30, Taş balta 39 → 31). Fiyatı kendi metal setine göre belirlenen silah ve aletler (tunç, demir, kuvars…) ile oltalar değişmedi.
-- **Börü'nün balta dersi yeni tariflere göre:** önce 1 Keskin taş, sonra Sopa (2 dal, 1 keskin taş, 1 lif), sonra baltanın ağzı için 2 Keskin taş, en son 2 İp (her biri 3 lif). Börü yanına da buna göre bırakıyor (ör. çantan boşsa 2 dal ve 7 lif).
-- **Güvercinler yeniden görünüyor:** Bulut'un kaçan güvercinleri (ve aynı şekilde sesle bulunan bıldırcın, kurbağalar, çanlar, kristaller) artık dünyada hep görünüyor; yalnızca haritada ve mini haritada gösterilmiyor. Önceden ancak dibine gelince beliriyorlardı.
-
-### Arayüz
-- **El yapımı listesi yana kaymıyor:** bir silahın (ör. Taş savaş çekici) üstüne gelince adının altında çıkan özellik satırı listeyi genişletip Takip et / ×5 / Hepsi / Yap düğmelerini sağa itiyordu; artık yazı alt satıra geçiyor, düğmeler yerinde kalıyor.
-
-### Tasarım belgesi
-- Tarif ve eşya tablolarındaki fiyatlar, Börü'nün balta dersi, yan görevlerde sesle bulunan şeylerin görünmesi ve listede özellik satırının kaydırmaması güncellendi.
 
 ---

@@ -25,8 +25,8 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 6. **Çıkış.** İçeride girişin olduğu yerde ışıklı bir **"ÇIKIŞ" tabelası** ve aşağı ok durur (tabela mağara zemininin üstüne çizilir, önceden görünmüyordu). **Giriş ve çıkış sarı parlar:** dışarıda mağaranın ağzında, içeride çıkışta yerde nabız gibi atan sarı bir halka ve ışıltı vardır; gece de görünür (ağzın 60 px ışığı). Çıkış alanı 56 px'tir (tıklama 50 px). Başlangıç/çıkış noktası her zaman yürünebilir zemindedir (mağara kurulurken su ağzın üstündeki hücreyi silerse en yakın zemine alınır). Tabelaya tıklayınca ya da yanında **F**: "Mağaradan çıkıp gün ışığına dönmek ister misin?" penceresi, **Mağaradan çık** düğmesiyle. Bayılırsan mağaradan çıkarılırsın (her zamanki gibi uyanma yerinde uyanırsın).
 7. **Kayıt.** Mağaradayken kaydedilirse oyun, kayıt açılınca seni **mağaranın girişinin önünde** başlatır. Mağarada açtığın yerler (harita) kaydedilir.
 8. **Harita.** Dışarıda mağaranın girişi küçük ve büyük haritada **mağara simgesiyle** görünür (o biyoma ayak basmışsan); büyük haritada üzerine gelince adı ve şartı yazar ("Yankı Mağarası · Sv 5 · meşale"). Mağaranın içindeyken harita **mağaranın kendi haritasını** gösterir: yürüdükçe açılan tüneller, giriş ve en dipteki kişi.
-9. **Canlılar.** Her mağarada **3 canlı türü** yaşar; yalnızca o mağarada çıkarlar (dışarıda yoktur). Mağarada dolaşırken çevrende (200–420 px) karanlıkta doğarlar. Her tür adanın öbür canlıları gibi **Reis** sayacına sahiptir: yeteri kadar avlayınca o türün Reisi gelir. Almanakta biyomun canlılarının altında ayrı bir **"Mağara: …"** bölümünde görünürler (mağaraya bir kez girmiş olmak yeter).
-10. **Mağara boss'u.** Her mağaranın bir boss'u vardır; kendi büyük resmiyle çizilir (mor parıltılı, iri; bkz. Boss'ların görünüşü). Yalnızca en dipteki kişinin görevinde çağrılır. Almanakta mağara bölümünün sonunda durur:
+9. **Canlılar.** Her mağarada **3 canlı türü** yaşar; yalnızca o mağarada çıkarlar (dışarıda yoktur). Mağarada dolaşırken çevrende (220–440 px) karanlıkta doğarlar: her türden aynı anda en çok **2** canlı ya da sürü, mağarada toplam en çok **9** canlı (boss hariç); oyuncudan 820 px'ten uzaklaşan silinir. Doğma 1,5 sn'de bir denenir (Batık Mağara'da 3 sn). Her tür adanın öbür canlıları gibi **Reis** sayacına sahiptir: yeteri kadar avlayınca o türün Reisi gelir. Almanakta biyomun canlılarının altında ayrı bir **"Mağara: …"** bölümünde görünürler (mağaraya bir kez girmiş olmak yeter).
+10. **Mağara boss'u.** Her mağaranın bir boss'u vardır; kendi büyük resmiyle çizilir (mor parıltılı, iri; bkz. Boss'ların görünüşü). Yalnızca en dipteki kişinin görevinde çağrılır. **Ödülü (19 Kasım 2026, Boğaç):** boss ölünce kendi XP'si ve o mağaranın görev ödülündeki Vio kadar sikke verir (Reis formülü 25 + XP × 5 mağara boss'una uygulanmaz): Yankı Kraliçesi 310, Yaşlı Kök 500, Çamur Ana 700, Dağ Devi 1.000, Kor Kral 1.400, Işık Yutan 2.000. Almanakta mağara bölümünün sonunda durur:
     - hiç karşılaşılmadıysa: kapalı kart ("???", "Henüz karşılaşmadın");
     - karşılaşıp yenemediysen (bayıldıysan): özellikleri açılır (can, hasar, hız, hamleler, düşürdükleri) ama kart **altın değildir** ("Karşılaştın, henüz yenemedin");
     - yendiysen kart kendiliğinden **altın** olur ("★ Yenildi").
@@ -60,7 +60,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 | Kor Kral | Kara bazalttan bir kral: gövdesinde akan lav damarları, başında alevleri titreyen altın taç, elinde ateşli asa, kor gibi yanan gözler |
 | Işık Yutan | Havada süzülen kapkara bir yaratık: altı göz, ışığı yutan dişli dev ağız (içinde mor girdap), sırtında mor ayna kristalleri, altında kıpırdayan dokunaçlar |
 
-**Boss · Yankı Kraliçesi** (taçlı dev yarasa): can 350 (uçup daldığı için vuruşların çoğu boşa gider; Sv10'da Çakmaktaşı kılıç ve Kürk takımıyla yenilebilsin diye; E2E v4.26), hasar 18, hız 62, uçar, XP 400; düşürdükleri: Kraliçe pençesi (her zaman), Yarasa zarı 3–5.
+**Boss · Yankı Kraliçesi** (taçlı dev yarasa): can 350 (uçup daldığı için vuruşların çoğu boşa gider; Sv10'da Çakmaktaşı kılıç ve Kürk takımıyla yenilebilsin diye; E2E v4.26), hasar 18, hız 62, uçar, XP 400, ölünce **310 Vio**; düşürdükleri: Kraliçe pençesi (her zaman), Yarasa zarı 3–5.
 
 **Toplanabilenler:** Yankı mantarı (mavi parlar; elle), Damla taşı (elle).
 
@@ -70,7 +70,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 - *Boss:* Yankı Kraliçesi odaya iner; yen.
 - *Dön:* "Mağara sustu. Damlaları dinle… artık yalnızca su sesi var. Sağ ol." Görev biter.
 - *İkinci deneme:* "Yine geldin. Fener hazır, mantarlar yerinde. Kraliçeyi çağırayım mı?" → **Çağır**.
-- *Ödül:* 310 Vio · 260 XP (boss'u yenince ayrıca Reis ödülü: Vio ve boss'un XP'si). *Sonra:* "Damla taşı kazmaya döndüm. Kraliçe olmadan mağara çok sessiz, biraz da özlüyorum."
+- *Ödül:* 310 Vio · 260 XP (boss'u yenince ayrıca boss'un XP'si ve görev ödülü kadar Vio: 310). *Sonra:* "Damla taşı kazmaya döndüm. Kraliçe olmadan mağara çok sessiz, biraz da özlüyorum."
 
 **Malzemeler ve fiyatlar**
 
@@ -106,7 +106,7 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 | Kök yılanı | saldırgan | 130 | 20 | 58 | 22 | ısırığı zehirler | Kök yılanı derisi (%70) |
 | Mağara kurdu | saldırgan | 200 | 26 | 66 | 30 | 2–3'lü sürü | Mağara kurdu eti (her zaman), Mağara kurdu postu (%60) |
 
-**Boss · Yaşlı Kök** (yürüyen yaşlı ağaç kütüğü): can 1.200, hasar 24, hız 40, XP 900; düşürdükleri: Yaşlı Kök özü (her zaman), Kök reçinesi 3–5.
+**Boss · Yaşlı Kök** (yürüyen yaşlı ağaç kütüğü): can 1.200, hasar 24, hız 40, XP 900, ölünce **500 Vio**; düşürdükleri: Yaşlı Kök özü (her zaman), Kök reçinesi 3–5.
 
 **Toplanabilenler:** Kök reçinesi (amber parlar; elle). Orman'ın mantarı Kanlıca dışarıda, ağaçların dibinde çıkar.
 
@@ -116,7 +116,7 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 - *Boss:* Yaşlı Kök topraktan yükselir; yen.
 - *Dön:* "Kökler gevşedi… duyuyor musun? Yukarıda ıhlamurun yaprakları hışırdıyor. Teşekkür ederim." Görev biter.
 - *İkinci deneme:* "Yine geldin. Macun hâlâ sıcak. Yaşlı Kök'ü uyandırayım mı?" → **Uyandır**.
-- *Ödül:* 500 Vio · 450 XP (boss'u yenince ayrıca Reis ödülü). *Sonra:* "Köklere su taşıyorum. Ihlamur bu bahar çiçek açacak."
+- *Ödül:* 500 Vio · 450 XP (boss'u yenince ayrıca boss'un XP'si ve görev ödülü kadar Vio: 500). *Sonra:* "Köklere su taşıyorum. Ihlamur bu bahar çiçek açacak."
 
 **Malzemeler ve fiyatlar**
 
@@ -150,13 +150,15 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 
 Bataklığın altında, tavanından su sızan, yerleri balçıklı bir mağara. Duvarlarda yeşil parlayan yosunlar, suyun içinde batmış kökler.
 
+**Doğma:** Batık Mağara'da canlılar **3 sn'de bir** yeniden doğar (öbür mağaralarda ve dışarıda 1,5 sn); dibe inen oyuncu art arda sürüye boğulmasın diye.
+
 | Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri |
 |---|---|---|---|---|---|---|---|
-| Mağara sülüğü | saldırgan | 300 | 30 | 40 | 60 | 2–3'lü sürü, ısırığı kanatır | Sülük 1–2 (%80) |
+| Mağara sülüğü | saldırgan | 300 | 30 | 40 | 60 | 1–2'li sürü, ısırığı kanatır | Sülük 1–2 (%80) |
 | Balçık kurbağası | saldırgan | 420 | 34 | 38 | 75 | uzaktan atar (140 menzil, 2 atış), zehir | Balçık bezesi (%70) |
 | Batak semenderi | saldırgan | 520 | 40 | 50 | 85 | – | Semender derisi (%70) |
 
-**Boss · Çamur Ana** (dev kurbağa): can 3.600, hasar 75, hız 34, XP 1.500, zehirler; düşürdükleri: Çamur Ana gözü (her zaman), Balçık bezesi 3–5.
+**Boss · Çamur Ana** (dev kurbağa): can 2.000, hasar 32, hız 34, XP 1.500, zehirler (gücü 2), ölünce **700 Vio**; düşürdükleri: Çamur Ana gözü (her zaman), Balçık bezesi 3–5.
 
 **Toplanabilenler:** Parıltı yosunu (yeşil parlar), Siyah balçık, Batık kök, Sazlı inci.
 
@@ -191,7 +193,7 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 | Tavan örümceği | saldırgan | 700 | 58 | 56 | 130 | zehir | Tavan ağı 1–2 (%80) |
 | Mağara vaşağı | saldırgan | 1.000 | 66 | 84 | 160 | kanama | Gri vaşak postu (%70) |
 
-**Boss · Dağ Devi** (mor ışığın taşları birbirine yapıştırdığı dev; Mağara ayısı biçiminde): can 6.000, hasar 125, hız 36, XP 2.400; düşürdükleri: Dev yüreği (her zaman), Gümüş filizi 3–5.
+**Boss · Dağ Devi** (mor ışığın taşları birbirine yapıştırdığı dev; Mağara ayısı biçiminde): can 6.000, hasar 125, hız 36, XP 2.400, ölünce **1.000 Vio**; düşürdükleri: Dev yüreği (her zaman), Gümüş filizi 3–5.
 
 **Toplanabilenler:** Gümüş filizi (parlar), Dağ kristali (parlar), Rüzgâr taşı, Kar likeni.
 
@@ -224,7 +226,7 @@ Kül Diyarı'nın altında, yarıklarından kor ışığı sızan sıcak bir ma�
 | Lav yılanı | saldırgan | 1.100 | 105 | 60 | 240 | yanık | Lav yılanı pulu (%70) |
 | Duman cini | saldırgan | 1.000 | 98 | 46 | 260 | uzaktan atar (190 menzil, 3 atış), yanık | Duman özü (%60) |
 
-**Boss · Kor Kral** (ocakların ateşini yutan dev kertenkele): can 8.500, hasar 165, hız 38, XP 3.400, yakar; düşürdükleri: Kor Kral tacı (her zaman), Kor kabuğu 3–5.
+**Boss · Kor Kral** (ocakların ateşini yutan dev kertenkele): can 8.500, hasar 165, hız 38, XP 3.400, yakar, ölünce **1.400 Vio**; düşürdükleri: Kor Kral tacı (her zaman), Kor kabuğu 3–5.
 
 **Toplanabilenler:** Kükürt kristali (parlar), Kor taşı (parlar), **Kül mantarı** (Kül Diyarı'nın tek mantarı), Volkan camı.
 
@@ -258,7 +260,7 @@ Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara
 | Ayna örümceği | saldırgan | 1.500 | 160 | 58 | 380 | uzaktan atar (180 menzil, 3 atış), zehir | Ayna ipeği 1–2 (%80) |
 | Gölge semenderi | saldırgan | 2.000 | 185 | 64 | 420 | kanama | Gölge pulu (%70) |
 
-**Boss · Işık Yutan** (ışıkla beslenen, Kara ejder biçiminde dev bir gölge): can 12.000, hasar 250, hız 32, XP 5.000; düşürdükleri: Işık Yutan kalbi (her zaman), Mor damar taşı 3–5.
+**Boss · Işık Yutan** (ışıkla beslenen, Kara ejder biçiminde dev bir gölge): can 12.000, hasar 250, hız 32, XP 5.000, ölünce **2.000 Vio**; düşürdükleri: Işık Yutan kalbi (her zaman), Mor damar taşı 3–5.
 
 **Toplanabilenler:** Mor damar taşı (parlar), Işık sporu (parlar), Ayna taşı (parlar), Yıldız tozu (parlar).
 

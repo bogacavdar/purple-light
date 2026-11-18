@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 4.26** ile birebir (18 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 4.27** ile birebir (19 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -1244,12 +1244,12 @@ Durduran parçalarla (Çit, Taş duvar) ve kapılarla **tamamen çevrili** alan�
 | Savaş çekici | Taş 13 · Bakır 18 · Çakmaktaşı 20 · Tunç 25 · Granit 28 · Demir 39 · Timsah dişi 44 · Çelik 53 · Kuvars 59 · Kara çelik 67 · Ejder 75 · Mor kristal 83 · Ametist 93 | 24 | 0,62 sn |
 | Topuz | Taş 9 · Bakır 12 · Çakmaktaşı 14 · Tunç 17 · Granit 19 · Demir 26 · Timsah dişi 29 · Çelik 35 · Kuvars 39 · Kara çelik 44 · Ejder 49 · Mor kristal 54 · Ametist 61 | 20 | 0,40 sn |
 | Mızrak | Mızrak 10 · Bakır 15 · Çakmaktaşı 17 · Tunç 20 · Granit 22 · Demir 30 · Timsah dişi 34 · Çelik 41 · Kuvars 46 · Kara çelik 52 · Ejder 58 · Mor kristal 64 · Obsidyen 72 | 30 | 0,5 sn |
-| Balta | Taş 9 · Bakır 12 · Çakmaktaşı 13 · Granit 22 · Tunç 20 · Demir 30 · Timsah dişi 34 · Çelik 38 · Kuvars 43 · Kara çelik 50 · Ejder 56 · Mor kristal 58 · Obsidyen 65 | 20 | 0,5 sn |
-| Kazma | Taş 8 · Bakır 11 · Çakmaktaşı 12 · Tunç 18 · Granit 20 · Demir 26 · Timsah dişi 29 · Çelik 34 · Kuvars 38 · Kara çelik 45 · Ejder 50 · Mor kristal 52 · Obsidyen 58 | 20 | 0,5 sn |
+| Balta | Taş 9 · Bakır 12 · Çakmaktaşı 13 · Granit 19 · Tunç 17 · Demir 26 · Timsah dişi 29 · Çelik 35 · Kuvars 39 · Kara çelik 44 · Ejder 49 · Mor kristal 54 · Obsidyen 61 | 20 | 0,5 sn |
+| Kazma | Taş 8 · Bakır 11 · Çakmaktaşı 12 · Tunç 17 · Granit 19 · Demir 26 · Timsah dişi 29 · Çelik 34 · Kuvars 38 · Kara çelik 44 · Ejder 49 · Mor kristal 52 · Obsidyen 58 | 20 | 0,5 sn |
 | Yay | Basit 8 · Odun 12 · Kemik 13 · Sert odun 17 · Granit 19 · Sağlam odun 26 · Timsah dişi 29 · Güçlü odun 35 · Gümüş 39 · Kor odun 45 · Ejder 50 · Kadim odun 56 · Ametist 63 (× okun çarpanı) | 240–370 | 0,75–0,57 sn |
 | Asalar, ateşli silahlar | ACT 2 bölümündeki tablo | 210–340 | |
 
-- **Emek–güç kuralı (silah türleri):** aynı setin kılıcı saniyede en çok hasarı verir. Daha ucuz ve daha az malzemeyle yapılan topuzun hasarı kılıcın %75'idir: saniyede kombosuz kılıcın ~%80'i, gerçek dövüşteki ortalama komboyla (+%20; vurulunca sayaç sıfırlanır) ~%95'i; kılıcı ancak vurulmadan art arda 4'ten çok isabetle geçer. Menzili uzun (30) mızrak ~%80'ini, yavaş savaş çekici ~%74'ünü verir (çevre hasarı ve sersemletmeyle telafi eder). Örnek Çakmaktaşı seti: kılıç 18 × 2,4 = 43 · topuz 14 × 2,5 = 35 · mızrak 17 × 2 = 34 · savaş çekici 20 × 1,6 = 32 hasar/sn. Başlangıç setinde Taş kılıç 12 × 2,4 = 29, Taş topuz 9 × 2,5 = 22,5.
+- **Emek–güç kuralı (silah türleri):** aynı setin kılıcı saniyede en çok hasarı verir. Daha ucuz ve daha az malzemeyle yapılan topuzun hasarı kılıcın %75'idir: saniyede kombosuz kılıcın ~%80'i, gerçek dövüşteki ortalama komboyla (+%20; vurulunca sayaç sıfırlanır) ~%95'i; kılıcı ancak vurulmadan art arda 4'ten çok isabetle geçer. Menzili uzun (30) mızrak ~%80'ini, yavaş savaş çekici ~%74'ünü verir (çevre hasarı ve sersemletmeyle telafi eder). Örnek Çakmaktaşı seti: kılıç 18 × 2,4 = 43 · topuz 14 × 2,5 = 35 · mızrak 17 × 2 = 34 · savaş çekici 20 × 1,6 = 32 hasar/sn. Başlangıç setinde Taş kılıç 12 × 2,4 = 29, Taş topuz 9 × 2,5 = 22,5. **Balta ve kazma** silah değil alettir, her oyuncu zaten yapar: canlıya vuruşları **en çok aynı kademenin topuzu kadardır** (kritik vuramaz, menzil 20), saniyede kılıcın ~%65'i; böylece aletle dövüşmek ayrıca yapılan mızraktan az vurur (Demir seti: kılıç 34 × 2,4 = 81 · topuz 65 · savaş çekici 62 · mızrak 60 · balta 26 × 2 = 52). Ağaç kesme ve kazma hızı bundan etkilenmez (alet tablosundaki iş süresi).
 
 - **Vuruş ne zaman değer:** vuruşun çizildiği yer (karakterin göğsü) ile canlının **gövdesi** arasındaki uzaklık, silahın menzili + canlının boyu + 3 pikseli geçmiyorsa ve canlı vuruş yönünün en çok ~95° yanındaysa (çaprazlar dahil, geniş bir koni) vuruş değer ve hasar verir. Vuruş efekti canlının görseline değdiği an hasar sayılır; çok yakındaki (gövdesine yapışık) canlı yönden bağımsız vurulur. Yumruk ve tek elli silahlar ilk değdiği canlıya vurur.
 - **Canlının her yeri sayılır:** uzaklık canlının gövde noktasına değil, **çiziminin kapladığı kutuya** (kıskaçlar, kuyruk, boynuz, kanat dahil; gölge ve can çubuğu hariç; her tür ilk vuruşta bir kez ölçülür, yöne göre aynalanır, büyük Reislerde boyla çarpılır) ölçülür: göğüsten kutunun en yakın noktasına uzaklık silahın menzili + 3 pikseli geçmiyorsa ve o nokta vuruş yönünün en çok ~95° yanındaysa vuruş değer. Böylece kerevitin kıskacına, geyiğin boynuzuna değen vuruş da hasar verir. **Bütün canlılarda** (iki adada da, Reisler dahil) geçerlidir; çizimi ölçülemeyen bir canlı olursa yukarıdaki eski kural kullanılır.
@@ -1389,7 +1389,7 @@ Hayvanlar artık yalnızca "kaçar / vurulunca saldırır / görünce saldırır
 - **Gizlice yaklaşma:** fark edilme uzaklığı nasıl hareket ettiğine bağlıdır: **dururken** saldırganın fark etme alanının **%55**'i, **yürürken %80**'i, **koşarken** tamamı. Zararsız hayvanlar (tavşan, keklik…) dururken **35**, yürürken **55**, koşarken **100** piksel içine girince kaçar (önce her zaman 70). Avlanmak için yürüyerek, son adımlarda durarak yaklaşmak işe yarar.
 - **Uyarı (nötr hayvanlar):** geyik, karaca, yaban atı, porsuk, öküz, keçi gibi nötr bir hayvanın dibine (gövdesi + 40 piksel) girersen önce **uyarır**: başında turuncu **"!"** çıkar, homurdanır, başını sallar. **1,5 sn** içinde uzaklaşırsan bir şey olmaz; dibinde kalırsan sana saldırır (vurduğunda olduğu gibi). Kerevit uyarmaz. Kampta ve güvenli yerlerde uyarı da saldırı da yoktur.
 - **Yaralanınca kaçma:** canı **%20**'nin altına düşen hayvanların çoğu (her hayvan için %60 ihtimal, bir kez belirlenir) **4 sn** kaçmaya çalışır: senden uzağa, biraz daha hızlı koşar, arkasında kan damlaları kalır; kaçarken saldırmaz. Sıkışırsa ya da 1 sn'den sonra yanına kadar gelirsen döner ve dövüşür. İri hayvanlar (Timsah, Yaban öküzü, Mağara ayısı, ejderler, golemler ve öbür iriler) kaçmaz.
-- **Güçlüden çekinme:** ACT 1'de bir saldırgan hayvan, sen onun biyomunun varış seviyesinden **15 seviye** yüksekken sana kendiliğinden saldırmaz: dolaşır, 70 pikselden yakına gelirsen uzaklaşır. Varış seviyeleri: Çayır 1, Orman 10, Bataklık 18, Kayalık Dağ 26, Kül Diyarı 34, Mor Kristal 42 (ör. Çayır kurdu Seviye 16'dan, Bataklık kurdu Seviye 33'ten sonra çekinir). Ona vurursan 20 sn boyunca normal dövüşür.
+- **Güçlüden çekinme:** ACT 1'de bir saldırgan hayvan, sen onun biyomunun varış seviyesinden **15 seviye** yüksekken sana kendiliğinden saldırmaz: dolaşır, 70 pikselden yakına gelirsen uzaklaşır. Varış seviyeleri: Çayır 1, Orman 10, Bataklık 18, Kayalık Dağ 21, Kül Diyarı 34, Mor Kristal 42 (ör. Çayır kurdu Seviye 16'dan, Bataklık kurdu Seviye 33'ten sonra çekinir). Ona vurursan 20 sn boyunca normal dövüşür.
 - **Avcı ve av:** ACT 1'de yırtıcılar seni kovalamıyorken yakınlarındaki (160 piksel) küçük hayvanları avlar: **Kurt** → Tavşan, Keklik, Bıldırcın, Sincap · **Bataklık kurdu** ve **Timsah** → Ördek · **Vaşak** ve **Kartal** → Ur kekliği · **Gölge kurdu** → Mor güve. Av avcısından kaçar. Yakalanan av ölür, yerinde **leşi** kalır: eti avcı yemiştir, derisi, tüyü, yumurtası leşin içindedir ve sen toplayabilirsin (XP vermez, av sayısına ve Reis sayacına girmez). Avcı leşin başında 6 sn yer, sonra dolaşır. 8 sn'de yakalayamazsa bırakır. Sen fark edilince avcı avı bırakır.
 
 ### İmza hamleleri ve sürü taktiği (13 Kasım 2026, Boğaç)
@@ -1548,7 +1548,7 @@ Karakter penceresinin (C) **İstatistikler** sekmesinde kartlar şöyle sıralan
 
 ### Biyomları okuma rehberi
 
-**Beklenen varış seviyesi (yaklaşık):** Çayır 1 (Çayır'da Seviye 10'a çıkılır), **Orman ~10** (Orman'da 14'e çıkılır; Orman'dan önce açılan 22 Çayır ana görevi Seviye 7, yan görevleriyle 8 eder, toplama, av, yeni tarif ve yeni eşya XP'siyle oyuncu Orman'a Seviye 10–11'de varır; Börü'nün "Kuzeye keşif" görevinin asgari şartı Seviye 3), **Bataklık 12–20** (köprü Seviye 12'de açılır, her şeyi yapan oyuncu ~18–20; 7 Kasım 2026, Boğaç), Kayalık Dağ ~26, Kül Diyarı ~34, Mor Kristal Vadisi ~42 (son üçü biyomun mağarasının önerilen seviyesine göre). Bu bir denge beklentisidir, giriş şartı değildir.
+**Beklenen varış seviyesi (yaklaşık):** Çayır 1 (Çayır'da Seviye 10'a çıkılır), **Orman ~10** (Orman'da 14'e çıkılır; Orman'dan önce açılan 22 Çayır ana görevi Seviye 7, yan görevleriyle 8 eder, toplama, av, yeni tarif ve yeni eşya XP'siyle oyuncu Orman'a Seviye 10–11'de varır; Börü'nün "Kuzeye keşif" görevinin asgari şartı Seviye 3), **Bataklık 12–20** (köprü Seviye 12'de açılır, her şeyi yapan oyuncu ~18–20; 7 Kasım 2026, Boğaç), **Kayalık Dağ ~21** (köprüye Seviye 13–15 ile varılır; Bataklık'ın 21 ana görevi tek başına ~1 seviye verir, Seviye 16; Orman kişilerinin devam görevleri, Pazarcı Nilüfer, yan görevler ve Batık Mağara ile Çamur Ana'yla ~Seviye 18; av ve Bataklık Reisleriyle ~20–21), Kül Diyarı ~34, Mor Kristal Vadisi ~42 (son ikisi biyomun mağarasının önerilen seviyesine göre). Bu bir denge beklentisidir, giriş şartı değildir.
 
 Aşağıdaki her biyom başlığında dört tablo var:
 
@@ -1797,13 +1797,13 @@ Adanın kuzeyi, büyük nehrin doğusu: Orman'dan ana köprüyü onarıp karşı
 
 | Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri (ihtimal) |
 |---|---|---|---|---|---|---|---|
-| Ördek | zararsız | 8 | – | 44 | 5 | – | Ördek eti %100; Ördek tüyü %85 ×1–3; Ördek yumurtası %35 |
-| Yaban kazı | nötr | 150 | 20 | 46 | 24 | – | Yaban kazı eti %100; Yaban kazı tüyü %85 ×1–3; Yaban kazı yumurtası %35 |
-| Turna kuşu | nötr | 200 | 20 | 50 | 32 | – | Turna kuşu eti %100; Turna kuşu tüyü %85 ×1–3; Turna kuşu yumurtası %30 |
-| Su samuru | nötr | 240 | 23 | 56 | 35 | – | Su samuru eti %100; Su samuru derisi %75 |
+| Ördek | zararsız | 30 | – | 44 | 5 | – | Ördek eti %100; Ördek tüyü %85 ×1–3; Ördek yumurtası %35 |
+| Yaban kazı | nötr | 260 | 30 | 46 | 24 | – | Yaban kazı eti %100; Yaban kazı tüyü %85 ×1–3; Yaban kazı yumurtası %35 |
+| Turna kuşu | nötr | 300 | 32 | 50 | 32 | – | Turna kuşu eti %100; Turna kuşu tüyü %85 ×1–3; Turna kuşu yumurtası %30 |
+| Su samuru | nötr | 340 | 36 | 56 | 35 | – | Su samuru eti %100; Su samuru derisi %75 |
 | Zehirli kurbağa | saldırgan | 350 | 36 | 40 | 89 | uzaktan atar (140 menzil, 3 atış), zehir etkisi | Zehir bezesi %80; Kurbağa %60 |
-| Bataklık kurdu | saldırgan | 450 | 52 | 100 | 114 | kanama etkisi, sürü 2–4 | Bataklık kurdu postu %80; Kurt dişi %50; Kemik %50 ×1–2 |
-| Timsah | saldırgan | 1.080 | 78 | 36 | 194 | kanama etkisi | Timsah derisi %90; Timsah dişi %60 ×1–2; Timsah eti %100 ×1–2 |
+| Bataklık kurdu | saldırgan | 400 | 46 | 100 | 114 | kanama etkisi (gücü 2; Reisinde 3), sürü 2–4 | Bataklık kurdu postu %80; Kurt dişi %50; Kemik %50 ×1–2 |
+| Timsah | saldırgan | 1.000 | 66 | 36 | 194 | kanama etkisi | Timsah derisi %90; Timsah dişi %60 ×1–2; Timsah eti %100 ×1–2 |
 
 **Deri parçası:** Su samuru %75 ×1–2, Bataklık kurdu %80 ×1–2, Timsah %90 ×1–2 (derisinin yanında).
 
@@ -1820,7 +1820,7 @@ Adanın kuzeyi, büyük nehrin doğusu: Orman'dan ana köprüyü onarıp karşı
 | Kuşak | Ana köprüye uzaklık | Doğan canlılar |
 |---|---|---|
 | **Kıyı** (köprü başı) | ≤ 85 karo | Ördek, Yaban kazı, Turna kuşu, Su samuru her zaman; Zehirli kurbağa Seviye 12'den sonra |
-| **Orta** | 86–150 karo | Kıyı'dakiler ve Zehirli kurbağa her seviyede; Bataklık kurdu Seviye 20'den sonra; Timsah Seviye 22'den sonra |
+| **Orta** | 86–150 karo | Kıyı'dakiler ve Zehirli kurbağa her seviyede; Bataklık kurdu Seviye 20'den sonra; Timsah Seviye 20'den sonra |
 | **Derin** | > 150 karo | hepsi her seviyede |
 
 Bataklık kurdu sürüsünün boyu: Orman notundaki sürü kuralına bakın. XP sütunu Bataklık'ın ×1,5 XP çarpanı uygulanmış değerdir (Sistemler › Gelişim).
@@ -1874,7 +1874,7 @@ Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartalla
 | Kuvars | 29 | 3. kademe (Demir kazma) | 29 | 300 sn sonra yeniden çıkar |
 | Gümüş cevheri | 32 | 3. kademe (Demir kazma) | 30 | 300 sn sonra yeniden çıkar |
 
-**Kayalık Dağ dengesi (13 Kasım 2026, Boğaç: "kayalık dağı dengele"):** Kartal, Vaşak ve Mağara ayısı Bataklık ile Kül Diyarı arasındaki eğriye oturtuldu. Ölçüm: oyuncu varış seviyesinde ve bir önceki biyomun zırh setiyle (Bataklık Seviye 18 Tunç, Kayalık Dağ Seviye 26 Demir, Kül Diyarı Seviye 34 Çelik) saldırgan bir canlının tek ısırığı canın yüzde kaçını götürüyor: Bataklık %11–24, **Kayalık Dağ önce %25–30, şimdi %20–25**, Kül Diyarı %17–28. Canları da varış silahıyla (Demir kılıç) gereken vuruş sayısı Bataklık ve Kül Diyarı'nınkiyle aynı aralığa indi (Kartal 29 → 24, Vaşak 31 → 26, Mağara ayısı 74 → 62 vuruş). Reisleri aynı oranda değişti.
+**Kayalık Dağ dengesi (13 Kasım 2026, Boğaç: "kayalık dağı dengele"):** Kartal, Vaşak ve Mağara ayısı Bataklık ile Kül Diyarı arasındaki eğriye oturtuldu. Ölçüm: oyuncu varış seviyesinde ve bir önceki biyomun zırh setiyle (Bataklık Seviye 18 Tunç, Kayalık Dağ Seviye 26 Demir, Kül Diyarı Seviye 34 Çelik; Kayalık Dağ'a bugün ~Seviye 21 ile varıldığı için bu ölçüm Kayalık Dağ testinde Seviye 21 ile yenilenir) saldırgan bir canlının tek ısırığı canın yüzde kaçını götürüyor: Bataklık %11–24, **Kayalık Dağ önce %25–30, şimdi %20–25**, Kül Diyarı %17–28. Canları da varış silahıyla (Demir kılıç) gereken vuruş sayısı Bataklık ve Kül Diyarı'nınkiyle aynı aralığa indi (Kartal 29 → 24, Vaşak 31 → 26, Mağara ayısı 74 → 62 vuruş). Reisleri aynı oranda değişti.
 
 **Canlılar**
 
@@ -1894,8 +1894,8 @@ Adanın doğusu, Bataklık'ın güneydoğusu; sıradağa kadar uzanır. Kartalla
 
 | Kuşak | Derinlik | Doğan canlılar |
 |---|---|---|
-| **Giriş** | ≤ 45 karo | Ur kekliği, Dağ keçisi, Muflon her zaman; Yaban öküzü Seviye 28'den; Kartal Seviye 30'dan |
-| **Orta** | 46–85 karo | Ur kekliği, Dağ keçisi, Muflon, Yaban öküzü her zaman; Kartal Seviye 28'den; Vaşak Seviye 30'dan |
+| **Giriş** | ≤ 45 karo | Ur kekliği, Dağ keçisi, Muflon her zaman; Yaban öküzü Seviye 23'ten; Kartal Seviye 25'ten |
+| **Orta** | 46–85 karo | Ur kekliği, Dağ keçisi, Muflon, Yaban öküzü her zaman; Kartal Seviye 23'ten; Vaşak Seviye 25'ten |
 | **Derin** | > 85 karo | hepsi her seviyede (Mağara ayısı yalnızca burada) |
 
 ### Kül Diyarı — Ölümcül
@@ -2091,13 +2091,14 @@ XP sütunu bu biyomun ×1,5 XP çarpanı uygulanmış değerdir (Sistemler › G
 
     - **Kart her zaman sıradaki adımı gösterir (7 Kasım 2026, Boğaç: "Kullanıcı sorun yaşamamalı, 'ne yapacağım şimdi' dememeli"):** tarifi ya da malzemesi eksik bir görevin kartı, oyuncunun **bir sonraki somut adımını** her an gösterir: hangi malzeme nerede bulunur, hangi tarif hangi kazanda öğrenilir, ne yapılır, nereye gidilir. Bu oyun içi hedeftir (cihaz ya da arayüz işi tarif edilmez). Sıra, Kemal'in "tarifini öğren" ayak işi zincirinin mantığıdır: önce görülmemiş malzeme, sonra eksik ara tarif, sonra görevin tarifi, sonra yapmak, sonra görevin kendisi.
 
-10. **Ödül.** Vio + XP; bazı görevler ayrıca tarif yazar. Bir görev bir ustaya eşya yaptırıyorsa (dövdür, kurdur) ödülü o işin işçiliğinden az olmaz (ör. CB2 Ağıl 300 Vio, işçiliği 221; DR4 Meşe kabuk zırh 450 Vio, işçiliği 373). Kabaca biyoma göre: Çayır 20–120, Orman 40–180, Bataklık 120–300, Kayalık Dağ 200–420, Kül Diyarı 300–550, Mor Kristal Vadisi 450–800 Vio.
+10. **Ödül.** Vio + XP; bazı görevler ayrıca tarif yazar. Bir görev bir ustaya eşya yaptırıyorsa (dövdür, kurdur) ödülü o işin işçiliğinden az olmaz (ör. CB2 Ağıl 300 Vio, işçiliği 221; DR4 Meşe kabuk zırh 450 Vio, işçiliği 373; AL2 250 Vio, en pahalı seçenek Demir kılıcın işçiliği 248; AL4 Timsah dişi kılıcı 300 Vio, işçiliği 285; VE4 Timsah pulu zırh 500 Vio, işçiliği 481). Seçmeli dövdürme görevinde en pahalı seçeneğin işçiliği sayılır. Bu görevler biyomun ödül aralığının üstüne çıkabilir. Kabaca biyoma göre: Çayır 20–120, Orman 40–180, Bataklık 120–300, Kayalık Dağ 200–420, Kül Diyarı 300–550, Mor Kristal Vadisi 450–800 Vio.
 
 ### Yol gösterme: ok ve sarı bölge
 
 - Görev alınınca görevin **yapılabileceği her yer** haritada (büyük ve küçük harita) **sarı boyanır** ve yavaşça nabız gibi parlar; görev sürdükçe kalır, görevdeki **son parça** toplanınca ya da görev iptal edilince kalkar. Küçük bir çember çizilmez.
   - Toplanabilir / maden / ağaç: o şeyin **bulunduğu bütün biyomlar** baştan sona sarı (yalnızca kara; su boyanmaz). Örneğin her biyomda çıkan bir şey için bütün ada.
   - Hayvandan düşen şey ya da av: o canlının **yaşadığı bütün biyomlar** (eşya hem yerden hem avdan çıkıyorsa ikisinin biyomları birlikte).
+  - **Kuşaklı biyomlarda** (Bataklık ve sonrası) av ve avdan düşen şey için yalnız o canlının oyuncunun **o anki seviyesinde doğabildiği kuşaklar** sarı olur (ör. Seviye 20'nin altında Bataklık kurdu ve Timsah için yalnız Bataklık'ın Derin kuşağı, ana köprüden 150 karodan uzak). Kartın ve konuşmanın "📍" satırı da bunu söyler: "Bataklık'ın derinleri, köprüden uzakta · haritada sarı bölge". Kuşak harita kurulurken bir kez hesaplandığı için oyun sırasında harita taranmaz; seviye değişince bölge yeniden boyanır.
   - Balık tutma ve nehir kili gibi suda yapılan işler: **nehirler ve sığ sular** (açık deniz değil).
   - Bir biyoma gitme: o biyomun tamamı.
   - Bir kişiye, bir yapıya ya da bir yere gitme (demirci, kazan, köprü, enkaz…): o kişinin/yerin çevresinde büyük bir sarı ışık (yaklaşık 8 karo yarıçap) ve dışa açılan halkalar. oraya 8 karodan yakınken bu büyük ışık haritada çizilmez (küçük haritada senin üstüne biniyordu). Kazanda yapılan görevlerde (ör. Zümrüt'ün "Kazanın dili") hedef **Zümrüt değil kazandır**; kazanın yanına gelince oyunda **kazanın kendisi sarı parlar**.
@@ -2154,7 +2155,7 @@ Hiçbir kişide görev yoksa Kemal'in başında ! çıkar. Kemal, **bir sonraki 
 
 Ödülü küçüktür (10–40 Vio, biraz XP). Ayak işleri haritadaki "en çok 2 !" sınırına girmez.
 
-**Tarif ayak işini biyomun kazancısı verir:** "X tarifini öğren" ayak işi hiçbir biyomda Kemal'de çıkmaz; oyuncunun **o an bulunduğu biyomun cadısında** (kazancısında) "!" ile çıkar: Çayır'da **Zümrüt**, Orman'da **Yakut**, Bataklık'ta **Safir**, Kayalık Dağ'da **Firuze**, Kül Diyarı'nda **Mercan**, Mor Kristal Vadisi'nde **İnci**. İş, ödül (15 Vio · 15 XP) ve tarif aynıdır; tarif herhangi bir kazanda öğrenilince kendiliğinden biter. Oyuncu başka biyoma geçince iş o biyomun kazancısına geçer. Konuşma penceresinde konuşan cadının resmi görünür. Öbür ayak işleri (malzeme getir, seviye, alet dövdür, bir yere git) Kemal'de kalır; Kemal'in bir ayak işi bir tarif gerektiriyorsa tarif adımını yine kazancı verir. Kazancının ayak işi de "en çok 2 !" sınırına girmez.
+**Tarif ayak işini biyomun kazancısı verir:** "X tarifini öğren" ayak işi hiçbir biyomda Kemal'de çıkmaz; oyuncunun **o an bulunduğu biyomun cadısında** (kazancısında) "!" ile çıkar: Çayır'da **Zümrüt**, Orman'da **Yakut**, Bataklık'ta **Safir**, Kayalık Dağ'da **Firuze**, Kül Diyarı'nda **Mercan**, Mor Kristal Vadisi'nde **İnci**. İş, ödül (15 Vio · 15 XP) ve tarif aynıdır; tarif herhangi bir kazanda öğrenilince kendiliğinden biter. Oyuncu başka biyoma geçince iş o biyomun kazancısına geçer. **Mağaradayken** oyuncu mağaranın bulunduğu biyomda sayılır (Yankı Mağarası'nda Zümrüt, Kök Mağarası'nda Yakut, Batık Mağara'da Safir, Rüzgâr Mağarası'nda Firuze, Kor Mağarası'nda Mercan, Ayna Mağarası'nda İnci). Konuşma penceresinde konuşan cadının resmi görünür. Öbür ayak işleri (malzeme getir, seviye, alet dövdür, bir yere git) Kemal'de kalır; Kemal'in bir ayak işi bir tarif gerektiriyorsa tarif adımını yine kazancı verir. Kazancının ayak işi de "en çok 2 !" sınırına girmez.
 
 ### Kişiler ve görevler
 
@@ -2417,9 +2418,9 @@ Yirmi yıldır bataklıkta oğlunu bekleyen avcı.
 | # | Görev | İstenen | Açılma | Açar | Ödül |
 |---|---|---|---|---|---|
 | AL1 | Demir damarı | Getir: 6 Demir cevheri | DU5 · Granit ya da Tunç kazma (2. kademe) | AL2 | 160 · 180 XP |
-| AL2 | Demirin terbiyesi | Dövdür: Demir balta, Demir kazma, Demir kılıç ya da Demir mızrak | AL1 | AL3 | 200 · 230 XP |
+| AL2 | Demirin terbiyesi | Dövdür: Demir balta, Demir kazma, Demir kılıç ya da Demir mızrak | AL1 | AL3 | 250 · 230 XP |
 | AL3 | Timsahın dişi | Getir: 3 Timsah dişi | AL2 · T5 | AL4 | 220 · 260 XP |
-| AL4 | Dişli kılıç | Dövdür: Timsah dişi kılıcı | AL3 | AL5 | 280 · 340 XP |
+| AL4 | Dişli kılıç | Dövdür: Timsah dişi kılıcı | AL3 | AL5 | 300 · 340 XP |
 | AL5 | Kuvars | Getir: 4 Kuvars (Kayalık Dağ) | AL4 · Kayalık Dağ keşfedildi | AL6, Kaya 1 | 240 · 300 XP |
 | AL6 | Servi sapı | Getir: 3 Sağlam odun, 6 Arduvaz | AL5 · Seviye 12 | AL7 | 254 · 318 XP |
 | AL7 | Sağlam kısa yay | Getir: 5 Sağlam odun, 6 Kenevir | AL6 · Seviye 14 | AL8 | 269 · 337 XP |
@@ -2432,7 +2433,7 @@ Yirmi yıldır bataklıkta oğlunu bekleyen avcı.
 | VE1 | Arduvaz | Getir: 5 Arduvaz, 3 Tuz kayası | DR5 | VE2 | 150 · 160 XP |
 | VE2 | Demir halka | Yap: 4 Demir halka | VE1 · AL1 | VE3 | 200 · 230 XP |
 | VE3 | Su geçirmez astar | Getir: 3 Su samuru derisi, 2 Bataklık kurdu postu | VE2 | VE4 | 220 · 260 XP |
-| VE4 | Pullu zırh | Dövdür: Timsah pulu zırh | VE3 | VE5 | 280 · 340 XP |
+| VE4 | Pullu zırh | Dövdür: Timsah pulu zırh | VE3 | VE5 | 500 · 340 XP |
 | VE5 | Beyaz kil | Getir: 4 Beyaz kil (Kayalık Dağ) | VE4 · Kayalık Dağ keşfedildi | VE6, Kayhan 1 | 240 · 300 XP |
 | VE6 | Killi pullar | Getir: 5 Göl kili, 8 Keten | VE5 · Seviye 12 | VE7 | 254 · 318 XP |
 | VE7 | Tüy dolgusu | Getir: 8 Yaban kazı tüyü, 6 Kamış | VE6 · Seviye 14 | VE8 | 269 · 337 XP |
@@ -2732,7 +2733,7 @@ Bir kütüğe yaslanmış, bacağı kanlı bir avcı; yanında kırık bir mızr
 
 - **Konuş:** "Bir timsah… bacağımı kaptı. Kurtuldum ama yürüyemiyorum. Yarayı sarmak için **3 Bataklık otu**, bacağımı tutturmak için **2 Kamış** getirir misin? Bir de… gece bataklık canlanır. Sarınca biraz yanımda kalır mısın?"
 - **Getir:** 3 Bataklık otu, 2 Kamış. Kartal yarasını sarar.
-- **Bekle (60 sn):** Kartal'ın yanında (90 piksel içinde) kal. Her 15 saniyede bir 2 canavar gelir (Bataklık kurdu ya da Engerek). Uzaklaşırsan sayaç durur: "Gitme, yalnız bırakma beni!"
+- **Bekle (60 sn):** Kartal'ın yanında (90 piksel içinde) kal. Her 15 saniyede bir 2 canavar gelir: **1 Bataklık kurdu ve 1 Engerek** (dört dalgada en çok 4 kurt; ikisi birden kurt olmaz). Uzaklaşırsan sayaç durur: "Gitme, yalnız bırakma beni!"
 - **Konuş:** "Sabaha çıkarırım artık. Bak sana bir şey diyeyim: bu bataklığın Reis'leri hep aynı yerde yatar, suyun en sığ yerinde. Bir gün lazım olur." Görev biter.
 - **Sonra dünyada:** Kartal ayağa kalkmış, sargılı bacağıyla durur. Konuşunca: "Topallıyorum ama yürüyorum. Seni unutmam."
 
@@ -2807,7 +2808,7 @@ Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biy
 | 24 | **Ressam Lale** · Ormanın renkleri | Orman · 16:00–20:30 | 3 Gelincik, 4 Yaban mersini götür → ormanın en güzel açıklığını bul → dön | 180 · 150 XP | şövalesi (hep) |
 | 25 | **Kayıkçı Remzi** · Sisteki kayıkçı | Bataklık · yalnızca gece (00:00–05:00) | Remzi'yi ışıkla Avcı Doğan'ın kulübesine götür (yolda kurtlar) | 520 · 700 XP | Remzi Doğan'ın ateşinin başında |
 | 26 | **Cemile** (çocuk) · Şarkı söyleyen kurbağalar | Bataklık · 18:30–23:00 | Vıraklamaları dinleyip dört kurbağayı bul (yakalamak yok) → dön | 260 · 210 XP | yanında iki kurbağa |
-| 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 08:00–14:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn; ilk dalga yalnızca Engerek, sonraki iki dalgada birer Bataklık kurdu) → dön | 340 · 270 XP | ilaç kazanı (hep) |
+| 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 08:00–14:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn; üç dalga, her dalgada **tek** canavar: önce 1 Engerek, sonra 1 Bataklık kurdu, sonra 1 Bataklık kurdu) → dön (Şifa: "Bu şişeler köye yeter, sağ ol. Bataklıkta başın dönerse bana uğra."; ödülde eşya yok) | 340 · 270 XP | ilaç kazanı (hep) |
 | 28 | **Dağlı Zehra** · Uçurumdaki oğlak | Kayalık Dağ · 06:00–12:00 | Oğlak Boncuk'u 3 kez yakala → Zehra'ya götür | 520 · 700 XP | yanında Boncuk |
 | 29 | **Gözcü Bora** · Kartal yumurtası | Kayalık Dağ · 09:00–15:00 | Düşen yumurtayı bul → yuvanın dibindeki 2 kurdu kov, yumurtayı koy → dön | 680 · 900 XP | – |
 | 30 | **Keşiş Sükûn** · Dağın çanları | Kayalık Dağ · 04:30–09:30 | Rüzgârda çınlayan üç çanı bul → dön | 520 · 700 XP | yanında asılı rüzgâr çanı |
@@ -2866,8 +2867,8 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 6. **Çıkış.** İçeride girişin olduğu yerde ışıklı bir **"ÇIKIŞ" tabelası** ve aşağı ok durur (tabela mağara zemininin üstüne çizilir, önceden görünmüyordu). **Giriş ve çıkış sarı parlar:** dışarıda mağaranın ağzında, içeride çıkışta yerde nabız gibi atan sarı bir halka ve ışıltı vardır; gece de görünür (ağzın 60 px ışığı). Çıkış alanı 56 px'tir (tıklama 50 px). Başlangıç/çıkış noktası her zaman yürünebilir zemindedir (mağara kurulurken su ağzın üstündeki hücreyi silerse en yakın zemine alınır). Tabelaya tıklayınca ya da yanında **F**: "Mağaradan çıkıp gün ışığına dönmek ister misin?" penceresi, **Mağaradan çık** düğmesiyle. Bayılırsan mağaradan çıkarılırsın (her zamanki gibi uyanma yerinde uyanırsın).
 7. **Kayıt.** Mağaradayken kaydedilirse oyun, kayıt açılınca seni **mağaranın girişinin önünde** başlatır. Mağarada açtığın yerler (harita) kaydedilir.
 8. **Harita.** Dışarıda mağaranın girişi küçük ve büyük haritada **mağara simgesiyle** görünür (o biyoma ayak basmışsan); büyük haritada üzerine gelince adı ve şartı yazar ("Yankı Mağarası · Sv 5 · meşale"). Mağaranın içindeyken harita **mağaranın kendi haritasını** gösterir: yürüdükçe açılan tüneller, giriş ve en dipteki kişi.
-9. **Canlılar.** Her mağarada **3 canlı türü** yaşar; yalnızca o mağarada çıkarlar (dışarıda yoktur). Mağarada dolaşırken çevrende (200–420 px) karanlıkta doğarlar. Her tür adanın öbür canlıları gibi **Reis** sayacına sahiptir: yeteri kadar avlayınca o türün Reisi gelir. Almanakta biyomun canlılarının altında ayrı bir **"Mağara: …"** bölümünde görünürler (mağaraya bir kez girmiş olmak yeter).
-10. **Mağara boss'u.** Her mağaranın bir boss'u vardır; kendi büyük resmiyle çizilir (mor parıltılı, iri; bkz. Boss'ların görünüşü). Yalnızca en dipteki kişinin görevinde çağrılır. Almanakta mağara bölümünün sonunda durur:
+9. **Canlılar.** Her mağarada **3 canlı türü** yaşar; yalnızca o mağarada çıkarlar (dışarıda yoktur). Mağarada dolaşırken çevrende (220–440 px) karanlıkta doğarlar: her türden aynı anda en çok **2** canlı ya da sürü, mağarada toplam en çok **9** canlı (boss hariç); oyuncudan 820 px'ten uzaklaşan silinir. Doğma 1,5 sn'de bir denenir (Batık Mağara'da 3 sn). Her tür adanın öbür canlıları gibi **Reis** sayacına sahiptir: yeteri kadar avlayınca o türün Reisi gelir. Almanakta biyomun canlılarının altında ayrı bir **"Mağara: …"** bölümünde görünürler (mağaraya bir kez girmiş olmak yeter).
+10. **Mağara boss'u.** Her mağaranın bir boss'u vardır; kendi büyük resmiyle çizilir (mor parıltılı, iri; bkz. Boss'ların görünüşü). Yalnızca en dipteki kişinin görevinde çağrılır. **Ödülü (19 Kasım 2026, Boğaç):** boss ölünce kendi XP'si ve o mağaranın görev ödülündeki Vio kadar sikke verir (Reis formülü 25 + XP × 5 mağara boss'una uygulanmaz): Yankı Kraliçesi 310, Yaşlı Kök 500, Çamur Ana 700, Dağ Devi 1.000, Kor Kral 1.400, Işık Yutan 2.000. Almanakta mağara bölümünün sonunda durur:
     - hiç karşılaşılmadıysa: kapalı kart ("???", "Henüz karşılaşmadın");
     - karşılaşıp yenemediysen (bayıldıysan): özellikleri açılır (can, hasar, hız, hamleler, düşürdükleri) ama kart **altın değildir** ("Karşılaştın, henüz yenemedin");
     - yendiysen kart kendiliğinden **altın** olur ("★ Yenildi").
@@ -2901,7 +2902,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 | Kor Kral | Kara bazalttan bir kral: gövdesinde akan lav damarları, başında alevleri titreyen altın taç, elinde ateşli asa, kor gibi yanan gözler |
 | Işık Yutan | Havada süzülen kapkara bir yaratık: altı göz, ışığı yutan dişli dev ağız (içinde mor girdap), sırtında mor ayna kristalleri, altında kıpırdayan dokunaçlar |
 
-**Boss · Yankı Kraliçesi** (taçlı dev yarasa): can 350 (uçup daldığı için vuruşların çoğu boşa gider; Sv10'da Çakmaktaşı kılıç ve Kürk takımıyla yenilebilsin diye; E2E v4.26), hasar 18, hız 62, uçar, XP 400; düşürdükleri: Kraliçe pençesi (her zaman), Yarasa zarı 3–5.
+**Boss · Yankı Kraliçesi** (taçlı dev yarasa): can 350 (uçup daldığı için vuruşların çoğu boşa gider; Sv10'da Çakmaktaşı kılıç ve Kürk takımıyla yenilebilsin diye; E2E v4.26), hasar 18, hız 62, uçar, XP 400, ölünce **310 Vio**; düşürdükleri: Kraliçe pençesi (her zaman), Yarasa zarı 3–5.
 
 **Toplanabilenler:** Yankı mantarı (mavi parlar; elle), Damla taşı (elle).
 
@@ -2911,7 +2912,7 @@ Her mağaranın dışarıdaki girişi kendi biyomuna göre çizilmiş, düzensiz
 - *Boss:* Yankı Kraliçesi odaya iner; yen.
 - *Dön:* "Mağara sustu. Damlaları dinle… artık yalnızca su sesi var. Sağ ol." Görev biter.
 - *İkinci deneme:* "Yine geldin. Fener hazır, mantarlar yerinde. Kraliçeyi çağırayım mı?" → **Çağır**.
-- *Ödül:* 310 Vio · 260 XP (boss'u yenince ayrıca Reis ödülü: Vio ve boss'un XP'si). *Sonra:* "Damla taşı kazmaya döndüm. Kraliçe olmadan mağara çok sessiz, biraz da özlüyorum."
+- *Ödül:* 310 Vio · 260 XP (boss'u yenince ayrıca boss'un XP'si ve görev ödülü kadar Vio: 310). *Sonra:* "Damla taşı kazmaya döndüm. Kraliçe olmadan mağara çok sessiz, biraz da özlüyorum."
 
 **Malzemeler ve fiyatlar**
 
@@ -2947,7 +2948,7 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 | Kök yılanı | saldırgan | 130 | 20 | 58 | 22 | ısırığı zehirler | Kök yılanı derisi (%70) |
 | Mağara kurdu | saldırgan | 200 | 26 | 66 | 30 | 2–3'lü sürü | Mağara kurdu eti (her zaman), Mağara kurdu postu (%60) |
 
-**Boss · Yaşlı Kök** (yürüyen yaşlı ağaç kütüğü): can 1.200, hasar 24, hız 40, XP 900; düşürdükleri: Yaşlı Kök özü (her zaman), Kök reçinesi 3–5.
+**Boss · Yaşlı Kök** (yürüyen yaşlı ağaç kütüğü): can 1.200, hasar 24, hız 40, XP 900, ölünce **500 Vio**; düşürdükleri: Yaşlı Kök özü (her zaman), Kök reçinesi 3–5.
 
 **Toplanabilenler:** Kök reçinesi (amber parlar; elle). Orman'ın mantarı Kanlıca dışarıda, ağaçların dibinde çıkar.
 
@@ -2957,7 +2958,7 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 - *Boss:* Yaşlı Kök topraktan yükselir; yen.
 - *Dön:* "Kökler gevşedi… duyuyor musun? Yukarıda ıhlamurun yaprakları hışırdıyor. Teşekkür ederim." Görev biter.
 - *İkinci deneme:* "Yine geldin. Macun hâlâ sıcak. Yaşlı Kök'ü uyandırayım mı?" → **Uyandır**.
-- *Ödül:* 500 Vio · 450 XP (boss'u yenince ayrıca Reis ödülü). *Sonra:* "Köklere su taşıyorum. Ihlamur bu bahar çiçek açacak."
+- *Ödül:* 500 Vio · 450 XP (boss'u yenince ayrıca boss'un XP'si ve görev ödülü kadar Vio: 500). *Sonra:* "Köklere su taşıyorum. Ihlamur bu bahar çiçek açacak."
 
 **Malzemeler ve fiyatlar**
 
@@ -2991,13 +2992,15 @@ Orman'ın derininde, yaşlı ağaçların köklerinin tavandan sarktığı geni�
 
 Bataklığın altında, tavanından su sızan, yerleri balçıklı bir mağara. Duvarlarda yeşil parlayan yosunlar, suyun içinde batmış kökler.
 
+**Doğma:** Batık Mağara'da canlılar **3 sn'de bir** yeniden doğar (öbür mağaralarda ve dışarıda 1,5 sn); dibe inen oyuncu art arda sürüye boğulmasın diye.
+
 | Canlı | Mizaç | Can | Hasar | Hız | XP | Özellik | Düşürdükleri |
 |---|---|---|---|---|---|---|---|
-| Mağara sülüğü | saldırgan | 300 | 30 | 40 | 60 | 2–3'lü sürü, ısırığı kanatır | Sülük 1–2 (%80) |
+| Mağara sülüğü | saldırgan | 300 | 30 | 40 | 60 | 1–2'li sürü, ısırığı kanatır | Sülük 1–2 (%80) |
 | Balçık kurbağası | saldırgan | 420 | 34 | 38 | 75 | uzaktan atar (140 menzil, 2 atış), zehir | Balçık bezesi (%70) |
 | Batak semenderi | saldırgan | 520 | 40 | 50 | 85 | – | Semender derisi (%70) |
 
-**Boss · Çamur Ana** (dev kurbağa): can 3.600, hasar 75, hız 34, XP 1.500, zehirler; düşürdükleri: Çamur Ana gözü (her zaman), Balçık bezesi 3–5.
+**Boss · Çamur Ana** (dev kurbağa): can 2.000, hasar 32, hız 34, XP 1.500, zehirler (gücü 2), ölünce **700 Vio**; düşürdükleri: Çamur Ana gözü (her zaman), Balçık bezesi 3–5.
 
 **Toplanabilenler:** Parıltı yosunu (yeşil parlar), Siyah balçık, Batık kök, Sazlı inci.
 
@@ -3032,7 +3035,7 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 | Tavan örümceği | saldırgan | 700 | 58 | 56 | 130 | zehir | Tavan ağı 1–2 (%80) |
 | Mağara vaşağı | saldırgan | 1.000 | 66 | 84 | 160 | kanama | Gri vaşak postu (%70) |
 
-**Boss · Dağ Devi** (mor ışığın taşları birbirine yapıştırdığı dev; Mağara ayısı biçiminde): can 6.000, hasar 125, hız 36, XP 2.400; düşürdükleri: Dev yüreği (her zaman), Gümüş filizi 3–5.
+**Boss · Dağ Devi** (mor ışığın taşları birbirine yapıştırdığı dev; Mağara ayısı biçiminde): can 6.000, hasar 125, hız 36, XP 2.400, ölünce **1.000 Vio**; düşürdükleri: Dev yüreği (her zaman), Gümüş filizi 3–5.
 
 **Toplanabilenler:** Gümüş filizi (parlar), Dağ kristali (parlar), Rüzgâr taşı, Kar likeni.
 
@@ -3065,7 +3068,7 @@ Kül Diyarı'nın altında, yarıklarından kor ışığı sızan sıcak bir ma�
 | Lav yılanı | saldırgan | 1.100 | 105 | 60 | 240 | yanık | Lav yılanı pulu (%70) |
 | Duman cini | saldırgan | 1.000 | 98 | 46 | 260 | uzaktan atar (190 menzil, 3 atış), yanık | Duman özü (%60) |
 
-**Boss · Kor Kral** (ocakların ateşini yutan dev kertenkele): can 8.500, hasar 165, hız 38, XP 3.400, yakar; düşürdükleri: Kor Kral tacı (her zaman), Kor kabuğu 3–5.
+**Boss · Kor Kral** (ocakların ateşini yutan dev kertenkele): can 8.500, hasar 165, hız 38, XP 3.400, yakar, ölünce **1.400 Vio**; düşürdükleri: Kor Kral tacı (her zaman), Kor kabuğu 3–5.
 
 **Toplanabilenler:** Kükürt kristali (parlar), Kor taşı (parlar), **Kül mantarı** (Kül Diyarı'nın tek mantarı), Volkan camı.
 
@@ -3099,7 +3102,7 @@ Vadinin altında, duvarları ayna gibi parlayan ama ışığı yutan bir mağara
 | Ayna örümceği | saldırgan | 1.500 | 160 | 58 | 380 | uzaktan atar (180 menzil, 3 atış), zehir | Ayna ipeği 1–2 (%80) |
 | Gölge semenderi | saldırgan | 2.000 | 185 | 64 | 420 | kanama | Gölge pulu (%70) |
 
-**Boss · Işık Yutan** (ışıkla beslenen, Kara ejder biçiminde dev bir gölge): can 12.000, hasar 250, hız 32, XP 5.000; düşürdükleri: Işık Yutan kalbi (her zaman), Mor damar taşı 3–5.
+**Boss · Işık Yutan** (ışıkla beslenen, Kara ejder biçiminde dev bir gölge): can 12.000, hasar 250, hız 32, XP 5.000, ölünce **2.000 Vio**; düşürdükleri: Işık Yutan kalbi (her zaman), Mor damar taşı 3–5.
 
 **Toplanabilenler:** Mor damar taşı (parlar), Işık sporu (parlar), Ayna taşı (parlar), Yıldız tozu (parlar).
 
@@ -4012,9 +4015,10 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 - **Reis kendi biyomunda:** Reis yalnızca türün kendi biyomunda, son avın düştüğü yerin çevresinde çıkar (önceden oyuncu o an neredeyse orada çıkıyordu; bataklıkta timsah avlayıp ormana yürüyünce Timsah Reisi ormanda çıkabiliyordu). Sayaç eski bir kayıttan dolu geldiyse Reis ancak oyuncu türün biyomuna girince gelir.
 - **Uzaklaşınca kaybolur:** Reis sahadayken ya da gelmek üzereyken oyuncu **600 pikselden** fazla uzaklaşırsa Reis kaybolur, bildirim çıkar ve sayaç bir eksik kalır (ör. 6 / 7); o türden bir av daha Reisi yeniden getirir.
 - **Canlılar biyomlarından çıkmaz:** her canlı ilk durduğu biyoma bağlıdır; sınıra gelince geri döner, kovalamayı sınırda bırakır (Reis kovalamayı bırakmaz ama sınırı geçmez). Geri itilmesi de onu sınırın ötesine atmaz. Mağaralarda, arenada ve derslerin alıştırma canavarlarında bu kural yoktur.
-- **Güç:** canı türün 4 katı (ACT 1'de **en az 100**). Hasarı Çayır türlerinde türüyle **aynı** (×1,0), Orman türlerinde **×1,5**; çok atışlı uzaktan atan türlerin Reisi (Dikenli kirpi, Oklu kirpi; 3 diken) ×1,0; Bataklık ve sonrasında 1,5 katı (tehlikeli bölgeler) ya da 1,7 katı; ACT 1'de hasar **en az 10**. **Saldırı hızı türüyle aynıdır** (Reis daha sık vurmaz). XP = türün XP'si × 6 + 20. Reis bilerek zor tasarlanır: türünün karşılaşma seviyesinde canın %20–40'ını ve birkaç yemeği alır, atılma ve savuşturma gerekir. Zararsız küçük türlerin Reisi (Tavşan, Keklik, Bıldırcın, Sincap, Ördek) alt sınırla 100 can, 10 hasardır.
-- **Davranış:** canı %40'ın altına inince **öfkelenir** (kırmızılaşır, daha sert saldırır). Sürü hayvanlarının Reisi canı yarıya inince yanına 2 sürü üyesi çağırır; **Çayır ve Orman Reisleri sürü çağırmaz.**
-- **Ödül:** türün düşürdükleri + 25 + (türün XP'si × 5) Vio. Reis öldürmek "İlk reis", "Reis avcısı" (5 farklı), "Reislerin korkusu" (10), "Reis yiyen" (20) ve "Bütün reisler" başarımlarını ilerletir.
+- **Güç (bütün oyunda tek kural; 19 Kasım 2026, Boğaç):** canı türün **4 katı**, **hızlı türlerin** Reisi **3 katı** (19 Kasım 2026, Boğaç: hızlı Reisten kaçılamadığı için dövüş uzayınca kanama ve ısırık birikiyor); hasarı türünün hasarıyla **aynı** (×1,0; uzaktan atanlar dahil, her biyomda, iki adada da). ACT 1'de alt sınır **100 can, 10 hasar** (zararsız küçük türlerin Reisi: Tavşan, Keklik, Bıldırcın, Sincap, Ur kekliği, Mor güve 100 ya da 4 katı · 10). **Saldırı hızı türüyle aynıdır** (Reis daha sık vurmaz). XP = türün XP'si × 6 + 20. Reis bilerek zor tasarlanır: türünün karşılaşma seviyesinde canın %20–40'ını ve birkaç yemeği alır, atılma ve savuşturma gerekir; zorluğu canından, öfkesinden, etkisinden ve uzaktan atışından gelir.
+- **Hızlı tür:** biyom tablolarındaki **hızı 90 ya da üstü** olan tür (bugün en hızlı yavaş tür 84, Işık tilkisi ve Yıldız tilkisi; eşik bu boşlukta). Uçan ve uzaktan atan türler için ayrı kural yok, yalnız hız bakılır. Liste: ACT 1 · **Bataklık kurdu** 100, **Kartal** 96 (uçar), **Vaşak** 92, **Kül kurdu** 100, **Kor yarasası** 120 (uçar), **Gölge kurdu** 118; ACT 2 · **Kristal yarasası** 120 (uçar), **Gök tazısı** 110, **Fırtına kartalı** 100 (uçar), **Uzaylı dronu** 96 (uçar, uzaktan atar), **Lazer dronu** 90 (uçar, uzaktan atar). Çayır kurdu (66) hızlı değildir. Bir türün hızı değişirse Reisinin canı da kuralla değişir.
+- **Davranış:** canı %40'ın altına inince **öfkelenir** (kırmızılaşır, daha sert saldırır). **Reisler sürü çağırmaz** (bütün oyunda; sürü hayvanının Reisi de yalnız gelir). Uzaktan atan türün Reisi **1 fazla** atar ve atışları **%20 daha sık** gelir (ör. Zehirli Kurbağa Reisi 4 atış). Türün zehir ya da kanama etkisi Reiste **1,5 katıdır** (her biyomda).
+- **Ödül:** türün düşürdükleri + 25 + (türün XP'si × 5) Vio (mağara boss'u hariç: o, mağara görevinin Vio ödülü kadar sikke verir; Mağaralar › Mağara boss'u). Reis öldürmek "İlk reis", "Reis avcısı" (5 farklı), "Reislerin korkusu" (10), "Reis yiyen" (20) ve "Bütün reisler" başarımlarını ilerletir.
 - Börü'nün derslerindeki alıştırma canavarı öldürülünce av sayılmaz; ders Reis çağırmaz. Ders sürerken hiçbir Reis gelmez; o sırada dolan Reis ders bitince gelir.
 
 | Reis | Nerede | İlk çıkış için av | Can | Hasar | XP | Garanti ganimet |
@@ -4027,74 +4031,74 @@ Her canlı türünün bir **Reisi** vardır (ör. *Kurt Reisi*). Bir türden yet
 | Tavşan Reisi | ACT 1 · Çayır | 12 | 100 | 10 | 44 | Tavşan eti ×2; Tavşan derisi ×2; Kemik ×2; Sinir ×2 |
 | Yaban Atı Reisi | ACT 1 · Çayır | 12 | 600 | 17 | 116 | Yaban atı eti ×2; Yaban atı derisi ×2; Kemik ×2; Sinir ×2 |
 | Dikenli Kirpi Reisi | ACT 1 · Orman | 7 | 520 | 15 | 116 | Kirpi dikeni ×2; Kemik ×2 |
-| Engerek Reisi | ACT 1 · Orman | 7 | 640 | 36 | 176 | Zehir bezesi ×2; Kemik ×2 |
-| Karaca Reisi | ACT 1 · Orman | 12 | 600 | 29 | 92 | Karaca eti ×2; Karaca derisi ×2; Kemik ×2; Sinir ×2 |
-| Kunduz Reisi | ACT 1 · Orman | 7 | 480 | 23 | 80 | Kunduz eti ×2; Kunduz derisi ×2; Kemik ×2 |
+| Engerek Reisi | ACT 1 · Orman | 7 | 640 | 24 | 176 | Zehir bezesi ×2; Kemik ×2 |
+| Karaca Reisi | ACT 1 · Orman | 12 | 600 | 19 | 92 | Karaca eti ×2; Karaca derisi ×2; Kemik ×2; Sinir ×2 |
+| Kunduz Reisi | ACT 1 · Orman | 7 | 480 | 15 | 80 | Kunduz eti ×2; Kunduz derisi ×2; Kemik ×2 |
 | Oklu Kirpi Reisi | ACT 1 · Orman | 5 | 1.320 | 30 | 386 | İri diken ×2; Kirpi dikeni ×2; Kemik ×2 |
 | Sincap Reisi | ACT 1 · Orman | 9 | 100 | 10 | 50 | Sincap eti ×2; Sincap derisi ×2; Ceviz ×2; Fındık ×2 |
-| Yaban Domuzu Reisi | ACT 1 · Orman | 12 | 560 | 32 | 164 | Yaban domuzu eti ×2; Yaban domuzu derisi ×2; Yaban domuzu dişi ×2; Kemik ×2; Hayvan yağı ×2 |
-| Bataklık Kurdu Reisi | ACT 1 · Bataklık | 10 | 1.800 | 78 | 422 | Bataklık kurdu postu ×2; Kurt dişi ×2; Kemik ×2 |
-| Ördek Reisi | ACT 1 · Bataklık | 12 | 100 | 10 | 38 | Ördek eti ×2; Ördek tüyü ×2; Ördek yumurtası ×2 |
-| Su Samuru Reisi | ACT 1 · Bataklık | 5 | 960 | 35 | 158 | Su samuru eti ×2; Su samuru derisi ×2 |
-| Timsah Reisi | ACT 1 · Bataklık | 7 | 4.320 | 117 | 794 | Timsah derisi ×2; Timsah dişi ×2; Timsah eti ×2 |
-| Turna Kuşu Reisi | ACT 1 · Bataklık | 7 | 800 | 30 | 146 | Turna kuşu eti ×2; Turna kuşu tüyü ×2; Turna kuşu yumurtası ×2 |
-| Yaban Kazı Reisi | ACT 1 · Bataklık | 7 | 600 | 34 | 116 | Yaban kazı eti ×2; Yaban kazı tüyü ×2; Yaban kazı yumurtası ×2 |
-| Zehirli Kurbağa Reisi | ACT 1 · Bataklık | 10 | 1.400 | 54 | 374 | Zehir bezesi ×2; Kurbağa ×2 |
-| Dağ Keçisi Reisi | ACT 1 · Kayalık Dağ | 10 | 1.460 | 71 | 218 | Dağ keçisi eti ×2; Dağ keçisi derisi ×2; Kemik ×2 |
-| Kartal Reisi | ACT 1 · Kayalık Dağ | 6 | 3.280 | 135 | 806 | Kartal eti ×2; Kartal tüyü ×2; Kartal pençesi ×2 |
-| Mağara Ayısı Reisi | ACT 1 · Kayalık Dağ | 5 | 8.400 | 173 | 1.328 | Mağara ayısı eti ×2; Mağara ayısı derisi ×2; Ayı pençesi ×2; Hayvan yağı ×2; Kemik ×2 |
-| Muflon Reisi | ACT 1 · Kayalık Dağ | 9 | 1.720 | 73 | 236 | Muflon eti ×2; Muflon derisi ×2; Kemik ×2; Sinir ×2 |
+| Yaban Domuzu Reisi | ACT 1 · Orman | 12 | 560 | 21 | 164 | Yaban domuzu eti ×2; Yaban domuzu derisi ×2; Yaban domuzu dişi ×2; Kemik ×2; Hayvan yağı ×2 |
+| Bataklık Kurdu Reisi | ACT 1 · Bataklık | 10 | 1.200 | 46 | 422 | Bataklık kurdu postu ×2; Kurt dişi ×2; Kemik ×2 |
+| Ördek Reisi | ACT 1 · Bataklık | 12 | 120 | 10 | 38 | Ördek eti ×2; Ördek tüyü ×2; Ördek yumurtası ×2 |
+| Su Samuru Reisi | ACT 1 · Bataklık | 5 | 1.360 | 36 | 158 | Su samuru eti ×2; Su samuru derisi ×2 |
+| Timsah Reisi | ACT 1 · Bataklık | 7 | 4.000 | 66 | 794 | Timsah derisi ×2; Timsah dişi ×2; Timsah eti ×2 |
+| Turna Kuşu Reisi | ACT 1 · Bataklık | 7 | 1.200 | 32 | 146 | Turna kuşu eti ×2; Turna kuşu tüyü ×2; Turna kuşu yumurtası ×2 |
+| Yaban Kazı Reisi | ACT 1 · Bataklık | 7 | 1.040 | 30 | 116 | Yaban kazı eti ×2; Yaban kazı tüyü ×2; Yaban kazı yumurtası ×2 |
+| Zehirli Kurbağa Reisi | ACT 1 · Bataklık | 10 | 1.400 | 36 | 374 | Zehir bezesi ×2; Kurbağa ×2 |
+| Dağ Keçisi Reisi | ACT 1 · Kayalık Dağ | 10 | 1.460 | 42 | 218 | Dağ keçisi eti ×2; Dağ keçisi derisi ×2; Kemik ×2 |
+| Kartal Reisi | ACT 1 · Kayalık Dağ | 6 | 2.460 | 90 | 806 | Kartal eti ×2; Kartal tüyü ×2; Kartal pençesi ×2 |
+| Mağara Ayısı Reisi | ACT 1 · Kayalık Dağ | 5 | 8.400 | 115 | 1.328 | Mağara ayısı eti ×2; Mağara ayısı derisi ×2; Ayı pençesi ×2; Hayvan yağı ×2; Kemik ×2 |
+| Muflon Reisi | ACT 1 · Kayalık Dağ | 9 | 1.720 | 43 | 236 | Muflon eti ×2; Muflon derisi ×2; Kemik ×2; Sinir ×2 |
 | Ur Kekliği Reisi | ACT 1 · Kayalık Dağ | 8 | 100 | 10 | 56 | Ur kekliği eti ×2; Ur kekliği tüyü ×2; Ur kekliği yumurtası ×2 |
-| Vaşak Reisi | ACT 1 · Kayalık Dağ | 6 | 4.690 | 154 | 890 | Vaşak eti ×2; Vaşak derisi ×2; Kemik ×2 |
-| Yaban Öküzü Reisi | ACT 1 · Kayalık Dağ | 9 | 3.440 | 111 | 452 | Yaban öküzü eti ×2; Yaban öküzü derisi ×2; Öküz boynuzu ×2; Kemik ×2; Sinir ×2; Hayvan yağı ×2 |
-| Ateş Akrebi Reisi | ACT 1 · Kül Diyarı | 6 | 4.560 | 222 | 1.796 | Akrep iğnesi ×2; Akrep kabuğu ×2 |
-| Kor Yarasası Reisi | ACT 1 · Kül Diyarı | 6 | 3.320 | 173 | 1.526 | Yarasa kanadı ×2; Ateş bezesi ×2 |
-| Kül Böceği Reisi | ACT 1 · Kül Diyarı | 6 | 2.560 | 125 | 296 | Kül böceği kabuğu ×2; Kül ×2 |
-| Kül Cini Reisi | ACT 1 · Kül Diyarı | 7 | 3.240 | 149 | 1.526 | Ateş bezesi ×2; Kül ×2 |
-| Kül Kurdu Reisi | ACT 1 · Kül Diyarı | 10 | 4.300 | 210 | 1.250 | Kül kurdu postu ×2; Kül dişi ×2 |
-| Lav Kertenkelesi Reisi | ACT 1 · Kül Diyarı | 10 | 3.760 | 185 | 1.382 | Lav pulu ×2; Ateş bezesi ×2 |
-| Gölge Kurdu Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 5.900 | 272 | 2.618 | Gölge postu ×2; Gölge dişi ×2 |
-| Işık Engereği Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 4.340 | 254 | 2.384 | Mor zehir ×2; Işık pulu ×2 |
-| Işık Tilkisi Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 4.000 | 171 | 620 | Işık tilkisi eti ×2; Işık tilkisi postu ×2 |
-| Kristal Geyik Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 6.520 | 200 | 1.910 | Kristal geyik eti ×2; Kristal geyik derisi ×2; Kristal boynuz ×2 |
-| Kristal Golem Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 18.000 | 363 | 6.254 | Golem çekirdeği ×2; Kristal ×2; Ametist ×2 |
-| Kristal Örümcek Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 5.280 | 236 | 2.504 | Kristal ipek ×2; Örümcek gözü ×2 |
+| Vaşak Reisi | ACT 1 · Kayalık Dağ | 6 | 2.640 | 95 | 776 | Vaşak eti ×2; Vaşak derisi ×2; Kemik ×2 |
+| Yaban Öküzü Reisi | ACT 1 · Kayalık Dağ | 9 | 3.440 | 65 | 452 | Yaban öküzü eti ×2; Yaban öküzü derisi ×2; Öküz boynuzu ×2; Kemik ×2; Sinir ×2; Hayvan yağı ×2 |
+| Ateş Akrebi Reisi | ACT 1 · Kül Diyarı | 6 | 4.560 | 148 | 1.796 | Akrep iğnesi ×2; Akrep kabuğu ×2 |
+| Kor Yarasası Reisi | ACT 1 · Kül Diyarı | 6 | 2.490 | 115 | 1.526 | Yarasa kanadı ×2; Ateş bezesi ×2 |
+| Kül Böceği Reisi | ACT 1 · Kül Diyarı | 6 | 2.560 | 83 | 296 | Kül böceği kabuğu ×2; Kül ×2 |
+| Kül Cini Reisi | ACT 1 · Kül Diyarı | 7 | 3.240 | 99 | 1.526 | Ateş bezesi ×2; Kül ×2 |
+| Kül Kurdu Reisi | ACT 1 · Kül Diyarı | 10 | 3.225 | 140 | 1.250 | Kül kurdu postu ×2; Kül dişi ×2 |
+| Lav Kertenkelesi Reisi | ACT 1 · Kül Diyarı | 10 | 3.760 | 123 | 1.382 | Lav pulu ×2; Ateş bezesi ×2 |
+| Gölge Kurdu Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 4.425 | 181 | 2.618 | Gölge postu ×2; Gölge dişi ×2 |
+| Işık Engereği Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 4.340 | 169 | 2.384 | Mor zehir ×2; Işık pulu ×2 |
+| Işık Tilkisi Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 4.000 | 114 | 620 | Işık tilkisi eti ×2; Işık tilkisi postu ×2 |
+| Kristal Geyik Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 6.520 | 133 | 1.910 | Kristal geyik eti ×2; Kristal geyik derisi ×2; Kristal boynuz ×2 |
+| Kristal Golem Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 18.000 | 242 | 6.254 | Golem çekirdeği ×2; Kristal ×2; Ametist ×2 |
+| Kristal Örümcek Reisi | ACT 1 · Mor Kristal Vadisi | 6 | 5.280 | 157 | 2.504 | Kristal ipek ×2; Örümcek gözü ×2 |
 | Mor Güve Reisi | ACT 1 · Mor Kristal Vadisi | 8 | 200 | 10 | 140 | Güve tozu ×2 |
-| Bulut Koyunu Reisi | ACT 2 · Yüzen Kayalar | 6 | 4.800 | 367 | 716 | Bulut koyunu eti ×2; Bulut yünü ×2 |
-| Fırtına Kartalı Reisi | ACT 2 · Yüzen Kayalar | 6 | 10.280 | 716 | 3.110 | Fırtına tüyü ×2; Kartal pençesi ×2 |
-| Gök Tazısı Reisi | ACT 2 · Yüzen Kayalar | 6 | 11.760 | 641 | 2.720 | Gök tazısı postu ×2; Tazı dişi ×2 |
-| Kaya Kertenkelesi Reisi | ACT 2 · Yüzen Kayalar | 6 | 4.800 | 367 | 704 | Kertenkele pulu ×2; Kertenkele eti ×2 |
+| Bulut Koyunu Reisi | ACT 2 · Yüzen Kayalar | 6 | 4.800 | 216 | 716 | Bulut koyunu eti ×2; Bulut yünü ×2 |
+| Fırtına Kartalı Reisi | ACT 2 · Yüzen Kayalar | 6 | 7.710 | 477 | 3.110 | Fırtına tüyü ×2; Kartal pençesi ×2 |
+| Gök Tazısı Reisi | ACT 2 · Yüzen Kayalar | 6 | 8.820 | 427 | 2.720 | Gök tazısı postu ×2; Tazı dişi ×2 |
+| Kaya Kertenkelesi Reisi | ACT 2 · Yüzen Kayalar | 6 | 4.800 | 216 | 704 | Kertenkele pulu ×2; Kertenkele eti ×2 |
 | Rüzgâr Kuşu Reisi | ACT 2 · Yüzen Kayalar | 8 | 80 | 5 | 110 | Rüzgâr tüyü ×2; Rüzgâr kuşu eti ×2 |
-| Goblin Okçusu Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 8.020 | 429 | 2.474 | Goblin kulağı ×2 |
-| Goblin Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 10.320 | 515 | 2.204 | Goblin kulağı ×2; Goblin bıçağı ×2 |
-| Goblin Şamanı Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 14.900 | 716 | 4.382 | Şaman tüyü ×2; Büyü otu ×2 |
+| Goblin Okçusu Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 8.020 | 286 | 2.474 | Goblin kulağı ×2 |
+| Goblin Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 10.320 | 343 | 2.204 | Goblin kulağı ×2; Goblin bıçağı ×2 |
+| Goblin Şamanı Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 14.900 | 477 | 4.382 | Şaman tüyü ×2; Büyü otu ×2 |
 | Mantar Böceği Reisi | ACT 2 · Dev Mantar Ormanı | 8 | 160 | 5 | 122 | Böcek kabuğu ×2; Spor tozu ×2 |
-| Mantar Geyiği Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 7.200 | 495 | 932 | Geyik eti ×2; Geyik derisi ×2; Geyik boynuzu ×2; Sinir ×2; Kemik ×2; Hayvan yağı ×2 |
-| Spor Salyangozu Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 5.120 | 394 | 602 | Salyangoz sümüğü ×2 |
-| Devriye Robotu Reisi | ACT 2 · Hurda Çölü | 6 | 8.320 | 668 | 2.588 | Robot çekirdeği ×2; Dişli ×2 |
-| Hurda Devi Reisi | ACT 2 · Hurda Çölü | 6 | 23.760 | 1.557 | 7.712 | Motor ×2; Ağır plaka ×2 |
-| Hurda Faresi Reisi | ACT 2 · Hurda Çölü | 6 | 5.280 | 529 | 596 | Bakır tel ×2; Vida ×2 |
-| Lazer Dronu Reisi | ACT 2 · Hurda Çölü | 6 | 5.200 | 533 | 2.768 | Lens ×2; Pil ×2 |
+| Mantar Geyiği Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 7.200 | 330 | 932 | Geyik eti ×2; Geyik derisi ×2; Geyik boynuzu ×2; Sinir ×2; Kemik ×2; Hayvan yağı ×2 |
+| Spor Salyangozu Reisi | ACT 2 · Dev Mantar Ormanı | 6 | 5.120 | 232 | 602 | Salyangoz sümüğü ×2 |
+| Devriye Robotu Reisi | ACT 2 · Hurda Çölü | 6 | 8.320 | 445 | 2.588 | Robot çekirdeği ×2; Dişli ×2 |
+| Hurda Devi Reisi | ACT 2 · Hurda Çölü | 6 | 23.760 | 1.038 | 7.712 | Motor ×2; Ağır plaka ×2 |
+| Hurda Faresi Reisi | ACT 2 · Hurda Çölü | 6 | 5.280 | 311 | 596 | Bakır tel ×2; Vida ×2 |
+| Lazer Dronu Reisi | ACT 2 · Hurda Çölü | 6 | 3.900 | 355 | 2.768 | Lens ×2; Pil ×2 |
 | Pas Böceği Reisi | ACT 2 · Hurda Çölü | 8 | 200 | 5 | 134 | Dişli ×2; Pas tozu ×2 |
-| Pas Kirpisi Reisi | ACT 2 · Hurda Çölü | 6 | 5.200 | 390 | 800 | Kirpi dikeni ×2; Kemik ×2 |
-| Buz Karacası Reisi | ACT 2 · Kristal Golem Ocağı | 6 | 10.400 | 1.140 | 1.124 | Karaca eti ×2; Karaca derisi ×2; Kemik ×2; Sinir ×2 |
+| Pas Kirpisi Reisi | ACT 2 · Hurda Çölü | 6 | 5.200 | 260 | 800 | Kirpi dikeni ×2; Kemik ×2 |
+| Buz Karacası Reisi | ACT 2 · Kristal Golem Ocağı | 6 | 10.400 | 760 | 1.124 | Karaca eti ×2; Karaca derisi ×2; Kemik ×2; Sinir ×2 |
 | Buz Tavşanı Reisi | ACT 2 · Kristal Golem Ocağı | 8 | 120 | 5 | 122 | Buz tavşanı eti ×2; Buz kürkü ×2 |
-| Büyük Golem Reisi | ACT 2 · Kristal Golem Ocağı | 6 | 30.240 | 3.786 | 8.960 | Golem çekirdeği ×2; Titanyum plaka ×2 |
-| Kristal Golemcik Reisi | ACT 2 · Kristal Golem Ocağı | 6 | 10.080 | 1.475 | 3.014 | Golem parçası ×2; Enerji taşı ×2 |
-| Kristal Yarasası Reisi | ACT 2 · Kristal Golem Ocağı | 6 | 5.880 | 1.157 | 2.948 | Kristal kanat ×2 |
-| Taş Kaplumbağası Reisi | ACT 2 · Kristal Golem Ocağı | 6 | 6.720 | 1.071 | 668 | Taş kabuk ×2 |
-| Kızıl Ejder Reisi | ACT 2 · Ejder Volkanı | 6 | 37.440 | 2.033 | 15.068 | Ejder kalbi ×2; Kızıl ejder pulu ×2 |
-| Kor Domuzu Reisi | ACT 2 · Ejder Volkanı | 6 | 12.000 | 960 | 1.202 | Yaban domuzu eti ×2; Yaban domuzu derisi ×2; Yaban domuzu dişi ×2; Kemik ×2; Hayvan yağı ×2 |
-| Kor Kertenkelesi Reisi | ACT 2 · Ejder Volkanı | 6 | 8.320 | 915 | 872 | Kor kertenkelesi eti ×2; Kor pulu ×2 |
-| Lav Golemi Reisi | ACT 2 · Ejder Volkanı | 6 | 12.520 | 1.272 | 4.316 | Magma çekirdeği ×2; Magma cevheri ×2 |
+| Büyük Golem Reisi | ACT 2 · Kristal Golem Ocağı | 6 | 30.240 | 2.524 | 8.960 | Golem çekirdeği ×2; Titanyum plaka ×2 |
+| Kristal Golemcik Reisi | ACT 2 · Kristal Golem Ocağı | 6 | 10.080 | 983 | 3.014 | Golem parçası ×2; Enerji taşı ×2 |
+| Kristal Yarasası Reisi | ACT 2 · Kristal Golem Ocağı | 6 | 4.410 | 771 | 2.948 | Kristal kanat ×2 |
+| Taş Kaplumbağası Reisi | ACT 2 · Kristal Golem Ocağı | 6 | 6.720 | 630 | 668 | Taş kabuk ×2 |
+| Kızıl Ejder Reisi | ACT 2 · Ejder Volkanı | 6 | 37.440 | 1.355 | 15.068 | Ejder kalbi ×2; Kızıl ejder pulu ×2 |
+| Kor Domuzu Reisi | ACT 2 · Ejder Volkanı | 6 | 12.000 | 640 | 1.202 | Yaban domuzu eti ×2; Yaban domuzu derisi ×2; Yaban domuzu dişi ×2; Kemik ×2; Hayvan yağı ×2 |
+| Kor Kertenkelesi Reisi | ACT 2 · Ejder Volkanı | 6 | 8.320 | 538 | 872 | Kor kertenkelesi eti ×2; Kor pulu ×2 |
+| Lav Golemi Reisi | ACT 2 · Ejder Volkanı | 6 | 12.520 | 848 | 4.316 | Magma çekirdeği ×2; Magma cevheri ×2 |
 | Lav Salyangozu Reisi | ACT 2 · Ejder Volkanı | 8 | 320 | 5 | 194 | Magma kabuğu ×2 |
-| Yavru Ejder Reisi | ACT 2 · Ejder Volkanı | 6 | 7.280 | 882 | 3.518 | Ejder dişi ×2; Yavru ejder pulu ×2 |
-| Gök Bekçisi Reisi | ACT 2 · Gök Rıhtımı | 6 | 38.880 | 2.634 | 20.180 | Yakıt hücresi ×2; Uzaylı devresi ×2 |
+| Yavru Ejder Reisi | ACT 2 · Ejder Volkanı | 6 | 7.280 | 588 | 3.518 | Ejder dişi ×2; Yavru ejder pulu ×2 |
+| Gök Bekçisi Reisi | ACT 2 · Gök Rıhtımı | 6 | 38.880 | 1.756 | 20.180 | Yakıt hücresi ×2; Uzaylı devresi ×2 |
 | Gök Medüzü Reisi | ACT 2 · Gök Rıhtımı | 8 | 240 | 5 | 194 | Medüz jölesi ×2 |
-| Gölge Muhafız Reisi | ACT 2 · Gök Rıhtımı | 6 | 11.860 | 1.760 | 5.504 | Muhafız zırhı parçası ×2; Mor çekirdek ×2 |
-| Uzaylı Dronu Reisi | ACT 2 · Gök Rıhtımı | 6 | 7.560 | 1.161 | 4.304 | Uzaylı devresi ×2; Mor çekirdek ×2 |
-| Yıldız Geyiği Reisi | ACT 2 · Gök Rıhtımı | 6 | 12.000 | 1.275 | 1.202 | Geyik eti ×2; Geyik derisi ×2; Geyik boynuzu ×2; Sinir ×2; Kemik ×2; Hayvan yağı ×2 |
-| Yıldız Tilkisi Reisi | ACT 2 · Gök Rıhtımı | 6 | 8.640 | 1.202 | 1.058 | Yıldız tilkisi postu ×2; Yıldız tilkisi eti ×2 |
+| Gölge Muhafız Reisi | ACT 2 · Gök Rıhtımı | 6 | 11.860 | 1.173 | 5.504 | Muhafız zırhı parçası ×2; Mor çekirdek ×2 |
+| Uzaylı Dronu Reisi | ACT 2 · Gök Rıhtımı | 6 | 5.670 | 774 | 4.304 | Uzaylı devresi ×2; Mor çekirdek ×2 |
+| Yıldız Geyiği Reisi | ACT 2 · Gök Rıhtımı | 6 | 12.000 | 850 | 1.202 | Geyik eti ×2; Geyik derisi ×2; Geyik boynuzu ×2; Sinir ×2; Kemik ×2; Hayvan yağı ×2 |
+| Yıldız Tilkisi Reisi | ACT 2 · Gök Rıhtımı | 6 | 8.640 | 707 | 1.058 | Yıldız tilkisi postu ×2; Yıldız tilkisi eti ×2 |
 
 
 # Tarifler · Tarif ansiklopedisi
@@ -4732,7 +4736,7 @@ Toplam **766 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Deri çarık | 1 Deri parçası, 2 Sinir, 3 Yaprak | – | El yapımı (Tab) | 201 |
-| Kamış çizme | 6 Kamış, 3 İp, 2 Yosun | – | El yapımı (Tab) | 1.151 |
+| Kamış çizme | 6 Kamış, 3 İp, 2 Yosun | – | El yapımı (Tab) | 151 |
 | Kemik çizme | 1 Bakır çizme, 4 Kemik, 1 Deri parçası, 3 Yaprak | – | El yapımı (Tab) | 465 |
 | Kemik eldiven | 1 Bakır eldiven, 4 Kemik, 2 Sinir, 1 Deri parçası, 3 Lif | – | El yapımı (Tab) | 480 |
 | Kemik miğfer | 1 Bakır miğfer, 4 Kemik, 2 Sinir, 1 Deri parçası, 2 Taş | – | El yapımı (Tab) | 470 |
@@ -5303,16 +5307,18 @@ ACT 1'in madenleri ve metal ekipmanı tek bir merdivene göre dizildi. Amaç: **
 | Alet malzemesi | Kademe | İş süresi (sn) | Dayanıklılık | Baltanın silah hasarı | Kazmanın silah hasarı |
 |---|---|---|---|---|---|
 | Taş | 1 | 3 | 25 | 9 | 8 |
-| Çakmaktaşı | 1 | 2,8 | 35 | 10 | 9 |
+| Çakmaktaşı | 1 | 2,8 | 35 | 13 | 12 |
 | Bakır | 1 | 2,6 | 45 | 12 | 11 |
-| Granit | 2 | 2,3 | 40 | 16 | 14 |
-| Tunç | 2 | 2,1 | 90 | 20 | 18 |
-| Demir | 3 | 1,8 | 140 | 30 | 26 |
-| Kuvars | 4 | 1,6 | 60 | 34 | 30 |
-| Çelik | 4 | 1,5 | 190 | 38 | 34 |
-| Obsidyen | 5 | 1,2 | 100 | 46 | 41 |
-| Kara çelik | 5 | 1,1 | 240 | 50 | 45 |
-| Mor kristal | 6 | 0,9 | 300 | 58 | 52 |
+| Granit | 2 | 2,3 | 40 | 19 | 19 |
+| Tunç | 2 | 2,1 | 90 | 17 | 17 |
+| Demir | 3 | 1,8 | 140 | 26 | 26 |
+| Kuvars | 4 | 1,6 | 60 | 39 | 38 |
+| Çelik | 4 | 1,5 | 190 | 35 | 34 |
+| Obsidyen | 5 | 1,2 | 100 | 61 | 58 |
+| Kara çelik | 5 | 1,1 | 240 | 44 | 44 |
+| Mor kristal | 6 | 0,9 | 300 | 54 | 52 |
+
+Balta ve kazmanın silah hasarı en çok aynı kademenin topuzu kadardır (Timsah dişi balta ve kazma 29, Ejder baltası ve kazması 49; kural: Sistemler › Silahlar › Emek–güç kuralı).
 
 ### Setler
 
@@ -5330,11 +5336,11 @@ Her hücrede **savunma ya da hasar · satış fiyatı**. Zırhçılar zırhları
 | Set | Kılıç | Mızrak | Savaş çekici | Topuz | Balta | Kazma |
 |---|---|---|---|---|---|---|
 | 1 · Bakır | 16 · 366 | 15 · 166 | 18 · 227 | 12 · 155 | 12 · 159 | 11 · 167 |
-| 2 · Tunç | 22 · 1.078 | 20 · 526 | 25 · 1.011 | 17 · 645 | 20 · 497 | 18 · 680 |
-| 3 · Demir | 34 · 2.377 | 30 · 1.365 | 39 · 2.429 | 26 · 1.517 | 30 · 1.146 | 26 · 1.598 |
-| 4 · Çelik | 46 · 4.129 | 41 · 2.183 | 53 · 4.627 | 35 · 2.861 | 38 · 2.625 | 34 · 2.924 |
-| 5 · Kara çelik | 58 · 7.467 | 52 · 3.651 | 67 · 8.954 | 44 · 5.494 | 50 · 5.435 | 45 · 5.513 |
-| 6 · Mor kristal | 72 · 12.955 | 64 · 6.271 | 83 · 15.709 | 54 · 9.571 | 58 · 9.557 | 52 · 9.580 |
+| 2 · Tunç | 22 · 1.078 | 20 · 526 | 25 · 1.011 | 17 · 645 | 17 · 497 | 17 · 680 |
+| 3 · Demir | 34 · 2.377 | 30 · 1.365 | 39 · 2.429 | 26 · 1.517 | 26 · 1.146 | 26 · 1.598 |
+| 4 · Çelik | 46 · 4.129 | 41 · 2.183 | 53 · 4.627 | 35 · 2.861 | 35 · 2.625 | 34 · 2.924 |
+| 5 · Kara çelik | 58 · 7.467 | 52 · 3.651 | 67 · 8.954 | 44 · 5.494 | 44 · 5.435 | 44 · 5.513 |
+| 6 · Mor kristal | 72 · 12.955 | 64 · 6.271 | 83 · 15.709 | 54 · 9.571 | 54 · 9.557 | 52 · 9.580 |
 
 - **Dirençler:** Demir zırh kanama %30; Çelik zırh kanama %35; Kara çelik zırh yanık %40, kanama %30; Mor kristal zırh kanama, yanık ve zehir %30. Demir, Çelik, Kara çelik ve Mor kristal çizmeler çamurda yavaşlatmaz. Bütün set parçaları metaldir.
 - **Tarifler** (I = setin malzemesi; Tunç ve Demir'in eski 8 parçası eski tarifiyle kalır, yalnızca savaş çekici ve topuz yeni):
@@ -5361,7 +5367,7 @@ Her hücrede **savunma ya da hasar · satış fiyatı**. Zırhçılar zırhları
 | Tunç | Orman · örs | – | Tunç miğfer 12 · Tunç zırh 24 · Tunç eldiven 7 · Tunç çizme 7 | Tunç kılıç 22 · Tunç savaş çekici 25 · Tunç topuz 17 · Tunç mızrak 20 · Sert odun yayı 17 | Tunç balta / Tunç kazma (2) |
 | Usta: Meşe ve granit | Orman · Durdu ve Duran | keskin | Ceviz kabuğu miğfer 13 · Meşe kabuk zırh 27 · **Meşe kabuk eldiven** 8 · **Meşe kabuk çizme** 8 | **Granit kılıç** 25 · Granit savaş çekici 28 · **Granit topuz** 19 · **Granit mızrak** 22 · **Granit yayı** 19 | Granit balta / Granit kazma (2) |
 | Demir | Bataklık · örs | – | Demir miğfer 20 · Demir zırh 40 · Demir eldiven 12 · Demir çizme 12 | Demir kılıç 34 · Demir savaş çekici 39 · Demir topuz 26 · Demir mızrak 30 · Sağlam odun yayı 26 | Demir balta / Demir kazma (3) |
-| Usta: Timsah | Bataklık · Ali ve Veli | zehirli | **Timsah miğfer** 22 · Timsah pulu zırh 45 · **Timsah eldiven** 13 · Kamış çizme 13 | Timsah dişi kılıcı 38 · **Timsah dişi savaş çekici** 44 · **Timsah dişi topuz** 29 · **Timsah dişi mızrak** 34 · **Timsah dişi yayı** 29 | **Timsah dişi balta** / **Timsah dişi kazma** (3) |
+| Usta: Timsah | Bataklık · Ali ve Veli | zehirli | **Timsah miğfer** 22 · Timsah pulu zırh 45 · **Timsah eldiven** 13 · Kamış çizme 9 (özel) | Timsah dişi kılıcı 38 · **Timsah dişi savaş çekici** 44 · **Timsah dişi topuz** 29 · **Timsah dişi mızrak** 34 · **Timsah dişi yayı** 29 | **Timsah dişi balta** / **Timsah dişi kazma** (3) |
 | Çelik | Kayalık Dağ · örs | – | Çelik miğfer 28 · Çelik zırh 54 · Çelik eldiven 16 · Çelik çizme 16 | Çelik kılıç 46 · Çelik savaş çekici 53 · Çelik topuz 35 · Çelik mızrak 41 · Güçlü odun yayı 35 | Çelik balta / Çelik kazma (4) |
 | Usta: Gümüş ve kuvars | Kayalık Dağ · Kaya ve Kayhan | keskin | Kartal tüyü miğfer 31 · Gümüş pullu zırh 60 · **Gümüş eldiven** 18 · **Gümüş çizme** 18 | Gümüş kılıç 52 · **Kuvars savaş çekici** 59 · **Kuvars topuz** 39 · Kuvars mızrak 46 · **Gümüş yayı** 39 | Kuvars balta / Kuvars kazma (4) |
 | Kara çelik | Kül Diyarı · örs | – | Kara çelik miğfer 36 · Kara çelik zırh 68 · Kara çelik eldiven 21 · Kara çelik çizme 21 | Kara çelik kılıç 58 · Kara çelik savaş çekici 67 · Kara çelik topuz 44 · Kara çelik mızrak 52 · Kor odun yayı 45 | Kara çelik balta / Kara çelik kazma (5) |
@@ -5373,20 +5379,20 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 
 **Yeni ve değişen tarifler** (usta silahlarına etkinin yağı eklenir: Bileme macunu, Zehir yağı ya da Ateş yağı):
 
-- Kemik eldiven: 1 Bakır eldiven, 4 Kemik, 2 Sinir, 1 Deri parçası
-- Kemik çizme: 1 Bakır çizme, 4 Kemik, 1 Deri parçası, 4 Lif
+- Kemik eldiven: 1 Bakır eldiven, 4 Kemik, 2 Sinir, 1 Deri parçası, 3 Lif
+- Kemik çizme: 1 Bakır çizme, 4 Kemik, 1 Deri parçası, 3 Yaprak
 - Çakmaktaşı kılıç: 1 Bakır kılıç, 3 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp, 1 Bileme macunu
 - Çakmaktaşı savaş çekici: 1 Bakır savaş çekici, 4 Yontulmuş çakmaktaşı, 1 Odun sapı, 1 Sinir kirişi, 1 Bileme macunu
 - Çakmaktaşı topuz: 1 Bakır topuz, 2 Yontulmuş çakmaktaşı, 1 Odun sapı, 2 İp, 1 Bileme macunu
 - Kemik yay: 1 Odun yayı, 3 Kemik, 1 Uzun sopa, 1 Sinir kirişi
 - Meşe kabuk eldiven: 1 Tunç eldiven, 2 Meşe kabuğu, 1 Deri parçası, 3 Kirpi dikeni, 3 Lif
-- Meşe kabuk çizme: 1 Tunç çizme, 2 Meşe kabuğu, 1 Deri parçası, 3 Yaprak
+- Meşe kabuk çizme: 1 Tunç çizme, 2 Meşe kabuğu, 1 Deri parçası, 3 Eğrelti
 - Granit kılıç: 1 Tunç kılıç, 3 Granit, 1 Sert odun sapı, 1 Sinir kirişi, 1 Bileme macunu
 - Granit topuz: 1 Tunç topuz, 2 Granit, 1 Sert odun sapı, 2 İp, 1 Bileme macunu
 - Granit mızrak: 1 Tunç mızrak, 2 Granit, 1 Uzun sopa, 3 İp, 1 Bileme macunu
 - Granit yayı: 1 Sert odun yayı, 3 Sert odun, 2 Sinir kirişi, 1 Granit
-- Timsah miğfer: 1 Demir miğfer, 2 Timsah derisi, 1 Demir halka, 2 Sinir
-- Timsah eldiven: 1 Demir eldiven, 1 Timsah derisi, 1 Demir halka, 2 İp
+- Timsah miğfer: 1 Demir miğfer, 2 Timsah derisi, 1 Demir cevheri, 2 Sinir, 2 Taş
+- Timsah eldiven: 1 Demir eldiven, 1 Timsah derisi, 1 Demir cevheri, 3 Lif
 - Kamış çizme: 6 Kamış, 3 İp, 2 Yosun (el yapımı; setin örste dövülmeyen tek parçası)
 - Timsah dişi savaş çekici: 1 Demir savaş çekici, 3 Timsah dişi, 2 Demir külçesi, 1 Sağlam odun sapı, 1 Zehir yağı
 - Timsah dişi topuz: 1 Demir topuz, 2 Timsah dişi, 1 Demir külçesi, 1 Sağlam odun sapı, 1 Zehir yağı
@@ -5394,14 +5400,14 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 - Timsah dişi yayı: 1 Sağlam odun yayı, 3 Sağlam odun, 2 Sinir kirişi, 1 Timsah dişi
 - Timsah dişi balta: 1 Demir balta, 2 Timsah dişi, 1 Demir külçesi, 1 Sağlam odun sapı, 2 İp
 - Timsah dişi kazma: 1 Demir kazma, 2 Timsah dişi, 2 Demir külçesi, 1 Sağlam odun sapı, 2 Taş
-- Gümüş eldiven: 1 Çelik eldiven, 1 Gümüş külçesi, 1 Demir halka, 1 Deri parçası
-- Gümüş çizme: 1 Çelik çizme, 1 Gümüş külçesi, 1 Demir halka, 1 Deri parçası, 4 Lif
+- Gümüş eldiven: 1 Çelik eldiven, 2 Gümüş cevheri, 1 Demir cevheri, 3 Lif, 1 Kaya yarasası kanadı
+- Gümüş çizme: 1 Çelik çizme, 2 Gümüş cevheri, 1 Demir cevheri, 1 Deri parçası, 3 Yaprak
 - Kuvars savaş çekici: 1 Çelik savaş çekici, 3 Yontulmuş kuvars, 1 Güçlü odun sapı, 1 Sinir kirişi, 1 Bileme macunu
 - Kuvars topuz: 1 Çelik topuz, 2 Yontulmuş kuvars, 1 Güçlü odun sapı, 2 İp, 1 Bileme macunu
 - Gümüş yayı: 1 Güçlü odun yayı, 3 Güçlü odun, 2 Sinir kirişi, 1 Gümüş külçesi
-- Ejder miğferi: 1 Kara çelik miğfer, 1 Kara pul, 1 Demir levha, 1 Deri parçası
-- Ejder eldiveni: 1 Kara çelik eldiven, 1 Kara pul, 2 Lav pulu, 1 Deri parçası
-- Ejder çizmesi: 1 Kara çelik çizme, 1 Kara pul, 2 Kül kurdu postu, 4 Lif
+- Ejder miğferi: 1 Kara çelik miğfer, 1 Kara pul, 3 Demir cevheri, 2 Taş, 1 Yarasa kanadı
+- Ejder eldiveni: 1 Kara çelik eldiven, 1 Kara pul, 2 Lav pulu, 1 Deri parçası, 3 Lif
+- Ejder çizmesi: 1 Kara çelik çizme, 1 Kara pul, 2 Kül kurdu postu, 3 Yaprak
 - Ejder kılıcı: 1 Kara çelik kılıç, 2 Ejder kemiği, 1 Kara çelik külçesi, 1 Deri parçası, 1 Ateş yağı
 - Ejder savaş çekici: 1 Kara çelik savaş çekici, 2 Ejder kemiği, 2 Kara çelik külçesi, 1 Kor odun sapı, 1 Ateş yağı
 - Ejder topuzu: 1 Kara çelik topuz, 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kor odun sapı, 1 Ateş yağı
@@ -5409,12 +5415,12 @@ Kalın adlar bu sürümde eklenen parçalardır. Kemik zırh parçaları ve baş
 - Ejder yayı: 1 Kor odun yayı, 3 Kor odun, 1 Ejder kemiği, 2 Sinir kirişi
 - Ejder baltası: 1 Kara çelik balta, 1 Ejder kemiği, 1 Kara çelik külçesi, 1 Kor odun sapı, 2 İp
 - Ejder kazması: 1 Kara çelik kazma, 1 Ejder kemiği, 1 Bazalt sivri ucu, 1 Kara çelik külçesi, 1 Kor odun sapı
-- Ametist miğfer: 1 Mor kristal miğfer, 2 Ametist, 1 Kristal ipek, 1 Deri parçası
-- Kristal ipek çizme: 1 Mor kristal çizme, 2 Kristal ipek, 1 Işık pulu, 1 Deri parçası
+- Ametist miğfer: 1 Mor kristal miğfer, 2 Ametist, 1 Kristal ipek, 1 Deri parçası, 1 Kristal boynuz
+- Kristal ipek çizme: 1 Mor kristal çizme, 2 Kristal ipek, 1 Işık pulu, 3 Yaprak, 1 Ayna ipeği
 - Ametist savaş çekici: 1 Mor kristal savaş çekici, 4 Ametist, 2 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı
 - Ametist topuz: 1 Mor kristal topuz, 2 Ametist, 1 Obsidyen, 1 Kadim odun sapı, 1 Zehir yağı
 - Ametist yayı: 1 Kadim odun yayı, 3 Kadim odun, 2 Sinir kirişi, 1 Ametist
-- Kürk yelek: 2 Deri parçası, 1 Sinir kirişi, 5 Lif, 4 İp · Taş savaş çekici: 1 Sopa, 4 Taş, 3 İp · Taş topuz: 1 Sopa, 2 Taş, 2 İp (elle)
+- Kürk yelek: 2 Sinir, 4 Geyik derisi · Taş savaş çekici: 1 Sopa, 4 Taş, 3 İp · Taş topuz: 1 Sopa, 2 Taş, 2 İp (elle)
 - Obsidyen balta, Obsidyen kazma ve Obsidyen mızrağa 1 Ametist eklendi; balta ve kazma **6. kademe** (Mor Kristal Vadisi usta seti, Kudret döver). Çakmaktaşı, Kuvars ve Obsidyen mızrağa etkinin yağı eklendi.
 - Boşta kalan malzemeler setlere geçti: **Lav pulu** Ejder eldiveninde, **Kül kurdu postu** Ejder çizmesinde, **Bazalt sivri ucu** Ejder mızrağı ve Ejder kazmasında, **Kor odun sapı** Ejder savaş çekici ve topuzunda.
 - **Yeni usta zırhlarının direnci:** Meşe kabuk eldiven ve çizme kanama %10; Timsah miğfer ve eldiven zehir %15; Gümüş eldiven ve çizme kanama %15; Ametist miğfer ve Kristal ipek çizme zehir %20. Kamış çizme çamurda yavaşlatmaz.
@@ -5464,7 +5470,7 @@ Her silah, alet ve zırh türünde **düz set parçası** (13 setin her birinin 
 | Işın kılıcı | ACT 2, adı özel |
 | Ateş, Buz, Yıldırım asası; Tabanca, Pompalı | ACT 2; her biri ayrı oynanış (yanık, dondurma, zincir; düz atış, yelpaze), birbirinin kademesi değil |
 | Güçlü kısa yay, Sağlam kısa yay | set dışı kısa yaylar |
-| Kamış çizme | özel: çamurda yavaşlamayı önleyen el yapımı çizme (Timsah setinin çizmesi ama zincire girmez). Çizme zincirinde Bataklık'ın yerini **Demir çizme** tutar: Demir çizme → Çelik çizme |
+| Kamış çizme | özel: çamurda yavaşlamayı önleyen el yapımı çizme (Timsah setinin çizmesi ama zincire girmez). Çizme zincirinde Bataklık'ın yerini **Demir çizme** tutar: Demir çizme → Çelik çizme. Kolay yapıldığı için zincirli çizmeyi geçmez: savunması **9** (Meşe kabuk çizme 8 ile Demir çizme 12 arası), usta %12 kuralı ona uygulanmaz; değeri çamur ve zehir direncidir. Fiyatı malzemesinden: 151 |
 | Boynuz kazma, Kürek, Tırpan, Tırmık, Sulama kabı, Yaprak kova, Huş kabuğu kabı, Ağ, Kemik zıpkın, Balık kapanı, Tuzak, Sapan, Bola, müzik aletleri | tek parça ya da kademesiz alet |
 | Kolye ve yüzükler | takı; zırh ve alet zincirine girmez |
 | Meşale, Kaba meşale, Golem feneri | sarf (yığılır) ya da özel ışık |
@@ -5777,7 +5783,7 @@ Yedi yuva vardır: **baş, gövde, el, ayak, silah, boyun (kolye), yüzük**. Ö
 | Tunç çizme | Ayak | 7 | Örs · Zırhçı Durmuş ve bütün zırhçı kuzenleri döver | metal |
 | Meşe kabuk çizme | Ayak | 8 | Örs · Zırhçı Duran (Orman) ve üstü döver | direnç: kanama %10 |
 | Demir çizme | Ayak | 12 | Örs · Zırhçı Veli (Bataklık) ve üstü döver | çamur, metal |
-| Kamış çizme | Ayak | 13 | El yapımı (Tab) | direnç: zehir %15, çamur |
+| Kamış çizme | Ayak | 9 | El yapımı (Tab) | direnç: zehir %15, çamur |
 | Çelik çizme | Ayak | 16 | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | çamur, metal |
 | Gümüş çizme | Ayak | 18 | Örs · Zırhçı Kayhan (Kayalık Dağ) ve üstü döver | direnç: kanama %15, metal |
 | Kara çelik çizme | Ayak | 21 | Örs · Zırhçı Tufan (Kül Diyarı) ve üstü döver | çamur, metal |
@@ -6299,7 +6305,7 @@ Oyundaki bütün eşyalar alfabetik sırada. **Nereden gelir** sütunu bir eşya
 | Kamış hasır | 67 | – | Tarif: Zümrüt'ün kazanı öğrenilir → El yapımı (Tab) | Kamış kulübe çatısı |
 | Kamış kulübe | 858 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur · Usta Sinan yapar (650 Vio) | – |
 | Kamış kulübe çatısı | 522 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Usta Sinan yapar, yere kurulur | Kamış kulübe, Kerpiç ev |
-| Kamış çizme | 1.151 | giyilir +13 savunma | Tarif: Avcı Doğan ilk konuşmada yazar (Zümrüt'ün kazanında da öğrenilir) → El yapımı (Tab) | – |
+| Kamış çizme | 151 | giyilir +9 savunma | Tarif: Avcı Doğan ilk konuşmada yazar (Zümrüt'ün kazanında da öğrenilir) → El yapımı (Tab) | – |
 | Kanlıca | 8 | – | Yerden toplanır: Orman (ACT 1) | Kızarmış kanlıca, Mantar çorbası |
 | Kanlıcalı güveç | 160 | – | Tarif: Zümrüt'ün kazanı öğrenilir → Ateşte (pişirme menüsü) | – |
 | Kar likeni | 40 | – | Mağarada yerden toplanır: Rüzgâr Mağarası (Kayalık Dağ, giriş Sv 26) | Dev yüreği tılsımı |

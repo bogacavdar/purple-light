@@ -149,7 +149,7 @@ Bir kütüğe yaslanmış, bacağı kanlı bir avcı; yanında kırık bir mızr
 
 - **Konuş:** "Bir timsah… bacağımı kaptı. Kurtuldum ama yürüyemiyorum. Yarayı sarmak için **3 Bataklık otu**, bacağımı tutturmak için **2 Kamış** getirir misin? Bir de… gece bataklık canlanır. Sarınca biraz yanımda kalır mısın?"
 - **Getir:** 3 Bataklık otu, 2 Kamış. Kartal yarasını sarar.
-- **Bekle (60 sn):** Kartal'ın yanında (90 piksel içinde) kal. Her 15 saniyede bir 2 canavar gelir (Bataklık kurdu ya da Engerek). Uzaklaşırsan sayaç durur: "Gitme, yalnız bırakma beni!"
+- **Bekle (60 sn):** Kartal'ın yanında (90 piksel içinde) kal. Her 15 saniyede bir 2 canavar gelir: **1 Bataklık kurdu ve 1 Engerek** (dört dalgada en çok 4 kurt; ikisi birden kurt olmaz). Uzaklaşırsan sayaç durur: "Gitme, yalnız bırakma beni!"
 - **Konuş:** "Sabaha çıkarırım artık. Bak sana bir şey diyeyim: bu bataklığın Reis'leri hep aynı yerde yatar, suyun en sığ yerinde. Bir gün lazım olur." Görev biter.
 - **Sonra dünyada:** Kartal ayağa kalkmış, sargılı bacağıyla durur. Konuşunca: "Topallıyorum ama yürüyorum. Seni unutmam."
 
@@ -224,7 +224,7 @@ Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biy
 | 24 | **Ressam Lale** · Ormanın renkleri | Orman · 16:00–20:30 | 3 Gelincik, 4 Yaban mersini götür → ormanın en güzel açıklığını bul → dön | 180 · 150 XP | şövalesi (hep) |
 | 25 | **Kayıkçı Remzi** · Sisteki kayıkçı | Bataklık · yalnızca gece (00:00–05:00) | Remzi'yi ışıkla Avcı Doğan'ın kulübesine götür (yolda kurtlar) | 520 · 700 XP | Remzi Doğan'ın ateşinin başında |
 | 26 | **Cemile** (çocuk) · Şarkı söyleyen kurbağalar | Bataklık · 18:30–23:00 | Vıraklamaları dinleyip dört kurbağayı bul (yakalamak yok) → dön | 260 · 210 XP | yanında iki kurbağa |
-| 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 08:00–14:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn; ilk dalga yalnızca Engerek, sonraki iki dalgada birer Bataklık kurdu) → dön | 340 · 270 XP | ilaç kazanı (hep) |
+| 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 08:00–14:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn; üç dalga, her dalgada **tek** canavar: önce 1 Engerek, sonra 1 Bataklık kurdu, sonra 1 Bataklık kurdu) → dön (Şifa: "Bu şişeler köye yeter, sağ ol. Bataklıkta başın dönerse bana uğra."; ödülde eşya yok) | 340 · 270 XP | ilaç kazanı (hep) |
 | 28 | **Dağlı Zehra** · Uçurumdaki oğlak | Kayalık Dağ · 06:00–12:00 | Oğlak Boncuk'u 3 kez yakala → Zehra'ya götür | 520 · 700 XP | yanında Boncuk |
 | 29 | **Gözcü Bora** · Kartal yumurtası | Kayalık Dağ · 09:00–15:00 | Düşen yumurtayı bul → yuvanın dibindeki 2 kurdu kov, yumurtayı koy → dön | 680 · 900 XP | – |
 | 30 | **Keşiş Sükûn** · Dağın çanları | Kayalık Dağ · 04:30–09:30 | Rüzgârda çınlayan üç çanı bul → dön | 520 · 700 XP | yanında asılı rüzgâr çanı |

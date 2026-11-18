@@ -633,7 +633,7 @@ Toplam **766 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Deri çarık | 1 Deri parçası, 2 Sinir, 3 Yaprak | – | El yapımı (Tab) | 201 |
-| Kamış çizme | 6 Kamış, 3 İp, 2 Yosun | – | El yapımı (Tab) | 1.151 |
+| Kamış çizme | 6 Kamış, 3 İp, 2 Yosun | – | El yapımı (Tab) | 151 |
 | Kemik çizme | 1 Bakır çizme, 4 Kemik, 1 Deri parçası, 3 Yaprak | – | El yapımı (Tab) | 465 |
 | Kemik eldiven | 1 Bakır eldiven, 4 Kemik, 2 Sinir, 1 Deri parçası, 3 Lif | – | El yapımı (Tab) | 480 |
 | Kemik miğfer | 1 Bakır miğfer, 4 Kemik, 2 Sinir, 1 Deri parçası, 2 Taş | – | El yapımı (Tab) | 470 |
