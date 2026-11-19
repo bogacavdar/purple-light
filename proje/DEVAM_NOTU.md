@@ -1,3 +1,7 @@
+## v4.31 (19 Kasım 2026) · Telefonda yaratma ekranı: Geri/Başla düğmeleri açıklama yazısının altında kalmasın
+- `v63-css`'in arkasına, `(pointer:coarse) and (orientation:landscape) and (max-height:520px)` için: `.v63rh` gizli, `#cprev` 100 px, Döndür/Rastgele 34 px, `.cnote` 10 px, `#creator .tmenu.row` `position:relative;z-index:5`. Yapışkan önizleme bloğu kısaldı, düğmeler üstte. Playwright 844×390 ve 740×360'ta `elementFromPoint` Başla'yı veriyor.
+- Geri alma: `git revert` bu commit.
+
 ## v4.30 (19 Kasım 2026) · Oyuncu ve sevdiği kişi her yerde yeni çizimle; ara sahnelerde ComfyUI kişileri; ince bacaklar
 - `v428kahraman` `drawChibi` sarmalayıcısı genelleşti: `pcLook(L)` LOOK.hero/LOOK.love'a (aynı nesne ya da ten+saç biçimi+saç+üst eşit) uyan her çağrıda (her tuval, her sahne) yeni çizim; 24×26 tuvalde konuşma resmi (S karesinin `A.sk-2`'den 26 satırı). Sevgilinin cinsiyeti yoksa `__plLoveFem`. Yürüme karesi yalnız `drawPlayer` içinde `player.step`'ten; ara sahnede `o.step` ±1 → kare 1/3; `o.sit/closed/arm` yok sayılır. Yaratma ekranındaki "Sevdiğin kişi" istisnası kalktı.
 - `NPCL[k]` ile çağrılan ve `window.__plNPCS[k]` çizimi olan kişiler (v425kisi `NK` + v425npc Kemal `ekin`) ara sahnede f/q/s/w kareleriyle; `fy<0` ise eski çizim.
@@ -192,12 +196,3 @@
 - Kontrol: chk 0 hata; 12 alet OfflineAudioContext'te sesli (hatasız); eldeyken vuruş çalıyor, sallamıyor.
 
 **Geri alma:** `git revert` bu commit.
-
-## v4.10 (12 Kasım 2026) · kolye ve yüzük yuvaları
-- Boğaç: "kolye ve yüzükleri giyilebilir yap, figürden takılabilir olsunlar; her biri ayrı etkili ve bir zırh setine dahil; 5 → 7 giyilebilir". Belge: Aletler › Kolye ve yüzükler.
-- Çekirdek: `SLOTS_EQ` + `['kolye','Boyun'],['yuzuk','Yüzük']`; `equip`'e iki anahtar; applyState'te `Object.assign(equip,…)` iki anahtarla; `FXL` ve `eqTxt(n)` (giyilenin yazısı) — 3071 bilgi, dollHTML, figür ipucu (v387env `figHTML`, `POS` kolye [144,52], yüzük [4,208]), arena `aStat` ve `leftHTML` iki yuva düğmesi, v258c `aInfo` (💍 satırı; 18470'te 💍 simgesi); `.ieqs` 7 sütun.
-- Kaynakta: DB JSON'da Altın kolye → Altın yüzük (2 Altın külçesi, 1 Kehribar), Gümüş yüzük (1 Gümüş külçesi, 1 Yontulmuş kuvars); `addR('Kristal yüzük')`.
-- Yeni `v410taki` bloğu (v409ikon'dan sonra): `JW` (ad, yuva, set, renk, fx, res, mud, def, yeni tarif, fiyat) → EQUIP girdileri, 10 yeni tarif (Süs, elle), fiyatlar; `STAT`'ın bütün anahtarları sarıldı (yalnız r verilmediğinde: can/enerji/mana/zırh düz, şans +p/100, kalanı ×(1+p/100)); 26 takı resmi (`A` → `__p1k`, yalnız bu adların önbelleği silinir); eski kayıt adları `REN`. `window.__plJW`.
-- Kontrol: chk 0 hata; 1.286 eşya, 815 tarif, fiyatsız yok; takınca can/enerji/hasar/savunma/direnç/satış/şans değişiyor; Karakter ve envanter figüründe yeni yuvalar (ekran görüntüsü).
-
-**Geri alma:** `git revert` bu commit (belge ve kod birlikte).

@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.31 · 19 Kasım 2026
+
+### Arayüz
+- **Telefonda karakter yaratma:** "Sevdiğin kişi" adımında uzun açıklama yazısı Geri ve Başla düğmelerini örtüyordu; artık düğmeler her zaman görünür ve basılabilir. Yatay telefonda önizleme biraz küçüldü, "sürükle" ipucu bu ekranda gizlendi.
+
+### Tasarım belgesi
+- Oyun akışı › Karakter yaratma: telefonda düğmelerin hiç örtülmemesi kuralı.
+
+---
+
 ## Versiyon 4.30 · 19 Kasım 2026
 
 ### Görsel
@@ -404,24 +414,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Sistemler'e "Müzik aletleri" bölümü; Eşya dizininde aletlerin türü "çalınır".
-
----
-
-## Versiyon 4.10 · 12 Kasım 2026
-
-### Oynanış
-- **Kolye ve yüzük takılıyor:** giyilecek yuva sayısı 5'ten 7'ye çıktı; Özellikler penceresindeki ve envanterdeki figürde yeni **Boyun** ve **Yüzük** yuvaları var. Arenada da seçilebiliyorlar.
-- **Her setin bir kolyesi ve bir yüzüğü var:** 13 setin her birinde bir kolye ve bir yüzük, her birinin kendi etkisi var (can, enerji, mana, zırh, savunma, hasar, hız, toplama hızı, satış fiyatı, şans, can ve enerji yenilenmesi, kanama/yanık/zehir direnci, çamurda yavaşlamamak). Etkiler biyomdan biyoma büyüyor: örneğin Diş kolye +20 can, Ay taşı kolyesi +120 can ve +50 mana; Bakır yüzük satışa +%4, Altın yüzük +%12 satış ve +%4 şans; Ametist yüzük +%10 hasar ve +%4 hız. Hangi parçanın hangi sete ait olduğu ve etkileri tasarım belgesinde (Aletler › Kolye ve yüzükler).
-- **Yeni takılar (elle yapılır, kazanda öğrenilir):** Palamut kolyesi, Taş yüzük, Bakır yüzük, Kemik yüzük, Tunç yüzük, Granit yüzük, Demir yüzük, Timsah yüzüğü, Kehribar yüzük, Ejder yüzüğü.
-- **Değişen takılar:** Altın kolye artık **Altın yüzük** (2 Altın külçesi, 1 Kehribar), Kristal kolye artık **Kristal yüzük**; Gümüş yüzük Kehribar yerine Yontulmuş kuvars istiyor. Domuz dişi muska ve Kül dişi muska boyna takılıyor.
-
-### Görsel
-- Bütün kolye ve yüzüklerin resimleri yeniden çizildi: her kolyenin kendi sarkacı (diş, pençe, inci, kehribar, ay taşı…), her yüzüğün kendi metali ve taşı var.
-
-### Kayıtlar
-- Eski kayıttaki Altın kolye ve Kristal kolye kendiliğinden Altın yüzük ve Kristal yüzük oluyor.
-
-### Tasarım belgesi
-- Aletler'e "Kolye ve yüzükler" bölümü (yuvalar, etkiler, 13 setin kolye ve yüzüğü, tarifleri, fiyatları); Zırhlar ve Sistemler'de yedi yuva; set 13 parça; Tarifler ve Eşya dizininde yeni ve değişen takılar.
 
 ---
