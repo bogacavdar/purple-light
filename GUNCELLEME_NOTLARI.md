@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.30 · 19 Kasım 2026
+
+### Görsel
+- **Karakterin ve sevdiğin kişinin yeni çizimi her yerde:** ara sahnelerde (gemi akşamı, batış, anılar, düğün ve diğerleri), uyanmada, konuşma kutusundaki resminde ve sevdiğin kişiyi seçtiğin ekranda da yeni 8 yönlü çizim kullanılıyor; sevdiğin kişi de kendi saçı, renkleri ve aksesuarlarıyla görünüyor.
+- **Ara sahnelerde kişiler:** Kemal, Zümrüt, Nazlı, Dursun, Durmuş, Börü, Ekin, Sinan ve Doğan ara sahnelerde de oyundaki ComfyUI çizimleriyle (arkası dönükken eski çizim).
+- **Daha ince bacaklar:** önden ve çaprazdan bakışta bacaklar inceltildi (erkekte kalın duruyordu).
+
+### Tasarım belgesi
+- "Oyuncunun karakteri" ve "Kişiler": çizimin kullanıldığı yerler (ara sahne, konuşma resmi, sevdiğin kişi), bacak kalınlığı.
+
+---
+
 ## Versiyon 4.29 · 19 Kasım 2026
 
 ### Görsel
@@ -411,23 +423,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Aletler'e "Kolye ve yüzükler" bölümü (yuvalar, etkiler, 13 setin kolye ve yüzüğü, tarifleri, fiyatları); Zırhlar ve Sistemler'de yedi yuva; set 13 parça; Tarifler ve Eşya dizininde yeni ve değişen takılar.
-
----
-
-## Versiyon 4.09 · 11 Kasım 2026
-
-### Oynanış
-- **Her eşyanın tek tarifi var:** aynı eşyayı başka malzemeyle veren 130 ikinci tarif ("Kürk yelek (Sincap derisi ile)" gibi) kalktı. Tarif kitabında, kazanda ve El yapımı listesinde her eşya artık bir kez görünür. Toplam 805 tarif.
-- **Kullanılmayan kalan malzemeler kendi biyomlarındaki tariflere girdi:** hayvan derileri kendi biyomunun setinde Deri parçasının yerine geçiyor (örneğin Bakır miğfer Kurt derisiyle, Tunç çizme Yaban domuzu derisiyle, Çelik zırh Yaban öküzü derisiyle, Mor kristal miğfer Gölge postuyla yapılıyor). Tüyler oklara girdi (Tunç okta Bıldırcın, Çelik okta Turna kuşu, Kara çelik okta Yaban kazı tüyü). Merhemler ve boyalar kendi yağlarını istiyor (Kor merhemi Tohum yağı, Mürver boyası Balık yağı). ACT 2'nin malzemeleri de kendi biyomlarının tariflerinde (Barut Kükürt tozuyla, Tabanca Lens ve Yağ birikintisiyle, Meka zırh Mor çekirdek ve Buz kürküyle gibi). Değişen tariflerin hepsi tasarım belgesinin Tarifler bölümündeki "Tek tarif" tablosunda.
-- **İki yeni Maden tarifi:** 2 Gök camı parçasından Gök camı, 1 Meteor parçasından Meteor demiri yapılıyor.
-- **Bazı eşyalar oyundan kalktı:** hiçbir tarifte yeri olmayan Kavak, Kayın, Ihlamur, Dişbudak, Kızılağaç, Porsuk, Akçaağaç, Kestane ve Ardıç kabuğu (bu ağaçlar artık kabuk düşürmüyor; kabuk yalnız Meşe, Ceviz, Söğüt ve Huş'tan düşüyor), Bazalt ok ucu, Meyve fidanı, Ağ kapanı, Cüruf tuğlası ve Goblin oku (goblin okçusu artık yalnız Goblin kulağı düşürüyor).
-- **Durdu'nun "Bileğinin taşı" görevi** Kayın kabuğu yerine 5 Meşe kabuğu istiyor.
-- **Fiyatlar:** girdisi pahalılaşan eşyalar biraz pahalandı (örneğin Ateş çiçeği merhemi 398 → 898, Deri tulum 338 → 370, Demir mızrak 771 → 995).
-
-### Kayıtlar
-- Eski kayıtta bildiğin ikinci tarifler eşyanın tek tarifine dönüyor; çantandaki, sandığındaki ya da yerdeki kalkan eşyalar son fiyatlarıyla Vio olarak ödeniyor. Bir kez bildirim çıkıyor.
-
-### Tasarım belgesi
-- Tarifler'de "Varyant tarifler" bölümünün yerine "Tek tarif" bölümü (kural, hangi malzeme nereye girdi, kalkanlar, fiyatlar); tarif tabloları, Eşya dizini, Aletler (set tarifleri), ACT 1 (ağaç kabukları, Durdu'nun görevleri), ACT 2 biyomları, Mağaralar ve Canavarlar buna göre güncellendi.
 
 ---

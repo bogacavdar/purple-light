@@ -1,3 +1,9 @@
+## v4.30 (19 Kasım 2026) · Oyuncu ve sevdiği kişi her yerde yeni çizimle; ara sahnelerde ComfyUI kişileri; ince bacaklar
+- `v428kahraman` `drawChibi` sarmalayıcısı genelleşti: `pcLook(L)` LOOK.hero/LOOK.love'a (aynı nesne ya da ten+saç biçimi+saç+üst eşit) uyan her çağrıda (her tuval, her sahne) yeni çizim; 24×26 tuvalde konuşma resmi (S karesinin `A.sk-2`'den 26 satırı). Sevgilinin cinsiyeti yoksa `__plLoveFem`. Yürüme karesi yalnız `drawPlayer` içinde `player.step`'ten; ara sahnede `o.step` ±1 → kare 1/3; `o.sit/closed/arm` yok sayılır. Yaratma ekranındaki "Sevdiğin kişi" istisnası kalktı.
+- `NPCL[k]` ile çağrılan ve `window.__plNPCS[k]` çizimi olan kişiler (v425kisi `NK` + v425npc Kemal `ekin`) ara sahnede f/q/s/w kareleriyle; `fy<0` ise eski çizim.
+- Bacaklar: `build.py frames_raw` ön/çapraz bacak eni `min(3, …)`, ortadan 1 px aralıklı; bütün saç biçimleri yeniden üretildi.
+- Geri alma: `git revert` bu commit (v425kisi/v425npc'deki iki `__plNPCS` satırı dahil).
+
 ## v4.29 (19 Kasım 2026) · Oyuncunun karakteri: yaratma ekranı, envanter/karakter/arena figürü yeni çizimle; 15 saç biçimi (ComfyUI), aksesuarlar kodla
 - `v428kahraman` bloğu baştan yazıldı (aynı id, aynı yer). `HD[e|k][saç]` = {CW, CH, c (renkli sayfa), m (maske), A (yön başına baş noktaları)}; saç biçimi ilk kullanıldığında yüklenir, yoksa Kısa/Uzun'a düşer. Maske R=bölüm×30 (1 ten, 2 saç, 3 üst, 4 alt, 6 göz, 7 tunik eteği), G=parlaklık×100.
 - Aksesuarlar `acc()` ile yön başına bir kez çizilir, her kareye basılır (sağa bakan satırlara aynalı). Şapkada `A.hy` (siper satırı) üstündeki saç silinir. `A`: sk (kafatası üstü), l/r, hy, ey/ex (göz), my, ch (çene), nk (boyun), fl/fr/fx, span.
@@ -193,14 +199,5 @@
 - Kaynakta: DB JSON'da Altın kolye → Altın yüzük (2 Altın külçesi, 1 Kehribar), Gümüş yüzük (1 Gümüş külçesi, 1 Yontulmuş kuvars); `addR('Kristal yüzük')`.
 - Yeni `v410taki` bloğu (v409ikon'dan sonra): `JW` (ad, yuva, set, renk, fx, res, mud, def, yeni tarif, fiyat) → EQUIP girdileri, 10 yeni tarif (Süs, elle), fiyatlar; `STAT`'ın bütün anahtarları sarıldı (yalnız r verilmediğinde: can/enerji/mana/zırh düz, şans +p/100, kalanı ×(1+p/100)); 26 takı resmi (`A` → `__p1k`, yalnız bu adların önbelleği silinir); eski kayıt adları `REN`. `window.__plJW`.
 - Kontrol: chk 0 hata; 1.286 eşya, 815 tarif, fiyatsız yok; takınca can/enerji/hasar/savunma/direnç/satış/şans değişiyor; Karakter ve envanter figüründe yeni yuvalar (ekran görüntüsü).
-
-**Geri alma:** `git revert` bu commit (belge ve kod birlikte).
-
-## v4.09 (11 Kasım 2026) · her eşyanın tek tarifi
-- Boğaç: "bu 130 tarifi tekilleştirerek başlayalım; tekilleştiği halde kullanılmayan malzemeler varsa mantıklı bir şekilde, az olan sınıfı gözeterek ya yeni tarif bulalım ya da kaldıralım komple". Belge: Tarifler › Tek tarif.
-- Kaynakta kalkanlar: `EK` (TARIF_EK) JSON'undan 112 varyant satırı ve sonra boşalan `v366tarif` bloğu (VO, gain/giveTool/icon sarmalayıcıları, `__plVarCheck`, `__plVarSt`) tamamen; v3.81 bloğundaki `vary()` ve 18 çağrısı; `v366ok`'taki `__plOkVar` (Bazalt uçlu Kara çelik ok); `hGrp` sadeleşti. DB JSON'dan Bazalt ok ucu, Meyve fidanı, Cüruf tuğlası tarifi ve kalkan eşyaların fiyatları; `addR('Ağ kapanı')` ve resmi; ACT 2 JSON'unda goblin okçusunun Goblin oku düşmesi, iconk/iconc; v4.06 kabuk listesi Meşe, Ceviz, Söğüt, Huş'a indi; NEWP'ten kabuklar. DU7 görevi (DATA) 5 Meşe kabuğu.
-- Yeni `v409tek` bloğu (v409ikon'dan önce): `SW` (tarif, eski girdi, kalan adet, yeni girdi, adet; değer tutan adetler) çalışırken tarife ve USES'a uygulanır; `NEW` (Gök camı, Meteor demiri, Maden); `NP` fiyat artışları (fark × 1,3; bir adım yayılır; evler hariç); eski kayıt: `VAR` varyant → tek tarif, `GONE` kalkan eşya → Vio (applyState sarmalayıcısı v373'ten önce çalışır). `window.__plTek`.
-- Plan ve araçlar: `/home/claude/w/tek/plan.py` (SW listesi, kalan malzeme kontrolü, fiyatlar), `docsync.py` (tablolar), `sec.py` (Tek tarif bölümü), `manual.py`.
-- Kontrol: 1.276 eşya, 805 tarif, 0 varyant, kullanılmayan malzeme yok, fiyatsız yok, bilinmeyen girdi yok; eski kayıt (varyant bilinen, Kavak kabuğu ve Goblin oku çantada) → tek tarif ve +Vio; chk 0 hata.
 
 **Geri alma:** `git revert` bu commit (belge ve kod birlikte).
