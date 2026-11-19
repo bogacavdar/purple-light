@@ -8,6 +8,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.28 · 19 Kasım 2026
+
+### Görsel
+- **Karakterin yeni çizimi, 8 yönde gerçek yürüyüş:** oyun dünyasında oyuncunun karakteri (erkek ve kadın) baştan çizildi. Kenarlardaki beyaz/yeşil hale kalktı, çapraz yönler (sağ-aşağı, sol-aşağı, sağ-yukarı, sol-yukarı) artık gerçekten o yana dönük.
+- **Zıplama yok, adım var:** yürürken gövde ve baş yerinde kalır, bacaklar adım atar (her yönde 4 adım karesi; koşarken adımlar hızlanır). Durunca duruş karesine döner.
+- Erkek: kısa saç, gömlek ve pantolon; kadın: uzun saç, tunik elbise. Ten, saç, üst ve alt rengi karakter yaratmada seçtiğin renklere boyanır (çizme boyanmaz).
+- Karakter yaratma ekranı, karakter penceresi ve ara sahneler eski çizimle.
+
+### Tasarım belgesi
+- Sistemler › Yeni ikonlarla: "Oyuncunun karakteri" maddesi eklendi (8 yön, 4 adım karesi, zıplamasız yürüyüş, boyanan bölümler).
+
+---
+
 ## Versiyon 4.27 · 19 Kasım 2026
 
 ### Oynanış
@@ -435,22 +448,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Tasarım belgesi
 - Sistemler › Mor ışık saldırıları'na Yıldızsızların görünüşü; ACT 1 › Mağaralar'a "Boss'ların görünüşü" tablosu; Yan görevler'e Işıkçı istisnası (2 sınırına sayılmayan yan görev, toplam 43); Akış'ta Işıkçı satırı.
 - Tarifler ve Eşya dizininde Taş kazmanın tarifi ve fiyatı güncellendi; Sistemler › El yapımı'na "özellikler kartta" ve "tarif kitabının bilgi kutusu hep aynı boyda" kuralları, Dövüş › Ölüm pozu ve leş'e "gün dönümünde kaybolmaz" eklendi; Eşyalar › Eşya resimleri'ne "Silah ve alet resimleri" bölümü eklendi; Sistemler'e "El yapımı kategorili", "Yetenek alınca pencere yerinde kalır" ve Almanak'a "Tatlı su balıkları sayfası" eklendi; Mağaralar'a yarasa, kertenkele ve örümcek görünüşü ile "mağarada su yoktur" ve "duvarın ardına vurulmaz" eklendi.
-
----
-
-## Versiyon 4.07 · 10 Kasım 2026
-
-### Oynanış
-- **Her biyomun tek bir odunu var:** bir biyomdaki bütün ağaçlar (meyve ağaçları dahil) kesilince aynı odunu veriyor. Odunun adı ağacı değil gücünü söylüyor ve her biyomda bir öncekinden kuvvetli: Çayır **Odun**, Orman **Sert odun**, Bataklık **Sağlam odun**, Kayalık Dağ **Güçlü odun**, Kül Diyarı **Kor odun**, Mor Kristal Vadisi **Kadim odun**; ACT 2'de **Ulu**, **Yüce**, **Efsane** ve **Ölümsüz odun**.
-- **Kalas, sap, kömür ve kaşık da odunun adında:** Meşe kalası artık **Sert odun kalası**, Huş sapı **Güçlü odun sapı**, Çam kömürü **Odun kömürü** gibi. "Çam kalası (Kavak odunu ile)" gibi ağaç ağaç ayrı kalas tarifleri kalktı; her biyomda tek kalas tarifi var.
-- **Yaylar yeni adlarıyla:** Çam yayı → Odun yayı, Meşe yayı → Sert odun yayı, Kızılağaç yayı → Sağlam odun yayı, Akçaağaç yayı → Güçlü odun yayı, Kızıl sedir yayı → Kor odun yayı, Gece ağacı yayı → Kadim odun yayı; usta yayları malzemesinin adını aldı: Granit yayı, Timsah dişi yayı, Gümüş yayı, Ametist yayı (Ejder yayı aynı). Dişbudak ve Porsuk yayı artık Sağlam kısa yay ve Güçlü kısa yay. Güçleri aynı.
-- **Kabuklar ağaçtan düşüyor:** Meşe, Kayın, Ihlamur, Ceviz, Kavak, Dişbudak, Kızılağaç, Söğüt, Huş, Porsuk, Akçaağaç, Kestane ve Ardıç kesilince odunla birlikte 1 kabuğu da düşüyor; kabuk tarifleri kalktı. Meşe kabuk zırh, eldiven, çizme ve Ceviz kabuğu miğfer odun yerine o ağacın kabuğunu istiyor.
-- **Görevler yeni odunu istiyor:** belirli bir ağacın odununu isteyen görevler o biyomun odununu istiyor. Aynı kişi aynı şeyi iki kez istemesin diye birkaç görev değişti: Usta Sinan'ın Ocak başı 2 Sert odun kalası, Durdu'nun Çatlak sap 2 Sert odun sapı ve Bileğinin taşı 5 Kayın kabuğu, Ali'nin Servi sapı 2 Sağlam odun sapı, Barbaros'un Pruvadaki fener 2 Kadim odun kalası istiyor.
-
-### Kayıtlar
-- **Eski kayıtlar çevriliyor:** kayıt açılınca ağaç adlı her odun, kalas, sap, kömür, kaşık ve yay yeni adına dönüyor (çanta, sandık, kemer, köpek çantası, yer, kitap); aynı yeni ada düşenler toplanıyor. Bir kez bildirim çıkıyor.
-
-### Tasarım belgesi
-- Yeni bölüm: Tarifler › Sade malzeme › **Biyom başına tek odun** (odunlar, fiyatları, ağaçları, kalas/sap/kömür/kaşık, yaylar, kabuklar, görevler). Biyom tablolarında, tarif ve eşya dizinlerinde ağaç adlı odunlar ve türeyenleri yeni adlarıyla, fiyatları oyundakiyle aynı.
 
 ---

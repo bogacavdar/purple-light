@@ -1,3 +1,10 @@
+## v4.28 (19 Kasım 2026) · Oyuncunun karakteri: ComfyUI çizimi, 8 yön × (1 duruş + 4 adım karesi), zıplamasız yürüyüş, erkek + kadın
+- Blok `v425kahraman` silindi, yerine `v428kahraman` (aynı yerde). İki sayfa (sprite sheet) gömülü: `SH.e`/`SH.k` = [renkli PNG, maske PNG]; hücre `CW`×`CH` (e 33×35, k 30×35), satırlar `S,SE,E,NE,N,NW,W,SW`, sütun 0 duruş, 1–4 adım. Maske eskisi gibi R=bölüm×60 (1 ten, 2 saç, 3 üst, 4 alt), G=parlaklık×100; çizme ve çerçeve maskesiz.
+- Kare: `player.mv` ise `1+floor(((player.step*10) mod 2π)/(π/2))`, değilse 0. `o.bob`/`o.step` yok sayılır (zıplama yok). Boyanmış sayfa önbelleği `CA` en çok 13 kombinasyon.
+- Üretim: ComfyUI Z-Image Turbo + piksel LoRA, yön başına tek duruş resmi (S, SW, W, NW, N; sağa bakanlar ayna), yeşil zemin anahtarlama + renk taşması temizliği, palet oylamalı küçültme (H 31 + 1 px çerçeve). Adım kareleri kalça satırının altına bacak yeniden çizilerek üretildi (yan: bacaklar öne-arkaya ±3 px, ön/arka: adım ayağı 2 px kalkar, çapraz: ±2 px açılır + arka ayak 1 px kalkar). Araçlar oturum içi (/tmp/hero/build.py, legs.py, proc2.py), depoya girmedi.
+- Geri alma: `git revert` bu commit (yalnızca `index.html`/`proje/Hammadde_prototip.html` bloğu, belge maddesi, notlar); kayıt alanı değişmedi.
+- Kontrol: chk.js 0 hata; Playwright ile erkek ve kadın için 8 yönde yürüyüş ekranları bakıldı, konsol hatası yok.
+
 ## v4.27 (19 Kasım 2026) · E2E Bataklık: tek Reis kuralı (hızlı tür ×3), mağara boss'u görev Vio'su, Bataklık ve Batık dengesi, balta/kazma hasarı, kuşaklar, av sarı bölgesi, mağarada biyom
 - Kaynak: /home/claude/E2E_v426_bataklik/ANALIZ_BATAKLIK.md §5–§10 (YB-01…33). YB-23'te E3 kodu doğruydu, yalnız YB-21 satırı düzeltildi. Boğaç kararları: S1=A (tek Reis kuralı), hızlı türlerin Reisi ×3, mağara boss'u görev Vio'su (A).
 
@@ -211,12 +218,3 @@
 - Yıldızsız resimleri: v330ys `drawYS` yeniden yazıldı: `YSG` ızgaraları (üretici `/home/claude/w/ys/y.py`; dev 3 kare, 3. kare `a.wind`), `ysSpr` (göz rengi `E` kovalamada kırmızı), `ysGlowSpr` (parlayan noktalar `lighter` ile), arkada mor radyal ışık; can çubuğu `YSH`; saldırıdaki ışık yarıçapı 30 → 48.
 
 **Geri alma:** `git revert` bu commit.
-
-## v4.07 (10 Kasım 2026) · biyom başına tek odun
-
-**Değişen yerler:** ad eşlemesi `/home/claude/w/odun/map.json` (327 ad; 10 odun: Odun, Sert, Sağlam, Güçlü, Kor, Kadim; ACT 2 Ulu, Yüce, Efsane, Ölümsüz). Dosyada ağaç adlı odun/kalas/sap/kömür/kaşık/yay adları metin olarak değiştirildi (büyük ve küçük harfli düzyazı dahil). `DB` (1716): adlar çevrildi, aynı ada düşen tarif ve fiyatlardan biyomun asıl ağacınınki kaldı, kabuk tarifleri silindi. `DATA` görevleri: K8, DU6, DU7, AL6, L8 değişti (aynı kişi aynı şeyi istemesin). `NEWP` (v3.11): asıl olmayan odunlar silindi; kabuklar biyom bandında (5/11/19/27) ve `Yüce odun` 26 eklendi, kullananlar ×1,3 kuralıyla izliyor. `TARIF_EK`: malzemesi yerine geçtiğiyle aynı olan, kabuk ve çift varyantlar silindi (145 → 130). Meşe kabuk zırh/eldiven/çizme ve Ceviz kabuğu miğfer (V items) kabuk istiyor.
-- Kod: `TREE_EXTRA` tanımının üstünde `WOOD_OF` (ağaç → odun), `woodOf(n)`, `isWood(n)`; `t.n+' odunu'` ve `/ odunu$/` kullanan her yer bunlara geçti (kesme, ipucu, kaynak listeleri, köprü/ateş odunu, Oduncu yeteneği, resim). v2.74 `TREE_EXTRA` satırının altında 13 ağaca `[ağaç+' kabuğu',1]`. `WOODC`'ye 10 odunun rengi. v373: `LAND1/LAND2`, `WOOD` ve varyant kalas döngüsü silindi; Erik odunu satırları kalktı. `drawIcon` yay dalı `kısa yay` adlarını da alır. Yeni `v406odun` bloğu (dosya sonu): eski kayıtta eski adları yeni adlara çevirir (sayılar toplanır, string dizilerinde çift silinir), bir kez bildirim.
-- Geri alma: bu commit `git revert` (kod + belge birlikte). Eski kayıt dönüşümü geri alınmaz: dönüşmüş kayıt eski sürümde yeni adları tanımaz.
-- Ölçüm (cpu4): BOOT 21145 → 21592 ms, js 12235 → 12423 ms; PLAY js 3966 → 4037 ms (gürültü sınırında).
-- Kontrol: eşya 1336 → 1290, tarif 997 → 937; fiyatsız eşya yok, bilinmeyen malzeme yok, kullanılmayan malzeme sayısı aynı (68). Kesme: her ağaç biyomunun odununu ve kabuğunu düşürüyor (ACT 1 ve 2). Eski kayıt: 5 Kayın + 3 Meşe + 1 Sert odun → 9 Sert odun; Çam + Kavak kalası → 3 Odun kalası; Ihlamur yayı → Granit yayı. Resimler: 10 odun kütük, kalaslar/saplar/kömürler/kaşıklar/yaylar biyom renginde; torba yok.
-- Sürüm etiketi `Versiyon 4.07`.
