@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.34 · 22 Kasım 2026
+
+### Oynanış
+- **Halat yolları Kayalık Dağ'a varınca açılır:** Doğan'ın "Dağ yolu" görevi bitince Dağcı Tuncay kuzenlerin ocağının yanında durur ve halat yollarını satar (fiyatlar aynı: 2.500 / 3.500 / 4.500 Vio). Rüzgâr Mağarası'nı beklemek gerekmez; Tuncay'ın mağara görevi yine mağaranın içinde verilir ve biter, sonra da Tuncay ocakta kalır.
+
+### Tasarım belgesi
+- Mağaralar › Tuncay'ın halat yolları (açılış ve Tuncay'ın yeri), ACT 1 › Kısayol köprüleri, Sistemler › Ekonomi.
+
+---
+
 ## Versiyon 4.33 · 22 Kasım 2026
 
 ### Oynanış
@@ -397,33 +407,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Tarifler'e "Ayıklama" bölümü; tarif ve eşya tabloları, sayılar (1.239 eşya, 768 tarif) güncellendi.
-
----
-
-## Versiyon 4.13 · 12 Kasım 2026
-
-### Oynanış
-- **Kaldırılan 47 eşya geri geldi:** 4.12'de kaldırılan boncuklar, taçlar, yelpazeler, kazıyıcılar, çakmaklar, kaşıklar, taşıtlar, sepetler, kaseler ve diğerleri eski tarifleriyle yerinde. Hangilerinin kalkacağına birlikte karar verilecek. (4.12'de bunlar için ödenen Vio sende kalır.)
-- **İşe yaramayan eşyalara iş:**
-  - **Mağara boss tılsımları Kupa panosuna asılıyor:** Kupa panosu olan bir eve girince çantandaki tılsımlar panoya asılır ve kalıcı etki verir:
-    - Kraliçe: +%4 hasar.
-    - Çamur Ana: +%25 can yenilenmesi.
-    - Dev yüreği: +80 can.
-    - Kor tacı: +%6 hasar ve +4 zırh.
-    - Işık Yutan kalbi: +40 mana ve +%3 şans.
-  - **Olta yemleri:** çantada Sülük yemi ya da Yıldız tozu yemi varken nadir balık gelme şansı artar; her atışta bir yem gider.
-  - **Duman fişeği:** elde vur tuşuyla atılır; yakındaki canavarlar 3,5 saniye sersemler.
-  - **Duman tütsüsü:** elde vur tuşuyla yakılır; saldırgan canavarlar 2 dakika yaklaşamaz.
-  - **Kök özü iksiri:** içilir; +60 can, 10 dakika Şifa ve Canlılık.
-  - **Bıçaklar:** çantadaki en iyi bıçak avdan düşen deri, post ve etin bir fazla gelme şansını artırır (%15–35).
-  - **Golem feneri:** meşale yuvasına giren, hiç sönmeyen ve tutuşturmayan fener.
-  - **Işık fitili:** meşaleyi reçine gibi tazeler.
-  - **Ok kılıfı:** çantadayken yay %15 hızlı çekilir.
-  - **Deri çanta ve Kenevir torba:** bayılınca kaybedilen pay %20 yerine %10 ya da %15 olur.
-  - **Gübre:** ekili tarlayı sularken bir tane gider; o ürün %50 hızlı büyür.
-- **Tavşan derisi Kürk eldivende** (5 Tavşan derisi) ve **Közlenmiş kerevit** (+16 tokluk, 2 dakika Çeviklik) 4.12'deki gibi kalıyor.
-
-### Tasarım belgesi
-- Tarifler'e "İşe yarayan eşyalar" bölümü; Işık kaynakları tablosuna Golem feneri; Kupa panosuna tılsımlar; eşya dizininde bu eşyaların ne işe yaradığı; tarif ve eşya sayıları (815 tarif, 1.286 eşya) düzeltildi. 4.12'nin "Ayıklama" bölümü kalktı.
 
 ---

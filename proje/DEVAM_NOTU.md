@@ -1,3 +1,10 @@
+## v4.34 (22 Kasım 2026) · Halat yolları T6'dan; Tuncay ocakta halat satıcısı
+- Boğaç kararı (22 Kasım 2026, OYN-K-10). Belge: 37_magaralar halat bölümü, 30_act1:644, 20_sistemler:459.
+- v230 yan görev bloğu: `T6ok()`, `tOut(q)` (Tuncay, mağara dışında, T6 bitmiş); `tuncayOut()` artık kuzenlerin ocağı (FAMS b=3) yanında, Yahya'nın yerinden ≥36 px; `present` (dışarıda T6'dan itibaren, mağara içinde görev bitmeden), `homeOf`, `talk` (dışarıda: halat sözü + "Halat yolları"; mağara görevi dışarıda verilmez), `entsSQ` dışarıdaki Tuncay'a "?" çizmez. `v433halat` başlık yorumu.
+- Kayıt alanı değişmedi (`s.halat`).
+- Kontrol: chk 0 hata; Testçi'nin Kül öncesi kaydında (T6 bitmiş, mağara görevi alınmamış) Tuncay ocakta, F → "Halat yolları" → Kur çalıştı; görev bitmiş sayılınca da ocakta.
+- Geri alma: `git revert` bu commit.
+
 ## v4.33 (22 Kasım 2026) · E2E Kayalık Dağ: S1/S2 görev sırası, denge (ayı, vaşak, Devi, Reis ×3), yan görev canavarları, halat yolları
 - Kaynak: /home/claude/E2E_v431_kayalik/ (TEST_KAYALIK TK-01…12, ANALIZ_KAYALIK, BELGE_DEGISIKLIK). Boğaç kararları 22 Kasım 2026: S1, S2, S3, S4, S6, S7, S7b-A.
 - **Görevler (v186):** `landFill()` (yeni, `fillQ`'dan önce): bulunduğun biyomda "!" yok + biyomun bir görevi görülmemiş malzeme bekliyor → `mkFiller(['mat',…])`, `g`=o biyomun cadısı, `land:1`; `fillerNeeded` "!" ≥ 2 iken de `land` işini açar (S1). `refreshVis` `ALTG`: kişinin kendi işi C'de varsa E3 ona verilmez (S2). `nextStep`: CB3–CB8 + ağıl yok → "Ağıl kur (Usta Sinan)" (TK-04). `SPECW` + `whereTxt`: Yarasa gübresi/Sarkıt 📍 (TK-02). DATA: KA2 330, KA4 450, KH4 610; T6 `say` ve `sc`'ye Doğan'ın gece sözü; `blast`/`bridge` ders metinleri; rockfall toast'u ve eski v65 E3 metinleri "turba" (TK-03).
@@ -195,11 +202,3 @@
 - Kontrol: chk 0 hata; ACT 1'de tarifsiz/boşta malzeme yok (yalnız ACT 2'nin 8 cevheri + 3 düşmesi); eski kayıtta 2 Odun kaşığı + 1 Çam kaşığı + 1 Kızak → +234 Vio.
 
 **Geri alma:** `git revert` bu commit.
-
-## v4.13 (12 Kasım 2026) · 47 eşya geri; 21 işe yaramayan eşyaya iş
-- Boğaç: "şimdilik kaldırma bir şeyi, bir konuşalım sonra kaldırırsın; önerilerini uygula". **Kural:** bir eşyayı oyundan kaldırmadan önce Boğaç'la listeyi konuş.
-- `proje/Hammadde_prototip.html` ve `parts/` v4.11 halinden (v4.12 öncesi) geri alındı (`git checkout bb27934`); `v412ayik` bloğu yok, kaynaktaki silmeler geri geldi. 4.12'yi açan kayıtlarda o eşyalar Vio'ya çevrildi; geri dönmez.
-- Yeni `v413isle` bloğu (v411muzik'ten sonra): KOZ kerevit düzeltmesi + Kürk eldiven (Deri parçası → 5 Tavşan derisi); TL (5 tılsım, `useHouse` sarmalayıcısı, Kupa panosu `DEC.d` alt kenar taşları, STAT sarmalayıcısı, kayıt `s.tlsm`); BAIT (`fishRoll`), KNF (`dropRoll`), BAG (`deathDrop`), Golem feneri (GT torch, TORCHL 140, TORCHB 1e6, `tickTorch` doldurur, `madPack` tutuşturmayı geri alır), RESINS+Işık fitili, Gübre (`tickFarm`, `f.gub`/`f.gt`), Kök özü iksiri (c='Şifa', V46BUFF ılık 600, `eat` → enerji 600), Duman fişeği/tütsüsü (GT smoke/incense, `attack` ve `tickAnimals` sarmalayıcıları). Çekirdekte yay `bcd=BOW[h].cd*(Ok kılıfı?.85:1)`.
-- Kontrol: chk 0 hata; deneme betiğiyle her biri çalıştı (Dev yüreği asılınca can 100 → 180 Kor tacıyla birlikte; Bazalt bıçakla Geyik deri+et 400 avda 790 → 996; Deri çantayla 100 Dal'dan 10 kayıp).
-
-**Geri alma:** `git revert` bu commit (geri gelen 47 eşya da gider; 4.12'ye dönülür).

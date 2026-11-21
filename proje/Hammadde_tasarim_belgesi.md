@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 4.33** ile birebir (22 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 4.34** ile birebir (22 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -831,7 +831,7 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
   3. **Bütün tariflere yeteni bırak:** aynısını **henüz öğrenmediğin bütün tarifler** için yapar (şimdi açık olanlar ve ileride açılacaklar): ör. öğrenmediğin bütün tarifler toplam 300 Taş istiyorsa ve sende 305 Taş varsa yalnızca 5 Taş satılır.
   - **Ara parçalar da sayılır (v3.36, Boğaç):** bir tarif kendisi de bir tarif olan bir parça istiyorsa (ör. Sopa), çantanda o parçadan eksik kalan kadarı yapmak için gereken malzemeler de (Sopa'nın Dal'ı, Lif'i…) ayrılır, zincir boyunca (parçanın parçası da). Elindeki hazır parçalar bu ihtiyaçtan düşülür.
   - Hesap: bir tarif bir malzemeyi "şunlardan biri" diye istiyorsa (ör. herhangi bir odun) o adet o gruptaki her malzeme için ayrılır (fazla değil, eksik satılsın diye). Öğrendiğin tarifler sayılmaz. Satıştan sonra "N çeşidin fazlası satıldı · +X Vio" yazar; satılacak fazla yoksa "Tariflerin ihtiyacından fazla satılık bir şeyin yok." 
-- **Tuncay'ın halat yolları (22 Kasım 2026, Boğaç):** Kayalık Dağ'da Dağcı Tuncay'a Vio'yla üç kestirme kurdurulur: Giriş halatı 2.500, Kazan halatı 3.500, Geçit halatı 4.500 (Mağaralar › Rüzgâr Mağarası).
+- **Tuncay'ın halat yolları (22 Kasım 2026, Boğaç):** Kayalık Dağ'a varınca (T6 bitince) kuzenlerin ocağındaki Dağcı Tuncay'a Vio'yla üç kestirme kurdurulur: Giriş halatı 2.500, Kazan halatı 3.500, Geçit halatı 4.500 (Mağaralar › Rüzgâr Mağarası).
 - **Şanslı müşteri** satışta %5 (II ile toplam %12) + şans ihtimalle iki kat öder.
 - **Satın alma:** yalnızca Nazlı, yalnızca daha önce eline geçmiş **doğal** malzemeler (tohumlar dahil). Alış fiyatı temel fiyatın 2,6 ile 5,6 katı arası (pahalı ve tehlikeli bölge malzemesi daha pahalı).
 - Başka hiçbir kişi Vio’yla eşya satmaz; ustalar malzemeyi senden alıp **işçilik** ister: Dursun, Durmuş ve silahçı/zırhçı kuzenleri eşya fiyatının %15'i (en az 2), Sinan %20'si (en az 3), ACT 2 ustaları sabit ücret. Yükseltme zincirindeki parçada işçilik yalnız parçanın **kendi** fiyatından alınır (önceki kademe parçasının fiyatına işçilik istenmez; Aletler › Yükseltme zinciri). Alet bilemenin tam ücreti aletin değerinin onda biri, silahlarda beşte biri; ödenen, aletin ne kadar körelmiş olduğuna göre o kadarı (bkz. Aletler, dayanıklılık, kademe). Usta Sinan evleri de Vio’yla yapar.
@@ -2150,7 +2150,7 @@ Bir görev oyuncunun henüz bilmediği bir mekaniği istiyorsa, görev **önce k
 - **Görev alınmamışken** gerekli malzemeyle oraya gelen kişi **yalnızca bir kez** kendi kendine konuşur: "Buradan nasıl geçebilirim acaba? Kemal bilir belki." Onay penceresi açılmaz.
 - Köprü onarılınca Kemal'in **koşu dersi** başlar (eskiden olduğu gibi).
 - Ana köprü (Orman ↔ Bataklık) onarıldıktan sonra iki kısayol köprüsü (Çayır ↔ Kayalık Dağ) görevsiz, istenen an onay penceresiyle onarılır. Patlama bütün sıradağı çökertir.
-- **Kayalık Dağ'ın halat yolları:** Rüzgâr Mağarası'nın görevi bitince Dağcı Tuncay'a Vio'yla üç halat kurdurulur (Bataklık girişi ↔ kuzenlerin ocağı ↔ Firuze'nin kazanı ve Doğu geçidi); halata asılan karakter öbür uca kayar (Mağaralar › Rüzgâr Mağarası).
+- **Kayalık Dağ'ın halat yolları:** Kayalık Dağ'a varınca (T6 bitince; 22 Kasım 2026, Boğaç) kuzenlerin ocağının yanındaki Dağcı Tuncay'a Vio'yla üç halat kurdurulur (Bataklık girişi ↔ kuzenlerin ocağı ↔ Firuze'nin kazanı ve Doğu geçidi); halata asılan karakter öbür uca kayar (Mağaralar › Rüzgâr Mağarası).
 
 ### Kemal'in ayak işleri (boşluk doldurma)
 
@@ -3055,7 +3055,7 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 
 **Yan görev · Dağcı Tuncay — "Dağ Devi"** (ipi kopmuş bir dağcı): Dağ Devi uyandı, tavandan kaya yağıyor, yol kapandı. **4 Gümüş filizi** ister, bir çan döver; çanın sesiyle dev çıkar, yen. Ödül: **1.000 Vio · 1.060 XP**.
 
-**Tuncay'ın halat yolları (22 Kasım 2026, Boğaç: Kayalık Dağ'da para harcanacak bir yer, seçenek A):** görev bitince Tuncay mağaradan çıkar ve **Rüzgâr Mağarası'nın ağzının yanında** durur ("İpim koptu ama ekibim sağlam. Dağı halatla bağlarız, yeter ki parası çıksın."). Onunla konuşunca menüde **"Halat yolları"** satırı çıkar; açılan pencerede üç kestirme, yerleri ve fiyatları yazar. Vio'n yetiyorsa **Kur**'a basınca para gider, kısa bir yazı çıkar ("Tuncay'ın ekibi halatı gerdi.") ve halat o an yerinde belirir; yetmiyorsa satır soluk görünür, yanında "Vio yetmiyor" yazar, düğme basılmaz. Pencerenin yazısı akmadan bir anda görünür; yetmeyen satırın dışındaki düğmeler hiç soluk görünmez. Pencerenin dışına basmak pencereyi kapatır, bir şey satın alınmaz. Kestirmeler istenen sırayla, birbirinden bağımsız kurulur; her biri bir kez.
+**Tuncay'ın halat yolları (22 Kasım 2026, Boğaç: Kayalık Dağ'da para harcanacak bir yer, seçenek A):** **Kayalık Dağ'a varınca açılır (22 Kasım 2026, Boğaç):** Doğan'ın "Dağ yolu" görevi (T6) bitince Tuncay dışarıda, **kuzenlerin ocağının yanında** halat satıcısı olarak durur; Rüzgâr Mağarası'nın görevinden önce de sonra da yeri burasıdır. Mağara görevi bitmeden mağaranın içinde de görevini veren Tuncay vardır (görev mağarada alınır ve biter); ocaktaki Tuncay mağara görevini vermez, yalnız halat satar ve mağarayı anar ("Dağı halatla bağlarız, yeter ki parası çıksın. Rüzgâr Mağarası'nda ipimi kopardım; yolun oraya düşerse beni orada da bulursun."; görev bitince: "İpim koptu ama ekibim sağlam. Dağı halatla bağlarız, yeter ki parası çıksın."). Başında görev işareti yoktur. Onunla konuşunca menüde **"Halat yolları"** satırı çıkar; açılan pencerede üç kestirme, yerleri ve fiyatları yazar. Vio'n yetiyorsa **Kur**'a basınca para gider, kısa bir yazı çıkar ("Tuncay'ın ekibi halatı gerdi.") ve halat o an yerinde belirir; yetmiyorsa satır soluk görünür, yanında "Vio yetmiyor" yazar, düğme basılmaz. Pencerenin yazısı akmadan bir anda görünür; yetmeyen satırın dışındaki düğmeler hiç soluk görünmez. Pencerenin dışına basmak pencereyi kapatır, bir şey satın alınmaz. Kestirmeler istenen sırayla, birbirinden bağımsız kurulur; her biri bir kez.
 
 | Kestirme | İki ucu | Fiyat |
 |---|---|---|
