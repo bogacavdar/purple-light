@@ -1,3 +1,8 @@
+## v4.35 (22 Kasım 2026) · Ayak izleri (hava durumuna göre silinir, karda uzun kalır)
+- Belge: 20_sistemler › Hava, sıcaklık ve kar › "Ayak izleri" maddesi.
+- Kod: yeni blok `v435iz` (dosyanın sonunda, `v433halat`'tan sonra). İz resmi ComfyUI (Z-image Turbo + piksel LoRA, "iz_taban_b", ayakkabı tabanı izi) → /tmp/iz/sheet.py ile 8 yön × sol/sağ × normal/kar, 12×12 hücre, base64 PNG. `tickWeather` sarmalı adım ekler ve yaşlandırır, `drawGround` sarmalı karın üstüne çizer; `restore`/`startNew` temizler. Kayda yazılmaz, MAPV değişmez.
+- Geri almak için: `v435iz` bloğunu ve belgedeki maddeyi sil (kayıt alanı yok).
+
 ## v4.34 (22 Kasım 2026) · Halat yolları T6'dan; Tuncay ocakta halat satıcısı
 - Boğaç kararı (22 Kasım 2026, OYN-K-10). Belge: 37_magaralar halat bölümü, 30_act1:644, 20_sistemler:459.
 - v230 yan görev bloğu: `T6ok()`, `tOut(q)` (Tuncay, mağara dışında, T6 bitmiş); `tuncayOut()` artık kuzenlerin ocağı (FAMS b=3) yanında, Yahya'nın yerinden ≥36 px; `present` (dışarıda T6'dan itibaren, mağara içinde görev bitmeden), `homeOf`, `talk` (dışarıda: halat sözü + "Halat yolları"; mağara görevi dışarıda verilmez), `entsSQ` dışarıdaki Tuncay'a "?" çizmez. `v433halat` başlık yorumu.
@@ -195,10 +200,3 @@
 
 **Geri alma:** `git revert` bu commit.
 
-## v4.14 (12 Kasım 2026) · ayıklama: listesi konuşulan 44 eşya kalktı, 13 malzeme işe yarayan tariflere
-- Boğaç: "bu işlevsiz tarifleri kaldıralım ama bileşenlerinden işlevli farklı tarifler yaptıralım… her topladığımız şeyin mantıklı bir tarifte kullanılması lazım"; "mantıklı bir şey bulamıyorsak materyalleri değiştirmeliyiz" (gerek kalmadı: 13'üne de yer bulundu). Belge: Tarifler › Ayıklama.
-- Kaynakta silindi (v4.12'deki gibi, aynı betik `w/v412/rm.py`): çekirdek `db` JSON R/p/t, `tiers`, `addR`, `A['…']` ikonları, `drawIcon` dalları (kazıyıcı, kaşık, Kükürt çakmağı, kano/kızak/kütük salı), RAWM, v48 'İnci (tatlısu)', v406odun OLD kaşıkları, v409tek SW/VAR/NP satırları.
-- Yeni `v414tek` bloğu (v413isle'den sonra): `SW2` 13 satır (Pirit → Pençe kolye, Kum yerine), `NP` Pençe kolye 91, `GONE` 75 ad (eski kayıtta ödenir).
-- Kontrol: chk 0 hata; ACT 1'de tarifsiz/boşta malzeme yok (yalnız ACT 2'nin 8 cevheri + 3 düşmesi); eski kayıtta 2 Odun kaşığı + 1 Çam kaşığı + 1 Kızak → +234 Vio.
-
-**Geri alma:** `git revert` bu commit.

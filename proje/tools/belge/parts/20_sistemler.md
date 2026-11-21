@@ -363,6 +363,11 @@ Yıl **28 gündür**: her mevsim **7 gün** sürer ve sırayla döner. 1–7. g�
   - **Uyarılar:** üşüme ilk kez 15'i geçince bir kez "Üşüyorsun: elinde yanan bir meşale ya da bir ateşin yanı seni ısıtır." yazar (her kış bir kez); 75'i geçince "Donuyorsun! Hemen bir ateş bul." yazar.
   - Üşüme kayda yazılır.
 - **Grafik:** kar yağarken çizgi yerine kar taneleri yağar (tipide yoğun ve yana savrulur). Kar örtüsü 16 × 16 karelik parçalar halinde önceden çizilir ve yalnızca örtü %1 değişince yenilenir (karede en çok 2 parça, bellekte en çok 24 parça); örtü yokken hiç çizim yapılmaz.
+- **Ayak izleri (22 Kasım 2026, Boğaç: "karakterin adım attığı yerlere belli bir süre sonra silinecek adım izi ekle, silinme süresi hava durumuna göre değişsin, karda daha uzun kalsın"):** oyuncu yürürken ya da koşarken her adımda bastığı yere bir ayak izi bırakır (sol ve sağ sırayla, yürüdüğü yöne dönük; 8 yön). İzin resmi ComfyUI'de çizilmiş bot izidir.
+  - **Nereye düşer:** çimen, orman zemini, kum ve Bataklık çamuru. Suya, kayaya, Kül Diyarı'nın zeminine, mağaraya, evin içine ve arenaya iz düşmez. Binekteyken iz bırakılmaz.
+  - **Ne kadar kalır:** zemin karlıysa (kar örtüsü %30 ve üstü) **90 sn**, kar yağarken **60 sn** (yeni kar yavaşça örter); açık, bulutlu ya da sisli havada çamurda 40 sn, kumda 30 sn, öbür zeminlerde 20 sn; yağmurda her zeminde 8 sn, fırtınada 5 sn. İz, ömrünün son üçte birinde yavaşça silikleşip kaybolur. Hava değişirse var olan izlerin kalan süresi de yeni havaya göre kısalır (yağmur başlayınca izler hızla silinir).
+  - **Görünüş:** çimen ve orman zemininde koyu, kumda koyu bej, çamurda koyu kahve; karda izler daha büyük ve mavimsi gri gölgelidir (kar basılmış gibi).
+  - **Sınır:** dünyada aynı anda en çok 160 iz durur (en eskisi silinir); izler yalnızca görünen yerde çizilir ve kayda yazılmaz.
 
 #### Uyku
 

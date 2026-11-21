@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.35 · 22 Kasım 2026
+
+### Görsel
+- **Ayak izleri:** karakter yürürken ve koşarken her adımda bastığı yere bot izi bırakır (sol ve sağ sırayla, yürüdüğü yöne dönük). İz resmi ComfyUI'de çizildi. Çimende ve orman zemininde koyu, kumda bej, çamurda kahve; karda daha büyük ve mavimsi gri.
+- **İzin kalma süresi havaya göre:** karlı yerde 90 saniye (kar yağarken 60), çamurda 40, kumda 30, öbür yerlerde 20 saniye; yağmurda 8, fırtınada 5 saniyede silinir. İzler son anlarında yavaşça solar. Suya, kayaya, Kül Diyarı'na, mağaraya ve evin içine iz düşmez; binekteyken iz kalmaz.
+
+### Tasarım belgesi
+- Sistemler › Hava, sıcaklık ve kar › Ayak izleri.
+
+---
+
 ## Versiyon 4.34 · 22 Kasım 2026
 
 ### Oynanış
@@ -381,31 +392,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Tarifler'e "Törpüleme" bölümü; değişen tarifler ve malzemelerin kullanıldığı yerler güncellendi. Sistemler › El yapımı kategorili: yeni başlıklar.
-
----
-
-## Versiyon 4.14 · 12 Kasım 2026
-
-### Oynanış
-- **İşe yaramayan 44 eşya oyundan kalktı** (listesi konuşuldu):
-  - Süs: boncuklar, taçlar, yelpazeler, muskalar.
-  - Aletler: kazıyıcılar, çakmaklar, odun kaşıkları.
-  - Ateş: Don yağı mumu, Hasırotu meşalesi, Kozalak ateşi.
-  - Taşıtlar: Kızak, Kütük salı, Oyma kano.
-  - Kap ve eşyalar: sepetler, kaseler, Kum torbası, Eğrelti yatağı, Yosun yastık, Akrep kabuğu kalkanı ve diğerleri.
-  - Yalnız bunlar için yapılan Kristal parçası, Saz örgüsü ve Isırgan lifi de kalktı.
-- **Topladığın her malzeme işe yarıyor:** yalnız bu eşyalarda kullanılan 13 malzeme, kendi biyomlarında işe yarayan bir tarife girdi:
-  - Akrep kabuğu Kara çelik eldivende, Lav yılanı pulu Kara çelik çizmede, Yarasa kanadı Ejder miğferinde.
-  - Gölge pulu Mor kristal çizmede, Ayna ipeği Kristal ipek çizmede, Kristal boynuz Ametist miğferde.
-  - Kaya yarasası kanadı Gümüş eldivende, Pirit Pençe kolyede.
-  - Kristal çiçeği Ay otu iksirinde, Yıldız çiçeği Gölge iksirinde.
-  - Sarkıt Taş kasede, Çam kozalağı Meşalede, Eğrelti Meşe kabuk çizmede.
-- Pençe kolyenin fiyatı 57'den 91'e çıktı (Pirit girdi).
-
-### Kayıtlar
-- Eski kayıtlarda kalkan eşyalar çantadan, sandıktan, kemerden ve yerden kalkar; elindekiler son fiyatlarıyla Vio olarak ödenir.
-
-### Tasarım belgesi
-- Tarifler'e "Ayıklama" bölümü; tarif ve eşya tabloları, sayılar (1.239 eşya, 768 tarif) güncellendi.
-
----

@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 4.34</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 4.35</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 4.34 · 22 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Halat yolları Kayalık Dağ'a varınca açılır:</strong> Doğan'ın "Dağ yolu" görevi bitince Dağcı Tuncay kuzenlerin ocağının yanında durur ve halat yollarını satar (fiyatlar aynı: 2.500 / 3.500 / 4.500 Vio). Rüzgâr Mağarası'nı beklemek gerekmez; Tuncay'ın mağara görevi yine mağaranın içinde verilir ve biter, sonra da Tuncay ocakta kalır.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 4.35 · 22 Kasım 2026</h2><h3>Görsel</h3><ul><li><strong>Ayak izleri:</strong> karakter yürürken ve koşarken her adımda bastığı yere bot izi bırakır (sol ve sağ sırayla, yürüdüğü yöne dönük). İz resmi ComfyUI'de çizildi. Çimende ve orman zemininde koyu, kumda bej, çamurda kahve; karda daha büyük ve mavimsi gri.</li><li><strong>İzin kalma süresi havaya göre:</strong> karlı yerde 90 saniye (kar yağarken 60), çamurda 40, kumda 30, öbür yerlerde 20 saniye; yağmurda 8, fırtınada 5 saniyede silinir. İzler son anlarında yavaşça solar. Suya, kayaya, Kül Diyarı'na, mağaraya ve evin içine iz düşmez; binekteyken iz kalmaz.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 Vio</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -24822,6 +24822,48 @@ const vis=(x,y,m)=>x>cam.cx-m&&x<cam.cx+vw+m&&y>cam.cy-m&&y<cam.cy+vh+m;
 {const _rz=resetState;resetState=function(){const r=_rz.apply(this,arguments);try{ON=[false,false,false];keep=null;RD=null}catch(e){}return r}}
 window.__plHalat={open,get ends(){return E},get on(){return ON.slice()},get riding(){return !!RD},buy,ride};
 }).toString()+')()')}catch(e){try{window.__hamErr('v433halat: '+(e&&e.message||e))}catch(_){}}})();
+</script>
+<script id="v435iz">
+// v4.35 (22 Kasım 2026, Boğaç): belge Sistemler › Hava, sıcaklık ve kar › Ayak izleri. Every step on grass, forest floor, sand or mud leaves a
+// footprint (left and right in turn, turned to one of 8 ways; the picture is a ComfyUI print, cut to 12 × 12 cells: rows left/right, then the
+// bigger snow pair). A print lasts by the ground and the weather of the moment (snow 90 s, while snowing 60, mud 40, sand 30, else 20,
+// rain 8, storm 5) and fades in its last third. At most 160; drawn only in view, on top of the ground and the snow cover; not saved.
+// Undo: delete this block.
+(function(){if(!window.__plEval)return;try{window.__plEval('('+(function(){
+'use strict';
+const C=12,SRC='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAwCAYAAADuFn/PAAADXUlEQVR4Xu2bDW7bMAyFk115O0Z35hQMypZRSL5HSbZcQB8wFKhliRR/LLLa/fF43Dbr+LNu6Y2wDbCYzAAft9tN8hObo3Ss/JR3V6Fyr5RBERlyOeQbEPyzZOPkWctHMi+ay3uuMO9W5Gbms2M8PYVIXyjLPfkIW8+/A3duowSNr1KZXzzu79cCVTl0nei9LBt478A9nPENaBfJlLZprZKy2jmzjdDNr5LNqfwPJo1+b3HnZyJAJv8XLCwgr4FCFLwVelTzzcqcQalEVw/p/EwEII8SJRlFBfUUxmPO4IwPdbo/mQGO2CyJJBFIf6pwrAFlnMjFGJAZ08LK0YNriCwFbU6ASUGbA9kGWMw2wGK2ARYTGUCLpJ5jGu5/HM9V+kFt4fl+7ApaEUzB49H73mx65KgUlCy2LaK8HHXPTkHWM20roq0WLZWObAtTC1Tmr7ZSsg7Ck5kRwJT01WaWMOLNTx3fzPIDI3PrDBHZOqEeUQQwnpMJFgnT08yyc1W8tQraQI9Kt8Cdf1YEHJE/MwOzDcJKBPQYYBgUAWwkuH2OiVQ3h5Vb+0rV+aexe0GLOfsUtGnYBljMNsBiIgNUr6RcjZFWyqlEBrB/hmT7QbDv0cHoRqI/p7bY6nwG+OKBc39H7ri0oPszI+9kd4iqcqic8D4OoXc2hr33BOXPLkEpzGIe7dyekSzeOh5VeZDzyPNWNlYWtMHwwlqvJ2S3xaKbYgyMPNlNNC8CMoNFTsE4Zq/Tvcgzei2R8RxvUyIieSoprjKW2USVqSeCvehSnvOOGgClEBT+qlQ1rQiM7ChaYIpIvhWMzFmmmG4AtNmjz1sPZKMlW3fUgao6WR2e70a9oJELrldAu7Ooa7qc3YxbzG5FLGYbYDFHXEu5Ar+ml+UZwPZ+Kr2UI3tB2R/zPSpyW2YbrqsX1HM2liMVKst7ztS9x0QLe1Rk5R+pXd5qh2xTKkow1ScD6h+xxc+o7F6h11MJe7zoyFSTSGlPsFnNLC+yUHXLFmxRm4D5H48RyIGU73GMAdhKUokU6PGgrI/EyI6MVUm3DGx1/r1HjBIVA7D51nofirDIU1llvXQSGRbJX8n/KBqm9oKYTUTKoeeV1MJ+vNlxSDb2+du3Cd2Mu3wvJeDX9LJ2L2gxn0fU+BvSLHPkAAAAAElFTkSuQmCC';
+const TINT={g:'rgba(30,42,18,.5)',s:'rgba(104,78,44,.62)',m:'rgba(52,32,16,.55)',n:'rgba(96,118,150,.62)'};
+const SP={};let ready=false;
+{const im=new Image();im.onload=()=>{try{for(const k in TINT){const c=document.createElement('canvas');c.width=im.width;c.height=im.height;const g=c.getContext('2d');
+  g.drawImage(im,0,0);g.globalCompositeOperation='source-in';g.fillStyle=TINT[k];g.fillRect(0,0,c.width,c.height);SP[k]=c}ready=true}catch(e){}};im.src=SRC}
+const P=[];let ph=null,lx=0,ly=0,side=0;
+const cover=()=>window.__plSnowCover?window.__plSnowCover():0;
+const snowNow=()=>!!(window.__plSnowing&&window.__plSnowing());
+function life(k){if(k==='n'){if(cover()>=.3)return snowNow()?60:90}
+  if(weather.k==='fırtına')return 5;if(raining())return 8;
+  return k==='m'?40:k==='s'?30:20}
+function blocked(){return onTitle||window.__plArena||sailing||(window.__plCave&&window.__plCave.cur)||roomSafe()||
+  (window.__plPets&&window.__plPets.ride)||(window.__plHalat&&window.__plHalat.riding)}
+function groundAt(x,y){const tx=Math.floor(x/T),ty=Math.floor(y/T);if(tx<0||ty<0||tx>=W||ty>=H)return '';const i=ty*W+tx,t=tiles[i];
+  if(t>=3||BIO[i]===4)return '';if(cover()>=.3)return 'n';if(BIO[i]===2&&MUD[i])return 'm';return t===2?'s':'g'}
+function step(){const k=Math.floor(player.step*10/Math.PI);if(ph===null){ph=k;lx=player.x;ly=player.y;return}
+  if(k===ph)return;ph=k;if(!player.mv||blocked()){lx=player.x;ly=player.y;return}
+  let dx=player.x-lx,dy=player.y-ly;lx=player.x;ly=player.y;if(Math.abs(dx)+Math.abs(dy)<.5){dx=player.face.x;dy=player.face.y}
+  const a=Math.atan2(dx,-dy),d=((Math.round(a/(Math.PI/4))%8)+8)%8;side^=1;
+  const n=Math.hypot(dx,dy)||1,ox=-dy/n*(side?1.6:-1.6),oy=dx/n*(side?1.6:-1.6),x=player.x+ox,y=player.y+2+oy,g=groundAt(x,y);if(!g)return;
+  if(P.length>=160)P.shift();P.push({x,y,d,s:side,g,a:0})}
+{const _tw=tickWeather;tickWeather=function(dt){const r=_tw.apply(this,arguments);try{if(onTitle||window.__plArena)return r;step();
+  const t=dt||0;for(let i=P.length-1;i>=0;i--){const p=P[i];p.a+=t;if(p.a>=life(p.g))P.splice(i,1)}}catch(e){}return r}}
+{const _dg=drawGround;drawGround=function(x0,y0,x1,y1){const r=_dg.apply(this,arguments);
+  if(!ready||!P.length||blocked())return r;
+  try{const X0=x0*T-8,Y0=y0*T-8,X1=x1*T+8,Y1=y1*T+8,ga=ctx.globalAlpha;
+    for(const p of P){if(p.x<X0||p.x>X1||p.y<Y0||p.y>Y1)continue;const L=life(p.g),f=Math.max(0,Math.min(1,(L-p.a)/(L/3)));if(f<=0)continue;
+      const big=p.g==='n',row=(big?2:0)+p.s;ctx.globalAlpha=ga*f;ctx.drawImage(SP[p.g],p.d*C,row*C,C,C,Math.round(p.x-C/2),Math.round(p.y-C/2),C,C)}
+    ctx.globalAlpha=ga}catch(e){}return r}}
+{const _rs=restore;restore=function(d){P.length=0;ph=null;return _rs.apply(this,arguments)}}
+{const _st=startNew;startNew=function(){P.length=0;ph=null;return _st.apply(this,arguments)}}
+window.__plIz={get list(){return P},life};
+}).toString()+')()')}catch(e){try{window.__hamErr('v435iz: '+(e&&e.message||e))}catch(_){}}})();
 </script>
 </body>
 </html>
