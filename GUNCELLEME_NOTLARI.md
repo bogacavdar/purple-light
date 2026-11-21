@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.32 · 21 Kasım 2026
+
+### Görsel
+- **Karakterler baştan, iki ana karakterle:** oyuncu ve sevdiği kişi artık iki temel çizimden oluşuyor, bir erkek ve bir kadın. İkisi de gerçekçi oranlı (büyük kafalı değil) ve 8 yönde aynı kişi: ComfyUI'de tek resimden çizilip video modeliyle olduğu yerde döndürüldü, boy, kafa ve kıyafet her yönde aynı.
+- **Adım atarak yürüyüş:** her yönde 4 adım karesi; gövde zıplamaz, bacaklar adımlar.
+- **Giyilenler üstüne:** elbise, saç biçimi (at kuyruğu, örgü, topuz, iki kuyruk, uzun, dikleştirilmiş, dağınık, yana taranmış, kel), bıyık, sakal, buff, gözlük, şapka ve toka bu iki karakterin üstüne giyiliyor. Ten, saç, üst, alt ve göz rengi seçtiğin renkte.
+
+### Tasarım belgesi
+- Sistemler › Yeni ikonlarla › "Oyuncunun karakteri": iki temel çizim, gerçekçi oran, giydirilen katmanlar.
+
+---
+
 ## Versiyon 4.31 · 19 Kasım 2026
 
 ### Arayüz
@@ -374,45 +386,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Tarifler'e "İşe yarayan eşyalar" bölümü; Işık kaynakları tablosuna Golem feneri; Kupa panosuna tılsımlar; eşya dizininde bu eşyaların ne işe yaradığı; tarif ve eşya sayıları (815 tarif, 1.286 eşya) düzeltildi. 4.12'nin "Ayıklama" bölümü kalktı.
-
----
-
-## Versiyon 4.12 · 12 Kasım 2026
-
-### Oynanış
-- **İşe yaramayan 47 eşya oyundan kalktı:** yapılabilen ama hiçbir işe yaramayan eşyalar (takılmayan, kullanılmayan, yenmeyen, kurulmayan) gitti:
-  - Süsler: boncuklar, taçlar, yelpazeler, üç muska/tılsım, Boynuz tarak, Tatlısu incisi, Cilalı kristal, Sarkıt parçası, Balık pulu.
-  - Dört kazıyıcı, iki çakmak.
-  - Don yağı mumu, Hasırotu meşalesi, Kozalak ateşi.
-  - Kızak, Kütük salı, Oyma kano.
-  - Dört odun kaşığı, Midye kabuğu kaşık, Boynuz kupa, sepetler, Kum torbası, Sünger taşı bileği, Eğrelti yatağı, Yosun yastık, Akrep kabuğu kalkanı, iki kase.
-  - Onlar için yapılan Kristal parçası, Saz örgüsü ve Isırgan lifi.
-- **Boşta kalan malzemeler işe yarıyor:** yalnız bu eşyalarda kullanılan malzemeler kendi biyomlarındaki zırh, iksir ve aletlerin tarifine girdi:
-  - Kürk eldiven artık 5 Tavşan derisiyle yapılıyor.
-  - Akrep kabuğu Kara çelik eldivende, Lav yılanı pulu Kara çelik çizmede, Yarasa kanadı Ejder miğferinde.
-  - Gölge pulu Mor kristal çizmede, Ayna ipeği Kristal ipek çizmede, Kristal boynuz Ametist miğferde.
-  - Kaya yarasası kanadı Gümüş eldivende, Pirit Gümüş çizmede.
-  - Kristal çiçeği Ay otu iksirinde, Yıldız çiçeği Gölge iksirinde.
-  - Sarkıt Taş kasede, Çam kozalağı Meşalede, Eğrelti Meşe kabuk çizmede.
-- **Közlenmiş kerevit:** kerevit eti artık kamp ateşinde közlenebiliyor; yiyince +16 tokluk ve 2 dakika Çeviklik (hareket +%12) veriyor.
-
-### Kayıtlar
-- Eski kayıtlarda kalkan eşyalar çantadan, sandıktan, kemerden ve yerden kalkar; elinde olanlar son fiyatlarıyla Vio olarak ödenir.
-
-### Tasarım belgesi
-- Tarifler'e "Ayıklama" bölümü; tarif ve eşya tabloları, sayılar (1.239 eşya, 768 tarif) güncellendi.
-
----
-
-## Versiyon 4.11 · 12 Kasım 2026
-
-### Oynanış
-- **Müzik aletleri çalınıyor:** 12 müzik aletinin hepsi eline alınabiliyor (kemere tak, kemerden seç). Eldeyken vuruş tuşu (tık, Vur, Boşluk) aletin sıradaki notasını çalıyor, başının üstünde bir ♪ çıkıyor; art arda basınca aletin kendi ezgisi çalınıyor.
-
-### Ses
-- Her aletin kendi sesi var: Kemik flüt tiz bir flüt, Kamış flüt nefesli bir kamış, Kök flütü pes ve tahtamsı, Pişmiş kil düdük okarina gibi, Boynuz borazan pes bir boru, Kor zurnası genizden ve titrek bir zurna, Deri davul tok bir "düm-tek", Yarasa zarı davul daha kuru, Semender derisi tef zilli, Yankı çanı yankılanan, Gümüş çan berrak bir çan, Kristal zil cam gibi parlıyor.
-
-### Tasarım belgesi
-- Sistemler'e "Müzik aletleri" bölümü; Eşya dizininde aletlerin türü "çalınır".
 
 ---

@@ -1,3 +1,10 @@
+## v4.32 (21 Kasım 2026) · İki temel karakter (erkek, kadın), gerçekçi oran, 8 yön aynı kişi; saç/elbise/aksesuar üstüne giydirilir
+- `v428kahraman` bloğu yeniden yazıldı (aynı id). `HD.e`/`HD.k` = {CW, CH (54), c, m, A}; tek sayfa, satırlar `S,SE,E,NE,N,NW,W,SW` (sağa bakanlar kendi çizimi), sütun 0 duruş, 1–4 adım. Maske R=bölüm×30 (1 ten, 2 saç, 3 üst, 4 alt, 6 göz). `A[yön]`: sk, l, r, ey, ex, my, ch, nk, fl/fr/fx (elle ölçüldü, sağa bakanlarda aynalı koordinat, `mir:1`), hp (kalça), bl/br (kalçada gövde eni), hy, span.
+- Giydirme `acc()`: elbise (hp−2…hp+10 etek, bacaklar ten), saç biçimi ekleri `hair()`, bıyık, sakal, buff, gözlük, şapka, toka; yön başına bir katman çizilip 5 kareye basılır, `mir` satırlarına aynalı. Kel: saç bölümü ten rengine boyanır. Kadında Kısa/Küt/Uzun temel saç.
+- UI tuvalleri: `cprev` 54×54, `pfchar` 48×60, `ieqc` 44×56, `dollc`/`ardoll` 48×60; konuşma resmi başın 12×13 bölgesi 2×.
+- Üretim: ComfyUI Z-Image Turbo + piksel LoRA ile önden temel resim (erkek `base_e_00002`, kadın `base_k_00003`); Wan 2.2 TI2V 5B ile 360° döndürme (81 kare), yön kareleri seçildi (erkeğin arka/arka-çaprazı kolları yanda kalan ayrı döndürmeden). Yürüme kareleri yüksek çözünürlükte bacakların kalçadan eğilmesi/kaldırılmasıyla, sonra kutu küçültme + ortak 20 renk. Bölümler (ten, saç, üst, alt, bot) yüksek çözünürlükte renk + konumla ayrıldı. Araçlar oturum içi (/tmp/hero/build5.py, walkhr.py, lab.py), depoya girmedi.
+- Geri alma: `git revert` bu commit.
+
 ## v4.31 (19 Kasım 2026) · Telefonda yaratma ekranı: Geri/Başla düğmeleri açıklama yazısının altında kalmasın
 - `v63-css`'in arkasına, `(pointer:coarse) and (orientation:landscape) and (max-height:520px)` için: `.v63rh` gizli, `#cprev` 100 px, Döndür/Rastgele 34 px, `.cnote` 10 px, `#creator .tmenu.row` `position:relative;z-index:5`. Yapışkan önizleme bloğu kısaldı, düğmeler üstte. Playwright 844×390 ve 740×360'ta `elementFromPoint` Başla'yı veriyor.
 - Geri alma: `git revert` bu commit.
@@ -181,18 +188,3 @@
 - Kontrol: chk 0 hata; deneme betiğiyle her biri çalıştı (Dev yüreği asılınca can 100 → 180 Kor tacıyla birlikte; Bazalt bıçakla Geyik deri+et 400 avda 790 → 996; Deri çantayla 100 Dal'dan 10 kayıp).
 
 **Geri alma:** `git revert` bu commit (geri gelen 47 eşya da gider; 4.12'ye dönülür).
-
-## v4.12 (12 Kasım 2026) · ayıklama: 47 işe yaramayan eşya kalktı, Tavşan derisi Kürk eldivende, Közlenmiş kerevit
-- Boğaç: "tavşan derisini bir zırh setine yedirelim; közlenmiş kerevit kerevit etinin pişirilmesinden oluşsun ve belli statlar vererek yenilebilsin; kaldırılabilir dediklerini kaldırabiliriz". Belge: Tarifler › Ayıklama.
-- Kaynakta silindi (çekirdek `db` JSON: R/p/t, `tiers` haritası, `addR`, `A['…']` ikonları, `drawIcon` dalları: kazıyıcı, kaşık, Kükürt çakmağı, kano/kızak/kütük salı; RAWM'dan Cilalı kristal; v48 RENAMED'den 'İnci (tatlısu)'; v406odun OLD'dan 22 "X kaşığı"; v409tek SW'den Sert odun kaşığı satırı, VAR'dan 5 varyant, NP'den kalkanlar).
-- Yeni `v412ayik` bloğu (v411muzik'ten sonra): `KOZ['Kerevit eti']='Közlenmiş kerevit'` (çekirdek "Közlenmiş kerevit eti" arıyordu), V46FOOD (16) ve V46BUFF ['hız',120]; `SW2` (14 satır, v409 biçimi); `GONE` (75 ad: kalkanlar + eski ağaç kaşıkları + varyantlar, fiyatlarıyla) eski kayıtta silinir/ödenir.
-- Kontrol: chk 0 hata; fiyatsız eşya yok; ACT 1'de tarifsiz/boşta malzeme yok (ACT 2'nin 8 cevheri ve 3 düşmesi bekliyor: Boğaç "ACT 2'ye sonra bakacağız"); eski kayıtta 2 Odun kaşığı + 1 Çam kaşığı + 1 Kızak → +234 Vio.
-
-**Geri alma:** `git revert` bu commit (kaynaktaki silmeler ve belge birlikte döner).
-
-## v4.11 (12 Kasım 2026) · müzik aletleri çalınır
-- Boğaç: "müzik aletlerini de çalınabilir yap, uygun seslerde, eline alındığında çalınsın". Belge: Sistemler › Müzik aletleri.
-- Yeni `v411muzik` bloğu (v410taki'den sonra): `INS` (ad → ses, ezgi MIDI, ♪ rengi); her alete `GT` girdisi (kind 'music', dur 1e6: kemere takılır); `attack` sarmalayıcısı: eldeki alet çalınır (atkCd 0,18/0,24/0,3), `audio.synth` ile yerinde ses (flüt/kamış/kök/okarina: `blow`; borazan, zurna, davul, tef, çan, yankı, zil); `qc('play:'+ad)`. `hGrp`'ta music → 8. `window.__plMusic`.
-- Kontrol: chk 0 hata; 12 alet OfflineAudioContext'te sesli (hatasız); eldeyken vuruş çalıyor, sallamıyor.
-
-**Geri alma:** `git revert` bu commit.
