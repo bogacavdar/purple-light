@@ -8,6 +8,45 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.33 · 22 Kasım 2026
+
+### Oynanış
+- **Kayalık Dağ'da kuzenlerin görevleri görünür:** bulunduğun biyomda hiç "!" yoksa ve o biyomun bir görevi henüz görmediğin bir malzemeyi bekliyorsa, o malzemeyi biyomun cadısı buldurur (Kayalık Dağ'da Cadı Firuze: ör. "Kardelen ve Lavanta getir"). Bu iş başka biyomlardaki "!"lerden önce gelir ve "en çok 2 !" sayısına girmez. Malzemeyi görünce Firuze'nin, Kaya'nın ve Kayhan'ın görevleri açılır.
+- **Kişinin kendi işi önce:** Firuze'nin ya da Doğan'ın kendi açık görevi varsa önce onu verir; "Doğu geçidini aç" o sırada Kemal'de bekler.
+- **Yolcu Yahya ve Dağlı Zehra** artık Kayalık Dağ'a varınca (Doğan'ın "Dağ yolu" görevi bitince) açılır; öbür Kayalık yan görevleri geçit patlayınca.
+- **Dağcı Tuncay'ın halat yolları:** Rüzgâr Mağarası'nın görevi bitince Tuncay mağaranın ağzında durur; ona "Halat yolları" de: Giriş halatı (Bataklık girişi ↔ kuzenlerin ocağı) 2.500, Kazan halatı (ocak ↔ Firuze'nin kazanı) 3.500, Geçit halatı (ocak ↔ Doğu geçidi) 4.500 Vio. Kurulan halatın direğinde F'ye bas (telefonda etkileşim düğmesi): koşu hızının 3 katıyla öbür uca kayarsın, canavarlar sana değmez. Direğin dibinde yerde eşya varsa F önce onu alır.
+- **Canlılar:** Mağara ayısı 2.100 can · 115 hasardan 1.500 · 85'e indi. Vaşak 95'ten 85 hasara, kanaması 4'ten 3'e indi.
+- **Reisler:** Timsah, Mağara ayısı ve Yaban öküzünün Reisi de türünün 3 katı canla gelir (Timsah Reisi 3.000, Mağara Ayısı Reisi 4.500, Yaban Öküzü Reisi 2.580).
+- **Rüzgâr Mağarası** artık Seviye 24'te açılır; Dağ Devi 6.000 · 125'ten 4.000 · 70'e indi (ödülü aynı).
+- **Görev ödülleri:** Kaya'nın "Kuvars kazma"sı 330, "Gümüşün sesi" 450, Kayhan'ın "Gümüş pullar"ı 610 Vio (dövdürmenin işçiliğinden az değil).
+- **Yan görev canavarları her zaman saldırır:** nötr türden olsalar da (Muflon, Dağ keçisi) kovalayıp saldırırlar ve uzaklaşınca vazgeçmezler; "Güçlüden çekinme" de onları durdurmuyor (Yahya'nın yolunda kurt uzakta dolaşıp Yahya'yı "Korkuyorum!" diye bekletmiyor). Yahya'nın yolunda ve Gözcü Bora'nın yuvasında artık Kayalık'ın kendi canlıları çıkar: Muflon ve Dağ keçisi.
+- **Çelik külçesi kolaylaştı:** Ateş tuğlası 2 Beyaz kil + 2 Kum + 1 Pirit, Sağlam odun kömürü ateşini 1 Pirit'ten alır (ikisi de artık Ateş istemiyor). Çelik külçesinin fiyatı aynı (446).
+- **Kuvars sivri ucu** 8 yerine 3 Yontulmuş kuvars ister (fiyatı 344).
+- Avcı Doğan "Dağ yolu"nu verirken uyarır: "Bataklığı gece geçme; kurtlar da timsahlar da karanlıkta çıkar."
+
+### Düzeltmeler
+- "Doğu geçidini aç" kartında Yarasa gübresinin yeri artık "Mağara ağızlarının önünde çıkar (her biyomda)" (önce "Bütün ada" yazıyordu).
+- Kaya patlatıcı dersi doğru malzemeleri (yarasa gübresi, turba, tuz, göl çömleği) ve doğru kazmayı (kuvars ya da çelik) söylüyor; kaya yığınına ve köprüye **F** ile basılır.
+- Evcilleştirme görevlerinde (Davut'un 3.–8. işleri) dünyada ağıl yoksa kart önce "Ağıl kur (Usta Sinan)" adımını gösteriyor; 📍 satırı ve ok da Usta Sinan'ı gösteriyor.
+- Evcilleştirirken F (etkileşim) ile "Yere bırak" işlemiyordu (yalnız tıklayınca oluyordu); artık F ile de yiyecek yere bırakılıyor.
+- Yemek penceresinde Nilüfer çorbası, Gelincik, Çöl inciri ve Palamut unu artık "Balıklar" sekmesinde değil.
+
+### Görsel
+- Halat direği (makaralı ahşap direk), aralarında gerili halat ve halatta asılı kayan karakter.
+
+### Arayüz
+- Tuncay'ın halat penceresi bir anda açılır; yalnız Vio'su yetmeyen satır soluk ve yanında "Vio yetmiyor" yazar.
+- Kurulu halatlar büyük ve küçük haritada kesik açık mavi çizgi (büyük haritada kalın, koyu kenarlı), uçlarda direk simgesiyle görünür; büyük haritada üzerine gelince adı yazar, dokununca ok en yakın direği gösterir.
+
+### Kayıtlar
+- Hangi halatların kurulduğu kayda yazılır; eski kayıtlarda hiçbiri kurulu değildir. Eski kayıtlar sorunsuz açılır.
+
+### Tasarım belgesi
+- ACT 1 › Kayalık Dağ (canlılar, test notu, kural 6–7 ve 10), Canavarlar › Reisler, Mağaralar › Rüzgâr Mağarası (Sv 24, Dağ Devi, halat yolları), Yan görevler (açılış sırası, Yahya, Bora), Tarifler, Aletler (Kayalık Dağ'ın emeği), Eşyalar, Kişiler (kuzen silah tablosu, Doğan), Sistemler (Önce ağıl, Güçlüden çekinme, Ekonomi).
+- Eşyalar listesindeki silah hasarı oyunla eşitlendi: Gümüş kılıç 52, Ametist kılıcı 81, Kuvars mızrak 46, Ejder kılıcı 65, Granit savaş çekici 28, Obsidyen mızrak 72, Çakmaktaşı mızrak 17.
+
+---
+
 ## Versiyon 4.32 · 21 Kasım 2026
 
 ### Görsel

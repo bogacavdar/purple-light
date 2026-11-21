@@ -166,14 +166,14 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 | Granit savaş çekici | Kılıç (silah) | 28 hasar · 190 kullanım | 1 Tunç savaş çekici, 4 Granit, 1 Sert odun sapı, 3 Yaban domuzu dişi, 1 Sinir kirişi, 1 Bileme macunu | Silahçı Durdu (Orman) ve üstü | 1.463 |
 | Meşe kabuk zırh | Zırh · Gövde | +27 savunma · direnç: kanama %15 | 1 Tunç zırh, 3 Meşe kabuğu, 1 Deri parçası, 3 Kirpi dikeni, 1 Sinir | Zırhçı Duran (Orman) ve üstü | 3.791 |
 | Ceviz kabuğu miğfer | Zırh · Baş | +13 savunma | 1 Tunç miğfer, 6 Ceviz, 2 Ceviz kabuğu, 1 Deri parçası, 2 İri diken, 2 Taş | Zırhçı Duran (Orman) ve üstü | 1.409 |
-| Timsah dişi kılıcı | Kılıç (silah) | 38 hasar · 140 kullanım | 1 Demir kılıç, 4 Demir külçesi, 3 Timsah dişi, 1 Sağlam odun sapı, 1 Deri parçası, 1 Zehir yağı | Silahçı Ali (Bataklık) ve üstü | 3.092 |
+| Timsah dişi kılıcı | Kılıç (silah) | 38 hasar · 240 kullanım | 1 Demir kılıç, 4 Demir külçesi, 3 Timsah dişi, 1 Sağlam odun sapı, 1 Deri parçası, 1 Zehir yağı | Silahçı Ali (Bataklık) ve üstü | 3.092 |
 | Timsah pulu zırh | Zırh · Gövde | +45 savunma · direnç: kanama %40, metal | 1 Demir zırh, 3 Demir cevheri, 2 Timsah derisi, 1 Bataklık kurdu postu, 1 Sinir | Zırhçı Veli (Bataklık) ve üstü | 5.545 |
-| Gümüş kılıç | Kılıç (silah) | 52 hasar · 160 kullanım | 1 Çelik kılıç, 4 Gümüş külçesi, 3 Kuvars, 1 Güçlü odun sapı, 2 Kartal pençesi, 1 Bileme macunu | Silahçı Kaya (Kayalık Dağ) ve üstü | 5.035 |
+| Gümüş kılıç | Kılıç (silah) | 52 hasar · 320 kullanım | 1 Çelik kılıç, 4 Gümüş külçesi, 3 Kuvars, 1 Güçlü odun sapı, 2 Kartal pençesi, 1 Bileme macunu | Silahçı Kaya (Kayalık Dağ) ve üstü | 5.035 |
 | Gümüş pullu zırh | Zırh · Gövde | +60 savunma · direnç: kanama %35, metal | 1 Çelik zırh, 3 Gümüş cevheri, 2 Demir cevheri, 1 Ayı pençesi, 1 Mağara ayısı derisi | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 7.160 |
 | Kartal tüyü miğfer | Zırh · Baş | +31 savunma · metal | 1 Çelik miğfer, 6 Kartal tüyü, 2 Gümüş cevheri, 2 Öküz boynuzu, 1 Gri vaşak postu, 1 Rüzgâr taşı | Zırhçı Kayhan (Kayalık Dağ) ve üstü | 2.610 |
-| Ametist kılıcı | Kılıç (silah) | 81 hasar · 240 kullanım | 1 Mor kristal kılıç, 5 Ametist, 1 Kadim odun sapı, 2 Gölge dişi, 1 Mor zehir | Silahçı Kudret (Mor Kristal Vadisi) ve üstü | 15.956 |
+| Ametist kılıcı | Kılıç (silah) | 81 hasar · 520 kullanım | 1 Mor kristal kılıç, 5 Ametist, 1 Kadim odun sapı, 2 Gölge dişi, 1 Mor zehir | Silahçı Kudret (Mor Kristal Vadisi) ve üstü | 15.956 |
 | Kristal ipek zırh | Zırh · Gövde | +94 savunma · direnç: kanama %25, yanık %25, zehir %25 | 1 Mor kristal zırh, 3 Kristal ipek, 2 Ametist, 3 Demir cevheri, 1 Deri parçası | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 17.745 |
-| Işık pulu eldiven | Zırh · El | +18 savunma · direnç: zehir %35 | 1 Mor kristal eldiven, 4 Işık pulu, 2 Kristal, 1 Deri parçası, 3 Lif | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 7.186 |
+| Işık pulu eldiven | Zırh · El | +29 savunma · direnç: zehir %35 | 1 Mor kristal eldiven, 4 Işık pulu, 2 Kristal, 1 Deri parçası, 3 Lif | Zırhçı Kuvvet (Mor Kristal Vadisi) ve üstü | 7.186 |
 
 #### Hikâyeler ve ailenin sahnesi
 
@@ -213,6 +213,7 @@ Hepsi kazanda öğrenilir (tarifi tanışınca kitaba yazılır) ve yalnızca o 
 
 - İlk konuşmada **Kamış çizme** (6 Kamış + 3 İp + 2 Yosun, el yapımı; bataklık çamurunda yavaşlamayı önler) ve **Panzehir** (3 Bataklık otu + 1 Zehir bezesi + 2 Su) tariflerini yazar.
 - Demir madeni, Kara ejder ve mor ışık hakkında bilgi verir; eşinin kaçırılışını gördüğünü anlatır.
+- T6 (Dağ yolu) sözünde uyarır: "Bataklığı gece geçme; kurtlar da timsahlar da karanlıkta çıkar."
 - Hikâyesi: oğlu Ayaz.
 
 

@@ -41,12 +41,13 @@
 
 ### Açılış sırası (v3.40)
 
-Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş ana görev sayısı** ve gerekiyorsa belli bir ana görev (E2 köprü, E3 Doğu geçidi, E4 izler, E5 Kıyıdaki duman, E6 Saliha'nın çorbası). Koşulu tutan ilk iki bitmemiş görev açıktır.
+Her satır o biyomun sırasıdır; parantezde açılma koşulu: **bitirilmiş ana görev sayısı** (o ana kadar bitirilen bütün "!" görevleri, kuzenlerinki dahil; Kemal'in ve cadıların ayak işleri sayılmaz; seviye değildir) ve gerekiyorsa belli bir ana görev (E2 köprü, E3 Doğu geçidi, E4 izler, E5 Kıyıdaki duman, E6 Saliha'nın çorbası, T6 Kayalık Dağ'a varış). Koşulu tutan ilk iki bitmemiş görev açıktır.
 
 - **Çayır:** Bulut (2) → Toprak (4) → Gülsüm (6) → Ozan (9) → Rıfat (12) → Mavi (14 · E3)
 - **Orman:** Bekir (8) → Kahraman Dede (10) → Tarık (13) → Saadet (16) → Lale (19) → Ela (22)
 - **Bataklık:** Şifa (E2) → Cemile (18 · E2) → Kartal (21 · E2) → Hayali (23 · E3) → Remzi (26 · E3) → Kader (30 · E3)
-- **Kayalık Dağ:** Yahya (E3) → Zehra (24 · E3) → Bora (27 · E3) → Hatice Nine (30 · E3) → Sükûn (33 · E3) → Işıl (36 · E3)
+- **Kayalık Dağ:** Yahya (T6) → Zehra (24 · T6) → Bora (27 · E3) → Hatice Nine (30 · E3) → Sükûn (33 · E3) → Işıl (36 · E3)
+  - Yahya ve Zehra Kayalık Dağ'a varınca (T6) açılır, öbürleri Doğu geçidi patlayınca (22 Kasım 2026, Boğaç: oyuncu geçidi açar açmaz Kül Diyarı'na geçip Kayalık'ın yan görevlerini kaçırıyordu).
 - **Kül Diyarı:** Çelik (28 · E3) → Ömer (31 · E3) → Kor Ali (34 · E3) → Hasret (37 · E3) → Nar (40 · E3) → Duman Dede (42 · E4)
 - **Mor Kristal Vadisi:** Melodi (E5) → Yaren (E5) → Asena (44 · E5) → Selim (46 · E5) → Rıza (48 · E5) → Fenerci Işık (50 · E6)
 
@@ -189,7 +190,7 @@ Dağın yamacında küçük bir kulübenin önünde, elinde feneriyle bekleyen y
 Sırtında koca bir heybe, elinde asası, yorgun ve şaşkın bir adam.
 
 - **Konuş:** "Üç gündür bu dağda dönüp duruyorum. Her kaya birbirine benziyor! Duydum ki bu dağın bir yerinde demirciler, bir cadı yaşarmış, bir ocak hep yanarmış. Beni oraya götürür müsün? Bacaklarım eskisi gibi değil, yavaş yürürüm."
-- **Eşlik et (Kayalık Dağ kuzenlerinin ocağına):** Yahya yavaş yürür (senin hızının yarısı kadar). Yolun %33'ünde ve %66'sında canavarlar çıkar (2 ve 3 tane; Kurt, Muflon gibi dağ canlıları). Reis çıkmaz; almanakta sayılmaz.
+- **Eşlik et (Kayalık Dağ kuzenlerinin ocağına):** Yahya yavaş yürür (senin hızının yarısı kadar). Yolun %33'ünde ve %66'sında canavarlar çıkar (2 ve 3 tane; Muflon ve Dağ keçisi). Reis çıkmaz; almanakta sayılmaz.
 - **Varınca:** "Ateş! Duman! İnsan sesi! Ah, ah… Üç gün sonra ilk sıcak yer. Sana borcum büyük." Görev biter.
 - **Sonra dünyada:** Yahya kuzenlerin ocağının yanında oturur, heybesini açmış. Konuşunca: "Burada kalacağım galiba. Demirci çekiç sallıyor, ben hikâye anlatıyorum. Adil bir takas."
 
@@ -226,7 +227,7 @@ Boğaç'ın isteği: Kül Diyarı ve Mor Kristal Vadisi'ne 6'şar, ilk dört biy
 | 26 | **Cemile** (çocuk) · Şarkı söyleyen kurbağalar | Bataklık · 18:30–23:00 | Vıraklamaları dinleyip dört kurbağayı bul (yakalamak yok) → dön | 260 · 210 XP | yanında iki kurbağa |
 | 27 | **Hekim Şifa** · Bataklık humması | Bataklık · 08:00–14:00 | 4 Bataklık otu, 2 Turba götür → ilaç kaynarken kazanın başında bekle (50 sn; üç dalga, her dalgada **tek** canavar: önce 1 Engerek, sonra 1 Bataklık kurdu, sonra 1 Bataklık kurdu) → dön (Şifa: "Bu şişeler köye yeter, sağ ol. Bataklıkta başın dönerse bana uğra."; ödülde eşya yok) | 340 · 270 XP | ilaç kazanı (hep) |
 | 28 | **Dağlı Zehra** · Uçurumdaki oğlak | Kayalık Dağ · 06:00–12:00 | Oğlak Boncuk'u 3 kez yakala → Zehra'ya götür | 520 · 700 XP | yanında Boncuk |
-| 29 | **Gözcü Bora** · Kartal yumurtası | Kayalık Dağ · 09:00–15:00 | Düşen yumurtayı bul → yuvanın dibindeki 2 kurdu kov, yumurtayı koy → dön | 680 · 900 XP | – |
+| 29 | **Gözcü Bora** · Kartal yumurtası | Kayalık Dağ · 09:00–15:00 | Düşen yumurtayı bul → yuvanın dibindeki 2 dağ canlısını (Muflon, Dağ keçisi) kov, yumurtayı koy → dön | 680 · 900 XP | – |
 | 30 | **Keşiş Sükûn** · Dağın çanları | Kayalık Dağ · 04:30–09:30 | Rüzgârda çınlayan üç çanı bul → dön | 520 · 700 XP | yanında asılı rüzgâr çanı |
 | 31 | **Külcü Hasret** · Küllerin altındaki mektup | Kül Diyarı · 09:00–14:00 | Dumanı tüten dört mektup parçasını bul (her biri bir satır) → dön (acı son, sessiz) | 520 · 700 XP | mektup kutusu |
 | 32 | **Yangıncı Kor Ali** · Sönmeyen ağaçlar | Kül Diyarı · 13:00–18:00 | İçten yanan beş kül ağacını söndür (her biri 1 Su) → dön | 520 · 700 XP | diyarın ilk yeşil fidanı |

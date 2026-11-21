@@ -183,7 +183,7 @@ Bataklığın altında, tavanından su sızan, yerleri balçıklı bir mağara. 
 | Yosun yeşili boya | Boya | 2 Parıltı yosunu, 1 Su | 95 |
 | Çamur Ana muskası | Büyü | 1 Çamur Ana gözü, 2 Sazlı inci, 1 Semender derisi | 1.400 |
 
-### 4 · Rüzgâr Mağarası (Kayalık Dağ · Sv 26)
+### 4 · Rüzgâr Mağarası (Kayalık Dağ · Sv 24)
 
 Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlarda gümüş damarlar ve buz gibi kristaller, tavandan sarkan saçaklar.
 
@@ -193,11 +193,27 @@ Dağın içinde, rüzgârın uğuldayarak geçtiği soğuk bir mağara. Duvarlar
 | Tavan örümceği | saldırgan | 700 | 58 | 56 | 130 | zehir | Tavan ağı 1–2 (%80) |
 | Mağara vaşağı | saldırgan | 1.000 | 66 | 84 | 160 | kanama | Gri vaşak postu (%70) |
 
-**Boss · Dağ Devi** (mor ışığın taşları birbirine yapıştırdığı dev; Mağara ayısı biçiminde): can 6.000, hasar 125, hız 36, XP 2.400, ölünce **1.000 Vio**; düşürdükleri: Dev yüreği (her zaman), Gümüş filizi 3–5.
+**Boss · Dağ Devi** (mor ışığın taşları birbirine yapıştırdığı dev; Mağara ayısı biçiminde): can 4.000, hasar 70, hız 36, XP 2.400, ölünce **1.000 Vio**; düşürdükleri: Dev yüreği (her zaman), Gümüş filizi 3–5.
+
+**Kapı ve güç (21 Kasım 2026 ölçümü):** kapı Seviye 24'tür: Kayalık Dağ'a ~21 ile varılır, kuzenlerin işleriyle ~23–25'e çıkılır. Dağ Devi Çelik ve Gümüş setiyle 2–4 yemekle yenilir (Kayalık Dağ'ın öbür Reisleri gibi); Bataklık'ın Çamur Ana'sı ile Kül Diyarı'nın Kor Kral'ı arasındaki eğride durur.
 
 **Toplanabilenler:** Gümüş filizi (parlar), Dağ kristali (parlar), Rüzgâr taşı, Kar likeni.
 
 **Yan görev · Dağcı Tuncay — "Dağ Devi"** (ipi kopmuş bir dağcı): Dağ Devi uyandı, tavandan kaya yağıyor, yol kapandı. **4 Gümüş filizi** ister, bir çan döver; çanın sesiyle dev çıkar, yen. Ödül: **1.000 Vio · 1.060 XP**.
+
+**Tuncay'ın halat yolları (22 Kasım 2026, Boğaç: Kayalık Dağ'da para harcanacak bir yer, seçenek A):** görev bitince Tuncay mağaradan çıkar ve **Rüzgâr Mağarası'nın ağzının yanında** durur ("İpim koptu ama ekibim sağlam. Dağı halatla bağlarız, yeter ki parası çıksın."). Onunla konuşunca menüde **"Halat yolları"** satırı çıkar; açılan pencerede üç kestirme, yerleri ve fiyatları yazar. Vio'n yetiyorsa **Kur**'a basınca para gider, kısa bir yazı çıkar ("Tuncay'ın ekibi halatı gerdi.") ve halat o an yerinde belirir; yetmiyorsa satır soluk görünür, yanında "Vio yetmiyor" yazar, düğme basılmaz. Pencerenin yazısı akmadan bir anda görünür; yetmeyen satırın dışındaki düğmeler hiç soluk görünmez. Pencerenin dışına basmak pencereyi kapatır, bir şey satın alınmaz. Kestirmeler istenen sırayla, birbirinden bağımsız kurulur; her biri bir kez.
+
+| Kestirme | İki ucu | Fiyat |
+|---|---|---|
+| Giriş halatı | Bataklık'tan Kayalık Dağ'a girilen yer (Giriş kuşağı, Bataklık sınırının dibi) ↔ kuzenlerin ocağı (Silahçı Kaya ve Zırhçı Kayhan) | 2.500 Vio |
+| Kazan halatı | kuzenlerin ocağı ↔ Cadı Firuze'nin kazanı | 3.500 Vio |
+| Geçit halatı | kuzenlerin ocağı ↔ Doğu geçidi (kaya yığınının Kayalık yakası; patlamadan sonra molozun dibi) | 4.500 Vio |
+
+- **Görünüş:** her ucunda tepesinde makarası olan bir ahşap **halat direği**, iki direk arasında havada gerili bir halat (yerde gölgesi). Uçlar kişilere, ateşlere ve yollara değmeyen ağaçsız ilk yürünebilir karoya konur (ocağın ateşinden ~5 karo uzakta); yerleri ada kurulurken bu dört noktaya göre bir kez bulunur, oyun sırasında harita taranmaz. Kurulmamış halatın direği yoktur.
+- **Kullanma:** bir direğin dibindeyken **F** (telefonda etkileşim düğmesi; ya da direğe dokun/tıkla) ile halata asılırsın (F önceliği: direğin dibinde yerde eşya varsa F önce onu alır, sonraki F halata asar) ve karakter halat boyunca düz bir çizgide **koşu hızının 3 katıyla** öbür uca kayar; iki yönlü çalışır. Kayarken canavarlar sana değmez ve seni kovalayamaz, Orta ve Derin kuşağın üstünden geçersin; varınca yere inersin. Binekteysen binekten inmeden kayarsın; yanındaki savaşçılar ve robot köpekler uçta yanında belirir. Halat ücretsiz ve sınırsız kullanılır.
+- **Harita:** kurulu halatlar büyük ve küçük haritada iki uç arasında **kesik açık mavi bir çizgi** ve uçlarda küçük direk simgesiyle görünür (büyük haritada çizgi kalın ve koyu kenarlı, direk simgesi belirgin) (o yerler keşfedilmemiş olsa da); büyük haritada üzerine gelince adı yazar ("Giriş halatı").
+- **Kayıt:** hangi halatların kurulduğu (üç evet/hayır) kayda yazılır; yüklenince kurulu halatlar yerindedir. Bu alanı olmayan eski kayıtta hiçbiri kurulu değildir. Harita sürümü değişmez, eski kayıtlar açılır.
+- **Sayılar:** üçü toplam **10.500 Vio** (Kayalık Dağ sonunda kalan 22–28 bin fazlanın yaklaşık yarısı; en pahalı ev Konak 5.000). Güç vermez, yalnızca yolu kısaltır.
 
 | Malzeme | Nereden | Fiyat | Tarif |
 |---|---|---|---|

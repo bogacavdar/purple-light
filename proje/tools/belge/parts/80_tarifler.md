@@ -308,7 +308,7 @@ Toplam **766 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
 | Sağlam odun kalası | 2 Sağlam odun, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 54 |
-| Sağlam odun kömürü | 2 Sağlam odun, 1 Ateş, 3 Dal, 2 Lif | – | El yapımı (Tab) | 81 |
+| Sağlam odun kömürü | 2 Sağlam odun, 1 Pirit, 3 Dal, 2 Lif | – | El yapımı (Tab) | 92 |
 | Sağlam odun sapı | 1 Sağlam odun kalası, 3 Dal, 3 Lif | – | El yapımı (Tab) | 83 |
 | Ulu odun kalası ² | 2 Ulu odun, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 67 |
 | Ölümsüz odun kalası ² | 2 Ölümsüz odun, 2 Dal, 2 Lif | Taş balta | El yapımı (Tab) | 99 |
@@ -427,7 +427,7 @@ Toplam **766 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 | Kuvars mızrak | 1 Çelik mızrak, 1 Kuvars sivri ucu, 1 Uzun sopa, 3 İp, 1 Bileme macunu | – | Örs · Silahçı Kaya (Kayalık Dağ) ve üstü döver | 2.527 |
 | Kuvars ok ucu | 3 Kuvars pulu | – | El yapımı (Tab) | 540 |
 | Kuvars pulu | 1 Yontulmuş kuvars, 3 İp, 2 Dal, 2 Taş | Çekiç taşı | El yapımı (Tab) | 136 |
-| Kuvars sivri ucu | 8 Yontulmuş kuvars | – | El yapımı (Tab) | 917 |
+| Kuvars sivri ucu | 3 Yontulmuş kuvars | – | El yapımı (Tab) | 344 |
 | Lav camı ok ucu | 2 Lav camı, 1 İp | – | El yapımı (Tab) | 146 |
 | Obsidyen balta | 1 Mor kristal balta, 1 Yontulmuş obsidyen, 1 Kadim odun sapı, 3 İp, 1 Ametist | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 11.759 |
 | Obsidyen bıçak | 1 Obsidyen pulu, 1 Kor odun sapı, 3 İp, 3 Dal, 2 Taş | – | Örs · Silahçı Kudret (Mor Kristal Vadisi) ve üstü döver | 354 |
@@ -559,7 +559,7 @@ Toplam **766 tarif**, her eşyanın tek tarifi (oyun verisiyle sayıldı).
 
 | Ürün | Malzemeler | Gereken alet (harcanmaz) | Nerede yapılır | Fiyat |
 |---|---|---|---|---|
-| Ateş tuğlası | 3 Beyaz kil, 2 Kum, 1 Ateş | – | El yapımı (Tab) | 122 |
+| Ateş tuğlası | 2 Beyaz kil, 2 Kum, 1 Pirit | – | El yapımı (Tab) | 102 |
 | Beyaz çömlek | 1 Islak beyaz kil, 1 Ateş, 3 Kum, 3 Su | – | El yapımı (Tab) | 81 |
 | Beyaz kerpiç | 1 Islak beyaz kil, 3 Kuru ot, 2 Kum, 1 Su | – | El yapımı (Tab) | 54 |
 | Beyaz tuğla | 1 Beyaz kerpiç, 1 Ateş, 4 Kum, 3 Su | – | El yapımı (Tab) | 106 |
