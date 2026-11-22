@@ -8,6 +8,24 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.39 · 22 Kasım 2026
+
+### Görsel
+- **Karakterler NPC'ler gibi:** oyuncu ve sevdiği kişi, Kemal ve öbür kişiler gibi ComfyUI'de tek parça yeniden çizildi; boyları NPC'ler kadar, gözler ve pembe yanaklar her yönde.
+- **Saç her yönde düzgün:** her saç biçimi (erkek: Kısa, Dağınık, Yana taranmış, Dikleştirilmiş, Uzun, At kuyruğu, Kel; kadın: Uzun, At kuyruğu, Örgü, Topuz, Küt, Kısa, İki kuyruk, Kel) karakterin kendi bütün çizimi; artık başın üstüne sonradan eklenmiyor. Yan görünüşteki saçsız kafa ve yüzdeki lekeler gitti.
+- **Yüzler** (Sakin, Güler yüzlü, Çilli, Ciddi) ağız, çil ve kaşla ayrılıyor; **elbise** eteğiyle görünüyor.
+- Çaprazlarda baş ve gövde öbür yönlerle aynı oranda.
+- **Ara sahnelerde** (teknedeki akşam yemeği dahil) yana bakan karakter tam profil yerine hafif dönük duruyor.
+
+### Arayüz
+- Karakter yaratmada yüzün büyütülmüş görünümü kaldırıldı; önizleme yalnız tam boy (telefonda da).
+- Şapka, gözlük, bıyık, sakal, buff ve saç tokası şimdilik gizli; yeni tarzda çizilip sonraki sürümde geri gelecek. Eski kayıtlardaki seçimler silinmedi.
+
+### Tasarım belgesi
+- Sistemler › Oyuncunun karakteri: NPC'ler gibi tek parça çizim, saç biçimleri, yüzler, elbise, ara sahnede hafif dönük duruş. Akış › Karakter yaratma: önizleme.
+
+---
+
 ## Versiyon 4.38 · 22 Kasım 2026
 
 ### Görsel
@@ -245,7 +263,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Tasarım belgesi
 - Oyuncunun Orman'a varış seviyesi ölçüme göre ~10 olarak yazıldı; köprü Seviye 12'de açılır. Canlı, Reis ve mağara tabloları, yükseltme zinciri (tür tür kademe tablosu ve özel parçalar), satış kuralı, ayak işleri ve görev satırları güncellendi.
 
-
 ---
 
 ## Versiyon 4.24 · 14 Kasım 2026
@@ -350,21 +367,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Dövüş bölümüne "Hayvanların tutumu" ve "İmza hamleleri ve sürü taktiği" eklendi; Kayalık Dağ canlı tablosu ve Reis tablosu güncellendi.
-
----
-
-## Versiyon 4.18 · 13 Kasım 2026
-
-### Görsel
-- **58 eşyanın yeni resmi var:** PixelLab'da 32×32 çizilmiş yeni ikonlar. Envanterde ve kitapta tam boyda, elde ve yerde küçük görünürler.
-  - Bütün baltalar (Taş'tan Obsidyen'e 13 balta).
-  - Taş, Bakır, Demir, Çelik, Mor kristal ve Obsidyen kazma.
-  - Bakır, Demir, Çelik, Kara çelik ve Mor kristal kılıç, Ejder kılıcı, Demir savaş çekici, Basit yay.
-  - Odun, Taş, Çakmaktaşı, Bakır ve Demir cevheri, Taş kömürü, Kuvars, Ametist, Obsidyen, Kızıl ejder pulu.
-  - Bakır, Tunç, Demir, Gümüş, Kara çelik ve Altın külçesi.
-  - Lif, Halat, Deri parçası, Timsah derisi, Kemik, Keklik tüyü, Kurt dişi, Deri çanta.
-  - Ateş, Mana ve Kök özü iksiri, Ekmek, Pişmiş keklik eti, Kızılcık, Meşale.
-
-### Tasarım belgesi
-- Eşyalar bölümüne yeni resimli eşyaların listesi eklendi.
-- Godot'ya geçiş planına görseller yazıldı: sıra (oyun biter → Godot denemesi yeni görsellerle → taşıma ve görseller birlikte), araç (Retro Diffusion ya da PixelLab; ilk PixelLab sayfası tarz örneği), tahmini maliyet (~205 $, yalnız ACT 1 ~100 $).

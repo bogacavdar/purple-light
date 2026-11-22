@@ -1,3 +1,10 @@
+## v4.39 (22 Kasım 2026) · Oyuncu karakteri NPC'ler gibi tek parça (ComfyUI), her saç biçimi kendi çizimi, yüzler/elbise piksel düzeyinde
+- Belge: 20_sistemler › "Oyuncunun karakteri" (17:50 ve 19:46 alıntıları); 10_akis › Karakter yaratma (yalnız tam boy önizleme); 00_giris sürüm satırı.
+- Kod: yalnız `v428kahraman` bloğu (yerinde). Veri `HD={CW:26,CH:40,e:{stil:{c,m,A}},k:{...}}`: her saç biçimi için 5 satır (S, SW, W, NW, N) × 5 kare (duruş + 4 adım) renk + maske PNG; `A[yön]={top,cx,neck,hip,er,ex,mo}` (göz satırı/sütunları, ağız). Maske R=bölüm×30 (1 ten, 2 saç, 3 üst, 4 alt, 6 göz), G=parlaklık×100. Sağa bakan yönler `sheet()` içinde aynalanır. Yüz (ağız/çil/kaş), pembe yanak ve elbise (alt bölümün üstü etek) `sheet()` içinde piksel düzeyinde. Ara sahne: `g!==ctx` ve yalnız yana bakışta satır ön-çapraz (v66.7 kuralı, iç sarmalayıcıdan önce uygulanır). cprev 36×40 tam boy. Şapka/gözlük/bıyık/sakal/buff/toka şimdilik gizli (Boğaç): `cRender` sarmalı bu satırları `HIDE` kümesiyle gizler, `buildLook` yeni görünüşte bu alanları boş verir (Rastgele de seçemez); eski kayıtlardaki `LOOK` alanlarına dokunulmaz, çizim kodu yok. Geri açmak için `HIDE` ve `buildLook`'taki `Object.assign` satırı silinir, çizimleri eklenir. v4.37 "Yüz" satırı aynen.
+- Üretim (scratch, depoda değil): /tmp/h3/ `npc5.py` (anahtarlama → 30 px ortalama küçültme, göz/ağız tespiti, bölüm etiketleri), `npc7.py` (stil başına: dönüş sayfası S/W/N + ayrı çapraz çizimler, çapraz gövdesi ön görünüş oranına `refit`), `w/spec7.json`, `pack7.py` + `inject.py` (`blk/tpl5.js`). ComfyUI çıktıları Boğaç'ın `output/purple/`: `h6ta_*`/`h6d_*` (Kısa/Uzun), `h7ta_*`/`h7d_*` (öbür saç biçimleri).
+- Eski kayıtlar: alanlar aynı; `hs:'buzz'` Kel çizimiyle; bilinmeyen saç → Kısa/Uzun.
+- Geri almak için: `git checkout v4.38 -- proje/Hammadde_prototip.html index.html proje/tools/belge/parts/20_sistemler.md proje/tools/belge/parts/10_akis.md proje/tools/belge/parts/00_giris.md`.
+
 ## v4.38 (22 Kasım 2026) · Canlılar basit ve tatlı tarzda (ComfyUI)
 - Belge: 30_act1 › "Çayır canlılarının görünüşü", 37_magaralar › "Yankı Mağarası canlılarının resmi" (Boğaç: "canlılar da olmamış tavşan tavşana hiç benzemiyor" → tarz karakterlerle aynı, basit ve tatlı).
 - Kod: yalnız `v436cayir` bloğunun DATA'sı değişti (yeni ComfyUI resimleri "cs_*", /tmp/cy/build.py: 16 renk, büyütülmüş boylar; yarasada kanat çırpışı yalnız kanatları döndürür; Kraliçe'nin tacı resmin kendisinde, kod tacı çizmez).
@@ -186,11 +193,3 @@
 - Kontrol: chk 0 hata; oyun açılıyor; senaryolar: fark etme, Geyik uyarısı 1,5 sn'de saldırı, Yaban domuzu geri-hücum, yaralı kaçma, Bataklık kurdu ördeği avlayıp leş (Ördek tüyü), Sv 40'ta Yaban domuzu çekiniyor, 3 kurt kuşatıyor; sayfa hatası yok.
 
 **Geri alma:** `git revert` bu commit (blok + v337les'teki tek satır; kayıt alanı yok).
-
-## v4.18 (13 Kasım 2026) · PixelLab ikonları (58 eşya); Godot planına görseller
-- Boğaç: "sen bunları ekle oyuna" (PixelLab'da 32×32 çizdirdiği 64'lü sayfa). Belge: Eşyalar › PixelLab ikonları; Godot'ya geçiş › Görseller.
-- `v418pxl` bloğu (v417fiyat'tan sonra): 256×256 PNG base64 (~78 KB), 8×8 hücre; 58 hücre eşya adına bağlı. `ICON[n]` 32×32 data URL, `ICONC[n]` 16×16 canvas (`__v343` işaretli); ikisi de `Object.defineProperty` getter/boş setter ile sabit (yalnız bu 58 ad; önbellek kuralı). 3 kürek, tokmak, 2. yay, anahtar kullanılmıyor.
-- Kontrol: chk 0 hata; oyun açılıyor, `__plPxl` 58, ICONC 16 px, yeni oyunda hata yok; eski/yeni karşılaştırma sayfası Boğaç'a gönderildi.
-
-**Geri alma:** `git revert` bu commit (eski çizimler geri gelir; kayıt alanı yok).
-
