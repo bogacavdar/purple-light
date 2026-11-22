@@ -1,3 +1,9 @@
+## v4.36 (22 Kasım 2026) · Çayır canlıları ve Yankı Mağarası canlıları ComfyUI'de gerçekçi; ağaçtaki meyveler gerçek meyve
+- Belge: 30_act1 › Çayır › "Çayır canlılarının görünüşü"; 37_magaralar › "Yankı Mağarası canlılarının gerçekçi resmi"; 20_sistemler › "Ağaçtaki meyveler".
+- Kod: yeni blok `v436cayir` (`v232`'den hemen sonra). Resimler ComfyUI (Z-image Turbo + piksel LoRA), /tmp/cy/build.py ile yeşil anahtarlama, küçültme, 24 renk, kareler (0 duruş, 1–4 yürüyüş, 5 hamle, yarasada 6 yatış) ve palet dizgisi (resim yüklemesi yok). 7 eski ART canlısının (`window.__plART`) gövde fonksiyonu ve kutusu değişti, eski yoldaki bütün etkiler (çerçeve, beyaz parlama, Reis tonu, parıltı, donma, yanma) kalır; Porsuk için `__plNEWN.Porsuk.art=''` (kunduz gövdesini ödünç almaz). Mağara dördü bu blokta çizilir (v232 yerine).
+- Meyveler: yeni blok `v436meyve` (`v424dunya`'dan önce) `window.__plFruitPic`; `v424dunya` içindeki `fruity` ve çekirdek `drawTree` meyve noktaları bu resimleri kullanır (resim yoksa eski noktalar).
+- Geri almak için: iki bloğu sil; `v424dunya`'daki `fruity(...,fn)` ve `drawTree`'deki `FP` satırları resim yokken eski noktaya düştüğü için dokunmasan da olur. Kayıt alanı yok.
+
 ## v4.35 (22 Kasım 2026) · Ayak izleri (hava durumuna göre silinir, karda uzun kalır)
 - Belge: 20_sistemler › Hava, sıcaklık ve kar › "Ayak izleri" maddesi.
 - Kod: yeni blok `v435iz` (dosyanın sonunda, `v433halat`'tan sonra). İz resmi ComfyUI (Z-image Turbo + piksel LoRA, "iz_taban_b", ayakkabı tabanı izi) → /tmp/iz/sheet.py ile 8 yön × sol/sağ × normal/kar, 12×12 hücre, base64 PNG. `tickWeather` sarmalı adım ekler ve yaşlandırır, `drawGround` sarmalı karın üstüne çizer; `restore`/`startNew` temizler. Kayda yazılmaz, MAPV değişmez.
@@ -188,15 +194,6 @@
 - Boğaç: "her biyom atladığımda daha iyi şeyler ile karşılaşmalıyım… bir adaletsizlik var". Belge: Aletler › Fiyat basamağı.
 - Yeni `v416fiyat` bloğu (v415torpu'dan sonra): `PR` 198 eşyanın yeni `PRICE_`/`DB.p` değeri. Hesap (`w/ladder.py`): Bütün setler tablosunun 13 set sırasıyla her türe log-doğrusal eğri (Başlangıç hariç oturtulur, Başlangıç ilk adımın altında); oklar tane fiyatı (2·4·7·13·25·48·90, etkili oklar + yağ/10); külçeler biyom sırasıyla eğri; kısa yaylar uzun yayın %60'ı. GT.price/sharp (dükkân, bileme) değişmedi.
 - Kontrol: chk 0 hata; 198 fiyat oyunda yeni değerinde; 13 türde biyom sırasıyla ters fiyat kalmadı.
-
-**Geri alma:** `git revert` bu commit.
-
-## v4.15 (12 Kasım 2026) · törpüleme: taş uçlu aletler, gövde zırhları, Ametist kılıcı
-- Boğaç: "1'i kesin uygulayalım, 2'deki miktarları %50 azaltalım; ametist kılıcını da azaltalım ama bu malzemeler başka bir eşyada yoksa anlamsız bırakmayalım". Belge: Tarifler › Törpüleme.
-- Yeni `v415torpu` bloğu (v414tek'ten sonra): `NEW` (22 tarif: 9 taş uçlu balta/kazma/mızrak, 12 gövde zırhı yarı adet yukarı yuvarlanır, Ametist kılıcı) REC'e yazılır, USES güncellenir. Fiyatlar aynı (set basamağı).
-- Kontrol: chk 0 hata; boşta malzeme yok (Mor zehir Ametist kılıcında kalır).
-- El yapımı başlıkları (çekirdek `H_GRP`/`hGrp`, v4.08 bloğu yerinde): "Zanaat" başlığı kalktı (Malzemeler indeksi 10 → 9); `hTool` (çanta, torba, ok kılıfı, bıçaklar, yemler, Gübre, Kaya patlatıcı + `DB.R` tarif aletleri) → Aletler; ` ok$`/`mermisi$` → Silahlar; Hasırotu yatak → Yapılar; Giyim türünde olup giyilmeyen (Kristal ipek kumaş) → Malzemeler. Keşif defteri türleri (`REC.c`, CODEX_PERK) değişmedi.
-- Not: gövde zırhı artık aynı setin miğferiyle aşağı yukarı aynı malzemeyi istiyor (Kara çelik miğfer 15, zırh 15).
 
 **Geri alma:** `git revert` bu commit.
 

@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.36 · 22 Kasım 2026
+
+### Görsel
+- **Çayır canlıları yeniden çizildi (ComfyUI, gerçekçi):** Tavşan, Keklik, Bıldırcın, Geyik, Yaban atı, Kerevit, Kurt ve Porsuk artık gerçek oranlarla, yandan çizilmiş resimler. Yaban atı ve boynuzlu Geyik oyuncu boyuna yakın, Kurt bel hizasında, Tavşan, Porsuk ve kuşlar diz altında. Dört adımla yürürler (bacaklar çapraz ikişer), saldırmadan önce öne eğilirler. Porsuk artık griye boyanmış kunduz değil, siyah-beyaz çizgili yüzlü gerçek bir porsuk.
+- **Yankı Mağarası canlıları:** Mağara yarasası, Kör kertenkele, Taş örümceği ve Yankı Kraliçesi de ComfyUI'de gerçekçi çizildi; duruşlar aynı (yarasa önden ve üç kareyle kanat çırpar, kertenkele ve örümcek üstten). Kovalarken gözleri kırmızı yanar, Kraliçe'nin başında altın tacı var. Bu resimleri ödünç alan öbür mağara canlıları da yeni resmi kendi tonlarıyla kullanır.
+- **Ağaçtaki meyveler gerçek meyve gibi:** olgun ağaçların tacındaki renkli kareler yerine ComfyUI'de çizilmiş küçük meyveler görünür (elma, armut, ceviz, fındık, kestane, mürver, dut, incir, ateş narı, yıldız eriği, ay elması, ardıç meyvesi).
+
+### Tasarım belgesi
+- ACT 1 › Çayır › Çayır canlılarının görünüşü; Mağaralar › Yankı Mağarası canlılarının gerçekçi resmi; Sistemler › Ağaçtaki meyveler.
+
+---
+
 ## Versiyon 4.35 · 22 Kasım 2026
 
 ### Görsel
@@ -370,25 +382,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Aletler'e "Fiyat basamağı" bölümü; bütün tablolardaki fiyatlar güncellendi.
-
----
-
-## Versiyon 4.15 · 12 Kasım 2026
-
-### Oynanış
-- **Karışık tarifler sadeleşti:**
-  - **Taş uçlu balta, kazma ve mızraklar** (Çakmaktaşı, Kuvars, Obsidyen) artık yalnız uç, sap, İp ve en çok bir ek malzeme istiyor; Dal ve Taş istemiyor. Mızraklar etkilerini veren yağı (Bileme macunu, Zehir yağı), Obsidyen balta ve kazma bir Ametist istiyor.
-  - **Bütün gövde zırhları** yarı malzemeyle yapılıyor. Örneğin Kara çelik zırh 29 yerine 15 malzeme, Çelik zırh 24 yerine 13 malzeme istiyor.
-  - **Ametist kılıcı** 6 yerine 4 malzeme istiyor: Ametist, Kadim odun sapı, Gölge dişi, Mor zehir.
-- Fiyatlar ve özellikler değişmedi.
-
-### Arayüz
-- **El yapımı listesinin başlıkları eşyanın ne işe yaradığına göre:** "Zanaat" başlığı kalktı.
-  - Oklar "Silahlar"da.
-  - Çanta, torba, ok kılıfı, bıçaklar, olta yemleri, Gübre, Kaya patlatıcı ve tariflerde alet olarak kullanılanlar (iğne, bileği taşı, havan…) "Aletler"de.
-  - Hasırotu yatak "Yapılar ve ev eşyası"nda.
-  - İp, hasır, kumaş ve yağ gibi ara parçalar "Malzemeler"de.
-  - Kitap'taki Keşif defteri ve ödülleri aynı.
-
-### Tasarım belgesi
-- Tarifler'e "Törpüleme" bölümü; değişen tarifler ve malzemelerin kullanıldığı yerler güncellendi. Sistemler › El yapımı kategorili: yeni başlıklar.
