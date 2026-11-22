@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.38 · 22 Kasım 2026
+
+### Görsel
+- **Canlılar basit ve tatlı tarzda yeniden çizildi (ComfyUI):** Tavşan (uzun dik kulaklar, beyaz ponpon kuyruk), Keklik, Bıldırcın, Kerevit, Porsuk, Kurt, Geyik ve Yaban atı artık kalın hatlı, sevimli ve ilk bakışta tanınan resimler; küçük canlılar okunaklı olsun diye büyütüldü. Yankı Mağarası'nın yarasası, Kör kertenkelesi, Taş örümceği ve Yankı Kraliçesi de aynı tarzda (yarasa kanat çırpar, kertenkele ve örümcek üstten görünür, Kraliçe taçlı; kovalarken gözler kırmızı yanar).
+
+### Tasarım belgesi
+- ACT 1 › Çayır › Çayır canlılarının görünüşü; Mağaralar › Yankı Mağarası canlılarının resmi.
+
+---
+
 ## Versiyon 4.37 · 22 Kasım 2026
 
 ### Görsel
@@ -358,24 +368,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Tasarım belgesi
 - Eşyalar bölümüne yeni resimli eşyaların listesi eklendi.
 - Godot'ya geçiş planına görseller yazıldı: sıra (oyun biter → Godot denemesi yeni görsellerle → taşıma ve görseller birlikte), araç (Retro Diffusion ya da PixelLab; ilk PixelLab sayfası tarz örneği), tahmini maliyet (~205 $, yalnız ACT 1 ~100 $).
-
----
-
-## Versiyon 4.17 · 12 Kasım 2026
-
-### Oynanış
-- **Malzemeler biyomdan biyoma değerleniyor:** bir biyomun eti, derisi, tüyü, yumurtası, dişi, balığı, meyvesi ya da otu artık önceki biyomun sıradan malzemesinden en az %20 daha değerli. Örnekler: Sincap derisi 2 → 6, Dağ keçisi derisi 7 → 36, Kurbağa 2 → 9, Söğüt dalı 1 → 10. Hiçbir malzeme ucuzlamadı.
-- **Yaptığın eşyaların fiyatı yine malzemelerinden hesaplanıyor.** 4.16'daki sabit fiyat eğrisi kalktı.
-- **Fazla malzeme isteyen tarifler azaldı:** fiyat sırasını bunlar bozuyordu.
-  - Tunç külçesi 1 Bakır külçesi ve 1 Kalay külçesi ister (3 Bakır külçesi yerine).
-  - Çelik külçesi 1 Demir külçesi ister (2 yerine), Kara çelik külçesi 1 Çelik külçesi ister (2 yerine). Kara çelik külçesi 2.122 → 899.
-  - Demir külçesi Taş yerine Odun kömürüyle, Altın külçesi 4 Altın cevheriyle eritiliyor.
-  - Çakmaktaşı ve Obsidyen ok ucu 2 pul, Kuvars ok ucu 3 pul ister (8, 11 ve 10 yerine).
-  - Bazı kolye ve yüzükler daha az ya da daha çok taş istiyor.
-- **Sonuç:** her biyomda karşına çıkan miğfer, zırh, eldiven, çizme, kılıç, savaş çekici, topuz, mızrak, yay, balta, kazma, kolye ve yüzük bir öncekinden pahalı. Aynı biyomda usta parçası metal parçasından pahalı, başlangıç parçaları Bakırdan ucuz.
-  - Kılıç: Bakır 346 · Tunç 787 · Demir 1.655 · Çelik 2.583 · Kara çelik 4.949 · Mor kristal 8.242.
-  - Oklar tane fiyatıyla: Basit 2, Kara çelik 165, Mor kristal 196.
-- Hasar, savunma, bileme ücretleri ve dükkân fiyatları değişmedi.
-
-### Tasarım belgesi
-- Aletler'deki "Fiyat basamağı" bölümünün yerine "Fiyat düzeni" geldi; madenler tablosundaki külçe tarifleri ve bütün fiyatlar güncellendi.

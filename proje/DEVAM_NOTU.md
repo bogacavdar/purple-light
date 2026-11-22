@@ -1,3 +1,8 @@
+## v4.38 (22 Kasım 2026) · Canlılar basit ve tatlı tarzda (ComfyUI)
+- Belge: 30_act1 › "Çayır canlılarının görünüşü", 37_magaralar › "Yankı Mağarası canlılarının resmi" (Boğaç: "canlılar da olmamış tavşan tavşana hiç benzemiyor" → tarz karakterlerle aynı, basit ve tatlı).
+- Kod: yalnız `v436cayir` bloğunun DATA'sı değişti (yeni ComfyUI resimleri "cs_*", /tmp/cy/build.py: 16 renk, büyütülmüş boylar; yarasada kanat çırpışı yalnız kanatları döndürür; Kraliçe'nin tacı resmin kendisinde, kod tacı çizmez).
+- Geri almak için: `git checkout v4.37 -- proje/Hammadde_prototip.html index.html` yerine bu sürümün commit'ini `git revert` et (yalnız blok verisi ve iki belge paragrafı). Kayıt alanı yok.
+
 ## v4.37 (22 Kasım 2026) · Oyuncu karakteri NPC boyunda yeniden (ComfyUI katmanları, 8 yön 4 kare katı-parça yürüyüş, Yüz seçimi)
 - Belge: 20_sistemler › "Oyuncunun karakteri" maddesi yeniden yazıldı (22 Kasım alıntısı); 10_akis › Karakter yaratma (Yüz satırı, önizleme); 00_giris sürüm satırı.
 - Kod: yalnız `v428kahraman` bloğu değişti (yerinde, aynı id). Veri `HD`: `CW 26 × CH 44` hücre; `HD.e`/`HD.k` = 5 satır (S, SW, W, NW, N) × 5 kare (duruş + 4 adım) renk + maske PNG, `A[yön]={top,cx,neck,hip,er}`; `HD.lay` = katman atlası (renk + maske) ve `i[anahtar][yön]=[x,y,w,h,dx,dy]`, `o[anahtar]=çizildiği cinsiyet` (şapka/gözlük/bıyık/sakal/buff erkek başına çizildi, kadında `A.top/A.cx` farkı kadar kaydırılır). Sağa bakan yönler `sheet()` içinde aynalanır (tuvalin sağ yarısı). Maske: R=bölüm×30 (1 ten, 2 saç, 3 üst, 4 alt, 6 göz, 7 şapka rengi, 8 buff), G=parlaklık×100. Çerçeve JS'de her kare için tek halka. UI tuvalleri: cprev 50×50 (solda tam boy, sağda yüz 2×), pfchar/ieqc/dollc/ardoll 36×45. Yeni `cLook.face`/`L.face` (0–3) ve "Yüz" satırı (Ten'in altına), Rastgele yüzü de seçer.
@@ -189,9 +194,3 @@
 
 **Geri alma:** `git revert` bu commit (eski çizimler geri gelir; kayıt alanı yok).
 
-## v4.17 (12 Kasım 2026) · fiyat düzeni: malzeme biyom tabanı + malzemeden hesap + fazla isteyen tarifler azaldı
-- Boğaç: "öncelikle malzemelerin fiyatlarını biyomdan biyoma daha değerli hale getir, bu olursa zaten hesap doğru olur… sorun ya malzeme fiyatlarında ya da … tarifin kendisindedir". Belge: Aletler › Fiyat düzeni.
-- `v416fiyat` bloğu silindi, yerine `v417fiyat` (v415torpu'dan sonra): `ED` 16 tarif (külçeler, ok uçları, 8 takı) REC/USES; `PR` 227 fiyat. Hesap (`w/rawcat.py`, `w/rawnew.py`, `w/model3.py`): ham malzeme türüne göre biyom tabanı (önceki biyomun %30'luk dilimi × 1,2, yalnız yükseltir); yapılan eşya = eski fiyat × yeni maliyet / eski maliyet (markup ≤ 1,7; üstündekiler, zırhlar: max(eski, maliyet × 1,3)); usta (takı dahil) = max(maliyet × 1,3, metal parça × 1,15); başlangıç ≤ Bakır × 0,8; oklar maliyet / çıkan × 1,3, etkili oklar (ok + yağ/10) × 1,1.
-- Kontrol: chk 0 hata; 227 fiyat oyunda; 13 türde ters fiyat yok; boşta malzeme ve fiyatsız eşya yok (ACT 2'nin bekleyen 11'i hariç).
-
-**Geri alma:** `git revert` bu commit (4.16'nın eğrisi geri gelir).
