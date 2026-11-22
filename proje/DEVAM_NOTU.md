@@ -1,3 +1,10 @@
+## v4.37 (22 Kasım 2026) · Oyuncu karakteri NPC boyunda yeniden (ComfyUI katmanları, 8 yön 4 kare katı-parça yürüyüş, Yüz seçimi)
+- Belge: 20_sistemler › "Oyuncunun karakteri" maddesi yeniden yazıldı (22 Kasım alıntısı); 10_akis › Karakter yaratma (Yüz satırı, önizleme); 00_giris sürüm satırı.
+- Kod: yalnız `v428kahraman` bloğu değişti (yerinde, aynı id). Veri `HD`: `CW 26 × CH 44` hücre; `HD.e`/`HD.k` = 5 satır (S, SW, W, NW, N) × 5 kare (duruş + 4 adım) renk + maske PNG, `A[yön]={top,cx,neck,hip,er}`; `HD.lay` = katman atlası (renk + maske) ve `i[anahtar][yön]=[x,y,w,h,dx,dy]`, `o[anahtar]=çizildiği cinsiyet` (şapka/gözlük/bıyık/sakal/buff erkek başına çizildi, kadında `A.top/A.cx` farkı kadar kaydırılır). Sağa bakan yönler `sheet()` içinde aynalanır (tuvalin sağ yarısı). Maske: R=bölüm×30 (1 ten, 2 saç, 3 üst, 4 alt, 6 göz, 7 şapka rengi, 8 buff), G=parlaklık×100. Çerçeve JS'de her kare için tek halka. UI tuvalleri: cprev 50×50 (solda tam boy, sağda yüz 2×), pfchar/ieqc/dollc/ardoll 36×45. Yeni `cLook.face`/`L.face` (0–3) ve "Yüz" satırı (Ten'in altına), Rastgele yüzü de seçer.
+- Üretim (scratch, depoda değil): /tmp/h3/ — `canv3.py` (ComfyUI dönüş sayfasından tuvaller), `mask.py`/`zone.py` (inpaint bölgeleri), `base.py` (yeşil anahtar → 30 px küçültme, yüz çizgilerini koruyan örnekleme, bölüm etiketleri), `wlk.py` (uyluk/baldır katı parça yürüyüş, yakın bacak önde + koyu kenar), `layer.py` (inpaint farkı → katman), `build.py` → `w/HD.json`, `pack.py` + `inject.py` (`blk/tpl4.js`). ComfyUI çıktıları Boğaç'ın `output/purple/` klasöründe: `h3ta_*` (dönüş sayfaları), `h3bald_*` (kel temel), `h3t_*` (çapraz temel), `h3hs_*` (saç), `h3ac_*` (aksesuar; `*2` yeniden çizilenler).
+- Eski kayıtlar: `L.face` yoksa 0 (Sakin); eski saç/sakal/bıyık alanları aynen okunur (`B4OLD` eşlemesi blokta). MAPV ve kayıt biçimi değişmedi.
+- Geri almak için: `git checkout v4.36 -- proje/Hammadde_prototip.html index.html proje/tools/belge/parts/` (yalnız `v428kahraman` bloğu değişti); `face` alanı eski kodda yok sayılır.
+
 ## v4.36 (22 Kasım 2026) · Çayır canlıları ve Yankı Mağarası canlıları ComfyUI'de gerçekçi; ağaçtaki meyveler gerçek meyve
 - Belge: 30_act1 › Çayır › "Çayır canlılarının görünüşü"; 37_magaralar › "Yankı Mağarası canlılarının gerçekçi resmi"; 20_sistemler › "Ağaçtaki meyveler".
 - Kod: yeni blok `v436cayir` (`v232`'den hemen sonra). Resimler ComfyUI (Z-image Turbo + piksel LoRA), /tmp/cy/build.py ile yeşil anahtarlama, küçültme, 24 renk, kareler (0 duruş, 1–4 yürüyüş, 5 hamle, yarasada 6 yatış) ve palet dizgisi (resim yüklemesi yok). 7 eski ART canlısının (`window.__plART`) gövde fonksiyonu ve kutusu değişti, eski yoldaki bütün etkiler (çerçeve, beyaz parlama, Reis tonu, parıltı, donma, yanma) kalır; Porsuk için `__plNEWN.Porsuk.art=''` (kunduz gövdesini ödünç almaz). Mağara dördü bu blokta çizilir (v232 yerine).
@@ -133,7 +140,6 @@
 - Son düzeltmeler: OR-16 (örste takılı parçayla yapımda çift parça; `gain` sarmalayıcısı kaldırıldı, takma yapım bitince `brew`/`handCraft`/Usta sarmalayıcılarında), `spawnIn`'de yorumun yuttuğu `const P=PACK[k]` (bcd9129–29b21cf arası hiç hayvan doğmuyordu; yalnız bekleyen-paket, yayına gitmedi), Yankı Kraliçesi 350·18. Duman testi: köprü önü kaydıyla 8 hayvan, sayfa hatası yok.
 - Yönetici: v2.51'den beri bir yorumun yuttuğu ölü `MATS.forEach` kodu silindi (BASES satırı); belge 36_yan_gorevler Toprak yuvası 40 px.
 
-
 ## v4.24 (14 Kasım 2026) · Çayır eşyaları, maden, ağaç, zemin, kişiler ve eşyaları ComfyUI çizimiyle; Çilek/Elma/Armut; Rezene kalktı
 - Boğaç'ın ComfyUI'si (Z-Image Turbo + pixel LoRA) ile çizildi, `/home/claude/w/` araçlarıyla 32 px ikon ve dünya resmine çevrildi.
 - Bloklar: `v423ikon` (23 ikon, yerde çizim `__plCayirL`), `v420cali` (Böğürtlen çalısı), `v424dunya` (Kireçtaşı/Kumtaşı/Bakır cevheri kayaları `drawNode`, Çam/Kavak/Elma/Armut `treeSprite`/`drawTree`), `v425karo` (Çayır çim k0/k1, kum k2, su k3–5; `__v58.bake` ve `drawGround` yerine konumdan doku; `n` işaretsiz parçalar yeniden pişirilir), `v425npc` (Kemal), `v425esya` (kazan, ocak, örs, askı, tezgâhlar, kereste, kulübe, kukla, kamp ateşi; `__plKazanOf` kuzen kazanları), `v425kisi` (8 kişi + kuzenler `npcDraw` üzerinden; `px` maskesi eski şapka/önlük parçalarını atlar; `drawX` sarmalayıcıları maskeyi temizler). `v64`'e `window.__plPOR`, `v184`'e `porOf` → `__plPORn` ve `drawWitchC/SmithC/ArmC` sarmalayıcıları, `drawPotC` kazan çizimi eklendi.
@@ -189,11 +195,3 @@
 - Kontrol: chk 0 hata; 227 fiyat oyunda; 13 türde ters fiyat yok; boşta malzeme ve fiyatsız eşya yok (ACT 2'nin bekleyen 11'i hariç).
 
 **Geri alma:** `git revert` bu commit (4.16'nın eğrisi geri gelir).
-
-## v4.16 (12 Kasım 2026) · fiyat basamağı: biyom sırasıyla pahalanan set parçaları
-- Boğaç: "her biyom atladığımda daha iyi şeyler ile karşılaşmalıyım… bir adaletsizlik var". Belge: Aletler › Fiyat basamağı.
-- Yeni `v416fiyat` bloğu (v415torpu'dan sonra): `PR` 198 eşyanın yeni `PRICE_`/`DB.p` değeri. Hesap (`w/ladder.py`): Bütün setler tablosunun 13 set sırasıyla her türe log-doğrusal eğri (Başlangıç hariç oturtulur, Başlangıç ilk adımın altında); oklar tane fiyatı (2·4·7·13·25·48·90, etkili oklar + yağ/10); külçeler biyom sırasıyla eğri; kısa yaylar uzun yayın %60'ı. GT.price/sharp (dükkân, bileme) değişmedi.
-- Kontrol: chk 0 hata; 198 fiyat oyunda yeni değerinde; 13 türde biyom sırasıyla ters fiyat kalmadı.
-
-**Geri alma:** `git revert` bu commit.
-

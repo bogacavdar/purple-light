@@ -8,6 +8,25 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.37 · 22 Kasım 2026
+
+### Görsel
+- **Karakterin NPC'lerle aynı boyda:** oyuncu ve sevdiği kişi yeniden çizildi; artık Kemal ve öbür kişiler kadar (30 piksel gövde), büyükçe başlı. Gözler, kaşlar ve ağız dünyada da seçiliyor. Bütün çizimler ComfyUI'den: kadın ve erkek temel gövde beş yönden (sağa bakanlar aynası), saç biçimleri, şapkalar, gözlükler, bıyık ve sakallar, yüzler, elbise, buff ve çiçek toka bu gövdenin üstüne ayrı ayrı çizildi.
+- **Net 8 yönlü adımlama:** her yönde bir duruş ve dört adım karesi. Bacaklar artık eğilip bükülmüyor; uyluk ve baldır iki parça halinde öne-arkaya kayıyor, adım atmayan ayak kalkıyor. Çaprazda ve yanda yakın bacak uzak bacağın önünde, arada koyu bir çizgi var; bacaklar birbirine karışmıyor.
+- **Her seçim karakterin üstünde görünür:** saç biçimi, saç rengi (kaş, bıyık ve sakal da aynı renkte), ten, göz rengi, tişört/elbise, pantolon, gözlük, şapka ve şapka rengi, bıyık, sakal, buff ve toka her yönde kendi çizimiyle.
+
+### Arayüz
+- **Karakter yaratma:** önizlemede karakter tam boy ve yanında yüzü iki kat büyük görünüyor; yüz artık hiç kesilmiyor. Telefonda da aynı.
+- **Yeni seçenek "Yüz":** Sakin, Güler yüzlü, Çilli, Ciddi (kaşlar ve ağız yüzle değişir). Rastgele düğmesi yüzü de seçer.
+
+### Kayıtlar
+- Eski kayıtlar olduğu gibi açılır; yüz seçimi olmayan karakter "Sakin" yüzle görünür.
+
+### Tasarım belgesi
+- Sistemler › Yeni ikonlarla › Oyuncunun karakteri: NPC boyu, ComfyUI katmanları, 8 yön 4 kare yürüyüş, yüz seçimi. Akış › Karakter yaratma: Yüz satırı ve önizleme.
+
+---
+
 ## Versiyon 4.36 · 22 Kasım 2026
 
 ### Görsel
@@ -360,25 +379,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Aletler'deki "Fiyat basamağı" bölümünün yerine "Fiyat düzeni" geldi; madenler tablosundaki külçe tarifleri ve bütün fiyatlar güncellendi.
-
----
-
-## Versiyon 4.16 · 12 Kasım 2026
-
-### Oynanış
-- **Fiyatlar biyom sırasına oturdu:** her biyomda karşına çıkan eşya bir öncekinden daha değerli.
-  - 13 türün her biri set sırasıyla tek bir düzgün fiyat eğrisine oturdu: miğfer, gövde zırhı, eldiven, çizme, kılıç, savaş çekici, topuz, mızrak, yay, balta, kazma, kolye, yüzük.
-  - Sonraki biyomun parçası, öncekinin her parçasından pahalı.
-  - Aynı biyomda usta parçası, metal parçasından pahalı.
-- **Örnekler:**
-  - Kara çelik kılıç 11.371 → 5.120, Mor kristal kılıç 8.242 → 9.450, Ametist kılıcı 7.986 → 12.850.
-  - Kara çelik savaş çekici 13.965 → 5.900.
-  - Kamış çizme 145 → 915.
-  - Gölge dişi kolyesi 551 → 280, Ametist yüzük 433 → 1.030.
-- **Oklar tane fiyatıyla:** eskiden bir Kara çelik oku 1.823 Vio'ya satılabiliyordu. Artık Basit 2, Bakır 4, Tunç 7, Demir 13, Çelik 25, Kara çelik 48, Mor kristal 90.
-- **Külçeler biyom sırasıyla:** Bakır 38 → Altın 1.180.
-- **Kısa yaylar** aynı biyomun uzun yayının %60'ı.
-- Hasar, savunma, bileme ücretleri ve dükkân fiyatları değişmedi.
-
-### Tasarım belgesi
-- Aletler'e "Fiyat basamağı" bölümü; bütün tablolardaki fiyatlar güncellendi.
