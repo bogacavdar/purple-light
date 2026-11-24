@@ -1,3 +1,7 @@
+## v4.48 (25 Kasım 2026) · Godot Adım 1e-1 (Yankı Mağarası: giriş, iç, ışık)
+- `godot-deneme/` yeni derleme (godot dalı: magara.gd, mesale.gd; tools/disa_aktar_magara.js web'in mağara ızgarasını, paint() çizimini ve kaya tepesini döker; fonts/ DejaVu ve küçük Noto Emoji yedek yazı tipi). Belge 99_godot 1e satırı 1e-1/1e-2'ye bölündü. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.47 (25 Kasım 2026) · Godot Adım 1d-3 (görev sahneleri ve dersler)
 - `godot-deneme/` yeni derleme (godot dalı ab6453d: sahne.gd, gorev.gd'ye dersler; data/gorevler.json'a dersler = web DATA.LES). Belge 99_godot 1d-3 satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -106,11 +110,4 @@
 - Kadın W (sola bakış) çizimi v4.28'de ters dönmüştü; çevrildi.
 - Üretim: ComfyUI Z-Image Turbo + piksel LoRA, 512×688, saç biçimi ve yön başına bir resim (65 + 2 yeniden). Yeşil zemin + gölge temizliği, palet oylamalı küçültme (boy 31, uzun saçlılar 33–38), yön (sola bakış) cilt ağırlık merkeziyle otomatik. Araçlar oturum içi (/tmp/hero), depoya girmedi.
 - Geri alma: `git revert` bu commit; kayıt alanı değişmedi.
-
-## v4.28 (19 Kasım 2026) · Oyuncunun karakteri: ComfyUI çizimi, 8 yön × (1 duruş + 4 adım karesi), zıplamasız yürüyüş, erkek + kadın
-- Blok `v425kahraman` silindi, yerine `v428kahraman` (aynı yerde). İki sayfa (sprite sheet) gömülü: `SH.e`/`SH.k` = [renkli PNG, maske PNG]; hücre `CW`×`CH` (e 33×35, k 30×35), satırlar `S,SE,E,NE,N,NW,W,SW`, sütun 0 duruş, 1–4 adım. Maske eskisi gibi R=bölüm×60 (1 ten, 2 saç, 3 üst, 4 alt), G=parlaklık×100; çizme ve çerçeve maskesiz.
-- Kare: `player.mv` ise `1+floor(((player.step*10) mod 2π)/(π/2))`, değilse 0. `o.bob`/`o.step` yok sayılır (zıplama yok). Boyanmış sayfa önbelleği `CA` en çok 13 kombinasyon.
-- Üretim: ComfyUI Z-Image Turbo + piksel LoRA, yön başına tek duruş resmi (S, SW, W, NW, N; sağa bakanlar ayna), yeşil zemin anahtarlama + renk taşması temizliği, palet oylamalı küçültme (H 31 + 1 px çerçeve). Adım kareleri kalça satırının altına bacak yeniden çizilerek üretildi (yan: bacaklar öne-arkaya ±3 px, ön/arka: adım ayağı 2 px kalkar, çapraz: ±2 px açılır + arka ayak 1 px kalkar). Araçlar oturum içi (/tmp/hero/build.py, legs.py, proc2.py), depoya girmedi.
-- Geri alma: `git revert` bu commit (yalnızca `index.html`/`proje/Hammadde_prototip.html` bloğu, belge maddesi, notlar); kayıt alanı değişmedi.
-- Kontrol: chk.js 0 hata; Playwright ile erkek ve kadın için 8 yönde yürüyüş ekranları bakıldı, konsol hatası yok.
 

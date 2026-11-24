@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.48 · 25 Kasım 2026
+
+### Proje
+- **Godot, Adım 1e-1 (Yankı Mağarası: giriş, iç, ışık) oynanabilir:** Çayır'daki mağaranın kaya tepesi, tabelası ve ağzı geldi; seviye 5 ve yanan bir meşaleyle giriliyor. İçerisi zifiri karanlık; meşale çevreni aydınlatıyor, mantarlar mavi parlıyor. Meşale sönerse birkaç saniye sonra dışarı çıkıyorsun. Yankı mantarı ve Damla taşı toplanıyor, küçük harita mağarada yürüdükçe açılıyor. Meşale yuvası kemerin solunda (" tuşu ya da tıklayınca yanar/söner). Canlılar, Yankı Kraliçesi ve Madenci Kaya sıradaki parçada. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.47 · 25 Kasım 2026
 
 ### Proje
@@ -234,19 +241,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Sistemler › Yeni ikonlarla › "Oyuncunun karakteri": yaratma ekranı ve figürler, saç biçimleri, aksesuarlar, Tişört/Elbise rengi.
-
----
-
-## Versiyon 4.28 · 19 Kasım 2026
-
-### Görsel
-- **Karakterin yeni çizimi, 8 yönde gerçek yürüyüş:** oyun dünyasında oyuncunun karakteri (erkek ve kadın) baştan çizildi. Kenarlardaki beyaz/yeşil hale kalktı, çapraz yönler (sağ-aşağı, sol-aşağı, sağ-yukarı, sol-yukarı) artık gerçekten o yana dönük.
-- **Zıplama yok, adım var:** yürürken gövde ve baş yerinde kalır, bacaklar adım atar (her yönde 4 adım karesi; koşarken adımlar hızlanır). Durunca duruş karesine döner.
-- Erkek: kısa saç, gömlek ve pantolon; kadın: uzun saç, tunik elbise. Ten, saç, üst ve alt rengi karakter yaratmada seçtiğin renklere boyanır (çizme boyanmaz).
-- Karakter yaratma ekranı, karakter penceresi ve ara sahneler eski çizimle.
-
-### Tasarım belgesi
-- Sistemler › Yeni ikonlarla: "Oyuncunun karakteri" maddesi eklendi (8 yön, 4 adım karesi, zıplamasız yürüyüş, boyanan bölümler).
 
 ---
 
