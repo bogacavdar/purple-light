@@ -23,11 +23,19 @@ var kb := {}
 var hedef := Vector2.ZERO
 var olu := -1.0
 
+var tur_k := ""        # mağara canlıları: "w" önden yarasa, "t" üstten kertenkele/örümcek (web v436cayir)
+var boss := false
+var cvb := false        # mağaranın boss'u (yan görev çağırır)
+
 func _ready() -> void:
 	hp = float(D.hp)
+	tur_k = str(D.get("kind", ""))
+	boss = bool(D.get("boss", false))
 	spr = Sprite2D.new()
 	spr.texture = load(D.file)
 	spr.hframes = int(D.frames)
+	if tur_k != "":
+		spr.vframes = 3
 	spr.centered = false
 	spr.offset = Vector2(-float(D.ox), -float(D.oy))
 	mat = ShaderMaterial.new()
@@ -36,6 +44,10 @@ func _ready() -> void:
 	add_child(spr)
 
 func _draw() -> void:
+	if boss and olu < 0.0:
+		var pp := 0.5 + 0.5 * sin(Time.get_ticks_msec() / 250.0 + position.x)
+		for r in [16.0, 11.0, 6.0]:
+			draw_circle(Vector2(0, -8), r, Color(0.7, 0.29, 1.0, (0.1 + 0.06 * pp) * (1.0 - r / 20.0)))
 	if olu >= 0.0:
 		return
 	var sh := float(D.shadow)
@@ -66,7 +78,7 @@ func _draw() -> void:
 			draw_rect(Rect2(x, y, f, 2), Color("#8fd46b") if k > 0.5 else (Color("#f2b84b") if k > 0.25 else Color("#e8775a")))
 
 func _git(v: Vector2, dt: float) -> void:
-	var land: Array = D.landTiles
+	var land: Array = D.get("landTiles", [0.0, 1.0, 2.0])
 	var nx := position + Vector2(v.x * dt, 0)
 	if not oyun.engel(nx, 5.0) and land.has(float(oyun.tile_at(nx))):
 		position.x = nx.x
@@ -82,8 +94,15 @@ func _git(v: Vector2, dt: float) -> void:
 
 func _process(dt: float) -> void:
 	if olu >= 0.0:
-		# ölünce yana devrilir ve söner
 		olu += dt
+		if tur_k != "":
+			# mağara canlıları yuvarlanmaz: yarasa gölgesinin üstüne süzülür, kertenkele ve örümcek durduğu gibi yatar, gözleri söner
+			_kare(dt, false)
+			modulate.a = clampf(3.0 - olu * 1.2, 0.0, 1.0)
+			if olu > 2.5:
+				queue_free()
+			return
+		# ölünce yana devrilir ve söner
 		rotation = minf(1.0, olu / 0.25) * PI / 2 * face
 		modulate.a = clampf(1.6 - olu * 1.6, 0.0, 1.0)
 		if olu > 1.0:
@@ -93,7 +112,9 @@ func _process(dt: float) -> void:
 	var dv: Vector2 = P.position - position
 	var d := maxf(dv.length(), 1.0)
 	var aggro := float(D.aggro)
-	var saldirgan: bool = D.temper == "saldırgan"
+	var saldirgan: bool = D.temper == "saldırgan" or (D.temper == "nötr" and mad)
+	if D.temper == "nötr" and mad and d > 200.0:
+		mad = false
 	if saldirgan and not mad and d < aggro and not P.bayildi and not P.kilit:
 		mad = true
 	flash -= dt
@@ -106,8 +127,9 @@ func _process(dt: float) -> void:
 		if kb.t <= 0:
 			kb = {}
 	else:
-		if saldirgan and mad and (d > aggro * 2.0 or P.bayildi or P.kilit) and lunge.is_empty() and wind <= 0.0:
+		if D.temper == "saldırgan" and mad and not boss and (d > aggro * 2.0 or P.bayildi or P.kilit) and lunge.is_empty() and wind <= 0.0:
 			mad = false
+		if boss and (P.bayildi or P.kilit): mad = false
 		var angry: bool = saldirgan and (mad or d < aggro) and not P.bayildi and not P.kilit
 		if D.temper == "zararsız" and (d < 70.0 or mad):
 			st = "flee"
@@ -156,6 +178,11 @@ func _process(dt: float) -> void:
 			if dir != Vector2.ZERO:
 				_git(dir * float(D.spd) * 0.3, dt)
 				moving = true
+	if tur_k != "":
+		_kare(dt, moving)
+		mat.set_shader_parameter("flash", 1.0 if flash > 0.0 else 0.0)
+		queue_redraw()
+		return
 	# kare seçimi: hamlede 5, yürürken 1–4, dururken 0
 	var fr := 0
 	if wind > 0.0 or not lunge.is_empty():
@@ -168,6 +195,36 @@ func _process(dt: float) -> void:
 	spr.offset.x = (-float(D.ox)) if face > 0 else (float(D.ox) - float(D.fw))
 	mat.set_shader_parameter("flash", 1.0 if flash > 0.0 else 0.0)
 	queue_redraw()
+
+## web v436cayir: yarasa kanadını üç kareyle çırpar (yukarı, düz, aşağı), leşi 6. kare; kertenkele/örümcek iki adım, leşi 'd' satırı;
+## kovalarken gözler kırmızı ('r' satırı)
+func _kare(_dt: float, moving: bool) -> void:
+	var fw := float(D.fw); var fh := float(D.fh)
+	var tm := Time.get_ticks_msec() / 1000.0
+	var row := 0
+	var fr := 0
+	var top := 0.0
+	var kovala: bool = (st == "chase" or mad) and olu < 0.0
+	if tur_k == "w":
+		var ph := sin(tm * 14.0 + position.x * 0.37)
+		if olu >= 0.0:
+			fr = 6
+			top = -fh + 4.0 - (1.0 - minf(1.0, olu / 0.4)) * 12.0
+		else:
+			fr = 1 if ph > 0.45 else (3 if ph < -0.45 else 2)
+			top = -fh - (6.0 if fh > 40.0 else 8.0) + sin(tm * 3.0 + position.x * 0.1) * 2.0
+			row = 1 if kovala else 0
+	else:
+		var l := sin(step * (10.0 if st == "wander" else 18.0)) if moving else 0.0
+		if olu >= 0.0:
+			fr = 0; row = 2
+		else:
+			fr = 2 if l > 0.0 else 1
+			row = 1 if kovala else 0
+		top = -fh * 0.72
+	spr.frame = row * int(D.frames) + fr
+	spr.flip_h = face < 0
+	spr.offset = Vector2(-floorf(fw / 2.0), roundf(top))
 
 func vuruldu(dm: int, yon: Vector2) -> void:
 	if olu >= 0.0:
@@ -184,4 +241,10 @@ func vuruldu(dm: int, yon: Vector2) -> void:
 		for k in 14:
 			oyun.parca(position + Vector2(0, -4), Vector2(randf_range(-30, 30), -20 - randf() * 40), 0.6, Color("#c84a3a") if k % 2 else Color("#e8e0c8"))
 		oyun.yazi(position + Vector2(0, -26), tur + " avlandı", Color("#fff2b0"), 9)
-		oyun.canli_oldu(tur)
+		# web killAnimal: düşenler ve XP
+		for dr in D.get("drops", []):
+			if randf() < float(dr.p):
+				oyun.toplama.dusur(str(dr.n), position, randi_range(int(dr.min), int(dr.max)))
+		if int(D.get("xp", 0)) > 0:
+			oyun.env.xp_ekle(int(D.xp))
+		oyun.canli_oldu(tur, self)

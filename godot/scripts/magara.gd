@@ -32,6 +32,14 @@ var kh_ada: Texture2D
 var kh_img: Image
 var kh_tex: ImageTexture
 var son_hucre := Vector2i(-99, -99)
+var CD := {}              # mağara canlılarının verisi (canli.gd'nin beklediği biçimde)
+var dogum_t := 0.0
+var kaya: Node2D
+var kaya_durum := 0       # 0 tanışılmadı · 1 mantar getir · 2 boss · 3 dön · 4 bitti
+var kaya_denedi := false  # boss'la karşılaşıp bayıldıysa ikinci gelişte doğrudan "Çağır"
+var boss_yenildi := false
+var yan_kart: PanelContainer
+var yan_yazi: RichTextLabel
 
 func kur(o) -> void:
 	oyun = o
@@ -85,6 +93,31 @@ func kur(o) -> void:
 	oyun.hud.add_child(yukleme)
 	yukleme.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	v.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	# canlılar
+	for k in M.canlilar:
+		var A: Dictionary = M.canlilar[k].duplicate(true)
+		A.file = A.png
+		A.ox = int(A.fw) / 2
+		A.shadow = 24.0 if A.kind == "w" and float(A.fh) > 40.0 else (12.0 if A.kind == "w" else (float(A.r) + 2.0) * 2.0)
+		if A.kind == "w": A.top = float(A.fh) + 8.0
+		else: A.top = float(A.fh) * 0.72
+		A.cs = null
+		CD[k] = A
+	# mağaranın ağzında Sarkıt ve Yarasa gübresi (adada başka yerde yoktur)
+	for a in M.agiz:
+		var R: Dictionary = M.agizResim[a.n]
+		if not R.has("png"): continue
+		oyun.toplama_veri.nodes[a.n] = {respawn = float(R.respawn), time = float(R.time), mine = false, ad = a.n, tier = 1, hurt = null, bush = false}
+		var d := preload("res://scripts/dugum.gd").new()
+		d.ad = a.n
+		d.texture = load(R.png)
+		d.centered = false
+		d.offset = Vector2(-float(R.ox), -float(R.oy))
+		d.scale = Vector2.ONE / float(R.k)
+		d.position = Vector2(a.x, a.y)
+		oyun.nesneler.add_child(d)
+		oyun.dugumler.append(d)
+	_kaya_kur()
 	# mağarada toplananlar toplama tablosuna (web RES: bir kez çıkar, içerideyken yeniden çıkmaz)
 	for n in M.toplanir:
 		oyun.toplama_veri.nodes[n] = {respawn = 1e9, time = float(M.toplanir[n].time), mine = false, ad = n, tier = 1, hurt = null, bush = false}
@@ -115,6 +148,9 @@ func etkiles() -> bool:
 	var p: Vector2 = oyun.oyuncu.position
 	if not icinde and p.distance_to(Vector2(M.kapi.x, float(M.kapi.y) + 14.0)) < 40.0:
 		_sor_gir()
+		return true
+	if kaya_yakin():
+		kaya_konus()
 		return true
 	if icinde and p.distance_to(cikis.position) < 56.0:
 		oyun.konusma.ac(M.ad, null, "Mağaradan çıkıp gün ışığına dönmek ister misin?", [{t = "Vazgeç", kapat = true}, {t = "Mağaradan çık", pri = true, f = func(): _yukle("Gün ışığı", "Mağaradan çıkılıyor…", _cik)}])
@@ -167,6 +203,8 @@ func _gir() -> void:
 	_isik(Vector2(M.baslangic.x, float(M.baslangic.y) + 30.0) + OFS, 90.0, Color(0.85, 0.9, 1.0), 0.9)
 	_toplanirlar()
 	_harita_ac()
+	kaya.visible = true
+	_isik(kaya.position + Vector2(0, -8), 70.0, Color(1.0, 0.85, 0.55), 1.0)
 	var ilk := not gorulen
 	gorulen = true
 	oyun.env.mesaj("%s · %s" % [M.ad, "Mağaraya ilk kez girdin" if ilk else "Mağaradasın"])
@@ -185,6 +223,7 @@ func _cik(sessiz: bool = false, yerinde: bool = false) -> void:
 	isiklar = []
 	ic.visible = false
 	cikis.visible = false
+	kaya.visible = false
 	oyun.kamera_sinir()
 	oyun.taban_renk = Color.WHITE
 	oyun.renk_guncelle()
@@ -273,9 +312,19 @@ func _dugum_resmi(n: String) -> Texture2D:
 # ------------------------------------------------------------------ her an: karanlıkta kalınca dışarı, bayılınca dışarı, harita açılır
 func _process(dt: float) -> void:
 	kapi.queue_redraw()
+	_yan_kart()
 	if not icinde: return
+	kaya.queue_redraw()
+	dogum_t -= dt
+	if dogum_t <= 0.0:
+		dogum_t = 1.5
+		_dogur()
 	cikis.queue_redraw()
 	if oyun.oyuncu.bayildi:
+		if kaya_durum == 2:
+			kaya_denedi = true
+			kaya_durum = 1
+			oyun.env.mesaj("Yan görev bitti sayılmadı: Kaya yine bekliyor.", true)
 		_cik(true, true)
 		return
 	if oyun.mesale.elde() != null:
@@ -361,3 +410,164 @@ func harita_nokta() -> Vector2:
 	var o := (kh.size - Vector2(N, N) * s) / 2.0
 	var q: Vector2 = (oyun.oyuncu.position - OFS - Vector2(PX, PY)) / float(T)
 	return o + q * s
+
+# ------------------------------------------------------------------ mağara canlıları (web caveSpawn): her türden en çok 2 (sürü), toplam 9; 220–440 px uzakta doğar
+func _dogur() -> void:
+	var P: Vector2 = oyun.oyuncu.position
+	var hepsi: Array = oyun.canlilari_ver()
+	var say := 0
+	for c in hepsi:
+		if c.position.distance_to(P) > 820.0 and not c.boss:
+			c.queue_free()
+		elif not c.boss:
+			say += 1
+	if say >= 9: return
+	var e := Vector2(M.ag.x, M.ag.y)
+	var d := Vector2(M.en_dip.x, M.en_dip.y)
+	for k in M.turler:
+		var A: Dictionary = CD[k]
+		var paket := {}
+		var tek := 0
+		for c in hepsi:
+			if c.tur == k and is_instance_valid(c) and c.olu < 0.0:
+				tek += 1
+				paket[c.get_meta("pk", c.get_instance_id())] = true
+		if (paket.size() if A.pack != null else tek) >= 2: continue
+		for g in 30:
+			var i := randi() % (N * N)
+			if G[i] == 0: continue
+			var cx := i % N
+			var cy := i / N
+			var p := Vector2(PX + cx * T + 8, PY + cy * T + 8) + OFS
+			var dd := p.distance_to(P)
+			if dd < 220.0 or dd > 440.0 or Vector2(cx, cy).distance_to(e) < 10.0 or Vector2(cx, cy).distance_to(d) < 9.0: continue
+			var n := 1
+			if A.pack != null: n = randi_range(int(A.pack[0]), int(A.pack[1]))
+			var pk := randi()
+			for m in n:
+				var q := p if m == 0 else p + Vector2(randf_range(-20, 20), randf_range(-20, 20))
+				if m > 0 and engel(q, 5.0): continue
+				var c = _canli(k, q)
+				c.set_meta("pk", pk)
+			break
+
+func _canli(k: String, p: Vector2):
+	var c := preload("res://scripts/canli.gd").new()
+	c.oyun = oyun
+	c.tur = k
+	c.D = CD[k]
+	c.position = p
+	oyun.nesneler.add_child(c)
+	return c
+
+# ------------------------------------------------------------------ Madenci Kaya (en dipteki oda) ve Yankı Kraliçesi
+func _kaya_kur() -> void:
+	var K: Dictionary = M.kaya
+	kaya = Node2D.new()
+	kaya.position = Vector2(float(M.dip.x) - 10.0, float(M.dip.y) - 12.0) + OFS
+	var sp := Sprite2D.new()
+	sp.texture = load(K.png)
+	sp.centered = false
+	sp.offset = Vector2(-float(K.ox), -float(K.oy))
+	kaya.add_child(sp)
+	kaya.draw.connect(_kaya_ciz)
+	oyun.nesneler.add_child(kaya)
+	kaya.visible = false
+	yan_kart = PanelContainer.new()
+	var st := StyleBoxFlat.new(); st.bg_color = Color(0.04, 0.06, 0.09, 0.82); st.border_color = Color("#7fc8ff"); st.set_border_width_all(1)
+	st.set_content_margin_all(8)
+	yan_kart.add_theme_stylebox_override("panel", st)
+	yan_yazi = RichTextLabel.new(); yan_yazi.bbcode_enabled = true; yan_yazi.fit_content = true; yan_yazi.scroll_active = false
+	yan_yazi.custom_minimum_size = Vector2(284, 0)
+	yan_kart.add_child(yan_yazi)
+	oyun.hud.add_child(yan_kart)
+	yan_kart.anchor_left = 1.0; yan_kart.anchor_right = 1.0
+	yan_kart.offset_left = -310.0; yan_kart.offset_right = -10.0
+	yan_kart.visible = false
+
+func _kaya_ciz() -> void:
+	# fenerin ışığı ve başında mavi "?" (görev alınabilirken)
+	if kaya_durum == 0 or (kaya_durum == 1 and kaya_denedi) or kaya_durum == 3:
+		var y := -44.0 + roundf(sin(Time.get_ticks_msec() / 250.0) * 2.0)
+		kaya.draw_circle(Vector2(0, y + 4), 7.0, Color("#9fd8ff"))
+		kaya.draw_string(ThemeDB.fallback_font, Vector2(-3, y + 8), "?", HORIZONTAL_ALIGNMENT_LEFT, -1, 11, Color("#14324a"))
+
+func _yan_kart() -> void:
+	if kaya_durum == 0 or kaya_durum == 4 or oyun.sahne.acik:
+		yan_kart.visible = false
+		return
+	yan_kart.visible = true
+	var k: Control = oyun.gorev.kart
+	yan_kart.offset_top = (k.offset_top + k.size.y + 6.0) if k.visible else 34.0
+	var Y: Dictionary = M.kaya.yan
+	var sat := ""
+	match kaya_durum:
+		1: sat = "Yankı Kraliçesi'ni çağır (Kaya ile konuş)" if kaya_denedi else "%d/4 Yankı mantarı · Kaya'ya götür" % mini(4, oyun.env.adet("Yankı mantarı"))
+		2: sat = "Yankı Kraliçesi'ni yen"
+		3: sat = "Kaya ile konuş"
+	yan_yazi.text = "[color=#7fc8ff][font_size=11]%s · Yan görev[/font_size][/color]\n[b]%s[/b]\n%s" % [Y.name, Y.title, sat]
+
+func kaya_yakin() -> bool:
+	return icinde and kaya.position.distance_to(oyun.oyuncu.position) < 34.0
+
+func kaya_konus() -> void:
+	var Y: Dictionary = M.kaya.yan
+	var por = load(M.kaya.portre)
+	match kaya_durum:
+		0:
+			_satirlar(Y.intro, 0, func():
+				kaya_durum = 1
+				oyun.env.mesaj("Yan görev: " + str(Y.title)))
+		1:
+			if kaya_denedi:
+				oyun.konusma.ac(Y.name, por, Y.again, [{t = Y.againBtn, pri = true, f = func(): _boss_cagir()}, {t = "Sonra", kapat = true}])
+			elif oyun.env.adet("Yankı mantarı") >= 4:
+				oyun.env.eksilt("Yankı mantarı", 4)
+				_satirlar(Y.steps[0].on, 0, func(): _boss_cagir())
+			else:
+				oyun.konusma.ac(Y.name, por, Y.remind)
+		2:
+			oyun.konusma.ac(Y.name, por, "Kraliçe burada evlat! Önce onu yen.")
+		3:
+			_satirlar(Y.steps[2].on, 0, func():
+				kaya_durum = 4
+				oyun.env.vio_ekle(int(Y.c))
+				oyun.env.xp_ekle(int(Y.x))
+				oyun.env.mesaj("Yan görev tamamlandı: %s · +%d Vio, +%d XP" % [Y.title, int(Y.c), int(Y.x)]))
+		4:
+			oyun.konusma.ac(Y.name, por, Y.after[0])
+
+func _satirlar(L: Array, i: int, son: Callable) -> void:
+	if i >= L.size():
+		son.call()
+		return
+	var l: Array = L[i]
+	var kim: String = M.kaya.yan.name if l[0] == "n" else ""
+	var por = load(M.kaya.portre) if l[0] == "n" else null
+	var t: String = oyun.gorev._bb(str(l[1]))
+	if l[0] == "x": t = "[i]%s[/i]" % t
+	oyun.konusma.ac(kim, por, t, [{t = "Devam" if i < L.size() - 1 else "Tamam", pri = true, kapat = true, f = func(): _satirlar(L, i + 1, son)}])
+
+func _boss_cagir() -> void:
+	kaya_durum = 2
+	var k: String = M.boss
+	for c in oyun.canlilari_ver():
+		if c.tur == k: return
+	var p := Vector2(M.dip.x, float(M.dip.y) + 56.0) + OFS
+	if not zemin(p): p = Vector2(M.dip.x, float(M.dip.y) + 24.0) + OFS
+	var c = _canli(k, p)
+	c.cvb = true
+	c.mad = true
+	c.st = "chase"
+	c.scale = Vector2(2.4, 2.4)
+	for i in 26:
+		oyun.parca(p + Vector2(0, -10), Vector2(randf_range(-45, 45), -20 - randf() * 60), 0.8, Color("#b44aff") if i % 2 else Color.WHITE)
+	oyun.env.mesaj("%s · Mağaranın boss'u!" % k, true)
+
+func boss_oldu() -> void:
+	boss_yenildi = true
+	if kaya_durum == 2:
+		kaya_durum = 3
+	# boss ödülü: kendi XP'si (canlı verir) ve görev ödülü kadar Vio (belge: Mağaralar kural 10)
+	oyun.env.vio_ekle(int(M.kaya.yan.c))
+	oyun.env.mesaj("Yankı Kraliçesi yenildi! +%d Vio · Kaya'ya dön" % int(M.kaya.yan.c))

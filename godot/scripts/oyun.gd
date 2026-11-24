@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1e-1"
+const SURUM := "Godot · Adım 1e-2"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -141,6 +141,19 @@ func _ready() -> void:
 			while env.sv < 5:
 				env.xp_ekle(200)
 			mesale.degistir()
+		if q.contains("kayatest"):
+			env.ekle("Kaba meşale", 2)
+			env.ekle("Yankı mantarı", 4)
+			env.ekle("Taş kılıç")
+			while env.sv < 10:
+				env.xp_ekle(400)
+			mesale.degistir()
+			magara._gir()
+			oyuncu.position = magara.kaya.position + Vector2(18, 10)
+		if q.contains("magdogum"):
+			env.ekle("Kaba meşale", 2)
+			mesale.degistir()
+			magara._gir()
 		if q.contains("ors"):
 			oyuncu.position = Vector2(toplama_veri.istasyon.ors.x - 14, toplama_veri.istasyon.ors.y + 4)
 			for e in [["Taş", 6], ["Sopa", 2], ["İp", 4], ["Dal", 2], ["Keskin taş", 4]]:
@@ -316,8 +329,10 @@ func _canli_koy(k: String, min_kare: float, aralik: float = 14.0) -> void:
 		nesneler.add_child(c)
 		return
 
-func canli_oldu(k: String) -> void:
+func canli_oldu(k: String, c = null) -> void:
 	if gorev: gorev.av(k)
+	if magara != null and c != null and c.cvb:
+		magara.boss_oldu()
 	if magara != null and magara.icinde:
 		return
 	# yerine bir süre sonra yenisi gelir (deneme kolaylığı için)
