@@ -1,3 +1,7 @@
+## v4.47 (25 Kasım 2026) · Godot Adım 1d-3 (görev sahneleri ve dersler)
+- `godot-deneme/` yeni derleme (godot dalı ab6453d: sahne.gd, gorev.gd'ye dersler; data/gorevler.json'a dersler = web DATA.LES). Belge 99_godot 1d-3 satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.46 (25 Kasım 2026) · Godot Adım 1d-2 (görev sistemi)
 - `godot-deneme/` yeni derleme (godot dalı: gorev.gd; data/gorevler.json = web DATA.Q'nun Çayır kişileri + eşyaların biyomları + grup adları, disa_aktar.js oyunun kaynağından okur). Belge 99_godot 1d-2 satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -109,47 +113,4 @@
 - Üretim: ComfyUI Z-Image Turbo + piksel LoRA, yön başına tek duruş resmi (S, SW, W, NW, N; sağa bakanlar ayna), yeşil zemin anahtarlama + renk taşması temizliği, palet oylamalı küçültme (H 31 + 1 px çerçeve). Adım kareleri kalça satırının altına bacak yeniden çizilerek üretildi (yan: bacaklar öne-arkaya ±3 px, ön/arka: adım ayağı 2 px kalkar, çapraz: ±2 px açılır + arka ayak 1 px kalkar). Araçlar oturum içi (/tmp/hero/build.py, legs.py, proc2.py), depoya girmedi.
 - Geri alma: `git revert` bu commit (yalnızca `index.html`/`proje/Hammadde_prototip.html` bloğu, belge maddesi, notlar); kayıt alanı değişmedi.
 - Kontrol: chk.js 0 hata; Playwright ile erkek ve kadın için 8 yönde yürüyüş ekranları bakıldı, konsol hatası yok.
-
-## v4.27 (19 Kasım 2026) · E2E Bataklık: tek Reis kuralı (hızlı tür ×3), mağara boss'u görev Vio'su, Bataklık ve Batık dengesi, balta/kazma hasarı, kuşaklar, av sarı bölgesi, mağarada biyom
-- Kaynak: /home/claude/E2E_v426_bataklik/ANALIZ_BATAKLIK.md §5–§10 (YB-01…33). YB-23'te E3 kodu doğruydu, yalnız YB-21 satırı düzeltildi. Boğaç kararları: S1=A (tek Reis kuralı), hızlı türlerin Reisi ×3, mağara boss'u görev Vio'su (A).
-
-**Reis**
-- `makeBoss` (çekirdek): `hpM` = `spd>=90?3:4`, `dmM=1`; ACT 2'de can sınırı yok, hasar sınırı 5.
-- `fixBoss` (v128): aynı kural, `I2` sınırları, XP `xp0`'dan.
-- v128: `xp0` yazımı (v129'un biyom XP çarpanından önce).
-- `P4` ödül satırı: Reis Vio'su `xp0`'dan; mağara boss'u için `caveBossVio` (mağara görevinin `c`'si).
-- Silinenler: sürü çağrısı dalı, `PACKB`, `CAYIR`/`ORMAN`, `mul`.
-
-**Canlılar**
-- v128 `SET`: Ördek, Yaban kazı, Turna, Su samuru, Timsah, Bataklık kurdu. `xp` çarpansız değerdir; Bataklık kurdunda `fx` kanama 2.
-- Mağara: `NK2` Çamur Ana; `PACK['Mağara sülüğü']=[1,2]`; mağara `spawnAnimals` sarmalayıcısı `c2` için `C._sT` (3 sn).
-
-**Aletler, eşyalar, kuşaklar**
-- `AXE` 14 alet.
-- `V.usta` Kamış çizme `def:9`; `PR` Kamış çizme 151; v3.51'in Kamış fiyat satırı silindi.
-- `BANDR[3]`; `__plSpawnOK` Timsah Orta 20; çekinme `ARR[3]=21`.
-- `NOCUT` (Dut, İncir).
-
-**Görevler**
-- DATA.Q: AL2, AL4, VE4 ödülü; AL1 metni.
-- Yan görevler: Şifa `guard` `n:1` ve son söz; Kartal `guard` `seq`.
-
-**v186**
-- Sarı bölge: `animalCircle` `ak`, `zKey`, `bandOK`, `zoneMask` `cut`, `whereTxt`.
-- `cardUp` (ders kartı kuyruğu).
-- `nextStep` kazma kademesi adımı (`bestTool` v186'da kademe sayısıdır).
-- `hereBio` (mağarada mağaranın biyomu); `refreshVis`, `pickFiller` ve `fillQ` onu kullanır.
-
-**Kayıt ve geri alma**
-- Kayıt alanı yok.
-- Geri almak: `git revert` (c12c622, cd681f5 ve son commit; belge ve kod birlikte).
-
-**Kontrol**
-- chk 0 hata, yorum taraması temiz.
-- Headless (port 9433):
-  - Reis tablosunun ACT 1'deki 41 satırında can ve hasar birebir, XP 40 satırda (Vaşak Reisi 776, belgenin kendi canlı tablosuna göre bu doğru).
-  - 11 hızlı Reis tutuyor.
-  - Mağara boss'larının Vio'su 310, 500 ve 700 (öldürerek); 1.000, 1.400 ve 2.000 (koddan).
-  - YB-14/24/26 değerleri tutuyor.
-  - Batık'ta "!" Bataklık'tan.
 
