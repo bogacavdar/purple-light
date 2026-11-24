@@ -93,8 +93,11 @@ const RW=0,RH=0;
     const GTR={};for(const t of trees){const ty=t.type;if(GTR[ty.n])continue;GTR[ty.n]={wood:woodOf(ty.n),tier:TREE_TIER[ty.n]||1,noCut:!!ty.noCut,fruit:ty.fruit||null,seed:ty.seed||null,extra:TREE_EXTRA[ty.n]||[]}}
     const GTL={};for(const k of TOOLS1){const g=GT[k];GTL[k]={kind:g.kind,time:g.time,dur:g.dur,tier:g.kind==='axe'?(AXE_TIER[k]||1):(PICK_TIER[k]||1),use:g.use||''}}
     const names=new Set(['Dal','Taş']);for(const k in GN)names.add(k);for(const k in GTR){const r=GTR[k];names.add(r.wood);if(r.fruit)names.add(r.fruit);if(r.seed)names.add(r.seed);for(const [e] of r.extra)names.add(e)}for(const k of TOOLS1)names.add(k);names.add('Taş kılıç');
+    // Adım 1c: every recipe (DB.R) with what it needs, which ones are forged at an anvil or built by Usta Sinan, and every item's picture
+    const RECS=DB.R.map(x=>({r:x.r,i:x.i,t:x.t,c:x.c,forged:FORGED.has(x.r),place:PLACEABLE.has(x.r)}));
+    for(const x of DB.R){names.add(x.r);for(const [m] of x.i)for(const e of expand(m))names.add(e);for(const t of x.t)names.add(t)}
     const ITEMS={};for(const n of names){let c=ICONC[n];if(!c){try{icon(n)}catch(e){}c=ICONC[n]}ITEMS[n]={png:c?png(c):null,food:foodVal(n)||0,heal:healVal(n)||0}}
-    const GATHER={nodes:GN,trees:GTR,tools:GTL,items:ITEMS,reach:REACH,pickR:28,dropLife:DROP_LIFE,fruitRe:FRUIT_RE,treeChops:3,treeCd:12,treeRegrow:[200,300],
+    const GATHER={recipes:RECS,nodes:GN,trees:GTR,tools:GTL,items:ITEMS,reach:REACH,pickR:28,dropLife:DROP_LIFE,fruitRe:FRUIT_RE,treeChops:3,treeCd:12,treeRegrow:[200,300],
       hunger:{perSec:100/720,early:'gün 1–2: ×0,5 · gün 3–4: ×0,75 · sonra ×1'},start:{inv:Object.assign({},inv),food:Math.round(food)},keys:{F:'topla/al',X:'ye',I:'çanta','1-5':'kemer',G:'deneme: Taş balta + Taş kazma ver'}};
     const fist=(()=>{const w=weapon();return {dmg:w.dmg,reach:w.reach,cd:w.cd}})();
     // the first sword of the game (Taş kılıç): its numbers come from the game's own weapon() with it worn for a moment

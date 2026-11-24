@@ -51,6 +51,8 @@ func ekle(n: String, k: int = 1) -> void:
 	kemer_ciz()
 	if canta.visible:
 		canta_ciz()
+	if oyun.el_yapimi and oyun.el_yapimi.pencere.visible:
+		oyun.el_yapimi.ciz()
 
 func eksilt(n: String, k: int = 1) -> void:
 	inv[n] = maxi(0, adet(n) - k)
@@ -141,7 +143,8 @@ func _process(dt: float) -> void:
 		for n in ["Taş balta", "Taş kazma", "Taş kılıç"]:
 			if adet(n) == 0:
 				ekle(n)
-		mesaj("Deneme: Taş balta, Taş kazma ve Taş kılıç verildi")
+		var n: int = oyun.el_yapimi.deneme_ogret()
+		mesaj("Deneme: Taş balta, Taş kazma ve Taş kılıç verildi; %d Çayır tarifi öğrenildi" % n)
 
 # ------------------------------------------------------------------ arayüz
 func _arayuz() -> void:

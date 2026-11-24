@@ -19,7 +19,7 @@ static func _axis(a: String, ax: int, v: float) -> void:
 	InputMap.action_add_event(a, e)
 
 static func kur() -> void:
-	for a in ["sol", "sag", "yukari", "asagi", "kos", "vur", "atil", "kos_kol", "topla", "ye", "canta", "kemer1", "kemer2", "kemer3", "kemer4", "kemer5", "kemer_sonraki", "deneme_alet"]:
+	for a in ["sol", "sag", "yukari", "asagi", "kos", "vur", "atil", "kos_kol", "topla", "ye", "canta", "kemer1", "kemer2", "kemer3", "kemer4", "kemer5", "kemer_sonraki", "deneme_alet", "el_yapimi", "kitap"]:
 		if InputMap.has_action(a):
 			InputMap.erase_action(a)
 		InputMap.add_action(a, 0.3)
@@ -28,7 +28,7 @@ static func kur() -> void:
 	_key("yukari", [KEY_W, KEY_UP]); _key("asagi", [KEY_S, KEY_DOWN])
 	# Shift: koş · Q: vur (sol tık da vurur, tıklanan yöne) · Boşluk: atıl · F: topla/al · X: ye · I: çanta · 1–5: kemer · G: deneme aletleri
 	_key("kos", [KEY_SHIFT]); _key("vur", [KEY_Q]); _key("atil", [KEY_SPACE])
-	_key("topla", [KEY_F]); _key("ye", [KEY_X]); _key("canta", [KEY_I]); _key("deneme_alet", [KEY_G])
+	_key("topla", [KEY_F]); _key("ye", [KEY_X]); _key("canta", [KEY_I]); _key("deneme_alet", [KEY_G]); _key("el_yapimi", [KEY_TAB]); _key("kitap", [KEY_K])
 	_key("kemer1", [KEY_1]); _key("kemer2", [KEY_2]); _key("kemer3", [KEY_3]); _key("kemer4", [KEY_4]); _key("kemer5", [KEY_5])
 	# kol: sol çubuk ve yön tuşları yürür, L3 koşuyu açar, X (PS □) ya da RT vurur, B (PS ○) atılır, A (PS ✕) toplar,
 	# Y (PS △) kemerde sıradaki yuvaya geçer, LB yer, Select/Back çantayı açar
@@ -40,4 +40,4 @@ static func kur() -> void:
 	_btn("vur", JOY_BUTTON_X); _axis("vur", JOY_AXIS_TRIGGER_RIGHT, 1.0)
 	_btn("atil", JOY_BUTTON_B)
 	_btn("kemer_sonraki", JOY_BUTTON_Y); _btn("topla", JOY_BUTTON_A)
-	_btn("ye", JOY_BUTTON_LEFT_SHOULDER); _btn("canta", JOY_BUTTON_BACK)
+	_btn("ye", JOY_BUTTON_LEFT_SHOULDER); _btn("canta", JOY_BUTTON_BACK); _btn("el_yapimi", JOY_BUTTON_START)

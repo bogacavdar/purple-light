@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1b"
+const SURUM := "Godot · Adım 1c"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -21,6 +21,7 @@ var agac_izgara := {}  # 32 px'lik hücre → o hücredeki ağaçlar (web: TGRID
 var agaclar: Array = []
 var dugumler: Array = []
 var env
+var el_yapimi
 var toplama_veri: Dictionary
 var toplama
 
@@ -64,6 +65,9 @@ func _ready() -> void:
 	env = preload("res://scripts/envanter.gd").new()
 	add_child(env)
 	env.kur(self)
+	el_yapimi = preload("res://scripts/el_yapimi.gd").new()
+	add_child(el_yapimi)
+	el_yapimi.kur(self)
 	toplama = preload("res://scripts/toplama.gd").new()
 	toplama.oyun = self
 	toplama.env = env
@@ -272,7 +276,7 @@ func _hud() -> void:
 	_golge(silah_yazi)
 	kutu.add_child(silah_yazi)
 	var yardim := Label.new()
-	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · F: topla · X: ye · I: çanta · 1–5: kemer · G: deneme aletleri\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · A topla · LB ye · Y kemer · Back çanta"
+	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · 1–5: kemer · G: deneme (aletler ve Çayır tarifleri)\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
 	yardim.add_theme_font_size_override("font_size", 12)
 	_golge(yardim)
 	yardim.add_theme_font_size_override("font_size", 11)
