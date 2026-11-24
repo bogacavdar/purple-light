@@ -1,0 +1,71 @@
+{
+ "meta": {
+  "kaynak": "proje/Hammadde_prototip.html",
+  "surum": "Versiyon 4.39",
+  "uretildi": "2026-11-24T22:02:34.735Z"
+ },
+ "speedBase": 72,
+ "speed": 72,
+ "runMult": 1.6,
+ "halfBox": 5,
+ "fist": {
+  "dmg": 4,
+  "reach": 16,
+  "cd": 0.45
+ },
+ "sword": {
+  "n": "Taş kılıç",
+  "dmg": 12,
+  "reach": 22,
+  "cd": 0.42
+ },
+ "dodge": {
+  "t": 0.24,
+  "speed": 200,
+  "cd": 0.65
+ },
+ "hp": 100,
+ "camera": "S = max(2, round(min(ekran genişliği, ekran yüksekliği) / 260)) piksel / dünya pikseli",
+ "heroCell": {
+  "w": 26,
+  "h": 40,
+  "frames": 5,
+  "rows": [
+   "S",
+   "SE",
+   "E",
+   "NE",
+   "N",
+   "NW",
+   "W",
+   "SW"
+  ],
+  "foot": "hücrenin ortası, alttan 5 px yukarıda (oyuncunun y'si)"
+ },
+ "gorunus": {
+  "hair": "#7a4a2a",
+  "hairD": "#4e2e18",
+  "hairL": "#a8703e",
+  "shirt": "#f2b84b",
+  "shirtD": "#b68a38",
+  "pants": "#5a6a9a",
+  "skin": "#f8d2ae",
+  "skinD": "#e6b08a",
+  "eye": "#2a1f08",
+  "tuft": true,
+  "long": false,
+  "hs": "short",
+  "dress": false,
+  "gl": "none",
+  "hat": "none",
+  "hatC": "#c84a3a",
+  "flower": false,
+  "beard": "v48",
+  "gender": "e",
+  "buff": null,
+  "buffS": null,
+  "bi": "yok",
+  "sk": "yok",
+  "face": 0
+ }
+}

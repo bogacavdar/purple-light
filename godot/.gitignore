@@ -1,0 +1,3 @@
+# Godot kendi önbelleği ve derleme çıktıları
+.godot/
+build/web/
