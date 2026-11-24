@@ -121,6 +121,19 @@ Godot 4.7.1 projesi `godot` dalında (`godot/`). Oynanır hali: https://bogacavd
 - **Denemeye özel (web'de yok):** Kurt gündüz de vardır (ölünce 12 sn sonra yenisi gelir); 1 tuşu (kolda Y) yumrukla Taş kılıç arasında geçiş yapar.
 - **Bu adımda yok:** toplama, envanter, düşen eşyalar, savuşturma, ulti, gün-gece ve ışık, sesler, dokunmatik düğmeler (Adım 1 · Çayır'da gelir).
 
+### Adım 1 · Çayır (25 Kasım 2026, başladı: Boğaç: "tamam daha güzel olmuş bir sonraki adıma geçelim")
+
+Adım 1 küçük parçalar halinde gider; her parçanın sonunda deneme linki (`godot-deneme/`) güncellenir:
+
+| Parça | İçerik |
+|---|---|
+| 1a · Dünya (yapıldı) | Bütün ada haritası (790 × 568 karo; Çayır, orman zemini, kum ve suların ComfyUI dokuları, öbür biyomlar eski karolarla), deniz dalgaları, akıntı, parıltı ve kıyı köpüğü, bütün ağaçlar (2.806) ve toplanabilirler (6.338), küçük harita |
+| 1b · Toplama ve çanta | F ile toplama (yerdeki eşya önce), ağaç kesme ve taş kırma, düşen eşyalar, çanta, alet kemeri, tokluk |
+| 1c · El yapımı | Tarif kitabı, el yapımı, Çayır tarifleri (veri web'den aktarılır) |
+| 1d · Kişiler ve görevler | Kemal, konuşma penceresi (dışına basmak = "Anladım"), Kemal'in ana görevleri ve dersleri, "!" işaretleri |
+| 1e · Yankı Mağarası | Mağara girişi, karanlık ve ışık, yarasa, kertenkele, örümcek, Yankı Kraliçesi |
+| 1f · Oyunun başı ve kayıt | Ana menü, karakter oluşturma, açılış sahnesi, kayıt ve yükleme (web kaydını açma dahil), gün-gece |
+
 ### Başlangıç (25 Kasım 2026)
 
 1. **Deneme (Adım 0):** web sürümünü durdurmadan Çayır'ın bir parçasıyla yapılır; ComfyUI'de çizilmiş karakter ve canlılarla. Sonucu Boğaç oynar; Adım 1'e geçmeye o karar verir.

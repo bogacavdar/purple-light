@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.42 · 25 Kasım 2026
+
+### Proje
+- **Godot, Adım 1 · Çayır başladı; ilk parça (dünya) oynanabilir:** Godot denemesinde artık adanın tamamı var: zemin web'deki ComfyUI dokularıyla (çimen tutamları, kum, su), denizde dalgalar, nehirde akıntı, kıyıda gelip giden köpük, adanın bütün ağaçları ve toplanabilirleri, sağ altta küçük harita. Link aynı: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+### Tasarım belgesi
+- Platformlar › Godot'ya geçiş: Adım 1'in altı parçası (dünya, toplama ve çanta, el yapımı, Kemal ve görevleri, Yankı Mağarası, oyunun başı ve kayıt).
+
+---
+
 ## Versiyon 4.41 · 25 Kasım 2026
 
 ### Görsel
@@ -327,13 +337,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Eşyalar bölümüne bu beş malzemenin yerdeki resminin de yeni olduğu yazıldı.
-
----
-
-## Versiyon 4.21 · 13 Kasım 2026
-
-### Düzeltmeler
-- **Purple Light ve CoffeBean artık ayrı uygulama olarak yüklenebiliyor.** İki oyunun uygulama kimliği aynı çıkıyordu; Chrome ikisini tek uygulama sanıyor, biri yüklenince diğerinin yerine geçiyordu (pencerede adı CoffeBean, içinde Purple Light). Purple Light'ın kimliği artık kendi klasörü. Eski karışık uygulama kaldırılıp oyun kendi adresinden yeniden yüklenmeli.
-
-### Tasarım belgesi
-- Teknoloji › Uygulama olarak yükleme: uygulama kimliği `/purple-light/` olarak yazıldı.

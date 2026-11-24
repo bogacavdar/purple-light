@@ -1,3 +1,7 @@
+## v4.42 (25 Kasım 2026) · Godot Adım 1a (dünya)
+- Belge: 99_godot.md'ye Adım 1'in parçaları tablosu (1a yapıldı). `godot-deneme/` yeni derleme (godot dalı aca52cf: bütün ada, ComfyUI zemin dokuları, su.gd dalga/akıntı/köpük, küçük harita). Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.41 (25 Kasım 2026) · Godot denemesi: toplanabilirler yüksek çözünürlükte
 - Yalnız `godot-deneme/index.pck` (godot dalı 676c0fa: disa_aktar.js toplanabilirleri 4 kat ince yakalar, oyun.gd 1/4 ölçekle gösterir). Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -179,10 +183,4 @@
 - Kontrol: chk 0 hata; ekran görüntüsünde beşi de yerde yeni resimle.
 
 **Geri alma:** `git revert` bu commit.
-
-## v4.21 (13 Kasım 2026) · uygulama kimliği /purple-light/ (CoffeBean ile karışmasın)
-- Boğaç: Purple Light kısayolu CoffeBean açıyordu; CoffeBean yüklenince pencerede adı CoffeBean, içi Purple Light. Sebep: iki oyunun `manifest.webmanifest` `"id": "./"`; Chrome bunu start_url kökenine (`https://bogacavdar.github.io/`) çözüyor → aynı uygulama kimliği. Boğaç: "ikisini de hemen yayınla".
-- Değişen: `manifest.webmanifest` `"id": "/purple-light/"`; belge `parts/05_teknoloji.md` PWA satırı; verlab 4.21. Kod bloğu yok, kayıt alanı yok. CoffeBean tarafı v0.47'de `/coffeBean/`.
-- Kontrol: yalnız sözdizimi (chk.js).
-- **Geri alma:** `git revert` bu commit (yüklü uygulamalar yine birbirine karışır).
 
