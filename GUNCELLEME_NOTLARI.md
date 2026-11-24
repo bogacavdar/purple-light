@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.45 · 25 Kasım 2026
+
+### Proje
+- **Godot, Adım 1d-1 (kişiler ve ustalar) oynanabilir:** Çayır'ın kişileri (Kemal, Zümrüt, Dursun, Durmuş, Nazlı, Börü) kendi yerlerinde; yanlarında F ile konuşma penceresi açılır (dışına basmak "Anladım"). Zümrüt'ün kazanında malzemeyle tarif öğrenilir (+12 XP), Dursun ve Durmuş'un örsünde öğrenilen tarif işçilik ödenerek dövülür. Vio, XP ve seviye ekranda. Görevler sıradaki parçada (1d-2). Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.44 · 25 Kasım 2026
 
 ### Proje
@@ -304,24 +311,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
-## Versiyon 4.24 · 14 Kasım 2026
-
-### Oynanış
-- **Rezene kalktı:** Çayır'daki yeri öbür otlara (Ebegümeci, Gelincik, Hardal otu, Nane, Papatya, Yabani buğday) dağıldı; tarifleri de kalktı. E6 görevi artık 2 **Nane** istiyor. Eski kayıtlarda Rezene Nane'ye, Rezene çayı Nane çayına döner.
-- **Yeni adlar:** Yaban çileği → **Çilek**, Yabani elma → **Elma**, Yabani armut → **Armut** (ezmeleri, suları ve kurutulmuşları da). Eski kayıtlardaki eşyalar kendiliğinden yeni adına geçer.
-
-### Görsel
-- **Yeni ikonlar:** Taş, Çakmaktaşı, Dal, Lif, Kum, Kuru ot, Nehir çakılı, Yaprak, Sarkıt, Yarasa gübresi, Ebegümeci, Hardal otu, Nane, Papatya, Yabani buğday, Havuç, Çilek, Böğürtlen, Kireçtaşı, Kumtaşı, Bakır cevheri, Elma ve Armut yeni resimleriyle (envanterde, kitapta, elde, yerde). Çilek yerde de yeni resmiyle duruyor.
-- **Böğürtlen çalısı** yeni çizimiyle (olgun, yarım, toplanmış hali).
-- **Maden kayaları:** Kireçtaşı (çatlaklı krem-beyaz blok), Kumtaşı (katmanlı kahve-turuncu kaya), Bakır cevheri (turuncu bakır topaklı koyu kaya) yeni çizimleriyle.
-- **Ağaçlar:** Çam, Kavak, Elma ve Armut yeni çizimleriyle; olgun Elma ve Armut ağaçlarının tacında meyveler görünür, silkeleyince kaybolur.
-- **Zemin:** Çayır'ın çimi (açık ve koyu), kum ve su (göl, derin deniz, sığ kıyı) yeni dokularla; yan yana karolar dikişsiz birleşir. Dalgalar, parıltı ve kıyı köpüğü eskisi gibi.
-- **Kişiler:** Yaşlı Kemal, Cadı Zümrüt, Pazarcı Nazlı, Demirci Dursun, Zırhçı Durmuş, Savaşçı Börü, Çiftçi Ekin, Usta Sinan ve Avcı Doğan yeni çizimleriyle: uzaktayken önden durur, yanına gelince sana döner, işini yaparken işine bakar, yürürken adım atar. Konuşma kutusundaki resimleri de yeni çizimden.
-- **Kuzenler:** 15 kuzen (cadılar, demirciler, zırhçılar) Zümrüt, Dursun ve Durmuş'un yeni çizimiyle; konuşma resimleri de.
-- **Kişilerin eşyaları:** Zümrüt'ün kazanı, Dursun'un ocağı ve örsü, Durmuş'un örsü ve zırh askısı, Nazlı'nın tezgâhı, Sinan'ın tezgâhı ve kereste yığını, Doğan'ın kulübesi, Börü'nün talim kuklası ve Kemal'in kamp ateşinin taş halkası yeni çizimleriyle. Alevler, kabarcıklar, kıvılcımlar, duman ve testere eskisi gibi hareketli. Kuzen cadıların kazanı da yeni çizimde, iksiri her kuzenin kendi renginde.
-
-### Tasarım belgesi
-- Sistemler › Yeni ikonlarla: maden kayaları ve ağaçlar, zemin karoları, kişiler ve kişilerin eşyaları bölümleri; Çilek, Elma, Armut adları; Meyve çalılarının resimleri.
-- Eşyalar: yeni ikonlu eşyaların listesi, yeni adlar; Rezene kalktı.
-- ACT 1: Çayır otlarının sayıları Rezene'nin yerini alacak biçimde güncellendi; E6 2 Nane istiyor.
-- Tarifler ve başarımlar: tarif sayısı 766, eşya sayısı 1.236.

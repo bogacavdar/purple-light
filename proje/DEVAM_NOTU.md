@@ -1,3 +1,7 @@
+## v4.45 (25 Kasım 2026) · Godot Adım 1d-1 (kişiler ve ustalar)
+- `godot-deneme/` yeni derleme (godot dalı 0873052: kisi.gd, konusma.gd, istasyon.gd; envanter.gd'ye Vio/XP/seviye ve görülen eşyalar; data/toplama.json'a kisiler, xpNeed, iscilik, usta, istasyon). Belge 99_godot 1d satırı 1d-1/1d-2/1d-3'e bölündü. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.44 (25 Kasım 2026) · Godot Adım 1c (el yapımı)
 - `godot-deneme/` yeni derleme (godot dalı: el_yapimi.gd; data/toplama.json'a DB.R tarifleri, FORGED/PLACEABLE işaretleri, ~1.175 eşya resmi). Belge 99_godot 1c satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -171,12 +175,4 @@
 - Kontrol: chk 0 hata; headless denetimler yukarıda.
 - Son düzeltmeler: OR-16 (örste takılı parçayla yapımda çift parça; `gain` sarmalayıcısı kaldırıldı, takma yapım bitince `brew`/`handCraft`/Usta sarmalayıcılarında), `spawnIn`'de yorumun yuttuğu `const P=PACK[k]` (bcd9129–29b21cf arası hiç hayvan doğmuyordu; yalnız bekleyen-paket, yayına gitmedi), Yankı Kraliçesi 350·18. Duman testi: köprü önü kaydıyla 8 hayvan, sayfa hatası yok.
 - Yönetici: v2.51'den beri bir yorumun yuttuğu ölü `MATS.forEach` kodu silindi (BASES satırı); belge 36_yan_gorevler Toprak yuvası 40 px.
-
-## v4.24 (14 Kasım 2026) · Çayır eşyaları, maden, ağaç, zemin, kişiler ve eşyaları ComfyUI çizimiyle; Çilek/Elma/Armut; Rezene kalktı
-- Boğaç'ın ComfyUI'si (Z-Image Turbo + pixel LoRA) ile çizildi, `/home/claude/w/` araçlarıyla 32 px ikon ve dünya resmine çevrildi.
-- Bloklar: `v423ikon` (23 ikon, yerde çizim `__plCayirL`), `v420cali` (Böğürtlen çalısı), `v424dunya` (Kireçtaşı/Kumtaşı/Bakır cevheri kayaları `drawNode`, Çam/Kavak/Elma/Armut `treeSprite`/`drawTree`), `v425karo` (Çayır çim k0/k1, kum k2, su k3–5; `__v58.bake` ve `drawGround` yerine konumdan doku; `n` işaretsiz parçalar yeniden pişirilir), `v425npc` (Kemal), `v425esya` (kazan, ocak, örs, askı, tezgâhlar, kereste, kulübe, kukla, kamp ateşi; `__plKazanOf` kuzen kazanları), `v425kisi` (8 kişi + kuzenler `npcDraw` üzerinden; `px` maskesi eski şapka/önlük parçalarını atlar; `drawX` sarmalayıcıları maskeyi temizler). `v64`'e `window.__plPOR`, `v184`'e `porOf` → `__plPORn` ve `drawWitchC/SmithC/ArmC` sarmalayıcıları, `drawPotC` kazan çizimi eklendi.
-- Kaldırılan: Rezene (tarifler, fiyat, `P1I/P1W`, `PLANTC`); `B4PLANT` Rezene yuvası `*Çayır otu` ile öbür otlara dağıtılır. `v395cayir` yalnız Havuç.
-- Eski kayıtlar: `RENAMED` (Çilek, Elma, Armut ve türevleri), `REPL` Rezene→Nane, Rezene çayı→Nane çayı; `HERB` Kurutulmuş rezene→Nane.
-- Geri almak: `v425*`, `v424dunya`, `v423ikon` blokları silinir, `v64`/`v184` eklemeleri geri alınır (`git revert` bu commit).
-- Kontrol: chk 0 hata (`?.` 1, `??` 7); Playwright ile ikonlar, yerdekiler, ağaçlar, kayalar, zemin, kişiler, kuzenler, eşyalar ve konuşma resimleri görüldü, hata yok.
 
