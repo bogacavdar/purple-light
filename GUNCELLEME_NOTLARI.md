@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.46 · 25 Kasım 2026
+
+### Proje
+- **Godot, Adım 1d-2 (görev sistemi) oynanabilir:** Çayır'ın altı kişisinin ana görevleri geldi. Görevi olan kişinin başında "!" ve parlama var (küçük haritada da); konuşunca görev başlar, sağ üstte görev kartı, küçük haritada sarı bölge, kişiye dönerken ok. Bitince görevi verene dön, ödül oracıkta. Kimsede iş yoksa Kemal ya da Zümrüt küçük bir ayak işi verir. Köprü, balık, kamp ateşi gibi henüz Godot'da olmayan şeyleri isteyen görevler o sistemler gelince açılacak. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.45 · 25 Kasım 2026
 
 ### Proje
@@ -270,44 +277,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Reis kuralı ve hızlı tür; mağara boss'unun ödülü; Bataklık ve Batık canlı tabloları; Kayalık kuşakları; balta ve kazma hasarı; Kamış çizme; ödüller; Şifa ve Kartal; av sarı bölgesi; kazancı ve mağara.
 
 =====================================================================
-
----
-
-## Versiyon 4.26 · 18 Kasım 2026
-
-### Oynanış
-- **Yükseltme zinciri:** her silah, alet ve zırh bir öncekinin yükseltmesidir. Bakır kılıç bir Taş kılıç, Tunç kılıç bir Çakmaktaşı kılıç ister; kılıç, savaş çekici, topuz, mızrak, balta, kazma, yay, miğfer, gövde zırhı, eldiven ve çizmede hep böyle. Üstündeki ya da elindeki parça da kullanılır: yenisi aynı yere kendiliğinden takılır (çantada aynısı varsa önce o kullanılır). Körelmiş parça da olur, yenisi tam keskin gelir. Satırda ve görev kartında "Önceki kademe" yazar. Kamış çizme zincirin dışında kalır.
-- **Fiyatlar:** zincirdeki parçanın değeri kendi değerine önceki parçanın yarısı eklenerek bulunur (ör. Granit kılıç 1.444, Ametist kılıcı 15.956). Ustanın işçiliği yalnız parçanın kendi değerinden alınır.
-- **Silah, zırh, takı ve aletler satılmaz:** hiçbir pazarcıya satılmazlar ve satış listesinde görünmezler. Oklar, meşaleler, malzemeler ve yemekler eskisi gibi satılır.
-- **Canlılar:** Çayır canlıları güçlendi (Kurt 125 can · 16 hasar, Geyik 110 · 15, Yaban atı 150 · 17). Orman ve mağaralar yeniden dengelendi; Yankı Mağarası kolaylaştı (yarasalar 1–2'li gelir, Yankı Kraliçesi 350 can). Verdikleri XP değişmedi.
-- **Reisler:** her Reis en az 100 can ve 10 hasarla gelir. Çayır ve Orman Reisleri artık sürü çağırmaz ve türleri kadar hızlı vurur.
-- **Düşen eşyalar:** her eşya kendi ihtimaliyle düşer; Tavşan derisi gerçekten %70 düşer. Avdan biraz daha çok eşya çıkar.
-- **İlk gece bayılmak kayıpsız:** oyunun ilk gecesinde neyle bayılırsan bayıl hiçbir şey kaybolmaz.
-- **Kurt:** Seviye 1–5'te gece sahada en çok bir Kurt olur.
-- **Topuz:** hasarı kılıcın dörtte üçü (Taş 9, Bakır 12, Çakmaktaşı 14…) ve biraz yavaş (0,40 sn). Mızrak hızlandı (0,5 sn).
-- **Tuzak:** Çayır'da Tavşan, Keklik ve Bıldırcın; Orman'da Sincap ve Tavşan yakalar.
-- **Engerek** artık %90 ihtimalle Zehir bezesi düşürür.
-- **Görevler:**
-  - Börü'nün "Kuzeye keşif" görevi Orman'dan önce bir çakmaktaşı silahı ve bir zırh parçası ister, 120 Vio verir.
-  - Duran'ın "Kabuk zırh" görevi 450 Vio verir.
-  - "Ocak başı" ve "Çatlak sap" 4 sert odun, "Servi sapı" 3 sağlam odun, "Pruvadaki fener" 4 kadim odun ister.
-  - Cadı Yakut'un ilk görevi Orman'a varınca açılır.
-  - Usta Sinan ilk tanışmada hediyesinin ardından ilk görevini de verir.
-- **Ayak işleri:**
-  - "Tarif öğren" işini artık bulunduğun biyomun cadısı verir: Çayır'da Zümrüt, Orman'da Yakut.
-  - Yalnızca bir kişi görev bekliyorsa, sıradaki görevin eksik malzemesi ya da tarifi için bir ayak işi de çıkar.
-- **Pamuk** bir engele takılırsa ya da çok geride kalırsa yanına gelir.
-- **Toprak'ın kuşu:** yuvanın yanında "1 Kuru ot gerekli" yazar; Toprak da kuru ot götürmeni söyler.
-- **Mağara kapısı** meşalen yanmıyorsa onu meşale yuvasından nasıl yakacağını söyler.
-- "Başında siyah ! olan kişiyle konuş" yazısı ilk görev bitince artık görünmez.
-- Dursun "Taş balta Çayır'ın ve Orman'ın ağaçlarını keser" der.
-- Orman canlıları seni Seviye 25'ten sonra güçlü görüp çekinir.
-
-### Tasarım belgesi
-- Yükseltme zinciri ve üstündeki parçanın yükseltilmesi; canlı ve Reis tabloları; silah tablosu; "Tek parça eşyalar satılmaz"; Kemal'in ayak işleri ve kazancılar; B5; düşme yüzdeleri; bayılma; tuzak; sürülerin boyu; Pamuk; Toprak; mağara kapısının meşale satırı.
-
-### Tasarım belgesi
-- Oyuncunun Orman'a varış seviyesi ölçüme göre ~10 olarak yazıldı; köprü Seviye 12'de açılır. Canlı, Reis ve mağara tabloları, yükseltme zinciri (tür tür kademe tablosu ve özel parçalar), satış kuralı, ayak işleri ve görev satırları güncellendi.
 
 ---
 

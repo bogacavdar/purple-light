@@ -1,3 +1,7 @@
+## v4.46 (25 Kasım 2026) · Godot Adım 1d-2 (görev sistemi)
+- `godot-deneme/` yeni derleme (godot dalı: gorev.gd; data/gorevler.json = web DATA.Q'nun Çayır kişileri + eşyaların biyomları + grup adları, disa_aktar.js oyunun kaynağından okur). Belge 99_godot 1d-2 satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.45 (25 Kasım 2026) · Godot Adım 1d-1 (kişiler ve ustalar)
 - `godot-deneme/` yeni derleme (godot dalı 0873052: kisi.gd, konusma.gd, istasyon.gd; envanter.gd'ye Vio/XP/seviye ve görülen eşyalar; data/toplama.json'a kisiler, xpNeed, iscilik, usta, istasyon). Belge 99_godot 1d satırı 1d-1/1d-2/1d-3'e bölündü. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -148,31 +152,4 @@
   - Mağara boss'larının Vio'su 310, 500 ve 700 (öldürerek); 1.000, 1.400 ve 2.000 (koddan).
   - YB-14/24/26 değerleri tutuyor.
   - Batık'ta "!" Bataklık'tan.
-
-## v4.26 (18 Kasım 2026) · E2E Çayır+Orman: canlı gücü, Reis kuralı, yükseltme zinciri, tek parça eşyalar satılmaz, ayak işleri, B5
-- Boğaç kararları: 04:30 canlı gücü; S1 silah ve zırh satılmaz, DR4 450; S3-A Y1 Orman'a varınca; 04:55 tarif ayak işi kazancıda; Reisler A; Eşya yolu A (B5); yükseltme zinciri ve fiyatı (DNG-15…18); "upgrade gibi olur". Belge: ANALIZ §6, §8, §9, §10 (Y-01…Y-45; Y-17 iptal).
-- Yeni bloklar (son scriptler, sırayla):
-  - `v426zincir`: `CH`, `PREV`, `__plOwnP`, `__plChainPrev`, `__plChainP`; `takeChainPrev`/`chainSettle` ile `gain`, `handCraft`, `selectRecipe`, `closeCraft` ve Usta tıklaması sarmalayıcıları; `missingFor` yazısı; kemerde boş kalan zincir parçasını temizleme.
-  - `v426b5`: B5 `p`.
-  - `v426topuz`: topuz `WDMG`.
-- Çekirdek değişiklikler:
-  - `SET`/`apply` `xp` alanı; `NEWN.Porsuk`, `newDef`.
-  - `makeBoss`/`fixBoss` Reis formülü (`ORMAN`, çok atışlı ×1, `wind`), Çayır ve Orman'da sürü çağrısı yok (`PACKB`).
-  - Mağara `NK`/`BK`, `PACK['Mağara yarasası']`.
-  - Silah satırı topuz `.4`, mızrak `.5`; `ANIM.Engerek.drops`; `ARR[1]=10`.
-  - `spawnIn` Kurt (Sv1–5 tek, sahada en çok 1).
-  - `dropRoll` bağımsız çekim (`dropOdds`/`dropRolls` silindi); `faintLoss` ve `deathDrop`/BAG; `trapCatch`.
-  - `noSell` ile `sell`/`bulkSellable`/liste/"1 sat".
-  - `laborFee`/`ustaPrice` `__plOwnP`; `subOK` zincir; `mkFiller` derinlik 13; `nextStep` walk 13 ve "Önceki kademe".
-  - v186: `fillQ`/`fillG`/`fillFor`/`WITCH`, `fillerNeeded` (<2 "!"), `pickFiller(onlyMR)`, `partTarget 'kn'`, `progText 'any'` etiketi, kart tarif satırı kısaltma, `__plUstaQ`.
-  - `talkUsta` ilk tanışma; DATA.Q K8/DU6/AL6/L8/DR4/Y1/B5 metin ve değerleri.
-  - Eşlik `hop`/`f.stk`; Toprak `remindUse` ve `use` 40 px.
-  - Mağara kapısı meşale satırı; v2.28 `qDone` `__pl186.S.d`; Dursun `tz===13` ve `AXE_INFO` metinleri.
-- Kayıt alanı yok.
-  - Eski kayıtta sürmekte olan bir "Dövdür" görevi zincir yüzünden uzayabilir; kart ve ayak işi önceki kademeleri sırayla gösterir.
-  - Alınmış eski `F-rec-*` işi `g:'npc'` ile kalır ve öğrenilince biter.
-- Geri almak: `git revert` bu commit (belge ve kod birlikte). Yalnız zinciri geri almak için `v426zincir` bloğu ve `laborFee`/`ustaPrice`/`subOK` satırları; topuz için `v426topuz`; B5 için `v426b5` ve DATA'daki B5 satırı.
-- Kontrol: chk 0 hata; headless denetimler yukarıda.
-- Son düzeltmeler: OR-16 (örste takılı parçayla yapımda çift parça; `gain` sarmalayıcısı kaldırıldı, takma yapım bitince `brew`/`handCraft`/Usta sarmalayıcılarında), `spawnIn`'de yorumun yuttuğu `const P=PACK[k]` (bcd9129–29b21cf arası hiç hayvan doğmuyordu; yalnız bekleyen-paket, yayına gitmedi), Yankı Kraliçesi 350·18. Duman testi: köprü önü kaydıyla 8 hayvan, sayfa hatası yok.
-- Yönetici: v2.51'den beri bir yorumun yuttuğu ölü `MATS.forEach` kodu silindi (BASES satırı); belge 36_yan_gorevler Toprak yuvası 40 px.
 
