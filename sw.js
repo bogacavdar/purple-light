@@ -6,6 +6,7 @@ self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.add
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',e=>{
   const r=e.request;if(r.method!=='GET'||new URL(r.url).origin!==location.origin)return;
+  if(new URL(r.url).pathname.indexOf('/godot-deneme/')>=0)return;   // v4.40: the Godot trial (39 MB engine) is left to the browser, not stored here
   // v2.53: the page itself skips the browser's 10-minute cache, so a new version shows on the first open after it is published
   const net=r.mode==='navigate'?fetch(r.url,{cache:'no-cache',credentials:'same-origin'}):fetch(r);
   e.respondWith(net.then(res=>{if(res&&res.ok){const copy=res.clone();caches.open(CACHE).then(c=>c.put(r,copy))}return res})

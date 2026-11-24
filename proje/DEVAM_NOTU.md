@@ -1,3 +1,7 @@
+## v4.40 (25 Kasım 2026) · Godot'ya aşamalı geçiş planı (yalnız belge)
+- Belge: 99_godot.md: başlama kararı (Boğaç, 25 Kasım), biyom biyom adımlar tablosu, web sürümü kuralı, veri aktarımı, kayıt taşıma, `godot` dalı; Retro Diffusion bölümüne ComfyUI notu. Oyun kodu değişmedi (yalnız verlab).
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.39 (22 Kasım 2026) · Oyuncu karakteri NPC'ler gibi tek parça (ComfyUI), her saç biçimi kendi çizimi, yüzler/elbise piksel düzeyinde
 - Belge: 20_sistemler › "Oyuncunun karakteri" (17:50 ve 19:46 alıntıları); 10_akis › Karakter yaratma (yalnız tam boy önizleme); 00_giris sürüm satırı.
 - Kod: yalnız `v428kahraman` bloğu (yerinde). Veri `HD={CW:26,CH:40,e:{stil:{c,m,A}},k:{...}}`: her saç biçimi için 5 satır (S, SW, W, NW, N) × 5 kare (duruş + 4 adım) renk + maske PNG; `A[yön]={top,cx,neck,hip,er,ex,mo}` (göz satırı/sütunları, ağız). Maske R=bölüm×30 (1 ten, 2 saç, 3 üst, 4 alt, 6 göz), G=parlaklık×100. Sağa bakan yönler `sheet()` içinde aynalanır. Yüz (ağız/çil/kaş), pembe yanak ve elbise (alt bölümün üstü etek) `sheet()` içinde piksel düzeyinde. Ara sahne: `g!==ctx` ve yalnız yana bakışta satır ön-çapraz (v66.7 kuralı, iç sarmalayıcıdan önce uygulanır). cprev 36×40 tam boy. Şapka/gözlük/bıyık/sakal/buff/toka şimdilik gizli (Boğaç): `cRender` sarmalı bu satırları `HIDE` kümesiyle gizler, `buildLook` yeni görünüşte bu alanları boş verir (Rastgele de seçemez); eski kayıtlardaki `LOOK` alanlarına dokunulmaz, çizim kodu yok. Geri açmak için `HIDE` ve `buildLook`'taki `Object.assign` satırı silinir, çizimleri eklenir. v4.37 "Yüz" satırı aynen.
@@ -186,10 +190,3 @@
 
 **Geri alma:** `git revert` bu commit (çekirdek satırlar + blok birlikte; kayıt alanı yok, `n.left` kaydedilmez).
 
-## v4.19 (13 Kasım 2026) · hayvanların tutumu, imza hamleleri, sürü kuşatması, Kayalık Dağ dengesi
-- Boğaç: "1 kayalık dağı dengele 2 hayvanların tutumunda beğenmediğim 2 şey hariç yap 3 dövüşte hepsini yap" (ateş/meşale ve gece-gündüz önerileri istenmedi). Belge: Dövüş › Hayvanların tutumu, İmza hamleleri ve sürü taktiği; ACT 1 › Kayalık Dağ dengesi; Canavarlar › Reis tablosu.
-- `v419tutum` bloğu (son script, en dıştaki `tickAnimals` sarmalayıcısı): `BAL` Kartal/Vaşak/Mağara ayısı + Reisleri oranla; fark etme (`a.aw`, `a.ntc`, oyuncu hızı `pv`: dur .55 / yürü .8 / koş 1), zararsız kaçma yarıçapı 35/55/100, nötr uyarı (`a.wT` 1,5 sn → `madPack`), yaralı kaçma (`a.flee`, %20 can, %60), güçlüden çekinme (`shy`, varış +15), avcı-av (`PREY`, WeakMap `HUNT`/`CHASED`, leş `window.__plMkCorpse` — v337les'e eklendi), imza hamleleri (`SIG`, `a.sg`, `stepSig`, `imp`; dalış ve gömülmede vurulamaz: hp geri + `killAnimal` korumalı), kurt kuşatması (`flank`), oyuncunun çevresinde ok (`drawPlayer` sarmalayıcı).
-- Ölçüm: varış seviyesinde önceki biyomun setiyle ısırık/can: Bataklık (Sv 18 Tunç ×0,31) %11–24, Kayalık (Sv 26 Demir ×0,22) %25–30 → %20–25, Kül (Sv 34 Çelik ×0,17) %17–28.
-- Kontrol: chk 0 hata; oyun açılıyor; senaryolar: fark etme, Geyik uyarısı 1,5 sn'de saldırı, Yaban domuzu geri-hücum, yaralı kaçma, Bataklık kurdu ördeği avlayıp leş (Ördek tüyü), Sv 40'ta Yaban domuzu çekiniyor, 3 kurt kuşatıyor; sayfa hatası yok.
-
-**Geri alma:** `git revert` bu commit (blok + v337les'teki tek satır; kayıt alanı yok).

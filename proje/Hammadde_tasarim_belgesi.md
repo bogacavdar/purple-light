@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 4.39** ile birebir (22 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 4.40** ile birebir (25 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -7403,7 +7403,9 @@ Belge hazırlanırken kodda görülenler. Oyun testinde doğrulananlar ve düzel
 
 # Platformlar (Godot · PS5)
 
-## Godot'ya geçiş (gelecek planı, henüz başlanmadı)
+## Godot'ya geçiş (aşamalı; 25 Kasım 2026'da başlandı)
+
+**Başlama kararı (25 Kasım 2026, Boğaç: "Aşamalı olarak godot'a taşıyabilir miyiz oyunu?" … "Bence yavaştan başlayalım buna, eninde sonunda yapacağız"):** taşıma **aşamalı ve biyom biyom** yapılır (aşağıda **Sıra ve tahmini süre**). Her adımın sonunda Godot'da oynanabilir bir oyun olur; web sürümü bu sırada yayında kalır ve oynanır. İlk iş **Deneme** adımıdır.
 
 **Karar (5 Kasım 2026, Boğaç):** oyunun ileride Godot oyun motoruna taşınması planlanıyor. Amaç: Steam'de tam uyum (başarımlar, bulut kayıt, Steam Input), konsollar (bkz. **PlayStation 5 sürümü**), daha iyi performans ve ışık/efekt kalitesi. Bu bölüm işin büyüklüğünü, sırasını ve tahmini süresini yazar. Web sürümü taşıma bitene kadar oynanır ve güncellenir.
 
@@ -7437,35 +7439,44 @@ Karar şimdilik **Godot**. **Unity açık bir seçenek olarak kalır**, ileride 
 
 Fiyatlar 2026 listeleridir; geçişten önce yeniden bakılır.
 
-### İşin büyüklüğü (4 Kasım 2026, Versiyon 3.25 itibarıyla)
+### İşin büyüklüğü (25 Kasım 2026, Versiyon 4.39 itibarıyla)
 
 | Ne | Bugün | Godot'da |
 |---|---|---|
-| Kod | Tek dosya, ~19.500 satır, 144 kod bloğu, JavaScript | GDScript ile baştan yazılır (otomatik çeviri yok) |
-| Çizimler | Neredeyse hepsi kodla çiziliyor | Retro Diffusion ile yeniden üretilir, Godot'ya PNG olarak girer; yeni resmi olmayan ya da yenisi beğenilmeyen çizim oyundan otomatik PNG'ye dökülür (bkz. Görseller: Retro Diffusion) |
+| Kod | Tek dosya, ~24.900 satır, 226 kod bloğu, JavaScript | GDScript ile baştan yazılır (otomatik çeviri yok) |
+| Çizimler | Çoğu kodla çiziliyor; oyuncu karakteri, kişiler, Çayır ve Yankı Mağarası canlıları, ağaçlar ve meyveler ComfyUI resmi (21–22 Kasım 2026) | Retro Diffusion ile yeniden üretilir, Godot'ya PNG olarak girer; yeni resmi olmayan ya da yenisi beğenilmeyen çizim oyundan otomatik PNG'ye dökülür (bkz. Görseller: Retro Diffusion) |
 | Sesler | Kodla üretiliyor | WAV dosyası olarak kaydedilip taşınır |
 | Menüler, pencereler | Tarayıcı sayfa öğeleri | Godot arayüz sistemiyle baştan |
 | Veriler (eşyalar, tarifler, canlılar, görevler, yetenekler) | Kodun içinde tablolar | Otomatik çıkarılıp Godot veri dosyalarına dönüştürülür |
-| Kurallar | Bu belge (~6.400 satır) | Kılavuz olarak aynen kullanılır |
+| Kurallar | Bu belge (~7.500 satır) | Kılavuz olarak aynen kullanılır |
 
-### Sıra ve tahmini süre
+### Sıra ve tahmini süre (aşamalı, biyom biyom; 25 Kasım 2026)
 
 **Yalnızca yazılım süresi** (5 Kasım 2026, Boğaç: "testlerini ben yapıcam"): Claude'un kodu yazma süresi; testler ve deneme Boğaç'ta, paralel yürür. Bugünkü çalışma temposuna (her gün birkaç saatlik yoğun çalışma) göre tahmindir.
 
-| Aşama | İçerik | Yazılım süresi |
-|---|---|---|
-| 0 · Deneme | İlk ada haritası, karakter, yürüme, oyun kolu, bir canlı ve vuruş; tek biyom Retro Diffusion resimleriyle, yanında koddan dökülmüş eski resimler. Karar noktası: Godot'ya geçilsin mi, yeni görseller kullanılsın mı? | 1–2 gün |
-| 1 · Hazırlık | Bütün çizimlerin (yeni görsel kararı verildiyse yalnız yenisi gelmeyenlerin) ve seslerin dökülmesi, verilerin çıkarılması, Godot projesinin iskeleti, otomatik derleme (Windows ve web) | 2–3 gün |
-| 2 · Çekirdek | Harita ve biyomlar, hareket, çarpışma, kamera, gün-gece, karanlık ve ışık, toplama, envanter, alet kemeri, el yapımı, kayıt | 1 hafta |
-| 3 · Dövüş | Silahlar ve kademeleri, kombolar, savaş çekici ve topuz, yay ve oklar, asalar, etkiler, savuşturma, takla, ulti, canlıların yapay zekâsı, reisler, arena | 1 hafta |
-| 4 · İçerik ve hikâye | Kişiler ve konuşmalar, ana ve yan görevler, mağaralar, anılar ve ara sahneler, ACT 1 ve ACT 2 adaları, deniz yolculuğu, pazar ve ekonomi, 90 yetenek, 42 başarım | 2 hafta |
-| 5 · Arayüz ve platform | Ana menü, ayarlar, tuş atama, oyun kolu, dokunmatik, Steam (başarımlar, bulut kayıt) | 4–5 gün |
-| **Toplam yazılım** | | **yaklaşık 5–6 hafta** |
+Taşıma sistem sistem değil **biyom biyom** gider: her adım bir biyomu ve o biyomun ilk kez gerektirdiği sistemleri getirir, adımın sonunda Godot sürümü o biyoma kadar baştan oynanır.
 
-- Boğaç'ın testlerinden çıkan hataların düzeltilmesi bu sürenin içinde, aşamalar ilerlerken yapılır. Aşamalar sırayla gider; her aşamanın sonunda oynanabilir bir sürüm çıkar.
+| Adım | Godot'da oynanabilen | Bu adımda yazılan sistemler | Yazılım süresi |
+|---|---|---|---|
+| 0 · Deneme | Çayır'ın bir parçası: karakter, 8 yön yürüme, oyun kolu ve klavye, bir canlı, vuruş | Proje iskeleti, veri ve harita aktarımı, web derlemesi | 1–2 gün |
+| 1 · Çayır | Açılış, Çayır, Yankı Mağarası, Kemal'in görevleri | Hareket, harita, kamera, envanter, toplama, el yapımı, temel dövüş, konuşma, kayıt, ana menü | 1,5–2 hafta |
+| 2 · Orman | Orman ve görevleri | İnşa, ev, evcil hayvanlar, gün-gece, karanlık ve ışık | 1 hafta |
+| 3 · Bataklık | Bataklık ve mağarası | Silah kademeleri, etkiler, reisler, yan görevler | 1 hafta |
+| 4 · Kayalık | Kayalık, halat yolları | Arena, pazar ve ekonomi | 4–5 gün |
+| 5 · Kül Diyarı | ACT 1'in tamamı | Ara sahneler, anılar, başarımlar | 1 hafta |
+| 6 · ACT 2 | Deniz yolculuğu ve ikinci ada | ACT 2'ye özel sistemler | 1,5 hafta |
+| 7 · Platform | Steam (başarımlar, bulut kayıt), dokunmatik, telefon uygulaması | Mağaza ve derleme | 4–5 gün |
+| **Toplam yazılım** | | | **yaklaşık 7–8 hafta** (yayılarak) |
+
+- **Taşıma sürerken web sürümü:** yayında kalır. Godot'ya taşınmış biyomlara web'de yalnız hata düzeltmesi ve denge ayarı yapılır (yeni sistem eklenirse iki kez yazılır); henüz taşınmamış biyomlara web'de yeni özellik eklenebilir.
+- **Veriler tek yerde:** eşyalar, tarifler, fiyatlar, canlılar, görevler ve harita web oyunundan otomatik çıkarılıp Godot'ya aktarılır; web'de bir sayı değişince Godot da aynı aktarımla alır.
+- **Kayıtlar:** web kaydı dosyaya alınıp Godot'da açılabilir; ilerleme kaybolmaz.
+- **Görseller:** her biyom taşınırken o biyomun resimleri yeni tarzla (ComfyUI; Retro Diffusion kararı için aşağıdaki Görseller bölümü) yenilenir; resimler iki kez yapılmaz. Web'de zaten ComfyUI'de çizilmiş olanlar (oyuncu karakteri, kişiler, Çayır ve Yankı Mağarası canlıları, ağaçlar, meyveler) aynen taşınır.
+- **Nerede:** Godot projesi depoda ayrı `godot` dalında durur (yayını etkilemez). Deneme ve adımların web derlemesi oynanabilir bir linkle Boğaç'a verilir. Godot (4.7.1) Claude'un çalışma ortamında da çalışır; derleme ve ekran görüntüsüyle kontrol orada yapılır.
+- Boğaç'ın testlerinden çıkan hataların düzeltilmesi bu sürenin içinde, aşamalar ilerlerken yapılır.
 
 - **Konsol için ek:** PS5 başvurusu, kit ve sertifikasyon bu sürenin dışında (bkz. PlayStation 5 sürümü); Godot'nun konsol eklentisi (W4 Consoles) yıllık ücretlidir.
-- **ACT 3:** henüz yazılmadı. Taşımadan önce bitirilirse taşıma süresine eklenir (iki kez yazılmaz). Taşıma sürerken web sürümüne yeni özellik eklenirse o özellik Godot'da da yazılır; bu yüzden taşıma sırasında web sürümü yalnızca hata düzeltmeleriyle sürer.
+- **ACT 3:** henüz yazılmadı. Web'de yazılırsa ACT 2'den sonra ayrı bir adım olarak taşınır; doğrudan Godot'da yazılırsa iki kez yazılmaz.
 
 ### Kredi (Claude kullanımı)
 
@@ -7475,7 +7486,7 @@ Fiyatlar 2026 listeleridir; geçişten önce yeniden bakılır.
 
 ### Görseller: Retro Diffusion (12 Kasım 2026, Boğaç)
 
-Oyunun görselleri Godot'ya geçişle birlikte **Retro Diffusion** (piksel sanatına özel yapay zekâ, abonelik yok, resim başına ödeme, lisanslı verilerle eğitilmiş) ile yenilenir. Sıra: **oyun web'de biter → Godot denemesi (Aşama 0) yeni görsellerle → taşıma ve görseller birlikte**. Web sürümüne yapay zekâ resimleri yalnız Boğaç istediğinde ve küçük sayfalar halinde eklenir (bkz. Eşyalar › PixelLab ikonları); bütün oyunu web'de yenilemek yapılmaz: tek dosyalı web oyununa yüzlerce PNG gömmek dosyayı şişirir, telefonda açılışı yavaşlatır ve Godot'da iş iki kez yapılmış olur. Web'e eklenen sayfalar Godot'da aynen kullanılır.
+Oyunun görselleri Godot'ya geçişle birlikte **Retro Diffusion** (piksel sanatına özel yapay zekâ, abonelik yok, resim başına ödeme, lisanslı verilerle eğitilmiş) ile yenilenir. Sıra: **oyun web'de biter → Godot denemesi (Aşama 0) yeni görsellerle → taşıma ve görseller birlikte**. (25 Kasım 2026: Boğaç taşımaya oyun web'de bitmeden, aşamalı başlama kararı verdi; sıra yukarıda. 21–22 Kasım'dan beri web'deki yeni resimler Boğaç'ın isteğiyle onun bilgisayarındaki ComfyUI'de Claude tarafından üretiliyor; Deneme bu resimlerle yapılır. Retro Diffusion ya da PixelLab ile karşılaştırma isteğe bağlı kalır.) Web sürümüne yapay zekâ resimleri yalnız Boğaç istediğinde ve küçük sayfalar halinde eklenir (bkz. Eşyalar › PixelLab ikonları); bütün oyunu web'de yenilemek yapılmaz: tek dosyalı web oyununa yüzlerce PNG gömmek dosyayı şişirir, telefonda açılışı yavaşlatır ve Godot'da iş iki kez yapılmış olur. Web'e eklenen sayfalar Godot'da aynen kullanılır.
 
 - **Araç:** Retro Diffusion ya da PixelLab; Boğaç'ın PixelLab'da ürettiği ilk 64 ikonluk sayfa (12 Kasım 2026) tarz örneğidir, sonraki her istekte referans olarak verilir. Aşama 0'da ikisi aynı eşyalarla karşılaştırılır.
 - **Aşama 0:** tek biyomun eşya ikonları, bir canlı ve zemin karoları Retro Diffusion ile üretilir, koddan dökülmüş eski resimlerle yan yana gösterilir. Boğaç hem Godot'ya geçişe hem yeni görsellere aynı denemede karar verir.
@@ -7504,11 +7515,19 @@ Oyunun görselleri Godot'ya geçişle birlikte **Retro Diffusion** (piksel sanat
 
 Yalnız ACT 1 yapılırsa yaklaşık 100 $. Reislere ayrı resim +14 $, arka plan temizleme +18 $.
 
-### Önerilen başlangıç
 
-1. **Aşama 0 (deneme)** web sürümünü durdurmadan, tek biyom Retro Diffusion görselleriyle yapılır; sonucuna göre hem geçişe hem görsellere karar verilir.
-2. Tam taşımaya ACT 3'ün tasarımı belgede netleşince geçilir. Web sürümü dondurulur, yalnızca hata düzeltmesi alır.
-3. **Steam'e erken çıkmak** istenirse, beklemeden bugünkü oyun bir kabukla (Electron) Steam'e konabilir; Godot sürümü hazır olunca güncelleme olarak onun yerini alır.
+### Adım 0 · Deneme (25 Kasım 2026, yapıldı)
+
+Godot 4.7.1 projesi `godot` dalında (`godot/`). Oynanır hali: https://bogacavdar.github.io/purple-light/godot-deneme/ (tek iş parçacıklı web derlemesi; ilk açılışta motor ~10 MB iner).
+- **Aktarım:** `godot/tools/disa_aktar.js` web oyununu açıp haritayı (başlangıç çevresinde 80×60 karelik Çayır parçası), zemin karolarını, oyuncu karakterinin 8 yön × 5 karesini, Tavşan ve Kurt'un resimlerini ve sayılarını, ağaçları ve yerdeki toplanabilirleri oyunun kendi verisinden döker; elle yazılmış sayı yoktur.
+- **Oynanış:** web'deki tuşlarla 8 yön yürüme, Shift ile koşu, Boşluk ile atılma, Q ya da sol tık ile vuruş; oyun kolu (sol çubuk, L3, X/RT, B). Su ve ağaç gövdesi geçilmez, arkasındaki oyuncuyu ağaç yarı saydam gösterir. Tavşan kaçar; Kurt görünce kovalar, kırmızı "!" ile atılıp ısırır; can bitince karakter başlangıçta uyanır. Vurulan canlı beyaz parlar, can çubuğu ve hasar sayısı çıkar, ölen canlı devrilir.
+- **Denemeye özel (web'de yok):** Kurt gündüz de vardır (ölünce 12 sn sonra yenisi gelir); 1 tuşu (kolda Y) yumrukla Taş kılıç arasında geçiş yapar.
+- **Bu adımda yok:** toplama, envanter, düşen eşyalar, savuşturma, ulti, gün-gece ve ışık, sesler, dokunmatik düğmeler (Adım 1 · Çayır'da gelir).
+
+### Başlangıç (25 Kasım 2026)
+
+1. **Deneme (Adım 0):** web sürümünü durdurmadan Çayır'ın bir parçasıyla yapılır; ComfyUI'de çizilmiş karakter ve canlılarla. Sonucu Boğaç oynar; Adım 1'e geçmeye o karar verir.
+2. **Steam'e erken çıkmak** istenirse, beklemeden bugünkü oyun bir kabukla (Electron) Steam'e konabilir; Godot sürümü hazır olunca güncelleme olarak onun yerini alır.
 
 
 ## PlayStation 5 sürümü (hedef, henüz başlanmadı)
