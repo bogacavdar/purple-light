@@ -27,6 +27,8 @@ var atilma_v := Vector2.ZERO
 var atilma_cd := 0.0
 var kirmizi := 0.0
 var bayildi := false
+var kilit := false          # görev sahnesi sürerken kontrol oyuncuda değil
+var oto := Vector2.ZERO      # sahnede karakterin kendi yürüyüşü
 
 func _ready() -> void:
 	V = oyun.oyuncu_veri
@@ -59,6 +61,8 @@ func _draw() -> void:
 
 func _unhandled_input(e: InputEvent) -> void:
 	# sol tık her zaman tıklanan yöne vurur (çaprazlar dahil)
+	if kilit:
+		return
 	if e is InputEventMouseButton and e.pressed and e.button_index == MOUSE_BUTTON_LEFT:
 		var d: Vector2 = get_global_mouse_position() - (position + Vector2(0, -6))
 		vur(d.normalized() if d.length() > 0.5 else bakis)
@@ -71,14 +75,16 @@ func _process(dt: float) -> void:
 	atilma_cd -= dt
 	kirmizi = maxf(0.0, kirmizi - dt)
 	var g := Input.get_vector("sol", "sag", "yukari", "asagi", 0.3)
+	if kilit:
+		g = oto
 	if Input.is_action_just_pressed("kos_kol"):
 		kosu_kol = not kosu_kol
 	if g == Vector2.ZERO:
 		kosu_kol = false
 	_silah_yaz()
-	if Input.is_action_just_pressed("vur"):
+	if Input.is_action_just_pressed("vur") and not kilit:
 		vur(bakis)
-	if Input.is_action_just_pressed("atil"):
+	if Input.is_action_just_pressed("atil") and not kilit:
 		_atil(g)
 	if bekleyen_vurus > 0.0:
 		bekleyen_vurus -= dt
@@ -203,3 +209,9 @@ func _bayil() -> void:
 	hp = hp_max
 	oyun.can_guncelle(hp, hp_max)
 	bayildi = false
+
+## sahnede karakter konuştuğu kişiye döner
+func bak(d: Vector2) -> void:
+	if d.length() > 0.1:
+		_yon_sec(d.normalized())
+		bakis = d.normalized()

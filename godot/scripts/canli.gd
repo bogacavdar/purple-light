@@ -94,7 +94,7 @@ func _process(dt: float) -> void:
 	var d := maxf(dv.length(), 1.0)
 	var aggro := float(D.aggro)
 	var saldirgan: bool = D.temper == "saldırgan"
-	if saldirgan and not mad and d < aggro and not P.bayildi:
+	if saldirgan and not mad and d < aggro and not P.bayildi and not P.kilit:
 		mad = true
 	flash -= dt
 	atk -= dt
@@ -106,9 +106,9 @@ func _process(dt: float) -> void:
 		if kb.t <= 0:
 			kb = {}
 	else:
-		if saldirgan and mad and (d > aggro * 2.0 or P.bayildi) and lunge.is_empty() and wind <= 0.0:
+		if saldirgan and mad and (d > aggro * 2.0 or P.bayildi or P.kilit) and lunge.is_empty() and wind <= 0.0:
 			mad = false
-		var angry: bool = saldirgan and (mad or d < aggro) and not P.bayildi
+		var angry: bool = saldirgan and (mad or d < aggro) and not P.bayildi and not P.kilit
 		if D.temper == "zararsız" and (d < 70.0 or mad):
 			st = "flee"
 			_git(-dv / d * float(D.spd), dt)

@@ -27,6 +27,12 @@ var biyomlar := {0: true}
 var dovulen := {}          # örste dövülmüş eşyalar (web forged)
 var t := 0.0
 var bolge_anahtar := ""
+var gorulen_dersler: Array = []
+var ders = null            # {k, i}
+var ders_kart: PanelContainer
+var ders_baslik: Label
+var ders_yazi: RichTextLabel
+var ders_ileri: Button
 
 # arayüz
 var kart: PanelContainer
@@ -54,6 +60,7 @@ func kur(o) -> void:
 	PRI = Q.duplicate()
 	PRI.sort_custom(func(a, c): return [int(V.GB.get(a.g, 9)), a.i] < [int(V.GB.get(c.g, 9)), c.i])
 	_arayuz()
+	_ders_arayuz()
 	yenile()
 
 # ------------------------------------------------------------------ kişiler
@@ -414,7 +421,14 @@ func konus(g: String, hizmet: Dictionary) -> bool:
 		env.mesaj("%s: “Şu an bir işin var; önce onu bitir, sonra sana da bir işim olacak.”" % ad(g), true)
 	return false
 
+## önce sahne (kişi yakınsa), sonra kısa görev penceresi; sahne yoksa tam metinli pencere
 func _ver(q: Dictionary, g: String) -> void:
+	vis = []
+	if oyun.sahne.oyna(kisi(g), q, func(): _baslat(q, g, true)):
+		return
+	_baslat(q, g, false)
+
+func _baslat(q: Dictionary, g: String, kisa: bool) -> void:
 	aktif = q
 	b = {}
 	for p in q.p:
@@ -423,7 +437,7 @@ func _ver(q: Dictionary, g: String) -> void:
 	vis = []
 	var hazir := tamam()
 	var wh := "" if hazir else nerede()
-	var metin: String = _bb(q.say)
+	var metin: String = ("[b]Görev: %s[/b]" % q.t) if kisa else _bb(q.say)
 	if hazir:
 		metin += "\n\n[i]Ama bunlar sende zaten var! Bu iş bitti sayılır.[/i]"
 	if wh != "":
@@ -433,7 +447,9 @@ func _ver(q: Dictionary, g: String) -> void:
 		if hazir:
 			_bitir(true)
 		else:
-			env.mesaj("Görev başladı: " + str(q.t))}])
+			env.mesaj("Görev başladı: " + str(q.t))
+			if q.has("les") and ders_gerek(q.les):
+				get_tree().create_timer(0.25).timeout.connect(func(): ders_goster(q.les, 0))}])
 	_kart()
 
 func _durum(hizmet: Dictionary) -> void:
@@ -498,6 +514,54 @@ func _odul(q: Dictionary) -> String:
 func _bb(h: String) -> String:
 	return h.replace("<b>", "[b]").replace("</b>", "[/b]").replace("<br>", "\n").replace("<i>", "[i]").replace("</i>", "[/i]")
 
+# ------------------------------------------------------------------ yeni mekanik dersleri (belge: ACT 1 › Ana görevler › Yeni mekanik dersleri)
+## her ders bir kez görülür; örs dersi bir şey dövmüş olana gösterilmez; kart bir pencere açıkken bekler
+func ders_gerek(k: String) -> bool:
+	if k == "" or gorulen_dersler.has(k) or not V.dersler.has(k): return false
+	if k == "forge" and not dovulen.is_empty(): return false
+	return true
+
+func ders_goster(k: String, i: int) -> void:
+	var D: Dictionary = V.dersler[k]
+	ders = {k = k, i = i}
+	var st: Array = D.s[i]
+	ders_baslik.text = "Yeni ders · %d / %d · %s" % [i + 1, D.s.size(), D.t]
+	var tx: String = _bb(str(st[0])).replace("E'ye", "F'ye").replace(" E ile", " F ile").replace("(ya da ona dokun)", "")
+	ders_yazi.text = tx
+	ders_ileri.text = "Devam" if i < D.s.size() - 1 else "Anladım"
+
+func _ders_ileri() -> void:
+	if ders == null: return
+	var D: Dictionary = V.dersler[ders.k]
+	if ders.i < D.s.size() - 1:
+		ders_goster(ders.k, ders.i + 1)
+	else:
+		_ders_bitir()
+
+func _ders_bitir() -> void:
+	if ders != null and not gorulen_dersler.has(ders.k):
+		gorulen_dersler.append(ders.k)
+	ders = null
+
+func _ders_arayuz() -> void:
+	ders_kart = PanelContainer.new()
+	var st := StyleBoxFlat.new(); st.bg_color = Color(0.1, 0.08, 0.16, 0.94); st.border_color = Color("#a07ad8"); st.set_border_width_all(2)
+	st.set_content_margin_all(10)
+	ders_kart.add_theme_stylebox_override("panel", st)
+	var v := VBoxContainer.new()
+	ders_baslik = Label.new(); ders_baslik.add_theme_font_size_override("font_size", 12); ders_baslik.add_theme_color_override("font_color", Color("#d8b0ff"))
+	ders_yazi = RichTextLabel.new(); ders_yazi.bbcode_enabled = true; ders_yazi.fit_content = true; ders_yazi.scroll_active = false
+	ders_yazi.custom_minimum_size = Vector2(340, 0)
+	var h := HBoxContainer.new()
+	ders_ileri = Button.new(); ders_ileri.pressed.connect(_ders_ileri)
+	var gec := Button.new(); gec.text = "Dersi geç"; gec.pressed.connect(_ders_bitir)
+	h.add_child(ders_ileri); h.add_child(gec)
+	v.add_child(ders_baslik); v.add_child(ders_yazi); v.add_child(h)
+	ders_kart.add_child(v)
+	oyun.hud.add_child(ders_kart)
+	ders_kart.position = Vector2(12, 150)
+	ders_kart.visible = false
+
 # ------------------------------------------------------------------ her an
 func av(k: String) -> void:
 	kills[k] = int(kills.get(k, 0)) + 1
@@ -523,6 +587,7 @@ func _process(dt: float) -> void:
 	_ok_ciz()
 	if kh_bolge: kh_bolge.modulate.a = 0.45 + 0.25 * sin(t * 3.0)
 	if kh_isaret: kh_isaret.queue_redraw()
+	ders_kart.visible = ders != null and not oyun.konusma.visible and not oyun.istasyon.pencere.visible and not oyun.sahne.acik and not oyun.el_yapimi.acik_mi()
 
 # ------------------------------------------------------------------ arayüz: kart (sağ üst), ok, küçük haritada sarı bölge ve "!"
 func _arayuz() -> void:
@@ -568,6 +633,9 @@ func _arayuz() -> void:
 	kh.add_child(kh_isaret)
 
 func _kart() -> void:
+	if oyun.sahne.acik:
+		kart.visible = false
+		return
 	if aktif == null:
 		if bitenler.is_empty() and not vis.is_empty():
 			kart.visible = true

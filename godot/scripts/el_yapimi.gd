@@ -189,3 +189,6 @@ func _ayrinti() -> void:
 		en.add_theme_font_size_override("font_size", 11)
 		en.autowrap_mode = TextServer.AUTOWRAP_WORD
 		ayrinti.add_child(en)
+
+func acik_mi() -> bool:
+	return pencere.visible

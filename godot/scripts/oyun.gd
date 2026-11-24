@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1d-2"
+const SURUM := "Godot · Adım 1d-3"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -26,6 +26,7 @@ var istasyon
 var konusma
 var kisiler: Array = []
 var gorev
+var sahne
 var bio_arr: PackedByteArray
 var kh_resim: TextureRect
 var toplama_veri: Dictionary
@@ -81,6 +82,10 @@ func _ready() -> void:
 	hud.add_child(konusma)
 	konusma.kur(self)
 	_kisiler()
+	sahne = preload("res://scripts/sahne.gd").new()
+	hud.add_child(sahne)
+	hud.move_child(sahne, konusma.get_index())
+	sahne.kur(self)
 	gorev = preload("res://scripts/gorev.gd").new()
 	add_child(gorev)
 	gorev.kur(self)
@@ -113,6 +118,8 @@ func _ready() -> void:
 		if q.contains("e1"):
 			env.ekle("Dal", 6)
 			env.ekle("Kuru ot", 2)
+		if q.contains("ders"):
+			gorev.ders_goster("chop", 0)
 		if q.contains("ors"):
 			oyuncu.position = Vector2(toplama_veri.istasyon.ors.x - 14, toplama_veri.istasyon.ors.y + 4)
 			for e in [["Taş", 6], ["Sopa", 2], ["İp", 4], ["Dal", 2], ["Keskin taş", 4]]:

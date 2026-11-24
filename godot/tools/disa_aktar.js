@@ -169,6 +169,6 @@ const RW=0,RH=0;
     const kaynak={};for(const n in K.B)kaynak[n]=Object.keys(K.B[n]).map(Number).sort();
     for(const k in K.AD){const bs=ANB[k];if(!bs)continue;for(const m of K.AD[k]){const s=new Set(kaynak[m]||[]);bs.forEach(b=>s.add(b));kaynak[m]=[...s].sort()}}
     const avB={};for(const k in ANB)avB[k]=ANB[k];
-    w(path.join(OUT,'data','gorevler.json'),JSON.stringify({gorevler:Q,GB:D.GB,kaynak,av:avB,grup:K.EXP},null,0));
+    w(path.join(OUT,'data','gorevler.json'),JSON.stringify({gorevler:Q,GB:D.GB,kaynak,av:avB,grup:K.EXP,dersler:D.LES},null,0));
     console.log('görev',Q.length,'kaynak',Object.keys(kaynak).length)}
   await b.close()})().catch(e=>{console.error(e);process.exit(1)});
