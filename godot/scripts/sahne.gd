@@ -37,7 +37,6 @@ var emo_yazi: Label
 var esya: VBoxContainer
 var esya_resim: TextureRect
 var esya_ad: Label
-var renk: CanvasModulate
 
 func kur(oy) -> void:
 	oyun = oy
@@ -72,8 +71,6 @@ func kur(oy) -> void:
 	esya_ad = Label.new(); esya_ad.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER; oyun._golge(esya_ad)
 	esya.add_child(esya_resim); esya.add_child(esya_ad)
 	add_child(esya)
-	renk = CanvasModulate.new()
-	oyun.add_child(renk)
 	visible = false
 
 ## kişi yakında değilse (≈14 karodan uzak) sahne atlanır, görev doğrudan pencereyle verilir
@@ -255,7 +252,7 @@ func _adim(l: Dictionary) -> float:
 		return 1.7
 	if l.has("tint"):
 		var tw := create_tween()
-		tw.tween_property(renk, "color", RENK.get(l.tint, Color.WHITE), 0.6)
+		tw.tween_method(oyun.sahne_rengi, oyun.sahne_renk, RENK.get(l.tint, Color.WHITE), 0.6)
 		return 0.7
 	return 0.0
 
@@ -321,7 +318,7 @@ func _bitir() -> void:
 	esya.visible = false
 	emo_yazi.visible = false
 	var tw := create_tween()
-	tw.tween_property(renk, "color", Color.WHITE, 0.4)
+	tw.tween_method(oyun.sahne_rengi, oyun.sahne_renk, Color.WHITE, 0.4)
 	oyun.kamera.offset = Vector2.ZERO
 	oyun.oyuncu.kilit = false
 	oyun.oyuncu.oto = Vector2.ZERO

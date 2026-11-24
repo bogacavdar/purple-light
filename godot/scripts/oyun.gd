@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1d-3"
+const SURUM := "Godot · Adım 1e-1"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -27,6 +27,11 @@ var konusma
 var kisiler: Array = []
 var gorev
 var sahne
+var magara
+var mesale
+var ortam: CanvasModulate
+var taban_renk := Color.WHITE
+var sahne_renk := Color.WHITE
 var bio_arr: PackedByteArray
 var kh_resim: TextureRect
 var toplama_veri: Dictionary
@@ -56,6 +61,9 @@ func _ready() -> void:
 	tvar = Marshalls.base64_to_raw(harita.tvar)
 	shore = Marshalls.base64_to_raw(harita.shore)
 	parlama_shader = load("res://scripts/parlama.gdshader")
+	# yazı tipine yedek: ✓ ✗ ▸ gibi işaretler DejaVu'dan, sahnedeki duygu işaretleri (💧 💡 💢 ✨) küçük bir Noto Emoji parçasından
+	var yf: Font = ThemeDB.fallback_font
+	yf.fallbacks = [load("res://fonts/DejaVuSans.ttf"), load("res://fonts/emoji.ttf")]
 	_hud()
 	_zemin()
 	_kucuk_harita()
@@ -89,6 +97,14 @@ func _ready() -> void:
 	gorev = preload("res://scripts/gorev.gd").new()
 	add_child(gorev)
 	gorev.kur(self)
+	ortam = CanvasModulate.new()
+	add_child(ortam)
+	mesale = preload("res://scripts/mesale.gd").new()
+	add_child(mesale)
+	magara = preload("res://scripts/magara.gd").new()
+	add_child(magara)
+	magara.kur(self)
+	mesale.kur(self, magara.M.mesale)
 	toplama = preload("res://scripts/toplama.gd").new()
 	toplama.oyun = self
 	toplama.env = env
@@ -98,8 +114,7 @@ func _ready() -> void:
 	efekt.z_index = 50
 	add_child(efekt)
 	kamera = Camera2D.new()
-	kamera.limit_left = bx0 * T; kamera.limit_top = by0 * T
-	kamera.limit_right = (bx0 + bw) * T; kamera.limit_bottom = (by0 + bh) * T
+	kamera_sinir()
 	oyuncu.add_child(kamera)
 	kamera.make_current()
 	# canlılar: Tavşanlar dolaşır, kaçar; Kurt oyuncuyu görünce saldırır (web'de Kurt gece çıkar; denemede gündüz de var)
@@ -120,6 +135,12 @@ func _ready() -> void:
 			env.ekle("Kuru ot", 2)
 		if q.contains("ders"):
 			gorev.ders_goster("chop", 0)
+		if q.contains("magara"):
+			oyuncu.position = Vector2(magara.M.kapi.x, float(magara.M.kapi.y) + 30.0)
+			env.ekle("Kaba meşale", 2)
+			while env.sv < 5:
+				env.xp_ekle(200)
+			mesale.degistir()
 		if q.contains("ors"):
 			oyuncu.position = Vector2(toplama_veri.istasyon.ors.x - 14, toplama_veri.istasyon.ors.y + 4)
 			for e in [["Taş", 6], ["Sopa", 2], ["İp", 4], ["Dal", 2], ["Keskin taş", 4]]:
@@ -198,6 +219,8 @@ func bio_at(p: Vector2) -> int:
 	return int(bio_arr[y * bw + x])
 
 func tile_at(p: Vector2) -> int:
+	if magara != null and magara.icinde:
+		return 1
 	var x := int(floor(p.x / T)) - bx0
 	var y := int(floor(p.y / T)) - by0
 	if x < 0 or y < 0 or x >= bw or y >= bh:
@@ -209,6 +232,11 @@ static func su_mu(t: int) -> bool:
 
 ## web blocked(): kutunun dört köşesinden biri sudaysa ya da bir ağaç gövdesine değiyorsa geçilmez
 func engel(p: Vector2, half: float = 5.0) -> bool:
+	if magara != null:
+		if magara.icinde:
+			return magara.engel(p, half)
+		if magara.kapi_engel(p):
+			return true
 	for d in [Vector2(-half, -half), Vector2(half, -half), Vector2(-half, half), Vector2(half, half)]:
 		if su_mu(tile_at(p + d)):
 			return true
@@ -290,6 +318,8 @@ func _canli_koy(k: String, min_kare: float, aralik: float = 14.0) -> void:
 
 func canli_oldu(k: String) -> void:
 	if gorev: gorev.av(k)
+	if magara != null and magara.icinde:
+		return
 	# yerine bir süre sonra yenisi gelir (deneme kolaylığı için)
 	await get_tree().create_timer(12.0).timeout
 	_canli_koy(k, 12.0)
@@ -395,7 +425,10 @@ func _kucuk_harita() -> void:
 
 func _process(_d: float) -> void:
 	if kh_nokta and oyuncu:
-		kh_nokta.position = oyuncu.position / float(T) * kh_olcek - Vector2(2, 2)
+		if magara != null and magara.icinde:
+			kh_nokta.position = magara.harita_nokta() - Vector2(2, 2)
+		else:
+			kh_nokta.position = oyuncu.position / float(T) * kh_olcek - Vector2(2, 2)
 
 ## web treeChopped (v65): üç kesimde ağaç devrilir; 200–300 sn sonra aynı biyomda başka bir yerde yenisi büyür
 func agac_devrildi(ag) -> void:
@@ -493,3 +526,15 @@ func _konus(n) -> void:
 			konusma.ac(K.ad, por, "Zırh benim işim. Tarifini bildiğin zırhı malzemesi ve işçiliğiyle döverim.", [{t = "Örse bak", pri = true, f = func(): istasyon.ac("durmus")}, {t = "Sonra", kapat = true}])
 		_:
 			konusma.ac(K.ad, por, SELAM.get(K.k, "Merhaba!"))
+
+func kamera_sinir() -> void:
+	kamera.limit_left = bx0 * T; kamera.limit_top = by0 * T
+	kamera.limit_right = (bx0 + bw) * T; kamera.limit_bottom = (by0 + bh) * T
+
+## dünyanın rengi: mağaranın karanlığı × sahnenin tonu (sepya, gece)
+func renk_guncelle() -> void:
+	ortam.color = taban_renk * sahne_renk
+
+func sahne_rengi(c: Color) -> void:
+	sahne_renk = c
+	renk_guncelle()

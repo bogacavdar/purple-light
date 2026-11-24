@@ -225,6 +225,8 @@ func _arayuz() -> void:
 	bildirim = VBoxContainer.new()
 	hud.add_child(bildirim)
 	bildirim.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP, Control.PRESET_MODE_MINSIZE, 40)
+	bildirim.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	bildirim.alignment = BoxContainer.ALIGNMENT_BEGIN
 
 func _yuva(n, sec: bool, sayi: int, ust_yazi: String) -> Control:
 	var p := PanelContainer.new()
@@ -284,6 +286,7 @@ func canta_ciz() -> void:
 func mesaj(t: String, kotu: bool = false) -> void:
 	var l := Label.new()
 	l.text = t
+	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	l.add_theme_color_override("font_color", Color("#ffb0a0") if kotu else Color("#fff2c0"))
 	oyun._golge(l)
 	bildirim.add_child(l)

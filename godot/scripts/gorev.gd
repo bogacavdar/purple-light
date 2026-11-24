@@ -586,7 +586,10 @@ func _process(dt: float) -> void:
 		_bolge()
 	_ok_ciz()
 	if kh_bolge: kh_bolge.modulate.a = 0.45 + 0.25 * sin(t * 3.0)
-	if kh_isaret: kh_isaret.queue_redraw()
+	if kh_isaret:
+		kh_isaret.queue_redraw()
+		kh_isaret.visible = oyun.magara == null or not oyun.magara.icinde
+		kh_bolge.visible = oyun.magara == null or not oyun.magara.icinde
 	ders_kart.visible = ders != null and not oyun.konusma.visible and not oyun.istasyon.pencere.visible and not oyun.sahne.acik and not oyun.el_yapimi.acik_mi()
 
 # ------------------------------------------------------------------ arayüz: kart (sağ üst), ok, küçük haritada sarı bölge ve "!"
