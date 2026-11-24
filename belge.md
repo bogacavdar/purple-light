@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 4.42** ile birebir (25 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 4.43** ile birebir (25 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -7531,7 +7531,7 @@ Adım 1 küçük parçalar halinde gider; her parçanın sonunda deneme linki (`
 | Parça | İçerik |
 |---|---|
 | 1a · Dünya (yapıldı) | Bütün ada haritası (790 × 568 karo; Çayır, orman zemini, kum ve suların ComfyUI dokuları, öbür biyomlar eski karolarla), deniz dalgaları, akıntı, parıltı ve kıyı köpüğü, bütün ağaçlar (2.806) ve toplanabilirler (6.338), küçük harita |
-| 1b · Toplama ve çanta | F ile toplama (yerdeki eşya önce), ağaç kesme ve taş kırma, düşen eşyalar, çanta, alet kemeri, tokluk |
+| 1b · Toplama ve çanta (yapıldı) | F ile toplama (yerdeki eşya önce), ağaç kesme (üç kesimde devrilir, başka yerde yenisi büyür) ve meyve silkeleme, maden kazma, düşen eşyalar (üstünden yürüyünce alınır, 180 sn sonra kaybolur), çanta (I), 5 yuvalı alet kemeri (1–5), aletlerin aşınması, tokluk ve yemek (X). Kemal ve el yapımı gelene kadar G tuşu deneme aletleri verir (Taş balta, Taş kazma, Taş kılıç); bu tuş yalnız Godot denemesindedir |
 | 1c · El yapımı | Tarif kitabı, el yapımı, Çayır tarifleri (veri web'den aktarılır) |
 | 1d · Kişiler ve görevler | Kemal, konuşma penceresi (dışına basmak = "Anladım"), Kemal'in ana görevleri ve dersleri, "!" işaretleri |
 | 1e · Yankı Mağarası | Mağara girişi, karanlık ve ışık, yarasa, kertenkele, örümcek, Yankı Kraliçesi |

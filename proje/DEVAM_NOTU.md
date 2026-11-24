@@ -1,3 +1,7 @@
+## v4.43 (25 Kasım 2026) · Godot Adım 1b (toplama ve çanta)
+- `godot-deneme/` yeni derleme (godot dalı: envanter.gd, toplama.gd, dugum.gd; data/toplama.json web'den: RES, GTIME, MINES, ORE/AXE/PICK kademeleri, GT, ağaç odunu ve meyvesi, eşya resimleri, foodVal/healVal). Belge 99_godot 1b satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.42 (25 Kasım 2026) · Godot Adım 1a (dünya)
 - Belge: 99_godot.md'ye Adım 1'in parçaları tablosu (1a yapıldı). `godot-deneme/` yeni derleme (godot dalı aca52cf: bütün ada, ComfyUI zemin dokuları, su.gd dalga/akıntı/köpük, küçük harita). Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -177,10 +181,4 @@
 - Kontrol: chk 0 hata; ekran görüntüsünde Gelincik yerde ve envanterde yeni resimle.
 
 **Geri alma:** `git revert` bu commit (kayıt alanı yok).
-
-## v4.22 (13 Kasım 2026) · Kemal "Üçü de tamam"; 5 malzeme yerde de yeni resimle
-- Boğaç: "3 böğürtlen topladım neden 5'i de tamam diyor?" → `CALLS` `e2` metni. "river pebbles neden böyle" → `v420cali` içinde `__plCayirL` Nehir çakılı/Kum/Dal/Kuru ot/Yaprak (13–16 px, sayfanın 7. satırı). Belge: Eşyalar. (4.21 başka bir oturumda uygulama kimliği düzeltmesi olarak çıktı.)
-- Kontrol: chk 0 hata; ekran görüntüsünde beşi de yerde yeni resimle.
-
-**Geri alma:** `git revert` bu commit.
 

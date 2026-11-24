@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.43 · 25 Kasım 2026
+
+### Proje
+- **Godot, Adım 1b (toplama ve çanta) oynanabilir:** F ile toplama (önce yerdeki eşyalar), ağaç kesme ve meyve silkeleme, kazmayla maden kazma, yere düşen eşyalar (üstünden yürüyünce alınır), çanta (I), 1–5 alet kemeri, aletlerin aşınması, tokluk ve yemek (X). Kemal ve el yapımı gelene kadar G tuşu deneme için Taş balta, Taş kazma ve Taş kılıç verir. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.42 · 25 Kasım 2026
 
 ### Proje
@@ -324,16 +331,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Tasarım belgesi
 - Eşyalar › Yeni ikonlar: Boğaç'ın ComfyUI ile çizdirip seçtiği ikonlar için yeni bölüm (şimdilik Gelincik).
 - Sistemler › Çayır'da yerdeki toplanabilirlerin görünüşü: Gelincik'in yeni görünüşü yazıldı.
-
----
-
-## Versiyon 4.22 · 13 Kasım 2026
-
-### Düzeltmeler
-- Kemal, 3 böğürtlen toplanınca artık "Üçü de tamam evlat!" diyor ("Beşi de tamam" değil).
-
-### Görsel
-- Nehir çakılı, Kum, Dal, Kuru ot ve Yaprak yerde toplanmayı beklerken de yeni resimleriyle görünüyor (önce yalnızca envanterde değişmişti).
-
-### Tasarım belgesi
-- Eşyalar bölümüne bu beş malzemenin yerdeki resminin de yeni olduğu yazıldı.
