@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.41 · 25 Kasım 2026
+
+### Görsel
+- **Godot denemesinde toplanabilirler web'deki gibi net:** kuru ot, böğürtlen, papatya, taşlar ve öbür toplanabilirler web oyununun çizdiği ayrıntıyla görünüyor (önce oyun dünyasının küçük piksel boyutunda kaydedildikleri için leke gibi duruyorlardı).
+
+---
+
 ## Versiyon 4.40 · 25 Kasım 2026
 
 ### Tasarım belgesi
@@ -330,21 +337,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Teknoloji › Uygulama olarak yükleme: uygulama kimliği `/purple-light/` olarak yazıldı.
-
----
-
-## Versiyon 4.20 · 13 Kasım 2026
-
-### Oynanış
-- **Meyve çalıları:** Böğürtlen, Ahududu, Yaban mersini, Kızılcık, Kuşburnu ve Alıç artık dünyada çalı olarak duruyor.
-  - Her çalıdan 3 kez toplarsın: her seferinde yere bir meyve düşer, çalı yerinde kalır ve meyvesi azalmış görünür.
-  - Üçüncü toplayışta çalı kaybolur, bir süre sonra kendi biyomunda başka bir yerde yeniden çıkar.
-  - Çalının yanına gelince kaç meyve kaldığı yazar ("Böğürtlen çalısından topla (2 kaldı)").
-- **Kemal'in ilk dersi:** artık 5 değil **3 böğürtlen** topla ve üçünü de ye; üçü de aynı çalıdan alınabilir.
-
-### Görsel
-- Yeni resimler: böğürtlen çalısı ve böğürtlen; diğer beş çalı ve meyveleri aynı resmin kendi rengine boyanmış hali.
-- Nehir çakılı, Kuru ot, Kum, Dal ve Yaprak'ın ikonları yenilendi.
-
-### Tasarım belgesi
-- Toplama bölümüne "Meyve çalıları" eklendi; öğretici adımları 3 böğürtlene göre, eşya tablosundaki "nereden gelir" satırları çalıya göre güncellendi.

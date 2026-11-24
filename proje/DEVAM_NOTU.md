@@ -1,3 +1,7 @@
+## v4.41 (25 Kasım 2026) · Godot denemesi: toplanabilirler yüksek çözünürlükte
+- Yalnız `godot-deneme/index.pck` (godot dalı 676c0fa: disa_aktar.js toplanabilirleri 4 kat ince yakalar, oyun.gd 1/4 ölçekle gösterir). Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.40 (25 Kasım 2026) · Godot'ya aşamalı geçiş planı (yalnız belge)
 - Belge: 99_godot.md: başlama kararı (Boğaç, 25 Kasım), biyom biyom adımlar tablosu, web sürümü kuralı, veri aktarımı, kayıt taşıma, `godot` dalı; Retro Diffusion bölümüne ComfyUI notu. Oyun kodu değişmedi (yalnız verlab).
 - Geri almak için: bu commit'i `git revert` et.
@@ -181,12 +185,4 @@
 - Değişen: `manifest.webmanifest` `"id": "/purple-light/"`; belge `parts/05_teknoloji.md` PWA satırı; verlab 4.21. Kod bloğu yok, kayıt alanı yok. CoffeBean tarafı v0.47'de `/coffeBean/`.
 - Kontrol: yalnız sözdizimi (chk.js).
 - **Geri alma:** `git revert` bu commit (yüklü uygulamalar yine birbirine karışır).
-
-## v4.20 (13 Kasım 2026) · meyve çalıları (3 kez toplanır), Kemal'in dersi 3 böğürtlen, yeni ikonlar
-- Boğaç: "bush üzerinde yetişen gıdaları ... 3 kereye mahsus ... düşüp kaybolacaklar ve yeniden generate olabilecekler; kemalin öğreticisi de 3 tane böğürtlen isteyecek" + resimler (çalı, böğürtlen, çakıl, kuru ot, kum, dal, yaprak). Belge: Toplama › Meyve çalıları; Akış › öğretici 1–2; Eşyalar.
-- Çekirdek: toplama bitişinde `window.__plBush(n)` ise `n.left` 3→0 (çalı kalır, sonra normal respawn, `left=null`); köpek toplaması aynı; istem ve üzerine gelme etiketi "X çalısı… N kaldı"; `drawNode` başındaki `__plCayirL` çağrısına `n` eklendi; öğretici 5→3 (`tzBush()` yakın çalıyı 3'e doldurur ya da `tzPlace` ile bir çalı koyar), Kemal'in ilk sözü "üç tane".
-- `v420cali` bloğu: 160×224 PNG (~19 KB): 6 çalı × 3 durum + meyve ikonu, alt satır 5 malzeme ikonu; `__plCayirL[çalı]` 20×20 dünya resmi; ikonlar v418pxl gibi sabit (yalnız bu 11 ad).
-- Kontrol: chk 0 hata; bir çalıdan 3 toplama: left 2 → 1 → kayboldu, yerde 3 böğürtlen; öğretici kartı "3 böğürtlen"; ekran görüntüsünde çalılar görünüyor; sayfa hatası yok.
-
-**Geri alma:** `git revert` bu commit (çekirdek satırlar + blok birlikte; kayıt alanı yok, `n.left` kaydedilmez).
 
