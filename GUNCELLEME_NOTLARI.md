@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.44 · 25 Kasım 2026
+
+### Proje
+- **Godot, Adım 1c (el yapımı) oynanabilir:** Tab ile el yapımı ekranı (bildiğin tarifler, malzemeler ve sendeki adetleri, eksikler, Yap düğmesi), K ile tarif kitabı (web'in 766 tarifinin hepsi, kategori kategori; örste dövülenler ve Usta Sinan'ın kurdukları ayrıca belirtilir). Zümrüt'ün kazanı gelene kadar G tuşu Çayır tariflerini de öğretir. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.43 · 25 Kasım 2026
 
 ### Proje
@@ -318,16 +325,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - Eşyalar: yeni ikonlu eşyaların listesi, yeni adlar; Rezene kalktı.
 - ACT 1: Çayır otlarının sayıları Rezene'nin yerini alacak biçimde güncellendi; E6 2 Nane istiyor.
 - Tarifler ve başarımlar: tarif sayısı 766, eşya sayısı 1.236.
-
----
-
-## Versiyon 4.23 · 14 Kasım 2026
-
-### Görsel
-- **Gelincik yeni resmiyle:** iki kırmızı gelincik, sağdaki daha yukarıda ve sapı hafifçe kıvrık; dipte ince koyu yeşil çimen. Envanterde, kitapta ve yerde aynı resim.
-- Dal yerde yan yatıyor, Yaprak biraz dönük duruyor.
-- Yerdeki Nehir çakılı, Kum, Dal, Kuru ot ve Yaprak'ın gölgesi artık resmin tam altında (Kum'un gölgesi aşağıda kalıyordu).
-
-### Tasarım belgesi
-- Eşyalar › Yeni ikonlar: Boğaç'ın ComfyUI ile çizdirip seçtiği ikonlar için yeni bölüm (şimdilik Gelincik).
-- Sistemler › Çayır'da yerdeki toplanabilirlerin görünüşü: Gelincik'in yeni görünüşü yazıldı.

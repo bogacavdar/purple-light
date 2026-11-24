@@ -1,3 +1,7 @@
+## v4.44 (25 Kasım 2026) · Godot Adım 1c (el yapımı)
+- `godot-deneme/` yeni derleme (godot dalı: el_yapimi.gd; data/toplama.json'a DB.R tarifleri, FORGED/PLACEABLE işaretleri, ~1.175 eşya resmi). Belge 99_godot 1c satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.43 (25 Kasım 2026) · Godot Adım 1b (toplama ve çanta)
 - `godot-deneme/` yeni derleme (godot dalı: envanter.gd, toplama.gd, dugum.gd; data/toplama.json web'den: RES, GTIME, MINES, ORE/AXE/PICK kademeleri, GT, ağaç odunu ve meyvesi, eşya resimleri, foodVal/healVal). Belge 99_godot 1b satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -175,10 +179,4 @@
 - Eski kayıtlar: `RENAMED` (Çilek, Elma, Armut ve türevleri), `REPL` Rezene→Nane, Rezene çayı→Nane çayı; `HERB` Kurutulmuş rezene→Nane.
 - Geri almak: `v425*`, `v424dunya`, `v423ikon` blokları silinir, `v64`/`v184` eklemeleri geri alınır (`git revert` bu commit).
 - Kontrol: chk 0 hata (`?.` 1, `??` 7); Playwright ile ikonlar, yerdekiler, ağaçlar, kayalar, zemin, kişiler, kuzenler, eşyalar ve konuşma resimleri görüldü, hata yok.
-
-## v4.23 (14 Kasım 2026) · Gelincik yeni resmiyle; Dal yan yatık, Yaprak dönük, yerdeki gölgeler resmin altında
-- Boğaç: "dalı yan çevir", "yaprağı da çevir biraz", "gölge çok aşağıda kalmış" → `v420cali` `GZ`/`box` ile resmin alt kenarı gölgeye oturur, Dal −π/2, Yaprak −0.55 rad. "gelinciği koy" → yeni blok `v423ikon` (v420cali'den hemen sonra): tek satırlık 32 px sayfa, `N` adları, `GZ` yerdeki boy; ICON/ICONC yalnız bu adlar için sabitlenir, yerde `__plCayirL[ad]`. Resim Boğaç'ın ComfyUI (Z-Image Turbo + piksel LoRA) çıktısından 32×32'ye indirilip çerçevelendi. Belge: Eşyalar › Yeni ikonlar; Sistemler › Çayır görünüşü.
-- Kontrol: chk 0 hata; ekran görüntüsünde Gelincik yerde ve envanterde yeni resimle.
-
-**Geri alma:** `git revert` bu commit (kayıt alanı yok).
 
