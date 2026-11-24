@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot deneme · Adım 0"
+const SURUM := "Godot · Adım 1a"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -15,6 +15,8 @@ var by0 := 0
 var bw := 0
 var bh := 0
 var tiles: PackedByteArray
+var tvar: PackedByteArray
+var shore: PackedByteArray
 var agac_izgara := {}  # 32 px'lik hücre → o hücredeki ağaçlar (web: TGRID)
 var agaclar: Array = []
 
@@ -38,10 +40,13 @@ func _ready() -> void:
 	T = int(harita.T)
 	bx0 = int(harita.region.x0); by0 = int(harita.region.y0)
 	bw = int(harita.region.w); bh = int(harita.region.h)
-	tiles = PackedByteArray(harita.tiles)
+	tiles = Marshalls.base64_to_raw(harita.tiles)
+	tvar = Marshalls.base64_to_raw(harita.tvar)
+	shore = Marshalls.base64_to_raw(harita.shore)
 	parlama_shader = load("res://scripts/parlama.gdshader")
 	_hud()
 	_zemin()
+	_kucuk_harita()
 	nesneler = Node2D.new()
 	nesneler.y_sort_enabled = true
 	add_child(nesneler)
@@ -83,30 +88,51 @@ func _yakinlik() -> void:
 	var s := maxf(2.0, roundf(minf(v.x, v.y) / 260.0))
 	kamera.zoom = Vector2(s, s)
 
-# ------------------------------------------------------------------ zemin: web'in karo seti (TILEC) ve karo varyantı (tvar)
+# ------------------------------------------------------------------ zemin
+## web v425karo: Çayır çimi, orman zemini, kum ve suların karoları ComfyUI'de çizilmiş 128 px dikişsiz dokulardan gelir;
+## bir karo dokunun dünyadaki yerine düşen parçasını alır (x mod 8, y mod 8), yan yana karolar kesintisiz birleşir.
+## Dokusu olmayan türler (öbür biyomlar) web'in eski karo setinden (TILEC, tvar) çizilir.
 func _zemin() -> void:
 	var ts := TileSet.new()
 	ts.tile_size = Vector2i(T, T)
-	var src := TileSetAtlasSource.new()
-	src.texture = load("res://art/karolar.png")
-	src.texture_region_size = Vector2i(T, T)
+	var eski := TileSetAtlasSource.new()
+	eski.texture = load("res://art/karolar.png")
+	eski.texture_region_size = Vector2i(T, T)
 	for k in 21:
 		for v in 8:
-			src.create_tile(Vector2i(v, k))
-	ts.add_source(src, 0)
+			eski.create_tile(Vector2i(v, k))
+	ts.add_source(eski, 0)
+	var doku := {}
+	for k in 6:
+		var yol := "res://art/zemin_%d.png" % k
+		if not ResourceLoader.exists(yol):
+			continue
+		var src := TileSetAtlasSource.new()
+		src.texture = load(yol)
+		src.texture_region_size = Vector2i(T, T)
+		var n := int(src.texture.get_width() / T)
+		for y in n:
+			for x in n:
+				src.create_tile(Vector2i(x, y))
+		ts.add_source(src, 1 + k)
+		doku[k] = n
 	var tm := TileMapLayer.new()
 	tm.tile_set = ts
 	tm.z_index = -10
 	add_child(tm)
-	var tv: Array = harita.tvar
 	for y in bh:
 		for x in bw:
-			var t := int(tv[y * bw + x])
-			tm.set_cell(Vector2i(bx0 + x, by0 + y), 0, Vector2i(t % 8, t / 8))
-	var kiyi := preload("res://scripts/kiyi.gd").new()
-	kiyi.oyun = self
-	kiyi.z_index = -9
-	add_child(kiyi)
+			var kv := int(tvar[y * bw + x])
+			var k := kv >> 3
+			if doku.has(k):
+				var n: int = doku[k]
+				tm.set_cell(Vector2i(bx0 + x, by0 + y), 1 + k, Vector2i((bx0 + x) % n, (by0 + y) % n))
+			else:
+				tm.set_cell(Vector2i(bx0 + x, by0 + y), 0, Vector2i(kv % 8, kv / 8))
+	var su := preload("res://scripts/su.gd").new()
+	su.oyun = self
+	su.z_index = -9
+	add_child(su)
 
 func tile_at(p: Vector2) -> int:
 	var x := int(floor(p.x / T)) - bx0
@@ -179,7 +205,7 @@ func _canli_koy(k: String, min_kare: float, aralik: float = 14.0) -> void:
 	var D: Dictionary = canlilar[k]
 	var land: Array = D.landTiles
 	for deneme in 300:
-		var p := Vector2(rng.randf_range((bx0 + 3) * T, (bx0 + bw - 3) * T), rng.randf_range((by0 + 3) * T, (by0 + bh - 3) * T))
+		var p := oyuncu.position + Vector2.from_angle(rng.randf() * TAU) * rng.randf_range(min_kare, min_kare + aralik) * T
 		if not land.has(float(tile_at(p))) or engel(p, 6.0):
 			continue
 		var d := p.distance_to(oyuncu.position)
@@ -257,3 +283,43 @@ func yazi(p: Vector2, metin: String, renk: Color, boy: int = 8) -> void:
 
 func parca(p: Vector2, v: Vector2, omur: float, renk: Color) -> void:
 	efekt.parca(p, v, omur, renk)
+
+# ------------------------------------------------------------------ küçük harita (sağ alt): ada, biyom renkleri, oyuncunun yeri
+var kh_nokta: ColorRect
+var kh_olcek := 0.0
+func _kucuk_harita() -> void:
+	var bio := Marshalls.base64_to_raw(harita.bio)
+	var BR := [Color("#7fb04a"), Color("#3f7a3a"), Color("#6b7440"), Color("#8a8580"), Color("#5a3a36"), Color("#7a5aa8")]
+	var img := Image.create(bw, bh, false, Image.FORMAT_RGBA8)
+	for y in bh:
+		for x in bw:
+			var i := y * bw + x
+			var k := tiles[i]
+			var c: Color
+			if k == 4: c = Color("#2a6db0")
+			elif k == 3 or k == 5: c = Color("#4a9ad8")
+			elif k == 2: c = Color("#e6d39a")
+			else: c = BR[mini(int(bio[i]), 5)]
+			img.set_pixel(x, y, c)
+	var tr := TextureRect.new()
+	tr.texture = ImageTexture.create_from_image(img)
+	tr.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	kh_olcek = 220.0 / float(bw)
+	tr.custom_minimum_size = Vector2(bw, bh) * kh_olcek
+	tr.size = tr.custom_minimum_size
+	tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	tr.stretch_mode = TextureRect.STRETCH_SCALE
+	var cer := PanelContainer.new()
+	var st := StyleBoxFlat.new(); st.bg_color = Color(0.05, 0.07, 0.05, 0.85); st.border_color = Color("#0b0f0a"); st.set_border_width_all(2)
+	cer.add_theme_stylebox_override("panel", st)
+	cer.add_child(tr)
+	hud.add_child(cer)
+	cer.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT, Control.PRESET_MODE_MINSIZE, 10)
+	kh_nokta = ColorRect.new()
+	kh_nokta.color = Color("#ffd84a")
+	kh_nokta.size = Vector2(4, 4)
+	tr.add_child(kh_nokta)
+
+func _process(_d: float) -> void:
+	if kh_nokta and oyuncu:
+		kh_nokta.position = oyuncu.position / float(T) * kh_olcek - Vector2(2, 2)

@@ -9,8 +9,8 @@ const ROOT=path.resolve(__dirname,'..','..');
 const GAME=process.env.OYUN||path.join(ROOT,'proje','Hammadde_prototip.html');
 const OUT=path.resolve(__dirname,'..');
 const CHROME=process.env.CHROME||'/opt/pw-browsers/chromium-1243/chrome-linux64/chrome';
-// the piece of Çayır that Adım 0 plays on: 80×60 tiles, the player's start near its bottom (the beach is south of it)
-const RW=80,RH=60;
+// Adım 1a: the whole island (RW/RH 0 = the whole map); the tile layers go out as base64 bytes, not number lists
+const RW=0,RH=0;
 
 (async()=>{
   const b=await chromium.launch({executablePath:CHROME});const p=await b.newPage({viewport:{width:960,height:600}});
@@ -25,14 +25,15 @@ const RW=80,RH=60;
 
   // everything below runs inside the game's own scope
   const R=await p.evaluate(([RW,RH])=>window.__ham.ev(`(()=>{
-    const RW=${RW},RH=${RH};
+    const RW=${RW}||W,RH=${RH}||H;
     const png=c=>c.toDataURL('image/png');
     const mk=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.imageSmoothingEnabled=false;return [c,g]};
     // the region: the player's start tile, 40 tiles each side, 48 tiles up and 12 down (the sea is south)
     const sx=Math.floor(spawn.x/T),sy=Math.floor(spawn.y/T);
     const x0=Math.max(0,Math.min(W-RW,sx-RW/2)),y0=Math.max(0,Math.min(H-RH,sy-RH+12));
-    const reg={tiles:[],bio:[],tvar:[],shore:[]};
-    for(let y=y0;y<y0+RH;y++)for(let x=x0;x<x0+RW;x++){const i=y*W+x;reg.tiles.push(tiles[i]);reg.bio.push(BIO[i]);reg.tvar.push(tvar[i]);reg.shore.push(shoreM[i])}
+    const b64=a=>{let s='';const C=0x8000;for(let i=0;i<a.length;i+=C)s+=String.fromCharCode.apply(null,a.subarray(i,i+C));return btoa(s)};
+    const cut=src=>{const o=new Uint8Array(RW*RH);for(let y=0;y<RH;y++)for(let x=0;x<RW;x++)o[y*RW+x]=src[(y0+y)*W+x0+x];return b64(o)};
+    const reg={tiles:cut(tiles),bio:cut(BIO),tvar:cut(tvar),shore:cut(shoreM)};
     // Çayır (BIO 0) bounds on the whole island, in tiles
     let bx0=W,by0=H,bx1=-1,by1=-1;for(let y=0;y<H;y++)for(let x=0;x<W;x++){const i=y*W+x;if(BIO[i]===0&&tiles[i]<3){if(x<bx0)bx0=x;if(x>bx1)bx1=x;if(y<by0)by0=y;if(y>by1)by1=y}}
     const inR=(px,py)=>px>=x0*T&&px<(x0+RW)*T&&py>=y0*T&&py<(y0+RH)*T;
@@ -106,6 +107,10 @@ const RW=80,RH=60;
   const wpng=(f,u)=>w(f,Buffer.from(u.replace(/^data:image\/png;base64,/,''),'base64'));
   const safe=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/ı/g,'i').replace(/İ/g,'I').replace(/[^A-Za-z0-9_]+/g,'_');
   wpng(path.join(OUT,'art','karolar.png'),R.art.tiles);
+  // the ComfyUI ground textures (web v425karo: 128 px seamless, one per tile kind 0–5; a tile takes the piece under its world place)
+  {const H=fs.readFileSync(GAME,'utf8'),i=H.indexOf('<script id="v425karo">'),j=H.indexOf('</script>',i),B=H.slice(i,j);
+    const re=/(\d+):'(data:image\/png;base64,[A-Za-z0-9+\/=]+)'/g;let m,n=0;while((m=re.exec(B))){wpng(path.join(OUT,'art','zemin_'+m[1]+'.png'),m[2]);n++}
+    console.log('zemin dokusu',n)}
   if(R.art.hero)wpng(path.join(OUT,'art','kahraman.png'),R.art.hero);else console.log('UYARI: kahraman resmi hazır değil');
   const anim={};for(const k in R.art.animals){const A=R.art.animals[k],f='canli_'+safe(k).toLowerCase()+'.png';wpng(path.join(OUT,'art',f),A.png);delete A.png;A.file='res://art/'+f;anim[k]=A}
   const tp={};for(const k in R.art.trees){const A=R.art.trees[k],f='agac_'+safe(k).toLowerCase()+'.png';wpng(path.join(OUT,'art','agaclar',f),A.png);delete A.png;A.file='res://art/agaclar/'+f;tp[k]=A}
