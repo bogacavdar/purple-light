@@ -70,45 +70,6 @@ func yap(r: String) -> void:
 	env.mesaj("Yapıldı: " + r)
 	ciz()
 
-## Godot denemesi: Zümrüt'ün kazanı (Adım 1d) gelene kadar G tuşu, Çayır'da bulunan malzemelerle elde yapılan tarifleri öğretir
-func deneme_ogret() -> int:
-	# yalnız Çayır'da (biyom 0) duran toplanabilirler ve ağaçlar
-	var var_olan := {}
-	var bio := Marshalls.base64_to_raw(oyun.harita.bio)
-	var cayir := func(p: Vector2) -> bool: return int(bio[int(p.y / oyun.T) * oyun.bw + int(p.x / oyun.T)]) == 0
-	for d in oyun.dugumler:
-		if cayir.call(d.position):
-			var_olan[d.ad] = true
-	for ag in oyun.agaclar:
-		if cayir.call(ag.position) and env.G.trees.has(ag.tur):
-			var A: Dictionary = env.G.trees[ag.tur]
-			var_olan[A.wood] = true
-			if A.fruit != null: var_olan[A.fruit] = true
-			for e in A.extra: var_olan[e[0]] = true
-	var_olan["Dal"] = true
-	var_olan["Taş"] = true
-	var n := 0
-	var degisti := true
-	while degisti:
-		degisti = false
-		for r in R:
-			if bilinen.has(r) or not elde_yapilir(r):
-				continue
-			var ok := true
-			for p in R[r].i:
-				if not var_olan.has(str(p[0])):
-					ok = false
-					break
-			for t in R[r].t:
-				if not var_olan.has(str(t)) and not env.G.tools.has(str(t)):
-					ok = false
-			if ok:
-				bilinen[r] = true
-				var_olan[r] = true
-				n += 1
-				degisti = true
-	return n
-
 # ------------------------------------------------------------------ arayüz
 func _arayuz() -> void:
 	pencere = PanelContainer.new()
@@ -167,7 +128,7 @@ func ciz() -> void:
 	adlar.sort_custom(func(a, b): return [kat_sira[R[a].c], a] < [kat_sira[R[b].c], b])
 	if adlar.is_empty():
 		var l := Label.new()
-		l.text = "Henüz tarif bilmiyorsun. Tarifler Zümrüt'ün kazanında öğrenilir\n(Godot denemesinde G tuşu Çayır tariflerini öğretir)."
+		l.text = "Henüz tarif bilmiyorsun. Tarifler Zümrüt'ün kazanında öğrenilir (kazanın yanında F)."
 		l.autowrap_mode = TextServer.AUTOWRAP_WORD
 		liste.add_child(l)
 	var kat := ""

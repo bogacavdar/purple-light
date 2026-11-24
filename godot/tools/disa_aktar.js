@@ -97,7 +97,16 @@ const RW=0,RH=0;
     const RECS=DB.R.map(x=>({r:x.r,i:x.i,t:x.t,c:x.c,forged:FORGED.has(x.r),place:PLACEABLE.has(x.r)}));
     for(const x of DB.R){names.add(x.r);for(const [m] of x.i)for(const e of expand(m))names.add(e);for(const t of x.t)names.add(t)}
     const ITEMS={};for(const n of names){let c=ICONC[n];if(!c){try{icon(n)}catch(e){}c=ICONC[n]}ITEMS[n]={png:c?png(c):null,food:foodVal(n)||0,heal:healVal(n)||0}}
-    const GATHER={recipes:RECS,nodes:GN,trees:GTR,tools:GTL,items:ITEMS,reach:REACH,pickR:28,dropLife:DROP_LIFE,fruitRe:FRUIT_RE,treeChops:3,treeCd:12,treeRegrow:[200,300],
+    // Adım 1d-1: Çayır'ın kişileri (yer, ComfyUI çizimleri: önden, yarım yandan, iki adım; konuşma resmi), kazan ve örsler, Vio/XP/seviye, işçilik
+    const KS=[['ekin','npc','Yaşlı Kemal'],['witch','witch','Cadı Zümrüt'],['smith','smith','Demirci Dursun'],['durmus','durmus','Zırhçı Durmuş'],['market','market','Pazarcı Nazlı'],['alp','alp','Savaşçı Börü']];
+    const KISI=[];for(const [k,o,ad] of KS){let ob=null;try{ob=eval(o)}catch(e){}if(!ob)continue;const S=(window.__plNPCS||{})[k]||{};const im={};
+      for(const f of ['f','q','s','w'])if(S[f]&&S[f].width){const [c,g]=mk(S[f].width,S[f].height);g.drawImage(S[f],0,0);im[f]=png(c)}
+      let por=null;try{por=window.__plPOR&&window.__plPOR[k]||null}catch(e){}
+      KISI.push({k,ad,x:Math.round(ob.home?ob.home.x:ob.x),y:Math.round(ob.home?ob.home.y:ob.y),resim:im,portre:por})}
+    const XPN=[];for(let L=1;L<=60;L++)XPN.push(need(L)===Infinity?0:need(L));
+    const FEE={},USTA={};for(const x of DB.R)if(FORGED.has(x.r)){FEE[x.r]=laborFee(x.r);USTA[x.r]=smithOf(x.r)===durmus?'durmus':'smith'}
+    const ISTASYON={kazan:{x:Math.round(cauldron.x),y:Math.round(cauldron.y)},ors:{x:Math.round(anvil.x),y:Math.round(anvil.y)},ors2:{x:Math.round(anvil2.x),y:Math.round(anvil2.y)}};
+    const GATHER={kisiler:KISI,xpNeed:XPN,iscilik:FEE,usta:USTA,istasyon:ISTASYON,ogrenXP:12,recipes:RECS,nodes:GN,trees:GTR,tools:GTL,items:ITEMS,reach:REACH,pickR:28,dropLife:DROP_LIFE,fruitRe:FRUIT_RE,treeChops:3,treeCd:12,treeRegrow:[200,300],
       hunger:{perSec:100/720,early:'gün 1–2: ×0,5 · gün 3–4: ×0,75 · sonra ×1'},start:{inv:Object.assign({},inv),food:Math.round(food)},keys:{F:'topla/al',X:'ye',I:'çanta','1-5':'kemer',G:'deneme: Taş balta + Taş kazma ver'}};
     const fist=(()=>{const w=weapon();return {dmg:w.dmg,reach:w.reach,cd:w.cd}})();
     // the first sword of the game (Taş kılıç): its numbers come from the game's own weapon() with it worn for a moment
@@ -135,6 +144,8 @@ const RW=0,RH=0;
   w(path.join(OUT,'data','canlilar.json'),JSON.stringify({meta,canlilar:anim},null,1));
   w(path.join(OUT,'data','dunya.json'),JSON.stringify({meta,agaclar:R.trees,agacResimleri:tp,dugumler:R.nodes,dugumResimleri:np},null,0));
   {const G=R.gather,it={};for(const k in G.items){const A=G.items[k];if(A.png){const f='esya_'+safe(k).toLowerCase()+'.png';wpng(path.join(OUT,'art','esyalar',f),A.png);A.file='res://art/esyalar/'+f}delete A.png;it[k]=A}G.items=it;
+    for(const K of G.kisiler){const kk=K.k;for(const f in K.resim){const fn='kisi_'+kk+'_'+f+'.png';wpng(path.join(OUT,'art','kisiler',fn),K.resim[f]);K.resim[f]='res://art/kisiler/'+fn}
+      if(K.portre&&/^data:image\/png/.test(K.portre)){const fn='portre_'+kk+'.png';wpng(path.join(OUT,'art','kisiler',fn),K.portre);K.portre='res://art/kisiler/'+fn}else K.portre=null}
     w(path.join(OUT,'data','toplama.json'),JSON.stringify(Object.assign({meta},G),null,1))}
   w(path.join(OUT,'data','oyuncu.json'),JSON.stringify(Object.assign({meta},R.player,{gorunus:R.look}),null,1));
   console.log('bölge',JSON.stringify(R.map.region),'başlangıç',JSON.stringify(R.map.spawnTile),'ağaç',R.trees.length,'düğüm',R.nodes.length,'Çayır',JSON.stringify(R.map.cayirBounds));

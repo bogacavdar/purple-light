@@ -13,7 +13,7 @@ func _process(dt: float) -> void:
 	if o.bayildi:
 		_dur()
 		return
-	if Input.is_action_just_pressed("topla"):
+	if Input.is_action_just_pressed("topla") and not oyun.konusma.visible and not oyun.istasyon.pencere.visible:
 		if not _yerdekileri_al():
 			_basla()
 	if not is_.is_empty():
@@ -124,6 +124,8 @@ func _basla() -> void:
 	var ag2 = _en_yakin_agac(22.0)
 	if ag2 != null and G.trees[ag2.tur].fruit != null and (G.trees[ag2.tur].noCut or tur != "axe"):
 		_silkele(ag2)
+		return
+	if oyun.konus_ya_da_istasyon():
 		return
 	if ag2 != null and tur != "axe":
 		env.mesaj("Ağaç kesmek için elinde balta olmalı (1–5 ile seç)", true)

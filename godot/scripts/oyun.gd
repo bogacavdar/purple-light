@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1c"
+const SURUM := "Godot · Adım 1d-1"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -22,6 +22,9 @@ var agaclar: Array = []
 var dugumler: Array = []
 var env
 var el_yapimi
+var istasyon
+var konusma
+var kisiler: Array = []
 var toplama_veri: Dictionary
 var toplama
 
@@ -68,6 +71,13 @@ func _ready() -> void:
 	el_yapimi = preload("res://scripts/el_yapimi.gd").new()
 	add_child(el_yapimi)
 	el_yapimi.kur(self)
+	istasyon = preload("res://scripts/istasyon.gd").new()
+	add_child(istasyon)
+	istasyon.kur(self)
+	konusma = preload("res://scripts/konusma.gd").new()
+	hud.add_child(konusma)
+	konusma.kur(self)
+	_kisiler()
 	toplama = preload("res://scripts/toplama.gd").new()
 	toplama.oyun = self
 	toplama.env = env
@@ -92,6 +102,17 @@ func _ready() -> void:
 			_canli_koy_yakin("Kurt", 6.0)
 		if q.contains("tavsan"):
 			_canli_koy_yakin("Tavşan", 4.0)
+		if q.contains("ors"):
+			oyuncu.position = Vector2(toplama_veri.istasyon.ors.x - 14, toplama_veri.istasyon.ors.y + 4)
+			for e in [["Taş", 6], ["Sopa", 2], ["İp", 4], ["Dal", 2], ["Keskin taş", 4]]:
+				env.ekle(e[0], e[1])
+			env.vio_ekle(50)
+			el_yapimi.bilinen["Mızrak"] = true
+		if q.contains("kazan"):
+			oyuncu.position = Vector2(toplama_veri.istasyon.kazan.x - 26, toplama_veri.istasyon.kazan.y + 6)
+			for e in [["Taş", 6], ["Sopa", 2], ["İp", 4], ["Dal", 2], ["Keskin taş", 4]]:
+				env.ekle(e[0], e[1])
+			env.vio_ekle(50)
 	get_viewport().size_changed.connect(_yakinlik)
 	_yakinlik()
 
@@ -276,7 +297,7 @@ func _hud() -> void:
 	_golge(silah_yazi)
 	kutu.add_child(silah_yazi)
 	var yardim := Label.new()
-	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · 1–5: kemer · G: deneme (aletler ve Çayır tarifleri)\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
+	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · 1–5: kemer · G: deneme (aletler ve 100 Vio)\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
 	yardim.add_theme_font_size_override("font_size", 12)
 	_golge(yardim)
 	yardim.add_theme_font_size_override("font_size", 11)
@@ -369,3 +390,64 @@ func agac_devrildi(ag) -> void:
 		ag.kesim = 0
 		ag.visible = true
 		return
+
+# ------------------------------------------------------------------ Çayır'ın kişileri, kazan ve örsler
+func _kisiler() -> void:
+	for k in toplama_veri.kisiler:
+		var n := preload("res://scripts/kisi.gd").new()
+		n.kur(self, k)
+		nesneler.add_child(n)
+		kisiler.append(n)
+	var I: Dictionary = toplama_veri.istasyon
+	for a in [["kazan", I.kazan], ["ors", I.ors], ["ors", I.ors2]]:
+		var o := Node2D.new()
+		o.position = Vector2(a[1].x, a[1].y)
+		o.set_meta("tur", a[0])
+		o.draw.connect(_istasyon_ciz.bind(o))
+		nesneler.add_child(o)
+
+## kazan: kara kazan, mor buhar; örs: gri örs ve kütük (web'in kendi çizimleri sonra aktarılacak)
+func _istasyon_ciz(o: Node2D) -> void:
+	if o.get_meta("tur") == "kazan":
+		o.draw_circle(Vector2(0, 1), 8.0, Color(0, 0, 0, 0.25))
+		o.draw_rect(Rect2(-7, -9, 14, 9), Color("#1e1a22"))
+		o.draw_rect(Rect2(-8, -10, 16, 2), Color("#3a3240"))
+		o.draw_rect(Rect2(-6, -9, 12, 2), Color("#7a4ad8"))
+		o.draw_rect(Rect2(-5, 0, 2, 2), Color("#2a2420")); o.draw_rect(Rect2(3, 0, 2, 2), Color("#2a2420"))
+	else:
+		o.draw_rect(Rect2(-5, -4, 10, 5), Color("#5a3d22"))
+		o.draw_rect(Rect2(-7, -9, 14, 4), Color("#6a6e74"))
+		o.draw_rect(Rect2(-9, -9, 3, 2), Color("#6a6e74"))
+		o.draw_rect(Rect2(-6, -9, 12, 1), Color("#9aa0a8"))
+
+## F: toplanacak bir şey yoksa yakındaki kazan, örs ya da kişi (web target sırası)
+func konus_ya_da_istasyon() -> bool:
+	var p: Vector2 = oyuncu.position
+	var I: Dictionary = toplama_veri.istasyon
+	if p.distance_to(Vector2(I.kazan.x, I.kazan.y)) < 26.0:
+		istasyon.ac("kazan")
+		return true
+	if p.distance_to(Vector2(I.ors.x, I.ors.y)) < 20.0:
+		istasyon.ac("smith")
+		return true
+	if p.distance_to(Vector2(I.ors2.x, I.ors2.y)) < 18.0:
+		istasyon.ac("durmus")
+		return true
+	for n in kisiler:
+		if p.distance_to(n.position) < 30.0:
+			_konus(n)
+			return true
+	return false
+
+func _konus(n) -> void:
+	var K: Dictionary = n.K
+	var por = load(K.portre) if K.portre != null else null
+	match K.k:
+		"witch":
+			konusma.ac(K.ad, por, "Kazanım hep kaynar evlat. Yeni bir şey bulduğunda gel; malzemelerini kazana atarsın, tarifi öğrenirsin.", [{t = "Kazana bak", pri = true, f = func(): istasyon.ac("kazan")}, {t = "Sonra", kapat = true}])
+		"smith":
+			konusma.ac(K.ad, por, "Tarifini bildiğin aleti ve silahı örsümde döverim; malzemeyi sen getir, işçiliğimi ödersin.", [{t = "Örse bak", pri = true, f = func(): istasyon.ac("smith")}, {t = "Sonra", kapat = true}])
+		"durmus":
+			konusma.ac(K.ad, por, "Zırh benim işim. Tarifini bildiğin zırhı malzemesi ve işçiliğiyle döverim.", [{t = "Örse bak", pri = true, f = func(): istasyon.ac("durmus")}, {t = "Sonra", kapat = true}])
+		_:
+			konusma.ac(K.ad, por, "Merhaba! (Godot'da görevler Adım 1d-2'de geliyor.)")

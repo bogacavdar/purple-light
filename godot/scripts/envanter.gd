@@ -10,6 +10,13 @@ var el := -1                     # elde tutulan kemer yuvası (-1: el boş)
 var tokluk := 100.0
 var aclik_hasar := 0.0
 var dayan := {}                  # alet adı → kalan dayanıklılık
+var gorulen := {}                # web seen: bir kez eline geçmiş her eşya
+var vio := 0
+var xp := 0
+var sv := 1
+var vio_yazi: Label
+var sv_yazi: Label
+var xp_cubuk: ProgressBar
 
 var ikon := {}                   # eşya adı → Texture2D
 var ust: Control
@@ -29,9 +36,13 @@ func kur(o) -> void:
 		if A.has("file"):
 			ikon[k] = load(A.file)
 	inv = G.start.inv.duplicate()
+	for n in inv:
+		gorulen[n] = true
 	tokluk = float(G.start.food)
 	_arayuz()
 	kemer_ciz()
+	vio_ekle(0)
+	_sv_ciz()
 
 func ikon_al(n: String) -> Texture2D:
 	return ikon.get(n, null)
@@ -41,6 +52,7 @@ func adet(n: String) -> int:
 
 func ekle(n: String, k: int = 1) -> void:
 	inv[n] = adet(n) + k
+	gorulen[n] = true
 	# aletler ve silahlar kemerdeki ilk boş yuvaya kendiliğinden girer (web: hotItem)
 	if (G.tools.has(n) or n == "Taş kılıç") and kemer.find(n) < 0:
 		var i := kemer.find(null)
@@ -143,8 +155,8 @@ func _process(dt: float) -> void:
 		for n in ["Taş balta", "Taş kazma", "Taş kılıç"]:
 			if adet(n) == 0:
 				ekle(n)
-		var n: int = oyun.el_yapimi.deneme_ogret()
-		mesaj("Deneme: Taş balta, Taş kazma ve Taş kılıç verildi; %d Çayır tarifi öğrenildi" % n)
+		vio_ekle(100)
+		mesaj("Deneme: Taş balta, Taş kazma, Taş kılıç ve 100 Vio verildi")
 
 # ------------------------------------------------------------------ arayüz
 func _arayuz() -> void:
@@ -160,6 +172,17 @@ func _arayuz() -> void:
 	tok_cubuk.add_theme_stylebox_override("fill", fg)
 	oyun.can_cubugu.get_parent().add_child(tok_cubuk)
 	oyun.can_cubugu.get_parent().move_child(tok_cubuk, 1)
+	var sat := HBoxContainer.new()
+	sat.add_theme_constant_override("separation", 10)
+	vio_yazi = Label.new(); vio_yazi.add_theme_color_override("font_color", Color("#d8b0ff")); oyun._golge(vio_yazi)
+	sv_yazi = Label.new(); oyun._golge(sv_yazi)
+	xp_cubuk = ProgressBar.new(); xp_cubuk.custom_minimum_size = Vector2(90, 8); xp_cubuk.show_percentage = false
+	xp_cubuk.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	var xb := StyleBoxFlat.new(); xb.bg_color = Color("#16202a"); var xf := StyleBoxFlat.new(); xf.bg_color = Color("#6ab0e8")
+	xp_cubuk.add_theme_stylebox_override("background", xb); xp_cubuk.add_theme_stylebox_override("fill", xf)
+	sat.add_child(vio_yazi); sat.add_child(sv_yazi); sat.add_child(xp_cubuk)
+	oyun.can_cubugu.get_parent().add_child(sat)
+	oyun.can_cubugu.get_parent().move_child(sat, 2)
 	# kemer: altta ortada 5 yuva
 	kemer_kutu = HBoxContainer.new()
 	kemer_kutu.add_theme_constant_override("separation", 4)
@@ -276,3 +299,24 @@ func ilerleme_goster(yazi: String, k: float) -> void:
 	if k >= 0.0:
 		ilerleme_yazi.text = yazi
 		ilerleme.value = k * 100.0
+
+func vio_ekle(n: int) -> void:
+	vio = maxi(0, vio + n)
+	vio_yazi.text = "%d Vio" % vio
+
+## web gainXP: seviye eşiği need(L) (Sv 16'ya kadar 40·1,35^(L-1), sonra 3606·(1+0,06·(L-16)))
+func xp_ekle(n: int) -> void:
+	xp += n
+	oyun.yazi(oyun.oyuncu.position + Vector2(0, -30), "+%d XP" % n, Color("#9fd0f0"), 7)
+	var need: Array = G.xpNeed
+	while sv - 1 < need.size() and int(need[sv - 1]) > 0 and xp >= int(need[sv - 1]):
+		xp -= int(need[sv - 1])
+		sv += 1
+		mesaj("Seviye %d!" % sv)
+	_sv_ciz()
+
+func _sv_ciz() -> void:
+	var need: int = int(G.xpNeed[mini(sv - 1, G.xpNeed.size() - 1)])
+	sv_yazi.text = "Seviye %d" % sv
+	xp_cubuk.max_value = maxf(1.0, float(need))
+	xp_cubuk.value = xp
