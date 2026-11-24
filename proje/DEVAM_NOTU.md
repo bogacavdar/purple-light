@@ -1,3 +1,7 @@
+## v4.49 (25 Kasım 2026) · Godot Adım 1e-2 (Yankı Mağarası: canlılar, boss, Madenci Kaya)
+- `godot-deneme/` yeni derleme (godot dalı: canli.gd mağara türleri, düşenler ve XP; magara.gd doğum, Kaya, boss; disa_aktar_magara.js canlı kareleri, ağızdaki toplananlar, Kaya'nın resmi ve yan görev sözleri). Belge 99_godot 1e-2 satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.48 (25 Kasım 2026) · Godot Adım 1e-1 (Yankı Mağarası: giriş, iç, ışık)
 - `godot-deneme/` yeni derleme (godot dalı: magara.gd, mesale.gd; tools/disa_aktar_magara.js web'in mağara ızgarasını, paint() çizimini ve kaya tepesini döker; fonts/ DejaVu ve küçük Noto Emoji yedek yazı tipi). Belge 99_godot 1e satırı 1e-1/1e-2'ye bölündü. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -102,12 +106,4 @@
 - `NPCL[k]` ile çağrılan ve `window.__plNPCS[k]` çizimi olan kişiler (v425kisi `NK` + v425npc Kemal `ekin`) ara sahnede f/q/s/w kareleriyle; `fy<0` ise eski çizim.
 - Bacaklar: `build.py frames_raw` ön/çapraz bacak eni `min(3, …)`, ortadan 1 px aralıklı; bütün saç biçimleri yeniden üretildi.
 - Geri alma: `git revert` bu commit (v425kisi/v425npc'deki iki `__plNPCS` satırı dahil).
-
-## v4.29 (19 Kasım 2026) · Oyuncunun karakteri: yaratma ekranı, envanter/karakter/arena figürü yeni çizimle; 15 saç biçimi (ComfyUI), aksesuarlar kodla
-- `v428kahraman` bloğu baştan yazıldı (aynı id, aynı yer). `HD[e|k][saç]` = {CW, CH, c (renkli sayfa), m (maske), A (yön başına baş noktaları)}; saç biçimi ilk kullanıldığında yüklenir, yoksa Kısa/Uzun'a düşer. Maske R=bölüm×30 (1 ten, 2 saç, 3 üst, 4 alt, 6 göz, 7 tunik eteği), G=parlaklık×100.
-- Aksesuarlar `acc()` ile yön başına bir kez çizilir, her kareye basılır (sağa bakan satırlara aynalı). Şapkada `A.hy` (siper satırı) üstündeki saç silinir. `A`: sk (kafatası üstü), l/r, hy, ey/ex (göz), my, ch (çene), nk (boyun), fl/fr/fx, span.
-- UI figürleri: `drawChibi` kendi tuvalinde çağrılınca (`cprev` 40×40, `pfchar` 32×40, `ieqc`, `dollc`, `ardoll`) tuval 1×'e küçültülüp yeni çizim basılır (CSS boyutu değişmez); `pfchar`ta eldeki eşya burada çizilir, çağıranınki tuval dışına itilir. "Sevdiğin kişi" adımında `cprev` 64×64'e döner ve eski çizim kullanılır.
-- Kadın W (sola bakış) çizimi v4.28'de ters dönmüştü; çevrildi.
-- Üretim: ComfyUI Z-Image Turbo + piksel LoRA, 512×688, saç biçimi ve yön başına bir resim (65 + 2 yeniden). Yeşil zemin + gölge temizliği, palet oylamalı küçültme (boy 31, uzun saçlılar 33–38), yön (sola bakış) cilt ağırlık merkeziyle otomatik. Araçlar oturum içi (/tmp/hero), depoya girmedi.
-- Geri alma: `git revert` bu commit; kayıt alanı değişmedi.
 

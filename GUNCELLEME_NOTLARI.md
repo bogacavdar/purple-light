@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.49 · 25 Kasım 2026
+
+### Proje
+- **Godot, Adım 1e-2 (Yankı Mağarası: canlılar, boss, Madenci Kaya) oynanabilir:** mağarada yarasalar, kör kertenkeleler ve taş örümcekleri dolaşıyor; en dipte fenerli Madenci Kaya seni bekliyor. 4 Yankı mantarı getirince Yankı Kraliçesi geliyor; yenince Kaya'ya dön. Mağaranın ağzında Sarkıt ve Yarasa gübresi toplanıyor. Godot'da artık her canlı avlanınca kendi düşenlerini bırakıyor ve XP veriyor. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.48 · 25 Kasım 2026
 
 ### Proje
@@ -225,22 +232,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - "Oyuncunun karakteri" ve "Kişiler": çizimin kullanıldığı yerler (ara sahne, konuşma resmi, sevdiğin kişi), bacak kalınlığı.
-
----
-
-## Versiyon 4.29 · 19 Kasım 2026
-
-### Görsel
-- **Karakter yaratma ekranında, envanterde, karakter penceresinde ve arenada da yeni çizim:** karakterini oluştururken gördüğün figür artık oyunda yürüyen figürle aynı; sürükleyerek ya da Döndür'le 8 yöne çevrilebilir.
-- **Her saç biçimi ayrı çizildi (ComfyUI):** erkekte Kısa, Dağınık, Yana taranmış, Dikleştirilmiş, Uzun, At kuyruğu, Kel; kadında Uzun, At kuyruğu, Örgü, Topuz, Küt, Kısa, İki kuyruk, Kel. Hepsi 8 yönde, adım adım yürür.
-- **Seçenekler yeni çizimde de görünür:** bıyık, sakal, buff, gözlük, şapka (kasket, bere, hasır, kovboy, silindir, fes, korsan, bandana, çiçek tacı) ve saç tokası her yönde başın üstünde; göz rengi de boyanır. Kadında Tişört seçilince tunik eteği ve bacaklar pantolon renginde.
-- Sevdiğin kişinin seçimi, ara sahneler ve konuşma resmi eski çizimle.
-
-### Düzeltmeler
-- Kadın karakter sola ve sağa yürürken ters yöne bakıyordu; düzeldi.
-
-### Tasarım belgesi
-- Sistemler › Yeni ikonlarla › "Oyuncunun karakteri": yaratma ekranı ve figürler, saç biçimleri, aksesuarlar, Tişört/Elbise rengi.
 
 ---
 
