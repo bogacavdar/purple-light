@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1a"
+const SURUM := "Godot · Adım 1b"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -19,6 +19,10 @@ var tvar: PackedByteArray
 var shore: PackedByteArray
 var agac_izgara := {}  # 32 px'lik hücre → o hücredeki ağaçlar (web: TGRID)
 var agaclar: Array = []
+var dugumler: Array = []
+var env
+var toplama_veri: Dictionary
+var toplama
 
 var nesneler: Node2D  # y sıralı: ağaçlar, düğümler, canlılar, oyuncu
 var efekt: Node2D
@@ -50,12 +54,21 @@ func _ready() -> void:
 	nesneler = Node2D.new()
 	nesneler.y_sort_enabled = true
 	add_child(nesneler)
+	toplama_veri = _json("res://data/toplama.json")
 	_agaclar()
 	_dugumler()
 	oyuncu = preload("res://scripts/oyuncu.gd").new()
 	oyuncu.oyun = self
 	oyuncu.position = Vector2(harita.spawn.x, harita.spawn.y)
 	nesneler.add_child(oyuncu)
+	env = preload("res://scripts/envanter.gd").new()
+	add_child(env)
+	env.kur(self)
+	toplama = preload("res://scripts/toplama.gd").new()
+	toplama.oyun = self
+	toplama.env = env
+	toplama.G = toplama_veri
+	add_child(toplama)
 	efekt = preload("res://scripts/efekt.gd").new()
 	efekt.z_index = 50
 	add_child(efekt)
@@ -170,6 +183,7 @@ func _agaclar() -> void:
 		n.position = Vector2(a.x, a.y)
 		n.kur(load(R.file), int(R.bot), a.seed if a.has("seed") else int(a.x * 7 + a.y))
 		n.oyun = self
+		n.tur = a.k
 		nesneler.add_child(n)
 		agaclar.append(n)
 		var k := Vector2i(int(floor(a.x / 32.0)), int(floor(a.y / 32.0)))
@@ -188,13 +202,18 @@ func _dugumler() -> void:
 		if float(d.v) > 0.5 and R.has("b"):
 			R = R.b
 		var k := float(resim[d.n].get("k", 1))
-		var s := Sprite2D.new()
+		var s := preload("res://scripts/dugum.gd").new()
+		s.ad = d.n
 		s.texture = load(R.file)
 		s.centered = false
 		s.offset = Vector2(-float(R.ox), -float(R.oy))
 		# captured k times finer than the world: same size in the world, the web's detail on screen
 		s.scale = Vector2(1.0 / k, 1.0 / k)
 		s.position = Vector2(d.x, d.y)
+		# maden kayası web'de birkaç kazmada tükenir (left); böğürtlen çalısı 3 kez toplanır
+		s.bas_kalan = 3 if (d.mine or (toplama_veri.nodes.has(d.n) and toplama_veri.nodes[d.n].bush)) else 1
+		s.kalan = s.bas_kalan
+		dugumler.append(s)
 		nesneler.add_child(s)
 
 # ------------------------------------------------------------------ canlılar
@@ -241,6 +260,7 @@ func _hud() -> void:
 	can_cubugu = ProgressBar.new()
 	can_cubugu.custom_minimum_size = Vector2(180, 14)
 	can_cubugu.show_percentage = false
+	can_cubugu.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
 	can_cubugu.max_value = float(oyuncu_veri.hp)
 	can_cubugu.value = float(oyuncu_veri.hp)
 	var bg := StyleBoxFlat.new(); bg.bg_color = Color("#5a2a26"); bg.border_color = Color("#0b0f0a"); bg.set_border_width_all(2)
@@ -252,11 +272,11 @@ func _hud() -> void:
 	_golge(silah_yazi)
 	kutu.add_child(silah_yazi)
 	var yardim := Label.new()
-	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · 1: Taş kılıç / yumruk\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · Y silah"
+	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · F: topla · X: ye · I: çanta · 1–5: kemer · G: deneme aletleri\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · A topla · LB ye · Y kemer · Back çanta"
 	yardim.add_theme_font_size_override("font_size", 12)
 	_golge(yardim)
-	hud.add_child(yardim)
-	yardim.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT, Control.PRESET_MODE_MINSIZE, 10)
+	yardim.add_theme_font_size_override("font_size", 11)
+	kutu.add_child(yardim)
 	yardim.position.y -= 4
 	var ver := Label.new()
 	ver.text = SURUM + " · veri: " + str(harita.meta.surum)
@@ -323,3 +343,25 @@ func _kucuk_harita() -> void:
 func _process(_d: float) -> void:
 	if kh_nokta and oyuncu:
 		kh_nokta.position = oyuncu.position / float(T) * kh_olcek - Vector2(2, 2)
+
+## web treeChopped (v65): üç kesimde ağaç devrilir; 200–300 sn sonra aynı biyomda başka bir yerde yenisi büyür
+func agac_devrildi(ag) -> void:
+	for k in 14:
+		parca(ag.position + Vector2(randf_range(-10, 10), -10 - randf() * 20), Vector2(randf_range(-20, 20), -20 - randf() * 30), 0.7, Color("#6a4426") if k % 2 else Color("#4a8a3a"))
+	ag.visible = false
+	var bio := Marshalls.base64_to_raw(harita.bio)
+	var b0 := int(bio[int(ag.position.y / T) * bw + int(ag.position.x / T)])
+	await get_tree().create_timer(rng.randf_range(float(toplama_veri.treeRegrow[0]), float(toplama_veri.treeRegrow[1]))).timeout
+	for deneme in 400:
+		var x := rng.randi_range(2, bw - 3)
+		var y := rng.randi_range(2, bh - 3)
+		var i := y * bw + x
+		if tiles[i] > 1 or int(bio[i]) != b0:
+			continue
+		var p := Vector2(x * T + 8, y * T + 8)
+		if p.distance_to(oyuncu.position) < 200.0:
+			continue
+		ag.position = p
+		ag.kesim = 0
+		ag.visible = true
+		return

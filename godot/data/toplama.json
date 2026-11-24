@@ -1,0 +1,1883 @@
+{
+ "meta": {
+  "kaynak": "../../../tmp/oyun_src.html",
+  "surum": "Versiyon 4.41",
+  "uretildi": "2026-11-24T22:39:29.537Z"
+ },
+ "nodes": {
+  "Dal": {
+   "respawn": 18,
+   "time": 1,
+   "mine": false,
+   "ad": "Dal",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Taş": {
+   "respawn": 21,
+   "time": 1.5,
+   "mine": false,
+   "ad": "Taş",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Lif": {
+   "respawn": 14,
+   "time": 1,
+   "mine": false,
+   "ad": "Lif",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Yaprak": {
+   "respawn": 63,
+   "time": 0.8,
+   "mine": false,
+   "ad": "Yaprak",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Çakmaktaşı": {
+   "respawn": 31,
+   "time": 2,
+   "mine": false,
+   "ad": "Çakmaktaşı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Nehir çakılı": {
+   "respawn": 18,
+   "time": 1.2,
+   "mine": false,
+   "ad": "Nehir çakılı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kum": {
+   "respawn": 14,
+   "time": 1.5,
+   "mine": false,
+   "ad": "Kum",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kireçtaşı": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Kireçtaşı kayası",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kumtaşı": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Kumtaşı kayası",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Bakır cevheri": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Bakır madeni",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Granit": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Granit kayası",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Taş kömürü": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Kömür damarı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kalay cevheri": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Kalay madeni",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Arduvaz": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Arduvaz kayası",
+   "tier": 2,
+   "hurt": null,
+   "bush": false
+  },
+  "Tuz kayası": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Tuz kayası",
+   "tier": 2,
+   "hurt": null,
+   "bush": false
+  },
+  "Demir cevheri": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Demir madeni",
+   "tier": 2,
+   "hurt": null,
+   "bush": false
+  },
+  "Pirit": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Pirit damarı",
+   "tier": 3,
+   "hurt": null,
+   "bush": false
+  },
+  "Kuvars": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Kuvars damarı",
+   "tier": 3,
+   "hurt": null,
+   "bush": false
+  },
+  "Gümüş cevheri": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Gümüş madeni",
+   "tier": 3,
+   "hurt": null,
+   "bush": false
+  },
+  "Bazalt": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Bazalt kayası",
+   "tier": 4,
+   "hurt": null,
+   "bush": false
+  },
+  "Kükürt": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Kükürt yatağı",
+   "tier": 4,
+   "hurt": null,
+   "bush": false
+  },
+  "Obsidyen": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Obsidyen yatağı",
+   "tier": 4,
+   "hurt": null,
+   "bush": false
+  },
+  "Kristal": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Kristal kümesi",
+   "tier": 5,
+   "hurt": null,
+   "bush": false
+  },
+  "Ametist": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Ametist yatağı",
+   "tier": 5,
+   "hurt": null,
+   "bush": false
+  },
+  "Altın cevheri": {
+   "respawn": 300,
+   "time": 1,
+   "mine": true,
+   "ad": "Altın madeni",
+   "tier": 5,
+   "hurt": null,
+   "bush": false
+  },
+  "Böğürtlen": {
+   "respawn": 40,
+   "time": 1.2,
+   "mine": false,
+   "ad": "Böğürtlen",
+   "tier": 1,
+   "hurt": null,
+   "bush": true
+  },
+  "Kuru ot": {
+   "respawn": 25,
+   "time": 1,
+   "mine": false,
+   "ad": "Kuru ot",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Papatya": {
+   "respawn": 35,
+   "time": 1,
+   "mine": false,
+   "ad": "Papatya",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Nane": {
+   "respawn": 40,
+   "time": 1,
+   "mine": false,
+   "ad": "Nane",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Çilek": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Çilek",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Yabani buğday": {
+   "respawn": 40,
+   "time": 1,
+   "mine": false,
+   "ad": "Yabani buğday",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Havuç": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Havuç",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Gelincik": {
+   "respawn": 40,
+   "time": 1,
+   "mine": false,
+   "ad": "Gelincik",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Hardal otu": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Hardal otu",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Ebegümeci": {
+   "respawn": 40,
+   "time": 1,
+   "mine": false,
+   "ad": "Ebegümeci",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Isırgan": {
+   "respawn": 35,
+   "time": 1,
+   "mine": false,
+   "ad": "Isırgan",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Ahududu": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Ahududu",
+   "tier": 1,
+   "hurt": null,
+   "bush": true
+  },
+  "Yaban mersini": {
+   "respawn": 50,
+   "time": 1,
+   "mine": false,
+   "ad": "Yaban mersini",
+   "tier": 1,
+   "hurt": null,
+   "bush": true
+  },
+  "Kanlıca": {
+   "respawn": 55,
+   "time": 1,
+   "mine": false,
+   "ad": "Kanlıca",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Yaban sarımsağı": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Yaban sarımsağı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kuzukulağı": {
+   "respawn": 40,
+   "time": 1,
+   "mine": false,
+   "ad": "Kuzukulağı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Yabani bal": {
+   "respawn": 90,
+   "time": 1,
+   "mine": false,
+   "ad": "Yabani bal",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Eğrelti": {
+   "respawn": 40,
+   "time": 1,
+   "mine": false,
+   "ad": "Eğrelti",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Sarmaşık": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Sarmaşık",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Yabani nohut": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Yabani nohut",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Tatlısu midyesi": {
+   "respawn": 50,
+   "time": 1,
+   "mine": false,
+   "ad": "Tatlısu midyesi",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kamış": {
+   "respawn": 30,
+   "time": 1,
+   "mine": false,
+   "ad": "Kamış",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Nilüfer": {
+   "respawn": 50,
+   "time": 1,
+   "mine": false,
+   "ad": "Nilüfer",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Su kestanesi": {
+   "respawn": 55,
+   "time": 1,
+   "mine": false,
+   "ad": "Su kestanesi",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Su teresi": {
+   "respawn": 40,
+   "time": 1,
+   "mine": false,
+   "ad": "Su teresi",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Yosun": {
+   "respawn": 30,
+   "time": 1,
+   "mine": false,
+   "ad": "Yosun",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Bataklık otu": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Bataklık otu",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Sinek mantarı": {
+   "respawn": 60,
+   "time": 1,
+   "mine": false,
+   "ad": "Sinek mantarı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Turba": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Turba",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kızılcık": {
+   "respawn": 50,
+   "time": 1,
+   "mine": false,
+   "ad": "Kızılcık",
+   "tier": 1,
+   "hurt": null,
+   "bush": true
+  },
+  "Göl kili": {
+   "respawn": 60,
+   "time": 1,
+   "mine": false,
+   "ad": "Göl kili",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Keten": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Keten",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kenevir": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Kenevir",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kekik": {
+   "respawn": 40,
+   "time": 1,
+   "mine": false,
+   "ad": "Kekik",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Adaçayı": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Adaçayı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Lavanta": {
+   "respawn": 50,
+   "time": 1,
+   "mine": false,
+   "ad": "Lavanta",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Civanperçemi": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Civanperçemi",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kuşburnu": {
+   "respawn": 50,
+   "time": 1,
+   "mine": false,
+   "ad": "Kuşburnu",
+   "tier": 1,
+   "hurt": null,
+   "bush": true
+  },
+  "Alıç": {
+   "respawn": 50,
+   "time": 1,
+   "mine": false,
+   "ad": "Alıç",
+   "tier": 1,
+   "hurt": null,
+   "bush": true
+  },
+  "Kırmızı kil": {
+   "respawn": 70,
+   "time": 1,
+   "mine": false,
+   "ad": "Kırmızı kil",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Beyaz kil": {
+   "respawn": 80,
+   "time": 1,
+   "mine": false,
+   "ad": "Beyaz kil",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kayın mantarı": {
+   "respawn": 60,
+   "time": 1,
+   "mine": false,
+   "ad": "Kayın mantarı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Sinirotu": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Sinirotu",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Dağ çayı": {
+   "respawn": 50,
+   "time": 1,
+   "mine": false,
+   "ad": "Dağ çayı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kardelen": {
+   "respawn": 60,
+   "time": 1,
+   "mine": false,
+   "ad": "Kardelen",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Liken": {
+   "respawn": 45,
+   "time": 1,
+   "mine": false,
+   "ad": "Liken",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kül": {
+   "respawn": 25,
+   "time": 1,
+   "mine": false,
+   "ad": "Kül",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Ateş çiçeği": {
+   "respawn": 70,
+   "time": 1,
+   "mine": false,
+   "ad": "Ateş çiçeği",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kehribar": {
+   "respawn": 120,
+   "time": 1,
+   "mine": false,
+   "ad": "Kehribar",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kırmızı okr": {
+   "respawn": 60,
+   "time": 1,
+   "mine": false,
+   "ad": "Kırmızı okr",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Sarı okr": {
+   "respawn": 60,
+   "time": 1,
+   "mine": false,
+   "ad": "Sarı okr",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kor otu": {
+   "respawn": 70,
+   "time": 1,
+   "mine": false,
+   "ad": "Kor otu",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Duman çiçeği": {
+   "respawn": 70,
+   "time": 1,
+   "mine": false,
+   "ad": "Duman çiçeği",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Ateş biberi": {
+   "respawn": 70,
+   "time": 1,
+   "mine": false,
+   "ad": "Ateş biberi",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Yanık kök": {
+   "respawn": 70,
+   "time": 1,
+   "mine": false,
+   "ad": "Yanık kök",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Lav camı": {
+   "respawn": 110,
+   "time": 1,
+   "mine": false,
+   "ad": "Lav camı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kara tuz": {
+   "respawn": 100,
+   "time": 1,
+   "mine": false,
+   "ad": "Kara tuz",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Ay otu": {
+   "respawn": 90,
+   "time": 1,
+   "mine": false,
+   "ad": "Ay otu",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Işık mantarı": {
+   "respawn": 80,
+   "time": 1,
+   "mine": false,
+   "ad": "Işık mantarı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Mor yosun": {
+   "respawn": 70,
+   "time": 1,
+   "mine": false,
+   "ad": "Mor yosun",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Yıldız çiçeği": {
+   "respawn": 90,
+   "time": 1,
+   "mine": false,
+   "ad": "Yıldız çiçeği",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Gece zambağı": {
+   "respawn": 90,
+   "time": 1,
+   "mine": false,
+   "ad": "Gece zambağı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Mor kök": {
+   "respawn": 80,
+   "time": 1,
+   "mine": false,
+   "ad": "Mor kök",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Gölge otu": {
+   "respawn": 90,
+   "time": 1,
+   "mine": false,
+   "ad": "Gölge otu",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Ay taşı": {
+   "respawn": 140,
+   "time": 1,
+   "mine": false,
+   "ad": "Ay taşı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Yankı taşı": {
+   "respawn": 120,
+   "time": 1,
+   "mine": false,
+   "ad": "Yankı taşı",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Yıldız tozu": {
+   "respawn": 1000000000,
+   "time": 1,
+   "mine": false,
+   "ad": "Yıldız tozu",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Mor sarmaşık": {
+   "respawn": 80,
+   "time": 1,
+   "mine": false,
+   "ad": "Mor sarmaşık",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  },
+  "Kristal çiçeği": {
+   "respawn": 110,
+   "time": 1,
+   "mine": false,
+   "ad": "Kristal çiçeği",
+   "tier": 1,
+   "hurt": null,
+   "bush": false
+  }
+ },
+ "trees": {
+  "Meşe": {
+   "wood": "Sert odun",
+   "tier": 1,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": [
+    [
+     "Meşe palamudu",
+     1
+    ],
+    [
+     "Meşe kabuğu",
+     1
+    ]
+   ]
+  },
+  "Kayın": {
+   "wood": "Sert odun",
+   "tier": 1,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": []
+  },
+  "Ladin": {
+   "wood": "Sert odun",
+   "tier": 1,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": [
+    [
+     "Ladin reçinesi",
+     1
+    ]
+   ]
+  },
+  "Fındık": {
+   "wood": "Sert odun",
+   "tier": 1,
+   "noCut": false,
+   "fruit": "Fındık",
+   "seed": null,
+   "extra": []
+  },
+  "Ceviz": {
+   "wood": "Sert odun",
+   "tier": 1,
+   "noCut": false,
+   "fruit": "Ceviz",
+   "seed": "Ceviz tohumu",
+   "extra": [
+    [
+     "Ceviz kabuğu",
+     1
+    ]
+   ]
+  },
+  "Ihlamur": {
+   "wood": "Sert odun",
+   "tier": 1,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": [
+    [
+     "Ihlamur çiçeği",
+     2
+    ]
+   ]
+  },
+  "Mürver": {
+   "wood": "Sağlam odun",
+   "tier": 2,
+   "noCut": false,
+   "fruit": "Mürver",
+   "seed": "Mürver tohumu",
+   "extra": []
+  },
+  "Kızılağaç": {
+   "wood": "Sağlam odun",
+   "tier": 2,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": []
+  },
+  "Söğüt": {
+   "wood": "Sağlam odun",
+   "tier": 2,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": [
+    [
+     "Söğüt dalı",
+     2
+    ],
+    [
+     "Söğüt kabuğu",
+     1
+    ]
+   ]
+  },
+  "Dişbudak": {
+   "wood": "Sağlam odun",
+   "tier": 2,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": []
+  },
+  "Bataklık servisi": {
+   "wood": "Sağlam odun",
+   "tier": 2,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": []
+  },
+  "Huş": {
+   "wood": "Güçlü odun",
+   "tier": 3,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": [
+    [
+     "Huş kabuğu",
+     1
+    ]
+   ]
+  },
+  "Porsuk": {
+   "wood": "Güçlü odun",
+   "tier": 3,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": []
+  },
+  "Elma": {
+   "wood": "Odun",
+   "tier": 1,
+   "noCut": false,
+   "fruit": "Elma",
+   "seed": "Elma tohumu",
+   "extra": []
+  },
+  "Çam": {
+   "wood": "Odun",
+   "tier": 1,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": [
+    [
+     "Çam kozalağı",
+     1
+    ],
+    [
+     "Çam reçinesi",
+     1
+    ]
+   ]
+  },
+  "Kavak": {
+   "wood": "Odun",
+   "tier": 1,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": []
+  },
+  "Dut": {
+   "wood": "Sağlam odun",
+   "tier": 1,
+   "noCut": true,
+   "fruit": "Dut",
+   "seed": null,
+   "extra": []
+  },
+  "Kestane": {
+   "wood": "Güçlü odun",
+   "tier": 3,
+   "noCut": false,
+   "fruit": "Kestane",
+   "seed": "Kestane tohumu",
+   "extra": []
+  },
+  "Armut": {
+   "wood": "Odun",
+   "tier": 1,
+   "noCut": false,
+   "fruit": "Armut",
+   "seed": "Armut tohumu",
+   "extra": []
+  },
+  "Akçaağaç": {
+   "wood": "Güçlü odun",
+   "tier": 3,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": [
+    [
+     "Akçaağaç özsuyu",
+     1
+    ]
+   ]
+  },
+  "Ardıç": {
+   "wood": "Güçlü odun",
+   "tier": 3,
+   "noCut": false,
+   "fruit": "Ardıç meyvesi",
+   "seed": "Ardıç tohumu",
+   "extra": []
+  },
+  "Kızıl sedir": {
+   "wood": "Kor odun",
+   "tier": 4,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": []
+  },
+  "Ateş narı": {
+   "wood": "Kor odun",
+   "tier": 4,
+   "noCut": false,
+   "fruit": "Ateş narı",
+   "seed": "Ateş narı tohumu",
+   "extra": []
+  },
+  "Dikenli akasya": {
+   "wood": "Kor odun",
+   "tier": 4,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": []
+  },
+  "Kül ağacı": {
+   "wood": "Kor odun",
+   "tier": 4,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": []
+  },
+  "İncir": {
+   "wood": "Kor odun",
+   "tier": 1,
+   "noCut": true,
+   "fruit": "İncir",
+   "seed": null,
+   "extra": []
+  },
+  "Ay elması": {
+   "wood": "Kadim odun",
+   "tier": 5,
+   "noCut": false,
+   "fruit": "Ay elması",
+   "seed": "Ay elması tohumu",
+   "extra": []
+  },
+  "Mor söğüt": {
+   "wood": "Kadim odun",
+   "tier": 5,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": []
+  },
+  "Işık ağacı": {
+   "wood": "Kadim odun",
+   "tier": 5,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": []
+  },
+  "Kara çam": {
+   "wood": "Kor odun",
+   "tier": 4,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": []
+  },
+  "Gece ağacı": {
+   "wood": "Kadim odun",
+   "tier": 5,
+   "noCut": false,
+   "fruit": null,
+   "seed": null,
+   "extra": []
+  },
+  "Yıldız eriği": {
+   "wood": "Kadim odun",
+   "tier": 5,
+   "noCut": false,
+   "fruit": "Yıldız eriği",
+   "seed": "Yıldız eriği tohumu",
+   "extra": []
+  }
+ },
+ "tools": {
+  "Taş balta": {
+   "kind": "axe",
+   "time": 3,
+   "dur": 25,
+   "tier": 1,
+   "use": "odun keser"
+  },
+  "Taş kazma": {
+   "kind": "pick",
+   "time": 3,
+   "dur": 25,
+   "tier": 1,
+   "use": "maden kazar"
+  }
+ },
+ "items": {
+  "Dal": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_dal.png"
+  },
+  "Taş": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_tas.png"
+  },
+  "Lif": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_lif.png"
+  },
+  "Yaprak": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_yaprak.png"
+  },
+  "Çakmaktaşı": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_cakmaktasi.png"
+  },
+  "Nehir çakılı": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_nehir_cakili.png"
+  },
+  "Kum": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kum.png"
+  },
+  "Kireçtaşı": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kirectasi.png"
+  },
+  "Kumtaşı": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kumtasi.png"
+  },
+  "Bakır cevheri": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_bakir_cevheri.png"
+  },
+  "Granit": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_granit.png"
+  },
+  "Taş kömürü": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_tas_komuru.png"
+  },
+  "Kalay cevheri": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kalay_cevheri.png"
+  },
+  "Arduvaz": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_arduvaz.png"
+  },
+  "Tuz kayası": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_tuz_kayasi.png"
+  },
+  "Demir cevheri": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_demir_cevheri.png"
+  },
+  "Pirit": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_pirit.png"
+  },
+  "Kuvars": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kuvars.png"
+  },
+  "Gümüş cevheri": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_gumus_cevheri.png"
+  },
+  "Bazalt": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_bazalt.png"
+  },
+  "Kükürt": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kukurt.png"
+  },
+  "Obsidyen": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_obsidyen.png"
+  },
+  "Kristal": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kristal.png"
+  },
+  "Ametist": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ametist.png"
+  },
+  "Altın cevheri": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_altin_cevheri.png"
+  },
+  "Böğürtlen": {
+   "food": 5,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_bogurtlen.png"
+  },
+  "Kuru ot": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kuru_ot.png"
+  },
+  "Papatya": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_papatya.png"
+  },
+  "Nane": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_nane.png"
+  },
+  "Çilek": {
+   "food": 6,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_cilek.png"
+  },
+  "Yabani buğday": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_yabani_bugday.png"
+  },
+  "Havuç": {
+   "food": 5,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_havuc.png"
+  },
+  "Gelincik": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_gelincik.png"
+  },
+  "Hardal otu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_hardal_otu.png"
+  },
+  "Ebegümeci": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ebegumeci.png"
+  },
+  "Isırgan": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_isirgan.png"
+  },
+  "Ahududu": {
+   "food": 9,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ahududu.png"
+  },
+  "Yaban mersini": {
+   "food": 9,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_yaban_mersini.png"
+  },
+  "Kanlıca": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kanlica.png"
+  },
+  "Yaban sarımsağı": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_yaban_sarimsagi.png"
+  },
+  "Kuzukulağı": {
+   "food": 7,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kuzukulagi.png"
+  },
+  "Yabani bal": {
+   "food": 12,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_yabani_bal.png"
+  },
+  "Eğrelti": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_egrelti.png"
+  },
+  "Sarmaşık": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_sarmasik.png"
+  },
+  "Yabani nohut": {
+   "food": 7,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_yabani_nohut.png"
+  },
+  "Tatlısu midyesi": {
+   "food": 3,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_tatlisu_midyesi.png"
+  },
+  "Kamış": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kamis.png"
+  },
+  "Nilüfer": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_nilufer.png"
+  },
+  "Su kestanesi": {
+   "food": 12,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_su_kestanesi.png"
+  },
+  "Su teresi": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_su_teresi.png"
+  },
+  "Yosun": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_yosun.png"
+  },
+  "Bataklık otu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_bataklik_otu.png"
+  },
+  "Sinek mantarı": {
+   "food": 11,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_sinek_mantari.png"
+  },
+  "Turba": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_turba.png"
+  },
+  "Kızılcık": {
+   "food": 12,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kizilcik.png"
+  },
+  "Göl kili": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_gol_kili.png"
+  },
+  "Keten": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_keten.png"
+  },
+  "Kenevir": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kenevir.png"
+  },
+  "Kekik": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kekik.png"
+  },
+  "Adaçayı": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_adacayi.png"
+  },
+  "Lavanta": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_lavanta.png"
+  },
+  "Civanperçemi": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_civanpercemi.png"
+  },
+  "Kuşburnu": {
+   "food": 14,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kusburnu.png"
+  },
+  "Alıç": {
+   "food": 15,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_alic.png"
+  },
+  "Kırmızı kil": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kirmizi_kil.png"
+  },
+  "Beyaz kil": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_beyaz_kil.png"
+  },
+  "Kayın mantarı": {
+   "food": 14,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kayin_mantari.png"
+  },
+  "Sinirotu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_sinirotu.png"
+  },
+  "Dağ çayı": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_dag_cayi.png"
+  },
+  "Kardelen": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kardelen.png"
+  },
+  "Liken": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_liken.png"
+  },
+  "Kül": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kul.png"
+  },
+  "Ateş çiçeği": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ates_cicegi.png"
+  },
+  "Kehribar": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kehribar.png"
+  },
+  "Kırmızı okr": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kirmizi_okr.png"
+  },
+  "Sarı okr": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_sari_okr.png"
+  },
+  "Kor otu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kor_otu.png"
+  },
+  "Duman çiçeği": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_duman_cicegi.png"
+  },
+  "Ateş biberi": {
+   "food": 17,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ates_biberi.png"
+  },
+  "Yanık kök": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_yanik_kok.png"
+  },
+  "Lav camı": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_lav_cami.png"
+  },
+  "Kara tuz": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kara_tuz.png"
+  },
+  "Ay otu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ay_otu.png"
+  },
+  "Işık mantarı": {
+   "food": 21,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_isik_mantari.png"
+  },
+  "Mor yosun": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_mor_yosun.png"
+  },
+  "Yıldız çiçeği": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_yildiz_cicegi.png"
+  },
+  "Gece zambağı": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_gece_zambagi.png"
+  },
+  "Mor kök": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_mor_kok.png"
+  },
+  "Gölge otu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_golge_otu.png"
+  },
+  "Ay taşı": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ay_tasi.png"
+  },
+  "Yankı taşı": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_yanki_tasi.png"
+  },
+  "Yıldız tozu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_yildiz_tozu.png"
+  },
+  "Mor sarmaşık": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_mor_sarmasik.png"
+  },
+  "Kristal çiçeği": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kristal_cicegi.png"
+  },
+  "Sert odun": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_sert_odun.png"
+  },
+  "Meşe palamudu": {
+   "food": 6,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_mese_palamudu.png"
+  },
+  "Meşe kabuğu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_mese_kabugu.png"
+  },
+  "Ladin reçinesi": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ladin_recinesi.png"
+  },
+  "Fındık": {
+   "food": 8,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_findik.png"
+  },
+  "Ceviz": {
+   "food": 8,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ceviz.png"
+  },
+  "Ceviz tohumu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ceviz_tohumu.png"
+  },
+  "Ceviz kabuğu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ceviz_kabugu.png"
+  },
+  "Ihlamur çiçeği": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ihlamur_cicegi.png"
+  },
+  "Sağlam odun": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_saglam_odun.png"
+  },
+  "Mürver": {
+   "food": 11,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_murver.png"
+  },
+  "Mürver tohumu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_murver_tohumu.png"
+  },
+  "Söğüt dalı": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_sogut_dali.png"
+  },
+  "Söğüt kabuğu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_sogut_kabugu.png"
+  },
+  "Güçlü odun": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_guclu_odun.png"
+  },
+  "Huş kabuğu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_hus_kabugu.png"
+  },
+  "Odun": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_odun.png"
+  },
+  "Elma": {
+   "food": 7,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_elma.png"
+  },
+  "Elma tohumu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_elma_tohumu.png"
+  },
+  "Çam kozalağı": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_cam_kozalagi.png"
+  },
+  "Çam reçinesi": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_cam_recinesi.png"
+  },
+  "Dut": {
+   "food": 11,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_dut.png"
+  },
+  "Kestane": {
+   "food": 15,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kestane.png"
+  },
+  "Kestane tohumu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kestane_tohumu.png"
+  },
+  "Armut": {
+   "food": 7,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_armut.png"
+  },
+  "Armut tohumu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_armut_tohumu.png"
+  },
+  "Akçaağaç özsuyu": {
+   "food": 8,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_akcaagac_ozsuyu.png"
+  },
+  "Ardıç meyvesi": {
+   "food": 14,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ardic_meyvesi.png"
+  },
+  "Ardıç tohumu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ardic_tohumu.png"
+  },
+  "Kor odun": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kor_odun.png"
+  },
+  "Ateş narı": {
+   "food": 19,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ates_nari.png"
+  },
+  "Ateş narı tohumu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ates_nari_tohumu.png"
+  },
+  "İncir": {
+   "food": 19,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_incir.png"
+  },
+  "Kadim odun": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_kadim_odun.png"
+  },
+  "Ay elması": {
+   "food": 24,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ay_elmasi.png"
+  },
+  "Ay elması tohumu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_ay_elmasi_tohumu.png"
+  },
+  "Yıldız eriği": {
+   "food": 22,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_yildiz_erigi.png"
+  },
+  "Yıldız eriği tohumu": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_yildiz_erigi_tohumu.png"
+  },
+  "Taş balta": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_tas_balta.png"
+  },
+  "Taş kazma": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_tas_kazma.png"
+  },
+  "Taş kılıç": {
+   "food": 0,
+   "heal": 0,
+   "file": "res://art/esyalar/esya_tas_kilic.png"
+  }
+ },
+ "reach": 24,
+ "pickR": 28,
+ "dropLife": 180,
+ "fruitRe": 150,
+ "treeChops": 3,
+ "treeCd": 12,
+ "treeRegrow": [
+  200,
+  300
+ ],
+ "hunger": {
+  "perSec": 0.1388888888888889,
+  "early": "gün 1–2: ×0,5 · gün 3–4: ×0,75 · sonra ×1"
+ },
+ "start": {
+  "inv": {},
+  "food": 25
+ },
+ "keys": {
+  "F": "topla/al",
+  "X": "ye",
+  "I": "çanta",
+  "1-5": "kemer",
+  "G": "deneme: Taş balta + Taş kazma ver"
+ }
+}

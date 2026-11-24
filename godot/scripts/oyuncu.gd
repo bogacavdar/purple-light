@@ -18,7 +18,6 @@ var hp_max := 100.0
 var atk_cd := 0.0
 var bekleyen_vurus := -1.0  # vuruş tamponu: bekleme bitince son basılan yöne vurulur (en çok 0,8 sn)
 var bekleyen_yon := Vector2.ZERO
-var silah := 0              # 0 yumruk, 1 Taş kılıç
 var savrulus := -1.0        # kavisin ilerlemesi (0..0,16 sn)
 var savrulus_yon := Vector2(0, 1)
 var savrulus_r := 16.0
@@ -45,14 +44,14 @@ func _ready() -> void:
 	kavis.z_index = 5
 	kavis.draw.connect(_kavis_ciz)
 	add_child(kavis)
-	_silah_yaz()
 
 func silah_v() -> Dictionary:
-	return V.sword if silah == 1 else V.fist
+	return V.sword if oyun.env and oyun.env.elde() == "Taş kılıç" else V.fist
 
 func _silah_yaz() -> void:
 	var w := silah_v()
-	oyun.silah_yazi.text = ("Elinde: Taş kılıç" if silah == 1 else "Elinde: yumruk") + "  (hasar %d · menzil %d)" % [int(w.dmg), int(w.reach)]
+	var h: String = oyun.env.elde() if oyun.env else ""
+	oyun.silah_yazi.text = "Elinde: " + (h if h != "" else "boş el") + "  (vuruş %d · menzil %d)" % [int(w.dmg), int(w.reach)]
 
 func _draw() -> void:
 	draw_set_transform(Vector2(0, 2), 0, Vector2(7, 2.5))
@@ -76,9 +75,7 @@ func _process(dt: float) -> void:
 		kosu_kol = not kosu_kol
 	if g == Vector2.ZERO:
 		kosu_kol = false
-	if Input.is_action_just_pressed("silah"):
-		silah = 1 - silah
-		_silah_yaz()
+	_silah_yaz()
 	if Input.is_action_just_pressed("vur"):
 		vur(bakis)
 	if Input.is_action_just_pressed("atil"):
@@ -172,7 +169,7 @@ func vur(d: Vector2) -> void:
 		if dist > ar + 6.0 and dv.dot(f) / maxf(dist, 0.001) < -0.1:
 			continue
 		a.vuruldu(dm, dv / maxf(dist, 1.0))
-		if silah == 1 or int(w.dmg) > 3:
+		if int(w.dmg) > 4:
 			break
 
 func _kavis_ciz() -> void:

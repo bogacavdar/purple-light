@@ -4,6 +4,10 @@ extends Node2D
 var oyun
 var spr: Sprite2D
 var w := 0
+var tur := ""
+var kesim := 0
+var meyve_cd := 0.0
+var sars := 0.0
 
 func kur(tex: Texture2D, bot: int, _seed: int) -> void:
 	spr = Sprite2D.new()
@@ -17,7 +21,14 @@ func _draw() -> void:
 	draw_set_transform(Vector2(2, 4), 0, Vector2(11, 4))
 	draw_circle(Vector2.ZERO, 1.0, Color(0, 0, 0, 0.22))
 
+func vurulma() -> void:
+	sars = 0.25
+
 func _process(_d: float) -> void:
+	meyve_cd = maxf(0.0, meyve_cd - _d)
+	if sars > 0.0:
+		sars -= _d
+		spr.position.x = sin(sars * 60.0) * 1.5 if sars > 0.0 else 0.0
 	var p: Vector2 = oyun.oyuncu.position
 	var dx := position.x - floorf(w / 2.0)
 	var dy := position.y + spr.offset.y
