@@ -504,6 +504,7 @@ func _bitir(yakin: bool) -> void:
 			oyun.konusma.ac(ad(g), portre(g), metin, [{t = "Ne demek", pri = true, kapat = true}]))
 	yenile()
 	_kart()
+	if oyun.kayit != null: oyun.kayit.kaydet("oto")
 
 func _odul(q: Dictionary) -> String:
 	var r := []

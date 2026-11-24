@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1e-2"
+const SURUM := "Godot · Adım 1f-1"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -27,6 +27,12 @@ var konusma
 var kisiler: Array = []
 var gorev
 var sahne
+var zaman
+var kayit
+var basta := false
+var mezarlar: Array = []   # bayılınca kalan çantalar: {p, inv, vio, dugum}
+var balon_yazi: Label
+var balon_t := 0.0
 var magara
 var mesale
 var ortam: CanvasModulate
@@ -105,6 +111,16 @@ func _ready() -> void:
 	add_child(magara)
 	magara.kur(self)
 	mesale.kur(self, magara.M.mesale)
+	zaman = preload("res://scripts/zaman.gd").new()
+	add_child(zaman)
+	zaman.kur(self)
+	balon_yazi = Label.new()
+	balon_yazi.add_theme_font_size_override("font_size", 14)
+	balon_yazi.add_theme_color_override("font_color", Color("#2a1e14"))
+	var bst := StyleBoxFlat.new(); bst.bg_color = Color("#fffcf0"); bst.border_color = Color("#3a2a1a"); bst.set_border_width_all(2); bst.set_content_margin_all(5)
+	balon_yazi.add_theme_stylebox_override("normal", bst)
+	balon_yazi.visible = false
+	hud.add_child(balon_yazi)
 	toplama = preload("res://scripts/toplama.gd").new()
 	toplama.oyun = self
 	toplama.env = env
@@ -154,6 +170,13 @@ func _ready() -> void:
 			env.ekle("Kaba meşale", 2)
 			mesale.degistir()
 			magara._gir()
+		if q.contains("gece"):
+			zaman.dk = 1270.0
+			zaman.gun = 2
+			zaman.mesale_verildi = true
+			if q.contains("gece2"): oyuncu.position = Vector2(magara.M.kapi.x, float(magara.M.kapi.y) + 60.0)
+			env.ekle("Dal", 5)
+			env.vio_ekle(50)
 		if q.contains("ors"):
 			oyuncu.position = Vector2(toplama_veri.istasyon.ors.x - 14, toplama_veri.istasyon.ors.y + 4)
 			for e in [["Taş", 6], ["Sopa", 2], ["İp", 4], ["Dal", 2], ["Keskin taş", 4]]:
@@ -167,6 +190,18 @@ func _ready() -> void:
 			env.vio_ekle(50)
 	get_viewport().size_changed.connect(_yakinlik)
 	_yakinlik()
+	kayit = preload("res://scripts/kayit.gd").new()
+	hud.add_child(kayit)
+	kayit.kur(self)
+	var test := OS.has_feature("web") and str(JavaScriptBridge.eval("location.search")).length() > 1
+	if not Kayit.bekleyen.is_empty():
+		durum_yukle(Kayit.bekleyen)
+		Kayit.bekleyen = {}
+	if Kayit.dogrudan or test:
+		Kayit.dogrudan = false
+		kayit.ana_gizle()
+	else:
+		kayit.ana_goster()
 
 func _json(p: String) -> Dictionary:
 	var f := FileAccess.open(p, FileAccess.READ)
@@ -553,3 +588,178 @@ func renk_guncelle() -> void:
 func sahne_rengi(c: Color) -> void:
 	sahne_renk = c
 	renk_guncelle()
+
+func menu_acik() -> bool:
+	return kayit != null and kayit.ic.visible
+
+## karakterin kısa sözü başının üstünde (web bubble)
+func balon(t: String, sure: float) -> void:
+	balon_yazi.text = t
+	balon_yazi.visible = true
+	balon_yazi.reset_size()
+	balon_t = sure
+
+func _physics_process(dt: float) -> void:
+	if balon_t > 0.0:
+		balon_t -= dt
+		var s: Vector2 = get_viewport().get_canvas_transform() * (oyuncu.position + Vector2(0, -40))
+		balon_yazi.position = s - Vector2(balon_yazi.size.x / 2.0, balon_yazi.size.y)
+		if balon_t <= 0.0: balon_yazi.visible = false
+	# çantanın üstüne yürüyünce her şey geri gelir
+	for m in mezarlar.duplicate():
+		if m.p.distance_to(oyuncu.position) < 14.0 and not oyuncu.bayildi:
+			var n := 0
+			for k in m.inv:
+				env.ekle(k, int(m.inv[k])); n += int(m.inv[k])
+			env.vio_ekle(int(m.vio))
+			for i in 16: parca(m.p + Vector2(0, -4), Vector2(randf_range(-25, 25), -20 - randf() * 40), 0.7, Color("#c9a0ff") if i % 2 else Color.WHITE)
+			env.mesaj("Eşyalarını geri aldın: %d malzeme%s" % [n, (", %d Vio" % int(m.vio)) if int(m.vio) > 0 else ""])
+			m.dugum.queue_free()
+			mezarlar.erase(m)
+
+# ------------------------------------------------------------------ bayılma (web faint, deathDrop, deathTalk; belge: Hayatta kalma › Bayılma)
+## taşıdığın her yığının (aletler ve kurulabilir yapılar hariç) %20'si ve Vio'nun %20'si gider (ilk gece hiçbir şey gitmez);
+## kalanı düştüğün yerde bir çantada kalır (kurukafa). Kumsalda can %50 ile uyanırsın; Kemal seni bulduğunu anlatır.
+const KEMAL_ALAY := ["Gece karanlıktır evlat, öğreneceksin bunları! Sabah seni burada, yüzüstü buldum.", "Yine mi? Gece karanlıktır evlat! Ateşin ya da meşalen yoksa karanlıkta durmayacaksın.", "Hah, bizim gece kuşu uyanmış! Karanlıkta ışıksız gezilmez evlat, kaç kere söyleyeceğim?", "Seni yine taşıdım buraya. Gece karanlıktır, karanlık da açtır. Meşalesiz çıkma!"]
+var ilk_gece_bayilma := true
+func bayil(sebep: String) -> void:
+	if oyuncu.bayildi: return
+	oyuncu.bayildi = true
+	oyuncu.rotation = PI / 2
+	var gece := sebep == "gece"
+	var kayip := 0.0 if zaman.ilk_gece() else 0.2
+	var yer: Vector2 = oyuncu.position
+	if magara.icinde: yer = Vector2(magara.M.kapi.x, float(magara.M.kapi.y) + 30.0)
+	var m := {p = yer, inv = {}, vio = 0}
+	var gitti := 0
+	for n in env.inv.keys():
+		var q: int = env.adet(n)
+		if q <= 0 or toplama_veri.tools.has(n) or n == "Taş kılıç" or (el_yapimi.R.has(n) and el_yapimi.R[n].place) or n == "Kaba meşale" or n == "Meşale":
+			continue
+		var l := int(round(q * kayip))
+		gitti += l
+		if q - l > 0: m.inv[n] = q - l
+		env.eksilt(n, q)
+	var lv := int(round(env.vio * kayip))
+	m.vio = env.vio - lv
+	env.vio_ekle(-env.vio)
+	var cantali: bool = not m.inv.is_empty() or int(m.vio) > 0
+	if cantali:
+		var d := Node2D.new()
+		d.position = yer
+		d.draw.connect(_mezar_ciz.bind(d))
+		nesneler.add_child(d)
+		m.dugum = d
+		mezarlar.append(m)
+	await get_tree().create_timer(1.2).timeout
+	if magara.icinde: magara._cik(true, true)
+	for c in canlilari_ver(): c.queue_free()
+	oyuncu.rotation = 0
+	oyuncu.position = Vector2(harita.spawn.x, harita.spawn.y)
+	oyuncu.hp = round(oyuncu.hp_max * 0.5)
+	can_guncelle(oyuncu.hp, oyuncu.hp_max)
+	env.tokluk = maxf(env.tokluk, 30.0)
+	kamera.reset_smoothing()
+	oyuncu.bayildi = false
+	for i in 3: _canli_koy("Tavşan", 10.0)
+	await get_tree().create_timer(1.6).timeout
+	var ne := ""
+	if gece:
+		ne = "Gece karanlıktır evlat, öğreneceksin bunları! Sabah seni kıyıda baygın buldum. Mor bir ışık mı? …Karanlıkta bir şey var, ışıktan korkar. Ya bir ateşin yanında kal ya da meşalen elinde olsun." if ilk_gece_bayilma else KEMAL_ALAY.pick_random()
+		ilk_gece_bayilma = false
+	else:
+		ne = "Kıyıda baygın yatıyordun evlat, dalgalar seni yine bana getirdi."
+	if cantali:
+		ne += " Çantan ve Vio'ların [b]düştüğün yerde[/b] kaldı; git, kalanını geri al."
+		if gitti > 0 or lv > 0: ne += " Bir kısmı çoktan gitmiş (%%20%s)." % ((", %d Vio" % lv) if lv > 0 else "")
+	if kayip == 0.0: ne += " Neyse ki çantana kimse dokunmamış; ama bir dahaki gece bu kadar şanslı olmayabilirsin."
+	var K: Dictionary = toplama_veri.kisiler[0]
+	konusma.ac(K.ad, load(K.portre), ne, [{t = ("Öğrendim, öğrendim…" if gece and not ilk_gece_bayilma else ("Gidip alacağım" if cantali else "Anladım")), pri = true, kapat = true}])
+
+func _mezar_ciz(d: Node2D) -> void:
+	var px := func(x: float, y: float, w: float, h: float, c: Color): d.draw_rect(Rect2(x, y, w, h), c)
+	d.draw_set_transform(Vector2(0, 3), 0, Vector2(8, 2.5)); d.draw_circle(Vector2.ZERO, 1.0, Color(0, 0, 0, 0.25)); d.draw_set_transform(Vector2.ZERO)
+	px.call(-7, 0, 6, 2, Color("#e8e0d0")); px.call(1, 1, 6, 2, Color("#d8d0c0")); px.call(-8, -1, 2, 4, Color("#f4ecdc")); px.call(6, 0, 2, 4, Color("#f4ecdc"))
+	px.call(-3, -8, 7, 6, Color("#f4ecdc")); px.call(-2, -9, 5, 1, Color("#f4ecdc")); px.call(-2, -6, 2, 2, Color("#2a1f2a")); px.call(1, -6, 2, 2, Color("#2a1f2a"))
+	px.call(0, -3, 1, 1, Color("#2a1f2a")); px.call(-2, -2, 5, 1, Color("#d8d0c0"))
+
+# ------------------------------------------------------------------ kayıt: oyunun durumu
+func durum_al() -> Dictionary:
+	var p: Vector2 = oyuncu.position
+	if magara.icinde: p = Vector2(magara.M.kapi.x, float(magara.M.kapi.y) + 24.0)
+	var G = gorev
+	var ak = null
+	if G.aktif != null: ak = G.aktif if G.aktif.has("filler") else G.aktif.id
+	var mz := []
+	for m in mezarlar: mz.append({x = m.p.x, y = m.p.y, inv = m.inv, vio = m.vio})
+	return {
+		oyuncu = {x = p.x, y = p.y, hp = oyuncu.hp},
+		env = {inv = env.inv, kemer = env.kemer, el = env.el, tokluk = env.tokluk, dayan = env.dayan, gorulen = env.gorulen.keys(), vio = env.vio, xp = env.xp, sv = env.sv},
+		tarifler = el_yapimi.bilinen.keys(),
+		gorev = {aktif = ak, b = G.b, bitenler = G.bitenler, kills = G.kills, biyomlar = G.biyomlar.keys(), dovulen = G.dovulen.keys(), dersler = G.gorulen_dersler},
+		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
+		magara = {gorulen = magara.gorulen, acilan = Marshalls.raw_to_base64(magara.acilan), kaya = 1 if magara.kaya_durum == 2 else magara.kaya_durum, denedi = magara.kaya_denedi or magara.kaya_durum == 2, boss = magara.boss_yenildi},
+		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
+		mezarlar = mz}
+
+func durum_yukle(d: Dictionary) -> void:
+	var o: Dictionary = d.get("oyuncu", {})
+	if o.has("x"): oyuncu.position = Vector2(o.x, o.y)
+	var e: Dictionary = d.get("env", {})
+	env.inv = {}
+	for k in e.get("inv", {}): env.inv[k] = int(e.inv[k])
+	var km: Array = e.get("kemer", [])
+	for i in mini(5, km.size()): env.kemer[i] = km[i]
+	env.el = int(e.get("el", -1))
+	env.tokluk = float(e.get("tokluk", env.tokluk))
+	env.dayan = {}
+	for k in e.get("dayan", {}): env.dayan[k] = float(e.dayan[k])
+	env.gorulen = {}
+	for k in e.get("gorulen", []): env.gorulen[k] = true
+	env.sv = int(e.get("sv", 1)); env.xp = int(e.get("xp", 0))
+	env.vio = 0; env.vio_ekle(int(e.get("vio", 0)))
+	env._sv_ciz()
+	env.kemer_ciz()
+	el_yapimi.bilinen = {}
+	for k in d.get("tarifler", []): el_yapimi.bilinen[k] = true
+	var g: Dictionary = d.get("gorev", {})
+	var G = gorev
+	G.bitenler = g.get("bitenler", [])
+	G.kills = {}
+	for k in g.get("kills", {}): G.kills[k] = int(g.kills[k])
+	G.biyomlar = {}
+	for k in g.get("biyomlar", [0]): G.biyomlar[int(k)] = true
+	G.dovulen = {}
+	for k in g.get("dovulen", []): G.dovulen[k] = true
+	G.gorulen_dersler = g.get("dersler", [])
+	G.b = g.get("b", {})
+	var ak = g.get("aktif", null)
+	if ak is Dictionary: G.aktif = ak
+	elif ak is String and G.QI.has(ak): G.aktif = G.QI[ak]
+	else: G.aktif = null
+	G.yenile()
+	var ms: Dictionary = d.get("mesale", {})
+	mesale.ts = ms.get("ts", null)
+	mesale.yaniyor = bool(ms.get("yaniyor", false))
+	mesale.yanma = ms.get("yanma", {})
+	var mg: Dictionary = d.get("magara", {})
+	magara.gorulen = bool(mg.get("gorulen", false))
+	if mg.has("acilan"):
+		var a := Marshalls.base64_to_raw(mg.acilan)
+		if a.size() == magara.acilan.size(): magara.acilan = a
+	magara.kaya_durum = int(mg.get("kaya", 0))
+	magara.kaya_denedi = bool(mg.get("denedi", false))
+	magara.boss_yenildi = bool(mg.get("boss", false))
+	var z: Dictionary = d.get("zaman_oyun", {})
+	zaman.dk = float(z.get("dk", 360.0)); zaman.gun = int(z.get("gun", 1))
+	zaman.mesale_verildi = bool(z.get("mesale_verildi", false))
+	ilk_gece_bayilma = bool(z.get("ilk_bayilma", true))
+	for m in d.get("mezarlar", []):
+		var dg := Node2D.new()
+		dg.position = Vector2(m.x, m.y)
+		dg.draw.connect(_mezar_ciz.bind(dg))
+		nesneler.add_child(dg)
+		mezarlar.append({p = dg.position, inv = m.inv, vio = int(m.vio), dugum = dg})
+	oyuncu.hp = float(o.get("hp", oyuncu.hp_max))
+	can_guncelle(oyuncu.hp, oyuncu.hp_max)
+	kamera.reset_smoothing()

@@ -200,15 +200,7 @@ func isirildi(dmg: int, from: Vector2) -> void:
 		_bayil()
 
 func _bayil() -> void:
-	bayildi = true
-	oyun.yazi(position + Vector2(0, -30), "Bayıldın…", Color("#ffd040"), 10)
-	rotation = PI / 2
-	await get_tree().create_timer(1.6).timeout
-	rotation = 0
-	position = Vector2(oyun.harita.spawn.x, oyun.harita.spawn.y)
-	hp = hp_max
-	oyun.can_guncelle(hp, hp_max)
-	bayildi = false
+	oyun.bayil("")
 
 ## sahnede karakter konuştuğu kişiye döner
 func bak(d: Vector2) -> void:
