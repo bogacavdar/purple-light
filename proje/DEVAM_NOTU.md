@@ -1,3 +1,7 @@
+## v4.50 (25 Kasım 2026) · Godot Adım 1f-1 (ana menü, kayıt, gün-gece, bayılma)
+- `godot-deneme/` yeni derleme (godot dalı: kayit.gd, zaman.gd, oyun.gd bayılma ve durum; data/ates.json). Kayıtlar Godot'da user:// (tarayıcıda IndexedDB) içinde, web kayıtlarından ayrı. Belge 99_godot 1f satırı 1f-1…1f-4'e bölündü. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.49 (25 Kasım 2026) · Godot Adım 1e-2 (Yankı Mağarası: canlılar, boss, Madenci Kaya)
 - `godot-deneme/` yeni derleme (godot dalı: canli.gd mağara türleri, düşenler ve XP; magara.gd doğum, Kaya, boss; disa_aktar_magara.js canlı kareleri, ağızdaki toplananlar, Kaya'nın resmi ve yan görev sözleri). Belge 99_godot 1e-2 satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -100,10 +104,4 @@
 ## v4.31 (19 Kasım 2026) · Telefonda yaratma ekranı: Geri/Başla düğmeleri açıklama yazısının altında kalmasın
 - `v63-css`'in arkasına, `(pointer:coarse) and (orientation:landscape) and (max-height:520px)` için: `.v63rh` gizli, `#cprev` 100 px, Döndür/Rastgele 34 px, `.cnote` 10 px, `#creator .tmenu.row` `position:relative;z-index:5`. Yapışkan önizleme bloğu kısaldı, düğmeler üstte. Playwright 844×390 ve 740×360'ta `elementFromPoint` Başla'yı veriyor.
 - Geri alma: `git revert` bu commit.
-
-## v4.30 (19 Kasım 2026) · Oyuncu ve sevdiği kişi her yerde yeni çizimle; ara sahnelerde ComfyUI kişileri; ince bacaklar
-- `v428kahraman` `drawChibi` sarmalayıcısı genelleşti: `pcLook(L)` LOOK.hero/LOOK.love'a (aynı nesne ya da ten+saç biçimi+saç+üst eşit) uyan her çağrıda (her tuval, her sahne) yeni çizim; 24×26 tuvalde konuşma resmi (S karesinin `A.sk-2`'den 26 satırı). Sevgilinin cinsiyeti yoksa `__plLoveFem`. Yürüme karesi yalnız `drawPlayer` içinde `player.step`'ten; ara sahnede `o.step` ±1 → kare 1/3; `o.sit/closed/arm` yok sayılır. Yaratma ekranındaki "Sevdiğin kişi" istisnası kalktı.
-- `NPCL[k]` ile çağrılan ve `window.__plNPCS[k]` çizimi olan kişiler (v425kisi `NK` + v425npc Kemal `ekin`) ara sahnede f/q/s/w kareleriyle; `fy<0` ise eski çizim.
-- Bacaklar: `build.py frames_raw` ön/çapraz bacak eni `min(3, …)`, ortadan 1 px aralıklı; bütün saç biçimleri yeniden üretildi.
-- Geri alma: `git revert` bu commit (v425kisi/v425npc'deki iki `__plNPCS` satırı dahil).
 

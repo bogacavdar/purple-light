@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.50 · 25 Kasım 2026
+
+### Proje
+- **Godot, Adım 1f-1 (ana menü, kayıt, gün-gece, bayılma) oynanabilir:** oyun artık ana menüyle açılıyor (Devam et, Yeni oyun, Kayıttan yükle). Esc ile oyun içi menü: kaydet (3 yuva), yükle, ana menüye dön; otomatik kayıt da var. Gün ve gece döngüsü geldi: akşam kararıyor, ateşler ve meşale ışık veriyor; gece ışıksız kalırsan mor ışık iniyor ve bayılıyorsun. Bayılınca eşyaların ve Vio'nun bir kısmı gidiyor, kalanı düştüğün yerde kurukafalı bir çantada bekliyor. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.49 · 25 Kasım 2026
 
 ### Proje
@@ -220,18 +227,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Oyun akışı › Karakter yaratma: telefonda düğmelerin hiç örtülmemesi kuralı.
-
----
-
-## Versiyon 4.30 · 19 Kasım 2026
-
-### Görsel
-- **Karakterin ve sevdiğin kişinin yeni çizimi her yerde:** ara sahnelerde (gemi akşamı, batış, anılar, düğün ve diğerleri), uyanmada, konuşma kutusundaki resminde ve sevdiğin kişiyi seçtiğin ekranda da yeni 8 yönlü çizim kullanılıyor; sevdiğin kişi de kendi saçı, renkleri ve aksesuarlarıyla görünüyor.
-- **Ara sahnelerde kişiler:** Kemal, Zümrüt, Nazlı, Dursun, Durmuş, Börü, Ekin, Sinan ve Doğan ara sahnelerde de oyundaki ComfyUI çizimleriyle (arkası dönükken eski çizim).
-- **Daha ince bacaklar:** önden ve çaprazdan bakışta bacaklar inceltildi (erkekte kalın duruyordu).
-
-### Tasarım belgesi
-- "Oyuncunun karakteri" ve "Kişiler": çizimin kullanıldığı yerler (ara sahne, konuşma resmi, sevdiğin kişi), bacak kalınlığı.
 
 ---
 
