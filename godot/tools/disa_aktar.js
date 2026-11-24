@@ -58,22 +58,33 @@ const RW=80,RH=60;
     // cave-only kinds (Sarkıt, Yarasa gübresi: every one of them carries hb) live inside Yankı Mağarası, not on the meadow
     const caveOnly=new Set();{const C={};for(const n of nodes){const c=C[n.name]||(C[n.name]=[0,0]);c[0]++;if('hb' in n)c[1]++}for(const k in C)if(C[k][0]===C[k][1])caveOnly.add(k)}
     const ND=[],NP={};const want=new Set();for(const n of nodes){if(!n.alive||n.cave||caveOnly.has(n.name)||!inR(n.x,n.y))continue;ND.push({n:n.name,x:+n.x.toFixed(1),y:+n.y.toFixed(1),v:+n.v.toFixed(3),mine:!!n.mine});want.add(n.name)}
-    const SZ=64,FX=32,FY=48;const [nc,ng]=mk(SZ,SZ);
+    // web draws these pictures at the screen's real resolution (S*dpr screen pixels per world pixel; a 32 px ComfyUI cell is drawn
+    // 16 world px wide, so on screen every source pixel shows). They are captured here K times finer than the world, and Godot shows
+    // them at 1/K scale: same size in the world, the same detail on screen. Shadows and the blue glow come along (glow blur is in
+    // screen pixels, so S=K, dpr=1 while capturing).
+    const K=4,SZ=64,FX=32,FY=48;const [nc,ng]=mk(SZ*K,SZ*K);
     const KEYS=new Set();for(let o=CanvasRenderingContext2D.prototype;o&&o!==Object.prototype;o=Object.getPrototypeOf(o))for(const k of Object.getOwnPropertyNames(o))KEYS.add(k);
     KEYS.delete('constructor');KEYS.delete('canvas');
     const saved={};const own=k=>Object.getOwnPropertyDescriptor(ctx,k);
     for(const k of KEYS){saved[k]=own(k);const v=ng[k];
       if(typeof v==='function')Object.defineProperty(ctx,k,{configurable:true,writable:true,value:(...a)=>ng[k](...a)});
       else Object.defineProperty(ctx,k,{configurable:true,get:()=>ng[k],set:x=>{ng[k]=x}})}
-    const sav2={fill:own('fillRect')};
-    // no quest / lesson glow on the pictures (QG.n, __b3.glow light up what a lesson asks for)
-    const qg0=QG.n,B3=window.__b3,bg0=B3&&B3.glow;QG.n=new Set();if(B3)B3.glow=new Set();
-    try{for(const name of want){const n=nodes.find(q=>q.name===name&&q.alive&&!q.cave&&inR(q.x,q.y));const fake=Object.assign({},n,{x:FX,y:FY,v:0.2});
-        ng.setTransform(1,0,0,1,0,0);ng.clearRect(0,0,SZ,SZ);ng.globalAlpha=1;try{drawNode(fake,0)}catch(e){NP[name]={err:String(e&&e.message||e)};continue}
-        const d=ng.getImageData(0,0,SZ,SZ).data;let a0=SZ,b0=SZ,a1=-1,b1=-1;for(let y=0;y<SZ;y++)for(let x=0;x<SZ;x++)if(d[(y*SZ+x)*4+3]>8){if(x<a0)a0=x;if(x>a1)a1=x;if(y<b0)b0=y;if(y>b1)b1=y}
-        if(a1<0){NP[name]={err:'boş'};continue}
-        const [cc,cg]=mk(a1-a0+1,b1-b0+1);cg.drawImage(nc,a0,b0,a1-a0+1,b1-b0+1,0,0,a1-a0+1,b1-b0+1);NP[name]={png:png(cc),ox:FX-a0,oy:FY-b0,w:a1-a0+1,h:b1-b0+1}}}
-    finally{QG.n=qg0;if(B3)B3.glow=bg0;for(const k of KEYS){const s=saved[k];if(s)Object.defineProperty(ctx,k,s);else delete ctx[k]}}
+    const qg0=QG.n,B3=window.__b3,bg0=B3&&B3.glow,S0=S,D0=dpr;
+    // the kinds a lesson / quest lights up right now (blue glow in the web game at the start)
+    const glowNow=new Set();for(const k of want)if((B3&&B3.glow&&B3.glow.size&&B3.glow.has(k))||(qg0&&qg0.has(k)))glowNow.add(k);
+    const cap=(n,v,glow)=>{QG.n=glow?new Set([n.name]):new Set();if(B3)B3.glow=new Set();
+      const fake=Object.assign({},n,{x:FX,y:FY,v});ng.setTransform(1,0,0,1,0,0);ng.clearRect(0,0,SZ*K,SZ*K);ng.globalAlpha=1;ng.shadowBlur=0;ng.shadowColor='rgba(0,0,0,0)';
+      ng.setTransform(K,0,0,K,0,0);ng.imageSmoothingEnabled=false;
+      drawNode(fake,glow?Math.PI/8.4:0);ng.setTransform(1,0,0,1,0,0);
+      const Z=SZ*K,d=ng.getImageData(0,0,Z,Z).data;let a0=Z,b0=Z,a1=-1,b1=-1;for(let y=0;y<Z;y++)for(let x=0;x<Z;x++)if(d[(y*Z+x)*4+3]>8){if(x<a0)a0=x;if(x>a1)a1=x;if(y<b0)b0=y;if(y>b1)b1=y}
+      if(a1<0)return null;const [cc,cg]=mk(a1-a0+1,b1-b0+1);cg.drawImage(nc,a0,b0,a1-a0+1,b1-b0+1,0,0,a1-a0+1,b1-b0+1);return {png:png(cc),ox:FX*K-a0,oy:FY*K-b0,w:a1-a0+1,h:b1-b0+1}};
+    S=K;dpr=1;
+    try{for(const name of want){const n=nodes.find(q=>q.name===name&&q.alive&&!q.cave&&inR(q.x,q.y));
+        try{const A=cap(n,0.2,false);if(!A){NP[name]={err:'boş'};continue}A.k=K;
+          const B=cap(n,0.8,false);if(B&&B.png!==A.png)A.b=B;   // a kind drawn mirrored (or otherwise) when v > 0.5
+          if(glowNow.has(name)){const G=cap(n,0.2,true);if(G)A.glow=G}
+          NP[name]=A}catch(e){NP[name]={err:String(e&&e.message||e)}}}}
+    finally{S=S0;dpr=D0;QG.n=qg0;if(B3)B3.glow=bg0;for(const k of KEYS){const s=saved[k];if(s)Object.defineProperty(ctx,k,s);else delete ctx[k]}}
     const fist=(()=>{const w=weapon();return {dmg:w.dmg,reach:w.reach,cd:w.cd}})();
     // the first sword of the game (Taş kılıç): its numbers come from the game's own weapon() with it worn for a moment
     const sword=(()=>{const was=equip.silah;try{equip.silah='Taş kılıç';const w=weapon();return {n:w.n,dmg:w.dmg,reach:w.reach,cd:w.cd}}finally{equip.silah=was}})();
@@ -98,7 +109,9 @@ const RW=80,RH=60;
   if(R.art.hero)wpng(path.join(OUT,'art','kahraman.png'),R.art.hero);else console.log('UYARI: kahraman resmi hazır değil');
   const anim={};for(const k in R.art.animals){const A=R.art.animals[k],f='canli_'+safe(k).toLowerCase()+'.png';wpng(path.join(OUT,'art',f),A.png);delete A.png;A.file='res://art/'+f;anim[k]=A}
   const tp={};for(const k in R.art.trees){const A=R.art.trees[k],f='agac_'+safe(k).toLowerCase()+'.png';wpng(path.join(OUT,'art','agaclar',f),A.png);delete A.png;A.file='res://art/agaclar/'+f;tp[k]=A}
-  const np={};for(const k in R.art.nodes){const A=R.art.nodes[k];if(A.err){console.log('düğüm resmi yok:',k,A.err);continue}const f='dugum_'+safe(k).toLowerCase()+'.png';wpng(path.join(OUT,'art','dugumler',f),A.png);delete A.png;A.file='res://art/dugumler/'+f;np[k]=A}
+  const np={};for(const k in R.art.nodes){const A=R.art.nodes[k];if(A.err){console.log('düğüm resmi yok:',k,A.err);continue}const base='dugum_'+safe(k).toLowerCase();
+    const put=(X,suf)=>{const f=base+suf+'.png';wpng(path.join(OUT,'art','dugumler',f),X.png);delete X.png;X.file='res://art/dugumler/'+f};
+    put(A,'');if(A.b)put(A.b,'_b');if(A.glow)put(A.glow,'_parilti');np[k]=A}
   const meta={kaynak:path.relative(ROOT,GAME),surum:R.version.trim(),uretildi:new Date().toISOString()};
   w(path.join(OUT,'data','harita.json'),JSON.stringify(Object.assign({meta},R.map)));
   w(path.join(OUT,'data','canlilar.json'),JSON.stringify({meta,canlilar:anim},null,1));

@@ -158,14 +158,17 @@ func _dugumler() -> void:
 		if not resim.has(d.n):
 			continue
 		var R: Dictionary = resim[d.n]
+		# v > 0.5: web draws these kinds in their second look (mirrored or the other picture), captured as "b"
+		if float(d.v) > 0.5 and R.has("b"):
+			R = R.b
+		var k := float(resim[d.n].get("k", 1))
 		var s := Sprite2D.new()
 		s.texture = load(R.file)
 		s.centered = false
 		s.offset = Vector2(-float(R.ox), -float(R.oy))
+		# captured k times finer than the world: same size in the world, the web's detail on screen
+		s.scale = Vector2(1.0 / k, 1.0 / k)
 		s.position = Vector2(d.x, d.y)
-		s.flip_h = float(d.v) > 0.5 and not d.mine
-		if s.flip_h:
-			s.offset.x = float(R.ox) - float(R.w)
 		nesneler.add_child(s)
 
 # ------------------------------------------------------------------ canlılar
