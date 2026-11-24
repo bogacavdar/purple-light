@@ -151,4 +151,24 @@ const RW=0,RH=0;
   console.log('bölge',JSON.stringify(R.map.region),'başlangıç',JSON.stringify(R.map.spawnTile),'ağaç',R.trees.length,'düğüm',R.nodes.length,'Çayır',JSON.stringify(R.map.cayirBounds));
   console.log('oyuncu',JSON.stringify(R.player.fist),'can',R.player.hp,'sürüm',meta.surum);
   if(errs.length)console.log('sayfa hataları:',errs.slice(0,5));
+  // Adım 1d-2: Çayır kişilerinin ana görevleri (web görev sistemi v2'nin DATA.Q'su), her eşyanın nereden çıktığı (biyomlar) ve "her tür odun" gibi grup adları
+  {const H=fs.readFileSync(GAME,'utf8').split('\n');const li=H.findIndex(l=>l.startsWith('const DATA={"Q"'));const D=JSON.parse(H[li].slice(H[li].indexOf('=')+1).replace(/;\s*$/,''));
+    const al=H[li+1];const ANB=JSON.parse(al.slice(al.indexOf('=')+1).replace(/;\s*$/,''));
+    const GIV=['npc','witch','smith','durmus','market','alp'];
+    const Q=D.Q.filter(q=>GIV.indexOf(q.g)>=0).map(q=>{const o={};for(const k of ['id','g','t','p','r','say','thx','c','x','rec','rew','nomat','les','sc'])if(q[k]!=null)o[k]=q[k];return o});
+    const names=new Set();for(const q of Q)for(const x of q.p){if(typeof x[1]==='string')names.add(x[1]);if(Array.isArray(x[1]))x[1].forEach(n=>names.add(n))}
+    const K=await p.evaluate(L=>window.__ham.ev(`(()=>{const L=${JSON.stringify(L)};
+      const B={};const add=(n,b)=>{if(b==null||b<0)return;(B[n]||(B[n]={}))[b]=1};const bio=(x,y)=>BIO[Math.floor(y/T)*W+Math.floor(x/T)];
+      for(const n of nodes)add(n.name,bio(n.x,n.y));
+      for(const t of trees){const ty=t.type,b=bio(t.x,t.y);if(!ty.noCut)add(woodOf(ty.n),b);if(ty.fruit)add(ty.fruit,b);for(const e of (TREE_EXTRA[ty.n]||[]))add(e[0],b)}
+      add('Islak nehir kili',0);
+      const AD={};for(const k in ANIM){if(/Reisi$/.test(k))continue;AD[k]=(ANIM[k].drops||[]).filter(d=>d[3]>=.2).map(d=>d[0])}
+      const EXP={};for(const n of L)EXP[n]=expand(n);
+      for(const R of DB.R)for(const [m] of R.i)if(!EXP[m])EXP[m]=expand(m);
+      return {B,AD,EXP}})()`),[...names]);
+    const kaynak={};for(const n in K.B)kaynak[n]=Object.keys(K.B[n]).map(Number).sort();
+    for(const k in K.AD){const bs=ANB[k];if(!bs)continue;for(const m of K.AD[k]){const s=new Set(kaynak[m]||[]);bs.forEach(b=>s.add(b));kaynak[m]=[...s].sort()}}
+    const avB={};for(const k in ANB)avB[k]=ANB[k];
+    w(path.join(OUT,'data','gorevler.json'),JSON.stringify({gorevler:Q,GB:D.GB,kaynak,av:avB,grup:K.EXP},null,0));
+    console.log('görev',Q.length,'kaynak',Object.keys(kaynak).length)}
   await b.close()})().catch(e=>{console.error(e);process.exit(1)});

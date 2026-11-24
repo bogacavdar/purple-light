@@ -80,6 +80,7 @@ func _islem() -> void:
 			env.eksilt(str(p[0]), int(p[1]))
 		env.vio_ekle(-fee)
 		env.ekle(r)
+		oyun.gorev.dovulen[r] = true
 		env.mesaj("Dövüldü: %s · işçilik %d Vio" % [r, fee])
 	secili = ""
 	ciz()

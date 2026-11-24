@@ -6,7 +6,7 @@ var oyun
 var kutu: PanelContainer
 var portre: TextureRect
 var ad: Label
-var yazi: Label
+var yazi: RichTextLabel
 var secenekler: HBoxContainer
 var liste: Array = []   # [{t, f, pri}]
 
@@ -31,7 +31,7 @@ func kur(o) -> void:
 	var v := VBoxContainer.new()
 	v.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	ad = Label.new(); ad.add_theme_color_override("font_color", Color("#f2c94c")); oyun._golge(ad)
-	yazi = Label.new(); yazi.autowrap_mode = TextServer.AUTOWRAP_WORD; yazi.custom_minimum_size = Vector2(440, 0)
+	yazi = RichTextLabel.new(); yazi.bbcode_enabled = true; yazi.fit_content = true; yazi.scroll_active = false; yazi.custom_minimum_size = Vector2(440, 0)
 	secenekler = HBoxContainer.new()
 	secenekler.add_theme_constant_override("separation", 8)
 	v.add_child(ad); v.add_child(yazi); v.add_child(secenekler)
@@ -39,6 +39,8 @@ func kur(o) -> void:
 	kutu.add_child(h)
 	add_child(kutu)
 	kutu.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM, Control.PRESET_MODE_MINSIZE, 70)
+	kutu.grow_vertical = Control.GROW_DIRECTION_BEGIN
+	kutu.grow_horizontal = Control.GROW_DIRECTION_BOTH
 	gui_input.connect(_dis)
 
 ## secs: [{t: "Anladım", f: Callable, pri: true, kapat: true}]
@@ -47,6 +49,7 @@ func ac(kim: String, por, metin: String, secs: Array = []) -> void:
 		secs = [{t = "Anladım", kapat = true}]
 	liste = secs
 	ad.text = kim
+	ad.visible = kim != ""
 	portre.texture = por
 	portre.visible = por != null
 	yazi.text = metin
@@ -58,6 +61,8 @@ func ac(kim: String, por, metin: String, secs: Array = []) -> void:
 		b.pressed.connect(_sec.bind(s))
 		secenekler.add_child(b)
 	visible = true
+	kutu.reset_size()
+	kutu.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM, Control.PRESET_MODE_MINSIZE, 70)
 
 func _sec(s) -> void:
 	visible = false

@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1d-1"
+const SURUM := "Godot · Adım 1d-2"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -25,6 +25,9 @@ var el_yapimi
 var istasyon
 var konusma
 var kisiler: Array = []
+var gorev
+var bio_arr: PackedByteArray
+var kh_resim: TextureRect
 var toplama_veri: Dictionary
 var toplama
 
@@ -78,6 +81,9 @@ func _ready() -> void:
 	hud.add_child(konusma)
 	konusma.kur(self)
 	_kisiler()
+	gorev = preload("res://scripts/gorev.gd").new()
+	add_child(gorev)
+	gorev.kur(self)
 	toplama = preload("res://scripts/toplama.gd").new()
 	toplama.oyun = self
 	toplama.env = env
@@ -102,6 +108,11 @@ func _ready() -> void:
 			_canli_koy_yakin("Kurt", 6.0)
 		if q.contains("tavsan"):
 			_canli_koy_yakin("Tavşan", 4.0)
+		if q.contains("kemal"):
+			oyuncu.position = Vector2(toplama_veri.kisiler[0].x + 20, toplama_veri.kisiler[0].y + 6)
+		if q.contains("e1"):
+			env.ekle("Dal", 6)
+			env.ekle("Kuru ot", 2)
 		if q.contains("ors"):
 			oyuncu.position = Vector2(toplama_veri.istasyon.ors.x - 14, toplama_veri.istasyon.ors.y + 4)
 			for e in [["Taş", 6], ["Sopa", 2], ["İp", 4], ["Dal", 2], ["Keskin taş", 4]]:
@@ -171,6 +182,13 @@ func _zemin() -> void:
 	su.oyun = self
 	su.z_index = -9
 	add_child(su)
+
+func bio_at(p: Vector2) -> int:
+	var x := int(p.x / T) - bx0
+	var y := int(p.y / T) - by0
+	if x < 0 or y < 0 or x >= bw or y >= bh or bio_arr.is_empty():
+		return -1
+	return int(bio_arr[y * bw + x])
 
 func tile_at(p: Vector2) -> int:
 	var x := int(floor(p.x / T)) - bx0
@@ -264,6 +282,7 @@ func _canli_koy(k: String, min_kare: float, aralik: float = 14.0) -> void:
 		return
 
 func canli_oldu(k: String) -> void:
+	if gorev: gorev.av(k)
 	# yerine bir süre sonra yenisi gelir (deneme kolaylığı için)
 	await get_tree().create_timer(12.0).timeout
 	_canli_koy(k, 12.0)
@@ -334,6 +353,7 @@ var kh_nokta: ColorRect
 var kh_olcek := 0.0
 func _kucuk_harita() -> void:
 	var bio := Marshalls.base64_to_raw(harita.bio)
+	bio_arr = bio
 	var BR := [Color("#7fb04a"), Color("#3f7a3a"), Color("#6b7440"), Color("#8a8580"), Color("#5a3a36"), Color("#7a5aa8")]
 	var img := Image.create(bw, bh, false, Image.FORMAT_RGBA8)
 	for y in bh:
@@ -347,6 +367,7 @@ func _kucuk_harita() -> void:
 			else: c = BR[mini(int(bio[i]), 5)]
 			img.set_pixel(x, y, c)
 	var tr := TextureRect.new()
+	kh_resim = tr
 	tr.texture = ImageTexture.create_from_image(img)
 	tr.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	kh_olcek = 220.0 / float(bw)
@@ -420,9 +441,15 @@ func _istasyon_ciz(o: Node2D) -> void:
 		o.draw_rect(Rect2(-9, -9, 3, 2), Color("#6a6e74"))
 		o.draw_rect(Rect2(-6, -9, 12, 1), Color("#9aa0a8"))
 
-## F: toplanacak bir şey yoksa yakındaki kazan, örs ya da kişi (web target sırası)
+## F: toplanacak bir şey yoksa yakındaki kişi (görev işi varsa önce o), kazan, örs ya da kişinin kendi hizmeti (web target sırası)
 func konus_ya_da_istasyon() -> bool:
 	var p: Vector2 = oyuncu.position
+	var yakin = null
+	for n in kisiler:
+		if p.distance_to(n.position) < 30.0 and (yakin == null or p.distance_to(n.position) < p.distance_to(yakin.position)):
+			yakin = n
+	if yakin != null and gorev.konus(gorev.g_of(yakin.K.k), _hizmet(yakin.K.k)):
+		return true
 	var I: Dictionary = toplama_veri.istasyon
 	if p.distance_to(Vector2(I.kazan.x, I.kazan.y)) < 26.0:
 		istasyon.ac("kazan")
@@ -433,11 +460,19 @@ func konus_ya_da_istasyon() -> bool:
 	if p.distance_to(Vector2(I.ors2.x, I.ors2.y)) < 18.0:
 		istasyon.ac("durmus")
 		return true
-	for n in kisiler:
-		if p.distance_to(n.position) < 30.0:
-			_konus(n)
-			return true
+	if yakin != null:
+		_konus(yakin)
+		return true
 	return false
+
+func _hizmet(k: String) -> Dictionary:
+	match k:
+		"witch": return {t = "Kazana bak", f = func(): istasyon.ac("kazan")}
+		"smith": return {t = "Örse bak", f = func(): istasyon.ac("smith")}
+		"durmus": return {t = "Örse bak", f = func(): istasyon.ac("durmus")}
+	return {}
+
+const SELAM := {"ekin": "Ateş sıcak, çay demde. Otur biraz evlat.", "market": "Hoş geldin! Tezgâhım yakında açılacak; satacak bir şeyin olursa unutma beni.", "alp": "Kılıcını hep elinin altında tut. Bu adada her çalının ardında bir diş vardır."}
 
 func _konus(n) -> void:
 	var K: Dictionary = n.K
@@ -450,4 +485,4 @@ func _konus(n) -> void:
 		"durmus":
 			konusma.ac(K.ad, por, "Zırh benim işim. Tarifini bildiğin zırhı malzemesi ve işçiliğiyle döverim.", [{t = "Örse bak", pri = true, f = func(): istasyon.ac("durmus")}, {t = "Sonra", kapat = true}])
 		_:
-			konusma.ac(K.ad, por, "Merhaba! (Godot'da görevler Adım 1d-2'de geliyor.)")
+			konusma.ac(K.ad, por, SELAM.get(K.k, "Merhaba!"))
