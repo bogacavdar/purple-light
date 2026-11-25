@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.51 · 25 Kasım 2026
+
+### Proje
+- **Godot, Adım 1f-2 (karakter yaratma) oynanabilir:** Yeni oyun artık karakter yaratmayla başlıyor: önce kendi karakterin, sonra sevdiğin kişi, en sonda zorluk. Ten, yüz, göz rengi, saç biçimi ve rengi, kıyafet ve renkleri seçiliyor; önizleme her seçimde hemen değişiyor, Döndür ve Rastgele var. Oyunda karakterin seçtiğin görünüşle yürüyor. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.50 · 25 Kasım 2026
 
 ### Proje
@@ -217,16 +224,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Sistemler › Yeni ikonlarla › "Oyuncunun karakteri": iki temel çizim, gerçekçi oran, giydirilen katmanlar.
-
----
-
-## Versiyon 4.31 · 19 Kasım 2026
-
-### Arayüz
-- **Telefonda karakter yaratma:** "Sevdiğin kişi" adımında uzun açıklama yazısı Geri ve Başla düğmelerini örtüyordu; artık düğmeler her zaman görünür ve basılabilir. Yatay telefonda önizleme biraz küçüldü, "sürükle" ipucu bu ekranda gizlendi.
-
-### Tasarım belgesi
-- Oyun akışı › Karakter yaratma: telefonda düğmelerin hiç örtülmemesi kuralı.
 
 ---
 

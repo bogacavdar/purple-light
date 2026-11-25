@@ -1,3 +1,7 @@
+## v4.51 (25 Kasım 2026) · Godot Adım 1f-2 (karakter yaratma)
+- `godot-deneme/` yeni derleme (godot dalı: karakter.gd web sheet() kuralının GDScript'i, yaratici.gd; tools/disa_aktar_kahraman.js web HD çizimlerini ve CC/HS/EYES seçeneklerini kaynaktan döker). Belge 99_godot 1f-2 satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.50 (25 Kasım 2026) · Godot Adım 1f-1 (ana menü, kayıt, gün-gece, bayılma)
 - `godot-deneme/` yeni derleme (godot dalı: kayit.gd, zaman.gd, oyun.gd bayılma ve durum; data/ates.json). Kayıtlar Godot'da user:// (tarayıcıda IndexedDB) içinde, web kayıtlarından ayrı. Belge 99_godot 1f satırı 1f-1…1f-4'e bölündü. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -99,9 +103,5 @@
 - Giydirme `acc()`: elbise (hp−2…hp+10 etek, bacaklar ten), saç biçimi ekleri `hair()`, bıyık, sakal, buff, gözlük, şapka, toka; yön başına bir katman çizilip 5 kareye basılır, `mir` satırlarına aynalı. Kel: saç bölümü ten rengine boyanır. Kadında Kısa/Küt/Uzun temel saç.
 - UI tuvalleri: `cprev` 54×54, `pfchar` 48×60, `ieqc` 44×56, `dollc`/`ardoll` 48×60; konuşma resmi başın 12×13 bölgesi 2×.
 - Üretim: ComfyUI Z-Image Turbo + piksel LoRA ile önden temel resim (erkek `base_e_00002`, kadın `base_k_00003`); Wan 2.2 TI2V 5B ile 360° döndürme (81 kare), yön kareleri seçildi (erkeğin arka/arka-çaprazı kolları yanda kalan ayrı döndürmeden). Yürüme kareleri yüksek çözünürlükte bacakların kalçadan eğilmesi/kaldırılmasıyla, sonra kutu küçültme + ortak 20 renk. Bölümler (ten, saç, üst, alt, bot) yüksek çözünürlükte renk + konumla ayrıldı. Araçlar oturum içi (/tmp/hero/build5.py, walkhr.py, lab.py), depoya girmedi.
-- Geri alma: `git revert` bu commit.
-
-## v4.31 (19 Kasım 2026) · Telefonda yaratma ekranı: Geri/Başla düğmeleri açıklama yazısının altında kalmasın
-- `v63-css`'in arkasına, `(pointer:coarse) and (orientation:landscape) and (max-height:520px)` için: `.v63rh` gizli, `#cprev` 100 px, Döndür/Rastgele 34 px, `.cnote` 10 px, `#creator .tmenu.row` `position:relative;z-index:5`. Yapışkan önizleme bloğu kısaldı, düğmeler üstte. Playwright 844×390 ve 740×360'ta `elementFromPoint` Başla'yı veriyor.
 - Geri alma: `git revert` bu commit.
 
