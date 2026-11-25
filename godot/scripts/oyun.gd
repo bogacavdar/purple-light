@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1f-1"
+const SURUM := "Godot · Adım 1f-2"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -30,6 +30,9 @@ var sahne
 var zaman
 var kayit
 var basta := false
+var gorunus := {}            # oyuncunun görünüşü (karakter yaratma)
+var sevgili := {}
+var zorluk := "normal"
 var mezarlar: Array = []   # bayılınca kalan çantalar: {p, inv, vio, dugum}
 var balon_yazi: Label
 var balon_t := 0.0
@@ -190,6 +193,8 @@ func _ready() -> void:
 			env.vio_ekle(50)
 	get_viewport().size_changed.connect(_yakinlik)
 	_yakinlik()
+	gorunus_uygula(Karakter.gorunus(Karakter.varsayilan("e")))
+	sevgili = Karakter.gorunus(Karakter.varsayilan("k"))
 	kayit = preload("res://scripts/kayit.gd").new()
 	hud.add_child(kayit)
 	kayit.kur(self)
@@ -700,9 +705,17 @@ func durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = {gorulen = magara.gorulen, acilan = Marshalls.raw_to_base64(magara.acilan), kaya = 1 if magara.kaya_durum == 2 else magara.kaya_durum, denedi = magara.kaya_denedi or magara.kaya_durum == 2, boss = magara.boss_yenildi},
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		mezarlar = mz}
+		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk}
+
+func gorunus_uygula(L: Dictionary) -> void:
+	gorunus = L
+	oyuncu.spr.texture = Karakter.sayfa(L)
 
 func durum_yukle(d: Dictionary) -> void:
+	if d.has("kahraman"): gorunus_uygula(d.kahraman)
+	if d.has("sevgili"): sevgili = d.sevgili
+	zorluk = str(d.get("zorluk", "normal"))
+	if d.get("yeni", false): return
 	var o: Dictionary = d.get("oyuncu", {})
 	if o.has("x"): oyuncu.position = Vector2(o.x, o.y)
 	var e: Dictionary = d.get("env", {})

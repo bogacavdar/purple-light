@@ -16,6 +16,7 @@ var liste: VBoxContainer
 var ic_liste: VBoxContainer
 var bilgi: Label
 var oto_t := 60.0
+var yaratici
 var onceki_pencere := false
 
 func kur(o) -> void:
@@ -24,6 +25,9 @@ func kur(o) -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_ana_kur()
 	_ic_kur()
+	yaratici = preload("res://scripts/yaratici.gd").new()
+	add_child(yaratici)
+	yaratici.kur(self)
 
 static func yol(y: String) -> String:
 	return "user://kayit_%s.json" % y
@@ -84,11 +88,6 @@ func _notification(w: int) -> void:
 		if oyun != null: kaydet("oto")
 
 # ------------------------------------------------------------------ yeni oyun, yükle: sahne baştan kurulur
-func yeni_oyun() -> void:
-	bekleyen = {}
-	dogrudan = true
-	get_tree().reload_current_scene()
-
 func yukle(y: String) -> void:
 	var d := oku(y)
 	if d.is_empty(): return
@@ -171,7 +170,7 @@ func ana_dugmeler() -> void:
 	var son := en_yeni()
 	if son != "":
 		liste.add_child(_dugme("Devam et", func(): yukle(en_yeni()), true))
-	liste.add_child(_dugme("Yeni oyun", yeni_oyun, son == ""))
+	liste.add_child(_dugme("Yeni oyun", func(): yaratici.ac(), son == ""))
 	if son != "":
 		liste.add_child(_dugme("Kayıttan yükle", _yukle_listesi))
 
