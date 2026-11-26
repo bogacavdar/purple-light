@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.96 · 27 Kasım 2026
+
+### Proje
+- **Godot: anılar:**
+  - ACT 1'in 22 anısı ve ACT 2'nin 10 anısı Godot'ya geldi.
+  - Anılar tarif öğrendikçe, rüyada, bayılınca, bir görevi bitirince ya da Zümrüt'e mor kıymık götürünce geri geliyor. Ustaların anıları onların işleriyle geliyor.
+  - Anı penceresinde web'deki sahneler var; sen ve sevdiğin kişi kendi çizimlerinizle görünüyorsunuz.
+  - Kitap › Anılar sayfasından gelen anılar yeniden izlenebiliyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.95 · 27 Kasım 2026
 
 ### Proje
@@ -218,16 +230,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: Doğu geçidi ve aletler:**
   - Kayalık Dağ'ın doğusundaki geçidi kayalar kapatıyor. Kemal'in "Doğu geçidini aç" görevini alınca 2 kaya patlatıcı ve kuvars ya da çelik kazmayla patlatıyorsun. Bütün sıradağ çöküyor ve Kül Diyarı ile Mor Kristal Vadisi açılıyor.
   - **Düzeltme:** Önceden yalnız taş balta ve taş kazma alet sayılıyordu; dövdüğün tunç, demir, çelik baltalar ağaç kesmiyordu. Artık web'deki 26 balta ve kazmanın hepsi kendi hızı, dayanıklılığı ve kademesiyle çalışıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.76 · 26 Kasım 2026
-
-### Proje
-- **Godot: Kayalık Dağ'ın yan görevleri:**
-  - Yolcu Yahya (ocağa eşlik), Dağlı Zehra (kaçan oğlak Boncuk'u yakala), Gözcü Bora (kartal yumurtası), Hatice Nine (Emir'in izleri), Keşiş Sükûn (rüzgârdaki çanlar) ve hayalet kız Işıl.
-  - Işıl yalnız kendi gece saatinde görünüyor; yanına yaklaşınca görevi kendiliğinden başlıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
