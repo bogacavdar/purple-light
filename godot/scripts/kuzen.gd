@@ -35,6 +35,7 @@ func konus(n, ac_kazan := false) -> bool:
 		"ek": oyun.ciftlik.ekin_konus(n)
 		"pz": oyun.poyraz.konus(n)
 		"gk": oyun.act2.yildiz(n)
+		"pv": oyun.act2.efsun(n)
 		_: _kuzen(n, ac_kazan)
 	return true
 

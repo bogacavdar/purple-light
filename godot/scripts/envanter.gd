@@ -128,6 +128,7 @@ func ye() -> void:
 	var f := float(G.items[sec].food)
 	var hl := float(G.items[sec].heal)
 	eksilt(sec)
+	if sec == "Mana iksiri" and oyun.buyu != null: oyun.buyu.iksir()
 	tokluk = minf(100.0, tokluk + f)
 	oyun.ogr.yedi(sec)
 	if hl > 0:

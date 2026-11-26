@@ -3,7 +3,8 @@ extends Node2D
 
 const PS := [345, 611, 614]       # web MAPD.ps: [y, x0, x1] (karo)
 var oyun
-var kapali := false       # ikinci adanın kaya yığını sonra (A5)
+var kapali := false
+const PS2 := [229, 609, 614]      # ikinci adanın sıradağ geçidi (web ISLE 2 MAPD.ps)
 var env
 var T := 16
 var acik := false
@@ -21,12 +22,9 @@ func kur(o) -> void:
 	oyun = o
 	env = o.env
 	T = o.T
-	if o.ada == 2:
-		kapali = true
-		set_process(false)
-		return
-	y0 = PS[0] - 1; y1 = PS[0] + 1; x0 = PS[1]; x1 = PS[2]
-	cx = (x0 + x1 + 1) / 2.0 * T; cy = (PS[0] + 0.5) * T
+	var S: Array = PS2 if o.ada == 2 else PS
+	y0 = S[0] - 1; y1 = S[0] + 1; x0 = S[1]; x1 = S[2]
+	cx = (x0 + x1 + 1) / 2.0 * T; cy = (S[0] + 0.5) * T
 	var h = [9]
 	var r = func() -> float:
 		h[0] = (int(h[0]) * 16807) % 2147483647
@@ -55,7 +53,7 @@ func f() -> bool:
 	if kapali: return false
 	if acik or oyun.oyuncu.position.distance_to(Vector2(x0 * T - 10, cy)) > 38.0: return false
 	var k = env.adet("Kaya patlatıcı")
-	if oyun.gorev.aktif == null or str(oyun.gorev.aktif.id) != "E3":
+	if oyun.ada == 1 and (oyun.gorev.aktif == null or str(oyun.gorev.aktif.id) != "E3"):
 		if k >= 2 and not dedi:
 			dedi = true
 			oyun.balon("Bu kayaları nasıl açarım ki? Kemal bir şey bilir.", 3.5)
@@ -63,7 +61,7 @@ func f() -> bool:
 			env.mesaj("Geçidi kapatan dev bir kaya yığını. Kemal bunu bilir mi acaba?", true)
 		return true
 	if k < 2 or _kazma() < 4:
-		env.mesaj("Geçidi kapatan kaya yığını. Açmak için %s2 kaya patlatıcı gerekli (sende %d). Patlatıcıyı Kemal anlatır: yarasa gübresi, turba, tuz ve bir çömlek." % ["bir kuvars ya da çelik kazma (ya da daha iyisi) ve " if _kazma() < 4 else "", k], true)
+		env.mesaj("Geçidi kapatan kaya yığını. Açmak için %s2 kaya patlatıcı gerekli (sende %d). %s: yarasa gübresi, turba, tuz ve bir çömlek." % ["bir kuvars ya da çelik kazma (ya da daha iyisi) ve " if _kazma() < 4 else "", k, "Patlatıcıyı Yıldızsız Ada'da Kemal anlatır" if oyun.ada == 2 else "Patlatıcıyı Kemal anlatır"], true)
 		return true
 	oyun.konusma.ac("", null, "[b]Kaya yığını[/b]\n2 kaya patlatıcı harcanacak. Kayalar patlatılsın mı?", [{t = "Patlat", f = _patlat}, {t = "Vazgeç", pri = true, kapat = true}])
 	return true
@@ -79,7 +77,7 @@ func _patlat() -> void:
 		oyun.parca(Vector2(cx + randf_range(-30, 30), cy), Vector2(cos(a) * s, sin(a) * s - 60), 0.6 + randf() * 0.8, Color("#8a8278") if i % 3 else (Color("#ffb040") if i % 2 else Color.WHITE))
 	await get_tree().create_timer(0.35).timeout
 	_ac(true)
-	env.mesaj("Sıradağ çöktü · Sınır kalktı: Kül Diyarı ve Mor Kristal Vadisi · Ölümcül")
+	env.mesaj("Sıradağ çöktü · Sınır kalktı: %s ve %s · Ölümcül" % (["Kül Diyarı", "Mor Kristal Vadisi"] if oyun.ada == 1 else [oyun.yerler2.bname[4], oyun.yerler2.bname[5]]))
 	oyun.gorev.yenile()
 	await get_tree().create_timer(0.9).timeout
 	oyun.balon("Vay be!", 2.4)

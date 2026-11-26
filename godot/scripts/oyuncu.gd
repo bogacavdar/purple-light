@@ -310,6 +310,9 @@ func vur(d: Vector2) -> void:
 	if oyun.evcil.binilen != null:
 		oyun.evcil.in_()
 		return
+	if oyun.buyu != null and oyun.buyu.asa_mi(oyun.env.elde()):
+		if not kalkan and sersem <= 0.0: oyun.buyu.at()
+		return
 	var w := silah_v()
 	if atk_cd > 0.0:
 		bekleyen_vurus = 0.8

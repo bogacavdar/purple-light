@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · A2"
+const SURUM := "Godot · A3"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -97,6 +97,7 @@ var portal                  # adalar arası portallar (portal.gd)
 var hikaye                  # Ada halkı hikâyeleri (hikaye.gd)
 var isikci                  # Yıldızsız Işıkçı ve Kafa lambası (isikci.gd)
 var gezgin                  # Yıldızsız Gezgin ve robot köpekler (gezgin.gd)
+var buyu                    # mor mana ve asalar (buyu.gd)
 var act2                    # ACT 2 adasının ustaları: Yıldız (act2.gd); yalnız ikinci adada
 var poyraz                  # Gemici Poyraz ve deniz (poyraz.gd)
 var ciftlik                 # Çiftçi Ekin ve Bereket Adası (ciftlik.gd)
@@ -231,6 +232,9 @@ func _ready() -> void:
 	kopru = preload("res://scripts/kopru.gd").new()
 	add_child(kopru)
 	kopru.kur(self)
+	buyu = preload("res://scripts/buyu.gd").new()
+	add_child(buyu)
+	buyu.kur(self)
 	evcil = preload("res://scripts/evcil.gd").new()
 	add_child(evcil)
 	evcil.kur(self)
@@ -1043,6 +1047,56 @@ func _ada2_test(q: String) -> void:
 	if q.contains("don"):
 		oyuncu.position = portal.P[1].p + Vector2(0, 4)
 		print("ADA2 portal f ", portal.etkiles())
+	if q.contains("kopru2"):
+		var b: Dictionary = kopru.ana()
+		oyuncu.position = Vector2(b.x0 * T - 6, b.cy)
+		env.ekle("Odun", 20)
+		print("KB f ", kopru.f(), " ", konusma.yazi.text.substr(0, 60).replace("\n", " "))
+		for c in konusma.liste.duplicate():
+			if c.t == "Onar": konusma._sec(c)
+		print("KB fixed ", b.fixed, " ustunde ", kopru.ustunde(Vector2(b.cx, b.cy)), " engel ", engel(Vector2(b.cx, b.cy)), " yaka ", kopru._yakalar(), " gecit ", gecit.x0, " ", gecit.engel(Vector2(gecit.cx, gecit.cy)))
+	if q.contains("efsun"):
+		bitenler_ekle(["gk1", "gk2", "gk3"])
+		var E = gorev.kisi("pervin")
+		await get_tree().create_timer(0.5).timeout
+		print("EF hedef ", gorev.hedef().get("ad", "-"), " kart ", gorev.kart_baslik.text, " / ", gorev.kart_ad.text, " E ", E.position, " mana açık ", buyu.acik_mi(), " bar ", buyu.bar.visible)
+		oyuncu.position = E.position + Vector2(-14, 4)
+		konus_ya_da_istasyon(); print("EF 1 ", konusma.yazi.text.substr(0, 60)); konusma._cik()
+		await get_tree().create_timer(0.3).timeout
+		konus_ya_da_istasyon(); print("EF 2 ", konusma.yazi.text.substr(0, 70).replace("\n", " ")); konusma._cik()
+		await get_tree().create_timer(0.3).timeout
+		while konusma.visible:
+			konusma._cik(); await get_tree().create_timer(0.2).timeout
+		print("EF aktif ", gorev.aktif.id if gorev.aktif != null else "-")
+		gorev.aktif = null
+		bitenler_ekle(["pv1", "pv2", "pv3"])
+		await get_tree().create_timer(0.3).timeout
+		print("EF verilen ", el_yapimi.verilen.has("Ateş asası"), " ", el_yapimi.verilen.has("Mana iksiri"))
+		el_yapimi.bilinen["Ateş asası"] = true; el_yapimi.bilinen["Buz asası"] = true; el_yapimi.bilinen["Yıldırım asası"] = true
+		for p in el_yapimi.R["Ateş asası"].i: env.ekle(str(p[0]), int(p[1]))
+		env.vio_ekle(1000)
+		konus_ya_da_istasyon(); print("EF menü ", konusma.yazi.text.substr(0, 40))
+		var bt := []
+		for c in konusma.liste: bt.append(c.t)
+		print("EF seçenekler ", bt)
+		for c in konusma.liste.duplicate():
+			if str(c.t).contains("Ateş asası"): konusma._sec(c)
+		print("EF yaptı ", konusma.yazi.text.substr(0, 40), " asa ", env.adet("Ateş asası"), " vio ", env.vio)
+		konusma._cik()
+		for h in ["Buz asası", "Yıldırım asası"]: env.ekle(h, 1)
+		for sn in ["Ateş asası", "Buz asası", "Yıldırım asası"]:
+			env.el = env.kemer.find(sn)
+			buyu.mana = 200.0
+			oyuncu.position = E.position + Vector2(0, 200)
+			for c in canlilari_ver(): c.queue_free()
+			await get_tree().process_frame
+			var c1 = _canli_yeni("Bulut koyunu", oyuncu.position + Vector2(60, 0), 1)
+			var c2 = _canli_yeni("Bulut koyunu", oyuncu.position + Vector2(100, 10), 2)
+			oyuncu.bakis = Vector2(1, 0)
+			var h0: float = c1.hp; var h2: float = c2.hp
+			oyuncu.vur(Vector2(1, 0))
+			await get_tree().create_timer(0.8).timeout
+			print("EF ", sn, " elde ", env.elde(), " mana ", int(buyu.mana), " hasar ", h0 - c1.hp, " ikinci ", h2 - c2.hp, " donuk ", c1.donuk)
 	if q.contains("yildiz"):
 		var Y = gorev.kisi("gok")
 		print("YZ hedef ", gorev.hedef().get("ad", "-"), " kazan ", toplama_veri.istasyon.kazan, " Y ", Y.position, " portal Yıldız açık ", portal.acik_mi(portal.P[0]))
@@ -1074,6 +1128,10 @@ func _ada2_test(q: String) -> void:
 		var tc := {}
 		for c in canlilari_ver(): tc[c.tur] = int(tc.get(c.tur, 0)) + 1
 		print("YZ canlılar ", tc, " bio ", bio_at(oyuncu.position))
+
+func bitenler_ekle(L: Array) -> void:
+	for id in L:
+		if not gorev.bitti(id): gorev.bitenler.append(id)
 
 func _dz_test() -> void:
 	await get_tree().create_timer(2.0).timeout
@@ -1489,7 +1547,7 @@ func _kisiler() -> void:
 		n.kur(self, k)
 		nesneler.add_child(n)
 		kisiler.append(n)
-		if k.k == "gok": act2.teleskop_kur(n)
+		if act2 != null: act2.kisi_kuruldu(n)
 	var I: Dictionary = toplama_veri.istasyon
 	for a in [["kazan", I.kazan], ["ors", I.ors], ["ors", I.ors2]]:
 		var o := Node2D.new()
@@ -1920,7 +1978,7 @@ func _durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), buyu = buyu.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 ## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
@@ -2055,6 +2113,7 @@ func durum_yukle(d: Dictionary) -> void:
 	evcil.yukle(d.get("evcil", {}))
 	kopru.yukle(d.get("kopru", []))
 	gecit.yukle(d.get("gecit", false))
+	buyu.yukle(d.get("buyu", {}))
 	balik.yukle(d.get("balik", {}))
 	ciftlik.yukle(d.get("ciftlik", {}), kuzen.tanis.has("ekin_gitti"))
 	poyraz.yukle(d.get("poyraz", {}))

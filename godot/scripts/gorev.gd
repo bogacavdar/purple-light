@@ -308,6 +308,8 @@ func eksik_hedef(item: String, n: int, dep: int = 0) -> Dictionary:
 func hedef() -> Dictionary:
 	if oyun.ada == 2 and (aktif == null or not ACT2_G.has(str(aktif.g))) and not oyun.kuzen.tanisildi("gok") and kisi("gok") != null:
 		return {kisi = kisi("gok"), ad = "Gökbilimci Yıldız"}   # web v76 guideKey: tanışana dek ok Yıldız'ı gösterir
+	if oyun.ada == 2 and (aktif == null or not ACT2_G.has(str(aktif.g))) and bitti("gk3") and not oyun.kuzen.tanisildi("pervin") and kisi("pervin") != null:
+		return {kisi = kisi("pervin"), ad = "Büyücü Efsun"}   # web v77 guideKey
 	if aktif == null:
 		return {}
 	var q: Dictionary = aktif
@@ -759,6 +761,12 @@ func _kart() -> void:
 		var Yk = kisi("gok")
 		kart_ad.text = "Gökbilimci Yıldız'ı bul" if Yk == null or not oyun.kuzen.tanisildi("gok") else ("Yıldız'ın işlerine yardım et" if not bitti("gk3") else "Portallar açık")
 		var tx := "Barbaros seni Yüzen Kayalar'a bıraktı. Yukarıdaki kayalarda teleskobu olan Gökbilimci Yıldız'ı bul." if not oyun.kuzen.tanisildi("gok") else ("Yıldız'ın işlerine yardım et; son işi bir portal." if not bitti("gk3") else "Portallar açık: Yıldızsız Ada'ya dönüp gelebilirsin.")
+		if bitti("gk3") and kisi("pervin") != null:
+			# web v77: portallardan sonra kart Efsun'u gösterir
+			var pm: bool = oyun.kuzen.tanisildi("pervin")
+			kart_baslik.text = "ACT 2 · Dev Mantar Ormanı" if pm else "ACT 2 · Büyücü Efsun"
+			kart_ad.text = "Büyücü Efsun'u bul" if not pm else ("Efsun'un işlerine yardım et" if not bitti("pv3") else "Ateş asası")
+			tx = "Portallar açık. Kuzeydeki Dev Mantar Ormanı'nda Büyücü Efsun'u bul; mor manayı ve ilk asayı o öğretir." if not pm else ("Efsun'un işlerine yardım et. Goblinlere dikkat: grup halinde gezerler, şamanları zehir atar." if not bitti("pv3") else ("Ateş asası tarifi sende: malzemeleri Efsun'a götür, o yapsın." if oyun.el_yapimi.bilinen.has("Ateş asası") else "Ateş asası tarifini Yıldız'ın kazanında öğren, sonra Efsun yapsın."))
 		if aktif != null: tx += "\n[font_size=11]Yıldızsız Ada'da süren görev: %s (%s)[/font_size]" % [aktif.t, ad(aktif.g)]
 		kart_satir.text = tx
 		return

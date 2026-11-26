@@ -3,9 +3,10 @@ extends Node2D
 ## Ana köprü (Orman ↔ Bataklık) Kemal'in E2 görevi alınınca 20 odunla onarılır; sonra iki kısayol görevsiz onarılır.
 
 const BR := [[134, 433, 437], [75, 410, 413], [199, 449, 453]]   # web MAPD.br: [y, x0, x1] (karo)
+const BR2 := [[202, 230, 237], [158, 174, 181], [290, 336, 340]]   # ikinci adanın büyük nehri (web ISLE 2 MAPD.br)
 const ODUN := 20
 var oyun
-var kapali := false       # ikinci adanın köprüleri sonra (A3)
+var kapali := false
 var env
 var K: Array = []           # {x0, x1, y, fixed, cx, cy, main}
 var dedi := false           # 20 odunla gelince bir kez kendi kendine konuşur
@@ -16,12 +17,9 @@ func kur(o) -> void:
 	env = o.env
 	T = o.T
 	z_index = -8
-	if o.ada == 2:
-		kapali = true
-		set_process(false)
-		return
-	for i in BR.size():
-		var b: Array = BR[i]
+	var L: Array = BR2 if o.ada == 2 else BR
+	for i in L.size():
+		var b: Array = L[i]
 		K.append({y = b[0], x0 = b[1], x1 = b[2], fixed = false, cx = (b[1] + b[2] + 1) / 2.0 * T, cy = (b[0] + 0.5) * T, main = i == 0})
 
 ## onarılmış bir köprünün üstü (web onBridge)
@@ -72,7 +70,7 @@ func f() -> bool:
 	var b = yakin()
 	if b == null: return false
 	var gorevde: bool = oyun.gorev.aktif != null and str(oyun.gorev.aktif.id) == "E2"
-	if b.main and not gorevde:
+	if b.main and not gorevde and oyun.ada == 1:   # ikinci adada görev beklenmez (web fixBridge)
 		if odun() >= ODUN and not dedi:
 			dedi = true
 			oyun.balon("Buradan nasıl geçebilirim acaba? Kemal bilir belki.", 3.5)
@@ -80,7 +78,7 @@ func f() -> bool:
 			oyun.balon("Kırık bir köprü… Kemal bir şey biliyordur.", 3.0)
 		return true
 	if not b.main and not ana().fixed:
-		env.mesaj("Bu köprü bir kısayol. Önce Orman ile Bataklık arasındaki ana köprüyü onar.", true)
+		env.mesaj("Bu köprü bir kısayol. Önce %s ile %s arasındaki ana köprüyü onar." % _yakalar(), true)
 		return true
 	var w := odun()
 	if w < ODUN:
@@ -99,10 +97,21 @@ func _onar(b: Dictionary) -> void:
 	_harca(ODUN)
 	b.fixed = true
 	for k in 30: oyun.parca(Vector2(b.cx + randf_range(-40, 40), b.cy), Vector2(randf_range(-20, 20), -30 - randf() * 40), 0.8, Color("#c89458") if k % 2 else Color("#ffe29b"))
-	env.mesaj("Köprü onarıldı · Karşı yaka: Bataklık · Tehlikeli" if b.main else "Kısayol köprüsü onarıldı · Nehrin öbür ucuna giden yol kısaldı")
+	env.mesaj(("Köprü onarıldı · Karşı yaka: %s · %s" % _karsi()) if b.main else "Kısayol köprüsü onarıldı · Nehrin öbür ucuna giden yol kısaldı")
 	oyun.balon("Aa, sandığımdan kolaymış!" if b.main else "Bir kısayol daha. Ayaklarım teşekkür eder.", 3.0)
 	queue_redraw()
 	oyun.gorev.yenile()
+
+## ana köprünün iki yakası (web BNAME[1], BNAME[2]; ikinci adada köprünün iki yanındaki biyomlar)
+func _yakalar() -> Array:
+	if oyun.ada == 1: return ["Orman", "Bataklık"]
+	var b: Dictionary = ana()
+	return [oyun.yerler2.bname[maxi(0, oyun.bio_at(Vector2((b.x0 - 3) * T, b.cy)))], oyun.yerler2.bname[maxi(0, oyun.bio_at(Vector2((b.x1 + 4) * T, b.cy)))]]
+
+func _karsi() -> Array:
+	if oyun.ada == 1: return ["Bataklık", "Tehlikeli"]
+	var i := maxi(0, oyun.bio_at(Vector2((ana().x1 + 4) * T, ana().cy)))
+	return [oyun.yerler2.bname[i], oyun.yerler2.bdanger[i]]
 
 # ------------------------------------------------------------------ çizim (web drawBridgeOne)
 func _r(x: float, y: float, w: float, h: float, c: String) -> void:

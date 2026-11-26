@@ -26,6 +26,7 @@ var olu := -1.0
 var tur_k := ""        # mağara canlıları: "w" önden yarasa, "t" üstten kertenkele/örümcek (web v436cayir)
 var boss := false
 var cvb := false        # mağaranın boss'u (yan görev çağırır)
+var donuk := 0.0        # Buz asası: donmuşken kıpırdamaz (web a.frz)
 var sersem := 0.0       # savuşturulunca sersemler (web a.stun)
 var renk := "n"         # saldırının rengi: n beyaz, y sarı (×1,4), r kırmızı (×1,7, savuşturulamaz)
 var ders := false       # Börü'nün ders kereviti: dersi ders.gd yürütür, hasar almaz
@@ -156,6 +157,11 @@ func _process(dt: float) -> void:
 		modulate.a = clampf(1.6 - olu * 1.6, 0.0, 1.0)
 		if olu > 1.0:
 			queue_free()
+		return
+	if donuk > 0.0:
+		donuk -= dt
+		flash -= dt
+		wind = 0.0; lunge = {}
 		return
 	if ders:
 		_gorun(ders_yuru)
