@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.67 · 26 Kasım 2026
+
+### Proje
+- **Godot: evcil hayvanlar ve Çoban Davut (Orman adımı tamamlandı):**
+  - Çoban Davut Çayır'da. İlk görevi kaçan keçisi Pamuk: üç kez yakalıyorsun, sonra seni izleyerek Davut'a dönüyor.
+  - Usta Sinan'ın yaptığı ağılı kurunca hayvan evcilleştirebiliyorsun. Hayvanın sevdiği yiyeceği F ile yere bırakıp geri çekiliyorsun; hayvan gelip yiyor ve güveni artıyor. Dört beslemede evcilleşiyor ve ona ad koyuyorsun.
+  - Yaban atına B ile biniyorsun (1,8 kat hızlı). Orman'daki kurt ininden yavru alıyorsun; iki günde büyüyor, sonra seni kovalayan hayvanlarla dövüşüyor.
+  - Ağılda F ile kimin yanında, kimin ağılda kalacağını seçiyorsun. Ölen yoldaşın adı ağıldaki taşa yazılıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.66 · 26 Kasım 2026
 
 ### Proje
@@ -197,10 +209,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot, Adım 1e-1 (Yankı Mağarası: giriş, iç, ışık) oynanabilir:** Çayır'daki mağaranın kaya tepesi, tabelası ve ağzı geldi; seviye 5 ve yanan bir meşaleyle giriliyor. İçerisi zifiri karanlık; meşale çevreni aydınlatıyor, mantarlar mavi parlıyor. Meşale sönerse birkaç saniye sonra dışarı çıkıyorsun. Yankı mantarı ve Damla taşı toplanıyor, küçük harita mağarada yürüdükçe açılıyor. Meşale yuvası kemerin solunda (" tuşu ya da tıklayınca yanar/söner). Canlılar, Yankı Kraliçesi ve Madenci Kaya sıradaki parçada. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.47 · 25 Kasım 2026
-
-### Proje
-- **Godot, Adım 1d-3 (görev sahneleri ve dersler) oynanabilir:** görevler artık web'deki gibi kısa bir sahneyle veriliyor: siyah şeritler, üstte anlatım yazısı, başların üstünde konuşma balonları, duygu işaretleri, kişinin hareketleri, duman ya da kıvılcım gibi efektler, kameranın görev yerine kayması, istenen eşyanın resmi, anılarda sepya ve gecede koyu renk. Tıklayınca sonraki adım, Esc ile atlanır. Dersi olan görevlerde "Yeni ders" kartı çıkıyor. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
