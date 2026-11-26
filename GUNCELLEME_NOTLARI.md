@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.62 · 26 Kasım 2026
+
+### Proje
+- **Godot: Usta Sinan, evler ve uyku:**
+  - Sinan tanışınca hasır yatak hediye ediyor. Tarifini öğrendiğin yapıları ve ev eşyalarını işçiliği karşılığı yapıyor; evleri ve barınakları da (yaprak barınağından konağa) satıyor.
+  - Yapılar kemere ya da çantaya geliyor. Seçince yeşil ızgarada yere kuruluyor; Boşluk döndürüyor, sağ tık vazgeçiyor. Kurulu yapıyla F'ye basınca taşıyabiliyor ya da geri alabiliyorsun.
+  - Eve yatak konuyor; gece yatakta ya da barınakta uyuyunca sabah uyanıyorsun, can ve enerji doluyor. Yaprak barınağı bir gecelik.
+  - Sinan'ın barınak, atölye, çit ve ev görevleri artık açılıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.61 · 26 Kasım 2026
 
 ### Proje
@@ -173,16 +185,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot, Adım 1b (toplama ve çanta) oynanabilir:** F ile toplama (önce yerdeki eşyalar), ağaç kesme ve meyve silkeleme, kazmayla maden kazma, yere düşen eşyalar (üstünden yürüyünce alınır), çanta (I), 1–5 alet kemeri, aletlerin aşınması, tokluk ve yemek (X). Kemal ve el yapımı gelene kadar G tuşu deneme için Taş balta, Taş kazma ve Taş kılıç verir. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.42 · 25 Kasım 2026
-
-### Proje
-- **Godot, Adım 1 · Çayır başladı; ilk parça (dünya) oynanabilir:** Godot denemesinde artık adanın tamamı var: zemin web'deki ComfyUI dokularıyla (çimen tutamları, kum, su), denizde dalgalar, nehirde akıntı, kıyıda gelip giden köpük, adanın bütün ağaçları ve toplanabilirleri, sağ altta küçük harita. Link aynı: https://bogacavdar.github.io/purple-light/godot-deneme/
-
-### Tasarım belgesi
-- Platformlar › Godot'ya geçiş: Adım 1'in altı parçası (dünya, toplama ve çanta, el yapımı, Kemal ve görevleri, Yankı Mağarası, oyunun başı ve kayıt).
 
 ---
 
