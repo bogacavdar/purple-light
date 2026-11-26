@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.80 · 26 Kasım 2026
+
+### Proje
+- **Godot: balık tutma, tuzaklar ve gece buluntuları:**
+  - Elinde olta varken suya dönüp F ya da E: şamandıra suya iner. Dalınca hemen bas, sonra gidip gelen ibre yeşildeyken bir daha bas. Hangi balığın çıkacağı web'deki gibi suya ve biyoma bağlı.
+  - Tuzak çimene, balık kapanı suyun kenarına kurulur (en çok 6). Bir süre sonra av düşer; F ile alırsın.
+  - Gece çayırda ve ormanda gece sefası ile mor kıymık belirir, parlar ve çevresini mor ışıktan korur; ateşböcekleri uçuşur.
+  - Pazarcı Nazlı'nın "Taze balık" ve "Kürk siparişi" görevleri artık Godot'ta yapılabiliyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.79 · 26 Kasım 2026
 
 ### Proje
@@ -220,12 +232,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
-## Versiyon 4.60 · 26 Kasım 2026
-
-### Proje
-- **Godot: Orman'ın kişileri:**
-  - Cadı Yakut (kırmızı kazan), Silahçı Durdu, Zırhçı Duran, Pazarcı Fidan ve Usta Sinan web'deki yerlerinde.
-  - Kuzenlerle web'deki gibi tanışılıyor ("Dursun? Örsünü buraya mı taşıdın?"). Durdu ve Duran tanışınca imza silah ve zırhlarının tarifini kitaba yazıyor.
-  - Örsler artık kademeyle dövüyor: Dursun ve Durmuş Çayır kademesini, Durdu ve Duran Orman'a kadarını. Örs, dövemediği tarifleri kimin dövebileceğini söylüyor.
-  - Yakut, Durdu, Duran, Fidan ve Sinan'ın görevleri geldi. Sinan'ın yapı ve ev isteyen görevleri inşa gelince açılacak.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
