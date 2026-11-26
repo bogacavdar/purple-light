@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.71 · 26 Kasım 2026
+
+### Proje
+- **Godot: eşinden kalan izler:**
+  - Adada altı mor parıltı var: ikisi yurtta, ikisi Bataklık'ta, ikisi Kül Diyarı'nda. Yanına gidip F'ye basınca izi okuyorsun.
+  - Tarif kitabındaki (K) "İzler" düğmesi bulduğun izleri gösteriyor. Kemal'in "Eşinden kalan izler" görevi bunları sayıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.70 · 26 Kasım 2026
 
 ### Proje
@@ -213,10 +223,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot, Adım 1f-3a (giriş sahnesi ve uyanış) oynanabilir:** yeni oyun artık web'deki giriş sahnesiyle açılıyor: gün batımında gemide yemek, mor ışık, gemi batıyor, "Tut elimi!", su altında sevdiğin kişi uzaklaşıyor. Sahnede yaratıcıda seçtiğin iki karakter oynuyor; "Geç" ile atlanabiliyor. Sonra ACT 1 kartı, kumsalda uyanış, Kemal'in gelişi ve konuşması, senin ve sevdiğin kişinin adı. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.51 · 25 Kasım 2026
-
-### Proje
-- **Godot, Adım 1f-2 (karakter yaratma) oynanabilir:** Yeni oyun artık karakter yaratmayla başlıyor: önce kendi karakterin, sonra sevdiğin kişi, en sonda zorluk. Ten, yüz, göz rengi, saç biçimi ve rengi, kıyafet ve renkleri seçiliyor; önizleme her seçimde hemen değişiyor, Döndür ve Rastgele var. Oyunda karakterin seçtiğin görünüşle yürüyor. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
