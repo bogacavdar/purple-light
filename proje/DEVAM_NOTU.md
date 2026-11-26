@@ -1,3 +1,7 @@
+## v4.54 (26 Kasım 2026) · Godot: Çayır'ın bütün canlıları
+- `godot-deneme/` yeni derleme (godot dalı: oyun.gd _dogur/_dogur_tur web spawnIn kuralı; data/canlilar_cayir.json web BANIM[0], ANIM, PACK; art/canli_*.png). Belge 99_godot 1g satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.53 (26 Kasım 2026) · Godot Adım 1f-3b-1 (Nazlı'nın pazarı)
 - `godot-deneme/` yeni derleme (godot dalı: pazar.gd; data/pazar.json = web PRICE_, noSell, isRaw, rawPrice, madeOk). Belge 99_godot 1f-3b satırı dört parçaya bölündü. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -83,11 +87,4 @@
 - Belge: 20_sistemler › Hava, sıcaklık ve kar › "Ayak izleri" maddesi.
 - Kod: yeni blok `v435iz` (dosyanın sonunda, `v433halat`'tan sonra). İz resmi ComfyUI (Z-image Turbo + piksel LoRA, "iz_taban_b", ayakkabı tabanı izi) → /tmp/iz/sheet.py ile 8 yön × sol/sağ × normal/kar, 12×12 hücre, base64 PNG. `tickWeather` sarmalı adım ekler ve yaşlandırır, `drawGround` sarmalı karın üstüne çizer; `restore`/`startNew` temizler. Kayda yazılmaz, MAPV değişmez.
 - Geri almak için: `v435iz` bloğunu ve belgedeki maddeyi sil (kayıt alanı yok).
-
-## v4.34 (22 Kasım 2026) · Halat yolları T6'dan; Tuncay ocakta halat satıcısı
-- Boğaç kararı (22 Kasım 2026, OYN-K-10). Belge: 37_magaralar halat bölümü, 30_act1:644, 20_sistemler:459.
-- v230 yan görev bloğu: `T6ok()`, `tOut(q)` (Tuncay, mağara dışında, T6 bitmiş); `tuncayOut()` artık kuzenlerin ocağı (FAMS b=3) yanında, Yahya'nın yerinden ≥36 px; `present` (dışarıda T6'dan itibaren, mağara içinde görev bitmeden), `homeOf`, `talk` (dışarıda: halat sözü + "Halat yolları"; mağara görevi dışarıda verilmez), `entsSQ` dışarıdaki Tuncay'a "?" çizmez. `v433halat` başlık yorumu.
-- Kayıt alanı değişmedi (`s.halat`).
-- Kontrol: chk 0 hata; Testçi'nin Kül öncesi kaydında (T6 bitmiş, mağara görevi alınmamış) Tuncay ocakta, F → "Halat yolları" → Kur çalıştı; görev bitmiş sayılınca da ocakta.
-- Geri alma: `git revert` bu commit.
 

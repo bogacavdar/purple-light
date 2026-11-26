@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.54 · 26 Kasım 2026
+
+### Proje
+- **Godot: Çayır'ın bütün canlıları geldi:** tavşan ve kurdun yanına keklik, bıldırcın, kerevit, porsuk, geyik ve yaban atı. Web'deki gibi Çayır'da dolaştıkça çevrende doğuyorlar; kurtlar yalnız gece ve ilk seviyelerde tek başına çıkıyor. Geyik ve yaban atı sürüyle geziyor; vurursan saldırıyorlar. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.53 · 26 Kasım 2026
 
 ### Proje
@@ -177,16 +184,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Sistemler › Hava, sıcaklık ve kar › Ayak izleri.
-
----
-
-## Versiyon 4.34 · 22 Kasım 2026
-
-### Oynanış
-- **Halat yolları Kayalık Dağ'a varınca açılır:** Doğan'ın "Dağ yolu" görevi bitince Dağcı Tuncay kuzenlerin ocağının yanında durur ve halat yollarını satar (fiyatlar aynı: 2.500 / 3.500 / 4.500 Vio). Rüzgâr Mağarası'nı beklemek gerekmez; Tuncay'ın mağara görevi yine mağaranın içinde verilir ve biter, sonra da Tuncay ocakta kalır.
-
-### Tasarım belgesi
-- Mağaralar › Tuncay'ın halat yolları (açılış ve Tuncay'ın yeri), ACT 1 › Kısayol köprüleri, Sistemler › Ekonomi.
 
 ---
 
