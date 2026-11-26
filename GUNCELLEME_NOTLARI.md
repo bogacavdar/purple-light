@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.55 · 26 Kasım 2026
+
+### Proje
+- **Godot: enerji, savuşturma ve Börü'nün dersleri:**
+  - Can çubuğunun altında mavi enerji çubuğu var. Koşu, vuruş, atılma ve savuşturma enerji harcar; biterse "Nefesin kesildi!" ya da "Yoruldun!" yazar.
+  - Saldırıların "!"i renkli: beyaz ve sarı savuşturulur, kırmızı savuşturulamaz.
+  - Sağ tık ya da E savuşturur; doğru anda basarsan hayvan sersemler. Basılı tutarsan gard alırsın, darbeler yumuşar.
+  - Atılmayı ve savuşturmayı Börü kerevitle ücretsiz öğretiyor (4 sıyrılma, 4 savuşturma). Bilmeden atılınca oyun bunu Börü'nün öğrettiğini söylüyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.54 · 26 Kasım 2026
 
 ### Proje
@@ -173,17 +185,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - ACT 1 › Çayır › Çayır canlılarının görünüşü; Mağaralar › Yankı Mağarası canlılarının gerçekçi resmi; Sistemler › Ağaçtaki meyveler.
-
----
-
-## Versiyon 4.35 · 22 Kasım 2026
-
-### Görsel
-- **Ayak izleri:** karakter yürürken ve koşarken her adımda bastığı yere bot izi bırakır (sol ve sağ sırayla, yürüdüğü yöne dönük). İz resmi ComfyUI'de çizildi. Çimende ve orman zemininde koyu, kumda bej, çamurda kahve; karda daha büyük ve mavimsi gri.
-- **İzin kalma süresi havaya göre:** karlı yerde 90 saniye (kar yağarken 60), çamurda 40, kumda 30, öbür yerlerde 20 saniye; yağmurda 8, fırtınada 5 saniyede silinir. İzler son anlarında yavaşça solar. Suya, kayaya, Kül Diyarı'na, mağaraya ve evin içine iz düşmez; binekteyken iz kalmaz.
-
-### Tasarım belgesi
-- Sistemler › Hava, sıcaklık ve kar › Ayak izleri.
 
 ---
 

@@ -1,3 +1,7 @@
+## v4.55 (26 Kasım 2026) · Godot 1f-3b-2: enerji, savuşturma, Börü'nün dersleri
+- `godot-deneme/` yeni derleme (godot dalı: oyuncu.gd enerji/savustur/kalkan/isirildi renk; canli.gd _zar, sersem, savusturuldu, ders; yeni ders.gd; oyun.gd enerji çubuğu, _konus_alp, yetenekler ve dl_agac kayıtta; girdi.gd savus = E/LT). Denetim adresleri: ?boru, ?boru2, ?boru3, ?boru_oto. Belge 99_godot 1f-3b-2 satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.54 (26 Kasım 2026) · Godot: Çayır'ın bütün canlıları
 - `godot-deneme/` yeni derleme (godot dalı: oyun.gd _dogur/_dogur_tur web spawnIn kuralı; data/canlilar_cayir.json web BANIM[0], ANIM, PACK; art/canli_*.png). Belge 99_godot 1g satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -82,9 +86,4 @@
 - Kod: yeni blok `v436cayir` (`v232`'den hemen sonra). Resimler ComfyUI (Z-image Turbo + piksel LoRA), /tmp/cy/build.py ile yeşil anahtarlama, küçültme, 24 renk, kareler (0 duruş, 1–4 yürüyüş, 5 hamle, yarasada 6 yatış) ve palet dizgisi (resim yüklemesi yok). 7 eski ART canlısının (`window.__plART`) gövde fonksiyonu ve kutusu değişti, eski yoldaki bütün etkiler (çerçeve, beyaz parlama, Reis tonu, parıltı, donma, yanma) kalır; Porsuk için `__plNEWN.Porsuk.art=''` (kunduz gövdesini ödünç almaz). Mağara dördü bu blokta çizilir (v232 yerine).
 - Meyveler: yeni blok `v436meyve` (`v424dunya`'dan önce) `window.__plFruitPic`; `v424dunya` içindeki `fruity` ve çekirdek `drawTree` meyve noktaları bu resimleri kullanır (resim yoksa eski noktalar).
 - Geri almak için: iki bloğu sil; `v424dunya`'daki `fruity(...,fn)` ve `drawTree`'deki `FP` satırları resim yokken eski noktaya düştüğü için dokunmasan da olur. Kayıt alanı yok.
-
-## v4.35 (22 Kasım 2026) · Ayak izleri (hava durumuna göre silinir, karda uzun kalır)
-- Belge: 20_sistemler › Hava, sıcaklık ve kar › "Ayak izleri" maddesi.
-- Kod: yeni blok `v435iz` (dosyanın sonunda, `v433halat`'tan sonra). İz resmi ComfyUI (Z-image Turbo + piksel LoRA, "iz_taban_b", ayakkabı tabanı izi) → /tmp/iz/sheet.py ile 8 yön × sol/sağ × normal/kar, 12×12 hücre, base64 PNG. `tickWeather` sarmalı adım ekler ve yaşlandırır, `drawGround` sarmalı karın üstüne çizer; `restore`/`startNew` temizler. Kayda yazılmaz, MAPV değişmez.
-- Geri almak için: `v435iz` bloğunu ve belgedeki maddeyi sil (kayıt alanı yok).
 
