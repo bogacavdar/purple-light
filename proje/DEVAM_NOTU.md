@@ -1,3 +1,7 @@
+## v4.61 (26 Kasım 2026) · Godot 2c: kuşanma, zırh, seviye puanları
+- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_kusanma.js → data/kusanma.json; yeni karakter_pen.gd; oyun.gd stat/puan/kusam/zirh_carpan/direnc/giy/cikar, kayıtta kusam, puan, puan_ders; oyuncu.gd can_max/enerji_max/enerji_dolma, silah_v web weapon(); envanter "N puan ver" ve ilk seviye kartı; toplama ve pazar özellik çarpanları; web_kayit eq ve v340.sp). Denetim: ?kusan. Belge 99_godot 2c satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.60 (26 Kasım 2026) · Godot 2b: Orman'ın kişileri ve görevleri
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_kisi.js BIYOM=1 → data/kisiler_orman.json, data/gorevler_orman.json, art/kisiler; yeni kuzen.gd; oyun.gd istasyonlar, usta_bilgi, usta_adi, iyelik, kayıtta kuzen; istasyon.gd kademe kuralı ve "dövemez" notu; gorev.gd Orman görevleri ve tanışma şartı; pazar.gd başlık; konusma.gd <b>/<i> → BBCode). Denetim: ?git_<kişi> (ör. git_k_durdu). Belge 99_godot 2b satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.42 (25 Kasım 2026) · Godot Adım 1a (dünya)
 - Belge: 99_godot.md'ye Adım 1'in parçaları tablosu (1a yapıldı). `godot-deneme/` yeni derleme (godot dalı aca52cf: bütün ada, ComfyUI zemin dokuları, su.gd dalga/akıntı/köpük, küçük harita). Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.41 (25 Kasım 2026) · Godot denemesi: toplanabilirler yüksek çözünürlükte
-- Yalnız `godot-deneme/index.pck` (godot dalı 676c0fa: disa_aktar.js toplanabilirleri 4 kat ince yakalar, oyun.gd 1/4 ölçekle gösterir). Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

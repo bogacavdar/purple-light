@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.61 · 26 Kasım 2026
+
+### Proje
+- **Godot: karakter penceresi, zırh ve seviye puanları:**
+  - C ile açılan karakter penceresinde yedi kuşanma yuvası var; giysi, silah, kolye ve yüzük giyiliyor.
+  - Zırh ve savunma hayvanların hasarını azaltıyor; zırhların zehir, yanık ve kanama dirençleri işliyor.
+  - Her seviye atlayışta seviye puanı geliyor; puanlar toplama, satış, şans, güç, hız, can, enerji ve zırh gibi özelliklere veriliyor. Verilmemiş puan varken seviyenin yanında "N puan ver" düğmesi duruyor; ilk seviyede bunu anlatan bir kart açılıyor.
+  - Elin boşken vuruşlar silah yuvasındaki silahla yapılıyor. Bütün kılıç, gürz, topuz ve mızraklar web'deki hasarlarıyla geldi.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.60 · 26 Kasım 2026
 
 ### Proje
@@ -171,13 +183,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Platformlar › Godot'ya geçiş: Adım 1'in altı parçası (dünya, toplama ve çanta, el yapımı, Kemal ve görevleri, Yankı Mağarası, oyunun başı ve kayıt).
-
----
-
-## Versiyon 4.41 · 25 Kasım 2026
-
-### Görsel
-- **Godot denemesinde toplanabilirler web'deki gibi net:** kuru ot, böğürtlen, papatya, taşlar ve öbür toplanabilirler web oyununun çizdiği ayrıntıyla görünüyor (önce oyun dünyasının küçük piksel boyutunda kaydedildikleri için leke gibi duruyorlardı).
 
 ---
 
