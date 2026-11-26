@@ -8,23 +8,37 @@ const OFS := Vector2(20000, 0)     # mağaranın içi adanın dışında: web ko
 const KARANLIK := Color(0.035, 0.035, 0.045)
 
 var oyun
-var M: Dictionary
-var G: PackedByteArray
-var N := 0
+var MAGS: Array = []             # her mağara: {M, G, N, PX, PY, acilan, gorulen, durum, denedi, boss, kapi, ic, cikis, kaya}
+var cur: Dictionary = {}         # içinde bulunulan (ya da en son bakılan) mağara
+var M: Dictionary:
+	get: return cur.M
+var G: PackedByteArray:
+	get: return cur.G
+var N: int:
+	get: return cur.N
 var T := 16
-var PX := 0.0
-var PY := 0.0
+var PX: float:
+	get: return cur.PX
+var PY: float:
+	get: return cur.PY
 var icinde := false
-var gorulen := false
-var acilan: PackedByteArray      # haritada açılan hücreler
+var gorulen: bool:
+	get: return cur.gorulen
+	set(v): cur.gorulen = v
+var acilan: PackedByteArray:      # haritada açılan hücreler
+	get: return cur.acilan
+	set(v): cur.acilan = v
 var karanlik := 0.0
 var karanlik_t := 0.0
 var ic_dugumler: Array = []
 var isiklar: Array = []
 
-var kapi: Node2D
-var ic: Sprite2D
-var cikis: Node2D
+var kapi: Node2D:
+	get: return cur.kapi
+var ic: Sprite2D:
+	get: return cur.ic
+var cikis: Node2D:
+	get: return cur.cikis
 var yukleme: ColorRect
 var yukleme_ad: Label
 var yukleme_alt: Label
@@ -34,28 +48,43 @@ var kh_tex: ImageTexture
 var son_hucre := Vector2i(-99, -99)
 var CD := {}              # mağara canlılarının verisi (canli.gd'nin beklediği biçimde)
 var dogum_t := 0.0
-var kaya: Node2D
-var kaya_durum := 0       # 0 tanışılmadı · 1 mantar getir · 2 boss · 3 dön · 4 bitti
-var kaya_denedi := false  # boss'la karşılaşıp bayıldıysa ikinci gelişte doğrudan "Çağır"
-var boss_yenildi := false
+var kaya: Node2D:
+	get: return cur.kaya
+var kaya_durum: int:       # 0 tanışılmadı · 1 malzeme getir · 2 boss · 3 dön · 4 bitti
+	get: return cur.durum
+	set(v): cur.durum = v
+var kaya_denedi: bool:     # boss'la karşılaşıp bayıldıysa ikinci gelişte doğrudan "Çağır"
+	get: return cur.denedi
+	set(v): cur.denedi = v
+var boss_yenildi: bool:
+	get: return cur.boss
+	set(v): cur.boss = v
 var yan_kart: PanelContainer
 var yan_yazi: RichTextLabel
 
 func kur(o) -> void:
 	oyun = o
-	M = o._json("res://data/magara.json")
-	G = Marshalls.base64_to_raw(M.G)
-	N = int(M.N); T = int(M.T); PX = float(M.PX); PY = float(M.PY)
-	acilan = PackedByteArray(); acilan.resize(N * N)
+	for yol in ["res://data/magara.json", "res://data/magara_c1.json", "res://data/magara_c2.json"]:
+		_mag_kur(o._json(yol))
+	cur = MAGS[0]
+	_ortak_kur()
+	_kaya_kart()
+
+func _mag_kur(MM: Dictionary) -> void:
+	var a := PackedByteArray(); a.resize(int(MM.N) * int(MM.N))
+	cur = {M = MM, G = Marshalls.base64_to_raw(MM.G), N = int(MM.N), PX = float(MM.PX), PY = float(MM.PY), acilan = a, gorulen = false, durum = 0, denedi = false, boss = false}
+	MAGS.append(cur)
+	T = int(MM.T)
 	# dışarıdaki giriş: kaya tepesi, ağızda nefes alan mavi ışık, tabela
-	kapi = Node2D.new()
-	kapi.position = Vector2(M.kapi.x, M.kapi.y)
+	var kp := Node2D.new()
+	cur.kapi = kp
+	kp.position = Vector2(M.kapi.x, M.kapi.y)
 	var sp := Sprite2D.new()
 	sp.texture = load(M.tepe.png)
 	sp.centered = false
 	sp.offset = Vector2(-float(M.tepe.ax), -float(M.tepe.ay))
-	kapi.add_child(sp)
-	kapi.draw.connect(_kapi_ciz)
+	kp.add_child(sp)
+	kp.draw.connect(_kapi_ciz.bind(kp, cur))
 	var tb := Label.new()
 	tb.text = "%s\nSv %d · meşale" % [M.ad, int(M.lv)]
 	tb.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -64,22 +93,55 @@ func kur(o) -> void:
 	tb.add_theme_constant_override("line_spacing", -2)
 	tb.position = Vector2(34 - 24, 10 - 30)
 	tb.size = Vector2(50, 14)
-	kapi.add_child(tb)
-	oyun.nesneler.add_child(kapi)
+	kp.add_child(tb)
+	oyun.nesneler.add_child(kp)
 	# içerisi: web'in çizimi
-	ic = Sprite2D.new()
-	ic.texture = load(M.ic)
-	ic.centered = false
-	ic.position = Vector2(PX, PY) + OFS
-	ic.z_index = -8
-	ic.visible = false
-	oyun.add_child(ic)
-	cikis = Node2D.new()
-	cikis.position = Vector2(M.baslangic.x, M.baslangic.y) + OFS
-	cikis.z_index = -7
-	cikis.draw.connect(_cikis_ciz)
-	cikis.visible = false
-	oyun.add_child(cikis)
+	var icn := Sprite2D.new()
+	cur.ic = icn
+	icn.texture = load(M.ic)
+	icn.centered = false
+	icn.position = Vector2(PX, PY) + OFS
+	icn.z_index = -8
+	icn.visible = false
+	oyun.add_child(icn)
+	var ck := Node2D.new()
+	cur.cikis = ck
+	ck.position = Vector2(M.baslangic.x, M.baslangic.y) + OFS
+	ck.z_index = -7
+	ck.draw.connect(_cikis_ciz.bind(ck))
+	ck.visible = false
+	oyun.add_child(ck)
+	# canlılar
+	for k in M.canlilar:
+		var A: Dictionary = M.canlilar[k].duplicate(true)
+		if A.has("kind"):
+			A.file = A.png
+			A.ox = int(A.fw) / 2
+			A.shadow = 24.0 if A.kind == "w" and float(A.fh) > 40.0 else (12.0 if A.kind == "w" else (float(A.r) + 2.0) * 2.0)
+			if A.kind == "w": A.top = float(A.fh) + 8.0
+			else: A.top = float(A.fh) * 0.72
+			A.cs = null
+		CD[k] = A
+	# mağaranın ağzında Sarkıt ve Yarasa gübresi (yalnız Yankı Mağarası; adada başka yerde yoktur)
+	for ag in M.get("agiz", []):
+		var R: Dictionary = M.agizResim[ag.n]
+		if not R.has("png"): continue
+		oyun.toplama_veri.nodes[ag.n] = {respawn = float(R.respawn), time = float(R.time), mine = false, ad = ag.n, tier = 1, hurt = null, bush = false}
+		var d := preload("res://scripts/dugum.gd").new()
+		d.ad = ag.n
+		d.texture = load(R.png)
+		d.centered = false
+		d.offset = Vector2(-float(R.ox), -float(R.oy))
+		d.scale = Vector2.ONE / float(R.k)
+		d.position = Vector2(ag.x, ag.y)
+		oyun.nesneler.add_child(d)
+		oyun.dugumler.append(d)
+	_kaya_kur()
+	# mağarada toplananlar toplama tablosuna (web RES: bir kez çıkar, içerideyken yeniden çıkmaz)
+	for n in M.toplanir:
+		oyun.toplama_veri.nodes[n] = {respawn = 1e9, time = float(M.toplanir[n].time), mine = false, ad = n, tier = 1, hurt = null, bush = false}
+
+func _ortak_kur() -> void:
 	# yükleme ekranı
 	yukleme = ColorRect.new(); yukleme.color = Color("#050405"); yukleme.visible = false
 	yukleme.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -93,34 +155,6 @@ func kur(o) -> void:
 	oyun.hud.add_child(yukleme)
 	yukleme.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	v.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	# canlılar
-	for k in M.canlilar:
-		var A: Dictionary = M.canlilar[k].duplicate(true)
-		A.file = A.png
-		A.ox = int(A.fw) / 2
-		A.shadow = 24.0 if A.kind == "w" and float(A.fh) > 40.0 else (12.0 if A.kind == "w" else (float(A.r) + 2.0) * 2.0)
-		if A.kind == "w": A.top = float(A.fh) + 8.0
-		else: A.top = float(A.fh) * 0.72
-		A.cs = null
-		CD[k] = A
-	# mağaranın ağzında Sarkıt ve Yarasa gübresi (adada başka yerde yoktur)
-	for a in M.agiz:
-		var R: Dictionary = M.agizResim[a.n]
-		if not R.has("png"): continue
-		oyun.toplama_veri.nodes[a.n] = {respawn = float(R.respawn), time = float(R.time), mine = false, ad = a.n, tier = 1, hurt = null, bush = false}
-		var d := preload("res://scripts/dugum.gd").new()
-		d.ad = a.n
-		d.texture = load(R.png)
-		d.centered = false
-		d.offset = Vector2(-float(R.ox), -float(R.oy))
-		d.scale = Vector2.ONE / float(R.k)
-		d.position = Vector2(a.x, a.y)
-		oyun.nesneler.add_child(d)
-		oyun.dugumler.append(d)
-	_kaya_kur()
-	# mağarada toplananlar toplama tablosuna (web RES: bir kez çıkar, içerideyken yeniden çıkmaz)
-	for n in M.toplanir:
-		oyun.toplama_veri.nodes[n] = {respawn = 1e9, time = float(M.toplanir[n].time), mine = false, ad = n, tier = 1, hurt = null, bush = false}
 
 # ------------------------------------------------------------------ ızgara
 func hucre(p: Vector2) -> Vector2i:
@@ -139,16 +173,21 @@ func engel(p: Vector2, half: float) -> bool:
 
 ## dışarıda kaya tepesi geçilmez (web: kapının çevresinde elips)
 func kapi_engel(p: Vector2) -> bool:
-	var dx := (p.x - float(M.kapi.x)) / 54.0
-	var dy := (p.y - (float(M.kapi.y) - 34.0)) / 40.0
-	return dx * dx + dy * dy < 1.0
+	for C in MAGS:
+		var dx := (p.x - float(C.M.kapi.x)) / 54.0
+		var dy := (p.y - (float(C.M.kapi.y) - 34.0)) / 40.0
+		if dx * dx + dy * dy < 1.0: return true
+	return false
 
 # ------------------------------------------------------------------ F: giriş ve çıkış
 func etkiles() -> bool:
 	var p: Vector2 = oyun.oyuncu.position
-	if not icinde and p.distance_to(Vector2(M.kapi.x, float(M.kapi.y) + 14.0)) < 40.0:
-		_sor_gir()
-		return true
+	if not icinde:
+		for C in MAGS:
+			if p.distance_to(Vector2(C.M.kapi.x, float(C.M.kapi.y) + 14.0)) < 40.0:
+				cur = C
+				_sor_gir()
+				return true
 	if kaya_yakin():
 		kaya_konus()
 		return true
@@ -233,7 +272,7 @@ func _cik(sessiz: bool = false, yerinde: bool = false) -> void:
 	oyun.kamera.reset_smoothing()
 	_harita_kapa()
 	if not sessiz:
-		oyun.env.mesaj("%s'ndan çıktın." % M.ad)
+		oyun.env.mesaj("%s'%sdan çıktın." % [M.ad, "n" if str(M.ad).ends_with("ı") else ""])
 
 func _isik(p: Vector2, r: float, c: Color, e: float) -> PointLight2D:
 	var l := PointLight2D.new()
@@ -272,7 +311,7 @@ func _toplanirlar() -> void:
 			s.ad = n
 			s.texture = _dugum_resmi(n)
 			s.centered = false
-			s.offset = Vector2(-8, -16)
+			s.offset = Vector2(-float(M.toplanir[n].get("ox", 8)), -float(M.toplanir[n].get("oy", 16)))
 			s.position = p
 			oyun.nesneler.add_child(s)
 			oyun.dugumler.append(s)
@@ -291,6 +330,9 @@ func _toplanirlar() -> void:
 var _resimler := {}
 func _dugum_resmi(n: String) -> Texture2D:
 	if _resimler.has(n): return _resimler[n]
+	if M.toplanir[n].has("png"):
+		_resimler[n] = load(M.toplanir[n].png)
+		return _resimler[n]
 	var im := Image.create(16, 18, false, Image.FORMAT_RGBA8)
 	var px := func(x: int, y: int, w: int, h: int, c: Color):
 		for j in h:
@@ -298,7 +340,9 @@ func _dugum_resmi(n: String) -> Texture2D:
 				var X := 8 + x + i
 				var Y := 16 + y + j
 				if X >= 0 and Y >= 0 and X < 16 and Y < 18: im.set_pixel(X, Y, c)
-	if n == "Yankı mantarı":
+	if n == "Kök reçinesi":
+		px.call(-4, 1, 8, 2, Color(0, 0, 0, 0.25)); px.call(-3, -4, 6, 5, Color("#c87a1a")); px.call(-2, -6, 4, 2, Color("#e8a030")); px.call(-1, -5, 1, 1, Color("#fff0b0"))
+	elif n == "Yankı mantarı":
 		var cap := Color("#7fd0ff"); var st := Color("#c8e8f8")
 		px.call(-4, 1, 9, 2, Color(0, 0, 0, 0.25)); px.call(-1, -4, 2, 5, st); px.call(-4, -7, 8, 3, cap); px.call(-3, -8, 6, 1, cap)
 		px.call(3, -3, 1, 3, st); px.call(2, -5, 4, 2, cap); px.call(-3, -7, 2, 1, Color.WHITE)
@@ -310,20 +354,25 @@ func _dugum_resmi(n: String) -> Texture2D:
 
 # ------------------------------------------------------------------ her an: karanlıkta kalınca dışarı, bayılınca dışarı, harita açılır
 func _process(dt: float) -> void:
-	kapi.queue_redraw()
+	for C in MAGS: C.kapi.queue_redraw()
+	if not icinde:
+		for C in MAGS:
+			if int(C.durum) >= 1 and int(C.durum) <= 3:
+				cur = C
+				break
 	_yan_kart()
 	if not icinde: return
 	kaya.queue_redraw()
 	dogum_t -= dt
 	if dogum_t <= 0.0:
-		dogum_t = 1.5
+		dogum_t = 3.0 if M.id == "c2" else 1.5
 		_dogur()
 	cikis.queue_redraw()
 	if oyun.oyuncu.bayildi:
 		if kaya_durum == 2:
 			kaya_denedi = true
 			kaya_durum = 1
-			oyun.env.mesaj("Yan görev bitti sayılmadı: Kaya yine bekliyor.", true)
+			oyun.env.mesaj("Yan görev bitti sayılmadı: %s yine bekliyor." % M.kaya.yan.name, true)
 		_cik(true, true)
 		return
 	if oyun.mesale.elde() != null:
@@ -342,7 +391,8 @@ func _process(dt: float) -> void:
 	_harita_isle()
 
 # ------------------------------------------------------------------ çizimler
-func _kapi_ciz() -> void:
+func _kapi_ciz(kapi: Node2D, C: Dictionary) -> void:
+	var M: Dictionary = C.M
 	var t := Time.get_ticks_msec() / 1000.0
 	var pl := 0.5 + 0.5 * sin(t * 1.3)
 	var g := Color(M.renk.glow); g.a = 0.05 + 0.05 * pl
@@ -359,7 +409,7 @@ func _kapi_ciz() -> void:
 	var a := 0.35 + 0.25 * sin(t * 4.0)
 	kapi.draw_arc(Vector2(0, 8), 14.0 + 3.0 * sin(t * 4.0), 0, TAU, 28, Color(1, 0.85, 0.25, a), 1.5)
 
-func _cikis_ciz() -> void:
+func _cikis_ciz(cikis: Node2D) -> void:
 	var t := Time.get_ticks_msec() / 1000.0
 	var a := 0.4 + 0.3 * sin(t * 4.0)
 	cikis.draw_arc(Vector2(0, 4), 16.0 + 3.0 * sin(t * 4.0), 0, TAU, 28, Color(1, 0.85, 0.25, a), 2.0)
@@ -462,16 +512,19 @@ func _canli(k: String, p: Vector2):
 # ------------------------------------------------------------------ Madenci Kaya (en dipteki oda) ve Yankı Kraliçesi
 func _kaya_kur() -> void:
 	var K: Dictionary = M.kaya
-	kaya = Node2D.new()
-	kaya.position = Vector2(float(M.dip.x) - 10.0, float(M.dip.y) - 12.0) + OFS
+	var ky := Node2D.new()
+	cur.kaya = ky
+	ky.position = Vector2(float(M.dip.x) - 10.0, float(M.dip.y) - 12.0) + OFS
 	var sp := Sprite2D.new()
 	sp.texture = load(K.png)
 	sp.centered = false
 	sp.offset = Vector2(-float(K.ox), -float(K.oy))
-	kaya.add_child(sp)
-	kaya.draw.connect(_kaya_ciz)
-	oyun.nesneler.add_child(kaya)
-	kaya.visible = false
+	ky.add_child(sp)
+	ky.draw.connect(_kaya_ciz.bind(cur))
+	oyun.nesneler.add_child(ky)
+	ky.visible = false
+
+func _kaya_kart() -> void:
 	yan_kart = PanelContainer.new()
 	var st := StyleBoxFlat.new(); st.bg_color = Color(0.04, 0.06, 0.09, 0.82); st.border_color = Color("#7fc8ff"); st.set_border_width_all(1)
 	st.set_content_margin_all(8)
@@ -484,9 +537,10 @@ func _kaya_kur() -> void:
 	yan_kart.offset_left = -310.0; yan_kart.offset_right = -10.0
 	yan_kart.visible = false
 
-func _kaya_ciz() -> void:
+func _kaya_ciz(C: Dictionary) -> void:
+	var kaya: Node2D = C.kaya
 	# fenerin ışığı ve başında mavi "?" (görev alınabilirken)
-	if kaya_durum == 0 or (kaya_durum == 1 and kaya_denedi) or kaya_durum == 3:
+	if C.durum == 0 or (C.durum == 1 and C.denedi) or C.durum == 3:
 		var y := -44.0 + roundf(sin(Time.get_ticks_msec() / 250.0) * 2.0)
 		kaya.draw_circle(Vector2(0, y + 4), 7.0, Color("#9fd8ff"))
 		kaya.draw_string(ThemeDB.fallback_font, Vector2(-3, y + 8), "?", HORIZONTAL_ALIGNMENT_LEFT, -1, 11, Color("#14324a"))
@@ -501,9 +555,11 @@ func _yan_kart() -> void:
 	var Y: Dictionary = M.kaya.yan
 	var sat := ""
 	match kaya_durum:
-		1: sat = "Yankı Kraliçesi'ni çağır (Kaya ile konuş)" if kaya_denedi else "%d/4 Yankı mantarı · Kaya'ya götür" % mini(4, oyun.env.adet("Yankı mantarı"))
-		2: sat = "Yankı Kraliçesi'ni yen"
-		3: sat = "Kaya ile konuş"
+		1:
+			var it: Array = Y.steps[0].items[0]
+			sat = ("%s'i çağır (%s ile konuş)" % [M.boss, Y.name]) if kaya_denedi else "%d/%d %s · %s" % [mini(int(it[1]), oyun.env.adet(str(it[0]))), int(it[1]), it[0], Y.steps[0].tx]
+		2: sat = str(Y.steps[1].tx)
+		3: sat = str(Y.steps[2].tx)
 	yan_yazi.text = "[color=#7fc8ff][font_size=11]%s · Yan görev[/font_size][/color]\n[b]%s[/b]\n%s" % [Y.name, Y.title, sat]
 
 func kaya_yakin() -> bool:
@@ -520,13 +576,13 @@ func kaya_konus() -> void:
 		1:
 			if kaya_denedi:
 				oyun.konusma.ac(Y.name, por, Y.again, [{t = Y.againBtn, pri = true, f = func(): _boss_cagir()}, {t = "Sonra", kapat = true}])
-			elif oyun.env.adet("Yankı mantarı") >= 4:
-				oyun.env.eksilt("Yankı mantarı", 4)
+			elif oyun.env.adet(str(Y.steps[0].items[0][0])) >= int(Y.steps[0].items[0][1]):
+				oyun.env.eksilt(str(Y.steps[0].items[0][0]), int(Y.steps[0].items[0][1]))
 				_satirlar(Y.steps[0].on, 0, func(): _boss_cagir())
 			else:
 				oyun.konusma.ac(Y.name, por, Y.remind)
 		2:
-			oyun.konusma.ac(Y.name, por, "Kraliçe burada evlat! Önce onu yen.")
+			oyun.konusma.ac(Y.name, por, "%s burada evlat! Önce onu yen." % M.boss)
 		3:
 			_satirlar(Y.steps[2].on, 0, func():
 				kaya_durum = 4
@@ -558,7 +614,7 @@ func _boss_cagir() -> void:
 	c.cvb = true
 	c.mad = true
 	c.st = "chase"
-	c.scale = Vector2(2.4, 2.4)
+	if M.id == "c0": c.scale = Vector2(2.4, 2.4)
 	for i in 26:
 		oyun.parca(p + Vector2(0, -10), Vector2(randf_range(-45, 45), -20 - randf() * 60), 0.8, Color("#b44aff") if i % 2 else Color.WHITE)
 	oyun.env.mesaj("%s · Mağaranın boss'u!" % k, true)
@@ -569,4 +625,30 @@ func boss_oldu() -> void:
 		kaya_durum = 3
 	# boss ödülü: kendi XP'si (canlı verir) ve görev ödülü kadar Vio (belge: Mağaralar kural 10)
 	oyun.env.vio_ekle(int(M.kaya.yan.c))
-	oyun.env.mesaj("Yankı Kraliçesi yenildi! +%d Vio · Kaya'ya dön" % int(M.kaya.yan.c))
+	oyun.env.mesaj("%s yenildi! +%d Vio · %s ile konuş" % [M.boss, int(M.kaya.yan.c), M.kaya.yan.name])
+
+# ------------------------------------------------------------------ kayıt: Yankı Mağarası eski biçimde ("magara"), öbürleri "magaralar"
+func _durum(C: Dictionary) -> Dictionary:
+	return {gorulen = C.gorulen, acilan = Marshalls.raw_to_base64(C.acilan), kaya = 1 if int(C.durum) == 2 else int(C.durum), denedi = bool(C.denedi) or int(C.durum) == 2, boss = C.boss}
+
+func kayit() -> Dictionary:
+	return _durum(MAGS[0])
+
+func kayit2() -> Dictionary:
+	var o := {}
+	for i in range(1, MAGS.size()): o[MAGS[i].M.id] = _durum(MAGS[i])
+	return o
+
+func _yukle1(C: Dictionary, mg: Dictionary) -> void:
+	C.gorulen = bool(mg.get("gorulen", false))
+	if mg.has("acilan"):
+		var a := Marshalls.base64_to_raw(mg.acilan)
+		if a.size() == C.acilan.size(): C.acilan = a
+	C.durum = int(mg.get("kaya", 0))
+	C.denedi = bool(mg.get("denedi", false))
+	C.boss = bool(mg.get("boss", false))
+
+func yukle(mg: Dictionary, diger: Dictionary) -> void:
+	_yukle1(MAGS[0], mg)
+	for i in range(1, MAGS.size()):
+		_yukle1(MAGS[i], diger.get(MAGS[i].M.id, {}))

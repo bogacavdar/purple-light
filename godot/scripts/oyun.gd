@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 3d"
+const SURUM := "Godot · Adım 3e"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -315,6 +315,14 @@ func _ready() -> void:
 			mesale.degistir()
 			magara._gir()
 			oyuncu.position = magara.kaya.position + Vector2(18, 10)
+		if q.contains("mag_c1") or q.contains("mag_c2"):
+			env.ekle("Kaba meşale", 3)
+			env.ekle("Parıltı yosunu", 4); env.ekle("Kök reçinesi", 3)
+			while env.sv < 20: env.xp_ekle(800)
+			mesale.degistir()
+			magara.cur = magara.MAGS[1 if q.contains("mag_c1") else 2]
+			magara._gir()
+			if q.contains("dip"): oyuncu.position = magara.kaya.position + Vector2(18, 10)
 		if q.contains("magdogum"):
 			env.ekle("Kaba meşale", 2)
 			mesale.degistir()
@@ -1394,7 +1402,7 @@ func durum_al() -> Dictionary:
 		tarifler = el_yapimi.bilinen.keys(), verilen = el_yapimi.verilen.keys(), ogretici = ogr.kayit(),
 		gorev = {aktif = ak, b = G.b, bitenler = G.bitenler, kills = G.kills, biyomlar = G.biyomlar.keys(), dovulen = G.dovulen.keys(), dersler = G.gorulen_dersler},
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
-		magara = {gorulen = magara.gorulen, acilan = Marshalls.raw_to_base64(magara.acilan), kaya = 1 if magara.kaya_durum == 2 else magara.kaya_durum, denedi = magara.kaya_denedi or magara.kaya_durum == 2, boss = magara.boss_yenildi},
+		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
 		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), izler = iz.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
@@ -1453,13 +1461,7 @@ func durum_yukle(d: Dictionary) -> void:
 	mesale.yaniyor = bool(ms.get("yaniyor", false))
 	mesale.yanma = ms.get("yanma", {})
 	var mg: Dictionary = d.get("magara", {})
-	magara.gorulen = bool(mg.get("gorulen", false))
-	if mg.has("acilan"):
-		var a := Marshalls.base64_to_raw(mg.acilan)
-		if a.size() == magara.acilan.size(): magara.acilan = a
-	magara.kaya_durum = int(mg.get("kaya", 0))
-	magara.kaya_denedi = bool(mg.get("denedi", false))
-	magara.boss_yenildi = bool(mg.get("boss", false))
+	magara.yukle(mg, d.get("magaralar", {}))
 	var z: Dictionary = d.get("zaman_oyun", {})
 	zaman.dk = float(z.get("dk", 360.0)); zaman.gun = int(z.get("gun", 1))
 	zaman.mesale_verildi = bool(z.get("mesale_verildi", false))

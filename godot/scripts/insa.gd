@@ -187,8 +187,8 @@ func neden(c: Vector2i, n: String) -> String:
 		if k.position.distance_to(P) < 6.0 * T: return "Birinin yerine çok yakın"
 	for f in Z.ates:
 		if Vector2(f.x, f.y).distance_to(P) < 6.0 * T: return "Birinin yerine çok yakın"
-	var M = oyun.magara.M
-	if Vector2(M.kapi.x, M.kapi.y).distance_to(P) < 8.0 * T: return "Bir görev yerine çok yakın"
+	for C in oyun.magara.MAGS:
+		if Vector2(C.M.kapi.x, C.M.kapi.y).distance_to(P) < 8.0 * T: return "Bir görev yerine çok yakın"
 	var I: Dictionary = oyun.toplama_veri.istasyon
 	for a in [I.kazan, I.ors, I.ors2]:
 		if Vector2(a.x, a.y).distance_to(P) < 8.0 * T: return "Bir görev yerine çok yakın"
