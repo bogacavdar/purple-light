@@ -8,6 +8,20 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.84 · 26 Kasım 2026
+
+### Düzeltmeler
+- **Poyraz'ın teknesi artık Bereket Adası'na oturmuyor:** tekne, Kemal'in kampına en uzak kumsalı ararken Ekin'in adasını da sayıyordu; Poyraz oraya, Barbaros'un kayığı olmadan gidilemeyen yere düşüyordu. Artık ana adanın Çayır ya da Orman kıyısına oturuyor. Eski kayıtlarda Poyraz ve teknesi oyunu açınca kendiliğinden yeni yerine geçer.
+
+### Proje
+- **Godot: Gemici Poyraz ve deniz:**
+  - İlk oltadan sonraki sabah Poyraz'ın teknesi uzak bir kumsala oturur. Dört görevle tekneyi onarırsın.
+  - Onarınca Poyraz seni denize götürür: deniz haritasında altı balık bölgesi var; her biri bir seviye ve olta ister.
+  - Denizde balık tutma ekranı, Poyraz'ın altı deniz balığı görevi ve nehirlerde tatlısu kefali de geldi.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.83 · 26 Kasım 2026
 
 ### Proje
@@ -216,18 +230,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Yanına gidip F'ye basınca onarılıyor (tahta 1 Dal, taş 1 Taş). İnşa kipinde sağ tık yıkıntıyı kaldırıp 1 malzeme daha veriyor.
   - Duvarın öbür yanındaki hayvan seni ısıramıyor.
   - Çit, taş duvar ya da kapıyla tamamen çevirdiğin alan avlu oluyor: içinde hayvan doğmuyor, içeride kalan hayvan gidiyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.64 · 26 Kasım 2026
-
-### Proje
-- **Godot: inşa kipi (N):**
-  - Yol, ahşap parke, dal çit, çit, taş duvar, tahta kapı ve direk feneri karo karo konuyor. Sol tıkla sürükleyince boyanıyor, sağ tık kaldırıp çantaya geri koyuyor.
-  - Çit ve duvarlar komşularıyla birleşiyor; konmayan yerde sebebi yazıyor.
-  - Çit ve duvar seni ve hayvanları durduruyor. Kapıdan sen geçiyorsun, hayvanlar geçemiyor. Dal çit hayvanları yavaşlatıyor, yolda %15 daha hızlı yürüyorsun.
-  - Direk feneri gece yanıyor ve ışığında mor ışık gelmiyor; F ile yakıt konuyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---

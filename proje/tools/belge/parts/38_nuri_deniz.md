@@ -13,7 +13,7 @@
 
 - **Ne zaman:** **Olta**'yı ilk kez yaptıktan (ya da elinde Olta varken) sonraki **ilk sabah 06:00**'da. Saat 06:00'dan önce yaptıysan aynı sabah, sonra yaptıysan ertesi sabah. Eski kayıtta Olta zaten varsa ilk sabah.
 - **Ne olur:** uzaktan büyük bir çatırtı ve gümbürtü sesi gelir ("GÜMMM!"). Uyuyorsan bu ses seni uyandırır. Ekranın ortasında duyuru çıkar: **"Uzak bir kıyıdan gürültü geldi"** · "Bir tekne karaya oturmuş olmalı". Kısa bildirim: "Haritada parlayan ! ile işaretlendi."
-- **Yer:** Kemal'in kampından **uzak**, başka bir kıyı. Çayır ya da Orman'ın deniz kıyısında, Kemal'in kampına en uzak kumsal (kişilerden, ateşlerden, mağara girişlerinden uzak). Teknenin burnu kumsala oturmuş, kıçı suda.
+- **Yer:** Kemal'in kampından **uzak**, başka bir kıyı. Çayır ya da Orman'ın deniz kıyısında, Kemal'in kampına en uzak kumsal (kişilerden, ateşlerden, mağara girişlerinden uzak). Bereket Adası'nın kumsalı sayılmaz (ada Çayır sayılsa da ana adanın kıyısı değildir). Teknenin burnu kumsala oturmuş, kıçı suda.
 - **Haritada:** Poyraz'la konuşana kadar o yerde **parlayan bir "!"** görünür (keşfedilmemiş yerde bile), dünyada da Poyraz'ın üstünde "!" yazar ve parlar. Konuşunca haritada Poyraz'ın simgesi belirir (adı: **Gemici Poyraz**); "!" ve parlama görev alınınca kalkar.
 
 ### Gemici Poyraz
