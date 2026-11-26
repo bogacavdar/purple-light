@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.94 · 27 Kasım 2026
+
+### Proje
+- **Godot: Ejder Volkanı ve Ejder Avcısı Tomris:**
+  - Tomris, Ejder Volkanı'nda bir ejder kafatası yığınının yanında. Onunla tanışınca Efsun'un Yıldırım asası işi de açılıyor.
+  - Tomris'in dört işi var; sonuncusu volkanın tepesindeki Kızıl ejder.
+  - Işın kılıcını Tomris yapıyor. Kılıç hızlı vuruyor, uzağa uzanıyor; her savuruşta mavi plazma kıvılcımı çıkıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.93 · 27 Kasım 2026
 
 ### Proje
@@ -217,17 +228,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Kayalık Dağ'ın canlıları geldi: dağ keçisi, muflon, yaban öküzü, ur kekliği, kartal, vaşak ve mağara ayısı.
   - Cadı Firuze, Silahçı Kaya, Zırhçı Kayhan ve Pazarcı Kardelen web'deki yerlerinde; 27 görev veriyorlar.
   - Rüzgâr Mağarası (Seviye 24): kaya yarasaları, tavan örümcekleri, mağara vaşakları. Dipteki Dağcı Tuncay gümüş filizi istiyor ve Dağ Devi'ni çağırıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.74 · 26 Kasım 2026
-
-### Proje
-- **Godot: Görevler penceresi:**
-  - G tuşu Görevler penceresini açıyor. Üstte ana görevin, altta aldığın yan görevler ve adımları görünüyor.
-  - Her yan görevi oradan takip edebiliyor ya da bırakabiliyorsun; bırakmak için iki kez basıyorsun. En altta bitirdiğin yan görevler yazıyor.
-  - Deneme aletleri artık G'de değil, F9'da.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---

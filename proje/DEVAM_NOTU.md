@@ -1,3 +1,7 @@
+## v4.94 (27 Kasım 2026) · Godot A6: Ejder Avcısı Tomris ve Işın kılıcı
+- `godot-deneme/` yeni derleme (godot dalı: act2.gd Tomris (kafatası yığını, konuşma, Işın kılıcı yapımı, ej ödülleri), oyuncu.gd silah_v Işın kılıcı (menzil 32, ara 0,3) ve plazma kıvılcımları, kuzen.gd "ej" rolü, gorev.gd ACT 2 kartı ve oku Tomris'e). Denetim: ?ada2test_tomris. Belge 99_godot A6 satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).
+
 ## v4.93 (27 Kasım 2026) · Godot A5: Mühendis Işın ve Meka zırh
 - `godot-deneme/` yeni derleme (godot dalı: act2.gd Işın (golem süsü, konuşma, Meka zırh yapımı, mk ödülleri), oyun.gd stat("move") Meka zırhla ×1,12, oyuncu.gd can_max Meka zırhla ×1,25, kuzen.gd "mk" rolü, gorev.gd ACT 2 kartı ve oku Işın'a). Denetim: ?ada2test_isin. Belge 99_godot A5 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).
@@ -73,9 +77,5 @@
 
 ## v4.75 (26 Kasım 2026) · Godot 4a: Kayalık Dağ canlıları, kişileri, Rüzgâr Mağarası
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_canli.js P2 ART'ı olmayan canlıları drawAnimal'dan alır, BIYOM=3 → data/canlilar_kayalik.json; disa_aktar_kisi.js BIYOM=3 → data/kisiler_kayalik.json, data/gorevler_kayalik.json; disa_aktar_magara2.js MAG=c3 → data/magara_c3.json; oyun.gd, gorev.gd, magara.gd listeleri). Denetim: ?git_k_firuze, ?mag_c3 yok (c1/c2 kancası). Belge 99_godot Adım 4 ve 4a satırları. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.74 (26 Kasım 2026) · Godot: Görevler penceresi
-- `godot-deneme/` yeni derleme (godot dalı: yan.gd Görevler penceresi G; girdi.gd deneme aletleri F9; oyun.gd yardım satırı, pencere_acik'e yan). Belge 99_godot 3f satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 
