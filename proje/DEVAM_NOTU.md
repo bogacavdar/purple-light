@@ -1,3 +1,7 @@
+## v4.90 (27 Kasım 2026) · Godot A2: Yüzen Kayalar ve Gökbilimci Yıldız
+- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_canli.js ADA=2 → data/ada2/canlilar_0…5.json + art/canli_*.png (web __I2C.anim + NEWN); yeni tools/disa_aktar_act2.js → data/ada2/ustalar.json (altı ACT 2 ustasının yeri, çizimi, konuşma resmi, NQ görevleri Godot biçiminde) + art/kisiler/kisi_{gok,pervin,tamer,selin,alara,tuna}_*.png; yeni act2.gd (Yıldız, teleskop, konuşma); oyun.gd ikinci adada canlı listesi ve Yıldız + kazan (Yıldız +42,+8); gorev.gd "gun" adımı, "met" koşulu, `nq` işaretli işler (malzeme/tarif şartı yok, ayak işine girmez), tanışılmamış Yıldız'a ok; kuzen.gd "gk" rolü; istasyon.gd "Yıldız'ın kazanı"). Denetim: ?ada2test_yildiz. Belge 99_godot A2 satırı, yeni "Anılar" satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok; tanis["gok"] ve bitenler'deki gk1–gk3 zararsız kalır).
+
 ## v4.89 (27 Kasım 2026) · Godot A1: ikinci ada ve portallar
 - `godot-deneme/` yeni derleme (godot dalı: oyun.gd `ada` (Kayit.bekleyen.ada), data/ada2 yükleme, ada başına durum (kayıtta üst düzey = Yıldızsız Ada, `ada2` = ikinci ada; ADA_YEREL), seyahat(), _varis(); yeni portal.gd; ciftlik/poyraz/isikci/yan/iz/kopru/gecit/magara/evcil ikinci adada kapalı (durumları ham olarak korunur); kuzen.gd ikinci adada Barbaros ve gemi, yolculuk sonunda geçiş; gorev.gd ACT 2 kartı; yeni tools/disa_aktar_ada2.js → data/ada2/{harita,dunya,toplama_ek,yerler}.json, art/ada2, 8 yeni eşya resmi). Denetim: ?ada2test, ?ada2test_don. Belge 99_godot A1 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (eski kayıtlarda `ada`/`ada2` alanı yoksa birinci ada açılır).
@@ -73,9 +77,5 @@
 
 ## v4.71 (26 Kasım 2026) · Godot 3d: Eşinden kalan izler
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_iz.js → data/izler.json; yeni iz.gd; oyun.gd F'de iz, kayıtta izler; gorev.gd clues; el_yapimi.gd kitapta İzler düğmesi). Denetim: ?iztest. Belge 99_godot 3d satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.70 (26 Kasım 2026) · Godot 3c: Avcı Doğan
-- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_kisi.js toygar ve kulübesi; kuzen.gd rol t, Doğan'ın konuşmaları ve tarifleri; gorev.gd wear; oyun.gd kulübe çizimi). Denetim: ?git_toygar. Belge 99_godot 3c satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

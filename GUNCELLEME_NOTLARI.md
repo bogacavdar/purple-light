@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.90 · 27 Kasım 2026
+
+### Proje
+- **Godot: Yüzen Kayalar ve Gökbilimci Yıldız:**
+  - İkinci adanın altı bölgesinde canlılar dolaşıyor; web'deki çizimleri ve güçleri aynı.
+  - Gökbilimci Yıldız, Yüzen Kayalar'ın yüksek kayasında teleskobunun başında. Tanışana dek ok onu gösteriyor.
+  - Yıldız'ın üç işi var: teleskobun ayağı, bir gece gözlem ve portal çekirdeği. Son iş bitince bütün portallar açılıyor.
+  - ACT 2'nin tarifleri Yıldız'ın yanındaki kazanda öğreniliyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.89 · 27 Kasım 2026
 
 ### Proje
@@ -217,17 +229,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: eşinden kalan izler:**
   - Adada altı mor parıltı var: ikisi yurtta, ikisi Bataklık'ta, ikisi Kül Diyarı'nda. Yanına gidip F'ye basınca izi okuyorsun.
   - Tarif kitabındaki (K) "İzler" düğmesi bulduğun izleri gösteriyor. Kemal'in "Eşinden kalan izler" görevi bunları sayıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.70 · 26 Kasım 2026
-
-### Proje
-- **Godot: Avcı Doğan:**
-  - Köprünün doğusunda, kamış kulübesinin yanında. Tanışınca kamış çizme ve panzehir tariflerini öğretiyor, o fırtınalı geceyi anlatıyor.
-  - Görevleri: kamış çizme giy, Bataklık'ın hayvanlarını avla, Kayalık Dağ'a git.
-  - "Şunu giy" görevleri artık tamamlanıyor (Durmuş'un tunç miğfer görevi de).
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
