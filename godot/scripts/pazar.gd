@@ -56,8 +56,20 @@ func _input(e: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 # ------------------------------------------------------------------ fiyat ve kurallar
-func fiyat(n: String) -> float:
+func taban(n: String) -> float:
 	return float(P.esya[n].f) if P.esya.has(n) else 0.0
+
+## web sellMult: Usta tüccar I/II (+%50/+%60), "hepsini sat"ta Toptancı +%5; hepsi birlikte en çok 2,3 kat
+func fiyat(n: String, toplu := false) -> float:
+	var m := 1.0 + (0.6 if oyun.sk("E2") else (0.5 if oyun.sk("E1") else 0.0)) + (0.05 if toplu and oyun.sk("T4") else 0.0)
+	return taban(n) * minf(2.3, m)
+
+## Şanslı müşteri: her satışta %5 (II'de %12) ihtimalle çift ödeme
+func _sans(tutar: int) -> int:
+	if oyun.sk("T3") and randf() < 0.05 + (0.07 if oyun.sk("T8") else 0.0):
+		env.mesaj("Şanslı müşteri: çift ödedi!")
+		return tutar * 2
+	return tutar
 
 func satilir(n: String) -> bool:
 	return P.esya.has(n) and int(P.esya[n].s) == 1 and fiyat(n) > 0.0
@@ -88,7 +100,7 @@ func sat(n: String, q: int, sor := true) -> void:
 					sorma[n] = true
 					sat(n, q, false)}, {t = "Vazgeç", pri = true, kapat = true}])
 			return
-	var tutar := int(round(fiyat(n) * q))
+	var tutar := _sans(int(round(fiyat(n, q == env.adet(n) and q > 1) * q)))
 	env.eksilt(n, q)
 	env.vio_ekle(tutar)
 	env.mesaj("%d %s satıldı · +%d Vio" % [q, n, tutar])
@@ -129,8 +141,9 @@ func toplu_sat(tur: int) -> void:
 		return
 	var tutar := 0
 	for n in L:
-		tutar += int(round(fiyat(n) * L[n]))
+		tutar += int(round(fiyat(n, true) * L[n]))
 		env.eksilt(n, L[n])
+	tutar = _sans(tutar)
 	env.vio_ekle(tutar)
 	env.mesaj("%d çeşit%s satıldı · +%d Vio" % [L.size(), "in fazlası" if tur > 0 else "", tutar])
 	ciz()
@@ -180,7 +193,7 @@ func ciz() -> void:
 		for i in 3:
 			var L := toplu_liste(i)
 			var tt := 0
-			for n in L: tt += int(round(fiyat(n) * L[n]))
+			for n in L: tt += int(round(fiyat(n, true) * L[n]))
 			toplu.add_child(_d("%s · +%d Vio" % [adlar[i], tt], toplu_sat.bind(i), not L.is_empty(), Color("#5a4a1a")))
 		var ad := []
 		for n in env.inv:
@@ -195,7 +208,7 @@ func ciz() -> void:
 			var sp := SpinBox.new(); sp.min_value = 1; sp.max_value = env.adet(n); sp.value = 1; sp.custom_minimum_size = Vector2(80, 0)
 			var sb := _d("Sat · %d" % int(round(fiyat(n))), func(): sat(n, int(sp.value)))
 			sp.value_changed.connect(func(v): sb.text = "Sat · %d" % int(round(fiyat(n) * v)))
-			var hb := _d("Hepsi · %d" % int(round(fiyat(n) * env.adet(n))), func(): sat(n, env.adet(n)))
+			var hb := _d("Hepsi · %d" % int(round(fiyat(n, env.adet(n) > 1) * env.adet(n))), func(): sat(n, env.adet(n)))
 			h.add_child(ik); h.add_child(l); h.add_child(sp); h.add_child(sb); h.add_child(hb)
 			liste.add_child(h)
 	else:

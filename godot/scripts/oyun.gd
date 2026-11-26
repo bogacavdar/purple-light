@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1f-3b-2"
+const SURUM := "Godot · Adım 1f-3b-3"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -63,6 +63,7 @@ var can_cubugu: ProgressBar
 var enerji_cubugu: ProgressBar
 var yetenekler := {}        # web skills: S1 atılma, P0 savuşturma (yetenek ağacı 1f-3b-3)
 var ders                    # Börü'nün dersleri (ders.gd)
+var yetenek                 # yetenek ağacı (yetenek.gd)
 var dl_agac := false        # Börü'nün dersi bitti, yetenek ağacını gösterecek (1f-3b-3)
 var silah_yazi: Label
 var parlama_shader: Shader
@@ -119,6 +120,9 @@ func _ready() -> void:
 	ders = preload("res://scripts/ders.gd").new()
 	add_child(ders)
 	ders.kur(self)
+	yetenek = preload("res://scripts/yetenek.gd").new()
+	add_child(yetenek)
+	yetenek.kur(self)
 	sahne = preload("res://scripts/sahne.gd").new()
 	hud.add_child(sahne)
 	hud.move_child(sahne, konusma.get_index())
@@ -170,6 +174,12 @@ func _ready() -> void:
 			oyuncu.position = al.position + Vector2(0, 40)
 			ders.oto = q.contains("oto")
 			if q.contains("boru2"): yetenekler["S1"] = true
+			if q.contains("tum"):
+				for id in yetenek.L: yetenekler[id] = true
+				oyuncu.yetenek_uygula()
+			if q.contains("agac"):
+				env.vio_ekle(5000)
+				while env.sv < 9: env.xp_ekle(400)
 			if q.contains("boru3"):
 				yetenekler["S1"] = true; yetenekler["P0"] = true
 			else: ders.basla("parry" if q.contains("boru2") else "dodge")
@@ -517,8 +527,8 @@ func _hud() -> void:
 	enerji_cubugu.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
 	enerji_cubugu.max_value = 100.0
 	enerji_cubugu.value = 100.0
-	var ebg := StyleBoxFlat.new(); ebg.bg_color = Color("#1c2a3a"); ebg.border_color = Color("#0b0f0a"); ebg.set_border_width_all(2)
-	var efg := StyleBoxFlat.new(); efg.bg_color = Color("#5ab4f0")
+	var ebg := StyleBoxFlat.new(); ebg.bg_color = Color("#22301c"); ebg.border_color = Color("#0b0f0a"); ebg.set_border_width_all(2)
+	var efg := StyleBoxFlat.new(); efg.bg_color = Color("#9ad05a")
 	enerji_cubugu.add_theme_stylebox_override("background", ebg)
 	enerji_cubugu.add_theme_stylebox_override("fill", efg)
 	enerji_cubugu.tooltip_text = "Enerji"
@@ -527,7 +537,7 @@ func _hud() -> void:
 	_golge(silah_yazi)
 	kutu.add_child(silah_yazi)
 	var yardim := Label.new()
-	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · Sağ tık ya da E: savuştur (basılı: gard) · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · 1–5: kemer · G: deneme (aletler ve 100 Vio)\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · LT savuştur · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
+	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · Sağ tık ya da E: savuştur (basılı: gard) · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · Y: yetenekler · 1–5: kemer · G: deneme (aletler ve 100 Vio)\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · LT savuştur · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
 	yardim.add_theme_font_size_override("font_size", 12)
 	_golge(yardim)
 	yardim.add_theme_font_size_override("font_size", 11)
@@ -549,11 +559,14 @@ func _golge(l: Label) -> void:
 func enerji_guncelle(v: float, mx: float, yorgun: bool) -> void:
 	enerji_cubugu.max_value = mx
 	enerji_cubugu.value = v
-	(enerji_cubugu.get_theme_stylebox("fill") as StyleBoxFlat).bg_color = Color("#7a8a9a") if yorgun else Color("#5ab4f0")
+	(enerji_cubugu.get_theme_stylebox("fill") as StyleBoxFlat).bg_color = Color("#d8a84a") if yorgun else Color("#9ad05a")
 
 ## bir pencere ya da sahne açıkken savaş tuşları işlemez
+func sk(id: String) -> bool:
+	return yetenekler.has(id)
+
 func pencere_acik() -> bool:
-	return sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
+	return (yetenek != null and yetenek.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
 
 func can_guncelle(hp: float, mx: float) -> void:
 	can_cubugu.max_value = mx
@@ -717,6 +730,10 @@ func _konus(n) -> void:
 
 ## web talkAlp + v181: öğretici yokken atılma ve savuşturma dersleri Börü'den, ücretsiz
 func _konus_alp(K: Dictionary, por) -> void:
+	if ders.agac_bekliyor():
+		ders.agac_iste()
+		konusma.ac(K.ad, por, "Önce [b]yetenek ağacını[/b] aç evlat! [b]Y[/b]'ye bas.", [{t = "Tamam", pri = true, kapat = true}])
+		return
 	if ders.acik:
 		konusma.ac(K.ad, por, "Kerevite odaklan evlat! Atıldığında, değmeden hemen önce [b]savuştur[/b]." if ders.mod == "parry" else "Kerevite odaklan evlat! Üstünde kırmızı [b]![/b] görünce yana [b]atıl[/b].", [{t = "Tamam", pri = true, kapat = true}])
 		return
@@ -935,6 +952,7 @@ func durum_yukle(d: Dictionary) -> void:
 	yetenekler = {}
 	for k in d.get("yetenekler", []): yetenekler[k] = true
 	dl_agac = bool(d.get("dl_agac", false))
+	oyuncu.yetenek_uygula()
 	oyuncu.hp = float(o.get("hp", oyuncu.hp_max))
 	can_guncelle(oyuncu.hp, oyuncu.hp_max)
 	kamera.reset_smoothing()

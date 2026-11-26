@@ -254,6 +254,25 @@ func _bitir() -> void:
 	acik = false; ph = ""
 	_kapat_crab(true)
 	_yaz()
-	oyun.dl_agac = true
 	var alp = oyun.alp_dugum()
-	oyun.konusma.ac(alp.K.ad if alp else "Börü", _por(alp), ("Hah! Dört kez sıyrıldın, dört kez de savuşturdun; kerevit hâlâ ne olduğunu anlamaya çalışıyor." if parry else "Hah! Dört kez sıyrıldın, kerevit hâlâ ne olduğunu anlamaya çalışıyor.") + " [b]İlk ders tamam![/b] Ama kulağına küpe olsun: her kavgaya girmek akıllıca değildir evlat. Bazen en iyi hamle arkanı dönüp [b]tabanları yağlamaktır[/b]. Kaçabilmek için de hızlı koşmayı bilmen gerek.", [{t = "Anladım", pri = true, kapat = true}])
+	oyun.konusma.ac(alp.K.ad if alp else "Börü", _por(alp), ("Hah! Dört kez sıyrıldın, dört kez de savuşturdun; kerevit hâlâ ne olduğunu anlamaya çalışıyor." if parry else "Hah! Dört kez sıyrıldın, kerevit hâlâ ne olduğunu anlamaya çalışıyor.") + " [b]İlk ders tamam![/b] Ama kulağına küpe olsun: her kavgaya girmek akıllıca değildir evlat. Bazen en iyi hamle arkanı dönüp [b]tabanları yağlamaktır[/b]. Kaçabilmek için de hızlı koşmayı bilmen gerek. Gel, sana yetenek ağacını göstereyim.", [{t = "Yetenek ağacını aç", pri = true, f = func(): agac_iste()}])
+	if not oyun.yetenekler.has("K1"): oyun.dl_agac = true
+
+## Börü'nün yetenek ağacı adımı (web treeAsk, done2): Koşu alınmadıysa ağacı açtırır, kapatınca Koşu'nun fiyatını söyler
+func agac_bekliyor() -> bool:
+	return oyun.dl_agac and not oyun.yetenekler.has("K1")
+
+func agac_iste() -> void:
+	if not agac_bekliyor():
+		oyun.dl_agac = false
+		return
+	katman.visible = true
+	buyuk.text = "Yetenek ağacını aç"
+	kucuk.text = "Y tuşuna bas"
+
+func agac_kapandi() -> void:
+	katman.visible = false
+	var alp = oyun.alp_dugum()
+	oyun.dl_agac = false
+	await get_tree().create_timer(0.2).timeout
+	oyun.konusma.ac(alp.K.ad if alp else "Börü", _por(alp), "Gördün mü, en alttaki parlayan [b]Koşu[/b]. Onu almak [b]100 Vio[/b] ister. Nazlı'ya bir şeyler sat, [b]100 Vio[/b] biriktir; ilk işin Koşu'yu almak olsun. Kaçmayı bilen savaşçı uzun yaşar!", [{t = "Anladım", pri = true, kapat = true}])

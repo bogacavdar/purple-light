@@ -81,7 +81,7 @@ func _process(dt: float) -> void:
 	onceki_pencere = acik
 
 func _pencere_acik() -> bool:
-	return oyun.konusma.visible or oyun.istasyon.pencere.visible or oyun.pazar.pencere.visible or oyun.el_yapimi.acik_mi() or oyun.sahne.acik or oyun.env.canta.visible or oyun.magara.yukleme.visible or oyun.cine.acik or oyun.uyanis.ad_kutu.visible
+	return oyun.konusma.visible or oyun.istasyon.pencere.visible or oyun.pazar.pencere.visible or oyun.el_yapimi.acik_mi() or oyun.sahne.acik or oyun.env.canta.visible or oyun.magara.yukleme.visible or oyun.cine.acik or oyun.uyanis.ad_kutu.visible or oyun.yetenek.visible
 
 func _notification(w: int) -> void:
 	if w == NOTIFICATION_APPLICATION_FOCUS_OUT or w == NOTIFICATION_WM_CLOSE_REQUEST:

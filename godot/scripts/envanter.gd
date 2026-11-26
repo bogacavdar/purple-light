@@ -52,6 +52,12 @@ func adet(n: String) -> int:
 
 func ekle(n: String, k: int = 1) -> void:
 	inv[n] = adet(n) + k
+	if not gorulen.has(n) and oyun.sk("T6") and oyun.pazar != null and oyun.pazar.P.ham.has(n):
+		# İlk keşif ödülü: yeni malzeme ilk bulunduğunda fiyatının 5 katı
+		var r := int(round(oyun.pazar.taban(n) * 5.0))
+		if r > 0:
+			vio_ekle(r)
+			mesaj("İlk keşif: %s · +%d Vio" % [n, r])
 	gorulen[n] = true
 	# aletler ve silahlar kemerdeki ilk boş yuvaya kendiliğinden girer (web: hotItem)
 	if (G.tools.has(n) or n == "Taş kılıç") and kemer.find(n) < 0:
@@ -95,7 +101,9 @@ func alet_kullan(n: String) -> bool:
 	if dayan[n] <= 0:
 		mesaj("%s köreldi! (Demirci Dursun'da bilenir; Godot'da daha yok)" % n, true)
 		return false
-	dayan[n] -= 1
+	# Sağlam aletler: %20/%40/%60 ihtimalle aşınmaz
+	if not (randf() < (0.6 if oyun.sk("A7") else (0.4 if oyun.sk("A6") else (0.2 if oyun.sk("A5") else 0.0)))):
+		dayan[n] -= 1
 	if dayan[n] <= 0:
 		mesaj("%s köreldi!" % n, true)
 	kemer_ciz()
@@ -121,6 +129,7 @@ func ye() -> void:
 	eksilt(sec)
 	tokluk = minf(100.0, tokluk + f)
 	if hl > 0:
+		hl *= 1.5 if oyun.sk("D12") else 1.0
 		oyun.oyuncu.hp = minf(oyun.oyuncu.hp_max, oyun.oyuncu.hp + hl)
 		oyun.can_guncelle(oyun.oyuncu.hp, oyun.oyuncu.hp_max)
 	oyun.yazi(oyun.oyuncu.position + Vector2(0, -26), "+%d tokluk" % int(f), Color("#f2b84b"), 8)
@@ -130,7 +139,7 @@ func _yenir(n: String) -> bool:
 
 func _process(dt: float) -> void:
 	# web tickHunger: bir günde (720 sn) boşalır; ilk iki gün yarı hızla (günler Godot'da henüz yok: ilk günler sayılır)
-	tokluk = maxf(0.0, tokluk - float(G.hunger.perSec) * 0.5 * dt)
+	tokluk = maxf(0.0, tokluk - float(G.hunger.perSec) * 0.5 * (0.75 if oyun.sk("D13") else 1.0) * dt)
 	tok_cubuk.value = tokluk
 	if tokluk <= 0.0 and not oyun.oyuncu.bayildi:
 		aclik_hasar += dt
@@ -309,6 +318,7 @@ func vio_ekle(n: int) -> void:
 
 ## web gainXP: seviye eşiği need(L) (Sv 16'ya kadar 40·1,35^(L-1), sonra 3606·(1+0,06·(L-16)))
 func xp_ekle(n: int) -> void:
+	n = int(round(n * (1.0 + (0.35 if oyun.sk("B6") else (0.2 if oyun.sk("B5") else (0.1 if oyun.sk("B4") else 0.0))))))
 	xp += n
 	oyun.yazi(oyun.oyuncu.position + Vector2(0, -30), "+%d XP" % n, Color("#9fd0f0"), 7)
 	var need: Array = G.xpNeed

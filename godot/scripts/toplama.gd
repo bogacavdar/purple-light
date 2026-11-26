@@ -94,11 +94,11 @@ func _basla() -> void:
 			if int(G.tools[h].tier) < int(A.tier):
 				env.mesaj("%s ağacı için daha iyi bir balta gerekli (%d. kademe)" % [ag.tur, int(A.tier)], true)
 				return
-			is_ = {tur = "agac", hedef = ag, ad = "Kesiliyor: %s ağacı" % ag.tur, sure = float(G.tools[h].time), t = 0.0, alet = h}
+			is_ = {tur = "agac", hedef = ag, ad = "Kesiliyor: %s ağacı" % ag.tur, sure = float(G.tools[h].time) * _hiz(str(A.wood)), t = 0.0, alet = h}
 			return
 	# en yakın düğüm (REACH 24 px; maden kayaları 13 px daha uzaktan): maden kayasına kazma, öbürlerine boş el ya da herhangi bir şey
 	var en = null
-	var bd: float = float(G.reach)
+	var bd: float = float(G.reach) * (1.5 if oyun.sk("H4") else 1.0)
 	for d in oyun.dugumler:
 		if not d.canli:
 			continue
@@ -116,9 +116,9 @@ func _basla() -> void:
 			if int(G.tools[h].tier) < int(A.tier):
 				env.mesaj("%s: %s yetmez, daha iyi bir kazma gerekli" % [A.ad, h], true)
 				return
-			is_ = {tur = "dugum", hedef = en, ad = "Kazılıyor: " + en.ad, sure = float(G.tools[h].time) * 1.5, t = 0.0, alet = h}
+			is_ = {tur = "dugum", hedef = en, ad = "Kazılıyor: " + en.ad, sure = float(G.tools[h].time) * 1.5 * _hiz(en.ad), t = 0.0, alet = h}
 		else:
-			is_ = {tur = "dugum", hedef = en, ad = "Toplanıyor: " + en.ad, sure = float(A.time), t = 0.0, alet = ""}
+			is_ = {tur = "dugum", hedef = en, ad = "Toplanıyor: " + en.ad, sure = float(A.time) * _hiz(en.ad), t = 0.0, alet = ""}
 		return
 	# elinde balta yokken meyve ağacının dibinde: silkele
 	var ag2 = _en_yakin_agac(22.0)
@@ -129,6 +129,24 @@ func _basla() -> void:
 		return
 	if ag2 != null and tur != "axe":
 		env.mesaj("Ağaç kesmek için elinde balta olmalı (1–5 ile seç)", true)
+
+## web: toplama süresi Çevik eller I–III ile kısalır; Oduncu odunu, Taşçı taş türlerini, Su taşıyıcı suyu yarı sürede toplar
+const TASLAR := ["Taş", "Çakmaktaşı", "Nehir çakılı", "Kum", "Nehir kili"]
+func _hiz(n: String) -> float:
+	var S = oyun
+	var m := 1.0 - (0.45 if S.sk("G3") else (0.30 if S.sk("G2") else (0.15 if S.sk("G1") else 0.0)))
+	if (S.sk("G5") and (n.contains("odun") or n.contains("Odun"))) or (S.sk("G6") and TASLAR.has(n)) or (S.sk("G7") and n == "Su"):
+		m *= 0.5
+	return m
+
+## Verimli toprak: malzemeler daha çabuk yeniden çıkar
+func _yeniden(s: float) -> float:
+	return s * (0.4 if oyun.sk("G10") else (0.6 if oyun.sk("G8") else 1.0))
+
+## Bereket: %10 (II'de %20) ihtimalle bir malzeme daha
+func _bereket(n: String, p: Vector2) -> void:
+	if oyun.sk("G4") and randf() < (0.2 if oyun.sk("G9") else 0.1):
+		dusur(n, p)
 
 func _silkele(ag) -> void:
 	var A: Dictionary = G.trees[ag.tur]
@@ -162,9 +180,10 @@ func _bitir() -> void:
 		if A.mine:
 			d.kalan -= 1
 			if d.kalan <= 0:
-				d.oldur(float(A.respawn))
+				d.oldur(_yeniden(float(A.respawn)))
 				env.mesaj("%s tükendi; bir süre sonra yine çıkar." % A.ad)
 			dusur(d.ad, d.position)
+			_bereket(d.ad, d.position)
 			if d.ad != "Taş" and randf() < 0.5:
 				dusur("Taş", d.position)
 		else:
@@ -172,10 +191,11 @@ func _bitir() -> void:
 			if A.bush:
 				d.kalan -= 1
 				if d.kalan <= 0:
-					d.oldur(float(A.respawn))
+					d.oldur(_yeniden(float(A.respawn)))
 			else:
-				d.oldur(float(A.respawn))
+				d.oldur(_yeniden(float(A.respawn)))
 			dusur(d.ad, d.position)
+			_bereket(d.ad, d.position)
 			if A.hurt != null:
 				o.isirildi(int(A.hurt[0]), d.position)
 				env.mesaj(str(A.hurt[1]), true)
@@ -186,6 +206,7 @@ func _bitir() -> void:
 		var A: Dictionary = G.trees[ag.tur]
 		var p: Vector2 = ag.position + Vector2(-6 if o.position.x < ag.position.x else 6, 0)
 		dusur(str(A.wood), p)
+		_bereket(str(A.wood), p)
 		for e in A.extra:
 			dusur(str(e[0]), p, int(e[1]))
 		dusur("Dal", p)
@@ -198,7 +219,7 @@ func _bitir() -> void:
 	elif g.tur == "silkele":
 		var ag = g.hedef
 		var A: Dictionary = G.trees[ag.tur]
-		ag.meyve_cd = float(G.fruitRe)
+		ag.meyve_cd = _yeniden(float(G.fruitRe))
 		ag.vurulma()
 		for i in 2 + randi() % 2:
 			dusur(str(A.fruit), ag.position + Vector2(randf_range(-8, 8), -2))

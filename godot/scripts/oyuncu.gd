@@ -47,6 +47,7 @@ var blok_fx := 0.0
 var sersem := 0.0
 var son_atilma := -100.0
 var uyari_t := -100.0
+var kosu_uyari := -100.0
 const BLK := {"n": 0.35, "y": 0.45, "r": 0.7}
 
 func _ready() -> void:
@@ -65,6 +66,19 @@ func _ready() -> void:
 	kavis.z_index = 5
 	kavis.draw.connect(_kavis_ciz)
 	add_child(kavis)
+
+## yetenekler: en yüksek enerji ve can (web maxSt, maxHP); alınınca ve kayıt açılınca yeniden hesaplanır
+func yetenek_uygula() -> void:
+	var S = oyun
+	st_max = roundf(100.0 * (1.0 + (0.75 if S.sk("K7") else (0.5 if S.sk("K5") else (0.25 if S.sk("K2") else 0.0)))))
+	hp_max = float(V.hp) + (350.0 if S.sk("C10") else (250.0 if S.sk("C8") else (175.0 if S.sk("C5") else (100.0 if S.sk("C3") else (50.0 if S.sk("D1") else 0.0)))))
+	st = minf(st, st_max); hp = minf(hp, hp_max)
+	oyun.can_guncelle(hp, hp_max)
+
+func _hp_yenile() -> float:
+	var S = oyun
+	var tk: float = S.env.tokluk
+	return 0.1 * (5.0 if S.sk("C11") else (4.0 if S.sk("C9") else (3.0 if S.sk("C6") else (2.0 if S.sk("C2") else 1.0)))) * (1.5 if tk > 70.0 else (0.0 if tk <= 0.0 else 1.0))
 
 func silah_v() -> Dictionary:
 	return V.sword if oyun.env and oyun.env.elde() == "Taş kılıç" else V.fist
@@ -147,22 +161,36 @@ func _process(dt: float) -> void:
 			oyun.parca(position + Vector2(0, -6), -atilma_v * 0.1 + Vector2(0, -4), 0.3, Color(1, 1, 1, 0.7))
 		g = Vector2.ZERO
 	yuruyor = g != Vector2.ZERO
-	var kos := (Input.is_action_pressed("kos") or kosu_kol) and not yorgun and not kalkan and not kilit
+	var kos_ister: bool = (Input.is_action_pressed("kos") or kosu_kol) and yuruyor and not kilit
+	var kos: bool = kos_ister and bilir("K1") and not yorgun and not kalkan
+	if kos_ister and not bilir("K1"):
+		var nw := Time.get_ticks_msec() / 1000.0
+		if nw - kosu_uyari > 9.0:
+			kosu_uyari = nw
+			oyun.env.mesaj("Koşmak için yetenek ağacından Koşu'yu al (kırmızı Savaş ağacının ilk yeteneği, 100 Vio)", true)
+	elif kos_ister and yorgun:
+		var nw2 := Time.get_ticks_msec() / 1000.0
+		if nw2 - kosu_uyari > 2.5:
+			kosu_uyari = nw2
+			oyun.yazi(position + Vector2(0, -28), "Soluklanıyorsun…", Color("#e8c860"), 9)
 	# enerji: koşarken saniyede 18 gider; durunca 0,6 sn sonra dolar (yürürken %60'ı); bitince %30'a dolana kadar yorgun
 	if kos and yuruyor:
-		st -= 18.0 * dt; st_dinlen = 0.0
+		st -= 18.0 * (0.5 if oyun.sk("K9") else (0.7 if oyun.sk("K6") else 1.0)) * dt; st_dinlen = 0.0
 		if st <= 0.0:
 			st = 0.0; yorgun = true; kos = false
 			oyun.yazi(position + Vector2(0, -28), "Yoruldun!", Color("#e8c860"), 9)
 	else:
 		st_dinlen += dt
 		if st_dinlen > 0.6:
-			st = minf(st_max, st + 14.0 * (0.6 if yuruyor else 1.0) * dt)
+			st = minf(st_max, st + 14.0 * (2.0 if oyun.sk("K8") else (1.5 if oyun.sk("K3") else 1.0)) * (0.6 if yuruyor else 1.0) * dt)
+	if hp < hp_max and not bayildi:
+		hp = minf(hp_max, hp + _hp_yenile() * dt)
+		oyun.can_guncelle(hp, hp_max)
 	if yorgun and st >= st_max * 0.3: yorgun = false
 	oyun.enerji_guncelle(st, st_max, yorgun)
 	if yuruyor:
 		var n := g.normalized()
-		var sp: float = float(V.speed) * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0) * (0.45 if kalkan else 1.0)
+		var sp: float = float(V.speed) * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0) * (0.45 if kalkan else 1.0) * (1.0 + (0.4 if oyun.sk("H7") else (0.3 if oyun.sk("H3") else (0.2 if oyun.sk("H2") else (0.1 if oyun.sk("H1") else 0.0)))))
 		_kay(n * sp * dt)
 		_yon_sec(n)
 		adim += dt * (1.7 if kos else 1.0)
@@ -221,18 +249,19 @@ func _atil(g: Vector2) -> void:
 	if not bilir("S1"):
 		_uyar("Atılmayı henüz bilmiyorsun: Savaşçı Börü ücretsiz öğretir, onunla konuş.")
 		return
-	if st < 14.0:
+	var dc := 5.0 if oyun.sk("S4") else (7.0 if oyun.sk("S3") else (9.0 if oyun.sk("S2") else 14.0))
+	if st < dc:
 		oyun.yazi(position + Vector2(0, -28), "Yorgunsun", Color("#e8c860"), 9)
 		return
-	st -= 14.0; st_dinlen = 0.0
+	st -= dc; st_dinlen = 0.0
 	kalkan = false
 	var d := g.normalized() if g != Vector2.ZERO else bakis
 	if g == Vector2.ZERO and oyun.ders.acik:
 		d = oyun.ders.yana_yon(d)
 	son_atilma = Time.get_ticks_msec() / 1000.0
 	atilma = float(V.dodge.t)
-	atilma_v = d * float(V.dodge.speed)
-	atilma_cd = float(V.dodge.cd)
+	atilma_v = d * float(V.dodge.speed) * (1.25 if oyun.sk("S5") else 1.0)
+	atilma_cd = 0.3 if oyun.sk("S4") else (0.38 if oyun.sk("S3") else (0.45 if oyun.sk("S2") else float(V.dodge.cd)))
 
 func vur(d: Vector2) -> void:
 	if bayildi or atilma > 0.0:
@@ -254,7 +283,7 @@ func vur(d: Vector2) -> void:
 		oyun.yazi(position + Vector2(0, -28), "Nefesin kesildi!", Color("#9ad8ff"), 9)
 		if not vurus_uyari:
 			vurus_uyari = true
-			oyun.env.mesaj("Her vuruş enerji (mavi çubuk) harcar. Biraz geri çekil, nefeslen; enerji dolunca yine vur.")
+			oyun.env.mesaj("Her vuruş enerji (yeşil çubuk) harcar. Biraz geri çekil, nefeslen; enerji dolunca yine vur.")
 		return
 	st -= cost; st_dinlen = 0.0
 	atk_cd = float(w.cd)
@@ -265,7 +294,7 @@ func vur(d: Vector2) -> void:
 	savrulus_yon = f
 	savrulus_r = float(w.reach) * 0.8
 	kavis.queue_redraw()
-	var dm := int(w.dmg)
+	var dm := int(round(float(w.dmg) * (1.55 if oyun.sk("W4") else (1.4 if oyun.sk("W3") else (1.25 if oyun.sk("W2") else (1.1 if oyun.sk("W1") else 1.0))))))
 	var gogus := position + Vector2(0, -6)
 	for a in oyun.canlilari_ver():
 		var ar: float = float(a.D.r)
@@ -302,7 +331,7 @@ func savustur() -> void:
 		pr_cd = 0.3
 		return
 	st -= 5.0; st_dinlen = 0.0
-	pr_t = 0.2; pr_cd = 0.6
+	pr_t = 0.2 * (1.6 if oyun.sk("V2") else (1.3 if oyun.sk("V1") else 1.0)); pr_cd = 0.6
 
 func kalkan_kaldir() -> void:
 	if not bilir("P0") or pr_brk > 0.0 or sersem > 0.0 or bayildi or kilit:
@@ -350,6 +379,8 @@ func isirildi(dmg: int, from: Vector2, a = null, renk: String = "") -> void:
 		if st <= 0.0:
 			st = 0.0; kalkan = false; pr_brk = 1.0; sersem = maxf(sersem, 0.5)
 			oyun.yazi(position + Vector2(0, -34), "Kalkan düştü!", Color("#ff9a6a"), 9)
+	# Son nefes: canın dörtte birinin altındayken fiziksel darbe %25 daha az
+	if renk != "" and oyun.sk("D8") and hp < hp_max * 0.25: n *= 0.75
 	dmg = maxi(1, int(round(n)))
 	dokunulmaz = 0.7
 	hp = maxf(0.0, hp - dmg)
