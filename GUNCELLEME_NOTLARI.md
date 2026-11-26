@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.97 · 27 Kasım 2026
+
+### Proje
+- **Godot: harita ve keşif:**
+  - Gezmediğin yerler artık haritada gri dumanla örtülü; geçtiğin yerin çevresi açılıyor. Deniz baştan görünüyor.
+  - M ile büyük harita açılıyor. Haritada keşfettiğin yerdeki kişiler, görevi olanların "!"i ve senin yerin var. Tekerlekle yakınlaştırılıyor, sürükleyerek kaydırılıyor.
+  - Yan görevi bekleyen kişiler keşfettiğin yerdeyse haritada "?" ile, keşfetmediğin yerde yakınken sisli bir daireyle görünüyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.96 · 27 Kasım 2026
 
 ### Proje
@@ -220,16 +231,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Kül Diyarı'nın canlıları (kül böceği, kül kurdu, lav kertenkelesi, kül cini, kor yarasası, ateş akrebi, kara ejder), kişileri (Mercan, Turan, Tufan, Lale; 27 görev) ve Kor Mağarası (Ocakçı Alev, Kor Kral) geldi.
   - Mor Kristal Vadisi'nin canlıları (mor güve, ışık tilkisi, kristal geyik, gölge kurdu, kristal örümcek, ışık engereği, kristal golem), kişileri (İnci, Kudret, Kuvvet, Menekşe; 27 görev) ve Ayna Mağarası (Gökbilimci Nur, Işık Yutan) geldi.
   - Davut'un lav kertenkelesi ve kristal geyik görevleri artık çalışıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.77 · 26 Kasım 2026
-
-### Proje
-- **Godot: Doğu geçidi ve aletler:**
-  - Kayalık Dağ'ın doğusundaki geçidi kayalar kapatıyor. Kemal'in "Doğu geçidini aç" görevini alınca 2 kaya patlatıcı ve kuvars ya da çelik kazmayla patlatıyorsun. Bütün sıradağ çöküyor ve Kül Diyarı ile Mor Kristal Vadisi açılıyor.
-  - **Düzeltme:** Önceden yalnız taş balta ve taş kazma alet sayılıyordu; dövdüğün tunç, demir, çelik baltalar ağaç kesmiyordu. Artık web'deki 26 balta ve kazmanın hepsi kendi hızı, dayanıklılığı ve kademesiyle çalışıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---

@@ -1,3 +1,7 @@
+## v4.97 (27 Kasım 2026) · Godot: keşif sisi ve büyük harita
+- `godot-deneme/` yeni derleme (godot dalı: yeni harita.gd (keşif 7 karo, sis görüntüsü küçük haritada, büyük harita M, yan görev "?" ve sisli daire, kayıt `kesif` ada başına (ADA_YEREL)); girdi.gd "harita" eylemi (M); oyun.gd yardım satırı). Denetim: ?haritatest. Belge 99_godot "Harita ve keşif" satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıttaki `kesif` alanı okunmadan kalır).
+
 ## v4.96 (27 Kasım 2026) · Godot: anılar
 - `godot-deneme/` yeni derleme (godot dalı: yeni tools/disa_aktar_ani.js → data/ani.json (32 anı, satırlar, kişi konumları/dönüşümleri, sahne yazıları, MIN) + art/ani/<özet>.png (488 tekil kare: arka ve ön katman, iki kişi çizilmeden); yeni ani.gd (tetikleyiciler, kuyruk, pencere, Kitap › Anılar, kayıt `ani {n, k}`); oyun.gd bayılma ve Zümrüt'ün mor kıymık seçeneği, yapi.gd uyku, gorev.gd görev bitişi, kuzen.gd "Götür beni" öncesi söz anısı, el_yapimi.gd Anılar düğmesi). Denetim: ?anitest_waffle, ?anitest_sahil. Belge 99_godot Anılar satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `ani` alanı okunmadan kalır).
@@ -73,9 +77,5 @@
 
 ## v4.78 (26 Kasım 2026) · Godot 5a, 6a: Kül Diyarı ve Mor Kristal Vadisi
 - `godot-deneme/` yeni derleme (godot dalı: disa_aktar_canli.js BIYOM=4/5, disa_aktar_kisi.js BIYOM=4/5, disa_aktar_magara2.js MAG=c4,c5 → data/canlilar_kul/kristal, kisiler_kul/kristal, gorevler_kul/kristal, magara_c4/c5; oyun.gd, gorev.gd, magara.gd listeleri). Denetim: ?git_k_mercan, ?git_k_inci. Belge 99_godot Adım 5–6, 5a, 6a satırları. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.77 (26 Kasım 2026) · Godot 4c: Doğu geçidi, sıradağ, bütün aletler
-- `godot-deneme/` yeni derleme (godot dalı: yeni gecit.gd; oyun.gd engel'de kaya yığını, F'de geçit, kayıtta gecit, zemin_katman; gorev.gd rock; tools/disa_aktar_alet.js → data/toplama.json tools 26 alet). Denetim: ?gecittest. Belge 99_godot 4c satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 
