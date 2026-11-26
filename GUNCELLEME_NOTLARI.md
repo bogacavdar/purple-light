@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.57 · 26 Kasım 2026
+
+### Proje
+- **Godot: öğretici:**
+  - Yeni oyunda Kemal'in konuşmasından sonra web'deki 13 adımlı öğretici başlıyor: böğürtlen, Zümrüt'ün kazanı, meşale, keskin taş, Nazlı'da satış, Börü'nün dersleri, taş balta ve Dursun'un örsü.
+  - Sağ üstteki kartta ne yapılacağı yazıyor, ok yolu gösteriyor. Eksik malzemeler yakına konuyor.
+  - Börü önce kerevite yumrukla vurduruyor. Atılma ve savuşturmanın ilk denemesinde oyun duruyor ve hangi tuşa basılacağını söylüyor.
+  - "Eğitimi geç" ile öğretici atlanabiliyor; tarifler, balta ve meşale veriliyor. Öğretici bitince görevler Kemal'den başlıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.56 · 26 Kasım 2026
 
 ### Proje
@@ -167,25 +179,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - ACT 1 › Çayır › Çayır canlılarının görünüşü; Mağaralar › Yankı Mağarası canlılarının resmi.
-
----
-
-## Versiyon 4.37 · 22 Kasım 2026
-
-### Görsel
-- **Karakterin NPC'lerle aynı boyda:** oyuncu ve sevdiği kişi yeniden çizildi; artık Kemal ve öbür kişiler kadar (30 piksel gövde), büyükçe başlı. Gözler, kaşlar ve ağız dünyada da seçiliyor. Bütün çizimler ComfyUI'den: kadın ve erkek temel gövde beş yönden (sağa bakanlar aynası), saç biçimleri, şapkalar, gözlükler, bıyık ve sakallar, yüzler, elbise, buff ve çiçek toka bu gövdenin üstüne ayrı ayrı çizildi.
-- **Net 8 yönlü adımlama:** her yönde bir duruş ve dört adım karesi. Bacaklar artık eğilip bükülmüyor; uyluk ve baldır iki parça halinde öne-arkaya kayıyor, adım atmayan ayak kalkıyor. Çaprazda ve yanda yakın bacak uzak bacağın önünde, arada koyu bir çizgi var; bacaklar birbirine karışmıyor.
-- **Her seçim karakterin üstünde görünür:** saç biçimi, saç rengi (kaş, bıyık ve sakal da aynı renkte), ten, göz rengi, tişört/elbise, pantolon, gözlük, şapka ve şapka rengi, bıyık, sakal, buff ve toka her yönde kendi çizimiyle.
-
-### Arayüz
-- **Karakter yaratma:** önizlemede karakter tam boy ve yanında yüzü iki kat büyük görünüyor; yüz artık hiç kesilmiyor. Telefonda da aynı.
-- **Yeni seçenek "Yüz":** Sakin, Güler yüzlü, Çilli, Ciddi (kaşlar ve ağız yüzle değişir). Rastgele düğmesi yüzü de seçer.
-
-### Kayıtlar
-- Eski kayıtlar olduğu gibi açılır; yüz seçimi olmayan karakter "Sakin" yüzle görünür.
-
-### Tasarım belgesi
-- Sistemler › Yeni ikonlarla › Oyuncunun karakteri: NPC boyu, ComfyUI katmanları, 8 yön 4 kare yürüyüş, yüz seçimi. Akış › Karakter yaratma: Yüz satırı ve önizleme.
 
 ---
 
