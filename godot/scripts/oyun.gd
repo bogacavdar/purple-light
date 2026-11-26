@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · O4"
+const SURUM := "Godot · O5"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -89,6 +89,7 @@ var camur_dedi := false
 var evcil                   # evcil hayvanlar ve Çoban Davut (evcil.gd)
 var ev                      # evin içi ve Döşe (ev_ici.gd)
 var enkaz: Node2D           # Barbaros'un gemisinin enkazı (kuzen.gd çizer)
+var gezgin                  # Yıldızsız Gezgin ve robot köpekler (gezgin.gd)
 var poyraz                  # Gemici Poyraz ve deniz (poyraz.gd)
 var ciftlik                 # Çiftçi Ekin ve Bereket Adası (ciftlik.gd)
 var balik                   # balık tutma, tuzaklar, gece buluntuları (balik.gd)
@@ -188,6 +189,9 @@ func _ready() -> void:
 	poyraz = preload("res://scripts/poyraz.gd").new()
 	add_child(poyraz)
 	poyraz.kur(self)
+	gezgin = preload("res://scripts/gezgin.gd").new()
+	add_child(gezgin)
+	gezgin.kur(self)
 	kopru = preload("res://scripts/kopru.gd").new()
 	add_child(kopru)
 	kopru.kur(self)
@@ -279,6 +283,7 @@ func _ready() -> void:
 		if q.contains("ekintest"): _ekin_test.call_deferred()
 		if q.contains("adatest"): _ada_test.call_deferred(q)
 		if q.contains("denizt"): _deniz_test.call_deferred()
+		if q.contains("kopektest"): _kopek_test.call_deferred()
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -865,6 +870,32 @@ func _deniz_test() -> void:
 		if poyraz.caught.size() >= 2 and i > 100: break
 	print("DENIZ tutulan ", poyraz.caught, " log ", poyraz.log_)
 
+func _kopek_test() -> void:
+	oyuncu.dokunulmaz = 9999.0
+	zaman.gun = 5
+	await get_tree().create_timer(1.0).timeout
+	print("KOPEK wiz ", gezgin.wiz.shown)
+	oyuncu.position = gezgin.wiz_n.position + Vector2(-10, 4)
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	konus_ya_da_istasyon(); print("KOPEK 1 ", konusma.yazi.text.substr(0, 30))
+	konusma._sec(konusma.liste[0]); print("KOPEK 2 ", konusma.yazi.text.substr(0, 30))
+	konusma._sec(konusma.liste[0]); print("KOPEK 3 ", konusma.yazi.text.substr(0, 30))
+	konusma._sec(konusma.liste[0])
+	await get_tree().create_timer(1.0).timeout
+	print("KOPEK kopek ", gezgin.kopekler.size(), " menu ", gezgin.acik(), " wiz ", gezgin.wiz.shown)
+	gezgin._sec(gezgin.kopekler[0], "Dal")
+	gezgin.kapat()
+	await get_tree().create_timer(25.0).timeout
+	var d = gezgin.kopekler[0]
+	print("KOPEK durum ", d.st, " torba ", d.bag, " dal ", env.adet("Dal"), " wiz ", gezgin.wiz.shown)
+	gezgin._cagir_kopek(d)
+	await get_tree().create_timer(12.0).timeout
+	print("KOPEK cagir ", d.st, " torba ", d.bag, " dal ", env.adet("Dal"))
+	zaman.gun = 21
+	await get_tree().create_timer(1.5).timeout
+	print("KOPEK v2 ", gezgin.wiz.shown, " ", gezgin.wiz.v2)
+
 func _dz_test() -> void:
 	await get_tree().create_timer(2.0).timeout
 	print("DZ yakin ", konus_ya_da_istasyon(), " ", konusma.yazi.text.substr(0, 60))
@@ -1102,7 +1133,7 @@ func _hud() -> void:
 	_golge(silah_yazi)
 	kutu.add_child(silah_yazi)
 	var yardim := Label.new()
-	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · Sağ tık ya da E: savuştur (basılı: gard) · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · Y: yetenekler · 1–5: kemer · G: görevler · C: karakter · N: inşa · B: bin\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · LT savuştur · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
+	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · Sağ tık ya da E: savuştur (basılı: gard) · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · Y: yetenekler · 1–5: kemer · G: görevler · C: karakter · N: inşa · B: bin · R: köpekler\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · LT savuştur · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
 	yardim.add_theme_font_size_override("font_size", 12)
 	_golge(yardim)
 	yardim.add_theme_font_size_override("font_size", 11)
@@ -1131,7 +1162,7 @@ func sk(id: String) -> bool:
 	return yetenekler.has(id)
 
 func pencere_acik() -> bool:
-	return (ev != null and ev.acik) or (evcil != null and evcil.acik()) or (yan != null and yan.acik()) or (atolye != null and atolye.visible) or (sinan != null and sinan.visible) or (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
+	return (gezgin != null and gezgin.acik()) or (ev != null and ev.acik) or (evcil != null and evcil.acik()) or (yan != null and yan.acik()) or (atolye != null and atolye.visible) or (sinan != null and sinan.visible) or (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
 
 func can_guncelle(hp: float, mx: float) -> void:
 	can_cubugu.max_value = mx
@@ -1461,6 +1492,8 @@ func konus_ya_da_istasyon() -> bool:
 			yakin = n
 	if iz.f():
 		return true
+	if gezgin.f():
+		return true
 	if yan.f():
 		return true
 	if yakin != null and ogr.konus(yakin.K.k):
@@ -1678,7 +1711,7 @@ func durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 func gorunus_uygula(L: Dictionary) -> void:
@@ -1766,6 +1799,7 @@ func durum_yukle(d: Dictionary) -> void:
 	balik.yukle(d.get("balik", {}))
 	ciftlik.yukle(d.get("ciftlik", {}), kuzen.tanis.has("ekin_gitti"))
 	poyraz.yukle(d.get("poyraz", {}))
+	gezgin.yukle(d.get("gezgin", {}))
 	iz.yukle(d.get("izler", []))
 	yan.yukle(d.get("yan", {}))
 	camur_dedi = bool(d.get("camur_dedi", false))
