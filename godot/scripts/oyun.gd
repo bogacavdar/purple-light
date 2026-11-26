@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 4c"
+const SURUM := "Godot · Adım 6a"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -102,7 +102,7 @@ func _ready() -> void:
 	var CC: Dictionary = _json("res://data/canlilar_cayir.json")
 	canlilar = CC.canlilar
 	canli_liste = {0: CC.liste}
-	var dosyalar := {1: "orman", 2: "bataklik", 3: "kayalik"}
+	var dosyalar := {1: "orman", 2: "bataklik", 3: "kayalik", 4: "kul", 5: "kristal"}
 	for bi in dosyalar:
 		var C2: Dictionary = _json("res://data/canlilar_%s.json" % dosyalar[bi])
 		for k in C2.canlilar: canlilar[k] = C2.canlilar[k]
@@ -1045,7 +1045,7 @@ func _kisiler() -> void:
 	for r in kisi_veri.zirh: zirh_set[r] = true
 	var tum: Array = toplama_veri.kisiler.duplicate()
 	tum.append_array(kisi_veri.kisiler)
-	for bf in ["bataklik", "kayalik"]:
+	for bf in ["bataklik", "kayalik", "kul", "kristal"]:
 		var kb: Dictionary = _json("res://data/kisiler_%s.json" % bf)
 		tum.append_array(kb.kisiler)
 		kisi_veri.istasyonlar.append_array(kb.istasyonlar)

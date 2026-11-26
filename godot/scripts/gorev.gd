@@ -52,7 +52,8 @@ func kur(o) -> void:
 	Q = V.gorevler
 	Q.append_array(o._json("res://data/gorevler_orman.json").gorevler)
 	Q.append_array(o._json("res://data/gorevler_bataklik.json").gorevler)
-	Q.append_array(o._json("res://data/gorevler_kayalik.json").gorevler)
+	for bf in ["kayalik", "kul", "kristal"]:
+		Q.append_array(o._json("res://data/gorevler_%s.json" % bf).gorevler)
 	Q.append_array(o._json("res://data/evcil.json").gorevler)
 	V.GB["k_davut"] = 0
 	for i in Q.size():
