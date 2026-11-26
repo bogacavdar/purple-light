@@ -2,13 +2,13 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Anılar"
+const SURUM := "Godot · Harita"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
 var ada_diger := {}        # öbür adanın kendi durumu (yer, kurulanlar, mezarlar, köprü, geçit, tuzaklar); kayıtta korunur
 var yerler2 := {}          # ikinci adanın yerleri (data/ada2/yerler.json)
-const ADA_YEREL := ["yapi", "insa", "mezarlar", "kopru", "gecit", "balik"]
+const ADA_YEREL := ["yapi", "insa", "mezarlar", "kopru", "gecit", "balik", "kesif"]
 var dunya: Dictionary
 var canlilar: Dictionary
 var oyuncu_veri: Dictionary
@@ -97,6 +97,7 @@ var portal                  # adalar arası portallar (portal.gd)
 var hikaye                  # Ada halkı hikâyeleri (hikaye.gd)
 var isikci                  # Yıldızsız Işıkçı ve Kafa lambası (isikci.gd)
 var gezgin                  # Yıldızsız Gezgin ve robot köpekler (gezgin.gd)
+var harita_k                # keşif sisi, büyük harita (M), yan görev işaretleri (harita.gd)
 var ani                     # anılar (ani.gd)
 var roket                   # ACT 2'nin sonu: fırlatma, kavuşma, son kart (roket.gd)
 var buyu                    # mor mana ve asalar (buyu.gd)
@@ -234,6 +235,9 @@ func _ready() -> void:
 	kopru = preload("res://scripts/kopru.gd").new()
 	add_child(kopru)
 	kopru.kur(self)
+	harita_k = preload("res://scripts/harita.gd").new()
+	add_child(harita_k)
+	harita_k.kur(self)
 	ani = preload("res://scripts/ani.gd").new()
 	add_child(ani)
 	ani.kur(self)
@@ -337,6 +341,7 @@ func _ready() -> void:
 		if q.contains("gemitest"): _gemi_test.call_deferred()
 		if q.contains("ada2test"): _ada2_test.call_deferred(q)
 		if q.contains("anitest"): _ani_test.call_deferred(q)
+		if q.contains("haritatest"): _harita_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -1248,6 +1253,24 @@ func _ada2_test(q: String) -> void:
 		for c in canlilari_ver(): tc[c.tur] = int(tc.get(c.tur, 0)) + 1
 		print("YZ canlılar ", tc, " bio ", bio_at(oyuncu.position))
 
+func _harita_test(_q: String) -> void:
+	oyuncu.dokunulmaz = 9999.0
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	var p0 := oyuncu.position
+	for k in 40:
+		oyuncu.position = p0 + Vector2(k * 40.0, sin(k * 0.4) * 120.0)
+		await get_tree().process_frame
+	oyuncu.position = p0
+	var n := 0
+	for q2 in yan.Q:
+		if yan.var_mi(q2) and not yan.done.has(q2.id): n += 1
+	print("HARITA yüzde ", harita_k.yuzde(), " yan görünür ", n, " kayit uzunluk ", harita_k.kayit().length())
+	harita_k.ac()
+	await get_tree().create_timer(1.0).timeout
+	print("HARITA açık ", harita_k.acik(), " ", harita_k.bilgi.text)
+
 func _ani_test(q: String) -> void:
 	oyuncu.dokunulmaz = 9999.0
 	await get_tree().create_timer(1.0).timeout
@@ -1511,7 +1534,7 @@ func _hud() -> void:
 	_golge(silah_yazi)
 	kutu.add_child(silah_yazi)
 	var yardim := Label.new()
-	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · Sağ tık ya da E: savuştur (basılı: gard) · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · Y: yetenekler · 1–5: kemer · G: görevler · C: karakter · N: inşa · B: bin · R: köpekler\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · LT savuştur · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
+	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · Sağ tık ya da E: savuştur (basılı: gard) · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · Y: yetenekler · 1–5: kemer · G: görevler · C: karakter · N: inşa · B: bin · R: köpekler · M: harita\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · LT savuştur · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
 	yardim.add_theme_font_size_override("font_size", 12)
 	_golge(yardim)
 	yardim.add_theme_font_size_override("font_size", 11)
@@ -2128,7 +2151,7 @@ func _durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), buyu = buyu.kayit(), ani = ani.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ani = ani.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 ## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
@@ -2263,6 +2286,7 @@ func durum_yukle(d: Dictionary) -> void:
 	evcil.yukle(d.get("evcil", {}))
 	kopru.yukle(d.get("kopru", []))
 	gecit.yukle(d.get("gecit", false))
+	harita_k.yukle(d.get("kesif", ""))
 	buyu.yukle(d.get("buyu", {}))
 	ani.yukle(d.get("ani", {}))
 	balik.yukle(d.get("balik", {}))
