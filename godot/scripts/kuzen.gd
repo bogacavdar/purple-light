@@ -94,19 +94,148 @@ func _barbaros(n) -> void:
 		_soyle(n, "[i](enkazın yanında, ıslak, yorgun bir adam)[/i] Kara… Toprak mı bu? Ah, başım. Ben [b]Barbaros[/b], denizciyim. Altı yıldır ada ada dolaşıp birini arıyorum. Dün gece gökten mor bir ışık indi, deniz kaynadı; gemim kayalara bindi. Kim olursan ol, yardım edersen sana borçlu kalırım.",
 			[{t = "Kimi arıyorsun?", f = func(): _soyle(n, "Kızımı. [b]Meltem[/b]. Mor ışık onu altı yıl önce güverteden aldı. Seni de bir şey buraya getirmiş, gözlerinden belli.", [{t = "Hoşça kal", kapat = true}, {t = "Tamam", pri = true}])}, {t = "Hoşça kal", kapat = true}])
 		return
+	if oyun.gorev.bitti("L5"):
+		if not oyun.hikaye.gordu.get("denizci", false):
+			oyun.hikaye.ilk("denizci", _teklif.bind(n))
+			return
+		if act2:
+			_soyle(n, "Gemi hazır, rüzgâr bizden yana. Bir daha açılmak istersen söyle.", [{t = "Açılalım", pri = true, f = func(): yolculuk(true)}, {t = "Hoşça kal", kapat = true}])
+			return
+		_teklif(n)
+		return
 	dz_t += 1
 	var L := ["Rüzgâr dönüyor; denizci bunu kokusundan bilir.", "Enkazdan kurtardığım tek şey bu fener. Meltem'in feneri.", "Bu kıyı tuhaf: kumu kristal, gecesi mor."]
 	_soyle(n, L[randi() % 3], [{t = "Hoşça kal", kapat = true}, {t = "Tamam", pri = true}])
 
+# ------------------------------------------------------------------ ACT 1'in sonu: yeni gemi ve deniz yolculuğu (web v75 shipAct, offerVoyage, voyage)
+var gemi: bool:
+	get: return tanis.has("gemi")
+var act2: bool:
+	get: return tanis.has("act2")
+var yol: CanvasLayer
+var yol_r: TextureRect
+var yol_y: Label
+var yol_t := -1.0
+var yol_tekrar := false
+var yol_V: Dictionary
+var yol_kart: Control
+
+func _teklif(n) -> void:
+	_soyle(n, "[i](yeni geminin dümenine dokunur)[/i] Meltem'i aramaya devam edeceğim. Mor ışığın izi bu adada bitmiyor; denizin ötesine, başka adalara uzanıyor. Eşin de o ışığın peşinde bir yerde. İstersen seni başka bir adaya götürebilirim. Ama bil: dönüşü kolay olmaz.",
+		[{t = "Götür beni", pri = true, f = func(): yolculuk(false)}, {t = "Henüz değil, hazırlanayım", kapat = true}])
+
+func _gemi_var() -> bool:
+	for x in oyun.el_yapimi.R["Gemi"].i:
+		if oyun.env.adet(str(x[0])) < int(x[1]): return false
+	return true
+
+## enkazın başında F: L5 açıkken gemi malzemeleri enkaza konur (web shipAct)
+func enkaz_f() -> bool:
+	if oyun.enkaz == null or not oyun.enkaz.visible or gemi: return false
+	if oyun.oyuncu.position.distance_to(oyun.enkaz.position) > 40.0: return false
+	var G = oyun.gorev
+	if G.aktif == null or G.aktif.id != "L5":
+		if _gemi_var() and not tanis.has("gemi_dedi"):
+			tanis["gemi_dedi"] = true
+			oyun.balon("Bu enkazı ben mi onarsam? Önce Barbaros'a sormalıyım.", 3.0)
+			return true
+		return false
+	if not _gemi_var():
+		var L := []
+		for x in oyun.el_yapimi.R["Gemi"].i: L.append("%d/%d %s" % [mini(oyun.env.adet(str(x[0])), int(x[1])), int(x[1]), x[0]])
+		oyun.env.mesaj("Gemi için: " + " · ".join(L), true)
+		return true
+	oyun.konusma.ac("", null, "[b]Barbaros'un enkazı[/b]\n8 kalas, 4 halat, 3 demir levha, 6 hasır ve 2 kristal ipek enkaza konacak. Gemi kurulsun mu?", [{t = "Kur", f = func():
+		for x in oyun.el_yapimi.R["Gemi"].i: oyun.env.eksilt(str(x[0]), int(x[1]))
+		tanis["gemi"] = true
+		for i in 30: oyun.parca(oyun.enkaz.position + Vector2(randf_range(-30, 30), 0), Vector2(randf_range(-25, 25), -30 - randf() * 50), 0.9, Color("#c89458") if i % 2 else Color("#ffe29b"))
+		oyun.balon("İşte ACT 1'in sonu… ya da başlangıcı.", 3.6)}, {t = "Vazgeç", pri = true, kapat = true}])
+	return true
+
+func yolculuk(tekrar: bool) -> void:
+	if yol_t >= 0.0: return
+	yol_V = oyun._json("res://data/yolculuk.json")
+	if yol == null:
+		yol = CanvasLayer.new(); yol.layer = 9; yol.process_mode = Node.PROCESS_MODE_ALWAYS
+		add_child(yol)
+		var a := ColorRect.new(); a.color = Color.BLACK; a.set_anchors_preset(Control.PRESET_FULL_RECT); yol.add_child(a)
+		yol_r = TextureRect.new(); yol_r.set_anchors_preset(Control.PRESET_FULL_RECT); yol_r.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		yol_r.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED; yol_r.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		yol.add_child(yol_r)
+		yol_y = Label.new(); yol_y.set_anchors_preset(Control.PRESET_CENTER_BOTTOM); yol_y.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		yol_y.custom_minimum_size = Vector2(680, 0); yol_y.position = Vector2(-340, -90); yol_y.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		yol_y.add_theme_font_size_override("font_size", 20); yol_y.add_theme_color_override("font_color", Color("#f3ecd8"))
+		yol_y.add_theme_color_override("font_outline_color", Color.BLACK); yol_y.add_theme_constant_override("outline_size", 4)
+		yol.add_child(yol_y)
+		var b := Button.new(); b.text = "Geç ›"; b.set_anchors_preset(Control.PRESET_TOP_RIGHT); b.position = Vector2(-80, 14); b.pressed.connect(_yol_gec)
+		yol.add_child(b)
+		yol_kart = VBoxContainer.new(); yol_kart.set_anchors_preset(Control.PRESET_CENTER); yol_kart.position = Vector2(-200, -60); yol_kart.custom_minimum_size = Vector2(400, 0)
+		var k1 := Label.new(); k1.text = "ACT 2"; k1.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER; k1.add_theme_font_size_override("font_size", 18); k1.add_theme_color_override("font_color", Color("#b9aed6"))
+		var k2 := Label.new(); k2.text = "Açık deniz"; k2.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER; k2.add_theme_font_size_override("font_size", 40); k2.add_theme_color_override("font_color", Color("#efe6ff"))
+		yol_kart.add_child(k1); yol_kart.add_child(k2)
+		yol.add_child(yol_kart)
+	yol_tekrar = tekrar
+	yol_t = 0.0
+	yol_kart.visible = false
+	yol_r.visible = true
+	yol_y.text = ""
+	yol.visible = true
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().paused = true
+
+func _yol_gec() -> void:
+	if yol_t >= 0.0 and yol_t < float(yol_V.sure): yol_t = float(yol_V.sure)
+
+func _unhandled_input(e: InputEvent) -> void:
+	if yol_t < 0.0 or not (e is InputEventKey) or not e.pressed or e.echo: return
+	if e.keycode in [KEY_ESCAPE, KEY_ENTER, KEY_SPACE]:
+		get_viewport().set_input_as_handled()
+		_yol_gec()
+
+func _yol_tik(dt: float) -> void:
+	yol_t += dt
+	var S := float(yol_V.sure)
+	if yol_t < S:
+		var k := mini(int(yol_V.kare) - 1, int(yol_t * float(yol_V.fps)))
+		yol_r.texture = load("res://art/yolculuk/k_%d.png" % k)
+		var y := ""
+		for c in yol_V.yazilar:
+			if yol_t >= float(c[0]): y = str(c[1])
+		if yol_t >= float(yol_V.yazi_bitis): y = ""
+		yol_y.text = y
+		return
+	# ACT 2 kartı (web __plAct(2, 'Açık deniz')), sonra dünya
+	yol_r.visible = false
+	yol_y.text = ""
+	yol_kart.visible = true
+	if yol_t >= S + 3.2:
+		yol_t = -1.0
+		yol.visible = false
+		process_mode = Node.PROCESS_MODE_INHERIT
+		get_tree().paused = false
+		if not yol_tekrar:
+			tanis["act2"] = true
+		oyun.env.mesaj("ACT 2'nin adası Godot'a sıradaki adımda geliyor; şimdilik Barbaros seni kıyıya geri bıraktı.")
+
 func _dz_tik() -> void:
-	if oyun.enkaz != null: oyun.enkaz.visible = dz_burada()
+	if oyun.enkaz != null:
+		oyun.enkaz.visible = dz_burada()
+		if gemi and oyun.enkaz.has_meta("tekne"): oyun.enkaz.position = oyun.enkaz.get_meta("tekne")
+		if gemi and oyun.enkaz.visible and oyun.enkaz.position.distance_to(oyun.oyuncu.position) < 700.0: oyun.enkaz.queue_redraw()
 	if dz_burada() and not tanis.has("dz_geldi"):
 		tanis["dz_geldi"] = true
 		oyun.env.mesaj("Denizci Barbaros: Mor Kristal Vadisi'nin kıyısına bir gemi çarptı")
 
-## web drawWreck: kıyıdaki enkaz (gövde, kırık direk, yırtık yelken, etrafta tahtalar)
+## web drawWreck: kıyıdaki enkaz (gövde, kırık direk, yırtık yelken, etrafta tahtalar); gemi kurulunca yeni gemi (web drawBoat)
 func enkaz_ciz(o: Node2D) -> void:
 	var r := func(x: float, y: float, w: float, h: float, c: String) -> void: o.draw_rect(Rect2(x, y, w, h), Color(c))
+	if gemi:
+		var b := roundf(sin(Time.get_ticks_msec() / 1000.0 * 1.6) * 1.5)
+		o.draw_rect(Rect2(-30, 4 + b, 60, 4), Color(0.04, 0.12, 0.2, 0.35))
+		r.call(-28, -7 + b, 56, 11, "#7a4a28"); r.call(-26, 4 + b, 50, 3, "#4a2e18"); r.call(-28, -8 + b, 56, 2, "#a8743a")
+		for i in range(-20, 21, 10): r.call(i, -4 + b, 3, 3, "#2a1a10")
+		r.call(-1, -50 + b, 3, 44, "#4a3018"); r.call(2, -46 + b, 20, 34, "#f0e8d8"); r.call(-18, -40 + b, 16, 28, "#e0d8c8"); r.call(0, -54 + b, 8, 4, "#c84a3a")
+		return
 	o.draw_set_transform(Vector2.ZERO, -0.18)
 	o.draw_circle(Vector2(0, 6), 1.0, Color(0, 0, 0, 0))
 	o.draw_set_transform(Vector2(0, 6), -0.18, Vector2(32, 5))
@@ -118,6 +247,9 @@ func enkaz_ciz(o: Node2D) -> void:
 	r.call(24, 6, 8, 2, "#6a4426"); r.call(-34, 8, 6, 2, "#6a4426"); r.call(30, -2, 2, 6, "#5a3a20")
 
 func _process(_dt: float) -> void:
+	if yol_t >= 0.0:
+		_yol_tik(_dt)
+		return
 	if oyun != null and oyun.el_yapimi != null: _dz_tik()
 
 # ------------------------------------------------------------------ Avcı Doğan (web talkToygar, toygarStory, dogTeach)

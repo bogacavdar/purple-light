@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · O7"
+const SURUM := "Godot · O8"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -294,6 +294,7 @@ func _ready() -> void:
 		if q.contains("kopektest"): _kopek_test.call_deferred()
 		if q.contains("lambatest"): _lamba_test.call_deferred()
 		if q.contains("hikayetest"): _hikaye_test.call_deferred()
+		if q.contains("gemitest"): _gemi_test.call_deferred()
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -944,6 +945,42 @@ func _hikaye_test() -> void:
 	for i in 4: hikaye._ileri()
 	print("HIKAYE bitti ", hikaye.gordu, " paused ", get_tree().paused)
 
+func _gemi_test() -> void:
+	oyuncu.dokunulmaz = 9999.0
+	el_yapimi.bilinen["Gemi"] = true
+	for id in ["E1", "E2", "E3", "E4", "E5", "EK1", "L1", "L2", "L3", "L4", "L6", "L7", "L8"]: gorev.bitenler.append(id)
+	ciftlik.st = "home"
+	kuzen.tanis["denizci"] = true
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	gorev._baslat(gorev.QI["L5"], "denizci", true)
+	while konusma.visible or sahne.acik:
+		if konusma.visible: konusma._cik()
+		if sahne.acik and sahne.faz == "oyna": sahne._bitir()
+		await get_tree().create_timer(0.2).timeout
+	print("GEMI aktif ", gorev.aktif.id if gorev.aktif != null else "-", " satir ", gorev.satir(gorev.aktif.p[0]) if gorev.aktif != null else "")
+	for x in el_yapimi.R["Gemi"].i: env.ekle(str(x[0]), int(x[1]))
+	oyuncu.position = enkaz.position + Vector2(0, 16)
+	print("GEMI f ", konus_ya_da_istasyon(), " ", konusma.yazi.text.substr(0, 30))
+	konusma._sec(konusma.liste[0])
+	await get_tree().create_timer(1.0).timeout
+	print("GEMI kuruldu ", kuzen.gemi, " tamam ", gorev.tamam())
+	oyuncu.position = gorev.kisi("denizci").position + Vector2(-14, 4)
+	await get_tree().create_timer(1.5).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.3).timeout
+	print("GEMI L5 bitti ", gorev.bitti("L5"))
+	konus_ya_da_istasyon()
+	await get_tree().create_timer(0.5).timeout
+	print("GEMI hikaye sahne ", hikaye.cur != null)
+	hikaye._atla()
+	await get_tree().create_timer(1.0).timeout
+	print("GEMI teklif ", konusma.yazi.text.substr(0, 40))
+	konusma._sec(konusma.liste[0])
+	await get_tree().create_timer(4.0).timeout
+	print("GEMI yolculuk ", kuzen.yol_t)
+
 func _dz_test() -> void:
 	await get_tree().create_timer(2.0).timeout
 	print("DZ yakin ", konus_ya_da_istasyon(), " ", konusma.yazi.text.substr(0, 60))
@@ -1321,6 +1358,7 @@ func _kisiler() -> void:
 		if k.has("enkaz"):
 			var ek := Node2D.new()
 			ek.position = Vector2(k.enkaz.x, k.enkaz.y)
+			if k.has("tekne"): ek.set_meta("tekne", Vector2(k.tekne.x, k.tekne.y))
 			ek.draw.connect(func(): kuzen.enkaz_ciz(ek))
 			nesneler.add_child(ek)
 			enkaz = ek
@@ -1570,6 +1608,8 @@ func konus_ya_da_istasyon() -> bool:
 		_konus(yakin)
 		return true
 	if gecit.f():
+		return true
+	if kuzen.enkaz_f():
 		return true
 	if kopru.f():
 		return true

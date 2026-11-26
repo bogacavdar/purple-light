@@ -5,7 +5,7 @@ extends Node
 
 const BAD := ["Çayır", "Orman", "Bataklık", "Kayalık Dağ", "Kül Diyarı", "Mor Kristal Vadisi"]
 const DAT := ["Çayır'a", "Orman'a", "Bataklık'a", "Kayalık Dağ'a", "Kül Diyarı'na", "Mor Kristal Vadisi'ne"]
-const DESTEK := ["b", "h", "any", "k", "learn", "kn", "lv", "reach", "sleep", "place", "house", "bed", "sq", "tame", "bridge", "wear", "clues", "rock", "fidan"]
+const DESTEK := ["b", "h", "any", "k", "learn", "kn", "lv", "reach", "sleep", "place", "house", "bed", "sq", "tame", "bridge", "wear", "clues", "rock", "fidan", "ship"]
 const KISI_G := {"ekin": "npc"}   # kişi türü → görev veren adı (web gidOf)
 const QHI := ["Selam %s! Bir işin mi var?", "%s, yüzünden belli, bir derdin var.", "Merhaba %s! Yardım lazım mı?"]
 
@@ -219,6 +219,7 @@ func ilerleme(p: Array) -> Array:
 		"bed": return [1 if oyun.yapi.yatak_kurulu() else 0, 1]
 		"bridge": return [1 if oyun.kopru.ana().fixed else 0, 1]
 		"rock": return [1 if oyun.gecit.acik else 0, 1]
+		"ship": return [1 if oyun.kuzen.gemi else 0, 1]
 		"fidan": return [mini(int(p[1]), oyun.ciftlik.fidan_buyudu()), int(p[1])]
 		"clues": return [mini(int(p[1]), oyun.iz.sayi()), int(p[1])]
 		"wear":
@@ -262,6 +263,7 @@ func satir(p: Array) -> String:
 		"clues": return "İz %d/%d" % [x[0], x[1]]
 		"fidan": return v + "Bir fidanı dik, ağaç olsun (üç gün)" if not ok_ else "✓ Fidan ağaç oldu"
 		"rock": return oyun.gecit.satir(ok_)
+		"ship": return "✓ Gemi kuruldu" if ok_ else "Gemi malzemelerini enkaza koy"
 		"wear": return v + str(p[1]) + (" giy" if RegEx.create_from_string("(?i)zırh|miğfer|çizme|eldiven").search(str(p[1])) != null else " silah yuvasına tak")
 		"bridge": return "✓ Köprü onarıldı" if ok_ else "Odun %d/%d · köprüye git" % [mini(oyun.kopru.odun(), 20), 20]
 		"sq":
@@ -327,6 +329,12 @@ func hedef() -> Dictionary:
 				return {nokta = Vector2(I.kazan.x, I.kazan.y), ad = "Zümrüt'ün kazanı"}
 			"reach":
 				return {bios = [int(p[1])], item = BAD[int(p[1])]}
+			"ship":
+				for x in oyun.el_yapimi.R["Gemi"].i:
+					if env.adet(str(x[0])) < int(x[1]):
+						var e := eksik_hedef(str(x[0]), int(x[1]))
+						if not e.is_empty(): return e
+				if oyun.enkaz != null: return {nokta = oyun.enkaz.position, ad = "Enkaz"}
 			"sleep", "house", "bed":
 				if p[0] == "sleep" and env.adet("Yaprak barınağı") > 0: return {}
 				return {kisi = kisi("usta"), ad = ad("usta")}
