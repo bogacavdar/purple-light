@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.63 · 26 Kasım 2026
+
+### Proje
+- **Godot: Atölye:**
+  - Kurulu atölyenin yanında F'ye basınca bir tarif seçiliyor ve malzemeler içine konuyor.
+  - Malzemeler tamamsa her 25 saniyede bir ürün çıkıyor (en çok 50). Sen uzaktayken de çalışıyor. Atölyenin üstünde ilerleme çubuğu ve biriken ürün görünüyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.62 · 26 Kasım 2026
 
 ### Proje
@@ -178,13 +188,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot, Adım 1c (el yapımı) oynanabilir:** Tab ile el yapımı ekranı (bildiğin tarifler, malzemeler ve sendeki adetleri, eksikler, Yap düğmesi), K ile tarif kitabı (web'in 766 tarifinin hepsi, kategori kategori; örste dövülenler ve Usta Sinan'ın kurdukları ayrıca belirtilir). Zümrüt'ün kazanı gelene kadar G tuşu Çayır tariflerini de öğretir. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.43 · 25 Kasım 2026
-
-### Proje
-- **Godot, Adım 1b (toplama ve çanta) oynanabilir:** F ile toplama (önce yerdeki eşyalar), ağaç kesme ve meyve silkeleme, kazmayla maden kazma, yere düşen eşyalar (üstünden yürüyünce alınır), çanta (I), 1–5 alet kemeri, aletlerin aşınması, tokluk ve yemek (X). Kemal ve el yapımı gelene kadar G tuşu deneme için Taş balta, Taş kazma ve Taş kılıç verir. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
 

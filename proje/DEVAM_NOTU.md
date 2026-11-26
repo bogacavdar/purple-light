@@ -1,3 +1,7 @@
+## v4.63 (26 Kasım 2026) · Godot 2d-2: Atölye
+- `godot-deneme/` yeni derleme (godot dalı: yeni atolye.gd; yapi.gd Atölye ws, çubuk çizimi, kayıtta ws; sinan ve atolye pencereleri ortalanması). Belge 99_godot 2d-2 satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.62 (26 Kasım 2026) · Godot 2d-1: Sinan, yapılar, evler, uyku
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_yapi.js → data/yapilar.json, art/yapilar; yeni yapi.gd, sinan.gd; oyun.gd engel'e yapılar, F'de yapı, kayıtta yapi; envanter kemer/çanta seçimi yerleştirir; gorev.gd sleep/place/house/bed). Denetim: ?yapitest. Belge 99_godot 2d-1 satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.44 (25 Kasım 2026) · Godot Adım 1c (el yapımı)
 - `godot-deneme/` yeni derleme (godot dalı: el_yapimi.gd; data/toplama.json'a DB.R tarifleri, FORGED/PLACEABLE işaretleri, ~1.175 eşya resmi). Belge 99_godot 1c satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.43 (25 Kasım 2026) · Godot Adım 1b (toplama ve çanta)
-- `godot-deneme/` yeni derleme (godot dalı: envanter.gd, toplama.gd, dugum.gd; data/toplama.json web'den: RES, GTIME, MINES, ORE/AXE/PICK kademeleri, GT, ağaç odunu ve meyvesi, eşya resimleri, foodVal/healVal). Belge 99_godot 1b satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 
