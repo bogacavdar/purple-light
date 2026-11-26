@@ -15,6 +15,8 @@ var ayrinti: VBoxContainer
 var baslik: Label
 var iz_dugme: Button
 var izler := false      # kitabın İzler sayfası (web İzler sekmesi)
+var halk := false       # kitabın Ada halkı sayfası (web Kitap › Ada halkı)
+var halk_dugme: Button
 var kip := "el"        # "el": el yapımı (Tab) · "kitap": tarif kitabı (K)
 var secili := ""
 
@@ -89,6 +91,11 @@ func _arayuz() -> void:
 	bh.add_child(baslik)
 	iz_dugme = Button.new(); iz_dugme.text = "İzler"; iz_dugme.pressed.connect(_iz_degis)
 	bh.add_child(iz_dugme)
+	halk_dugme = Button.new(); halk_dugme.text = "Ada halkı"; halk_dugme.pressed.connect(func():
+		halk = not halk
+		if halk: izler = false
+		ciz())
+	bh.add_child(halk_dugme)
 	v.add_child(bh)
 	var h := HBoxContainer.new()
 	h.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -125,13 +132,24 @@ func _ikonlu(n: String, yazi: String, renk: Color) -> HBoxContainer:
 
 func _iz_degis() -> void:
 	izler = not izler
+	if izler: halk = false
 	ciz()
+
+func kapat() -> void:
+	pencere.visible = false
 
 func ciz() -> void:
 	for c in liste.get_children():
 		c.queue_free()
 	iz_dugme.visible = kip != "el"
 	iz_dugme.text = "Tarifler" if izler else "İzler"
+	halk_dugme.visible = kip != "el"
+	halk_dugme.text = "Tarifler" if halk else "Ada halkı %d" % oyun.hikaye.sayi()
+	if kip != "el" and halk:
+		for c in ayrinti.get_children(): c.queue_free()
+		baslik.text = "Tarif kitabı  (K) · Ada halkı"
+		oyun.hikaye.liste_yaz(liste)
+		return
 	if kip != "el" and izler:
 		for c in ayrinti.get_children(): c.queue_free()
 		baslik.text = "Tarif kitabı  (K) · İzler %d / 6" % oyun.iz.sayi()

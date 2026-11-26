@@ -47,6 +47,7 @@ func kur(o) -> void:
 func ac(kim: String, por, metin: String, secs: Array = []) -> void:
 	if secs.is_empty():
 		secs = [{t = "Anladım", kapat = true}]
+	if oyun.hikaye != null: secs = oyun.hikaye.ekle(kim, por, secs)
 	liste = secs
 	ad.text = kim
 	ad.visible = kim != ""
