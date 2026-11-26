@@ -1,3 +1,7 @@
+## v4.95 (27 Kasım 2026) · Godot A7: Astronot Gökay ve ACT 2'nin sonu
+- `godot-deneme/` yeni derleme (godot dalı: yeni tools/disa_aktar_roket.js → art/roket/f_*.png (125), s_*.png (117, kişisiz), data/roket.json; yeni roket.gd (fırlatma, ACT 3 kartı, kavuşma + Karakter.sayfa çizimleri, son kart; tanis["roket"]); act2.gd Gökay (rampa, konuşma, roket parçaları, as ödülleri), kuzen.gd "as" rolü, gorev.gd ACT 2 kartı ve oku Gökay'a). Denetim: ?ada2test_gokay. Belge 99_godot A7 satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (tanis["roket"] zararsız kalır).
+
 ## v4.94 (27 Kasım 2026) · Godot A6: Ejder Avcısı Tomris ve Işın kılıcı
 - `godot-deneme/` yeni derleme (godot dalı: act2.gd Tomris (kafatası yığını, konuşma, Işın kılıcı yapımı, ej ödülleri), oyuncu.gd silah_v Işın kılıcı (menzil 32, ara 0,3) ve plazma kıvılcımları, kuzen.gd "ej" rolü, gorev.gd ACT 2 kartı ve oku Tomris'e). Denetim: ?ada2test_tomris. Belge 99_godot A6 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).
@@ -73,9 +77,5 @@
 
 ## v4.76 (26 Kasım 2026) · Godot 4b: Kayalık Dağ'ın yan görevleri
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_yan.js Kayalık dahil, fam3 noktası; yan.gd kovalama, keçi eşliği, hayalet Işıl, kulübe/mezar/taş-fener, çok türlü av; evcil.gd _keci_hedef_b). Denetim: ?yantest_zehra. Belge 99_godot 4b satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.75 (26 Kasım 2026) · Godot 4a: Kayalık Dağ canlıları, kişileri, Rüzgâr Mağarası
-- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_canli.js P2 ART'ı olmayan canlıları drawAnimal'dan alır, BIYOM=3 → data/canlilar_kayalik.json; disa_aktar_kisi.js BIYOM=3 → data/kisiler_kayalik.json, data/gorevler_kayalik.json; disa_aktar_magara2.js MAG=c3 → data/magara_c3.json; oyun.gd, gorev.gd, magara.gd listeleri). Denetim: ?git_k_firuze, ?mag_c3 yok (c1/c2 kancası). Belge 99_godot Adım 4 ve 4a satırları. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

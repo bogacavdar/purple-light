@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.95 · 27 Kasım 2026
+
+### Proje
+- **Godot: Gök Rıhtımı, Astronot Gökay ve ACT 2'nin sonu:**
+  - Gökay, Gök Rıhtımı'nda yarım kalmış roket rampasının başında. Beş işin sonunda roket rampaya dikiliyor.
+  - "Fırlat!" deyince fırlatma sahnesi, "ACT 3 · Mor gemi" kartı ve mor gemide kavuşma oynuyor. Kavuşmada senin ve sevdiğin kişinin kendi çizimleri, altyazılarda adlarınız var.
+  - Sonda "Yeniden birliktesiniz" kartı çıkıyor. Godot sürümü artık ACT 2'nin sonuna kadar oynanabiliyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.94 · 27 Kasım 2026
 
 ### Proje
@@ -217,17 +228,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: Kayalık Dağ'ın yan görevleri:**
   - Yolcu Yahya (ocağa eşlik), Dağlı Zehra (kaçan oğlak Boncuk'u yakala), Gözcü Bora (kartal yumurtası), Hatice Nine (Emir'in izleri), Keşiş Sükûn (rüzgârdaki çanlar) ve hayalet kız Işıl.
   - Işıl yalnız kendi gece saatinde görünüyor; yanına yaklaşınca görevi kendiliğinden başlıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.75 · 26 Kasım 2026
-
-### Proje
-- **Godot: Kayalık Dağ (Adım 4 başladı):**
-  - Kayalık Dağ'ın canlıları geldi: dağ keçisi, muflon, yaban öküzü, ur kekliği, kartal, vaşak ve mağara ayısı.
-  - Cadı Firuze, Silahçı Kaya, Zırhçı Kayhan ve Pazarcı Kardelen web'deki yerlerinde; 27 görev veriyorlar.
-  - Rüzgâr Mağarası (Seviye 24): kaya yarasaları, tavan örümcekleri, mağara vaşakları. Dipteki Dağcı Tuncay gümüş filizi istiyor ve Dağ Devi'ni çağırıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
