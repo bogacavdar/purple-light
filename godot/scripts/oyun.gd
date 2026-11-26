@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · O2"
+const SURUM := "Godot · O3a"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -268,6 +268,7 @@ func _ready() -> void:
 			oyuncu.position = Vector2(7664 + 8, 2280 + 6)
 			ad_sevgili = "Elif"
 		if q.contains("yantest_"): _yan_test.call_deferred(RegEx.create_from_string("yantest_([a-z]+)").search(q).get_string(1))
+		if q.contains("ekintest"): _ekin_test.call_deferred()
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -755,6 +756,39 @@ func _yan_test(id: String) -> void:
 			await get_tree().create_timer(0.3).timeout
 	print("YAN bitti=", yan.done.has(id), " vio=", env.vio)
 
+func _ekin_test() -> void:
+	oyuncu.dokunulmaz = 9999.0
+	while env.sv < 3: env.xp_ekle(200)
+	var ek = gorev.kisi("k_ekin")
+	oyuncu.position = ek.position + Vector2(-14, 4)
+	await get_tree().create_timer(1.0).timeout
+	konus_ya_da_istasyon(); print("EKIN 1 ", konusma.yazi.text.substr(0, 50)); konusma._cik()
+	gorev._baslat(gorev.QI["EK1"], "k_ekin", true); print("EKIN 2 aktif ", gorev.aktif.id if gorev.aktif != null else "-"); konusma._cik()
+	await get_tree().create_timer(1.0).timeout
+	var q: Dictionary = yan.BY.ekin1
+	print("EKIN satir ", gorev.satir(gorev.aktif.p[0]))
+	for k in ["s1", "s2", "s3"]:
+		oyuncu.position = Vector2(q.pts[k].x, q.pts[k].y) + Vector2(0, 6)
+		await get_tree().create_timer(1.5).timeout
+		if konusma.visible: konusma._cik()
+		await get_tree().create_timer(0.6).timeout
+		print("EKIN ", k, " ", gorev.satir(gorev.aktif.p[0]))
+	env.ekle("Elma")
+	oyuncu.position = Vector2(q.pts.k.x, q.pts.k.y) + Vector2(0, 6)
+	await get_tree().create_timer(1.5).timeout
+	if konusma.visible: konusma._cik()
+	await get_tree().create_timer(0.8).timeout
+	if konusma.visible: konusma._cik()
+	print("EKIN kirpi ", gorev.satir(gorev.aktif.p[0]), " elma ", env.adet("Elma"))
+	oyuncu.position = ek.position + Vector2(-14, 4)
+	await get_tree().create_timer(2.0).timeout
+	print("EKIN donus ", gorev.bitti("EK1"), " ", konusma.yazi.text.substr(0, 40))
+	konusma._cik()
+	await get_tree().create_timer(0.5).timeout
+	konus_ya_da_istasyon(); print("EKIN veda ", konusma.yazi.text.substr(0, 40)); konusma._cik()
+	await get_tree().create_timer(0.5).timeout
+	print("EKIN gitti ", kuzen.tanis.has("ekin_gitti"), " gorunur ", ek.visible)
+
 func _dz_test() -> void:
 	await get_tree().create_timer(2.0).timeout
 	print("DZ yakin ", konus_ya_da_istasyon(), " ", konusma.yazi.text.substr(0, 60))
@@ -1117,6 +1151,8 @@ func _kisiler() -> void:
 		tum.append_array(kb.kisiler)
 		kisi_veri.istasyonlar.append_array(kb.istasyonlar)
 	tum.append(_json("res://data/evcil.json").davut)
+	for yq in _json("res://data/yan.json").yan:
+		if yq.id == "ekin1": tum.append({k = "k_ekin", ad = yq.name, x = yq.x, y = yq.y, rol = "ek", resim = {f = yq.resim_f, q = yq.resim_q}, portre = yq.portre})
 	for st in kisi_veri.istasyonlar:
 		if st.tur == "ates": continue
 		istasyonlar.append(st)

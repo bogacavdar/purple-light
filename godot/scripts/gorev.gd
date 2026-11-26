@@ -57,7 +57,9 @@ func kur(o) -> void:
 	for bf in ["kayalik", "kul", "kristal"]:
 		Q.append_array(o._json("res://data/gorevler_%s.json" % bf).gorevler)
 	Q.append_array(o._json("res://data/evcil.json").gorevler)
+	Q.append_array(o._json("res://data/ekin.json").gorevler)
 	V.GB["k_davut"] = 0
+	V.GB["k_ekin"] = 0
 	for i in Q.size():
 		var q: Dictionary = Q[i]
 		q.i = i
@@ -218,7 +220,9 @@ func ilerleme(p: Array) -> Array:
 			for y in oyun.kusam:
 				if oyun.kusam[y] == p[1]: return [1, 1]
 			return [0, 1]
-		"sq": return [1 if oyun.evcil.keci.durum == "davut" or bitti("CB1") else 0, 1]
+		"sq":
+			if str(p[1]) != "goat" and oyun.yan.BY.has(str(p[1])): return [1 if oyun.yan.done.has(str(p[1])) else 0, 1]
+			return [1 if oyun.evcil.keci.durum == "davut" or bitti("CB1") else 0, 1]
 		"tame": return [1 if oyun.evcil.ever(str(p[1])) else 0, 1]
 	return [0, 1]
 
@@ -255,6 +259,9 @@ func satir(p: Array) -> String:
 		"wear": return v + str(p[1]) + (" giy" if RegEx.create_from_string("(?i)zırh|miğfer|çizme|eldiven").search(str(p[1])) != null else " silah yuvasına tak")
 		"bridge": return "✓ Köprü onarıldı" if ok_ else "Odun %d/%d · köprüye git" % [mini(oyun.kopru.odun(), 20), 20]
 		"sq":
+			if str(p[1]) != "goat" and oyun.yan.BY.has(str(p[1])):
+				var yz: String = oyun.yan.ana_yazi(str(p[1]))
+				return yz if yz != "" else str(oyun.yan.BY[str(p[1])].title)
 			if ok_: return "✓ Pamuk Davut'a döndü"
 			return "Pamuk'u Davut'a götür" if oyun.evcil.keci.durum == "izle" else "Pamuk'u yakala (%d/3)" % int(oyun.evcil.keci.cnt)
 		"tame": return ("✓ %s evcilleşti" if ok_ else "%s evcilleştir") % oyun.evcil.etiket(str(p[1]))

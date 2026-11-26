@@ -75,6 +75,7 @@ func _ana_biten() -> Array:
 	return L
 
 func acik_mi(q: Dictionary) -> bool:
+	if q.get("main", 0): return false
 	var d := _ana_biten()
 	var n := 0
 	for x in Q:
@@ -96,6 +97,7 @@ func _takipci(q: Dictionary) -> bool:
 	return s != null and s.t == "escort" and s.get("who", "") == "self"
 
 func var_mi(q: Dictionary) -> bool:
+	if q.get("main", 0): return false   # ana görevin adımları (Ekin'in EK1'i): kişi yan görevin değil, ana görevindir
 	if oyun.magara.icinde: return false
 	if q.get("ghost", 0): return false
 	if done.has(q.id): return true
@@ -251,7 +253,7 @@ func _basla(q: Dictionary, at := 0) -> void:
 	A = {id = q.id, step = at}
 	ACT.append(A)
 	_sifirla_adim()
-	env.mesaj("Yan görev: %s" % q.title)
+	if not q.get("main", 0): env.mesaj("Yan görev: %s" % q.title)
 
 func _ilerle() -> void:
 	if A == null: return
@@ -273,6 +275,9 @@ func _bitir(q: Dictionary) -> void:
 		fol.queue_free(); fol = null
 	ACT = ACT.filter(func(a): return a.id != q.id)
 	A = null
+	if q.get("main", 0):
+		_dunya()
+		return
 	env.vio_ekle(int(q.c))
 	if int(q.xp) > 0: env.xp_ekle(int(q.xp))
 	env.mesaj("%s · Yan görev bitti · +%d Vio · +%d XP" % [q.title, int(q.c), int(q.xp)])
@@ -366,6 +371,7 @@ func _process(dt: float) -> void:
 		var g: Dictionary = BY.isil
 		if not done.has("isil") and act("isil") == null and acik_mi(g) and _pencere(g.win) and not oyun.konusma.visible and oyun.oyuncu.position.distance_to(Vector2(g.x, g.y)) < 60.0:
 			_basla(g)
+	_ana_adimlar()
 	if A == null or oyun.konusma.visible: return
 	if oyun.oyuncu.bayildi:
 		iptal("Bayıldın, yan görev yarıda kaldı")
@@ -696,6 +702,32 @@ func _draw() -> void:
 			draw_rect(Rect2(roundf(p.x + cos(an) * rr), roundf(p.y - 4 + sin(an) * rr * 0.7 - ph * 6), 1, 1), Color(0.75, 0.91, 1, al))
 
 # ------------------------------------------------------------------ kart (web renderSQ)
+## ana görevin adımlarını bu motor yürütür (web: EK1 açıkken ekin1 başlar); dönüş adımı ana görevin verenine varınca biter
+func _ana_adimlar() -> void:
+	var G = oyun.gorev
+	for q in Q:
+		if not q.get("main", 0) or done.has(q.id): continue
+		var gid: String = {"ekin1": "EK1"}.get(q.id, "")
+		if G.aktif == null or G.aktif.id != gid: continue
+		var a = act(q.id)
+		if a == null:
+			_basla(q)
+			return
+		if a != A: _takip(a)
+		var s = _adim()
+		if s != null and s.t == "back":
+			var n = G.kisi(G.aktif.g)
+			if n != null and n.position.distance_to(oyun.oyuncu.position) < 32.0: _bitir(q)
+
+func ana_yazi(id: String) -> String:
+	if done.has(id): return "✓ " + str(BY[id].steps[-1].get("tx", "")) if BY.has(id) else "✓"
+	var a = act(id)
+	if a == null or not BY.has(id): return ""
+	var q: Dictionary = BY[id]
+	var s: Dictionary = q.steps[mini(int(a.step), q.steps.size() - 1)]
+	if a == A: return adim_yazi()
+	return str(s.get("tx", ""))
+
 func _kart_kur() -> void:
 	kart = PanelContainer.new()
 	var st := StyleBoxFlat.new(); st.bg_color = Color(0.04, 0.06, 0.09, 0.82); st.border_color = Color("#7fc8ff"); st.set_border_width_all(1); st.set_content_margin_all(8)
@@ -740,7 +772,7 @@ func _dat(ad: String) -> String:
 	return ad + ek
 
 func _kart_yaz() -> void:
-	if A == null or oyun.sahne.acik or oyun.ogr.acik():
+	if A == null or oyun.sahne.acik or oyun.ogr.acik() or BY[A.id].get("main", 0):
 		kart.visible = false
 		return
 	var q: Dictionary = BY[A.id]
@@ -813,6 +845,7 @@ func _pencere_yaz() -> void:
 		pen_liste.add_child(_etiket("Alınmış bir yan görevin yok. Başında mavi ? olan kişilerle konuş.", 12, Color("#a8b898")))
 	for a in ACT:
 		var q: Dictionary = BY[a.id]
+		if q.get("main", 0): continue
 		var izl: bool = a == A
 		var yazi := "[b]%s[/b] · %s" % [q.title, q.name]
 		if izl: yazi += "\n" + adim_yazi()
