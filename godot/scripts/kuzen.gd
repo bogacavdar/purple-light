@@ -31,7 +31,7 @@ func konus(n, ac_kazan := false) -> bool:
 		"d": oyun.evcil.davut_konus(n)
 		"t": _dogan(n)
 		"dz": _barbaros(n)
-		"ek": _ekin(n)
+		"ek": oyun.ciftlik.ekin_konus(n)
 		_: _kuzen(n, ac_kazan)
 	return true
 
@@ -78,23 +78,6 @@ func _kuzen(n, ac_kazan: bool) -> void:
 			_soyle(n, soz, [{t = "Silah dök", pri = true, f = func(): oyun.istasyon.ac(K.k)}, about, {t = "Hoşça kal", kapat = true}])
 		"a":
 			_soyle(n, soz, [{t = "Zırh döv", pri = true, f = func(): oyun.istasyon.ac(K.k)}, about, {t = "Hoşça kal", kapat = true}])
-
-# ------------------------------------------------------------------ Çiftçi Ekin (web v343: talkEkin; belge ACT 1 › Çiftçi Ekin)
-## Çayır'da tanışılır, EK1'i (Kaybolan korkuluk) verir; görev bitince ikinci konuşmada adasına dönmek için ayrılır.
-func ekin_cayirda() -> bool:
-	return not tanis.has("ekin_gitti")
-
-func _ekin(n) -> void:
-	if not tanis.has("k_ekin"):
-		tanis["k_ekin"] = true
-		_soyle(n, "Merhaba! Ben [b]Ekin[/b]. Buralı değilim; bir fırtınada salımla bu adaya düştüm. Şimdilik şu köşeyi ekip biçiyorum, toprağı güzel.", [{t = "Merhaba Ekin", pri = true, kapat = true}])
-		return
-	if ekin_cayirda() and oyun.gorev.bitti("EK1"):
-		_soyle(n, "Ben… adama dönmeliyim. Annem bekler, tarlam kurur. Bir sal yaparım, olmazsa yüzerim! Hoşça kal, iyi ki tanıştık.", [{t = "Kendine iyi bak", pri = true, f = func():
-			tanis["ekin_gitti"] = true
-			oyun.env.mesaj("Ekin Çayır'dan ayrıldı.")}])
-		return
-	_soyle(n, "Korkuluğum yine yerinde değil… Rüzgâr mı, cin mi?", [{t = "Hoşça kal", pri = true, kapat = true}])
 
 # ------------------------------------------------------------------ Denizci Barbaros (web v75: talkDz, drawWreck; belge ACT 1 › Denizci Barbaros)
 ## Gemi tarifini öğrenince (Kemal'in E4 ödülü) gemisi Mor Kristal Vadisi'nin kıyısına çarpar; o zamana dek ne kendisi ne enkazı görünür.

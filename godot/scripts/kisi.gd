@@ -54,7 +54,7 @@ func _process(dt: float) -> void:
 		visible = oyun.kuzen.dz_burada()
 		if not visible: return
 	if K.k == "k_ekin":
-		visible = oyun.kuzen.ekin_cayirda()
+		visible = oyun.ciftlik != null and oyun.ciftlik.ekin_gorunur()
 		if not visible: return
 	var p: Vector2 = oyun.oyuncu.position
 	var d := p.distance_to(position)

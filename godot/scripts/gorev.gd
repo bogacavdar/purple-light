@@ -5,7 +5,7 @@ extends Node
 
 const BAD := ["Çayır", "Orman", "Bataklık", "Kayalık Dağ", "Kül Diyarı", "Mor Kristal Vadisi"]
 const DAT := ["Çayır'a", "Orman'a", "Bataklık'a", "Kayalık Dağ'a", "Kül Diyarı'na", "Mor Kristal Vadisi'ne"]
-const DESTEK := ["b", "h", "any", "k", "learn", "kn", "lv", "reach", "sleep", "place", "house", "bed", "sq", "tame", "bridge", "wear", "clues", "rock"]
+const DESTEK := ["b", "h", "any", "k", "learn", "kn", "lv", "reach", "sleep", "place", "house", "bed", "sq", "tame", "bridge", "wear", "clues", "rock", "fidan"]
 const KISI_G := {"ekin": "npc"}   # kişi türü → görev veren adı (web gidOf)
 const QHI := ["Selam %s! Bir işin mi var?", "%s, yüzünden belli, bir derdin var.", "Merhaba %s! Yardım lazım mı?"]
 
@@ -155,6 +155,7 @@ func sonraki(g: String):
 func kosul(r: Array) -> bool:
 	match str(r[0]):
 		"q": return bitti(r[1])
+		"ekin": return oyun.ciftlik.st == "home"
 		"lv": return env.sv >= int(r[1])
 		"bio": return biyomlar.has(int(r[1]))
 		"has":
@@ -215,6 +216,7 @@ func ilerleme(p: Array) -> Array:
 		"bed": return [1 if oyun.yapi.yatak_kurulu() else 0, 1]
 		"bridge": return [1 if oyun.kopru.ana().fixed else 0, 1]
 		"rock": return [1 if oyun.gecit.acik else 0, 1]
+		"fidan": return [mini(int(p[1]), oyun.ciftlik.fidan_buyudu()), int(p[1])]
 		"clues": return [mini(int(p[1]), oyun.iz.sayi()), int(p[1])]
 		"wear":
 			for y in oyun.kusam:
@@ -255,6 +257,7 @@ func satir(p: Array) -> String:
 		"house": return v + "Bir ev kur"
 		"bed": return v + "Evine yatak koy"
 		"clues": return "İz %d/%d" % [x[0], x[1]]
+		"fidan": return v + "Bir fidanı dik, ağaç olsun (üç gün)" if not ok_ else "✓ Fidan ağaç oldu"
 		"rock": return oyun.gecit.satir(ok_)
 		"wear": return v + str(p[1]) + (" giy" if RegEx.create_from_string("(?i)zırh|miğfer|çizme|eldiven").search(str(p[1])) != null else " silah yuvasına tak")
 		"bridge": return "✓ Köprü onarıldı" if ok_ else "Odun %d/%d · köprüye git" % [mini(oyun.kopru.odun(), 20), 20]
