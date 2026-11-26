@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.59 · 26 Kasım 2026
+
+### Proje
+- **Godot: Orman canlıları (Adım 2 başladı):**
+  - Orman'da sincap, karaca, kunduz, yaban domuzu (gece), dikenli kirpi, engerek ve oklu kirpi dolaşıyor.
+  - Kirpiler diken, engerek zehir atıyor. Atışlardan yana atılarak kaçılıyor; savuşturma onları geri çeviriyor.
+  - Zehir ve kanama bir süre can yakıyor; sol üstte kalan süresi görünüyor.
+  - Orman canlılarının resimleri şimdilik web'deki çizimler.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.58 · 26 Kasım 2026
 
 ### Proje
@@ -162,24 +174,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Tasarım belgesi
 - **Godot'ya geçiş başladı:** Platformlar › Godot'ya geçiş bölümü aşamalı, biyom biyom taşıma planına göre yeniden yazıldı (Deneme, Çayır, Orman, Bataklık, Kayalık, Kül Diyarı, ACT 2, Platform). Web sürümü bu sırada yayında kalır; taşınmış biyomlara web'de yalnız hata düzeltmesi ve denge ayarı yapılır.
 - **Godot denemesi oynanabilir:** https://bogacavdar.github.io/purple-light/godot-deneme/ adresinde Çayır'ın bir parçası Godot'da: yeni karakterle 8 yön yürüme, koşu, atılma, Tavşan ve Kurt, vuruş; klavye ve oyun kolu.
-
----
-
-## Versiyon 4.39 · 22 Kasım 2026
-
-### Görsel
-- **Karakterler NPC'ler gibi:** oyuncu ve sevdiği kişi, Kemal ve öbür kişiler gibi ComfyUI'de tek parça yeniden çizildi; boyları NPC'ler kadar, gözler ve pembe yanaklar her yönde.
-- **Saç her yönde düzgün:** her saç biçimi (erkek: Kısa, Dağınık, Yana taranmış, Dikleştirilmiş, Uzun, At kuyruğu, Kel; kadın: Uzun, At kuyruğu, Örgü, Topuz, Küt, Kısa, İki kuyruk, Kel) karakterin kendi bütün çizimi; artık başın üstüne sonradan eklenmiyor. Yan görünüşteki saçsız kafa ve yüzdeki lekeler gitti.
-- **Yüzler** (Sakin, Güler yüzlü, Çilli, Ciddi) ağız, çil ve kaşla ayrılıyor; **elbise** eteğiyle görünüyor.
-- Çaprazlarda baş ve gövde öbür yönlerle aynı oranda.
-- **Ara sahnelerde** (teknedeki akşam yemeği dahil) yana bakan karakter tam profil yerine hafif dönük duruyor.
-
-### Arayüz
-- Karakter yaratmada yüzün büyütülmüş görünümü kaldırıldı; önizleme yalnız tam boy (telefonda da).
-- Şapka, gözlük, bıyık, sakal, buff ve saç tokası şimdilik gizli; yeni tarzda çizilip sonraki sürümde geri gelecek. Eski kayıtlardaki seçimler silinmedi.
-
-### Tasarım belgesi
-- Sistemler › Oyuncunun karakteri: NPC'ler gibi tek parça çizim, saç biçimleri, yüzler, elbise, ara sahnede hafif dönük duruş. Akış › Karakter yaratma: önizleme.
 
 ---
 

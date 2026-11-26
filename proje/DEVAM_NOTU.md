@@ -1,3 +1,7 @@
+## v4.59 (26 Kasım 2026) · Godot 2a: Orman canlıları
+- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_canli.js BIYOM=1 → data/canlilar_orman.json ve art/canli_*.png; oyun.gd canli_liste biyom biyom, _atici_var; yeni atis.gd; canli.gd ranged; oyuncu.gd etki_ekle/_etkiler; zaman.gd kampta). Denetim: ?orman (+engerek, dikenlikirpi, yabandomuzu, oklukirpi). Belge 99_godot Adım 2 planı ve 2a satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.58 (26 Kasım 2026) · Godot 1f-4: web kaydını açma
 - `godot-deneme/` yeni derleme (godot dalı: yeni web_kayit.gd: localStorage "hammadde.saves.v1" okur, snapshot → durum_al biçimi; kayit.gd ana menüde "Web oyunundaki kaydı aç"). Belge 99_godot 1f-4 satırı. Web oyununda değişen yalnız verlab. Çayır adımı (Adım 1) bununla tamam; sırada Orman.
 - Geri almak için: bu commit'i `git revert` et.
@@ -73,11 +77,4 @@
 ## v4.40 (25 Kasım 2026) · Godot'ya aşamalı geçiş planı (yalnız belge)
 - Belge: 99_godot.md: başlama kararı (Boğaç, 25 Kasım), biyom biyom adımlar tablosu, web sürümü kuralı, veri aktarımı, kayıt taşıma, `godot` dalı; Retro Diffusion bölümüne ComfyUI notu. Oyun kodu değişmedi (yalnız verlab).
 - Geri almak için: bu commit'i `git revert` et.
-
-## v4.39 (22 Kasım 2026) · Oyuncu karakteri NPC'ler gibi tek parça (ComfyUI), her saç biçimi kendi çizimi, yüzler/elbise piksel düzeyinde
-- Belge: 20_sistemler › "Oyuncunun karakteri" (17:50 ve 19:46 alıntıları); 10_akis › Karakter yaratma (yalnız tam boy önizleme); 00_giris sürüm satırı.
-- Kod: yalnız `v428kahraman` bloğu (yerinde). Veri `HD={CW:26,CH:40,e:{stil:{c,m,A}},k:{...}}`: her saç biçimi için 5 satır (S, SW, W, NW, N) × 5 kare (duruş + 4 adım) renk + maske PNG; `A[yön]={top,cx,neck,hip,er,ex,mo}` (göz satırı/sütunları, ağız). Maske R=bölüm×30 (1 ten, 2 saç, 3 üst, 4 alt, 6 göz), G=parlaklık×100. Sağa bakan yönler `sheet()` içinde aynalanır. Yüz (ağız/çil/kaş), pembe yanak ve elbise (alt bölümün üstü etek) `sheet()` içinde piksel düzeyinde. Ara sahne: `g!==ctx` ve yalnız yana bakışta satır ön-çapraz (v66.7 kuralı, iç sarmalayıcıdan önce uygulanır). cprev 36×40 tam boy. Şapka/gözlük/bıyık/sakal/buff/toka şimdilik gizli (Boğaç): `cRender` sarmalı bu satırları `HIDE` kümesiyle gizler, `buildLook` yeni görünüşte bu alanları boş verir (Rastgele de seçemez); eski kayıtlardaki `LOOK` alanlarına dokunulmaz, çizim kodu yok. Geri açmak için `HIDE` ve `buildLook`'taki `Object.assign` satırı silinir, çizimleri eklenir. v4.37 "Yüz" satırı aynen.
-- Üretim (scratch, depoda değil): /tmp/h3/ `npc5.py` (anahtarlama → 30 px ortalama küçültme, göz/ağız tespiti, bölüm etiketleri), `npc7.py` (stil başına: dönüş sayfası S/W/N + ayrı çapraz çizimler, çapraz gövdesi ön görünüş oranına `refit`), `w/spec7.json`, `pack7.py` + `inject.py` (`blk/tpl5.js`). ComfyUI çıktıları Boğaç'ın `output/purple/`: `h6ta_*`/`h6d_*` (Kısa/Uzun), `h7ta_*`/`h7d_*` (öbür saç biçimleri).
-- Eski kayıtlar: alanlar aynı; `hs:'buzz'` Kel çizimiyle; bilinmeyen saç → Kısa/Uzun.
-- Geri almak için: `git checkout v4.38 -- proje/Hammadde_prototip.html index.html proje/tools/belge/parts/20_sistemler.md proje/tools/belge/parts/10_akis.md proje/tools/belge/parts/00_giris.md`.
 
