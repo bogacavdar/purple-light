@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 3a"
+const SURUM := "Godot · Adım 3b"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -948,6 +948,9 @@ func _kisiler() -> void:
 	for r in kisi_veri.zirh: zirh_set[r] = true
 	var tum: Array = toplama_veri.kisiler.duplicate()
 	tum.append_array(kisi_veri.kisiler)
+	var kb: Dictionary = _json("res://data/kisiler_bataklik.json")
+	tum.append_array(kb.kisiler)
+	kisi_veri.istasyonlar.append_array(kb.istasyonlar)
 	tum.append(_json("res://data/evcil.json").davut)
 	for st in kisi_veri.istasyonlar:
 		if st.tur == "ates": continue

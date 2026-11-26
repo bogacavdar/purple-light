@@ -51,6 +51,7 @@ func kur(o) -> void:
 	V = o._json("res://data/gorevler.json")
 	Q = V.gorevler
 	Q.append_array(o._json("res://data/gorevler_orman.json").gorevler)
+	Q.append_array(o._json("res://data/gorevler_bataklik.json").gorevler)
 	Q.append_array(o._json("res://data/evcil.json").gorevler)
 	V.GB["k_davut"] = 0
 	for i in Q.size():
@@ -154,6 +155,11 @@ func kosul(r: Array) -> bool:
 			for n in r[1]:
 				if env.adet(n) > 0: return true
 			return false
+		"tool":
+			var en := 0
+			for n in env.inv:
+				if env.adet(n) > 0 and env.G.tools.has(n) and env.G.tools[n].kind == r[1]: en = maxi(en, int(env.G.tools[n].tier))
+			return en >= int(r[2])
 		"forged":
 			for n in dovulen:
 				if env.G.tools.has(n) and env.G.tools[n].kind == r[1]: return true
