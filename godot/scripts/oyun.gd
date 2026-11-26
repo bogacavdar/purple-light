@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 3b"
+const SURUM := "Godot · Adım 3c"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -960,6 +960,11 @@ func _kisiler() -> void:
 		o.draw.connect(_istasyon2_ciz.bind(o, st))
 		nesneler.add_child(o)
 	for k in tum:
+		if k.has("kulube"):
+			var hk := Node2D.new()
+			hk.position = Vector2(k.kulube.x, k.kulube.y)
+			hk.draw.connect(_kulube_ciz.bind(hk))
+			nesneler.add_child(hk)
 		var n := preload("res://scripts/kisi.gd").new()
 		n.kur(self, k)
 		nesneler.add_child(n)
@@ -971,6 +976,16 @@ func _kisiler() -> void:
 		o.set_meta("tur", a[0])
 		o.draw.connect(_istasyon_ciz.bind(o))
 		nesneler.add_child(o)
+
+## Avcı Doğan'ın kamış kulübesi (web drawToygar)
+func _kulube_ciz(o: Node2D) -> void:
+	var r := func(x: float, y: float, w: float, h: float, c: String) -> void: o.draw_rect(Rect2(x, y, w, h), Color(c))
+	r.call(-14, 6, 30, 3, "#00000038")
+	for dx in [-12, -2, 8, 12]: r.call(dx, -2, 2, 10, "#4a3018")
+	r.call(-15, -6, 30, 5, "#7a5a32"); r.call(-15, -6, 30, 1, "#9a7a48")
+	for i in 8: r.call(-14 + i * 4, -16 + absf(i - 3.5) * 1.2, 3, 11 - absf(i - 3.5) * 1.2, "#a89050" if i % 2 else "#c0a860")
+	r.call(-17, -18, 34, 3, "#8a7040"); r.call(-12, -21, 24, 3, "#a08848"); r.call(-6, -24, 12, 3, "#b8a058"); r.call(-3, -9, 5, 6, "#2a1e12")
+	r.call(16, -14, 1, 10, "#4a3018"); r.call(16, -14, 8, 1, "#4a3018"); r.call(18, -13, 2, 4, "#a8b8c0"); r.call(21, -13, 2, 4, "#98a8b0")
 
 ## kazan: kara kazan, mor buhar; örs: gri örs ve kütük (web'in kendi çizimleri sonra aktarılacak)
 func _istasyon_ciz(o: Node2D) -> void:

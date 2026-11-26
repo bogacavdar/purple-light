@@ -5,7 +5,7 @@ extends Node
 
 const BAD := ["Çayır", "Orman", "Bataklık", "Kayalık Dağ", "Kül Diyarı", "Mor Kristal Vadisi"]
 const DAT := ["Çayır'a", "Orman'a", "Bataklık'a", "Kayalık Dağ'a", "Kül Diyarı'na", "Mor Kristal Vadisi'ne"]
-const DESTEK := ["b", "h", "any", "k", "learn", "kn", "lv", "reach", "sleep", "place", "house", "bed", "sq", "tame", "bridge"]
+const DESTEK := ["b", "h", "any", "k", "learn", "kn", "lv", "reach", "sleep", "place", "house", "bed", "sq", "tame", "bridge", "wear"]
 const KISI_G := {"ekin": "npc"}   # kişi türü → görev veren adı (web gidOf)
 const QHI := ["Selam %s! Bir işin mi var?", "%s, yüzünden belli, bir derdin var.", "Merhaba %s! Yardım lazım mı?"]
 
@@ -206,6 +206,10 @@ func ilerleme(p: Array) -> Array:
 		"house": return [1 if oyun.yapi.ev_kurulu() else 0, 1]
 		"bed": return [1 if oyun.yapi.yatak_kurulu() else 0, 1]
 		"bridge": return [1 if oyun.kopru.ana().fixed else 0, 1]
+		"wear":
+			for y in oyun.kusam:
+				if oyun.kusam[y] == p[1]: return [1, 1]
+			return [0, 1]
 		"sq": return [1 if oyun.evcil.keci.durum == "davut" or bitti("CB1") else 0, 1]
 		"tame": return [1 if oyun.evcil.ever(str(p[1])) else 0, 1]
 	return [0, 1]
@@ -237,6 +241,7 @@ func satir(p: Array) -> String:
 		"place": return v + str(p[1]) + " kur"
 		"house": return v + "Bir ev kur"
 		"bed": return v + "Evine yatak koy"
+		"wear": return v + str(p[1]) + (" giy" if RegEx.create_from_string("(?i)zırh|miğfer|çizme|eldiven").search(str(p[1])) != null else " silah yuvasına tak")
 		"bridge": return "✓ Köprü onarıldı" if ok_ else "Odun %d/%d · köprüye git" % [mini(oyun.kopru.odun(), 20), 20]
 		"sq":
 			if ok_: return "✓ Pamuk Davut'a döndü"

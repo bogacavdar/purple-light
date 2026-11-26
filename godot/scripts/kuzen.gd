@@ -12,7 +12,7 @@ func kur(o) -> void:
 
 ## web isMet: kuzenler ve Sinan önce tanışılır, görev sonraki konuşmada verilir
 func tanisildi(g: String) -> bool:
-	if g.begins_with("k_") or g == "usta": return tanis.has(g)
+	if g.begins_with("k_") or g == "usta" or g == "toygar": return tanis.has(g)
 	return true
 
 func _soyle(n, metin: String, secs: Array) -> void:
@@ -29,6 +29,7 @@ func konus(n, ac_kazan := false) -> bool:
 		"m": _pazarci(n)
 		"u": oyun.sinan.konus()
 		"d": oyun.evcil.davut_konus(n)
+		"t": _dogan(n)
 		_: _kuzen(n, ac_kazan)
 	return true
 
@@ -75,6 +76,39 @@ func _kuzen(n, ac_kazan: bool) -> void:
 			_soyle(n, soz, [{t = "Silah dök", pri = true, f = func(): oyun.istasyon.ac(K.k)}, about, {t = "Hoşça kal", kapat = true}])
 		"a":
 			_soyle(n, soz, [{t = "Zırh döv", pri = true, f = func(): oyun.istasyon.ac(K.k)}, about, {t = "Hoşça kal", kapat = true}])
+
+# ------------------------------------------------------------------ Avcı Doğan (web talkToygar, toygarStory, dogTeach)
+var dogan_t := 0
+
+func _dogan_ogret() -> int:
+	var k := 0
+	for r in ["Kamış çizme", "Panzehir"]:
+		if not oyun.el_yapimi.bilinen.has(r):
+			oyun.el_yapimi.bilinen[r] = true
+			k += 1
+	return k
+
+func _dogan(n) -> void:
+	if tanis.has("toygar") and _dogan_ogret() > 0: oyun.env.mesaj("Doğan'ın tarifleri kitabında: Kamış çizme, Panzehir")
+	if not tanis.has("toygar"):
+		tanis["toygar"] = true
+		_dogan_ogret()
+		_soyle(n, "Dur! Çamura basma, yutar seni… Hah. Köprüyü onaran sen misin? Ben [b]Doğan[/b], bu bataklıkta avlanırım. Kamıştan bir [b]çizme[/b] ör; çamur seni yavaşlatmaz. Kurbağaların zehrine karşı da [b]panzehir[/b] tarifini kitabına yazdım.",
+			[{t = "Burada tek başına mı yaşıyorsun?", pri = true, f = _dogan_hikaye.bind(n)}, {t = "Sonra konuşuruz", kapat = true}])
+		return
+	dogan_t += 1
+	var L := ["Bataklıkta acele eden batar.", "Timsahı önden değil yandan vur. Kuyruğu da ısırır, haberin olsun.", "Gece kurbağalar susarsa bil ki yukarıda mor ışık dolaşıyor."]
+	_soyle(n, L[dogan_t % 3], [{t = "Mor ışık ne?", f = _dogan_hikaye.bind(n)},
+		{t = "Demiri nerede bulurum?", f = func(): _soyle(n, "Bataklık demiri! Kırmızımsı kayaları gördün mü? Onlar demir madeni. Taş kazma kırmaz; [b]çakmaktaşı kazma[/b] ya da daha iyisi gerekir. Üç cevher, iki kömür, bir taş: kazanda bir külçe. Kömür yoksa [b]turba[/b] da yanar.", [{t = "Sağ ol", pri = true, kapat = true}])},
+		{t = "Kara ejder?", f = func(): _soyle(n, "Doğuda, Kül Diyarı'nda yaşar. Ateş tükürür, pulu kılıç geçirmez. Tunç zırh bile yanar orada. Demir giy, ateş çiçeği merhemi sür, sonra git. Bir de… ejderin yuvasının yakınında bir şey parlıyordu. Mor bir şey.", [{t = "Anladım", pri = true, kapat = true}])},
+		{t = "Hoşça kal", pri = true, kapat = true}])
+
+func _dogan_hikaye(n) -> void:
+	var kadin: bool = oyun.sevgili.get("gender", "k") == "k"
+	var ad: String = oyun.ad_sevgili
+	var ic: String = ("[b]%s[/b] diye bağırıyordu, adını haykırıyordu" % ad) if ad != "" else "çırpınıyordu"
+	_soyle(n, "Yirmi yıldır buradayım. Ama asıl bil ki… o fırtınalı gece gördüm. Gökten mor bir ışık indi, bataklığın ortasına. İçinden pelerinli biri çıktı; kollarında %s vardı, %s. Sonra ışık göğe çekildi, gitti. Çamurda izleri hâlâ durur. Sana bir şey söyleyeyim: pazara köpek satan o [b]yıldızsız adam[/b]… pelerini aynıydı." % ["bir kadın" if kadin else "bir adam", ic],
+		[{t = "O adam mı?!", pri = true, f = func(): _soyle(n, "Bilmiyorum evlat. Ama izleri takip et: bataklıkta iki, Kül Diyarı'nda iki iz daha olmalı. Ne bulursan Kemal'e de anlat.", [{t = "Bulacağım", pri = true, kapat = true}])}])
 
 func _hakkinda(n) -> void:
 	_soyle(n, str(n.K.kuzen.about[1]), [{t = "Anladım", pri = true, f = _kuzen.bind(n, false)}])

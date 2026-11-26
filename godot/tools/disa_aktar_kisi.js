@@ -33,6 +33,7 @@ const wpng=(f,d)=>fs.writeFileSync(f,Buffer.from(d.split(',')[1],'base64'));
     if(M&&M.x>-9e4){const [c,g]=mk(24,40);drawChibi(g,12,36,M.L,{noShadow:1});const [c2,g2]=mk(24,26);drawChibi(g2,12,29,M.L,{noShadow:1,fx:0,fy:1});
       kisiler.push({k:M.g,ad:M.name,x:Math.round(M.x),y:Math.round(M.y),rol:'m',taban:'market',resim:{f:png(c)},portre:png(c2),kuzen:{short:M.short,cn:M.mk.cn,hc:M.mk.hc}});
       ist.push({tur:'tezgah',x:M.st.x,y:M.st.y,sahip:M.g,renk:M.mk.hc})}
+    if(${B}===2&&typeof toygar!=='undefined')kisiler.push({k:'toygar',ad:toygar.name,x:Math.round(toygar.x),y:Math.round(toygar.y),rol:'t',resim:fr('toygar'),portre:POR.toygar||null,kulube:{x:Math.round(hut.x),y:Math.round(hut.y)}});
     if(${B}===1&&typeof usta!=='undefined')kisiler.push({k:'usta',ad:usta.name,x:Math.round(usta.x),y:Math.round(usta.y),rol:'u',resim:fr('usta'),portre:POR.usta||null});
     const tier={};for(const x of DB.R)if(FORGED.has(x.r))tier[x.r]=window.__plForgeTier?window.__plForgeTier(x.r):0;
     const zirh=[...ARMORSET];
