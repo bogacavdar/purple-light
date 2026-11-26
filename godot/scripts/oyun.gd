@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 2e"
+const SURUM := "Godot · Adım 2f"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -80,6 +80,7 @@ var karakter                # karakter penceresi (karakter_pen.gd)
 var yapi                    # kurulan yapılar ve evler (yapi.gd)
 var sinan                   # Usta Sinan'ın sipariş pencereleri (sinan.gd)
 var atolye                  # Atölye penceresi ve üretimi (atolye.gd)
+var evcil                   # evcil hayvanlar ve Çoban Davut (evcil.gd)
 var ev                      # evin içi ve Döşe (ev_ici.gd)
 var insa                    # İnşa kipi: zemin, çit, duvar, kapı, fener (insa.gd)
 var dl_agac := false        # Börü'nün dersi bitti, yetenek ağacını gösterecek (1f-3b-3)
@@ -162,6 +163,9 @@ func _ready() -> void:
 	insa = preload("res://scripts/insa.gd").new()
 	add_child(insa)
 	insa.kur(self)
+	evcil = preload("res://scripts/evcil.gd").new()
+	add_child(evcil)
+	evcil.kur(self)
 	ev = preload("res://scripts/ev_ici.gd").new()
 	add_child(ev)
 	move_child(ev, hud.get_index())
@@ -235,6 +239,7 @@ func _ready() -> void:
 			if q.contains("gece"):
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
+		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
 		if q.contains("yapitest"):
 			env.ekle("Kulübe"); env.ekle("Hasır yatak"); env.vio_ekle(3000); env.ekle("Atölye"); env.ekle("Dal", 20); env.ekle("Taş", 20)
 		if q.contains("kusan"):
@@ -513,6 +518,88 @@ func _dugumler() -> void:
 		nesneler.add_child(s)
 
 # ------------------------------------------------------------------ canlılar
+func _evcil_test(q: String) -> void:
+	kuzen.tanis["k_davut"] = true
+	while env.sv < 3: env.xp_ekle(300)
+	var dn = evcil.davut()
+	if q.contains("kecitest"):
+		oyuncu.position = dn.position + Vector2(0, 20)
+		gorev._baslat(gorev.QI["CB1"], "k_davut", true)
+		konusma.visible = false
+		for k in 8:
+			await get_tree().create_timer(1.5).timeout
+			oyuncu.position = evcil.keci.n.position + Vector2(4, 0)
+			print("KECI ", k, " ", evcil.keci.durum, " cnt=", evcil.keci.cnt, " p=", evcil.keci.n.position)
+		oyuncu.position = dn.position + Vector2(60, 0)
+		for k in 6:
+			await get_tree().create_timer(1.0).timeout
+			print("KECI2 ", evcil.keci.durum, " d=", evcil.keci.n.position.distance_to(dn.position), " satir=", gorev.satir(["sq", "husnu"]))
+		return
+	if q.contains("evcilkurt"):
+		gorev.bitenler.append_array(["CB1", "CB2", "CB3"])
+		gorev.biyomlar[1] = true
+		var dk: Vector2 = Vector2(evcil.V["in"].kurt.x, evcil.V["in"].kurt.y)
+		oyuncu.position = dk + Vector2(0, 70)
+		var c1: Vector2i = insa.karo(oyuncu.position)
+		var ag1 := {n = "Ağıl", tx = c1.x + 4, ty = c1.y + 2, rot = 0, yatak = null}
+		yapi.kurulu.append(ag1)
+		yapi._kur_dugum(ag1)
+		env.ekle("Tavşan eti", 10)
+		gorev._baslat(gorev.QI["CB4"], "k_davut", true)
+		konusma.visible = false
+		zaman.dk = 600.0
+		for k in 4:
+			await get_tree().create_timer(1.5).timeout
+			var u = evcil.PUP.get("kurt", null)
+			if u == null:
+				print("KURT pup yok")
+				continue
+			oyuncu.position = u.n.position + Vector2(20, 0)
+			print("KURT ipucu=", evcil.ipucu(), " f=", evcil.f())
+			oyuncu.position = u.n.position + Vector2(140, 0)
+			await get_tree().create_timer(4.0).timeout
+			print("KURT tr=", evcil.PT.tr)
+			zaman.dk += 70.0
+		await get_tree().create_timer(1.5).timeout
+		evcil._ad_bitti()
+		print("KURT pets=", evcil.PT.pets.size(), " grow=", evcil.PT.pets[0].grow if not evcil.PT.pets.is_empty() else 0.0)
+		_canli_koy("Kurt", 5.0, 2.0)
+		for c in nesneler.get_children():
+			if c.get("tur") == "Kurt": c.mad = true
+		if not evcil.PT.pets.is_empty(): evcil.PT.pets[0].grow = 0.0
+		await get_tree().create_timer(6.0).timeout
+		print("KURT sonra hp=", evcil.PT.pets[0].hp if not evcil.PT.pets.is_empty() else -1.0, " dead=", evcil.PT.dead)
+		return
+	oyuncu.position = dn.position + Vector2(0, 60)
+	gorev.bitenler.append_array(["CB1", "CB2"])
+	evcil.keci.durum = "davut"
+	var c0: Vector2i = insa.karo(oyuncu.position)
+	var ag := {n = "Ağıl", tx = c0.x + 3, ty = c0.y - 1, rot = 0, yatak = null}
+	yapi.kurulu.append(ag)
+	yapi._kur_dugum(ag)
+	env.ekle("Elma", 10)
+	gorev._baslat(gorev.QI["CB3"], "k_davut", true)
+	konusma.visible = false
+	_canli_koy("Yaban atı", 4.0, 2.0)
+	var at = null
+	for c in nesneler.get_children():
+		if c.get("tur") == "Yaban atı": at = c
+	for k in 4:
+		await get_tree().create_timer(1.0).timeout
+		oyuncu.position = at.position + Vector2(30, 0)
+		print("AT ipucu=", evcil.ipucu(), " f=", evcil.f(), " FD=", evcil.FD.size())
+		oyuncu.position = at.position + Vector2(170, 0)
+		await get_tree().create_timer(4.0).timeout
+		if not evcil.FD.is_empty(): print("AT FD0 ", evcil.FD[0].p, " a=", evcil.FD[0].a, " at=", at.position if is_instance_valid(at) else Vector2.ZERO, " ok=", evcil.evcillesir("at"), " meta=", at.has_meta("yem") if is_instance_valid(at) else false, " flash=", at.flash if is_instance_valid(at) else 0.0)
+		print("AT tr=", evcil.PT.tr, " FD=", evcil.FD.size(), " d=", at.position.distance_to(oyuncu.position) if is_instance_valid(at) else -1.0)
+		zaman.dk += 70.0
+	await get_tree().create_timer(1.5).timeout
+	evcil._ad_bitti()
+	print("AT pets=", evcil.PT.pets.size(), " ever=", evcil.PT.ever, " satir=", gorev.satir(["tame", "at"]))
+	await get_tree().create_timer(1.0).timeout
+	evcil.bin()
+	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
 func _kir_test() -> void:
 	var c0: Vector2i = insa.karo(oyuncu.position)
 	for i in range(-3, 4):
@@ -725,7 +812,7 @@ func sk(id: String) -> bool:
 	return yetenekler.has(id)
 
 func pencere_acik() -> bool:
-	return (ev != null and ev.acik) or (atolye != null and atolye.visible) or (sinan != null and sinan.visible) or (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
+	return (ev != null and ev.acik) or (evcil != null and evcil.acik()) or (atolye != null and atolye.visible) or (sinan != null and sinan.visible) or (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
 
 func can_guncelle(hp: float, mx: float) -> void:
 	can_cubugu.max_value = mx
@@ -816,6 +903,7 @@ func _kisiler() -> void:
 	for r in kisi_veri.zirh: zirh_set[r] = true
 	var tum: Array = toplama_veri.kisiler.duplicate()
 	tum.append_array(kisi_veri.kisiler)
+	tum.append(_json("res://data/evcil.json").davut)
 	for st in kisi_veri.istasyonlar:
 		if st.tur == "ates": continue
 		istasyonlar.append(st)
@@ -1046,6 +1134,8 @@ func konus_ya_da_istasyon() -> bool:
 	if yakin != null:
 		_konus(yakin)
 		return true
+	if evcil.f():
+		return true
 	if insa.onar():
 		return true
 	if insa.yakit_koy():
@@ -1232,7 +1322,7 @@ func durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = {gorulen = magara.gorulen, acilan = Marshalls.raw_to_base64(magara.acilan), kaya = 1 if magara.kaya_durum == 2 else magara.kaya_durum, denedi = magara.kaya_denedi or magara.kaya_durum == 2, boss = magara.boss_yenildi},
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(),
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(),
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 func gorunus_uygula(L: Dictionary) -> void:
@@ -1318,6 +1408,7 @@ func durum_yukle(d: Dictionary) -> void:
 	for k in pd: puan[k] = int(pd[k])
 	puan_ders = int(d.get("puan_ders", 2 if env.sv > 1 else 0))
 	yapi.yukle(d.get("yapi", {}))
+	evcil.yukle(d.get("evcil", {}))
 	insa.yukle(d.get("insa", {}))
 	oyuncu.yetenek_uygula()
 	oyuncu.hp = float(o.get("hp", oyuncu.hp_max))

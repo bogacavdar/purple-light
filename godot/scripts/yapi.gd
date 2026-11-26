@@ -227,6 +227,9 @@ func kullan() -> bool:
 	if yatak_mi(o.n):
 		_uyu(o)
 		return true
+	if o.n == "Ağıl":
+		oyun.evcil.agil_ac()
+		return true
 	if o.get("ws", null) != null:
 		oyun.atolye.ac(o)
 		return true

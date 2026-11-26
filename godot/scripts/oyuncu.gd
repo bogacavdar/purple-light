@@ -192,7 +192,7 @@ func _process(dt: float) -> void:
 		g = Vector2.ZERO
 	yuruyor = g != Vector2.ZERO
 	var kos_ister: bool = (Input.is_action_pressed("kos") or kosu_kol) and yuruyor and not kilit
-	var kos: bool = kos_ister and bilir("K1") and not yorgun and not kalkan
+	var kos: bool = kos_ister and bilir("K1") and not yorgun and not kalkan and oyun.evcil.binilen == null
 	if kos_ister and not bilir("K1"):
 		var nw := Time.get_ticks_msec() / 1000.0
 		if nw - kosu_uyari > 9.0:
@@ -221,7 +221,7 @@ func _process(dt: float) -> void:
 	oyun.enerji_guncelle(st, st_max, yorgun)
 	if yuruyor:
 		var n := g.normalized()
-		var sp: float = float(V.speed) * oyun.stat("move") * (1.15 if oyun.insa.yolda(position) else 1.0) * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0) * (0.45 if kalkan else 1.0) * (1.0 + (0.4 if oyun.sk("H7") else (0.3 if oyun.sk("H3") else (0.2 if oyun.sk("H2") else (0.1 if oyun.sk("H1") else 0.0)))))
+		var sp: float = float(V.speed) * oyun.stat("move") * (1.15 if oyun.insa.yolda(position) else 1.0) * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0) * (0.45 if kalkan else 1.0) * oyun.evcil.hiz() * (1.0 + (0.4 if oyun.sk("H7") else (0.3 if oyun.sk("H3") else (0.2 if oyun.sk("H2") else (0.1 if oyun.sk("H1") else 0.0)))))
 		_kay(n * sp * dt)
 		_yon_sec(n)
 		adim += dt * (1.7 if kos else 1.0)
@@ -297,6 +297,9 @@ func _atil(g: Vector2) -> void:
 
 func vur(d: Vector2) -> void:
 	if bayildi or atilma > 0.0:
+		return
+	if oyun.evcil.binilen != null:
+		oyun.evcil.in_()
 		return
 	var w := silah_v()
 	if atk_cd > 0.0:
@@ -396,6 +399,10 @@ func isirildi(dmg: int, from: Vector2, a = null, renk: String = "", koru: float 
 		return
 	if renk != "" and pr_t > 0.0 and renk != "r":
 		savusturdu(a)
+		return
+	if renk != "" and oyun.evcil.binilen != null:
+		oyun.evcil.binek_vuruldu(dmg)
+		dokunulmaz = koru
 		return
 	var n := float(dmg)
 	if renk != "" and kalkan and pr_brk <= 0.0:

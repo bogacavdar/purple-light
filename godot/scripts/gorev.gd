@@ -5,7 +5,7 @@ extends Node
 
 const BAD := ["Çayır", "Orman", "Bataklık", "Kayalık Dağ", "Kül Diyarı", "Mor Kristal Vadisi"]
 const DAT := ["Çayır'a", "Orman'a", "Bataklık'a", "Kayalık Dağ'a", "Kül Diyarı'na", "Mor Kristal Vadisi'ne"]
-const DESTEK := ["b", "h", "any", "k", "learn", "kn", "lv", "reach", "sleep", "place", "house", "bed"]
+const DESTEK := ["b", "h", "any", "k", "learn", "kn", "lv", "reach", "sleep", "place", "house", "bed", "sq", "tame"]
 const KISI_G := {"ekin": "npc"}   # kişi türü → görev veren adı (web gidOf)
 const QHI := ["Selam %s! Bir işin mi var?", "%s, yüzünden belli, bir derdin var.", "Merhaba %s! Yardım lazım mı?"]
 
@@ -51,6 +51,8 @@ func kur(o) -> void:
 	V = o._json("res://data/gorevler.json")
 	Q = V.gorevler
 	Q.append_array(o._json("res://data/gorevler_orman.json").gorevler)
+	Q.append_array(o._json("res://data/evcil.json").gorevler)
+	V.GB["k_davut"] = 0
 	for i in Q.size():
 		var q: Dictionary = Q[i]
 		q.i = i
@@ -197,6 +199,8 @@ func ilerleme(p: Array) -> Array:
 		"place": return [1 if oyun.yapi.kurulu_mu(str(p[1])) else 0, 1]
 		"house": return [1 if oyun.yapi.ev_kurulu() else 0, 1]
 		"bed": return [1 if oyun.yapi.yatak_kurulu() else 0, 1]
+		"sq": return [1 if oyun.evcil.keci.durum == "davut" or bitti("CB1") else 0, 1]
+		"tame": return [1 if oyun.evcil.ever(str(p[1])) else 0, 1]
 	return [0, 1]
 
 func yapildi(p: Array) -> bool:
@@ -226,6 +230,10 @@ func satir(p: Array) -> String:
 		"place": return v + str(p[1]) + " kur"
 		"house": return v + "Bir ev kur"
 		"bed": return v + "Evine yatak koy"
+		"sq":
+			if ok_: return "✓ Pamuk Davut'a döndü"
+			return "Pamuk'u Davut'a götür" if oyun.evcil.keci.durum == "izle" else "Pamuk'u yakala (%d/3)" % int(oyun.evcil.keci.cnt)
+		"tame": return ("✓ %s evcilleşti" if ok_ else "%s evcilleştir") % oyun.evcil.etiket(str(p[1]))
 	return ""
 
 # ------------------------------------------------------------------ nereye: sarı bölge (biyomlar) ve ok (kişi ya da yer)

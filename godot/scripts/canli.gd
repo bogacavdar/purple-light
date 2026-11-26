@@ -139,6 +139,9 @@ func _git(v: Vector2, dt: float) -> void:
 
 func _process(dt: float) -> void:
 	if oyun.ev.acik: return
+	if has_meta("yem"):
+		if oyun.evcil.yem_hedefi(self) and olu < 0.0: return
+		remove_meta("yem")
 	if olu >= 0.0:
 		olu += dt
 		if tur_k != "":

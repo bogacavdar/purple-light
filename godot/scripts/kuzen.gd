@@ -28,6 +28,7 @@ func konus(n, ac_kazan := false) -> bool:
 	match K.rol:
 		"m": _pazarci(n)
 		"u": oyun.sinan.konus()
+		"d": oyun.evcil.davut_konus(n)
 		_: _kuzen(n, ac_kazan)
 	return true
 
