@@ -40,6 +40,10 @@ const CHROME=process.env.CHROME||'/opt/pw-browsers/chromium-1243/chrome-linux64/
   const SQSRC=(()=>{const i=SRC.indexOf("{id:'cevdet',name:'Madenci Kaya'"),j=SRC.indexOf("after:[",i),k=SRC.indexOf("]}",j);return SRC.slice(i,k+2)})();
   const N_=t=>['n',t],P_=t=>['p',t],X_=t=>['x',t];const SQ=(new Function('N','P','X','return '+SQSRC))(N_,P_,X_);
   await p.evaluate(()=>window.__ham.ev('window.__plCave.exit()'));await p.waitForTimeout(300);
+  // Adım 1f-3b: Nazlı'nın pazarı (web PRICE_, noSell, isRaw, rawPrice, madeOk, bulkSellable; yeteneksiz satış çarpanı 1)
+  const PAZAR=await p.evaluate(()=>window.__ham.ev(`(()=>{const o={};const madeOk=r=>REC.has(r)&&PRICE_[r]!=null&&!PLACEABLE.has(r)&&!GT[r]&&!EQUIP[r]&&!TOOLS.has(r)&&!RAW_NO.has(r)&&!(typeof HOUSESET!=='undefined'&&HOUSESET.has(r));
+    for(const n in PRICE_){const v=PRICE_[n];if(!(v>0))continue;o[n]={f:+v.toFixed(3),s:noSell(n)?0:1,h:isRaw(n)?1:0,y:madeOk(n)?1:0,a:(isRaw(n)||madeOk(n))?rawPrice(n):0,t:(!TOOLS.has(n)&&!EQUIP[n]&&!PLACEABLE.has(n)&&n!=='Kamp ateşi'&&!GT[n])?1:0}}
+    return {esya:o,tavan:SELL_CAP,ham:RAW_BASE}})()`));
   // Adım 1f: ateşler ve gece ışıkları (web FIRES, Kemal'in kampı, Dursun'un ocağı, Zümrüt'ün kazanı; güvenli yarıçaplar), saat
   const ATES=await p.evaluate(()=>window.__ham.ev(`({ates:FIRES.map(f=>({x:f.x,y:f.y})),kamp:{x:npc.home.x,y:npc.home.y},ocak:{x:furnace.x,y:furnace.y},kazan:{x:cauldron.x,y:cauldron.y},
     guvenli:{kamp:SAFE_R,ates:120,ocak:120,kazan:120},isik:{kamp:74,ocak:70,kazan:62,ates:72},gunBasi:360,geceSn:NIGHT_S,uyanis:{x:wakeSpot.x,y:wakeSpot.y},kemalGelis:{x:ekinWalkIn.x,y:ekinWalkIn.y}})`));
@@ -82,5 +86,6 @@ const CHROME=process.env.CHROME||'/opt/pw-browsers/chromium-1243/chrome-linux64/
   R.canlilar=E.canlilar;R.agiz=E.agiz;R.agizResim=E.agizResim;R.kaya=Object.assign(E.kaya,{yan:SQ});
   w(path.join(OUT,'data','magara.json'),JSON.stringify(R));
   w(path.join(OUT,'data','ates.json'),JSON.stringify(ATES));
+  w(path.join(OUT,'data','pazar.json'),JSON.stringify(PAZAR));
   console.log('mağara',R.ad,'N',R.N,'iç',!!R.ic,'tepe',!!R.tepe,'kapı',JSON.stringify(R.kapi),'meşale',JSON.stringify(R.mesale));
 })().catch(e=>{console.error(e);process.exit(1)});

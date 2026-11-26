@@ -13,7 +13,7 @@ func _process(dt: float) -> void:
 	if o.bayildi:
 		_dur()
 		return
-	if Input.is_action_just_pressed("topla") and not oyun.sahne.acik and not oyun.konusma.visible and not oyun.istasyon.pencere.visible:
+	if Input.is_action_just_pressed("topla") and not oyun.sahne.acik and not oyun.konusma.visible and not oyun.istasyon.pencere.visible and not oyun.pazar.pencere.visible:
 		if not _yerdekileri_al() and not oyun.magara.etkiles():
 			_basla()
 	if not is_.is_empty():

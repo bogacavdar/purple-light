@@ -67,7 +67,7 @@ func ilk_gece() -> bool:
 	return gun == 1 and gece_mi()
 
 func durdu() -> bool:
-	return oyun.konusma.visible or oyun.istasyon.pencere.visible or oyun.el_yapimi.acik_mi() or oyun.sahne.acik or oyun.menu_acik() or oyun.cine.acik or oyun.uyanis.acik
+	return oyun.konusma.visible or oyun.istasyon.pencere.visible or oyun.pazar.pencere.visible or oyun.el_yapimi.acik_mi() or oyun.sahne.acik or oyun.menu_acik() or oyun.cine.acik or oyun.uyanis.acik
 
 func _process(dt: float) -> void:
 	if oyun.basta: return

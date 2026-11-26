@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1f-3"
+const SURUM := "Godot · Adım 1f-3b"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -27,6 +27,7 @@ var konusma
 var kisiler: Array = []
 var gorev
 var sahne
+var pazar
 var zaman
 var kayit
 var basta := false
@@ -96,9 +97,12 @@ func _ready() -> void:
 	el_yapimi = preload("res://scripts/el_yapimi.gd").new()
 	add_child(el_yapimi)
 	el_yapimi.kur(self)
+	pazar = preload("res://scripts/pazar.gd").new()
+	add_child(pazar)
 	istasyon = preload("res://scripts/istasyon.gd").new()
 	add_child(istasyon)
 	istasyon.kur(self)
+	pazar.kur(self)
 	konusma = preload("res://scripts/konusma.gd").new()
 	hud.add_child(konusma)
 	konusma.kur(self)
@@ -184,6 +188,11 @@ func _ready() -> void:
 			if q.contains("gece2"): oyuncu.position = Vector2(magara.M.kapi.x, float(magara.M.kapi.y) + 60.0)
 			env.ekle("Dal", 5)
 			env.vio_ekle(50)
+		if q.contains("pazar"):
+			var nz: Dictionary = toplama_veri.kisiler[4]
+			oyuncu.position = Vector2(nz.x + 20, nz.y + 8)
+			for e in [["Dal", 12], ["Taş", 9], ["Böğürtlen", 4], ["Keskin taş", 3], ["Lif", 5]]:
+				env.ekle(e[0], e[1])
 		if q.contains("ors"):
 			oyuncu.position = Vector2(toplama_veri.istasyon.ors.x - 14, toplama_veri.istasyon.ors.y + 4)
 			for e in [["Taş", 6], ["Sopa", 2], ["İp", 4], ["Dal", 2], ["Keskin taş", 4]]:
@@ -579,6 +588,7 @@ func _hizmet(k: String) -> Dictionary:
 		"witch": return {t = "Kazana bak", f = func(): istasyon.ac("kazan")}
 		"smith": return {t = "Örse bak", f = func(): istasyon.ac("smith")}
 		"durmus": return {t = "Örse bak", f = func(): istasyon.ac("durmus")}
+		"market": return {t = "Pazara bak", f = func(): pazar.ac()}
 	return {}
 
 const SELAM := {"ekin": "Ateş sıcak, çay demde. Otur biraz evlat.", "market": "Hoş geldin! Tezgâhım yakında açılacak; satacak bir şeyin olursa unutma beni.", "alp": "Kılıcını hep elinin altında tut. Bu adada her çalının ardında bir diş vardır."}
@@ -593,6 +603,8 @@ func _konus(n) -> void:
 			konusma.ac(K.ad, por, "Tarifini bildiğin aleti ve silahı örsümde döverim; malzemeyi sen getir, işçiliğimi ödersin.", [{t = "Örse bak", pri = true, f = func(): istasyon.ac("smith")}, {t = "Sonra", kapat = true}])
 		"durmus":
 			konusma.ac(K.ad, por, "Zırh benim işim. Tarifini bildiğin zırhı malzemesi ve işçiliğiyle döverim.", [{t = "Örse bak", pri = true, f = func(): istasyon.ac("durmus")}, {t = "Sonra", kapat = true}])
+		"market":
+			konusma.ac(K.ad, por, "Hoş geldin! Silah, zırh, takı ve aletler dışında her şeyi alırım; eline geçmiş doğal malzemeleri ve tarifini bildiğin eşyaları da satarım.", [{t = "Pazara bak", pri = true, f = func(): pazar.ac()}, {t = "Sonra", kapat = true}])
 		_:
 			konusma.ac(K.ad, por, SELAM.get(K.k, "Merhaba!"))
 
