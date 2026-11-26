@@ -1,3 +1,7 @@
+## v5.00 (27 Kasım 2026) · Godot S2b: ok seçimi, sapan, bola, bileme, kritik, çekiç ve topuz
+- `godot-deneme/` yeni derleme (godot dalı: buyu.gd ok seçimi (kayıt `buyu.ok`), sapan/bola, meyveli ağaca atış; canli.gd `yavas`, savuşturma sonrası kritik hakkı (meta pc); envanter.gd oka tıklama; oyun.gd krit_ihtimal/kritik, Dursun'da bileme; oyuncu.gd çekiç (_gurz) ve topuz (_topuz) kuralları, yavaşlama, enerji, sağlam duruş). Denetim: ?s2btest. Belge 99_godot S2b satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıttaki `buyu.ok` okunmadan kalır).
+
 ## v4.99 (27 Kasım 2026) · Godot S2a: yaylar, oklar ve silah etkileri
 - `godot-deneme/` yeni derleme (godot dalı: yeni tools/disa_aktar_yay.js → data/yay.json (yaylar, oklar, verim); buyu.gd yay atışı ve 8 px adımlı çarpışma; canli.gd etki_ver/_etki_isle; oyuncu.gd yakın dövüş etkisi; el_yapimi.gd ok verimi). Denetim: ?yaytest. Belge 99_godot S2a ve S2b satırları. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).
@@ -73,9 +77,5 @@
 
 ## v4.81 (26 Kasım 2026) · Godot O2: Denizci Barbaros
 - `godot-deneme/` yeni derleme (godot dalı: disa_aktar_kisi.js BIYOM=5'e denizci (rol dz, enkaz, resimler drawChibi ile) → data/kisiler_kristal.json, gorevler_kristal.json L görevleri; kuzen.gd _barbaros, dz_burada, enkaz_ciz; kisi.gd Gemi bilinmeden gizli; oyun.gd enkaz düğümü, görünmeyen kişiyle konuşulmaz). Denetim: ?dztest. Belge 99_godot O2 satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.80 (26 Kasım 2026) · Godot O1: balık tutma, tuzaklar, gece buluntuları
-- `godot-deneme/` yeni derleme (godot dalı: yeni balik.gd; toplama.gd F'de balık/tuzak; oyuncu.gd E ve Boşluk balık tutarken savuşturma/atılma yapmaz, ısırılınca balik.isirik; zaman.gd isikta'da gece bitkisi; gorev.gd "c" (fish:, trap:) sayaçları ve kayıtta qc; oyun.gd kayıtta balik; tools/disa_aktar_alet.js oltalar ve tuzaklar). Denetim: ?baliktest, ?tuzaktest, ?gecetest. Belge 99_godot O1 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et.
 

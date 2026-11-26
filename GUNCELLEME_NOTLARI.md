@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.00 · 27 Kasım 2026
+
+### Proje
+- **Godot: dövüşün ayrıntıları:**
+  - Çantada bir oka dokununca yay o oku atıyor. Sapan taş atıp kuşları sersemletiyor ve ağaçtan meyve düşürüyor; bola canlıyı yavaşlatıyor.
+  - Demirci Dursun aşınan aletleri ve silahları biliyor.
+  - Kritik vuruş geldi. Savuşturmayla sersemlettiğin canlıya ilk vuruşun her zaman kritik.
+  - Savaş çekici çevresine de vuruyor ve sersemletiyor. Topuz hızlı isabetlerle kombo yapıyor, her 5. isabette kıvılcım sıçrıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.99 · 27 Kasım 2026
 
 ### Proje
@@ -220,18 +232,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Kemal'den gemi tarifini öğrenince Barbaros'un gemisi Mor Kristal Vadisi'nin kıyısına çarpar; Barbaros enkazın yanında bekler.
   - Kızı Meltem'i anlatır ve görevlerini verir: Kazazedenin yarası, Enkazın bekçileri, Yıldızlarla yön, Yelken ipi, Kara omurga, Su almayan tekne, Pruvadaki fener.
   - Yeni gemi ve ACT 2 yolculuğu sonra gelecek.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.80 · 26 Kasım 2026
-
-### Proje
-- **Godot: balık tutma, tuzaklar ve gece buluntuları:**
-  - Elinde olta varken suya dönüp F ya da E: şamandıra suya iner. Dalınca hemen bas, sonra gidip gelen ibre yeşildeyken bir daha bas. Hangi balığın çıkacağı web'deki gibi suya ve biyoma bağlı.
-  - Tuzak çimene, balık kapanı suyun kenarına kurulur (en çok 6). Bir süre sonra av düşer; F ile alırsın.
-  - Gece çayırda ve ormanda gece sefası ile mor kıymık belirir, parlar ve çevresini mor ışıktan korur; ateşböcekleri uçuşur.
-  - Pazarcı Nazlı'nın "Taze balık" ve "Kürk siparişi" görevleri artık Godot'ta yapılabiliyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
