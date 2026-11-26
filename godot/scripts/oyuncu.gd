@@ -109,8 +109,8 @@ func silah_v() -> Dictionary:
 	var w: Dictionary = K.silah[h]
 	if w.kind == "hunt": return {dmg = w.dmg, reach = 30, cd = 0.5, kind = "hunt", n = h}
 	if h == "Işın kılıcı": return {dmg = w.dmg, reach = 32, cd = 0.3, kind = "sword", n = h}   # web v80: plazma kılıç hızlı vurur, uzağa uzanır
-	if w.mace == "gurz": return {dmg = w.dmg, reach = 24, cd = 0.62, kind = "sword", n = h}
-	if w.mace != null: return {dmg = w.dmg, reach = 20, cd = 0.4, kind = "sword", n = h}
+	if w.mace == "gurz": return {dmg = w.dmg, reach = 24, cd = 0.62, kind = "sword", n = h, mace = "gurz"}
+	if w.mace != null: return {dmg = w.dmg, reach = 20, cd = 0.4, kind = "sword", n = h, mace = "topuz"}
 	return {dmg = w.dmg, reach = 22, cd = 0.42, kind = "sword", n = h}
 
 func _silah_yaz() -> void:
@@ -147,6 +147,9 @@ func _unhandled_input(e: InputEvent) -> void:
 		vur(d.normalized() if d.length() > 0.5 else bakis)
 
 func _process(dt: float) -> void:
+	if kombo_t > 0.0:
+		kombo_t -= dt
+		if kombo_t <= 0.0: kombo = 0
 	if bayildi:
 		return
 	atk_cd -= dt
@@ -222,7 +225,7 @@ func _process(dt: float) -> void:
 	oyun.enerji_guncelle(st, st_max, yorgun)
 	if yuruyor:
 		var n := g.normalized()
-		var sp: float = float(V.speed) * oyun.stat("move") * (1.15 if oyun.insa.yolda(position) else 1.0) * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0) * (0.45 if kalkan else 1.0) * oyun.evcil.hiz() * _camur() * (1.0 + (0.4 if oyun.sk("H7") else (0.3 if oyun.sk("H3") else (0.2 if oyun.sk("H2") else (0.1 if oyun.sk("H1") else 0.0)))))
+		var sp: float = float(V.speed) * oyun.stat("move") * (1.15 if oyun.insa.yolda(position) else 1.0) * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0) * (0.45 if kalkan else 1.0) * (0.6 if atk_cd > 0.2 and str(silah_v().get("mace", "")) == "gurz" else 1.0) * oyun.evcil.hiz() * _camur() * (1.0 + (0.4 if oyun.sk("H7") else (0.3 if oyun.sk("H3") else (0.2 if oyun.sk("H2") else (0.1 if oyun.sk("H1") else 0.0)))))
 		_kay(n * sp * dt)
 		_yon_sec(n)
 		adim += dt * (1.7 if kos else 1.0)
@@ -292,6 +295,7 @@ func _atil(g: Vector2) -> void:
 		_uyar("Atılmayı henüz bilmiyorsun: Savaşçı Börü ücretsiz öğretir, onunla konuş.")
 		return
 	var dc := 5.0 if oyun.sk("S4") else (7.0 if oyun.sk("S3") else (9.0 if oyun.sk("S2") else 14.0))
+	if str(silah_v().get("mace", "")) == "topuz": dc *= 0.7   # topuz: taklanın enerjisi %30 az
 	if st < dc:
 		oyun.yazi(position + Vector2(0, -28), "Yorgunsun", Color("#e8c860"), 9)
 		return
@@ -357,8 +361,13 @@ func vur(d: Vector2) -> void:
 		# geniş koni: vuruşun değdiği her şey vurulur, çaprazlar dahil
 		if dist > ar + 6.0 and dv.dot(f) / maxf(dist, 0.001) < -0.1:
 			continue
-		a.vuruldu(dm, dv / maxf(dist, 1.0))
+		var mc: String = str(w.get("mace", ""))
+		var dmk := dm
+		if mc == "topuz": dmk = int(round(dm * (1.0 + 0.1 * mini(kombo, 6))))
+		a.vuruldu(oyun.kritik(dmk, str(w.get("n", "")), a), dv / maxf(dist, 1.0))
 		_silah_etki(w, a, dist)
+		if mc == "gurz": _gurz(a, dmk)
+		elif mc == "topuz": _topuz(a, dmk)
 		if int(w.dmg) > 4:
 			break
 
@@ -368,6 +377,53 @@ func _silah_etki(w: Dictionary, a, dist: float) -> void:
 	if dist > 70.0 or n == "": return
 	var k := "yanık" if n.begins_with("Alevli ") else ("zehir" if n.begins_with("Zehirli ") else ("kanama" if n.begins_with("Keskin ") else ""))
 	if k != "": a.etki_ver(k, float(w.dmg) * (1.0 + 0.03 * (oyun.env.sv - 1)))
+
+# ------------------------------------------------------------------ savaş çekici ve topuzun kuralları (belge Silahlar › Silahların karakteri)
+var kombo := 0
+var kombo_t := 0.0
+var bildi := {}
+
+func _ilk_bildir(mc: String) -> void:
+	if bildi.has(mc) or oyun.kuzen.tanis.has("bildi_" + mc): return
+	bildi[mc] = true; oyun.kuzen.tanis["bildi_" + mc] = true
+	if mc == "gurz": oyun.env.mesaj("Savaş çekici: çarptığı yerin çevresine de vurur, 3 isabette sersemletir, iki kat iter; savururken yavaş yürürsün ama daha az hasar alırsın.")
+	else: oyun.env.mesaj("Topuz: hızlı isabetler kombo yapar (her biri +%10, en çok +%60), her 5. isabette kıvılcım sıçrar; vururken yavaşlamazsın.")
+
+## savaş çekici: çevresindeki (36 px) öbür düşmanlara hasarın yarısı; 3 sn içinde 3 isabet 1 sn sersemletir (Reis 0,5); geri itme iki kat
+func _gurz(a, dm: int) -> void:
+	_ilk_bildir("gurz")
+	if not a.kb.is_empty(): a.kb.v *= 2.0 if not a.boss else 1.0
+	for b in oyun.canlilari_ver():
+		if b != a and b.olu < 0.0 and b.position.distance_to(a.position) < 36.0: b.vuruldu(maxi(1, dm / 2), (b.position - a.position).normalized())
+	for k in 8: oyun.parca(a.position + Vector2(randf_range(-10, 10), 0), Vector2(randf_range(-40, 40), -20 - randf() * 30), 0.4, Color("#8a7a60") if k % 2 else Color("#c8b898"))
+	var now := Time.get_ticks_msec() / 1000.0
+	var L: Array = a.get_meta("gz", [])
+	L = L.filter(func(x): return now - float(x) < 3.0)
+	L.append(now)
+	if L.size() >= 3:
+		a.sersem = maxf(a.sersem, 0.5 if a.boss else 1.0)
+		L = []
+	a.set_meta("gz", L)
+
+## topuz: kombo sayacı (1,2 sn), her 5. isabette en yakın başka düşmana (120 px) kıvılcım ×0,8; geri itme yarı
+func _topuz(a, dm: int) -> void:
+	_ilk_bildir("topuz")
+	if not a.kb.is_empty(): a.kb.v *= 0.5
+	kombo += 1
+	kombo_t = 1.2
+	if kombo >= 2: oyun.yazi(position + Vector2(0, -36), "Kombo ×%d" % mini(kombo, 6), Color("#ffd060"), 9)
+	for k in 6: oyun.parca(a.position + Vector2(0, -6), Vector2(randf_range(-50, 50), randf_range(-50, 20)), 0.25, Color("#fff2b0") if k % 2 else Color("#9ad8ff"))
+	if kombo % 5 == 0:
+		var en = null
+		var bd := 120.0
+		for b in oyun.canlilari_ver():
+			if b == a or b.olu >= 0.0: continue
+			var d: float = b.position.distance_to(a.position)
+			if d < bd:
+				bd = d; en = b
+		if en != null:
+			en.vuruldu(maxi(1, int(round(dm * 0.8))), (en.position - a.position).normalized())
+			for k in 8: oyun.parca(a.position.lerp(en.position, k / 7.0) + Vector2(0, -6), Vector2.ZERO, 0.25, Color("#bfe8ff"))
 
 func _kavis_ciz() -> void:
 	if savrulus < 0.0:
@@ -447,6 +503,8 @@ func isirildi(dmg: int, from: Vector2, a = null, renk: String = "", koru: float 
 	# Son nefes: canın dörtte birinin altındayken fiziksel darbe %25 daha az
 	if renk != "" and oyun.sk("D8") and hp < hp_max * 0.25: n *= 0.75
 	if renk != "": n *= oyun.zirh_carpan()
+	if renk != "" and atk_cd > 0.2 and str(silah_v().get("mace", "")) == "gurz": n *= 0.75   # savaş çekici: sağlam duruş
+	kombo = 0
 	dmg = maxi(1, int(round(n)))
 	dokunulmaz = koru
 	hp = maxf(0.0, hp - dmg)

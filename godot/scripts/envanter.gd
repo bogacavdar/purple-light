@@ -100,7 +100,7 @@ func alet_kullan(n: String) -> bool:
 	if not dayan.has(n):
 		dayan[n] = int(G.tools[n].dur)
 	if dayan[n] <= 0:
-		mesaj("%s köreldi! (Demirci Dursun'da bilenir; Godot'da daha yok)" % n, true)
+		mesaj("%s köreldi! Demirci Dursun'da bilenir." % n, true)
 		return false
 	# Sağlam aletler: %20/%40/%60 ihtimalle aşınmaz
 	if not (randf() < (0.6 if oyun.sk("A7") else (0.4 if oyun.sk("A6") else (0.2 if oyun.sk("A5") else 0.0)))):
@@ -306,6 +306,9 @@ func _canta_tik(n: String) -> void:
 	elif oyun.yuva_of(n) != "":
 		oyun.giy(n)
 		canta_ciz()
+	elif oyun.buyu != null and oyun.buyu.ok_mu(n):
+		oyun.buyu.ok_sec(n)
+		canta_ciz()
 
 func canta_ciz() -> void:
 	for c in canta_izgara.get_children():
@@ -313,7 +316,7 @@ func canta_ciz() -> void:
 	var adlar := inv.keys()
 	adlar.sort()
 	for n in adlar:
-		var y := _yuva(n, false, adet(n), "")
+		var y := _yuva(n, oyun.buyu != null and oyun.buyu.secili_ok == n, adet(n), "")
 		y.gui_input.connect(func(e):
 			if e is InputEventMouseButton and e.pressed and e.button_index == MOUSE_BUTTON_LEFT: _canta_tik(n))
 		canta_izgara.add_child(y)

@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · S2a"
+const SURUM := "Godot · S2b"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -348,6 +348,7 @@ func _ready() -> void:
 		if q.contains("haritatest"): _harita_test.call_deferred(q)
 		if q.contains("reistest"): _reis_test.call_deferred(q)
 		if q.contains("yaytest"): _yay_test.call_deferred(q)
+		if q.contains("s2btest"): _s2b_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -1259,6 +1260,70 @@ func _ada2_test(q: String) -> void:
 		for c in canlilari_ver(): tc[c.tur] = int(tc.get(c.tur, 0)) + 1
 		print("YZ canlılar ", tc, " bio ", bio_at(oyuncu.position))
 
+func _s2b_test(_q: String) -> void:
+	oyuncu.dokunulmaz = 9999.0
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	print("S2B ihtimal Demir kılıç ", krit_ihtimal("Demir kılıç"), " Mor kristal topuz ", krit_ihtimal("Mor kristal topuz"), " Taş kılıç ", krit_ihtimal("Taş kılıç"), " Tabanca ", krit_ihtimal("Tabanca"))
+	var P := oyuncu.position
+	for c in canlilari_ver(): c.queue_free()
+	await get_tree().process_frame
+	# savuşturma sonrası kritik
+	env.ekle("Taş kılıç", 1); env.el = env.kemer.find("Taş kılıç")
+	var a = _canli_yeni("Yaban domuzu", P + Vector2(18, 0), 1)
+	a.set_meta("pc", true)
+	var h0: float = a.hp
+	oyuncu.atk_cd = 0.0; oyuncu.st = 100.0
+	oyuncu.vur(Vector2(1, 0))
+	print("S2B kritik hasar ", h0 - a.hp, " (Taş kılıç 12)")
+	a.queue_free()
+	await get_tree().process_frame
+	# topuz kombo
+	env.ekle("Taş topuz", 1); env.el = env.kemer.find("Taş topuz")
+	var b = _canli_yeni("Geyik", P + Vector2(18, 0), 2)
+	for i in 5:
+		oyuncu.atk_cd = 0.0; oyuncu.st = 100.0
+		var hb: float = b.hp
+		oyuncu.vur(Vector2(1, 0))
+		print("S2B topuz ", i, " hasar ", hb - b.hp, " kombo ", oyuncu.kombo)
+		await get_tree().create_timer(0.3).timeout
+	b.queue_free()
+	# savaş çekici çevre
+	env.ekle("Taş savaş çekici", 1); env.el = env.kemer.find("Taş savaş çekici")
+	var c1 = _canli_yeni("Geyik", P + Vector2(20, 0), 3)
+	var c2 = _canli_yeni("Geyik", P + Vector2(40, 10), 4)
+	var g2: float = c2.hp
+	for i in 3:
+		oyuncu.atk_cd = 0.0; oyuncu.st = 100.0
+		oyuncu.vur(Vector2(1, 0))
+		await get_tree().create_timer(0.3).timeout
+	print("S2B çekiç ikinciye ", g2 - c2.hp, " sersem ", c1.sersem)
+	c1.queue_free(); c2.queue_free()
+	await get_tree().process_frame
+	# sapan ve bola
+	env.ekle("Sapan", 1); env.ekle("Taş", 3); env.el = env.kemer.find("Sapan")
+	var k1 = _canli_yeni("Keklik", P + Vector2(80, 0), 5)
+	buyu.scd = 0.0
+	oyuncu.vur(Vector2(1, 0))
+	print("S2B sapan atış ", buyu.shots.map(func(x): return [x.p, x.v, x.left]), " hedef ", k1.position, " oyuncu ", oyuncu.position, " elde ", env.elde())
+	await get_tree().create_timer(0.6).timeout
+	print("S2B sapan keklik sersem ", k1.sersem, " taş ", env.adet("Taş"), " hp ", k1.hp)
+	k1.queue_free()
+	await get_tree().process_frame
+	env.ekle("Bola", 1); env.el = env.kemer.find("Bola")
+	var k2 = _canli_yeni("Geyik", P + Vector2(80, 0), 6)
+	buyu.scd = 0.0
+	oyuncu.vur(Vector2(1, 0))
+	await get_tree().create_timer(0.6).timeout
+	print("S2B bola yavaş ", k2.yavas)
+	# ok seçimi ve bileme
+	env.ekle("Basit ok", 3); env.ekle("Bakır ok", 3)
+	env._canta_tik("Basit ok")
+	print("S2B seçili ", buyu.secili_ok, " ok ", buyu._ok()[0])
+	env.ekle("Odun yayı", 1); env.dayan["Odun yayı"] = 3
+	print("S2B bileme ", bileme())
+
 func _yay_test(_q: String) -> void:
 	oyuncu.dokunulmaz = 9999.0
 	await get_tree().create_timer(1.0).timeout
@@ -1450,6 +1515,42 @@ func _canli_koy(k: String, min_kare: float, aralik: float = 14.0) -> void:
 		c.position = p
 		nesneler.add_child(c)
 		return
+
+## kritik vuruş (web v3.11; belge Silahlar › Kritik vuruş): normal hasarın %50 fazlası (Ölümcül vuruş ile %80); savuşturmayla sersemleyen canlıya
+## ilk vuruş her zaman kritik. İhtimal = (seviye 2'den her seviye %0,2 + Keskin göz I %3 / II %6 + silahın kademesi × %1) × silah türü.
+const KRIT_KADEME := [["Tunç", 1], ["Granit", 1], ["Meşe", 1], ["Ihlamur", 1], ["Demir", 2], ["Timsah", 2], ["Kızılağaç", 2], ["Söğüt", 2], ["Çelik", 3], ["Gümüş", 3], ["Kuvars", 3], ["Akçaağaç", 3], ["Huş", 3],
+	["Kara çelik", 4], ["Ejder", 4], ["Obsidyen", 4], ["Kızıl sedir", 4], ["Kor odun", 4], ["Mor kristal", 5], ["Ametist", 5], ["Gece ağacı", 5], ["Işık ağacı", 5]]
+const KRIT_ACT2 := ["Tabanca", "Pompalı", "Işın kılıcı", "Ateş asası", "Buz asası", "Yıldırım asası"]
+func krit_ihtimal(n: String) -> float:
+	if n == "": return 0.0
+	var tur := ""
+	if env.G.tools.has(n): tur = str(env.G.tools[n].kind)
+	elif kusanma.silah.has(n):
+		var w: Dictionary = kusanma.silah[n]
+		tur = "spear" if w.kind == "hunt" else (str(w.mace) if w.mace != null else "sword")
+	var m := float({"bow": 1.5, "gun": 1.5, "spear": 1.2, "topuz": 1.1, "sword": 1.0, "staff": 0.8, "gurz": 0.6}.get(tur, 0.0))
+	var t := 6 if KRIT_ACT2.has(n) else 0
+	if t == 0:
+		for k in KRIT_KADEME:
+			if n.begins_with(str(k[0])):
+				t = int(k[1]); break
+	if m == 0.0 or t == 0: return 0.0
+	var lv := maxf(0.0, (env.sv - 1) * 0.2)
+	return (lv + (6.0 if sk("K4") else (3.0 if sk("H6") else 0.0)) + t) * m
+
+func kritik(dm: int, n: String, a) -> int:
+	var zorla: bool = a != null and a.has_meta("pc")
+	if zorla: a.remove_meta("pc")
+	var c := krit_ihtimal(n)
+	if not zorla and (c <= 0.0 or randf() * 100.0 >= c): return dm
+	var ex := maxi(1, int(round(dm * (0.8 if sk("H8") else 0.5))))
+	if a != null:
+		yazi(a.position + Vector2(0, -26), "KRİTİK! -%d" % ex, Color("#ff4a3a"), 11)
+		for i in 10:
+			var tt := randf() * TAU
+			var sp := 60.0 + randf() * 80.0
+			parca(a.position + Vector2(0, -8), Vector2(cos(tt) * sp, sin(tt) * sp - 30.0), 0.3, Color("#ff4a3a") if i % 2 else Color("#ffd040"))
+	return dm + ex
 
 func canli_oldu(k: String, c = null) -> void:
 	if yan != null and yan.oldu(c): return
@@ -2055,7 +2156,11 @@ func _konus(n) -> void:
 			ws.append({t = "Sonra", kapat = true})
 			konusma.ac(K.ad, por, "Kazanım hep kaynar evlat. Yeni bir şey bulduğunda gel; malzemelerini kazana atarsın, tarifi öğrenirsin.", ws)
 		"smith":
-			konusma.ac(K.ad, por, "Tarifini bildiğin aleti ve silahı örsümde döverim; malzemeyi sen getir, işçiliğimi ödersin.", [{t = "Örse bak", pri = true, f = func(): istasyon.ac("smith")}, {t = "Sonra", kapat = true}])
+			var ss := [{t = "Örse bak", pri = true, f = func(): istasyon.ac("smith")}]
+			var bl := bileme()
+			if not bl.is_empty(): ss.append({t = "Aşınan aletleri bile (%d Vio)" % int(bl.ucret), f = func(): bile(K, por)})
+			ss.append({t = "Sonra", kapat = true})
+			konusma.ac(K.ad, por, "Tarifini bildiğin aleti ve silahı örsümde döverim; malzemeyi sen getir, işçiliğimi ödersin.", ss)
 		"durmus":
 			konusma.ac(K.ad, por, "Zırh benim işim. Tarifini bildiğin zırhı malzemesi ve işçiliğiyle döverim.", [{t = "Örse bak", pri = true, f = func(): istasyon.ac("durmus")}, {t = "Sonra", kapat = true}])
 		"market":
@@ -2064,6 +2169,29 @@ func _konus(n) -> void:
 			_konus_alp(K, por)
 		_:
 			konusma.ac(K.ad, por, SELAM.get(K.k, "Merhaba!"))
+
+## bileme (belge Aletler › dayanıklılık): Dursun körelmiş aletleri yeniler; her biri değerinin onda biri (web GT.sharp ≈ satış değeri × 2,2 / 10)
+func bileme() -> Dictionary:
+	var L := []
+	var u := 0
+	for n in env.inv:
+		if env.adet(n) <= 0 or not env.G.tools.has(n) or not env.dayan.has(n): continue
+		if str(env.G.tools[n].kind) in ["staff", "gun"]: continue
+		if int(env.dayan[n]) < int(env.G.tools[n].dur):
+			L.append(n)
+			u += maxi(1, int(round(pazar.taban(n) * 0.22)))
+	return {} if L.is_empty() else {liste = L, ucret = u}
+
+func bile(K: Dictionary, por) -> void:
+	var b := bileme()
+	if b.is_empty(): return
+	if env.vio < int(b.ucret):
+		konusma.ac(K.ad, por, "Bilemek %d Vio tutar evlat; sende %d var." % [int(b.ucret), env.vio], [{t = "Tamam", pri = true, kapat = true}])
+		return
+	env.vio_ekle(-int(b.ucret))
+	for n in b.liste: env.dayan[n] = int(env.G.tools[n].dur)
+	env.kemer_ciz()
+	konusma.ac(K.ad, por, "[i](bileği taşında kıvılcımlar)[/i] İşte, hepsi ilk günkü gibi keskin: %s." % ", ".join(b.liste), [{t = "Teşekkürler", pri = true, kapat = true}])
 
 ## web talkAlp + v181: öğretici yokken atılma ve savuşturma dersleri Börü'den, ücretsiz
 func _konus_alp(K: Dictionary, por) -> void:

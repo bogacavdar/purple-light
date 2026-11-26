@@ -24,6 +24,10 @@ const KUTU := {"Tabanca mermisi": 10, "Pompalı fişeği": 6}   # bir yapışta 
 var YAY := {}
 var OKLAR: Array = []
 var VERIM := {}
+var secili_ok := ""          # çantada "Yayla bunu at" ile seçilen ok
+var ok_uyari := ""
+## sapan ve bola (web v3.68 SL): sapan bir Taş harcar, kuşu sersemletir, ağaçtan meyve düşürür; bola harcanmaz, canlıyı 5 sn yavaşlatır
+const SL := {"Sapan": {dmg = 5, cd = 0.8, rng = 200, spd = 330, dur = 25, ammo = "Taş"}, "Bola": {dmg = 3, cd = 1.2, rng = 180, spd = 300, dur = 25}}
 
 func kur(o) -> void:
 	oyun = o
@@ -36,6 +40,8 @@ func kur(o) -> void:
 	YAY = Y.yaylar; OKLAR = Y.oklar; VERIM = Y.verim
 	for n in YAY:
 		o.env.G.tools[n] = {kind = "bow", time = YAY[n].cd, dur = YAY[n].dur, tier = 0, use = "ok atar (ok harcar)"}
+	for n in SL:
+		o.env.G.tools[n] = {kind = "sling", time = SL[n].cd, dur = SL[n].dur, tier = 0, use = "taş atar" if n == "Sapan" else "fırlatılır, yavaşlatır"}
 	bar = ProgressBar.new()
 	bar.custom_minimum_size = Vector2(180, 12)
 	bar.show_percentage = false
@@ -70,9 +76,26 @@ func iksir() -> void:
 	oyun.yazi(oyun.oyuncu.position + Vector2(0, -34), "+60 mana", Color("#c9a0ff"), 9)
 
 func asa_mi(n: String) -> bool:
-	return STAFF.has(n) or GUNS.has(n) or YAY.has(n)
+	return STAFF.has(n) or GUNS.has(n) or YAY.has(n) or SL.has(n)
+
+func ok_mu(n: String) -> bool:
+	for A in OKLAR:
+		if str(A[0]) == n: return true
+	return false
+
+## çantada oka dokunmak: yayla bunu at / seçimi kaldır
+func ok_sec(n: String) -> void:
+	if secili_ok == n:
+		secili_ok = ""
+		oyun.env.mesaj("Ok seçimi kaldırıldı: yay en güçlü oku atar")
+	else:
+		secili_ok = n; ok_uyari = ""
+		oyun.env.mesaj("Yayla bunu at: %s" % n)
 
 func _ok() -> Array:
+	if secili_ok != "":
+		for A in OKLAR:
+			if str(A[0]) == secili_ok and oyun.env.adet(secili_ok) > 0: return A
 	for A in OKLAR:
 		if oyun.env.adet(str(A[0])) > 0: return A
 	return []
@@ -90,6 +113,9 @@ func _yay(h: String) -> void:
 		oyun.yazi(P + Vector2(0, -28), "Yay köreldi, bilet", Color("#ffb060"), 9)
 		scd = 0.4
 		return
+	if secili_ok != "" and str(A[0]) != secili_ok and ok_uyari != secili_ok:
+		ok_uyari = secili_ok
+		oyun.yazi(P + Vector2(0, -34), "%s bitti · %s" % [secili_ok, A[0]], Color("#ffd060"), 9)
 	oyun.env.eksilt(str(A[0]), 1)
 	scd = float(B.cd)
 	var lv := _carpan()
@@ -131,6 +157,9 @@ func at() -> void:
 	if YAY.has(h):
 		_yay(h)
 		return
+	if SL.has(h):
+		_sapan(h)
+		return
 	if not STAFF.has(h): return
 	var S: Dictionary = STAFF[h]
 	acik = true
@@ -162,6 +191,42 @@ func _nisan() -> Vector2:
 			en = a
 	if en != null: return en.position + Vector2(0, -6)
 	return P + f * 100.0 + Vector2(0, -8)
+
+func _sapan(h: String) -> void:
+	var B: Dictionary = SL[h]
+	var P: Vector2 = oyun.oyuncu.position
+	if B.has("ammo") and oyun.env.adet(str(B.ammo)) <= 0:
+		oyun.yazi(P + Vector2(0, -28), "Taş yok", Color("#ffb060"), 9)
+		scd = 0.4
+		return
+	if not oyun.env.alet_kullan(h):
+		scd = 0.4
+		return
+	if B.has("ammo"): oyun.env.eksilt(str(B.ammo), 1)
+	scd = float(B.cd)
+	var dm := maxi(1, int(round(float(B.dmg) * _carpan())))
+	var S := {c1 = "#a8a29a" if h == "Sapan" else "#c8a878", c2 = "#6a6460", spd = float(B.spd), range = float(B.rng), sz = 2, trail = 0.1, sl = h}
+	var t := _nisan()
+	# sapan: önünde canlı yoksa en yakın meyveli ağaca (menzil içinde) atar
+	if h == "Sapan" and t.distance_to(P + oyun.oyuncu.bakis.normalized() * 100.0 + Vector2(0, -8)) < 1.0:
+		var ag = _meyveli_agac(P, float(B.rng))
+		if ag != null:
+			t = ag.position + Vector2(0, -22)
+			S.agac = ag
+			S.range = P.distance_to(t) + 4.0
+	_ates(S, dm, t, P + Vector2(0, -10), [], float(S.range))
+
+func _meyveli_agac(P: Vector2, r: float):
+	var en = null
+	var bd := r
+	for ag in oyun.agaclar:
+		if not ag.visible or ag.meyve_cd > 0.0: continue
+		var A = oyun.env.G.trees.get(ag.tur, {})
+		if A.get("fruit", null) == null: continue
+		var d: float = ag.position.distance_to(P)
+		if d < bd and (ag.position - P).dot(oyun.oyuncu.bakis) > 0.0:
+			bd = d; en = ag
+	return en
 
 func _ates(S: Dictionary, dm: int, t: Vector2, s: Vector2, hs: Array, menzil: float) -> void:
 	var dv := t - s
@@ -207,6 +272,16 @@ func _process(dt: float) -> void:
 			_vur(s, hit, ln)
 			shots.remove_at(i)
 			continue
+		if s.left <= 0.0 and S.has("agac"):
+			var ag = S.agac
+			if is_instance_valid(ag) and ag.meyve_cd <= 0.0:
+				var A = oyun.env.G.trees.get(ag.tur, {})
+				oyun.toplama.dusur(str(A.fruit), ag.position + Vector2(randf_range(-8, 8), -2))
+				ag.meyve_cd = float(oyun.env.G.fruitRe)
+				ag.vurulma()
+			elif is_instance_valid(ag): oyun.env.mesaj("Bu ağaçta meyve kalmadı", true)
+			shots.remove_at(i)
+			continue
 		if s.left <= 0.0 or oyun.engel(s.p + Vector2(0, 8), 1.0):
 			for k in 6: oyun.parca(s.p, Vector2(randf_range(-25, 25), randf_range(-25, 25)), 0.3, Color(S.c2))
 			shots.remove_at(i)
@@ -219,8 +294,11 @@ func _vur(s: Dictionary, a, ln: Array) -> void:
 			var fz: float = float(S.freeze) * (0.5 if a.boss else 1.0)
 			a.donuk = maxf(a.donuk, fz)
 			a.set_meta("fimm", now + fz + 3.0)
-	a.vuruldu(int(s.dm), s.v.normalized())
+	var dm2: int = oyun.kritik(int(s.dm), oyun.env.elde(), a) if not S.has("sl") else int(s.dm)
+	a.vuruldu(dm2, s.v.normalized())
 	if S.has("efx"): a.etki_ver(str(S.efx), float(S.edm))
+	if S.get("sl", "") == "Sapan" and not a.boss and (bool(a.D.get("fly", false)) or _kus(a)): a.sersem = maxf(a.sersem, 3.0)
+	if S.get("sl", "") == "Bola" and not a.boss: a.yavas = 5.0
 	for k in 10: oyun.parca(s.p, Vector2(randf_range(-40, 40), randf_range(-40, 40)), 0.35, Color(S.c1) if k % 2 else Color(S.c2))
 	if int(S.get("chain", 0)) > 0:
 		var hs: Array = s.hs.duplicate()
@@ -255,10 +333,16 @@ func _draw() -> void:
 		draw_circle(s.p, z, Color(S.c2))
 		draw_circle(s.p, z / 2.0 + k, Color(S.c1))
 
+func _kus(a) -> bool:
+	for d in a.D.get("drops", []):
+		if str(d.n).ends_with("tüyü"): return true
+	return false
+
 func kayit() -> Dictionary:
-	return {m = int(round(mana)), a = acik}
+	return {m = int(round(mana)), a = acik, ok = secili_ok}
 
 func yukle(d) -> void:
 	if typeof(d) != TYPE_DICTIONARY: d = {}
 	mana = float(d.get("m", 0))
 	acik = bool(d.get("a", false))
+	secili_ok = str(d.get("ok", ""))

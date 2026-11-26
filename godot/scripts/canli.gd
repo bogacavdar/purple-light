@@ -27,6 +27,7 @@ var tur_k := ""        # mağara canlıları: "w" önden yarasa, "t" üstten ker
 var boss := false
 var cvb := false        # mağaranın boss'u (yan görev çağırır)
 var etkiler := {}        # silah ve ok etkileri: yanık, zehir, kanama (web weapon fx) → {t, n, dps, kat}
+var yavas := 0.0        # Bola: %35 hızla yürür
 var donuk := 0.0        # Buz asası: donmuşken kıpırdamaz (web a.frz)
 var sersem := 0.0       # savuşturulunca sersemler (web a.stun)
 var renk := "n"         # saldırının rengi: n beyaz, y sarı (×1,4), r kırmızı (×1,7, savuşturulamaz)
@@ -50,6 +51,7 @@ func _zar() -> String:
 ## savuşturuldu: sersemler, geri savrulur (web parried)
 func savusturuldu(yon: Vector2) -> void:
 	sersem = 1.1 if boss else 1.6
+	set_meta("pc", true)   # web v3.11: savuşturmayla sersemleyen canlıya ilk vuruş her zaman kritik
 	wind = 0.0
 	lunge = {}
 	flash = 0.15
@@ -122,6 +124,7 @@ func _draw() -> void:
 func _git(v: Vector2, dt: float) -> void:
 	var land: Array = D.get("landTiles", [0.0, 1.0, 2.0])
 	if oyun.insa.dal_cit(position): v *= 0.35
+	if yavas > 0.0 and kb.is_empty(): v *= 0.35
 	var nx := position + Vector2(v.x * dt, 0)
 	var takildi := false
 	if not oyun.engel(nx, 5.0, true) and land.has(float(oyun.tile_at(nx))):
@@ -145,6 +148,7 @@ func _process(dt: float) -> void:
 		if oyun.evcil.yem_hedefi(self) and olu < 0.0: return
 		remove_meta("yem")
 	if olu < 0.0 and not etkiler.is_empty(): _etki_isle(dt)
+	if yavas > 0.0: yavas -= dt
 	if olu >= 0.0:
 		olu += dt
 		if tur_k != "":
@@ -172,6 +176,7 @@ func _process(dt: float) -> void:
 		return
 	if sersem > 0.0:
 		sersem -= dt
+		if sersem <= 0.0 and has_meta("pc"): remove_meta("pc")
 		wind = 0.0; lunge = {}; atk = maxf(atk, 0.4)
 		flash -= dt
 		if not kb.is_empty():
