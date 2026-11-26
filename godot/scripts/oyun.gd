@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 2c"
+const SURUM := "Godot · Adım 2d-1"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -77,6 +77,8 @@ var kusam := {}             # yuva → giyilen eşya (web equip)
 var puan := {}              # özellik → verilen seviye puanı (web SPT)
 var puan_ders := 0          # ilk seviye kartı: 0 gösterilmedi, 1 gösterildi, 2 ilk puan verildi
 var karakter                # karakter penceresi (karakter_pen.gd)
+var yapi                    # kurulan yapılar ve evler (yapi.gd)
+var sinan                   # Usta Sinan'ın sipariş pencereleri (sinan.gd)
 var dl_agac := false        # Börü'nün dersi bitti, yetenek ağacını gösterecek (1f-3b-3)
 var silah_yazi: Label
 var parlama_shader: Shader
@@ -151,6 +153,12 @@ func _ready() -> void:
 	kuzen = preload("res://scripts/kuzen.gd").new()
 	add_child(kuzen)
 	kuzen.kur(self)
+	yapi = preload("res://scripts/yapi.gd").new()
+	add_child(yapi)
+	yapi.kur(self)
+	sinan = preload("res://scripts/sinan.gd").new()
+	add_child(sinan)
+	sinan.kur(self)
 	karakter = preload("res://scripts/karakter_pen.gd").new()
 	add_child(karakter)
 	karakter.kur(self)
@@ -200,6 +208,8 @@ func _ready() -> void:
 			_canli_koy_yakin("Tavşan", 4.0)
 		if q.contains("kemal"):
 			oyuncu.position = Vector2(toplama_veri.kisiler[0].x + 20, toplama_veri.kisiler[0].y + 6)
+		if q.contains("yapitest"):
+			env.ekle("Kulübe"); env.ekle("Hasır yatak"); env.vio_ekle(3000)
 		if q.contains("kusan"):
 			for n2 in ["Kemik zırh", "Kürk başlık", "Taş kılıç", "Diş kolye"]: env.ekle(n2)
 			while env.sv < 8: env.xp_ekle(300)
@@ -399,6 +409,8 @@ func engel(p: Vector2, half: float = 5.0) -> bool:
 	for d in [Vector2(-half, -half), Vector2(half, -half), Vector2(-half, half), Vector2(half, half)]:
 		if su_mu(tile_at(p + d)):
 			return true
+	if yapi != null and yapi.engel(p, half):
+		return true
 	var cx := int(floor(p.x / 32.0))
 	var cy := int(floor(p.y / 32.0))
 	for gy in range(cy - 1, cy + 2):
@@ -662,7 +674,7 @@ func sk(id: String) -> bool:
 	return yetenekler.has(id)
 
 func pencere_acik() -> bool:
-	return (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
+	return (sinan != null and sinan.visible) or (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
 
 func can_guncelle(hp: float, mx: float) -> void:
 	can_cubugu.max_value = mx
@@ -983,6 +995,8 @@ func konus_ya_da_istasyon() -> bool:
 	if yakin != null:
 		_konus(yakin)
 		return true
+	if yapi.kullan():
+		return true
 	return false
 
 func _hizmet(k: String) -> Dictionary:
@@ -1163,7 +1177,7 @@ func durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = {gorulen = magara.gorulen, acilan = Marshalls.raw_to_base64(magara.acilan), kaya = 1 if magara.kaya_durum == 2 else magara.kaya_durum, denedi = magara.kaya_denedi or magara.kaya_durum == 2, boss = magara.boss_yenildi},
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(),
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 func gorunus_uygula(L: Dictionary) -> void:
@@ -1248,6 +1262,7 @@ func durum_yukle(d: Dictionary) -> void:
 	var pd: Dictionary = d.get("puan", {})
 	for k in pd: puan[k] = int(pd[k])
 	puan_ders = int(d.get("puan_ders", 2 if env.sv > 1 else 0))
+	yapi.yukle(d.get("yapi", {}))
 	oyuncu.yetenek_uygula()
 	oyuncu.hp = float(o.get("hp", oyuncu.hp_max))
 	can_guncelle(oyuncu.hp, oyuncu.hp_max)

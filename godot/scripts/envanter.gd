@@ -61,7 +61,7 @@ func ekle(n: String, k: int = 1) -> void:
 			mesaj("İlk keşif: %s · +%d Vio" % [n, r])
 	gorulen[n] = true
 	# aletler ve silahlar kemerdeki ilk boş yuvaya kendiliğinden girer (web: hotItem)
-	if (G.tools.has(n) or oyun.kusanma.silah.has(n)) and kemer.find(n) < 0:
+	if (G.tools.has(n) or oyun.kusanma.silah.has(n) or oyun.yapi.yapi_mi(n)) and kemer.find(n) < 0:
 		var i := kemer.find(null)
 		if i >= 0:
 			kemer[i] = n
@@ -153,9 +153,11 @@ func _process(dt: float) -> void:
 		if Input.is_action_just_pressed("kemer%d" % (i + 1)):
 			el = -1 if el == i else i
 			kemer_ciz()
+			_el_degisti()
 	if Input.is_action_just_pressed("kemer_sonraki"):
 		el = (el + 1) % 5 if el < 4 else -1
 		kemer_ciz()
+		_el_degisti()
 	if Input.is_action_just_pressed("ye"):
 		ye()
 	if Input.is_action_just_pressed("canta"):
@@ -288,13 +290,32 @@ func kemer_ciz() -> void:
 		var s := 0 if n == null else adet(n)
 		kemer_kutu.add_child(_yuva(n, el == i, s, str(i + 1)))
 
+## elde bir yapı varsa yerleştirme başlar; bırakılınca biter
+func _el_degisti() -> void:
+	var Y = oyun.yapi
+	if Y.yerlestiriyor() and Y.yer.tasinan == null: Y.vazgec()
+	var h := elde()
+	if Y.yapi_mi(h) and adet(h) > 0: Y.basla(h)
+
+## çantada bir şeye tıklamak: yapıysa yere kurmaya başla, giyilecekse giy
+func _canta_tik(n: String) -> void:
+	if oyun.yapi.yapi_mi(n):
+		canta.visible = false
+		oyun.yapi.basla(n)
+	elif oyun.yuva_of(n) != "":
+		oyun.giy(n)
+		canta_ciz()
+
 func canta_ciz() -> void:
 	for c in canta_izgara.get_children():
 		c.queue_free()
 	var adlar := inv.keys()
 	adlar.sort()
 	for n in adlar:
-		canta_izgara.add_child(_yuva(n, false, adet(n), ""))
+		var y := _yuva(n, false, adet(n), "")
+		y.gui_input.connect(func(e):
+			if e is InputEventMouseButton and e.pressed and e.button_index == MOUSE_BUTTON_LEFT: _canta_tik(n))
+		canta_izgara.add_child(y)
 	if adlar.is_empty():
 		var l := Label.new(); l.text = "Çanta boş"; canta_izgara.add_child(l)
 

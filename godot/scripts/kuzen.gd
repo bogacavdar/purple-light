@@ -27,9 +27,7 @@ func konus(n, ac_kazan := false) -> bool:
 		return true
 	match K.rol:
 		"m": _pazarci(n)
-		"u":
-			tanis["usta"] = true
-			_soyle(n, "Ev mi, barınak mı, atölye mi? Ne kurarsan kur, sağlam olsun. Malzemeyi getir, gerisini ben hallederim.", [{t = "Hoşça kal", pri = true, kapat = true}])
+		"u": oyun.sinan.konus()
 		_: _kuzen(n, ac_kazan)
 	return true
 

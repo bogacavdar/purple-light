@@ -5,7 +5,7 @@ extends Node
 
 const BAD := ["Çayır", "Orman", "Bataklık", "Kayalık Dağ", "Kül Diyarı", "Mor Kristal Vadisi"]
 const DAT := ["Çayır'a", "Orman'a", "Bataklık'a", "Kayalık Dağ'a", "Kül Diyarı'na", "Mor Kristal Vadisi'ne"]
-const DESTEK := ["b", "h", "any", "k", "learn", "kn", "lv", "reach"]
+const DESTEK := ["b", "h", "any", "k", "learn", "kn", "lv", "reach", "sleep", "place", "house", "bed"]
 const KISI_G := {"ekin": "npc"}   # kişi türü → görev veren adı (web gidOf)
 const QHI := ["Selam %s! Bir işin mi var?", "%s, yüzünden belli, bir derdin var.", "Merhaba %s! Yardım lazım mı?"]
 
@@ -193,6 +193,10 @@ func ilerleme(p: Array) -> Array:
 		"learn": return [mini(int(p[1]), ey.bilinen.size()), int(p[1])]
 		"lv": return [mini(int(p[1]), env.sv), int(p[1])]
 		"reach": return [1 if biyomlar.has(int(p[1])) else 0, 1]
+		"sleep": return [1 if oyun.yapi.barinak_uyudu else 0, 1]
+		"place": return [1 if oyun.yapi.kurulu_mu(str(p[1])) else 0, 1]
+		"house": return [1 if oyun.yapi.ev_kurulu() else 0, 1]
+		"bed": return [1 if oyun.yapi.yatak_kurulu() else 0, 1]
 	return [0, 1]
 
 func yapildi(p: Array) -> bool:
@@ -218,6 +222,10 @@ func satir(p: Array) -> String:
 		"kn": return v + str(p[1]) + " tarifini kazanda öğren"
 		"lv": return "Seviye %d/%d" % [x[0], x[1]]
 		"reach": return v + DAT[int(p[1])] + " git"
+		"sleep": return v + "Barınakta bir gece uyu"
+		"place": return v + str(p[1]) + " kur"
+		"house": return v + "Bir ev kur"
+		"bed": return v + "Evine yatak koy"
 	return ""
 
 # ------------------------------------------------------------------ nereye: sarı bölge (biyomlar) ve ok (kişi ya da yer)
@@ -271,6 +279,12 @@ func hedef() -> Dictionary:
 				return {nokta = Vector2(I.kazan.x, I.kazan.y), ad = "Zümrüt'ün kazanı"}
 			"reach":
 				return {bios = [int(p[1])], item = BAD[int(p[1])]}
+			"sleep", "house", "bed":
+				if p[0] == "sleep" and env.adet("Yaprak barınağı") > 0: return {}
+				return {kisi = kisi("usta"), ad = ad("usta")}
+			"place":
+				if env.adet(str(p[1])) > 0: return {}
+				return {kisi = kisi("usta"), ad = ad("usta")}
 			"lv":
 				return {}
 	return {}
