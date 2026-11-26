@@ -1,3 +1,7 @@
+## v4.68 (26 Kasım 2026) · Godot 3a: Köprüler, çamur, Bataklık canlıları
+- `godot-deneme/` yeni derleme (godot dalı: yeni kopru.gd; oyun.gd engel köprü üstü, camur_mu/camur_gecmez, F'de köprü, kayıtta kopru ve camur_dedi; oyuncu.gd çamur ×0,6; gorev.gd bridge; tools/disa_aktar_canli.js BIYOM=2 → data/canlilar_bataklik.json). Denetim: ?koprutest, ?koprutest_camur. Belge 99_godot Adım 3 ve 3a satırları. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.67 (26 Kasım 2026) · Godot 2f: Evcil hayvanlar ve Çoban Davut
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_evcil.js → data/evcil.json, art/kisiler/*k_davut*; yeni evcil.gd, yoldas.gd; gorev.gd sq/tame ve Davut görevleri; kuzen.gd rol d; yapi.gd Ağıl penceresi; oyuncu.gd binek hızı, inme, darbe bineğe; canli.gd yem; girdi B; kayıtta evcil). Denetim: ?kecitest, ?evcilat, ?evcilkurt. Belge 99_godot 2f satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.49 (25 Kasım 2026) · Godot Adım 1e-2 (Yankı Mağarası: canlılar, boss, Madenci Kaya)
 - `godot-deneme/` yeni derleme (godot dalı: canli.gd mağara türleri, düşenler ve XP; magara.gd doğum, Kaya, boss; disa_aktar_magara.js canlı kareleri, ağızdaki toplananlar, Kaya'nın resmi ve yan görev sözleri). Belge 99_godot 1e-2 satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.48 (25 Kasım 2026) · Godot Adım 1e-1 (Yankı Mağarası: giriş, iç, ışık)
-- `godot-deneme/` yeni derleme (godot dalı: magara.gd, mesale.gd; tools/disa_aktar_magara.js web'in mağara ızgarasını, paint() çizimini ve kaya tepesini döker; fonts/ DejaVu ve küçük Noto Emoji yedek yazı tipi). Belge 99_godot 1e satırı 1e-1/1e-2'ye bölündü. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

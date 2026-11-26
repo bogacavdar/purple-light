@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.68 · 26 Kasım 2026
+
+### Proje
+- **Godot: köprüler, çamur ve Bataklık canlıları (Adım 3 başladı):**
+  - Büyük nehrin üstünde üç kırık köprü var. Kemal'in "Bir köprüyü onar" görevini alınca ana köprüyü 20 odunla onarıyorsun; her ağacın odunu sayılıyor. Ana köprüden sonra iki kısayol köprüsünü görevsiz onarabiliyorsun.
+  - Bataklık'ın çamurunda yavaşlıyorsun (×0,6); kamış ya da demir çizme giyince yavaşlamıyorsun.
+  - Bataklık'ta ördek, yaban kazı, turna kuşu, su samuru, zehirli kurbağa, bataklık kurdu ve timsah dolaşıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.67 · 26 Kasım 2026
 
 ### Proje
@@ -202,10 +213,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot, Adım 1e-2 (Yankı Mağarası: canlılar, boss, Madenci Kaya) oynanabilir:** mağarada yarasalar, kör kertenkeleler ve taş örümcekleri dolaşıyor; en dipte fenerli Madenci Kaya seni bekliyor. 4 Yankı mantarı getirince Yankı Kraliçesi geliyor; yenince Kaya'ya dön. Mağaranın ağzında Sarkıt ve Yarasa gübresi toplanıyor. Godot'da artık her canlı avlanınca kendi düşenlerini bırakıyor ve XP veriyor. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.48 · 25 Kasım 2026
-
-### Proje
-- **Godot, Adım 1e-1 (Yankı Mağarası: giriş, iç, ışık) oynanabilir:** Çayır'daki mağaranın kaya tepesi, tabelası ve ağzı geldi; seviye 5 ve yanan bir meşaleyle giriliyor. İçerisi zifiri karanlık; meşale çevreni aydınlatıyor, mantarlar mavi parlıyor. Meşale sönerse birkaç saniye sonra dışarı çıkıyorsun. Yankı mantarı ve Damla taşı toplanıyor, küçük harita mağarada yürüdükçe açılıyor. Meşale yuvası kemerin solunda (" tuşu ya da tıklayınca yanar/söner). Canlılar, Yankı Kraliçesi ve Madenci Kaya sıradaki parçada. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
