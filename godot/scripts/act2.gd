@@ -9,7 +9,7 @@ func kur(o) -> void:
 	oyun = o
 	U = o._json("res://data/ada2/ustalar.json")
 
-const ROL := {"gok": "gk", "pervin": "pv", "tamer": "sl", "selin": "mk"}
+const ROL := {"gok": "gk", "pervin": "pv", "tamer": "sl", "selin": "mk", "alara": "ej"}
 ## ikinci adada kişi listesine girecek ustalar (şimdilik Yıldız ve Efsun)
 func kisiler() -> Array:
 	var out := []
@@ -26,6 +26,7 @@ func kisi_kuruldu(n) -> void:
 	if n.K.k == "pervin": efsun_kur(n)
 	if n.K.k == "tamer": tufan_kur(n)
 	if n.K.k == "selin": isin_kur(n)
+	if n.K.k == "alara": tomris_kur(n)
 
 func usta(k: String) -> Dictionary:
 	for x in U.kisiler:
@@ -67,9 +68,9 @@ func yildiz(n) -> void:
 # ------------------------------------------------------------------ Büyücü Efsun (web v77: Dev Mantar Ormanı; mor mana ve asalar)
 const MAKES := [["Ateş asası", 100], ["Buz asası", 200], ["Yıldırım asası", 300], ["Mana iksiri", 10]]
 const ODUL := {"pv1": ["Mana iksiri"], "pv3": ["Ateş asası"], "pv4": ["Buz asası"], "pv5": ["Yıldırım asası"],
-	"mk1": ["Kobalt külçesi", "Titanyum külçesi", "Enerji hücresi"], "mk3": ["Meka zırh"],
+	"mk1": ["Kobalt külçesi", "Titanyum külçesi", "Enerji hücresi"], "mk3": ["Meka zırh"], "ej1": ["Plazma hücresi"], "ej3": ["Işın kılıcı"],
 	"sl1": ["Pirinç külçesi", "Barut"], "sl3": ["Tabanca", "Tabanca mermisi"], "sl4": ["Pompalı", "Pompalı fişeği"]}
-const DUYUR := {"Ateş asası": "Efsun", "Buz asası": "Efsun", "Yıldırım asası": "Efsun", "Tabanca": "Tufan", "Pompalı": "Tufan", "Meka zırh": "Işın"}
+const DUYUR := {"Ateş asası": "Efsun", "Buz asası": "Efsun", "Yıldırım asası": "Efsun", "Tabanca": "Tufan", "Pompalı": "Tufan", "Meka zırh": "Işın", "Işın kılıcı": "Tomris"}
 
 func efsun_kur(n) -> void:
 	# şapka (web: kişinin başında mor sivri şapka)
@@ -121,7 +122,7 @@ func _yap(n, nm: String, ucret: int, don: Callable) -> void:
 	var geri := [{t = "Tamam", pri = true, f = func(): don.call(n)}]
 	var tf: bool = n.K.k == "tamer"
 	if not _ey().bilinen.has(nm):
-		_soyle(n, ("[b]%s[/b] tarifini önce Yıldız'ın kazanında öğren." if n.K.k == "selin" else ("[b]%s[/b] tarifini önce Yıldız'ın kazanında öğren. Ben ancak bildiğin şeyi yaparım." if tf else "[b]%s[/b] tarifini önce kazanda öğrenmelisin evlat. Yıldız'ın kazanı Yüzen Kayalar'da.")) % nm, geri)
+		_soyle(n, ("[b]%s[/b] tarifini önce Yıldız'ın kazanında öğren." if n.K.k in ["selin", "alara"] else ("[b]%s[/b] tarifini önce Yıldız'ın kazanında öğren. Ben ancak bildiğin şeyi yaparım." if tf else "[b]%s[/b] tarifini önce kazanda öğrenmelisin evlat. Yıldız'ın kazanı Yüzen Kayalar'da.")) % nm, geri)
 		return
 	var eks: String = _ey().eksik(nm)
 	if eks != "":
@@ -140,6 +141,9 @@ func _yap(n, nm: String, ucret: int, don: Callable) -> void:
 	oyun.env.vio_ekle(-ucret)
 	oyun.env.ekle(nm, 1)
 	if oyun.buyu.STAFF.has(nm): oyun.buyu.ac()
+	if n.K.k == "alara":
+		_soyle(n, "[i](kabzayı çevirir; mavi bir ışık vınlayarak uzar)[/i] Işın kılıcı. Plazma her şeyi keser; ejder pulunu bile. Hızlı vurur, uzağa uzanır. Dikkat et, kendi parmağını da keser.", [{t = "Teşekkürler", pri = true, kapat = true}])
+		return
 	if n.K.k == "selin":
 		_soyle(n, "[i](kaynak maskesini kaldırır)[/i] Meka zırh hazır! Özellikler'den gövdene giy. Çok sağlamdır, adımlarını hızlandırır, canını artırır; zehir, yanık ve kanamanın yarısını tutar.", [{t = "Teşekkürler", pri = true, kapat = true}])
 		return
@@ -211,4 +215,27 @@ func isin(n) -> void:
 		ch.append({t = "%s Meka zırh yap (600 Vio)" % ("✦" if _yapabilir("Meka zırh") else "·"), f = _yap.bind(n, "Meka zırh", 600, isin)})
 	ch.append({t = "Hoşça kal", pri = true, kapat = true})
 	var L := ["Golemlerin gözüne değil, göğsüne vur: taş orada.", "Titanyum hafiftir ama inatçıdır. Benim gibi.", "Geminin sinyalini dinliyorum. Her gece aynı şeyi sayıyor."]
+	_soyle(n, L[randi() % L.size()], ch)
+
+# ------------------------------------------------------------------ Ejder Avcısı Tomris (web v80: Ejder Volkanı; Işın kılıcı)
+func tomris_kur(n) -> void:
+	var g := Node2D.new()
+	g.position = n.position + Vector2(22, 0)
+	g.draw.connect(func():
+		g.draw_rect(Rect2(-9, -4, 18, 5), Color("#3a2a2a")); g.draw_rect(Rect2(-6, -10, 12, 6), Color("#e8e0d0"))
+		g.draw_rect(Rect2(-4, -14, 3, 4), Color("#f0e8d8")); g.draw_rect(Rect2(1, -15, 3, 5), Color("#f0e8d8")); g.draw_rect(Rect2(-7, -8, 2, 2), Color("#2a1a1a")))
+	oyun.nesneler.add_child(g)
+
+## web talkAlara
+func tomris(n) -> void:
+	var K = oyun.kuzen
+	if not K.tanis.has("alara"):
+		K.tanis["alara"] = true
+		_soyle(n, "[i](sırtında bir ejder dişi, yüzünde kül)[/i] Bu sıcakta buraya kadar geldiysen ya delisin ya da Işın'ın zırhını giydin. Ben [b]Tomris[/b], ejder avcısıyım. Bu ejderler doğal değil. Gemi her yedi yılda bir volkana alçalır, motorunu soğutmak için plazmasını içine boşaltır. Ejderler o plazmayla büyür. Ben de onların dişiyle plazmayı birleştirmeyi öğrendim.", [{t = "Hoşça kal", kapat = true}])
+		return
+	var ch := []
+	if _ey().verilen.has("Işın kılıcı") or _ey().bilinen.has("Işın kılıcı"):
+		ch.append({t = "%s Işın kılıcı yap (800 Vio)" % ("✦" if _yapabilir("Işın kılıcı") else "·"), f = _yap.bind(n, "Işın kılıcı", 800, tomris)})
+	ch.append({t = "Hoşça kal", pri = true, kapat = true})
+	var L := ["Kızıl ejder nefes almadan önce başını geri çeker. O an kaç.", "Plazma taşına çıplak elle dokunma.", "Volkan her gece biraz daha sıcak. Gemi yaklaşıyor."]
 	_soyle(n, L[randi() % L.size()], ch)

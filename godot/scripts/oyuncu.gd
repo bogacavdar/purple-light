@@ -108,6 +108,7 @@ func silah_v() -> Dictionary:
 	if h == "" or not K.silah.has(h): return V.fist
 	var w: Dictionary = K.silah[h]
 	if w.kind == "hunt": return {dmg = w.dmg, reach = 30, cd = 0.5, kind = "hunt", n = h}
+	if h == "Işın kılıcı": return {dmg = w.dmg, reach = 32, cd = 0.3, kind = "sword", n = h}   # web v80: plazma kılıç hızlı vurur, uzağa uzanır
 	if w.mace == "gurz": return {dmg = w.dmg, reach = 24, cd = 0.62, kind = "sword", n = h}
 	if w.mace != null: return {dmg = w.dmg, reach = 20, cd = 0.4, kind = "sword", n = h}
 	return {dmg = w.dmg, reach = 22, cd = 0.42, kind = "sword", n = h}
@@ -340,6 +341,11 @@ func vur(d: Vector2) -> void:
 	savrulus_yon = f
 	savrulus_r = float(w.reach) * 0.8
 	kavis.queue_redraw()
+	if str(w.get("n", "")) == "Işın kılıcı":
+		var a0 := atan2(f.y, f.x)
+		for k in 10:
+			var a := a0 + (k / 9.0 - 0.5) * 1.6
+			oyun.parca(position + Vector2(cos(a) * 22.0, -8.0 + sin(a) * 18.0), Vector2(cos(a), sin(a)) * 30.0, 0.22, Color("#7af0ff") if k % 2 else Color("#e8ffff"))
 	var dm := int(round(float(w.dmg) * oyun.stat("dmg") * (1.55 if oyun.sk("W4") else (1.4 if oyun.sk("W3") else (1.25 if oyun.sk("W2") else (1.1 if oyun.sk("W1") else 1.0))))))
 	var gogus := position + Vector2(0, -6)
 	for a in oyun.canlilari_ver():

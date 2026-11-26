@@ -314,6 +314,8 @@ func hedef() -> Dictionary:
 		return {kisi = kisi("tamer"), ad = "Silahçı Tufan"}   # web v78 guideKey
 	if oyun.ada == 2 and (aktif == null or not ACT2_G.has(str(aktif.g))) and bitti("sl4") and not oyun.kuzen.tanisildi("selin") and kisi("selin") != null:
 		return {kisi = kisi("selin"), ad = "Mühendis Işın"}   # web v79 guideKey
+	if oyun.ada == 2 and (aktif == null or not ACT2_G.has(str(aktif.g))) and bitti("mk3") and not oyun.kuzen.tanisildi("alara") and kisi("alara") != null:
+		return {kisi = kisi("alara"), ad = "Ejder Avcısı Tomris"}   # web v80 guideKey
 	if aktif == null:
 		return {}
 	var q: Dictionary = aktif
@@ -765,7 +767,13 @@ func _kart() -> void:
 		var Yk = kisi("gok")
 		kart_ad.text = "Gökbilimci Yıldız'ı bul" if Yk == null or not oyun.kuzen.tanisildi("gok") else ("Yıldız'ın işlerine yardım et" if not bitti("gk3") else "Portallar açık")
 		var tx := "Barbaros seni Yüzen Kayalar'a bıraktı. Yukarıdaki kayalarda teleskobu olan Gökbilimci Yıldız'ı bul." if not oyun.kuzen.tanisildi("gok") else ("Yıldız'ın işlerine yardım et; son işi bir portal." if not bitti("gk3") else "Portallar açık: Yıldızsız Ada'ya dönüp gelebilirsin.")
-		if bitti("sl4") and kisi("selin") != null:
+		if bitti("mk3") and kisi("alara") != null:
+			# web v80: Meka zırh tarifinden sonra kart Tomris'i gösterir
+			var am: bool = oyun.kuzen.tanisildi("alara")
+			kart_baslik.text = "ACT 2 · Ejder Volkanı" if am else "ACT 2 · Ejder Avcısı Tomris"
+			kart_ad.text = "Ejder Avcısı Tomris'i bul" if not am else ("Tomris'in işlerine yardım et" if not bitti("ej4") else "Kızıl ejder düştü")
+			tx = "Doğudaki Ejder Volkanı'nda Ejder Avcısı Tomris'i bul. Meka zırhını giy; orada her şey yanar." if not am else ("Tomris'in işlerine yardım et: ışın kılıcı onda. Efsun'un son asası: Yıldırım asası." if not bitti("ej4") else "Ejderlerin kraliçesi düştü. ACT 2'nin devamı: Gök Rıhtımı.")
+		elif bitti("sl4") and kisi("selin") != null:
 			# web v79: Tufan'ın son işinden sonra kart Işın'ı gösterir
 			var sm: bool = oyun.kuzen.tanisildi("selin")
 			kart_baslik.text = "ACT 2 · Kristal Golem Ocağı" if sm else "ACT 2 · Mühendis Işın"

@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · A5"
+const SURUM := "Godot · A6"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -1055,6 +1055,26 @@ func _ada2_test(q: String) -> void:
 		for c in konusma.liste.duplicate():
 			if c.t == "Onar": konusma._sec(c)
 		print("KB fixed ", b.fixed, " ustunde ", kopru.ustunde(Vector2(b.cx, b.cy)), " engel ", engel(Vector2(b.cx, b.cy)), " yaka ", kopru._yakalar(), " gecit ", gecit.x0, " ", gecit.engel(Vector2(gecit.cx, gecit.cy)))
+	if q.contains("tomris"):
+		bitenler_ekle(["gk1", "gk2", "gk3", "pv1", "pv2", "pv3", "sl1", "sl2", "sl3", "sl4", "mk1", "mk2", "mk3"])
+		for g2 in ["gok", "pervin", "tamer", "selin"]: kuzen.tanis[g2] = true
+		var Tm = gorev.kisi("alara")
+		await get_tree().create_timer(0.5).timeout
+		print("TM hedef ", gorev.hedef().get("ad", "-"), " kart ", gorev.kart_baslik.text, " / ", gorev.kart_ad.text, " T ", Tm.position)
+		oyuncu.position = Tm.position + Vector2(-14, 4)
+		konus_ya_da_istasyon(); print("TM 1 ", konusma.yazi.text.substr(0, 60)); konusma._cik()
+		bitenler_ekle(["ej1", "ej2", "ej3", "ej4"])
+		await get_tree().create_timer(0.3).timeout
+		el_yapimi.bilinen["Işın kılıcı"] = true
+		for p in el_yapimi.R["Işın kılıcı"].i: env.ekle(str(p[0]), int(p[1]))
+		env.vio_ekle(1000)
+		konus_ya_da_istasyon()
+		for c in konusma.liste.duplicate():
+			if str(c.t).contains("Işın kılıcı"): konusma._sec(c)
+		print("TM yaptı ", konusma.yazi.text.substr(0, 50), " ", env.adet("Işın kılıcı"), " vio ", env.vio, " kart ", gorev.kart_ad.text, " verilen ", el_yapimi.verilen.has("Plazma hücresi"))
+		konusma._cik()
+		env.el = env.kemer.find("Işın kılıcı")
+		print("TM silah ", oyuncu.silah_v())
 	if q.contains("isin"):
 		bitenler_ekle(["gk1", "gk2", "gk3", "pv1", "pv2", "pv3", "sl1", "sl2", "sl3", "sl4"])
 		kuzen.tanis["gok"] = true; kuzen.tanis["pervin"] = true; kuzen.tanis["tamer"] = true
