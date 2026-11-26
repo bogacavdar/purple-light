@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.01 · 27 Kasım 2026
+
+### Proje
+- **Godot: özel vuruşlar:**
+  - Çift vuruş, güçlü vuruş (basılı tut, bırak), takla vuruşu, bitirici ve ritimli 2. ve 3. vuruş geldi. Her silah türünün kendi altı hamlesi var.
+  - ACT 1'de hamleler Börü'nün dersleriyle açılacak (sıradaki adım); ACT 2'de hepsi açık.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.00 · 27 Kasım 2026
 
 ### Proje
@@ -221,17 +231,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Ekin Çayır'da tanışılır ve ilk görevini verir: Kaybolan korkuluk.
   - Saman izlerini takip edersin, korkuluğu yürüten aç kirpiye bir elma bırakırsın, Ekin'e dönersin.
   - Görev bitince Ekin adasına dönmek için Çayır'dan ayrılır. Bereket Adası ve tarla sonra gelecek.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.81 · 26 Kasım 2026
-
-### Proje
-- **Godot: Denizci Barbaros:**
-  - Kemal'den gemi tarifini öğrenince Barbaros'un gemisi Mor Kristal Vadisi'nin kıyısına çarpar; Barbaros enkazın yanında bekler.
-  - Kızı Meltem'i anlatır ve görevlerini verir: Kazazedenin yarası, Enkazın bekçileri, Yıldızlarla yön, Yelken ipi, Kara omurga, Su almayan tekne, Pruvadaki fener.
-  - Yeni gemi ve ACT 2 yolculuğu sonra gelecek.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
