@@ -1,3 +1,7 @@
+## v4.83 (26 Kasım 2026) · Godot O3b: Bereket Adası ve tarla
+- `godot-deneme/` yeni derleme (godot dalı: yeni ciftlik.gd (Ekin'in durumu, olay, kayık, ada yerleri ve çizimi, tarla, fidan, dükkân, kayıt `ciftlik`); yeni tools/disa_aktar_ciftlik.js → data/ciftlik.json + 21 eşya resmi; kuzen.gd'deki Ekin konuşması ciftlik.gd'ye taşındı; gorev.gd ekin koşulu ve fidan; oyun.gd engel, kayıt; toplama.gd F; zaman.gd adada ışık). Eski kayıttaki `ekin_gitti` okunur. Denetim: ?adatest. Belge 99_godot O3b satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.82 (26 Kasım 2026) · Godot O3a: Çiftçi Ekin, Çayır'da
 - `godot-deneme/` yeni derleme (godot dalı: yeni tools/disa_aktar_ekin.js → data/ekin.json EK1–EK8; disa_aktar_yan.js ekin1'i main bayrağıyla alır; yan.gd main görevlerin adımlarını yürütür (_ana_adimlar, ana_yazi); gorev.gd sq'de yan görev, k_ekin; kuzen.gd _ekin, ekin_cayirda; kisi.gd Ekin ayrılınca gizli). Denetim: ?ekintest. Belge 99_godot O3a satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.64 (26 Kasım 2026) · Godot 2d-3: İnşa kipi
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_insa.js → data/insa.json, art/insa; yeni insa.gd; oyun.gd engel(canli), F'de fener yakıtı, kayıtta insa; canli.gd duvar ve dal çit; oyuncu yol hızı; zaman.isikta fener; el_yapimi çoklu çıktı; yapi Direk feneri hariç). Denetim: ?insatest. Belge 99_godot 2d-3 satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.63 (26 Kasım 2026) · Godot 2d-2: Atölye
-- `godot-deneme/` yeni derleme (godot dalı: yeni atolye.gd; yapi.gd Atölye ws, çubuk çizimi, kayıtta ws; sinan ve atolye pencereleri ortalanması). Belge 99_godot 2d-2 satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.83 · 26 Kasım 2026
+
+### Proje
+- **Godot: Bereket Adası ve tarla:**
+  - Barbaros'un dördüncü görevinden sonra yanına gidince Ekin'i bulmuş olur ve onu adasına götürür.
+  - Barbaros'un yanındaki kayıkla Bereket Adası'na gidip gelirsin. Adada Ekin'in evi, ambarı, kuyusu, tavukları ve tarlası var; canavar ve mor ışık yok.
+  - Tarla: tırmıkla hazırla, tohum ek, sulama kabıyla sula, olgunlaşınca tırpanla biç. Fidanlar üç günde meyve ağacı olur.
+  - Ekin tohum ve fidan satar; adadaki yedi görevi de geldi.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.82 · 26 Kasım 2026
 
 ### Proje
@@ -216,16 +228,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Çit ve duvarlar komşularıyla birleşiyor; konmayan yerde sebebi yazıyor.
   - Çit ve duvar seni ve hayvanları durduruyor. Kapıdan sen geçiyorsun, hayvanlar geçemiyor. Dal çit hayvanları yavaşlatıyor, yolda %15 daha hızlı yürüyorsun.
   - Direk feneri gece yanıyor ve ışığında mor ışık gelmiyor; F ile yakıt konuyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.63 · 26 Kasım 2026
-
-### Proje
-- **Godot: Atölye:**
-  - Kurulu atölyenin yanında F'ye basınca bir tarif seçiliyor ve malzemeler içine konuyor.
-  - Malzemeler tamamsa her 25 saniyede bir ürün çıkıyor (en çok 50). Sen uzaktayken de çalışıyor. Atölyenin üstünde ilerleme çubuğu ve biriken ürün görünüyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
