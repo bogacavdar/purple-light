@@ -1,3 +1,7 @@
+## v5.04 (27 Kasım 2026) · Godot S4: mor ışık saldırıları ve Yıldızsızlar
+- `godot-deneme/` yeni derleme (godot dalı: yeni yildizsiz.gd (takvim, iki dalga, mor örtü, sütunlar, Vio, Börü/Zümrüt/Kemal yardımı, Konuk; kayıt `ys {n, c, o, k}`), data/yildizsiz.json (web YSG ızgaraları, tools/disa_aktar_ys.js); canli.gd `kind "ys"` çizimi ve solma; oyun.gd uzaklaşınca silmeme, canli_oldu; zaman.gd saldırıda aydınlık ve mor renk). Denetim: ?ystest. Belge 99_godot S4 satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıttaki `ys` alanı okunmadan kalır).
+
 ## v5.03 (27 Kasım 2026) · Godot S3: imza hamleleri ve sürü taktiği
 - `godot-deneme/` yeni derleme (godot dalı: canli.gd imza hamleleri (`imza`, `imza_t`, IMZA tablosu, `_imza_basla/_imza_isle/_imza_ciz`, vur-kaç ısırık ve atıştan sonra), kurt sürüsü dolanması (`_suru_yeri`); ozel.gd arkadan uyarı oku; oyun.gd SURUM "Godot · S3"). Denetim: ?imzatest. Belge 99_godot S3 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
@@ -72,9 +76,4 @@
 
 ## v4.85 (26 Kasım 2026) · Godot O5: Yıldızsız Gezgin ve robot köpekler
 - `godot-deneme/` yeni derleme (godot dalı: yeni gezgin.gd (Gezgin'in gelişi, konuşması, hediye, mor sinyal, köpek ısmarlama ve ışık sütunu, köpeklerin toplama/taşıma/teslimi, köpekler menüsü, kayıt `gezgin`); girdi.gd R = kopek; oyun.gd F'de Gezgin, pencere_acik, yardım satırı). Denetim: ?kopektest. Belge 99_godot O5 satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.84 (26 Kasım 2026) · Poyraz'ın koyu düzeltmesi; Godot O4: Gemici Poyraz ve deniz
-- Web: `v234` bloğunda findCove artık Bereket Adası'nı (`__plFarm.onIs`) atlıyor; koy kaydedilmediği için eski kayıtlarda kendiliğinden düzelir. Belge 38_nuri_deniz › Kaza.
-- `godot-deneme/` yeni derleme (godot dalı: yeni poyraz.gd (kaza, onarım, konuşma, deniz haritası, deniz ekranı, kayıt `poyraz`); yeni tools/disa_aktar_poyraz.js → data/poyraz.json koy + G1–G10, Poyraz resimleri; gorev.gd nuri/sea koşulları, deniz balığı için ok Poyraz'a; balik.gd kefali, deniz oltalarının yeşil alanı; kuzen/kisi/oyun bağlantıları). Denetim: ?denizt. Belge 99_godot O4 satırı.
 - Geri almak için: bu commit'i `git revert` et.

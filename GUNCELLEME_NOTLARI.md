@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.04 · 27 Kasım 2026
+
+### Proje
+- **Godot: mor ışık saldırıları ve Yıldızsızlar:**
+  - Belli gecelerin başında bütün ada mora bürünüyor, Yıldızsızlar mor ışık sütunlarıyla çevrene iki dalga halinde iniyor. İlk saldırı 6. gece.
+  - Güçleri silahına, canına ve güne göre ayarlanıyor; her biri düşünce Vio doğrudan keseye giriyor.
+  - Börü yanlarına koşup savaşıyor, Zümrüt ışın yolluyor, Kemal yaralarını sarıyor.
+  - Evde, mağarada, denizde ya da kendi kamp ateşinin yanındaysan saldırı ertesi güne kayıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.03 · 27 Kasım 2026
 
 ### Proje
@@ -215,20 +227,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - 5. gün Yıldızsız Gezgin yanında belirir ve sana bir robot köpek hediye eder.
   - R ile köpekler menüsü açılır. Köpeğe ne toplayacağını seçersin; topladığını sırtında taşır, dolunca sana getirir. Yanına çağırabilir, sevebilirsin.
   - 20. günden sonra Gezgin yine gelir ve mor sinyali verir. Menüden Vio'yla köpek ısmarlarsın (en çok 5); köpek mor bir ışık sütunuyla iner.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.84 · 26 Kasım 2026
-
-### Düzeltmeler
-- **Poyraz'ın teknesi artık Bereket Adası'na oturmuyor:** tekne, Kemal'in kampına en uzak kumsalı ararken Ekin'in adasını da sayıyordu; Poyraz oraya, Barbaros'un kayığı olmadan gidilemeyen yere düşüyordu. Artık ana adanın Çayır ya da Orman kıyısına oturuyor. Eski kayıtlarda Poyraz ve teknesi oyunu açınca kendiliğinden yeni yerine geçer.
-
-### Proje
-- **Godot: Gemici Poyraz ve deniz:**
-  - İlk oltadan sonraki sabah Poyraz'ın teknesi uzak bir kumsala oturur. Dört görevle tekneyi onarırsın.
-  - Onarınca Poyraz seni denize götürür: deniz haritasında altı balık bölgesi var; her biri bir seviye ve olta ister.
-  - Denizde balık tutma ekranı, Poyraz'ın altı deniz balığı görevi ve nehirlerde tatlısu kefali de geldi.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
