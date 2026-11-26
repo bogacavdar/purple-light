@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · A3"
+const SURUM := "Godot · A4"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -1055,6 +1055,41 @@ func _ada2_test(q: String) -> void:
 		for c in konusma.liste.duplicate():
 			if c.t == "Onar": konusma._sec(c)
 		print("KB fixed ", b.fixed, " ustunde ", kopru.ustunde(Vector2(b.cx, b.cy)), " engel ", engel(Vector2(b.cx, b.cy)), " yaka ", kopru._yakalar(), " gecit ", gecit.x0, " ", gecit.engel(Vector2(gecit.cx, gecit.cy)))
+	if q.contains("tufan"):
+		bitenler_ekle(["gk1", "gk2", "gk3", "pv1", "pv2", "pv3"])
+		el_yapimi.bilinen["Ateş asası"] = true
+		kuzen.tanis["gok"] = true; kuzen.tanis["pervin"] = true
+		var Tf = gorev.kisi("tamer")
+		await get_tree().create_timer(0.5).timeout
+		print("TF hedef ", gorev.hedef().get("ad", "-"), " kart ", gorev.kart_baslik.text, " / ", gorev.kart_ad.text, " T ", Tf.position)
+		oyuncu.position = Tf.position + Vector2(-14, 4)
+		konus_ya_da_istasyon(); print("TF 1 ", konusma.yazi.text.substr(0, 60)); konusma._cik()
+		bitenler_ekle(["sl1", "sl2", "sl3", "sl4"])
+		await get_tree().create_timer(0.3).timeout
+		print("TF verilen ", el_yapimi.verilen.keys().filter(func(x): return x in ["Tabanca", "Pompalı", "Barut", "Tabanca mermisi"]))
+		el_yapimi.bilinen["Tabanca"] = true; el_yapimi.bilinen["Tabanca mermisi"] = true; el_yapimi.bilinen["Pompalı"] = true
+		for p in el_yapimi.R["Tabanca"].i: env.ekle(str(p[0]), int(p[1]))
+		for p in el_yapimi.R["Tabanca mermisi"].i: env.ekle(str(p[0]), int(p[1]))
+		env.vio_ekle(1000)
+		el_yapimi.yap("Tabanca mermisi")
+		print("TF mermi ", env.adet("Tabanca mermisi"))
+		konus_ya_da_istasyon()
+		for c in konusma.liste.duplicate():
+			if str(c.t).contains("Tabanca"): konusma._sec(c)
+		print("TF yaptı ", konusma.yazi.text.substr(0, 50), " ", env.adet("Tabanca"), " vio ", env.vio, " kart ", gorev.kart_ad.text)
+		konusma._cik()
+		env.ekle("Pompalı", 1); env.ekle("Pompalı fişeği", 3)
+		for sn in ["Pompalı", "Tabanca", "Tabanca"]:
+			env.el = env.kemer.find(sn)
+			oyuncu.position = Tf.position + Vector2(0, 200)
+			for c in canlilari_ver(): c.queue_free()
+			await get_tree().process_frame
+			var c1 = _canli_yeni("Bulut koyunu", oyuncu.position + Vector2(70, 0), 1)
+			oyuncu.bakis = Vector2(1, 0)
+			var h0: float = c1.hp
+			oyuncu.vur(Vector2(1, 0))
+			await get_tree().create_timer(0.6).timeout
+			print("TF ", sn, " elde ", env.elde(), " hasar ", h0 - c1.hp, " mermi ", env.adet("Tabanca mermisi"), " fişek ", env.adet("Pompalı fişeği"))
 	if q.contains("efsun"):
 		bitenler_ekle(["gk1", "gk2", "gk3"])
 		var E = gorev.kisi("pervin")

@@ -9,7 +9,7 @@ func kur(o) -> void:
 	oyun = o
 	U = o._json("res://data/ada2/ustalar.json")
 
-const ROL := {"gok": "gk", "pervin": "pv"}
+const ROL := {"gok": "gk", "pervin": "pv", "tamer": "sl"}
 ## ikinci adada kişi listesine girecek ustalar (şimdilik Yıldız ve Efsun)
 func kisiler() -> Array:
 	var out := []
@@ -24,6 +24,7 @@ func kisiler() -> Array:
 func kisi_kuruldu(n) -> void:
 	if n.K.k == "gok": teleskop_kur(n)
 	if n.K.k == "pervin": efsun_kur(n)
+	if n.K.k == "tamer": tufan_kur(n)
 
 func usta(k: String) -> Dictionary:
 	for x in U.kisiler:
@@ -64,7 +65,9 @@ func yildiz(n) -> void:
 
 # ------------------------------------------------------------------ Büyücü Efsun (web v77: Dev Mantar Ormanı; mor mana ve asalar)
 const MAKES := [["Ateş asası", 100], ["Buz asası", 200], ["Yıldırım asası", 300], ["Mana iksiri", 10]]
-const ODUL := {"pv1": "Mana iksiri", "pv3": "Ateş asası", "pv4": "Buz asası", "pv5": "Yıldırım asası"}
+const ODUL := {"pv1": ["Mana iksiri"], "pv3": ["Ateş asası"], "pv4": ["Buz asası"], "pv5": ["Yıldırım asası"],
+	"sl1": ["Pirinç külçesi", "Barut"], "sl3": ["Tabanca", "Tabanca mermisi"], "sl4": ["Pompalı", "Pompalı fişeği"]}
+const DUYUR := {"Ateş asası": "Efsun", "Buz asası": "Efsun", "Yıldırım asası": "Efsun", "Tabanca": "Tufan", "Pompalı": "Tufan"}
 
 func efsun_kur(n) -> void:
 	# şapka (web: kişinin başında mor sivri şapka)
@@ -106,22 +109,24 @@ func efsun(n) -> void:
 	for m in MAKES:
 		var nm: String = m[0]
 		if not (_ey().verilen.has(nm) or _ey().bilinen.has(nm)): continue
-		ch.append({t = "%s %s yap (%d Vio)" % ["✦" if _yapabilir(nm) else "·", nm, int(m[1])], f = _yap.bind(n, nm, int(m[1]))})
+		ch.append({t = "%s %s yap (%d Vio)" % ["✦" if _yapabilir(nm) else "·", nm, int(m[1])], f = _yap.bind(n, nm, int(m[1]), efsun)})
 	ch.append({t = "Hoşça kal", pri = true, kapat = true})
 	var L := ["Mantarlar konuşur; dinlemesini bilene.", "Goblinler kıymık toplar ama ne işe yaradığını bilmez.", "Mana nefes gibidir: zorlarsan tükenir, beklersen dolar."]
 	_soyle(n, L[randi() % L.size()], ch)
 
-func _yap(n, nm: String, ucret: int) -> void:
-	var geri := [{t = "Tamam", pri = true, f = func(): efsun(n)}]
+## ustanın yaptığı şey (web make): tarif bilinmeli, malzemeler senden, emeği Vio
+func _yap(n, nm: String, ucret: int, don: Callable) -> void:
+	var geri := [{t = "Tamam", pri = true, f = func(): don.call(n)}]
+	var tf: bool = n.K.k == "tamer"
 	if not _ey().bilinen.has(nm):
-		_soyle(n, "[b]%s[/b] tarifini önce kazanda öğrenmelisin evlat. Yıldız'ın kazanı Yüzen Kayalar'da." % nm, geri)
+		_soyle(n, ("[b]%s[/b] tarifini önce Yıldız'ın kazanında öğren. Ben ancak bildiğin şeyi yaparım." if tf else "[b]%s[/b] tarifini önce kazanda öğrenmelisin evlat. Yıldız'ın kazanı Yüzen Kayalar'da.") % nm, geri)
 		return
 	var eks: String = _ey().eksik(nm)
 	if eks != "":
 		_soyle(n, "Eksik: %s." % eks, geri)
 		return
 	if oyun.env.vio < ucret:
-		_soyle(n, "Emeğim %d Vio." % ucret, geri)
+		_soyle(n, ("İşçiliğim %d Vio." if tf else "Emeğim %d Vio.") % ucret, geri)
 		return
 	for p in _ey().R[nm].i:
 		var need := int(p[1])
@@ -132,14 +137,45 @@ func _yap(n, nm: String, ucret: int) -> void:
 			if need <= 0: break
 	oyun.env.vio_ekle(-ucret)
 	oyun.env.ekle(nm, 1)
-	if oyun.buyu.asa_mi(nm): oyun.buyu.ac()
+	if oyun.buyu.STAFF.has(nm): oyun.buyu.ac()
+	if tf:
+		_soyle(n, "[i](namluyu güneşe tutar, üfler)[/i] %s hazır. Mermisini kendin yaparsın: tarifi kitabında. Bir seferde bir kutu çıkar. Nişan almana gerek yok; en yakın düşmana döner, sen yeter ki tetiğe bas." % nm, [{t = "Teşekkürler", pri = true, kapat = true}])
+		return
 	_soyle(n, "[i](asanın ucundaki taş kızarır)[/i] Al bakalım. Saldırı tuşuna bas: ateş topu fırlar. Her atış biraz [b]mor mana[/b] yer; mana kendiliğinden dolar, [b]mana iksiri[/b] hızlandırır." if nm == "Ateş asası" else "%s hazır." % nm, [{t = "Teşekkürler", pri = true, kapat = true}])
 
 ## görev ödülleri: tarifler kitaba yazılır (web bought.add), Yıldız'ın kazanında öğrenilir
 func _process(_dt: float) -> void:
 	if oyun == null or oyun.gorev == null: return
 	for id in ODUL:
-		var nm: String = ODUL[id]
-		if oyun.gorev.bitti(id) and not _ey().verilen.has(nm) and not _ey().bilinen.has(nm):
+		if not oyun.gorev.bitti(id): continue
+		for nm in ODUL[id]:
+			if _ey().verilen.has(nm) or _ey().bilinen.has(nm): continue
 			_ey().verilen[nm] = true
-			if nm != "Mana iksiri": oyun.env.mesaj("%s · tarifi kitabında: Yıldız'ın kazanında öğren, Efsun yapsın" % nm)
+			if DUYUR.has(nm): oyun.env.mesaj("%s · tarifi kitabında: Yıldız'ın kazanında öğren, %s yapsın" % [nm, DUYUR[nm]])
+
+# ------------------------------------------------------------------ Silahçı Tufan (web v78: Hurda Çölü; tabanca ve pompalı)
+const MAKES_T := [["Tabanca", 200], ["Pompalı", 400]]
+
+func tufan_kur(n) -> void:
+	var t := Node2D.new()
+	t.position = n.position + Vector2(20, 0)
+	t.draw.connect(func():
+		t.draw_rect(Rect2(-8, -6, 16, 7), Color("#6a6a70")); t.draw_rect(Rect2(-8, -6, 16, 1), Color("#9a9aa0"))
+		t.draw_rect(Rect2(-6, -9, 5, 3), Color("#a85a2a")); t.draw_rect(Rect2(2, -10, 4, 4), Color("#5a5a60")); t.draw_rect(Rect2(-4, -3, 10, 1), Color("#3a3a40")))
+	oyun.nesneler.add_child(t)
+
+## web talkTamer
+func tufan(n) -> void:
+	var K = oyun.kuzen
+	if not K.tanis.has("tamer"):
+		K.tanis["tamer"] = true
+		_soyle(n, "[i](bir hurda yığınının gölgesinde, eski bir tüfeği temizliyor)[/i] Yeni yüz. Efsun seni yolladı, değil mi? Ben [b]Tufan[/b]. Bu çöl hurdalık değil evlat: buradaki her vida o gemiden düştü. Dolaşan robotlar da onun bekçileri. Bir zamanlar ona ateş ettim; mermim kanadına bile ulaşmadı. Ama aşağıdakilere ulaşır.", [{t = "Hoşça kal", kapat = true}])
+		return
+	var ch := []
+	for m in MAKES_T:
+		var nm: String = m[0]
+		if not (_ey().verilen.has(nm) or _ey().bilinen.has(nm)): continue
+		ch.append({t = "%s %s yap (%d Vio)" % ["✦" if _yapabilir(nm) else "·", nm, int(m[1])], f = _yap.bind(n, nm, int(m[1]), tufan)})
+	ch.append({t = "Hoşça kal", pri = true, kapat = true})
+	var L := ["Kum her yere girer; namluyu temiz tut.", "Robotlar gece de çalışır. Biz uyuruz, onlar saymaya devam eder.", "Bir mermi, bir düşman. Fişekse kalabalık için."]
+	_soyle(n, L[randi() % L.size()], ch)

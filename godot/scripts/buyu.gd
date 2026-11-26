@@ -15,11 +15,19 @@ const STAFF := {
 	"Buz asası": {cost = 16, cd = 0.7, dmg = 34, spd = 300, range = 280, c1 = "#e8f8ff", c2 = "#5ab0f0", freeze = 3.0, sz = 3, use = "buz oku atar (mana)"},
 	"Yıldırım asası": {cost = 22, cd = 0.8, dmg = 72, spd = 440, range = 300, c1 = "#fff8a0", c2 = "#a0c8ff", chain = 3, line = true, trail = 0.5, use = "zincirleme yıldırım (mana)"}}
 
+## ateşli silahlar (web v78 GUNS): her silahın kendi mermisi; pompalı beş saçma
+const GUNS := {
+	"Tabanca": {ammo = "Tabanca mermisi", cd = 0.42, dmg = 44, n = 1, spread = 0.0, S = {c1 = "#fff4b0", c2 = "#ffb030", spd = 640, range = 340, line = true, trail = 0.08}},
+	"Pompalı": {ammo = "Pompalı fişeği", cd = 1.05, dmg = 24, n = 5, spread = 0.26, S = {c1 = "#fff0c0", c2 = "#ff9a30", spd = 560, range = 210, line = true, trail = 0.05}}}
+const KUTU := {"Tabanca mermisi": 10, "Pompalı fişeği": 6}   # bir yapışta bir kutu
+
 func kur(o) -> void:
 	oyun = o
 	z_index = 20
 	for n in STAFF:
 		o.env.G.tools[n] = {kind = "staff", time = 1, dur = 999, tier = 0, use = STAFF[n].use}
+	for n in GUNS:
+		o.env.G.tools[n] = {kind = "gun", time = 1, dur = 999, tier = 0, use = "ateş eder (%s)" % GUNS[n].ammo}
 	bar = ProgressBar.new()
 	bar.custom_minimum_size = Vector2(180, 12)
 	bar.show_percentage = false
@@ -54,12 +62,38 @@ func iksir() -> void:
 	oyun.yazi(oyun.oyuncu.position + Vector2(0, -34), "+60 mana", Color("#c9a0ff"), 9)
 
 func asa_mi(n: String) -> bool:
-	return STAFF.has(n)
+	return STAFF.has(n) or GUNS.has(n)
+
+func _carpan() -> float:
+	return oyun.stat("dmg") * (1.55 if oyun.sk("W4") else (1.4 if oyun.sk("W3") else (1.25 if oyun.sk("W2") else (1.1 if oyun.sk("W1") else 1.0))))
+
+## web shoot: mermi yoksa ateş etmez; hedef büyüyle aynı seçilir
+func _silah(h: String) -> void:
+	var G: Dictionary = GUNS[h]
+	var P: Vector2 = oyun.oyuncu.position
+	if oyun.env.adet(G.ammo) <= 0:
+		oyun.yazi(P + Vector2(0, -28), "%s yok" % G.ammo, Color("#ffb060"), 9)
+		scd = 0.5
+		return
+	oyun.env.eksilt(G.ammo, 1)
+	scd = float(G.cd)
+	var dm := int(round(float(G.dmg) * _carpan()))
+	var t := _nisan()
+	var s := P + Vector2(0, -10)
+	var a0 := (t - s).angle()
+	for i in int(G.n):
+		var da := 0.0 if int(G.n) == 1 else (float(i) / (int(G.n) - 1) - 0.5) * 2.0 * float(G.spread)
+		_ates(G.S, dm, s + Vector2.from_angle(a0 + da) * 100.0, s, [], float(G.S.range))
+	for k in 5: oyun.parca(P + oyun.oyuncu.bakis * 10.0 + Vector2(0, -10), Vector2(randf_range(-20, 20), -10 - randf() * 20), 0.25, Color("#d8d0c0"))
 
 ## vuruş tuşu: elde asa varsa büyü atılır (web attack → cast)
 func at() -> void:
 	var h: String = oyun.env.elde()
-	if not STAFF.has(h) or scd > 0.0: return
+	if scd > 0.0: return
+	if GUNS.has(h):
+		_silah(h)
+		return
+	if not STAFF.has(h): return
 	var S: Dictionary = STAFF[h]
 	acik = true
 	var P: Vector2 = oyun.oyuncu.position
@@ -69,8 +103,7 @@ func at() -> void:
 		return
 	mana -= float(S.cost)
 	scd = float(S.cd)
-	var w := 1.55 if oyun.sk("W4") else (1.4 if oyun.sk("W3") else (1.25 if oyun.sk("W2") else (1.1 if oyun.sk("W1") else 1.0)))
-	var dm := int(round(float(S.dmg) * oyun.stat("dmg") * w))
+	var dm := int(round(float(S.dmg) * _carpan()))
 	_ates(S, dm, _nisan(), P + Vector2(0, -10), [], float(S.range))
 
 func _nisan() -> Vector2:

@@ -310,6 +310,8 @@ func hedef() -> Dictionary:
 		return {kisi = kisi("gok"), ad = "Gökbilimci Yıldız"}   # web v76 guideKey: tanışana dek ok Yıldız'ı gösterir
 	if oyun.ada == 2 and (aktif == null or not ACT2_G.has(str(aktif.g))) and bitti("gk3") and not oyun.kuzen.tanisildi("pervin") and kisi("pervin") != null:
 		return {kisi = kisi("pervin"), ad = "Büyücü Efsun"}   # web v77 guideKey
+	if oyun.ada == 2 and (aktif == null or not ACT2_G.has(str(aktif.g))) and bitti("pv3") and not oyun.kuzen.tanisildi("tamer") and kisi("tamer") != null:
+		return {kisi = kisi("tamer"), ad = "Silahçı Tufan"}   # web v78 guideKey
 	if aktif == null:
 		return {}
 	var q: Dictionary = aktif
@@ -761,7 +763,13 @@ func _kart() -> void:
 		var Yk = kisi("gok")
 		kart_ad.text = "Gökbilimci Yıldız'ı bul" if Yk == null or not oyun.kuzen.tanisildi("gok") else ("Yıldız'ın işlerine yardım et" if not bitti("gk3") else "Portallar açık")
 		var tx := "Barbaros seni Yüzen Kayalar'a bıraktı. Yukarıdaki kayalarda teleskobu olan Gökbilimci Yıldız'ı bul." if not oyun.kuzen.tanisildi("gok") else ("Yıldız'ın işlerine yardım et; son işi bir portal." if not bitti("gk3") else "Portallar açık: Yıldızsız Ada'ya dönüp gelebilirsin.")
-		if bitti("gk3") and kisi("pervin") != null:
+		if bitti("pv3") and oyun.el_yapimi.bilinen.has("Ateş asası") and kisi("tamer") != null:
+			# web v78: Ateş asası öğrenilince kart Tufan'ı gösterir
+			var tm: bool = oyun.kuzen.tanisildi("tamer")
+			kart_baslik.text = "ACT 2 · Hurda Çölü" if tm else "ACT 2 · Silahçı Tufan"
+			kart_ad.text = "Silahçı Tufan'ı bul" if not tm else ("Tufan'ın işlerine yardım et" if not bitti("sl4") else "Silahlar hazır")
+			tx = "Nehrin ötesindeki Hurda Çölü'nde Silahçı Tufan'ı bul. Robotlar gemiden düşmüş bekçiler; dikkatli ol." if not tm else ("Tufan'ın işlerine yardım et: tabanca ve pompalı tarifleri onda." if not bitti("sl4") else "Silahlar hazır. ACT 2'nin devamı: Kristal Golem Ocağı.")
+		elif bitti("gk3") and kisi("pervin") != null:
 			# web v77: portallardan sonra kart Efsun'u gösterir
 			var pm: bool = oyun.kuzen.tanisildi("pervin")
 			kart_baslik.text = "ACT 2 · Dev Mantar Ormanı" if pm else "ACT 2 · Büyücü Efsun"
