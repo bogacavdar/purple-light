@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 3e"
+const SURUM := "Godot · Adım 3f"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -80,6 +80,7 @@ var karakter                # karakter penceresi (karakter_pen.gd)
 var yapi                    # kurulan yapılar ve evler (yapi.gd)
 var sinan                   # Usta Sinan'ın sipariş pencereleri (sinan.gd)
 var atolye                  # Atölye penceresi ve üretimi (atolye.gd)
+var yan                     # yan görevler (yan.gd)
 var iz                      # eşinden kalan izler (iz.gd)
 var kopru                   # büyük nehrin köprüleri (kopru.gd)
 var camur_dedi := false
@@ -175,6 +176,9 @@ func _ready() -> void:
 	evcil = preload("res://scripts/evcil.gd").new()
 	add_child(evcil)
 	evcil.kur(self)
+	yan = preload("res://scripts/yan.gd").new()
+	add_child(yan)
+	yan.kur(self)
 	ev = preload("res://scripts/ev_ici.gd").new()
 	add_child(ev)
 	move_child(ev, hud.get_index())
@@ -253,6 +257,7 @@ func _ready() -> void:
 		if q.contains("iztest"):
 			oyuncu.position = Vector2(7664 + 8, 2280 + 6)
 			ad_sevgili = "Elif"
+		if q.contains("yantest_"): _yan_test.call_deferred(RegEx.create_from_string("yantest_([a-z]+)").search(q).get_string(1))
 		if q.contains("yapitest"):
 			env.ekle("Kulübe"); env.ekle("Hasır yatak"); env.vio_ekle(3000); env.ekle("Atölye"); env.ekle("Dal", 20); env.ekle("Taş", 20)
 		if q.contains("kusan"):
@@ -660,6 +665,56 @@ func _kopru_test(camur: bool) -> void:
 				print("KOPRU camur=", camur_mu(oyuncu.position), " carpan=", oyuncu._camur())
 				return
 
+func _yan_test(id: String) -> void:
+	for i in 32: gorev.bitenler.append("X%d" % i)
+	gorev.bitenler.append_array(["E2", "E3"])
+	kopru.ana().fixed = true
+	var q: Dictionary = yan.BY[id]
+	zaman.dk = float(q.win[0]) + 20.0
+	oyuncu.position = Vector2(q.x + 14, q.y + 6)
+	while env.sv < 15: env.xp_ekle(800)
+	await get_tree().create_timer(1.0).timeout
+	print("YAN gorunur=", yan.kisi_n[id].visible, " acik=", yan.acik_mi(q))
+	yan._basla(q)
+	konusma.visible = false
+	for s in q.steps:
+		await get_tree().create_timer(1.0).timeout
+		konusma.visible = false
+		var st = yan._adim()
+		if st == null: break
+		print("YAN adim=", st.t, " yazi=", yan.adim_yazi())
+		if st.t == "collect" or st.t == "use":
+			for k in st.ps:
+				if st.t == "use": env.ekle(str(st.need))
+				oyuncu.position = Vector2(q.pts[k].x, q.pts[k].y)
+				await get_tree().create_timer(0.6).timeout
+				while konusma.visible:
+					konusma._cik()
+					await get_tree().create_timer(0.2).timeout
+			await get_tree().create_timer(0.8).timeout
+			print("YAN toplandi got=", yan.A.got if yan.A != null else [])
+		elif st.t == "bring":
+			for it in st.items: env.ekle(str(it[0]), int(it[1]))
+			oyuncu.position = Vector2(q.x + 10, q.y + 6)
+			yan._konus(q)
+		elif st.t == "back":
+			oyuncu.position = Vector2(q.x + 10, q.y + 6)
+			yan._konus(q)
+		elif st.t == "go":
+			oyuncu.position = Vector2(q.pts[st.p].x, q.pts[st.p].y)
+		elif st.t == "kill":
+			oyuncu.position = Vector2(q.pts[st.p].x, q.pts[st.p].y) + Vector2(0, 40)
+			await get_tree().create_timer(1.0).timeout
+			print("YAN canavar=", yan._canavarlar().size(), " yazi=", yan.adim_yazi())
+			for c in yan._canavarlar(): c.vuruldu(99999, Vector2.RIGHT)
+			await get_tree().create_timer(2.0).timeout
+			print("YAN sonra yazi=", yan.adim_yazi())
+		await get_tree().create_timer(1.0).timeout
+		while konusma.visible:
+			konusma._cik()
+			await get_tree().create_timer(0.3).timeout
+	print("YAN bitti=", yan.done.has(id), " vio=", env.vio)
+
 func _kir_test() -> void:
 	var c0: Vector2i = insa.karo(oyuncu.position)
 	for i in range(-3, 4):
@@ -699,6 +754,7 @@ func _canli_koy(k: String, min_kare: float, aralik: float = 14.0) -> void:
 		return
 
 func canli_oldu(k: String, c = null) -> void:
+	if yan != null and yan.oldu(c): return
 	if c != null and c.ogr: ogr.yengec_oldu()
 	if gorev: gorev.av(k)
 	if magara != null and c != null and c.cvb:
@@ -1191,6 +1247,8 @@ func konus_ya_da_istasyon() -> bool:
 			yakin = n
 	if iz.f():
 		return true
+	if yan.f():
+		return true
 	if yakin != null and ogr.konus(yakin.K.k):
 		return true
 	if yakin != null and gorev.konus(gorev.g_of(yakin.K.k), _hizmet(yakin.K.k)):
@@ -1404,7 +1462,7 @@ func durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), izler = iz.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 func gorunus_uygula(L: Dictionary) -> void:
@@ -1487,6 +1545,7 @@ func durum_yukle(d: Dictionary) -> void:
 	evcil.yukle(d.get("evcil", {}))
 	kopru.yukle(d.get("kopru", []))
 	iz.yukle(d.get("izler", []))
+	yan.yukle(d.get("yan", {}))
 	camur_dedi = bool(d.get("camur_dedi", false))
 	insa.yukle(d.get("insa", {}))
 	oyuncu.yetenek_uygula()
