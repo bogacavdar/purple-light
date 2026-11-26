@@ -1,3 +1,7 @@
+## v4.53 (26 Kasım 2026) · Godot Adım 1f-3b-1 (Nazlı'nın pazarı)
+- `godot-deneme/` yeni derleme (godot dalı: pazar.gd; data/pazar.json = web PRICE_, noSell, isRaw, rawPrice, madeOk). Belge 99_godot 1f-3b satırı dört parçaya bölündü. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.52 (26 Kasım 2026) · Godot Adım 1f-3a (giriş sahnesi ve uyanış)
 - `godot-deneme/` yeni derleme (godot dalı: cine.gd web cineShip/cineSea çiziminin GDScript'i, uyanis.gd; data/ates.json'a uyanış yeri ve Kemal'in geliş yeri). Belge 99_godot 1f-3 satırı 1f-3a/1f-3b'ye bölündü. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -86,19 +90,4 @@
 - Kayıt alanı değişmedi (`s.halat`).
 - Kontrol: chk 0 hata; Testçi'nin Kül öncesi kaydında (T6 bitmiş, mağara görevi alınmamış) Tuncay ocakta, F → "Halat yolları" → Kur çalıştı; görev bitmiş sayılınca da ocakta.
 - Geri alma: `git revert` bu commit.
-
-## v4.33 (22 Kasım 2026) · E2E Kayalık Dağ: S1/S2 görev sırası, denge (ayı, vaşak, Devi, Reis ×3), yan görev canavarları, halat yolları
-- Kaynak: /home/claude/E2E_v431_kayalik/ (TEST_KAYALIK TK-01…12, ANALIZ_KAYALIK, BELGE_DEGISIKLIK). Boğaç kararları 22 Kasım 2026: S1, S2, S3, S4, S6, S7, S7b-A.
-- **Görevler (v186):** `landFill()` (yeni, `fillQ`'dan önce): bulunduğun biyomda "!" yok + biyomun bir görevi görülmemiş malzeme bekliyor → `mkFiller(['mat',…])`, `g`=o biyomun cadısı, `land:1`; `fillerNeeded` "!" ≥ 2 iken de `land` işini açar (S1). `refreshVis` `ALTG`: kişinin kendi işi C'de varsa E3 ona verilmez (S2). `nextStep`: CB3–CB8 + ağıl yok → "Ağıl kur (Usta Sinan)" (TK-04). `SPECW` + `whereTxt`: Yarasa gübresi/Sarkıt 📍 (TK-02). DATA: KA2 330, KA4 450, KH4 610; T6 `say` ve `sc`'ye Doğan'ın gece sözü; `blast`/`bridge` ders metinleri; rockfall toast'u ve eski v65 E3 metinleri "turba" (TK-03).
-- **Reis (S3):** `makeBoss` (v49-p4) ve `fixBoss` (v128-denge, `X3`) Timsah/Mağara ayısı/Yaban öküzü ×3; `window.__plFixBoss`. v419tutum `BAL` Vaşak [880,85], Mağara ayısı [1500,85]; Reis artık oranla değil `__plFixBoss` ile.
-- **Canlılar:** Vaşak `fx` kanama 3; `Dağ Devi` 4000·70; `CAVES c3 lv:24`.
-- **Yan görevler (v230):** `GATE` haydar/zehra `T6`; `MOB[3]` Muflon+Dağ keçisi; Bora `mobs:[['Muflon','Dağ keçisi'],2]` (kill adımı dizi kabul eder), metinleri. v419 `shy()` `a.sq` muaf; saldırgan dalında `a.sq` → her zaman farkında ve kovalıyor (TK-05). Tuncay: `present`/`homeOf` (`tuncayOut()`, mağara ağzı), `talk` menüsüne "Halat yolları", `after` sözü.
-- **Doğrulama turu eki (DOGRULAMA_v433):** D433-01 çekirdek `tickAnimals` nötr `d>220` ve saldırgan uzun kovalama vazgeçmesi `!a.sq`; v419 `turn` döngüsünün başında `a.sq` → mad/chase/aw her karede (nötr dahil), `aw` kaybı `!a.sq`. D433-02 `partTarget` `tame`: ağıl yokken Usta Sinan. D433-03 değişmedi: belge (30_act1:548) her "!" kartını "… · Ana görev" yazdırıyor, Kemal'in ayak işi de öyle. D433-04 gerçek hata: F `eTarget()` hayvanları geçici boşaltınca `wildNear` keçiyi göremiyordu → `ETSV` (eTarget'ın sakladığı liste), `wildNear` onu kullanır. OYN-K-11 halat penceresi `finishType(true)` + "Vio yetmiyor"; OYN-K-12 büyük harita çizgisi 3,5·K, koyu kenar 6·K, direk 2,4·K (K = tuval/ekran oranı).
-- **Tarifler (v417fiyat):** `ED` Ateş tuğlası, Sağlam odun kömürü, Kuvars sivri ucu; `PR` 102 / 92 / 344.
-- **Yemek penceresi (TK-09):** `FISH` regex'i (`lüfer`, `inci`, `palamut` kelime sınırı).
-- **TK-11:** kuzen veri satırı (`D.items`) Gümüş kılıç dmg 52, Ametist kılıcı 81, Granit savaş çekici 28 (zaten V.usta'da eziliyordu; `dur` taban değer, `v2.x` ×2 yapıyor, dokunulmadı).
-- **Yeni blok `v433halat`** (`</body>` öncesi): uçlar açılışta bir kez (`setup`, Bataklık sınırı Doğan'a en yakın Kayalık karosu, Firuze'nin kazanı, rockfall; ocağın ateşinden ~5 karo), `XTRA` direkler (F; önce `ePick`), `tickAmb` sarmalayıcısında kayma (72×3×hız), `tickAnimals` kayarken kovalamayı keser, `interact` kayarken kapalı, `v55Ents` direk + halat, `drawPlayer` asılı çizim, `__plMapQ` iki harita çizgisi + `MAPHITS`, `__plMapObj` `halatN`. Kayıt: `s.halat=[b,b,b]` (yoksa hepsi false; ada 2'de saklanır); kayarken kaydedilirse başlangıç noktası yazılır. MAPV değişmedi.
-- **Belge:** Analist'in parts değişiklikleri + 90_esyalar silah hasarı (7 satır, oyunla eşit), 36 açılış sayısı ("ayak işleri sayılmaz"; kod `S.d` ayak işlerini tutmuyor), 37 halat satırına F önceliği ve telefon.
-- Kontrol: chk.js 0 hata (?. 1, ?? 7); Playwright ile Testçi'nin Kül öncesi kaydında: S1 (CB6 bitmiş sayılınca Firuze'nin işi), CB6 kartı, halat alma/kayma, F önce yerdeki eşya, `ebtn` ile kayma, yan görev Muflon'unun saldırısı.
-- Geri alma: `git revert` bu commit (belge ve kod birlikte). Yalnız halatlar: `v433halat` bloğunu ve v230'daki Tuncay satırlarını sil; eski kayıtlardaki `halat` alanı okunmadan kalır.
 
