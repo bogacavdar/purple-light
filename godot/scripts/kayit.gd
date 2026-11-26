@@ -50,7 +50,7 @@ static func en_yeni() -> String:
 
 # ------------------------------------------------------------------ kaydet
 func kaydedilebilir() -> bool:
-	return not oyun.basta and not oyun.sahne.acik and not oyun.oyuncu.bayildi and not oyun.magara.yukleme.visible and oyun.oyuncu.hp > 0.0
+	return not oyun.basta and not oyun.cine.acik and not oyun.uyanis.acik and not oyun.sahne.acik and not oyun.oyuncu.bayildi and not oyun.magara.yukleme.visible and oyun.oyuncu.hp > 0.0
 
 func kaydet(y: String) -> bool:
 	if not kaydedilebilir(): return false
@@ -81,7 +81,7 @@ func _process(dt: float) -> void:
 	onceki_pencere = acik
 
 func _pencere_acik() -> bool:
-	return oyun.konusma.visible or oyun.istasyon.pencere.visible or oyun.el_yapimi.acik_mi() or oyun.sahne.acik or oyun.env.canta.visible or oyun.magara.yukleme.visible
+	return oyun.konusma.visible or oyun.istasyon.pencere.visible or oyun.el_yapimi.acik_mi() or oyun.sahne.acik or oyun.env.canta.visible or oyun.magara.yukleme.visible or oyun.cine.acik or oyun.uyanis.ad_kutu.visible
 
 func _notification(w: int) -> void:
 	if w == NOTIFICATION_APPLICATION_FOCUS_OUT or w == NOTIFICATION_WM_CLOSE_REQUEST:

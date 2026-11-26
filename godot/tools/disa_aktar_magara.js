@@ -42,7 +42,7 @@ const CHROME=process.env.CHROME||'/opt/pw-browsers/chromium-1243/chrome-linux64/
   await p.evaluate(()=>window.__ham.ev('window.__plCave.exit()'));await p.waitForTimeout(300);
   // Adım 1f: ateşler ve gece ışıkları (web FIRES, Kemal'in kampı, Dursun'un ocağı, Zümrüt'ün kazanı; güvenli yarıçaplar), saat
   const ATES=await p.evaluate(()=>window.__ham.ev(`({ates:FIRES.map(f=>({x:f.x,y:f.y})),kamp:{x:npc.home.x,y:npc.home.y},ocak:{x:furnace.x,y:furnace.y},kazan:{x:cauldron.x,y:cauldron.y},
-    guvenli:{kamp:SAFE_R,ates:120,ocak:120,kazan:120},isik:{kamp:74,ocak:70,kazan:62,ates:72},gunBasi:360,geceSn:NIGHT_S})`));
+    guvenli:{kamp:SAFE_R,ates:120,ocak:120,kazan:120},isik:{kamp:74,ocak:70,kazan:62,ates:72},gunBasi:360,geceSn:NIGHT_S,uyanis:{x:wakeSpot.x,y:wakeSpot.y},kemalGelis:{x:ekinWalkIn.x,y:ekinWalkIn.y}})`));
   const E=await p.evaluate(LS=>window.__ham.ev(`(()=>{const png=c=>c.toDataURL('image/png');
     const mk=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.imageSmoothingEnabled=false;return [c,g]};
     const D=window.__plCayir.DATA,F=window.__plCayir.frame,out={};

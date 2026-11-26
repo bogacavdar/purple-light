@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1f-2"
+const SURUM := "Godot · Adım 1f-3"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -33,6 +33,10 @@ var basta := false
 var gorunus := {}            # oyuncunun görünüşü (karakter yaratma)
 var sevgili := {}
 var zorluk := "normal"
+var ad_kahraman := ""
+var ad_sevgili := ""
+var cine
+var uyanis
 var mezarlar: Array = []   # bayılınca kalan çantalar: {p, inv, vio, dugum}
 var balon_yazi: Label
 var balon_t := 0.0
@@ -195,16 +199,26 @@ func _ready() -> void:
 	_yakinlik()
 	gorunus_uygula(Karakter.gorunus(Karakter.varsayilan("e")))
 	sevgili = Karakter.gorunus(Karakter.varsayilan("k"))
+	uyanis = preload("res://scripts/uyanis.gd").new()
+	hud.add_child(uyanis)
+	uyanis.kur(self)
+	cine = preload("res://scripts/cine.gd").new()
+	hud.add_child(cine)
+	cine.kur(self)
 	kayit = preload("res://scripts/kayit.gd").new()
 	hud.add_child(kayit)
 	kayit.kur(self)
 	var test := OS.has_feature("web") and str(JavaScriptBridge.eval("location.search")).length() > 1
+	var yeni := false
 	if not Kayit.bekleyen.is_empty():
+		yeni = bool(Kayit.bekleyen.get("yeni", false))
 		durum_yukle(Kayit.bekleyen)
 		Kayit.bekleyen = {}
 	if Kayit.dogrudan or test:
 		Kayit.dogrudan = false
 		kayit.ana_gizle()
+		if yeni or (test and str(JavaScriptBridge.eval("location.search")).contains("giris")):
+			cine.oyna(zorluk == "zor", func(): uyanis.basla())
 	else:
 		kayit.ana_goster()
 
@@ -705,7 +719,7 @@ func durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = {gorulen = magara.gorulen, acilan = Marshalls.raw_to_base64(magara.acilan), kaya = 1 if magara.kaya_durum == 2 else magara.kaya_durum, denedi = magara.kaya_denedi or magara.kaya_durum == 2, boss = magara.boss_yenildi},
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk}
+		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 func gorunus_uygula(L: Dictionary) -> void:
 	gorunus = L
@@ -715,6 +729,8 @@ func durum_yukle(d: Dictionary) -> void:
 	if d.has("kahraman"): gorunus_uygula(d.kahraman)
 	if d.has("sevgili"): sevgili = d.sevgili
 	zorluk = str(d.get("zorluk", "normal"))
+	var ad: Dictionary = d.get("adlar", {})
+	ad_kahraman = str(ad.get("kahraman", "")); ad_sevgili = str(ad.get("sevgili", ""))
 	if d.get("yeni", false): return
 	var o: Dictionary = d.get("oyuncu", {})
 	if o.has("x"): oyuncu.position = Vector2(o.x, o.y)
