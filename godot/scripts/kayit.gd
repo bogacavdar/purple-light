@@ -173,6 +173,27 @@ func ana_dugmeler() -> void:
 	liste.add_child(_dugme("Yeni oyun", func(): yaratici.ac(), son == ""))
 	if son != "":
 		liste.add_child(_dugme("Kayıttan yükle", _yukle_listesi))
+	if not WebKayit.oku().is_empty():
+		liste.add_child(_dugme("Web oyunundaki kaydı aç", _web_listesi))
+
+## web oyununun kayıtları (aynı tarayıcıda); seçilen Godot kaydına çevrilip açılır, web kaydı değişmez
+func _web_listesi() -> void:
+	for c in liste.get_children(): c.queue_free()
+	var W := WebKayit.oku()
+	for y in WebKayit.YUVALAR:
+		if not W.has(y[0]): continue
+		var v: Dictionary = W[y[0]]
+		var dt: Dictionary = v.data
+		var b := _dugme("%s · Sv %d · %d Vio · Gün %d" % [y[1], int(v.get("lvl", 1)), int(v.get("coins", 0)), int(dt.get("dy", 1))], _web_ac.bind(dt))
+		b.tooltip_text = WebKayit.tarih(float(v.get("t", 0)))
+		liste.add_child(b)
+	liste.add_child(_dugme("Geri", ana_dugmeler))
+
+func _web_ac(dt: Dictionary) -> void:
+	var K: Dictionary = oyun.toplama_veri.kisiler[0]
+	bekleyen = WebKayit.cevir(dt, Vector2(K.x, K.y))
+	dogrudan = true
+	get_tree().reload_current_scene()
 
 func _yukle_listesi() -> void:
 	for c in liste.get_children(): c.queue_free()
