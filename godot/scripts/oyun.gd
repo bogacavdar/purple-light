@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 6a"
+const SURUM := "Godot · Adım 6b"
 
 var harita: Dictionary
 var dunya: Dictionary

@@ -12,6 +12,7 @@ var adim := 0.0
 var soluk := false
 var olcek := 1.0
 var hop := 0
+var katir := false
 var spr: Sprite2D
 
 func kur(d: Dictionary) -> void:
@@ -39,7 +40,15 @@ func _r(x: float, y: float, w: float, h: float, c: String) -> void:
 	draw_rect(Rect2(x, y, w, h), Color(c))
 
 func _draw() -> void:
-	if D.is_empty():
+	if D.is_empty() and katir:
+		var y2 := -hop
+		var f2 := face
+		var M := func(dx: float, dy: float, w: float, h: float, c: String) -> void:
+			_r(dx if f2 > 0 else -dx - w, y2 + dy, w, h, c)
+		_r(-8, 1, 16, 2, "#00000038")
+		M.call(-7, -10, 13, 6, "#8a5a36"); M.call(-7, -10, 13, 1, "#a8744a"); M.call(-5, -12, 8, 3, "#c8a060"); M.call(-5, -12, 8, 1, "#e0c080"); M.call(5, -14, 4, 6, "#8a5a36"); M.call(8, -11, 2, 3, "#6a4428"); M.call(7, -12, 1, 1, "#1a1008"); M.call(5, -17, 1, 3, "#6a4428"); M.call(7, -17, 1, 3, "#6a4428"); M.call(-8, -9, 1, 4, "#4a2e18")
+		M.call(-6, -4, 2, 4, "#6a4428"); M.call(-2, -4, 2, 4, "#6a4428"); M.call(1, -4, 2, 4, "#6a4428"); M.call(4, -4, 2, 4, "#6a4428")
+	elif D.is_empty():
 		# Pamuk (web drawGoat): beyaz keçi, tek boynuzu kırık
 		var y := -hop
 		var f := face

@@ -198,6 +198,11 @@ func _tanit(q: Dictionary, i: int) -> void:
 		return
 	oyun.konusma.ac(q.name, por, _bb(str(l[1])), [{t = "Yardım ederim", f = _basla.bind(q)}, {t = "Şimdi olmaz", pri = true, kapat = true}])
 
+func _alet_var(kind: String) -> bool:
+	for n in env.inv:
+		if env.adet(n) > 0 and env.G.tools.has(n) and env.G.tools[n].kind == kind: return true
+	return false
+
 func _hepsi(items: Array) -> bool:
 	for it in items:
 		if env.adet(str(it[0])) < int(it[1]): return false
@@ -221,6 +226,7 @@ func _sifirla_adim() -> void:
 		if str(s.get("who", "")) == "goat":
 			fol = preload("res://scripts/yoldas.gd").new()
 			fol.kur({})
+			fol.katir = str(s.get("anim", q.get("anim", ""))) == "mule"
 		else:
 			fol = Node2D.new()
 			var sp := Sprite2D.new()
@@ -373,6 +379,12 @@ func _process(dt: float) -> void:
 			if s.get("ghost", 0) and not _pencere(q.win): return
 			var p := Vector2(q.pts[s.p].x, q.pts[s.p].y)
 			if P.distance_to(p) < (34.0 if s.get("ghost", 0) else 26.0):
+				if s.has("tool") and not _alet_var(str(s.tool)):
+					soz_t -= dt
+					if soz_t <= 0.0:
+						soz_t = 3.0
+						env.mesaj("%s gerekli" % ("Kazma" if s.tool == "pick" else "Alet"), true)
+					return
 				A.busy = true
 				sayfalar(q, s.on, _ilerle)
 		"collect", "use":
@@ -592,7 +604,7 @@ func _dunya() -> void:
 		var h := ev(q)
 		if q.get("goatDone", 0):
 			var gk = preload("res://scripts/yoldas.gd").new()
-			gk.kur({}); gk.position = h + Vector2(18, 6); gk.face = -1
+			gk.kur({}); gk.position = h + Vector2(18, 6); gk.face = -1; gk.katir = str(q.get("anim", "")) == "mule"
 			oyun.nesneler.add_child(gk); dunya_n.append(gk)
 		match q.id:
 			"kerem":
@@ -614,10 +626,16 @@ func _nesne(k: String, p: Vector2) -> void:
 	oyun.nesneler.add_child(s)
 	dunya_n.append(s)
 
-func _keci_ciz(p: Vector2, f: int, hop: int) -> void:
+func _keci_ciz(p: Vector2, f: int, hop: int, katir := false) -> void:
 	var y := p.y - hop
 	var P := func(dx: float, dy: float, w: float, h: float, c: String) -> void:
 		draw_rect(Rect2(p.x + (dx if f > 0 else -dx - w), y + dy, w, h), Color(c))
+	if katir:
+		# web drawMule: Ömer'in katırı Kınalı
+		draw_rect(Rect2(p.x - 8, p.y + 1, 16, 2), Color(0, 0, 0, 0.22))
+		P.call(-7, -10, 13, 6, "#8a5a36"); P.call(-7, -10, 13, 1, "#a8744a"); P.call(-5, -12, 8, 3, "#c8a060"); P.call(-5, -12, 8, 1, "#e0c080"); P.call(5, -14, 4, 6, "#8a5a36"); P.call(8, -11, 2, 3, "#6a4428"); P.call(7, -12, 1, 1, "#1a1008"); P.call(5, -17, 1, 3, "#6a4428"); P.call(7, -17, 1, 3, "#6a4428"); P.call(-8, -9, 1, 4, "#4a2e18")
+		P.call(-6, -4, 2, 4, "#6a4428"); P.call(-2, -4, 2, 4, "#6a4428"); P.call(1, -4, 2, 4, "#6a4428"); P.call(4, -4, 2, 4, "#6a4428")
+		return
 	draw_rect(Rect2(p.x - 6, p.y + 1, 12, 2), Color(0, 0, 0, 0.22))
 	P.call(-5, -7, 10, 5, "#f0ece4"); P.call(-5, -7, 10, 1, "#ffffff"); P.call(4, -10, 4, 4, "#f0ece4"); P.call(7, -8, 1, 1, "#2a1f08"); P.call(5, -12, 1, 2, "#b8a888")
 	P.call(-4, -2, 1, 3, "#c8c0b0"); P.call(-1, -2, 1, 3, "#c8c0b0"); P.call(2, -2, 1, 3, "#c8c0b0"); P.call(4, -2, 1, 3, "#c8c0b0")
@@ -658,7 +676,7 @@ func _draw() -> void:
 	if q.id == "elif" and A.step >= 1: L.append(["wreck", q.pts.wreck, false])
 	if q.id == "saniye" and A.step >= 3:
 		L.append(["cave", q.pts.cave, true])
-	if s.t == "chase" and A.has("keci"): _keci_ciz(A.keci, 1 if oyun.oyuncu.position.x < A.keci.x else -1, 1 if A.gj != null and sin(t * 14.0) > 0.0 else 0)
+	if s.t == "chase" and A.has("keci"): _keci_ciz(A.keci, 1 if oyun.oyuncu.position.x < A.keci.x else -1, 1 if A.gj != null and sin(t * 14.0) > 0.0 else 0, str(s.get("anim", q.get("anim", ""))) == "mule")
 	for x in L:
 		var p := Vector2(x[1].x, x[1].y)
 		if p.distance_to(oyun.oyuncu.position) > 500.0: continue

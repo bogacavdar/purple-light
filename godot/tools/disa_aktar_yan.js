@@ -21,7 +21,7 @@ const wpng=(f,u)=>{fs.mkdirSync(path.dirname(f),{recursive:true});fs.writeFileSy
     const mk=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.imageSmoothingEnabled=false;return [c,g]};
     const KID={kerem:1,mina:1,isil:1,emir:1};
     const B=window.__plSide.BY,out=[];const LKs=window.__plSqLK||null;
-    for(const id in B){const q=B[id];if(q.b>3||q.cave||q.main||q.ext)continue;
+    for(const id in B){const q=B[id];if(q.b>5||q.cave||q.main||q.ext)continue;
       const o={};for(const k of ['id','name','title','b','win','night','c','xp','intro','remind','remindUse','steps','after','quiet','fix','goatDone','anim','homeDone','ghost'])if(q[k]!=null)o[k]=q[k];
       o.x=Math.round(q.x);o.y=Math.round(q.y);o.kid=KID[id]?1:0;o.pts={};for(const k in q.pts)o.pts[k]={x:Math.round(q.pts[k].x),y:Math.round(q.pts[k].y)};
       out.push(o)}
