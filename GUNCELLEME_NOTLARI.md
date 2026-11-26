@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.75 · 26 Kasım 2026
+
+### Proje
+- **Godot: Kayalık Dağ (Adım 4 başladı):**
+  - Kayalık Dağ'ın canlıları geldi: dağ keçisi, muflon, yaban öküzü, ur kekliği, kartal, vaşak ve mağara ayısı.
+  - Cadı Firuze, Silahçı Kaya, Zırhçı Kayhan ve Pazarcı Kardelen web'deki yerlerinde; 27 görev veriyorlar.
+  - Rüzgâr Mağarası (Seviye 24): kaya yarasaları, tavan örümcekleri, mağara vaşakları. Dipteki Dağcı Tuncay gümüş filizi istiyor ve Dağ Devi'ni çağırıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.74 · 26 Kasım 2026
 
 ### Proje
@@ -223,16 +234,4 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Koşmak için artık Koşu gerekiyor (100 Vio). Börü dersten sonra ağacı gösteriyor.
   - Enerji, hız, hasar, savuşturma, atılma, can, satış, XP, toplama, aletler ve tokluk yetenekleri işliyor. Kritik vuruş, zırh, zehir gibi henüz Godot'ta olmayan sistemlerin yetenekleri alınabiliyor; etkileri o sistemlerle gelecek.
   - Can artık zamanla yavaş yavaş doluyor. Enerji çubuğu web'deki gibi yeşil.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.55 · 26 Kasım 2026
-
-### Proje
-- **Godot: enerji, savuşturma ve Börü'nün dersleri:**
-  - Can çubuğunun altında mavi enerji çubuğu var. Koşu, vuruş, atılma ve savuşturma enerji harcar; biterse "Nefesin kesildi!" ya da "Yoruldun!" yazar.
-  - Saldırıların "!"i renkli: beyaz ve sarı savuşturulur, kırmızı savuşturulamaz.
-  - Sağ tık ya da E savuşturur; doğru anda basarsan hayvan sersemler. Basılı tutarsan gard alırsın, darbeler yumuşar.
-  - Atılmayı ve savuşturmayı Börü kerevitle ücretsiz öğretiyor (4 sıyrılma, 4 savuşturma). Bilmeden atılınca oyun bunu Börü'nün öğrettiğini söylüyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
