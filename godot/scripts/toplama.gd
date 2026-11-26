@@ -15,7 +15,9 @@ func _process(dt: float) -> void:
 		return
 	if Input.is_action_just_pressed("topla") and not o.kilit and not oyun.sahne.acik and not oyun.konusma.visible and not oyun.istasyon.pencere.visible and not oyun.pazar.pencere.visible:
 		if oyun.evcil.binilen != null: oyun.evcil.in_()
-		if not _yerdekileri_al() and not oyun.magara.etkiles():
+		if oyun.balik.aktif():
+			oyun.balik.bas()
+		elif not _yerdekileri_al() and not oyun.magara.etkiles() and not oyun.balik.etkiles():
 			_basla()
 	if not is_.is_empty():
 		if o.yuruyor or (is_.tur == "dugum" and not is_.hedef.canli):

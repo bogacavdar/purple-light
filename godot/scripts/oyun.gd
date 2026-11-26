@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 6b"
+const SURUM := "Godot · O1"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -88,6 +88,7 @@ var kopru                   # büyük nehrin köprüleri (kopru.gd)
 var camur_dedi := false
 var evcil                   # evcil hayvanlar ve Çoban Davut (evcil.gd)
 var ev                      # evin içi ve Döşe (ev_ici.gd)
+var balik                   # balık tutma, tuzaklar, gece buluntuları (balik.gd)
 var insa                    # İnşa kipi: zemin, çit, duvar, kapı, fener (insa.gd)
 var dl_agac := false        # Börü'nün dersi bitti, yetenek ağacını gösterecek (1f-3b-3)
 var silah_yazi: Label
@@ -175,6 +176,9 @@ func _ready() -> void:
 	gecit = preload("res://scripts/gecit.gd").new()
 	add_child(gecit)
 	gecit.kur(self)
+	balik = preload("res://scripts/balik.gd").new()
+	add_child(balik)
+	balik.kur(self)
 	kopru = preload("res://scripts/kopru.gd").new()
 	add_child(kopru)
 	kopru.kur(self)
@@ -263,6 +267,7 @@ func _ready() -> void:
 			oyuncu.position = Vector2(7664 + 8, 2280 + 6)
 			ad_sevgili = "Elif"
 		if q.contains("yantest_"): _yan_test.call_deferred(RegEx.create_from_string("yantest_([a-z]+)").search(q).get_string(1))
+		if q.contains("baliktest") or q.contains("tuzaktest") or q.contains("gecetest"): _balik_test.call_deferred(q)
 		if q.contains("gecittest"):
 			oyuncu.position = Vector2(gecit.x0 * T - 20, gecit.cy)
 			env.ekle("Kaya patlatıcı", 2); env.ekle("Çelik kazma"); oyuncu.dokunulmaz = 9999.0
@@ -740,6 +745,52 @@ func _yan_test(id: String) -> void:
 			konusma._cik()
 			await get_tree().create_timer(0.3).timeout
 	print("YAN bitti=", yan.done.has(id), " vio=", env.vio)
+
+func _balik_test(q: String) -> void:
+	oyuncu.dokunulmaz = 9999.0
+	# Çayır'da nehir kıyısı ara: oyuncunun çevresinde suya bakan kara karesi
+	var P := oyuncu.position
+	var bul := Vector2.ZERO
+	var bd := 1e18
+	var cx := int(P.x / T) - bx0
+	var cy := int(P.y / T) - by0
+	for y in range(maxi(1, cy - 150), mini(bh - 1, cy + 150)):
+		for x in range(maxi(1, cx - 150), mini(bw - 2, cx + 150)):
+			if tiles[y * bw + x] == 3 and tiles[y * bw + x - 1] <= 2:
+				var p := Vector2((x + bx0 - 1) * T + 8, (y + by0) * T + 8)
+				var dd := p.distance_squared_to(P)
+				if dd < bd and not engel(p):
+					bd = dd
+					bul = p
+	if q.contains("baliktest"):
+		oyuncu.position = bul
+		oyuncu.bakis = Vector2(1, 0)
+		env.ekle("Olta")
+		env.kemer[0] = "Olta"; env.el = 0; env.kemer_ciz()
+		gorev._baslat(gorev.QI["N2"], "market", true)
+		if konusma.visible: konusma._cik()
+		balik.oto = true
+		print("BALIK yer ", bul, " su_onde ", balik.su_onde(), " etkiles ", balik.etkiles())
+	if q.contains("tuzaktest"):
+		env.ekle("Tuzak"); env.ekle("Balık kapanı")
+		env.kemer[0] = "Tuzak"; env.kemer[1] = "Balık kapanı"; env.el = 0; env.kemer_ciz()
+		print("TUZAK kur ", balik.etkiles(), " ", tile_at(oyuncu.position))
+		oyuncu.position = bul; oyuncu.bakis = Vector2(1, 0); env.el = 1
+		print("TUZAK kapan ", balik.etkiles(), " sayi ", balik.tuzaklar.size())
+		for t in balik.tuzaklar: t.t = 1.0
+		await get_tree().create_timer(3.0).timeout
+		for t in balik.tuzaklar: print("TUZAK av ", t.k, " ", t.tur, " ", t.got)
+		print("TUZAK kapan al ", balik.etkiles(), " qc ", gorev.qc)
+		print("TUZAK kayit ", JSON.stringify(balik.kayit()))
+	if q.contains("gecetest"):
+		zaman.dk = 1320.0
+		await get_tree().create_timer(14.0).timeout
+		var L := []
+		for n in balik.gece_dugum: L.append([n.ad, int(n.position.distance_to(oyuncu.position))])
+		print("GECE ", L, " bocek ", balik.bocek.size())
+		if not balik.gece_dugum.is_empty():
+			oyuncu.position = balik.gece_dugum[0].position + Vector2(0, 6)
+			print("GECE koruyor ", balik.koruyor(oyuncu.position), " isikta ", zaman.isikta(oyuncu.position))
 
 func _kir_test() -> void:
 	var c0: Vector2i = insa.karo(oyuncu.position)
@@ -1487,11 +1538,11 @@ func durum_al() -> Dictionary:
 		oyuncu = {x = p.x, y = p.y, hp = oyuncu.hp},
 		env = {inv = env.inv, kemer = env.kemer, el = env.el, tokluk = env.tokluk, dayan = env.dayan, gorulen = env.gorulen.keys(), vio = env.vio, xp = env.xp, sv = env.sv},
 		tarifler = el_yapimi.bilinen.keys(), verilen = el_yapimi.verilen.keys(), ogretici = ogr.kayit(),
-		gorev = {aktif = ak, b = G.b, bitenler = G.bitenler, kills = G.kills, biyomlar = G.biyomlar.keys(), dovulen = G.dovulen.keys(), dersler = G.gorulen_dersler},
+		gorev = {aktif = ak, b = G.b, bitenler = G.bitenler, kills = G.kills, qc = G.qc, biyomlar = G.biyomlar.keys(), dovulen = G.dovulen.keys(), dersler = G.gorulen_dersler},
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), balik = balik.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 func gorunus_uygula(L: Dictionary) -> void:
@@ -1532,6 +1583,8 @@ func durum_yukle(d: Dictionary) -> void:
 	G.bitenler = g.get("bitenler", [])
 	G.kills = {}
 	for k in g.get("kills", {}): G.kills[k] = int(g.kills[k])
+	G.qc = {}
+	for k in g.get("qc", {}): G.qc[k] = int(g.qc[k])
 	G.biyomlar = {}
 	for k in g.get("biyomlar", [0]): G.biyomlar[int(k)] = true
 	G.dovulen = {}
@@ -1574,6 +1627,7 @@ func durum_yukle(d: Dictionary) -> void:
 	evcil.yukle(d.get("evcil", {}))
 	kopru.yukle(d.get("kopru", []))
 	gecit.yukle(d.get("gecit", false))
+	balik.yukle(d.get("balik", {}))
 	iz.yukle(d.get("izler", []))
 	yan.yukle(d.get("yan", {}))
 	camur_dedi = bool(d.get("camur_dedi", false))

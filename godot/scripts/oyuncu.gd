@@ -157,7 +157,7 @@ func _process(dt: float) -> void:
 		pr_flash = maxf(0.0, pr_flash - dt)
 		queue_redraw()
 	if not kilit and not oyun.pencere_acik():
-		if Input.is_action_just_pressed("savus"):
+		if Input.is_action_just_pressed("savus") and not oyun.balik.e_tutar():
 			savustur(); kalkan_kaldir()
 	if Input.is_action_just_released("savus"):
 		kalkan = false
@@ -176,7 +176,7 @@ func _process(dt: float) -> void:
 	_silah_yaz()
 	if Input.is_action_just_pressed("vur") and not kilit:
 		vur(bakis)
-	if Input.is_action_just_pressed("atil") and not kilit:
+	if Input.is_action_just_pressed("atil") and not kilit and not oyun.balik.aktif():
 		_atil(g)
 	if bekleyen_vurus > 0.0:
 		bekleyen_vurus -= dt
@@ -406,6 +406,7 @@ func savusturdu(a = null) -> void:
 func isirildi(dmg: int, from: Vector2, a = null, renk: String = "", koru: float = 0.7) -> void:
 	if atilma > 0.0 or dokunulmaz > 0.0 or bayildi:
 		return
+	oyun.balik.isirik()
 	if renk != "" and pr_t > 0.0 and renk != "r":
 		savusturdu(a)
 		return

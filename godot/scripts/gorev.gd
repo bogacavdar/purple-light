@@ -23,6 +23,8 @@ var b := {}                # görev alınınca sayaçların başlangıcı (av)
 var bitenler: Array = []
 var vis: Array = []        # "!" bekleyen en çok 2 görev: [{q, g}]
 var kills := {}
+var qc := {}                # web QC: 'fish:Sazan', 'trap:Tavşan eti' sayaçları
+const QC_DESTEK := ["fish:", "trap:"]
 var biyomlar := {0: true}
 var dovulen := {}          # örste dövülmüş eşyalar (web forged)
 var t := 0.0
@@ -174,6 +176,7 @@ func kosul(r: Array) -> bool:
 
 func destekli(q: Dictionary) -> bool:
 	for p in q.p:
+		if str(p[0]) == "c" and QC_DESTEK.has(str(p[1])): continue
 		if not DESTEK.has(str(p[0])):
 			return false
 	return true
@@ -200,6 +203,7 @@ func ilerleme(p: Array) -> Array:
 			return [0, 1]
 		"kn": return [1 if biliyor(p[1]) else 0, 1]
 		"k": return [clampi(int(kills.get(p[1], 0)) - int(b.get("k:" + p[1], 0)), 0, int(p[2])), int(p[2])]
+		"c": return [clampi(cval(str(p[1])) - int(b.get("c:" + p[1], 0)), 0, int(p[2])), int(p[2])]
 		"learn": return [mini(int(p[1]), ey.bilinen.size()), int(p[1])]
 		"lv": return [mini(int(p[1]), env.sv), int(p[1])]
 		"reach": return [1 if biyomlar.has(int(p[1])) else 0, 1]
@@ -237,6 +241,7 @@ func satir(p: Array) -> String:
 		"h": return v + str(p[1]) + ("" if ok_ else (" (dövdür)" if p.size() > 3 and p[3] == "döv" else " (yap)"))
 		"any": return v + " ya da ".join(p[1]) + ("" if ok_ else " (dövdür)")
 		"k": return "%d/%d %s avı" % [x[0], x[1], p[1]]
+		"c": return "%d/%d %s" % [x[0], x[1], p[3] if p.size() > 3 else p[1]]
 		"learn": return "%d/%d tarif (toplam)" % [x[0], x[1]]
 		"kn": return v + str(p[1]) + " tarifini kazanda öğren"
 		"lv": return "Seviye %d/%d" % [x[0], x[1]]
@@ -313,6 +318,14 @@ func hedef() -> Dictionary:
 				if env.adet(str(p[1])) > 0: return {}
 				return {kisi = kisi("usta"), ad = ad("usta")}
 			"lv":
+				return {}
+			"c":
+				var al := "Olta" if str(p[1]) == "fish:" else "Tuzak"
+				var var_ := false
+				for n in env.inv:
+					if env.G.tools.has(n) and str(env.G.tools[n].kind) == ("fish" if al == "Olta" else "trap") and env.adet(n) > 0: var_ = true
+				if not var_ and not biliyor(al): return {}
+				if not var_: return {yer = "el yapımı (Tab): " + al}
 				return {}
 	return {}
 
@@ -481,6 +494,8 @@ func _baslat(q: Dictionary, g: String, kisa: bool) -> void:
 	for p in q.p:
 		if p[0] == "k":
 			b["k:" + p[1]] = int(kills.get(p[1], 0))
+		if p[0] == "c":
+			b["c:" + p[1]] = cval(str(p[1]))
 	vis = []
 	var hazir := tamam()
 	var wh := "" if hazir else nerede()
@@ -611,6 +626,18 @@ func _ders_arayuz() -> void:
 	ders_kart.visible = false
 
 # ------------------------------------------------------------------ her an
+func qc_ekle(k: String, n: int = 1) -> void:
+	qc[k] = int(qc.get(k, 0)) + n
+
+## web cval: 'fish:' gibi ':' ile biten anahtar bütün balıkların toplamı
+func cval(k: String) -> int:
+	if k.ends_with(":"):
+		var s := 0
+		for x in qc:
+			if str(x).begins_with(k): s += int(qc[x])
+		return s
+	return int(qc.get(k, 0))
+
 func av(k: String) -> void:
 	kills[k] = int(kills.get(k, 0)) + 1
 
