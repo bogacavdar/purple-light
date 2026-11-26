@@ -71,6 +71,7 @@ static func cevir(w: Dictionary, kemal: Vector2) -> Dictionary:
 		mesale = {ts = null, yaniyor = false, yanma = _sozluk(w.get("tb", {}))},
 		zaman_oyun = {dk = float(w.get("dt", 360)), gun = maxi(1, int(w.get("dy", 1))), mesale_verildi = true, ilk_bayilma = int(w.get("dn", 0)) == 0},
 		yetenekler = _dizi(w.get("skills", [])), dl_agac = false,
+		kusam = _sozluk(w.get("eq", {})), puan = _sozluk(_sozluk(w.get("v340", {})).get("sp", {})), puan_ders = 2,
 		mezarlar = mz,
 		zorluk = "zor" if str(w.get("diff", "")) == "hard" else "normal",
 		adlar = {kahraman = str(w.get("hn", "")), sevgili = str(w.get("ln", ""))}}

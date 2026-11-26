@@ -16,6 +16,7 @@ var xp := 0
 var sv := 1
 var vio_yazi: Label
 var sv_yazi: Label
+var puan_dugme: Button
 var xp_cubuk: ProgressBar
 
 var ikon := {}                   # eşya adı → Texture2D
@@ -60,7 +61,7 @@ func ekle(n: String, k: int = 1) -> void:
 			mesaj("İlk keşif: %s · +%d Vio" % [n, r])
 	gorulen[n] = true
 	# aletler ve silahlar kemerdeki ilk boş yuvaya kendiliğinden girer (web: hotItem)
-	if (G.tools.has(n) or n == "Taş kılıç") and kemer.find(n) < 0:
+	if (G.tools.has(n) or oyun.kusanma.silah.has(n)) and kemer.find(n) < 0:
 		var i := kemer.find(null)
 		if i >= 0:
 			kemer[i] = n
@@ -191,6 +192,10 @@ func _arayuz() -> void:
 	var xb := StyleBoxFlat.new(); xb.bg_color = Color("#16202a"); var xf := StyleBoxFlat.new(); xf.bg_color = Color("#6ab0e8")
 	xp_cubuk.add_theme_stylebox_override("background", xb); xp_cubuk.add_theme_stylebox_override("fill", xf)
 	sat.add_child(vio_yazi); sat.add_child(sv_yazi); sat.add_child(xp_cubuk)
+	puan_dugme = Button.new(); puan_dugme.add_theme_font_size_override("font_size", 11)
+	puan_dugme.add_theme_color_override("font_color", Color("#ffe27a")); puan_dugme.visible = false
+	puan_dugme.pressed.connect(func(): oyun.karakter.ac())
+	sat.add_child(puan_dugme)
 	oyun.can_cubugu.get_parent().add_child(sat)
 	oyun.can_cubugu.get_parent().move_child(sat, 2)
 	# kemer: altta ortada 5 yuva
@@ -326,11 +331,23 @@ func xp_ekle(n: int) -> void:
 	while sv - 1 < need.size() and int(need[sv - 1]) > 0 and xp >= int(need[sv - 1]):
 		xp -= int(need[sv - 1])
 		sv += 1
-		mesaj("Seviye %d!" % sv)
+		mesaj("Seviye %d! Seviye puanı kazandın." % sv)
+		oyun.oyuncu.yetenek_uygula()
+		if oyun.puan_ders == 0: _puan_dersi()
 	_sv_ciz()
+
+## web ilk seviye dersi: ilk kez seviye atlayınca kart; "Puanımı vereyim" karakter penceresini açar
+func _puan_dersi() -> void:
+	oyun.puan_ders = 1
+	await get_tree().create_timer(1.2).timeout
+	oyun.konusma.ac("", null, "[b]Seviye puanı kazandın: %d[/b]\n\nHer seviye atlayışta [b]seviye puanı[/b] gelir. Puanı hangi özelliğe verirsen o gelişir: toplama hızı, hareket, can, enerji, güç…\n\n[b]Karakter[/b] penceresinde ([b]C[/b]) istediğin özelliğin yanındaki [b]+[/b] düğmesine bas. Verilen puan geri alınmaz; puanın kaldıkça seviye çubuğunun yanında hatırlatılır." % oyun.puan_bos(), [{t = "Sonra", kapat = true}, {t = "Puanımı vereyim", pri = true, f = func(): oyun.karakter.ac()}])
 
 func _sv_ciz() -> void:
 	var need: int = int(G.xpNeed[mini(sv - 1, G.xpNeed.size() - 1)])
 	sv_yazi.text = "Seviye %d" % sv
+	if puan_dugme != null and oyun.kusanma.size() > 0:
+		var b: int = oyun.puan_bos()
+		puan_dugme.visible = b > 0
+		puan_dugme.text = "%d puan ver" % b
 	xp_cubuk.max_value = maxf(1.0, float(need))
 	xp_cubuk.value = xp

@@ -134,7 +134,7 @@ func _basla() -> void:
 const TASLAR := ["Taş", "Çakmaktaşı", "Nehir çakılı", "Kum", "Nehir kili"]
 func _hiz(n: String) -> float:
 	var S = oyun
-	var m := 1.0 - (0.45 if S.sk("G3") else (0.30 if S.sk("G2") else (0.15 if S.sk("G1") else 0.0)))
+	var m: float = (1.0 - (0.45 if S.sk("G3") else (0.30 if S.sk("G2") else (0.15 if S.sk("G1") else 0.0)))) / S.stat("gather")
 	if (S.sk("G5") and (n.contains("odun") or n.contains("Odun"))) or (S.sk("G6") and TASLAR.has(n)) or (S.sk("G7") and n == "Su"):
 		m *= 0.5
 	return m

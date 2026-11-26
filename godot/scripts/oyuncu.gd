@@ -73,19 +73,44 @@ func _ready() -> void:
 
 ## yetenekler: en yüksek enerji ve can (web maxSt, maxHP); alınınca ve kayıt açılınca yeniden hesaplanır
 func yetenek_uygula() -> void:
-	var S = oyun
-	st_max = roundf(100.0 * (1.0 + (0.75 if S.sk("K7") else (0.5 if S.sk("K5") else (0.25 if S.sk("K2") else 0.0)))))
-	hp_max = float(V.hp) + (350.0 if S.sk("C10") else (250.0 if S.sk("C8") else (175.0 if S.sk("C5") else (100.0 if S.sk("C3") else (50.0 if S.sk("D1") else 0.0)))))
+	st_max = enerji_max()
+	hp_max = can_max()
 	st = minf(st, st_max); hp = minf(hp, hp_max)
 	oyun.can_guncelle(hp, hp_max)
 
-func _hp_yenile() -> float:
+## web maxHP, maxSt, stRegen (seviye puanı + yetenek + takı)
+func can_max(r: int = -1) -> float:
+	var S = oyun
+	return roundf(S.stat("hp", r) + (350.0 if S.sk("C10") else (250.0 if S.sk("C8") else (175.0 if S.sk("C5") else (100.0 if S.sk("C3") else (50.0 if S.sk("D1") else 0.0))))))
+
+func enerji_max(r: int = -1) -> float:
+	var S = oyun
+	return roundf(S.stat("st", r) * (1.0 + (0.75 if S.sk("K7") else (0.5 if S.sk("K5") else (0.25 if S.sk("K2") else 0.0)))))
+
+func enerji_dolma(r: int = -1) -> float:
+	var S = oyun
+	return S.stat("stRe", r) * (2.0 if S.sk("K8") else (1.5 if S.sk("K3") else 1.0))
+
+func _hp_yenile(r: int = -1) -> float:
 	var S = oyun
 	var tk: float = S.env.tokluk
-	return 0.1 * (5.0 if S.sk("C11") else (4.0 if S.sk("C9") else (3.0 if S.sk("C6") else (2.0 if S.sk("C2") else 1.0)))) * (1.5 if tk > 70.0 else (0.0 if tk <= 0.0 else 1.0))
+	return S.stat("hpRe", r) * (5.0 if S.sk("C11") else (4.0 if S.sk("C9") else (3.0 if S.sk("C6") else (2.0 if S.sk("C2") else 1.0)))) * (1.5 if tk > 70.0 else (0.0 if tk <= 0.0 else 1.0))
 
+## web weapon(): eldeki silah; elde balta ya da kazma 8 hasar; elin boşsa silah yuvasındaki; yoksa yumruk
 func silah_v() -> Dictionary:
-	return V.sword if oyun.env and oyun.env.elde() == "Taş kılıç" else V.fist
+	if oyun.env == null: return V.fist
+	var K: Dictionary = oyun.kusanma
+	var h: String = oyun.env.elde()
+	if not K.silah.has(h):
+		var t: String = oyun.env.elde_tur()
+		if t == "axe" or t == "pick": return {dmg = 8, reach = 20, cd = 0.5, kind = "axe"}
+		h = str(oyun.kusam.get("silah", "")) if oyun.kusam.get("silah", null) != null else ""
+	if h == "" or not K.silah.has(h): return V.fist
+	var w: Dictionary = K.silah[h]
+	if w.kind == "hunt": return {dmg = w.dmg, reach = 30, cd = 0.5, kind = "hunt", n = h}
+	if w.mace == "gurz": return {dmg = w.dmg, reach = 24, cd = 0.62, kind = "sword", n = h}
+	if w.mace != null: return {dmg = w.dmg, reach = 20, cd = 0.4, kind = "sword", n = h}
+	return {dmg = w.dmg, reach = 22, cd = 0.42, kind = "sword", n = h}
 
 func _silah_yaz() -> void:
 	var w := silah_v()
@@ -186,7 +211,7 @@ func _process(dt: float) -> void:
 	else:
 		st_dinlen += dt
 		if st_dinlen > 0.6:
-			st = minf(st_max, st + 14.0 * (2.0 if oyun.sk("K8") else (1.5 if oyun.sk("K3") else 1.0)) * (0.6 if yuruyor else 1.0) * dt)
+			st = minf(st_max, st + enerji_dolma() * (0.6 if yuruyor else 1.0) * dt)
 	if not bayildi: _etkiler(dt)
 	if hp < hp_max and not bayildi:
 		hp = minf(hp_max, hp + _hp_yenile() * dt)
@@ -195,7 +220,7 @@ func _process(dt: float) -> void:
 	oyun.enerji_guncelle(st, st_max, yorgun)
 	if yuruyor:
 		var n := g.normalized()
-		var sp: float = float(V.speed) * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0) * (0.45 if kalkan else 1.0) * (1.0 + (0.4 if oyun.sk("H7") else (0.3 if oyun.sk("H3") else (0.2 if oyun.sk("H2") else (0.1 if oyun.sk("H1") else 0.0)))))
+		var sp: float = float(V.speed) * oyun.stat("move") * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0) * (0.45 if kalkan else 1.0) * (1.0 + (0.4 if oyun.sk("H7") else (0.3 if oyun.sk("H3") else (0.2 if oyun.sk("H2") else (0.1 if oyun.sk("H1") else 0.0)))))
 		_kay(n * sp * dt)
 		_yon_sec(n)
 		adim += dt * (1.7 if kos else 1.0)
@@ -280,9 +305,8 @@ func vur(d: Vector2) -> void:
 	if kalkan or sersem > 0.0:
 		return
 	# her vuruş enerji ister (web P4K: yumruk 4, kılıç 8, mızrak 9, balta ve öteki aletler 10)
-	var h: String = oyun.env.elde()
-	var kt: String = oyun.env.elde_tur()
-	var cost := 4.0 if h == "" else (8.0 if kt == "sword" else (9.0 if kt == "hunt" else 10.0))
+	var kt: String = str(w.get("kind", ""))
+	var cost := 4.0 if kt == "" else (8.0 if kt == "sword" else (9.0 if kt == "hunt" else 10.0))
 	if yorgun or st < cost:
 		yorgun = true
 		atk_cd = 0.35
@@ -300,7 +324,7 @@ func vur(d: Vector2) -> void:
 	savrulus_yon = f
 	savrulus_r = float(w.reach) * 0.8
 	kavis.queue_redraw()
-	var dm := int(round(float(w.dmg) * (1.55 if oyun.sk("W4") else (1.4 if oyun.sk("W3") else (1.25 if oyun.sk("W2") else (1.1 if oyun.sk("W1") else 1.0))))))
+	var dm := int(round(float(w.dmg) * oyun.stat("dmg") * (1.55 if oyun.sk("W4") else (1.4 if oyun.sk("W3") else (1.25 if oyun.sk("W2") else (1.1 if oyun.sk("W1") else 1.0))))))
 	var gogus := position + Vector2(0, -6)
 	for a in oyun.canlilari_ver():
 		var ar: float = float(a.D.r)
@@ -387,6 +411,7 @@ func isirildi(dmg: int, from: Vector2, a = null, renk: String = "", koru: float 
 			oyun.yazi(position + Vector2(0, -34), "Kalkan düştü!", Color("#ff9a6a"), 9)
 	# Son nefes: canın dörtte birinin altındayken fiziksel darbe %25 daha az
 	if renk != "" and oyun.sk("D8") and hp < hp_max * 0.25: n *= 0.75
+	if renk != "": n *= oyun.zirh_carpan()
 	dmg = maxi(1, int(round(n)))
 	dokunulmaz = koru
 	hp = maxf(0.0, hp - dmg)
@@ -402,7 +427,7 @@ func etki_ekle(k: String, dps: float, sure: float) -> void:
 	if not ETKI.has(k): return
 	var S = oyun
 	var res := 0.4 if S.sk("D14") else (0.6 if (k == "zehir" and S.sk("D3")) or (k == "yanık" and S.sk("D4")) or (k == "kanama" and S.sk("D6")) else 1.0)
-	dps *= 1.3 * res
+	dps *= 1.3 * res * (1.0 - oyun.direnc(k)) * (1.0 - (1.0 - oyun.zirh_carpan()) / 2.0)
 	sure *= 1.6 * (0.5 if S.sk("D9") else 1.0)
 	if dps <= 0.05: return
 	if etkiler.has(k):

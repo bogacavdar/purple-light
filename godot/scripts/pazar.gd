@@ -65,7 +65,7 @@ func taban(n: String) -> float:
 ## web sellMult: Usta tüccar I/II (+%50/+%60), "hepsini sat"ta Toptancı +%5; hepsi birlikte en çok 2,3 kat
 func fiyat(n: String, toplu := false) -> float:
 	var m := 1.0 + (0.6 if oyun.sk("E2") else (0.5 if oyun.sk("E1") else 0.0)) + (0.05 if toplu and oyun.sk("T4") else 0.0)
-	return taban(n) * minf(2.3, m)
+	return taban(n) * minf(2.3, m * oyun.stat("trade"))
 
 ## Şanslı müşteri: her satışta %5 (II'de %12) ihtimalle çift ödeme
 func _sans(tutar: int) -> int:

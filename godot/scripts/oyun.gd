@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 2b"
+const SURUM := "Godot · Adım 2c"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -72,6 +72,11 @@ var kisi_veri := {}         # data/kisiler_orman.json (ustalar, biyomlar)
 var istasyonlar: Array = [] # Orman'ın kazanı, ocak, örsler, tezgâh
 var kademe := {}            # dövülen tarif → kademe (web tierOf)
 var zirh_set := {}          # zırh tarifleri (web ARMORSET)
+var kusanma := {}           # data/kusanma.json (web EQUIP, silahlar, SPS)
+var kusam := {}             # yuva → giyilen eşya (web equip)
+var puan := {}              # özellik → verilen seviye puanı (web SPT)
+var puan_ders := 0          # ilk seviye kartı: 0 gösterilmedi, 1 gösterildi, 2 ilk puan verildi
+var karakter                # karakter penceresi (karakter_pen.gd)
 var dl_agac := false        # Börü'nün dersi bitti, yetenek ağacını gösterecek (1f-3b-3)
 var silah_yazi: Label
 var parlama_shader: Shader
@@ -146,6 +151,9 @@ func _ready() -> void:
 	kuzen = preload("res://scripts/kuzen.gd").new()
 	add_child(kuzen)
 	kuzen.kur(self)
+	karakter = preload("res://scripts/karakter_pen.gd").new()
+	add_child(karakter)
+	karakter.kur(self)
 	ogr = preload("res://scripts/ogretici.gd").new()
 	add_child(ogr)
 	ogr.kur(self)
@@ -192,6 +200,9 @@ func _ready() -> void:
 			_canli_koy_yakin("Tavşan", 4.0)
 		if q.contains("kemal"):
 			oyuncu.position = Vector2(toplama_veri.kisiler[0].x + 20, toplama_veri.kisiler[0].y + 6)
+		if q.contains("kusan"):
+			for n2 in ["Kemik zırh", "Kürk başlık", "Taş kılıç", "Diş kolye"]: env.ekle(n2)
+			while env.sv < 8: env.xp_ekle(300)
 		if q.contains("git_"):
 			var m2 := RegEx.create_from_string("git_([a-z_]+)").search(q)
 			for n in kisiler:
@@ -651,7 +662,7 @@ func sk(id: String) -> bool:
 	return yetenekler.has(id)
 
 func pencere_acik() -> bool:
-	return (yetenek != null and yetenek.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
+	return (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
 
 func can_guncelle(hp: float, mx: float) -> void:
 	can_cubugu.max_value = mx
@@ -735,6 +746,8 @@ func agac_devrildi(ag) -> void:
 
 # ------------------------------------------------------------------ Çayır'ın kişileri, kazan ve örsler
 func _kisiler() -> void:
+	kusanma = _json("res://data/kusanma.json")
+	for y in kusanma.yuvalar: kusam[y[0]] = null
 	kisi_veri = _json("res://data/kisiler_orman.json")
 	kademe = kisi_veri.tier
 	for r in kisi_veri.zirh: zirh_set[r] = true
@@ -805,6 +818,114 @@ func _istasyon2_ciz(o: Node2D, st: Dictionary) -> void:
 			o.draw_rect(Rect2(-11, -18, 2, 20), Color("#6a4424")); o.draw_rect(Rect2(9, -18, 2, 20), Color("#6a4424"))
 			o.draw_rect(Rect2(-11, -5, 22, 7), Color("#a0703c")); o.draw_rect(Rect2(-11, -5, 22, 2), Color("#c08a50"))
 			o.draw_rect(Rect2(-13, -22, 26, 5), hc); o.draw_rect(Rect2(-13, -18, 26, 1), hc.darkened(0.3))
+
+# ------------------------------------------------------------------ özellikler, seviye puanları, kuşanma (web SPS, sv, ptsAt, capAt, EQUIP, armorMul)
+const DUZ := {"hp": true, "st": true, "mana": true, "zirh": true}
+func _taki(k: String) -> float:
+	var t := 0.0
+	for s in ["kolye", "yuzuk"]:
+		var n = kusam.get(s, null)
+		if n != null and kusanma.esya.has(n) and kusanma.esya[n].fx != null and kusanma.esya[n].fx.has(k): t += float(kusanma.esya[n].fx[k])
+	return t
+
+## r < 0: şimdiki puanla ve takıların etkisiyle; r ≥ 0: o puanla (önizleme, takısız)
+func stat(k: String, r: int = -1) -> float:
+	var S: Array = kusanma.sps[k]
+	var v: float = float(S[0]) + float(S[1]) * float(r if r >= 0 else int(puan.get(k, 0)))
+	if r >= 0: return v
+	var p := _taki(k)
+	if p == 0.0: return v
+	if DUZ.has(k): return v + p
+	if k == "luck": return v + p / 100.0
+	return v * (1.0 + p / 100.0)
+
+static func _ptl(L: int) -> int:
+	return 0 if L <= 1 else (2 if L <= 10 else (3 if L <= 30 else 4))
+
+func puan_toplam() -> int:
+	var n := 0
+	for i in range(2, env.sv + 1): n += _ptl(i)
+	return n
+
+func puan_bos() -> int:
+	var t := 0
+	for k in kusanma.spk: t += mini(int(kusanma.rmax), int(puan.get(k, 0)))
+	return maxi(0, puan_toplam() - t)
+
+func puan_tavan() -> int:
+	return mini(int(kusanma.rmax), 1 + env.sv / 3)
+
+func puan_ver(k: String) -> void:
+	var r := int(puan.get(k, 0))
+	if puan_bos() <= 0 or r >= int(kusanma.rmax) or r >= puan_tavan(): return
+	puan[k] = r + 1
+	if puan_ders < 2: puan_ders = 2
+	oyuncu.yetenek_uygula()
+	env._sv_ciz()
+
+func savunma() -> int:
+	var t := 0
+	for s in kusam:
+		var n = kusam[s]
+		if n != null and kusanma.esya.has(n): t += int(kusanma.esya[n].def)
+	return t
+
+func zirh_deger(r: int = -1) -> int:
+	return int(round(stat("zirh", r))) + (30 if sk("D10") else (20 if sk("D7") else (12 if sk("D5") else (5 if sk("D2") else 0))))
+
+## fiziksel hasar çarpanı: 25 / (25 + savunma + zırh)
+func zirh_carpan() -> float:
+	return 25.0 / (25.0 + savunma() + zirh_deger())
+
+func direnc(k: String) -> float:
+	var t := 0.0
+	for s in kusam:
+		var n = kusam[s]
+		if n != null and kusanma.esya.has(n) and kusanma.esya[n].res != null: t += float(kusanma.esya[n].res.get(k, 0.0))
+	return minf(0.85, t)
+
+func yuva_of(n: String) -> String:
+	if kusanma.esya.has(n): return str(kusanma.esya[n].s)
+	if kusanma.silah.has(n): return "silah"
+	return ""
+
+const FXL := {"hp": ["can", "+"], "st": ["enerji", "+"], "mana": ["mana", "+"], "zirh": ["zırh", "+"], "hpRe": ["can yenilenmesi", "+%"], "stRe": ["enerji yenilenmesi", "+%"], "dmg": ["hasar", "+%"], "move": ["hız", "+%"], "gather": ["toplama hızı", "+%"], "trade": ["satış fiyatı", "+%"], "luck": ["şans", "+%"]}
+func esya_yazi(n) -> String:
+	if n == null: return ""
+	if kusanma.silah.has(n): return "%d hasar" % int(kusanma.silah[n].dmg)
+	if not kusanma.esya.has(n): return ""
+	var e: Dictionary = kusanma.esya[n]
+	var P := []
+	if int(e.def) > 0: P.append("+%d savunma" % int(e.def))
+	if e.fx != null:
+		for k in e.fx:
+			if FXL.has(k): P.append("%s%s %s" % [FXL[k][1], str(e.fx[k]), FXL[k][0]])
+	if e.res != null:
+		for k in e.res: P.append("%s direnci %%%d" % [k, int(round(float(e.res[k]) * 100.0))])
+	if int(e.mud) == 1: P.append("çamurda yavaşlamaz")
+	if int(e.lamp) == 1: P.append("ışık")
+	return " · ".join(P) if not P.is_empty() else "+0 savunma"
+
+func giy(n: String) -> void:
+	var s := yuva_of(n)
+	if s == "" or env.adet(n) <= 0: return
+	if kusam.get(s, null) != null: cikar(s, true)
+	env.eksilt(n)
+	var i: int = env.kemer.find(n)
+	if i >= 0 and env.adet(n) <= 0:
+		env.kemer[i] = null
+		env.kemer_ciz()
+	kusam[s] = n
+	env.mesaj("%s giyildi" % n)
+	oyuncu.yetenek_uygula()
+
+func cikar(s: String, sessiz := false) -> void:
+	var n = kusam.get(s, null)
+	if n == null: return
+	kusam[s] = null
+	env.ekle(n)
+	if not sessiz: env.mesaj("%s çıkarıldı" % n)
+	oyuncu.yetenek_uygula()
 
 ## örs kipinin ustası: {rol, b, ad} (web roleOf, tierW)
 func usta_bilgi(k: String) -> Dictionary:
@@ -1042,7 +1163,7 @@ func durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = {gorulen = magara.gorulen, acilan = Marshalls.raw_to_base64(magara.acilan), kaya = 1 if magara.kaya_durum == 2 else magara.kaya_durum, denedi = magara.kaya_denedi or magara.kaya_durum == 2, boss = magara.boss_yenildi},
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(),
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 func gorunus_uygula(L: Dictionary) -> void:
@@ -1121,6 +1242,12 @@ func durum_yukle(d: Dictionary) -> void:
 	dl_agac = bool(d.get("dl_agac", false))
 	kuzen.tanis = {}
 	for k in d.get("kuzen", []): kuzen.tanis[k] = true
+	var ks: Dictionary = d.get("kusam", {})
+	for s in kusam: kusam[s] = ks.get(s, null)
+	puan = {}
+	var pd: Dictionary = d.get("puan", {})
+	for k in pd: puan[k] = int(pd[k])
+	puan_ders = int(d.get("puan_ders", 2 if env.sv > 1 else 0))
 	oyuncu.yetenek_uygula()
 	oyuncu.hp = float(o.get("hp", oyuncu.hp_max))
 	can_guncelle(oyuncu.hp, oyuncu.hp_max)
