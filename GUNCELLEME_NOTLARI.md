@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.74 · 26 Kasım 2026
+
+### Proje
+- **Godot: Görevler penceresi:**
+  - G tuşu Görevler penceresini açıyor. Üstte ana görevin, altta aldığın yan görevler ve adımları görünüyor.
+  - Her yan görevi oradan takip edebiliyor ya da bırakabiliyorsun; bırakmak için iki kez basıyorsun. En altta bitirdiğin yan görevler yazıyor.
+  - Deneme aletleri artık G'de değil, F9'da.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.73 · 26 Kasım 2026
 
 ### Proje
@@ -225,10 +236,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Sağ tık ya da E savuşturur; doğru anda basarsan hayvan sersemler. Basılı tutarsan gard alırsın, darbeler yumuşar.
   - Atılmayı ve savuşturmayı Börü kerevitle ücretsiz öğretiyor (4 sıyrılma, 4 savuşturma). Bilmeden atılınca oyun bunu Börü'nün öğrettiğini söylüyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.54 · 26 Kasım 2026
-
-### Proje
-- **Godot: Çayır'ın bütün canlıları geldi:** tavşan ve kurdun yanına keklik, bıldırcın, kerevit, porsuk, geyik ve yaban atı. Web'deki gibi Çayır'da dolaştıkça çevrende doğuyorlar; kurtlar yalnız gece ve ilk seviyelerde tek başına çıkıyor. Geyik ve yaban atı sürüyle geziyor; vurursan saldırıyorlar. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
