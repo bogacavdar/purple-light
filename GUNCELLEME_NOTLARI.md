@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.82 · 26 Kasım 2026
+
+### Proje
+- **Godot: Çiftçi Ekin, Çayır'da:**
+  - Ekin Çayır'da tanışılır ve ilk görevini verir: Kaybolan korkuluk.
+  - Saman izlerini takip edersin, korkuluğu yürüten aç kirpiye bir elma bırakırsın, Ekin'e dönersin.
+  - Görev bitince Ekin adasına dönmek için Çayır'dan ayrılır. Bereket Adası ve tarla sonra gelecek.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.81 · 26 Kasım 2026
 
 ### Proje
@@ -215,18 +226,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: Atölye:**
   - Kurulu atölyenin yanında F'ye basınca bir tarif seçiliyor ve malzemeler içine konuyor.
   - Malzemeler tamamsa her 25 saniyede bir ürün çıkıyor (en çok 50). Sen uzaktayken de çalışıyor. Atölyenin üstünde ilerleme çubuğu ve biriken ürün görünüyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.62 · 26 Kasım 2026
-
-### Proje
-- **Godot: Usta Sinan, evler ve uyku:**
-  - Sinan tanışınca hasır yatak hediye ediyor. Tarifini öğrendiğin yapıları ve ev eşyalarını işçiliği karşılığı yapıyor; evleri ve barınakları da (yaprak barınağından konağa) satıyor.
-  - Yapılar kemere ya da çantaya geliyor. Seçince yeşil ızgarada yere kuruluyor; Boşluk döndürüyor, sağ tık vazgeçiyor. Kurulu yapıyla F'ye basınca taşıyabiliyor ya da geri alabiliyorsun.
-  - Eve yatak konuyor; gece yatakta ya da barınakta uyuyunca sabah uyanıyorsun, can ve enerji doluyor. Yaprak barınağı bir gecelik.
-  - Sinan'ın barınak, atölye, çit ve ev görevleri artık açılıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---

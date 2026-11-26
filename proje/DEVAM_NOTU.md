@@ -1,3 +1,7 @@
+## v4.82 (26 Kasım 2026) · Godot O3a: Çiftçi Ekin, Çayır'da
+- `godot-deneme/` yeni derleme (godot dalı: yeni tools/disa_aktar_ekin.js → data/ekin.json EK1–EK8; disa_aktar_yan.js ekin1'i main bayrağıyla alır; yan.gd main görevlerin adımlarını yürütür (_ana_adimlar, ana_yazi); gorev.gd sq'de yan görev, k_ekin; kuzen.gd _ekin, ekin_cayirda; kisi.gd Ekin ayrılınca gizli). Denetim: ?ekintest. Belge 99_godot O3a satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.81 (26 Kasım 2026) · Godot O2: Denizci Barbaros
 - `godot-deneme/` yeni derleme (godot dalı: disa_aktar_kisi.js BIYOM=5'e denizci (rol dz, enkaz, resimler drawChibi ile) → data/kisiler_kristal.json, gorevler_kristal.json L görevleri; kuzen.gd _barbaros, dz_burada, enkaz_ciz; kisi.gd Gemi bilinmeden gizli; oyun.gd enkaz düğümü, görünmeyen kişiyle konuşulmaz). Denetim: ?dztest. Belge 99_godot O2 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.63 (26 Kasım 2026) · Godot 2d-2: Atölye
 - `godot-deneme/` yeni derleme (godot dalı: yeni atolye.gd; yapi.gd Atölye ws, çubuk çizimi, kayıtta ws; sinan ve atolye pencereleri ortalanması). Belge 99_godot 2d-2 satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.62 (26 Kasım 2026) · Godot 2d-1: Sinan, yapılar, evler, uyku
-- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_yapi.js → data/yapilar.json, art/yapilar; yeni yapi.gd, sinan.gd; oyun.gd engel'e yapılar, F'de yapı, kayıtta yapi; envanter kemer/çanta seçimi yerleştirir; gorev.gd sleep/place/house/bed). Denetim: ?yapitest. Belge 99_godot 2d-1 satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 
