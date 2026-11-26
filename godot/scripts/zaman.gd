@@ -98,6 +98,7 @@ func _saat_yaz() -> void:
 ## ışık var mı (web litAt + nearCamp + meşale)
 func isikta(p: Vector2) -> bool:
 	if oyun.mesale.elde() != null: return true
+	if oyun.insa.fener_isiginda(p): return true
 	return kampta(p)
 
 ## ateşlerin güvenli yarıçapı (web campFor): saldırganlar orada doğmaz ve saldırmaz

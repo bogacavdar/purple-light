@@ -20,6 +20,7 @@ func kur(o) -> void:
 	add_child(hayalet)
 
 func yapi_mi(n: String) -> bool:
+	if n == "Direk feneri": return false   # inşa kipiyle tek karoya konur
 	return Y.yapi.has(n) and Y.yapi[n].get("foot", null) != null
 
 func ev_mi(n: String) -> bool:
@@ -312,6 +313,7 @@ func ev_kurulu() -> bool:
 	return false
 
 func kurulu_mu(n: String) -> bool:
+	if oyun.insa.var_mi(n): return true
 	for o in kurulu:
 		if o.n == n: return true
 	return false

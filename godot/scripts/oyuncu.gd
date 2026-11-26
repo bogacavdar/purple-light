@@ -221,7 +221,7 @@ func _process(dt: float) -> void:
 	oyun.enerji_guncelle(st, st_max, yorgun)
 	if yuruyor:
 		var n := g.normalized()
-		var sp: float = float(V.speed) * oyun.stat("move") * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0) * (0.45 if kalkan else 1.0) * (1.0 + (0.4 if oyun.sk("H7") else (0.3 if oyun.sk("H3") else (0.2 if oyun.sk("H2") else (0.1 if oyun.sk("H1") else 0.0)))))
+		var sp: float = float(V.speed) * oyun.stat("move") * (1.15 if oyun.insa.yolda(position) else 1.0) * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0) * (0.45 if kalkan else 1.0) * (1.0 + (0.4 if oyun.sk("H7") else (0.3 if oyun.sk("H3") else (0.2 if oyun.sk("H2") else (0.1 if oyun.sk("H1") else 0.0)))))
 		_kay(n * sp * dt)
 		_yon_sec(n)
 		adim += dt * (1.7 if kos else 1.0)

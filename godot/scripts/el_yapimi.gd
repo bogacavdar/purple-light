@@ -67,8 +67,9 @@ func yap(r: String) -> void:
 		return
 	for p in R[r].i:
 		env.eksilt(str(p[0]), int(p[1]))
-	env.ekle(r)
-	env.mesaj("Yapıldı: " + r)
+	var yld: int = int({"Toprak yol": 4, "Çakıl yol": 4, "Ahşap parke": 4, "Dal çit": 2, "Çit": 2}.get(r, 1))
+	env.ekle(r, yld)
+	env.mesaj("Yapıldı: " + r + (" ×%d" % yld if yld > 1 else ""))
 	oyun.ogr.yapti(r)
 	ciz()
 

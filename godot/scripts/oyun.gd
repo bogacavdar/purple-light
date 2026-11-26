@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 2d-2"
+const SURUM := "Godot · Adım 2d-3"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -80,6 +80,7 @@ var karakter                # karakter penceresi (karakter_pen.gd)
 var yapi                    # kurulan yapılar ve evler (yapi.gd)
 var sinan                   # Usta Sinan'ın sipariş pencereleri (sinan.gd)
 var atolye                  # Atölye penceresi ve üretimi (atolye.gd)
+var insa                    # İnşa kipi: zemin, çit, duvar, kapı, fener (insa.gd)
 var dl_agac := false        # Börü'nün dersi bitti, yetenek ağacını gösterecek (1f-3b-3)
 var silah_yazi: Label
 var parlama_shader: Shader
@@ -157,6 +158,9 @@ func _ready() -> void:
 	yapi = preload("res://scripts/yapi.gd").new()
 	add_child(yapi)
 	yapi.kur(self)
+	insa = preload("res://scripts/insa.gd").new()
+	add_child(insa)
+	insa.kur(self)
 	atolye = preload("res://scripts/atolye.gd").new()
 	add_child(atolye)
 	atolye.kur(self)
@@ -212,6 +216,9 @@ func _ready() -> void:
 			_canli_koy_yakin("Tavşan", 4.0)
 		if q.contains("kemal"):
 			oyuncu.position = Vector2(toplama_veri.kisiler[0].x + 20, toplama_veri.kisiler[0].y + 6)
+		if q.contains("insatest"):
+			oyuncu.position = Vector2(5400, 1720)
+			for n3 in ["Çit", "Taş duvar", "Toprak yol", "Tahta kapı", "Direk feneri", "Dal çit"]: env.ekle(n3, 20)
 		if q.contains("yapitest"):
 			env.ekle("Kulübe"); env.ekle("Hasır yatak"); env.vio_ekle(3000); env.ekle("Atölye"); env.ekle("Dal", 20); env.ekle("Taş", 20)
 		if q.contains("kusan"):
@@ -404,7 +411,7 @@ static func su_mu(t: int) -> bool:
 	return t >= 3
 
 ## web blocked(): kutunun dört köşesinden biri sudaysa ya da bir ağaç gövdesine değiyorsa geçilmez
-func engel(p: Vector2, half: float = 5.0) -> bool:
+func engel(p: Vector2, half: float = 5.0, canli := false) -> bool:
 	if magara != null:
 		if magara.icinde:
 			return magara.engel(p, half)
@@ -414,6 +421,8 @@ func engel(p: Vector2, half: float = 5.0) -> bool:
 		if su_mu(tile_at(p + d)):
 			return true
 	if yapi != null and yapi.engel(p, half):
+		return true
+	if insa != null and insa.engel(p, half, canli):
 		return true
 	var cx := int(floor(p.x / 32.0))
 	var cy := int(floor(p.y / 32.0))
@@ -999,6 +1008,8 @@ func konus_ya_da_istasyon() -> bool:
 	if yakin != null:
 		_konus(yakin)
 		return true
+	if insa.yakit_koy():
+		return true
 	if yapi.kullan():
 		return true
 	return false
@@ -1181,7 +1192,7 @@ func durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = {gorulen = magara.gorulen, acilan = Marshalls.raw_to_base64(magara.acilan), kaya = 1 if magara.kaya_durum == 2 else magara.kaya_durum, denedi = magara.kaya_denedi or magara.kaya_durum == 2, boss = magara.boss_yenildi},
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(),
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(),
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 func gorunus_uygula(L: Dictionary) -> void:
@@ -1267,6 +1278,7 @@ func durum_yukle(d: Dictionary) -> void:
 	for k in pd: puan[k] = int(pd[k])
 	puan_ders = int(d.get("puan_ders", 2 if env.sv > 1 else 0))
 	yapi.yukle(d.get("yapi", {}))
+	insa.yukle(d.get("insa", {}))
 	oyuncu.yetenek_uygula()
 	oyuncu.hp = float(o.get("hp", oyuncu.hp_max))
 	can_guncelle(oyuncu.hp, oyuncu.hp_max)

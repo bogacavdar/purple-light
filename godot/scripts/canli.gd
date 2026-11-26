@@ -119,13 +119,14 @@ func _draw() -> void:
 
 func _git(v: Vector2, dt: float) -> void:
 	var land: Array = D.get("landTiles", [0.0, 1.0, 2.0])
+	if oyun.insa.dal_cit(position): v *= 0.35
 	var nx := position + Vector2(v.x * dt, 0)
-	if not oyun.engel(nx, 5.0) and land.has(float(oyun.tile_at(nx))):
+	if not oyun.engel(nx, 5.0, true) and land.has(float(oyun.tile_at(nx))):
 		position.x = nx.x
 	else:
 		t = 0.0
 	var ny := position + Vector2(0, v.y * dt)
-	if not oyun.engel(ny, 5.0) and land.has(float(oyun.tile_at(ny))):
+	if not oyun.engel(ny, 5.0, true) and land.has(float(oyun.tile_at(ny))):
 		position.y = ny.y
 	else:
 		t = 0.0
