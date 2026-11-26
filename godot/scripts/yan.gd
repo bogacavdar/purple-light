@@ -19,6 +19,10 @@ var bak_t := 0.0
 var soz_t := 0.0
 var coo_t := 0.0
 var kart: PanelContainer
+var pen_kat: CanvasLayer
+var pen_kutu: PanelContainer
+var pen_liste: VBoxContainer
+var birak_onay := ""
 var kart_yazi: RichTextLabel
 var tex := {}
 const DAT_EK := {"a": "'a", "e": "'e", "ı": "'a", "i": "'e", "o": "'a", "ö": "'e", "u": "'a", "ü": "'e"}
@@ -43,6 +47,7 @@ func kur(o) -> void:
 		o.nesneler.add_child(n)
 		kisi_n[q.id] = n
 	_kart_kur()
+	_pencere_kur()
 	_dunya.call_deferred()
 
 func _tx(k: String) -> Texture2D:
@@ -628,6 +633,114 @@ func _kart_yaz() -> void:
 	if mk.visible: y = mk.offset_top + mk.size.y + 6.0
 	kart.offset_top = y
 	kart_yazi.text = "[color=#7fc8ff][font_size=11]Yan görev · %s[/font_size][/color]\n[b]%s[/b]\n%s" % [q.name, q.title, adim_yazi()]
+
+# ------------------------------------------------------------------ Görevler penceresi (G; web renderQlog)
+func _pencere_kur() -> void:
+	pen_kat = CanvasLayer.new(); pen_kat.layer = 6; pen_kat.visible = false
+	add_child(pen_kat)
+	var arka := ColorRect.new(); arka.color = Color(0.03, 0.05, 0.03, 0.55)
+	arka.gui_input.connect(func(e): if e is InputEventMouseButton and e.pressed: kapat())
+	pen_kat.add_child(arka); arka.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	pen_kutu = PanelContainer.new()
+	var st := StyleBoxFlat.new(); st.bg_color = Color("#1c2419"); st.border_color = Color("#c9a24a"); st.set_border_width_all(2); st.set_content_margin_all(12)
+	pen_kutu.add_theme_stylebox_override("panel", st)
+	pen_kat.add_child(pen_kutu)
+	var sc := ScrollContainer.new(); sc.custom_minimum_size = Vector2(460, 420)
+	pen_kutu.add_child(sc)
+	pen_liste = VBoxContainer.new(); pen_liste.custom_minimum_size = Vector2(440, 0)
+	sc.add_child(pen_liste)
+
+func acik() -> bool:
+	return pen_kat.visible
+
+func ac() -> void:
+	birak_onay = ""
+	pen_kat.visible = true
+	_pencere_yaz()
+
+func kapat() -> void:
+	pen_kat.visible = false
+
+func _unhandled_input(e: InputEvent) -> void:
+	if e is InputEventKey and e.pressed and not e.echo:
+		if pen_kat.visible and (e.keycode == KEY_ESCAPE or e.keycode == KEY_G):
+			kapat()
+			get_viewport().set_input_as_handled()
+		elif e.keycode == KEY_G and not oyun.pencere_acik() and not oyun.oyuncu.kilit and not oyun.basta:
+			ac()
+			get_viewport().set_input_as_handled()
+
+func _etiket(t: String, boy := 13, renk := Color("#e8f0d8")) -> RichTextLabel:
+	var l := RichTextLabel.new(); l.bbcode_enabled = true; l.fit_content = true; l.scroll_active = false
+	l.custom_minimum_size = Vector2(430, 0)
+	l.add_theme_font_size_override("normal_font_size", boy); l.add_theme_font_size_override("bold_font_size", boy)
+	l.add_theme_color_override("default_color", renk)
+	l.text = t
+	return l
+
+func _pencere_yaz() -> void:
+	for c in pen_liste.get_children():
+		pen_liste.remove_child(c); c.queue_free()
+	var G = oyun.gorev
+	pen_liste.add_child(_etiket("[b]Ana görev[/b]", 16, Color("#f2b84b")))
+	if G.aktif != null:
+		var t := "[b]%s[/b] · %s" % [G.aktif.t, G.ad(G.aktif.g)]
+		for p in G.aktif.p: t += "\n" + G.satir(p)
+		pen_liste.add_child(_etiket(t))
+	else:
+		pen_liste.add_child(_etiket("Şu an bir ana görevin yok. Başında ! olan kişiyle konuş.", 12, Color("#a8b898")))
+	pen_liste.add_child(_etiket("[b]Yan görevler[/b]", 16, Color("#7fc8ff")))
+	if ACT.is_empty():
+		pen_liste.add_child(_etiket("Alınmış bir yan görevin yok. Başında mavi ? olan kişilerle konuş.", 12, Color("#a8b898")))
+	for a in ACT:
+		var q: Dictionary = BY[a.id]
+		var izl: bool = a == A
+		var yazi := "[b]%s[/b] · %s" % [q.title, q.name]
+		if izl: yazi += "\n" + adim_yazi()
+		else:
+			var s: Dictionary = q.steps[mini(int(a.step), q.steps.size() - 1)]
+			yazi += "\n" + str(s.get("tx", ""))
+		pen_liste.add_child(_etiket(yazi))
+		var h := HBoxContainer.new()
+		var b1 := Button.new()
+		b1.text = "Takip ediliyor · Görevlere gönder" if izl else "Takip et"
+		b1.pressed.connect(_takip_dugme.bind(a))
+		h.add_child(b1)
+		var b2 := Button.new()
+		b2.text = "Emin misin? Bırak" if birak_onay == a.id else "Bırak"
+		b2.pressed.connect(_birak_dugme.bind(a))
+		h.add_child(b2)
+		pen_liste.add_child(h)
+	var biten: Array = []
+	for q in Q:
+		if done.has(q.id): biten.append(q.title)
+	pen_liste.add_child(_etiket("Bitirdiklerin: %d/%d%s" % [biten.size(), Q.size(), (" · " + ", ".join(biten)) if not biten.is_empty() else ""], 12, Color("#a8b898")))
+	var k := Button.new(); k.text = "Kapat"; k.pressed.connect(kapat); pen_liste.add_child(k)
+	pen_kutu.reset_size()
+	var vs := get_viewport().get_visible_rect().size
+	pen_kutu.position = ((vs - pen_kutu.size) / 2.0).floor()
+
+func _takip_dugme(a: Dictionary) -> void:
+	if a == A:
+		var q: Dictionary = BY[a.id]
+		_birak_takip()
+		env.mesaj("Görevlere gönderildi: %s. Görevler'den yeniden takip edebilirsin." % q.title)
+	else:
+		_takip(a)
+	_pencere_yaz()
+
+func _birak_dugme(a: Dictionary) -> void:
+	if birak_onay != a.id:
+		birak_onay = a.id
+		_pencere_yaz()
+		return
+	birak_onay = ""
+	if a == A: iptal("Yan görevi bıraktın")
+	else:
+		var q: Dictionary = BY[a.id]
+		ACT.erase(a)
+		env.mesaj("Yan görevi bıraktın: %s. Yeniden almak için %s ile konuş." % [q.title, q.name])
+	_pencere_yaz()
 
 # ------------------------------------------------------------------ kayıt
 func kayit() -> Dictionary:

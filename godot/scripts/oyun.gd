@@ -899,7 +899,7 @@ func _hud() -> void:
 	_golge(silah_yazi)
 	kutu.add_child(silah_yazi)
 	var yardim := Label.new()
-	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · Sağ tık ya da E: savuştur (basılı: gard) · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · Y: yetenekler · 1–5: kemer · G: deneme (aletler ve 100 Vio)\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · LT savuştur · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
+	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · Sağ tık ya da E: savuştur (basılı: gard) · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · Y: yetenekler · 1–5: kemer · G: görevler · C: karakter · N: inşa · B: bin\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · LT savuştur · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
 	yardim.add_theme_font_size_override("font_size", 12)
 	_golge(yardim)
 	yardim.add_theme_font_size_override("font_size", 11)
@@ -928,7 +928,7 @@ func sk(id: String) -> bool:
 	return yetenekler.has(id)
 
 func pencere_acik() -> bool:
-	return (ev != null and ev.acik) or (evcil != null and evcil.acik()) or (atolye != null and atolye.visible) or (sinan != null and sinan.visible) or (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
+	return (ev != null and ev.acik) or (evcil != null and evcil.acik()) or (yan != null and yan.acik()) or (atolye != null and atolye.visible) or (sinan != null and sinan.visible) or (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
 
 func can_guncelle(hp: float, mx: float) -> void:
 	can_cubugu.max_value = mx
