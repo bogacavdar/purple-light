@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.52 · 26 Kasım 2026
+
+### Proje
+- **Godot, Adım 1f-3a (giriş sahnesi ve uyanış) oynanabilir:** yeni oyun artık web'deki giriş sahnesiyle açılıyor: gün batımında gemide yemek, mor ışık, gemi batıyor, "Tut elimi!", su altında sevdiğin kişi uzaklaşıyor. Sahnede yaratıcıda seçtiğin iki karakter oynuyor; "Geç" ile atlanabiliyor. Sonra ACT 1 kartı, kumsalda uyanış, Kemal'in gelişi ve konuşması, senin ve sevdiğin kişinin adı. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.51 · 25 Kasım 2026
 
 ### Proje
@@ -212,18 +219,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Tasarım belgesi
 - ACT 1 › Kayalık Dağ (canlılar, test notu, kural 6–7 ve 10), Canavarlar › Reisler, Mağaralar › Rüzgâr Mağarası (Sv 24, Dağ Devi, halat yolları), Yan görevler (açılış sırası, Yahya, Bora), Tarifler, Aletler (Kayalık Dağ'ın emeği), Eşyalar, Kişiler (kuzen silah tablosu, Doğan), Sistemler (Önce ağıl, Güçlüden çekinme, Ekonomi).
 - Eşyalar listesindeki silah hasarı oyunla eşitlendi: Gümüş kılıç 52, Ametist kılıcı 81, Kuvars mızrak 46, Ejder kılıcı 65, Granit savaş çekici 28, Obsidyen mızrak 72, Çakmaktaşı mızrak 17.
-
----
-
-## Versiyon 4.32 · 21 Kasım 2026
-
-### Görsel
-- **Karakterler baştan, iki ana karakterle:** oyuncu ve sevdiği kişi artık iki temel çizimden oluşuyor, bir erkek ve bir kadın. İkisi de gerçekçi oranlı (büyük kafalı değil) ve 8 yönde aynı kişi: ComfyUI'de tek resimden çizilip video modeliyle olduğu yerde döndürüldü, boy, kafa ve kıyafet her yönde aynı.
-- **Adım atarak yürüyüş:** her yönde 4 adım karesi; gövde zıplamaz, bacaklar adımlar.
-- **Giyilenler üstüne:** elbise, saç biçimi (at kuyruğu, örgü, topuz, iki kuyruk, uzun, dikleştirilmiş, dağınık, yana taranmış, kel), bıyık, sakal, buff, gözlük, şapka ve toka bu iki karakterin üstüne giyiliyor. Ten, saç, üst, alt ve göz rengi seçtiğin renkte.
-
-### Tasarım belgesi
-- Sistemler › Yeni ikonlarla › "Oyuncunun karakteri": iki temel çizim, gerçekçi oran, giydirilen katmanlar.
 
 ---
 

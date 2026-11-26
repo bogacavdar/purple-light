@@ -1,3 +1,7 @@
+## v4.52 (26 Kasım 2026) · Godot Adım 1f-3a (giriş sahnesi ve uyanış)
+- `godot-deneme/` yeni derleme (godot dalı: cine.gd web cineShip/cineSea çiziminin GDScript'i, uyanis.gd; data/ates.json'a uyanış yeri ve Kemal'in geliş yeri). Belge 99_godot 1f-3 satırı 1f-3a/1f-3b'ye bölündü. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.51 (25 Kasım 2026) · Godot Adım 1f-2 (karakter yaratma)
 - `godot-deneme/` yeni derleme (godot dalı: karakter.gd web sheet() kuralının GDScript'i, yaratici.gd; tools/disa_aktar_kahraman.js web HD çizimlerini ve CC/HS/EYES seçeneklerini kaynaktan döker). Belge 99_godot 1f-2 satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -97,11 +101,4 @@
 - **Belge:** Analist'in parts değişiklikleri + 90_esyalar silah hasarı (7 satır, oyunla eşit), 36 açılış sayısı ("ayak işleri sayılmaz"; kod `S.d` ayak işlerini tutmuyor), 37 halat satırına F önceliği ve telefon.
 - Kontrol: chk.js 0 hata (?. 1, ?? 7); Playwright ile Testçi'nin Kül öncesi kaydında: S1 (CB6 bitmiş sayılınca Firuze'nin işi), CB6 kartı, halat alma/kayma, F önce yerdeki eşya, `ebtn` ile kayma, yan görev Muflon'unun saldırısı.
 - Geri alma: `git revert` bu commit (belge ve kod birlikte). Yalnız halatlar: `v433halat` bloğunu ve v230'daki Tuncay satırlarını sil; eski kayıtlardaki `halat` alanı okunmadan kalır.
-
-## v4.32 (21 Kasım 2026) · İki temel karakter (erkek, kadın), gerçekçi oran, 8 yön aynı kişi; saç/elbise/aksesuar üstüne giydirilir
-- `v428kahraman` bloğu yeniden yazıldı (aynı id). `HD.e`/`HD.k` = {CW, CH (54), c, m, A}; tek sayfa, satırlar `S,SE,E,NE,N,NW,W,SW` (sağa bakanlar kendi çizimi), sütun 0 duruş, 1–4 adım. Maske R=bölüm×30 (1 ten, 2 saç, 3 üst, 4 alt, 6 göz). `A[yön]`: sk, l, r, ey, ex, my, ch, nk, fl/fr/fx (elle ölçüldü, sağa bakanlarda aynalı koordinat, `mir:1`), hp (kalça), bl/br (kalçada gövde eni), hy, span.
-- Giydirme `acc()`: elbise (hp−2…hp+10 etek, bacaklar ten), saç biçimi ekleri `hair()`, bıyık, sakal, buff, gözlük, şapka, toka; yön başına bir katman çizilip 5 kareye basılır, `mir` satırlarına aynalı. Kel: saç bölümü ten rengine boyanır. Kadında Kısa/Küt/Uzun temel saç.
-- UI tuvalleri: `cprev` 54×54, `pfchar` 48×60, `ieqc` 44×56, `dollc`/`ardoll` 48×60; konuşma resmi başın 12×13 bölgesi 2×.
-- Üretim: ComfyUI Z-Image Turbo + piksel LoRA ile önden temel resim (erkek `base_e_00002`, kadın `base_k_00003`); Wan 2.2 TI2V 5B ile 360° döndürme (81 kare), yön kareleri seçildi (erkeğin arka/arka-çaprazı kolları yanda kalan ayrı döndürmeden). Yürüme kareleri yüksek çözünürlükte bacakların kalçadan eğilmesi/kaldırılmasıyla, sonra kutu küçültme + ortak 20 renk. Bölümler (ten, saç, üst, alt, bot) yüksek çözünürlükte renk + konumla ayrıldı. Araçlar oturum içi (/tmp/hero/build5.py, walkhr.py, lab.py), depoya girmedi.
-- Geri alma: `git revert` bu commit.
 
