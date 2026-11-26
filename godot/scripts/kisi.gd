@@ -53,6 +53,9 @@ func _process(dt: float) -> void:
 	if K.k == "denizci":
 		visible = oyun.kuzen.dz_burada()
 		if not visible: return
+	if K.k == "trader":
+		visible = oyun.poyraz != null and oyun.poyraz.ac()
+		if not visible: return
 	if K.k == "k_ekin":
 		visible = oyun.ciftlik != null and oyun.ciftlik.ekin_gorunur()
 		if not visible: return

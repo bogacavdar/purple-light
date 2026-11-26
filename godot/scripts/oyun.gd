@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · O3b"
+const SURUM := "Godot · O4"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -89,6 +89,7 @@ var camur_dedi := false
 var evcil                   # evcil hayvanlar ve Çoban Davut (evcil.gd)
 var ev                      # evin içi ve Döşe (ev_ici.gd)
 var enkaz: Node2D           # Barbaros'un gemisinin enkazı (kuzen.gd çizer)
+var poyraz                  # Gemici Poyraz ve deniz (poyraz.gd)
 var ciftlik                 # Çiftçi Ekin ve Bereket Adası (ciftlik.gd)
 var balik                   # balık tutma, tuzaklar, gece buluntuları (balik.gd)
 var insa                    # İnşa kipi: zemin, çit, duvar, kapı, fener (insa.gd)
@@ -184,6 +185,9 @@ func _ready() -> void:
 	ciftlik = preload("res://scripts/ciftlik.gd").new()
 	add_child(ciftlik)
 	ciftlik.kur(self)
+	poyraz = preload("res://scripts/poyraz.gd").new()
+	add_child(poyraz)
+	poyraz.kur(self)
 	kopru = preload("res://scripts/kopru.gd").new()
 	add_child(kopru)
 	kopru.kur(self)
@@ -274,6 +278,7 @@ func _ready() -> void:
 		if q.contains("yantest_"): _yan_test.call_deferred(RegEx.create_from_string("yantest_([a-z]+)").search(q).get_string(1))
 		if q.contains("ekintest"): _ekin_test.call_deferred()
 		if q.contains("adatest"): _ada_test.call_deferred(q)
+		if q.contains("denizt"): _deniz_test.call_deferred()
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -510,6 +515,8 @@ func engel(p: Vector2, half: float = 5.0, canli := false) -> bool:
 		if magara.kapi_engel(p):
 			return true
 	if ciftlik != null and ciftlik.engel(p, half):
+		return true
+	if poyraz != null and poyraz.engel(p):
 		return true
 	for d in [Vector2(-half, -half), Vector2(half, -half), Vector2(-half, half), Vector2(half, half)]:
 		if su_mu(tile_at(p + d)) and not (kopru != null and kopru.ustunde(p + d)):
@@ -825,6 +832,38 @@ func _ada_test(q: String) -> void:
 	print("ADA kuyu ", ciftlik.etkiles())
 	if q.contains("gece"): zaman.dk = 1320.0
 	oyuncu.position = ciftlik.P(0, 2)
+
+func _deniz_test() -> void:
+	oyuncu.dokunulmaz = 9999.0
+	while env.sv < 3: env.xp_ekle(200)
+	env.ekle("Olta")
+	poyraz.gun_d = zaman.gun
+	await get_tree().create_timer(1.5).timeout
+	while konusma.visible:
+		konusma._cik()
+		await get_tree().create_timer(0.3).timeout
+	print("DENIZ ph ", poyraz.ph, " D ", poyraz.gun_d)
+	var pz = gorev.kisi("trader")
+	oyuncu.position = pz.position + Vector2(0, 14)
+	await get_tree().create_timer(0.5).timeout
+	if konusma.visible: konusma._cik()
+	konus_ya_da_istasyon(); print("DENIZ konus ", konusma.yazi.text.substr(0, 40)); konusma._cik()
+	for id in ["G1", "G2", "G3", "G4"]: gorev.bitenler.append(id)
+	await get_tree().create_timer(2.5).timeout
+	print("DENIZ ph ", poyraz.ph, " ", konusma.yazi.text.substr(0, 30))
+	if konusma.visible: konusma._cik()
+	poyraz.harita_ac()
+	await get_tree().create_timer(0.5).timeout
+	poyraz._bolge_sec(poyraz.ZONES[0])
+	print("DENIZ denizde ", poyraz.denizde, " paused ", get_tree().paused, " G5 acik ", gorev.acik(gorev.QI["G5"]))
+	for i in 400:
+		await get_tree().create_timer(0.1).timeout
+		var f = poyraz.f
+		if f == null: poyraz.bas()
+		elif f.st == "bite" and f.t > 0.3: poyraz.bas()
+		elif f.st == "reel" and f.pos > f.z0 + 0.02 and f.pos < f.z1 - 0.02: poyraz.bas()
+		if poyraz.caught.size() >= 2 and i > 100: break
+	print("DENIZ tutulan ", poyraz.caught, " log ", poyraz.log_)
 
 func _dz_test() -> void:
 	await get_tree().create_timer(2.0).timeout
@@ -1188,6 +1227,8 @@ func _kisiler() -> void:
 		tum.append_array(kb.kisiler)
 		kisi_veri.istasyonlar.append_array(kb.istasyonlar)
 	tum.append(_json("res://data/evcil.json").davut)
+	var PZ: Dictionary = _json("res://data/poyraz.json").koy
+	tum.append({k = "trader", ad = "Gemici Poyraz", x = PZ.x, y = PZ.y, rol = "pz", resim = {f = "res://art/kisiler/kisi_poyraz_f.png", q = "res://art/kisiler/kisi_poyraz_q.png"}, portre = "res://art/kisiler/portre_poyraz.png"})
 	for yq in _json("res://data/yan.json").yan:
 		if yq.id == "ekin1": tum.append({k = "k_ekin", ad = yq.name, x = yq.x, y = yq.y, rol = "ek", resim = {f = yq.resim_f, q = yq.resim_q}, portre = yq.portre})
 	for st in kisi_veri.istasyonlar:
@@ -1637,7 +1678,7 @@ func durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 func gorunus_uygula(L: Dictionary) -> void:
@@ -1724,6 +1765,7 @@ func durum_yukle(d: Dictionary) -> void:
 	gecit.yukle(d.get("gecit", false))
 	balik.yukle(d.get("balik", {}))
 	ciftlik.yukle(d.get("ciftlik", {}), kuzen.tanis.has("ekin_gitti"))
+	poyraz.yukle(d.get("poyraz", {}))
 	iz.yukle(d.get("izler", []))
 	yan.yukle(d.get("yan", {}))
 	camur_dedi = bool(d.get("camur_dedi", false))

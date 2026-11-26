@@ -58,6 +58,7 @@ func kur(o) -> void:
 		Q.append_array(o._json("res://data/gorevler_%s.json" % bf).gorevler)
 	Q.append_array(o._json("res://data/evcil.json").gorevler)
 	Q.append_array(o._json("res://data/ekin.json").gorevler)
+	Q.append_array(o._json("res://data/poyraz.json").gorevler)
 	V.GB["k_davut"] = 0
 	V.GB["k_ekin"] = 0
 	for i in Q.size():
@@ -156,6 +157,8 @@ func kosul(r: Array) -> bool:
 	match str(r[0]):
 		"q": return bitti(r[1])
 		"ekin": return oyun.ciftlik.st == "home"
+		"nuri": return oyun.poyraz != null and oyun.poyraz.ph >= 1
+		"sea": return oyun.poyraz != null and oyun.poyraz.bolge_ok(oyun.poyraz.ZONES[int(r[1]) - 1])
 		"lv": return env.sv >= int(r[1])
 		"bio": return biyomlar.has(int(r[1]))
 		"has":
@@ -306,6 +309,9 @@ func hedef() -> Dictionary:
 		match str(p[0]):
 			"b", "h", "any":
 				var nm: String = p[1] if p[0] != "any" else p[1][0]
+				var dz = oyun.poyraz.bolge_of(nm) if p[0] == "b" and oyun.poyraz != null else null
+				if dz != null and oyun.poyraz.ph >= 2:
+					return {kisi = kisi("trader"), ad = "Gemici Poyraz · denize açıl: " + str(dz.n)}
 				var tt := eksik_hedef(nm, int(p[2]) if p[0] != "any" else 1)
 				if not tt.is_empty():
 					return tt

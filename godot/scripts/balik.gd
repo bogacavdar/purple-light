@@ -8,11 +8,11 @@ var oyun
 var env
 const FISHT := {
 	0: {"sea": [["Tatlısu kefali", 30], ["Çapak", 26], ["Sazan", 22], ["Kızılkanat", 12], ["Mersin balığı", 3]],
-		"river": [["Alabalık", 28], ["Kızılkanat", 20], ["Tatlısu levreği", 20], ["Çapak", 16], ["Sazan", 14]]},
+		"river": [["Alabalık", 28], ["Kızılkanat", 20], ["Tatlısu levreği", 20], ["Çapak", 16], ["Sazan", 14], ["Tatlısu kefali", 12]]},
 	1: {"any": [["Yayın", 24], ["Turna balığı", 18], ["Kadife balığı", 24], ["Kerevit eti", 22], ["Sazan", 10]]},
 	2: {"any": [["Mersin balığı", 22], ["Yayın", 30], ["Turna balığı", 22], ["Kadife balığı", 14]]}}
 const FISH_HARD := {"Mersin balığı": 1.7, "Turna balığı": 1.35, "Yayın": 1.25, "Alabalık": 1.15, "Tatlısu levreği": 1.1}
-const FISH_W := {"Ağ": 0.31, "Olta": 0.27, "Kemik zıpkın": 0.23}
+const FISH_W := {"Ağ": 0.31, "Olta": 0.27, "Kemik zıpkın": 0.23, "Deniz oltası": 0.29, "Makaralı olta": 0.31, "Derin su oltası": 0.33, "Fırtına oltası": 0.35, "Yıldız oltası": 0.37}
 const BALIKLAR := ["Tatlısu kefali", "Çapak", "Sazan", "Kızılkanat", "Mersin balığı", "Alabalık", "Tatlısu levreği", "Yayın", "Turna balığı", "Kadife balığı", "Kerevit eti"]
 const TRAP_MAX := 6
 
@@ -190,7 +190,7 @@ func _basla(w: Vector2) -> void:
 		env.mesaj("Saldırı altındasın: önce kurtul!", true)
 		return
 	if oyun.tile_at(w) == 4:
-		env.mesaj("Kıyıdan açık denize olta yetmez; nehirleri ve gölleri dene.", true)
+		env.mesaj("Bu derin suda kıyıdan balık tutulmaz. Poyraz'ın teknesiyle denize açıl." if oyun.poyraz.ph >= 2 else "Kıyıdan açık denize olta yetmez; nehirleri ve gölleri dene.", true)
 		return
 	fish = {st = "wait", t = 0.0, need = (2.0 + randf() * 4.0) * (1.15 if oyun.zaman.gece_mi() else 1.0), p = w, tool = tool, from = oyun.oyuncu.position, catch = _roll(w), miss = 0, pos = 0.0, dir = 1.0, z0 = 0.0, z1 = 0.0, spd = 0.0}
 	for k in 6: oyun.parca(w, Vector2(randf_range(-20, 20), -15 - randf() * 15), 0.4, Color("#cfe8ff"))
