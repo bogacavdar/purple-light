@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.79 · 26 Kasım 2026
+
+### Proje
+- **Godot: Kül Diyarı ve Mor Kristal Vadisi'nin yan görevleri:**
+  - Kül Diyarı'nda Çırak Çelik, Katırcı Ömer, Yangıncı Kor Ali, Külcü Hasret, Nar ve Duman Dede'nin görevleri geldi.
+  - Mor Kristal Vadisi'nde Melodi, Kristalci Yaren, Asena, Balıkçı Selim, Lostromo Rıza ve Fenerci Işık'ın görevleri geldi.
+  - Böylece web'deki 36 yan görevin hepsi Godot'ta.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.78 · 26 Kasım 2026
 
 ### Proje
@@ -217,16 +228,4 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Kuzenlerle web'deki gibi tanışılıyor ("Dursun? Örsünü buraya mı taşıdın?"). Durdu ve Duran tanışınca imza silah ve zırhlarının tarifini kitaba yazıyor.
   - Örsler artık kademeyle dövüyor: Dursun ve Durmuş Çayır kademesini, Durdu ve Duran Orman'a kadarını. Örs, dövemediği tarifleri kimin dövebileceğini söylüyor.
   - Yakut, Durdu, Duran, Fidan ve Sinan'ın görevleri geldi. Sinan'ın yapı ve ev isteyen görevleri inşa gelince açılacak.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.59 · 26 Kasım 2026
-
-### Proje
-- **Godot: Orman canlıları (Adım 2 başladı):**
-  - Orman'da sincap, karaca, kunduz, yaban domuzu (gece), dikenli kirpi, engerek ve oklu kirpi dolaşıyor.
-  - Kirpiler diken, engerek zehir atıyor. Atışlardan yana atılarak kaçılıyor; savuşturma onları geri çeviriyor.
-  - Zehir ve kanama bir süre can yakıyor; sol üstte kalan süresi görünüyor.
-  - Orman canlılarının resimleri şimdilik web'deki çizimler.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
