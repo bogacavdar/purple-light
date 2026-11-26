@@ -1,3 +1,7 @@
+## v4.85 (26 Kasım 2026) · Godot O5: Yıldızsız Gezgin ve robot köpekler
+- `godot-deneme/` yeni derleme (godot dalı: yeni gezgin.gd (Gezgin'in gelişi, konuşması, hediye, mor sinyal, köpek ısmarlama ve ışık sütunu, köpeklerin toplama/taşıma/teslimi, köpekler menüsü, kayıt `gezgin`); girdi.gd R = kopek; oyun.gd F'de Gezgin, pencere_acik, yardım satırı). Denetim: ?kopektest. Belge 99_godot O5 satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.84 (26 Kasım 2026) · Poyraz'ın koyu düzeltmesi; Godot O4: Gemici Poyraz ve deniz
 - Web: `v234` bloğunda findCove artık Bereket Adası'nı (`__plFarm.onIs`) atlıyor; koy kaydedilmediği için eski kayıtlarda kendiliğinden düzelir. Belge 38_nuri_deniz › Kaza.
 - `godot-deneme/` yeni derleme (godot dalı: yeni poyraz.gd (kaza, onarım, konuşma, deniz haritası, deniz ekranı, kayıt `poyraz`); yeni tools/disa_aktar_poyraz.js → data/poyraz.json koy + G1–G10, Poyraz resimleri; gorev.gd nuri/sea koşulları, deniz balığı için ok Poyraz'a; balik.gd kefali, deniz oltalarının yeşil alanı; kuzen/kisi/oyun bağlantıları). Denetim: ?denizt. Belge 99_godot O4 satırı.
@@ -73,9 +77,5 @@
 
 ## v4.66 (26 Kasım 2026) · Godot 2e: Ev içi ve Döşe
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_ev.js → data/ev.json, art/ev; yeni ev_ici.gd; yapi.gd evde F içeri girer, kayıtta oda; oyun.gd pencere_acik'e ev, ?evtest / ?evtest_gece; canli/atis içerideyken durur; zaman içerideyken mor ışık yok; insa evdeyken açılmaz). Belge 99_godot 2e satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.65 (26 Kasım 2026) · Godot 2d-4: Kırma, onarım ve avlu
-- `godot-deneme/` yeni derleme (godot dalı: insa.gd HP/kirik, çatlak çizimi, carpti/vur/onar/arada, avlu_hesapla/avluda, kayıtta hasar; canli.gd takılınca insa.carpti, duvar arkasından ısırmaz; oyun.gd F'de onar, avluda doğma yok ve içeride kalan canlı silinir). Denetim: ?insatest_kirtest (konsolda KIRTEST). Belge 99_godot 2d-4 satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

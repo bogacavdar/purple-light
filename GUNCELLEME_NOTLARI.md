@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.85 · 26 Kasım 2026
+
+### Proje
+- **Godot: Yıldızsız Gezgin ve robot köpekler:**
+  - 5. gün Yıldızsız Gezgin yanında belirir ve sana bir robot köpek hediye eder.
+  - R ile köpekler menüsü açılır. Köpeğe ne toplayacağını seçersin; topladığını sırtında taşır, dolunca sana getirir. Yanına çağırabilir, sevebilirsin.
+  - 20. günden sonra Gezgin yine gelir ve mor sinyali verir. Menüden Vio'yla köpek ısmarlarsın (en çok 5); köpek mor bir ışık sütunuyla iner.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.84 · 26 Kasım 2026
 
 ### Düzeltmeler
@@ -217,19 +228,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - İçeride WASD ile ya da tıklayarak yürüyorsun. Kapıdan, "Dışarı çık" düğmesiyle ya da kapının önünde F ile dışarı çıkıyorsun. İçerideyken hayvanlar duruyor, mor ışık sana zarar vermiyor.
   - "Döşe" ile çantandaki ev eşyalarını (yatak, lamba, masa, halı, perde, resim…) odaya koyuyorsun. R döndürüyor; yerleşik bir eşyaya tıklayınca taşıyabilir, geri alabilir ya da döndürebilirsin. Halı yerde kalıyor, perde ve resim duvara asılıyor.
   - Yatağın yanında F ile gece uyuyorsun. Gece lamba yoksa oda kararıyor ve pencereden mor ışık sızıyor; lamba yakınını aydınlatıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.65 · 26 Kasım 2026
-
-### Proje
-- **Godot: kırma, onarım ve avlu:**
-  - Seni kovalayan hayvan önündeki çite ya da duvara vuruyor. Zayıf hayvanlar hiçbir şeyi kıramıyor; kurt, geyik gibi orta güçtekiler tahtayı, ayı ve timsah gibi güçlüler taşı da kırıyor.
-  - Hasar aldıkça parçada çatlaklar beliriyor; kırılınca yıkıntı kalıyor, içinden geçilebiliyor ve 1 malzeme düşüyor ("Çit kırıldı").
-  - Yanına gidip F'ye basınca onarılıyor (tahta 1 Dal, taş 1 Taş). İnşa kipinde sağ tık yıkıntıyı kaldırıp 1 malzeme daha veriyor.
-  - Duvarın öbür yanındaki hayvan seni ısıramıyor.
-  - Çit, taş duvar ya da kapıyla tamamen çevirdiğin alan avlu oluyor: içinde hayvan doğmuyor, içeride kalan hayvan gidiyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
