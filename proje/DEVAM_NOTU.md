@@ -1,3 +1,7 @@
+## v5.02 (27 Kasım 2026) · Godot S2d: dövüş dersleri ve ulti
+- `godot-deneme/` yeni derleme (godot dalı: yeni dovus.gd (7 ders, alıştırma canavarı, ders kutusu, ulti çubuğu, 10 ulti; kayıt `dovus {ult, od}`, öğrenilen `kuzen.tanis["ders_<tür>"]`); ozel.gd derste hamle açık, isabet bildirimi; oyuncu.gd ulti kazancı; gezgin.gd R ulti doluyken köpekleri açmaz; oyun.gd Börü'de "Dövüş dersleri"). Denetim: ?derstest. Belge 99_godot S2d satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıttaki `dovus` alanı okunmadan kalır).
+
 ## v5.01 (27 Kasım 2026) · Godot S2c: özel vuruşlar
 - `godot-deneme/` yeni derleme (godot dalı: yeni ozel.gd (girişler, ritim penceresi, basılı tutma halkası, 10 silah grubunun 60 hamlesi, şekiller arc/circ/line/krater); oyuncu.gd vuruş girişi ozel.bas/birak'a; oyun.gd `ult` ve ult_ekle). Kilit `kuzen.tanis["ders_<tür>"]` ya da ACT 2. Denetim: ?ozeltest. Belge 99_godot S2c ve S2d satırları. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).
@@ -73,9 +77,5 @@
 
 ## v4.83 (26 Kasım 2026) · Godot O3b: Bereket Adası ve tarla
 - `godot-deneme/` yeni derleme (godot dalı: yeni ciftlik.gd (Ekin'in durumu, olay, kayık, ada yerleri ve çizimi, tarla, fidan, dükkân, kayıt `ciftlik`); yeni tools/disa_aktar_ciftlik.js → data/ciftlik.json + 21 eşya resmi; kuzen.gd'deki Ekin konuşması ciftlik.gd'ye taşındı; gorev.gd ekin koşulu ve fidan; oyun.gd engel, kayıt; toplama.gd F; zaman.gd adada ışık). Eski kayıttaki `ekin_gitti` okunur. Denetim: ?adatest. Belge 99_godot O3b satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.82 (26 Kasım 2026) · Godot O3a: Çiftçi Ekin, Çayır'da
-- `godot-deneme/` yeni derleme (godot dalı: yeni tools/disa_aktar_ekin.js → data/ekin.json EK1–EK8; disa_aktar_yan.js ekin1'i main bayrağıyla alır; yan.gd main görevlerin adımlarını yürütür (_ana_adimlar, ana_yazi); gorev.gd sq'de yan görev, k_ekin; kuzen.gd _ekin, ekin_cayirda; kisi.gd Ekin ayrılınca gizli). Denetim: ?ekintest. Belge 99_godot O3a satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et.
 

@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.02 · 27 Kasım 2026
+
+### Proje
+- **Godot: Börü'nün dövüş dersleri ve Ulti:**
+  - Börü'yle konuşunca "Dövüş dersleri": yedi ders, her biri bir alıştırma canavarıyla. Ders bitince hamle senin oluyor.
+  - Ulti çubuğu geldi; dolunca R ile her silahın kendi ultisi. Ulti sırasında hasar almıyorsun.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.01 · 27 Kasım 2026
 
 ### Proje
@@ -220,17 +230,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Barbaros'un yanındaki kayıkla Bereket Adası'na gidip gelirsin. Adada Ekin'in evi, ambarı, kuyusu, tavukları ve tarlası var; canavar ve mor ışık yok.
   - Tarla: tırmıkla hazırla, tohum ek, sulama kabıyla sula, olgunlaşınca tırpanla biç. Fidanlar üç günde meyve ağacı olur.
   - Ekin tohum ve fidan satar; adadaki yedi görevi de geldi.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.82 · 26 Kasım 2026
-
-### Proje
-- **Godot: Çiftçi Ekin, Çayır'da:**
-  - Ekin Çayır'da tanışılır ve ilk görevini verir: Kaybolan korkuluk.
-  - Saman izlerini takip edersin, korkuluğu yürüten aç kirpiye bir elma bırakırsın, Ekin'e dönersin.
-  - Görev bitince Ekin adasına dönmek için Çayır'dan ayrılır. Bereket Adası ve tarla sonra gelecek.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
