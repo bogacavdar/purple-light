@@ -1,3 +1,7 @@
+## v4.91 (27 Kasım 2026) · Godot A3: Efsun, mana ve asalar, ikinci adanın köprüleri
+- `godot-deneme/` yeni derleme (godot dalı: yeni buyu.gd (mana, mana çubuğu, STAFF, büyü atışları, dondurma, zincir; kayıt `buyu {m, a}`); act2.gd Efsun (şapka, mor ateş, konuşma, asa/iksir yapımı, pv ödülleri → el_yapimi.verilen); canli.gd `donuk`; oyuncu.gd vur → asa varsa büyü; envanter.gd Mana iksiri → +60 mana; kopru.gd BR2 ve ikinci adada görevsiz onarım; gecit.gd PS2 ve görevsiz patlatma; gorev.gd ACT 2 kartı ve oku Efsun'a). Denetim: ?ada2test_efsun, ?ada2test_kopru2. Belge 99_godot A3 satırı (A5 satırından sıradağ çıktı). Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıttaki `buyu` alanı okunmadan kalır).
+
 ## v4.90 (27 Kasım 2026) · Godot A2: Yüzen Kayalar ve Gökbilimci Yıldız
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_canli.js ADA=2 → data/ada2/canlilar_0…5.json + art/canli_*.png (web __I2C.anim + NEWN); yeni tools/disa_aktar_act2.js → data/ada2/ustalar.json (altı ACT 2 ustasının yeri, çizimi, konuşma resmi, NQ görevleri Godot biçiminde) + art/kisiler/kisi_{gok,pervin,tamer,selin,alara,tuna}_*.png; yeni act2.gd (Yıldız, teleskop, konuşma); oyun.gd ikinci adada canlı listesi ve Yıldız + kazan (Yıldız +42,+8); gorev.gd "gun" adımı, "met" koşulu, `nq` işaretli işler (malzeme/tarif şartı yok, ayak işine girmez), tanışılmamış Yıldız'a ok; kuzen.gd "gk" rolü; istasyon.gd "Yıldız'ın kazanı"). Denetim: ?ada2test_yildiz. Belge 99_godot A2 satırı, yeni "Anılar" satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok; tanis["gok"] ve bitenler'deki gk1–gk3 zararsız kalır).
@@ -73,9 +77,5 @@
 
 ## v4.72 (26 Kasım 2026) · Godot 3e: Kök Mağarası ve Batık Mağara
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_magara2.js → data/magara_c1.json, data/magara_c2.json, art/magara/c1_*, c2_*; magara.gd birden çok mağara: MAGS, cur, mağara başına durum; kayıtta magaralar; insa.gd bütün mağara girişleri). Denetim: ?mag_c1, ?mag_c2_dip. Belge 99_godot 3e satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.71 (26 Kasım 2026) · Godot 3d: Eşinden kalan izler
-- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_iz.js → data/izler.json; yeni iz.gd; oyun.gd F'de iz, kayıtta izler; gorev.gd clues; el_yapimi.gd kitapta İzler düğmesi). Denetim: ?iztest. Belge 99_godot 3d satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

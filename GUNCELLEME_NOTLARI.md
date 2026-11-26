@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.91 · 27 Kasım 2026
+
+### Proje
+- **Godot: Dev Mantar Ormanı ve Büyücü Efsun:**
+  - Efsun, Dev Mantar Ormanı'nda mor ateşinin başında. Onunla tanışınca mor mana açılıyor (ikinci adada hep açık); mor çubuk can ve enerjinin altında.
+  - Efsun'un işleri, Mana iksiri ve üç asa geldi. Ateş asası ateş topu atıyor, Buz asası donduruyor, Yıldırım asası üç yaratığa zincirleniyor. Asa elindeyken vuruş tuşu büyü atar.
+  - İkinci adanın nehrindeki üç köprü 20 odunla onarılıyor; sıradağ geçidindeki kaya yığını patlatıcıyla açılıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.90 · 27 Kasım 2026
 
 ### Proje
@@ -219,16 +230,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Orman'da Kök Mağarası (Seviye 10): kök böcekleri, kök yılanları, mağara kurtları. Dipteki Kökçü Fidan 3 kök reçinesi istiyor ve Yaşlı Kök'ü uyandırıyor.
   - Bataklık'ta Batık Mağara (Seviye 18): sülükler, balçık kurbağaları, batak semenderleri. Dipteki Sazcı Nail 4 parıltı yosunu istiyor ve Çamur Ana'yı çağırıyor.
   - İkisinde de web'deki gibi girişte seviye ve yanan meşale şartı, karanlık, kendi haritası, yan görev kartı ve boss ödülü var.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.71 · 26 Kasım 2026
-
-### Proje
-- **Godot: eşinden kalan izler:**
-  - Adada altı mor parıltı var: ikisi yurtta, ikisi Bataklık'ta, ikisi Kül Diyarı'nda. Yanına gidip F'ye basınca izi okuyorsun.
-  - Tarif kitabındaki (K) "İzler" düğmesi bulduğun izleri gösteriyor. Kemal'in "Eşinden kalan izler" görevi bunları sayıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
