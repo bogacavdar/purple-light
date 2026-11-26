@@ -121,15 +121,19 @@ func _git(v: Vector2, dt: float) -> void:
 	var land: Array = D.get("landTiles", [0.0, 1.0, 2.0])
 	if oyun.insa.dal_cit(position): v *= 0.35
 	var nx := position + Vector2(v.x * dt, 0)
+	var takildi := false
 	if not oyun.engel(nx, 5.0, true) and land.has(float(oyun.tile_at(nx))):
 		position.x = nx.x
 	else:
 		t = 0.0
+		takildi = v.x != 0.0
 	var ny := position + Vector2(0, v.y * dt)
 	if not oyun.engel(ny, 5.0, true) and land.has(float(oyun.tile_at(ny))):
 		position.y = ny.y
 	else:
 		t = 0.0
+		takildi = takildi or v.y != 0.0
+	if takildi and mad: oyun.insa.carpti(self, v)
 	if v.x != 0.0:
 		face = 1 if v.x > 0 else -1
 
@@ -217,7 +221,7 @@ func _process(dt: float) -> void:
 				_git(lunge.v, dt)
 				moving = true
 				if P.position.distance_to(position) < float(D.r) + 9.0:
-					if not lunge.hit:
+					if not lunge.hit and not oyun.insa.arada(position, P.position):
 						lunge.hit = true
 						P.isirildi(int(round(float(D.dmg) * float(MUL[renk]))), position, self, renk)
 						if D.get("fx", null) != null and P.hp > 0.0 and P.dokunulmaz > 0.5: P.etki_ekle(str(D.fx[0]), float(D.fx[1]), float(D.fx[2]))

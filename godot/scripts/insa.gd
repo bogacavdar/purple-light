@@ -17,6 +17,11 @@ var BYK := [{}, {}]          # g → k → parça adı
 var G0 := {}                 # Vector2i → zemin türü (k)
 var G1 := {}                 # Vector2i → {k, turn}
 var LAMBA := {}              # Vector2i → {f, on, isik}
+var HP := {}                 # hasarlı parçalar: Vector2i → kalan can
+var AVLU := {}               # çevrili karolar (web YARD)
+const ORTA := ["Geyik", "Yaban atı", "Kurt", "Karaca", "Yaban domuzu", "Bataklık kurdu", "Dağ keçisi", "Muflon", "Vaşak", "Kül kurdu", "Ateş akrebi", "Işık tilkisi", "Gölge kurdu", "Kristal geyik", "Mağara kurdu", "Mağara vaşağı"]
+const GUCLU := ["Timsah", "Yaban öküzü", "Mağara ayısı", "Kara ejder", "Kristal golem"]
+const CATLAK := [[4, 9, 8, 14], [11, 12, 9, 18], [6, 17, 3, 21]]
 var acik := false
 var sec := ""
 var dondur := false
@@ -57,7 +62,7 @@ static func karo(p: Vector2) -> Vector2i:
 	return Vector2i(int(floor(p.x / T)), int(floor(p.y / T)))
 
 func _katı(c: Vector2i, canli: bool) -> bool:
-	if not G1.has(c): return false
+	if not G1.has(c) or G1[c].get("kirik", false): return false
 	var k: int = int(G1[c].k)
 	if k == 1: return false
 	if k == 4: return canli
@@ -92,7 +97,7 @@ func _maske(c: Vector2i) -> int:
 	var f := func(q: Vector2i) -> bool:
 		if not G1.has(q): return false
 		var k: int = int(G1[q].k)
-		return k >= 1 and k <= 4
+		return k >= 1 and k <= 4 and not G1[q].get("kirik", false)
 	return (1 if f.call(c + Vector2i(0, -1)) else 0) | (2 if f.call(c + Vector2i(1, 0)) else 0) | (4 if f.call(c + Vector2i(0, 1)) else 0) | (8 if f.call(c + Vector2i(-1, 0)) else 0)
 
 func sayi0() -> int: return G0.size()
@@ -112,6 +117,7 @@ func _zemin_ciz() -> void:
 
 func _duvar_tex(c: Vector2i) -> Texture2D:
 	var k: int = int(G1[c].k)
+	if G1[c].get("kirik", false): return _t("yikik_%d" % k)
 	if k == 5: return _t("fener")
 	if k == 4:
 		var P: Vector2 = oyun.oyuncu.position
@@ -136,8 +142,25 @@ func _duvar_yenile(c: Vector2i) -> void:
 			s.offset = Vector2(-8, -24)
 			s.position = Vector2(q.x * T + 8, q.y * T + 16)
 			s.texture = _duvar_tex(q)
+			var cat := Node2D.new()
+			cat.position = Vector2(-8, -24)
+			cat.draw.connect(_catlak_ciz.bind(cat, q))
+			s.add_child(cat)
 			oyun.nesneler.add_child(s)
 			duvar_dugum[q] = s
+		if duvar_dugum.has(q): duvar_dugum[q].get_child(0).queue_redraw()
+
+## hasar: 1–3 çatlak (web wallSpr dmg)
+func _catlak_ciz(n: Node2D, c: Vector2i) -> void:
+	if not HP.has(c) or not G1.has(c) or G1[c].get("kirik", false): return
+	var p: Dictionary = V.parca[BYK[1][int(G1[c].k)]]
+	var r: float = float(HP[c]) / maxf(1.0, float(p.hp))
+	var lv := 3 if r < 0.25 else (2 if r < 0.5 else (1 if r < 0.75 else 0))
+	for i in lv:
+		var L: Array = CATLAK[i]
+		for k in 11:
+			var t := k / 10.0
+			n.draw_rect(Rect2(roundf(L[0] + (L[2] - L[0]) * t), roundf(L[1] + (L[3] - L[1]) * t), 1, 1), Color(0.08, 0.05, 0.04, 0.85))
 
 # ------------------------------------------------------------------ nereye konur (web why)
 func neden(c: Vector2i, n: String) -> String:
@@ -195,6 +218,7 @@ func koy(c: Vector2i, n: String, sessiz := false) -> bool:
 		G1[c] = {k = int(p.k), turn = dondur and int(p.door) == 1}
 		if int(p.lamp) == 1: _lamba_ekle(c, 1)
 		_duvar_yenile(c)
+		if int(p.k) >= 2 and int(p.k) <= 4: avlu_hesapla()
 	# karodaki toplanabilir kalkar
 	for d in oyun.dugumler:
 		if d.canli and karo(d.position) == c: d.oldur(1e9)
@@ -204,12 +228,16 @@ func koy(c: Vector2i, n: String, sessiz := false) -> bool:
 func kaldir(c: Vector2i, g: int) -> bool:
 	if g == 1 and G1.has(c):
 		var n: String = BYK[1][int(G1[c].k)]
+		var kirik: bool = G1[c].get("kirik", false)
 		G1.erase(c)
+		HP.erase(c)
 		if LAMBA.has(c):
 			if LAMBA[c].isik != null: LAMBA[c].isik.queue_free()
 			LAMBA.erase(c)
 		_duvar_yenile(c)
-		env.ekle(n)
+		if kirik: oyun.toplama.dusur(str(V.parca[n].mat), Vector2(c.x * T + 8, c.y * T + 8))
+		else: env.ekle(n)
+		avlu_hesapla()
 		_serit()
 		return true
 	if g == 0 and G0.has(c):
@@ -230,6 +258,137 @@ func _lamba_ekle(c: Vector2i, f: int) -> void:
 	l.enabled = false
 	oyun.add_child(l)
 	LAMBA[c] = {f = f, on = false, isik = l}
+
+# ------------------------------------------------------------------ kırma ve onarım (web pushOn, hitPart, repair)
+func sinif(a) -> int:
+	if a.boss: return 3
+	if GUCLU.has(a.tur): return 2
+	if ORTA.has(a.tur): return 1
+	return 0
+
+## kovalayan canlı yolunu kesen parçaya çarptı
+func carpti(a, v: Vector2) -> void:
+	if G1.is_empty() or not a.mad or a.D.get("ranged", null) != null: return
+	if a.position.distance_to(oyun.oyuncu.position) > 220.0: return
+	var now := Time.get_ticks_msec() / 1000.0
+	for q in [a.position + Vector2(signf(v.x) * 8.0, 0), a.position + Vector2(0, signf(v.y) * 8.0)]:
+		var c := karo(q)
+		if not _katı(c, true): continue
+		var p: Dictionary = V.parca[BYK[1][int(G1[c].k)]]
+		if sinif(a) < int(p.cls): continue
+		if now - float(a.get_meta("vur_t", -9.0)) < 1.2: return
+		a.set_meta("vur_t", now)
+		vur(c, maxf(1.0, float(a.D.dmg) / 2.0 * (2.0 if not a.lunge.is_empty() else 1.0)))
+		return
+
+func vur(c: Vector2i, d: float) -> void:
+	var n: String = BYK[1][int(G1[c].k)]
+	var p: Dictionary = V.parca[n]
+	var h: float = float(HP.get(c, p.hp)) - d
+	var x := c.x * T + 8.0
+	var y := c.y * T + 8.0
+	for k in 4: oyun.parca(Vector2(x + randf_range(-5, 5), y - 4), Vector2(randf_range(-15, 15), -20 - randf() * 20), 0.4, Color("#9a9a92") if int(p.cls) >= 2 else Color("#a8784a"))
+	if h > 0.0:
+		HP[c] = h
+		if duvar_dugum.has(c): duvar_dugum[c].get_child(0).queue_redraw()
+		return
+	HP.erase(c)
+	G1[c].kirik = true
+	if LAMBA.has(c): LAMBA[c].on = false
+	oyun.toplama.dusur(str(p.mat), Vector2(x, y))
+	if oyun.oyuncu.position.distance_to(Vector2(x, y)) < 200.0: env.mesaj("%s kırıldı" % n, true)
+	_duvar_yenile(c)
+	avlu_hesapla()
+
+func _onarilacak() -> Vector2i:
+	var P: Vector2 = oyun.oyuncu.position
+	var en := Vector2i(-99999, -99999)
+	var bd := 26.0
+	var pc := karo(P)
+	for dy in range(-1, 2):
+		for dx in range(-1, 2):
+			var c := pc + Vector2i(dx, dy)
+			if not G1.has(c) or not (G1[c].get("kirik", false) or HP.has(c)): continue
+			var d := Vector2(c.x * T + 8, c.y * T + 8).distance_to(P)
+			if d < bd:
+				bd = d
+				en = c
+	return en
+
+## F: hasarlı ya da yıkık parçayı onar (tahta 1 Dal, taş 1 Taş)
+func onar() -> bool:
+	var c := _onarilacak()
+	if c.x == -99999: return false
+	var n: String = BYK[1][int(G1[c].k)]
+	var m := "Taş" if int(V.parca[n].cls) >= 2 else "Dal"
+	if env.adet(m) <= 0:
+		env.mesaj("Onarmak için 1 %s gerekir." % m, true)
+		return true
+	env.eksilt(m)
+	HP.erase(c)
+	G1[c].kirik = false
+	_duvar_yenile(c)
+	env.mesaj("%s onarıldı" % n)
+	avlu_hesapla()
+	return true
+
+## duvar ya da kapalı kapı arada mı (web wallBetween)
+func arada(a: Vector2, b: Vector2) -> bool:
+	if G1.is_empty(): return false
+	var d := a.distance_to(b)
+	var n := maxi(1, int(ceil(d / 6.0)))
+	for s in range(1, n):
+		var c := karo(a.lerp(b, float(s) / n))
+		if _katı(c, true): return true
+	return false
+
+# ------------------------------------------------------------------ avlu (web yardCalc)
+func _durdurur(c: Vector2i) -> bool:
+	if not G1.has(c) or G1[c].get("kirik", false): return false
+	var k: int = int(G1[c].k)
+	return k >= 2 and k <= 4
+
+func avlu_hesapla() -> void:
+	AVLU = {}
+	var gor := {}
+	for s in G1:
+		if gor.has(s) or not _durdurur(s): continue
+		var comp := [s]
+		gor[s] = true
+		var x0: int = s.x; var y0: int = s.y; var x1: int = s.x; var y1: int = s.y
+		var q := 0
+		while q < comp.size():
+			var c: Vector2i = comp[q]
+			q += 1
+			x0 = mini(x0, c.x); y0 = mini(y0, c.y); x1 = maxi(x1, c.x); y1 = maxi(y1, c.y)
+			for dy in range(-1, 2):
+				for dx in range(-1, 2):
+					var j := c + Vector2i(dx, dy)
+					if not gor.has(j) and _durdurur(j):
+						gor[j] = true
+						comp.append(j)
+		if x1 - x0 > 63 or y1 - y0 > 63 or x1 - x0 < 2 or y1 - y0 < 2: continue
+		var bx0 := x0 - 1; var by0 := y0 - 1; var bx1 := x1 + 1; var by1 := y1 + 1
+		var dis := {}
+		var Q := []
+		for x in range(bx0, bx1 + 1):
+			Q.append(Vector2i(x, by0)); Q.append(Vector2i(x, by1))
+		for y in range(by0, by1 + 1):
+			Q.append(Vector2i(bx0, y)); Q.append(Vector2i(bx1, y))
+		var i := 0
+		while i < Q.size():
+			var c: Vector2i = Q[i]
+			i += 1
+			if dis.has(c) or _durdurur(c) or c.x < bx0 or c.y < by0 or c.x > bx1 or c.y > by1: continue
+			dis[c] = true
+			Q.append(c + Vector2i(1, 0)); Q.append(c + Vector2i(-1, 0)); Q.append(c + Vector2i(0, 1)); Q.append(c + Vector2i(0, -1))
+		for y in range(y0, y1 + 1):
+			for x in range(x0, x1 + 1):
+				var c := Vector2i(x, y)
+				if not _durdurur(c) and not dis.has(c): AVLU[c] = true
+
+func avluda(p: Vector2) -> bool:
+	return not AVLU.is_empty() and AVLU.has(karo(p))
 
 func _lambalar() -> void:
 	var gece: bool = oyun.zaman.dk >= 1200.0 or oyun.zaman.dk < 360.0
@@ -418,7 +577,7 @@ func kayit() -> Dictionary:
 	var a := []
 	for c in G0: a.append([c.x, c.y, int(G0[c])])
 	var b := []
-	for c in G1: b.append([c.x, c.y, int(G1[c].k), 1 if G1[c].turn else 0, int(LAMBA[c].f) if LAMBA.has(c) else 0])
+	for c in G1: b.append([c.x, c.y, int(G1[c].k), 1 if G1[c].turn else 0, int(LAMBA[c].f) if LAMBA.has(c) else 0, 1 if G1[c].get("kirik", false) else 0, float(HP.get(c, 0.0))])
 	return {g0 = a, g1 = b}
 
 func yukle(d: Dictionary) -> void:
@@ -429,9 +588,12 @@ func yukle(d: Dictionary) -> void:
 	LAMBA = {}
 	G0 = {}; G1 = {}
 	for x in d.get("g0", []): G0[Vector2i(int(x[0]), int(x[1]))] = int(x[2])
+	HP = {}
 	for x in d.get("g1", []):
 		var c := Vector2i(int(x[0]), int(x[1]))
-		G1[c] = {k = int(x[2]), turn = int(x[3]) == 1}
+		G1[c] = {k = int(x[2]), turn = int(x[3]) == 1, kirik = x.size() > 5 and int(x[5]) == 1}
+		if x.size() > 6 and float(x[6]) > 0.0: HP[c] = float(x[6])
 		if int(x[2]) == 5: _lamba_ekle(c, int(x[4]))
 	for c in G1: _duvar_yenile(c)
+	avlu_hesapla()
 	zemin_cizim.queue_redraw()

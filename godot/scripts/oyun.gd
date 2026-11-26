@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 2d-3"
+const SURUM := "Godot · Adım 2d-4"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -219,6 +219,7 @@ func _ready() -> void:
 		if q.contains("insatest"):
 			oyuncu.position = Vector2(5400, 1720)
 			for n3 in ["Çit", "Taş duvar", "Toprak yol", "Tahta kapı", "Direk feneri", "Dal çit"]: env.ekle(n3, 20)
+			if q.contains("kirtest"): _kir_test.call_deferred()
 		if q.contains("yapitest"):
 			env.ekle("Kulübe"); env.ekle("Hasır yatak"); env.vio_ekle(3000); env.ekle("Atölye"); env.ekle("Dal", 20); env.ekle("Taş", 20)
 		if q.contains("kusan"):
@@ -497,6 +498,23 @@ func _dugumler() -> void:
 		nesneler.add_child(s)
 
 # ------------------------------------------------------------------ canlılar
+func _kir_test() -> void:
+	var c0: Vector2i = insa.karo(oyuncu.position)
+	for i in range(-3, 4):
+		for c in [c0 + Vector2i(i, -3), c0 + Vector2i(i, 3), c0 + Vector2i(-3, i), c0 + Vector2i(3, i)]:
+			insa.G1[c] = {k = 2, turn = false}
+			insa._duvar_yenile(c)
+	insa.avlu_hesapla()
+	print("KIRTEST avlu=", insa.AVLU.size(), " ic=", insa.avluda(oyuncu.position))
+	_canli_koy("Kurt", 6.0, 2.0)
+	for c in nesneler.get_children():
+		if c.get("tur") == "Kurt": c.mad = true
+	for k in 20:
+		await get_tree().create_timer(2.0).timeout
+		var kr := 0
+		for c in insa.G1: if insa.G1[c].get("kirik", false): kr += 1
+		print("KIRTEST t=", k * 2, " hasar=", insa.HP.size(), " kirik=", kr, " avlu=", insa.AVLU.size(), " can=", oyuncu.hp)
+
 func _canli_koy_yakin(k: String, min_kare: float) -> void:
 	_canli_koy(k, min_kare, 2.0)
 
@@ -538,6 +556,10 @@ func _dogur(dt: float) -> void:
 	for c in hepsi:
 		var d: float = c.position.distance_to(P)
 		if c.has_meta("ders"): continue
+		if insa.avluda(c.position) and not c.has_meta("avlu_bakildi"):
+			c.queue_free()
+			continue
+		c.set_meta("avlu_bakildi", true)
 		if d > 760.0 or (bool(c.D.get("night", false)) and not gece and d > 360.0):
 			c.queue_free()
 	var bio := bio_at(P)
@@ -581,6 +603,7 @@ func _dogur_tur(k: String, want: int, hepsi: Array, bio: int = 0) -> void:
 		var p := Pp + Vector2.from_angle(rng.randf() * TAU) * (330.0 + rng.randf() * 140.0)
 		if not land.has(float(tile_at(p))) or engel(p, 6.0) or bio_at(p) != bio: continue
 		if int(D.aggro) > 0 and zaman.kampta(p): continue
+		if insa.avluda(p): continue
 		paket_no += 1
 		var n := 1
 		if paket != null:
@@ -1007,6 +1030,8 @@ func konus_ya_da_istasyon() -> bool:
 		return true
 	if yakin != null:
 		_konus(yakin)
+		return true
+	if insa.onar():
 		return true
 	if insa.yakit_koy():
 		return true
