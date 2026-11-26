@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.98 · 27 Kasım 2026
+
+### Proje
+- **Godot: Reisler:**
+  - Bir türden yeterince avlayınca sürünün Reis'i son avın yanına geliyor. Reis iri, mor ve güçlü.
+  - Reis şahlanınca yerde kırmızı bir halka doluyor, sonra yere vuruyor. Halkadan çık ya da atıl.
+  - Uzaklaşırsan ya da bayılırsan Reis geri çekiliyor; bir tane daha avlayınca yeniden geliyor. Her Reis bir kez yenilir.
+- **Tasarım belgesi:** Godot planına web'de olup Godot'da henüz olmayan sistemler eklendi (özel vuruşlar ve Ulti, imza hamleleri, mor ışık saldırıları, Almanak, başarımlar, keşif defteri, arena ve hileler, ayarlar, istatistikler).
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.97 · 27 Kasım 2026
 
 ### Proje
@@ -220,17 +232,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Kül Diyarı'nda Çırak Çelik, Katırcı Ömer, Yangıncı Kor Ali, Külcü Hasret, Nar ve Duman Dede'nin görevleri geldi.
   - Mor Kristal Vadisi'nde Melodi, Kristalci Yaren, Asena, Balıkçı Selim, Lostromo Rıza ve Fenerci Işık'ın görevleri geldi.
   - Böylece web'deki 36 yan görevin hepsi Godot'ta.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.78 · 26 Kasım 2026
-
-### Proje
-- **Godot: Kül Diyarı ve Mor Kristal Vadisi:**
-  - Kül Diyarı'nın canlıları (kül böceği, kül kurdu, lav kertenkelesi, kül cini, kor yarasası, ateş akrebi, kara ejder), kişileri (Mercan, Turan, Tufan, Lale; 27 görev) ve Kor Mağarası (Ocakçı Alev, Kor Kral) geldi.
-  - Mor Kristal Vadisi'nin canlıları (mor güve, ışık tilkisi, kristal geyik, gölge kurdu, kristal örümcek, ışık engereği, kristal golem), kişileri (İnci, Kudret, Kuvvet, Menekşe; 27 görev) ve Ayna Mağarası (Gökbilimci Nur, Işık Yutan) geldi.
-  - Davut'un lav kertenkelesi ve kristal geyik görevleri artık çalışıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---

@@ -1,3 +1,7 @@
+## v4.98 (27 Kasım 2026) · Godot S1: Reisler
+- `godot-deneme/` yeni derleme (godot dalı: yeni reis.gd (sayaç, kuyruk, çağırma, Reis verisi, halka hamlesi, çekilme; kayıt `reis {bc, bd}`); oyun.gd canli_oldu ve bayil kancaları). Denetim: ?reistest. Belge 99_godot: S1 satırı ve yeni S1–S10 planı (web'de olup Godot'da eksik ortak sistemler). Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıttaki `reis` alanı okunmadan kalır).
+
 ## v4.97 (27 Kasım 2026) · Godot: keşif sisi ve büyük harita
 - `godot-deneme/` yeni derleme (godot dalı: yeni harita.gd (keşif 7 karo, sis görüntüsü küçük haritada, büyük harita M, yan görev "?" ve sisli daire, kayıt `kesif` ada başına (ADA_YEREL)); girdi.gd "harita" eylemi (M); oyun.gd yardım satırı). Denetim: ?haritatest. Belge 99_godot "Harita ve keşif" satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `kesif` alanı okunmadan kalır).
@@ -73,9 +77,5 @@
 
 ## v4.79 (26 Kasım 2026) · Godot 5b, 6b: Kül Diyarı ve Mor Kristal Vadisi'nin yan görevleri
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_yan.js bütün biyomlar → data/yan.json 36 görev; yan.gd aletli git, katır; yoldas.gd katır çizimi). Denetim: ?yantest_korali. Belge 99_godot 5b, 6b satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.78 (26 Kasım 2026) · Godot 5a, 6a: Kül Diyarı ve Mor Kristal Vadisi
-- `godot-deneme/` yeni derleme (godot dalı: disa_aktar_canli.js BIYOM=4/5, disa_aktar_kisi.js BIYOM=4/5, disa_aktar_magara2.js MAG=c4,c5 → data/canlilar_kul/kristal, kisiler_kul/kristal, gorevler_kul/kristal, magara_c4/c5; oyun.gd, gorev.gd, magara.gd listeleri). Denetim: ?git_k_mercan, ?git_k_inci. Belge 99_godot Adım 5–6, 5a, 6a satırları. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 
