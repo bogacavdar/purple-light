@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.03 · 27 Kasım 2026
+
+### Proje
+- **Godot: canlıların imza hamleleri ve sürü taktiği:**
+  - Kovalayan canlılar ara ara kendi hamlesini yapıyor: geyik tekmesi, domuz hücumu, ayının iki pençesi, kartal dalışı, timsahın çamura gömülmesi, kirpinin yuvarlanması, kertenkelenin kuyruğu, akrebin iğnesi. Yılan ve kunduz ısırıp geri kaçıyor. Her hamle başlamadan renkli "!" ve yerde uyarı çıkıyor.
+  - Kurtlar artık birlikte avlanıyor: biri önünden oyalarken öbürü arkana dolanıyor.
+  - Arkanda saldırıya hazırlanan bir canlı varsa çevrende o yöne bakan küçük, yanıp sönen bir ok çıkıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.02 · 27 Kasım 2026
 
 ### Proje
@@ -221,16 +232,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
-
-## Versiyon 4.83 · 26 Kasım 2026
-
-### Proje
-- **Godot: Bereket Adası ve tarla:**
-  - Barbaros'un dördüncü görevinden sonra yanına gidince Ekin'i bulmuş olur ve onu adasına götürür.
-  - Barbaros'un yanındaki kayıkla Bereket Adası'na gidip gelirsin. Adada Ekin'in evi, ambarı, kuyusu, tavukları ve tarlası var; canavar ve mor ışık yok.
-  - Tarla: tırmıkla hazırla, tohum ek, sulama kabıyla sula, olgunlaşınca tırpanla biç. Fidanlar üç günde meyve ağacı olur.
-  - Ekin tohum ve fidan satar; adadaki yedi görevi de geldi.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-

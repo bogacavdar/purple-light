@@ -1,3 +1,7 @@
+## v5.03 (27 Kasım 2026) · Godot S3: imza hamleleri ve sürü taktiği
+- `godot-deneme/` yeni derleme (godot dalı: canli.gd imza hamleleri (`imza`, `imza_t`, IMZA tablosu, `_imza_basla/_imza_isle/_imza_ciz`, vur-kaç ısırık ve atıştan sonra), kurt sürüsü dolanması (`_suru_yeri`); ozel.gd arkadan uyarı oku; oyun.gd SURUM "Godot · S3"). Denetim: ?imzatest. Belge 99_godot S3 satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.02 (27 Kasım 2026) · Godot S2d: dövüş dersleri ve ulti
 - `godot-deneme/` yeni derleme (godot dalı: yeni dovus.gd (7 ders, alıştırma canavarı, ders kutusu, ulti çubuğu, 10 ulti; kayıt `dovus {ult, od}`, öğrenilen `kuzen.tanis["ders_<tür>"]`); ozel.gd derste hamle açık, isabet bildirimi; oyuncu.gd ulti kazancı; gezgin.gd R ulti doluyken köpekleri açmaz; oyun.gd Börü'de "Dövüş dersleri"). Denetim: ?derstest. Belge 99_godot S2d satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `dovus` alanı okunmadan kalır).
@@ -74,8 +78,3 @@
 - Web: `v234` bloğunda findCove artık Bereket Adası'nı (`__plFarm.onIs`) atlıyor; koy kaydedilmediği için eski kayıtlarda kendiliğinden düzelir. Belge 38_nuri_deniz › Kaza.
 - `godot-deneme/` yeni derleme (godot dalı: yeni poyraz.gd (kaza, onarım, konuşma, deniz haritası, deniz ekranı, kayıt `poyraz`); yeni tools/disa_aktar_poyraz.js → data/poyraz.json koy + G1–G10, Poyraz resimleri; gorev.gd nuri/sea koşulları, deniz balığı için ok Poyraz'a; balik.gd kefali, deniz oltalarının yeşil alanı; kuzen/kisi/oyun bağlantıları). Denetim: ?denizt. Belge 99_godot O4 satırı.
 - Geri almak için: bu commit'i `git revert` et.
-
-## v4.83 (26 Kasım 2026) · Godot O3b: Bereket Adası ve tarla
-- `godot-deneme/` yeni derleme (godot dalı: yeni ciftlik.gd (Ekin'in durumu, olay, kayık, ada yerleri ve çizimi, tarla, fidan, dükkân, kayıt `ciftlik`); yeni tools/disa_aktar_ciftlik.js → data/ciftlik.json + 21 eşya resmi; kuzen.gd'deki Ekin konuşması ciftlik.gd'ye taşındı; gorev.gd ekin koşulu ve fidan; oyun.gd engel, kayıt; toplama.gd F; zaman.gd adada ışık). Eski kayıttaki `ekin_gitti` okunur. Denetim: ?adatest. Belge 99_godot O3b satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et.
-
