@@ -17,7 +17,7 @@ func _process(dt: float) -> void:
 		if oyun.evcil.binilen != null: oyun.evcil.in_()
 		if oyun.balik.aktif():
 			oyun.balik.bas()
-		elif not _yerdekileri_al() and not oyun.magara.etkiles() and not oyun.balik.etkiles() and not oyun.ciftlik.etkiles():
+		elif not _yerdekileri_al() and not oyun.portal.etkiles() and not oyun.magara.etkiles() and not oyun.balik.etkiles() and not oyun.ciftlik.etkiles():
 			_basla()
 	if not is_.is_empty():
 		if o.yuruyor or (is_.tur == "dugum" and not is_.hedef.canli):

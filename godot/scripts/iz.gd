@@ -3,6 +3,8 @@ extends Node
 ## Her biri yerde mor bir parıltı; yanında F okur. Kemal'in "Eşinden kalan izler" (E4) görevi altısını ister.
 
 var oyun
+var kapali := false       # eşinin izleri Yıldızsız Ada'dadır
+var ham = null
 var V: Array = []
 var bulunan := {}
 var dugum := {}
@@ -10,6 +12,10 @@ var dugum := {}
 func kur(o) -> void:
 	oyun = o
 	V = o._json("res://data/izler.json").izler
+	if o.ada == 2:
+		kapali = true
+		set_process(false)
+		return
 	for c in V:
 		var n := Node2D.new()
 		n.position = Vector2(c.x, c.y)
@@ -30,6 +36,7 @@ func _process(_dt: float) -> void:
 
 ## F: yanındaki iz (web near 16 px)
 func f() -> bool:
+	if kapali: return false
 	for c in V:
 		if bulunan.has(c.id): continue
 		if oyun.oyuncu.position.distance_to(Vector2(c.x, c.y)) < 16.0:
@@ -122,9 +129,15 @@ func _ciz(n: Node2D, id: String) -> void:
 		_r(n, 5, -12, 1, 5, Color("#f0d8ff")); _r(n, 3, -10, 5, 1, Color("#f0d8ff"))
 
 func kayit() -> Array:
+	if kapali and ham != null: return ham
 	return bulunan.keys()
 
 func yukle(d) -> void:
+	if kapali:
+		ham = d
+		if d is Array:
+			for id in d: bulunan[id] = true
+		return
 	bulunan = {}
 	if d is Array:
 		for id in d: bulunan[str(id)] = true

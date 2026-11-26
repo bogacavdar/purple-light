@@ -5,6 +5,7 @@ extends Node2D
 const BR := [[134, 433, 437], [75, 410, 413], [199, 449, 453]]   # web MAPD.br: [y, x0, x1] (karo)
 const ODUN := 20
 var oyun
+var kapali := false       # ikinci adanın köprüleri sonra (A3)
 var env
 var K: Array = []           # {x0, x1, y, fixed, cx, cy, main}
 var dedi := false           # 20 odunla gelince bir kez kendi kendine konuşur
@@ -15,17 +16,23 @@ func kur(o) -> void:
 	env = o.env
 	T = o.T
 	z_index = -8
+	if o.ada == 2:
+		kapali = true
+		set_process(false)
+		return
 	for i in BR.size():
 		var b: Array = BR[i]
 		K.append({y = b[0], x0 = b[1], x1 = b[2], fixed = false, cx = (b[1] + b[2] + 1) / 2.0 * T, cy = (b[0] + 0.5) * T, main = i == 0})
 
 ## onarılmış bir köprünün üstü (web onBridge)
 func ustunde(p: Vector2) -> bool:
+	if kapali: return false
 	for b in K:
 		if b.fixed and p.x >= b.x0 * T - 2 and p.x < (b.x1 + 1) * T + 2 and p.y >= (b.y - 1) * T + 3 and p.y < (b.y + 2) * T - 3: return true
 	return false
 
 func ana() -> Dictionary:
+	if K.is_empty(): return {fixed = false}
 	return K[0]
 
 func odun_mu(n: String) -> bool:
@@ -61,6 +68,7 @@ func yakin():
 	return null
 
 func f() -> bool:
+	if kapali: return false
 	var b = yakin()
 	if b == null: return false
 	var gorevde: bool = oyun.gorev.aktif != null and str(oyun.gorev.aktif.id) == "E2"

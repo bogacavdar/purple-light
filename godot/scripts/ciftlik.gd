@@ -5,6 +5,8 @@
 extends Node2D
 
 var oyun
+var kapali := false       # ikinci adada bu adanın şeyleri yoktur (web v76); durumu kayıtta olduğu gibi kalır
+var ham = null
 var env
 var D: Dictionary
 const RX := 20
@@ -35,12 +37,20 @@ func kur(o) -> void:
 	env = o.env
 	D = o._json("res://data/ciftlik.json")
 	cx = int(D.ada.cx); cy = int(D.ada.cy)
+	for k in 24: plots.append({st = "soil", crop = "", t = 0.0, wet = false})
+	if o.ada == 2:
+		kapali = true
+		set_process(false)
+		for n in D.resim:
+			if not env.ikon.has(n): env.ikon[n] = load(D.resim[n])
+		for n in D.aletler:
+			if not env.G.tools.has(n): env.G.tools[n] = D.aletler[n]
+		return
 	# yeni eşyaların resimleri, tarla aletleri
 	for n in D.resim:
 		if not env.ikon.has(n): env.ikon[n] = load(D.resim[n])
 	for n in D.aletler:
 		if not env.G.tools.has(n): env.G.tools[n] = D.aletler[n]
-	for k in 24: plots.append({st = "soil", crop = "", t = 0.0, wet = false})
 	for n in oyun.kisiler:
 		if n.K.k == "k_ekin": ekin_n = n
 		if n.K.k == "denizci": dz_n = n
@@ -108,12 +118,14 @@ func tarh_acik(k: int) -> bool:
 	return k / 4 < 3 or oyun.gorev.bitti("EK6")
 
 func adada(p: Vector2) -> bool:
+	if kapali: return false
 	var dx := (p.x / 16.0 - cx) / (RX + 2)
 	var dy := (p.y / 16.0 - cy) / (RY + 2)
 	return dx * dx + dy * dy <= 1.0
 
 ## ev, ambar ve kuyu geçilmez (web blocked)
 func engel(p: Vector2, h: float) -> bool:
+	if kapali: return false
 	if not adada(p): return false
 	var E := ev(); var A := ambar(); var K := kuyu()
 	if p.x > E.x - 8 - h and p.x < E.x + 40 + h and p.y > E.y - 6 and p.y < E.y + 40 + h - 4: return true
@@ -207,6 +219,7 @@ func _git(to: Vector2, yazi: String) -> void:
 
 # ------------------------------------------------------------------ F
 func etkiles() -> bool:
+	if kapali: return false
 	var P0: Vector2 = oyun.oyuncu.position
 	if st == "home" and P0.distance_to(kayik()) < 26.0:
 		_git(varis(), "Barbaros kürek çekiyor… Bereket Adası")
@@ -496,11 +509,16 @@ func _tavuk_ciz(n: Node2D, h: Dictionary) -> void:
 
 # ------------------------------------------------------------------ kayıt
 func kayit() -> Dictionary:
+	if kapali and ham != null: return ham
 	var pl := []
 	for f in plots: pl.append([f.st, f.crop, f.t, f.wet])
 	return {st = st, got = got.keys(), sap = sap, vis = vis, tarla = pl}
 
 func yukle(d: Dictionary, ekin_gitti_eski: bool) -> void:
+	if kapali:
+		ham = d
+		st = str(d.get("st", "cayir"))
+		return
 	st = str(d.get("st", "gone" if ekin_gitti_eski else "cayir"))
 	if st == "atB": st = "home"
 	got = {}

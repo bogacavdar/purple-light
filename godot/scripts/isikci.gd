@@ -5,6 +5,7 @@
 extends Node2D
 
 var oyun
+var kapali := false       # Işıkçı yalnız Yıldızsız Ada'ya gelir (web v1.76)
 var env
 var V: Dictionary
 var shown := false
@@ -18,6 +19,10 @@ func kur(o) -> void:
 	oyun = o
 	env = o.env
 	V = o._json("res://data/isikci.json")
+	if o.ada == 2:
+		kapali = true
+		set_process(false)
+		return
 	var P := Vector2(V.x, V.y)
 	# yerinin çevresi açık (web: 34 px içindeki ağaçlar, 24 px içindeki düğümler kalkar)
 	for ag in oyun.agaclar.duplicate():
@@ -77,6 +82,7 @@ func _process(dt: float) -> void:
 	if shown: n.queue_redraw()
 
 func f() -> bool:
+	if kapali: return false
 	if not shown or oyun.oyuncu.position.distance_to(n.position) > 30.0: return false
 	_konus()
 	return true
@@ -159,4 +165,4 @@ func yukle(d: Dictionary) -> void:
 	met = bool(d.get("met", false))
 	gone = bool(d.get("gone", false))
 	shown = false
-	n.visible = false
+	if n != null: n.visible = false

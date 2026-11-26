@@ -8,6 +8,8 @@ const DSOZ := ["Bir hayvanın güvenini kazanmak sabır ister. Acele edenin atı
 const IN_BIYOM := {"kurt": 1, "timsah": 2, "kertenkele": 4}
 
 var oyun
+var kapali := false       # evcil hayvanlar ve Davut şimdilik Yıldızsız Ada'da kalır; durumları kayıtta korunur
+var ham = null
 var env
 var V: Dictionary
 var SP: Dictionary
@@ -41,6 +43,10 @@ func kur(o) -> void:
 	k.visible = false
 	o.nesneler.add_child(k)
 	keci.n = k
+	if o.ada == 2:
+		kapali = true
+		_arayuz()
+		return
 	for sp in V["in"]:
 		var p = V["in"][sp]
 		if p == null: continue
@@ -172,6 +178,7 @@ func davut_konus(n) -> void:
 
 # ------------------------------------------------------------------ F: yere bırak, bin
 func f() -> bool:
+	if kapali: return false
 	for sp in SP:
 		if not evcillesir(sp) or env.adet(str(SP[sp].food)) <= 0: continue
 		var var_ = false
@@ -296,7 +303,7 @@ func _ol(p: Dictionary) -> void:
 
 # ------------------------------------------------------------------ her kare
 func _process(dt: float) -> void:
-	if oyun.basta: return
+	if oyun.basta or kapali: return
 	t += dt
 	var hid: bool = oyun.magara.icinde or oyun.ev.acik
 	if hid:
@@ -842,12 +849,17 @@ func _yanima(p: Dictionary) -> void:
 
 # ------------------------------------------------------------------ kayıt
 func kayit() -> Dictionary:
+	if kapali and ham != null: return ham
 	var L: Array = []
 	for p in PT.pets:
 		L.append({id = p.id, sp = p.sp, name = p.name, hp = p.hp, at = p.at, grow = p.grow})
 	return {pets = L, tr = PT.tr, trT = PT.trT, ever = PT.ever, den = PT.den, dead = PT.dead, no = PT.no, mom = PT.mom, nid = PT.nid, dav = PT.dav, ipucu = PT.ipucu, bin_ipucu = PT.bin_ipucu, keci = keci.durum, keci_n = keci.cnt}
 
 func yukle(d: Dictionary) -> void:
+	if kapali:
+		ham = d
+		keci.durum = str(d.get("keci", keci.durum))
+		return
 	if binilen != null: in_()
 	_sifirla()
 	for k in ["tr", "trT", "ever", "den", "no", "mom"]:

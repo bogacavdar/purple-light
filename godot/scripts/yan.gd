@@ -3,6 +3,8 @@ extends Node2D
 ## Yan kişiler kendi saatinde, kendi yerinde; birden çok görev alınır, biri takip edilir; adımlar: go, collect, use, bring, kill, guard, escort, back.
 
 var oyun
+var kapali := false       # ikinci adada bu adanın şeyleri yoktur (web v76); durumu kayıtta olduğu gibi kalır
+var ham = null
 var env
 var V: Dictionary
 var Q: Array = []
@@ -33,6 +35,11 @@ func kur(o) -> void:
 	V = o._json("res://data/yan.json")
 	Q = V.yan
 	z_index = 20
+	if o.ada == 2:
+		kapali = true
+		for q in Q: BY[q.id] = q
+		set_process(false)
+		return
 	for q in Q:
 		BY[q.id] = q
 		var n := Node2D.new()
@@ -121,6 +128,7 @@ func _adim():
 
 # ------------------------------------------------------------------ konuşma (web talk, pages)
 func f() -> bool:
+	if kapali: return false
 	var P: Vector2 = oyun.oyuncu.position
 	for q in Q:
 		var n: Node2D = kisi_n[q.id]
@@ -896,11 +904,16 @@ func _birak_dugme(a: Dictionary) -> void:
 
 # ------------------------------------------------------------------ kayıt
 func kayit() -> Dictionary:
+	if kapali and ham != null: return ham
 	var L: Array = []
 	for a in ACT: L.append({id = a.id, step = a.step, got = a.get("got", [])})
 	return {done = done.keys(), met = met.keys(), act = L, a = A.id if A != null else ""}
 
 func yukle(d: Dictionary) -> void:
+	if kapali:
+		ham = d
+		for id in d.get("done", []): done[id] = true
+		return
 	_canavar_sil()
 	if fol != null:
 		fol.queue_free(); fol = null

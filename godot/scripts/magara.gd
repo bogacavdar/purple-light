@@ -8,6 +8,7 @@ const OFS := Vector2(20000, 0)     # mağaranın içi adanın dışında: web ko
 const KARANLIK := Color(0.035, 0.035, 0.045)
 
 var oyun
+var kapali := false       # mağaraların hepsi Yıldızsız Ada'da
 var MAGS: Array = []             # her mağara: {M, G, N, PX, PY, acilan, gorulen, durum, denedi, boss, kapi, ic, cikis, kaya}
 var cur: Dictionary = {}         # içinde bulunulan (ya da en son bakılan) mağara
 var M: Dictionary:
@@ -69,6 +70,9 @@ func kur(o) -> void:
 	cur = MAGS[0]
 	_ortak_kur()
 	_kaya_kart()
+	if o.ada == 2:
+		kapali = true
+		for C in MAGS: C.kapi.visible = false
 
 func _mag_kur(MM: Dictionary) -> void:
 	var a := PackedByteArray(); a.resize(int(MM.N) * int(MM.N))
@@ -173,6 +177,7 @@ func engel(p: Vector2, half: float) -> bool:
 
 ## dışarıda kaya tepesi geçilmez (web: kapının çevresinde elips)
 func kapi_engel(p: Vector2) -> bool:
+	if kapali: return false
 	for C in MAGS:
 		var dx := (p.x - float(C.M.kapi.x)) / 54.0
 		var dy := (p.y - (float(C.M.kapi.y) - 34.0)) / 40.0
@@ -181,6 +186,7 @@ func kapi_engel(p: Vector2) -> bool:
 
 # ------------------------------------------------------------------ F: giriş ve çıkış
 func etkiles() -> bool:
+	if kapali: return false
 	var p: Vector2 = oyun.oyuncu.position
 	if not icinde:
 		for C in MAGS:
@@ -354,6 +360,7 @@ func _dugum_resmi(n: String) -> Texture2D:
 
 # ------------------------------------------------------------------ her an: karanlıkta kalınca dışarı, bayılınca dışarı, harita açılır
 func _process(dt: float) -> void:
+	if kapali: return
 	for C in MAGS: C.kapi.queue_redraw()
 	if not icinde:
 		for C in MAGS:

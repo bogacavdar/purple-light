@@ -5,6 +5,7 @@ extends Node
 
 const BAD := ["Çayır", "Orman", "Bataklık", "Kayalık Dağ", "Kül Diyarı", "Mor Kristal Vadisi"]
 const DAT := ["Çayır'a", "Orman'a", "Bataklık'a", "Kayalık Dağ'a", "Kül Diyarı'na", "Mor Kristal Vadisi'ne"]
+const ACT2_G := ["gok", "pervin", "tamer", "selin", "alara", "tuna"]   # ikinci adanın görev verenleri
 const DESTEK := ["b", "h", "any", "k", "learn", "kn", "lv", "reach", "sleep", "place", "house", "bed", "sq", "tame", "bridge", "wear", "clues", "rock", "fidan", "ship"]
 const KISI_G := {"ekin": "npc"}   # kişi türü → görev veren adı (web gidOf)
 const QHI := ["Selam %s! Bir işin mi var?", "%s, yüzünden belli, bir derdin var.", "Merhaba %s! Yardım lazım mı?"]
@@ -737,6 +738,17 @@ func _arayuz() -> void:
 func _kart() -> void:
 	if oyun.sahne.acik or oyun.ogr.acik():
 		kart.visible = false
+		return
+	if oyun.ada == 2 and (aktif == null or not ACT2_G.has(str(aktif.g))):
+		# web v76: ikinci adada ACT 1'in kartı yerine ACT 2'nin kartı
+		kart.visible = true
+		kart_x.visible = false
+		kart_baslik.text = "ACT 2 · Yüzen Kayalar"
+		var Yk = kisi("gok")
+		kart_ad.text = "Gökbilimci Yıldız'ı bul" if Yk == null or not oyun.kuzen.tanisildi("gok") else ("Yıldız'ın işlerine yardım et" if not bitti("gk3") else "Portallar açık")
+		var tx := "Barbaros seni Yüzen Kayalar'a bıraktı. Yukarıdaki kayalarda teleskobu olan Gökbilimci Yıldız'ı bul." if not oyun.kuzen.tanisildi("gok") else ("Yıldız'ın işlerine yardım et; son işi bir portal." if not bitti("gk3") else "Portallar açık: Yıldızsız Ada'ya dönüp gelebilirsin.")
+		if aktif != null: tx += "\n[font_size=11]Yıldızsız Ada'da süren görev: %s (%s)[/font_size]" % [aktif.t, ad(aktif.g)]
+		kart_satir.text = tx
 		return
 	if aktif == null:
 		if bitenler.is_empty() and not vis.is_empty():

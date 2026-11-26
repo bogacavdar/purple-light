@@ -12,7 +12,7 @@ func kur(o) -> void:
 
 ## web isMet: kuzenler ve Sinan önce tanışılır, görev sonraki konuşmada verilir
 func tanisildi(g: String) -> bool:
-	if g.begins_with("k_") or g == "usta" or g == "toygar" or g == "denizci" or g == "k_ekin": return tanis.has(g)
+	if g.begins_with("k_") or g == "usta" or g == "toygar" or g == "denizci" or g == "k_ekin" or g in ["gok", "pervin", "tamer", "selin", "alara", "tuna"]: return tanis.has(g)
 	if g == "trader": return oyun.poyraz.met
 	return true
 
@@ -89,6 +89,9 @@ func dz_burada() -> bool:
 	return oyun.el_yapimi.bilinen.has("Gemi")
 
 func _barbaros(n) -> void:
+	if oyun.ada == 2:
+		_soyle(n, "Ben burada, gemimin başında beklerim. Yukarıdaki kayalarda, teleskobu olan yaşlı bir kadın var: [b]Yıldız[/b]. Mor ışığı benden de iyi bilir. Bir de… kızımı unutmadım; bu adada da soracağım.", [{t = "Hoşça kal", kapat = true}, {t = "Tamam", pri = true}])
+		return
 	if not tanis.has("denizci"):
 		tanis["denizci"] = true
 		_soyle(n, "[i](enkazın yanında, ıslak, yorgun bir adam)[/i] Kara… Toprak mı bu? Ah, başım. Ben [b]Barbaros[/b], denizciyim. Altı yıldır ada ada dolaşıp birini arıyorum. Dün gece gökten mor bir ışık indi, deniz kaynadı; gemim kayalara bindi. Kim olursan ol, yardım edersen sana borçlu kalırım.",
@@ -121,7 +124,7 @@ var yol_V: Dictionary
 var yol_kart: Control
 
 func _teklif(n) -> void:
-	_soyle(n, "[i](yeni geminin dümenine dokunur)[/i] Meltem'i aramaya devam edeceğim. Mor ışığın izi bu adada bitmiyor; denizin ötesine, başka adalara uzanıyor. Eşin de o ışığın peşinde bir yerde. İstersen seni başka bir adaya götürebilirim. Ama bil: dönüşü kolay olmaz.",
+	_soyle(n, "[i](yeni geminin dümenine dokunur)[/i] Meltem'i aramaya devam edeceğim. Mor ışığın izi bu adada bitmiyor; denizin ötesine, başka adalara uzanıyor. %s de o ışığın peşinde bir yerde. İstersen seni başka bir adaya götürebilirim. Ama bil: dönüşü kolay olmaz." % ("[b]%s[/b]" % oyun.ad_sevgili if oyun.ad_sevgili != "" else "Eşin"),
 		[{t = "Götür beni", pri = true, f = func(): yolculuk(false)}, {t = "Henüz değil, hazırlanayım", kapat = true}])
 
 func _gemi_var() -> bool:
@@ -215,13 +218,13 @@ func _yol_tik(dt: float) -> void:
 		get_tree().paused = false
 		if not yol_tekrar:
 			tanis["act2"] = true
-		oyun.env.mesaj("ACT 2'nin adası Godot'a sıradaki adımda geliyor; şimdilik Barbaros seni kıyıya geri bıraktı.")
+			if oyun.ada == 1: oyun.seyahat(2, "land")
 
 func _dz_tik() -> void:
 	if oyun.enkaz != null:
 		oyun.enkaz.visible = dz_burada()
 		if gemi and oyun.enkaz.has_meta("tekne"): oyun.enkaz.position = oyun.enkaz.get_meta("tekne")
-		if gemi and oyun.enkaz.visible and oyun.enkaz.position.distance_to(oyun.oyuncu.position) < 700.0: oyun.enkaz.queue_redraw()
+		if (gemi or oyun.ada == 2) and oyun.enkaz.visible and oyun.enkaz.position.distance_to(oyun.oyuncu.position) < 700.0: oyun.enkaz.queue_redraw()
 	if dz_burada() and not tanis.has("dz_geldi"):
 		tanis["dz_geldi"] = true
 		oyun.env.mesaj("Denizci Barbaros: Mor Kristal Vadisi'nin kıyısına bir gemi çarptı")
@@ -229,7 +232,7 @@ func _dz_tik() -> void:
 ## web drawWreck: kıyıdaki enkaz (gövde, kırık direk, yırtık yelken, etrafta tahtalar); gemi kurulunca yeni gemi (web drawBoat)
 func enkaz_ciz(o: Node2D) -> void:
 	var r := func(x: float, y: float, w: float, h: float, c: String) -> void: o.draw_rect(Rect2(x, y, w, h), Color(c))
-	if gemi:
+	if gemi or oyun.ada == 2:
 		var b := roundf(sin(Time.get_ticks_msec() / 1000.0 * 1.6) * 1.5)
 		o.draw_rect(Rect2(-30, 4 + b, 60, 4), Color(0.04, 0.12, 0.2, 0.35))
 		r.call(-28, -7 + b, 56, 11, "#7a4a28"); r.call(-26, 4 + b, 50, 3, "#4a2e18"); r.call(-28, -8 + b, 56, 2, "#a8743a")

@@ -2,9 +2,13 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · O8"
+const SURUM := "Godot · A1"
 
 var harita: Dictionary
+var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
+var ada_diger := {}        # öbür adanın kendi durumu (yer, kurulanlar, mezarlar, köprü, geçit, tuzaklar); kayıtta korunur
+var yerler2 := {}          # ikinci adanın yerleri (data/ada2/yerler.json)
+const ADA_YEREL := ["yapi", "insa", "mezarlar", "kopru", "gecit", "balik"]
 var dunya: Dictionary
 var canlilar: Dictionary
 var oyuncu_veri: Dictionary
@@ -89,6 +93,7 @@ var camur_dedi := false
 var evcil                   # evcil hayvanlar ve Çoban Davut (evcil.gd)
 var ev                      # evin içi ve Döşe (ev_ici.gd)
 var enkaz: Node2D           # Barbaros'un gemisinin enkazı (kuzen.gd çizer)
+var portal                  # adalar arası portallar (portal.gd)
 var hikaye                  # Ada halkı hikâyeleri (hikaye.gd)
 var isikci                  # Yıldızsız Işıkçı ve Kafa lambası (isikci.gd)
 var gezgin                  # Yıldızsız Gezgin ve robot köpekler (gezgin.gd)
@@ -104,13 +109,20 @@ var canli_sayac := {}
 
 func _ready() -> void:
 	Girdi.kur()
-	harita = _json("res://data/harita.json")
-	dunya = _json("res://data/dunya.json")
+	ada = int(Kayit.bekleyen.get("ada", 1)) if not Kayit.bekleyen.is_empty() else 1
+	var dk := "res://data/ada2/" if ada == 2 else "res://data/"
+	harita = _json(dk + "harita.json")
+	dunya = _json(dk + "dunya.json")
+	if ada == 2: yerler2 = _json("res://data/ada2/yerler.json")
 	var CC: Dictionary = _json("res://data/canlilar_cayir.json")
 	canlilar = CC.canlilar
-	canli_liste = {0: CC.liste}
+	canli_liste = {0: CC.liste} if ada == 1 else {}
 	var dosyalar := {1: "orman", 2: "bataklik", 3: "kayalik", 4: "kul", 5: "kristal"}
 	for bi in dosyalar:
+		if ada == 2:
+			var C3: Dictionary = _json("res://data/canlilar_%s.json" % dosyalar[bi])
+			for k in C3.canlilar: canlilar[k] = C3.canlilar[k]
+			continue
 		var C2: Dictionary = _json("res://data/canlilar_%s.json" % dosyalar[bi])
 		for k in C2.canlilar: canlilar[k] = C2.canlilar[k]
 		canli_liste[bi] = C2.liste
@@ -132,6 +144,12 @@ func _ready() -> void:
 	nesneler.y_sort_enabled = true
 	add_child(nesneler)
 	toplama_veri = _json("res://data/toplama.json")
+	if ada == 2:
+		var EK: Dictionary = _json("res://data/ada2/toplama_ek.json")
+		for k in EK.nodes: toplama_veri.nodes[k] = EK.nodes[k]
+		for k in EK.trees: toplama_veri.trees[k] = EK.trees[k]
+		for k in EK.items:
+			if not toplama_veri.items.has(k): toplama_veri.items[k] = EK.items[k]
 	_agaclar()
 	_dugumler()
 	oyuncu = preload("res://scripts/oyuncu.gd").new()
@@ -200,6 +218,9 @@ func _ready() -> void:
 	hikaye = preload("res://scripts/hikaye.gd").new()
 	add_child(hikaye)
 	hikaye.kur(self)
+	portal = preload("res://scripts/portal.gd").new()
+	add_child(portal)
+	portal.kur(self)
 	kopru = preload("res://scripts/kopru.gd").new()
 	add_child(kopru)
 	kopru.kur(self)
@@ -295,6 +316,7 @@ func _ready() -> void:
 		if q.contains("lambatest"): _lamba_test.call_deferred()
 		if q.contains("hikayetest"): _hikaye_test.call_deferred()
 		if q.contains("gemitest"): _gemi_test.call_deferred()
+		if q.contains("ada2test"): _ada2_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -422,8 +444,10 @@ func _ready() -> void:
 	var yeni := false
 	if not Kayit.bekleyen.is_empty():
 		yeni = bool(Kayit.bekleyen.get("yeni", false))
+		var varis := str(Kayit.bekleyen.get("varis", ""))
 		durum_yukle(Kayit.bekleyen)
 		Kayit.bekleyen = {}
+		if varis != "": _varis.call_deferred(varis)
 	if Kayit.dogrudan or test:
 		Kayit.dogrudan = false
 		kayit.ana_gizle()
@@ -431,6 +455,15 @@ func _ready() -> void:
 			cine.oyna(zorluk == "zor", func(): uyanis.basla())
 	else:
 		kayit.ana_goster()
+
+## öbür adadan gelince nereye inilir (web applyState: land → iniş yeri, portal → Barbaros'un portalı, Kemal → Kemal'in portalı)
+func _varis(how: String) -> void:
+	if how == "land": oyuncu.position = Vector2(harita.spawn.x, harita.spawn.y)
+	else:
+		var p = portal.yer(how)
+		if p != null: oyuncu.position = p + Vector2(0, 14)
+	if ada == 2: env.mesaj("ACT 2 · %s" % yerler2.bname[maxi(0, bio_at(oyuncu.position))])
+	else: env.mesaj("Portal · Yıldızsız Ada")
 
 func _json(p: String) -> Dictionary:
 	var f := FileAccess.open(p, FileAccess.READ)
@@ -450,7 +483,7 @@ func _zemin() -> void:
 	var ts := TileSet.new()
 	ts.tile_size = Vector2i(T, T)
 	var eski := TileSetAtlasSource.new()
-	eski.texture = load("res://art/karolar.png")
+	eski.texture = load("res://art/ada2/karolar.png" if ada == 2 else "res://art/karolar.png")
 	eski.texture_region_size = Vector2i(T, T)
 	for k in 21:
 		for v in 8:
@@ -459,7 +492,7 @@ func _zemin() -> void:
 	var doku := {}
 	for k in 6:
 		var yol := "res://art/zemin_%d.png" % k
-		if not ResourceLoader.exists(yol):
+		if ada == 2 or not ResourceLoader.exists(yol):   # ComfyUI zemin dokuları yalnız ACT 1 adasında (web v425karo)
 			continue
 		var src := TileSetAtlasSource.new()
 		src.texture = load(yol)
@@ -981,6 +1014,29 @@ func _gemi_test() -> void:
 	await get_tree().create_timer(4.0).timeout
 	print("GEMI yolculuk ", kuzen.yol_t)
 
+func _ada2_test(q: String) -> void:
+	oyuncu.dokunulmaz = 9999.0
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	if ada == 1:
+		if q.contains("_don") and kuzen.tanis.has("act2"):
+			print("ADA2 birinci adaya döndü; konum ", oyuncu.position, " portal ", portal.yer("Kemal"), " gorunur ", portal.P[0].n.visible)
+			return
+		el_yapimi.bilinen["Gemi"] = true
+		kuzen.tanis["act2"] = true; kuzen.tanis["denizci"] = true
+		env.ekle("Dal", 7)
+		print("ADA2 gidiyor; dal ", env.adet("Dal"))
+		seyahat(2, "land")
+		return
+	print("ADA2 ada ", ada, " konum ", oyuncu.position, " bio ", bio_at(oyuncu.position), " dal ", env.adet("Dal"), " kisiler ", kisiler.size(), " portallar ", portal.P.size(), " barbaros portal açık ", portal.acik_mi(portal.P[1]))
+	var dz = gorev.kisi("denizci")
+	oyuncu.position = dz.position + Vector2(-14, 4)
+	konus_ya_da_istasyon(); print("ADA2 barbaros ", konusma.yazi.text.substr(0, 40)); konusma._cik()
+	if q.contains("don"):
+		oyuncu.position = portal.P[1].p + Vector2(0, 4)
+		print("ADA2 portal f ", portal.etkiles())
+
 func _dz_test() -> void:
 	await get_tree().create_timer(2.0).timeout
 	print("DZ yakin ", konus_ya_da_istasyon(), " ", konusma.yazi.text.substr(0, 60))
@@ -1269,6 +1325,9 @@ func _kucuk_harita() -> void:
 	var bio := Marshalls.base64_to_raw(harita.bio)
 	bio_arr = bio
 	var BR := [Color("#7fb04a"), Color("#3f7a3a"), Color("#6b7440"), Color("#8a8580"), Color("#5a3a36"), Color("#7a5aa8")]
+	if ada == 2:
+		BR = []
+		for c in yerler2.bcol: BR.append(Color(c).darkened(0.25))
 	var img := Image.create(bw, bh, false, Image.FORMAT_RGBA8)
 	for y in bh:
 		for x in bw:
@@ -1276,6 +1335,7 @@ func _kucuk_harita() -> void:
 			var k := tiles[i]
 			var c: Color
 			if k == 4: c = Color("#2a6db0")
+			elif k == 5 and ada == 2: c = Color("#5a5a66")
 			elif k == 3 or k == 5: c = Color("#4a9ad8")
 			elif k == 2: c = Color("#e6d39a")
 			else: c = BR[mini(int(bio[i]), 5)]
@@ -1347,6 +1407,18 @@ func _kisiler() -> void:
 	tum.append({k = "trader", ad = "Gemici Poyraz", x = PZ.x, y = PZ.y, rol = "pz", resim = {f = "res://art/kisiler/kisi_poyraz_f.png", q = "res://art/kisiler/kisi_poyraz_q.png"}, portre = "res://art/kisiler/portre_poyraz.png"})
 	for yq in _json("res://data/yan.json").yan:
 		if yq.id == "ekin1": tum.append({k = "k_ekin", ad = yq.name, x = yq.x, y = yq.y, rol = "ek", resim = {f = yq.resim_f, q = yq.resim_q}, portre = yq.portre})
+	if ada == 2:
+		# ikinci adada birinci adanın kişileri, kazanı ve örsleri yoktur (web v76 away); Barbaros indirdiği kıyıda gemisinin başında bekler
+		var dz: Dictionary = {}
+		for k in tum:
+			if k.k == "denizci": dz = k.duplicate(true)
+		var B: Dictionary = yerler2.barbaros
+		dz.x = B.x; dz.y = B.y
+		dz.enkaz = {x = B.bx, y = B.by}
+		dz.tekne = {x = B.bx, y = B.by}
+		tum = [dz]
+		kisi_veri.istasyonlar = []
+		for a in ["kazan", "ors", "ors2"]: toplama_veri.istasyon[a] = {x = -100000, y = -100000}
 	for st in kisi_veri.istasyonlar:
 		if st.tur == "ates": continue
 		istasyonlar.append(st)
@@ -1785,7 +1857,7 @@ func _mezar_ciz(d: Node2D) -> void:
 	px.call(0, -3, 1, 1, Color("#2a1f2a")); px.call(-2, -2, 5, 1, Color("#d8d0c0"))
 
 # ------------------------------------------------------------------ kayıt: oyunun durumu
-func durum_al() -> Dictionary:
+func _durum_al() -> Dictionary:
 	var p: Vector2 = oyuncu.position
 	if magara.icinde: p = Vector2(magara.M.kapi.x, float(magara.M.kapi.y) + 24.0)
 	var G = gorev
@@ -1804,6 +1876,43 @@ func durum_al() -> Dictionary:
 		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
+## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
+func durum_al() -> Dictionary:
+	var d := _durum_al()
+	var yerel := {x = d.oyuncu.x, y = d.oyuncu.y}
+	for k in ADA_YEREL: yerel[k] = d[k]
+	if ada == 2:
+		d.ada2 = yerel
+		d.oyuncu.x = ada_diger.get("x", harita.spawn.x); d.oyuncu.y = ada_diger.get("y", harita.spawn.y)
+		for k in ADA_YEREL:
+			if ada_diger.has(k): d[k] = ada_diger[k]
+			else: d.erase(k)
+	elif not ada_diger.is_empty():
+		d.ada2 = ada_diger
+	d.ada = ada
+	return d
+
+## adalar arası geçiş (web travel): kaydet, sahneyi öbür adayla yeniden kur
+var gecis_ekrani: Control
+func seyahat(to: int, how: String) -> void:
+	if to == ada: return
+	var d := durum_al()
+	d.ada = to
+	d.varis = how
+	d.zaman = Time.get_unix_time_from_system()
+	d.surum = SURUM
+	var f := FileAccess.open(Kayit.yol("oto"), FileAccess.WRITE)
+	if f != null:
+		f.store_string(JSON.stringify(d)); f.close()
+	var k := CanvasLayer.new(); k.layer = 20; add_child(k)
+	var r := ColorRect.new(); r.color = Color("#07060c"); r.set_anchors_preset(Control.PRESET_FULL_RECT); k.add_child(r)
+	var l := Label.new(); l.text = ("Yüzen Kayalar" if to == 2 else "Yıldızsız Ada") + " · yükleniyor…"; l.set_anchors_preset(Control.PRESET_CENTER)
+	l.add_theme_font_size_override("font_size", 20); l.add_theme_color_override("font_color", Color("#e0d0ff")); l.position = Vector2(-120, -12); k.add_child(l)
+	Kayit.bekleyen = d
+	Kayit.dogrudan = true
+	get_tree().paused = false
+	(func(): get_tree().reload_current_scene()).call_deferred()
+
 func gorunus_uygula(L: Dictionary) -> void:
 	gorunus = L
 	oyuncu.spr.texture = Karakter.sayfa(L)
@@ -1815,6 +1924,19 @@ func durum_yukle(d: Dictionary) -> void:
 	var ad: Dictionary = d.get("adlar", {})
 	ad_kahraman = str(ad.get("kahraman", "")); ad_sevgili = str(ad.get("sevgili", ""))
 	if d.get("yeni", false): return
+	var dd: Dictionary = d.get("ada2", {})
+	if ada == 2:
+		ada_diger = {x = d.get("oyuncu", {}).get("x", 0.0), y = d.get("oyuncu", {}).get("y", 0.0)}
+		for k in ADA_YEREL:
+			if d.has(k): ada_diger[k] = d[k]
+		d = d.duplicate()
+		d.oyuncu = d.get("oyuncu", {}).duplicate()
+		d.oyuncu.x = dd.get("x", harita.spawn.x); d.oyuncu.y = dd.get("y", harita.spawn.y)
+		for k in ADA_YEREL:
+			if dd.has(k): d[k] = dd[k]
+			else: d.erase(k)
+	else:
+		ada_diger = dd
 	var o: Dictionary = d.get("oyuncu", {})
 	if o.has("x"): oyuncu.position = Vector2(o.x, o.y)
 	var e: Dictionary = d.get("env", {})

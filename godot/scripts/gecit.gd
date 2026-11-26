@@ -3,6 +3,7 @@ extends Node2D
 
 const PS := [345, 611, 614]       # web MAPD.ps: [y, x0, x1] (karo)
 var oyun
+var kapali := false       # ikinci adanın kaya yığını sonra (A5)
 var env
 var T := 16
 var acik := false
@@ -20,6 +21,10 @@ func kur(o) -> void:
 	oyun = o
 	env = o.env
 	T = o.T
+	if o.ada == 2:
+		kapali = true
+		set_process(false)
+		return
 	y0 = PS[0] - 1; y1 = PS[0] + 1; x0 = PS[1]; x1 = PS[2]
 	cx = (x0 + x1 + 1) / 2.0 * T; cy = (PS[0] + 0.5) * T
 	var h = [9]
@@ -33,6 +38,7 @@ func kur(o) -> void:
 
 ## web inRockfall: yığın kalkana kadar geçilmez
 func engel(p: Vector2) -> bool:
+	if kapali: return false
 	return not acik and p.x >= x0 * T - 2 and p.x < (x1 + 1) * T + 2 and p.y >= y0 * T - 2 and p.y < (y1 + 1) * T + 2
 
 func _kazma() -> int:
@@ -46,6 +52,7 @@ func satir(ok: bool) -> String:
 	return "Kaya patlatıcı %d/2 · kazma %s" % [mini(env.adet("Kaya patlatıcı"), 2), "✓" if _kazma() >= 4 else "(kuvars ya da çelik)"]
 
 func f() -> bool:
+	if kapali: return false
 	if acik or oyun.oyuncu.position.distance_to(Vector2(x0 * T - 10, cy)) > 38.0: return false
 	var k = env.adet("Kaya patlatıcı")
 	if oyun.gorev.aktif == null or str(oyun.gorev.aktif.id) != "E3":
@@ -136,6 +143,7 @@ func kayit() -> bool:
 	return acik
 
 func yukle(d) -> void:
+	if kapali: return
 	soyledi = false
 	dedi = false
 	if bool(d): _ac(false)

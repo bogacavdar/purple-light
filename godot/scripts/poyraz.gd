@@ -4,6 +4,7 @@
 extends Node2D
 
 var oyun
+var kapali := false       # ikinci adada Poyraz ve teknesi yoktur
 var env
 var V: Dictionary
 const ZONES := [
@@ -54,6 +55,10 @@ func kur(o) -> void:
 	env = o.env
 	V = o._json("res://data/poyraz.json")
 	koy = V.koy
+	if o.ada == 2:
+		kapali = true
+		set_process(false)
+		return
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	for n in oyun.kisiler:
 		if n.K.k == "trader": n_kisi = n
@@ -93,6 +98,7 @@ func _process(dt: float) -> void:
 
 ## kaza yerindeki tekne geçilmez (web blocked)
 func engel(p: Vector2) -> bool:
+	if kapali: return false
 	return ph >= 1 and absf(p.x - float(koy.sx)) < 26.0 and absf(p.y - float(koy.sy)) < 9.0
 
 # ------------------------------------------------------------------ konuşma
