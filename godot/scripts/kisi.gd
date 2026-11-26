@@ -50,6 +50,9 @@ func _draw() -> void:
 
 func _process(dt: float) -> void:
 	t += dt
+	if K.k == "denizci":
+		visible = oyun.kuzen.dz_burada()
+		if not visible: return
 	var p: Vector2 = oyun.oyuncu.position
 	var d := p.distance_to(position)
 	ad_yazi.visible = d < 60.0

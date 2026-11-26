@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · O1"
+const SURUM := "Godot · O2"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -88,6 +88,7 @@ var kopru                   # büyük nehrin köprüleri (kopru.gd)
 var camur_dedi := false
 var evcil                   # evcil hayvanlar ve Çoban Davut (evcil.gd)
 var ev                      # evin içi ve Döşe (ev_ici.gd)
+var enkaz: Node2D           # Barbaros'un gemisinin enkazı (kuzen.gd çizer)
 var balik                   # balık tutma, tuzaklar, gece buluntuları (balik.gd)
 var insa                    # İnşa kipi: zemin, çit, duvar, kapı, fener (insa.gd)
 var dl_agac := false        # Börü'nün dersi bitti, yetenek ağacını gösterecek (1f-3b-3)
@@ -267,6 +268,14 @@ func _ready() -> void:
 			oyuncu.position = Vector2(7664 + 8, 2280 + 6)
 			ad_sevgili = "Elif"
 		if q.contains("yantest_"): _yan_test.call_deferred(RegEx.create_from_string("yantest_([a-z]+)").search(q).get_string(1))
+		if q.contains("dztest"):
+			el_yapimi.bilinen["Gemi"] = true
+			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
+			for id in ["E1", "E2", "E3", "E4", "E5"]: gorev.bitenler.append(id)
+			oyuncu.dokunulmaz = 9999.0
+			for n in kisiler:
+				if n.K.k == "denizci": oyuncu.position = n.position + Vector2(-14, 4)
+			_dz_test.call_deferred()
 		if q.contains("baliktest") or q.contains("tuzaktest") or q.contains("gecetest"): _balik_test.call_deferred(q)
 		if q.contains("gecittest"):
 			oyuncu.position = Vector2(gecit.x0 * T - 20, gecit.cy)
@@ -746,6 +755,13 @@ func _yan_test(id: String) -> void:
 			await get_tree().create_timer(0.3).timeout
 	print("YAN bitti=", yan.done.has(id), " vio=", env.vio)
 
+func _dz_test() -> void:
+	await get_tree().create_timer(2.0).timeout
+	print("DZ yakin ", konus_ya_da_istasyon(), " ", konusma.yazi.text.substr(0, 60))
+	konusma._cik()
+	await get_tree().create_timer(0.5).timeout
+	print("DZ ikinci ", konus_ya_da_istasyon(), " ", konusma.yazi.text.substr(0, 60), " aktif ", gorev.aktif.id if gorev.aktif != null else "-")
+
 func _balik_test(q: String) -> void:
 	oyuncu.dokunulmaz = 9999.0
 	# Çayır'da nehir kıyısı ara: oyuncunun çevresinde suya bakan kara karesi
@@ -1109,6 +1125,12 @@ func _kisiler() -> void:
 		o.draw.connect(_istasyon2_ciz.bind(o, st))
 		nesneler.add_child(o)
 	for k in tum:
+		if k.has("enkaz"):
+			var ek := Node2D.new()
+			ek.position = Vector2(k.enkaz.x, k.enkaz.y)
+			ek.draw.connect(func(): kuzen.enkaz_ciz(ek))
+			nesneler.add_child(ek)
+			enkaz = ek
 		if k.has("kulube"):
 			var hk := Node2D.new()
 			hk.position = Vector2(k.kulube.x, k.kulube.y)
@@ -1321,7 +1343,7 @@ func konus_ya_da_istasyon() -> bool:
 	var p: Vector2 = oyuncu.position
 	var yakin = null
 	for n in kisiler:
-		if p.distance_to(n.position) < 30.0 and (yakin == null or p.distance_to(n.position) < p.distance_to(yakin.position)):
+		if n.visible and p.distance_to(n.position) < 30.0 and (yakin == null or p.distance_to(n.position) < p.distance_to(yakin.position)):
 			yakin = n
 	if iz.f():
 		return true

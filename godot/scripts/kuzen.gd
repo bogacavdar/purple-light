@@ -12,7 +12,7 @@ func kur(o) -> void:
 
 ## web isMet: kuzenler ve Sinan önce tanışılır, görev sonraki konuşmada verilir
 func tanisildi(g: String) -> bool:
-	if g.begins_with("k_") or g == "usta" or g == "toygar": return tanis.has(g)
+	if g.begins_with("k_") or g == "usta" or g == "toygar" or g == "denizci": return tanis.has(g)
 	return true
 
 func _soyle(n, metin: String, secs: Array) -> void:
@@ -30,6 +30,7 @@ func konus(n, ac_kazan := false) -> bool:
 		"u": oyun.sinan.konus()
 		"d": oyun.evcil.davut_konus(n)
 		"t": _dogan(n)
+		"dz": _barbaros(n)
 		_: _kuzen(n, ac_kazan)
 	return true
 
@@ -76,6 +77,45 @@ func _kuzen(n, ac_kazan: bool) -> void:
 			_soyle(n, soz, [{t = "Silah dök", pri = true, f = func(): oyun.istasyon.ac(K.k)}, about, {t = "Hoşça kal", kapat = true}])
 		"a":
 			_soyle(n, soz, [{t = "Zırh döv", pri = true, f = func(): oyun.istasyon.ac(K.k)}, about, {t = "Hoşça kal", kapat = true}])
+
+# ------------------------------------------------------------------ Denizci Barbaros (web v75: talkDz, drawWreck; belge ACT 1 › Denizci Barbaros)
+## Gemi tarifini öğrenince (Kemal'in E4 ödülü) gemisi Mor Kristal Vadisi'nin kıyısına çarpar; o zamana dek ne kendisi ne enkazı görünür.
+var dz_t := 0
+
+func dz_burada() -> bool:
+	return oyun.el_yapimi.bilinen.has("Gemi")
+
+func _barbaros(n) -> void:
+	if not tanis.has("denizci"):
+		tanis["denizci"] = true
+		_soyle(n, "[i](enkazın yanında, ıslak, yorgun bir adam)[/i] Kara… Toprak mı bu? Ah, başım. Ben [b]Barbaros[/b], denizciyim. Altı yıldır ada ada dolaşıp birini arıyorum. Dün gece gökten mor bir ışık indi, deniz kaynadı; gemim kayalara bindi. Kim olursan ol, yardım edersen sana borçlu kalırım.",
+			[{t = "Kimi arıyorsun?", f = func(): _soyle(n, "Kızımı. [b]Meltem[/b]. Mor ışık onu altı yıl önce güverteden aldı. Seni de bir şey buraya getirmiş, gözlerinden belli.", [{t = "Hoşça kal", kapat = true}, {t = "Tamam", pri = true}])}, {t = "Hoşça kal", kapat = true}])
+		return
+	dz_t += 1
+	var L := ["Rüzgâr dönüyor; denizci bunu kokusundan bilir.", "Enkazdan kurtardığım tek şey bu fener. Meltem'in feneri.", "Bu kıyı tuhaf: kumu kristal, gecesi mor."]
+	_soyle(n, L[randi() % 3], [{t = "Hoşça kal", kapat = true}, {t = "Tamam", pri = true}])
+
+func _dz_tik() -> void:
+	if oyun.enkaz != null: oyun.enkaz.visible = dz_burada()
+	if dz_burada() and not tanis.has("dz_geldi"):
+		tanis["dz_geldi"] = true
+		oyun.env.mesaj("Denizci Barbaros: Mor Kristal Vadisi'nin kıyısına bir gemi çarptı")
+
+## web drawWreck: kıyıdaki enkaz (gövde, kırık direk, yırtık yelken, etrafta tahtalar)
+func enkaz_ciz(o: Node2D) -> void:
+	var r := func(x: float, y: float, w: float, h: float, c: String) -> void: o.draw_rect(Rect2(x, y, w, h), Color(c))
+	o.draw_set_transform(Vector2.ZERO, -0.18)
+	o.draw_circle(Vector2(0, 6), 1.0, Color(0, 0, 0, 0))
+	o.draw_set_transform(Vector2(0, 6), -0.18, Vector2(32, 5))
+	o.draw_circle(Vector2.ZERO, 1.0, Color(0.08, 0.16, 0.27, 0.3))
+	o.draw_set_transform(Vector2.ZERO, -0.18)
+	r.call(-26, -6, 40, 6, "#5a3a20"); r.call(-22, 0, 32, 3, "#3a2414"); r.call(-26, -6, 40, 1, "#7a5430"); r.call(14, -4, 8, 4, "#4a2e18"); r.call(-4, -6, 6, 6, "#2a1a10")
+	r.call(-8, -30, 2, 24, "#4a3018"); r.call(-7, -30, 10, 2, "#4a3018"); r.call(-6, -28, 8, 10, "#d8ccb0"); r.call(-2, -20, 6, 6, "#c8bca0")
+	o.draw_set_transform(Vector2.ZERO, 0.0)
+	r.call(24, 6, 8, 2, "#6a4426"); r.call(-34, 8, 6, 2, "#6a4426"); r.call(30, -2, 2, 6, "#5a3a20")
+
+func _process(_dt: float) -> void:
+	if oyun != null and oyun.el_yapimi != null: _dz_tik()
 
 # ------------------------------------------------------------------ Avcı Doğan (web talkToygar, toygarStory, dogTeach)
 var dogan_t := 0
