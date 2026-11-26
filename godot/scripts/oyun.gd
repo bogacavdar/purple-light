@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 3f"
+const SURUM := "Godot · Adım 4a"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -100,7 +100,7 @@ func _ready() -> void:
 	var CC: Dictionary = _json("res://data/canlilar_cayir.json")
 	canlilar = CC.canlilar
 	canli_liste = {0: CC.liste}
-	var dosyalar := {1: "orman", 2: "bataklik"}
+	var dosyalar := {1: "orman", 2: "bataklik", 3: "kayalik"}
 	for bi in dosyalar:
 		var C2: Dictionary = _json("res://data/canlilar_%s.json" % dosyalar[bi])
 		for k in C2.canlilar: canlilar[k] = C2.canlilar[k]
@@ -1019,9 +1019,10 @@ func _kisiler() -> void:
 	for r in kisi_veri.zirh: zirh_set[r] = true
 	var tum: Array = toplama_veri.kisiler.duplicate()
 	tum.append_array(kisi_veri.kisiler)
-	var kb: Dictionary = _json("res://data/kisiler_bataklik.json")
-	tum.append_array(kb.kisiler)
-	kisi_veri.istasyonlar.append_array(kb.istasyonlar)
+	for bf in ["bataklik", "kayalik"]:
+		var kb: Dictionary = _json("res://data/kisiler_%s.json" % bf)
+		tum.append_array(kb.kisiler)
+		kisi_veri.istasyonlar.append_array(kb.istasyonlar)
 	tum.append(_json("res://data/evcil.json").davut)
 	for st in kisi_veri.istasyonlar:
 		if st.tur == "ates": continue

@@ -64,7 +64,7 @@ var yan_yazi: RichTextLabel
 
 func kur(o) -> void:
 	oyun = o
-	for yol in ["res://data/magara.json", "res://data/magara_c1.json", "res://data/magara_c2.json"]:
+	for yol in ["res://data/magara.json", "res://data/magara_c1.json", "res://data/magara_c2.json", "res://data/magara_c3.json"]:
 		_mag_kur(o._json(yol))
 	cur = MAGS[0]
 	_ortak_kur()
