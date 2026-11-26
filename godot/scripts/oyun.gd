@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1f-4"
+const SURUM := "Godot · Adım 2a"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -27,7 +27,8 @@ var konusma
 var kisiler: Array = []
 var gorev
 var sahne
-var canli_liste: Array = []
+var canli_liste := {}         # biyom → [[tür, istenen, koşul]] (web BANIM)
+var atis                      # canlıların attığı diken ve tükürükler (atis.gd)
 var dogum_t := 1.0
 var paket_no := 0
 var pazar
@@ -61,6 +62,7 @@ var kamera: Camera2D
 var hud: CanvasLayer
 var can_cubugu: ProgressBar
 var enerji_cubugu: ProgressBar
+var etki_yazi: RichTextLabel
 var yetenekler := {}        # web skills: S1 atılma, P0 savuşturma (yetenek ağacı 1f-3b-3)
 var ders                    # Börü'nün dersleri (ders.gd)
 var yetenek                 # yetenek ağacı (yetenek.gd)
@@ -77,7 +79,12 @@ func _ready() -> void:
 	dunya = _json("res://data/dunya.json")
 	var CC: Dictionary = _json("res://data/canlilar_cayir.json")
 	canlilar = CC.canlilar
-	canli_liste = CC.liste
+	canli_liste = {0: CC.liste}
+	var dosyalar := {1: "orman"}
+	for bi in dosyalar:
+		var C2: Dictionary = _json("res://data/canlilar_%s.json" % dosyalar[bi])
+		for k in C2.canlilar: canlilar[k] = C2.canlilar[k]
+		canli_liste[bi] = C2.liste
 	oyuncu_veri = _json("res://data/oyuncu.json")
 	T = int(harita.T)
 	bx0 = int(harita.region.x0); by0 = int(harita.region.y0)
@@ -157,6 +164,10 @@ func _ready() -> void:
 	toplama.env = env
 	toplama.G = toplama_veri
 	add_child(toplama)
+	atis = preload("res://scripts/atis.gd").new()
+	atis.oyun = self
+	atis.z_index = 4
+	add_child(atis)
 	efekt = preload("res://scripts/efekt.gd").new()
 	efekt.z_index = 50
 	add_child(efekt)
@@ -173,6 +184,11 @@ func _ready() -> void:
 			_canli_koy_yakin("Tavşan", 4.0)
 		if q.contains("kemal"):
 			oyuncu.position = Vector2(toplama_veri.kisiler[0].x + 20, toplama_veri.kisiler[0].y + 6)
+		if q.contains("orman"):
+			oyuncu.position = Vector2(5400, 1720)
+			yetenekler["S1"] = true; yetenekler["P0"] = true
+			while env.sv < 10: env.xp_ekle(400)
+			_orman_test(q)
 		if q.contains("ogr"):
 			oyuncu.position = Vector2(toplama_veri.kisiler[0].x + 20, toplama_veri.kisiler[0].y + 6)
 			ogr.basla()
@@ -475,15 +491,29 @@ func _dogur(dt: float) -> void:
 		if c.has_meta("ders"): continue
 		if d > 760.0 or (bool(c.D.get("night", false)) and not gece and d > 360.0):
 			c.queue_free()
-	if bio_at(P) != 0: return
-	for L in canli_liste:
+	var bio := bio_at(P)
+	if not canli_liste.has(bio): return
+	for L in canli_liste[bio]:
 		var k: String = L[0]
 		var want: int = int(L[1])
 		if L[2] == "gece" and not gece: continue
 		if L[2] == "sv2" and env.sv < 2: continue
-		_dogur_tur(k, want, hepsi)
+		if L[2] == "sv10" and env.sv < 10: continue
+		if L[2] == "sv6gun3" and ((env.sv < 6 and zaman.gun < 3) or (env.sv < 10 and _atici_var(k, hepsi))): continue
+		_dogur_tur(k, want, hepsi, bio)
 
-func _dogur_tur(k: String, want: int, hepsi: Array) -> void:
+func _orman_test(q: String) -> void:
+	await get_tree().create_timer(8.0).timeout
+	for k2 in ["Engerek", "Dikenli kirpi", "Yaban domuzu", "Oklu kirpi"]:
+		if q.contains(k2.to_lower().replace(" ", "")): _canli_koy_yakin(k2, 5.0)
+
+## web rangedNear: sahada başka bir saldırgan atıcı varsa (Sv 10'dan önce) ikinci bir atıcı doğmaz
+func _atici_var(haric: String, hepsi: Array) -> bool:
+	for c in hepsi:
+		if c.tur != haric and c.D.get("ranged", null) != null and c.D.temper == "saldırgan": return true
+	return false
+
+func _dogur_tur(k: String, want: int, hepsi: Array, bio: int = 0) -> void:
 	var D: Dictionary = canlilar[k]
 	var paket = D.get("pack", null)
 	var ayni := []
@@ -500,8 +530,8 @@ func _dogur_tur(k: String, want: int, hepsi: Array) -> void:
 	var Pp: Vector2 = oyuncu.position
 	for deneme in 12:
 		var p := Pp + Vector2.from_angle(rng.randf() * TAU) * (330.0 + rng.randf() * 140.0)
-		if not land.has(float(tile_at(p))) or engel(p, 6.0) or bio_at(p) != 0: continue
-		if int(D.aggro) > 0 and p.distance_to(Vector2(zaman.A.kamp.x, zaman.A.kamp.y)) < float(zaman.A.guvenli.kamp): continue
+		if not land.has(float(tile_at(p))) or engel(p, 6.0) or bio_at(p) != bio: continue
+		if int(D.aggro) > 0 and zaman.kampta(p): continue
 		paket_no += 1
 		var n := 1
 		if paket != null:
@@ -517,7 +547,7 @@ func _dogur_tur(k: String, want: int, hepsi: Array) -> void:
 		while m < n and g < 40:
 			g += 1
 			var q := p + Vector2(rng.randf_range(-22, 22), rng.randf_range(-22, 22))
-			if engel(q, 6.0) or not land.has(float(tile_at(q))) or bio_at(q) != 0: continue
+			if engel(q, 6.0) or not land.has(float(tile_at(q))) or bio_at(q) != bio: continue
 			_canli_yeni(k, q, paket_no)
 			m += 1
 		return
@@ -569,6 +599,12 @@ func _hud() -> void:
 	enerji_cubugu.add_theme_stylebox_override("fill", efg)
 	enerji_cubugu.tooltip_text = "Enerji"
 	kutu.add_child(enerji_cubugu)
+	etki_yazi = RichTextLabel.new()
+	etki_yazi.bbcode_enabled = true; etki_yazi.fit_content = true; etki_yazi.scroll_active = false
+	etki_yazi.custom_minimum_size = Vector2(260, 0)
+	etki_yazi.add_theme_font_size_override("normal_font_size", 12)
+	etki_yazi.add_theme_color_override("font_outline_color", Color("#14100c")); etki_yazi.add_theme_constant_override("outline_size", 4)
+	kutu.add_child(etki_yazi)
 	silah_yazi = Label.new()
 	_golge(silah_yazi)
 	kutu.add_child(silah_yazi)

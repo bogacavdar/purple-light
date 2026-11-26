@@ -98,6 +98,10 @@ func _saat_yaz() -> void:
 ## ışık var mı (web litAt + nearCamp + meşale)
 func isikta(p: Vector2) -> bool:
 	if oyun.mesale.elde() != null: return true
+	return kampta(p)
+
+## ateşlerin güvenli yarıçapı (web campFor): saldırganlar orada doğmaz ve saldırmaz
+func kampta(p: Vector2) -> bool:
 	if p.distance_to(Vector2(A.kamp.x, A.kamp.y)) < float(A.guvenli.kamp): return true
 	if p.distance_to(Vector2(A.ocak.x, A.ocak.y)) < float(A.guvenli.ocak): return true
 	if p.distance_to(Vector2(A.kazan.x, A.kazan.y)) < float(A.guvenli.kazan): return true

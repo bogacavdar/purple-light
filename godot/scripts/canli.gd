@@ -193,7 +193,25 @@ func _process(dt: float) -> void:
 			mad = d <= 200.0
 		elif angry:
 			st = "chase"
-			if not lunge.is_empty():
+			var R = D.get("ranged", null)
+			if R != null:
+				# web ranged: menzilin %80'inden uzaksa yaklaşır, %40'ından yakınsa geri çekilir; menzildeyken 0,6 sn hazırlanıp atar
+				if wind > 0.0:
+					wind -= dt
+					if wind <= 0.0: oyun.atis.at(self)
+				else:
+					var rg := float(R.range)
+					if d > rg * 0.8:
+						_git(dv / d * float(D.spd), dt); moving = true
+					elif d < rg * 0.4:
+						_git(-dv / d * float(D.spd) * 0.8, dt); moving = true
+					if d < rg and atk <= 0.0:
+						wind = 0.6
+						atk = float(R.cd)
+						renk = "n"
+						hedef = P.position + Vector2(0, -4)
+						face = 1 if dv.x > 0 else -1
+			elif not lunge.is_empty():
 				lunge.t -= dt
 				_git(lunge.v, dt)
 				moving = true
@@ -201,6 +219,7 @@ func _process(dt: float) -> void:
 					if not lunge.hit:
 						lunge.hit = true
 						P.isirildi(int(round(float(D.dmg) * float(MUL[renk]))), position, self, renk)
+						if D.get("fx", null) != null and P.hp > 0.0 and P.dokunulmaz > 0.5: P.etki_ekle(str(D.fx[0]), float(D.fx[1]), float(D.fx[2]))
 					lunge = {}
 				elif lunge.t <= 0:
 					lunge = {}

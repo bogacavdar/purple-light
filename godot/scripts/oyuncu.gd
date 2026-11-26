@@ -48,6 +48,10 @@ var sersem := 0.0
 var son_atilma := -100.0
 var uyari_t := -100.0
 var kosu_uyari := -100.0
+# etkiler (web pfx, addFx, tickFx): zehir, kanama, yanık bir süre can yakar
+var etkiler := {}             # ad → {t, dps, acc}
+var etki_gorulen := {}
+const ETKI := {"zehir": ["Zehir", "#9ad84a", "☠"], "kanama": ["Kanama", "#ff5a4a", "✚"], "yanık": ["Yanık", "#ffa040", "✹"]}
 const BLK := {"n": 0.35, "y": 0.45, "r": 0.7}
 
 func _ready() -> void:
@@ -183,6 +187,7 @@ func _process(dt: float) -> void:
 		st_dinlen += dt
 		if st_dinlen > 0.6:
 			st = minf(st_max, st + 14.0 * (2.0 if oyun.sk("K8") else (1.5 if oyun.sk("K3") else 1.0)) * (0.6 if yuruyor else 1.0) * dt)
+	if not bayildi: _etkiler(dt)
 	if hp < hp_max and not bayildi:
 		hp = minf(hp_max, hp + _hp_yenile() * dt)
 		oyun.can_guncelle(hp, hp_max)
@@ -361,7 +366,7 @@ func savusturdu(a = null) -> void:
 
 ## web biteHit / hurt: atılırken ya da az önce ısırıldıysa dokunmaz; ısırık oyuncuyu 10 px iter.
 ## renk boş değilse bu bir canlının darbesidir (n beyaz, y sarı, r kırmızı): pencere açıksa savuşturulur, gardda yumuşar.
-func isirildi(dmg: int, from: Vector2, a = null, renk: String = "") -> void:
+func isirildi(dmg: int, from: Vector2, a = null, renk: String = "", koru: float = 0.7) -> void:
 	if atilma > 0.0 or dokunulmaz > 0.0 or bayildi:
 		return
 	if renk != "" and pr_t > 0.0 and renk != "r":
@@ -383,7 +388,7 @@ func isirildi(dmg: int, from: Vector2, a = null, renk: String = "") -> void:
 	# Son nefes: canın dörtte birinin altındayken fiziksel darbe %25 daha az
 	if renk != "" and oyun.sk("D8") and hp < hp_max * 0.25: n *= 0.75
 	dmg = maxi(1, int(round(n)))
-	dokunulmaz = 0.7
+	dokunulmaz = koru
 	hp = maxf(0.0, hp - dmg)
 	kirmizi = 0.25
 	oyun.yazi(position + Vector2(0, -24), "-%d" % dmg, Color("#ff6a5a"), 9)
@@ -391,6 +396,48 @@ func isirildi(dmg: int, from: Vector2, a = null, renk: String = "") -> void:
 	var it := (position - from).normalized() * 10.0
 	_kay(it)
 	if hp <= 0.0:
+		_bayil()
+
+func etki_ekle(k: String, dps: float, sure: float) -> void:
+	if not ETKI.has(k): return
+	var S = oyun
+	var res := 0.4 if S.sk("D14") else (0.6 if (k == "zehir" and S.sk("D3")) or (k == "yanık" and S.sk("D4")) or (k == "kanama" and S.sk("D6")) else 1.0)
+	dps *= 1.3 * res
+	sure *= 1.6 * (0.5 if S.sk("D9") else 1.0)
+	if dps <= 0.05: return
+	if etkiler.has(k):
+		etkiler[k].t = maxf(etkiler[k].t, sure)
+		etkiler[k].dps = maxf(etkiler[k].dps, dps)
+	else:
+		etkiler[k] = {t = sure, dps = dps, acc = 0.0}
+	if not etki_gorulen.has(k):
+		etki_gorulen[k] = true
+		oyun.env.mesaj("Zehirlendin! Bir süre can yakar, sonra geçer. Yemek yiyip canını doldur; kırmızı \"!\" gördüğünde yana atıl ya da uzaklaş." if k == "zehir" else "%s! Bir süre can yakar, sonra geçer." % ETKI[k][0], true)
+
+func _etkiler(dt: float) -> void:
+	if etkiler.is_empty():
+		oyun.etki_yazi.text = ""
+		return
+	var yaz := []
+	for k in etkiler.keys():
+		var f: Dictionary = etkiler[k]
+		var dm: float = f.dps * dt
+		hp -= dm
+		f.acc += dm
+		f.t -= dt
+		var c := Color(ETKI[k][1])
+		if f.acc >= 2.0:
+			oyun.yazi(position + Vector2(randf_range(-4, 4), -20), "-%d" % int(f.acc), c, 8)
+			f.acc -= floorf(f.acc)
+		if randf() < dt * 6.0: oyun.parca(position + Vector2(randf_range(-4, 4), -8), Vector2(0, -14), 0.4, c)
+		if f.t <= 0.0: etkiler.erase(k)
+		else: yaz.append("[color=%s]%s %s %d sn[/color]" % [ETKI[k][1], ETKI[k][2], ETKI[k][0], ceili(f.t)])
+	oyun.etki_yazi.text = "  ".join(yaz)
+	oyun.can_guncelle(hp, hp_max)
+	if hp <= 0.0:
+		hp = 0.0
+		etkiler.clear()
+		oyun.etki_yazi.text = ""
 		_bayil()
 
 func _bayil() -> void:
