@@ -1,3 +1,7 @@
+## v4.81 (26 Kasım 2026) · Godot O2: Denizci Barbaros
+- `godot-deneme/` yeni derleme (godot dalı: disa_aktar_kisi.js BIYOM=5'e denizci (rol dz, enkaz, resimler drawChibi ile) → data/kisiler_kristal.json, gorevler_kristal.json L görevleri; kuzen.gd _barbaros, dz_burada, enkaz_ciz; kisi.gd Gemi bilinmeden gizli; oyun.gd enkaz düğümü, görünmeyen kişiyle konuşulmaz). Denetim: ?dztest. Belge 99_godot O2 satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.80 (26 Kasım 2026) · Godot O1: balık tutma, tuzaklar, gece buluntuları
 - `godot-deneme/` yeni derleme (godot dalı: yeni balik.gd; toplama.gd F'de balık/tuzak; oyuncu.gd E ve Boşluk balık tutarken savuşturma/atılma yapmaz, ısırılınca balik.isirik; zaman.gd isikta'da gece bitkisi; gorev.gd "c" (fish:, trap:) sayaçları ve kayıtta qc; oyun.gd kayıtta balik; tools/disa_aktar_alet.js oltalar ve tuzaklar). Denetim: ?baliktest, ?tuzaktest, ?gecetest. Belge 99_godot O1 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.62 (26 Kasım 2026) · Godot 2d-1: Sinan, yapılar, evler, uyku
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_yapi.js → data/yapilar.json, art/yapilar; yeni yapi.gd, sinan.gd; oyun.gd engel'e yapılar, F'de yapı, kayıtta yapi; envanter kemer/çanta seçimi yerleştirir; gorev.gd sleep/place/house/bed). Denetim: ?yapitest. Belge 99_godot 2d-1 satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.61 (26 Kasım 2026) · Godot 2c: kuşanma, zırh, seviye puanları
-- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_kusanma.js → data/kusanma.json; yeni karakter_pen.gd; oyun.gd stat/puan/kusam/zirh_carpan/direnc/giy/cikar, kayıtta kusam, puan, puan_ders; oyuncu.gd can_max/enerji_max/enerji_dolma, silah_v web weapon(); envanter "N puan ver" ve ilk seviye kartı; toplama ve pazar özellik çarpanları; web_kayit eq ve v340.sp). Denetim: ?kusan. Belge 99_godot 2c satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

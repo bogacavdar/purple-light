@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.81 · 26 Kasım 2026
+
+### Proje
+- **Godot: Denizci Barbaros:**
+  - Kemal'den gemi tarifini öğrenince Barbaros'un gemisi Mor Kristal Vadisi'nin kıyısına çarpar; Barbaros enkazın yanında bekler.
+  - Kızı Meltem'i anlatır ve görevlerini verir: Kazazedenin yarası, Enkazın bekçileri, Yıldızlarla yön, Yelken ipi, Kara omurga, Su almayan tekne, Pruvadaki fener.
+  - Yeni gemi ve ACT 2 yolculuğu sonra gelecek.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.80 · 26 Kasım 2026
 
 ### Proje
@@ -216,18 +227,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Yapılar kemere ya da çantaya geliyor. Seçince yeşil ızgarada yere kuruluyor; Boşluk döndürüyor, sağ tık vazgeçiyor. Kurulu yapıyla F'ye basınca taşıyabiliyor ya da geri alabiliyorsun.
   - Eve yatak konuyor; gece yatakta ya da barınakta uyuyunca sabah uyanıyorsun, can ve enerji doluyor. Yaprak barınağı bir gecelik.
   - Sinan'ın barınak, atölye, çit ve ev görevleri artık açılıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.61 · 26 Kasım 2026
-
-### Proje
-- **Godot: karakter penceresi, zırh ve seviye puanları:**
-  - C ile açılan karakter penceresinde yedi kuşanma yuvası var; giysi, silah, kolye ve yüzük giyiliyor.
-  - Zırh ve savunma hayvanların hasarını azaltıyor; zırhların zehir, yanık ve kanama dirençleri işliyor.
-  - Her seviye atlayışta seviye puanı geliyor; puanlar toplama, satış, şans, güç, hız, can, enerji ve zırh gibi özelliklere veriliyor. Verilmemiş puan varken seviyenin yanında "N puan ver" düğmesi duruyor; ilk seviyede bunu anlatan bir kart açılıyor.
-  - Elin boşken vuruşlar silah yuvasındaki silahla yapılıyor. Bütün kılıç, gürz, topuz ve mızraklar web'deki hasarlarıyla geldi.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
