@@ -142,9 +142,14 @@ func _unhandled_input(e: InputEvent) -> void:
 		else:
 			kalkan = false
 		return
-	if e is InputEventMouseButton and e.pressed and e.button_index == MOUSE_BUTTON_LEFT:
+	if e is InputEventMouseButton and e.button_index == MOUSE_BUTTON_LEFT:
 		var d: Vector2 = get_global_mouse_position() - (position + Vector2(0, -6))
-		vur(d.normalized() if d.length() > 0.5 else bakis)
+		var y := d.normalized() if d.length() > 0.5 else bakis
+		if not e.pressed:
+			if oyun.ozel != null: oyun.ozel.birak()
+			return
+		if oyun.ozel != null: oyun.ozel.bas(y)
+		else: vur(y)
 
 func _process(dt: float) -> void:
 	if kombo_t > 0.0:
@@ -179,7 +184,9 @@ func _process(dt: float) -> void:
 		g = Vector2.ZERO
 	_silah_yaz()
 	if Input.is_action_just_pressed("vur") and not kilit:
-		vur(bakis)
+		if oyun.ozel != null: oyun.ozel.bas(bakis)
+		else: vur(bakis)
+	if Input.is_action_just_released("vur") and oyun.ozel != null: oyun.ozel.birak()
 	if Input.is_action_just_pressed("atil") and not kilit and not oyun.balik.aktif():
 		_atil(g)
 	if bekleyen_vurus > 0.0:

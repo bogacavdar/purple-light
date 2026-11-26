@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · S2b"
+const SURUM := "Godot · S2c"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -98,6 +98,8 @@ var hikaye                  # Ada halkı hikâyeleri (hikaye.gd)
 var isikci                  # Yıldızsız Işıkçı ve Kafa lambası (isikci.gd)
 var gezgin                  # Yıldızsız Gezgin ve robot köpekler (gezgin.gd)
 var reis                    # Reisler (reis.gd)
+var ozel                    # özel vuruşlar (ozel.gd)
+var ult := 0.0              # ulti çubuğu (0–100)
 var harita_k                # keşif sisi, büyük harita (M), yan görev işaretleri (harita.gd)
 var ani                     # anılar (ani.gd)
 var roket                   # ACT 2'nin sonu: fırlatma, kavuşma, son kart (roket.gd)
@@ -236,6 +238,9 @@ func _ready() -> void:
 	kopru = preload("res://scripts/kopru.gd").new()
 	add_child(kopru)
 	kopru.kur(self)
+	ozel = preload("res://scripts/ozel.gd").new()
+	add_child(ozel)
+	ozel.kur(self)
 	reis = preload("res://scripts/reis.gd").new()
 	add_child(reis)
 	reis.kur(self)
@@ -349,6 +354,7 @@ func _ready() -> void:
 		if q.contains("reistest"): _reis_test.call_deferred(q)
 		if q.contains("yaytest"): _yay_test.call_deferred(q)
 		if q.contains("s2btest"): _s2b_test.call_deferred(q)
+		if q.contains("ozeltest"): _ozel_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -1260,6 +1266,47 @@ func _ada2_test(q: String) -> void:
 		for c in canlilari_ver(): tc[c.tur] = int(tc.get(c.tur, 0)) + 1
 		print("YZ canlılar ", tc, " bio ", bio_at(oyuncu.position))
 
+func _ozel_test(_q: String) -> void:
+	oyuncu.dokunulmaz = 9999.0
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	var P := oyuncu.position
+	env.ekle("Demir kılıç", 1); env.el = env.kemer.find("Demir kılıç")
+	var yeni = func() -> Node:
+		for c in canlilari_ver(): c.queue_free()
+		await get_tree().process_frame
+		var a = _canli_yeni("Geyik", oyuncu.position + Vector2(22, 0), 9)
+		a.D = a.D.duplicate(); a.hp = 5000.0; a.D.spd = 0.0
+		oyuncu.st = 200.0; oyuncu.st_max = 200.0; oyuncu.atk_cd = 0.0; ozel.cd = 0.0
+		return a
+	# kapalı: çift tık normal vuruş
+	var a = await yeni.call()
+	ozel.bas(Vector2.RIGHT); await get_tree().create_timer(0.1).timeout; ozel.bas(Vector2.RIGHT)
+	await get_tree().create_timer(0.4).timeout
+	print("OZEL kapalı çift ", 5000.0 - a.hp)
+	kuzen.tanis["act2"] = true
+	a = await yeni.call()
+	ozel.bas(Vector2.RIGHT); await get_tree().create_timer(0.1).timeout; ozel.bas(Vector2.RIGHT)
+	await get_tree().create_timer(0.4).timeout
+	print("OZEL çift kesik ", 5000.0 - a.hp)
+	a = await yeni.call()
+	ozel.bas(Vector2.RIGHT); await get_tree().create_timer(0.9).timeout; ozel.birak()
+	await get_tree().create_timer(0.3).timeout
+	print("OZEL güçlü ", 5000.0 - a.hp)
+	a = await yeni.call()
+	a.position = oyuncu.position + Vector2(110, 0)
+	yetenekler["S1"] = true; oyuncu.bakis = Vector2.RIGHT; oyuncu._atil(Vector2.RIGHT); await get_tree().create_timer(0.1).timeout; ozel.bas(Vector2.RIGHT)
+	await get_tree().create_timer(0.4).timeout
+	print("OZEL takla vuruşu ", 5000.0 - a.hp)
+	a = await yeni.call()
+	ozel.bas(Vector2.RIGHT); await get_tree().create_timer(0.05).timeout
+	var bek: float = ozel._sure()
+	await get_tree().create_timer(bek).timeout; ozel.bas(Vector2.RIGHT)
+	await get_tree().create_timer(0.36).timeout; ozel.bas(Vector2.RIGHT)
+	await get_tree().create_timer(0.7).timeout
+	print("OZEL ritim (normal + ters + ağır) ", 5000.0 - a.hp)
+
 func _s2b_test(_q: String) -> void:
 	oyuncu.dokunulmaz = 9999.0
 	await get_tree().create_timer(1.0).timeout
@@ -1521,6 +1568,10 @@ func _canli_koy(k: String, min_kare: float, aralik: float = 14.0) -> void:
 const KRIT_KADEME := [["Tunç", 1], ["Granit", 1], ["Meşe", 1], ["Ihlamur", 1], ["Demir", 2], ["Timsah", 2], ["Kızılağaç", 2], ["Söğüt", 2], ["Çelik", 3], ["Gümüş", 3], ["Kuvars", 3], ["Akçaağaç", 3], ["Huş", 3],
 	["Kara çelik", 4], ["Ejder", 4], ["Obsidyen", 4], ["Kızıl sedir", 4], ["Kor odun", 4], ["Mor kristal", 5], ["Ametist", 5], ["Gece ağacı", 5], ["Işık ağacı", 5]]
 const KRIT_ACT2 := ["Tabanca", "Pompalı", "Işın kılıcı", "Ateş asası", "Buz asası", "Yıldırım asası"]
+## ulti çubuğu (web v122 ULT): isabet +1,5, özel vuruş +4, ritimli 2. +5, ritimli 3. +10, savuşturma +10
+func ult_ekle(n: float) -> void:
+	ult = minf(100.0, ult + n)
+
 func krit_ihtimal(n: String) -> float:
 	if n == "": return 0.0
 	var tur := ""
