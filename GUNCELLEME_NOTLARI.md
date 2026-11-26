@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.64 · 26 Kasım 2026
+
+### Proje
+- **Godot: inşa kipi (N):**
+  - Yol, ahşap parke, dal çit, çit, taş duvar, tahta kapı ve direk feneri karo karo konuyor. Sol tıkla sürükleyince boyanıyor, sağ tık kaldırıp çantaya geri koyuyor.
+  - Çit ve duvarlar komşularıyla birleşiyor; konmayan yerde sebebi yazıyor.
+  - Çit ve duvar seni ve hayvanları durduruyor. Kapıdan sen geçiyorsun, hayvanlar geçemiyor. Dal çit hayvanları yavaşlatıyor, yolda %15 daha hızlı yürüyorsun.
+  - Direk feneri gece yanıyor ve ışığında mor ışık gelmiyor; F ile yakıt konuyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.63 · 26 Kasım 2026
 
 ### Proje
@@ -181,13 +193,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot, Adım 1d-1 (kişiler ve ustalar) oynanabilir:** Çayır'ın kişileri (Kemal, Zümrüt, Dursun, Durmuş, Nazlı, Börü) kendi yerlerinde; yanlarında F ile konuşma penceresi açılır (dışına basmak "Anladım"). Zümrüt'ün kazanında malzemeyle tarif öğrenilir (+12 XP), Dursun ve Durmuş'un örsünde öğrenilen tarif işçilik ödenerek dövülür. Vio, XP ve seviye ekranda. Görevler sıradaki parçada (1d-2). Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.44 · 25 Kasım 2026
-
-### Proje
-- **Godot, Adım 1c (el yapımı) oynanabilir:** Tab ile el yapımı ekranı (bildiğin tarifler, malzemeler ve sendeki adetleri, eksikler, Yap düğmesi), K ile tarif kitabı (web'in 766 tarifinin hepsi, kategori kategori; örste dövülenler ve Usta Sinan'ın kurdukları ayrıca belirtilir). Zümrüt'ün kazanı gelene kadar G tuşu Çayır tariflerini de öğretir. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
 

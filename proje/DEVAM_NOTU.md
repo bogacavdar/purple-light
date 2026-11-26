@@ -1,3 +1,7 @@
+## v4.64 (26 Kasım 2026) · Godot 2d-3: İnşa kipi
+- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_insa.js → data/insa.json, art/insa; yeni insa.gd; oyun.gd engel(canli), F'de fener yakıtı, kayıtta insa; canli.gd duvar ve dal çit; oyuncu yol hızı; zaman.isikta fener; el_yapimi çoklu çıktı; yapi Direk feneri hariç). Denetim: ?insatest. Belge 99_godot 2d-3 satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.63 (26 Kasım 2026) · Godot 2d-2: Atölye
 - `godot-deneme/` yeni derleme (godot dalı: yeni atolye.gd; yapi.gd Atölye ws, çubuk çizimi, kayıtta ws; sinan ve atolye pencereleri ortalanması). Belge 99_godot 2d-2 satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.45 (25 Kasım 2026) · Godot Adım 1d-1 (kişiler ve ustalar)
 - `godot-deneme/` yeni derleme (godot dalı 0873052: kisi.gd, konusma.gd, istasyon.gd; envanter.gd'ye Vio/XP/seviye ve görülen eşyalar; data/toplama.json'a kisiler, xpNeed, iscilik, usta, istasyon). Belge 99_godot 1d satırı 1d-1/1d-2/1d-3'e bölündü. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.44 (25 Kasım 2026) · Godot Adım 1c (el yapımı)
-- `godot-deneme/` yeni derleme (godot dalı: el_yapimi.gd; data/toplama.json'a DB.R tarifleri, FORGED/PLACEABLE işaretleri, ~1.175 eşya resmi). Belge 99_godot 1c satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 
