@@ -423,6 +423,9 @@ func _su_yakin(p: Vector2) -> bool:
 	return false
 
 func _keci_hedef(g: Vector2):
+	return _keci_hedef_b(g, 0)
+
+func _keci_hedef_b(g: Vector2, bio: int):
 	var P: Vector2 = oyun.oyuncu.position
 	for lo in [420.0, 320.0, 220.0, 130.0]:
 		for i in 70:
@@ -430,7 +433,7 @@ func _keci_hedef(g: Vector2):
 			var r: float = lo + randf() * 280.0
 			var q = (g + Vector2(cos(a), sin(a)) * r).round()
 			if lo > 200.0 and (q - g).dot(g - P) <= 0.0: continue
-			if oyun.bio_at(q) != 0 or oyun.tile_at(q) > 1 or oyun.engel(q) or _su_yakin(q): continue
+			if oyun.bio_at(q) != bio or oyun.tile_at(q) > 1 or oyun.engel(q) or _su_yakin(q): continue
 			var ok = true
 			var dd = 16.0
 			while dd < r and ok:

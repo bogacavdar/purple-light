@@ -97,6 +97,7 @@ func _takipci(q: Dictionary) -> bool:
 
 func var_mi(q: Dictionary) -> bool:
 	if oyun.magara.icinde: return false
+	if q.get("ghost", 0): return false
 	if done.has(q.id): return true
 	if act(q.id) != null: return not _takipci(q)
 	if not acik_mi(q): return false
@@ -213,20 +214,28 @@ func _sifirla_adim() -> void:
 	var s = _adim()
 	if s == null: return
 	var q: Dictionary = BY[A.id]
+	if s.t == "chase":
+		if not A.has("keci"): A.keci = Vector2(q.pts[s.p].x, q.pts[s.p].y)
+		A.gj = null; A.gcd = 0.0
 	if s.t == "escort":
-		fol = Node2D.new()
-		var sp := Sprite2D.new()
-		sp.texture = load(q.resim_f); sp.centered = false; sp.offset = Vector2(-12, -36)
-		fol.add_child(sp)
+		if str(s.get("who", "")) == "goat":
+			fol = preload("res://scripts/yoldas.gd").new()
+			fol.kur({})
+		else:
+			fol = Node2D.new()
+			var sp := Sprite2D.new()
+			sp.texture = load(q.resim_f); sp.centered = false; sp.offset = Vector2(-12, -36)
+			fol.add_child(sp)
 		fol.set_meta("soz", ""); fol.set_meta("soz_t", 0.0); fol.set_meta("stk", 0.0)
 		fol.draw.connect(_fol_ciz)
-		fol.position = Vector2(q.x, q.y)
+		fol.position = A.get("keci", Vector2(q.x, q.y)) if str(s.get("who", "")) == "goat" else Vector2(q.x, q.y)
 		oyun.nesneler.add_child(fol)
 		A.d0 = maxf(80.0, _hedef(s, q).distance_to(fol.position))
 
 func _hedef(s: Dictionary, q: Dictionary) -> Vector2:
 	var to: String = str(s.get("to", "npc"))
 	if to == "camp": return _kamp()
+	if to == "fam3": return Vector2(V.fam3.x, V.fam3.y)
 	if to == "npc": return Vector2(q.x, q.y)
 	return Vector2(q.pts[to].x, q.pts[to].y)
 
@@ -347,6 +356,10 @@ func _process(dt: float) -> void:
 		_bak()
 	_kart_yaz()
 	queue_redraw()
+	if BY.has("isil"):
+		var g: Dictionary = BY.isil
+		if not done.has("isil") and act("isil") == null and acik_mi(g) and _pencere(g.win) and not oyun.konusma.visible and oyun.oyuncu.position.distance_to(Vector2(g.x, g.y)) < 60.0:
+			_basla(g)
 	if A == null or oyun.konusma.visible: return
 	if oyun.oyuncu.bayildi:
 		iptal("Bayıldın, yan görev yarıda kaldı")
@@ -357,8 +370,9 @@ func _process(dt: float) -> void:
 	var P: Vector2 = oyun.oyuncu.position
 	match str(s.t):
 		"go":
+			if s.get("ghost", 0) and not _pencere(q.win): return
 			var p := Vector2(q.pts[s.p].x, q.pts[s.p].y)
-			if P.distance_to(p) < 26.0:
+			if P.distance_to(p) < (34.0 if s.get("ghost", 0) else 26.0):
 				A.busy = true
 				sayfalar(q, s.on, _ilerle)
 		"collect", "use":
@@ -395,7 +409,9 @@ func _process(dt: float) -> void:
 			var dp := P.distance_to(p)
 			if not A.sp and dp < 200.0:
 				A.sp = true
-				for i in int(s.mobs[1]): _canavar(str(s.mobs[0]), p, 10.0, 50.0)
+				for i in int(s.mobs[1]):
+					var mk = s.mobs[0]
+					_canavar(str(mk[i % mk.size()]) if mk is Array else str(mk), p, 10.0, 50.0)
 				if s.has("spawnTx"): env.mesaj(_bb(str(s.spawnTx)).replace("[b]", "").replace("[/b]", ""), true)
 			if A.sp and _canavarlar().is_empty():
 				if int(A.killed) >= int(s.mobs[1]):
@@ -427,6 +443,8 @@ func _process(dt: float) -> void:
 				sayfalar(q, [["n", s.get("endTx", "Gitti hepsi… Sağ ol.")]], _ilerle)
 		"escort":
 			_eslik(q, s, dt)
+		"chase":
+			_kovala(q, s, dt)
 
 func _eslik(q: Dictionary, s: Dictionary, dt: float) -> void:
 	if fol == null: _sifirla_adim()
@@ -476,6 +494,48 @@ func _eslik(q: Dictionary, s: Dictionary, dt: float) -> void:
 		A.busy = true
 		sayfalar(q, s.on, _ilerle)
 
+## kovalama (web chase, goatDest, goatRun): yavru keçi 18 px'e girince "Mee!" deyip kaçar; n kez yakalanınca biter
+func _kovala(q: Dictionary, s: Dictionary, dt: float) -> void:
+	var g: Vector2 = A.keci
+	var P: Vector2 = oyun.oyuncu.position
+	if float(A.gcd) > 0.0: A.gcd = float(A.gcd) - dt
+	if A.gj == null and float(A.gcd) <= 0.0 and P.distance_to(g) < 18.0:
+		A.cnt = int(A.cnt) + 1
+		if int(A.cnt) >= int(s.n):
+			oyun.yazi(g + Vector2(0, -20), "Yakalandı!", Color("#9fe07a"), 9)
+			_ilerle()
+			return
+		A.gcd = 1.5
+		var d = oyun.evcil._keci_hedef_b(g, int(q.b))
+		if d != null: A.gj = {x1 = d, t = 0.0, side = -1 if randf() < 0.5 else 1, best = 1e9, stk = 0.0, flip = 0}
+		oyun.yazi(g + Vector2(0, -20), "Mee!", Color.WHITE, 9)
+	if A.gj != null:
+		var j: Dictionary = A.gj
+		var dv: Vector2 = j.x1 - g
+		var dd := dv.length()
+		j.t += dt
+		if dd < 10.0 or j.t > 40.0:
+			A.gj = null
+			return
+		if dd < j.best - 3.0:
+			j.best = dd; j.stk = 0.0
+		else:
+			j.stk += dt
+			if j.stk > 1.2:
+				j.stk = 0.0; j.flip += 1
+				if j.flip >= 3:
+					A.gj = null
+					return
+				j.side = -j.side
+		var hz := maxf(180.0, 72.0 * oyun.stat("move") * float(oyun.oyuncu.V.runMult) * 2.5)
+		var sp := minf(hz * dt, dd)
+		for da in [0.0, 0.55, -0.55, 1.1, -1.1, 1.7, -1.7]:
+			var a: float = dv.angle() + da * j.side
+			var nq: Vector2 = g + Vector2(cos(a), sin(a)) * sp
+			if not oyun.engel(nq) and not oyun.evcil._su_yakin(nq):
+				A.keci = nq
+				return
+
 # ------------------------------------------------------------------ kişiler ve dünyadaki izler
 func _bak() -> void:
 	for q in Q:
@@ -523,8 +583,17 @@ func _dunya() -> void:
 				bp = Vector2(q.pts[pk].x, q.pts[pk].y)
 			_nesne(str(f[0]), bp + Vector2(float(f[2] if at else f[1]), float(f[3] if at else f[2])))
 		if q.id == "sadik": _nesne("cart" if d else "cartT", Vector2(q.x + 24, q.y + 2))
+		if q.id == "saniye":
+			_nesne("hut", Vector2(q.x + 28, q.y - 6))
+			if d: _nesne("grave", Vector2(q.x - 22, q.y + 4))
+		if q.id == "isil" and d:
+			_nesne("stone", Vector2(q.pts.stone.x, q.pts.stone.y)); _nesne("lantern", Vector2(q.pts.stone.x + 9, q.pts.stone.y + 1))
 		if not d: continue
 		var h := ev(q)
+		if q.get("goatDone", 0):
+			var gk = preload("res://scripts/yoldas.gd").new()
+			gk.kur({}); gk.position = h + Vector2(18, 6); gk.face = -1
+			oyun.nesneler.add_child(gk); dunya_n.append(gk)
 		match q.id:
 			"kerem":
 				_nesne("coop", h + Vector2(20, -2))
@@ -545,9 +614,38 @@ func _nesne(k: String, p: Vector2) -> void:
 	oyun.nesneler.add_child(s)
 	dunya_n.append(s)
 
+func _keci_ciz(p: Vector2, f: int, hop: int) -> void:
+	var y := p.y - hop
+	var P := func(dx: float, dy: float, w: float, h: float, c: String) -> void:
+		draw_rect(Rect2(p.x + (dx if f > 0 else -dx - w), y + dy, w, h), Color(c))
+	draw_rect(Rect2(p.x - 6, p.y + 1, 12, 2), Color(0, 0, 0, 0.22))
+	P.call(-5, -7, 10, 5, "#f0ece4"); P.call(-5, -7, 10, 1, "#ffffff"); P.call(4, -10, 4, 4, "#f0ece4"); P.call(7, -8, 1, 1, "#2a1f08"); P.call(5, -12, 1, 2, "#b8a888")
+	P.call(-4, -2, 1, 3, "#c8c0b0"); P.call(-1, -2, 1, 3, "#c8c0b0"); P.call(2, -2, 1, 3, "#c8c0b0"); P.call(4, -2, 1, 3, "#c8c0b0")
+
+## Işıl: gece, kendi saatinde soluk ışıklı bir kız (web isil); görev sürerken ışık izinin noktasında belirir
+var _isil_tex: Texture2D
+func _hayalet_ciz() -> void:
+	if not BY.has("isil"): return
+	var q: Dictionary = BY.isil
+	if done.has("isil") or not _pencere(q.win): return
+	var p = null
+	var ia = act("isil")
+	if ia == null:
+		if acik_mi(q): p = Vector2(q.x, q.y)
+	elif ia == A:
+		var s = _adim()
+		if s != null and s.get("ghost", 0): p = Vector2(q.pts[s.p].x, q.pts[s.p].y)
+	if p == null or p.distance_to(oyun.oyuncu.position) > 500.0: return
+	if _isil_tex == null: _isil_tex = load(q.resim_f)
+	var fl := sin(t * 2.0) * 2.0
+	draw_circle(p + Vector2(0, -10), 24.0, Color(0.59, 0.75, 1, 0.12))
+	draw_texture(_isil_tex, p + Vector2(-12, -36 + fl), Color(1, 1, 1, 0.45 + 0.15 * sin(t * 3.0)))
+
 ## takip edilen görevin aradığı şeyler: resmi, mavi halka ve kıvılcımlar (web curPts)
 func _draw() -> void:
-	if A == null or oyun.magara.icinde: return
+	if oyun.magara.icinde: return
+	_hayalet_ciz()
+	if A == null: return
 	var q: Dictionary = BY[A.id]
 	var s = _adim()
 	if s == null: return
@@ -558,6 +656,9 @@ func _draw() -> void:
 			if not A.got.has(k): L.append([s.get("draw", ""), q.pts[k], s.get("hide", 0) == 1])
 	if s.t == "kill" and s.has("draw"): L.append([s.draw, q.pts[s.p], false])
 	if q.id == "elif" and A.step >= 1: L.append(["wreck", q.pts.wreck, false])
+	if q.id == "saniye" and A.step >= 3:
+		L.append(["cave", q.pts.cave, true])
+	if s.t == "chase" and A.has("keci"): _keci_ciz(A.keci, 1 if oyun.oyuncu.position.x < A.keci.x else -1, 1 if A.gj != null and sin(t * 14.0) > 0.0 else 0)
 	for x in L:
 		var p := Vector2(x[1].x, x[1].y)
 		if p.distance_to(oyun.oyuncu.position) > 500.0: continue

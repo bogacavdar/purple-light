@@ -21,14 +21,17 @@ const wpng=(f,u)=>{fs.mkdirSync(path.dirname(f),{recursive:true});fs.writeFileSy
     const mk=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.imageSmoothingEnabled=false;return [c,g]};
     const KID={kerem:1,mina:1,isil:1,emir:1};
     const B=window.__plSide.BY,out=[];const LKs=window.__plSqLK||null;
-    for(const id in B){const q=B[id];if(q.b>2||q.cave||q.main||q.ext||q.ghost)continue;
-      const o={};for(const k of ['id','name','title','b','win','night','c','xp','intro','remind','remindUse','steps','after','quiet','fix','goatDone','anim','homeDone'])if(q[k]!=null)o[k]=q[k];
+    for(const id in B){const q=B[id];if(q.b>3||q.cave||q.main||q.ext)continue;
+      const o={};for(const k of ['id','name','title','b','win','night','c','xp','intro','remind','remindUse','steps','after','quiet','fix','goatDone','anim','homeDone','ghost'])if(q[k]!=null)o[k]=q[k];
       o.x=Math.round(q.x);o.y=Math.round(q.y);o.kid=KID[id]?1:0;o.pts={};for(const k in q.pts)o.pts[k]={x:Math.round(q.pts[k].x),y:Math.round(q.pts[k].y)};
       out.push(o)}
     // görünüşler: v230'un LK tablosu (kaynaktan okunur)
-    return out})()`),DRAWOBJ);
+    let fam=null;try{const F=window.__pl184.FAMS.find(f=>f.b===3);if(F)fam={x:Math.round(F.cx+40),y:Math.round(F.cy+46)}}catch(e){}
+    return {out,fam}})()`),DRAWOBJ);
+  const FAM=R.fam;
+  const QS=R.out;
   // kişilerin görünüşü kaynaktan (LK: id:L({...}))
-  for(const q of R){const m=SRC.match(new RegExp('[\\n,{ ]'+q.id+':L\\((\\{[^}]*\\})\\)'));q.look=m?m[1]:null}
+  for(const q of QS){const m=SRC.match(new RegExp('[\\n,{ ]'+q.id+':L\\((\\{[^}]*\\})\\)'));q.look=m?m[1]:null}
   const IMG=await p.evaluate(([DO,Q])=>window.__ham.ev(`(()=>{const png=c=>c.toDataURL('image/png');
     const mk=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.imageSmoothingEnabled=false;return [c,g]};
     const Q=${JSON.stringify(Q)};const kisi={};
@@ -46,13 +49,13 @@ const wpng=(f,u)=>{fs.mkdirSync(path.dirname(f),{recursive:true});fs.writeFileSy
       try{drawObj(k,48,70)}catch(e){}finally{px=_px}
       const d=g.getImageData(0,0,96,96).data;let a0=96,b0=96,a1=-1,b1=-1;for(let y=0;y<96;y++)for(let x=0;x<96;x++)if(d[(y*96+x)*4+3]>8){if(x<a0)a0=x;if(x>a1)a1=x;if(y<b0)b0=y;if(y>b1)b1=y}
       if(a1<0)continue;const [c2,g2]=mk(a1-a0+1,b1-b0+1);g2.drawImage(c,a0,b0,a1-a0+1,b1-b0+1,0,0,a1-a0+1,b1-b0+1);nes[k]={png:png(c2),ox:48-a0,oy:70-b0}}
-    return {kisi,nes}})()`),[DRAWOBJ,R]);
+    return {kisi,nes}})()`),[DRAWOBJ,QS]);
   const pre='res://art/yan/';
-  for(const q of R){const K=IMG.kisi[q.id];if(!K)continue;for(const f of ['f','q','portre']){const fn=q.id+'_'+f+'.png';wpng(path.join(OUT,'art','yan',fn),K[f]);q[f==='portre'?'portre':'resim_'+f]=pre+fn}q.gate=GATE[q.id]||[0];delete q.look}
+  for(const q of QS){const K=IMG.kisi[q.id];if(!K)continue;for(const f of ['f','q','portre']){const fn=q.id+'_'+f+'.png';wpng(path.join(OUT,'art','yan',fn),K[f]);q[f==='portre'?'portre':'resim_'+f]=pre+fn}q.gate=GATE[q.id]||[0];delete q.look}
   for(const k in IMG.nes){const fn='nes_'+k+'.png';wpng(path.join(OUT,'art','yan',fn),IMG.nes[k].png);IMG.nes[k].png=pre+fn}
   const OBJSC=eval('('+SRC.match(/const OBJSC=(\{[^}]*\})/)[1]+')');
   const MOB=eval(SRC.match(/ const MOB=(\[\[.*?\]\]);/)[1]);
-  fs.writeFileSync(path.join(OUT,'data','yan.json'),JSON.stringify({yan:R,nesne:IMG.nes,objsc:OBJSC,mob:MOB}));
-  console.log('yan',R.length,R.map(q=>q.id+(q.portre?'':'(resimsiz)')).join(' '),'| nesne',Object.keys(IMG.nes).length);
+  fs.writeFileSync(path.join(OUT,'data','yan.json'),JSON.stringify({yan:QS,nesne:IMG.nes,objsc:OBJSC,mob:MOB,fam3:FAM}));
+  console.log('yan',QS.length,QS.map(q=>q.id+(q.portre?'':'(resimsiz)')).join(' '),'| nesne',Object.keys(IMG.nes).length);
   await b.close();
 })().catch(e=>{console.error(e);process.exit(1)});

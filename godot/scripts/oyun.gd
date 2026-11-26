@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 4a"
+const SURUM := "Godot · Adım 4b"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -673,6 +673,7 @@ func _yan_test(id: String) -> void:
 	zaman.dk = float(q.win[0]) + 20.0
 	oyuncu.position = Vector2(q.x + 14, q.y + 6)
 	while env.sv < 15: env.xp_ekle(800)
+	oyuncu.dokunulmaz = 9999.0
 	await get_tree().create_timer(1.0).timeout
 	print("YAN gorunur=", yan.kisi_n[id].visible, " acik=", yan.acik_mi(q))
 	yan._basla(q)
@@ -702,6 +703,19 @@ func _yan_test(id: String) -> void:
 			yan._konus(q)
 		elif st.t == "go":
 			oyuncu.position = Vector2(q.pts[st.p].x, q.pts[st.p].y)
+		elif st.t == "chase":
+			for k in 8:
+				if yan.A == null or yan._adim() != st: break
+				oyuncu.position = yan.A.keci + Vector2(4, 0)
+				await get_tree().create_timer(1.6).timeout
+				print("YAN kovala cnt=", yan.A.cnt if yan.A != null else -1)
+		elif st.t == "escort":
+			for k in 40:
+				if yan.A == null or yan._adim() != st: break
+				var hd: Vector2 = yan._hedef(st, q)
+				oyuncu.position = oyuncu.position.move_toward(hd, 40.0)
+				await get_tree().create_timer(0.5).timeout
+			print("YAN eslik bitti? ", yan.A == null or yan._adim() != st)
 		elif st.t == "kill":
 			oyuncu.position = Vector2(q.pts[st.p].x, q.pts[st.p].y) + Vector2(0, 40)
 			await get_tree().create_timer(1.0).timeout
