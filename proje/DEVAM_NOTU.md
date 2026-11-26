@@ -1,3 +1,7 @@
+## v4.73 (26 Kasım 2026) · Godot 3f: Yan görevler (Çayır, Orman, Bataklık)
+- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_yan.js → data/yan.json, art/yan; yeni yan.gd; oyun.gd F'de yan kişi, canli_oldu görev canavarı, kayıtta yan). Denetim: ?yantest_<id> (ör. yantest_kerem, yantest_nadir). Belge 99_godot 3f satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.72 (26 Kasım 2026) · Godot 3e: Kök Mağarası ve Batık Mağara
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_magara2.js → data/magara_c1.json, data/magara_c2.json, art/magara/c1_*, c2_*; magara.gd birden çok mağara: MAGS, cur, mağara başına durum; kayıtta magaralar; insa.gd bütün mağara girişleri). Denetim: ?mag_c1, ?mag_c2_dip. Belge 99_godot 3e satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.54 (26 Kasım 2026) · Godot: Çayır'ın bütün canlıları
 - `godot-deneme/` yeni derleme (godot dalı: oyun.gd _dogur/_dogur_tur web spawnIn kuralı; data/canlilar_cayir.json web BANIM[0], ANIM, PACK; art/canli_*.png). Belge 99_godot 1g satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.53 (26 Kasım 2026) · Godot Adım 1f-3b-1 (Nazlı'nın pazarı)
-- `godot-deneme/` yeni derleme (godot dalı: pazar.gd; data/pazar.json = web PRICE_, noSell, isRaw, rawPrice, madeOk). Belge 99_godot 1f-3b satırı dört parçaya bölündü. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

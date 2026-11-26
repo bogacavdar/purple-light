@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.73 · 26 Kasım 2026
+
+### Proje
+- **Godot: yan görevler (Çayır, Orman, Bataklık):**
+  - 18 yan kişi web'deki yerlerinde, kendi saatlerinde görünüyor. Görevi alınabilen kişinin başında mavi "?" var.
+  - Ana görevler ilerledikçe sırayla açılıyorlar; bir biyomda aynı anda en çok iki tane açık.
+  - Bulmak, toplamak, getirmek, avlamak, yanında beklemek ve eşlik etmek gibi adımları var. Takip ettiğin görev sağ üstte mavi kartta.
+  - Bitince Vio ve XP veriyorlar; dünyada izleri kalıyor (Bulut'un kümesi, Gülsüm'ün kovanları, onarılan değirmen…).
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.72 · 26 Kasım 2026
 
 ### Proje
@@ -220,10 +232,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot: Çayır'ın bütün canlıları geldi:** tavşan ve kurdun yanına keklik, bıldırcın, kerevit, porsuk, geyik ve yaban atı. Web'deki gibi Çayır'da dolaştıkça çevrende doğuyorlar; kurtlar yalnız gece ve ilk seviyelerde tek başına çıkıyor. Geyik ve yaban atı sürüyle geziyor; vurursan saldırıyorlar. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.53 · 26 Kasım 2026
-
-### Proje
-- **Godot, Adım 1f-3b-1 (Nazlı'nın pazarı) oynanabilir:** Nazlı'yla konuşunca pazar açılıyor. Sat sekmesinde miktarla, tek tek ya da hepsini satıyorsun; üç toplu satış düğmesi web'deki gibi (hepsini sat, kazandaki açık tariflere yeteni bırak, bütün tariflere yeteni bırak). Tarifte kullanılan bir malzemeyi satarken "Emin misin?" soruyor. Satın al sekmesinde gördüğün doğal malzemeler ve tarifini bildiğin eşyalar var. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
