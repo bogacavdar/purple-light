@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.99 · 27 Kasım 2026
+
+### Proje
+- **Godot: yaylar, oklar ve silah etkileri:**
+  - 15 yay geldi. Yay elindeyken vuruş tuşu ok atar; çantadaki en güçlü ok harcanır. Okları el yapımıyla yaparsın.
+  - Alevli, Zehirli ve Keskin silahlar ve oklar canlıyı yakar, zehirler ya da kanatır.
+  - Büyü, mermi ve oklar artık uzun bir karede canlının içinden geçip gitmiyor (önceden ilk atış bazen ıska geçiyordu).
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.98 · 27 Kasım 2026
 
 ### Proje
@@ -221,17 +232,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Tuzak çimene, balık kapanı suyun kenarına kurulur (en çok 6). Bir süre sonra av düşer; F ile alırsın.
   - Gece çayırda ve ormanda gece sefası ile mor kıymık belirir, parlar ve çevresini mor ışıktan korur; ateşböcekleri uçuşur.
   - Pazarcı Nazlı'nın "Taze balık" ve "Kürk siparişi" görevleri artık Godot'ta yapılabiliyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.79 · 26 Kasım 2026
-
-### Proje
-- **Godot: Kül Diyarı ve Mor Kristal Vadisi'nin yan görevleri:**
-  - Kül Diyarı'nda Çırak Çelik, Katırcı Ömer, Yangıncı Kor Ali, Külcü Hasret, Nar ve Duman Dede'nin görevleri geldi.
-  - Mor Kristal Vadisi'nde Melodi, Kristalci Yaren, Asena, Balıkçı Selim, Lostromo Rıza ve Fenerci Işık'ın görevleri geldi.
-  - Böylece web'deki 36 yan görevin hepsi Godot'ta.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
