@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.69 · 26 Kasım 2026
+
+### Proje
+- **Godot: Bataklık'ın kişileri ve görevleri:**
+  - Cadı Safir (kazanı), Silahçı Ali (ocağı, örsü, silah rafı), Zırhçı Veli (örsü, mankeni) ve Pazarcı Nilüfer (tezgâhı) web'deki yerlerinde.
+  - Önce tanışıyorsun, sonra 27 görev veriyorlar.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.68 · 26 Kasım 2026
 
 ### Proje
@@ -206,10 +216,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot, Adım 1f-1 (ana menü, kayıt, gün-gece, bayılma) oynanabilir:** oyun artık ana menüyle açılıyor (Devam et, Yeni oyun, Kayıttan yükle). Esc ile oyun içi menü: kaydet (3 yuva), yükle, ana menüye dön; otomatik kayıt da var. Gün ve gece döngüsü geldi: akşam kararıyor, ateşler ve meşale ışık veriyor; gece ışıksız kalırsan mor ışık iniyor ve bayılıyorsun. Bayılınca eşyaların ve Vio'nun bir kısmı gidiyor, kalanı düştüğün yerde kurukafalı bir çantada bekliyor. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.49 · 25 Kasım 2026
-
-### Proje
-- **Godot, Adım 1e-2 (Yankı Mağarası: canlılar, boss, Madenci Kaya) oynanabilir:** mağarada yarasalar, kör kertenkeleler ve taş örümcekleri dolaşıyor; en dipte fenerli Madenci Kaya seni bekliyor. 4 Yankı mantarı getirince Yankı Kraliçesi geliyor; yenince Kaya'ya dön. Mağaranın ağzında Sarkıt ve Yarasa gübresi toplanıyor. Godot'da artık her canlı avlanınca kendi düşenlerini bırakıyor ve XP veriyor. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
