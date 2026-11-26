@@ -1,3 +1,7 @@
+## v4.89 (27 Kasım 2026) · Godot A1: ikinci ada ve portallar
+- `godot-deneme/` yeni derleme (godot dalı: oyun.gd `ada` (Kayit.bekleyen.ada), data/ada2 yükleme, ada başına durum (kayıtta üst düzey = Yıldızsız Ada, `ada2` = ikinci ada; ADA_YEREL), seyahat(), _varis(); yeni portal.gd; ciftlik/poyraz/isikci/yan/iz/kopru/gecit/magara/evcil ikinci adada kapalı (durumları ham olarak korunur); kuzen.gd ikinci adada Barbaros ve gemi, yolculuk sonunda geçiş; gorev.gd ACT 2 kartı; yeni tools/disa_aktar_ada2.js → data/ada2/{harita,dunya,toplama_ek,yerler}.json, art/ada2, 8 yeni eşya resmi). Denetim: ?ada2test, ?ada2test_don. Belge 99_godot A1 satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (eski kayıtlarda `ada`/`ada2` alanı yoksa birinci ada açılır).
+
 ## v4.88 (27 Kasım 2026) · Godot O8: ACT 1'in sonu
 - `godot-deneme/` yeni derleme (godot dalı: kuzen.gd gemi/act2 bayrakları (tanis'te), enkaz_f, _teklif, yolculuk sahnesi ve ACT 2 kartı, yeni gemi çizimi; gorev.gd "ship" adımı; oyun.gd F sırasında enkaz, enkaza tekne yeri; yeni tools/disa_aktar_yolculuk.js → art/yolculuk 111 kare + data/yolculuk.json). Denetim: ?gemitest. Belge 99_godot O8 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et.
@@ -73,9 +77,5 @@
 
 ## v4.70 (26 Kasım 2026) · Godot 3c: Avcı Doğan
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_kisi.js toygar ve kulübesi; kuzen.gd rol t, Doğan'ın konuşmaları ve tarifleri; gorev.gd wear; oyun.gd kulübe çizimi). Denetim: ?git_toygar. Belge 99_godot 3c satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.69 (26 Kasım 2026) · Godot 3b: Bataklık'ın kişileri ve görevleri
-- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_kisi.js BIYOM=2 → data/kisiler_bataklik.json, data/gorevler_bataklik.json, art/kisiler; oyun.gd kişileri ve istasyonları birleştirir; gorev.gd Bataklık görevleri ve tool koşulu). Denetim: ?git_k_safir. Belge 99_godot 3b satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

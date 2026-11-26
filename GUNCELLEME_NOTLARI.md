@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.89 · 27 Kasım 2026
+
+### Proje
+- **Godot: ikinci ada:**
+  - Barbaros'la deniz yolculuğu bitince ACT 2'nin adası (yonca ada) yükleniyor; Barbaros indirdiği kıyıda bekliyor.
+  - Kemal'in ve Barbaros'un yanındaki portallarla iki ada arasında gidip gelinebiliyor. Çanta, Vio, seviye ve görevler ortak; kurduğun yapılar ve bulunduğun yer her adada ayrı tutuluyor.
+  - İkinci adada henüz canlılar, Yıldız ve öbür kişiler yok; sıradaki adımlarda gelecekler.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.88 · 27 Kasım 2026
 
 ### Proje
@@ -217,16 +228,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Köprünün doğusunda, kamış kulübesinin yanında. Tanışınca kamış çizme ve panzehir tariflerini öğretiyor, o fırtınalı geceyi anlatıyor.
   - Görevleri: kamış çizme giy, Bataklık'ın hayvanlarını avla, Kayalık Dağ'a git.
   - "Şunu giy" görevleri artık tamamlanıyor (Durmuş'un tunç miğfer görevi de).
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.69 · 26 Kasım 2026
-
-### Proje
-- **Godot: Bataklık'ın kişileri ve görevleri:**
-  - Cadı Safir (kazanı), Silahçı Ali (ocağı, örsü, silah rafı), Zırhçı Veli (örsü, mankeni) ve Pazarcı Nilüfer (tezgâhı) web'deki yerlerinde.
-  - Önce tanışıyorsun, sonra 27 görev veriyorlar.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
