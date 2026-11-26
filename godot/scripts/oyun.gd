@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · A4"
+const SURUM := "Godot · A5"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -1055,6 +1055,29 @@ func _ada2_test(q: String) -> void:
 		for c in konusma.liste.duplicate():
 			if c.t == "Onar": konusma._sec(c)
 		print("KB fixed ", b.fixed, " ustunde ", kopru.ustunde(Vector2(b.cx, b.cy)), " engel ", engel(Vector2(b.cx, b.cy)), " yaka ", kopru._yakalar(), " gecit ", gecit.x0, " ", gecit.engel(Vector2(gecit.cx, gecit.cy)))
+	if q.contains("isin"):
+		bitenler_ekle(["gk1", "gk2", "gk3", "pv1", "pv2", "pv3", "sl1", "sl2", "sl3", "sl4"])
+		kuzen.tanis["gok"] = true; kuzen.tanis["pervin"] = true; kuzen.tanis["tamer"] = true
+		var Is = gorev.kisi("selin")
+		await get_tree().create_timer(0.5).timeout
+		print("IS hedef ", gorev.hedef().get("ad", "-"), " kart ", gorev.kart_baslik.text, " / ", gorev.kart_ad.text, " I ", Is.position)
+		oyuncu.position = Is.position + Vector2(-14, 4)
+		konus_ya_da_istasyon(); print("IS 1 ", konusma.yazi.text.substr(0, 60)); konusma._cik()
+		await get_tree().create_timer(0.4).timeout
+		print("IS pv4 verilebilir ", gorev.acik(gorev.QI["pv4"]), " vis ", gorev.vis.map(func(x): return x.q.id))
+		bitenler_ekle(["mk1", "mk2", "mk3"])
+		await get_tree().create_timer(0.3).timeout
+		el_yapimi.bilinen["Meka zırh"] = true
+		for p in el_yapimi.R["Meka zırh"].i: env.ekle(str(p[0]), int(p[1]))
+		env.vio_ekle(1000)
+		konus_ya_da_istasyon()
+		for c in konusma.liste.duplicate():
+			if str(c.t).contains("Meka"): konusma._sec(c)
+		print("IS yaptı ", konusma.yazi.text.substr(0, 50), " ", env.adet("Meka zırh"), " vio ", env.vio, " kart ", gorev.kart_ad.text)
+		konusma._cik()
+		var h0: float = oyuncu.hp_max; var m0: float = stat("move")
+		giy("Meka zırh")
+		print("IS giydi can ", h0, " → ", oyuncu.hp_max, " hız ", m0, " → ", stat("move"))
 	if q.contains("tufan"):
 		bitenler_ekle(["gk1", "gk2", "gk3", "pv1", "pv2", "pv3"])
 		el_yapimi.bilinen["Ateş asası"] = true
@@ -1658,6 +1681,11 @@ func _taki(k: String) -> float:
 
 ## r < 0: şimdiki puanla ve takıların etkisiyle; r ≥ 0: o puanla (önizleme, takısız)
 func stat(k: String, r: int = -1) -> float:
+	var v0 := _stat(k, r)
+	if k == "move" and r < 0 and kusam.get("govde", null) == "Meka zırh": v0 *= 1.12   # web v79: Meka zırh adımı %12 hızlandırır
+	return v0
+
+func _stat(k: String, r: int = -1) -> float:
 	var S: Array = kusanma.sps[k]
 	var v: float = float(S[0]) + float(S[1]) * float(r if r >= 0 else int(puan.get(k, 0)))
 	if r >= 0: return v

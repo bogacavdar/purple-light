@@ -81,7 +81,7 @@ func yetenek_uygula() -> void:
 ## web maxHP, maxSt, stRegen (seviye puanı + yetenek + takı)
 func can_max(r: int = -1) -> float:
 	var S = oyun
-	return roundf(S.stat("hp", r) + (350.0 if S.sk("C10") else (250.0 if S.sk("C8") else (175.0 if S.sk("C5") else (100.0 if S.sk("C3") else (50.0 if S.sk("D1") else 0.0))))))
+	return roundf((S.stat("hp", r) + (350.0 if S.sk("C10") else (250.0 if S.sk("C8") else (175.0 if S.sk("C5") else (100.0 if S.sk("C3") else (50.0 if S.sk("D1") else 0.0)))))) * (1.25 if r < 0 and S.kusam.get("govde", null) == "Meka zırh" else 1.0))   # web v79: Meka zırh canı %25 artırır
 
 func enerji_max(r: int = -1) -> float:
 	var S = oyun

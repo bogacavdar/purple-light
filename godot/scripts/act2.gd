@@ -9,7 +9,7 @@ func kur(o) -> void:
 	oyun = o
 	U = o._json("res://data/ada2/ustalar.json")
 
-const ROL := {"gok": "gk", "pervin": "pv", "tamer": "sl"}
+const ROL := {"gok": "gk", "pervin": "pv", "tamer": "sl", "selin": "mk"}
 ## ikinci adada kişi listesine girecek ustalar (şimdilik Yıldız ve Efsun)
 func kisiler() -> Array:
 	var out := []
@@ -25,6 +25,7 @@ func kisi_kuruldu(n) -> void:
 	if n.K.k == "gok": teleskop_kur(n)
 	if n.K.k == "pervin": efsun_kur(n)
 	if n.K.k == "tamer": tufan_kur(n)
+	if n.K.k == "selin": isin_kur(n)
 
 func usta(k: String) -> Dictionary:
 	for x in U.kisiler:
@@ -66,8 +67,9 @@ func yildiz(n) -> void:
 # ------------------------------------------------------------------ Büyücü Efsun (web v77: Dev Mantar Ormanı; mor mana ve asalar)
 const MAKES := [["Ateş asası", 100], ["Buz asası", 200], ["Yıldırım asası", 300], ["Mana iksiri", 10]]
 const ODUL := {"pv1": ["Mana iksiri"], "pv3": ["Ateş asası"], "pv4": ["Buz asası"], "pv5": ["Yıldırım asası"],
+	"mk1": ["Kobalt külçesi", "Titanyum külçesi", "Enerji hücresi"], "mk3": ["Meka zırh"],
 	"sl1": ["Pirinç külçesi", "Barut"], "sl3": ["Tabanca", "Tabanca mermisi"], "sl4": ["Pompalı", "Pompalı fişeği"]}
-const DUYUR := {"Ateş asası": "Efsun", "Buz asası": "Efsun", "Yıldırım asası": "Efsun", "Tabanca": "Tufan", "Pompalı": "Tufan"}
+const DUYUR := {"Ateş asası": "Efsun", "Buz asası": "Efsun", "Yıldırım asası": "Efsun", "Tabanca": "Tufan", "Pompalı": "Tufan", "Meka zırh": "Işın"}
 
 func efsun_kur(n) -> void:
 	# şapka (web: kişinin başında mor sivri şapka)
@@ -119,7 +121,7 @@ func _yap(n, nm: String, ucret: int, don: Callable) -> void:
 	var geri := [{t = "Tamam", pri = true, f = func(): don.call(n)}]
 	var tf: bool = n.K.k == "tamer"
 	if not _ey().bilinen.has(nm):
-		_soyle(n, ("[b]%s[/b] tarifini önce Yıldız'ın kazanında öğren. Ben ancak bildiğin şeyi yaparım." if tf else "[b]%s[/b] tarifini önce kazanda öğrenmelisin evlat. Yıldız'ın kazanı Yüzen Kayalar'da.") % nm, geri)
+		_soyle(n, ("[b]%s[/b] tarifini önce Yıldız'ın kazanında öğren." if n.K.k == "selin" else ("[b]%s[/b] tarifini önce Yıldız'ın kazanında öğren. Ben ancak bildiğin şeyi yaparım." if tf else "[b]%s[/b] tarifini önce kazanda öğrenmelisin evlat. Yıldız'ın kazanı Yüzen Kayalar'da.")) % nm, geri)
 		return
 	var eks: String = _ey().eksik(nm)
 	if eks != "":
@@ -138,6 +140,9 @@ func _yap(n, nm: String, ucret: int, don: Callable) -> void:
 	oyun.env.vio_ekle(-ucret)
 	oyun.env.ekle(nm, 1)
 	if oyun.buyu.STAFF.has(nm): oyun.buyu.ac()
+	if n.K.k == "selin":
+		_soyle(n, "[i](kaynak maskesini kaldırır)[/i] Meka zırh hazır! Özellikler'den gövdene giy. Çok sağlamdır, adımlarını hızlandırır, canını artırır; zehir, yanık ve kanamanın yarısını tutar.", [{t = "Teşekkürler", pri = true, kapat = true}])
+		return
 	if tf:
 		_soyle(n, "[i](namluyu güneşe tutar, üfler)[/i] %s hazır. Mermisini kendin yaparsın: tarifi kitabında. Bir seferde bir kutu çıkar. Nişan almana gerek yok; en yakın düşmana döner, sen yeter ki tetiğe bas." % nm, [{t = "Teşekkürler", pri = true, kapat = true}])
 		return
@@ -178,4 +183,32 @@ func tufan(n) -> void:
 		ch.append({t = "%s %s yap (%d Vio)" % ["✦" if _yapabilir(nm) else "·", nm, int(m[1])], f = _yap.bind(n, nm, int(m[1]), tufan)})
 	ch.append({t = "Hoşça kal", pri = true, kapat = true})
 	var L := ["Kum her yere girer; namluyu temiz tut.", "Robotlar gece de çalışır. Biz uyuruz, onlar saymaya devam eder.", "Bir mermi, bir düşman. Fişekse kalabalık için."]
+	_soyle(n, L[randi() % L.size()], ch)
+
+# ------------------------------------------------------------------ Mühendis Işın (web v79: Kristal Golem Ocağı; Meka zırh)
+func isin_kur(n) -> void:
+	var g := Node2D.new()
+	g.position = n.position + Vector2(22, 0)
+	g.draw.connect(func():
+		var r := func(x, y, w, h, c): g.draw_rect(Rect2(x, y, w, h), Color(c))
+		r.call(-7, -16, 14, 14, "#5a6a8a"); r.call(-7, -16, 14, 2, "#8a9ab8"); r.call(-4, -13, 8, 4, "#2a3040"); r.call(-3, -12, 2, 1, "#5ad0ff"); r.call(1, -12, 2, 1, "#5ad0ff")
+		r.call(-10, -12, 3, 8, "#4a5a78"); r.call(7, -12, 3, 8, "#4a5a78"); r.call(-5, -2, 3, 3, "#3a4a68"); r.call(2, -2, 3, 3, "#3a4a68"))
+	var tm := Timer.new(); tm.wait_time = 0.1; tm.autostart = true
+	tm.timeout.connect(func():
+		if randf() < 0.05 and g.position.distance_to(oyun.oyuncu.position) < 400.0: oyun.parca(g.position + Vector2(0, -8), Vector2(randf_range(-20, 20), -20), 0.3, Color("#ffd27a")))
+	g.add_child(tm)
+	oyun.nesneler.add_child(g)
+
+## web talkSelin
+func isin(n) -> void:
+	var K = oyun.kuzen
+	if not K.tanis.has("selin"):
+		K.tanis["selin"] = true
+		_soyle(n, "[i](bir golem kolunun içine gömülmüş, tornavidayla uğraşıyor)[/i] Bir dakika… tamam! Merhaba! Ben [b]Işın[/b]. Golemler canlı değil, biliyor muydun? İçlerinde gökten düşmüş birer [b]enerji taşı[/b] var. Ben de onlardan bir zırh yapıyorum. Tufan söylemiştir: o gemiye mermi işlemez. Ama belki bir meka zırh, oraya çıkan birini ayakta tutar.", [{t = "Hoşça kal", kapat = true}])
+		return
+	var ch := []
+	if _ey().verilen.has("Meka zırh") or _ey().bilinen.has("Meka zırh"):
+		ch.append({t = "%s Meka zırh yap (600 Vio)" % ("✦" if _yapabilir("Meka zırh") else "·"), f = _yap.bind(n, "Meka zırh", 600, isin)})
+	ch.append({t = "Hoşça kal", pri = true, kapat = true})
+	var L := ["Golemlerin gözüne değil, göğsüne vur: taş orada.", "Titanyum hafiftir ama inatçıdır. Benim gibi.", "Geminin sinyalini dinliyorum. Her gece aynı şeyi sayıyor."]
 	_soyle(n, L[randi() % L.size()], ch)
