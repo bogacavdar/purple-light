@@ -91,7 +91,9 @@ func _process(dt: float) -> void:
 			if ts == null: yaniyor = false
 			_ciz()
 	var n = elde()
-	isik.enabled = n != null and oyun.magara.icinde
+	var lb: bool = n == null and oyun.isikci != null and oyun.isikci.lamba()
+	isik.enabled = (n != null or lb) and oyun.magara.icinde
+	if lb: isik.texture_scale = 125.0 * 2.0 / 128.0
 	if n != null:
 		isik.texture_scale = yaricap() / 128.0
 		isik.energy = 1.05 + 0.08 * sin(Time.get_ticks_msec() * 0.012)

@@ -75,11 +75,11 @@ func _ana_biten() -> Array:
 	return L
 
 func acik_mi(q: Dictionary) -> bool:
-	if q.get("main", 0): return false
+	if q.get("main", 0) or q.get("ext", 0): return false
 	var d := _ana_biten()
 	var n := 0
 	for x in Q:
-		if int(x.b) != int(q.b): continue
+		if int(x.b) != int(q.b) or x.get("main", 0) or x.get("ext", 0): continue
 		if done.has(x.id): continue
 		if met.has(x.id) or act(x.id) != null:
 			if x == q: return true
@@ -97,7 +97,7 @@ func _takipci(q: Dictionary) -> bool:
 	return s != null and s.t == "escort" and s.get("who", "") == "self"
 
 func var_mi(q: Dictionary) -> bool:
-	if q.get("main", 0): return false   # ana görevin adımları (Ekin'in EK1'i): kişi yan görevin değil, ana görevindir
+	if q.get("main", 0) or q.get("ext", 0): return false   # ana görevin adımları (Ekin'in EK1'i): kişi yan görevin değil, ana görevindir
 	if oyun.magara.icinde: return false
 	if q.get("ghost", 0): return false
 	if done.has(q.id): return true
