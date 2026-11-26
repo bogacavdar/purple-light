@@ -18,6 +18,7 @@ var rh = null               # {stage, open}
 var takla_cd_t := -1e9
 var takla_msg := 0.0
 var once_atilma := false
+var aktif_tur := ""
 const DBL := 0.18
 const HOLD0 := 0.22
 const FULL := 0.55
@@ -130,6 +131,9 @@ func grup() -> String:
 
 func acik(tur: String) -> bool:
 	if oyun.ada == 2 or oyun.kuzen.act2: return true
+	if oyun.dovus != null and oyun.dovus.acik():
+		var k: String = str(oyun.dovus.D.k)
+		if k == tur or (k == "c3" and tur == "c2"): return true   # derste o hamle (ve ritim zincirinin öncesi) açık
 	return oyun.kuzen.tanis.has("ders_" + tur)
 
 ## vuruş tuşuna basıldı (web pointerdown / Q)
@@ -252,6 +256,7 @@ func hamle(tur: String, d: Vector2) -> float:
 			return 0.0
 		P.st -= st; P.st_dinlen = 0.0
 	var yon: Vector2 = d.normalized() if d.length() > 0.1 else P.bakis.normalized()
+	aktif_tur = tur
 	P._yon_sec(yon)
 	if H.has("p"): P._kay(yon * float(H.p))
 	if H.has("a"): _atislar(g, H, yon)
@@ -306,6 +311,7 @@ func _alan(g: String, v: Array, yon: Vector2, once: Dictionary) -> void:
 		if not ok: continue
 		once[a] = true
 		vurulan.append(a)
+		if oyun.dovus != null: oyun.dovus.isabet(aktif_tur, a)
 		a.vuruldu(oyun.kritik(dm, str(w.get("n", "")), a), q.normalized() if dist > 0.5 else yon)
 		P._silah_etki(w, a, dist)
 		if float(v[5]) > 0.0 and not a.boss: a.sersem = maxf(a.sersem, float(v[5]))

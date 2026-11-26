@@ -372,6 +372,7 @@ func vur(d: Vector2) -> void:
 		var dmk := dm
 		if mc == "topuz": dmk = int(round(dm * (1.0 + 0.1 * mini(kombo, 6))))
 		a.vuruldu(oyun.kritik(dmk, str(w.get("n", "")), a), dv / maxf(dist, 1.0))
+		oyun.ult_ekle(1.5)
 		_silah_etki(w, a, dist)
 		if mc == "gurz": _gurz(a, dmk)
 		elif mc == "topuz": _topuz(a, dmk)
@@ -465,6 +466,7 @@ func kalkan_kaldir() -> void:
 ## darbe pencerede geldi: geri çevrilir (web parried)
 func savusturdu(a = null) -> void:
 	pr_n += 1
+	oyun.ult_ekle(10.0)
 	pr_flash = 0.25
 	pr_cd = minf(pr_cd, 0.15)
 	st = minf(st_max, st + 6.0)

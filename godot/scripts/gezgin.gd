@@ -413,7 +413,7 @@ func _malzemeler() -> Array:
 func _process(dt: float) -> void:
 	t += dt
 	if oyun.basta: return
-	if Input.is_action_just_pressed("kopek") and not oyun.oyuncu.kilit:
+	if Input.is_action_just_pressed("kopek") and not oyun.oyuncu.kilit and not (oyun.dovus != null and oyun.dovus.r_kare == Engine.get_process_frames()):   # web: R çubuk doluyken ulti (dovus.gd), değilse köpekler
 		if pen_kat.visible: kapat()
 		elif not oyun.pencere_acik() and not kopekler.is_empty(): ac()
 	if pen_kat.visible and Input.is_action_just_pressed("ui_cancel"): kapat()
