@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.86 · 26 Kasım 2026
+
+### Proje
+- **Godot: Yıldızsız Işıkçı:**
+  - 15. günden sonra her akşam Çayır'da mavi ışıklı Işıkçı belirir.
+  - 5 mor kıymık, 3 gece sefası ve 1 tunç külçesi karşılığında Kafa lambası verir. Onunla konuşunca bu takas "Hiç bitmeyen ışık" yan görevi olur.
+  - Kafa lambası takılıyken gece mor ışık inmez, mağarada etrafı aydınlatır.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.85 · 26 Kasım 2026
 
 ### Proje
@@ -216,18 +227,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Usta Sinan'ın yaptığı ağılı kurunca hayvan evcilleştirebiliyorsun. Hayvanın sevdiği yiyeceği F ile yere bırakıp geri çekiliyorsun; hayvan gelip yiyor ve güveni artıyor. Dört beslemede evcilleşiyor ve ona ad koyuyorsun.
   - Yaban atına B ile biniyorsun (1,8 kat hızlı). Orman'daki kurt ininden yavru alıyorsun; iki günde büyüyor, sonra seni kovalayan hayvanlarla dövüşüyor.
   - Ağılda F ile kimin yanında, kimin ağılda kalacağını seçiyorsun. Ölen yoldaşın adı ağıldaki taşa yazılıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.66 · 26 Kasım 2026
-
-### Proje
-- **Godot: evin içi ve Döşe:**
-  - Kurduğun evin (yaprak barınağı dışında) yanında F'ye basınca içeri giriyorsun. Oda evin büyüklüğünde: kulübe 6×4, konak 12×8 kare. Pencerelerden gündüz gök, akşam turuncu, gece lacivert görünüyor.
-  - İçeride WASD ile ya da tıklayarak yürüyorsun. Kapıdan, "Dışarı çık" düğmesiyle ya da kapının önünde F ile dışarı çıkıyorsun. İçerideyken hayvanlar duruyor, mor ışık sana zarar vermiyor.
-  - "Döşe" ile çantandaki ev eşyalarını (yatak, lamba, masa, halı, perde, resim…) odaya koyuyorsun. R döndürüyor; yerleşik bir eşyaya tıklayınca taşıyabilir, geri alabilir ya da döndürebilirsin. Halı yerde kalıyor, perde ve resim duvara asılıyor.
-  - Yatağın yanında F ile gece uyuyorsun. Gece lamba yoksa oda kararıyor ve pencereden mor ışık sızıyor; lamba yakınını aydınlatıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
