@@ -221,7 +221,7 @@ func _process(dt: float) -> void:
 	oyun.enerji_guncelle(st, st_max, yorgun)
 	if yuruyor:
 		var n := g.normalized()
-		var sp: float = float(V.speed) * oyun.stat("move") * (1.15 if oyun.insa.yolda(position) else 1.0) * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0) * (0.45 if kalkan else 1.0) * oyun.evcil.hiz() * (1.0 + (0.4 if oyun.sk("H7") else (0.3 if oyun.sk("H3") else (0.2 if oyun.sk("H2") else (0.1 if oyun.sk("H1") else 0.0)))))
+		var sp: float = float(V.speed) * oyun.stat("move") * (1.15 if oyun.insa.yolda(position) else 1.0) * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0) * (0.45 if kalkan else 1.0) * oyun.evcil.hiz() * _camur() * (1.0 + (0.4 if oyun.sk("H7") else (0.3 if oyun.sk("H3") else (0.2 if oyun.sk("H2") else (0.1 if oyun.sk("H1") else 0.0)))))
 		_kay(n * sp * dt)
 		_yon_sec(n)
 		adim += dt * (1.7 if kos else 1.0)
@@ -264,6 +264,15 @@ func _yon_sec(n: Vector2) -> void:
 	var tablo := {0: 2, 1: 1, 2: 0, 3: 7, 4: 6, -4: 6, -3: 5, -2: 4, -1: 3}
 	yon = tablo[k]
 	bakis = Vector2(cos(k * PI / 4.0), sin(k * PI / 4.0))
+
+## Bataklık çamuru ×0,6 (çizme önler), ayaktan çamur sıçrar
+func _camur() -> float:
+	if oyun.evcil.binilen != null or not oyun.camur_mu(position) or oyun.camur_gecmez(): return 1.0
+	if randf() < get_process_delta_time() * 8.0: oyun.parca(position + Vector2(randf_range(-3, 3), 1), Vector2(randf_range(-5, 5), -8), 0.3, Color("#4a3a22"))
+	if not oyun.camur_dedi:
+		oyun.camur_dedi = true
+		oyun.env.mesaj("Çamura battın: yavaşlıyorsun. Kamış çizme ya da demir çizme çamurda yavaşlatmaz.")
+	return 0.6
 
 func bilir(id: String) -> bool:
 	return oyun.yetenekler.has(id) or oyun.ders.gecici(id)

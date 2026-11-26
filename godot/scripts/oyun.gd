@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 2f"
+const SURUM := "Godot · Adım 3a"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -80,6 +80,8 @@ var karakter                # karakter penceresi (karakter_pen.gd)
 var yapi                    # kurulan yapılar ve evler (yapi.gd)
 var sinan                   # Usta Sinan'ın sipariş pencereleri (sinan.gd)
 var atolye                  # Atölye penceresi ve üretimi (atolye.gd)
+var kopru                   # büyük nehrin köprüleri (kopru.gd)
+var camur_dedi := false
 var evcil                   # evcil hayvanlar ve Çoban Davut (evcil.gd)
 var ev                      # evin içi ve Döşe (ev_ici.gd)
 var insa                    # İnşa kipi: zemin, çit, duvar, kapı, fener (insa.gd)
@@ -96,7 +98,7 @@ func _ready() -> void:
 	var CC: Dictionary = _json("res://data/canlilar_cayir.json")
 	canlilar = CC.canlilar
 	canli_liste = {0: CC.liste}
-	var dosyalar := {1: "orman"}
+	var dosyalar := {1: "orman", 2: "bataklik"}
 	for bi in dosyalar:
 		var C2: Dictionary = _json("res://data/canlilar_%s.json" % dosyalar[bi])
 		for k in C2.canlilar: canlilar[k] = C2.canlilar[k]
@@ -163,6 +165,9 @@ func _ready() -> void:
 	insa = preload("res://scripts/insa.gd").new()
 	add_child(insa)
 	insa.kur(self)
+	kopru = preload("res://scripts/kopru.gd").new()
+	add_child(kopru)
+	kopru.kur(self)
 	evcil = preload("res://scripts/evcil.gd").new()
 	add_child(evcil)
 	evcil.kur(self)
@@ -240,6 +245,7 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("koprutest"): _kopru_test.call_deferred(q.contains("camur"))
 		if q.contains("yapitest"):
 			env.ekle("Kulübe"); env.ekle("Hasır yatak"); env.vio_ekle(3000); env.ekle("Atölye"); env.ekle("Dal", 20); env.ekle("Taş", 20)
 		if q.contains("kusan"):
@@ -412,6 +418,21 @@ func _zemin() -> void:
 	su.z_index = -9
 	add_child(su)
 
+## Bataklık'ın çamur karosu (web MUD: karo seti 12)
+func camur_mu(p: Vector2) -> bool:
+	if magara != null and magara.icinde: return false
+	var x := int(floor(p.x / T)) - bx0
+	var y := int(floor(p.y / T)) - by0
+	if x < 0 or y < 0 or x >= bw or y >= bh: return false
+	return (int(tvar[y * bw + x]) >> 3) == 12
+
+## giyilen bir eşya çamurda yavaşlatmıyor mu (web mudProof)
+func camur_gecmez() -> bool:
+	for y in kusam:
+		var n = kusam[y]
+		if n != null and kusanma.esya.has(n) and int(kusanma.esya[n].mud) == 1: return true
+	return false
+
 func bio_at(p: Vector2) -> int:
 	var x := int(p.x / T) - bx0
 	var y := int(p.y / T) - by0
@@ -439,7 +460,7 @@ func engel(p: Vector2, half: float = 5.0, canli := false) -> bool:
 		if magara.kapi_engel(p):
 			return true
 	for d in [Vector2(-half, -half), Vector2(half, -half), Vector2(-half, half), Vector2(half, half)]:
-		if su_mu(tile_at(p + d)):
+		if su_mu(tile_at(p + d)) and not (kopru != null and kopru.ustunde(p + d)):
 			return true
 	if yapi != null and yapi.engel(p, half):
 		return true
@@ -599,6 +620,30 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+func _kopru_test(camur: bool) -> void:
+	var b: Dictionary = kopru.ana()
+	oyuncu.position = Vector2(b.x0 * T - 14, b.cy)
+	env.ekle("Odun", 12); env.ekle("Sert odun", 10)
+	await get_tree().create_timer(1.0).timeout
+	print("KOPRU f(gorevsiz)=", kopru.f(), " fixed=", b.fixed)
+	gorev._baslat(gorev.QI["E2"], "npc", true)
+	konusma.visible = false
+	print("KOPRU satir=", gorev.satir(["bridge"]), " f=", kopru.f())
+	await get_tree().create_timer(1.5).timeout
+	kopru._onar(b)
+	konusma.visible = false
+	await get_tree().create_timer(5.0).timeout
+	print("KOPRU fixed=", b.fixed, " odun=", kopru.odun(), " satir=", gorev.satir(["bridge"]))
+	await get_tree().create_timer(4.0).timeout
+	print("KOPRU x=", oyuncu.position.x, " bitis=", (b.x1 + 1) * T, " bio=", bio_at(oyuncu.position))
+	if not camur: return
+	for y in bh:
+		for x in bw:
+			if (int(tvar[y * bw + x]) >> 3) == 12 and absf(x * T - oyuncu.position.x) < 400 and absf(y * T - oyuncu.position.y) < 400:
+				oyuncu.position = Vector2((bx0 + x) * T + 8, (by0 + y) * T + 8)
+				print("KOPRU camur=", camur_mu(oyuncu.position), " carpan=", oyuncu._camur())
+				return
 
 func _kir_test() -> void:
 	var c0: Vector2i = insa.karo(oyuncu.position)
@@ -1134,6 +1179,8 @@ func konus_ya_da_istasyon() -> bool:
 	if yakin != null:
 		_konus(yakin)
 		return true
+	if kopru.f():
+		return true
 	if evcil.f():
 		return true
 	if insa.onar():
@@ -1322,7 +1369,7 @@ func durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = {gorulen = magara.gorulen, acilan = Marshalls.raw_to_base64(magara.acilan), kaya = 1 if magara.kaya_durum == 2 else magara.kaya_durum, denedi = magara.kaya_denedi or magara.kaya_durum == 2, boss = magara.boss_yenildi},
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(),
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 func gorunus_uygula(L: Dictionary) -> void:
@@ -1409,6 +1456,8 @@ func durum_yukle(d: Dictionary) -> void:
 	puan_ders = int(d.get("puan_ders", 2 if env.sv > 1 else 0))
 	yapi.yukle(d.get("yapi", {}))
 	evcil.yukle(d.get("evcil", {}))
+	kopru.yukle(d.get("kopru", []))
+	camur_dedi = bool(d.get("camur_dedi", false))
 	insa.yukle(d.get("insa", {}))
 	oyuncu.yetenek_uygula()
 	oyuncu.hp = float(o.get("hp", oyuncu.hp_max))
