@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.77 · 26 Kasım 2026
+
+### Proje
+- **Godot: Doğu geçidi ve aletler:**
+  - Kayalık Dağ'ın doğusundaki geçidi kayalar kapatıyor. Kemal'in "Doğu geçidini aç" görevini alınca 2 kaya patlatıcı ve kuvars ya da çelik kazmayla patlatıyorsun. Bütün sıradağ çöküyor ve Kül Diyarı ile Mor Kristal Vadisi açılıyor.
+  - **Düzeltme:** Önceden yalnız taş balta ve taş kazma alet sayılıyordu; dövdüğün tunç, demir, çelik baltalar ağaç kesmiyordu. Artık web'deki 26 balta ve kazmanın hepsi kendi hızı, dayanıklılığı ve kademesiyle çalışıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.76 · 26 Kasım 2026
 
 ### Proje
@@ -219,16 +229,4 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Aynı tarayıcıda web oyununu oynadıysan Godot'un ana menüsünde "Web oyunundaki kaydı aç" düğmesi çıkıyor. Kayıt seçilince Godot'ta kaldığın yerden sürüyorsun; web kaydın değişmiyor.
   - Taşınanlar: çanta, kemer, Vio, seviye, tarifler, yetenekler, ana görevler, öğretici adımı, gün, görünüş ve adlar.
   - Godot'ta henüz olmayanlar (yan görevler, ACT 2, ev, köpekler, çiftlik) taşınmıyor; web kaydında duruyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.57 · 26 Kasım 2026
-
-### Proje
-- **Godot: öğretici:**
-  - Yeni oyunda Kemal'in konuşmasından sonra web'deki 13 adımlı öğretici başlıyor: böğürtlen, Zümrüt'ün kazanı, meşale, keskin taş, Nazlı'da satış, Börü'nün dersleri, taş balta ve Dursun'un örsü.
-  - Sağ üstteki kartta ne yapılacağı yazıyor, ok yolu gösteriyor. Eksik malzemeler yakına konuyor.
-  - Börü önce kerevite yumrukla vurduruyor. Atılma ve savuşturmanın ilk denemesinde oyun duruyor ve hangi tuşa basılacağını söylüyor.
-  - "Eğitimi geç" ile öğretici atlanabiliyor; tarifler, balta ve meşale veriliyor. Öğretici bitince görevler Kemal'den başlıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/

@@ -1,3 +1,7 @@
+## v4.77 (26 Kasım 2026) · Godot 4c: Doğu geçidi, sıradağ, bütün aletler
+- `godot-deneme/` yeni derleme (godot dalı: yeni gecit.gd; oyun.gd engel'de kaya yığını, F'de geçit, kayıtta gecit, zemin_katman; gorev.gd rock; tools/disa_aktar_alet.js → data/toplama.json tools 26 alet). Denetim: ?gecittest. Belge 99_godot 4c satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.76 (26 Kasım 2026) · Godot 4b: Kayalık Dağ'ın yan görevleri
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_yan.js Kayalık dahil, fam3 noktası; yan.gd kovalama, keçi eşliği, hayalet Işıl, kulübe/mezar/taş-fener, çok türlü av; evcil.gd _keci_hedef_b). Denetim: ?yantest_zehra. Belge 99_godot 4b satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.58 (26 Kasım 2026) · Godot 1f-4: web kaydını açma
 - `godot-deneme/` yeni derleme (godot dalı: yeni web_kayit.gd: localStorage "hammadde.saves.v1" okur, snapshot → durum_al biçimi; kayit.gd ana menüde "Web oyunundaki kaydı aç"). Belge 99_godot 1f-4 satırı. Web oyununda değişen yalnız verlab. Çayır adımı (Adım 1) bununla tamam; sırada Orman.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.57 (26 Kasım 2026) · Godot 1f-3b-4: öğretici
-- `godot-deneme/` yeni derleme (godot dalı: yeni ogretici.gd; ders.gd serbest/donuk/sonra; oyun.gd dugum_ekle, ogr kancaları, kayıtta ogretici ve verilen; gorev.gd öğretici sürerken gizli; istasyon/el_yapimi/envanter/pazar/uyanis/canli kancaları). Denetim: ?ogr, ?ogrN (N adım), ?ogr11k3. Belge 99_godot 1f-3b-4 satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 
