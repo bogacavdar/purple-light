@@ -358,8 +358,16 @@ func vur(d: Vector2) -> void:
 		if dist > ar + 6.0 and dv.dot(f) / maxf(dist, 0.001) < -0.1:
 			continue
 		a.vuruldu(dm, dv / maxf(dist, 1.0))
+		_silah_etki(w, a, dist)
 		if int(w.dmg) > 4:
 			break
+
+## Alevli / Zehirli / Keskin silah: yakın isabette (70 px) etkisi (taban: silahın tablo hasarı × (1 + 0,03 × (seviye − 1)))
+func _silah_etki(w: Dictionary, a, dist: float) -> void:
+	var n: String = str(w.get("n", ""))
+	if dist > 70.0 or n == "": return
+	var k := "yanık" if n.begins_with("Alevli ") else ("zehir" if n.begins_with("Zehirli ") else ("kanama" if n.begins_with("Keskin ") else ""))
+	if k != "": a.etki_ver(k, float(w.dmg) * (1.0 + 0.03 * (oyun.env.sv - 1)))
 
 func _kavis_ciz() -> void:
 	if savrulus < 0.0:

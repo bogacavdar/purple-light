@@ -20,6 +20,10 @@ const GUNS := {
 	"Tabanca": {ammo = "Tabanca mermisi", cd = 0.42, dmg = 44, n = 1, spread = 0.0, S = {c1 = "#fff4b0", c2 = "#ffb030", spd = 640, range = 340, line = true, trail = 0.08}},
 	"Pompalı": {ammo = "Pompalı fişeği", cd = 1.05, dmg = 24, n = 5, spread = 0.26, S = {c1 = "#fff0c0", c2 = "#ff9a30", spd = 560, range = 210, line = true, trail = 0.05}}}
 const KUTU := {"Tabanca mermisi": 10, "Pompalı fişeği": 6}   # bir yapışta bir kutu
+## yaylar ve oklar (web v249; data/yay.json): her atış bir ok ve yayın dayanıklılığından 1; çantadaki en güçlü ok (etkili ok önce) atılır
+var YAY := {}
+var OKLAR: Array = []
+var VERIM := {}
 
 func kur(o) -> void:
 	oyun = o
@@ -28,6 +32,10 @@ func kur(o) -> void:
 		o.env.G.tools[n] = {kind = "staff", time = 1, dur = 999, tier = 0, use = STAFF[n].use}
 	for n in GUNS:
 		o.env.G.tools[n] = {kind = "gun", time = 1, dur = 999, tier = 0, use = "ateş eder (%s)" % GUNS[n].ammo}
+	var Y: Dictionary = o._json("res://data/yay.json")
+	YAY = Y.yaylar; OKLAR = Y.oklar; VERIM = Y.verim
+	for n in YAY:
+		o.env.G.tools[n] = {kind = "bow", time = YAY[n].cd, dur = YAY[n].dur, tier = 0, use = "ok atar (ok harcar)"}
 	bar = ProgressBar.new()
 	bar.custom_minimum_size = Vector2(180, 12)
 	bar.show_percentage = false
@@ -62,7 +70,34 @@ func iksir() -> void:
 	oyun.yazi(oyun.oyuncu.position + Vector2(0, -34), "+60 mana", Color("#c9a0ff"), 9)
 
 func asa_mi(n: String) -> bool:
-	return STAFF.has(n) or GUNS.has(n)
+	return STAFF.has(n) or GUNS.has(n) or YAY.has(n)
+
+func _ok() -> Array:
+	for A in OKLAR:
+		if oyun.env.adet(str(A[0])) > 0: return A
+	return []
+
+## web shot: yay körse atmaz; ok yoksa "Ok yok"
+func _yay(h: String) -> void:
+	var B: Dictionary = YAY[h]
+	var P: Vector2 = oyun.oyuncu.position
+	var A: Array = _ok()
+	if A.is_empty():
+		oyun.yazi(P + Vector2(0, -28), "Ok yok", Color("#ffb060"), 9)
+		scd = 0.4
+		return
+	if not oyun.env.alet_kullan(h):
+		oyun.yazi(P + Vector2(0, -28), "Yay köreldi, bilet", Color("#ffb060"), 9)
+		scd = 0.4
+		return
+	oyun.env.eksilt(str(A[0]), 1)
+	scd = float(B.cd)
+	var lv := _carpan()
+	var dm := maxi(1, int(round(float(B.dmg) * float(A[1]) * lv)))
+	var S := {c1 = str(A[2]), c2 = "#e8d8b0", spd = float(B.spd), range = float(B.rng), line = true, trail = 0.04}
+	if A[3] != null:
+		S.efx = str(A[3]); S.edm = float(B.dmg) * float(A[1]) * lv
+	_ates(S, dm, _nisan(), P + Vector2(0, -10), [], float(B.rng))
 
 func _carpan() -> float:
 	return oyun.stat("dmg") * (1.55 if oyun.sk("W4") else (1.4 if oyun.sk("W3") else (1.25 if oyun.sk("W2") else (1.1 if oyun.sk("W1") else 1.0))))
@@ -92,6 +127,9 @@ func at() -> void:
 	if scd > 0.0: return
 	if GUNS.has(h):
 		_silah(h)
+		return
+	if YAY.has(h):
+		_yay(h)
 		return
 	if not STAFF.has(h): return
 	var S: Dictionary = STAFF[h]
@@ -151,16 +189,20 @@ func _process(dt: float) -> void:
 		var s: Dictionary = shots[i]
 		var S: Dictionary = s.S
 		var m: Vector2 = s.v * dt
-		s.p += m
-		s.left -= m.length()
 		if randf() < float(S.get("trail", 0.7)):
 			oyun.parca(s.p, Vector2(randf_range(-10, 10), randf_range(-10, 10)), 0.25, Color(S.c1) if randf() < 0.5 else Color(S.c2))
+		# uzun karede atış canlının içinden geçip gitmesin: 8 piksellik adımlarla ilerler
 		var hit = null
-		for a in ln:
-			if not is_instance_valid(a) or a.olu >= 0.0 or s.hs.has(a): continue
-			if (a.position + Vector2(0, -6)).distance_to(s.p) < float(a.D.r) + 7.0:
-				hit = a
-				break
+		var adim := maxi(1, int(ceil(m.length() / 8.0)))
+		for st in adim:
+			s.p += m / float(adim)
+			for a in ln:
+				if not is_instance_valid(a) or a.olu >= 0.0 or s.hs.has(a): continue
+				if (a.position + Vector2(0, -6)).distance_to(s.p) < float(a.D.r) + 7.0:
+					hit = a
+					break
+			if hit != null: break
+		s.left -= m.length()
 		if hit != null:
 			_vur(s, hit, ln)
 			shots.remove_at(i)
@@ -178,6 +220,7 @@ func _vur(s: Dictionary, a, ln: Array) -> void:
 			a.donuk = maxf(a.donuk, fz)
 			a.set_meta("fimm", now + fz + 3.0)
 	a.vuruldu(int(s.dm), s.v.normalized())
+	if S.has("efx"): a.etki_ver(str(S.efx), float(S.edm))
 	for k in 10: oyun.parca(s.p, Vector2(randf_range(-40, 40), randf_range(-40, 40)), 0.35, Color(S.c1) if k % 2 else Color(S.c2))
 	if int(S.get("chain", 0)) > 0:
 		var hs: Array = s.hs.duplicate()

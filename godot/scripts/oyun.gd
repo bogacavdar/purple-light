@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · S1"
+const SURUM := "Godot · S2a"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -347,6 +347,7 @@ func _ready() -> void:
 		if q.contains("anitest"): _ani_test.call_deferred(q)
 		if q.contains("haritatest"): _harita_test.call_deferred(q)
 		if q.contains("reistest"): _reis_test.call_deferred(q)
+		if q.contains("yaytest"): _yay_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -1257,6 +1258,42 @@ func _ada2_test(q: String) -> void:
 		var tc := {}
 		for c in canlilari_ver(): tc[c.tur] = int(tc.get(c.tur, 0)) + 1
 		print("YZ canlılar ", tc, " bio ", bio_at(oyuncu.position))
+
+func _yay_test(_q: String) -> void:
+	oyuncu.dokunulmaz = 9999.0
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	env.ekle("Odun yayı", 1); env.ekle("Basit ok", 5); env.ekle("Alevli Bakır ok", 2)
+	env.el = env.kemer.find("Odun yayı")
+	print("YAY elde ", env.elde(), " tür ", env.elde_tur())
+	for sn in 3:
+		for c in canlilari_ver(): c.queue_free()
+		await get_tree().process_frame
+		var c1 = _canli_yeni("Yaban domuzu", oyuncu.position + Vector2(90, 0), 1)
+		oyuncu.bakis = Vector2(1, 0)
+		var h0: float = c1.hp
+		oyuncu.vur(Vector2(1, 0))
+		print("YAY ok uçuyor ", buyu.shots.size(), " ", buyu.shots.map(func(x): return [x.p, x.v]), " hedef ", c1.position, " oyuncu ", oyuncu.position, " scd ", buyu.scd)
+		await get_tree().create_timer(0.1).timeout
+		print("YAY 0.1 ", buyu.shots.map(func(x): return x.p), " ", c1.position)
+		await get_tree().create_timer(0.2).timeout
+		var h1: float = c1.hp
+		await get_tree().create_timer(2.2).timeout
+		print("YAY atış ", sn, " hasar ", h0 - h1, " etki ", c1.etkiler.keys(), " sonra ", h1 - c1.hp, " ok ", env.adet("Alevli Bakır ok"), "/", env.adet("Basit ok"), " dayanıklılık ", env.dayan.get("Odun yayı", -1))
+	env.ekle("Alevli Taş kılıç", 1)
+	env.el = env.kemer.find("Alevli Taş kılıç")
+	for c in canlilari_ver(): c.queue_free()
+	await get_tree().process_frame
+	var c2 = _canli_yeni("Yaban domuzu", oyuncu.position + Vector2(18, 0), 2)
+	oyuncu.vur(Vector2(1, 0))
+	await get_tree().create_timer(0.2).timeout
+	print("YAY kılıç etki ", c2.etkiler)
+	var y0: int = env.adet("Basit ok")
+	el_yapimi.bilinen["Basit ok"] = true
+	for p in el_yapimi.R["Basit ok"].i: env.ekle(str(p[0]), int(p[1]))
+	el_yapimi.yap("Basit ok")
+	print("YAY yapım ", env.adet("Basit ok") - y0)
 
 func _reis_test(_q: String) -> void:
 	oyuncu.dokunulmaz = 9999.0

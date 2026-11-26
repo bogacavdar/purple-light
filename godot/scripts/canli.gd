@@ -26,6 +26,7 @@ var olu := -1.0
 var tur_k := ""        # mağara canlıları: "w" önden yarasa, "t" üstten kertenkele/örümcek (web v436cayir)
 var boss := false
 var cvb := false        # mağaranın boss'u (yan görev çağırır)
+var etkiler := {}        # silah ve ok etkileri: yanık, zehir, kanama (web weapon fx) → {t, n, dps, kat}
 var donuk := 0.0        # Buz asası: donmuşken kıpırdamaz (web a.frz)
 var sersem := 0.0       # savuşturulunca sersemler (web a.stun)
 var renk := "n"         # saldırının rengi: n beyaz, y sarı (×1,4), r kırmızı (×1,7, savuşturulamaz)
@@ -143,6 +144,7 @@ func _process(dt: float) -> void:
 	if has_meta("yem"):
 		if oyun.evcil.yem_hedefi(self) and olu < 0.0: return
 		remove_meta("yem")
+	if olu < 0.0 and not etkiler.is_empty(): _etki_isle(dt)
 	if olu >= 0.0:
 		olu += dt
 		if tur_k != "":
@@ -318,6 +320,41 @@ func _kare(_dt: float, moving: bool) -> void:
 	spr.frame = row * int(D.frames) + fr
 	spr.flip_h = face < 0
 	spr.offset = Vector2(-floorf(fw / 2.0), roundf(top))
+
+## silahın ya da okun etkisi (belge Aletler › Alevli, zehirli, keskin silahlar): taban = silahın tablo hasarı (okta yay × ok)
+const ETKI_C := {"yanık": [3.0, 0.2, "#ffa040"], "zehir": [6.0, 0.1, "#9ad84a"], "kanama": [4.0, 0.15, "#ff5a4a"]}
+func etki_ver(k: String, taban: float) -> void:
+	if ders or olu >= 0.0 or not ETKI_C.has(k) or has_meta("evcil"): return
+	var fx = D.get("fx", null)
+	if k == "yanık" and ((fx != null and str(fx[0]) == "yanık") or tur.contains("ejder") or tur.begins_with("Kor ") or tur.begins_with("Lav ") or tur.begins_with("Kül ")): return
+	if k == "zehir" and fx != null and str(fx[0]) == "zehir": return
+	if k == "kanama":
+		var t2 := tur.to_lower()
+		for w in ["golem", "robot", "dron", "taş kaplumbağası", "hurda", "kristal", "muhafız", "bekçi"]:
+			if t2.contains(w): return
+	var C: Array = ETKI_C[k]
+	var e: Dictionary = etkiler.get(k, {kat = 0, n = 1.0})
+	e.kat = mini(3, int(e.kat) + 1) if k == "zehir" else 1
+	e.t = float(C[0]) * (0.5 if boss else 1.0)
+	e.dps = taban * float(C[1]) * int(e.kat)
+	etkiler[k] = e
+
+func _etki_isle(dt: float) -> void:
+	for k in etkiler.keys():
+		var e: Dictionary = etkiler[k]
+		e.t -= dt; e.n -= dt
+		if randf() < dt * 6.0: oyun.parca(position + Vector2(randf_range(-5, 5), -6 - randf() * 8), Vector2(0, -14), 0.4, Color(ETKI_C[k][2]))
+		if e.n <= 0.0:
+			e.n = 1.0
+			var d := maxi(1, int(round(float(e.dps))))
+			hp -= d
+			oyun.yazi(position + Vector2(0, -16), "-%d" % d, Color(ETKI_C[k][2]), 9)
+			if hp <= 0.0:
+				hp = 1.0
+				etkiler = {}
+				vuruldu(1, Vector2.ZERO)
+				return
+		if e.t <= 0.0: etkiler.erase(k)
 
 func vuruldu(dm: int, yon: Vector2) -> void:
 	if olu >= 0.0:
