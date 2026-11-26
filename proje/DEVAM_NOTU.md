@@ -1,3 +1,7 @@
+## v4.65 (26 Kasım 2026) · Godot 2d-4: Kırma, onarım ve avlu
+- `godot-deneme/` yeni derleme (godot dalı: insa.gd HP/kirik, çatlak çizimi, carpti/vur/onar/arada, avlu_hesapla/avluda, kayıtta hasar; canli.gd takılınca insa.carpti, duvar arkasından ısırmaz; oyun.gd F'de onar, avluda doğma yok ve içeride kalan canlı silinir). Denetim: ?insatest_kirtest (konsolda KIRTEST). Belge 99_godot 2d-4 satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.64 (26 Kasım 2026) · Godot 2d-3: İnşa kipi
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_insa.js → data/insa.json, art/insa; yeni insa.gd; oyun.gd engel(canli), F'de fener yakıtı, kayıtta insa; canli.gd duvar ve dal çit; oyuncu yol hızı; zaman.isikta fener; el_yapimi çoklu çıktı; yapi Direk feneri hariç). Denetim: ?insatest. Belge 99_godot 2d-3 satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.46 (25 Kasım 2026) · Godot Adım 1d-2 (görev sistemi)
 - `godot-deneme/` yeni derleme (godot dalı: gorev.gd; data/gorevler.json = web DATA.Q'nun Çayır kişileri + eşyaların biyomları + grup adları, disa_aktar.js oyunun kaynağından okur). Belge 99_godot 1d-2 satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.45 (25 Kasım 2026) · Godot Adım 1d-1 (kişiler ve ustalar)
-- `godot-deneme/` yeni derleme (godot dalı 0873052: kisi.gd, konusma.gd, istasyon.gd; envanter.gd'ye Vio/XP/seviye ve görülen eşyalar; data/toplama.json'a kisiler, xpNeed, iscilik, usta, istasyon). Belge 99_godot 1d satırı 1d-1/1d-2/1d-3'e bölündü. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

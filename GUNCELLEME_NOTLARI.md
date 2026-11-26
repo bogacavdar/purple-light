@@ -8,6 +8,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.65 · 26 Kasım 2026
+
+### Proje
+- **Godot: kırma, onarım ve avlu:**
+  - Seni kovalayan hayvan önündeki çite ya da duvara vuruyor. Zayıf hayvanlar hiçbir şeyi kıramıyor; kurt, geyik gibi orta güçtekiler tahtayı, ayı ve timsah gibi güçlüler taşı da kırıyor.
+  - Hasar aldıkça parçada çatlaklar beliriyor; kırılınca yıkıntı kalıyor, içinden geçilebiliyor ve 1 malzeme düşüyor ("Çit kırıldı").
+  - Yanına gidip F'ye basınca onarılıyor (tahta 1 Dal, taş 1 Taş). İnşa kipinde sağ tık yıkıntıyı kaldırıp 1 malzeme daha veriyor.
+  - Duvarın öbür yanındaki hayvan seni ısıramıyor.
+  - Çit, taş duvar ya da kapıyla tamamen çevirdiğin alan avlu oluyor: içinde hayvan doğmuyor, içeride kalan hayvan gidiyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.64 · 26 Kasım 2026
 
 ### Proje
@@ -186,13 +199,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot, Adım 1d-2 (görev sistemi) oynanabilir:** Çayır'ın altı kişisinin ana görevleri geldi. Görevi olan kişinin başında "!" ve parlama var (küçük haritada da); konuşunca görev başlar, sağ üstte görev kartı, küçük haritada sarı bölge, kişiye dönerken ok. Bitince görevi verene dön, ödül oracıkta. Kimsede iş yoksa Kemal ya da Zümrüt küçük bir ayak işi verir. Köprü, balık, kamp ateşi gibi henüz Godot'da olmayan şeyleri isteyen görevler o sistemler gelince açılacak. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.45 · 25 Kasım 2026
-
-### Proje
-- **Godot, Adım 1d-1 (kişiler ve ustalar) oynanabilir:** Çayır'ın kişileri (Kemal, Zümrüt, Dursun, Durmuş, Nazlı, Börü) kendi yerlerinde; yanlarında F ile konuşma penceresi açılır (dışına basmak "Anladım"). Zümrüt'ün kazanında malzemeyle tarif öğrenilir (+12 XP), Dursun ve Durmuş'un örsünde öğrenilen tarif işçilik ödenerek dövülür. Vio, XP ve seviye ekranda. Görevler sıradaki parçada (1d-2). Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
