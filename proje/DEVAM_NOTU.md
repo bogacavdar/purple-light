@@ -1,3 +1,7 @@
+## v4.58 (26 Kasım 2026) · Godot 1f-4: web kaydını açma
+- `godot-deneme/` yeni derleme (godot dalı: yeni web_kayit.gd: localStorage "hammadde.saves.v1" okur, snapshot → durum_al biçimi; kayit.gd ana menüde "Web oyunundaki kaydı aç"). Belge 99_godot 1f-4 satırı. Web oyununda değişen yalnız verlab. Çayır adımı (Adım 1) bununla tamam; sırada Orman.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.57 (26 Kasım 2026) · Godot 1f-3b-4: öğretici
 - `godot-deneme/` yeni derleme (godot dalı: yeni ogretici.gd; ders.gd serbest/donuk/sonra; oyun.gd dugum_ekle, ogr kancaları, kayıtta ogretici ve verilen; gorev.gd öğretici sürerken gizli; istasyon/el_yapimi/envanter/pazar/uyanis/canli kancaları). Denetim: ?ogr, ?ogrN (N adım), ?ogr11k3. Belge 99_godot 1f-3b-4 satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -76,9 +80,4 @@
 - Üretim (scratch, depoda değil): /tmp/h3/ `npc5.py` (anahtarlama → 30 px ortalama küçültme, göz/ağız tespiti, bölüm etiketleri), `npc7.py` (stil başına: dönüş sayfası S/W/N + ayrı çapraz çizimler, çapraz gövdesi ön görünüş oranına `refit`), `w/spec7.json`, `pack7.py` + `inject.py` (`blk/tpl5.js`). ComfyUI çıktıları Boğaç'ın `output/purple/`: `h6ta_*`/`h6d_*` (Kısa/Uzun), `h7ta_*`/`h7d_*` (öbür saç biçimleri).
 - Eski kayıtlar: alanlar aynı; `hs:'buzz'` Kel çizimiyle; bilinmeyen saç → Kısa/Uzun.
 - Geri almak için: `git checkout v4.38 -- proje/Hammadde_prototip.html index.html proje/tools/belge/parts/20_sistemler.md proje/tools/belge/parts/10_akis.md proje/tools/belge/parts/00_giris.md`.
-
-## v4.38 (22 Kasım 2026) · Canlılar basit ve tatlı tarzda (ComfyUI)
-- Belge: 30_act1 › "Çayır canlılarının görünüşü", 37_magaralar › "Yankı Mağarası canlılarının resmi" (Boğaç: "canlılar da olmamış tavşan tavşana hiç benzemiyor" → tarz karakterlerle aynı, basit ve tatlı).
-- Kod: yalnız `v436cayir` bloğunun DATA'sı değişti (yeni ComfyUI resimleri "cs_*", /tmp/cy/build.py: 16 renk, büyütülmüş boylar; yarasada kanat çırpışı yalnız kanatları döndürür; Kraliçe'nin tacı resmin kendisinde, kod tacı çizmez).
-- Geri almak için: `git checkout v4.37 -- proje/Hammadde_prototip.html index.html` yerine bu sürümün commit'ini `git revert` et (yalnız blok verisi ve iki belge paragrafı). Kayıt alanı yok.
 

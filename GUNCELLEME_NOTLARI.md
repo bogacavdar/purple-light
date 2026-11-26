@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.58 · 26 Kasım 2026
+
+### Proje
+- **Godot: web oyunundaki kayıt açılıyor:**
+  - Aynı tarayıcıda web oyununu oynadıysan Godot'un ana menüsünde "Web oyunundaki kaydı aç" düğmesi çıkıyor. Kayıt seçilince Godot'ta kaldığın yerden sürüyorsun; web kaydın değişmiyor.
+  - Taşınanlar: çanta, kemer, Vio, seviye, tarifler, yetenekler, ana görevler, öğretici adımı, gün, görünüş ve adlar.
+  - Godot'ta henüz olmayanlar (yan görevler, ACT 2, ev, köpekler, çiftlik) taşınmıyor; web kaydında duruyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.57 · 26 Kasım 2026
 
 ### Proje
@@ -169,16 +180,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Sistemler › Oyuncunun karakteri: NPC'ler gibi tek parça çizim, saç biçimleri, yüzler, elbise, ara sahnede hafif dönük duruş. Akış › Karakter yaratma: önizleme.
-
----
-
-## Versiyon 4.38 · 22 Kasım 2026
-
-### Görsel
-- **Canlılar basit ve tatlı tarzda yeniden çizildi (ComfyUI):** Tavşan (uzun dik kulaklar, beyaz ponpon kuyruk), Keklik, Bıldırcın, Kerevit, Porsuk, Kurt, Geyik ve Yaban atı artık kalın hatlı, sevimli ve ilk bakışta tanınan resimler; küçük canlılar okunaklı olsun diye büyütüldü. Yankı Mağarası'nın yarasası, Kör kertenkelesi, Taş örümceği ve Yankı Kraliçesi de aynı tarzda (yarasa kanat çırpar, kertenkele ve örümcek üstten görünür, Kraliçe taçlı; kovalarken gözler kırmızı yanar).
-
-### Tasarım belgesi
-- ACT 1 › Çayır › Çayır canlılarının görünüşü; Mağaralar › Yankı Mağarası canlılarının resmi.
 
 ---
 
