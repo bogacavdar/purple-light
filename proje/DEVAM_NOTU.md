@@ -1,3 +1,7 @@
+## v4.92 (27 Kasım 2026) · Godot A4: Silahçı Tufan ve ateşli silahlar
+- `godot-deneme/` yeni derleme (godot dalı: buyu.gd GUNS/_silah (mermi, saçma yelpazesi), act2.gd Tufan (tezgâh, konuşma, silah yapımı, sl ödülleri), el_yapimi.gd mermi kutusu (10/6), kuzen.gd "sl" rolü, gorev.gd ACT 2 kartı ve oku Tufan'a). Denetim: ?ada2test_tufan. Belge 99_godot A4 satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).
+
 ## v4.91 (27 Kasım 2026) · Godot A3: Efsun, mana ve asalar, ikinci adanın köprüleri
 - `godot-deneme/` yeni derleme (godot dalı: yeni buyu.gd (mana, mana çubuğu, STAFF, büyü atışları, dondurma, zincir; kayıt `buyu {m, a}`); act2.gd Efsun (şapka, mor ateş, konuşma, asa/iksir yapımı, pv ödülleri → el_yapimi.verilen); canli.gd `donuk`; oyuncu.gd vur → asa varsa büyü; envanter.gd Mana iksiri → +60 mana; kopru.gd BR2 ve ikinci adada görevsiz onarım; gecit.gd PS2 ve görevsiz patlatma; gorev.gd ACT 2 kartı ve oku Efsun'a). Denetim: ?ada2test_efsun, ?ada2test_kopru2. Belge 99_godot A3 satırı (A5 satırından sıradağ çıktı). Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `buyu` alanı okunmadan kalır).
@@ -73,9 +77,5 @@
 
 ## v4.73 (26 Kasım 2026) · Godot 3f: Yan görevler (Çayır, Orman, Bataklık)
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_yan.js → data/yan.json, art/yan; yeni yan.gd; oyun.gd F'de yan kişi, canli_oldu görev canavarı, kayıtta yan). Denetim: ?yantest_<id> (ör. yantest_kerem, yantest_nadir). Belge 99_godot 3f satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.72 (26 Kasım 2026) · Godot 3e: Kök Mağarası ve Batık Mağara
-- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_magara2.js → data/magara_c1.json, data/magara_c2.json, art/magara/c1_*, c2_*; magara.gd birden çok mağara: MAGS, cur, mağara başına durum; kayıtta magaralar; insa.gd bütün mağara girişleri). Denetim: ?mag_c1, ?mag_c2_dip. Belge 99_godot 3e satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

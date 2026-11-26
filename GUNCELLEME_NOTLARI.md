@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.92 · 27 Kasım 2026
+
+### Proje
+- **Godot: Hurda Çölü ve Silahçı Tufan:**
+  - Tufan, Hurda Çölü'nde hurda tezgâhının başında. Dört işi var; ödülleri tabanca, pompalı ve mermi tarifleri.
+  - Silahları Tufan yapar. Mermiyi sen yaparsın; her yapış bir kutu çıkarır (10 mermi ya da 6 fişek).
+  - Silah elindeyken vuruş tuşu ateş eder. Pompalı beş saçma atar.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.91 · 27 Kasım 2026
 
 ### Proje
@@ -219,17 +230,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Ana görevler ilerledikçe sırayla açılıyorlar; bir biyomda aynı anda en çok iki tane açık.
   - Bulmak, toplamak, getirmek, avlamak, yanında beklemek ve eşlik etmek gibi adımları var. Takip ettiğin görev sağ üstte mavi kartta.
   - Bitince Vio ve XP veriyorlar; dünyada izleri kalıyor (Bulut'un kümesi, Gülsüm'ün kovanları, onarılan değirmen…).
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.72 · 26 Kasım 2026
-
-### Proje
-- **Godot: Kök Mağarası ve Batık Mağara:**
-  - Orman'da Kök Mağarası (Seviye 10): kök böcekleri, kök yılanları, mağara kurtları. Dipteki Kökçü Fidan 3 kök reçinesi istiyor ve Yaşlı Kök'ü uyandırıyor.
-  - Bataklık'ta Batık Mağara (Seviye 18): sülükler, balçık kurbağaları, batak semenderleri. Dipteki Sazcı Nail 4 parıltı yosunu istiyor ve Çamur Ana'yı çağırıyor.
-  - İkisinde de web'deki gibi girişte seviye ve yanan meşale şartı, karanlık, kendi haritası, yan görev kartı ve boss ödülü var.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
