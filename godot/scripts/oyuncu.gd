@@ -29,6 +29,25 @@ var kirmizi := 0.0
 var bayildi := false
 var kilit := false          # görev sahnesi sürerken kontrol oyuncuda değil
 var oto := Vector2.ZERO      # sahnede karakterin kendi yürüyüşü
+# enerji (web st, maxSt, stRegen, runDrain; belge 1f-3b-2)
+var st := 100.0
+var st_max := 100.0
+var yorgun := false
+var st_dinlen := 0.0
+var vurus_uyari := false
+# savuşturma ve gard (web v110-parry: PR)
+var pr_t := 0.0
+var pr_cd := 0.0
+var pr_flash := 0.0
+var pr_n := 0
+var pr_brk := 0.0
+var kalkan := false
+var kalkan_t0 := 0.0
+var blok_fx := 0.0
+var sersem := 0.0
+var son_atilma := -100.0
+var uyari_t := -100.0
+const BLK := {"n": 0.35, "y": 0.45, "r": 0.7}
 
 func _ready() -> void:
 	V = oyun.oyuncu_veri
@@ -58,10 +77,25 @@ func _silah_yaz() -> void:
 func _draw() -> void:
 	draw_set_transform(Vector2(0, 2), 0, Vector2(7, 2.5))
 	draw_circle(Vector2.ZERO, 1.0, Color(0, 0, 0, 0.28))
+	draw_set_transform(Vector2.ZERO)
+	if pr_flash > 0.0:
+		# savuşturma tuttu: oyuncunun çevresinde açılan ışık halkası
+		var k := pr_flash / 0.25
+		var rr := 14.0 + (1.0 - k) * 10.0
+		draw_set_transform(Vector2(0, -6), 0, Vector2(1, 0.8))
+		draw_arc(Vector2.ZERO, rr, 0, TAU, 24, Color(1, 0.94, 0.67, 0.35 + 0.6 * k), 2.0 / 0.9)
+		draw_set_transform(Vector2.ZERO)
 
 func _unhandled_input(e: InputEvent) -> void:
 	# sol tık her zaman tıklanan yöne vurur (çaprazlar dahil)
 	if kilit:
+		return
+	if e is InputEventMouseButton and e.button_index == MOUSE_BUTTON_RIGHT:
+		if e.pressed:
+			if oyun.pencere_acik(): return
+			savustur(); kalkan_kaldir()
+		else:
+			kalkan = false
 		return
 	if e is InputEventMouseButton and e.pressed and e.button_index == MOUSE_BUTTON_LEFT:
 		var d: Vector2 = get_global_mouse_position() - (position + Vector2(0, -6))
@@ -73,6 +107,17 @@ func _process(dt: float) -> void:
 	atk_cd -= dt
 	dokunulmaz -= dt
 	atilma_cd -= dt
+	pr_t = maxf(0.0, pr_t - dt); pr_cd = maxf(0.0, pr_cd - dt); pr_brk = maxf(0.0, pr_brk - dt)
+	blok_fx = maxf(0.0, blok_fx - dt)
+	if pr_flash > 0.0:
+		pr_flash = maxf(0.0, pr_flash - dt)
+		queue_redraw()
+	if not kilit and not oyun.pencere_acik():
+		if Input.is_action_just_pressed("savus"):
+			savustur(); kalkan_kaldir()
+	if Input.is_action_just_released("savus"):
+		kalkan = false
+	if kalkan and not bilir("P0"): kalkan = false
 	kirmizi = maxf(0.0, kirmizi - dt)
 	var g := Input.get_vector("sol", "sag", "yukari", "asagi", 0.3)
 	if kilit:
@@ -81,6 +126,9 @@ func _process(dt: float) -> void:
 		kosu_kol = not kosu_kol
 	if g == Vector2.ZERO:
 		kosu_kol = false
+	if sersem > 0.0:
+		sersem -= dt
+		g = Vector2.ZERO
 	_silah_yaz()
 	if Input.is_action_just_pressed("vur") and not kilit:
 		vur(bakis)
@@ -99,10 +147,22 @@ func _process(dt: float) -> void:
 			oyun.parca(position + Vector2(0, -6), -atilma_v * 0.1 + Vector2(0, -4), 0.3, Color(1, 1, 1, 0.7))
 		g = Vector2.ZERO
 	yuruyor = g != Vector2.ZERO
+	var kos := (Input.is_action_pressed("kos") or kosu_kol) and not yorgun and not kalkan and not kilit
+	# enerji: koşarken saniyede 18 gider; durunca 0,6 sn sonra dolar (yürürken %60'ı); bitince %30'a dolana kadar yorgun
+	if kos and yuruyor:
+		st -= 18.0 * dt; st_dinlen = 0.0
+		if st <= 0.0:
+			st = 0.0; yorgun = true; kos = false
+			oyun.yazi(position + Vector2(0, -28), "Yoruldun!", Color("#e8c860"), 9)
+	else:
+		st_dinlen += dt
+		if st_dinlen > 0.6:
+			st = minf(st_max, st + 14.0 * (0.6 if yuruyor else 1.0) * dt)
+	if yorgun and st >= st_max * 0.3: yorgun = false
+	oyun.enerji_guncelle(st, st_max, yorgun)
 	if yuruyor:
 		var n := g.normalized()
-		var kos := Input.is_action_pressed("kos") or kosu_kol
-		var sp: float = float(V.speed) * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0)
+		var sp: float = float(V.speed) * minf(1.0, g.length() * 1.15) * (float(V.runMult) if kos else 1.0) * (0.45 if kalkan else 1.0)
 		_kay(n * sp * dt)
 		_yon_sec(n)
 		adim += dt * (1.7 if kos else 1.0)
@@ -116,6 +176,13 @@ func _process(dt: float) -> void:
 		fr = 1 + mini(3, int(floor(ph / (PI / 2.0))))
 	spr.frame = yon * 5 + fr
 	var a := 0.55 if atilma > 0.0 else 1.0
+	# gard: çömelir, genişler, darbelere yaslanır (web v124)
+	if kalkan and atilma <= 0.0:
+		var up := minf(1.0, (Time.get_ticks_msec() / 1000.0 - kalkan_t0) / 0.08)
+		spr.scale = Vector2(1.0 + 0.06 * up, 1.0 - 0.12 * up)
+		spr.position.x = -bakis.x * (1.5 * up + (blok_fx / 0.15) * 2.0)
+	else:
+		spr.scale = Vector2.ONE; spr.position.x = 0.0
 	spr.modulate = Color(1, 1 - kirmizi * 2.5, 1 - kirmizi * 2.5, a)
 	if savrulus >= 0.0:
 		savrulus += dt
@@ -139,10 +206,30 @@ func _yon_sec(n: Vector2) -> void:
 	yon = tablo[k]
 	bakis = Vector2(cos(k * PI / 4.0), sin(k * PI / 4.0))
 
+func bilir(id: String) -> bool:
+	return oyun.yetenekler.has(id) or oyun.ders.gecici(id)
+
+func _uyar(t: String) -> void:
+	var now := Time.get_ticks_msec() / 1000.0
+	if now - uyari_t > 4.0:
+		uyari_t = now
+		oyun.env.mesaj(t, true)
+
 func _atil(g: Vector2) -> void:
-	if atilma > 0.0 or atilma_cd > 0.0:
+	if atilma > 0.0 or atilma_cd > 0.0 or sersem > 0.0 or bayildi:
 		return
+	if not bilir("S1"):
+		_uyar("Atılmayı henüz bilmiyorsun: Savaşçı Börü ücretsiz öğretir, onunla konuş.")
+		return
+	if st < 14.0:
+		oyun.yazi(position + Vector2(0, -28), "Yorgunsun", Color("#e8c860"), 9)
+		return
+	st -= 14.0; st_dinlen = 0.0
+	kalkan = false
 	var d := g.normalized() if g != Vector2.ZERO else bakis
+	if g == Vector2.ZERO and oyun.ders.acik:
+		d = oyun.ders.yana_yon(d)
+	son_atilma = Time.get_ticks_msec() / 1000.0
 	atilma = float(V.dodge.t)
 	atilma_v = d * float(V.dodge.speed)
 	atilma_cd = float(V.dodge.cd)
@@ -155,6 +242,21 @@ func vur(d: Vector2) -> void:
 		bekleyen_vurus = 0.8
 		bekleyen_yon = d
 		return
+	if kalkan or sersem > 0.0:
+		return
+	# her vuruş enerji ister (web P4K: yumruk 4, kılıç 8, mızrak 9, balta ve öteki aletler 10)
+	var h: String = oyun.env.elde()
+	var kt: String = oyun.env.elde_tur()
+	var cost := 4.0 if h == "" else (8.0 if kt == "sword" else (9.0 if kt == "hunt" else 10.0))
+	if yorgun or st < cost:
+		yorgun = true
+		atk_cd = 0.35
+		oyun.yazi(position + Vector2(0, -28), "Nefesin kesildi!", Color("#9ad8ff"), 9)
+		if not vurus_uyari:
+			vurus_uyari = true
+			oyun.env.mesaj("Her vuruş enerji (mavi çubuk) harcar. Biraz geri çekil, nefeslen; enerji dolunca yine vur.")
+		return
+	st -= cost; st_dinlen = 0.0
 	atk_cd = float(w.cd)
 	if d != Vector2.ZERO:
 		_yon_sec(d)
@@ -185,10 +287,70 @@ func _kavis_ciz() -> void:
 	var ang := atan2(savrulus_yon.y, savrulus_yon.x)
 	kavis.draw_arc(Vector2(0, -6), savrulus_r, ang - 1.1 + k * 1.4, ang - 0.3 + k * 1.4, 8, Color(1, 1, 1, 1.0 - k), 1.0)
 
-## web biteHit: atılırken ya da az önce ısırıldıysa dokunmaz; ısırık oyuncuyu 10 px iter
-func isirildi(dmg: int, from: Vector2) -> void:
+## savuşturma: 0,2 sn'lik pencere açar (web doParry)
+func savustur() -> void:
+	if bayildi or kilit or sersem > 0.0:
+		return
+	if not bilir("P0"):
+		if not oyun.ders.acik:
+			_uyar("Savuşturmayı henüz bilmiyorsun: Savaşçı Börü öğretir, onunla konuş.")
+		return
+	if pr_cd > 0.0:
+		return
+	if yorgun or st < 5.0:
+		oyun.yazi(position + Vector2(0, -28), "Nefesin kesildi!", Color("#9ad8ff"), 9)
+		pr_cd = 0.3
+		return
+	st -= 5.0; st_dinlen = 0.0
+	pr_t = 0.2; pr_cd = 0.6
+
+func kalkan_kaldir() -> void:
+	if not bilir("P0") or pr_brk > 0.0 or sersem > 0.0 or bayildi or kilit:
+		return
+	kalkan = true
+	kalkan_t0 = Time.get_ticks_msec() / 1000.0
+
+## darbe pencerede geldi: geri çevrilir (web parried)
+func savusturdu(a = null) -> void:
+	pr_n += 1
+	pr_flash = 0.25
+	pr_cd = minf(pr_cd, 0.15)
+	st = minf(st_max, st + 6.0)
+	dokunulmaz = maxf(dokunulmaz, 0.3)
+	if a != null and is_instance_valid(a):
+		var dv: Vector2 = (a.position - position)
+		var dn := dv.normalized() if dv.length() > 0.5 else bakis
+		a.savusturuldu(dn)
+		var ix := position + Vector2(dn.x * 10.0, -6.0 + dn.y * 8.0)
+		for i in 22:
+			var an := randf() * TAU
+			var sp := 40.0 + randf() * 90.0
+			oyun.parca(ix, Vector2(cos(an) * sp, sin(an) * sp - 20.0), 0.25 + randf() * 0.3, Color("#9ad8ff") if i % 3 == 0 else Color("#fff2b0"))
+	oyun.yazi(position + Vector2(0, -28), "Savuşturuldu!", Color("#9ad8ff"), 9)
+	queue_redraw()
+
+## web biteHit / hurt: atılırken ya da az önce ısırıldıysa dokunmaz; ısırık oyuncuyu 10 px iter.
+## renk boş değilse bu bir canlının darbesidir (n beyaz, y sarı, r kırmızı): pencere açıksa savuşturulur, gardda yumuşar.
+func isirildi(dmg: int, from: Vector2, a = null, renk: String = "") -> void:
 	if atilma > 0.0 or dokunulmaz > 0.0 or bayildi:
 		return
+	if renk != "" and pr_t > 0.0 and renk != "r":
+		savusturdu(a)
+		return
+	var n := float(dmg)
+	if renk != "" and kalkan and pr_brk <= 0.0:
+		n *= float(BLK.get(renk, 0.35))
+		blok_fx = 0.15
+		var aa := atan2(bakis.y, bakis.x)
+		for i in 8:
+			var tt := aa + (randf() - 0.5) * 1.6
+			var sp := 30.0 + randf() * 50.0
+			oyun.parca(position + Vector2(cos(aa) * 9.0, -7.0 + sin(aa) * 6.0), Vector2(cos(tt) * sp, sin(tt) * sp - 10.0), 0.22, Color("#e8e8f0") if i % 2 else Color("#fff2b0"))
+		st -= 6.0 + n * 0.4; st_dinlen = 0.0
+		if st <= 0.0:
+			st = 0.0; kalkan = false; pr_brk = 1.0; sersem = maxf(sersem, 0.5)
+			oyun.yazi(position + Vector2(0, -34), "Kalkan düştü!", Color("#ff9a6a"), 9)
+	dmg = maxi(1, int(round(n)))
 	dokunulmaz = 0.7
 	hp = maxf(0.0, hp - dmg)
 	kirmizi = 0.25

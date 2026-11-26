@@ -60,6 +60,10 @@ var oyuncu: Node2D
 var kamera: Camera2D
 var hud: CanvasLayer
 var can_cubugu: ProgressBar
+var enerji_cubugu: ProgressBar
+var yetenekler := {}        # web skills: S1 atılma, P0 savuşturma (yetenek ağacı 1f-3b-3)
+var ders                    # Börü'nün dersleri (ders.gd)
+var dl_agac := false        # Börü'nün dersi bitti, yetenek ağacını gösterecek (1f-3b-3)
 var silah_yazi: Label
 var parlama_shader: Shader
 var rng := RandomNumberGenerator.new()
@@ -112,6 +116,9 @@ func _ready() -> void:
 	hud.add_child(konusma)
 	konusma.kur(self)
 	_kisiler()
+	ders = preload("res://scripts/ders.gd").new()
+	add_child(ders)
+	ders.kur(self)
 	sahne = preload("res://scripts/sahne.gd").new()
 	hud.add_child(sahne)
 	hud.move_child(sahne, konusma.get_index())
@@ -158,6 +165,14 @@ func _ready() -> void:
 			_canli_koy_yakin("Tavşan", 4.0)
 		if q.contains("kemal"):
 			oyuncu.position = Vector2(toplama_veri.kisiler[0].x + 20, toplama_veri.kisiler[0].y + 6)
+		if q.contains("boru"):
+			var al = alp_dugum()
+			oyuncu.position = al.position + Vector2(0, 40)
+			ders.oto = q.contains("oto")
+			if q.contains("boru2"): yetenekler["S1"] = true
+			if q.contains("boru3"):
+				yetenekler["S1"] = true; yetenekler["P0"] = true
+			else: ders.basla("parry" if q.contains("boru2") else "dodge")
 		if q.contains("e1"):
 			env.ekle("Dal", 6)
 			env.ekle("Kuru ot", 2)
@@ -427,7 +442,7 @@ func _dogur_tur(k: String, want: int, hepsi: Array) -> void:
 	var paket = D.get("pack", null)
 	var ayni := []
 	for c in hepsi:
-		if c.tur == k and is_instance_valid(c): ayni.append(c)
+		if c.tur == k and is_instance_valid(c) and not c.ders: ayni.append(c)
 	if k == "Kurt" and env.sv <= 5 and not ayni.is_empty(): return
 	var var_ := ayni.size()
 	if paket != null:
@@ -496,11 +511,23 @@ func _hud() -> void:
 	can_cubugu.add_theme_stylebox_override("background", bg)
 	can_cubugu.add_theme_stylebox_override("fill", fg)
 	kutu.add_child(can_cubugu)
+	enerji_cubugu = ProgressBar.new()
+	enerji_cubugu.custom_minimum_size = Vector2(180, 8)
+	enerji_cubugu.show_percentage = false
+	enerji_cubugu.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+	enerji_cubugu.max_value = 100.0
+	enerji_cubugu.value = 100.0
+	var ebg := StyleBoxFlat.new(); ebg.bg_color = Color("#1c2a3a"); ebg.border_color = Color("#0b0f0a"); ebg.set_border_width_all(2)
+	var efg := StyleBoxFlat.new(); efg.bg_color = Color("#5ab4f0")
+	enerji_cubugu.add_theme_stylebox_override("background", ebg)
+	enerji_cubugu.add_theme_stylebox_override("fill", efg)
+	enerji_cubugu.tooltip_text = "Enerji"
+	kutu.add_child(enerji_cubugu)
 	silah_yazi = Label.new()
 	_golge(silah_yazi)
 	kutu.add_child(silah_yazi)
 	var yardim := Label.new()
-	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · 1–5: kemer · G: deneme (aletler ve 100 Vio)\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
+	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · Sağ tık ya da E: savuştur (basılı: gard) · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · 1–5: kemer · G: deneme (aletler ve 100 Vio)\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · LT savuştur · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
 	yardim.add_theme_font_size_override("font_size", 12)
 	_golge(yardim)
 	yardim.add_theme_font_size_override("font_size", 11)
@@ -518,6 +545,15 @@ func _golge(l: Label) -> void:
 	l.add_theme_color_override("font_color", Color("#fff6dc"))
 	l.add_theme_color_override("font_outline_color", Color("#14100c"))
 	l.add_theme_constant_override("outline_size", 4)
+
+func enerji_guncelle(v: float, mx: float, yorgun: bool) -> void:
+	enerji_cubugu.max_value = mx
+	enerji_cubugu.value = v
+	(enerji_cubugu.get_theme_stylebox("fill") as StyleBoxFlat).bg_color = Color("#7a8a9a") if yorgun else Color("#5ab4f0")
+
+## bir pencere ya da sahne açıkken savaş tuşları işlemez
+func pencere_acik() -> bool:
+	return sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
 
 func can_guncelle(hp: float, mx: float) -> void:
 	can_cubugu.max_value = mx
@@ -674,8 +710,33 @@ func _konus(n) -> void:
 			konusma.ac(K.ad, por, "Zırh benim işim. Tarifini bildiğin zırhı malzemesi ve işçiliğiyle döverim.", [{t = "Örse bak", pri = true, f = func(): istasyon.ac("durmus")}, {t = "Sonra", kapat = true}])
 		"market":
 			konusma.ac(K.ad, por, "Hoş geldin! Silah, zırh, takı ve aletler dışında her şeyi alırım; eline geçmiş doğal malzemeleri ve tarifini bildiğin eşyaları da satarım.", [{t = "Pazara bak", pri = true, f = func(): pazar.ac()}, {t = "Sonra", kapat = true}])
+		"alp":
+			_konus_alp(K, por)
 		_:
 			konusma.ac(K.ad, por, SELAM.get(K.k, "Merhaba!"))
+
+## web talkAlp + v181: öğretici yokken atılma ve savuşturma dersleri Börü'den, ücretsiz
+func _konus_alp(K: Dictionary, por) -> void:
+	if ders.acik:
+		konusma.ac(K.ad, por, "Kerevite odaklan evlat! Atıldığında, değmeden hemen önce [b]savuştur[/b]." if ders.mod == "parry" else "Kerevite odaklan evlat! Üstünde kırmızı [b]![/b] görünce yana [b]atıl[/b].", [{t = "Tamam", pri = true, kapat = true}])
+		return
+	if not yetenekler.has("S1"):
+		konusma.ac(K.ad, por, "Hey evlat, sen hâlâ [b]atılmayı[/b] bilmiyorsun! Saldırının içinden yana kaçamayan bu adada uzun yaşamaz. Gel, kısa bir ders; benden, ücretsiz.", [{t = "Öğret", pri = true, f = func(): ders.basla("dodge")}, {t = "Sonra", kapat = true}])
+		return
+	if not yetenekler.has("P0"):
+		konusma.ac(K.ad, por, "Kaçmayı biliyorsun ama [b]savuşturmayı[/b] bilmiyorsun evlat! Gel, kısa bir ders; benden, ücretsiz.", [{t = "Öğret", pri = true, f = func(): ders.basla("parry")}, {t = "Sonra", kapat = true}])
+		return
+	var L := ["Kılıcın keskin, nefesin derin olsun.", "Nötr hayvana bulaşırsan karşılık verir; zararsız olan kaçar, saldırgan olan seni arar.", "Zırhın varsa yaralar daha az acıtır. Postlardan giysi diktir."]
+	konusma.ac(K.ad, por, L[randi() % L.size()], [{t = "Kılıç nasıl yapılır?", f = func(): _alp_kilic(K, por)}, {t = "Hoşça kal", pri = true, kapat = true}])
+
+func _alp_kilic(K: Dictionary, por) -> void:
+	el_yapimi.bilinen["Taş kılıç"] = true
+	konusma.ac(K.ad, por, "Bir sopa, dört keskin taş, iki ip ve bir çakmaktaşı. Tarifini kitabına yazdım; [b]Dursun[/b] örsünde döver. Kılıcı kemerine koyup eline alırsın.", [{t = "Anladım", pri = true, f = func(): _konus_alp(K, por)}])
+
+func alp_dugum():
+	for n in kisiler:
+		if n.K.k == "alp": return n
+	return null
 
 func kamera_sinir() -> void:
 	kamera.limit_left = bx0 * T; kamera.limit_top = by0 * T
@@ -800,6 +861,7 @@ func durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = {gorulen = magara.gorulen, acilan = Marshalls.raw_to_base64(magara.acilan), kaya = 1 if magara.kaya_durum == 2 else magara.kaya_durum, denedi = magara.kaya_denedi or magara.kaya_durum == 2, boss = magara.boss_yenildi},
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 func gorunus_uygula(L: Dictionary) -> void:
@@ -870,6 +932,9 @@ func durum_yukle(d: Dictionary) -> void:
 		dg.draw.connect(_mezar_ciz.bind(dg))
 		nesneler.add_child(dg)
 		mezarlar.append({p = dg.position, inv = m.inv, vio = int(m.vio), dugum = dg})
+	yetenekler = {}
+	for k in d.get("yetenekler", []): yetenekler[k] = true
+	dl_agac = bool(d.get("dl_agac", false))
 	oyuncu.hp = float(o.get("hp", oyuncu.hp_max))
 	can_guncelle(oyuncu.hp, oyuncu.hp_max)
 	kamera.reset_smoothing()

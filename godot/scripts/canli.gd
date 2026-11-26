@@ -26,6 +26,33 @@ var olu := -1.0
 var tur_k := ""        # mağara canlıları: "w" önden yarasa, "t" üstten kertenkele/örümcek (web v436cayir)
 var boss := false
 var cvb := false        # mağaranın boss'u (yan görev çağırır)
+var sersem := 0.0       # savuşturulunca sersemler (web a.stun)
+var renk := "n"         # saldırının rengi: n beyaz, y sarı (×1,4), r kırmızı (×1,7, savuşturulamaz)
+var ders := false       # Börü'nün ders kereviti: dersi ders.gd yürütür, hasar almaz
+var ders_yuru := false
+const MUL := {"n": 1.0, "y": 1.4, "r": 1.7}
+const RENK := {"n": Color("#ffffff"), "y": Color("#ffd028"), "r": Color("#ff3a2a")}
+const AGIR := ["Timsah", "Yaban öküzü", "Kara ejder", "Mağara ayısı", "Hurda devi", "Büyük golem", "Lav golemi", "Kızıl ejder", "Gölge muhafız", "Gök bekçisi", "Kristal golem", "Kristal golemcik", "Devriye robotu", "Yavru ejder", "Bataklık kurdu", "Kül kurdu", "Gölge kurdu", "Kristal geyik"]
+
+## web v110 roll: saldırının rengi
+func _zar() -> String:
+	if D.get("ranged", false): return "n"
+	var r := randf()
+	if ders: return "y" if r < 0.25 else "n"
+	if boss: return "r" if r < 0.3 else ("y" if r < 0.65 else "n")
+	if AGIR.has(tur) or float(D.hp) >= 300.0: return "r" if r < 0.2 else ("y" if r < 0.5 else "n")
+	if float(D.dmg) >= 8.0 and float(D.hp) >= 35.0: return "y" if r < 0.3 else "n"
+	return "n"
+
+## savuşturuldu: sersemler, geri savrulur (web parried)
+func savusturuldu(yon: Vector2) -> void:
+	sersem = 1.1 if boss else 1.6
+	wind = 0.0
+	lunge = {}
+	flash = 0.15
+	mad = true
+	if not ders:
+		kb = {v = yon * (90.0 if boss else 170.0), t = 0.16}
 
 func _ready() -> void:
 	hp = float(D.hp)
@@ -55,12 +82,24 @@ func _draw() -> void:
 	draw_circle(Vector2.ZERO, 1.0, Color(0, 0, 0, 0.22))
 	draw_set_transform(Vector2.ZERO)
 	var top := -float(D.top)
-	if wind > 0.0:
-		# kırmızı ünlem: saldırı geliyor
+	if sersem > 0.0:
+		# sersem: başının üstünde dönen yıldızlar
+		var tm := Time.get_ticks_msec() / 1000.0
+		for i in 3:
+			var a := tm * 5.0 + i * 2.094
+			var c := Color("#ffe070") if i % 2 else Color("#fff8c8")
+			draw_rect(Rect2(cos(a) * 7.0 - 1.0, top - 6.0 + sin(a) * 2.5 - 1.0, 3, 3), c)
+			draw_rect(Rect2(cos(a) * 7.0, top - 6.0 + sin(a) * 2.5, 1, 1), Color.WHITE)
+	elif wind > 0.0:
+		# ünlem: saldırı geliyor; rengi darbenin rengi (beyaz, sarı savuşturulur; kırmızı savuşturulamaz)
 		var hg := top - 10.0
-		draw_rect(Rect2(-2, hg - 1, 5, 9), Color("#11170f"))
-		draw_rect(Rect2(-1, hg, 3, 5), Color("#ff3a2a"))
-		draw_rect(Rect2(-1, hg + 6, 3, 2), Color("#ff3a2a"))
+		var c: Color = RENK[renk]
+		var nn := 2 if renk == "r" else 1
+		for i in nn:
+			var ox := (3.0 if i else -3.0) if nn > 1 else 0.0
+			draw_rect(Rect2(-2 + ox, hg - 1, 5, 9), Color("#11170f"))
+			draw_rect(Rect2(-1 + ox, hg, 3, 5), c)
+			draw_rect(Rect2(-1 + ox, hg + 6, 3, 2), c)
 	elif mad and D.temper != "zararsız":
 		var b := roundf(sin(Time.get_ticks_msec() / 125.0))
 		draw_rect(Rect2(-1, top - 9 + b, 2, 5), Color("#ff4a2a"))
@@ -108,6 +147,21 @@ func _process(dt: float) -> void:
 		if olu > 1.0:
 			queue_free()
 		return
+	if ders:
+		_gorun(ders_yuru)
+		sersem = maxf(0.0, sersem - dt)
+		flash -= dt
+		return
+	if sersem > 0.0:
+		sersem -= dt
+		wind = 0.0; lunge = {}; atk = maxf(atk, 0.4)
+		flash -= dt
+		if not kb.is_empty():
+			kb.t -= dt
+			_git(kb.v, dt)
+			if kb.t <= 0: kb = {}
+		_gorun(false)
+		return
 	var P: Node2D = oyun.oyuncu
 	var dv: Vector2 = P.position - position
 	var d := maxf(dv.length(), 1.0)
@@ -145,7 +199,7 @@ func _process(dt: float) -> void:
 				if P.position.distance_to(position) < float(D.r) + 9.0:
 					if not lunge.hit:
 						lunge.hit = true
-						P.isirildi(int(D.dmg), position)
+						P.isirildi(int(round(float(D.dmg) * float(MUL[renk]))), position, self, renk)
 					lunge = {}
 				elif lunge.t <= 0:
 					lunge = {}
@@ -158,7 +212,7 @@ func _process(dt: float) -> void:
 					var el := maxf(e.length(), 1.0)
 					var sp := minf(300.0, (el + 12.0) / 0.3)
 					lunge = {v = e / el * sp, t = 0.3, hit = false}
-					oyun.yazi(position + Vector2(0, -float(D.r) - 14.0), "!", Color("#ff3b30"), 14)
+					oyun.yazi(position + Vector2(0, -float(D.r) - 14.0), "!", RENK[renk] if renk != "n" else Color("#ff3b30"), 14)
 			else:
 				var cs: float = float(D.cs) if D.cs != null else float(D.spd)
 				if d > maxf(14.0, float(D.r) + 10.0):
@@ -166,6 +220,7 @@ func _process(dt: float) -> void:
 					moving = true
 				if d < float(D.reach) and atk <= 0.0:
 					wind = 0.1
+					renk = _zar()
 					atk = float(D.wind) + 0.9
 					face = 1 if dv.x > 0 else -1
 		else:
@@ -178,8 +233,11 @@ func _process(dt: float) -> void:
 			if dir != Vector2.ZERO:
 				_git(dir * float(D.spd) * 0.3, dt)
 				moving = true
+	_gorun(moving)
+
+func _gorun(moving: bool) -> void:
 	if tur_k != "":
-		_kare(dt, moving)
+		_kare(0.0, moving)
 		mat.set_shader_parameter("flash", 1.0 if flash > 0.0 else 0.0)
 		queue_redraw()
 		return
@@ -228,6 +286,9 @@ func _kare(_dt: float, moving: bool) -> void:
 
 func vuruldu(dm: int, yon: Vector2) -> void:
 	if olu >= 0.0:
+		return
+	if ders:
+		flash = 0.15
 		return
 	hp -= dm
 	flash = 0.15
