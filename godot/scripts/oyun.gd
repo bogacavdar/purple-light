@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · A1"
+const SURUM := "Godot · A2"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -97,6 +97,7 @@ var portal                  # adalar arası portallar (portal.gd)
 var hikaye                  # Ada halkı hikâyeleri (hikaye.gd)
 var isikci                  # Yıldızsız Işıkçı ve Kafa lambası (isikci.gd)
 var gezgin                  # Yıldızsız Gezgin ve robot köpekler (gezgin.gd)
+var act2                    # ACT 2 adasının ustaları: Yıldız (act2.gd); yalnız ikinci adada
 var poyraz                  # Gemici Poyraz ve deniz (poyraz.gd)
 var ciftlik                 # Çiftçi Ekin ve Bereket Adası (ciftlik.gd)
 var balik                   # balık tutma, tuzaklar, gece buluntuları (balik.gd)
@@ -126,6 +127,12 @@ func _ready() -> void:
 		var C2: Dictionary = _json("res://data/canlilar_%s.json" % dosyalar[bi])
 		for k in C2.canlilar: canlilar[k] = C2.canlilar[k]
 		canli_liste[bi] = C2.liste
+	if ada == 2:
+		# ikinci adanın kendi canlıları (web __I2C.anim + NEWN; tools/disa_aktar_canli.js ADA=2)
+		for b2 in 6:
+			var A2: Dictionary = _json("res://data/ada2/canlilar_%d.json" % b2)
+			for k in A2.canlilar: canlilar[k] = A2.canlilar[k]
+			canli_liste[b2] = A2.liste
 	oyuncu_veri = _json("res://data/oyuncu.json")
 	T = int(harita.T)
 	bx0 = int(harita.region.x0); by0 = int(harita.region.y0)
@@ -1036,6 +1043,37 @@ func _ada2_test(q: String) -> void:
 	if q.contains("don"):
 		oyuncu.position = portal.P[1].p + Vector2(0, 4)
 		print("ADA2 portal f ", portal.etkiles())
+	if q.contains("yildiz"):
+		var Y = gorev.kisi("gok")
+		print("YZ hedef ", gorev.hedef().get("ad", "-"), " kazan ", toplama_veri.istasyon.kazan, " Y ", Y.position, " portal Yıldız açık ", portal.acik_mi(portal.P[0]))
+		oyuncu.position = Y.position + Vector2(-14, 4)
+		konus_ya_da_istasyon(); print("YZ 1 ", konusma.yazi.text.substr(0, 50)); konusma._cik()
+		await get_tree().create_timer(0.3).timeout
+		print("YZ isaret ", gorev.isaret("gok"), " vis ", gorev.vis.map(func(x): return x.q.id))
+		for gi in ["gk1", "gk2", "gk3"]:
+			konus_ya_da_istasyon(); print("YZ ver ", konusma.yazi.text.substr(0, 60).replace("\n", " ")); konusma._cik()
+			await get_tree().create_timer(0.3).timeout
+			if sahne.acik and sahne.faz == "oyna": sahne._bitir()
+			while konusma.visible:
+				konusma._cik(); await get_tree().create_timer(0.2).timeout
+			print("YZ aktif ", gorev.aktif.id if gorev.aktif != null else "-", " kart ", gorev.kart_ad.text, " ", gorev.satir(gorev.aktif.p[0]) if gorev.aktif != null else "")
+			if gi == "gk1": env.ekle("Ulu odun kalası", 4); env.ekle("Halat", 2)
+			if gi == "gk2": zaman.gun += 1
+			if gi == "gk3": env.ekle("Kristal", 2); env.ekle("Demir levha", 2); env.ekle("Mor kıymık", 2)
+			await get_tree().create_timer(0.6).timeout
+			while konusma.visible:
+				print("YZ teslim ", konusma.yazi.text.substr(0, 60).replace("\n", " ")); konusma._cik(); await get_tree().create_timer(0.2).timeout
+			print("YZ bitti ", gi, " ", gorev.bitti(gi), " vio ", env.vio)
+		await get_tree().create_timer(0.5).timeout
+		print("YZ portallar ", portal.bilinen(), " Yıldız portalı ", portal.acik_mi(portal.P[0]), " kart ", gorev.kart_ad.text)
+		konus_ya_da_istasyon(); print("YZ son ", konusma.yazi.text.substr(0, 50)); konusma._cik()
+		oyuncu.position = Vector2(toplama_veri.istasyon.kazan.x, toplama_veri.istasyon.kazan.y) + Vector2(-12, 6)
+		konus_ya_da_istasyon(); print("YZ kazan ", istasyon.baslik.text, " ", istasyon.pencere.visible); istasyon.pencere.visible = false
+		oyuncu.dokunulmaz = 9999.0
+		await get_tree().create_timer(6.0).timeout
+		var tc := {}
+		for c in canlilari_ver(): tc[c.tur] = int(tc.get(c.tur, 0)) + 1
+		print("YZ canlılar ", tc, " bio ", bio_at(oyuncu.position))
 
 func _dz_test() -> void:
 	await get_tree().create_timer(2.0).timeout
@@ -1163,6 +1201,7 @@ func _dogur(dt: float) -> void:
 		if L[2] == "gece" and not gece: continue
 		if L[2] == "sv2" and env.sv < 2: continue
 		if L[2] == "sv10" and env.sv < 10: continue
+		if L[2] == "sv6" and env.sv < 6: continue
 		if L[2] == "sv6gun3" and ((env.sv < 6 and zaman.gun < 3) or (env.sv < 10 and _atici_var(k, hepsi))): continue
 		_dogur_tur(k, want, hepsi, bio)
 
@@ -1419,6 +1458,13 @@ func _kisiler() -> void:
 		tum = [dz]
 		kisi_veri.istasyonlar = []
 		for a in ["kazan", "ors", "ors2"]: toplama_veri.istasyon[a] = {x = -100000, y = -100000}
+		# web v76/v77: Gökbilimci Yıldız Yüzen Kayalar'ın yüksek kayasında; ACT 2'de tarifler onun yanındaki kazanda öğrenilir
+		act2 = preload("res://scripts/act2.gd").new()
+		add_child(act2)
+		act2.kur(self)
+		tum.append_array(act2.kisiler())
+		var Y: Dictionary = act2.usta("gok")
+		toplama_veri.istasyon.kazan = {x = int(Y.x) + 42, y = int(Y.y) + 8}
 	for st in kisi_veri.istasyonlar:
 		if st.tur == "ates": continue
 		istasyonlar.append(st)
@@ -1443,6 +1489,7 @@ func _kisiler() -> void:
 		n.kur(self, k)
 		nesneler.add_child(n)
 		kisiler.append(n)
+		if k.k == "gok": act2.teleskop_kur(n)
 	var I: Dictionary = toplama_veri.istasyon
 	for a in [["kazan", I.kazan], ["ors", I.ors], ["ors", I.ors2]]:
 		var o := Node2D.new()

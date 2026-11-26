@@ -6,7 +6,7 @@ extends Node
 const BAD := ["Çayır", "Orman", "Bataklık", "Kayalık Dağ", "Kül Diyarı", "Mor Kristal Vadisi"]
 const DAT := ["Çayır'a", "Orman'a", "Bataklık'a", "Kayalık Dağ'a", "Kül Diyarı'na", "Mor Kristal Vadisi'ne"]
 const ACT2_G := ["gok", "pervin", "tamer", "selin", "alara", "tuna"]   # ikinci adanın görev verenleri
-const DESTEK := ["b", "h", "any", "k", "learn", "kn", "lv", "reach", "sleep", "place", "house", "bed", "sq", "tame", "bridge", "wear", "clues", "rock", "fidan", "ship"]
+const DESTEK := ["b", "h", "any", "k", "learn", "kn", "lv", "reach", "sleep", "place", "house", "bed", "sq", "tame", "bridge", "wear", "clues", "rock", "fidan", "ship", "gun"]
 const KISI_G := {"ekin": "npc"}   # kişi türü → görev veren adı (web gidOf)
 const QHI := ["Selam %s! Bir işin mi var?", "%s, yüzünden belli, bir derdin var.", "Merhaba %s! Yardım lazım mı?"]
 
@@ -60,8 +60,10 @@ func kur(o) -> void:
 	Q.append_array(o._json("res://data/evcil.json").gorevler)
 	Q.append_array(o._json("res://data/ekin.json").gorevler)
 	Q.append_array(o._json("res://data/poyraz.json").gorevler)
+	Q.append_array(o._json("res://data/ada2/ustalar.json").gorevler)   # ACT 2 ustaları (web v55 NQ: gk, pv, sl, mk, ej, as)
 	V.GB["k_davut"] = 0
 	V.GB["k_ekin"] = 0
+	for g2 in ["gok", "pervin", "tamer", "selin", "alara", "tuna"]: V.GB[g2] = 6
 	for i in Q.size():
 		var q: Dictionary = Q[i]
 		q.i = i
@@ -161,6 +163,7 @@ func kosul(r: Array) -> bool:
 		"nuri": return oyun.poyraz != null and oyun.poyraz.ph >= 1
 		"sea": return oyun.poyraz != null and oyun.poyraz.bolge_ok(oyun.poyraz.ZONES[int(r[1]) - 1])
 		"lv": return env.sv >= int(r[1])
+		"met": return oyun.kuzen.tanis.has(str(r[1]))
 		"bio": return biyomlar.has(int(r[1]))
 		"has":
 			for n in r[1]:
@@ -192,6 +195,7 @@ func acik(q: Dictionary) -> bool:   # web unlocked: koşullar + malzemeler gör�
 	for r in q.r:
 		if not kosul(r): return false
 	if not destekli(q): return false
+	if q.has("nq"): return true   # ACT 2 ustalarının işleri (web NQ): malzemeyi görmüş ya da tarifi biliyor olmak gerekmez
 	if not q.has("nomat"):
 		for p in q.p:
 			if p[0] == "b" and not gordu_mu(p[1]): return false
@@ -221,6 +225,7 @@ func ilerleme(p: Array) -> Array:
 		"bridge": return [1 if oyun.kopru.ana().fixed else 0, 1]
 		"rock": return [1 if oyun.gecit.acik else 0, 1]
 		"ship": return [1 if oyun.kuzen.gemi else 0, 1]
+		"gun": return [1 if oyun.zaman.gun > int(b.get("gun", 999999)) else 0, 1]
 		"fidan": return [mini(int(p[1]), oyun.ciftlik.fidan_buyudu()), int(p[1])]
 		"clues": return [mini(int(p[1]), oyun.iz.sayi()), int(p[1])]
 		"wear":
@@ -265,6 +270,7 @@ func satir(p: Array) -> String:
 		"fidan": return v + "Bir fidanı dik, ağaç olsun (üç gün)" if not ok_ else "✓ Fidan ağaç oldu"
 		"rock": return oyun.gecit.satir(ok_)
 		"ship": return "✓ Gemi kuruldu" if ok_ else "Gemi malzemelerini enkaza koy"
+		"gun": return "✓ Gece bitti" if ok_ else "Bir gece bekle"
 		"wear": return v + str(p[1]) + (" giy" if RegEx.create_from_string("(?i)zırh|miğfer|çizme|eldiven").search(str(p[1])) != null else " silah yuvasına tak")
 		"bridge": return "✓ Köprü onarıldı" if ok_ else "Odun %d/%d · köprüye git" % [mini(oyun.kopru.odun(), 20), 20]
 		"sq":
@@ -300,6 +306,8 @@ func eksik_hedef(item: String, n: int, dep: int = 0) -> Dictionary:
 	return {}
 
 func hedef() -> Dictionary:
+	if oyun.ada == 2 and (aktif == null or not ACT2_G.has(str(aktif.g))) and not oyun.kuzen.tanisildi("gok") and kisi("gok") != null:
+		return {kisi = kisi("gok"), ad = "Gökbilimci Yıldız"}   # web v76 guideKey: tanışana dek ok Yıldız'ı gösterir
 	if aktif == null:
 		return {}
 	var q: Dictionary = aktif
@@ -327,7 +335,7 @@ func hedef() -> Dictionary:
 				return {item = p[1], bios = V.av.get(p[1], [0])}
 			"learn", "kn":
 				var I: Dictionary = oyun.toplama_veri.istasyon
-				return {nokta = Vector2(I.kazan.x, I.kazan.y), ad = "Zümrüt'ün kazanı"}
+				return {nokta = Vector2(I.kazan.x, I.kazan.y), ad = "Yıldız'ın kazanı" if oyun.ada == 2 else "Zümrüt'ün kazanı"}
 			"reach":
 				return {bios = [int(p[1])], item = BAD[int(p[1])]}
 			"ship":
@@ -404,7 +412,7 @@ func bekleyen(g: String):
 ## web pickFiller: sıradaki kilitli görevin eksiğini tamamlatan iş (malzeme → Kemal, tarif → Zümrüt, yoksa seviye)
 func ayak_isi(yalniz_mt: bool):
 	for q in PRI:
-		if bitti(q.id) or sonraki(q.g) != q or not destekli(q): continue
+		if bitti(q.id) or sonraki(q.g) != q or not destekli(q) or q.has("nq"): continue
 		var dur := false
 		for r in q.r:
 			if r[0] == "q" and not kosul(r): dur = true
@@ -521,6 +529,10 @@ func _baslat(q: Dictionary, g: String, kisa: bool) -> void:
 			b["k:" + p[1]] = int(kills.get(p[1], 0))
 		if p[0] == "c":
 			b["c:" + p[1]] = cval(str(p[1]))
+		if p[0] == "gun":
+			b["gun"] = int(oyun.zaman.gun)
+	if q.has("nq"):
+		for r in q.get("rec", []): ey.bilinen[r] = true
 	vis = []
 	var hazir := tamam()
 	var wh := "" if hazir else nerede()

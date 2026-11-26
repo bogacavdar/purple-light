@@ -154,7 +154,7 @@ func ciz() -> void:
 		c.queue_free()
 	var adlar := _adlar()
 	if kip == "kazan":
-		baslik.text = (oyun.iyelik(kazan_sahibi) + " kazanı · tarif öğren") if kazan_sahibi != "" else "Zümrüt'ün kazanı · tarif öğren"
+		baslik.text = (oyun.iyelik(kazan_sahibi) + " kazanı · tarif öğren") if kazan_sahibi != "" else ("Yıldız'ın kazanı · tarif öğren" if oyun.ada == 2 else "Zümrüt'ün kazanı · tarif öğren")
 	else:
 		var u: Dictionary = oyun.usta_bilgi(kip)
 		baslik.text = "%s örsü · %s" % [oyun.iyelik(u.ad), "zırh" if u.rol == "a" else "alet ve silah"]
