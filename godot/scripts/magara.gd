@@ -232,7 +232,6 @@ func _cik(sessiz: bool = false, yerinde: bool = false) -> void:
 		oyun.oyuncu.bak(Vector2(0, 1))
 	oyun.kamera.reset_smoothing()
 	_harita_kapa()
-	for i in 3: oyun._canli_koy("Tavşan", 10.0)
 	if not sessiz:
 		oyun.env.mesaj("%s'ndan çıktın." % M.ad)
 

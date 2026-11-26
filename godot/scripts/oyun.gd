@@ -27,6 +27,9 @@ var konusma
 var kisiler: Array = []
 var gorev
 var sahne
+var canli_liste: Array = []
+var dogum_t := 1.0
+var paket_no := 0
 var pazar
 var zaman
 var kayit
@@ -66,7 +69,9 @@ func _ready() -> void:
 	Girdi.kur()
 	harita = _json("res://data/harita.json")
 	dunya = _json("res://data/dunya.json")
-	canlilar = _json("res://data/canlilar.json").canlilar
+	var CC: Dictionary = _json("res://data/canlilar_cayir.json")
+	canlilar = CC.canlilar
+	canli_liste = CC.liste
 	oyuncu_veri = _json("res://data/oyuncu.json")
 	T = int(harita.T)
 	bx0 = int(harita.region.x0); by0 = int(harita.region.y0)
@@ -144,10 +149,6 @@ func _ready() -> void:
 	kamera_sinir()
 	oyuncu.add_child(kamera)
 	kamera.make_current()
-	# canlılar: Tavşanlar dolaşır, kaçar; Kurt oyuncuyu görünce saldırır (web'de Kurt gece çıkar; denemede gündüz de var)
-	for i in 3:
-		_canli_koy("Tavşan", 10.0)
-	_canli_koy("Kurt", 14.0)
 	# web derlemesinde adrese ?kurt ya da ?tavsan yazılırsa (denetim için) o canlı oyuncunun 5–7 kare yakınına konur
 	if OS.has_feature("web"):
 		var q := str(JavaScriptBridge.eval("location.search"))
@@ -396,11 +397,79 @@ func canli_oldu(k: String, c = null) -> void:
 	if gorev: gorev.av(k)
 	if magara != null and c != null and c.cvb:
 		magara.boss_oldu()
-	if magara != null and magara.icinde:
+
+## web spawnAnimals/spawnIn (Çayır, BANIM[0]): 1,5 sn'de bir her türden istenen kadar (sürülerde sürü sayısı), oyuncudan 330–470 px
+## uzakta, kendi zemininde ve Çayır'da doğar; 760 px'ten uzaklaşan silinir, gece canlısı gündüz 360 px'ten uzaksa gider.
+## Kurt yalnız gece; Sv 1–5'te sahada en çok bir kurt ve tek başına; Yaban atı Sv 2'den; saldırganlar Kemal'in kampının yanında doğmaz.
+func _dogur(dt: float) -> void:
+	if magara.icinde or basta or cine.acik: return
+	dogum_t -= dt
+	if dogum_t > 0.0: return
+	dogum_t = 1.5
+	var P: Vector2 = oyuncu.position
+	var gece: bool = zaman.gece_mi()
+	var hepsi := canlilari_ver()
+	for c in hepsi:
+		var d: float = c.position.distance_to(P)
+		if c.has_meta("ders"): continue
+		if d > 760.0 or (bool(c.D.get("night", false)) and not gece and d > 360.0):
+			c.queue_free()
+	if bio_at(P) != 0: return
+	for L in canli_liste:
+		var k: String = L[0]
+		var want: int = int(L[1])
+		if L[2] == "gece" and not gece: continue
+		if L[2] == "sv2" and env.sv < 2: continue
+		_dogur_tur(k, want, hepsi)
+
+func _dogur_tur(k: String, want: int, hepsi: Array) -> void:
+	var D: Dictionary = canlilar[k]
+	var paket = D.get("pack", null)
+	var ayni := []
+	for c in hepsi:
+		if c.tur == k and is_instance_valid(c): ayni.append(c)
+	if k == "Kurt" and env.sv <= 5 and not ayni.is_empty(): return
+	var var_ := ayni.size()
+	if paket != null:
+		var pk := {}
+		for c in ayni: pk[c.get_meta("pk", 0)] = true
+		var_ = pk.size()
+	if var_ >= want: return
+	var land: Array = D.landTiles
+	var Pp: Vector2 = oyuncu.position
+	for deneme in 12:
+		var p := Pp + Vector2.from_angle(rng.randf() * TAU) * (330.0 + rng.randf() * 140.0)
+		if not land.has(float(tile_at(p))) or engel(p, 6.0) or bio_at(p) != 0: continue
+		if int(D.aggro) > 0 and p.distance_to(Vector2(zaman.A.kamp.x, zaman.A.kamp.y)) < float(zaman.A.guvenli.kamp): continue
+		paket_no += 1
+		var n := 1
+		if paket != null:
+			var lo: int = int(paket[0]); var hi: int = int(paket[1])
+			if D.temper == "saldırgan":
+				if env.sv < 4: hi = mini(hi, 2)
+				elif env.sv < 7: hi = mini(hi, 3)
+				if env.sv < 7: lo = mini(lo, 2)
+			n = 1 if (k == "Kurt" and env.sv <= 5) else rng.randi_range(lo, hi)
+		_canli_yeni(k, p, paket_no)
+		var g := 0
+		var m := 1
+		while m < n and g < 40:
+			g += 1
+			var q := p + Vector2(rng.randf_range(-22, 22), rng.randf_range(-22, 22))
+			if engel(q, 6.0) or not land.has(float(tile_at(q))) or bio_at(q) != 0: continue
+			_canli_yeni(k, q, paket_no)
+			m += 1
 		return
-	# yerine bir süre sonra yenisi gelir (deneme kolaylığı için)
-	await get_tree().create_timer(12.0).timeout
-	_canli_koy(k, 12.0)
+
+func _canli_yeni(k: String, p: Vector2, pk: int):
+	var c := preload("res://scripts/canli.gd").new()
+	c.oyun = self
+	c.tur = k
+	c.D = canlilar[k]
+	c.position = p
+	c.set_meta("pk", pk)
+	nesneler.add_child(c)
+	return c
 
 func canlilari_ver() -> Array:
 	var out := []
@@ -631,6 +700,7 @@ func balon(t: String, sure: float) -> void:
 	balon_t = sure
 
 func _physics_process(dt: float) -> void:
+	_dogur(dt)
 	if balon_t > 0.0:
 		balon_t -= dt
 		var s: Vector2 = get_viewport().get_canvas_transform() * (oyuncu.position + Vector2(0, -40))
@@ -692,7 +762,6 @@ func bayil(sebep: String) -> void:
 	env.tokluk = maxf(env.tokluk, 30.0)
 	kamera.reset_smoothing()
 	oyuncu.bayildi = false
-	for i in 3: _canli_koy("Tavşan", 10.0)
 	await get_tree().create_timer(1.6).timeout
 	var ne := ""
 	if gece:

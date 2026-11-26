@@ -40,6 +40,17 @@ const CHROME=process.env.CHROME||'/opt/pw-browsers/chromium-1243/chrome-linux64/
   const SQSRC=(()=>{const i=SRC.indexOf("{id:'cevdet',name:'Madenci Kaya'"),j=SRC.indexOf("after:[",i),k=SRC.indexOf("]}",j);return SRC.slice(i,k+2)})();
   const N_=t=>['n',t],P_=t=>['p',t],X_=t=>['x',t];const SQ=(new Function('N','P','X','return '+SQSRC))(N_,P_,X_);
   await p.evaluate(()=>window.__ham.ev('window.__plCave.exit()'));await p.waitForTimeout(300);
+  // Çayır'ın bütün canlıları (web v436cayir kareleri, ANIM, PACK) ve doğma listesi (web BANIM[0], spawnIn)
+  const CAYIR=await p.evaluate(()=>window.__ham.ev(`(()=>{const png=c=>c.toDataURL('image/png');const mk=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.imageSmoothingEnabled=false;return [c,g]};
+    const L=window.__plBANIM[0],out={};
+    for(const [k] of L){const o=window.__plCayir.DATA[k];if(!o)continue;const F=Math.min(6,o.f.length);const [c,g]=mk(o.w*F,o.h);
+      for(let i=0;i<F;i++)g.drawImage(window.__plCayir.frame(k,i,''),i*o.w,0);
+      const A=ANIM[k],M=window.__p2ART&&window.__p2ART[k];
+      out[k]={png:png(c),fw:o.w,fh:o.h,frames:F,ox:o.w>>1,oy:o.oy+1,top:o.top,shadow:M?M.sh:Math.max(8,Math.round(o.w*.6)),
+        temper:A.temper,hp:A.hp,spd:A.spd,cs:A.cs||null,aggro:A.aggro||0,dmg:A.dmg||0,r:A.r,reach:A.reach||26,wind:A.wind||.42,xp:A.xp,night:!!A.night,still:!!A.still,
+        landTiles:[0,1,2,3,4,5].filter(t=>A.land?!!A.land(t):t<=1),drops:A.drops.map(d=>({n:d[0],min:d[1],max:d[2],p:d[3]})),pack:PACK[k]||null}}
+    const liste=L.map(x=>[x[0],x[1],x[2]?(String(x[2]).indexOf('isNight')>=0?'gece':'sv2'):'']);
+    return {canlilar:out,liste}})()`));
   // Adım 1f-3b: Nazlı'nın pazarı (web PRICE_, noSell, isRaw, rawPrice, madeOk, bulkSellable; yeteneksiz satış çarpanı 1)
   const PAZAR=await p.evaluate(()=>window.__ham.ev(`(()=>{const o={};const madeOk=r=>REC.has(r)&&PRICE_[r]!=null&&!PLACEABLE.has(r)&&!GT[r]&&!EQUIP[r]&&!TOOLS.has(r)&&!RAW_NO.has(r)&&!(typeof HOUSESET!=='undefined'&&HOUSESET.has(r));
     for(const n in PRICE_){const v=PRICE_[n];if(!(v>0))continue;o[n]={f:+v.toFixed(3),s:noSell(n)?0:1,h:isRaw(n)?1:0,y:madeOk(n)?1:0,a:(isRaw(n)||madeOk(n))?rawPrice(n):0,t:(!TOOLS.has(n)&&!EQUIP[n]&&!PLACEABLE.has(n)&&n!=='Kamp ateşi'&&!GT[n])?1:0}}
@@ -87,5 +98,7 @@ const CHROME=process.env.CHROME||'/opt/pw-browsers/chromium-1243/chrome-linux64/
   w(path.join(OUT,'data','magara.json'),JSON.stringify(R));
   w(path.join(OUT,'data','ates.json'),JSON.stringify(ATES));
   w(path.join(OUT,'data','pazar.json'),JSON.stringify(PAZAR));
+  for(const k in CAYIR.canlilar){const f='canli_'+safe(k)+'.png';wpng(path.join(OUT,'art',f),CAYIR.canlilar[k].png);CAYIR.canlilar[k].file='res://art/'+f;delete CAYIR.canlilar[k].png}
+  w(path.join(OUT,'data','canlilar_cayir.json'),JSON.stringify(CAYIR));
   console.log('mağara',R.ad,'N',R.N,'iç',!!R.ic,'tepe',!!R.tepe,'kapı',JSON.stringify(R.kapi),'meşale',JSON.stringify(R.mesale));
 })().catch(e=>{console.error(e);process.exit(1)});
