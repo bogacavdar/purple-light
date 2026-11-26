@@ -1,3 +1,7 @@
+## v4.70 (26 Kasım 2026) · Godot 3c: Avcı Doğan
+- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_kisi.js toygar ve kulübesi; kuzen.gd rol t, Doğan'ın konuşmaları ve tarifleri; gorev.gd wear; oyun.gd kulübe çizimi). Denetim: ?git_toygar. Belge 99_godot 3c satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.69 (26 Kasım 2026) · Godot 3b: Bataklık'ın kişileri ve görevleri
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_kisi.js BIYOM=2 → data/kisiler_bataklik.json, data/gorevler_bataklik.json, art/kisiler; oyun.gd kişileri ve istasyonları birleştirir; gorev.gd Bataklık görevleri ve tool koşulu). Denetim: ?git_k_safir. Belge 99_godot 3b satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.51 (25 Kasım 2026) · Godot Adım 1f-2 (karakter yaratma)
 - `godot-deneme/` yeni derleme (godot dalı: karakter.gd web sheet() kuralının GDScript'i, yaratici.gd; tools/disa_aktar_kahraman.js web HD çizimlerini ve CC/HS/EYES seçeneklerini kaynaktan döker). Belge 99_godot 1f-2 satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.50 (25 Kasım 2026) · Godot Adım 1f-1 (ana menü, kayıt, gün-gece, bayılma)
-- `godot-deneme/` yeni derleme (godot dalı: kayit.gd, zaman.gd, oyun.gd bayılma ve durum; data/ates.json). Kayıtlar Godot'da user:// (tarayıcıda IndexedDB) içinde, web kayıtlarından ayrı. Belge 99_godot 1f satırı 1f-1…1f-4'e bölündü. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

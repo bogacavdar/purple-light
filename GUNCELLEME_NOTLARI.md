@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.70 · 26 Kasım 2026
+
+### Proje
+- **Godot: Avcı Doğan:**
+  - Köprünün doğusunda, kamış kulübesinin yanında. Tanışınca kamış çizme ve panzehir tariflerini öğretiyor, o fırtınalı geceyi anlatıyor.
+  - Görevleri: kamış çizme giy, Bataklık'ın hayvanlarını avla, Kayalık Dağ'a git.
+  - "Şunu giy" görevleri artık tamamlanıyor (Durmuş'un tunç miğfer görevi de).
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.69 · 26 Kasım 2026
 
 ### Proje
@@ -209,10 +220,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot, Adım 1f-2 (karakter yaratma) oynanabilir:** Yeni oyun artık karakter yaratmayla başlıyor: önce kendi karakterin, sonra sevdiğin kişi, en sonda zorluk. Ten, yüz, göz rengi, saç biçimi ve rengi, kıyafet ve renkleri seçiliyor; önizleme her seçimde hemen değişiyor, Döndür ve Rastgele var. Oyunda karakterin seçtiğin görünüşle yürüyor. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.50 · 25 Kasım 2026
-
-### Proje
-- **Godot, Adım 1f-1 (ana menü, kayıt, gün-gece, bayılma) oynanabilir:** oyun artık ana menüyle açılıyor (Devam et, Yeni oyun, Kayıttan yükle). Esc ile oyun içi menü: kaydet (3 yuva), yükle, ana menüye dön; otomatik kayıt da var. Gün ve gece döngüsü geldi: akşam kararıyor, ateşler ve meşale ışık veriyor; gece ışıksız kalırsan mor ışık iniyor ve bayılıyorsun. Bayılınca eşyaların ve Vio'nun bir kısmı gidiyor, kalanı düştüğün yerde kurukafalı bir çantada bekliyor. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
