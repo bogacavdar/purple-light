@@ -8,6 +8,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.56 · 26 Kasım 2026
+
+### Proje
+- **Godot: yetenek ağacı:**
+  - Y ile açılıyor. Web'deki üç ağaç (Savaş, Ekonomi, Dayanıklılık) aynı yerleri, dalları, ikonları ve fiyatlarıyla Godot'ta.
+  - Üstüne gelince yeteneğin ne yaptığı görünüyor. Tıklayınca alınıyor ve nasıl kullanılacağı anlatılıyor.
+  - Koşmak için artık Koşu gerekiyor (100 Vio). Börü dersten sonra ağacı gösteriyor.
+  - Enerji, hız, hasar, savuşturma, atılma, can, satış, XP, toplama, aletler ve tokluk yetenekleri işliyor. Kritik vuruş, zırh, zehir gibi henüz Godot'ta olmayan sistemlerin yetenekleri alınabiliyor; etkileri o sistemlerle gelecek.
+  - Can artık zamanla yavaş yavaş doluyor. Enerji çubuğu web'deki gibi yeşil.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.55 · 26 Kasım 2026
 
 ### Proje
@@ -173,18 +186,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Tasarım belgesi
 - Sistemler › Yeni ikonlarla › Oyuncunun karakteri: NPC boyu, ComfyUI katmanları, 8 yön 4 kare yürüyüş, yüz seçimi. Akış › Karakter yaratma: Yüz satırı ve önizleme.
-
----
-
-## Versiyon 4.36 · 22 Kasım 2026
-
-### Görsel
-- **Çayır canlıları yeniden çizildi (ComfyUI, gerçekçi):** Tavşan, Keklik, Bıldırcın, Geyik, Yaban atı, Kerevit, Kurt ve Porsuk artık gerçek oranlarla, yandan çizilmiş resimler. Yaban atı ve boynuzlu Geyik oyuncu boyuna yakın, Kurt bel hizasında, Tavşan, Porsuk ve kuşlar diz altında. Dört adımla yürürler (bacaklar çapraz ikişer), saldırmadan önce öne eğilirler. Porsuk artık griye boyanmış kunduz değil, siyah-beyaz çizgili yüzlü gerçek bir porsuk.
-- **Yankı Mağarası canlıları:** Mağara yarasası, Kör kertenkele, Taş örümceği ve Yankı Kraliçesi de ComfyUI'de gerçekçi çizildi; duruşlar aynı (yarasa önden ve üç kareyle kanat çırpar, kertenkele ve örümcek üstten). Kovalarken gözleri kırmızı yanar, Kraliçe'nin başında altın tacı var. Bu resimleri ödünç alan öbür mağara canlıları da yeni resmi kendi tonlarıyla kullanır.
-- **Ağaçtaki meyveler gerçek meyve gibi:** olgun ağaçların tacındaki renkli kareler yerine ComfyUI'de çizilmiş küçük meyveler görünür (elma, armut, ceviz, fındık, kestane, mürver, dut, incir, ateş narı, yıldız eriği, ay elması, ardıç meyvesi).
-
-### Tasarım belgesi
-- ACT 1 › Çayır › Çayır canlılarının görünüşü; Mağaralar › Yankı Mağarası canlılarının gerçekçi resmi; Sistemler › Ağaçtaki meyveler.
 
 ---
 

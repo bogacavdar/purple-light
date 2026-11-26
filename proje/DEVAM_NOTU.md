@@ -1,3 +1,7 @@
+## v4.56 (26 Kasım 2026) · Godot 1f-3b-3: yetenek ağacı
+- `godot-deneme/` yeni derleme (godot dalı: yeni yetenek.gd ve data/yetenek.json, tools/disa_aktar_yetenek.js; oyuncu.gd yetenek_uygula, Koşu kapısı, can yenilenmesi; toplama/pazar/envanter/istasyon yetenek etkileri; ders.gd Börü'nün ağaç adımı; girdi Y). Denetim: ?boru3agac, ?boru3tum. Belge 99_godot 1f-3b-3 satırı (enerji çubuğu yeşil diye düzeltildi). Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.55 (26 Kasım 2026) · Godot 1f-3b-2: enerji, savuşturma, Börü'nün dersleri
 - `godot-deneme/` yeni derleme (godot dalı: oyuncu.gd enerji/savustur/kalkan/isirildi renk; canli.gd _zar, sersem, savusturuldu, ders; yeni ders.gd; oyun.gd enerji çubuğu, _konus_alp, yetenekler ve dl_agac kayıtta; girdi.gd savus = E/LT). Denetim adresleri: ?boru, ?boru2, ?boru3, ?boru_oto. Belge 99_godot 1f-3b-2 satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -80,10 +84,4 @@
 - Üretim (scratch, depoda değil): /tmp/h3/ — `canv3.py` (ComfyUI dönüş sayfasından tuvaller), `mask.py`/`zone.py` (inpaint bölgeleri), `base.py` (yeşil anahtar → 30 px küçültme, yüz çizgilerini koruyan örnekleme, bölüm etiketleri), `wlk.py` (uyluk/baldır katı parça yürüyüş, yakın bacak önde + koyu kenar), `layer.py` (inpaint farkı → katman), `build.py` → `w/HD.json`, `pack.py` + `inject.py` (`blk/tpl4.js`). ComfyUI çıktıları Boğaç'ın `output/purple/` klasöründe: `h3ta_*` (dönüş sayfaları), `h3bald_*` (kel temel), `h3t_*` (çapraz temel), `h3hs_*` (saç), `h3ac_*` (aksesuar; `*2` yeniden çizilenler).
 - Eski kayıtlar: `L.face` yoksa 0 (Sakin); eski saç/sakal/bıyık alanları aynen okunur (`B4OLD` eşlemesi blokta). MAPV ve kayıt biçimi değişmedi.
 - Geri almak için: `git checkout v4.36 -- proje/Hammadde_prototip.html index.html proje/tools/belge/parts/` (yalnız `v428kahraman` bloğu değişti); `face` alanı eski kodda yok sayılır.
-
-## v4.36 (22 Kasım 2026) · Çayır canlıları ve Yankı Mağarası canlıları ComfyUI'de gerçekçi; ağaçtaki meyveler gerçek meyve
-- Belge: 30_act1 › Çayır › "Çayır canlılarının görünüşü"; 37_magaralar › "Yankı Mağarası canlılarının gerçekçi resmi"; 20_sistemler › "Ağaçtaki meyveler".
-- Kod: yeni blok `v436cayir` (`v232`'den hemen sonra). Resimler ComfyUI (Z-image Turbo + piksel LoRA), /tmp/cy/build.py ile yeşil anahtarlama, küçültme, 24 renk, kareler (0 duruş, 1–4 yürüyüş, 5 hamle, yarasada 6 yatış) ve palet dizgisi (resim yüklemesi yok). 7 eski ART canlısının (`window.__plART`) gövde fonksiyonu ve kutusu değişti, eski yoldaki bütün etkiler (çerçeve, beyaz parlama, Reis tonu, parıltı, donma, yanma) kalır; Porsuk için `__plNEWN.Porsuk.art=''` (kunduz gövdesini ödünç almaz). Mağara dördü bu blokta çizilir (v232 yerine).
-- Meyveler: yeni blok `v436meyve` (`v424dunya`'dan önce) `window.__plFruitPic`; `v424dunya` içindeki `fruity` ve çekirdek `drawTree` meyve noktaları bu resimleri kullanır (resim yoksa eski noktalar).
-- Geri almak için: iki bloğu sil; `v424dunya`'daki `fruity(...,fn)` ve `drawTree`'deki `FP` satırları resim yokken eski noktaya düştüğü için dokunmasan da olur. Kayıt alanı yok.
 
