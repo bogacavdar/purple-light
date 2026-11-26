@@ -1,3 +1,7 @@
+## v4.88 (27 Kasım 2026) · Godot O8: ACT 1'in sonu
+- `godot-deneme/` yeni derleme (godot dalı: kuzen.gd gemi/act2 bayrakları (tanis'te), enkaz_f, _teklif, yolculuk sahnesi ve ACT 2 kartı, yeni gemi çizimi; gorev.gd "ship" adımı; oyun.gd F sırasında enkaz, enkaza tekne yeri; yeni tools/disa_aktar_yolculuk.js → art/yolculuk 111 kare + data/yolculuk.json). Denetim: ?gemitest. Belge 99_godot O8 satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.87 (27 Kasım 2026) · Godot O7: Ada halkı hikâyeleri; kalan plan
 - `godot-deneme/` yeni derleme (godot dalı: yeni hikaye.gd (parçalar, sahne oynatıcı, Kitap sayfası, kayıt `hikaye`); yeni tools/disa_aktar_hikaye.js → data/hikaye.json + art/hikaye 290 kare (oyunun kendi sahne çiziminden); konusma.gd seçeneği ekler; el_yapimi.gd Ada halkı düğmesi). Denetim: ?hikayetest. Belge 99_godot: kalan plan tablosu ve O7 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et.
@@ -73,9 +77,5 @@
 
 ## v4.69 (26 Kasım 2026) · Godot 3b: Bataklık'ın kişileri ve görevleri
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_kisi.js BIYOM=2 → data/kisiler_bataklik.json, data/gorevler_bataklik.json, art/kisiler; oyun.gd kişileri ve istasyonları birleştirir; gorev.gd Bataklık görevleri ve tool koşulu). Denetim: ?git_k_safir. Belge 99_godot 3b satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.68 (26 Kasım 2026) · Godot 3a: Köprüler, çamur, Bataklık canlıları
-- `godot-deneme/` yeni derleme (godot dalı: yeni kopru.gd; oyun.gd engel köprü üstü, camur_mu/camur_gecmez, F'de köprü, kayıtta kopru ve camur_dedi; oyuncu.gd çamur ×0,6; gorev.gd bridge; tools/disa_aktar_canli.js BIYOM=2 → data/canlilar_bataklik.json). Denetim: ?koprutest, ?koprutest_camur. Belge 99_godot Adım 3 ve 3a satırları. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

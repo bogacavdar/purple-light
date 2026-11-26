@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.88 · 27 Kasım 2026
+
+### Proje
+- **Godot: ACT 1'in sonu:**
+  - Barbaros'un son görevi "Yeni bir gemi" yapılabiliyor: malzemeleri enkaza koyunca yeni gemi suya iniyor.
+  - Barbaros'la konuşunca önce hikâyesi ve sahnesi geliyor, sonra seni başka bir adaya götürmeyi teklif ediyor.
+  - Deniz yolculuğu sahnesi ve "ACT 2 · Açık deniz" kartı geldi. İkinci ada sıradaki adımda gelecek; şimdilik yolculuk bitince kıyıya dönüyorsun.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.87 · 27 Kasım 2026
 
 ### Proje
@@ -216,17 +227,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: Bataklık'ın kişileri ve görevleri:**
   - Cadı Safir (kazanı), Silahçı Ali (ocağı, örsü, silah rafı), Zırhçı Veli (örsü, mankeni) ve Pazarcı Nilüfer (tezgâhı) web'deki yerlerinde.
   - Önce tanışıyorsun, sonra 27 görev veriyorlar.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.68 · 26 Kasım 2026
-
-### Proje
-- **Godot: köprüler, çamur ve Bataklık canlıları (Adım 3 başladı):**
-  - Büyük nehrin üstünde üç kırık köprü var. Kemal'in "Bir köprüyü onar" görevini alınca ana köprüyü 20 odunla onarıyorsun; her ağacın odunu sayılıyor. Ana köprüden sonra iki kısayol köprüsünü görevsiz onarabiliyorsun.
-  - Bataklık'ın çamurunda yavaşlıyorsun (×0,6); kamış ya da demir çizme giyince yavaşlamıyorsun.
-  - Bataklık'ta ördek, yaban kazı, turna kuşu, su samuru, zehirli kurbağa, bataklık kurdu ve timsah dolaşıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
