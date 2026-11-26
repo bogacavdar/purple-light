@@ -614,6 +614,7 @@ func _bitir(yakin: bool) -> void:
 	yenile()
 	_kart()
 	if oyun.kayit != null: oyun.kayit.kaydet("oto")
+	get_tree().create_timer(1.2).timeout.connect(func(): oyun.ani.olay("quest"))   # web v318: görev bitince %30 bir anı
 
 func _odul(q: Dictionary) -> String:
 	var r := []

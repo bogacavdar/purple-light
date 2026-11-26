@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · A7"
+const SURUM := "Godot · Anılar"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -97,6 +97,7 @@ var portal                  # adalar arası portallar (portal.gd)
 var hikaye                  # Ada halkı hikâyeleri (hikaye.gd)
 var isikci                  # Yıldızsız Işıkçı ve Kafa lambası (isikci.gd)
 var gezgin                  # Yıldızsız Gezgin ve robot köpekler (gezgin.gd)
+var ani                     # anılar (ani.gd)
 var roket                   # ACT 2'nin sonu: fırlatma, kavuşma, son kart (roket.gd)
 var buyu                    # mor mana ve asalar (buyu.gd)
 var act2                    # ACT 2 adasının ustaları: Yıldız (act2.gd); yalnız ikinci adada
@@ -233,6 +234,9 @@ func _ready() -> void:
 	kopru = preload("res://scripts/kopru.gd").new()
 	add_child(kopru)
 	kopru.kur(self)
+	ani = preload("res://scripts/ani.gd").new()
+	add_child(ani)
+	ani.kur(self)
 	roket = preload("res://scripts/roket.gd").new()
 	add_child(roket)
 	roket.kur(self)
@@ -332,6 +336,7 @@ func _ready() -> void:
 		if q.contains("hikayetest"): _hikaye_test.call_deferred()
 		if q.contains("gemitest"): _gemi_test.call_deferred()
 		if q.contains("ada2test"): _ada2_test.call_deferred(q)
+		if q.contains("anitest"): _ani_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -1243,6 +1248,27 @@ func _ada2_test(q: String) -> void:
 		for c in canlilari_ver(): tc[c.tur] = int(tc.get(c.tur, 0)) + 1
 		print("YZ canlılar ", tc, " bio ", bio_at(oyuncu.position))
 
+func _ani_test(q: String) -> void:
+	oyuncu.dokunulmaz = 9999.0
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	ad_sevgili = "Elif"; ad_kahraman = "Can"
+	var x0: int = env.xp if "xp" in env else 0
+	ani.getir(ani.sonraki_a1(), "quest")
+	await get_tree().create_timer(1.5).timeout
+	print("ANI açık ", ani.visible, " ", ani.ad_yazi.text, " | ", ani.metin.text.substr(0, 60), " | ", ani.dugme.text)
+	for k in 6:
+		if ani.cur == null: break
+		ani._ileri(); await get_tree().create_timer(0.2).timeout
+	print("ANI bitti ", ani.mems.keys(), " tür ", ani.tur)
+	var i := 14 if q.contains("waffle") else (5 if q.contains("sahil") else 17)
+	ani.izle(i)
+	ani.cur.line = 1 if i != 5 else 0
+	ani._satir()
+	await get_tree().create_timer(1.2).timeout
+	print("ANI izle ", ani.ad_yazi.text, " | ", ani.metin.text.substr(0, 80))
+
 func bitenler_ekle(L: Array) -> void:
 	for id in L:
 		if not gorev.bitti(id): gorev.bitenler.append(id)
@@ -1935,7 +1961,11 @@ func _konus(n) -> void:
 	var por = load(K.portre) if K.portre != null else null
 	match K.k:
 		"witch":
-			konusma.ac(K.ad, por, "Kazanım hep kaynar evlat. Yeni bir şey bulduğunda gel; malzemelerini kazana atarsın, tarifi öğrenirsin.", [{t = "Kazana bak", pri = true, f = func(): istasyon.ac("kazan")}, {t = "Sonra", kapat = true}])
+			var ws := [{t = "Kazana bak", pri = true, f = func(): istasyon.ac("kazan")}]
+			var mk = ani.kiymik_secenegi()
+			if mk != null: ws.append(mk)
+			ws.append({t = "Sonra", kapat = true})
+			konusma.ac(K.ad, por, "Kazanım hep kaynar evlat. Yeni bir şey bulduğunda gel; malzemelerini kazana atarsın, tarifi öğrenirsin.", ws)
 		"smith":
 			konusma.ac(K.ad, por, "Tarifini bildiğin aleti ve silahı örsümde döverim; malzemeyi sen getir, işçiliğimi ödersin.", [{t = "Örse bak", pri = true, f = func(): istasyon.ac("smith")}, {t = "Sonra", kapat = true}])
 		"durmus":
@@ -2022,6 +2052,7 @@ const KEMAL_ALAY := ["Gece karanlıktır evlat, öğreneceksin bunları! Sabah s
 var ilk_gece_bayilma := true
 func bayil(sebep: String) -> void:
 	if oyuncu.bayildi: return
+	get_tree().create_timer(2.5).timeout.connect(func(): ani.olay("faint"))   # web v318: bayılınca %60 bir anı
 	oyuncu.bayildi = true
 	oyuncu.rotation = PI / 2
 	var gece := sebep == "gece"
@@ -2097,7 +2128,7 @@ func _durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), buyu = buyu.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), buyu = buyu.kayit(), ani = ani.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 ## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
@@ -2233,6 +2264,7 @@ func durum_yukle(d: Dictionary) -> void:
 	kopru.yukle(d.get("kopru", []))
 	gecit.yukle(d.get("gecit", false))
 	buyu.yukle(d.get("buyu", {}))
+	ani.yukle(d.get("ani", {}))
 	balik.yukle(d.get("balik", {}))
 	ciftlik.yukle(d.get("ciftlik", {}), kuzen.tanis.has("ekin_gitti"))
 	poyraz.yukle(d.get("poyraz", {}))

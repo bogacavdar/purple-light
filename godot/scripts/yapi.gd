@@ -280,6 +280,7 @@ func _uyu(o: Dictionary) -> void:
 		barinak_uyudu = true
 	oyun.zaman.dk = 360.0
 	oyun.zaman.gun += 1
+	get_tree().create_timer(3.6).timeout.connect(func(): oyun.ani.olay("sleep"))   # web v318: gece uyuyunca %40 bir anı (rüya)
 	env.tokluk = maxf(5.0, env.tokluk - 20.0)
 	for c in oyun.canlilari_ver():
 		if not c.has_meta("ders"): c.queue_free()

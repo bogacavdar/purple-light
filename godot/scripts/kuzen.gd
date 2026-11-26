@@ -131,7 +131,7 @@ var yol_kart: Control
 
 func _teklif(n) -> void:
 	_soyle(n, "[i](yeni geminin dümenine dokunur)[/i] Meltem'i aramaya devam edeceğim. Mor ışığın izi bu adada bitmiyor; denizin ötesine, başka adalara uzanıyor. %s de o ışığın peşinde bir yerde. İstersen seni başka bir adaya götürebilirim. Ama bil: dönüşü kolay olmaz." % ("[b]%s[/b]" % oyun.ad_sevgili if oyun.ad_sevgili != "" else "Eşin"),
-		[{t = "Götür beni", pri = true, f = func(): yolculuk(false)}, {t = "Henüz değil, hazırlanayım", kapat = true}])
+		[{t = "Götür beni", pri = true, f = func(): oyun.ani.teklif_once(func(): yolculuk(false))}, {t = "Henüz değil, hazırlanayım", kapat = true}])
 
 func _gemi_var() -> bool:
 	for x in oyun.el_yapimi.R["Gemi"].i:
