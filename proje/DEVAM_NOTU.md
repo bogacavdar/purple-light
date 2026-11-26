@@ -1,3 +1,7 @@
+## v4.93 (27 Kasım 2026) · Godot A5: Mühendis Işın ve Meka zırh
+- `godot-deneme/` yeni derleme (godot dalı: act2.gd Işın (golem süsü, konuşma, Meka zırh yapımı, mk ödülleri), oyun.gd stat("move") Meka zırhla ×1,12, oyuncu.gd can_max Meka zırhla ×1,25, kuzen.gd "mk" rolü, gorev.gd ACT 2 kartı ve oku Işın'a). Denetim: ?ada2test_isin. Belge 99_godot A5 satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).
+
 ## v4.92 (27 Kasım 2026) · Godot A4: Silahçı Tufan ve ateşli silahlar
 - `godot-deneme/` yeni derleme (godot dalı: buyu.gd GUNS/_silah (mermi, saçma yelpazesi), act2.gd Tufan (tezgâh, konuşma, silah yapımı, sl ödülleri), el_yapimi.gd mermi kutusu (10/6), kuzen.gd "sl" rolü, gorev.gd ACT 2 kartı ve oku Tufan'a). Denetim: ?ada2test_tufan. Belge 99_godot A4 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).
@@ -73,9 +77,5 @@
 
 ## v4.74 (26 Kasım 2026) · Godot: Görevler penceresi
 - `godot-deneme/` yeni derleme (godot dalı: yan.gd Görevler penceresi G; girdi.gd deneme aletleri F9; oyun.gd yardım satırı, pencere_acik'e yan). Belge 99_godot 3f satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.73 (26 Kasım 2026) · Godot 3f: Yan görevler (Çayır, Orman, Bataklık)
-- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_yan.js → data/yan.json, art/yan; yeni yan.gd; oyun.gd F'de yan kişi, canli_oldu görev canavarı, kayıtta yan). Denetim: ?yantest_<id> (ör. yantest_kerem, yantest_nadir). Belge 99_godot 3f satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

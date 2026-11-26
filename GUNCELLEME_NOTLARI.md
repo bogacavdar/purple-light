@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.93 · 27 Kasım 2026
+
+### Proje
+- **Godot: Kristal Golem Ocağı ve Mühendis Işın:**
+  - Işın, Kristal Golem Ocağı'nda yarım kalmış bir golemin başında. Onunla tanışınca Efsun'un Buz asası işi de açılıyor.
+  - Işın'ın üç işinin sonunda Meka zırhı Işın yapıyor. Giyince can %25, yürüme hızı %12 artıyor; zehir, yanık ve kanamanın yarısını tutuyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.92 · 27 Kasım 2026
 
 ### Proje
@@ -218,18 +228,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - G tuşu Görevler penceresini açıyor. Üstte ana görevin, altta aldığın yan görevler ve adımları görünüyor.
   - Her yan görevi oradan takip edebiliyor ya da bırakabiliyorsun; bırakmak için iki kez basıyorsun. En altta bitirdiğin yan görevler yazıyor.
   - Deneme aletleri artık G'de değil, F9'da.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.73 · 26 Kasım 2026
-
-### Proje
-- **Godot: yan görevler (Çayır, Orman, Bataklık):**
-  - 18 yan kişi web'deki yerlerinde, kendi saatlerinde görünüyor. Görevi alınabilen kişinin başında mavi "?" var.
-  - Ana görevler ilerledikçe sırayla açılıyorlar; bir biyomda aynı anda en çok iki tane açık.
-  - Bulmak, toplamak, getirmek, avlamak, yanında beklemek ve eşlik etmek gibi adımları var. Takip ettiğin görev sağ üstte mavi kartta.
-  - Bitince Vio ve XP veriyorlar; dünyada izleri kalıyor (Bulut'un kümesi, Gülsüm'ün kovanları, onarılan değirmen…).
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
