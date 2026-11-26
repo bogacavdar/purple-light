@@ -19,11 +19,16 @@ func kur(o) -> void:
 	ey = o.el_yapimi
 	_arayuz()
 
-func ac(k: String) -> void:
+var kazan_sahibi := ""   # kuzen cadının kazanında açıldıysa onun kısa adı
+
+func ac(k: String, sahip := "") -> void:
 	kip = k
+	kazan_sahibi = sahip
 	secili = ""
 	pencere.visible = true
 	ciz()
+	pencere.reset_size()
+	pencere.position = ((get_viewport().get_visible_rect().size - pencere.size) / 2.0).floor()
 
 func _process(_d: float) -> void:
 	if pencere.visible and (Input.is_action_just_pressed("ui_cancel") or oyun.oyuncu.yuruyor):
@@ -58,10 +63,36 @@ func _adlar() -> Array:
 			if not ey.bilinen.has(r) and _acik(r):
 				out.append(r)
 		else:
-			if ey.R[r].forged and ey.bilinen.has(r) and env.G.usta.get(r, "") == kip:
+			if ey.R[r].forged and ey.bilinen.has(r) and _dover(kip, r):
 				out.append(r)
 	out.sort_custom(func(a, b): return [ey.kat_sira[ey.R[a].c], a] < [ey.kat_sira[ey.R[b].c], b])
 	return out
+
+## web tierOf/smithOf: silahçı silah ve aleti, zırhçı zırhı; kendi kademesine kadar döver
+func _dover(k: String, r: String) -> bool:
+	var u: Dictionary = oyun.usta_bilgi(k)
+	if u.is_empty(): return false
+	var zirh: bool = oyun.zirh_set.has(r)
+	if zirh != (u.rol == "a"): return false
+	return int(oyun.kademe.get(r, 0)) <= int(u.b)
+
+## dövemediği bilinen tarifler ve kimin dövebileceği (web fnote184)
+func _dovemez_notu() -> String:
+	var u: Dictionary = oyun.usta_bilgi(kip)
+	if u.is_empty(): return ""
+	var by := {}
+	for r in ey.R:
+		if not ey.R[r].forged or not ey.bilinen.has(r): continue
+		if oyun.zirh_set.has(r) != (u.rol == "a"): continue
+		var t := int(oyun.kademe.get(r, 0))
+		if t <= int(u.b): continue
+		var kim: String = oyun.usta_adi(u.rol, t)
+		if not by.has(kim): by[kim] = []
+		by[kim].append(r)
+	if by.is_empty(): return ""
+	var a := []
+	for kim in by: a.append("%s → [b]%s[/b]" % [", ".join(by[kim]), kim])
+	return "[b]%s[/b] bunları dövemez: %s" % [u.ad, " · ".join(a)]
 
 func _islem() -> void:
 	var r := secili
@@ -122,7 +153,16 @@ func ciz() -> void:
 	for c in liste.get_children():
 		c.queue_free()
 	var adlar := _adlar()
-	baslik.text = {"kazan": "Zümrüt'ün kazanı · tarif öğren", "smith": "Demirci Dursun'un örsü · alet ve silah", "durmus": "Zırhçı Durmuş'un örsü · zırh"}[kip]
+	if kip == "kazan":
+		baslik.text = (oyun.iyelik(kazan_sahibi) + " kazanı · tarif öğren") if kazan_sahibi != "" else "Zümrüt'ün kazanı · tarif öğren"
+	else:
+		var u: Dictionary = oyun.usta_bilgi(kip)
+		baslik.text = "%s örsü · %s" % [oyun.iyelik(u.ad), "zırh" if u.rol == "a" else "alet ve silah"]
+		var nt := _dovemez_notu()
+		if nt != "":
+			var rl := RichTextLabel.new(); rl.bbcode_enabled = true; rl.fit_content = true; rl.text = nt
+			rl.add_theme_font_size_override("normal_font_size", 11); rl.add_theme_font_size_override("bold_font_size", 11)
+			liste.add_child(rl)
 	if adlar.is_empty():
 		var l := Label.new()
 		l.autowrap_mode = TextServer.AUTOWRAP_WORD

@@ -41,8 +41,11 @@ func kur(o) -> void:
 	oyun.hud.add_child(pencere)
 	pencere.set_anchors_and_offsets_preset(Control.PRESET_CENTER, Control.PRESET_MODE_MINSIZE)
 
-func ac(s := "sat") -> void:
+var baslik_ad := "Pazarcı Nazlı"
+
+func ac(s := "sat", ad := "") -> void:
 	sekme = s
+	baslik_ad = ad if ad != "" else "Pazarcı Nazlı"
 	pencere.visible = true
 	ciz()
 
@@ -184,7 +187,7 @@ func ciz() -> void:
 	for c in ust.get_children(): c.queue_free()
 	for c in toplu.get_children(): c.queue_free()
 	for c in liste.get_children(): c.queue_free()
-	var bas := Label.new(); bas.text = "Pazarcı Nazlı  "; oyun._golge(bas); bas.add_theme_color_override("font_color", Color("#f2c94c"))
+	var bas := Label.new(); bas.text = baslik_ad + "  "; oyun._golge(bas); bas.add_theme_color_override("font_color", Color("#f2c94c"))
 	ust.add_child(bas)
 	ust.add_child(_d("Sat", func(): ac("sat"), true, Color("#8a6a1a") if sekme == "sat" else Color("#3a3428")))
 	ust.add_child(_d("Satın al", func(): ac("al"), true, Color("#8a6a1a") if sekme == "al" else Color("#3a3428")))

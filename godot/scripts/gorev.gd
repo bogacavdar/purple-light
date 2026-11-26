@@ -50,6 +50,7 @@ func kur(o) -> void:
 	ey = o.el_yapimi
 	V = o._json("res://data/gorevler.json")
 	Q = V.gorevler
+	Q.append_array(o._json("res://data/gorevler_orman.json").gorevler)
 	for i in Q.size():
 		var q: Dictionary = Q[i]
 		q.i = i
@@ -408,6 +409,7 @@ func _ayak(m: Array, d: int) -> Dictionary:
 ## kişiyle F: görev işi varsa o yapılır (true döner); yoksa kişinin kendi hizmeti açılır
 func konus(g: String, hizmet: Dictionary) -> bool:
 	if oyun.ogr.acik(): return false
+	if not oyun.kuzen.tanisildi(g): return false
 	if aktif == null:
 		var q = bekleyen(g)
 		if q != null:

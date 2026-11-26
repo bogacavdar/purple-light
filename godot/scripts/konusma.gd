@@ -52,7 +52,7 @@ func ac(kim: String, por, metin: String, secs: Array = []) -> void:
 	ad.visible = kim != ""
 	portre.texture = por
 	portre.visible = por != null
-	yazi.text = metin
+	yazi.text = metin.replace("<b>", "[b]").replace("</b>", "[/b]").replace("<i>", "[i]").replace("</i>", "[/i]").replace("<br>", "\n")
 	for c in secenekler.get_children():
 		c.queue_free()
 	for s in secs:

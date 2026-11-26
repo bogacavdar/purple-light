@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 2a"
+const SURUM := "Godot · Adım 2b"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -67,6 +67,11 @@ var yetenekler := {}        # web skills: S1 atılma, P0 savuşturma (yetenek a�
 var ders                    # Börü'nün dersleri (ders.gd)
 var yetenek                 # yetenek ağacı (yetenek.gd)
 var ogr                     # öğretici (ogretici.gd)
+var kuzen                   # kuzenler, pazarcı kuzenler, Sinan (kuzen.gd)
+var kisi_veri := {}         # data/kisiler_orman.json (ustalar, biyomlar)
+var istasyonlar: Array = [] # Orman'ın kazanı, ocak, örsler, tezgâh
+var kademe := {}            # dövülen tarif → kademe (web tierOf)
+var zirh_set := {}          # zırh tarifleri (web ARMORSET)
 var dl_agac := false        # Börü'nün dersi bitti, yetenek ağacını gösterecek (1f-3b-3)
 var silah_yazi: Label
 var parlama_shader: Shader
@@ -138,6 +143,9 @@ func _ready() -> void:
 	gorev = preload("res://scripts/gorev.gd").new()
 	add_child(gorev)
 	gorev.kur(self)
+	kuzen = preload("res://scripts/kuzen.gd").new()
+	add_child(kuzen)
+	kuzen.kur(self)
 	ogr = preload("res://scripts/ogretici.gd").new()
 	add_child(ogr)
 	ogr.kur(self)
@@ -184,6 +192,11 @@ func _ready() -> void:
 			_canli_koy_yakin("Tavşan", 4.0)
 		if q.contains("kemal"):
 			oyuncu.position = Vector2(toplama_veri.kisiler[0].x + 20, toplama_veri.kisiler[0].y + 6)
+		if q.contains("git_"):
+			var m2 := RegEx.create_from_string("git_([a-z_]+)").search(q)
+			for n in kisiler:
+				if m2 != null and n.K.k == m2.get_string(1): oyuncu.position = n.position + Vector2(0, 22)
+			if q.contains("tz0"): ogr.gec()
 		if q.contains("orman"):
 			oyuncu.position = Vector2(5400, 1720)
 			yetenekler["S1"] = true; yetenekler["P0"] = true
@@ -722,7 +735,19 @@ func agac_devrildi(ag) -> void:
 
 # ------------------------------------------------------------------ Çayır'ın kişileri, kazan ve örsler
 func _kisiler() -> void:
-	for k in toplama_veri.kisiler:
+	kisi_veri = _json("res://data/kisiler_orman.json")
+	kademe = kisi_veri.tier
+	for r in kisi_veri.zirh: zirh_set[r] = true
+	var tum: Array = toplama_veri.kisiler.duplicate()
+	tum.append_array(kisi_veri.kisiler)
+	for st in kisi_veri.istasyonlar:
+		if st.tur == "ates": continue
+		istasyonlar.append(st)
+		var o := Node2D.new()
+		o.position = Vector2(st.x, st.y)
+		o.draw.connect(_istasyon2_ciz.bind(o, st))
+		nesneler.add_child(o)
+	for k in tum:
 		var n := preload("res://scripts/kisi.gd").new()
 		n.kur(self, k)
 		nesneler.add_child(n)
@@ -749,6 +774,64 @@ func _istasyon_ciz(o: Node2D) -> void:
 		o.draw_rect(Rect2(-9, -9, 3, 2), Color("#6a6e74"))
 		o.draw_rect(Rect2(-6, -9, 12, 1), Color("#9aa0a8"))
 
+## web'in kuzen istasyonları (kodla çizilmiş; ComfyUI ile yenilenecek): renkli kazan, ocak, örs, silah rafı, manken, tenteli tezgâh
+func _istasyon2_ciz(o: Node2D, st: Dictionary) -> void:
+	match str(st.tur):
+		"kazan":
+			var c := Color(str(st.get("renk", "#7a4ad8")))
+			o.draw_circle(Vector2(0, 1), 8.0, Color(0, 0, 0, 0.25))
+			o.draw_rect(Rect2(-7, -9, 14, 9), Color("#1e1a22"))
+			o.draw_rect(Rect2(-8, -10, 16, 2), Color("#3a3240"))
+			o.draw_rect(Rect2(-6, -9, 12, 2), c)
+			o.draw_rect(Rect2(-5, 0, 2, 2), Color("#2a2420")); o.draw_rect(Rect2(3, 0, 2, 2), Color("#2a2420"))
+		"ocak":
+			o.draw_rect(Rect2(-9, -14, 18, 15), Color("#6a625a")); o.draw_rect(Rect2(-9, -14, 18, 2), Color("#8a827a"))
+			o.draw_rect(Rect2(-5, -8, 10, 6), Color("#2a1a12")); o.draw_rect(Rect2(-4, -7, 8, 4), Color("#f2902a")); o.draw_rect(Rect2(-2, -6, 4, 2), Color("#ffd27a"))
+		"ors":
+			o.draw_rect(Rect2(-5, -4, 10, 5), Color("#5a3d22"))
+			o.draw_rect(Rect2(-7, -9, 14, 4), Color("#6a6e74"))
+			o.draw_rect(Rect2(-9, -9, 3, 2), Color("#6a6e74"))
+			o.draw_rect(Rect2(-6, -9, 12, 1), Color("#9aa0a8"))
+		"raf":
+			o.draw_rect(Rect2(-8, -16, 2, 17), Color("#6a4424")); o.draw_rect(Rect2(6, -16, 2, 17), Color("#6a4424"))
+			o.draw_rect(Rect2(-8, -12, 16, 2), Color("#8a5a32")); o.draw_rect(Rect2(-8, -5, 16, 2), Color("#8a5a32"))
+			o.draw_rect(Rect2(-5, -18, 1, 12), Color("#c2c6ca")); o.draw_rect(Rect2(0, -17, 1, 11), Color("#c2c6ca")); o.draw_rect(Rect2(4, -18, 1, 12), Color("#c2c6ca"))
+		"manken":
+			o.draw_rect(Rect2(-1, -6, 2, 7), Color("#6a4424")); o.draw_rect(Rect2(-5, -16, 10, 10), Color("#7a6a5a"))
+			o.draw_rect(Rect2(-5, -16, 10, 2), Color("#9a8a7a")); o.draw_rect(Rect2(-3, -21, 6, 5), Color("#5a5e64"))
+		"tezgah":
+			var hc := Color(str(st.get("renk", "#3f9a3a")))
+			o.draw_rect(Rect2(-12, 2, 24, 3), Color(0, 0, 0, 0.25))
+			o.draw_rect(Rect2(-11, -18, 2, 20), Color("#6a4424")); o.draw_rect(Rect2(9, -18, 2, 20), Color("#6a4424"))
+			o.draw_rect(Rect2(-11, -5, 22, 7), Color("#a0703c")); o.draw_rect(Rect2(-11, -5, 22, 2), Color("#c08a50"))
+			o.draw_rect(Rect2(-13, -22, 26, 5), hc); o.draw_rect(Rect2(-13, -18, 26, 1), hc.darkened(0.3))
+
+## örs kipinin ustası: {rol, b, ad} (web roleOf, tierW)
+func usta_bilgi(k: String) -> Dictionary:
+	if k == "smith": return {rol = "s", b = 0, ad = "Demirci Dursun"}
+	if k == "durmus": return {rol = "a", b = 0, ad = "Zırhçı Durmuş"}
+	for n in kisiler:
+		if n.K.k == k and n.K.has("kuzen"): return {rol = n.K.rol, b = int(n.K.kuzen.b), ad = n.K.ad}
+	return {}
+
+## o kademeyi dövebilen en alttaki usta (web lowestFor)
+func usta_adi(rol: String, t: int) -> String:
+	if t <= 0: return "Zırhçı Durmuş" if rol == "a" else "Demirci Dursun"
+	for u in kisi_veri.get("ustalar", []):
+		if u.rol == rol and int(u.b) == mini(5, t): return "%s (%s)" % [u.ad, kisi_veri.biyomlar[int(u.b)]]
+	return "?"
+
+## Türkçe iyelik: Durdu'nun, Duran'ın, Yakut'un, Dursun'un
+static func iyelik(ad: String) -> String:
+	var sesli := ""
+	for i in range(ad.length() - 1, -1, -1):
+		if "aeıioöuü".contains(ad[i]):
+			sesli = ad[i]
+			break
+	var ek: String = {"a": "ın", "ı": "ın", "e": "in", "i": "in", "o": "un", "u": "un", "ö": "ün", "ü": "ün"}.get(sesli, "in")
+	if "aeıioöuü".contains(ad[ad.length() - 1]): ek = "n" + ek
+	return ad + "'" + ek
+
 ## F: toplanacak bir şey yoksa yakındaki kişi (görev işi varsa önce o), kazan, örs ya da kişinin kendi hizmeti (web target sırası)
 func konus_ya_da_istasyon() -> bool:
 	var p: Vector2 = oyuncu.position
@@ -764,6 +847,12 @@ func konus_ya_da_istasyon() -> bool:
 	if p.distance_to(Vector2(I.kazan.x, I.kazan.y)) < 26.0:
 		istasyon.ac("kazan")
 		return true
+	for st in istasyonlar:
+		var r := 22.0 if st.tur == "kazan" else 18.0
+		if p.distance_to(Vector2(st.x, st.y)) < r and st.has("sahip"):
+			for n in kisiler:
+				if n.K.k == st.sahip:
+					return kuzen.konus(n, st.tur == "kazan")
 	if p.distance_to(Vector2(I.ors.x, I.ors.y)) < 20.0:
 		istasyon.ac("smith")
 		return true
@@ -787,6 +876,7 @@ const SELAM := {"ekin": "Ateş sıcak, çay demde. Otur biraz evlat.", "market":
 
 func _konus(n) -> void:
 	var K: Dictionary = n.K
+	if kuzen.konus(n): return
 	var por = load(K.portre) if K.portre != null else null
 	match K.k:
 		"witch":
@@ -952,7 +1042,7 @@ func durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = {gorulen = magara.gorulen, acilan = Marshalls.raw_to_base64(magara.acilan), kaya = 1 if magara.kaya_durum == 2 else magara.kaya_durum, denedi = magara.kaya_denedi or magara.kaya_durum == 2, boss = magara.boss_yenildi},
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(),
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 func gorunus_uygula(L: Dictionary) -> void:
@@ -1029,6 +1119,8 @@ func durum_yukle(d: Dictionary) -> void:
 	yetenekler = {}
 	for k in d.get("yetenekler", []): yetenekler[k] = true
 	dl_agac = bool(d.get("dl_agac", false))
+	kuzen.tanis = {}
+	for k in d.get("kuzen", []): kuzen.tanis[k] = true
 	oyuncu.yetenek_uygula()
 	oyuncu.hp = float(o.get("hp", oyuncu.hp_max))
 	can_guncelle(oyuncu.hp, oyuncu.hp_max)
