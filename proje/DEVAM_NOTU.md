@@ -1,3 +1,7 @@
+## v4.87 (27 Kasım 2026) · Godot O7: Ada halkı hikâyeleri; kalan plan
+- `godot-deneme/` yeni derleme (godot dalı: yeni hikaye.gd (parçalar, sahne oynatıcı, Kitap sayfası, kayıt `hikaye`); yeni tools/disa_aktar_hikaye.js → data/hikaye.json + art/hikaye 290 kare (oyunun kendi sahne çiziminden); konusma.gd seçeneği ekler; el_yapimi.gd Ada halkı düğmesi). Denetim: ?hikayetest. Belge 99_godot: kalan plan tablosu ve O7 satırı. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.86 (26 Kasım 2026) · Godot O6: Yıldızsız Işıkçı ve Kafa lambası
 - `godot-deneme/` yeni derleme (godot dalı: yeni isikci.gd (akşam belirme, konuşma, takas, yan görev isikci ext, kayıt `isikci`); yeni tools/disa_aktar_isikci.js → data/isikci.json; yan.gd ext görevleri sunmaz ve sınıra saymaz; zaman.gd ve mesale.gd Kafa lambası ışığı). Denetim: ?lambatest. Belge 99_godot O6 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et.
@@ -73,9 +77,5 @@
 
 ## v4.68 (26 Kasım 2026) · Godot 3a: Köprüler, çamur, Bataklık canlıları
 - `godot-deneme/` yeni derleme (godot dalı: yeni kopru.gd; oyun.gd engel köprü üstü, camur_mu/camur_gecmez, F'de köprü, kayıtta kopru ve camur_dedi; oyuncu.gd çamur ×0,6; gorev.gd bridge; tools/disa_aktar_canli.js BIYOM=2 → data/canlilar_bataklik.json). Denetim: ?koprutest, ?koprutest_camur. Belge 99_godot Adım 3 ve 3a satırları. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.67 (26 Kasım 2026) · Godot 2f: Evcil hayvanlar ve Çoban Davut
-- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_evcil.js → data/evcil.json, art/kisiler/*k_davut*; yeni evcil.gd, yoldas.gd; gorev.gd sq/tame ve Davut görevleri; kuzen.gd rol d; yapi.gd Ağıl penceresi; oyuncu.gd binek hızı, inme, darbe bineğe; canli.gd yem; girdi B; kayıtta evcil). Denetim: ?kecitest, ?evcilat, ?evcilkurt. Belge 99_godot 2f satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

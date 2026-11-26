@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.87 · 27 Kasım 2026
+
+### Proje
+- **Godot: Ada halkı hikâyeleri:**
+  - Görevlerini yaptıkça herkes adaya nasıl geldiğini parça parça anlatıyor; seçenek kişinin konuşmasında çıkıyor.
+  - Bütün parçaları duyunca "O geceyi anlat" ile o kişinin sahnesi oynuyor. Zümrüt, Dursun, Durmuş ve kuzenlerin ortak aile sahnesi de var.
+  - Tarif kitabında (K) yeni "Ada halkı" sayfası var.
+- **Tasarım belgesi:** Godot'a taşımanın kalan planı adım adım yazıldı (ACT 1'in sonu, ikinci ada ve altı biyomu, en sonda eksikler).
+- Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.86 · 26 Kasım 2026
 
 ### Proje
@@ -215,18 +227,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Büyük nehrin üstünde üç kırık köprü var. Kemal'in "Bir köprüyü onar" görevini alınca ana köprüyü 20 odunla onarıyorsun; her ağacın odunu sayılıyor. Ana köprüden sonra iki kısayol köprüsünü görevsiz onarabiliyorsun.
   - Bataklık'ın çamurunda yavaşlıyorsun (×0,6); kamış ya da demir çizme giyince yavaşlamıyorsun.
   - Bataklık'ta ördek, yaban kazı, turna kuşu, su samuru, zehirli kurbağa, bataklık kurdu ve timsah dolaşıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.67 · 26 Kasım 2026
-
-### Proje
-- **Godot: evcil hayvanlar ve Çoban Davut (Orman adımı tamamlandı):**
-  - Çoban Davut Çayır'da. İlk görevi kaçan keçisi Pamuk: üç kez yakalıyorsun, sonra seni izleyerek Davut'a dönüyor.
-  - Usta Sinan'ın yaptığı ağılı kurunca hayvan evcilleştirebiliyorsun. Hayvanın sevdiği yiyeceği F ile yere bırakıp geri çekiliyorsun; hayvan gelip yiyor ve güveni artıyor. Dört beslemede evcilleşiyor ve ona ad koyuyorsun.
-  - Yaban atına B ile biniyorsun (1,8 kat hızlı). Orman'daki kurt ininden yavru alıyorsun; iki günde büyüyor, sonra seni kovalayan hayvanlarla dövüşüyor.
-  - Ağılda F ile kimin yanında, kimin ağılda kalacağını seçiyorsun. Ölen yoldaşın adı ağıldaki taşa yazılıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
