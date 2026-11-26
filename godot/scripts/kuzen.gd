@@ -39,6 +39,7 @@ func konus(n, ac_kazan := false) -> bool:
 		"sl": oyun.act2.tufan(n)
 		"mk": oyun.act2.isin(n)
 		"ej": oyun.act2.tomris(n)
+		"as": oyun.act2.gokay(n)
 		_: _kuzen(n, ac_kazan)
 	return true
 

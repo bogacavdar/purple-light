@@ -316,6 +316,8 @@ func hedef() -> Dictionary:
 		return {kisi = kisi("selin"), ad = "Mühendis Işın"}   # web v79 guideKey
 	if oyun.ada == 2 and (aktif == null or not ACT2_G.has(str(aktif.g))) and bitti("mk3") and not oyun.kuzen.tanisildi("alara") and kisi("alara") != null:
 		return {kisi = kisi("alara"), ad = "Ejder Avcısı Tomris"}   # web v80 guideKey
+	if oyun.ada == 2 and (aktif == null or not ACT2_G.has(str(aktif.g))) and bitti("ej4") and not oyun.kuzen.tanisildi("tuna") and kisi("tuna") != null:
+		return {kisi = kisi("tuna"), ad = "Astronot Gökay"}   # web v81 guideKey
 	if aktif == null:
 		return {}
 	var q: Dictionary = aktif
@@ -767,7 +769,13 @@ func _kart() -> void:
 		var Yk = kisi("gok")
 		kart_ad.text = "Gökbilimci Yıldız'ı bul" if Yk == null or not oyun.kuzen.tanisildi("gok") else ("Yıldız'ın işlerine yardım et" if not bitti("gk3") else "Portallar açık")
 		var tx := "Barbaros seni Yüzen Kayalar'a bıraktı. Yukarıdaki kayalarda teleskobu olan Gökbilimci Yıldız'ı bul." if not oyun.kuzen.tanisildi("gok") else ("Yıldız'ın işlerine yardım et; son işi bir portal." if not bitti("gk3") else "Portallar açık: Yıldızsız Ada'ya dönüp gelebilirsin.")
-		if bitti("mk3") and kisi("alara") != null:
+		if bitti("ej4") and kisi("tuna") != null:
+			# web v81: Kızıl ejderden sonra kart Gökay'ı gösterir
+			var gm: bool = oyun.kuzen.tanisildi("tuna")
+			kart_baslik.text = "ACT 2 · Gök Rıhtımı" if gm else "ACT 2 · Astronot Gökay"
+			kart_ad.text = "Astronot Gökay'ı bul" if not gm else ("Roketi kur" if not bitti("as5") else ("Mor gemi" if oyun.kuzen.tanis.has("roket") else "Roketi fırlat"))
+			tx = "Adanın en uzak ucundaki Gök Rıhtımı'nda Astronot Gökay'ı bul." if not gm else ("Gökay ile roketi kur: göktaşları, dronlar, muhafızlar, gök bekçisi ve son olarak roket." if not bitti("as5") else ("Mor gemiye ulaştın. ACT 3 yakında." if oyun.kuzen.tanis.has("roket") else "Roket hazır! Gökay ile konuş ve fırlat."))
+		elif bitti("mk3") and kisi("alara") != null:
 			# web v80: Meka zırh tarifinden sonra kart Tomris'i gösterir
 			var am: bool = oyun.kuzen.tanisildi("alara")
 			kart_baslik.text = "ACT 2 · Ejder Volkanı" if am else "ACT 2 · Ejder Avcısı Tomris"

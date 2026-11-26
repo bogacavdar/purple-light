@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · A6"
+const SURUM := "Godot · A7"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -97,6 +97,7 @@ var portal                  # adalar arası portallar (portal.gd)
 var hikaye                  # Ada halkı hikâyeleri (hikaye.gd)
 var isikci                  # Yıldızsız Işıkçı ve Kafa lambası (isikci.gd)
 var gezgin                  # Yıldızsız Gezgin ve robot köpekler (gezgin.gd)
+var roket                   # ACT 2'nin sonu: fırlatma, kavuşma, son kart (roket.gd)
 var buyu                    # mor mana ve asalar (buyu.gd)
 var act2                    # ACT 2 adasının ustaları: Yıldız (act2.gd); yalnız ikinci adada
 var poyraz                  # Gemici Poyraz ve deniz (poyraz.gd)
@@ -232,6 +233,9 @@ func _ready() -> void:
 	kopru = preload("res://scripts/kopru.gd").new()
 	add_child(kopru)
 	kopru.kur(self)
+	roket = preload("res://scripts/roket.gd").new()
+	add_child(roket)
+	roket.kur(self)
 	buyu = preload("res://scripts/buyu.gd").new()
 	add_child(buyu)
 	buyu.kur(self)
@@ -1055,6 +1059,38 @@ func _ada2_test(q: String) -> void:
 		for c in konusma.liste.duplicate():
 			if c.t == "Onar": konusma._sec(c)
 		print("KB fixed ", b.fixed, " ustunde ", kopru.ustunde(Vector2(b.cx, b.cy)), " engel ", engel(Vector2(b.cx, b.cy)), " yaka ", kopru._yakalar(), " gecit ", gecit.x0, " ", gecit.engel(Vector2(gecit.cx, gecit.cy)))
+	if q.contains("gokay"):
+		bitenler_ekle(["gk1", "gk2", "gk3", "pv1", "pv2", "pv3", "sl1", "sl2", "sl3", "sl4", "mk1", "mk2", "mk3", "ej1", "ej2", "ej3", "ej4"])
+		for g2 in ["gok", "pervin", "tamer", "selin", "alara"]: kuzen.tanis[g2] = true
+		var Gk = gorev.kisi("tuna")
+		await get_tree().create_timer(0.5).timeout
+		print("GK hedef ", gorev.hedef().get("ad", "-"), " kart ", gorev.kart_baslik.text, " / ", gorev.kart_ad.text, " G ", Gk.position)
+		oyuncu.position = Gk.position + Vector2(-14, 4)
+		konus_ya_da_istasyon(); print("GK 1 ", konusma.yazi.text.substr(0, 60)); konusma._cik()
+		bitenler_ekle(["as1", "as2", "as3", "as4"])
+		await get_tree().create_timer(0.3).timeout
+		el_yapimi.bilinen["Roket"] = true
+		for p in el_yapimi.R["Roket"].i: env.ekle(str(p[0]), int(p[1]))
+		env.vio_ekle(3000)
+		act2._yap(Gk, "Roket", 2000, act2.gokay)
+		print("GK yaptı ", konusma.yazi.text.substr(0, 50), " ", env.adet("Roket"), " vio ", env.vio)
+		konusma._cik()
+		await get_tree().create_timer(0.3).timeout
+		print("GK vis ", gorev.vis.map(func(x): return x.q.id))
+		gorev.aktif = gorev.QI["as5"]; gorev.b = {}
+		await get_tree().create_timer(0.6).timeout
+		while konusma.visible:
+			konusma._cik(); await get_tree().create_timer(0.2).timeout
+		print("GK as5 ", gorev.bitti("as5"), " kart ", gorev.kart_ad.text)
+		konus_ya_da_istasyon(); print("GK fırlat ", konusma.yazi.text.substr(0, 40))
+		for c in konusma.liste.duplicate():
+			if str(c.t).contains("Fırlat"): konusma._sec(c)
+		await get_tree().create_timer(5.0).timeout
+		print("GK faz ", roket.faz, " t ", roket.t)
+		roket._gec(); await get_tree().create_timer(0.3).timeout; roket._gec(); await get_tree().create_timer(9.0).timeout
+		print("GK faz2 ", roket.faz, " ", roket.yazi.text)
+		roket._gec(); await get_tree().create_timer(0.3).timeout
+		print("GK son ", roket.faz, " roket ", kuzen.tanis.has("roket"), " kart ", gorev.kart_ad.text)
 	if q.contains("tomris"):
 		bitenler_ekle(["gk1", "gk2", "gk3", "pv1", "pv2", "pv3", "sl1", "sl2", "sl3", "sl4", "mk1", "mk2", "mk3"])
 		for g2 in ["gok", "pervin", "tamer", "selin"]: kuzen.tanis[g2] = true
