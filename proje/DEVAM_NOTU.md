@@ -1,3 +1,7 @@
+## v4.60 (26 Kasım 2026) · Godot 2b: Orman'ın kişileri ve görevleri
+- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_kisi.js BIYOM=1 → data/kisiler_orman.json, data/gorevler_orman.json, art/kisiler; yeni kuzen.gd; oyun.gd istasyonlar, usta_bilgi, usta_adi, iyelik, kayıtta kuzen; istasyon.gd kademe kuralı ve "dövemez" notu; gorev.gd Orman görevleri ve tanışma şartı; pazar.gd başlık; konusma.gd <b>/<i> → BBCode). Denetim: ?git_<kişi> (ör. git_k_durdu). Belge 99_godot 2b satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.59 (26 Kasım 2026) · Godot 2a: Orman canlıları
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_canli.js BIYOM=1 → data/canlilar_orman.json ve art/canli_*.png; oyun.gd canli_liste biyom biyom, _atici_var; yeni atis.gd; canli.gd ranged; oyuncu.gd etki_ekle/_etkiler; zaman.gd kampta). Denetim: ?orman (+engerek, dikenlikirpi, yabandomuzu, oklukirpi). Belge 99_godot Adım 2 planı ve 2a satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.41 (25 Kasım 2026) · Godot denemesi: toplanabilirler yüksek çözünürlükte
 - Yalnız `godot-deneme/index.pck` (godot dalı 676c0fa: disa_aktar.js toplanabilirleri 4 kat ince yakalar, oyun.gd 1/4 ölçekle gösterir). Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.40 (25 Kasım 2026) · Godot'ya aşamalı geçiş planı (yalnız belge)
-- Belge: 99_godot.md: başlama kararı (Boğaç, 25 Kasım), biyom biyom adımlar tablosu, web sürümü kuralı, veri aktarımı, kayıt taşıma, `godot` dalı; Retro Diffusion bölümüne ComfyUI notu. Oyun kodu değişmedi (yalnız verlab).
 - Geri almak için: bu commit'i `git revert` et.
 

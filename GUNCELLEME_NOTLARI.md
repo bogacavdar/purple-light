@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.60 · 26 Kasım 2026
+
+### Proje
+- **Godot: Orman'ın kişileri:**
+  - Cadı Yakut (kırmızı kazan), Silahçı Durdu, Zırhçı Duran, Pazarcı Fidan ve Usta Sinan web'deki yerlerinde.
+  - Kuzenlerle web'deki gibi tanışılıyor ("Dursun? Örsünü buraya mı taşıdın?"). Durdu ve Duran tanışınca imza silah ve zırhlarının tarifini kitaba yazıyor.
+  - Örsler artık kademeyle dövüyor: Dursun ve Durmuş Çayır kademesini, Durdu ve Duran Orman'a kadarını. Örs, dövemediği tarifleri kimin dövebileceğini söylüyor.
+  - Yakut, Durdu, Duran, Fidan ve Sinan'ın görevleri geldi. Sinan'ın yapı ve ev isteyen görevleri inşa gelince açılacak.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.59 · 26 Kasım 2026
 
 ### Proje
@@ -166,14 +178,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Görsel
 - **Godot denemesinde toplanabilirler web'deki gibi net:** kuru ot, böğürtlen, papatya, taşlar ve öbür toplanabilirler web oyununun çizdiği ayrıntıyla görünüyor (önce oyun dünyasının küçük piksel boyutunda kaydedildikleri için leke gibi duruyorlardı).
-
----
-
-## Versiyon 4.40 · 25 Kasım 2026
-
-### Tasarım belgesi
-- **Godot'ya geçiş başladı:** Platformlar › Godot'ya geçiş bölümü aşamalı, biyom biyom taşıma planına göre yeniden yazıldı (Deneme, Çayır, Orman, Bataklık, Kayalık, Kül Diyarı, ACT 2, Platform). Web sürümü bu sırada yayında kalır; taşınmış biyomlara web'de yalnız hata düzeltmesi ve denge ayarı yapılır.
-- **Godot denemesi oynanabilir:** https://bogacavdar.github.io/purple-light/godot-deneme/ adresinde Çayır'ın bir parçası Godot'da: yeni karakterle 8 yön yürüme, koşu, atılma, Tavşan ve Kurt, vuruş; klavye ve oyun kolu.
 
 ---
 
