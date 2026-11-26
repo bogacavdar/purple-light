@@ -27,6 +27,8 @@ var tur_k := ""        # mağara canlıları: "w" önden yarasa, "t" üstten ker
 var boss := false
 var cvb := false        # mağaranın boss'u (yan görev çağırır)
 var etkiler := {}        # silah ve ok etkileri: yanık, zehir, kanama (web weapon fx) → {t, n, dps, kat}
+var imza := {}          # imza hamlesi (belge İmza hamleleri ve sürü taktiği): {tip, faz, t, ...}
+var imza_t := 3.0
 var yavas := 0.0        # Bola: %35 hızla yürür
 var donuk := 0.0        # Buz asası: donmuşken kıpırdamaz (web a.frz)
 var sersem := 0.0       # savuşturulunca sersemler (web a.stun)
@@ -76,6 +78,7 @@ func _ready() -> void:
 	add_child(spr)
 
 func _draw() -> void:
+	_imza_ciz()
 	if boss and olu < 0.0:
 		var pp := 0.5 + 0.5 * sin(Time.get_ticks_msec() / 250.0 + position.x)
 		for r in [16.0, 11.0, 6.0]:
@@ -177,7 +180,7 @@ func _process(dt: float) -> void:
 	if sersem > 0.0:
 		sersem -= dt
 		if sersem <= 0.0 and has_meta("pc"): remove_meta("pc")
-		wind = 0.0; lunge = {}; atk = maxf(atk, 0.4)
+		wind = 0.0; lunge = {}; atk = maxf(atk, 0.4); imza = {}
 		flash -= dt
 		if not kb.is_empty():
 			kb.t -= dt
@@ -198,6 +201,10 @@ func _process(dt: float) -> void:
 	atk -= dt
 	step += dt
 	var moving := false
+	imza_t -= dt
+	if not imza.is_empty() and kb.is_empty():
+		_gorun(_imza_isle(dt, P))
+		return
 	if not kb.is_empty():
 		kb.t -= dt
 		_git(kb.v, dt)
@@ -220,7 +227,10 @@ func _process(dt: float) -> void:
 				# web ranged: menzilin %80'inden uzaksa yaklaşır, %40'ından yakınsa geri çekilir; menzildeyken 0,6 sn hazırlanıp atar
 				if wind > 0.0:
 					wind -= dt
-					if wind <= 0.0: oyun.atis.at(self)
+					if wind <= 0.0:
+						oyun.atis.at(self)
+						if _imza_tur() == "vurkac": imza = {tip = "geri", t = 0.35, v = -dv / d * 200.0}
+				elif imza_t <= 0.0 and _imza_basla(P, dv, d): pass
 				else:
 					var rg := float(R.range)
 					if d > rg * 0.8:
@@ -242,6 +252,7 @@ func _process(dt: float) -> void:
 						lunge.hit = true
 						P.isirildi(int(round(float(D.dmg) * float(MUL[renk]))), position, self, renk)
 						if D.get("fx", null) != null and P.hp > 0.0 and P.dokunulmaz > 0.5: P.etki_ekle(str(D.fx[0]), float(D.fx[1]), float(D.fx[2]))
+						if _imza_tur() == "vurkac": imza = {tip = "geri", t = 0.35, v = -dv / d * 200.0}
 					lunge = {}
 				elif lunge.t <= 0:
 					lunge = {}
@@ -257,10 +268,16 @@ func _process(dt: float) -> void:
 					oyun.yazi(position + Vector2(0, -float(D.r) - 14.0), "!", RENK[renk] if renk != "n" else Color("#ff3b30"), 14)
 			else:
 				var cs: float = float(D.cs) if D.cs != null else float(D.spd)
-				if d > maxf(14.0, float(D.r) + 10.0):
+				var hn := _suru_yeri(P)
+				if hn != Vector2.INF and hn.distance_to(position) > 10.0:
+					var hv := hn - position
+					_git(hv.normalized() * cs, dt)
+					moving = true
+				elif d > maxf(14.0, float(D.r) + 10.0):
 					_git(dv / d * cs, dt)
 					moving = true
-				if d < float(D.reach) and atk <= 0.0:
+				if imza_t <= 0.0 and _imza_basla(P, dv, d): pass
+				elif d < float(D.reach) and atk <= 0.0:
 					wind = 0.1
 					renk = _zar()
 					atk = float(D.wind) + 0.9
@@ -325,6 +342,162 @@ func _kare(_dt: float, moving: bool) -> void:
 	spr.frame = row * int(D.frames) + fr
 	spr.flip_h = face < 0
 	spr.offset = Vector2(-floorf(fw / 2.0), roundf(top))
+
+# ------------------------------------------------------------------ imza hamleleri ve sürü taktiği (13 Kasım 2026, Boğaç)
+const IMZA := {"tekme": ["Geyik", "Karaca", "Yaban atı", "Kristal geyik", "Yaban kazı", "Turna kuşu"], "vurkac": ["Engerek", "Kunduz", "Su samuru", "Işık tilkisi", "Işık engereği"],
+	"hucum": ["Yaban domuzu", "Muflon", "Dağ keçisi", "Yaban öküzü"], "pence": ["Mağara ayısı", "Porsuk"], "dalis": ["Kartal", "Kor yarasası"], "gomul": ["Timsah"],
+	"yuvarlan": ["Dikenli kirpi", "Oklu kirpi", "Kül böceği"], "kuyruk": ["Lav kertenkelesi", "Kara ejder", "Kristal örümcek"], "igne": ["Ateş akrebi"]}
+const KURT := ["Kurt", "Bataklık kurdu", "Kül kurdu", "Gölge kurdu", "Gök tazısı"]
+
+func _imza_tur() -> String:
+	if boss or ders or has_meta("reis") or has_meta("ders"): return ""
+	for k in IMZA:
+		if IMZA[k].has(tur): return k
+	return ""
+
+## sürü: sana en yakın kurt önünden oyalar, öbürleri öndekinin karşı tarafına (46 px + gövde) dolaşır
+func _suru_yeri(P: Node2D) -> Vector2:
+	if not KURT.has(tur): return Vector2.INF
+	var on = null
+	var bd := 1e9
+	for c in oyun.canlilari_ver():
+		if not KURT.has(c.tur) or c.olu >= 0.0 or not (c.mad or c.st == "chase"): continue
+		var dd: float = c.position.distance_to(P.position)
+		if dd < bd:
+			bd = dd; on = c
+	if on == null or on == self: return Vector2.INF
+	var y: Vector2 = (P.position - on.position).normalized()
+	return P.position + y * (46.0 + float(D.r))
+
+func _imza_basla(P: Node2D, dv: Vector2, d: float) -> bool:
+	var k := _imza_tur()
+	if k == "" or k == "vurkac": return false
+	# her hamle kendi mesafesinde başlar: yakın hamleler gövde+40 içinde, hücum/dalış/gömülme/yuvarlanma 130 px'e kadar
+	var r0 := float(D.r)
+	var men: float = 130.0 if ["hucum", "dalis", "gomul", "yuvarlan"].has(k) else (r0 + 50.0 if k == "igne" else r0 + 40.0)
+	if d > men: return false
+	var zor: bool = oyun.ada == 2 or oyun.bio_at(position) >= 3
+	imza_t = (3.0 + randf() * 1.5) if zor else (4.0 + randf() * 2.0)
+	var y := dv / d
+	face = 1 if dv.x > 0 else -1
+	match k:
+		"tekme": imza = {tip = k, faz = 0, t = 0.45, renk = "y"}
+		"hucum": imza = {tip = k, faz = 0, t = 0.5, renk = "r" if tur == "Yaban öküzü" else "y", y = y}
+		"pence": imza = {tip = k, faz = 0, t = 0.6, renk = "y", y = y}
+		"dalis": imza = {tip = k, faz = 0, t = 0.5, renk = "r", p = P.position}
+		"gomul": imza = {tip = k, faz = 0, t = 1.2, renk = "r"}
+		"yuvarlan": imza = {tip = k, faz = 0, t = 0.4, renk = "y", y = y}
+		"kuyruk": imza = {tip = k, faz = 0, t = 0.55, renk = "y"}
+		"igne": imza = {tip = k, faz = 0, t = 0.5, renk = "r", y = y}
+	oyun.yazi(position + Vector2(0, -float(D.r) - 14.0), "!", RENK.get(imza.renk, Color.WHITE), 14)
+	return true
+
+func _vur_oyuncu(P: Node2D, m: float, rk: String, it: float = 0.0, fx = null) -> void:
+	if oyun.insa.arada(position, P.position): return
+	P.isirildi(int(round(float(D.dmg) * m)), position, self, rk)
+	if it > 0.0 and P.dokunulmaz > 0.5: P._kay((P.position - position).normalized() * it)
+	if fx != null and P.dokunulmaz > 0.5: P.etki_ekle(str(fx[0]), float(fx[1]), float(fx[2]))
+
+func _imza_isle(dt: float, P: Node2D) -> bool:
+	var I: Dictionary = imza
+	I.t -= dt
+	var dv: Vector2 = P.position - position
+	var d := maxf(1.0, dv.length())
+	var r := float(D.r)
+	var hareket := false
+	wind = 0.1 if int(I.get("faz", 1)) == 0 else 0.0
+	match str(I.tip):
+		"geri":
+			_git(I.v, dt); hareket = true
+			if I.t <= 0.0: imza = {}
+		"tekme":
+			if I.faz == 0 and I.t <= 0.0:
+				if d <= r + 30.0: _vur_oyuncu(P, 1.1, "y", 30.0)
+				I.faz = 1; I.t = 0.25; I.v = -dv / d * 200.0
+			elif I.faz == 1:
+				_git(I.v, dt); hareket = true
+				if I.t <= 0.0: imza = {}
+		"hucum":
+			if I.faz == 0:
+				_git(-I.y * 30.0, dt); hareket = true
+				if randf() < dt * 20.0: oyun.parca(position + Vector2(randf_range(-4, 4), 0), Vector2(randf_range(-20, 20), -10), 0.3, Color("#b8a888"))
+				if I.t <= 0.0: I.faz = 1; I.t = 1.0; I.y = dv / d
+			else:
+				_git(I.y * float(D.spd) * 2.4, dt); hareket = true
+				if not I.get("vurdu", false) and d < r + 10.0:
+					I.vurdu = true; _vur_oyuncu(P, 1.3, str(I.renk), 60.0)
+				if I.t <= 0.0: imza = {}
+		"pence":
+			if I.faz == 0 and I.t <= 0.0:
+				if d <= r + 34.0 and dv.normalized().dot(I.y) > 0.2: _vur_oyuncu(P, 1.0, "y")
+				I.faz = 1; I.t = 0.4
+				oyun.yazi(position + Vector2(0, -r - 14.0), "!", RENK["r"], 14)
+			elif I.faz == 1 and I.t <= 0.0:
+				if d <= r + 34.0 and dv.normalized().dot(I.y) > 0.2: _vur_oyuncu(P, 1.4, "r")
+				imza = {}
+		"dalis":
+			if I.faz == 0 and I.t <= 0.0: I.faz = 1; I.t = 0.3
+			elif I.faz == 1:
+				position = position.lerp(I.p, minf(1.0, dt * 8.0)); hareket = true
+				if I.t <= 0.0:
+					if P.position.distance_to(I.p) <= 24.0: _vur_oyuncu(P, 1.5, "r")
+					for k in 10: oyun.parca(I.p + Vector2(randf_range(-20, 20), 0), Vector2(randf_range(-30, 30), -20), 0.3, Color("#c8b898"))
+					I.faz = 2; I.t = 0.4; I.v = -dv / d * 160.0
+			else:
+				_git(I.v, dt); hareket = true
+				if I.t <= 0.0: imza = {}
+		"gomul":
+			modulate.a = 0.3 if I.faz == 0 else 1.0
+			if I.faz == 0:
+				_git(dv / d * float(D.spd) * 1.4, dt); hareket = true
+				if I.t <= 0.0 or d < 20.0:
+					I.faz = 1; I.t = 0.3; I.p = P.position
+			elif I.t <= 0.0:
+				if P.position.distance_to(I.p) <= r + 18.0: _vur_oyuncu(P, 1.5, "r")
+				modulate.a = 1.0
+				imza = {}
+		"yuvarlan":
+			if I.faz == 0 and I.t <= 0.0: I.faz = 1; I.t = 0.7; I.y = dv / d
+			elif I.faz == 1:
+				_git(I.y * float(D.spd) * 2.6, dt); hareket = true
+				if not I.get("vurdu", false) and d < r + 10.0:
+					I.vurdu = true; _vur_oyuncu(P, 1.2, "y", 0.0, ["kanama", 2.0, 4.0])
+				if I.t <= 0.0: imza = {}
+		"kuyruk":
+			if I.t <= 0.0:
+				if d <= r + 30.0: _vur_oyuncu(P, 1.2, "y")
+				for k in 16:
+					var a := k / 16.0 * TAU
+					oyun.parca(position + Vector2(cos(a) * (r + 30.0), sin(a) * (r + 30.0) * 0.5), Vector2.ZERO, 0.25, Color("#ffd23a"))
+				imza = {}
+		"igne":
+			if I.t <= 0.0:
+				var q: Vector2 = P.position - position
+				var tt := q.dot(I.y)
+				if tt > -4.0 and tt < r + 50.0 and absf(q.cross(I.y)) < 10.0: _vur_oyuncu(P, 1.4, "r", 0.0, D.get("fx", ["zehir", 3.0, 5.0]))
+				imza = {}
+	if imza.is_empty(): wind = 0.0; modulate.a = 1.0
+	queue_redraw()
+	return hareket
+
+## imza hamlesinin uyarısı: halka ya da çizgi (rengi hamlenin rengi)
+func _imza_ciz() -> void:
+	if imza.is_empty() or olu >= 0.0: return
+	var c: Color = RENK.get(str(imza.get("renk", "y")), Color.WHITE)
+	var r := float(D.r)
+	match str(imza.tip):
+		"tekme", "kuyruk":
+			if int(imza.faz) == 0: draw_arc(Vector2.ZERO, (r + 30.0) / scale.x, 0, TAU, 28, Color(c.r, c.g, c.b, 0.6), 1.5)
+		"dalis", "gomul":
+			if imza.has("p"):
+				var p: Vector2 = (imza.p - position) / scale.x
+				draw_arc(p, 24.0, 0, TAU, 24, Color(1, 0.2, 0.15, 0.8), 2.0)
+			elif str(imza.tip) == "dalis":
+				var P: Vector2 = (oyun.oyuncu.position - position) / scale.x
+				draw_arc(P, 24.0, 0, TAU, 24, Color(1, 0.2, 0.15, 0.5), 1.5)
+		"hucum", "igne", "yuvarlan":
+			if int(imza.faz) == 0 and imza.has("y"):
+				draw_line(Vector2.ZERO, imza.y * 80.0, Color(c.r, c.g, c.b, 0.5), 2.0)
 
 ## silahın ya da okun etkisi (belge Aletler › Alevli, zehirli, keskin silahlar): taban = silahın tablo hasarı (okta yay × ok)
 const ETKI_C := {"yanık": [3.0, 0.2, "#ffa040"], "zehir": [6.0, 0.1, "#9ad84a"], "kanama": [4.0, 0.15, "#ff5a4a"]}

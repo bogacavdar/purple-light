@@ -220,6 +220,22 @@ func _process(dt: float) -> void:
 	queue_redraw()
 
 func _draw() -> void:
+	# arkadan uyarı: arkanda ya da ekran dışında saldırıya hazırlanan canlının yönünde küçük, yanıp sönen ok (rengi saldırının rengi)
+	var C0: Vector2 = P.position + Vector2(0, -6)
+	if int(simdi() * 6.0) % 2 == 0:
+		for c in oyun.canlilari_ver():
+			if c.olu >= 0.0: continue
+			var haz: bool = c.wind > 0.0 or (not c.imza.is_empty() and int(c.imza.get("faz", 1)) == 0)
+			if not haz: continue
+			var q: Vector2 = c.position - P.position
+			if q.length() > 420.0: continue
+			if q.normalized().dot(P.bakis.normalized()) > -0.2 and q.length() < 300.0: continue
+			var rk: String = str(c.imza.get("renk", c.renk)) if not c.imza.is_empty() else str(c.renk)
+			var col: Color = Color("#ffffff") if rk == "n" else (Color("#ffd028") if rk == "y" else Color("#ff3a2a"))
+			var y := q.normalized()
+			var u := C0 + y * 18.0
+			var n := Vector2(-y.y, y.x)
+			draw_colored_polygon(PackedVector2Array([u + y * 6.0, u - y * 2.0 + n * 4.0, u - y * 2.0 - n * 4.0]), col)
 	# basılı tutarken halka dolar
 	if tut != null and acik("charged"):
 		var k := clampf((simdi() - tut.t0 - HOLD0) / FULL, 0.0, 1.0)

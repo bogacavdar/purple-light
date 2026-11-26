@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · S2d"
+const SURUM := "Godot · S3"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -360,6 +360,7 @@ func _ready() -> void:
 		if q.contains("s2btest"): _s2b_test.call_deferred(q)
 		if q.contains("ozeltest"): _ozel_test.call_deferred(q)
 		if q.contains("derstest"): _ders_test.call_deferred(q)
+		if q.contains("imzatest"): _imza_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -1270,6 +1271,42 @@ func _ada2_test(q: String) -> void:
 		var tc := {}
 		for c in canlilari_ver(): tc[c.tur] = int(tc.get(c.tur, 0)) + 1
 		print("YZ canlılar ", tc, " bio ", bio_at(oyuncu.position))
+
+func _imza_test(_q: String) -> void:
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	oyuncu.hp_max = 99999.0; oyuncu.hp = 99999.0
+	var bul := false
+	for rr in range(2, 60):
+		for an in 16:
+			var q: Vector2 = oyuncu.position + Vector2(cos(an * TAU / 16.0), sin(an * TAU / 16.0)) * rr * 16.0
+			var ok := true
+			for o in [Vector2.ZERO, Vector2(60, 0), Vector2(-60, 0), Vector2(0, 60), Vector2(0, -60), Vector2(90, 10)]:
+				if tile_at(q + o) != 0 or engel(q + o, 6.0, true): ok = false
+			if ok:
+				oyuncu.position = q; bul = true; break
+		if bul: break
+	print("IMZA çimen yeri ", bul)
+	for k in ["Geyik", "Yaban domuzu", "Dikenli kirpi", "Engerek"]:
+		for c in canlilari_ver(): c.queue_free()
+		await get_tree().process_frame
+		var a = _canli_yeni(k, oyuncu.position + Vector2(60, 0), 1)
+		a.mad = true; a.imza_t = 0.5
+		var gor := {}
+		var h0: float = oyuncu.hp
+		for i in 50:
+			await get_tree().create_timer(0.1).timeout
+			if not a.imza.is_empty(): gor[str(a.imza.tip)] = true
+		print("IMZA ", k, " hamleler ", gor.keys(), " oyuncu hasar ", h0 - oyuncu.hp)
+	for c in canlilari_ver(): c.queue_free()
+	await get_tree().process_frame
+	var w1 = _canli_yeni("Kurt", oyuncu.position + Vector2(50, 0), 2)
+	var w2 = _canli_yeni("Kurt", oyuncu.position + Vector2(80, 10), 2)
+	w1.mad = true; w2.mad = true
+	await get_tree().create_timer(2.0).timeout
+	var a1: float = (w1.position - oyuncu.position).angle(); var a2: float = (w2.position - oyuncu.position).angle()
+	print("IMZA sürü açı farkı ", rad_to_deg(absf(angle_difference(a1, a2))), " uzaklıklar ", w1.position.distance_to(oyuncu.position), " ", w2.position.distance_to(oyuncu.position))
 
 func _ders_test(_q: String) -> void:
 	oyuncu.dokunulmaz = 9999.0
