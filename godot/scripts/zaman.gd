@@ -89,7 +89,7 @@ func _process(dt: float) -> void:
 		oyun.renk_guncelle()
 	for l in isiklar: l.enabled = k > 0.05 and not oyun.magara.icinde
 	ates_dugum.queue_redraw()
-	if not dur: _zifiri(dt, k)
+	if not dur and not oyun.ev.acik: _zifiri(dt, k)
 
 func _saat_yaz() -> void:
 	var m := int(dk)

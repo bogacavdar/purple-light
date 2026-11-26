@@ -222,16 +222,7 @@ func kullan() -> bool:
 		if o.n == "Yaprak barınağı":
 			_uyu(o)
 			return true
-		if o.yatak == null:
-			for n in env.inv:
-				if yatak_mi(n) and env.adet(n) > 0:
-					env.eksilt(n)
-					o.yatak = n
-					env.mesaj("%s %s içine kondu. Gece burada uyuyabilirsin." % [n, o.n])
-					return true
-			env.mesaj("%s içinde uyumak için bir yatak gerekli. Yatağı Usta Sinan yapar; elinde yatak varken eve gel, içine koyarsın." % o.n, true)
-			return true
-		_uyu(o)
+		oyun.ev.gir(o)
 		return true
 	if yatak_mi(o.n):
 		_uyu(o)
@@ -321,15 +312,19 @@ func kurulu_mu(n: String) -> bool:
 # ------------------------------------------------------------------ kayıt
 func kayit() -> Dictionary:
 	var L := []
-	for o in kurulu: L.append({n = o.n, tx = o.tx, ty = o.ty, rot = o.rot, yatak = o.yatak, ws = o.get("ws", null)})
+	for o in kurulu: L.append({n = o.n, tx = o.tx, ty = o.ty, rot = o.rot, yatak = o.yatak, ws = o.get("ws", null), oda = o.get("oda", null)})
 	return {kurulu = L, barinak = barinak_uyudu}
 
 func yukle(d: Dictionary) -> void:
+	oyun.ev.cik()
 	for o in kurulu.duplicate(): _kaldir(o)
 	kurulu = []
 	for x in d.get("kurulu", []):
 		if not yapi_mi(str(x.n)): continue
-		var o := {n = str(x.n), tx = int(x.tx), ty = int(x.ty), rot = int(x.get("rot", 0)), yatak = x.get("yatak", null)}
+		var o := {n = str(x.n), tx = int(x.tx), ty = int(x.ty), rot = int(x.get("rot", 0)), yatak = x.get("yatak", null), oda = x.get("oda", null)}
+		if o.oda != null:
+			for it in o.oda.it:
+				it.x = int(it.x); it.y = int(it.y); it.r = int(it.get("r", 0))
 		if o.n == "Atölye":
 			var w0 = x.get("ws", null)
 			o.ws = w0 if w0 is Dictionary else oyun.atolye.yeni()

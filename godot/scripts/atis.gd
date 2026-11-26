@@ -14,6 +14,7 @@ func at(a) -> void:
 		liste.append({p = a.position + Vector2(0, -6), v = Vector2(cos(ang), sin(ang)) * float(R.spd), l = float(R.range) / float(R.spd) + 0.35, c = Color(str(R.c)), dmg = int(D.dmg), fx = D.get("fx", null), k = a.tur})
 
 func _process(dt: float) -> void:
+	if oyun.ev.acik: return
 	var P = oyun.oyuncu
 	for i in range(liste.size() - 1, -1, -1):
 		var s = liste[i]

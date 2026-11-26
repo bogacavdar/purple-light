@@ -138,6 +138,7 @@ func _git(v: Vector2, dt: float) -> void:
 		face = 1 if v.x > 0 else -1
 
 func _process(dt: float) -> void:
+	if oyun.ev.acik: return
 	if olu >= 0.0:
 		olu += dt
 		if tur_k != "":

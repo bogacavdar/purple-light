@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 2d-4"
+const SURUM := "Godot · Adım 2e"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -80,6 +80,7 @@ var karakter                # karakter penceresi (karakter_pen.gd)
 var yapi                    # kurulan yapılar ve evler (yapi.gd)
 var sinan                   # Usta Sinan'ın sipariş pencereleri (sinan.gd)
 var atolye                  # Atölye penceresi ve üretimi (atolye.gd)
+var ev                      # evin içi ve Döşe (ev_ici.gd)
 var insa                    # İnşa kipi: zemin, çit, duvar, kapı, fener (insa.gd)
 var dl_agac := false        # Börü'nün dersi bitti, yetenek ağacını gösterecek (1f-3b-3)
 var silah_yazi: Label
@@ -161,6 +162,10 @@ func _ready() -> void:
 	insa = preload("res://scripts/insa.gd").new()
 	add_child(insa)
 	insa.kur(self)
+	ev = preload("res://scripts/ev_ici.gd").new()
+	add_child(ev)
+	move_child(ev, hud.get_index())
+	ev.kur(self)
 	atolye = preload("res://scripts/atolye.gd").new()
 	add_child(atolye)
 	atolye.kur(self)
@@ -220,6 +225,16 @@ func _ready() -> void:
 			oyuncu.position = Vector2(5400, 1720)
 			for n3 in ["Çit", "Taş duvar", "Toprak yol", "Tahta kapı", "Direk feneri", "Dal çit"]: env.ekle(n3, 20)
 			if q.contains("kirtest"): _kir_test.call_deferred()
+		if q.contains("evtest"):
+			oyuncu.position = Vector2(5400, 1720)
+			var c0: Vector2i = insa.karo(oyuncu.position)
+			var ev0 := {n = "Kulübe", tx = c0.x - 1, ty = c0.y - 4, rot = 0, yatak = null}
+			yapi.kurulu.append(ev0)
+			yapi._kur_dugum(ev0)
+			for n4 in ["Hasır yatak", "Taş lamba", "Masa", "Halı", "Perde", "Sandalye", "Asma fener"]: env.ekle(n4)
+			if q.contains("gece"):
+				zaman.dk = 1300.0
+				ev.gir.call_deferred(ev0)
 		if q.contains("yapitest"):
 			env.ekle("Kulübe"); env.ekle("Hasır yatak"); env.vio_ekle(3000); env.ekle("Atölye"); env.ekle("Dal", 20); env.ekle("Taş", 20)
 		if q.contains("kusan"):
@@ -710,7 +725,7 @@ func sk(id: String) -> bool:
 	return yetenekler.has(id)
 
 func pencere_acik() -> bool:
-	return (atolye != null and atolye.visible) or (sinan != null and sinan.visible) or (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
+	return (ev != null and ev.acik) or (atolye != null and atolye.visible) or (sinan != null and sinan.visible) or (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
 
 func can_guncelle(hp: float, mx: float) -> void:
 	can_cubugu.max_value = mx

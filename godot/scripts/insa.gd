@@ -495,6 +495,7 @@ func _msg(t: String) -> void:
 	msg_yazi.text = t
 
 func ac() -> void:
+	if oyun.ev.acik: return
 	if oyun.magara.icinde:
 		env.mesaj("Burada inşa edilmez.", true)
 		return
