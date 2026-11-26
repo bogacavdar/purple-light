@@ -13,6 +13,8 @@ var pencere: PanelContainer
 var liste: VBoxContainer
 var ayrinti: VBoxContainer
 var baslik: Label
+var iz_dugme: Button
+var izler := false      # kitabın İzler sayfası (web İzler sekmesi)
 var kip := "el"        # "el": el yapımı (Tab) · "kitap": tarif kitabı (K)
 var secili := ""
 
@@ -82,7 +84,12 @@ func _arayuz() -> void:
 	pencere.custom_minimum_size = Vector2(620, 380)
 	var v := VBoxContainer.new()
 	baslik = Label.new(); oyun._golge(baslik)
-	v.add_child(baslik)
+	var bh := HBoxContainer.new()
+	baslik.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	bh.add_child(baslik)
+	iz_dugme = Button.new(); iz_dugme.text = "İzler"; iz_dugme.pressed.connect(_iz_degis)
+	bh.add_child(iz_dugme)
+	v.add_child(bh)
 	var h := HBoxContainer.new()
 	h.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	var sc := ScrollContainer.new()
@@ -116,9 +123,20 @@ func _ikonlu(n: String, yazi: String, renk: Color) -> HBoxContainer:
 	h.add_child(l)
 	return h
 
+func _iz_degis() -> void:
+	izler = not izler
+	ciz()
+
 func ciz() -> void:
 	for c in liste.get_children():
 		c.queue_free()
+	iz_dugme.visible = kip != "el"
+	iz_dugme.text = "Tarifler" if izler else "İzler"
+	if kip != "el" and izler:
+		for c in ayrinti.get_children(): c.queue_free()
+		baslik.text = "Tarif kitabı  (K) · İzler %d / 6" % oyun.iz.sayi()
+		oyun.iz.liste_yaz(liste)
+		return
 	var adlar: Array = []
 	if kip == "el":
 		baslik.text = "El yapımı  (Tab) · bildiğin tarifler"

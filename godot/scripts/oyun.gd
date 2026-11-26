@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 3c"
+const SURUM := "Godot · Adım 3d"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -80,6 +80,7 @@ var karakter                # karakter penceresi (karakter_pen.gd)
 var yapi                    # kurulan yapılar ve evler (yapi.gd)
 var sinan                   # Usta Sinan'ın sipariş pencereleri (sinan.gd)
 var atolye                  # Atölye penceresi ve üretimi (atolye.gd)
+var iz                      # eşinden kalan izler (iz.gd)
 var kopru                   # büyük nehrin köprüleri (kopru.gd)
 var camur_dedi := false
 var evcil                   # evcil hayvanlar ve Çoban Davut (evcil.gd)
@@ -165,6 +166,9 @@ func _ready() -> void:
 	insa = preload("res://scripts/insa.gd").new()
 	add_child(insa)
 	insa.kur(self)
+	iz = preload("res://scripts/iz.gd").new()
+	add_child(iz)
+	iz.kur(self)
 	kopru = preload("res://scripts/kopru.gd").new()
 	add_child(kopru)
 	kopru.kur(self)
@@ -246,6 +250,9 @@ func _ready() -> void:
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
 		if q.contains("koprutest"): _kopru_test.call_deferred(q.contains("camur"))
+		if q.contains("iztest"):
+			oyuncu.position = Vector2(7664 + 8, 2280 + 6)
+			ad_sevgili = "Elif"
 		if q.contains("yapitest"):
 			env.ekle("Kulübe"); env.ekle("Hasır yatak"); env.vio_ekle(3000); env.ekle("Atölye"); env.ekle("Dal", 20); env.ekle("Taş", 20)
 		if q.contains("kusan"):
@@ -1174,6 +1181,8 @@ func konus_ya_da_istasyon() -> bool:
 	for n in kisiler:
 		if p.distance_to(n.position) < 30.0 and (yakin == null or p.distance_to(n.position) < p.distance_to(yakin.position)):
 			yakin = n
+	if iz.f():
+		return true
 	if yakin != null and ogr.konus(yakin.K.k):
 		return true
 	if yakin != null and gorev.konus(gorev.g_of(yakin.K.k), _hizmet(yakin.K.k)):
@@ -1387,7 +1396,7 @@ func durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = {gorulen = magara.gorulen, acilan = Marshalls.raw_to_base64(magara.acilan), kaya = 1 if magara.kaya_durum == 2 else magara.kaya_durum, denedi = magara.kaya_denedi or magara.kaya_durum == 2, boss = magara.boss_yenildi},
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), izler = iz.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 func gorunus_uygula(L: Dictionary) -> void:
@@ -1475,6 +1484,7 @@ func durum_yukle(d: Dictionary) -> void:
 	yapi.yukle(d.get("yapi", {}))
 	evcil.yukle(d.get("evcil", {}))
 	kopru.yukle(d.get("kopru", []))
+	iz.yukle(d.get("izler", []))
 	camur_dedi = bool(d.get("camur_dedi", false))
 	insa.yukle(d.get("insa", {}))
 	oyuncu.yetenek_uygula()
