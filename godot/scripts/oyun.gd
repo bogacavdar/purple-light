@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · S3"
+const SURUM := "Godot · S4"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -104,6 +104,7 @@ var ult := 0.0              # ulti çubuğu (0–100)
 var harita_k                # keşif sisi, büyük harita (M), yan görev işaretleri (harita.gd)
 var ani                     # anılar (ani.gd)
 var roket                   # ACT 2'nin sonu: fırlatma, kavuşma, son kart (roket.gd)
+var ys                      # mor ışık saldırıları ve Yıldızsızlar (yildizsiz.gd)
 var buyu                    # mor mana ve asalar (buyu.gd)
 var act2                    # ACT 2 adasının ustaları: Yıldız (act2.gd); yalnız ikinci adada
 var poyraz                  # Gemici Poyraz ve deniz (poyraz.gd)
@@ -257,6 +258,9 @@ func _ready() -> void:
 	roket = preload("res://scripts/roket.gd").new()
 	add_child(roket)
 	roket.kur(self)
+	ys = preload("res://scripts/yildizsiz.gd").new()
+	add_child(ys)
+	ys.kur(self)
 	buyu = preload("res://scripts/buyu.gd").new()
 	add_child(buyu)
 	buyu.kur(self)
@@ -361,6 +365,7 @@ func _ready() -> void:
 		if q.contains("ozeltest"): _ozel_test.call_deferred(q)
 		if q.contains("derstest"): _ders_test.call_deferred(q)
 		if q.contains("imzatest"): _imza_test.call_deferred(q)
+		if q.contains("ystest"): _ys_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -1272,6 +1277,25 @@ func _ada2_test(q: String) -> void:
 		for c in canlilari_ver(): tc[c.tur] = int(tc.get(c.tur, 0)) + 1
 		print("YZ canlılar ", tc, " bio ", bio_at(oyuncu.position))
 
+func _ys_test(q: String) -> void:
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	oyuncu.hp_max = 99999.0; oyuncu.hp = 99999.0
+	env.sv = 14
+	zaman.gun = 6; zaman.dk = 1198.0; ys.sira = 6
+	var v0: int = env.vio
+	await get_tree().create_timer(2.0).timeout
+	print("YS aktif ", ys.aktif(), " bekleyen ", ys.ATK.pend.size() if ys.ATK != null else -1, " dalga2 ", ys.ATK.w2 if ys.ATK != null else [])
+	await get_tree().create_timer(2.5).timeout
+	var L: Array = ys._canli()
+	print("YS sahada ", L.map(func(c): return [c.tur, int(c.hp), int(c.D.dmg), c.position.distance_to(oyuncu.position)]))
+	if q.contains("bekle"): return
+	for tur_ in 3:
+		for c in ys._canli(): c.vuruldu(99999, Vector2.RIGHT)
+		await get_tree().create_timer(2.5).timeout
+	print("YS bitti aktif ", ys.aktif(), " vio +", env.vio - v0, " sıradaki ", ys.sira, " sayı ", ys.sayi, " öldürülen ", ys.oldurulen, " ilan ", ys.ilan.text, " / ", ys.ilan_alt.text)
+
 func _imza_test(_q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	while konusma.visible:
@@ -1686,6 +1710,9 @@ func kritik(dm: int, n: String, a) -> int:
 	return dm + ex
 
 func canli_oldu(k: String, c = null) -> void:
+	if ys != null and c != null and c.has_meta("ys"):
+		ys.oldu(c)
+		return
 	if yan != null and yan.oldu(c): return
 	if reis != null: reis.oldu(k, c)
 	if c != null and c.ogr: ogr.yengec_oldu()
@@ -1711,6 +1738,7 @@ func _dogur(dt: float) -> void:
 			c.queue_free()
 			continue
 		c.set_meta("avlu_bakildi", true)
+		if c.has_meta("ys"): continue
 		if d > 760.0 or (bool(c.D.get("night", false)) and not gece and d > 360.0):
 			c.queue_free()
 	var bio := bio_at(P)
@@ -2481,7 +2509,7 @@ func _durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 ## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
@@ -2618,6 +2646,7 @@ func durum_yukle(d: Dictionary) -> void:
 	gecit.yukle(d.get("gecit", false))
 	harita_k.yukle(d.get("kesif", ""))
 	buyu.yukle(d.get("buyu", {}))
+	ys.yukle(d.get("ys", {}))
 	ani.yukle(d.get("ani", {}))
 	reis.yukle(d.get("reis", {}))
 	dovus.yukle(d.get("dovus", {}))

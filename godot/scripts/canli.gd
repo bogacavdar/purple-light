@@ -66,9 +66,20 @@ func _ready() -> void:
 	tur_k = str(D.get("kind", ""))
 	boss = bool(D.get("boss", false))
 	spr = Sprite2D.new()
-	spr.texture = load(D.file)
+	spr.texture = D.tex if D.has("tex") else load(D.file)
 	spr.hframes = int(D.frames)
-	if tur_k != "":
+	if tur_k == "ys":
+		spr.vframes = 2
+		var gl := Sprite2D.new()
+		gl.name = "parilti"
+		gl.texture = D.parilti
+		gl.hframes = int(D.frames); gl.vframes = 2
+		gl.centered = false
+		var cm := CanvasItemMaterial.new()
+		cm.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
+		gl.material = cm
+		spr.add_child(gl)
+	elif tur_k != "":
 		spr.vframes = 3
 	spr.centered = false
 	spr.offset = Vector2(-float(D.ox), -float(D.oy))
@@ -79,6 +90,13 @@ func _ready() -> void:
 
 func _draw() -> void:
 	_imza_ciz()
+	if tur_k == "ys" and olu < 0.0:
+		var pl := 0.5 + 0.5 * sin(Time.get_ticks_msec() / 250.0 + position.x * 0.2)
+		var R := maxf(float(D.fw), float(D.fh)) * 0.8
+		var cy := -float(D.fh) / 2.0 + 2.0 + (-6.0 if tur == "Yıldızsız gözcü" else 0.0)
+		for i in 5:
+			var k := 1.0 - i / 5.0
+			draw_circle(Vector2(0, cy), R * k, Color(0.75, 0.3, 1.0, (0.08 + 0.05 * pl) * (1.0 - k * 0.6)))
 	if boss and olu < 0.0:
 		var pp := 0.5 + 0.5 * sin(Time.get_ticks_msec() / 250.0 + position.x)
 		for r in [16.0, 11.0, 6.0]:
@@ -154,6 +172,11 @@ func _process(dt: float) -> void:
 	if yavas > 0.0: yavas -= dt
 	if olu >= 0.0:
 		olu += dt
+		if tur_k == "ys":
+			# Yıldızsız: mor ışıkla göğe çekilir gibi solar
+			modulate.a = clampf(1.0 - olu * 2.0, 0.0, 1.0)
+			if olu > 0.6: queue_free()
+			return
 		if tur_k != "":
 			# mağara canlıları yuvarlanmaz: yarasa gölgesinin üstüne süzülür, kertenkele ve örümcek durduğu gibi yatar, gözleri söner
 			_kare(dt, false)
@@ -295,6 +318,11 @@ func _process(dt: float) -> void:
 	_gorun(moving)
 
 func _gorun(moving: bool) -> void:
+	if tur_k == "ys":
+		_ys_kare()
+		mat.set_shader_parameter("flash", 1.0 if flash > 0.0 else 0.0)
+		queue_redraw()
+		return
 	if tur_k != "":
 		_kare(0.0, moving)
 		mat.set_shader_parameter("flash", 1.0 if flash > 0.0 else 0.0)
@@ -312,6 +340,22 @@ func _gorun(moving: bool) -> void:
 	spr.offset.x = (-float(D.ox)) if face > 0 else (float(D.ox) - float(D.fw))
 	mat.set_shader_parameter("flash", 1.0 if flash > 0.0 else 0.0)
 	queue_redraw()
+
+## Yıldızsız: dev hamlede kollarını kaldırır (3. kare), sürüngenin bacakları, ötekiler kıpırdar; gözcü havada süzülür; kovalarken gözler kırmızı
+func _ys_kare() -> void:
+	var tm := Time.get_ticks_msec() / 1000.0 + position.x * 0.05
+	var fr := 0
+	if tur == "Yıldızsız dev": fr = 2 if (wind > 0.0 or not lunge.is_empty()) else (1 if sin(step * 10.0) > 0.0 else 0)
+	elif tur == "Yıldızsız sürüngen": fr = 1 if sin(step * 16.0) > 0.0 else 0
+	else: fr = 1 if sin(tm * 5.0) > 0.0 else 0
+	var row := 1 if ((st == "chase" or mad) and olu < 0.0) else 0
+	spr.frame = row * int(D.frames) + fr
+	spr.flip_h = face < 0
+	var bob := roundf(sin(tm * 4.0) * 1.5) - 6.0 if tur == "Yıldızsız gözcü" else 0.0
+	spr.offset = Vector2(-floorf(float(D.fw) / 2.0), -float(D.fh) + 2.0 + bob)
+	var gl: Sprite2D = spr.get_node("parilti")
+	gl.frame = spr.frame; gl.flip_h = spr.flip_h; gl.offset = spr.offset
+	gl.modulate.a = 0.6 + 0.4 * (0.5 + 0.5 * sin(tm * 4.0))
 
 ## web v436cayir: yarasa kanadını üç kareyle çırpar (yukarı, düz, aşağı), leşi 6. kare; kertenkele/örümcek iki adım, leşi 'd' satırı;
 ## kovalarken gözler kırmızı ('r' satırı)
