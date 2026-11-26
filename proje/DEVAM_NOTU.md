@@ -1,3 +1,7 @@
+## v4.76 (26 Kasım 2026) · Godot 4b: Kayalık Dağ'ın yan görevleri
+- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_yan.js Kayalık dahil, fam3 noktası; yan.gd kovalama, keçi eşliği, hayalet Işıl, kulübe/mezar/taş-fener, çok türlü av; evcil.gd _keci_hedef_b). Denetim: ?yantest_zehra. Belge 99_godot 4b satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.75 (26 Kasım 2026) · Godot 4a: Kayalık Dağ canlıları, kişileri, Rüzgâr Mağarası
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_canli.js P2 ART'ı olmayan canlıları drawAnimal'dan alır, BIYOM=3 → data/canlilar_kayalik.json; disa_aktar_kisi.js BIYOM=3 → data/kisiler_kayalik.json, data/gorevler_kayalik.json; disa_aktar_magara2.js MAG=c3 → data/magara_c3.json; oyun.gd, gorev.gd, magara.gd listeleri). Denetim: ?git_k_firuze, ?mag_c3 yok (c1/c2 kancası). Belge 99_godot Adım 4 ve 4a satırları. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.57 (26 Kasım 2026) · Godot 1f-3b-4: öğretici
 - `godot-deneme/` yeni derleme (godot dalı: yeni ogretici.gd; ders.gd serbest/donuk/sonra; oyun.gd dugum_ekle, ogr kancaları, kayıtta ogretici ve verilen; gorev.gd öğretici sürerken gizli; istasyon/el_yapimi/envanter/pazar/uyanis/canli kancaları). Denetim: ?ogr, ?ogrN (N adım), ?ogr11k3. Belge 99_godot 1f-3b-4 satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.56 (26 Kasım 2026) · Godot 1f-3b-3: yetenek ağacı
-- `godot-deneme/` yeni derleme (godot dalı: yeni yetenek.gd ve data/yetenek.json, tools/disa_aktar_yetenek.js; oyuncu.gd yetenek_uygula, Koşu kapısı, can yenilenmesi; toplama/pazar/envanter/istasyon yetenek etkileri; ders.gd Börü'nün ağaç adımı; girdi Y). Denetim: ?boru3agac, ?boru3tum. Belge 99_godot 1f-3b-3 satırı (enerji çubuğu yeşil diye düzeltildi). Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

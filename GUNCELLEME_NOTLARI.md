@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.76 · 26 Kasım 2026
+
+### Proje
+- **Godot: Kayalık Dağ'ın yan görevleri:**
+  - Yolcu Yahya (ocağa eşlik), Dağlı Zehra (kaçan oğlak Boncuk'u yakala), Gözcü Bora (kartal yumurtası), Hatice Nine (Emir'in izleri), Keşiş Sükûn (rüzgârdaki çanlar) ve hayalet kız Işıl.
+  - Işıl yalnız kendi gece saatinde görünüyor; yanına yaklaşınca görevi kendiliğinden başlıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.75 · 26 Kasım 2026
 
 ### Proje
@@ -221,17 +231,4 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Sağ üstteki kartta ne yapılacağı yazıyor, ok yolu gösteriyor. Eksik malzemeler yakına konuyor.
   - Börü önce kerevite yumrukla vurduruyor. Atılma ve savuşturmanın ilk denemesinde oyun duruyor ve hangi tuşa basılacağını söylüyor.
   - "Eğitimi geç" ile öğretici atlanabiliyor; tarifler, balta ve meşale veriliyor. Öğretici bitince görevler Kemal'den başlıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.56 · 26 Kasım 2026
-
-### Proje
-- **Godot: yetenek ağacı:**
-  - Y ile açılıyor. Web'deki üç ağaç (Savaş, Ekonomi, Dayanıklılık) aynı yerleri, dalları, ikonları ve fiyatlarıyla Godot'ta.
-  - Üstüne gelince yeteneğin ne yaptığı görünüyor. Tıklayınca alınıyor ve nasıl kullanılacağı anlatılıyor.
-  - Koşmak için artık Koşu gerekiyor (100 Vio). Börü dersten sonra ağacı gösteriyor.
-  - Enerji, hız, hasar, savuşturma, atılma, can, satış, XP, toplama, aletler ve tokluk yetenekleri işliyor. Kritik vuruş, zırh, zehir gibi henüz Godot'ta olmayan sistemlerin yetenekleri alınabiliyor; etkileri o sistemlerle gelecek.
-  - Can artık zamanla yavaş yavaş doluyor. Enerji çubuğu web'deki gibi yeşil.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
