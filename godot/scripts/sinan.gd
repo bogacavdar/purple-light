@@ -60,8 +60,11 @@ func ciz() -> void:
 		liste.remove_child(c); c.queue_free()
 	if kip == "siparis": _siparis()
 	else: _evler()
+	_yerles.call_deferred()
+
+func _yerles() -> void:
 	pencere.reset_size()
-	pencere.position = ((get_viewport().get_visible_rect().size - pencere.size) / 2.0).floor()
+	pencere.position = ((get_viewport().get_visible_rect().size - pencere.size) / 2.0).floor().max(Vector2.ZERO)
 
 func _satir(ikon_ad: String, ust: String, alt: String, dugme: String, ok: bool, f: Callable, soluk := false) -> void:
 	var h := HBoxContainer.new()

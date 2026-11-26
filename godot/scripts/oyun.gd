@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 2d-1"
+const SURUM := "Godot · Adım 2d-2"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -79,6 +79,7 @@ var puan_ders := 0          # ilk seviye kartı: 0 gösterilmedi, 1 gösterildi,
 var karakter                # karakter penceresi (karakter_pen.gd)
 var yapi                    # kurulan yapılar ve evler (yapi.gd)
 var sinan                   # Usta Sinan'ın sipariş pencereleri (sinan.gd)
+var atolye                  # Atölye penceresi ve üretimi (atolye.gd)
 var dl_agac := false        # Börü'nün dersi bitti, yetenek ağacını gösterecek (1f-3b-3)
 var silah_yazi: Label
 var parlama_shader: Shader
@@ -156,6 +157,9 @@ func _ready() -> void:
 	yapi = preload("res://scripts/yapi.gd").new()
 	add_child(yapi)
 	yapi.kur(self)
+	atolye = preload("res://scripts/atolye.gd").new()
+	add_child(atolye)
+	atolye.kur(self)
 	sinan = preload("res://scripts/sinan.gd").new()
 	add_child(sinan)
 	sinan.kur(self)
@@ -209,7 +213,7 @@ func _ready() -> void:
 		if q.contains("kemal"):
 			oyuncu.position = Vector2(toplama_veri.kisiler[0].x + 20, toplama_veri.kisiler[0].y + 6)
 		if q.contains("yapitest"):
-			env.ekle("Kulübe"); env.ekle("Hasır yatak"); env.vio_ekle(3000)
+			env.ekle("Kulübe"); env.ekle("Hasır yatak"); env.vio_ekle(3000); env.ekle("Atölye"); env.ekle("Dal", 20); env.ekle("Taş", 20)
 		if q.contains("kusan"):
 			for n2 in ["Kemik zırh", "Kürk başlık", "Taş kılıç", "Diş kolye"]: env.ekle(n2)
 			while env.sv < 8: env.xp_ekle(300)
@@ -674,7 +678,7 @@ func sk(id: String) -> bool:
 	return yetenekler.has(id)
 
 func pencere_acik() -> bool:
-	return (sinan != null and sinan.visible) or (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
+	return (atolye != null and atolye.visible) or (sinan != null and sinan.visible) or (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
 
 func can_guncelle(hp: float, mx: float) -> void:
 	can_cubugu.max_value = mx

@@ -102,6 +102,7 @@ func _yerlestir() -> void:
 	else:
 		env.eksilt(p.n)
 		o = {n = p.n, tx = p.tx, ty = p.ty, rot = p.rot, yatak = null}
+		if p.n == "Atölye": o.ws = oyun.atolye.yeni()
 		env.mesaj("%s yerleştirildi" % p.n)
 	kurulu.append(o)
 	_kur_dugum(o)
@@ -133,8 +134,24 @@ func _kur_dugum(o: Dictionary) -> void:
 	n.position = Vector2((o.tx + f.x / 2.0) * T, (o.ty + f.y) * T)
 	s.position -= n.position
 	n.add_child(s)
+	if o.get("ws", null) != null:
+		var w := f.x * T
+		var h := f.y * T
+		n.draw.connect(_atolye_ciz.bind(n, o, w, h))
 	oyun.nesneler.add_child(n)
 	o.dugum = n
+
+## atölyenin üstünde ilerleme çubuğu ve biriken ürün (web drawPlacedObj ws)
+func _atolye_ciz(n: Node2D, o: Dictionary, w: float, h: float) -> void:
+	var ws: Dictionary = o.ws
+	if ws.r == null: return
+	var k := minf(1.0, float(ws.t) / 25.0)
+	var x0 := -w / 2.0
+	var y0 := -h - 5.0
+	n.draw_rect(Rect2(x0 + 2, y0, w - 4, 3), Color("#11170f"))
+	n.draw_rect(Rect2(x0 + 3, y0 + 1, roundf((w - 6) * k), 1), Color("#8fd46b") if oyun.atolye.hazir(ws) else Color("#c9bfa3"))
+	if int(ws.out) > 0:
+		n.draw_string(ThemeDB.fallback_font, Vector2(-6, y0 - 2), "×%d" % int(ws.out), HORIZONTAL_ALIGNMENT_LEFT, -1, 7, Color("#ffd27a"))
 
 func engel(p: Vector2, half: float) -> bool:
 	for o in kurulu:
@@ -146,6 +163,7 @@ func _process(_dt: float) -> void:
 	if yer != null:
 		_fare()
 		hayalet.queue_redraw()
+	oyun.atolye.isle(_dt)
 
 func _hayalet_ciz() -> void:
 	if yer == null: return
@@ -217,6 +235,9 @@ func kullan() -> bool:
 	if yatak_mi(o.n):
 		_uyu(o)
 		return true
+	if o.get("ws", null) != null:
+		oyun.atolye.ac(o)
+		return true
 	oyun.konusma.ac("", null, "[b]%s[/b]" % o.n, [{t = "Taşı", f = _tasi.bind(o)}, {t = "Geri al", f = _geri_al.bind(o)}, {t = "Tamam", pri = true, kapat = true}])
 	return true
 
@@ -230,6 +251,7 @@ func _tasi(o: Dictionary) -> void:
 	basla(o.n, o)
 
 func _geri_al(o: Dictionary) -> void:
+	if o.get("ws", null) != null: oyun.atolye._geri(o.ws)
 	_kaldir(o)
 	env.ekle(o.n)
 	env.mesaj("%s çantana döndü" % o.n)
@@ -297,7 +319,7 @@ func kurulu_mu(n: String) -> bool:
 # ------------------------------------------------------------------ kayıt
 func kayit() -> Dictionary:
 	var L := []
-	for o in kurulu: L.append({n = o.n, tx = o.tx, ty = o.ty, rot = o.rot, yatak = o.yatak})
+	for o in kurulu: L.append({n = o.n, tx = o.tx, ty = o.ty, rot = o.rot, yatak = o.yatak, ws = o.get("ws", null)})
 	return {kurulu = L, barinak = barinak_uyudu}
 
 func yukle(d: Dictionary) -> void:
@@ -306,6 +328,10 @@ func yukle(d: Dictionary) -> void:
 	for x in d.get("kurulu", []):
 		if not yapi_mi(str(x.n)): continue
 		var o := {n = str(x.n), tx = int(x.tx), ty = int(x.ty), rot = int(x.get("rot", 0)), yatak = x.get("yatak", null)}
+		if o.n == "Atölye":
+			var w0 = x.get("ws", null)
+			o.ws = w0 if w0 is Dictionary else oyun.atolye.yeni()
+			if not o.ws.has("store"): o.ws = oyun.atolye.yeni()
 		kurulu.append(o)
 		_kur_dugum(o)
 	barinak_uyudu = bool(d.get("barinak", false))
