@@ -1,3 +1,7 @@
+## v4.78 (26 Kasım 2026) · Godot 5a, 6a: Kül Diyarı ve Mor Kristal Vadisi
+- `godot-deneme/` yeni derleme (godot dalı: disa_aktar_canli.js BIYOM=4/5, disa_aktar_kisi.js BIYOM=4/5, disa_aktar_magara2.js MAG=c4,c5 → data/canlilar_kul/kristal, kisiler_kul/kristal, gorevler_kul/kristal, magara_c4/c5; oyun.gd, gorev.gd, magara.gd listeleri). Denetim: ?git_k_mercan, ?git_k_inci. Belge 99_godot Adım 5–6, 5a, 6a satırları. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.77 (26 Kasım 2026) · Godot 4c: Doğu geçidi, sıradağ, bütün aletler
 - `godot-deneme/` yeni derleme (godot dalı: yeni gecit.gd; oyun.gd engel'de kaya yığını, F'de geçit, kayıtta gecit, zemin_katman; gorev.gd rock; tools/disa_aktar_alet.js → data/toplama.json tools 26 alet). Denetim: ?gecittest. Belge 99_godot 4c satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.59 (26 Kasım 2026) · Godot 2a: Orman canlıları
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_canli.js BIYOM=1 → data/canlilar_orman.json ve art/canli_*.png; oyun.gd canli_liste biyom biyom, _atici_var; yeni atis.gd; canli.gd ranged; oyuncu.gd etki_ekle/_etkiler; zaman.gd kampta). Denetim: ?orman (+engerek, dikenlikirpi, yabandomuzu, oklukirpi). Belge 99_godot Adım 2 planı ve 2a satırı. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.58 (26 Kasım 2026) · Godot 1f-4: web kaydını açma
-- `godot-deneme/` yeni derleme (godot dalı: yeni web_kayit.gd: localStorage "hammadde.saves.v1" okur, snapshot → durum_al biçimi; kayit.gd ana menüde "Web oyunundaki kaydı aç"). Belge 99_godot 1f-4 satırı. Web oyununda değişen yalnız verlab. Çayır adımı (Adım 1) bununla tamam; sırada Orman.
 - Geri almak için: bu commit'i `git revert` et.
 

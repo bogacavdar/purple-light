@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.78 · 26 Kasım 2026
+
+### Proje
+- **Godot: Kül Diyarı ve Mor Kristal Vadisi:**
+  - Kül Diyarı'nın canlıları (kül böceği, kül kurdu, lav kertenkelesi, kül cini, kor yarasası, ateş akrebi, kara ejder), kişileri (Mercan, Turan, Tufan, Lale; 27 görev) ve Kor Mağarası (Ocakçı Alev, Kor Kral) geldi.
+  - Mor Kristal Vadisi'nin canlıları (mor güve, ışık tilkisi, kristal geyik, gölge kurdu, kristal örümcek, ışık engereği, kristal golem), kişileri (İnci, Kudret, Kuvvet, Menekşe; 27 görev) ve Ayna Mağarası (Gökbilimci Nur, Işık Yutan) geldi.
+  - Davut'un lav kertenkelesi ve kristal geyik görevleri artık çalışıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.77 · 26 Kasım 2026
 
 ### Proje
@@ -218,15 +229,4 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Kirpiler diken, engerek zehir atıyor. Atışlardan yana atılarak kaçılıyor; savuşturma onları geri çeviriyor.
   - Zehir ve kanama bir süre can yakıyor; sol üstte kalan süresi görünüyor.
   - Orman canlılarının resimleri şimdilik web'deki çizimler.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.58 · 26 Kasım 2026
-
-### Proje
-- **Godot: web oyunundaki kayıt açılıyor:**
-  - Aynı tarayıcıda web oyununu oynadıysan Godot'un ana menüsünde "Web oyunundaki kaydı aç" düğmesi çıkıyor. Kayıt seçilince Godot'ta kaldığın yerden sürüyorsun; web kaydın değişmiyor.
-  - Taşınanlar: çanta, kemer, Vio, seviye, tarifler, yetenekler, ana görevler, öğretici adımı, gün, görünüş ve adlar.
-  - Godot'ta henüz olmayanlar (yan görevler, ACT 2, ev, köpekler, çiftlik) taşınmıyor; web kaydında duruyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
