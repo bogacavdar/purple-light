@@ -1,3 +1,7 @@
+## v4.72 (26 Kasım 2026) · Godot 3e: Kök Mağarası ve Batık Mağara
+- `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_magara2.js → data/magara_c1.json, data/magara_c2.json, art/magara/c1_*, c2_*; magara.gd birden çok mağara: MAGS, cur, mağara başına durum; kayıtta magaralar; insa.gd bütün mağara girişleri). Denetim: ?mag_c1, ?mag_c2_dip. Belge 99_godot 3e satırı. Web oyununda değişen yalnız verlab.
+- Geri almak için: bu commit'i `git revert` et.
+
 ## v4.71 (26 Kasım 2026) · Godot 3d: Eşinden kalan izler
 - `godot-deneme/` yeni derleme (godot dalı: tools/disa_aktar_iz.js → data/izler.json; yeni iz.gd; oyun.gd F'de iz, kayıtta izler; gorev.gd clues; el_yapimi.gd kitapta İzler düğmesi). Denetim: ?iztest. Belge 99_godot 3d satırı. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
@@ -72,9 +76,5 @@
 
 ## v4.53 (26 Kasım 2026) · Godot Adım 1f-3b-1 (Nazlı'nın pazarı)
 - `godot-deneme/` yeni derleme (godot dalı: pazar.gd; data/pazar.json = web PRICE_, noSell, isRaw, rawPrice, madeOk). Belge 99_godot 1f-3b satırı dört parçaya bölündü. Web oyununda değişen yalnız verlab.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.52 (26 Kasım 2026) · Godot Adım 1f-3a (giriş sahnesi ve uyanış)
-- `godot-deneme/` yeni derleme (godot dalı: cine.gd web cineShip/cineSea çiziminin GDScript'i, uyanis.gd; data/ates.json'a uyanış yeri ve Kemal'in geliş yeri). Belge 99_godot 1f-3 satırı 1f-3a/1f-3b'ye bölündü. Web oyununda değişen yalnız verlab.
 - Geri almak için: bu commit'i `git revert` et.
 

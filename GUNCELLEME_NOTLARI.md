@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.72 · 26 Kasım 2026
+
+### Proje
+- **Godot: Kök Mağarası ve Batık Mağara:**
+  - Orman'da Kök Mağarası (Seviye 10): kök böcekleri, kök yılanları, mağara kurtları. Dipteki Kökçü Fidan 3 kök reçinesi istiyor ve Yaşlı Kök'ü uyandırıyor.
+  - Bataklık'ta Batık Mağara (Seviye 18): sülükler, balçık kurbağaları, batak semenderleri. Dipteki Sazcı Nail 4 parıltı yosunu istiyor ve Çamur Ana'yı çağırıyor.
+  - İkisinde de web'deki gibi girişte seviye ve yanan meşale şartı, karanlık, kendi haritası, yan görev kartı ve boss ödülü var.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.71 · 26 Kasım 2026
 
 ### Proje
@@ -216,10 +227,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot, Adım 1f-3b-1 (Nazlı'nın pazarı) oynanabilir:** Nazlı'yla konuşunca pazar açılıyor. Sat sekmesinde miktarla, tek tek ya da hepsini satıyorsun; üç toplu satış düğmesi web'deki gibi (hepsini sat, kazandaki açık tariflere yeteni bırak, bütün tariflere yeteni bırak). Tarifte kullanılan bir malzemeyi satarken "Emin misin?" soruyor. Satın al sekmesinde gördüğün doğal malzemeler ve tarifini bildiğin eşyalar var. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.52 · 26 Kasım 2026
-
-### Proje
-- **Godot, Adım 1f-3a (giriş sahnesi ve uyanış) oynanabilir:** yeni oyun artık web'deki giriş sahnesiyle açılıyor: gün batımında gemide yemek, mor ışık, gemi batıyor, "Tut elimi!", su altında sevdiğin kişi uzaklaşıyor. Sahnede yaratıcıda seçtiğin iki karakter oynuyor; "Geç" ile atlanabiliyor. Sonra ACT 1 kartı, kumsalda uyanış, Kemal'in gelişi ve konuşması, senin ve sevdiğin kişinin adı. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
