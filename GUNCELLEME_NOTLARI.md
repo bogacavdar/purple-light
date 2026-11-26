@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 4.66 · 26 Kasım 2026
+
+### Proje
+- **Godot: evin içi ve Döşe:**
+  - Kurduğun evin (yaprak barınağı dışında) yanında F'ye basınca içeri giriyorsun. Oda evin büyüklüğünde: kulübe 6×4, konak 12×8 kare. Pencerelerden gündüz gök, akşam turuncu, gece lacivert görünüyor.
+  - İçeride WASD ile ya da tıklayarak yürüyorsun. Kapıdan, "Dışarı çık" düğmesiyle ya da kapının önünde F ile dışarı çıkıyorsun. İçerideyken hayvanlar duruyor, mor ışık sana zarar vermiyor.
+  - "Döşe" ile çantandaki ev eşyalarını (yatak, lamba, masa, halı, perde, resim…) odaya koyuyorsun. R döndürüyor; yerleşik bir eşyaya tıklayınca taşıyabilir, geri alabilir ya da döndürebilirsin. Halı yerde kalıyor, perde ve resim duvara asılıyor.
+  - Yatağın yanında F ile gece uyuyorsun. Gece lamba yoksa oda kararıyor ve pencereden mor ışık sızıyor; lamba yakınını aydınlatıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 4.65 · 26 Kasım 2026
 
 ### Proje
@@ -192,10 +204,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot, Adım 1d-3 (görev sahneleri ve dersler) oynanabilir:** görevler artık web'deki gibi kısa bir sahneyle veriliyor: siyah şeritler, üstte anlatım yazısı, başların üstünde konuşma balonları, duygu işaretleri, kişinin hareketleri, duman ya da kıvılcım gibi efektler, kameranın görev yerine kayması, istenen eşyanın resmi, anılarda sepya ve gecede koyu renk. Tıklayınca sonraki adım, Esc ile atlanır. Dersi olan görevlerde "Yeni ders" kartı çıkıyor. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.46 · 25 Kasım 2026
-
-### Proje
-- **Godot, Adım 1d-2 (görev sistemi) oynanabilir:** Çayır'ın altı kişisinin ana görevleri geldi. Görevi olan kişinin başında "!" ve parlama var (küçük haritada da); konuşunca görev başlar, sağ üstte görev kartı, küçük haritada sarı bölge, kişiye dönerken ok. Bitince görevi verene dön, ödül oracıkta. Kimsede iş yoksa Kemal ya da Zümrüt küçük bir ayak işi verir. Köprü, balık, kamp ateşi gibi henüz Godot'da olmayan şeyleri isteyen görevler o sistemler gelince açılacak. Link: https://bogacavdar.github.io/purple-light/godot-deneme/
