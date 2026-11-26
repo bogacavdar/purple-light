@@ -7,6 +7,7 @@ var oyun
 var env
 var R := {}            # tarif adı → {r, i, t, c, forged, place}
 var kat_sira := {}     # kategori → web'deki sırası
+var verilen := {}       # web bought: öğretilen (kazanda hemen açık) tarifler
 var bilinen := {}      # öğrenilmiş tarifler (web foundSet)
 var pencere: PanelContainer
 var liste: VBoxContainer
@@ -68,6 +69,7 @@ func yap(r: String) -> void:
 		env.eksilt(str(p[0]), int(p[1]))
 	env.ekle(r)
 	env.mesaj("Yapıldı: " + r)
+	oyun.ogr.yapti(r)
 	ciz()
 
 # ------------------------------------------------------------------ arayüz

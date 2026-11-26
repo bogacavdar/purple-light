@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Adım 1f-3b-3"
+const SURUM := "Godot · Adım 1f-3b-4"
 
 var harita: Dictionary
 var dunya: Dictionary
@@ -64,6 +64,7 @@ var enerji_cubugu: ProgressBar
 var yetenekler := {}        # web skills: S1 atılma, P0 savuşturma (yetenek ağacı 1f-3b-3)
 var ders                    # Börü'nün dersleri (ders.gd)
 var yetenek                 # yetenek ağacı (yetenek.gd)
+var ogr                     # öğretici (ogretici.gd)
 var dl_agac := false        # Börü'nün dersi bitti, yetenek ağacını gösterecek (1f-3b-3)
 var silah_yazi: Label
 var parlama_shader: Shader
@@ -130,6 +131,9 @@ func _ready() -> void:
 	gorev = preload("res://scripts/gorev.gd").new()
 	add_child(gorev)
 	gorev.kur(self)
+	ogr = preload("res://scripts/ogretici.gd").new()
+	add_child(ogr)
+	ogr.kur(self)
 	ortam = CanvasModulate.new()
 	add_child(ortam)
 	mesale = preload("res://scripts/mesale.gd").new()
@@ -169,6 +173,19 @@ func _ready() -> void:
 			_canli_koy_yakin("Tavşan", 4.0)
 		if q.contains("kemal"):
 			oyuncu.position = Vector2(toplama_veri.kisiler[0].x + 20, toplama_veri.kisiler[0].y + 6)
+		if q.contains("ogr"):
+			oyuncu.position = Vector2(toplama_veri.kisiler[0].x + 20, toplama_veri.kisiler[0].y + 6)
+			ogr.basla()
+			var rx := RegEx.create_from_string("ogr(\\d+)")
+			var m := rx.search(q)
+			if m != null:
+				ogr.tz = int(m.get_string(1))
+				var yer := {3: "witch", 4: "witch", 7: "witch", 9: "market", 10: "market", 11: "alp", 12: "alp", 13: "smith"}
+				if yer.has(ogr.tz):
+					oyuncu.position = ogr._kisi(yer[ogr.tz]).position + Vector2(0, 20)
+				if ogr.tz >= 9: env.ekle("Keskin taş")
+				if q.contains("k3"): ogr.ftut = 3
+				ogr.ciz()
 		if q.contains("boru"):
 			var al = alp_dugum()
 			oyuncu.position = al.position + Vector2(0, 40)
@@ -372,6 +389,24 @@ func _agaclar() -> void:
 		agac_izgara[k].append(Vector2(a.x, a.y))
 
 # ------------------------------------------------------------------ yerdeki toplanabilirler (bu adımda yalnız görünür)
+## öğretici yere malzeme koyar (web tzPlace: nodes.push)
+func dugum_ekle(n: String, p: Vector2) -> void:
+	var resim: Dictionary = dunya.dugumResimleri
+	if not resim.has(n): return
+	var R: Dictionary = resim[n]
+	var k := float(R.get("k", 1))
+	var s := preload("res://scripts/dugum.gd").new()
+	s.ad = n
+	s.texture = load(R.file)
+	s.centered = false
+	s.offset = Vector2(-float(R.ox), -float(R.oy))
+	s.scale = Vector2(1.0 / k, 1.0 / k)
+	s.position = p
+	s.bas_kalan = 3 if (toplama_veri.nodes.has(n) and toplama_veri.nodes[n].bush) else 1
+	s.kalan = s.bas_kalan
+	dugumler.append(s)
+	nesneler.add_child(s)
+
 func _dugumler() -> void:
 	var resim: Dictionary = dunya.dugumResimleri
 	for d in dunya.dugumler:
@@ -419,6 +454,7 @@ func _canli_koy(k: String, min_kare: float, aralik: float = 14.0) -> void:
 		return
 
 func canli_oldu(k: String, c = null) -> void:
+	if c != null and c.ogr: ogr.yengec_oldu()
 	if gorev: gorev.av(k)
 	if magara != null and c != null and c.cvb:
 		magara.boss_oldu()
@@ -684,6 +720,8 @@ func konus_ya_da_istasyon() -> bool:
 	for n in kisiler:
 		if p.distance_to(n.position) < 30.0 and (yakin == null or p.distance_to(n.position) < p.distance_to(yakin.position)):
 			yakin = n
+	if yakin != null and ogr.konus(yakin.K.k):
+		return true
 	if yakin != null and gorev.konus(gorev.g_of(yakin.K.k), _hizmet(yakin.K.k)):
 		return true
 	var I: Dictionary = toplama_veri.istasyon
@@ -873,7 +911,7 @@ func durum_al() -> Dictionary:
 	return {
 		oyuncu = {x = p.x, y = p.y, hp = oyuncu.hp},
 		env = {inv = env.inv, kemer = env.kemer, el = env.el, tokluk = env.tokluk, dayan = env.dayan, gorulen = env.gorulen.keys(), vio = env.vio, xp = env.xp, sv = env.sv},
-		tarifler = el_yapimi.bilinen.keys(),
+		tarifler = el_yapimi.bilinen.keys(), verilen = el_yapimi.verilen.keys(), ogretici = ogr.kayit(),
 		gorev = {aktif = ak, b = G.b, bitenler = G.bitenler, kills = G.kills, biyomlar = G.biyomlar.keys(), dovulen = G.dovulen.keys(), dersler = G.gorulen_dersler},
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = {gorulen = magara.gorulen, acilan = Marshalls.raw_to_base64(magara.acilan), kaya = 1 if magara.kaya_durum == 2 else magara.kaya_durum, denedi = magara.kaya_denedi or magara.kaya_durum == 2, boss = magara.boss_yenildi},
@@ -911,6 +949,9 @@ func durum_yukle(d: Dictionary) -> void:
 	env.kemer_ciz()
 	el_yapimi.bilinen = {}
 	for k in d.get("tarifler", []): el_yapimi.bilinen[k] = true
+	el_yapimi.verilen = {}
+	for k in d.get("verilen", []): el_yapimi.verilen[k] = true
+	ogr.yukle(d.get("ogretici", {}))
 	var g: Dictionary = d.get("gorev", {})
 	var G = gorev
 	G.bitenler = g.get("bitenler", [])

@@ -287,6 +287,9 @@ func nerede() -> String:
 
 # ------------------------------------------------------------------ kim "!" bekliyor (en çok 2), ayak işleri
 func yenile() -> void:
+	if oyun.ogr != null and oyun.ogr.acik():
+		vis = []
+		return
 	if aktif != null:
 		vis = []
 		return
@@ -404,6 +407,7 @@ func _ayak(m: Array, d: int) -> Dictionary:
 # ------------------------------------------------------------------ konuşma: görev ver, durum, teslim
 ## kişiyle F: görev işi varsa o yapılır (true döner); yoksa kişinin kendi hizmeti açılır
 func konus(g: String, hizmet: Dictionary) -> bool:
+	if oyun.ogr.acik(): return false
 	if aktif == null:
 		var q = bekleyen(g)
 		if q != null:
@@ -637,7 +641,7 @@ func _arayuz() -> void:
 	kh.add_child(kh_isaret)
 
 func _kart() -> void:
-	if oyun.sahne.acik:
+	if oyun.sahne.acik or oyun.ogr.acik():
 		kart.visible = false
 		return
 	if aktif == null:
@@ -676,7 +680,8 @@ func _ok_ciz() -> void:
 	ok_yon = Vector2.ZERO
 	var h := hedef()
 	var p := Vector2.INF
-	if h.has("kisi") and h.kisi != null: p = h.kisi.position
+	if oyun.ogr.acik(): p = oyun.ogr.hedef()
+	elif h.has("kisi") and h.kisi != null: p = h.kisi.position
 	elif h.has("nokta"): p = h.nokta
 	if p != Vector2.INF:
 		var d: Vector2 = p - oyun.oyuncu.position

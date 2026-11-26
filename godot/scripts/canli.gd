@@ -30,6 +30,7 @@ var sersem := 0.0       # savuşturulunca sersemler (web a.stun)
 var renk := "n"         # saldırının rengi: n beyaz, y sarı (×1,4), r kırmızı (×1,7, savuşturulamaz)
 var ders := false       # Börü'nün ders kereviti: dersi ders.gd yürütür, hasar almaz
 var ders_yuru := false
+var ogr := false        # öğreticide Börü'nün yumruk kereviti: saldırmaz, kaçmaz
 const MUL := {"n": 1.0, "y": 1.4, "r": 1.7}
 const RENK := {"n": Color("#ffffff"), "y": Color("#ffd028"), "r": Color("#ff3a2a")}
 const AGIR := ["Timsah", "Yaban öküzü", "Kara ejder", "Mağara ayısı", "Hurda devi", "Büyük golem", "Lav golemi", "Kızıl ejder", "Gölge muhafız", "Gök bekçisi", "Kristal golem", "Kristal golemcik", "Devriye robotu", "Yavru ejder", "Bataklık kurdu", "Kül kurdu", "Gölge kurdu", "Kristal geyik"]
@@ -166,7 +167,7 @@ func _process(dt: float) -> void:
 	var dv: Vector2 = P.position - position
 	var d := maxf(dv.length(), 1.0)
 	var aggro := float(D.aggro)
-	var saldirgan: bool = D.temper == "saldırgan" or (D.temper == "nötr" and mad)
+	var saldirgan: bool = (D.temper == "saldırgan" or (D.temper == "nötr" and mad)) and not ogr
 	if D.temper == "nötr" and mad and d > 200.0:
 		mad = false
 	if saldirgan and not mad and d < aggro and not P.bayildi and not P.kilit:

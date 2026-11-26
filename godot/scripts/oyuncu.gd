@@ -246,6 +246,7 @@ func _uyar(t: String) -> void:
 func _atil(g: Vector2) -> void:
 	if atilma > 0.0 or atilma_cd > 0.0 or sersem > 0.0 or bayildi:
 		return
+	if oyun.ders.atil_engel(): return
 	if not bilir("S1"):
 		_uyar("Atılmayı henüz bilmiyorsun: Savaşçı Börü ücretsiz öğretir, onunla konuş.")
 		return

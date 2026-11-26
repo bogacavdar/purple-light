@@ -136,6 +136,7 @@ func _bitti() -> void:
 	oyun.oyuncu.kilit = false
 	var K: Dictionary = oyun.toplama_veri.kisiler[0]
 	kemal_hedef = Vector2(K.x, K.y)
+	oyun.ogr.basla()
 	oyun.kayit.kaydet("oto")
 	await get_tree().create_timer(4.0).timeout
 	oyun.env.mesaj("Gün 1")

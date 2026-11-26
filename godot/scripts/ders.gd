@@ -18,6 +18,15 @@ var l0 := Vector2.ZERO
 var tgt := Vector2.ZERO
 var talk_t := 0.0
 var yan := 1.0
+var serbest := true      # öğretici dışında (web DL.free): oyunu durdurmaz, Börü'den uzaklaşınca biter
+var donuk := false       # öğreticide ilk denemede kerevit değmeden oyun durur (web DL.frz)
+var sonra := Callable()  # ders (ve yetenek ağacı adımı) bitince
+var px := Vector2.INF
+var birakiyor := false
+
+## öğreticide ilk denemede yalnız oyunun durduğu anda basılan atılma geçer (web: DL.rel)
+func atil_engel() -> bool:
+	return acik and n == 0 and not serbest and not birakiyor and mod == "dodge"
 var oto := false        # denetim: adrese ?oto yazılınca ders kendi kendine doğru anda basar
 var katman: CanvasLayer
 var buyuk: Label
@@ -25,6 +34,7 @@ var kucuk: Label
 
 func kur(o) -> void:
 	oyun = o
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	katman = CanvasLayer.new()
 	katman.layer = 5
 	add_child(katman)
@@ -74,11 +84,16 @@ func _yaz() -> void:
 		return
 	katman.visible = true
 	buyuk.text = "%s: %d/4" % ["Savuşturma" if mod == "parry" else "Sıyrılma", n]
+	if donuk:
+		buyuk.text = "Sağ tık'a bas!" if mod == "parry" else "Boşluk'a bas!"
+		kucuk.text = "(ya da E) Kerevit saldırıyor: savuştur!" if mod == "parry" else "Kerevit saldırıyor: yana atıl!"
+		return
 	kucuk.text = "Kımıldama: kerevit saldıracak" if n == 0 else ""
 
-func basla(m: String) -> void:
+func basla(m: String, serb := true, sonra_: Callable = Callable()) -> void:
 	if acik: return
 	acik = true
+	serbest = serb; sonra = sonra_; donuk = false; px = Vector2.INF
 	mod = "parry" if m == "parry" else "dodge"
 	n = 0; ph = "idle"; t = 1.6; atk_t = now()
 	var P = oyun.oyuncu
@@ -111,6 +126,7 @@ func _kapat_crab(fx: bool) -> void:
 
 ## Börü'den uzaklaşınca: ders sessizce biter, öğrenilmeyen öğrenilmemiş kalır
 func birak() -> void:
+	if donuk: _coz()
 	acik = false; ph = ""
 	_kapat_crab(false)
 	_yaz()
@@ -132,11 +148,39 @@ func _bos(p: Vector2) -> bool:
 	var tl: int = oyun.tile_at(p)
 	return not oyun.engel(p, 5.0) and tl >= 0 and tl <= 2
 
+## öğreticide ilk deneme: oyun durur, yalnız istenen tuş sürdürür
+func _unhandled_input(e: InputEvent) -> void:
+	if not donuk: return
+	var ok := false
+	if mod == "parry":
+		ok = (e is InputEventMouseButton and e.pressed and e.button_index == MOUSE_BUTTON_RIGHT) or e.is_action_pressed("savus")
+	else:
+		ok = e.is_action_pressed("atil")
+	get_viewport().set_input_as_handled()
+	if not ok: return
+	birakiyor = true
+	_coz()
+	var P = oyun.oyuncu
+	if mod == "parry":
+		P.pr_cd = 0.0
+		P.savustur()
+		P.savusturdu(crab)
+	else:
+		P.atilma_cd = 0.0
+		P._atil(Vector2.ZERO)
+	birakiyor = false
+	_sonuc(true, "")
+
+func _coz() -> void:
+	donuk = false
+	get_tree().paused = false
+
 func _process(dt: float) -> void:
-	if not acik: return
+	if not acik or donuk: return
+	if get_tree().paused: return
 	var P = oyun.oyuncu
 	var alp = oyun.alp_dugum()
-	if alp != null and P.position.distance_to(alp.position) > 280.0:
+	if serbest and alp != null and P.position.distance_to(alp.position) > 280.0:
 		birak()
 		return
 	if crab == null or not is_instance_valid(crab):
@@ -149,6 +193,10 @@ func _process(dt: float) -> void:
 			ph = "idle"; t = 1.4; P.st = P.st_max; _yaz()
 		return
 	if oyun.pencere_acik(): return
+	# öğreticide ilk denemede yerinde dur ve bekle
+	if n == 0 and not serbest:
+		if px == Vector2.INF: px = P.position
+		P.position = px
 	var dx: float = P.position.x - c.position.x
 	c.face = -1 if dx < 0 else 1
 	if ph == "idle":
@@ -189,8 +237,17 @@ func _process(dt: float) -> void:
 		if not _bos(np): np = c.position
 		c.position = np; h = np
 		var near: float = P.position.distance_to(c.position)
+		if n == 0 and not serbest:
+			if near <= 24.0:
+				donuk = true
+				get_tree().paused = true
+				_yaz()
+			elif t <= 0.0:
+				ph = "idle"; t = 0.6
+			return
 		if oto:
-			if mod == "parry" and near < 22.0: P.savustur()
+			if not serbest and n == 0: pass
+			elif mod == "parry" and near < 22.0: P.savustur()
 			elif mod == "dodge" and near < 34.0: P._atil(Vector2.ZERO)
 		if mod == "parry":
 			if near <= 12.0:
@@ -226,7 +283,7 @@ func _sonuc(ok: bool, neden: String) -> void:
 			oyun.yetenekler["S1"] = true
 			if not oyun.yetenekler.has("P0"):
 				# atılmadan hemen sonra savuşturma
-				mod = "parry"; n = 0; ph = "talk"; talk_t = now()
+				mod = "parry"; n = 0; ph = "talk"; talk_t = now(); px = Vector2.INF
 				_yaz()
 				await get_tree().create_timer(0.5).timeout
 				var alp = oyun.alp_dugum()
@@ -255,8 +312,13 @@ func _bitir() -> void:
 	_kapat_crab(true)
 	_yaz()
 	var alp = oyun.alp_dugum()
-	oyun.konusma.ac(alp.K.ad if alp else "Börü", _por(alp), ("Hah! Dört kez sıyrıldın, dört kez de savuşturdun; kerevit hâlâ ne olduğunu anlamaya çalışıyor." if parry else "Hah! Dört kez sıyrıldın, kerevit hâlâ ne olduğunu anlamaya çalışıyor.") + " [b]İlk ders tamam![/b] Ama kulağına küpe olsun: her kavgaya girmek akıllıca değildir evlat. Bazen en iyi hamle arkanı dönüp [b]tabanları yağlamaktır[/b]. Kaçabilmek için de hızlı koşmayı bilmen gerek. Gel, sana yetenek ağacını göstereyim.", [{t = "Yetenek ağacını aç", pri = true, f = func(): agac_iste()}])
+	oyun.konusma.ac(alp.K.ad if alp else "Börü", _por(alp), ("Hah! Dört kez sıyrıldın, dört kez de savuşturdun; kerevit hâlâ ne olduğunu anlamaya çalışıyor." if parry else "Hah! Dört kez sıyrıldın, kerevit hâlâ ne olduğunu anlamaya çalışıyor.") + " [b]İlk ders tamam![/b] Ama kulağına küpe olsun: her kavgaya girmek akıllıca değildir evlat. Bazen en iyi hamle arkanı dönüp [b]tabanları yağlamaktır[/b]. Kaçabilmek için de hızlı koşmayı bilmen gerek." + ("" if oyun.yetenekler.has("K1") else " Gel, sana yetenek ağacını göstereyim."), [{t = "Anladım", pri = true, f = _sonra}] if oyun.yetenekler.has("K1") else [{t = "Yetenek ağacını aç", pri = true, f = func(): agac_iste()}])
 	if not oyun.yetenekler.has("K1"): oyun.dl_agac = true
+
+func _sonra() -> void:
+	var f := sonra
+	sonra = Callable()
+	if f.is_valid(): f.call()
 
 ## Börü'nün yetenek ağacı adımı (web treeAsk, done2): Koşu alınmadıysa ağacı açtırır, kapatınca Koşu'nun fiyatını söyler
 func agac_bekliyor() -> bool:
@@ -275,4 +337,7 @@ func agac_kapandi() -> void:
 	var alp = oyun.alp_dugum()
 	oyun.dl_agac = false
 	await get_tree().create_timer(0.2).timeout
+	if sonra.is_valid():
+		oyun.konusma.ac(alp.K.ad if alp else "Börü", _por(alp), "Gördün mü, en alttaki parlayan [b]Koşu[/b]. Onu almak [b]100 Vio[/b] ister. Nazlı'ya bir şeyler sat, [b]100 Vio[/b] biriktir; ilk işin Koşu'yu almak olsun. Kaçmayı bilen savaşçı uzun yaşar!", [{t = "Anladım", pri = true, f = _sonra}])
+		return
 	oyun.konusma.ac(alp.K.ad if alp else "Börü", _por(alp), "Gördün mü, en alttaki parlayan [b]Koşu[/b]. Onu almak [b]100 Vio[/b] ister. Nazlı'ya bir şeyler sat, [b]100 Vio[/b] biriktir; ilk işin Koşu'yu almak olsun. Kaçmayı bilen savaşçı uzun yaşar!", [{t = "Anladım", pri = true, kapat = true}])

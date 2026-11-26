@@ -104,6 +104,7 @@ func sat(n: String, q: int, sor := true) -> void:
 	env.eksilt(n, q)
 	env.vio_ekle(tutar)
 	env.mesaj("%d %s satıldı · +%d Vio" % [q, n, tutar])
+	oyun.ogr.satti([n])
 	ciz()
 
 ## üç toplu satış: 0 hepsini · 1 kazandaki açık tariflere yeteni bırak · 2 bütün tariflere yeteni bırak
@@ -146,6 +147,7 @@ func toplu_sat(tur: int) -> void:
 	tutar = _sans(tutar)
 	env.vio_ekle(tutar)
 	env.mesaj("%d çeşit%s satıldı · +%d Vio" % [L.size(), "in fazlası" if tur > 0 else "", tutar])
+	oyun.ogr.satti(L.keys())
 	ciz()
 
 # ------------------------------------------------------------------ satın alma

@@ -35,7 +35,13 @@ func _input(e: InputEvent) -> void:
 		pencere.visible = false
 		get_viewport().set_input_as_handled()
 
+func sec(r: String) -> void:
+	secili = r
+	ciz()
+	_ayrinti()
+
 func _acik(r: String) -> bool:
+	if ey.verilen.has(r): return true
 	var x: Dictionary = ey.R[r]
 	for p in x.i:
 		if not env.gorulen.has(str(p[0])) and not ey.bilinen.has(str(p[0])):
@@ -68,6 +74,7 @@ func _islem() -> void:
 			env.eksilt(str(p[0]), int(p[1]))
 		ey.bilinen[r] = true
 		env.xp_ekle(int(env.G.ogrenXP) + (10 if oyun.sk("Z8") else 0))
+		oyun.ogr.ogrendi(r)
 		var x: Dictionary = ey.R[r]
 		var nerde := "Malzemelerini topla, Usta Sinan kurar." if x.place else ("Malzemelerini topla, örste dövülür." if x.forged else "Malzemelerin olduğunda Tab ile yaparsın.")
 		env.mesaj("Bu tarifi öğrendin: %s! %s" % [r, nerde])
@@ -81,6 +88,7 @@ func _islem() -> void:
 		env.vio_ekle(-fee)
 		env.ekle(r)
 		oyun.gorev.dovulen[r] = true
+		oyun.ogr.dovuldu(r)
 		env.mesaj("Dövüldü: %s · işçilik %d Vio" % [r, fee])
 	secili = ""
 	ciz()

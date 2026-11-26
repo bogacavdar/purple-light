@@ -128,6 +128,7 @@ func ye() -> void:
 	var hl := float(G.items[sec].heal)
 	eksilt(sec)
 	tokluk = minf(100.0, tokluk + f)
+	oyun.ogr.yedi(sec)
 	if hl > 0:
 		hl *= 1.5 if oyun.sk("D12") else 1.0
 		oyun.oyuncu.hp = minf(oyun.oyuncu.hp_max, oyun.oyuncu.hp + hl)
