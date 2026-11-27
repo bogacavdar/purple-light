@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.10 · 27 Kasım 2026
+
+### Proje
+- **Godot: Arena ve hileler:**
+  - Ana menüde `cheat` yazınca ya da kolda Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A ile hile modu açılıyor. Oyunda üstte küçük bir hile pedi çıkıyor; "Hileler…" penceresinde Tanrı modu, tek vuruşta öldürme, sınırsız Vio ve dayanıklılık, gece ışığı, ACT 2'ye geçme, en üst seviye, haritayı açma ve eşya arama var.
+  - Ana menüde "⚔ Arena": oyunu bitirince ya da hile modu açıkken açılıyor. Seviyeni, giyimini ve silahını seçip iki adanın bütün canlılarıyla ve Reisleriyle dövüşebiliyorsun. Verdiğin ve aldığın hasar ölçülüyor; "Gerçek dövüş" kapalıyken kimsenin canı gitmiyor. Arenada hiçbir şey kaydedilmiyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.09 · 27 Kasım 2026
 
 ### Proje
@@ -221,18 +231,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Efsun, Dev Mantar Ormanı'nda mor ateşinin başında. Onunla tanışınca mor mana açılıyor (ikinci adada hep açık); mor çubuk can ve enerjinin altında.
   - Efsun'un işleri, Mana iksiri ve üç asa geldi. Ateş asası ateş topu atıyor, Buz asası donduruyor, Yıldırım asası üç yaratığa zincirleniyor. Asa elindeyken vuruş tuşu büyü atar.
   - İkinci adanın nehrindeki üç köprü 20 odunla onarılıyor; sıradağ geçidindeki kaya yığını patlatıcıyla açılıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.90 · 27 Kasım 2026
-
-### Proje
-- **Godot: Yüzen Kayalar ve Gökbilimci Yıldız:**
-  - İkinci adanın altı bölgesinde canlılar dolaşıyor; web'deki çizimleri ve güçleri aynı.
-  - Gökbilimci Yıldız, Yüzen Kayalar'ın yüksek kayasında teleskobunun başında. Tanışana dek ok onu gösteriyor.
-  - Yıldız'ın üç işi var: teleskobun ayağı, bir gece gözlem ve portal çekirdeği. Son iş bitince bütün portallar açılıyor.
-  - ACT 2'nin tarifleri Yıldız'ın yanındaki kazanda öğreniliyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
