@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · S10"
+const SURUM := "Godot · Son-a"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -405,6 +405,7 @@ func _ready() -> void:
 		if q.contains("hiletest"): _hile_test.call_deferred(q)
 		if q.contains("ayartest"): _ayar_test.call_deferred(q)
 		if q.contains("isttest"): _ist_test.call_deferred(q)
+		if q.contains("kupatest"): _kupa_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -1343,6 +1344,17 @@ func _cimen_yeri() -> bool:
 				oyuncu.position = q
 				return true
 	return false
+
+func _kupa_test(_q: String) -> void:
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	for k in ["Kurt", "Tavşan", "Geyik", "Keklik", "Yaban atı", "Porsuk", "Bıldırcın", "Kerevit", "Sincap"]: reis.bd[k] = true
+	env.ekle("Kraliçe tılsımı"); env.ekle("Dev yüreği tılsımı")
+	var hp0: float = oyuncu.hp_max
+	ev.gir({n = "Kulübe", oda = {it = [{n = "Kupa panosu", x = 1, y = 0, r = 0}], seen = true}})
+	await get_tree().create_timer(0.5).timeout
+	print("KUPA asılan ", tilsimlar.keys(), " can ", hp0, " → ", oyuncu.hp_max, " dmg stat ", stat("dmg"))
 
 func _ist_test(_q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
@@ -2462,11 +2474,18 @@ func _istasyon2_ciz(o: Node2D, st: Dictionary) -> void:
 
 # ------------------------------------------------------------------ özellikler, seviye puanları, kuşanma (web SPS, sv, ptsAt, capAt, EQUIP, armorMul)
 const DUZ := {"hp": true, "st": true, "mana": true, "zirh": true}
+## Kupa panosuna asılan mağara boss tılsımlarının kalıcı etkisi (belge Tarifler › İşe yarayan eşyalar)
+const TILSIM := {"Kraliçe tılsımı": {dmg = 4.0}, "Çamur Ana muskası": {hpRe = 25.0}, "Dev yüreği tılsımı": {hp = 80.0},
+	"Kor tacı tılsımı": {dmg = 6.0, zirh = 4.0}, "Işık Yutan kalbi tılsımı": {mana = 40.0, luck = 3.0}}
+const TILSIM_R := {"Kraliçe tılsımı": "#b87aff", "Çamur Ana muskası": "#6a8a3a", "Dev yüreği tılsımı": "#c8c0b0", "Kor tacı tılsımı": "#ff7a2a", "Işık Yutan kalbi tılsımı": "#e8d8ff"}
+var tilsimlar := {}          # panoya asılmış tılsımlar
 func _taki(k: String) -> float:
 	var t := 0.0
 	for s in ["kolye", "yuzuk"]:
 		var n = kusam.get(s, null)
 		if n != null and kusanma.esya.has(n) and kusanma.esya[n].fx != null and kusanma.esya[n].fx.has(k): t += float(kusanma.esya[n].fx[k])
+	for n in tilsimlar:
+		if TILSIM.has(n) and TILSIM[n].has(k): t += float(TILSIM[n][k])
 	return t
 
 ## r < 0: şimdiki puanla ve takıların etkisiyle; r ≥ 0: o puanla (önizleme, takısız)
@@ -2875,7 +2894,7 @@ func _durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), tlsm = tilsimlar.keys(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 ## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
@@ -3017,6 +3036,8 @@ func durum_yukle(d: Dictionary) -> void:
 	basarim.yukle(d.get("bsr", {}))
 	kesif.yukle(d.get("kdef", {}))
 	gizli.yukle(d.get("gizli", {}))
+	tilsimlar = {}
+	for n in d.get("tlsm", []): tilsimlar[str(n)] = true
 	if d.has("ist"): ist.yukle(d.ist)
 	else: ist.yukle({a = float(d.get("sure", 0))})   # eski kayıt: aktif süre eski oyun süresiyle başlar, menü süresi 0
 	ani.yukle(d.get("ani", {}))

@@ -120,6 +120,7 @@ func gir(ev: Dictionary) -> void:
 		if ev.get("yatak", null) != null and esya(str(ev.yatak)): ev.oda.it.append({n = ev.yatak, x = 0, y = 0, r = 0})
 	o = ev
 	acik = true
+	_kupa_as()
 	w = int(sz[0]); h = int(sz[1])
 	px = floorf(w / 2.0) * 16 + 8; py = WALL + h * 16 - 6
 	hedef = null; duzen = false; sec = ""; mv = null; gx = -99; menu.visible = false
@@ -138,6 +139,42 @@ func gir(ev: Dictionary) -> void:
 	elif _its().is_empty(): _say("%s bomboş. Usta Sinan'ın yaptığı eşyaları Döşe ile yerleştir." % ev.n)
 	else: _say("")
 	_ui()
+
+## Kupa panosu olan eve girince çantadaki boss tılsımları (her birinden bir tane) panoya asılır
+func _kupa_as() -> void:
+	var var_ := false
+	for it in o.oda.it:
+		if str(it.n) == "Kupa panosu": var_ = true
+	if not var_: return
+	var L := []
+	for n in oyun.TILSIM:
+		if not oyun.tilsimlar.has(n) and env.adet(n) > 0:
+			env.eksilt(n, 1)
+			oyun.tilsimlar[n] = true
+			L.append(n)
+	if L.size() > 0:
+		oyun.oyuncu.yetenek_uygula()
+		_say("Kupa panosuna asıldı: " + ", ".join(L))
+
+## panoda yenilen her Reis için küçük altın kalkan (iki sıra, en çok 14; fazlasında köşede yıldız); altta asılı tılsımlar taş taş
+func _kupa_ciz(it: Dictionary) -> void:
+	var x0: float = it.x * 16.0
+	var y0 := -8.0
+	var n := 0
+	for k in oyun.reis.bd:
+		if bool(oyun.reis.bd[k]): n += 1
+	for i in mini(14, n):
+		var x := x0 + 4.0 + (i % 7) * 6.0
+		var y := y0 + 18.0 + (i / 7) * 5.0
+		_r(x, y, 4, 3, Color("#f2c84b")); _r(x + 1, y + 3, 2, 1, Color("#f2c84b")); _r(x + 1, y + 1, 2, 1, Color("#a87a1a"))
+	if n > 14:
+		var a := 0.6 + 0.4 * sin(t * 4.0)
+		_r(x0 + 44, y0 + 18, 2, 2, Color(1, 0.95, 0.6, a)); _r(x0 + 43, y0 + 19, 4, 1, Color(1, 0.95, 0.6, a * 0.7))
+	var j := 0
+	for k in oyun.tilsimlar:
+		_r(x0 + 8.0 + j * 7.0, y0 + 28.0, 4, 2, Color(oyun.TILSIM_R.get(k, "#c8c0b0")))
+		_r(x0 + 9.0 + j * 7.0, y0 + 28.0, 2, 1, Color(1, 1, 1, 0.5))
+		j += 1
 
 func cik() -> void:
 	if not acik: return
@@ -312,7 +349,9 @@ func _ciz() -> void:
 	var dxc := floorf(w / 2.0) * 16
 	_r(0, WALL + H, W, 4, Color(st.w2)); _r(dxc, WALL + H, 16, 6, Color("#3a2414")); _r(dxc + 2, WALL + H - 4, 12, 4, Color("#8a6a3a"))
 	for it in _its():
-		if str(V.esya[it.n].L) == "wall": ciz.draw_texture(_tx(it.n), Vector2(it.x * 16, 8 - 16))
+		if str(V.esya[it.n].L) == "wall":
+			ciz.draw_texture(_tx(it.n), Vector2(it.x * 16, 8 - 16))
+			if str(it.n) == "Kupa panosu": _kupa_ciz(it)
 	for it in _its():
 		if str(V.esya[it.n].L) == "rug": ciz.draw_texture(_tx(it.n), Vector2(it.x * 16, WALL + it.y * 16 - 16))
 	var vis: Array = []

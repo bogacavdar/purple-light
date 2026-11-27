@@ -412,6 +412,19 @@ func _keci(dt: float) -> void:
 		oyun.konusma.ac(dn.K.ad, por, str(L[0][1]), [{t = "Devam", pri = true, f = func(): oyun.konusma.ac(dn.K.ad, por, str(L[1][1]), [{t = "Tamam", pri = true, kapat = true}])}])
 		oyun.gorev.yenile()
 
+## kayıkla geçişte (Bereket Adası) yanındaki yoldaşlar ve binek de gelir (belge ACT 1 › Bereket Adası'na gitmek)
+func yanina() -> void:
+	var P: Vector2 = oyun.oyuncu.position
+	var k := 0
+	for p in PT.pets:
+		if p.at != "with" or p.get("n", null) == null: continue
+		var q := P + Vector2(14 + k * 10, 10)
+		for i in 8:
+			if not oyun.engel(q): break
+			q = P + Vector2(cos(i * 0.8) * (16 + i * 4), sin(i * 0.8) * (16 + i * 4))
+		p.n.position = q
+		k += 1
+
 func _yanina(k) -> void:
 	var P: Vector2 = oyun.oyuncu.position
 	var a0: float = (k.position - P).angle()
