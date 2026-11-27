@@ -204,10 +204,13 @@ func _process(dt: float) -> void:
 			vur(bekleyen_yon)
 	if atilma > 0.0:
 		# atılma: 0,24 sn hep aynı mesafe; içindeyken hiçbir şey dokunmaz
+		# hız çarpanı 1,7 − 1,4k; kare hızından bağımsız olsun diye yol kesin integralle (F(k) = 1,7k − 0,7k²)
+		var k0 := clampf(1.0 - atilma / TAKLA_T, 0.0, 1.0)
 		atilma -= dt
-		_kay(atilma_v * dt)
+		var k1 := clampf(1.0 - atilma / TAKLA_T, 0.0, 1.0)
+		_kay(atilma_v * TAKLA_T * ((1.7 * k1 - 0.7 * k1 * k1) - (1.7 * k0 - 0.7 * k0 * k0)))
 		if randf() < 0.8:
-			oyun.parca(position + Vector2(0, -6), -atilma_v * 0.1 + Vector2(0, -4), 0.3, Color(1, 1, 1, 0.7))
+			oyun.parca(position + Vector2(randf_range(-3, 3), 0), Vector2(-atilma_v.x * 0.08 + randf_range(-5, 5), -6 - randf() * 6), 0.3, Color("#c8b898") if randf() < 0.5 else Color("#a89878"))
 		g = Vector2.ZERO
 	yuruyor = g != Vector2.ZERO
 	var kos_ister: bool = (Input.is_action_pressed("kos") or kosu_kol) and yuruyor and not kilit
@@ -254,7 +257,8 @@ func _process(dt: float) -> void:
 		var ph := fposmod(adim * 10.0, TAU)
 		fr = 1 + mini(3, int(floor(ph / (PI / 2.0))))
 	spr.frame = yon * 5 + fr
-	var a := 0.55 if atilma > 0.0 else 1.0
+	var a := 1.0
+	_takla_ciz()
 	# gard: çömelir, genişler, darbelere yaslanır (web v124)
 	if kalkan and atilma <= 0.0:
 		var up := minf(1.0, (Time.get_ticks_msec() / 1000.0 - kalkan_t0) / 0.08)
@@ -304,6 +308,49 @@ func _uyar(t: String) -> void:
 		uyari_t = now
 		oyun.env.mesaj(t, true)
 
+# ------------------------------------------------------------------ takla (web v113-roll + v315roll: 16 poz, kahramanın kendi çiziminden)
+const TAKLA_T := 0.46
+const TAKLA_D := 50.0
+var takla_spr: Sprite2D
+var takla_iz: Sprite2D
+var takla_up: Array = []
+
+func _takla_kur() -> void:
+	var J: Dictionary = oyun._json("res://data/takla.json")
+	takla_up = J.get("up", [])
+	for i in 2:
+		var s := Sprite2D.new()
+		s.texture = load("res://art/takla.png")
+		s.hframes = 16; s.vframes = 3
+		s.visible = false
+		add_child(s)
+		if i == 0: takla_spr = s
+		else: takla_iz = s; s.modulate.a = 0.35; s.show_behind_parent = false
+	move_child(takla_iz, spr.get_index())
+
+func _takla_poz(s: Sprite2D, st: int, ofs: Vector2) -> void:
+	var yan := absf(atilma_v.x) >= absf(atilma_v.y) * 0.35
+	var row := 0 if yan else (1 if atilma_v.y > 0.0 else 2)
+	s.frame = row * 16 + st
+	s.flip_h = yan and atilma_v.x < 0.0
+	var up := float(takla_up[st]) if st < takla_up.size() else 0.0
+	s.position = ofs + Vector2(0, -7.0 - up)
+	s.visible = true
+
+func _takla_ciz() -> void:
+	if takla_spr == null: _takla_kur()
+	if atilma <= 0.0:
+		takla_spr.visible = false; takla_iz.visible = false; spr.visible = true
+		return
+	spr.visible = false
+	var st := clampi(int(floor((1.0 - atilma / TAKLA_T) * 16.0)), 0, 15)
+	_takla_poz(takla_spr, st, Vector2.ZERO)
+	if st > 0: _takla_poz(takla_iz, st - 1, -atilma_v * 0.04)
+	else: takla_iz.visible = false
+	var g := 0.18 if (oyun.gizli != null and oyun.gizli.gorunmez()) else 1.0
+	takla_spr.modulate = Color(1, 1, 1, g)
+	takla_iz.modulate = Color(1, 1, 1, 0.35 * g)
+
 func _atil(g: Vector2) -> void:
 	if atilma > 0.0 or atilma_cd > 0.0 or sersem > 0.0 or bayildi:
 		return
@@ -322,9 +369,10 @@ func _atil(g: Vector2) -> void:
 	if g == Vector2.ZERO and oyun.ders.acik:
 		d = oyun.ders.yana_yon(d)
 	son_atilma = Time.get_ticks_msec() / 1000.0
-	atilma = float(V.dodge.t)
-	atilma_v = d * float(V.dodge.speed) * (1.25 if oyun.sk("S5") else 1.0)
-	atilma_cd = 0.3 if oyun.sk("S4") else (0.38 if oyun.sk("S3") else (0.45 if oyun.sk("S2") else float(V.dodge.cd)))
+	# web v113-roll: takla 0,46 sn, her yöne 50 piksel (Usta takla S5 ×1,25); hız başta 1,7 kat, sonda 0,3 kat
+	atilma = TAKLA_T
+	atilma_v = d * (TAKLA_D / TAKLA_T) * (1.25 if oyun.sk("S5") else 1.0)
+	atilma_cd = maxf(TAKLA_T + 0.3, 0.3 if oyun.sk("S4") else (0.38 if oyun.sk("S3") else (0.45 if oyun.sk("S2") else float(V.dodge.cd))))
 
 func vur(d: Vector2) -> void:
 	if bayildi or atilma > 0.0:

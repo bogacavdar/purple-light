@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.39"
+const SURUM := "Godot · 5.40"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -451,6 +451,7 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("taklatest"): _takla_test.call_deferred()
 		if q.contains("kademetest"): q_kademe_yavas = q.contains("yavas"); _kademe_test.call_deferred()
 		if q.contains("derskart"): _derskart_test.call_deferred()
 		if q.contains("baltakilit"): _baltakilit_test.call_deferred()
@@ -920,6 +921,21 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+func _takla_test() -> void:
+	await get_tree().create_timer(6.0).timeout
+	yetenekler["S1"] = true
+	oyuncu.st = 100.0
+	var p0 := oyuncu.position
+	oyuncu._atil(Vector2.RIGHT)
+	await get_tree().create_timer(0.6).timeout
+	print("TAKLA sag mesafe ", snappedf(oyuncu.position.distance_to(p0), 0.1), " cd ", snappedf(oyuncu.atilma_cd, 0.01))
+	await get_tree().create_timer(0.5).timeout
+	oyuncu.st = 100.0
+	Engine.time_scale = 0.02
+	oyuncu._atil(Vector2.LEFT)
+	await get_tree().create_timer(0.005).timeout
+	print("TAKLA kare ", oyuncu.takla_spr.frame, " flip ", oyuncu.takla_spr.flip_h)
 
 var q_kademe_yavas := false
 func _kademe_test() -> void:
