@@ -8,6 +8,12 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.40 · 28 Kasım 2026
+
+### Godot denemesi
+- **Gerçek takla:** atılma artık yarı saydam bir kayma değil; kahraman 16 pozla takla atıyor (çömelir, top olur, baş aşağı döner, doğrulur), arkasında soluk bir iz ve toz kalıyor. Yukarı ya da aşağı taklada önden/arkadan görünüyor.
+- **Takla süresi web'le aynı:** 0,46 sn, her yöne 50 piksel; başta hızlı, sonda yavaş.
+
 ## Versiyon 5.39 · 28 Kasım 2026
 
 ### Godot denemesi
@@ -136,11 +142,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 ### Proje
 - **Godot: müzik aletleri çalınıyor:**
   - Flütler, düdük, borazan, zurna, davullar, tef, çanlar ve zil kemere giriyor. Eldeyken vur tuşu aletin kendi ezgisini nota nota çalıyor; her aletin kendi sesi var.
-
-## Versiyon 5.20 · 27 Kasım 2026
-
-### Proje
-- **Godot: Tuncay'ın halat yolları:**
-  - Doğan'ın "Dağ yolu" görevinden sonra Dağcı Tuncay, Kayalık Dağ'daki kuzenlerin ocağının yanında halat satıyor.
-  - Üç kestirme kurulabiliyor. Direğin dibinde F'ye basınca halatla öbür uca hızla kayıyorsun; kayarken canavarlar sana dokunamıyor.
-  - Kurulu halatlar iki haritada da kesik mavi çizgiyle görünüyor.

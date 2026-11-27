@@ -1,3 +1,6 @@
+## v5.40 (28 Kasım 2026) · Godot: takla
+- Godot `oyuncu.gd`: `TAKLA_T` 0,46, `TAKLA_D` 50, kesin integralle hareket (F(k)=1,7k−0,7k²), bekleme en az 0,76; `_takla_kur/_takla_poz/_takla_ciz` (art/takla.png 16×3, data/takla.json; `tools/disa_aktar_takla.js` web v315roll'dan). Test kancası `taklatest`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.39 (28 Kasım 2026) · Godot: silahların kademe kimliği
 - Godot: yeni `scripts/kademe.gd` (oyun.gd'de `kademe_k`; kayıt alanı `v322 {b}`), sesler `art/ses/kademe/` (`tools/disa_aktar_kademe.js` web v322tier `snd`'yi yakalayıp OfflineAudioContext ile kaydeder). Çağıranlar: oyuncu.gd `vur` (savur/isabet/patla), buyu.gd `_yay`/`_vur`/`_draw` (S.ok), envanter.gd `ekle` (alindi), ses.gd `kademe()`, duyuru.gd `degistir()`. Test kancası `kademetest` (`&yavas`). Geri almak: bu commit'i `git revert` et; eski kayıtta `v322` okunmazsa yok sayılır.
 
@@ -70,7 +73,3 @@
 ## v5.21 (27 Kasım 2026) · Godot Son-i: müzik aletleri
 - `godot-deneme/` yeni derleme (godot dalı: ses.gd `alet_mi/alet_cal/alet_ara`, data/muzik.json + art/ses/muzik/*.ogg (tools/disa_aktar_muzik.js); oyuncu.gd vur başında alet; envanter.gd aletler kemere; ?muziktest). Belge 99_godot Son-i. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
-
-## v5.20 (27 Kasım 2026) · Godot Son-h: Tuncay'ın halat yolları
-- `godot-deneme/` yeni derleme (godot dalı: yeni halat.gd + data/halat.json (tools/disa_aktar_halat.js); oyun.gd Tuncay kişisi (rol "hl"), F sırasında `halat.f()`, kayıt `halat`; kuzen.gd "hl", kisi.gd görünürlük; konusma.gd `soluk` seçenek; harita.gd çizim; ?halattest). Belge 99_godot Son-h, Son-i; "fenerciler ve ipli yollar yok" notu düzeltildi (ipli yollar = halat yolları). Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (`halat` alanı okunmaz, zararsız).
