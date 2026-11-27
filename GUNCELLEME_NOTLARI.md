@@ -8,6 +8,15 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.24 · 27 Kasım 2026
+
+### Proje
+- **Godot: işe yarayan eşyalar ve meşale:**
+  - Olta yemleri daha nadir balık getiriyor. Duman fişeği yakındaki canavarları sersemletiyor, Duman tütsüsü saldırganları 2 dakika uzak tutuyor.
+  - Bıçaklar avda fazladan deri ve et getiriyor, çantalar bayılınca kaybı azaltıyor, Gübre tarlayı hızlandırıyor, Ok kılıfı yayı hızlandırıyor, Golem feneri hiç sönmüyor.
+  - Elinde silah yokken yanan meşalenle vurabiliyor ve canavarı tutuşturabiliyorsun. L ile meşaleye reçine sürüp tazeliyorsun.
+  - Közlenmiş yiyeceklerin resimleri geldi.
+
 ## Versiyon 5.23 · 27 Kasım 2026
 
 ### Proje
@@ -199,18 +208,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Çok yaralanan hayvanların çoğu kan damlası bırakarak kaçmaya çalışıyor.
   - Biyomun çok üstündeysen oradaki saldırganlar senden çekiniyor.
   - Kurtlar tavşan, kartallar keklik avlıyor; avın leşi yerde kalıyor, derisini ve tüyünü toplayabilirsin.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.04 · 27 Kasım 2026
-
-### Proje
-- **Godot: mor ışık saldırıları ve Yıldızsızlar:**
-  - Belli gecelerin başında bütün ada mora bürünüyor, Yıldızsızlar mor ışık sütunlarıyla çevrene iki dalga halinde iniyor. İlk saldırı 6. gece.
-  - Güçleri silahına, canına ve güne göre ayarlanıyor; her biri düşünce Vio doğrudan keseye giriyor.
-  - Börü yanlarına koşup savaşıyor, Zümrüt ışın yolluyor, Kemal yaralarını sarıyor.
-  - Evde, mağarada, denizde ya da kendi kamp ateşinin yanındaysan saldırı ertesi güne kayıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
