@@ -224,9 +224,18 @@ func _process(dt: float) -> void:
 		_gorun(false)
 		return
 	var P: Node2D = oyun.oyuncu
+	if has_meta("dnc") and oyun.gizli.dansta():
+		# dansı izleyen hayvan: yerinde durur, sana bakar
+		st = "wander"; mad = false
+		_gorun(false)
+		return
 	var dv: Vector2 = P.position - position
 	var d := maxf(dv.length(), 1.0)
 	var aggro := float(D.aggro)
+	if oyun.gizli != null and oyun.gizli.gorunmez():
+		# görünmezken canlılar seni görmez: kovalayan bırakır, saldırmaz, atmaz
+		aggro = 0.0
+		mad = false; wind = 0.0; lunge = {}; imza = {}; fark = -1.0
 	var tut := _tutum_var()
 	var cek := tut and _cekiniyor()
 	var saldirgan: bool = (D.temper == "saldırgan" or (D.temper == "nötr" and mad)) and not ogr and not cek

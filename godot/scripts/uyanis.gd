@@ -121,6 +121,17 @@ func _k3() -> void:
 
 func _k4(n: String) -> void:
 	oyun.ad_kahraman = n
+	# Seni hatırlıyorum: aynı görünüş ve aynı adla bu cihazda daha önce başlatılmış bir oyun
+	var h: int = oyun.gizli.hatirla(n)
+	if h == 1:
+		_de("[i](Kemal bir an durur, yüzüne uzun uzun bakar.)[/i] %s… Seni daha önce de bu kumsalda bulmuş muydum? Aynı yüz, aynı ad… [i](Başını sallar.)[/i] Yaşlandım evlat, aldırma." % n, "Hatırlamıyorum…", func(): _k4b(n))
+		return
+	if h >= 2:
+		_de("[i](Kemal geri çekilir.)[/i] %s. Yine sen. Bu kaçıncı oluyor evlat? Her seferinde aynı kumsal, aynı yüz, aynı ad… ve her seferinde hiçbir şey hatırlamıyorsun. [i](Gözü denize kayar.)[/i] Neyse. Unut gitsin, ben de unuturum." % n, "Ne demek istiyorsun?", func(): _k4b(n))
+		return
+	_k4b(n)
+
+func _k4b(n: String) -> void:
 	_de("[b]%s[/b]. Güzel ad. Ya aradığın kişi? [b]Onun adı ne?[/b]" % n, "Onun adı…", func(): _ad_sor(true, _k5))
 
 func _k5(m: String) -> void:

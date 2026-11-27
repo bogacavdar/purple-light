@@ -255,6 +255,7 @@ func _process(dt: float) -> void:
 		spr.position.x = -bakis.x * (1.5 * up + (blok_fx / 0.15) * 2.0)
 	else:
 		spr.scale = Vector2.ONE; spr.position.x = 0.0
+	if oyun.gizli != null and oyun.gizli.gorunmez(): a *= 0.18   # Görünmezlik iksiri
 	spr.modulate = Color(1, 1 - kirmizi * 2.5, 1 - kirmizi * 2.5, a)
 	if savrulus >= 0.0:
 		savrulus += dt
@@ -328,6 +329,7 @@ func vur(d: Vector2) -> void:
 		if not kalkan and sersem <= 0.0: oyun.buyu.at()
 		return
 	var w := silah_v()
+	if oyun.env.elde() == "" and atk_cd <= 0.0 and oyun.gizli != null: oyun.gizli.yumruk()
 	if atk_cd > 0.0:
 		bekleyen_vurus = 0.8
 		bekleyen_yon = d

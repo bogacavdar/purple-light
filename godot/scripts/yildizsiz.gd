@@ -144,7 +144,7 @@ func _process(dt: float) -> void:
 			return
 		if Z.gun == sira and Z.dk >= 1200.0:
 			if _bekle(): return
-			if _siginak():
+			if _siginak() or oyun.gizli.yildizli():
 				sira = _serbest(Z.gun + 1)
 				return
 			basla()

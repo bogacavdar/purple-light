@@ -45,6 +45,7 @@ func kur(o) -> void:
 
 ## secs: [{t: "Anladım", f: Callable, pri: true, kapat: true}]
 func ac(kim: String, por, metin: String, secs: Array = []) -> void:
+	if oyun.gizli != null and kim == "Yaşlı Kemal": metin = oyun.gizli.kemal_saat(metin)
 	if secs.is_empty():
 		secs = [{t = "Anladım", kapat = true}]
 	if oyun.hikaye != null: secs = oyun.hikaye.ekle(kim, por, secs)

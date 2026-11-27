@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · S7a"
+const SURUM := "Godot · S7b"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -105,6 +105,7 @@ var harita_k                # keşif sisi, büyük harita (M), yan görev işare
 var ani                     # anılar (ani.gd)
 var roket                   # ACT 2'nin sonu: fırlatma, kavuşma, son kart (roket.gd)
 var almanak                 # almanak.gd (U)
+var gizli                   # gizli.gd: gizli şeyler
 var kesif                   # kesif.gd: keşif defteri ve Zümrüt'ün bilmecesi
 var basarim                 # basarim.gd (cihaza kayıtlı başarımlar)
 var ys                      # mor ışık saldırıları ve Yıldızsızlar (yildizsiz.gd)
@@ -261,6 +262,9 @@ func _ready() -> void:
 	roket = preload("res://scripts/roket.gd").new()
 	add_child(roket)
 	roket.kur(self)
+	gizli = preload("res://scripts/gizli.gd").new()
+	add_child(gizli)
+	gizli.kur(self)
 	kesif = preload("res://scripts/kesif.gd").new()
 	add_child(kesif)
 	kesif.kur(self)
@@ -382,6 +386,7 @@ func _ready() -> void:
 		if q.contains("almtest"): _alm_test.call_deferred(q)
 		if q.contains("bsrtest"): _bsr_test.call_deferred(q)
 		if q.contains("kdeftest"): _kdef_test.call_deferred(q)
+		if q.contains("gizlitest"): _gizli_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -512,6 +517,9 @@ func _ready() -> void:
 		var varis := str(Kayit.bekleyen.get("varis", ""))
 		durum_yukle(Kayit.bekleyen)
 		Kayit.bekleyen = {}
+		if Kayit.devam:
+			Kayit.devam = false
+			gizli.devam_satiri()
 		if varis != "": _varis.call_deferred(varis)
 	if Kayit.dogrudan or test:
 		Kayit.dogrudan = false
@@ -633,7 +641,7 @@ func engel(p: Vector2, half: float = 5.0, canli := false) -> bool:
 	if poyraz != null and poyraz.engel(p):
 		return true
 	for d in [Vector2(-half, -half), Vector2(half, -half), Vector2(-half, half), Vector2(half, half)]:
-		if su_mu(tile_at(p + d)) and not (kopru != null and kopru.ustunde(p + d)):
+		if su_mu(tile_at(p + d)) and not (kopru != null and kopru.ustunde(p + d)) and not (gizli != null and gizli.yolda(p + d)):
 			return true
 	if gecit != null and gecit.engel(p):
 		return true
@@ -1304,6 +1312,84 @@ func _cimen_yeri() -> bool:
 				oyuncu.position = q
 				return true
 	return false
+
+func _gizli_test(q: String) -> void:
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	print("GZL yol ", gizli.SP, " kamp ", gizli.C, " uzaklık Kemal ", gizli.C.distance_to(Vector2(toplama_veri.kisiler[0].x, toplama_veri.kisiler[0].y)) / 16.0 if gizli.C != null else -1)
+	# kemer
+	for n in kisiler:
+		if n.K.k == "alp": oyuncu.position = n.position + Vector2(14, 0)
+	for i in 50:
+		gizli.son_vur = 0.0
+		gizli.yumruk()
+	print("GZL Börü konuşma ", konusma.visible)
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	print("GZL kemer ", env.adet(gizli.BELT), " savunma ", kusanma.esya[gizli.BELT].def, " fiyat ", pazar.taban(gizli.BELT))
+	# çöp
+	var cop := []
+	for n in pazar.P.esya:
+		env.inv[n] = 1
+		if gizli.copluk(n): cop.append(n)
+		env.inv.erase(n)
+	print("GZL çöp olabilenler ", cop.size(), " ", cop.slice(0, 8))
+	if q.contains("kazan"):
+		for n in cop.slice(0, 3): env.ekle(n)
+		istasyon.ac("kazan")
+		return
+	for k in 3:
+		for n in cop.slice(0, 5):
+			env.ekle(n); gizli.cop_at(n)
+		await get_tree().create_timer(0.8).timeout
+		while konusma.visible:
+			konusma._cik(); await get_tree().create_timer(0.2).timeout
+	print("GZL kızma ", gizli.S, " görünmez ", gizli.gorunmez(), " başarım ", basarim.bayraklar.keys())
+	# yıldızlar
+	zaman.gun = 100; zaman.dk = 1250.0
+	await get_tree().create_timer(0.5).timeout
+	print("GZL yıldızlı ", gizli.yildizli(), " ışıkta ", zaman.isikta(oyuncu.position))
+	# gece beliren sevdiğin kişi
+	zaman.gun = 12; zaman.dk = 1300.0
+	gizli.K.gece = 12; gizli.K.at = 0
+	await get_tree().create_timer(1.0).timeout
+	print("GZL sevdiğin kişi ", gizli.K.on, " uzaklık ", gizli.K.p.distance_to(oyuncu.position) if gizli.K.on else -1, " sayaç ", gizli.D.get("klonN"))
+	if q.contains("klon"): return
+	if q.contains("dans"):
+		zaman.dk = 600.0
+		for c in canlilari_ver(): c.queue_free()
+		await get_tree().process_frame
+		for i in 4: _canli_yeni("Tavşan" if i % 2 else "Geyik", oyuncu.position + Vector2(80 + i * 30, 40), 1)
+		for c in ["sol", "sag", "sol", "sag", "sol", "sag"]:
+			var ev := InputEventAction.new(); ev.action = c; ev.pressed = true
+			Input.parse_input_event(ev)
+			await get_tree().create_timer(0.15).timeout
+			var ev2 := InputEventAction.new(); ev2.action = c; ev2.pressed = false
+			Input.parse_input_event(ev2)
+			await get_tree().create_timer(0.1).timeout
+		print("GZL dans ", gizli.dansta())
+		await get_tree().create_timer(23.0).timeout
+		var n := 0
+		for c in canlilari_ver():
+			if c.has_meta("dnc"): n += 1
+		print("GZL dans hâlâ ", gizli.dansta(), " izleyen ", n)
+		return
+	# deniz yolu
+	if not gizli.SP.is_empty():
+		var a: Vector2 = Vector2((gizli.SP.x - gizli.SP.dx + 0.5) * 16, (gizli.SP.y - gizli.SP.dy + 0.5) * 16)
+		oyuncu.position = a
+		var dy: Vector2 = Vector2(gizli.SP.dx, gizli.SP.dy)
+		for i in 60:
+			oyuncu._kay(dy * 4.0)
+			await get_tree().process_frame
+			if gizli.busy: break
+		print("GZL yolda yürüdü, düştü ", gizli.busy)
+		await get_tree().create_timer(4.0).timeout
+		print("GZL Kemal konuşuyor ", konusma.visible, " oyuncu Kemal'e ", int(oyuncu.position.distance_to(Vector2(toplama_veri.kisiler[0].x, toplama_veri.kisiler[0].y))))
+		while konusma.visible:
+			konusma._cik(); await get_tree().create_timer(0.3).timeout
+		print("GZL başarımlar ", basarim.bayraklar.keys())
 
 func _kdef_test(_q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
@@ -2657,7 +2743,7 @@ func _durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 ## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
@@ -2798,6 +2884,7 @@ func durum_yukle(d: Dictionary) -> void:
 	almanak.yukle(d.get("alm", {}))
 	basarim.yukle(d.get("bsr", {}))
 	kesif.yukle(d.get("kdef", {}))
+	gizli.yukle(d.get("gizli", {}))
 	ani.yukle(d.get("ani", {}))
 	reis.yukle(d.get("reis", {}))
 	dovus.yukle(d.get("dovus", {}))

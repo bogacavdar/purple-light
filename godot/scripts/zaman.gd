@@ -99,6 +99,7 @@ func _saat_yaz() -> void:
 ## ışık var mı (web litAt + nearCamp + meşale)
 func isikta(p: Vector2) -> bool:
 	if oyun.ys != null and oyun.ys.aktif(): return true   # saldırıda bütün ada mor ışıkla aydınlık
+	if oyun.gizli != null and oyun.gizli.yildizli() and not oyun.magara.icinde: return true   # 100. gecede yıldız ışığı
 	if oyun.mesale.elde() != null: return true
 	if oyun.isikci != null and oyun.isikci.lamba(): return true
 	if oyun.insa.fener_isiginda(p): return true

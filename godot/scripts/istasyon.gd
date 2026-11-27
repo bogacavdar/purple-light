@@ -124,6 +124,41 @@ func _islem() -> void:
 	secili = ""
 	ciz()
 
+var canta: HFlowContainer
+
+func _canta_ciz() -> void:
+	for c in canta.get_children(): c.queue_free()
+	canta.visible = kip == "kazan" and kazan_sahibi == "" and oyun.ada == 1
+	if not canta.visible: return
+	var bl := Label.new()
+	bl.text = "Çantan:"
+	bl.add_theme_font_size_override("font_size", 11)
+	canta.add_child(bl)
+	var L := []
+	for n in env.inv:
+		if int(env.inv[n]) <= 0 or oyun.kusanma.esya.has(n) or oyun.kusanma.silah.has(n) or oyun.toplama_veri.tools.has(n): continue
+		L.append(n)
+	L.sort()
+	for n in L.slice(0, 48):
+		var b := Button.new()
+		b.icon = env.ikon_al(n)
+		b.flat = true
+		b.focus_mode = Control.FOCUS_NONE
+		b.tooltip_text = "%s ×%d" % [n, int(env.inv[n])]
+		b.expand_icon = false
+		b.custom_minimum_size = Vector2(26, 26)
+		var ad: String = n
+		b.pressed.connect(func():
+			if oyun.gizli.copluk(ad):
+				oyun.gizli.cop_at(ad)
+				if pencere.visible: ciz()
+				return
+			for r in _adlar():
+				for p in ey.R[r].i:
+					if str(p[0]) == ad:
+						secili = r; _ayrinti(); return)
+		canta.add_child(b)
+
 func _arayuz() -> void:
 	pencere = PanelContainer.new()
 	var st := StyleBoxFlat.new(); st.bg_color = Color(0.07, 0.06, 0.09, 0.96); st.border_color = Color("#a07ad8"); st.set_border_width_all(2)
@@ -144,6 +179,10 @@ func _arayuz() -> void:
 	ayrinti.custom_minimum_size = Vector2(300, 330)
 	h.add_child(ayrinti)
 	v.add_child(h)
+	# çantandakiler (kazanda): dokununca o malzemeyi kullanan tarif seçilir
+	canta = HFlowContainer.new()
+	canta.custom_minimum_size = Vector2(600, 0)
+	v.add_child(canta)
 	pencere.add_child(v)
 	pencere.visible = false
 	oyun.hud.add_child(pencere)
@@ -181,6 +220,7 @@ func ciz() -> void:
 	if secili == "" and not adlar.is_empty():
 		secili = adlar[0]
 	_ayrinti()
+	_canta_ciz()
 
 func _ayrinti() -> void:
 	for c in ayrinti.get_children():

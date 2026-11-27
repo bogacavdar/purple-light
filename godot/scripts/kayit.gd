@@ -6,6 +6,7 @@ class_name Kayit
 extends Control
 
 static var bekleyen := {}     # sahne yeniden kurulunca açılacak kayıt ({} ise yeni oyun)
+static var devam := false     # Devam et ile girildi (gizli: bir satır)
 static var dogrudan := false  # menüyü atla (Yeni oyun / Devam et / Yükle sonrası)
 
 const YUVALAR := ["oto", "1", "2", "3"]
@@ -169,7 +170,9 @@ func ana_dugmeler() -> void:
 	for c in liste.get_children(): c.queue_free()
 	var son := en_yeni()
 	if son != "":
-		liste.add_child(_dugme("Devam et", func(): yukle(en_yeni()), true))
+		liste.add_child(_dugme("Devam et", func():
+			devam = true
+			yukle(en_yeni()), true))
 	liste.add_child(_dugme("Yeni oyun", func(): yaratici.ac(), son == ""))
 	if son != "":
 		liste.add_child(_dugme("Kayıttan yükle", _yukle_listesi))

@@ -194,6 +194,7 @@ func _basla(w: Vector2) -> void:
 		return
 	fish = {st = "wait", t = 0.0, need = (2.0 + randf() * 4.0) * (1.15 if oyun.zaman.gece_mi() else 1.0), p = w, tool = tool, from = oyun.oyuncu.position, catch = _roll(w), miss = 0, pos = 0.0, dir = 1.0, z0 = 0.0, z1 = 0.0, spd = 0.0}
 	for k in 6: oyun.parca(w, Vector2(randf_range(-20, 20), -15 - randf() * 15), 0.4, Color("#cfe8ff"))
+	if oyun.gizli != null: oyun.gizli.olta(w)
 	_ipucu("fish1", "Şamandıra dalınca hemen E (ya da Boşluk) bas; sonra ibre yeşil alandayken bir daha bas.")
 	_ui()
 
