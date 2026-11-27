@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.36"
+const SURUM := "Godot · 5.37"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -447,6 +447,7 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("baltakilit"): _baltakilit_test.call_deferred()
 		if q.contains("duyurutest"): _duyuru_test.call_deferred()
 		if q.contains("kusaktest"): _kusak_test.call_deferred()
 		if q.contains("koprutest"): _kopru_test.call_deferred(q.contains("camur"))
@@ -913,6 +914,24 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+func _baltakilit_test() -> void:
+	await get_tree().create_timer(6.0).timeout
+	ogr.tz = 12; ogr.axe = 0
+	el_yapimi.bilinen["Keskin taş"] = true
+	for r in ["Taş balta", "Sopa", "İp"]: el_yapimi.bilinen[r] = true
+	env.inv["Taş"] = 4
+	el_yapimi._ac("el")
+	await get_tree().create_timer(0.5).timeout
+	var kapali := 0
+	for b in el_yapimi.liste.get_children(): if b is Button and b.disabled: kapali += 1
+	print("BALTA kilit=", el_yapimi.ders_k, " secili=", el_yapimi.secili, " kapali=", kapali, " acik=", el_yapimi.pencere.visible)
+	env.inv["Taş"] = 0
+	el_yapimi.ciz()
+	await get_tree().create_timer(1.2).timeout
+	print("BALTA eksikken acik=", el_yapimi.pencere.visible)
+	env.inv["Taş"] = 4
+	el_yapimi._ac("el")
 
 func _duyuru_test() -> void:
 	await get_tree().create_timer(6.0).timeout

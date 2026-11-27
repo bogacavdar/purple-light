@@ -33,7 +33,53 @@ func kur(o) -> void:
 			kat_sira[x.c] = kat_sira.size()
 	_arayuz()
 
-func _process(_dt: float) -> void:
+## Börü'nün balta dersi (öğretici 12. adım; belge Akış › 12): sıradaki parça (Keskin taş, Sopa, İp) yapılabiliyorsa yalnızca onun
+## düğmesi mavi yanar, öbür her şey soluk ve tıklanamaz; malzeme eksikse ya da iki taş toplanacaksa pencere 0,7 sn sonra kendiliğinden kapanır.
+var ders_k := ""        # kilitliyse yapılacak parça
+var ders_kapa := -1.0
+func _ders_parca() -> String:
+	var o = oyun.ogr
+	if o == null or o.tz != 12 or kip != "el" or not pencere.visible: return ""
+	if o.axe < 0 or o.axe >= o.AXE.size(): return ""
+	return str(o.AXE[o.axe][0])
+
+func _ders_bak(dt: float) -> void:
+	var r := _ders_parca()
+	var k := r if (r != "" and r != "Taş" and bilinen.has(r) and eksik(r) == "") else ""
+	if k != ders_k:
+		ders_k = k
+		if k != "": secili = k
+		ciz()
+	if r == "" or k != "":
+		ders_kapa = -1.0
+		return
+	if ders_kapa < 0.0: ders_kapa = 0.7
+	ders_kapa -= dt
+	if ders_kapa <= 0.0:
+		ders_kapa = -1.0
+		var L: Array = oyun.ogr.gerek()
+		pencere.visible = false
+		var ad := []
+		for n in L: ad.append(str(n).to_lower())
+		env.mesaj(("Önce malzemeleri topla: " + ", ".join(ad)) if not L.is_empty() else "Önce eksik parçayı topla", true)
+		oyun.ogr.ciz()
+
+func _mavi(b: Button) -> void:
+	b.flat = false
+	var sb := StyleBoxFlat.new()
+	sb.bg_color = Color(0.12, 0.2, 0.28)
+	sb.border_color = Color("#7fd0ff")
+	sb.set_border_width_all(2)
+	sb.content_margin_left = 6; sb.content_margin_right = 6
+	for d in ["normal", "hover", "pressed", "focus"]: b.add_theme_stylebox_override(d, sb)
+	b.modulate = Color(1, 1, 1, 0.75 + 0.25 * sin(Time.get_ticks_msec() / 286.0))
+	b.set_meta("mavi", true)
+
+func _process(dt: float) -> void:
+	_ders_bak(dt)
+	if ders_k != "":
+		for b in liste.get_children() + ayrinti.get_children():
+			if b is Button and b.has_meta("mavi"): b.modulate.a = 0.75 + 0.25 * sin(Time.get_ticks_msec() / 286.0)
 	if Input.is_action_just_pressed("el_yapimi"):
 		_ac("el")
 	if Input.is_action_just_pressed("kitap"):
@@ -223,6 +269,9 @@ func ciz() -> void:
 		if hazir and Ayarlar.rk: b.text = "✓ " + b.text
 		b.add_theme_color_override("font_color", Ayarlar.tamam() if hazir else (Color("#e8e2cc") if bilinen.has(r) else Color("#8a8a80")))
 		b.pressed.connect(func(): secili = r; _ayrinti())
+		if ders_k != "":
+			if r == ders_k: _mavi(b)
+			else: b.disabled = true; b.modulate.a = 0.35
 		liste.add_child(b)
 	if secili == "" and not adlar.is_empty():
 		secili = adlar[0]
@@ -257,6 +306,7 @@ func _ayrinti() -> void:
 		yb.text = "Yap"
 		yb.disabled = eksik(secili) != ""
 		yb.pressed.connect(func(): yap(secili))
+		if ders_k != "" and secili == ders_k: _mavi(yb)
 		ayrinti.add_child(yb)
 		var en := Label.new()
 		var e := eksik(secili)
