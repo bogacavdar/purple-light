@@ -1,3 +1,6 @@
+## v5.39 (28 Kasım 2026) · Godot: silahların kademe kimliği
+- Godot: yeni `scripts/kademe.gd` (oyun.gd'de `kademe_k`; kayıt alanı `v322 {b}`), sesler `art/ses/kademe/` (`tools/disa_aktar_kademe.js` web v322tier `snd`'yi yakalayıp OfflineAudioContext ile kaydeder). Çağıranlar: oyuncu.gd `vur` (savur/isabet/patla), buyu.gd `_yay`/`_vur`/`_draw` (S.ok), envanter.gd `ekle` (alindi), ses.gd `kademe()`, duyuru.gd `degistir()`. Test kancası `kademetest` (`&yavas`). Geri almak: bu commit'i `git revert` et; eski kayıtta `v322` okunmazsa yok sayılır.
+
 ## v5.38 (27 Kasım 2026) · Godot: öğretici kartını küçültme, Görevler'de ders
 - Godot `ogretici.gd` (`kart_kucult`, `parla`), `ayarlar.gd` (`ders_kucuk`, ayar dosyasında `tutmin`), `yan.gd` `_pencere_yaz` (Ders bölümü), `hud_menu.gd` (öğretici kartı sütunun soluna). Web v307tut/v307qlog. Test kancası `derskart`. Geri almak: bu commit'i `git revert` et (oyun kaydı alanı yok; ayar dosyasındaki `tutmin` okunmazsa yok sayılır).
 
@@ -71,7 +74,3 @@
 ## v5.20 (27 Kasım 2026) · Godot Son-h: Tuncay'ın halat yolları
 - `godot-deneme/` yeni derleme (godot dalı: yeni halat.gd + data/halat.json (tools/disa_aktar_halat.js); oyun.gd Tuncay kişisi (rol "hl"), F sırasında `halat.f()`, kayıt `halat`; kuzen.gd "hl", kisi.gd görünürlük; konusma.gd `soluk` seçenek; harita.gd çizim; ?halattest). Belge 99_godot Son-h, Son-i; "fenerciler ve ipli yollar yok" notu düzeltildi (ipli yollar = halat yolları). Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (`halat` alanı okunmaz, zararsız).
-
-## v5.19 (27 Kasım 2026) · Godot Son-g: üşüme, buzlanma, ayak izleri
-- `godot-deneme/` yeni derleme (godot dalı: yeni soguk.gd (üşüme, buz köşeleri, ayak izleri; art/ayakizi.png web v435iz'den); oyun.gd kayıt `usume`, bayılınca sıfırlanır; hava.gd efekt katmanı layer 0). Belge 99_godot Son-g. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (`usume` alanı okunmaz, zararsız).

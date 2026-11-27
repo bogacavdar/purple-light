@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.39 · 28 Kasım 2026
+
+### Godot denemesi
+- **Silahların kademesi hissediliyor:** kılıç, çekiç, topuz, mızrak, balta, kazma ve yayın her kademesinin kendi savuruş, vuruş ve kiriş sesi var; yüksek kademede vuruş kıvılcımları çoğalıyor, Demir'den sonra halka çıkıyor, Çelik ve üstü silah elde parlıyor.
+- **Oklar:** her ok kendi kademesinin resmi ve iziyle uçuyor; etkili oklar kendi renginde iz bırakıyor.
+- **"Yeni kademe!":** bir silah türünde ilk kez daha iyisini alınca kart ne kadar güçlü ya da hızlı olduğunu ve öncekini yazıyor, kısa bir kutlama çıkıyor.
+
 ## Versiyon 5.38 · 27 Kasım 2026
 
 ### Godot denemesi
@@ -137,10 +144,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Doğan'ın "Dağ yolu" görevinden sonra Dağcı Tuncay, Kayalık Dağ'daki kuzenlerin ocağının yanında halat satıyor.
   - Üç kestirme kurulabiliyor. Direğin dibinde F'ye basınca halatla öbür uca hızla kayıyorsun; kayarken canavarlar sana dokunamıyor.
   - Kurulu halatlar iki haritada da kesik mavi çizgiyle görünüyor.
-
-## Versiyon 5.19 · 27 Kasım 2026
-
-### Proje
-- **Godot: üşüme ve ayak izleri:**
-  - Kışın donarken karakter üşüyor, ekranın köşelerinden buz kristalleri büyüyor. Yanan meşale ya da bir ateş ısıtıyor; çok üşürsen can düşüyor.
-  - Yürürken yere ayak izi kalıyor. Karda daha büyük ve uzun süre kalıyor, yağmurda çabuk siliniyor.
