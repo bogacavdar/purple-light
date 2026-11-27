@@ -1,3 +1,7 @@
+## v5.21 (27 Kasım 2026) · Godot Son-i: müzik aletleri
+- `godot-deneme/` yeni derleme (godot dalı: ses.gd `alet_mi/alet_cal/alet_ara`, data/muzik.json + art/ses/muzik/*.ogg (tools/disa_aktar_muzik.js); oyuncu.gd vur başında alet; envanter.gd aletler kemere; ?muziktest). Belge 99_godot Son-i. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.20 (27 Kasım 2026) · Godot Son-h: Tuncay'ın halat yolları
 - `godot-deneme/` yeni derleme (godot dalı: yeni halat.gd + data/halat.json (tools/disa_aktar_halat.js); oyun.gd Tuncay kişisi (rol "hl"), F sırasında `halat.f()`, kayıt `halat`; kuzen.gd "hl", kisi.gd görünürlük; konusma.gd `soluk` seçenek; harita.gd çizim; ?halattest). Belge 99_godot Son-h, Son-i; "fenerciler ve ipli yollar yok" notu düzeltildi (ipli yollar = halat yolları). Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (`halat` alanı okunmaz, zararsız).
@@ -73,7 +77,3 @@
 ## v5.02 (27 Kasım 2026) · Godot S2d: dövüş dersleri ve ulti
 - `godot-deneme/` yeni derleme (godot dalı: yeni dovus.gd (7 ders, alıştırma canavarı, ders kutusu, ulti çubuğu, 10 ulti; kayıt `dovus {ult, od}`, öğrenilen `kuzen.tanis["ders_<tür>"]`); ozel.gd derste hamle açık, isabet bildirimi; oyuncu.gd ulti kazancı; gezgin.gd R ulti doluyken köpekleri açmaz; oyun.gd Börü'de "Dövüş dersleri"). Denetim: ?derstest. Belge 99_godot S2d satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `dovus` alanı okunmadan kalır).
-
-## v5.01 (27 Kasım 2026) · Godot S2c: özel vuruşlar
-- `godot-deneme/` yeni derleme (godot dalı: yeni ozel.gd (girişler, ritim penceresi, basılı tutma halkası, 10 silah grubunun 60 hamlesi, şekiller arc/circ/line/krater); oyuncu.gd vuruş girişi ozel.bas/birak'a; oyun.gd `ult` ve ult_ekle). Kilit `kuzen.tanis["ders_<tür>"]` ya da ACT 2. Denetim: ?ozeltest. Belge 99_godot S2c ve S2d satırları. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).

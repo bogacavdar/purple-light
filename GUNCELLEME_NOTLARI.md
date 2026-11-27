@@ -8,6 +8,12 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.21 · 27 Kasım 2026
+
+### Proje
+- **Godot: müzik aletleri çalınıyor:**
+  - Flütler, düdük, borazan, zurna, davullar, tef, çanlar ve zil kemere giriyor. Eldeyken vur tuşu aletin kendi ezgisini nota nota çalıyor; her aletin kendi sesi var.
+
 ## Versiyon 5.20 · 27 Kasım 2026
 
 ### Proje
@@ -211,16 +217,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: Börü'nün dövüş dersleri ve Ulti:**
   - Börü'yle konuşunca "Dövüş dersleri": yedi ders, her biri bir alıştırma canavarıyla. Ders bitince hamle senin oluyor.
   - Ulti çubuğu geldi; dolunca R ile her silahın kendi ultisi. Ulti sırasında hasar almıyorsun.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.01 · 27 Kasım 2026
-
-### Proje
-- **Godot: özel vuruşlar:**
-  - Çift vuruş, güçlü vuruş (basılı tut, bırak), takla vuruşu, bitirici ve ritimli 2. ve 3. vuruş geldi. Her silah türünün kendi altı hamlesi var.
-  - ACT 1'de hamleler Börü'nün dersleriyle açılacak (sıradaki adım); ACT 2'de hepsi açık.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
