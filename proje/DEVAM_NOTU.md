@@ -1,3 +1,7 @@
+## v5.13 (27 Kasım 2026) · Godot Son-a: kayıkla gelen yoldaşlar, Kupa panosu
+- `godot-deneme/` yeni derleme (godot dalı: evcil.gd `yanina()` (ciftlik.gd kayık geçişi çağırıyordu, yoktu); ev_ici.gd `_kupa_as`, `_kupa_ciz`; oyun.gd `TILSIM`, `tilsimlar` (kayıt `tlsm`), `_taki` tılsım etkileri; ?kupatest). Belge 99_godot Son-a ve Son listesi. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıttaki `tlsm` alanı okunmadan kalır).
+
 ## v5.12 (27 Kasım 2026) · Godot S10: İstatistikler
 - `godot-deneme/` yeni derleme (godot dalı: yeni istatistik.gd (aktif/menü süresi, yol, yapılan, kazanılan/harcanan Vio, toplanan; kayıt `ist`); karakter_pen.gd Karakter · İstatistikler sekmeleri ve Avlanan canlılar listesi; kancalar: el_yapimi.gd yap, istasyon.gd dövme, envanter.gd vio_ekle, toplama.gd; ?isttest). Belge 99_godot S10. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `ist` alanı okunmadan kalır).
@@ -72,8 +76,4 @@
 
 ## v4.94 (27 Kasım 2026) · Godot A6: Ejder Avcısı Tomris ve Işın kılıcı
 - `godot-deneme/` yeni derleme (godot dalı: act2.gd Tomris (kafatası yığını, konuşma, Işın kılıcı yapımı, ej ödülleri), oyuncu.gd silah_v Işın kılıcı (menzil 32, ara 0,3) ve plazma kıvılcımları, kuzen.gd "ej" rolü, gorev.gd ACT 2 kartı ve oku Tomris'e). Denetim: ?ada2test_tomris. Belge 99_godot A6 satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).
-
-## v4.93 (27 Kasım 2026) · Godot A5: Mühendis Işın ve Meka zırh
-- `godot-deneme/` yeni derleme (godot dalı: act2.gd Işın (golem süsü, konuşma, Meka zırh yapımı, mk ödülleri), oyun.gd stat("move") Meka zırhla ×1,12, oyuncu.gd can_max Meka zırhla ×1,25, kuzen.gd "mk" rolü, gorev.gd ACT 2 kartı ve oku Işın'a). Denetim: ?ada2test_isin. Belge 99_godot A5 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).

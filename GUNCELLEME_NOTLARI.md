@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.13 · 27 Kasım 2026
+
+### Proje
+- **Godot: kayıkla gelen yoldaşlar ve Kupa panosu:**
+  - Bereket Adası'na kayıkla gidip gelirken yanındaki yoldaşlar ve binek de geliyor.
+  - Kupa panosunda yendiğin her Reis için küçük altın bir kalkan beliriyor.
+  - Panolu bir eve girince çantandaki mağara boss tılsımları panoya asılıyor ve kalıcı etki veriyor (ör. Dev yüreği tılsımı +80 can).
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.12 · 27 Kasım 2026
 
 ### Proje
@@ -221,16 +232,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Tomris, Ejder Volkanı'nda bir ejder kafatası yığınının yanında. Onunla tanışınca Efsun'un Yıldırım asası işi de açılıyor.
   - Tomris'in dört işi var; sonuncusu volkanın tepesindeki Kızıl ejder.
   - Işın kılıcını Tomris yapıyor. Kılıç hızlı vuruyor, uzağa uzanıyor; her savuruşta mavi plazma kıvılcımı çıkıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.93 · 27 Kasım 2026
-
-### Proje
-- **Godot: Kristal Golem Ocağı ve Mühendis Işın:**
-  - Işın, Kristal Golem Ocağı'nda yarım kalmış bir golemin başında. Onunla tanışınca Efsun'un Buz asası işi de açılıyor.
-  - Işın'ın üç işinin sonunda Meka zırhı Işın yapıyor. Giyince can %25, yürüme hızı %12 artıyor; zehir, yanık ve kanamanın yarısını tutuyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
