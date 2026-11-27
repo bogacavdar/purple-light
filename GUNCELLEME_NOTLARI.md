@@ -8,6 +8,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.34 · 27 Kasım 2026
+
+### Proje
+- **Godot: bilgisayara indirilebilir oyun:** Godot sürümü artık Windows ve Linux'ta tek dosya olarak indirilip tarayıcısız oynanabiliyor.
+
 ## Versiyon 5.33 · 27 Kasım 2026
 
 ### Proje
@@ -154,17 +159,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Poyraz'la konuşunca "Balık defteri" almanağın Deniz canlıları sayfasını açıyor.
   - Ana menüde `love` yazınca Tarif kitabı › Anılar'ın en üstünde "Bütün sahneler" açılıyor: açılış, deniz yolculuğu, roket, kişilerin hikâyeleri ve bütün anılar; kutuya basınca sahne baştan oynuyor.
   - Bir canlıyı kendi bölgesinin dışında avlarsan almanakta avladığın bölgenin sayfasında da "Başka bölgeden" olarak görünüyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.14 · 27 Kasım 2026
-
-### Proje
-- **Godot: kendi işaretin ve yol gösterme:**
-  - T tuşuyla bulunduğun yere adlı, renkli bir işaret koyabiliyorsun (en çok 40).
-  - Büyük haritada bir işarete tıklayınca "Yol göster" ya da "Sil"; bir kişiye tıklayınca mavi bir ok seni ona götürüyor. Varınca ok kendiliğinden kalkıyor; sağ tık da kaldırıyor.
-  - Haritada bayıldığın yerler, kurduğun evler, yataklar ve balık tuzakları da görünüyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
