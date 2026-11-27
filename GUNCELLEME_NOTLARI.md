@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.09 · 27 Kasım 2026
+
+### Proje
+- **Godot: gizli şeyler:** web'deki bütün gizli şeyler Godot'ta da var; oyun bunları hiçbir yerde anlatmıyor, oyuncu kendisi buluyor. Yerlerini burada yazmıyoruz, tasarım belgesinde ayrıntısıyla duruyor.
+  - "Mor ışıkta o", "Görünmezlik iksiri" ve "Denizde yürüyen" başarımları artık kazanılabiliyor.
+  - Zümrüt'ün kazan penceresinin altında çantandaki malzemeler görünüyor; birine dokununca onu kullanan tarif seçiliyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.08 · 27 Kasım 2026
 
 ### Proje
@@ -223,17 +233,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Gökbilimci Yıldız, Yüzen Kayalar'ın yüksek kayasında teleskobunun başında. Tanışana dek ok onu gösteriyor.
   - Yıldız'ın üç işi var: teleskobun ayağı, bir gece gözlem ve portal çekirdeği. Son iş bitince bütün portallar açılıyor.
   - ACT 2'nin tarifleri Yıldız'ın yanındaki kazanda öğreniliyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.89 · 27 Kasım 2026
-
-### Proje
-- **Godot: ikinci ada:**
-  - Barbaros'la deniz yolculuğu bitince ACT 2'nin adası (yonca ada) yükleniyor; Barbaros indirdiği kıyıda bekliyor.
-  - Kemal'in ve Barbaros'un yanındaki portallarla iki ada arasında gidip gelinebiliyor. Çanta, Vio, seviye ve görevler ortak; kurduğun yapılar ve bulunduğun yer her adada ayrı tutuluyor.
-  - İkinci adada henüz canlılar, Yıldız ve öbür kişiler yok; sıradaki adımlarda gelecekler.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
