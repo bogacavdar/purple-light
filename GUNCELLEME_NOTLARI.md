@@ -8,6 +8,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.20 · 27 Kasım 2026
+
+### Proje
+- **Godot: Tuncay'ın halat yolları:**
+  - Doğan'ın "Dağ yolu" görevinden sonra Dağcı Tuncay, Kayalık Dağ'daki kuzenlerin ocağının yanında halat satıyor.
+  - Üç kestirme kurulabiliyor. Direğin dibinde F'ye basınca halatla öbür uca hızla kayıyorsun; kayarken canavarlar sana dokunamıyor.
+  - Kurulu halatlar iki haritada da kesik mavi çizgiyle görünüyor.
+
 ## Versiyon 5.19 · 27 Kasım 2026
 
 ### Proje
@@ -213,18 +221,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: özel vuruşlar:**
   - Çift vuruş, güçlü vuruş (basılı tut, bırak), takla vuruşu, bitirici ve ritimli 2. ve 3. vuruş geldi. Her silah türünün kendi altı hamlesi var.
   - ACT 1'de hamleler Börü'nün dersleriyle açılacak (sıradaki adım); ACT 2'de hepsi açık.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.00 · 27 Kasım 2026
-
-### Proje
-- **Godot: dövüşün ayrıntıları:**
-  - Çantada bir oka dokununca yay o oku atıyor. Sapan taş atıp kuşları sersemletiyor ve ağaçtan meyve düşürüyor; bola canlıyı yavaşlatıyor.
-  - Demirci Dursun aşınan aletleri ve silahları biliyor.
-  - Kritik vuruş geldi. Savuşturmayla sersemlettiğin canlıya ilk vuruşun her zaman kritik.
-  - Savaş çekici çevresine de vuruyor ve sersemletiyor. Topuz hızlı isabetlerle kombo yapıyor, her 5. isabette kıvılcım sıçrıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
