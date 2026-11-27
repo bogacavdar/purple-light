@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.11 · 27 Kasım 2026
+
+### Proje
+- **Godot: Ayarlar ve erişilebilirlik:**
+  - Ana menüde ve oyunda (O tuşu ya da Esc menüsü) "Ayarlar" penceresi var: müzik ve efekt sesi, menü vurgusu (mor, pembe, mavi, altın), renk körü modu, kalp atışını ekranda gösterme, titreşim, tam ekran, kayıtları dışa ve içe aktarma ve bütün tuşların yeniden atanması.
+  - Renk körü modunda "var / eksik" renkleri mavi ✓ ve turuncu ✗ olur.
+  - Tuş değiştirince ekrandaki tuş yardımı yeni tuşları gösteriyor.
+  - Hilelerde: "Hile paneli" anahtarı eklendi, +100 XP kısayolu artık J.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.10 · 27 Kasım 2026
 
 ### Proje
@@ -220,17 +232,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Tufan, Hurda Çölü'nde hurda tezgâhının başında. Dört işi var; ödülleri tabanca, pompalı ve mermi tarifleri.
   - Silahları Tufan yapar. Mermiyi sen yaparsın; her yapış bir kutu çıkarır (10 mermi ya da 6 fişek).
   - Silah elindeyken vuruş tuşu ateş eder. Pompalı beş saçma atar.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.91 · 27 Kasım 2026
-
-### Proje
-- **Godot: Dev Mantar Ormanı ve Büyücü Efsun:**
-  - Efsun, Dev Mantar Ormanı'nda mor ateşinin başında. Onunla tanışınca mor mana açılıyor (ikinci adada hep açık); mor çubuk can ve enerjinin altında.
-  - Efsun'un işleri, Mana iksiri ve üç asa geldi. Ateş asası ateş topu atıyor, Buz asası donduruyor, Yıldırım asası üç yaratığa zincirleniyor. Asa elindeyken vuruş tuşu büyü atar.
-  - İkinci adanın nehrindeki üç köprü 20 odunla onarılıyor; sıradağ geçidindeki kaya yığını patlatıcıyla açılıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---

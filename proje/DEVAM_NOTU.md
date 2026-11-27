@@ -1,3 +1,7 @@
+## v5.11 (27 Kasım 2026) · Godot S9: Ayarlar ve erişilebilirlik
+- `godot-deneme/` yeni derleme (godot dalı: yeni ayarlar.gd (class_name Ayarlar; cihazda user://ayarlar.json: rk, kalp, tit, tam, muzik, efekt, vurgu, tuslar); kayit.gd ana menü ve oyun içi Ayarlar düğmesi, vurgu rengi; renk körü: el_yapimi, istasyon, isikci, yapi, insa; oyuncu.gd titreşim; gizli.gd kalp nabzı; oyun.gd tuş yardımı `yardim_guncelle`; hile.gd Hile paneli, J, meşale; ?ayartest). Belge 99_godot S9. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok; cihazdaki user://ayarlar.json zararsız kalır).
+
 ## v5.10 (27 Kasım 2026) · Godot S8: Arena ve hileler
 - `godot-deneme/` yeni derleme (godot dalı: yeni hile.gd (class_name Hile, statik oturumluk anahtarlar, cheat ve kol kodu, ped, pencere, eşya arama) ve arena.gd (halka, seviye/yuva/silah seçici, iki adanın canlıları ve Reisleri, hasar ölçümü, Gerçek dövüş); kancalar: oyun.gd arena girişi, engel, canli_oldu, _dogur, bayil (Tanrı); kayit.gd Arena düğmesi ve kayıt kapalı; envanter.gd sınırsız Vio ve dayanıklılık; canli.gd tek vuruş ve arena hasarı; oyuncu.gd arena hasarı; zaman.gd gece ışığı; ys, gizli, almanak, basarim arenada kapalı; ?hiletest, ?arenatest). Belge 99_godot S8 ve Son. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
@@ -73,7 +77,3 @@
 ## v4.92 (27 Kasım 2026) · Godot A4: Silahçı Tufan ve ateşli silahlar
 - `godot-deneme/` yeni derleme (godot dalı: buyu.gd GUNS/_silah (mermi, saçma yelpazesi), act2.gd Tufan (tezgâh, konuşma, silah yapımı, sl ödülleri), el_yapimi.gd mermi kutusu (10/6), kuzen.gd "sl" rolü, gorev.gd ACT 2 kartı ve oku Tufan'a). Denetim: ?ada2test_tufan. Belge 99_godot A4 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).
-
-## v4.91 (27 Kasım 2026) · Godot A3: Efsun, mana ve asalar, ikinci adanın köprüleri
-- `godot-deneme/` yeni derleme (godot dalı: yeni buyu.gd (mana, mana çubuğu, STAFF, büyü atışları, dondurma, zincir; kayıt `buyu {m, a}`); act2.gd Efsun (şapka, mor ateş, konuşma, asa/iksir yapımı, pv ödülleri → el_yapimi.verilen); canli.gd `donuk`; oyuncu.gd vur → asa varsa büyü; envanter.gd Mana iksiri → +60 mana; kopru.gd BR2 ve ikinci adada görevsiz onarım; gecit.gd PS2 ve görevsiz patlatma; gorev.gd ACT 2 kartı ve oku Efsun'a). Denetim: ?ada2test_efsun, ?ada2test_kopru2. Belge 99_godot A3 satırı (A5 satırından sıradağ çıktı). Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıttaki `buyu` alanı okunmadan kalır).
