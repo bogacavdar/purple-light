@@ -1,3 +1,5 @@
 # Godot kendi önbelleği ve derleme çıktıları
 .godot/
 build/web/
+build/windows/
+build/linux/
