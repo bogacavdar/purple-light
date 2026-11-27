@@ -1,3 +1,7 @@
+## v5.27 (27 Kasım 2026) · Godot Son-o: canlıların sesleri, itilme
+- `godot-deneme/` yeni derleme (godot dalı: ses.gd `canli()`, data/canli_ses.json + art/ses/canli/*.ogg (tools/disa_aktar_canli_ses.js); canli.gd acı/ölüm/saldırı sesi ve _physics_process itilme). Belge 99_godot Son-o. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.26 (27 Kasım 2026) · Godot Son-n: gece beliren yazılımcı
 - `godot-deneme/` yeni derleme (godot dalı: yeni yazilimci.gd; oyun.gd kayıt `v330dev`; ?devtest). Belge 99_godot Son-n. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (`v330dev` alanı okunmaz, zararsız).
@@ -73,7 +77,3 @@
 ## v5.08 (27 Kasım 2026) · Godot S7a: Keşif defteri ve Zümrüt'ün bilmecesi
 - `godot-deneme/` yeni derleme (godot dalı: yeni kesif.gd (ulaşılır tarifler, kategoriler, ödüller, ustalıklar, bilmece; kayıt `kdef {c, b, n}`); ustalık etkileri: envanter.gd tokluk ve körelme, oyuncu.gd can, oyun.gd savunma, mesale.gd, toplama.gd hız, canli.gd düşürme, balik.gd, pazar.gd satış; el_yapimi.gd Keşif defteri sayfası ve Anılar'da bilmece; Zümrüt konuşmasında bilmece; ?kdeftest). Belge 99_godot S7a/S7b satırları. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `kdef` alanı okunmadan kalır).
-
-## v5.07 (27 Kasım 2026) · Godot S6: Başarımlar
-- `godot-deneme/` yeni derleme (godot dalı: yeni basarim.gd (49 başarım, cihaz kaydı user://basarim.json, kart, liste, rozet; kayıt yuvasında `bsr {f}`); kancalar: oyun.gd canli_oldu/bayil/agac_devrildi, envanter.gd ekle, toplama.gd düğüm; ?bsrtest). Belge 99_godot S6 ve S7 satırları. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıttaki `bsr` alanı okunmadan kalır; cihazdaki user://basarim.json kalır, zararsız).
