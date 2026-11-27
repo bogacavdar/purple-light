@@ -29,6 +29,18 @@ var cvb := false        # mağaranın boss'u (yan görev çağırır)
 var etkiler := {}        # silah ve ok etkileri: yanık, zehir, kanama (web weapon fx) → {t, n, dps, kat}
 var imza := {}          # imza hamlesi (belge İmza hamleleri ve sürü taktiği): {tip, faz, t, ...}
 var imza_t := 3.0
+# hayvanların tutumu (belge Sistemler › Hayvanların tutumu, 13 Kasım 2026, Boğaç)
+var fark := -1.0        # "?" ile durup bakıyor
+var uyari := -1.0       # nötrün "!" uyarısı
+var kacis := -1.0       # yaralıyken kaçış süresi
+var kacis_g := 0.0
+var kac_sans := -1      # -1 belirlenmedi, 0 kaçmaz, 1 kaçar, 2 kaçtı
+var son_vur := -100.0   # son vurulduğu an (güçlüden çekinme 20 sn bozulur)
+var av = null           # avcı: kovaladığı av
+var av_t := 0.0
+var av_ara := 0.0
+var yeme_t := 0.0
+var avci = null         # av: peşindeki avcı
 var yavas := 0.0        # Bola: %35 hızla yürür
 var donuk := 0.0        # Buz asası: donmuşken kıpırdamaz (web a.frz)
 var sersem := 0.0       # savuşturulunca sersemler (web a.stun)
@@ -215,11 +227,75 @@ func _process(dt: float) -> void:
 	var dv: Vector2 = P.position - position
 	var d := maxf(dv.length(), 1.0)
 	var aggro := float(D.aggro)
-	var saldirgan: bool = (D.temper == "saldırgan" or (D.temper == "nötr" and mad)) and not ogr
+	var tut := _tutum_var()
+	var cek := tut and _cekiniyor()
+	var saldirgan: bool = (D.temper == "saldırgan" or (D.temper == "nötr" and mad)) and not ogr and not cek
 	if D.temper == "nötr" and mad and d > 200.0:
 		mad = false
-	if saldirgan and not mad and d < aggro and not P.bayildi and not P.kilit:
+	if tut:
+		# fark etme: dururken alanın %55'i, yürürken %80'i, koşarken tamamı; önce "?" ile durup bakar
+		var ak: float = aggro * [0.55, 0.8, 1.0][int(P.hiz_kip)]
+		if saldirgan and not mad and not P.bayildi and not P.kilit and not oyun.zaman.kampta(P.position):
+			if fark < 0.0 and d < ak:
+				fark = 0.35 if (oyun.ada == 2 or oyun.bio_at(position) == 5) else 0.7
+				oyun.yazi(position + Vector2(0, -float(D.r) - 16.0), "?", Color("#ffd23a"), 14)
+				_birak_av()
+			elif fark >= 0.0:
+				if d > ak * 1.15: fark = -1.0
+				else:
+					fark -= dt
+					face = 1 if dv.x > 0 else -1
+					if fark <= 0.0:
+						fark = -1.0; mad = true
+						_suru_fark()
+					_gorun(false)
+					flash -= dt
+					return
+		# nötr: dibinde kalırsan önce turuncu "!" ile uyarır, 1,5 sn sonra saldırır
+		if D.temper == "nötr" and not mad and tur != "Kerevit" and not P.bayildi and not oyun.zaman.kampta(position):
+			if d < float(D.r) + 40.0:
+				if uyari < 0.0:
+					uyari = 1.5
+					oyun.yazi(position + Vector2(0, -float(D.r) - 16.0), "!", Color("#ff9a2a"), 14)
+				uyari -= dt
+				spr.rotation = sin(Time.get_ticks_msec() / 60.0) * 0.12
+				face = 1 if dv.x > 0 else -1
+				if uyari <= 0.0:
+					uyari = -1.0; mad = true; spr.rotation = 0.0
+			elif uyari >= 0.0:
+				uyari = -1.0; spr.rotation = 0.0
+		# yaralanınca kaçma: canı %20'nin altında, %60 ihtimal, 4 sn
+		if kacis > 0.0:
+			kacis -= dt
+			kacis_g += dt
+			var ky := -dv / d
+			var once := position
+			_git(ky * float(D.spd) * 1.25, dt)
+			if randf() < dt * 8.0: oyun.parca(position + Vector2(randf_range(-3, 3), -2), Vector2.ZERO, 1.2, Color("#9a1a1a"))
+			face = 1 if ky.x > 0 else -1
+			if (kacis_g > 1.0 and d < float(D.r) + 14.0) or (kacis_g > 0.3 and position.distance_to(once) < 0.2): kacis = 0.0
+			if kacis <= 0.0: kacis = -1.0
+			flash -= dt
+			_gorun(true)
+			return
+		if cek and d < 70.0:
+			st = "wander"
+			_git(-dv / d * float(D.spd) * 0.6, dt)
+			flash -= dt
+			_gorun(true)
+			return
+	if saldirgan and not mad and d < aggro and not P.bayildi and not P.kilit and not tut:
 		mad = true
+	if tut and avci != null and is_instance_valid(avci) and avci.olu < 0.0 and avci.av == self:
+		var hv: Vector2 = position - avci.position
+		_git(hv.normalized() * float(D.spd), dt)
+		face = 1 if hv.x > 0 else -1
+		flash -= dt
+		_gorun(true)
+		return
+	if tut and not mad and _avlan(dt):
+		flash -= dt
+		return
 	flash -= dt
 	atk -= dt
 	step += dt
@@ -238,7 +314,8 @@ func _process(dt: float) -> void:
 			mad = false
 		if boss and (P.bayildi or P.kilit): mad = false
 		var angry: bool = saldirgan and (mad or d < aggro) and not P.bayildi and not P.kilit
-		if D.temper == "zararsız" and (d < 70.0 or mad):
+		var kd: float = [35.0, 55.0, 100.0][int(P.hiz_kip)] if tut else 70.0
+		if D.temper == "zararsız" and (d < kd or mad):
 			st = "flee"
 			_git(-dv / d * float(D.spd), dt)
 			moving = true
@@ -543,6 +620,87 @@ func _imza_ciz() -> void:
 			if int(imza.faz) == 0 and imza.has("y"):
 				draw_line(Vector2.ZERO, imza.y * 80.0, Color(c.r, c.g, c.b, 0.5), 2.0)
 
+# ------------------------------------------------------------------ hayvanların tutumu
+const VARIS := [1, 10, 18, 21, 34, 42]
+const AVLAR := {"Kurt": ["Tavşan", "Keklik", "Bıldırcın", "Sincap"], "Bataklık kurdu": ["Ördek"], "Timsah": ["Ördek"], "Vaşak": ["Ur kekliği"], "Kartal": ["Ur kekliği"], "Gölge kurdu": ["Mor güve"]}
+
+## Reisler, boss'lar, Yıldızsızlar, ders/öğretici canavarları, yan görev canavarları ve evciller bu davranışların dışında
+func _tutum_var() -> bool:
+	return not (boss or ders or ogr or tur_k == "ys" or has_meta("reis") or has_meta("ys") or has_meta("ders") or has_meta("sq") or has_meta("evcil"))
+
+func _iri() -> bool:
+	var k := tur.to_lower()
+	return ["Timsah", "Yaban öküzü", "Mağara ayısı"].has(tur) or k.contains("ejder") or k.contains("golem") or float(D.r) >= 10.0
+
+## ACT 1'de sen biyomun varış seviyesinden 15 yüksekken saldırgan sana kendiliğinden saldırmaz; vurursan 20 sn normal dövüşür
+func _cekiniyor() -> bool:
+	if oyun.ada != 1 or D.temper != "saldırgan": return false
+	if Time.get_ticks_msec() / 1000.0 - son_vur < 20.0: return false
+	var b: int = oyun.bio_at(position)
+	if b < 0 or b >= VARIS.size(): return false
+	return int(oyun.env.sv) >= int(VARIS[b]) + 15
+
+func _suru_fark() -> void:
+	if D.get("pack", null) == null: return
+	for c in oyun.canlilari_ver():
+		if c != self and c.tur == tur and c.olu < 0.0 and not c.mad and c.position.distance_to(position) < 160.0:
+			c.mad = true; c.fark = -1.0
+
+func _birak_av() -> void:
+	if av != null and is_instance_valid(av) and av.avci == self: av.avci = null
+	av = null
+
+## ACT 1'de yırtıcı, seni kovalamıyorken 160 px içindeki küçük hayvanı avlar; yakalarsa leşin başında 6 sn yer
+func _avlan(dt: float) -> bool:
+	if oyun.ada != 1 or not AVLAR.has(tur): return false
+	if yeme_t > 0.0:
+		yeme_t -= dt
+		st = "wander"
+		_gorun(false)
+		return true
+	if av != null and (not is_instance_valid(av) or av.olu >= 0.0): av = null
+	if av == null:
+		av_ara -= dt
+		if av_ara > 0.0: return false
+		av_ara = 1.0
+		var L: Array = AVLAR[tur]
+		var bd := 160.0
+		for c in oyun.canlilari_ver():
+			if L.has(c.tur) and c.olu < 0.0 and c.avci == null:
+				var dd: float = c.position.distance_to(position)
+				if dd < bd: bd = dd; av = c
+		if av == null: return false
+		av.avci = self
+		av_t = 8.0
+	av_t -= dt
+	if av_t <= 0.0:
+		_birak_av()
+		return false
+	st = "chase"
+	var v: Vector2 = av.position - position
+	var cs: float = float(D.cs) if D.cs != null else float(D.spd)
+	_git(v.normalized() * cs, dt)
+	face = 1 if v.x > 0 else -1
+	if v.length() < float(D.r) + float(av.D.r) + 4.0:
+		av.av_ol()
+		av = null
+		yeme_t = 6.0
+	_gorun(true)
+	return true
+
+## av yakalandı: eti avcı yemiştir, deri/tüy/yumurta leşin içinde kalır (XP yok, av sayısına ve Reis sayacına girmez)
+func av_ol() -> void:
+	if olu >= 0.0: return
+	hp = 0.0
+	olu = 0.0
+	avci = null
+	for k in 8:
+		oyun.parca(position + Vector2(0, -4), Vector2(randf_range(-25, 25), -15 - randf() * 30), 0.6, Color("#c84a3a"))
+	for dr in D.get("drops", []):
+		if str(dr.n).ends_with(" eti"): continue
+		if randf() < float(dr.p):
+			oyun.toplama.dusur(str(dr.n), position, randi_range(int(dr.min), int(dr.max)))
+
 ## silahın ya da okun etkisi (belge Aletler › Alevli, zehirli, keskin silahlar): taban = silahın tablo hasarı (okta yay × ok)
 const ETKI_C := {"yanık": [3.0, 0.2, "#ffa040"], "zehir": [6.0, 0.1, "#9ad84a"], "kanama": [4.0, 0.15, "#ff5a4a"]}
 func etki_ver(k: String, taban: float) -> void:
@@ -587,6 +745,13 @@ func vuruldu(dm: int, yon: Vector2) -> void:
 	hp -= dm
 	flash = 0.15
 	mad = true
+	fark = -1.0; uyari = -1.0
+	son_vur = Time.get_ticks_msec() / 1000.0
+	_birak_av()
+	if kac_sans == -1 and hp > 0.0 and hp < float(D.hp) * 0.2 and _tutum_var():
+		kac_sans = 1 if (randf() < 0.6 and not _iri()) else 0
+		if kac_sans == 1:
+			kac_sans = 2; kacis = 4.0; kacis_g = 0.0; lunge = {}; wind = 0.0; imza = {}
 	kb = {v = yon * 140.0, t = 0.12}
 	lunge = {}
 	oyun.yazi(position + Vector2(0, -12), "-%d" % dm, Color.WHITE, 9)

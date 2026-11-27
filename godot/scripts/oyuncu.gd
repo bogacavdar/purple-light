@@ -11,6 +11,7 @@ var yon := 0              # satır: 0 S … 7 SW
 var bakis := Vector2(0, 1)  # vuruşun ve atılmanın yönü (8 yön)
 var adim := 0.0           # web player.step
 var yuruyor := false
+var hiz_kip := 0           # 0 duruyor, 1 yürüyor, 2 koşuyor (hayvanların fark etme uzaklığı buna bağlı)
 var kosu_kol := false     # L3 ile açılan koşu (çubuk bırakılınca kapanır)
 
 var hp := 100.0
@@ -224,6 +225,7 @@ func _process(dt: float) -> void:
 		st_dinlen += dt
 		if st_dinlen > 0.6:
 			st = minf(st_max, st + enerji_dolma() * (0.6 if yuruyor else 1.0) * dt)
+	hiz_kip = 0 if not yuruyor else (2 if kos else 1)
 	if not bayildi: _etkiler(dt)
 	if hp < hp_max and not bayildi:
 		hp = minf(hp_max, hp + _hp_yenile() * dt)

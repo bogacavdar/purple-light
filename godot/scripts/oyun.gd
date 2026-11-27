@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · S4"
+const SURUM := "Godot · S3b"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -366,6 +366,7 @@ func _ready() -> void:
 		if q.contains("derstest"): _ders_test.call_deferred(q)
 		if q.contains("imzatest"): _imza_test.call_deferred(q)
 		if q.contains("ystest"): _ys_test.call_deferred(q)
+		if q.contains("tutumtest"): _tutum_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -1276,6 +1277,75 @@ func _ada2_test(q: String) -> void:
 		var tc := {}
 		for c in canlilari_ver(): tc[c.tur] = int(tc.get(c.tur, 0)) + 1
 		print("YZ canlılar ", tc, " bio ", bio_at(oyuncu.position))
+
+func _cimen_yeri() -> bool:
+	for rr in range(2, 60):
+		for an in 16:
+			var q: Vector2 = oyuncu.position + Vector2(cos(an * TAU / 16.0), sin(an * TAU / 16.0)) * rr * 16.0
+			var ok := true
+			for o in [Vector2.ZERO, Vector2(60, 0), Vector2(-60, 0), Vector2(0, 60), Vector2(0, -60), Vector2(150, 0), Vector2(-150, 0)]:
+				if tile_at(q + o) != 0 or engel(q + o, 6.0, true) or zaman.kampta(q + o) or bio_at(q + o) != 0: ok = false
+			if ok:
+				oyuncu.position = q
+				return true
+	return false
+
+func _tutum_test(_q: String) -> void:
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	oyuncu.hp_max = 99999.0; oyuncu.hp = 99999.0
+	print("TUTUM çimen ", _cimen_yeri())
+	var P: Vector2 = oyuncu.position
+	var temizle := func():
+		for c in canlilari_ver(): c.queue_free()
+		await get_tree().process_frame
+	await temizle.call()
+	# 1) fark etme: durana 100 px'teki kurt fark etmez (138 × 0,55 = 76), 60 px'teki "?" ile bekler
+	var w = _canli_yeni("Kurt", P + Vector2(100, 0), 1)
+	await get_tree().create_timer(1.0).timeout
+	print("TUTUM kurt 100px duran oyuncu mad=", w.mad, " fark=", w.fark, " kip ", oyuncu.hiz_kip, " uzaklık ", int(w.position.distance_to(oyuncu.position)))
+	w.position = P + Vector2(60, 0)
+	await get_tree().create_timer(0.3).timeout
+	print("TUTUM kurt 60px 0,3 sn mad=", w.mad, " fark>0=", w.fark > 0.0)
+	await get_tree().create_timer(0.8).timeout
+	print("TUTUM kurt 60px 1,1 sn mad=", w.mad)
+	await temizle.call()
+	# 2) nötr uyarı
+	var g = _canli_yeni("Geyik", P + Vector2(20, 0), 1)
+	await get_tree().create_timer(0.6).timeout
+	print("TUTUM geyik dibinde 0,6 sn uyarı=", g.uyari > 0.0, " mad=", g.mad)
+	await get_tree().create_timer(1.3).timeout
+	print("TUTUM geyik 1,9 sn mad=", g.mad)
+	await temizle.call()
+	# 3) yaralı kaçma (%60 ihtimal; 10 geyikte say)
+	var kac := 0
+	for i in 10:
+		var h = _canli_yeni("Geyik", P + Vector2(40, 0), 1)
+		h.vuruldu(int(float(h.D.hp) * 0.85), Vector2.RIGHT)
+		if h.kacis > 0.0: kac += 1
+		h.queue_free()
+	print("TUTUM 10 yaralı geyikten kaçan ", kac)
+	await temizle.call()
+	# 4) güçlüden çekinme: Sv 20'de Çayır kurdu saldırmaz
+	var sv0: int = env.sv
+	env.sv = 20
+	var w2 = _canli_yeni("Kurt", P + Vector2(50, 0), 1)
+	await get_tree().create_timer(1.5).timeout
+	print("TUTUM Sv20 kurt mad=", w2.mad, " uzaklık ", int(w2.position.distance_to(oyuncu.position)))
+	env.sv = sv0
+	await temizle.call()
+	# 5) avcı-av: oyuncu uzakta, kurt tavşanı avlar
+	var Q := P + Vector2(0, 0)
+	var t1 = _canli_yeni("Tavşan", Q + Vector2(150, 0), 1)
+	var w3 = _canli_yeni("Kurt", Q + Vector2(90, 0), 1)
+	var dus0: int = toplama.dusenler.size()
+	for i in 40:
+		await get_tree().create_timer(0.2).timeout
+		while konusma.visible: konusma._cik()
+		if i == 0: print("TUTUM avcı başladı av=", w3.av == t1, " kurt mad=", w3.mad)
+		if not is_instance_valid(t1) or t1.olu >= 0.0: break
+	print("TUTUM av yakalandı=", (not is_instance_valid(t1)) or t1.olu >= 0.0, " kurt yiyor=", w3.yeme_t > 0.0, " yere düşen +", toplama.dusenler.size() - dus0)
 
 func _ys_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
