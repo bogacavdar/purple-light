@@ -841,6 +841,10 @@ func _pencere_yaz() -> void:
 	for c in pen_liste.get_children():
 		pen_liste.remove_child(c); c.queue_free()
 	var G = oyun.gorev
+	# web v307qlog: ders sürerken Görevler'in en üstünde dersin kartı
+	if oyun.ogr != null and oyun.ogr.acik() and oyun.ogr.kart_baslik.text != "":
+		pen_liste.add_child(_etiket("[b]Ders[/b]", 16, Color("#f2c94c")))
+		pen_liste.add_child(_etiket("[b]%s[/b]\n%s" % [oyun.ogr.kart_baslik.text, oyun.ogr.kart_yazi.text], 12))
 	pen_liste.add_child(_etiket("[b]Ana görev[/b]", 16, Color("#f2b84b")))
 	if G.aktif != null:
 		var t := "[b]%s[/b] · %s" % [G.aktif.t, G.ad(G.aktif.g)]

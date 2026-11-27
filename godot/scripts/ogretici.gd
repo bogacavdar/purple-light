@@ -16,6 +16,8 @@ var kart_por: TextureRect
 var kart_baslik: Label
 var kart_yazi: RichTextLabel
 var kart_gec: Button
+var kart_kucult: Button
+var parla := 0.0
 
 const TZN := ["", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz", "on"]
 const AXE := [
@@ -41,7 +43,13 @@ func kur(o) -> void:
 	kart_por.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	kart_baslik = Label.new(); kart_baslik.add_theme_font_size_override("font_size", 14); kart_baslik.add_theme_color_override("font_color", Color("#f2c94c"))
 	kart_baslik.size_flags_horizontal = Control.SIZE_EXPAND_FILL; kart_baslik.autowrap_mode = TextServer.AUTOWRAP_WORD
-	h.add_child(kart_por); h.add_child(kart_baslik)
+	kart_kucult = Button.new(); kart_kucult.flat = true; kart_kucult.add_theme_font_size_override("font_size", 14)
+	kart_kucult.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
+	kart_kucult.pressed.connect(func():
+		Ayarlar.ders_kucuk = not Ayarlar.ders_kucuk
+		Ayarlar.kaydet()
+		ciz())
+	h.add_child(kart_por); h.add_child(kart_baslik); h.add_child(kart_kucult)
 	kart_yazi = RichTextLabel.new(); kart_yazi.bbcode_enabled = true; kart_yazi.fit_content = true; kart_yazi.scroll_active = false
 	kart_yazi.add_theme_font_size_override("normal_font_size", 13); kart_yazi.add_theme_font_size_override("bold_font_size", 13)
 	kart_gec = Button.new(); kart_gec.text = "Eğitimi geç"; kart_gec.size_flags_horizontal = Control.SIZE_SHRINK_END
@@ -230,8 +238,15 @@ func ciz() -> void:
 	kart.visible = true
 	kart_por.texture = _por(C[0])
 	kart_por.visible = kart_por.texture != null
+	# web v307tut: ▾/▸ kartı başlık satırına katlar (cihazda hatırlanır); katlıyken yeni adım başlığı parlatır
+	if kart_baslik.text != C[1] and Ayarlar.ders_kucuk and kart_baslik.text != "": parla = 1.6
 	kart_baslik.text = C[1]
 	kart_yazi.text = C[2]
+	kart_kucult.text = "▸" if Ayarlar.ders_kucuk else "▾"
+	kart_kucult.tooltip_text = "Öğretici kartını aç" if Ayarlar.ders_kucuk else "Öğretici kartını küçült"
+	kart_yazi.visible = not Ayarlar.ders_kucuk
+	kart_gec.visible = not Ayarlar.ders_kucuk
+	kart.size.y = 0
 
 # ------------------------------------------------------------------ kendiliğinden ilerleme (web tzTick, axeTick, v62)
 func _process(dt: float) -> void:
@@ -239,6 +254,9 @@ func _process(dt: float) -> void:
 		kart.visible = false
 		return
 	t += dt
+	if parla > 0.0:
+		parla -= dt
+		kart_baslik.modulate = Color(1, 1, 1).lerp(Color(1.6, 1.6, 1.2), absf(sin(parla * 6.0))) if parla > 0.0 else Color.WHITE
 	if fmod(t, 0.25) >= dt: return
 	var h := func(n: String) -> int: return env.adet(n)
 	if tz == 1 and h.call("Böğürtlen") + yenen >= 3:

@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.37"
+const SURUM := "Godot · 5.38"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -447,6 +447,7 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("derskart"): _derskart_test.call_deferred()
 		if q.contains("baltakilit"): _baltakilit_test.call_deferred()
 		if q.contains("duyurutest"): _duyuru_test.call_deferred()
 		if q.contains("kusaktest"): _kusak_test.call_deferred()
@@ -914,6 +915,15 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+func _derskart_test() -> void:
+	await get_tree().create_timer(7.0).timeout
+	ogr.basla()
+	await get_tree().create_timer(0.5).timeout
+	ogr.kart_kucult.pressed.emit()
+	await get_tree().create_timer(0.3).timeout
+	print("DERS kucuk=", Ayarlar.ders_kucuk, " yazi=", ogr.kart_yazi.visible, " boy=", ogr.kart.size.y)
+	yan.ac()
 
 func _baltakilit_test() -> void:
 	await get_tree().create_timer(6.0).timeout

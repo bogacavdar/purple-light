@@ -154,6 +154,9 @@ func _process(_dt: float) -> void:
 	if G != null and G.kart != null:
 		G.kart.offset_right = -(w + 20.0)
 		G.kart.offset_left = G.kart.offset_right - 300.0
+	if oyun.ogr != null and oyun.ogr.kart != null:
+		oyun.ogr.kart.offset_right = -(w + 20.0)
+		oyun.ogr.kart.offset_left = oyun.ogr.kart.offset_right - 330.0
 	if G != null and G.ders_kart != null:
 		var kb: Control = oyun.can_cubugu.get_parent()
 		G.ders_kart.position.y = kb.position.y + kb.size.y + 8.0
