@@ -8,6 +8,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.25 · 27 Kasım 2026
+
+### Proje
+- **Godot: kıyıya vuran şişeler:** Fırtına dinince kıyıya bazen bir şişe vuruyor. İçinde ada halkının mor ışığa kaybettiği birine yazdığı bir mektup var; okunan mektuplar Kitap › Ada halkı'nda saklanıyor.
+
 ## Versiyon 5.24 · 27 Kasım 2026
 
 ### Proje
@@ -192,22 +197,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Her biyomun sonunda mağarasının canlıları ve boss'u var.
   - Tatlı su balıkları, deniz canlıları ve Yıldızsızlar için ayrı sayfalar var.
   - Yeni bir canlı avlayınca ekranda "Almanağa eklendi" yazıyor; bakmadığın yeniler düğmede kırmızı sayıyla, kartta "YENİ" etiketiyle görünüyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.05 · 27 Kasım 2026
-
-### Tasarım belgesi
-- **Boss'ların boyu:** mağara boss'ları oyuncudan büyük olur ama her biri kendi boyundadır; önemli olan her biyomun boss'unun bir öncekinden zor olmasıdır (Boğaç'ın kararı).
-
-### Proje
-- **Godot: hayvanların tutumu:**
-  - Saldırgan hayvanlar seni görünce başlarında sarı "?" ile bir an durup bakıyor; o arada uzaklaşırsan seni unutuyorlar. Dururken ve yürürken daha geç fark ediliyorsun, gizlice yaklaşabiliyorsun.
-  - Geyik, porsuk gibi nötr hayvanlar dibine girince turuncu "!" ile başını sallayıp uyarıyor; uzaklaşmazsan saldırıyor.
-  - Çok yaralanan hayvanların çoğu kan damlası bırakarak kaçmaya çalışıyor.
-  - Biyomun çok üstündeysen oradaki saldırganlar senden çekiniyor.
-  - Kurtlar tavşan, kartallar keklik avlıyor; avın leşi yerde kalıyor, derisini ve tüyünü toplayabilirsin.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---

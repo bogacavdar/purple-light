@@ -1,3 +1,7 @@
+## v5.25 (27 Kasım 2026) · Godot Son-m: kıyıya vuran şişeler
+- `godot-deneme/` yeni derleme (godot dalı: yeni sise.gd; oyun.gd kayıt `sise`; toplama.gd şişe yerde kaybolmaz; hikaye.gd Ada halkı sayfasına mektuplar; ?sisetest). Belge 99_godot Son-m. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (`sise` alanı okunmaz, zararsız).
+
 ## v5.24 (27 Kasım 2026) · Godot Son-l: işe yarayan eşyalar, meşale kuralları
 - `godot-deneme/` yeni derleme (godot dalı: balik.gd yem (_roll → _roll0), canli.gd bıçak ve mesale_yak (acc), oyun.gd bayılma çanta, ciftlik.gd Gübre, buyu.gd Ok kılıfı, mesale.gd Golem feneri/recine()/asinma(), oyuncu.gd meşale silahı ve duman, kamp.gd duman()/tütsü; girdi/ayarlar L "recine"; tools/disa_aktar_kozle.js ile 30 közlenmiş eşya (resim, items, pazar); ?islevtest). Belge 99_godot Son-l. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
@@ -73,7 +77,3 @@
 ## v5.06 (27 Kasım 2026) · Godot S5: Almanak
 - `godot-deneme/` yeni derleme (godot dalı: yeni almanak.gd (düğme, pencere, sayfalar, kartlar, ilan kuyruğu, rozet; kayıt `alm {bak, bg, a}`); oyun.gd canli_oldu → almanak.avlandi, ?almtest; girdi.gd U "almanak"; balik.gd ilk balık; magara.gd boss_gordu). Belge 99_godot S5 satırı ve Son listesi. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `alm` alanı okunmadan kalır).
-
-## v5.05 (27 Kasım 2026) · Godot S3b: hayvanların tutumu; belge boss boyu kararı
-- `godot-deneme/` yeni derleme (godot dalı: canli.gd tutum alanları `fark/uyari/kacis/kac_sans/son_vur/av/avci/yeme_t`, `_tutum_var/_iri/_cekiniyor/_suru_fark/_avlan/av_ol`; oyuncu.gd `hiz_kip`; oyun.gd `_cimen_yeri`, ?tutumtest). Belge 99_godot S3b satırı; 37_magaralar "Boss'ların görünüşü" boy kuralı (27 Kasım 2026, Boğaç). Web oyununda kod değişmedi.
-- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
