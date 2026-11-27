@@ -139,6 +139,7 @@ func _unhandled_input(e: InputEvent) -> void:
 	if kilit:
 		return
 	if oyun.yapi.yerlestiriyor(): return
+	if oyun.dokun != null and oyun.dokun.etkin and e is InputEventMouseButton: return   # dokunmatikte vuruş düğmelerle
 	if e is InputEventMouseButton and e.button_index == MOUSE_BUTTON_RIGHT:
 		if e.pressed:
 			if oyun.pencere_acik(): return
@@ -179,6 +180,7 @@ func _process(dt: float) -> void:
 	kirmizi = maxf(0.0, kirmizi - dt)
 	var g := Input.get_vector("sol", "sag", "yukari", "asagi", 0.3)
 	if g == Vector2.ZERO and oyun.kontrol != null: g = oyun.kontrol.yon()   # tıklanan yere yürüyüş
+	if g == Vector2.ZERO and oyun.dokun != null: g = oyun.dokun.yon()   # dokunmatik joystick
 	if kilit:
 		g = oto
 	if Input.is_action_just_pressed("kos_kol"):

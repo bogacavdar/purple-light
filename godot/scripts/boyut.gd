@@ -10,7 +10,16 @@ static var hafiza := {}
 
 ## pencereyi büyütülebilir yap; ad: hatırlama anahtarı
 static func bagla(p: Control, ad: String) -> void:
-	if DisplayServer.is_touchscreen_available(): return
+	if DisplayServer.is_touchscreen_available():
+		# telefonda ve tablette pencere bütün ekranı kaplar, içerik kendi içinde kayar (belge Telefonda bütün pencereler)
+		p.visibility_changed.connect(func():
+			if not p.visible: return
+			var V: Vector2 = p.get_viewport_rect().size
+			p.custom_minimum_size = V - Vector2(8, 8)
+			p.size = p.custom_minimum_size
+			p.position = Vector2(4, 4)
+			(func(): p.position = Vector2(4, 4)).call_deferred())
+		return
 	var D := {tut = "", bas = Vector2.ZERO, boy0 = Vector2.ZERO}
 	if hafiza.has(ad): p.custom_minimum_size = hafiza[ad]
 	p.gui_input.connect(func(e: InputEvent):
