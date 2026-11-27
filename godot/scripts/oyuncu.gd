@@ -348,6 +348,7 @@ func vur(d: Vector2) -> void:
 			oyun.env.mesaj("Her vuruş enerji (yeşil çubuk) harcar. Biraz geri çekil, nefeslen; enerji dolunca yine vur.")
 		return
 	st -= cost; st_dinlen = 0.0
+	if oyun.ses != null: oyun.ses.cal("swing", 0.6, randf_range(0.92, 1.08))
 	atk_cd = float(w.cd)
 	if d != Vector2.ZERO:
 		_yon_sec(d)
@@ -470,6 +471,7 @@ func kalkan_kaldir() -> void:
 ## darbe pencerede geldi: geri çevrilir (web parried)
 func savusturdu(a = null) -> void:
 	pr_n += 1
+	if oyun.ses != null: oyun.ses.cal("clank")
 	oyun.ult_ekle(10.0)
 	pr_flash = 0.25
 	pr_cd = minf(pr_cd, 0.15)
@@ -496,6 +498,7 @@ func isirildi(dmg: int, from: Vector2, a = null, renk: String = "", koru: float 
 	if renk != "" and pr_t > 0.0 and renk != "r":
 		savusturdu(a)
 		return
+	if oyun.ses != null: oyun.ses.cal("ouch", 0.8)
 	if renk != "" and oyun.evcil.binilen != null:
 		oyun.evcil.binek_vuruldu(dmg)
 		dokunulmaz = koru

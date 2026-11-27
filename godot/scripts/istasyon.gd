@@ -104,6 +104,7 @@ func _islem() -> void:
 		for p in ey.R[r].i:
 			env.eksilt(str(p[0]), int(p[1]))
 		ey.bilinen[r] = true
+		if oyun.ses != null: oyun.ses.cal("found")
 		env.xp_ekle(int(env.G.ogrenXP) + (10 if oyun.sk("Z8") else 0))
 		oyun.ogr.ogrendi(r)
 		var x: Dictionary = ey.R[r]
@@ -119,6 +120,7 @@ func _islem() -> void:
 		env.vio_ekle(-fee)
 		env.ekle(r)
 		if oyun.ist != null: oyun.ist.yapilan += 1
+		if oyun.ses != null: oyun.ses.cal("clank")
 		oyun.gorev.dovulen[r] = true
 		oyun.ogr.dovuldu(r)
 		env.mesaj("Dövüldü: %s · işçilik %d Vio" % [r, fee])

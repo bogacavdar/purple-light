@@ -151,6 +151,7 @@ func _silah(h: String) -> void:
 func at() -> void:
 	var h: String = oyun.env.elde()
 	if scd > 0.0: return
+	if oyun.ses != null: oyun.ses.cal("magic", 0.6)
 	if GUNS.has(h):
 		_silah(h)
 		return

@@ -748,6 +748,7 @@ func _etki_isle(dt: float) -> void:
 func vuruldu(dm: int, yon: Vector2) -> void:
 	if olu >= 0.0:
 		return
+	if oyun.ses != null: oyun.ses.cal("hit", 0.7, randf_range(0.9, 1.1))
 	if ders:
 		flash = 0.15
 		return

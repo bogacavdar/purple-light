@@ -57,6 +57,7 @@ func _yerdekileri_al() -> bool:
 
 func _al(d) -> void:
 	env.ekle(d.n)
+	if oyun.ses != null: oyun.ses.cal("pick", 0.8)
 	oyun.yazi(d.node.position + Vector2(0, -8), "+1 " + d.n, Color("#fff2b0"), 7)
 	for k in 5:
 		oyun.parca(d.node.position + Vector2(0, -3), Vector2(randf_range(-15, 15), -20 - randf() * 20), 0.35, Color("#fff2b0"))
@@ -178,6 +179,7 @@ func _en_yakin_agac(r: float):
 func _bitir() -> void:
 	var g := is_
 	_dur()
+	if oyun.ses != null: oyun.ses.cal("pick")
 	var o = oyun.oyuncu
 	if g.alet != "" and not env.alet_kullan(g.alet):
 		return

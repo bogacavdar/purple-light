@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Son-d"
+const SURUM := "Godot · 5.17"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -109,6 +109,7 @@ var gizli                   # gizli.gd: gizli şeyler
 var ayarlar                 # ayarlar.gd (O)
 var isaret                  # isaret.gd: kendi işaretlerin ve yol gösteren ok (T)
 var ist                     # istatistik.gd: sayaçlar ve oyun süresi
+var ses                     # ses.gd: müzik, ortam sesleri, efektler
 var hile                    # hile.gd: hile modu, ped, pencere (oturumluk)
 var arena = null            # arena.gd: yalnız arenadayken
 var kesif                   # kesif.gd: keşif defteri ve Zümrüt'ün bilmecesi
@@ -276,6 +277,9 @@ func _ready() -> void:
 	ayarlar = preload("res://scripts/ayarlar.gd").new()
 	add_child(ayarlar)
 	ayarlar.kur(self)
+	ses = preload("res://scripts/ses.gd").new()
+	add_child(ses)
+	ses.kur(self)
 	yardim_guncelle()
 	hile = preload("res://scripts/hile.gd").new()
 	add_child(hile)
@@ -357,6 +361,7 @@ func _ready() -> void:
 	# web derlemesinde adrese ?kurt ya da ?tavsan yazılırsa (denetim için) o canlı oyuncunun 5–7 kare yakınına konur
 	if OS.has_feature("web"):
 		var q := str(JavaScriptBridge.eval("location.search"))
+		if q.contains("sestest"): _ses_test.call_deferred()
 		if q.contains("kurt"):
 			_canli_koy_yakin("Kurt", 6.0)
 		if q.contains("tavsan"):
@@ -3129,3 +3134,18 @@ func durum_yukle(d: Dictionary) -> void:
 	oyuncu.hp = float(o.get("hp", oyuncu.hp_max))
 	can_guncelle(oyuncu.hp, oyuncu.hp_max)
 	kamera.reset_smoothing()
+
+## ?sestest: Bataklık'a, sonra Kül Diyarı'na götürür; müzik ve ortam sesini yazar
+func _ses_test() -> void:
+	for b in [2, 4]:
+		await get_tree().create_timer(4.0).timeout
+		for i in range(0, bio_arr.size(), 97):
+			if int(bio_arr[i]) == b and tile_at(Vector2((i % bw + bx0) * T + 8, (i / bw + by0) * T + 8)) <= 1:
+				oyuncu.position = Vector2((i % bw + bx0) * T + 8, (i / bw + by0) * T + 8)
+				break
+		await get_tree().create_timer(3.0).timeout
+		var on := []
+		for k in ses.amb:
+			if ses.amb[k].playing: on.append("%s %.0f dB" % [k, ses.amb[k].volume_db])
+		print("SES biyom ", b, " müzik ", ses.muz_ad, " ortam ", on)
+

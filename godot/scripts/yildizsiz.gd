@@ -226,6 +226,7 @@ func guc_ayarla() -> void:
 
 func basla() -> void:
 	guc_ayarla()
+	if oyun.ses != null: oyun.ses.cal("horn")
 	var gun: int = oyun.zaman.gun
 	var n := clampi(roundi((4 + gun / 5 + oyun.env.sv / 6) * 0.75), 3, 9)
 	var list := _turler(n)

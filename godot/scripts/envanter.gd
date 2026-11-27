@@ -332,6 +332,7 @@ func mesaj(t: String, kotu: bool = false) -> void:
 	l.add_theme_color_override("font_color", Color("#ffb0a0") if kotu else Color("#fff2c0"))
 	oyun._golge(l)
 	bildirim.add_child(l)
+	if kotu and oyun.ses != null: oyun.ses.cal("bad", 0.5)
 	if bildirim.get_child_count() > 4:
 		bildirim.get_child(0).queue_free()
 	await get_tree().create_timer(3.2).timeout
@@ -349,6 +350,7 @@ func vio_ekle(n: int) -> void:
 	if n < 0 and Hile.sonsuz: n = 0   # Sınırsız Vio: satın almak Vio'nu azaltmaz
 	if oyun.ist != null: oyun.ist.vio(maxi(n, -vio))
 	vio = maxi(0, vio + n)
+	if n > 0 and oyun.ses != null: oyun.ses.cal("gold" if n >= 100 else "coin", 0.7)
 	vio_yazi.text = ("%d Vio ∞" if Hile.sonsuz else "%d Vio") % vio
 
 ## web gainXP: seviye eşiği need(L) (Sv 16'ya kadar 40·1,35^(L-1), sonra 3606·(1+0,06·(L-16)))
@@ -361,6 +363,7 @@ func xp_ekle(n: int) -> void:
 		xp -= int(need[sv - 1])
 		sv += 1
 		mesaj("Seviye %d! Seviye puanı kazandın." % sv)
+		if oyun.ses != null: oyun.ses.cal("level")
 		oyun.oyuncu.yetenek_uygula()
 		if oyun.puan_ders == 0: _puan_dersi()
 	_sv_ciz()

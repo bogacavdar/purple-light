@@ -209,6 +209,7 @@ func bas() -> void:
 		env.mesaj("Daha vurmadı; şamandırayı izle.", true)
 		return
 	if fish.st == "bite":
+		if oyun.ses != null: oyun.ses.cal("splash", 0.7)
 		var hard: float = float(FISH_HARD.get(fish.catch, 1.0))
 		var w: float = float(FISH_W.get(fish.tool, 0.26)) * (1.1 if oyun.sk("H4") else 1.0) / hard * (1.08 if oyun.kesif.usta("Yiyecek") else 1.0)
 		var z0 := 0.08 + randf() * (0.84 - w)
