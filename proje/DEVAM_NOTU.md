@@ -1,3 +1,7 @@
+## v5.36 (27 Kasım 2026) · Godot: ekran ortası afişler ve doğma kuşakları
+- Godot: yeni `scripts/duyuru.gd` (gün/seviye/keşif afişleri; zaman.gd, envanter.gd, istasyon.gd, gorev.gd, kopru.gd, hava.gd onu çağırır). oyun.gd: `_ldepth_kur`, `BANDR`, `dogabilir()` (`_dogur_tur` her yerde sorar); test kancaları `duyurutest`, `kusaktest`. Geri almak: duyuru.gd'yi sil, çağrıları `env.mesaj`'a döndür; `dogabilir` satırını kaldır. Kayıt alanı yok.
+- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.35 (27 Kasım 2026) · Ekin'in hikâyesi EK3/EK5/EK8'e bağlandı (Boğaç)
 - Web: `farmer` hikâyesi (ST_ verisi, satır ~10755) ids f1–f3 → EK3/EK5/EK8, "Kızı Gül" → "Kız kardeşi Gül", Gül "Baba" yerine "Abla" der; `unlocked()` EK görevlerinin motorunu (`window.__q2.d`) da sayar. Godot: data/hikaye.json aynı. Belge 30_act1 Çiftçi Ekin › Ekin'in hikâyesi, 99_godot.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
@@ -72,8 +76,4 @@
 
 ## v5.17 (27 Kasım 2026) · Godot Son-e: sesler ve müzik
 - `godot-deneme/` yeni derleme (godot dalı: yeni ses.gd: müzik bölgeye göre çapraz geçiş, ortam döngüleri swamp/ash/surf, `cal(k)` efekt havuzu; art/ses/ 39 dosya (WAV efekt, OGG müzik/döngü) `tools/disa_aktar_ses.js` ile web sentezinden; bağlantılar envanter/toplama/istasyon/el_yapimi/oyuncu/canli/balik/buyu/yildizsiz; ?sestest). Belge 99_godot Son-e, Son-f (hava, sıradaki), Son satırından "fenerciler" çıkarıldı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
-
-## v5.16 (27 Kasım 2026) · Godot Son-d: silahçılarda bileme, Derse dön
-- `godot-deneme/` yeni derleme (godot dalı: kuzen.gd silahçıda "Aletimi bile"; dovus.gd 280 px'te Derse dön / Dersi bırak (ücret iadesi), `soruldu`; poyraz.gd gereksiz `_cik` kaldırıldı; ?dersdon). Belge 99_godot Son-d. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).

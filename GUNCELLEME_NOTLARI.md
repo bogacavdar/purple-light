@@ -8,6 +8,12 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.36 · 27 Kasım 2026
+
+### Godot denemesi
+- **Ekran ortası afişler:** yeni günün başında büyük "YENİ BİR GÜN · N. Gün" yazısı, seviye atlayınca "Seviye atladın!" afişi, ilk kez bulduğun malzeme, öğrendiğin tarif, yeni bölge, onarılan köprü ve yeni mevsim için sırayla gelen kartlar. Büyük harita ya da bir sahne açıkken çizilmezler, kapanınca gelirler.
+- **Doğma kuşakları:** Kayalık, Kül ve Mor Kristal'in girişinde güçlü canlılar artık ancak doğru seviyede çıkıyor, derinlerde her zaman; Bataklık'ta kurbağa, kurt ve timsah köprüye uzaklığa göre, Orman'da Oklu kirpi seviyeye göre doğuyor (web'deki gibi).
+
 ## Versiyon 5.35 · 27 Kasım 2026
 
 ### Oynanış
@@ -149,13 +155,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Bataklık'ta bataklık sesi, Kül Diyarı'nda kül rüzgârı, deniz kenarında hafif dalga sesi var.
   - Toplama, tarif öğrenme, yapma, örs, Vio, seviye, savurma, isabet, darbe, balık, büyü ve Yıldızsız baskını sesleri çalıyor.
   - Ses düzeyi Ayarlar'daki Müzik ve Efekt sürgülerinden.
-
-## Versiyon 5.16 · 27 Kasım 2026
-
-### Proje
-- **Godot: silahçılarda bileme ve "Derse dön":**
-  - Silahçı kuzenler de körelen aletlerini biliyor ("Aletimi bile").
-  - Börü'nün dersinden uzaklaşınca oyun duruyor, Börü soruyor: "Derse dön" seni yanına getiriyor, "Dersi bırak" ödediğin ücreti geri veriyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
