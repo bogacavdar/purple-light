@@ -228,6 +228,7 @@ func _pencere() -> void:
 	sc.add_child(liste)
 	v.add_child(sc)
 	oyun.hud.add_child(pen)
+	Boyut.bagla(pen, "yemek")
 
 func ac() -> void:
 	pen.visible = true

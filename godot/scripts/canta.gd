@@ -105,6 +105,7 @@ func kur(o, e) -> void:
 		figur.add_child(y)
 		_yuva_d[k] = y
 	visible = false
+	Boyut.bagla(self, "canta")
 
 func _kare(s: Vector2) -> PanelContainer:
 	var p := PanelContainer.new()

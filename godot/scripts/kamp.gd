@@ -283,6 +283,7 @@ func _pencere() -> void:
 	sc.add_child(liste)
 	v.add_child(sc)
 	oyun.hud.add_child(pen)
+	Boyut.bagla(pen, "ates")
 
 func ac(F: Dictionary) -> void:
 	FO = F

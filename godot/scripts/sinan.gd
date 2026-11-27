@@ -20,6 +20,7 @@ func kur(o) -> void:
 	var st := StyleBoxFlat.new(); st.bg_color = Color("#1c2419"); st.border_color = Color("#c9a24a"); st.set_border_width_all(2); st.set_content_margin_all(10)
 	pencere.add_theme_stylebox_override("panel", st)
 	add_child(pencere)
+	Boyut.bagla(pencere, "sinan")
 	var v := VBoxContainer.new(); pencere.add_child(v)
 	baslik = Label.new(); baslik.add_theme_font_size_override("font_size", 17); baslik.add_theme_color_override("font_color", Color("#f2c94c"))
 	v.add_child(baslik)

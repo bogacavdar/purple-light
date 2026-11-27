@@ -506,7 +506,7 @@ func _rozet() -> void:
 func _process(dt: float) -> void:
 	if oyun == null: return
 	var alm = oyun.almanak
-	if alm != null and alm.dugme != null:
+	if alm != null and alm.dugme != null and not (dugme.get_parent() is Container):
 		dugme.size.y = alm.dugme.size.y
 		dugme.position = Vector2(alm.dugme.position.x - dugme.size.x - 6, alm.dugme.position.y)
 	dugme.visible = not oyun.basta and oyun.arena == null

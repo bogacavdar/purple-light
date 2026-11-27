@@ -131,6 +131,7 @@ func _arayuz() -> void:
 	pencere.add_child(v)
 	pencere.visible = false
 	oyun.hud.add_child(pencere)
+	Boyut.bagla(pencere, "el")
 	pencere.set_anchors_and_offsets_preset(Control.PRESET_CENTER, Control.PRESET_MODE_MINSIZE)
 
 func _ikonlu(n: String, yazi: String, renk: Color) -> HBoxContainer:

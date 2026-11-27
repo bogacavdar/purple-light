@@ -39,6 +39,7 @@ func kur(o) -> void:
 	pencere.add_child(v)
 	pencere.visible = false
 	oyun.hud.add_child(pencere)
+	Boyut.bagla(pencere, "pazar")
 	pencere.set_anchors_and_offsets_preset(Control.PRESET_CENTER, Control.PRESET_MODE_MINSIZE)
 
 var baslik_ad := "Pazarcı Nazlı"

@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.30"
+const SURUM := "Godot · 5.31"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -120,6 +120,7 @@ var yazilimci               # yazilimci.gd: gece beliren Boğaç
 var istem                   # istem.gd: F'nin ne yapacağını söyleyen eylem ipucu
 var kopek                   # kopek.gd: robot köpeklerin gizli günlüğü (ACT 3)
 var imlec                   # imlec.gd: mor ışıkta piksel el imleci
+var hud_menu                # hud_menu.gd: sol kare düğmeler, sağ üst düğmeler, büyük çubuklar
 var hile                    # hile.gd: hile modu, ped, pencere (oturumluk)
 var arena = null            # arena.gd: yalnız arenadayken
 var kesif                   # kesif.gd: keşif defteri ve Zümrüt'ün bilmecesi
@@ -372,6 +373,9 @@ func _ready() -> void:
 	imlec = preload("res://scripts/imlec.gd").new()
 	add_child(imlec)
 	imlec.kur(self)
+	hud_menu = preload("res://scripts/hud_menu.gd").new()
+	add_child(hud_menu)
+	hud_menu.kur(self)
 	balon_yazi = Label.new()
 	balon_yazi.add_theme_font_size_override("font_size", 14)
 	balon_yazi.add_theme_color_override("font_color", Color("#2a1e14"))
