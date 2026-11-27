@@ -1,3 +1,7 @@
+## v5.07 (27 Kasım 2026) · Godot S6: Başarımlar
+- `godot-deneme/` yeni derleme (godot dalı: yeni basarim.gd (49 başarım, cihaz kaydı user://basarim.json, kart, liste, rozet; kayıt yuvasında `bsr {f}`); kancalar: oyun.gd canli_oldu/bayil/agac_devrildi, envanter.gd ekle, toplama.gd düğüm; ?bsrtest). Belge 99_godot S6 ve S7 satırları. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıttaki `bsr` alanı okunmadan kalır; cihazdaki user://basarim.json kalır, zararsız).
+
 ## v5.06 (27 Kasım 2026) · Godot S5: Almanak
 - `godot-deneme/` yeni derleme (godot dalı: yeni almanak.gd (düğme, pencere, sayfalar, kartlar, ilan kuyruğu, rozet; kayıt `alm {bak, bg, a}`); oyun.gd canli_oldu → almanak.avlandi, ?almtest; girdi.gd U "almanak"; balik.gd ilk balık; magara.gd boss_gordu). Belge 99_godot S5 satırı ve Son listesi. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `alm` alanı okunmadan kalır).
@@ -72,8 +76,4 @@
 
 ## v4.88 (27 Kasım 2026) · Godot O8: ACT 1'in sonu
 - `godot-deneme/` yeni derleme (godot dalı: kuzen.gd gemi/act2 bayrakları (tanis'te), enkaz_f, _teklif, yolculuk sahnesi ve ACT 2 kartı, yeni gemi çizimi; gorev.gd "ship" adımı; oyun.gd F sırasında enkaz, enkaza tekne yeri; yeni tools/disa_aktar_yolculuk.js → art/yolculuk 111 kare + data/yolculuk.json). Denetim: ?gemitest. Belge 99_godot O8 satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.87 (27 Kasım 2026) · Godot O7: Ada halkı hikâyeleri; kalan plan
-- `godot-deneme/` yeni derleme (godot dalı: yeni hikaye.gd (parçalar, sahne oynatıcı, Kitap sayfası, kayıt `hikaye`); yeni tools/disa_aktar_hikaye.js → data/hikaye.json + art/hikaye 290 kare (oyunun kendi sahne çiziminden); konusma.gd seçeneği ekler; el_yapimi.gd Ada halkı düğmesi). Denetim: ?hikayetest. Belge 99_godot: kalan plan tablosu ve O7 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et.

@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.07 · 27 Kasım 2026
+
+### Proje
+- **Godot: Başarımlar:**
+  - 49 başarımın hepsi listede; küçük haritanın üstünde, Almanak'ın yanında "Başarımlar" düğmesi var.
+  - Kazanınca ekranın ortasında altın bir kart çıkıyor; tıklayınca hemen kayboluyor.
+  - Listede gizliler ??? görünüyor, ötekilerde ilerleme çubuğu var (ör. Balıkçı 3 / 10); bakmadığın yeni başarımlar düğmede kırmızı sayıyla gösteriliyor.
+  - Başarımlar cihaza kaydediliyor, bütün kayıt yuvaları için ortak.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.06 · 27 Kasım 2026
 
 ### Proje
@@ -223,17 +235,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Barbaros'la konuşunca önce hikâyesi ve sahnesi geliyor, sonra seni başka bir adaya götürmeyi teklif ediyor.
   - Deniz yolculuğu sahnesi ve "ACT 2 · Açık deniz" kartı geldi. İkinci ada sıradaki adımda gelecek; şimdilik yolculuk bitince kıyıya dönüyorsun.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.87 · 27 Kasım 2026
-
-### Proje
-- **Godot: Ada halkı hikâyeleri:**
-  - Görevlerini yaptıkça herkes adaya nasıl geldiğini parça parça anlatıyor; seçenek kişinin konuşmasında çıkıyor.
-  - Bütün parçaları duyunca "O geceyi anlat" ile o kişinin sahnesi oynuyor. Zümrüt, Dursun, Durmuş ve kuzenlerin ortak aile sahnesi de var.
-  - Tarif kitabında (K) yeni "Ada halkı" sayfası var.
-- **Tasarım belgesi:** Godot'a taşımanın kalan planı adım adım yazıldı (ACT 1'in sonu, ikinci ada ve altı biyomu, en sonda eksikler).
-- Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
