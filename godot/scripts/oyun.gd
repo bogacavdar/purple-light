@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Son-c"
+const SURUM := "Godot · Son-d"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -412,6 +412,7 @@ func _ready() -> void:
 		if q.contains("kupatest"): _kupa_test.call_deferred(q)
 		if q.contains("isrtest"): _isr_test.call_deferred(q)
 		if q.contains("sontest"): _son_test.call_deferred(q)
+		if q.contains("dersdon"): _dersdon_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -1350,6 +1351,29 @@ func _cimen_yeri() -> bool:
 				oyuncu.position = q
 				return true
 	return false
+
+func _dersdon_test(_q: String) -> void:
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	var alp = alp_dugum()
+	oyuncu.position = alp.position + Vector2(40, 40)
+	env.vio_ekle(5000)
+	var L: Dictionary = dovus.DERSLER[0]
+	dovus.basla(L, alp)
+	var v0: int = env.vio
+	await get_tree().create_timer(0.5).timeout
+	oyuncu.position = alp.position + Vector2(300, 0)
+	await get_tree().create_timer(0.5).timeout
+	print("DERS soru ", konusma.visible, " duraklı ", get_tree().paused, " yazı ", konusma.yazi.text.substr(0, 30))
+	konusma._cik()
+	await get_tree().create_timer(0.3).timeout
+	print("DERS döndü uzaklık ", int(oyuncu.position.distance_to(alp.position)), " ders açık ", dovus.acik(), " duraklı ", get_tree().paused)
+	oyuncu.position = alp.position + Vector2(-300, 0)
+	await get_tree().create_timer(0.5).timeout
+	konusma._sec(konusma.liste[1])
+	await get_tree().create_timer(0.3).timeout
+	print("DERS bırakıldı açık ", dovus.acik(), " vio geri ", env.vio - v0, " ücret ", L.ucret)
 
 func _son_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout

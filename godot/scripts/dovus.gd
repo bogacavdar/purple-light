@@ -117,6 +117,8 @@ func _dogur() -> void:
 	can_.set_meta("ders", true)
 	h = p
 
+var soruldu := false
+
 func birak(neden := "") -> void:
 	if can_ != null and is_instance_valid(can_): can_.queue_free()
 	can_ = null
@@ -172,8 +174,30 @@ func _process(dt: float) -> void:
 	if not acik() or get_tree().paused: return
 	var P = oyun.oyuncu
 	var alp = oyun.alp_dugum()
-	if alp != null and P.position.distance_to(alp.position) > 320.0:
-		birak("Ders yarım kaldı. Börü'ye dönünce yeniden başlayabilirsin (ücret yine alınmaz).")
+	if alp != null and P.position.distance_to(alp.position) > 280.0 and not soruldu:
+		# belge: 280 pikselden uzağa gidince oyun durur, "Derse dön / Dersi bırak" sorulur
+		soruldu = true
+		get_tree().paused = true
+		oyun.konusma.ac(alp.K.ad, _por(alp), "Nereye evlat? Ders bitmedi!", [
+			{t = "Derse dön", pri = true, f = func():
+				soruldu = false
+				var q: Vector2 = alp.position + Vector2(0, 140)
+				for i in 12:
+					var a := i * TAU / 12.0
+					var w: Vector2 = alp.position + Vector2(cos(a), sin(a)) * 140.0
+					if not oyun.engel(w, 5.0): q = w; break
+				P.position = q
+				get_tree().paused = false},
+			{t = "Dersi bırak", f = func():
+				soruldu = false
+				var L: Dictionary = D
+				if odendi.has(L.k) and not oyun.kuzen.tanis.has("ders_" + L.k):
+					odendi.erase(L.k)
+					oyun.env.vio_ekle(int(L.ucret))
+					birak("Ders bırakıldı · %d Vio geri verildi" % int(L.ucret))
+				else:
+					birak("Ders bırakıldı")
+				get_tree().paused = false}])
 		return
 	if can_ == null or not is_instance_valid(can_):
 		_dogur()

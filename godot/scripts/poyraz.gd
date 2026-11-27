@@ -112,9 +112,7 @@ func konus(_n) -> void:
 		return
 	if ph >= 2:
 		_soyle(["Rüzgâr iyi, deniz çağırıyor. Açılalım mı?", "Ağlar kurudu, olta hazır. Nereye gidiyoruz kaptan?", "Tuzlu bir sabah! Denize çıkalım mı evlat?"][randi() % 3],
-			[{t = "Denize açılalım", pri = true, f = harita_ac}, {t = "Balık defteri", f = func():
-				oyun.konusma._cik()
-				oyun.almanak.ac("deniz")}, {t = "Nereden geliyorsun?", f = _hikaye}, {t = "Hoşça kal", kapat = true}])
+			[{t = "Denize açılalım", pri = true, f = harita_ac}, {t = "Balık defteri", f = func(): oyun.almanak.ac("deniz")}, {t = "Nereden geliyorsun?", f = _hikaye}, {t = "Hoşça kal", kapat = true}])
 		return
 	_soyle(["Tekne yüzmedikçe ben de bu kumdan kalkmam.", "Bir çivi, bir halat… Tekne yavaş yavaş toparlanıyor.", "Deniz beni buraya attı, sen de bana yardım ediyorsun. Kısmet."][randi() % 3], [{t = "Nereden geliyorsun?", f = _hikaye}, {t = "Hoşça kal", pri = true, kapat = true}])
 

@@ -83,7 +83,11 @@ func _kuzen(n, ac_kazan: bool) -> void:
 				return
 			_soyle(n, soz, [{t = "Tarif öğren", pri = true, f = func(): oyun.istasyon.ac("kazan", str(C.short))}, about, {t = "Kuzen misiniz?", f = _kuzenlik.bind(n)}, {t = "Hoşça kal", kapat = true}])
 		"s":
-			_soyle(n, soz, [{t = "Silah dök", pri = true, f = func(): oyun.istasyon.ac(K.k)}, about, {t = "Hoşça kal", kapat = true}])
+			var ss := [{t = "Silah dök", pri = true, f = func(): oyun.istasyon.ac(K.k)}]
+			var bl: Dictionary = oyun.bileme()
+			if not bl.is_empty(): ss.append({t = "Aletimi bile (%d Vio)" % int(bl.ucret), f = func(): oyun.bile(K, load(K.portre) if K.get("portre", null) != null else null)})
+			ss.append(about); ss.append({t = "Hoşça kal", kapat = true})
+			_soyle(n, soz, ss)
 		"a":
 			_soyle(n, soz, [{t = "Zırh döv", pri = true, f = func(): oyun.istasyon.ac(K.k)}, about, {t = "Hoşça kal", kapat = true}])
 
