@@ -14,7 +14,7 @@ var amb := {}            # ad → AudioStreamPlayer
 var amb_t := 0.0
 var son := {}            # ad → son çalış (sık tekrarı kes)
 const BMUS := ["ada", "orman", "sis", "dag", "derinlik", "kristal"]
-const AMB_SES := {"swamp": 0.55, "ash": 0.6, "surf": 0.12}
+const AMB_SES := {"swamp": 0.55, "ash": 0.6, "surf": 0.12, "rain": 0.5, "wind": 0.45}
 const ARA := {"pick": 0.06, "coin": 0.08, "hit": 0.05, "swing": 0.06, "bad": 0.25, "growl": 0.8, "ouch": 0.12, "found": 0.2}
 
 func kur(o) -> void:
@@ -93,11 +93,16 @@ func _process(dt: float) -> void:
 	amb_t = 0.5
 	var acik: bool = not oyun.basta and not oyun.cine.acik and not get_tree().paused and not (oyun.magara != null and oyun.magara.icinde)
 	var b2: int = oyun.bio_at(oyun.oyuncu.position)
-	var istek := {"swamp": acik and b2 == 2 and oyun.ada == 1, "ash": acik and b2 == 4 and oyun.ada == 1, "surf": acik and _deniz_yakin()}
+	var H = oyun.hava
+	var yag: bool = H != null and H.yagiyor()
+	var istek := {"swamp": acik and b2 == 2 and oyun.ada == 1, "ash": acik and b2 == 4 and oyun.ada == 1, "surf": acik and not (H != null and H.sisli()) and _deniz_yakin(),
+		"rain": acik and yag and not H.kul_firtinasi() and not H.kar_yagiyor(), "wind": acik and H != null and (H.k == "fırtına" or H.kul_firtinasi())}
 	for k in amb:
 		var a: AudioStreamPlayer = amb[k]
 		if a.stream == null: continue
-		var hedef: float = linear_to_db(float(AMB_SES[k])) if istek[k] else -80.0
+		var hv := float(AMB_SES[k])
+		if k == "rain" and H != null and H.k == "fırtına": hv = 0.7
+		var hedef: float = linear_to_db(hv) if istek[k] else -80.0
 		if istek[k] and not a.playing: a.play()
 		a.volume_db = lerpf(a.volume_db, hedef, 0.4)
 		if not istek[k] and a.volume_db < -60.0 and a.playing: a.stop()

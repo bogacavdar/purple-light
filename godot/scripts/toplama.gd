@@ -69,6 +69,7 @@ func _dusen_sil(d) -> void:
 
 ## web dropItem: eşya oyuncudan uzağa doğru 12–21 px fırlar
 func dusur(n: String, p: Vector2, q: int = 1) -> void:
+	if mevsim_k != "" and oyun.hava != null: q = oyun.hava.adet(n, q, mevsim_k == "agac")
 	var o = oyun.oyuncu
 	for i in q:
 		var uzak := atan2(p.y - o.position.y, p.x - o.position.x)
@@ -176,8 +177,15 @@ func _en_yakin_agac(r: float):
 			en = ag
 	return en
 
+var mevsim_k := ""   # toplarken: "dugum" ya da "agac" (hava.adet mevsime göre adet verir)
+
 func _bitir() -> void:
 	var g := is_
+	mevsim_k = "dugum" if g.tur == "dugum" else "agac"
+	_bitir2(g)
+	mevsim_k = ""
+
+func _bitir2(g: Dictionary) -> void:
 	_dur()
 	if oyun.ses != null: oyun.ses.cal("pick")
 	var o = oyun.oyuncu

@@ -172,10 +172,10 @@ func _roll(w: Vector2) -> String:
 	if oyun.zaman.gece_mi() and randf() < 0.05: return "Mor kıymık"
 	if randf() < 0.05: return ["Dal", "Yosun", "Kemik"][randi() % 3]
 	var s := 0.0
-	for a in L: s += float(a[1])
+	for a in L: s += float(a[1]) * oyun.hava.balik_agirlik(str(a[0]))
 	var r := randf() * s
 	for a in L:
-		r -= float(a[1])
+		r -= float(a[1]) * oyun.hava.balik_agirlik(str(a[0]))
 		if r <= 0.0: return str(a[0])
 	return str(L[0][0])
 
@@ -192,7 +192,7 @@ func _basla(w: Vector2) -> void:
 	if oyun.tile_at(w) == 4:
 		env.mesaj("Bu derin suda kıyıdan balık tutulmaz. Poyraz'ın teknesiyle denize açıl." if oyun.poyraz.ph >= 2 else "Kıyıdan açık denize olta yetmez; nehirleri ve gölleri dene.", true)
 		return
-	fish = {st = "wait", t = 0.0, need = (2.0 + randf() * 4.0) * (1.15 if oyun.zaman.gece_mi() else 1.0), p = w, tool = tool, from = oyun.oyuncu.position, catch = _roll(w), miss = 0, pos = 0.0, dir = 1.0, z0 = 0.0, z1 = 0.0, spd = 0.0}
+	fish = {st = "wait", t = 0.0, need = (2.0 + randf() * 4.0) * (1.15 if oyun.zaman.gece_mi() else 1.0) * oyun.hava.balik_kat(), p = w, tool = tool, from = oyun.oyuncu.position, catch = _roll(w), miss = 0, pos = 0.0, dir = 1.0, z0 = 0.0, z1 = 0.0, spd = 0.0}
 	for k in 6: oyun.parca(w, Vector2(randf_range(-20, 20), -15 - randf() * 15), 0.4, Color("#cfe8ff"))
 	if oyun.gizli != null: oyun.gizli.olta(w)
 	_ipucu("fish1", "Şamandıra dalınca hemen E (ya da Boşluk) bas; sonra ibre yeşil alandayken bir daha bas.")

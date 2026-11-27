@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.17"
+const SURUM := "Godot · 5.18"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -110,6 +110,7 @@ var ayarlar                 # ayarlar.gd (O)
 var isaret                  # isaret.gd: kendi işaretlerin ve yol gösteren ok (T)
 var ist                     # istatistik.gd: sayaçlar ve oyun süresi
 var ses                     # ses.gd: müzik, ortam sesleri, efektler
+var hava                    # hava.gd: hava, mevsim, sıcaklık, kar
 var hile                    # hile.gd: hile modu, ped, pencere (oturumluk)
 var arena = null            # arena.gd: yalnız arenadayken
 var kesif                   # kesif.gd: keşif defteri ve Zümrüt'ün bilmecesi
@@ -335,6 +336,9 @@ func _ready() -> void:
 	zaman = preload("res://scripts/zaman.gd").new()
 	add_child(zaman)
 	zaman.kur(self)
+	hava = preload("res://scripts/hava.gd").new()
+	add_child(hava)
+	hava.kur(self)
 	balon_yazi = Label.new()
 	balon_yazi.add_theme_font_size_override("font_size", 14)
 	balon_yazi.add_theme_color_override("font_color", Color("#2a1e14"))
@@ -362,6 +366,7 @@ func _ready() -> void:
 	if OS.has_feature("web"):
 		var q := str(JavaScriptBridge.eval("location.search"))
 		if q.contains("sestest"): _ses_test.call_deferred()
+		if q.contains("havatest"): _hava_test.call_deferred(q)
 		if q.contains("kurt"):
 			_canli_koy_yakin("Kurt", 6.0)
 		if q.contains("tavsan"):
@@ -2970,7 +2975,7 @@ func _durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), tlsm = tilsimlar.keys(), isr = isaret.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), hava = hava.kayit(), tlsm = tilsimlar.keys(), isr = isaret.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 ## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
@@ -3108,6 +3113,7 @@ func durum_yukle(d: Dictionary) -> void:
 	harita_k.yukle(d.get("kesif", ""))
 	buyu.yukle(d.get("buyu", {}))
 	ys.yukle(d.get("ys", {}))
+	hava.yukle(d.get("hava", {}))
 	almanak.yukle(d.get("alm", {}))
 	basarim.yukle(d.get("bsr", {}))
 	kesif.yukle(d.get("kdef", {}))
@@ -3148,4 +3154,24 @@ func _ses_test() -> void:
 		for k in ses.amb:
 			if ses.amb[k].playing: on.append("%s %.0f dB" % [k, ses.amb[k].volume_db])
 		print("SES biyom ", b, " müzik ", ses.muz_ad, " ortam ", on)
+
+## ?havatest=yagmur|kar|sis|kul: havayı kurar, sıcaklık ve durumu yazar
+func _hava_test(q: String) -> void:
+	await get_tree().create_timer(2.0).timeout
+	if q.contains("kar"):
+		zaman.gun = 24; zaman.dk = 300.0; hava.k = "fırtına"; hava.kar = 0.7
+	elif q.contains("sis"):
+		hava.k = "sis"
+	elif q.contains("kul"):
+		hava.k = "yağmur"
+		for i in range(0, bio_arr.size(), 53):
+			if int(bio_arr[i]) == 4 and tile_at(Vector2((i % bw + bx0) * T + 8, (i / bw + by0) * T + 8)) <= 1:
+				oyuncu.position = Vector2((i % bw + bx0) * T + 8, (i / bw + by0) * T + 8); break
+	elif q.contains("bahar"):
+		zaman.gun = 3; hava.k = "açık"
+	else:
+		zaman.gun = 16; hava.k = "fırtına"
+	hava.t = 999.0
+	await get_tree().create_timer(2.5).timeout
+	print("HAVA ", hava.ad(), " mevsim ", hava.mevsim(), " sıcaklık ", hava.sicaklik_yazi(), " kar ", hava.kar, " gece_sn ", hava.gece_sn(), " saat ", zaman.saat_yazi.text)
 

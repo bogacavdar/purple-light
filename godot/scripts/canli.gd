@@ -243,7 +243,7 @@ func _process(dt: float) -> void:
 		mad = false
 	if tut:
 		# fark etme: dururken alanın %55'i, yürürken %80'i, koşarken tamamı; önce "?" ile durup bakar
-		var ak: float = aggro * [0.55, 0.8, 1.0][int(P.hiz_kip)]
+		var ak: float = aggro * [0.55, 0.8, 1.0][int(P.hiz_kip)] * (oyun.hava.fark_kat() if oyun.hava != null else 1.0)
 		if saldirgan and not mad and not P.bayildi and not P.kilit and not oyun.zaman.kampta(P.position):
 			if fark < 0.0 and d < ak:
 				fark = 0.35 if (oyun.ada == 2 or oyun.bio_at(position) == 5) else 0.7

@@ -74,7 +74,7 @@ func _process(dt: float) -> void:
 	var dur := durdu()
 	if not dur:
 		var b := dk
-		dk += ((840.0 / 480.0) if (dk >= 360.0 and dk < 1200.0) else (600.0 / float(A.geceSn))) * dt
+		dk += ((840.0 / 480.0) if (dk >= 360.0 and dk < 1200.0) else (600.0 / (oyun.hava.gece_sn() if oyun.hava != null else float(A.geceSn)))) * dt
 		if dk >= 1440.0: dk -= 1440.0
 		if b < 360.0 and dk >= 360.0:
 			gun += 1
@@ -95,7 +95,7 @@ func _process(dt: float) -> void:
 
 func _saat_yaz() -> void:
 	var m := int(dk)
-	saat_yazi.text = "Gün %d · %02d:%02d" % [gun, m / 60, m % 60]
+	saat_yazi.text = "Gün %d · %02d:%02d" % [gun, m / 60, m % 60] + (oyun.hava.saat_ek() if oyun.hava != null else "")
 
 ## ışık var mı (web litAt + nearCamp + meşale)
 func isikta(p: Vector2) -> bool:

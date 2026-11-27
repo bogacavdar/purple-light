@@ -144,7 +144,7 @@ func _yenir(n: String) -> bool:
 
 func _process(dt: float) -> void:
 	# web tickHunger: bir günde (720 sn) boşalır; ilk iki gün yarı hızla (günler Godot'da henüz yok: ilk günler sayılır)
-	tokluk = maxf(0.0, tokluk - float(G.hunger.perSec) * 0.5 * (0.75 if oyun.sk("D13") else 1.0) * (0.8 if oyun.kesif != null and oyun.kesif.usta("Yiyecek") else 1.0) * dt)
+	tokluk = maxf(0.0, tokluk - float(G.hunger.perSec) * 0.5 * (0.75 if oyun.sk("D13") else 1.0) * (0.8 if oyun.kesif != null and oyun.kesif.usta("Yiyecek") else 1.0) * (1.25 if oyun.hava != null and oyun.hava.canli() and oyun.hava.mevsim() == 3 else 1.0) * dt)
 	tok_cubuk.value = tokluk
 	if tokluk <= 0.0 and not oyun.oyuncu.bayildi:
 		aclik_hasar += dt

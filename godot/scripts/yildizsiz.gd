@@ -106,6 +106,13 @@ func _doku(k: String) -> void:
 func aktif() -> bool:
 	return ATK != null
 
+## Mor gece: güvenli yerde değilsen saldırı hemen gelir (o gecenin sıradaki saldırısı ayrıca gelmez)
+func zorla() -> bool:
+	if ATK != null or _bekle() or _siginak() or oyun.gizli.yildizli(): return false
+	if sira == oyun.zaman.gun: sira = _serbest(oyun.zaman.gun + 1)
+	basla()
+	return true
+
 func _serbest(d: int) -> int:
 	while d <= 3 or OZEL.has(d): d += 1
 	return d
