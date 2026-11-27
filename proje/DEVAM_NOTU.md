@@ -1,3 +1,7 @@
+## v5.26 (27 Kasım 2026) · Godot Son-n: gece beliren yazılımcı
+- `godot-deneme/` yeni derleme (godot dalı: yeni yazilimci.gd; oyun.gd kayıt `v330dev`; ?devtest). Belge 99_godot Son-n. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (`v330dev` alanı okunmaz, zararsız).
+
 ## v5.25 (27 Kasım 2026) · Godot Son-m: kıyıya vuran şişeler
 - `godot-deneme/` yeni derleme (godot dalı: yeni sise.gd; oyun.gd kayıt `sise`; toplama.gd şişe yerde kaybolmaz; hikaye.gd Ada halkı sayfasına mektuplar; ?sisetest). Belge 99_godot Son-m. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (`sise` alanı okunmaz, zararsız).
@@ -73,7 +77,3 @@
 ## v5.07 (27 Kasım 2026) · Godot S6: Başarımlar
 - `godot-deneme/` yeni derleme (godot dalı: yeni basarim.gd (49 başarım, cihaz kaydı user://basarim.json, kart, liste, rozet; kayıt yuvasında `bsr {f}`); kancalar: oyun.gd canli_oldu/bayil/agac_devrildi, envanter.gd ekle, toplama.gd düğüm; ?bsrtest). Belge 99_godot S6 ve S7 satırları. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `bsr` alanı okunmadan kalır; cihazdaki user://basarim.json kalır, zararsız).
-
-## v5.06 (27 Kasım 2026) · Godot S5: Almanak
-- `godot-deneme/` yeni derleme (godot dalı: yeni almanak.gd (düğme, pencere, sayfalar, kartlar, ilan kuyruğu, rozet; kayıt `alm {bak, bg, a}`); oyun.gd canli_oldu → almanak.avlandi, ?almtest; girdi.gd U "almanak"; balik.gd ilk balık; magara.gd boss_gordu). Belge 99_godot S5 satırı ve Son listesi. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıttaki `alm` alanı okunmadan kalır).

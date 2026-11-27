@@ -8,6 +8,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.26 · 27 Kasım 2026
+
+### Proje
+- **Godot: gece beliren yazılımcı:** Gerçek saat gece 02:00 ile 06:00 arasındaysa, oyunun gecesinde bir yerde gözlüklü Boğaç beliriyor. Yanına gidince saatin kaç olduğunu söyleyip oyunu kapattırıyor.
+
 ## Versiyon 5.25 · 27 Kasım 2026
 
 ### Proje
@@ -184,19 +189,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Kazanınca ekranın ortasında altın bir kart çıkıyor; tıklayınca hemen kayboluyor.
   - Listede gizliler ??? görünüyor, ötekilerde ilerleme çubuğu var (ör. Balıkçı 3 / 10); bakmadığın yeni başarımlar düğmede kırmızı sayıyla gösteriliyor.
   - Başarımlar cihaza kaydediliyor, bütün kayıt yuvaları için ortak.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.06 · 27 Kasım 2026
-
-### Proje
-- **Godot: Almanak:**
-  - Küçük haritanın üstünde "Almanak (U)" düğmesi var.
-  - Gezdiğin her biyomun canlıları kart kart görünüyor: ilk avlayana kadar siyah gölge ve ???, avlayınca resmi, huyu, canı, hasarı, özel hamlesi, düşürdükleri ve Reis sayacı. Reis'i yenilince kart altın oluyor.
-  - Her biyomun sonunda mağarasının canlıları ve boss'u var.
-  - Tatlı su balıkları, deniz canlıları ve Yıldızsızlar için ayrı sayfalar var.
-  - Yeni bir canlı avlayınca ekranda "Almanağa eklendi" yazıyor; bakmadığın yeniler düğmede kırmızı sayıyla, kartta "YENİ" etiketiyle görünüyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
