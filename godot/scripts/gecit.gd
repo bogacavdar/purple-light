@@ -63,7 +63,7 @@ func f() -> bool:
 	if k < 2 or _kazma() < 4:
 		env.mesaj("Geçidi kapatan kaya yığını. Açmak için %s2 kaya patlatıcı gerekli (sende %d). %s: yarasa gübresi, turba, tuz ve bir çömlek." % ["bir kuvars ya da çelik kazma (ya da daha iyisi) ve " if _kazma() < 4 else "", k, "Patlatıcıyı Yıldızsız Ada'da Kemal anlatır" if oyun.ada == 2 else "Patlatıcıyı Kemal anlatır"], true)
 		return true
-	oyun.konusma.ac("", null, "[b]Kaya yığını[/b]\n2 kaya patlatıcı harcanacak. Kayalar patlatılsın mı?", [{t = "Patlat", f = _patlat}, {t = "Vazgeç", pri = true, kapat = true}])
+	oyun.konusma.onay("[b]Kaya yığını[/b]\n2 kaya patlatıcı harcanacak. Kayalar patlatılsın mı?", _patlat, "Patlat")
 	return true
 
 func _patlat() -> void:

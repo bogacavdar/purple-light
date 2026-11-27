@@ -84,7 +84,7 @@ func f() -> bool:
 	if w < ODUN:
 		env.mesaj("Köprüyü onarmak için %d odun gerekli (sende %d). %s" % [ODUN, w, "Ağaç kes; her tür odun olur." if _baltan_var() else "Önce bir taş balta yap."], true)
 		return true
-	oyun.konusma.ac("", null, "[b]%s[/b]\n%d odun harcanacak. Köprü onarılsın mı?" % ["Ana köprü" if b.main else "Kısayol köprüsü", ODUN], [{t = "Onar", f = _onar.bind(b)}, {t = "Vazgeç", pri = true, kapat = true}])
+	oyun.konusma.onay("[b]%s[/b]\n%d odun harcanacak. Köprü onarılsın mı?" % ["Ana köprü" if b.main else "Kısayol köprüsü", ODUN], _onar.bind(b), "Onar")
 	return true
 
 func _baltan_var() -> bool:

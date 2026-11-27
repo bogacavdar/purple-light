@@ -160,11 +160,11 @@ func enkaz_f() -> bool:
 		for x in oyun.el_yapimi.R["Gemi"].i: L.append("%d/%d %s" % [mini(oyun.env.adet(str(x[0])), int(x[1])), int(x[1]), x[0]])
 		oyun.env.mesaj("Gemi için: " + " · ".join(L), true)
 		return true
-	oyun.konusma.ac("", null, "[b]Barbaros'un enkazı[/b]\n8 kalas, 4 halat, 3 demir levha, 6 hasır ve 2 kristal ipek enkaza konacak. Gemi kurulsun mu?", [{t = "Kur", f = func():
+	oyun.konusma.onay("[b]Barbaros'un enkazı[/b]\n8 kalas, 4 halat, 3 demir levha, 6 hasır ve 2 kristal ipek enkaza konacak. Gemi kurulsun mu?", func():
 		for x in oyun.el_yapimi.R["Gemi"].i: oyun.env.eksilt(str(x[0]), int(x[1]))
 		tanis["gemi"] = true
 		for i in 30: oyun.parca(oyun.enkaz.position + Vector2(randf_range(-30, 30), 0), Vector2(randf_range(-25, 25), -30 - randf() * 50), 0.9, Color("#c89458") if i % 2 else Color("#ffe29b"))
-		oyun.balon("İşte ACT 1'in sonu… ya da başlangıcı.", 3.6)}, {t = "Vazgeç", pri = true, kapat = true}])
+		oyun.balon("İşte ACT 1'in sonu… ya da başlangıcı.", 3.6), "Kur")
 	return true
 
 func yolculuk(tekrar: bool) -> void:

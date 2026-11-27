@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.40"
+const SURUM := "Godot · 5.41"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -451,6 +451,7 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("onaytest"): _onay_test.call_deferred()
 		if q.contains("taklatest"): _takla_test.call_deferred()
 		if q.contains("kademetest"): q_kademe_yavas = q.contains("yavas"); _kademe_test.call_deferred()
 		if q.contains("derskart"): _derskart_test.call_deferred()
@@ -921,6 +922,22 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+func _onay_test() -> void:
+	await get_tree().create_timer(6.0).timeout
+	var sonuc := []
+	konusma.onay("[b]Kaya yığını[/b]\n2 kaya patlatıcı harcanacak. Kayalar patlatılsın mı?", func(): sonuc.append("evet"), "Patlat")
+	await get_tree().create_timer(0.3).timeout
+	konusma._cik()
+	print("ONAY disari ", sonuc, " acik ", konusma.visible)
+	konusma.onay("[b]Ana köprü[/b]\n10 odun harcanacak. Köprü onarılsın mı?", func(): sonuc.append("evet"), "Onar")
+	await get_tree().create_timer(0.3).timeout
+	var ev := InputEventKey.new(); ev.keycode = KEY_ENTER; ev.pressed = true
+	konusma._unhandled_input(ev)
+	print("ONAY enter ", sonuc, " acik ", konusma.visible)
+	konusma.onay("[b]Barbaros'un enkazı[/b]\n8 kalas, 4 halat, 3 demir levha, 6 hasır ve 2 kristal ipek enkaza konacak. Gemi kurulsun mu?", func(): pass, "Kur")
+	await get_tree().create_timer(0.2).timeout
+	print("ONAY kat ", konusma.onay_kat.is_visible_in_tree(), " ", konusma.onay_kat.size, " ", konusma.onay_kat.global_position, " idx ", konusma.onay_kat.get_index(), " kmod ", konusma.onay_kat.color)
 
 func _takla_test() -> void:
 	await get_tree().create_timer(6.0).timeout
