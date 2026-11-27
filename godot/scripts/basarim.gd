@@ -278,6 +278,9 @@ func _denetle() -> void:
 func kazan(id: String) -> void:
 	if got.has(id): return
 	got[id] = Time.get_unix_time_from_system()
+	if oyun != null and oyun.kopek != null:
+		for A in ACH:
+			if A[0] == id: oyun.kopek.ekle("basarim", str(A[1]))
 	degisti = true
 	for A in ACH:
 		if A[0] == id: kuyruk.append(A)

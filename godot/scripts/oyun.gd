@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.28"
+const SURUM := "Godot · 5.29"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -118,6 +118,8 @@ var kamp                    # kamp.gd: kamp ateşi ve ateşte pişirme
 var sise                    # sise.gd: kıyıya vuran şişeler
 var yazilimci               # yazilimci.gd: gece beliren Boğaç
 var istem                   # istem.gd: F'nin ne yapacağını söyleyen eylem ipucu
+var kopek                   # kopek.gd: robot köpeklerin gizli günlüğü (ACT 3)
+var imlec                   # imlec.gd: mor ışıkta piksel el imleci
 var hile                    # hile.gd: hile modu, ped, pencere (oturumluk)
 var arena = null            # arena.gd: yalnız arenadayken
 var kesif                   # kesif.gd: keşif defteri ve Zümrüt'ün bilmecesi
@@ -364,6 +366,12 @@ func _ready() -> void:
 	istem = preload("res://scripts/istem.gd").new()
 	add_child(istem)
 	istem.kur(self)
+	kopek = preload("res://scripts/kopek.gd").new()
+	add_child(kopek)
+	kopek.kur(self)
+	imlec = preload("res://scripts/imlec.gd").new()
+	add_child(imlec)
+	imlec.kur(self)
 	balon_yazi = Label.new()
 	balon_yazi.add_theme_font_size_override("font_size", 14)
 	balon_yazi.add_theme_color_override("font_color", Color("#2a1e14"))
@@ -2943,6 +2951,7 @@ func bayil(sebep: String) -> void:
 		return
 	if basarim != null: basarim.bayildi()
 	if soguk != null: soguk.sifirla()
+	if kopek != null: kopek.ekle("karanlik" if sebep == "gece" else "bayil", "mor ışık" if sebep == "gece" else (sebep if sebep != "" else "bilinmiyor"))
 	get_tree().create_timer(2.5).timeout.connect(func(): ani.olay("faint"))
 	if reis != null: reis.bayildi()   # web v318: bayılınca %60 bir anı
 	oyuncu.bayildi = true
@@ -3021,7 +3030,7 @@ func _durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), hava = hava.kayit(), usume = soguk.kayit(), yemek = yemek.kayit(), kamp = kamp.kayit(), sise = sise.kayit(), v330dev = yazilimci.kayit(), halat = halat.kayit(), tlsm = tilsimlar.keys(), isr = isaret.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), hava = hava.kayit(), usume = soguk.kayit(), yemek = yemek.kayit(), kamp = kamp.kayit(), sise = sise.kayit(), v330dev = yazilimci.kayit(), dlog = kopek.kayit(), halat = halat.kayit(), tlsm = tilsimlar.keys(), isr = isaret.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 ## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
@@ -3165,6 +3174,7 @@ func durum_yukle(d: Dictionary) -> void:
 	kamp.yukle(d.get("kamp", []))
 	sise.yukle(d.get("sise", {}))
 	yazilimci.yukle(d.get("v330dev", 0))
+	kopek.yukle(d.get("dlog", {}))
 	halat.yukle(d.get("halat", []))
 	almanak.yukle(d.get("alm", {}))
 	basarim.yukle(d.get("bsr", {}))
