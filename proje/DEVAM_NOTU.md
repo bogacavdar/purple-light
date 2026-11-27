@@ -1,3 +1,7 @@
+## v5.28 (27 Kasım 2026) · Godot Son-p: eylem ipucu, rozet, biyom sınırı
+- `godot-deneme/` yeni derleme (godot dalı: yeni istem.gd; envanter.gd rozet + _rozet_resim; canli.gd _sinir (hb); ?istemtest, ?rozettest). Belge 99_godot Son-p; ComfyUI çizimleri taşımanın dışına alındı (Boğaç kararı). Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.27 (27 Kasım 2026) · Godot Son-o: canlıların sesleri, itilme
 - `godot-deneme/` yeni derleme (godot dalı: ses.gd `canli()`, data/canli_ses.json + art/ses/canli/*.ogg (tools/disa_aktar_canli_ses.js); canli.gd acı/ölüm/saldırı sesi ve _physics_process itilme). Belge 99_godot Son-o. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
@@ -73,7 +77,3 @@
 ## v5.09 (27 Kasım 2026) · Godot S7b: gizli şeyler
 - `godot-deneme/` yeni derleme (godot dalı: yeni gizli.gd (deniz yolu, sevdiğin kişi, kazana çöp ve görünmezlik, Börü'nün kemeri, 100. gece yıldızları, eski kamp ateşi, ayna, dans, inatçı balıkçı, 03:00, Devam satırı, Seni hatırlıyorum; kayıt `gizli`, cihaz user://gizli.json); kancalar: oyun.gd engel (yol), canli.gd görünmez ve dans izleyicisi, oyuncu.gd saydamlık ve yumruk, istasyon.gd "Çantan" şeridi, balik.gd olta, konusma.gd 03:00, uyanis.gd hatırlama, kayit.gd Devam, yildizsiz.gd ve zaman.gd yıldızlı gece). Belge 99_godot S7b. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `gizli` alanı okunmadan kalır).
-
-## v5.08 (27 Kasım 2026) · Godot S7a: Keşif defteri ve Zümrüt'ün bilmecesi
-- `godot-deneme/` yeni derleme (godot dalı: yeni kesif.gd (ulaşılır tarifler, kategoriler, ödüller, ustalıklar, bilmece; kayıt `kdef {c, b, n}`); ustalık etkileri: envanter.gd tokluk ve körelme, oyuncu.gd can, oyun.gd savunma, mesale.gd, toplama.gd hız, canli.gd düşürme, balik.gd, pazar.gd satış; el_yapimi.gd Keşif defteri sayfası ve Anılar'da bilmece; Zümrüt konuşmasında bilmece; ?kdeftest). Belge 99_godot S7a/S7b satırları. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıttaki `kdef` alanı okunmadan kalır).

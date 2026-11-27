@@ -8,6 +8,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.28 · 27 Kasım 2026
+
+### Proje
+- **Godot: küçük eksikler:**
+  - F'ye basınca ne olacağı kemerin üstünde yazıyor (topla, kaz, konuş, pişir, mağaraya gir…); yapılamıyorsa neden yapılamadığı sarıyla yazıyor. Yakında canavar varsa vuruşunun hasarı görünüyor.
+  - Çanta ve kemerdeki silahların hasarı, zırhların savunması karelerin köşesinde.
+  - Canlılar kendi bölgelerinden çıkmıyor; kovalama bölge sınırında bitiyor.
+
 ## Versiyon 5.27 · 27 Kasım 2026
 
 ### Proje
@@ -171,17 +179,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: gizli şeyler:** web'deki bütün gizli şeyler Godot'ta da var; oyun bunları hiçbir yerde anlatmıyor, oyuncu kendisi buluyor. Yerlerini burada yazmıyoruz, tasarım belgesinde ayrıntısıyla duruyor.
   - "Mor ışıkta o", "Görünmezlik iksiri" ve "Denizde yürüyen" başarımları artık kazanılabiliyor.
   - Zümrüt'ün kazan penceresinin altında çantandaki malzemeler görünüyor; birine dokununca onu kullanan tarif seçiliyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.08 · 27 Kasım 2026
-
-### Proje
-- **Godot: Keşif defteri ve Zümrüt'ün bilmecesi:**
-  - Tarif kitabında (K) "Keşif defteri" sayfası var: her kategoride kaç tarif öğrendiğin.
-  - Bir kategorinin %25'ine Vio, %50'sine kalıcı ustalık, hepsine Vio ve XP veriliyor. Ustalıklara örnek: tokluk daha yavaş azalır, can daha hızlı dolar, aletler daha az körelir, meşale daha uzun yanar.
-  - Zümrüt'e "Bir bilmecen var mı?" diye sorabiliyorsun. İpucundaki tarifi kazanda öğrenince Vio ve XP kazanıyorsun; bilmece kitabın Anılar sayfasında da yazıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
