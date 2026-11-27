@@ -322,6 +322,12 @@ func _atil(g: Vector2) -> void:
 func vur(d: Vector2) -> void:
 	if bayildi or atilma > 0.0:
 		return
+	var mz = oyun.env.elde()
+	if oyun.ses != null and oyun.ses.alet_mi(mz):
+		if atk_cd <= 0.0:
+			atk_cd = oyun.ses.alet_ara(str(mz))
+			oyun.ses.alet_cal(str(mz))
+		return
 	if oyun.evcil.binilen != null:
 		oyun.evcil.in_()
 		return

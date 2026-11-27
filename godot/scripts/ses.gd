@@ -119,3 +119,38 @@ func _deniz_yakin() -> bool:
 		for dx in range(-6, 7, 2):
 			if oyun.tile_at(P + Vector2(dx * 16, dy * 16)) >= 4: return true
 	return false
+
+# ------------------------------------------------------------------ müzik aletleri (web v411muzik; belge Sistemler › Müzik aletleri)
+## eldeki alet vuruşla ezgisinin sıradaki notasını çalar (notalar web'in sesinden: tools/disa_aktar_muzik.js); 2,5 sn basılmazsa ezgi baştan
+var ALET := {}
+var _nota := {}
+var _alet_son := {}
+
+func alet_mi(n) -> bool:
+	if ALET.is_empty(): ALET = oyun._json("res://data/muzik.json")
+	return n != null and ALET.has(str(n))
+
+func alet_ara(n: String) -> float:
+	return 0.18 if (n.contains("davul") or n.contains("tef")) else (0.3 if (n.contains("çan") or n.contains("zil")) else 0.24)
+
+func alet_cal(n: String) -> void:
+	if not alet_mi(n): return
+	var I: Dictionary = ALET[n]
+	var now := Time.get_ticks_msec() / 1000.0
+	if now - float(_alet_son.get(n, -10.0)) > 2.5: _nota[n] = 0
+	_alet_son[n] = now
+	var ez: Array = I.ezgi
+	var m := int(ez[int(_nota.get(n, 0)) % ez.size()])
+	_nota[n] = int(_nota.get(n, 0)) + 1
+	var k := "%s_%d" % [I.ses, m]
+	if not tampon.has(k):
+		var st = load("res://art/ses/muzik/%s.ogg" % k)
+		if st != null: tampon[k] = st
+	if tampon.has(k):
+		for p in havuz:
+			if not p.playing:
+				p.stream = tampon[k]; p.volume_db = 0.0; p.pitch_scale = 1.0; p.play()
+				break
+	var P = oyun.oyuncu
+	oyun.yazi(P.position + Vector2(P.bakis.x * 8.0 + randf_range(-3, 3), -24), "♪", Color(str(I.renk)), 15)
+

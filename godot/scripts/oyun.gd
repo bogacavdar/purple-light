@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.20"
+const SURUM := "Godot · 5.21"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -373,6 +373,7 @@ func _ready() -> void:
 		if q.contains("sestest"): _ses_test.call_deferred()
 		if q.contains("havatest"): _hava_test.call_deferred(q)
 		if q.contains("halattest"): _halat_test.call_deferred()
+		if q.contains("muziktest"): _muzik_test.call_deferred()
 		if q.contains("kurt"):
 			_canli_koy_yakin("Kurt", 6.0)
 		if q.contains("tavsan"):
@@ -3210,4 +3211,15 @@ func _halat_test() -> void:
 	print("HALAT f ", halat.f())
 	await get_tree().create_timer(1.5).timeout
 	print("HALAT kayıyor ", halat.kayiyor(), " yer ", oyuncu.position)
+
+## ?muziktest: Kor zurnası ve Gümüş çan eline gelir, beş nota çalınır
+func _muzik_test() -> void:
+	await get_tree().create_timer(2.0).timeout
+	env.ekle("Kor zurnası")
+	env.ekle("Gümüş çan")
+	env.el = env.kemer.find("Kor zurnası")
+	for i in 60:
+		oyuncu.vur(Vector2.ZERO)
+		await get_tree().create_timer(0.3).timeout
+	print("MUZIK elde ", env.elde(), " kemer ", env.kemer, " nota ", ses._nota)
 
