@@ -1,3 +1,7 @@
+## v5.19 (27 Kasım 2026) · Godot Son-g: üşüme, buzlanma, ayak izleri
+- `godot-deneme/` yeni derleme (godot dalı: yeni soguk.gd (üşüme, buz köşeleri, ayak izleri; art/ayakizi.png web v435iz'den); oyun.gd kayıt `usume`, bayılınca sıfırlanır; hava.gd efekt katmanı layer 0). Belge 99_godot Son-g. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (`usume` alanı okunmaz, zararsız).
+
 ## v5.18 (27 Kasım 2026) · Godot Son-f: mevsimler, hava, sıcaklık, kar
 - `godot-deneme/` yeni derleme (godot dalı: yeni hava.gd: mevsim, gece_sn, hava zinciri, sıcaklık, kar örtüsü, ekran çizimi, sis shader'ı, mevsim çemberi, Mor gece; bağlantılar zaman (gece hızı, saat yazısı), envanter (kış tokluğu), mesale (yanma katı), balik (bekleme, mevsim balığı), canli (sis), toplama (`mevsim_k`, `_bitir2`), yildizsiz `zorla()`, ses (rain/wind); ?havatest). Kayıt alanı `hava {kar, mg, k, t}`. Belge 99_godot Son-f, Son-g. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (eski kayıtlar `hava` alanını okumaz, zararsız).
@@ -73,7 +77,3 @@
 ## v5.00 (27 Kasım 2026) · Godot S2b: ok seçimi, sapan, bola, bileme, kritik, çekiç ve topuz
 - `godot-deneme/` yeni derleme (godot dalı: buyu.gd ok seçimi (kayıt `buyu.ok`), sapan/bola, meyveli ağaca atış; canli.gd `yavas`, savuşturma sonrası kritik hakkı (meta pc); envanter.gd oka tıklama; oyun.gd krit_ihtimal/kritik, Dursun'da bileme; oyuncu.gd çekiç (_gurz) ve topuz (_topuz) kuralları, yavaşlama, enerji, sağlam duruş). Denetim: ?s2btest. Belge 99_godot S2b satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `buyu.ok` okunmadan kalır).
-
-## v4.99 (27 Kasım 2026) · Godot S2a: yaylar, oklar ve silah etkileri
-- `godot-deneme/` yeni derleme (godot dalı: yeni tools/disa_aktar_yay.js → data/yay.json (yaylar, oklar, verim); buyu.gd yay atışı ve 8 px adımlı çarpışma; canli.gd etki_ver/_etki_isle; oyuncu.gd yakın dövüş etkisi; el_yapimi.gd ok verimi). Denetim: ?yaytest. Belge 99_godot S2a ve S2b satırları. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).

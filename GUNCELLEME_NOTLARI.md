@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.19 · 27 Kasım 2026
+
+### Proje
+- **Godot: üşüme ve ayak izleri:**
+  - Kışın donarken karakter üşüyor, ekranın köşelerinden buz kristalleri büyüyor. Yanan meşale ya da bir ateş ısıtıyor; çok üşürsen can düşüyor.
+  - Yürürken yere ayak izi kalıyor. Karda daha büyük ve uzun süre kalıyor, yağmurda çabuk siliniyor.
+
 ## Versiyon 5.18 · 27 Kasım 2026
 
 ### Proje
@@ -218,17 +225,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Demirci Dursun aşınan aletleri ve silahları biliyor.
   - Kritik vuruş geldi. Savuşturmayla sersemlettiğin canlıya ilk vuruşun her zaman kritik.
   - Savaş çekici çevresine de vuruyor ve sersemletiyor. Topuz hızlı isabetlerle kombo yapıyor, her 5. isabette kıvılcım sıçrıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.99 · 27 Kasım 2026
-
-### Proje
-- **Godot: yaylar, oklar ve silah etkileri:**
-  - 15 yay geldi. Yay elindeyken vuruş tuşu ok atar; çantadaki en güçlü ok harcanır. Okları el yapımıyla yaparsın.
-  - Alevli, Zehirli ve Keskin silahlar ve oklar canlıyı yakar, zehirler ya da kanatır.
-  - Büyü, mermi ve oklar artık uzun bir karede canlının içinden geçip gitmiyor (önceden ilk atış bazen ıska geçiyordu).
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
