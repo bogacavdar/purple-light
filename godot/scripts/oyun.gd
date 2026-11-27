@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.19"
+const SURUM := "Godot · 5.20"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -112,6 +112,7 @@ var ist                     # istatistik.gd: sayaçlar ve oyun süresi
 var ses                     # ses.gd: müzik, ortam sesleri, efektler
 var hava                    # hava.gd: hava, mevsim, sıcaklık, kar
 var soguk                   # soguk.gd: üşüme, buzlanma, ayak izleri
+var halat                   # halat.gd: Tuncay'ın halat yolları
 var hile                    # hile.gd: hile modu, ped, pencere (oturumluk)
 var arena = null            # arena.gd: yalnız arenadayken
 var kesif                   # kesif.gd: keşif defteri ve Zümrüt'ün bilmecesi
@@ -371,6 +372,7 @@ func _ready() -> void:
 		var q := str(JavaScriptBridge.eval("location.search"))
 		if q.contains("sestest"): _ses_test.call_deferred()
 		if q.contains("havatest"): _hava_test.call_deferred(q)
+		if q.contains("halattest"): _halat_test.call_deferred()
 		if q.contains("kurt"):
 			_canli_koy_yakin("Kurt", 6.0)
 		if q.contains("tavsan"):
@@ -2449,6 +2451,11 @@ func _kisiler() -> void:
 	tum.append({k = "trader", ad = "Gemici Poyraz", x = PZ.x, y = PZ.y, rol = "pz", resim = {f = "res://art/kisiler/kisi_poyraz_f.png", q = "res://art/kisiler/kisi_poyraz_q.png"}, portre = "res://art/kisiler/portre_poyraz.png"})
 	for yq in _json("res://data/yan.json").yan:
 		if yq.id == "ekin1": tum.append({k = "k_ekin", ad = yq.name, x = yq.x, y = yq.y, rol = "ek", resim = {f = yq.resim_f, q = yq.resim_q}, portre = yq.portre})
+	if halat == null:
+		halat = preload("res://scripts/halat.gd").new()
+		add_child(halat)
+		halat.kur(self)
+	if ada == 1: tum.append(halat.tuncay_kisi())
 	if ada == 2:
 		# ikinci adada birinci adanın kişileri, kazanı ve örsleri yoktur (web v76 away); Barbaros indirdiği kıyıda gemisinin başında bekler
 		var dz: Dictionary = {}
@@ -2746,6 +2753,8 @@ func konus_ya_da_istasyon() -> bool:
 		return true
 	if gecit.f():
 		return true
+	if halat != null and halat.f():
+		return true
 	if kuzen.enkaz_f():
 		return true
 	if kopru.f():
@@ -2980,7 +2989,7 @@ func _durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), hava = hava.kayit(), usume = soguk.kayit(), tlsm = tilsimlar.keys(), isr = isaret.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), hava = hava.kayit(), usume = soguk.kayit(), halat = halat.kayit(), tlsm = tilsimlar.keys(), isr = isaret.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 ## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
@@ -3120,6 +3129,7 @@ func durum_yukle(d: Dictionary) -> void:
 	ys.yukle(d.get("ys", {}))
 	hava.yukle(d.get("hava", {}))
 	soguk.yukle(d.get("usume", 0))
+	halat.yukle(d.get("halat", []))
 	almanak.yukle(d.get("alm", {}))
 	basarim.yukle(d.get("bsr", {}))
 	kesif.yukle(d.get("kdef", {}))
@@ -3185,4 +3195,19 @@ func _hava_test(q: String) -> void:
 			oyuncu.position.x += 6.0; oyuncu.adim += 0.35
 			await get_tree().process_frame
 	print("HAVA usume ", soguk.cold, " iz ", soguk.izler.size(), " ", hava.ad(), " mevsim ", hava.mevsim(), " sıcaklık ", hava.sicaklik_yazi(), " kar ", hava.kar, " gece_sn ", hava.gece_sn(), " saat ", zaman.saat_yazi.text)
+
+## ?halattest: T6 biter, 10.000 Vio, Tuncay'ın yanına gider, Giriş halatını alır ve ocak ucundan kayar
+func _halat_test() -> void:
+	await get_tree().create_timer(2.0).timeout
+	if not gorev.bitenler.has("T6"): gorev.bitenler.append("T6")
+	env.vio_ekle(10000)
+	oyuncu.position = Vector2(halat.V.tuncay.x, halat.V.tuncay.y + 20)
+	await get_tree().create_timer(1.0).timeout
+	print("HALAT tuncay görünür ", halat.tuncay_gorunur())
+	halat._al(0)
+	print("HALAT kurulu ", halat.on, " vio ", env.vio)
+	oyuncu.position = halat._uc(0, 1) + Vector2(0, 4)
+	print("HALAT f ", halat.f())
+	await get_tree().create_timer(1.5).timeout
+	print("HALAT kayıyor ", halat.kayiyor(), " yer ", oyuncu.position)
 

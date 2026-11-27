@@ -61,6 +61,10 @@ func ac(kim: String, por, metin: String, secs: Array = []) -> void:
 		var b := Button.new()
 		b.text = s.t
 		b.pressed.connect(_sec.bind(s))
+		if s.get("soluk", false):
+			b.disabled = true
+			b.modulate.a = 0.45
+			b.tooltip_text = "Vio yetmiyor"
 		secenekler.add_child(b)
 	visible = true
 	kutu.reset_size()

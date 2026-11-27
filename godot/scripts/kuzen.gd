@@ -12,6 +12,7 @@ func kur(o) -> void:
 
 ## web isMet: kuzenler ve Sinan önce tanışılır, görev sonraki konuşmada verilir
 func tanisildi(g: String) -> bool:
+	if g == "k_tuncay": return true
 	if g.begins_with("k_") or g == "usta" or g == "toygar" or g == "denizci" or g == "k_ekin" or g in ["gok", "pervin", "tamer", "selin", "alara", "tuna"]: return tanis.has(g)
 	if g == "trader": return oyun.poyraz.met
 	return true
@@ -34,6 +35,7 @@ func konus(n, ac_kazan := false) -> bool:
 		"dz": _barbaros(n)
 		"ek": oyun.ciftlik.ekin_konus(n)
 		"pz": oyun.poyraz.konus(n)
+		"hl": oyun.halat.konus(n)
 		"gk": oyun.act2.yildiz(n)
 		"pv": oyun.act2.efsun(n)
 		"sl": oyun.act2.tufan(n)
