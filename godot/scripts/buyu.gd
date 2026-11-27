@@ -123,6 +123,10 @@ func _yay(h: String) -> void:
 	var S := {c1 = str(A[2]), c2 = "#e8d8b0", spd = float(B.spd), range = float(B.rng), line = true, trail = 0.04}
 	if A[3] != null:
 		S.efx = str(A[3]); S.edm = float(B.dmg) * float(A[1]) * lv
+	# web v322tier: ok kendi kademesinin resmiyle uçar, yay kendi kirişiyle öter
+	S.ok = oyun.kademe_k.ok_bilgi(str(A[0])); S.trail = 0.0
+	var hd := _nisan() - (P + Vector2(0, -10))
+	oyun.kademe_k.yay_at(h, hd.angle() if hd.length() > 0.5 else oyun.oyuncu.bakis.angle())
 	_ates(S, dm, _nisan(), P + Vector2(0, -10), [], float(B.rng))
 
 func _carpan() -> float:
@@ -300,7 +304,9 @@ func _vur(s: Dictionary, a, ln: Array) -> void:
 	if S.has("efx"): a.etki_ver(str(S.efx), float(S.edm))
 	if S.get("sl", "") == "Sapan" and not a.boss and (bool(a.D.get("fly", false)) or _kus(a)): a.sersem = maxf(a.sersem, 3.0)
 	if S.get("sl", "") == "Bola" and not a.boss: a.yavas = 5.0
-	for k in 10: oyun.parca(s.p, Vector2(randf_range(-40, 40), randf_range(-40, 40)), 0.35, Color(S.c1) if k % 2 else Color(S.c2))
+	if S.has("ok"): oyun.kademe_k.ok_isabet(S.ok, s.p, dm2)
+	else:
+		for k in 10: oyun.parca(s.p, Vector2(randf_range(-40, 40), randf_range(-40, 40)), 0.35, Color(S.c1) if k % 2 else Color(S.c2))
 	if int(S.get("chain", 0)) > 0:
 		var hs: Array = s.hs.duplicate()
 		hs.append(a)
@@ -327,6 +333,9 @@ func _draw() -> void:
 	var k := 0.6 + 0.4 * sin(Time.get_ticks_msec() / 1000.0 * 30.0)
 	for s in shots:
 		var S: Dictionary = s.S
+		if S.has("ok"):
+			oyun.kademe_k.ok_ciz(self, s.p, s.v, S.ok)
+			continue
 		if S.get("line", false):
 			draw_line(s.p, s.p - s.v.normalized() * 8.0, Color(S.c1), 2.0)
 			continue

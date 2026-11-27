@@ -101,6 +101,18 @@ func duyur(ad: String, etiket: String = "Yeni malzeme bulundu") -> void:
 	if oyun.basta: return
 	kuyruk.append([ad, etiket])
 
+## sıradaki ya da ekrandaki kartın etiketini değiştirir (web announceUp: "Yeni malzeme bulundu" yerine "Yeni kademe!")
+func degistir(ad: String, etiket: String) -> bool:
+	for it in kuyruk:
+		if it[0] == ad:
+			it[1] = etiket
+			return true
+	if ks_t >= 0.0 and ks_cur != null and ks_cur[0] == ad:
+		ks_cur[1] = etiket
+		ks_lab.text = etiket.replace("i", "İ").to_upper()
+		return true
+	return false
+
 func _kart_geri() -> void:
 	if ks_t >= 0.0 and ks_cur != null:
 		kuyruk.push_front(ks_cur)

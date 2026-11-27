@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.38"
+const SURUM := "Godot · 5.39"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -118,6 +118,7 @@ var kamp                    # kamp.gd: kamp ateşi ve ateşte pişirme
 var sise                    # sise.gd: kıyıya vuran şişeler
 var yazilimci               # yazilimci.gd: gece beliren Boğaç
 var istem                   # istem.gd: F'nin ne yapacağını söyleyen eylem ipucu
+var kademe_k                # kademe.gd: silahların kademe kimliği (web v322tier)
 var duyuru                  # duyuru.gd: gün, seviye ve keşif afişleri (web daybanner/lvlup/discover)
 var kopek                   # kopek.gd: robot köpeklerin gizli günlüğü (ACT 3)
 var imlec                   # imlec.gd: mor ışıkta piksel el imleci
@@ -376,6 +377,9 @@ func _ready() -> void:
 	duyuru = preload("res://scripts/duyuru.gd").new()
 	add_child(duyuru)
 	duyuru.kur(self)
+	kademe_k = preload("res://scripts/kademe.gd").new()
+	add_child(kademe_k)
+	kademe_k.kur(self)
 	imlec = preload("res://scripts/imlec.gd").new()
 	add_child(imlec)
 	imlec.kur(self)
@@ -447,6 +451,7 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("kademetest"): q_kademe_yavas = q.contains("yavas"); _kademe_test.call_deferred()
 		if q.contains("derskart"): _derskart_test.call_deferred()
 		if q.contains("baltakilit"): _baltakilit_test.call_deferred()
 		if q.contains("duyurutest"): _duyuru_test.call_deferred()
@@ -915,6 +920,33 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+var q_kademe_yavas := false
+func _kademe_test() -> void:
+	await get_tree().create_timer(6.0).timeout
+	for n in ["Taş kılıç", "Kemik yay", "Granit savaş çekici", "Alevli Taş topuz", "Çelik kazma", "Işın kılıcı", "Mızrak", "Ametist kılıcı"]:
+		print("KADEME ", n, " ", kademe_k.bilgi(n))
+	env.ekle("Taş kılıç")
+	env.ekle("Demir kılıç")
+	await get_tree().create_timer(0.3).timeout
+	print("KADEME sira ", duyuru.kuyruk, " cur ", duyuru.ks_cur, " best ", kademe_k.BEST)
+	env.ekle("Güçlü odun yayı"); env.ekle("Çelik ok", 20)
+	env._canta_tik("Güçlü odun yayı")
+	for i in 3:
+		buyu._yay("Güçlü odun yayı")
+		await get_tree().create_timer(0.12).timeout
+	env.ekle("Mor kristal kılıç")
+	env._canta_tik("Mor kristal kılıç")
+	await get_tree().create_timer(0.5).timeout
+	kademe_k.patla(6, oyuncu.position + Vector2(30, -6))
+	kademe_k.isabet("Kara çelik kılıç", oyuncu.position + Vector2(-30, -6), 40)
+	print("KADEME elde ", env.elde(), " halka ", kademe_k.halkalar.size(), " kayit ", JSON.stringify(kademe_k.kayit()))
+	env.ekle("Mor kristal ok", 40); buyu.ok_sec("Mor kristal ok")
+	if q_kademe_yavas: Engine.time_scale = 0.03
+	for i in 40:
+		buyu.scd = 0.0
+		buyu._yay("Kadim odun yayı" if buyu.YAY.has("Kadim odun yayı") else "Güçlü odun yayı")
+		await get_tree().create_timer(0.15).timeout
 
 func _derskart_test() -> void:
 	await get_tree().create_timer(7.0).timeout
@@ -3170,7 +3202,7 @@ func _durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), hava = hava.kayit(), usume = soguk.kayit(), yemek = yemek.kayit(), kamp = kamp.kayit(), sise = sise.kayit(), v330dev = yazilimci.kayit(), dlog = kopek.kayit(), halat = halat.kayit(), tlsm = tilsimlar.keys(), isr = isaret.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), hava = hava.kayit(), usume = soguk.kayit(), yemek = yemek.kayit(), kamp = kamp.kayit(), sise = sise.kayit(), v330dev = yazilimci.kayit(), dlog = kopek.kayit(), v322 = kademe_k.kayit(), halat = halat.kayit(), tlsm = tilsimlar.keys(), isr = isaret.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 ## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
@@ -3315,6 +3347,7 @@ func durum_yukle(d: Dictionary) -> void:
 	sise.yukle(d.get("sise", {}))
 	yazilimci.yukle(d.get("v330dev", 0))
 	kopek.yukle(d.get("dlog", {}))
+	kademe_k.yukle(d.get("v322", {}))
 	halat.yukle(d.get("halat", []))
 	almanak.yukle(d.get("alm", {}))
 	basarim.yukle(d.get("bsr", {}))

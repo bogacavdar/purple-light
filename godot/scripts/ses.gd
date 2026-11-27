@@ -62,6 +62,21 @@ func cal(k: String, vol := 1.0, perde := 1.0) -> void:
 			p.play()
 			return
 
+## silah kademesinin ses katmanı (art/ses/kademe; web v322tier SW/HT/TW)
+func kademe(k: String, vol := 1.0) -> void:
+	var kk := "kademe/" + k
+	if not tampon.has(kk):
+		var st = load("res://art/ses/%s.ogg" % kk)
+		if st == null: return
+		tampon[kk] = st
+	for p in havuz:
+		if not p.playing:
+			p.stream = tampon[kk]
+			p.volume_db = linear_to_db(maxf(0.001, vol * 0.8))
+			p.pitch_scale = 1.0
+			p.play()
+			return
+
 func _muzik_sec() -> String:
 	if oyun.basta: return "ada"
 	if oyun.magara != null and oyun.magara.icinde: return "derinlik"

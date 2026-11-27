@@ -372,6 +372,8 @@ func vur(d: Vector2) -> void:
 		return
 	st -= cost; st_dinlen = 0.0
 	if oyun.ses != null: oyun.ses.cal("swing", 0.6, randf_range(0.92, 1.08))
+	if oyun.kademe_k != null: oyun.kademe_k.savur(str(w.get("n", "")))
+	var kd_ses := true
 	atk_cd = float(w.cd)
 	if d != Vector2.ZERO:
 		_yon_sec(d)
@@ -401,6 +403,12 @@ func vur(d: Vector2) -> void:
 		var dmk := dm
 		if mc == "topuz": dmk = int(round(dm * (1.0 + 0.1 * mini(kombo, 6))))
 		a.vuruldu(oyun.kritik(dmk, str(w.get("n", "")), a), dv / maxf(dist, 1.0))
+		if oyun.kademe_k != null:
+			var hp: Vector2 = position + Vector2(0, -6) + (a.position - position) * 0.6
+			if kd_ses: oyun.kademe_k.isabet(str(w.get("n", "")), hp, dmk); kd_ses = false
+			else:
+				var KI: Dictionary = oyun.kademe_k.bilgi(str(w.get("n", "")))
+				if not KI.is_empty(): oyun.kademe_k.patla(int(KI.t), hp)
 		if w.get("torch", false) and dist <= 60.0: a.mesale_yak(str(oyun.mesale.elde()))
 		oyun.ult_ekle(1.5)
 		_silah_etki(w, a, dist)

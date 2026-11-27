@@ -61,6 +61,7 @@ func ekle(n: String, k: int = 1) -> void:
 			mesaj("İlk keşif: %s · +%d Vio" % [n, r])
 	if not gorulen.has(n) and oyun.duyuru != null: oyun.duyuru.duyur(n)
 	gorulen[n] = true
+	if oyun.kademe_k != null: oyun.kademe_k.alindi(n)
 	# aletler ve silahlar kemerdeki ilk boş yuvaya kendiliğinden girer (web: hotItem)
 	if (G.tools.has(n) or oyun.kusanma.silah.has(n) or oyun.yapi.yapi_mi(n) or n == "Kamp ateşi" or n == "Duman fişeği" or n == "Duman tütsüsü" or (oyun.ses != null and oyun.ses.alet_mi(n))) and kemer.find(n) < 0:
 		var i := kemer.find(null)
