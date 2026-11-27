@@ -817,6 +817,7 @@ var _w0 := 0.0
 func _physics_process(_dt: float) -> void:
 	if wind > 0.0 and _w0 <= 0.0 and olu < 0.0 and oyun.ses != null: oyun.ses.canli(self, "atk")
 	_w0 = wind
+	_sinir()
 	if olu >= 0.0 or ders or ogr or not lunge.is_empty() or not imza.is_empty() or str(D.get("temper", "")) == "zararsız" or has_meta("evcil"): return
 	var P = oyun.oyuncu
 	if P == null: return
@@ -830,4 +831,24 @@ func _physics_process(_dt: float) -> void:
 
 func spr_sol() -> bool:
 	return randf() < 0.5
+
+## her canlı kendi biyomunda kalır (web v283): ilk durduğu biyom; sınırı geçecek adım geri alınır, kovalama sınırda biter.
+## Mağarada, arenada, derslerde, Yıldızsızlarda ve evcillerde yok.
+var hb := -9
+var _son := Vector2.INF
+func _sinir() -> void:
+	if olu >= 0.0 or ders or ogr or tur_k == "ys" or has_meta("evcil") or oyun.arena != null or oyun.magara.icinde:
+		_son = Vector2.INF
+		return
+	var b: int = oyun.bio_at(position)
+	if hb == -9: hb = b
+	if b == hb or hb < 0:
+		_son = position
+		return
+	if _son != Vector2.INF:
+		position = _son
+		lunge = {}; kb = {}; hedef = position
+		if mad and not boss:
+			mad = false
+			st = "wander"
 

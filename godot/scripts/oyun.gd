@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.27"
+const SURUM := "Godot · 5.28"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -117,6 +117,7 @@ var yemek                   # yemek.gd: yemek etkileri ve yemek listesi
 var kamp                    # kamp.gd: kamp ateşi ve ateşte pişirme
 var sise                    # sise.gd: kıyıya vuran şişeler
 var yazilimci               # yazilimci.gd: gece beliren Boğaç
+var istem                   # istem.gd: F'nin ne yapacağını söyleyen eylem ipucu
 var hile                    # hile.gd: hile modu, ped, pencere (oturumluk)
 var arena = null            # arena.gd: yalnız arenadayken
 var kesif                   # kesif.gd: keşif defteri ve Zümrüt'ün bilmecesi
@@ -360,6 +361,9 @@ func _ready() -> void:
 	yazilimci = preload("res://scripts/yazilimci.gd").new()
 	add_child(yazilimci)
 	yazilimci.kur(self)
+	istem = preload("res://scripts/istem.gd").new()
+	add_child(istem)
+	istem.kur(self)
 	balon_yazi = Label.new()
 	balon_yazi.add_theme_font_size_override("font_size", 14)
 	balon_yazi.add_theme_color_override("font_color", Color("#2a1e14"))
@@ -395,6 +399,8 @@ func _ready() -> void:
 		if q.contains("islevtest"): _islev_test.call_deferred()
 		if q.contains("sisetest"): _sise_test.call_deferred()
 		if q.contains("devtest"): _dev_test.call_deferred()
+		if q.contains("rozettest"): _rozet_test.call_deferred()
+		if q.contains("istemtest"): _istem_test.call_deferred()
 		if q.contains("kurt"):
 			_canli_koy_yakin("Kurt", 6.0)
 		if q.contains("tavsan"):
@@ -3320,4 +3326,22 @@ func _dev_test() -> void:
 	oyuncu.position = yazilimci.spr.position + Vector2(-10, 0)
 	await get_tree().create_timer(0.5).timeout
 	print("DEV konuştu ", yazilimci.konustu)
+
+## ?rozettest: silah ve zırh çantaya gelir, çanta açılır
+func _rozet_test() -> void:
+	await get_tree().create_timer(2.0).timeout
+	env.ekle("Çakmaktaşı mızrak"); env.ekle("Kemik miğfer")
+	env.canta.visible = true
+	env.canta_ciz()
+
+## ?istemtest: Kemal'in yanında, sonra bir düğümün dibinde eylem ipucu
+func _istem_test() -> void:
+	await get_tree().create_timer(2.5).timeout
+	print("ISTEM ilk ", istem._hesapla())
+	for d in dugumler:
+		if d.canli and not toplama.G.nodes.get(d.ad, {}).get("mine", false):
+			oyuncu.position = d.position + Vector2(0, 6)
+			break
+	await get_tree().create_timer(0.5).timeout
+	print("ISTEM düğüm ", istem._hesapla(), " görünür ", istem.yazi.visible)
 

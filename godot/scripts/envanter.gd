@@ -274,6 +274,23 @@ func _yuva(n, sec: bool, sayi: int, ust_yazi: String) -> Control:
 		oyun._golge(l)
 		l.position = Vector2(20, 20)
 		c.add_child(l)
+	# silah ve zırh rozeti (web v265): ⚔ hasar ya da 🛡 savunma
+	var rz := rozet(n)
+	if rz != "":
+		var kl := rz.begins_with("⚔")
+		var ri := TextureRect.new()
+		ri.texture = _rozet_resim(kl)
+		ri.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		ri.position = Vector2(1, 27)
+		ri.size = Vector2(7, 7)
+		c.add_child(ri)
+		var r := Label.new()
+		r.text = rz.substr(1)
+		r.add_theme_font_size_override("font_size", 9)
+		r.add_theme_color_override("font_color", Color("#ffd0a0") if kl else Color("#a0d8ff"))
+		oyun._golge(r)
+		r.position = Vector2(9, 23)
+		c.add_child(r)
 	if ust_yazi != "":
 		var u := Label.new()
 		u.text = ust_yazi
@@ -381,3 +398,27 @@ func _sv_ciz() -> void:
 		puan_dugme.text = "%d puan ver" % b
 	xp_cubuk.max_value = maxf(1.0, float(need))
 	xp_cubuk.value = xp
+
+func rozet(n) -> String:
+	if n == null: return ""
+	var K: Dictionary = oyun.kusanma
+	if K.silah.has(n): return "⚔%d" % int(K.silah[n].dmg)
+	if K.esya.has(n) and int(K.esya[n].get("def", 0)) > 0: return "🛡%d" % int(K.esya[n].def)
+	return ""
+
+
+
+## yazı tipinde ⚔ ve 🛡 olmadığı için rozetin küçük kılıç ve kalkan resmi elle çizilir
+var _rz := {}
+func _rozet_resim(kilic: bool) -> Texture2D:
+	if _rz.has(kilic): return _rz[kilic]
+	var im := Image.create(7, 7, false, Image.FORMAT_RGBA8)
+	var A := ["......X", ".....X.", "X...X..", ".X.X...", "..X....", ".X.X...", "X......"] if kilic else ["XXXXXXX", "X.....X", "X.....X", "X.....X", ".X...X.", "..X.X..", "...X..."]
+	var c := Color("#ffd0a0") if kilic else Color("#a0d8ff")
+	for y in 7:
+		for x in 7:
+			if A[y][x] == "X": im.set_pixel(x, y, c)
+			elif not kilic and y < 6 and x > 0 and x < 6 and A[y][x] == "." and y <= 3 + (0 if x < 1 else 0): im.set_pixel(x, y, Color(c.r, c.g, c.b, 0.35))
+	_rz[kilic] = ImageTexture.create_from_image(im)
+	return _rz[kilic]
+
