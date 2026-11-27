@@ -6,6 +6,7 @@ extends Node
 ## Ateş ve Duman ateşten gelir; her yemek ~3 sn pişer, sıra ateşte sürer, pişen çantaya gelir; kamp ateşinde her yemek 4 sn yakıt yer.
 
 const COOK := 3.0
+var tutsu := 0.0           # Duman tütsüsü: saldırgan canavarlar 2 dk 120 px'ten fazla yaklaşamaz
 var oyun
 var A: Dictionary          # data/ates_pisir.json
 var FIRE_R := {}
@@ -130,6 +131,7 @@ func _process(dt: float) -> void:
 				c.isik.queue_free()
 				camps.remove_at(i)
 	if dur: return
+	_tutsu(dt)
 	# ateşin yanında can hızlı dolar
 	if sicak(P.position) and P.hp < P.hp_max and oyun.env.tokluk > 0.0:
 		P.hp = minf(P.hp_max, P.hp + dt * 1.4 * (2.0 if oyun.sk("D11") else 1.0))
@@ -456,3 +458,53 @@ func yukle(d) -> void:
 	for a in d:
 		var p := Vector2(float(a[0]), float(a[1]))
 		camps.append({p = p, t = float(a[2]), ash = float(a[3]), cq = [], ct = 0.0, isik = _isik(p)})
+
+# ------------------------------------------------------------------ duman (belge Tarifler › İşe yarayan eşyalar)
+func _serbest(a) -> bool:
+	return not a.boss and not a.ders and not a.has_meta("evcil") and not a.has_meta("arena")
+
+func _puf(n: int, c: Color) -> void:
+	var P: Vector2 = oyun.oyuncu.position
+	for k in n: oyun.parca(P + Vector2(randf_range(-15, 15), -6 + randf_range(-7, 7)), Vector2(randf_range(-30, 30), -10 - randf() * 30), 1.0 + randf() * 0.6, c if k % 2 else Color(0.59, 0.59, 0.63, 0.7))
+
+## eldeki Duman fişeği atılır (110 px içindekiler 3,5 sn sersemler) ya da Duman tütsüsü yakılır (2 dk)
+func duman(n: String) -> void:
+	var env = oyun.env
+	if env.adet(n) <= 0: return
+	var P: Vector2 = oyun.oyuncu.position
+	if n == "Duman fişeği":
+		var k := 0
+		for a in oyun.canlilari_ver():
+			if _serbest(a) and a.position.distance_to(P) < 110.0:
+				a.sersem = maxf(a.sersem, 3.5)
+				a.mad = false
+				k += 1
+		_puf(40, Color(0.78, 0.78, 0.78, 0.8))
+		if oyun.ses != null: oyun.ses.cal("swing")
+		oyun.yazi(P + Vector2(0, -26), ("%d canavar sersemledi" % k) if k > 0 else "Duman dağıldı", Color("#d8d8e0"), 9)
+	else:
+		tutsu = 120.0
+		_puf(18, Color(0.75, 0.86, 0.67, 0.7))
+		if oyun.ses != null: oyun.ses.cal("craft")
+		env.mesaj("Duman tütsüsü yanıyor: saldırgan canavarlar 2 dakika sana yaklaşmaz")
+	env.eksilt(n)
+
+func _tutsu(dt: float) -> void:
+	if tutsu <= 0.0: return
+	tutsu -= dt
+	if tutsu <= 0.0:
+		tutsu = 0.0
+		oyun.env.mesaj("Duman tütsüsü söndü")
+		return
+	var P: Vector2 = oyun.oyuncu.position
+	if randf() < dt * 3.0: oyun.parca(P + Vector2(randf_range(-4, 4), -14), Vector2(randf_range(-4, 4), -14), 1.2, Color(0.75, 0.86, 0.67, 0.55))
+	for a in oyun.canlilari_ver():
+		if not _serbest(a) or str(a.D.get("temper", "")) != "saldırgan": continue
+		var d: Vector2 = a.position - P
+		var L := maxf(1.0, d.length())
+		if L < 120.0:
+			var q: Vector2 = a.position + d / L * 90.0 * dt
+			if not oyun.engel(q): a.position = q
+			a.mad = false
+			a.st = "wander"
+

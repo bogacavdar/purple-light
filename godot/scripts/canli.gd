@@ -736,6 +736,13 @@ func _etki_isle(dt: float) -> void:
 		if e.n <= 0.0:
 			e.n = 1.0
 			var d := maxi(1, int(round(float(e.dps))))
+			if e.has("acc"):   # meşale yanığı: kesirli hasar birikir (Kaba meşale ~1,5 sn'de 1)
+				e.acc = float(e.acc) + float(e.dps)
+				d = int(floor(float(e.acc)))
+				e.acc = float(e.acc) - d
+				if d <= 0:
+					if e.t <= 0.0: etkiler.erase(k)
+					continue
 			hp -= d
 			oyun.yazi(position + Vector2(0, -16), "-%d" % d, Color(ETKI_C[k][2]), 9)
 			if hp <= 0.0:
@@ -777,9 +784,28 @@ func vuruldu(dm: int, yon: Vector2) -> void:
 		oyun.yazi(position + Vector2(0, -26), tur + " avlandı", Color("#fff2b0"), 9)
 		# web killAnimal: düşenler ve XP
 		var tilt: float = 0.1 if (oyun.kesif != null and oyun.kesif.usta("Av ve hayvan")) else 0.0
+		var bk := 0.0
+		for kb in [["Bazalt bıçak", 0.35], ["Obsidyen bıçak", 0.3], ["Kuvars bıçak", 0.25], ["Çakmaktaşı bıçak", 0.2], ["Taş bıçak", 0.15]]:
+			if oyun.env.adet(str(kb[0])) > 0:
+				bk = float(kb[1])
+				break
 		for dr in D.get("drops", []):
 			if randf() < float(dr.p) + (tilt if float(dr.p) < 1.0 else 0.0):
-				oyun.toplama.dusur(str(dr.n), position, randi_range(int(dr.min), int(dr.max)))
+				var dn := str(dr.n)
+				var adet := randi_range(int(dr.min), int(dr.max))
+				if bk > 0.0 and (dn.ends_with("derisi") or dn.ends_with("postu") or dn.ends_with("kürkü") or dn.ends_with(" eti") or dn == "Deri parçası") and randf() < bk: adet += 1   # bıçak avda yüzer
+				oyun.toplama.dusur(dn, position, adet)
 		if int(D.get("xp", 0)) > 0:
 			oyun.env.xp_ekle(int(D.xp))
 		oyun.canli_oldu(tur, self)
+
+## meşalenin kendisiyle vurulan canavar tutuşur (web v228-mesale): 4 sn, Kaba meşale ~1,5 sn'de 1, Meşale saniyede 1; Golem feneri tutuşturmaz
+func mesale_yak(t: String) -> void:
+	if t == "Golem feneri" or ders or olu >= 0.0 or has_meta("evcil"): return
+	var fx = D.get("fx", null)
+	if fx != null and str(fx[0]) == "yanık": return
+	var was := etkiler.has("yanık")
+	etkiler["yanık"] = {kat = 1, t = 4.0, dps = (0.67 if t == "Kaba meşale" else 1.0), n = 1.0, acc = 0.0}
+	if not was:
+		for k in 8: oyun.parca(position + Vector2(randf_range(-5, 5), -6), Vector2(randf_range(-15, 15), -20 - randf() * 25), 0.5, Color("#ffb040") if k % 2 else Color("#ff6a1a"))
+

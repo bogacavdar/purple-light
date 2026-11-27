@@ -3,7 +3,9 @@
 ## varsa yenisi yanar. Işığı Kaba meşale 80 px, Meşale 115 px; mağarada iki katı (belge: Mağaralar kural 5).
 extends Node
 
-const SIRA := ["Meşale", "Kaba meşale"]
+const SIRA := ["Golem feneri", "Meşale", "Kaba meşale"]
+const RECINE := ["Çam reçinesi", "Ladin reçinesi", "Huş katranı", "Işık fitili"]
+var son_asinma := -10.0
 var oyun
 var env
 var V: Dictionary          # magara.json → mesale {isik, sure}
@@ -84,6 +86,8 @@ func yaricap() -> float:
 func _process(dt: float) -> void:
 	if Input.is_action_just_pressed("mesale") and not oyun.sahne.acik:
 		degistir()
+	if Input.is_action_just_pressed("recine") and not oyun.pencere_acik():
+		recine()
 	if ts == null or env.adet(ts) <= 0:
 		var b = en_iyi()
 		if b != ts:
@@ -98,7 +102,7 @@ func _process(dt: float) -> void:
 		isik.texture_scale = yaricap() / 128.0
 		isik.energy = 1.05 + 0.08 * sin(Time.get_ticks_msec() * 0.012)
 		var mx := float(V.sure.get(n, 170))
-		var b: float = float(yanma.get(n, mx)) - (0.0 if Hile.dayan else dt * (0.75 if oyun.kesif.usta("Ateş") else 1.0) * (oyun.hava.mesale_kat() if oyun.hava != null else 1.0))
+		var b: float = float(yanma.get(n, mx)) - (0.0 if Hile.dayan or n == "Golem feneri" else dt * (0.75 if oyun.kesif.usta("Ateş") else 1.0) * (oyun.hava.mesale_kat() if oyun.hava != null else 1.0))
 		yanma[n] = b
 		var pc := b / mx
 		if pc < 0.35 and int(uyari.get(n, 0)) < 1:
@@ -137,3 +141,48 @@ func _tik(e: InputEvent) -> void:
 	if e is InputEventMouseButton and e.pressed and e.button_index == MOUSE_BUTTON_LEFT:
 		degistir()
 		yuva.accept_event()
+
+## L: reçine sür (web feedTorch): Meşale +%65, Kaba meşale +%50 (en çok dolu); sıra Çam reçinesi, Ladin reçinesi, Huş katranı, Işık fitili
+func recine() -> bool:
+	var t = elde()
+	if t == null:
+		for n in SIRA:
+			if env.adet(n) > 0 and n != "Golem feneri":
+				t = n
+				break
+	if t == null or t == "Golem feneri":
+		env.mesaj("Reçine sürecek bir meşalen yok.", true)
+		return false
+	var mx := float(V.sure.get(t, 170))
+	var b := float(yanma.get(t, mx))
+	if b >= mx * 0.92:
+		env.mesaj("%s zaten gürül gürül yanıyor." % t)
+		return false
+	var r := ""
+	for m in RECINE:
+		if env.adet(m) > 0:
+			r = m
+			break
+	if r == "":
+		env.mesaj("Reçinen yok.", true)
+		return false
+	env.eksilt(r)
+	yanma[t] = minf(mx, b + mx * (0.65 if t == "Meşale" else 0.5))
+	uyari[t] = 0
+	if oyun.ses != null: oyun.ses.cal("craft")
+	env.mesaj("%s reçineyle tazelendi · %%%d" % [t, int(float(yanma[t]) / mx * 100.0)])
+	for k in 8: oyun.parca(oyun.oyuncu.position + Vector2(6, -14), Vector2(randf_range(-8, 8), -20 - randf() * 20), 0.6, Color("#ffd27a") if k % 2 else Color("#f2902a"))
+	_ciz()
+	return true
+
+## meşaleyle yapılan her saldırı tam sürenin %4,5'ini yer (mağarada üçte biri; 0,25 sn'de en çok bir kez)
+func asinma() -> void:
+	var t = elde()
+	if t == null or t == "Golem feneri" or Hile.dayan: return
+	var now := Time.get_ticks_msec() / 1000.0
+	if now - son_asinma < 0.25: return
+	son_asinma = now
+	var mx := float(V.sure.get(t, 170))
+	yanma[t] = maxf(0.01, float(yanma.get(t, mx)) - mx * 0.045 * (1.0 / 3.0 if oyun.magara.icinde else 1.0))
+	_ciz()
+

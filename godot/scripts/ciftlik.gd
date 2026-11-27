@@ -353,8 +353,16 @@ func _process(dt: float) -> void:
 	if not dur:
 		for k in 24:
 			var f: Dictionary = plots[k]
+			if f.st != "planted":
+				f.erase("gub"); f.erase("gt")
+			elif f.wet and not f.has("gt") and tarh(k).distance_to(o.position) < 70.0:
+				f.gt = 1
+				if env.adet("Gübre") > 0:
+					env.eksilt("Gübre")
+					f.gub = 1
+					oyun.yazi(tarh(k) + Vector2(0, -12), "Gübrelendi", Color("#c8a060"), 8)
 			if f.st == "planted" and f.wet and f.t < float(D.crop[f.crop].grow):
-				f.t += dt
+				f.t += dt * (1.5 if f.has("gub") else 1.0)   # Gübre: %50 hızlı büyür
 				if f.t >= float(D.crop[f.crop].grow) and tarh(k).distance_to(o.position) < 200.0:
 					oyun.yazi(tarh(k) + Vector2(0, -12), "Hazır!", Color("#8fd46b"), 8)
 		var sm := _simdi()

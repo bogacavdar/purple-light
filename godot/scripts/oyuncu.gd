@@ -106,7 +106,10 @@ func silah_v() -> Dictionary:
 		var t: String = oyun.env.elde_tur()
 		if t == "axe" or t == "pick": return {dmg = 8, reach = 20, cd = 0.5, kind = "axe"}
 		h = str(oyun.kusam.get("silah", "")) if oyun.kusam.get("silah", null) != null else ""
-	if h == "" or not K.silah.has(h): return V.fist
+	if h == "" or not K.silah.has(h):
+		# silah yoksa meşalenin kendisi vurur (web weapon: 7 hasar, 19 menzil)
+		if oyun.mesale != null and oyun.mesale.elde() != null: return {dmg = 7, reach = 19, cd = 0.48, kind = "", torch = true}
+		return V.fist
 	var w: Dictionary = K.silah[h]
 	if w.kind == "hunt": return {dmg = w.dmg, reach = 30, cd = 0.5, kind = "hunt", n = h}
 	if h == "Işın kılıcı": return {dmg = w.dmg, reach = 32, cd = 0.3, kind = "sword", n = h}   # web v80: plazma kılıç hızlı vurur, uzağa uzanır
@@ -323,6 +326,11 @@ func vur(d: Vector2) -> void:
 	if bayildi or atilma > 0.0:
 		return
 	var mz = oyun.env.elde()
+	if (str(mz) == "Duman fişeği" or str(mz) == "Duman tütsüsü") and oyun.kamp != null:
+		if atk_cd <= 0.0:
+			atk_cd = 0.6
+			oyun.kamp.duman(str(mz))
+		return
 	if str(mz) == "Kamp ateşi" and oyun.kamp != null:
 		if atk_cd <= 0.0:
 			atk_cd = 0.4
@@ -373,6 +381,7 @@ func vur(d: Vector2) -> void:
 		for k in 10:
 			var a := a0 + (k / 9.0 - 0.5) * 1.6
 			oyun.parca(position + Vector2(cos(a) * 22.0, -8.0 + sin(a) * 18.0), Vector2(cos(a), sin(a)) * 30.0, 0.22, Color("#7af0ff") if k % 2 else Color("#e8ffff"))
+	if w.get("torch", false): oyun.mesale.asinma()
 	var dm := int(round(float(w.dmg) * oyun.stat("dmg") * (1.55 if oyun.sk("W4") else (1.4 if oyun.sk("W3") else (1.25 if oyun.sk("W2") else (1.1 if oyun.sk("W1") else 1.0))))))
 	var gogus := position + Vector2(0, -6)
 	for a in oyun.canlilari_ver():
@@ -388,6 +397,7 @@ func vur(d: Vector2) -> void:
 		var dmk := dm
 		if mc == "topuz": dmk = int(round(dm * (1.0 + 0.1 * mini(kombo, 6))))
 		a.vuruldu(oyun.kritik(dmk, str(w.get("n", "")), a), dv / maxf(dist, 1.0))
+		if w.get("torch", false) and dist <= 60.0: a.mesale_yak(str(oyun.mesale.elde()))
 		oyun.ult_ekle(1.5)
 		_silah_etki(w, a, dist)
 		if mc == "gurz": _gurz(a, dmk)

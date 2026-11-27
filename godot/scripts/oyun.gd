@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.23"
+const SURUM := "Godot · 5.24"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -384,6 +384,7 @@ func _ready() -> void:
 		if q.contains("muziktest"): _muzik_test.call_deferred()
 		if q.contains("yemektest"): _yemek_test.call_deferred()
 		if q.contains("kamptest"): _kamp_test.call_deferred()
+		if q.contains("islevtest"): _islev_test.call_deferred()
 		if q.contains("kurt"):
 			_canli_koy_yakin("Kurt", 6.0)
 		if q.contains("tavsan"):
@@ -2931,7 +2932,7 @@ func bayil(sebep: String) -> void:
 	oyuncu.bayildi = true
 	oyuncu.rotation = PI / 2
 	var gece := sebep == "gece"
-	var kayip := 0.0 if zaman.ilk_gece() else 0.2
+	var kayip := 0.0 if zaman.ilk_gece() else (0.1 if env.adet("Deri çanta") > 0 else (0.15 if env.adet("Kenevir torba") > 0 else 0.2))   # Deri çanta %10, Kenevir torba %15
 	var yer: Vector2 = oyuncu.position
 	if magara.icinde: yer = Vector2(magara.M.kapi.x, float(magara.M.kapi.y) + 30.0)
 	var m := {p = yer, inv = {}, vio = 0}
@@ -3268,4 +3269,21 @@ func _kamp_test() -> void:
 	await get_tree().create_timer(7.0).timeout
 	print("KAMP sıra ", F.cq.size(), " közlenmiş ", env.adet("Közlenmiş tavşan eti"), " şiş ", env.adet("Et şişi"), " yakıt ", F.t)
 	kamp._menu_ciz()
+
+## ?islevtest: kurt çağrılır, Duman fişeği atılır; meşale reçineyle tazelenir; Golem feneri yuvaya girer
+func _islev_test() -> void:
+	await get_tree().create_timer(2.0).timeout
+	var c = _canli_yeni("Kurt", oyuncu.position + Vector2(50, 0), 0)
+	env.ekle("Duman fişeği"); env.ekle("Kaba meşale"); env.ekle("Çam reçinesi")
+	env.el = env.kemer.find("Duman fişeği")
+	oyuncu.vur(Vector2.ZERO)
+	print("ISLEV kurt sersem ", c.sersem, " fişek kaldı ", env.adet("Duman fişeği"))
+	mesale.ts = "Kaba meşale"; mesale.yaniyor = true; mesale.yanma["Kaba meşale"] = 50.0
+	mesale.recine()
+	print("ISLEV kaba meşale ", mesale.yanma["Kaba meşale"], " reçine ", env.adet("Çam reçinesi"))
+	env.el = -1
+	print("ISLEV meşale silahı ", oyuncu.silah_v())
+	env.ekle("Golem feneri")
+	await get_tree().create_timer(0.3).timeout
+	print("ISLEV yuva ", mesale.en_iyi())
 

@@ -117,7 +117,7 @@ func _yay(h: String) -> void:
 		ok_uyari = secili_ok
 		oyun.yazi(P + Vector2(0, -34), "%s bitti · %s" % [secili_ok, A[0]], Color("#ffd060"), 9)
 	oyun.env.eksilt(str(A[0]), 1)
-	scd = float(B.cd)
+	scd = float(B.cd) * (0.85 if oyun.env.adet("Ok kılıfı") > 0 else 1.0)   # Ok kılıfı: yay %15 hızlı çekilir
 	var lv := _carpan()
 	var dm := maxi(1, int(round(float(B.dmg) * float(A[1]) * lv)))
 	var S := {c1 = str(A[2]), c2 = "#e8d8b0", spd = float(B.spd), range = float(B.rng), line = true, trail = 0.04}

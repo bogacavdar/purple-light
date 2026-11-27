@@ -165,7 +165,29 @@ func etkiles() -> bool:
 	return false
 
 # ------------------------------------------------------------------ balık tutma
+## Olta yemi (belge Tarifler › İşe yarayan eşyalar): Yıldız tozu yemi üç, Sülük yemi iki çekilişin en nadirini verir; her atışta bir yem
+const YEM := [["Yıldız tozu yemi", 3], ["Sülük yemi", 2]]
 func _roll(w: Vector2) -> String:
+	for b in YEM:
+		if env.adet(str(b[0])) <= 0: continue
+		env.eksilt(str(b[0]))
+		var z := bolge(w)
+		var T_: Dictionary = FISHT.get(z, FISHT[0])
+		var L: Array = T_["any"] if T_.has("any") else (T_["sea"] if oyun.tile_at(w) == 4 else T_["river"])
+		var agir := func(n: String) -> float:
+			if n == "Mor kıymık": return 0.0
+			for a in L:
+				if str(a[0]) == n: return float(a[1])
+			return 1e9
+		var en := ""
+		for i in int(b[1]):
+			var c := _roll0(w)
+			if en == "" or agir.call(c) < agir.call(en): en = c
+		if env.adet(str(b[0])) <= 0: env.mesaj("%s bitti" % b[0])
+		return en
+	return _roll0(w)
+
+func _roll0(w: Vector2) -> String:
 	var z := bolge(w)
 	var T_: Dictionary = FISHT.get(z, FISHT[0])
 	var L: Array = T_["any"] if T_.has("any") else (T_["sea"] if oyun.tile_at(w) == 4 else T_["river"])
