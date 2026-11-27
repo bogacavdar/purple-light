@@ -241,6 +241,7 @@ func liste_yaz(liste: VBoxContainer) -> void:
 				oyun.el_yapimi.kapat()
 				oynat(g, true))
 			liste.add_child(b)
+	if oyun.sise != null: oyun.sise.liste_yaz(liste)
 
 func kayit() -> Dictionary:
 	return {h = duydu, s = gordu.keys(), aile = aile_gordu}

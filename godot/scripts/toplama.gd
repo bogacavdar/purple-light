@@ -30,7 +30,7 @@ func _process(dt: float) -> void:
 	# yere düşenler: önce süzülerek yere iner, sonra üstünden yürüyünce alınır; 180 sn sonra kaybolur
 	for d in dusenler.duplicate():
 		d.yas += dt
-		if d.yas > float(G.dropLife):
+		if d.yas > float(G.dropLife) and not d.has("sise"):
 			_dusen_sil(d)
 			continue
 		if d.t < 1.0:
