@@ -1,3 +1,7 @@
+## v5.05 (27 Kasım 2026) · Godot S3b: hayvanların tutumu; belge boss boyu kararı
+- `godot-deneme/` yeni derleme (godot dalı: canli.gd tutum alanları `fark/uyari/kacis/kac_sans/son_vur/av/avci/yeme_t`, `_tutum_var/_iri/_cekiniyor/_suru_fark/_avlan/av_ol`; oyuncu.gd `hiz_kip`; oyun.gd `_cimen_yeri`, ?tutumtest). Belge 99_godot S3b satırı; 37_magaralar "Boss'ların görünüşü" boy kuralı (27 Kasım 2026, Boğaç). Web oyununda kod değişmedi.
+- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.04 (27 Kasım 2026) · Godot S4: mor ışık saldırıları ve Yıldızsızlar
 - `godot-deneme/` yeni derleme (godot dalı: yeni yildizsiz.gd (takvim, iki dalga, mor örtü, sütunlar, Vio, Börü/Zümrüt/Kemal yardımı, Konuk; kayıt `ys {n, c, o, k}`), data/yildizsiz.json (web YSG ızgaraları, tools/disa_aktar_ys.js); canli.gd `kind "ys"` çizimi ve solma; oyun.gd uzaklaşınca silmeme, canli_oldu; zaman.gd saldırıda aydınlık ve mor renk). Denetim: ?ystest. Belge 99_godot S4 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `ys` alanı okunmadan kalır).
@@ -72,8 +76,4 @@
 
 ## v4.86 (26 Kasım 2026) · Godot O6: Yıldızsız Işıkçı ve Kafa lambası
 - `godot-deneme/` yeni derleme (godot dalı: yeni isikci.gd (akşam belirme, konuşma, takas, yan görev isikci ext, kayıt `isikci`); yeni tools/disa_aktar_isikci.js → data/isikci.json; yan.gd ext görevleri sunmaz ve sınıra saymaz; zaman.gd ve mesale.gd Kafa lambası ışığı). Denetim: ?lambatest. Belge 99_godot O6 satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.85 (26 Kasım 2026) · Godot O5: Yıldızsız Gezgin ve robot köpekler
-- `godot-deneme/` yeni derleme (godot dalı: yeni gezgin.gd (Gezgin'in gelişi, konuşması, hediye, mor sinyal, köpek ısmarlama ve ışık sütunu, köpeklerin toplama/taşıma/teslimi, köpekler menüsü, kayıt `gezgin`); girdi.gd R = kopek; oyun.gd F'de Gezgin, pencere_acik, yardım satırı). Denetim: ?kopektest. Belge 99_godot O5 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et.

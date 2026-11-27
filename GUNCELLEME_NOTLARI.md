@@ -8,6 +8,22 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.05 · 27 Kasım 2026
+
+### Tasarım belgesi
+- **Boss'ların boyu:** mağara boss'ları oyuncudan büyük olur ama her biri kendi boyundadır; önemli olan her biyomun boss'unun bir öncekinden zor olmasıdır (Boğaç'ın kararı).
+
+### Proje
+- **Godot: hayvanların tutumu:**
+  - Saldırgan hayvanlar seni görünce başlarında sarı "?" ile bir an durup bakıyor; o arada uzaklaşırsan seni unutuyorlar. Dururken ve yürürken daha geç fark ediliyorsun, gizlice yaklaşabiliyorsun.
+  - Geyik, porsuk gibi nötr hayvanlar dibine girince turuncu "!" ile başını sallayıp uyarıyor; uzaklaşmazsan saldırıyor.
+  - Çok yaralanan hayvanların çoğu kan damlası bırakarak kaçmaya çalışıyor.
+  - Biyomun çok üstündeysen oradaki saldırganlar senden çekiniyor.
+  - Kurtlar tavşan, kartallar keklik avlıyor; avın leşi yerde kalıyor, derisini ve tüyünü toplayabilirsin.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.04 · 27 Kasım 2026
 
 ### Proje
@@ -216,17 +232,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - 15. günden sonra her akşam Çayır'da mavi ışıklı Işıkçı belirir.
   - 5 mor kıymık, 3 gece sefası ve 1 tunç külçesi karşılığında Kafa lambası verir. Onunla konuşunca bu takas "Hiç bitmeyen ışık" yan görevi olur.
   - Kafa lambası takılıyken gece mor ışık inmez, mağarada etrafı aydınlatır.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.85 · 26 Kasım 2026
-
-### Proje
-- **Godot: Yıldızsız Gezgin ve robot köpekler:**
-  - 5. gün Yıldızsız Gezgin yanında belirir ve sana bir robot köpek hediye eder.
-  - R ile köpekler menüsü açılır. Köpeğe ne toplayacağını seçersin; topladığını sırtında taşır, dolunca sana getirir. Yanına çağırabilir, sevebilirsin.
-  - 20. günden sonra Gezgin yine gelir ve mor sinyali verir. Menüden Vio'yla köpek ısmarlarsın (en çok 5); köpek mor bir ışık sütunuyla iner.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
