@@ -1,3 +1,7 @@
+## v5.12 (27 Kasım 2026) · Godot S10: İstatistikler
+- `godot-deneme/` yeni derleme (godot dalı: yeni istatistik.gd (aktif/menü süresi, yol, yapılan, kazanılan/harcanan Vio, toplanan; kayıt `ist`); karakter_pen.gd Karakter · İstatistikler sekmeleri ve Avlanan canlılar listesi; kancalar: el_yapimi.gd yap, istasyon.gd dövme, envanter.gd vio_ekle, toplama.gd; ?isttest). Belge 99_godot S10. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıttaki `ist` alanı okunmadan kalır).
+
 ## v5.11 (27 Kasım 2026) · Godot S9: Ayarlar ve erişilebilirlik
 - `godot-deneme/` yeni derleme (godot dalı: yeni ayarlar.gd (class_name Ayarlar; cihazda user://ayarlar.json: rk, kalp, tit, tam, muzik, efekt, vurgu, tuslar); kayit.gd ana menü ve oyun içi Ayarlar düğmesi, vurgu rengi; renk körü: el_yapimi, istasyon, isikci, yapi, insa; oyuncu.gd titreşim; gizli.gd kalp nabzı; oyun.gd tuş yardımı `yardim_guncelle`; hile.gd Hile paneli, J, meşale; ?ayartest). Belge 99_godot S9. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok; cihazdaki user://ayarlar.json zararsız kalır).
@@ -72,8 +76,4 @@
 
 ## v4.93 (27 Kasım 2026) · Godot A5: Mühendis Işın ve Meka zırh
 - `godot-deneme/` yeni derleme (godot dalı: act2.gd Işın (golem süsü, konuşma, Meka zırh yapımı, mk ödülleri), oyun.gd stat("move") Meka zırhla ×1,12, oyuncu.gd can_max Meka zırhla ×1,25, kuzen.gd "mk" rolü, gorev.gd ACT 2 kartı ve oku Işın'a). Denetim: ?ada2test_isin. Belge 99_godot A5 satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).
-
-## v4.92 (27 Kasım 2026) · Godot A4: Silahçı Tufan ve ateşli silahlar
-- `godot-deneme/` yeni derleme (godot dalı: buyu.gd GUNS/_silah (mermi, saçma yelpazesi), act2.gd Tufan (tezgâh, konuşma, silah yapımı, sl ödülleri), el_yapimi.gd mermi kutusu (10/6), kuzen.gd "sl" rolü, gorev.gd ACT 2 kartı ve oku Tufan'a). Denetim: ?ada2test_tufan. Belge 99_godot A4 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).

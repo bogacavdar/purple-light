@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.12 · 27 Kasım 2026
+
+### Proje
+- **Godot: İstatistikler:**
+  - Karakter penceresinde (C) "İstatistikler" sekmesi var: hayatta kaldığın gün, aktif oyun süresi, menüde geçen süre, yürüdüğün yol, avlanan canlı, yenilen reis, tutulan balık, yapılan eşya, öğrenilen tarif, kazanılan ve harcanan Vio, bayılma, toplanan malzeme.
+  - Yanında avladığın canlıların listesi ve her birinin Reis çubuğu var.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.11 · 27 Kasım 2026
 
 ### Proje
@@ -221,17 +231,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: Kristal Golem Ocağı ve Mühendis Işın:**
   - Işın, Kristal Golem Ocağı'nda yarım kalmış bir golemin başında. Onunla tanışınca Efsun'un Buz asası işi de açılıyor.
   - Işın'ın üç işinin sonunda Meka zırhı Işın yapıyor. Giyince can %25, yürüme hızı %12 artıyor; zehir, yanık ve kanamanın yarısını tutuyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.92 · 27 Kasım 2026
-
-### Proje
-- **Godot: Hurda Çölü ve Silahçı Tufan:**
-  - Tufan, Hurda Çölü'nde hurda tezgâhının başında. Dört işi var; ödülleri tabanca, pompalı ve mermi tarifleri.
-  - Silahları Tufan yapar. Mermiyi sen yaparsın; her yapış bir kutu çıkarır (10 mermi ya da 6 fişek).
-  - Silah elindeyken vuruş tuşu ateş eder. Pompalı beş saçma atar.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
