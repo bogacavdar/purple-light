@@ -1,3 +1,7 @@
+## v5.30 (27 Kasım 2026) · Godot Son-s: envanter penceresi, toplama bildirimi
+- `godot-deneme/` yeni derleme (godot dalı: yeni canta.gd (envanter.canta artık bu), envanter.gd kemere sürükle-bırak, topla_bildir; toplama.gd _al; ?rozettest). Belge 99_godot Son-s. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.29 (27 Kasım 2026) · Godot Son-r: fare imleci, köpek kamerası kayıtları
 - `godot-deneme/` yeni derleme (godot dalı: yeni imlec.gd, kopek.gd; oyun.gd kayıt `dlog`, bayıl kaydı; basarim.gd kazanınca kayıt). Belge 99_godot Son-r. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (`dlog` alanı okunmaz, zararsız).
@@ -73,7 +77,3 @@
 ## v5.11 (27 Kasım 2026) · Godot S9: Ayarlar ve erişilebilirlik
 - `godot-deneme/` yeni derleme (godot dalı: yeni ayarlar.gd (class_name Ayarlar; cihazda user://ayarlar.json: rk, kalp, tit, tam, muzik, efekt, vurgu, tuslar); kayit.gd ana menü ve oyun içi Ayarlar düğmesi, vurgu rengi; renk körü: el_yapimi, istasyon, isikci, yapi, insa; oyuncu.gd titreşim; gizli.gd kalp nabzı; oyun.gd tuş yardımı `yardim_guncelle`; hile.gd Hile paneli, J, meşale; ?ayartest). Belge 99_godot S9. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok; cihazdaki user://ayarlar.json zararsız kalır).
-
-## v5.10 (27 Kasım 2026) · Godot S8: Arena ve hileler
-- `godot-deneme/` yeni derleme (godot dalı: yeni hile.gd (class_name Hile, statik oturumluk anahtarlar, cheat ve kol kodu, ped, pencere, eşya arama) ve arena.gd (halka, seviye/yuva/silah seçici, iki adanın canlıları ve Reisleri, hasar ölçümü, Gerçek dövüş); kancalar: oyun.gd arena girişi, engel, canli_oldu, _dogur, bayil (Tanrı); kayit.gd Arena düğmesi ve kayıt kapalı; envanter.gd sınırsız Vio ve dayanıklılık; canli.gd tek vuruş ve arena hasarı; oyuncu.gd arena hasarı; zaman.gd gece ışığı; ys, gizli, almanak, basarim arenada kapalı; ?hiletest, ?arenatest). Belge 99_godot S8 ve Son. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).

@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.30 · 27 Kasım 2026
+
+### Proje
+- **Godot: yeni envanter penceresi:**
+  - Solda sekmeli eşya listesi, sağda giyim figürü ve karakter. Giysiyi figürdeki yuvaya, aleti alttaki kemere sürükleyebiliyorsun. Seçili eşyanın bilgisi ve düğmeleri (Ye, Giy, Eline al…) altta.
+  - Aynı şeyi art arda toplayınca bildirim "+2, +3 Odun" diye birikiyor.
+
 ## Versiyon 5.29 · 27 Kasım 2026
 
 ### Proje
@@ -166,16 +173,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Renk körü modunda "var / eksik" renkleri mavi ✓ ve turuncu ✗ olur.
   - Tuş değiştirince ekrandaki tuş yardımı yeni tuşları gösteriyor.
   - Hilelerde: "Hile paneli" anahtarı eklendi, +100 XP kısayolu artık J.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.10 · 27 Kasım 2026
-
-### Proje
-- **Godot: Arena ve hileler:**
-  - Ana menüde `cheat` yazınca ya da kolda Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A ile hile modu açılıyor. Oyunda üstte küçük bir hile pedi çıkıyor; "Hileler…" penceresinde Tanrı modu, tek vuruşta öldürme, sınırsız Vio ve dayanıklılık, gece ışığı, ACT 2'ye geçme, en üst seviye, haritayı açma ve eşya arama var.
-  - Ana menüde "⚔ Arena": oyunu bitirince ya da hile modu açıkken açılıyor. Seviyeni, giyimini ve silahını seçip iki adanın bütün canlılarıyla ve Reisleriyle dövüşebiliyorsun. Verdiğin ve aldığın hasar ölçülüyor; "Gerçek dövüş" kapalıyken kimsenin canı gitmiyor. Arenada hiçbir şey kaydedilmiyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
