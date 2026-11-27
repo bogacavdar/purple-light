@@ -1,3 +1,7 @@
+## v5.33 (27 Kasım 2026) · Godot 7a: dokunmatik
+- `godot-deneme/` yeni derleme (godot dalı: yeni dokun.gd; oyuncu.gd dokunmatikte fare vuruşu kapalı, yürüyüş `dokun.yon`; boyut.gd dokunmatikte tam ekran pencere). Belge 99_godot 7a. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.32 (27 Kasım 2026) · Godot Son-u: kontrol eksikleri
 - `godot-deneme/` yeni derleme (godot dalı: yeni kontrol.gd; toplama.gd `f_bas()`; oyuncu.gd sol tık `kontrol.tikla`, yürüyüş `kontrol.yon`; envanter.gd kemer yuvası sol/sağ tık; girdi/ayarlar H "eli_bosalt"; ?tiklatest). Belge 99_godot Son-u. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
@@ -73,7 +77,3 @@
 ## v5.14 (27 Kasım 2026) · Godot Son-b: kendi işaretin ve yol gösterme
 - `godot-deneme/` yeni derleme (godot dalı: yeni isaret.gd (T, işaret penceresi, haritada çizim ve tıklama, mavi ok; kayıt `isr`); harita.gd çizim ve tık kancaları; ayarlar.gd "İşaret koy" tuşu; oyun.gd tuş yardımı; ?isrtest). Belge 99_godot Son-b. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `isr` alanı okunmadan kalır).
-
-## v5.13 (27 Kasım 2026) · Godot Son-a: kayıkla gelen yoldaşlar, Kupa panosu
-- `godot-deneme/` yeni derleme (godot dalı: evcil.gd `yanina()` (ciftlik.gd kayık geçişi çağırıyordu, yoktu); ev_ici.gd `_kupa_as`, `_kupa_ciz`; oyun.gd `TILSIM`, `tilsimlar` (kayıt `tlsm`), `_taki` tılsım etkileri; ?kupatest). Belge 99_godot Son-a ve Son listesi. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıttaki `tlsm` alanı okunmadan kalır).

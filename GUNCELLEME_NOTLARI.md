@@ -8,6 +8,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.33 · 27 Kasım 2026
+
+### Proje
+- **Godot: telefonda ve tablette oynanıyor:**
+  - Ekranın boş yerinde parmağını sürükleyince yürüyorsun; çift dokunup sürükleyince koşuyorsun. Bir şeye dokununca oraya gidip topluyor ya da konuşuyorsun.
+  - Sağda Vur, Atıl, Savuş düğmeleri; çubuk dolunca Ulti çıkıyor. Ekrandaki eylem yazısına dokununca o iş yapılıyor.
+  - Pencereler telefonda bütün ekranı kaplıyor.
+
 ## Versiyon 5.32 · 27 Kasım 2026
 
 ### Proje
@@ -157,17 +165,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - T tuşuyla bulunduğun yere adlı, renkli bir işaret koyabiliyorsun (en çok 40).
   - Büyük haritada bir işarete tıklayınca "Yol göster" ya da "Sil"; bir kişiye tıklayınca mavi bir ok seni ona götürüyor. Varınca ok kendiliğinden kalkıyor; sağ tık da kaldırıyor.
   - Haritada bayıldığın yerler, kurduğun evler, yataklar ve balık tuzakları da görünüyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.13 · 27 Kasım 2026
-
-### Proje
-- **Godot: kayıkla gelen yoldaşlar ve Kupa panosu:**
-  - Bereket Adası'na kayıkla gidip gelirken yanındaki yoldaşlar ve binek de geliyor.
-  - Kupa panosunda yendiğin her Reis için küçük altın bir kalkan beliriyor.
-  - Panolu bir eve girince çantandaki mağara boss tılsımları panoya asılıyor ve kalıcı etki veriyor (ör. Dev yüreği tılsımı +80 can).
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
