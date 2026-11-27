@@ -185,6 +185,7 @@ func _bitir() -> void:
 		var d = g.hedef
 		var A: Dictionary = G.nodes[d.ad]
 		if oyun.basarim != null: oyun.basarim.topladi(str(d.ad))
+		if oyun.ist != null: oyun.ist.toplanan += 1
 		if A.mine:
 			d.kalan -= 1
 			if d.kalan <= 0:

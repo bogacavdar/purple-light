@@ -6,6 +6,7 @@ var pencere: PanelContainer
 var sol: VBoxContainer
 var sag: VBoxContainer
 var secim := ""      # açık yuva (web eqPick)
+var sekme := "k"     # "k" karakter · "st" istatistikler
 const ROWS := [
 	["gather", "Toplama hızı", "Dal, taş, bitki, odun ve maden toplarken daha hızlı olursun."],
 	["move", "Hareket hızı", "Daha hızlı yürür ve koşarsın."],
@@ -85,6 +86,23 @@ func ciz() -> void:
 	for c in sag.get_children():
 		sag.remove_child(c); c.queue_free()
 	var S = oyun
+	# --- sekmeler: Karakter · İstatistikler
+	var th := HBoxContainer.new()
+	for a in [["k", "Karakter"], ["st", "İstatistikler"]]:
+		var tb0 := Button.new()
+		tb0.text = a[1]
+		tb0.focus_mode = Control.FOCUS_NONE
+		if sekme == a[0]: tb0.add_theme_color_override("font_color", Color("#f2c94c"))
+		var kk: String = a[0]
+		tb0.pressed.connect(func():
+			sekme = kk
+			ciz())
+		th.add_child(tb0)
+	sol.add_child(th)
+	if sekme == "st":
+		_istatistik()
+		_yerles.call_deferred()
+		return
 	# --- yuvalar
 	sol.add_child(_lbl("Kuşanma", 18, Color("#f2c94c")))
 	for y in S.kusanma.yuvalar:
@@ -149,6 +167,65 @@ func ciz() -> void:
 	if cap < int(S.kusanma.rmax): sag.add_child(_lbl("Bu seviyede bir özellik en çok %d puan alabilir (her 3 seviyede 1 artar)." % cap, 11, Color("#b8ac90"), 430))
 	sol.add_child(_lbl("Her seviye atlayışta seviye puanı kazanırsın (10. seviyeye kadar 2, 30. seviyeye kadar 3, sonra 4); dilediğin özelliğe + ile verirsin. Her özellik en çok %d puan alır; 60. seviyede hepsi tam dolar." % int(S.kusanma.rmax), 11, Color("#b8ac90"), 290))
 	_yerles.call_deferred()
+
+func _kart(v: String, l: String) -> Control:
+	var p := PanelContainer.new()
+	var s := StyleBoxFlat.new(); s.bg_color = Color("#232d1f"); s.border_color = Color("#3a4a32"); s.set_border_width_all(1); s.set_content_margin_all(6)
+	p.add_theme_stylebox_override("panel", s)
+	p.custom_minimum_size = Vector2(138, 0)
+	var v2 := VBoxContainer.new()
+	p.add_child(v2)
+	v2.add_child(_lbl(v, 16, Color("#fff2c0")))
+	v2.add_child(_lbl(l, 11, Color("#b8ac90")))
+	return p
+
+func _istatistik() -> void:
+	var S = oyun
+	var I = S.ist
+	var ks := []
+	var tot := 0
+	for k in S.gorev.kills:
+		if str(k).ends_with(" Reisi") or int(S.gorev.kills[k]) <= 0: continue
+		ks.append(k); tot += int(S.gorev.kills[k])
+	var reis := 0
+	for k in S.reis.bd:
+		if bool(S.reis.bd[k]): reis += 1
+	var g := GridContainer.new(); g.columns = 2
+	g.add_theme_constant_override("h_separation", 6); g.add_theme_constant_override("v_separation", 6)
+	for a in [[str(S.zaman.gun), "gün hayatta kaldın"], [I.sure_yaz(I.aktif), "aktif oyun süresi"], [I.sure_yaz(I.menu), "menüde geçen süre"], [I.yol_yaz(I.yol), "yürüdüğün yol"],
+			[str(tot), "avlanan canlı"], [str(reis), "yenilen reis"], [str(S.basarim._fish()), "tutulan balık"], [str(I.yapilan), "yapılan eşya"],
+			["%d / %d" % [S.el_yapimi.bilinen.size(), S.el_yapimi.R.size()], "öğrenilen tarif"], [str(I.kazanilan), "kazanılan Vio"], [str(I.harcanan), "harcanan Vio"],
+			[str(S.basarim.bayilma), "bayılma"], [str(I.toplanan), "toplanan malzeme"]]:
+		g.add_child(_kart(a[0], a[1]))
+	sol.add_child(g)
+	sag.add_child(_lbl("Avlanan canlılar", 16, Color("#f2c94c")))
+	if ks.is_empty():
+		sag.add_child(_lbl("Henüz hiçbir canlı avlamadın. Bir türden yeterince avlarsan sürünün reisi ortaya çıkar.", 12, Color("#b8ac90"), 420))
+		return
+	ks.sort_custom(func(a, b): return int(S.gorev.kills[a]) > int(S.gorev.kills[b]))
+	var sc := ScrollContainer.new()
+	sc.custom_minimum_size = Vector2(430, 380)
+	sc.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	var L := VBoxContainer.new()
+	L.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	sc.add_child(L)
+	sag.add_child(sc)
+	for k in ks:
+		var h := HBoxContainer.new()
+		var ad := _lbl("%s · %d avlandı%s" % [k, int(S.gorev.kills[k]), "  ♛ reis yenildi" if bool(S.reis.bd.get(k, false)) else ""], 12)
+		ad.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		h.add_child(ad)
+		if S.canlilar.has(k) and S.reis.uygun(k):
+			var need: int = S.reis.gerek(k)
+			var c := mini(need, int(S.reis.bc.get(k, 0)))
+			var pb := ProgressBar.new(); pb.custom_minimum_size = Vector2(90, 8); pb.max_value = need; pb.value = c; pb.show_percentage = false
+			pb.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+			pb.tooltip_text = "%s: %d / %d" % [S.reis.ad(k), c, need]
+			h.add_child(pb)
+			h.add_child(_lbl("Reis %d/%d" % [c, need], 11, Color("#b8ac90")))
+		else:
+			h.add_child(_lbl("reisi yok", 11, Color("#8a8a80")))
+		L.add_child(h)
 
 func _yerles() -> void:
 	pencere.reset_size()

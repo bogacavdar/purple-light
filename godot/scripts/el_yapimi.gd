@@ -77,6 +77,7 @@ func yap(r: String) -> void:
 		env.eksilt(str(p[0]), int(p[1]))
 	var yld: int = int({"Toprak yol": 4, "Çakıl yol": 4, "Ahşap parke": 4, "Dal çit": 2, "Çit": 2, "Tabanca mermisi": 10, "Pompalı fişeği": 6}.get(r, int(oyun.buyu.VERIM.get(r, 1)) if oyun.buyu != null else 1))
 	env.ekle(r, yld)
+	if oyun.ist != null: oyun.ist.yapilan += 1
 	env.mesaj("Yapıldı: " + r + (" ×%d" % yld if yld > 1 else ""))
 	oyun.ogr.yapti(r)
 	ciz()

@@ -347,6 +347,7 @@ func ilerleme_goster(yazi: String, k: float) -> void:
 
 func vio_ekle(n: int) -> void:
 	if n < 0 and Hile.sonsuz: n = 0   # Sınırsız Vio: satın almak Vio'nu azaltmaz
+	if oyun.ist != null: oyun.ist.vio(maxi(n, -vio))
 	vio = maxi(0, vio + n)
 	vio_yazi.text = ("%d Vio ∞" if Hile.sonsuz else "%d Vio") % vio
 

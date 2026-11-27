@@ -118,6 +118,7 @@ func _islem() -> void:
 			env.eksilt(str(p[0]), int(p[1]))
 		env.vio_ekle(-fee)
 		env.ekle(r)
+		if oyun.ist != null: oyun.ist.yapilan += 1
 		oyun.gorev.dovulen[r] = true
 		oyun.ogr.dovuldu(r)
 		env.mesaj("Dövüldü: %s · işçilik %d Vio" % [r, fee])
