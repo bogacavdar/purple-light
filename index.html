@@ -1382,7 +1382,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
       <button class="mb" id="t-new" type="button">Yeni oyun</button>
       <button class="mb" id="t-load" type="button">Yükle</button>
       <button class="mb ghost" id="t-about" type="button">Hakkında</button>
-      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 5.34</small>
+      <small id="verlab" style="display:block;text-align:center;font-size:12px;opacity:.6;margin-top:6px;letter-spacing:.04em">Versiyon 5.35</small>
       <button type="button" id="t-notes" class="rnbtn">Güncelleme notları</button>
     </div>
     <script>/* v3.04: safety net, the menu shows itself after 6 s even if the arena button never comes */setTimeout(function(){var m=document.getElementById('tmain');if(m)m.classList.remove('plwait')},6000)</script>
@@ -1457,7 +1457,7 @@ body.v50m #savedot{bottom:calc(env(safe-area-inset-bottom,0px) + 50px)!important
   <p id="x-msg" class="note" aria-live="polite"></p>
 </div></div>
 <div id="win" class="ov" hidden role="dialog" aria-labelledby="wt"><div class="tcard wcard"><div class="wsun" aria-hidden="true"></div><small class="wk">Prototipin sonu</small><h2 id="wt">Adadan ayrıldın!</h2><p id="wtext">Kırk yıldır kimsenin başaramadığını yaptın: Yıldızsız Ada'nın bütün sırlarını öğrenip ufka yelken açtın.</p><div class="wstats" id="wstats"></div><p class="wnext">Yakında: yeni biyomlar ve adalar, aralarında gidip gelme, bütün tarifler ve çağ atlama.</p><div class="tmenu"><button class="mb" id="w-stay" type="button">Adaya dön, oynamaya devam et</button><button class="mb ghost" id="w-menu" type="button">Ana menü</button></div></div></div>
-<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 5.34 · 27 Kasım 2026</h2><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
+<div id="relnotes" class="ov" hidden role="dialog" aria-label="Güncelleme notları"><div class="tcard small rncard"><h2 class="rnh">Güncelleme notları</h2><div id="rn-body" class="rnbody"><!--RELNOTES--><h2>Versiyon 5.35 · 27 Kasım 2026</h2><h3>Oynanış</h3><ul><li><strong>Ekin'in hikâyesi açılıyor:</strong> Ekin, adaya mor ışığa kaptırdığı kız kardeşi Gül'ün peşinden gelmiş. Hikâyesinin parçaları "İlk başak", "İlk fidan" ve "Ekmek kokusu" görevleri bitince açılıyor; üçü duyulunca "Hasat gecesi" sahnesi izlenebiliyor. Önceden bu hikâye hiç açılmıyordu.</li></ul><!--/RELNOTES--></div><div class="tmenu"><button class="mb" id="rn-close" type="button">Tamam</button></div></div></div>
 <div id="about" class="ov" hidden role="dialog" aria-label="Hakkında"><div class="tcard small" style="text-align:center"><h2 style="color:#c070ff;font-size:clamp(30px,6vw,46px);letter-spacing:.06em;margin:8px 0 6px;text-shadow:0 0 14px rgba(192,112,255,.5)">Purple Light</h2><p style="font-size:18px;margin:0 0 10px">Bir <b style="color:#f2c84b;font-weight:800">“Boğaçhan Çavdar”</b> oyunu.</p><p style="font-size:15px;margin:0 0 18px">Tasarım belgesine <a href="#" id="ab-doc" style="color:#c9a0ff;font-weight:800">buradan ulaşabilirsiniz</a>.</p><div class="tmenu"><button class="mb" id="ab-close" type="button">Tamam</button></div></div></div>
 <div id="docov" hidden role="dialog" aria-label="Tasarım belgesi" style="position:fixed;inset:0;z-index:120;background:#0e0c14;display:flex;flex-direction:column"><div style="display:flex;gap:8px;align-items:center;justify-content:space-between;padding:8px 12px;background:#1a1626;border-bottom:2px solid #3a2f55;color:#f3ecd8;font-family:var(--font)"><b style="font-size:16px">Purple Light · Tasarım belgesi</b><span style="display:flex;gap:8px"><a id="doc-new" href="belge.html" target="_blank" rel="noopener" class="mb ghost" style="padding:6px 12px;text-decoration:none">Yeni sekmede aç</a><button class="mb" id="doc-close" type="button" style="padding:6px 14px">Kapat</button></span></div><iframe id="doc-fr" title="Tasarım belgesi" style="flex:1;border:0;width:100%;background:#fff"></iframe></div>
 <div id="cheatpad" hidden><button id="c-coin" type="button">+100 Vio</button><button id="c-xp" type="button">+100 XP</button><button id="c-time" type="button">+2 saat</button><button id="c-day" type="button" title="Sabah 06:00'ya atla">Günü bitir</button><button id="c-night" type="button" title="Basılı tuttukça zaman hızla akar">Zamanı sar ⏩</button><div class="cres" id="cres" aria-label="Hile: malzeme ekle"></div></div>
@@ -10756,13 +10756,13 @@ const ST_={
      "Kıyıya vurdukları sabah kumda bir şey parladı.",
      "<b>Durmuş</b>: “Abi… bu babamın çekici.”",
      "Sapında mor bir yanık izi vardı. Kardeşler örslerini o kumsala kurdu."]}},
- farmer:{lost:'Kızı Gül',ids:['f1','f2','f3'],F:[
-   "Benim bir kızım var: <b>Gül</b>. Var diyorum, çünkü ölmedi. Biliyorum.",
-   "Ayçiçeğini çok severdi. “Baba, onlar da güneşi arıyor, benim gibi” derdi. Bu tarlayı onun için ekiyorum; gelince görsün.",
+ farmer:{lost:'Kız kardeşi Gül',ids:['EK3','EK5','EK8'],F:[
+   "Benim bir kız kardeşim var: <b>Gül</b>. Var diyorum, çünkü ölmedi. Biliyorum.",
+   "Ayçiçeğini çok severdi. “Abla, onlar da güneşi arıyor, benim gibi” derdi. Bu tarlayı onun için ekiyorum; gelince görsün.",
    "Bir hasat gecesi tarlada ateş böcekleri gibi mor ışıklar uçuştu. Gül peşlerinden koştu. Ben “dur” diyene kadar… Ben de peşinden bu adaya geldim."],
    sc:{n:'Ekin · Hasat gecesi',bg:'field',cast:[{L:'farmer',x:60,fx:1,arm:'reach'},{L:'gül',x:150,fx:1,v:1}],bl:2,L:[
      "Bir hasat gecesi. Ayçiçekleri geceleyin bile başlarını göğe çevirmiş.",
-     "<b>Gül</b>: “Baba, bak! Ateş böcekleri mor olmuş!”",
+     "<b>Gül</b>: “Abla, bak! Ateş böcekleri mor olmuş!”",
      "Işıklar bir araya toplandı, bir sütun oldu. Gül'ün ayakları yerden kesildi.",
      "Ekin o gece tarlanın ortasında sabahladı. Ayçiçekleri hâlâ göğe bakıyordu."]}},
  usta:{lost:'Kızı Zeynep',ids:['u1','u2','u3'],F:[
@@ -10857,7 +10857,7 @@ const ST={h:{},s:{}};window.__v59=ST;window.__v59ST=ST_;window.__v59G=GOBJ;
 const FAMX=()=>window.__plFam||null,isFam=g=>{const F=FAMX();return !!(F&&F.has(g))},famOpen=()=>{const F=FAMX();return !!(F&&F.done()&&!F.seen())},scOf=g=>isFam(g)?FAMX().sc:ST_[g].sc;   // v1.84: Zümrüt, Dursun, Durmuş and their cousins share one scene
 const gidOf=who=>{if(!who)return 'npc';for(const k in GOBJ)if(GOBJ[k]()===who)return k;return null};
 const QD=()=>(window.__v55&&window.__v55.d)||[];
-function unlocked(g){const S=ST_[g];if(g==='npc'){const done=Math.max(0,Math.min(QUESTS.length,tut-11));return S.at.filter(a=>done>=a).length}return S.ids.filter(id=>QD().indexOf(id)>=0).length}
+function unlocked(g){const S=ST_[g];if(g==='npc'){const done=Math.max(0,Math.min(QUESTS.length,tut-11));return S.at.filter(a=>done>=a).length}return S.ids.filter(id=>QD().indexOf(id)>=0||((window.__q2&&window.__q2.d)||[]).indexOf(id)>=0).length}   /* 27 Kasım 2026: Ekin'in parçaları EK3/EK5/EK8 (ana görev motoru __q2) */
 const heard=g=>ST.h[g]||0;
 const allDone=g=>heard(g)>=ST_[g].F.length;
 function storyChoice(g,who){const u=unlocked(g),h=heard(g);if(h<u)return{q59:1,fresh:1,pri:1,k:'q59'+g+h,t:h?'📖 Hikâyenin devamını anlat':'📖 Sen bu adaya nasıl geldin?',f:()=>tell(g,who)};

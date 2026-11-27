@@ -1,3 +1,7 @@
+## v5.35 (27 Kasım 2026) · Ekin'in hikâyesi EK3/EK5/EK8'e bağlandı (Boğaç)
+- Web: `farmer` hikâyesi (ST_ verisi, satır ~10755) ids f1–f3 → EK3/EK5/EK8, "Kızı Gül" → "Kız kardeşi Gül", Gül "Baba" yerine "Abla" der; `unlocked()` EK görevlerinin motorunu (`window.__q2.d`) da sayar. Godot: data/hikaye.json aynı. Belge 30_act1 Çiftçi Ekin › Ekin'in hikâyesi, 99_godot.
+- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.34 (27 Kasım 2026) · Godot 7b: masaüstü çıktısı
 - godot dalı: export_presets.cfg'ye Windows ve Linux (embed_pck, modify_resources kapalı), .gitignore build/windows, build/linux. Dışa aktarma şablonları (4.7.1) GitHub'dan indirildi. `godot-deneme/` web derlemesi değişmedi (yeniden derlendi). Belge 99_godot 7b. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et.
@@ -73,7 +77,3 @@
 ## v5.16 (27 Kasım 2026) · Godot Son-d: silahçılarda bileme, Derse dön
 - `godot-deneme/` yeni derleme (godot dalı: kuzen.gd silahçıda "Aletimi bile"; dovus.gd 280 px'te Derse dön / Dersi bırak (ücret iadesi), `soruldu`; poyraz.gd gereksiz `_cik` kaldırıldı; ?dersdon). Belge 99_godot Son-d. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
-
-## v5.15 (27 Kasım 2026) · Godot Son-c: Balık defteri, Bütün sahneler, konuk kart
-- `godot-deneme/` yeni derleme (godot dalı: poyraz.gd "Balık defteri"; almanak.gd `ac("deniz")`, konuk kartları (kayıt `alm.k`); ani.gd Bütün sahneler bölümü; hile.gd `love`; ayarlar.gd `butun_sahne` (cihazda); oyun.gd canli_oldu almanak'a canlıyı da verir; ?sontest). Belge 99_godot Son-c. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıttaki `alm.k` alanı okunmadan kalır).

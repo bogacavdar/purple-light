@@ -8,6 +8,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.35 · 27 Kasım 2026
+
+### Oynanış
+- **Ekin'in hikâyesi açılıyor:** Ekin, adaya mor ışığa kaptırdığı kız kardeşi Gül'ün peşinden gelmiş. Hikâyesinin parçaları "İlk başak", "İlk fidan" ve "Ekmek kokusu" görevleri bitince açılıyor; üçü duyulunca "Hasat gecesi" sahnesi izlenebiliyor. Önceden bu hikâye hiç açılmıyordu.
+
+### Proje
+- Aynı değişiklik Godot sürümünde de var.
+
 ## Versiyon 5.34 · 27 Kasım 2026
 
 ### Proje
@@ -148,17 +156,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: silahçılarda bileme ve "Derse dön":**
   - Silahçı kuzenler de körelen aletlerini biliyor ("Aletimi bile").
   - Börü'nün dersinden uzaklaşınca oyun duruyor, Börü soruyor: "Derse dön" seni yanına getiriyor, "Dersi bırak" ödediğin ücreti geri veriyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.15 · 27 Kasım 2026
-
-### Proje
-- **Godot: Balık defteri, Bütün sahneler, konuk kartlar:**
-  - Poyraz'la konuşunca "Balık defteri" almanağın Deniz canlıları sayfasını açıyor.
-  - Ana menüde `love` yazınca Tarif kitabı › Anılar'ın en üstünde "Bütün sahneler" açılıyor: açılış, deniz yolculuğu, roket, kişilerin hikâyeleri ve bütün anılar; kutuya basınca sahne baştan oynuyor.
-  - Bir canlıyı kendi bölgesinin dışında avlarsan almanakta avladığın bölgenin sayfasında da "Başka bölgeden" olarak görünüyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
