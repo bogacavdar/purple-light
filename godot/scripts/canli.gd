@@ -762,8 +762,9 @@ func vuruldu(dm: int, yon: Vector2) -> void:
 			oyun.parca(position + Vector2(0, -4), Vector2(randf_range(-30, 30), -20 - randf() * 40), 0.6, Color("#c84a3a") if k % 2 else Color("#e8e0c8"))
 		oyun.yazi(position + Vector2(0, -26), tur + " avlandı", Color("#fff2b0"), 9)
 		# web killAnimal: düşenler ve XP
+		var tilt: float = 0.1 if (oyun.kesif != null and oyun.kesif.usta("Av ve hayvan")) else 0.0
 		for dr in D.get("drops", []):
-			if randf() < float(dr.p):
+			if randf() < float(dr.p) + (tilt if float(dr.p) < 1.0 else 0.0):
 				oyun.toplama.dusur(str(dr.n), position, randi_range(int(dr.min), int(dr.max)))
 		if int(D.get("xp", 0)) > 0:
 			oyun.env.xp_ekle(int(D.xp))

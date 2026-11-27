@@ -209,7 +209,7 @@ func bas() -> void:
 		return
 	if fish.st == "bite":
 		var hard: float = float(FISH_HARD.get(fish.catch, 1.0))
-		var w: float = float(FISH_W.get(fish.tool, 0.26)) * (1.1 if oyun.sk("H4") else 1.0) / hard
+		var w: float = float(FISH_W.get(fish.tool, 0.26)) * (1.1 if oyun.sk("H4") else 1.0) / hard * (1.08 if oyun.kesif.usta("Yiyecek") else 1.0)
 		var z0 := 0.08 + randf() * (0.84 - w)
 		fish.st = "reel"; fish.t = 0.0; fish.z0 = z0; fish.z1 = z0 + w
 		fish.pos = 0.0 if randf() < 0.5 else 1.0

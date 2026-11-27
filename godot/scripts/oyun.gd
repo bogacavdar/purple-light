@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · S6"
+const SURUM := "Godot · S7a"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -105,6 +105,7 @@ var harita_k                # keşif sisi, büyük harita (M), yan görev işare
 var ani                     # anılar (ani.gd)
 var roket                   # ACT 2'nin sonu: fırlatma, kavuşma, son kart (roket.gd)
 var almanak                 # almanak.gd (U)
+var kesif                   # kesif.gd: keşif defteri ve Zümrüt'ün bilmecesi
 var basarim                 # basarim.gd (cihaza kayıtlı başarımlar)
 var ys                      # mor ışık saldırıları ve Yıldızsızlar (yildizsiz.gd)
 var buyu                    # mor mana ve asalar (buyu.gd)
@@ -260,6 +261,9 @@ func _ready() -> void:
 	roket = preload("res://scripts/roket.gd").new()
 	add_child(roket)
 	roket.kur(self)
+	kesif = preload("res://scripts/kesif.gd").new()
+	add_child(kesif)
+	kesif.kur(self)
 	almanak = preload("res://scripts/almanak.gd").new()
 	add_child(almanak)
 	almanak.kur(self)
@@ -377,6 +381,7 @@ func _ready() -> void:
 		if q.contains("tutumtest"): _tutum_test.call_deferred(q)
 		if q.contains("almtest"): _alm_test.call_deferred(q)
 		if q.contains("bsrtest"): _bsr_test.call_deferred(q)
+		if q.contains("kdeftest"): _kdef_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -1299,6 +1304,29 @@ func _cimen_yeri() -> bool:
 				oyuncu.position = q
 				return true
 	return false
+
+func _kdef_test(_q: String) -> void:
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	var top := 0
+	for c in kesif.kat_n: top += int(kesif.kat_n[c])
+	print("KDEF ulaşılır ", kesif.ulasir.size(), " / ", el_yapimi.R.size(), " Ateş ", kesif.kat_n.get("Ateş"), " Yiyecek ", kesif.kat_n.get("Yiyecek"))
+	var v0: int = env.vio
+	for r in el_yapimi.R:
+		if el_yapimi.R[r].c == "Ateş" and kesif.ulasir.has(r): el_yapimi.bilinen[r] = true
+	await get_tree().create_timer(1.5).timeout
+	print("KDEF Ateş seviye ", kesif.codex.get("Ateş"), " usta ", kesif.usta("Ateş"), " vio +", env.vio - v0)
+	for n in ["Dal", "Taş", "Lif", "Yaprak", "Kuru ot", "Çakmaktaşı", "Böğürtlen", "Papatya", "Kemik", "Sinir"]: env.gorulen[n] = true
+	kesif.bilmece = kesif._sec()
+	print("KDEF bilmece ", kesif.bilmece, " ", kesif.bilmece_yazi(kesif.bilmece))
+	var v1: int = env.vio
+	if kesif.bilmece != null: el_yapimi.bilinen[kesif.bilmece.r] = true
+	await get_tree().create_timer(1.5).timeout
+	print("KDEF bilmece çözüldü ", kesif.bilmece == null, " vio +", env.vio - v1, " sayı ", kesif.bilmece_n)
+	el_yapimi._ac("kitap")
+	el_yapimi.defter = true
+	el_yapimi.ciz()
 
 func _bsr_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
@@ -2271,6 +2299,9 @@ func savunma() -> int:
 	for s in kusam:
 		var n = kusam[s]
 		if n != null and kusanma.esya.has(n): t += int(kusanma.esya[n].def)
+	if kesif != null:
+		if kesif.usta("Giyim"): t += 5
+		if kesif.usta("Zırh"): t += 5
 	return t
 
 func zirh_deger(r: int = -1) -> int:
@@ -2427,6 +2458,7 @@ func _konus(n) -> void:
 	match K.k:
 		"witch":
 			var ws := [{t = "Kazana bak", pri = true, f = func(): istasyon.ac("kazan")}]
+			ws.append(kesif.secenek(K, por))
 			var mk = ani.kiymik_secenegi()
 			if mk != null: ws.append(mk)
 			ws.append({t = "Sonra", kapat = true})
@@ -2625,7 +2657,7 @@ func _durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 ## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
@@ -2765,6 +2797,7 @@ func durum_yukle(d: Dictionary) -> void:
 	ys.yukle(d.get("ys", {}))
 	almanak.yukle(d.get("alm", {}))
 	basarim.yukle(d.get("bsr", {}))
+	kesif.yukle(d.get("kdef", {}))
 	ani.yukle(d.get("ani", {}))
 	reis.yukle(d.get("reis", {}))
 	dovus.yukle(d.get("dovus", {}))

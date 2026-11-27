@@ -98,7 +98,7 @@ func _process(dt: float) -> void:
 		isik.texture_scale = yaricap() / 128.0
 		isik.energy = 1.05 + 0.08 * sin(Time.get_ticks_msec() * 0.012)
 		var mx := float(V.sure.get(n, 170))
-		var b: float = float(yanma.get(n, mx)) - dt
+		var b: float = float(yanma.get(n, mx)) - dt * (0.75 if oyun.kesif.usta("Ateş") else 1.0)
 		yanma[n] = b
 		var pc := b / mx
 		if pc < 0.35 and int(uyari.get(n, 0)) < 1:

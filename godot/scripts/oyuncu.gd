@@ -95,7 +95,7 @@ func enerji_dolma(r: int = -1) -> float:
 func _hp_yenile(r: int = -1) -> float:
 	var S = oyun
 	var tk: float = S.env.tokluk
-	return S.stat("hpRe", r) * (5.0 if S.sk("C11") else (4.0 if S.sk("C9") else (3.0 if S.sk("C6") else (2.0 if S.sk("C2") else 1.0)))) * (1.5 if tk > 70.0 else (0.0 if tk <= 0.0 else 1.0))
+	return S.stat("hpRe", r) * (5.0 if S.sk("C11") else (4.0 if S.sk("C9") else (3.0 if S.sk("C6") else (2.0 if S.sk("C2") else 1.0)))) * (1.5 if tk > 70.0 else (0.0 if tk <= 0.0 else 1.0)) * (1.5 if S.kesif != null and S.kesif.usta("Şifa") else 1.0)
 
 ## web weapon(): eldeki silah; elde balta ya da kazma 8 hasar; elin boşsa silah yuvasındaki; yoksa yumruk
 func silah_v() -> Dictionary:

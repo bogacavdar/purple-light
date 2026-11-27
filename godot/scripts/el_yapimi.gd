@@ -19,6 +19,8 @@ var halk := false       # kitabın Ada halkı sayfası (web Kitap › Ada halkı
 var halk_dugme: Button
 var ani := false        # kitabın Anılar sayfası (web Kitap › Anılar)
 var ani_dugme: Button
+var defter := false     # kitabın Keşif defteri sayfası
+var defter_dugme: Button
 var kip := "el"        # "el": el yapımı (Tab) · "kitap": tarif kitabı (K)
 var secili := ""
 
@@ -96,15 +98,21 @@ func _arayuz() -> void:
 	halk_dugme = Button.new(); halk_dugme.text = "Ada halkı"; halk_dugme.pressed.connect(func():
 		halk = not halk
 		if halk:
-			izler = false; ani = false
+			izler = false; ani = false; defter = false
 		ciz())
 	bh.add_child(halk_dugme)
 	ani_dugme = Button.new(); ani_dugme.text = "Anılar"; ani_dugme.pressed.connect(func():
 		ani = not ani
 		if ani:
-			izler = false; halk = false
+			izler = false; halk = false; defter = false
 		ciz())
 	bh.add_child(ani_dugme)
+	defter_dugme = Button.new(); defter_dugme.text = "Keşif defteri"; defter_dugme.pressed.connect(func():
+		defter = not defter
+		if defter:
+			izler = false; halk = false; ani = false
+		ciz())
+	bh.add_child(defter_dugme)
 	v.add_child(bh)
 	var h := HBoxContainer.new()
 	h.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -142,7 +150,7 @@ func _ikonlu(n: String, yazi: String, renk: Color) -> HBoxContainer:
 func _iz_degis() -> void:
 	izler = not izler
 	if izler:
-		halk = false; ani = false
+		halk = false; ani = false; defter = false
 	ciz()
 
 func kapat() -> void:
@@ -157,9 +165,17 @@ func ciz() -> void:
 	halk_dugme.text = "Tarifler" if halk else "Ada halkı %d" % oyun.hikaye.sayi()
 	ani_dugme.visible = kip != "el"
 	ani_dugme.text = "Tarifler" if ani else "Anılar %d" % oyun.ani.sayi()
+	defter_dugme.visible = kip != "el"
+	defter_dugme.text = "Tarifler" if defter else "Keşif defteri"
+	if kip != "el" and defter:
+		for c in ayrinti.get_children(): c.queue_free()
+		baslik.text = "Tarif kitabı  (K) · Keşif defteri"
+		oyun.kesif.liste_yaz(liste)
+		return
 	if kip != "el" and ani:
 		for c in ayrinti.get_children(): c.queue_free()
 		baslik.text = "Tarif kitabı  (K) · Anılar"
+		oyun.kesif.bilmece_yaz(liste)
 		oyun.ani.liste_yaz(liste)
 		return
 	if kip != "el" and halk:

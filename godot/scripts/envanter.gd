@@ -104,7 +104,7 @@ func alet_kullan(n: String) -> bool:
 		mesaj("%s köreldi! Demirci Dursun'da bilenir." % n, true)
 		return false
 	# Sağlam aletler: %20/%40/%60 ihtimalle aşınmaz
-	if not (randf() < (0.6 if oyun.sk("A7") else (0.4 if oyun.sk("A6") else (0.2 if oyun.sk("A5") else 0.0)))):
+	if not (oyun.kesif.alet_usta() and randf() < 0.2) and not (randf() < (0.6 if oyun.sk("A7") else (0.4 if oyun.sk("A6") else (0.2 if oyun.sk("A5") else 0.0)))):
 		dayan[n] -= 1
 	if dayan[n] <= 0:
 		mesaj("%s köreldi!" % n, true)
@@ -143,7 +143,7 @@ func _yenir(n: String) -> bool:
 
 func _process(dt: float) -> void:
 	# web tickHunger: bir günde (720 sn) boşalır; ilk iki gün yarı hızla (günler Godot'da henüz yok: ilk günler sayılır)
-	tokluk = maxf(0.0, tokluk - float(G.hunger.perSec) * 0.5 * (0.75 if oyun.sk("D13") else 1.0) * dt)
+	tokluk = maxf(0.0, tokluk - float(G.hunger.perSec) * 0.5 * (0.75 if oyun.sk("D13") else 1.0) * (0.8 if oyun.kesif != null and oyun.kesif.usta("Yiyecek") else 1.0) * dt)
 	tok_cubuk.value = tokluk
 	if tokluk <= 0.0 and not oyun.oyuncu.bayildi:
 		aclik_hasar += dt

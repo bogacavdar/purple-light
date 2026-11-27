@@ -140,6 +140,10 @@ func _hiz(n: String) -> float:
 	var m: float = (1.0 - (0.45 if S.sk("G3") else (0.30 if S.sk("G2") else (0.15 if S.sk("G1") else 0.0)))) / S.stat("gather")
 	if (S.sk("G5") and (n.contains("odun") or n.contains("Odun"))) or (S.sk("G6") and TASLAR.has(n)) or (S.sk("G7") and n == "Su"):
 		m *= 0.5
+	# keşif defteri ustalıkları: Ağaç (odun %20 hızlı), Taş ve kil (%20 hızlı)
+	if oyun.kesif != null:
+		if oyun.kesif.usta("Ağaç") and (n.contains("odun") or n.contains("Odun")): m *= 0.8
+		if oyun.kesif.usta("Taş ve kil") and (TASLAR.has(n) or n.contains("kil")): m *= 0.8
 	return m
 
 ## Verimli toprak: malzemeler daha çabuk yeniden çıkar
