@@ -112,8 +112,7 @@ func _isinma(p: Vector2) -> bool:
 	if p.distance_to(Vector2(Z.A.kazan.x, Z.A.kazan.y)) < R: return true
 	for f in Z.A.ates:
 		if p.distance_to(Vector2(f.x, f.y)) < R: return true
-	for o in oyun.yapi.kurulu:
-		if str(o.n) == "Kamp ateşi" and Vector2((o.tx + 0.5) * 16.0, (o.ty + 0.5) * 16.0).distance_to(p) < R: return true
+	if oyun.kamp != null and oyun.kamp.sicak(p): return true
 	return false
 
 func sifirla() -> void:

@@ -108,7 +108,7 @@ func _islem() -> void:
 		env.xp_ekle(int(env.G.ogrenXP) + (10 if oyun.sk("Z8") else 0))
 		oyun.ogr.ogrendi(r)
 		var x: Dictionary = ey.R[r]
-		var nerde := "Malzemelerini topla, Usta Sinan kurar." if x.place else ("Malzemelerini topla, örste dövülür." if x.forged else "Malzemelerin olduğunda Tab ile yaparsın.")
+		var nerde := "Malzemelerini topla, Usta Sinan kurar." if x.place else ("Malzemelerini topla, örste dövülür." if x.forged else ("Malzemelerini topla, bir ateşin başında (F) pişirirsin." if oyun.kamp != null and oyun.kamp.ates_mi(r) else "Malzemelerin olduğunda Tab ile yaparsın."))
 		env.mesaj("Bu tarifi öğrendin: %s! %s" % [r, nerde])
 	else:
 		var fee := int(env.G.iscilik.get(r, 0))

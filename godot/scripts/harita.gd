@@ -46,7 +46,8 @@ func kur(o) -> void:
 	kh_isaret.draw.connect(func():
 		_isaretler(kh_isaret, Vector2.ZERO, o.kh_olcek, 10.0)
 		if o.isaret != null: o.isaret.ciz(kh_isaret, Vector2.ZERO, o.kh_olcek, 10.0, false)
-		if o.halat != null: o.halat.harita_ciz(kh_isaret, Vector2.ZERO, o.kh_olcek, false))
+		if o.halat != null: o.halat.harita_ciz(kh_isaret, Vector2.ZERO, o.kh_olcek, false)
+		if o.kamp != null: o.kamp.harita_ciz(kh_isaret, Vector2.ZERO, o.kh_olcek, false))
 	o.kh_resim.add_child(kh_isaret)
 	# büyük harita
 	pencere = PanelContainer.new()
@@ -182,6 +183,7 @@ func _buyuk_ciz() -> void:
 	_isaretler(alan, o, s, 16.0)
 	if oyun.isaret != null: oyun.isaret.ciz(alan, o, s, 16.0, true)
 	if oyun.halat != null: oyun.halat.harita_ciz(alan, o, s, true)
+	if oyun.kamp != null: oyun.kamp.harita_ciz(alan, o, s, true)
 	# oyuncu
 	var pp: Vector2 = o + oyun.oyuncu.position / float(oyun.T) * s
 	alan.draw_circle(pp, 7.0, Color(1, 0.85, 0.3, 0.5)); alan.draw_circle(pp, 4.0, Color("#ffd84a")); alan.draw_arc(pp, 4.0, 0, TAU, 16, Color("#1a1408"), 1.0)

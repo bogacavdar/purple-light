@@ -108,10 +108,12 @@ func isikta(p: Vector2) -> bool:
 	if oyun.insa.fener_isiginda(p): return true
 	if oyun.balik.koruyor(p): return true
 	if oyun.ciftlik.adada(p): return true
+	if oyun.kamp != null and oyun.kamp.isikta(p): return true
 	return kampta(p)
 
 ## ateşlerin güvenli yarıçapı (web campFor): saldırganlar orada doğmaz ve saldırmaz
 func kampta(p: Vector2) -> bool:
+	if oyun.kamp != null and oyun.kamp.guvende(p): return true
 	if p.distance_to(Vector2(A.kamp.x, A.kamp.y)) < float(A.guvenli.kamp): return true
 	if p.distance_to(Vector2(A.ocak.x, A.ocak.y)) < float(A.guvenli.ocak): return true
 	if p.distance_to(Vector2(A.kazan.x, A.kazan.y)) < float(A.guvenli.kazan): return true

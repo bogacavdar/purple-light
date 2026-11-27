@@ -131,8 +131,9 @@ func _bekle() -> bool:
 func _siginak() -> bool:
 	if oyun.ev.acik or oyun.magara.icinde or oyun.kuzen.yol_t >= 0.0: return true
 	var P: Vector2 = oyun.oyuncu.position
-	for o in oyun.yapi.kurulu:
-		if str(o.n) == "Kamp ateşi" and Vector2((o.tx + 0.5) * 16.0, (o.ty + 0.5) * 16.0).distance_to(P) < 70.0: return true
+	if oyun.kamp != null:
+		for c in oyun.kamp.camps:
+			if c.t > 0.0 and c.p.distance_to(P) < 70.0: return true
 	return false
 
 func _process(dt: float) -> void:

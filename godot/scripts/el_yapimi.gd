@@ -51,7 +51,7 @@ func _ac(k: String) -> void:
 
 func elde_yapilir(r: String) -> bool:
 	var x: Dictionary = R[r]
-	return not x.forged and not x.place
+	return not x.forged and not x.place and not (oyun.kamp != null and oyun.kamp.ates_mi(r))
 
 ## web missingFor: eksik malzemeler ve aletler
 func eksik(r: String) -> String:

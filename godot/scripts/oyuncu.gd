@@ -323,6 +323,11 @@ func vur(d: Vector2) -> void:
 	if bayildi or atilma > 0.0:
 		return
 	var mz = oyun.env.elde()
+	if str(mz) == "Kamp ateşi" and oyun.kamp != null:
+		if atk_cd <= 0.0:
+			atk_cd = 0.4
+			oyun.kamp.yak()
+		return
 	if oyun.ses != null and oyun.ses.alet_mi(mz):
 		if atk_cd <= 0.0:
 			atk_cd = oyun.ses.alet_ara(str(mz))
