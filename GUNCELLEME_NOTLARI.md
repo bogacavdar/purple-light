@@ -8,6 +8,15 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.31 · 27 Kasım 2026
+
+### Proje
+- **Godot: ekran düzeni:**
+  - Sol üstte adları yazılı büyük Can, Enerji ve Tokluk çubukları; altında kare düğmeler: Envanter, El yapımı, Yetenekler, Yemek.
+  - Sağ üstte Çıkış, Ayarlar ve Başarımlar; sağ altta Almanak'ın yanında Tarif kitabı.
+  - Ekrandaki uzun tuş yardımı kalktı; tuşlar Ayarlar › Kontroller'de.
+  - Pencereler kenarından tutulup çekilerek büyütülebiliyor.
+
 ## Versiyon 5.30 · 27 Kasım 2026
 
 ### Proje
@@ -161,18 +170,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: İstatistikler:**
   - Karakter penceresinde (C) "İstatistikler" sekmesi var: hayatta kaldığın gün, aktif oyun süresi, menüde geçen süre, yürüdüğün yol, avlanan canlı, yenilen reis, tutulan balık, yapılan eşya, öğrenilen tarif, kazanılan ve harcanan Vio, bayılma, toplanan malzeme.
   - Yanında avladığın canlıların listesi ve her birinin Reis çubuğu var.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.11 · 27 Kasım 2026
-
-### Proje
-- **Godot: Ayarlar ve erişilebilirlik:**
-  - Ana menüde ve oyunda (O tuşu ya da Esc menüsü) "Ayarlar" penceresi var: müzik ve efekt sesi, menü vurgusu (mor, pembe, mavi, altın), renk körü modu, kalp atışını ekranda gösterme, titreşim, tam ekran, kayıtları dışa ve içe aktarma ve bütün tuşların yeniden atanması.
-  - Renk körü modunda "var / eksik" renkleri mavi ✓ ve turuncu ✗ olur.
-  - Tuş değiştirince ekrandaki tuş yardımı yeni tuşları gösteriyor.
-  - Hilelerde: "Hile paneli" anahtarı eklendi, +100 XP kısayolu artık J.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
