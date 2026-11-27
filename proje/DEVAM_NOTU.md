@@ -1,3 +1,6 @@
+## v5.41 (28 Kasım 2026) · Godot: onay kutusu
+- Godot `konusma.gd`: `onay(metin, f, evet, hayir)` (web confirmBox #q2cf; `onay_kat`, `onay_kutu`, Enter = evet, dışarı/Esc = Vazgeç). kopru.gd, gecit.gd, kuzen.gd (gemi) bunu çağırır. Test kancası `onaytest`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.40 (28 Kasım 2026) · Godot: takla
 - Godot `oyuncu.gd`: `TAKLA_T` 0,46, `TAKLA_D` 50, kesin integralle hareket (F(k)=1,7k−0,7k²), bekleme en az 0,76; `_takla_kur/_takla_poz/_takla_ciz` (art/takla.png 16×3, data/takla.json; `tools/disa_aktar_takla.js` web v315roll'dan). Test kancası `taklatest`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
 
@@ -69,7 +72,3 @@
 ## v5.22 (27 Kasım 2026) · Godot Son-j: yemek etkileri ve yemek listesi
 - `godot-deneme/` yeni derleme (godot dalı: yeni yemek.gd + data/yemek.json (tools/disa_aktar_yemek.js); oyun.stat çarpanı `yemek.kat`, kayıt `yemek {kn, pb}`, pencere_acik; envanter X tuşu yemek.gd'ye, doygun; zaman.isikta göz; oyuncu.etki_ekle panzehir/ateşsiz/pıhtı; ?yemektest). Belge 99_godot Son-j…n. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (`yemek` alanı okunmaz, zararsız).
-
-## v5.21 (27 Kasım 2026) · Godot Son-i: müzik aletleri
-- `godot-deneme/` yeni derleme (godot dalı: ses.gd `alet_mi/alet_cal/alet_ara`, data/muzik.json + art/ses/muzik/*.ogg (tools/disa_aktar_muzik.js); oyuncu.gd vur başında alet; envanter.gd aletler kemere; ?muziktest). Belge 99_godot Son-i. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).

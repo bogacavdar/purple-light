@@ -8,6 +8,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.41 · 28 Kasım 2026
+
+### Godot denemesi
+- **Onay kutusu:** köprü onarma, kayaları patlatma ve gemiyi kurma soruları artık web'deki gibi ekranın ortasında krem renkli bir kutuda soruluyor. Sarı düğme işi yapıyor, Enter da "evet" demek; dışına basmak ya da Esc vazgeçiyor.
+
 ## Versiyon 5.40 · 28 Kasım 2026
 
 ### Godot denemesi
@@ -136,9 +141,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Her yiyecek web'deki gibi etki veriyor: Güç, Şifa, Çeviklik, Gece gözü, Doygunluk, Canlılık, Panzehir, Ateş kalkanı, Pıhtı, Dayanıklılık. Zehirli ve tuhaf yiyeceklerin kötü etkileri de var.
   - X'e kısa basınca en uygun yiyecek yeniyor; basılı tutunca kategorili yemek listesi açılıyor. Bir şeyi ilk kez yiyince ne yaptığını öğreniyorsun.
   - Etkin etkiler, çubukların altında süreleriyle görünüyor.
-
-## Versiyon 5.21 · 27 Kasım 2026
-
-### Proje
-- **Godot: müzik aletleri çalınıyor:**
-  - Flütler, düdük, borazan, zurna, davullar, tef, çanlar ve zil kemere giriyor. Eldeyken vur tuşu aletin kendi ezgisini nota nota çalıyor; her aletin kendi sesi var.
