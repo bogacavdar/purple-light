@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.25"
+const SURUM := "Godot · 5.26"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -116,6 +116,7 @@ var halat                   # halat.gd: Tuncay'ın halat yolları
 var yemek                   # yemek.gd: yemek etkileri ve yemek listesi
 var kamp                    # kamp.gd: kamp ateşi ve ateşte pişirme
 var sise                    # sise.gd: kıyıya vuran şişeler
+var yazilimci               # yazilimci.gd: gece beliren Boğaç
 var hile                    # hile.gd: hile modu, ped, pencere (oturumluk)
 var arena = null            # arena.gd: yalnız arenadayken
 var kesif                   # kesif.gd: keşif defteri ve Zümrüt'ün bilmecesi
@@ -356,6 +357,9 @@ func _ready() -> void:
 	sise = preload("res://scripts/sise.gd").new()
 	add_child(sise)
 	sise.kur(self)
+	yazilimci = preload("res://scripts/yazilimci.gd").new()
+	add_child(yazilimci)
+	yazilimci.kur(self)
 	balon_yazi = Label.new()
 	balon_yazi.add_theme_font_size_override("font_size", 14)
 	balon_yazi.add_theme_color_override("font_color", Color("#2a1e14"))
@@ -390,6 +394,7 @@ func _ready() -> void:
 		if q.contains("kamptest"): _kamp_test.call_deferred()
 		if q.contains("islevtest"): _islev_test.call_deferred()
 		if q.contains("sisetest"): _sise_test.call_deferred()
+		if q.contains("devtest"): _dev_test.call_deferred()
 		if q.contains("kurt"):
 			_canli_koy_yakin("Kurt", 6.0)
 		if q.contains("tavsan"):
@@ -3010,7 +3015,7 @@ func _durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), hava = hava.kayit(), usume = soguk.kayit(), yemek = yemek.kayit(), kamp = kamp.kayit(), sise = sise.kayit(), halat = halat.kayit(), tlsm = tilsimlar.keys(), isr = isaret.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), hava = hava.kayit(), usume = soguk.kayit(), yemek = yemek.kayit(), kamp = kamp.kayit(), sise = sise.kayit(), v330dev = yazilimci.kayit(), halat = halat.kayit(), tlsm = tilsimlar.keys(), isr = isaret.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 ## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
@@ -3153,6 +3158,7 @@ func durum_yukle(d: Dictionary) -> void:
 	yemek.yukle(d.get("yemek", {}))
 	kamp.yukle(d.get("kamp", []))
 	sise.yukle(d.get("sise", {}))
+	yazilimci.yukle(d.get("v330dev", 0))
 	halat.yukle(d.get("halat", []))
 	almanak.yukle(d.get("alm", {}))
 	basarim.yukle(d.get("bsr", {}))
@@ -3302,4 +3308,14 @@ func _sise_test() -> void:
 	env.ekle("Şişedeki mektup")
 	await get_tree().create_timer(1.0).timeout
 	print("SISE bulunan ", sise.bulunan.keys(), " çantada ", env.adet("Şişedeki mektup"))
+
+## ?devtest: Boğaç oyuncunun yanında belirir (gerçek saat sınırı atlanır)
+func _dev_test() -> void:
+	await get_tree().create_timer(2.0).timeout
+	yazilimci.acik = true; yazilimci.spr.position = oyuncu.position + Vector2(40, 0); yazilimci.kalan = 15.0; yazilimci.yas = 0.0
+	await get_tree().create_timer(1.0).timeout
+	print("DEV görünür ", yazilimci.spr.visible, " gözlük pikseli ", yazilimci.gozluk.size())
+	oyuncu.position = yazilimci.spr.position + Vector2(-10, 0)
+	await get_tree().create_timer(0.5).timeout
+	print("DEV konuştu ", yazilimci.konustu)
 
