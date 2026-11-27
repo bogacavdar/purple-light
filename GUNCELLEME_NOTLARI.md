@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.08 · 27 Kasım 2026
+
+### Proje
+- **Godot: Keşif defteri ve Zümrüt'ün bilmecesi:**
+  - Tarif kitabında (K) "Keşif defteri" sayfası var: her kategoride kaç tarif öğrendiğin.
+  - Bir kategorinin %25'ine Vio, %50'sine kalıcı ustalık, hepsine Vio ve XP veriliyor. Ustalıklara örnek: tokluk daha yavaş azalır, can daha hızlı dolar, aletler daha az körelir, meşale daha uzun yanar.
+  - Zümrüt'e "Bir bilmecen var mı?" diye sorabiliyorsun. İpucundaki tarifi kazanda öğrenince Vio ve XP kazanıyorsun; bilmece kitabın Anılar sayfasında da yazıyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.07 · 27 Kasım 2026
 
 ### Proje
@@ -223,17 +234,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Barbaros'la deniz yolculuğu bitince ACT 2'nin adası (yonca ada) yükleniyor; Barbaros indirdiği kıyıda bekliyor.
   - Kemal'in ve Barbaros'un yanındaki portallarla iki ada arasında gidip gelinebiliyor. Çanta, Vio, seviye ve görevler ortak; kurduğun yapılar ve bulunduğun yer her adada ayrı tutuluyor.
   - İkinci adada henüz canlılar, Yıldız ve öbür kişiler yok; sıradaki adımlarda gelecekler.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.88 · 27 Kasım 2026
-
-### Proje
-- **Godot: ACT 1'in sonu:**
-  - Barbaros'un son görevi "Yeni bir gemi" yapılabiliyor: malzemeleri enkaza koyunca yeni gemi suya iniyor.
-  - Barbaros'la konuşunca önce hikâyesi ve sahnesi geliyor, sonra seni başka bir adaya götürmeyi teklif ediyor.
-  - Deniz yolculuğu sahnesi ve "ACT 2 · Açık deniz" kartı geldi. İkinci ada sıradaki adımda gelecek; şimdilik yolculuk bitince kıyıya dönüyorsun.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---

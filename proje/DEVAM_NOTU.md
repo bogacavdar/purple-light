@@ -1,3 +1,7 @@
+## v5.08 (27 Kasım 2026) · Godot S7a: Keşif defteri ve Zümrüt'ün bilmecesi
+- `godot-deneme/` yeni derleme (godot dalı: yeni kesif.gd (ulaşılır tarifler, kategoriler, ödüller, ustalıklar, bilmece; kayıt `kdef {c, b, n}`); ustalık etkileri: envanter.gd tokluk ve körelme, oyuncu.gd can, oyun.gd savunma, mesale.gd, toplama.gd hız, canli.gd düşürme, balik.gd, pazar.gd satış; el_yapimi.gd Keşif defteri sayfası ve Anılar'da bilmece; Zümrüt konuşmasında bilmece; ?kdeftest). Belge 99_godot S7a/S7b satırları. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıttaki `kdef` alanı okunmadan kalır).
+
 ## v5.07 (27 Kasım 2026) · Godot S6: Başarımlar
 - `godot-deneme/` yeni derleme (godot dalı: yeni basarim.gd (49 başarım, cihaz kaydı user://basarim.json, kart, liste, rozet; kayıt yuvasında `bsr {f}`); kancalar: oyun.gd canli_oldu/bayil/agac_devrildi, envanter.gd ekle, toplama.gd düğüm; ?bsrtest). Belge 99_godot S6 ve S7 satırları. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `bsr` alanı okunmadan kalır; cihazdaki user://basarim.json kalır, zararsız).
@@ -73,7 +77,3 @@
 ## v4.89 (27 Kasım 2026) · Godot A1: ikinci ada ve portallar
 - `godot-deneme/` yeni derleme (godot dalı: oyun.gd `ada` (Kayit.bekleyen.ada), data/ada2 yükleme, ada başına durum (kayıtta üst düzey = Yıldızsız Ada, `ada2` = ikinci ada; ADA_YEREL), seyahat(), _varis(); yeni portal.gd; ciftlik/poyraz/isikci/yan/iz/kopru/gecit/magara/evcil ikinci adada kapalı (durumları ham olarak korunur); kuzen.gd ikinci adada Barbaros ve gemi, yolculuk sonunda geçiş; gorev.gd ACT 2 kartı; yeni tools/disa_aktar_ada2.js → data/ada2/{harita,dunya,toplama_ek,yerler}.json, art/ada2, 8 yeni eşya resmi). Denetim: ?ada2test, ?ada2test_don. Belge 99_godot A1 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (eski kayıtlarda `ada`/`ada2` alanı yoksa birinci ada açılır).
-
-## v4.88 (27 Kasım 2026) · Godot O8: ACT 1'in sonu
-- `godot-deneme/` yeni derleme (godot dalı: kuzen.gd gemi/act2 bayrakları (tanis'te), enkaz_f, _teklif, yolculuk sahnesi ve ACT 2 kartı, yeni gemi çizimi; gorev.gd "ship" adımı; oyun.gd F sırasında enkaz, enkaza tekne yeri; yeni tools/disa_aktar_yolculuk.js → art/yolculuk 111 kare + data/yolculuk.json). Denetim: ?gemitest. Belge 99_godot O8 satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et.
