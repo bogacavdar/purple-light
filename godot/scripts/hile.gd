@@ -42,6 +42,11 @@ func _input(e: InputEvent) -> void:
 			if yazi == "cheat":
 				yazi = ""
 				_degis(not mod)
+			elif yazi.ends_with("love"):
+				yazi = ""
+				Ayarlar.butun_sahne = not Ayarlar.butun_sahne
+				Ayarlar.kaydet()
+				_ilan("Bütün sahneler açıldı" if Ayarlar.butun_sahne else "Bütün sahneler kapandı")
 		if kisayol and mod and not oyun.basta and not get_tree().paused and (ara == null or not ara.has_focus()):
 			if e.keycode == KEY_Z: _vio()
 			elif e.keycode == KEY_J: _xp()

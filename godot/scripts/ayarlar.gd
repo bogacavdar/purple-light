@@ -22,6 +22,7 @@ static var muzik := 70
 static var efekt := 80
 static var vurgu := "#B57BFF"
 static var tuslar := {}         # eylem → [fiziksel tuş kodu]
+static var butun_sahne := false # ana menüde "love": Kitap › Anılar'da Bütün sahneler (cihazda)
 
 var oyun
 var pen: ColorRect
@@ -38,10 +39,11 @@ static func yukle() -> void:
 		var j = JSON.parse_string(FileAccess.get_file_as_string(YOL))
 		if j is Dictionary: V = j
 	rk = bool(V.get("rk", false)); kalp = bool(V.get("kalp", false)); titresim = bool(V.get("tit", true)); tam_ekran = bool(V.get("tam", true))
+	butun_sahne = bool(V.get("love", false))
 	muzik = int(V.get("muzik", 70)); efekt = int(V.get("efekt", 80)); vurgu = str(V.get("vurgu", "#B57BFF")); tuslar = V.get("tuslar", {})
 
 static func kaydet() -> void:
-	V = {rk = rk, kalp = kalp, tit = titresim, tam = tam_ekran, muzik = muzik, efekt = efekt, vurgu = vurgu, tuslar = tuslar}
+	V = {love = butun_sahne, rk = rk, kalp = kalp, tit = titresim, tam = tam_ekran, muzik = muzik, efekt = efekt, vurgu = vurgu, tuslar = tuslar}
 	var f := FileAccess.open(YOL, FileAccess.WRITE)
 	if f != null: f.store_string(JSON.stringify(V))
 

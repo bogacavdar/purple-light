@@ -307,6 +307,7 @@ func liste_yaz(liste: VBoxContainer) -> void:
 	not_.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; not_.custom_minimum_size = Vector2(560, 0)
 	not_.add_theme_font_size_override("font_size", 11); not_.add_theme_color_override("font_color", Color("#b8b098"))
 	liste.add_child(not_)
+	if Ayarlar.butun_sahne: _butun_sahneler(liste)
 	var a1 := _a1()
 	var ka := 0
 	for a in a1: if mems.has(a.n): ka += 1
@@ -323,6 +324,47 @@ func liste_yaz(liste: VBoxContainer) -> void:
 		if a.tur == "mor": _sira(liste, a, "ACT 2'de, ikinci adada: rüyada, bayılınca ya da bir görevi bitirince")
 	for a in A:
 		if a.tur == "usta": _sira(liste, a, "ACT 2'de, ikinci adanın ustalarına yardım ettikçe")
+
+## ana menüde "love" ile açılır: her anı ve ara sahne bir kutu, basınca baştan oynar (henüz gelmemiş anılar dahil)
+func _butun_sahneler(liste: VBoxContainer) -> void:
+	_baslik(liste, "Bütün sahneler")
+	var g := HFlowContainer.new()
+	g.custom_minimum_size = Vector2(560, 0)
+	liste.add_child(g)
+	var kutu := func(ad: String, tx, f: Callable):
+		var b := Button.new()
+		b.custom_minimum_size = Vector2(108, 74)
+		b.text = ad
+		b.clip_text = true
+		b.add_theme_font_size_override("font_size", 10)
+		b.vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
+		b.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		b.expand_icon = true
+		if tx != null: b.icon = tx
+		else:
+			var s := StyleBoxFlat.new(); s.bg_color = Color("#3a2060"); s.border_color = Color("#c9a0ff"); s.set_border_width_all(1)
+			b.add_theme_stylebox_override("normal", s)
+		b.pressed.connect(func():
+			oyun.el_yapimi.kapat()
+			f.call())
+		g.add_child(b)
+	kutu.call("Açılış", null, func(): oyun.cine.oyna(oyun.zorluk == "zor", Callable()))
+	kutu.call("Deniz yolculuğu", null, func(): oyun.kuzen.yolculuk(true))
+	kutu.call("Roket", null, func(): oyun.roket.basla(true))
+	for gk in oyun.hikaye.D.kisi:
+		var S: Dictionary = oyun.hikaye.D.kisi[gk]
+		if S.get("sc", null) == null and not bool(S.get("aile", false)): continue
+		var gg: String = gk
+		kutu.call(str(S.ad), null, func(): oyun.hikaye.oynat(gg, true))
+	for a in A:
+		var ii := int(a.i)
+		kutu.call(str(a.n), _kucuk(a), func(): izle(ii))
+
+func _kucuk(a: Dictionary):
+	var L: Array = _L(a)
+	if L.is_empty(): return null
+	var p := "res://art/ani/%s.png" % str(L[0][0])
+	return load(p) if ResourceLoader.exists(p) else null
 
 func _baslik(liste: VBoxContainer, t: String) -> void:
 	var l := Label.new(); l.text = t; l.add_theme_font_size_override("font_size", 13); l.add_theme_color_override("font_color", Color("#e8dcc0"))

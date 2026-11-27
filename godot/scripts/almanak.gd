@@ -24,6 +24,7 @@ var M := []              # mağaralar: {ad, b, boss, turler, canlilar}
 var bakilan := {}        # bakılmış kart anahtarları ("c:Kurt", "r:Kurt", "b:Yankı Kraliçesi", "f:Sazan", "y:Yıldızsız dev")
 var boss_gor := {}       # karşılaşılan mağara boss'ları
 var ilk_goster := false  # ilk avda düğme parlasın
+var konuk := {}          # biyom → [tür]: kendi biyomu dışında avlanan canlılar (yan görevde başka bölgenin canlısı)
 var acildi_hic := false
 
 var dugme: Button
@@ -80,6 +81,9 @@ func _kartlar(s: String) -> Array:
 			var D: Dictionary = C.canlilar.get(bk, {})
 			var dur := "altin" if _kills(bk) > 0 else ("gordu" if boss_gor.has(bk) else "kapali")
 			out.append(["b:" + bk, bk, D, dur, str(C.ad)])
+		for k in konuk.get(b, []):
+			var eb := _ev_biyom(k)
+			if eb >= 0: out.append(["k:" + k, k, V[eb][k], "acik", "Başka bölgeden"])
 	elif s == "su":
 		for g in SU:
 			var seen := {}
@@ -107,6 +111,7 @@ func _balik(n: String) -> int:
 
 func _yeni(K: Array) -> bool:
 	var a: String = K[0]
+	if a.begins_with("k:"): return false
 	if K[3] == "kapali": return false
 	if K[3] == "altin" and a.begins_with("c:") and not bakilan.has("r:" + K[1]): return true
 	return not bakilan.has(a)
@@ -125,7 +130,7 @@ func _sayfalar() -> Array:
 			for a in oyun.balik.FISHT[g[1]][kk]:
 				if _balik(a[0]) > 0: su_var = true
 	if su_var or _bios().size() > 0: out.append(["su", "Tatlı su balıkları"])
-	if not oyun.poyraz.caught.is_empty() or bool(oyun.poyraz.get("onarildi_dedi")): out.append(["deniz", "Deniz canlıları"])
+	if not oyun.poyraz.caught.is_empty() or int(oyun.poyraz.ph) >= 2 or sayfa == "deniz": out.append(["deniz", "Deniz canlıları"])
 	if oyun.ys.sayi > 0: out.append(["ys", "Yıldızsızlar"])
 	return out
 
@@ -138,8 +143,16 @@ func yeni_sayisi() -> int:
 
 # ------------------------------------------------------------------ olaylar
 ## bir tür ilk kez avlanınca: ortada "Almanağa eklendi · U ile bak"; oyunda ilk av ise düğme mavi parlar
-func avlandi(k: String) -> void:
-	if oyun.ada != 1 or _kills(k) != 1: return
+func avlandi(k: String, c = null) -> void:
+	if oyun.ada != 1: return
+	if c != null and not oyun.magara.icinde:
+		var b: int = oyun.bio_at(c.position)
+		var ev := _ev_biyom(k)
+		if b >= 0 and ev >= 0 and b != ev and V.has(b) and not V[b].has(k):
+			var L: Array = konuk.get(b, [])
+			if not L.has(k):
+				L.append(k); konuk[b] = L
+	if _kills(k) != 1: return
 	if not _karti_var(k): return
 	_ilan(k, "Almanağa eklendi · U ile bak")
 	if not acildi_hic: ilk_goster = true
@@ -154,6 +167,11 @@ func boss_gordu(k: String) -> void:
 	if boss_gor.has(k): return
 	boss_gor[k] = true
 	_rozet()
+
+func _ev_biyom(k: String) -> int:
+	for b in V:
+		if V[b].has(k): return int(b)
+	return -1
 
 func _karti_var(k: String) -> bool:
 	for b in V:
@@ -251,7 +269,14 @@ func _arayuz() -> void:
 func acik() -> bool:
 	return pen.visible
 
-func ac() -> void:
+func ac(istek := "") -> void:
+	if istek == "deniz":
+		acildi_hic = true
+		sayfa = "deniz"
+		pen.visible = true
+		get_tree().paused = true
+		_ciz()
+		return
 	if oyun.ada != 1:
 		oyun.env.mesaj("Almanak yalnızca Yıldızsız Ada'nın canlılarını anlatır")
 		return
@@ -284,7 +309,7 @@ func _ciz() -> void:
 		var top := 0
 		var yn := 0
 		for k in K:
-			if str(k[0]).begins_with("b:"): continue
+			if str(k[0]).begins_with("b:") or str(k[0]).begins_with("k:"): continue
 			top += 1
 			if k[3] != "kapali": ac_n += 1
 			if _yeni(k): yn += 1
@@ -305,7 +330,7 @@ func _ciz() -> void:
 	var ac_n := 0
 	var top := 0
 	for k in K:
-		if str(k[0]).begins_with("b:"): continue
+		if str(k[0]).begins_with("b:") or str(k[0]).begins_with("k:"): continue
 		top += 1
 		if k[3] != "kapali": ac_n += 1
 	alt_yazi.text = "  %d / %d %s" % [ac_n, top, "balık" if sayfa == "su" else ("deniz canlısı" if sayfa == "deniz" else "canlı")]
@@ -318,6 +343,8 @@ func _ciz() -> void:
 			for i in izgara.columns:
 				var l := Label.new()
 				l.text = bb if i == 0 else ""
+				l.clip_text = true
+				l.custom_minimum_size = Vector2(205, 0)
 				l.add_theme_color_override("font_color", Color("#c9a0ff"))
 				izgara.add_child(l)
 		bolum = bb
@@ -403,6 +430,7 @@ func _yazi(K: Array) -> String:
 		if a.begins_with("y:"): return "[color=#7d7494]Mor ışık saldırısında yen.[/color]"
 		return "[color=#7d7494]Henüz avlamadın.[/color]"
 	var s2 := _degerler(k, D)
+	if a.begins_with("k:"): return s2 + "\nAvladığın: [b]%d[/b]\n[color=#b9aed6]Başka bölgenin canlısı · yan görevde karşına çıktı[/color]" % _kills(k)
 	if a.begins_with("y:"):
 		return s2 + "\nDüşürdükleri: Vio\nYendiğin: [b]%d[/b]\n[color=#b9aed6]Can ve hasar son saldırıdaki değerleri[/color]" % int(oyun.ys.oldurulen.get(k, 0))
 	s2 += "\nAvladığın: [b]%d[/b]" % _kills(k)
@@ -471,11 +499,15 @@ func _process(dt: float) -> void:
 
 # ------------------------------------------------------------------ kayıt
 func kayit() -> Dictionary:
-	return {bak = bakilan.keys(), bg = boss_gor.keys(), a = acildi_hic}
+	return {bak = bakilan.keys(), bg = boss_gor.keys(), a = acildi_hic, k = konuk}
 
 func yukle(d: Dictionary) -> void:
 	bakilan = {}; boss_gor = {}
 	for x in d.get("bg", []): boss_gor[x] = true
+	konuk = {}
+	var kd = d.get("k", {})
+	if kd is Dictionary:
+		for b in kd: konuk[int(b)] = kd[b]
 	acildi_hic = bool(d.get("a", false))
 	ilk_goster = false
 	if not d.has("bak"):

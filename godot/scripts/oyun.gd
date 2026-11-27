@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · Son-b"
+const SURUM := "Godot · Son-c"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -411,6 +411,7 @@ func _ready() -> void:
 		if q.contains("isttest"): _ist_test.call_deferred(q)
 		if q.contains("kupatest"): _kupa_test.call_deferred(q)
 		if q.contains("isrtest"): _isr_test.call_deferred(q)
+		if q.contains("sontest"): _son_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -1350,6 +1351,25 @@ func _cimen_yeri() -> bool:
 				return true
 	return false
 
+func _son_test(q: String) -> void:
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	var c = _canli_yeni("Engerek", oyuncu.position + Vector2(100, 0), 1)
+	print("SON engerek biyomu ", bio_at(c.position))
+	c.vuruldu(99999, Vector2.RIGHT)
+	print("SON konuk ", almanak.konuk)
+	if q.contains("deniz"):
+		almanak.ac("deniz")
+		return
+	if q.contains("alm"):
+		almanak.ac(); almanak.sayfa = "b0"; almanak._ciz()
+		return
+	Ayarlar.butun_sahne = true
+	el_yapimi._ac("kitap")
+	el_yapimi.ani = true
+	el_yapimi.ciz()
+
 func _isr_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	while konusma.visible:
@@ -2100,7 +2120,7 @@ func canli_oldu(k: String, c = null) -> void:
 	if reis != null: reis.oldu(k, c)
 	if c != null and c.ogr: ogr.yengec_oldu()
 	if gorev: gorev.av(k)
-	if almanak != null: almanak.avlandi(k)
+	if almanak != null: almanak.avlandi(k, c)
 	if basarim != null: basarim.oldurdu(k)
 	if magara != null and c != null and c.cvb:
 		magara.boss_oldu()
