@@ -1,3 +1,7 @@
+## v5.18 (27 Kasım 2026) · Godot Son-f: mevsimler, hava, sıcaklık, kar
+- `godot-deneme/` yeni derleme (godot dalı: yeni hava.gd: mevsim, gece_sn, hava zinciri, sıcaklık, kar örtüsü, ekran çizimi, sis shader'ı, mevsim çemberi, Mor gece; bağlantılar zaman (gece hızı, saat yazısı), envanter (kış tokluğu), mesale (yanma katı), balik (bekleme, mevsim balığı), canli (sis), toplama (`mevsim_k`, `_bitir2`), yildizsiz `zorla()`, ses (rain/wind); ?havatest). Kayıt alanı `hava {kar, mg, k, t}`. Belge 99_godot Son-f, Son-g. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (eski kayıtlar `hava` alanını okumaz, zararsız).
+
 ## v5.17 (27 Kasım 2026) · Godot Son-e: sesler ve müzik
 - `godot-deneme/` yeni derleme (godot dalı: yeni ses.gd: müzik bölgeye göre çapraz geçiş, ortam döngüleri swamp/ash/surf, `cal(k)` efekt havuzu; art/ses/ 39 dosya (WAV efekt, OGG müzik/döngü) `tools/disa_aktar_ses.js` ile web sentezinden; bağlantılar envanter/toplama/istasyon/el_yapimi/oyuncu/canli/balik/buyu/yildizsiz; ?sestest). Belge 99_godot Son-e, Son-f (hava, sıradaki), Son satırından "fenerciler" çıkarıldı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
@@ -73,7 +77,3 @@
 ## v4.99 (27 Kasım 2026) · Godot S2a: yaylar, oklar ve silah etkileri
 - `godot-deneme/` yeni derleme (godot dalı: yeni tools/disa_aktar_yay.js → data/yay.json (yaylar, oklar, verim); buyu.gd yay atışı ve 8 px adımlı çarpışma; canli.gd etki_ver/_etki_isle; oyuncu.gd yakın dövüş etkisi; el_yapimi.gd ok verimi). Denetim: ?yaytest. Belge 99_godot S2a ve S2b satırları. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).
-
-## v4.98 (27 Kasım 2026) · Godot S1: Reisler
-- `godot-deneme/` yeni derleme (godot dalı: yeni reis.gd (sayaç, kuyruk, çağırma, Reis verisi, halka hamlesi, çekilme; kayıt `reis {bc, bd}`); oyun.gd canli_oldu ve bayil kancaları). Denetim: ?reistest. Belge 99_godot: S1 satırı ve yeni S1–S10 planı (web'de olup Godot'da eksik ortak sistemler). Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıttaki `reis` alanı okunmadan kalır).

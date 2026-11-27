@@ -8,6 +8,18 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.18 · 27 Kasım 2026
+
+### Proje
+- **Godot: mevsimler ve hava geldi:**
+  - Yıl 28 gün, her mevsim 7 gün. Gece uzunluğu mevsime göre değişiyor; kışın karın daha çabuk acıkıyor.
+  - Toplamada mevsim farkı var: baharda ot, yazın meyve, sonbaharda mantar ve ağaçtan iki kat meyve; kışın meyve yok. Her mevsimin kendi balığı var.
+  - Hava sırayla değişiyor: açık, bulutlu, yağmur, fırtına, sis. Kışın soğukta kar ve tipi yağıyor, yer yavaş yavaş beyazlıyor ve sonra eriyor.
+  - Yağmurda meşale çabuk bitiyor, tarlalar kendiliğinden sulanıyor, balık daha çabuk vuruyor. Fırtınada şimşek çakıp gök gürlüyor; Kül Diyarı'nda kül fırtınası var.
+  - Bataklık ve Kayalık Dağ hep ince bir sis altında; sisli havada her yer sisli, ışıklar sisi açıyor.
+  - Mor gece: yılın son gecesi en uzun gece ve mor ışık saldırısı kesin geliyor.
+  - Saatin yanında hava, mevsim, sıcaklık ve dönen mevsim çemberi var.
+
 ## Versiyon 5.17 · 27 Kasım 2026
 
 ### Proje
@@ -217,18 +229,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - 15 yay geldi. Yay elindeyken vuruş tuşu ok atar; çantadaki en güçlü ok harcanır. Okları el yapımıyla yaparsın.
   - Alevli, Zehirli ve Keskin silahlar ve oklar canlıyı yakar, zehirler ya da kanatır.
   - Büyü, mermi ve oklar artık uzun bir karede canlının içinden geçip gitmiyor (önceden ilk atış bazen ıska geçiyordu).
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.98 · 27 Kasım 2026
-
-### Proje
-- **Godot: Reisler:**
-  - Bir türden yeterince avlayınca sürünün Reis'i son avın yanına geliyor. Reis iri, mor ve güçlü.
-  - Reis şahlanınca yerde kırmızı bir halka doluyor, sonra yere vuruyor. Halkadan çık ya da atıl.
-  - Uzaklaşırsan ya da bayılırsan Reis geri çekiliyor; bir tane daha avlayınca yeniden geliyor. Her Reis bir kez yenilir.
-- **Tasarım belgesi:** Godot planına web'de olup Godot'da henüz olmayan sistemler eklendi (özel vuruşlar ve Ulti, imza hamleleri, mor ışık saldırıları, Almanak, başarımlar, keşif defteri, arena ve hileler, ayarlar, istatistikler).
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
