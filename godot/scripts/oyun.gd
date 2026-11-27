@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.31"
+const SURUM := "Godot · 5.32"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -121,6 +121,7 @@ var istem                   # istem.gd: F'nin ne yapacağını söyleyen eylem i
 var kopek                   # kopek.gd: robot köpeklerin gizli günlüğü (ACT 3)
 var imlec                   # imlec.gd: mor ışıkta piksel el imleci
 var hud_menu                # hud_menu.gd: sol kare düğmeler, sağ üst düğmeler, büyük çubuklar
+var kontrol                 # kontrol.gd: tıkla-git, H, Alt+Enter, yuvaya sağ tık
 var hile                    # hile.gd: hile modu, ped, pencere (oturumluk)
 var arena = null            # arena.gd: yalnız arenadayken
 var kesif                   # kesif.gd: keşif defteri ve Zümrüt'ün bilmecesi
@@ -376,6 +377,9 @@ func _ready() -> void:
 	hud_menu = preload("res://scripts/hud_menu.gd").new()
 	add_child(hud_menu)
 	hud_menu.kur(self)
+	kontrol = preload("res://scripts/kontrol.gd").new()
+	add_child(kontrol)
+	kontrol.kur(self)
 	balon_yazi = Label.new()
 	balon_yazi.add_theme_font_size_override("font_size", 14)
 	balon_yazi.add_theme_color_override("font_color", Color("#2a1e14"))
@@ -413,6 +417,7 @@ func _ready() -> void:
 		if q.contains("devtest"): _dev_test.call_deferred()
 		if q.contains("rozettest"): _rozet_test.call_deferred()
 		if q.contains("istemtest"): _istem_test.call_deferred()
+		if q.contains("tiklatest"): _tikla_test.call_deferred()
 		if q.contains("kurt"):
 			_canli_koy_yakin("Kurt", 6.0)
 		if q.contains("tavsan"):
@@ -3361,4 +3366,19 @@ func _istem_test() -> void:
 			break
 	await get_tree().create_timer(0.5).timeout
 	print("ISTEM düğüm ", istem._hesapla(), " görünür ", istem.yazi.visible)
+
+## ?tiklatest: 60 px ötedeki bir düğüme tıklanır; yürüyüp toplaması beklenir
+func _tikla_test() -> void:
+	await get_tree().create_timer(2.5).timeout
+	var hd = null
+	for d in dugumler:
+		if d.canli and not toplama.G.nodes.get(d.ad, {}).get("mine", false):
+			hd = d
+			break
+	oyuncu.position = hd.position + Vector2(70, 10)
+	await get_tree().create_timer(0.3).timeout
+	var n0: int = env.adet(hd.ad)
+	print("TIKLA ", hd.ad, " hedef ", kontrol.tikla(hd.position + Vector2(0, -4)))
+	await get_tree().create_timer(5.0).timeout
+	print("TIKLA uzaklık ", int(oyuncu.position.distance_to(hd.position)), " yerde ", toplama.dusenler.map(func(d): return d.n), " düğüm canlı ", hd.canli)
 

@@ -9,7 +9,7 @@ const YOL := "user://ayarlar.json"
 const VURGU := [["Mor", "#B57BFF"], ["Pembe", "#FF7AD9"], ["Mavi", "#7AC8FF"], ["Altın", "#FFC56B"]]
 const ETIKET := {"yukari": "Yukarı", "asagi": "Aşağı", "sol": "Sol", "sag": "Sağ", "kos": "Koş", "vur": "Vur", "atil": "Atıl", "savus": "Savuştur / gard",
 	"topla": "Topla / konuş", "ye": "Ye", "canta": "Çanta", "el_yapimi": "El yapımı", "kitap": "Tarif kitabı", "yetenek": "Yetenekler", "karakter": "Karakter",
-	"insa": "İnşa", "bin": "Bin / in", "kopek": "Ulti / köpekler", "harita": "Harita", "isaret": "İşaret koy", "almanak": "Almanak", "kamp": "Kamp ateşi yak", "recine": "Reçine sür", "mesale": "Meşale", "kemer1": "Kemer 1",
+	"insa": "İnşa", "bin": "Bin / in", "kopek": "Ulti / köpekler", "harita": "Harita", "isaret": "İşaret koy", "almanak": "Almanak", "kamp": "Kamp ateşi yak", "recine": "Reçine sür", "eli_bosalt": "Eli boşalt", "mesale": "Meşale", "kemer1": "Kemer 1",
 	"kemer2": "Kemer 2", "kemer3": "Kemer 3", "kemer4": "Kemer 4", "kemer5": "Kemer 5", "ayarlar": "Ayarlar"}
 
 static var V := {}

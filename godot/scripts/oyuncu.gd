@@ -152,6 +152,7 @@ func _unhandled_input(e: InputEvent) -> void:
 		if not e.pressed:
 			if oyun.ozel != null: oyun.ozel.birak()
 			return
+		if oyun.kontrol != null and not oyun.pencere_acik() and oyun.kontrol.tikla(get_global_mouse_position()): return
 		if oyun.ozel != null: oyun.ozel.bas(y)
 		else: vur(y)
 
@@ -177,6 +178,7 @@ func _process(dt: float) -> void:
 	if kalkan and not bilir("P0"): kalkan = false
 	kirmizi = maxf(0.0, kirmizi - dt)
 	var g := Input.get_vector("sol", "sag", "yukari", "asagi", 0.3)
+	if g == Vector2.ZERO and oyun.kontrol != null: g = oyun.kontrol.yon()   # tıklanan yere yürüyüş
 	if kilit:
 		g = oto
 	if Input.is_action_just_pressed("kos_kol"):

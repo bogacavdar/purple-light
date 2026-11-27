@@ -296,6 +296,12 @@ func kemer_ciz() -> void:
 		var y := _yuva(n, el == i, s, str(i + 1))
 		var ii := i
 		y.set_drag_forwarding(Callable(), func(_at, d): return canta != null and canta.visible and canta.kemere_birakilir(d), func(_at, d): canta.kemere_birak(d, ii))
+		y.gui_input.connect(func(e):
+			if e is InputEventMouseButton and e.pressed and e.button_index == MOUSE_BUTTON_RIGHT and oyun.kontrol != null: oyun.kontrol.yuva_menu(ii, e.global_position)
+			elif e is InputEventMouseButton and e.pressed and e.button_index == MOUSE_BUTTON_LEFT and not (canta != null and canta.visible):
+				el = -1 if el == ii else ii
+				_el_degisti()
+				kemer_ciz())
 		kemer_kutu.add_child(y)
 
 ## elde bir yapı varsa yerleştirme başlar; bırakılınca biter

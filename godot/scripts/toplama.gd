@@ -13,12 +13,7 @@ func _process(dt: float) -> void:
 	if o.bayildi:
 		_dur()
 		return
-	if Input.is_action_just_pressed("topla") and not o.kilit and not oyun.sahne.acik and not oyun.konusma.visible and not oyun.istasyon.pencere.visible and not oyun.pazar.pencere.visible:
-		if oyun.evcil.binilen != null: oyun.evcil.in_()
-		if oyun.balik.aktif():
-			oyun.balik.bas()
-		elif not _yerdekileri_al() and not oyun.portal.etkiles() and not oyun.magara.etkiles() and not oyun.balik.etkiles() and not oyun.ciftlik.etkiles():
-			_basla()
+	if Input.is_action_just_pressed("topla"): f_bas()
 	if not is_.is_empty():
 		if o.yuruyor or (is_.tur == "dugum" and not is_.hedef.canli):
 			_dur()
@@ -41,6 +36,16 @@ func _process(dt: float) -> void:
 			_al(d)
 		else:
 			d.node.position.y = d.hedef.y + sin(d.yas * 3.0 + d.ph) * 0.6
+
+## F (ya da tıklanan yere varınca): yerdeki eşya, balık, portal, mağara, tarla, sonra toplama ya da konuşma
+func f_bas() -> void:
+	var o = oyun.oyuncu
+	if o.kilit or oyun.sahne.acik or oyun.konusma.visible or oyun.istasyon.pencere.visible or oyun.pazar.pencere.visible: return
+	if oyun.evcil.binilen != null: oyun.evcil.in_()
+	if oyun.balik.aktif():
+		oyun.balik.bas()
+	elif not _yerdekileri_al() and not oyun.portal.etkiles() and not oyun.magara.etkiles() and not oyun.balik.etkiles() and not oyun.ciftlik.etkiles():
+		_basla()
 
 func _dur() -> void:
 	is_ = {}
