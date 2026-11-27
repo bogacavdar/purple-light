@@ -180,6 +180,7 @@ func _bitir() -> void:
 	if g.tur == "dugum":
 		var d = g.hedef
 		var A: Dictionary = G.nodes[d.ad]
+		if oyun.basarim != null: oyun.basarim.topladi(str(d.ad))
 		if A.mine:
 			d.kalan -= 1
 			if d.kalan <= 0:

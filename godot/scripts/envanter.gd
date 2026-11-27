@@ -53,6 +53,7 @@ func adet(n: String) -> int:
 
 func ekle(n: String, k: int = 1) -> void:
 	inv[n] = adet(n) + k
+	if oyun.basarim != null: oyun.basarim.esya(n)
 	if not gorulen.has(n) and oyun.sk("T6") and oyun.pazar != null and oyun.pazar.P.ham.has(n):
 		# İlk keşif ödülü: yeni malzeme ilk bulunduğunda fiyatının 5 katı
 		var r := int(round(oyun.pazar.taban(n) * 5.0))
