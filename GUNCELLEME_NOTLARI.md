@@ -8,6 +8,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.22 · 27 Kasım 2026
+
+### Proje
+- **Godot: yemeklerin etkileri:**
+  - Her yiyecek web'deki gibi etki veriyor: Güç, Şifa, Çeviklik, Gece gözü, Doygunluk, Canlılık, Panzehir, Ateş kalkanı, Pıhtı, Dayanıklılık. Zehirli ve tuhaf yiyeceklerin kötü etkileri de var.
+  - X'e kısa basınca en uygun yiyecek yeniyor; basılı tutunca kategorili yemek listesi açılıyor. Bir şeyi ilk kez yiyince ne yaptığını öğreniyorsun.
+  - Etkin etkiler, çubukların altında süreleriyle görünüyor.
+
 ## Versiyon 5.21 · 27 Kasım 2026
 
 ### Proje
@@ -207,16 +215,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Kovalayan canlılar ara ara kendi hamlesini yapıyor: geyik tekmesi, domuz hücumu, ayının iki pençesi, kartal dalışı, timsahın çamura gömülmesi, kirpinin yuvarlanması, kertenkelenin kuyruğu, akrebin iğnesi. Yılan ve kunduz ısırıp geri kaçıyor. Her hamle başlamadan renkli "!" ve yerde uyarı çıkıyor.
   - Kurtlar artık birlikte avlanıyor: biri önünden oyalarken öbürü arkana dolanıyor.
   - Arkanda saldırıya hazırlanan bir canlı varsa çevrende o yöne bakan küçük, yanıp sönen bir ok çıkıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.02 · 27 Kasım 2026
-
-### Proje
-- **Godot: Börü'nün dövüş dersleri ve Ulti:**
-  - Börü'yle konuşunca "Dövüş dersleri": yedi ders, her biri bir alıştırma canavarıyla. Ders bitince hamle senin oluyor.
-  - Ulti çubuğu geldi; dolunca R ile her silahın kendi ultisi. Ulti sırasında hasar almıyorsun.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---

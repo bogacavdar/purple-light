@@ -1,3 +1,7 @@
+## v5.22 (27 Kasım 2026) · Godot Son-j: yemek etkileri ve yemek listesi
+- `godot-deneme/` yeni derleme (godot dalı: yeni yemek.gd + data/yemek.json (tools/disa_aktar_yemek.js); oyun.stat çarpanı `yemek.kat`, kayıt `yemek {kn, pb}`, pencere_acik; envanter X tuşu yemek.gd'ye, doygun; zaman.isikta göz; oyuncu.etki_ekle panzehir/ateşsiz/pıhtı; ?yemektest). Belge 99_godot Son-j…n. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (`yemek` alanı okunmaz, zararsız).
+
 ## v5.21 (27 Kasım 2026) · Godot Son-i: müzik aletleri
 - `godot-deneme/` yeni derleme (godot dalı: ses.gd `alet_mi/alet_cal/alet_ara`, data/muzik.json + art/ses/muzik/*.ogg (tools/disa_aktar_muzik.js); oyuncu.gd vur başında alet; envanter.gd aletler kemere; ?muziktest). Belge 99_godot Son-i. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
@@ -73,7 +77,3 @@
 ## v5.03 (27 Kasım 2026) · Godot S3: imza hamleleri ve sürü taktiği
 - `godot-deneme/` yeni derleme (godot dalı: canli.gd imza hamleleri (`imza`, `imza_t`, IMZA tablosu, `_imza_basla/_imza_isle/_imza_ciz`, vur-kaç ısırık ve atıştan sonra), kurt sürüsü dolanması (`_suru_yeri`); ozel.gd arkadan uyarı oku; oyun.gd SURUM "Godot · S3"). Denetim: ?imzatest. Belge 99_godot S3 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
-
-## v5.02 (27 Kasım 2026) · Godot S2d: dövüş dersleri ve ulti
-- `godot-deneme/` yeni derleme (godot dalı: yeni dovus.gd (7 ders, alıştırma canavarı, ders kutusu, ulti çubuğu, 10 ulti; kayıt `dovus {ult, od}`, öğrenilen `kuzen.tanis["ders_<tür>"]`); ozel.gd derste hamle açık, isabet bildirimi; oyuncu.gd ulti kazancı; gezgin.gd R ulti doluyken köpekleri açmaz; oyun.gd Börü'de "Dövüş dersleri"). Denetim: ?derstest. Belge 99_godot S2d satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıttaki `dovus` alanı okunmadan kalır).
