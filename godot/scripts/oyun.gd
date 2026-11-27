@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · S7b"
+const SURUM := "Godot · S8"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -106,6 +106,8 @@ var ani                     # anılar (ani.gd)
 var roket                   # ACT 2'nin sonu: fırlatma, kavuşma, son kart (roket.gd)
 var almanak                 # almanak.gd (U)
 var gizli                   # gizli.gd: gizli şeyler
+var hile                    # hile.gd: hile modu, ped, pencere (oturumluk)
+var arena = null            # arena.gd: yalnız arenadayken
 var kesif                   # kesif.gd: keşif defteri ve Zümrüt'ün bilmecesi
 var basarim                 # basarim.gd (cihaza kayıtlı başarımlar)
 var ys                      # mor ışık saldırıları ve Yıldızsızlar (yildizsiz.gd)
@@ -262,6 +264,9 @@ func _ready() -> void:
 	roket = preload("res://scripts/roket.gd").new()
 	add_child(roket)
 	roket.kur(self)
+	hile = preload("res://scripts/hile.gd").new()
+	add_child(hile)
+	hile.kur(self)
 	gizli = preload("res://scripts/gizli.gd").new()
 	add_child(gizli)
 	gizli.kur(self)
@@ -387,6 +392,8 @@ func _ready() -> void:
 		if q.contains("bsrtest"): _bsr_test.call_deferred(q)
 		if q.contains("kdeftest"): _kdef_test.call_deferred(q)
 		if q.contains("gizlitest"): _gizli_test.call_deferred(q)
+		if q.contains("arenatest"): _arena_test.call_deferred(q)
+		if q.contains("hiletest"): _hile_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -512,6 +519,15 @@ func _ready() -> void:
 	kayit.kur(self)
 	var test := OS.has_feature("web") and str(JavaScriptBridge.eval("location.search")).length() > 1
 	var yeni := false
+	if bool(Kayit.bekleyen.get("arena", false)):
+		Kayit.bekleyen = {}
+		Kayit.dogrudan = false
+		arena = preload("res://scripts/arena.gd").new()
+		add_child(arena)
+		arena.kur(self)
+		kayit.ana_gizle()
+		arena.gir.call_deferred()
+		return
 	if not Kayit.bekleyen.is_empty():
 		yeni = bool(Kayit.bekleyen.get("yeni", false))
 		var varis := str(Kayit.bekleyen.get("varis", ""))
@@ -630,7 +646,11 @@ static func su_mu(t: int) -> bool:
 	return t >= 3
 
 ## web blocked(): kutunun dört köşesinden biri sudaysa ya da bir ağaç gövdesine değiyorsa geçilmez
+func arena_mi() -> bool:
+	return arena != null
+
 func engel(p: Vector2, half: float = 5.0, canli := false) -> bool:
+	if arena != null and arena.engel(p): return true
 	if magara != null:
 		if magara.icinde:
 			return magara.engel(p, half)
@@ -1313,6 +1333,52 @@ func _cimen_yeri() -> bool:
 				return true
 	return false
 
+func _hile_test(_q: String) -> void:
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	hile._degis(true)
+	hile._anahtar("sonsuz", true); hile._anahtar("tek", true); hile._anahtar("tanri", true)
+	var v0: int = env.vio
+	env.vio_ekle(-50)
+	print("HILE mod ", Hile.mod, " sonsuz: vio ", v0, " → ", env.vio, " başarım hile ", basarim.bayraklar.has("hile"))
+	var c = _canli_yeni("Kurt", oyuncu.position + Vector2(200, 0), 1)
+	c.vuruldu(1, Vector2.RIGHT)
+	print("HILE tek vuruş kurt ölü ", c.olu >= 0.0)
+	oyuncu.isirildi(99999, oyuncu.position + Vector2(10, 0), null, "n")
+	await get_tree().process_frame
+	print("HILE tanrı bayıldı ", oyuncu.bayildi, " can ", int(oyuncu.hp))
+	hile.harita_ac()
+	print("HILE harita yüzde ", harita_k.yuzde())
+	hile.ara.text = "kılıç"
+	hile._ac_pen()
+	hile._ara_ciz()
+
+func _arena_test(q: String) -> void:
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	for c in canlilari_ver(): c.queue_free()
+	arena = preload("res://scripts/arena.gd").new()
+	add_child(arena)
+	arena.kur(self)
+	arena.gir()
+	await get_tree().create_timer(0.5).timeout
+	print("ARENA merkez ", arena.merkez, " gruplar ", arena.gruplar.map(func(g): return [g.ad, g.turler.size()]))
+	if q.contains("panel"): return
+	arena.dovus("Kurt")
+	await get_tree().create_timer(0.3).timeout
+	var k = null
+	for c in canlilari_ver():
+		if c.has_meta("arn"): k = c
+	for i in 5: k.vuruldu(30, Vector2.RIGHT)
+	await get_tree().create_timer(3.0).timeout
+	print("ARENA kurt can ", int(k.hp), "/", int(k.D.hp), " verilen ", arena.dealt, " alınan ", arena.recv, " oyuncu can ", int(oyuncu.hp), "/", int(oyuncu.hp_max), " kayıt edilebilir ", kayit.kaydedilebilir())
+	arena.dovus("Kurt", true)
+	await get_tree().create_timer(1.0).timeout
+	for c in canlilari_ver():
+		if c.has_meta("arn"): print("ARENA reis ", c.tur, " can ", int(c.hp))
+
 func _gizli_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	while konusma.visible:
@@ -1936,6 +2002,7 @@ func kritik(dm: int, n: String, a) -> int:
 	return dm + ex
 
 func canli_oldu(k: String, c = null) -> void:
+	if arena != null: return   # arenada hiçbir şey sayılmaz
 	if ys != null and c != null and c.has_meta("ys"):
 		ys.oldu(c)
 		return
@@ -1952,7 +2019,7 @@ func canli_oldu(k: String, c = null) -> void:
 ## uzakta, kendi zemininde ve Çayır'da doğar; 760 px'ten uzaklaşan silinir, gece canlısı gündüz 360 px'ten uzaksa gider.
 ## Kurt yalnız gece; Sv 1–5'te sahada en çok bir kurt ve tek başına; Yaban atı Sv 2'den; saldırganlar Kemal'in kampının yanında doğmaz.
 func _dogur(dt: float) -> void:
-	if magara.icinde or basta or cine.acik: return
+	if magara.icinde or basta or cine.acik or arena != null: return
 	dogum_t -= dt
 	if dogum_t > 0.0: return
 	dogum_t = 1.5
@@ -2665,6 +2732,9 @@ const KEMAL_ALAY := ["Gece karanlıktır evlat, öğreneceksin bunları! Sabah s
 var ilk_gece_bayilma := true
 func bayil(sebep: String) -> void:
 	if oyuncu.bayildi: return
+	if Hile.tanri and sebep != "gece":
+		oyuncu.hp = oyuncu.hp_max
+		return
 	if basarim != null: basarim.bayildi()
 	get_tree().create_timer(2.5).timeout.connect(func(): ani.olay("faint"))
 	if reis != null: reis.bayildi()   # web v318: bayılınca %60 bir anı

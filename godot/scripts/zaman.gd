@@ -86,6 +86,7 @@ func _process(dt: float) -> void:
 	var k := karanlik()
 	if not oyun.magara.icinde:
 		oyun.taban_renk = Color.WHITE.lerp(GECE, k / 0.985)
+		if Hile.gece: oyun.taban_renk = oyun.taban_renk.lerp(Color.WHITE, 0.6)
 		if oyun.ys != null and oyun.ys.ortu.modulate.a > 0.0: oyun.taban_renk = oyun.taban_renk.lerp(Color(0.86, 0.74, 1.0), oyun.ys.ortu.modulate.a * k)
 		oyun.renk_guncelle()
 	for l in isiklar: l.enabled = k > 0.05 and not oyun.magara.icinde
@@ -98,6 +99,7 @@ func _saat_yaz() -> void:
 
 ## ışık var mı (web litAt + nearCamp + meşale)
 func isikta(p: Vector2) -> bool:
+	if Hile.gece: return true
 	if oyun.ys != null and oyun.ys.aktif(): return true   # saldırıda bütün ada mor ışıkla aydınlık
 	if oyun.gizli != null and oyun.gizli.yildizli() and not oyun.magara.icinde: return true   # 100. gecede yıldız ışığı
 	if oyun.mesale.elde() != null: return true

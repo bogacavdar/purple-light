@@ -439,7 +439,7 @@ func _process(dt: float) -> void:
 	if satir_t > 0.0:
 		satir_t -= dt
 		satir.modulate.a = clampf(minf(4.0 - satir_t, satir_t), 0.0, 1.0)
-	if oyun.basta: return
+	if oyun.basta or oyun.arena != null: return
 	if not hazir:
 		hazir = true
 		if SP.is_empty(): _yol_kur({})

@@ -51,7 +51,7 @@ static func en_yeni() -> String:
 
 # ------------------------------------------------------------------ kaydet
 func kaydedilebilir() -> bool:
-	return not oyun.basta and not oyun.cine.acik and not oyun.uyanis.acik and not oyun.sahne.acik and not oyun.oyuncu.bayildi and not oyun.magara.yukleme.visible and oyun.oyuncu.hp > 0.0
+	return oyun.arena == null and not oyun.basta and not oyun.cine.acik and not oyun.uyanis.acik and not oyun.sahne.acik and not oyun.oyuncu.bayildi and not oyun.magara.yukleme.visible and oyun.oyuncu.hp > 0.0
 
 func kaydet(y: String) -> bool:
 	if not kaydedilebilir(): return false
@@ -174,6 +174,16 @@ func ana_dugmeler() -> void:
 			devam = true
 			yukle(en_yeni()), true))
 	liste.add_child(_dugme("Yeni oyun", func(): yaratici.ac(), son == ""))
+	# Arena: iyi ya da kötü son başarımı kazanılınca ya da hile modu açıkken açılır
+	var acik_ar: bool = Hile.mod or oyun.basarim.got.has("iyison") or oyun.basarim.got.has("kotuson")
+	var ab := _dugme("⚔ Arena" if acik_ar else "⚔ Arena · kilitli: oyunu bitir ya da hile modunu aç", func():
+		if not (Hile.mod or oyun.basarim.got.has("iyison") or oyun.basarim.got.has("kotuson")):
+			return
+		bekleyen = {arena = true}
+		get_tree().reload_current_scene(), false)
+	ab.tooltip_text = "Dövüş mekaniklerini dene" if acik_ar else "Kilitli: oyunu bitir ya da hile modunu aç"
+	if not acik_ar: ab.modulate = Color(1, 1, 1, 0.55)
+	liste.add_child(ab)
 	if son != "":
 		liste.add_child(_dugme("Kayıttan yükle", _yukle_listesi))
 	if not WebKayit.oku().is_empty():

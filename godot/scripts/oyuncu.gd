@@ -519,6 +519,13 @@ func isirildi(dmg: int, from: Vector2, a = null, renk: String = "", koru: float 
 	if renk != "" and atk_cd > 0.2 and str(silah_v().get("mace", "")) == "gurz": n *= 0.75   # savaş çekici: sağlam duruş
 	kombo = 0
 	dmg = maxi(1, int(round(n)))
+	if oyun.arena != null and not oyun.arena.gercek:
+		# arena: hasar ölçülür, can gitmez
+		oyun.arena.aldi(dmg)
+		dokunulmaz = koru
+		kirmizi = 0.25
+		oyun.yazi(position + Vector2(0, -24), "-%d" % dmg, Color("#ff6a5a"), 9)
+		return
 	dokunulmaz = koru
 	hp = maxf(0.0, hp - dmg)
 	kirmizi = 0.25

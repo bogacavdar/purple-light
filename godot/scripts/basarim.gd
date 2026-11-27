@@ -506,7 +506,7 @@ func _process(dt: float) -> void:
 	if alm != null and alm.dugme != null:
 		dugme.size.y = alm.dugme.size.y
 		dugme.position = Vector2(alm.dugme.position.x - dugme.size.x - 6, alm.dugme.position.y)
-	dugme.visible = not oyun.basta
+	dugme.visible = not oyun.basta and oyun.arena == null
 	var nab := 0.5 + 0.5 * sin(Time.get_ticks_msec() / 1000.0 * TAU / 1.8)
 	dugme.modulate = Color.WHITE.lerp(Color(1.2, 1.1, 0.8), nab) if rozet.visible else Color.WHITE
 	t_chk -= dt

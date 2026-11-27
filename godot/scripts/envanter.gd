@@ -100,6 +100,7 @@ func elde_tur() -> String:
 func alet_kullan(n: String) -> bool:
 	if not dayan.has(n):
 		dayan[n] = int(G.tools[n].dur)
+	if Hile.dayan: return true
 	if dayan[n] <= 0:
 		mesaj("%s köreldi! Demirci Dursun'da bilenir." % n, true)
 		return false
@@ -345,8 +346,9 @@ func ilerleme_goster(yazi: String, k: float) -> void:
 		ilerleme.value = k * 100.0
 
 func vio_ekle(n: int) -> void:
+	if n < 0 and Hile.sonsuz: n = 0   # Sınırsız Vio: satın almak Vio'nu azaltmaz
 	vio = maxi(0, vio + n)
-	vio_yazi.text = "%d Vio" % vio
+	vio_yazi.text = ("%d Vio ∞" if Hile.sonsuz else "%d Vio") % vio
 
 ## web gainXP: seviye eşiği need(L) (Sv 16'ya kadar 40·1,35^(L-1), sonra 3606·(1+0,06·(L-16)))
 func xp_ekle(n: int) -> void:

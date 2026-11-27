@@ -450,7 +450,7 @@ func _process(dt: float) -> void:
 	if oyun.kh_resim != null:
 		var kh: Control = oyun.kh_resim.get_parent()
 		dugme.position = Vector2(kh.position.x + kh.size.x - dugme.size.x, kh.position.y - dugme.size.y - 6)
-	dugme.visible = oyun.ada == 1 and not oyun.basta
+	dugme.visible = oyun.ada == 1 and not oyun.basta and oyun.arena == null
 	var tm := Time.get_ticks_msec() / 1000.0
 	var nab := 0.5 + 0.5 * sin(tm * TAU / 1.8)
 	if ilk_goster: dugme.modulate = Color(0.6, 0.85, 1.0).lerp(Color.WHITE, nab)

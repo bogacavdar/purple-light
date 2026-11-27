@@ -129,7 +129,7 @@ func _siginak() -> bool:
 	return false
 
 func _process(dt: float) -> void:
-	if oyun == null: return
+	if oyun == null or oyun.arena != null: return
 	ilan_t -= dt
 	ilan.modulate.a = clampf(ilan_t, 0.0, 1.0)
 	if FADE > 0.0: FADE -= dt

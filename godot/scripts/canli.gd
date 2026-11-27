@@ -751,6 +751,10 @@ func vuruldu(dm: int, yon: Vector2) -> void:
 	if ders:
 		flash = 0.15
 		return
+	if Hile.tek: dm = maxi(dm, int(ceil(hp)))
+	if oyun.arena != null and oyun.arena.serbest(self):
+		oyun.arena.verdi(dm)
+		hp += dm   # arena: kimsenin canı gitmez, hasar ölçülür
 	hp -= dm
 	flash = 0.15
 	mad = true
