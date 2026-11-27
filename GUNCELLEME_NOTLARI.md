@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.16 · 27 Kasım 2026
+
+### Proje
+- **Godot: silahçılarda bileme ve "Derse dön":**
+  - Silahçı kuzenler de körelen aletlerini biliyor ("Aletimi bile").
+  - Börü'nün dersinden uzaklaşınca oyun duruyor, Börü soruyor: "Derse dön" seni yanına getiriyor, "Dersi bırak" ödediğin ücreti geri veriyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.15 · 27 Kasım 2026
 
 ### Proje
@@ -220,18 +230,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Gezmediğin yerler artık haritada gri dumanla örtülü; geçtiğin yerin çevresi açılıyor. Deniz baştan görünüyor.
   - M ile büyük harita açılıyor. Haritada keşfettiğin yerdeki kişiler, görevi olanların "!"i ve senin yerin var. Tekerlekle yakınlaştırılıyor, sürükleyerek kaydırılıyor.
   - Yan görevi bekleyen kişiler keşfettiğin yerdeyse haritada "?" ile, keşfetmediğin yerde yakınken sisli bir daireyle görünüyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.96 · 27 Kasım 2026
-
-### Proje
-- **Godot: anılar:**
-  - ACT 1'in 22 anısı ve ACT 2'nin 10 anısı Godot'ya geldi.
-  - Anılar tarif öğrendikçe, rüyada, bayılınca, bir görevi bitirince ya da Zümrüt'e mor kıymık götürünce geri geliyor. Ustaların anıları onların işleriyle geliyor.
-  - Anı penceresinde web'deki sahneler var; sen ve sevdiğin kişi kendi çizimlerinizle görünüyorsunuz.
-  - Kitap › Anılar sayfasından gelen anılar yeniden izlenebiliyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---

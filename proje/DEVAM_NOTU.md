@@ -1,3 +1,7 @@
+## v5.16 (27 Kasım 2026) · Godot Son-d: silahçılarda bileme, Derse dön
+- `godot-deneme/` yeni derleme (godot dalı: kuzen.gd silahçıda "Aletimi bile"; dovus.gd 280 px'te Derse dön / Dersi bırak (ücret iadesi), `soruldu`; poyraz.gd gereksiz `_cik` kaldırıldı; ?dersdon). Belge 99_godot Son-d. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.15 (27 Kasım 2026) · Godot Son-c: Balık defteri, Bütün sahneler, konuk kart
 - `godot-deneme/` yeni derleme (godot dalı: poyraz.gd "Balık defteri"; almanak.gd `ac("deniz")`, konuk kartları (kayıt `alm.k`); ani.gd Bütün sahneler bölümü; hile.gd `love`; ayarlar.gd `butun_sahne` (cihazda); oyun.gd canli_oldu almanak'a canlıyı da verir; ?sontest). Belge 99_godot Son-c. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `alm.k` alanı okunmadan kalır).
@@ -73,7 +77,3 @@
 ## v4.97 (27 Kasım 2026) · Godot: keşif sisi ve büyük harita
 - `godot-deneme/` yeni derleme (godot dalı: yeni harita.gd (keşif 7 karo, sis görüntüsü küçük haritada, büyük harita M, yan görev "?" ve sisli daire, kayıt `kesif` ada başına (ADA_YEREL)); girdi.gd "harita" eylemi (M); oyun.gd yardım satırı). Denetim: ?haritatest. Belge 99_godot "Harita ve keşif" satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `kesif` alanı okunmadan kalır).
-
-## v4.96 (27 Kasım 2026) · Godot: anılar
-- `godot-deneme/` yeni derleme (godot dalı: yeni tools/disa_aktar_ani.js → data/ani.json (32 anı, satırlar, kişi konumları/dönüşümleri, sahne yazıları, MIN) + art/ani/<özet>.png (488 tekil kare: arka ve ön katman, iki kişi çizilmeden); yeni ani.gd (tetikleyiciler, kuyruk, pencere, Kitap › Anılar, kayıt `ani {n, k}`); oyun.gd bayılma ve Zümrüt'ün mor kıymık seçeneği, yapi.gd uyku, gorev.gd görev bitişi, kuzen.gd "Götür beni" öncesi söz anısı, el_yapimi.gd Anılar düğmesi). Denetim: ?anitest_waffle, ?anitest_sahil. Belge 99_godot Anılar satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıttaki `ani` alanı okunmadan kalır).
