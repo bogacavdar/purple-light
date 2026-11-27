@@ -1,3 +1,6 @@
+## v5.38 (27 Kasım 2026) · Godot: öğretici kartını küçültme, Görevler'de ders
+- Godot `ogretici.gd` (`kart_kucult`, `parla`), `ayarlar.gd` (`ders_kucuk`, ayar dosyasında `tutmin`), `yan.gd` `_pencere_yaz` (Ders bölümü), `hud_menu.gd` (öğretici kartı sütunun soluna). Web v307tut/v307qlog. Test kancası `derskart`. Geri almak: bu commit'i `git revert` et (oyun kaydı alanı yok; ayar dosyasındaki `tutmin` okunmazsa yok sayılır).
+
 ## v5.37 (27 Kasım 2026) · Godot: balta dersinde El yapımı kilidi
 - Godot `el_yapimi.gd`: `_ders_parca`, `_ders_bak`, `_mavi`, `ders_k` (öğretici tz 12; web v393lock). oyun.gd test kancası `baltakilit`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
 
@@ -72,7 +75,3 @@
 ## v5.19 (27 Kasım 2026) · Godot Son-g: üşüme, buzlanma, ayak izleri
 - `godot-deneme/` yeni derleme (godot dalı: yeni soguk.gd (üşüme, buz köşeleri, ayak izleri; art/ayakizi.png web v435iz'den); oyun.gd kayıt `usume`, bayılınca sıfırlanır; hava.gd efekt katmanı layer 0). Belge 99_godot Son-g. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (`usume` alanı okunmaz, zararsız).
-
-## v5.18 (27 Kasım 2026) · Godot Son-f: mevsimler, hava, sıcaklık, kar
-- `godot-deneme/` yeni derleme (godot dalı: yeni hava.gd: mevsim, gece_sn, hava zinciri, sıcaklık, kar örtüsü, ekran çizimi, sis shader'ı, mevsim çemberi, Mor gece; bağlantılar zaman (gece hızı, saat yazısı), envanter (kış tokluğu), mesale (yanma katı), balik (bekleme, mevsim balığı), canli (sis), toplama (`mevsim_k`, `_bitir2`), yildizsiz `zorla()`, ses (rain/wind); ?havatest). Kayıt alanı `hava {kar, mg, k, t}`. Belge 99_godot Son-f, Son-g. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (eski kayıtlar `hava` alanını okumaz, zararsız).

@@ -8,6 +8,12 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.38 · 27 Kasım 2026
+
+### Godot denemesi
+- **Öğretici kartı küçülüyor:** öğretici kartının başlığındaki ▾ düğmesi kartı tek satıra indiriyor, ▸ yeniden açıyor; seçim hatırlanıyor. Kart küçükken yeni adım gelince başlığı kısa bir an parlıyor. Kart artık sağ üstteki düğmelerin altında kalmıyor.
+- **Görevler'de ders:** öğretici sürerken Görevler penceresinin (G) en üstünde o anki ders adımı yazıyor.
+
 ## Versiyon 5.37 · 27 Kasım 2026
 
 ### Godot denemesi
@@ -138,15 +144,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: üşüme ve ayak izleri:**
   - Kışın donarken karakter üşüyor, ekranın köşelerinden buz kristalleri büyüyor. Yanan meşale ya da bir ateş ısıtıyor; çok üşürsen can düşüyor.
   - Yürürken yere ayak izi kalıyor. Karda daha büyük ve uzun süre kalıyor, yağmurda çabuk siliniyor.
-
-## Versiyon 5.18 · 27 Kasım 2026
-
-### Proje
-- **Godot: mevsimler ve hava geldi:**
-  - Yıl 28 gün, her mevsim 7 gün. Gece uzunluğu mevsime göre değişiyor; kışın karın daha çabuk acıkıyor.
-  - Toplamada mevsim farkı var: baharda ot, yazın meyve, sonbaharda mantar ve ağaçtan iki kat meyve; kışın meyve yok. Her mevsimin kendi balığı var.
-  - Hava sırayla değişiyor: açık, bulutlu, yağmur, fırtına, sis. Kışın soğukta kar ve tipi yağıyor, yer yavaş yavaş beyazlıyor ve sonra eriyor.
-  - Yağmurda meşale çabuk bitiyor, tarlalar kendiliğinden sulanıyor, balık daha çabuk vuruyor. Fırtınada şimşek çakıp gök gürlüyor; Kül Diyarı'nda kül fırtınası var.
-  - Bataklık ve Kayalık Dağ hep ince bir sis altında; sisli havada her yer sisli, ışıklar sisi açıyor.
-  - Mor gece: yılın son gecesi en uzun gece ve mor ışık saldırısı kesin geliyor.
-  - Saatin yanında hava, mevsim, sıcaklık ve dönen mevsim çemberi var.
