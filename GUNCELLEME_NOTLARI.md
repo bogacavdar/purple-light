@@ -8,6 +8,19 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.06 · 27 Kasım 2026
+
+### Proje
+- **Godot: Almanak:**
+  - Küçük haritanın üstünde "Almanak (U)" düğmesi var.
+  - Gezdiğin her biyomun canlıları kart kart görünüyor: ilk avlayana kadar siyah gölge ve ???, avlayınca resmi, huyu, canı, hasarı, özel hamlesi, düşürdükleri ve Reis sayacı. Reis'i yenilince kart altın oluyor.
+  - Her biyomun sonunda mağarasının canlıları ve boss'u var.
+  - Tatlı su balıkları, deniz canlıları ve Yıldızsızlar için ayrı sayfalar var.
+  - Yeni bir canlı avlayınca ekranda "Almanağa eklendi" yazıyor; bakmadığın yeniler düğmede kırmızı sayıyla, kartta "YENİ" etiketiyle görünüyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.05 · 27 Kasım 2026
 
 ### Tasarım belgesi
@@ -222,16 +235,5 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Tarif kitabında (K) yeni "Ada halkı" sayfası var.
 - **Tasarım belgesi:** Godot'a taşımanın kalan planı adım adım yazıldı (ACT 1'in sonu, ikinci ada ve altı biyomu, en sonda eksikler).
 - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.86 · 26 Kasım 2026
-
-### Proje
-- **Godot: Yıldızsız Işıkçı:**
-  - 15. günden sonra her akşam Çayır'da mavi ışıklı Işıkçı belirir.
-  - 5 mor kıymık, 3 gece sefası ve 1 tunç külçesi karşılığında Kafa lambası verir. Onunla konuşunca bu takas "Hiç bitmeyen ışık" yan görevi olur.
-  - Kafa lambası takılıyken gece mor ışık inmez, mağarada etrafı aydınlatır.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---

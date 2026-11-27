@@ -1,3 +1,7 @@
+## v5.06 (27 Kasım 2026) · Godot S5: Almanak
+- `godot-deneme/` yeni derleme (godot dalı: yeni almanak.gd (düğme, pencere, sayfalar, kartlar, ilan kuyruğu, rozet; kayıt `alm {bak, bg, a}`); oyun.gd canli_oldu → almanak.avlandi, ?almtest; girdi.gd U "almanak"; balik.gd ilk balık; magara.gd boss_gordu). Belge 99_godot S5 satırı ve Son listesi. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıttaki `alm` alanı okunmadan kalır).
+
 ## v5.05 (27 Kasım 2026) · Godot S3b: hayvanların tutumu; belge boss boyu kararı
 - `godot-deneme/` yeni derleme (godot dalı: canli.gd tutum alanları `fark/uyari/kacis/kac_sans/son_vur/av/avci/yeme_t`, `_tutum_var/_iri/_cekiniyor/_suru_fark/_avlan/av_ol`; oyuncu.gd `hiz_kip`; oyun.gd `_cimen_yeri`, ?tutumtest). Belge 99_godot S3b satırı; 37_magaralar "Boss'ların görünüşü" boy kuralı (27 Kasım 2026, Boğaç). Web oyununda kod değişmedi.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
@@ -72,8 +76,4 @@
 
 ## v4.87 (27 Kasım 2026) · Godot O7: Ada halkı hikâyeleri; kalan plan
 - `godot-deneme/` yeni derleme (godot dalı: yeni hikaye.gd (parçalar, sahne oynatıcı, Kitap sayfası, kayıt `hikaye`); yeni tools/disa_aktar_hikaye.js → data/hikaye.json + art/hikaye 290 kare (oyunun kendi sahne çiziminden); konusma.gd seçeneği ekler; el_yapimi.gd Ada halkı düğmesi). Denetim: ?hikayetest. Belge 99_godot: kalan plan tablosu ve O7 satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et.
-
-## v4.86 (26 Kasım 2026) · Godot O6: Yıldızsız Işıkçı ve Kafa lambası
-- `godot-deneme/` yeni derleme (godot dalı: yeni isikci.gd (akşam belirme, konuşma, takas, yan görev isikci ext, kayıt `isikci`); yeni tools/disa_aktar_isikci.js → data/isikci.json; yan.gd ext görevleri sunmaz ve sınıra saymaz; zaman.gd ve mesale.gd Kafa lambası ışığı). Denetim: ?lambatest. Belge 99_godot O6 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et.
