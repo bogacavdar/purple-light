@@ -49,9 +49,8 @@ func kur(o) -> void:
 	for i in 160: P.append({x = randf(), y = randf(), v = 0.5 + randf() * 0.8, l = 0.5 + randf() * 0.5, p = randf() * 6.283, c = i % 3})
 	for i in 26: FL.append({x = randf(), y = randf(), ph = randf() * 6.0})
 	var kat := CanvasLayer.new()
-	kat.layer = 1
+	kat.layer = 0
 	oyun.add_child(kat)
-	oyun.move_child(kat, 0)
 	sis_kat = ColorRect.new()
 	sis_kat.set_anchors_preset(Control.PRESET_FULL_RECT)
 	sis_kat.mouse_filter = Control.MOUSE_FILTER_IGNORE
