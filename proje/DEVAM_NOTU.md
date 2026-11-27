@@ -1,3 +1,7 @@
+## v5.29 (27 Kasım 2026) · Godot Son-r: fare imleci, köpek kamerası kayıtları
+- `godot-deneme/` yeni derleme (godot dalı: yeni imlec.gd, kopek.gd; oyun.gd kayıt `dlog`, bayıl kaydı; basarim.gd kazanınca kayıt). Belge 99_godot Son-r. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (`dlog` alanı okunmaz, zararsız).
+
 ## v5.28 (27 Kasım 2026) · Godot Son-p: eylem ipucu, rozet, biyom sınırı
 - `godot-deneme/` yeni derleme (godot dalı: yeni istem.gd; envanter.gd rozet + _rozet_resim; canli.gd _sinir (hb); ?istemtest, ?rozettest). Belge 99_godot Son-p; ComfyUI çizimleri taşımanın dışına alındı (Boğaç kararı). Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
@@ -73,7 +77,3 @@
 ## v5.10 (27 Kasım 2026) · Godot S8: Arena ve hileler
 - `godot-deneme/` yeni derleme (godot dalı: yeni hile.gd (class_name Hile, statik oturumluk anahtarlar, cheat ve kol kodu, ped, pencere, eşya arama) ve arena.gd (halka, seviye/yuva/silah seçici, iki adanın canlıları ve Reisleri, hasar ölçümü, Gerçek dövüş); kancalar: oyun.gd arena girişi, engel, canli_oldu, _dogur, bayil (Tanrı); kayit.gd Arena düğmesi ve kayıt kapalı; envanter.gd sınırsız Vio ve dayanıklılık; canli.gd tek vuruş ve arena hasarı; oyuncu.gd arena hasarı; zaman.gd gece ışığı; ys, gizli, almanak, basarim arenada kapalı; ?hiletest, ?arenatest). Belge 99_godot S8 ve Son. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
-
-## v5.09 (27 Kasım 2026) · Godot S7b: gizli şeyler
-- `godot-deneme/` yeni derleme (godot dalı: yeni gizli.gd (deniz yolu, sevdiğin kişi, kazana çöp ve görünmezlik, Börü'nün kemeri, 100. gece yıldızları, eski kamp ateşi, ayna, dans, inatçı balıkçı, 03:00, Devam satırı, Seni hatırlıyorum; kayıt `gizli`, cihaz user://gizli.json); kancalar: oyun.gd engel (yol), canli.gd görünmez ve dans izleyicisi, oyuncu.gd saydamlık ve yumruk, istasyon.gd "Çantan" şeridi, balik.gd olta, konusma.gd 03:00, uyanis.gd hatırlama, kayit.gd Devam, yildizsiz.gd ve zaman.gd yıldızlı gece). Belge 99_godot S7b. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıttaki `gizli` alanı okunmadan kalır).

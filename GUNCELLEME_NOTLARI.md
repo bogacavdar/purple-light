@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.29 · 27 Kasım 2026
+
+### Proje
+- **Godot: fare imleci ve köpek günlüğü:**
+  - Fare imleci artık mor ışıkta piksel bir el; toplanacak ya da konuşulacak bir şeyin üstüne gelince el açılıyor.
+  - Robot köpeklerin ACT 3 için tuttuğu gizli günlük Godot'ta da tutuluyor (oyunda görünmez).
+
 ## Versiyon 5.28 · 27 Kasım 2026
 
 ### Proje
@@ -169,16 +176,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: Arena ve hileler:**
   - Ana menüde `cheat` yazınca ya da kolda Yukarı, Yukarı, Aşağı, Aşağı, Sol, Sağ, Sol, Sağ, B, A ile hile modu açılıyor. Oyunda üstte küçük bir hile pedi çıkıyor; "Hileler…" penceresinde Tanrı modu, tek vuruşta öldürme, sınırsız Vio ve dayanıklılık, gece ışığı, ACT 2'ye geçme, en üst seviye, haritayı açma ve eşya arama var.
   - Ana menüde "⚔ Arena": oyunu bitirince ya da hile modu açıkken açılıyor. Seviyeni, giyimini ve silahını seçip iki adanın bütün canlılarıyla ve Reisleriyle dövüşebiliyorsun. Verdiğin ve aldığın hasar ölçülüyor; "Gerçek dövüş" kapalıyken kimsenin canı gitmiyor. Arenada hiçbir şey kaydedilmiyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.09 · 27 Kasım 2026
-
-### Proje
-- **Godot: gizli şeyler:** web'deki bütün gizli şeyler Godot'ta da var; oyun bunları hiçbir yerde anlatmıyor, oyuncu kendisi buluyor. Yerlerini burada yazmıyoruz, tasarım belgesinde ayrıntısıyla duruyor.
-  - "Mor ışıkta o", "Görünmezlik iksiri" ve "Denizde yürüyen" başarımları artık kazanılabiliyor.
-  - Zümrüt'ün kazan penceresinin altında çantandaki malzemeler görünüyor; birine dokununca onu kullanan tarif seçiliyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
