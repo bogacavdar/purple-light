@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.21"
+const SURUM := "Godot · 5.22"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -113,6 +113,7 @@ var ses                     # ses.gd: müzik, ortam sesleri, efektler
 var hava                    # hava.gd: hava, mevsim, sıcaklık, kar
 var soguk                   # soguk.gd: üşüme, buzlanma, ayak izleri
 var halat                   # halat.gd: Tuncay'ın halat yolları
+var yemek                   # yemek.gd: yemek etkileri ve yemek listesi
 var hile                    # hile.gd: hile modu, ped, pencere (oturumluk)
 var arena = null            # arena.gd: yalnız arenadayken
 var kesif                   # kesif.gd: keşif defteri ve Zümrüt'ün bilmecesi
@@ -344,6 +345,9 @@ func _ready() -> void:
 	soguk = preload("res://scripts/soguk.gd").new()
 	add_child(soguk)
 	soguk.kur(self)
+	yemek = preload("res://scripts/yemek.gd").new()
+	add_child(yemek)
+	yemek.kur(self)
 	balon_yazi = Label.new()
 	balon_yazi.add_theme_font_size_override("font_size", 14)
 	balon_yazi.add_theme_color_override("font_color", Color("#2a1e14"))
@@ -374,6 +378,7 @@ func _ready() -> void:
 		if q.contains("havatest"): _hava_test.call_deferred(q)
 		if q.contains("halattest"): _halat_test.call_deferred()
 		if q.contains("muziktest"): _muzik_test.call_deferred()
+		if q.contains("yemektest"): _yemek_test.call_deferred()
 		if q.contains("kurt"):
 			_canli_koy_yakin("Kurt", 6.0)
 		if q.contains("tavsan"):
@@ -2347,7 +2352,7 @@ func sk(id: String) -> bool:
 	return yetenekler.has(id)
 
 func pencere_acik() -> bool:
-	return (gezgin != null and gezgin.acik()) or (ev != null and ev.acik) or (evcil != null and evcil.acik()) or (yan != null and yan.acik()) or (atolye != null and atolye.visible) or (sinan != null and sinan.visible) or (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
+	return (yemek != null and yemek.acik()) or (gezgin != null and gezgin.acik()) or (ev != null and ev.acik) or (evcil != null and evcil.acik()) or (yan != null and yan.acik()) or (atolye != null and atolye.visible) or (sinan != null and sinan.visible) or (yetenek != null and yetenek.visible) or (karakter != null and karakter.visible) or sahne.acik or konusma.visible or istasyon.pencere.visible or pazar.pencere.visible or menu_acik() or env.canta.visible
 
 func can_guncelle(hp: float, mx: float) -> void:
 	can_cubugu.max_value = mx
@@ -2584,6 +2589,7 @@ func _taki(k: String) -> float:
 ## r < 0: şimdiki puanla ve takıların etkisiyle; r ≥ 0: o puanla (önizleme, takısız)
 func stat(k: String, r: int = -1) -> float:
 	var v0 := _stat(k, r)
+	if r < 0 and yemek != null: v0 *= yemek.kat(k)
 	if k == "move" and r < 0 and kusam.get("govde", null) == "Meka zırh": v0 *= 1.12   # web v79: Meka zırh adımı %12 hızlandırır
 	return v0
 
@@ -2990,7 +2996,7 @@ func _durum_al() -> Dictionary:
 		mesale = {ts = mesale.ts, yaniyor = mesale.yaniyor, yanma = mesale.yanma},
 		magara = magara.kayit(), magaralar = magara.kayit2(),
 		zaman_oyun = {dk = zaman.dk, gun = zaman.gun, mesale_verildi = zaman.mesale_verildi, ilk_bayilma = ilk_gece_bayilma},
-		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), hava = hava.kayit(), usume = soguk.kayit(), halat = halat.kayit(), tlsm = tilsimlar.keys(), isr = isaret.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
+		yetenekler = ders.kayit_yetenek(), dl_agac = dl_agac, kuzen = kuzen.tanis.keys(), kusam = kusam, puan = puan, puan_ders = puan_ders, yapi = yapi.kayit(), insa = insa.kayit(), evcil = evcil.kayit(), kopru = kopru.kayit(), gecit = gecit.kayit(), kesif = harita_k.kayit(), buyu = buyu.kayit(), ys = ys.kayit(), alm = almanak.kayit(), bsr = basarim.kayit(), kdef = kesif.kayit(), gizli = gizli.kayit(), ist = ist.kayit(), hava = hava.kayit(), usume = soguk.kayit(), yemek = yemek.kayit(), halat = halat.kayit(), tlsm = tilsimlar.keys(), isr = isaret.kayit(), ani = ani.kayit(), reis = reis.kayit(), dovus = dovus.kayit(), balik = balik.kayit(), ciftlik = ciftlik.kayit(), poyraz = poyraz.kayit(), gezgin = gezgin.kayit(), isikci = isikci.kayit(), hikaye = hikaye.kayit(), izler = iz.kayit(), yan = yan.kayit(), camur_dedi = camur_dedi,
 		mezarlar = mz, kahraman = gorunus, sevgili = sevgili, zorluk = zorluk, adlar = {kahraman = ad_kahraman, sevgili = ad_sevgili}}
 
 ## iki ada: kaydın üst düzeyi hep Yıldızsız Ada'nın yerel durumudur, ikinci adanınki "ada2"de durur (web: d.i2); ada = şu an nerede
@@ -3130,6 +3136,7 @@ func durum_yukle(d: Dictionary) -> void:
 	ys.yukle(d.get("ys", {}))
 	hava.yukle(d.get("hava", {}))
 	soguk.yukle(d.get("usume", 0))
+	yemek.yukle(d.get("yemek", {}))
 	halat.yukle(d.get("halat", []))
 	almanak.yukle(d.get("alm", {}))
 	basarim.yukle(d.get("bsr", {}))
@@ -3222,4 +3229,15 @@ func _muzik_test() -> void:
 		oyuncu.vur(Vector2.ZERO)
 		await get_tree().create_timer(0.3).timeout
 	print("MUZIK elde ", env.elde(), " kemer ", env.kemer, " nota ", ses._nota)
+
+## ?yemektest: birkaç yiyecek, Mantar çorbası ve Kurt eti yenir, etkiler yazılır, liste açılır
+func _yemek_test() -> void:
+	await get_tree().create_timer(2.0).timeout
+	for n in ["Böğürtlen", "Elma", "Mantar çorbası", "Kurt eti", "Közlenmiş tavşan eti", "Sinek mantarı"]: env.ekle(n, 2)
+	var hp0: float = oyuncu.hp_max
+	yemek.ye("Mantar çorbası")
+	yemek.ye("Kurt eti")
+	await get_tree().create_timer(1.0).timeout
+	print("YEMEK etkiler ", yemek.pb, " can ", hp0, " → ", oyuncu.hp_max, " dmg ", stat("dmg"), " hpRe ", stat("hpRe"))
+	yemek.ac()
 

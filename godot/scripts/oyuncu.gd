@@ -551,6 +551,7 @@ func etki_ekle(k: String, dps: float, sure: float) -> void:
 	var S = oyun
 	var res := 0.4 if S.sk("D14") else (0.6 if (k == "zehir" and S.sk("D3")) or (k == "yanık" and S.sk("D4")) or (k == "kanama" and S.sk("D6")) else 1.0)
 	dps *= 1.3 * res * (1.0 - oyun.direnc(k)) * (1.0 - (1.0 - oyun.zirh_carpan()) / 2.0)
+	if oyun.yemek != null: dps *= (0.0 if k == "zehir" and oyun.yemek.var_mi("panzehir") else 1.0) * (0.3 if k == "yanık" and oyun.yemek.var_mi("ateşsiz") else 1.0) * (0.4 if k == "kanama" and oyun.yemek.var_mi("pıhtı") else 1.0)
 	sure *= 1.6 * (0.5 if S.sk("D9") else 1.0)
 	if dps <= 0.05: return
 	if etkiler.has(k):
