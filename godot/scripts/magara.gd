@@ -622,6 +622,7 @@ func _boss_cagir() -> void:
 	c.mad = true
 	c.st = "chase"
 	if M.id == "c0": c.scale = Vector2(2.4, 2.4)
+	oyun.almanak.boss_gordu(k)
 	for i in 26:
 		oyun.parca(p + Vector2(0, -10), Vector2(randf_range(-45, 45), -20 - randf() * 60), 0.8, Color("#b44aff") if i % 2 else Color.WHITE)
 	oyun.env.mesaj("%s · Mağaranın boss'u!" % k, true)

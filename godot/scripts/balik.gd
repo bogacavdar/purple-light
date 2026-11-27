@@ -232,6 +232,7 @@ func bas() -> void:
 		oyun.parca(p, Vector2(randf_range(-20, 20), -30 - randf() * 30), 0.6, Color("#cfe8ff") if k % 2 else Color.WHITE)
 	var balik_mi := BALIKLAR.has(n)
 	oyun.gorev.qc_ekle("fish:" + n)
+	if balik_mi and oyun.almanak != null: oyun.almanak.balik_tutuldu(n)
 	if oto: print("BALIK tuttu ", n, " qc ", oyun.gorev.cval("fish:"), " ", oyun.gorev.satir(["c", "fish:", 2, "balık"]), " aktif ", oyun.gorev.aktif.id if oyun.gorev.aktif != null else "-")
 	env.xp_ekle(3 + int(round(oyun.pazar.fiyat(n) / 2.0)) if balik_mi else 2)
 	oyun.yazi(p + Vector2(0, -10), (n + "!") if balik_mi else (n + " takıldı"), Color("#9fd0f0"), 9)
