@@ -56,9 +56,11 @@ func _yerdekileri_al() -> bool:
 	return any
 
 func _al(d) -> void:
+	var ilk: bool = not env.gorulen.has(d.n)
 	env.ekle(d.n)
-	if oyun.ses != null: oyun.ses.cal("pick", 0.8)
+	if oyun.ses != null: oyun.ses.cal("found" if ilk else "pick", 0.8)
 	oyun.yazi(d.node.position + Vector2(0, -8), "+1 " + d.n, Color("#fff2b0"), 7)
+	if not ilk: env.topla_bildir(d.n)
 	for k in 5:
 		oyun.parca(d.node.position + Vector2(0, -3), Vector2(randf_range(-15, 15), -20 - randf() * 20), 0.35, Color("#fff2b0"))
 	_dusen_sil(d)

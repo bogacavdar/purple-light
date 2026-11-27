@@ -23,8 +23,7 @@ var ikon := {}                   # eşya adı → Texture2D
 var ust: Control
 var tok_cubuk: ProgressBar
 var kemer_kutu: HBoxContainer
-var canta: PanelContainer
-var canta_izgara: GridContainer
+var canta   # canta.gd (PanelContainer)
 var bildirim: VBoxContainer
 var ilerleme: ProgressBar
 var ilerleme_yazi: Label
@@ -162,9 +161,8 @@ func _process(dt: float) -> void:
 		kemer_ciz()
 		_el_degisti()
 	if Input.is_action_just_pressed("canta"):
-		canta.visible = not canta.visible
-		if canta.visible:
-			canta_ciz()
+		if canta.visible: canta.kapat()
+		elif not oyun.pencere_acik(): canta.ac()
 	if Input.is_action_just_pressed("deneme_alet"):
 		for n in ["Taş balta", "Taş kazma", "Taş kılıç"]:
 			if adet(n) == 0:
@@ -224,21 +222,10 @@ func _arayuz() -> void:
 	hud.add_child(ik)
 	ik.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM, Control.PRESET_MODE_MINSIZE, 110)
 	ilerleme.set_meta("kutu", ik)
-	# çanta (I)
-	canta = PanelContainer.new()
-	var st := StyleBoxFlat.new(); st.bg_color = Color(0.07, 0.09, 0.07, 0.94); st.border_color = Color("#c9a24a"); st.set_border_width_all(2)
-	st.set_content_margin_all(10)
-	canta.add_theme_stylebox_override("panel", st)
-	var v := VBoxContainer.new()
-	var bas := Label.new(); bas.text = "Çanta  (I)"; oyun._golge(bas)
-	v.add_child(bas)
-	canta_izgara = GridContainer.new()
-	canta_izgara.columns = 8
-	v.add_child(canta_izgara)
-	canta.add_child(v)
-	canta.visible = false
+	# envanter penceresi (I): canta.gd
+	canta = preload("res://scripts/canta.gd").new()
 	hud.add_child(canta)
-	canta.set_anchors_and_offsets_preset(Control.PRESET_CENTER, Control.PRESET_MODE_MINSIZE)
+	canta.kur(oyun, self)
 	# bildirimler: üstte ortada
 	bildirim = VBoxContainer.new()
 	hud.add_child(bildirim)
@@ -306,7 +293,10 @@ func kemer_ciz() -> void:
 	for i in 5:
 		var n = kemer[i]
 		var s := 0 if n == null else adet(n)
-		kemer_kutu.add_child(_yuva(n, el == i, s, str(i + 1)))
+		var y := _yuva(n, el == i, s, str(i + 1))
+		var ii := i
+		y.set_drag_forwarding(Callable(), func(_at, d): return canta != null and canta.visible and canta.kemere_birakilir(d), func(_at, d): canta.kemere_birak(d, ii))
+		kemer_kutu.add_child(y)
 
 ## elde bir yapı varsa yerleştirme başlar; bırakılınca biter
 func _el_degisti() -> void:
@@ -328,17 +318,7 @@ func _canta_tik(n: String) -> void:
 		canta_ciz()
 
 func canta_ciz() -> void:
-	for c in canta_izgara.get_children():
-		c.queue_free()
-	var adlar := inv.keys()
-	adlar.sort()
-	for n in adlar:
-		var y := _yuva(n, oyun.buyu != null and oyun.buyu.secili_ok == n, adet(n), "")
-		y.gui_input.connect(func(e):
-			if e is InputEventMouseButton and e.pressed and e.button_index == MOUSE_BUTTON_LEFT: _canta_tik(n))
-		canta_izgara.add_child(y)
-	if adlar.is_empty():
-		var l := Label.new(); l.text = "Çanta boş"; canta_izgara.add_child(l)
+	canta.ciz()
 
 func mesaj(t: String, kotu: bool = false) -> void:
 	var l := Label.new()
@@ -353,6 +333,25 @@ func mesaj(t: String, kotu: bool = false) -> void:
 	await get_tree().create_timer(3.2).timeout
 	if is_instance_valid(l):
 		l.queue_free()
+
+## toplama bildirimi birikir (web pickToast): ekranda aynı şeyin "+1"i varken yenisi çıkmaz, aynısı +2, +3 olur, süresi baştan başlar
+var _pt := {}
+func topla_bildir(n: String, k: int = 1) -> void:
+	var o = _pt.get(n, null)
+	var say := k
+	if o != null and is_instance_valid(o.l):
+		say = int(o.n) + k
+		o.l.queue_free()
+	var l := Label.new()
+	l.text = "+%d %s" % [say, n]
+	l.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	l.add_theme_color_override("font_color", Color("#fff2c0"))
+	oyun._golge(l)
+	bildirim.add_child(l)
+	if bildirim.get_child_count() > 4: bildirim.get_child(0).queue_free()
+	_pt[n] = {n = say, l = l}
+	await get_tree().create_timer(3.2).timeout
+	if is_instance_valid(l): l.queue_free()
 
 func ilerleme_goster(yazi: String, k: float) -> void:
 	var kutu: Control = ilerleme.get_meta("kutu")

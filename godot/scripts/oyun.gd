@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.29"
+const SURUM := "Godot · 5.30"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -3337,12 +3337,15 @@ func _dev_test() -> void:
 	await get_tree().create_timer(0.5).timeout
 	print("DEV konuştu ", yazilimci.konustu)
 
-## ?rozettest: silah ve zırh çantaya gelir, çanta açılır
+## ?rozettest: silah ve zırh çantaya gelir, envanter açılır, miğfer seçilir
 func _rozet_test() -> void:
 	await get_tree().create_timer(2.0).timeout
-	env.ekle("Çakmaktaşı mızrak"); env.ekle("Kemik miğfer")
-	env.canta.visible = true
-	env.canta_ciz()
+	env.ekle("Çakmaktaşı mızrak"); env.ekle("Kemik miğfer"); env.ekle("Böğürtlen", 3); env.ekle("Taş balta")
+	env.canta.ac()
+	env.canta.secili = "Kemik miğfer"
+	env.canta.ciz()
+	env.canta.eline_al("Çakmaktaşı mızrak")
+	print("CANTA elde ", env.elde(), " kemer ", env.kemer)
 
 ## ?istemtest: Kemal'in yanında, sonra bir düğümün dibinde eylem ipucu
 func _istem_test() -> void:
