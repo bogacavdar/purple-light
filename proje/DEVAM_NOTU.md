@@ -1,3 +1,7 @@
+## v5.15 (27 Kasım 2026) · Godot Son-c: Balık defteri, Bütün sahneler, konuk kart
+- `godot-deneme/` yeni derleme (godot dalı: poyraz.gd "Balık defteri"; almanak.gd `ac("deniz")`, konuk kartları (kayıt `alm.k`); ani.gd Bütün sahneler bölümü; hile.gd `love`; ayarlar.gd `butun_sahne` (cihazda); oyun.gd canli_oldu almanak'a canlıyı da verir; ?sontest). Belge 99_godot Son-c. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıttaki `alm.k` alanı okunmadan kalır).
+
 ## v5.14 (27 Kasım 2026) · Godot Son-b: kendi işaretin ve yol gösterme
 - `godot-deneme/` yeni derleme (godot dalı: yeni isaret.gd (T, işaret penceresi, haritada çizim ve tıklama, mavi ok; kayıt `isr`); harita.gd çizim ve tık kancaları; ayarlar.gd "İşaret koy" tuşu; oyun.gd tuş yardımı; ?isrtest). Belge 99_godot Son-b. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `isr` alanı okunmadan kalır).
@@ -73,7 +77,3 @@
 ## v4.96 (27 Kasım 2026) · Godot: anılar
 - `godot-deneme/` yeni derleme (godot dalı: yeni tools/disa_aktar_ani.js → data/ani.json (32 anı, satırlar, kişi konumları/dönüşümleri, sahne yazıları, MIN) + art/ani/<özet>.png (488 tekil kare: arka ve ön katman, iki kişi çizilmeden); yeni ani.gd (tetikleyiciler, kuyruk, pencere, Kitap › Anılar, kayıt `ani {n, k}`); oyun.gd bayılma ve Zümrüt'ün mor kıymık seçeneği, yapi.gd uyku, gorev.gd görev bitişi, kuzen.gd "Götür beni" öncesi söz anısı, el_yapimi.gd Anılar düğmesi). Denetim: ?anitest_waffle, ?anitest_sahil. Belge 99_godot Anılar satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `ani` alanı okunmadan kalır).
-
-## v4.95 (27 Kasım 2026) · Godot A7: Astronot Gökay ve ACT 2'nin sonu
-- `godot-deneme/` yeni derleme (godot dalı: yeni tools/disa_aktar_roket.js → art/roket/f_*.png (125), s_*.png (117, kişisiz), data/roket.json; yeni roket.gd (fırlatma, ACT 3 kartı, kavuşma + Karakter.sayfa çizimleri, son kart; tanis["roket"]); act2.gd Gökay (rampa, konuşma, roket parçaları, as ödülleri), kuzen.gd "as" rolü, gorev.gd ACT 2 kartı ve oku Gökay'a). Denetim: ?ada2test_gokay. Belge 99_godot A7 satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (tanis["roket"] zararsız kalır).

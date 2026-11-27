@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.15 · 27 Kasım 2026
+
+### Proje
+- **Godot: Balık defteri, Bütün sahneler, konuk kartlar:**
+  - Poyraz'la konuşunca "Balık defteri" almanağın Deniz canlıları sayfasını açıyor.
+  - Ana menüde `love` yazınca Tarif kitabı › Anılar'ın en üstünde "Bütün sahneler" açılıyor: açılış, deniz yolculuğu, roket, kişilerin hikâyeleri ve bütün anılar; kutuya basınca sahne baştan oynuyor.
+  - Bir canlıyı kendi bölgesinin dışında avlarsan almanakta avladığın bölgenin sayfasında da "Başka bölgeden" olarak görünüyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.14 · 27 Kasım 2026
 
 ### Proje
@@ -221,17 +232,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Anılar tarif öğrendikçe, rüyada, bayılınca, bir görevi bitirince ya da Zümrüt'e mor kıymık götürünce geri geliyor. Ustaların anıları onların işleriyle geliyor.
   - Anı penceresinde web'deki sahneler var; sen ve sevdiğin kişi kendi çizimlerinizle görünüyorsunuz.
   - Kitap › Anılar sayfasından gelen anılar yeniden izlenebiliyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.95 · 27 Kasım 2026
-
-### Proje
-- **Godot: Gök Rıhtımı, Astronot Gökay ve ACT 2'nin sonu:**
-  - Gökay, Gök Rıhtımı'nda yarım kalmış roket rampasının başında. Beş işin sonunda roket rampaya dikiliyor.
-  - "Fırlat!" deyince fırlatma sahnesi, "ACT 3 · Mor gemi" kartı ve mor gemide kavuşma oynuyor. Kavuşmada senin ve sevdiğin kişinin kendi çizimleri, altyazılarda adlarınız var.
-  - Sonda "Yeniden birliktesiniz" kartı çıkıyor. Godot sürümü artık ACT 2'nin sonuna kadar oynanabiliyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
