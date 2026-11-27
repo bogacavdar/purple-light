@@ -8,6 +8,17 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.14 · 27 Kasım 2026
+
+### Proje
+- **Godot: kendi işaretin ve yol gösterme:**
+  - T tuşuyla bulunduğun yere adlı, renkli bir işaret koyabiliyorsun (en çok 40).
+  - Büyük haritada bir işarete tıklayınca "Yol göster" ya da "Sil"; bir kişiye tıklayınca mavi bir ok seni ona götürüyor. Varınca ok kendiliğinden kalkıyor; sağ tık da kaldırıyor.
+  - Haritada bayıldığın yerler, kurduğun evler, yataklar ve balık tuzakları da görünüyor.
+  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
+
+---
+
 ## Versiyon 5.13 · 27 Kasım 2026
 
 ### Proje
@@ -221,17 +232,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Gökay, Gök Rıhtımı'nda yarım kalmış roket rampasının başında. Beş işin sonunda roket rampaya dikiliyor.
   - "Fırlat!" deyince fırlatma sahnesi, "ACT 3 · Mor gemi" kartı ve mor gemide kavuşma oynuyor. Kavuşmada senin ve sevdiğin kişinin kendi çizimleri, altyazılarda adlarınız var.
   - Sonda "Yeniden birliktesiniz" kartı çıkıyor. Godot sürümü artık ACT 2'nin sonuna kadar oynanabiliyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.94 · 27 Kasım 2026
-
-### Proje
-- **Godot: Ejder Volkanı ve Ejder Avcısı Tomris:**
-  - Tomris, Ejder Volkanı'nda bir ejder kafatası yığınının yanında. Onunla tanışınca Efsun'un Yıldırım asası işi de açılıyor.
-  - Tomris'in dört işi var; sonuncusu volkanın tepesindeki Kızıl ejder.
-  - Işın kılıcını Tomris yapıyor. Kılıç hızlı vuruyor, uzağa uzanıyor; her savuruşta mavi plazma kıvılcımı çıkıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---

@@ -1,3 +1,7 @@
+## v5.14 (27 Kasım 2026) · Godot Son-b: kendi işaretin ve yol gösterme
+- `godot-deneme/` yeni derleme (godot dalı: yeni isaret.gd (T, işaret penceresi, haritada çizim ve tıklama, mavi ok; kayıt `isr`); harita.gd çizim ve tık kancaları; ayarlar.gd "İşaret koy" tuşu; oyun.gd tuş yardımı; ?isrtest). Belge 99_godot Son-b. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıttaki `isr` alanı okunmadan kalır).
+
 ## v5.13 (27 Kasım 2026) · Godot Son-a: kayıkla gelen yoldaşlar, Kupa panosu
 - `godot-deneme/` yeni derleme (godot dalı: evcil.gd `yanina()` (ciftlik.gd kayık geçişi çağırıyordu, yoktu); ev_ici.gd `_kupa_as`, `_kupa_ciz`; oyun.gd `TILSIM`, `tilsimlar` (kayıt `tlsm`), `_taki` tılsım etkileri; ?kupatest). Belge 99_godot Son-a ve Son listesi. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `tlsm` alanı okunmadan kalır).
@@ -73,7 +77,3 @@
 ## v4.95 (27 Kasım 2026) · Godot A7: Astronot Gökay ve ACT 2'nin sonu
 - `godot-deneme/` yeni derleme (godot dalı: yeni tools/disa_aktar_roket.js → art/roket/f_*.png (125), s_*.png (117, kişisiz), data/roket.json; yeni roket.gd (fırlatma, ACT 3 kartı, kavuşma + Karakter.sayfa çizimleri, son kart; tanis["roket"]); act2.gd Gökay (rampa, konuşma, roket parçaları, as ödülleri), kuzen.gd "as" rolü, gorev.gd ACT 2 kartı ve oku Gökay'a). Denetim: ?ada2test_gokay. Belge 99_godot A7 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (tanis["roket"] zararsız kalır).
-
-## v4.94 (27 Kasım 2026) · Godot A6: Ejder Avcısı Tomris ve Işın kılıcı
-- `godot-deneme/` yeni derleme (godot dalı: act2.gd Tomris (kafatası yığını, konuşma, Işın kılıcı yapımı, ej ödülleri), oyuncu.gd silah_v Işın kılıcı (menzil 32, ara 0,3) ve plazma kıvılcımları, kuzen.gd "ej" rolü, gorev.gd ACT 2 kartı ve oku Tomris'e). Denetim: ?ada2test_tomris. Belge 99_godot A6 satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıtta yeni alan yok).
