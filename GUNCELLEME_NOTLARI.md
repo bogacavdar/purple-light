@@ -8,6 +8,16 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.17 · 27 Kasım 2026
+
+### Proje
+- **Godot: sesler ve müzik geldi:**
+  - Web'deki bütün sesler ve müzikler birebir aynı.
+  - Her bölgenin kendi müziği var, bölge değişince yumuşakça geçiyor; Çayır ve Orman'da gece Gece müziği, mağarada Derinlik çalıyor.
+  - Bataklık'ta bataklık sesi, Kül Diyarı'nda kül rüzgârı, deniz kenarında hafif dalga sesi var.
+  - Toplama, tarif öğrenme, yapma, örs, Vio, seviye, savurma, isabet, darbe, balık, büyü ve Yıldızsız baskını sesleri çalıyor.
+  - Ses düzeyi Ayarlar'daki Müzik ve Efekt sürgülerinden.
+
 ## Versiyon 5.16 · 27 Kasım 2026
 
 ### Proje
@@ -219,17 +229,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Reis şahlanınca yerde kırmızı bir halka doluyor, sonra yere vuruyor. Halkadan çık ya da atıl.
   - Uzaklaşırsan ya da bayılırsan Reis geri çekiliyor; bir tane daha avlayınca yeniden geliyor. Her Reis bir kez yenilir.
 - **Tasarım belgesi:** Godot planına web'de olup Godot'da henüz olmayan sistemler eklendi (özel vuruşlar ve Ulti, imza hamleleri, mor ışık saldırıları, Almanak, başarımlar, keşif defteri, arena ve hileler, ayarlar, istatistikler).
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 4.97 · 27 Kasım 2026
-
-### Proje
-- **Godot: harita ve keşif:**
-  - Gezmediğin yerler artık haritada gri dumanla örtülü; geçtiğin yerin çevresi açılıyor. Deniz baştan görünüyor.
-  - M ile büyük harita açılıyor. Haritada keşfettiğin yerdeki kişiler, görevi olanların "!"i ve senin yerin var. Tekerlekle yakınlaştırılıyor, sürükleyerek kaydırılıyor.
-  - Yan görevi bekleyen kişiler keşfettiğin yerdeyse haritada "?" ile, keşfetmediğin yerde yakınken sisli bir daireyle görünüyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
