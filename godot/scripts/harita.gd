@@ -20,6 +20,7 @@ var bilgi: Label
 var zoom := 1.0
 var merkez := Vector2.ZERO        # karo cinsinden, ekranın ortasındaki yer
 var surukle := false
+var bas_yer := Vector2.ZERO
 var kara := 0
 const R := 7
 const SIS := Color(0.29, 0.29, 0.32, 0.92)
@@ -42,7 +43,9 @@ func kur(o) -> void:
 	o.kh_resim.add_child(kh_fog)
 	o.kh_resim.move_child(kh_fog, 0)
 	kh_isaret = Control.new(); kh_isaret.size = o.kh_resim.custom_minimum_size; kh_isaret.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	kh_isaret.draw.connect(func(): _isaretler(kh_isaret, Vector2.ZERO, o.kh_olcek, 10.0))
+	kh_isaret.draw.connect(func():
+		_isaretler(kh_isaret, Vector2.ZERO, o.kh_olcek, 10.0)
+		if o.isaret != null: o.isaret.ciz(kh_isaret, Vector2.ZERO, o.kh_olcek, 10.0, false))
 	o.kh_resim.add_child(kh_isaret)
 	# büyük harita
 	pencere = PanelContainer.new()
@@ -124,7 +127,7 @@ func kapat() -> void:
 	get_tree().paused = false
 
 func _bilgi() -> void:
-	bilgi.text = "Keşif %%%d · tekerlek: yakınlaştır · sürükle: kaydır · M ya da Esc: kapat" % yuzde()
+	bilgi.text = "Keşif %%%d · tekerlek: yakınlaştır · sürükle: kaydır · işarete ya da kişiye tıkla: yol göster · sağ tık: sil / oku kaldır · M ya da Esc: kapat" % yuzde()
 
 func _olcek() -> float:
 	var A := alan.size
@@ -141,7 +144,11 @@ func _alan_girdi(e: InputEvent) -> void:
 			zoom = minf(8.0, zoom * 1.25) if e.button_index == MOUSE_BUTTON_WHEEL_UP else maxf(1.0, zoom / 1.25)
 			merkez = w - (e.position - alan.size / 2.0) / _olcek()
 			if zoom <= 1.0: merkez = Vector2(oyun.bw, oyun.bh) / 2.0
-		elif e.button_index == MOUSE_BUTTON_LEFT: surukle = e.pressed
+		elif e.button_index == MOUSE_BUTTON_LEFT:
+			surukle = e.pressed
+			if e.pressed: bas_yer = e.position
+			elif e.position.distance_to(bas_yer) < 4.0 and oyun.isaret != null: oyun.isaret.harita_tik(e, _koken(), _olcek())
+		elif e.button_index == MOUSE_BUTTON_RIGHT and e.pressed and oyun.isaret != null: oyun.isaret.harita_tik(e, _koken(), _olcek())
 		alan.queue_redraw()
 	elif e is InputEventMouseMotion and surukle:
 		merkez -= e.relative / _olcek()
@@ -172,6 +179,7 @@ func _buyuk_ciz() -> void:
 		alan.draw_arc(p2, 12.0 + fmod(t * 14.0, 10.0), 0, TAU, 24, Color(1, 0.85, 0.25, 0.6), 1.5)
 		_unlem(alan, p2, 16.0)
 	_isaretler(alan, o, s, 16.0)
+	if oyun.isaret != null: oyun.isaret.ciz(alan, o, s, 16.0, true)
 	# oyuncu
 	var pp: Vector2 = o + oyun.oyuncu.position / float(oyun.T) * s
 	alan.draw_circle(pp, 7.0, Color(1, 0.85, 0.3, 0.5)); alan.draw_circle(pp, 4.0, Color("#ffd84a")); alan.draw_arc(pp, 4.0, 0, TAU, 16, Color("#1a1408"), 1.0)
