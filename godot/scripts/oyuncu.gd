@@ -519,6 +519,7 @@ func isirildi(dmg: int, from: Vector2, a = null, renk: String = "", koru: float 
 	if renk != "" and atk_cd > 0.2 and str(silah_v().get("mace", "")) == "gurz": n *= 0.75   # savaş çekici: sağlam duruş
 	kombo = 0
 	dmg = maxi(1, int(round(n)))
+	Ayarlar.titret(float(dmg) / maxf(1.0, hp_max) * 4.0)
 	if oyun.arena != null and not oyun.arena.gercek:
 		# arena: hasar ölçülür, can gitmez
 		oyun.arena.aldi(dmg)

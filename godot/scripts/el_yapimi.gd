@@ -217,7 +217,8 @@ func ciz() -> void:
 		b.text = r if (kip == "el" or bilinen.has(r)) else r + "  (bilinmiyor)"
 		b.add_theme_font_size_override("font_size", 12)
 		var hazir := kip == "el" and eksik(r) == ""
-		b.add_theme_color_override("font_color", Color("#c8f0a0") if hazir else (Color("#e8e2cc") if bilinen.has(r) else Color("#8a8a80")))
+		if hazir and Ayarlar.rk: b.text = "✓ " + b.text
+		b.add_theme_color_override("font_color", Ayarlar.tamam() if hazir else (Color("#e8e2cc") if bilinen.has(r) else Color("#8a8a80")))
 		b.pressed.connect(func(): secili = r; _ayrinti())
 		liste.add_child(b)
 	if secili == "" and not adlar.is_empty():
@@ -234,9 +235,9 @@ func _ayrinti() -> void:
 	for p in x.i:
 		var var_: int = env.adet(str(p[0]))
 		var yeter: bool = var_ >= int(p[1])
-		ayrinti.add_child(_ikonlu(str(p[0]), "%d× %s  (sende %d)" % [int(p[1]), p[0], var_], Color("#c8f0a0") if yeter else Color("#ffb0a0")))
+		ayrinti.add_child(_ikonlu(str(p[0]), Ayarlar.isaret(yeter) + "%d× %s  (sende %d)" % [int(p[1]), p[0], var_], Ayarlar.tamam() if yeter else Ayarlar.eksik()))
 	for t in x.t:
-		ayrinti.add_child(_ikonlu(str(t), "alet: %s %s" % [t, "✓" if env.adet(str(t)) > 0 else "(yok)"], Color("#c8f0a0") if env.adet(str(t)) > 0 else Color("#ffb0a0")))
+		ayrinti.add_child(_ikonlu(str(t), "alet: %s %s" % [t, "✓" if env.adet(str(t)) > 0 else "(yok)"], Ayarlar.tamam() if env.adet(str(t)) > 0 else Ayarlar.eksik()))
 	var nerede := Label.new()
 	nerede.add_theme_font_size_override("font_size", 11)
 	if x.forged:

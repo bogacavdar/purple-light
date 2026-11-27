@@ -524,7 +524,7 @@ func _hayalet_ciz() -> void:
 		hayalet.draw_rect(Rect2(c.x * T, c.y * T, T, T), Color(1, 1, 1, 0.5), false, 1.0)
 		return
 	var ok := neden(c, sec) == ""
-	hayalet.draw_rect(Rect2(c.x * T, c.y * T, T, T), Color(0.43, 0.86, 0.35, 0.35) if ok else Color(0.94, 0.31, 0.24, 0.4))
+	hayalet.draw_rect(Rect2(c.x * T, c.y * T, T, T), Ayarlar.konur(ok, 0.35 if ok else 0.4))
 	hayalet.draw_texture(env.ikon_al(sec), Vector2(c.x * T, c.y * T), Color(1, 1, 1, 0.7))
 
 func _isle_karo(c: Vector2i) -> void:

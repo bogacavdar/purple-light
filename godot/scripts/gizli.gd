@@ -46,6 +46,7 @@ var siyah: ColorRect
 var yildiz: Control
 var satir: Label
 var satir_t := 0.0
+var nabiz: Control
 
 func kur(o) -> void:
 	oyun = o
@@ -95,6 +96,11 @@ func kur(o) -> void:
 	yildiz.draw.connect(_yildiz_ciz)
 	yildiz.visible = false
 	kat.add_child(yildiz)
+	nabiz = Control.new()
+	nabiz.set_anchors_preset(Control.PRESET_FULL_RECT)
+	nabiz.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	nabiz.draw.connect(_nabiz_ciz)
+	kat.add_child(nabiz)
 	siyah = ColorRect.new()
 	siyah.color = Color.BLACK
 	siyah.set_anchors_preset(Control.PRESET_FULL_RECT)
@@ -504,6 +510,7 @@ func _process(dt: float) -> void:
 			for c in oyun.canlilari_ver():
 				if c.has_meta("dnc"): c.remove_meta("dnc")
 	queue_redraw()
+	nabiz.queue_redraw()
 
 func _izleyiciler(dt: float) -> void:
 	var P = oyun.oyuncu
@@ -577,6 +584,18 @@ func _klon_git(duman: bool) -> void:
 	klon_spr.visible = false
 	if duman:
 		for k in 10: oyun.parca(K.p + Vector2(randf_range(-4, 4), -6 - randf() * 10), Vector2(randf_range(-15, 15), -10 - randf() * 20), 0.45, Color("#c070ff") if k % 2 else Color("#5a2a8a"))
+
+## Kalp atışını ekranda göster (Ayarlar): sevdiğin kişi göründükçe 0,9 sn'de bir "güm-güm", ekranın kenarları mor nabız
+func _nabiz_ciz() -> void:
+	if not (K.on and Ayarlar.kalp) or get_tree().paused or oyun.konusma.visible: return
+	var t := fmod(Time.get_ticks_msec() / 1000.0, 0.9)
+	var k := maxf(exp(-t * 14.0), exp(-maxf(0.0, t - 0.18) * 14.0) * (1.0 if t >= 0.18 else 0.0))
+	var W := nabiz.size
+	var c := Color(0.6, 0.25, 0.95, 0.45 * k)
+	for i in 8:
+		var a := c; a.a *= 1.0 - i / 8.0
+		var d := float(i) * 6.0
+		nabiz.draw_rect(Rect2(d, d, W.x - 2.0 * d, W.y - 2.0 * d), a, false, 6.0)
 
 func klon_isik() -> bool:
 	return K.on

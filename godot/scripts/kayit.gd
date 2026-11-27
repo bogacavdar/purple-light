@@ -157,8 +157,9 @@ func _dugme(t: String, f: Callable, dolu := false) -> Button:
 	b.add_theme_font_size_override("font_size", 20)
 	for s in ["normal", "hover", "pressed", "focus"]:
 		var st := StyleBoxFlat.new()
-		st.bg_color = Color("#6a3aa8") if (dolu or s == "hover") else Color(0.2, 0.1, 0.3, 0.72)
-		st.border_color = Color("#CFA6F6"); st.set_border_width_all(2)
+		var vg := Color(Ayarlar.vurgu)
+		st.bg_color = vg.darkened(0.45) if (dolu or s == "hover") else Color(0.2, 0.1, 0.3, 0.72)
+		st.border_color = vg.lightened(0.35); st.set_border_width_all(2)
 		st.set_corner_radius_all(8)
 		if s == "hover": st.border_width_left = 6
 		b.add_theme_stylebox_override(s, st)
@@ -184,6 +185,7 @@ func ana_dugmeler() -> void:
 	ab.tooltip_text = "Dövüş mekaniklerini dene" if acik_ar else "Kilitli: oyunu bitir ya da hile modunu aç"
 	if not acik_ar: ab.modulate = Color(1, 1, 1, 0.55)
 	liste.add_child(ab)
+	liste.add_child(_dugme("Ayarlar", func(): oyun.ayarlar.ac()))
 	if son != "":
 		liste.add_child(_dugme("Kayıttan yükle", _yukle_listesi))
 	if not WebKayit.oku().is_empty():
@@ -290,6 +292,9 @@ func _ic_ana() -> void:
 	ic_liste.add_child(_dugme("Devam et", func(): ic.visible = false, true))
 	ic_liste.add_child(_dugme("Kaydet", _ic_kaydet))
 	ic_liste.add_child(_dugme("Kayıttan yükle", _ic_yukle))
+	ic_liste.add_child(_dugme("Ayarlar", func():
+		ic.visible = false
+		oyun.ayarlar.ac()))
 	ic_liste.add_child(_dugme("Ana menüye dön", func():
 		kaydet("oto")
 		ic.visible = false

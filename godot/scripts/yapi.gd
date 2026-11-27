@@ -175,7 +175,7 @@ func _hayalet_ciz() -> void:
 			hayalet.draw_rect(Rect2(x * T + 0.5, y * T + 0.5, T - 1, T - 1), Color(1, 1, 1, 0.12), false, 1.0)
 	var r := Rect2(yer.tx * T, yer.ty * T, f.x * T, f.y * T)
 	hayalet.draw_rect(r, Color(0.43, 0.86, 0.35, 0.35) if ok else Color(0.94, 0.31, 0.24, 0.4))
-	hayalet.draw_rect(r, Color("#8fe06b") if ok else Color("#ff6a5a"), false, 1.0)
+	hayalet.draw_rect(r, Ayarlar.konur(ok), false, 1.0)
 	var y2: Dictionary = Y.yapi[yer.n]
 	if y2.get("file", null) != null:
 		var tx: Texture2D = load(y2.file)

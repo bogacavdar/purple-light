@@ -101,7 +101,7 @@ func _konus() -> void:
 	var L := []
 	for a in V.ister:
 		var h: int = env.adet(str(a[0]))
-		L.append("[b]%d %s[/b] [color=%s](sende %d)[/color]" % [int(a[1]), a[0], "#8fd46b" if h >= int(a[1]) else "#ff8a6a", h])
+		L.append("[b]%d %s[/b] [color=%s](sende %d)[/color]" % [int(a[1]), a[0], Ayarlar.hex(Ayarlar.tamam()) if h >= int(a[1]) else Ayarlar.hex(Ayarlar.eksik()), h])
 	var secs := []
 	if _var():
 		secs.append({t = "Takas et", pri = true, f = _takas})

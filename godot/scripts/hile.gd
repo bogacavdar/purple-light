@@ -12,6 +12,7 @@ static var dayan := false
 static var sonsuz := false
 static var gece := false
 static var kisayol := false
+static var panel := false
 
 var oyun
 var yazi := ""
@@ -43,7 +44,7 @@ func _input(e: InputEvent) -> void:
 				_degis(not mod)
 		if kisayol and mod and not oyun.basta and not get_tree().paused and (ara == null or not ara.has_focus()):
 			if e.keycode == KEY_Z: _vio()
-			elif e.keycode == KEY_X: _xp()
+			elif e.keycode == KEY_J: _xp()
 	var y := ""
 	if e is InputEventKey and e.pressed and not e.echo:
 		match e.keycode:
@@ -78,7 +79,7 @@ func _input(e: InputEvent) -> void:
 func _degis(a: bool) -> void:
 	mod = a
 	if not a:
-		tanri = false; tek = false; dayan = false; sonsuz = false; gece = false; kisayol = false
+		tanri = false; tek = false; dayan = false; sonsuz = false; gece = false; kisayol = false; panel = false
 	else:
 		oyun.basarim.bayrak("hile")
 	_ilan("Hile modu açık" if a else "Hile modu kapalı")
@@ -178,7 +179,7 @@ func _arayuz() -> void:
 	var g := GridContainer.new(); g.columns = 2
 	v.add_child(g)
 	for a in [["mod", "Hile modu"], ["tanri", "Tanrı modu · can, tokluk, enerji, mana hep dolu"], ["tek", "Tek vuruşta öldür"], ["dayan", "Sınırsız dayanıklılık"],
-			["sonsuz", "Sınırsız Vio · satın almak Vio'nu azaltmaz"], ["gece", "Gece ışığı"], ["kisayol", "Hile kısayolları · Z +100 Vio, X +100 XP"]]:
+			["sonsuz", "Sınırsız Vio · satın almak Vio'nu azaltmaz"], ["gece", "Gece ışığı"], ["kisayol", "Hile kısayolları · Z +100 Vio, J +100 XP"], ["panel", "Hile paneli · +100 Vio, +100 XP, saat, gün, zaman"]]:
 		var c := CheckBox.new()
 		c.text = a[1]
 		c.focus_mode = Control.FOCUS_NONE
@@ -224,10 +225,11 @@ func _anahtar(k: String, on: bool) -> void:
 			oyun.set_meta("sonsuz_vio", on)
 		"gece": gece = on
 		"kisayol": kisayol = on
+		"panel": panel = on
 	_esitle()
 
 func _esitle() -> void:
-	var D := {mod = mod, tanri = tanri, tek = tek, dayan = dayan, sonsuz = sonsuz, gece = gece, kisayol = kisayol}
+	var D := {mod = mod, tanri = tanri, tek = tek, dayan = dayan, sonsuz = sonsuz, gece = gece, kisayol = kisayol, panel = panel}
 	for k in anahtarlar:
 		anahtarlar[k].set_pressed_no_signal(bool(D[k]))
 
@@ -264,7 +266,7 @@ func _ara_ciz() -> void:
 
 func _process(dt: float) -> void:
 	if oyun == null: return
-	ped.visible = mod and not oyun.basta and not (oyun.arena != null and oyun.arena.acik_mi())
+	ped.visible = mod and panel and not oyun.basta and not (oyun.arena != null and oyun.arena.acik_mi())
 	if pen.visible and Input.is_action_just_pressed("ui_cancel"): _kapat_pen()
 	if not mod or oyun.basta: return
 	if sar_b.button_pressed and not get_tree().paused: _saat(dt * 60.0)

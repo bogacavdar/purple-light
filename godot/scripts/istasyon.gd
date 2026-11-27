@@ -214,7 +214,8 @@ func ciz() -> void:
 		b.icon = env.ikon_al(r)
 		b.text = r
 		b.add_theme_font_size_override("font_size", 12)
-		b.add_theme_color_override("font_color", Color("#c8f0a0") if ey.eksik(r) == "" else Color("#e8e2cc"))
+		if ey.eksik(r) == "" and Ayarlar.rk: b.text = "✓ " + b.text
+		b.add_theme_color_override("font_color", Ayarlar.tamam() if ey.eksik(r) == "" else Color("#e8e2cc"))
 		b.pressed.connect(func(): secili = r; _ayrinti())
 		liste.add_child(b)
 	if secili == "" and not adlar.is_empty():
@@ -231,9 +232,9 @@ func _ayrinti() -> void:
 	ayrinti.add_child(ey._ikonlu(secili, secili + "  · " + str(x.c), Color("#fff2c0")))
 	for p in x.i:
 		var var_: int = env.adet(str(p[0]))
-		ayrinti.add_child(ey._ikonlu(str(p[0]), "%d× %s  (sende %d)" % [int(p[1]), p[0], var_], Color("#c8f0a0") if var_ >= int(p[1]) else Color("#ffb0a0")))
+		ayrinti.add_child(ey._ikonlu(str(p[0]), Ayarlar.isaret(var_ >= int(p[1])) + "%d× %s  (sende %d)" % [int(p[1]), p[0], var_], Ayarlar.tamam() if var_ >= int(p[1]) else Ayarlar.eksik()))
 	for t in x.t:
-		ayrinti.add_child(ey._ikonlu(str(t), "alet: %s %s" % [t, "✓" if env.adet(str(t)) > 0 else "(yok)"], Color("#c8f0a0") if env.adet(str(t)) > 0 else Color("#ffb0a0")))
+		ayrinti.add_child(ey._ikonlu(str(t), "alet: %s %s" % [t, "✓" if env.adet(str(t)) > 0 else "(yok)"], Ayarlar.tamam() if env.adet(str(t)) > 0 else Ayarlar.eksik()))
 	var b := Button.new()
 	if kip == "kazan":
 		b.text = "Öğren (malzemeler kazana gider · +%d XP)" % int(env.G.ogrenXP)
@@ -245,5 +246,5 @@ func _ayrinti() -> void:
 	var e: String = ey.eksik(secili)
 	if e != "":
 		var en := Label.new(); en.text = "Eksik: " + e; en.autowrap_mode = TextServer.AUTOWRAP_WORD
-		en.add_theme_color_override("font_color", Color("#ffb0a0")); en.add_theme_font_size_override("font_size", 11)
+		en.add_theme_color_override("font_color", Ayarlar.eksik()); en.add_theme_font_size_override("font_size", 11)
 		ayrinti.add_child(en)

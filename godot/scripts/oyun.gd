@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · S8"
+const SURUM := "Godot · S9"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -106,6 +106,7 @@ var ani                     # anılar (ani.gd)
 var roket                   # ACT 2'nin sonu: fırlatma, kavuşma, son kart (roket.gd)
 var almanak                 # almanak.gd (U)
 var gizli                   # gizli.gd: gizli şeyler
+var ayarlar                 # ayarlar.gd (O)
 var hile                    # hile.gd: hile modu, ped, pencere (oturumluk)
 var arena = null            # arena.gd: yalnız arenadayken
 var kesif                   # kesif.gd: keşif defteri ve Zümrüt'ün bilmecesi
@@ -264,6 +265,10 @@ func _ready() -> void:
 	roket = preload("res://scripts/roket.gd").new()
 	add_child(roket)
 	roket.kur(self)
+	ayarlar = preload("res://scripts/ayarlar.gd").new()
+	add_child(ayarlar)
+	ayarlar.kur(self)
+	yardim_guncelle()
 	hile = preload("res://scripts/hile.gd").new()
 	add_child(hile)
 	hile.kur(self)
@@ -394,6 +399,7 @@ func _ready() -> void:
 		if q.contains("gizlitest"): _gizli_test.call_deferred(q)
 		if q.contains("arenatest"): _arena_test.call_deferred(q)
 		if q.contains("hiletest"): _hile_test.call_deferred(q)
+		if q.contains("ayartest"): _ayar_test.call_deferred(q)
 		if q.contains("dztest"):
 			el_yapimi.bilinen["Gemi"] = true
 			for m in ["Ay otu", "Işık mantarı"]: env.gorulen[m] = true
@@ -1333,6 +1339,27 @@ func _cimen_yeri() -> bool:
 				return true
 	return false
 
+func _ayar_test(q: String) -> void:
+	await get_tree().create_timer(1.0).timeout
+	while konusma.visible:
+		konusma._cik(); await get_tree().create_timer(0.2).timeout
+	print("AYAR harita tuşu ", Ayarlar.tus_adi("harita"))
+	ayarlar.ac()
+	ayarlar.bekle = "harita"
+	var e := InputEventKey.new(); e.physical_keycode = KEY_P; e.pressed = true
+	Input.parse_input_event(e)
+	await get_tree().create_timer(0.3).timeout
+	print("AYAR yeni harita tuşu ", Ayarlar.tus_adi("harita"), " kayıtlı ", Ayarlar.tuslar)
+	Ayarlar.rk = true
+	if q.contains("renk"):
+		ayarlar.kapat()
+		env.ekle("Taş", 2)
+		el_yapimi._ac("el")
+		el_yapimi._ac("kitap")
+		el_yapimi.secili = "Keskin taş"; el_yapimi._ayrinti()
+		return
+	ayarlar._ciz()
+
 func _hile_test(_q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	while konusma.visible:
@@ -2117,6 +2144,16 @@ func canlilari_ver() -> Array:
 	return out
 
 # ------------------------------------------------------------------ ekrandaki yazılar ve göstergeler
+var yardim_yazi: Label
+
+## tuş yardımı güncel tuşlardan kurulur (Ayarlar → Kontroller'de değişince yeni tuşları gösterir)
+func yardim_guncelle() -> void:
+	if yardim_yazi == null: return
+	var t := func(a): return Ayarlar.tus_adi(a).split(", ")[0]
+	yardim_yazi.text = "%s%s%s%s / oklar: yürü · %s: koş · %s ya da sol tık: vur · %s: atıl · Sağ tık ya da %s: savuştur (basılı: gard) · %s: topla · %s: ye · %s: çanta · %s: el yapımı · %s: tarif kitabı · %s: yetenekler · 1–5: kemer · G: görevler · %s: karakter · %s: inşa · %s: bin · %s: köpekler · %s: harita · %s: almanak · %s: ayarlar\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · LT savuştur · A topla · LB ye · Y kemer · Back çanta · Start el yapımı" % [
+		t.call("yukari"), t.call("sol"), t.call("asagi"), t.call("sag"), t.call("kos"), t.call("vur"), t.call("atil"), t.call("savus"), t.call("topla"), t.call("ye"), t.call("canta"),
+		t.call("el_yapimi"), t.call("kitap"), t.call("yetenek"), t.call("karakter"), t.call("insa"), t.call("bin"), t.call("kopek"), t.call("harita"), t.call("almanak"), t.call("ayarlar")]
+
 func _hud() -> void:
 	hud = CanvasLayer.new()
 	add_child(hud)
@@ -2156,7 +2193,8 @@ func _hud() -> void:
 	_golge(silah_yazi)
 	kutu.add_child(silah_yazi)
 	var yardim := Label.new()
-	yardim.text = "WASD / oklar: yürü · Shift: koş · Q ya da sol tık: vur · Boşluk: atıl · Sağ tık ya da E: savuştur (basılı: gard) · F: topla · X: ye · I: çanta · Tab: el yapımı · K: tarif kitabı · Y: yetenekler · 1–5: kemer · G: görevler · C: karakter · N: inşa · B: bin · R: köpekler · M: harita\nKol: sol çubuk yürü · L3 koş · X ya da RT vur · B atıl · LT savuştur · A topla · LB ye · Y kemer · Back çanta · Start el yapımı"
+	yardim_yazi = yardim
+	yardim_guncelle()
 	yardim.add_theme_font_size_override("font_size", 12)
 	_golge(yardim)
 	yardim.add_theme_font_size_override("font_size", 11)
