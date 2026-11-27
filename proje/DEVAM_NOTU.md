@@ -1,3 +1,7 @@
+## v5.23 (27 Kasım 2026) · Godot Son-k: kamp ateşi, ateşte pişirme
+- `godot-deneme/` yeni derleme (godot dalı: yeni kamp.gd + data/ates_pisir.json (tools/disa_aktar_ates.js); oyun.gd F sırasında kamp.f, kayıt `kamp`, kayıtta hepsini_pisir; zaman.isikta/kampta, soguk, yildizsiz kamp ateşi; oyuncu.vur kamp; girdi/ayarlar V "kamp"; el_yapimi ateş yemeklerini gizler; istasyon öğrenme yazısı; harita alev; ?kamptest). Belge 99_godot Son-k. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (`kamp` alanı okunmaz, zararsız).
+
 ## v5.22 (27 Kasım 2026) · Godot Son-j: yemek etkileri ve yemek listesi
 - `godot-deneme/` yeni derleme (godot dalı: yeni yemek.gd + data/yemek.json (tools/disa_aktar_yemek.js); oyun.stat çarpanı `yemek.kat`, kayıt `yemek {kn, pb}`, pencere_acik; envanter X tuşu yemek.gd'ye, doygun; zaman.isikta göz; oyuncu.etki_ekle panzehir/ateşsiz/pıhtı; ?yemektest). Belge 99_godot Son-j…n. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (`yemek` alanı okunmaz, zararsız).
@@ -73,7 +77,3 @@
 ## v5.04 (27 Kasım 2026) · Godot S4: mor ışık saldırıları ve Yıldızsızlar
 - `godot-deneme/` yeni derleme (godot dalı: yeni yildizsiz.gd (takvim, iki dalga, mor örtü, sütunlar, Vio, Börü/Zümrüt/Kemal yardımı, Konuk; kayıt `ys {n, c, o, k}`), data/yildizsiz.json (web YSG ızgaraları, tools/disa_aktar_ys.js); canli.gd `kind "ys"` çizimi ve solma; oyun.gd uzaklaşınca silmeme, canli_oldu; zaman.gd saldırıda aydınlık ve mor renk). Denetim: ?ystest. Belge 99_godot S4 satırı. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `ys` alanı okunmadan kalır).
-
-## v5.03 (27 Kasım 2026) · Godot S3: imza hamleleri ve sürü taktiği
-- `godot-deneme/` yeni derleme (godot dalı: canli.gd imza hamleleri (`imza`, `imza_t`, IMZA tablosu, `_imza_basla/_imza_isle/_imza_ciz`, vur-kaç ısırık ve atıştan sonra), kurt sürüsü dolanması (`_suru_yeri`); ozel.gd arkadan uyarı oku; oyun.gd SURUM "Godot · S3"). Denetim: ?imzatest. Belge 99_godot S3 satırı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).

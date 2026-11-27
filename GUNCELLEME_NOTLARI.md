@@ -8,6 +8,13 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.23 · 27 Kasım 2026
+
+### Proje
+- **Godot: kamp ateşi ve ateşte pişirme:**
+  - Kamp ateşi kemere giriyor; elindeyken vur ya da V ile önüne kuruluyor. Işık veriyor, yanında gece güvendesin, canın hızlı doluyor; odun atınca uzun yanıyor, yağmurda çabuk sönüyor. Haritada alevle görünüyor.
+  - Her ateşin başında F ile pişirme menüsü açılıyor: çiğ et ve balığı közlüyorsun, kazanda öğrendiğin ateş yemeklerini pişiriyorsun. Pişen yemek kendiliğinden çantana geliyor.
+
 ## Versiyon 5.22 · 27 Kasım 2026
 
 ### Proje
@@ -204,17 +211,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Güçleri silahına, canına ve güne göre ayarlanıyor; her biri düşünce Vio doğrudan keseye giriyor.
   - Börü yanlarına koşup savaşıyor, Zümrüt ışın yolluyor, Kemal yaralarını sarıyor.
   - Evde, mağarada, denizde ya da kendi kamp ateşinin yanındaysan saldırı ertesi güne kayıyor.
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.03 · 27 Kasım 2026
-
-### Proje
-- **Godot: canlıların imza hamleleri ve sürü taktiği:**
-  - Kovalayan canlılar ara ara kendi hamlesini yapıyor: geyik tekmesi, domuz hücumu, ayının iki pençesi, kartal dalışı, timsahın çamura gömülmesi, kirpinin yuvarlanması, kertenkelenin kuyruğu, akrebin iğnesi. Yılan ve kunduz ısırıp geri kaçıyor. Her hamle başlamadan renkli "!" ve yerde uyarı çıkıyor.
-  - Kurtlar artık birlikte avlanıyor: biri önünden oyalarken öbürü arkana dolanıyor.
-  - Arkanda saldırıya hazırlanan bir canlı varsa çevrende o yöne bakan küçük, yanıp sönen bir ok çıkıyor.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
