@@ -8,6 +8,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.37 · 27 Kasım 2026
+
+### Godot denemesi
+- **Balta dersinde El yapımı:** Börü'nün balta dersinde sıradaki parça yapılabiliyorsa yalnızca onun satırı ve Yap düğmesi mavi yanıyor, öbür tarifler soluk ve tıklanamıyor. Malzeme eksikse pencere kendiliğinden kapanıp "Önce malzemeleri topla: …" diyor (web'deki gibi).
+
 ## Versiyon 5.36 · 27 Kasım 2026
 
 ### Godot denemesi
@@ -145,13 +150,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Bataklık ve Kayalık Dağ hep ince bir sis altında; sisli havada her yer sisli, ışıklar sisi açıyor.
   - Mor gece: yılın son gecesi en uzun gece ve mor ışık saldırısı kesin geliyor.
   - Saatin yanında hava, mevsim, sıcaklık ve dönen mevsim çemberi var.
-
-## Versiyon 5.17 · 27 Kasım 2026
-
-### Proje
-- **Godot: sesler ve müzik geldi:**
-  - Web'deki bütün sesler ve müzikler birebir aynı.
-  - Her bölgenin kendi müziği var, bölge değişince yumuşakça geçiyor; Çayır ve Orman'da gece Gece müziği, mağarada Derinlik çalıyor.
-  - Bataklık'ta bataklık sesi, Kül Diyarı'nda kül rüzgârı, deniz kenarında hafif dalga sesi var.
-  - Toplama, tarif öğrenme, yapma, örs, Vio, seviye, savurma, isabet, darbe, balık, büyü ve Yıldızsız baskını sesleri çalıyor.
-  - Ses düzeyi Ayarlar'daki Müzik ve Efekt sürgülerinden.

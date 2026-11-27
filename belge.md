@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 5.36** ile birebir (27 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 5.37** ile birebir (27 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -7633,6 +7633,7 @@ Adım 1 küçük parçalar halinde gider; her parçanın sonunda deneme linki (`
 | Ekin'in hikâyesi (yapıldı) | Web'deki gibi (belge ACT 1 › Çiftçi Ekin › Ekin'in hikâyesi): kız kardeşi Gül; parçalar EK3, EK5, EK8 ile açılır, sonra Hasat gecesi sahnesi. |
 | Son-v · Ekran ortası afişler (yapıldı) | Web'deki gibi (belge Sistemler › Harita açıkken ekran yazıları üstüne binmez): **gün afişi** "YENİ BİR GÜN · N. Gün" (3,6 sn; bir pencere açıkken kapanmasını bekler), **seviye afişi** "Seviye atladın! · Seviye N · Seviye puanı kazandın" (3 sn, renkli parçacıklar) ve sırayla gelen **keşif kartları** (2,4 sn; ilk kez eline geçen malzeme "Yeni malzeme bulundu", öğrenilen tarif "Yeni tarif öğrendin", yeni bölge, onarılan köprü, mevsim, Mor gece). Sıra: gün → seviye → kartlar; seviye gelince ekrandaki kart sıraya geri döner. Büyük harita ya da bir hikâye sahnesi açıkken hiçbiri çizilmez, ekrandakiler iner ve kapanınca yeniden gelir. |
 | Son-w · Doğma kuşakları (yapıldı) | Web'deki gibi (belge ACT 1 › Kuşaklar; Bataklık'ın üç kuşağı; Orman doğma koşulları): Kayalık, Kül ve Mor Kristal'de karonun bir önceki biyomun sınırına uzaklığı oyun açılırken bir kez hesaplanır; Giriş ve Orta kuşaklarında güçlü canlılar ancak belgedeki seviyeden sonra doğar, Derin'de her zaman. Bataklık'ta Zehirli kurbağa, Bataklık kurdu ve Timsah ana köprüye uzaklığa göre; Orman'da Oklu kirpi Sv 14'ten (köprüye 100 karo içinde Sv 10'dan). |
+| Son-x · Balta dersinde El yapımı kilidi (yapıldı) | Web'deki gibi (belge Akış › Börü'nün balta dersinde El yapımı yalnızca gösterilen düğmeye izin verir): 12. adımda sıradaki parça (Keskin taş, Sopa, İp) yapılabiliyorsa o tarif seçili gelir, satırı ve Yap düğmesi mavi yanar, öbür tarifler soluk ve tıklanamaz; malzeme eksikse ya da iki taş toplanacaksa pencere 0,7 sn sonra kapanır ve "Önce malzemeleri topla: …" der. |
 | Son · Eksikler | ComfyUI çizimleri Godot taşımasının dışında: taşıma bitince oyunun tam görsel yenilemesi olarak ayrıca konuşulacak (27 Kasım 2026, Boğaç). |
 
 ### Başlangıç (25 Kasım 2026)

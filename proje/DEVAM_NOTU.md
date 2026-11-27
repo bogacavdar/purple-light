@@ -1,3 +1,6 @@
+## v5.37 (27 Kasım 2026) · Godot: balta dersinde El yapımı kilidi
+- Godot `el_yapimi.gd`: `_ders_parca`, `_ders_bak`, `_mavi`, `ders_k` (öğretici tz 12; web v393lock). oyun.gd test kancası `baltakilit`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.36 (27 Kasım 2026) · Godot: ekran ortası afişler ve doğma kuşakları
 - Godot: yeni `scripts/duyuru.gd` (gün/seviye/keşif afişleri; zaman.gd, envanter.gd, istasyon.gd, gorev.gd, kopru.gd, hava.gd onu çağırır). oyun.gd: `_ldepth_kur`, `BANDR`, `dogabilir()` (`_dogur_tur` her yerde sorar); test kancaları `duyurutest`, `kusaktest`. Geri almak: duyuru.gd'yi sil, çağrıları `env.mesaj`'a döndür; `dogabilir` satırını kaldır. Kayıt alanı yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
@@ -73,7 +76,3 @@
 ## v5.18 (27 Kasım 2026) · Godot Son-f: mevsimler, hava, sıcaklık, kar
 - `godot-deneme/` yeni derleme (godot dalı: yeni hava.gd: mevsim, gece_sn, hava zinciri, sıcaklık, kar örtüsü, ekran çizimi, sis shader'ı, mevsim çemberi, Mor gece; bağlantılar zaman (gece hızı, saat yazısı), envanter (kış tokluğu), mesale (yanma katı), balik (bekleme, mevsim balığı), canli (sis), toplama (`mevsim_k`, `_bitir2`), yildizsiz `zorla()`, ses (rain/wind); ?havatest). Kayıt alanı `hava {kar, mg, k, t}`. Belge 99_godot Son-f, Son-g. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (eski kayıtlar `hava` alanını okumaz, zararsız).
-
-## v5.17 (27 Kasım 2026) · Godot Son-e: sesler ve müzik
-- `godot-deneme/` yeni derleme (godot dalı: yeni ses.gd: müzik bölgeye göre çapraz geçiş, ortam döngüleri swamp/ash/surf, `cal(k)` efekt havuzu; art/ses/ 39 dosya (WAV efekt, OGG müzik/döngü) `tools/disa_aktar_ses.js` ile web sentezinden; bağlantılar envanter/toplama/istasyon/el_yapimi/oyuncu/canli/balik/buyu/yildizsiz; ?sestest). Belge 99_godot Son-e, Son-f (hava, sıradaki), Son satırından "fenerciler" çıkarıldı. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
