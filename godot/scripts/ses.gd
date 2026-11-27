@@ -154,3 +154,42 @@ func alet_cal(n: String) -> void:
 	var P = oyun.oyuncu
 	oyun.yazi(P.position + Vector2(P.bakis.x * 8.0 + randf_range(-3, 3), -24), "♪", Color(str(I.renk)), 15)
 
+# ------------------------------------------------------------------ canlıların sesleri (web v309snd, v336voice; tools/disa_aktar_canli_ses.js)
+## acı (vurulunca), ölüm ve saldırı (! ile kurulurken; kendi sesi yoksa hırlama); yakınlığa göre (340 px'te susar), Reis daha pes
+var CS := {}
+var _cs_kare := 0
+var _cs_say := 0
+
+func canli(c, ne: String) -> void:
+	if CS.is_empty(): CS = oyun._json("res://data/canli_ses.json")
+	var v := maxf(0.0, 1.0 - c.position.distance_to(oyun.oyuncu.position) / 340.0)
+	if v <= 0.05: return
+	var f := Engine.get_process_frames()
+	if f != _cs_kare: _cs_kare = f; _cs_say = 0
+	_cs_say += 1
+	if _cs_say > 3: return
+	var tur := str(c.tur).trim_suffix(" Reisi")
+	var M = CS.get(tur, null)
+	var k := ""
+	if ne == "atk":
+		if M == null or str(M.atk) == "":
+			cal("growl", v * 0.7)
+			return
+		k = "canli/" + str(M.atk)
+	elif M != null:
+		k = "canli/%s_%s" % [M.k, ne]
+	else:
+		cal("ouch" if ne == "hurt" else "growl", v * 0.5)
+		return
+	if not tampon.has(k):
+		var st = load("res://art/ses/%s.ogg" % k)
+		if st == null: return
+		tampon[k] = st
+	for p in havuz:
+		if not p.playing:
+			p.stream = tampon[k]
+			p.volume_db = linear_to_db(v * (0.7 if ne == "atk" else (0.65 if ne == "die" else 0.6)))
+			p.pitch_scale = 0.7 if c.boss else 1.0
+			p.play()
+			return
+

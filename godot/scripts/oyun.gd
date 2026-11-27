@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.26"
+const SURUM := "Godot · 5.27"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -3290,6 +3290,8 @@ func _islev_test() -> void:
 	env.el = env.kemer.find("Duman fişeği")
 	oyuncu.vur(Vector2.ZERO)
 	print("ISLEV kurt sersem ", c.sersem, " fişek kaldı ", env.adet("Duman fişeği"))
+	c.vuruldu(5, Vector2.RIGHT); c.vuruldu(999, Vector2.RIGHT)
+	print("ISLEV ses tampon ", ses.tampon.keys().filter(func(k): return str(k).begins_with("canli/")))
 	mesale.ts = "Kaba meşale"; mesale.yaniyor = true; mesale.yanma["Kaba meşale"] = 50.0
 	mesale.recine()
 	print("ISLEV kaba meşale ", mesale.yanma["Kaba meşale"], " reçine ", env.adet("Çam reçinesi"))

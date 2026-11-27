@@ -755,7 +755,9 @@ func _etki_isle(dt: float) -> void:
 func vuruldu(dm: int, yon: Vector2) -> void:
 	if olu >= 0.0:
 		return
-	if oyun.ses != null: oyun.ses.cal("hit", 0.7, randf_range(0.9, 1.1))
+	if oyun.ses != null:
+		oyun.ses.cal("hit", 0.5, randf_range(0.9, 1.1))
+		oyun.ses.canli(self, "hurt")
 	if ders:
 		flash = 0.15
 		return
@@ -779,6 +781,7 @@ func vuruldu(dm: int, yon: Vector2) -> void:
 	if hp <= 0.0:
 		hp = 0.0
 		olu = 0.0
+		if oyun.ses != null: oyun.ses.canli(self, "die")
 		for k in 14:
 			oyun.parca(position + Vector2(0, -4), Vector2(randf_range(-30, 30), -20 - randf() * 40), 0.6, Color("#c84a3a") if k % 2 else Color("#e8e0c8"))
 		oyun.yazi(position + Vector2(0, -26), tur + " avlandı", Color("#fff2b0"), 9)
@@ -808,4 +811,23 @@ func mesale_yak(t: String) -> void:
 	etkiler["yanık"] = {kat = 1, t = 4.0, dps = (0.67 if t == "Kaba meşale" else 1.0), n = 1.0, acc = 0.0}
 	if not was:
 		for k in 8: oyun.parca(position + Vector2(randf_range(-5, 5), -6), Vector2(randf_range(-15, 15), -20 - randf() * 25), 0.5, Color("#ffb040") if k % 2 else Color("#ff6a1a"))
+
+## bir canavar asla oyuncunun içinde durmaz, kendi boyu kadar dışarı itilir (web v404ara; zararsızlar, atılanlar, dersler hariç)
+var _w0 := 0.0
+func _physics_process(_dt: float) -> void:
+	if wind > 0.0 and _w0 <= 0.0 and olu < 0.0 and oyun.ses != null: oyun.ses.canli(self, "atk")
+	_w0 = wind
+	if olu >= 0.0 or ders or ogr or not lunge.is_empty() or not imza.is_empty() or str(D.get("temper", "")) == "zararsız" or has_meta("evcil"): return
+	var P = oyun.oyuncu
+	if P == null: return
+	var m: float = float(D.r) * scale.x + 6.0
+	var dv: Vector2 = position - P.position
+	var d := dv.length()
+	if d >= m: return
+	var u: Vector2 = dv / d if d > 0.01 else Vector2(-1.0 if spr_sol() else 1.0, 0.0)
+	var q: Vector2 = P.position + u * m
+	if not oyun.engel(q): position = q
+
+func spr_sol() -> bool:
+	return randf() < 0.5
 
