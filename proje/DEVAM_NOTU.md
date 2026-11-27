@@ -1,3 +1,7 @@
+## v5.32 (27 Kasım 2026) · Godot Son-u: kontrol eksikleri
+- `godot-deneme/` yeni derleme (godot dalı: yeni kontrol.gd; toplama.gd `f_bas()`; oyuncu.gd sol tık `kontrol.tikla`, yürüyüş `kontrol.yon`; envanter.gd kemer yuvası sol/sağ tık; girdi/ayarlar H "eli_bosalt"; ?tiklatest). Belge 99_godot Son-u. Web oyununda değişen yok.
+- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.31 (27 Kasım 2026) · Godot Son-t: ekran düzeni, büyütülen pencereler
 - `godot-deneme/` yeni derleme (godot dalı: yeni hud_menu.gd, boyut.gd (class_name Boyut); basarim.gd düğme sağ üst sütunda; canta/yemek/kamp/istasyon/sinan/pazar/el_yapimi Boyut.bagla). Belge 99_godot Son-t. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
@@ -73,7 +77,3 @@
 ## v5.13 (27 Kasım 2026) · Godot Son-a: kayıkla gelen yoldaşlar, Kupa panosu
 - `godot-deneme/` yeni derleme (godot dalı: evcil.gd `yanina()` (ciftlik.gd kayık geçişi çağırıyordu, yoktu); ev_ici.gd `_kupa_as`, `_kupa_ciz`; oyun.gd `TILSIM`, `tilsimlar` (kayıt `tlsm`), `_taki` tılsım etkileri; ?kupatest). Belge 99_godot Son-a ve Son listesi. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıttaki `tlsm` alanı okunmadan kalır).
-
-## v5.12 (27 Kasım 2026) · Godot S10: İstatistikler
-- `godot-deneme/` yeni derleme (godot dalı: yeni istatistik.gd (aktif/menü süresi, yol, yapılan, kazanılan/harcanan Vio, toplanan; kayıt `ist`); karakter_pen.gd Karakter · İstatistikler sekmeleri ve Avlanan canlılar listesi; kancalar: el_yapimi.gd yap, istasyon.gd dövme, envanter.gd vio_ekle, toplama.gd; ?isttest). Belge 99_godot S10. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıttaki `ist` alanı okunmadan kalır).

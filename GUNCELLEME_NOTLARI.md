@@ -8,6 +8,14 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.32 · 27 Kasım 2026
+
+### Proje
+- **Godot: kontroller:**
+  - Bir kişiye, kazana, çalıya ya da yerdeki eşyaya tıklayınca karakter oraya yürüyüp konuşuyor ya da topluyor.
+  - H eli boşaltıyor, Alt + Enter tam ekrana alıyor.
+  - Kemer yuvasına sağ tıklayınca o yuvaya ne gireceğini seçiyorsun; sol tık o aleti eline alıyor.
+
 ## Versiyon 5.31 · 27 Kasım 2026
 
 ### Proje
@@ -160,16 +168,6 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Bereket Adası'na kayıkla gidip gelirken yanındaki yoldaşlar ve binek de geliyor.
   - Kupa panosunda yendiğin her Reis için küçük altın bir kalkan beliriyor.
   - Panolu bir eve girince çantandaki mağara boss tılsımları panoya asılıyor ve kalıcı etki veriyor (ör. Dev yüreği tılsımı +80 can).
-  - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
-
----
-
-## Versiyon 5.12 · 27 Kasım 2026
-
-### Proje
-- **Godot: İstatistikler:**
-  - Karakter penceresinde (C) "İstatistikler" sekmesi var: hayatta kaldığın gün, aktif oyun süresi, menüde geçen süre, yürüdüğün yol, avlanan canlı, yenilen reis, tutulan balık, yapılan eşya, öğrenilen tarif, kazanılan ve harcanan Vio, bayılma, toplanan malzeme.
-  - Yanında avladığın canlıların listesi ve her birinin Reis çubuğu var.
   - Link: https://bogacavdar.github.io/purple-light/godot-deneme/
 
 ---
