@@ -78,7 +78,7 @@ func _process(dt: float) -> void:
 		if dk >= 1440.0: dk -= 1440.0
 		if b < 360.0 and dk >= 360.0:
 			gun += 1
-			oyun.env.mesaj("Gün %d" % gun)
+			if oyun.duyuru != null: oyun.duyuru.gun(gun)
 		if gun <= 3 and b < 1050.0 and dk >= 1050.0 and uyari_gunu != gun:
 			uyari_gunu = gun
 			oyun.env.mesaj("Hava kararıyor: gece için bir meşale ya da ateş lazım.", true)

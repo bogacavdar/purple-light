@@ -97,7 +97,8 @@ func _onar(b: Dictionary) -> void:
 	_harca(ODUN)
 	b.fixed = true
 	for k in 30: oyun.parca(Vector2(b.cx + randf_range(-40, 40), b.cy), Vector2(randf_range(-20, 20), -30 - randf() * 40), 0.8, Color("#c89458") if k % 2 else Color("#ffe29b"))
-	env.mesaj(("Köprü onarıldı · Karşı yaka: %s · %s" % _karsi()) if b.main else "Kısayol köprüsü onarıldı · Nehrin öbür ucuna giden yol kısaldı")
+	if b.main: oyun.duyuru.duyur("Köprü onarıldı", "Karşı yaka: %s · %s" % _karsi())
+	else: oyun.duyuru.duyur("Kısayol köprüsü onarıldı", "Nehrin öbür ucuna giden yol kısaldı")
 	oyun.balon("Aa, sandığımdan kolaymış!" if b.main else "Bir kısayol daha. Ayaklarım teşekkür eder.", 3.0)
 	queue_redraw()
 	oyun.gorev.yenile()

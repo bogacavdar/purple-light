@@ -694,7 +694,7 @@ func _process(dt: float) -> void:
 	var bio: int = oyun.bio_at(oyun.oyuncu.position)
 	if bio >= 0 and not biyomlar.has(bio):
 		biyomlar[bio] = true
-		env.mesaj("%s keşfedildi" % BAD[bio])
+		if oyun.duyuru != null: oyun.duyuru.duyur(str(BAD[bio]), "Yeni bölge keşfedildi")
 	if fmod(t, 0.25) < dt:
 		if aktif != null and tamam():
 			if aktif.has("remote"):

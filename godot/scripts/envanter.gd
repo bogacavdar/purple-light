@@ -59,6 +59,7 @@ func ekle(n: String, k: int = 1) -> void:
 		if r > 0:
 			vio_ekle(r)
 			mesaj("İlk keşif: %s · +%d Vio" % [n, r])
+	if not gorulen.has(n) and oyun.duyuru != null: oyun.duyuru.duyur(n)
 	gorulen[n] = true
 	# aletler ve silahlar kemerdeki ilk boş yuvaya kendiliğinden girer (web: hotItem)
 	if (G.tools.has(n) or oyun.kusanma.silah.has(n) or oyun.yapi.yapi_mi(n) or n == "Kamp ateşi" or n == "Duman fişeği" or n == "Duman tütsüsü" or (oyun.ses != null and oyun.ses.alet_mi(n))) and kemer.find(n) < 0:
@@ -382,7 +383,7 @@ func xp_ekle(n: int) -> void:
 	while sv - 1 < need.size() and int(need[sv - 1]) > 0 and xp >= int(need[sv - 1]):
 		xp -= int(need[sv - 1])
 		sv += 1
-		mesaj("Seviye %d! Seviye puanı kazandın." % sv)
+		if oyun.duyuru != null: oyun.duyuru.seviye(sv)
 		if oyun.ses != null: oyun.ses.cal("level")
 		oyun.oyuncu.yetenek_uygula()
 		if oyun.puan_ders == 0: _puan_dersi()

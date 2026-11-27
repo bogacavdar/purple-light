@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.35"
+const SURUM := "Godot · 5.36"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -118,6 +118,7 @@ var kamp                    # kamp.gd: kamp ateşi ve ateşte pişirme
 var sise                    # sise.gd: kıyıya vuran şişeler
 var yazilimci               # yazilimci.gd: gece beliren Boğaç
 var istem                   # istem.gd: F'nin ne yapacağını söyleyen eylem ipucu
+var duyuru                  # duyuru.gd: gün, seviye ve keşif afişleri (web daybanner/lvlup/discover)
 var kopek                   # kopek.gd: robot köpeklerin gizli günlüğü (ACT 3)
 var imlec                   # imlec.gd: mor ışıkta piksel el imleci
 var hud_menu                # hud_menu.gd: sol kare düğmeler, sağ üst düğmeler, büyük çubuklar
@@ -372,6 +373,9 @@ func _ready() -> void:
 	kopek = preload("res://scripts/kopek.gd").new()
 	add_child(kopek)
 	kopek.kur(self)
+	duyuru = preload("res://scripts/duyuru.gd").new()
+	add_child(duyuru)
+	duyuru.kur(self)
 	imlec = preload("res://scripts/imlec.gd").new()
 	add_child(imlec)
 	imlec.kur(self)
@@ -443,6 +447,8 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("duyurutest"): _duyuru_test.call_deferred()
+		if q.contains("kusaktest"): _kusak_test.call_deferred()
 		if q.contains("koprutest"): _kopru_test.call_deferred(q.contains("camur"))
 		if q.contains("iztest"):
 			oyuncu.position = Vector2(7664 + 8, 2280 + 6)
@@ -907,6 +913,42 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+func _duyuru_test() -> void:
+	await get_tree().create_timer(6.0).timeout
+	duyuru.duyur("Çakmaktaşı")
+	duyuru.duyur("Taş balta", "Yeni tarif öğrendin")
+	duyuru.gun(2)
+	env.xp_ekle(5000)
+	await get_tree().create_timer(1.0).timeout
+	print("DUYURU gun ", duyuru.gun_k.visible, " sv ", duyuru.sv_k.visible, " ks ", duyuru.ks_k.visible, " sira ", duyuru.kuyruk.size())
+	harita_k.ac()
+	await get_tree().create_timer(0.5).timeout
+	print("DUYURU harita acik: gun ", duyuru.gun_k.visible, " bekleyen gun ", duyuru.gun_bekle)
+	harita_k.kapat()
+	await get_tree().create_timer(4.2).timeout
+	print("DUYURU durum gt ", duyuru.gun_t, " gb ", duyuru.gun_bekle, " st ", duyuru.sv_t, " sb ", duyuru.sv_bekle, " kt ", duyuru.ks_t, " q ", duyuru.kuyruk.size(), " durdu ", zaman.durdu(), " sessiz ", duyuru._sessiz())
+	print("DUYURU sonra: gun ", duyuru.gun_k.visible, " sv ", duyuru.sv_k.visible, " ", duyuru.sv_n.text)
+	await get_tree().create_timer(3.2).timeout
+	print("DUYURU kart: ", duyuru.ks_k.visible, " ", duyuru.ks_ad.text, " / ", duyuru.ks_lab.text)
+
+func _kusak_test() -> void:
+	await get_tree().create_timer(3.0).timeout
+	var mx := {3: 0, 4: 0, 5: 0}
+	for i in ldepth.size():
+		var b := int(bio_arr[i])
+		if mx.has(b) and ldepth[i] < 65535: mx[b] = maxi(mx[b], ldepth[i])
+	print("KUSAK derinlik max ", mx)
+	for sv in [20, 30, 40]:
+		env.sv = sv
+		var ok := {}
+		for i in range(0, bio_arr.size(), 7):
+			var b := int(bio_arr[i])
+			if b < 2: continue
+			var p := Vector2((i % bw + bx0 + 0.5) * T, (i / bw + by0 + 0.5) * T)
+			for k in ["Yaban öküzü", "Kartal", "Mağara ayısı", "Kül cini", "Kara ejder", "Kristal golem", "Timsah", "Zehirli kurbağa"]:
+				if dogabilir(k, p): ok[k] = int(ok.get(k, 0)) + 1
+		print("KUSAK sv ", sv, " ", ok)
 
 func _kopru_test(camur: bool) -> void:
 	var b: Dictionary = kopru.ana()
@@ -2278,6 +2320,7 @@ func _dogur_tur(k: String, want: int, hepsi: Array, bio: int = 0) -> void:
 		if not land.has(float(tile_at(p))) or engel(p, 6.0) or bio_at(p) != bio: continue
 		if int(D.aggro) > 0 and zaman.kampta(p): continue
 		if insa.avluda(p): continue
+		if not dogabilir(k, p): continue
 		paket_no += 1
 		var n := 1
 		if paket != null:
@@ -2297,6 +2340,60 @@ func _dogur_tur(k: String, want: int, hepsi: Array, bio: int = 0) -> void:
 			_canli_yeni(k, q, paket_no)
 			m += 1
 		return
+
+## web LDEPTH: Kayalık, Kül ve Mor Kristal'de her karonun bir önceki biyomun sınırından uzaklığı (karo); oyun açılırken bir kez
+var ldepth := PackedInt32Array()
+func _ldepth_kur() -> void:
+	var N := bw * bh
+	ldepth.resize(N)
+	ldepth.fill(0)
+	var Q := PackedInt32Array()
+	Q.resize(N)
+	var n := 0
+	for i in range(bw, N - bw):
+		var b := int(bio_arr[i])
+		if b < 3 or b > 5: continue
+		ldepth[i] = 65535
+		var c := b - 1
+		if int(tiles[i]) != 3 and (int(bio_arr[i - 1]) == c or int(bio_arr[i + 1]) == c or int(bio_arr[i - bw]) == c or int(bio_arr[i + bw]) == c):
+			ldepth[i] = 0
+			Q[n] = i; n += 1
+	var h := 0
+	while h < n:
+		var i := Q[h]; h += 1
+		var b := int(bio_arr[i]); var d := ldepth[i] + 1
+		for j in [i - 1, i + 1, i - bw, i + bw]:
+			if j >= 0 and j < N and int(bio_arr[j]) == b and ldepth[j] > d:
+				ldepth[j] = d
+				Q[n] = j; n += 1
+
+## web __plSpawnOK (belge ACT 1 › Kuşaklar; Bataklık'ın üç kuşağı; Orman doğma koşulları): bir canlı bu yerde, bu seviyede doğabilir mi.
+## Kayalık/Kül/Kristal: [Giriş, Orta] kuşağında hangi seviyeden (null: hiç), Derin: her zaman. Bataklık: ana köprüye uzaklık (karo).
+const BANDR := {3: {b = [45, 85], r = {"Yaban öküzü": [23, 0], "Kartal": [25, 23], "Vaşak": [null, 25], "Mağara ayısı": [null, null]}},
+	4: {b = [30, 60], r = {"Kül cini": [36, 36], "Lav kertenkelesi": [36, 36], "Kor yarasası": [36, 36], "Ateş akrebi": [null, 36], "Kül kurdu": [null, 38], "Kara ejder": [null, null]}},
+	5: {b = [25, 55], r = {"Kristal örümcek": [44, 0], "Işık engereği": [44, 0], "Gölge kurdu": [null, 45], "Kristal golem": [null, null]}}}
+func dogabilir(k: String, p: Vector2) -> bool:
+	if ada != 1: return true
+	var lv: int = env.sv
+	var b: Dictionary = kopru.ana()
+	var d := p.distance_to(Vector2(b.cx, b.cy)) / T
+	if k == "Oklu kirpi": return lv >= 14 or (lv >= 10 and d <= 100.0)
+	var bi := bio_at(p)
+	if bi >= 3 and bi <= 5:
+		var R: Dictionary = BANDR[bi]
+		if not R.r.has(k) or ldepth.is_empty(): return true
+		var x := int(p.x / T) - bx0; var y := int(p.y / T) - by0
+		if x < 0 or y < 0 or x >= bw or y >= bh: return true
+		var dp := ldepth[y * bw + x]
+		var band := 0 if dp <= int(R.b[0]) else (1 if dp <= int(R.b[1]) else 2)
+		if band == 2: return true
+		var v = R.r[k][band]
+		return v != null and lv >= int(v)
+	if bi != 2: return true
+	var band2 := 0 if d <= 85.0 else (1 if d <= 150.0 else 2)
+	if k == "Zehirli kurbağa": return band2 > 0 or lv >= 12
+	if k == "Bataklık kurdu" or k == "Timsah": return band2 == 2 or (band2 == 1 and lv >= 20)
+	return true
 
 func _canli_yeni(k: String, p: Vector2, pk: int):
 	var c := preload("res://scripts/canli.gd").new()
@@ -2416,6 +2513,7 @@ var kh_olcek := 0.0
 func _kucuk_harita() -> void:
 	var bio := Marshalls.base64_to_raw(harita.bio)
 	bio_arr = bio
+	if ada == 1: _ldepth_kur()
 	var BR := [Color("#7fb04a"), Color("#3f7a3a"), Color("#6b7440"), Color("#8a8580"), Color("#5a3a36"), Color("#7a5aa8")]
 	if ada == 2:
 		BR = []

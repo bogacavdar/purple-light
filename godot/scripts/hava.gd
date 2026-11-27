@@ -253,13 +253,13 @@ func _process(dt: float) -> void:
 			son_gun = g
 		if duyuru > 0.0:
 			duyuru -= dt
-			if duyuru <= 0.0 and oyun.ys != null: oyun.ys.duyur(str(SN[mevsim()]) + " geldi", str(SUB[mevsim()]))
+			if duyuru <= 0.0 and oyun.duyuru != null: oyun.duyuru.duyur(str(SN[mevsim()]) + " geldi", str(SUB[mevsim()]))
 		# Mor gece
 		var mk := mor_gece()
 		if mk > 0:
 			if mg_said != mk and not oyun.uyanis.acik:
 				mg_said = mk
-				if oyun.ys != null: oyun.ys.duyur("Mor gece", "Yılın en uzun gecesi")
+				if oyun.duyuru != null: oyun.duyuru.duyur("Mor gece", "Yılın en uzun gecesi")
 				if oyun.ses != null: oyun.ses.cal("magic")
 			if mg_done != mk and oyun.ys != null:
 				if oyun.ys.aktif() or oyun.ys.zorla(): mg_done = mk
