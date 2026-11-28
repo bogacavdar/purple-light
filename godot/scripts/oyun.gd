@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.46"
+const SURUM := "Godot · 5.47"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -118,6 +118,7 @@ var kamp                    # kamp.gd: kamp ateşi ve ateşte pişirme
 var sise                    # sise.gd: kıyıya vuran şişeler
 var yazilimci               # yazilimci.gd: gece beliren Boğaç
 var istem                   # istem.gd: F'nin ne yapacağını söyleyen eylem ipucu
+var grafik                  # grafik.gd: biyom renk havası ve rüzgâr (Godot'ya özgü, durağan)
 var yunus                   # yunus.gd: açık denizde sıçrayan yunuslar (web v67)
 var kademe_k                # kademe.gd: silahların kademe kimliği (web v322tier)
 var duyuru                  # duyuru.gd: gün, seviye ve keşif afişleri (web daybanner/lvlup/discover)
@@ -384,6 +385,9 @@ func _ready() -> void:
 	yunus = preload("res://scripts/yunus.gd").new()
 	add_child(yunus)
 	yunus.kur(self)
+	grafik = preload("res://scripts/grafik.gd").new()
+	add_child(grafik)
+	grafik.kur(self)
 	imlec = preload("res://scripts/imlec.gd").new()
 	add_child(imlec)
 	imlec.kur(self)
@@ -455,6 +459,7 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("grafiktest"): _grafik_test.call_deferred()
 		if q.contains("eldetest"): _elde_test.call_deferred()
 		if q.contains("kayaduvar"): _kaya_test.call_deferred()
 		if q.contains("yunustest"): _yunus_test.call_deferred()
@@ -872,6 +877,7 @@ func dugum_ekle(n: String, p: Vector2) -> void:
 	s.kalan = s.bas_kalan
 	dugumler.append(s)
 	nesneler.add_child(s)
+	if grafik != null: grafik.ot_ver(s)
 
 func _dugumler() -> void:
 	var resim: Dictionary = dunya.dugumResimleri
@@ -979,6 +985,19 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+func _grafik_test() -> void:
+	await get_tree().create_timer(5.0).timeout
+	var hb := 1
+	for a in ["bio1", "bio2", "bio3", "bio4", "bio5"]:
+		if OS.has_feature("web") and str(JavaScriptBridge.eval("location.search")).contains(a): hb = int(a.substr(3))
+	for i in range(0, bio_arr.size(), 97):
+		if int(bio_arr[i]) == hb and not su_mu(int(tiles[i])):
+			var p := Vector2((i % bw + bx0 + 0.5) * T, (i / bw + by0 + 0.5) * T)
+			if not engel(p): oyuncu.position = p; break
+	zaman.dk = 720.0
+	await get_tree().create_timer(5.0).timeout
+	print("GRAFIK biyom ", bio_at(oyuncu.position), " renk ", grafik.renk, " ortam ", ortam.color, " agac mat ", agaclar[0].spr.material != null)
 
 func _elde_test() -> void:
 	await get_tree().create_timer(5.0).timeout
@@ -3244,7 +3263,7 @@ func kamera_sinir() -> void:
 
 ## dünyanın rengi: mağaranın karanlığı × sahnenin tonu (sepya, gece)
 func renk_guncelle() -> void:
-	ortam.color = taban_renk * sahne_renk
+	ortam.color = taban_renk * sahne_renk * (grafik.renk if grafik != null else Color.WHITE)
 
 func sahne_rengi(c: Color) -> void:
 	sahne_renk = c
