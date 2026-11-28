@@ -1,3 +1,6 @@
+## v5.51 (28 Kasım 2026) · Godot: kabartmalı ışık
+- Godot: `tools/normal_uret.py` (kubbe 0,6, ayrıntı 0,25, güç 1,0) → `art/agaclar/*_n.png`, `art/dugumler/*_n.png`, `art/kahraman_n.png`; `grafik.gd` `kabart()` (CanvasTexture), `_kahraman()`, `_isik_yukseklik()` (PointLight2D height 150). Test kancası `kabarttest` (`&duz`, `&yukN`). Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.50 (28 Kasım 2026) · Godot: su yansıması
 - Godot `su.gd`: `_yansima/_spr/_ters/_kova/_yakin_su` (128 px kovalar; yalnız su karolarına, karo karo kırpılmış ters çizim), parıltı rengi saate göre. Test kancası `yansitest`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
 
@@ -58,8 +61,4 @@
 
 ## v5.32 (27 Kasım 2026) · Godot Son-u: kontrol eksikleri
 - `godot-deneme/` yeni derleme (godot dalı: yeni kontrol.gd; toplama.gd `f_bas()`; oyuncu.gd sol tık `kontrol.tikla`, yürüyüş `kontrol.yon`; envanter.gd kemer yuvası sol/sağ tık; girdi/ayarlar H "eli_bosalt"; ?tiklatest). Belge 99_godot Son-u. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
-
-## v5.31 (27 Kasım 2026) · Godot Son-t: ekran düzeni, büyütülen pencereler
-- `godot-deneme/` yeni derleme (godot dalı: yeni hud_menu.gd, boyut.gd (class_name Boyut); basarim.gd düğme sağ üst sütunda; canta/yemek/kamp/istasyon/sinan/pazar/el_yapimi Boyut.bagla). Belge 99_godot Son-t. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).

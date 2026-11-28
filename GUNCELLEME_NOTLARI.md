@@ -8,6 +8,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.51 · 28 Kasım 2026
+
+### Godot denemesi
+- **Kabartmalı ışık:** gece meşale, kamp ateşi ya da parıltı ağaçlara, otlara, kayalara ve kahramana yandan vurunca ışığa bakan taraf aydınlanıyor, öbür taraf hafif gölgede kalıyor; nesneler daha hacimli görünüyor.
+
 ## Versiyon 5.50 · 28 Kasım 2026
 
 ### Godot denemesi
@@ -122,12 +127,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Bir kişiye, kazana, çalıya ya da yerdeki eşyaya tıklayınca karakter oraya yürüyüp konuşuyor ya da topluyor.
   - H eli boşaltıyor, Alt + Enter tam ekrana alıyor.
   - Kemer yuvasına sağ tıklayınca o yuvaya ne gireceğini seçiyorsun; sol tık o aleti eline alıyor.
-
-## Versiyon 5.31 · 27 Kasım 2026
-
-### Proje
-- **Godot: ekran düzeni:**
-  - Sol üstte adları yazılı büyük Can, Enerji ve Tokluk çubukları; altında kare düğmeler: Envanter, El yapımı, Yetenekler, Yemek.
-  - Sağ üstte Çıkış, Ayarlar ve Başarımlar; sağ altta Almanak'ın yanında Tarif kitabı.
-  - Ekrandaki uzun tuş yardımı kalktı; tuşlar Ayarlar › Kontroller'de.
-  - Pencereler kenarından tutulup çekilerek büyütülebiliyor.
