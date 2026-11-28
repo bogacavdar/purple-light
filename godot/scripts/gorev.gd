@@ -61,6 +61,7 @@ func kur(o) -> void:
 	Q.append_array(o._json("res://data/ekin.json").gorevler)
 	Q.append_array(o._json("res://data/poyraz.json").gorevler)
 	Q.append_array(o._json("res://data/ada2/ustalar.json").gorevler)   # ACT 2 ustaları (web v55 NQ: gk, pv, sl, mk, ej, as)
+	_b5_esya()
 	V.GB["k_davut"] = 0
 	V.GB["k_ekin"] = 0
 	for g2 in ["gok", "pervin", "tamer", "selin", "alara", "tuna"]: V.GB[g2] = 6
@@ -120,6 +121,26 @@ func sadece_tarif(n: String) -> bool:   # web craftOnly
 		if not ey.R.has(m) or dogal(m):
 			return false
 	return true
+
+## web v426b5 (belge ACT 1 › Börü B5): "Kuzeye keşif" yürüyüşten önce herhangi bir Çakmaktaşı silahı ve herhangi bir zırh parçası ister
+func _b5_esya() -> void:
+	var W: Array = []
+	for n in ["Çakmaktaşı kılıç", "Çakmaktaşı topuz", "Çakmaktaşı savaş çekici", "Çakmaktaşı mızrak", "Çakmaktaşı balta"]:
+		if oyun.el_yapimi.R.has(n): W.append(n)
+	var A: Array = ["Kürk başlık", "Kürk yelek", "Kürk eldiven", "Deri çarık"]
+	var E: Dictionary = oyun.kusanma.get("esya", {})
+	for n in E:
+		if A.has(n) or n == "Kafa lambası" or n == "Börü'nün kemeri": continue
+		if ["bas", "govde", "el", "ayak"].has(str(E[n].s)): A.append(n)
+	for q in Q:
+		if q.id == "B5":
+			q.p = [["any", W, "bir Çakmaktaşı silahı", "döv"], ["any", A, "bir zırh parçası", "yap"], ["reach", 1]]
+			break
+
+func giyili(n: String) -> bool:
+	for k in oyun.kusam:
+		if str(oyun.kusam[k]) == n: return true
+	return false
 
 func sahip(n: String) -> int:
 	var s := 0
@@ -210,7 +231,7 @@ func ilerleme(p: Array) -> Array:
 		"h": return [mini(int(p[2]), env.adet(p[1])), int(p[2])]
 		"any":
 			for n in p[1]:
-				if env.adet(n) > 0: return [1, 1]
+				if env.adet(n) > 0 or giyili(n): return [1, 1]
 			return [0, 1]
 		"kn": return [1 if biliyor(p[1]) else 0, 1]
 		"k": return [clampi(int(kills.get(p[1], 0)) - int(b.get("k:" + p[1], 0)), 0, int(p[2])), int(p[2])]
@@ -255,7 +276,7 @@ func satir(p: Array) -> String:
 	match str(p[0]):
 		"b": return "%d/%d %s" % [x[0], x[1], p[1]]
 		"h": return v + str(p[1]) + ("" if ok_ else (" (dövdür)" if p.size() > 3 and p[3] == "döv" else " (yap)"))
-		"any": return v + " ya da ".join(p[1]) + ("" if ok_ else " (dövdür)")
+		"any": return v + (str(p[2]) if p.size() > 2 else " ya da ".join(p[1])) + ("" if ok_ else (" (yap)" if p.size() > 3 and p[3] == "yap" else " (dövdür)"))
 		"k": return "%d/%d %s avı" % [x[0], x[1], p[1]]
 		"c": return "%d/%d %s" % [x[0], x[1], p[3] if p.size() > 3 else p[1]]
 		"learn": return "%d/%d tarif (toplam)" % [x[0], x[1]]

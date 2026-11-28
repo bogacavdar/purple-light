@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.41"
+const SURUM := "Godot · 5.42"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -451,6 +451,7 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("b5test"): _b5_test.call_deferred()
 		if q.contains("onaytest"): _onay_test.call_deferred()
 		if q.contains("taklatest"): _takla_test.call_deferred()
 		if q.contains("kademetest"): q_kademe_yavas = q.contains("yavas"); _kademe_test.call_deferred()
@@ -922,6 +923,16 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+func _b5_test() -> void:
+	await get_tree().create_timer(5.0).timeout
+	var q: Dictionary = gorev.QI.get("B5", {}) if "QI" in gorev else {}
+	if q.is_empty():
+		for x in gorev.Q: if x.id == "B5": q = x
+	print("B5 silah ", q.p[0][1].size(), " zirh ", q.p[1][1].size())
+	for p in q.p: print("B5 ", gorev.satir(p))
+	env.ekle("Çakmaktaşı topuz"); kusam["govde"] = "Kürk yelek"
+	for p in q.p: print("B5 sonra ", gorev.ilerleme(p))
 
 func _onay_test() -> void:
 	await get_tree().create_timer(6.0).timeout
