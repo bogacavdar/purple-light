@@ -8,6 +8,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.44 · 28 Kasım 2026
+
+### Godot denemesi
+- **Yunuslar:** ara sıra açık denizden bir yunus (bazen iki) sıçrıyor; suya girip çıkarken köpük çıkıyor (web'deki gibi, kıyıdan uzakta ve yalnızca ekranda görülen yerde).
+
 ## Versiyon 5.43 · 28 Kasım 2026
 
 ### Godot denemesi
@@ -127,12 +132,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot: kıyıya vuran şişeler:** Fırtına dinince kıyıya bazen bir şişe vuruyor. İçinde ada halkının mor ışığa kaybettiği birine yazdığı bir mektup var; okunan mektuplar Kitap › Ada halkı'nda saklanıyor.
-
-## Versiyon 5.24 · 27 Kasım 2026
-
-### Proje
-- **Godot: işe yarayan eşyalar ve meşale:**
-  - Olta yemleri daha nadir balık getiriyor. Duman fişeği yakındaki canavarları sersemletiyor, Duman tütsüsü saldırganları 2 dakika uzak tutuyor.
-  - Bıçaklar avda fazladan deri ve et getiriyor, çantalar bayılınca kaybı azaltıyor, Gübre tarlayı hızlandırıyor, Ok kılıfı yayı hızlandırıyor, Golem feneri hiç sönmüyor.
-  - Elinde silah yokken yanan meşalenle vurabiliyor ve canavarı tutuşturabiliyorsun. L ile meşaleye reçine sürüp tazeliyorsun.
-  - Közlenmiş yiyeceklerin resimleri geldi.

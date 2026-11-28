@@ -1,3 +1,6 @@
+## v5.44 (28 Kasım 2026) · Godot: yunuslar
+- Godot: yeni `scripts/yunus.gd` (web v67; oyun.gd'de `yunus`), resim `art/yunus.png` (web DROWS/DPAL'den). Test kancası `yunustest`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.43 (28 Kasım 2026) · Godot: farenin altındakinin adı
 - Godot `imlec.gd`: `_ipucu_kur/_ipucu/_ne/_kazma` (web v146 hovtip). Test kancası `ipucutest`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
 
@@ -66,7 +69,3 @@
 ## v5.25 (27 Kasım 2026) · Godot Son-m: kıyıya vuran şişeler
 - `godot-deneme/` yeni derleme (godot dalı: yeni sise.gd; oyun.gd kayıt `sise`; toplama.gd şişe yerde kaybolmaz; hikaye.gd Ada halkı sayfasına mektuplar; ?sisetest). Belge 99_godot Son-m. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (`sise` alanı okunmaz, zararsız).
-
-## v5.24 (27 Kasım 2026) · Godot Son-l: işe yarayan eşyalar, meşale kuralları
-- `godot-deneme/` yeni derleme (godot dalı: balik.gd yem (_roll → _roll0), canli.gd bıçak ve mesale_yak (acc), oyun.gd bayılma çanta, ciftlik.gd Gübre, buyu.gd Ok kılıfı, mesale.gd Golem feneri/recine()/asinma(), oyuncu.gd meşale silahı ve duman, kamp.gd duman()/tütsü; girdi/ayarlar L "recine"; tools/disa_aktar_kozle.js ile 30 közlenmiş eşya (resim, items, pazar); ?islevtest). Belge 99_godot Son-l. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
