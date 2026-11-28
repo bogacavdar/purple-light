@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 5.47** ile birebir (28 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 5.48** ile birebir (28 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -7645,6 +7645,7 @@ Adım 1 küçük parçalar halinde gider; her parçanın sonunda deneme linki (`
 | Son-ag · Eldeki alet (yapıldı) | Web'deki gibi: kemerden seçilen alet ya da silah kahramanın sağ elinde, hafif eğik çizilir (11 piksel; yüksek kademede Demir/Tunç +1, Çelik +2, Kara çelik +3, Mor kristal +4). Toplarken o aletle sallanır, dururken çok az kımıldar; kahraman arkasını dönmüşse alet gövdenin arkasında kalır. Kurulacak yapılar ve yay elde çizilmez; takla atarken ve bayılınca gizlenir. Kahramanın kolu Godot'ta uzanma pozuna geçmez (Godot kahraman resmi tek parça). |
 | Grafik · ilke (28 Kasım 2026, Boğaç) | Godot'ya özgü grafik iyileştirmeleri yalnızca durağan güzelleştirmelerdir: kamera sallantısı, hareket bulanıklığı ve ekranı oynatan benzeri efektler yoktur. |
 | Grafik-1 · Biyom renk havası ve rüzgâr (yapıldı) | Her biyomun dünyaya hafif kendi tonu vardır: Çayır nötr, Orman hafif yeşil, Bataklık yeşilimsi, Kayalık hafif serin, Kül sıcak turuncu, Mor Kristal soğuk mor; gece, mağara ve sahne renkleriyle birlikte çarpılır, biyom değişince yaklaşık 2 sn'de geçer (mağarada ve ACT 2'de nötr). Ağaçlar, çalılar ve otlar rüzgârda tepeden hafifçe salınır, kökleri yerinde kalır (taşlar, killer, mantarlar ve maden kayaları salınmaz); yağmurda ve karda rüzgâr 1,8, kül fırtınasında 2,4 kat güçlüdür. |
+| Grafik-2 · Parıltı ve gölge (yapıldı) | Karanlıkta (gece ve mağara) kristaller (Kristal, Ametist, Kuvars), ışıklı bitkiler (Işık mantarı, Yıldız çiçeği, Ay otu, Kristal çiçeği, Gece zambağı, Mor kök, Mor sarmaşık), parlak taşlar (Yıldız tozu, Ay taşı, Yankı taşı) ve ateşli olanlar (Ateş çiçeği, Kor otu, Lav camı) kendi renginde çevresini hafifçe aydınlatır ve yavaşça nefes alır gibi parlar; oyuncuya en yakın 12 tanesi ışır, gündüz kapalıdır. Maden kayalarının ve çalıların altında yumuşak, yassı bir gölge vardır. |
 | Son · Eksikler | ComfyUI çizimleri Godot taşımasının dışında: taşıma bitince oyunun tam görsel yenilemesi olarak ayrıca konuşulacak (27 Kasım 2026, Boğaç). |
 
 ### Başlangıç (25 Kasım 2026)

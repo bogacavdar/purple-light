@@ -8,6 +8,12 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.48 · 28 Kasım 2026
+
+### Godot denemesi
+- **Parıltı:** gece ve mağarada kristaller, ışıklı bitkiler ve ateşli taşlar kendi renginde çevresini hafifçe aydınlatıyor, yavaşça nefes alır gibi parlıyor.
+- **Gölge:** maden kayalarının ve çalıların altında yumuşak bir gölge var.
+
 ## Versiyon 5.47 · 28 Kasım 2026
 
 ### Godot denemesi
@@ -128,11 +134,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: fare imleci ve köpek günlüğü:**
   - Fare imleci artık mor ışıkta piksel bir el; toplanacak ya da konuşulacak bir şeyin üstüne gelince el açılıyor.
   - Robot köpeklerin ACT 3 için tuttuğu gizli günlük Godot'ta da tutuluyor (oyunda görünmez).
-
-## Versiyon 5.28 · 27 Kasım 2026
-
-### Proje
-- **Godot: küçük eksikler:**
-  - F'ye basınca ne olacağı kemerin üstünde yazıyor (topla, kaz, konuş, pişir, mağaraya gir…); yapılamıyorsa neden yapılamadığı sarıyla yazıyor. Yakında canavar varsa vuruşunun hasarı görünüyor.
-  - Çanta ve kemerdeki silahların hasarı, zırhların savunması karelerin köşesinde.
-  - Canlılar kendi bölgelerinden çıkmıyor; kovalama bölge sınırında bitiyor.
