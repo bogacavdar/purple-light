@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.44"
+const SURUM := "Godot · 5.45"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -455,6 +455,7 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("kayaduvar"): _kaya_test.call_deferred()
 		if q.contains("yunustest"): _yunus_test.call_deferred()
 		if q.contains("ipucutest"): _ipucu_test.call_deferred()
 		if q.contains("b5test"): _b5_test.call_deferred()
@@ -775,6 +776,8 @@ func engel(p: Vector2, half: float = 5.0, canli := false) -> bool:
 		return true
 	if insa != null and insa.engel(p, half, canli):
 		return true
+	if kaya_at(p, half) != null:
+		return true
 	var cx := int(floor(p.x / 32.0))
 	var cy := int(floor(p.y / 32.0))
 	for gy in range(cy - 1, cy + 2):
@@ -786,6 +789,52 @@ func engel(p: Vector2, half: float = 5.0, canli := false) -> bool:
 				if absf(t.x - p.x) < half + 4.0 and absf(t.y + 2.0 - p.y) < half + 3.0:
 					return true
 	return false
+
+# ------------------------------------------------------------------ maden kayası duvardır (web v229; belge ACT 1 › Madenler)
+## Kayanın çizimi kadar (2 kat çizilir: altta 32, ortada 24, üstte 14 px geniş; tabandan 28 px yukarı) + yarım gövde payı engeldir.
+## Izgara dolu kaya listesi değişince ya da 1,5 sn'de bir yeniden kurulur (yeniden çıkan kaya hemen engel olur).
+var _kaya_iz := {}
+var _kaya_n := -1
+var _kaya_t := 0.0
+func kaya_at(p: Vector2, half: float = 5.0):
+	var now := Time.get_ticks_msec() / 1000.0
+	if dugumler.size() != _kaya_n or now - _kaya_t > 1.5:
+		_kaya_iz.clear(); _kaya_n = dugumler.size(); _kaya_t = now
+		for d in dugumler:
+			if not bool(toplama_veri.nodes.get(d.ad, {}).get("mine", false)): continue
+			var k := Vector2i(int(floor(d.position.x / 48.0)), int(floor(d.position.y / 48.0)))
+			if not _kaya_iz.has(k): _kaya_iz[k] = []
+			_kaya_iz[k].append(d)
+	var gx := int(floor(p.x / 48.0)); var gy := int(floor(p.y / 48.0))
+	for a in range(gx - 1, gx + 2):
+		for b in range(gy - 1, gy + 2):
+			for d in _kaya_iz.get(Vector2i(a, b), []):
+				if not d.canli: continue
+				var base: float = round(d.position.y) + 3.0
+				var dy: float = (p.y - base) / 2.0
+				var dx: float = absf(p.x - round(d.position.x))
+				if dy > half / 2.0 or dy < -15.0: continue
+				var hw := 8.0 if dy >= -9.0 else (6.0 if dy >= -12.0 else 3.5)
+				if dx < hw * 2.0 + half: return d
+	return null
+
+## eski kayıtta kayanın içinde kalan kahraman hemen altına (olmazsa üstüne, yanına, en yakın boş yere) alınır
+var _kaya_cik := 0.0
+func _kaya_kurtar(dt: float) -> void:
+	_kaya_cik -= dt
+	if _kaya_cik > 0.0 or oyuncu == null or basta: return
+	_kaya_cik = 0.25
+	var P: Vector2 = oyuncu.position
+	var d = kaya_at(P)
+	if d == null: return
+	var base: float = round(d.position.y) + 3.0
+	for c in [Vector2(P.x, base + 7.0), Vector2(P.x, base - 28.0 - 8.0), Vector2(d.position.x + (-1.0 if P.x < d.position.x else 1.0) * 23.0, P.y)]:
+		if not engel(c): oyuncu.position = c; return
+	for r in range(6, 97, 4):
+		for k in 24:
+			var a := k / 24.0 * TAU
+			var c := P + Vector2(cos(a), sin(a)) * r
+			if not engel(c): oyuncu.position = c; return
 
 # ------------------------------------------------------------------ ağaçlar (ComfyUI resimleri, web v424dunya)
 func _agaclar() -> void:
@@ -929,6 +978,35 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+func _kaya_test() -> void:
+	await get_tree().create_timer(5.0).timeout
+	var d = null
+	for x in dugumler:
+		if x.canli and bool(toplama_veri.nodes.get(x.ad, {}).get("mine", false)) and not engel(x.position + Vector2(0, 30)) and not engel(x.position + Vector2(40, -4)): d = x; break
+	if d == null:
+		for x in dugumler:
+			if x.canli and bool(toplama_veri.nodes.get(x.ad, {}).get("mine", false)): d = x; break
+	var q2: Vector2 = d.position + Vector2(0, 16)
+	print("KAYA bilesen arena=", arena != null and arena.engel(q2), " mag=", magara.kapi_engel(q2), " cift=", ciftlik.engel(q2, 5.0), " poy=", poyraz.engel(q2), " gecit=", gecit.engel(q2), " yapi=", yapi.engel(q2, 5.0), " insa=", insa.engel(q2, 5.0, false), " oyuncu_engel=", engel(oyuncu.position))
+	for o2 in [Vector2(0, 0), Vector2(40, 0), Vector2(-40, 0), Vector2(0, -60)]:
+		var pp: Vector2 = oyuncu.position + o2
+		print("KAYA nokta ", o2, " engel=", engel(pp), " kaya=", kaya_at(pp) != null, " t=", tile_at(pp), " su=", su_mu(tile_at(pp)))
+	print("KAYA ", d.ad, " ", d.position)
+	var q3: Vector2 = d.position + Vector2(0, 14)
+	var su := false
+	for dd in [Vector2(-5, -5), Vector2(5, -5), Vector2(-5, 5), Vector2(5, 5)]: if su_mu(tile_at(q3 + dd)): su = true
+	var agc := false
+	for gy in range(int(floor(q3.y / 32.0)) - 1, int(floor(q3.y / 32.0)) + 2):
+		for gx in range(int(floor(q3.x / 32.0)) - 1, int(floor(q3.x / 32.0)) + 2):
+			for t in agac_izgara.get(Vector2i(gx, gy), []):
+				if absf(t.x - q3.x) < 9.0 and absf(t.y + 2.0 - q3.y) < 8.0: agc = true
+	print("KAYA neden engel=", engel(q3), " kaya=", kaya_at(q3), " icinde=", magara.icinde, " su=", su, " agac=", agc, " arena=", arena != null and arena.engel(q3), " mag=", magara.kapi_engel(q3), " cift=", ciftlik.engel(q3, 5.0), " poy=", poyraz.engel(q3), " gecit=", gecit.engel(q3), " yapi=", yapi.engel(q3, 5.0), " insa=", insa.engel(q3, 5.0, false))
+	for o in [Vector2(0, 5), Vector2(0, 9), Vector2(0, -10), Vector2(0, -32), Vector2(20, -2), Vector2(26, -2), Vector2(0, 14)]:
+		print("KAYA ", o, " engel=", engel(d.position + o), " kaya=", kaya_at(d.position + o) != null, " t=", tile_at(d.position + o))
+	oyuncu.position = d.position + Vector2(0, -6)
+	await get_tree().create_timer(0.6).timeout
+	print("KAYA kurtarildi ", oyuncu.position - d.position, " engel=", engel(oyuncu.position))
 
 func _yunus_test() -> void:
 	await get_tree().create_timer(5.0).timeout
@@ -2691,6 +2769,7 @@ func _kucuk_harita() -> void:
 	tr.add_child(kh_nokta)
 
 func _process(_d: float) -> void:
+	if ada == 1 and not (magara != null and magara.icinde): _kaya_kurtar(_d)
 	if kh_nokta and oyuncu:
 		if magara != null and magara.icinde:
 			kh_nokta.position = magara.harita_nokta() - Vector2(2, 2)
