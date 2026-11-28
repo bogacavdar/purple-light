@@ -8,6 +8,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.45 · 28 Kasım 2026
+
+### Godot denemesi
+- **Maden kayaları artık duvar:** kahraman da canlılar da maden kayalarının içinden geçemiyor (web'deki gibi, kayanın çizimi kadar). Kayanın içinde kalırsan hemen yanına alınıyorsun.
+
 ## Versiyon 5.44 · 28 Kasım 2026
 
 ### Godot denemesi
@@ -127,8 +132,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot: gece beliren yazılımcı:** Gerçek saat gece 02:00 ile 06:00 arasındaysa, oyunun gecesinde bir yerde gözlüklü Boğaç beliriyor. Yanına gidince saatin kaç olduğunu söyleyip oyunu kapattırıyor.
-
-## Versiyon 5.25 · 27 Kasım 2026
-
-### Proje
-- **Godot: kıyıya vuran şişeler:** Fırtına dinince kıyıya bazen bir şişe vuruyor. İçinde ada halkının mor ışığa kaybettiği birine yazdığı bir mektup var; okunan mektuplar Kitap › Ada halkı'nda saklanıyor.

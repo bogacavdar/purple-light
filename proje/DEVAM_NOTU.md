@@ -1,3 +1,6 @@
+## v5.45 (28 Kasım 2026) · Godot: maden kayası duvardır
+- Godot `oyun.gd`: `kaya_at()` (48 px ızgara, 1,5 sn'de bir ya da düğüm sayısı değişince yeniden kurulur), `engel()` onu sorar; `_kaya_kurtar()` (_process, 0,25 sn). Web v229. Test kancası `kayaduvar`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.44 (28 Kasım 2026) · Godot: yunuslar
 - Godot: yeni `scripts/yunus.gd` (web v67; oyun.gd'de `yunus`), resim `art/yunus.png` (web DROWS/DPAL'den). Test kancası `yunustest`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
 
@@ -65,7 +68,3 @@
 ## v5.26 (27 Kasım 2026) · Godot Son-n: gece beliren yazılımcı
 - `godot-deneme/` yeni derleme (godot dalı: yeni yazilimci.gd; oyun.gd kayıt `v330dev`; ?devtest). Belge 99_godot Son-n. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (`v330dev` alanı okunmaz, zararsız).
-
-## v5.25 (27 Kasım 2026) · Godot Son-m: kıyıya vuran şişeler
-- `godot-deneme/` yeni derleme (godot dalı: yeni sise.gd; oyun.gd kayıt `sise`; toplama.gd şişe yerde kaybolmaz; hikaye.gd Ada halkı sayfasına mektuplar; ?sisetest). Belge 99_godot Son-m. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (`sise` alanı okunmaz, zararsız).
