@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.47"
+const SURUM := "Godot · 5.48"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -995,8 +995,11 @@ func _grafik_test() -> void:
 		if int(bio_arr[i]) == hb and not su_mu(int(tiles[i])):
 			var p := Vector2((i % bw + bx0 + 0.5) * T, (i / bw + by0 + 0.5) * T)
 			if not engel(p): oyuncu.position = p; break
-	zaman.dk = 720.0
+	zaman.dk = 60.0 if (OS.has_feature("web") and str(JavaScriptBridge.eval("location.search")).contains("gece")) else 720.0
 	await get_tree().create_timer(5.0).timeout
+	var ac := 0
+	for l in grafik.isiklar: if l.enabled: ac += 1
+	print("GRAFIK isik ", ac)
 	print("GRAFIK biyom ", bio_at(oyuncu.position), " renk ", grafik.renk, " ortam ", ortam.color, " agac mat ", agaclar[0].spr.material != null)
 
 func _elde_test() -> void:
