@@ -1,3 +1,6 @@
+## v5.43 (28 Kasım 2026) · Godot: farenin altındakinin adı
+- Godot `imlec.gd`: `_ipucu_kur/_ipucu/_ne/_kazma` (web v146 hovtip). Test kancası `ipucutest`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.42 (28 Kasım 2026) · Godot: Börü B5 eşyası
 - Godot `gorev.gd`: `_b5_esya()` (web v426b5), `giyili()`; "any" ilerlemesi giyileni de sayar, satırı p[2]/p[3] etiketini kullanır. Test kancası `b5test`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
 
@@ -67,7 +70,3 @@
 ## v5.24 (27 Kasım 2026) · Godot Son-l: işe yarayan eşyalar, meşale kuralları
 - `godot-deneme/` yeni derleme (godot dalı: balik.gd yem (_roll → _roll0), canli.gd bıçak ve mesale_yak (acc), oyun.gd bayılma çanta, ciftlik.gd Gübre, buyu.gd Ok kılıfı, mesale.gd Golem feneri/recine()/asinma(), oyuncu.gd meşale silahı ve duman, kamp.gd duman()/tütsü; girdi/ayarlar L "recine"; tools/disa_aktar_kozle.js ile 30 közlenmiş eşya (resim, items, pazar); ?islevtest). Belge 99_godot Son-l. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
-
-## v5.23 (27 Kasım 2026) · Godot Son-k: kamp ateşi, ateşte pişirme
-- `godot-deneme/` yeni derleme (godot dalı: yeni kamp.gd + data/ates_pisir.json (tools/disa_aktar_ates.js); oyun.gd F sırasında kamp.f, kayıt `kamp`, kayıtta hepsini_pisir; zaman.isikta/kampta, soguk, yildizsiz kamp ateşi; oyuncu.vur kamp; girdi/ayarlar V "kamp"; el_yapimi ateş yemeklerini gizler; istasyon öğrenme yazısı; harita alev; ?kamptest). Belge 99_godot Son-k. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (`kamp` alanı okunmaz, zararsız).

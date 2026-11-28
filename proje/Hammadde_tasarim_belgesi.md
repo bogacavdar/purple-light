@@ -1,6 +1,6 @@
 # Purple Light · Giriş ve kurallar
 
-Sürüm: **Versiyon 5.42** ile birebir (28 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
+Sürüm: **Versiyon 5.43** ile birebir (28 Kasım 2026). Bu sürümün ve önceki sürümlerin değişiklikleri: [Güncelleme notları](https://bogacavdar.github.io/purple-light/GUNCELLEME_NOTLARI.html).
 
 > **KURAL: OYUNCUYA İŞ YAPTIRILMAZ (Boğaç, 5 Kasım 2026):** oyun oyuncuya asla "şuna bas, şunu güncelle, şu klasörü bul, kısayol oluştur, başka tarayıcıda aç, kabloyla bağla" gibi adım adım iş tarif etmez (pencere, bildirim, yardım metni, güncelleme notu dahil). Bir şeyi oyun **otomatik** yapabiliyorsa yapar (tek tıkla yükleme gibi); yapamıyorsa o özellik o cihazda **hiç gösterilmez**. Oyunun kendi kontrolleri (hangi tuş ne yapar) bu kuralın dışındadır.
 
@@ -7639,6 +7639,7 @@ Adım 1 küçük parçalar halinde gider; her parçanın sonunda deneme linki (`
 | Son-aa · Takla (yapıldı) | Web'deki gibi: takla 0,46 sn sürer ve her yöne 50 piksel götürür (Usta takla ×1,25); başta hızlı (×1,7), sonda yavaş (×0,3), yürümek ve koşmak bir şey eklemez; bitince en az 0,76 sn beklenir. İçindeyken hiçbir şey dokunmaz. Görüntü: kahramanın kendi çiziminden kesilmiş 16 gerçek takla pozu (çömelme, atılma, top olma, baş aşağı, açılma, doğrulma; top olurken gözler kapalı), arkasında bir önceki pozun soluk izi ve ayaktan kalkan toz. Ekranda yukarı/aşağı taklada kahraman önden ya da arkadan görünür. Pozlar web'in çiziminden `tools/disa_aktar_takla.js` ile alınır. |
 | Son-ab · Onay kutusu (yapıldı) | Web'deki gibi: köprü onarma, kaya yığınını patlatma ve Barbaros'un gemisini kurma soruları ekranın ortasında krem kâğıt bir kutuda sorulur (arkası hafif kararır): sarı ana düğme işi yapar ("Onar", "Patlat", "Kur"), yanında "Vazgeç". Enter evet demektir; Esc ya da kutunun dışına basmak Vazgeç sayılır. Yan görevi bırakma Görevler penceresinin içinde iki basışla sorulur ("Emin misin? Bırak"). |
 | Son-ac · Börü B5 eşyası (yapıldı) | Web'deki gibi (belge ACT 1 › Börü B5): "Kuzeye keşif" Orman'a yürümeden önce herhangi bir Çakmaktaşı silahı (kılıç, topuz, savaş çekici, mızrak, balta) ve herhangi bir zırh parçası (baş, gövde, el, ayak; giyili olan da sayılır) ister; kartta "bir Çakmaktaşı silahı (dövdür)", "bir zırh parçası (yap)" yazar. |
+| Son-ad · Farenin altındakinin adı (yapıldı) | Web'deki gibi: bilgisayarda fare bir ağacın, madenin, toplanacak bir şeyin, yerdeki eşyanın, kişinin, canlının ya da kamp ateşinin üstüne gelince imlecin sağ üstünde küçük bir kutu adını (kalın) ve altında ne işe yaradığını yazar: "F ile topla", maden için hangi kazma gerektiği, çalıda kaç kez daha toplanacağı, ağaç için "baltayla kesilir" ya da "silkelenir", canlı için "saldırgan · sol tık ya da Q ile vur" / "zararsız" / "kızdırırsan saldırır", kişi için "F ile konuş". Pencere açıkken ve dokunmatik ekranda yok. |
 | Son · Eksikler | ComfyUI çizimleri Godot taşımasının dışında: taşıma bitince oyunun tam görsel yenilemesi olarak ayrıca konuşulacak (27 Kasım 2026, Boğaç). |
 
 ### Başlangıç (25 Kasım 2026)

@@ -8,6 +8,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.43 · 28 Kasım 2026
+
+### Godot denemesi
+- **Farenin altındakinin adı:** bilgisayarda fareyi bir ağacın, madenin, toplanacak bir şeyin, yerdeki eşyanın, kişinin ya da canlının üstüne getirince küçük bir kutu adını ve ne işe yaradığını yazıyor (hangi kazma gerektiği, çalıda kaç kez daha toplanacağı, canlının saldırgan mı zararsız mı olduğu).
+
 ## Versiyon 5.42 · 28 Kasım 2026
 
 ### Godot denemesi
@@ -131,10 +136,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Bıçaklar avda fazladan deri ve et getiriyor, çantalar bayılınca kaybı azaltıyor, Gübre tarlayı hızlandırıyor, Ok kılıfı yayı hızlandırıyor, Golem feneri hiç sönmüyor.
   - Elinde silah yokken yanan meşalenle vurabiliyor ve canavarı tutuşturabiliyorsun. L ile meşaleye reçine sürüp tazeliyorsun.
   - Közlenmiş yiyeceklerin resimleri geldi.
-
-## Versiyon 5.23 · 27 Kasım 2026
-
-### Proje
-- **Godot: kamp ateşi ve ateşte pişirme:**
-  - Kamp ateşi kemere giriyor; elindeyken vur ya da V ile önüne kuruluyor. Işık veriyor, yanında gece güvendesin, canın hızlı doluyor; odun atınca uzun yanıyor, yağmurda çabuk sönüyor. Haritada alevle görünüyor.
-  - Her ateşin başında F ile pişirme menüsü açılıyor: çiğ et ve balığı közlüyorsun, kazanda öğrendiğin ateş yemeklerini pişiriyorsun. Pişen yemek kendiliğinden çantana geliyor.
