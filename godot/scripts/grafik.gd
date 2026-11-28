@@ -5,6 +5,9 @@ extends Node
 ## 3) Parıltı: kristaller, ışıklı bitkiler ve ateşli taşlar karanlıkta (gece, mağara) kendi renginde hafifçe ışır ve yavaşça nefes alır;
 ##    oyuncuya en yakın 12 tanesi ışık alır (her 0,4 sn'de yeniden seçilir), gündüz kapalı.
 ## 4) Gölge: maden kayalarının ve çalıların altında yumuşak, yassı bir gölge (ağaçların ve canlıların gölgesi zaten var).
+## 5) Ortam parçacıkları (ekranda görülen yerde, en çok 46): gece Orman'da ve Bataklık'ta (yazın Çayır'da da) yanıp sönen ateş böcekleri,
+##    ilkbahar-yaz gündüzü Çayır'da uçuşan tohum tüyleri, sonbaharda Orman'da düşen yapraklar, Kül'de yükselen kor kıvılcımları,
+##    Mor Kristal'de süzülen mor pırıltılar. Gece karanlığından etkilenmez (kendi katında çizilir); mağarada yok.
 ## 2) Rüzgâr: ağaçlar, çalılar ve otlar tepeden hafifçe salınır (kökü yerinde); yağmurda, karda, kül fırtınasında daha çok.
 
 var oyun
@@ -122,9 +125,96 @@ func _parilti(dt: float) -> void:
 		l.texture_scale = float(R[1]) / 64.0
 		l.energy = (0.55 + 0.12 * sin(tk * 1.3 + d.position.x * 0.07)) * k
 
+class Ortam extends Node2D:
+	var P: Array = []   # {p, v, t, life, tur, c, faz}
+	func _draw() -> void:
+		var tk := Time.get_ticks_msec() / 1000.0
+		for q in P:
+			var a: float = clampf(minf(q.t / 0.8, (q.life - q.t) / 0.8), 0.0, 1.0)
+			var c: Color = q.c
+			match q.tur:
+				"bocek":
+					var b := 0.35 + 0.65 * maxf(0.0, sin(tk * 2.2 + q.faz))
+					var h := c; h.a = 0.22 * a * b
+					draw_circle(q.p, 3.0, h)
+					c.a = a * b
+					draw_rect(Rect2(q.p - Vector2(0.5, 0.5), Vector2(1.5, 1.5)), c)
+				"yaprak":
+					c.a = a
+					var r := Vector2(cos(tk * 3.0 + q.faz), 0.0) * 1.2
+					draw_rect(Rect2(q.p + r, Vector2(2, 1)), c)
+				"kor", "pirilti":
+					c.a = a * (0.6 + 0.4 * sin(tk * 9.0 + q.faz))
+					draw_rect(Rect2(q.p, Vector2(1, 1)), c)
+				_:
+					c.a = a * 0.8
+					draw_rect(Rect2(q.p, Vector2(1, 1)), c)
+
+var ortam_kat: CanvasLayer
+var ortam: Ortam
+var _ortam_t := 0.0
+
+func _ortam_kur() -> void:
+	ortam_kat = CanvasLayer.new()
+	ortam_kat.layer = 0
+	ortam_kat.follow_viewport_enabled = true
+	add_child(ortam_kat)
+	ortam = Ortam.new()
+	ortam.z_index = 30
+	ortam_kat.add_child(ortam)
+
+func _ortam_tur() -> String:
+	if oyun.ada != 1 or (oyun.magara != null and oyun.magara.icinde) or oyun.hava == null: return ""
+	if oyun.hava.yagiyor() or oyun.hava.kar_yagiyor(): return ""
+	var b: int = oyun.bio_at(oyun.oyuncu.position)
+	var gece: bool = oyun.zaman.karanlik() > 0.4
+	var m: int = oyun.hava.mevsim()
+	if b == 4: return "kor"
+	if b == 5: return "pirilti"
+	if gece and (b == 1 or b == 2 or (b == 0 and m == 1)) and m != 3: return "bocek"
+	if not gece and b == 0 and m <= 1: return "tohum"
+	if not gece and b == 1 and m == 2: return "yaprak"
+	return ""
+
+func _ortam(dt: float) -> void:
+	if ortam == null: _ortam_kur()
+	var tur := _ortam_tur()
+	var vs: Vector2 = get_viewport().get_visible_rect().size / oyun.kamera.zoom
+	var c0: Vector2 = oyun.kamera.get_screen_center_position() - vs / 2.0
+	var hiz := {"bocek": 6.0, "tohum": 5.0, "yaprak": 4.0, "kor": 14.0, "pirilti": 8.0}
+	if tur != "" and ortam.P.size() < 46:
+		_ortam_t -= dt * float(hiz[tur])
+		var den := 0
+		while _ortam_t <= 0.0 and den < 6:
+			_ortam_t += 1.0
+			den += 1
+			var p := c0 + Vector2(randf() * vs.x, randf() * vs.y)
+			# yalnızca oyuncunun biyomunda ve karada doğar
+			if oyun.su_mu(oyun.tile_at(p)) or oyun.bio_at(p) != oyun.bio_at(oyun.oyuncu.position): continue
+			var q := {p = p, t = 0.0, tur = tur, faz = randf() * TAU}
+			match tur:
+				"bocek": q.v = Vector2(randf_range(-6, 6), randf_range(-4, 4)); q.life = 4.0 + randf() * 4.0; q.c = Color("#e8ff7a")
+				"tohum": q.v = Vector2(randf_range(6, 14), randf_range(-3, 2)); q.life = 5.0 + randf() * 3.0; q.c = Color("#fffdf0")
+				"yaprak": p.y = c0.y + randf() * vs.y * 0.6; q.p = p; q.v = Vector2(randf_range(-4, 8), randf_range(10, 18)); q.life = 4.0 + randf() * 2.0; q.c = [Color("#e0802a"), Color("#c8501e"), Color("#e8b040")][randi() % 3]
+				"kor": q.v = Vector2(randf_range(-4, 4), randf_range(-22, -12)); q.life = 1.8 + randf() * 1.5; q.c = [Color("#ff7a2a"), Color("#ffc040")][randi() % 2]
+				"pirilti": q.v = Vector2(randf_range(-3, 3), randf_range(-8, -3)); q.life = 2.5 + randf() * 2.0; q.c = [Color("#d8b0ff"), Color("#ffffff"), Color("#a070ff")][randi() % 3]
+			ortam.P.append(q)
+	for i in range(ortam.P.size() - 1, -1, -1):
+		var q: Dictionary = ortam.P[i]
+		q.t += dt
+		if q.tur == "bocek" and randf() < dt * 0.8: q.v = Vector2(randf_range(-6, 6), randf_range(-4, 4))
+		q.p += q.v * dt
+		if q.t >= q.life or (tur != q.tur and q.t < q.life - 0.8): q.life = minf(q.life, q.t + 0.8)
+		if q.t >= q.life: ortam.P.remove_at(i)
+	ortam.queue_redraw()
+
 func _process(dt: float) -> void:
-	if oyun == null or oyun.basta: return
+	if oyun == null: return
+	if oyun.basta:
+		if ortam != null and not ortam.P.is_empty(): ortam.P.clear(); ortam.queue_redraw()
+		return
 	_parilti(dt)
+	_ortam(dt)
 	if not _kuruldu and not oyun.agaclar.is_empty(): ruzgar_ver()
 	# rüzgâr gücü: açık havada 1, yağmurda/karda 1,8, kül fırtınasında 2,4
 	var g := 1.0
