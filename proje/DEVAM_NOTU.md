@@ -1,3 +1,6 @@
+## v5.49 (28 Kasım 2026) · Godot: ortam parçacıkları
+- Godot `grafik.gd`: `Ortam` (follow_viewport CanvasLayer, CanvasModulate'ten etkilenmez), `_ortam_tur/_ortam`. Test kancası `grafiktest&bioN&gece`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.48 (28 Kasım 2026) · Godot: parıltı ve gölge
 - Godot `grafik.gd`: `PARILTI`, `_isik_kur/_parilti` (12 PointLight2D havuzu, 0,4 sn'de en yakınlar), `Golge` (maden ve çalı düğümlerine show_behind_parent çocuk). Test kancası `grafiktest&bioN&gece`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
 
@@ -61,7 +64,3 @@
 ## v5.30 (27 Kasım 2026) · Godot Son-s: envanter penceresi, toplama bildirimi
 - `godot-deneme/` yeni derleme (godot dalı: yeni canta.gd (envanter.canta artık bu), envanter.gd kemere sürükle-bırak, topla_bildir; toplama.gd _al; ?rozettest). Belge 99_godot Son-s. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
-
-## v5.29 (27 Kasım 2026) · Godot Son-r: fare imleci, köpek kamerası kayıtları
-- `godot-deneme/` yeni derleme (godot dalı: yeni imlec.gd, kopek.gd; oyun.gd kayıt `dlog`, bayıl kaydı; basarim.gd kazanınca kayıt). Belge 99_godot Son-r. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (`dlog` alanı okunmaz, zararsız).

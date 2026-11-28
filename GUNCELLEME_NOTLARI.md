@@ -8,6 +8,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.49 · 28 Kasım 2026
+
+### Godot denemesi
+- **Ortam parçacıkları:** gece Orman'da ve Bataklık'ta ateş böcekleri yanıp sönüyor; ilkbahar-yaz gündüzü Çayır'da tohum tüyleri uçuşuyor, sonbaharda Orman'da yapraklar düşüyor; Kül'de kor kıvılcımları yükseliyor, Mor Kristal'de mor pırıltılar süzülüyor.
+
 ## Versiyon 5.48 · 28 Kasım 2026
 
 ### Godot denemesi
@@ -127,10 +132,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: yeni envanter penceresi:**
   - Solda sekmeli eşya listesi, sağda giyim figürü ve karakter. Giysiyi figürdeki yuvaya, aleti alttaki kemere sürükleyebiliyorsun. Seçili eşyanın bilgisi ve düğmeleri (Ye, Giy, Eline al…) altta.
   - Aynı şeyi art arda toplayınca bildirim "+2, +3 Odun" diye birikiyor.
-
-## Versiyon 5.29 · 27 Kasım 2026
-
-### Proje
-- **Godot: fare imleci ve köpek günlüğü:**
-  - Fare imleci artık mor ışıkta piksel bir el; toplanacak ya da konuşulacak bir şeyin üstüne gelince el açılıyor.
-  - Robot köpeklerin ACT 3 için tuttuğu gizli günlük Godot'ta da tutuluyor (oyunda görünmez).
