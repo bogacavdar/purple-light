@@ -259,6 +259,7 @@ func _process(dt: float) -> void:
 	spr.frame = yon * 5 + fr
 	var a := 1.0
 	_takla_ciz()
+	_elde_ciz()
 	# gard: çömelir, genişler, darbelere yaslanır (web v124)
 	if kalkan and atilma <= 0.0:
 		var up := minf(1.0, (Time.get_ticks_msec() / 1000.0 - kalkan_t0) / 0.08)
@@ -307,6 +308,49 @@ func _uyar(t: String) -> void:
 	if now - uyari_t > 4.0:
 		uyari_t = now
 		oyun.env.mesaj(t, true)
+
+# ------------------------------------------------------------------ eldeki alet (web drawHeld; belge Aletler › Silahların kademe kimliği: yüksek kademe elde daha büyük)
+## Kemerden seçilen alet ya da silah sağ elde çizilir (kurulacak yapılar ve yay çizilmez); toplarken o aletle sallanır.
+## Kahraman arkasını dönüyorsa alet gövdenin arkasında kalır. Boyu 11 piksel, kademeyle +0/0/1/1/2/3/4.
+const ELDE_Z := [0, 0, 1, 1, 2, 3, 4]
+var elde_spr: Sprite2D
+var _elde_n := ""
+
+func _elde_ciz() -> void:
+	if elde_spr == null:
+		elde_spr = Sprite2D.new()
+		elde_spr.centered = false
+		add_child(elde_spr)
+	var h: String = oyun.env.elde()
+	var gizle: bool = h == "" or atilma > 0.0 or bayildi or oyun.yapi.Y.yapi.has(h) or (oyun.buyu != null and oyun.buyu.YAY.has(h))
+	if gizle:
+		elde_spr.visible = false
+		return
+	if h != _elde_n:
+		_elde_n = h
+		elde_spr.texture = oyun.env.ikon_al(h)
+	var tx: Texture2D = elde_spr.texture
+	if tx == null:
+		elde_spr.visible = false
+		return
+	var z := 11.0
+	if oyun.kademe_k != null:
+		var I: Dictionary = oyun.kademe_k.bilgi(h)
+		if not I.is_empty(): z += ELDE_Z[int(I.t)]
+	var sg := -1.0 if bakis.x < 0.0 else 1.0
+	var tk := Time.get_ticks_msec() / 1000.0
+	var al: String = str(oyun.toplama.is_.get("alet", "")) if oyun.toplama.is_ is Dictionary else ""
+	var sw := sin(tk * 14.0) * 0.9 if str(al) == h else sin(tk * 2.0) * 0.05
+	var arka := bakis.y < 0.0 and absf(bakis.x) < 0.01
+	elde_spr.show_behind_parent = false
+	elde_spr.z_index = -1 if arka else 1
+	var k := z / float(tx.get_width())
+	elde_spr.position = Vector2(sg * 5.0, -3.0)
+	elde_spr.rotation = (-0.5 + sw) * sg
+	elde_spr.scale = Vector2(k * sg, k)
+	elde_spr.offset = Vector2(-2.0 / k, -float(tx.get_height()))
+	elde_spr.modulate = spr.modulate
+	elde_spr.visible = spr.visible
 
 # ------------------------------------------------------------------ takla (web v113-roll + v315roll: 16 poz, kahramanın kendi çiziminden)
 const TAKLA_T := 0.46
