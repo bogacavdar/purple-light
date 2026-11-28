@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.49"
+const SURUM := "Godot · 5.50"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -459,6 +459,7 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("yansitest"): _yansi_test.call_deferred()
 		if q.contains("grafiktest"): _grafik_test.call_deferred()
 		if q.contains("eldetest"): _elde_test.call_deferred()
 		if q.contains("kayaduvar"): _kaya_test.call_deferred()
@@ -985,6 +986,25 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+func _yansi_test() -> void:
+	await get_tree().create_timer(5.0).timeout
+	# kıyıya, suya bakan bir yer: altı tatlı su/deniz, kendisi kara
+	var P0 := oyuncu.position
+	var best := Vector2.ZERO; var bd := 1e12
+	for i in range(0, tiles.size(), 3):
+		var t := int(tiles[i])
+		if t != 3: continue
+		var p := Vector2((i % bw + bx0 + 0.5) * T, (i / bw + by0 + 0.5) * T)
+		var u := p + Vector2(0, -T)
+		if su_mu(tile_at(u)) or engel(u + Vector2(0, -6)): continue
+		var q := p.distance_squared_to(P0)
+		if q < bd: bd = q; best = u + Vector2(0, -2)
+	oyuncu.position = best
+	print("YANSI kiyi ", best)
+	zaman.dk = 720.0
+	await get_tree().create_timer(0.5).timeout
+	kamera.zoom = Vector2(4, 4)
 
 func _grafik_test() -> void:
 	await get_tree().create_timer(5.0).timeout
