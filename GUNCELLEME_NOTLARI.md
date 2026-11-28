@@ -8,6 +8,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.46 · 28 Kasım 2026
+
+### Godot denemesi
+- **Eldeki alet görünüyor:** kemerden seçtiğin alet ya da silah artık kahramanın elinde çiziliyor; toplarken sallanıyor, yüksek kademe silahlar elde biraz daha büyük. Arkasını dönünce alet gövdenin arkasında kalıyor.
+
 ## Versiyon 5.45 · 28 Kasım 2026
 
 ### Godot denemesi
@@ -127,8 +132,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ### Proje
 - **Godot: canlıların sesleri:** Her canlının vurulunca ve ölünce kendi sesi var; saldırmaya hazırlanırken de kendi saldırı sesini çıkarıyor. Canavarlar artık karakterin içine girip dolanmıyor.
-
-## Versiyon 5.26 · 27 Kasım 2026
-
-### Proje
-- **Godot: gece beliren yazılımcı:** Gerçek saat gece 02:00 ile 06:00 arasındaysa, oyunun gecesinde bir yerde gözlüklü Boğaç beliriyor. Yanına gidince saatin kaç olduğunu söyleyip oyunu kapattırıyor.

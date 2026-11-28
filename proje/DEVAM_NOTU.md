@@ -1,3 +1,6 @@
+## v5.46 (28 Kasım 2026) · Godot: eldeki alet
+- Godot `oyuncu.gd`: `_elde_ciz()`, `elde_spr`, `ELDE_Z` (web drawHeld + v322tier z). Test kancası `eldetest`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.45 (28 Kasım 2026) · Godot: maden kayası duvardır
 - Godot `oyun.gd`: `kaya_at()` (48 px ızgara, 1,5 sn'de bir ya da düğüm sayısı değişince yeniden kurulur), `engel()` onu sorar; `_kaya_kurtar()` (_process, 0,25 sn). Web v229. Test kancası `kayaduvar`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
 
@@ -64,7 +67,3 @@
 ## v5.27 (27 Kasım 2026) · Godot Son-o: canlıların sesleri, itilme
 - `godot-deneme/` yeni derleme (godot dalı: ses.gd `canli()`, data/canli_ses.json + art/ses/canli/*.ogg (tools/disa_aktar_canli_ses.js); canli.gd acı/ölüm/saldırı sesi ve _physics_process itilme). Belge 99_godot Son-o. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
-
-## v5.26 (27 Kasım 2026) · Godot Son-n: gece beliren yazılımcı
-- `godot-deneme/` yeni derleme (godot dalı: yeni yazilimci.gd; oyun.gd kayıt `v330dev`; ?devtest). Belge 99_godot Son-n. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (`v330dev` alanı okunmaz, zararsız).
