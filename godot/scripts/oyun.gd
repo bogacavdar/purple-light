@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.43"
+const SURUM := "Godot · 5.44"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -118,6 +118,7 @@ var kamp                    # kamp.gd: kamp ateşi ve ateşte pişirme
 var sise                    # sise.gd: kıyıya vuran şişeler
 var yazilimci               # yazilimci.gd: gece beliren Boğaç
 var istem                   # istem.gd: F'nin ne yapacağını söyleyen eylem ipucu
+var yunus                   # yunus.gd: açık denizde sıçrayan yunuslar (web v67)
 var kademe_k                # kademe.gd: silahların kademe kimliği (web v322tier)
 var duyuru                  # duyuru.gd: gün, seviye ve keşif afişleri (web daybanner/lvlup/discover)
 var kopek                   # kopek.gd: robot köpeklerin gizli günlüğü (ACT 3)
@@ -380,6 +381,9 @@ func _ready() -> void:
 	kademe_k = preload("res://scripts/kademe.gd").new()
 	add_child(kademe_k)
 	kademe_k.kur(self)
+	yunus = preload("res://scripts/yunus.gd").new()
+	add_child(yunus)
+	yunus.kur(self)
 	imlec = preload("res://scripts/imlec.gd").new()
 	add_child(imlec)
 	imlec.kur(self)
@@ -451,6 +455,7 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("yunustest"): _yunus_test.call_deferred()
 		if q.contains("ipucutest"): _ipucu_test.call_deferred()
 		if q.contains("b5test"): _b5_test.call_deferred()
 		if q.contains("onaytest"): _onay_test.call_deferred()
@@ -924,6 +929,18 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+func _yunus_test() -> void:
+	await get_tree().create_timer(5.0).timeout
+	oyuncu.position += Vector2(0, 80)
+	await get_tree().create_timer(0.5).timeout
+	for i in 20:
+		yunus._sicra()
+		if not yunus.L.is_empty(): break
+		await get_tree().process_frame
+	print("YUNUS ", yunus.L.size())
+	await get_tree().create_timer(0.6).timeout
+	Engine.time_scale = 0.02
 
 func _ipucu_test() -> void:
 	await get_tree().create_timer(5.0).timeout
