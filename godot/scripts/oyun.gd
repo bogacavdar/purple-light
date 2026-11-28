@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.50"
+const SURUM := "Godot · 5.51"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -459,6 +459,7 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("kabarttest"): _kabart_test.call_deferred()
 		if q.contains("yansitest"): _yansi_test.call_deferred()
 		if q.contains("grafiktest"): _grafik_test.call_deferred()
 		if q.contains("eldetest"): _elde_test.call_deferred()
@@ -986,6 +987,22 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+func _kabart_test() -> void:
+	if OS.has_feature("web") and str(JavaScriptBridge.eval("location.search")).contains("duz"): grafik.kabart_kapali = true
+	if OS.has_feature("web") and str(JavaScriptBridge.eval("location.search")).contains("yuk"): grafik.YUKSEK = float(str(JavaScriptBridge.eval("location.search")).split("yuk")[1].to_int())
+	await get_tree().create_timer(5.0).timeout
+	var a = agaclar[0]
+	var bd := 1e12
+	for x in agaclar:
+		var q: float = x.position.distance_squared_to(oyuncu.position)
+		if q < bd: bd = q; a = x
+	oyuncu.position = a.position + Vector2(-22, 2)
+	zaman.dk = 60.0
+	env.ekle("Meşale"); env.kemer[0] = "Meşale"; env.el = 0; env.kemer_ciz()
+	await get_tree().create_timer(2.5).timeout
+	print("KABART agac ", a.spr.texture is CanvasTexture, " kahraman ", oyuncu.spr.texture is CanvasTexture, " mesale yuk ", mesale.isik.height)
+	kamera.zoom = Vector2(4, 4)
 
 func _yansi_test() -> void:
 	await get_tree().create_timer(5.0).timeout

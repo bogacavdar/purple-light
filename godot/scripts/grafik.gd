@@ -8,6 +8,8 @@ extends Node
 ## 5) Ortam parçacıkları (ekranda görülen yerde, en çok 46): gece Orman'da ve Bataklık'ta (yazın Çayır'da da) yanıp sönen ateş böcekleri,
 ##    ilkbahar-yaz gündüzü Çayır'da uçuşan tohum tüyleri, sonbaharda Orman'da düşen yapraklar, Kül'de yükselen kor kıvılcımları,
 ##    Mor Kristal'de süzülen mor pırıltılar. Gece karanlığından etkilenmez (kendi katında çizilir); mağarada yok.
+## 6) Kabartmalı ışık: ağaçların, yerdeki şeylerin ve kahramanın ışık haritası (art/…_n.png, tools/normal_uret.py) vardır;
+##    meşale, kamp ateşi, parıltı gibi ışıklar onlara yandan vurunca hacimli görünürler (gündüz fark yoktur). Işıklar 150 px yükseklikten vurur (gölge tarafı hafif kararır, okunurluk korunur).
 ## 2) Rüzgâr: ağaçlar, çalılar ve otlar tepeden hafifçe salınır (kökü yerinde); yağmurda, karda, kül fırtınasında daha çok.
 
 var oyun
@@ -46,7 +48,10 @@ func kur(o) -> void:
 func ruzgar_ver() -> void:
 	_kuruldu = true
 	for a in oyun.agaclar:
-		if is_instance_valid(a) and a.spr != null: a.spr.material = mat_agac
+		if is_instance_valid(a) and a.spr != null:
+			a.spr.material = mat_agac
+			a.spr.texture = kabart(a.spr.texture)
+
 	for d in oyun.dugumler: ot_ver(d)
 
 class Golge extends Node2D:
@@ -58,8 +63,50 @@ class Golge extends Node2D:
 			draw_circle(Vector2.ZERO, 1.0, Color(0, 0, 0, 0.09))
 		draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 
+var _nm := {}
+## resmin ışık haritalı hali (yoksa kendisi)
+func kabart(tex: Texture2D) -> Texture2D:
+	if tex == null or tex is CanvasTexture: return tex
+	var yol: String = tex.resource_path
+	if yol == "": return tex
+	if _nm.has(yol): return _nm[yol]
+	var r: Texture2D = tex
+	var ny := yol.substr(0, yol.length() - 4) + "_n.png"
+	if ResourceLoader.exists(ny):
+		var ct := CanvasTexture.new()
+		ct.diffuse_texture = tex
+		ct.normal_texture = load(ny)
+		ct.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		r = ct
+	_nm[yol] = r
+	return r
+
+## kahramanın sayfası (görünüşü değişince yeniden üretilir, yolu olmaz): aynı yerleşimdeki kahraman_n.png kullanılır
+var _kah_n: Texture2D
+var kabart_kapali := false
+func _kahraman() -> void:
+	if kabart_kapali: return
+	var sp: Sprite2D = oyun.oyuncu.spr if oyun.oyuncu != null else null
+	if sp == null or sp.texture == null or sp.texture is CanvasTexture: return
+	if _kah_n == null: _kah_n = load("res://art/kahraman_n.png")
+	if _kah_n == null or _kah_n.get_size() != sp.texture.get_size(): return
+	var ct := CanvasTexture.new()
+	ct.diffuse_texture = sp.texture
+	ct.normal_texture = _kah_n
+	sp.texture = ct
+
+var YUKSEK := 150.0
+var _isik_t := 0.0
+func _isik_yukseklik(dt: float) -> void:
+	_isik_t -= dt
+	if _isik_t > 0.0: return
+	_isik_t = 2.0
+	for l in oyun.find_children("*", "PointLight2D", true, false):
+		if l.height == 0.0 or l.height == 48.0: l.height = YUKSEK
+
 func ot_ver(d) -> void:
 	if not is_instance_valid(d): return
+	d.texture = kabart(d.texture)
 	var N: Dictionary = oyun.toplama_veri.nodes.get(d.ad, {})
 	if (N.get("mine", false) or N.get("bush", false)) and d.texture != null and d.get_node_or_null("golge") == null:
 		var g := Golge.new()
@@ -215,6 +262,8 @@ func _process(dt: float) -> void:
 		return
 	_parilti(dt)
 	_ortam(dt)
+	_isik_yukseklik(dt)
+	_kahraman()
 	if not _kuruldu and not oyun.agaclar.is_empty(): ruzgar_ver()
 	# rüzgâr gücü: açık havada 1, yağmurda/karda 1,8, kül fırtınasında 2,4
 	var g := 1.0
