@@ -8,6 +8,11 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.42 · 28 Kasım 2026
+
+### Godot denemesi
+- **Börü'nün "Kuzeye keşif" görevi:** Orman'a yürümeden önce artık web'deki gibi herhangi bir Çakmaktaşı silahı ve herhangi bir zırh parçası istiyor (giydiğin parça da sayılıyor).
+
 ## Versiyon 5.41 · 28 Kasım 2026
 
 ### Godot denemesi
@@ -133,11 +138,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 - **Godot: kamp ateşi ve ateşte pişirme:**
   - Kamp ateşi kemere giriyor; elindeyken vur ya da V ile önüne kuruluyor. Işık veriyor, yanında gece güvendesin, canın hızlı doluyor; odun atınca uzun yanıyor, yağmurda çabuk sönüyor. Haritada alevle görünüyor.
   - Her ateşin başında F ile pişirme menüsü açılıyor: çiğ et ve balığı közlüyorsun, kazanda öğrendiğin ateş yemeklerini pişiriyorsun. Pişen yemek kendiliğinden çantana geliyor.
-
-## Versiyon 5.22 · 27 Kasım 2026
-
-### Proje
-- **Godot: yemeklerin etkileri:**
-  - Her yiyecek web'deki gibi etki veriyor: Güç, Şifa, Çeviklik, Gece gözü, Doygunluk, Canlılık, Panzehir, Ateş kalkanı, Pıhtı, Dayanıklılık. Zehirli ve tuhaf yiyeceklerin kötü etkileri de var.
-  - X'e kısa basınca en uygun yiyecek yeniyor; basılı tutunca kategorili yemek listesi açılıyor. Bir şeyi ilk kez yiyince ne yaptığını öğreniyorsun.
-  - Etkin etkiler, çubukların altında süreleriyle görünüyor.

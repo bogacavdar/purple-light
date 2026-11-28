@@ -1,3 +1,6 @@
+## v5.42 (28 Kasım 2026) · Godot: Börü B5 eşyası
+- Godot `gorev.gd`: `_b5_esya()` (web v426b5), `giyili()`; "any" ilerlemesi giyileni de sayar, satırı p[2]/p[3] etiketini kullanır. Test kancası `b5test`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.41 (28 Kasım 2026) · Godot: onay kutusu
 - Godot `konusma.gd`: `onay(metin, f, evet, hayir)` (web confirmBox #q2cf; `onay_kat`, `onay_kutu`, Enter = evet, dışarı/Esc = Vazgeç). kopru.gd, gecit.gd, kuzen.gd (gemi) bunu çağırır. Test kancası `onaytest`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
 
@@ -68,7 +71,3 @@
 ## v5.23 (27 Kasım 2026) · Godot Son-k: kamp ateşi, ateşte pişirme
 - `godot-deneme/` yeni derleme (godot dalı: yeni kamp.gd + data/ates_pisir.json (tools/disa_aktar_ates.js); oyun.gd F sırasında kamp.f, kayıt `kamp`, kayıtta hepsini_pisir; zaman.isikta/kampta, soguk, yildizsiz kamp ateşi; oyuncu.vur kamp; girdi/ayarlar V "kamp"; el_yapimi ateş yemeklerini gizler; istasyon öğrenme yazısı; harita alev; ?kamptest). Belge 99_godot Son-k. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (`kamp` alanı okunmaz, zararsız).
-
-## v5.22 (27 Kasım 2026) · Godot Son-j: yemek etkileri ve yemek listesi
-- `godot-deneme/` yeni derleme (godot dalı: yeni yemek.gd + data/yemek.json (tools/disa_aktar_yemek.js); oyun.stat çarpanı `yemek.kat`, kayıt `yemek {kn, pb}`, pencere_acik; envanter X tuşu yemek.gd'ye, doygun; zaman.isikta göz; oyuncu.etki_ekle panzehir/ateşsiz/pıhtı; ?yemektest). Belge 99_godot Son-j…n. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (`yemek` alanı okunmaz, zararsız).
