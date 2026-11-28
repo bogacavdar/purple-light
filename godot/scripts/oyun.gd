@@ -2,7 +2,7 @@
 ## Bütün sayılar ve resimler web oyunundan otomatik dökülür (godot/tools/disa_aktar.js → data/*.json, art/*.png).
 extends Node2D
 
-const SURUM := "Godot · 5.42"
+const SURUM := "Godot · 5.43"
 
 var harita: Dictionary
 var ada := 1               # 1 = Yıldızsız Ada, 2 = ACT 2'nin adası (yonca ada); bir anda bellekte tek ada (web ISLE)
@@ -451,6 +451,7 @@ func _ready() -> void:
 				zaman.dk = 1300.0
 				ev.gir.call_deferred(ev0)
 		if q.contains("kecitest") or q.contains("evcilat") or q.contains("evcilkurt"): _evcil_test.call_deferred(q)
+		if q.contains("ipucutest"): _ipucu_test.call_deferred()
 		if q.contains("b5test"): _b5_test.call_deferred()
 		if q.contains("onaytest"): _onay_test.call_deferred()
 		if q.contains("taklatest"): _takla_test.call_deferred()
@@ -923,6 +924,23 @@ func _evcil_test(q: String) -> void:
 	await get_tree().create_timer(1.0).timeout
 	evcil.bin()
 	print("AT binilen=", evcil.binilen != null, " hiz=", evcil.hiz())
+
+func _ipucu_test() -> void:
+	await get_tree().create_timer(5.0).timeout
+	var I = imlec
+	print("IPUCU kisi ", I._ne(kisiler[0].position + Vector2(0, -12)))
+	var nd := 0
+	for d in dugumler:
+		if d.canli and nd < 3:
+			print("IPUCU dugum ", I._ne(d.position + Vector2(0, -4))); nd += 1
+	print("IPUCU agac ", I._ne(agaclar[0].position + Vector2(0, -14)))
+	var cs: Array = canlilari_ver()
+	if cs.size() > 0: print("IPUCU canli ", I._ne(cs[0].position + Vector2(0, -6)))
+	toplama.dusur("Dal", oyuncu.position + Vector2(30, 0))
+	await get_tree().create_timer(1.0).timeout
+	print("IPUCU yer ", I._ne(toplama.dusenler[-1].node.position))
+	I.etkin = false
+	I._ipucu(I._ne(kisiler[0].position + Vector2(0, -12)))
 
 func _b5_test() -> void:
 	await get_tree().create_timer(5.0).timeout
