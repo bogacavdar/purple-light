@@ -1,3 +1,6 @@
+## v5.47 (28 Kasım 2026) · Godot: biyom renk havası ve rüzgâr
+- Godot: yeni `scripts/grafik.gd` (oyun.gd'de `grafik`; `renk_guncelle` biyom tonuyla çarpar; `RUZGAR` gölgelendiricisi ağaç `spr` ve ot düğümlerine, `dugum_ekle` de `ot_ver` çağırır). CLAUDE.md: "EKRANI OYNATAN EFEKT YOK" kuralı. Test kancası `grafiktest` (`&bio2`..`&bio5`). Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.46 (28 Kasım 2026) · Godot: eldeki alet
 - Godot `oyuncu.gd`: `_elde_ciz()`, `elde_spr`, `ELDE_Z` (web drawHeld + v322tier z). Test kancası `eldetest`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
 
@@ -62,8 +65,4 @@
 
 ## v5.28 (27 Kasım 2026) · Godot Son-p: eylem ipucu, rozet, biyom sınırı
 - `godot-deneme/` yeni derleme (godot dalı: yeni istem.gd; envanter.gd rozet + _rozet_resim; canli.gd _sinir (hb); ?istemtest, ?rozettest). Belge 99_godot Son-p; ComfyUI çizimleri taşımanın dışına alındı (Boğaç kararı). Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
-
-## v5.27 (27 Kasım 2026) · Godot Son-o: canlıların sesleri, itilme
-- `godot-deneme/` yeni derleme (godot dalı: ses.gd `canli()`, data/canli_ses.json + art/ses/canli/*.ogg (tools/disa_aktar_canli_ses.js); canli.gd acı/ölüm/saldırı sesi ve _physics_process itilme). Belge 99_godot Son-o. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).

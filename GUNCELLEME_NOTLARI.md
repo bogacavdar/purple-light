@@ -8,6 +8,15 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.47 · 28 Kasım 2026
+
+### Godot denemesi
+- **Biyom renk havası:** her biyomun dünyaya kendi hafif tonu var: Orman hafif yeşil, Bataklık yeşilimsi, Kayalık serin, Kül sıcak turuncu, Mor Kristal soğuk mor. Biyom değişince ton yavaşça geçiyor.
+- **Rüzgâr:** ağaçlar, çalılar ve otlar rüzgârda tepeden hafifçe salınıyor; yağmurda, karda ve kül fırtınasında daha çok.
+
+### Tasarım belgesi
+- Grafik ilkesi: kamera sallantısı, hareket bulanıklığı gibi ekranı oynatan efektler olmayacak; yalnızca durağan güzelleştirmeler.
+
 ## Versiyon 5.46 · 28 Kasım 2026
 
 ### Godot denemesi
@@ -127,8 +136,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - F'ye basınca ne olacağı kemerin üstünde yazıyor (topla, kaz, konuş, pişir, mağaraya gir…); yapılamıyorsa neden yapılamadığı sarıyla yazıyor. Yakında canavar varsa vuruşunun hasarı görünüyor.
   - Çanta ve kemerdeki silahların hasarı, zırhların savunması karelerin köşesinde.
   - Canlılar kendi bölgelerinden çıkmıyor; kovalama bölge sınırında bitiyor.
-
-## Versiyon 5.27 · 27 Kasım 2026
-
-### Proje
-- **Godot: canlıların sesleri:** Her canlının vurulunca ve ölünce kendi sesi var; saldırmaya hazırlanırken de kendi saldırı sesini çıkarıyor. Canavarlar artık karakterin içine girip dolanmıyor.
