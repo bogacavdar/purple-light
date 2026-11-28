@@ -8,6 +8,12 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
 
 ---
 
+## Versiyon 5.50 · 28 Kasım 2026
+
+### Godot denemesi
+- **Su yansıması:** suya yakın duran kahraman, kişiler, canlılar, ağaçlar ve kıyı bitkileri suda soluk, mavimsi ters yansımasıyla görünüyor.
+- **Sudaki parıltılar:** şafakta ve akşamüstü altın renginde, gece ay ışığı gibi soluk mavi.
+
 ## Versiyon 5.49 · 28 Kasım 2026
 
 ### Godot denemesi
@@ -125,10 +131,3 @@ En yeni sürüm en üstte. Her sürümde **bütün** değişiklikler yazılır: 
   - Sağ üstte Çıkış, Ayarlar ve Başarımlar; sağ altta Almanak'ın yanında Tarif kitabı.
   - Ekrandaki uzun tuş yardımı kalktı; tuşlar Ayarlar › Kontroller'de.
   - Pencereler kenarından tutulup çekilerek büyütülebiliyor.
-
-## Versiyon 5.30 · 27 Kasım 2026
-
-### Proje
-- **Godot: yeni envanter penceresi:**
-  - Solda sekmeli eşya listesi, sağda giyim figürü ve karakter. Giysiyi figürdeki yuvaya, aleti alttaki kemere sürükleyebiliyorsun. Seçili eşyanın bilgisi ve düğmeleri (Ye, Giy, Eline al…) altta.
-  - Aynı şeyi art arda toplayınca bildirim "+2, +3 Odun" diye birikiyor.

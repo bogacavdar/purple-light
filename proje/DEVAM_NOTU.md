@@ -1,3 +1,6 @@
+## v5.50 (28 Kasım 2026) · Godot: su yansıması
+- Godot `su.gd`: `_yansima/_spr/_ters/_kova/_yakin_su` (128 px kovalar; yalnız su karolarına, karo karo kırpılmış ters çizim), parıltı rengi saate göre. Test kancası `yansitest`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
+
 ## v5.49 (28 Kasım 2026) · Godot: ortam parçacıkları
 - Godot `grafik.gd`: `Ortam` (follow_viewport CanvasLayer, CanvasModulate'ten etkilenmez), `_ortam_tur/_ortam`. Test kancası `grafiktest&bioN&gece`. Geri almak: bu commit'i `git revert` et (kayıt alanı yok).
 
@@ -59,8 +62,4 @@
 
 ## v5.31 (27 Kasım 2026) · Godot Son-t: ekran düzeni, büyütülen pencereler
 - `godot-deneme/` yeni derleme (godot dalı: yeni hud_menu.gd, boyut.gd (class_name Boyut); basarim.gd düğme sağ üst sütunda; canta/yemek/kamp/istasyon/sinan/pazar/el_yapimi Boyut.bagla). Belge 99_godot Son-t. Web oyununda değişen yok.
-- Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
-
-## v5.30 (27 Kasım 2026) · Godot Son-s: envanter penceresi, toplama bildirimi
-- `godot-deneme/` yeni derleme (godot dalı: yeni canta.gd (envanter.canta artık bu), envanter.gd kemere sürükle-bırak, topla_bildir; toplama.gd _al; ?rozettest). Belge 99_godot Son-s. Web oyununda değişen yok.
 - Geri almak için: bu commit'i `git revert` et (kayıt alanı yok).
